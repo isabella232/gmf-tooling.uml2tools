@@ -23,6 +23,7 @@ Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.emf.query.ocl;visibility:=reexport,
  org.eclipse.emf.ocl;visibility:=reexport
 Export-Package: org.eclipse.uml2.diagram.parser,
- org.eclipse.uml2.diagram.parser.lookup
+ org.eclipse.uml2.diagram.parser.lookup,
+ org.eclipse.uml2.internal.diagram.parser;x-internal:=true
 Eclipse-LazyStart: true
 
