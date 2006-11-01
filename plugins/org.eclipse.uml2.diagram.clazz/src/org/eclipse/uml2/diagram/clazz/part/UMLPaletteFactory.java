@@ -6,10 +6,16 @@ import java.util.List;
 import org.eclipse.gef.Tool;
 import org.eclipse.gef.palette.PaletteContainer;
 import org.eclipse.gef.palette.PaletteGroup;
+import org.eclipse.gef.palette.PaletteStack;
+
 import org.eclipse.gef.palette.PaletteRoot;
 import org.eclipse.gef.palette.ToolEntry;
 import org.eclipse.gmf.runtime.diagram.ui.tools.UnspecifiedTypeConnectionTool;
 import org.eclipse.gmf.runtime.diagram.ui.tools.UnspecifiedTypeCreationTool;
+import org.eclipse.uml2.diagram.clazz.part.CreateAssociationLinkTool.COMPOSITE;
+import org.eclipse.uml2.diagram.clazz.part.CreateAssociationLinkTool.NONE;
+import org.eclipse.uml2.diagram.clazz.part.CreateAssociationLinkTool.SHARED;
+
 import org.eclipse.jface.resource.ImageDescriptor;
 import org.eclipse.uml2.diagram.clazz.providers.UMLElementTypes;
 
@@ -65,7 +71,7 @@ public class UMLPaletteFactory {
 	private PaletteContainer createLinks3Group() {
 		PaletteContainer paletteContainer = new PaletteGroup("Links");
 		paletteContainer.setDescription("Diagram Links");
-		paletteContainer.add(createAssociation1CreationTool());
+		paletteContainer.add(createAssociation1Group());
 		paletteContainer.add(createGeneralization2CreationTool());
 		paletteContainer.add(createProvidedInterface3CreationTool());
 		paletteContainer.add(createRequiredInterface4CreationTool());
@@ -85,6 +91,17 @@ public class UMLPaletteFactory {
 		paletteContainer.setDescription("Instances");
 		paletteContainer.add(createInstanceSpecification1CreationTool());
 		paletteContainer.add(createSlot2CreationTool());
+		return paletteContainer;
+	}
+
+	/**
+	 * @generated
+	 */
+	private PaletteContainer createAssociation1Group() {
+		PaletteContainer paletteContainer = new PaletteStack("Association", "Create Association Link", null);
+		paletteContainer.add(createAssociation1CreationTool());
+		paletteContainer.add(createSharedAggregation2CreationTool());
+		paletteContainer.add(createCompositeAggregation3CreationTool());
 		return paletteContainer;
 	}
 
@@ -350,7 +367,47 @@ public class UMLPaletteFactory {
 
 		final List relationshipTypes = new ArrayList();
 		relationshipTypes.add(UMLElementTypes.Association_4005);
-		ToolEntry result = new LinkToolEntry("Association", "Association", smallImage, largeImage, relationshipTypes);
+		ToolEntry result = new LinkToolEntry("Association", "Create Association", smallImage, largeImage, relationshipTypes);
+
+		result.setToolClass(NONE.class);
+
+		return result;
+	}
+
+	/**
+	 * @generated
+	 */
+	private ToolEntry createSharedAggregation2CreationTool() {
+		ImageDescriptor smallImage;
+		ImageDescriptor largeImage;
+
+		smallImage = null;
+
+		largeImage = smallImage;
+
+		ToolEntry result = new ToolEntry("Shared Aggregation", "Create Shared Aggregation", smallImage, largeImage) {
+		};
+
+		result.setToolClass(SHARED.class);
+
+		return result;
+	}
+
+	/**
+	 * @generated
+	 */
+	private ToolEntry createCompositeAggregation3CreationTool() {
+		ImageDescriptor smallImage;
+		ImageDescriptor largeImage;
+
+		smallImage = null;
+
+		largeImage = smallImage;
+
+		ToolEntry result = new ToolEntry("Composite Aggregation", "Create Composite Aggregation", smallImage, largeImage) {
+		};
+
+		result.setToolClass(COMPOSITE.class);
 
 		return result;
 	}
