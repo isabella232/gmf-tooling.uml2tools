@@ -12,7 +12,6 @@ import org.eclipse.jface.wizard.Wizard;
 import org.eclipse.ui.INewWizard;
 import org.eclipse.ui.IWorkbench;
 import org.eclipse.ui.actions.WorkspaceModifyOperation;
-import org.eclipse.uml2.diagram.clazz.edit.parts.PackageEditPart;
 
 /**
  * @generated
