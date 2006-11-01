@@ -25,7 +25,7 @@ public class AssociationNameViewFactory extends AbstractLabelViewFactory {
 		Location location = (Location) view.getLayoutConstraint();
 		IMapMode mapMode = MeasurementUnitHelper.getMapMode(containerView.getDiagram().getMeasurementUnit());
 		location.setX(mapMode.DPtoLP(0));
-		location.setY(mapMode.DPtoLP(40));
+		location.setY(mapMode.DPtoLP(20));
 		return view;
 	}
 

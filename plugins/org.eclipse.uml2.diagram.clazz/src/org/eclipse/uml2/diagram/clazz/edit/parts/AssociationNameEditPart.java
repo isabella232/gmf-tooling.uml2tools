@@ -80,7 +80,7 @@ public class AssociationNameEditPart extends LabelEditPart implements ITextAware
 	 * @generated
 	 */
 	static {
-		registerSnapBackPosition(UMLVisualIDRegistry.getType(AssociationNameEditPart.VISUAL_ID), new Point(0, 40));
+		registerSnapBackPosition(UMLVisualIDRegistry.getType(AssociationNameEditPart.VISUAL_ID), new Point(0, 20));
 	}
 
 	/**
