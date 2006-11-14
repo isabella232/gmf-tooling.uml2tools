@@ -102,7 +102,14 @@ public class AssociationEditPart extends ConnectionNodeEditPart {
 		 * @generated
 		 */
 		public AssociationLinkFigure() {
+			this.setFill(true);
+			this.setFillXOR(false);
+			this.setOutline(true);
+			this.setOutlineXOR(false);
+			this.setLineWidth(1);
+			this.setLineStyle(org.eclipse.draw2d.Graphics.LINE_SOLID);
 			this.setForegroundColor(org.eclipse.draw2d.ColorConstants.blue);
+
 			setSourceDecoration(createSourceDecoration());
 			setTargetDecoration(createTargetDecoration());
 		}
@@ -110,7 +117,7 @@ public class AssociationEditPart extends ConnectionNodeEditPart {
 		/**
 		 * @generated
 		 */
-		private org.eclipse.uml2.diagram.common.draw2d.AssociationDecoration createSourceDecoration() {
+		private org.eclipse.draw2d.RotatableDecoration createSourceDecoration() {
 			org.eclipse.uml2.diagram.common.draw2d.AssociationDecoration df = new org.eclipse.uml2.diagram.common.draw2d.AssociationDecoration();
 
 			return df;
@@ -119,7 +126,7 @@ public class AssociationEditPart extends ConnectionNodeEditPart {
 		/**
 		 * @generated
 		 */
-		private org.eclipse.uml2.diagram.common.draw2d.AssociationDecoration createTargetDecoration() {
+		private org.eclipse.draw2d.RotatableDecoration createTargetDecoration() {
 			org.eclipse.uml2.diagram.common.draw2d.AssociationDecoration df = new org.eclipse.uml2.diagram.common.draw2d.AssociationDecoration();
 
 			return df;

@@ -31,8 +31,10 @@ import org.eclipse.uml2.diagram.component.edit.parts.InterfaceRealizationEditPar
 import org.eclipse.uml2.diagram.component.edit.parts.PackageEditPart;
 import org.eclipse.uml2.diagram.component.edit.parts.PortEditPart;
 import org.eclipse.uml2.diagram.component.edit.parts.PortNameEditPart;
+
 import org.eclipse.uml2.diagram.component.expressions.UMLAbstractExpression;
 import org.eclipse.uml2.diagram.component.expressions.UMLOCLFactory;
+
 import org.eclipse.uml2.uml.Artifact;
 import org.eclipse.uml2.uml.Component;
 import org.eclipse.uml2.uml.Interface;

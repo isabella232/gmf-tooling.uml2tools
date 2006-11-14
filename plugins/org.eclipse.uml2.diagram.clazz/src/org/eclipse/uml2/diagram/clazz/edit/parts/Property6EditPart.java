@@ -1,10 +1,13 @@
 package org.eclipse.uml2.diagram.clazz.edit.parts;
 
-import org.eclipse.draw2d.Connection;
-import org.eclipse.gmf.runtime.diagram.ui.editparts.ConnectionNodeEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles;
-import org.eclipse.gmf.runtime.draw2d.ui.figures.PolylineConnectionEx;
 import org.eclipse.gmf.runtime.notation.View;
+import org.eclipse.draw2d.Connection;
+
+import org.eclipse.gmf.runtime.diagram.ui.editparts.ConnectionNodeEditPart;
+
+import org.eclipse.gmf.runtime.draw2d.ui.figures.PolylineConnectionEx;
+
 import org.eclipse.uml2.diagram.clazz.edit.policies.Property6ItemSemanticEditPolicy;
 
 /**

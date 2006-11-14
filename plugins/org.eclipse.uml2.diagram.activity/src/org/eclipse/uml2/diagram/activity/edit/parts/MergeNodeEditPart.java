@@ -2,19 +2,29 @@ package org.eclipse.uml2.diagram.activity.edit.parts;
 
 import org.eclipse.draw2d.IFigure;
 import org.eclipse.draw2d.StackLayout;
+
 import org.eclipse.gef.EditPart;
 import org.eclipse.gef.EditPolicy;
 import org.eclipse.gef.Request;
+
 import org.eclipse.gef.commands.Command;
+
 import org.eclipse.gef.editpolicies.LayoutEditPolicy;
 import org.eclipse.gef.editpolicies.NonResizableEditPolicy;
+
 import org.eclipse.gef.requests.CreateRequest;
+
 import org.eclipse.gmf.runtime.diagram.ui.editparts.ShapeNodeEditPart;
+
 import org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles;
+
 import org.eclipse.gmf.runtime.draw2d.ui.figures.ConstrainedToolbarLayout;
+
 import org.eclipse.gmf.runtime.gef.ui.figures.DefaultSizeNodeFigure;
 import org.eclipse.gmf.runtime.gef.ui.figures.NodeFigure;
+
 import org.eclipse.gmf.runtime.notation.View;
+
 import org.eclipse.uml2.diagram.activity.edit.policies.MergeNodeItemSemanticEditPolicy;
 
 /**
@@ -152,6 +162,22 @@ public class MergeNodeEditPart extends ShapeNodeEditPart {
 		/**
 		 * @generated
 		 */
+		public ScalableRhombFigure() {
+			this.addPoint(new org.eclipse.draw2d.geometry.Point(getMapMode().DPtoLP(20), getMapMode().DPtoLP(0)));
+			this.addPoint(new org.eclipse.draw2d.geometry.Point(getMapMode().DPtoLP(40), getMapMode().DPtoLP(20)));
+			this.addPoint(new org.eclipse.draw2d.geometry.Point(getMapMode().DPtoLP(20), getMapMode().DPtoLP(40)));
+			this.addPoint(new org.eclipse.draw2d.geometry.Point(getMapMode().DPtoLP(0), getMapMode().DPtoLP(20)));
+			this.setFill(true);
+			this.setFillXOR(false);
+			this.setOutline(true);
+			this.setOutlineXOR(false);
+			this.setLineWidth(1);
+			this.setLineStyle(org.eclipse.draw2d.Graphics.LINE_SOLID);
+		}
+
+		/**
+		 * @generated
+		 */
 		private final org.eclipse.draw2d.geometry.PointList myTemplate = new org.eclipse.draw2d.geometry.PointList();
 
 		/**
@@ -194,8 +220,7 @@ public class MergeNodeEditPart extends ShapeNodeEditPart {
 		 */
 		private org.eclipse.draw2d.geometry.Rectangle getTemplateBounds() {
 			if (myTemplateBounds == null) {
-				myTemplateBounds = new org.eclipse.draw2d.geometry.Rectangle();
-				myTemplateBounds = myTemplate.getBounds().union(0, 0);
+				myTemplateBounds = myTemplate.getBounds().getCopy().union(0, 0);
 				//just safety -- we are going to use this as divider 
 				if (myTemplateBounds.width < 1) {
 					myTemplateBounds.width = 1;
@@ -226,25 +251,6 @@ public class MergeNodeEditPart extends ShapeNodeEditPart {
 				scaled[i + 1] = (int) Math.floor(scaled[i + 1] * yScale);
 			}
 			return scaled;
-		}
-
-		/**
-		 * @generated
-		 */
-		public ScalableRhombFigure() {
-
-			this.setFill(true);
-			this.addPoint(new org.eclipse.draw2d.geometry.Point(20, 0));
-			this.addPoint(new org.eclipse.draw2d.geometry.Point(40, 20));
-			this.addPoint(new org.eclipse.draw2d.geometry.Point(20, 40));
-			this.addPoint(new org.eclipse.draw2d.geometry.Point(0, 20));
-			createContents();
-		}
-
-		/**
-		 * @generated
-		 */
-		private void createContents() {
 		}
 
 	}

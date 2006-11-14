@@ -4,12 +4,17 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.eclipse.core.runtime.IAdaptable;
+
 import org.eclipse.emf.ecore.EAnnotation;
 import org.eclipse.emf.ecore.EcoreFactory;
+
 import org.eclipse.gmf.runtime.diagram.core.util.ViewUtil;
+
 import org.eclipse.gmf.runtime.diagram.ui.view.factories.ConnectionViewFactory;
+
 import org.eclipse.gmf.runtime.notation.NotationFactory;
 import org.eclipse.gmf.runtime.notation.View;
+
 import org.eclipse.uml2.diagram.clazz.edit.parts.AssociationName2EditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.AssociationName3EditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.AssociationName4EditPart;
@@ -18,6 +23,7 @@ import org.eclipse.uml2.diagram.clazz.edit.parts.AssociationName6EditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.AssociationName7EditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.AssociationNameEditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.PackageEditPart;
+
 import org.eclipse.uml2.diagram.clazz.part.UMLVisualIDRegistry;
 
 /**

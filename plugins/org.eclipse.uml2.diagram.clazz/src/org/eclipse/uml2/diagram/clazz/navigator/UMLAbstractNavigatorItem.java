@@ -1,6 +1,7 @@
 package org.eclipse.uml2.diagram.clazz.navigator;
 
 import org.eclipse.core.runtime.IAdaptable;
+
 import org.eclipse.ui.views.properties.tabbed.ITabbedPropertySheetPageContributor;
 
 /**

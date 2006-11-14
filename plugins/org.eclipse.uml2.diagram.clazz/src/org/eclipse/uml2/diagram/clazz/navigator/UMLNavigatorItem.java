@@ -1,7 +1,9 @@
 package org.eclipse.uml2.diagram.clazz.navigator;
 
 import org.eclipse.emf.ecore.EObject;
+
 import org.eclipse.gmf.runtime.notation.View;
+
 import org.eclipse.uml2.diagram.clazz.part.UMLVisualIDRegistry;
 
 /**

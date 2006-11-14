@@ -1,22 +1,23 @@
 package org.eclipse.uml2.diagram.clazz.part;
 
-import java.util.ArrayList;
 import java.util.List;
-
 import org.eclipse.gef.Tool;
 import org.eclipse.gef.palette.PaletteContainer;
+import org.eclipse.gef.palette.PaletteRoot;
+import org.eclipse.gef.palette.ToolEntry;
+import org.eclipse.jface.resource.ImageDescriptor;
+import java.util.ArrayList;
+
 import org.eclipse.gef.palette.PaletteGroup;
 import org.eclipse.gef.palette.PaletteStack;
 
-import org.eclipse.gef.palette.PaletteRoot;
-import org.eclipse.gef.palette.ToolEntry;
 import org.eclipse.gmf.runtime.diagram.ui.tools.UnspecifiedTypeConnectionTool;
 import org.eclipse.gmf.runtime.diagram.ui.tools.UnspecifiedTypeCreationTool;
+
 import org.eclipse.uml2.diagram.clazz.part.CreateAssociationLinkTool.COMPOSITE;
 import org.eclipse.uml2.diagram.clazz.part.CreateAssociationLinkTool.NONE;
 import org.eclipse.uml2.diagram.clazz.part.CreateAssociationLinkTool.SHARED;
 
-import org.eclipse.jface.resource.ImageDescriptor;
 import org.eclipse.uml2.diagram.clazz.providers.UMLElementTypes;
 
 /**
@@ -357,64 +358,6 @@ public class UMLPaletteFactory {
 	/**
 	 * @generated
 	 */
-	private ToolEntry createAssociation1CreationTool() {
-		ImageDescriptor smallImage;
-		ImageDescriptor largeImage;
-
-		smallImage = UMLElementTypes.getImageDescriptor(UMLElementTypes.Association_4005);
-
-		largeImage = smallImage;
-
-		final List relationshipTypes = new ArrayList();
-		relationshipTypes.add(UMLElementTypes.Association_4005);
-		ToolEntry result = new LinkToolEntry("Association", "Create Association", smallImage, largeImage, relationshipTypes);
-
-		result.setToolClass(NONE.class);
-
-		return result;
-	}
-
-	/**
-	 * @generated
-	 */
-	private ToolEntry createSharedAggregation2CreationTool() {
-		ImageDescriptor smallImage;
-		ImageDescriptor largeImage;
-
-		smallImage = null;
-
-		largeImage = smallImage;
-
-		ToolEntry result = new ToolEntry("Shared Aggregation", "Create Shared Aggregation", smallImage, largeImage) {
-		};
-
-		result.setToolClass(SHARED.class);
-
-		return result;
-	}
-
-	/**
-	 * @generated
-	 */
-	private ToolEntry createCompositeAggregation3CreationTool() {
-		ImageDescriptor smallImage;
-		ImageDescriptor largeImage;
-
-		smallImage = null;
-
-		largeImage = smallImage;
-
-		ToolEntry result = new ToolEntry("Composite Aggregation", "Create Composite Aggregation", smallImage, largeImage) {
-		};
-
-		result.setToolClass(COMPOSITE.class);
-
-		return result;
-	}
-
-	/**
-	 * @generated
-	 */
 	private ToolEntry createGeneralization2CreationTool() {
 		ImageDescriptor smallImage;
 		ImageDescriptor largeImage;
@@ -589,6 +532,64 @@ public class UMLPaletteFactory {
 		final List elementTypes = new ArrayList();
 		elementTypes.add(UMLElementTypes.Slot_3017);
 		ToolEntry result = new NodeToolEntry("Slot", "Create Slot", smallImage, largeImage, elementTypes);
+
+		return result;
+	}
+
+	/**
+	 * @generated
+	 */
+	private ToolEntry createAssociation1CreationTool() {
+		ImageDescriptor smallImage;
+		ImageDescriptor largeImage;
+
+		smallImage = UMLElementTypes.getImageDescriptor(UMLElementTypes.Association_4005);
+
+		largeImage = smallImage;
+
+		final List relationshipTypes = new ArrayList();
+		relationshipTypes.add(UMLElementTypes.Association_4005);
+		ToolEntry result = new LinkToolEntry("Association", "Create Association", smallImage, largeImage, relationshipTypes);
+
+		result.setToolClass(NONE.class);
+
+		return result;
+	}
+
+	/**
+	 * @generated
+	 */
+	private ToolEntry createSharedAggregation2CreationTool() {
+		ImageDescriptor smallImage;
+		ImageDescriptor largeImage;
+
+		smallImage = null;
+
+		largeImage = smallImage;
+
+		ToolEntry result = new ToolEntry("Shared Aggregation", "Create Shared Aggregation", smallImage, largeImage) {
+		};
+
+		result.setToolClass(SHARED.class);
+
+		return result;
+	}
+
+	/**
+	 * @generated
+	 */
+	private ToolEntry createCompositeAggregation3CreationTool() {
+		ImageDescriptor smallImage;
+		ImageDescriptor largeImage;
+
+		smallImage = null;
+
+		largeImage = smallImage;
+
+		ToolEntry result = new ToolEntry("Composite Aggregation", "Create Composite Aggregation", smallImage, largeImage) {
+		};
+
+		result.setToolClass(COMPOSITE.class);
 
 		return result;
 	}

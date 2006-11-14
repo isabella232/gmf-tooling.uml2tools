@@ -33,6 +33,7 @@ import org.eclipse.gmf.runtime.notation.View;
 
 import org.eclipse.uml2.diagram.component.edit.policies.Component2CanonicalEditPolicy;
 import org.eclipse.uml2.diagram.component.edit.policies.Component2ItemSemanticEditPolicy;
+
 import org.eclipse.uml2.diagram.component.part.UMLVisualIDRegistry;
 
 /**
@@ -254,18 +255,13 @@ public class Component2EditPart extends AbstractBorderedShapeEditPart {
 		 */
 		public ComponentFigure() {
 
-			org.eclipse.gmf.internal.codegen.draw2d.GridLayout myGenLayoutManager = new org.eclipse.gmf.internal.codegen.draw2d.GridLayout();
-			myGenLayoutManager.numColumns = 1;
-			myGenLayoutManager.makeColumnsEqualWidth = true;
-			myGenLayoutManager.marginWidth = 0;
-			myGenLayoutManager.marginHeight = 0;
-			myGenLayoutManager.horizontalSpacing = 0;
-			myGenLayoutManager.verticalSpacing = 0;
-
-			this.setLayoutManager(myGenLayoutManager);
-
+			this.setLayoutManager(new org.eclipse.gmf.internal.codegen.draw2d.GridLayout());
 			this.setFill(false);
+			this.setFillXOR(false);
 			this.setOutline(false);
+			this.setOutlineXOR(false);
+			this.setLineWidth(1);
+			this.setLineStyle(org.eclipse.draw2d.Graphics.LINE_SOLID);
 			createContents();
 		}
 
@@ -273,87 +269,77 @@ public class Component2EditPart extends AbstractBorderedShapeEditPart {
 		 * @generated
 		 */
 		private void createContents() {
-			org.eclipse.draw2d.RectangleFigure fig_0 = new org.eclipse.draw2d.RectangleFigure();
 
-			fig_0.setMinimumSize(new org.eclipse.draw2d.geometry.Dimension(getMapMode().DPtoLP(0), getMapMode().DPtoLP(35)));
+			org.eclipse.draw2d.RectangleFigure componentFigure_LabelsContainer0 = new org.eclipse.draw2d.RectangleFigure();
+			componentFigure_LabelsContainer0.setFill(true);
+			componentFigure_LabelsContainer0.setFillXOR(false);
+			componentFigure_LabelsContainer0.setOutline(true);
+			componentFigure_LabelsContainer0.setOutlineXOR(false);
+			componentFigure_LabelsContainer0.setLineWidth(1);
+			componentFigure_LabelsContainer0.setLineStyle(org.eclipse.draw2d.Graphics.LINE_SOLID);
+			componentFigure_LabelsContainer0.setMinimumSize(new org.eclipse.draw2d.geometry.Dimension(getMapMode().DPtoLP(0), getMapMode().DPtoLP(35)));
 
-			org.eclipse.gmf.internal.codegen.draw2d.GridLayout layouter0 = new org.eclipse.gmf.internal.codegen.draw2d.GridLayout();
-			layouter0.numColumns = 1;
-			layouter0.makeColumnsEqualWidth = false;
+			org.eclipse.gmf.internal.codegen.draw2d.GridLayoutData constraintComponentFigure_LabelsContainer0 = new org.eclipse.gmf.internal.codegen.draw2d.GridLayoutData();
+			constraintComponentFigure_LabelsContainer0.verticalAlignment = org.eclipse.gmf.internal.codegen.draw2d.GridLayoutData.FILL;
+			constraintComponentFigure_LabelsContainer0.horizontalAlignment = org.eclipse.gmf.internal.codegen.draw2d.GridLayoutData.FILL;
+			constraintComponentFigure_LabelsContainer0.horizontalIndent = 0;
+			constraintComponentFigure_LabelsContainer0.horizontalSpan = 2;
+			constraintComponentFigure_LabelsContainer0.verticalSpan = 1;
+			constraintComponentFigure_LabelsContainer0.grabExcessHorizontalSpace = true;
+			constraintComponentFigure_LabelsContainer0.grabExcessVerticalSpace = false;
+			this.add(componentFigure_LabelsContainer0, constraintComponentFigure_LabelsContainer0);
 
-			fig_0.setLayoutManager(layouter0);
+			componentFigure_LabelsContainer0.setLayoutManager(new org.eclipse.gmf.internal.codegen.draw2d.GridLayout());
 
-			setFigureComponentFigure_LabelsContainer(fig_0);
-			org.eclipse.gmf.internal.codegen.draw2d.GridLayoutData layData0 = new org.eclipse.gmf.internal.codegen.draw2d.GridLayoutData();
-			layData0.verticalAlignment = org.eclipse.gmf.internal.codegen.draw2d.GridLayoutData.FILL;
-			layData0.horizontalAlignment = org.eclipse.gmf.internal.codegen.draw2d.GridLayoutData.FILL;
-			layData0.horizontalIndent = 0;
-			layData0.horizontalSpan = 2;
-			layData0.verticalSpan = 1;
-			layData0.grabExcessHorizontalSpace = true;
-			layData0.grabExcessVerticalSpace = false;
+			org.eclipse.gmf.runtime.draw2d.ui.figures.WrapLabel componentFigure_fixed_component1 = new org.eclipse.gmf.runtime.draw2d.ui.figures.WrapLabel();
+			componentFigure_fixed_component1.setText("\u00ABcomponent\u00BB");
 
-			this.add(fig_0, layData0);
-			org.eclipse.gmf.runtime.draw2d.ui.figures.WrapLabel fig_1 = new org.eclipse.gmf.runtime.draw2d.ui.figures.WrapLabel();
-			fig_1.setText("\u00ABcomponent\u00BB");
+			org.eclipse.gmf.internal.codegen.draw2d.GridLayoutData constraintComponentFigure_fixed_component1 = new org.eclipse.gmf.internal.codegen.draw2d.GridLayoutData();
+			constraintComponentFigure_fixed_component1.verticalAlignment = org.eclipse.gmf.internal.codegen.draw2d.GridLayoutData.CENTER;
+			constraintComponentFigure_fixed_component1.horizontalAlignment = org.eclipse.gmf.internal.codegen.draw2d.GridLayoutData.CENTER;
+			constraintComponentFigure_fixed_component1.horizontalIndent = 0;
+			constraintComponentFigure_fixed_component1.horizontalSpan = 1;
+			constraintComponentFigure_fixed_component1.verticalSpan = 1;
+			constraintComponentFigure_fixed_component1.grabExcessHorizontalSpace = true;
+			constraintComponentFigure_fixed_component1.grabExcessVerticalSpace = false;
+			componentFigure_LabelsContainer0.add(componentFigure_fixed_component1, constraintComponentFigure_fixed_component1);
 
-			org.eclipse.gmf.internal.codegen.draw2d.GridLayoutData layData1 = new org.eclipse.gmf.internal.codegen.draw2d.GridLayoutData();
-			layData1.verticalAlignment = org.eclipse.gmf.internal.codegen.draw2d.GridLayoutData.CENTER;
-			layData1.horizontalAlignment = org.eclipse.gmf.internal.codegen.draw2d.GridLayoutData.CENTER;
-			layData1.horizontalIndent = 0;
-			layData1.horizontalSpan = 1;
-			layData1.verticalSpan = 1;
-			layData1.grabExcessHorizontalSpace = true;
-			layData1.grabExcessVerticalSpace = false;
+			org.eclipse.gmf.runtime.draw2d.ui.figures.WrapLabel componentFigure_name1 = new org.eclipse.gmf.runtime.draw2d.ui.figures.WrapLabel();
+			componentFigure_name1.setText("");
 
-			fig_0.add(fig_1, layData1);
-			org.eclipse.gmf.runtime.draw2d.ui.figures.WrapLabel fig_2 = new org.eclipse.gmf.runtime.draw2d.ui.figures.WrapLabel();
+			org.eclipse.gmf.internal.codegen.draw2d.GridLayoutData constraintComponentFigure_name1 = new org.eclipse.gmf.internal.codegen.draw2d.GridLayoutData();
+			constraintComponentFigure_name1.verticalAlignment = org.eclipse.gmf.internal.codegen.draw2d.GridLayoutData.CENTER;
+			constraintComponentFigure_name1.horizontalAlignment = org.eclipse.gmf.internal.codegen.draw2d.GridLayoutData.CENTER;
+			constraintComponentFigure_name1.horizontalIndent = 0;
+			constraintComponentFigure_name1.horizontalSpan = 1;
+			constraintComponentFigure_name1.verticalSpan = 1;
+			constraintComponentFigure_name1.grabExcessHorizontalSpace = true;
+			constraintComponentFigure_name1.grabExcessVerticalSpace = false;
+			componentFigure_LabelsContainer0.add(componentFigure_name1, constraintComponentFigure_name1);
 
-			setFigureComponentFigure_name(fig_2);
-			org.eclipse.gmf.internal.codegen.draw2d.GridLayoutData layData2 = new org.eclipse.gmf.internal.codegen.draw2d.GridLayoutData();
-			layData2.verticalAlignment = org.eclipse.gmf.internal.codegen.draw2d.GridLayoutData.CENTER;
-			layData2.horizontalAlignment = org.eclipse.gmf.internal.codegen.draw2d.GridLayoutData.CENTER;
-			layData2.horizontalIndent = 0;
-			layData2.horizontalSpan = 1;
-			layData2.verticalSpan = 1;
-			layData2.grabExcessHorizontalSpace = true;
-			layData2.grabExcessVerticalSpace = false;
+			setFigureComponentFigure_name(componentFigure_name1);
 
-			fig_0.add(fig_2, layData2);
-			org.eclipse.draw2d.RectangleFigure fig_3 = new org.eclipse.draw2d.RectangleFigure();
+			org.eclipse.draw2d.RectangleFigure componentFigure_Body0 = new org.eclipse.draw2d.RectangleFigure();
+			componentFigure_Body0.setFill(true);
+			componentFigure_Body0.setFillXOR(false);
+			componentFigure_Body0.setOutline(true);
+			componentFigure_Body0.setOutlineXOR(false);
+			componentFigure_Body0.setLineWidth(1);
+			componentFigure_Body0.setLineStyle(org.eclipse.draw2d.Graphics.LINE_SOLID);
+			componentFigure_Body0.setMinimumSize(new org.eclipse.draw2d.geometry.Dimension(getMapMode().DPtoLP(0), getMapMode().DPtoLP(55)));
 
-			fig_3.setMinimumSize(new org.eclipse.draw2d.geometry.Dimension(getMapMode().DPtoLP(0), getMapMode().DPtoLP(55)));
+			org.eclipse.gmf.internal.codegen.draw2d.GridLayoutData constraintComponentFigure_Body0 = new org.eclipse.gmf.internal.codegen.draw2d.GridLayoutData();
+			constraintComponentFigure_Body0.verticalAlignment = org.eclipse.gmf.internal.codegen.draw2d.GridLayoutData.FILL;
+			constraintComponentFigure_Body0.horizontalAlignment = org.eclipse.gmf.internal.codegen.draw2d.GridLayoutData.FILL;
+			constraintComponentFigure_Body0.horizontalIndent = 0;
+			constraintComponentFigure_Body0.horizontalSpan = 1;
+			constraintComponentFigure_Body0.verticalSpan = 1;
+			constraintComponentFigure_Body0.grabExcessHorizontalSpace = true;
+			constraintComponentFigure_Body0.grabExcessVerticalSpace = true;
+			this.add(componentFigure_Body0, constraintComponentFigure_Body0);
 
-			setFigureComponentFigure_Body(fig_3);
-			org.eclipse.gmf.internal.codegen.draw2d.GridLayoutData layData3 = new org.eclipse.gmf.internal.codegen.draw2d.GridLayoutData();
-			layData3.verticalAlignment = org.eclipse.gmf.internal.codegen.draw2d.GridLayoutData.FILL;
-			layData3.horizontalAlignment = org.eclipse.gmf.internal.codegen.draw2d.GridLayoutData.FILL;
-			layData3.horizontalIndent = 0;
-			layData3.horizontalSpan = 1;
-			layData3.verticalSpan = 1;
-			layData3.grabExcessHorizontalSpace = true;
-			layData3.grabExcessVerticalSpace = true;
+			setFigureComponentFigure_Body(componentFigure_Body0);
 
-			this.add(fig_3, layData3);
-		}
-
-		/**
-		 * @generated
-		 */
-		private org.eclipse.draw2d.RectangleFigure fComponentFigure_LabelsContainer;
-
-		/**
-		 * @generated
-		 */
-		public org.eclipse.draw2d.RectangleFigure getFigureComponentFigure_LabelsContainer() {
-			return fComponentFigure_LabelsContainer;
-		}
-
-		/**
-		 * @generated
-		 */
-		private void setFigureComponentFigure_LabelsContainer(org.eclipse.draw2d.RectangleFigure fig) {
-			fComponentFigure_LabelsContainer = fig;
 		}
 
 		/**

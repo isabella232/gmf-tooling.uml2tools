@@ -10,8 +10,9 @@ import org.eclipse.gmf.runtime.diagram.ui.services.editpart.AbstractEditPartProv
 import org.eclipse.gmf.runtime.diagram.ui.services.editpart.CreateGraphicEditPartOperation;
 import org.eclipse.gmf.runtime.diagram.ui.services.editpart.IEditPartOperation;
 import org.eclipse.gmf.runtime.notation.View;
-import org.eclipse.uml2.diagram.activity.edit.parts.ActivityEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.UMLEditPartFactory;
+import org.eclipse.uml2.diagram.activity.edit.parts.ActivityEditPart;
+
 import org.eclipse.uml2.diagram.activity.part.UMLVisualIDRegistry;
 
 /**

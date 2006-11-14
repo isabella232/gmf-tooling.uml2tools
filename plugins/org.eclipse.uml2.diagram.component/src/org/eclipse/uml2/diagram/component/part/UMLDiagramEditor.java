@@ -47,6 +47,7 @@ import org.eclipse.ui.dialogs.SaveAsDialog;
 import org.eclipse.ui.ide.IGotoMarker;
 
 import org.eclipse.ui.part.FileEditorInput;
+
 import org.eclipse.uml2.diagram.component.edit.parts.UMLEditPartFactory;
 
 /**

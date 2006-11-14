@@ -57,8 +57,6 @@ import org.eclipse.gmf.runtime.emf.ui.services.parser.ParserHintAdapter;
 import org.eclipse.gmf.runtime.notation.FontStyle;
 import org.eclipse.gmf.runtime.notation.NotationPackage;
 
-import org.eclipse.jface.resource.ImageDescriptor;
-
 import org.eclipse.jface.text.contentassist.IContentAssistProcessor;
 
 import org.eclipse.jface.viewers.ICellEditorValidator;
@@ -70,8 +68,9 @@ import org.eclipse.swt.accessibility.AccessibleEvent;
 import org.eclipse.swt.graphics.Color;
 import org.eclipse.swt.graphics.FontData;
 import org.eclipse.swt.graphics.Image;
+
 import org.eclipse.uml2.diagram.component.edit.policies.UMLTextSelectionEditPolicy;
-import org.eclipse.uml2.diagram.component.part.UMLDiagramEditorPlugin;
+
 import org.eclipse.uml2.diagram.component.providers.UMLElementTypes;
 
 /**

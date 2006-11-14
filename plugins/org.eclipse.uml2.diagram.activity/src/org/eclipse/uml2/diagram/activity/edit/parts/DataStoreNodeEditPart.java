@@ -2,19 +2,29 @@ package org.eclipse.uml2.diagram.activity.edit.parts;
 
 import org.eclipse.draw2d.IFigure;
 import org.eclipse.draw2d.StackLayout;
+
 import org.eclipse.gef.EditPart;
 import org.eclipse.gef.EditPolicy;
 import org.eclipse.gef.Request;
+
 import org.eclipse.gef.commands.Command;
+
 import org.eclipse.gef.editpolicies.LayoutEditPolicy;
 import org.eclipse.gef.editpolicies.NonResizableEditPolicy;
+
 import org.eclipse.gef.requests.CreateRequest;
+
 import org.eclipse.gmf.runtime.diagram.ui.editparts.ShapeNodeEditPart;
+
 import org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles;
+
 import org.eclipse.gmf.runtime.draw2d.ui.figures.ConstrainedToolbarLayout;
+
 import org.eclipse.gmf.runtime.gef.ui.figures.DefaultSizeNodeFigure;
 import org.eclipse.gmf.runtime.gef.ui.figures.NodeFigure;
+
 import org.eclipse.gmf.runtime.notation.View;
+
 import org.eclipse.uml2.diagram.activity.edit.policies.DataStoreNodeItemSemanticEditPolicy;
 
 /**
@@ -154,10 +164,15 @@ public class DataStoreNodeEditPart extends ShapeNodeEditPart {
 		 */
 		public DataStoreFigure() {
 
-			org.eclipse.draw2d.BorderLayout myGenLayoutManager = new org.eclipse.draw2d.BorderLayout();
+			org.eclipse.draw2d.BorderLayout layoutThis = new org.eclipse.draw2d.BorderLayout();
+			this.setLayoutManager(layoutThis);
 
-			this.setLayoutManager(myGenLayoutManager);
-
+			this.setFill(true);
+			this.setFillXOR(false);
+			this.setOutline(true);
+			this.setOutlineXOR(false);
+			this.setLineWidth(1);
+			this.setLineStyle(org.eclipse.draw2d.Graphics.LINE_SOLID);
 			createContents();
 		}
 
@@ -165,42 +180,23 @@ public class DataStoreNodeEditPart extends ShapeNodeEditPart {
 		 * @generated
 		 */
 		private void createContents() {
-			org.eclipse.gmf.runtime.draw2d.ui.figures.WrapLabel fig_0 = new org.eclipse.gmf.runtime.draw2d.ui.figures.WrapLabel();
-			fig_0.setText("\u00ABdatastore\u00BB");
 
-			setFigureDataStore_fixed_datastore(fig_0);
+			org.eclipse.gmf.runtime.draw2d.ui.figures.WrapLabel dataStore_fixed_datastore0 = new org.eclipse.gmf.runtime.draw2d.ui.figures.WrapLabel();
+			dataStore_fixed_datastore0.setText("\u00ABdatastore\u00BB");
 
-			Object layData0 = org.eclipse.draw2d.BorderLayout.TOP;
+			this.add(dataStore_fixed_datastore0, org.eclipse.draw2d.BorderLayout.TOP);
 
-			this.add(fig_0, layData0);
-			org.eclipse.draw2d.RectangleFigure fig_1 = new org.eclipse.draw2d.RectangleFigure();
-			fig_1.setFill(false);
-			fig_1.setOutline(false);
+			org.eclipse.draw2d.RectangleFigure dataStoreFigure_ContentPane0 = new org.eclipse.draw2d.RectangleFigure();
+			dataStoreFigure_ContentPane0.setFill(false);
+			dataStoreFigure_ContentPane0.setFillXOR(false);
+			dataStoreFigure_ContentPane0.setOutline(false);
+			dataStoreFigure_ContentPane0.setOutlineXOR(false);
+			dataStoreFigure_ContentPane0.setLineWidth(1);
+			dataStoreFigure_ContentPane0.setLineStyle(org.eclipse.draw2d.Graphics.LINE_SOLID);
 
-			setFigureDataStoreFigure_ContentPane(fig_1);
+			this.add(dataStoreFigure_ContentPane0, org.eclipse.draw2d.BorderLayout.CENTER);
+			setFigureDataStoreFigure_ContentPane(dataStoreFigure_ContentPane0);
 
-			Object layData1 = org.eclipse.draw2d.BorderLayout.CENTER;
-
-			this.add(fig_1, layData1);
-		}
-
-		/**
-		 * @generated
-		 */
-		private org.eclipse.gmf.runtime.draw2d.ui.figures.WrapLabel fDataStore_fixed_datastore;
-
-		/**
-		 * @generated
-		 */
-		public org.eclipse.gmf.runtime.draw2d.ui.figures.WrapLabel getFigureDataStore_fixed_datastore() {
-			return fDataStore_fixed_datastore;
-		}
-
-		/**
-		 * @generated
-		 */
-		private void setFigureDataStore_fixed_datastore(org.eclipse.gmf.runtime.draw2d.ui.figures.WrapLabel fig) {
-			fDataStore_fixed_datastore = fig;
 		}
 
 		/**

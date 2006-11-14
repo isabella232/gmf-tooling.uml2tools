@@ -1,14 +1,17 @@
 package org.eclipse.uml2.diagram.activity.edit.policies;
 
+import org.eclipse.gmf.runtime.diagram.ui.editpolicies.CanonicalEditPolicy;
+import org.eclipse.gmf.runtime.notation.View;
 import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.List;
 
 import org.eclipse.emf.ecore.EObject;
-import org.eclipse.gmf.runtime.diagram.ui.editpolicies.CanonicalEditPolicy;
-import org.eclipse.gmf.runtime.notation.View;
+
 import org.eclipse.uml2.diagram.activity.edit.parts.OutputPinEditPart;
+
 import org.eclipse.uml2.diagram.activity.part.UMLVisualIDRegistry;
+
 import org.eclipse.uml2.uml.OpaqueAction;
 
 /**

@@ -20,7 +20,9 @@ import org.eclipse.ui.IWorkbenchPage;
 import org.eclipse.ui.navigator.ILinkHelper;
 
 import org.eclipse.ui.part.FileEditorInput;
+
 import org.eclipse.uml2.diagram.component.edit.parts.PackageEditPart;
+
 import org.eclipse.uml2.diagram.component.part.UMLDiagramEditor;
 
 /**

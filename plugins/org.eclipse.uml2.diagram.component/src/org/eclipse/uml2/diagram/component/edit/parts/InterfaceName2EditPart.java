@@ -60,8 +60,11 @@ import org.eclipse.swt.accessibility.AccessibleEvent;
 import org.eclipse.swt.graphics.Color;
 import org.eclipse.swt.graphics.FontData;
 import org.eclipse.swt.graphics.Image;
+
 import org.eclipse.uml2.diagram.component.edit.policies.UMLTextSelectionEditPolicy;
+
 import org.eclipse.uml2.diagram.component.part.UMLVisualIDRegistry;
+
 import org.eclipse.uml2.diagram.component.providers.UMLElementTypes;
 
 /**

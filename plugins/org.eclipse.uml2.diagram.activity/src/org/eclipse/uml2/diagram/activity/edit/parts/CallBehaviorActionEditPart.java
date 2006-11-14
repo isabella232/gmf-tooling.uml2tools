@@ -3,25 +3,37 @@ package org.eclipse.uml2.diagram.activity.edit.parts;
 import org.eclipse.draw2d.IFigure;
 import org.eclipse.draw2d.PositionConstants;
 import org.eclipse.draw2d.StackLayout;
+
 import org.eclipse.gef.EditPart;
 import org.eclipse.gef.EditPolicy;
 import org.eclipse.gef.Request;
+
 import org.eclipse.gef.commands.Command;
+
 import org.eclipse.gef.editpolicies.LayoutEditPolicy;
 import org.eclipse.gef.editpolicies.NonResizableEditPolicy;
+
 import org.eclipse.gef.requests.CreateRequest;
+
 import org.eclipse.gmf.runtime.diagram.ui.editparts.AbstractBorderedShapeEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart;
+
 import org.eclipse.gmf.runtime.diagram.ui.editpolicies.CreationEditPolicy;
 import org.eclipse.gmf.runtime.diagram.ui.editpolicies.DragDropEditPolicy;
 import org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles;
+
 import org.eclipse.gmf.runtime.diagram.ui.figures.BorderItemLocator;
+
 import org.eclipse.gmf.runtime.draw2d.ui.figures.ConstrainedToolbarLayout;
+
 import org.eclipse.gmf.runtime.gef.ui.figures.DefaultSizeNodeFigure;
 import org.eclipse.gmf.runtime.gef.ui.figures.NodeFigure;
+
 import org.eclipse.gmf.runtime.notation.View;
+
 import org.eclipse.uml2.diagram.activity.edit.policies.CallBehaviorActionCanonicalEditPolicy;
 import org.eclipse.uml2.diagram.activity.edit.policies.CallBehaviorActionItemSemanticEditPolicy;
+
 import org.eclipse.uml2.diagram.activity.part.UMLVisualIDRegistry;
 
 /**
@@ -241,12 +253,16 @@ public class CallBehaviorActionEditPart extends AbstractBorderedShapeEditPart {
 		 */
 		public ActionCallBehaviorFigure() {
 
-			org.eclipse.draw2d.BorderLayout myGenLayoutManager = new org.eclipse.draw2d.BorderLayout();
-
-			this.setLayoutManager(myGenLayoutManager);
+			org.eclipse.draw2d.BorderLayout layoutThis = new org.eclipse.draw2d.BorderLayout();
+			this.setLayoutManager(layoutThis);
 
 			this.setCornerDimensions(new org.eclipse.draw2d.geometry.Dimension(getMapMode().DPtoLP(16), getMapMode().DPtoLP(16)));
-
+			this.setFill(true);
+			this.setFillXOR(false);
+			this.setOutline(true);
+			this.setOutlineXOR(false);
+			this.setLineWidth(1);
+			this.setLineStyle(org.eclipse.draw2d.Graphics.LINE_SOLID);
 			createContents();
 		}
 
@@ -254,129 +270,101 @@ public class CallBehaviorActionEditPart extends AbstractBorderedShapeEditPart {
 		 * @generated
 		 */
 		private void createContents() {
-			org.eclipse.draw2d.RectangleFigure fig_0 = new org.eclipse.draw2d.RectangleFigure();
-			fig_0.setFill(false);
-			fig_0.setOutline(false);
 
-			org.eclipse.draw2d.BorderLayout layouter0 = new org.eclipse.draw2d.BorderLayout();
+			org.eclipse.draw2d.RectangleFigure actionCallBehaviorFigure_AuxBottom0 = new org.eclipse.draw2d.RectangleFigure();
+			actionCallBehaviorFigure_AuxBottom0.setFill(false);
+			actionCallBehaviorFigure_AuxBottom0.setFillXOR(false);
+			actionCallBehaviorFigure_AuxBottom0.setOutline(false);
+			actionCallBehaviorFigure_AuxBottom0.setOutlineXOR(false);
+			actionCallBehaviorFigure_AuxBottom0.setLineWidth(1);
+			actionCallBehaviorFigure_AuxBottom0.setLineStyle(org.eclipse.draw2d.Graphics.LINE_SOLID);
 
-			fig_0.setLayoutManager(layouter0);
+			this.add(actionCallBehaviorFigure_AuxBottom0, org.eclipse.draw2d.BorderLayout.BOTTOM);
 
-			setFigureActionCallBehaviorFigure_AuxBottom(fig_0);
+			org.eclipse.draw2d.BorderLayout layoutActionCallBehaviorFigure_AuxBottom0 = new org.eclipse.draw2d.BorderLayout();
+			actionCallBehaviorFigure_AuxBottom0.setLayoutManager(layoutActionCallBehaviorFigure_AuxBottom0);
 
-			Object layData0 = org.eclipse.draw2d.BorderLayout.BOTTOM;
+			org.eclipse.draw2d.RectangleFigure actionCallBehaviorFigure_AuxBottomLeft1 = new org.eclipse.draw2d.RectangleFigure();
+			actionCallBehaviorFigure_AuxBottomLeft1.setFill(false);
+			actionCallBehaviorFigure_AuxBottomLeft1.setFillXOR(false);
+			actionCallBehaviorFigure_AuxBottomLeft1.setOutline(false);
+			actionCallBehaviorFigure_AuxBottomLeft1.setOutlineXOR(false);
+			actionCallBehaviorFigure_AuxBottomLeft1.setLineWidth(1);
+			actionCallBehaviorFigure_AuxBottomLeft1.setLineStyle(org.eclipse.draw2d.Graphics.LINE_SOLID);
 
-			this.add(fig_0, layData0);
-			org.eclipse.draw2d.RectangleFigure fig_1 = new org.eclipse.draw2d.RectangleFigure();
-			fig_1.setFill(false);
-			fig_1.setOutline(false);
+			actionCallBehaviorFigure_AuxBottom0.add(actionCallBehaviorFigure_AuxBottomLeft1, org.eclipse.draw2d.BorderLayout.LEFT);
 
-			org.eclipse.draw2d.StackLayout layouter1 = new org.eclipse.draw2d.StackLayout();
+			actionCallBehaviorFigure_AuxBottomLeft1.setLayoutManager(new org.eclipse.draw2d.StackLayout());
 
-			fig_1.setLayoutManager(layouter1);
+			org.eclipse.uml2.diagram.common.draw2d.PolylineContainer actionCallBehaviorFigure_AuxIconOwner2 = new org.eclipse.uml2.diagram.common.draw2d.PolylineContainer();
 
-			Object layData1 = org.eclipse.draw2d.BorderLayout.LEFT;
+			actionCallBehaviorFigure_AuxIconOwner2.setPreferredSize(new org.eclipse.draw2d.geometry.Dimension(getMapMode().DPtoLP(20), getMapMode().DPtoLP(20)));
 
-			fig_0.add(fig_1, layData1);
-			org.eclipse.uml2.diagram.common.draw2d.PolylineContainer fig_2 = new org.eclipse.uml2.diagram.common.draw2d.PolylineContainer();
+			actionCallBehaviorFigure_AuxBottomLeft1.add(actionCallBehaviorFigure_AuxIconOwner2);
 
-			fig_2.setPreferredSize(getMapMode().DPtoLP(20), getMapMode().DPtoLP(20));
+			org.eclipse.draw2d.Polyline actionCallBehaviorFigure_IconCenter3 = new org.eclipse.draw2d.Polyline();
+			actionCallBehaviorFigure_IconCenter3.addPoint(new org.eclipse.draw2d.geometry.Point(getMapMode().DPtoLP(10), getMapMode().DPtoLP(4)));
+			actionCallBehaviorFigure_IconCenter3.addPoint(new org.eclipse.draw2d.geometry.Point(getMapMode().DPtoLP(10), getMapMode().DPtoLP(16)));
+			actionCallBehaviorFigure_IconCenter3.setFill(true);
+			actionCallBehaviorFigure_IconCenter3.setFillXOR(false);
+			actionCallBehaviorFigure_IconCenter3.setOutline(true);
+			actionCallBehaviorFigure_IconCenter3.setOutlineXOR(false);
+			actionCallBehaviorFigure_IconCenter3.setLineWidth(2);
+			actionCallBehaviorFigure_IconCenter3.setLineStyle(org.eclipse.draw2d.Graphics.LINE_SOLID);
+			actionCallBehaviorFigure_IconCenter3.setForegroundColor(org.eclipse.draw2d.ColorConstants.darkBlue);
 
-			Object layData2 = null;
+			actionCallBehaviorFigure_AuxIconOwner2.add(actionCallBehaviorFigure_IconCenter3);
 
-			fig_1.add(fig_2, layData2);
-			org.eclipse.draw2d.Polyline fig_3 = new org.eclipse.draw2d.Polyline();
+			org.eclipse.draw2d.Polyline actionCallBehaviorFigure_IconLeft3 = new org.eclipse.draw2d.Polyline();
+			actionCallBehaviorFigure_IconLeft3.addPoint(new org.eclipse.draw2d.geometry.Point(getMapMode().DPtoLP(10), getMapMode().DPtoLP(10)));
+			actionCallBehaviorFigure_IconLeft3.addPoint(new org.eclipse.draw2d.geometry.Point(getMapMode().DPtoLP(5), getMapMode().DPtoLP(10)));
+			actionCallBehaviorFigure_IconLeft3.addPoint(new org.eclipse.draw2d.geometry.Point(getMapMode().DPtoLP(5), getMapMode().DPtoLP(16)));
+			actionCallBehaviorFigure_IconLeft3.setFill(true);
+			actionCallBehaviorFigure_IconLeft3.setFillXOR(false);
+			actionCallBehaviorFigure_IconLeft3.setOutline(true);
+			actionCallBehaviorFigure_IconLeft3.setOutlineXOR(false);
+			actionCallBehaviorFigure_IconLeft3.setLineWidth(2);
+			actionCallBehaviorFigure_IconLeft3.setLineStyle(org.eclipse.draw2d.Graphics.LINE_SOLID);
+			actionCallBehaviorFigure_IconLeft3.setForegroundColor(org.eclipse.draw2d.ColorConstants.darkBlue);
 
-			fig_3.setLineWidth(2);
-			fig_3.setForegroundColor(org.eclipse.draw2d.ColorConstants.darkBlue);
-			fig_3.addPoint(new org.eclipse.draw2d.geometry.Point(10, 4));
-			fig_3.addPoint(new org.eclipse.draw2d.geometry.Point(10, 16));
+			actionCallBehaviorFigure_AuxIconOwner2.add(actionCallBehaviorFigure_IconLeft3);
 
-			Object layData3 = null;
+			org.eclipse.draw2d.Polyline actionCallBehaviorFigure_IconRight3 = new org.eclipse.draw2d.Polyline();
+			actionCallBehaviorFigure_IconRight3.addPoint(new org.eclipse.draw2d.geometry.Point(getMapMode().DPtoLP(10), getMapMode().DPtoLP(10)));
+			actionCallBehaviorFigure_IconRight3.addPoint(new org.eclipse.draw2d.geometry.Point(getMapMode().DPtoLP(15), getMapMode().DPtoLP(10)));
+			actionCallBehaviorFigure_IconRight3.addPoint(new org.eclipse.draw2d.geometry.Point(getMapMode().DPtoLP(15), getMapMode().DPtoLP(16)));
+			actionCallBehaviorFigure_IconRight3.setFill(true);
+			actionCallBehaviorFigure_IconRight3.setFillXOR(false);
+			actionCallBehaviorFigure_IconRight3.setOutline(true);
+			actionCallBehaviorFigure_IconRight3.setOutlineXOR(false);
+			actionCallBehaviorFigure_IconRight3.setLineWidth(2);
+			actionCallBehaviorFigure_IconRight3.setLineStyle(org.eclipse.draw2d.Graphics.LINE_SOLID);
+			actionCallBehaviorFigure_IconRight3.setForegroundColor(org.eclipse.draw2d.ColorConstants.darkBlue);
 
-			fig_2.add(fig_3, layData3);
-			org.eclipse.draw2d.Polyline fig_4 = new org.eclipse.draw2d.Polyline();
+			actionCallBehaviorFigure_AuxIconOwner2.add(actionCallBehaviorFigure_IconRight3);
 
-			fig_4.setLineWidth(2);
-			fig_4.setForegroundColor(org.eclipse.draw2d.ColorConstants.darkBlue);
-			fig_4.addPoint(new org.eclipse.draw2d.geometry.Point(10, 10));
-			fig_4.addPoint(new org.eclipse.draw2d.geometry.Point(5, 10));
-			fig_4.addPoint(new org.eclipse.draw2d.geometry.Point(5, 16));
+			org.eclipse.draw2d.RectangleFigure actionCallBehaviorFigure_AuxCenter0 = new org.eclipse.draw2d.RectangleFigure();
+			actionCallBehaviorFigure_AuxCenter0.setFill(false);
+			actionCallBehaviorFigure_AuxCenter0.setFillXOR(false);
+			actionCallBehaviorFigure_AuxCenter0.setOutline(false);
+			actionCallBehaviorFigure_AuxCenter0.setOutlineXOR(false);
+			actionCallBehaviorFigure_AuxCenter0.setLineWidth(1);
+			actionCallBehaviorFigure_AuxCenter0.setLineStyle(org.eclipse.draw2d.Graphics.LINE_SOLID);
 
-			Object layData4 = null;
+			this.add(actionCallBehaviorFigure_AuxCenter0, org.eclipse.draw2d.BorderLayout.CENTER);
 
-			fig_2.add(fig_4, layData4);
-			org.eclipse.draw2d.Polyline fig_5 = new org.eclipse.draw2d.Polyline();
+			org.eclipse.uml2.diagram.common.draw2d.CenterLayout layoutActionCallBehaviorFigure_AuxCenter0 = new org.eclipse.uml2.diagram.common.draw2d.CenterLayout();
 
-			fig_5.setLineWidth(2);
-			fig_5.setForegroundColor(org.eclipse.draw2d.ColorConstants.darkBlue);
-			fig_5.addPoint(new org.eclipse.draw2d.geometry.Point(10, 10));
-			fig_5.addPoint(new org.eclipse.draw2d.geometry.Point(15, 10));
-			fig_5.addPoint(new org.eclipse.draw2d.geometry.Point(15, 16));
+			actionCallBehaviorFigure_AuxCenter0.setLayoutManager(layoutActionCallBehaviorFigure_AuxCenter0);
 
-			Object layData5 = null;
+			org.eclipse.gmf.runtime.draw2d.ui.figures.WrapLabel actionCallBehaviorFigure_name1 = new org.eclipse.gmf.runtime.draw2d.ui.figures.WrapLabel();
+			actionCallBehaviorFigure_name1.setText("");
 
-			fig_2.add(fig_5, layData5);
-			org.eclipse.draw2d.RectangleFigure fig_6 = new org.eclipse.draw2d.RectangleFigure();
-			fig_6.setFill(false);
-			fig_6.setOutline(false);
+			actionCallBehaviorFigure_name1.setBorder(new org.eclipse.draw2d.MarginBorder(getMapMode().DPtoLP(0), getMapMode().DPtoLP(5), getMapMode().DPtoLP(0), getMapMode().DPtoLP(5)));
 
-			org.eclipse.uml2.diagram.common.draw2d.CenterLayout layouter6 = new org.eclipse.uml2.diagram.common.draw2d.CenterLayout();
+			actionCallBehaviorFigure_AuxCenter0.add(actionCallBehaviorFigure_name1);
+			setFigureActionCallBehaviorFigure_name(actionCallBehaviorFigure_name1);
 
-			fig_6.setLayoutManager(layouter6);
-
-			setFigureActionCallBehaviorFigure_AuxCenter(fig_6);
-
-			Object layData6 = org.eclipse.draw2d.BorderLayout.CENTER;
-
-			this.add(fig_6, layData6);
-			org.eclipse.gmf.runtime.draw2d.ui.figures.WrapLabel fig_7 = new org.eclipse.gmf.runtime.draw2d.ui.figures.WrapLabel();
-
-			fig_7.setBorder(new org.eclipse.draw2d.MarginBorder(getMapMode().DPtoLP(0), getMapMode().DPtoLP(5), getMapMode().DPtoLP(0), getMapMode().DPtoLP(5)));
-
-			setFigureActionCallBehaviorFigure_name(fig_7);
-
-			Object layData7 = null;
-
-			fig_6.add(fig_7, layData7);
-		}
-
-		/**
-		 * @generated
-		 */
-		private org.eclipse.draw2d.RectangleFigure fActionCallBehaviorFigure_AuxBottom;
-
-		/**
-		 * @generated
-		 */
-		public org.eclipse.draw2d.RectangleFigure getFigureActionCallBehaviorFigure_AuxBottom() {
-			return fActionCallBehaviorFigure_AuxBottom;
-		}
-
-		/**
-		 * @generated
-		 */
-		private void setFigureActionCallBehaviorFigure_AuxBottom(org.eclipse.draw2d.RectangleFigure fig) {
-			fActionCallBehaviorFigure_AuxBottom = fig;
-		}
-
-		/**
-		 * @generated
-		 */
-		private org.eclipse.draw2d.RectangleFigure fActionCallBehaviorFigure_AuxCenter;
-
-		/**
-		 * @generated
-		 */
-		public org.eclipse.draw2d.RectangleFigure getFigureActionCallBehaviorFigure_AuxCenter() {
-			return fActionCallBehaviorFigure_AuxCenter;
-		}
-
-		/**
-		 * @generated
-		 */
-		private void setFigureActionCallBehaviorFigure_AuxCenter(org.eclipse.draw2d.RectangleFigure fig) {
-			fActionCallBehaviorFigure_AuxCenter = fig;
 		}
 
 		/**

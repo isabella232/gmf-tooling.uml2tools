@@ -9,7 +9,9 @@ import java.util.List;
 import org.eclipse.emf.ecore.EObject;
 
 import org.eclipse.uml2.diagram.component.edit.parts.PortEditPart;
+
 import org.eclipse.uml2.diagram.component.part.UMLVisualIDRegistry;
+
 import org.eclipse.uml2.uml.StructuredClassifier;
 
 /**

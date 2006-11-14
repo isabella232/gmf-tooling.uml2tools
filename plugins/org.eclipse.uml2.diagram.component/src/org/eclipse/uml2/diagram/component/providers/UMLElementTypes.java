@@ -21,7 +21,9 @@ import org.eclipse.emf.ecore.EObject;
 
 import org.eclipse.uml2.diagram.component.expressions.UMLAbstractExpression;
 import org.eclipse.uml2.diagram.component.expressions.UMLOCLFactory;
+
 import org.eclipse.uml2.diagram.component.part.UMLDiagramEditorPlugin;
+
 import org.eclipse.uml2.uml.UMLPackage;
 
 /**

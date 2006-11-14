@@ -28,6 +28,7 @@ import org.eclipse.jface.wizard.WizardDialog;
 
 import org.eclipse.ui.IObjectActionDelegate;
 import org.eclipse.ui.IWorkbenchPart;
+
 import org.eclipse.uml2.diagram.component.edit.parts.PackageEditPart;
 
 /**

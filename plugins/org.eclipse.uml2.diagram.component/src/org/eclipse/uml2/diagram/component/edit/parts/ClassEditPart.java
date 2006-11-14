@@ -33,6 +33,7 @@ import org.eclipse.gmf.runtime.notation.View;
 
 import org.eclipse.uml2.diagram.component.edit.policies.ClassCanonicalEditPolicy;
 import org.eclipse.uml2.diagram.component.edit.policies.ClassItemSemanticEditPolicy;
+
 import org.eclipse.uml2.diagram.component.part.UMLVisualIDRegistry;
 
 /**
@@ -240,10 +241,16 @@ public class ClassEditPart extends AbstractBorderedShapeEditPart {
 		 */
 		public ComponentClassFigure() {
 
-			org.eclipse.uml2.diagram.common.draw2d.CenterLayout myGenLayoutManager = new org.eclipse.uml2.diagram.common.draw2d.CenterLayout();
+			org.eclipse.uml2.diagram.common.draw2d.CenterLayout layoutThis = new org.eclipse.uml2.diagram.common.draw2d.CenterLayout();
 
-			this.setLayoutManager(myGenLayoutManager);
+			this.setLayoutManager(layoutThis);
 
+			this.setFill(true);
+			this.setFillXOR(false);
+			this.setOutline(true);
+			this.setOutlineXOR(false);
+			this.setLineWidth(1);
+			this.setLineStyle(org.eclipse.draw2d.Graphics.LINE_SOLID);
 			createContents();
 		}
 
@@ -251,14 +258,13 @@ public class ClassEditPart extends AbstractBorderedShapeEditPart {
 		 * @generated
 		 */
 		private void createContents() {
-			org.eclipse.gmf.runtime.draw2d.ui.figures.WrapLabel fig_0 = new org.eclipse.gmf.runtime.draw2d.ui.figures.WrapLabel();
-			fig_0.setText("");
 
-			setFigureComponentClassFigure_name(fig_0);
+			org.eclipse.gmf.runtime.draw2d.ui.figures.WrapLabel componentClassFigure_name0 = new org.eclipse.gmf.runtime.draw2d.ui.figures.WrapLabel();
+			componentClassFigure_name0.setText("");
 
-			Object layData0 = null;
+			this.add(componentClassFigure_name0);
+			setFigureComponentClassFigure_name(componentClassFigure_name0);
 
-			this.add(fig_0, layData0);
 		}
 
 		/**

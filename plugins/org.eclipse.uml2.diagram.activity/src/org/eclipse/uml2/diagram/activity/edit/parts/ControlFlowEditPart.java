@@ -1,9 +1,11 @@
 package org.eclipse.uml2.diagram.activity.edit.parts;
 
-import org.eclipse.draw2d.Connection;
-import org.eclipse.gmf.runtime.diagram.ui.editparts.ConnectionNodeEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles;
 import org.eclipse.gmf.runtime.notation.View;
+import org.eclipse.draw2d.Connection;
+
+import org.eclipse.gmf.runtime.diagram.ui.editparts.ConnectionNodeEditPart;
+
 import org.eclipse.uml2.diagram.activity.edit.policies.ControlFlowItemSemanticEditPolicy;
 
 /**
@@ -53,24 +55,34 @@ public class ControlFlowEditPart extends ConnectionNodeEditPart {
 		 * @generated
 		 */
 		public ActivityEdgeConnection() {
+			this.setFill(true);
+			this.setFillXOR(false);
+			this.setOutline(true);
+			this.setOutlineXOR(false);
+			this.setLineWidth(1);
+			this.setLineStyle(org.eclipse.draw2d.Graphics.LINE_SOLID);
 			this.setForegroundColor(org.eclipse.draw2d.ColorConstants.black);
+
 			setTargetDecoration(createTargetDecoration());
 		}
 
 		/**
 		 * @generated
 		 */
-		private org.eclipse.draw2d.PolylineDecoration createTargetDecoration() {
+		private org.eclipse.draw2d.RotatableDecoration createTargetDecoration() {
 			org.eclipse.draw2d.PolylineDecoration df = new org.eclipse.draw2d.PolylineDecoration();
-			// dispatchNext?
-
+			df.setFill(true);
+			df.setFillXOR(false);
+			df.setOutline(true);
+			df.setOutlineXOR(false);
+			df.setLineWidth(1);
+			df.setLineStyle(org.eclipse.draw2d.Graphics.LINE_SOLID);
 			org.eclipse.draw2d.geometry.PointList pl = new org.eclipse.draw2d.geometry.PointList();
-			pl.addPoint(-2, -1);
-			pl.addPoint(0, 0);
-			pl.addPoint(-2, 1);
+			pl.addPoint(getMapMode().DPtoLP(-2), getMapMode().DPtoLP(-1));
+			pl.addPoint(getMapMode().DPtoLP(0), getMapMode().DPtoLP(0));
+			pl.addPoint(getMapMode().DPtoLP(-2), getMapMode().DPtoLP(1));
 			df.setTemplate(pl);
 			df.setScale(getMapMode().DPtoLP(7), getMapMode().DPtoLP(3));
-
 			return df;
 		}
 

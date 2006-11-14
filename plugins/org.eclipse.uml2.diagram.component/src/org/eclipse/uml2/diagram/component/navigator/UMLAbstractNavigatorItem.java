@@ -2,8 +2,6 @@ package org.eclipse.uml2.diagram.component.navigator;
 
 import org.eclipse.core.runtime.IAdaptable;
 
-import org.eclipse.gmf.runtime.diagram.ui.properties.views.IReadOnlyDiagramPropertySheetPageContributor;
-
 import org.eclipse.ui.views.properties.tabbed.ITabbedPropertySheetPageContributor;
 
 /**

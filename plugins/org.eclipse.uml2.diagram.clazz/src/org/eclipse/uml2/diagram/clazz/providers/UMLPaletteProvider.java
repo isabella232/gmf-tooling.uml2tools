@@ -1,7 +1,6 @@
 package org.eclipse.uml2.diagram.clazz.providers;
 
 import java.util.Map;
-
 import org.eclipse.core.runtime.IConfigurationElement;
 import org.eclipse.gef.palette.PaletteRoot;
 import org.eclipse.gmf.runtime.common.core.service.AbstractProvider;

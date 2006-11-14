@@ -1,8 +1,11 @@
 package org.eclipse.uml2.diagram.activity.navigator;
 
+import org.eclipse.core.runtime.IAdapterFactory;
+import org.eclipse.core.runtime.Platform;
+
 import org.eclipse.emf.ecore.EObject;
+
 import org.eclipse.gmf.runtime.notation.View;
-import org.eclipse.uml2.diagram.activity.part.UMLVisualIDRegistry;
 
 /**
  * @generated
@@ -12,14 +15,40 @@ public class UMLNavigatorItem extends UMLAbstractNavigatorItem {
 	/**
 	 * @generated
 	 */
+	static {
+		final Class[] supportedTypes = new Class[] { View.class, EObject.class };
+		Platform.getAdapterManager().registerAdapters(new IAdapterFactory() {
+
+			public Object getAdapter(Object adaptableObject, Class adapterType) {
+				if (adaptableObject instanceof UMLNavigatorItem && (adapterType == View.class || adapterType == EObject.class)) {
+					return ((UMLNavigatorItem) adaptableObject).getView();
+				}
+				return null;
+			}
+
+			public Class[] getAdapterList() {
+				return supportedTypes;
+			}
+		}, UMLNavigatorItem.class);
+	}
+
+	/**
+	 * @generated
+	 */
 	private View myView;
 
 	/**
 	 * @generated
 	 */
-	public UMLNavigatorItem(View view, Object parent) {
+	private boolean myLeaf = false;
+
+	/**
+	 * @generated
+	 */
+	public UMLNavigatorItem(View view, Object parent, boolean isLeaf) {
 		super(parent);
 		myView = view;
+		myLeaf = isLeaf;
 	}
 
 	/**
@@ -32,25 +61,8 @@ public class UMLNavigatorItem extends UMLAbstractNavigatorItem {
 	/**
 	 * @generated
 	 */
-	public String getModelID() {
-		return UMLVisualIDRegistry.getModelID(myView);
-	}
-
-	/**
-	 * @generated
-	 */
-	public int getVisualID() {
-		return UMLVisualIDRegistry.getVisualID(myView);
-	}
-
-	/**
-	 * @generated
-	 */
-	public Object getAdapter(Class adapter) {
-		if (View.class.isAssignableFrom(adapter) || EObject.class.isAssignableFrom(adapter)) {
-			return myView;
-		}
-		return super.getAdapter(adapter);
+	public boolean isLeaf() {
+		return myLeaf;
 	}
 
 	/**

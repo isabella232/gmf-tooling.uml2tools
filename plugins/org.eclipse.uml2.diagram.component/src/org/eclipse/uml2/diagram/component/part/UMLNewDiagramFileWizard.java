@@ -68,6 +68,7 @@ import org.eclipse.ui.IWorkbenchPage;
 import org.eclipse.ui.PartInitException;
 
 import org.eclipse.ui.dialogs.WizardNewFileCreationPage;
+
 import org.eclipse.uml2.diagram.component.edit.parts.PackageEditPart;
 
 /**

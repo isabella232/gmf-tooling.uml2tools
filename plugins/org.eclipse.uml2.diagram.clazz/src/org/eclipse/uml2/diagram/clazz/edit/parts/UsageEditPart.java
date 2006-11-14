@@ -1,9 +1,11 @@
 package org.eclipse.uml2.diagram.clazz.edit.parts;
 
-import org.eclipse.draw2d.Connection;
-import org.eclipse.gmf.runtime.diagram.ui.editparts.ConnectionNodeEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles;
 import org.eclipse.gmf.runtime.notation.View;
+import org.eclipse.draw2d.Connection;
+
+import org.eclipse.gmf.runtime.diagram.ui.editparts.ConnectionNodeEditPart;
+
 import org.eclipse.uml2.diagram.clazz.edit.policies.UsageItemSemanticEditPolicy;
 
 /**
@@ -53,6 +55,12 @@ public class UsageEditPart extends ConnectionNodeEditPart {
 		 * @generated
 		 */
 		public RequiredInterfaceConnectionFigure() {
+			this.setFill(true);
+			this.setFillXOR(false);
+			this.setOutline(true);
+			this.setOutlineXOR(false);
+			this.setLineWidth(1);
+			this.setLineStyle(org.eclipse.draw2d.Graphics.LINE_SOLID);
 
 			setTargetDecoration(createTargetDecoration());
 		}
@@ -60,7 +68,7 @@ public class UsageEditPart extends ConnectionNodeEditPart {
 		/**
 		 * @generated
 		 */
-		private org.eclipse.uml2.diagram.common.draw2d.RequiredInterfaceDecoration createTargetDecoration() {
+		private org.eclipse.draw2d.RotatableDecoration createTargetDecoration() {
 			org.eclipse.uml2.diagram.common.draw2d.RequiredInterfaceDecoration df = new org.eclipse.uml2.diagram.common.draw2d.RequiredInterfaceDecoration();
 
 			df.setRadius(10);

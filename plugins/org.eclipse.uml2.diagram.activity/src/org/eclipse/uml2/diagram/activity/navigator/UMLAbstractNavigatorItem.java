@@ -1,12 +1,41 @@
 package org.eclipse.uml2.diagram.activity.navigator;
 
 import org.eclipse.core.runtime.IAdaptable;
+import org.eclipse.core.runtime.IAdapterFactory;
+import org.eclipse.core.runtime.Platform;
+
 import org.eclipse.ui.views.properties.tabbed.ITabbedPropertySheetPageContributor;
 
 /**
  * @generated
  */
 public abstract class UMLAbstractNavigatorItem implements IAdaptable {
+
+	/**
+	 * @generated
+	 */
+	static {
+		final Class[] supportedTypes = new Class[] { ITabbedPropertySheetPageContributor.class };
+		final ITabbedPropertySheetPageContributor propertySheetPageContributor = new ITabbedPropertySheetPageContributor() {
+
+			public String getContributorId() {
+				return "org.eclipse.uml2.diagram.activity"; //$NON-NLS-1$
+			}
+		};
+		Platform.getAdapterManager().registerAdapters(new IAdapterFactory() {
+
+			public Object getAdapter(Object adaptableObject, Class adapterType) {
+				if (adaptableObject instanceof UMLAbstractNavigatorItem && adapterType == ITabbedPropertySheetPageContributor.class) {
+					return propertySheetPageContributor;
+				}
+				return null;
+			}
+
+			public Class[] getAdapterList() {
+				return supportedTypes;
+			}
+		}, UMLAbstractNavigatorItem.class);
+	}
 
 	/**
 	 * @generated
@@ -23,11 +52,6 @@ public abstract class UMLAbstractNavigatorItem implements IAdaptable {
 	/**
 	 * @generated
 	 */
-	abstract public String getModelID();
-
-	/**
-	 * @generated
-	 */
 	public Object getParent() {
 		return myParent;
 	}
@@ -36,15 +60,7 @@ public abstract class UMLAbstractNavigatorItem implements IAdaptable {
 	 * @generated
 	 */
 	public Object getAdapter(Class adapter) {
-		if (ITabbedPropertySheetPageContributor.class.isAssignableFrom(adapter)) {
-			return new ITabbedPropertySheetPageContributor() {
-
-				public String getContributorId() {
-					return "org.eclipse.uml2.diagram.activity";
-				}
-			};
-		}
-		return null;
+		return Platform.getAdapterManager().getAdapter(this, adapter);
 	}
 
 }

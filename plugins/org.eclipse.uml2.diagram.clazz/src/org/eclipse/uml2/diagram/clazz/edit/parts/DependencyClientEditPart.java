@@ -1,10 +1,13 @@
 package org.eclipse.uml2.diagram.clazz.edit.parts;
 
-import org.eclipse.draw2d.Connection;
-import org.eclipse.gef.EditPolicy;
-import org.eclipse.gmf.runtime.diagram.ui.editparts.ConnectionNodeEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles;
 import org.eclipse.gmf.runtime.notation.View;
+import org.eclipse.draw2d.Connection;
+
+import org.eclipse.gef.EditPolicy;
+
+import org.eclipse.gmf.runtime.diagram.ui.editparts.ConnectionNodeEditPart;
+
 import org.eclipse.uml2.diagram.clazz.edit.policies.DependencyClientItemSemanticEditPolicy;
 import org.eclipse.uml2.diagram.clazz.edit.policies.UMLReferenceConnectionEditPolicy;
 
@@ -56,9 +59,14 @@ public class DependencyClientEditPart extends ConnectionNodeEditPart {
 		 * @generated
 		 */
 		public Dependency_NoArrow_Polyline() {
-
+			this.setFill(true);
+			this.setFillXOR(false);
+			this.setOutline(true);
+			this.setOutlineXOR(false);
+			this.setLineWidth(1);
 			this.setLineStyle(org.eclipse.draw2d.Graphics.LINE_DASH);
 			this.setForegroundColor(org.eclipse.draw2d.ColorConstants.lightGray);
+
 		}
 
 	}

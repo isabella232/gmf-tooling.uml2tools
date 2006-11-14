@@ -2,19 +2,29 @@ package org.eclipse.uml2.diagram.activity.edit.parts;
 
 import org.eclipse.draw2d.IFigure;
 import org.eclipse.draw2d.StackLayout;
+
 import org.eclipse.gef.EditPart;
 import org.eclipse.gef.EditPolicy;
 import org.eclipse.gef.Request;
+
 import org.eclipse.gef.commands.Command;
+
 import org.eclipse.gef.editpolicies.LayoutEditPolicy;
 import org.eclipse.gef.editpolicies.NonResizableEditPolicy;
+
 import org.eclipse.gef.requests.CreateRequest;
+
 import org.eclipse.gmf.runtime.diagram.ui.editparts.ShapeNodeEditPart;
+
 import org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles;
+
 import org.eclipse.gmf.runtime.draw2d.ui.figures.ConstrainedToolbarLayout;
+
 import org.eclipse.gmf.runtime.gef.ui.figures.DefaultSizeNodeFigure;
 import org.eclipse.gmf.runtime.gef.ui.figures.NodeFigure;
+
 import org.eclipse.gmf.runtime.notation.View;
+
 import org.eclipse.uml2.diagram.activity.edit.policies.CentralBufferNodeItemSemanticEditPolicy;
 
 /**
@@ -154,10 +164,15 @@ public class CentralBufferNodeEditPart extends ShapeNodeEditPart {
 		 */
 		public CentralBufferFigure() {
 
-			org.eclipse.draw2d.BorderLayout myGenLayoutManager = new org.eclipse.draw2d.BorderLayout();
+			org.eclipse.draw2d.BorderLayout layoutThis = new org.eclipse.draw2d.BorderLayout();
+			this.setLayoutManager(layoutThis);
 
-			this.setLayoutManager(myGenLayoutManager);
-
+			this.setFill(true);
+			this.setFillXOR(false);
+			this.setOutline(true);
+			this.setOutlineXOR(false);
+			this.setLineWidth(1);
+			this.setLineStyle(org.eclipse.draw2d.Graphics.LINE_SOLID);
 			createContents();
 		}
 
@@ -165,42 +180,23 @@ public class CentralBufferNodeEditPart extends ShapeNodeEditPart {
 		 * @generated
 		 */
 		private void createContents() {
-			org.eclipse.gmf.runtime.draw2d.ui.figures.WrapLabel fig_0 = new org.eclipse.gmf.runtime.draw2d.ui.figures.WrapLabel();
-			fig_0.setText("\u00ABcentralBuffer\u00BB");
 
-			setFigureCentralBufferFigure_fixed_central(fig_0);
+			org.eclipse.gmf.runtime.draw2d.ui.figures.WrapLabel centralBufferFigure_fixed_central0 = new org.eclipse.gmf.runtime.draw2d.ui.figures.WrapLabel();
+			centralBufferFigure_fixed_central0.setText("\u00ABcentralBuffer\u00BB");
 
-			Object layData0 = org.eclipse.draw2d.BorderLayout.TOP;
+			this.add(centralBufferFigure_fixed_central0, org.eclipse.draw2d.BorderLayout.TOP);
 
-			this.add(fig_0, layData0);
-			org.eclipse.draw2d.RectangleFigure fig_1 = new org.eclipse.draw2d.RectangleFigure();
-			fig_1.setFill(false);
-			fig_1.setOutline(false);
+			org.eclipse.draw2d.RectangleFigure centralBufferFigure_ContentPane0 = new org.eclipse.draw2d.RectangleFigure();
+			centralBufferFigure_ContentPane0.setFill(false);
+			centralBufferFigure_ContentPane0.setFillXOR(false);
+			centralBufferFigure_ContentPane0.setOutline(false);
+			centralBufferFigure_ContentPane0.setOutlineXOR(false);
+			centralBufferFigure_ContentPane0.setLineWidth(1);
+			centralBufferFigure_ContentPane0.setLineStyle(org.eclipse.draw2d.Graphics.LINE_SOLID);
 
-			setFigureCentralBufferFigure_ContentPane(fig_1);
+			this.add(centralBufferFigure_ContentPane0, org.eclipse.draw2d.BorderLayout.CENTER);
+			setFigureCentralBufferFigure_ContentPane(centralBufferFigure_ContentPane0);
 
-			Object layData1 = org.eclipse.draw2d.BorderLayout.CENTER;
-
-			this.add(fig_1, layData1);
-		}
-
-		/**
-		 * @generated
-		 */
-		private org.eclipse.gmf.runtime.draw2d.ui.figures.WrapLabel fCentralBufferFigure_fixed_central;
-
-		/**
-		 * @generated
-		 */
-		public org.eclipse.gmf.runtime.draw2d.ui.figures.WrapLabel getFigureCentralBufferFigure_fixed_central() {
-			return fCentralBufferFigure_fixed_central;
-		}
-
-		/**
-		 * @generated
-		 */
-		private void setFigureCentralBufferFigure_fixed_central(org.eclipse.gmf.runtime.draw2d.ui.figures.WrapLabel fig) {
-			fCentralBufferFigure_fixed_central = fig;
 		}
 
 		/**

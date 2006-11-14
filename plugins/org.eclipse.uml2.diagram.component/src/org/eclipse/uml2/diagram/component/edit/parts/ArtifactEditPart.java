@@ -27,6 +27,7 @@ import org.eclipse.gmf.runtime.gef.ui.figures.NodeFigure;
 import org.eclipse.gmf.runtime.notation.View;
 
 import org.eclipse.uml2.diagram.component.edit.policies.ArtifactItemSemanticEditPolicy;
+
 import org.eclipse.uml2.diagram.component.part.UMLVisualIDRegistry;
 
 /**
@@ -219,16 +220,13 @@ public class ArtifactEditPart extends ShapeNodeEditPart {
 		 */
 		public ArtifactFigure() {
 
-			org.eclipse.gmf.internal.codegen.draw2d.GridLayout myGenLayoutManager = new org.eclipse.gmf.internal.codegen.draw2d.GridLayout();
-			myGenLayoutManager.numColumns = 1;
-			myGenLayoutManager.makeColumnsEqualWidth = true;
-			myGenLayoutManager.marginWidth = 0;
-			myGenLayoutManager.marginHeight = 0;
-			myGenLayoutManager.horizontalSpacing = 0;
-			myGenLayoutManager.verticalSpacing = 0;
-
-			this.setLayoutManager(myGenLayoutManager);
-
+			this.setLayoutManager(new org.eclipse.gmf.internal.codegen.draw2d.GridLayout());
+			this.setFill(true);
+			this.setFillXOR(false);
+			this.setOutline(true);
+			this.setOutlineXOR(false);
+			this.setLineWidth(1);
+			this.setLineStyle(org.eclipse.draw2d.Graphics.LINE_SOLID);
 			createContents();
 		}
 
@@ -236,84 +234,48 @@ public class ArtifactEditPart extends ShapeNodeEditPart {
 		 * @generated
 		 */
 		private void createContents() {
-			org.eclipse.gmf.runtime.draw2d.ui.figures.WrapLabel fig_0 = new org.eclipse.gmf.runtime.draw2d.ui.figures.WrapLabel();
-			fig_0.setText("\u00ABartifact\u00BB");
 
-			setFigureArtifactFigure_fixed_artifact(fig_0);
-			org.eclipse.gmf.internal.codegen.draw2d.GridLayoutData layData0 = new org.eclipse.gmf.internal.codegen.draw2d.GridLayoutData();
-			layData0.verticalAlignment = org.eclipse.gmf.internal.codegen.draw2d.GridLayoutData.CENTER;
-			layData0.horizontalAlignment = org.eclipse.gmf.internal.codegen.draw2d.GridLayoutData.CENTER;
-			layData0.horizontalIndent = 0;
-			layData0.horizontalSpan = 1;
-			layData0.verticalSpan = 1;
-			layData0.grabExcessHorizontalSpace = true;
-			layData0.grabExcessVerticalSpace = false;
+			org.eclipse.gmf.runtime.draw2d.ui.figures.WrapLabel artifactFigure_fixed_artifact0 = new org.eclipse.gmf.runtime.draw2d.ui.figures.WrapLabel();
+			artifactFigure_fixed_artifact0.setText("\u00ABartifact\u00BB");
 
-			this.add(fig_0, layData0);
-			org.eclipse.draw2d.RectangleFigure fig_1 = new org.eclipse.draw2d.RectangleFigure();
-			fig_1.setFill(false);
-			fig_1.setOutline(false);
+			org.eclipse.gmf.internal.codegen.draw2d.GridLayoutData constraintArtifactFigure_fixed_artifact0 = new org.eclipse.gmf.internal.codegen.draw2d.GridLayoutData();
+			constraintArtifactFigure_fixed_artifact0.verticalAlignment = org.eclipse.gmf.internal.codegen.draw2d.GridLayoutData.CENTER;
+			constraintArtifactFigure_fixed_artifact0.horizontalAlignment = org.eclipse.gmf.internal.codegen.draw2d.GridLayoutData.CENTER;
+			constraintArtifactFigure_fixed_artifact0.horizontalIndent = 0;
+			constraintArtifactFigure_fixed_artifact0.horizontalSpan = 1;
+			constraintArtifactFigure_fixed_artifact0.verticalSpan = 1;
+			constraintArtifactFigure_fixed_artifact0.grabExcessHorizontalSpace = true;
+			constraintArtifactFigure_fixed_artifact0.grabExcessVerticalSpace = false;
+			this.add(artifactFigure_fixed_artifact0, constraintArtifactFigure_fixed_artifact0);
 
-			org.eclipse.uml2.diagram.common.draw2d.CenterLayout layouter1 = new org.eclipse.uml2.diagram.common.draw2d.CenterLayout();
+			org.eclipse.draw2d.RectangleFigure artifactFigure_NameContainer0 = new org.eclipse.draw2d.RectangleFigure();
+			artifactFigure_NameContainer0.setFill(false);
+			artifactFigure_NameContainer0.setFillXOR(false);
+			artifactFigure_NameContainer0.setOutline(false);
+			artifactFigure_NameContainer0.setOutlineXOR(false);
+			artifactFigure_NameContainer0.setLineWidth(1);
+			artifactFigure_NameContainer0.setLineStyle(org.eclipse.draw2d.Graphics.LINE_SOLID);
 
-			fig_1.setLayoutManager(layouter1);
+			org.eclipse.gmf.internal.codegen.draw2d.GridLayoutData constraintArtifactFigure_NameContainer0 = new org.eclipse.gmf.internal.codegen.draw2d.GridLayoutData();
+			constraintArtifactFigure_NameContainer0.verticalAlignment = org.eclipse.gmf.internal.codegen.draw2d.GridLayoutData.FILL;
+			constraintArtifactFigure_NameContainer0.horizontalAlignment = org.eclipse.gmf.internal.codegen.draw2d.GridLayoutData.FILL;
+			constraintArtifactFigure_NameContainer0.horizontalIndent = 0;
+			constraintArtifactFigure_NameContainer0.horizontalSpan = 1;
+			constraintArtifactFigure_NameContainer0.verticalSpan = 1;
+			constraintArtifactFigure_NameContainer0.grabExcessHorizontalSpace = true;
+			constraintArtifactFigure_NameContainer0.grabExcessVerticalSpace = true;
+			this.add(artifactFigure_NameContainer0, constraintArtifactFigure_NameContainer0);
 
-			setFigureArtifactFigure_NameContainer(fig_1);
-			org.eclipse.gmf.internal.codegen.draw2d.GridLayoutData layData1 = new org.eclipse.gmf.internal.codegen.draw2d.GridLayoutData();
-			layData1.verticalAlignment = org.eclipse.gmf.internal.codegen.draw2d.GridLayoutData.FILL;
-			layData1.horizontalAlignment = org.eclipse.gmf.internal.codegen.draw2d.GridLayoutData.FILL;
-			layData1.horizontalIndent = 0;
-			layData1.horizontalSpan = 1;
-			layData1.verticalSpan = 1;
-			layData1.grabExcessHorizontalSpace = true;
-			layData1.grabExcessVerticalSpace = true;
+			org.eclipse.uml2.diagram.common.draw2d.CenterLayout layoutArtifactFigure_NameContainer0 = new org.eclipse.uml2.diagram.common.draw2d.CenterLayout();
 
-			this.add(fig_1, layData1);
-			org.eclipse.gmf.runtime.draw2d.ui.figures.WrapLabel fig_2 = new org.eclipse.gmf.runtime.draw2d.ui.figures.WrapLabel();
+			artifactFigure_NameContainer0.setLayoutManager(layoutArtifactFigure_NameContainer0);
 
-			setFigureArtifactFigure_name(fig_2);
+			org.eclipse.gmf.runtime.draw2d.ui.figures.WrapLabel artifactFigure_name1 = new org.eclipse.gmf.runtime.draw2d.ui.figures.WrapLabel();
+			artifactFigure_name1.setText("");
 
-			Object layData2 = null;
+			artifactFigure_NameContainer0.add(artifactFigure_name1);
+			setFigureArtifactFigure_name(artifactFigure_name1);
 
-			fig_1.add(fig_2, layData2);
-		}
-
-		/**
-		 * @generated
-		 */
-		private org.eclipse.gmf.runtime.draw2d.ui.figures.WrapLabel fArtifactFigure_fixed_artifact;
-
-		/**
-		 * @generated
-		 */
-		public org.eclipse.gmf.runtime.draw2d.ui.figures.WrapLabel getFigureArtifactFigure_fixed_artifact() {
-			return fArtifactFigure_fixed_artifact;
-		}
-
-		/**
-		 * @generated
-		 */
-		private void setFigureArtifactFigure_fixed_artifact(org.eclipse.gmf.runtime.draw2d.ui.figures.WrapLabel fig) {
-			fArtifactFigure_fixed_artifact = fig;
-		}
-
-		/**
-		 * @generated
-		 */
-		private org.eclipse.draw2d.RectangleFigure fArtifactFigure_NameContainer;
-
-		/**
-		 * @generated
-		 */
-		public org.eclipse.draw2d.RectangleFigure getFigureArtifactFigure_NameContainer() {
-			return fArtifactFigure_NameContainer;
-		}
-
-		/**
-		 * @generated
-		 */
-		private void setFigureArtifactFigure_NameContainer(org.eclipse.draw2d.RectangleFigure fig) {
-			fArtifactFigure_NameContainer = fig;
 		}
 
 		/**

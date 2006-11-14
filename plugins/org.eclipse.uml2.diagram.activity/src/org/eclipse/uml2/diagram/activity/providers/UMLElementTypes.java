@@ -442,7 +442,7 @@ public class UMLElementTypes {
 			/** 
 			 * @generated
 			 */
-			protected final FeatureInitializer add(FeatureInitializer initializer) {
+			protected final IFeatureInitializer add(IFeatureInitializer initializer) {
 				featureInitializers.add(initializer);
 				return initializer;
 			}
@@ -452,7 +452,7 @@ public class UMLElementTypes {
 			 */
 			public void init(EObject instance) {
 				for (java.util.Iterator it = featureInitializers.iterator(); it.hasNext();) {
-					FeatureInitializer nextExpr = (FeatureInitializer) it.next();
+					IFeatureInitializer nextExpr = (IFeatureInitializer) it.next();
 					try {
 						nextExpr.init(instance);
 					} catch (RuntimeException e) {
@@ -465,7 +465,7 @@ public class UMLElementTypes {
 		/** 
 		 * @generated
 		 */
-		interface FeatureInitializer {
+		interface IFeatureInitializer {
 
 			/**
 			 * @generated
@@ -476,10 +476,10 @@ public class UMLElementTypes {
 		/**
 		 * @generated
 		 */
-		static FeatureInitializer createNewElementFeatureInitializer(EStructuralFeature initFeature, ObjectInitializer[] newObjectInitializers) {
+		static IFeatureInitializer createNewElementFeatureInitializer(EStructuralFeature initFeature, ObjectInitializer[] newObjectInitializers) {
 			final EStructuralFeature feature = initFeature;
 			final ObjectInitializer[] initializers = newObjectInitializers;
-			return new FeatureInitializer() {
+			return new IFeatureInitializer() {
 
 				public void init(EObject contextInstance) {
 					for (int i = 0; i < initializers.length; i++) {
@@ -498,10 +498,10 @@ public class UMLElementTypes {
 		/**
 		 * @generated
 		 */
-		static FeatureInitializer createExpressionFeatureInitializer(EStructuralFeature initFeature, UMLAbstractExpression valueExpression) {
+		static IFeatureInitializer createExpressionFeatureInitializer(EStructuralFeature initFeature, UMLAbstractExpression valueExpression) {
 			final EStructuralFeature feature = initFeature;
 			final UMLAbstractExpression expression = valueExpression;
-			return new FeatureInitializer() {
+			return new IFeatureInitializer() {
 
 				public void init(EObject contextInstance) {
 					expression.assignTo(feature, contextInstance);

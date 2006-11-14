@@ -21,7 +21,9 @@ import org.eclipse.uml2.diagram.activity.edit.parts.OutputPinName2EditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.OutputPinName3EditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.OutputPinNameEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.PinNameEditPart;
+
 import org.eclipse.uml2.diagram.activity.part.UMLVisualIDRegistry;
+
 import org.eclipse.uml2.uml.UMLPackage;
 
 /**
