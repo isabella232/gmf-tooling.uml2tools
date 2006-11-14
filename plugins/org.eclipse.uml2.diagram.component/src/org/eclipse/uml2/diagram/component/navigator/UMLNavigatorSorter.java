@@ -2,6 +2,8 @@ package org.eclipse.uml2.diagram.component.navigator;
 
 import org.eclipse.jface.viewers.ViewerSorter;
 
+import org.eclipse.uml2.diagram.component.part.UMLVisualIDRegistry;
+
 import org.eclipse.uml2.diagram.component.edit.parts.PackageEditPart;
 
 /**
@@ -12,7 +14,7 @@ public class UMLNavigatorSorter extends ViewerSorter {
 	/**
 	 * @generated
 	 */
-	private static final int GROUP_CATEGORY = 7003;
+	private static final int GROUP_CATEGORY = 7004;
 
 	/**
 	 * @generated
@@ -20,9 +22,7 @@ public class UMLNavigatorSorter extends ViewerSorter {
 	public int category(Object element) {
 		if (element instanceof UMLNavigatorItem) {
 			UMLNavigatorItem item = (UMLNavigatorItem) element;
-			if (PackageEditPart.MODEL_ID.equals(item.getModelID())) {
-				return item.getVisualID();
-			}
+			return UMLVisualIDRegistry.getVisualID(item.getView());
 		}
 		return GROUP_CATEGORY;
 	}

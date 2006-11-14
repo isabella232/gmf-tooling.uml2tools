@@ -8,6 +8,9 @@ import org.eclipse.emf.ecore.resource.Resource;
 
 import org.eclipse.gef.EditPart;
 
+import org.eclipse.gmf.runtime.diagram.ui.parts.DiagramEditor;
+import org.eclipse.gmf.runtime.diagram.ui.parts.DiagramEditorInput;
+
 import org.eclipse.gmf.runtime.notation.View;
 
 import org.eclipse.jface.viewers.IStructuredSelection;
@@ -44,49 +47,40 @@ public class UMLNavigatorLinkHelper implements ILinkHelper {
 		if (aSelection == null || aSelection.isEmpty()) {
 			return;
 		}
-		if (aSelection.getFirstElement() instanceof UMLAbstractNavigatorItem) {
-			UMLAbstractNavigatorItem navigatorItem = (UMLAbstractNavigatorItem) aSelection.getFirstElement();
-			if (!PackageEditPart.MODEL_ID.equals(navigatorItem.getModelID())) {
-				return;
-			}
-			Object parentFile = navigatorItem.getParent();
-			while (parentFile instanceof UMLAbstractNavigatorItem) {
-				parentFile = ((UMLAbstractNavigatorItem) parentFile).getParent();
-			}
-			if (false == parentFile instanceof IFile) {
-				return;
-			}
-			IEditorInput fileInput = new FileEditorInput((IFile) parentFile);
-			IEditorPart editor = aPage.findEditor(fileInput);
-			if (editor == null) {
-				return;
-			}
-			aPage.bringToTop(editor);
-			if (editor instanceof UMLDiagramEditor) {
-				UMLDiagramEditor diagramEditor = (UMLDiagramEditor) editor;
-				Resource diagramResource = diagramEditor.getDiagram().eResource();
+		if (false == aSelection.getFirstElement() instanceof UMLAbstractNavigatorItem) {
+			return;
+		}
 
-				View navigatorView = null;
-				if (navigatorItem instanceof UMLNavigatorItem) {
-					navigatorView = ((UMLNavigatorItem) navigatorItem).getView();
-				} else if (navigatorItem instanceof UMLNavigatorGroup) {
-					UMLNavigatorGroup group = (UMLNavigatorGroup) navigatorItem;
-					if (group.getParent() instanceof UMLNavigatorItem) {
-						navigatorView = ((UMLNavigatorItem) group.getParent()).getView();
-					}
-				}
+		UMLAbstractNavigatorItem navigatorItem = (UMLAbstractNavigatorItem) aSelection.getFirstElement();
+		View navigatorView = null;
+		if (navigatorItem instanceof UMLNavigatorItem) {
+			navigatorView = ((UMLNavigatorItem) navigatorItem).getView();
+		} else if (navigatorItem instanceof UMLNavigatorGroup) {
+			UMLNavigatorGroup group = (UMLNavigatorGroup) navigatorItem;
+			if (group.getParent() instanceof UMLNavigatorItem) {
+				navigatorView = ((UMLNavigatorItem) group.getParent()).getView();
+			}
+		}
+		if (navigatorView == null) {
+			return;
+		}
+		DiagramEditorInput editorInput = new DiagramEditorInput(navigatorView.getDiagram());
+		IEditorPart editor = aPage.findEditor(editorInput);
+		if (editor == null) {
+			return;
+		}
+		aPage.bringToTop(editor);
+		if (editor instanceof DiagramEditor) {
+			DiagramEditor diagramEditor = (DiagramEditor) editor;
+			Resource diagramResource = diagramEditor.getDiagram().eResource();
 
-				if (navigatorView == null) {
-					return;
-				}
-				EObject selectedView = diagramResource.getEObject(navigatorView.eResource().getURIFragment(navigatorView));
-				if (selectedView == null) {
-					return;
-				}
-				EditPart selectedEditPart = (EditPart) diagramEditor.getDiagramGraphicalViewer().getEditPartRegistry().get(selectedView);
-				if (selectedEditPart != null) {
-					diagramEditor.getDiagramGraphicalViewer().select(selectedEditPart);
-				}
+			EObject selectedView = diagramResource.getEObject(navigatorView.eResource().getURIFragment(navigatorView));
+			if (selectedView == null) {
+				return;
+			}
+			EditPart selectedEditPart = (EditPart) diagramEditor.getDiagramGraphicalViewer().getEditPartRegistry().get(selectedView);
+			if (selectedEditPart != null) {
+				diagramEditor.getDiagramGraphicalViewer().select(selectedEditPart);
 			}
 		}
 	}

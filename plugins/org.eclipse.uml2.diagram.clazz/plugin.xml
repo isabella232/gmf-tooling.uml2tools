@@ -8,10 +8,12 @@
 <!-- gmf generator persistent region end -->
 
    <extension point="org.eclipse.core.runtime.preferences">
+      <?gmfgen generated="true"?>
       <initializer class="org.eclipse.uml2.diagram.clazz.part.UMLDiagramPreferenceInitializer"/>
    </extension>
 
    <extension point="org.eclipse.team.core.fileTypes">
+      <?gmfgen generated="true"?>
       <fileTypes
          type="text"
          extension="umlclass_diagram">
@@ -19,6 +21,7 @@
    </extension>
 
    <extension point="org.eclipse.emf.ecore.extension_parser">
+      <?gmfgen generated="true"?>
       <parser
          type="umlclass_diagram"
          class="org.eclipse.gmf.runtime.emf.core.resources.GMFResourceFactory">
@@ -26,6 +29,7 @@
    </extension>
 
    <extension point="org.eclipse.ui.editors">
+      <?gmfgen generated="true"?>
      <editor
         id="org.eclipse.uml2.diagram.clazz.part.UMLDiagramEditorID"
         name="%editorName"
@@ -39,6 +43,7 @@
    </extension>
 
    <extension point="org.eclipse.ui.newWizards">
+      <?gmfgen generated="true"?>
   	  <wizard
   	     name="%newWizardName"
   	     icon="icons/obj16/UMLDiagramFile.gif"
@@ -50,6 +55,7 @@
    </extension>
 
    <extension point="org.eclipse.ui.popupMenus">
+      <?gmfgen generated="true"?>
       <objectContribution
             id="org.eclipse.uml2.diagram.clazz.ui.objectContribution.IFile1"
             nameFilter="*.uml"
@@ -77,6 +83,7 @@
   </extension>
 
    <extension point="org.eclipse.gmf.runtime.common.ui.services.action.contributionItemProviders">
+      <?gmfgen generated="true"?>
       <contributionItemProvider
             class="org.eclipse.gmf.runtime.diagram.ui.providers.DiagramContributionItemProvider"
             checkPluginLoaded="false">
@@ -344,6 +351,7 @@
    </extension>
 
    <extension point="org.eclipse.gmf.runtime.common.ui.services.action.globalActionHandlerProviders">
+      <?gmfgen generated="true"?>
       <GlobalActionHandlerProvider
          class="org.eclipse.gmf.runtime.diagram.ui.providers.DiagramGlobalActionHandlerProvider"
          id="UMLClassPresentation">
@@ -382,6 +390,7 @@
    </extension>
 
    <extension point="org.eclipse.gmf.runtime.diagram.core.viewProviders">
+      <?gmfgen generated="true"?>
       <viewProvider class="org.eclipse.uml2.diagram.clazz.providers.UMLViewProvider">
          <Priority name="Lowest"/>
          <context viewClass="org.eclipse.gmf.runtime.notation.Diagram" semanticHints="UMLClass"/>
@@ -391,12 +400,14 @@
    </extension>
 
    <extension point="org.eclipse.gmf.runtime.diagram.ui.editpartProviders">
+      <?gmfgen generated="true"?>
       <editpartProvider class="org.eclipse.uml2.diagram.clazz.providers.UMLEditPartProvider">
          <Priority name="Lowest"/>
       </editpartProvider>
    </extension>
 
    <extension point="org.eclipse.gmf.runtime.diagram.ui.paletteProviders">
+      <?gmfgen generated="true"?>
       <paletteProvider class="org.eclipse.uml2.diagram.clazz.providers.UMLPaletteProvider">
          <Priority name="Lowest"/>
          <editor id="org.eclipse.uml2.diagram.clazz.part.UMLDiagramEditorID"/>
@@ -404,24 +415,28 @@
    </extension>
 
    <extension point="org.eclipse.gmf.runtime.emf.ui.modelingAssistantProviders">
+      <?gmfgen generated="true"?>
       <modelingAssistantProvider class="org.eclipse.uml2.diagram.clazz.providers.UMLModelingAssistantProvider">
          <Priority name="Lowest"/>
       </modelingAssistantProvider>
    </extension>
 
    <extension point="org.eclipse.gmf.runtime.common.ui.services.iconProviders">
+      <?gmfgen generated="true"?>
       <IconProvider class="org.eclipse.uml2.diagram.clazz.providers.UMLIconProvider">
          <Priority name="Low"/>
       </IconProvider>
    </extension>
 
    <extension point="org.eclipse.gmf.runtime.common.ui.services.parserProviders">
+      <?gmfgen generated="true"?>
       <ParserProvider class="org.eclipse.uml2.diagram.clazz.providers.UMLParserProvider">
          <Priority name="Lowest"/>
       </ParserProvider>
    </extension>
 
    <extension point="org.eclipse.gmf.runtime.emf.type.core.elementTypes">
+      <?gmfgen generated="true"?>
 
       <metamodel nsURI="http://www.eclipse.org/uml2/2.0.0/UML">
          <metamodelType
@@ -887,6 +902,7 @@
    </extension>
 
    <extension point="org.eclipse.gmf.runtime.emf.type.core.elementTypeBindings">
+      <?gmfgen generated="true"?>
       <clientContext id="UMLClassClientContext">
          <enablement>
             <test
@@ -941,6 +957,7 @@
       </binding>
    </extension>
 
+
    <extension point="org.eclipse.ui.navigator.viewer">
       <viewerContentBinding viewerId="org.eclipse.ui.navigator.ProjectExplorer">
          <includes>
@@ -948,6 +965,11 @@
             <contentExtension pattern="org.eclipse.uml2.diagram.clazz.navigatorLinkHelper"/>
          </includes>
       </viewerContentBinding>
+      <viewerActionBinding viewerId="org.eclipse.ui.navigator.ProjectExplorer">
+         <includes>
+            <actionExtension pattern="org.eclipse.uml2.diagram.clazz.navigatorActionProvider"/>
+         </includes>
+      </viewerActionBinding>
    </extension>
 
    <extension point="org.eclipse.ui.navigator.navigatorContent">
@@ -961,15 +983,17 @@
             activeByDefault="true">
          <triggerPoints>
             <or>
-	            <and>
-    	           <instanceof value="org.eclipse.core.resources.IFile"/>
-        	       <test property="org.eclipse.core.resources.extension" value="umlclass_diagram"/>
-            	</and>
-            	<instanceof value="org.eclipse.uml2.diagram.clazz.navigator.UMLAbstractNavigatorItem"/>
+	           <and>
+    	          <instanceof value="org.eclipse.core.resources.IFile"/>
+        	      <test property="org.eclipse.core.resources.extension" value="umlclass_diagram"/>
+               </and>
+               <instanceof value="org.eclipse.uml2.diagram.clazz.navigator.UMLAbstractNavigatorItem"/>
             </or>
          </triggerPoints>
          <possibleChildren>
-         	<instanceof value="org.eclipse.uml2.diagram.clazz.navigator.UMLAbstractNavigatorItem"/>
+            <or>
+         	   <instanceof value="org.eclipse.uml2.diagram.clazz.navigator.UMLAbstractNavigatorItem"/>
+            </or>
          </possibleChildren>
          <commonSorter 
                id="org.eclipse.uml2.diagram.clazz.navigatorSorter" 
@@ -984,11 +1008,16 @@
                </or>
             </parentExpression>
          </commonSorter>
-         <actionProvider
-               id="org.eclipse.uml2.diagram.clazz.navigatorActionProvider"
-               class="org.eclipse.uml2.diagram.clazz.navigator.UMLNavigatorActionProvider">
-         </actionProvider>
       </navigatorContent>
+      <actionProvider
+            id="org.eclipse.uml2.diagram.clazz.navigatorActionProvider"
+            class="org.eclipse.uml2.diagram.clazz.navigator.UMLNavigatorActionProvider">
+         <enablement>
+            <or>
+               <instanceof value="org.eclipse.uml2.diagram.clazz.navigator.UMLAbstractNavigatorItem"/>
+            </or>
+         </enablement>
+      </actionProvider>
    </extension>
    
    <extension point="org.eclipse.ui.navigator.linkHelper">

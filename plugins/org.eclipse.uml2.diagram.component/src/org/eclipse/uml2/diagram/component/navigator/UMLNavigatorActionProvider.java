@@ -1,8 +1,12 @@
 package org.eclipse.uml2.diagram.component.navigator;
 
+import org.eclipse.core.runtime.IAdaptable;
+
 import org.eclipse.gmf.runtime.diagram.ui.parts.DiagramEditorInput;
 
 import org.eclipse.gmf.runtime.notation.Diagram;
+
+import org.eclipse.gmf.runtime.notation.View;
 
 import org.eclipse.jface.action.Action;
 import org.eclipse.jface.action.IMenuManager;
@@ -78,16 +82,6 @@ public class UMLNavigatorActionProvider extends CommonActionProvider {
 	 * @generated
 	 */
 	public void fillContextMenu(IMenuManager menu) {
-		/*		if (!myContribute || getContext().getSelection().isEmpty()) {
-		 return;
-		 }
-
-		 IStructuredSelection selection = (IStructuredSelection) getContext().getSelection();
-
-		 myOpenDiagramAction.selectionChanged(selection);
-		 if (myOpenDiagramAction.isEnabled()) {
-		 menu.insertAfter(ICommonMenuConstants.GROUP_OPEN, myOpenDiagramAction);
-		 }*/
 	}
 
 	/**
@@ -122,6 +116,8 @@ public class UMLNavigatorActionProvider extends CommonActionProvider {
 				Object selectedElement = selection.getFirstElement();
 				if (selectedElement instanceof UMLNavigatorItem) {
 					selectedElement = ((UMLNavigatorItem) selectedElement).getView();
+				} else if (selectedElement instanceof IAdaptable) {
+					selectedElement = ((IAdaptable) selectedElement).getAdapter(View.class);
 				}
 				if (selectedElement instanceof Diagram) {
 					Diagram diagram = (Diagram) selectedElement;

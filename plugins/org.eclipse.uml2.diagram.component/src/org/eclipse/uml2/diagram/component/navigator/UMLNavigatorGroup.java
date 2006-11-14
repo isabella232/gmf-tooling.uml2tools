@@ -21,21 +21,15 @@ public class UMLNavigatorGroup extends UMLAbstractNavigatorItem {
 	/**
 	 * @generated
 	 */
-	private String myModelID;
-
-	/**
-	 * @generated
-	 */
 	private Collection myChildren = new LinkedList();
 
 	/**
 	 * @generated
 	 */
-	UMLNavigatorGroup(String groupName, String icon, String modelID, Object parent) {
+	UMLNavigatorGroup(String groupName, String icon, Object parent) {
 		super(parent);
 		myGroupName = groupName;
 		myIcon = icon;
-		myModelID = modelID;
 	}
 
 	/**
@@ -78,13 +72,6 @@ public class UMLNavigatorGroup extends UMLAbstractNavigatorItem {
 	 */
 	public boolean isEmpty() {
 		return myChildren.size() == 0;
-	}
-
-	/**
-	 * @generated
-	 */
-	public String getModelID() {
-		return myModelID;
 	}
 
 	/**

@@ -161,7 +161,7 @@ public class UMLNewDiagramFileWizard extends Wizard {
 		}
 
 		ResourceSet resourceSet = myEditingDomain.getResourceSet();
-		final Resource diagramResource = resourceSet.createResource(URI.createPlatformResourceURI(diagramFile.getFullPath().toString()));
+		final Resource diagramResource = resourceSet.createResource(URI.createPlatformResourceURI(diagramFile.getFullPath().toString(), true));
 
 		List affectedFiles = new LinkedList();
 		affectedFiles.add(mySelectedModelFile);
@@ -183,7 +183,7 @@ public class UMLNewDiagramFileWizard extends Wizard {
 		try {
 			OperationHistoryFactory.getOperationHistory().execute(command, new NullProgressMonitor(), null);
 			diagramResource.save(Collections.EMPTY_MAP);
-			UMLDiagramEditorUtil.openDiagramEditor(myWorkbenchPage, diagramFile);
+			UMLDiagramEditorUtil.openDiagram(diagramResource);
 		} catch (ExecutionException e) {
 			UMLDiagramEditorPlugin.getInstance().logError("Unable to create model and diagram", e); //$NON-NLS-1$
 		} catch (IOException ex) {

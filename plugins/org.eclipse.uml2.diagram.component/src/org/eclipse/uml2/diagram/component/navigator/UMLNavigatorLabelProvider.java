@@ -17,7 +17,11 @@ import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.jface.resource.ImageDescriptor;
 import org.eclipse.jface.resource.ImageRegistry;
 
+import org.eclipse.jface.viewers.ITreePathLabelProvider;
 import org.eclipse.jface.viewers.LabelProvider;
+
+import org.eclipse.jface.viewers.TreePath;
+import org.eclipse.jface.viewers.ViewerLabel;
 
 import org.eclipse.swt.graphics.Image;
 
@@ -59,7 +63,7 @@ import org.eclipse.uml2.uml.NamedElement;
 /**
  * @generated
  */
-public class UMLNavigatorLabelProvider extends LabelProvider implements ICommonLabelProvider {
+public class UMLNavigatorLabelProvider extends LabelProvider implements ICommonLabelProvider, ITreePathLabelProvider {
 
 	/**
 	 * @generated
@@ -73,53 +77,69 @@ public class UMLNavigatorLabelProvider extends LabelProvider implements ICommonL
 	/**
 	 * @generated
 	 */
+	public void updateLabel(ViewerLabel label, TreePath elementPath) {
+		Object element = elementPath.getLastSegment();
+		if (element instanceof UMLNavigatorItem && !isOwnView(((UMLNavigatorItem) element).getView())) {
+			return;
+		}
+		label.setText(getText(element));
+		label.setImage(getImage(element));
+	}
+
+	/**
+	 * @generated
+	 */
 	public Image getImage(Object element) {
-		if (false == element instanceof UMLAbstractNavigatorItem) {
-			return super.getImage(element);
-		}
-
-		UMLAbstractNavigatorItem abstractNavigatorItem = (UMLAbstractNavigatorItem) element;
-		if (!PackageEditPart.MODEL_ID.equals(abstractNavigatorItem.getModelID())) {
-			return super.getImage(element);
-		}
-
-		if (abstractNavigatorItem instanceof UMLNavigatorItem) {
-			UMLNavigatorItem navigatorItem = (UMLNavigatorItem) abstractNavigatorItem;
-			switch (navigatorItem.getVisualID()) {
-			case ComponentEditPart.VISUAL_ID:
-				return getImage("Navigator?TopLevelNode?http://www.eclipse.org/uml2/2.0.0/UML?Component", UMLElementTypes.Component_2001);
-			case Artifact2EditPart.VISUAL_ID:
-				return getImage("Navigator?TopLevelNode?http://www.eclipse.org/uml2/2.0.0/UML?Artifact", UMLElementTypes.Artifact_2002);
-			case Interface2EditPart.VISUAL_ID:
-				return getImage("Navigator?TopLevelNode?http://www.eclipse.org/uml2/2.0.0/UML?Interface", UMLElementTypes.Interface_2003);
-			case Class2EditPart.VISUAL_ID:
-				return getImage("Navigator?TopLevelNode?http://www.eclipse.org/uml2/2.0.0/UML?Class", UMLElementTypes.Class_2004);
-			case Component2EditPart.VISUAL_ID:
-				return getImage("Navigator?Node?http://www.eclipse.org/uml2/2.0.0/UML?Component", UMLElementTypes.Component_3001);
-			case PortEditPart.VISUAL_ID:
-				return getImage("Navigator?Node?http://www.eclipse.org/uml2/2.0.0/UML?Port", UMLElementTypes.Port_3002);
-			case ArtifactEditPart.VISUAL_ID:
-				return getImage("Navigator?Node?http://www.eclipse.org/uml2/2.0.0/UML?Artifact", UMLElementTypes.Artifact_3003);
-			case ClassEditPart.VISUAL_ID:
-				return getImage("Navigator?Node?http://www.eclipse.org/uml2/2.0.0/UML?Class", UMLElementTypes.Class_3004);
-			case InterfaceEditPart.VISUAL_ID:
-				return getImage("Navigator?Node?http://www.eclipse.org/uml2/2.0.0/UML?Interface", UMLElementTypes.Interface_3005);
-			case PackageEditPart.VISUAL_ID:
-				return getImage("Navigator?Diagram?http://www.eclipse.org/uml2/2.0.0/UML?Package", UMLElementTypes.Package_1000);
-			case InterfaceRealizationEditPart.VISUAL_ID:
-				return getImage("Navigator?Link?http://www.eclipse.org/uml2/2.0.0/UML?InterfaceRealization", UMLElementTypes.InterfaceRealization_4001);
-			case PortProvidedEditPart.VISUAL_ID:
-				return getImage("Navigator?Link?http://www.eclipse.org/uml2/2.0.0/UML?Port?provided", UMLElementTypes.PortProvided_4006);
-			case PortRequiredEditPart.VISUAL_ID:
-				return getImage("Navigator?Link?http://www.eclipse.org/uml2/2.0.0/UML?Port?required", UMLElementTypes.PortRequired_4004);
-			default:
-				return getImage("Navigator?UnknownElement", null);
-			}
-		} else if (abstractNavigatorItem instanceof UMLNavigatorGroup) {
+		if (element instanceof UMLNavigatorGroup) {
 			UMLNavigatorGroup group = (UMLNavigatorGroup) element;
 			return UMLDiagramEditorPlugin.getInstance().getBundledImage(group.getIcon());
 		}
+
+		if (element instanceof UMLNavigatorItem) {
+			UMLNavigatorItem navigatorItem = (UMLNavigatorItem) element;
+			if (!isOwnView(navigatorItem.getView())) {
+				return super.getImage(element);
+			}
+			return getImage(navigatorItem.getView());
+		}
+
 		return super.getImage(element);
+	}
+
+	/**
+	 * @generated
+	 */
+	public Image getImage(View view) {
+		switch (UMLVisualIDRegistry.getVisualID(view)) {
+		case ComponentEditPart.VISUAL_ID:
+			return getImage("Navigator?TopLevelNode?http://www.eclipse.org/uml2/2.0.0/UML?Component", UMLElementTypes.Component_2001);
+		case Artifact2EditPart.VISUAL_ID:
+			return getImage("Navigator?TopLevelNode?http://www.eclipse.org/uml2/2.0.0/UML?Artifact", UMLElementTypes.Artifact_2002);
+		case Interface2EditPart.VISUAL_ID:
+			return getImage("Navigator?TopLevelNode?http://www.eclipse.org/uml2/2.0.0/UML?Interface", UMLElementTypes.Interface_2003);
+		case Class2EditPart.VISUAL_ID:
+			return getImage("Navigator?TopLevelNode?http://www.eclipse.org/uml2/2.0.0/UML?Class", UMLElementTypes.Class_2004);
+		case Component2EditPart.VISUAL_ID:
+			return getImage("Navigator?Node?http://www.eclipse.org/uml2/2.0.0/UML?Component", UMLElementTypes.Component_3001);
+		case PortEditPart.VISUAL_ID:
+			return getImage("Navigator?Node?http://www.eclipse.org/uml2/2.0.0/UML?Port", UMLElementTypes.Port_3002);
+		case ArtifactEditPart.VISUAL_ID:
+			return getImage("Navigator?Node?http://www.eclipse.org/uml2/2.0.0/UML?Artifact", UMLElementTypes.Artifact_3003);
+		case ClassEditPart.VISUAL_ID:
+			return getImage("Navigator?Node?http://www.eclipse.org/uml2/2.0.0/UML?Class", UMLElementTypes.Class_3004);
+		case InterfaceEditPart.VISUAL_ID:
+			return getImage("Navigator?Node?http://www.eclipse.org/uml2/2.0.0/UML?Interface", UMLElementTypes.Interface_3005);
+		case PackageEditPart.VISUAL_ID:
+			return getImage("Navigator?Diagram?http://www.eclipse.org/uml2/2.0.0/UML?Package", UMLElementTypes.Package_1000);
+		case InterfaceRealizationEditPart.VISUAL_ID:
+			return getImage("Navigator?Link?http://www.eclipse.org/uml2/2.0.0/UML?InterfaceRealization", UMLElementTypes.InterfaceRealization_4001);
+		case PortProvidedEditPart.VISUAL_ID:
+			return getImage("Navigator?Link?http://www.eclipse.org/uml2/2.0.0/UML?Port?provided", UMLElementTypes.PortProvided_4006);
+		case PortRequiredEditPart.VISUAL_ID:
+			return getImage("Navigator?Link?http://www.eclipse.org/uml2/2.0.0/UML?Port?required", UMLElementTypes.PortRequired_4004);
+		default:
+			return getImage("Navigator?UnknownElement", null);
+		}
 	}
 
 	/**
@@ -144,52 +164,56 @@ public class UMLNavigatorLabelProvider extends LabelProvider implements ICommonL
 	 * @generated
 	 */
 	public String getText(Object element) {
-		if (false == element instanceof UMLAbstractNavigatorItem) {
-			return super.getText(element);
-		}
-
-		UMLAbstractNavigatorItem abstractNavigatorItem = (UMLAbstractNavigatorItem) element;
-		if (!PackageEditPart.MODEL_ID.equals(abstractNavigatorItem.getModelID())) {
-			return super.getText(element);
-		}
-
-		if (abstractNavigatorItem instanceof UMLNavigatorItem) {
-			UMLNavigatorItem navigatorItem = (UMLNavigatorItem) abstractNavigatorItem;
-			switch (navigatorItem.getVisualID()) {
-			case ComponentEditPart.VISUAL_ID:
-				return getComponent_2001Text(navigatorItem.getView());
-			case Artifact2EditPart.VISUAL_ID:
-				return getArtifact_2002Text(navigatorItem.getView());
-			case Interface2EditPart.VISUAL_ID:
-				return getInterface_2003Text(navigatorItem.getView());
-			case Class2EditPart.VISUAL_ID:
-				return getClass_2004Text(navigatorItem.getView());
-			case Component2EditPart.VISUAL_ID:
-				return getComponent_3001Text(navigatorItem.getView());
-			case PortEditPart.VISUAL_ID:
-				return getPort_3002Text(navigatorItem.getView());
-			case ArtifactEditPart.VISUAL_ID:
-				return getArtifact_3003Text(navigatorItem.getView());
-			case ClassEditPart.VISUAL_ID:
-				return getClass_3004Text(navigatorItem.getView());
-			case InterfaceEditPart.VISUAL_ID:
-				return getInterface_3005Text(navigatorItem.getView());
-			case PackageEditPart.VISUAL_ID:
-				return getPackage_1000Text(navigatorItem.getView());
-			case InterfaceRealizationEditPart.VISUAL_ID:
-				return getInterfaceRealization_4001Text(navigatorItem.getView());
-			case PortProvidedEditPart.VISUAL_ID:
-				return getPortProvided_4006Text(navigatorItem.getView());
-			case PortRequiredEditPart.VISUAL_ID:
-				return getPortRequired_4004Text(navigatorItem.getView());
-			default:
-				return getUnknownElementText(navigatorItem.getView());
-			}
-		} else if (abstractNavigatorItem instanceof UMLNavigatorGroup) {
+		if (element instanceof UMLNavigatorGroup) {
 			UMLNavigatorGroup group = (UMLNavigatorGroup) element;
 			return group.getGroupName();
 		}
+
+		if (element instanceof UMLNavigatorItem) {
+			UMLNavigatorItem navigatorItem = (UMLNavigatorItem) element;
+			if (!isOwnView(navigatorItem.getView())) {
+				return null;
+			}
+			return getText(navigatorItem.getView());
+		}
+
 		return super.getText(element);
+	}
+
+	/**
+	 * @generated
+	 */
+	public String getText(View view) {
+		switch (UMLVisualIDRegistry.getVisualID(view)) {
+		case ComponentEditPart.VISUAL_ID:
+			return getComponent_2001Text(view);
+		case Artifact2EditPart.VISUAL_ID:
+			return getArtifact_2002Text(view);
+		case Interface2EditPart.VISUAL_ID:
+			return getInterface_2003Text(view);
+		case Class2EditPart.VISUAL_ID:
+			return getClass_2004Text(view);
+		case Component2EditPart.VISUAL_ID:
+			return getComponent_3001Text(view);
+		case PortEditPart.VISUAL_ID:
+			return getPort_3002Text(view);
+		case ArtifactEditPart.VISUAL_ID:
+			return getArtifact_3003Text(view);
+		case ClassEditPart.VISUAL_ID:
+			return getClass_3004Text(view);
+		case InterfaceEditPart.VISUAL_ID:
+			return getInterface_3005Text(view);
+		case PackageEditPart.VISUAL_ID:
+			return getPackage_1000Text(view);
+		case InterfaceRealizationEditPart.VISUAL_ID:
+			return getInterfaceRealization_4001Text(view);
+		case PortProvidedEditPart.VISUAL_ID:
+			return getPortProvided_4006Text(view);
+		case PortRequiredEditPart.VISUAL_ID:
+			return getPortRequired_4004Text(view);
+		default:
+			return getUnknownElementText(view);
+		}
 	}
 
 	/**
@@ -478,6 +502,13 @@ public class UMLNavigatorLabelProvider extends LabelProvider implements ICommonL
 	 */
 	public String getDescription(Object anElement) {
 		return null;
+	}
+
+	/**
+	 * @generated
+	 */
+	private boolean isOwnView(View view) {
+		return PackageEditPart.MODEL_ID.equals(UMLVisualIDRegistry.getModelID(view));
 	}
 
 }
