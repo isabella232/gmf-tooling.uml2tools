@@ -180,12 +180,18 @@ public class FinalStateEditPart extends ShapeNodeEditPart {
 		 */
 		public ActivityFinalFigure() {
 
-			org.eclipse.uml2.diagram.common.draw2d.CenterLayout myGenLayoutManager = new org.eclipse.uml2.diagram.common.draw2d.CenterLayout();
+			org.eclipse.uml2.diagram.common.draw2d.CenterLayout layoutThis = new org.eclipse.uml2.diagram.common.draw2d.CenterLayout();
 
-			this.setLayoutManager(myGenLayoutManager);
+			this.setLayoutManager(layoutThis);
 
+			this.setFill(true);
+			this.setFillXOR(false);
+			this.setOutline(true);
+			this.setOutlineXOR(false);
+			this.setLineWidth(1);
+			this.setLineStyle(org.eclipse.draw2d.Graphics.LINE_SOLID);
 			this.setForegroundColor(org.eclipse.draw2d.ColorConstants.black);
-			this.setPreferredSize(getMapMode().DPtoLP(23), getMapMode().DPtoLP(23));
+			this.setPreferredSize(new org.eclipse.draw2d.geometry.Dimension(getMapMode().DPtoLP(23), getMapMode().DPtoLP(23)));
 			this.setMaximumSize(new org.eclipse.draw2d.geometry.Dimension(getMapMode().DPtoLP(23), getMapMode().DPtoLP(23)));
 			this.setMinimumSize(new org.eclipse.draw2d.geometry.Dimension(getMapMode().DPtoLP(23), getMapMode().DPtoLP(23)));
 			createContents();
@@ -195,37 +201,21 @@ public class FinalStateEditPart extends ShapeNodeEditPart {
 		 * @generated
 		 */
 		private void createContents() {
-			org.eclipse.draw2d.Ellipse fig_0 = new org.eclipse.draw2d.Ellipse();
 
-			fig_0.setBackgroundColor(org.eclipse.draw2d.ColorConstants.black);
-			fig_0.setPreferredSize(getMapMode().DPtoLP(15), getMapMode().DPtoLP(15));
-			fig_0.setMaximumSize(new org.eclipse.draw2d.geometry.Dimension(getMapMode().DPtoLP(15), getMapMode().DPtoLP(15)));
-			fig_0.setMinimumSize(new org.eclipse.draw2d.geometry.Dimension(getMapMode().DPtoLP(15), getMapMode().DPtoLP(15)));
+			org.eclipse.draw2d.Ellipse activityFinalFigure_inner0 = new org.eclipse.draw2d.Ellipse();
+			activityFinalFigure_inner0.setFill(true);
+			activityFinalFigure_inner0.setFillXOR(false);
+			activityFinalFigure_inner0.setOutline(true);
+			activityFinalFigure_inner0.setOutlineXOR(false);
+			activityFinalFigure_inner0.setLineWidth(1);
+			activityFinalFigure_inner0.setLineStyle(org.eclipse.draw2d.Graphics.LINE_SOLID);
+			activityFinalFigure_inner0.setBackgroundColor(org.eclipse.draw2d.ColorConstants.black);
+			activityFinalFigure_inner0.setPreferredSize(new org.eclipse.draw2d.geometry.Dimension(getMapMode().DPtoLP(15), getMapMode().DPtoLP(15)));
+			activityFinalFigure_inner0.setMaximumSize(new org.eclipse.draw2d.geometry.Dimension(getMapMode().DPtoLP(15), getMapMode().DPtoLP(15)));
+			activityFinalFigure_inner0.setMinimumSize(new org.eclipse.draw2d.geometry.Dimension(getMapMode().DPtoLP(15), getMapMode().DPtoLP(15)));
 
-			setFigureActivityFinalFigure_inner(fig_0);
+			this.add(activityFinalFigure_inner0);
 
-			Object layData0 = null;
-
-			this.add(fig_0, layData0);
-		}
-
-		/**
-		 * @generated
-		 */
-		private org.eclipse.draw2d.Ellipse fActivityFinalFigure_inner;
-
-		/**
-		 * @generated
-		 */
-		public org.eclipse.draw2d.Ellipse getFigureActivityFinalFigure_inner() {
-			return fActivityFinalFigure_inner;
-		}
-
-		/**
-		 * @generated
-		 */
-		private void setFigureActivityFinalFigure_inner(org.eclipse.draw2d.Ellipse fig) {
-			fActivityFinalFigure_inner = fig;
 		}
 
 		/**

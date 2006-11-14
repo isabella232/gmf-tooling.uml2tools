@@ -162,98 +162,16 @@ public class Pseudostate2EditPart extends ShapeNodeEditPart {
 		/**
 		 * @generated
 		 */
-		public class ScalablePolygon extends org.eclipse.draw2d.Shape {
-
-			/**
-			 * @generated
-			 */
-			private final org.eclipse.draw2d.geometry.PointList myTemplate = new org.eclipse.draw2d.geometry.PointList();
-
-			/**
-			 * @generated
-			 */
-			private org.eclipse.draw2d.geometry.Rectangle myTemplateBounds;
-
-			/**
-			 * @generated
-			 */
-			public void addPoint(org.eclipse.draw2d.geometry.Point point) {
-				myTemplate.addPoint(point);
-				myTemplateBounds = null;
-			}
-
-			/**
-			 * @generated
-			 */
-			protected void fillShape(org.eclipse.draw2d.Graphics graphics) {
-				org.eclipse.draw2d.geometry.Rectangle bounds = getBounds();
-				graphics.pushState();
-				graphics.translate(bounds.x, bounds.y);
-				graphics.fillPolygon(scalePointList());
-				graphics.popState();
-			}
-
-			/**
-			 * @generated
-			 */
-			protected void outlineShape(org.eclipse.draw2d.Graphics graphics) {
-				org.eclipse.draw2d.geometry.Rectangle bounds = getBounds();
-				graphics.pushState();
-				graphics.translate(bounds.x, bounds.y);
-				graphics.drawPolygon(scalePointList());
-				graphics.popState();
-			}
-
-			/**
-			 * @generated
-			 */
-			private org.eclipse.draw2d.geometry.Rectangle getTemplateBounds() {
-				if (myTemplateBounds == null) {
-					myTemplateBounds = new org.eclipse.draw2d.geometry.Rectangle();
-					myTemplateBounds = myTemplate.getBounds().union(0, 0);
-					//just safety -- we are going to use this as divider 
-					if (myTemplateBounds.width < 1) {
-						myTemplateBounds.width = 1;
-					}
-					if (myTemplateBounds.height < 1) {
-						myTemplateBounds.height = 1;
-					}
-				}
-				return myTemplateBounds;
-			}
-
-			/**
-			 * @generated
-			 */
-			private int[] scalePointList() {
-				org.eclipse.draw2d.geometry.Rectangle pointsBounds = getTemplateBounds();
-				org.eclipse.draw2d.geometry.Rectangle actualBounds = getBounds();
-
-				float xScale = ((float) actualBounds.width) / pointsBounds.width;
-				float yScale = ((float) actualBounds.height) / pointsBounds.height;
-
-				if (xScale == 1 && yScale == 1) {
-					return myTemplate.toIntArray();
-				}
-				int[] scaled = (int[]) myTemplate.toIntArray().clone();
-				for (int i = 0; i < scaled.length; i += 2) {
-					scaled[i] = (int) Math.floor(scaled[i] * xScale);
-					scaled[i + 1] = (int) Math.floor(scaled[i + 1] * yScale);
-				}
-				return scaled;
-			}
-		}
-
-		/**
-		 * @generated
-		 */
 		public ShallowHistoryFigure() {
 
-			org.eclipse.draw2d.StackLayout myGenLayoutManager = new org.eclipse.draw2d.StackLayout();
-
-			this.setLayoutManager(myGenLayoutManager);
-
-			this.setPreferredSize(getMapMode().DPtoLP(25), getMapMode().DPtoLP(25));
+			this.setLayoutManager(new org.eclipse.draw2d.StackLayout());
+			this.setFill(true);
+			this.setFillXOR(false);
+			this.setOutline(true);
+			this.setOutlineXOR(false);
+			this.setLineWidth(1);
+			this.setLineStyle(org.eclipse.draw2d.Graphics.LINE_SOLID);
+			this.setPreferredSize(new org.eclipse.draw2d.geometry.Dimension(getMapMode().DPtoLP(25), getMapMode().DPtoLP(25)));
 			this.setMaximumSize(new org.eclipse.draw2d.geometry.Dimension(getMapMode().DPtoLP(25), getMapMode().DPtoLP(25)));
 			this.setMinimumSize(new org.eclipse.draw2d.geometry.Dimension(getMapMode().DPtoLP(25), getMapMode().DPtoLP(25)));
 			this.setBorder(new org.eclipse.draw2d.MarginBorder(getMapMode().DPtoLP(6), getMapMode().DPtoLP(8), getMapMode().DPtoLP(6), getMapMode().DPtoLP(8)));
@@ -264,41 +182,106 @@ public class Pseudostate2EditPart extends ShapeNodeEditPart {
 		 * @generated
 		 */
 		private void createContents() {
-			ScalablePolygon fig_0 = new ScalablePolygon();
-			fig_0.setFill(true);
-			fig_0.addPoint(new org.eclipse.draw2d.geometry.Point(0, 40));
-			fig_0.addPoint(new org.eclipse.draw2d.geometry.Point(0, 20));
-			fig_0.addPoint(new org.eclipse.draw2d.geometry.Point(40, 20));
-			fig_0.addPoint(new org.eclipse.draw2d.geometry.Point(40, 40));
-			fig_0.addPoint(new org.eclipse.draw2d.geometry.Point(40, 0));
-			fig_0.addPoint(new org.eclipse.draw2d.geometry.Point(40, 20));
-			fig_0.addPoint(new org.eclipse.draw2d.geometry.Point(0, 20));
-			fig_0.addPoint(new org.eclipse.draw2d.geometry.Point(0, 0));
 
-			setFigureShallowHistoryFigure_Letter(fig_0);
+			class ShallowHistoryFigure_Letter0Class extends org.eclipse.draw2d.Shape {
 
-			Object layData0 = null;
+				/**
+				 * @generated
+				 */
+				private final org.eclipse.draw2d.geometry.PointList myTemplate = new org.eclipse.draw2d.geometry.PointList();
 
-			this.add(fig_0, layData0);
-		}
+				/**
+				 * @generated
+				 */
+				private org.eclipse.draw2d.geometry.Rectangle myTemplateBounds;
 
-		/**
-		 * @generated
-		 */
-		private ScalablePolygon fShallowHistoryFigure_Letter;
+				/**
+				 * @generated
+				 */
+				public void addPoint(org.eclipse.draw2d.geometry.Point point) {
+					myTemplate.addPoint(point);
+					myTemplateBounds = null;
+				}
 
-		/**
-		 * @generated
-		 */
-		public ScalablePolygon getFigureShallowHistoryFigure_Letter() {
-			return fShallowHistoryFigure_Letter;
-		}
+				/**
+				 * @generated
+				 */
+				protected void fillShape(org.eclipse.draw2d.Graphics graphics) {
+					org.eclipse.draw2d.geometry.Rectangle bounds = getBounds();
+					graphics.pushState();
+					graphics.translate(bounds.x, bounds.y);
+					graphics.fillPolygon(scalePointList());
+					graphics.popState();
+				}
 
-		/**
-		 * @generated
-		 */
-		private void setFigureShallowHistoryFigure_Letter(ScalablePolygon fig) {
-			fShallowHistoryFigure_Letter = fig;
+				/**
+				 * @generated
+				 */
+				protected void outlineShape(org.eclipse.draw2d.Graphics graphics) {
+					org.eclipse.draw2d.geometry.Rectangle bounds = getBounds();
+					graphics.pushState();
+					graphics.translate(bounds.x, bounds.y);
+					graphics.drawPolygon(scalePointList());
+					graphics.popState();
+				}
+
+				/**
+				 * @generated
+				 */
+				private org.eclipse.draw2d.geometry.Rectangle getTemplateBounds() {
+					if (myTemplateBounds == null) {
+						myTemplateBounds = myTemplate.getBounds().getCopy().union(0, 0);
+						//just safety -- we are going to use this as divider 
+						if (myTemplateBounds.width < 1) {
+							myTemplateBounds.width = 1;
+						}
+						if (myTemplateBounds.height < 1) {
+							myTemplateBounds.height = 1;
+						}
+					}
+					return myTemplateBounds;
+				}
+
+				/**
+				 * @generated
+				 */
+				private int[] scalePointList() {
+					org.eclipse.draw2d.geometry.Rectangle pointsBounds = getTemplateBounds();
+					org.eclipse.draw2d.geometry.Rectangle actualBounds = getBounds();
+
+					float xScale = ((float) actualBounds.width) / pointsBounds.width;
+					float yScale = ((float) actualBounds.height) / pointsBounds.height;
+
+					if (xScale == 1 && yScale == 1) {
+						return myTemplate.toIntArray();
+					}
+					int[] scaled = (int[]) myTemplate.toIntArray().clone();
+					for (int i = 0; i < scaled.length; i += 2) {
+						scaled[i] = (int) Math.floor(scaled[i] * xScale);
+						scaled[i + 1] = (int) Math.floor(scaled[i + 1] * yScale);
+					}
+					return scaled;
+				}
+			}
+			;
+			ShallowHistoryFigure_Letter0Class shallowHistoryFigure_Letter0 = new ShallowHistoryFigure_Letter0Class();
+			shallowHistoryFigure_Letter0.addPoint(new org.eclipse.draw2d.geometry.Point(getMapMode().DPtoLP(0), getMapMode().DPtoLP(40)));
+			shallowHistoryFigure_Letter0.addPoint(new org.eclipse.draw2d.geometry.Point(getMapMode().DPtoLP(0), getMapMode().DPtoLP(20)));
+			shallowHistoryFigure_Letter0.addPoint(new org.eclipse.draw2d.geometry.Point(getMapMode().DPtoLP(40), getMapMode().DPtoLP(20)));
+			shallowHistoryFigure_Letter0.addPoint(new org.eclipse.draw2d.geometry.Point(getMapMode().DPtoLP(40), getMapMode().DPtoLP(40)));
+			shallowHistoryFigure_Letter0.addPoint(new org.eclipse.draw2d.geometry.Point(getMapMode().DPtoLP(40), getMapMode().DPtoLP(0)));
+			shallowHistoryFigure_Letter0.addPoint(new org.eclipse.draw2d.geometry.Point(getMapMode().DPtoLP(40), getMapMode().DPtoLP(20)));
+			shallowHistoryFigure_Letter0.addPoint(new org.eclipse.draw2d.geometry.Point(getMapMode().DPtoLP(0), getMapMode().DPtoLP(20)));
+			shallowHistoryFigure_Letter0.addPoint(new org.eclipse.draw2d.geometry.Point(getMapMode().DPtoLP(0), getMapMode().DPtoLP(0)));
+			shallowHistoryFigure_Letter0.setFill(true);
+			shallowHistoryFigure_Letter0.setFillXOR(false);
+			shallowHistoryFigure_Letter0.setOutline(true);
+			shallowHistoryFigure_Letter0.setOutlineXOR(false);
+			shallowHistoryFigure_Letter0.setLineWidth(1);
+			shallowHistoryFigure_Letter0.setLineStyle(org.eclipse.draw2d.Graphics.LINE_SOLID);
+
+			this.add(shallowHistoryFigure_Letter0);
+
 		}
 
 		/**

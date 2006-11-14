@@ -260,17 +260,15 @@ public class Pseudostate9EditPart extends ShapeNodeEditPart {
 		 * @generated
 		 */
 		public EntryPointFigure() {
-
-			this.setPreferredSize(getMapMode().DPtoLP(15), getMapMode().DPtoLP(15));
+			this.setFill(true);
+			this.setFillXOR(false);
+			this.setOutline(true);
+			this.setOutlineXOR(false);
+			this.setLineWidth(1);
+			this.setLineStyle(org.eclipse.draw2d.Graphics.LINE_SOLID);
+			this.setPreferredSize(new org.eclipse.draw2d.geometry.Dimension(getMapMode().DPtoLP(15), getMapMode().DPtoLP(15)));
 			this.setMaximumSize(new org.eclipse.draw2d.geometry.Dimension(getMapMode().DPtoLP(15), getMapMode().DPtoLP(15)));
 			this.setMinimumSize(new org.eclipse.draw2d.geometry.Dimension(getMapMode().DPtoLP(15), getMapMode().DPtoLP(15)));
-			createContents();
-		}
-
-		/**
-		 * @generated
-		 */
-		private void createContents() {
 		}
 
 		/**

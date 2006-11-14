@@ -26,17 +26,19 @@ import org.eclipse.gmf.runtime.gef.ui.figures.NodeFigure;
 
 import org.eclipse.gmf.runtime.notation.View;
 
-import org.eclipse.uml2.diagram.statemachine.edit.policies.Region2ItemSemanticEditPolicy;
+import org.eclipse.uml2.diagram.statemachine.edit.policies.State2ItemSemanticEditPolicy;
+
+import org.eclipse.uml2.diagram.statemachine.part.UMLVisualIDRegistry;
 
 /**
  * @generated
  */
-public class Region2EditPart extends ShapeNodeEditPart {
+public class State2EditPart extends ShapeNodeEditPart {
 
 	/**
 	 * @generated
 	 */
-	public static final int VISUAL_ID = 3002;
+	public static final int VISUAL_ID = 3012;
 
 	/**
 	 * @generated
@@ -51,7 +53,7 @@ public class Region2EditPart extends ShapeNodeEditPart {
 	/**
 	 * @generated
 	 */
-	public Region2EditPart(View view) {
+	public State2EditPart(View view) {
 		super(view);
 	}
 
@@ -60,7 +62,7 @@ public class Region2EditPart extends ShapeNodeEditPart {
 	 */
 	protected void createDefaultEditPolicies() {
 		super.createDefaultEditPolicies();
-		installEditPolicy(EditPolicyRoles.SEMANTIC_ROLE, new Region2ItemSemanticEditPolicy());
+		installEditPolicy(EditPolicyRoles.SEMANTIC_ROLE, new State2ItemSemanticEditPolicy());
 		installEditPolicy(EditPolicy.LAYOUT_ROLE, createLayoutEditPolicy());
 
 	}
@@ -94,23 +96,23 @@ public class Region2EditPart extends ShapeNodeEditPart {
 	 * @generated
 	 */
 	protected IFigure createNodeShape() {
-		RegionFigure figure = new RegionFigure();
+		CompositeStateFigure figure = new CompositeStateFigure();
 		return primaryShape = figure;
 	}
 
 	/**
 	 * @generated
 	 */
-	public RegionFigure getPrimaryShape() {
-		return (RegionFigure) primaryShape;
+	public CompositeStateFigure getPrimaryShape() {
+		return (CompositeStateFigure) primaryShape;
 	}
 
 	/**
 	 * @generated 
 	 */
 	protected IFigure getContentPaneFor(IGraphicalEditPart editPart) {
-		if (editPart instanceof RegionSubvertices2EditPart) {
-			return getPrimaryShape().getFigureRegionFigure_Compartment();
+		if (editPart instanceof StateContentEditPart) {
+			return getPrimaryShape().getFigureCompositeStateFigure_Body();
 		}
 
 		return super.getContentPaneFor(editPart);
@@ -120,10 +122,14 @@ public class Region2EditPart extends ShapeNodeEditPart {
 	 * @generated
 	 */
 	protected boolean addFixedChild(EditPart childEditPart) {
-		if (childEditPart instanceof RegionSubvertices2EditPart) {
-			IFigure pane = getPrimaryShape().getFigureRegionFigure_Compartment();
+		if (childEditPart instanceof StateName2EditPart) {
+			((StateName2EditPart) childEditPart).setLabel(getPrimaryShape().getFigureCompositeStateFigure_name());
+			return true;
+		}
+		if (childEditPart instanceof StateContentEditPart) {
+			IFigure pane = getPrimaryShape().getFigureCompositeStateFigure_Body();
 			setupContentPane(pane); // FIXME each comparment should handle his content pane in his own way 
-			pane.add(((RegionSubvertices2EditPart) childEditPart).getFigure());
+			pane.add(((StateContentEditPart) childEditPart).getFigure());
 			return true;
 		}
 		return false;
@@ -133,9 +139,9 @@ public class Region2EditPart extends ShapeNodeEditPart {
 	 * @generated
 	 */
 	protected boolean removeFixedChild(EditPart childEditPart) {
-		if (childEditPart instanceof RegionSubvertices2EditPart) {
-			IFigure pane = getPrimaryShape().getFigureRegionFigure_Compartment();
-			pane.remove(((RegionSubvertices2EditPart) childEditPart).getFigure());
+		if (childEditPart instanceof StateContentEditPart) {
+			IFigure pane = getPrimaryShape().getFigureCompositeStateFigure_Body();
+			pane.remove(((StateContentEditPart) childEditPart).getFigure());
 			return true;
 		}
 		return false;
@@ -145,7 +151,7 @@ public class Region2EditPart extends ShapeNodeEditPart {
 	 * @generated
 	 */
 	protected NodeFigure createNodePlate() {
-		DefaultSizeNodeFigure result = new DefaultSizeNodeFigure(getMapMode().DPtoLP(40), getMapMode().DPtoLP(40));
+		DefaultSizeNodeFigure result = new DefaultSizeNodeFigure(getMapMode().DPtoLP(60), getMapMode().DPtoLP(70));
 		return result;
 	}
 
@@ -194,6 +200,13 @@ public class Region2EditPart extends ShapeNodeEditPart {
 	/**
 	 * @generated
 	 */
+	public EditPart getPrimaryChildEditPart() {
+		return getChildBySemanticHint(UMLVisualIDRegistry.getType(StateName2EditPart.VISUAL_ID));
+	}
+
+	/**
+	 * @generated
+	 */
 	protected void addChildVisual(EditPart childEditPart, int index) {
 		if (addFixedChild(childEditPart)) {
 			return;
@@ -214,18 +227,20 @@ public class Region2EditPart extends ShapeNodeEditPart {
 	/**
 	 * @generated
 	 */
-	public class RegionFigure extends org.eclipse.draw2d.RectangleFigure {
+	public class CompositeStateFigure extends org.eclipse.draw2d.RoundedRectangle {
 
 		/**
 		 * @generated
 		 */
-		public RegionFigure() {
+		public CompositeStateFigure() {
+			this.setCornerDimensions(new org.eclipse.draw2d.geometry.Dimension(getMapMode().DPtoLP(18), getMapMode().DPtoLP(18)));
 			this.setFill(true);
 			this.setFillXOR(false);
 			this.setOutline(true);
 			this.setOutlineXOR(false);
 			this.setLineWidth(1);
-			this.setLineStyle(org.eclipse.draw2d.Graphics.LINE_DASH);
+			this.setLineStyle(org.eclipse.draw2d.Graphics.LINE_SOLID);
+			this.setBorder(new org.eclipse.draw2d.MarginBorder(getMapMode().DPtoLP(0), getMapMode().DPtoLP(2), getMapMode().DPtoLP(6), getMapMode().DPtoLP(2)));
 			createContents();
 		}
 
@@ -234,36 +249,61 @@ public class Region2EditPart extends ShapeNodeEditPart {
 		 */
 		private void createContents() {
 
-			org.eclipse.draw2d.RectangleFigure regionFigure_Compartment0 = new org.eclipse.draw2d.RectangleFigure();
-			regionFigure_Compartment0.setFill(false);
-			regionFigure_Compartment0.setFillXOR(false);
-			regionFigure_Compartment0.setOutline(false);
-			regionFigure_Compartment0.setOutlineXOR(false);
-			regionFigure_Compartment0.setLineWidth(1);
-			regionFigure_Compartment0.setLineStyle(org.eclipse.draw2d.Graphics.LINE_SOLID);
+			org.eclipse.gmf.runtime.draw2d.ui.figures.WrapLabel compositeStateFigure_name0 = new org.eclipse.gmf.runtime.draw2d.ui.figures.WrapLabel();
+			compositeStateFigure_name0.setText("");
 
-			this.add(regionFigure_Compartment0);
-			setFigureRegionFigure_Compartment(regionFigure_Compartment0);
+			this.add(compositeStateFigure_name0);
+			setFigureCompositeStateFigure_name(compositeStateFigure_name0);
+
+			org.eclipse.draw2d.RectangleFigure compositeStateFigure_Body0 = new org.eclipse.draw2d.RectangleFigure();
+			compositeStateFigure_Body0.setFill(true);
+			compositeStateFigure_Body0.setFillXOR(false);
+			compositeStateFigure_Body0.setOutline(false);
+			compositeStateFigure_Body0.setOutlineXOR(false);
+			compositeStateFigure_Body0.setLineWidth(1);
+			compositeStateFigure_Body0.setLineStyle(org.eclipse.draw2d.Graphics.LINE_SOLID);
+
+			this.add(compositeStateFigure_Body0);
+			setFigureCompositeStateFigure_Body(compositeStateFigure_Body0);
 
 		}
 
 		/**
 		 * @generated
 		 */
-		private org.eclipse.draw2d.RectangleFigure fRegionFigure_Compartment;
+		private org.eclipse.gmf.runtime.draw2d.ui.figures.WrapLabel fCompositeStateFigure_name;
 
 		/**
 		 * @generated
 		 */
-		public org.eclipse.draw2d.RectangleFigure getFigureRegionFigure_Compartment() {
-			return fRegionFigure_Compartment;
+		public org.eclipse.gmf.runtime.draw2d.ui.figures.WrapLabel getFigureCompositeStateFigure_name() {
+			return fCompositeStateFigure_name;
 		}
 
 		/**
 		 * @generated
 		 */
-		private void setFigureRegionFigure_Compartment(org.eclipse.draw2d.RectangleFigure fig) {
-			fRegionFigure_Compartment = fig;
+		private void setFigureCompositeStateFigure_name(org.eclipse.gmf.runtime.draw2d.ui.figures.WrapLabel fig) {
+			fCompositeStateFigure_name = fig;
+		}
+
+		/**
+		 * @generated
+		 */
+		private org.eclipse.draw2d.RectangleFigure fCompositeStateFigure_Body;
+
+		/**
+		 * @generated
+		 */
+		public org.eclipse.draw2d.RectangleFigure getFigureCompositeStateFigure_Body() {
+			return fCompositeStateFigure_Body;
+		}
+
+		/**
+		 * @generated
+		 */
+		private void setFigureCompositeStateFigure_Body(org.eclipse.draw2d.RectangleFigure fig) {
+			fCompositeStateFigure_Body = fig;
 		}
 
 		/**

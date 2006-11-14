@@ -24,7 +24,7 @@ public class StateContentEditPart extends ShapeCompartmentEditPart {
 	/**
 	 * @generated
 	 */
-	public static final int VISUAL_ID = 7002;
+	public static final int VISUAL_ID = 7004;
 
 	/**
 	 * @generated

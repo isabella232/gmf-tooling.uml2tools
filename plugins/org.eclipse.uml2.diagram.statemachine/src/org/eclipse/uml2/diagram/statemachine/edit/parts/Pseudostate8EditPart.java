@@ -162,6 +162,27 @@ public class Pseudostate8EditPart extends ShapeNodeEditPart {
 		/**
 		 * @generated
 		 */
+		public TerminateFigure() {
+			this.addPoint(new org.eclipse.draw2d.geometry.Point(getMapMode().DPtoLP(0), getMapMode().DPtoLP(0)));
+			this.addPoint(new org.eclipse.draw2d.geometry.Point(getMapMode().DPtoLP(40), getMapMode().DPtoLP(30)));
+			this.addPoint(new org.eclipse.draw2d.geometry.Point(getMapMode().DPtoLP(20), getMapMode().DPtoLP(15)));
+			this.addPoint(new org.eclipse.draw2d.geometry.Point(getMapMode().DPtoLP(40), getMapMode().DPtoLP(0)));
+			this.addPoint(new org.eclipse.draw2d.geometry.Point(getMapMode().DPtoLP(0), getMapMode().DPtoLP(30)));
+			this.addPoint(new org.eclipse.draw2d.geometry.Point(getMapMode().DPtoLP(20), getMapMode().DPtoLP(15)));
+			this.setFill(true);
+			this.setFillXOR(false);
+			this.setOutline(true);
+			this.setOutlineXOR(false);
+			this.setLineWidth(1);
+			this.setLineStyle(org.eclipse.draw2d.Graphics.LINE_SOLID);
+			this.setPreferredSize(new org.eclipse.draw2d.geometry.Dimension(getMapMode().DPtoLP(30), getMapMode().DPtoLP(25)));
+			this.setMaximumSize(new org.eclipse.draw2d.geometry.Dimension(getMapMode().DPtoLP(30), getMapMode().DPtoLP(25)));
+			this.setMinimumSize(new org.eclipse.draw2d.geometry.Dimension(getMapMode().DPtoLP(30), getMapMode().DPtoLP(25)));
+		}
+
+		/**
+		 * @generated
+		 */
 		private final org.eclipse.draw2d.geometry.PointList myTemplate = new org.eclipse.draw2d.geometry.PointList();
 
 		/**
@@ -204,8 +225,7 @@ public class Pseudostate8EditPart extends ShapeNodeEditPart {
 		 */
 		private org.eclipse.draw2d.geometry.Rectangle getTemplateBounds() {
 			if (myTemplateBounds == null) {
-				myTemplateBounds = new org.eclipse.draw2d.geometry.Rectangle();
-				myTemplateBounds = myTemplate.getBounds().union(0, 0);
+				myTemplateBounds = myTemplate.getBounds().getCopy().union(0, 0);
 				//just safety -- we are going to use this as divider 
 				if (myTemplateBounds.width < 1) {
 					myTemplateBounds.width = 1;
@@ -236,30 +256,6 @@ public class Pseudostate8EditPart extends ShapeNodeEditPart {
 				scaled[i + 1] = (int) Math.floor(scaled[i + 1] * yScale);
 			}
 			return scaled;
-		}
-
-		/**
-		 * @generated
-		 */
-		public TerminateFigure() {
-
-			this.setFill(true);
-			this.setPreferredSize(getMapMode().DPtoLP(30), getMapMode().DPtoLP(25));
-			this.setMaximumSize(new org.eclipse.draw2d.geometry.Dimension(getMapMode().DPtoLP(30), getMapMode().DPtoLP(25)));
-			this.setMinimumSize(new org.eclipse.draw2d.geometry.Dimension(getMapMode().DPtoLP(30), getMapMode().DPtoLP(25)));
-			this.addPoint(new org.eclipse.draw2d.geometry.Point(0, 0));
-			this.addPoint(new org.eclipse.draw2d.geometry.Point(40, 30));
-			this.addPoint(new org.eclipse.draw2d.geometry.Point(20, 15));
-			this.addPoint(new org.eclipse.draw2d.geometry.Point(40, 0));
-			this.addPoint(new org.eclipse.draw2d.geometry.Point(0, 30));
-			this.addPoint(new org.eclipse.draw2d.geometry.Point(20, 15));
-			createContents();
-		}
-
-		/**
-		 * @generated
-		 */
-		private void createContents() {
 		}
 
 	}

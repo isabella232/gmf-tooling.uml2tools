@@ -9,6 +9,7 @@ import org.eclipse.gmf.runtime.common.ui.services.parser.IParserProvider;
 import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.PseudostateName2EditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.PseudostateNameEditPart;
+import org.eclipse.uml2.diagram.statemachine.edit.parts.StateName2EditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.StateNameEditPart;
 
 import org.eclipse.uml2.diagram.statemachine.part.UMLVisualIDRegistry;
@@ -39,6 +40,29 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 	 * @generated
 	 */
 	protected IParser createStateStateName_5001Parser() {
+		UMLStructuralFeatureParser parser = new UMLStructuralFeatureParser(UMLPackage.eINSTANCE.getNamedElement_Name());
+		return parser;
+	}
+
+	/**
+	 * @generated
+	 */
+	private IParser stateStateName_5004Parser;
+
+	/**
+	 * @generated
+	 */
+	private IParser getStateStateName_5004Parser() {
+		if (stateStateName_5004Parser == null) {
+			stateStateName_5004Parser = createStateStateName_5004Parser();
+		}
+		return stateStateName_5004Parser;
+	}
+
+	/**
+	 * @generated
+	 */
+	protected IParser createStateStateName_5004Parser() {
 		UMLStructuralFeatureParser parser = new UMLStructuralFeatureParser(UMLPackage.eINSTANCE.getNamedElement_Name());
 		return parser;
 	}
@@ -96,6 +120,8 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 		switch (visualID) {
 		case StateNameEditPart.VISUAL_ID:
 			return getStateStateName_5001Parser();
+		case StateName2EditPart.VISUAL_ID:
+			return getStateStateName_5004Parser();
 		case PseudostateNameEditPart.VISUAL_ID:
 			return getPseudostatePseudostateName_5003Parser();
 		case PseudostateName2EditPart.VISUAL_ID:

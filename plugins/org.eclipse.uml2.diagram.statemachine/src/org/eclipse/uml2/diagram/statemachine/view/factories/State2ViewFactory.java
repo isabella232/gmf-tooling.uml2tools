@@ -15,15 +15,16 @@ import org.eclipse.gmf.runtime.diagram.ui.view.factories.AbstractShapeViewFactor
 import org.eclipse.gmf.runtime.notation.NotationFactory;
 import org.eclipse.gmf.runtime.notation.View;
 
+import org.eclipse.uml2.diagram.statemachine.edit.parts.StateContentEditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.StateMachineEditPart;
-import org.eclipse.uml2.diagram.statemachine.edit.parts.StateNameEditPart;
+import org.eclipse.uml2.diagram.statemachine.edit.parts.StateName2EditPart;
 
 import org.eclipse.uml2.diagram.statemachine.part.UMLVisualIDRegistry;
 
 /**
  * @generated
  */
-public class StateViewFactory extends AbstractShapeViewFactory {
+public class State2ViewFactory extends AbstractShapeViewFactory {
 
 	/**
 	 * @generated 
@@ -42,7 +43,7 @@ public class StateViewFactory extends AbstractShapeViewFactory {
 	 */
 	protected void decorateView(View containerView, View view, IAdaptable semanticAdapter, String semanticHint, int index, boolean persisted) {
 		if (semanticHint == null) {
-			semanticHint = UMLVisualIDRegistry.getType(org.eclipse.uml2.diagram.statemachine.edit.parts.StateEditPart.VISUAL_ID);
+			semanticHint = UMLVisualIDRegistry.getType(org.eclipse.uml2.diagram.statemachine.edit.parts.State2EditPart.VISUAL_ID);
 			view.setType(semanticHint);
 		}
 		super.decorateView(containerView, view, semanticAdapter, semanticHint, index, persisted);
@@ -52,7 +53,8 @@ public class StateViewFactory extends AbstractShapeViewFactory {
 			shortcutAnnotation.getDetails().put("modelID", StateMachineEditPart.MODEL_ID); //$NON-NLS-1$
 			view.getEAnnotations().add(shortcutAnnotation);
 		}
-		getViewService().createNode(semanticAdapter, view, UMLVisualIDRegistry.getType(StateNameEditPart.VISUAL_ID), ViewUtil.APPEND, true, getPreferencesHint());
+		getViewService().createNode(semanticAdapter, view, UMLVisualIDRegistry.getType(StateName2EditPart.VISUAL_ID), ViewUtil.APPEND, true, getPreferencesHint());
+		getViewService().createNode(semanticAdapter, view, UMLVisualIDRegistry.getType(StateContentEditPart.VISUAL_ID), ViewUtil.APPEND, true, getPreferencesHint());
 	}
 
 }

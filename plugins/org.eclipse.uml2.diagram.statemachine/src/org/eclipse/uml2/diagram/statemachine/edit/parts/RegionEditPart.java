@@ -220,7 +220,11 @@ public class RegionEditPart extends ShapeNodeEditPart {
 		 * @generated
 		 */
 		public RegionFigure() {
-
+			this.setFill(true);
+			this.setFillXOR(false);
+			this.setOutline(true);
+			this.setOutlineXOR(false);
+			this.setLineWidth(1);
 			this.setLineStyle(org.eclipse.draw2d.Graphics.LINE_DASH);
 			createContents();
 		}
@@ -229,15 +233,18 @@ public class RegionEditPart extends ShapeNodeEditPart {
 		 * @generated
 		 */
 		private void createContents() {
-			org.eclipse.draw2d.RectangleFigure fig_0 = new org.eclipse.draw2d.RectangleFigure();
-			fig_0.setFill(false);
-			fig_0.setOutline(false);
 
-			setFigureRegionFigure_Compartment(fig_0);
+			org.eclipse.draw2d.RectangleFigure regionFigure_Compartment0 = new org.eclipse.draw2d.RectangleFigure();
+			regionFigure_Compartment0.setFill(false);
+			regionFigure_Compartment0.setFillXOR(false);
+			regionFigure_Compartment0.setOutline(false);
+			regionFigure_Compartment0.setOutlineXOR(false);
+			regionFigure_Compartment0.setLineWidth(1);
+			regionFigure_Compartment0.setLineStyle(org.eclipse.draw2d.Graphics.LINE_SOLID);
 
-			Object layData0 = null;
+			this.add(regionFigure_Compartment0);
+			setFigureRegionFigure_Compartment(regionFigure_Compartment0);
 
-			this.add(fig_0, layData0);
 		}
 
 		/**

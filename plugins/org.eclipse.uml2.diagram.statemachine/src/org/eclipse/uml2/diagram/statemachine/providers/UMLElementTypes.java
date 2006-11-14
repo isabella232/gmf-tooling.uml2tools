@@ -147,6 +147,7 @@ public class UMLElementTypes {
 			elements = new IdentityHashMap();
 			elements.put(StateMachine_1000, UMLPackage.eINSTANCE.getStateMachine());
 			elements.put(State_3001, UMLPackage.eINSTANCE.getState());
+			elements.put(State_3012, UMLPackage.eINSTANCE.getState());
 			elements.put(Region_3002, UMLPackage.eINSTANCE.getRegion());
 			elements.put(FinalState_3003, UMLPackage.eINSTANCE.getFinalState());
 			elements.put(Pseudostate_3004, UMLPackage.eINSTANCE.getPseudostate());
@@ -174,6 +175,11 @@ public class UMLElementTypes {
 	 * @generated
 	 */
 	public static final IElementType State_3001 = getElementType("org.eclipse.uml2.diagram.statemachine.State_3001"); //$NON-NLS-1$
+
+	/**
+	 * @generated
+	 */
+	public static final IElementType State_3012 = getElementType("org.eclipse.uml2.diagram.statemachine.State_3012"); //$NON-NLS-1$
 
 	/**
 	 * @generated
@@ -265,6 +271,7 @@ public class UMLElementTypes {
 			KNOWN_ELEMENT_TYPES = new HashSet();
 			KNOWN_ELEMENT_TYPES.add(StateMachine_1000);
 			KNOWN_ELEMENT_TYPES.add(State_3001);
+			KNOWN_ELEMENT_TYPES.add(State_3012);
 			KNOWN_ELEMENT_TYPES.add(Region_3002);
 			KNOWN_ELEMENT_TYPES.add(FinalState_3003);
 			KNOWN_ELEMENT_TYPES.add(Pseudostate_3004);
@@ -336,6 +343,36 @@ public class UMLElementTypes {
 										UMLPackage.eINSTANCE.getState())));
 			}
 		}; // State_3001 ObjectInitializer		
+
+		/**
+		 * @generated
+		 */
+		public static final IObjectInitializer State_3012 = new ObjectInitializer(org.eclipse.uml2.uml.UMLPackage.eINSTANCE.getState()) {
+
+			protected void init() {
+				add(createExpressionFeatureInitializer(
+						UMLPackage.eINSTANCE.getNamedElement_Name(),
+						UMLOCLFactory
+								.getExpression(
+										" let base : String = \'State\' in  let suffixes : Sequence(String) = Sequence {\'\', \'1\', \'2\', \'3\', \'4\', \'5\', \'6\', \'7\', \'8\', \'9\', \'10\'} in  let space : Namespace = self.namespace in  let allMissed : Sequence(String) = suffixes-> \tselect(s : String | not space.member->exists(e : NamedElement | e.name = base.concat(s)) ) in  let firstMissed : String = allMissed->first() in  let noMisses : Boolean = firstMissed.oclIsUndefined() in  let allNames : Set(String) =  \tif noMisses \t\tthen \t\tspace.member->collect(e : NamedElement | \t\t\tif e = self or e.name.oclIsUndefined() or e.name.substring(1, e.name.size().min(base.size())) <> base \t\t\tthen \'\' else e.name \t\t\tendif \t\t)->asSet()->excluding(\'\') \t\telse Set{\'not in use\'} \t\tendif in  let longestName : String = \t\tif noMisses \t\tthen allNames->select(n : String | not allNames->exists(nn : String | nn.size() > n.size()))->asSequence()->first()\t\telse \'not in use\' \t\tendif \tin  if noMisses then \t\tif longestName.oclIsUndefined() \t\tthen base \t\telse longestName.concat(\'1\') \t\tendif  else base.concat(firstMissed)  endif ", //$NON-NLS-1$
+										UMLPackage.eINSTANCE.getState())));
+				add(createNewElementFeatureInitializer(UMLPackage.eINSTANCE.getState_Region(), new ObjectInitializer[] { region(), }));
+			}
+
+			ObjectInitializer region() {
+				return new ObjectInitializer(org.eclipse.uml2.uml.UMLPackage.eINSTANCE.getRegion()) {
+
+					protected void init() {
+						add(createExpressionFeatureInitializer(
+								UMLPackage.eINSTANCE.getNamedElement_Name(),
+								UMLOCLFactory
+										.getExpression(
+												" let base : String = \'Region\' in  let suffixes : Sequence(String) = Sequence {\'\', \'1\', \'2\', \'3\', \'4\', \'5\', \'6\', \'7\', \'8\', \'9\', \'10\'} in  let space : Namespace = self.namespace in  let allMissed : Sequence(String) = suffixes-> \tselect(s : String | not space.member->exists(e : NamedElement | e.name = base.concat(s)) ) in  let firstMissed : String = allMissed->first() in  let noMisses : Boolean = firstMissed.oclIsUndefined() in  let allNames : Set(String) =  \tif noMisses \t\tthen \t\tspace.member->collect(e : NamedElement | \t\t\tif e = self or e.name.oclIsUndefined() or e.name.substring(1, e.name.size().min(base.size())) <> base \t\t\tthen \'\' else e.name \t\t\tendif \t\t)->asSet()->excluding(\'\') \t\telse Set{\'not in use\'} \t\tendif in  let longestName : String = \t\tif noMisses \t\tthen allNames->select(n : String | not allNames->exists(nn : String | nn.size() > n.size()))->asSequence()->first()\t\telse \'not in use\' \t\tendif \tin  if noMisses then \t\tif longestName.oclIsUndefined() \t\tthen base \t\telse longestName.concat(\'1\') \t\tendif  else base.concat(firstMissed)  endif ", //$NON-NLS-1$
+												UMLPackage.eINSTANCE.getRegion())));
+					}
+				}; // region ObjectInitializer
+			}
+		}; // State_3012 ObjectInitializer		
 
 		/**
 		 * @generated
@@ -473,7 +510,7 @@ public class UMLElementTypes {
 			/** 
 			 * @generated
 			 */
-			protected final FeatureInitializer add(FeatureInitializer initializer) {
+			protected final IFeatureInitializer add(IFeatureInitializer initializer) {
 				featureInitializers.add(initializer);
 				return initializer;
 			}
@@ -483,7 +520,7 @@ public class UMLElementTypes {
 			 */
 			public void init(EObject instance) {
 				for (java.util.Iterator it = featureInitializers.iterator(); it.hasNext();) {
-					FeatureInitializer nextExpr = (FeatureInitializer) it.next();
+					IFeatureInitializer nextExpr = (IFeatureInitializer) it.next();
 					try {
 						nextExpr.init(instance);
 					} catch (RuntimeException e) {
@@ -496,7 +533,7 @@ public class UMLElementTypes {
 		/** 
 		 * @generated
 		 */
-		interface FeatureInitializer {
+		interface IFeatureInitializer {
 
 			/**
 			 * @generated
@@ -507,10 +544,10 @@ public class UMLElementTypes {
 		/**
 		 * @generated
 		 */
-		static FeatureInitializer createNewElementFeatureInitializer(EStructuralFeature initFeature, ObjectInitializer[] newObjectInitializers) {
+		static IFeatureInitializer createNewElementFeatureInitializer(EStructuralFeature initFeature, ObjectInitializer[] newObjectInitializers) {
 			final EStructuralFeature feature = initFeature;
 			final ObjectInitializer[] initializers = newObjectInitializers;
-			return new FeatureInitializer() {
+			return new IFeatureInitializer() {
 
 				public void init(EObject contextInstance) {
 					for (int i = 0; i < initializers.length; i++) {
@@ -529,10 +566,10 @@ public class UMLElementTypes {
 		/**
 		 * @generated
 		 */
-		static FeatureInitializer createExpressionFeatureInitializer(EStructuralFeature initFeature, UMLAbstractExpression valueExpression) {
+		static IFeatureInitializer createExpressionFeatureInitializer(EStructuralFeature initFeature, UMLAbstractExpression valueExpression) {
 			final EStructuralFeature feature = initFeature;
 			final UMLAbstractExpression expression = valueExpression;
-			return new FeatureInitializer() {
+			return new IFeatureInitializer() {
 
 				public void init(EObject contextInstance) {
 					expression.assignTo(feature, contextInstance);

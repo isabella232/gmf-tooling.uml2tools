@@ -96,24 +96,21 @@ public class StateEditPart extends ShapeNodeEditPart {
 	 * @generated
 	 */
 	protected IFigure createNodeShape() {
-		StateFigure figure = new StateFigure();
+		SimpleStateFigure figure = new SimpleStateFigure();
 		return primaryShape = figure;
 	}
 
 	/**
 	 * @generated
 	 */
-	public StateFigure getPrimaryShape() {
-		return (StateFigure) primaryShape;
+	public SimpleStateFigure getPrimaryShape() {
+		return (SimpleStateFigure) primaryShape;
 	}
 
 	/**
 	 * @generated 
 	 */
 	protected IFigure getContentPaneFor(IGraphicalEditPart editPart) {
-		if (editPart instanceof StateContentEditPart) {
-			return getPrimaryShape().getFigureStateFigure_Body();
-		}
 
 		return super.getContentPaneFor(editPart);
 	}
@@ -123,13 +120,7 @@ public class StateEditPart extends ShapeNodeEditPart {
 	 */
 	protected boolean addFixedChild(EditPart childEditPart) {
 		if (childEditPart instanceof StateNameEditPart) {
-			((StateNameEditPart) childEditPart).setLabel(getPrimaryShape().getFigureStateFigure_name());
-			return true;
-		}
-		if (childEditPart instanceof StateContentEditPart) {
-			IFigure pane = getPrimaryShape().getFigureStateFigure_Body();
-			setupContentPane(pane); // FIXME each comparment should handle his content pane in his own way 
-			pane.add(((StateContentEditPart) childEditPart).getFigure());
+			((StateNameEditPart) childEditPart).setLabel(getPrimaryShape().getFigureSimpleStateFigure_name());
 			return true;
 		}
 		return false;
@@ -139,11 +130,6 @@ public class StateEditPart extends ShapeNodeEditPart {
 	 * @generated
 	 */
 	protected boolean removeFixedChild(EditPart childEditPart) {
-		if (childEditPart instanceof StateContentEditPart) {
-			IFigure pane = getPrimaryShape().getFigureStateFigure_Body();
-			pane.remove(((StateContentEditPart) childEditPart).getFigure());
-			return true;
-		}
 		return false;
 	}
 
@@ -151,7 +137,7 @@ public class StateEditPart extends ShapeNodeEditPart {
 	 * @generated
 	 */
 	protected NodeFigure createNodePlate() {
-		DefaultSizeNodeFigure result = new DefaultSizeNodeFigure(getMapMode().DPtoLP(40), getMapMode().DPtoLP(40));
+		DefaultSizeNodeFigure result = new DefaultSizeNodeFigure(getMapMode().DPtoLP(60), getMapMode().DPtoLP(20));
 		return result;
 	}
 
@@ -227,16 +213,23 @@ public class StateEditPart extends ShapeNodeEditPart {
 	/**
 	 * @generated
 	 */
-	public class StateFigure extends org.eclipse.draw2d.RoundedRectangle {
+	public class SimpleStateFigure extends org.eclipse.draw2d.RoundedRectangle {
 
 		/**
 		 * @generated
 		 */
-		public StateFigure() {
+		public SimpleStateFigure() {
 
-			this.setBorder(new org.eclipse.draw2d.MarginBorder(getMapMode().DPtoLP(0), getMapMode().DPtoLP(2), getMapMode().DPtoLP(6), getMapMode().DPtoLP(2)));
-			this.setCornerDimensions(new org.eclipse.draw2d.geometry.Dimension(getMapMode().DPtoLP(12), getMapMode().DPtoLP(12)));
-
+			this.setLayoutManager(new org.eclipse.draw2d.StackLayout());
+			this.setCornerDimensions(new org.eclipse.draw2d.geometry.Dimension(getMapMode().DPtoLP(18), getMapMode().DPtoLP(18)));
+			this.setFill(true);
+			this.setFillXOR(false);
+			this.setOutline(true);
+			this.setOutlineXOR(false);
+			this.setLineWidth(1);
+			this.setLineStyle(org.eclipse.draw2d.Graphics.LINE_SOLID);
+			this.setPreferredSize(new org.eclipse.draw2d.geometry.Dimension(getMapMode().DPtoLP(60), getMapMode().DPtoLP(30)));
+			this.setBorder(new org.eclipse.draw2d.MarginBorder(getMapMode().DPtoLP(0), getMapMode().DPtoLP(4), getMapMode().DPtoLP(0), getMapMode().DPtoLP(4)));
 			createContents();
 		}
 
@@ -244,61 +237,32 @@ public class StateEditPart extends ShapeNodeEditPart {
 		 * @generated
 		 */
 		private void createContents() {
-			org.eclipse.gmf.runtime.draw2d.ui.figures.WrapLabel fig_0 = new org.eclipse.gmf.runtime.draw2d.ui.figures.WrapLabel();
-			fig_0.setText("");
 
-			setFigureStateFigure_name(fig_0);
+			org.eclipse.gmf.runtime.draw2d.ui.figures.WrapLabel simpleStateFigure_name0 = new org.eclipse.gmf.runtime.draw2d.ui.figures.WrapLabel();
+			simpleStateFigure_name0.setText("");
 
-			Object layData0 = null;
+			this.add(simpleStateFigure_name0);
+			setFigureSimpleStateFigure_name(simpleStateFigure_name0);
 
-			this.add(fig_0, layData0);
-			org.eclipse.draw2d.RectangleFigure fig_1 = new org.eclipse.draw2d.RectangleFigure();
-
-			fig_1.setOutline(false);
-
-			setFigureStateFigure_Body(fig_1);
-
-			Object layData1 = null;
-
-			this.add(fig_1, layData1);
 		}
 
 		/**
 		 * @generated
 		 */
-		private org.eclipse.gmf.runtime.draw2d.ui.figures.WrapLabel fStateFigure_name;
+		private org.eclipse.gmf.runtime.draw2d.ui.figures.WrapLabel fSimpleStateFigure_name;
 
 		/**
 		 * @generated
 		 */
-		public org.eclipse.gmf.runtime.draw2d.ui.figures.WrapLabel getFigureStateFigure_name() {
-			return fStateFigure_name;
+		public org.eclipse.gmf.runtime.draw2d.ui.figures.WrapLabel getFigureSimpleStateFigure_name() {
+			return fSimpleStateFigure_name;
 		}
 
 		/**
 		 * @generated
 		 */
-		private void setFigureStateFigure_name(org.eclipse.gmf.runtime.draw2d.ui.figures.WrapLabel fig) {
-			fStateFigure_name = fig;
-		}
-
-		/**
-		 * @generated
-		 */
-		private org.eclipse.draw2d.RectangleFigure fStateFigure_Body;
-
-		/**
-		 * @generated
-		 */
-		public org.eclipse.draw2d.RectangleFigure getFigureStateFigure_Body() {
-			return fStateFigure_Body;
-		}
-
-		/**
-		 * @generated
-		 */
-		private void setFigureStateFigure_Body(org.eclipse.draw2d.RectangleFigure fig) {
-			fStateFigure_Body = fig;
+		private void setFigureSimpleStateFigure_name(org.eclipse.gmf.runtime.draw2d.ui.figures.WrapLabel fig) {
+			fSimpleStateFigure_name = fig;
 		}
 
 		/**

@@ -259,98 +259,16 @@ public class Pseudostate10EditPart extends ShapeNodeEditPart {
 		/**
 		 * @generated
 		 */
-		public class ScalablePolygon extends org.eclipse.draw2d.Shape {
-
-			/**
-			 * @generated
-			 */
-			private final org.eclipse.draw2d.geometry.PointList myTemplate = new org.eclipse.draw2d.geometry.PointList();
-
-			/**
-			 * @generated
-			 */
-			private org.eclipse.draw2d.geometry.Rectangle myTemplateBounds;
-
-			/**
-			 * @generated
-			 */
-			public void addPoint(org.eclipse.draw2d.geometry.Point point) {
-				myTemplate.addPoint(point);
-				myTemplateBounds = null;
-			}
-
-			/**
-			 * @generated
-			 */
-			protected void fillShape(org.eclipse.draw2d.Graphics graphics) {
-				org.eclipse.draw2d.geometry.Rectangle bounds = getBounds();
-				graphics.pushState();
-				graphics.translate(bounds.x, bounds.y);
-				graphics.fillPolygon(scalePointList());
-				graphics.popState();
-			}
-
-			/**
-			 * @generated
-			 */
-			protected void outlineShape(org.eclipse.draw2d.Graphics graphics) {
-				org.eclipse.draw2d.geometry.Rectangle bounds = getBounds();
-				graphics.pushState();
-				graphics.translate(bounds.x, bounds.y);
-				graphics.drawPolygon(scalePointList());
-				graphics.popState();
-			}
-
-			/**
-			 * @generated
-			 */
-			private org.eclipse.draw2d.geometry.Rectangle getTemplateBounds() {
-				if (myTemplateBounds == null) {
-					myTemplateBounds = new org.eclipse.draw2d.geometry.Rectangle();
-					myTemplateBounds = myTemplate.getBounds().union(0, 0);
-					//just safety -- we are going to use this as divider 
-					if (myTemplateBounds.width < 1) {
-						myTemplateBounds.width = 1;
-					}
-					if (myTemplateBounds.height < 1) {
-						myTemplateBounds.height = 1;
-					}
-				}
-				return myTemplateBounds;
-			}
-
-			/**
-			 * @generated
-			 */
-			private int[] scalePointList() {
-				org.eclipse.draw2d.geometry.Rectangle pointsBounds = getTemplateBounds();
-				org.eclipse.draw2d.geometry.Rectangle actualBounds = getBounds();
-
-				float xScale = ((float) actualBounds.width) / pointsBounds.width;
-				float yScale = ((float) actualBounds.height) / pointsBounds.height;
-
-				if (xScale == 1 && yScale == 1) {
-					return myTemplate.toIntArray();
-				}
-				int[] scaled = (int[]) myTemplate.toIntArray().clone();
-				for (int i = 0; i < scaled.length; i += 2) {
-					scaled[i] = (int) Math.floor(scaled[i] * xScale);
-					scaled[i + 1] = (int) Math.floor(scaled[i + 1] * yScale);
-				}
-				return scaled;
-			}
-		}
-
-		/**
-		 * @generated
-		 */
 		public ExitPointFigure() {
 
-			org.eclipse.draw2d.StackLayout myGenLayoutManager = new org.eclipse.draw2d.StackLayout();
-
-			this.setLayoutManager(myGenLayoutManager);
-
-			this.setPreferredSize(getMapMode().DPtoLP(15), getMapMode().DPtoLP(15));
+			this.setLayoutManager(new org.eclipse.draw2d.StackLayout());
+			this.setFill(true);
+			this.setFillXOR(false);
+			this.setOutline(true);
+			this.setOutlineXOR(false);
+			this.setLineWidth(1);
+			this.setLineStyle(org.eclipse.draw2d.Graphics.LINE_SOLID);
+			this.setPreferredSize(new org.eclipse.draw2d.geometry.Dimension(getMapMode().DPtoLP(15), getMapMode().DPtoLP(15)));
 			this.setMaximumSize(new org.eclipse.draw2d.geometry.Dimension(getMapMode().DPtoLP(15), getMapMode().DPtoLP(15)));
 			this.setMinimumSize(new org.eclipse.draw2d.geometry.Dimension(getMapMode().DPtoLP(15), getMapMode().DPtoLP(15)));
 			this.setBorder(new org.eclipse.draw2d.MarginBorder(getMapMode().DPtoLP(2), getMapMode().DPtoLP(2), getMapMode().DPtoLP(2), getMapMode().DPtoLP(2)));
@@ -361,39 +279,104 @@ public class Pseudostate10EditPart extends ShapeNodeEditPart {
 		 * @generated
 		 */
 		private void createContents() {
-			ScalablePolygon fig_0 = new ScalablePolygon();
-			fig_0.setFill(true);
-			fig_0.addPoint(new org.eclipse.draw2d.geometry.Point(0, 0));
-			fig_0.addPoint(new org.eclipse.draw2d.geometry.Point(40, 40));
-			fig_0.addPoint(new org.eclipse.draw2d.geometry.Point(20, 20));
-			fig_0.addPoint(new org.eclipse.draw2d.geometry.Point(40, 0));
-			fig_0.addPoint(new org.eclipse.draw2d.geometry.Point(0, 40));
-			fig_0.addPoint(new org.eclipse.draw2d.geometry.Point(20, 20));
 
-			setFigureExitPointFigure_Cross(fig_0);
+			class ExitPointFigure_Cross0Class extends org.eclipse.draw2d.Shape {
 
-			Object layData0 = null;
+				/**
+				 * @generated
+				 */
+				private final org.eclipse.draw2d.geometry.PointList myTemplate = new org.eclipse.draw2d.geometry.PointList();
 
-			this.add(fig_0, layData0);
-		}
+				/**
+				 * @generated
+				 */
+				private org.eclipse.draw2d.geometry.Rectangle myTemplateBounds;
 
-		/**
-		 * @generated
-		 */
-		private ScalablePolygon fExitPointFigure_Cross;
+				/**
+				 * @generated
+				 */
+				public void addPoint(org.eclipse.draw2d.geometry.Point point) {
+					myTemplate.addPoint(point);
+					myTemplateBounds = null;
+				}
 
-		/**
-		 * @generated
-		 */
-		public ScalablePolygon getFigureExitPointFigure_Cross() {
-			return fExitPointFigure_Cross;
-		}
+				/**
+				 * @generated
+				 */
+				protected void fillShape(org.eclipse.draw2d.Graphics graphics) {
+					org.eclipse.draw2d.geometry.Rectangle bounds = getBounds();
+					graphics.pushState();
+					graphics.translate(bounds.x, bounds.y);
+					graphics.fillPolygon(scalePointList());
+					graphics.popState();
+				}
 
-		/**
-		 * @generated
-		 */
-		private void setFigureExitPointFigure_Cross(ScalablePolygon fig) {
-			fExitPointFigure_Cross = fig;
+				/**
+				 * @generated
+				 */
+				protected void outlineShape(org.eclipse.draw2d.Graphics graphics) {
+					org.eclipse.draw2d.geometry.Rectangle bounds = getBounds();
+					graphics.pushState();
+					graphics.translate(bounds.x, bounds.y);
+					graphics.drawPolygon(scalePointList());
+					graphics.popState();
+				}
+
+				/**
+				 * @generated
+				 */
+				private org.eclipse.draw2d.geometry.Rectangle getTemplateBounds() {
+					if (myTemplateBounds == null) {
+						myTemplateBounds = myTemplate.getBounds().getCopy().union(0, 0);
+						//just safety -- we are going to use this as divider 
+						if (myTemplateBounds.width < 1) {
+							myTemplateBounds.width = 1;
+						}
+						if (myTemplateBounds.height < 1) {
+							myTemplateBounds.height = 1;
+						}
+					}
+					return myTemplateBounds;
+				}
+
+				/**
+				 * @generated
+				 */
+				private int[] scalePointList() {
+					org.eclipse.draw2d.geometry.Rectangle pointsBounds = getTemplateBounds();
+					org.eclipse.draw2d.geometry.Rectangle actualBounds = getBounds();
+
+					float xScale = ((float) actualBounds.width) / pointsBounds.width;
+					float yScale = ((float) actualBounds.height) / pointsBounds.height;
+
+					if (xScale == 1 && yScale == 1) {
+						return myTemplate.toIntArray();
+					}
+					int[] scaled = (int[]) myTemplate.toIntArray().clone();
+					for (int i = 0; i < scaled.length; i += 2) {
+						scaled[i] = (int) Math.floor(scaled[i] * xScale);
+						scaled[i + 1] = (int) Math.floor(scaled[i + 1] * yScale);
+					}
+					return scaled;
+				}
+			}
+			;
+			ExitPointFigure_Cross0Class exitPointFigure_Cross0 = new ExitPointFigure_Cross0Class();
+			exitPointFigure_Cross0.addPoint(new org.eclipse.draw2d.geometry.Point(getMapMode().DPtoLP(0), getMapMode().DPtoLP(0)));
+			exitPointFigure_Cross0.addPoint(new org.eclipse.draw2d.geometry.Point(getMapMode().DPtoLP(40), getMapMode().DPtoLP(40)));
+			exitPointFigure_Cross0.addPoint(new org.eclipse.draw2d.geometry.Point(getMapMode().DPtoLP(20), getMapMode().DPtoLP(20)));
+			exitPointFigure_Cross0.addPoint(new org.eclipse.draw2d.geometry.Point(getMapMode().DPtoLP(40), getMapMode().DPtoLP(0)));
+			exitPointFigure_Cross0.addPoint(new org.eclipse.draw2d.geometry.Point(getMapMode().DPtoLP(0), getMapMode().DPtoLP(40)));
+			exitPointFigure_Cross0.addPoint(new org.eclipse.draw2d.geometry.Point(getMapMode().DPtoLP(20), getMapMode().DPtoLP(20)));
+			exitPointFigure_Cross0.setFill(true);
+			exitPointFigure_Cross0.setFillXOR(false);
+			exitPointFigure_Cross0.setOutline(true);
+			exitPointFigure_Cross0.setOutlineXOR(false);
+			exitPointFigure_Cross0.setLineWidth(1);
+			exitPointFigure_Cross0.setLineStyle(org.eclipse.draw2d.Graphics.LINE_SOLID);
+
+			this.add(exitPointFigure_Cross0);
+
 		}
 
 		/**

@@ -163,17 +163,15 @@ public class Pseudostate5EditPart extends ShapeNodeEditPart {
 		 * @generated
 		 */
 		public VerticalForkJoinFigure() {
-
+			this.setFill(true);
+			this.setFillXOR(false);
+			this.setOutline(true);
+			this.setOutlineXOR(false);
+			this.setLineWidth(1);
+			this.setLineStyle(org.eclipse.draw2d.Graphics.LINE_SOLID);
 			this.setBackgroundColor(org.eclipse.draw2d.ColorConstants.black);
-			this.setPreferredSize(getMapMode().DPtoLP(4), getMapMode().DPtoLP(50));
+			this.setPreferredSize(new org.eclipse.draw2d.geometry.Dimension(getMapMode().DPtoLP(4), getMapMode().DPtoLP(50)));
 			this.setMinimumSize(new org.eclipse.draw2d.geometry.Dimension(getMapMode().DPtoLP(4), getMapMode().DPtoLP(50)));
-			createContents();
-		}
-
-		/**
-		 * @generated
-		 */
-		private void createContents() {
 		}
 
 		/**

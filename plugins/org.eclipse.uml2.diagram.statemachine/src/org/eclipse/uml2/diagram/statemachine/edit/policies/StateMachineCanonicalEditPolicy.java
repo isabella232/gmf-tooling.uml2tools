@@ -50,6 +50,7 @@ import org.eclipse.uml2.diagram.statemachine.edit.parts.Pseudostate9EditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.PseudostateEditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.Region2EditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.RegionEditPart;
+import org.eclipse.uml2.diagram.statemachine.edit.parts.State2EditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.StateEditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.StateMachineEditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.TransitionEditPart;
@@ -212,6 +213,7 @@ public class StateMachineCanonicalEditPolicy extends CanonicalConnectionEditPoli
 		case Pseudostate9EditPart.VISUAL_ID:
 		case Pseudostate10EditPart.VISUAL_ID:
 		case StateEditPart.VISUAL_ID:
+		case State2EditPart.VISUAL_ID:
 		case Region2EditPart.VISUAL_ID:
 		case FinalStateEditPart.VISUAL_ID:
 		case PseudostateEditPart.VISUAL_ID:

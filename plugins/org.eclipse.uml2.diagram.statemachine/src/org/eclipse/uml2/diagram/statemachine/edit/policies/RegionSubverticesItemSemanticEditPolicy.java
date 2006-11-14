@@ -32,6 +32,12 @@ public class RegionSubverticesItemSemanticEditPolicy extends UMLBaseItemSemantic
 			}
 			return getMSLWrapper(new CreateState_3001Command(req));
 		}
+		if (UMLElementTypes.State_3012 == req.getElementType()) {
+			if (req.getContainmentFeature() == null) {
+				req.setContainmentFeature(UMLPackage.eINSTANCE.getRegion_Subvertex());
+			}
+			return getMSLWrapper(new CreateState_3012Command(req));
+		}
 		if (UMLElementTypes.FinalState_3003 == req.getElementType()) {
 			if (req.getContainmentFeature() == null) {
 				req.setContainmentFeature(UMLPackage.eINSTANCE.getRegion_Subvertex());
@@ -126,6 +132,48 @@ public class RegionSubverticesItemSemanticEditPolicy extends UMLBaseItemSemantic
 			State newElement = (State) super.doDefaultElementCreation();
 			if (newElement != null) {
 				UMLElementTypes.Initializers.State_3001.init(newElement);
+			}
+			return newElement;
+		}
+	}
+
+	/**
+	 * @generated
+	 */
+	private static class CreateState_3012Command extends CreateElementCommand {
+
+		/**
+		 * @generated
+		 */
+		public CreateState_3012Command(CreateElementRequest req) {
+			super(req);
+		}
+
+		/**
+		 * @generated
+		 */
+		protected EClass getEClassToEdit() {
+			return UMLPackage.eINSTANCE.getRegion();
+		};
+
+		/**
+		 * @generated
+		 */
+		protected EObject getElementToEdit() {
+			EObject container = ((CreateElementRequest) getRequest()).getContainer();
+			if (container instanceof View) {
+				container = ((View) container).getElement();
+			}
+			return container;
+		}
+
+		/**
+		 * @generated
+		 */
+		protected EObject doDefaultElementCreation() {
+			State newElement = (State) super.doDefaultElementCreation();
+			if (newElement != null) {
+				UMLElementTypes.Initializers.State_3012.init(newElement);
 			}
 			return newElement;
 		}

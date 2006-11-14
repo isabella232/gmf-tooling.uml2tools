@@ -17,6 +17,7 @@ import org.eclipse.uml2.diagram.statemachine.edit.parts.Pseudostate6EditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.Pseudostate7EditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.Pseudostate8EditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.PseudostateEditPart;
+import org.eclipse.uml2.diagram.statemachine.edit.parts.State2EditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.StateEditPart;
 
 import org.eclipse.uml2.diagram.statemachine.part.UMLVisualIDRegistry;
@@ -42,6 +43,10 @@ public class RegionSubvertices2CanonicalEditPolicy extends CanonicalEditPolicy {
 			nodeVID = UMLVisualIDRegistry.getNodeVisualID(viewObject, nextValue);
 			switch (nodeVID) {
 			case StateEditPart.VISUAL_ID: {
+				result.add(nextValue);
+				break;
+			}
+			case State2EditPart.VISUAL_ID: {
 				result.add(nextValue);
 				break;
 			}

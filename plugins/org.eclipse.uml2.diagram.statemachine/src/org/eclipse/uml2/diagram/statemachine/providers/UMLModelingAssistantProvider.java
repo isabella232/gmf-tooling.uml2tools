@@ -40,6 +40,7 @@ public class UMLModelingAssistantProvider extends ModelingAssistantProvider {
 		if (editPart instanceof RegionSubverticesEditPart) {
 			List types = new ArrayList();
 			types.add(UMLElementTypes.State_3001);
+			types.add(UMLElementTypes.State_3012);
 			types.add(UMLElementTypes.FinalState_3003);
 			types.add(UMLElementTypes.Pseudostate_3004);
 			types.add(UMLElementTypes.Pseudostate_3005);
@@ -59,6 +60,7 @@ public class UMLModelingAssistantProvider extends ModelingAssistantProvider {
 		if (editPart instanceof RegionSubvertices2EditPart) {
 			List types = new ArrayList();
 			types.add(UMLElementTypes.State_3001);
+			types.add(UMLElementTypes.State_3012);
 			types.add(UMLElementTypes.FinalState_3003);
 			types.add(UMLElementTypes.Pseudostate_3004);
 			types.add(UMLElementTypes.Pseudostate_3005);

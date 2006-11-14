@@ -33,19 +33,20 @@ public class UMLPaletteFactory {
 	 */
 	private PaletteContainer createNodes1Group() {
 		PaletteContainer paletteContainer = new PaletteDrawer("Nodes");
-		paletteContainer.add(createState1CreationTool());
-		paletteContainer.add(createRegion2CreationTool());
-		paletteContainer.add(createFinalState3CreationTool());
-		paletteContainer.add(createInitial4CreationTool());
-		paletteContainer.add(createShallowHistory5CreationTool());
-		paletteContainer.add(createDeepHistory6CreationTool());
-		paletteContainer.add(createFork7CreationTool());
-		paletteContainer.add(createJoin8CreationTool());
-		paletteContainer.add(createJunction9CreationTool());
-		paletteContainer.add(createChoice10CreationTool());
-		paletteContainer.add(createTerminate11CreationTool());
-		paletteContainer.add(createEntryPoint12CreationTool());
-		paletteContainer.add(createExitPoint13CreationTool());
+		paletteContainer.add(createSimpleState1CreationTool());
+		paletteContainer.add(createCompositeState2CreationTool());
+		paletteContainer.add(createRegion3CreationTool());
+		paletteContainer.add(createFinalState4CreationTool());
+		paletteContainer.add(createInitial5CreationTool());
+		paletteContainer.add(createShallowHistory6CreationTool());
+		paletteContainer.add(createDeepHistory7CreationTool());
+		paletteContainer.add(createFork8CreationTool());
+		paletteContainer.add(createJoin9CreationTool());
+		paletteContainer.add(createJunction10CreationTool());
+		paletteContainer.add(createChoice11CreationTool());
+		paletteContainer.add(createTerminate12CreationTool());
+		paletteContainer.add(createEntryPoint13CreationTool());
+		paletteContainer.add(createExitPoint14CreationTool());
 		return paletteContainer;
 	}
 
@@ -61,7 +62,7 @@ public class UMLPaletteFactory {
 	/**
 	 * @generated
 	 */
-	private ToolEntry createState1CreationTool() {
+	private ToolEntry createSimpleState1CreationTool() {
 		ImageDescriptor smallImage;
 		ImageDescriptor largeImage;
 
@@ -71,7 +72,7 @@ public class UMLPaletteFactory {
 
 		final List elementTypes = new ArrayList();
 		elementTypes.add(UMLElementTypes.State_3001);
-		ToolEntry result = new NodeToolEntry("State", "Create new State", smallImage, largeImage, elementTypes);
+		ToolEntry result = new NodeToolEntry("Simple State", "Create new Simple State", smallImage, largeImage, elementTypes);
 
 		return result;
 	}
@@ -79,7 +80,25 @@ public class UMLPaletteFactory {
 	/**
 	 * @generated
 	 */
-	private ToolEntry createRegion2CreationTool() {
+	private ToolEntry createCompositeState2CreationTool() {
+		ImageDescriptor smallImage;
+		ImageDescriptor largeImage;
+
+		smallImage = UMLElementTypes.getImageDescriptor(UMLElementTypes.State_3012);
+
+		largeImage = smallImage;
+
+		final List elementTypes = new ArrayList();
+		elementTypes.add(UMLElementTypes.State_3012);
+		ToolEntry result = new NodeToolEntry("Composite State", "Create new Composite State", smallImage, largeImage, elementTypes);
+
+		return result;
+	}
+
+	/**
+	 * @generated
+	 */
+	private ToolEntry createRegion3CreationTool() {
 		ImageDescriptor smallImage;
 		ImageDescriptor largeImage;
 
@@ -98,7 +117,7 @@ public class UMLPaletteFactory {
 	/**
 	 * @generated
 	 */
-	private ToolEntry createFinalState3CreationTool() {
+	private ToolEntry createFinalState4CreationTool() {
 		ImageDescriptor smallImage;
 		ImageDescriptor largeImage;
 
@@ -116,7 +135,7 @@ public class UMLPaletteFactory {
 	/**
 	 * @generated
 	 */
-	private ToolEntry createInitial4CreationTool() {
+	private ToolEntry createInitial5CreationTool() {
 		ImageDescriptor smallImage;
 		ImageDescriptor largeImage;
 
@@ -134,7 +153,7 @@ public class UMLPaletteFactory {
 	/**
 	 * @generated
 	 */
-	private ToolEntry createShallowHistory5CreationTool() {
+	private ToolEntry createShallowHistory6CreationTool() {
 		ImageDescriptor smallImage;
 		ImageDescriptor largeImage;
 
@@ -152,7 +171,7 @@ public class UMLPaletteFactory {
 	/**
 	 * @generated
 	 */
-	private ToolEntry createDeepHistory6CreationTool() {
+	private ToolEntry createDeepHistory7CreationTool() {
 		ImageDescriptor smallImage;
 		ImageDescriptor largeImage;
 
@@ -170,7 +189,7 @@ public class UMLPaletteFactory {
 	/**
 	 * @generated
 	 */
-	private ToolEntry createFork7CreationTool() {
+	private ToolEntry createFork8CreationTool() {
 		ImageDescriptor smallImage;
 		ImageDescriptor largeImage;
 
@@ -188,7 +207,7 @@ public class UMLPaletteFactory {
 	/**
 	 * @generated
 	 */
-	private ToolEntry createJoin8CreationTool() {
+	private ToolEntry createJoin9CreationTool() {
 		ImageDescriptor smallImage;
 		ImageDescriptor largeImage;
 
@@ -206,7 +225,7 @@ public class UMLPaletteFactory {
 	/**
 	 * @generated
 	 */
-	private ToolEntry createJunction9CreationTool() {
+	private ToolEntry createJunction10CreationTool() {
 		ImageDescriptor smallImage;
 		ImageDescriptor largeImage;
 
@@ -224,7 +243,7 @@ public class UMLPaletteFactory {
 	/**
 	 * @generated
 	 */
-	private ToolEntry createChoice10CreationTool() {
+	private ToolEntry createChoice11CreationTool() {
 		ImageDescriptor smallImage;
 		ImageDescriptor largeImage;
 
@@ -242,7 +261,7 @@ public class UMLPaletteFactory {
 	/**
 	 * @generated
 	 */
-	private ToolEntry createTerminate11CreationTool() {
+	private ToolEntry createTerminate12CreationTool() {
 		ImageDescriptor smallImage;
 		ImageDescriptor largeImage;
 
@@ -260,7 +279,7 @@ public class UMLPaletteFactory {
 	/**
 	 * @generated
 	 */
-	private ToolEntry createEntryPoint12CreationTool() {
+	private ToolEntry createEntryPoint13CreationTool() {
 		ImageDescriptor smallImage;
 		ImageDescriptor largeImage;
 
@@ -278,7 +297,7 @@ public class UMLPaletteFactory {
 	/**
 	 * @generated
 	 */
-	private ToolEntry createExitPoint13CreationTool() {
+	private ToolEntry createExitPoint14CreationTool() {
 		ImageDescriptor smallImage;
 		ImageDescriptor largeImage;
 

@@ -2,7 +2,7 @@ package org.eclipse.uml2.diagram.statemachine.navigator;
 
 import org.eclipse.jface.viewers.ViewerSorter;
 
-import org.eclipse.uml2.diagram.statemachine.edit.parts.StateMachineEditPart;
+import org.eclipse.uml2.diagram.statemachine.part.UMLVisualIDRegistry;
 
 /**
  * @generated
@@ -12,7 +12,7 @@ public class UMLNavigatorSorter extends ViewerSorter {
 	/**
 	 * @generated
 	 */
-	private static final int GROUP_CATEGORY = 7004;
+	private static final int GROUP_CATEGORY = 7006;
 
 	/**
 	 * @generated
@@ -20,9 +20,7 @@ public class UMLNavigatorSorter extends ViewerSorter {
 	public int category(Object element) {
 		if (element instanceof UMLNavigatorItem) {
 			UMLNavigatorItem item = (UMLNavigatorItem) element;
-			if (StateMachineEditPart.MODEL_ID.equals(item.getModelID())) {
-				return item.getVisualID();
-			}
+			return UMLVisualIDRegistry.getVisualID(item.getView());
 		}
 		return GROUP_CATEGORY;
 	}

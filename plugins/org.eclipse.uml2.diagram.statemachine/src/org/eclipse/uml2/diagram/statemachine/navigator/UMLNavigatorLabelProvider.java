@@ -17,7 +17,10 @@ import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.jface.resource.ImageDescriptor;
 import org.eclipse.jface.resource.ImageRegistry;
 
+import org.eclipse.jface.viewers.ITreePathLabelProvider;
 import org.eclipse.jface.viewers.LabelProvider;
+import org.eclipse.jface.viewers.TreePath;
+import org.eclipse.jface.viewers.ViewerLabel;
 
 import org.eclipse.swt.graphics.Image;
 
@@ -41,8 +44,10 @@ import org.eclipse.uml2.diagram.statemachine.edit.parts.PseudostateName2EditPart
 import org.eclipse.uml2.diagram.statemachine.edit.parts.PseudostateNameEditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.Region2EditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.RegionEditPart;
+import org.eclipse.uml2.diagram.statemachine.edit.parts.State2EditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.StateEditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.StateMachineEditPart;
+import org.eclipse.uml2.diagram.statemachine.edit.parts.StateName2EditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.StateNameEditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.TransitionEditPart;
 
@@ -56,7 +61,7 @@ import org.eclipse.uml2.uml.NamedElement;
 /**
  * @generated
  */
-public class UMLNavigatorLabelProvider extends LabelProvider implements ICommonLabelProvider {
+public class UMLNavigatorLabelProvider extends LabelProvider implements ICommonLabelProvider, ITreePathLabelProvider {
 
 	/**
 	 * @generated
@@ -70,59 +75,77 @@ public class UMLNavigatorLabelProvider extends LabelProvider implements ICommonL
 	/**
 	 * @generated
 	 */
+	public void updateLabel(ViewerLabel label, TreePath elementPath) {
+		Object element = elementPath.getLastSegment();
+		if (element instanceof UMLNavigatorItem && !isOwnView(((UMLNavigatorItem) element).getView())) {
+			return;
+		}
+		label.setText(getText(element));
+		label.setImage(getImage(element));
+	}
+
+	/**
+	 * @generated
+	 */
 	public Image getImage(Object element) {
-		if (false == element instanceof UMLAbstractNavigatorItem) {
-			return super.getImage(element);
-		}
-
-		UMLAbstractNavigatorItem abstractNavigatorItem = (UMLAbstractNavigatorItem) element;
-		if (!StateMachineEditPart.MODEL_ID.equals(abstractNavigatorItem.getModelID())) {
-			return super.getImage(element);
-		}
-
-		if (abstractNavigatorItem instanceof UMLNavigatorItem) {
-			UMLNavigatorItem navigatorItem = (UMLNavigatorItem) abstractNavigatorItem;
-			switch (navigatorItem.getVisualID()) {
-			case RegionEditPart.VISUAL_ID:
-				return getImage("Navigator?TopLevelNode?http://www.eclipse.org/uml2/2.0.0/UML?Region", UMLElementTypes.Region_2001);
-			case Pseudostate9EditPart.VISUAL_ID:
-				return getImage("Navigator?TopLevelNode?http://www.eclipse.org/uml2/2.0.0/UML?Pseudostate", UMLElementTypes.Pseudostate_2002);
-			case Pseudostate10EditPart.VISUAL_ID:
-				return getImage("Navigator?TopLevelNode?http://www.eclipse.org/uml2/2.0.0/UML?Pseudostate", UMLElementTypes.Pseudostate_2003);
-			case StateEditPart.VISUAL_ID:
-				return getImage("Navigator?Node?http://www.eclipse.org/uml2/2.0.0/UML?State", UMLElementTypes.State_3001);
-			case Region2EditPart.VISUAL_ID:
-				return getImage("Navigator?Node?http://www.eclipse.org/uml2/2.0.0/UML?Region", UMLElementTypes.Region_3002);
-			case FinalStateEditPart.VISUAL_ID:
-				return getImage("Navigator?Node?http://www.eclipse.org/uml2/2.0.0/UML?FinalState", UMLElementTypes.FinalState_3003);
-			case PseudostateEditPart.VISUAL_ID:
-				return getImage("Navigator?Node?http://www.eclipse.org/uml2/2.0.0/UML?Pseudostate", UMLElementTypes.Pseudostate_3004);
-			case Pseudostate2EditPart.VISUAL_ID:
-				return getImage("Navigator?Node?http://www.eclipse.org/uml2/2.0.0/UML?Pseudostate", UMLElementTypes.Pseudostate_3005);
-			case Pseudostate3EditPart.VISUAL_ID:
-				return getImage("Navigator?Node?http://www.eclipse.org/uml2/2.0.0/UML?Pseudostate", UMLElementTypes.Pseudostate_3006);
-			case Pseudostate4EditPart.VISUAL_ID:
-				return getImage("Navigator?Node?http://www.eclipse.org/uml2/2.0.0/UML?Pseudostate", UMLElementTypes.Pseudostate_3007);
-			case Pseudostate5EditPart.VISUAL_ID:
-				return getImage("Navigator?Node?http://www.eclipse.org/uml2/2.0.0/UML?Pseudostate", UMLElementTypes.Pseudostate_3008);
-			case Pseudostate6EditPart.VISUAL_ID:
-				return getImage("Navigator?Node?http://www.eclipse.org/uml2/2.0.0/UML?Pseudostate", UMLElementTypes.Pseudostate_3009);
-			case Pseudostate7EditPart.VISUAL_ID:
-				return getImage("Navigator?Node?http://www.eclipse.org/uml2/2.0.0/UML?Pseudostate", UMLElementTypes.Pseudostate_3010);
-			case Pseudostate8EditPart.VISUAL_ID:
-				return getImage("Navigator?Node?http://www.eclipse.org/uml2/2.0.0/UML?Pseudostate", UMLElementTypes.Pseudostate_3011);
-			case StateMachineEditPart.VISUAL_ID:
-				return getImage("Navigator?Diagram?http://www.eclipse.org/uml2/2.0.0/UML?StateMachine", UMLElementTypes.StateMachine_1000);
-			case TransitionEditPart.VISUAL_ID:
-				return getImage("Navigator?Link?http://www.eclipse.org/uml2/2.0.0/UML?Transition", UMLElementTypes.Transition_4001);
-			default:
-				return getImage("Navigator?UnknownElement", null);
-			}
-		} else if (abstractNavigatorItem instanceof UMLNavigatorGroup) {
+		if (element instanceof UMLNavigatorGroup) {
 			UMLNavigatorGroup group = (UMLNavigatorGroup) element;
 			return UMLDiagramEditorPlugin.getInstance().getBundledImage(group.getIcon());
 		}
+
+		if (element instanceof UMLNavigatorItem) {
+			UMLNavigatorItem navigatorItem = (UMLNavigatorItem) element;
+			if (!isOwnView(navigatorItem.getView())) {
+				return super.getImage(element);
+			}
+			return getImage(navigatorItem.getView());
+		}
+
 		return super.getImage(element);
+	}
+
+	/**
+	 * @generated
+	 */
+	public Image getImage(View view) {
+		switch (UMLVisualIDRegistry.getVisualID(view)) {
+		case RegionEditPart.VISUAL_ID:
+			return getImage("Navigator?TopLevelNode?http://www.eclipse.org/uml2/2.0.0/UML?Region", UMLElementTypes.Region_2001);
+		case Pseudostate9EditPart.VISUAL_ID:
+			return getImage("Navigator?TopLevelNode?http://www.eclipse.org/uml2/2.0.0/UML?Pseudostate", UMLElementTypes.Pseudostate_2002);
+		case Pseudostate10EditPart.VISUAL_ID:
+			return getImage("Navigator?TopLevelNode?http://www.eclipse.org/uml2/2.0.0/UML?Pseudostate", UMLElementTypes.Pseudostate_2003);
+		case StateEditPart.VISUAL_ID:
+			return getImage("Navigator?Node?http://www.eclipse.org/uml2/2.0.0/UML?State", UMLElementTypes.State_3001);
+		case State2EditPart.VISUAL_ID:
+			return getImage("Navigator?Node?http://www.eclipse.org/uml2/2.0.0/UML?State", UMLElementTypes.State_3012);
+		case Region2EditPart.VISUAL_ID:
+			return getImage("Navigator?Node?http://www.eclipse.org/uml2/2.0.0/UML?Region", UMLElementTypes.Region_3002);
+		case FinalStateEditPart.VISUAL_ID:
+			return getImage("Navigator?Node?http://www.eclipse.org/uml2/2.0.0/UML?FinalState", UMLElementTypes.FinalState_3003);
+		case PseudostateEditPart.VISUAL_ID:
+			return getImage("Navigator?Node?http://www.eclipse.org/uml2/2.0.0/UML?Pseudostate", UMLElementTypes.Pseudostate_3004);
+		case Pseudostate2EditPart.VISUAL_ID:
+			return getImage("Navigator?Node?http://www.eclipse.org/uml2/2.0.0/UML?Pseudostate", UMLElementTypes.Pseudostate_3005);
+		case Pseudostate3EditPart.VISUAL_ID:
+			return getImage("Navigator?Node?http://www.eclipse.org/uml2/2.0.0/UML?Pseudostate", UMLElementTypes.Pseudostate_3006);
+		case Pseudostate4EditPart.VISUAL_ID:
+			return getImage("Navigator?Node?http://www.eclipse.org/uml2/2.0.0/UML?Pseudostate", UMLElementTypes.Pseudostate_3007);
+		case Pseudostate5EditPart.VISUAL_ID:
+			return getImage("Navigator?Node?http://www.eclipse.org/uml2/2.0.0/UML?Pseudostate", UMLElementTypes.Pseudostate_3008);
+		case Pseudostate6EditPart.VISUAL_ID:
+			return getImage("Navigator?Node?http://www.eclipse.org/uml2/2.0.0/UML?Pseudostate", UMLElementTypes.Pseudostate_3009);
+		case Pseudostate7EditPart.VISUAL_ID:
+			return getImage("Navigator?Node?http://www.eclipse.org/uml2/2.0.0/UML?Pseudostate", UMLElementTypes.Pseudostate_3010);
+		case Pseudostate8EditPart.VISUAL_ID:
+			return getImage("Navigator?Node?http://www.eclipse.org/uml2/2.0.0/UML?Pseudostate", UMLElementTypes.Pseudostate_3011);
+		case StateMachineEditPart.VISUAL_ID:
+			return getImage("Navigator?Diagram?http://www.eclipse.org/uml2/2.0.0/UML?StateMachine", UMLElementTypes.StateMachine_1000);
+		case TransitionEditPart.VISUAL_ID:
+			return getImage("Navigator?Link?http://www.eclipse.org/uml2/2.0.0/UML?Transition", UMLElementTypes.Transition_4001);
+		default:
+			return getImage("Navigator?UnknownElement", null);
+		}
 	}
 
 	/**
@@ -147,58 +170,64 @@ public class UMLNavigatorLabelProvider extends LabelProvider implements ICommonL
 	 * @generated
 	 */
 	public String getText(Object element) {
-		if (false == element instanceof UMLAbstractNavigatorItem) {
-			return super.getText(element);
-		}
-
-		UMLAbstractNavigatorItem abstractNavigatorItem = (UMLAbstractNavigatorItem) element;
-		if (!StateMachineEditPart.MODEL_ID.equals(abstractNavigatorItem.getModelID())) {
-			return super.getText(element);
-		}
-
-		if (abstractNavigatorItem instanceof UMLNavigatorItem) {
-			UMLNavigatorItem navigatorItem = (UMLNavigatorItem) abstractNavigatorItem;
-			switch (navigatorItem.getVisualID()) {
-			case RegionEditPart.VISUAL_ID:
-				return getRegion_2001Text(navigatorItem.getView());
-			case Pseudostate9EditPart.VISUAL_ID:
-				return getPseudostate_2002Text(navigatorItem.getView());
-			case Pseudostate10EditPart.VISUAL_ID:
-				return getPseudostate_2003Text(navigatorItem.getView());
-			case StateEditPart.VISUAL_ID:
-				return getState_3001Text(navigatorItem.getView());
-			case Region2EditPart.VISUAL_ID:
-				return getRegion_3002Text(navigatorItem.getView());
-			case FinalStateEditPart.VISUAL_ID:
-				return getFinalState_3003Text(navigatorItem.getView());
-			case PseudostateEditPart.VISUAL_ID:
-				return getPseudostate_3004Text(navigatorItem.getView());
-			case Pseudostate2EditPart.VISUAL_ID:
-				return getPseudostate_3005Text(navigatorItem.getView());
-			case Pseudostate3EditPart.VISUAL_ID:
-				return getPseudostate_3006Text(navigatorItem.getView());
-			case Pseudostate4EditPart.VISUAL_ID:
-				return getPseudostate_3007Text(navigatorItem.getView());
-			case Pseudostate5EditPart.VISUAL_ID:
-				return getPseudostate_3008Text(navigatorItem.getView());
-			case Pseudostate6EditPart.VISUAL_ID:
-				return getPseudostate_3009Text(navigatorItem.getView());
-			case Pseudostate7EditPart.VISUAL_ID:
-				return getPseudostate_3010Text(navigatorItem.getView());
-			case Pseudostate8EditPart.VISUAL_ID:
-				return getPseudostate_3011Text(navigatorItem.getView());
-			case StateMachineEditPart.VISUAL_ID:
-				return getStateMachine_1000Text(navigatorItem.getView());
-			case TransitionEditPart.VISUAL_ID:
-				return getTransition_4001Text(navigatorItem.getView());
-			default:
-				return getUnknownElementText(navigatorItem.getView());
-			}
-		} else if (abstractNavigatorItem instanceof UMLNavigatorGroup) {
+		if (element instanceof UMLNavigatorGroup) {
 			UMLNavigatorGroup group = (UMLNavigatorGroup) element;
 			return group.getGroupName();
 		}
+
+		if (element instanceof UMLNavigatorItem) {
+			UMLNavigatorItem navigatorItem = (UMLNavigatorItem) element;
+			if (!isOwnView(navigatorItem.getView())) {
+				return null;
+			}
+			return getText(navigatorItem.getView());
+		}
+
 		return super.getText(element);
+	}
+
+	/**
+	 * @generated
+	 */
+	public String getText(View view) {
+		switch (UMLVisualIDRegistry.getVisualID(view)) {
+		case RegionEditPart.VISUAL_ID:
+			return getRegion_2001Text(view);
+		case Pseudostate9EditPart.VISUAL_ID:
+			return getPseudostate_2002Text(view);
+		case Pseudostate10EditPart.VISUAL_ID:
+			return getPseudostate_2003Text(view);
+		case StateEditPart.VISUAL_ID:
+			return getState_3001Text(view);
+		case State2EditPart.VISUAL_ID:
+			return getState_3012Text(view);
+		case Region2EditPart.VISUAL_ID:
+			return getRegion_3002Text(view);
+		case FinalStateEditPart.VISUAL_ID:
+			return getFinalState_3003Text(view);
+		case PseudostateEditPart.VISUAL_ID:
+			return getPseudostate_3004Text(view);
+		case Pseudostate2EditPart.VISUAL_ID:
+			return getPseudostate_3005Text(view);
+		case Pseudostate3EditPart.VISUAL_ID:
+			return getPseudostate_3006Text(view);
+		case Pseudostate4EditPart.VISUAL_ID:
+			return getPseudostate_3007Text(view);
+		case Pseudostate5EditPart.VISUAL_ID:
+			return getPseudostate_3008Text(view);
+		case Pseudostate6EditPart.VISUAL_ID:
+			return getPseudostate_3009Text(view);
+		case Pseudostate7EditPart.VISUAL_ID:
+			return getPseudostate_3010Text(view);
+		case Pseudostate8EditPart.VISUAL_ID:
+			return getPseudostate_3011Text(view);
+		case StateMachineEditPart.VISUAL_ID:
+			return getStateMachine_1000Text(view);
+		case TransitionEditPart.VISUAL_ID:
+			return getTransition_4001Text(view);
+		default:
+			return getUnknownElementText(view);
+		}
 	}
 
 	/**
@@ -282,6 +311,30 @@ public class UMLNavigatorLabelProvider extends LabelProvider implements ICommonL
 			return parser.getPrintString(new EObjectAdapter(view.getElement() != null ? view.getElement() : view), ParserOptions.NONE.intValue());
 		} else {
 			UMLDiagramEditorPlugin.getInstance().logError("Parser was not found for label " + 5001);
+			return "";
+		}
+	}
+
+	/**
+	 * @generated
+	 */
+	private String getState_3012Text(View view) {
+		IParser parser = ParserService.getInstance().getParser(new IAdaptable() {
+
+			public Object getAdapter(Class adapter) {
+				if (String.class.equals(adapter)) {
+					return UMLVisualIDRegistry.getType(StateName2EditPart.VISUAL_ID);
+				}
+				if (IElementType.class.equals(adapter)) {
+					return UMLElementTypes.State_3012;
+				}
+				return null;
+			}
+		});
+		if (parser != null) {
+			return parser.getPrintString(new EObjectAdapter(view.getElement() != null ? view.getElement() : view), ParserOptions.NONE.intValue());
+		} else {
+			UMLDiagramEditorPlugin.getInstance().logError("Parser was not found for label " + 5004);
 			return "";
 		}
 	}
@@ -472,6 +525,13 @@ public class UMLNavigatorLabelProvider extends LabelProvider implements ICommonL
 	 */
 	public String getDescription(Object anElement) {
 		return null;
+	}
+
+	/**
+	 * @generated
+	 */
+	private boolean isOwnView(View view) {
+		return StateMachineEditPart.MODEL_ID.equals(UMLVisualIDRegistry.getModelID(view));
 	}
 
 }
