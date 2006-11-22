@@ -183,10 +183,7 @@ public class State2EditPart extends ShapeNodeEditPart {
 	 * @generated
 	 */
 	public IFigure getContentPane() {
-		if (contentPane != null) {
-			return contentPane;
-		}
-		return super.getContentPane();
+		return getPrimaryShape().getFigureCompositeStateFigure_Body();
 	}
 
 	/**
