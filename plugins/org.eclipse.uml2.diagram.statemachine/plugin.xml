@@ -228,13 +228,7 @@
       </editpartProvider>
    </extension>
 
-   <extension point="org.eclipse.gmf.runtime.diagram.ui.paletteProviders">
-      <?gmfgen generated="true"?>
-      <paletteProvider class="org.eclipse.uml2.diagram.statemachine.providers.UMLPaletteProvider">
-         <Priority name="Lowest"/>
-         <editor id="org.eclipse.uml2.diagram.statemachine.part.UMLDiagramEditorID"/>
-      </paletteProvider>
-   </extension>
+   
 
    <extension point="org.eclipse.gmf.runtime.emf.ui.modelingAssistantProviders">
       <?gmfgen generated="true"?>

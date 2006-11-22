@@ -24,7 +24,6 @@ import org.eclipse.uml2.diagram.statemachine.edit.parts.RegionEditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.RegionSubvertices2EditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.RegionSubverticesEditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.State2EditPart;
-import org.eclipse.uml2.diagram.statemachine.edit.parts.StateContentEditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.StateEditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.StateMachineEditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.StateName2EditPart;
@@ -51,7 +50,6 @@ import org.eclipse.uml2.diagram.statemachine.view.factories.RegionSubvertices2Vi
 import org.eclipse.uml2.diagram.statemachine.view.factories.RegionSubverticesViewFactory;
 import org.eclipse.uml2.diagram.statemachine.view.factories.RegionViewFactory;
 import org.eclipse.uml2.diagram.statemachine.view.factories.State2ViewFactory;
-import org.eclipse.uml2.diagram.statemachine.view.factories.StateContentViewFactory;
 import org.eclipse.uml2.diagram.statemachine.view.factories.StateMachineViewFactory;
 import org.eclipse.uml2.diagram.statemachine.view.factories.StateName2ViewFactory;
 import org.eclipse.uml2.diagram.statemachine.view.factories.StateNameViewFactory;
@@ -129,8 +127,6 @@ public class UMLViewProvider extends AbstractViewProvider {
 			return Pseudostate8ViewFactory.class;
 		case RegionSubverticesEditPart.VISUAL_ID:
 			return RegionSubverticesViewFactory.class;
-		case StateContentEditPart.VISUAL_ID:
-			return StateContentViewFactory.class;
 		case RegionSubvertices2EditPart.VISUAL_ID:
 			return RegionSubvertices2ViewFactory.class;
 		}

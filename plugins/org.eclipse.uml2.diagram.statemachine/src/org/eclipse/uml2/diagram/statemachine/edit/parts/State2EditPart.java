@@ -17,6 +17,8 @@ import org.eclipse.gef.requests.CreateRequest;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.ShapeNodeEditPart;
 
+import org.eclipse.gmf.runtime.diagram.ui.editpolicies.CreationEditPolicy;
+import org.eclipse.gmf.runtime.diagram.ui.editpolicies.DragDropEditPolicy;
 import org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles;
 
 import org.eclipse.gmf.runtime.draw2d.ui.figures.ConstrainedToolbarLayout;
@@ -26,6 +28,7 @@ import org.eclipse.gmf.runtime.gef.ui.figures.NodeFigure;
 
 import org.eclipse.gmf.runtime.notation.View;
 
+import org.eclipse.uml2.diagram.statemachine.edit.policies.State2CanonicalEditPolicy;
 import org.eclipse.uml2.diagram.statemachine.edit.policies.State2ItemSemanticEditPolicy;
 
 import org.eclipse.uml2.diagram.statemachine.part.UMLVisualIDRegistry;
@@ -61,8 +64,11 @@ public class State2EditPart extends ShapeNodeEditPart {
 	 * @generated
 	 */
 	protected void createDefaultEditPolicies() {
+		installEditPolicy(EditPolicyRoles.CREATION_ROLE, new CreationEditPolicy());
 		super.createDefaultEditPolicies();
 		installEditPolicy(EditPolicyRoles.SEMANTIC_ROLE, new State2ItemSemanticEditPolicy());
+		installEditPolicy(EditPolicyRoles.DRAG_DROP_ROLE, new DragDropEditPolicy());
+		installEditPolicy(EditPolicyRoles.CANONICAL_ROLE, new State2CanonicalEditPolicy());
 		installEditPolicy(EditPolicy.LAYOUT_ROLE, createLayoutEditPolicy());
 
 	}
@@ -111,9 +117,6 @@ public class State2EditPart extends ShapeNodeEditPart {
 	 * @generated 
 	 */
 	protected IFigure getContentPaneFor(IGraphicalEditPart editPart) {
-		if (editPart instanceof StateContentEditPart) {
-			return getPrimaryShape().getFigureCompositeStateFigure_Body();
-		}
 
 		return super.getContentPaneFor(editPart);
 	}
@@ -126,12 +129,6 @@ public class State2EditPart extends ShapeNodeEditPart {
 			((StateName2EditPart) childEditPart).setLabel(getPrimaryShape().getFigureCompositeStateFigure_name());
 			return true;
 		}
-		if (childEditPart instanceof StateContentEditPart) {
-			IFigure pane = getPrimaryShape().getFigureCompositeStateFigure_Body();
-			setupContentPane(pane); // FIXME each comparment should handle his content pane in his own way 
-			pane.add(((StateContentEditPart) childEditPart).getFigure());
-			return true;
-		}
 		return false;
 	}
 
@@ -139,11 +136,6 @@ public class State2EditPart extends ShapeNodeEditPart {
 	 * @generated
 	 */
 	protected boolean removeFixedChild(EditPart childEditPart) {
-		if (childEditPart instanceof StateContentEditPart) {
-			IFigure pane = getPrimaryShape().getFigureCompositeStateFigure_Body();
-			pane.remove(((StateContentEditPart) childEditPart).getFigure());
-			return true;
-		}
 		return false;
 	}
 
@@ -265,6 +257,10 @@ public class State2EditPart extends ShapeNodeEditPart {
 
 			this.add(compositeStateFigure_Body0);
 			setFigureCompositeStateFigure_Body(compositeStateFigure_Body0);
+
+			org.eclipse.uml2.diagram.common.draw2d.LaneLayout layoutCompositeStateFigure_Body0 = new org.eclipse.uml2.diagram.common.draw2d.LaneLayout();
+
+			compositeStateFigure_Body0.setLayoutManager(layoutCompositeStateFigure_Body0);
 
 		}
 

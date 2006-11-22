@@ -11,6 +11,7 @@ import org.eclipse.jface.viewers.IStructuredSelection;
 import org.eclipse.jface.wizard.Wizard;
 import org.eclipse.ui.INewWizard;
 import org.eclipse.ui.IWorkbench;
+import org.eclipse.ui.PartInitException;
 import org.eclipse.ui.actions.WorkspaceModifyOperation;
 
 /**
@@ -108,7 +109,11 @@ public class UMLCreationWizard extends Wizard implements INewWizard {
 			protected void execute(IProgressMonitor monitor) throws CoreException, InterruptedException {
 				diagram = UMLDiagramEditorUtil.createDiagram(page.getContainerFullPath(), page.getFileName(), monitor);
 				if (isOpenNewlyCreatedDiagramEditor() && diagram != null) {
-					UMLDiagramEditorUtil.openDiagram(diagram);
+					try {
+						UMLDiagramEditorUtil.openDiagram(diagram);
+					} catch (PartInitException e) {
+						ErrorDialog.openError(getContainer().getShell(), "Error opening diagram editor", null, e.getStatus());
+					}
 				}
 			}
 		};

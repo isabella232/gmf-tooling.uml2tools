@@ -77,7 +77,9 @@ public class UMLNavigatorItem extends UMLAbstractNavigatorItem {
 			} else if (anotherEObject == null) {
 				return false;
 			}
-			return eObject.eResource().getURIFragment(eObject).equals(anotherEObject.eResource().getURIFragment(anotherEObject));
+			if (eObject.eResource() != null) {
+				return eObject.eResource().getURIFragment(eObject).equals(anotherEObject.eResource().getURIFragment(anotherEObject));
+			}
 		}
 		return super.equals(obj);
 	}

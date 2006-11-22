@@ -44,7 +44,6 @@ import org.eclipse.uml2.diagram.statemachine.edit.parts.RegionEditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.RegionSubvertices2EditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.RegionSubverticesEditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.State2EditPart;
-import org.eclipse.uml2.diagram.statemachine.edit.parts.StateContentEditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.StateEditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.StateMachineEditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.TransitionEditPart;
@@ -457,7 +456,6 @@ public class UMLNavigatorContentProvider implements ICommonContentProvider {
 		createNavigatorItems(connectedViews, parent, result, isRegion_2001ToState_3001ChildrenLeaf(view));
 		connectedViews = getChildrenByType(Collections.singleton(view), UMLVisualIDRegistry.getType(RegionSubverticesEditPart.VISUAL_ID));
 		connectedViews = getChildrenByType(connectedViews, UMLVisualIDRegistry.getType(State2EditPart.VISUAL_ID));
-		connectedViews = getChildrenByType(connectedViews, UMLVisualIDRegistry.getType(StateContentEditPart.VISUAL_ID));
 		connectedViews = getChildrenByType(connectedViews, UMLVisualIDRegistry.getType(Region2EditPart.VISUAL_ID));
 		connectedViews = getChildrenByType(connectedViews, UMLVisualIDRegistry.getType(RegionSubvertices2EditPart.VISUAL_ID));
 		connectedViews = getChildrenByType(connectedViews, UMLVisualIDRegistry.getType(StateEditPart.VISUAL_ID));
@@ -497,7 +495,6 @@ public class UMLNavigatorContentProvider implements ICommonContentProvider {
 		Collection result = new ArrayList();
 		Collection connectedViews = getChildrenByType(Collections.singleton(view), UMLVisualIDRegistry.getType(RegionSubverticesEditPart.VISUAL_ID));
 		connectedViews = getChildrenByType(connectedViews, UMLVisualIDRegistry.getType(State2EditPart.VISUAL_ID));
-		connectedViews = getChildrenByType(connectedViews, UMLVisualIDRegistry.getType(StateContentEditPart.VISUAL_ID));
 		connectedViews = getChildrenByType(connectedViews, UMLVisualIDRegistry.getType(Region2EditPart.VISUAL_ID));
 		connectedViews = getChildrenByType(connectedViews, UMLVisualIDRegistry.getType(RegionSubvertices2EditPart.VISUAL_ID));
 		connectedViews = getChildrenByType(connectedViews, UMLVisualIDRegistry.getType(Pseudostate4EditPart.VISUAL_ID));
@@ -537,8 +534,7 @@ public class UMLNavigatorContentProvider implements ICommonContentProvider {
 	 */
 	private Collection getState_3012ToRegion_3002Children(View view, Object parent) {
 		Collection result = new ArrayList();
-		Collection connectedViews = getChildrenByType(Collections.singleton(view), UMLVisualIDRegistry.getType(StateContentEditPart.VISUAL_ID));
-		connectedViews = getChildrenByType(connectedViews, UMLVisualIDRegistry.getType(Region2EditPart.VISUAL_ID));
+		Collection connectedViews = getChildrenByType(Collections.singleton(view), UMLVisualIDRegistry.getType(Region2EditPart.VISUAL_ID));
 		createNavigatorItems(connectedViews, parent, result, isState_3012ToRegion_3002ChildrenLeaf(view));
 		return result;
 	}
@@ -557,7 +553,6 @@ public class UMLNavigatorContentProvider implements ICommonContentProvider {
 		Collection result = new ArrayList();
 		Collection connectedViews = getChildrenByType(Collections.singleton(view), UMLVisualIDRegistry.getType(RegionSubverticesEditPart.VISUAL_ID));
 		connectedViews = getChildrenByType(connectedViews, UMLVisualIDRegistry.getType(State2EditPart.VISUAL_ID));
-		connectedViews = getChildrenByType(connectedViews, UMLVisualIDRegistry.getType(StateContentEditPart.VISUAL_ID));
 		connectedViews = getChildrenByType(connectedViews, UMLVisualIDRegistry.getType(Region2EditPart.VISUAL_ID));
 		connectedViews = getChildrenByType(connectedViews, UMLVisualIDRegistry.getType(RegionSubvertices2EditPart.VISUAL_ID));
 		connectedViews = getChildrenByType(connectedViews, UMLVisualIDRegistry.getType(Pseudostate2EditPart.VISUAL_ID));
@@ -753,7 +748,6 @@ public class UMLNavigatorContentProvider implements ICommonContentProvider {
 		Collection result = new ArrayList();
 		Collection connectedViews = getChildrenByType(Collections.singleton(view), UMLVisualIDRegistry.getType(RegionSubverticesEditPart.VISUAL_ID));
 		connectedViews = getChildrenByType(connectedViews, UMLVisualIDRegistry.getType(State2EditPart.VISUAL_ID));
-		connectedViews = getChildrenByType(connectedViews, UMLVisualIDRegistry.getType(StateContentEditPart.VISUAL_ID));
 		connectedViews = getChildrenByType(connectedViews, UMLVisualIDRegistry.getType(Region2EditPart.VISUAL_ID));
 		connectedViews = getChildrenByType(connectedViews, UMLVisualIDRegistry.getType(RegionSubvertices2EditPart.VISUAL_ID));
 		connectedViews = getChildrenByType(connectedViews, UMLVisualIDRegistry.getType(Pseudostate3EditPart.VISUAL_ID));
@@ -1088,7 +1082,6 @@ public class UMLNavigatorContentProvider implements ICommonContentProvider {
 		Collection result = new ArrayList();
 		Collection connectedViews = getChildrenByType(Collections.singleton(view), UMLVisualIDRegistry.getType(RegionSubverticesEditPart.VISUAL_ID));
 		connectedViews = getChildrenByType(connectedViews, UMLVisualIDRegistry.getType(State2EditPart.VISUAL_ID));
-		connectedViews = getChildrenByType(connectedViews, UMLVisualIDRegistry.getType(StateContentEditPart.VISUAL_ID));
 		connectedViews = getChildrenByType(connectedViews, UMLVisualIDRegistry.getType(Region2EditPart.VISUAL_ID));
 		connectedViews = getChildrenByType(connectedViews, UMLVisualIDRegistry.getType(RegionSubvertices2EditPart.VISUAL_ID));
 		connectedViews = getChildrenByType(connectedViews, UMLVisualIDRegistry.getType(Pseudostate5EditPart.VISUAL_ID));
@@ -1131,7 +1124,6 @@ public class UMLNavigatorContentProvider implements ICommonContentProvider {
 		Collection result = new ArrayList();
 		Collection connectedViews = getChildrenByType(Collections.singleton(view), UMLVisualIDRegistry.getType(RegionSubverticesEditPart.VISUAL_ID));
 		connectedViews = getChildrenByType(connectedViews, UMLVisualIDRegistry.getType(State2EditPart.VISUAL_ID));
-		connectedViews = getChildrenByType(connectedViews, UMLVisualIDRegistry.getType(StateContentEditPart.VISUAL_ID));
 		connectedViews = getChildrenByType(connectedViews, UMLVisualIDRegistry.getType(Region2EditPart.VISUAL_ID));
 		connectedViews = getChildrenByType(connectedViews, UMLVisualIDRegistry.getType(RegionSubvertices2EditPart.VISUAL_ID));
 		connectedViews = getChildrenByType(connectedViews, UMLVisualIDRegistry.getType(Pseudostate6EditPart.VISUAL_ID));
@@ -1260,7 +1252,6 @@ public class UMLNavigatorContentProvider implements ICommonContentProvider {
 		Collection result = new ArrayList();
 		Collection connectedViews = getChildrenByType(Collections.singleton(view), UMLVisualIDRegistry.getType(RegionSubverticesEditPart.VISUAL_ID));
 		connectedViews = getChildrenByType(connectedViews, UMLVisualIDRegistry.getType(State2EditPart.VISUAL_ID));
-		connectedViews = getChildrenByType(connectedViews, UMLVisualIDRegistry.getType(StateContentEditPart.VISUAL_ID));
 		connectedViews = getChildrenByType(connectedViews, UMLVisualIDRegistry.getType(Region2EditPart.VISUAL_ID));
 		connectedViews = getChildrenByType(connectedViews, UMLVisualIDRegistry.getType(RegionSubvertices2EditPart.VISUAL_ID));
 		connectedViews = getChildrenByType(connectedViews, UMLVisualIDRegistry.getType(Pseudostate7EditPart.VISUAL_ID));
@@ -1336,7 +1327,6 @@ public class UMLNavigatorContentProvider implements ICommonContentProvider {
 		Collection result = new ArrayList();
 		Collection connectedViews = getChildrenByType(Collections.singleton(view), UMLVisualIDRegistry.getType(RegionSubverticesEditPart.VISUAL_ID));
 		connectedViews = getChildrenByType(connectedViews, UMLVisualIDRegistry.getType(State2EditPart.VISUAL_ID));
-		connectedViews = getChildrenByType(connectedViews, UMLVisualIDRegistry.getType(StateContentEditPart.VISUAL_ID));
 		connectedViews = getChildrenByType(connectedViews, UMLVisualIDRegistry.getType(Region2EditPart.VISUAL_ID));
 		connectedViews = getChildrenByType(connectedViews, UMLVisualIDRegistry.getType(RegionSubvertices2EditPart.VISUAL_ID));
 		connectedViews = getChildrenByType(connectedViews, UMLVisualIDRegistry.getType(PseudostateEditPart.VISUAL_ID));
@@ -1412,7 +1402,6 @@ public class UMLNavigatorContentProvider implements ICommonContentProvider {
 		Collection result = new ArrayList();
 		Collection connectedViews = getChildrenByType(Collections.singleton(view), UMLVisualIDRegistry.getType(RegionSubverticesEditPart.VISUAL_ID));
 		connectedViews = getChildrenByType(connectedViews, UMLVisualIDRegistry.getType(State2EditPart.VISUAL_ID));
-		connectedViews = getChildrenByType(connectedViews, UMLVisualIDRegistry.getType(StateContentEditPart.VISUAL_ID));
 		connectedViews = getChildrenByType(connectedViews, UMLVisualIDRegistry.getType(Region2EditPart.VISUAL_ID));
 		connectedViews = getChildrenByType(connectedViews, UMLVisualIDRegistry.getType(RegionSubvertices2EditPart.VISUAL_ID));
 		connectedViews = getChildrenByType(connectedViews, UMLVisualIDRegistry.getType(Pseudostate8EditPart.VISUAL_ID));
@@ -1712,7 +1701,6 @@ public class UMLNavigatorContentProvider implements ICommonContentProvider {
 		Collection result = new ArrayList();
 		Collection connectedViews = getChildrenByType(Collections.singleton(view), UMLVisualIDRegistry.getType(RegionSubverticesEditPart.VISUAL_ID));
 		connectedViews = getChildrenByType(connectedViews, UMLVisualIDRegistry.getType(State2EditPart.VISUAL_ID));
-		connectedViews = getChildrenByType(connectedViews, UMLVisualIDRegistry.getType(StateContentEditPart.VISUAL_ID));
 		connectedViews = getChildrenByType(connectedViews, UMLVisualIDRegistry.getType(Region2EditPart.VISUAL_ID));
 		connectedViews = getChildrenByType(connectedViews, UMLVisualIDRegistry.getType(RegionSubvertices2EditPart.VISUAL_ID));
 		connectedViews = getChildrenByType(connectedViews, UMLVisualIDRegistry.getType(FinalStateEditPart.VISUAL_ID));

@@ -74,8 +74,6 @@ public class UMLEditPartFactory implements EditPartFactory {
 				return new Pseudostate8EditPart(view);
 			case RegionSubverticesEditPart.VISUAL_ID:
 				return new RegionSubverticesEditPart(view);
-			case StateContentEditPart.VISUAL_ID:
-				return new StateContentEditPart(view);
 			case RegionSubvertices2EditPart.VISUAL_ID:
 				return new RegionSubvertices2EditPart(view);
 			case StateMachineEditPart.VISUAL_ID:

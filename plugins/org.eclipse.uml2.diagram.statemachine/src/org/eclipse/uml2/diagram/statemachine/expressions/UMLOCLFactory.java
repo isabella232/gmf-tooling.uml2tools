@@ -1,5 +1,7 @@
 package org.eclipse.uml2.diagram.statemachine.expressions;
 
+import java.lang.ref.WeakReference;
+
 import java.util.Collections;
 import java.util.Iterator;
 import java.util.Map;
@@ -34,10 +36,28 @@ import org.eclipse.emf.ocl.types.util.Types;
 
 import org.eclipse.emf.ocl.utilities.PredefinedType;
 
+import org.eclipse.uml2.diagram.parser.lookup.OCLLookup;
+
 /**
  * @generated 
  */
 public class UMLOCLFactory {
+
+	/**
+	 * @generated
+	 */
+	public static OCLLookup.Expression getOCLLookupExpression(String body, EClassifier context) {
+		final UMLAbstractExpression expression = getExpression(body, context);
+		if (!expression.getStatus().isOK()) {
+			throw new IllegalArgumentException("Bad OCL:" + body);
+		}
+		return new OCLLookup.Expression() {
+
+			public Object evaluate(Object context) {
+				return expression.evaluate(context);
+			}
+		};
+	}
 
 	/**
 	 * @generated 
@@ -67,32 +87,47 @@ public class UMLOCLFactory {
 		/**
 		 * @generated 
 		 */
-		private Query query;
+		private WeakReference queryRef;
 
 		/**
 		 * @generated 
 		 */
 		public Expression(String body, EClassifier context, Map environment) {
 			super(body, context, environment);
+		}
 
-			IOCLHelper oclHelper = (environment.isEmpty()) ? HelperUtil.createOCLHelper() : HelperUtil.createOCLHelper(createCustomEnv(environment));
-			oclHelper.setContext(context());
-			try {
-				OCLExpression oclExpression = oclHelper.createQuery(body);
-				this.query = QueryFactory.eINSTANCE.createQuery(oclExpression);
-			} catch (OCLParsingException e) {
-				setStatus(IStatus.ERROR, e.getMessage(), e);
+		/**
+		 * @generated 
+		 */
+		protected Query getQuery() {
+			Query oclQuery = null;
+			if (this.queryRef != null) {
+				oclQuery = (Query) this.queryRef.get();
 			}
+			if (oclQuery == null) {
+				IOCLHelper oclHelper = (environment().isEmpty()) ? HelperUtil.createOCLHelper() : HelperUtil.createOCLHelper(createCustomEnv(environment()));
+				oclHelper.setContext(context());
+				try {
+					OCLExpression oclExpression = oclHelper.createQuery(body());
+					oclQuery = QueryFactory.eINSTANCE.createQuery(oclExpression);
+					this.queryRef = new WeakReference(oclQuery);
+					setStatus(IStatus.OK, null, null);
+				} catch (OCLParsingException e) {
+					setStatus(IStatus.ERROR, e.getMessage(), e);
+				}
+			}
+			return oclQuery;
 		}
 
 		/**
 		 * @generated 
 		 */
 		protected Object doEvaluate(Object context, Map env) {
-			if (query == null) {
+			Query oclQuery = getQuery();
+			if (oclQuery == null) {
 				return null;
 			}
-			EvaluationEnvironment evalEnv = query.getEvaluationEnvironment();
+			EvaluationEnvironment evalEnv = oclQuery.getEvaluationEnvironment();
 			// init environment
 			for (Iterator it = env.entrySet().iterator(); it.hasNext();) {
 				Map.Entry nextEntry = (Map.Entry) it.next();
@@ -101,11 +136,11 @@ public class UMLOCLFactory {
 
 			try {
 				initExtentMap(context);
-				Object result = query.evaluate(context);
+				Object result = oclQuery.evaluate(context);
 				return (result != Types.OCL_INVALID) ? result : null;
 			} finally {
 				evalEnv.clear();
-				query.setExtentMap(Collections.EMPTY_MAP);
+				oclQuery.setExtentMap(Collections.EMPTY_MAP);
 			}
 		}
 
@@ -126,10 +161,10 @@ public class UMLOCLFactory {
 		 * @generated
 		 */
 		private void initExtentMap(Object context) {
-			if (query == null || context == null) {
+			if (!getStatus().isOK() || context == null) {
 				return;
 			}
-			final Query queryToInit = query;
+			final Query queryToInit = getQuery();
 			final Object extentContext = context;
 
 			queryToInit.setExtentMap(Collections.EMPTY_MAP);

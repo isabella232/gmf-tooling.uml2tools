@@ -27,7 +27,6 @@ import org.eclipse.uml2.diagram.statemachine.edit.parts.RegionEditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.RegionSubvertices2EditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.RegionSubverticesEditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.State2EditPart;
-import org.eclipse.uml2.diagram.statemachine.edit.parts.StateContentEditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.StateEditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.StateMachineEditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.StateName2EditPart;
@@ -185,8 +184,9 @@ public class UMLVisualIDRegistry {
 			if (StateName2EditPart.VISUAL_ID == nodeVisualID) {
 				return StateName2EditPart.VISUAL_ID;
 			}
-			if (StateContentEditPart.VISUAL_ID == nodeVisualID) {
-				return StateContentEditPart.VISUAL_ID;
+			if ((semanticHint == null || Region2EditPart.VISUAL_ID == nodeVisualID) && UMLPackage.eINSTANCE.getRegion().isSuperTypeOf(domainElementMetaclass)
+					&& (domainElement == null || isNodeRegion_3002((Region) domainElement))) {
+				return Region2EditPart.VISUAL_ID;
 			}
 			return getUnrecognizedState_3012ChildNodeID(domainElement, semanticHint);
 		case Region2EditPart.VISUAL_ID:
@@ -258,12 +258,6 @@ public class UMLVisualIDRegistry {
 				return Pseudostate8EditPart.VISUAL_ID;
 			}
 			return getUnrecognizedRegionSubvertices_7001ChildNodeID(domainElement, semanticHint);
-		case StateContentEditPart.VISUAL_ID:
-			if ((semanticHint == null || Region2EditPart.VISUAL_ID == nodeVisualID) && UMLPackage.eINSTANCE.getRegion().isSuperTypeOf(domainElementMetaclass)
-					&& (domainElement == null || isNodeRegion_3002((Region) domainElement))) {
-				return Region2EditPart.VISUAL_ID;
-			}
-			return getUnrecognizedStateContent_7004ChildNodeID(domainElement, semanticHint);
 		case RegionSubvertices2EditPart.VISUAL_ID:
 			if ((semanticHint == null || StateEditPart.VISUAL_ID == nodeVisualID) && UMLPackage.eINSTANCE.getState().isSuperTypeOf(domainElementMetaclass)
 					&& (domainElement == null || isNodeState_3001((State) domainElement))) {
@@ -677,16 +671,6 @@ public class UMLVisualIDRegistry {
 	 * @generated
 	 */
 	private static int getUnrecognizedRegionSubvertices_7001ChildNodeID(EObject domainElement, String semanticHint) {
-		return -1;
-	}
-
-	/**
-	 * User can change implementation of this method to handle some specific
-	 * situations not covered by default logic.
-	 *
-	 * @generated
-	 */
-	private static int getUnrecognizedStateContent_7004ChildNodeID(EObject domainElement, String semanticHint) {
 		return -1;
 	}
 

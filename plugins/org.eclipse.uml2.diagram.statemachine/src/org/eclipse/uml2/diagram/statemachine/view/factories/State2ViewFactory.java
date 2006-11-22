@@ -15,7 +15,6 @@ import org.eclipse.gmf.runtime.diagram.ui.view.factories.AbstractShapeViewFactor
 import org.eclipse.gmf.runtime.notation.NotationFactory;
 import org.eclipse.gmf.runtime.notation.View;
 
-import org.eclipse.uml2.diagram.statemachine.edit.parts.StateContentEditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.StateMachineEditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.StateName2EditPart;
 
@@ -54,7 +53,6 @@ public class State2ViewFactory extends AbstractShapeViewFactory {
 			view.getEAnnotations().add(shortcutAnnotation);
 		}
 		getViewService().createNode(semanticAdapter, view, UMLVisualIDRegistry.getType(StateName2EditPart.VISUAL_ID), ViewUtil.APPEND, true, getPreferencesHint());
-		getViewService().createNode(semanticAdapter, view, UMLVisualIDRegistry.getType(StateContentEditPart.VISUAL_ID), ViewUtil.APPEND, true, getPreferencesHint());
 	}
 
 }
