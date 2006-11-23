@@ -1,0 +1,7 @@
+# Debugging options for the org.eclipse.uml2.diagram.profile plug-in
+
+# Turn on general debugging for the org.eclipse.uml2.diagram.profile plug-in
+org.eclipse.uml2.diagram.profile/debug=false
+
+# Turn on debugging of visualID processing
+org.eclipse.uml2.diagram.profile/debug/visualID=true
