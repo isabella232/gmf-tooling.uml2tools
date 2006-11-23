@@ -32,6 +32,10 @@ public class OCLLookup<T extends NamedElement> implements Lookup<T> {
 	private final ArrayList<IElementType> myResolutionTypes;
 	private static final IElementType[] NO_RESOLUTIONS = new IElementType[0];
 	
+	public OCLLookup(Expression ocl){
+		this(ocl, NO_RESOLUTIONS);
+	}
+	
 	public OCLLookup(Expression ocl, IElementType[] resolutions){
 		mySelector = ocl;
 		if (resolutions == null){

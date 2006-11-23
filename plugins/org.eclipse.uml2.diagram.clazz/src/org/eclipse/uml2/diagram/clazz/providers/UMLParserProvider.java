@@ -60,16 +60,17 @@ import org.eclipse.uml2.diagram.clazz.parser.instance.InstanceSpecificationToStr
 import org.eclipse.uml2.diagram.clazz.parser.operation.OperationInplaceApplier;
 import org.eclipse.uml2.diagram.clazz.parser.operation.OperationParser;
 import org.eclipse.uml2.diagram.clazz.parser.operation.OperationToString;
-import org.eclipse.uml2.diagram.clazz.parser.property.PropertyParser;
-import org.eclipse.uml2.diagram.clazz.parser.property.PropertyToString;
 import org.eclipse.uml2.diagram.clazz.parser.slot.SlotParser;
 import org.eclipse.uml2.diagram.clazz.parser.slot.SlotToString;
 import org.eclipse.uml2.diagram.clazz.part.UMLVisualIDRegistry;
 import org.eclipse.uml2.diagram.common.parser.port.PortParser;
 import org.eclipse.uml2.diagram.common.parser.port.PortToString;
+import org.eclipse.uml2.diagram.common.parser.property.PropertyParser;
+import org.eclipse.uml2.diagram.common.parser.property.PropertyToString;
 import org.eclipse.uml2.diagram.parser.BasicApplyStrategy;
 import org.eclipse.uml2.diagram.parser.ParserAdapter;
 import org.eclipse.uml2.diagram.parser.SemanticParserAdapter;
+import org.eclipse.uml2.diagram.parser.lookup.DefaultOclLookups;
 import org.eclipse.uml2.diagram.parser.lookup.LookupSuite;
 import org.eclipse.uml2.diagram.parser.lookup.LookupSuiteImpl;
 import org.eclipse.uml2.diagram.parser.lookup.OCLLookup;
@@ -82,7 +83,7 @@ import org.eclipse.uml2.uml.UMLPackage;
 public class UMLParserProvider extends AbstractProvider implements IParserProvider {
 
 	public static final OCLLookup<Type> TYPE_LOOKUP = new OCLLookup<Type>(//
-			UMLOCLFactory.getOCLLookupExpression("self.getNearestPackage().ownedType", UMLPackage.eINSTANCE.getNamedElement()), // 
+			UMLOCLFactory.getOCLLookupExpression(DefaultOclLookups.DEFAULT_TYPE_LOOKUP, UMLPackage.eINSTANCE.getNamedElement()), // 
 			new IElementType[] { //
 			/*
 			 UMLElementTypes.Class_2001, // 

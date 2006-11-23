@@ -19,7 +19,7 @@ import java.util.List;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.uml2.diagram.clazz.association.AssociationEndConvention;
-import org.eclipse.uml2.diagram.clazz.parser.property.PropertyToString;
+import org.eclipse.uml2.diagram.common.parser.property.PropertyToString;
 import org.eclipse.uml2.diagram.parser.ExternalToString;
 import org.eclipse.uml2.uml.Association;
 import org.eclipse.uml2.uml.Property;
@@ -91,9 +91,9 @@ public abstract class AssociationEndToString extends PropertyToString {
 		public String getToString(EObject object, int flags) {
 			Property property = asProperty(object);
 			StringBuffer result = new StringBuffer();
-			result.append(getVisibility(property));
-			result.append(getIsDerived(property));
-			result.append(property.getName());
+			appendVisibility(result, property);
+			appendIsDerived(result, property);
+			appendName(result, property);
 			return result.toString();
 		}
 		

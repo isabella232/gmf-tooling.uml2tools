@@ -10,7 +10,7 @@
  *    Michael Golubev (Borland) - initial API and implementation
  */
 
-package org.eclipse.uml2.diagram.clazz.parser.property;
+package org.eclipse.uml2.diagram.common.parser.property;
 
 import java.util.Arrays;
 import java.util.Iterator;
@@ -32,8 +32,8 @@ public abstract class PropertyToString extends AbstractToString {
 		public String getToString(EObject object, int flags) {
 			Property property = asProperty(object);
 			StringBuffer result = new StringBuffer();
-			result.append(getVisibility(property));
-			result.append(getIsDerived(property));
+			appendVisibility(result, property);
+			appendIsDerived(result, property);
 			appendName(result, property);
 			appendType(result, property);
 			appendMultiplicity(result, property);
@@ -66,9 +66,9 @@ public abstract class PropertyToString extends AbstractToString {
 		public String getToString(EObject object, int flags) {
 			Property property = asProperty(object);
 			StringBuffer result = new StringBuffer();
-			result.append(getVisibility(property));
-			result.append(getIsDerived(property));
-			result.append(property.getName());
+			appendVisibility(result, property);
+			appendIsDerived(result, property);
+			appendName(result, property);
 			appendType(result, property);
 			appendMultiplicity(result, property);
 			appendDefault(result, property);
@@ -145,9 +145,13 @@ public abstract class PropertyToString extends AbstractToString {
 		result.append(" = ");
 		result.append(def);
 	}
-
-	protected String getIsDerived(Property property) {
-		return property.isDerived() ? "/" : "";
-	}
 	
+	protected void appendVisibility(StringBuffer result, Property property) {
+		result.append(getVisibility(property));
+	}
+
+	protected void appendIsDerived(StringBuffer result, Property property) {
+		result.append(property.isDerived() ? "/" : "");
+	}
+
 }

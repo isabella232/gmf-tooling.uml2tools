@@ -8,8 +8,6 @@ import org.eclipse.gmf.runtime.common.ui.services.parser.IParser;
 import org.eclipse.gmf.runtime.common.ui.services.parser.IParserProvider;
 import org.eclipse.gmf.runtime.emf.type.core.IElementType;
 import org.eclipse.gmf.runtime.notation.View;
-import org.eclipse.uml2.diagram.common.parser.port.PortParser;
-import org.eclipse.uml2.diagram.common.parser.port.PortToString;
 import org.eclipse.uml2.diagram.component.edit.parts.ArtifactName2EditPart;
 import org.eclipse.uml2.diagram.component.edit.parts.ArtifactNameEditPart;
 import org.eclipse.uml2.diagram.component.edit.parts.ClassName2EditPart;
@@ -21,9 +19,7 @@ import org.eclipse.uml2.diagram.component.edit.parts.InterfaceNameEditPart;
 import org.eclipse.uml2.diagram.component.edit.parts.PortNameEditPart;
 import org.eclipse.uml2.diagram.component.expressions.UMLOCLFactory;
 import org.eclipse.uml2.diagram.component.part.UMLVisualIDRegistry;
-import org.eclipse.uml2.diagram.parser.BasicApplyStrategy;
-import org.eclipse.uml2.diagram.parser.SemanticParserAdapter;
-import org.eclipse.uml2.diagram.parser.lookup.LookupSuiteImpl;
+import org.eclipse.uml2.diagram.parser.lookup.DefaultOclLookups;
 import org.eclipse.uml2.diagram.parser.lookup.OCLLookup;
 import org.eclipse.uml2.uml.Type;
 import org.eclipse.uml2.uml.UMLPackage;
@@ -34,11 +30,11 @@ import org.eclipse.uml2.uml.UMLPackage;
 public class UMLParserProvider extends AbstractProvider implements IParserProvider {
 
 	public static final OCLLookup<Type> TYPE_LOOKUP = new OCLLookup<Type>(//
-			UMLOCLFactory.getOCLLookupExpression("self.getNearestPackage().ownedType", UMLPackage.eINSTANCE.getNamedElement()), // 
+			UMLOCLFactory.getOCLLookupExpression(DefaultOclLookups.DEFAULT_TYPE_LOOKUP, UMLPackage.eINSTANCE.getNamedElement()), // 
 			new IElementType[] { //
-			/*
-			 UMLElementTypes.Class_2004, // 
-			 */
+				/*
+				 UMLElementTypes.Class_2004, // 
+				 */
 			});
 
 	/**
