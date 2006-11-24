@@ -312,7 +312,15 @@ public class Package2EditPart extends ShapeNodeEditPart {
 		 */
 		public PackageFigure() {
 
-			this.setLayoutManager(new org.eclipse.gmf.internal.codegen.draw2d.GridLayout());
+			org.eclipse.gmf.internal.codegen.draw2d.GridLayout layoutThis = new org.eclipse.gmf.internal.codegen.draw2d.GridLayout();
+			layoutThis.numColumns = 2;
+			layoutThis.makeColumnsEqualWidth = true;
+			layoutThis.horizontalSpacing = 0;
+			layoutThis.verticalSpacing = 0;
+			layoutThis.marginWidth = 0;
+			layoutThis.marginHeight = 0;
+			this.setLayoutManager(layoutThis);
+
 			this.setFill(false);
 			this.setFillXOR(false);
 			this.setOutline(false);
