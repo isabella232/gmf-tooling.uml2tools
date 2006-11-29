@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feature
+      id="org.eclipse.uml2.diagram.tests_feature"
+      label="%featureName"
+      version="1.0.0.qualifier"
+      provider-name="%providerName">
+
+   <url>
+      <update label="%updateSiteName" url="http://download.eclipse.org/modeling/mdt/update-site/releases/site.xml"/>
+   </url>
+
+   <description>
+      %description
+   </description>
+
+   <copyright url="%copyrightURL">
+      %copyright
+   </copyright>
+
+   <license url="%licenseURL">
+      %license
+   </license>
+
+   <requires>
+      <import plugin="org.eclipse.core.runtime"/>
+      <import plugin="org.eclipse.core.resources"/>
+      <import plugin="org.eclipse.jface"/>
+      <import plugin="org.eclipse.emf.ecore"/>
+      <import plugin="org.eclipse.emf.edit.ui"/>
+      <import plugin="org.eclipse.gmf.runtime.notation"/>
+      <import plugin="org.eclipse.gmf.runtime.common.ui"/>
+      <import plugin="org.junit"/>
+      <import plugin="org.eclipse.gmf.runtime.emf.type.core"/>
+      <import plugin="org.eclipse.uml2.diagram.clazz"/>
+   </requires>
+
+   <plugin
+         id="org.eclipse.uml2.diagram.clazz.tests"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"/>
+
+</feature>
