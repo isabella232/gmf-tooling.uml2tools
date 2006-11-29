@@ -27,4 +27,5 @@ Export-Package: org.eclipse.uml2.diagram.parser,
  org.eclipse.uml2.internal.diagram.parser;x-internal:=true
 Eclipse-LazyStart: true
 Bundle-Vendor: %providerName
+Bundle-ClassPath: org.eclipse.uml2.diagram.parser.jar
 
