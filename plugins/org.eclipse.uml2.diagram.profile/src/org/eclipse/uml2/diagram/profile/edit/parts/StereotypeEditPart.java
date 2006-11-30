@@ -278,7 +278,11 @@ public class StereotypeEditPart extends ShapeNodeEditPart {
 		 */
 		public StereotypeFigure() {
 
-			this.setLayoutManager(new org.eclipse.gmf.internal.codegen.draw2d.GridLayout());
+			org.eclipse.gmf.internal.codegen.draw2d.GridLayout layoutThis = new org.eclipse.gmf.internal.codegen.draw2d.GridLayout();
+			layoutThis.numColumns = 1;
+			layoutThis.makeColumnsEqualWidth = true;
+			this.setLayoutManager(layoutThis);
+
 			this.setFill(true);
 			this.setFillXOR(false);
 			this.setOutline(true);
