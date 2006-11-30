@@ -520,7 +520,7 @@ public class UMLVisualIDRegistry {
 	 * @generated
 	 */
 	private static boolean isLinkWithClassGeneralization_4001(Generalization element) {
-		return Generalization_4001.matches(element);
+		return true;
 	}
 
 	/**
@@ -560,15 +560,6 @@ public class UMLVisualIDRegistry {
 	 */
 	private static final Matcher ElementImport_2006 = new Matcher(UMLOCLFactory.getExpression("self.importedElement.oclIsUndefined() or self.importedElement.oclAsType(uml::Class).isMetaclass()", //$NON-NLS-1$
 			UMLPackage.eINSTANCE.getElementImport()));
-
-	/**
-	 * @generated
-	 */
-	private static final Matcher Generalization_4001 = new Matcher(
-			UMLOCLFactory
-					.getExpression(
-							"let pakkage : Package = self.getNearestPackage() in \r\nlet siblings : Set(Type) = pakkage.ownedType in \r\nlet imports : Bag(PrimitiveType) = pakkage.elementImport->select(importedElement.oclIsKindOf(PrimitiveType))->collect(importedElement.oclAsType(PrimitiveType)) in \r\nlet result : Set(Type) = Set{}->union(siblings)->union(imports->asSet()) in\r\n-- let result : Bag(Type) = siblings->iterate(x : Type; acc : Bag(Type) = Bag{} | acc->including)\r\n-- result->size() > 10\r\nfalse\r\n\r\n", //$NON-NLS-1$
-							UMLPackage.eINSTANCE.getGeneralization()));
 
 	/**
 	 * @generated	
