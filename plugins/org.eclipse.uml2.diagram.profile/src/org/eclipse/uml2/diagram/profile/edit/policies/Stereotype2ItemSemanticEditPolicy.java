@@ -7,16 +7,15 @@ import org.eclipse.gmf.runtime.emf.type.core.requests.DestroyElementRequest;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EAnnotation;
 import org.eclipse.gmf.runtime.notation.View;
-import org.eclipse.emf.ecore.EClass;
-
 import org.eclipse.gef.commands.UnexecutableCommand;
 
-import org.eclipse.gmf.runtime.emf.type.core.commands.CreateRelationshipCommand;
+import org.eclipse.uml2.diagram.profile.edit.commands.GeneralizationTypeLinkCreateCommand;
 
 import org.eclipse.uml2.diagram.profile.providers.UMLElementTypes;
 
 import org.eclipse.uml2.uml.Classifier;
-import org.eclipse.uml2.uml.Generalization;
+import org.eclipse.uml2.uml.ElementImport;
+import org.eclipse.uml2.uml.Stereotype;
 import org.eclipse.uml2.uml.UMLPackage;
 
 /**
@@ -59,6 +58,17 @@ public class Stereotype2ItemSemanticEditPolicy extends UMLBaseItemSemanticEditPo
 	 * @generated
 	 */
 	protected Command getCreateStartOutgoingGeneralization4001Command(CreateRelationshipRequest req) {
+		EObject sourceEObject = req.getSource();
+		EObject targetEObject = req.getTarget();
+		if (false == sourceEObject instanceof Classifier || (targetEObject != null && false == targetEObject instanceof Classifier)) {
+			return UnexecutableCommand.INSTANCE;
+		}
+		Classifier source = (Classifier) sourceEObject;
+		Classifier target = (Classifier) targetEObject;
+
+		if (!UMLBaseItemSemanticEditPolicy.LinkConstraints.canCreateGeneralization_4001(source, target)) {
+			return UnexecutableCommand.INSTANCE;
+		}
 		return new Command() {
 		};
 	}
@@ -67,64 +77,40 @@ public class Stereotype2ItemSemanticEditPolicy extends UMLBaseItemSemanticEditPo
 	 * @generated
 	 */
 	protected Command getCreateCompleteIncomingGeneralization4001Command(CreateRelationshipRequest req) {
-		if (!(req.getSource() instanceof Classifier)) {
+		EObject sourceEObject = req.getSource();
+		EObject targetEObject = req.getTarget();
+		if (false == sourceEObject instanceof Classifier || false == targetEObject instanceof Classifier) {
 			return UnexecutableCommand.INSTANCE;
 		}
-		final Classifier element = (Classifier) req.getSource();
+		Classifier source = (Classifier) sourceEObject;
+		Classifier target = (Classifier) targetEObject;
+
+		if (!UMLBaseItemSemanticEditPolicy.LinkConstraints.canCreateGeneralization_4001(source, target)) {
+			return UnexecutableCommand.INSTANCE;
+		}
 		if (req.getContainmentFeature() == null) {
 			req.setContainmentFeature(UMLPackage.eINSTANCE.getClassifier_Generalization());
 		}
-		return getMSLWrapper(new CreateIncomingGeneralization4001Command(req) {
-
-			protected EObject getElementToEdit() {
-				return element;
-			}
-		});
-	}
-
-	/**
-	 * @generated
-	 */
-	private static class CreateIncomingGeneralization4001Command extends CreateRelationshipCommand {
-
-		/**
-		 * @generated
-		 */
-		public CreateIncomingGeneralization4001Command(CreateRelationshipRequest req) {
-			super(req);
-		}
-
-		/**
-		 * @generated
-		 */
-		protected EClass getEClassToEdit() {
-			return UMLPackage.eINSTANCE.getClassifier();
-		};
-
-		/**
-		 * @generated
-		 */
-		protected void setElementToEdit(EObject element) {
-			throw new UnsupportedOperationException();
-		}
-
-		/**
-		 * @generated
-		 */
-		protected EObject doDefaultElementCreation() {
-			Generalization newElement = (Generalization) super.doDefaultElementCreation();
-			if (newElement != null) {
-				newElement.setGeneral((Classifier) getTarget());
-			}
-			return newElement;
-		}
+		return getMSLWrapper(new GeneralizationTypeLinkCreateCommand(req, source, target));
 	}
 
 	/**
 	 * @generated
 	 */
 	protected Command getCreateStartOutgoingExtension4002Command(CreateRelationshipRequest req) {
-		if (!UMLBaseItemSemanticEditPolicy.LinkConstraints.Extension_4002.canCreateLink(req, false)) {
+		EObject sourceEObject = req.getSource();
+		EObject targetEObject = req.getTarget();
+		if (false == sourceEObject instanceof Stereotype || (targetEObject != null && false == targetEObject instanceof ElementImport)) {
+			return UnexecutableCommand.INSTANCE;
+		}
+		Stereotype source = (Stereotype) sourceEObject;
+		ElementImport target = (ElementImport) targetEObject;
+
+		org.eclipse.uml2.uml.Package container = (org.eclipse.uml2.uml.Package) getRelationshipContainer(source, UMLPackage.eINSTANCE.getPackage(), req.getElementType());
+		if (container == null) {
+			return UnexecutableCommand.INSTANCE;
+		}
+		if (!UMLBaseItemSemanticEditPolicy.LinkConstraints.canCreateExtension_4002(container, source, target)) {
 			return UnexecutableCommand.INSTANCE;
 		}
 		return new Command() {

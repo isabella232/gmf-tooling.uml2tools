@@ -1,18 +1,16 @@
 package org.eclipse.uml2.diagram.profile.edit.policies;
 
 import org.eclipse.emf.ecore.EAnnotation;
-import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.gef.commands.Command;
 import org.eclipse.gef.commands.UnexecutableCommand;
-import org.eclipse.gmf.runtime.emf.type.core.commands.CreateRelationshipCommand;
 import org.eclipse.gmf.runtime.emf.type.core.commands.DestroyElementCommand;
 import org.eclipse.gmf.runtime.emf.type.core.requests.CreateRelationshipRequest;
 import org.eclipse.gmf.runtime.emf.type.core.requests.DestroyElementRequest;
 import org.eclipse.gmf.runtime.notation.View;
+import org.eclipse.uml2.diagram.profile.edit.commands.ExtensionTypeLinkCreateCommand;
 import org.eclipse.uml2.diagram.profile.providers.UMLElementTypes;
 import org.eclipse.uml2.uml.ElementImport;
-import org.eclipse.uml2.uml.Extension;
 import org.eclipse.uml2.uml.Stereotype;
 import org.eclipse.uml2.uml.UMLPackage;
 
@@ -53,62 +51,24 @@ public class ElementImportItemSemanticEditPolicy extends UMLBaseItemSemanticEdit
 	 * @generated
 	 */
 	protected Command getCreateCompleteIncomingExtension4002Command(CreateRelationshipRequest req) {
-		if (!(req.getSource() instanceof Stereotype)) {
+		EObject sourceEObject = req.getSource();
+		EObject targetEObject = req.getTarget();
+		if (false == sourceEObject instanceof Stereotype || false == targetEObject instanceof ElementImport) {
 			return UnexecutableCommand.INSTANCE;
 		}
-		final org.eclipse.uml2.uml.Package element = (org.eclipse.uml2.uml.Package) getRelationshipContainer(req.getSource(), UMLPackage.eINSTANCE.getPackage(), req.getElementType());
-		if (element == null) {
+		Stereotype source = (Stereotype) sourceEObject;
+		ElementImport target = (ElementImport) targetEObject;
+
+		org.eclipse.uml2.uml.Package container = (org.eclipse.uml2.uml.Package) getRelationshipContainer(source, UMLPackage.eINSTANCE.getPackage(), req.getElementType());
+		if (container == null) {
 			return UnexecutableCommand.INSTANCE;
 		}
-		if (!UMLBaseItemSemanticEditPolicy.LinkConstraints.Extension_4002.canCreateLink(req, false)) {
+		if (!UMLBaseItemSemanticEditPolicy.LinkConstraints.canCreateExtension_4002(container, source, target)) {
 			return UnexecutableCommand.INSTANCE;
 		}
 		if (req.getContainmentFeature() == null) {
 			req.setContainmentFeature(UMLPackage.eINSTANCE.getPackage_PackagedElement());
 		}
-		return getMSLWrapper(new CreateIncomingExtension4002Command(req) {
-
-			protected EObject getElementToEdit() {
-				return element;
-			}
-		});
-	}
-
-	/**
-	 * @generated
-	 */
-	private static class CreateIncomingExtension4002Command extends CreateRelationshipCommand {
-
-		/**
-		 * @generated
-		 */
-		public CreateIncomingExtension4002Command(CreateRelationshipRequest req) {
-			super(req);
-		}
-
-		/**
-		 * @generated
-		 */
-		protected EClass getEClassToEdit() {
-			return UMLPackage.eINSTANCE.getPackage();
-		};
-
-		/**
-		 * @generated
-		 */
-		protected void setElementToEdit(EObject element) {
-			throw new UnsupportedOperationException();
-		}
-
-		/**
-		 * @generated NOT
-		 */
-		protected EObject doDefaultElementCreation() {
-			ElementImport elementImport = (ElementImport) getTarget();
-			org.eclipse.uml2.uml.Class metaclass = (org.eclipse.uml2.uml.Class) elementImport.getImportedElement();
-			Stereotype stereotype = (Stereotype) getSource();
-
-			return stereotype.createExtension(metaclass, false);
-		}
+		return getMSLWrapper(new ExtensionTypeLinkCreateCommand(req, container, source, target));
 	}
 }

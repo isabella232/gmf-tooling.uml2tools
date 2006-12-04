@@ -32,7 +32,12 @@ public class UMLCreationWizard extends Wizard implements INewWizard {
 	/**
 	 * @generated
 	 */
-	protected UMLCreationWizardPage page;
+	protected UMLCreationWizardPage diagramModelFilePage;
+
+	/**
+	 * @generated
+	 */
+	protected UMLCreationWizardPage domainModelFilePage;
 
 	/**
 	 * @generated
@@ -94,10 +99,25 @@ public class UMLCreationWizard extends Wizard implements INewWizard {
 	 * @generated
 	 */
 	public void addPages() {
-		page = new UMLCreationWizardPage("CreationWizardPage", getSelection()); //$NON-NLS-1$
-		page.setTitle("Create UMLProfile Diagram");
-		page.setDescription("Create a new UMLProfile diagram.");
-		addPage(page);
+		diagramModelFilePage = new UMLCreationWizardPage("DiagramModelFile", getSelection()) { //$NON-NLS-1$
+
+			protected String getExtension() {
+				return "umlprofile_diagram"; //$NON-NLS-1$
+			}
+		};
+		diagramModelFilePage.setTitle("Create UMLProfile Diagram");
+		diagramModelFilePage.setDescription("Select file that will contain diagram model.");
+		addPage(diagramModelFilePage);
+
+		domainModelFilePage = new UMLCreationWizardPage("DomainModelFile", getSelection()) { //$NON-NLS-1$
+
+			protected String getExtension() {
+				return "profile.uml"; //$NON-NLS-1$
+			}
+		};
+		domainModelFilePage.setTitle("Create UMLProfile Diagram");
+		domainModelFilePage.setDescription("Select file that will contain domain model.");
+		addPage(domainModelFilePage);
 	}
 
 	/**
@@ -107,7 +127,7 @@ public class UMLCreationWizard extends Wizard implements INewWizard {
 		IRunnableWithProgress op = new WorkspaceModifyOperation(null) {
 
 			protected void execute(IProgressMonitor monitor) throws CoreException, InterruptedException {
-				diagram = UMLDiagramEditorUtil.createDiagram(page.getContainerFullPath(), page.getFileName(), monitor);
+				diagram = UMLDiagramEditorUtil.createDiagram(diagramModelFilePage.getURI(), domainModelFilePage.getURI(), monitor);
 				if (isOpenNewlyCreatedDiagramEditor() && diagram != null) {
 					try {
 						UMLDiagramEditorUtil.openDiagram(diagram);

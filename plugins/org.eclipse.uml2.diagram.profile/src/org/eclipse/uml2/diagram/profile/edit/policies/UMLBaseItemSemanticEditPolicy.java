@@ -41,6 +41,9 @@ import org.eclipse.uml2.diagram.profile.expressions.UMLOCLFactory;
 
 import org.eclipse.uml2.diagram.profile.part.UMLDiagramEditorPlugin;
 
+import org.eclipse.uml2.uml.Classifier;
+import org.eclipse.uml2.uml.ElementImport;
+import org.eclipse.uml2.uml.Stereotype;
 import org.eclipse.uml2.uml.UMLPackage;
 
 /**
@@ -242,67 +245,48 @@ public class UMLBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 		/**
 		 * @generated 
 		 */
-		public static final LinkConstraints Extension_4002 = createExtension_4002();
-
-		/**
-		 * @generated 
-		 */
-		private static LinkConstraints createExtension_4002() {
-			UMLAbstractExpression sourceExpression = null;
-			Map targetEnv = new HashMap(3);
-			targetEnv.put("oppositeEnd", org.eclipse.uml2.uml.UMLPackage.eINSTANCE.getStereotype()); //$NON-NLS-1$
-			UMLAbstractExpression targetExpression = UMLOCLFactory.getExpression(
-					"let metaclass : Class = self.importedElement.oclAsType(Class) in\r\nmetaclass.isMetaclass() and \r\nnot oppositeEnd.getAllExtendedMetaclasses()->includes(metaclass)\r\n", //$NON-NLS-1$
-					UMLPackage.eINSTANCE.getElementImport(), targetEnv);
-			return new LinkConstraints(sourceExpression, targetExpression);
-		}
-
-		/**
-		 * @generated 
-		 */
 		private static final String OPPOSITE_END_VAR = "oppositeEnd"; //$NON-NLS-1$
 
 		/**
 		 * @generated 
 		 */
-		private UMLAbstractExpression srcEndInv;
+		private static UMLAbstractExpression Extension_4002_TargetExpression;
 
 		/**
 		 * @generated 
 		 */
-		private UMLAbstractExpression targetEndInv;
-
-		/**
-		 * @generated 
-		 */
-		public LinkConstraints(UMLAbstractExpression sourceEnd, UMLAbstractExpression targetEnd) {
-			this.srcEndInv = sourceEnd;
-			this.targetEndInv = targetEnd;
+		static {
+			Map env = new HashMap(3);
+			env.put("oppositeEnd", org.eclipse.uml2.uml.UMLPackage.eINSTANCE.getStereotype()); //$NON-NLS-1$
+			Extension_4002_TargetExpression = UMLOCLFactory.getExpression(
+					"let metaclass : Class = self.importedElement.oclAsType(Class) in\r\nmetaclass.isMetaclass() and \r\nnot oppositeEnd.getAllExtendedMetaclasses()->includes(metaclass)\r\n", //$NON-NLS-1$
+					UMLPackage.eINSTANCE.getElementImport(), env);
 		}
 
 		/**
 		 * @generated 
 		 */
-		public boolean canCreateLink(CreateRelationshipRequest req, boolean isBackDirected) {
-			Object source = req.getSource();
-			Object target = req.getTarget();
+		public static boolean canCreateGeneralization_4001(Classifier source, Classifier target) {
+			return true;
+		}
 
-			UMLAbstractExpression sourceConstraint = isBackDirected ? targetEndInv : srcEndInv;
-			UMLAbstractExpression targetConstraint = null;
-			if (req.getTarget() != null) {
-				targetConstraint = isBackDirected ? srcEndInv : targetEndInv;
+		/**
+		 * @generated 
+		 */
+		public static boolean canCreateExtension_4002(org.eclipse.uml2.uml.Package container, Stereotype source, ElementImport target) {
+			if (!evaluate(Extension_4002_TargetExpression, target, source, true)) {
+				return false;
 			}
-			boolean isSourceAccepted = sourceConstraint != null ? evaluate(sourceConstraint, source, target, false) : true;
-			if (isSourceAccepted && targetConstraint != null) {
-				return evaluate(targetConstraint, target, source, true);
-			}
-			return isSourceAccepted;
+			return true;
 		}
 
 		/**
 		 * @generated 
 		 */
 		private static boolean evaluate(UMLAbstractExpression constraint, Object sourceEnd, Object oppositeEnd, boolean clearEnv) {
+			if (sourceEnd == null) {
+				return true;
+			}
 			Map evalEnv = Collections.singletonMap(OPPOSITE_END_VAR, oppositeEnd);
 			try {
 				Object val = constraint.evaluate(sourceEnd, evalEnv);
@@ -313,4 +297,5 @@ public class UMLBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 			}
 		}
 	}
+
 }
