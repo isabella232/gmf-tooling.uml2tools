@@ -12,16 +12,16 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.gef.commands.UnexecutableCommand;
 
 import org.eclipse.gmf.runtime.emf.type.core.commands.CreateElementCommand;
-import org.eclipse.gmf.runtime.emf.type.core.commands.CreateRelationshipCommand;
 
 import org.eclipse.gmf.runtime.emf.type.core.requests.CreateElementRequest;
+
+import org.eclipse.uml2.diagram.activity.edit.commands.ControlFlowTypeLinkCreateCommand;
+import org.eclipse.uml2.diagram.activity.edit.commands.ObjectFlowTypeLinkCreateCommand;
 
 import org.eclipse.uml2.diagram.activity.providers.UMLElementTypes;
 
 import org.eclipse.uml2.uml.Activity;
 import org.eclipse.uml2.uml.ActivityNode;
-import org.eclipse.uml2.uml.ControlFlow;
-import org.eclipse.uml2.uml.ObjectFlow;
 import org.eclipse.uml2.uml.UMLPackage;
 
 /**
@@ -108,7 +108,19 @@ public class OpaqueActionItemSemanticEditPolicy extends UMLBaseItemSemanticEditP
 	 * @generated
 	 */
 	protected Command getCreateStartOutgoingControlFlow4001Command(CreateRelationshipRequest req) {
-		if (!UMLBaseItemSemanticEditPolicy.LinkConstraints.ControlFlow_4001.canCreateLink(req, false)) {
+		EObject sourceEObject = req.getSource();
+		EObject targetEObject = req.getTarget();
+		if (false == sourceEObject instanceof ActivityNode || (targetEObject != null && false == targetEObject instanceof ActivityNode)) {
+			return UnexecutableCommand.INSTANCE;
+		}
+		ActivityNode source = (ActivityNode) sourceEObject;
+		ActivityNode target = (ActivityNode) targetEObject;
+
+		Activity container = (Activity) getRelationshipContainer(source, UMLPackage.eINSTANCE.getActivity(), req.getElementType());
+		if (container == null) {
+			return UnexecutableCommand.INSTANCE;
+		}
+		if (!UMLBaseItemSemanticEditPolicy.LinkConstraints.canCreateControlFlow_4001(container, source, target)) {
 			return UnexecutableCommand.INSTANCE;
 		}
 		return new Command() {
@@ -119,70 +131,46 @@ public class OpaqueActionItemSemanticEditPolicy extends UMLBaseItemSemanticEditP
 	 * @generated
 	 */
 	protected Command getCreateCompleteIncomingControlFlow4001Command(CreateRelationshipRequest req) {
-		if (!(req.getSource() instanceof ActivityNode)) {
+		EObject sourceEObject = req.getSource();
+		EObject targetEObject = req.getTarget();
+		if (false == sourceEObject instanceof ActivityNode || false == targetEObject instanceof ActivityNode) {
 			return UnexecutableCommand.INSTANCE;
 		}
-		final Activity element = (Activity) getRelationshipContainer(req.getSource(), UMLPackage.eINSTANCE.getActivity(), req.getElementType());
-		if (element == null) {
+		ActivityNode source = (ActivityNode) sourceEObject;
+		ActivityNode target = (ActivityNode) targetEObject;
+
+		Activity container = (Activity) getRelationshipContainer(source, UMLPackage.eINSTANCE.getActivity(), req.getElementType());
+		if (container == null) {
 			return UnexecutableCommand.INSTANCE;
 		}
-		if (!UMLBaseItemSemanticEditPolicy.LinkConstraints.ControlFlow_4001.canCreateLink(req, false)) {
+		if (!UMLBaseItemSemanticEditPolicy.LinkConstraints.canCreateControlFlow_4001(container, source, target)) {
 			return UnexecutableCommand.INSTANCE;
 		}
 		if (req.getContainmentFeature() == null) {
 			req.setContainmentFeature(UMLPackage.eINSTANCE.getActivity_Edge());
 		}
-		return getMSLWrapper(new CreateIncomingControlFlow4001Command(req) {
-
-			protected EObject getElementToEdit() {
-				return element;
-			}
-		});
-	}
-
-	/**
-	 * @generated
-	 */
-	private static class CreateIncomingControlFlow4001Command extends CreateRelationshipCommand {
-
-		/**
-		 * @generated
-		 */
-		public CreateIncomingControlFlow4001Command(CreateRelationshipRequest req) {
-			super(req);
-		}
-
-		/**
-		 * @generated
-		 */
-		protected EClass getEClassToEdit() {
-			return UMLPackage.eINSTANCE.getActivity();
-		};
-
-		/**
-		 * @generated
-		 */
-		protected void setElementToEdit(EObject element) {
-			throw new UnsupportedOperationException();
-		}
-
-		/**
-		 * @generated
-		 */
-		protected EObject doDefaultElementCreation() {
-			ControlFlow newElement = (ControlFlow) super.doDefaultElementCreation();
-			if (newElement != null) {
-				newElement.setTarget((ActivityNode) getTarget());
-				newElement.setSource((ActivityNode) getSource());
-			}
-			return newElement;
-		}
+		return getMSLWrapper(new ControlFlowTypeLinkCreateCommand(req, container, source, target));
 	}
 
 	/**
 	 * @generated
 	 */
 	protected Command getCreateStartOutgoingObjectFlow4002Command(CreateRelationshipRequest req) {
+		EObject sourceEObject = req.getSource();
+		EObject targetEObject = req.getTarget();
+		if (false == sourceEObject instanceof ActivityNode || (targetEObject != null && false == targetEObject instanceof ActivityNode)) {
+			return UnexecutableCommand.INSTANCE;
+		}
+		ActivityNode source = (ActivityNode) sourceEObject;
+		ActivityNode target = (ActivityNode) targetEObject;
+
+		Activity container = (Activity) getRelationshipContainer(source, UMLPackage.eINSTANCE.getActivity(), req.getElementType());
+		if (container == null) {
+			return UnexecutableCommand.INSTANCE;
+		}
+		if (!UMLBaseItemSemanticEditPolicy.LinkConstraints.canCreateObjectFlow_4002(container, source, target)) {
+			return UnexecutableCommand.INSTANCE;
+		}
 		return new Command() {
 		};
 	}
@@ -191,60 +179,24 @@ public class OpaqueActionItemSemanticEditPolicy extends UMLBaseItemSemanticEditP
 	 * @generated
 	 */
 	protected Command getCreateCompleteIncomingObjectFlow4002Command(CreateRelationshipRequest req) {
-		if (!(req.getSource() instanceof ActivityNode)) {
+		EObject sourceEObject = req.getSource();
+		EObject targetEObject = req.getTarget();
+		if (false == sourceEObject instanceof ActivityNode || false == targetEObject instanceof ActivityNode) {
 			return UnexecutableCommand.INSTANCE;
 		}
-		final Activity element = (Activity) getRelationshipContainer(req.getSource(), UMLPackage.eINSTANCE.getActivity(), req.getElementType());
-		if (element == null) {
+		ActivityNode source = (ActivityNode) sourceEObject;
+		ActivityNode target = (ActivityNode) targetEObject;
+
+		Activity container = (Activity) getRelationshipContainer(source, UMLPackage.eINSTANCE.getActivity(), req.getElementType());
+		if (container == null) {
+			return UnexecutableCommand.INSTANCE;
+		}
+		if (!UMLBaseItemSemanticEditPolicy.LinkConstraints.canCreateObjectFlow_4002(container, source, target)) {
 			return UnexecutableCommand.INSTANCE;
 		}
 		if (req.getContainmentFeature() == null) {
 			req.setContainmentFeature(UMLPackage.eINSTANCE.getActivity_Edge());
 		}
-		return getMSLWrapper(new CreateIncomingObjectFlow4002Command(req) {
-
-			protected EObject getElementToEdit() {
-				return element;
-			}
-		});
-	}
-
-	/**
-	 * @generated
-	 */
-	private static class CreateIncomingObjectFlow4002Command extends CreateRelationshipCommand {
-
-		/**
-		 * @generated
-		 */
-		public CreateIncomingObjectFlow4002Command(CreateRelationshipRequest req) {
-			super(req);
-		}
-
-		/**
-		 * @generated
-		 */
-		protected EClass getEClassToEdit() {
-			return UMLPackage.eINSTANCE.getActivity();
-		};
-
-		/**
-		 * @generated
-		 */
-		protected void setElementToEdit(EObject element) {
-			throw new UnsupportedOperationException();
-		}
-
-		/**
-		 * @generated
-		 */
-		protected EObject doDefaultElementCreation() {
-			ObjectFlow newElement = (ObjectFlow) super.doDefaultElementCreation();
-			if (newElement != null) {
-				newElement.setTarget((ActivityNode) getTarget());
-				newElement.setSource((ActivityNode) getSource());
-			}
-			return newElement;
-		}
+		return getMSLWrapper(new ObjectFlowTypeLinkCreateCommand(req, container, source, target));
 	}
 }

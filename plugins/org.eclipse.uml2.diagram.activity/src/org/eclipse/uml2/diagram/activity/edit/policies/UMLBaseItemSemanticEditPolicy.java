@@ -41,6 +41,8 @@ import org.eclipse.uml2.diagram.activity.expressions.UMLOCLFactory;
 
 import org.eclipse.uml2.diagram.activity.part.UMLDiagramEditorPlugin;
 
+import org.eclipse.uml2.uml.Activity;
+import org.eclipse.uml2.uml.ActivityNode;
 import org.eclipse.uml2.uml.UMLPackage;
 
 /**
@@ -242,69 +244,65 @@ public class UMLBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 		/**
 		 * @generated 
 		 */
-		public static final LinkConstraints ControlFlow_4001 = createControlFlow_4001();
-
-		/**
-		 * @generated 
-		 */
-		private static LinkConstraints createControlFlow_4001() {
-			Map sourceEnv = new HashMap(3);
-			sourceEnv.put("oppositeEnd", org.eclipse.uml2.uml.UMLPackage.eINSTANCE.getActivityNode()); //$NON-NLS-1$				
-			UMLAbstractExpression sourceExpression = UMLOCLFactory.getExpression("self.oclIsKindOf(uml::ObjectNode) implies self.oclAsType(uml::ObjectNode).isControlType", //$NON-NLS-1$
-					UMLPackage.eINSTANCE.getActivityNode(), sourceEnv);
-			Map targetEnv = new HashMap(3);
-			targetEnv.put("oppositeEnd", org.eclipse.uml2.uml.UMLPackage.eINSTANCE.getActivityNode()); //$NON-NLS-1$
-			UMLAbstractExpression targetExpression = UMLOCLFactory.getExpression("self.oclIsKindOf(uml::ObjectNode) implies self.oclAsType(uml::ObjectNode).isControlType", //$NON-NLS-1$
-					UMLPackage.eINSTANCE.getActivityNode(), targetEnv);
-			return new LinkConstraints(sourceExpression, targetExpression);
-		}
-
-		/**
-		 * @generated 
-		 */
 		private static final String OPPOSITE_END_VAR = "oppositeEnd"; //$NON-NLS-1$
 
 		/**
 		 * @generated 
 		 */
-		private UMLAbstractExpression srcEndInv;
+		private static UMLAbstractExpression ControlFlow_4001_SourceExpression;
 
 		/**
 		 * @generated 
 		 */
-		private UMLAbstractExpression targetEndInv;
-
-		/**
-		 * @generated 
-		 */
-		public LinkConstraints(UMLAbstractExpression sourceEnd, UMLAbstractExpression targetEnd) {
-			this.srcEndInv = sourceEnd;
-			this.targetEndInv = targetEnd;
+		static {
+			Map env = new HashMap(3);
+			env.put("oppositeEnd", org.eclipse.uml2.uml.UMLPackage.eINSTANCE.getActivityNode()); //$NON-NLS-1$
+			ControlFlow_4001_SourceExpression = UMLOCLFactory.getExpression("self.oclIsKindOf(uml::ObjectNode) implies self.oclAsType(uml::ObjectNode).isControlType", //$NON-NLS-1$
+					UMLPackage.eINSTANCE.getActivityNode(), env);
 		}
 
 		/**
 		 * @generated 
 		 */
-		public boolean canCreateLink(CreateRelationshipRequest req, boolean isBackDirected) {
-			Object source = req.getSource();
-			Object target = req.getTarget();
+		private static UMLAbstractExpression ControlFlow_4001_TargetExpression;
 
-			UMLAbstractExpression sourceConstraint = isBackDirected ? targetEndInv : srcEndInv;
-			UMLAbstractExpression targetConstraint = null;
-			if (req.getTarget() != null) {
-				targetConstraint = isBackDirected ? srcEndInv : targetEndInv;
+		/**
+		 * @generated 
+		 */
+		static {
+			Map env = new HashMap(3);
+			env.put("oppositeEnd", org.eclipse.uml2.uml.UMLPackage.eINSTANCE.getActivityNode()); //$NON-NLS-1$
+			ControlFlow_4001_TargetExpression = UMLOCLFactory.getExpression("self.oclIsKindOf(uml::ObjectNode) implies self.oclAsType(uml::ObjectNode).isControlType", //$NON-NLS-1$
+					UMLPackage.eINSTANCE.getActivityNode(), env);
+		}
+
+		/**
+		 * @generated 
+		 */
+		public static boolean canCreateControlFlow_4001(Activity container, ActivityNode source, ActivityNode target) {
+			if (!evaluate(ControlFlow_4001_SourceExpression, source, target, false)) {
+				return false;
 			}
-			boolean isSourceAccepted = sourceConstraint != null ? evaluate(sourceConstraint, source, target, false) : true;
-			if (isSourceAccepted && targetConstraint != null) {
-				return evaluate(targetConstraint, target, source, true);
+			if (!evaluate(ControlFlow_4001_TargetExpression, target, source, true)) {
+				return false;
 			}
-			return isSourceAccepted;
+			return true;
+		}
+
+		/**
+		 * @generated 
+		 */
+		public static boolean canCreateObjectFlow_4002(Activity container, ActivityNode source, ActivityNode target) {
+			return true;
 		}
 
 		/**
 		 * @generated 
 		 */
 		private static boolean evaluate(UMLAbstractExpression constraint, Object sourceEnd, Object oppositeEnd, boolean clearEnv) {
+			if (sourceEnd == null) {
+				return true;
+			}
 			Map evalEnv = Collections.singletonMap(OPPOSITE_END_VAR, oppositeEnd);
 			try {
 				Object val = constraint.evaluate(sourceEnd, evalEnv);
@@ -315,4 +313,5 @@ public class UMLBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 			}
 		}
 	}
+
 }

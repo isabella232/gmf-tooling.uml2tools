@@ -5,9 +5,7 @@ import java.util.Collections;
 
 import org.eclipse.core.commands.ExecutionException;
 import org.eclipse.core.commands.operations.OperationHistoryFactory;
-import org.eclipse.core.resources.IFile;
 import org.eclipse.core.runtime.IAdaptable;
-import org.eclipse.core.runtime.IPath;
 import org.eclipse.core.runtime.IProgressMonitor;
 import org.eclipse.core.runtime.SubProgressMonitor;
 import org.eclipse.emf.common.util.URI;
@@ -20,18 +18,37 @@ import org.eclipse.gmf.runtime.notation.Diagram;
 import org.eclipse.ui.PartInitException;
 import org.eclipse.emf.transaction.TransactionalEditingDomain;
 import java.util.HashMap;
+import java.util.Iterator;
+import java.util.List;
 import java.util.Map;
 
+import org.eclipse.core.resources.IFile;
+import org.eclipse.core.resources.IResource;
 import org.eclipse.core.resources.ResourcesPlugin;
 
 import org.eclipse.core.runtime.CoreException;
+import org.eclipse.core.runtime.IPath;
 import org.eclipse.core.runtime.NullProgressMonitor;
+import org.eclipse.core.runtime.Path;
 
 import org.eclipse.emf.ecore.EObject;
+
+import org.eclipse.emf.ecore.util.EcoreUtil;
 
 import org.eclipse.emf.ecore.xmi.XMIResource;
 
 import org.eclipse.emf.edit.ui.util.EditUIUtil;
+
+import org.eclipse.gef.EditPart;
+
+import org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart;
+import org.eclipse.gmf.runtime.diagram.ui.editparts.IPrimaryEditPart;
+
+import org.eclipse.gmf.runtime.diagram.ui.parts.IDiagramWorkbenchPart;
+
+import org.eclipse.gmf.runtime.emf.core.util.EMFCoreUtil;
+
+import org.eclipse.gmf.runtime.notation.View;
 
 import org.eclipse.uml2.diagram.activity.edit.parts.ActivityEditPart;
 
@@ -53,13 +70,37 @@ public class UMLDiagramEditorUtil {
 	/**
 	 * @generated
 	 */
-	private static void setCharset(IPath path) {
-		IFile file = ResourcesPlugin.getWorkspace().getRoot().getFile(path);
+	private static void setCharset(URI uri) {
+		IFile file = getFile(uri);
+		if (file == null) {
+			return;
+		}
 		try {
 			file.setCharset("UTF-8", new NullProgressMonitor()); //$NON-NLS-1$
 		} catch (CoreException e) {
-			UMLDiagramEditorPlugin.getInstance().logError("Unable to set charset for file " + path, e); //$NON-NLS-1$
+			UMLDiagramEditorPlugin.getInstance().logError("Unable to set charset for file " + file.getFullPath(), e); //$NON-NLS-1$
 		}
+	}
+
+	/**
+	 * @generated
+	 */
+	public static IFile getFile(URI uri) {
+		if (uri.toString().startsWith("platform:/resource")) { //$NON-NLS-1$
+			String path = uri.toString().substring("platform:/resource".length()); //$NON-NLS-1$
+			IResource workspaceResource = ResourcesPlugin.getWorkspace().getRoot().findMember(new Path(path));
+			if (workspaceResource instanceof IFile) {
+				return (IFile) workspaceResource;
+			}
+		}
+		return null;
+	}
+
+	/**
+	 * @generated
+	 */
+	public static boolean exists(IPath path) {
+		return ResourcesPlugin.getWorkspace().getRoot().exists(path);
 	}
 
 	/**
@@ -69,23 +110,22 @@ public class UMLDiagramEditorUtil {
 	 * @generated
 	 * @return the created resource, or <code>null</code> if the resource was not created
 	 */
-	public static final Resource createDiagram(IPath containerFullPath, String fileNameParameter, IProgressMonitor progressMonitor) {
-		final String fileName = fileNameParameter;
+	public static final Resource createDiagram(URI diagramURI, URI modelURI, IProgressMonitor progressMonitor) {
 		TransactionalEditingDomain editingDomain = GMFEditingDomainFactory.INSTANCE.createEditingDomain();
-		progressMonitor.beginTask("Creating diagram and model files", 3); //$NON-NLS-1$
-		IPath diagramPath = containerFullPath.append(fileName);
-		final Resource diagramResource = editingDomain.getResourceSet().createResource(URI.createPlatformResourceURI(diagramPath.toString()));
-		IPath modelPath = diagramPath.removeFileExtension().addFileExtension("uml"); //$NON-NLS-1$
-		final Resource modelResource = editingDomain.getResourceSet().createResource(URI.createPlatformResourceURI(modelPath.toString()));
+		progressMonitor.beginTask("Creating diagram and model files", 3);
+		final Resource diagramResource = editingDomain.getResourceSet().createResource(diagramURI);
+		final Resource modelResource = editingDomain.getResourceSet().createResource(modelURI);
+		final String diagramName = diagramURI.lastSegment();
 		AbstractTransactionalCommand command = new AbstractTransactionalCommand(editingDomain, "Creating diagram and model", Collections.EMPTY_LIST) { //$NON-NLS-1$
 
 			protected CommandResult doExecuteWithResult(IProgressMonitor monitor, IAdaptable info) throws ExecutionException {
 				Activity model = createInitialModel();
 				modelResource.getContents().add(createInitialRoot(model));
+				decorateModel(model);
 				Diagram diagram = ViewService.createDiagram(model, ActivityEditPart.MODEL_ID, UMLDiagramEditorPlugin.DIAGRAM_PREFERENCES_HINT);
 				if (diagram != null) {
 					diagramResource.getContents().add(diagram);
-					diagram.setName(fileName);
+					diagram.setName(diagramName);
 					diagram.setElement(model);
 				}
 				try {
@@ -100,15 +140,13 @@ public class UMLDiagramEditorUtil {
 				return CommandResult.newOKCommandResult();
 			}
 		};
-
 		try {
 			OperationHistoryFactory.getOperationHistory().execute(command, new SubProgressMonitor(progressMonitor, 1), null);
 		} catch (ExecutionException e) {
 			UMLDiagramEditorPlugin.getInstance().logError("Unable to create model and diagram", e); //$NON-NLS-1$
 		}
-
-		setCharset(modelPath);
-		setCharset(diagramPath);
+		setCharset(modelURI);
+		setCharset(diagramURI);
 		return diagramResource;
 	}
 
@@ -123,9 +161,90 @@ public class UMLDiagramEditorUtil {
 	}
 
 	/**
+	 * Completes creation of the domain element associated with canvas. 
+	 * At this step domain element is already added to its resource, so this method may be overridden, 
+	 * say, to add  specific auxiliary resources to resource set.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private static void decorateModel(Activity model) {
+		//
+	}
+
+	/**
 	 * @generated
 	 */
 	private static EObject createInitialRoot(Activity model) {
 		return model;
+	}
+
+	/**
+	 * @generated
+	 */
+	public static int findElementsInDiagram(IDiagramWorkbenchPart diagramPart, URI elementURI, List/*EditPart*/editPartCollector) {
+		final int originalNumOfEditParts = editPartCollector.size();
+		EObject element = null;
+		try {
+			element = diagramPart.getDiagram().eResource().getResourceSet().getEObject(elementURI, false);
+		} catch (RuntimeException e) {
+			UMLDiagramEditorPlugin.getInstance().logError("Failed to get EObject by uri: " + elementURI, e); //$NON-NLS-1$
+			return 0;
+		}
+		if (element == null) {
+			return 0;
+		} else if (element instanceof View) {
+			EditPart editPart = (EditPart) diagramPart.getDiagramGraphicalViewer().getEditPartRegistry().get(element);
+			if (editPart != null) {
+				editPartCollector.add(editPart);
+				return 1;
+			}
+		}
+
+		String elementID = EMFCoreUtil.getProxyID(element);
+		List associatedParts = diagramPart.getDiagramGraphicalViewer().findEditPartsForElement(elementID, IGraphicalEditPart.class);
+		// peform the possible hierarchy disjoint -> take the top-most parts
+		for (Iterator editPartIt = associatedParts.iterator(); editPartIt.hasNext();) {
+			EditPart nextPart = (org.eclipse.gef.EditPart) editPartIt.next();
+			EditPart parentPart = nextPart.getParent();
+			while (parentPart != null && !associatedParts.contains(parentPart)) {
+				parentPart = parentPart.getParent();
+			}
+			if (parentPart == null) {
+				editPartCollector.add(nextPart);
+			}
+		}
+
+		if (originalNumOfEditParts == editPartCollector.size()) {
+			if (!associatedParts.isEmpty()) {
+				editPartCollector.add(associatedParts.iterator().next());
+			} else {
+				element = element.eContainer();
+				if (element != null) {
+					return findElementsInDiagram(diagramPart, EcoreUtil.getURI(element), editPartCollector);
+				}
+			}
+		}
+		return editPartCollector.size() - originalNumOfEditParts;
+	}
+
+	/**
+	 * @generated
+	 */
+	public static void selectElementsInDiagram(IDiagramWorkbenchPart diagramPart, List/*EditPart*/editParts) {
+		diagramPart.getDiagramGraphicalViewer().deselectAll();
+
+		EditPart firstPrimary = null;
+		for (java.util.Iterator it = editParts.iterator(); it.hasNext();) {
+			EditPart nextPart = (EditPart) it.next();
+			diagramPart.getDiagramGraphicalViewer().appendSelection(nextPart);
+			if (firstPrimary == null && nextPart instanceof IPrimaryEditPart) {
+				firstPrimary = nextPart;
+			}
+		}
+
+		if (!editParts.isEmpty()) {
+			diagramPart.getDiagramGraphicalViewer().reveal(firstPrimary != null ? firstPrimary : (EditPart) editParts.get(0));
+		}
 	}
 }

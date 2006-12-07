@@ -1,11 +1,12 @@
 package org.eclipse.uml2.diagram.activity.part;
 
 import org.eclipse.core.runtime.IPath;
+import org.eclipse.core.runtime.Path;
+import org.eclipse.emf.common.util.URI;
 import org.eclipse.jface.viewers.IStructuredSelection;
+import org.eclipse.osgi.util.NLS;
 import org.eclipse.swt.widgets.Composite;
 import org.eclipse.ui.dialogs.WizardNewFileCreationPage;
-
-import org.eclipse.core.resources.ResourcesPlugin;
 
 /**
  * @generated
@@ -15,53 +16,63 @@ public class UMLCreationWizardPage extends WizardNewFileCreationPage {
 	/**
 	 * @generated
 	 */
-	private static final String DOMAIN_EXT = ".uml"; //$NON-NLS-1$
-
-	/**
-	 * @generated
-	 */
-	private static final String DIAGRAM_EXT = ".umlactivity_diagram"; //$NON-NLS-1$
-
-	/**
-	 * @generated
-	 */
 	public UMLCreationWizardPage(String pageName, IStructuredSelection selection) {
 		super(pageName, selection);
 	}
 
 	/**
+	 * Override to create files with this extension.
+	 * 
 	 * @generated
 	 */
-	protected String getDefaultFileName() {
-		return "default"; //$NON-NLS-1$
+	protected String getExtension() {
+		return null;
 	}
 
 	/**
 	 * @generated
 	 */
-	public String getFileName() {
-		String fileName = super.getFileName();
-		if (fileName != null && !fileName.endsWith(DIAGRAM_EXT)) {
-			fileName += DIAGRAM_EXT;
+	public URI getURI() {
+		return URI.createPlatformResourceURI(getFilePath().toString());
+	}
+
+	/**
+	 * @generated
+	 */
+	protected IPath getFilePath() {
+		IPath path = getContainerFullPath();
+		if (path == null) {
+			path = new Path(""); //$NON-NLS-1$
 		}
-		return fileName;
+		String fileName = getFileName();
+		if (fileName != null) {
+			path = path.append(fileName);
+		}
+		return path;
 	}
 
 	/**
 	 * @generated
 	 */
-	private String getUniqueFileName(IPath containerPath, String fileName) {
-		String newFileName = fileName;
-		IPath diagramFilePath = containerPath.append(newFileName + DIAGRAM_EXT);
-		IPath modelFilePath = containerPath.append(newFileName + DOMAIN_EXT);
+	private String getUniqueFileName(IPath containerFullPath, String fileName) {
+		if (containerFullPath == null) {
+			containerFullPath = new Path(""); //$NON-NLS-1$
+		}
+		if (fileName == null || fileName.trim().length() == 0) {
+			fileName = "default"; //$NON-NLS-1$
+		}
+
+		String extension = "." + getExtension();
+		if (fileName.endsWith(extension)) {
+			fileName = fileName.substring(0, fileName.length() - extension.length());
+		}
 		int i = 1;
-		while (exists(diagramFilePath) || exists(modelFilePath)) {
+		IPath filePath = containerFullPath.append(fileName + extension);
+		while (UMLDiagramEditorUtil.exists(filePath)) {
 			i++;
-			newFileName = fileName + i;
-			diagramFilePath = containerPath.append(newFileName + DIAGRAM_EXT);
-			modelFilePath = containerPath.append(newFileName + DOMAIN_EXT);
+			filePath = containerFullPath.append(fileName + i + extension);
 		}
-		return newFileName;
+		return filePath.lastSegment();
 	}
 
 	/**
@@ -69,13 +80,7 @@ public class UMLCreationWizardPage extends WizardNewFileCreationPage {
 	 */
 	public void createControl(Composite parent) {
 		super.createControl(parent);
-		IPath path = getContainerFullPath();
-		if (path != null) {
-			String fileName = getUniqueFileName(path, getDefaultFileName());
-			setFileName(fileName);
-		} else {
-			setFileName(getDefaultFileName());
-		}
+		setFileName(getUniqueFileName(getContainerFullPath(), getFileName()));
 		setPageComplete(validatePage());
 	}
 
@@ -83,26 +88,14 @@ public class UMLCreationWizardPage extends WizardNewFileCreationPage {
 	 * @generated
 	 */
 	protected boolean validatePage() {
-		if (super.validatePage()) {
-			String fileName = getFileName();
-			if (fileName == null) {
-				return false;
-			}
-			fileName = fileName.substring(0, fileName.length() - DIAGRAM_EXT.length()) + DOMAIN_EXT;
-			IPath path = getContainerFullPath().append(fileName);
-			if (exists(path)) {
-				setErrorMessage("Model file already exists: " + path.lastSegment());
-				return false;
-			}
-			return true;
+		if (!super.validatePage()) {
+			return false;
 		}
-		return false;
-	}
-
-	/**
-	 * @generated
-	 */
-	public static boolean exists(IPath path) {
-		return ResourcesPlugin.getWorkspace().getRoot().exists(path);
+		String extension = getExtension();
+		if (extension != null && !getFilePath().toString().endsWith("." + extension)) {
+			setErrorMessage(NLS.bind("File name should have ''{0}'' extension.", extension));
+			return false;
+		}
+		return true;
 	}
 }

@@ -11,6 +11,7 @@ import org.eclipse.jface.viewers.IStructuredSelection;
 import org.eclipse.jface.wizard.Wizard;
 import org.eclipse.ui.INewWizard;
 import org.eclipse.ui.IWorkbench;
+import org.eclipse.ui.PartInitException;
 import org.eclipse.ui.actions.WorkspaceModifyOperation;
 
 /**
@@ -31,7 +32,12 @@ public class UMLCreationWizard extends Wizard implements INewWizard {
 	/**
 	 * @generated
 	 */
-	protected UMLCreationWizardPage page;
+	protected UMLCreationWizardPage diagramModelFilePage;
+
+	/**
+	 * @generated
+	 */
+	protected UMLCreationWizardPage domainModelFilePage;
 
 	/**
 	 * @generated
@@ -93,10 +99,25 @@ public class UMLCreationWizard extends Wizard implements INewWizard {
 	 * @generated
 	 */
 	public void addPages() {
-		page = new UMLCreationWizardPage("CreationWizardPage", getSelection()); //$NON-NLS-1$
-		page.setTitle("Create UMLActivity Diagram");
-		page.setDescription("Create a new UMLActivity diagram.");
-		addPage(page);
+		diagramModelFilePage = new UMLCreationWizardPage("DiagramModelFile", getSelection()) { //$NON-NLS-1$
+
+			protected String getExtension() {
+				return "umlactivity_diagram"; //$NON-NLS-1$
+			}
+		};
+		diagramModelFilePage.setTitle("Create UMLActivity Diagram");
+		diagramModelFilePage.setDescription("Select file that will contain diagram model.");
+		addPage(diagramModelFilePage);
+
+		domainModelFilePage = new UMLCreationWizardPage("DomainModelFile", getSelection()) { //$NON-NLS-1$
+
+			protected String getExtension() {
+				return "uml"; //$NON-NLS-1$
+			}
+		};
+		domainModelFilePage.setTitle("Create UMLActivity Diagram");
+		domainModelFilePage.setDescription("Select file that will contain domain model.");
+		addPage(domainModelFilePage);
 	}
 
 	/**
@@ -106,9 +127,13 @@ public class UMLCreationWizard extends Wizard implements INewWizard {
 		IRunnableWithProgress op = new WorkspaceModifyOperation(null) {
 
 			protected void execute(IProgressMonitor monitor) throws CoreException, InterruptedException {
-				diagram = UMLDiagramEditorUtil.createDiagram(page.getContainerFullPath(), page.getFileName(), monitor);
+				diagram = UMLDiagramEditorUtil.createDiagram(diagramModelFilePage.getURI(), domainModelFilePage.getURI(), monitor);
 				if (isOpenNewlyCreatedDiagramEditor() && diagram != null) {
-					UMLDiagramEditorUtil.openDiagram(diagram);
+					try {
+						UMLDiagramEditorUtil.openDiagram(diagram);
+					} catch (PartInitException e) {
+						ErrorDialog.openError(getContainer().getShell(), "Error opening diagram editor", null, e.getStatus());
+					}
 				}
 			}
 		};
