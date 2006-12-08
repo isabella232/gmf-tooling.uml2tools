@@ -236,10 +236,6 @@ public class UMLDocumentProvider extends StorageDocumentProvider implements IDia
 				if (file != null && file.isReadOnly()) {
 					files2Validate.add(file);
 				}
-				if (file != null) {
-					IWorkspace workspace = file.getWorkspace();
-					workspace.validateEdit(new IFile[] { file }, computationContext);
-				}
 			}
 			ResourcesPlugin.getWorkspace().validateEdit((IFile[]) files2Validate.toArray(new IFile[files2Validate.size()]), computationContext);
 		}

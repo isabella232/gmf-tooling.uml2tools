@@ -1,20 +1,5 @@
 package org.eclipse.uml2.diagram.statemachine.part;
 
-import java.util.List;
-import org.eclipse.gef.Tool;
-import org.eclipse.gef.palette.PaletteContainer;
-import org.eclipse.gef.palette.PaletteRoot;
-import org.eclipse.gef.palette.ToolEntry;
-import org.eclipse.jface.resource.ImageDescriptor;
-import java.util.ArrayList;
-
-import org.eclipse.gef.palette.PaletteDrawer;
-
-import org.eclipse.gmf.runtime.diagram.ui.tools.UnspecifiedTypeConnectionTool;
-import org.eclipse.gmf.runtime.diagram.ui.tools.UnspecifiedTypeCreationTool;
-
-import org.eclipse.uml2.diagram.statemachine.providers.UMLElementTypes;
-
 /**
  * @generated
  */
@@ -23,17 +8,29 @@ public class UMLPaletteFactory {
 	/**
 	 * @generated
 	 */
-	public void fillPalette(PaletteRoot paletteRoot) {
+	public void fillPalette(org.eclipse.gef.palette.PaletteRoot paletteRoot) {
 		paletteRoot.add(createNodes1Group());
 		paletteRoot.add(createLinks2Group());
+	}
+
+	/**
+	 * Creates "Links" palette tool group
+	 * @generated
+	 */
+	private org.eclipse.gef.palette.PaletteContainer createLinks2Group() {
+		org.eclipse.gef.palette.PaletteDrawer paletteContainer = new org.eclipse.gef.palette.PaletteDrawer(org.eclipse.uml2.diagram.statemachine.part.UMLDiagramEditorPlugin
+				.getString("Links2Group.title")); //$NON-NLS-1$
+		paletteContainer.add(createTransition1CreationTool());
+		return paletteContainer;
 	}
 
 	/**
 	 * Creates "Nodes" palette tool group
 	 * @generated
 	 */
-	private PaletteContainer createNodes1Group() {
-		PaletteDrawer paletteContainer = new PaletteDrawer(UMLDiagramEditorPlugin.getString("Nodes1Group.title")); //$NON-NLS-1$
+	private org.eclipse.gef.palette.PaletteContainer createNodes1Group() {
+		org.eclipse.gef.palette.PaletteDrawer paletteContainer = new org.eclipse.gef.palette.PaletteDrawer(org.eclipse.uml2.diagram.statemachine.part.UMLDiagramEditorPlugin
+				.getString("Nodes1Group.title")); //$NON-NLS-1$
 		paletteContainer.add(createSimpleState1CreationTool());
 		paletteContainer.add(createCompositeState2CreationTool());
 		paletteContainer.add(createRegion3CreationTool());
@@ -52,324 +49,224 @@ public class UMLPaletteFactory {
 	}
 
 	/**
-	 * Creates "Links" palette tool group
 	 * @generated
 	 */
-	private PaletteContainer createLinks2Group() {
-		PaletteDrawer paletteContainer = new PaletteDrawer(UMLDiagramEditorPlugin.getString("Links2Group.title")); //$NON-NLS-1$
-		paletteContainer.add(createTransition1CreationTool());
-		return paletteContainer;
+	private org.eclipse.gef.palette.ToolEntry createTransition1CreationTool() {
+		java.util.List/*<IElementType>*/types = new java.util.ArrayList/*<IElementType>*/(1);
+		types.add(org.eclipse.uml2.diagram.statemachine.providers.UMLElementTypes.Transition_4001);
+		LinkToolEntry entry = new LinkToolEntry(
+				org.eclipse.uml2.diagram.statemachine.part.UMLDiagramEditorPlugin.getString("Transition1CreationTool.title"), org.eclipse.uml2.diagram.statemachine.part.UMLDiagramEditorPlugin.getString("Transition1CreationTool.desc"), types); //$NON-NLS-1$ $NON-NLS-2$
+		entry.setSmallIcon(org.eclipse.uml2.diagram.statemachine.providers.UMLElementTypes.getImageDescriptor(org.eclipse.uml2.diagram.statemachine.providers.UMLElementTypes.Transition_4001));
+		entry.setLargeIcon(entry.getSmallIcon());
+		return entry;
 	}
 
 	/**
 	 * @generated
 	 */
-	private ToolEntry createSimpleState1CreationTool() {
-		ImageDescriptor smallImage;
-		ImageDescriptor largeImage;
-
-		smallImage = UMLElementTypes.getImageDescriptor(UMLElementTypes.State_3001);
-
-		largeImage = smallImage;
-
-		final List elementTypes = new ArrayList();
-		elementTypes.add(UMLElementTypes.State_3001);
-		ToolEntry result = new NodeToolEntry(
-				UMLDiagramEditorPlugin.getString("SimpleState1CreationTool.title"), UMLDiagramEditorPlugin.getString("SimpleState1CreationTool.desc"), smallImage, largeImage, elementTypes); //$NON-NLS-1$ $NON-NLS-2$
-
-		return result;
+	private org.eclipse.gef.palette.ToolEntry createSimpleState1CreationTool() {
+		java.util.List/*<IElementType>*/types = new java.util.ArrayList/*<IElementType>*/(1);
+		types.add(org.eclipse.uml2.diagram.statemachine.providers.UMLElementTypes.State_3001);
+		NodeToolEntry entry = new NodeToolEntry(
+				org.eclipse.uml2.diagram.statemachine.part.UMLDiagramEditorPlugin.getString("SimpleState1CreationTool.title"), org.eclipse.uml2.diagram.statemachine.part.UMLDiagramEditorPlugin.getString("SimpleState1CreationTool.desc"), types); //$NON-NLS-1$ $NON-NLS-2$
+		entry.setSmallIcon(org.eclipse.uml2.diagram.statemachine.providers.UMLElementTypes.getImageDescriptor(org.eclipse.uml2.diagram.statemachine.providers.UMLElementTypes.State_3001));
+		entry.setLargeIcon(entry.getSmallIcon());
+		return entry;
 	}
 
 	/**
 	 * @generated
 	 */
-	private ToolEntry createCompositeState2CreationTool() {
-		ImageDescriptor smallImage;
-		ImageDescriptor largeImage;
-
-		smallImage = UMLElementTypes.getImageDescriptor(UMLElementTypes.State_3012);
-
-		largeImage = smallImage;
-
-		final List elementTypes = new ArrayList();
-		elementTypes.add(UMLElementTypes.State_3012);
-		ToolEntry result = new NodeToolEntry(
-				UMLDiagramEditorPlugin.getString("CompositeState2CreationTool.title"), UMLDiagramEditorPlugin.getString("CompositeState2CreationTool.desc"), smallImage, largeImage, elementTypes); //$NON-NLS-1$ $NON-NLS-2$
-
-		return result;
+	private org.eclipse.gef.palette.ToolEntry createCompositeState2CreationTool() {
+		java.util.List/*<IElementType>*/types = new java.util.ArrayList/*<IElementType>*/(1);
+		types.add(org.eclipse.uml2.diagram.statemachine.providers.UMLElementTypes.State_3012);
+		NodeToolEntry entry = new NodeToolEntry(
+				org.eclipse.uml2.diagram.statemachine.part.UMLDiagramEditorPlugin.getString("CompositeState2CreationTool.title"), org.eclipse.uml2.diagram.statemachine.part.UMLDiagramEditorPlugin.getString("CompositeState2CreationTool.desc"), types); //$NON-NLS-1$ $NON-NLS-2$
+		entry.setSmallIcon(org.eclipse.uml2.diagram.statemachine.providers.UMLElementTypes.getImageDescriptor(org.eclipse.uml2.diagram.statemachine.providers.UMLElementTypes.State_3012));
+		entry.setLargeIcon(entry.getSmallIcon());
+		return entry;
 	}
 
 	/**
 	 * @generated
 	 */
-	private ToolEntry createRegion3CreationTool() {
-		ImageDescriptor smallImage;
-		ImageDescriptor largeImage;
-
-		smallImage = UMLElementTypes.getImageDescriptor(UMLElementTypes.Region_2001);
-
-		largeImage = smallImage;
-
-		final List elementTypes = new ArrayList();
-		elementTypes.add(UMLElementTypes.Region_2001);
-		elementTypes.add(UMLElementTypes.Region_3002);
-		ToolEntry result = new NodeToolEntry(
-				UMLDiagramEditorPlugin.getString("Region3CreationTool.title"), UMLDiagramEditorPlugin.getString("Region3CreationTool.desc"), smallImage, largeImage, elementTypes); //$NON-NLS-1$ $NON-NLS-2$
-
-		return result;
+	private org.eclipse.gef.palette.ToolEntry createRegion3CreationTool() {
+		java.util.List/*<IElementType>*/types = new java.util.ArrayList/*<IElementType>*/(2);
+		types.add(org.eclipse.uml2.diagram.statemachine.providers.UMLElementTypes.Region_2001);
+		types.add(org.eclipse.uml2.diagram.statemachine.providers.UMLElementTypes.Region_3002);
+		NodeToolEntry entry = new NodeToolEntry(
+				org.eclipse.uml2.diagram.statemachine.part.UMLDiagramEditorPlugin.getString("Region3CreationTool.title"), org.eclipse.uml2.diagram.statemachine.part.UMLDiagramEditorPlugin.getString("Region3CreationTool.desc"), types); //$NON-NLS-1$ $NON-NLS-2$
+		entry.setSmallIcon(org.eclipse.uml2.diagram.statemachine.providers.UMLElementTypes.getImageDescriptor(org.eclipse.uml2.diagram.statemachine.providers.UMLElementTypes.Region_2001));
+		entry.setLargeIcon(entry.getSmallIcon());
+		return entry;
 	}
 
 	/**
 	 * @generated
 	 */
-	private ToolEntry createFinalState4CreationTool() {
-		ImageDescriptor smallImage;
-		ImageDescriptor largeImage;
-
-		smallImage = UMLElementTypes.getImageDescriptor(UMLElementTypes.FinalState_3003);
-
-		largeImage = smallImage;
-
-		final List elementTypes = new ArrayList();
-		elementTypes.add(UMLElementTypes.FinalState_3003);
-		ToolEntry result = new NodeToolEntry(
-				UMLDiagramEditorPlugin.getString("FinalState4CreationTool.title"), UMLDiagramEditorPlugin.getString("FinalState4CreationTool.desc"), smallImage, largeImage, elementTypes); //$NON-NLS-1$ $NON-NLS-2$
-
-		return result;
+	private org.eclipse.gef.palette.ToolEntry createFinalState4CreationTool() {
+		java.util.List/*<IElementType>*/types = new java.util.ArrayList/*<IElementType>*/(1);
+		types.add(org.eclipse.uml2.diagram.statemachine.providers.UMLElementTypes.FinalState_3003);
+		NodeToolEntry entry = new NodeToolEntry(
+				org.eclipse.uml2.diagram.statemachine.part.UMLDiagramEditorPlugin.getString("FinalState4CreationTool.title"), org.eclipse.uml2.diagram.statemachine.part.UMLDiagramEditorPlugin.getString("FinalState4CreationTool.desc"), types); //$NON-NLS-1$ $NON-NLS-2$
+		entry.setSmallIcon(org.eclipse.uml2.diagram.statemachine.providers.UMLElementTypes.getImageDescriptor(org.eclipse.uml2.diagram.statemachine.providers.UMLElementTypes.FinalState_3003));
+		entry.setLargeIcon(entry.getSmallIcon());
+		return entry;
 	}
 
 	/**
 	 * @generated
 	 */
-	private ToolEntry createInitial5CreationTool() {
-		ImageDescriptor smallImage;
-		ImageDescriptor largeImage;
-
-		smallImage = UMLElementTypes.getImageDescriptor(UMLElementTypes.Pseudostate_3004);
-
-		largeImage = smallImage;
-
-		final List elementTypes = new ArrayList();
-		elementTypes.add(UMLElementTypes.Pseudostate_3004);
-		ToolEntry result = new NodeToolEntry(
-				UMLDiagramEditorPlugin.getString("Initial5CreationTool.title"), UMLDiagramEditorPlugin.getString("Initial5CreationTool.desc"), smallImage, largeImage, elementTypes); //$NON-NLS-1$ $NON-NLS-2$
-
-		return result;
+	private org.eclipse.gef.palette.ToolEntry createInitial5CreationTool() {
+		java.util.List/*<IElementType>*/types = new java.util.ArrayList/*<IElementType>*/(1);
+		types.add(org.eclipse.uml2.diagram.statemachine.providers.UMLElementTypes.Pseudostate_3004);
+		NodeToolEntry entry = new NodeToolEntry(
+				org.eclipse.uml2.diagram.statemachine.part.UMLDiagramEditorPlugin.getString("Initial5CreationTool.title"), org.eclipse.uml2.diagram.statemachine.part.UMLDiagramEditorPlugin.getString("Initial5CreationTool.desc"), types); //$NON-NLS-1$ $NON-NLS-2$
+		entry.setSmallIcon(org.eclipse.uml2.diagram.statemachine.providers.UMLElementTypes.getImageDescriptor(org.eclipse.uml2.diagram.statemachine.providers.UMLElementTypes.Pseudostate_3004));
+		entry.setLargeIcon(entry.getSmallIcon());
+		return entry;
 	}
 
 	/**
 	 * @generated
 	 */
-	private ToolEntry createShallowHistory6CreationTool() {
-		ImageDescriptor smallImage;
-		ImageDescriptor largeImage;
-
-		smallImage = UMLDiagramEditorPlugin.findImageDescriptor("/org.eclipse.uml2.uml.edit/icons/full/obj16/Pseudostate_shallowHistory.gif"); //$NON-NLS-1$
-
-		largeImage = UMLDiagramEditorPlugin.findImageDescriptor("/org.eclipse.uml2.uml.edit/icons/full/obj16/Pseudostate_shallowHistory.gif"); //$NON-NLS-1$
-
-		final List elementTypes = new ArrayList();
-		elementTypes.add(UMLElementTypes.Pseudostate_3005);
-		ToolEntry result = new NodeToolEntry(
-				UMLDiagramEditorPlugin.getString("ShallowHistory6CreationTool.title"), UMLDiagramEditorPlugin.getString("ShallowHistory6CreationTool.desc"), smallImage, largeImage, elementTypes); //$NON-NLS-1$ $NON-NLS-2$
-
-		return result;
+	private org.eclipse.gef.palette.ToolEntry createShallowHistory6CreationTool() {
+		java.util.List/*<IElementType>*/types = new java.util.ArrayList/*<IElementType>*/(1);
+		types.add(org.eclipse.uml2.diagram.statemachine.providers.UMLElementTypes.Pseudostate_3005);
+		NodeToolEntry entry = new NodeToolEntry(
+				org.eclipse.uml2.diagram.statemachine.part.UMLDiagramEditorPlugin.getString("ShallowHistory6CreationTool.title"), org.eclipse.uml2.diagram.statemachine.part.UMLDiagramEditorPlugin.getString("ShallowHistory6CreationTool.desc"), types); //$NON-NLS-1$ $NON-NLS-2$
+		entry.setSmallIcon(org.eclipse.uml2.diagram.statemachine.part.UMLDiagramEditorPlugin.findImageDescriptor("/org.eclipse.uml2.uml.edit/icons/full/obj16/Pseudostate_shallowHistory.gif")); //$NON-NLS-1$
+		entry.setLargeIcon(org.eclipse.uml2.diagram.statemachine.part.UMLDiagramEditorPlugin.findImageDescriptor("/org.eclipse.uml2.uml.edit/icons/full/obj16/Pseudostate_shallowHistory.gif")); //$NON-NLS-1$
+		return entry;
 	}
 
 	/**
 	 * @generated
 	 */
-	private ToolEntry createDeepHistory7CreationTool() {
-		ImageDescriptor smallImage;
-		ImageDescriptor largeImage;
-
-		smallImage = UMLDiagramEditorPlugin.findImageDescriptor("/org.eclipse.uml2.uml.edit/icons/full/obj16/Pseudostate_deepHistory.gif"); //$NON-NLS-1$
-
-		largeImage = UMLDiagramEditorPlugin.findImageDescriptor("/org.eclipse.uml2.uml.edit/icons/full/obj16/Pseudostate_deepHistory.gif"); //$NON-NLS-1$
-
-		final List elementTypes = new ArrayList();
-		elementTypes.add(UMLElementTypes.Pseudostate_3006);
-		ToolEntry result = new NodeToolEntry(
-				UMLDiagramEditorPlugin.getString("DeepHistory7CreationTool.title"), UMLDiagramEditorPlugin.getString("DeepHistory7CreationTool.desc"), smallImage, largeImage, elementTypes); //$NON-NLS-1$ $NON-NLS-2$
-
-		return result;
+	private org.eclipse.gef.palette.ToolEntry createDeepHistory7CreationTool() {
+		java.util.List/*<IElementType>*/types = new java.util.ArrayList/*<IElementType>*/(1);
+		types.add(org.eclipse.uml2.diagram.statemachine.providers.UMLElementTypes.Pseudostate_3006);
+		NodeToolEntry entry = new NodeToolEntry(
+				org.eclipse.uml2.diagram.statemachine.part.UMLDiagramEditorPlugin.getString("DeepHistory7CreationTool.title"), org.eclipse.uml2.diagram.statemachine.part.UMLDiagramEditorPlugin.getString("DeepHistory7CreationTool.desc"), types); //$NON-NLS-1$ $NON-NLS-2$
+		entry.setSmallIcon(org.eclipse.uml2.diagram.statemachine.part.UMLDiagramEditorPlugin.findImageDescriptor("/org.eclipse.uml2.uml.edit/icons/full/obj16/Pseudostate_deepHistory.gif")); //$NON-NLS-1$
+		entry.setLargeIcon(org.eclipse.uml2.diagram.statemachine.part.UMLDiagramEditorPlugin.findImageDescriptor("/org.eclipse.uml2.uml.edit/icons/full/obj16/Pseudostate_deepHistory.gif")); //$NON-NLS-1$
+		return entry;
 	}
 
 	/**
 	 * @generated
 	 */
-	private ToolEntry createFork8CreationTool() {
-		ImageDescriptor smallImage;
-		ImageDescriptor largeImage;
-
-		smallImage = UMLDiagramEditorPlugin.findImageDescriptor("/org.eclipse.uml2.uml.edit/icons/full/obj16/Pseudostate_fork.gif"); //$NON-NLS-1$
-
-		largeImage = UMLDiagramEditorPlugin.findImageDescriptor("/org.eclipse.uml2.uml.edit/icons/full/obj16/Pseudostate_fork.gif"); //$NON-NLS-1$
-
-		final List elementTypes = new ArrayList();
-		elementTypes.add(UMLElementTypes.Pseudostate_3008);
-		ToolEntry result = new NodeToolEntry(
-				UMLDiagramEditorPlugin.getString("Fork8CreationTool.title"), UMLDiagramEditorPlugin.getString("Fork8CreationTool.desc"), smallImage, largeImage, elementTypes); //$NON-NLS-1$ $NON-NLS-2$
-
-		return result;
+	private org.eclipse.gef.palette.ToolEntry createFork8CreationTool() {
+		java.util.List/*<IElementType>*/types = new java.util.ArrayList/*<IElementType>*/(1);
+		types.add(org.eclipse.uml2.diagram.statemachine.providers.UMLElementTypes.Pseudostate_3008);
+		NodeToolEntry entry = new NodeToolEntry(
+				org.eclipse.uml2.diagram.statemachine.part.UMLDiagramEditorPlugin.getString("Fork8CreationTool.title"), org.eclipse.uml2.diagram.statemachine.part.UMLDiagramEditorPlugin.getString("Fork8CreationTool.desc"), types); //$NON-NLS-1$ $NON-NLS-2$
+		entry.setSmallIcon(org.eclipse.uml2.diagram.statemachine.part.UMLDiagramEditorPlugin.findImageDescriptor("/org.eclipse.uml2.uml.edit/icons/full/obj16/Pseudostate_fork.gif")); //$NON-NLS-1$
+		entry.setLargeIcon(org.eclipse.uml2.diagram.statemachine.part.UMLDiagramEditorPlugin.findImageDescriptor("/org.eclipse.uml2.uml.edit/icons/full/obj16/Pseudostate_fork.gif")); //$NON-NLS-1$
+		return entry;
 	}
 
 	/**
 	 * @generated
 	 */
-	private ToolEntry createJoin9CreationTool() {
-		ImageDescriptor smallImage;
-		ImageDescriptor largeImage;
-
-		smallImage = UMLDiagramEditorPlugin.findImageDescriptor("/org.eclipse.uml2.uml.edit/icons/full/obj16/Pseudostate_join.gif"); //$NON-NLS-1$
-
-		largeImage = UMLDiagramEditorPlugin.findImageDescriptor("/org.eclipse.uml2.uml.edit/icons/full/obj16/Pseudostate_join.gif"); //$NON-NLS-1$
-
-		final List elementTypes = new ArrayList();
-		elementTypes.add(UMLElementTypes.Pseudostate_3007);
-		ToolEntry result = new NodeToolEntry(
-				UMLDiagramEditorPlugin.getString("Join9CreationTool.title"), UMLDiagramEditorPlugin.getString("Join9CreationTool.desc"), smallImage, largeImage, elementTypes); //$NON-NLS-1$ $NON-NLS-2$
-
-		return result;
+	private org.eclipse.gef.palette.ToolEntry createJoin9CreationTool() {
+		java.util.List/*<IElementType>*/types = new java.util.ArrayList/*<IElementType>*/(1);
+		types.add(org.eclipse.uml2.diagram.statemachine.providers.UMLElementTypes.Pseudostate_3007);
+		NodeToolEntry entry = new NodeToolEntry(
+				org.eclipse.uml2.diagram.statemachine.part.UMLDiagramEditorPlugin.getString("Join9CreationTool.title"), org.eclipse.uml2.diagram.statemachine.part.UMLDiagramEditorPlugin.getString("Join9CreationTool.desc"), types); //$NON-NLS-1$ $NON-NLS-2$
+		entry.setSmallIcon(org.eclipse.uml2.diagram.statemachine.part.UMLDiagramEditorPlugin.findImageDescriptor("/org.eclipse.uml2.uml.edit/icons/full/obj16/Pseudostate_join.gif")); //$NON-NLS-1$
+		entry.setLargeIcon(org.eclipse.uml2.diagram.statemachine.part.UMLDiagramEditorPlugin.findImageDescriptor("/org.eclipse.uml2.uml.edit/icons/full/obj16/Pseudostate_join.gif")); //$NON-NLS-1$
+		return entry;
 	}
 
 	/**
 	 * @generated
 	 */
-	private ToolEntry createJunction10CreationTool() {
-		ImageDescriptor smallImage;
-		ImageDescriptor largeImage;
-
-		smallImage = UMLDiagramEditorPlugin.findImageDescriptor("/org.eclipse.uml2.uml.edit/icons/full/obj16/Pseudostate_junction.gif"); //$NON-NLS-1$
-
-		largeImage = UMLDiagramEditorPlugin.findImageDescriptor("/org.eclipse.uml2.uml.edit/icons/full/obj16/Pseudostate_junction.gif"); //$NON-NLS-1$
-
-		final List elementTypes = new ArrayList();
-		elementTypes.add(UMLElementTypes.Pseudostate_3009);
-		ToolEntry result = new NodeToolEntry(
-				UMLDiagramEditorPlugin.getString("Junction10CreationTool.title"), UMLDiagramEditorPlugin.getString("Junction10CreationTool.desc"), smallImage, largeImage, elementTypes); //$NON-NLS-1$ $NON-NLS-2$
-
-		return result;
+	private org.eclipse.gef.palette.ToolEntry createJunction10CreationTool() {
+		java.util.List/*<IElementType>*/types = new java.util.ArrayList/*<IElementType>*/(1);
+		types.add(org.eclipse.uml2.diagram.statemachine.providers.UMLElementTypes.Pseudostate_3009);
+		NodeToolEntry entry = new NodeToolEntry(
+				org.eclipse.uml2.diagram.statemachine.part.UMLDiagramEditorPlugin.getString("Junction10CreationTool.title"), org.eclipse.uml2.diagram.statemachine.part.UMLDiagramEditorPlugin.getString("Junction10CreationTool.desc"), types); //$NON-NLS-1$ $NON-NLS-2$
+		entry.setSmallIcon(org.eclipse.uml2.diagram.statemachine.part.UMLDiagramEditorPlugin.findImageDescriptor("/org.eclipse.uml2.uml.edit/icons/full/obj16/Pseudostate_junction.gif")); //$NON-NLS-1$
+		entry.setLargeIcon(org.eclipse.uml2.diagram.statemachine.part.UMLDiagramEditorPlugin.findImageDescriptor("/org.eclipse.uml2.uml.edit/icons/full/obj16/Pseudostate_junction.gif")); //$NON-NLS-1$
+		return entry;
 	}
 
 	/**
 	 * @generated
 	 */
-	private ToolEntry createChoice11CreationTool() {
-		ImageDescriptor smallImage;
-		ImageDescriptor largeImage;
-
-		smallImage = UMLDiagramEditorPlugin.findImageDescriptor("/org.eclipse.uml2.uml.edit/icons/full/obj16/Pseudostate_choice.gif"); //$NON-NLS-1$
-
-		largeImage = UMLDiagramEditorPlugin.findImageDescriptor("/org.eclipse.uml2.uml.edit/icons/full/obj16/Pseudostate_choice.gif"); //$NON-NLS-1$
-
-		final List elementTypes = new ArrayList();
-		elementTypes.add(UMLElementTypes.Pseudostate_3010);
-		ToolEntry result = new NodeToolEntry(
-				UMLDiagramEditorPlugin.getString("Choice11CreationTool.title"), UMLDiagramEditorPlugin.getString("Choice11CreationTool.desc"), smallImage, largeImage, elementTypes); //$NON-NLS-1$ $NON-NLS-2$
-
-		return result;
+	private org.eclipse.gef.palette.ToolEntry createChoice11CreationTool() {
+		java.util.List/*<IElementType>*/types = new java.util.ArrayList/*<IElementType>*/(1);
+		types.add(org.eclipse.uml2.diagram.statemachine.providers.UMLElementTypes.Pseudostate_3010);
+		NodeToolEntry entry = new NodeToolEntry(
+				org.eclipse.uml2.diagram.statemachine.part.UMLDiagramEditorPlugin.getString("Choice11CreationTool.title"), org.eclipse.uml2.diagram.statemachine.part.UMLDiagramEditorPlugin.getString("Choice11CreationTool.desc"), types); //$NON-NLS-1$ $NON-NLS-2$
+		entry.setSmallIcon(org.eclipse.uml2.diagram.statemachine.part.UMLDiagramEditorPlugin.findImageDescriptor("/org.eclipse.uml2.uml.edit/icons/full/obj16/Pseudostate_choice.gif")); //$NON-NLS-1$
+		entry.setLargeIcon(org.eclipse.uml2.diagram.statemachine.part.UMLDiagramEditorPlugin.findImageDescriptor("/org.eclipse.uml2.uml.edit/icons/full/obj16/Pseudostate_choice.gif")); //$NON-NLS-1$
+		return entry;
 	}
 
 	/**
 	 * @generated
 	 */
-	private ToolEntry createTerminate12CreationTool() {
-		ImageDescriptor smallImage;
-		ImageDescriptor largeImage;
-
-		smallImage = UMLDiagramEditorPlugin.findImageDescriptor("/org.eclipse.uml2.uml.edit/icons/full/obj16/Pseudostate_terminate.gif"); //$NON-NLS-1$
-
-		largeImage = UMLDiagramEditorPlugin.findImageDescriptor("/org.eclipse.uml2.uml.edit/icons/full/obj16/Pseudostate_terminate.gif"); //$NON-NLS-1$
-
-		final List elementTypes = new ArrayList();
-		elementTypes.add(UMLElementTypes.Pseudostate_3011);
-		ToolEntry result = new NodeToolEntry(
-				UMLDiagramEditorPlugin.getString("Terminate12CreationTool.title"), UMLDiagramEditorPlugin.getString("Terminate12CreationTool.desc"), smallImage, largeImage, elementTypes); //$NON-NLS-1$ $NON-NLS-2$
-
-		return result;
+	private org.eclipse.gef.palette.ToolEntry createTerminate12CreationTool() {
+		java.util.List/*<IElementType>*/types = new java.util.ArrayList/*<IElementType>*/(1);
+		types.add(org.eclipse.uml2.diagram.statemachine.providers.UMLElementTypes.Pseudostate_3011);
+		NodeToolEntry entry = new NodeToolEntry(
+				org.eclipse.uml2.diagram.statemachine.part.UMLDiagramEditorPlugin.getString("Terminate12CreationTool.title"), org.eclipse.uml2.diagram.statemachine.part.UMLDiagramEditorPlugin.getString("Terminate12CreationTool.desc"), types); //$NON-NLS-1$ $NON-NLS-2$
+		entry.setSmallIcon(org.eclipse.uml2.diagram.statemachine.part.UMLDiagramEditorPlugin.findImageDescriptor("/org.eclipse.uml2.uml.edit/icons/full/obj16/Pseudostate_terminate.gif")); //$NON-NLS-1$
+		entry.setLargeIcon(org.eclipse.uml2.diagram.statemachine.part.UMLDiagramEditorPlugin.findImageDescriptor("/org.eclipse.uml2.uml.edit/icons/full/obj16/Pseudostate_terminate.gif")); //$NON-NLS-1$
+		return entry;
 	}
 
 	/**
 	 * @generated
 	 */
-	private ToolEntry createEntryPoint13CreationTool() {
-		ImageDescriptor smallImage;
-		ImageDescriptor largeImage;
-
-		smallImage = UMLDiagramEditorPlugin.findImageDescriptor("/org.eclipse.uml2.uml.edit/icons/full/obj16/Pseudostate_entryPoint.gif"); //$NON-NLS-1$
-
-		largeImage = UMLDiagramEditorPlugin.findImageDescriptor("/org.eclipse.uml2.uml.edit/icons/full/obj16/Pseudostate_entryPoint.gif"); //$NON-NLS-1$
-
-		final List elementTypes = new ArrayList();
-		elementTypes.add(UMLElementTypes.Pseudostate_2002);
-		ToolEntry result = new NodeToolEntry(
-				UMLDiagramEditorPlugin.getString("EntryPoint13CreationTool.title"), UMLDiagramEditorPlugin.getString("EntryPoint13CreationTool.desc"), smallImage, largeImage, elementTypes); //$NON-NLS-1$ $NON-NLS-2$
-
-		return result;
+	private org.eclipse.gef.palette.ToolEntry createEntryPoint13CreationTool() {
+		java.util.List/*<IElementType>*/types = new java.util.ArrayList/*<IElementType>*/(1);
+		types.add(org.eclipse.uml2.diagram.statemachine.providers.UMLElementTypes.Pseudostate_2002);
+		NodeToolEntry entry = new NodeToolEntry(
+				org.eclipse.uml2.diagram.statemachine.part.UMLDiagramEditorPlugin.getString("EntryPoint13CreationTool.title"), org.eclipse.uml2.diagram.statemachine.part.UMLDiagramEditorPlugin.getString("EntryPoint13CreationTool.desc"), types); //$NON-NLS-1$ $NON-NLS-2$
+		entry.setSmallIcon(org.eclipse.uml2.diagram.statemachine.part.UMLDiagramEditorPlugin.findImageDescriptor("/org.eclipse.uml2.uml.edit/icons/full/obj16/Pseudostate_entryPoint.gif")); //$NON-NLS-1$
+		entry.setLargeIcon(org.eclipse.uml2.diagram.statemachine.part.UMLDiagramEditorPlugin.findImageDescriptor("/org.eclipse.uml2.uml.edit/icons/full/obj16/Pseudostate_entryPoint.gif")); //$NON-NLS-1$
+		return entry;
 	}
 
 	/**
 	 * @generated
 	 */
-	private ToolEntry createExitPoint14CreationTool() {
-		ImageDescriptor smallImage;
-		ImageDescriptor largeImage;
-
-		smallImage = UMLDiagramEditorPlugin.findImageDescriptor("/org.eclipse.uml2.uml.edit/icons/full/obj16/Pseudostate_exitPoint.gif"); //$NON-NLS-1$
-
-		largeImage = UMLDiagramEditorPlugin.findImageDescriptor("/org.eclipse.uml2.uml.edit/icons/full/obj16/Pseudostate_exitPoint.gif"); //$NON-NLS-1$
-
-		final List elementTypes = new ArrayList();
-		elementTypes.add(UMLElementTypes.Pseudostate_2003);
-		ToolEntry result = new NodeToolEntry(
-				UMLDiagramEditorPlugin.getString("ExitPoint14CreationTool.title"), UMLDiagramEditorPlugin.getString("ExitPoint14CreationTool.desc"), smallImage, largeImage, elementTypes); //$NON-NLS-1$ $NON-NLS-2$
-
-		return result;
+	private org.eclipse.gef.palette.ToolEntry createExitPoint14CreationTool() {
+		java.util.List/*<IElementType>*/types = new java.util.ArrayList/*<IElementType>*/(1);
+		types.add(org.eclipse.uml2.diagram.statemachine.providers.UMLElementTypes.Pseudostate_2003);
+		NodeToolEntry entry = new NodeToolEntry(
+				org.eclipse.uml2.diagram.statemachine.part.UMLDiagramEditorPlugin.getString("ExitPoint14CreationTool.title"), org.eclipse.uml2.diagram.statemachine.part.UMLDiagramEditorPlugin.getString("ExitPoint14CreationTool.desc"), types); //$NON-NLS-1$ $NON-NLS-2$
+		entry.setSmallIcon(org.eclipse.uml2.diagram.statemachine.part.UMLDiagramEditorPlugin.findImageDescriptor("/org.eclipse.uml2.uml.edit/icons/full/obj16/Pseudostate_exitPoint.gif")); //$NON-NLS-1$
+		entry.setLargeIcon(org.eclipse.uml2.diagram.statemachine.part.UMLDiagramEditorPlugin.findImageDescriptor("/org.eclipse.uml2.uml.edit/icons/full/obj16/Pseudostate_exitPoint.gif")); //$NON-NLS-1$
+		return entry;
 	}
 
 	/**
 	 * @generated
 	 */
-	private ToolEntry createTransition1CreationTool() {
-		ImageDescriptor smallImage;
-		ImageDescriptor largeImage;
-
-		smallImage = UMLElementTypes.getImageDescriptor(UMLElementTypes.Transition_4001);
-
-		largeImage = smallImage;
-
-		final List relationshipTypes = new ArrayList();
-		relationshipTypes.add(UMLElementTypes.Transition_4001);
-		ToolEntry result = new LinkToolEntry(
-				UMLDiagramEditorPlugin.getString("Transition1CreationTool.title"), UMLDiagramEditorPlugin.getString("Transition1CreationTool.desc"), smallImage, largeImage, relationshipTypes); //$NON-NLS-1$ $NON-NLS-2$
-
-		return result;
-	}
-
-	/**
-	 * @generated
-	 */
-	private static class NodeToolEntry extends ToolEntry {
+	private static class NodeToolEntry extends org.eclipse.gef.palette.ToolEntry {
 
 		/**
 		 * @generated
 		 */
-		private final List elementTypes;
+		private final java.util.List elementTypes;
 
 		/**
 		 * @generated
 		 */
-		private NodeToolEntry(String title, String description, ImageDescriptor smallIcon, ImageDescriptor largeIcon, List elementTypes) {
-			super(title, description, smallIcon, largeIcon);
+		private NodeToolEntry(String title, String description, java.util.List elementTypes) {
+			super(title, description, null, null);
 			this.elementTypes = elementTypes;
 		}
 
 		/**
 		 * @generated
 		 */
-		public Tool createTool() {
-			Tool tool = new UnspecifiedTypeCreationTool(elementTypes);
+		public org.eclipse.gef.Tool createTool() {
+			org.eclipse.gef.Tool tool = new org.eclipse.gmf.runtime.diagram.ui.tools.UnspecifiedTypeCreationTool(elementTypes);
 			tool.setProperties(getToolProperties());
 			return tool;
 		}
@@ -378,26 +275,26 @@ public class UMLPaletteFactory {
 	/**
 	 * @generated
 	 */
-	private static class LinkToolEntry extends ToolEntry {
+	private static class LinkToolEntry extends org.eclipse.gef.palette.ToolEntry {
 
 		/**
 		 * @generated
 		 */
-		private final List relationshipTypes;
+		private final java.util.List relationshipTypes;
 
 		/**
 		 * @generated
 		 */
-		private LinkToolEntry(String title, String description, ImageDescriptor smallIcon, ImageDescriptor largeIcon, List relationshipTypes) {
-			super(title, description, smallIcon, largeIcon);
+		private LinkToolEntry(String title, String description, java.util.List relationshipTypes) {
+			super(title, description, null, null);
 			this.relationshipTypes = relationshipTypes;
 		}
 
 		/**
 		 * @generated
 		 */
-		public Tool createTool() {
-			Tool tool = new UnspecifiedTypeConnectionTool(relationshipTypes);
+		public org.eclipse.gef.Tool createTool() {
+			org.eclipse.gef.Tool tool = new org.eclipse.gmf.runtime.diagram.ui.tools.UnspecifiedTypeConnectionTool(relationshipTypes);
 			tool.setProperties(getToolProperties());
 			return tool;
 		}

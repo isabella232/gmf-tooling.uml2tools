@@ -7,16 +7,13 @@ import org.eclipse.gmf.runtime.emf.type.core.requests.DestroyElementRequest;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EAnnotation;
 import org.eclipse.gmf.runtime.notation.View;
-import org.eclipse.emf.ecore.EClass;
-
 import org.eclipse.gef.commands.UnexecutableCommand;
 
-import org.eclipse.gmf.runtime.emf.type.core.commands.CreateRelationshipCommand;
+import org.eclipse.uml2.diagram.statemachine.edit.commands.TransitionTypeLinkCreateCommand;
 
 import org.eclipse.uml2.diagram.statemachine.providers.UMLElementTypes;
 
 import org.eclipse.uml2.uml.Region;
-import org.eclipse.uml2.uml.Transition;
 import org.eclipse.uml2.uml.UMLPackage;
 import org.eclipse.uml2.uml.Vertex;
 
@@ -57,6 +54,21 @@ public class Pseudostate6ItemSemanticEditPolicy extends UMLBaseItemSemanticEditP
 	 * @generated
 	 */
 	protected Command getCreateStartOutgoingTransition4001Command(CreateRelationshipRequest req) {
+		EObject sourceEObject = req.getSource();
+		EObject targetEObject = req.getTarget();
+		if (false == sourceEObject instanceof Vertex || (targetEObject != null && false == targetEObject instanceof Vertex)) {
+			return UnexecutableCommand.INSTANCE;
+		}
+		Vertex source = (Vertex) sourceEObject;
+		Vertex target = (Vertex) targetEObject;
+
+		Region container = (Region) getRelationshipContainer(source, UMLPackage.eINSTANCE.getRegion(), req.getElementType());
+		if (container == null) {
+			return UnexecutableCommand.INSTANCE;
+		}
+		if (!UMLBaseItemSemanticEditPolicy.LinkConstraints.canCreateTransition_4001(container, source, target)) {
+			return UnexecutableCommand.INSTANCE;
+		}
 		return new Command() {
 		};
 	}
@@ -65,60 +77,24 @@ public class Pseudostate6ItemSemanticEditPolicy extends UMLBaseItemSemanticEditP
 	 * @generated
 	 */
 	protected Command getCreateCompleteIncomingTransition4001Command(CreateRelationshipRequest req) {
-		if (!(req.getSource() instanceof Vertex)) {
+		EObject sourceEObject = req.getSource();
+		EObject targetEObject = req.getTarget();
+		if (false == sourceEObject instanceof Vertex || false == targetEObject instanceof Vertex) {
 			return UnexecutableCommand.INSTANCE;
 		}
-		final Region element = (Region) getRelationshipContainer(req.getSource(), UMLPackage.eINSTANCE.getRegion(), req.getElementType());
-		if (element == null) {
+		Vertex source = (Vertex) sourceEObject;
+		Vertex target = (Vertex) targetEObject;
+
+		Region container = (Region) getRelationshipContainer(source, UMLPackage.eINSTANCE.getRegion(), req.getElementType());
+		if (container == null) {
+			return UnexecutableCommand.INSTANCE;
+		}
+		if (!UMLBaseItemSemanticEditPolicy.LinkConstraints.canCreateTransition_4001(container, source, target)) {
 			return UnexecutableCommand.INSTANCE;
 		}
 		if (req.getContainmentFeature() == null) {
 			req.setContainmentFeature(UMLPackage.eINSTANCE.getRegion_Transition());
 		}
-		return getMSLWrapper(new CreateIncomingTransition4001Command(req) {
-
-			protected EObject getElementToEdit() {
-				return element;
-			}
-		});
-	}
-
-	/**
-	 * @generated
-	 */
-	private static class CreateIncomingTransition4001Command extends CreateRelationshipCommand {
-
-		/**
-		 * @generated
-		 */
-		public CreateIncomingTransition4001Command(CreateRelationshipRequest req) {
-			super(req);
-		}
-
-		/**
-		 * @generated
-		 */
-		protected EClass getEClassToEdit() {
-			return UMLPackage.eINSTANCE.getRegion();
-		};
-
-		/**
-		 * @generated
-		 */
-		protected void setElementToEdit(EObject element) {
-			throw new UnsupportedOperationException();
-		}
-
-		/**
-		 * @generated
-		 */
-		protected EObject doDefaultElementCreation() {
-			Transition newElement = (Transition) super.doDefaultElementCreation();
-			if (newElement != null) {
-				newElement.setTarget((Vertex) getTarget());
-				newElement.setSource((Vertex) getSource());
-			}
-			return newElement;
-		}
+		return getMSLWrapper(new TransitionTypeLinkCreateCommand(req, container, source, target));
 	}
 }
