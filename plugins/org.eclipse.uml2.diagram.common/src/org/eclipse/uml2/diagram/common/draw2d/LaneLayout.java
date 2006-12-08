@@ -17,6 +17,7 @@ import java.util.List;
 import org.eclipse.draw2d.AbstractHintLayout;
 import org.eclipse.draw2d.IFigure;
 import org.eclipse.draw2d.geometry.Dimension;
+import org.eclipse.draw2d.geometry.Insets;
 import org.eclipse.draw2d.geometry.Rectangle;
 import org.eclipse.draw2d.geometry.Transposer;
 
@@ -24,19 +25,27 @@ public class LaneLayout extends AbstractHintLayout {
 	public static int HORIZONTAL = 0;
 	public static int VERTICAL = 1;
 	
+	private static final Insets NO_INSETS = new Insets(0, 0, 0, 0);
+	
 	private int myLaneOrientation;
+	private Insets myInsets;
 	// Transposer object used in layout calculations
 	private Transposer myTransposer;
 	private HashMap<IFigure, Object> myConstraints;
 
 	public LaneLayout() {
-		this(HORIZONTAL);
+		this(HORIZONTAL, NO_INSETS);
 	}
 
-	public LaneLayout(int laneOrientation) {
+	public LaneLayout(Insets insets) {
+		this(HORIZONTAL, insets);
+	}
+
+	public LaneLayout(int laneOrientation, Insets insets) {
 		myConstraints = new HashMap<IFigure, Object>();
 		myTransposer = new Transposer();
 		setLaneOrientation(laneOrientation);
+		setInsets(insets);
 	}
 
 	public void setLaneOrientation(int orientation) {
@@ -51,11 +60,23 @@ public class LaneLayout extends AbstractHintLayout {
 		return myLaneOrientation;
 	}
 	
+	
+	public void setInsets(Insets insets) {
+		myInsets = insets != null ? insets : NO_INSETS;
+	}
+	
+	public Insets getInsets() {
+		return myInsets;
+	}
+	
 	@Override
 	protected Dimension calculateMinimumSize(IFigure container, int wHint, int hHint) {
+		Insets insets = container.getInsets();
 		List children = container.getChildren();
-		int childWHint = getLaneOrientation() == HORIZONTAL ? wHint : (wHint > 0 ? wHint / children.size() : wHint);
-		int childHHint = getLaneOrientation() == VERTICAL ? hHint : (hHint > 0 ? hHint / children.size() : hHint);
+		int childWHint = getLaneOrientation() == HORIZONTAL ? Math.max(0, wHint - insets.getWidth()) : 
+			(wHint - insets.getWidth() > 0 ? wHint - insets.getWidth() / children.size() : wHint);
+		int childHHint = getLaneOrientation() == VERTICAL ? Math.max(0, hHint - insets.getHeight()) : 
+			(hHint - insets.getHeight() > 0 ? hHint - insets.getHeight() / children.size() : hHint);
 
 		int height = 0, width = 0;
 		for (int i = 0; i < children.size(); i++) {
@@ -65,14 +86,17 @@ public class LaneLayout extends AbstractHintLayout {
 			height += childSize.height;
 			width = Math.max(width, childSize.width);
 		}
-		return myTransposer.t(new Dimension(width, height));
+		return myTransposer.t(new Dimension(width, height)).expand(insets.getWidth(), insets.getHeight()).union(getBorderPreferredSize(container));
 	}
 
 	@Override
 	protected Dimension calculatePreferredSize(IFigure container, int wHint, int hHint) {
+		Insets insets = container.getInsets();
 		List children = container.getChildren();
-		int childWHint = getLaneOrientation() == HORIZONTAL ? wHint : (wHint > 0 ? wHint / children.size() : wHint);
-		int childHHint = getLaneOrientation() == VERTICAL ? hHint : (hHint > 0 ? hHint / children.size() : hHint);
+		int childWHint = getLaneOrientation() == HORIZONTAL ? Math.max(0, wHint - insets.getWidth()) : 
+			(wHint - insets.getWidth() > 0 ? wHint - insets.getWidth() / children.size() : wHint);
+		int childHHint = getLaneOrientation() == VERTICAL ? Math.max(0, hHint - insets.getHeight()) : 
+			(hHint - insets.getHeight() > 0 ? hHint - insets.getHeight() / children.size() : hHint);
 
 		int height = 0, width = 0;
 		for (int i = 0; i < children.size(); i++) {
@@ -82,7 +106,7 @@ public class LaneLayout extends AbstractHintLayout {
 			height += childSize.height;
 			width = Math.max(width, childSize.width);
 		}
-		return myTransposer.t(new Dimension(width, height));
+		return myTransposer.t(new Dimension(width, height)).expand(insets.getWidth(), insets.getHeight()).union(getBorderPreferredSize(container));
 	}
 	
 	@Override
@@ -111,8 +135,9 @@ public class LaneLayout extends AbstractHintLayout {
 			Dimension prefSizes[] = new Dimension[numChildren];
 			Dimension minSizes[] = new Dimension[numChildren];
 
-			int wHint = getLaneOrientation() == HORIZONTAL ? container.getClientArea(Rectangle.SINGLETON).width : -1;
-			int hHint = getLaneOrientation() == VERTICAL ? container.getClientArea(Rectangle.SINGLETON).height : -1;
+			Insets insets = getInsets();
+			int wHint = getLaneOrientation() == HORIZONTAL ? Math.max(0, container.getClientArea(Rectangle.SINGLETON).width - insets.getWidth()) : -1;
+			int hHint = getLaneOrientation() == VERTICAL ? Math.max(0, container.getClientArea(Rectangle.SINGLETON).height - insets.getHeight()) : -1;
 
 			int totalPrefHeight = 0;
 			int nonExpansibleNum = 0;
@@ -131,7 +156,7 @@ public class LaneLayout extends AbstractHintLayout {
 				}
 			}
 
-			Rectangle clientArea = myTransposer.t(container.getClientArea());
+			Rectangle clientArea = myTransposer.t(container.getClientArea().getCopy().crop(insets));
 			int expansion = totalPrefHeight < clientArea.height && children.size() > nonExpansibleNum ? 
 					(clientArea.height - totalPrefHeight) / (children.size() - nonExpansibleNum) : 0;
 
@@ -162,5 +187,4 @@ public class LaneLayout extends AbstractHintLayout {
 			}
 		}
 	}
-
 }
