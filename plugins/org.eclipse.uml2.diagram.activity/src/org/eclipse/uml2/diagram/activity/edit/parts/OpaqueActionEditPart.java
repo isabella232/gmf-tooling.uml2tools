@@ -1,8 +1,12 @@
 package org.eclipse.uml2.diagram.activity.edit.parts;
 
+import org.eclipse.draw2d.Graphics;
 import org.eclipse.draw2d.IFigure;
+import org.eclipse.draw2d.MarginBorder;
 import org.eclipse.draw2d.PositionConstants;
+import org.eclipse.draw2d.RoundedRectangle;
 import org.eclipse.draw2d.StackLayout;
+import org.eclipse.draw2d.geometry.Dimension;
 
 import org.eclipse.gef.EditPart;
 import org.eclipse.gef.EditPolicy;
@@ -25,6 +29,7 @@ import org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles;
 import org.eclipse.gmf.runtime.diagram.ui.figures.BorderItemLocator;
 
 import org.eclipse.gmf.runtime.draw2d.ui.figures.ConstrainedToolbarLayout;
+import org.eclipse.gmf.runtime.draw2d.ui.figures.WrapLabel;
 
 import org.eclipse.gmf.runtime.gef.ui.figures.DefaultSizeNodeFigure;
 import org.eclipse.gmf.runtime.gef.ui.figures.NodeFigure;
@@ -35,6 +40,7 @@ import org.eclipse.uml2.diagram.activity.edit.policies.OpaqueActionCanonicalEdit
 import org.eclipse.uml2.diagram.activity.edit.policies.OpaqueActionItemSemanticEditPolicy;
 
 import org.eclipse.uml2.diagram.activity.part.UMLVisualIDRegistry;
+import org.eclipse.uml2.diagram.common.draw2d.CenterLayout;
 
 /**
  * @generated
@@ -234,24 +240,24 @@ public class OpaqueActionEditPart extends AbstractBorderedShapeEditPart {
 	/**
 	 * @generated
 	 */
-	public class ActionBaseFigure extends org.eclipse.draw2d.RoundedRectangle {
+	public class ActionBaseFigure extends RoundedRectangle {
 
 		/**
 		 * @generated
 		 */
 		public ActionBaseFigure() {
 
-			org.eclipse.uml2.diagram.common.draw2d.CenterLayout layoutThis = new org.eclipse.uml2.diagram.common.draw2d.CenterLayout();
+			CenterLayout layoutThis = new CenterLayout();
 
 			this.setLayoutManager(layoutThis);
 
-			this.setCornerDimensions(new org.eclipse.draw2d.geometry.Dimension(getMapMode().DPtoLP(16), getMapMode().DPtoLP(16)));
+			this.setCornerDimensions(new Dimension(getMapMode().DPtoLP(16), getMapMode().DPtoLP(16)));
 			this.setFill(true);
 			this.setFillXOR(false);
 			this.setOutline(true);
 			this.setOutlineXOR(false);
 			this.setLineWidth(1);
-			this.setLineStyle(org.eclipse.draw2d.Graphics.LINE_SOLID);
+			this.setLineStyle(Graphics.LINE_SOLID);
 			createContents();
 		}
 
@@ -260,10 +266,10 @@ public class OpaqueActionEditPart extends AbstractBorderedShapeEditPart {
 		 */
 		private void createContents() {
 
-			org.eclipse.gmf.runtime.draw2d.ui.figures.WrapLabel actionBaseFigure_name0 = new org.eclipse.gmf.runtime.draw2d.ui.figures.WrapLabel();
+			WrapLabel actionBaseFigure_name0 = new WrapLabel();
 			actionBaseFigure_name0.setText("");
 
-			actionBaseFigure_name0.setBorder(new org.eclipse.draw2d.MarginBorder(getMapMode().DPtoLP(0), getMapMode().DPtoLP(5), getMapMode().DPtoLP(0), getMapMode().DPtoLP(5)));
+			actionBaseFigure_name0.setBorder(new MarginBorder(getMapMode().DPtoLP(0), getMapMode().DPtoLP(5), getMapMode().DPtoLP(0), getMapMode().DPtoLP(5)));
 
 			this.add(actionBaseFigure_name0);
 			setFigureActionBaseFigure_name(actionBaseFigure_name0);
@@ -273,19 +279,19 @@ public class OpaqueActionEditPart extends AbstractBorderedShapeEditPart {
 		/**
 		 * @generated
 		 */
-		private org.eclipse.gmf.runtime.draw2d.ui.figures.WrapLabel fActionBaseFigure_name;
+		private WrapLabel fActionBaseFigure_name;
 
 		/**
 		 * @generated
 		 */
-		public org.eclipse.gmf.runtime.draw2d.ui.figures.WrapLabel getFigureActionBaseFigure_name() {
+		public WrapLabel getFigureActionBaseFigure_name() {
 			return fActionBaseFigure_name;
 		}
 
 		/**
 		 * @generated
 		 */
-		private void setFigureActionBaseFigure_name(org.eclipse.gmf.runtime.draw2d.ui.figures.WrapLabel fig) {
+		private void setFigureActionBaseFigure_name(WrapLabel fig) {
 			fActionBaseFigure_name = fig;
 		}
 

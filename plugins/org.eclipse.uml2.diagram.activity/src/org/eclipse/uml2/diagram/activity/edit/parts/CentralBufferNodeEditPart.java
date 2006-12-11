@@ -1,6 +1,9 @@
 package org.eclipse.uml2.diagram.activity.edit.parts;
 
+import org.eclipse.draw2d.BorderLayout;
+import org.eclipse.draw2d.Graphics;
 import org.eclipse.draw2d.IFigure;
+import org.eclipse.draw2d.RectangleFigure;
 import org.eclipse.draw2d.StackLayout;
 
 import org.eclipse.gef.EditPart;
@@ -19,6 +22,7 @@ import org.eclipse.gmf.runtime.diagram.ui.editparts.ShapeNodeEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles;
 
 import org.eclipse.gmf.runtime.draw2d.ui.figures.ConstrainedToolbarLayout;
+import org.eclipse.gmf.runtime.draw2d.ui.figures.WrapLabel;
 
 import org.eclipse.gmf.runtime.gef.ui.figures.DefaultSizeNodeFigure;
 import org.eclipse.gmf.runtime.gef.ui.figures.NodeFigure;
@@ -157,14 +161,14 @@ public class CentralBufferNodeEditPart extends ShapeNodeEditPart {
 	/**
 	 * @generated
 	 */
-	public class CentralBufferFigure extends org.eclipse.draw2d.RectangleFigure {
+	public class CentralBufferFigure extends RectangleFigure {
 
 		/**
 		 * @generated
 		 */
 		public CentralBufferFigure() {
 
-			org.eclipse.draw2d.BorderLayout layoutThis = new org.eclipse.draw2d.BorderLayout();
+			BorderLayout layoutThis = new BorderLayout();
 			this.setLayoutManager(layoutThis);
 
 			this.setFill(true);
@@ -172,7 +176,7 @@ public class CentralBufferNodeEditPart extends ShapeNodeEditPart {
 			this.setOutline(true);
 			this.setOutlineXOR(false);
 			this.setLineWidth(1);
-			this.setLineStyle(org.eclipse.draw2d.Graphics.LINE_SOLID);
+			this.setLineStyle(Graphics.LINE_SOLID);
 			createContents();
 		}
 
@@ -181,20 +185,20 @@ public class CentralBufferNodeEditPart extends ShapeNodeEditPart {
 		 */
 		private void createContents() {
 
-			org.eclipse.gmf.runtime.draw2d.ui.figures.WrapLabel centralBufferFigure_fixed_central0 = new org.eclipse.gmf.runtime.draw2d.ui.figures.WrapLabel();
+			WrapLabel centralBufferFigure_fixed_central0 = new WrapLabel();
 			centralBufferFigure_fixed_central0.setText("\u00ABcentralBuffer\u00BB");
 
-			this.add(centralBufferFigure_fixed_central0, org.eclipse.draw2d.BorderLayout.TOP);
+			this.add(centralBufferFigure_fixed_central0, BorderLayout.TOP);
 
-			org.eclipse.draw2d.RectangleFigure centralBufferFigure_ContentPane0 = new org.eclipse.draw2d.RectangleFigure();
+			RectangleFigure centralBufferFigure_ContentPane0 = new RectangleFigure();
 			centralBufferFigure_ContentPane0.setFill(false);
 			centralBufferFigure_ContentPane0.setFillXOR(false);
 			centralBufferFigure_ContentPane0.setOutline(false);
 			centralBufferFigure_ContentPane0.setOutlineXOR(false);
 			centralBufferFigure_ContentPane0.setLineWidth(1);
-			centralBufferFigure_ContentPane0.setLineStyle(org.eclipse.draw2d.Graphics.LINE_SOLID);
+			centralBufferFigure_ContentPane0.setLineStyle(Graphics.LINE_SOLID);
 
-			this.add(centralBufferFigure_ContentPane0, org.eclipse.draw2d.BorderLayout.CENTER);
+			this.add(centralBufferFigure_ContentPane0, BorderLayout.CENTER);
 			setFigureCentralBufferFigure_ContentPane(centralBufferFigure_ContentPane0);
 
 		}
@@ -202,19 +206,19 @@ public class CentralBufferNodeEditPart extends ShapeNodeEditPart {
 		/**
 		 * @generated
 		 */
-		private org.eclipse.draw2d.RectangleFigure fCentralBufferFigure_ContentPane;
+		private RectangleFigure fCentralBufferFigure_ContentPane;
 
 		/**
 		 * @generated
 		 */
-		public org.eclipse.draw2d.RectangleFigure getFigureCentralBufferFigure_ContentPane() {
+		public RectangleFigure getFigureCentralBufferFigure_ContentPane() {
 			return fCentralBufferFigure_ContentPane;
 		}
 
 		/**
 		 * @generated
 		 */
-		private void setFigureCentralBufferFigure_ContentPane(org.eclipse.draw2d.RectangleFigure fig) {
+		private void setFigureCentralBufferFigure_ContentPane(RectangleFigure fig) {
 			fCentralBufferFigure_ContentPane = fig;
 		}
 

@@ -7,19 +7,25 @@ import org.eclipse.gmf.runtime.common.ui.services.parser.GetParserOperation;
 import org.eclipse.gmf.runtime.common.ui.services.parser.IParser;
 import org.eclipse.gmf.runtime.common.ui.services.parser.IParserProvider;
 import org.eclipse.gmf.runtime.notation.View;
+import org.eclipse.uml2.diagram.activity.edit.parts.AddStructuralFeatureValueActionName2EditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.AddStructuralFeatureValueActionNameEditPart;
+import org.eclipse.uml2.diagram.activity.edit.parts.CallBehaviorActionName2EditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.CallBehaviorActionNameEditPart;
+import org.eclipse.uml2.diagram.activity.edit.parts.CallOperationActionName2EditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.CallOperationActionNameEditPart;
+import org.eclipse.uml2.diagram.activity.edit.parts.CreateObjectActionName2EditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.CreateObjectActionNameEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.InputPinName2EditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.InputPinName3EditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.InputPinName4EditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.InputPinName5EditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.InputPinNameEditPart;
+import org.eclipse.uml2.diagram.activity.edit.parts.OpaqueActionName2EditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.OpaqueActionNameEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.OutputPinName2EditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.OutputPinName3EditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.OutputPinNameEditPart;
+import org.eclipse.uml2.diagram.activity.edit.parts.PinName2EditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.PinNameEditPart;
 
 import org.eclipse.uml2.diagram.activity.part.UMLVisualIDRegistry;
@@ -218,6 +224,144 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 	/**
 	 * @generated
 	 */
+	private IParser opaqueActionOpaqueActionName_5015Parser;
+
+	/**
+	 * @generated
+	 */
+	private IParser getOpaqueActionOpaqueActionName_5015Parser() {
+		if (opaqueActionOpaqueActionName_5015Parser == null) {
+			opaqueActionOpaqueActionName_5015Parser = createOpaqueActionOpaqueActionName_5015Parser();
+		}
+		return opaqueActionOpaqueActionName_5015Parser;
+	}
+
+	/**
+	 * @generated
+	 */
+	protected IParser createOpaqueActionOpaqueActionName_5015Parser() {
+		UMLStructuralFeatureParser parser = new UMLStructuralFeatureParser(UMLPackage.eINSTANCE.getNamedElement_Name());
+		return parser;
+	}
+
+	/**
+	 * @generated
+	 */
+	private IParser pinPinName_5016Parser;
+
+	/**
+	 * @generated
+	 */
+	private IParser getPinPinName_5016Parser() {
+		if (pinPinName_5016Parser == null) {
+			pinPinName_5016Parser = createPinPinName_5016Parser();
+		}
+		return pinPinName_5016Parser;
+	}
+
+	/**
+	 * @generated
+	 */
+	protected IParser createPinPinName_5016Parser() {
+		UMLStructuralFeatureParser parser = new UMLStructuralFeatureParser(UMLPackage.eINSTANCE.getNamedElement_Name());
+		return parser;
+	}
+
+	/**
+	 * @generated
+	 */
+	private IParser createObjectActionCreateObjectActionName_5017Parser;
+
+	/**
+	 * @generated
+	 */
+	private IParser getCreateObjectActionCreateObjectActionName_5017Parser() {
+		if (createObjectActionCreateObjectActionName_5017Parser == null) {
+			createObjectActionCreateObjectActionName_5017Parser = createCreateObjectActionCreateObjectActionName_5017Parser();
+		}
+		return createObjectActionCreateObjectActionName_5017Parser;
+	}
+
+	/**
+	 * @generated
+	 */
+	protected IParser createCreateObjectActionCreateObjectActionName_5017Parser() {
+		UMLStructuralFeatureParser parser = new UMLStructuralFeatureParser(UMLPackage.eINSTANCE.getNamedElement_Name());
+		return parser;
+	}
+
+	/**
+	 * @generated
+	 */
+	private IParser callBehaviorActionCallBehaviorActionName_5018Parser;
+
+	/**
+	 * @generated
+	 */
+	private IParser getCallBehaviorActionCallBehaviorActionName_5018Parser() {
+		if (callBehaviorActionCallBehaviorActionName_5018Parser == null) {
+			callBehaviorActionCallBehaviorActionName_5018Parser = createCallBehaviorActionCallBehaviorActionName_5018Parser();
+		}
+		return callBehaviorActionCallBehaviorActionName_5018Parser;
+	}
+
+	/**
+	 * @generated
+	 */
+	protected IParser createCallBehaviorActionCallBehaviorActionName_5018Parser() {
+		UMLStructuralFeatureParser parser = new UMLStructuralFeatureParser(UMLPackage.eINSTANCE.getNamedElement_Name());
+		return parser;
+	}
+
+	/**
+	 * @generated
+	 */
+	private IParser callOperationActionCallOperationActionName_5019Parser;
+
+	/**
+	 * @generated
+	 */
+	private IParser getCallOperationActionCallOperationActionName_5019Parser() {
+		if (callOperationActionCallOperationActionName_5019Parser == null) {
+			callOperationActionCallOperationActionName_5019Parser = createCallOperationActionCallOperationActionName_5019Parser();
+		}
+		return callOperationActionCallOperationActionName_5019Parser;
+	}
+
+	/**
+	 * @generated
+	 */
+	protected IParser createCallOperationActionCallOperationActionName_5019Parser() {
+		UMLStructuralFeatureParser parser = new UMLStructuralFeatureParser(UMLPackage.eINSTANCE.getNamedElement_Name());
+		return parser;
+	}
+
+	/**
+	 * @generated
+	 */
+	private IParser addStructuralFeatureValueActionAddStructuralFeatureValueActionName_5020Parser;
+
+	/**
+	 * @generated
+	 */
+	private IParser getAddStructuralFeatureValueActionAddStructuralFeatureValueActionName_5020Parser() {
+		if (addStructuralFeatureValueActionAddStructuralFeatureValueActionName_5020Parser == null) {
+			addStructuralFeatureValueActionAddStructuralFeatureValueActionName_5020Parser = createAddStructuralFeatureValueActionAddStructuralFeatureValueActionName_5020Parser();
+		}
+		return addStructuralFeatureValueActionAddStructuralFeatureValueActionName_5020Parser;
+	}
+
+	/**
+	 * @generated
+	 */
+	protected IParser createAddStructuralFeatureValueActionAddStructuralFeatureValueActionName_5020Parser() {
+		UMLStructuralFeatureParser parser = new UMLStructuralFeatureParser(UMLPackage.eINSTANCE.getNamedElement_Name());
+		return parser;
+	}
+
+	/**
+	 * @generated
+	 */
 	private IParser opaqueActionOpaqueActionName_5001Parser;
 
 	/**
@@ -374,6 +518,18 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 			return getInputPinInputPinName_5011Parser();
 		case InputPinName5EditPart.VISUAL_ID:
 			return getInputPinInputPinName_5013Parser();
+		case OpaqueActionName2EditPart.VISUAL_ID:
+			return getOpaqueActionOpaqueActionName_5015Parser();
+		case PinName2EditPart.VISUAL_ID:
+			return getPinPinName_5016Parser();
+		case CreateObjectActionName2EditPart.VISUAL_ID:
+			return getCreateObjectActionCreateObjectActionName_5017Parser();
+		case CallBehaviorActionName2EditPart.VISUAL_ID:
+			return getCallBehaviorActionCallBehaviorActionName_5018Parser();
+		case CallOperationActionName2EditPart.VISUAL_ID:
+			return getCallOperationActionCallOperationActionName_5019Parser();
+		case AddStructuralFeatureValueActionName2EditPart.VISUAL_ID:
+			return getAddStructuralFeatureValueActionAddStructuralFeatureValueActionName_5020Parser();
 		case OpaqueActionNameEditPart.VISUAL_ID:
 			return getOpaqueActionOpaqueActionName_5001Parser();
 		case PinNameEditPart.VISUAL_ID:

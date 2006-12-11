@@ -1,6 +1,9 @@
 package org.eclipse.uml2.diagram.activity.edit.parts;
 
+import org.eclipse.draw2d.Graphics;
 import org.eclipse.draw2d.IFigure;
+import org.eclipse.draw2d.MarginBorder;
+import org.eclipse.draw2d.RectangleFigure;
 import org.eclipse.draw2d.StackLayout;
 
 import org.eclipse.gef.EditPart;
@@ -20,6 +23,7 @@ import org.eclipse.gmf.runtime.diagram.ui.editparts.ShapeNodeEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles;
 
 import org.eclipse.gmf.runtime.draw2d.ui.figures.ConstrainedToolbarLayout;
+import org.eclipse.gmf.runtime.draw2d.ui.figures.WrapLabel;
 
 import org.eclipse.gmf.runtime.gef.ui.figures.DefaultSizeNodeFigure;
 import org.eclipse.gmf.runtime.gef.ui.figures.NodeFigure;
@@ -213,7 +217,7 @@ public class PinEditPart extends ShapeNodeEditPart {
 	/**
 	 * @generated
 	 */
-	public class StandalonePinFigure extends org.eclipse.draw2d.RectangleFigure {
+	public class StandalonePinFigure extends RectangleFigure {
 
 		/**
 		 * @generated
@@ -224,7 +228,7 @@ public class PinEditPart extends ShapeNodeEditPart {
 			this.setOutline(true);
 			this.setOutlineXOR(false);
 			this.setLineWidth(1);
-			this.setLineStyle(org.eclipse.draw2d.Graphics.LINE_SOLID);
+			this.setLineStyle(Graphics.LINE_SOLID);
 			createContents();
 		}
 
@@ -233,10 +237,10 @@ public class PinEditPart extends ShapeNodeEditPart {
 		 */
 		private void createContents() {
 
-			org.eclipse.gmf.runtime.draw2d.ui.figures.WrapLabel standalonePinFigure_name0 = new org.eclipse.gmf.runtime.draw2d.ui.figures.WrapLabel();
+			WrapLabel standalonePinFigure_name0 = new WrapLabel();
 			standalonePinFigure_name0.setText("");
 
-			standalonePinFigure_name0.setBorder(new org.eclipse.draw2d.MarginBorder(getMapMode().DPtoLP(0), getMapMode().DPtoLP(5), getMapMode().DPtoLP(0), getMapMode().DPtoLP(5)));
+			standalonePinFigure_name0.setBorder(new MarginBorder(getMapMode().DPtoLP(0), getMapMode().DPtoLP(5), getMapMode().DPtoLP(0), getMapMode().DPtoLP(5)));
 
 			this.add(standalonePinFigure_name0);
 			setFigureStandalonePinFigure_name(standalonePinFigure_name0);
@@ -246,19 +250,19 @@ public class PinEditPart extends ShapeNodeEditPart {
 		/**
 		 * @generated
 		 */
-		private org.eclipse.gmf.runtime.draw2d.ui.figures.WrapLabel fStandalonePinFigure_name;
+		private WrapLabel fStandalonePinFigure_name;
 
 		/**
 		 * @generated
 		 */
-		public org.eclipse.gmf.runtime.draw2d.ui.figures.WrapLabel getFigureStandalonePinFigure_name() {
+		public WrapLabel getFigureStandalonePinFigure_name() {
 			return fStandalonePinFigure_name;
 		}
 
 		/**
 		 * @generated
 		 */
-		private void setFigureStandalonePinFigure_name(org.eclipse.gmf.runtime.draw2d.ui.figures.WrapLabel fig) {
+		private void setFigureStandalonePinFigure_name(WrapLabel fig) {
 			fStandalonePinFigure_name = fig;
 		}
 

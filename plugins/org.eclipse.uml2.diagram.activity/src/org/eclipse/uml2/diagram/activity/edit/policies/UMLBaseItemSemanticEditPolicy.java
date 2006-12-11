@@ -256,7 +256,7 @@ public class UMLBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 		 */
 		static {
 			Map env = new HashMap(3);
-			env.put("oppositeEnd", org.eclipse.uml2.uml.UMLPackage.eINSTANCE.getActivityNode()); //$NON-NLS-1$
+			env.put("oppositeEnd", UMLPackage.eINSTANCE.getActivityNode()); //$NON-NLS-1$
 			ControlFlow_4001_SourceExpression = UMLOCLFactory.getExpression("self.oclIsKindOf(uml::ObjectNode) implies self.oclAsType(uml::ObjectNode).isControlType", //$NON-NLS-1$
 					UMLPackage.eINSTANCE.getActivityNode(), env);
 		}
@@ -271,7 +271,7 @@ public class UMLBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 		 */
 		static {
 			Map env = new HashMap(3);
-			env.put("oppositeEnd", org.eclipse.uml2.uml.UMLPackage.eINSTANCE.getActivityNode()); //$NON-NLS-1$
+			env.put("oppositeEnd", UMLPackage.eINSTANCE.getActivityNode()); //$NON-NLS-1$
 			ControlFlow_4001_TargetExpression = UMLOCLFactory.getExpression("self.oclIsKindOf(uml::ObjectNode) implies self.oclAsType(uml::ObjectNode).isControlType", //$NON-NLS-1$
 					UMLPackage.eINSTANCE.getActivityNode(), env);
 		}

@@ -16,6 +16,7 @@ import org.eclipse.gmf.runtime.notation.NotationFactory;
 import org.eclipse.gmf.runtime.notation.View;
 
 import org.eclipse.uml2.diagram.activity.edit.parts.ActivityEditPart;
+import org.eclipse.uml2.diagram.activity.edit.parts.AddStructuralFeatureValueActionEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.AddStructuralFeatureValueActionNameEditPart;
 
 import org.eclipse.uml2.diagram.activity.part.UMLVisualIDRegistry;
@@ -42,7 +43,7 @@ public class AddStructuralFeatureValueActionViewFactory extends AbstractShapeVie
 	 */
 	protected void decorateView(View containerView, View view, IAdaptable semanticAdapter, String semanticHint, int index, boolean persisted) {
 		if (semanticHint == null) {
-			semanticHint = UMLVisualIDRegistry.getType(org.eclipse.uml2.diagram.activity.edit.parts.AddStructuralFeatureValueActionEditPart.VISUAL_ID);
+			semanticHint = UMLVisualIDRegistry.getType(AddStructuralFeatureValueActionEditPart.VISUAL_ID);
 			view.setType(semanticHint);
 		}
 		super.decorateView(containerView, view, semanticAdapter, semanticHint, index, persisted);

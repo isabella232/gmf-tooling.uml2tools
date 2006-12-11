@@ -1,6 +1,9 @@
 package org.eclipse.uml2.diagram.activity.edit.parts;
 
+import org.eclipse.draw2d.BorderLayout;
+import org.eclipse.draw2d.Graphics;
 import org.eclipse.draw2d.IFigure;
+import org.eclipse.draw2d.RectangleFigure;
 import org.eclipse.draw2d.StackLayout;
 
 import org.eclipse.gef.EditPart;
@@ -19,6 +22,7 @@ import org.eclipse.gmf.runtime.diagram.ui.editparts.ShapeNodeEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles;
 
 import org.eclipse.gmf.runtime.draw2d.ui.figures.ConstrainedToolbarLayout;
+import org.eclipse.gmf.runtime.draw2d.ui.figures.WrapLabel;
 
 import org.eclipse.gmf.runtime.gef.ui.figures.DefaultSizeNodeFigure;
 import org.eclipse.gmf.runtime.gef.ui.figures.NodeFigure;
@@ -157,14 +161,14 @@ public class DataStoreNodeEditPart extends ShapeNodeEditPart {
 	/**
 	 * @generated
 	 */
-	public class DataStoreFigure extends org.eclipse.draw2d.RectangleFigure {
+	public class DataStoreFigure extends RectangleFigure {
 
 		/**
 		 * @generated
 		 */
 		public DataStoreFigure() {
 
-			org.eclipse.draw2d.BorderLayout layoutThis = new org.eclipse.draw2d.BorderLayout();
+			BorderLayout layoutThis = new BorderLayout();
 			this.setLayoutManager(layoutThis);
 
 			this.setFill(true);
@@ -172,7 +176,7 @@ public class DataStoreNodeEditPart extends ShapeNodeEditPart {
 			this.setOutline(true);
 			this.setOutlineXOR(false);
 			this.setLineWidth(1);
-			this.setLineStyle(org.eclipse.draw2d.Graphics.LINE_SOLID);
+			this.setLineStyle(Graphics.LINE_SOLID);
 			createContents();
 		}
 
@@ -181,20 +185,20 @@ public class DataStoreNodeEditPart extends ShapeNodeEditPart {
 		 */
 		private void createContents() {
 
-			org.eclipse.gmf.runtime.draw2d.ui.figures.WrapLabel dataStore_fixed_datastore0 = new org.eclipse.gmf.runtime.draw2d.ui.figures.WrapLabel();
+			WrapLabel dataStore_fixed_datastore0 = new WrapLabel();
 			dataStore_fixed_datastore0.setText("\u00ABdatastore\u00BB");
 
-			this.add(dataStore_fixed_datastore0, org.eclipse.draw2d.BorderLayout.TOP);
+			this.add(dataStore_fixed_datastore0, BorderLayout.TOP);
 
-			org.eclipse.draw2d.RectangleFigure dataStoreFigure_ContentPane0 = new org.eclipse.draw2d.RectangleFigure();
+			RectangleFigure dataStoreFigure_ContentPane0 = new RectangleFigure();
 			dataStoreFigure_ContentPane0.setFill(false);
 			dataStoreFigure_ContentPane0.setFillXOR(false);
 			dataStoreFigure_ContentPane0.setOutline(false);
 			dataStoreFigure_ContentPane0.setOutlineXOR(false);
 			dataStoreFigure_ContentPane0.setLineWidth(1);
-			dataStoreFigure_ContentPane0.setLineStyle(org.eclipse.draw2d.Graphics.LINE_SOLID);
+			dataStoreFigure_ContentPane0.setLineStyle(Graphics.LINE_SOLID);
 
-			this.add(dataStoreFigure_ContentPane0, org.eclipse.draw2d.BorderLayout.CENTER);
+			this.add(dataStoreFigure_ContentPane0, BorderLayout.CENTER);
 			setFigureDataStoreFigure_ContentPane(dataStoreFigure_ContentPane0);
 
 		}
@@ -202,19 +206,19 @@ public class DataStoreNodeEditPart extends ShapeNodeEditPart {
 		/**
 		 * @generated
 		 */
-		private org.eclipse.draw2d.RectangleFigure fDataStoreFigure_ContentPane;
+		private RectangleFigure fDataStoreFigure_ContentPane;
 
 		/**
 		 * @generated
 		 */
-		public org.eclipse.draw2d.RectangleFigure getFigureDataStoreFigure_ContentPane() {
+		public RectangleFigure getFigureDataStoreFigure_ContentPane() {
 			return fDataStoreFigure_ContentPane;
 		}
 
 		/**
 		 * @generated
 		 */
-		private void setFigureDataStoreFigure_ContentPane(org.eclipse.draw2d.RectangleFigure fig) {
+		private void setFigureDataStoreFigure_ContentPane(RectangleFigure fig) {
 			fDataStoreFigure_ContentPane = fig;
 		}
 

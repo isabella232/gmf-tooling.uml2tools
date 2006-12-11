@@ -1,7 +1,13 @@
 package org.eclipse.uml2.diagram.activity.edit.parts;
 
+import org.eclipse.draw2d.BorderLayout;
+import org.eclipse.draw2d.Graphics;
 import org.eclipse.draw2d.IFigure;
+import org.eclipse.draw2d.MarginBorder;
+import org.eclipse.draw2d.RectangleFigure;
+import org.eclipse.draw2d.RoundedRectangle;
 import org.eclipse.draw2d.StackLayout;
+import org.eclipse.draw2d.geometry.Dimension;
 
 import org.eclipse.gef.EditPart;
 import org.eclipse.gef.EditPolicy;
@@ -14,11 +20,13 @@ import org.eclipse.gef.editpolicies.NonResizableEditPolicy;
 
 import org.eclipse.gef.requests.CreateRequest;
 
+import org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.ShapeNodeEditPart;
 
 import org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles;
 
 import org.eclipse.gmf.runtime.draw2d.ui.figures.ConstrainedToolbarLayout;
+import org.eclipse.gmf.runtime.draw2d.ui.figures.WrapLabel;
 
 import org.eclipse.gmf.runtime.gef.ui.figures.DefaultSizeNodeFigure;
 import org.eclipse.gmf.runtime.gef.ui.figures.NodeFigure;
@@ -105,6 +113,42 @@ public class StructuredActivityNodeEditPart extends ShapeNodeEditPart {
 	}
 
 	/**
+	 * @generated 
+	 */
+	protected IFigure getContentPaneFor(IGraphicalEditPart editPart) {
+		if (editPart instanceof StructuredActivityNodeStructuredActivityContentPaneCompartmentEditPart) {
+			return getPrimaryShape().getFigureStructuredActivityFigure_ContentPane();
+		}
+
+		return super.getContentPaneFor(editPart);
+	}
+
+	/**
+	 * @generated
+	 */
+	protected boolean addFixedChild(EditPart childEditPart) {
+		if (childEditPart instanceof StructuredActivityNodeStructuredActivityContentPaneCompartmentEditPart) {
+			IFigure pane = getPrimaryShape().getFigureStructuredActivityFigure_ContentPane();
+			setupContentPane(pane); // FIXME each comparment should handle his content pane in his own way 
+			pane.add(((StructuredActivityNodeStructuredActivityContentPaneCompartmentEditPart) childEditPart).getFigure());
+			return true;
+		}
+		return false;
+	}
+
+	/**
+	 * @generated
+	 */
+	protected boolean removeFixedChild(EditPart childEditPart) {
+		if (childEditPart instanceof StructuredActivityNodeStructuredActivityContentPaneCompartmentEditPart) {
+			IFigure pane = getPrimaryShape().getFigureStructuredActivityFigure_ContentPane();
+			pane.remove(((StructuredActivityNodeStructuredActivityContentPaneCompartmentEditPart) childEditPart).getFigure());
+			return true;
+		}
+		return false;
+	}
+
+	/**
 	 * @generated
 	 */
 	protected NodeFigure createNodePlate() {
@@ -157,23 +201,43 @@ public class StructuredActivityNodeEditPart extends ShapeNodeEditPart {
 	/**
 	 * @generated
 	 */
-	public class StructuredActivityFigure extends org.eclipse.draw2d.RoundedRectangle {
+	protected void addChildVisual(EditPart childEditPart, int index) {
+		if (addFixedChild(childEditPart)) {
+			return;
+		}
+		super.addChildVisual(childEditPart, -1);
+	}
+
+	/**
+	 * @generated
+	 */
+	protected void removeChildVisual(EditPart childEditPart) {
+		if (removeFixedChild(childEditPart)) {
+			return;
+		}
+		super.removeChildVisual(childEditPart);
+	}
+
+	/**
+	 * @generated
+	 */
+	public class StructuredActivityFigure extends RoundedRectangle {
 
 		/**
 		 * @generated
 		 */
 		public StructuredActivityFigure() {
 
-			org.eclipse.draw2d.BorderLayout layoutThis = new org.eclipse.draw2d.BorderLayout();
+			BorderLayout layoutThis = new BorderLayout();
 			this.setLayoutManager(layoutThis);
 
-			this.setCornerDimensions(new org.eclipse.draw2d.geometry.Dimension(getMapMode().DPtoLP(8), getMapMode().DPtoLP(8)));
+			this.setCornerDimensions(new Dimension(getMapMode().DPtoLP(8), getMapMode().DPtoLP(8)));
 			this.setFill(true);
 			this.setFillXOR(false);
 			this.setOutline(true);
 			this.setOutlineXOR(false);
 			this.setLineWidth(1);
-			this.setLineStyle(org.eclipse.draw2d.Graphics.LINE_DASH);
+			this.setLineStyle(Graphics.LINE_DASH);
 			createContents();
 		}
 
@@ -182,55 +246,55 @@ public class StructuredActivityNodeEditPart extends ShapeNodeEditPart {
 		 */
 		private void createContents() {
 
-			org.eclipse.draw2d.RectangleFigure structuredActivityFigure_ContentPane0 = new org.eclipse.draw2d.RectangleFigure();
+			RectangleFigure structuredActivityFigure_ContentPane0 = new RectangleFigure();
 			structuredActivityFigure_ContentPane0.setFill(false);
 			structuredActivityFigure_ContentPane0.setFillXOR(false);
 			structuredActivityFigure_ContentPane0.setOutline(false);
 			structuredActivityFigure_ContentPane0.setOutlineXOR(false);
 			structuredActivityFigure_ContentPane0.setLineWidth(1);
-			structuredActivityFigure_ContentPane0.setLineStyle(org.eclipse.draw2d.Graphics.LINE_SOLID);
+			structuredActivityFigure_ContentPane0.setLineStyle(Graphics.LINE_SOLID);
 
-			this.add(structuredActivityFigure_ContentPane0, org.eclipse.draw2d.BorderLayout.CENTER);
+			this.add(structuredActivityFigure_ContentPane0, BorderLayout.CENTER);
 			setFigureStructuredActivityFigure_ContentPane(structuredActivityFigure_ContentPane0);
 
-			org.eclipse.draw2d.RectangleFigure aux_StructuredActivityFigure_LabelContainer0 = new org.eclipse.draw2d.RectangleFigure();
+			RectangleFigure aux_StructuredActivityFigure_LabelContainer0 = new RectangleFigure();
 			aux_StructuredActivityFigure_LabelContainer0.setFill(false);
 			aux_StructuredActivityFigure_LabelContainer0.setFillXOR(false);
 			aux_StructuredActivityFigure_LabelContainer0.setOutline(false);
 			aux_StructuredActivityFigure_LabelContainer0.setOutlineXOR(false);
 			aux_StructuredActivityFigure_LabelContainer0.setLineWidth(1);
-			aux_StructuredActivityFigure_LabelContainer0.setLineStyle(org.eclipse.draw2d.Graphics.LINE_SOLID);
+			aux_StructuredActivityFigure_LabelContainer0.setLineStyle(Graphics.LINE_SOLID);
 
-			aux_StructuredActivityFigure_LabelContainer0.setBorder(new org.eclipse.draw2d.MarginBorder(getMapMode().DPtoLP(0), getMapMode().DPtoLP(5), getMapMode().DPtoLP(5), getMapMode().DPtoLP(0)));
+			aux_StructuredActivityFigure_LabelContainer0.setBorder(new MarginBorder(getMapMode().DPtoLP(0), getMapMode().DPtoLP(5), getMapMode().DPtoLP(5), getMapMode().DPtoLP(0)));
 
-			this.add(aux_StructuredActivityFigure_LabelContainer0, org.eclipse.draw2d.BorderLayout.TOP);
+			this.add(aux_StructuredActivityFigure_LabelContainer0, BorderLayout.TOP);
 
-			org.eclipse.draw2d.BorderLayout layoutAux_StructuredActivityFigure_LabelContainer0 = new org.eclipse.draw2d.BorderLayout();
+			BorderLayout layoutAux_StructuredActivityFigure_LabelContainer0 = new BorderLayout();
 			aux_StructuredActivityFigure_LabelContainer0.setLayoutManager(layoutAux_StructuredActivityFigure_LabelContainer0);
 
-			org.eclipse.gmf.runtime.draw2d.ui.figures.WrapLabel structuredActivityFigure_fixed_structured1 = new org.eclipse.gmf.runtime.draw2d.ui.figures.WrapLabel();
+			WrapLabel structuredActivityFigure_fixed_structured1 = new WrapLabel();
 			structuredActivityFigure_fixed_structured1.setText("\u00ABstructured\u00BB");
 
-			aux_StructuredActivityFigure_LabelContainer0.add(structuredActivityFigure_fixed_structured1, org.eclipse.draw2d.BorderLayout.LEFT);
+			aux_StructuredActivityFigure_LabelContainer0.add(structuredActivityFigure_fixed_structured1, BorderLayout.LEFT);
 
 		}
 
 		/**
 		 * @generated
 		 */
-		private org.eclipse.draw2d.RectangleFigure fStructuredActivityFigure_ContentPane;
+		private RectangleFigure fStructuredActivityFigure_ContentPane;
 
 		/**
 		 * @generated
 		 */
-		public org.eclipse.draw2d.RectangleFigure getFigureStructuredActivityFigure_ContentPane() {
+		public RectangleFigure getFigureStructuredActivityFigure_ContentPane() {
 			return fStructuredActivityFigure_ContentPane;
 		}
 
 		/**
 		 * @generated
 		 */
-		private void setFigureStructuredActivityFigure_ContentPane(org.eclipse.draw2d.RectangleFigure fig) {
+		private void setFigureStructuredActivityFigure_ContentPane(RectangleFigure fig) {
 			fStructuredActivityFigure_ContentPane = fig;
 		}
 

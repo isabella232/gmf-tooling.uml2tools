@@ -61,16 +61,21 @@ public class UMLCreationWizardPage extends WizardNewFileCreationPage {
 		if (fileName == null || fileName.trim().length() == 0) {
 			fileName = "default"; //$NON-NLS-1$
 		}
-
-		String extension = "." + getExtension();
-		if (fileName.endsWith(extension)) {
-			fileName = fileName.substring(0, fileName.length() - extension.length());
+		IPath filePath = containerFullPath.append(fileName);
+		String extension = getExtension();
+		if (extension != null && !extension.equals(filePath.getFileExtension())) {
+			filePath = filePath.addFileExtension(extension);
 		}
+
+		extension = filePath.getFileExtension();
+		fileName = filePath.removeFileExtension().lastSegment();
 		int i = 1;
-		IPath filePath = containerFullPath.append(fileName + extension);
 		while (UMLDiagramEditorUtil.exists(filePath)) {
 			i++;
-			filePath = containerFullPath.append(fileName + i + extension);
+			filePath = containerFullPath.append(fileName + i);
+			if (extension != null) {
+				filePath = filePath.addFileExtension(extension);
+			}
 		}
 		return filePath.lastSegment();
 	}
@@ -92,7 +97,7 @@ public class UMLCreationWizardPage extends WizardNewFileCreationPage {
 			return false;
 		}
 		String extension = getExtension();
-		if (extension != null && !getFilePath().toString().endsWith("." + extension)) {
+		if (extension != null && !extension.equals(getFilePath().getFileExtension())) {
 			setErrorMessage(NLS.bind("File name should have ''{0}'' extension.", extension));
 			return false;
 		}

@@ -1,8 +1,14 @@
 package org.eclipse.uml2.diagram.activity.edit.parts;
 
+import org.eclipse.draw2d.ColorConstants;
+import org.eclipse.draw2d.Ellipse;
+import org.eclipse.draw2d.Graphics;
 import org.eclipse.draw2d.IFigure;
+import org.eclipse.draw2d.Polyline;
 import org.eclipse.draw2d.PositionConstants;
 import org.eclipse.draw2d.StackLayout;
+import org.eclipse.draw2d.geometry.Dimension;
+import org.eclipse.draw2d.geometry.Point;
 
 import org.eclipse.gef.EditPart;
 import org.eclipse.gef.EditPolicy;
@@ -28,6 +34,7 @@ import org.eclipse.gmf.runtime.gef.ui.figures.NodeFigure;
 import org.eclipse.gmf.runtime.notation.View;
 
 import org.eclipse.uml2.diagram.activity.edit.policies.FlowFinalNodeItemSemanticEditPolicy;
+import org.eclipse.uml2.diagram.common.draw2d.CenterLayout;
 
 /**
  * @generated
@@ -173,14 +180,14 @@ public class FlowFinalNodeEditPart extends ShapeNodeEditPart {
 	/**
 	 * @generated
 	 */
-	public class FlowFinalFigure extends org.eclipse.draw2d.Ellipse {
+	public class FlowFinalFigure extends Ellipse {
 
 		/**
 		 * @generated
 		 */
 		public FlowFinalFigure() {
 
-			org.eclipse.uml2.diagram.common.draw2d.CenterLayout layoutThis = new org.eclipse.uml2.diagram.common.draw2d.CenterLayout();
+			CenterLayout layoutThis = new CenterLayout();
 
 			this.setLayoutManager(layoutThis);
 
@@ -189,11 +196,11 @@ public class FlowFinalNodeEditPart extends ShapeNodeEditPart {
 			this.setOutline(true);
 			this.setOutlineXOR(false);
 			this.setLineWidth(1);
-			this.setLineStyle(org.eclipse.draw2d.Graphics.LINE_SOLID);
-			this.setForegroundColor(org.eclipse.draw2d.ColorConstants.black);
-			this.setPreferredSize(new org.eclipse.draw2d.geometry.Dimension(getMapMode().DPtoLP(23), getMapMode().DPtoLP(23)));
-			this.setMaximumSize(new org.eclipse.draw2d.geometry.Dimension(getMapMode().DPtoLP(23), getMapMode().DPtoLP(23)));
-			this.setMinimumSize(new org.eclipse.draw2d.geometry.Dimension(getMapMode().DPtoLP(23), getMapMode().DPtoLP(23)));
+			this.setLineStyle(Graphics.LINE_SOLID);
+			this.setForegroundColor(ColorConstants.black);
+			this.setPreferredSize(new Dimension(getMapMode().DPtoLP(23), getMapMode().DPtoLP(23)));
+			this.setMaximumSize(new Dimension(getMapMode().DPtoLP(23), getMapMode().DPtoLP(23)));
+			this.setMinimumSize(new Dimension(getMapMode().DPtoLP(23), getMapMode().DPtoLP(23)));
 			createContents();
 		}
 
@@ -202,27 +209,27 @@ public class FlowFinalNodeEditPart extends ShapeNodeEditPart {
 		 */
 		private void createContents() {
 
-			org.eclipse.draw2d.Polyline aux_FlowFinalFigure_BackSlash0 = new org.eclipse.draw2d.Polyline();
-			aux_FlowFinalFigure_BackSlash0.addPoint(new org.eclipse.draw2d.geometry.Point(getMapMode().DPtoLP(4), getMapMode().DPtoLP(4)));
-			aux_FlowFinalFigure_BackSlash0.addPoint(new org.eclipse.draw2d.geometry.Point(getMapMode().DPtoLP(19), getMapMode().DPtoLP(19)));
+			Polyline aux_FlowFinalFigure_BackSlash0 = new Polyline();
+			aux_FlowFinalFigure_BackSlash0.addPoint(new Point(getMapMode().DPtoLP(4), getMapMode().DPtoLP(4)));
+			aux_FlowFinalFigure_BackSlash0.addPoint(new Point(getMapMode().DPtoLP(19), getMapMode().DPtoLP(19)));
 			aux_FlowFinalFigure_BackSlash0.setFill(true);
 			aux_FlowFinalFigure_BackSlash0.setFillXOR(false);
 			aux_FlowFinalFigure_BackSlash0.setOutline(true);
 			aux_FlowFinalFigure_BackSlash0.setOutlineXOR(false);
 			aux_FlowFinalFigure_BackSlash0.setLineWidth(1);
-			aux_FlowFinalFigure_BackSlash0.setLineStyle(org.eclipse.draw2d.Graphics.LINE_SOLID);
+			aux_FlowFinalFigure_BackSlash0.setLineStyle(Graphics.LINE_SOLID);
 
 			this.add(aux_FlowFinalFigure_BackSlash0);
 
-			org.eclipse.draw2d.Polyline aux_FlowFinalFigure_Slash0 = new org.eclipse.draw2d.Polyline();
-			aux_FlowFinalFigure_Slash0.addPoint(new org.eclipse.draw2d.geometry.Point(getMapMode().DPtoLP(4), getMapMode().DPtoLP(19)));
-			aux_FlowFinalFigure_Slash0.addPoint(new org.eclipse.draw2d.geometry.Point(getMapMode().DPtoLP(19), getMapMode().DPtoLP(4)));
+			Polyline aux_FlowFinalFigure_Slash0 = new Polyline();
+			aux_FlowFinalFigure_Slash0.addPoint(new Point(getMapMode().DPtoLP(4), getMapMode().DPtoLP(19)));
+			aux_FlowFinalFigure_Slash0.addPoint(new Point(getMapMode().DPtoLP(19), getMapMode().DPtoLP(4)));
 			aux_FlowFinalFigure_Slash0.setFill(true);
 			aux_FlowFinalFigure_Slash0.setFillXOR(false);
 			aux_FlowFinalFigure_Slash0.setOutline(true);
 			aux_FlowFinalFigure_Slash0.setOutlineXOR(false);
 			aux_FlowFinalFigure_Slash0.setLineWidth(1);
-			aux_FlowFinalFigure_Slash0.setLineStyle(org.eclipse.draw2d.Graphics.LINE_SOLID);
+			aux_FlowFinalFigure_Slash0.setLineStyle(Graphics.LINE_SOLID);
 
 			this.add(aux_FlowFinalFigure_Slash0);
 

@@ -46,8 +46,6 @@ public class UMLEditPartFactory implements EditPartFactory {
 				return new MergeNodeEditPart(view);
 			case InitialNodeEditPart.VISUAL_ID:
 				return new InitialNodeEditPart(view);
-			case StructuredActivityNodeEditPart.VISUAL_ID:
-				return new StructuredActivityNodeEditPart(view);
 			case DataStoreNodeEditPart.VISUAL_ID:
 				return new DataStoreNodeEditPart(view);
 			case CentralBufferNodeEditPart.VISUAL_ID:
@@ -82,6 +80,8 @@ public class UMLEditPartFactory implements EditPartFactory {
 				return new CallOperationActionEditPart(view);
 			case CallOperationActionNameEditPart.VISUAL_ID:
 				return new CallOperationActionNameEditPart(view);
+			case StructuredActivityNodeEditPart.VISUAL_ID:
+				return new StructuredActivityNodeEditPart(view);
 			case OutputPinEditPart.VISUAL_ID:
 				return new OutputPinEditPart(view);
 			case OutputPinNameEditPart.VISUAL_ID:
@@ -114,6 +114,54 @@ public class UMLEditPartFactory implements EditPartFactory {
 				return new InputPin5EditPart(view);
 			case InputPinName5EditPart.VISUAL_ID:
 				return new InputPinName5EditPart(view);
+			case StructuredActivityNode2EditPart.VISUAL_ID:
+				return new StructuredActivityNode2EditPart(view);
+			case OpaqueAction2EditPart.VISUAL_ID:
+				return new OpaqueAction2EditPart(view);
+			case OpaqueActionName2EditPart.VISUAL_ID:
+				return new OpaqueActionName2EditPart(view);
+			case AcceptEventAction3EditPart.VISUAL_ID:
+				return new AcceptEventAction3EditPart(view);
+			case AcceptEventAction4EditPart.VISUAL_ID:
+				return new AcceptEventAction4EditPart(view);
+			case ActivityFinalNode2EditPart.VISUAL_ID:
+				return new ActivityFinalNode2EditPart(view);
+			case DecisionNode2EditPart.VISUAL_ID:
+				return new DecisionNode2EditPart(view);
+			case FlowFinalNode2EditPart.VISUAL_ID:
+				return new FlowFinalNode2EditPart(view);
+			case Pin2EditPart.VISUAL_ID:
+				return new Pin2EditPart(view);
+			case PinName2EditPart.VISUAL_ID:
+				return new PinName2EditPart(view);
+			case CreateObjectAction2EditPart.VISUAL_ID:
+				return new CreateObjectAction2EditPart(view);
+			case CreateObjectActionName2EditPart.VISUAL_ID:
+				return new CreateObjectActionName2EditPart(view);
+			case CallBehaviorAction2EditPart.VISUAL_ID:
+				return new CallBehaviorAction2EditPart(view);
+			case CallBehaviorActionName2EditPart.VISUAL_ID:
+				return new CallBehaviorActionName2EditPart(view);
+			case CallOperationAction2EditPart.VISUAL_ID:
+				return new CallOperationAction2EditPart(view);
+			case CallOperationActionName2EditPart.VISUAL_ID:
+				return new CallOperationActionName2EditPart(view);
+			case ForkNode2EditPart.VISUAL_ID:
+				return new ForkNode2EditPart(view);
+			case JoinNode2EditPart.VISUAL_ID:
+				return new JoinNode2EditPart(view);
+			case AddStructuralFeatureValueAction2EditPart.VISUAL_ID:
+				return new AddStructuralFeatureValueAction2EditPart(view);
+			case AddStructuralFeatureValueActionName2EditPart.VISUAL_ID:
+				return new AddStructuralFeatureValueActionName2EditPart(view);
+			case DataStoreNode2EditPart.VISUAL_ID:
+				return new DataStoreNode2EditPart(view);
+			case CentralBufferNode2EditPart.VISUAL_ID:
+				return new CentralBufferNode2EditPart(view);
+			case StructuredActivityNodeStructuredActivityContentPaneCompartmentEditPart.VISUAL_ID:
+				return new StructuredActivityNodeStructuredActivityContentPaneCompartmentEditPart(view);
+			case StructuredActivityNodeStructuredActivityContentPaneCompartment2EditPart.VISUAL_ID:
+				return new StructuredActivityNodeStructuredActivityContentPaneCompartment2EditPart(view);
 			case ActivityEditPart.VISUAL_ID:
 				return new ActivityEditPart(view);
 			case ControlFlowEditPart.VISUAL_ID:

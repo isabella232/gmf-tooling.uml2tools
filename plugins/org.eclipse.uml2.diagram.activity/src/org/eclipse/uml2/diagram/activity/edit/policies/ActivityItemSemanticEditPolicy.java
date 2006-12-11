@@ -64,12 +64,6 @@ public class ActivityItemSemanticEditPolicy extends UMLBaseItemSemanticEditPolic
 			}
 			return getMSLWrapper(new CreateInitialNode_2006Command(req));
 		}
-		if (UMLElementTypes.StructuredActivityNode_2007 == req.getElementType()) {
-			if (req.getContainmentFeature() == null) {
-				req.setContainmentFeature(UMLPackage.eINSTANCE.getActivity_Group());
-			}
-			return getMSLWrapper(new CreateStructuredActivityNode_2007Command(req));
-		}
 		if (UMLElementTypes.DataStoreNode_2008 == req.getElementType()) {
 			if (req.getContainmentFeature() == null) {
 				req.setContainmentFeature(UMLPackage.eINSTANCE.getActivity_Node());
@@ -135,6 +129,12 @@ public class ActivityItemSemanticEditPolicy extends UMLBaseItemSemanticEditPolic
 				req.setContainmentFeature(UMLPackage.eINSTANCE.getActivity_Node());
 			}
 			return getMSLWrapper(new CreateCallOperationAction_2018Command(req));
+		}
+		if (UMLElementTypes.StructuredActivityNode_2007 == req.getElementType()) {
+			if (req.getContainmentFeature() == null) {
+				req.setContainmentFeature(UMLPackage.eINSTANCE.getActivity_Group());
+			}
+			return getMSLWrapper(new CreateStructuredActivityNode_2007Command(req));
 		}
 		return super.getCreateCommand(req);
 	}
@@ -314,37 +314,6 @@ public class ActivityItemSemanticEditPolicy extends UMLBaseItemSemanticEditPolic
 		 * @generated
 		 */
 		public CreateInitialNode_2006Command(CreateElementRequest req) {
-			super(req);
-		}
-
-		/**
-		 * @generated
-		 */
-		protected EClass getEClassToEdit() {
-			return UMLPackage.eINSTANCE.getActivity();
-		};
-
-		/**
-		 * @generated
-		 */
-		protected EObject getElementToEdit() {
-			EObject container = ((CreateElementRequest) getRequest()).getContainer();
-			if (container instanceof View) {
-				container = ((View) container).getElement();
-			}
-			return container;
-		}
-	}
-
-	/**
-	 * @generated
-	 */
-	private static class CreateStructuredActivityNode_2007Command extends CreateElementCommand {
-
-		/**
-		 * @generated
-		 */
-		public CreateStructuredActivityNode_2007Command(CreateElementRequest req) {
 			super(req);
 		}
 
@@ -686,6 +655,37 @@ public class ActivityItemSemanticEditPolicy extends UMLBaseItemSemanticEditPolic
 		 * @generated
 		 */
 		public CreateCallOperationAction_2018Command(CreateElementRequest req) {
+			super(req);
+		}
+
+		/**
+		 * @generated
+		 */
+		protected EClass getEClassToEdit() {
+			return UMLPackage.eINSTANCE.getActivity();
+		};
+
+		/**
+		 * @generated
+		 */
+		protected EObject getElementToEdit() {
+			EObject container = ((CreateElementRequest) getRequest()).getContainer();
+			if (container instanceof View) {
+				container = ((View) container).getElement();
+			}
+			return container;
+		}
+	}
+
+	/**
+	 * @generated
+	 */
+	private static class CreateStructuredActivityNode_2007Command extends CreateElementCommand {
+
+		/**
+		 * @generated
+		 */
+		public CreateStructuredActivityNode_2007Command(CreateElementRequest req) {
 			super(req);
 		}
 

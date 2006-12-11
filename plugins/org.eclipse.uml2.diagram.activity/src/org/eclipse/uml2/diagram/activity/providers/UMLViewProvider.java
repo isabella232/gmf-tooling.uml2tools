@@ -7,22 +7,38 @@ import org.eclipse.gmf.runtime.diagram.core.providers.AbstractViewProvider;
 import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.gmf.runtime.emf.type.core.IElementType;
 import org.eclipse.uml2.diagram.activity.edit.parts.AcceptEventAction2EditPart;
+import org.eclipse.uml2.diagram.activity.edit.parts.AcceptEventAction3EditPart;
+import org.eclipse.uml2.diagram.activity.edit.parts.AcceptEventAction4EditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.AcceptEventActionEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.ActivityEditPart;
+import org.eclipse.uml2.diagram.activity.edit.parts.ActivityFinalNode2EditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.ActivityFinalNodeEditPart;
+import org.eclipse.uml2.diagram.activity.edit.parts.AddStructuralFeatureValueAction2EditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.AddStructuralFeatureValueActionEditPart;
+import org.eclipse.uml2.diagram.activity.edit.parts.AddStructuralFeatureValueActionName2EditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.AddStructuralFeatureValueActionNameEditPart;
+import org.eclipse.uml2.diagram.activity.edit.parts.CallBehaviorAction2EditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.CallBehaviorActionEditPart;
+import org.eclipse.uml2.diagram.activity.edit.parts.CallBehaviorActionName2EditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.CallBehaviorActionNameEditPart;
+import org.eclipse.uml2.diagram.activity.edit.parts.CallOperationAction2EditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.CallOperationActionEditPart;
+import org.eclipse.uml2.diagram.activity.edit.parts.CallOperationActionName2EditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.CallOperationActionNameEditPart;
+import org.eclipse.uml2.diagram.activity.edit.parts.CentralBufferNode2EditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.CentralBufferNodeEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.ControlFlowEditPart;
+import org.eclipse.uml2.diagram.activity.edit.parts.CreateObjectAction2EditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.CreateObjectActionEditPart;
+import org.eclipse.uml2.diagram.activity.edit.parts.CreateObjectActionName2EditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.CreateObjectActionNameEditPart;
+import org.eclipse.uml2.diagram.activity.edit.parts.DataStoreNode2EditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.DataStoreNodeEditPart;
+import org.eclipse.uml2.diagram.activity.edit.parts.DecisionNode2EditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.DecisionNodeEditPart;
+import org.eclipse.uml2.diagram.activity.edit.parts.FlowFinalNode2EditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.FlowFinalNodeEditPart;
+import org.eclipse.uml2.diagram.activity.edit.parts.ForkNode2EditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.ForkNodeEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.InitialNodeEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.InputPin2EditPart;
@@ -35,10 +51,13 @@ import org.eclipse.uml2.diagram.activity.edit.parts.InputPinName3EditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.InputPinName4EditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.InputPinName5EditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.InputPinNameEditPart;
+import org.eclipse.uml2.diagram.activity.edit.parts.JoinNode2EditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.JoinNodeEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.MergeNodeEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.ObjectFlowEditPart;
+import org.eclipse.uml2.diagram.activity.edit.parts.OpaqueAction2EditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.OpaqueActionEditPart;
+import org.eclipse.uml2.diagram.activity.edit.parts.OpaqueActionName2EditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.OpaqueActionNameEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.OutputPin2EditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.OutputPin3EditPart;
@@ -46,29 +65,50 @@ import org.eclipse.uml2.diagram.activity.edit.parts.OutputPinEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.OutputPinName2EditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.OutputPinName3EditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.OutputPinNameEditPart;
+import org.eclipse.uml2.diagram.activity.edit.parts.Pin2EditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.PinEditPart;
+import org.eclipse.uml2.diagram.activity.edit.parts.PinName2EditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.PinNameEditPart;
+import org.eclipse.uml2.diagram.activity.edit.parts.StructuredActivityNode2EditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.StructuredActivityNodeEditPart;
+import org.eclipse.uml2.diagram.activity.edit.parts.StructuredActivityNodeStructuredActivityContentPaneCompartment2EditPart;
+import org.eclipse.uml2.diagram.activity.edit.parts.StructuredActivityNodeStructuredActivityContentPaneCompartmentEditPart;
 
 import org.eclipse.uml2.diagram.activity.part.UMLVisualIDRegistry;
 
 import org.eclipse.uml2.diagram.activity.view.factories.AcceptEventAction2ViewFactory;
+import org.eclipse.uml2.diagram.activity.view.factories.AcceptEventAction3ViewFactory;
+import org.eclipse.uml2.diagram.activity.view.factories.AcceptEventAction4ViewFactory;
 import org.eclipse.uml2.diagram.activity.view.factories.AcceptEventActionViewFactory;
+import org.eclipse.uml2.diagram.activity.view.factories.ActivityFinalNode2ViewFactory;
 import org.eclipse.uml2.diagram.activity.view.factories.ActivityFinalNodeViewFactory;
 import org.eclipse.uml2.diagram.activity.view.factories.ActivityViewFactory;
+import org.eclipse.uml2.diagram.activity.view.factories.AddStructuralFeatureValueAction2ViewFactory;
+import org.eclipse.uml2.diagram.activity.view.factories.AddStructuralFeatureValueActionName2ViewFactory;
 import org.eclipse.uml2.diagram.activity.view.factories.AddStructuralFeatureValueActionNameViewFactory;
 import org.eclipse.uml2.diagram.activity.view.factories.AddStructuralFeatureValueActionViewFactory;
+import org.eclipse.uml2.diagram.activity.view.factories.CallBehaviorAction2ViewFactory;
+import org.eclipse.uml2.diagram.activity.view.factories.CallBehaviorActionName2ViewFactory;
 import org.eclipse.uml2.diagram.activity.view.factories.CallBehaviorActionNameViewFactory;
 import org.eclipse.uml2.diagram.activity.view.factories.CallBehaviorActionViewFactory;
+import org.eclipse.uml2.diagram.activity.view.factories.CallOperationAction2ViewFactory;
+import org.eclipse.uml2.diagram.activity.view.factories.CallOperationActionName2ViewFactory;
 import org.eclipse.uml2.diagram.activity.view.factories.CallOperationActionNameViewFactory;
 import org.eclipse.uml2.diagram.activity.view.factories.CallOperationActionViewFactory;
+import org.eclipse.uml2.diagram.activity.view.factories.CentralBufferNode2ViewFactory;
 import org.eclipse.uml2.diagram.activity.view.factories.CentralBufferNodeViewFactory;
 import org.eclipse.uml2.diagram.activity.view.factories.ControlFlowViewFactory;
+import org.eclipse.uml2.diagram.activity.view.factories.CreateObjectAction2ViewFactory;
+import org.eclipse.uml2.diagram.activity.view.factories.CreateObjectActionName2ViewFactory;
 import org.eclipse.uml2.diagram.activity.view.factories.CreateObjectActionNameViewFactory;
 import org.eclipse.uml2.diagram.activity.view.factories.CreateObjectActionViewFactory;
+import org.eclipse.uml2.diagram.activity.view.factories.DataStoreNode2ViewFactory;
 import org.eclipse.uml2.diagram.activity.view.factories.DataStoreNodeViewFactory;
+import org.eclipse.uml2.diagram.activity.view.factories.DecisionNode2ViewFactory;
 import org.eclipse.uml2.diagram.activity.view.factories.DecisionNodeViewFactory;
+import org.eclipse.uml2.diagram.activity.view.factories.FlowFinalNode2ViewFactory;
 import org.eclipse.uml2.diagram.activity.view.factories.FlowFinalNodeViewFactory;
+import org.eclipse.uml2.diagram.activity.view.factories.ForkNode2ViewFactory;
 import org.eclipse.uml2.diagram.activity.view.factories.ForkNodeViewFactory;
 import org.eclipse.uml2.diagram.activity.view.factories.InitialNodeViewFactory;
 import org.eclipse.uml2.diagram.activity.view.factories.InputPin2ViewFactory;
@@ -81,9 +121,12 @@ import org.eclipse.uml2.diagram.activity.view.factories.InputPinName4ViewFactory
 import org.eclipse.uml2.diagram.activity.view.factories.InputPinName5ViewFactory;
 import org.eclipse.uml2.diagram.activity.view.factories.InputPinNameViewFactory;
 import org.eclipse.uml2.diagram.activity.view.factories.InputPinViewFactory;
+import org.eclipse.uml2.diagram.activity.view.factories.JoinNode2ViewFactory;
 import org.eclipse.uml2.diagram.activity.view.factories.JoinNodeViewFactory;
 import org.eclipse.uml2.diagram.activity.view.factories.MergeNodeViewFactory;
 import org.eclipse.uml2.diagram.activity.view.factories.ObjectFlowViewFactory;
+import org.eclipse.uml2.diagram.activity.view.factories.OpaqueAction2ViewFactory;
+import org.eclipse.uml2.diagram.activity.view.factories.OpaqueActionName2ViewFactory;
 import org.eclipse.uml2.diagram.activity.view.factories.OpaqueActionNameViewFactory;
 import org.eclipse.uml2.diagram.activity.view.factories.OpaqueActionViewFactory;
 import org.eclipse.uml2.diagram.activity.view.factories.OutputPin2ViewFactory;
@@ -92,8 +135,13 @@ import org.eclipse.uml2.diagram.activity.view.factories.OutputPinName2ViewFactor
 import org.eclipse.uml2.diagram.activity.view.factories.OutputPinName3ViewFactory;
 import org.eclipse.uml2.diagram.activity.view.factories.OutputPinNameViewFactory;
 import org.eclipse.uml2.diagram.activity.view.factories.OutputPinViewFactory;
+import org.eclipse.uml2.diagram.activity.view.factories.Pin2ViewFactory;
+import org.eclipse.uml2.diagram.activity.view.factories.PinName2ViewFactory;
 import org.eclipse.uml2.diagram.activity.view.factories.PinNameViewFactory;
 import org.eclipse.uml2.diagram.activity.view.factories.PinViewFactory;
+import org.eclipse.uml2.diagram.activity.view.factories.StructuredActivityNode2ViewFactory;
+import org.eclipse.uml2.diagram.activity.view.factories.StructuredActivityNodeStructuredActivityContentPaneCompartment2ViewFactory;
+import org.eclipse.uml2.diagram.activity.view.factories.StructuredActivityNodeStructuredActivityContentPaneCompartmentViewFactory;
 import org.eclipse.uml2.diagram.activity.view.factories.StructuredActivityNodeViewFactory;
 
 /**
@@ -139,8 +187,6 @@ public class UMLViewProvider extends AbstractViewProvider {
 			return MergeNodeViewFactory.class;
 		case InitialNodeEditPart.VISUAL_ID:
 			return InitialNodeViewFactory.class;
-		case StructuredActivityNodeEditPart.VISUAL_ID:
-			return StructuredActivityNodeViewFactory.class;
 		case DataStoreNodeEditPart.VISUAL_ID:
 			return DataStoreNodeViewFactory.class;
 		case CentralBufferNodeEditPart.VISUAL_ID:
@@ -175,6 +221,8 @@ public class UMLViewProvider extends AbstractViewProvider {
 			return CallOperationActionViewFactory.class;
 		case CallOperationActionNameEditPart.VISUAL_ID:
 			return CallOperationActionNameViewFactory.class;
+		case StructuredActivityNodeEditPart.VISUAL_ID:
+			return StructuredActivityNodeViewFactory.class;
 		case OutputPinEditPart.VISUAL_ID:
 			return OutputPinViewFactory.class;
 		case OutputPinNameEditPart.VISUAL_ID:
@@ -207,6 +255,54 @@ public class UMLViewProvider extends AbstractViewProvider {
 			return InputPin5ViewFactory.class;
 		case InputPinName5EditPart.VISUAL_ID:
 			return InputPinName5ViewFactory.class;
+		case StructuredActivityNode2EditPart.VISUAL_ID:
+			return StructuredActivityNode2ViewFactory.class;
+		case OpaqueAction2EditPart.VISUAL_ID:
+			return OpaqueAction2ViewFactory.class;
+		case OpaqueActionName2EditPart.VISUAL_ID:
+			return OpaqueActionName2ViewFactory.class;
+		case AcceptEventAction3EditPart.VISUAL_ID:
+			return AcceptEventAction3ViewFactory.class;
+		case AcceptEventAction4EditPart.VISUAL_ID:
+			return AcceptEventAction4ViewFactory.class;
+		case ActivityFinalNode2EditPart.VISUAL_ID:
+			return ActivityFinalNode2ViewFactory.class;
+		case DecisionNode2EditPart.VISUAL_ID:
+			return DecisionNode2ViewFactory.class;
+		case FlowFinalNode2EditPart.VISUAL_ID:
+			return FlowFinalNode2ViewFactory.class;
+		case Pin2EditPart.VISUAL_ID:
+			return Pin2ViewFactory.class;
+		case PinName2EditPart.VISUAL_ID:
+			return PinName2ViewFactory.class;
+		case CreateObjectAction2EditPart.VISUAL_ID:
+			return CreateObjectAction2ViewFactory.class;
+		case CreateObjectActionName2EditPart.VISUAL_ID:
+			return CreateObjectActionName2ViewFactory.class;
+		case CallBehaviorAction2EditPart.VISUAL_ID:
+			return CallBehaviorAction2ViewFactory.class;
+		case CallBehaviorActionName2EditPart.VISUAL_ID:
+			return CallBehaviorActionName2ViewFactory.class;
+		case CallOperationAction2EditPart.VISUAL_ID:
+			return CallOperationAction2ViewFactory.class;
+		case CallOperationActionName2EditPart.VISUAL_ID:
+			return CallOperationActionName2ViewFactory.class;
+		case ForkNode2EditPart.VISUAL_ID:
+			return ForkNode2ViewFactory.class;
+		case JoinNode2EditPart.VISUAL_ID:
+			return JoinNode2ViewFactory.class;
+		case AddStructuralFeatureValueAction2EditPart.VISUAL_ID:
+			return AddStructuralFeatureValueAction2ViewFactory.class;
+		case AddStructuralFeatureValueActionName2EditPart.VISUAL_ID:
+			return AddStructuralFeatureValueActionName2ViewFactory.class;
+		case DataStoreNode2EditPart.VISUAL_ID:
+			return DataStoreNode2ViewFactory.class;
+		case CentralBufferNode2EditPart.VISUAL_ID:
+			return CentralBufferNode2ViewFactory.class;
+		case StructuredActivityNodeStructuredActivityContentPaneCompartmentEditPart.VISUAL_ID:
+			return StructuredActivityNodeStructuredActivityContentPaneCompartmentViewFactory.class;
+		case StructuredActivityNodeStructuredActivityContentPaneCompartment2EditPart.VISUAL_ID:
+			return StructuredActivityNodeStructuredActivityContentPaneCompartment2ViewFactory.class;
 		}
 		return null;
 	}

@@ -21,11 +21,18 @@ import org.eclipse.ui.dialogs.ElementListSelectionDialog;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.edit.ui.provider.AdapterFactoryLabelProvider;
 import org.eclipse.uml2.diagram.activity.edit.parts.ActivityEditPart;
+import org.eclipse.uml2.diagram.activity.edit.parts.AddStructuralFeatureValueAction2EditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.AddStructuralFeatureValueActionEditPart;
+import org.eclipse.uml2.diagram.activity.edit.parts.CallBehaviorAction2EditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.CallBehaviorActionEditPart;
+import org.eclipse.uml2.diagram.activity.edit.parts.CallOperationAction2EditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.CallOperationActionEditPart;
+import org.eclipse.uml2.diagram.activity.edit.parts.CreateObjectAction2EditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.CreateObjectActionEditPart;
+import org.eclipse.uml2.diagram.activity.edit.parts.OpaqueAction2EditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.OpaqueActionEditPart;
+import org.eclipse.uml2.diagram.activity.edit.parts.StructuredActivityNodeStructuredActivityContentPaneCompartment2EditPart;
+import org.eclipse.uml2.diagram.activity.edit.parts.StructuredActivityNodeStructuredActivityContentPaneCompartmentEditPart;
 
 import org.eclipse.uml2.diagram.activity.part.UMLDiagramEditorPlugin;
 
@@ -69,6 +76,76 @@ public class UMLModelingAssistantProvider extends ModelingAssistantProvider {
 			types.add(UMLElementTypes.InputPin_3008);
 			return types;
 		}
+		if (editPart instanceof OpaqueAction2EditPart) {
+			List types = new ArrayList();
+			types.add(UMLElementTypes.OutputPin_3001);
+			return types;
+		}
+		if (editPart instanceof CreateObjectAction2EditPart) {
+			List types = new ArrayList();
+			types.add(UMLElementTypes.OutputPin_3002);
+			return types;
+		}
+		if (editPart instanceof CallBehaviorAction2EditPart) {
+			List types = new ArrayList();
+			types.add(UMLElementTypes.OutputPin_3006);
+			types.add(UMLElementTypes.InputPin_3007);
+			return types;
+		}
+		if (editPart instanceof CallOperationAction2EditPart) {
+			List types = new ArrayList();
+			types.add(UMLElementTypes.OutputPin_3006);
+			types.add(UMLElementTypes.InputPin_3007);
+			types.add(UMLElementTypes.InputPin_3008);
+			return types;
+		}
+		if (editPart instanceof AddStructuralFeatureValueAction2EditPart) {
+			List types = new ArrayList();
+			types.add(UMLElementTypes.InputPin_3003);
+			types.add(UMLElementTypes.InputPin_3004);
+			types.add(UMLElementTypes.InputPin_3005);
+			return types;
+		}
+		if (editPart instanceof StructuredActivityNodeStructuredActivityContentPaneCompartmentEditPart) {
+			List types = new ArrayList();
+			types.add(UMLElementTypes.StructuredActivityNode_3009);
+			types.add(UMLElementTypes.OpaqueAction_3011);
+			types.add(UMLElementTypes.AcceptEventAction_3012);
+			types.add(UMLElementTypes.AcceptEventAction_3013);
+			types.add(UMLElementTypes.ActivityFinalNode_3014);
+			types.add(UMLElementTypes.DecisionNode_3015);
+			types.add(UMLElementTypes.FlowFinalNode_3016);
+			types.add(UMLElementTypes.Pin_3017);
+			types.add(UMLElementTypes.CreateObjectAction_3018);
+			types.add(UMLElementTypes.CallBehaviorAction_3019);
+			types.add(UMLElementTypes.CallOperationAction_3020);
+			types.add(UMLElementTypes.ForkNode_3021);
+			types.add(UMLElementTypes.JoinNode_3022);
+			types.add(UMLElementTypes.AddStructuralFeatureValueAction_3023);
+			types.add(UMLElementTypes.DataStoreNode_3024);
+			types.add(UMLElementTypes.CentralBufferNode_3025);
+			return types;
+		}
+		if (editPart instanceof StructuredActivityNodeStructuredActivityContentPaneCompartment2EditPart) {
+			List types = new ArrayList();
+			types.add(UMLElementTypes.StructuredActivityNode_3009);
+			types.add(UMLElementTypes.OpaqueAction_3011);
+			types.add(UMLElementTypes.AcceptEventAction_3012);
+			types.add(UMLElementTypes.AcceptEventAction_3013);
+			types.add(UMLElementTypes.ActivityFinalNode_3014);
+			types.add(UMLElementTypes.DecisionNode_3015);
+			types.add(UMLElementTypes.FlowFinalNode_3016);
+			types.add(UMLElementTypes.Pin_3017);
+			types.add(UMLElementTypes.CreateObjectAction_3018);
+			types.add(UMLElementTypes.CallBehaviorAction_3019);
+			types.add(UMLElementTypes.CallOperationAction_3020);
+			types.add(UMLElementTypes.ForkNode_3021);
+			types.add(UMLElementTypes.JoinNode_3022);
+			types.add(UMLElementTypes.AddStructuralFeatureValueAction_3023);
+			types.add(UMLElementTypes.DataStoreNode_3024);
+			types.add(UMLElementTypes.CentralBufferNode_3025);
+			return types;
+		}
 		if (editPart instanceof ActivityEditPart) {
 			List types = new ArrayList();
 			types.add(UMLElementTypes.AcceptEventAction_2001);
@@ -77,7 +154,6 @@ public class UMLModelingAssistantProvider extends ModelingAssistantProvider {
 			types.add(UMLElementTypes.DecisionNode_2004);
 			types.add(UMLElementTypes.MergeNode_2005);
 			types.add(UMLElementTypes.InitialNode_2006);
-			types.add(UMLElementTypes.StructuredActivityNode_2007);
 			types.add(UMLElementTypes.DataStoreNode_2008);
 			types.add(UMLElementTypes.CentralBufferNode_2009);
 			types.add(UMLElementTypes.OpaqueAction_2010);
@@ -89,6 +165,7 @@ public class UMLModelingAssistantProvider extends ModelingAssistantProvider {
 			types.add(UMLElementTypes.AddStructuralFeatureValueAction_2016);
 			types.add(UMLElementTypes.CallBehaviorAction_2017);
 			types.add(UMLElementTypes.CallOperationAction_2018);
+			types.add(UMLElementTypes.StructuredActivityNode_2007);
 			return types;
 		}
 		return Collections.EMPTY_LIST;

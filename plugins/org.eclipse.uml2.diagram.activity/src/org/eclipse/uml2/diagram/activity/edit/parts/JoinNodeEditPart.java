@@ -1,8 +1,12 @@
 package org.eclipse.uml2.diagram.activity.edit.parts;
 
+import org.eclipse.draw2d.ColorConstants;
+import org.eclipse.draw2d.Graphics;
 import org.eclipse.draw2d.IFigure;
 import org.eclipse.draw2d.PositionConstants;
+import org.eclipse.draw2d.RectangleFigure;
 import org.eclipse.draw2d.StackLayout;
+import org.eclipse.draw2d.geometry.Dimension;
 
 import org.eclipse.gef.EditPart;
 import org.eclipse.gef.EditPolicy;
@@ -173,7 +177,7 @@ public class JoinNodeEditPart extends ShapeNodeEditPart {
 	/**
 	 * @generated
 	 */
-	public class VerticalForkJoinFigure extends org.eclipse.draw2d.RectangleFigure {
+	public class VerticalForkJoinFigure extends RectangleFigure {
 
 		/**
 		 * @generated
@@ -184,10 +188,10 @@ public class JoinNodeEditPart extends ShapeNodeEditPart {
 			this.setOutline(true);
 			this.setOutlineXOR(false);
 			this.setLineWidth(1);
-			this.setLineStyle(org.eclipse.draw2d.Graphics.LINE_SOLID);
-			this.setBackgroundColor(org.eclipse.draw2d.ColorConstants.black);
-			this.setPreferredSize(new org.eclipse.draw2d.geometry.Dimension(getMapMode().DPtoLP(4), getMapMode().DPtoLP(50)));
-			this.setMinimumSize(new org.eclipse.draw2d.geometry.Dimension(getMapMode().DPtoLP(4), getMapMode().DPtoLP(50)));
+			this.setLineStyle(Graphics.LINE_SOLID);
+			this.setBackgroundColor(ColorConstants.black);
+			this.setPreferredSize(new Dimension(getMapMode().DPtoLP(4), getMapMode().DPtoLP(50)));
+			this.setMinimumSize(new Dimension(getMapMode().DPtoLP(4), getMapMode().DPtoLP(50)));
 		}
 
 		/**

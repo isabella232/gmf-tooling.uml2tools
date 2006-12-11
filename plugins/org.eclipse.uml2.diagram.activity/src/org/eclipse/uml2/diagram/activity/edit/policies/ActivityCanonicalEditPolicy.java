@@ -38,18 +38,30 @@ import org.eclipse.gmf.runtime.notation.Diagram;
 import org.eclipse.gmf.runtime.notation.View;
 
 import org.eclipse.uml2.diagram.activity.edit.parts.AcceptEventAction2EditPart;
+import org.eclipse.uml2.diagram.activity.edit.parts.AcceptEventAction3EditPart;
+import org.eclipse.uml2.diagram.activity.edit.parts.AcceptEventAction4EditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.AcceptEventActionEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.ActivityEditPart;
+import org.eclipse.uml2.diagram.activity.edit.parts.ActivityFinalNode2EditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.ActivityFinalNodeEditPart;
+import org.eclipse.uml2.diagram.activity.edit.parts.AddStructuralFeatureValueAction2EditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.AddStructuralFeatureValueActionEditPart;
+import org.eclipse.uml2.diagram.activity.edit.parts.CallBehaviorAction2EditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.CallBehaviorActionEditPart;
+import org.eclipse.uml2.diagram.activity.edit.parts.CallOperationAction2EditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.CallOperationActionEditPart;
+import org.eclipse.uml2.diagram.activity.edit.parts.CentralBufferNode2EditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.CentralBufferNodeEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.ControlFlowEditPart;
+import org.eclipse.uml2.diagram.activity.edit.parts.CreateObjectAction2EditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.CreateObjectActionEditPart;
+import org.eclipse.uml2.diagram.activity.edit.parts.DataStoreNode2EditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.DataStoreNodeEditPart;
+import org.eclipse.uml2.diagram.activity.edit.parts.DecisionNode2EditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.DecisionNodeEditPart;
+import org.eclipse.uml2.diagram.activity.edit.parts.FlowFinalNode2EditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.FlowFinalNodeEditPart;
+import org.eclipse.uml2.diagram.activity.edit.parts.ForkNode2EditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.ForkNodeEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.InitialNodeEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.InputPin2EditPart;
@@ -57,14 +69,18 @@ import org.eclipse.uml2.diagram.activity.edit.parts.InputPin3EditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.InputPin4EditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.InputPin5EditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.InputPinEditPart;
+import org.eclipse.uml2.diagram.activity.edit.parts.JoinNode2EditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.JoinNodeEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.MergeNodeEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.ObjectFlowEditPart;
+import org.eclipse.uml2.diagram.activity.edit.parts.OpaqueAction2EditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.OpaqueActionEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.OutputPin2EditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.OutputPin3EditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.OutputPinEditPart;
+import org.eclipse.uml2.diagram.activity.edit.parts.Pin2EditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.PinEditPart;
+import org.eclipse.uml2.diagram.activity.edit.parts.StructuredActivityNode2EditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.StructuredActivityNodeEditPart;
 
 import org.eclipse.uml2.diagram.activity.part.UMLVisualIDRegistry;
@@ -286,7 +302,6 @@ public class ActivityCanonicalEditPolicy extends CanonicalConnectionEditPolicy {
 		case DecisionNodeEditPart.VISUAL_ID:
 		case MergeNodeEditPart.VISUAL_ID:
 		case InitialNodeEditPart.VISUAL_ID:
-		case StructuredActivityNodeEditPart.VISUAL_ID:
 		case DataStoreNodeEditPart.VISUAL_ID:
 		case CentralBufferNodeEditPart.VISUAL_ID:
 		case OpaqueActionEditPart.VISUAL_ID:
@@ -298,6 +313,7 @@ public class ActivityCanonicalEditPolicy extends CanonicalConnectionEditPolicy {
 		case AddStructuralFeatureValueActionEditPart.VISUAL_ID:
 		case CallBehaviorActionEditPart.VISUAL_ID:
 		case CallOperationActionEditPart.VISUAL_ID:
+		case StructuredActivityNodeEditPart.VISUAL_ID:
 		case OutputPinEditPart.VISUAL_ID:
 		case OutputPin2EditPart.VISUAL_ID:
 		case InputPinEditPart.VISUAL_ID:
@@ -306,6 +322,22 @@ public class ActivityCanonicalEditPolicy extends CanonicalConnectionEditPolicy {
 		case OutputPin3EditPart.VISUAL_ID:
 		case InputPin4EditPart.VISUAL_ID:
 		case InputPin5EditPart.VISUAL_ID:
+		case StructuredActivityNode2EditPart.VISUAL_ID:
+		case OpaqueAction2EditPart.VISUAL_ID:
+		case AcceptEventAction3EditPart.VISUAL_ID:
+		case AcceptEventAction4EditPart.VISUAL_ID:
+		case ActivityFinalNode2EditPart.VISUAL_ID:
+		case DecisionNode2EditPart.VISUAL_ID:
+		case FlowFinalNode2EditPart.VISUAL_ID:
+		case Pin2EditPart.VISUAL_ID:
+		case CreateObjectAction2EditPart.VISUAL_ID:
+		case CallBehaviorAction2EditPart.VISUAL_ID:
+		case CallOperationAction2EditPart.VISUAL_ID:
+		case ForkNode2EditPart.VISUAL_ID:
+		case JoinNode2EditPart.VISUAL_ID:
+		case AddStructuralFeatureValueAction2EditPart.VISUAL_ID:
+		case DataStoreNode2EditPart.VISUAL_ID:
+		case CentralBufferNode2EditPart.VISUAL_ID:
 		case ActivityEditPart.VISUAL_ID: {
 			myEObject2ViewMap.put(modelElement, view);
 			storeLinks(modelElement, getDiagram());
