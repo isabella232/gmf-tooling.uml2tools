@@ -151,10 +151,12 @@ public class UMLElementTypes {
 			elements.put(Constraint_3008, UMLPackage.eINSTANCE.getConstraint());
 			elements.put(Stereotype_3003, UMLPackage.eINSTANCE.getStereotype());
 			elements.put(EnumerationLiteral_3005, UMLPackage.eINSTANCE.getEnumerationLiteral());
+			elements.put(ElementImport_3009, UMLPackage.eINSTANCE.getElementImport());
 			elements.put(Stereotype_2001, UMLPackage.eINSTANCE.getStereotype());
 			elements.put(Profile_2002, UMLPackage.eINSTANCE.getProfile());
 			elements.put(Enumeration_2003, UMLPackage.eINSTANCE.getEnumeration());
 			elements.put(ElementImport_2006, UMLPackage.eINSTANCE.getElementImport());
+			elements.put(Profile_2007, UMLPackage.eINSTANCE.getProfile());
 			elements.put(Generalization_4001, UMLPackage.eINSTANCE.getGeneralization());
 			elements.put(Extension_4002, UMLPackage.eINSTANCE.getExtension());
 		}
@@ -189,6 +191,11 @@ public class UMLElementTypes {
 	/**
 	 * @generated
 	 */
+	public static final IElementType ElementImport_3009 = getElementType("org.eclipse.uml2.diagram.profile.ElementImport_3009"); //$NON-NLS-1$
+
+	/**
+	 * @generated
+	 */
 	public static final IElementType Stereotype_2001 = getElementType("org.eclipse.uml2.diagram.profile.Stereotype_2001"); //$NON-NLS-1$
 
 	/**
@@ -205,6 +212,11 @@ public class UMLElementTypes {
 	 * @generated
 	 */
 	public static final IElementType ElementImport_2006 = getElementType("org.eclipse.uml2.diagram.profile.ElementImport_2006"); //$NON-NLS-1$
+
+	/**
+	 * @generated
+	 */
+	public static final IElementType Profile_2007 = getElementType("org.eclipse.uml2.diagram.profile.Profile_2007"); //$NON-NLS-1$
 
 	/**
 	 * @generated
@@ -239,10 +251,12 @@ public class UMLElementTypes {
 			KNOWN_ELEMENT_TYPES.add(Constraint_3008);
 			KNOWN_ELEMENT_TYPES.add(Stereotype_3003);
 			KNOWN_ELEMENT_TYPES.add(EnumerationLiteral_3005);
+			KNOWN_ELEMENT_TYPES.add(ElementImport_3009);
 			KNOWN_ELEMENT_TYPES.add(Stereotype_2001);
 			KNOWN_ELEMENT_TYPES.add(Profile_2002);
 			KNOWN_ELEMENT_TYPES.add(Enumeration_2003);
 			KNOWN_ELEMENT_TYPES.add(ElementImport_2006);
+			KNOWN_ELEMENT_TYPES.add(Profile_2007);
 			KNOWN_ELEMENT_TYPES.add(Generalization_4001);
 			KNOWN_ELEMENT_TYPES.add(Extension_4002);
 		}

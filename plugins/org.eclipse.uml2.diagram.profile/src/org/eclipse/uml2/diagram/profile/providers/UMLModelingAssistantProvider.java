@@ -20,9 +20,11 @@ import org.eclipse.swt.widgets.Shell;
 import org.eclipse.ui.dialogs.ElementListSelectionDialog;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.edit.ui.provider.AdapterFactoryLabelProvider;
+import org.eclipse.uml2.diagram.profile.edit.parts.ElementImport2EditPart;
 import org.eclipse.uml2.diagram.profile.edit.parts.ElementImportEditPart;
 import org.eclipse.uml2.diagram.profile.edit.parts.EnumerationEditPart;
 import org.eclipse.uml2.diagram.profile.edit.parts.Profile2EditPart;
+import org.eclipse.uml2.diagram.profile.edit.parts.Profile3EditPart;
 import org.eclipse.uml2.diagram.profile.edit.parts.ProfileEditPart;
 import org.eclipse.uml2.diagram.profile.edit.parts.Stereotype2EditPart;
 import org.eclipse.uml2.diagram.profile.edit.parts.StereotypeEditPart;
@@ -55,12 +57,18 @@ public class UMLModelingAssistantProvider extends ModelingAssistantProvider {
 			types.add(UMLElementTypes.EnumerationLiteral_3005);
 			return types;
 		}
+		if (editPart instanceof Profile3EditPart) {
+			List types = new ArrayList();
+			types.add(UMLElementTypes.ElementImport_3009);
+			return types;
+		}
 		if (editPart instanceof ProfileEditPart) {
 			List types = new ArrayList();
 			types.add(UMLElementTypes.Stereotype_2001);
 			types.add(UMLElementTypes.Profile_2002);
 			types.add(UMLElementTypes.Enumeration_2003);
 			types.add(UMLElementTypes.ElementImport_2006);
+			types.add(UMLElementTypes.Profile_2007);
 			return types;
 		}
 		return Collections.EMPTY_LIST;
@@ -94,6 +102,11 @@ public class UMLModelingAssistantProvider extends ModelingAssistantProvider {
 			types.add(UMLElementTypes.Extension_4002);
 			return types;
 		}
+		if (targetEditPart instanceof ElementImport2EditPart) {
+			List types = new ArrayList();
+			types.add(UMLElementTypes.Extension_4002);
+			return types;
+		}
 		return Collections.EMPTY_LIST;
 	}
 
@@ -108,11 +121,17 @@ public class UMLModelingAssistantProvider extends ModelingAssistantProvider {
 			if (targetEditPart instanceof ElementImportEditPart) {
 				types.add(UMLElementTypes.Extension_4002);
 			}
+			if (targetEditPart instanceof ElementImport2EditPart) {
+				types.add(UMLElementTypes.Extension_4002);
+			}
 			return types;
 		}
 		if (sourceEditPart instanceof Stereotype2EditPart) {
 			List types = new ArrayList();
 			if (targetEditPart instanceof ElementImportEditPart) {
+				types.add(UMLElementTypes.Extension_4002);
+			}
+			if (targetEditPart instanceof ElementImport2EditPart) {
 				types.add(UMLElementTypes.Extension_4002);
 			}
 			return types;
@@ -135,6 +154,16 @@ public class UMLModelingAssistantProvider extends ModelingAssistantProvider {
 			}
 			return types;
 		}
+		if (targetEditPart instanceof ElementImport2EditPart) {
+			List types = new ArrayList();
+			if (relationshipType == UMLElementTypes.Extension_4002) {
+				types.add(UMLElementTypes.Stereotype_2001);
+			}
+			if (relationshipType == UMLElementTypes.Extension_4002) {
+				types.add(UMLElementTypes.Stereotype_3003);
+			}
+			return types;
+		}
 		return Collections.EMPTY_LIST;
 	}
 
@@ -148,12 +177,18 @@ public class UMLModelingAssistantProvider extends ModelingAssistantProvider {
 			if (relationshipType == UMLElementTypes.Extension_4002) {
 				types.add(UMLElementTypes.ElementImport_2006);
 			}
+			if (relationshipType == UMLElementTypes.Extension_4002) {
+				types.add(UMLElementTypes.ElementImport_3009);
+			}
 			return types;
 		}
 		if (sourceEditPart instanceof Stereotype2EditPart) {
 			List types = new ArrayList();
 			if (relationshipType == UMLElementTypes.Extension_4002) {
 				types.add(UMLElementTypes.ElementImport_2006);
+			}
+			if (relationshipType == UMLElementTypes.Extension_4002) {
+				types.add(UMLElementTypes.ElementImport_3009);
 			}
 			return types;
 		}

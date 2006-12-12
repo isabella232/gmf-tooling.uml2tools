@@ -159,7 +159,7 @@ public class Profile2EditPart extends ShapeNodeEditPart {
 	 */
 	protected boolean addFixedChild(EditPart childEditPart) {
 		if (childEditPart instanceof ProfileNode_profileEditPart) {
-			((ProfileNode_profileEditPart) childEditPart).setLabel(getPrimaryShape().getFigureProfile_ProfileLabel());
+			((ProfileNode_profileEditPart) childEditPart).setLabel(getPrimaryShape().getFigureProfileFigure_ProfileLabel());
 			return true;
 		}
 		if (childEditPart instanceof ProfileNameEditPart) {
@@ -404,11 +404,20 @@ public class Profile2EditPart extends ShapeNodeEditPart {
 
 			profileFigure_ProfileContainer1.setLayoutManager(layoutProfileFigure_ProfileContainer1);
 
-			WrapLabel profile_ProfileLabel2 = new WrapLabel();
-			profile_ProfileLabel2.setText("«profile»");
+			WrapLabel profileFigure_ProfileLabel2 = new WrapLabel();
+			profileFigure_ProfileLabel2.setText("\u00ABprofile\u00BB");
 
-			profileFigure_ProfileContainer1.add(profile_ProfileLabel2);
-			setFigureProfile_ProfileLabel(profile_ProfileLabel2);
+			GridLayoutData constraintProfileFigure_ProfileLabel2 = new GridLayoutData();
+			constraintProfileFigure_ProfileLabel2.verticalAlignment = GridLayoutData.CENTER;
+			constraintProfileFigure_ProfileLabel2.horizontalAlignment = GridLayoutData.CENTER;
+			constraintProfileFigure_ProfileLabel2.horizontalIndent = 0;
+			constraintProfileFigure_ProfileLabel2.horizontalSpan = 1;
+			constraintProfileFigure_ProfileLabel2.verticalSpan = 1;
+			constraintProfileFigure_ProfileLabel2.grabExcessHorizontalSpace = false;
+			constraintProfileFigure_ProfileLabel2.grabExcessVerticalSpace = false;
+			profileFigure_ProfileContainer1.add(profileFigure_ProfileLabel2, constraintProfileFigure_ProfileLabel2);
+
+			setFigureProfileFigure_ProfileLabel(profileFigure_ProfileLabel2);
 
 			RectangleFigure profileFigure_ContentsCompartment1 = new RectangleFigure();
 			profileFigure_ContentsCompartment1.setFill(true);
@@ -445,20 +454,20 @@ public class Profile2EditPart extends ShapeNodeEditPart {
 		/**
 		 * @generated
 		 */
-		private WrapLabel fProfile_ProfileLabel;
+		private WrapLabel fProfileFigure_ProfileLabel;
 
 		/**
 		 * @generated
 		 */
-		public WrapLabel getFigureProfile_ProfileLabel() {
-			return fProfile_ProfileLabel;
+		public WrapLabel getFigureProfileFigure_ProfileLabel() {
+			return fProfileFigure_ProfileLabel;
 		}
 
 		/**
 		 * @generated
 		 */
-		private void setFigureProfile_ProfileLabel(WrapLabel fig) {
-			fProfile_ProfileLabel = fig;
+		private void setFigureProfileFigure_ProfileLabel(WrapLabel fig) {
+			fProfileFigure_ProfileLabel = fig;
 		}
 
 		/**

@@ -7,6 +7,7 @@ import org.eclipse.gmf.runtime.diagram.core.providers.AbstractViewProvider;
 import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.gmf.runtime.emf.type.core.IElementType;
 import org.eclipse.uml2.diagram.profile.edit.parts.ConstraintEditPart;
+import org.eclipse.uml2.diagram.profile.edit.parts.ElementImport2EditPart;
 import org.eclipse.uml2.diagram.profile.edit.parts.ElementImportEditPart;
 import org.eclipse.uml2.diagram.profile.edit.parts.EnumerationEditPart;
 import org.eclipse.uml2.diagram.profile.edit.parts.EnumerationLiteralEditPart;
@@ -15,10 +16,13 @@ import org.eclipse.uml2.diagram.profile.edit.parts.EnumerationNameEditPart;
 import org.eclipse.uml2.diagram.profile.edit.parts.ExtensionEditPart;
 import org.eclipse.uml2.diagram.profile.edit.parts.GeneralizationEditPart;
 import org.eclipse.uml2.diagram.profile.edit.parts.Profile2EditPart;
+import org.eclipse.uml2.diagram.profile.edit.parts.Profile3EditPart;
 import org.eclipse.uml2.diagram.profile.edit.parts.ProfileContentsEditPart;
 import org.eclipse.uml2.diagram.profile.edit.parts.ProfileEditPart;
+import org.eclipse.uml2.diagram.profile.edit.parts.ProfileName2EditPart;
 import org.eclipse.uml2.diagram.profile.edit.parts.ProfileNameEditPart;
 import org.eclipse.uml2.diagram.profile.edit.parts.ProfileNode_profileEditPart;
+import org.eclipse.uml2.diagram.profile.edit.parts.ProfileProfileLabelsEditPart;
 import org.eclipse.uml2.diagram.profile.edit.parts.PropertyEditPart;
 import org.eclipse.uml2.diagram.profile.edit.parts.ReferencedMetaclassNode_classNameEditPart;
 import org.eclipse.uml2.diagram.profile.edit.parts.Stereotype2EditPart;
@@ -30,6 +34,7 @@ import org.eclipse.uml2.diagram.profile.edit.parts.StereotypeNameEditPart;
 import org.eclipse.uml2.diagram.profile.part.UMLVisualIDRegistry;
 
 import org.eclipse.uml2.diagram.profile.view.factories.ConstraintViewFactory;
+import org.eclipse.uml2.diagram.profile.view.factories.ElementImport2ViewFactory;
 import org.eclipse.uml2.diagram.profile.view.factories.ElementImportViewFactory;
 import org.eclipse.uml2.diagram.profile.view.factories.EnumerationLiteralViewFactory;
 import org.eclipse.uml2.diagram.profile.view.factories.EnumerationLiteralsViewFactory;
@@ -38,9 +43,12 @@ import org.eclipse.uml2.diagram.profile.view.factories.EnumerationViewFactory;
 import org.eclipse.uml2.diagram.profile.view.factories.ExtensionViewFactory;
 import org.eclipse.uml2.diagram.profile.view.factories.GeneralizationViewFactory;
 import org.eclipse.uml2.diagram.profile.view.factories.Profile2ViewFactory;
+import org.eclipse.uml2.diagram.profile.view.factories.Profile3ViewFactory;
 import org.eclipse.uml2.diagram.profile.view.factories.ProfileContentsViewFactory;
+import org.eclipse.uml2.diagram.profile.view.factories.ProfileName2ViewFactory;
 import org.eclipse.uml2.diagram.profile.view.factories.ProfileNameViewFactory;
 import org.eclipse.uml2.diagram.profile.view.factories.ProfileNode_profileViewFactory;
+import org.eclipse.uml2.diagram.profile.view.factories.ProfileProfileLabelsViewFactory;
 import org.eclipse.uml2.diagram.profile.view.factories.ProfileViewFactory;
 import org.eclipse.uml2.diagram.profile.view.factories.PropertyViewFactory;
 import org.eclipse.uml2.diagram.profile.view.factories.ReferencedMetaclassNode_classNameViewFactory;
@@ -99,6 +107,10 @@ public class UMLViewProvider extends AbstractViewProvider {
 			return ElementImportViewFactory.class;
 		case ReferencedMetaclassNode_classNameEditPart.VISUAL_ID:
 			return ReferencedMetaclassNode_classNameViewFactory.class;
+		case Profile3EditPart.VISUAL_ID:
+			return Profile3ViewFactory.class;
+		case ProfileName2EditPart.VISUAL_ID:
+			return ProfileName2ViewFactory.class;
 		case PropertyEditPart.VISUAL_ID:
 			return PropertyViewFactory.class;
 		case ConstraintEditPart.VISUAL_ID:
@@ -107,6 +119,8 @@ public class UMLViewProvider extends AbstractViewProvider {
 			return Stereotype2ViewFactory.class;
 		case EnumerationLiteralEditPart.VISUAL_ID:
 			return EnumerationLiteralViewFactory.class;
+		case ElementImport2EditPart.VISUAL_ID:
+			return ElementImport2ViewFactory.class;
 		case StereotypeAttributesEditPart.VISUAL_ID:
 			return StereotypeAttributesViewFactory.class;
 		case StereotypeConstraintsEditPart.VISUAL_ID:
@@ -115,6 +129,8 @@ public class UMLViewProvider extends AbstractViewProvider {
 			return ProfileContentsViewFactory.class;
 		case EnumerationLiteralsEditPart.VISUAL_ID:
 			return EnumerationLiteralsViewFactory.class;
+		case ProfileProfileLabelsEditPart.VISUAL_ID:
+			return ProfileProfileLabelsViewFactory.class;
 		}
 		return null;
 	}

@@ -9,6 +9,7 @@ import org.eclipse.gmf.runtime.emf.type.core.requests.CreateElementRequest;
 
 import org.eclipse.uml2.diagram.profile.edit.commands.ElementImportCreateCommand;
 import org.eclipse.uml2.diagram.profile.edit.commands.EnumerationCreateCommand;
+import org.eclipse.uml2.diagram.profile.edit.commands.Profile2CreateCommand;
 import org.eclipse.uml2.diagram.profile.edit.commands.ProfileCreateCommand;
 import org.eclipse.uml2.diagram.profile.edit.commands.StereotypeCreateCommand;
 
@@ -48,6 +49,12 @@ public class ProfileItemSemanticEditPolicy extends UMLBaseItemSemanticEditPolicy
 				req.setContainmentFeature(UMLPackage.eINSTANCE.getNamespace_ElementImport());
 			}
 			return getMSLWrapper(new ElementImportCreateCommand(req));
+		}
+		if (UMLElementTypes.Profile_2007 == req.getElementType()) {
+			if (req.getContainmentFeature() == null) {
+				req.setContainmentFeature(UMLPackage.eINSTANCE.getPackage_PackagedElement());
+			}
+			return getMSLWrapper(new Profile2CreateCommand(req));
 		}
 		return super.getCreateCommand(req);
 	}

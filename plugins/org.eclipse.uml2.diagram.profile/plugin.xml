@@ -114,6 +114,10 @@
             <popupPredefinedItem id="deleteFromDiagramAction" remove="true"/>
          </popupContribution>
          <popupContribution class="org.eclipse.gmf.runtime.diagram.ui.providers.DiagramContextMenuProvider">
+            <popupStructuredContributionCriteria objectClass="org.eclipse.uml2.diagram.profile.edit.parts.ElementImport2EditPart"/>
+            <popupPredefinedItem id="deleteFromDiagramAction" remove="true"/>
+         </popupContribution>
+         <popupContribution class="org.eclipse.gmf.runtime.diagram.ui.providers.DiagramContextMenuProvider">
             <popupStructuredContributionCriteria objectClass="org.eclipse.uml2.diagram.profile.edit.parts.StereotypeEditPart"/>
             <popupPredefinedItem id="deleteFromDiagramAction" remove="true"/>
          </popupContribution>
@@ -147,6 +151,14 @@
          </popupContribution>
          <popupContribution class="org.eclipse.gmf.runtime.diagram.ui.providers.DiagramContextMenuProvider">
             <popupStructuredContributionCriteria objectClass="org.eclipse.uml2.diagram.profile.edit.parts.ReferencedMetaclassNode_classNameEditPart"/>
+            <popupPredefinedItem id="deleteFromDiagramAction" remove="true"/>
+         </popupContribution>
+         <popupContribution class="org.eclipse.gmf.runtime.diagram.ui.providers.DiagramContextMenuProvider">
+            <popupStructuredContributionCriteria objectClass="org.eclipse.uml2.diagram.profile.edit.parts.Profile3EditPart"/>
+            <popupPredefinedItem id="deleteFromDiagramAction" remove="true"/>
+         </popupContribution>
+         <popupContribution class="org.eclipse.gmf.runtime.diagram.ui.providers.DiagramContextMenuProvider">
+            <popupStructuredContributionCriteria objectClass="org.eclipse.uml2.diagram.profile.edit.parts.ProfileName2EditPart"/>
             <popupPredefinedItem id="deleteFromDiagramAction" remove="true"/>
          </popupContribution>
          <popupContribution class="org.eclipse.gmf.runtime.diagram.ui.providers.DiagramContextMenuProvider">
@@ -298,6 +310,17 @@
       </metamodel>
 
       <metamodel nsURI="http://www.eclipse.org/uml2/2.0.0/UML">
+         <specializationType
+               id="org.eclipse.uml2.diagram.profile.ElementImport_3009"
+               name="ElementImport"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
+               edithelperadvice="org.eclipse.uml2.diagram.profile.edit.helpers.ElementImportEditHelperAdvice">
+            <specializes id="org.eclipse.uml2.diagram.profile.ElementImport_2006"/>
+            <param name="semanticHint" value="3009"/>
+         </specializationType>
+      </metamodel>
+
+      <metamodel nsURI="http://www.eclipse.org/uml2/2.0.0/UML">
          <metamodelType
                id="org.eclipse.uml2.diagram.profile.Stereotype_2001"
                name="Stereotype"
@@ -342,6 +365,17 @@
       </metamodel>
 
       <metamodel nsURI="http://www.eclipse.org/uml2/2.0.0/UML">
+         <specializationType
+               id="org.eclipse.uml2.diagram.profile.Profile_2007"
+               name="Profile"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
+               edithelperadvice="org.eclipse.uml2.diagram.profile.edit.helpers.Profile2EditHelperAdvice">
+            <specializes id="org.eclipse.uml2.diagram.profile.Profile_1000"/>
+            <param name="semanticHint" value="2007"/>
+         </specializationType>
+      </metamodel>
+
+      <metamodel nsURI="http://www.eclipse.org/uml2/2.0.0/UML">
          <metamodelType
                id="org.eclipse.uml2.diagram.profile.Generalization_4001"
                name="Generalization"
@@ -379,10 +413,12 @@
          <elementType ref="org.eclipse.uml2.diagram.profile.Constraint_3008"/>
          <elementType ref="org.eclipse.uml2.diagram.profile.Stereotype_3003"/>
          <elementType ref="org.eclipse.uml2.diagram.profile.EnumerationLiteral_3005"/>
+         <elementType ref="org.eclipse.uml2.diagram.profile.ElementImport_3009"/>
          <elementType ref="org.eclipse.uml2.diagram.profile.Stereotype_2001"/>
          <elementType ref="org.eclipse.uml2.diagram.profile.Profile_2002"/>
          <elementType ref="org.eclipse.uml2.diagram.profile.Enumeration_2003"/>
          <elementType ref="org.eclipse.uml2.diagram.profile.ElementImport_2006"/>
+         <elementType ref="org.eclipse.uml2.diagram.profile.Profile_2007"/>
          <elementType ref="org.eclipse.uml2.diagram.profile.Generalization_4001"/>
          <elementType ref="org.eclipse.uml2.diagram.profile.Extension_4002"/>
          <advice ref="org.eclipse.gmf.runtime.diagram.core.advice.notationDepdendents"/>

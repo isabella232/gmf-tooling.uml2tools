@@ -26,12 +26,14 @@ import org.eclipse.gmf.runtime.notation.Diagram;
 import org.eclipse.gmf.runtime.notation.Edge;
 import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.uml2.diagram.profile.edit.parts.ConstraintEditPart;
+import org.eclipse.uml2.diagram.profile.edit.parts.ElementImport2EditPart;
 import org.eclipse.uml2.diagram.profile.edit.parts.ElementImportEditPart;
 import org.eclipse.uml2.diagram.profile.edit.parts.EnumerationEditPart;
 import org.eclipse.uml2.diagram.profile.edit.parts.EnumerationLiteralEditPart;
 import org.eclipse.uml2.diagram.profile.edit.parts.ExtensionEditPart;
 import org.eclipse.uml2.diagram.profile.edit.parts.GeneralizationEditPart;
 import org.eclipse.uml2.diagram.profile.edit.parts.Profile2EditPart;
+import org.eclipse.uml2.diagram.profile.edit.parts.Profile3EditPart;
 import org.eclipse.uml2.diagram.profile.edit.parts.ProfileEditPart;
 import org.eclipse.uml2.diagram.profile.edit.parts.PropertyEditPart;
 import org.eclipse.uml2.diagram.profile.edit.parts.Stereotype2EditPart;
@@ -41,6 +43,7 @@ import org.eclipse.uml2.uml.Classifier;
 import org.eclipse.uml2.uml.ElementImport;
 import org.eclipse.uml2.uml.Extension;
 import org.eclipse.uml2.uml.Generalization;
+import org.eclipse.uml2.uml.Package;
 import org.eclipse.uml2.uml.Profile;
 import org.eclipse.uml2.uml.Stereotype;
 import org.eclipse.uml2.uml.UMLPackage;
@@ -51,9 +54,45 @@ import org.eclipse.uml2.uml.UMLPackage;
 public class ProfileCanonicalEditPolicy extends CanonicalConnectionEditPolicy {
 
 	/**
-	 * @generated
+	 * @generated NOT
+	 * 
+	 * We have "dummy" TopLevelNode (with vid = 2007) defined for child
+	 * profiles. The only purpose for this node is to be a container for
+	 * children (imports, etc) of the "main" profile (that one shown as Canvas).
+	 * 
+	 * The code that replace generated children associated with vid=2007 with
+	 * the "main" instance is below.
+	 * 
+	 * Also we have modified the UMLVisualIDRegistry#getNodeVisualID() to return
+	 * VID = 2007, for the case when top-level view is created for the same
+	 * "main" profile instance as the canvas view. 
+	 * 
+	 * @see UMLVisualIDRegistry
 	 */
 	protected List getSemanticChildrenList() {
+		List result = getSemanticChildrenListGen();
+
+		//remove all children associated with Profile3EditPart.VISUAL_ID 
+		EObject modelObject = ((View) getHost().getModel()).getElement();
+		View viewObject = (View) getHost().getModel();
+		for (Iterator it = result.iterator(); it.hasNext();) {
+			EObject nextValue = (EObject) it.next();
+			int nodeVID = UMLVisualIDRegistry.getNodeVisualID(viewObject, nextValue);
+			if (Profile3EditPart.VISUAL_ID == nodeVID) {
+				it.remove();
+			}
+		}
+
+		//add the "main" profile instance instead
+		result.add(modelObject);
+
+		return result;
+	}
+
+	/**
+	 * @generated
+	 */
+	protected List getSemanticChildrenListGen() {
 		List result = new LinkedList();
 		EObject modelObject = ((View) getHost().getModel()).getElement();
 		View viewObject = (View) getHost().getModel();
@@ -66,14 +105,21 @@ public class ProfileCanonicalEditPolicy extends CanonicalConnectionEditPolicy {
 				result.add(nextValue);
 			}
 		}
-		for (Iterator values = ((org.eclipse.uml2.uml.Package) modelObject).getPackagedElements().iterator(); values.hasNext();) {
+		for (Iterator values = ((Package) modelObject).getPackagedElements().iterator(); values.hasNext();) {
 			nextValue = (EObject) values.next();
 			nodeVID = UMLVisualIDRegistry.getNodeVisualID(viewObject, nextValue);
-			if (Profile2EditPart.VISUAL_ID == nodeVID) {
+			switch (nodeVID) {
+			case Profile2EditPart.VISUAL_ID: {
 				result.add(nextValue);
+				break;
+			}
+			case Profile3EditPart.VISUAL_ID: {
+				result.add(nextValue);
+				break;
+			}
 			}
 		}
-		for (Iterator values = ((org.eclipse.uml2.uml.Package) modelObject).getOwnedTypes().iterator(); values.hasNext();) {
+		for (Iterator values = ((Package) modelObject).getOwnedTypes().iterator(); values.hasNext();) {
 			nextValue = (EObject) values.next();
 			nodeVID = UMLVisualIDRegistry.getNodeVisualID(viewObject, nextValue);
 			if (EnumerationEditPart.VISUAL_ID == nodeVID) {
@@ -203,10 +249,12 @@ public class ProfileCanonicalEditPolicy extends CanonicalConnectionEditPolicy {
 		case Profile2EditPart.VISUAL_ID:
 		case EnumerationEditPart.VISUAL_ID:
 		case ElementImportEditPart.VISUAL_ID:
+		case Profile3EditPart.VISUAL_ID:
 		case PropertyEditPart.VISUAL_ID:
 		case ConstraintEditPart.VISUAL_ID:
 		case Stereotype2EditPart.VISUAL_ID:
 		case EnumerationLiteralEditPart.VISUAL_ID:
+		case ElementImport2EditPart.VISUAL_ID:
 		case ProfileEditPart.VISUAL_ID: {
 			myEObject2ViewMap.put(modelElement, view);
 			storeLinks(modelElement, getDiagram());

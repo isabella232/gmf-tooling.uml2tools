@@ -10,6 +10,7 @@ import org.eclipse.gmf.runtime.notation.Diagram;
 import org.eclipse.gmf.runtime.notation.View;
 
 import org.eclipse.uml2.diagram.profile.edit.parts.ConstraintEditPart;
+import org.eclipse.uml2.diagram.profile.edit.parts.ElementImport2EditPart;
 import org.eclipse.uml2.diagram.profile.edit.parts.ElementImportEditPart;
 import org.eclipse.uml2.diagram.profile.edit.parts.EnumerationEditPart;
 import org.eclipse.uml2.diagram.profile.edit.parts.EnumerationLiteralEditPart;
@@ -18,10 +19,13 @@ import org.eclipse.uml2.diagram.profile.edit.parts.EnumerationNameEditPart;
 import org.eclipse.uml2.diagram.profile.edit.parts.ExtensionEditPart;
 import org.eclipse.uml2.diagram.profile.edit.parts.GeneralizationEditPart;
 import org.eclipse.uml2.diagram.profile.edit.parts.Profile2EditPart;
+import org.eclipse.uml2.diagram.profile.edit.parts.Profile3EditPart;
 import org.eclipse.uml2.diagram.profile.edit.parts.ProfileContentsEditPart;
 import org.eclipse.uml2.diagram.profile.edit.parts.ProfileEditPart;
+import org.eclipse.uml2.diagram.profile.edit.parts.ProfileName2EditPart;
 import org.eclipse.uml2.diagram.profile.edit.parts.ProfileNameEditPart;
 import org.eclipse.uml2.diagram.profile.edit.parts.ProfileNode_profileEditPart;
+import org.eclipse.uml2.diagram.profile.edit.parts.ProfileProfileLabelsEditPart;
 import org.eclipse.uml2.diagram.profile.edit.parts.PropertyEditPart;
 import org.eclipse.uml2.diagram.profile.edit.parts.ReferencedMetaclassNode_classNameEditPart;
 import org.eclipse.uml2.diagram.profile.edit.parts.Stereotype2EditPart;
@@ -29,6 +33,7 @@ import org.eclipse.uml2.diagram.profile.edit.parts.StereotypeAttributesEditPart;
 import org.eclipse.uml2.diagram.profile.edit.parts.StereotypeConstraintsEditPart;
 import org.eclipse.uml2.diagram.profile.edit.parts.StereotypeEditPart;
 import org.eclipse.uml2.diagram.profile.edit.parts.StereotypeNameEditPart;
+import org.eclipse.uml2.diagram.profile.edit.policies.ProfileCanonicalEditPolicy;
 
 import org.eclipse.uml2.diagram.profile.expressions.UMLAbstractExpression;
 import org.eclipse.uml2.diagram.profile.expressions.UMLOCLFactory;
@@ -141,9 +146,28 @@ public class UMLVisualIDRegistry {
 	}
 
 	/**
-	 * @generated
+	 * @generated NOT
+	 * 
+	 * We want to additionally show the "main" profile (that one already shown
+	 * as canvas) in the auxiliary Profile3EditPart (that serves as a visual
+	 * container for children imports). To do this, we modified
+	 * CanonicalEditPolicy to add the main profile into the children list. The
+	 * only remaining part is to return correct VID for this special case.
+	 * 
+	 * @see ProfileCanonicalEditPolicy#getSemanticChildrenList
 	 */
 	public static int getNodeVisualID(View containerView, EObject domainElement, EClass domainElementMetaclass, String semanticHint) {
+		int result = getNodeVisualIDGen(containerView, domainElement, domainElementMetaclass, semanticHint);
+		if (containerView instanceof Diagram && domainElement != null && domainElement.equals(containerView.getElement())) {
+			return Profile3EditPart.VISUAL_ID;
+		}
+		return result;
+	}
+
+	/**
+	 * @generated
+	 */
+	public static int getNodeVisualIDGen(View containerView, EObject domainElement, EClass domainElementMetaclass, String semanticHint) {
 		String containerModelID = getModelID(containerView);
 		if (!ProfileEditPart.MODEL_ID.equals(containerModelID)) {
 			return -1;
@@ -195,6 +219,14 @@ public class UMLVisualIDRegistry {
 				return ReferencedMetaclassNode_classNameEditPart.VISUAL_ID;
 			}
 			return getUnrecognizedElementImport_2006ChildNodeID(domainElement, semanticHint);
+		case Profile3EditPart.VISUAL_ID:
+			if (ProfileName2EditPart.VISUAL_ID == nodeVisualID) {
+				return ProfileName2EditPart.VISUAL_ID;
+			}
+			if (ProfileProfileLabelsEditPart.VISUAL_ID == nodeVisualID) {
+				return ProfileProfileLabelsEditPart.VISUAL_ID;
+			}
+			return getUnrecognizedProfile_2007ChildNodeID(domainElement, semanticHint);
 		case PropertyEditPart.VISUAL_ID:
 			return getUnrecognizedProperty_3001ChildNodeID(domainElement, semanticHint);
 		case ConstraintEditPart.VISUAL_ID:
@@ -203,6 +235,8 @@ public class UMLVisualIDRegistry {
 			return getUnrecognizedStereotype_3003ChildNodeID(domainElement, semanticHint);
 		case EnumerationLiteralEditPart.VISUAL_ID:
 			return getUnrecognizedEnumerationLiteral_3005ChildNodeID(domainElement, semanticHint);
+		case ElementImport2EditPart.VISUAL_ID:
+			return getUnrecognizedElementImport_3009ChildNodeID(domainElement, semanticHint);
 		case StereotypeAttributesEditPart.VISUAL_ID:
 			if ((semanticHint == null || PropertyEditPart.VISUAL_ID == nodeVisualID) && UMLPackage.eINSTANCE.getProperty().isSuperTypeOf(domainElementMetaclass)
 					&& (domainElement == null || isNodeProperty_3001((Property) domainElement))) {
@@ -227,6 +261,12 @@ public class UMLVisualIDRegistry {
 				return EnumerationLiteralEditPart.VISUAL_ID;
 			}
 			return getUnrecognizedEnumerationLiterals_7004ChildNodeID(domainElement, semanticHint);
+		case ProfileProfileLabelsEditPart.VISUAL_ID:
+			if ((semanticHint == null || ElementImport2EditPart.VISUAL_ID == nodeVisualID) && UMLPackage.eINSTANCE.getElementImport().isSuperTypeOf(domainElementMetaclass)
+					&& (domainElement == null || isNodeElementImport_3009((ElementImport) domainElement))) {
+				return ElementImport2EditPart.VISUAL_ID;
+			}
+			return getUnrecognizedProfileProfileLabels_7005ChildNodeID(domainElement, semanticHint);
 		case ProfileEditPart.VISUAL_ID:
 			if ((semanticHint == null || StereotypeEditPart.VISUAL_ID == nodeVisualID) && UMLPackage.eINSTANCE.getStereotype().isSuperTypeOf(domainElementMetaclass)
 					&& (domainElement == null || isNodeStereotype_2001((Stereotype) domainElement))) {
@@ -243,6 +283,10 @@ public class UMLVisualIDRegistry {
 			if ((semanticHint == null || ElementImportEditPart.VISUAL_ID == nodeVisualID) && UMLPackage.eINSTANCE.getElementImport().isSuperTypeOf(domainElementMetaclass)
 					&& (domainElement == null || isNodeElementImport_2006((ElementImport) domainElement))) {
 				return ElementImportEditPart.VISUAL_ID;
+			}
+			if ((semanticHint == null || Profile3EditPart.VISUAL_ID == nodeVisualID) && UMLPackage.eINSTANCE.getProfile().isSuperTypeOf(domainElementMetaclass)
+					&& (domainElement == null || isNodeProfile_2007((Profile) domainElement))) {
+				return Profile3EditPart.VISUAL_ID;
 			}
 			return getUnrecognizedProfile_1000ChildNodeID(domainElement, semanticHint);
 		}
@@ -339,6 +383,16 @@ public class UMLVisualIDRegistry {
 	 *
 	 * @generated
 	 */
+	private static boolean isNodeProfile_2007(Profile element) {
+		return true;
+	}
+
+	/**
+	 * User can change implementation of this method to check some additional 
+	 * conditions here.
+	 *
+	 * @generated
+	 */
 	private static boolean isNodeProperty_3001(Property element) {
 		return Property_3001.matches(element);
 	}
@@ -371,6 +425,16 @@ public class UMLVisualIDRegistry {
 	 */
 	private static boolean isNodeEnumerationLiteral_3005(EnumerationLiteral element) {
 		return true;
+	}
+
+	/**
+	 * User can change implementation of this method to check some additional 
+	 * conditions here.
+	 *
+	 * @generated
+	 */
+	private static boolean isNodeElementImport_3009(ElementImport element) {
+		return ElementImport_3009.matches(element);
 	}
 
 	/**
@@ -410,6 +474,16 @@ public class UMLVisualIDRegistry {
 	 * @generated
 	 */
 	private static int getUnrecognizedElementImport_2006ChildNodeID(EObject domainElement, String semanticHint) {
+		return -1;
+	}
+
+	/**
+	 * User can change implementation of this method to handle some specific
+	 * situations not covered by default logic.
+	 *
+	 * @generated
+	 */
+	private static int getUnrecognizedProfile_2007ChildNodeID(EObject domainElement, String semanticHint) {
 		return -1;
 	}
 
@@ -459,6 +533,16 @@ public class UMLVisualIDRegistry {
 	 *
 	 * @generated
 	 */
+	private static int getUnrecognizedElementImport_3009ChildNodeID(EObject domainElement, String semanticHint) {
+		return -1;
+	}
+
+	/**
+	 * User can change implementation of this method to handle some specific
+	 * situations not covered by default logic.
+	 *
+	 * @generated
+	 */
 	private static int getUnrecognizedStereotypeAttributes_7001ChildNodeID(EObject domainElement, String semanticHint) {
 		return -1;
 	}
@@ -490,6 +574,16 @@ public class UMLVisualIDRegistry {
 	 * @generated
 	 */
 	private static int getUnrecognizedEnumerationLiterals_7004ChildNodeID(EObject domainElement, String semanticHint) {
+		return -1;
+	}
+
+	/**
+	 * User can change implementation of this method to handle some specific
+	 * situations not covered by default logic.
+	 *
+	 * @generated
+	 */
+	private static int getUnrecognizedProfileProfileLabels_7005ChildNodeID(EObject domainElement, String semanticHint) {
 		return -1;
 	}
 
@@ -538,6 +632,13 @@ public class UMLVisualIDRegistry {
 	 */
 	private static final Matcher Property_3001 = new Matcher(UMLOCLFactory.getExpression("self.association.oclIsUndefined() or not self.association.oclIsKindOf(uml::Extension)", //$NON-NLS-1$
 			UMLPackage.eINSTANCE.getProperty()));
+
+	/**
+	 * @generated
+	 */
+	private static final Matcher ElementImport_3009 = new Matcher(UMLOCLFactory.getExpression(
+			"let imported : NamedElement = self.importedElement in \r\nnot imported.oclIsKindOf(Class) or not imported.oclAsType(Class).isMetaclass()\r\n", //$NON-NLS-1$
+			UMLPackage.eINSTANCE.getElementImport()));
 
 	/**
 	 * @generated

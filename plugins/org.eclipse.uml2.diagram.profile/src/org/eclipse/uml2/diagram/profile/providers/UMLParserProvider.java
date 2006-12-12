@@ -10,6 +10,7 @@ import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.uml2.diagram.profile.edit.parts.ConstraintEditPart;
 import org.eclipse.uml2.diagram.profile.edit.parts.EnumerationLiteralEditPart;
 import org.eclipse.uml2.diagram.profile.edit.parts.EnumerationNameEditPart;
+import org.eclipse.uml2.diagram.profile.edit.parts.ProfileName2EditPart;
 import org.eclipse.uml2.diagram.profile.edit.parts.ProfileNameEditPart;
 import org.eclipse.uml2.diagram.profile.edit.parts.Stereotype2EditPart;
 import org.eclipse.uml2.diagram.profile.edit.parts.StereotypeNameEditPart;
@@ -164,6 +165,29 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 	/**
 	 * @generated
 	 */
+	private IParser profileProfileName_5009Parser;
+
+	/**
+	 * @generated
+	 */
+	private IParser getProfileProfileName_5009Parser() {
+		if (profileProfileName_5009Parser == null) {
+			profileProfileName_5009Parser = createProfileProfileName_5009Parser();
+		}
+		return profileProfileName_5009Parser;
+	}
+
+	/**
+	 * @generated
+	 */
+	protected IParser createProfileProfileName_5009Parser() {
+		UMLStructuralFeatureParser parser = new UMLStructuralFeatureParser(UMLPackage.eINSTANCE.getNamedElement_Name());
+		return parser;
+	}
+
+	/**
+	 * @generated
+	 */
 	protected IParser getParser(int visualID) {
 		switch (visualID) {
 		case ConstraintEditPart.VISUAL_ID:
@@ -178,6 +202,8 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 			return getProfileProfileName_5004Parser();
 		case EnumerationNameEditPart.VISUAL_ID:
 			return getEnumerationEnumerationName_5005Parser();
+		case ProfileName2EditPart.VISUAL_ID:
+			return getProfileProfileName_5009Parser();
 		}
 		return null;
 	}

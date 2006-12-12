@@ -36,7 +36,7 @@ public class ReferencedMetaclassParserProvider extends AbstractProvider implemen
 		boolean result = false;
 		if (operation instanceof GetParserOperation) {
 			IAdaptable hint = ((GetParserOperation) operation).getHint();
-			result = (hint != null) && (hint.getAdapter(IElementType.class) == UMLElementTypes.ElementImport_2006); 
+			result = (hint != null) && (hint.getAdapter(IElementType.class) == UMLElementTypes.ElementImport_2006 || hint.getAdapter(IElementType.class) == UMLElementTypes.ElementImport_3009); 
 		}
 		return result;
 	}

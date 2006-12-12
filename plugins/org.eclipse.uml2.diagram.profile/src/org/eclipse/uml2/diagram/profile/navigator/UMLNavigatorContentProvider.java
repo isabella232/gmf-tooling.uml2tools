@@ -29,6 +29,7 @@ import org.eclipse.ui.navigator.ICommonContentExtensionSite;
 import org.eclipse.ui.navigator.ICommonContentProvider;
 
 import org.eclipse.uml2.diagram.profile.edit.parts.ConstraintEditPart;
+import org.eclipse.uml2.diagram.profile.edit.parts.ElementImport2EditPart;
 import org.eclipse.uml2.diagram.profile.edit.parts.ElementImportEditPart;
 import org.eclipse.uml2.diagram.profile.edit.parts.EnumerationEditPart;
 import org.eclipse.uml2.diagram.profile.edit.parts.EnumerationLiteralEditPart;
@@ -36,8 +37,10 @@ import org.eclipse.uml2.diagram.profile.edit.parts.EnumerationLiteralsEditPart;
 import org.eclipse.uml2.diagram.profile.edit.parts.ExtensionEditPart;
 import org.eclipse.uml2.diagram.profile.edit.parts.GeneralizationEditPart;
 import org.eclipse.uml2.diagram.profile.edit.parts.Profile2EditPart;
+import org.eclipse.uml2.diagram.profile.edit.parts.Profile3EditPart;
 import org.eclipse.uml2.diagram.profile.edit.parts.ProfileContentsEditPart;
 import org.eclipse.uml2.diagram.profile.edit.parts.ProfileEditPart;
+import org.eclipse.uml2.diagram.profile.edit.parts.ProfileProfileLabelsEditPart;
 import org.eclipse.uml2.diagram.profile.edit.parts.PropertyEditPart;
 import org.eclipse.uml2.diagram.profile.edit.parts.Stereotype2EditPart;
 import org.eclipse.uml2.diagram.profile.edit.parts.StereotypeAttributesEditPart;
@@ -168,6 +171,11 @@ public class UMLNavigatorContentProvider implements ICommonContentProvider {
 			}
 			return result.toArray();
 		}
+		case Profile3EditPart.VISUAL_ID: {
+			Collection result = new ArrayList();
+			result.addAll(getProfile_2007ToElementImport_3009Children(view, parentElement));
+			return result.toArray();
+		}
 		case Stereotype2EditPart.VISUAL_ID: {
 			Collection result = new ArrayList();
 			UMLNavigatorGroup incominglinks = new UMLNavigatorGroup("incoming links", "icons/incomingLinksNavigatorGroup.gif", parentElement);
@@ -183,12 +191,22 @@ public class UMLNavigatorContentProvider implements ICommonContentProvider {
 			}
 			return result.toArray();
 		}
+		case ElementImport2EditPart.VISUAL_ID: {
+			Collection result = new ArrayList();
+			UMLNavigatorGroup incominglinks = new UMLNavigatorGroup("incoming links", "icons/incomingLinksNavigatorGroup.gif", parentElement);
+			incominglinks.addChildren(getElementImport_3009ToExtension_4002InSource(view, incominglinks));
+			if (!incominglinks.isEmpty()) {
+				result.add(incominglinks);
+			}
+			return result.toArray();
+		}
 		case ProfileEditPart.VISUAL_ID: {
 			Collection result = new ArrayList();
 			result.addAll(getProfile_1000ToStereotype_2001Children(view, parentElement));
 			result.addAll(getProfile_1000ToProfile_2002Children(view, parentElement));
 			result.addAll(getProfile_1000ToEnumeration_2003Children(view, parentElement));
 			result.addAll(getProfile_1000ToElementImport_2006Children(view, parentElement));
+			result.addAll(getProfile_1000ToProfile_2007Children(view, parentElement));
 			UMLNavigatorGroup links = new UMLNavigatorGroup("links", "icons/linksNavigatorGroup.gif", parentElement);
 			links.addChildren(getProfile_1000ToGeneralization_4001Children(view, links));
 			links.addChildren(getProfile_1000ToExtension_4002Children(view, links));
@@ -219,6 +237,7 @@ public class UMLNavigatorContentProvider implements ICommonContentProvider {
 			Collection result = new ArrayList();
 			UMLNavigatorGroup target = new UMLNavigatorGroup("target", "icons/linkTargetNavigatorGroup.gif", parentElement);
 			target.addChildren(getExtension_4002ToElementImport_2006OutTarget((Edge) view, target));
+			target.addChildren(getExtension_4002ToElementImport_3009OutTarget((Edge) view, target));
 			UMLNavigatorGroup source = new UMLNavigatorGroup("source", "icons/linkSourceNavigatorGroup.gif", parentElement);
 			source.addChildren(getExtension_4002ToStereotype_2001InSource((Edge) view, source));
 			source.addChildren(getExtension_4002ToStereotype_3003InSource((Edge) view, source));
@@ -341,6 +360,24 @@ public class UMLNavigatorContentProvider implements ICommonContentProvider {
 	/**
 	 * @generated
 	 */
+	private Collection getProfile_2007ToElementImport_3009Children(View view, Object parent) {
+		Collection result = new ArrayList();
+		Collection connectedViews = getChildrenByType(Collections.singleton(view), UMLVisualIDRegistry.getType(ProfileProfileLabelsEditPart.VISUAL_ID));
+		connectedViews = getChildrenByType(connectedViews, UMLVisualIDRegistry.getType(ElementImport2EditPart.VISUAL_ID));
+		createNavigatorItems(connectedViews, parent, result, isProfile_2007ToElementImport_3009ChildrenLeaf(view));
+		return result;
+	}
+
+	/**
+	 * @generated
+	 */
+	private boolean isProfile_2007ToElementImport_3009ChildrenLeaf(View view) {
+		return false;
+	}
+
+	/**
+	 * @generated
+	 */
 	private Collection getStereotype_2001ToGeneralization_4001InSource(View view, Object parent) {
 		Collection result = new ArrayList();
 		Collection connectedViews = getIncomingLinksByType(Collections.singleton(view), UMLVisualIDRegistry.getType(GeneralizationEditPart.VISUAL_ID));
@@ -352,6 +389,23 @@ public class UMLNavigatorContentProvider implements ICommonContentProvider {
 	 * @generated
 	 */
 	private boolean isStereotype_2001ToGeneralization_4001InSourceLeaf(View view) {
+		return true;
+	}
+
+	/**
+	 * @generated
+	 */
+	private Collection getElementImport_3009ToExtension_4002InSource(View view, Object parent) {
+		Collection result = new ArrayList();
+		Collection connectedViews = getIncomingLinksByType(Collections.singleton(view), UMLVisualIDRegistry.getType(ExtensionEditPart.VISUAL_ID));
+		createNavigatorItems(connectedViews, parent, result, isElementImport_3009ToExtension_4002InSourceLeaf(view));
+		return result;
+	}
+
+	/**
+	 * @generated
+	 */
+	private boolean isElementImport_3009ToExtension_4002InSourceLeaf(View view) {
 		return true;
 	}
 
@@ -478,6 +532,23 @@ public class UMLNavigatorContentProvider implements ICommonContentProvider {
 	/**
 	 * @generated
 	 */
+	private Collection getExtension_4002ToElementImport_3009OutTarget(Edge edge, Object parent) {
+		Collection result = new ArrayList();
+		Collection connectedViews = getLinksTargetByType(Collections.singleton(edge), UMLVisualIDRegistry.getType(ElementImport2EditPart.VISUAL_ID));
+		createNavigatorItems(connectedViews, parent, result, isExtension_4002ToElementImport_3009OutTargetLeaf(edge));
+		return result;
+	}
+
+	/**
+	 * @generated
+	 */
+	private boolean isExtension_4002ToElementImport_3009OutTargetLeaf(Edge edge) {
+		return true;
+	}
+
+	/**
+	 * @generated
+	 */
 	private Collection getProfile_2002ToStereotype_3003Children(View view, Object parent) {
 		Collection result = new ArrayList();
 		Collection connectedViews = getChildrenByType(Collections.singleton(view), UMLVisualIDRegistry.getType(ProfileContentsEditPart.VISUAL_ID));
@@ -525,6 +596,23 @@ public class UMLNavigatorContentProvider implements ICommonContentProvider {
 	 */
 	private boolean isExtension_4002ToStereotype_2001InSourceLeaf(Edge edge) {
 		return true;
+	}
+
+	/**
+	 * @generated
+	 */
+	private Collection getProfile_1000ToProfile_2007Children(View view, Object parent) {
+		Collection result = new ArrayList();
+		Collection connectedViews = getChildrenByType(Collections.singleton(view), UMLVisualIDRegistry.getType(Profile3EditPart.VISUAL_ID));
+		createNavigatorItems(connectedViews, parent, result, isProfile_1000ToProfile_2007ChildrenLeaf(view));
+		return result;
+	}
+
+	/**
+	 * @generated
+	 */
+	private boolean isProfile_1000ToProfile_2007ChildrenLeaf(View view) {
+		return false;
 	}
 
 	/**

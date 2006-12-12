@@ -52,6 +52,10 @@ public class UMLEditPartFactory implements EditPartFactory {
 				return new ElementImportEditPart(view);
 			case ReferencedMetaclassNode_classNameEditPart.VISUAL_ID:
 				return new ReferencedMetaclassNode_classNameEditPart(view);
+			case Profile3EditPart.VISUAL_ID:
+				return new Profile3EditPart(view);
+			case ProfileName2EditPart.VISUAL_ID:
+				return new ProfileName2EditPart(view);
 			case PropertyEditPart.VISUAL_ID:
 				return new PropertyEditPart(view);
 			case ConstraintEditPart.VISUAL_ID:
@@ -60,6 +64,8 @@ public class UMLEditPartFactory implements EditPartFactory {
 				return new Stereotype2EditPart(view);
 			case EnumerationLiteralEditPart.VISUAL_ID:
 				return new EnumerationLiteralEditPart(view);
+			case ElementImport2EditPart.VISUAL_ID:
+				return new ElementImport2EditPart(view);
 			case StereotypeAttributesEditPart.VISUAL_ID:
 				return new StereotypeAttributesEditPart(view);
 			case StereotypeConstraintsEditPart.VISUAL_ID:
@@ -68,6 +74,8 @@ public class UMLEditPartFactory implements EditPartFactory {
 				return new ProfileContentsEditPart(view);
 			case EnumerationLiteralsEditPart.VISUAL_ID:
 				return new EnumerationLiteralsEditPart(view);
+			case ProfileProfileLabelsEditPart.VISUAL_ID:
+				return new ProfileProfileLabelsEditPart(view);
 			case ProfileEditPart.VISUAL_ID:
 				return new ProfileEditPart(view);
 			case GeneralizationEditPart.VISUAL_ID:
