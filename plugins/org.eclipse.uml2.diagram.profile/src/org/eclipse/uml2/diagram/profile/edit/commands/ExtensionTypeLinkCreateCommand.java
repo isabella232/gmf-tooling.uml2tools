@@ -4,7 +4,9 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.gmf.runtime.emf.type.core.commands.CreateRelationshipCommand;
 import org.eclipse.gmf.runtime.emf.type.core.requests.CreateRelationshipRequest;
+import org.eclipse.uml2.uml.Class;
 import org.eclipse.uml2.uml.ElementImport;
+import org.eclipse.uml2.uml.Package;
 import org.eclipse.uml2.uml.Stereotype;
 import org.eclipse.uml2.uml.UMLPackage;
 
@@ -16,7 +18,7 @@ public class ExtensionTypeLinkCreateCommand extends CreateRelationshipCommand {
 	/**
 	 * @generated
 	 */
-	private org.eclipse.uml2.uml.Package myContainer;
+	private Package myContainer;
 
 	/**
 	 * @generated
@@ -31,7 +33,7 @@ public class ExtensionTypeLinkCreateCommand extends CreateRelationshipCommand {
 	/**
 	 * @generated
 	 */
-	public ExtensionTypeLinkCreateCommand(CreateRelationshipRequest req, org.eclipse.uml2.uml.Package container, Stereotype source, ElementImport target) {
+	public ExtensionTypeLinkCreateCommand(CreateRelationshipRequest req, Package container, Stereotype source, ElementImport target) {
 		super(req);
 		super.setElementToEdit(container);
 		myContainer = container;
@@ -42,7 +44,7 @@ public class ExtensionTypeLinkCreateCommand extends CreateRelationshipCommand {
 	/**
 	 * @generated
 	 */
-	public org.eclipse.uml2.uml.Package getContainer() {
+	public Package getContainer() {
 		return myContainer;
 	}
 
@@ -79,7 +81,7 @@ public class ExtensionTypeLinkCreateCommand extends CreateRelationshipCommand {
 	 */
 	protected EObject doDefaultElementCreation() {
 		ElementImport elementImport = (ElementImport) getTarget();
-		org.eclipse.uml2.uml.Class metaclass = (org.eclipse.uml2.uml.Class) elementImport.getImportedElement();
+		Class metaclass = (Class) elementImport.getImportedElement();
 		Stereotype stereotype = (Stereotype) getSource();
 
 		return stereotype.createExtension(metaclass, false);

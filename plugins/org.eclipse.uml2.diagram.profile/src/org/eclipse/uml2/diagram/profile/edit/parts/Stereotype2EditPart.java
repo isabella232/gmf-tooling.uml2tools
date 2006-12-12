@@ -61,8 +61,6 @@ import org.eclipse.jface.text.contentassist.IContentAssistProcessor;
 
 import org.eclipse.jface.viewers.ICellEditorValidator;
 
-import org.eclipse.swt.SWT;
-
 import org.eclipse.swt.accessibility.AccessibleEvent;
 
 import org.eclipse.swt.graphics.Color;
@@ -131,7 +129,6 @@ public class Stereotype2EditPart extends CompartmentEditPart implements ITextAwa
 		installEditPolicy(EditPolicy.PRIMARY_DRAG_ROLE, new UMLTextNonResizableEditPolicy());
 		installEditPolicy(EditPolicy.COMPONENT_ROLE, new ListItemComponentEditPolicy());
 		installEditPolicy(EditPolicy.DIRECT_EDIT_ROLE, new LabelDirectEditPolicy());
-
 	}
 
 	/**
@@ -257,7 +254,7 @@ public class Stereotype2EditPart extends CompartmentEditPart implements ITextAwa
 	 * @generated
 	 */
 	protected boolean isEditable() {
-		return getEditText() != null;
+		return getParser() != null;
 	}
 
 	/**
@@ -447,7 +444,8 @@ public class Stereotype2EditPart extends CompartmentEditPart implements ITextAwa
 	protected void refreshFont() {
 		FontStyle style = (FontStyle) getFontStyleOwnerView().getStyle(NotationPackage.eINSTANCE.getFontStyle());
 		if (style != null) {
-			FontData fontData = new FontData(style.getFontName(), style.getFontHeight(), (style.isBold() ? SWT.BOLD : SWT.NORMAL) | (style.isItalic() ? SWT.ITALIC : SWT.NORMAL));
+			FontData fontData = new FontData(style.getFontName(), style.getFontHeight(), (style.isBold() ? org.eclipse.swt.SWT.BOLD : org.eclipse.swt.SWT.NORMAL)
+					| (style.isItalic() ? org.eclipse.swt.SWT.ITALIC : org.eclipse.swt.SWT.NORMAL));
 			setFont(fontData);
 		}
 	}
@@ -573,5 +571,4 @@ public class Stereotype2EditPart extends CompartmentEditPart implements ITextAwa
 	protected IFigure createFigurePrim() {
 		return new WrapLabel();
 	}
-
 }

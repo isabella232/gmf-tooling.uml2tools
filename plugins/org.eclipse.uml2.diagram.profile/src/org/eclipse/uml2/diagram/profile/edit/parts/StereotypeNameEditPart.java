@@ -61,8 +61,6 @@ import org.eclipse.jface.text.contentassist.IContentAssistProcessor;
 
 import org.eclipse.jface.viewers.ICellEditorValidator;
 
-import org.eclipse.swt.SWT;
-
 import org.eclipse.swt.accessibility.AccessibleEvent;
 
 import org.eclipse.swt.graphics.Color;
@@ -132,7 +130,6 @@ public class StereotypeNameEditPart extends CompartmentEditPart implements IText
 				return false;
 			}
 		});
-
 	}
 
 	/**
@@ -262,7 +259,7 @@ public class StereotypeNameEditPart extends CompartmentEditPart implements IText
 	 * @generated
 	 */
 	protected boolean isEditable() {
-		return getEditText() != null;
+		return getParser() != null;
 	}
 
 	/**
@@ -452,7 +449,8 @@ public class StereotypeNameEditPart extends CompartmentEditPart implements IText
 	protected void refreshFont() {
 		FontStyle style = (FontStyle) getFontStyleOwnerView().getStyle(NotationPackage.eINSTANCE.getFontStyle());
 		if (style != null) {
-			FontData fontData = new FontData(style.getFontName(), style.getFontHeight(), (style.isBold() ? SWT.BOLD : SWT.NORMAL) | (style.isItalic() ? SWT.ITALIC : SWT.NORMAL));
+			FontData fontData = new FontData(style.getFontName(), style.getFontHeight(), (style.isBold() ? org.eclipse.swt.SWT.BOLD : org.eclipse.swt.SWT.NORMAL)
+					| (style.isItalic() ? org.eclipse.swt.SWT.ITALIC : org.eclipse.swt.SWT.NORMAL));
 			setFont(fontData);
 		}
 	}
@@ -567,7 +565,7 @@ public class StereotypeNameEditPart extends CompartmentEditPart implements IText
 	 * @generated
 	 */
 	protected IFigure createFigure() {
-		// Parent should assign one using setLabel method
+		// Parent should assign one using setLabel() method
 		return null;
 	}
 }
