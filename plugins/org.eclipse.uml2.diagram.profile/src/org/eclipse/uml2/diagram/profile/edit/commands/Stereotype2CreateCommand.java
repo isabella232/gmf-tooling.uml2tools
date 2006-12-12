@@ -17,12 +17,12 @@ import org.eclipse.uml2.uml.UMLPackage;
 /**
  * @generated
  */
-public class StereotypeCreateCommand extends CreateElementCommand {
+public class Stereotype2CreateCommand extends CreateElementCommand {
 
 	/**
 	 * @generated
 	 */
-	public StereotypeCreateCommand(CreateElementRequest req) {
+	public Stereotype2CreateCommand(CreateElementRequest req) {
 		super(req);
 	}
 
@@ -50,7 +50,7 @@ public class StereotypeCreateCommand extends CreateElementCommand {
 	protected EObject doDefaultElementCreation() {
 		Stereotype newElement = (Stereotype) super.doDefaultElementCreation();
 		if (newElement != null) {
-			UMLElementTypes.Initializers.Stereotype_2001.init(newElement);
+			UMLElementTypes.Initializers.Stereotype_3003.init(newElement);
 		}
 		return newElement;
 	}

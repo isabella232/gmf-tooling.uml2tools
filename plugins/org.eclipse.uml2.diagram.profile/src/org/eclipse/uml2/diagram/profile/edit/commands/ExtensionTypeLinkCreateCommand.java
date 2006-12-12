@@ -6,6 +6,7 @@ import org.eclipse.gmf.runtime.emf.type.core.commands.CreateRelationshipCommand;
 import org.eclipse.gmf.runtime.emf.type.core.requests.CreateRelationshipRequest;
 import org.eclipse.uml2.uml.Class;
 import org.eclipse.uml2.uml.ElementImport;
+import org.eclipse.uml2.uml.Extension;
 import org.eclipse.uml2.uml.Package;
 import org.eclipse.uml2.uml.Stereotype;
 import org.eclipse.uml2.uml.UMLPackage;
