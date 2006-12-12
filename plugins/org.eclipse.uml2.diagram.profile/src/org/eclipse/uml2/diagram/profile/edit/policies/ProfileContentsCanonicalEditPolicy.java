@@ -11,6 +11,7 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.uml2.diagram.profile.edit.parts.Stereotype2EditPart;
 
 import org.eclipse.uml2.diagram.profile.part.UMLVisualIDRegistry;
+import org.eclipse.uml2.uml.Package;
 
 /**
  * @generated
@@ -26,7 +27,7 @@ public class ProfileContentsCanonicalEditPolicy extends CanonicalEditPolicy {
 		View viewObject = (View) getHost().getModel();
 		EObject nextValue;
 		int nodeVID;
-		for (Iterator values = ((org.eclipse.uml2.uml.Package) modelObject).getPackagedElements().iterator(); values.hasNext();) {
+		for (Iterator values = ((Package) modelObject).getPackagedElements().iterator(); values.hasNext();) {
 			nextValue = (EObject) values.next();
 			nodeVID = UMLVisualIDRegistry.getNodeVisualID(viewObject, nextValue);
 			if (Stereotype2EditPart.VISUAL_ID == nodeVID) {

@@ -43,6 +43,7 @@ import org.eclipse.uml2.diagram.profile.part.UMLDiagramEditorPlugin;
 
 import org.eclipse.uml2.uml.Classifier;
 import org.eclipse.uml2.uml.ElementImport;
+import org.eclipse.uml2.uml.Package;
 import org.eclipse.uml2.uml.Stereotype;
 import org.eclipse.uml2.uml.UMLPackage;
 
@@ -257,7 +258,7 @@ public class UMLBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 		 */
 		static {
 			Map env = new HashMap(3);
-			env.put("oppositeEnd", org.eclipse.uml2.uml.UMLPackage.eINSTANCE.getStereotype()); //$NON-NLS-1$
+			env.put("oppositeEnd", UMLPackage.eINSTANCE.getStereotype()); //$NON-NLS-1$
 			Extension_4002_TargetExpression = UMLOCLFactory.getExpression(
 					"let metaclass : Class = self.importedElement.oclAsType(Class) in\r\nmetaclass.isMetaclass() and \r\nnot oppositeEnd.getAllExtendedMetaclasses()->includes(metaclass)\r\n", //$NON-NLS-1$
 					UMLPackage.eINSTANCE.getElementImport(), env);
@@ -273,7 +274,7 @@ public class UMLBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 		/**
 		 * @generated 
 		 */
-		public static boolean canCreateExtension_4002(org.eclipse.uml2.uml.Package container, Stereotype source, ElementImport target) {
+		public static boolean canCreateExtension_4002(Package container, Stereotype source, ElementImport target) {
 			if (!evaluate(Extension_4002_TargetExpression, target, source, true)) {
 				return false;
 			}

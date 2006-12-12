@@ -15,6 +15,7 @@ import org.eclipse.uml2.diagram.profile.providers.UMLElementTypes;
 
 import org.eclipse.uml2.uml.Classifier;
 import org.eclipse.uml2.uml.ElementImport;
+import org.eclipse.uml2.uml.Package;
 import org.eclipse.uml2.uml.Stereotype;
 import org.eclipse.uml2.uml.UMLPackage;
 
@@ -106,7 +107,7 @@ public class StereotypeItemSemanticEditPolicy extends UMLBaseItemSemanticEditPol
 		Stereotype source = (Stereotype) sourceEObject;
 		ElementImport target = (ElementImport) targetEObject;
 
-		org.eclipse.uml2.uml.Package container = (org.eclipse.uml2.uml.Package) getRelationshipContainer(source, UMLPackage.eINSTANCE.getPackage(), req.getElementType());
+		Package container = (Package) getRelationshipContainer(source, UMLPackage.eINSTANCE.getPackage(), req.getElementType());
 		if (container == null) {
 			return UnexecutableCommand.INSTANCE;
 		}

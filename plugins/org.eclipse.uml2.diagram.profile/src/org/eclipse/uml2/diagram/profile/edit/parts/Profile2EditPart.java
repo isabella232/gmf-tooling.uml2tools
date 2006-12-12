@@ -1,7 +1,13 @@
 package org.eclipse.uml2.diagram.profile.edit.parts;
 
+import org.eclipse.draw2d.ColorConstants;
+import org.eclipse.draw2d.Graphics;
 import org.eclipse.draw2d.IFigure;
+import org.eclipse.draw2d.MarginBorder;
+import org.eclipse.draw2d.RectangleFigure;
 import org.eclipse.draw2d.StackLayout;
+import org.eclipse.draw2d.ToolbarLayout;
+import org.eclipse.draw2d.geometry.Dimension;
 
 import org.eclipse.gef.EditPart;
 import org.eclipse.gef.EditPolicy;
@@ -14,6 +20,8 @@ import org.eclipse.gef.editpolicies.NonResizableEditPolicy;
 
 import org.eclipse.gef.requests.CreateRequest;
 
+import org.eclipse.gmf.internal.codegen.draw2d.GridLayout;
+import org.eclipse.gmf.internal.codegen.draw2d.GridLayoutData;
 import org.eclipse.gmf.runtime.diagram.core.edithelpers.CreateElementRequestAdapter;
 
 import org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart;
@@ -25,6 +33,7 @@ import org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles;
 import org.eclipse.gmf.runtime.diagram.ui.requests.CreateViewAndElementRequest;
 
 import org.eclipse.gmf.runtime.draw2d.ui.figures.ConstrainedToolbarLayout;
+import org.eclipse.gmf.runtime.draw2d.ui.figures.WrapLabel;
 
 import org.eclipse.gmf.runtime.emf.type.core.IElementType;
 
@@ -33,6 +42,7 @@ import org.eclipse.gmf.runtime.gef.ui.figures.NodeFigure;
 
 import org.eclipse.gmf.runtime.notation.View;
 
+import org.eclipse.uml2.diagram.common.draw2d.CenterLayout;
 import org.eclipse.uml2.diagram.profile.edit.policies.Profile2ItemSemanticEditPolicy;
 
 import org.eclipse.uml2.diagram.profile.part.UMLVisualIDRegistry;
@@ -257,14 +267,14 @@ public class Profile2EditPart extends ShapeNodeEditPart {
 	/**
 	 * @generated
 	 */
-	public class ProfileFigure extends org.eclipse.draw2d.RectangleFigure {
+	public class ProfileFigure extends RectangleFigure {
 
 		/**
 		 * @generated
 		 */
 		public ProfileFigure() {
 
-			org.eclipse.gmf.internal.codegen.draw2d.GridLayout layoutThis = new org.eclipse.gmf.internal.codegen.draw2d.GridLayout();
+			GridLayout layoutThis = new GridLayout();
 			layoutThis.numColumns = 2;
 			layoutThis.makeColumnsEqualWidth = true;
 			layoutThis.horizontalSpacing = 0;
@@ -278,8 +288,8 @@ public class Profile2EditPart extends ShapeNodeEditPart {
 			this.setOutline(false);
 			this.setOutlineXOR(false);
 			this.setLineWidth(1);
-			this.setLineStyle(org.eclipse.draw2d.Graphics.LINE_SOLID);
-			this.setForegroundColor(org.eclipse.draw2d.ColorConstants.lightGray);
+			this.setLineStyle(Graphics.LINE_SOLID);
+			this.setForegroundColor(ColorConstants.lightGray);
 			createContents();
 		}
 
@@ -288,19 +298,19 @@ public class Profile2EditPart extends ShapeNodeEditPart {
 		 */
 		private void createContents() {
 
-			org.eclipse.draw2d.RectangleFigure profile_leftTab0 = new org.eclipse.draw2d.RectangleFigure();
+			RectangleFigure profile_leftTab0 = new RectangleFigure();
 			profile_leftTab0.setFill(true);
 			profile_leftTab0.setFillXOR(false);
 			profile_leftTab0.setOutline(true);
 			profile_leftTab0.setOutlineXOR(false);
 			profile_leftTab0.setLineWidth(1);
-			profile_leftTab0.setLineStyle(org.eclipse.draw2d.Graphics.LINE_SOLID);
-			profile_leftTab0.setPreferredSize(new org.eclipse.draw2d.geometry.Dimension(getMapMode().DPtoLP(0), getMapMode().DPtoLP(25)));
-			profile_leftTab0.setMinimumSize(new org.eclipse.draw2d.geometry.Dimension(getMapMode().DPtoLP(0), getMapMode().DPtoLP(25)));
+			profile_leftTab0.setLineStyle(Graphics.LINE_SOLID);
+			profile_leftTab0.setPreferredSize(new Dimension(getMapMode().DPtoLP(0), getMapMode().DPtoLP(25)));
+			profile_leftTab0.setMinimumSize(new Dimension(getMapMode().DPtoLP(0), getMapMode().DPtoLP(25)));
 
-			org.eclipse.gmf.internal.codegen.draw2d.GridLayoutData constraintProfile_leftTab0 = new org.eclipse.gmf.internal.codegen.draw2d.GridLayoutData();
-			constraintProfile_leftTab0.verticalAlignment = org.eclipse.gmf.internal.codegen.draw2d.GridLayoutData.FILL;
-			constraintProfile_leftTab0.horizontalAlignment = org.eclipse.gmf.internal.codegen.draw2d.GridLayoutData.FILL;
+			GridLayoutData constraintProfile_leftTab0 = new GridLayoutData();
+			constraintProfile_leftTab0.verticalAlignment = GridLayoutData.FILL;
+			constraintProfile_leftTab0.horizontalAlignment = GridLayoutData.FILL;
 			constraintProfile_leftTab0.horizontalIndent = 0;
 			constraintProfile_leftTab0.horizontalSpan = 1;
 			constraintProfile_leftTab0.verticalSpan = 1;
@@ -308,19 +318,19 @@ public class Profile2EditPart extends ShapeNodeEditPart {
 			constraintProfile_leftTab0.grabExcessVerticalSpace = false;
 			this.add(profile_leftTab0, constraintProfile_leftTab0);
 
-			org.eclipse.draw2d.RectangleFigure profile_rightTab0 = new org.eclipse.draw2d.RectangleFigure();
+			RectangleFigure profile_rightTab0 = new RectangleFigure();
 			profile_rightTab0.setFill(false);
 			profile_rightTab0.setFillXOR(false);
 			profile_rightTab0.setOutline(false);
 			profile_rightTab0.setOutlineXOR(false);
 			profile_rightTab0.setLineWidth(1);
-			profile_rightTab0.setLineStyle(org.eclipse.draw2d.Graphics.LINE_SOLID);
-			profile_rightTab0.setPreferredSize(new org.eclipse.draw2d.geometry.Dimension(getMapMode().DPtoLP(0), getMapMode().DPtoLP(25)));
-			profile_rightTab0.setMinimumSize(new org.eclipse.draw2d.geometry.Dimension(getMapMode().DPtoLP(0), getMapMode().DPtoLP(25)));
+			profile_rightTab0.setLineStyle(Graphics.LINE_SOLID);
+			profile_rightTab0.setPreferredSize(new Dimension(getMapMode().DPtoLP(0), getMapMode().DPtoLP(25)));
+			profile_rightTab0.setMinimumSize(new Dimension(getMapMode().DPtoLP(0), getMapMode().DPtoLP(25)));
 
-			org.eclipse.gmf.internal.codegen.draw2d.GridLayoutData constraintProfile_rightTab0 = new org.eclipse.gmf.internal.codegen.draw2d.GridLayoutData();
-			constraintProfile_rightTab0.verticalAlignment = org.eclipse.gmf.internal.codegen.draw2d.GridLayoutData.FILL;
-			constraintProfile_rightTab0.horizontalAlignment = org.eclipse.gmf.internal.codegen.draw2d.GridLayoutData.FILL;
+			GridLayoutData constraintProfile_rightTab0 = new GridLayoutData();
+			constraintProfile_rightTab0.verticalAlignment = GridLayoutData.FILL;
+			constraintProfile_rightTab0.horizontalAlignment = GridLayoutData.FILL;
 			constraintProfile_rightTab0.horizontalIndent = 0;
 			constraintProfile_rightTab0.horizontalSpan = 1;
 			constraintProfile_rightTab0.verticalSpan = 1;
@@ -328,18 +338,18 @@ public class Profile2EditPart extends ShapeNodeEditPart {
 			constraintProfile_rightTab0.grabExcessVerticalSpace = false;
 			this.add(profile_rightTab0, constraintProfile_rightTab0);
 
-			org.eclipse.draw2d.RectangleFigure profileFigure_body0 = new org.eclipse.draw2d.RectangleFigure();
+			RectangleFigure profileFigure_body0 = new RectangleFigure();
 			profileFigure_body0.setFill(true);
 			profileFigure_body0.setFillXOR(false);
 			profileFigure_body0.setOutline(true);
 			profileFigure_body0.setOutlineXOR(false);
 			profileFigure_body0.setLineWidth(1);
-			profileFigure_body0.setLineStyle(org.eclipse.draw2d.Graphics.LINE_SOLID);
-			profileFigure_body0.setBorder(new org.eclipse.draw2d.MarginBorder(getMapMode().DPtoLP(1), getMapMode().DPtoLP(1), getMapMode().DPtoLP(1), getMapMode().DPtoLP(1)));
+			profileFigure_body0.setLineStyle(Graphics.LINE_SOLID);
+			profileFigure_body0.setBorder(new MarginBorder(getMapMode().DPtoLP(1), getMapMode().DPtoLP(1), getMapMode().DPtoLP(1), getMapMode().DPtoLP(1)));
 
-			org.eclipse.gmf.internal.codegen.draw2d.GridLayoutData constraintProfileFigure_body0 = new org.eclipse.gmf.internal.codegen.draw2d.GridLayoutData();
-			constraintProfileFigure_body0.verticalAlignment = org.eclipse.gmf.internal.codegen.draw2d.GridLayoutData.FILL;
-			constraintProfileFigure_body0.horizontalAlignment = org.eclipse.gmf.internal.codegen.draw2d.GridLayoutData.FILL;
+			GridLayoutData constraintProfileFigure_body0 = new GridLayoutData();
+			constraintProfileFigure_body0.verticalAlignment = GridLayoutData.FILL;
+			constraintProfileFigure_body0.horizontalAlignment = GridLayoutData.FILL;
 			constraintProfileFigure_body0.horizontalIndent = 0;
 			constraintProfileFigure_body0.horizontalSpan = 2;
 			constraintProfileFigure_body0.verticalSpan = 1;
@@ -347,9 +357,9 @@ public class Profile2EditPart extends ShapeNodeEditPart {
 			constraintProfileFigure_body0.grabExcessVerticalSpace = true;
 			this.add(profileFigure_body0, constraintProfileFigure_body0);
 
-			org.eclipse.draw2d.ToolbarLayout layoutProfileFigure_body0 = new org.eclipse.draw2d.ToolbarLayout();
+			ToolbarLayout layoutProfileFigure_body0 = new ToolbarLayout();
 			layoutProfileFigure_body0.setStretchMinorAxis(true);
-			layoutProfileFigure_body0.setMinorAlignment(org.eclipse.draw2d.ToolbarLayout.ALIGN_CENTER
+			layoutProfileFigure_body0.setMinorAlignment(ToolbarLayout.ALIGN_CENTER
 
 			);
 
@@ -358,55 +368,55 @@ public class Profile2EditPart extends ShapeNodeEditPart {
 
 			profileFigure_body0.setLayoutManager(layoutProfileFigure_body0);
 
-			org.eclipse.draw2d.RectangleFigure profile_NameContainer1 = new org.eclipse.draw2d.RectangleFigure();
+			RectangleFigure profile_NameContainer1 = new RectangleFigure();
 			profile_NameContainer1.setFill(true);
 			profile_NameContainer1.setFillXOR(false);
 			profile_NameContainer1.setOutline(false);
 			profile_NameContainer1.setOutlineXOR(false);
 			profile_NameContainer1.setLineWidth(1);
-			profile_NameContainer1.setLineStyle(org.eclipse.draw2d.Graphics.LINE_SOLID);
-			profile_NameContainer1.setMinimumSize(new org.eclipse.draw2d.geometry.Dimension(getMapMode().DPtoLP(0), getMapMode().DPtoLP(25)));
+			profile_NameContainer1.setLineStyle(Graphics.LINE_SOLID);
+			profile_NameContainer1.setMinimumSize(new Dimension(getMapMode().DPtoLP(0), getMapMode().DPtoLP(25)));
 
 			profileFigure_body0.add(profile_NameContainer1);
 
-			org.eclipse.uml2.diagram.common.draw2d.CenterLayout layoutProfile_NameContainer1 = new org.eclipse.uml2.diagram.common.draw2d.CenterLayout();
+			CenterLayout layoutProfile_NameContainer1 = new CenterLayout();
 
 			profile_NameContainer1.setLayoutManager(layoutProfile_NameContainer1);
 
-			org.eclipse.gmf.runtime.draw2d.ui.figures.WrapLabel profileFigure_NameLabel2 = new org.eclipse.gmf.runtime.draw2d.ui.figures.WrapLabel();
+			WrapLabel profileFigure_NameLabel2 = new WrapLabel();
 			profileFigure_NameLabel2.setText("");
 
 			profile_NameContainer1.add(profileFigure_NameLabel2);
 			setFigureProfileFigure_NameLabel(profileFigure_NameLabel2);
 
-			org.eclipse.draw2d.RectangleFigure profileFigure_ProfileContainer1 = new org.eclipse.draw2d.RectangleFigure();
+			RectangleFigure profileFigure_ProfileContainer1 = new RectangleFigure();
 			profileFigure_ProfileContainer1.setFill(true);
 			profileFigure_ProfileContainer1.setFillXOR(false);
 			profileFigure_ProfileContainer1.setOutline(false);
 			profileFigure_ProfileContainer1.setOutlineXOR(false);
 			profileFigure_ProfileContainer1.setLineWidth(1);
-			profileFigure_ProfileContainer1.setLineStyle(org.eclipse.draw2d.Graphics.LINE_SOLID);
-			profileFigure_ProfileContainer1.setMinimumSize(new org.eclipse.draw2d.geometry.Dimension(getMapMode().DPtoLP(0), getMapMode().DPtoLP(25)));
+			profileFigure_ProfileContainer1.setLineStyle(Graphics.LINE_SOLID);
+			profileFigure_ProfileContainer1.setMinimumSize(new Dimension(getMapMode().DPtoLP(0), getMapMode().DPtoLP(25)));
 
 			profileFigure_body0.add(profileFigure_ProfileContainer1);
 
-			org.eclipse.uml2.diagram.common.draw2d.CenterLayout layoutProfileFigure_ProfileContainer1 = new org.eclipse.uml2.diagram.common.draw2d.CenterLayout();
+			CenterLayout layoutProfileFigure_ProfileContainer1 = new CenterLayout();
 
 			profileFigure_ProfileContainer1.setLayoutManager(layoutProfileFigure_ProfileContainer1);
 
-			org.eclipse.gmf.runtime.draw2d.ui.figures.WrapLabel profile_ProfileLabel2 = new org.eclipse.gmf.runtime.draw2d.ui.figures.WrapLabel();
+			WrapLabel profile_ProfileLabel2 = new WrapLabel();
 			profile_ProfileLabel2.setText("«profile»");
 
 			profileFigure_ProfileContainer1.add(profile_ProfileLabel2);
 			setFigureProfile_ProfileLabel(profile_ProfileLabel2);
 
-			org.eclipse.draw2d.RectangleFigure profileFigure_ContentsCompartment1 = new org.eclipse.draw2d.RectangleFigure();
+			RectangleFigure profileFigure_ContentsCompartment1 = new RectangleFigure();
 			profileFigure_ContentsCompartment1.setFill(true);
 			profileFigure_ContentsCompartment1.setFillXOR(false);
 			profileFigure_ContentsCompartment1.setOutline(false);
 			profileFigure_ContentsCompartment1.setOutlineXOR(false);
 			profileFigure_ContentsCompartment1.setLineWidth(1);
-			profileFigure_ContentsCompartment1.setLineStyle(org.eclipse.draw2d.Graphics.LINE_SOLID);
+			profileFigure_ContentsCompartment1.setLineStyle(Graphics.LINE_SOLID);
 
 			profileFigure_body0.add(profileFigure_ContentsCompartment1);
 			setFigureProfileFigure_ContentsCompartment(profileFigure_ContentsCompartment1);
@@ -416,57 +426,57 @@ public class Profile2EditPart extends ShapeNodeEditPart {
 		/**
 		 * @generated
 		 */
-		private org.eclipse.gmf.runtime.draw2d.ui.figures.WrapLabel fProfileFigure_NameLabel;
+		private WrapLabel fProfileFigure_NameLabel;
 
 		/**
 		 * @generated
 		 */
-		public org.eclipse.gmf.runtime.draw2d.ui.figures.WrapLabel getFigureProfileFigure_NameLabel() {
+		public WrapLabel getFigureProfileFigure_NameLabel() {
 			return fProfileFigure_NameLabel;
 		}
 
 		/**
 		 * @generated
 		 */
-		private void setFigureProfileFigure_NameLabel(org.eclipse.gmf.runtime.draw2d.ui.figures.WrapLabel fig) {
+		private void setFigureProfileFigure_NameLabel(WrapLabel fig) {
 			fProfileFigure_NameLabel = fig;
 		}
 
 		/**
 		 * @generated
 		 */
-		private org.eclipse.gmf.runtime.draw2d.ui.figures.WrapLabel fProfile_ProfileLabel;
+		private WrapLabel fProfile_ProfileLabel;
 
 		/**
 		 * @generated
 		 */
-		public org.eclipse.gmf.runtime.draw2d.ui.figures.WrapLabel getFigureProfile_ProfileLabel() {
+		public WrapLabel getFigureProfile_ProfileLabel() {
 			return fProfile_ProfileLabel;
 		}
 
 		/**
 		 * @generated
 		 */
-		private void setFigureProfile_ProfileLabel(org.eclipse.gmf.runtime.draw2d.ui.figures.WrapLabel fig) {
+		private void setFigureProfile_ProfileLabel(WrapLabel fig) {
 			fProfile_ProfileLabel = fig;
 		}
 
 		/**
 		 * @generated
 		 */
-		private org.eclipse.draw2d.RectangleFigure fProfileFigure_ContentsCompartment;
+		private RectangleFigure fProfileFigure_ContentsCompartment;
 
 		/**
 		 * @generated
 		 */
-		public org.eclipse.draw2d.RectangleFigure getFigureProfileFigure_ContentsCompartment() {
+		public RectangleFigure getFigureProfileFigure_ContentsCompartment() {
 			return fProfileFigure_ContentsCompartment;
 		}
 
 		/**
 		 * @generated
 		 */
-		private void setFigureProfileFigure_ContentsCompartment(org.eclipse.draw2d.RectangleFigure fig) {
+		private void setFigureProfileFigure_ContentsCompartment(RectangleFigure fig) {
 			fProfileFigure_ContentsCompartment = fig;
 		}
 

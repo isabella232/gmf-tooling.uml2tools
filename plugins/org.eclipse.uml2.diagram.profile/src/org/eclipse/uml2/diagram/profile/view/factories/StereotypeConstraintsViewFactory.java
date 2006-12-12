@@ -17,6 +17,7 @@ import org.eclipse.gmf.runtime.notation.TitleStyle;
 import org.eclipse.gmf.runtime.notation.View;
 
 import org.eclipse.uml2.diagram.profile.edit.parts.ProfileEditPart;
+import org.eclipse.uml2.diagram.profile.edit.parts.StereotypeConstraintsEditPart;
 
 import org.eclipse.uml2.diagram.profile.part.UMLVisualIDRegistry;
 
@@ -41,7 +42,7 @@ public class StereotypeConstraintsViewFactory extends ListCompartmentViewFactory
 	 */
 	protected void decorateView(View containerView, View view, IAdaptable semanticAdapter, String semanticHint, int index, boolean persisted) {
 		if (semanticHint == null) {
-			semanticHint = UMLVisualIDRegistry.getType(org.eclipse.uml2.diagram.profile.edit.parts.StereotypeConstraintsEditPart.VISUAL_ID);
+			semanticHint = UMLVisualIDRegistry.getType(StereotypeConstraintsEditPart.VISUAL_ID);
 			view.setType(semanticHint);
 		}
 		super.decorateView(containerView, view, semanticAdapter, semanticHint, index, persisted);

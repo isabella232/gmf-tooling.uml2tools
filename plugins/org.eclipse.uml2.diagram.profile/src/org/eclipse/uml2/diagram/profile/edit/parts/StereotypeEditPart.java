@@ -1,7 +1,10 @@
 package org.eclipse.uml2.diagram.profile.edit.parts;
 
+import org.eclipse.draw2d.Graphics;
 import org.eclipse.draw2d.IFigure;
+import org.eclipse.draw2d.RectangleFigure;
 import org.eclipse.draw2d.StackLayout;
+import org.eclipse.draw2d.geometry.Dimension;
 
 import org.eclipse.gef.EditPart;
 import org.eclipse.gef.EditPolicy;
@@ -14,6 +17,8 @@ import org.eclipse.gef.editpolicies.NonResizableEditPolicy;
 
 import org.eclipse.gef.requests.CreateRequest;
 
+import org.eclipse.gmf.internal.codegen.draw2d.GridLayout;
+import org.eclipse.gmf.internal.codegen.draw2d.GridLayoutData;
 import org.eclipse.gmf.runtime.diagram.core.edithelpers.CreateElementRequestAdapter;
 
 import org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart;
@@ -25,6 +30,7 @@ import org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles;
 import org.eclipse.gmf.runtime.diagram.ui.requests.CreateViewAndElementRequest;
 
 import org.eclipse.gmf.runtime.draw2d.ui.figures.ConstrainedToolbarLayout;
+import org.eclipse.gmf.runtime.draw2d.ui.figures.WrapLabel;
 
 import org.eclipse.gmf.runtime.emf.type.core.IElementType;
 
@@ -33,6 +39,7 @@ import org.eclipse.gmf.runtime.gef.ui.figures.NodeFigure;
 
 import org.eclipse.gmf.runtime.notation.View;
 
+import org.eclipse.uml2.diagram.common.draw2d.CenterLayout;
 import org.eclipse.uml2.diagram.profile.edit.policies.StereotypeItemSemanticEditPolicy;
 
 import org.eclipse.uml2.diagram.profile.part.UMLVisualIDRegistry;
@@ -271,14 +278,14 @@ public class StereotypeEditPart extends ShapeNodeEditPart {
 	/**
 	 * @generated
 	 */
-	public class StereotypeFigure extends org.eclipse.draw2d.RectangleFigure {
+	public class StereotypeFigure extends RectangleFigure {
 
 		/**
 		 * @generated
 		 */
 		public StereotypeFigure() {
 
-			org.eclipse.gmf.internal.codegen.draw2d.GridLayout layoutThis = new org.eclipse.gmf.internal.codegen.draw2d.GridLayout();
+			GridLayout layoutThis = new GridLayout();
 			layoutThis.numColumns = 1;
 			layoutThis.makeColumnsEqualWidth = true;
 			this.setLayoutManager(layoutThis);
@@ -288,7 +295,7 @@ public class StereotypeEditPart extends ShapeNodeEditPart {
 			this.setOutline(true);
 			this.setOutlineXOR(false);
 			this.setLineWidth(1);
-			this.setLineStyle(org.eclipse.draw2d.Graphics.LINE_SOLID);
+			this.setLineStyle(Graphics.LINE_SOLID);
 			createContents();
 		}
 
@@ -297,12 +304,12 @@ public class StereotypeEditPart extends ShapeNodeEditPart {
 		 */
 		private void createContents() {
 
-			org.eclipse.gmf.runtime.draw2d.ui.figures.WrapLabel stereotypeFigure_StereotypeLabel0 = new org.eclipse.gmf.runtime.draw2d.ui.figures.WrapLabel();
+			WrapLabel stereotypeFigure_StereotypeLabel0 = new WrapLabel();
 			stereotypeFigure_StereotypeLabel0.setText("\u00ABstereotype\u00BB");
 
-			org.eclipse.gmf.internal.codegen.draw2d.GridLayoutData constraintStereotypeFigure_StereotypeLabel0 = new org.eclipse.gmf.internal.codegen.draw2d.GridLayoutData();
-			constraintStereotypeFigure_StereotypeLabel0.verticalAlignment = org.eclipse.gmf.internal.codegen.draw2d.GridLayoutData.FILL;
-			constraintStereotypeFigure_StereotypeLabel0.horizontalAlignment = org.eclipse.gmf.internal.codegen.draw2d.GridLayoutData.FILL;
+			GridLayoutData constraintStereotypeFigure_StereotypeLabel0 = new GridLayoutData();
+			constraintStereotypeFigure_StereotypeLabel0.verticalAlignment = GridLayoutData.FILL;
+			constraintStereotypeFigure_StereotypeLabel0.horizontalAlignment = GridLayoutData.FILL;
 			constraintStereotypeFigure_StereotypeLabel0.horizontalIndent = 0;
 			constraintStereotypeFigure_StereotypeLabel0.horizontalSpan = 2;
 			constraintStereotypeFigure_StereotypeLabel0.verticalSpan = 1;
@@ -312,18 +319,18 @@ public class StereotypeEditPart extends ShapeNodeEditPart {
 
 			setFigureStereotypeFigure_StereotypeLabel(stereotypeFigure_StereotypeLabel0);
 
-			org.eclipse.draw2d.RectangleFigure stereotypeFigure_NameContainer0 = new org.eclipse.draw2d.RectangleFigure();
+			RectangleFigure stereotypeFigure_NameContainer0 = new RectangleFigure();
 			stereotypeFigure_NameContainer0.setFill(true);
 			stereotypeFigure_NameContainer0.setFillXOR(false);
 			stereotypeFigure_NameContainer0.setOutline(false);
 			stereotypeFigure_NameContainer0.setOutlineXOR(false);
 			stereotypeFigure_NameContainer0.setLineWidth(1);
-			stereotypeFigure_NameContainer0.setLineStyle(org.eclipse.draw2d.Graphics.LINE_SOLID);
-			stereotypeFigure_NameContainer0.setMinimumSize(new org.eclipse.draw2d.geometry.Dimension(getMapMode().DPtoLP(0), getMapMode().DPtoLP(25)));
+			stereotypeFigure_NameContainer0.setLineStyle(Graphics.LINE_SOLID);
+			stereotypeFigure_NameContainer0.setMinimumSize(new Dimension(getMapMode().DPtoLP(0), getMapMode().DPtoLP(25)));
 
-			org.eclipse.gmf.internal.codegen.draw2d.GridLayoutData constraintStereotypeFigure_NameContainer0 = new org.eclipse.gmf.internal.codegen.draw2d.GridLayoutData();
-			constraintStereotypeFigure_NameContainer0.verticalAlignment = org.eclipse.gmf.internal.codegen.draw2d.GridLayoutData.FILL;
-			constraintStereotypeFigure_NameContainer0.horizontalAlignment = org.eclipse.gmf.internal.codegen.draw2d.GridLayoutData.FILL;
+			GridLayoutData constraintStereotypeFigure_NameContainer0 = new GridLayoutData();
+			constraintStereotypeFigure_NameContainer0.verticalAlignment = GridLayoutData.FILL;
+			constraintStereotypeFigure_NameContainer0.horizontalAlignment = GridLayoutData.FILL;
 			constraintStereotypeFigure_NameContainer0.horizontalIndent = 0;
 			constraintStereotypeFigure_NameContainer0.horizontalSpan = 2;
 			constraintStereotypeFigure_NameContainer0.verticalSpan = 1;
@@ -331,27 +338,27 @@ public class StereotypeEditPart extends ShapeNodeEditPart {
 			constraintStereotypeFigure_NameContainer0.grabExcessVerticalSpace = false;
 			this.add(stereotypeFigure_NameContainer0, constraintStereotypeFigure_NameContainer0);
 
-			org.eclipse.uml2.diagram.common.draw2d.CenterLayout layoutStereotypeFigure_NameContainer0 = new org.eclipse.uml2.diagram.common.draw2d.CenterLayout();
+			CenterLayout layoutStereotypeFigure_NameContainer0 = new CenterLayout();
 
 			stereotypeFigure_NameContainer0.setLayoutManager(layoutStereotypeFigure_NameContainer0);
 
-			org.eclipse.gmf.runtime.draw2d.ui.figures.WrapLabel stereotypeFigure_NameLabel1 = new org.eclipse.gmf.runtime.draw2d.ui.figures.WrapLabel();
+			WrapLabel stereotypeFigure_NameLabel1 = new WrapLabel();
 			stereotypeFigure_NameLabel1.setText("");
 
 			stereotypeFigure_NameContainer0.add(stereotypeFigure_NameLabel1);
 			setFigureStereotypeFigure_NameLabel(stereotypeFigure_NameLabel1);
 
-			org.eclipse.draw2d.RectangleFigure stereotypeFigure_AttributesCompartment0 = new org.eclipse.draw2d.RectangleFigure();
+			RectangleFigure stereotypeFigure_AttributesCompartment0 = new RectangleFigure();
 			stereotypeFigure_AttributesCompartment0.setFill(true);
 			stereotypeFigure_AttributesCompartment0.setFillXOR(false);
 			stereotypeFigure_AttributesCompartment0.setOutline(false);
 			stereotypeFigure_AttributesCompartment0.setOutlineXOR(false);
 			stereotypeFigure_AttributesCompartment0.setLineWidth(1);
-			stereotypeFigure_AttributesCompartment0.setLineStyle(org.eclipse.draw2d.Graphics.LINE_SOLID);
+			stereotypeFigure_AttributesCompartment0.setLineStyle(Graphics.LINE_SOLID);
 
-			org.eclipse.gmf.internal.codegen.draw2d.GridLayoutData constraintStereotypeFigure_AttributesCompartment0 = new org.eclipse.gmf.internal.codegen.draw2d.GridLayoutData();
-			constraintStereotypeFigure_AttributesCompartment0.verticalAlignment = org.eclipse.gmf.internal.codegen.draw2d.GridLayoutData.FILL;
-			constraintStereotypeFigure_AttributesCompartment0.horizontalAlignment = org.eclipse.gmf.internal.codegen.draw2d.GridLayoutData.FILL;
+			GridLayoutData constraintStereotypeFigure_AttributesCompartment0 = new GridLayoutData();
+			constraintStereotypeFigure_AttributesCompartment0.verticalAlignment = GridLayoutData.FILL;
+			constraintStereotypeFigure_AttributesCompartment0.horizontalAlignment = GridLayoutData.FILL;
 			constraintStereotypeFigure_AttributesCompartment0.horizontalIndent = 0;
 			constraintStereotypeFigure_AttributesCompartment0.horizontalSpan = 2;
 			constraintStereotypeFigure_AttributesCompartment0.verticalSpan = 1;
@@ -361,17 +368,17 @@ public class StereotypeEditPart extends ShapeNodeEditPart {
 
 			setFigureStereotypeFigure_AttributesCompartment(stereotypeFigure_AttributesCompartment0);
 
-			org.eclipse.draw2d.RectangleFigure stereotypeFigure_ConstraintsCompartment0 = new org.eclipse.draw2d.RectangleFigure();
+			RectangleFigure stereotypeFigure_ConstraintsCompartment0 = new RectangleFigure();
 			stereotypeFigure_ConstraintsCompartment0.setFill(true);
 			stereotypeFigure_ConstraintsCompartment0.setFillXOR(false);
 			stereotypeFigure_ConstraintsCompartment0.setOutline(false);
 			stereotypeFigure_ConstraintsCompartment0.setOutlineXOR(false);
 			stereotypeFigure_ConstraintsCompartment0.setLineWidth(1);
-			stereotypeFigure_ConstraintsCompartment0.setLineStyle(org.eclipse.draw2d.Graphics.LINE_SOLID);
+			stereotypeFigure_ConstraintsCompartment0.setLineStyle(Graphics.LINE_SOLID);
 
-			org.eclipse.gmf.internal.codegen.draw2d.GridLayoutData constraintStereotypeFigure_ConstraintsCompartment0 = new org.eclipse.gmf.internal.codegen.draw2d.GridLayoutData();
-			constraintStereotypeFigure_ConstraintsCompartment0.verticalAlignment = org.eclipse.gmf.internal.codegen.draw2d.GridLayoutData.FILL;
-			constraintStereotypeFigure_ConstraintsCompartment0.horizontalAlignment = org.eclipse.gmf.internal.codegen.draw2d.GridLayoutData.FILL;
+			GridLayoutData constraintStereotypeFigure_ConstraintsCompartment0 = new GridLayoutData();
+			constraintStereotypeFigure_ConstraintsCompartment0.verticalAlignment = GridLayoutData.FILL;
+			constraintStereotypeFigure_ConstraintsCompartment0.horizontalAlignment = GridLayoutData.FILL;
 			constraintStereotypeFigure_ConstraintsCompartment0.horizontalIndent = 0;
 			constraintStereotypeFigure_ConstraintsCompartment0.horizontalSpan = 2;
 			constraintStereotypeFigure_ConstraintsCompartment0.verticalSpan = 1;
@@ -386,76 +393,76 @@ public class StereotypeEditPart extends ShapeNodeEditPart {
 		/**
 		 * @generated
 		 */
-		private org.eclipse.gmf.runtime.draw2d.ui.figures.WrapLabel fStereotypeFigure_StereotypeLabel;
+		private WrapLabel fStereotypeFigure_StereotypeLabel;
 
 		/**
 		 * @generated
 		 */
-		public org.eclipse.gmf.runtime.draw2d.ui.figures.WrapLabel getFigureStereotypeFigure_StereotypeLabel() {
+		public WrapLabel getFigureStereotypeFigure_StereotypeLabel() {
 			return fStereotypeFigure_StereotypeLabel;
 		}
 
 		/**
 		 * @generated
 		 */
-		private void setFigureStereotypeFigure_StereotypeLabel(org.eclipse.gmf.runtime.draw2d.ui.figures.WrapLabel fig) {
+		private void setFigureStereotypeFigure_StereotypeLabel(WrapLabel fig) {
 			fStereotypeFigure_StereotypeLabel = fig;
 		}
 
 		/**
 		 * @generated
 		 */
-		private org.eclipse.gmf.runtime.draw2d.ui.figures.WrapLabel fStereotypeFigure_NameLabel;
+		private WrapLabel fStereotypeFigure_NameLabel;
 
 		/**
 		 * @generated
 		 */
-		public org.eclipse.gmf.runtime.draw2d.ui.figures.WrapLabel getFigureStereotypeFigure_NameLabel() {
+		public WrapLabel getFigureStereotypeFigure_NameLabel() {
 			return fStereotypeFigure_NameLabel;
 		}
 
 		/**
 		 * @generated
 		 */
-		private void setFigureStereotypeFigure_NameLabel(org.eclipse.gmf.runtime.draw2d.ui.figures.WrapLabel fig) {
+		private void setFigureStereotypeFigure_NameLabel(WrapLabel fig) {
 			fStereotypeFigure_NameLabel = fig;
 		}
 
 		/**
 		 * @generated
 		 */
-		private org.eclipse.draw2d.RectangleFigure fStereotypeFigure_AttributesCompartment;
+		private RectangleFigure fStereotypeFigure_AttributesCompartment;
 
 		/**
 		 * @generated
 		 */
-		public org.eclipse.draw2d.RectangleFigure getFigureStereotypeFigure_AttributesCompartment() {
+		public RectangleFigure getFigureStereotypeFigure_AttributesCompartment() {
 			return fStereotypeFigure_AttributesCompartment;
 		}
 
 		/**
 		 * @generated
 		 */
-		private void setFigureStereotypeFigure_AttributesCompartment(org.eclipse.draw2d.RectangleFigure fig) {
+		private void setFigureStereotypeFigure_AttributesCompartment(RectangleFigure fig) {
 			fStereotypeFigure_AttributesCompartment = fig;
 		}
 
 		/**
 		 * @generated
 		 */
-		private org.eclipse.draw2d.RectangleFigure fStereotypeFigure_ConstraintsCompartment;
+		private RectangleFigure fStereotypeFigure_ConstraintsCompartment;
 
 		/**
 		 * @generated
 		 */
-		public org.eclipse.draw2d.RectangleFigure getFigureStereotypeFigure_ConstraintsCompartment() {
+		public RectangleFigure getFigureStereotypeFigure_ConstraintsCompartment() {
 			return fStereotypeFigure_ConstraintsCompartment;
 		}
 
 		/**
 		 * @generated
 		 */
-		private void setFigureStereotypeFigure_ConstraintsCompartment(org.eclipse.draw2d.RectangleFigure fig) {
+		private void setFigureStereotypeFigure_ConstraintsCompartment(RectangleFigure fig) {
 			fStereotypeFigure_ConstraintsCompartment = fig;
 		}
 

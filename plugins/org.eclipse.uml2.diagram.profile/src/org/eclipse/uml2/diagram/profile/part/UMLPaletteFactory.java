@@ -1,5 +1,17 @@
 package org.eclipse.uml2.diagram.profile.part;
 
+import java.util.ArrayList;
+import java.util.List;
+
+import org.eclipse.gef.Tool;
+import org.eclipse.gef.palette.PaletteContainer;
+import org.eclipse.gef.palette.PaletteGroup;
+import org.eclipse.gef.palette.PaletteRoot;
+import org.eclipse.gef.palette.ToolEntry;
+import org.eclipse.gmf.runtime.diagram.ui.tools.UnspecifiedTypeConnectionTool;
+import org.eclipse.gmf.runtime.diagram.ui.tools.UnspecifiedTypeCreationTool;
+import org.eclipse.uml2.diagram.profile.providers.UMLElementTypes;
+
 /**
  * @generated
  */
@@ -8,7 +20,7 @@ public class UMLPaletteFactory {
 	/**
 	 * @generated
 	 */
-	public void fillPalette(org.eclipse.gef.palette.PaletteRoot paletteRoot) {
+	public void fillPalette(PaletteRoot paletteRoot) {
 		paletteRoot.add(createProfiles1Group());
 		paletteRoot.add(createUML2Group());
 	}
@@ -17,8 +29,8 @@ public class UMLPaletteFactory {
 	 * Creates "UML" palette tool group
 	 * @generated
 	 */
-	private org.eclipse.gef.palette.PaletteContainer createUML2Group() {
-		org.eclipse.gef.palette.PaletteGroup paletteContainer = new org.eclipse.gef.palette.PaletteGroup(org.eclipse.uml2.diagram.profile.part.UMLDiagramEditorPlugin.getString("UML2Group.title")); //$NON-NLS-1$
+	private PaletteContainer createUML2Group() {
+		PaletteGroup paletteContainer = new PaletteGroup(UMLDiagramEditorPlugin.getString("UML2Group.title")); //$NON-NLS-1$
 		paletteContainer.add(createEnumeration1CreationTool());
 		paletteContainer.add(createGeneralization2CreationTool());
 		paletteContainer.add(createProperty3CreationTool());
@@ -31,8 +43,8 @@ public class UMLPaletteFactory {
 	 * Creates "Profiles" palette tool group
 	 * @generated
 	 */
-	private org.eclipse.gef.palette.PaletteContainer createProfiles1Group() {
-		org.eclipse.gef.palette.PaletteGroup paletteContainer = new org.eclipse.gef.palette.PaletteGroup(org.eclipse.uml2.diagram.profile.part.UMLDiagramEditorPlugin.getString("Profiles1Group.title")); //$NON-NLS-1$
+	private PaletteContainer createProfiles1Group() {
+		PaletteGroup paletteContainer = new PaletteGroup(UMLDiagramEditorPlugin.getString("Profiles1Group.title")); //$NON-NLS-1$
 		paletteContainer.add(createProfile1CreationTool());
 		paletteContainer.add(createStereotype2CreationTool());
 		paletteContainer.add(createMetaclass3CreationTool());
@@ -43,12 +55,11 @@ public class UMLPaletteFactory {
 	/**
 	 * @generated
 	 */
-	private org.eclipse.gef.palette.ToolEntry createEnumeration1CreationTool() {
-		java.util.List/*<IElementType>*/types = new java.util.ArrayList/*<IElementType>*/(1);
-		types.add(org.eclipse.uml2.diagram.profile.providers.UMLElementTypes.Enumeration_2003);
-		NodeToolEntry entry = new NodeToolEntry(
-				org.eclipse.uml2.diagram.profile.part.UMLDiagramEditorPlugin.getString("Enumeration1CreationTool.title"), org.eclipse.uml2.diagram.profile.part.UMLDiagramEditorPlugin.getString("Enumeration1CreationTool.desc"), types); //$NON-NLS-1$ $NON-NLS-2$
-		entry.setSmallIcon(org.eclipse.uml2.diagram.profile.providers.UMLElementTypes.getImageDescriptor(org.eclipse.uml2.diagram.profile.providers.UMLElementTypes.Enumeration_2003));
+	private ToolEntry createEnumeration1CreationTool() {
+		List/*<IElementType>*/types = new ArrayList/*<IElementType>*/(1);
+		types.add(UMLElementTypes.Enumeration_2003);
+		NodeToolEntry entry = new NodeToolEntry(UMLDiagramEditorPlugin.getString("Enumeration1CreationTool.title"), UMLDiagramEditorPlugin.getString("Enumeration1CreationTool.desc"), types); //$NON-NLS-1$ $NON-NLS-2$
+		entry.setSmallIcon(UMLElementTypes.getImageDescriptor(UMLElementTypes.Enumeration_2003));
 		entry.setLargeIcon(entry.getSmallIcon());
 		return entry;
 	}
@@ -56,12 +67,11 @@ public class UMLPaletteFactory {
 	/**
 	 * @generated
 	 */
-	private org.eclipse.gef.palette.ToolEntry createGeneralization2CreationTool() {
-		java.util.List/*<IElementType>*/types = new java.util.ArrayList/*<IElementType>*/(1);
-		types.add(org.eclipse.uml2.diagram.profile.providers.UMLElementTypes.Generalization_4001);
-		LinkToolEntry entry = new LinkToolEntry(
-				org.eclipse.uml2.diagram.profile.part.UMLDiagramEditorPlugin.getString("Generalization2CreationTool.title"), org.eclipse.uml2.diagram.profile.part.UMLDiagramEditorPlugin.getString("Generalization2CreationTool.desc"), types); //$NON-NLS-1$ $NON-NLS-2$
-		entry.setSmallIcon(org.eclipse.uml2.diagram.profile.providers.UMLElementTypes.getImageDescriptor(org.eclipse.uml2.diagram.profile.providers.UMLElementTypes.Generalization_4001));
+	private ToolEntry createGeneralization2CreationTool() {
+		List/*<IElementType>*/types = new ArrayList/*<IElementType>*/(1);
+		types.add(UMLElementTypes.Generalization_4001);
+		LinkToolEntry entry = new LinkToolEntry(UMLDiagramEditorPlugin.getString("Generalization2CreationTool.title"), UMLDiagramEditorPlugin.getString("Generalization2CreationTool.desc"), types); //$NON-NLS-1$ $NON-NLS-2$
+		entry.setSmallIcon(UMLElementTypes.getImageDescriptor(UMLElementTypes.Generalization_4001));
 		entry.setLargeIcon(entry.getSmallIcon());
 		return entry;
 	}
@@ -69,12 +79,11 @@ public class UMLPaletteFactory {
 	/**
 	 * @generated
 	 */
-	private org.eclipse.gef.palette.ToolEntry createProperty3CreationTool() {
-		java.util.List/*<IElementType>*/types = new java.util.ArrayList/*<IElementType>*/(1);
-		types.add(org.eclipse.uml2.diagram.profile.providers.UMLElementTypes.Property_3001);
-		NodeToolEntry entry = new NodeToolEntry(
-				org.eclipse.uml2.diagram.profile.part.UMLDiagramEditorPlugin.getString("Property3CreationTool.title"), org.eclipse.uml2.diagram.profile.part.UMLDiagramEditorPlugin.getString("Property3CreationTool.desc"), types); //$NON-NLS-1$ $NON-NLS-2$
-		entry.setSmallIcon(org.eclipse.uml2.diagram.profile.providers.UMLElementTypes.getImageDescriptor(org.eclipse.uml2.diagram.profile.providers.UMLElementTypes.Property_3001));
+	private ToolEntry createProperty3CreationTool() {
+		List/*<IElementType>*/types = new ArrayList/*<IElementType>*/(1);
+		types.add(UMLElementTypes.Property_3001);
+		NodeToolEntry entry = new NodeToolEntry(UMLDiagramEditorPlugin.getString("Property3CreationTool.title"), UMLDiagramEditorPlugin.getString("Property3CreationTool.desc"), types); //$NON-NLS-1$ $NON-NLS-2$
+		entry.setSmallIcon(UMLElementTypes.getImageDescriptor(UMLElementTypes.Property_3001));
 		entry.setLargeIcon(entry.getSmallIcon());
 		return entry;
 	}
@@ -82,12 +91,11 @@ public class UMLPaletteFactory {
 	/**
 	 * @generated
 	 */
-	private org.eclipse.gef.palette.ToolEntry createConstraint4CreationTool() {
-		java.util.List/*<IElementType>*/types = new java.util.ArrayList/*<IElementType>*/(1);
-		types.add(org.eclipse.uml2.diagram.profile.providers.UMLElementTypes.Constraint_3008);
-		NodeToolEntry entry = new NodeToolEntry(
-				org.eclipse.uml2.diagram.profile.part.UMLDiagramEditorPlugin.getString("Constraint4CreationTool.title"), org.eclipse.uml2.diagram.profile.part.UMLDiagramEditorPlugin.getString("Constraint4CreationTool.desc"), types); //$NON-NLS-1$ $NON-NLS-2$
-		entry.setSmallIcon(org.eclipse.uml2.diagram.profile.providers.UMLElementTypes.getImageDescriptor(org.eclipse.uml2.diagram.profile.providers.UMLElementTypes.Constraint_3008));
+	private ToolEntry createConstraint4CreationTool() {
+		List/*<IElementType>*/types = new ArrayList/*<IElementType>*/(1);
+		types.add(UMLElementTypes.Constraint_3008);
+		NodeToolEntry entry = new NodeToolEntry(UMLDiagramEditorPlugin.getString("Constraint4CreationTool.title"), UMLDiagramEditorPlugin.getString("Constraint4CreationTool.desc"), types); //$NON-NLS-1$ $NON-NLS-2$
+		entry.setSmallIcon(UMLElementTypes.getImageDescriptor(UMLElementTypes.Constraint_3008));
 		entry.setLargeIcon(entry.getSmallIcon());
 		return entry;
 	}
@@ -95,12 +103,11 @@ public class UMLPaletteFactory {
 	/**
 	 * @generated
 	 */
-	private org.eclipse.gef.palette.ToolEntry createLiteral5CreationTool() {
-		java.util.List/*<IElementType>*/types = new java.util.ArrayList/*<IElementType>*/(1);
-		types.add(org.eclipse.uml2.diagram.profile.providers.UMLElementTypes.EnumerationLiteral_3005);
-		NodeToolEntry entry = new NodeToolEntry(
-				org.eclipse.uml2.diagram.profile.part.UMLDiagramEditorPlugin.getString("Literal5CreationTool.title"), org.eclipse.uml2.diagram.profile.part.UMLDiagramEditorPlugin.getString("Literal5CreationTool.desc"), types); //$NON-NLS-1$ $NON-NLS-2$
-		entry.setSmallIcon(org.eclipse.uml2.diagram.profile.providers.UMLElementTypes.getImageDescriptor(org.eclipse.uml2.diagram.profile.providers.UMLElementTypes.EnumerationLiteral_3005));
+	private ToolEntry createLiteral5CreationTool() {
+		List/*<IElementType>*/types = new ArrayList/*<IElementType>*/(1);
+		types.add(UMLElementTypes.EnumerationLiteral_3005);
+		NodeToolEntry entry = new NodeToolEntry(UMLDiagramEditorPlugin.getString("Literal5CreationTool.title"), UMLDiagramEditorPlugin.getString("Literal5CreationTool.desc"), types); //$NON-NLS-1$ $NON-NLS-2$
+		entry.setSmallIcon(UMLElementTypes.getImageDescriptor(UMLElementTypes.EnumerationLiteral_3005));
 		entry.setLargeIcon(entry.getSmallIcon());
 		return entry;
 	}
@@ -108,12 +115,11 @@ public class UMLPaletteFactory {
 	/**
 	 * @generated
 	 */
-	private org.eclipse.gef.palette.ToolEntry createProfile1CreationTool() {
-		java.util.List/*<IElementType>*/types = new java.util.ArrayList/*<IElementType>*/(1);
-		types.add(org.eclipse.uml2.diagram.profile.providers.UMLElementTypes.Profile_2002);
-		NodeToolEntry entry = new NodeToolEntry(
-				org.eclipse.uml2.diagram.profile.part.UMLDiagramEditorPlugin.getString("Profile1CreationTool.title"), org.eclipse.uml2.diagram.profile.part.UMLDiagramEditorPlugin.getString("Profile1CreationTool.desc"), types); //$NON-NLS-1$ $NON-NLS-2$
-		entry.setSmallIcon(org.eclipse.uml2.diagram.profile.providers.UMLElementTypes.getImageDescriptor(org.eclipse.uml2.diagram.profile.providers.UMLElementTypes.Profile_2002));
+	private ToolEntry createProfile1CreationTool() {
+		List/*<IElementType>*/types = new ArrayList/*<IElementType>*/(1);
+		types.add(UMLElementTypes.Profile_2002);
+		NodeToolEntry entry = new NodeToolEntry(UMLDiagramEditorPlugin.getString("Profile1CreationTool.title"), UMLDiagramEditorPlugin.getString("Profile1CreationTool.desc"), types); //$NON-NLS-1$ $NON-NLS-2$
+		entry.setSmallIcon(UMLElementTypes.getImageDescriptor(UMLElementTypes.Profile_2002));
 		entry.setLargeIcon(entry.getSmallIcon());
 		return entry;
 	}
@@ -121,13 +127,12 @@ public class UMLPaletteFactory {
 	/**
 	 * @generated
 	 */
-	private org.eclipse.gef.palette.ToolEntry createStereotype2CreationTool() {
-		java.util.List/*<IElementType>*/types = new java.util.ArrayList/*<IElementType>*/(2);
-		types.add(org.eclipse.uml2.diagram.profile.providers.UMLElementTypes.Stereotype_2001);
-		types.add(org.eclipse.uml2.diagram.profile.providers.UMLElementTypes.Stereotype_3003);
-		NodeToolEntry entry = new NodeToolEntry(
-				org.eclipse.uml2.diagram.profile.part.UMLDiagramEditorPlugin.getString("Stereotype2CreationTool.title"), org.eclipse.uml2.diagram.profile.part.UMLDiagramEditorPlugin.getString("Stereotype2CreationTool.desc"), types); //$NON-NLS-1$ $NON-NLS-2$
-		entry.setSmallIcon(org.eclipse.uml2.diagram.profile.providers.UMLElementTypes.getImageDescriptor(org.eclipse.uml2.diagram.profile.providers.UMLElementTypes.Stereotype_2001));
+	private ToolEntry createStereotype2CreationTool() {
+		List/*<IElementType>*/types = new ArrayList/*<IElementType>*/(2);
+		types.add(UMLElementTypes.Stereotype_2001);
+		types.add(UMLElementTypes.Stereotype_3003);
+		NodeToolEntry entry = new NodeToolEntry(UMLDiagramEditorPlugin.getString("Stereotype2CreationTool.title"), UMLDiagramEditorPlugin.getString("Stereotype2CreationTool.desc"), types); //$NON-NLS-1$ $NON-NLS-2$
+		entry.setSmallIcon(UMLElementTypes.getImageDescriptor(UMLElementTypes.Stereotype_2001));
 		entry.setLargeIcon(entry.getSmallIcon());
 		return entry;
 	}
@@ -135,12 +140,11 @@ public class UMLPaletteFactory {
 	/**
 	 * @generated
 	 */
-	private org.eclipse.gef.palette.ToolEntry createMetaclass3CreationTool() {
-		java.util.List/*<IElementType>*/types = new java.util.ArrayList/*<IElementType>*/(1);
-		types.add(org.eclipse.uml2.diagram.profile.providers.UMLElementTypes.ElementImport_2006);
-		NodeToolEntry entry = new NodeToolEntry(
-				org.eclipse.uml2.diagram.profile.part.UMLDiagramEditorPlugin.getString("Metaclass3CreationTool.title"), org.eclipse.uml2.diagram.profile.part.UMLDiagramEditorPlugin.getString("Metaclass3CreationTool.desc"), types); //$NON-NLS-1$ $NON-NLS-2$
-		entry.setSmallIcon(org.eclipse.uml2.diagram.profile.providers.UMLElementTypes.getImageDescriptor(org.eclipse.uml2.diagram.profile.providers.UMLElementTypes.ElementImport_2006));
+	private ToolEntry createMetaclass3CreationTool() {
+		List/*<IElementType>*/types = new ArrayList/*<IElementType>*/(1);
+		types.add(UMLElementTypes.ElementImport_2006);
+		NodeToolEntry entry = new NodeToolEntry(UMLDiagramEditorPlugin.getString("Metaclass3CreationTool.title"), UMLDiagramEditorPlugin.getString("Metaclass3CreationTool.desc"), types); //$NON-NLS-1$ $NON-NLS-2$
+		entry.setSmallIcon(UMLElementTypes.getImageDescriptor(UMLElementTypes.ElementImport_2006));
 		entry.setLargeIcon(entry.getSmallIcon());
 		return entry;
 	}
@@ -148,12 +152,11 @@ public class UMLPaletteFactory {
 	/**
 	 * @generated
 	 */
-	private org.eclipse.gef.palette.ToolEntry createExtension4CreationTool() {
-		java.util.List/*<IElementType>*/types = new java.util.ArrayList/*<IElementType>*/(1);
-		types.add(org.eclipse.uml2.diagram.profile.providers.UMLElementTypes.Extension_4002);
-		LinkToolEntry entry = new LinkToolEntry(
-				org.eclipse.uml2.diagram.profile.part.UMLDiagramEditorPlugin.getString("Extension4CreationTool.title"), org.eclipse.uml2.diagram.profile.part.UMLDiagramEditorPlugin.getString("Extension4CreationTool.desc"), types); //$NON-NLS-1$ $NON-NLS-2$
-		entry.setSmallIcon(org.eclipse.uml2.diagram.profile.providers.UMLElementTypes.getImageDescriptor(org.eclipse.uml2.diagram.profile.providers.UMLElementTypes.Extension_4002));
+	private ToolEntry createExtension4CreationTool() {
+		List/*<IElementType>*/types = new ArrayList/*<IElementType>*/(1);
+		types.add(UMLElementTypes.Extension_4002);
+		LinkToolEntry entry = new LinkToolEntry(UMLDiagramEditorPlugin.getString("Extension4CreationTool.title"), UMLDiagramEditorPlugin.getString("Extension4CreationTool.desc"), types); //$NON-NLS-1$ $NON-NLS-2$
+		entry.setSmallIcon(UMLElementTypes.getImageDescriptor(UMLElementTypes.Extension_4002));
 		entry.setLargeIcon(entry.getSmallIcon());
 		return entry;
 	}
@@ -161,17 +164,17 @@ public class UMLPaletteFactory {
 	/**
 	 * @generated
 	 */
-	private static class NodeToolEntry extends org.eclipse.gef.palette.ToolEntry {
+	private static class NodeToolEntry extends ToolEntry {
 
 		/**
 		 * @generated
 		 */
-		private final java.util.List elementTypes;
+		private final List elementTypes;
 
 		/**
 		 * @generated
 		 */
-		private NodeToolEntry(String title, String description, java.util.List elementTypes) {
+		private NodeToolEntry(String title, String description, List elementTypes) {
 			super(title, description, null, null);
 			this.elementTypes = elementTypes;
 		}
@@ -179,8 +182,8 @@ public class UMLPaletteFactory {
 		/**
 		 * @generated
 		 */
-		public org.eclipse.gef.Tool createTool() {
-			org.eclipse.gef.Tool tool = new org.eclipse.gmf.runtime.diagram.ui.tools.UnspecifiedTypeCreationTool(elementTypes);
+		public Tool createTool() {
+			Tool tool = new UnspecifiedTypeCreationTool(elementTypes);
 			tool.setProperties(getToolProperties());
 			return tool;
 		}
@@ -189,17 +192,17 @@ public class UMLPaletteFactory {
 	/**
 	 * @generated
 	 */
-	private static class LinkToolEntry extends org.eclipse.gef.palette.ToolEntry {
+	private static class LinkToolEntry extends ToolEntry {
 
 		/**
 		 * @generated
 		 */
-		private final java.util.List relationshipTypes;
+		private final List relationshipTypes;
 
 		/**
 		 * @generated
 		 */
-		private LinkToolEntry(String title, String description, java.util.List relationshipTypes) {
+		private LinkToolEntry(String title, String description, List relationshipTypes) {
 			super(title, description, null, null);
 			this.relationshipTypes = relationshipTypes;
 		}
@@ -207,8 +210,8 @@ public class UMLPaletteFactory {
 		/**
 		 * @generated
 		 */
-		public org.eclipse.gef.Tool createTool() {
-			org.eclipse.gef.Tool tool = new org.eclipse.gmf.runtime.diagram.ui.tools.UnspecifiedTypeConnectionTool(relationshipTypes);
+		public Tool createTool() {
+			Tool tool = new UnspecifiedTypeConnectionTool(relationshipTypes);
 			tool.setProperties(getToolProperties());
 			return tool;
 		}

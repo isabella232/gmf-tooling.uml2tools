@@ -2,6 +2,7 @@ package org.eclipse.uml2.diagram.profile.providers;
 
 import java.util.HashSet;
 import java.util.IdentityHashMap;
+import java.util.Iterator;
 import java.util.Map;
 import java.util.Set;
 import org.eclipse.core.runtime.IAdaptable;
@@ -256,7 +257,7 @@ public class UMLElementTypes {
 		/**
 		 * @generated
 		 */
-		public static final IObjectInitializer Stereotype_2001 = new ObjectInitializer(org.eclipse.uml2.uml.UMLPackage.eINSTANCE.getStereotype()) {
+		public static final IObjectInitializer Stereotype_2001 = new ObjectInitializer(UMLPackage.eINSTANCE.getStereotype()) {
 
 			protected void init() {
 				add(createExpressionFeatureInitializer(
@@ -271,7 +272,7 @@ public class UMLElementTypes {
 		/**
 		 * @generated
 		 */
-		public static final IObjectInitializer Profile_2002 = new ObjectInitializer(org.eclipse.uml2.uml.UMLPackage.eINSTANCE.getProfile()) {
+		public static final IObjectInitializer Profile_2002 = new ObjectInitializer(UMLPackage.eINSTANCE.getProfile()) {
 
 			protected void init() {
 				add(createExpressionFeatureInitializer(
@@ -286,7 +287,7 @@ public class UMLElementTypes {
 		/**
 		 * @generated
 		 */
-		public static final IObjectInitializer Enumeration_2003 = new ObjectInitializer(org.eclipse.uml2.uml.UMLPackage.eINSTANCE.getEnumeration()) {
+		public static final IObjectInitializer Enumeration_2003 = new ObjectInitializer(UMLPackage.eINSTANCE.getEnumeration()) {
 
 			protected void init() {
 				add(createExpressionFeatureInitializer(
@@ -301,7 +302,7 @@ public class UMLElementTypes {
 		/**
 		 * @generated
 		 */
-		public static final IObjectInitializer Property_3001 = new ObjectInitializer(org.eclipse.uml2.uml.UMLPackage.eINSTANCE.getProperty()) {
+		public static final IObjectInitializer Property_3001 = new ObjectInitializer(UMLPackage.eINSTANCE.getProperty()) {
 
 			protected void init() {
 				add(createExpressionFeatureInitializer(
@@ -316,7 +317,7 @@ public class UMLElementTypes {
 		/**
 		 * @generated
 		 */
-		public static final IObjectInitializer Constraint_3008 = new ObjectInitializer(org.eclipse.uml2.uml.UMLPackage.eINSTANCE.getConstraint()) {
+		public static final IObjectInitializer Constraint_3008 = new ObjectInitializer(UMLPackage.eINSTANCE.getConstraint()) {
 
 			protected void init() {
 				add(createExpressionFeatureInitializer(
@@ -331,7 +332,7 @@ public class UMLElementTypes {
 		/**
 		 * @generated
 		 */
-		public static final IObjectInitializer Stereotype_3003 = new ObjectInitializer(org.eclipse.uml2.uml.UMLPackage.eINSTANCE.getStereotype()) {
+		public static final IObjectInitializer Stereotype_3003 = new ObjectInitializer(UMLPackage.eINSTANCE.getStereotype()) {
 
 			protected void init() {
 				add(createExpressionFeatureInitializer(
@@ -346,7 +347,7 @@ public class UMLElementTypes {
 		/**
 		 * @generated
 		 */
-		public static final IObjectInitializer EnumerationLiteral_3005 = new ObjectInitializer(org.eclipse.uml2.uml.UMLPackage.eINSTANCE.getEnumerationLiteral()) {
+		public static final IObjectInitializer EnumerationLiteral_3005 = new ObjectInitializer(UMLPackage.eINSTANCE.getEnumerationLiteral()) {
 
 			protected void init() {
 				add(createExpressionFeatureInitializer(
@@ -415,7 +416,7 @@ public class UMLElementTypes {
 			 * @generated
 			 */
 			public void init(EObject instance) {
-				for (java.util.Iterator it = featureInitializers.iterator(); it.hasNext();) {
+				for (Iterator it = featureInitializers.iterator(); it.hasNext();) {
 					IFeatureInitializer nextExpr = (IFeatureInitializer) it.next();
 					try {
 						nextExpr.init(instance);
