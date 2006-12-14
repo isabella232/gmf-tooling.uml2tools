@@ -9,12 +9,10 @@
  * Contributors:
  *    Michael Golubev (Borland) - initial API and implementation
  */
-
-package org.eclipse.uml2.diagram.profile.parser.metaclass;
+package org.eclipse.uml2.diagram.parser.assist;
 
 import java.util.LinkedList;
 import java.util.List;
-import java.util.SortedSet;
 
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.jface.contentassist.IContentAssistSubjectControl;
@@ -28,47 +26,46 @@ import org.eclipse.jface.text.contentassist.IContentAssistProcessor;
 import org.eclipse.jface.text.contentassist.IContextInformation;
 import org.eclipse.jface.text.contentassist.IContextInformationValidator;
 import org.eclipse.swt.graphics.Point;
-import org.eclipse.uml2.uml.resource.UMLResource;
 
-public class ReferencedMetaclassCompletionProcessor implements IContentAssistProcessor, ISubjectControlContentAssistProcessor {
+/**
+ * Computes completion proposals for given context EObject.
+ * 
+ * Intended to be used in case if the whole set of proposals does not depend on
+ * the suggested prefix text and only filtering by given string prefix is
+ * required to compute the result list.
+ */
+public abstract class EObjectCompletionProcessor implements IContentAssistProcessor, ISubjectControlContentAssistProcessor {
+
 	private static final ICompletionProposal[] NO_PROPOSALS = new ICompletionProposal[0];
-	private static final IContextInformation[] NO_CONTEXTS= new IContextInformation[0];
 
-	private final MetaclassesList myMetaclasses;
+	private static final IContextInformation[] NO_CONTEXTS = new IContextInformation[0];
+
 	private EObject myContext;
-	
-	public ReferencedMetaclassCompletionProcessor(MetaclassesList metaclasses){
-		myMetaclasses = metaclasses;
+
+	protected abstract Iterable<String> computeContextProposals(EObject context);
+
+	public void setContext(EObject context) {
+		myContext = context;
 	}
-	
-	public ReferencedMetaclassCompletionProcessor(){
-		this(new MetaclassesList(UMLResource.UML_METAMODEL_URI));
-	}
-	
+
 	public ICompletionProposal[] computeCompletionProposals(IContentAssistSubjectControl subjectControl, int offset) {
-		if (myContext == null){
+		if (myContext == null) {
 			return NO_PROPOSALS;
 		}
-		
 		Point selection = subjectControl.getSelectedRange();
-		int selectionStart = selection.x; 
+		int selectionStart = selection.x;
 		int selectionLength = selection.y;
-		String prefix = getPrefix(subjectControl, selectionStart);		
-		int prefixLength = prefix.length(); 
-			
-		SortedSet<String> allNames = myMetaclasses.getMetaclassNames(myContext);
+		String prefix = getPrefix(subjectControl, selectionStart);
+		int prefixLength = prefix.length();
+
 		List<ICompletionProposal> result = new LinkedList<ICompletionProposal>();
-		for (String next : allNames.subSet(prefix, prefix + "\uFFFF")){
+		for (String next : computeContextProposals(myContext)) {
 			ICompletionProposal proposal = new CompletionProposal(next, selectionStart - prefixLength, selectionLength + prefixLength, next.length(), null, next, null, null);
 			result.add(proposal);
 		}
 		return result.toArray(NO_PROPOSALS);
 	}
-	
-	public void setContext(EObject context) {
-		myContext = context;
-	}
-	
+
 	public IContextInformation[] computeContextInformation(IContentAssistSubjectControl contentAssistSubjectControl, int documentOffset) {
 		return NO_CONTEXTS;
 	}
@@ -82,7 +79,6 @@ public class ReferencedMetaclassCompletionProcessor implements IContentAssistPro
 	}
 
 	public char[] getCompletionProposalAutoActivationCharacters() {
-		//return new char[] {'a', 'k', ' '};
 		return null;
 	}
 
@@ -99,19 +95,15 @@ public class ReferencedMetaclassCompletionProcessor implements IContentAssistPro
 	}
 
 	private String getPrefix(IContentAssistSubjectControl subjectControl, int offset) {
-		IDocument doc= subjectControl.getDocument();
-		if (doc == null || offset > doc.getLength()){
+		IDocument doc = subjectControl.getDocument();
+		if (doc == null || offset > doc.getLength()) {
 			throw new IllegalStateException("Bad content assist subject control: " + doc);
 		}
 		try {
-			int length = 0;
-			while (--offset >= 0 && Character.isJavaIdentifierPart(doc.getChar(offset))){
-				length++;
-			}
-			
-			return doc.get(offset + 1, length);
-		} catch (BadLocationException e){
+			return doc.get(0, offset);
+		} catch (BadLocationException e) {
 			throw new IllegalStateException(e);
 		}
 	}
+
 }

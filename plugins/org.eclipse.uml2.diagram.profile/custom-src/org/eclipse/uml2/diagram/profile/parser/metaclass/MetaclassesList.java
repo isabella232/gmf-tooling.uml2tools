@@ -27,8 +27,6 @@ import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.uml2.uml.resource.UMLResource;
 
-import sun.security.util.Resources;
-
 public class MetaclassesList {
 	private final URI myUri;
 	private final SortedMap<String, org.eclipse.uml2.uml.Class> myNamesMap;

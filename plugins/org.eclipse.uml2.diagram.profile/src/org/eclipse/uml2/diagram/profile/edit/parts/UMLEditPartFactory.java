@@ -82,6 +82,8 @@ public class UMLEditPartFactory implements EditPartFactory {
 				return new GeneralizationEditPart(view);
 			case ExtensionEditPart.VISUAL_ID:
 				return new ExtensionEditPart(view);
+			case ExtensionLink_requiredEditPart.VISUAL_ID:
+				return new ExtensionLink_requiredEditPart(view);
 			}
 		}
 		return createUnrecognizedEditPart(context, model);

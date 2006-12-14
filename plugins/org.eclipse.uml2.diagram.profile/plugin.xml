@@ -12,6 +12,9 @@
       <ParserProvider class="org.eclipse.uml2.diagram.profile.parser.property.PropertyParserProvider">
          <Priority name="Lowest"/>
       </ParserProvider>
+      <ParserProvider class="org.eclipse.uml2.diagram.profile.parser.extension.RequiredExtensionParserProvider">
+         <Priority name="Lowest"/>
+      </ParserProvider>
    </extension>
 
 <!-- gmf generator persistent region end -->
@@ -168,6 +171,11 @@
          <popupContribution class="org.eclipse.gmf.runtime.diagram.ui.providers.DiagramContextMenuProvider">
             <popupStructuredContributionCriteria objectClass="org.eclipse.uml2.diagram.profile.edit.parts.ExtensionEditPart"/>
             <popupPredefinedItem id="deleteFromDiagramAction" remove="true"/>
+         </popupContribution>
+         <popupContribution class="org.eclipse.gmf.runtime.diagram.ui.providers.DiagramContextMenuProvider">
+            <popupStructuredContributionCriteria objectClass="org.eclipse.uml2.diagram.profile.edit.parts.ExtensionLink_requiredEditPart"/>
+            <popupPredefinedItem id="deleteFromDiagramAction" remove="true"/>
+            <popupPredefinedItem id="deleteFromModelAction" remove="true"/>
          </popupContribution>
       </contributionItemProvider>
    </extension>

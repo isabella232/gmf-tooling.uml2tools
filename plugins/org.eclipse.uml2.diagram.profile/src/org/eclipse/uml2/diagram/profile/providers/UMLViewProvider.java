@@ -14,6 +14,7 @@ import org.eclipse.uml2.diagram.profile.edit.parts.EnumerationLiteralEditPart;
 import org.eclipse.uml2.diagram.profile.edit.parts.EnumerationLiteralsEditPart;
 import org.eclipse.uml2.diagram.profile.edit.parts.EnumerationNameEditPart;
 import org.eclipse.uml2.diagram.profile.edit.parts.ExtensionEditPart;
+import org.eclipse.uml2.diagram.profile.edit.parts.ExtensionLink_requiredEditPart;
 import org.eclipse.uml2.diagram.profile.edit.parts.GeneralizationEditPart;
 import org.eclipse.uml2.diagram.profile.edit.parts.Profile2EditPart;
 import org.eclipse.uml2.diagram.profile.edit.parts.Profile3EditPart;
@@ -40,6 +41,7 @@ import org.eclipse.uml2.diagram.profile.view.factories.EnumerationLiteralViewFac
 import org.eclipse.uml2.diagram.profile.view.factories.EnumerationLiteralsViewFactory;
 import org.eclipse.uml2.diagram.profile.view.factories.EnumerationNameViewFactory;
 import org.eclipse.uml2.diagram.profile.view.factories.EnumerationViewFactory;
+import org.eclipse.uml2.diagram.profile.view.factories.ExtensionLink_requiredViewFactory;
 import org.eclipse.uml2.diagram.profile.view.factories.ExtensionViewFactory;
 import org.eclipse.uml2.diagram.profile.view.factories.GeneralizationViewFactory;
 import org.eclipse.uml2.diagram.profile.view.factories.Profile2ViewFactory;
@@ -131,6 +133,8 @@ public class UMLViewProvider extends AbstractViewProvider {
 			return EnumerationLiteralsViewFactory.class;
 		case ProfileProfileLabelsEditPart.VISUAL_ID:
 			return ProfileProfileLabelsViewFactory.class;
+		case ExtensionLink_requiredEditPart.VISUAL_ID:
+			return ExtensionLink_requiredViewFactory.class;
 		}
 		return null;
 	}

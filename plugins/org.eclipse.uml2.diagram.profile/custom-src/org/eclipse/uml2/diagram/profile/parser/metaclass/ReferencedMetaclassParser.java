@@ -25,6 +25,7 @@ import org.eclipse.gmf.runtime.common.ui.services.parser.IParserEditStatus;
 import org.eclipse.gmf.runtime.common.ui.services.parser.ParserEditStatus;
 import org.eclipse.gmf.runtime.emf.ui.services.parser.ISemanticParser;
 import org.eclipse.jface.text.contentassist.IContentAssistProcessor;
+import org.eclipse.uml2.diagram.parser.assist.EObjectCompletionProcessor;
 import org.eclipse.uml2.diagram.profile.part.UMLDiagramEditorPlugin;
 import org.eclipse.uml2.uml.Classifier;
 import org.eclipse.uml2.uml.ElementImport;
@@ -33,7 +34,7 @@ import org.eclipse.uml2.uml.resource.UMLResource;
 
 public class ReferencedMetaclassParser implements ISemanticParser {
 	private final MetaclassesList myMetaclassesList = new MetaclassesList(UMLResource.UML_METAMODEL_URI);
-	private final ReferencedMetaclassCompletionProcessor myCompletionProcessor = new ReferencedMetaclassCompletionProcessor(myMetaclassesList);
+	private final CompletionProcessor myCompletionProcessor = new CompletionProcessor();
 	private final static String NO_METACLASS = "<enter>";
 
 	public IContentAssistProcessor getCompletionProcessor(IAdaptable element) {
@@ -105,6 +106,13 @@ public class ReferencedMetaclassParser implements ISemanticParser {
 		//intentionally CCE
 		ElementImport elementImport = (ElementImport)adaptable.getAdapter(EObject.class);
 		return elementImport;
+	}
+	
+	private class CompletionProcessor extends EObjectCompletionProcessor {
+		@Override
+		protected Iterable<String> computeContextProposals(EObject context) {
+			return myMetaclassesList.getMetaclassNames(context);
+		}
 	}
 
 }

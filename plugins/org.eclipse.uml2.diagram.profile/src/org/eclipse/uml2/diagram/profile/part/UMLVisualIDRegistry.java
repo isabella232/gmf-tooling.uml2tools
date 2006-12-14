@@ -17,6 +17,7 @@ import org.eclipse.uml2.diagram.profile.edit.parts.EnumerationLiteralEditPart;
 import org.eclipse.uml2.diagram.profile.edit.parts.EnumerationLiteralsEditPart;
 import org.eclipse.uml2.diagram.profile.edit.parts.EnumerationNameEditPart;
 import org.eclipse.uml2.diagram.profile.edit.parts.ExtensionEditPart;
+import org.eclipse.uml2.diagram.profile.edit.parts.ExtensionLink_requiredEditPart;
 import org.eclipse.uml2.diagram.profile.edit.parts.GeneralizationEditPart;
 import org.eclipse.uml2.diagram.profile.edit.parts.Profile2EditPart;
 import org.eclipse.uml2.diagram.profile.edit.parts.Profile3EditPart;
@@ -289,6 +290,11 @@ public class UMLVisualIDRegistry {
 				return Profile3EditPart.VISUAL_ID;
 			}
 			return getUnrecognizedProfile_1000ChildNodeID(domainElement, semanticHint);
+		case ExtensionEditPart.VISUAL_ID:
+			if (ExtensionLink_requiredEditPart.VISUAL_ID == nodeVisualID) {
+				return ExtensionLink_requiredEditPart.VISUAL_ID;
+			}
+			return getUnrecognizedExtension_4002LinkLabelID(semanticHint);
 		}
 		return -1;
 	}
@@ -594,6 +600,16 @@ public class UMLVisualIDRegistry {
 	 * @generated
 	 */
 	private static int getUnrecognizedProfile_1000ChildNodeID(EObject domainElement, String semanticHint) {
+		return -1;
+	}
+
+	/**
+	 * User can change implementation of this method to handle some specific
+	 * situations not covered by default logic.
+	 *
+	 * @generated
+	 */
+	private static int getUnrecognizedExtension_4002LinkLabelID(String semanticHint) {
 		return -1;
 	}
 

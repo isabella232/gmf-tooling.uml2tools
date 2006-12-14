@@ -8,12 +8,15 @@ import org.eclipse.core.runtime.IAdaptable;
 import org.eclipse.emf.ecore.EAnnotation;
 import org.eclipse.emf.ecore.EcoreFactory;
 
+import org.eclipse.gmf.runtime.diagram.core.util.ViewUtil;
+
 import org.eclipse.gmf.runtime.diagram.ui.view.factories.ConnectionViewFactory;
 
 import org.eclipse.gmf.runtime.notation.NotationFactory;
 import org.eclipse.gmf.runtime.notation.View;
 
 import org.eclipse.uml2.diagram.profile.edit.parts.ExtensionEditPart;
+import org.eclipse.uml2.diagram.profile.edit.parts.ExtensionLink_requiredEditPart;
 import org.eclipse.uml2.diagram.profile.edit.parts.ProfileEditPart;
 
 import org.eclipse.uml2.diagram.profile.part.UMLVisualIDRegistry;
@@ -48,6 +51,7 @@ public class ExtensionViewFactory extends ConnectionViewFactory {
 			shortcutAnnotation.getDetails().put("modelID", ProfileEditPart.MODEL_ID); //$NON-NLS-1$
 			view.getEAnnotations().add(shortcutAnnotation);
 		}
+		getViewService().createNode(semanticAdapter, view, UMLVisualIDRegistry.getType(ExtensionLink_requiredEditPart.VISUAL_ID), ViewUtil.APPEND, true, getPreferencesHint());
 	}
 
 }
