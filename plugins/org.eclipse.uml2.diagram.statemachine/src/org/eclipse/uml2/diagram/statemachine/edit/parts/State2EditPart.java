@@ -1,7 +1,12 @@
 package org.eclipse.uml2.diagram.statemachine.edit.parts;
 
+import org.eclipse.draw2d.Graphics;
 import org.eclipse.draw2d.IFigure;
+import org.eclipse.draw2d.MarginBorder;
+import org.eclipse.draw2d.RectangleFigure;
+import org.eclipse.draw2d.RoundedRectangle;
 import org.eclipse.draw2d.StackLayout;
+import org.eclipse.draw2d.geometry.Dimension;
 
 import org.eclipse.gef.EditPart;
 import org.eclipse.gef.EditPolicy;
@@ -20,12 +25,15 @@ import org.eclipse.gmf.runtime.diagram.ui.editparts.ShapeNodeEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editpolicies.CreationEditPolicy;
 import org.eclipse.gmf.runtime.diagram.ui.editpolicies.DragDropEditPolicy;
 import org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles;
+import org.eclipse.gmf.runtime.draw2d.ui.figures.ConstrainedToolbarLayout;
+import org.eclipse.gmf.runtime.draw2d.ui.figures.WrapLabel;
 
 import org.eclipse.gmf.runtime.gef.ui.figures.DefaultSizeNodeFigure;
 import org.eclipse.gmf.runtime.gef.ui.figures.NodeFigure;
 
 import org.eclipse.gmf.runtime.notation.View;
 
+import org.eclipse.uml2.diagram.common.draw2d.LaneLayout;
 import org.eclipse.uml2.diagram.common.editpolicies.LaneLayoutEditPolicy;
 
 import org.eclipse.uml2.diagram.statemachine.edit.policies.State2CanonicalEditPolicy;
@@ -212,20 +220,27 @@ public class State2EditPart extends ShapeNodeEditPart {
 	/**
 	 * @generated
 	 */
-	public class CompositeStateFigure extends org.eclipse.draw2d.RoundedRectangle {
+	public class CompositeStateFigure extends RoundedRectangle {
 
 		/**
 		 * @generated
 		 */
 		public CompositeStateFigure() {
-			this.setCornerDimensions(new org.eclipse.draw2d.geometry.Dimension(getMapMode().DPtoLP(18), getMapMode().DPtoLP(18)));
+
+			ConstrainedToolbarLayout layoutThis = new ConstrainedToolbarLayout();
+
+			layoutThis.setSpacing(getMapMode().DPtoLP(2));
+
+			this.setLayoutManager(layoutThis);
+
+			this.setCornerDimensions(new Dimension(getMapMode().DPtoLP(18), getMapMode().DPtoLP(18)));
 			this.setFill(true);
 			this.setFillXOR(false);
 			this.setOutline(true);
 			this.setOutlineXOR(false);
 			this.setLineWidth(1);
-			this.setLineStyle(org.eclipse.draw2d.Graphics.LINE_SOLID);
-			this.setBorder(new org.eclipse.draw2d.MarginBorder(getMapMode().DPtoLP(0), getMapMode().DPtoLP(2), getMapMode().DPtoLP(6), getMapMode().DPtoLP(2)));
+			this.setLineStyle(Graphics.LINE_SOLID);
+			this.setBorder(new MarginBorder(getMapMode().DPtoLP(0), getMapMode().DPtoLP(2), getMapMode().DPtoLP(6), getMapMode().DPtoLP(2)));
 			createContents();
 		}
 
@@ -234,24 +249,24 @@ public class State2EditPart extends ShapeNodeEditPart {
 		 */
 		private void createContents() {
 
-			org.eclipse.gmf.runtime.draw2d.ui.figures.WrapLabel compositeStateFigure_name0 = new org.eclipse.gmf.runtime.draw2d.ui.figures.WrapLabel();
+			WrapLabel compositeStateFigure_name0 = new WrapLabel();
 			compositeStateFigure_name0.setText("");
 
 			this.add(compositeStateFigure_name0);
 			setFigureCompositeStateFigure_name(compositeStateFigure_name0);
 
-			org.eclipse.draw2d.RectangleFigure compositeStateFigure_Body0 = new org.eclipse.draw2d.RectangleFigure();
+			RectangleFigure compositeStateFigure_Body0 = new RectangleFigure();
 			compositeStateFigure_Body0.setFill(true);
 			compositeStateFigure_Body0.setFillXOR(false);
 			compositeStateFigure_Body0.setOutline(false);
 			compositeStateFigure_Body0.setOutlineXOR(false);
 			compositeStateFigure_Body0.setLineWidth(1);
-			compositeStateFigure_Body0.setLineStyle(org.eclipse.draw2d.Graphics.LINE_SOLID);
+			compositeStateFigure_Body0.setLineStyle(Graphics.LINE_SOLID);
 
 			this.add(compositeStateFigure_Body0);
 			setFigureCompositeStateFigure_Body(compositeStateFigure_Body0);
 
-			org.eclipse.uml2.diagram.common.draw2d.LaneLayout layoutCompositeStateFigure_Body0 = new org.eclipse.uml2.diagram.common.draw2d.LaneLayout();
+			LaneLayout layoutCompositeStateFigure_Body0 = new LaneLayout();
 
 			compositeStateFigure_Body0.setLayoutManager(layoutCompositeStateFigure_Body0);
 
@@ -260,38 +275,38 @@ public class State2EditPart extends ShapeNodeEditPart {
 		/**
 		 * @generated
 		 */
-		private org.eclipse.gmf.runtime.draw2d.ui.figures.WrapLabel fCompositeStateFigure_name;
+		private WrapLabel fCompositeStateFigure_name;
 
 		/**
 		 * @generated
 		 */
-		public org.eclipse.gmf.runtime.draw2d.ui.figures.WrapLabel getFigureCompositeStateFigure_name() {
+		public WrapLabel getFigureCompositeStateFigure_name() {
 			return fCompositeStateFigure_name;
 		}
 
 		/**
 		 * @generated
 		 */
-		private void setFigureCompositeStateFigure_name(org.eclipse.gmf.runtime.draw2d.ui.figures.WrapLabel fig) {
+		private void setFigureCompositeStateFigure_name(WrapLabel fig) {
 			fCompositeStateFigure_name = fig;
 		}
 
 		/**
 		 * @generated
 		 */
-		private org.eclipse.draw2d.RectangleFigure fCompositeStateFigure_Body;
+		private RectangleFigure fCompositeStateFigure_Body;
 
 		/**
 		 * @generated
 		 */
-		public org.eclipse.draw2d.RectangleFigure getFigureCompositeStateFigure_Body() {
+		public RectangleFigure getFigureCompositeStateFigure_Body() {
 			return fCompositeStateFigure_Body;
 		}
 
 		/**
 		 * @generated
 		 */
-		private void setFigureCompositeStateFigure_Body(org.eclipse.draw2d.RectangleFigure fig) {
+		private void setFigureCompositeStateFigure_Body(RectangleFigure fig) {
 			fCompositeStateFigure_Body = fig;
 		}
 
