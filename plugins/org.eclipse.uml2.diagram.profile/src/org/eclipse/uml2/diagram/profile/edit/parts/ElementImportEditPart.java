@@ -1,6 +1,9 @@
 package org.eclipse.uml2.diagram.profile.edit.parts;
 
+import org.eclipse.draw2d.ColorConstants;
+import org.eclipse.draw2d.Graphics;
 import org.eclipse.draw2d.IFigure;
+import org.eclipse.draw2d.RectangleFigure;
 import org.eclipse.draw2d.StackLayout;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.gef.EditPart;
@@ -10,15 +13,20 @@ import org.eclipse.gef.commands.Command;
 import org.eclipse.gef.editpolicies.LayoutEditPolicy;
 import org.eclipse.gef.editpolicies.NonResizableEditPolicy;
 import org.eclipse.gef.requests.CreateRequest;
+import org.eclipse.gmf.internal.codegen.draw2d.GridLayout;
+import org.eclipse.gmf.internal.codegen.draw2d.GridLayoutData;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.ShapeNodeEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles;
 import org.eclipse.gmf.runtime.draw2d.ui.figures.ConstrainedToolbarLayout;
+import org.eclipse.gmf.runtime.draw2d.ui.figures.WrapLabel;
 import org.eclipse.gmf.runtime.gef.ui.figures.DefaultSizeNodeFigure;
 import org.eclipse.gmf.runtime.gef.ui.figures.NodeFigure;
 import org.eclipse.gmf.runtime.notation.View;
+import org.eclipse.uml2.diagram.common.draw2d.CenterLayout;
 import org.eclipse.uml2.diagram.profile.edit.policies.ElementImportItemSemanticEditPolicy;
 import org.eclipse.uml2.diagram.profile.part.UMLVisualIDRegistry;
+import org.eclipse.uml2.uml.Class;
 import org.eclipse.uml2.uml.ElementImport;
 import org.eclipse.uml2.uml.PackageableElement;
 
@@ -232,7 +240,7 @@ public class ElementImportEditPart extends ShapeNodeEditPart {
 		boolean hasMetaclass = false;
 		if (elementImport != null) {
 			PackageableElement imported = elementImport.getImportedElement();
-			hasMetaclass = imported instanceof org.eclipse.uml2.uml.Class && ((org.eclipse.uml2.uml.Class) imported).isMetaclass();
+			hasMetaclass = imported instanceof Class && ((Class) imported).isMetaclass();
 		}
 		figure.setHasActualMetaclassImport(hasMetaclass);
 	}
@@ -240,14 +248,14 @@ public class ElementImportEditPart extends ShapeNodeEditPart {
 	/**
 	 * @generated
 	 */
-	public class ReferencedMetaclassFigure extends org.eclipse.draw2d.RectangleFigure {
+	public class ReferencedMetaclassFigure extends RectangleFigure {
 
 		/**
 		 * @generated
 		 */
 		public ReferencedMetaclassFigure() {
 
-			org.eclipse.gmf.internal.codegen.draw2d.GridLayout layoutThis = new org.eclipse.gmf.internal.codegen.draw2d.GridLayout();
+			GridLayout layoutThis = new GridLayout();
 			layoutThis.numColumns = 1;
 			layoutThis.makeColumnsEqualWidth = true;
 			this.setLayoutManager(layoutThis);
@@ -257,8 +265,8 @@ public class ElementImportEditPart extends ShapeNodeEditPart {
 			this.setOutline(true);
 			this.setOutlineXOR(false);
 			this.setLineWidth(1);
-			this.setLineStyle(org.eclipse.draw2d.Graphics.LINE_SOLID);
-			this.setForegroundColor(org.eclipse.draw2d.ColorConstants.gray);
+			this.setLineStyle(Graphics.LINE_SOLID);
+			this.setForegroundColor(ColorConstants.gray);
 			createContents();
 		}
 
@@ -267,17 +275,17 @@ public class ElementImportEditPart extends ShapeNodeEditPart {
 		 */
 		private void createContents() {
 
-			org.eclipse.draw2d.RectangleFigure referencedMetaclassFigure_FixedLabelPane0 = new org.eclipse.draw2d.RectangleFigure();
+			RectangleFigure referencedMetaclassFigure_FixedLabelPane0 = new RectangleFigure();
 			referencedMetaclassFigure_FixedLabelPane0.setFill(false);
 			referencedMetaclassFigure_FixedLabelPane0.setFillXOR(false);
 			referencedMetaclassFigure_FixedLabelPane0.setOutline(false);
 			referencedMetaclassFigure_FixedLabelPane0.setOutlineXOR(false);
 			referencedMetaclassFigure_FixedLabelPane0.setLineWidth(1);
-			referencedMetaclassFigure_FixedLabelPane0.setLineStyle(org.eclipse.draw2d.Graphics.LINE_SOLID);
+			referencedMetaclassFigure_FixedLabelPane0.setLineStyle(Graphics.LINE_SOLID);
 
-			org.eclipse.gmf.internal.codegen.draw2d.GridLayoutData constraintReferencedMetaclassFigure_FixedLabelPane0 = new org.eclipse.gmf.internal.codegen.draw2d.GridLayoutData();
-			constraintReferencedMetaclassFigure_FixedLabelPane0.verticalAlignment = org.eclipse.gmf.internal.codegen.draw2d.GridLayoutData.CENTER;
-			constraintReferencedMetaclassFigure_FixedLabelPane0.horizontalAlignment = org.eclipse.gmf.internal.codegen.draw2d.GridLayoutData.CENTER;
+			GridLayoutData constraintReferencedMetaclassFigure_FixedLabelPane0 = new GridLayoutData();
+			constraintReferencedMetaclassFigure_FixedLabelPane0.verticalAlignment = GridLayoutData.CENTER;
+			constraintReferencedMetaclassFigure_FixedLabelPane0.horizontalAlignment = GridLayoutData.CENTER;
 			constraintReferencedMetaclassFigure_FixedLabelPane0.horizontalIndent = 0;
 			constraintReferencedMetaclassFigure_FixedLabelPane0.horizontalSpan = 1;
 			constraintReferencedMetaclassFigure_FixedLabelPane0.verticalSpan = 1;
@@ -285,26 +293,26 @@ public class ElementImportEditPart extends ShapeNodeEditPart {
 			constraintReferencedMetaclassFigure_FixedLabelPane0.grabExcessVerticalSpace = true;
 			this.add(referencedMetaclassFigure_FixedLabelPane0, constraintReferencedMetaclassFigure_FixedLabelPane0);
 
-			org.eclipse.uml2.diagram.common.draw2d.CenterLayout layoutReferencedMetaclassFigure_FixedLabelPane0 = new org.eclipse.uml2.diagram.common.draw2d.CenterLayout();
+			CenterLayout layoutReferencedMetaclassFigure_FixedLabelPane0 = new CenterLayout();
 
 			referencedMetaclassFigure_FixedLabelPane0.setLayoutManager(layoutReferencedMetaclassFigure_FixedLabelPane0);
 
-			org.eclipse.gmf.runtime.draw2d.ui.figures.WrapLabel referencedMetaclassFigure_fixed_metaclass1 = new org.eclipse.gmf.runtime.draw2d.ui.figures.WrapLabel();
+			WrapLabel referencedMetaclassFigure_fixed_metaclass1 = new WrapLabel();
 			referencedMetaclassFigure_fixed_metaclass1.setText("\u00ABmetaclass\u00BB");
 
 			referencedMetaclassFigure_FixedLabelPane0.add(referencedMetaclassFigure_fixed_metaclass1);
 
-			org.eclipse.draw2d.RectangleFigure referencedMetaclassFigure_LabelPane0 = new org.eclipse.draw2d.RectangleFigure();
+			RectangleFigure referencedMetaclassFigure_LabelPane0 = new RectangleFigure();
 			referencedMetaclassFigure_LabelPane0.setFill(false);
 			referencedMetaclassFigure_LabelPane0.setFillXOR(false);
 			referencedMetaclassFigure_LabelPane0.setOutline(false);
 			referencedMetaclassFigure_LabelPane0.setOutlineXOR(false);
 			referencedMetaclassFigure_LabelPane0.setLineWidth(1);
-			referencedMetaclassFigure_LabelPane0.setLineStyle(org.eclipse.draw2d.Graphics.LINE_SOLID);
+			referencedMetaclassFigure_LabelPane0.setLineStyle(Graphics.LINE_SOLID);
 
-			org.eclipse.gmf.internal.codegen.draw2d.GridLayoutData constraintReferencedMetaclassFigure_LabelPane0 = new org.eclipse.gmf.internal.codegen.draw2d.GridLayoutData();
-			constraintReferencedMetaclassFigure_LabelPane0.verticalAlignment = org.eclipse.gmf.internal.codegen.draw2d.GridLayoutData.CENTER;
-			constraintReferencedMetaclassFigure_LabelPane0.horizontalAlignment = org.eclipse.gmf.internal.codegen.draw2d.GridLayoutData.CENTER;
+			GridLayoutData constraintReferencedMetaclassFigure_LabelPane0 = new GridLayoutData();
+			constraintReferencedMetaclassFigure_LabelPane0.verticalAlignment = GridLayoutData.CENTER;
+			constraintReferencedMetaclassFigure_LabelPane0.horizontalAlignment = GridLayoutData.CENTER;
 			constraintReferencedMetaclassFigure_LabelPane0.horizontalIndent = 0;
 			constraintReferencedMetaclassFigure_LabelPane0.horizontalSpan = 1;
 			constraintReferencedMetaclassFigure_LabelPane0.verticalSpan = 1;
@@ -312,11 +320,11 @@ public class ElementImportEditPart extends ShapeNodeEditPart {
 			constraintReferencedMetaclassFigure_LabelPane0.grabExcessVerticalSpace = true;
 			this.add(referencedMetaclassFigure_LabelPane0, constraintReferencedMetaclassFigure_LabelPane0);
 
-			org.eclipse.uml2.diagram.common.draw2d.CenterLayout layoutReferencedMetaclassFigure_LabelPane0 = new org.eclipse.uml2.diagram.common.draw2d.CenterLayout();
+			CenterLayout layoutReferencedMetaclassFigure_LabelPane0 = new CenterLayout();
 
 			referencedMetaclassFigure_LabelPane0.setLayoutManager(layoutReferencedMetaclassFigure_LabelPane0);
 
-			org.eclipse.gmf.runtime.draw2d.ui.figures.WrapLabel referencedMetaclassFigure_className1 = new org.eclipse.gmf.runtime.draw2d.ui.figures.WrapLabel();
+			WrapLabel referencedMetaclassFigure_className1 = new WrapLabel();
 			referencedMetaclassFigure_className1.setText("");
 
 			referencedMetaclassFigure_LabelPane0.add(referencedMetaclassFigure_className1);
@@ -327,19 +335,19 @@ public class ElementImportEditPart extends ShapeNodeEditPart {
 		/**
 		 * @generated
 		 */
-		private org.eclipse.gmf.runtime.draw2d.ui.figures.WrapLabel fReferencedMetaclassFigure_className;
+		private WrapLabel fReferencedMetaclassFigure_className;
 
 		/**
 		 * @generated
 		 */
-		public org.eclipse.gmf.runtime.draw2d.ui.figures.WrapLabel getFigureReferencedMetaclassFigure_className() {
+		public WrapLabel getFigureReferencedMetaclassFigure_className() {
 			return fReferencedMetaclassFigure_className;
 		}
 
 		/**
 		 * @generated
 		 */
-		private void setFigureReferencedMetaclassFigure_className(org.eclipse.gmf.runtime.draw2d.ui.figures.WrapLabel fig) {
+		private void setFigureReferencedMetaclassFigure_className(WrapLabel fig) {
 			fReferencedMetaclassFigure_className = fig;
 		}
 
@@ -366,7 +374,7 @@ public class ElementImportEditPart extends ShapeNodeEditPart {
 		 * @NOT-GENERATED
 		 */
 		public void setHasActualMetaclassImport(boolean hasActualMetaclassImport) {
-			setForegroundColor(hasActualMetaclassImport ? org.eclipse.draw2d.ColorConstants.gray : org.eclipse.draw2d.ColorConstants.red);
+			setForegroundColor(hasActualMetaclassImport ? ColorConstants.gray : ColorConstants.red);
 		}
 
 	}
