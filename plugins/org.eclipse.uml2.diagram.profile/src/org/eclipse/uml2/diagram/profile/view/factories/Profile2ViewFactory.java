@@ -19,7 +19,6 @@ import org.eclipse.uml2.diagram.profile.edit.parts.Profile2EditPart;
 import org.eclipse.uml2.diagram.profile.edit.parts.ProfileContentsEditPart;
 import org.eclipse.uml2.diagram.profile.edit.parts.ProfileEditPart;
 import org.eclipse.uml2.diagram.profile.edit.parts.ProfileNameEditPart;
-import org.eclipse.uml2.diagram.profile.edit.parts.ProfileNode_profileEditPart;
 
 import org.eclipse.uml2.diagram.profile.part.UMLVisualIDRegistry;
 
@@ -55,7 +54,6 @@ public class Profile2ViewFactory extends AbstractShapeViewFactory {
 			shortcutAnnotation.getDetails().put("modelID", ProfileEditPart.MODEL_ID); //$NON-NLS-1$
 			view.getEAnnotations().add(shortcutAnnotation);
 		}
-		getViewService().createNode(semanticAdapter, view, UMLVisualIDRegistry.getType(ProfileNode_profileEditPart.VISUAL_ID), ViewUtil.APPEND, true, getPreferencesHint());
 		getViewService().createNode(semanticAdapter, view, UMLVisualIDRegistry.getType(ProfileNameEditPart.VISUAL_ID), ViewUtil.APPEND, true, getPreferencesHint());
 		getViewService().createNode(semanticAdapter, view, UMLVisualIDRegistry.getType(ProfileContentsEditPart.VISUAL_ID), ViewUtil.APPEND, true, getPreferencesHint());
 	}

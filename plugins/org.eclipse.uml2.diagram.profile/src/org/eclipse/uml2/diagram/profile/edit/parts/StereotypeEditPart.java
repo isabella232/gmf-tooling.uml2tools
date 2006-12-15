@@ -317,8 +317,6 @@ public class StereotypeEditPart extends ShapeNodeEditPart {
 			constraintStereotypeFigure_StereotypeLabel0.grabExcessVerticalSpace = false;
 			this.add(stereotypeFigure_StereotypeLabel0, constraintStereotypeFigure_StereotypeLabel0);
 
-			setFigureStereotypeFigure_StereotypeLabel(stereotypeFigure_StereotypeLabel0);
-
 			RectangleFigure stereotypeFigure_NameContainer0 = new RectangleFigure();
 			stereotypeFigure_NameContainer0.setFill(true);
 			stereotypeFigure_NameContainer0.setFillXOR(false);
@@ -388,25 +386,6 @@ public class StereotypeEditPart extends ShapeNodeEditPart {
 
 			setFigureStereotypeFigure_ConstraintsCompartment(stereotypeFigure_ConstraintsCompartment0);
 
-		}
-
-		/**
-		 * @generated
-		 */
-		private WrapLabel fStereotypeFigure_StereotypeLabel;
-
-		/**
-		 * @generated
-		 */
-		public WrapLabel getFigureStereotypeFigure_StereotypeLabel() {
-			return fStereotypeFigure_StereotypeLabel;
-		}
-
-		/**
-		 * @generated
-		 */
-		private void setFigureStereotypeFigure_StereotypeLabel(WrapLabel fig) {
-			fStereotypeFigure_StereotypeLabel = fig;
 		}
 
 		/**

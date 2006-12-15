@@ -158,10 +158,6 @@ public class Profile2EditPart extends ShapeNodeEditPart {
 	 * @generated
 	 */
 	protected boolean addFixedChild(EditPart childEditPart) {
-		if (childEditPart instanceof ProfileNode_profileEditPart) {
-			((ProfileNode_profileEditPart) childEditPart).setLabel(getPrimaryShape().getFigureProfileFigure_ProfileLabel());
-			return true;
-		}
 		if (childEditPart instanceof ProfileNameEditPart) {
 			((ProfileNameEditPart) childEditPart).setLabel(getPrimaryShape().getFigureProfileFigure_NameLabel());
 			return true;
@@ -241,7 +237,7 @@ public class Profile2EditPart extends ShapeNodeEditPart {
 	 * @generated
 	 */
 	public EditPart getPrimaryChildEditPart() {
-		return getChildBySemanticHint(UMLVisualIDRegistry.getType(ProfileNode_profileEditPart.VISUAL_ID));
+		return getChildBySemanticHint(UMLVisualIDRegistry.getType(ProfileNameEditPart.VISUAL_ID));
 	}
 
 	/**
@@ -417,8 +413,6 @@ public class Profile2EditPart extends ShapeNodeEditPart {
 			constraintProfileFigure_ProfileLabel2.grabExcessVerticalSpace = false;
 			profileFigure_ProfileContainer1.add(profileFigure_ProfileLabel2, constraintProfileFigure_ProfileLabel2);
 
-			setFigureProfileFigure_ProfileLabel(profileFigure_ProfileLabel2);
-
 			RectangleFigure profileFigure_ContentsCompartment1 = new RectangleFigure();
 			profileFigure_ContentsCompartment1.setFill(true);
 			profileFigure_ContentsCompartment1.setFillXOR(false);
@@ -449,25 +443,6 @@ public class Profile2EditPart extends ShapeNodeEditPart {
 		 */
 		private void setFigureProfileFigure_NameLabel(WrapLabel fig) {
 			fProfileFigure_NameLabel = fig;
-		}
-
-		/**
-		 * @generated
-		 */
-		private WrapLabel fProfileFigure_ProfileLabel;
-
-		/**
-		 * @generated
-		 */
-		public WrapLabel getFigureProfileFigure_ProfileLabel() {
-			return fProfileFigure_ProfileLabel;
-		}
-
-		/**
-		 * @generated
-		 */
-		private void setFigureProfileFigure_ProfileLabel(WrapLabel fig) {
-			fProfileFigure_ProfileLabel = fig;
 		}
 
 		/**

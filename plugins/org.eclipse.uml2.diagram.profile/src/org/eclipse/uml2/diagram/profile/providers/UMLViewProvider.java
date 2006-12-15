@@ -22,7 +22,6 @@ import org.eclipse.uml2.diagram.profile.edit.parts.ProfileContentsEditPart;
 import org.eclipse.uml2.diagram.profile.edit.parts.ProfileEditPart;
 import org.eclipse.uml2.diagram.profile.edit.parts.ProfileName2EditPart;
 import org.eclipse.uml2.diagram.profile.edit.parts.ProfileNameEditPart;
-import org.eclipse.uml2.diagram.profile.edit.parts.ProfileNode_profileEditPart;
 import org.eclipse.uml2.diagram.profile.edit.parts.ProfileProfileLabelsEditPart;
 import org.eclipse.uml2.diagram.profile.edit.parts.PropertyEditPart;
 import org.eclipse.uml2.diagram.profile.edit.parts.ReferencedMetaclassNode_classNameEditPart;
@@ -49,7 +48,6 @@ import org.eclipse.uml2.diagram.profile.view.factories.Profile3ViewFactory;
 import org.eclipse.uml2.diagram.profile.view.factories.ProfileContentsViewFactory;
 import org.eclipse.uml2.diagram.profile.view.factories.ProfileName2ViewFactory;
 import org.eclipse.uml2.diagram.profile.view.factories.ProfileNameViewFactory;
-import org.eclipse.uml2.diagram.profile.view.factories.ProfileNode_profileViewFactory;
 import org.eclipse.uml2.diagram.profile.view.factories.ProfileProfileLabelsViewFactory;
 import org.eclipse.uml2.diagram.profile.view.factories.ProfileViewFactory;
 import org.eclipse.uml2.diagram.profile.view.factories.PropertyViewFactory;
@@ -97,8 +95,6 @@ public class UMLViewProvider extends AbstractViewProvider {
 			return StereotypeNameViewFactory.class;
 		case Profile2EditPart.VISUAL_ID:
 			return Profile2ViewFactory.class;
-		case ProfileNode_profileEditPart.VISUAL_ID:
-			return ProfileNode_profileViewFactory.class;
 		case ProfileNameEditPart.VISUAL_ID:
 			return ProfileNameViewFactory.class;
 		case EnumerationEditPart.VISUAL_ID:

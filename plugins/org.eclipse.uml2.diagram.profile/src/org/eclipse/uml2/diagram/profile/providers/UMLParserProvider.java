@@ -119,22 +119,22 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 	/**
 	 * @generated
 	 */
-	private IParser profileProfileName_5004Parser;
+	private IParser profileProfileName_5003Parser;
 
 	/**
 	 * @generated
 	 */
-	private IParser getProfileProfileName_5004Parser() {
-		if (profileProfileName_5004Parser == null) {
-			profileProfileName_5004Parser = createProfileProfileName_5004Parser();
+	private IParser getProfileProfileName_5003Parser() {
+		if (profileProfileName_5003Parser == null) {
+			profileProfileName_5003Parser = createProfileProfileName_5003Parser();
 		}
-		return profileProfileName_5004Parser;
+		return profileProfileName_5003Parser;
 	}
 
 	/**
 	 * @generated
 	 */
-	protected IParser createProfileProfileName_5004Parser() {
+	protected IParser createProfileProfileName_5003Parser() {
 		UMLStructuralFeatureParser parser = new UMLStructuralFeatureParser(UMLPackage.eINSTANCE.getNamedElement_Name());
 		return parser;
 	}
@@ -199,7 +199,7 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 		case StereotypeNameEditPart.VISUAL_ID:
 			return getStereotypeStereotypeName_5001Parser();
 		case ProfileNameEditPart.VISUAL_ID:
-			return getProfileProfileName_5004Parser();
+			return getProfileProfileName_5003Parser();
 		case EnumerationNameEditPart.VISUAL_ID:
 			return getEnumerationEnumerationName_5005Parser();
 		case ProfileName2EditPart.VISUAL_ID:

@@ -25,7 +25,6 @@ import org.eclipse.uml2.diagram.profile.edit.parts.ProfileContentsEditPart;
 import org.eclipse.uml2.diagram.profile.edit.parts.ProfileEditPart;
 import org.eclipse.uml2.diagram.profile.edit.parts.ProfileName2EditPart;
 import org.eclipse.uml2.diagram.profile.edit.parts.ProfileNameEditPart;
-import org.eclipse.uml2.diagram.profile.edit.parts.ProfileNode_profileEditPart;
 import org.eclipse.uml2.diagram.profile.edit.parts.ProfileProfileLabelsEditPart;
 import org.eclipse.uml2.diagram.profile.edit.parts.PropertyEditPart;
 import org.eclipse.uml2.diagram.profile.edit.parts.ReferencedMetaclassNode_classNameEditPart;
@@ -197,9 +196,6 @@ public class UMLVisualIDRegistry {
 			}
 			return getUnrecognizedStereotype_2001ChildNodeID(domainElement, semanticHint);
 		case Profile2EditPart.VISUAL_ID:
-			if (ProfileNode_profileEditPart.VISUAL_ID == nodeVisualID) {
-				return ProfileNode_profileEditPart.VISUAL_ID;
-			}
 			if (ProfileNameEditPart.VISUAL_ID == nodeVisualID) {
 				return ProfileNameEditPart.VISUAL_ID;
 			}

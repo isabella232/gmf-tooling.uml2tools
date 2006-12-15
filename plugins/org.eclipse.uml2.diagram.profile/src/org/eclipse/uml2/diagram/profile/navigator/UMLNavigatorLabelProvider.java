@@ -42,7 +42,7 @@ import org.eclipse.uml2.diagram.profile.edit.parts.Profile2EditPart;
 import org.eclipse.uml2.diagram.profile.edit.parts.Profile3EditPart;
 import org.eclipse.uml2.diagram.profile.edit.parts.ProfileEditPart;
 import org.eclipse.uml2.diagram.profile.edit.parts.ProfileName2EditPart;
-import org.eclipse.uml2.diagram.profile.edit.parts.ProfileNode_profileEditPart;
+import org.eclipse.uml2.diagram.profile.edit.parts.ProfileNameEditPart;
 import org.eclipse.uml2.diagram.profile.edit.parts.PropertyEditPart;
 import org.eclipse.uml2.diagram.profile.edit.parts.ReferencedMetaclassNode_classNameEditPart;
 import org.eclipse.uml2.diagram.profile.edit.parts.Stereotype2EditPart;
@@ -245,7 +245,7 @@ public class UMLNavigatorLabelProvider extends LabelProvider implements ICommonL
 
 			public Object getAdapter(Class adapter) {
 				if (String.class.equals(adapter)) {
-					return UMLVisualIDRegistry.getType(ProfileNode_profileEditPart.VISUAL_ID);
+					return UMLVisualIDRegistry.getType(ProfileNameEditPart.VISUAL_ID);
 				}
 				if (IElementType.class.equals(adapter)) {
 					return UMLElementTypes.Profile_2002;
