@@ -7,16 +7,13 @@ import org.eclipse.gmf.runtime.emf.type.core.requests.DestroyElementRequest;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EAnnotation;
 import org.eclipse.gmf.runtime.notation.View;
-import org.eclipse.emf.ecore.EClass;
-
 import org.eclipse.gef.commands.UnexecutableCommand;
-
-import org.eclipse.gmf.runtime.emf.type.core.commands.CreateElementCommand;
 
 import org.eclipse.gmf.runtime.emf.type.core.requests.CreateElementRequest;
 
 import org.eclipse.uml2.diagram.activity.edit.commands.ControlFlowTypeLinkCreateCommand;
 import org.eclipse.uml2.diagram.activity.edit.commands.ObjectFlowTypeLinkCreateCommand;
+import org.eclipse.uml2.diagram.activity.edit.commands.OutputPinCreateCommand;
 
 import org.eclipse.uml2.diagram.activity.providers.UMLElementTypes;
 
@@ -37,40 +34,9 @@ public class OpaqueAction2ItemSemanticEditPolicy extends UMLBaseItemSemanticEdit
 			if (req.getContainmentFeature() == null) {
 				req.setContainmentFeature(UMLPackage.eINSTANCE.getOpaqueAction_OutputValue());
 			}
-			return getMSLWrapper(new CreateOutputPin_3001Command(req));
+			return getMSLWrapper(new OutputPinCreateCommand(req));
 		}
 		return super.getCreateCommand(req);
-	}
-
-	/**
-	 * @generated
-	 */
-	private static class CreateOutputPin_3001Command extends CreateElementCommand {
-
-		/**
-		 * @generated
-		 */
-		public CreateOutputPin_3001Command(CreateElementRequest req) {
-			super(req);
-		}
-
-		/**
-		 * @generated
-		 */
-		protected EClass getEClassToEdit() {
-			return UMLPackage.eINSTANCE.getOpaqueAction();
-		};
-
-		/**
-		 * @generated
-		 */
-		protected EObject getElementToEdit() {
-			EObject container = ((CreateElementRequest) getRequest()).getContainer();
-			if (container instanceof View) {
-				container = ((View) container).getElement();
-			}
-			return container;
-		}
 	}
 
 	/**

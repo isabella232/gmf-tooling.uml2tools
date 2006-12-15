@@ -7,16 +7,14 @@ import org.eclipse.gmf.runtime.emf.type.core.requests.DestroyElementRequest;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EAnnotation;
 import org.eclipse.gmf.runtime.notation.View;
-import org.eclipse.emf.ecore.EClass;
-
 import org.eclipse.gef.commands.UnexecutableCommand;
-
-import org.eclipse.gmf.runtime.emf.type.core.commands.CreateElementCommand;
 
 import org.eclipse.gmf.runtime.emf.type.core.requests.CreateElementRequest;
 
 import org.eclipse.uml2.diagram.activity.edit.commands.ControlFlowTypeLinkCreateCommand;
+import org.eclipse.uml2.diagram.activity.edit.commands.InputPin4CreateCommand;
 import org.eclipse.uml2.diagram.activity.edit.commands.ObjectFlowTypeLinkCreateCommand;
+import org.eclipse.uml2.diagram.activity.edit.commands.OutputPin3CreateCommand;
 
 import org.eclipse.uml2.diagram.activity.providers.UMLElementTypes;
 
@@ -37,77 +35,15 @@ public class CallBehaviorAction2ItemSemanticEditPolicy extends UMLBaseItemSemant
 			if (req.getContainmentFeature() == null) {
 				req.setContainmentFeature(UMLPackage.eINSTANCE.getCallAction_Result());
 			}
-			return getMSLWrapper(new CreateOutputPin_3006Command(req));
+			return getMSLWrapper(new OutputPin3CreateCommand(req));
 		}
 		if (UMLElementTypes.InputPin_3007 == req.getElementType()) {
 			if (req.getContainmentFeature() == null) {
 				req.setContainmentFeature(UMLPackage.eINSTANCE.getInvocationAction_Argument());
 			}
-			return getMSLWrapper(new CreateInputPin_3007Command(req));
+			return getMSLWrapper(new InputPin4CreateCommand(req));
 		}
 		return super.getCreateCommand(req);
-	}
-
-	/**
-	 * @generated
-	 */
-	private static class CreateOutputPin_3006Command extends CreateElementCommand {
-
-		/**
-		 * @generated
-		 */
-		public CreateOutputPin_3006Command(CreateElementRequest req) {
-			super(req);
-		}
-
-		/**
-		 * @generated
-		 */
-		protected EClass getEClassToEdit() {
-			return UMLPackage.eINSTANCE.getCallBehaviorAction();
-		};
-
-		/**
-		 * @generated
-		 */
-		protected EObject getElementToEdit() {
-			EObject container = ((CreateElementRequest) getRequest()).getContainer();
-			if (container instanceof View) {
-				container = ((View) container).getElement();
-			}
-			return container;
-		}
-	}
-
-	/**
-	 * @generated
-	 */
-	private static class CreateInputPin_3007Command extends CreateElementCommand {
-
-		/**
-		 * @generated
-		 */
-		public CreateInputPin_3007Command(CreateElementRequest req) {
-			super(req);
-		}
-
-		/**
-		 * @generated
-		 */
-		protected EClass getEClassToEdit() {
-			return UMLPackage.eINSTANCE.getCallBehaviorAction();
-		};
-
-		/**
-		 * @generated
-		 */
-		protected EObject getElementToEdit() {
-			EObject container = ((CreateElementRequest) getRequest()).getContainer();
-			if (container instanceof View) {
-				container = ((View) container).getElement();
-			}
-			return container;
-		}
 	}
 
 	/**

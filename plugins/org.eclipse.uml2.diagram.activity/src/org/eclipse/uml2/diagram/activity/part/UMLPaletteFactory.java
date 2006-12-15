@@ -29,52 +29,6 @@ public class UMLPaletteFactory {
 	}
 
 	/**
-	 * Creates "Control Nodes" palette tool group
-	 * @generated
-	 */
-	private PaletteContainer createControlNodes2Group() {
-		PaletteDrawer paletteContainer = new PaletteDrawer(UMLDiagramEditorPlugin
-				.getString("ControlNodes2Group.title")); //$NON-NLS-1$
-		paletteContainer.setDescription(UMLDiagramEditorPlugin.getString("ControlNodes2Group.desc")); //$NON-NLS-1$
-		paletteContainer.add(createActivityFinalNode1CreationTool());
-		paletteContainer.add(createActivityInitialNode2CreationTool());
-		paletteContainer.add(createFlowFinalNode3CreationTool());
-		paletteContainer.add(createDecisionNode4CreationTool());
-		paletteContainer.add(createMergeNode5CreationTool());
-		paletteContainer.add(createForkNode6CreationTool());
-		paletteContainer.add(createJoinNode7CreationTool());
-		return paletteContainer;
-	}
-
-	/**
-	 * Creates "Objects" palette tool group
-	 * @generated
-	 */
-	private PaletteContainer createObjects4Group() {
-		PaletteDrawer paletteContainer = new PaletteDrawer(UMLDiagramEditorPlugin
-				.getString("Objects4Group.title")); //$NON-NLS-1$
-		paletteContainer.setDescription(UMLDiagramEditorPlugin.getString("Objects4Group.desc")); //$NON-NLS-1$
-		paletteContainer.add(createDatastore1CreationTool());
-		paletteContainer.add(createCentralBuffer2CreationTool());
-		paletteContainer.add(createPin3CreationTool());
-		paletteContainer.add(createOutputPin4CreationTool());
-		paletteContainer.add(createInputPin5CreationTool());
-		return paletteContainer;
-	}
-
-	/**
-	 * Creates "Structured Activities" palette tool group
-	 * @generated
-	 */
-	private PaletteContainer createStructuredActivities3Group() {
-		PaletteDrawer paletteContainer = new PaletteDrawer(UMLDiagramEditorPlugin
-				.getString("StructuredActivities3Group.title")); //$NON-NLS-1$
-		paletteContainer.setDescription(UMLDiagramEditorPlugin.getString("StructuredActivities3Group.desc")); //$NON-NLS-1$
-		paletteContainer.add(createStructuredActivityNode1CreationTool());
-		return paletteContainer;
-	}
-
-	/**
 	 * Creates "Edges" palette tool group
 	 * @generated
 	 */
@@ -87,12 +41,54 @@ public class UMLPaletteFactory {
 	}
 
 	/**
+	 * Creates "Control Nodes" palette tool group
+	 * @generated
+	 */
+	private PaletteContainer createControlNodes2Group() {
+		PaletteDrawer paletteContainer = new PaletteDrawer(UMLDiagramEditorPlugin.getString("ControlNodes2Group.title")); //$NON-NLS-1$
+		paletteContainer.setDescription(UMLDiagramEditorPlugin.getString("ControlNodes2Group.desc")); //$NON-NLS-1$
+		paletteContainer.add(createActivityFinalNode1CreationTool());
+		paletteContainer.add(createActivityInitialNode2CreationTool());
+		paletteContainer.add(createFlowFinalNode3CreationTool());
+		paletteContainer.add(createDecisionNode4CreationTool());
+		paletteContainer.add(createMergeNode5CreationTool());
+		paletteContainer.add(createForkNode6CreationTool());
+		paletteContainer.add(createJoinNode7CreationTool());
+		return paletteContainer;
+	}
+
+	/**
+	 * Creates "Structured Activities" palette tool group
+	 * @generated
+	 */
+	private PaletteContainer createStructuredActivities3Group() {
+		PaletteDrawer paletteContainer = new PaletteDrawer(UMLDiagramEditorPlugin.getString("StructuredActivities3Group.title")); //$NON-NLS-1$
+		paletteContainer.setDescription(UMLDiagramEditorPlugin.getString("StructuredActivities3Group.desc")); //$NON-NLS-1$
+		paletteContainer.add(createStructuredActivityNode1CreationTool());
+		return paletteContainer;
+	}
+
+	/**
+	 * Creates "Objects" palette tool group
+	 * @generated
+	 */
+	private PaletteContainer createObjects4Group() {
+		PaletteDrawer paletteContainer = new PaletteDrawer(UMLDiagramEditorPlugin.getString("Objects4Group.title")); //$NON-NLS-1$
+		paletteContainer.setDescription(UMLDiagramEditorPlugin.getString("Objects4Group.desc")); //$NON-NLS-1$
+		paletteContainer.add(createDatastore1CreationTool());
+		paletteContainer.add(createCentralBuffer2CreationTool());
+		paletteContainer.add(createPin3CreationTool());
+		paletteContainer.add(createOutputPin4CreationTool());
+		paletteContainer.add(createInputPin5CreationTool());
+		return paletteContainer;
+	}
+
+	/**
 	 * Creates "Actions" palette tool group
 	 * @generated
 	 */
 	private PaletteContainer createActions1Group() {
-		PaletteDrawer paletteContainer = new PaletteDrawer(UMLDiagramEditorPlugin
-				.getString("Actions1Group.title")); //$NON-NLS-1$
+		PaletteDrawer paletteContainer = new PaletteDrawer(UMLDiagramEditorPlugin.getString("Actions1Group.title")); //$NON-NLS-1$
 		paletteContainer.setDescription(UMLDiagramEditorPlugin.getString("Actions1Group.desc")); //$NON-NLS-1$
 		paletteContainer.add(createAcceptEventAction1CreationTool());
 		paletteContainer.add(createAcceptTimeAction2CreationTool());
@@ -102,6 +98,30 @@ public class UMLPaletteFactory {
 		paletteContainer.add(createCallBehaviorAction6CreationTool());
 		paletteContainer.add(createCallOperationAction7CreationTool());
 		return paletteContainer;
+	}
+
+	/**
+	 * @generated
+	 */
+	private ToolEntry createControlFlow1CreationTool() {
+		List/*<IElementType>*/types = new ArrayList/*<IElementType>*/(1);
+		types.add(UMLElementTypes.ControlFlow_4001);
+		LinkToolEntry entry = new LinkToolEntry(UMLDiagramEditorPlugin.getString("ControlFlow1CreationTool.title"), UMLDiagramEditorPlugin.getString("ControlFlow1CreationTool.desc"), types); //$NON-NLS-1$ $NON-NLS-2$
+		entry.setSmallIcon(UMLElementTypes.getImageDescriptor(UMLElementTypes.ControlFlow_4001));
+		entry.setLargeIcon(entry.getSmallIcon());
+		return entry;
+	}
+
+	/**
+	 * @generated
+	 */
+	private ToolEntry createObjectFlow2CreationTool() {
+		List/*<IElementType>*/types = new ArrayList/*<IElementType>*/(1);
+		types.add(UMLElementTypes.ObjectFlow_4002);
+		LinkToolEntry entry = new LinkToolEntry(UMLDiagramEditorPlugin.getString("ObjectFlow2CreationTool.title"), UMLDiagramEditorPlugin.getString("ObjectFlow2CreationTool.desc"), types); //$NON-NLS-1$ $NON-NLS-2$
+		entry.setSmallIcon(UMLElementTypes.getImageDescriptor(UMLElementTypes.ObjectFlow_4002));
+		entry.setLargeIcon(entry.getSmallIcon());
+		return entry;
 	}
 
 	/**
@@ -138,8 +158,7 @@ public class UMLPaletteFactory {
 		List/*<IElementType>*/types = new ArrayList/*<IElementType>*/(2);
 		types.add(UMLElementTypes.FlowFinalNode_2011);
 		types.add(UMLElementTypes.FlowFinalNode_3016);
-		NodeToolEntry entry = new NodeToolEntry(
-				UMLDiagramEditorPlugin.getString("FlowFinalNode3CreationTool.title"), UMLDiagramEditorPlugin.getString("FlowFinalNode3CreationTool.desc"), types); //$NON-NLS-1$ $NON-NLS-2$
+		NodeToolEntry entry = new NodeToolEntry(UMLDiagramEditorPlugin.getString("FlowFinalNode3CreationTool.title"), UMLDiagramEditorPlugin.getString("FlowFinalNode3CreationTool.desc"), types); //$NON-NLS-1$ $NON-NLS-2$
 		entry.setSmallIcon(UMLElementTypes.getImageDescriptor(UMLElementTypes.FlowFinalNode_2011));
 		entry.setLargeIcon(entry.getSmallIcon());
 		return entry;
@@ -152,8 +171,7 @@ public class UMLPaletteFactory {
 		List/*<IElementType>*/types = new ArrayList/*<IElementType>*/(2);
 		types.add(UMLElementTypes.DecisionNode_2004);
 		types.add(UMLElementTypes.DecisionNode_3015);
-		NodeToolEntry entry = new NodeToolEntry(
-				UMLDiagramEditorPlugin.getString("DecisionNode4CreationTool.title"), UMLDiagramEditorPlugin.getString("DecisionNode4CreationTool.desc"), types); //$NON-NLS-1$ $NON-NLS-2$
+		NodeToolEntry entry = new NodeToolEntry(UMLDiagramEditorPlugin.getString("DecisionNode4CreationTool.title"), UMLDiagramEditorPlugin.getString("DecisionNode4CreationTool.desc"), types); //$NON-NLS-1$ $NON-NLS-2$
 		entry.setSmallIcon(UMLElementTypes.getImageDescriptor(UMLElementTypes.DecisionNode_2004));
 		entry.setLargeIcon(entry.getSmallIcon());
 		return entry;
@@ -165,8 +183,7 @@ public class UMLPaletteFactory {
 	private ToolEntry createMergeNode5CreationTool() {
 		List/*<IElementType>*/types = new ArrayList/*<IElementType>*/(1);
 		types.add(UMLElementTypes.MergeNode_2005);
-		NodeToolEntry entry = new NodeToolEntry(
-				UMLDiagramEditorPlugin.getString("MergeNode5CreationTool.title"), UMLDiagramEditorPlugin.getString("MergeNode5CreationTool.desc"), types); //$NON-NLS-1$ $NON-NLS-2$
+		NodeToolEntry entry = new NodeToolEntry(UMLDiagramEditorPlugin.getString("MergeNode5CreationTool.title"), UMLDiagramEditorPlugin.getString("MergeNode5CreationTool.desc"), types); //$NON-NLS-1$ $NON-NLS-2$
 		entry.setSmallIcon(UMLElementTypes.getImageDescriptor(UMLElementTypes.MergeNode_2005));
 		entry.setLargeIcon(entry.getSmallIcon());
 		return entry;
@@ -179,8 +196,7 @@ public class UMLPaletteFactory {
 		List/*<IElementType>*/types = new ArrayList/*<IElementType>*/(2);
 		types.add(UMLElementTypes.ForkNode_2012);
 		types.add(UMLElementTypes.ForkNode_3021);
-		NodeToolEntry entry = new NodeToolEntry(
-				UMLDiagramEditorPlugin.getString("ForkNode6CreationTool.title"), UMLDiagramEditorPlugin.getString("ForkNode6CreationTool.desc"), types); //$NON-NLS-1$ $NON-NLS-2$
+		NodeToolEntry entry = new NodeToolEntry(UMLDiagramEditorPlugin.getString("ForkNode6CreationTool.title"), UMLDiagramEditorPlugin.getString("ForkNode6CreationTool.desc"), types); //$NON-NLS-1$ $NON-NLS-2$
 		entry.setSmallIcon(UMLElementTypes.getImageDescriptor(UMLElementTypes.ForkNode_2012));
 		entry.setLargeIcon(entry.getSmallIcon());
 		return entry;
@@ -193,83 +209,8 @@ public class UMLPaletteFactory {
 		List/*<IElementType>*/types = new ArrayList/*<IElementType>*/(2);
 		types.add(UMLElementTypes.JoinNode_2013);
 		types.add(UMLElementTypes.JoinNode_3022);
-		NodeToolEntry entry = new NodeToolEntry(
-				UMLDiagramEditorPlugin.getString("JoinNode7CreationTool.title"), UMLDiagramEditorPlugin.getString("JoinNode7CreationTool.desc"), types); //$NON-NLS-1$ $NON-NLS-2$
+		NodeToolEntry entry = new NodeToolEntry(UMLDiagramEditorPlugin.getString("JoinNode7CreationTool.title"), UMLDiagramEditorPlugin.getString("JoinNode7CreationTool.desc"), types); //$NON-NLS-1$ $NON-NLS-2$
 		entry.setSmallIcon(UMLElementTypes.getImageDescriptor(UMLElementTypes.JoinNode_2013));
-		entry.setLargeIcon(entry.getSmallIcon());
-		return entry;
-	}
-
-	/**
-	 * @generated
-	 */
-	private ToolEntry createDatastore1CreationTool() {
-		List/*<IElementType>*/types = new ArrayList/*<IElementType>*/(2);
-		types.add(UMLElementTypes.DataStoreNode_2008);
-		types.add(UMLElementTypes.DataStoreNode_3024);
-		NodeToolEntry entry = new NodeToolEntry(
-				UMLDiagramEditorPlugin.getString("Datastore1CreationTool.title"), UMLDiagramEditorPlugin.getString("Datastore1CreationTool.desc"), types); //$NON-NLS-1$ $NON-NLS-2$
-		entry.setSmallIcon(UMLElementTypes.getImageDescriptor(UMLElementTypes.DataStoreNode_2008));
-		entry.setLargeIcon(entry.getSmallIcon());
-		return entry;
-	}
-
-	/**
-	 * @generated
-	 */
-	private ToolEntry createCentralBuffer2CreationTool() {
-		List/*<IElementType>*/types = new ArrayList/*<IElementType>*/(2);
-		types.add(UMLElementTypes.CentralBufferNode_2009);
-		types.add(UMLElementTypes.CentralBufferNode_3025);
-		NodeToolEntry entry = new NodeToolEntry(
-				UMLDiagramEditorPlugin.getString("CentralBuffer2CreationTool.title"), UMLDiagramEditorPlugin.getString("CentralBuffer2CreationTool.desc"), types); //$NON-NLS-1$ $NON-NLS-2$
-		entry.setSmallIcon(UMLElementTypes.getImageDescriptor(UMLElementTypes.CentralBufferNode_2009));
-		entry.setLargeIcon(entry.getSmallIcon());
-		return entry;
-	}
-
-	/**
-	 * @generated
-	 */
-	private ToolEntry createPin3CreationTool() {
-		List/*<IElementType>*/types = new ArrayList/*<IElementType>*/(2);
-		types.add(UMLElementTypes.Pin_2014);
-		types.add(UMLElementTypes.Pin_3017);
-		NodeToolEntry entry = new NodeToolEntry(
-				UMLDiagramEditorPlugin.getString("Pin3CreationTool.title"), UMLDiagramEditorPlugin.getString("Pin3CreationTool.desc"), types); //$NON-NLS-1$ $NON-NLS-2$
-		entry.setSmallIcon(UMLElementTypes.getImageDescriptor(UMLElementTypes.Pin_2014));
-		entry.setLargeIcon(entry.getSmallIcon());
-		return entry;
-	}
-
-	/**
-	 * @generated
-	 */
-	private ToolEntry createOutputPin4CreationTool() {
-		List/*<IElementType>*/types = new ArrayList/*<IElementType>*/(3);
-		types.add(UMLElementTypes.OutputPin_3001);
-		types.add(UMLElementTypes.OutputPin_3002);
-		types.add(UMLElementTypes.OutputPin_3006);
-		NodeToolEntry entry = new NodeToolEntry(
-				UMLDiagramEditorPlugin.getString("OutputPin4CreationTool.title"), UMLDiagramEditorPlugin.getString("OutputPin4CreationTool.desc"), types); //$NON-NLS-1$ $NON-NLS-2$
-		entry.setSmallIcon(UMLElementTypes.getImageDescriptor(UMLElementTypes.OutputPin_3001));
-		entry.setLargeIcon(entry.getSmallIcon());
-		return entry;
-	}
-
-	/**
-	 * @generated
-	 */
-	private ToolEntry createInputPin5CreationTool() {
-		List/*<IElementType>*/types = new ArrayList/*<IElementType>*/(5);
-		types.add(UMLElementTypes.InputPin_3003);
-		types.add(UMLElementTypes.InputPin_3004);
-		types.add(UMLElementTypes.InputPin_3005);
-		types.add(UMLElementTypes.InputPin_3007);
-		types.add(UMLElementTypes.InputPin_3008);
-		NodeToolEntry entry = new NodeToolEntry(
-				UMLDiagramEditorPlugin.getString("InputPin5CreationTool.title"), UMLDiagramEditorPlugin.getString("InputPin5CreationTool.desc"), types); //$NON-NLS-1$ $NON-NLS-2$
-		entry.setSmallIcon(UMLElementTypes.getImageDescriptor(UMLElementTypes.InputPin_3003));
 		entry.setLargeIcon(entry.getSmallIcon());
 		return entry;
 	}
@@ -291,12 +232,12 @@ public class UMLPaletteFactory {
 	/**
 	 * @generated
 	 */
-	private ToolEntry createControlFlow1CreationTool() {
-		List/*<IElementType>*/types = new ArrayList/*<IElementType>*/(1);
-		types.add(UMLElementTypes.ControlFlow_4001);
-		LinkToolEntry entry = new LinkToolEntry(
-				UMLDiagramEditorPlugin.getString("ControlFlow1CreationTool.title"), UMLDiagramEditorPlugin.getString("ControlFlow1CreationTool.desc"), types); //$NON-NLS-1$ $NON-NLS-2$
-		entry.setSmallIcon(UMLElementTypes.getImageDescriptor(UMLElementTypes.ControlFlow_4001));
+	private ToolEntry createDatastore1CreationTool() {
+		List/*<IElementType>*/types = new ArrayList/*<IElementType>*/(2);
+		types.add(UMLElementTypes.DataStoreNode_2008);
+		types.add(UMLElementTypes.DataStoreNode_3024);
+		NodeToolEntry entry = new NodeToolEntry(UMLDiagramEditorPlugin.getString("Datastore1CreationTool.title"), UMLDiagramEditorPlugin.getString("Datastore1CreationTool.desc"), types); //$NON-NLS-1$ $NON-NLS-2$
+		entry.setSmallIcon(UMLElementTypes.getImageDescriptor(UMLElementTypes.DataStoreNode_2008));
 		entry.setLargeIcon(entry.getSmallIcon());
 		return entry;
 	}
@@ -304,12 +245,55 @@ public class UMLPaletteFactory {
 	/**
 	 * @generated
 	 */
-	private ToolEntry createObjectFlow2CreationTool() {
-		List/*<IElementType>*/types = new ArrayList/*<IElementType>*/(1);
-		types.add(UMLElementTypes.ObjectFlow_4002);
-		LinkToolEntry entry = new LinkToolEntry(
-				UMLDiagramEditorPlugin.getString("ObjectFlow2CreationTool.title"), UMLDiagramEditorPlugin.getString("ObjectFlow2CreationTool.desc"), types); //$NON-NLS-1$ $NON-NLS-2$
-		entry.setSmallIcon(UMLElementTypes.getImageDescriptor(UMLElementTypes.ObjectFlow_4002));
+	private ToolEntry createCentralBuffer2CreationTool() {
+		List/*<IElementType>*/types = new ArrayList/*<IElementType>*/(2);
+		types.add(UMLElementTypes.CentralBufferNode_2009);
+		types.add(UMLElementTypes.CentralBufferNode_3025);
+		NodeToolEntry entry = new NodeToolEntry(UMLDiagramEditorPlugin.getString("CentralBuffer2CreationTool.title"), UMLDiagramEditorPlugin.getString("CentralBuffer2CreationTool.desc"), types); //$NON-NLS-1$ $NON-NLS-2$
+		entry.setSmallIcon(UMLElementTypes.getImageDescriptor(UMLElementTypes.CentralBufferNode_2009));
+		entry.setLargeIcon(entry.getSmallIcon());
+		return entry;
+	}
+
+	/**
+	 * @generated
+	 */
+	private ToolEntry createPin3CreationTool() {
+		List/*<IElementType>*/types = new ArrayList/*<IElementType>*/(2);
+		types.add(UMLElementTypes.Pin_2014);
+		types.add(UMLElementTypes.Pin_3017);
+		NodeToolEntry entry = new NodeToolEntry(UMLDiagramEditorPlugin.getString("Pin3CreationTool.title"), UMLDiagramEditorPlugin.getString("Pin3CreationTool.desc"), types); //$NON-NLS-1$ $NON-NLS-2$
+		entry.setSmallIcon(UMLElementTypes.getImageDescriptor(UMLElementTypes.Pin_2014));
+		entry.setLargeIcon(entry.getSmallIcon());
+		return entry;
+	}
+
+	/**
+	 * @generated
+	 */
+	private ToolEntry createOutputPin4CreationTool() {
+		List/*<IElementType>*/types = new ArrayList/*<IElementType>*/(3);
+		types.add(UMLElementTypes.OutputPin_3001);
+		types.add(UMLElementTypes.OutputPin_3002);
+		types.add(UMLElementTypes.OutputPin_3006);
+		NodeToolEntry entry = new NodeToolEntry(UMLDiagramEditorPlugin.getString("OutputPin4CreationTool.title"), UMLDiagramEditorPlugin.getString("OutputPin4CreationTool.desc"), types); //$NON-NLS-1$ $NON-NLS-2$
+		entry.setSmallIcon(UMLElementTypes.getImageDescriptor(UMLElementTypes.OutputPin_3001));
+		entry.setLargeIcon(entry.getSmallIcon());
+		return entry;
+	}
+
+	/**
+	 * @generated
+	 */
+	private ToolEntry createInputPin5CreationTool() {
+		List/*<IElementType>*/types = new ArrayList/*<IElementType>*/(5);
+		types.add(UMLElementTypes.InputPin_3003);
+		types.add(UMLElementTypes.InputPin_3004);
+		types.add(UMLElementTypes.InputPin_3005);
+		types.add(UMLElementTypes.InputPin_3007);
+		types.add(UMLElementTypes.InputPin_3008);
+		NodeToolEntry entry = new NodeToolEntry(UMLDiagramEditorPlugin.getString("InputPin5CreationTool.title"), UMLDiagramEditorPlugin.getString("InputPin5CreationTool.desc"), types); //$NON-NLS-1$ $NON-NLS-2$
+		entry.setSmallIcon(UMLElementTypes.getImageDescriptor(UMLElementTypes.InputPin_3003));
 		entry.setLargeIcon(entry.getSmallIcon());
 		return entry;
 	}
@@ -335,8 +319,7 @@ public class UMLPaletteFactory {
 		List/*<IElementType>*/types = new ArrayList/*<IElementType>*/(2);
 		types.add(UMLElementTypes.AcceptEventAction_2002);
 		types.add(UMLElementTypes.AcceptEventAction_3013);
-		NodeToolEntry entry = new NodeToolEntry(
-				UMLDiagramEditorPlugin.getString("AcceptTimeAction2CreationTool.title"), UMLDiagramEditorPlugin.getString("AcceptTimeAction2CreationTool.desc"), types); //$NON-NLS-1$ $NON-NLS-2$
+		NodeToolEntry entry = new NodeToolEntry(UMLDiagramEditorPlugin.getString("AcceptTimeAction2CreationTool.title"), UMLDiagramEditorPlugin.getString("AcceptTimeAction2CreationTool.desc"), types); //$NON-NLS-1$ $NON-NLS-2$
 		entry.setSmallIcon(UMLElementTypes.getImageDescriptor(UMLElementTypes.AcceptEventAction_2002));
 		entry.setLargeIcon(entry.getSmallIcon());
 		return entry;
@@ -349,8 +332,7 @@ public class UMLPaletteFactory {
 		List/*<IElementType>*/types = new ArrayList/*<IElementType>*/(2);
 		types.add(UMLElementTypes.OpaqueAction_2010);
 		types.add(UMLElementTypes.OpaqueAction_3011);
-		NodeToolEntry entry = new NodeToolEntry(
-				UMLDiagramEditorPlugin.getString("OpaqueAction3CreationTool.title"), UMLDiagramEditorPlugin.getString("OpaqueAction3CreationTool.desc"), types); //$NON-NLS-1$ $NON-NLS-2$
+		NodeToolEntry entry = new NodeToolEntry(UMLDiagramEditorPlugin.getString("OpaqueAction3CreationTool.title"), UMLDiagramEditorPlugin.getString("OpaqueAction3CreationTool.desc"), types); //$NON-NLS-1$ $NON-NLS-2$
 		entry.setSmallIcon(UMLElementTypes.getImageDescriptor(UMLElementTypes.OpaqueAction_2010));
 		entry.setLargeIcon(entry.getSmallIcon());
 		return entry;
@@ -379,8 +361,7 @@ public class UMLPaletteFactory {
 		types.add(UMLElementTypes.AddStructuralFeatureValueAction_3023);
 		NodeToolEntry entry = new NodeToolEntry(
 				UMLDiagramEditorPlugin.getString("AddFeatureValueAction5CreationTool.title"), UMLDiagramEditorPlugin.getString("AddFeatureValueAction5CreationTool.desc"), types); //$NON-NLS-1$ $NON-NLS-2$
-		entry.setSmallIcon(UMLElementTypes
-				.getImageDescriptor(UMLElementTypes.AddStructuralFeatureValueAction_2016));
+		entry.setSmallIcon(UMLElementTypes.getImageDescriptor(UMLElementTypes.AddStructuralFeatureValueAction_2016));
 		entry.setLargeIcon(entry.getSmallIcon());
 		return entry;
 	}

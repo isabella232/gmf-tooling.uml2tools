@@ -97,7 +97,7 @@ public class UMLCreationWizardPage extends WizardNewFileCreationPage {
 			return false;
 		}
 		String extension = getExtension();
-		if (extension != null && !extension.equals(getFilePath().getFileExtension())) {
+		if (extension != null && !getFilePath().toString().endsWith("." + extension)) {
 			setErrorMessage(NLS.bind("File name should have ''{0}'' extension.", extension));
 			return false;
 		}

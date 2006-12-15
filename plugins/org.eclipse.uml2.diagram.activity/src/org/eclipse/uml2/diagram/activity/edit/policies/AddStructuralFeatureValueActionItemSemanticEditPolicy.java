@@ -7,22 +7,20 @@ import org.eclipse.gmf.runtime.emf.type.core.requests.DestroyElementRequest;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EAnnotation;
 import org.eclipse.gmf.runtime.notation.View;
-import org.eclipse.emf.ecore.EClass;
-
 import org.eclipse.gef.commands.UnexecutableCommand;
-
-import org.eclipse.gmf.runtime.emf.type.core.commands.CreateElementCommand;
 
 import org.eclipse.gmf.runtime.emf.type.core.requests.CreateElementRequest;
 
 import org.eclipse.uml2.diagram.activity.edit.commands.ControlFlowTypeLinkCreateCommand;
+import org.eclipse.uml2.diagram.activity.edit.commands.InputPin2CreateCommand;
+import org.eclipse.uml2.diagram.activity.edit.commands.InputPin3CreateCommand;
+import org.eclipse.uml2.diagram.activity.edit.commands.InputPinCreateCommand;
 import org.eclipse.uml2.diagram.activity.edit.commands.ObjectFlowTypeLinkCreateCommand;
 
 import org.eclipse.uml2.diagram.activity.providers.UMLElementTypes;
 
 import org.eclipse.uml2.uml.Activity;
 import org.eclipse.uml2.uml.ActivityNode;
-import org.eclipse.uml2.uml.AddStructuralFeatureValueAction;
 import org.eclipse.uml2.uml.UMLPackage;
 
 /**
@@ -35,129 +33,24 @@ public class AddStructuralFeatureValueActionItemSemanticEditPolicy extends UMLBa
 	 */
 	protected Command getCreateCommand(CreateElementRequest req) {
 		if (UMLElementTypes.InputPin_3003 == req.getElementType()) {
-			AddStructuralFeatureValueAction container = (AddStructuralFeatureValueAction) (req.getContainer() instanceof View ? ((View) req.getContainer()).getElement() : req.getContainer());
-			if (container.getInsertAt() != null) {
-				return super.getCreateCommand(req);
-			}
 			if (req.getContainmentFeature() == null) {
 				req.setContainmentFeature(UMLPackage.eINSTANCE.getAddStructuralFeatureValueAction_InsertAt());
 			}
-			return getMSLWrapper(new CreateInputPin_3003Command(req));
+			return getMSLWrapper(new InputPinCreateCommand(req));
 		}
 		if (UMLElementTypes.InputPin_3004 == req.getElementType()) {
-			AddStructuralFeatureValueAction container = (AddStructuralFeatureValueAction) (req.getContainer() instanceof View ? ((View) req.getContainer()).getElement() : req.getContainer());
-			if (container.getValue() != null) {
-				return super.getCreateCommand(req);
-			}
 			if (req.getContainmentFeature() == null) {
 				req.setContainmentFeature(UMLPackage.eINSTANCE.getWriteStructuralFeatureAction_Value());
 			}
-			return getMSLWrapper(new CreateInputPin_3004Command(req));
+			return getMSLWrapper(new InputPin2CreateCommand(req));
 		}
 		if (UMLElementTypes.InputPin_3005 == req.getElementType()) {
-			AddStructuralFeatureValueAction container = (AddStructuralFeatureValueAction) (req.getContainer() instanceof View ? ((View) req.getContainer()).getElement() : req.getContainer());
-			if (container.getObject() != null) {
-				return super.getCreateCommand(req);
-			}
 			if (req.getContainmentFeature() == null) {
 				req.setContainmentFeature(UMLPackage.eINSTANCE.getStructuralFeatureAction_Object());
 			}
-			return getMSLWrapper(new CreateInputPin_3005Command(req));
+			return getMSLWrapper(new InputPin3CreateCommand(req));
 		}
 		return super.getCreateCommand(req);
-	}
-
-	/**
-	 * @generated
-	 */
-	private static class CreateInputPin_3003Command extends CreateElementCommand {
-
-		/**
-		 * @generated
-		 */
-		public CreateInputPin_3003Command(CreateElementRequest req) {
-			super(req);
-		}
-
-		/**
-		 * @generated
-		 */
-		protected EClass getEClassToEdit() {
-			return UMLPackage.eINSTANCE.getAddStructuralFeatureValueAction();
-		};
-
-		/**
-		 * @generated
-		 */
-		protected EObject getElementToEdit() {
-			EObject container = ((CreateElementRequest) getRequest()).getContainer();
-			if (container instanceof View) {
-				container = ((View) container).getElement();
-			}
-			return container;
-		}
-	}
-
-	/**
-	 * @generated
-	 */
-	private static class CreateInputPin_3004Command extends CreateElementCommand {
-
-		/**
-		 * @generated
-		 */
-		public CreateInputPin_3004Command(CreateElementRequest req) {
-			super(req);
-		}
-
-		/**
-		 * @generated
-		 */
-		protected EClass getEClassToEdit() {
-			return UMLPackage.eINSTANCE.getAddStructuralFeatureValueAction();
-		};
-
-		/**
-		 * @generated
-		 */
-		protected EObject getElementToEdit() {
-			EObject container = ((CreateElementRequest) getRequest()).getContainer();
-			if (container instanceof View) {
-				container = ((View) container).getElement();
-			}
-			return container;
-		}
-	}
-
-	/**
-	 * @generated
-	 */
-	private static class CreateInputPin_3005Command extends CreateElementCommand {
-
-		/**
-		 * @generated
-		 */
-		public CreateInputPin_3005Command(CreateElementRequest req) {
-			super(req);
-		}
-
-		/**
-		 * @generated
-		 */
-		protected EClass getEClassToEdit() {
-			return UMLPackage.eINSTANCE.getAddStructuralFeatureValueAction();
-		};
-
-		/**
-		 * @generated
-		 */
-		protected EObject getElementToEdit() {
-			EObject container = ((CreateElementRequest) getRequest()).getContainer();
-			if (container instanceof View) {
-				container = ((View) container).getElement();
-			}
-			return container;
-		}
 	}
 
 	/**
