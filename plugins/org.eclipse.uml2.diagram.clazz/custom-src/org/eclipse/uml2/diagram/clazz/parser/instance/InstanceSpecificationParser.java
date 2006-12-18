@@ -33,7 +33,7 @@ public class InstanceSpecificationParser extends ExternalParserBase implements I
 
         public void lookupResolved(NamedElement resolution) {
                 if (resolution instanceof Classifier){
-                        mySubject.getClassifiers().add(resolution);
+                        mySubject.getClassifiers().add((Classifier)resolution);
                 }
         }
     }
