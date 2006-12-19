@@ -1,31 +1,23 @@
 package org.eclipse.uml2.diagram.statemachine.edit.parts;
 
+import org.eclipse.draw2d.Graphics;
 import org.eclipse.draw2d.IFigure;
+import org.eclipse.draw2d.RectangleFigure;
 import org.eclipse.draw2d.StackLayout;
-
 import org.eclipse.gef.EditPart;
 import org.eclipse.gef.EditPolicy;
 import org.eclipse.gef.Request;
-
 import org.eclipse.gef.commands.Command;
-
 import org.eclipse.gef.editpolicies.LayoutEditPolicy;
 import org.eclipse.gef.editpolicies.NonResizableEditPolicy;
-
 import org.eclipse.gef.requests.CreateRequest;
-
 import org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.ShapeNodeEditPart;
-
 import org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles;
-
 import org.eclipse.gmf.runtime.draw2d.ui.figures.ConstrainedToolbarLayout;
-
 import org.eclipse.gmf.runtime.gef.ui.figures.DefaultSizeNodeFigure;
 import org.eclipse.gmf.runtime.gef.ui.figures.NodeFigure;
-
 import org.eclipse.gmf.runtime.notation.View;
-
 import org.eclipse.uml2.diagram.statemachine.edit.policies.Region2ItemSemanticEditPolicy;
 
 /**
@@ -60,9 +52,9 @@ public class Region2EditPart extends ShapeNodeEditPart {
 	 */
 	protected void createDefaultEditPolicies() {
 		super.createDefaultEditPolicies();
+
 		installEditPolicy(EditPolicyRoles.SEMANTIC_ROLE, new Region2ItemSemanticEditPolicy());
 		installEditPolicy(EditPolicy.LAYOUT_ROLE, createLayoutEditPolicy());
-
 	}
 
 	/**
@@ -106,17 +98,6 @@ public class Region2EditPart extends ShapeNodeEditPart {
 	}
 
 	/**
-	 * @generated 
-	 */
-	protected IFigure getContentPaneFor(IGraphicalEditPart editPart) {
-		if (editPart instanceof RegionSubvertices2EditPart) {
-			return getPrimaryShape().getFigureRegionFigure_Compartment();
-		}
-
-		return super.getContentPaneFor(editPart);
-	}
-
-	/**
 	 * @generated
 	 */
 	protected boolean addFixedChild(EditPart childEditPart) {
@@ -133,8 +114,10 @@ public class Region2EditPart extends ShapeNodeEditPart {
 	 * @generated
 	 */
 	protected boolean removeFixedChild(EditPart childEditPart) {
+
 		if (childEditPart instanceof RegionSubvertices2EditPart) {
 			IFigure pane = getPrimaryShape().getFigureRegionFigure_Compartment();
+			setupContentPane(pane); // FIXME each comparment should handle his content pane in his own way 
 			pane.remove(((RegionSubvertices2EditPart) childEditPart).getFigure());
 			return true;
 		}
@@ -144,8 +127,40 @@ public class Region2EditPart extends ShapeNodeEditPart {
 	/**
 	 * @generated
 	 */
+	protected void addChildVisual(EditPart childEditPart, int index) {
+		if (addFixedChild(childEditPart)) {
+			return;
+		}
+		super.addChildVisual(childEditPart, -1);
+	}
+
+	/**
+	 * @generated
+	 */
+	protected void removeChildVisual(EditPart childEditPart) {
+		if (removeFixedChild(childEditPart)) {
+			return;
+		}
+		super.removeChildVisual(childEditPart);
+	}
+
+	/**
+	 * @generated
+	 */
+	protected IFigure getContentPaneFor(IGraphicalEditPart editPart) {
+
+		if (editPart instanceof RegionSubvertices2EditPart) {
+			return getPrimaryShape().getFigureRegionFigure_Compartment();
+		}
+		return super.getContentPaneFor(editPart);
+	}
+
+	/**
+	 * @generated
+	 */
 	protected NodeFigure createNodePlate() {
 		DefaultSizeNodeFigure result = new DefaultSizeNodeFigure(getMapMode().DPtoLP(40), getMapMode().DPtoLP(40));
+
 		return result;
 	}
 
@@ -194,27 +209,7 @@ public class Region2EditPart extends ShapeNodeEditPart {
 	/**
 	 * @generated
 	 */
-	protected void addChildVisual(EditPart childEditPart, int index) {
-		if (addFixedChild(childEditPart)) {
-			return;
-		}
-		super.addChildVisual(childEditPart, -1);
-	}
-
-	/**
-	 * @generated
-	 */
-	protected void removeChildVisual(EditPart childEditPart) {
-		if (removeFixedChild(childEditPart)) {
-			return;
-		}
-		super.removeChildVisual(childEditPart);
-	}
-
-	/**
-	 * @generated
-	 */
-	public class RegionFigure extends org.eclipse.draw2d.RectangleFigure {
+	public class RegionFigure extends RectangleFigure {
 
 		/**
 		 * @generated
@@ -225,7 +220,7 @@ public class Region2EditPart extends ShapeNodeEditPart {
 			this.setOutline(true);
 			this.setOutlineXOR(false);
 			this.setLineWidth(1);
-			this.setLineStyle(org.eclipse.draw2d.Graphics.LINE_DASH);
+			this.setLineStyle(Graphics.LINE_DASH);
 			createContents();
 		}
 
@@ -234,13 +229,13 @@ public class Region2EditPart extends ShapeNodeEditPart {
 		 */
 		private void createContents() {
 
-			org.eclipse.draw2d.RectangleFigure regionFigure_Compartment0 = new org.eclipse.draw2d.RectangleFigure();
+			RectangleFigure regionFigure_Compartment0 = new RectangleFigure();
 			regionFigure_Compartment0.setFill(false);
 			regionFigure_Compartment0.setFillXOR(false);
 			regionFigure_Compartment0.setOutline(false);
 			regionFigure_Compartment0.setOutlineXOR(false);
 			regionFigure_Compartment0.setLineWidth(1);
-			regionFigure_Compartment0.setLineStyle(org.eclipse.draw2d.Graphics.LINE_SOLID);
+			regionFigure_Compartment0.setLineStyle(Graphics.LINE_SOLID);
 
 			this.add(regionFigure_Compartment0);
 			setFigureRegionFigure_Compartment(regionFigure_Compartment0);
@@ -250,19 +245,19 @@ public class Region2EditPart extends ShapeNodeEditPart {
 		/**
 		 * @generated
 		 */
-		private org.eclipse.draw2d.RectangleFigure fRegionFigure_Compartment;
+		private RectangleFigure fRegionFigure_Compartment;
 
 		/**
 		 * @generated
 		 */
-		public org.eclipse.draw2d.RectangleFigure getFigureRegionFigure_Compartment() {
+		public RectangleFigure getFigureRegionFigure_Compartment() {
 			return fRegionFigure_Compartment;
 		}
 
 		/**
 		 * @generated
 		 */
-		private void setFigureRegionFigure_Compartment(org.eclipse.draw2d.RectangleFigure fig) {
+		private void setFigureRegionFigure_Compartment(RectangleFigure fig) {
 			fRegionFigure_Compartment = fig;
 		}
 

@@ -2,6 +2,7 @@ package org.eclipse.uml2.diagram.statemachine.providers;
 
 import java.util.HashSet;
 import java.util.IdentityHashMap;
+import java.util.Iterator;
 import java.util.Map;
 import java.util.Set;
 import org.eclipse.core.runtime.IAdaptable;
@@ -298,7 +299,7 @@ public class UMLElementTypes {
 		/**
 		 * @generated
 		 */
-		public static final IObjectInitializer Pseudostate_2002 = new ObjectInitializer(org.eclipse.uml2.uml.UMLPackage.eINSTANCE.getPseudostate()) {
+		public static final IObjectInitializer Pseudostate_2002 = new ObjectInitializer(UMLPackage.eINSTANCE.getPseudostate()) {
 
 			protected void init() {
 				add(createExpressionFeatureInitializer(UMLPackage.eINSTANCE.getPseudostate_Kind(), UMLOCLFactory.getExpression("PseudostateKind::entryPoint", //$NON-NLS-1$
@@ -315,7 +316,7 @@ public class UMLElementTypes {
 		/**
 		 * @generated
 		 */
-		public static final IObjectInitializer Pseudostate_2003 = new ObjectInitializer(org.eclipse.uml2.uml.UMLPackage.eINSTANCE.getPseudostate()) {
+		public static final IObjectInitializer Pseudostate_2003 = new ObjectInitializer(UMLPackage.eINSTANCE.getPseudostate()) {
 
 			protected void init() {
 				add(createExpressionFeatureInitializer(UMLPackage.eINSTANCE.getPseudostate_Kind(), UMLOCLFactory.getExpression("PseudostateKind::exitPoint", //$NON-NLS-1$
@@ -332,7 +333,7 @@ public class UMLElementTypes {
 		/**
 		 * @generated
 		 */
-		public static final IObjectInitializer State_3001 = new ObjectInitializer(org.eclipse.uml2.uml.UMLPackage.eINSTANCE.getState()) {
+		public static final IObjectInitializer State_3001 = new ObjectInitializer(UMLPackage.eINSTANCE.getState()) {
 
 			protected void init() {
 				add(createExpressionFeatureInitializer(
@@ -347,7 +348,7 @@ public class UMLElementTypes {
 		/**
 		 * @generated
 		 */
-		public static final IObjectInitializer State_3012 = new ObjectInitializer(org.eclipse.uml2.uml.UMLPackage.eINSTANCE.getState()) {
+		public static final IObjectInitializer State_3012 = new ObjectInitializer(UMLPackage.eINSTANCE.getState()) {
 
 			protected void init() {
 				add(createExpressionFeatureInitializer(
@@ -360,7 +361,7 @@ public class UMLElementTypes {
 			}
 
 			ObjectInitializer region() {
-				return new ObjectInitializer(org.eclipse.uml2.uml.UMLPackage.eINSTANCE.getRegion()) {
+				return new ObjectInitializer(UMLPackage.eINSTANCE.getRegion()) {
 
 					protected void init() {
 						add(createExpressionFeatureInitializer(
@@ -377,7 +378,7 @@ public class UMLElementTypes {
 		/**
 		 * @generated
 		 */
-		public static final IObjectInitializer Pseudostate_3004 = new ObjectInitializer(org.eclipse.uml2.uml.UMLPackage.eINSTANCE.getPseudostate()) {
+		public static final IObjectInitializer Pseudostate_3004 = new ObjectInitializer(UMLPackage.eINSTANCE.getPseudostate()) {
 
 			protected void init() {
 				add(createExpressionFeatureInitializer(UMLPackage.eINSTANCE.getPseudostate_Kind(), UMLOCLFactory.getExpression("PseudostateKind::initial", //$NON-NLS-1$
@@ -388,7 +389,7 @@ public class UMLElementTypes {
 		/**
 		 * @generated
 		 */
-		public static final IObjectInitializer Pseudostate_3005 = new ObjectInitializer(org.eclipse.uml2.uml.UMLPackage.eINSTANCE.getPseudostate()) {
+		public static final IObjectInitializer Pseudostate_3005 = new ObjectInitializer(UMLPackage.eINSTANCE.getPseudostate()) {
 
 			protected void init() {
 				add(createExpressionFeatureInitializer(UMLPackage.eINSTANCE.getPseudostate_Kind(), UMLOCLFactory.getExpression("PseudostateKind::shallowHistory", //$NON-NLS-1$
@@ -399,7 +400,7 @@ public class UMLElementTypes {
 		/**
 		 * @generated
 		 */
-		public static final IObjectInitializer Pseudostate_3006 = new ObjectInitializer(org.eclipse.uml2.uml.UMLPackage.eINSTANCE.getPseudostate()) {
+		public static final IObjectInitializer Pseudostate_3006 = new ObjectInitializer(UMLPackage.eINSTANCE.getPseudostate()) {
 
 			protected void init() {
 				add(createExpressionFeatureInitializer(UMLPackage.eINSTANCE.getPseudostate_Kind(), UMLOCLFactory.getExpression("PseudostateKind::deepHistory", //$NON-NLS-1$
@@ -410,7 +411,7 @@ public class UMLElementTypes {
 		/**
 		 * @generated
 		 */
-		public static final IObjectInitializer Pseudostate_3007 = new ObjectInitializer(org.eclipse.uml2.uml.UMLPackage.eINSTANCE.getPseudostate()) {
+		public static final IObjectInitializer Pseudostate_3007 = new ObjectInitializer(UMLPackage.eINSTANCE.getPseudostate()) {
 
 			protected void init() {
 				add(createExpressionFeatureInitializer(UMLPackage.eINSTANCE.getPseudostate_Kind(), UMLOCLFactory.getExpression("PseudostateKind::fork", //$NON-NLS-1$
@@ -421,7 +422,7 @@ public class UMLElementTypes {
 		/**
 		 * @generated
 		 */
-		public static final IObjectInitializer Pseudostate_3008 = new ObjectInitializer(org.eclipse.uml2.uml.UMLPackage.eINSTANCE.getPseudostate()) {
+		public static final IObjectInitializer Pseudostate_3008 = new ObjectInitializer(UMLPackage.eINSTANCE.getPseudostate()) {
 
 			protected void init() {
 				add(createExpressionFeatureInitializer(UMLPackage.eINSTANCE.getPseudostate_Kind(), UMLOCLFactory.getExpression("PseudostateKind::join", //$NON-NLS-1$
@@ -432,7 +433,7 @@ public class UMLElementTypes {
 		/**
 		 * @generated
 		 */
-		public static final IObjectInitializer Pseudostate_3009 = new ObjectInitializer(org.eclipse.uml2.uml.UMLPackage.eINSTANCE.getPseudostate()) {
+		public static final IObjectInitializer Pseudostate_3009 = new ObjectInitializer(UMLPackage.eINSTANCE.getPseudostate()) {
 
 			protected void init() {
 				add(createExpressionFeatureInitializer(UMLPackage.eINSTANCE.getPseudostate_Kind(), UMLOCLFactory.getExpression("PseudostateKind::junction", //$NON-NLS-1$
@@ -443,7 +444,7 @@ public class UMLElementTypes {
 		/**
 		 * @generated
 		 */
-		public static final IObjectInitializer Pseudostate_3010 = new ObjectInitializer(org.eclipse.uml2.uml.UMLPackage.eINSTANCE.getPseudostate()) {
+		public static final IObjectInitializer Pseudostate_3010 = new ObjectInitializer(UMLPackage.eINSTANCE.getPseudostate()) {
 
 			protected void init() {
 				add(createExpressionFeatureInitializer(UMLPackage.eINSTANCE.getPseudostate_Kind(), UMLOCLFactory.getExpression("PseudostateKind::choice", //$NON-NLS-1$
@@ -454,7 +455,7 @@ public class UMLElementTypes {
 		/**
 		 * @generated
 		 */
-		public static final IObjectInitializer Pseudostate_3011 = new ObjectInitializer(org.eclipse.uml2.uml.UMLPackage.eINSTANCE.getPseudostate()) {
+		public static final IObjectInitializer Pseudostate_3011 = new ObjectInitializer(UMLPackage.eINSTANCE.getPseudostate()) {
 
 			protected void init() {
 				add(createExpressionFeatureInitializer(UMLPackage.eINSTANCE.getPseudostate_Kind(), UMLOCLFactory.getExpression("PseudostateKind::terminate", //$NON-NLS-1$
@@ -519,7 +520,7 @@ public class UMLElementTypes {
 			 * @generated
 			 */
 			public void init(EObject instance) {
-				for (java.util.Iterator it = featureInitializers.iterator(); it.hasNext();) {
+				for (Iterator it = featureInitializers.iterator(); it.hasNext();) {
 					IFeatureInitializer nextExpr = (IFeatureInitializer) it.next();
 					try {
 						nextExpr.init(instance);

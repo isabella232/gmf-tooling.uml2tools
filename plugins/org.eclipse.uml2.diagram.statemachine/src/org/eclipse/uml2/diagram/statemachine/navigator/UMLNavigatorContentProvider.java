@@ -381,11 +381,11 @@ public class UMLNavigatorContentProvider implements ICommonContentProvider {
 			source.addChildren(getTransition_4001ToPseudostate_3009InSource((Edge) view, source));
 			source.addChildren(getTransition_4001ToPseudostate_3010InSource((Edge) view, source));
 			source.addChildren(getTransition_4001ToPseudostate_3011InSource((Edge) view, source));
-			if (!target.isEmpty()) {
-				result.add(target);
-			}
 			if (!source.isEmpty()) {
 				result.add(source);
+			}
+			if (!target.isEmpty()) {
+				result.add(target);
 			}
 			return result.toArray();
 		}
@@ -432,6 +432,168 @@ public class UMLNavigatorContentProvider implements ICommonContentProvider {
 	/**
 	 * @generated
 	 */
+	private Collection getTransition_4001ToState_3001InSource(Edge edge, Object parent) {
+		Collection result = new ArrayList();
+		Collection connectedViews = getLinksSourceByType(Collections.singleton(edge), UMLVisualIDRegistry.getType(StateEditPart.VISUAL_ID));
+		createNavigatorItems(connectedViews, parent, result, isTransition_4001ToState_3001InSourceLeaf(edge));
+		return result;
+	}
+
+	/**
+	 * @generated
+	 */
+	private boolean isTransition_4001ToState_3001InSourceLeaf(Edge edge) {
+		return true;
+	}
+
+	/**
+	 * @generated
+	 */
+	private Collection getTransition_4001ToPseudostate_3008InSource(Edge edge, Object parent) {
+		Collection result = new ArrayList();
+		Collection connectedViews = getLinksSourceByType(Collections.singleton(edge), UMLVisualIDRegistry.getType(Pseudostate5EditPart.VISUAL_ID));
+		createNavigatorItems(connectedViews, parent, result, isTransition_4001ToPseudostate_3008InSourceLeaf(edge));
+		return result;
+	}
+
+	/**
+	 * @generated
+	 */
+	private boolean isTransition_4001ToPseudostate_3008InSourceLeaf(Edge edge) {
+		return true;
+	}
+
+	/**
+	 * @generated
+	 */
+	private Collection getFinalState_3003ToTransition_4001OutTarget(View view, Object parent) {
+		Collection result = new ArrayList();
+		Collection connectedViews = getOutgoingLinksByType(Collections.singleton(view), UMLVisualIDRegistry.getType(TransitionEditPart.VISUAL_ID));
+		createNavigatorItems(connectedViews, parent, result, isFinalState_3003ToTransition_4001OutTargetLeaf(view));
+		return result;
+	}
+
+	/**
+	 * @generated
+	 */
+	private boolean isFinalState_3003ToTransition_4001OutTargetLeaf(View view) {
+		return true;
+	}
+
+	/**
+	 * @generated
+	 */
+	private Collection getRegion_2001ToPseudostate_3008Children(View view, Object parent) {
+		Collection result = new ArrayList();
+		Collection connectedViews = getChildrenByType(Collections.singleton(view), UMLVisualIDRegistry.getType(RegionSubverticesEditPart.VISUAL_ID));
+		connectedViews = getChildrenByType(connectedViews, UMLVisualIDRegistry.getType(State2EditPart.VISUAL_ID));
+		connectedViews = getChildrenByType(connectedViews, UMLVisualIDRegistry.getType(Region2EditPart.VISUAL_ID));
+		connectedViews = getChildrenByType(connectedViews, UMLVisualIDRegistry.getType(RegionSubvertices2EditPart.VISUAL_ID));
+		connectedViews = getChildrenByType(connectedViews, UMLVisualIDRegistry.getType(Pseudostate5EditPart.VISUAL_ID));
+		createNavigatorItems(connectedViews, parent, result, isRegion_2001ToPseudostate_3008ChildrenLeaf(view));
+		connectedViews = getChildrenByType(Collections.singleton(view), UMLVisualIDRegistry.getType(RegionSubverticesEditPart.VISUAL_ID));
+		connectedViews = getChildrenByType(connectedViews, UMLVisualIDRegistry.getType(Pseudostate5EditPart.VISUAL_ID));
+		createNavigatorItems(connectedViews, parent, result, isRegion_2001ToPseudostate_3008ChildrenLeaf(view));
+		return result;
+	}
+
+	/**
+	 * @generated
+	 */
+	private boolean isRegion_2001ToPseudostate_3008ChildrenLeaf(View view) {
+		return false;
+	}
+
+	/**
+	 * @generated
+	 */
+	private Collection getPseudostate_3006ToTransition_4001InSource(View view, Object parent) {
+		Collection result = new ArrayList();
+		Collection connectedViews = getIncomingLinksByType(Collections.singleton(view), UMLVisualIDRegistry.getType(TransitionEditPart.VISUAL_ID));
+		createNavigatorItems(connectedViews, parent, result, isPseudostate_3006ToTransition_4001InSourceLeaf(view));
+		return result;
+	}
+
+	/**
+	 * @generated
+	 */
+	private boolean isPseudostate_3006ToTransition_4001InSourceLeaf(View view) {
+		return true;
+	}
+
+	/**
+	 * @generated
+	 */
+	private Collection getRegion_3002ToState_3012Children(View view, Object parent) {
+		Collection result = new ArrayList();
+		Collection connectedViews = getChildrenByType(Collections.singleton(view), UMLVisualIDRegistry.getType(RegionSubvertices2EditPart.VISUAL_ID));
+		connectedViews = getChildrenByType(connectedViews, UMLVisualIDRegistry.getType(State2EditPart.VISUAL_ID));
+		createNavigatorItems(connectedViews, parent, result, isRegion_3002ToState_3012ChildrenLeaf(view));
+		return result;
+	}
+
+	/**
+	 * @generated
+	 */
+	private boolean isRegion_3002ToState_3012ChildrenLeaf(View view) {
+		return false;
+	}
+
+	/**
+	 * @generated
+	 */
+	private Collection getStateMachine_1000ToTransition_4001Children(View view, Object parent) {
+		Collection result = new ArrayList();
+		Collection connectedViews = getDiagramLinksByType(Collections.singleton(view), UMLVisualIDRegistry.getType(TransitionEditPart.VISUAL_ID));
+		createNavigatorItems(connectedViews, parent, result, isStateMachine_1000ToTransition_4001ChildrenLeaf(view));
+		return result;
+	}
+
+	/**
+	 * @generated
+	 */
+	private boolean isStateMachine_1000ToTransition_4001ChildrenLeaf(View view) {
+		return false;
+	}
+
+	/**
+	 * @generated
+	 */
+	private Collection getRegion_3002ToPseudostate_3004Children(View view, Object parent) {
+		Collection result = new ArrayList();
+		Collection connectedViews = getChildrenByType(Collections.singleton(view), UMLVisualIDRegistry.getType(RegionSubvertices2EditPart.VISUAL_ID));
+		connectedViews = getChildrenByType(connectedViews, UMLVisualIDRegistry.getType(PseudostateEditPart.VISUAL_ID));
+		createNavigatorItems(connectedViews, parent, result, isRegion_3002ToPseudostate_3004ChildrenLeaf(view));
+		return result;
+	}
+
+	/**
+	 * @generated
+	 */
+	private boolean isRegion_3002ToPseudostate_3004ChildrenLeaf(View view) {
+		return false;
+	}
+
+	/**
+	 * @generated
+	 */
+	private Collection getTransition_4001ToPseudostate_2002InSource(Edge edge, Object parent) {
+		Collection result = new ArrayList();
+		Collection connectedViews = getLinksSourceByType(Collections.singleton(edge), UMLVisualIDRegistry.getType(Pseudostate9EditPart.VISUAL_ID));
+		createNavigatorItems(connectedViews, parent, result, isTransition_4001ToPseudostate_2002InSourceLeaf(edge));
+		return result;
+	}
+
+	/**
+	 * @generated
+	 */
+	private boolean isTransition_4001ToPseudostate_2002InSourceLeaf(Edge edge) {
+		return true;
+	}
+
+	/**
+	 * @generated
+	 */
 	private Collection getTransition_4001ToPseudostate_2003OutTarget(Edge edge, Object parent) {
 		Collection result = new ArrayList();
 		Collection connectedViews = getLinksTargetByType(Collections.singleton(edge), UMLVisualIDRegistry.getType(Pseudostate10EditPart.VISUAL_ID));
@@ -443,6 +605,200 @@ public class UMLNavigatorContentProvider implements ICommonContentProvider {
 	 * @generated
 	 */
 	private boolean isTransition_4001ToPseudostate_2003OutTargetLeaf(Edge edge) {
+		return true;
+	}
+
+	/**
+	 * @generated
+	 */
+	private Collection getPseudostate_2002ToTransition_4001OutTarget(View view, Object parent) {
+		Collection result = new ArrayList();
+		Collection connectedViews = getOutgoingLinksByType(Collections.singleton(view), UMLVisualIDRegistry.getType(TransitionEditPart.VISUAL_ID));
+		createNavigatorItems(connectedViews, parent, result, isPseudostate_2002ToTransition_4001OutTargetLeaf(view));
+		return result;
+	}
+
+	/**
+	 * @generated
+	 */
+	private boolean isPseudostate_2002ToTransition_4001OutTargetLeaf(View view) {
+		return true;
+	}
+
+	/**
+	 * @generated
+	 */
+	private Collection getPseudostate_3005ToTransition_4001OutTarget(View view, Object parent) {
+		Collection result = new ArrayList();
+		Collection connectedViews = getOutgoingLinksByType(Collections.singleton(view), UMLVisualIDRegistry.getType(TransitionEditPart.VISUAL_ID));
+		createNavigatorItems(connectedViews, parent, result, isPseudostate_3005ToTransition_4001OutTargetLeaf(view));
+		return result;
+	}
+
+	/**
+	 * @generated
+	 */
+	private boolean isPseudostate_3005ToTransition_4001OutTargetLeaf(View view) {
+		return true;
+	}
+
+	/**
+	 * @generated
+	 */
+	private Collection getPseudostate_3008ToTransition_4001InSource(View view, Object parent) {
+		Collection result = new ArrayList();
+		Collection connectedViews = getIncomingLinksByType(Collections.singleton(view), UMLVisualIDRegistry.getType(TransitionEditPart.VISUAL_ID));
+		createNavigatorItems(connectedViews, parent, result, isPseudostate_3008ToTransition_4001InSourceLeaf(view));
+		return result;
+	}
+
+	/**
+	 * @generated
+	 */
+	private boolean isPseudostate_3008ToTransition_4001InSourceLeaf(View view) {
+		return true;
+	}
+
+	/**
+	 * @generated
+	 */
+	private Collection getState_3012ToRegion_3002Children(View view, Object parent) {
+		Collection result = new ArrayList();
+		Collection connectedViews = getChildrenByType(Collections.singleton(view), UMLVisualIDRegistry.getType(Region2EditPart.VISUAL_ID));
+		createNavigatorItems(connectedViews, parent, result, isState_3012ToRegion_3002ChildrenLeaf(view));
+		return result;
+	}
+
+	/**
+	 * @generated
+	 */
+	private boolean isState_3012ToRegion_3002ChildrenLeaf(View view) {
+		return false;
+	}
+
+	/**
+	 * @generated
+	 */
+	private Collection getTransition_4001ToPseudostate_3004InSource(Edge edge, Object parent) {
+		Collection result = new ArrayList();
+		Collection connectedViews = getLinksSourceByType(Collections.singleton(edge), UMLVisualIDRegistry.getType(PseudostateEditPart.VISUAL_ID));
+		createNavigatorItems(connectedViews, parent, result, isTransition_4001ToPseudostate_3004InSourceLeaf(edge));
+		return result;
+	}
+
+	/**
+	 * @generated
+	 */
+	private boolean isTransition_4001ToPseudostate_3004InSourceLeaf(Edge edge) {
+		return true;
+	}
+
+	/**
+	 * @generated
+	 */
+	private Collection getTransition_4001ToState_3012OutTarget(Edge edge, Object parent) {
+		Collection result = new ArrayList();
+		Collection connectedViews = getLinksTargetByType(Collections.singleton(edge), UMLVisualIDRegistry.getType(State2EditPart.VISUAL_ID));
+		createNavigatorItems(connectedViews, parent, result, isTransition_4001ToState_3012OutTargetLeaf(edge));
+		return result;
+	}
+
+	/**
+	 * @generated
+	 */
+	private boolean isTransition_4001ToState_3012OutTargetLeaf(Edge edge) {
+		return true;
+	}
+
+	/**
+	 * @generated
+	 */
+	private Collection getState_3012ToTransition_4001InSource(View view, Object parent) {
+		Collection result = new ArrayList();
+		Collection connectedViews = getIncomingLinksByType(Collections.singleton(view), UMLVisualIDRegistry.getType(TransitionEditPart.VISUAL_ID));
+		createNavigatorItems(connectedViews, parent, result, isState_3012ToTransition_4001InSourceLeaf(view));
+		return result;
+	}
+
+	/**
+	 * @generated
+	 */
+	private boolean isState_3012ToTransition_4001InSourceLeaf(View view) {
+		return true;
+	}
+
+	/**
+	 * @generated
+	 */
+	private Collection getState_3001ToTransition_4001InSource(View view, Object parent) {
+		Collection result = new ArrayList();
+		Collection connectedViews = getIncomingLinksByType(Collections.singleton(view), UMLVisualIDRegistry.getType(TransitionEditPart.VISUAL_ID));
+		createNavigatorItems(connectedViews, parent, result, isState_3001ToTransition_4001InSourceLeaf(view));
+		return result;
+	}
+
+	/**
+	 * @generated
+	 */
+	private boolean isState_3001ToTransition_4001InSourceLeaf(View view) {
+		return true;
+	}
+
+	/**
+	 * @generated
+	 */
+	private Collection getRegion_2001ToFinalState_3003Children(View view, Object parent) {
+		Collection result = new ArrayList();
+		Collection connectedViews = getChildrenByType(Collections.singleton(view), UMLVisualIDRegistry.getType(RegionSubverticesEditPart.VISUAL_ID));
+		connectedViews = getChildrenByType(connectedViews, UMLVisualIDRegistry.getType(State2EditPart.VISUAL_ID));
+		connectedViews = getChildrenByType(connectedViews, UMLVisualIDRegistry.getType(Region2EditPart.VISUAL_ID));
+		connectedViews = getChildrenByType(connectedViews, UMLVisualIDRegistry.getType(RegionSubvertices2EditPart.VISUAL_ID));
+		connectedViews = getChildrenByType(connectedViews, UMLVisualIDRegistry.getType(FinalStateEditPart.VISUAL_ID));
+		createNavigatorItems(connectedViews, parent, result, isRegion_2001ToFinalState_3003ChildrenLeaf(view));
+		connectedViews = getChildrenByType(Collections.singleton(view), UMLVisualIDRegistry.getType(RegionSubverticesEditPart.VISUAL_ID));
+		connectedViews = getChildrenByType(connectedViews, UMLVisualIDRegistry.getType(FinalStateEditPart.VISUAL_ID));
+		createNavigatorItems(connectedViews, parent, result, isRegion_2001ToFinalState_3003ChildrenLeaf(view));
+		return result;
+	}
+
+	/**
+	 * @generated
+	 */
+	private boolean isRegion_2001ToFinalState_3003ChildrenLeaf(View view) {
+		return false;
+	}
+
+	/**
+	 * @generated
+	 */
+	private Collection getPseudostate_3011ToTransition_4001OutTarget(View view, Object parent) {
+		Collection result = new ArrayList();
+		Collection connectedViews = getOutgoingLinksByType(Collections.singleton(view), UMLVisualIDRegistry.getType(TransitionEditPart.VISUAL_ID));
+		createNavigatorItems(connectedViews, parent, result, isPseudostate_3011ToTransition_4001OutTargetLeaf(view));
+		return result;
+	}
+
+	/**
+	 * @generated
+	 */
+	private boolean isPseudostate_3011ToTransition_4001OutTargetLeaf(View view) {
+		return true;
+	}
+
+	/**
+	 * @generated
+	 */
+	private Collection getTransition_4001ToPseudostate_3007OutTarget(Edge edge, Object parent) {
+		Collection result = new ArrayList();
+		Collection connectedViews = getLinksTargetByType(Collections.singleton(edge), UMLVisualIDRegistry.getType(Pseudostate4EditPart.VISUAL_ID));
+		createNavigatorItems(connectedViews, parent, result, isTransition_4001ToPseudostate_3007OutTargetLeaf(edge));
+		return result;
+	}
+
+	/**
+	 * @generated
+	 */
+	private boolean isTransition_4001ToPseudostate_3007OutTargetLeaf(Edge edge) {
 		return true;
 	}
 
@@ -473,24 +829,6 @@ public class UMLNavigatorContentProvider implements ICommonContentProvider {
 	/**
 	 * @generated
 	 */
-	private Collection getRegion_3002ToState_3012Children(View view, Object parent) {
-		Collection result = new ArrayList();
-		Collection connectedViews = getChildrenByType(Collections.singleton(view), UMLVisualIDRegistry.getType(RegionSubvertices2EditPart.VISUAL_ID));
-		connectedViews = getChildrenByType(connectedViews, UMLVisualIDRegistry.getType(State2EditPart.VISUAL_ID));
-		createNavigatorItems(connectedViews, parent, result, isRegion_3002ToState_3012ChildrenLeaf(view));
-		return result;
-	}
-
-	/**
-	 * @generated
-	 */
-	private boolean isRegion_3002ToState_3012ChildrenLeaf(View view) {
-		return false;
-	}
-
-	/**
-	 * @generated
-	 */
 	private Collection getRegion_2001ToPseudostate_3007Children(View view, Object parent) {
 		Collection result = new ArrayList();
 		Collection connectedViews = getChildrenByType(Collections.singleton(view), UMLVisualIDRegistry.getType(RegionSubverticesEditPart.VISUAL_ID));
@@ -515,808 +853,17 @@ public class UMLNavigatorContentProvider implements ICommonContentProvider {
 	/**
 	 * @generated
 	 */
-	private Collection getTransition_4001ToPseudostate_3008OutTarget(Edge edge, Object parent) {
-		Collection result = new ArrayList();
-		Collection connectedViews = getLinksTargetByType(Collections.singleton(edge), UMLVisualIDRegistry.getType(Pseudostate5EditPart.VISUAL_ID));
-		createNavigatorItems(connectedViews, parent, result, isTransition_4001ToPseudostate_3008OutTargetLeaf(edge));
-		return result;
-	}
-
-	/**
-	 * @generated
-	 */
-	private boolean isTransition_4001ToPseudostate_3008OutTargetLeaf(Edge edge) {
-		return true;
-	}
-
-	/**
-	 * @generated
-	 */
-	private Collection getState_3012ToRegion_3002Children(View view, Object parent) {
-		Collection result = new ArrayList();
-		Collection connectedViews = getChildrenByType(Collections.singleton(view), UMLVisualIDRegistry.getType(Region2EditPart.VISUAL_ID));
-		createNavigatorItems(connectedViews, parent, result, isState_3012ToRegion_3002ChildrenLeaf(view));
-		return result;
-	}
-
-	/**
-	 * @generated
-	 */
-	private boolean isState_3012ToRegion_3002ChildrenLeaf(View view) {
-		return false;
-	}
-
-	/**
-	 * @generated
-	 */
-	private Collection getRegion_2001ToPseudostate_3005Children(View view, Object parent) {
-		Collection result = new ArrayList();
-		Collection connectedViews = getChildrenByType(Collections.singleton(view), UMLVisualIDRegistry.getType(RegionSubverticesEditPart.VISUAL_ID));
-		connectedViews = getChildrenByType(connectedViews, UMLVisualIDRegistry.getType(State2EditPart.VISUAL_ID));
-		connectedViews = getChildrenByType(connectedViews, UMLVisualIDRegistry.getType(Region2EditPart.VISUAL_ID));
-		connectedViews = getChildrenByType(connectedViews, UMLVisualIDRegistry.getType(RegionSubvertices2EditPart.VISUAL_ID));
-		connectedViews = getChildrenByType(connectedViews, UMLVisualIDRegistry.getType(Pseudostate2EditPart.VISUAL_ID));
-		createNavigatorItems(connectedViews, parent, result, isRegion_2001ToPseudostate_3005ChildrenLeaf(view));
-		connectedViews = getChildrenByType(Collections.singleton(view), UMLVisualIDRegistry.getType(RegionSubverticesEditPart.VISUAL_ID));
-		connectedViews = getChildrenByType(connectedViews, UMLVisualIDRegistry.getType(Pseudostate2EditPart.VISUAL_ID));
-		createNavigatorItems(connectedViews, parent, result, isRegion_2001ToPseudostate_3005ChildrenLeaf(view));
-		return result;
-	}
-
-	/**
-	 * @generated
-	 */
-	private boolean isRegion_2001ToPseudostate_3005ChildrenLeaf(View view) {
-		return false;
-	}
-
-	/**
-	 * @generated
-	 */
-	private Collection getTransition_4001ToPseudostate_2002OutTarget(Edge edge, Object parent) {
-		Collection result = new ArrayList();
-		Collection connectedViews = getLinksTargetByType(Collections.singleton(edge), UMLVisualIDRegistry.getType(Pseudostate9EditPart.VISUAL_ID));
-		createNavigatorItems(connectedViews, parent, result, isTransition_4001ToPseudostate_2002OutTargetLeaf(edge));
-		return result;
-	}
-
-	/**
-	 * @generated
-	 */
-	private boolean isTransition_4001ToPseudostate_2002OutTargetLeaf(Edge edge) {
-		return true;
-	}
-
-	/**
-	 * @generated
-	 */
-	private Collection getTransition_4001ToPseudostate_3009OutTarget(Edge edge, Object parent) {
-		Collection result = new ArrayList();
-		Collection connectedViews = getLinksTargetByType(Collections.singleton(edge), UMLVisualIDRegistry.getType(Pseudostate6EditPart.VISUAL_ID));
-		createNavigatorItems(connectedViews, parent, result, isTransition_4001ToPseudostate_3009OutTargetLeaf(edge));
-		return result;
-	}
-
-	/**
-	 * @generated
-	 */
-	private boolean isTransition_4001ToPseudostate_3009OutTargetLeaf(Edge edge) {
-		return true;
-	}
-
-	/**
-	 * @generated
-	 */
-	private Collection getTransition_4001ToPseudostate_3010OutTarget(Edge edge, Object parent) {
-		Collection result = new ArrayList();
-		Collection connectedViews = getLinksTargetByType(Collections.singleton(edge), UMLVisualIDRegistry.getType(Pseudostate7EditPart.VISUAL_ID));
-		createNavigatorItems(connectedViews, parent, result, isTransition_4001ToPseudostate_3010OutTargetLeaf(edge));
-		return result;
-	}
-
-	/**
-	 * @generated
-	 */
-	private boolean isTransition_4001ToPseudostate_3010OutTargetLeaf(Edge edge) {
-		return true;
-	}
-
-	/**
-	 * @generated
-	 */
-	private Collection getPseudostate_3011ToTransition_4001OutTarget(View view, Object parent) {
-		Collection result = new ArrayList();
-		Collection connectedViews = getOutgoingLinksByType(Collections.singleton(view), UMLVisualIDRegistry.getType(TransitionEditPart.VISUAL_ID));
-		createNavigatorItems(connectedViews, parent, result, isPseudostate_3011ToTransition_4001OutTargetLeaf(view));
-		return result;
-	}
-
-	/**
-	 * @generated
-	 */
-	private boolean isPseudostate_3011ToTransition_4001OutTargetLeaf(View view) {
-		return true;
-	}
-
-	/**
-	 * @generated
-	 */
-	private Collection getPseudostate_3010ToTransition_4001InSource(View view, Object parent) {
+	private Collection getPseudostate_3009ToTransition_4001InSource(View view, Object parent) {
 		Collection result = new ArrayList();
 		Collection connectedViews = getIncomingLinksByType(Collections.singleton(view), UMLVisualIDRegistry.getType(TransitionEditPart.VISUAL_ID));
-		createNavigatorItems(connectedViews, parent, result, isPseudostate_3010ToTransition_4001InSourceLeaf(view));
+		createNavigatorItems(connectedViews, parent, result, isPseudostate_3009ToTransition_4001InSourceLeaf(view));
 		return result;
 	}
 
 	/**
 	 * @generated
 	 */
-	private boolean isPseudostate_3010ToTransition_4001InSourceLeaf(View view) {
-		return true;
-	}
-
-	/**
-	 * @generated
-	 */
-	private Collection getStateMachine_1000ToRegion_2001Children(View view, Object parent) {
-		Collection result = new ArrayList();
-		Collection connectedViews = getChildrenByType(Collections.singleton(view), UMLVisualIDRegistry.getType(RegionEditPart.VISUAL_ID));
-		createNavigatorItems(connectedViews, parent, result, isStateMachine_1000ToRegion_2001ChildrenLeaf(view));
-		return result;
-	}
-
-	/**
-	 * @generated
-	 */
-	private boolean isStateMachine_1000ToRegion_2001ChildrenLeaf(View view) {
-		return false;
-	}
-
-	/**
-	 * @generated
-	 */
-	private Collection getFinalState_3003ToTransition_4001InSource(View view, Object parent) {
-		Collection result = new ArrayList();
-		Collection connectedViews = getIncomingLinksByType(Collections.singleton(view), UMLVisualIDRegistry.getType(TransitionEditPart.VISUAL_ID));
-		createNavigatorItems(connectedViews, parent, result, isFinalState_3003ToTransition_4001InSourceLeaf(view));
-		return result;
-	}
-
-	/**
-	 * @generated
-	 */
-	private boolean isFinalState_3003ToTransition_4001InSourceLeaf(View view) {
-		return true;
-	}
-
-	/**
-	 * @generated
-	 */
-	private Collection getPseudostate_3004ToTransition_4001InSource(View view, Object parent) {
-		Collection result = new ArrayList();
-		Collection connectedViews = getIncomingLinksByType(Collections.singleton(view), UMLVisualIDRegistry.getType(TransitionEditPart.VISUAL_ID));
-		createNavigatorItems(connectedViews, parent, result, isPseudostate_3004ToTransition_4001InSourceLeaf(view));
-		return result;
-	}
-
-	/**
-	 * @generated
-	 */
-	private boolean isPseudostate_3004ToTransition_4001InSourceLeaf(View view) {
-		return true;
-	}
-
-	/**
-	 * @generated
-	 */
-	private Collection getPseudostate_2003ToTransition_4001OutTarget(View view, Object parent) {
-		Collection result = new ArrayList();
-		Collection connectedViews = getOutgoingLinksByType(Collections.singleton(view), UMLVisualIDRegistry.getType(TransitionEditPart.VISUAL_ID));
-		createNavigatorItems(connectedViews, parent, result, isPseudostate_2003ToTransition_4001OutTargetLeaf(view));
-		return result;
-	}
-
-	/**
-	 * @generated
-	 */
-	private boolean isPseudostate_2003ToTransition_4001OutTargetLeaf(View view) {
-		return true;
-	}
-
-	/**
-	 * @generated
-	 */
-	private Collection getRegion_3002ToPseudostate_3008Children(View view, Object parent) {
-		Collection result = new ArrayList();
-		Collection connectedViews = getChildrenByType(Collections.singleton(view), UMLVisualIDRegistry.getType(RegionSubvertices2EditPart.VISUAL_ID));
-		connectedViews = getChildrenByType(connectedViews, UMLVisualIDRegistry.getType(Pseudostate5EditPart.VISUAL_ID));
-		createNavigatorItems(connectedViews, parent, result, isRegion_3002ToPseudostate_3008ChildrenLeaf(view));
-		return result;
-	}
-
-	/**
-	 * @generated
-	 */
-	private boolean isRegion_3002ToPseudostate_3008ChildrenLeaf(View view) {
-		return false;
-	}
-
-	/**
-	 * @generated
-	 */
-	private Collection getRegion_2001ToPseudostate_3006Children(View view, Object parent) {
-		Collection result = new ArrayList();
-		Collection connectedViews = getChildrenByType(Collections.singleton(view), UMLVisualIDRegistry.getType(RegionSubverticesEditPart.VISUAL_ID));
-		connectedViews = getChildrenByType(connectedViews, UMLVisualIDRegistry.getType(State2EditPart.VISUAL_ID));
-		connectedViews = getChildrenByType(connectedViews, UMLVisualIDRegistry.getType(Region2EditPart.VISUAL_ID));
-		connectedViews = getChildrenByType(connectedViews, UMLVisualIDRegistry.getType(RegionSubvertices2EditPart.VISUAL_ID));
-		connectedViews = getChildrenByType(connectedViews, UMLVisualIDRegistry.getType(Pseudostate3EditPart.VISUAL_ID));
-		createNavigatorItems(connectedViews, parent, result, isRegion_2001ToPseudostate_3006ChildrenLeaf(view));
-		connectedViews = getChildrenByType(Collections.singleton(view), UMLVisualIDRegistry.getType(RegionSubverticesEditPart.VISUAL_ID));
-		connectedViews = getChildrenByType(connectedViews, UMLVisualIDRegistry.getType(Pseudostate3EditPart.VISUAL_ID));
-		createNavigatorItems(connectedViews, parent, result, isRegion_2001ToPseudostate_3006ChildrenLeaf(view));
-		return result;
-	}
-
-	/**
-	 * @generated
-	 */
-	private boolean isRegion_2001ToPseudostate_3006ChildrenLeaf(View view) {
-		return false;
-	}
-
-	/**
-	 * @generated
-	 */
-	private Collection getRegion_3002ToPseudostate_3010Children(View view, Object parent) {
-		Collection result = new ArrayList();
-		Collection connectedViews = getChildrenByType(Collections.singleton(view), UMLVisualIDRegistry.getType(RegionSubvertices2EditPart.VISUAL_ID));
-		connectedViews = getChildrenByType(connectedViews, UMLVisualIDRegistry.getType(Pseudostate7EditPart.VISUAL_ID));
-		createNavigatorItems(connectedViews, parent, result, isRegion_3002ToPseudostate_3010ChildrenLeaf(view));
-		return result;
-	}
-
-	/**
-	 * @generated
-	 */
-	private boolean isRegion_3002ToPseudostate_3010ChildrenLeaf(View view) {
-		return false;
-	}
-
-	/**
-	 * @generated
-	 */
-	private Collection getTransition_4001ToPseudostate_3004OutTarget(Edge edge, Object parent) {
-		Collection result = new ArrayList();
-		Collection connectedViews = getLinksTargetByType(Collections.singleton(edge), UMLVisualIDRegistry.getType(PseudostateEditPart.VISUAL_ID));
-		createNavigatorItems(connectedViews, parent, result, isTransition_4001ToPseudostate_3004OutTargetLeaf(edge));
-		return result;
-	}
-
-	/**
-	 * @generated
-	 */
-	private boolean isTransition_4001ToPseudostate_3004OutTargetLeaf(Edge edge) {
-		return true;
-	}
-
-	/**
-	 * @generated
-	 */
-	private Collection getStateMachine_1000ToPseudostate_2003Children(View view, Object parent) {
-		Collection result = new ArrayList();
-		Collection connectedViews = getChildrenByType(Collections.singleton(view), UMLVisualIDRegistry.getType(Pseudostate10EditPart.VISUAL_ID));
-		createNavigatorItems(connectedViews, parent, result, isStateMachine_1000ToPseudostate_2003ChildrenLeaf(view));
-		return result;
-	}
-
-	/**
-	 * @generated
-	 */
-	private boolean isStateMachine_1000ToPseudostate_2003ChildrenLeaf(View view) {
-		return false;
-	}
-
-	/**
-	 * @generated
-	 */
-	private Collection getTransition_4001ToPseudostate_3006InSource(Edge edge, Object parent) {
-		Collection result = new ArrayList();
-		Collection connectedViews = getLinksSourceByType(Collections.singleton(edge), UMLVisualIDRegistry.getType(Pseudostate3EditPart.VISUAL_ID));
-		createNavigatorItems(connectedViews, parent, result, isTransition_4001ToPseudostate_3006InSourceLeaf(edge));
-		return result;
-	}
-
-	/**
-	 * @generated
-	 */
-	private boolean isTransition_4001ToPseudostate_3006InSourceLeaf(Edge edge) {
-		return true;
-	}
-
-	/**
-	 * @generated
-	 */
-	private Collection getTransition_4001ToFinalState_3003OutTarget(Edge edge, Object parent) {
-		Collection result = new ArrayList();
-		Collection connectedViews = getLinksTargetByType(Collections.singleton(edge), UMLVisualIDRegistry.getType(FinalStateEditPart.VISUAL_ID));
-		createNavigatorItems(connectedViews, parent, result, isTransition_4001ToFinalState_3003OutTargetLeaf(edge));
-		return result;
-	}
-
-	/**
-	 * @generated
-	 */
-	private boolean isTransition_4001ToFinalState_3003OutTargetLeaf(Edge edge) {
-		return true;
-	}
-
-	/**
-	 * @generated
-	 */
-	private Collection getPseudostate_3008ToTransition_4001InSource(View view, Object parent) {
-		Collection result = new ArrayList();
-		Collection connectedViews = getIncomingLinksByType(Collections.singleton(view), UMLVisualIDRegistry.getType(TransitionEditPart.VISUAL_ID));
-		createNavigatorItems(connectedViews, parent, result, isPseudostate_3008ToTransition_4001InSourceLeaf(view));
-		return result;
-	}
-
-	/**
-	 * @generated
-	 */
-	private boolean isPseudostate_3008ToTransition_4001InSourceLeaf(View view) {
-		return true;
-	}
-
-	/**
-	 * @generated
-	 */
-	private Collection getTransition_4001ToPseudostate_3008InSource(Edge edge, Object parent) {
-		Collection result = new ArrayList();
-		Collection connectedViews = getLinksSourceByType(Collections.singleton(edge), UMLVisualIDRegistry.getType(Pseudostate5EditPart.VISUAL_ID));
-		createNavigatorItems(connectedViews, parent, result, isTransition_4001ToPseudostate_3008InSourceLeaf(edge));
-		return result;
-	}
-
-	/**
-	 * @generated
-	 */
-	private boolean isTransition_4001ToPseudostate_3008InSourceLeaf(Edge edge) {
-		return true;
-	}
-
-	/**
-	 * @generated
-	 */
-	private Collection getTransition_4001ToState_3012OutTarget(Edge edge, Object parent) {
-		Collection result = new ArrayList();
-		Collection connectedViews = getLinksTargetByType(Collections.singleton(edge), UMLVisualIDRegistry.getType(State2EditPart.VISUAL_ID));
-		createNavigatorItems(connectedViews, parent, result, isTransition_4001ToState_3012OutTargetLeaf(edge));
-		return result;
-	}
-
-	/**
-	 * @generated
-	 */
-	private boolean isTransition_4001ToState_3012OutTargetLeaf(Edge edge) {
-		return true;
-	}
-
-	/**
-	 * @generated
-	 */
-	private Collection getTransition_4001ToPseudostate_3010InSource(Edge edge, Object parent) {
-		Collection result = new ArrayList();
-		Collection connectedViews = getLinksSourceByType(Collections.singleton(edge), UMLVisualIDRegistry.getType(Pseudostate7EditPart.VISUAL_ID));
-		createNavigatorItems(connectedViews, parent, result, isTransition_4001ToPseudostate_3010InSourceLeaf(edge));
-		return result;
-	}
-
-	/**
-	 * @generated
-	 */
-	private boolean isTransition_4001ToPseudostate_3010InSourceLeaf(Edge edge) {
-		return true;
-	}
-
-	/**
-	 * @generated
-	 */
-	private Collection getRegion_3002ToState_3001Children(View view, Object parent) {
-		Collection result = new ArrayList();
-		Collection connectedViews = getChildrenByType(Collections.singleton(view), UMLVisualIDRegistry.getType(RegionSubvertices2EditPart.VISUAL_ID));
-		connectedViews = getChildrenByType(connectedViews, UMLVisualIDRegistry.getType(StateEditPart.VISUAL_ID));
-		createNavigatorItems(connectedViews, parent, result, isRegion_3002ToState_3001ChildrenLeaf(view));
-		return result;
-	}
-
-	/**
-	 * @generated
-	 */
-	private boolean isRegion_3002ToState_3001ChildrenLeaf(View view) {
-		return false;
-	}
-
-	/**
-	 * @generated
-	 */
-	private Collection getState_3012ToTransition_4001InSource(View view, Object parent) {
-		Collection result = new ArrayList();
-		Collection connectedViews = getIncomingLinksByType(Collections.singleton(view), UMLVisualIDRegistry.getType(TransitionEditPart.VISUAL_ID));
-		createNavigatorItems(connectedViews, parent, result, isState_3012ToTransition_4001InSourceLeaf(view));
-		return result;
-	}
-
-	/**
-	 * @generated
-	 */
-	private boolean isState_3012ToTransition_4001InSourceLeaf(View view) {
-		return true;
-	}
-
-	/**
-	 * @generated
-	 */
-	private Collection getPseudostate_2002ToTransition_4001OutTarget(View view, Object parent) {
-		Collection result = new ArrayList();
-		Collection connectedViews = getOutgoingLinksByType(Collections.singleton(view), UMLVisualIDRegistry.getType(TransitionEditPart.VISUAL_ID));
-		createNavigatorItems(connectedViews, parent, result, isPseudostate_2002ToTransition_4001OutTargetLeaf(view));
-		return result;
-	}
-
-	/**
-	 * @generated
-	 */
-	private boolean isPseudostate_2002ToTransition_4001OutTargetLeaf(View view) {
-		return true;
-	}
-
-	/**
-	 * @generated
-	 */
-	private Collection getPseudostate_2003ToTransition_4001InSource(View view, Object parent) {
-		Collection result = new ArrayList();
-		Collection connectedViews = getIncomingLinksByType(Collections.singleton(view), UMLVisualIDRegistry.getType(TransitionEditPart.VISUAL_ID));
-		createNavigatorItems(connectedViews, parent, result, isPseudostate_2003ToTransition_4001InSourceLeaf(view));
-		return result;
-	}
-
-	/**
-	 * @generated
-	 */
-	private boolean isPseudostate_2003ToTransition_4001InSourceLeaf(View view) {
-		return true;
-	}
-
-	/**
-	 * @generated
-	 */
-	private Collection getTransition_4001ToPseudostate_3005InSource(Edge edge, Object parent) {
-		Collection result = new ArrayList();
-		Collection connectedViews = getLinksSourceByType(Collections.singleton(edge), UMLVisualIDRegistry.getType(Pseudostate2EditPart.VISUAL_ID));
-		createNavigatorItems(connectedViews, parent, result, isTransition_4001ToPseudostate_3005InSourceLeaf(edge));
-		return result;
-	}
-
-	/**
-	 * @generated
-	 */
-	private boolean isTransition_4001ToPseudostate_3005InSourceLeaf(Edge edge) {
-		return true;
-	}
-
-	/**
-	 * @generated
-	 */
-	private Collection getPseudostate_3004ToTransition_4001OutTarget(View view, Object parent) {
-		Collection result = new ArrayList();
-		Collection connectedViews = getOutgoingLinksByType(Collections.singleton(view), UMLVisualIDRegistry.getType(TransitionEditPart.VISUAL_ID));
-		createNavigatorItems(connectedViews, parent, result, isPseudostate_3004ToTransition_4001OutTargetLeaf(view));
-		return result;
-	}
-
-	/**
-	 * @generated
-	 */
-	private boolean isPseudostate_3004ToTransition_4001OutTargetLeaf(View view) {
-		return true;
-	}
-
-	/**
-	 * @generated
-	 */
-	private Collection getRegion_2001ToState_3012Children(View view, Object parent) {
-		Collection result = new ArrayList();
-		Collection connectedViews = getChildrenByType(Collections.singleton(view), UMLVisualIDRegistry.getType(RegionSubverticesEditPart.VISUAL_ID));
-		connectedViews = getChildrenByType(connectedViews, UMLVisualIDRegistry.getType(State2EditPart.VISUAL_ID));
-		createNavigatorItems(connectedViews, parent, result, isRegion_2001ToState_3012ChildrenLeaf(view));
-		return result;
-	}
-
-	/**
-	 * @generated
-	 */
-	private boolean isRegion_2001ToState_3012ChildrenLeaf(View view) {
-		return false;
-	}
-
-	/**
-	 * @generated
-	 */
-	private Collection getTransition_4001ToPseudostate_3011OutTarget(Edge edge, Object parent) {
-		Collection result = new ArrayList();
-		Collection connectedViews = getLinksTargetByType(Collections.singleton(edge), UMLVisualIDRegistry.getType(Pseudostate8EditPart.VISUAL_ID));
-		createNavigatorItems(connectedViews, parent, result, isTransition_4001ToPseudostate_3011OutTargetLeaf(edge));
-		return result;
-	}
-
-	/**
-	 * @generated
-	 */
-	private boolean isTransition_4001ToPseudostate_3011OutTargetLeaf(Edge edge) {
-		return true;
-	}
-
-	/**
-	 * @generated
-	 */
-	private Collection getRegion_3002ToPseudostate_3006Children(View view, Object parent) {
-		Collection result = new ArrayList();
-		Collection connectedViews = getChildrenByType(Collections.singleton(view), UMLVisualIDRegistry.getType(RegionSubvertices2EditPart.VISUAL_ID));
-		connectedViews = getChildrenByType(connectedViews, UMLVisualIDRegistry.getType(Pseudostate3EditPart.VISUAL_ID));
-		createNavigatorItems(connectedViews, parent, result, isRegion_3002ToPseudostate_3006ChildrenLeaf(view));
-		return result;
-	}
-
-	/**
-	 * @generated
-	 */
-	private boolean isRegion_3002ToPseudostate_3006ChildrenLeaf(View view) {
-		return false;
-	}
-
-	/**
-	 * @generated
-	 */
-	private Collection getRegion_2001ToPseudostate_3008Children(View view, Object parent) {
-		Collection result = new ArrayList();
-		Collection connectedViews = getChildrenByType(Collections.singleton(view), UMLVisualIDRegistry.getType(RegionSubverticesEditPart.VISUAL_ID));
-		connectedViews = getChildrenByType(connectedViews, UMLVisualIDRegistry.getType(State2EditPart.VISUAL_ID));
-		connectedViews = getChildrenByType(connectedViews, UMLVisualIDRegistry.getType(Region2EditPart.VISUAL_ID));
-		connectedViews = getChildrenByType(connectedViews, UMLVisualIDRegistry.getType(RegionSubvertices2EditPart.VISUAL_ID));
-		connectedViews = getChildrenByType(connectedViews, UMLVisualIDRegistry.getType(Pseudostate5EditPart.VISUAL_ID));
-		createNavigatorItems(connectedViews, parent, result, isRegion_2001ToPseudostate_3008ChildrenLeaf(view));
-		connectedViews = getChildrenByType(Collections.singleton(view), UMLVisualIDRegistry.getType(RegionSubverticesEditPart.VISUAL_ID));
-		connectedViews = getChildrenByType(connectedViews, UMLVisualIDRegistry.getType(Pseudostate5EditPart.VISUAL_ID));
-		createNavigatorItems(connectedViews, parent, result, isRegion_2001ToPseudostate_3008ChildrenLeaf(view));
-		return result;
-	}
-
-	/**
-	 * @generated
-	 */
-	private boolean isRegion_2001ToPseudostate_3008ChildrenLeaf(View view) {
-		return false;
-	}
-
-	/**
-	 * @generated
-	 */
-	private Collection getRegion_3002ToPseudostate_3009Children(View view, Object parent) {
-		Collection result = new ArrayList();
-		Collection connectedViews = getChildrenByType(Collections.singleton(view), UMLVisualIDRegistry.getType(RegionSubvertices2EditPart.VISUAL_ID));
-		connectedViews = getChildrenByType(connectedViews, UMLVisualIDRegistry.getType(Pseudostate6EditPart.VISUAL_ID));
-		createNavigatorItems(connectedViews, parent, result, isRegion_3002ToPseudostate_3009ChildrenLeaf(view));
-		return result;
-	}
-
-	/**
-	 * @generated
-	 */
-	private boolean isRegion_3002ToPseudostate_3009ChildrenLeaf(View view) {
-		return false;
-	}
-
-	/**
-	 * @generated
-	 */
-	private Collection getRegion_2001ToPseudostate_3009Children(View view, Object parent) {
-		Collection result = new ArrayList();
-		Collection connectedViews = getChildrenByType(Collections.singleton(view), UMLVisualIDRegistry.getType(RegionSubverticesEditPart.VISUAL_ID));
-		connectedViews = getChildrenByType(connectedViews, UMLVisualIDRegistry.getType(State2EditPart.VISUAL_ID));
-		connectedViews = getChildrenByType(connectedViews, UMLVisualIDRegistry.getType(Region2EditPart.VISUAL_ID));
-		connectedViews = getChildrenByType(connectedViews, UMLVisualIDRegistry.getType(RegionSubvertices2EditPart.VISUAL_ID));
-		connectedViews = getChildrenByType(connectedViews, UMLVisualIDRegistry.getType(Pseudostate6EditPart.VISUAL_ID));
-		createNavigatorItems(connectedViews, parent, result, isRegion_2001ToPseudostate_3009ChildrenLeaf(view));
-		connectedViews = getChildrenByType(Collections.singleton(view), UMLVisualIDRegistry.getType(RegionSubverticesEditPart.VISUAL_ID));
-		connectedViews = getChildrenByType(connectedViews, UMLVisualIDRegistry.getType(Pseudostate6EditPart.VISUAL_ID));
-		createNavigatorItems(connectedViews, parent, result, isRegion_2001ToPseudostate_3009ChildrenLeaf(view));
-		return result;
-	}
-
-	/**
-	 * @generated
-	 */
-	private boolean isRegion_2001ToPseudostate_3009ChildrenLeaf(View view) {
-		return false;
-	}
-
-	/**
-	 * @generated
-	 */
-	private Collection getFinalState_3003ToTransition_4001OutTarget(View view, Object parent) {
-		Collection result = new ArrayList();
-		Collection connectedViews = getOutgoingLinksByType(Collections.singleton(view), UMLVisualIDRegistry.getType(TransitionEditPart.VISUAL_ID));
-		createNavigatorItems(connectedViews, parent, result, isFinalState_3003ToTransition_4001OutTargetLeaf(view));
-		return result;
-	}
-
-	/**
-	 * @generated
-	 */
-	private boolean isFinalState_3003ToTransition_4001OutTargetLeaf(View view) {
-		return true;
-	}
-
-	/**
-	 * @generated
-	 */
-	private Collection getStateMachine_1000ToPseudostate_2002Children(View view, Object parent) {
-		Collection result = new ArrayList();
-		Collection connectedViews = getChildrenByType(Collections.singleton(view), UMLVisualIDRegistry.getType(Pseudostate9EditPart.VISUAL_ID));
-		createNavigatorItems(connectedViews, parent, result, isStateMachine_1000ToPseudostate_2002ChildrenLeaf(view));
-		return result;
-	}
-
-	/**
-	 * @generated
-	 */
-	private boolean isStateMachine_1000ToPseudostate_2002ChildrenLeaf(View view) {
-		return false;
-	}
-
-	/**
-	 * @generated
-	 */
-	private Collection getPseudostate_2002ToTransition_4001InSource(View view, Object parent) {
-		Collection result = new ArrayList();
-		Collection connectedViews = getIncomingLinksByType(Collections.singleton(view), UMLVisualIDRegistry.getType(TransitionEditPart.VISUAL_ID));
-		createNavigatorItems(connectedViews, parent, result, isPseudostate_2002ToTransition_4001InSourceLeaf(view));
-		return result;
-	}
-
-	/**
-	 * @generated
-	 */
-	private boolean isPseudostate_2002ToTransition_4001InSourceLeaf(View view) {
-		return true;
-	}
-
-	/**
-	 * @generated
-	 */
-	private Collection getRegion_3002ToPseudostate_3011Children(View view, Object parent) {
-		Collection result = new ArrayList();
-		Collection connectedViews = getChildrenByType(Collections.singleton(view), UMLVisualIDRegistry.getType(RegionSubvertices2EditPart.VISUAL_ID));
-		connectedViews = getChildrenByType(connectedViews, UMLVisualIDRegistry.getType(Pseudostate8EditPart.VISUAL_ID));
-		createNavigatorItems(connectedViews, parent, result, isRegion_3002ToPseudostate_3011ChildrenLeaf(view));
-		return result;
-	}
-
-	/**
-	 * @generated
-	 */
-	private boolean isRegion_3002ToPseudostate_3011ChildrenLeaf(View view) {
-		return false;
-	}
-
-	/**
-	 * @generated
-	 */
-	private Collection getPseudostate_3006ToTransition_4001InSource(View view, Object parent) {
-		Collection result = new ArrayList();
-		Collection connectedViews = getIncomingLinksByType(Collections.singleton(view), UMLVisualIDRegistry.getType(TransitionEditPart.VISUAL_ID));
-		createNavigatorItems(connectedViews, parent, result, isPseudostate_3006ToTransition_4001InSourceLeaf(view));
-		return result;
-	}
-
-	/**
-	 * @generated
-	 */
-	private boolean isPseudostate_3006ToTransition_4001InSourceLeaf(View view) {
-		return true;
-	}
-
-	/**
-	 * @generated
-	 */
-	private Collection getRegion_3002ToPseudostate_3004Children(View view, Object parent) {
-		Collection result = new ArrayList();
-		Collection connectedViews = getChildrenByType(Collections.singleton(view), UMLVisualIDRegistry.getType(RegionSubvertices2EditPart.VISUAL_ID));
-		connectedViews = getChildrenByType(connectedViews, UMLVisualIDRegistry.getType(PseudostateEditPart.VISUAL_ID));
-		createNavigatorItems(connectedViews, parent, result, isRegion_3002ToPseudostate_3004ChildrenLeaf(view));
-		return result;
-	}
-
-	/**
-	 * @generated
-	 */
-	private boolean isRegion_3002ToPseudostate_3004ChildrenLeaf(View view) {
-		return false;
-	}
-
-	/**
-	 * @generated
-	 */
-	private Collection getRegion_2001ToPseudostate_3010Children(View view, Object parent) {
-		Collection result = new ArrayList();
-		Collection connectedViews = getChildrenByType(Collections.singleton(view), UMLVisualIDRegistry.getType(RegionSubverticesEditPart.VISUAL_ID));
-		connectedViews = getChildrenByType(connectedViews, UMLVisualIDRegistry.getType(State2EditPart.VISUAL_ID));
-		connectedViews = getChildrenByType(connectedViews, UMLVisualIDRegistry.getType(Region2EditPart.VISUAL_ID));
-		connectedViews = getChildrenByType(connectedViews, UMLVisualIDRegistry.getType(RegionSubvertices2EditPart.VISUAL_ID));
-		connectedViews = getChildrenByType(connectedViews, UMLVisualIDRegistry.getType(Pseudostate7EditPart.VISUAL_ID));
-		createNavigatorItems(connectedViews, parent, result, isRegion_2001ToPseudostate_3010ChildrenLeaf(view));
-		connectedViews = getChildrenByType(Collections.singleton(view), UMLVisualIDRegistry.getType(RegionSubverticesEditPart.VISUAL_ID));
-		connectedViews = getChildrenByType(connectedViews, UMLVisualIDRegistry.getType(Pseudostate7EditPart.VISUAL_ID));
-		createNavigatorItems(connectedViews, parent, result, isRegion_2001ToPseudostate_3010ChildrenLeaf(view));
-		return result;
-	}
-
-	/**
-	 * @generated
-	 */
-	private boolean isRegion_2001ToPseudostate_3010ChildrenLeaf(View view) {
-		return false;
-	}
-
-	/**
-	 * @generated
-	 */
-	private Collection getPseudostate_3006ToTransition_4001OutTarget(View view, Object parent) {
-		Collection result = new ArrayList();
-		Collection connectedViews = getOutgoingLinksByType(Collections.singleton(view), UMLVisualIDRegistry.getType(TransitionEditPart.VISUAL_ID));
-		createNavigatorItems(connectedViews, parent, result, isPseudostate_3006ToTransition_4001OutTargetLeaf(view));
-		return result;
-	}
-
-	/**
-	 * @generated
-	 */
-	private boolean isPseudostate_3006ToTransition_4001OutTargetLeaf(View view) {
-		return true;
-	}
-
-	/**
-	 * @generated
-	 */
-	private Collection getPseudostate_3007ToTransition_4001OutTarget(View view, Object parent) {
-		Collection result = new ArrayList();
-		Collection connectedViews = getOutgoingLinksByType(Collections.singleton(view), UMLVisualIDRegistry.getType(TransitionEditPart.VISUAL_ID));
-		createNavigatorItems(connectedViews, parent, result, isPseudostate_3007ToTransition_4001OutTargetLeaf(view));
-		return result;
-	}
-
-	/**
-	 * @generated
-	 */
-	private boolean isPseudostate_3007ToTransition_4001OutTargetLeaf(View view) {
-		return true;
-	}
-
-	/**
-	 * @generated
-	 */
-	private Collection getTransition_4001ToPseudostate_3011InSource(Edge edge, Object parent) {
-		Collection result = new ArrayList();
-		Collection connectedViews = getLinksSourceByType(Collections.singleton(edge), UMLVisualIDRegistry.getType(Pseudostate8EditPart.VISUAL_ID));
-		createNavigatorItems(connectedViews, parent, result, isTransition_4001ToPseudostate_3011InSourceLeaf(edge));
-		return result;
-	}
-
-	/**
-	 * @generated
-	 */
-	private boolean isTransition_4001ToPseudostate_3011InSourceLeaf(Edge edge) {
+	private boolean isPseudostate_3009ToTransition_4001InSourceLeaf(View view) {
 		return true;
 	}
 
@@ -1347,6 +894,149 @@ public class UMLNavigatorContentProvider implements ICommonContentProvider {
 	/**
 	 * @generated
 	 */
+	private Collection getFinalState_3003ToTransition_4001InSource(View view, Object parent) {
+		Collection result = new ArrayList();
+		Collection connectedViews = getIncomingLinksByType(Collections.singleton(view), UMLVisualIDRegistry.getType(TransitionEditPart.VISUAL_ID));
+		createNavigatorItems(connectedViews, parent, result, isFinalState_3003ToTransition_4001InSourceLeaf(view));
+		return result;
+	}
+
+	/**
+	 * @generated
+	 */
+	private boolean isFinalState_3003ToTransition_4001InSourceLeaf(View view) {
+		return true;
+	}
+
+	/**
+	 * @generated
+	 */
+	private Collection getTransition_4001ToPseudostate_3009OutTarget(Edge edge, Object parent) {
+		Collection result = new ArrayList();
+		Collection connectedViews = getLinksTargetByType(Collections.singleton(edge), UMLVisualIDRegistry.getType(Pseudostate6EditPart.VISUAL_ID));
+		createNavigatorItems(connectedViews, parent, result, isTransition_4001ToPseudostate_3009OutTargetLeaf(edge));
+		return result;
+	}
+
+	/**
+	 * @generated
+	 */
+	private boolean isTransition_4001ToPseudostate_3009OutTargetLeaf(Edge edge) {
+		return true;
+	}
+
+	/**
+	 * @generated
+	 */
+	private Collection getTransition_4001ToState_3001OutTarget(Edge edge, Object parent) {
+		Collection result = new ArrayList();
+		Collection connectedViews = getLinksTargetByType(Collections.singleton(edge), UMLVisualIDRegistry.getType(StateEditPart.VISUAL_ID));
+		createNavigatorItems(connectedViews, parent, result, isTransition_4001ToState_3001OutTargetLeaf(edge));
+		return result;
+	}
+
+	/**
+	 * @generated
+	 */
+	private boolean isTransition_4001ToState_3001OutTargetLeaf(Edge edge) {
+		return true;
+	}
+
+	/**
+	 * @generated
+	 */
+	private Collection getRegion_2001ToPseudostate_3009Children(View view, Object parent) {
+		Collection result = new ArrayList();
+		Collection connectedViews = getChildrenByType(Collections.singleton(view), UMLVisualIDRegistry.getType(RegionSubverticesEditPart.VISUAL_ID));
+		connectedViews = getChildrenByType(connectedViews, UMLVisualIDRegistry.getType(State2EditPart.VISUAL_ID));
+		connectedViews = getChildrenByType(connectedViews, UMLVisualIDRegistry.getType(Region2EditPart.VISUAL_ID));
+		connectedViews = getChildrenByType(connectedViews, UMLVisualIDRegistry.getType(RegionSubvertices2EditPart.VISUAL_ID));
+		connectedViews = getChildrenByType(connectedViews, UMLVisualIDRegistry.getType(Pseudostate6EditPart.VISUAL_ID));
+		createNavigatorItems(connectedViews, parent, result, isRegion_2001ToPseudostate_3009ChildrenLeaf(view));
+		connectedViews = getChildrenByType(Collections.singleton(view), UMLVisualIDRegistry.getType(RegionSubverticesEditPart.VISUAL_ID));
+		connectedViews = getChildrenByType(connectedViews, UMLVisualIDRegistry.getType(Pseudostate6EditPart.VISUAL_ID));
+		createNavigatorItems(connectedViews, parent, result, isRegion_2001ToPseudostate_3009ChildrenLeaf(view));
+		return result;
+	}
+
+	/**
+	 * @generated
+	 */
+	private boolean isRegion_2001ToPseudostate_3009ChildrenLeaf(View view) {
+		return false;
+	}
+
+	/**
+	 * @generated
+	 */
+	private Collection getTransition_4001ToPseudostate_3006InSource(Edge edge, Object parent) {
+		Collection result = new ArrayList();
+		Collection connectedViews = getLinksSourceByType(Collections.singleton(edge), UMLVisualIDRegistry.getType(Pseudostate3EditPart.VISUAL_ID));
+		createNavigatorItems(connectedViews, parent, result, isTransition_4001ToPseudostate_3006InSourceLeaf(edge));
+		return result;
+	}
+
+	/**
+	 * @generated
+	 */
+	private boolean isTransition_4001ToPseudostate_3006InSourceLeaf(Edge edge) {
+		return true;
+	}
+
+	/**
+	 * @generated
+	 */
+	private Collection getTransition_4001ToPseudostate_3005InSource(Edge edge, Object parent) {
+		Collection result = new ArrayList();
+		Collection connectedViews = getLinksSourceByType(Collections.singleton(edge), UMLVisualIDRegistry.getType(Pseudostate2EditPart.VISUAL_ID));
+		createNavigatorItems(connectedViews, parent, result, isTransition_4001ToPseudostate_3005InSourceLeaf(edge));
+		return result;
+	}
+
+	/**
+	 * @generated
+	 */
+	private boolean isTransition_4001ToPseudostate_3005InSourceLeaf(Edge edge) {
+		return true;
+	}
+
+	/**
+	 * @generated
+	 */
+	private Collection getTransition_4001ToPseudostate_3006OutTarget(Edge edge, Object parent) {
+		Collection result = new ArrayList();
+		Collection connectedViews = getLinksTargetByType(Collections.singleton(edge), UMLVisualIDRegistry.getType(Pseudostate3EditPart.VISUAL_ID));
+		createNavigatorItems(connectedViews, parent, result, isTransition_4001ToPseudostate_3006OutTargetLeaf(edge));
+		return result;
+	}
+
+	/**
+	 * @generated
+	 */
+	private boolean isTransition_4001ToPseudostate_3006OutTargetLeaf(Edge edge) {
+		return true;
+	}
+
+	/**
+	 * @generated
+	 */
+	private Collection getTransition_4001ToPseudostate_3011InSource(Edge edge, Object parent) {
+		Collection result = new ArrayList();
+		Collection connectedViews = getLinksSourceByType(Collections.singleton(edge), UMLVisualIDRegistry.getType(Pseudostate8EditPart.VISUAL_ID));
+		createNavigatorItems(connectedViews, parent, result, isTransition_4001ToPseudostate_3011InSourceLeaf(edge));
+		return result;
+	}
+
+	/**
+	 * @generated
+	 */
+	private boolean isTransition_4001ToPseudostate_3011InSourceLeaf(Edge edge) {
+		return true;
+	}
+
+	/**
+	 * @generated
+	 */
 	private Collection getPseudostate_3007ToTransition_4001InSource(View view, Object parent) {
 		Collection result = new ArrayList();
 		Collection connectedViews = getIncomingLinksByType(Collections.singleton(view), UMLVisualIDRegistry.getType(TransitionEditPart.VISUAL_ID));
@@ -1364,34 +1054,69 @@ public class UMLNavigatorContentProvider implements ICommonContentProvider {
 	/**
 	 * @generated
 	 */
-	private Collection getPseudostate_3009ToTransition_4001OutTarget(View view, Object parent) {
+	private Collection getPseudostate_2003ToTransition_4001OutTarget(View view, Object parent) {
 		Collection result = new ArrayList();
 		Collection connectedViews = getOutgoingLinksByType(Collections.singleton(view), UMLVisualIDRegistry.getType(TransitionEditPart.VISUAL_ID));
-		createNavigatorItems(connectedViews, parent, result, isPseudostate_3009ToTransition_4001OutTargetLeaf(view));
+		createNavigatorItems(connectedViews, parent, result, isPseudostate_2003ToTransition_4001OutTargetLeaf(view));
 		return result;
 	}
 
 	/**
 	 * @generated
 	 */
-	private boolean isPseudostate_3009ToTransition_4001OutTargetLeaf(View view) {
+	private boolean isPseudostate_2003ToTransition_4001OutTargetLeaf(View view) {
 		return true;
 	}
 
 	/**
 	 * @generated
 	 */
-	private Collection getPseudostate_3011ToTransition_4001InSource(View view, Object parent) {
+	private Collection getPseudostate_3004ToTransition_4001OutTarget(View view, Object parent) {
 		Collection result = new ArrayList();
-		Collection connectedViews = getIncomingLinksByType(Collections.singleton(view), UMLVisualIDRegistry.getType(TransitionEditPart.VISUAL_ID));
-		createNavigatorItems(connectedViews, parent, result, isPseudostate_3011ToTransition_4001InSourceLeaf(view));
+		Collection connectedViews = getOutgoingLinksByType(Collections.singleton(view), UMLVisualIDRegistry.getType(TransitionEditPart.VISUAL_ID));
+		createNavigatorItems(connectedViews, parent, result, isPseudostate_3004ToTransition_4001OutTargetLeaf(view));
 		return result;
 	}
 
 	/**
 	 * @generated
 	 */
-	private boolean isPseudostate_3011ToTransition_4001InSourceLeaf(View view) {
+	private boolean isPseudostate_3004ToTransition_4001OutTargetLeaf(View view) {
+		return true;
+	}
+
+	/**
+	 * @generated
+	 */
+	private Collection getRegion_3002ToPseudostate_3005Children(View view, Object parent) {
+		Collection result = new ArrayList();
+		Collection connectedViews = getChildrenByType(Collections.singleton(view), UMLVisualIDRegistry.getType(RegionSubvertices2EditPart.VISUAL_ID));
+		connectedViews = getChildrenByType(connectedViews, UMLVisualIDRegistry.getType(Pseudostate2EditPart.VISUAL_ID));
+		createNavigatorItems(connectedViews, parent, result, isRegion_3002ToPseudostate_3005ChildrenLeaf(view));
+		return result;
+	}
+
+	/**
+	 * @generated
+	 */
+	private boolean isRegion_3002ToPseudostate_3005ChildrenLeaf(View view) {
+		return false;
+	}
+
+	/**
+	 * @generated
+	 */
+	private Collection getPseudostate_3010ToTransition_4001OutTarget(View view, Object parent) {
+		Collection result = new ArrayList();
+		Collection connectedViews = getOutgoingLinksByType(Collections.singleton(view), UMLVisualIDRegistry.getType(TransitionEditPart.VISUAL_ID));
+		createNavigatorItems(connectedViews, parent, result, isPseudostate_3010ToTransition_4001OutTargetLeaf(view));
+		return result;
+	}
+
+	/**
+	 * @generated
+	 */
+	private boolean isPseudostate_3010ToTransition_4001OutTargetLeaf(View view) {
 		return true;
 	}
 
@@ -1422,6 +1147,58 @@ public class UMLNavigatorContentProvider implements ICommonContentProvider {
 	/**
 	 * @generated
 	 */
+	private Collection getState_3001ToTransition_4001OutTarget(View view, Object parent) {
+		Collection result = new ArrayList();
+		Collection connectedViews = getOutgoingLinksByType(Collections.singleton(view), UMLVisualIDRegistry.getType(TransitionEditPart.VISUAL_ID));
+		createNavigatorItems(connectedViews, parent, result, isState_3001ToTransition_4001OutTargetLeaf(view));
+		return result;
+	}
+
+	/**
+	 * @generated
+	 */
+	private boolean isState_3001ToTransition_4001OutTargetLeaf(View view) {
+		return true;
+	}
+
+	/**
+	 * @generated
+	 */
+	private Collection getTransition_4001ToPseudostate_3005OutTarget(Edge edge, Object parent) {
+		Collection result = new ArrayList();
+		Collection connectedViews = getLinksTargetByType(Collections.singleton(edge), UMLVisualIDRegistry.getType(Pseudostate2EditPart.VISUAL_ID));
+		createNavigatorItems(connectedViews, parent, result, isTransition_4001ToPseudostate_3005OutTargetLeaf(edge));
+		return result;
+	}
+
+	/**
+	 * @generated
+	 */
+	private boolean isTransition_4001ToPseudostate_3005OutTargetLeaf(Edge edge) {
+		return true;
+	}
+
+	/**
+	 * @generated
+	 */
+	private Collection getRegion_2001ToState_3012Children(View view, Object parent) {
+		Collection result = new ArrayList();
+		Collection connectedViews = getChildrenByType(Collections.singleton(view), UMLVisualIDRegistry.getType(RegionSubverticesEditPart.VISUAL_ID));
+		connectedViews = getChildrenByType(connectedViews, UMLVisualIDRegistry.getType(State2EditPart.VISUAL_ID));
+		createNavigatorItems(connectedViews, parent, result, isRegion_2001ToState_3012ChildrenLeaf(view));
+		return result;
+	}
+
+	/**
+	 * @generated
+	 */
+	private boolean isRegion_2001ToState_3012ChildrenLeaf(View view) {
+		return false;
+	}
+
+	/**
+	 * @generated
+	 */
 	private Collection getPseudostate_3008ToTransition_4001OutTarget(View view, Object parent) {
 		Collection result = new ArrayList();
 		Collection connectedViews = getOutgoingLinksByType(Collections.singleton(view), UMLVisualIDRegistry.getType(TransitionEditPart.VISUAL_ID));
@@ -1433,6 +1210,99 @@ public class UMLNavigatorContentProvider implements ICommonContentProvider {
 	 * @generated
 	 */
 	private boolean isPseudostate_3008ToTransition_4001OutTargetLeaf(View view) {
+		return true;
+	}
+
+	/**
+	 * @generated
+	 */
+	private Collection getRegion_3002ToFinalState_3003Children(View view, Object parent) {
+		Collection result = new ArrayList();
+		Collection connectedViews = getChildrenByType(Collections.singleton(view), UMLVisualIDRegistry.getType(RegionSubvertices2EditPart.VISUAL_ID));
+		connectedViews = getChildrenByType(connectedViews, UMLVisualIDRegistry.getType(FinalStateEditPart.VISUAL_ID));
+		createNavigatorItems(connectedViews, parent, result, isRegion_3002ToFinalState_3003ChildrenLeaf(view));
+		return result;
+	}
+
+	/**
+	 * @generated
+	 */
+	private boolean isRegion_3002ToFinalState_3003ChildrenLeaf(View view) {
+		return false;
+	}
+
+	/**
+	 * @generated
+	 */
+	private Collection getRegion_2001ToPseudostate_3005Children(View view, Object parent) {
+		Collection result = new ArrayList();
+		Collection connectedViews = getChildrenByType(Collections.singleton(view), UMLVisualIDRegistry.getType(RegionSubverticesEditPart.VISUAL_ID));
+		connectedViews = getChildrenByType(connectedViews, UMLVisualIDRegistry.getType(State2EditPart.VISUAL_ID));
+		connectedViews = getChildrenByType(connectedViews, UMLVisualIDRegistry.getType(Region2EditPart.VISUAL_ID));
+		connectedViews = getChildrenByType(connectedViews, UMLVisualIDRegistry.getType(RegionSubvertices2EditPart.VISUAL_ID));
+		connectedViews = getChildrenByType(connectedViews, UMLVisualIDRegistry.getType(Pseudostate2EditPart.VISUAL_ID));
+		createNavigatorItems(connectedViews, parent, result, isRegion_2001ToPseudostate_3005ChildrenLeaf(view));
+		connectedViews = getChildrenByType(Collections.singleton(view), UMLVisualIDRegistry.getType(RegionSubverticesEditPart.VISUAL_ID));
+		connectedViews = getChildrenByType(connectedViews, UMLVisualIDRegistry.getType(Pseudostate2EditPart.VISUAL_ID));
+		createNavigatorItems(connectedViews, parent, result, isRegion_2001ToPseudostate_3005ChildrenLeaf(view));
+		return result;
+	}
+
+	/**
+	 * @generated
+	 */
+	private boolean isRegion_2001ToPseudostate_3005ChildrenLeaf(View view) {
+		return false;
+	}
+
+	/**
+	 * @generated
+	 */
+	private Collection getTransition_4001ToPseudostate_3008OutTarget(Edge edge, Object parent) {
+		Collection result = new ArrayList();
+		Collection connectedViews = getLinksTargetByType(Collections.singleton(edge), UMLVisualIDRegistry.getType(Pseudostate5EditPart.VISUAL_ID));
+		createNavigatorItems(connectedViews, parent, result, isTransition_4001ToPseudostate_3008OutTargetLeaf(edge));
+		return result;
+	}
+
+	/**
+	 * @generated
+	 */
+	private boolean isTransition_4001ToPseudostate_3008OutTargetLeaf(Edge edge) {
+		return true;
+	}
+
+	/**
+	 * @generated
+	 */
+	private Collection getPseudostate_3009ToTransition_4001OutTarget(View view, Object parent) {
+		Collection result = new ArrayList();
+		Collection connectedViews = getOutgoingLinksByType(Collections.singleton(view), UMLVisualIDRegistry.getType(TransitionEditPart.VISUAL_ID));
+		createNavigatorItems(connectedViews, parent, result, isPseudostate_3009ToTransition_4001OutTargetLeaf(view));
+		return result;
+	}
+
+	/**
+	 * @generated
+	 */
+	private boolean isPseudostate_3009ToTransition_4001OutTargetLeaf(View view) {
+		return true;
+	}
+
+	/**
+	 * @generated
+	 */
+	private Collection getTransition_4001ToPseudostate_3004OutTarget(Edge edge, Object parent) {
+		Collection result = new ArrayList();
+		Collection connectedViews = getLinksTargetByType(Collections.singleton(edge), UMLVisualIDRegistry.getType(PseudostateEditPart.VISUAL_ID));
+		createNavigatorItems(connectedViews, parent, result, isTransition_4001ToPseudostate_3004OutTargetLeaf(edge));
+		return result;
+	}
+
+	/**
+	 * @generated
+	 */
+	private boolean isTransition_4001ToPseudostate_3004OutTargetLeaf(Edge edge) {
 		return true;
 	}
 
@@ -1456,53 +1326,181 @@ public class UMLNavigatorContentProvider implements ICommonContentProvider {
 	/**
 	 * @generated
 	 */
-	private Collection getRegion_3002ToPseudostate_3005Children(View view, Object parent) {
+	private Collection getPseudostate_3007ToTransition_4001OutTarget(View view, Object parent) {
 		Collection result = new ArrayList();
-		Collection connectedViews = getChildrenByType(Collections.singleton(view), UMLVisualIDRegistry.getType(RegionSubvertices2EditPart.VISUAL_ID));
-		connectedViews = getChildrenByType(connectedViews, UMLVisualIDRegistry.getType(Pseudostate2EditPart.VISUAL_ID));
-		createNavigatorItems(connectedViews, parent, result, isRegion_3002ToPseudostate_3005ChildrenLeaf(view));
+		Collection connectedViews = getOutgoingLinksByType(Collections.singleton(view), UMLVisualIDRegistry.getType(TransitionEditPart.VISUAL_ID));
+		createNavigatorItems(connectedViews, parent, result, isPseudostate_3007ToTransition_4001OutTargetLeaf(view));
 		return result;
 	}
 
 	/**
 	 * @generated
 	 */
-	private boolean isRegion_3002ToPseudostate_3005ChildrenLeaf(View view) {
+	private boolean isPseudostate_3007ToTransition_4001OutTargetLeaf(View view) {
+		return true;
+	}
+
+	/**
+	 * @generated
+	 */
+	private Collection getRegion_3002ToState_3001Children(View view, Object parent) {
+		Collection result = new ArrayList();
+		Collection connectedViews = getChildrenByType(Collections.singleton(view), UMLVisualIDRegistry.getType(RegionSubvertices2EditPart.VISUAL_ID));
+		connectedViews = getChildrenByType(connectedViews, UMLVisualIDRegistry.getType(StateEditPart.VISUAL_ID));
+		createNavigatorItems(connectedViews, parent, result, isRegion_3002ToState_3001ChildrenLeaf(view));
+		return result;
+	}
+
+	/**
+	 * @generated
+	 */
+	private boolean isRegion_3002ToState_3001ChildrenLeaf(View view) {
 		return false;
 	}
 
 	/**
 	 * @generated
 	 */
-	private Collection getPseudostate_3005ToTransition_4001OutTarget(View view, Object parent) {
+	private Collection getRegion_2001ToPseudostate_3010Children(View view, Object parent) {
 		Collection result = new ArrayList();
-		Collection connectedViews = getOutgoingLinksByType(Collections.singleton(view), UMLVisualIDRegistry.getType(TransitionEditPart.VISUAL_ID));
-		createNavigatorItems(connectedViews, parent, result, isPseudostate_3005ToTransition_4001OutTargetLeaf(view));
+		Collection connectedViews = getChildrenByType(Collections.singleton(view), UMLVisualIDRegistry.getType(RegionSubverticesEditPart.VISUAL_ID));
+		connectedViews = getChildrenByType(connectedViews, UMLVisualIDRegistry.getType(State2EditPart.VISUAL_ID));
+		connectedViews = getChildrenByType(connectedViews, UMLVisualIDRegistry.getType(Region2EditPart.VISUAL_ID));
+		connectedViews = getChildrenByType(connectedViews, UMLVisualIDRegistry.getType(RegionSubvertices2EditPart.VISUAL_ID));
+		connectedViews = getChildrenByType(connectedViews, UMLVisualIDRegistry.getType(Pseudostate7EditPart.VISUAL_ID));
+		createNavigatorItems(connectedViews, parent, result, isRegion_2001ToPseudostate_3010ChildrenLeaf(view));
+		connectedViews = getChildrenByType(Collections.singleton(view), UMLVisualIDRegistry.getType(RegionSubverticesEditPart.VISUAL_ID));
+		connectedViews = getChildrenByType(connectedViews, UMLVisualIDRegistry.getType(Pseudostate7EditPart.VISUAL_ID));
+		createNavigatorItems(connectedViews, parent, result, isRegion_2001ToPseudostate_3010ChildrenLeaf(view));
 		return result;
 	}
 
 	/**
 	 * @generated
 	 */
-	private boolean isPseudostate_3005ToTransition_4001OutTargetLeaf(View view) {
-		return true;
+	private boolean isRegion_2001ToPseudostate_3010ChildrenLeaf(View view) {
+		return false;
 	}
 
 	/**
 	 * @generated
 	 */
-	private Collection getTransition_4001ToPseudostate_3004InSource(Edge edge, Object parent) {
+	private Collection getRegion_3002ToPseudostate_3008Children(View view, Object parent) {
 		Collection result = new ArrayList();
-		Collection connectedViews = getLinksSourceByType(Collections.singleton(edge), UMLVisualIDRegistry.getType(PseudostateEditPart.VISUAL_ID));
-		createNavigatorItems(connectedViews, parent, result, isTransition_4001ToPseudostate_3004InSourceLeaf(edge));
+		Collection connectedViews = getChildrenByType(Collections.singleton(view), UMLVisualIDRegistry.getType(RegionSubvertices2EditPart.VISUAL_ID));
+		connectedViews = getChildrenByType(connectedViews, UMLVisualIDRegistry.getType(Pseudostate5EditPart.VISUAL_ID));
+		createNavigatorItems(connectedViews, parent, result, isRegion_3002ToPseudostate_3008ChildrenLeaf(view));
 		return result;
 	}
 
 	/**
 	 * @generated
 	 */
-	private boolean isTransition_4001ToPseudostate_3004InSourceLeaf(Edge edge) {
+	private boolean isRegion_3002ToPseudostate_3008ChildrenLeaf(View view) {
+		return false;
+	}
+
+	/**
+	 * @generated
+	 */
+	private Collection getTransition_4001ToState_3012InSource(Edge edge, Object parent) {
+		Collection result = new ArrayList();
+		Collection connectedViews = getLinksSourceByType(Collections.singleton(edge), UMLVisualIDRegistry.getType(State2EditPart.VISUAL_ID));
+		createNavigatorItems(connectedViews, parent, result, isTransition_4001ToState_3012InSourceLeaf(edge));
+		return result;
+	}
+
+	/**
+	 * @generated
+	 */
+	private boolean isTransition_4001ToState_3012InSourceLeaf(Edge edge) {
 		return true;
+	}
+
+	/**
+	 * @generated
+	 */
+	private Collection getTransition_4001ToPseudostate_3010InSource(Edge edge, Object parent) {
+		Collection result = new ArrayList();
+		Collection connectedViews = getLinksSourceByType(Collections.singleton(edge), UMLVisualIDRegistry.getType(Pseudostate7EditPart.VISUAL_ID));
+		createNavigatorItems(connectedViews, parent, result, isTransition_4001ToPseudostate_3010InSourceLeaf(edge));
+		return result;
+	}
+
+	/**
+	 * @generated
+	 */
+	private boolean isTransition_4001ToPseudostate_3010InSourceLeaf(Edge edge) {
+		return true;
+	}
+
+	/**
+	 * @generated
+	 */
+	private Collection getRegion_3002ToPseudostate_3011Children(View view, Object parent) {
+		Collection result = new ArrayList();
+		Collection connectedViews = getChildrenByType(Collections.singleton(view), UMLVisualIDRegistry.getType(RegionSubvertices2EditPart.VISUAL_ID));
+		connectedViews = getChildrenByType(connectedViews, UMLVisualIDRegistry.getType(Pseudostate8EditPart.VISUAL_ID));
+		createNavigatorItems(connectedViews, parent, result, isRegion_3002ToPseudostate_3011ChildrenLeaf(view));
+		return result;
+	}
+
+	/**
+	 * @generated
+	 */
+	private boolean isRegion_3002ToPseudostate_3011ChildrenLeaf(View view) {
+		return false;
+	}
+
+	/**
+	 * @generated
+	 */
+	private Collection getPseudostate_3005ToTransition_4001InSource(View view, Object parent) {
+		Collection result = new ArrayList();
+		Collection connectedViews = getIncomingLinksByType(Collections.singleton(view), UMLVisualIDRegistry.getType(TransitionEditPart.VISUAL_ID));
+		createNavigatorItems(connectedViews, parent, result, isPseudostate_3005ToTransition_4001InSourceLeaf(view));
+		return result;
+	}
+
+	/**
+	 * @generated
+	 */
+	private boolean isPseudostate_3005ToTransition_4001InSourceLeaf(View view) {
+		return true;
+	}
+
+	/**
+	 * @generated
+	 */
+	private Collection getTransition_4001ToFinalState_3003InSource(Edge edge, Object parent) {
+		Collection result = new ArrayList();
+		Collection connectedViews = getLinksSourceByType(Collections.singleton(edge), UMLVisualIDRegistry.getType(FinalStateEditPart.VISUAL_ID));
+		createNavigatorItems(connectedViews, parent, result, isTransition_4001ToFinalState_3003InSourceLeaf(edge));
+		return result;
+	}
+
+	/**
+	 * @generated
+	 */
+	private boolean isTransition_4001ToFinalState_3003InSourceLeaf(Edge edge) {
+		return true;
+	}
+
+	/**
+	 * @generated
+	 */
+	private Collection getStateMachine_1000ToPseudostate_2003Children(View view, Object parent) {
+		Collection result = new ArrayList();
+		Collection connectedViews = getChildrenByType(Collections.singleton(view), UMLVisualIDRegistry.getType(Pseudostate10EditPart.VISUAL_ID));
+		createNavigatorItems(connectedViews, parent, result, isStateMachine_1000ToPseudostate_2003ChildrenLeaf(view));
+		return result;
+	}
+
+	/**
+	 * @generated
+	 */
+	private boolean isStateMachine_1000ToPseudostate_2003ChildrenLeaf(View view) {
+		return false;
 	}
 
 	/**
@@ -1520,6 +1518,203 @@ public class UMLNavigatorContentProvider implements ICommonContentProvider {
 	 */
 	private boolean isTransition_4001ToPseudostate_3007InSourceLeaf(Edge edge) {
 		return true;
+	}
+
+	/**
+	 * @generated
+	 */
+	private Collection getRegion_3002ToPseudostate_3009Children(View view, Object parent) {
+		Collection result = new ArrayList();
+		Collection connectedViews = getChildrenByType(Collections.singleton(view), UMLVisualIDRegistry.getType(RegionSubvertices2EditPart.VISUAL_ID));
+		connectedViews = getChildrenByType(connectedViews, UMLVisualIDRegistry.getType(Pseudostate6EditPart.VISUAL_ID));
+		createNavigatorItems(connectedViews, parent, result, isRegion_3002ToPseudostate_3009ChildrenLeaf(view));
+		return result;
+	}
+
+	/**
+	 * @generated
+	 */
+	private boolean isRegion_3002ToPseudostate_3009ChildrenLeaf(View view) {
+		return false;
+	}
+
+	/**
+	 * @generated
+	 */
+	private Collection getStateMachine_1000ToPseudostate_2002Children(View view, Object parent) {
+		Collection result = new ArrayList();
+		Collection connectedViews = getChildrenByType(Collections.singleton(view), UMLVisualIDRegistry.getType(Pseudostate9EditPart.VISUAL_ID));
+		createNavigatorItems(connectedViews, parent, result, isStateMachine_1000ToPseudostate_2002ChildrenLeaf(view));
+		return result;
+	}
+
+	/**
+	 * @generated
+	 */
+	private boolean isStateMachine_1000ToPseudostate_2002ChildrenLeaf(View view) {
+		return false;
+	}
+
+	/**
+	 * @generated
+	 */
+	private Collection getPseudostate_3004ToTransition_4001InSource(View view, Object parent) {
+		Collection result = new ArrayList();
+		Collection connectedViews = getIncomingLinksByType(Collections.singleton(view), UMLVisualIDRegistry.getType(TransitionEditPart.VISUAL_ID));
+		createNavigatorItems(connectedViews, parent, result, isPseudostate_3004ToTransition_4001InSourceLeaf(view));
+		return result;
+	}
+
+	/**
+	 * @generated
+	 */
+	private boolean isPseudostate_3004ToTransition_4001InSourceLeaf(View view) {
+		return true;
+	}
+
+	/**
+	 * @generated
+	 */
+	private Collection getRegion_3002ToPseudostate_3010Children(View view, Object parent) {
+		Collection result = new ArrayList();
+		Collection connectedViews = getChildrenByType(Collections.singleton(view), UMLVisualIDRegistry.getType(RegionSubvertices2EditPart.VISUAL_ID));
+		connectedViews = getChildrenByType(connectedViews, UMLVisualIDRegistry.getType(Pseudostate7EditPart.VISUAL_ID));
+		createNavigatorItems(connectedViews, parent, result, isRegion_3002ToPseudostate_3010ChildrenLeaf(view));
+		return result;
+	}
+
+	/**
+	 * @generated
+	 */
+	private boolean isRegion_3002ToPseudostate_3010ChildrenLeaf(View view) {
+		return false;
+	}
+
+	/**
+	 * @generated
+	 */
+	private Collection getPseudostate_3011ToTransition_4001InSource(View view, Object parent) {
+		Collection result = new ArrayList();
+		Collection connectedViews = getIncomingLinksByType(Collections.singleton(view), UMLVisualIDRegistry.getType(TransitionEditPart.VISUAL_ID));
+		createNavigatorItems(connectedViews, parent, result, isPseudostate_3011ToTransition_4001InSourceLeaf(view));
+		return result;
+	}
+
+	/**
+	 * @generated
+	 */
+	private boolean isPseudostate_3011ToTransition_4001InSourceLeaf(View view) {
+		return true;
+	}
+
+	/**
+	 * @generated
+	 */
+	private Collection getTransition_4001ToPseudostate_3010OutTarget(Edge edge, Object parent) {
+		Collection result = new ArrayList();
+		Collection connectedViews = getLinksTargetByType(Collections.singleton(edge), UMLVisualIDRegistry.getType(Pseudostate7EditPart.VISUAL_ID));
+		createNavigatorItems(connectedViews, parent, result, isTransition_4001ToPseudostate_3010OutTargetLeaf(edge));
+		return result;
+	}
+
+	/**
+	 * @generated
+	 */
+	private boolean isTransition_4001ToPseudostate_3010OutTargetLeaf(Edge edge) {
+		return true;
+	}
+
+	/**
+	 * @generated
+	 */
+	private Collection getStateMachine_1000ToRegion_2001Children(View view, Object parent) {
+		Collection result = new ArrayList();
+		Collection connectedViews = getChildrenByType(Collections.singleton(view), UMLVisualIDRegistry.getType(RegionEditPart.VISUAL_ID));
+		createNavigatorItems(connectedViews, parent, result, isStateMachine_1000ToRegion_2001ChildrenLeaf(view));
+		return result;
+	}
+
+	/**
+	 * @generated
+	 */
+	private boolean isStateMachine_1000ToRegion_2001ChildrenLeaf(View view) {
+		return false;
+	}
+
+	/**
+	 * @generated
+	 */
+	private Collection getPseudostate_3006ToTransition_4001OutTarget(View view, Object parent) {
+		Collection result = new ArrayList();
+		Collection connectedViews = getOutgoingLinksByType(Collections.singleton(view), UMLVisualIDRegistry.getType(TransitionEditPart.VISUAL_ID));
+		createNavigatorItems(connectedViews, parent, result, isPseudostate_3006ToTransition_4001OutTargetLeaf(view));
+		return result;
+	}
+
+	/**
+	 * @generated
+	 */
+	private boolean isPseudostate_3006ToTransition_4001OutTargetLeaf(View view) {
+		return true;
+	}
+
+	/**
+	 * @generated
+	 */
+	private Collection getTransition_4001ToPseudostate_2002OutTarget(Edge edge, Object parent) {
+		Collection result = new ArrayList();
+		Collection connectedViews = getLinksTargetByType(Collections.singleton(edge), UMLVisualIDRegistry.getType(Pseudostate9EditPart.VISUAL_ID));
+		createNavigatorItems(connectedViews, parent, result, isTransition_4001ToPseudostate_2002OutTargetLeaf(edge));
+		return result;
+	}
+
+	/**
+	 * @generated
+	 */
+	private boolean isTransition_4001ToPseudostate_2002OutTargetLeaf(Edge edge) {
+		return true;
+	}
+
+	/**
+	 * @generated
+	 */
+	private Collection getRegion_3002ToPseudostate_3006Children(View view, Object parent) {
+		Collection result = new ArrayList();
+		Collection connectedViews = getChildrenByType(Collections.singleton(view), UMLVisualIDRegistry.getType(RegionSubvertices2EditPart.VISUAL_ID));
+		connectedViews = getChildrenByType(connectedViews, UMLVisualIDRegistry.getType(Pseudostate3EditPart.VISUAL_ID));
+		createNavigatorItems(connectedViews, parent, result, isRegion_3002ToPseudostate_3006ChildrenLeaf(view));
+		return result;
+	}
+
+	/**
+	 * @generated
+	 */
+	private boolean isRegion_3002ToPseudostate_3006ChildrenLeaf(View view) {
+		return false;
+	}
+
+	/**
+	 * @generated
+	 */
+	private Collection getRegion_2001ToPseudostate_3006Children(View view, Object parent) {
+		Collection result = new ArrayList();
+		Collection connectedViews = getChildrenByType(Collections.singleton(view), UMLVisualIDRegistry.getType(RegionSubverticesEditPart.VISUAL_ID));
+		connectedViews = getChildrenByType(connectedViews, UMLVisualIDRegistry.getType(State2EditPart.VISUAL_ID));
+		connectedViews = getChildrenByType(connectedViews, UMLVisualIDRegistry.getType(Region2EditPart.VISUAL_ID));
+		connectedViews = getChildrenByType(connectedViews, UMLVisualIDRegistry.getType(RegionSubvertices2EditPart.VISUAL_ID));
+		connectedViews = getChildrenByType(connectedViews, UMLVisualIDRegistry.getType(Pseudostate3EditPart.VISUAL_ID));
+		createNavigatorItems(connectedViews, parent, result, isRegion_2001ToPseudostate_3006ChildrenLeaf(view));
+		connectedViews = getChildrenByType(Collections.singleton(view), UMLVisualIDRegistry.getType(RegionSubverticesEditPart.VISUAL_ID));
+		connectedViews = getChildrenByType(connectedViews, UMLVisualIDRegistry.getType(Pseudostate3EditPart.VISUAL_ID));
+		createNavigatorItems(connectedViews, parent, result, isRegion_2001ToPseudostate_3006ChildrenLeaf(view));
+		return result;
+	}
+
+	/**
+	 * @generated
+	 */
+	private boolean isRegion_2001ToPseudostate_3006ChildrenLeaf(View view) {
+		return false;
 	}
 
 	/**
@@ -1560,87 +1755,35 @@ public class UMLNavigatorContentProvider implements ICommonContentProvider {
 	/**
 	 * @generated
 	 */
-	private Collection getTransition_4001ToState_3012InSource(Edge edge, Object parent) {
+	private Collection getPseudostate_2002ToTransition_4001InSource(View view, Object parent) {
 		Collection result = new ArrayList();
-		Collection connectedViews = getLinksSourceByType(Collections.singleton(edge), UMLVisualIDRegistry.getType(State2EditPart.VISUAL_ID));
-		createNavigatorItems(connectedViews, parent, result, isTransition_4001ToState_3012InSourceLeaf(edge));
+		Collection connectedViews = getIncomingLinksByType(Collections.singleton(view), UMLVisualIDRegistry.getType(TransitionEditPart.VISUAL_ID));
+		createNavigatorItems(connectedViews, parent, result, isPseudostate_2002ToTransition_4001InSourceLeaf(view));
 		return result;
 	}
 
 	/**
 	 * @generated
 	 */
-	private boolean isTransition_4001ToState_3012InSourceLeaf(Edge edge) {
+	private boolean isPseudostate_2002ToTransition_4001InSourceLeaf(View view) {
 		return true;
 	}
 
 	/**
 	 * @generated
 	 */
-	private Collection getTransition_4001ToPseudostate_3006OutTarget(Edge edge, Object parent) {
+	private Collection getPseudostate_3010ToTransition_4001InSource(View view, Object parent) {
 		Collection result = new ArrayList();
-		Collection connectedViews = getLinksTargetByType(Collections.singleton(edge), UMLVisualIDRegistry.getType(Pseudostate3EditPart.VISUAL_ID));
-		createNavigatorItems(connectedViews, parent, result, isTransition_4001ToPseudostate_3006OutTargetLeaf(edge));
+		Collection connectedViews = getIncomingLinksByType(Collections.singleton(view), UMLVisualIDRegistry.getType(TransitionEditPart.VISUAL_ID));
+		createNavigatorItems(connectedViews, parent, result, isPseudostate_3010ToTransition_4001InSourceLeaf(view));
 		return result;
 	}
 
 	/**
 	 * @generated
 	 */
-	private boolean isTransition_4001ToPseudostate_3006OutTargetLeaf(Edge edge) {
+	private boolean isPseudostate_3010ToTransition_4001InSourceLeaf(View view) {
 		return true;
-	}
-
-	/**
-	 * @generated
-	 */
-	private Collection getTransition_4001ToPseudostate_2002InSource(Edge edge, Object parent) {
-		Collection result = new ArrayList();
-		Collection connectedViews = getLinksSourceByType(Collections.singleton(edge), UMLVisualIDRegistry.getType(Pseudostate9EditPart.VISUAL_ID));
-		createNavigatorItems(connectedViews, parent, result, isTransition_4001ToPseudostate_2002InSourceLeaf(edge));
-		return result;
-	}
-
-	/**
-	 * @generated
-	 */
-	private boolean isTransition_4001ToPseudostate_2002InSourceLeaf(Edge edge) {
-		return true;
-	}
-
-	/**
-	 * @generated
-	 */
-	private Collection getTransition_4001ToState_3001InSource(Edge edge, Object parent) {
-		Collection result = new ArrayList();
-		Collection connectedViews = getLinksSourceByType(Collections.singleton(edge), UMLVisualIDRegistry.getType(StateEditPart.VISUAL_ID));
-		createNavigatorItems(connectedViews, parent, result, isTransition_4001ToState_3001InSourceLeaf(edge));
-		return result;
-	}
-
-	/**
-	 * @generated
-	 */
-	private boolean isTransition_4001ToState_3001InSourceLeaf(Edge edge) {
-		return true;
-	}
-
-	/**
-	 * @generated
-	 */
-	private Collection getRegion_3002ToFinalState_3003Children(View view, Object parent) {
-		Collection result = new ArrayList();
-		Collection connectedViews = getChildrenByType(Collections.singleton(view), UMLVisualIDRegistry.getType(RegionSubvertices2EditPart.VISUAL_ID));
-		connectedViews = getChildrenByType(connectedViews, UMLVisualIDRegistry.getType(FinalStateEditPart.VISUAL_ID));
-		createNavigatorItems(connectedViews, parent, result, isRegion_3002ToFinalState_3003ChildrenLeaf(view));
-		return result;
-	}
-
-	/**
-	 * @generated
-	 */
-	private boolean isRegion_3002ToFinalState_3003ChildrenLeaf(View view) {
-		return false;
 	}
 
 	/**
@@ -1663,194 +1806,51 @@ public class UMLNavigatorContentProvider implements ICommonContentProvider {
 	/**
 	 * @generated
 	 */
-	private Collection getPseudostate_3010ToTransition_4001OutTarget(View view, Object parent) {
-		Collection result = new ArrayList();
-		Collection connectedViews = getOutgoingLinksByType(Collections.singleton(view), UMLVisualIDRegistry.getType(TransitionEditPart.VISUAL_ID));
-		createNavigatorItems(connectedViews, parent, result, isPseudostate_3010ToTransition_4001OutTargetLeaf(view));
-		return result;
-	}
-
-	/**
-	 * @generated
-	 */
-	private boolean isPseudostate_3010ToTransition_4001OutTargetLeaf(View view) {
-		return true;
-	}
-
-	/**
-	 * @generated
-	 */
-	private Collection getState_3001ToTransition_4001OutTarget(View view, Object parent) {
-		Collection result = new ArrayList();
-		Collection connectedViews = getOutgoingLinksByType(Collections.singleton(view), UMLVisualIDRegistry.getType(TransitionEditPart.VISUAL_ID));
-		createNavigatorItems(connectedViews, parent, result, isState_3001ToTransition_4001OutTargetLeaf(view));
-		return result;
-	}
-
-	/**
-	 * @generated
-	 */
-	private boolean isState_3001ToTransition_4001OutTargetLeaf(View view) {
-		return true;
-	}
-
-	/**
-	 * @generated
-	 */
-	private Collection getRegion_2001ToFinalState_3003Children(View view, Object parent) {
-		Collection result = new ArrayList();
-		Collection connectedViews = getChildrenByType(Collections.singleton(view), UMLVisualIDRegistry.getType(RegionSubverticesEditPart.VISUAL_ID));
-		connectedViews = getChildrenByType(connectedViews, UMLVisualIDRegistry.getType(State2EditPart.VISUAL_ID));
-		connectedViews = getChildrenByType(connectedViews, UMLVisualIDRegistry.getType(Region2EditPart.VISUAL_ID));
-		connectedViews = getChildrenByType(connectedViews, UMLVisualIDRegistry.getType(RegionSubvertices2EditPart.VISUAL_ID));
-		connectedViews = getChildrenByType(connectedViews, UMLVisualIDRegistry.getType(FinalStateEditPart.VISUAL_ID));
-		createNavigatorItems(connectedViews, parent, result, isRegion_2001ToFinalState_3003ChildrenLeaf(view));
-		connectedViews = getChildrenByType(Collections.singleton(view), UMLVisualIDRegistry.getType(RegionSubverticesEditPart.VISUAL_ID));
-		connectedViews = getChildrenByType(connectedViews, UMLVisualIDRegistry.getType(FinalStateEditPart.VISUAL_ID));
-		createNavigatorItems(connectedViews, parent, result, isRegion_2001ToFinalState_3003ChildrenLeaf(view));
-		return result;
-	}
-
-	/**
-	 * @generated
-	 */
-	private boolean isRegion_2001ToFinalState_3003ChildrenLeaf(View view) {
-		return false;
-	}
-
-	/**
-	 * @generated
-	 */
-	private Collection getTransition_4001ToState_3001OutTarget(Edge edge, Object parent) {
-		Collection result = new ArrayList();
-		Collection connectedViews = getLinksTargetByType(Collections.singleton(edge), UMLVisualIDRegistry.getType(StateEditPart.VISUAL_ID));
-		createNavigatorItems(connectedViews, parent, result, isTransition_4001ToState_3001OutTargetLeaf(edge));
-		return result;
-	}
-
-	/**
-	 * @generated
-	 */
-	private boolean isTransition_4001ToState_3001OutTargetLeaf(Edge edge) {
-		return true;
-	}
-
-	/**
-	 * @generated
-	 */
-	private Collection getStateMachine_1000ToTransition_4001Children(View view, Object parent) {
-		Collection result = new ArrayList();
-		Collection connectedViews = getDiagramLinksByType(Collections.singleton(view), UMLVisualIDRegistry.getType(TransitionEditPart.VISUAL_ID));
-		createNavigatorItems(connectedViews, parent, result, isStateMachine_1000ToTransition_4001ChildrenLeaf(view));
-		return result;
-	}
-
-	/**
-	 * @generated
-	 */
-	private boolean isStateMachine_1000ToTransition_4001ChildrenLeaf(View view) {
-		return false;
-	}
-
-	/**
-	 * @generated
-	 */
-	private Collection getTransition_4001ToPseudostate_3007OutTarget(Edge edge, Object parent) {
-		Collection result = new ArrayList();
-		Collection connectedViews = getLinksTargetByType(Collections.singleton(edge), UMLVisualIDRegistry.getType(Pseudostate4EditPart.VISUAL_ID));
-		createNavigatorItems(connectedViews, parent, result, isTransition_4001ToPseudostate_3007OutTargetLeaf(edge));
-		return result;
-	}
-
-	/**
-	 * @generated
-	 */
-	private boolean isTransition_4001ToPseudostate_3007OutTargetLeaf(Edge edge) {
-		return true;
-	}
-
-	/**
-	 * @generated
-	 */
-	private Collection getTransition_4001ToPseudostate_3005OutTarget(Edge edge, Object parent) {
-		Collection result = new ArrayList();
-		Collection connectedViews = getLinksTargetByType(Collections.singleton(edge), UMLVisualIDRegistry.getType(Pseudostate2EditPart.VISUAL_ID));
-		createNavigatorItems(connectedViews, parent, result, isTransition_4001ToPseudostate_3005OutTargetLeaf(edge));
-		return result;
-	}
-
-	/**
-	 * @generated
-	 */
-	private boolean isTransition_4001ToPseudostate_3005OutTargetLeaf(Edge edge) {
-		return true;
-	}
-
-	/**
-	 * @generated
-	 */
-	private Collection getTransition_4001ToFinalState_3003InSource(Edge edge, Object parent) {
-		Collection result = new ArrayList();
-		Collection connectedViews = getLinksSourceByType(Collections.singleton(edge), UMLVisualIDRegistry.getType(FinalStateEditPart.VISUAL_ID));
-		createNavigatorItems(connectedViews, parent, result, isTransition_4001ToFinalState_3003InSourceLeaf(edge));
-		return result;
-	}
-
-	/**
-	 * @generated
-	 */
-	private boolean isTransition_4001ToFinalState_3003InSourceLeaf(Edge edge) {
-		return true;
-	}
-
-	/**
-	 * @generated
-	 */
-	private Collection getState_3001ToTransition_4001InSource(View view, Object parent) {
+	private Collection getPseudostate_2003ToTransition_4001InSource(View view, Object parent) {
 		Collection result = new ArrayList();
 		Collection connectedViews = getIncomingLinksByType(Collections.singleton(view), UMLVisualIDRegistry.getType(TransitionEditPart.VISUAL_ID));
-		createNavigatorItems(connectedViews, parent, result, isState_3001ToTransition_4001InSourceLeaf(view));
+		createNavigatorItems(connectedViews, parent, result, isPseudostate_2003ToTransition_4001InSourceLeaf(view));
 		return result;
 	}
 
 	/**
 	 * @generated
 	 */
-	private boolean isState_3001ToTransition_4001InSourceLeaf(View view) {
+	private boolean isPseudostate_2003ToTransition_4001InSourceLeaf(View view) {
 		return true;
 	}
 
 	/**
 	 * @generated
 	 */
-	private Collection getPseudostate_3005ToTransition_4001InSource(View view, Object parent) {
+	private Collection getTransition_4001ToPseudostate_3011OutTarget(Edge edge, Object parent) {
 		Collection result = new ArrayList();
-		Collection connectedViews = getIncomingLinksByType(Collections.singleton(view), UMLVisualIDRegistry.getType(TransitionEditPart.VISUAL_ID));
-		createNavigatorItems(connectedViews, parent, result, isPseudostate_3005ToTransition_4001InSourceLeaf(view));
+		Collection connectedViews = getLinksTargetByType(Collections.singleton(edge), UMLVisualIDRegistry.getType(Pseudostate8EditPart.VISUAL_ID));
+		createNavigatorItems(connectedViews, parent, result, isTransition_4001ToPseudostate_3011OutTargetLeaf(edge));
 		return result;
 	}
 
 	/**
 	 * @generated
 	 */
-	private boolean isPseudostate_3005ToTransition_4001InSourceLeaf(View view) {
+	private boolean isTransition_4001ToPseudostate_3011OutTargetLeaf(Edge edge) {
 		return true;
 	}
 
 	/**
 	 * @generated
 	 */
-	private Collection getPseudostate_3009ToTransition_4001InSource(View view, Object parent) {
+	private Collection getTransition_4001ToFinalState_3003OutTarget(Edge edge, Object parent) {
 		Collection result = new ArrayList();
-		Collection connectedViews = getIncomingLinksByType(Collections.singleton(view), UMLVisualIDRegistry.getType(TransitionEditPart.VISUAL_ID));
-		createNavigatorItems(connectedViews, parent, result, isPseudostate_3009ToTransition_4001InSourceLeaf(view));
+		Collection connectedViews = getLinksTargetByType(Collections.singleton(edge), UMLVisualIDRegistry.getType(FinalStateEditPart.VISUAL_ID));
+		createNavigatorItems(connectedViews, parent, result, isTransition_4001ToFinalState_3003OutTargetLeaf(edge));
 		return result;
 	}
 
 	/**
 	 * @generated
 	 */
-	private boolean isPseudostate_3009ToTransition_4001InSourceLeaf(View view) {
+	private boolean isTransition_4001ToFinalState_3003OutTargetLeaf(Edge edge) {
 		return true;
 	}
 

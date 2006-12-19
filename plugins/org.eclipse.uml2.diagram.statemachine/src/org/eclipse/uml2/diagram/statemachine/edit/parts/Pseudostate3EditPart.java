@@ -1,30 +1,31 @@
 package org.eclipse.uml2.diagram.statemachine.edit.parts;
 
+import org.eclipse.draw2d.Ellipse;
+import org.eclipse.draw2d.Graphics;
 import org.eclipse.draw2d.IFigure;
+import org.eclipse.draw2d.MarginBorder;
+import org.eclipse.draw2d.RectangleFigure;
+import org.eclipse.draw2d.Shape;
 import org.eclipse.draw2d.StackLayout;
-
+import org.eclipse.draw2d.geometry.Dimension;
+import org.eclipse.draw2d.geometry.Point;
+import org.eclipse.draw2d.geometry.PointList;
+import org.eclipse.draw2d.geometry.Rectangle;
 import org.eclipse.gef.EditPart;
 import org.eclipse.gef.EditPolicy;
 import org.eclipse.gef.Request;
-
 import org.eclipse.gef.commands.Command;
-
 import org.eclipse.gef.editpolicies.LayoutEditPolicy;
 import org.eclipse.gef.editpolicies.NonResizableEditPolicy;
-
 import org.eclipse.gef.requests.CreateRequest;
-
+import org.eclipse.gmf.internal.codegen.draw2d.GridLayout;
+import org.eclipse.gmf.internal.codegen.draw2d.GridLayoutData;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.ShapeNodeEditPart;
-
 import org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles;
-
 import org.eclipse.gmf.runtime.draw2d.ui.figures.ConstrainedToolbarLayout;
-
 import org.eclipse.gmf.runtime.gef.ui.figures.DefaultSizeNodeFigure;
 import org.eclipse.gmf.runtime.gef.ui.figures.NodeFigure;
-
 import org.eclipse.gmf.runtime.notation.View;
-
 import org.eclipse.uml2.diagram.statemachine.edit.policies.Pseudostate3ItemSemanticEditPolicy;
 
 /**
@@ -59,9 +60,9 @@ public class Pseudostate3EditPart extends ShapeNodeEditPart {
 	 */
 	protected void createDefaultEditPolicies() {
 		super.createDefaultEditPolicies();
+
 		installEditPolicy(EditPolicyRoles.SEMANTIC_ROLE, new Pseudostate3ItemSemanticEditPolicy());
 		installEditPolicy(EditPolicy.LAYOUT_ROLE, createLayoutEditPolicy());
-
 	}
 
 	/**
@@ -109,6 +110,7 @@ public class Pseudostate3EditPart extends ShapeNodeEditPart {
 	 */
 	protected NodeFigure createNodePlate() {
 		DefaultSizeNodeFigure result = new DefaultSizeNodeFigure(getMapMode().DPtoLP(25), getMapMode().DPtoLP(25));
+
 		return result;
 	}
 
@@ -157,14 +159,14 @@ public class Pseudostate3EditPart extends ShapeNodeEditPart {
 	/**
 	 * @generated
 	 */
-	public class DeepHistoryFigure extends org.eclipse.draw2d.Ellipse {
+	public class DeepHistoryFigure extends Ellipse {
 
 		/**
 		 * @generated
 		 */
 		public DeepHistoryFigure() {
 
-			org.eclipse.gmf.internal.codegen.draw2d.GridLayout layoutThis = new org.eclipse.gmf.internal.codegen.draw2d.GridLayout();
+			GridLayout layoutThis = new GridLayout();
 			layoutThis.numColumns = 2;
 			layoutThis.makeColumnsEqualWidth = true;
 			layoutThis.horizontalSpacing = 0;
@@ -178,11 +180,11 @@ public class Pseudostate3EditPart extends ShapeNodeEditPart {
 			this.setOutline(true);
 			this.setOutlineXOR(false);
 			this.setLineWidth(1);
-			this.setLineStyle(org.eclipse.draw2d.Graphics.LINE_SOLID);
-			this.setPreferredSize(new org.eclipse.draw2d.geometry.Dimension(getMapMode().DPtoLP(25), getMapMode().DPtoLP(25)));
-			this.setMaximumSize(new org.eclipse.draw2d.geometry.Dimension(getMapMode().DPtoLP(25), getMapMode().DPtoLP(25)));
-			this.setMinimumSize(new org.eclipse.draw2d.geometry.Dimension(getMapMode().DPtoLP(25), getMapMode().DPtoLP(25)));
-			this.setBorder(new org.eclipse.draw2d.MarginBorder(getMapMode().DPtoLP(6), getMapMode().DPtoLP(6), getMapMode().DPtoLP(6), getMapMode().DPtoLP(3)));
+			this.setLineStyle(Graphics.LINE_SOLID);
+			this.setPreferredSize(new Dimension(getMapMode().DPtoLP(25), getMapMode().DPtoLP(25)));
+			this.setMaximumSize(new Dimension(getMapMode().DPtoLP(25), getMapMode().DPtoLP(25)));
+			this.setMinimumSize(new Dimension(getMapMode().DPtoLP(25), getMapMode().DPtoLP(25)));
+			this.setBorder(new MarginBorder(getMapMode().DPtoLP(6), getMapMode().DPtoLP(6), getMapMode().DPtoLP(6), getMapMode().DPtoLP(3)));
 			createContents();
 		}
 
@@ -191,22 +193,22 @@ public class Pseudostate3EditPart extends ShapeNodeEditPart {
 		 */
 		private void createContents() {
 
-			class DeepHistoryFigure_Letter0Class extends org.eclipse.draw2d.Shape {
+			class DeepHistoryFigure_Letter0Class extends Shape {
 
 				/**
 				 * @generated
 				 */
-				private final org.eclipse.draw2d.geometry.PointList myTemplate = new org.eclipse.draw2d.geometry.PointList();
+				private final PointList myTemplate = new PointList();
 
 				/**
 				 * @generated
 				 */
-				private org.eclipse.draw2d.geometry.Rectangle myTemplateBounds;
+				private Rectangle myTemplateBounds;
 
 				/**
 				 * @generated
 				 */
-				public void addPoint(org.eclipse.draw2d.geometry.Point point) {
+				public void addPoint(Point point) {
 					myTemplate.addPoint(point);
 					myTemplateBounds = null;
 				}
@@ -214,8 +216,8 @@ public class Pseudostate3EditPart extends ShapeNodeEditPart {
 				/**
 				 * @generated
 				 */
-				protected void fillShape(org.eclipse.draw2d.Graphics graphics) {
-					org.eclipse.draw2d.geometry.Rectangle bounds = getBounds();
+				protected void fillShape(Graphics graphics) {
+					Rectangle bounds = getBounds();
 					graphics.pushState();
 					graphics.translate(bounds.x, bounds.y);
 					graphics.fillPolygon(scalePointList());
@@ -225,8 +227,8 @@ public class Pseudostate3EditPart extends ShapeNodeEditPart {
 				/**
 				 * @generated
 				 */
-				protected void outlineShape(org.eclipse.draw2d.Graphics graphics) {
-					org.eclipse.draw2d.geometry.Rectangle bounds = getBounds();
+				protected void outlineShape(Graphics graphics) {
+					Rectangle bounds = getBounds();
 					graphics.pushState();
 					graphics.translate(bounds.x, bounds.y);
 					graphics.drawPolygon(scalePointList());
@@ -236,7 +238,7 @@ public class Pseudostate3EditPart extends ShapeNodeEditPart {
 				/**
 				 * @generated
 				 */
-				private org.eclipse.draw2d.geometry.Rectangle getTemplateBounds() {
+				private Rectangle getTemplateBounds() {
 					if (myTemplateBounds == null) {
 						myTemplateBounds = myTemplate.getBounds().getCopy().union(0, 0);
 						//just safety -- we are going to use this as divider 
@@ -254,8 +256,8 @@ public class Pseudostate3EditPart extends ShapeNodeEditPart {
 				 * @generated
 				 */
 				private int[] scalePointList() {
-					org.eclipse.draw2d.geometry.Rectangle pointsBounds = getTemplateBounds();
-					org.eclipse.draw2d.geometry.Rectangle actualBounds = getBounds();
+					Rectangle pointsBounds = getTemplateBounds();
+					Rectangle actualBounds = getBounds();
 
 					float xScale = ((float) actualBounds.width) / pointsBounds.width;
 					float yScale = ((float) actualBounds.height) / pointsBounds.height;
@@ -273,26 +275,26 @@ public class Pseudostate3EditPart extends ShapeNodeEditPart {
 			}
 			;
 			DeepHistoryFigure_Letter0Class deepHistoryFigure_Letter0 = new DeepHistoryFigure_Letter0Class();
-			deepHistoryFigure_Letter0.addPoint(new org.eclipse.draw2d.geometry.Point(getMapMode().DPtoLP(0), getMapMode().DPtoLP(40)));
-			deepHistoryFigure_Letter0.addPoint(new org.eclipse.draw2d.geometry.Point(getMapMode().DPtoLP(0), getMapMode().DPtoLP(20)));
-			deepHistoryFigure_Letter0.addPoint(new org.eclipse.draw2d.geometry.Point(getMapMode().DPtoLP(40), getMapMode().DPtoLP(20)));
-			deepHistoryFigure_Letter0.addPoint(new org.eclipse.draw2d.geometry.Point(getMapMode().DPtoLP(40), getMapMode().DPtoLP(40)));
-			deepHistoryFigure_Letter0.addPoint(new org.eclipse.draw2d.geometry.Point(getMapMode().DPtoLP(40), getMapMode().DPtoLP(0)));
-			deepHistoryFigure_Letter0.addPoint(new org.eclipse.draw2d.geometry.Point(getMapMode().DPtoLP(40), getMapMode().DPtoLP(20)));
-			deepHistoryFigure_Letter0.addPoint(new org.eclipse.draw2d.geometry.Point(getMapMode().DPtoLP(0), getMapMode().DPtoLP(20)));
-			deepHistoryFigure_Letter0.addPoint(new org.eclipse.draw2d.geometry.Point(getMapMode().DPtoLP(0), getMapMode().DPtoLP(0)));
+			deepHistoryFigure_Letter0.addPoint(new Point(getMapMode().DPtoLP(0), getMapMode().DPtoLP(40)));
+			deepHistoryFigure_Letter0.addPoint(new Point(getMapMode().DPtoLP(0), getMapMode().DPtoLP(20)));
+			deepHistoryFigure_Letter0.addPoint(new Point(getMapMode().DPtoLP(40), getMapMode().DPtoLP(20)));
+			deepHistoryFigure_Letter0.addPoint(new Point(getMapMode().DPtoLP(40), getMapMode().DPtoLP(40)));
+			deepHistoryFigure_Letter0.addPoint(new Point(getMapMode().DPtoLP(40), getMapMode().DPtoLP(0)));
+			deepHistoryFigure_Letter0.addPoint(new Point(getMapMode().DPtoLP(40), getMapMode().DPtoLP(20)));
+			deepHistoryFigure_Letter0.addPoint(new Point(getMapMode().DPtoLP(0), getMapMode().DPtoLP(20)));
+			deepHistoryFigure_Letter0.addPoint(new Point(getMapMode().DPtoLP(0), getMapMode().DPtoLP(0)));
 			deepHistoryFigure_Letter0.setFill(true);
 			deepHistoryFigure_Letter0.setFillXOR(false);
 			deepHistoryFigure_Letter0.setOutline(true);
 			deepHistoryFigure_Letter0.setOutlineXOR(false);
 			deepHistoryFigure_Letter0.setLineWidth(1);
-			deepHistoryFigure_Letter0.setLineStyle(org.eclipse.draw2d.Graphics.LINE_SOLID);
-			deepHistoryFigure_Letter0.setPreferredSize(new org.eclipse.draw2d.geometry.Dimension(getMapMode().DPtoLP(15), getMapMode().DPtoLP(15)));
-			deepHistoryFigure_Letter0.setMaximumSize(new org.eclipse.draw2d.geometry.Dimension(getMapMode().DPtoLP(15), getMapMode().DPtoLP(15)));
+			deepHistoryFigure_Letter0.setLineStyle(Graphics.LINE_SOLID);
+			deepHistoryFigure_Letter0.setPreferredSize(new Dimension(getMapMode().DPtoLP(15), getMapMode().DPtoLP(15)));
+			deepHistoryFigure_Letter0.setMaximumSize(new Dimension(getMapMode().DPtoLP(15), getMapMode().DPtoLP(15)));
 
-			org.eclipse.gmf.internal.codegen.draw2d.GridLayoutData constraintDeepHistoryFigure_Letter0 = new org.eclipse.gmf.internal.codegen.draw2d.GridLayoutData();
-			constraintDeepHistoryFigure_Letter0.verticalAlignment = org.eclipse.gmf.internal.codegen.draw2d.GridLayoutData.FILL;
-			constraintDeepHistoryFigure_Letter0.horizontalAlignment = org.eclipse.gmf.internal.codegen.draw2d.GridLayoutData.FILL;
+			GridLayoutData constraintDeepHistoryFigure_Letter0 = new GridLayoutData();
+			constraintDeepHistoryFigure_Letter0.verticalAlignment = GridLayoutData.FILL;
+			constraintDeepHistoryFigure_Letter0.horizontalAlignment = GridLayoutData.FILL;
 			constraintDeepHistoryFigure_Letter0.horizontalIndent = 0;
 			constraintDeepHistoryFigure_Letter0.horizontalSpan = 1;
 			constraintDeepHistoryFigure_Letter0.verticalSpan = 1;
@@ -300,20 +302,20 @@ public class Pseudostate3EditPart extends ShapeNodeEditPart {
 			constraintDeepHistoryFigure_Letter0.grabExcessVerticalSpace = true;
 			this.add(deepHistoryFigure_Letter0, constraintDeepHistoryFigure_Letter0);
 
-			org.eclipse.draw2d.RectangleFigure deepHistoryFigure_AsteriskContainer0 = new org.eclipse.draw2d.RectangleFigure();
+			RectangleFigure deepHistoryFigure_AsteriskContainer0 = new RectangleFigure();
 			deepHistoryFigure_AsteriskContainer0.setFill(false);
 			deepHistoryFigure_AsteriskContainer0.setFillXOR(false);
 			deepHistoryFigure_AsteriskContainer0.setOutline(false);
 			deepHistoryFigure_AsteriskContainer0.setOutlineXOR(false);
 			deepHistoryFigure_AsteriskContainer0.setLineWidth(1);
-			deepHistoryFigure_AsteriskContainer0.setLineStyle(org.eclipse.draw2d.Graphics.LINE_SOLID);
-			deepHistoryFigure_AsteriskContainer0.setPreferredSize(new org.eclipse.draw2d.geometry.Dimension(getMapMode().DPtoLP(15), getMapMode().DPtoLP(15)));
-			deepHistoryFigure_AsteriskContainer0.setMinimumSize(new org.eclipse.draw2d.geometry.Dimension(getMapMode().DPtoLP(15), getMapMode().DPtoLP(15)));
-			deepHistoryFigure_AsteriskContainer0.setBorder(new org.eclipse.draw2d.MarginBorder(getMapMode().DPtoLP(0), getMapMode().DPtoLP(2), getMapMode().DPtoLP(5), getMapMode().DPtoLP(0)));
+			deepHistoryFigure_AsteriskContainer0.setLineStyle(Graphics.LINE_SOLID);
+			deepHistoryFigure_AsteriskContainer0.setPreferredSize(new Dimension(getMapMode().DPtoLP(15), getMapMode().DPtoLP(15)));
+			deepHistoryFigure_AsteriskContainer0.setMinimumSize(new Dimension(getMapMode().DPtoLP(15), getMapMode().DPtoLP(15)));
+			deepHistoryFigure_AsteriskContainer0.setBorder(new MarginBorder(getMapMode().DPtoLP(0), getMapMode().DPtoLP(2), getMapMode().DPtoLP(5), getMapMode().DPtoLP(0)));
 
-			org.eclipse.gmf.internal.codegen.draw2d.GridLayoutData constraintDeepHistoryFigure_AsteriskContainer0 = new org.eclipse.gmf.internal.codegen.draw2d.GridLayoutData();
-			constraintDeepHistoryFigure_AsteriskContainer0.verticalAlignment = org.eclipse.gmf.internal.codegen.draw2d.GridLayoutData.FILL;
-			constraintDeepHistoryFigure_AsteriskContainer0.horizontalAlignment = org.eclipse.gmf.internal.codegen.draw2d.GridLayoutData.FILL;
+			GridLayoutData constraintDeepHistoryFigure_AsteriskContainer0 = new GridLayoutData();
+			constraintDeepHistoryFigure_AsteriskContainer0.verticalAlignment = GridLayoutData.FILL;
+			constraintDeepHistoryFigure_AsteriskContainer0.horizontalAlignment = GridLayoutData.FILL;
 			constraintDeepHistoryFigure_AsteriskContainer0.horizontalIndent = 0;
 			constraintDeepHistoryFigure_AsteriskContainer0.horizontalSpan = 1;
 			constraintDeepHistoryFigure_AsteriskContainer0.verticalSpan = 1;
@@ -321,24 +323,24 @@ public class Pseudostate3EditPart extends ShapeNodeEditPart {
 			constraintDeepHistoryFigure_AsteriskContainer0.grabExcessVerticalSpace = true;
 			this.add(deepHistoryFigure_AsteriskContainer0, constraintDeepHistoryFigure_AsteriskContainer0);
 
-			deepHistoryFigure_AsteriskContainer0.setLayoutManager(new org.eclipse.draw2d.StackLayout());
+			deepHistoryFigure_AsteriskContainer0.setLayoutManager(new StackLayout());
 
-			class DeepHistoryFigure_Asterisk1Class extends org.eclipse.draw2d.Shape {
-
-				/**
-				 * @generated
-				 */
-				private final org.eclipse.draw2d.geometry.PointList myTemplate = new org.eclipse.draw2d.geometry.PointList();
+			class DeepHistoryFigure_Asterisk1Class extends Shape {
 
 				/**
 				 * @generated
 				 */
-				private org.eclipse.draw2d.geometry.Rectangle myTemplateBounds;
+				private final PointList myTemplate = new PointList();
 
 				/**
 				 * @generated
 				 */
-				public void addPoint(org.eclipse.draw2d.geometry.Point point) {
+				private Rectangle myTemplateBounds;
+
+				/**
+				 * @generated
+				 */
+				public void addPoint(Point point) {
 					myTemplate.addPoint(point);
 					myTemplateBounds = null;
 				}
@@ -346,8 +348,8 @@ public class Pseudostate3EditPart extends ShapeNodeEditPart {
 				/**
 				 * @generated
 				 */
-				protected void fillShape(org.eclipse.draw2d.Graphics graphics) {
-					org.eclipse.draw2d.geometry.Rectangle bounds = getBounds();
+				protected void fillShape(Graphics graphics) {
+					Rectangle bounds = getBounds();
 					graphics.pushState();
 					graphics.translate(bounds.x, bounds.y);
 					graphics.fillPolygon(scalePointList());
@@ -357,8 +359,8 @@ public class Pseudostate3EditPart extends ShapeNodeEditPart {
 				/**
 				 * @generated
 				 */
-				protected void outlineShape(org.eclipse.draw2d.Graphics graphics) {
-					org.eclipse.draw2d.geometry.Rectangle bounds = getBounds();
+				protected void outlineShape(Graphics graphics) {
+					Rectangle bounds = getBounds();
 					graphics.pushState();
 					graphics.translate(bounds.x, bounds.y);
 					graphics.drawPolygon(scalePointList());
@@ -368,7 +370,7 @@ public class Pseudostate3EditPart extends ShapeNodeEditPart {
 				/**
 				 * @generated
 				 */
-				private org.eclipse.draw2d.geometry.Rectangle getTemplateBounds() {
+				private Rectangle getTemplateBounds() {
 					if (myTemplateBounds == null) {
 						myTemplateBounds = myTemplate.getBounds().getCopy().union(0, 0);
 						//just safety -- we are going to use this as divider 
@@ -386,8 +388,8 @@ public class Pseudostate3EditPart extends ShapeNodeEditPart {
 				 * @generated
 				 */
 				private int[] scalePointList() {
-					org.eclipse.draw2d.geometry.Rectangle pointsBounds = getTemplateBounds();
-					org.eclipse.draw2d.geometry.Rectangle actualBounds = getBounds();
+					Rectangle pointsBounds = getTemplateBounds();
+					Rectangle actualBounds = getBounds();
 
 					float xScale = ((float) actualBounds.width) / pointsBounds.width;
 					float yScale = ((float) actualBounds.height) / pointsBounds.height;
@@ -405,21 +407,21 @@ public class Pseudostate3EditPart extends ShapeNodeEditPart {
 			}
 			;
 			DeepHistoryFigure_Asterisk1Class deepHistoryFigure_Asterisk1 = new DeepHistoryFigure_Asterisk1Class();
-			deepHistoryFigure_Asterisk1.addPoint(new org.eclipse.draw2d.geometry.Point(getMapMode().DPtoLP(10), getMapMode().DPtoLP(7)));
-			deepHistoryFigure_Asterisk1.addPoint(new org.eclipse.draw2d.geometry.Point(getMapMode().DPtoLP(30), getMapMode().DPtoLP(33)));
-			deepHistoryFigure_Asterisk1.addPoint(new org.eclipse.draw2d.geometry.Point(getMapMode().DPtoLP(20), getMapMode().DPtoLP(20)));
-			deepHistoryFigure_Asterisk1.addPoint(new org.eclipse.draw2d.geometry.Point(getMapMode().DPtoLP(30), getMapMode().DPtoLP(7)));
-			deepHistoryFigure_Asterisk1.addPoint(new org.eclipse.draw2d.geometry.Point(getMapMode().DPtoLP(10), getMapMode().DPtoLP(33)));
-			deepHistoryFigure_Asterisk1.addPoint(new org.eclipse.draw2d.geometry.Point(getMapMode().DPtoLP(20), getMapMode().DPtoLP(20)));
-			deepHistoryFigure_Asterisk1.addPoint(new org.eclipse.draw2d.geometry.Point(getMapMode().DPtoLP(40), getMapMode().DPtoLP(20)));
-			deepHistoryFigure_Asterisk1.addPoint(new org.eclipse.draw2d.geometry.Point(getMapMode().DPtoLP(0), getMapMode().DPtoLP(20)));
-			deepHistoryFigure_Asterisk1.addPoint(new org.eclipse.draw2d.geometry.Point(getMapMode().DPtoLP(20), getMapMode().DPtoLP(20)));
+			deepHistoryFigure_Asterisk1.addPoint(new Point(getMapMode().DPtoLP(10), getMapMode().DPtoLP(7)));
+			deepHistoryFigure_Asterisk1.addPoint(new Point(getMapMode().DPtoLP(30), getMapMode().DPtoLP(33)));
+			deepHistoryFigure_Asterisk1.addPoint(new Point(getMapMode().DPtoLP(20), getMapMode().DPtoLP(20)));
+			deepHistoryFigure_Asterisk1.addPoint(new Point(getMapMode().DPtoLP(30), getMapMode().DPtoLP(7)));
+			deepHistoryFigure_Asterisk1.addPoint(new Point(getMapMode().DPtoLP(10), getMapMode().DPtoLP(33)));
+			deepHistoryFigure_Asterisk1.addPoint(new Point(getMapMode().DPtoLP(20), getMapMode().DPtoLP(20)));
+			deepHistoryFigure_Asterisk1.addPoint(new Point(getMapMode().DPtoLP(40), getMapMode().DPtoLP(20)));
+			deepHistoryFigure_Asterisk1.addPoint(new Point(getMapMode().DPtoLP(0), getMapMode().DPtoLP(20)));
+			deepHistoryFigure_Asterisk1.addPoint(new Point(getMapMode().DPtoLP(20), getMapMode().DPtoLP(20)));
 			deepHistoryFigure_Asterisk1.setFill(true);
 			deepHistoryFigure_Asterisk1.setFillXOR(false);
 			deepHistoryFigure_Asterisk1.setOutline(true);
 			deepHistoryFigure_Asterisk1.setOutlineXOR(false);
 			deepHistoryFigure_Asterisk1.setLineWidth(1);
-			deepHistoryFigure_Asterisk1.setLineStyle(org.eclipse.draw2d.Graphics.LINE_SOLID);
+			deepHistoryFigure_Asterisk1.setLineStyle(Graphics.LINE_SOLID);
 
 			deepHistoryFigure_AsteriskContainer0.add(deepHistoryFigure_Asterisk1);
 

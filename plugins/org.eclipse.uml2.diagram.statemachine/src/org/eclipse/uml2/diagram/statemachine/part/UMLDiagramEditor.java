@@ -58,8 +58,6 @@ import org.eclipse.ui.ide.IGotoMarker;
 
 import org.eclipse.ui.part.FileEditorInput;
 
-import org.eclipse.uml2.diagram.statemachine.edit.parts.UMLEditPartFactory;
-
 /**
  * @generated
  */
@@ -120,22 +118,6 @@ public class UMLDiagramEditor extends DiagramDocumentEditor implements IGotoMark
 		});
 
 		return domain;
-	}
-
-	/**
-	 * @generated
-	 */
-	protected void configureGraphicalViewer() {
-		super.configureGraphicalViewer();
-		DiagramRootEditPart root = (DiagramRootEditPart) getDiagramGraphicalViewer().getRootEditPart();
-		LayeredPane printableLayers = (LayeredPane) root.getLayer(LayerConstants.PRINTABLE_LAYERS);
-		FreeformLayer extLabelsLayer = new FreeformLayer();
-		extLabelsLayer.setLayoutManager(new DelegatingLayout());
-		printableLayers.addLayerAfter(extLabelsLayer, UMLEditPartFactory.EXTERNAL_NODE_LABELS_LAYER, LayerConstants.PRIMARY_LAYER);
-		LayeredPane scalableLayers = (LayeredPane) root.getLayer(LayerConstants.SCALABLE_LAYERS);
-		FreeformLayer scaledFeedbackLayer = new FreeformLayer();
-		scaledFeedbackLayer.setEnabled(false);
-		scalableLayers.addLayerAfter(scaledFeedbackLayer, LayerConstants.SCALED_FEEDBACK_LAYER, DiagramRootEditPart.DECORATION_UNPRINTABLE_LAYER);
 	}
 
 	/**

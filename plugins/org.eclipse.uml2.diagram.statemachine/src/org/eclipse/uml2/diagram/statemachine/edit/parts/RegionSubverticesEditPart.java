@@ -1,21 +1,15 @@
 package org.eclipse.uml2.diagram.statemachine.edit.parts;
 
-import org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles;
-import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.draw2d.IFigure;
-
 import org.eclipse.gef.EditPolicy;
-
 import org.eclipse.gmf.runtime.diagram.ui.editparts.ShapeCompartmentEditPart;
-
 import org.eclipse.gmf.runtime.diagram.ui.editpolicies.CreationEditPolicy;
 import org.eclipse.gmf.runtime.diagram.ui.editpolicies.DragDropEditPolicy;
+import org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles;
 import org.eclipse.gmf.runtime.diagram.ui.editpolicies.ResizableCompartmentEditPolicy;
-
 import org.eclipse.gmf.runtime.diagram.ui.figures.ResizableCompartmentFigure;
-
 import org.eclipse.gmf.runtime.draw2d.ui.figures.ConstrainedToolbarLayout;
-
+import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.uml2.diagram.statemachine.edit.policies.RegionSubverticesCanonicalEditPolicy;
 import org.eclipse.uml2.diagram.statemachine.edit.policies.RegionSubverticesItemSemanticEditPolicy;
 
@@ -62,7 +56,6 @@ public class RegionSubverticesEditPart extends ShapeCompartmentEditPart {
 		installEditPolicy(EditPolicyRoles.CREATION_ROLE, new CreationEditPolicy());
 		installEditPolicy(EditPolicyRoles.DRAG_DROP_ROLE, new DragDropEditPolicy());
 		installEditPolicy(EditPolicyRoles.CANONICAL_ROLE, new RegionSubverticesCanonicalEditPolicy());
-
 	}
 
 	/**

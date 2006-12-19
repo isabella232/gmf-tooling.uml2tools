@@ -1,45 +1,39 @@
 package org.eclipse.uml2.diagram.statemachine.edit.parts;
 
-import java.util.Iterator;
-
+import org.eclipse.draw2d.Ellipse;
+import org.eclipse.draw2d.Graphics;
 import org.eclipse.draw2d.IFigure;
+import org.eclipse.draw2d.MarginBorder;
+import org.eclipse.draw2d.PositionConstants;
+import org.eclipse.draw2d.Shape;
 import org.eclipse.draw2d.StackLayout;
-
+import org.eclipse.draw2d.geometry.Dimension;
+import org.eclipse.draw2d.geometry.Point;
+import org.eclipse.draw2d.geometry.PointList;
+import org.eclipse.draw2d.geometry.Rectangle;
 import org.eclipse.gef.EditPart;
 import org.eclipse.gef.EditPolicy;
-import org.eclipse.gef.GraphicalEditPart;
 import org.eclipse.gef.Request;
-
 import org.eclipse.gef.commands.Command;
-
-import org.eclipse.gef.editparts.LayerManager;
-
 import org.eclipse.gef.editpolicies.LayoutEditPolicy;
 import org.eclipse.gef.editpolicies.NonResizableEditPolicy;
-
 import org.eclipse.gef.requests.CreateRequest;
-
-import org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart;
-import org.eclipse.gmf.runtime.diagram.ui.editparts.ShapeNodeEditPart;
-
+import org.eclipse.gmf.runtime.diagram.ui.editparts.AbstractBorderedShapeEditPart;
+import org.eclipse.gmf.runtime.diagram.ui.editparts.IBorderItemEditPart;
+import org.eclipse.gmf.runtime.diagram.ui.editpolicies.BorderItemSelectionEditPolicy;
 import org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles;
-
+import org.eclipse.gmf.runtime.diagram.ui.figures.BorderItemLocator;
 import org.eclipse.gmf.runtime.draw2d.ui.figures.ConstrainedToolbarLayout;
-
 import org.eclipse.gmf.runtime.gef.ui.figures.DefaultSizeNodeFigure;
 import org.eclipse.gmf.runtime.gef.ui.figures.NodeFigure;
-
 import org.eclipse.gmf.runtime.notation.View;
-
 import org.eclipse.uml2.diagram.statemachine.edit.policies.Pseudostate10ItemSemanticEditPolicy;
-import org.eclipse.uml2.diagram.statemachine.edit.policies.UMLExtNodeLabelHostLayoutEditPolicy;
-
 import org.eclipse.uml2.diagram.statemachine.part.UMLVisualIDRegistry;
 
 /**
  * @generated
  */
-public class Pseudostate10EditPart extends ShapeNodeEditPart {
+public class Pseudostate10EditPart extends AbstractBorderedShapeEditPart {
 
 	/**
 	 * @generated
@@ -68,9 +62,9 @@ public class Pseudostate10EditPart extends ShapeNodeEditPart {
 	 */
 	protected void createDefaultEditPolicies() {
 		super.createDefaultEditPolicies();
+
 		installEditPolicy(EditPolicyRoles.SEMANTIC_ROLE, new Pseudostate10ItemSemanticEditPolicy());
 		installEditPolicy(EditPolicy.LAYOUT_ROLE, createLayoutEditPolicy());
-
 	}
 
 	/**
@@ -79,14 +73,10 @@ public class Pseudostate10EditPart extends ShapeNodeEditPart {
 	protected LayoutEditPolicy createLayoutEditPolicy() {
 		LayoutEditPolicy lep = new LayoutEditPolicy() {
 
-			protected void decorateChild(EditPart child) {
-				if (isExternalLabel(child)) {
-					return;
-				}
-				super.decorateChild(child);
-			}
-
 			protected EditPolicy createChildEditPolicy(EditPart child) {
+				if (child instanceof IBorderItemEditPart) {
+					return new BorderItemSelectionEditPolicy();
+				}
 				EditPolicy result = child.getEditPolicy(EditPolicy.PRIMARY_DRAG_ROLE);
 				if (result == null) {
 					result = new NonResizableEditPolicy();
@@ -102,14 +92,7 @@ public class Pseudostate10EditPart extends ShapeNodeEditPart {
 				return null;
 			}
 		};
-		UMLExtNodeLabelHostLayoutEditPolicy xlep = new UMLExtNodeLabelHostLayoutEditPolicy() {
-
-			protected boolean isExternalLabel(EditPart editPart) {
-				return Pseudostate10EditPart.this.isExternalLabel(editPart);
-			}
-		};
-		xlep.setRealLayoutEditPolicy(lep);
-		return xlep;
+		return lep;
 	}
 
 	/**
@@ -128,14 +111,16 @@ public class Pseudostate10EditPart extends ShapeNodeEditPart {
 	}
 
 	/**
-	 * @generated 
+	 * @generated
 	 */
-	protected IFigure getContentPaneFor(IGraphicalEditPart editPart) {
-		if (isExternalLabel(editPart)) {
-			return getExternalLabelsContainer();
+	protected void addBorderItem(IFigure borderItemContainer, IBorderItemEditPart borderItemEditPart) {
+		if (borderItemEditPart instanceof PseudostateName2EditPart) {
+			BorderItemLocator locator = new BorderItemLocator(getMainFigure(), PositionConstants.SOUTH);
+			locator.setBorderItemOffset(new Dimension(-20, -20));
+			borderItemContainer.add(borderItemEditPart.getFigure(), locator);
+		} else {
+			super.addBorderItem(borderItemContainer, borderItemEditPart);
 		}
-
-		return super.getContentPaneFor(editPart);
 	}
 
 	/**
@@ -143,6 +128,7 @@ public class Pseudostate10EditPart extends ShapeNodeEditPart {
 	 */
 	protected NodeFigure createNodePlate() {
 		DefaultSizeNodeFigure result = new DefaultSizeNodeFigure(getMapMode().DPtoLP(15), getMapMode().DPtoLP(15));
+
 		return result;
 	}
 
@@ -154,7 +140,7 @@ public class Pseudostate10EditPart extends ShapeNodeEditPart {
 	 * 
 	 * @generated
 	 */
-	protected NodeFigure createNodeFigure() {
+	protected NodeFigure createMainFigure() {
 		NodeFigure figure = createNodePlate();
 		figure.setLayoutManager(new StackLayout());
 		IFigure shape = createNodeShape();
@@ -198,80 +184,24 @@ public class Pseudostate10EditPart extends ShapeNodeEditPart {
 	/**
 	 * @generated
 	 */
-	protected boolean isExternalLabel(EditPart childEditPart) {
-		if (childEditPart instanceof PseudostateName2EditPart) {
-			return true;
-		}
-		return false;
-	}
-
-	/**
-	 * @generated
-	 */
-	protected IFigure getExternalLabelsContainer() {
-		LayerManager root = (LayerManager) getRoot();
-		return root.getLayer(UMLEditPartFactory.EXTERNAL_NODE_LABELS_LAYER);
-	}
-
-	/**
-	 * @generated
-	 */
-	protected void addChildVisual(EditPart childEditPart, int index) {
-		if (isExternalLabel(childEditPart)) {
-			IFigure labelFigure = ((GraphicalEditPart) childEditPart).getFigure();
-			getExternalLabelsContainer().add(labelFigure);
-			return;
-		}
-		super.addChildVisual(childEditPart, -1);
-	}
-
-	/**
-	 * @generated
-	 */
-	protected void removeChildVisual(EditPart childEditPart) {
-		if (isExternalLabel(childEditPart)) {
-			IFigure labelFigure = ((GraphicalEditPart) childEditPart).getFigure();
-			getExternalLabelsContainer().remove(labelFigure);
-			return;
-		}
-		super.removeChildVisual(childEditPart);
-	}
-
-	/**
-	 * @generated
-	 */
-	public void removeNotify() {
-		for (Iterator it = getChildren().iterator(); it.hasNext();) {
-			EditPart childEditPart = (EditPart) it.next();
-			if (isExternalLabel(childEditPart)) {
-				IFigure labelFigure = ((GraphicalEditPart) childEditPart).getFigure();
-				getExternalLabelsContainer().remove(labelFigure);
-			}
-		}
-		super.removeNotify();
-	}
-
-	/**
-	 * @generated
-	 */
-	public class ExitPointFigure extends org.eclipse.draw2d.Ellipse {
+	public class ExitPointFigure extends Ellipse {
 
 		/**
 		 * @generated
 		 */
 		public ExitPointFigure() {
 
-			this.setLayoutManager(new org.eclipse.draw2d.StackLayout());
+			this.setLayoutManager(new StackLayout());
 			this.setFill(true);
 			this.setFillXOR(false);
 			this.setOutline(true);
 			this.setOutlineXOR(false);
 			this.setLineWidth(1);
-			this.setLineStyle(org.eclipse.draw2d.Graphics.LINE_SOLID);
-			this.setPreferredSize(new org.eclipse.draw2d.geometry.Dimension(getMapMode().DPtoLP(15), getMapMode().DPtoLP(15)));
-			this.setMaximumSize(new org.eclipse.draw2d.geometry.Dimension(getMapMode().DPtoLP(15), getMapMode().DPtoLP(15)));
-			this.setMinimumSize(new org.eclipse.draw2d.geometry.Dimension(getMapMode().DPtoLP(15), getMapMode().DPtoLP(15)));
-			this.setBorder(new org.eclipse.draw2d.MarginBorder(getMapMode().DPtoLP(2), getMapMode().DPtoLP(2), getMapMode().DPtoLP(2), getMapMode().DPtoLP(2)));
+			this.setLineStyle(Graphics.LINE_SOLID);
+			this.setPreferredSize(new Dimension(getMapMode().DPtoLP(15), getMapMode().DPtoLP(15)));
+			this.setMaximumSize(new Dimension(getMapMode().DPtoLP(15), getMapMode().DPtoLP(15)));
+			this.setMinimumSize(new Dimension(getMapMode().DPtoLP(15), getMapMode().DPtoLP(15)));
+			this.setBorder(new MarginBorder(getMapMode().DPtoLP(2), getMapMode().DPtoLP(2), getMapMode().DPtoLP(2), getMapMode().DPtoLP(2)));
 			createContents();
 		}
 
@@ -280,22 +210,22 @@ public class Pseudostate10EditPart extends ShapeNodeEditPart {
 		 */
 		private void createContents() {
 
-			class ExitPointFigure_Cross0Class extends org.eclipse.draw2d.Shape {
+			class ExitPointFigure_Cross0Class extends Shape {
 
 				/**
 				 * @generated
 				 */
-				private final org.eclipse.draw2d.geometry.PointList myTemplate = new org.eclipse.draw2d.geometry.PointList();
+				private final PointList myTemplate = new PointList();
 
 				/**
 				 * @generated
 				 */
-				private org.eclipse.draw2d.geometry.Rectangle myTemplateBounds;
+				private Rectangle myTemplateBounds;
 
 				/**
 				 * @generated
 				 */
-				public void addPoint(org.eclipse.draw2d.geometry.Point point) {
+				public void addPoint(Point point) {
 					myTemplate.addPoint(point);
 					myTemplateBounds = null;
 				}
@@ -303,8 +233,8 @@ public class Pseudostate10EditPart extends ShapeNodeEditPart {
 				/**
 				 * @generated
 				 */
-				protected void fillShape(org.eclipse.draw2d.Graphics graphics) {
-					org.eclipse.draw2d.geometry.Rectangle bounds = getBounds();
+				protected void fillShape(Graphics graphics) {
+					Rectangle bounds = getBounds();
 					graphics.pushState();
 					graphics.translate(bounds.x, bounds.y);
 					graphics.fillPolygon(scalePointList());
@@ -314,8 +244,8 @@ public class Pseudostate10EditPart extends ShapeNodeEditPart {
 				/**
 				 * @generated
 				 */
-				protected void outlineShape(org.eclipse.draw2d.Graphics graphics) {
-					org.eclipse.draw2d.geometry.Rectangle bounds = getBounds();
+				protected void outlineShape(Graphics graphics) {
+					Rectangle bounds = getBounds();
 					graphics.pushState();
 					graphics.translate(bounds.x, bounds.y);
 					graphics.drawPolygon(scalePointList());
@@ -325,7 +255,7 @@ public class Pseudostate10EditPart extends ShapeNodeEditPart {
 				/**
 				 * @generated
 				 */
-				private org.eclipse.draw2d.geometry.Rectangle getTemplateBounds() {
+				private Rectangle getTemplateBounds() {
 					if (myTemplateBounds == null) {
 						myTemplateBounds = myTemplate.getBounds().getCopy().union(0, 0);
 						//just safety -- we are going to use this as divider 
@@ -343,8 +273,8 @@ public class Pseudostate10EditPart extends ShapeNodeEditPart {
 				 * @generated
 				 */
 				private int[] scalePointList() {
-					org.eclipse.draw2d.geometry.Rectangle pointsBounds = getTemplateBounds();
-					org.eclipse.draw2d.geometry.Rectangle actualBounds = getBounds();
+					Rectangle pointsBounds = getTemplateBounds();
+					Rectangle actualBounds = getBounds();
 
 					float xScale = ((float) actualBounds.width) / pointsBounds.width;
 					float yScale = ((float) actualBounds.height) / pointsBounds.height;
@@ -362,18 +292,18 @@ public class Pseudostate10EditPart extends ShapeNodeEditPart {
 			}
 			;
 			ExitPointFigure_Cross0Class exitPointFigure_Cross0 = new ExitPointFigure_Cross0Class();
-			exitPointFigure_Cross0.addPoint(new org.eclipse.draw2d.geometry.Point(getMapMode().DPtoLP(0), getMapMode().DPtoLP(0)));
-			exitPointFigure_Cross0.addPoint(new org.eclipse.draw2d.geometry.Point(getMapMode().DPtoLP(40), getMapMode().DPtoLP(40)));
-			exitPointFigure_Cross0.addPoint(new org.eclipse.draw2d.geometry.Point(getMapMode().DPtoLP(20), getMapMode().DPtoLP(20)));
-			exitPointFigure_Cross0.addPoint(new org.eclipse.draw2d.geometry.Point(getMapMode().DPtoLP(40), getMapMode().DPtoLP(0)));
-			exitPointFigure_Cross0.addPoint(new org.eclipse.draw2d.geometry.Point(getMapMode().DPtoLP(0), getMapMode().DPtoLP(40)));
-			exitPointFigure_Cross0.addPoint(new org.eclipse.draw2d.geometry.Point(getMapMode().DPtoLP(20), getMapMode().DPtoLP(20)));
+			exitPointFigure_Cross0.addPoint(new Point(getMapMode().DPtoLP(0), getMapMode().DPtoLP(0)));
+			exitPointFigure_Cross0.addPoint(new Point(getMapMode().DPtoLP(40), getMapMode().DPtoLP(40)));
+			exitPointFigure_Cross0.addPoint(new Point(getMapMode().DPtoLP(20), getMapMode().DPtoLP(20)));
+			exitPointFigure_Cross0.addPoint(new Point(getMapMode().DPtoLP(40), getMapMode().DPtoLP(0)));
+			exitPointFigure_Cross0.addPoint(new Point(getMapMode().DPtoLP(0), getMapMode().DPtoLP(40)));
+			exitPointFigure_Cross0.addPoint(new Point(getMapMode().DPtoLP(20), getMapMode().DPtoLP(20)));
 			exitPointFigure_Cross0.setFill(true);
 			exitPointFigure_Cross0.setFillXOR(false);
 			exitPointFigure_Cross0.setOutline(true);
 			exitPointFigure_Cross0.setOutlineXOR(false);
 			exitPointFigure_Cross0.setLineWidth(1);
-			exitPointFigure_Cross0.setLineStyle(org.eclipse.draw2d.Graphics.LINE_SOLID);
+			exitPointFigure_Cross0.setLineStyle(Graphics.LINE_SOLID);
 
 			this.add(exitPointFigure_Cross0);
 

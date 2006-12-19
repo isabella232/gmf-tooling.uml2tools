@@ -12,6 +12,6 @@ public class UMLDiagramPreferenceInitializer extends DiagramPreferenceInitialize
 	 * @generated
 	 */
 	protected IPreferenceStore getPreferenceStore() {
-		return org.eclipse.uml2.diagram.statemachine.part.UMLDiagramEditorPlugin.getInstance().getPreferenceStore();
+		return UMLDiagramEditorPlugin.getInstance().getPreferenceStore();
 	}
 }

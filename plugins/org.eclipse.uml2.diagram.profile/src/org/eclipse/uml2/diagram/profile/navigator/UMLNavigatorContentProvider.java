@@ -225,11 +225,11 @@ public class UMLNavigatorContentProvider implements ICommonContentProvider {
 			source.addChildren(getGeneralization_4001ToStereotype_2001InSource((Edge) view, source));
 			source.addChildren(getGeneralization_4001ToEnumeration_2003InSource((Edge) view, source));
 			source.addChildren(getGeneralization_4001ToStereotype_3003InSource((Edge) view, source));
-			if (!target.isEmpty()) {
-				result.add(target);
-			}
 			if (!source.isEmpty()) {
 				result.add(source);
+			}
+			if (!target.isEmpty()) {
+				result.add(target);
 			}
 			return result.toArray();
 		}
@@ -241,11 +241,11 @@ public class UMLNavigatorContentProvider implements ICommonContentProvider {
 			UMLNavigatorGroup source = new UMLNavigatorGroup("source", "icons/linkSourceNavigatorGroup.gif", parentElement);
 			source.addChildren(getExtension_4002ToStereotype_2001InSource((Edge) view, source));
 			source.addChildren(getExtension_4002ToStereotype_3003InSource((Edge) view, source));
-			if (!target.isEmpty()) {
-				result.add(target);
-			}
 			if (!source.isEmpty()) {
 				result.add(source);
+			}
+			if (!target.isEmpty()) {
+				result.add(target);
 			}
 			return result.toArray();
 		}
@@ -292,18 +292,52 @@ public class UMLNavigatorContentProvider implements ICommonContentProvider {
 	/**
 	 * @generated
 	 */
-	private Collection getExtension_4002ToStereotype_3003InSource(Edge edge, Object parent) {
+	private Collection getStereotype_3003ToGeneralization_4001OutTarget(View view, Object parent) {
 		Collection result = new ArrayList();
-		Collection connectedViews = getLinksSourceByType(Collections.singleton(edge), UMLVisualIDRegistry.getType(Stereotype2EditPart.VISUAL_ID));
-		createNavigatorItems(connectedViews, parent, result, isExtension_4002ToStereotype_3003InSourceLeaf(edge));
+		Collection connectedViews = getOutgoingLinksByType(Collections.singleton(view), UMLVisualIDRegistry.getType(GeneralizationEditPart.VISUAL_ID));
+		createNavigatorItems(connectedViews, parent, result, isStereotype_3003ToGeneralization_4001OutTargetLeaf(view));
 		return result;
 	}
 
 	/**
 	 * @generated
 	 */
-	private boolean isExtension_4002ToStereotype_3003InSourceLeaf(Edge edge) {
+	private boolean isStereotype_3003ToGeneralization_4001OutTargetLeaf(View view) {
 		return true;
+	}
+
+	/**
+	 * @generated
+	 */
+	private Collection getProfile_1000ToProfile_2002Children(View view, Object parent) {
+		Collection result = new ArrayList();
+		Collection connectedViews = getChildrenByType(Collections.singleton(view), UMLVisualIDRegistry.getType(Profile2EditPart.VISUAL_ID));
+		createNavigatorItems(connectedViews, parent, result, isProfile_1000ToProfile_2002ChildrenLeaf(view));
+		return result;
+	}
+
+	/**
+	 * @generated
+	 */
+	private boolean isProfile_1000ToProfile_2002ChildrenLeaf(View view) {
+		return false;
+	}
+
+	/**
+	 * @generated
+	 */
+	private Collection getProfile_1000ToExtension_4002Children(View view, Object parent) {
+		Collection result = new ArrayList();
+		Collection connectedViews = getDiagramLinksByType(Collections.singleton(view), UMLVisualIDRegistry.getType(ExtensionEditPart.VISUAL_ID));
+		createNavigatorItems(connectedViews, parent, result, isProfile_1000ToExtension_4002ChildrenLeaf(view));
+		return result;
+	}
+
+	/**
+	 * @generated
+	 */
+	private boolean isProfile_1000ToExtension_4002ChildrenLeaf(View view) {
+		return false;
 	}
 
 	/**
@@ -326,34 +360,154 @@ public class UMLNavigatorContentProvider implements ICommonContentProvider {
 	/**
 	 * @generated
 	 */
-	private Collection getExtension_4002ToElementImport_2006OutTarget(Edge edge, Object parent) {
+	private Collection getStereotype_2001ToGeneralization_4001InSource(View view, Object parent) {
 		Collection result = new ArrayList();
-		Collection connectedViews = getLinksTargetByType(Collections.singleton(edge), UMLVisualIDRegistry.getType(ElementImportEditPart.VISUAL_ID));
-		createNavigatorItems(connectedViews, parent, result, isExtension_4002ToElementImport_2006OutTargetLeaf(edge));
+		Collection connectedViews = getIncomingLinksByType(Collections.singleton(view), UMLVisualIDRegistry.getType(GeneralizationEditPart.VISUAL_ID));
+		createNavigatorItems(connectedViews, parent, result, isStereotype_2001ToGeneralization_4001InSourceLeaf(view));
 		return result;
 	}
 
 	/**
 	 * @generated
 	 */
-	private boolean isExtension_4002ToElementImport_2006OutTargetLeaf(Edge edge) {
+	private boolean isStereotype_2001ToGeneralization_4001InSourceLeaf(View view) {
 		return true;
 	}
 
 	/**
 	 * @generated
 	 */
-	private Collection getStereotype_3003ToExtension_4002OutTarget(View view, Object parent) {
+	private Collection getProfile_1000ToProfile_2007Children(View view, Object parent) {
 		Collection result = new ArrayList();
-		Collection connectedViews = getOutgoingLinksByType(Collections.singleton(view), UMLVisualIDRegistry.getType(ExtensionEditPart.VISUAL_ID));
-		createNavigatorItems(connectedViews, parent, result, isStereotype_3003ToExtension_4002OutTargetLeaf(view));
+		Collection connectedViews = getChildrenByType(Collections.singleton(view), UMLVisualIDRegistry.getType(Profile3EditPart.VISUAL_ID));
+		createNavigatorItems(connectedViews, parent, result, isProfile_1000ToProfile_2007ChildrenLeaf(view));
 		return result;
 	}
 
 	/**
 	 * @generated
 	 */
-	private boolean isStereotype_3003ToExtension_4002OutTargetLeaf(View view) {
+	private boolean isProfile_1000ToProfile_2007ChildrenLeaf(View view) {
+		return false;
+	}
+
+	/**
+	 * @generated
+	 */
+	private Collection getStereotype_2001ToGeneralization_4001OutTarget(View view, Object parent) {
+		Collection result = new ArrayList();
+		Collection connectedViews = getOutgoingLinksByType(Collections.singleton(view), UMLVisualIDRegistry.getType(GeneralizationEditPart.VISUAL_ID));
+		createNavigatorItems(connectedViews, parent, result, isStereotype_2001ToGeneralization_4001OutTargetLeaf(view));
+		return result;
+	}
+
+	/**
+	 * @generated
+	 */
+	private boolean isStereotype_2001ToGeneralization_4001OutTargetLeaf(View view) {
+		return true;
+	}
+
+	/**
+	 * @generated
+	 */
+	private Collection getProfile_1000ToStereotype_2001Children(View view, Object parent) {
+		Collection result = new ArrayList();
+		Collection connectedViews = getChildrenByType(Collections.singleton(view), UMLVisualIDRegistry.getType(StereotypeEditPart.VISUAL_ID));
+		createNavigatorItems(connectedViews, parent, result, isProfile_1000ToStereotype_2001ChildrenLeaf(view));
+		return result;
+	}
+
+	/**
+	 * @generated
+	 */
+	private boolean isProfile_1000ToStereotype_2001ChildrenLeaf(View view) {
+		return false;
+	}
+
+	/**
+	 * @generated
+	 */
+	private Collection getEnumeration_2003ToEnumerationLiteral_3005Children(View view, Object parent) {
+		Collection result = new ArrayList();
+		Collection connectedViews = getChildrenByType(Collections.singleton(view), UMLVisualIDRegistry.getType(EnumerationLiteralsEditPart.VISUAL_ID));
+		connectedViews = getChildrenByType(connectedViews, UMLVisualIDRegistry.getType(EnumerationLiteralEditPart.VISUAL_ID));
+		createNavigatorItems(connectedViews, parent, result, isEnumeration_2003ToEnumerationLiteral_3005ChildrenLeaf(view));
+		return result;
+	}
+
+	/**
+	 * @generated
+	 */
+	private boolean isEnumeration_2003ToEnumerationLiteral_3005ChildrenLeaf(View view) {
+		return false;
+	}
+
+	/**
+	 * @generated
+	 */
+	private Collection getProfile_1000ToElementImport_2006Children(View view, Object parent) {
+		Collection result = new ArrayList();
+		Collection connectedViews = getChildrenByType(Collections.singleton(view), UMLVisualIDRegistry.getType(ElementImportEditPart.VISUAL_ID));
+		createNavigatorItems(connectedViews, parent, result, isProfile_1000ToElementImport_2006ChildrenLeaf(view));
+		return result;
+	}
+
+	/**
+	 * @generated
+	 */
+	private boolean isProfile_1000ToElementImport_2006ChildrenLeaf(View view) {
+		return false;
+	}
+
+	/**
+	 * @generated
+	 */
+	private Collection getElementImport_3009ToExtension_4002InSource(View view, Object parent) {
+		Collection result = new ArrayList();
+		Collection connectedViews = getIncomingLinksByType(Collections.singleton(view), UMLVisualIDRegistry.getType(ExtensionEditPart.VISUAL_ID));
+		createNavigatorItems(connectedViews, parent, result, isElementImport_3009ToExtension_4002InSourceLeaf(view));
+		return result;
+	}
+
+	/**
+	 * @generated
+	 */
+	private boolean isElementImport_3009ToExtension_4002InSourceLeaf(View view) {
+		return true;
+	}
+
+	/**
+	 * @generated
+	 */
+	private Collection getExtension_4002ToElementImport_3009OutTarget(Edge edge, Object parent) {
+		Collection result = new ArrayList();
+		Collection connectedViews = getLinksTargetByType(Collections.singleton(edge), UMLVisualIDRegistry.getType(ElementImport2EditPart.VISUAL_ID));
+		createNavigatorItems(connectedViews, parent, result, isExtension_4002ToElementImport_3009OutTargetLeaf(edge));
+		return result;
+	}
+
+	/**
+	 * @generated
+	 */
+	private boolean isExtension_4002ToElementImport_3009OutTargetLeaf(Edge edge) {
+		return true;
+	}
+
+	/**
+	 * @generated
+	 */
+	private Collection getElementImport_2006ToExtension_4002InSource(View view, Object parent) {
+		Collection result = new ArrayList();
+		Collection connectedViews = getIncomingLinksByType(Collections.singleton(view), UMLVisualIDRegistry.getType(ExtensionEditPart.VISUAL_ID));
+		createNavigatorItems(connectedViews, parent, result, isElementImport_2006ToExtension_4002InSourceLeaf(view));
+		return result;
+	}
+
+	/**
+	 * @generated
+	 */
+	private boolean isElementImport_2006ToExtension_4002InSourceLeaf(View view) {
 		return true;
 	}
 
@@ -378,189 +532,102 @@ public class UMLNavigatorContentProvider implements ICommonContentProvider {
 	/**
 	 * @generated
 	 */
-	private Collection getStereotype_2001ToGeneralization_4001InSource(View view, Object parent) {
+	private Collection getExtension_4002ToStereotype_2001InSource(Edge edge, Object parent) {
 		Collection result = new ArrayList();
-		Collection connectedViews = getIncomingLinksByType(Collections.singleton(view), UMLVisualIDRegistry.getType(GeneralizationEditPart.VISUAL_ID));
-		createNavigatorItems(connectedViews, parent, result, isStereotype_2001ToGeneralization_4001InSourceLeaf(view));
+		Collection connectedViews = getLinksSourceByType(Collections.singleton(edge), UMLVisualIDRegistry.getType(StereotypeEditPart.VISUAL_ID));
+		createNavigatorItems(connectedViews, parent, result, isExtension_4002ToStereotype_2001InSourceLeaf(edge));
 		return result;
 	}
 
 	/**
 	 * @generated
 	 */
-	private boolean isStereotype_2001ToGeneralization_4001InSourceLeaf(View view) {
+	private boolean isExtension_4002ToStereotype_2001InSourceLeaf(Edge edge) {
 		return true;
 	}
 
 	/**
 	 * @generated
 	 */
-	private Collection getElementImport_3009ToExtension_4002InSource(View view, Object parent) {
-		Collection result = new ArrayList();
-		Collection connectedViews = getIncomingLinksByType(Collections.singleton(view), UMLVisualIDRegistry.getType(ExtensionEditPart.VISUAL_ID));
-		createNavigatorItems(connectedViews, parent, result, isElementImport_3009ToExtension_4002InSourceLeaf(view));
-		return result;
-	}
-
-	/**
-	 * @generated
-	 */
-	private boolean isElementImport_3009ToExtension_4002InSourceLeaf(View view) {
-		return true;
-	}
-
-	/**
-	 * @generated
-	 */
-	private Collection getEnumeration_2003ToEnumerationLiteral_3005Children(View view, Object parent) {
-		Collection result = new ArrayList();
-		Collection connectedViews = getChildrenByType(Collections.singleton(view), UMLVisualIDRegistry.getType(EnumerationLiteralsEditPart.VISUAL_ID));
-		connectedViews = getChildrenByType(connectedViews, UMLVisualIDRegistry.getType(EnumerationLiteralEditPart.VISUAL_ID));
-		createNavigatorItems(connectedViews, parent, result, isEnumeration_2003ToEnumerationLiteral_3005ChildrenLeaf(view));
-		return result;
-	}
-
-	/**
-	 * @generated
-	 */
-	private boolean isEnumeration_2003ToEnumerationLiteral_3005ChildrenLeaf(View view) {
-		return false;
-	}
-
-	/**
-	 * @generated
-	 */
-	private Collection getGeneralization_4001ToEnumeration_2003OutTarget(Edge edge, Object parent) {
-		Collection result = new ArrayList();
-		Collection connectedViews = getLinksTargetByType(Collections.singleton(edge), UMLVisualIDRegistry.getType(EnumerationEditPart.VISUAL_ID));
-		createNavigatorItems(connectedViews, parent, result, isGeneralization_4001ToEnumeration_2003OutTargetLeaf(edge));
-		return result;
-	}
-
-	/**
-	 * @generated
-	 */
-	private boolean isGeneralization_4001ToEnumeration_2003OutTargetLeaf(Edge edge) {
-		return true;
-	}
-
-	/**
-	 * @generated
-	 */
-	private Collection getStereotype_3003ToGeneralization_4001InSource(View view, Object parent) {
-		Collection result = new ArrayList();
-		Collection connectedViews = getIncomingLinksByType(Collections.singleton(view), UMLVisualIDRegistry.getType(GeneralizationEditPart.VISUAL_ID));
-		createNavigatorItems(connectedViews, parent, result, isStereotype_3003ToGeneralization_4001InSourceLeaf(view));
-		return result;
-	}
-
-	/**
-	 * @generated
-	 */
-	private boolean isStereotype_3003ToGeneralization_4001InSourceLeaf(View view) {
-		return true;
-	}
-
-	/**
-	 * @generated
-	 */
-	private Collection getProfile_1000ToStereotype_2001Children(View view, Object parent) {
-		Collection result = new ArrayList();
-		Collection connectedViews = getChildrenByType(Collections.singleton(view), UMLVisualIDRegistry.getType(StereotypeEditPart.VISUAL_ID));
-		createNavigatorItems(connectedViews, parent, result, isProfile_1000ToStereotype_2001ChildrenLeaf(view));
-		return result;
-	}
-
-	/**
-	 * @generated
-	 */
-	private boolean isProfile_1000ToStereotype_2001ChildrenLeaf(View view) {
-		return false;
-	}
-
-	/**
-	 * @generated
-	 */
-	private Collection getGeneralization_4001ToStereotype_3003OutTarget(Edge edge, Object parent) {
-		Collection result = new ArrayList();
-		Collection connectedViews = getLinksTargetByType(Collections.singleton(edge), UMLVisualIDRegistry.getType(Stereotype2EditPart.VISUAL_ID));
-		createNavigatorItems(connectedViews, parent, result, isGeneralization_4001ToStereotype_3003OutTargetLeaf(edge));
-		return result;
-	}
-
-	/**
-	 * @generated
-	 */
-	private boolean isGeneralization_4001ToStereotype_3003OutTargetLeaf(Edge edge) {
-		return true;
-	}
-
-	/**
-	 * @generated
-	 */
-	private Collection getStereotype_2001ToExtension_4002OutTarget(View view, Object parent) {
+	private Collection getStereotype_3003ToExtension_4002OutTarget(View view, Object parent) {
 		Collection result = new ArrayList();
 		Collection connectedViews = getOutgoingLinksByType(Collections.singleton(view), UMLVisualIDRegistry.getType(ExtensionEditPart.VISUAL_ID));
-		createNavigatorItems(connectedViews, parent, result, isStereotype_2001ToExtension_4002OutTargetLeaf(view));
+		createNavigatorItems(connectedViews, parent, result, isStereotype_3003ToExtension_4002OutTargetLeaf(view));
 		return result;
 	}
 
 	/**
 	 * @generated
 	 */
-	private boolean isStereotype_2001ToExtension_4002OutTargetLeaf(View view) {
+	private boolean isStereotype_3003ToExtension_4002OutTargetLeaf(View view) {
 		return true;
 	}
 
 	/**
 	 * @generated
 	 */
-	private Collection getGeneralization_4001ToStereotype_2001OutTarget(Edge edge, Object parent) {
+	private Collection getGeneralization_4001ToStereotype_3003InSource(Edge edge, Object parent) {
 		Collection result = new ArrayList();
-		Collection connectedViews = getLinksTargetByType(Collections.singleton(edge), UMLVisualIDRegistry.getType(StereotypeEditPart.VISUAL_ID));
-		createNavigatorItems(connectedViews, parent, result, isGeneralization_4001ToStereotype_2001OutTargetLeaf(edge));
+		Collection connectedViews = getLinksSourceByType(Collections.singleton(edge), UMLVisualIDRegistry.getType(Stereotype2EditPart.VISUAL_ID));
+		createNavigatorItems(connectedViews, parent, result, isGeneralization_4001ToStereotype_3003InSourceLeaf(edge));
 		return result;
 	}
 
 	/**
 	 * @generated
 	 */
-	private boolean isGeneralization_4001ToStereotype_2001OutTargetLeaf(Edge edge) {
+	private boolean isGeneralization_4001ToStereotype_3003InSourceLeaf(Edge edge) {
 		return true;
 	}
 
 	/**
 	 * @generated
 	 */
-	private Collection getExtension_4002ToElementImport_3009OutTarget(Edge edge, Object parent) {
+	private Collection getEnumeration_2003ToGeneralization_4001OutTarget(View view, Object parent) {
 		Collection result = new ArrayList();
-		Collection connectedViews = getLinksTargetByType(Collections.singleton(edge), UMLVisualIDRegistry.getType(ElementImport2EditPart.VISUAL_ID));
-		createNavigatorItems(connectedViews, parent, result, isExtension_4002ToElementImport_3009OutTargetLeaf(edge));
+		Collection connectedViews = getOutgoingLinksByType(Collections.singleton(view), UMLVisualIDRegistry.getType(GeneralizationEditPart.VISUAL_ID));
+		createNavigatorItems(connectedViews, parent, result, isEnumeration_2003ToGeneralization_4001OutTargetLeaf(view));
 		return result;
 	}
 
 	/**
 	 * @generated
 	 */
-	private boolean isExtension_4002ToElementImport_3009OutTargetLeaf(Edge edge) {
+	private boolean isEnumeration_2003ToGeneralization_4001OutTargetLeaf(View view) {
 		return true;
 	}
 
 	/**
 	 * @generated
 	 */
-	private Collection getProfile_2002ToStereotype_3003Children(View view, Object parent) {
+	private Collection getEnumeration_2003ToGeneralization_4001InSource(View view, Object parent) {
 		Collection result = new ArrayList();
-		Collection connectedViews = getChildrenByType(Collections.singleton(view), UMLVisualIDRegistry.getType(ProfileContentsEditPart.VISUAL_ID));
-		connectedViews = getChildrenByType(connectedViews, UMLVisualIDRegistry.getType(Stereotype2EditPart.VISUAL_ID));
-		createNavigatorItems(connectedViews, parent, result, isProfile_2002ToStereotype_3003ChildrenLeaf(view));
+		Collection connectedViews = getIncomingLinksByType(Collections.singleton(view), UMLVisualIDRegistry.getType(GeneralizationEditPart.VISUAL_ID));
+		createNavigatorItems(connectedViews, parent, result, isEnumeration_2003ToGeneralization_4001InSourceLeaf(view));
 		return result;
 	}
 
 	/**
 	 * @generated
 	 */
-	private boolean isProfile_2002ToStereotype_3003ChildrenLeaf(View view) {
+	private boolean isEnumeration_2003ToGeneralization_4001InSourceLeaf(View view) {
+		return true;
+	}
+
+	/**
+	 * @generated
+	 */
+	private Collection getProfile_1000ToEnumeration_2003Children(View view, Object parent) {
+		Collection result = new ArrayList();
+		Collection connectedViews = getChildrenByType(Collections.singleton(view), UMLVisualIDRegistry.getType(EnumerationEditPart.VISUAL_ID));
+		createNavigatorItems(connectedViews, parent, result, isProfile_1000ToEnumeration_2003ChildrenLeaf(view));
+		return result;
+	}
+
+	/**
+	 * @generated
+	 */
+	private boolean isProfile_1000ToEnumeration_2003ChildrenLeaf(View view) {
 		return false;
 	}
 
@@ -584,85 +651,51 @@ public class UMLNavigatorContentProvider implements ICommonContentProvider {
 	/**
 	 * @generated
 	 */
-	private Collection getExtension_4002ToStereotype_2001InSource(Edge edge, Object parent) {
+	private Collection getGeneralization_4001ToStereotype_2001OutTarget(Edge edge, Object parent) {
 		Collection result = new ArrayList();
-		Collection connectedViews = getLinksSourceByType(Collections.singleton(edge), UMLVisualIDRegistry.getType(StereotypeEditPart.VISUAL_ID));
-		createNavigatorItems(connectedViews, parent, result, isExtension_4002ToStereotype_2001InSourceLeaf(edge));
+		Collection connectedViews = getLinksTargetByType(Collections.singleton(edge), UMLVisualIDRegistry.getType(StereotypeEditPart.VISUAL_ID));
+		createNavigatorItems(connectedViews, parent, result, isGeneralization_4001ToStereotype_2001OutTargetLeaf(edge));
 		return result;
 	}
 
 	/**
 	 * @generated
 	 */
-	private boolean isExtension_4002ToStereotype_2001InSourceLeaf(Edge edge) {
+	private boolean isGeneralization_4001ToStereotype_2001OutTargetLeaf(Edge edge) {
 		return true;
 	}
 
 	/**
 	 * @generated
 	 */
-	private Collection getProfile_1000ToProfile_2007Children(View view, Object parent) {
+	private Collection getProfile_1000ToGeneralization_4001Children(View view, Object parent) {
 		Collection result = new ArrayList();
-		Collection connectedViews = getChildrenByType(Collections.singleton(view), UMLVisualIDRegistry.getType(Profile3EditPart.VISUAL_ID));
-		createNavigatorItems(connectedViews, parent, result, isProfile_1000ToProfile_2007ChildrenLeaf(view));
+		Collection connectedViews = getDiagramLinksByType(Collections.singleton(view), UMLVisualIDRegistry.getType(GeneralizationEditPart.VISUAL_ID));
+		createNavigatorItems(connectedViews, parent, result, isProfile_1000ToGeneralization_4001ChildrenLeaf(view));
 		return result;
 	}
 
 	/**
 	 * @generated
 	 */
-	private boolean isProfile_1000ToProfile_2007ChildrenLeaf(View view) {
+	private boolean isProfile_1000ToGeneralization_4001ChildrenLeaf(View view) {
 		return false;
 	}
 
 	/**
 	 * @generated
 	 */
-	private Collection getEnumeration_2003ToGeneralization_4001OutTarget(View view, Object parent) {
+	private Collection getStereotype_3003ToGeneralization_4001InSource(View view, Object parent) {
 		Collection result = new ArrayList();
-		Collection connectedViews = getOutgoingLinksByType(Collections.singleton(view), UMLVisualIDRegistry.getType(GeneralizationEditPart.VISUAL_ID));
-		createNavigatorItems(connectedViews, parent, result, isEnumeration_2003ToGeneralization_4001OutTargetLeaf(view));
+		Collection connectedViews = getIncomingLinksByType(Collections.singleton(view), UMLVisualIDRegistry.getType(GeneralizationEditPart.VISUAL_ID));
+		createNavigatorItems(connectedViews, parent, result, isStereotype_3003ToGeneralization_4001InSourceLeaf(view));
 		return result;
 	}
 
 	/**
 	 * @generated
 	 */
-	private boolean isEnumeration_2003ToGeneralization_4001OutTargetLeaf(View view) {
-		return true;
-	}
-
-	/**
-	 * @generated
-	 */
-	private Collection getProfile_1000ToElementImport_2006Children(View view, Object parent) {
-		Collection result = new ArrayList();
-		Collection connectedViews = getChildrenByType(Collections.singleton(view), UMLVisualIDRegistry.getType(ElementImportEditPart.VISUAL_ID));
-		createNavigatorItems(connectedViews, parent, result, isProfile_1000ToElementImport_2006ChildrenLeaf(view));
-		return result;
-	}
-
-	/**
-	 * @generated
-	 */
-	private boolean isProfile_1000ToElementImport_2006ChildrenLeaf(View view) {
-		return false;
-	}
-
-	/**
-	 * @generated
-	 */
-	private Collection getElementImport_2006ToExtension_4002InSource(View view, Object parent) {
-		Collection result = new ArrayList();
-		Collection connectedViews = getIncomingLinksByType(Collections.singleton(view), UMLVisualIDRegistry.getType(ExtensionEditPart.VISUAL_ID));
-		createNavigatorItems(connectedViews, parent, result, isElementImport_2006ToExtension_4002InSourceLeaf(view));
-		return result;
-	}
-
-	/**
-	 * @generated
-	 */
-	private boolean isElementImport_2006ToExtension_4002InSourceLeaf(View view) {
+	private boolean isStereotype_3003ToGeneralization_4001InSourceLeaf(View view) {
 		return true;
 	}
 
@@ -687,68 +720,34 @@ public class UMLNavigatorContentProvider implements ICommonContentProvider {
 	/**
 	 * @generated
 	 */
-	private Collection getProfile_1000ToProfile_2002Children(View view, Object parent) {
+	private Collection getExtension_4002ToStereotype_3003InSource(Edge edge, Object parent) {
 		Collection result = new ArrayList();
-		Collection connectedViews = getChildrenByType(Collections.singleton(view), UMLVisualIDRegistry.getType(Profile2EditPart.VISUAL_ID));
-		createNavigatorItems(connectedViews, parent, result, isProfile_1000ToProfile_2002ChildrenLeaf(view));
+		Collection connectedViews = getLinksSourceByType(Collections.singleton(edge), UMLVisualIDRegistry.getType(Stereotype2EditPart.VISUAL_ID));
+		createNavigatorItems(connectedViews, parent, result, isExtension_4002ToStereotype_3003InSourceLeaf(edge));
 		return result;
 	}
 
 	/**
 	 * @generated
 	 */
-	private boolean isProfile_1000ToProfile_2002ChildrenLeaf(View view) {
-		return false;
+	private boolean isExtension_4002ToStereotype_3003InSourceLeaf(Edge edge) {
+		return true;
 	}
 
 	/**
 	 * @generated
 	 */
-	private Collection getProfile_1000ToEnumeration_2003Children(View view, Object parent) {
+	private Collection getExtension_4002ToElementImport_2006OutTarget(Edge edge, Object parent) {
 		Collection result = new ArrayList();
-		Collection connectedViews = getChildrenByType(Collections.singleton(view), UMLVisualIDRegistry.getType(EnumerationEditPart.VISUAL_ID));
-		createNavigatorItems(connectedViews, parent, result, isProfile_1000ToEnumeration_2003ChildrenLeaf(view));
+		Collection connectedViews = getLinksTargetByType(Collections.singleton(edge), UMLVisualIDRegistry.getType(ElementImportEditPart.VISUAL_ID));
+		createNavigatorItems(connectedViews, parent, result, isExtension_4002ToElementImport_2006OutTargetLeaf(edge));
 		return result;
 	}
 
 	/**
 	 * @generated
 	 */
-	private boolean isProfile_1000ToEnumeration_2003ChildrenLeaf(View view) {
-		return false;
-	}
-
-	/**
-	 * @generated
-	 */
-	private Collection getProfile_1000ToGeneralization_4001Children(View view, Object parent) {
-		Collection result = new ArrayList();
-		Collection connectedViews = getDiagramLinksByType(Collections.singleton(view), UMLVisualIDRegistry.getType(GeneralizationEditPart.VISUAL_ID));
-		createNavigatorItems(connectedViews, parent, result, isProfile_1000ToGeneralization_4001ChildrenLeaf(view));
-		return result;
-	}
-
-	/**
-	 * @generated
-	 */
-	private boolean isProfile_1000ToGeneralization_4001ChildrenLeaf(View view) {
-		return false;
-	}
-
-	/**
-	 * @generated
-	 */
-	private Collection getStereotype_2001ToGeneralization_4001OutTarget(View view, Object parent) {
-		Collection result = new ArrayList();
-		Collection connectedViews = getOutgoingLinksByType(Collections.singleton(view), UMLVisualIDRegistry.getType(GeneralizationEditPart.VISUAL_ID));
-		createNavigatorItems(connectedViews, parent, result, isStereotype_2001ToGeneralization_4001OutTargetLeaf(view));
-		return result;
-	}
-
-	/**
-	 * @generated
-	 */
-	private boolean isStereotype_2001ToGeneralization_4001OutTargetLeaf(View view) {
+	private boolean isExtension_4002ToElementImport_2006OutTargetLeaf(Edge edge) {
 		return true;
 	}
 
@@ -773,68 +772,69 @@ public class UMLNavigatorContentProvider implements ICommonContentProvider {
 	/**
 	 * @generated
 	 */
-	private Collection getStereotype_3003ToGeneralization_4001OutTarget(View view, Object parent) {
+	private Collection getProfile_2002ToStereotype_3003Children(View view, Object parent) {
 		Collection result = new ArrayList();
-		Collection connectedViews = getOutgoingLinksByType(Collections.singleton(view), UMLVisualIDRegistry.getType(GeneralizationEditPart.VISUAL_ID));
-		createNavigatorItems(connectedViews, parent, result, isStereotype_3003ToGeneralization_4001OutTargetLeaf(view));
+		Collection connectedViews = getChildrenByType(Collections.singleton(view), UMLVisualIDRegistry.getType(ProfileContentsEditPart.VISUAL_ID));
+		connectedViews = getChildrenByType(connectedViews, UMLVisualIDRegistry.getType(Stereotype2EditPart.VISUAL_ID));
+		createNavigatorItems(connectedViews, parent, result, isProfile_2002ToStereotype_3003ChildrenLeaf(view));
 		return result;
 	}
 
 	/**
 	 * @generated
 	 */
-	private boolean isStereotype_3003ToGeneralization_4001OutTargetLeaf(View view) {
-		return true;
-	}
-
-	/**
-	 * @generated
-	 */
-	private Collection getGeneralization_4001ToStereotype_3003InSource(Edge edge, Object parent) {
-		Collection result = new ArrayList();
-		Collection connectedViews = getLinksSourceByType(Collections.singleton(edge), UMLVisualIDRegistry.getType(Stereotype2EditPart.VISUAL_ID));
-		createNavigatorItems(connectedViews, parent, result, isGeneralization_4001ToStereotype_3003InSourceLeaf(edge));
-		return result;
-	}
-
-	/**
-	 * @generated
-	 */
-	private boolean isGeneralization_4001ToStereotype_3003InSourceLeaf(Edge edge) {
-		return true;
-	}
-
-	/**
-	 * @generated
-	 */
-	private Collection getProfile_1000ToExtension_4002Children(View view, Object parent) {
-		Collection result = new ArrayList();
-		Collection connectedViews = getDiagramLinksByType(Collections.singleton(view), UMLVisualIDRegistry.getType(ExtensionEditPart.VISUAL_ID));
-		createNavigatorItems(connectedViews, parent, result, isProfile_1000ToExtension_4002ChildrenLeaf(view));
-		return result;
-	}
-
-	/**
-	 * @generated
-	 */
-	private boolean isProfile_1000ToExtension_4002ChildrenLeaf(View view) {
+	private boolean isProfile_2002ToStereotype_3003ChildrenLeaf(View view) {
 		return false;
 	}
 
 	/**
 	 * @generated
 	 */
-	private Collection getEnumeration_2003ToGeneralization_4001InSource(View view, Object parent) {
+	private Collection getStereotype_2001ToExtension_4002OutTarget(View view, Object parent) {
 		Collection result = new ArrayList();
-		Collection connectedViews = getIncomingLinksByType(Collections.singleton(view), UMLVisualIDRegistry.getType(GeneralizationEditPart.VISUAL_ID));
-		createNavigatorItems(connectedViews, parent, result, isEnumeration_2003ToGeneralization_4001InSourceLeaf(view));
+		Collection connectedViews = getOutgoingLinksByType(Collections.singleton(view), UMLVisualIDRegistry.getType(ExtensionEditPart.VISUAL_ID));
+		createNavigatorItems(connectedViews, parent, result, isStereotype_2001ToExtension_4002OutTargetLeaf(view));
 		return result;
 	}
 
 	/**
 	 * @generated
 	 */
-	private boolean isEnumeration_2003ToGeneralization_4001InSourceLeaf(View view) {
+	private boolean isStereotype_2001ToExtension_4002OutTargetLeaf(View view) {
+		return true;
+	}
+
+	/**
+	 * @generated
+	 */
+	private Collection getGeneralization_4001ToEnumeration_2003OutTarget(Edge edge, Object parent) {
+		Collection result = new ArrayList();
+		Collection connectedViews = getLinksTargetByType(Collections.singleton(edge), UMLVisualIDRegistry.getType(EnumerationEditPart.VISUAL_ID));
+		createNavigatorItems(connectedViews, parent, result, isGeneralization_4001ToEnumeration_2003OutTargetLeaf(edge));
+		return result;
+	}
+
+	/**
+	 * @generated
+	 */
+	private boolean isGeneralization_4001ToEnumeration_2003OutTargetLeaf(Edge edge) {
+		return true;
+	}
+
+	/**
+	 * @generated
+	 */
+	private Collection getGeneralization_4001ToStereotype_3003OutTarget(Edge edge, Object parent) {
+		Collection result = new ArrayList();
+		Collection connectedViews = getLinksTargetByType(Collections.singleton(edge), UMLVisualIDRegistry.getType(Stereotype2EditPart.VISUAL_ID));
+		createNavigatorItems(connectedViews, parent, result, isGeneralization_4001ToStereotype_3003OutTargetLeaf(edge));
+		return result;
+	}
+
+	/**
+	 * @generated
+	 */
+	private boolean isGeneralization_4001ToStereotype_3003OutTargetLeaf(Edge edge) {
 		return true;
 	}
 

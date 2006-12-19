@@ -1,32 +1,27 @@
 package org.eclipse.uml2.diagram.statemachine.edit.parts;
 
+import org.eclipse.draw2d.ColorConstants;
+import org.eclipse.draw2d.Ellipse;
+import org.eclipse.draw2d.Graphics;
 import org.eclipse.draw2d.IFigure;
 import org.eclipse.draw2d.PositionConstants;
 import org.eclipse.draw2d.StackLayout;
-
+import org.eclipse.draw2d.geometry.Dimension;
 import org.eclipse.gef.EditPart;
 import org.eclipse.gef.EditPolicy;
 import org.eclipse.gef.Request;
-
 import org.eclipse.gef.commands.Command;
-
 import org.eclipse.gef.editpolicies.LayoutEditPolicy;
 import org.eclipse.gef.editpolicies.NonResizableEditPolicy;
 import org.eclipse.gef.editpolicies.ResizableEditPolicy;
-
 import org.eclipse.gef.requests.CreateRequest;
-
 import org.eclipse.gmf.runtime.diagram.ui.editparts.ShapeNodeEditPart;
-
 import org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles;
-
 import org.eclipse.gmf.runtime.draw2d.ui.figures.ConstrainedToolbarLayout;
-
 import org.eclipse.gmf.runtime.gef.ui.figures.DefaultSizeNodeFigure;
 import org.eclipse.gmf.runtime.gef.ui.figures.NodeFigure;
-
 import org.eclipse.gmf.runtime.notation.View;
-
+import org.eclipse.uml2.diagram.common.draw2d.CenterLayout;
 import org.eclipse.uml2.diagram.statemachine.edit.policies.FinalStateItemSemanticEditPolicy;
 
 /**
@@ -61,9 +56,9 @@ public class FinalStateEditPart extends ShapeNodeEditPart {
 	 */
 	protected void createDefaultEditPolicies() {
 		super.createDefaultEditPolicies();
+
 		installEditPolicy(EditPolicyRoles.SEMANTIC_ROLE, new FinalStateItemSemanticEditPolicy());
 		installEditPolicy(EditPolicy.LAYOUT_ROLE, createLayoutEditPolicy());
-
 	}
 
 	/**
@@ -111,6 +106,7 @@ public class FinalStateEditPart extends ShapeNodeEditPart {
 	 */
 	protected NodeFigure createNodePlate() {
 		DefaultSizeNodeFigure result = new DefaultSizeNodeFigure(getMapMode().DPtoLP(23), getMapMode().DPtoLP(23));
+
 		return result;
 	}
 
@@ -121,9 +117,7 @@ public class FinalStateEditPart extends ShapeNodeEditPart {
 		EditPolicy result = super.getPrimaryDragEditPolicy();
 		if (result instanceof ResizableEditPolicy) {
 			ResizableEditPolicy ep = (ResizableEditPolicy) result;
-
 			ep.setResizeDirections(PositionConstants.NONE);
-
 		}
 		return result;
 	}
@@ -173,14 +167,14 @@ public class FinalStateEditPart extends ShapeNodeEditPart {
 	/**
 	 * @generated
 	 */
-	public class ActivityFinalFigure extends org.eclipse.draw2d.Ellipse {
+	public class ActivityFinalFigure extends Ellipse {
 
 		/**
 		 * @generated
 		 */
 		public ActivityFinalFigure() {
 
-			org.eclipse.uml2.diagram.common.draw2d.CenterLayout layoutThis = new org.eclipse.uml2.diagram.common.draw2d.CenterLayout();
+			CenterLayout layoutThis = new CenterLayout();
 
 			this.setLayoutManager(layoutThis);
 
@@ -189,11 +183,11 @@ public class FinalStateEditPart extends ShapeNodeEditPart {
 			this.setOutline(true);
 			this.setOutlineXOR(false);
 			this.setLineWidth(1);
-			this.setLineStyle(org.eclipse.draw2d.Graphics.LINE_SOLID);
-			this.setForegroundColor(org.eclipse.draw2d.ColorConstants.black);
-			this.setPreferredSize(new org.eclipse.draw2d.geometry.Dimension(getMapMode().DPtoLP(23), getMapMode().DPtoLP(23)));
-			this.setMaximumSize(new org.eclipse.draw2d.geometry.Dimension(getMapMode().DPtoLP(23), getMapMode().DPtoLP(23)));
-			this.setMinimumSize(new org.eclipse.draw2d.geometry.Dimension(getMapMode().DPtoLP(23), getMapMode().DPtoLP(23)));
+			this.setLineStyle(Graphics.LINE_SOLID);
+			this.setForegroundColor(ColorConstants.black);
+			this.setPreferredSize(new Dimension(getMapMode().DPtoLP(23), getMapMode().DPtoLP(23)));
+			this.setMaximumSize(new Dimension(getMapMode().DPtoLP(23), getMapMode().DPtoLP(23)));
+			this.setMinimumSize(new Dimension(getMapMode().DPtoLP(23), getMapMode().DPtoLP(23)));
 			createContents();
 		}
 
@@ -202,17 +196,17 @@ public class FinalStateEditPart extends ShapeNodeEditPart {
 		 */
 		private void createContents() {
 
-			org.eclipse.draw2d.Ellipse activityFinalFigure_inner0 = new org.eclipse.draw2d.Ellipse();
+			Ellipse activityFinalFigure_inner0 = new Ellipse();
 			activityFinalFigure_inner0.setFill(true);
 			activityFinalFigure_inner0.setFillXOR(false);
 			activityFinalFigure_inner0.setOutline(true);
 			activityFinalFigure_inner0.setOutlineXOR(false);
 			activityFinalFigure_inner0.setLineWidth(1);
-			activityFinalFigure_inner0.setLineStyle(org.eclipse.draw2d.Graphics.LINE_SOLID);
-			activityFinalFigure_inner0.setBackgroundColor(org.eclipse.draw2d.ColorConstants.black);
-			activityFinalFigure_inner0.setPreferredSize(new org.eclipse.draw2d.geometry.Dimension(getMapMode().DPtoLP(15), getMapMode().DPtoLP(15)));
-			activityFinalFigure_inner0.setMaximumSize(new org.eclipse.draw2d.geometry.Dimension(getMapMode().DPtoLP(15), getMapMode().DPtoLP(15)));
-			activityFinalFigure_inner0.setMinimumSize(new org.eclipse.draw2d.geometry.Dimension(getMapMode().DPtoLP(15), getMapMode().DPtoLP(15)));
+			activityFinalFigure_inner0.setLineStyle(Graphics.LINE_SOLID);
+			activityFinalFigure_inner0.setBackgroundColor(ColorConstants.black);
+			activityFinalFigure_inner0.setPreferredSize(new Dimension(getMapMode().DPtoLP(15), getMapMode().DPtoLP(15)));
+			activityFinalFigure_inner0.setMaximumSize(new Dimension(getMapMode().DPtoLP(15), getMapMode().DPtoLP(15)));
+			activityFinalFigure_inner0.setMinimumSize(new Dimension(getMapMode().DPtoLP(15), getMapMode().DPtoLP(15)));
 
 			this.add(activityFinalFigure_inner0);
 

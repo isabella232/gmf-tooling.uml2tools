@@ -30,14 +30,7 @@ import org.eclipse.gmf.runtime.emf.type.core.requests.ReorientReferenceRelations
 import org.eclipse.gmf.runtime.emf.type.core.requests.ReorientRelationshipRequest;
 import org.eclipse.gmf.runtime.emf.type.core.requests.SetRequest;
 import org.eclipse.gmf.runtime.notation.View;
-import java.util.Collections;
-import java.util.Map;
-
 import org.eclipse.uml2.diagram.statemachine.edit.helpers.UMLBaseEditHelper;
-
-import org.eclipse.uml2.diagram.statemachine.expressions.UMLAbstractExpression;
-
-import org.eclipse.uml2.diagram.statemachine.part.UMLDiagramEditorPlugin;
 
 import org.eclipse.uml2.uml.Region;
 import org.eclipse.uml2.uml.Vertex;
@@ -248,23 +241,6 @@ public class UMLBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 		 */
 		public static boolean canCreateTransition_4001(Region container, Vertex source, Vertex target) {
 			return true;
-		}
-
-		/**
-		 * @generated 
-		 */
-		private static boolean evaluate(UMLAbstractExpression constraint, Object sourceEnd, Object oppositeEnd, boolean clearEnv) {
-			if (sourceEnd == null) {
-				return true;
-			}
-			Map evalEnv = Collections.singletonMap(OPPOSITE_END_VAR, oppositeEnd);
-			try {
-				Object val = constraint.evaluate(sourceEnd, evalEnv);
-				return (val instanceof Boolean) ? ((Boolean) val).booleanValue() : false;
-			} catch (Exception e) {
-				UMLDiagramEditorPlugin.getInstance().logError("Link constraint evaluation error", e); //$NON-NLS-1$
-				return false;
-			}
 		}
 	}
 

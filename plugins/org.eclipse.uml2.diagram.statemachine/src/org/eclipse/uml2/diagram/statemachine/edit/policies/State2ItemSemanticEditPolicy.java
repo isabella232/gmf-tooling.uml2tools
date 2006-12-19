@@ -7,14 +7,11 @@ import org.eclipse.gmf.runtime.emf.type.core.requests.DestroyElementRequest;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EAnnotation;
 import org.eclipse.gmf.runtime.notation.View;
-import org.eclipse.emf.ecore.EClass;
-
 import org.eclipse.gef.commands.UnexecutableCommand;
-
-import org.eclipse.gmf.runtime.emf.type.core.commands.CreateElementCommand;
 
 import org.eclipse.gmf.runtime.emf.type.core.requests.CreateElementRequest;
 
+import org.eclipse.uml2.diagram.statemachine.edit.commands.Region2CreateCommand;
 import org.eclipse.uml2.diagram.statemachine.edit.commands.TransitionTypeLinkCreateCommand;
 
 import org.eclipse.uml2.diagram.statemachine.providers.UMLElementTypes;
@@ -36,40 +33,9 @@ public class State2ItemSemanticEditPolicy extends UMLBaseItemSemanticEditPolicy 
 			if (req.getContainmentFeature() == null) {
 				req.setContainmentFeature(UMLPackage.eINSTANCE.getState_Region());
 			}
-			return getMSLWrapper(new CreateRegion_3002Command(req));
+			return getMSLWrapper(new Region2CreateCommand(req));
 		}
 		return super.getCreateCommand(req);
-	}
-
-	/**
-	 * @generated
-	 */
-	private static class CreateRegion_3002Command extends CreateElementCommand {
-
-		/**
-		 * @generated
-		 */
-		public CreateRegion_3002Command(CreateElementRequest req) {
-			super(req);
-		}
-
-		/**
-		 * @generated
-		 */
-		protected EClass getEClassToEdit() {
-			return UMLPackage.eINSTANCE.getState();
-		};
-
-		/**
-		 * @generated
-		 */
-		protected EObject getElementToEdit() {
-			EObject container = ((CreateElementRequest) getRequest()).getContainer();
-			if (container instanceof View) {
-				container = ((View) container).getElement();
-			}
-			return container;
-		}
 	}
 
 	/**
