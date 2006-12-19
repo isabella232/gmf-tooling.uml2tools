@@ -1,7 +1,6 @@
 package org.eclipse.uml2.diagram.activity.edit.parts;
 
 import org.eclipse.draw2d.FigureUtilities;
-import org.eclipse.draw2d.IFigure;
 import org.eclipse.draw2d.Label;
 import org.eclipse.draw2d.geometry.Dimension;
 import org.eclipse.draw2d.geometry.Rectangle;
@@ -12,7 +11,6 @@ import org.eclipse.gmf.runtime.diagram.ui.editparts.ITextAwareEditPart;
 import org.eclipse.gmf.runtime.draw2d.ui.figures.WrapLabel;
 import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.jface.viewers.CellEditor;
-import org.eclipse.swt.SWT;
 import org.eclipse.swt.widgets.Text;
 import org.eclipse.uml2.diagram.activity.part.UMLVisualIDRegistry;
 
@@ -24,148 +22,209 @@ public class UMLEditPartFactory implements EditPartFactory {
 	/**
 	 * @generated
 	 */
-	public static final String EXTERNAL_NODE_LABELS_LAYER = "External Node Labels"; //$NON-NLS-1$
-
-	/**
-	 * @generated
-	 */
 	public EditPart createEditPart(EditPart context, Object model) {
 		if (model instanceof View) {
 			View view = (View) model;
-			int viewVisualID = UMLVisualIDRegistry.getVisualID(view);
-			switch (viewVisualID) {
-			case AcceptEventActionEditPart.VISUAL_ID:
-				return new AcceptEventActionEditPart(view);
-			case AcceptEventAction2EditPart.VISUAL_ID:
-				return new AcceptEventAction2EditPart(view);
-			case ActivityFinalNodeEditPart.VISUAL_ID:
-				return new ActivityFinalNodeEditPart(view);
-			case DecisionNodeEditPart.VISUAL_ID:
-				return new DecisionNodeEditPart(view);
-			case MergeNodeEditPart.VISUAL_ID:
-				return new MergeNodeEditPart(view);
-			case InitialNodeEditPart.VISUAL_ID:
-				return new InitialNodeEditPart(view);
-			case DataStoreNodeEditPart.VISUAL_ID:
-				return new DataStoreNodeEditPart(view);
-			case CentralBufferNodeEditPart.VISUAL_ID:
-				return new CentralBufferNodeEditPart(view);
-			case OpaqueActionEditPart.VISUAL_ID:
-				return new OpaqueActionEditPart(view);
-			case OpaqueActionNameEditPart.VISUAL_ID:
-				return new OpaqueActionNameEditPart(view);
-			case FlowFinalNodeEditPart.VISUAL_ID:
-				return new FlowFinalNodeEditPart(view);
-			case ForkNodeEditPart.VISUAL_ID:
-				return new ForkNodeEditPart(view);
-			case JoinNodeEditPart.VISUAL_ID:
-				return new JoinNodeEditPart(view);
-			case PinEditPart.VISUAL_ID:
-				return new PinEditPart(view);
-			case PinNameEditPart.VISUAL_ID:
-				return new PinNameEditPart(view);
-			case CreateObjectActionEditPart.VISUAL_ID:
-				return new CreateObjectActionEditPart(view);
-			case CreateObjectActionNameEditPart.VISUAL_ID:
-				return new CreateObjectActionNameEditPart(view);
-			case AddStructuralFeatureValueActionEditPart.VISUAL_ID:
-				return new AddStructuralFeatureValueActionEditPart(view);
-			case AddStructuralFeatureValueActionNameEditPart.VISUAL_ID:
-				return new AddStructuralFeatureValueActionNameEditPart(view);
-			case CallBehaviorActionEditPart.VISUAL_ID:
-				return new CallBehaviorActionEditPart(view);
-			case CallBehaviorActionNameEditPart.VISUAL_ID:
-				return new CallBehaviorActionNameEditPart(view);
-			case CallOperationActionEditPart.VISUAL_ID:
-				return new CallOperationActionEditPart(view);
-			case CallOperationActionNameEditPart.VISUAL_ID:
-				return new CallOperationActionNameEditPart(view);
-			case StructuredActivityNodeEditPart.VISUAL_ID:
-				return new StructuredActivityNodeEditPart(view);
-			case OutputPinEditPart.VISUAL_ID:
-				return new OutputPinEditPart(view);
-			case OutputPinNameEditPart.VISUAL_ID:
-				return new OutputPinNameEditPart(view);
-			case OutputPin2EditPart.VISUAL_ID:
-				return new OutputPin2EditPart(view);
-			case OutputPinName2EditPart.VISUAL_ID:
-				return new OutputPinName2EditPart(view);
-			case InputPinEditPart.VISUAL_ID:
-				return new InputPinEditPart(view);
-			case InputPinNameEditPart.VISUAL_ID:
-				return new InputPinNameEditPart(view);
-			case InputPin2EditPart.VISUAL_ID:
-				return new InputPin2EditPart(view);
-			case InputPinName2EditPart.VISUAL_ID:
-				return new InputPinName2EditPart(view);
-			case InputPin3EditPart.VISUAL_ID:
-				return new InputPin3EditPart(view);
-			case InputPinName3EditPart.VISUAL_ID:
-				return new InputPinName3EditPart(view);
-			case OutputPin3EditPart.VISUAL_ID:
-				return new OutputPin3EditPart(view);
-			case OutputPinName3EditPart.VISUAL_ID:
-				return new OutputPinName3EditPart(view);
-			case InputPin4EditPart.VISUAL_ID:
-				return new InputPin4EditPart(view);
-			case InputPinName4EditPart.VISUAL_ID:
-				return new InputPinName4EditPart(view);
-			case InputPin5EditPart.VISUAL_ID:
-				return new InputPin5EditPart(view);
-			case InputPinName5EditPart.VISUAL_ID:
-				return new InputPinName5EditPart(view);
-			case StructuredActivityNode2EditPart.VISUAL_ID:
-				return new StructuredActivityNode2EditPart(view);
-			case OpaqueAction2EditPart.VISUAL_ID:
-				return new OpaqueAction2EditPart(view);
-			case OpaqueActionName2EditPart.VISUAL_ID:
-				return new OpaqueActionName2EditPart(view);
-			case AcceptEventAction3EditPart.VISUAL_ID:
-				return new AcceptEventAction3EditPart(view);
-			case AcceptEventAction4EditPart.VISUAL_ID:
-				return new AcceptEventAction4EditPart(view);
-			case ActivityFinalNode2EditPart.VISUAL_ID:
-				return new ActivityFinalNode2EditPart(view);
-			case DecisionNode2EditPart.VISUAL_ID:
-				return new DecisionNode2EditPart(view);
-			case FlowFinalNode2EditPart.VISUAL_ID:
-				return new FlowFinalNode2EditPart(view);
-			case Pin2EditPart.VISUAL_ID:
-				return new Pin2EditPart(view);
-			case PinName2EditPart.VISUAL_ID:
-				return new PinName2EditPart(view);
-			case CreateObjectAction2EditPart.VISUAL_ID:
-				return new CreateObjectAction2EditPart(view);
-			case CreateObjectActionName2EditPart.VISUAL_ID:
-				return new CreateObjectActionName2EditPart(view);
-			case CallBehaviorAction2EditPart.VISUAL_ID:
-				return new CallBehaviorAction2EditPart(view);
-			case CallBehaviorActionName2EditPart.VISUAL_ID:
-				return new CallBehaviorActionName2EditPart(view);
-			case CallOperationAction2EditPart.VISUAL_ID:
-				return new CallOperationAction2EditPart(view);
-			case CallOperationActionName2EditPart.VISUAL_ID:
-				return new CallOperationActionName2EditPart(view);
-			case ForkNode2EditPart.VISUAL_ID:
-				return new ForkNode2EditPart(view);
-			case JoinNode2EditPart.VISUAL_ID:
-				return new JoinNode2EditPart(view);
-			case AddStructuralFeatureValueAction2EditPart.VISUAL_ID:
-				return new AddStructuralFeatureValueAction2EditPart(view);
-			case AddStructuralFeatureValueActionName2EditPart.VISUAL_ID:
-				return new AddStructuralFeatureValueActionName2EditPart(view);
-			case DataStoreNode2EditPart.VISUAL_ID:
-				return new DataStoreNode2EditPart(view);
-			case CentralBufferNode2EditPart.VISUAL_ID:
-				return new CentralBufferNode2EditPart(view);
-			case StructuredActivityNodeStructuredActivityContentPaneCompartmentEditPart.VISUAL_ID:
-				return new StructuredActivityNodeStructuredActivityContentPaneCompartmentEditPart(view);
-			case StructuredActivityNodeStructuredActivityContentPaneCompartment2EditPart.VISUAL_ID:
-				return new StructuredActivityNodeStructuredActivityContentPaneCompartment2EditPart(view);
+			switch (UMLVisualIDRegistry.getVisualID(view)) {
+
 			case ActivityEditPart.VISUAL_ID:
 				return new ActivityEditPart(view);
+
+			case AcceptEventActionEditPart.VISUAL_ID:
+				return new AcceptEventActionEditPart(view);
+
+			case AcceptEventAction2EditPart.VISUAL_ID:
+				return new AcceptEventAction2EditPart(view);
+
+			case ActivityFinalNodeEditPart.VISUAL_ID:
+				return new ActivityFinalNodeEditPart(view);
+
+			case DecisionNodeEditPart.VISUAL_ID:
+				return new DecisionNodeEditPart(view);
+
+			case MergeNodeEditPart.VISUAL_ID:
+				return new MergeNodeEditPart(view);
+
+			case InitialNodeEditPart.VISUAL_ID:
+				return new InitialNodeEditPart(view);
+
+			case DataStoreNodeEditPart.VISUAL_ID:
+				return new DataStoreNodeEditPart(view);
+
+			case CentralBufferNodeEditPart.VISUAL_ID:
+				return new CentralBufferNodeEditPart(view);
+
+			case OpaqueActionEditPart.VISUAL_ID:
+				return new OpaqueActionEditPart(view);
+
+			case OpaqueActionNameEditPart.VISUAL_ID:
+				return new OpaqueActionNameEditPart(view);
+
+			case FlowFinalNodeEditPart.VISUAL_ID:
+				return new FlowFinalNodeEditPart(view);
+
+			case ForkNodeEditPart.VISUAL_ID:
+				return new ForkNodeEditPart(view);
+
+			case JoinNodeEditPart.VISUAL_ID:
+				return new JoinNodeEditPart(view);
+
+			case PinEditPart.VISUAL_ID:
+				return new PinEditPart(view);
+
+			case PinNameEditPart.VISUAL_ID:
+				return new PinNameEditPart(view);
+
+			case CreateObjectActionEditPart.VISUAL_ID:
+				return new CreateObjectActionEditPart(view);
+
+			case CreateObjectActionNameEditPart.VISUAL_ID:
+				return new CreateObjectActionNameEditPart(view);
+
+			case AddStructuralFeatureValueActionEditPart.VISUAL_ID:
+				return new AddStructuralFeatureValueActionEditPart(view);
+
+			case AddStructuralFeatureValueActionNameEditPart.VISUAL_ID:
+				return new AddStructuralFeatureValueActionNameEditPart(view);
+
+			case CallBehaviorActionEditPart.VISUAL_ID:
+				return new CallBehaviorActionEditPart(view);
+
+			case CallBehaviorActionNameEditPart.VISUAL_ID:
+				return new CallBehaviorActionNameEditPart(view);
+
+			case CallOperationActionEditPart.VISUAL_ID:
+				return new CallOperationActionEditPart(view);
+
+			case CallOperationActionNameEditPart.VISUAL_ID:
+				return new CallOperationActionNameEditPart(view);
+
+			case StructuredActivityNodeEditPart.VISUAL_ID:
+				return new StructuredActivityNodeEditPart(view);
+
+			case OutputPinEditPart.VISUAL_ID:
+				return new OutputPinEditPart(view);
+
+			case OutputPinNameEditPart.VISUAL_ID:
+				return new OutputPinNameEditPart(view);
+
+			case OutputPin2EditPart.VISUAL_ID:
+				return new OutputPin2EditPart(view);
+
+			case OutputPinName2EditPart.VISUAL_ID:
+				return new OutputPinName2EditPart(view);
+
+			case InputPinEditPart.VISUAL_ID:
+				return new InputPinEditPart(view);
+
+			case InputPinNameEditPart.VISUAL_ID:
+				return new InputPinNameEditPart(view);
+
+			case InputPin2EditPart.VISUAL_ID:
+				return new InputPin2EditPart(view);
+
+			case InputPinName2EditPart.VISUAL_ID:
+				return new InputPinName2EditPart(view);
+
+			case InputPin3EditPart.VISUAL_ID:
+				return new InputPin3EditPart(view);
+
+			case InputPinName3EditPart.VISUAL_ID:
+				return new InputPinName3EditPart(view);
+
+			case OutputPin3EditPart.VISUAL_ID:
+				return new OutputPin3EditPart(view);
+
+			case OutputPinName3EditPart.VISUAL_ID:
+				return new OutputPinName3EditPart(view);
+
+			case InputPin4EditPart.VISUAL_ID:
+				return new InputPin4EditPart(view);
+
+			case InputPinName4EditPart.VISUAL_ID:
+				return new InputPinName4EditPart(view);
+
+			case InputPin5EditPart.VISUAL_ID:
+				return new InputPin5EditPart(view);
+
+			case InputPinName5EditPart.VISUAL_ID:
+				return new InputPinName5EditPart(view);
+
+			case StructuredActivityNode2EditPart.VISUAL_ID:
+				return new StructuredActivityNode2EditPart(view);
+
+			case OpaqueAction2EditPart.VISUAL_ID:
+				return new OpaqueAction2EditPart(view);
+
+			case OpaqueActionName2EditPart.VISUAL_ID:
+				return new OpaqueActionName2EditPart(view);
+
+			case AcceptEventAction3EditPart.VISUAL_ID:
+				return new AcceptEventAction3EditPart(view);
+
+			case AcceptEventAction4EditPart.VISUAL_ID:
+				return new AcceptEventAction4EditPart(view);
+
+			case ActivityFinalNode2EditPart.VISUAL_ID:
+				return new ActivityFinalNode2EditPart(view);
+
+			case DecisionNode2EditPart.VISUAL_ID:
+				return new DecisionNode2EditPart(view);
+
+			case FlowFinalNode2EditPart.VISUAL_ID:
+				return new FlowFinalNode2EditPart(view);
+
+			case Pin2EditPart.VISUAL_ID:
+				return new Pin2EditPart(view);
+
+			case PinName2EditPart.VISUAL_ID:
+				return new PinName2EditPart(view);
+
+			case CreateObjectAction2EditPart.VISUAL_ID:
+				return new CreateObjectAction2EditPart(view);
+
+			case CreateObjectActionName2EditPart.VISUAL_ID:
+				return new CreateObjectActionName2EditPart(view);
+
+			case CallBehaviorAction2EditPart.VISUAL_ID:
+				return new CallBehaviorAction2EditPart(view);
+
+			case CallBehaviorActionName2EditPart.VISUAL_ID:
+				return new CallBehaviorActionName2EditPart(view);
+
+			case CallOperationAction2EditPart.VISUAL_ID:
+				return new CallOperationAction2EditPart(view);
+
+			case CallOperationActionName2EditPart.VISUAL_ID:
+				return new CallOperationActionName2EditPart(view);
+
+			case ForkNode2EditPart.VISUAL_ID:
+				return new ForkNode2EditPart(view);
+
+			case JoinNode2EditPart.VISUAL_ID:
+				return new JoinNode2EditPart(view);
+
+			case AddStructuralFeatureValueAction2EditPart.VISUAL_ID:
+				return new AddStructuralFeatureValueAction2EditPart(view);
+
+			case AddStructuralFeatureValueActionName2EditPart.VISUAL_ID:
+				return new AddStructuralFeatureValueActionName2EditPart(view);
+
+			case DataStoreNode2EditPart.VISUAL_ID:
+				return new DataStoreNode2EditPart(view);
+
+			case CentralBufferNode2EditPart.VISUAL_ID:
+				return new CentralBufferNode2EditPart(view);
+
+			case StructuredActivityNodeStructuredActivityContentPaneCompartmentEditPart.VISUAL_ID:
+				return new StructuredActivityNodeStructuredActivityContentPaneCompartmentEditPart(view);
+
+			case StructuredActivityNodeStructuredActivityContentPaneCompartment2EditPart.VISUAL_ID:
+				return new StructuredActivityNodeStructuredActivityContentPaneCompartment2EditPart(view);
+
 			case ControlFlowEditPart.VISUAL_ID:
 				return new ControlFlowEditPart(view);
+
 			case ObjectFlowEditPart.VISUAL_ID:
 				return new ObjectFlowEditPart(view);
 			}
@@ -188,8 +247,7 @@ public class UMLEditPartFactory implements EditPartFactory {
 		if (source.getFigure() instanceof WrapLabel)
 			return new TextCellEditorLocator((WrapLabel) source.getFigure());
 		else {
-			IFigure figure = source.getFigure();
-			return new LabelCellEditorLocator((Label) figure);
+			return new LabelCellEditorLocator((Label) source.getFigure());
 		}
 	}
 
@@ -207,7 +265,6 @@ public class UMLEditPartFactory implements EditPartFactory {
 		 * @generated
 		 */
 		public TextCellEditorLocator(WrapLabel wrapLabel) {
-			super();
 			this.wrapLabel = wrapLabel;
 		}
 
@@ -225,16 +282,15 @@ public class UMLEditPartFactory implements EditPartFactory {
 			Text text = (Text) celleditor.getControl();
 			Rectangle rect = getWrapLabel().getTextBounds().getCopy();
 			getWrapLabel().translateToAbsolute(rect);
-
-			if (getWrapLabel().isTextWrapped() && getWrapLabel().getText().length() > 0)
-				rect.setSize(new Dimension(text.computeSize(rect.width, SWT.DEFAULT)));
-			else {
+			if (getWrapLabel().isTextWrapped() && getWrapLabel().getText().length() > 0) {
+				rect.setSize(new Dimension(text.computeSize(rect.width, org.eclipse.swt.SWT.DEFAULT)));
+			} else {
 				int avr = FigureUtilities.getFontMetrics(text.getFont()).getAverageCharWidth();
-				rect.setSize(new Dimension(text.computeSize(SWT.DEFAULT, SWT.DEFAULT)).expand(avr * 2, 0));
+				rect.setSize(new Dimension(text.computeSize(org.eclipse.swt.SWT.DEFAULT, org.eclipse.swt.SWT.DEFAULT)).expand(avr * 2, 0));
 			}
-
-			if (!rect.equals(new Rectangle(text.getBounds())))
+			if (!rect.equals(new Rectangle(text.getBounds()))) {
 				text.setBounds(rect.x, rect.y, rect.width, rect.height);
+			}
 		}
 
 	}
@@ -270,12 +326,11 @@ public class UMLEditPartFactory implements EditPartFactory {
 			Text text = (Text) celleditor.getControl();
 			Rectangle rect = getLabel().getTextBounds().getCopy();
 			getLabel().translateToAbsolute(rect);
-
 			int avr = FigureUtilities.getFontMetrics(text.getFont()).getAverageCharWidth();
-			rect.setSize(new Dimension(text.computeSize(SWT.DEFAULT, SWT.DEFAULT)).expand(avr * 2, 0));
-
-			if (!rect.equals(new Rectangle(text.getBounds())))
+			rect.setSize(new Dimension(text.computeSize(org.eclipse.swt.SWT.DEFAULT, org.eclipse.swt.SWT.DEFAULT)).expand(avr * 2, 0));
+			if (!rect.equals(new Rectangle(text.getBounds()))) {
 				text.setBounds(rect.x, rect.y, rect.width, rect.height);
+			}
 		}
 	}
 }

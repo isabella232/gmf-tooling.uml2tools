@@ -1,9 +1,8 @@
 package org.eclipse.uml2.diagram.activity.edit.parts;
 
+import org.eclipse.gmf.runtime.diagram.ui.editparts.DiagramEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles;
 import org.eclipse.gmf.runtime.notation.View;
-import org.eclipse.gmf.runtime.diagram.ui.editparts.DiagramEditPart;
-
 import org.eclipse.uml2.diagram.activity.edit.policies.ActivityCanonicalEditPolicy;
 import org.eclipse.uml2.diagram.activity.edit.policies.ActivityItemSemanticEditPolicy;
 
@@ -36,6 +35,5 @@ public class ActivityEditPart extends DiagramEditPart {
 		super.createDefaultEditPolicies();
 		installEditPolicy(EditPolicyRoles.SEMANTIC_ROLE, new ActivityItemSemanticEditPolicy());
 		installEditPolicy(EditPolicyRoles.CANONICAL_ROLE, new ActivityCanonicalEditPolicy());
-
 	}
 }
