@@ -26,6 +26,19 @@ public class UMLPaletteFactory {
 	}
 
 	/**
+	 * Creates "Profiles" palette tool group
+	 * @generated
+	 */
+	private PaletteContainer createProfiles1Group() {
+		PaletteGroup paletteContainer = new PaletteGroup(UMLDiagramEditorPlugin.getString("Profiles1Group.title")); //$NON-NLS-1$
+		paletteContainer.add(createProfile1CreationTool());
+		paletteContainer.add(createStereotype2CreationTool());
+		paletteContainer.add(createMetaclass3CreationTool());
+		paletteContainer.add(createExtension4CreationTool());
+		return paletteContainer;
+	}
+
+	/**
 	 * Creates "UML" palette tool group
 	 * @generated
 	 */
@@ -40,16 +53,52 @@ public class UMLPaletteFactory {
 	}
 
 	/**
-	 * Creates "Profiles" palette tool group
 	 * @generated
 	 */
-	private PaletteContainer createProfiles1Group() {
-		PaletteGroup paletteContainer = new PaletteGroup(UMLDiagramEditorPlugin.getString("Profiles1Group.title")); //$NON-NLS-1$
-		paletteContainer.add(createProfile1CreationTool());
-		paletteContainer.add(createStereotype2CreationTool());
-		paletteContainer.add(createMetaclass3CreationTool());
-		paletteContainer.add(createExtension4CreationTool());
-		return paletteContainer;
+	private ToolEntry createProfile1CreationTool() {
+		List/*<IElementType>*/types = new ArrayList/*<IElementType>*/(1);
+		types.add(UMLElementTypes.Profile_2002);
+		NodeToolEntry entry = new NodeToolEntry(UMLDiagramEditorPlugin.getString("Profile1CreationTool.title"), UMLDiagramEditorPlugin.getString("Profile1CreationTool.desc"), types); //$NON-NLS-1$ $NON-NLS-2$
+		entry.setSmallIcon(UMLElementTypes.getImageDescriptor(UMLElementTypes.Profile_2002));
+		entry.setLargeIcon(entry.getSmallIcon());
+		return entry;
+	}
+
+	/**
+	 * @generated
+	 */
+	private ToolEntry createStereotype2CreationTool() {
+		List/*<IElementType>*/types = new ArrayList/*<IElementType>*/(2);
+		types.add(UMLElementTypes.Stereotype_2001);
+		types.add(UMLElementTypes.Stereotype_3003);
+		NodeToolEntry entry = new NodeToolEntry(UMLDiagramEditorPlugin.getString("Stereotype2CreationTool.title"), UMLDiagramEditorPlugin.getString("Stereotype2CreationTool.desc"), types); //$NON-NLS-1$ $NON-NLS-2$
+		entry.setSmallIcon(UMLElementTypes.getImageDescriptor(UMLElementTypes.Stereotype_2001));
+		entry.setLargeIcon(entry.getSmallIcon());
+		return entry;
+	}
+
+	/**
+	 * @generated
+	 */
+	private ToolEntry createMetaclass3CreationTool() {
+		List/*<IElementType>*/types = new ArrayList/*<IElementType>*/(1);
+		types.add(UMLElementTypes.ElementImport_2006);
+		NodeToolEntry entry = new NodeToolEntry(UMLDiagramEditorPlugin.getString("Metaclass3CreationTool.title"), UMLDiagramEditorPlugin.getString("Metaclass3CreationTool.desc"), types); //$NON-NLS-1$ $NON-NLS-2$
+		entry.setSmallIcon(UMLElementTypes.getImageDescriptor(UMLElementTypes.ElementImport_2006));
+		entry.setLargeIcon(entry.getSmallIcon());
+		return entry;
+	}
+
+	/**
+	 * @generated
+	 */
+	private ToolEntry createExtension4CreationTool() {
+		List/*<IElementType>*/types = new ArrayList/*<IElementType>*/(1);
+		types.add(UMLElementTypes.Extension_4002);
+		LinkToolEntry entry = new LinkToolEntry(UMLDiagramEditorPlugin.getString("Extension4CreationTool.title"), UMLDiagramEditorPlugin.getString("Extension4CreationTool.desc"), types); //$NON-NLS-1$ $NON-NLS-2$
+		entry.setSmallIcon(UMLElementTypes.getImageDescriptor(UMLElementTypes.Extension_4002));
+		entry.setLargeIcon(entry.getSmallIcon());
+		return entry;
 	}
 
 	/**
@@ -108,55 +157,6 @@ public class UMLPaletteFactory {
 		types.add(UMLElementTypes.EnumerationLiteral_3005);
 		NodeToolEntry entry = new NodeToolEntry(UMLDiagramEditorPlugin.getString("Literal5CreationTool.title"), UMLDiagramEditorPlugin.getString("Literal5CreationTool.desc"), types); //$NON-NLS-1$ $NON-NLS-2$
 		entry.setSmallIcon(UMLElementTypes.getImageDescriptor(UMLElementTypes.EnumerationLiteral_3005));
-		entry.setLargeIcon(entry.getSmallIcon());
-		return entry;
-	}
-
-	/**
-	 * @generated
-	 */
-	private ToolEntry createProfile1CreationTool() {
-		List/*<IElementType>*/types = new ArrayList/*<IElementType>*/(1);
-		types.add(UMLElementTypes.Profile_2002);
-		NodeToolEntry entry = new NodeToolEntry(UMLDiagramEditorPlugin.getString("Profile1CreationTool.title"), UMLDiagramEditorPlugin.getString("Profile1CreationTool.desc"), types); //$NON-NLS-1$ $NON-NLS-2$
-		entry.setSmallIcon(UMLElementTypes.getImageDescriptor(UMLElementTypes.Profile_2002));
-		entry.setLargeIcon(entry.getSmallIcon());
-		return entry;
-	}
-
-	/**
-	 * @generated
-	 */
-	private ToolEntry createStereotype2CreationTool() {
-		List/*<IElementType>*/types = new ArrayList/*<IElementType>*/(2);
-		types.add(UMLElementTypes.Stereotype_2001);
-		types.add(UMLElementTypes.Stereotype_3003);
-		NodeToolEntry entry = new NodeToolEntry(UMLDiagramEditorPlugin.getString("Stereotype2CreationTool.title"), UMLDiagramEditorPlugin.getString("Stereotype2CreationTool.desc"), types); //$NON-NLS-1$ $NON-NLS-2$
-		entry.setSmallIcon(UMLElementTypes.getImageDescriptor(UMLElementTypes.Stereotype_2001));
-		entry.setLargeIcon(entry.getSmallIcon());
-		return entry;
-	}
-
-	/**
-	 * @generated
-	 */
-	private ToolEntry createMetaclass3CreationTool() {
-		List/*<IElementType>*/types = new ArrayList/*<IElementType>*/(1);
-		types.add(UMLElementTypes.ElementImport_2006);
-		NodeToolEntry entry = new NodeToolEntry(UMLDiagramEditorPlugin.getString("Metaclass3CreationTool.title"), UMLDiagramEditorPlugin.getString("Metaclass3CreationTool.desc"), types); //$NON-NLS-1$ $NON-NLS-2$
-		entry.setSmallIcon(UMLElementTypes.getImageDescriptor(UMLElementTypes.ElementImport_2006));
-		entry.setLargeIcon(entry.getSmallIcon());
-		return entry;
-	}
-
-	/**
-	 * @generated
-	 */
-	private ToolEntry createExtension4CreationTool() {
-		List/*<IElementType>*/types = new ArrayList/*<IElementType>*/(1);
-		types.add(UMLElementTypes.Extension_4002);
-		LinkToolEntry entry = new LinkToolEntry(UMLDiagramEditorPlugin.getString("Extension4CreationTool.title"), UMLDiagramEditorPlugin.getString("Extension4CreationTool.desc"), types); //$NON-NLS-1$ $NON-NLS-2$
-		entry.setSmallIcon(UMLElementTypes.getImageDescriptor(UMLElementTypes.Extension_4002));
 		entry.setLargeIcon(entry.getSmallIcon());
 		return entry;
 	}
