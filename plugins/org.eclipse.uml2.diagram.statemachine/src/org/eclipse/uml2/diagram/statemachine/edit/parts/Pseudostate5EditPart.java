@@ -87,15 +87,15 @@ public class Pseudostate5EditPart extends ShapeNodeEditPart {
 	 * @generated
 	 */
 	protected IFigure createNodeShape() {
-		VerticalForkJoinFigure figure = new VerticalForkJoinFigure();
+		ForkJoinFigure figure = new ForkJoinFigure();
 		return primaryShape = figure;
 	}
 
 	/**
 	 * @generated
 	 */
-	public VerticalForkJoinFigure getPrimaryShape() {
-		return (VerticalForkJoinFigure) primaryShape;
+	public ForkJoinFigure getPrimaryShape() {
+		return (ForkJoinFigure) primaryShape;
 	}
 
 	/**
@@ -152,12 +152,12 @@ public class Pseudostate5EditPart extends ShapeNodeEditPart {
 	/**
 	 * @generated
 	 */
-	public class VerticalForkJoinFigure extends RectangleFigure {
+	public class ForkJoinFigure extends RectangleFigure {
 
 		/**
 		 * @generated
 		 */
-		public VerticalForkJoinFigure() {
+		public ForkJoinFigure() {
 			this.setFill(true);
 			this.setFillXOR(false);
 			this.setOutline(true);
