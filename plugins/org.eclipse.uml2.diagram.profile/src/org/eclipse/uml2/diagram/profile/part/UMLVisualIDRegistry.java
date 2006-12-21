@@ -33,7 +33,6 @@ import org.eclipse.uml2.diagram.profile.edit.parts.StereotypeAttributesEditPart;
 import org.eclipse.uml2.diagram.profile.edit.parts.StereotypeConstraintsEditPart;
 import org.eclipse.uml2.diagram.profile.edit.parts.StereotypeEditPart;
 import org.eclipse.uml2.diagram.profile.edit.parts.StereotypeNameEditPart;
-import org.eclipse.uml2.diagram.profile.edit.policies.ProfileCanonicalEditPolicy;
 
 import org.eclipse.uml2.diagram.profile.expressions.UMLAbstractExpression;
 import org.eclipse.uml2.diagram.profile.expressions.UMLOCLFactory;
@@ -146,28 +145,17 @@ public class UMLVisualIDRegistry {
 	}
 
 	/**
-	 * @generated NOT
-	 * 
-	 * We want to additionally show the "main" profile (that one already shown
-	 * as canvas) in the auxiliary Profile3EditPart (that serves as a visual
-	 * container for children imports). To do this, we modified
-	 * CanonicalEditPolicy to add the main profile into the children list. The
-	 * only remaining part is to return correct VID for this special case.
+	 * @generated
+	 *
+	 * We want to additionally show the Canvas Semantical Element in the auxiliary 
+	 * Profile3EditPart (that serves as a visual container for children imports). 
+	 * To do this, we modified CanonicalEditPolicy to add the Canvas semantic Element into the children 
+	 * list. The only remaining part is to return correct VID for this special case.
 	 * 
 	 * @see ProfileCanonicalEditPolicy#getSemanticChildrenList
+	 *
 	 */
 	public static int getNodeVisualID(View containerView, EObject domainElement, EClass domainElementMetaclass, String semanticHint) {
-		int result = getNodeVisualIDGen(containerView, domainElement, domainElementMetaclass, semanticHint);
-		if (containerView instanceof Diagram && domainElement != null && domainElement.equals(containerView.getElement())) {
-			return Profile3EditPart.VISUAL_ID;
-		}
-		return result;
-	}
-
-	/**
-	 * @generated
-	 */
-	public static int getNodeVisualIDGen(View containerView, EObject domainElement, EClass domainElementMetaclass, String semanticHint) {
 		String containerModelID = getModelID(containerView);
 		if (!ProfileEditPart.MODEL_ID.equals(containerModelID)) {
 			return -1;
@@ -181,6 +169,9 @@ public class UMLVisualIDRegistry {
 			} else {
 				return -1;
 			}
+		}
+		if (containerView instanceof Diagram && domainElement != null && domainElement.equals(containerView.getElement())) {
+			return Profile3EditPart.VISUAL_ID;
 		}
 		int nodeVisualID = semanticHint != null ? getVisualID(semanticHint) : -1;
 		switch (containerVisualID) {

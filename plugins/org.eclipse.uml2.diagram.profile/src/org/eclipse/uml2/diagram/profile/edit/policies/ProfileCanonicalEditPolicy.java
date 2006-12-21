@@ -54,45 +54,21 @@ import org.eclipse.uml2.uml.UMLPackage;
 public class ProfileCanonicalEditPolicy extends CanonicalConnectionEditPolicy {
 
 	/**
-	 * @generated NOT
+	 * @generated
+	 * We have "dummy" TopLevelNode (with vid = 2007). The only purpose 
+	 * for this node is to be a container for children (imports, etc) 
+	 * of the "main" diagram figure (that one shown as Canvas).
 	 * 
-	 * We have "dummy" TopLevelNode (with vid = 2007) defined for child
-	 * profiles. The only purpose for this node is to be a container for
-	 * children (imports, etc) of the "main" profile (that one shown as Canvas).
+	 * The code that replace generated SubstituteWithCanvas children associated 
+	 * with vid=2007 with the "main" instance is below.
 	 * 
-	 * The code that replace generated children associated with vid=2007 with
-	 * the "main" instance is below.
-	 * 
-	 * Also we have modified the UMLVisualIDRegistry#getNodeVisualID() to return
+	 * Also we have modified the VisualIDRegistry#getNodeVisualID() to return
 	 * VID = 2007, for the case when top-level view is created for the same
-	 * "main" profile instance as the canvas view. 
+	 * semantic element as the canvas view. 
 	 * 
-	 * @see UMLVisualIDRegistry
+	 * @see VisualIDRegistry 
 	 */
 	protected List getSemanticChildrenList() {
-		List result = getSemanticChildrenListGen();
-
-		//remove all children associated with Profile3EditPart.VISUAL_ID 
-		EObject modelObject = ((View) getHost().getModel()).getElement();
-		View viewObject = (View) getHost().getModel();
-		for (Iterator it = result.iterator(); it.hasNext();) {
-			EObject nextValue = (EObject) it.next();
-			int nodeVID = UMLVisualIDRegistry.getNodeVisualID(viewObject, nextValue);
-			if (Profile3EditPart.VISUAL_ID == nodeVID) {
-				it.remove();
-			}
-		}
-
-		//add the "main" profile instance instead
-		result.add(modelObject);
-
-		return result;
-	}
-
-	/**
-	 * @generated
-	 */
-	protected List getSemanticChildrenListGen() {
 		List result = new LinkedList();
 		EObject modelObject = ((View) getHost().getModel()).getElement();
 		View viewObject = (View) getHost().getModel();
@@ -114,7 +90,8 @@ public class ProfileCanonicalEditPolicy extends CanonicalConnectionEditPolicy {
 				break;
 			}
 			case Profile3EditPart.VISUAL_ID: {
-				result.add(nextValue);
+				//Don't add generated SubstituteWithCanvas children
+				//result.add(nextValue);
 				break;
 			}
 			}
@@ -133,6 +110,9 @@ public class ProfileCanonicalEditPolicy extends CanonicalConnectionEditPolicy {
 				result.add(nextValue);
 			}
 		}
+
+		// add "main" figure	
+		result.add(modelObject);
 		return result;
 	}
 
