@@ -34,4 +34,16 @@
    <includes
          id="org.eclipse.uml2tools.source"
          version="0.0.0"/>
+
+   <includes
+         id="org.eclipse.uml2.diagram"
+         version="0.0.0"/>
+
+   <includes
+         id="org.eclipse.uml2.diagram.doc"
+         version="0.0.0"/>
+
+   <includes
+         id="org.eclipse.uml2.diagram.source"
+         version="0.0.0"/>
 </feature>

@@ -1,9 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <feature
-      id="org.eclipse.uml2.diagram.examples_feature"
+      id="org.eclipse.uml2tools.doc"
       label="%featureName"
       version="1.0.0.qualifier"
       provider-name="%providerName">
+
+   <url>
+      <update label="%updateSiteName" url="http://download.eclipse.org/modeling/mdt/updates/"/>
+   </url>
 
    <description>
       %description
@@ -17,12 +21,8 @@
       %license
    </license>
 
-   <url>
-      <update label="%updateSiteName" url="http://download.eclipse.org/modeling/mdt/updates/"/>
-   </url>
-
    <plugin
-         id="org.eclipse.uml2.diagram.examples.profile"
+         id="org.eclipse.uml2tools.doc"
          download-size="0"
          install-size="0"
          version="0.0.0"/>
