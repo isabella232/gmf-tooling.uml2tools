@@ -3,7 +3,8 @@
       id="org.eclipse.uml2tools.sdk"
       label="%featureName"
       version="1.0.0.qualifier"
-      provider-name="%providerName">
+      provider-name="%providerName"
+      image="eclipse_update_120.jpg">
 
 	<description url="http://www.eclipse.org/modeling/mdt">
 		%description
@@ -18,11 +19,16 @@
 	</license>
 
 	<url>
-		<update label="%updateSiteName" url="http://download.eclipse.org/modeling/mdt/update-site/releases/site.xml"/>
+		<update label="%updateSiteName" url="http://download.eclipse.org/modeling/mdt/updates/"/>
+     	<discovery label="%updateSiteName" url="http://download.eclipse.org/modeling/mdt/updates/"/>
 	</url>
 	
    <includes
          id="org.eclipse.uml2tools"
+         version="0.0.0"/>
+
+   <includes
+         id="org.eclipse.uml2tools.doc"
          version="0.0.0"/>
 
    <includes
