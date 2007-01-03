@@ -99,22 +99,12 @@ public class UMLCreationWizard extends Wizard implements INewWizard {
 	 * @generated
 	 */
 	public void addPages() {
-		diagramModelFilePage = new UMLCreationWizardPage("DiagramModelFile", getSelection()) { //$NON-NLS-1$
-
-			protected String getExtension() {
-				return "umlprofile_diagram"; //$NON-NLS-1$
-			}
-		};
+		diagramModelFilePage = new UMLCreationWizardPage("DiagramModelFile", getSelection(), "umlprofile_diagram"); //$NON-NLS-1$ //$NON-NLS-2$
 		diagramModelFilePage.setTitle("Create UMLProfile Diagram");
 		diagramModelFilePage.setDescription("Select file that will contain diagram model.");
 		addPage(diagramModelFilePage);
 
-		domainModelFilePage = new UMLCreationWizardPage("DomainModelFile", getSelection()) { //$NON-NLS-1$
-
-			protected String getExtension() {
-				return "profile.uml"; //$NON-NLS-1$
-			}
-		};
+		domainModelFilePage = new UMLCreationWizardPage("DomainModelFile", getSelection(), "profile.uml"); //$NON-NLS-1$ //$NON-NLS-2$
 		domainModelFilePage.setTitle("Create UMLProfile Diagram");
 		domainModelFilePage.setDescription("Select file that will contain domain model.");
 		addPage(domainModelFilePage);
