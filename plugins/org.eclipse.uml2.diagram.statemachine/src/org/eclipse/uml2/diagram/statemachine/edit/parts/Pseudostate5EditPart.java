@@ -166,7 +166,6 @@ public class Pseudostate5EditPart extends ShapeNodeEditPart {
 			this.setLineStyle(Graphics.LINE_SOLID);
 			this.setBackgroundColor(ColorConstants.black);
 			this.setPreferredSize(new Dimension(getMapMode().DPtoLP(4), getMapMode().DPtoLP(50)));
-			this.setMinimumSize(new Dimension(getMapMode().DPtoLP(4), getMapMode().DPtoLP(50)));
 		}
 
 		/**
