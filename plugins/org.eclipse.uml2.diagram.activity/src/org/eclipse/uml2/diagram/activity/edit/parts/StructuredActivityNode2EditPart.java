@@ -122,7 +122,6 @@ public class StructuredActivityNode2EditPart extends ShapeNodeEditPart {
 
 		if (childEditPart instanceof StructuredActivityNodeStructuredActivityContentPaneCompartment2EditPart) {
 			IFigure pane = getPrimaryShape().getFigureStructuredActivityFigure_ContentPane();
-			setupContentPane(pane); // FIXME each comparment should handle his content pane in his own way 
 			pane.remove(((StructuredActivityNodeStructuredActivityContentPaneCompartment2EditPart) childEditPart).getFigure());
 			return true;
 		}

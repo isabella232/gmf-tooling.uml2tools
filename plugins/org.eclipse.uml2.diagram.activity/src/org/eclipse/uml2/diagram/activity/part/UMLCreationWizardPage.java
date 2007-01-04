@@ -16,8 +16,14 @@ public class UMLCreationWizardPage extends WizardNewFileCreationPage {
 	/**
 	 * @generated
 	 */
-	public UMLCreationWizardPage(String pageName, IStructuredSelection selection) {
+	private final String fileExtension;
+
+	/**
+	 * @generated
+	 */
+	public UMLCreationWizardPage(String pageName, IStructuredSelection selection, String fileExtension) {
 		super(pageName, selection);
+		this.fileExtension = fileExtension;
 	}
 
 	/**
@@ -26,7 +32,7 @@ public class UMLCreationWizardPage extends WizardNewFileCreationPage {
 	 * @generated
 	 */
 	protected String getExtension() {
-		return null;
+		return fileExtension;
 	}
 
 	/**

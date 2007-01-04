@@ -87,7 +87,7 @@
 
    <extension point="org.eclipse.core.runtime.preferences">
       <?gmfgen generated="true"?>
-      <initializer class="org.eclipse.uml2.diagram.activity.part.UMLDiagramPreferenceInitializer"/>
+      <initializer class="org.eclipse.uml2.diagram.activity.preferences.DiagramPreferenceInitializer"/>
    </extension>
 
    <extension point="org.eclipse.team.core.fileTypes">
@@ -1205,5 +1205,43 @@
             <input type="org.eclipse.uml2.diagram.activity.navigator.UMLAbstractNavigatorItem"/>
          </propertySection>
       </propertySections>
+   </extension><extension point="org.eclipse.ui.preferencePages">
+      <?gmfgen generated="true"?>
+      <page
+            name="%preferences.general"
+            class="org.eclipse.uml2.diagram.activity.preferences.DiagramGeneralPreferencePage"
+            id="org.eclipse.uml2.diagram.activity.general">
+      </page>
+      <page
+            name="%preferences.appearance"
+            category="org.eclipse.uml2.diagram.activity.general"
+            class="org.eclipse.uml2.diagram.activity.preferences.DiagramAppearancePreferencePage"
+            id="org.eclipse.uml2.diagram.activity.appearance">
+      </page>     
+      <page
+            name="%preferences.connections"
+            category="org.eclipse.uml2.diagram.activity.general"
+            class="org.eclipse.uml2.diagram.activity.preferences.DiagramConnectionsPreferencePage"
+            id="org.eclipse.uml2.diagram.activity.connections">
+      </page>    
+      <page
+            name="%preferences.printing"
+            category="org.eclipse.uml2.diagram.activity.general"
+            class="org.eclipse.uml2.diagram.activity.preferences.DiagramPrintingPreferencePage"
+            id="org.eclipse.uml2.diagram.activity.printing">
+      </page>
+      <page
+            name="%preferences.rulersAndGrid"
+            category="org.eclipse.uml2.diagram.activity.general"
+            class="org.eclipse.uml2.diagram.activity.preferences.DiagramRulersAndGridPreferencePage"
+            id="org.eclipse.uml2.diagram.activity.rulersAndGrid">
+      </page>
+      <page
+            name="%preferences.pathmaps"
+            category="org.eclipse.uml2.diagram.activity.general"
+            class="org.eclipse.gmf.runtime.emf.ui.preferences.PathmapsPreferencePage"
+            id="org.eclipse.uml2.diagram.activity.pathmaps">
+      </page>
    </extension>
+
 </plugin>

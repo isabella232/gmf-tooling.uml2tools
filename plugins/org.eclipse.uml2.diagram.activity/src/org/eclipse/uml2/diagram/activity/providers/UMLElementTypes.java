@@ -29,7 +29,7 @@ import org.eclipse.uml2.uml.UMLPackage;
 /**
  * @generated
  */
-public class UMLElementTypes {
+public class UMLElementTypes extends ElementInitializers {
 
 	/**
 	 * @generated
@@ -145,50 +145,95 @@ public class UMLElementTypes {
 		Object type = hint.getAdapter(IElementType.class);
 		if (elements == null) {
 			elements = new IdentityHashMap();
+
 			elements.put(Activity_1000, UMLPackage.eINSTANCE.getActivity());
-			elements.put(OutputPin_3001, UMLPackage.eINSTANCE.getOutputPin());
-			elements.put(OutputPin_3002, UMLPackage.eINSTANCE.getOutputPin());
-			elements.put(InputPin_3003, UMLPackage.eINSTANCE.getInputPin());
-			elements.put(InputPin_3004, UMLPackage.eINSTANCE.getInputPin());
-			elements.put(InputPin_3005, UMLPackage.eINSTANCE.getInputPin());
-			elements.put(OutputPin_3006, UMLPackage.eINSTANCE.getOutputPin());
-			elements.put(InputPin_3007, UMLPackage.eINSTANCE.getInputPin());
-			elements.put(InputPin_3008, UMLPackage.eINSTANCE.getInputPin());
-			elements.put(StructuredActivityNode_3009, UMLPackage.eINSTANCE.getStructuredActivityNode());
-			elements.put(OpaqueAction_3011, UMLPackage.eINSTANCE.getOpaqueAction());
-			elements.put(AcceptEventAction_3012, UMLPackage.eINSTANCE.getAcceptEventAction());
-			elements.put(AcceptEventAction_3013, UMLPackage.eINSTANCE.getAcceptEventAction());
-			elements.put(ActivityFinalNode_3014, UMLPackage.eINSTANCE.getActivityFinalNode());
-			elements.put(DecisionNode_3015, UMLPackage.eINSTANCE.getDecisionNode());
-			elements.put(FlowFinalNode_3016, UMLPackage.eINSTANCE.getFlowFinalNode());
-			elements.put(Pin_3017, UMLPackage.eINSTANCE.getPin());
-			elements.put(CreateObjectAction_3018, UMLPackage.eINSTANCE.getCreateObjectAction());
-			elements.put(CallBehaviorAction_3019, UMLPackage.eINSTANCE.getCallBehaviorAction());
-			elements.put(CallOperationAction_3020, UMLPackage.eINSTANCE.getCallOperationAction());
-			elements.put(ForkNode_3021, UMLPackage.eINSTANCE.getForkNode());
-			elements.put(JoinNode_3022, UMLPackage.eINSTANCE.getJoinNode());
-			elements.put(AddStructuralFeatureValueAction_3023, UMLPackage.eINSTANCE.getAddStructuralFeatureValueAction());
-			elements.put(DataStoreNode_3024, UMLPackage.eINSTANCE.getDataStoreNode());
-			elements.put(CentralBufferNode_3025, UMLPackage.eINSTANCE.getCentralBufferNode());
+
 			elements.put(AcceptEventAction_2001, UMLPackage.eINSTANCE.getAcceptEventAction());
+
 			elements.put(AcceptEventAction_2002, UMLPackage.eINSTANCE.getAcceptEventAction());
+
 			elements.put(ActivityFinalNode_2003, UMLPackage.eINSTANCE.getActivityFinalNode());
+
 			elements.put(DecisionNode_2004, UMLPackage.eINSTANCE.getDecisionNode());
+
 			elements.put(MergeNode_2005, UMLPackage.eINSTANCE.getMergeNode());
+
 			elements.put(InitialNode_2006, UMLPackage.eINSTANCE.getInitialNode());
+
 			elements.put(DataStoreNode_2008, UMLPackage.eINSTANCE.getDataStoreNode());
+
 			elements.put(CentralBufferNode_2009, UMLPackage.eINSTANCE.getCentralBufferNode());
+
 			elements.put(OpaqueAction_2010, UMLPackage.eINSTANCE.getOpaqueAction());
+
 			elements.put(FlowFinalNode_2011, UMLPackage.eINSTANCE.getFlowFinalNode());
+
 			elements.put(ForkNode_2012, UMLPackage.eINSTANCE.getForkNode());
+
 			elements.put(JoinNode_2013, UMLPackage.eINSTANCE.getJoinNode());
+
 			elements.put(Pin_2014, UMLPackage.eINSTANCE.getPin());
+
 			elements.put(CreateObjectAction_2015, UMLPackage.eINSTANCE.getCreateObjectAction());
+
 			elements.put(AddStructuralFeatureValueAction_2016, UMLPackage.eINSTANCE.getAddStructuralFeatureValueAction());
+
 			elements.put(CallBehaviorAction_2017, UMLPackage.eINSTANCE.getCallBehaviorAction());
+
 			elements.put(CallOperationAction_2018, UMLPackage.eINSTANCE.getCallOperationAction());
+
 			elements.put(StructuredActivityNode_2007, UMLPackage.eINSTANCE.getStructuredActivityNode());
+
+			elements.put(OutputPin_3001, UMLPackage.eINSTANCE.getOutputPin());
+
+			elements.put(OutputPin_3002, UMLPackage.eINSTANCE.getOutputPin());
+
+			elements.put(InputPin_3003, UMLPackage.eINSTANCE.getInputPin());
+
+			elements.put(InputPin_3004, UMLPackage.eINSTANCE.getInputPin());
+
+			elements.put(InputPin_3005, UMLPackage.eINSTANCE.getInputPin());
+
+			elements.put(OutputPin_3006, UMLPackage.eINSTANCE.getOutputPin());
+
+			elements.put(InputPin_3007, UMLPackage.eINSTANCE.getInputPin());
+
+			elements.put(InputPin_3008, UMLPackage.eINSTANCE.getInputPin());
+
+			elements.put(StructuredActivityNode_3009, UMLPackage.eINSTANCE.getStructuredActivityNode());
+
+			elements.put(OpaqueAction_3011, UMLPackage.eINSTANCE.getOpaqueAction());
+
+			elements.put(AcceptEventAction_3012, UMLPackage.eINSTANCE.getAcceptEventAction());
+
+			elements.put(AcceptEventAction_3013, UMLPackage.eINSTANCE.getAcceptEventAction());
+
+			elements.put(ActivityFinalNode_3014, UMLPackage.eINSTANCE.getActivityFinalNode());
+
+			elements.put(DecisionNode_3015, UMLPackage.eINSTANCE.getDecisionNode());
+
+			elements.put(FlowFinalNode_3016, UMLPackage.eINSTANCE.getFlowFinalNode());
+
+			elements.put(Pin_3017, UMLPackage.eINSTANCE.getPin());
+
+			elements.put(CreateObjectAction_3018, UMLPackage.eINSTANCE.getCreateObjectAction());
+
+			elements.put(CallBehaviorAction_3019, UMLPackage.eINSTANCE.getCallBehaviorAction());
+
+			elements.put(CallOperationAction_3020, UMLPackage.eINSTANCE.getCallOperationAction());
+
+			elements.put(ForkNode_3021, UMLPackage.eINSTANCE.getForkNode());
+
+			elements.put(JoinNode_3022, UMLPackage.eINSTANCE.getJoinNode());
+
+			elements.put(AddStructuralFeatureValueAction_3023, UMLPackage.eINSTANCE.getAddStructuralFeatureValueAction());
+
+			elements.put(DataStoreNode_3024, UMLPackage.eINSTANCE.getDataStoreNode());
+
+			elements.put(CentralBufferNode_3025, UMLPackage.eINSTANCE.getCentralBufferNode());
+
 			elements.put(ControlFlow_4001, UMLPackage.eINSTANCE.getControlFlow());
+
 			elements.put(ObjectFlow_4002, UMLPackage.eINSTANCE.getObjectFlow());
 		}
 		return (ENamedElement) elements.get(type);
@@ -438,6 +483,24 @@ public class UMLElementTypes {
 		if (KNOWN_ELEMENT_TYPES == null) {
 			KNOWN_ELEMENT_TYPES = new HashSet();
 			KNOWN_ELEMENT_TYPES.add(Activity_1000);
+			KNOWN_ELEMENT_TYPES.add(AcceptEventAction_2001);
+			KNOWN_ELEMENT_TYPES.add(AcceptEventAction_2002);
+			KNOWN_ELEMENT_TYPES.add(ActivityFinalNode_2003);
+			KNOWN_ELEMENT_TYPES.add(DecisionNode_2004);
+			KNOWN_ELEMENT_TYPES.add(MergeNode_2005);
+			KNOWN_ELEMENT_TYPES.add(InitialNode_2006);
+			KNOWN_ELEMENT_TYPES.add(DataStoreNode_2008);
+			KNOWN_ELEMENT_TYPES.add(CentralBufferNode_2009);
+			KNOWN_ELEMENT_TYPES.add(OpaqueAction_2010);
+			KNOWN_ELEMENT_TYPES.add(FlowFinalNode_2011);
+			KNOWN_ELEMENT_TYPES.add(ForkNode_2012);
+			KNOWN_ELEMENT_TYPES.add(JoinNode_2013);
+			KNOWN_ELEMENT_TYPES.add(Pin_2014);
+			KNOWN_ELEMENT_TYPES.add(CreateObjectAction_2015);
+			KNOWN_ELEMENT_TYPES.add(AddStructuralFeatureValueAction_2016);
+			KNOWN_ELEMENT_TYPES.add(CallBehaviorAction_2017);
+			KNOWN_ELEMENT_TYPES.add(CallOperationAction_2018);
+			KNOWN_ELEMENT_TYPES.add(StructuredActivityNode_2007);
 			KNOWN_ELEMENT_TYPES.add(OutputPin_3001);
 			KNOWN_ELEMENT_TYPES.add(OutputPin_3002);
 			KNOWN_ELEMENT_TYPES.add(InputPin_3003);
@@ -462,194 +525,9 @@ public class UMLElementTypes {
 			KNOWN_ELEMENT_TYPES.add(AddStructuralFeatureValueAction_3023);
 			KNOWN_ELEMENT_TYPES.add(DataStoreNode_3024);
 			KNOWN_ELEMENT_TYPES.add(CentralBufferNode_3025);
-			KNOWN_ELEMENT_TYPES.add(AcceptEventAction_2001);
-			KNOWN_ELEMENT_TYPES.add(AcceptEventAction_2002);
-			KNOWN_ELEMENT_TYPES.add(ActivityFinalNode_2003);
-			KNOWN_ELEMENT_TYPES.add(DecisionNode_2004);
-			KNOWN_ELEMENT_TYPES.add(MergeNode_2005);
-			KNOWN_ELEMENT_TYPES.add(InitialNode_2006);
-			KNOWN_ELEMENT_TYPES.add(DataStoreNode_2008);
-			KNOWN_ELEMENT_TYPES.add(CentralBufferNode_2009);
-			KNOWN_ELEMENT_TYPES.add(OpaqueAction_2010);
-			KNOWN_ELEMENT_TYPES.add(FlowFinalNode_2011);
-			KNOWN_ELEMENT_TYPES.add(ForkNode_2012);
-			KNOWN_ELEMENT_TYPES.add(JoinNode_2013);
-			KNOWN_ELEMENT_TYPES.add(Pin_2014);
-			KNOWN_ELEMENT_TYPES.add(CreateObjectAction_2015);
-			KNOWN_ELEMENT_TYPES.add(AddStructuralFeatureValueAction_2016);
-			KNOWN_ELEMENT_TYPES.add(CallBehaviorAction_2017);
-			KNOWN_ELEMENT_TYPES.add(CallOperationAction_2018);
-			KNOWN_ELEMENT_TYPES.add(StructuredActivityNode_2007);
 			KNOWN_ELEMENT_TYPES.add(ControlFlow_4001);
 			KNOWN_ELEMENT_TYPES.add(ObjectFlow_4002);
 		}
 		return KNOWN_ELEMENT_TYPES.contains(elementType);
 	}
-
-	/**
-	 * @generated
-	 */
-	public static class Initializers {
-
-		/**
-		 * @generated
-		 */
-		public static final IObjectInitializer AcceptEventAction_2002 = new ObjectInitializer(UMLPackage.eINSTANCE.getAcceptEventAction()) {
-
-			protected void init() {
-				add(createExpressionFeatureInitializer(UMLPackage.eINSTANCE.getAcceptEventAction_Trigger(), new UMLAbstractExpression(UMLPackage.eINSTANCE.getAcceptEventAction()) {
-
-					protected Object doEvaluate(Object context, Map env) {
-						AcceptEventAction self = (AcceptEventAction) context;
-						return Java.initAcceptTimeEventActionTrigger(self);
-					}
-				}));
-			}
-		}; // AcceptEventAction_2002 ObjectInitializer
-
-		/**
-		 * @generated
-		 */
-		public static final IObjectInitializer AcceptEventAction_3013 = new ObjectInitializer(UMLPackage.eINSTANCE.getAcceptEventAction()) {
-
-			protected void init() {
-				add(createExpressionFeatureInitializer(UMLPackage.eINSTANCE.getAcceptEventAction_Trigger(), new UMLAbstractExpression(UMLPackage.eINSTANCE.getAcceptEventAction()) {
-
-					protected Object doEvaluate(Object context, Map env) {
-						AcceptEventAction self = (AcceptEventAction) context;
-						return Java.initAcceptTimeEventActionTrigger(self);
-					}
-				}));
-			}
-		}; // AcceptEventAction_3013 ObjectInitializer
-
-		/** 
-		 * @generated
-		 */
-		private Initializers() {
-		}
-
-		/** 
-		 * @generated
-		 */
-		public static interface IObjectInitializer {
-
-			/** 
-			 * @generated
-			 */
-			public void init(EObject instance);
-		}
-
-		/** 
-		 * @generated
-		 */
-		public static abstract class ObjectInitializer implements IObjectInitializer {
-
-			/** 
-			 * @generated
-			 */
-			final EClass element;
-
-			/** 
-			 * @generated
-			 */
-			private List featureInitializers = new ArrayList();
-
-			/** 
-			 * @generated
-			 */
-			ObjectInitializer(EClass element) {
-				this.element = element;
-				init();
-			}
-
-			/**
-			 * @generated
-			 */
-			protected abstract void init();
-
-			/** 
-			 * @generated
-			 */
-			protected final IFeatureInitializer add(IFeatureInitializer initializer) {
-				featureInitializers.add(initializer);
-				return initializer;
-			}
-
-			/** 
-			 * @generated
-			 */
-			public void init(EObject instance) {
-				for (Iterator it = featureInitializers.iterator(); it.hasNext();) {
-					IFeatureInitializer nextExpr = (IFeatureInitializer) it.next();
-					try {
-						nextExpr.init(instance);
-					} catch (RuntimeException e) {
-						UMLDiagramEditorPlugin.getInstance().logError("Feature initialization failed", e); //$NON-NLS-1$						
-					}
-				}
-			}
-		} // end of ObjectInitializer
-
-		/** 
-		 * @generated
-		 */
-		interface IFeatureInitializer {
-
-			/**
-			 * @generated
-			 */
-			void init(EObject contextInstance);
-		}
-
-		/**
-		 * @generated
-		 */
-		static IFeatureInitializer createNewElementFeatureInitializer(EStructuralFeature initFeature, ObjectInitializer[] newObjectInitializers) {
-			final EStructuralFeature feature = initFeature;
-			final ObjectInitializer[] initializers = newObjectInitializers;
-			return new IFeatureInitializer() {
-
-				public void init(EObject contextInstance) {
-					for (int i = 0; i < initializers.length; i++) {
-						EObject newInstance = initializers[i].element.getEPackage().getEFactoryInstance().create(initializers[i].element);
-						if (feature.isMany()) {
-							((Collection) contextInstance.eGet(feature)).add(newInstance);
-						} else {
-							contextInstance.eSet(feature, newInstance);
-						}
-						initializers[i].init(newInstance);
-					}
-				}
-			};
-		}
-
-		/**
-		 * @generated
-		 */
-		static IFeatureInitializer createExpressionFeatureInitializer(EStructuralFeature initFeature, UMLAbstractExpression valueExpression) {
-			final EStructuralFeature feature = initFeature;
-			final UMLAbstractExpression expression = valueExpression;
-			return new IFeatureInitializer() {
-
-				public void init(EObject contextInstance) {
-					expression.assignTo(feature, contextInstance);
-				}
-			};
-		}
-
-		/** 
-		 * @generated
-		 */
-		static class Java {
-
-			/**
-			 * @generated NOT
-			 */
-			private static EList initAcceptTimeEventActionTrigger(AcceptEventAction self) {
-				new AcceptEventAction_2002_Initializer().init(self);
-				return new BasicEList();
-			}
-		} //Java
-	} // end of Initializers
 }
