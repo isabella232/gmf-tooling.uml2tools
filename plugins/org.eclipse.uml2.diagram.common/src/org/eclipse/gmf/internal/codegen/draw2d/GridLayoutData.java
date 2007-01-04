@@ -379,28 +379,31 @@ public GridLayoutData (int width, int height) {
     this.heightHint = height;
 }
 
-Dimension computeSize (IFigure figure, boolean flushCache) {
+void computeSize (IFigure figure, boolean flushCache) {
     if (cacheWidth != -1 && cacheHeight != -1) {
-        return new Dimension (cacheWidth, cacheHeight);
+    	return;
     }
     for (int i = 0; i < cacheIndex + 1; i++) {
         if (cache [i][0] == widthHint && cache [i][1] == heightHint) {
             cacheWidth = cache [i][2];
             cacheHeight = cache [i][3];
-            return new Dimension (cacheWidth, cacheHeight);
+            return;
         }
     }
 
     Dimension size = figure.getPreferredSize(widthHint,heightHint);
-    if (widthHint!=-1) size.width = widthHint;
-    if (heightHint!=-1) size.height = heightHint;    
+    /*
+    [#168950] Do not change figure's preferred size which is taken by reference 
+		if (widthHint!=-1) size.width = widthHint;
+		if (heightHint!=-1) size.height = heightHint;
+	*/
 
     if (cacheIndex < cache.length - 1) cacheIndex++;
     cache [cacheIndex][0] = widthHint;
     cache [cacheIndex][1] = heightHint;
-    cacheWidth = cache [cacheIndex][2] = size.width;
-    cacheHeight = cache [cacheIndex][3] = size.height;
-    return size;
+	//[#168950] 
+    cacheWidth = cache [cacheIndex][2] = (widthHint != -1 ? widthHint : size.width);
+    cacheHeight = cache [cacheIndex][3] = (heightHint != -1 ? heightHint: size.height);
 }
 
 
