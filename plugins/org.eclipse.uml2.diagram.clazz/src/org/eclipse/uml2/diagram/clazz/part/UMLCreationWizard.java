@@ -5,13 +5,13 @@ import java.lang.reflect.InvocationTargetException;
 import org.eclipse.core.runtime.CoreException;
 import org.eclipse.core.runtime.IProgressMonitor;
 import org.eclipse.emf.ecore.resource.Resource;
-import org.eclipse.emf.common.util.URI;
 import org.eclipse.jface.dialogs.ErrorDialog;
 import org.eclipse.jface.operation.IRunnableWithProgress;
 import org.eclipse.jface.viewers.IStructuredSelection;
 import org.eclipse.jface.wizard.Wizard;
 import org.eclipse.ui.INewWizard;
 import org.eclipse.ui.IWorkbench;
+import org.eclipse.ui.PartInitException;
 import org.eclipse.ui.actions.WorkspaceModifyOperation;
 
 /**
@@ -32,7 +32,12 @@ public class UMLCreationWizard extends Wizard implements INewWizard {
 	/**
 	 * @generated
 	 */
-	protected UMLCreationWizardPage page;
+	protected UMLCreationWizardPage diagramModelFilePage;
+
+	/**
+	 * @generated
+	 */
+	protected UMLCreationWizardPage domainModelFilePage;
 
 	/**
 	 * @generated
@@ -94,10 +99,15 @@ public class UMLCreationWizard extends Wizard implements INewWizard {
 	 * @generated
 	 */
 	public void addPages() {
-		page = new UMLCreationWizardPage("CreationWizardPage", getSelection()); //$NON-NLS-1$
-		page.setTitle("Create UMLClass Diagram");
-		page.setDescription("Create a new UMLClass diagram.");
-		addPage(page);
+		diagramModelFilePage = new UMLCreationWizardPage("DiagramModelFile", getSelection(), "umlclass_diagram"); //$NON-NLS-1$ //$NON-NLS-2$
+		diagramModelFilePage.setTitle("Create UMLClass Diagram");
+		diagramModelFilePage.setDescription("Select file that will contain diagram model.");
+		addPage(diagramModelFilePage);
+
+		domainModelFilePage = new UMLCreationWizardPage("DomainModelFile", getSelection(), "uml"); //$NON-NLS-1$ //$NON-NLS-2$
+		domainModelFilePage.setTitle("Create UMLClass Diagram");
+		domainModelFilePage.setDescription("Select file that will contain domain model.");
+		addPage(domainModelFilePage);
 	}
 
 	/**
@@ -107,9 +117,13 @@ public class UMLCreationWizard extends Wizard implements INewWizard {
 		IRunnableWithProgress op = new WorkspaceModifyOperation(null) {
 
 			protected void execute(IProgressMonitor monitor) throws CoreException, InterruptedException {
-				diagram = UMLDiagramEditorUtil.createDiagram(page.getContainerFullPath(), page.getFileName(), monitor);
+				diagram = UMLDiagramEditorUtil.createDiagram(diagramModelFilePage.getURI(), domainModelFilePage.getURI(), monitor);
 				if (isOpenNewlyCreatedDiagramEditor() && diagram != null) {
-					UMLDiagramEditorUtil.openDiagram(diagram);
+					try {
+						UMLDiagramEditorUtil.openDiagram(diagram);
+					} catch (PartInitException e) {
+						ErrorDialog.openError(getContainer().getShell(), "Error opening diagram editor", null, e.getStatus());
+					}
 				}
 			}
 		};

@@ -45,6 +45,11 @@ public abstract class UMLAbstractExpression {
 	/**
 	 * @generated
 	 */
+	private Map env;
+
+	/**
+	 * @generated
+	 */
 	private IStatus status = Status.OK_STATUS;
 
 	/**
@@ -60,6 +65,7 @@ public abstract class UMLAbstractExpression {
 	protected UMLAbstractExpression(String body, EClassifier context, Map env) {
 		this.body = body;
 		this.context = context;
+		this.env = env;
 	}
 
 	/**
@@ -122,6 +128,13 @@ public abstract class UMLAbstractExpression {
 	 */
 	public EClassifier context() {
 		return context;
+	}
+
+	/**
+	 * @generated
+	 */
+	public Map environment() {
+		return env;
 	}
 
 	/**

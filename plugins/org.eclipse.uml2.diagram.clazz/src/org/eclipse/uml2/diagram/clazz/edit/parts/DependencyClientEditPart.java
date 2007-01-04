@@ -1,15 +1,13 @@
 package org.eclipse.uml2.diagram.clazz.edit.parts;
 
-import org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles;
-import org.eclipse.gmf.runtime.notation.View;
+import org.eclipse.draw2d.ColorConstants;
 import org.eclipse.draw2d.Connection;
-
-import org.eclipse.gef.EditPolicy;
-
+import org.eclipse.draw2d.Graphics;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.ConnectionNodeEditPart;
-
+import org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles;
+import org.eclipse.gmf.runtime.draw2d.ui.figures.PolylineConnectionEx;
+import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.uml2.diagram.clazz.edit.policies.DependencyClientItemSemanticEditPolicy;
-import org.eclipse.uml2.diagram.clazz.edit.policies.UMLReferenceConnectionEditPolicy;
 
 /**
  * @generated
@@ -33,9 +31,7 @@ public class DependencyClientEditPart extends ConnectionNodeEditPart {
 	 */
 	protected void createDefaultEditPolicies() {
 		super.createDefaultEditPolicies();
-		installEditPolicy(EditPolicy.CONNECTION_ROLE, new UMLReferenceConnectionEditPolicy());
 		installEditPolicy(EditPolicyRoles.SEMANTIC_ROLE, new DependencyClientItemSemanticEditPolicy());
-
 	}
 
 	/**
@@ -47,13 +43,14 @@ public class DependencyClientEditPart extends ConnectionNodeEditPart {
 	 * @generated
 	 */
 	protected Connection createConnectionFigure() {
+
 		return new Dependency_NoArrow_Polyline();
 	}
 
 	/**
 	 * @generated
 	 */
-	public class Dependency_NoArrow_Polyline extends org.eclipse.gmf.runtime.draw2d.ui.figures.PolylineConnectionEx {
+	public class Dependency_NoArrow_Polyline extends PolylineConnectionEx {
 
 		/**
 		 * @generated
@@ -64,8 +61,8 @@ public class DependencyClientEditPart extends ConnectionNodeEditPart {
 			this.setOutline(true);
 			this.setOutlineXOR(false);
 			this.setLineWidth(1);
-			this.setLineStyle(org.eclipse.draw2d.Graphics.LINE_DASH);
-			this.setForegroundColor(org.eclipse.draw2d.ColorConstants.lightGray);
+			this.setLineStyle(Graphics.LINE_DASH);
+			this.setForegroundColor(ColorConstants.lightGray);
 
 		}
 

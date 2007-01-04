@@ -1,23 +1,16 @@
 package org.eclipse.uml2.diagram.clazz.part;
 
+import java.util.ArrayList;
 import java.util.List;
+
 import org.eclipse.gef.Tool;
 import org.eclipse.gef.palette.PaletteContainer;
-import org.eclipse.gef.palette.PaletteRoot;
-import org.eclipse.gef.palette.ToolEntry;
-import org.eclipse.jface.resource.ImageDescriptor;
-import java.util.ArrayList;
-
 import org.eclipse.gef.palette.PaletteGroup;
+import org.eclipse.gef.palette.PaletteRoot;
 import org.eclipse.gef.palette.PaletteStack;
-
+import org.eclipse.gef.palette.ToolEntry;
 import org.eclipse.gmf.runtime.diagram.ui.tools.UnspecifiedTypeConnectionTool;
 import org.eclipse.gmf.runtime.diagram.ui.tools.UnspecifiedTypeCreationTool;
-
-import org.eclipse.uml2.diagram.clazz.part.CreateAssociationLinkTool.COMPOSITE;
-import org.eclipse.uml2.diagram.clazz.part.CreateAssociationLinkTool.NONE;
-import org.eclipse.uml2.diagram.clazz.part.CreateAssociationLinkTool.SHARED;
-
 import org.eclipse.uml2.diagram.clazz.providers.UMLElementTypes;
 
 /**
@@ -36,11 +29,12 @@ public class UMLPaletteFactory {
 	}
 
 	/**
+	 * Creates "Nodes" palette tool group
 	 * @generated
 	 */
 	private PaletteContainer createNodes1Group() {
-		PaletteContainer paletteContainer = new PaletteGroup("Nodes");
-		paletteContainer.setDescription("Diagram Nodes");
+		PaletteGroup paletteContainer = new PaletteGroup(UMLDiagramEditorPlugin.getString("Nodes1Group.title")); //$NON-NLS-1$
+		paletteContainer.setDescription(UMLDiagramEditorPlugin.getString("Nodes1Group.desc")); //$NON-NLS-1$
 		paletteContainer.add(createClass1CreationTool());
 		paletteContainer.add(createPackage2CreationTool());
 		paletteContainer.add(createEnumeration3CreationTool());
@@ -53,11 +47,12 @@ public class UMLPaletteFactory {
 	}
 
 	/**
+	 * Creates "Children" palette tool group
 	 * @generated
 	 */
 	private PaletteContainer createChildren2Group() {
-		PaletteContainer paletteContainer = new PaletteGroup("Children");
-		paletteContainer.setDescription("Child Elements of the Diagram Nodes");
+		PaletteGroup paletteContainer = new PaletteGroup(UMLDiagramEditorPlugin.getString("Children2Group.title")); //$NON-NLS-1$
+		paletteContainer.setDescription(UMLDiagramEditorPlugin.getString("Children2Group.desc")); //$NON-NLS-1$
 		paletteContainer.add(createAttribute1CreationTool());
 		paletteContainer.add(createOperation2CreationTool());
 		paletteContainer.add(createValueSpecification3CreationTool());
@@ -67,11 +62,12 @@ public class UMLPaletteFactory {
 	}
 
 	/**
+	 * Creates "Links" palette tool group
 	 * @generated
 	 */
 	private PaletteContainer createLinks3Group() {
-		PaletteContainer paletteContainer = new PaletteGroup("Links");
-		paletteContainer.setDescription("Diagram Links");
+		PaletteGroup paletteContainer = new PaletteGroup(UMLDiagramEditorPlugin.getString("Links3Group.title")); //$NON-NLS-1$
+		paletteContainer.setDescription(UMLDiagramEditorPlugin.getString("Links3Group.desc")); //$NON-NLS-1$
 		paletteContainer.add(createAssociation1Group());
 		paletteContainer.add(createGeneralization2CreationTool());
 		paletteContainer.add(createProvidedInterface3CreationTool());
@@ -85,21 +81,24 @@ public class UMLPaletteFactory {
 	}
 
 	/**
+	 * Creates "Instances" palette tool group
 	 * @generated
 	 */
 	private PaletteContainer createInstances4Group() {
-		PaletteContainer paletteContainer = new PaletteGroup("Instances");
-		paletteContainer.setDescription("Instances");
+		PaletteGroup paletteContainer = new PaletteGroup(UMLDiagramEditorPlugin.getString("Instances4Group.title")); //$NON-NLS-1$
+		paletteContainer.setDescription(UMLDiagramEditorPlugin.getString("Instances4Group.desc")); //$NON-NLS-1$
 		paletteContainer.add(createInstanceSpecification1CreationTool());
 		paletteContainer.add(createSlot2CreationTool());
 		return paletteContainer;
 	}
 
 	/**
+	 * Creates "Association" palette tool group
 	 * @generated
 	 */
 	private PaletteContainer createAssociation1Group() {
-		PaletteContainer paletteContainer = new PaletteStack("Association", "Create Association Link", null);
+		PaletteStack paletteContainer = new PaletteStack(UMLDiagramEditorPlugin.getString("Association1Group.title"), null, null); //$NON-NLS-1$
+		paletteContainer.setDescription(UMLDiagramEditorPlugin.getString("Association1Group.desc")); //$NON-NLS-1$
 		paletteContainer.add(createAssociation1CreationTool());
 		paletteContainer.add(createSharedAggregation2CreationTool());
 		paletteContainer.add(createCompositeAggregation3CreationTool());
@@ -110,488 +109,331 @@ public class UMLPaletteFactory {
 	 * @generated
 	 */
 	private ToolEntry createClass1CreationTool() {
-		ImageDescriptor smallImage;
-		ImageDescriptor largeImage;
-
-		smallImage = UMLElementTypes.getImageDescriptor(UMLElementTypes.Class_3007);
-
-		largeImage = smallImage;
-
-		final List elementTypes = new ArrayList();
-		elementTypes.add(UMLElementTypes.Class_3007);
-		elementTypes.add(UMLElementTypes.Class_2001);
-		elementTypes.add(UMLElementTypes.Class_3003);
-		ToolEntry result = new NodeToolEntry("Class", "Create Class", smallImage, largeImage, elementTypes);
-
-		return result;
+		List/*<IElementType>*/types = new ArrayList/*<IElementType>*/(3);
+		types.add(UMLElementTypes.Class_3007);
+		types.add(UMLElementTypes.Class_2001);
+		types.add(UMLElementTypes.Class_3003);
+		NodeToolEntry entry = new NodeToolEntry(UMLDiagramEditorPlugin.getString("Class1CreationTool.title"), UMLDiagramEditorPlugin.getString("Class1CreationTool.desc"), types); //$NON-NLS-1$ $NON-NLS-2$
+		entry.setSmallIcon(UMLElementTypes.getImageDescriptor(UMLElementTypes.Class_3007));
+		entry.setLargeIcon(entry.getSmallIcon());
+		return entry;
 	}
 
 	/**
 	 * @generated
 	 */
 	private ToolEntry createPackage2CreationTool() {
-		ImageDescriptor smallImage;
-		ImageDescriptor largeImage;
-
-		smallImage = UMLElementTypes.getImageDescriptor(UMLElementTypes.Package_2002);
-
-		largeImage = smallImage;
-
-		final List elementTypes = new ArrayList();
-		elementTypes.add(UMLElementTypes.Package_2002);
-		elementTypes.add(UMLElementTypes.Package_3006);
-		ToolEntry result = new NodeToolEntry("Package", "Create Package", smallImage, largeImage, elementTypes);
-
-		return result;
+		List/*<IElementType>*/types = new ArrayList/*<IElementType>*/(2);
+		types.add(UMLElementTypes.Package_2002);
+		types.add(UMLElementTypes.Package_3006);
+		NodeToolEntry entry = new NodeToolEntry(UMLDiagramEditorPlugin.getString("Package2CreationTool.title"), UMLDiagramEditorPlugin.getString("Package2CreationTool.desc"), types); //$NON-NLS-1$ $NON-NLS-2$
+		entry.setSmallIcon(UMLElementTypes.getImageDescriptor(UMLElementTypes.Package_2002));
+		entry.setLargeIcon(entry.getSmallIcon());
+		return entry;
 	}
 
 	/**
 	 * @generated
 	 */
 	private ToolEntry createEnumeration3CreationTool() {
-		ImageDescriptor smallImage;
-		ImageDescriptor largeImage;
-
-		smallImage = UMLElementTypes.getImageDescriptor(UMLElementTypes.Enumeration_3011);
-
-		largeImage = smallImage;
-
-		final List elementTypes = new ArrayList();
-		elementTypes.add(UMLElementTypes.Enumeration_3011);
-		elementTypes.add(UMLElementTypes.Enumeration_2003);
-		ToolEntry result = new NodeToolEntry("Enumeration", "Create Enumeration", smallImage, largeImage, elementTypes);
-
-		return result;
+		List/*<IElementType>*/types = new ArrayList/*<IElementType>*/(2);
+		types.add(UMLElementTypes.Enumeration_3011);
+		types.add(UMLElementTypes.Enumeration_2003);
+		NodeToolEntry entry = new NodeToolEntry(UMLDiagramEditorPlugin.getString("Enumeration3CreationTool.title"), UMLDiagramEditorPlugin.getString("Enumeration3CreationTool.desc"), types); //$NON-NLS-1$ $NON-NLS-2$
+		entry.setSmallIcon(UMLElementTypes.getImageDescriptor(UMLElementTypes.Enumeration_3011));
+		entry.setLargeIcon(entry.getSmallIcon());
+		return entry;
 	}
 
 	/**
 	 * @generated
 	 */
 	private ToolEntry createDataType4CreationTool() {
-		ImageDescriptor smallImage;
-		ImageDescriptor largeImage;
-
-		smallImage = UMLElementTypes.getImageDescriptor(UMLElementTypes.DataType_3008);
-
-		largeImage = smallImage;
-
-		final List elementTypes = new ArrayList();
-		elementTypes.add(UMLElementTypes.DataType_3008);
-		elementTypes.add(UMLElementTypes.DataType_2004);
-		ToolEntry result = new NodeToolEntry("DataType", "Create DataType", smallImage, largeImage, elementTypes);
-
-		return result;
+		List/*<IElementType>*/types = new ArrayList/*<IElementType>*/(2);
+		types.add(UMLElementTypes.DataType_3008);
+		types.add(UMLElementTypes.DataType_2004);
+		NodeToolEntry entry = new NodeToolEntry(UMLDiagramEditorPlugin.getString("DataType4CreationTool.title"), UMLDiagramEditorPlugin.getString("DataType4CreationTool.desc"), types); //$NON-NLS-1$ $NON-NLS-2$
+		entry.setSmallIcon(UMLElementTypes.getImageDescriptor(UMLElementTypes.DataType_3008));
+		entry.setLargeIcon(entry.getSmallIcon());
+		return entry;
 	}
 
 	/**
 	 * @generated
 	 */
 	private ToolEntry createPrimitiveType5CreationTool() {
-		ImageDescriptor smallImage;
-		ImageDescriptor largeImage;
-
-		smallImage = UMLElementTypes.getImageDescriptor(UMLElementTypes.PrimitiveType_3009);
-
-		largeImage = smallImage;
-
-		final List elementTypes = new ArrayList();
-		elementTypes.add(UMLElementTypes.PrimitiveType_3009);
-		elementTypes.add(UMLElementTypes.PrimitiveType_2005);
-		ToolEntry result = new NodeToolEntry("PrimitiveType", "Create PrimitiveType", smallImage, largeImage, elementTypes);
-
-		return result;
+		List/*<IElementType>*/types = new ArrayList/*<IElementType>*/(2);
+		types.add(UMLElementTypes.PrimitiveType_3009);
+		types.add(UMLElementTypes.PrimitiveType_2005);
+		NodeToolEntry entry = new NodeToolEntry(UMLDiagramEditorPlugin.getString("PrimitiveType5CreationTool.title"), UMLDiagramEditorPlugin.getString("PrimitiveType5CreationTool.desc"), types); //$NON-NLS-1$ $NON-NLS-2$
+		entry.setSmallIcon(UMLElementTypes.getImageDescriptor(UMLElementTypes.PrimitiveType_3009));
+		entry.setLargeIcon(entry.getSmallIcon());
+		return entry;
 	}
 
 	/**
 	 * @generated
 	 */
 	private ToolEntry createConstraint6CreationTool() {
-		ImageDescriptor smallImage;
-		ImageDescriptor largeImage;
-
-		smallImage = UMLElementTypes.getImageDescriptor(UMLElementTypes.Constraint_2006);
-
-		largeImage = smallImage;
-
-		final List elementTypes = new ArrayList();
-		elementTypes.add(UMLElementTypes.Constraint_2006);
-		ToolEntry result = new NodeToolEntry("Constraint", "Create Constraint", smallImage, largeImage, elementTypes);
-
-		return result;
+		List/*<IElementType>*/types = new ArrayList/*<IElementType>*/(1);
+		types.add(UMLElementTypes.Constraint_2006);
+		NodeToolEntry entry = new NodeToolEntry(UMLDiagramEditorPlugin.getString("Constraint6CreationTool.title"), UMLDiagramEditorPlugin.getString("Constraint6CreationTool.desc"), types); //$NON-NLS-1$ $NON-NLS-2$
+		entry.setSmallIcon(UMLElementTypes.getImageDescriptor(UMLElementTypes.Constraint_2006));
+		entry.setLargeIcon(entry.getSmallIcon());
+		return entry;
 	}
 
 	/**
 	 * @generated
 	 */
 	private ToolEntry createAssociationClass7CreationTool() {
-		ImageDescriptor smallImage;
-		ImageDescriptor largeImage;
-
-		smallImage = UMLElementTypes.getImageDescriptor(UMLElementTypes.AssociationClass_3012);
-
-		largeImage = smallImage;
-
-		final List elementTypes = new ArrayList();
-		elementTypes.add(UMLElementTypes.AssociationClass_3012);
-		elementTypes.add(UMLElementTypes.AssociationClass_2007);
-		ToolEntry result = new NodeToolEntry("Association Class", "Create Association Class", smallImage, largeImage, elementTypes);
-
-		return result;
+		List/*<IElementType>*/types = new ArrayList/*<IElementType>*/(2);
+		types.add(UMLElementTypes.AssociationClass_3012);
+		types.add(UMLElementTypes.AssociationClass_2007);
+		NodeToolEntry entry = new NodeToolEntry(UMLDiagramEditorPlugin.getString("AssociationClass7CreationTool.title"), UMLDiagramEditorPlugin.getString("AssociationClass7CreationTool.desc"), types); //$NON-NLS-1$ $NON-NLS-2$
+		entry.setSmallIcon(UMLElementTypes.getImageDescriptor(UMLElementTypes.AssociationClass_3012));
+		entry.setLargeIcon(entry.getSmallIcon());
+		return entry;
 	}
 
 	/**
 	 * @generated
 	 */
 	private ToolEntry createInterface8CreationTool() {
-		ImageDescriptor smallImage;
-		ImageDescriptor largeImage;
-
-		smallImage = UMLElementTypes.getImageDescriptor(UMLElementTypes.Interface_2010);
-
-		largeImage = smallImage;
-
-		final List elementTypes = new ArrayList();
-		elementTypes.add(UMLElementTypes.Interface_2010);
-		ToolEntry result = new NodeToolEntry("Interface", "Create Interface", smallImage, largeImage, elementTypes);
-
-		return result;
+		List/*<IElementType>*/types = new ArrayList/*<IElementType>*/(1);
+		types.add(UMLElementTypes.Interface_2010);
+		NodeToolEntry entry = new NodeToolEntry(UMLDiagramEditorPlugin.getString("Interface8CreationTool.title"), UMLDiagramEditorPlugin.getString("Interface8CreationTool.desc"), types); //$NON-NLS-1$ $NON-NLS-2$
+		entry.setSmallIcon(UMLElementTypes.getImageDescriptor(UMLElementTypes.Interface_2010));
+		entry.setLargeIcon(entry.getSmallIcon());
+		return entry;
 	}
 
 	/**
 	 * @generated
 	 */
 	private ToolEntry createAttribute1CreationTool() {
-		ImageDescriptor smallImage;
-		ImageDescriptor largeImage;
-
-		smallImage = UMLElementTypes.getImageDescriptor(UMLElementTypes.Property_3001);
-
-		largeImage = smallImage;
-
-		final List elementTypes = new ArrayList();
-		elementTypes.add(UMLElementTypes.Property_3001);
-		elementTypes.add(UMLElementTypes.Property_3019);
-		elementTypes.add(UMLElementTypes.Property_3014);
-		elementTypes.add(UMLElementTypes.Property_3021);
-		elementTypes.add(UMLElementTypes.Property_3023);
-		ToolEntry result = new NodeToolEntry("Attribute", "Create Attribute", smallImage, largeImage, elementTypes);
-
-		return result;
+		List/*<IElementType>*/types = new ArrayList/*<IElementType>*/(5);
+		types.add(UMLElementTypes.Property_3001);
+		types.add(UMLElementTypes.Property_3019);
+		types.add(UMLElementTypes.Property_3014);
+		types.add(UMLElementTypes.Property_3021);
+		types.add(UMLElementTypes.Property_3023);
+		NodeToolEntry entry = new NodeToolEntry(UMLDiagramEditorPlugin.getString("Attribute1CreationTool.title"), UMLDiagramEditorPlugin.getString("Attribute1CreationTool.desc"), types); //$NON-NLS-1$ $NON-NLS-2$
+		entry.setSmallIcon(UMLElementTypes.getImageDescriptor(UMLElementTypes.Property_3001));
+		entry.setLargeIcon(entry.getSmallIcon());
+		return entry;
 	}
 
 	/**
 	 * @generated
 	 */
 	private ToolEntry createOperation2CreationTool() {
-		ImageDescriptor smallImage;
-		ImageDescriptor largeImage;
-
-		smallImage = UMLElementTypes.getImageDescriptor(UMLElementTypes.Operation_3002);
-
-		largeImage = smallImage;
-
-		final List elementTypes = new ArrayList();
-		elementTypes.add(UMLElementTypes.Operation_3002);
-		elementTypes.add(UMLElementTypes.Operation_3020);
-		elementTypes.add(UMLElementTypes.Operation_3015);
-		elementTypes.add(UMLElementTypes.Operation_3022);
-		elementTypes.add(UMLElementTypes.Operation_3024);
-		ToolEntry result = new NodeToolEntry("Operation", "Create Operation", smallImage, largeImage, elementTypes);
-
-		return result;
+		List/*<IElementType>*/types = new ArrayList/*<IElementType>*/(5);
+		types.add(UMLElementTypes.Operation_3002);
+		types.add(UMLElementTypes.Operation_3020);
+		types.add(UMLElementTypes.Operation_3015);
+		types.add(UMLElementTypes.Operation_3022);
+		types.add(UMLElementTypes.Operation_3024);
+		NodeToolEntry entry = new NodeToolEntry(UMLDiagramEditorPlugin.getString("Operation2CreationTool.title"), UMLDiagramEditorPlugin.getString("Operation2CreationTool.desc"), types); //$NON-NLS-1$ $NON-NLS-2$
+		entry.setSmallIcon(UMLElementTypes.getImageDescriptor(UMLElementTypes.Operation_3002));
+		entry.setLargeIcon(entry.getSmallIcon());
+		return entry;
 	}
 
 	/**
 	 * @generated
 	 */
 	private ToolEntry createValueSpecification3CreationTool() {
-		ImageDescriptor smallImage;
-		ImageDescriptor largeImage;
-
-		smallImage = UMLElementTypes.getImageDescriptor(UMLElementTypes.LiteralString_3005);
-
-		largeImage = smallImage;
-
-		final List elementTypes = new ArrayList();
-		elementTypes.add(UMLElementTypes.LiteralString_3005);
-		ToolEntry result = new NodeToolEntry("Value Specification", "Create Value Specification", smallImage, largeImage, elementTypes);
-
-		return result;
+		List/*<IElementType>*/types = new ArrayList/*<IElementType>*/(1);
+		types.add(UMLElementTypes.LiteralString_3005);
+		NodeToolEntry entry = new NodeToolEntry(
+				UMLDiagramEditorPlugin.getString("ValueSpecification3CreationTool.title"), UMLDiagramEditorPlugin.getString("ValueSpecification3CreationTool.desc"), types); //$NON-NLS-1$ $NON-NLS-2$
+		entry.setSmallIcon(UMLElementTypes.getImageDescriptor(UMLElementTypes.LiteralString_3005));
+		entry.setLargeIcon(entry.getSmallIcon());
+		return entry;
 	}
 
 	/**
 	 * @generated
 	 */
 	private ToolEntry createEnumLiteral4CreationTool() {
-		ImageDescriptor smallImage;
-		ImageDescriptor largeImage;
-
-		smallImage = UMLElementTypes.getImageDescriptor(UMLElementTypes.EnumerationLiteral_3016);
-
-		largeImage = smallImage;
-
-		final List elementTypes = new ArrayList();
-		elementTypes.add(UMLElementTypes.EnumerationLiteral_3016);
-		ToolEntry result = new NodeToolEntry("Enum Literal", "Create Enum Literal", smallImage, largeImage, elementTypes);
-
-		return result;
+		List/*<IElementType>*/types = new ArrayList/*<IElementType>*/(1);
+		types.add(UMLElementTypes.EnumerationLiteral_3016);
+		NodeToolEntry entry = new NodeToolEntry(UMLDiagramEditorPlugin.getString("EnumLiteral4CreationTool.title"), UMLDiagramEditorPlugin.getString("EnumLiteral4CreationTool.desc"), types); //$NON-NLS-1$ $NON-NLS-2$
+		entry.setSmallIcon(UMLElementTypes.getImageDescriptor(UMLElementTypes.EnumerationLiteral_3016));
+		entry.setLargeIcon(entry.getSmallIcon());
+		return entry;
 	}
 
 	/**
 	 * @generated
 	 */
 	private ToolEntry createPort5CreationTool() {
-		ImageDescriptor smallImage;
-		ImageDescriptor largeImage;
-
-		smallImage = UMLElementTypes.getImageDescriptor(UMLElementTypes.Port_3025);
-
-		largeImage = smallImage;
-
-		final List elementTypes = new ArrayList();
-		elementTypes.add(UMLElementTypes.Port_3025);
-		ToolEntry result = new NodeToolEntry("Port", "Create Port", smallImage, largeImage, elementTypes);
-
-		return result;
+		List/*<IElementType>*/types = new ArrayList/*<IElementType>*/(1);
+		types.add(UMLElementTypes.Port_3025);
+		NodeToolEntry entry = new NodeToolEntry(UMLDiagramEditorPlugin.getString("Port5CreationTool.title"), UMLDiagramEditorPlugin.getString("Port5CreationTool.desc"), types); //$NON-NLS-1$ $NON-NLS-2$
+		entry.setSmallIcon(UMLElementTypes.getImageDescriptor(UMLElementTypes.Port_3025));
+		entry.setLargeIcon(entry.getSmallIcon());
+		return entry;
 	}
 
 	/**
 	 * @generated
 	 */
 	private ToolEntry createGeneralization2CreationTool() {
-		ImageDescriptor smallImage;
-		ImageDescriptor largeImage;
-
-		smallImage = UMLElementTypes.getImageDescriptor(UMLElementTypes.Generalization_4001);
-
-		largeImage = smallImage;
-
-		final List relationshipTypes = new ArrayList();
-		relationshipTypes.add(UMLElementTypes.Generalization_4001);
-		ToolEntry result = new LinkToolEntry("Generalization", "Create Generalization Link", smallImage, largeImage, relationshipTypes);
-
-		return result;
+		List/*<IElementType>*/types = new ArrayList/*<IElementType>*/(1);
+		types.add(UMLElementTypes.Generalization_4001);
+		LinkToolEntry entry = new LinkToolEntry(UMLDiagramEditorPlugin.getString("Generalization2CreationTool.title"), UMLDiagramEditorPlugin.getString("Generalization2CreationTool.desc"), types); //$NON-NLS-1$ $NON-NLS-2$
+		entry.setSmallIcon(UMLElementTypes.getImageDescriptor(UMLElementTypes.Generalization_4001));
+		entry.setLargeIcon(entry.getSmallIcon());
+		return entry;
 	}
 
 	/**
 	 * @generated
 	 */
 	private ToolEntry createProvidedInterface3CreationTool() {
-		ImageDescriptor smallImage;
-		ImageDescriptor largeImage;
-
-		smallImage = UMLElementTypes.getImageDescriptor(UMLElementTypes.InterfaceRealization_4008);
-
-		largeImage = smallImage;
-
-		final List relationshipTypes = new ArrayList();
-		relationshipTypes.add(UMLElementTypes.InterfaceRealization_4008);
-		ToolEntry result = new LinkToolEntry("Provided Interface", "Create Interface Realization", smallImage, largeImage, relationshipTypes);
-
-		return result;
+		List/*<IElementType>*/types = new ArrayList/*<IElementType>*/(1);
+		types.add(UMLElementTypes.InterfaceRealization_4008);
+		LinkToolEntry entry = new LinkToolEntry(
+				UMLDiagramEditorPlugin.getString("ProvidedInterface3CreationTool.title"), UMLDiagramEditorPlugin.getString("ProvidedInterface3CreationTool.desc"), types); //$NON-NLS-1$ $NON-NLS-2$
+		entry.setSmallIcon(UMLElementTypes.getImageDescriptor(UMLElementTypes.InterfaceRealization_4008));
+		entry.setLargeIcon(entry.getSmallIcon());
+		return entry;
 	}
 
 	/**
 	 * @generated
 	 */
 	private ToolEntry createRequiredInterface4CreationTool() {
-		ImageDescriptor smallImage;
-		ImageDescriptor largeImage;
-
-		smallImage = UMLElementTypes.getImageDescriptor(UMLElementTypes.Usage_4009);
-
-		largeImage = smallImage;
-
-		final List relationshipTypes = new ArrayList();
-		relationshipTypes.add(UMLElementTypes.Usage_4009);
-		ToolEntry result = new LinkToolEntry("Required Interface", "Create Usage", smallImage, largeImage, relationshipTypes);
-
-		return result;
+		List/*<IElementType>*/types = new ArrayList/*<IElementType>*/(1);
+		types.add(UMLElementTypes.Usage_4009);
+		LinkToolEntry entry = new LinkToolEntry(
+				UMLDiagramEditorPlugin.getString("RequiredInterface4CreationTool.title"), UMLDiagramEditorPlugin.getString("RequiredInterface4CreationTool.desc"), types); //$NON-NLS-1$ $NON-NLS-2$
+		entry.setSmallIcon(UMLElementTypes.getImageDescriptor(UMLElementTypes.Usage_4009));
+		entry.setLargeIcon(entry.getSmallIcon());
+		return entry;
 	}
 
 	/**
 	 * @generated
 	 */
 	private ToolEntry createDependency5CreationTool() {
-		ImageDescriptor smallImage;
-		ImageDescriptor largeImage;
-
-		smallImage = UMLElementTypes.getImageDescriptor(UMLElementTypes.Dependency_4002);
-
-		largeImage = smallImage;
-
-		final List relationshipTypes = new ArrayList();
-		relationshipTypes.add(UMLElementTypes.Dependency_4002);
-		ToolEntry result = new LinkToolEntry("Dependency", "Create Dependency Link", smallImage, largeImage, relationshipTypes);
-
-		return result;
+		List/*<IElementType>*/types = new ArrayList/*<IElementType>*/(1);
+		types.add(UMLElementTypes.Dependency_4002);
+		LinkToolEntry entry = new LinkToolEntry(UMLDiagramEditorPlugin.getString("Dependency5CreationTool.title"), UMLDiagramEditorPlugin.getString("Dependency5CreationTool.desc"), types); //$NON-NLS-1$ $NON-NLS-2$
+		entry.setSmallIcon(UMLElementTypes.getImageDescriptor(UMLElementTypes.Dependency_4002));
+		entry.setLargeIcon(entry.getSmallIcon());
+		return entry;
 	}
 
 	/**
 	 * @generated
 	 */
 	private ToolEntry createConstrainedElement6CreationTool() {
-		ImageDescriptor smallImage;
-		ImageDescriptor largeImage;
-
-		smallImage = UMLElementTypes.getImageDescriptor(UMLElementTypes.ConstraintConstrainedElement_4004);
-
-		largeImage = smallImage;
-
-		final List relationshipTypes = new ArrayList();
-		relationshipTypes.add(UMLElementTypes.ConstraintConstrainedElement_4004);
-		ToolEntry result = new LinkToolEntry("Constrained Element", "Create Constrained Element Link", smallImage, largeImage, relationshipTypes);
-
-		return result;
+		List/*<IElementType>*/types = new ArrayList/*<IElementType>*/(1);
+		types.add(UMLElementTypes.ConstraintConstrainedElement_4004);
+		LinkToolEntry entry = new LinkToolEntry(
+				UMLDiagramEditorPlugin.getString("ConstrainedElement6CreationTool.title"), UMLDiagramEditorPlugin.getString("ConstrainedElement6CreationTool.desc"), types); //$NON-NLS-1$ $NON-NLS-2$
+		entry.setSmallIcon(UMLElementTypes.getImageDescriptor(UMLElementTypes.ConstraintConstrainedElement_4004));
+		entry.setLargeIcon(entry.getSmallIcon());
+		return entry;
 	}
 
 	/**
 	 * @generated
 	 */
 	private ToolEntry createNAryDependencyTarget7CreationTool() {
-		ImageDescriptor smallImage;
-		ImageDescriptor largeImage;
-
-		smallImage = UMLElementTypes.getImageDescriptor(UMLElementTypes.DependencySupplier_4006);
-
-		largeImage = smallImage;
-
-		final List relationshipTypes = new ArrayList();
-		relationshipTypes.add(UMLElementTypes.DependencySupplier_4006);
-		ToolEntry result = new LinkToolEntry("NAry Dependency Target", "Add NAry Dependency Target", smallImage, largeImage, relationshipTypes);
-
-		return result;
+		List/*<IElementType>*/types = new ArrayList/*<IElementType>*/(1);
+		types.add(UMLElementTypes.DependencySupplier_4006);
+		LinkToolEntry entry = new LinkToolEntry(
+				UMLDiagramEditorPlugin.getString("NAryDependencyTarget7CreationTool.title"), UMLDiagramEditorPlugin.getString("NAryDependencyTarget7CreationTool.desc"), types); //$NON-NLS-1$ $NON-NLS-2$
+		entry.setSmallIcon(UMLElementTypes.getImageDescriptor(UMLElementTypes.DependencySupplier_4006));
+		entry.setLargeIcon(entry.getSmallIcon());
+		return entry;
 	}
 
 	/**
 	 * @generated
 	 */
 	private ToolEntry createNAryDependencySource8CreationTool() {
-		ImageDescriptor smallImage;
-		ImageDescriptor largeImage;
-
-		smallImage = UMLElementTypes.getImageDescriptor(UMLElementTypes.DependencyClient_4007);
-
-		largeImage = smallImage;
-
-		final List relationshipTypes = new ArrayList();
-		relationshipTypes.add(UMLElementTypes.DependencyClient_4007);
-		ToolEntry result = new LinkToolEntry("NAry Dependency Source", "Add NAry Dependency Source", smallImage, largeImage, relationshipTypes);
-
-		return result;
+		List/*<IElementType>*/types = new ArrayList/*<IElementType>*/(1);
+		types.add(UMLElementTypes.DependencyClient_4007);
+		LinkToolEntry entry = new LinkToolEntry(
+				UMLDiagramEditorPlugin.getString("NAryDependencySource8CreationTool.title"), UMLDiagramEditorPlugin.getString("NAryDependencySource8CreationTool.desc"), types); //$NON-NLS-1$ $NON-NLS-2$
+		entry.setSmallIcon(UMLElementTypes.getImageDescriptor(UMLElementTypes.DependencyClient_4007));
+		entry.setLargeIcon(entry.getSmallIcon());
+		return entry;
 	}
 
 	/**
 	 * @generated
 	 */
 	private ToolEntry createAssociationEnd9CreationTool() {
-		ImageDescriptor smallImage;
-		ImageDescriptor largeImage;
-
-		smallImage = UMLElementTypes.getImageDescriptor(UMLElementTypes.Property_4003);
-
-		largeImage = smallImage;
-
-		final List relationshipTypes = new ArrayList();
-		relationshipTypes.add(UMLElementTypes.Property_4003);
-		ToolEntry result = new LinkToolEntry("Association End", "Create Association End Link", smallImage, largeImage, relationshipTypes);
-
-		return result;
+		List/*<IElementType>*/types = new ArrayList/*<IElementType>*/(1);
+		types.add(UMLElementTypes.Property_4003);
+		LinkToolEntry entry = new LinkToolEntry(UMLDiagramEditorPlugin.getString("AssociationEnd9CreationTool.title"), UMLDiagramEditorPlugin.getString("AssociationEnd9CreationTool.desc"), types); //$NON-NLS-1$ $NON-NLS-2$
+		entry.setSmallIcon(UMLElementTypes.getImageDescriptor(UMLElementTypes.Property_4003));
+		entry.setLargeIcon(entry.getSmallIcon());
+		return entry;
 	}
 
 	/**
 	 * @generated
 	 */
 	private ToolEntry createInstanceSpecification1CreationTool() {
-		ImageDescriptor smallImage;
-		ImageDescriptor largeImage;
-
-		smallImage = UMLElementTypes.getImageDescriptor(UMLElementTypes.InstanceSpecification_3013);
-
-		largeImage = smallImage;
-
-		final List elementTypes = new ArrayList();
-		elementTypes.add(UMLElementTypes.InstanceSpecification_3013);
-		elementTypes.add(UMLElementTypes.InstanceSpecification_2008);
-		ToolEntry result = new NodeToolEntry("Instance Specification", "Create Instance Specification", smallImage, largeImage, elementTypes);
-
-		return result;
+		List/*<IElementType>*/types = new ArrayList/*<IElementType>*/(2);
+		types.add(UMLElementTypes.InstanceSpecification_3013);
+		types.add(UMLElementTypes.InstanceSpecification_2008);
+		NodeToolEntry entry = new NodeToolEntry(
+				UMLDiagramEditorPlugin.getString("InstanceSpecification1CreationTool.title"), UMLDiagramEditorPlugin.getString("InstanceSpecification1CreationTool.desc"), types); //$NON-NLS-1$ $NON-NLS-2$
+		entry.setSmallIcon(UMLElementTypes.getImageDescriptor(UMLElementTypes.InstanceSpecification_3013));
+		entry.setLargeIcon(entry.getSmallIcon());
+		return entry;
 	}
 
 	/**
 	 * @generated
 	 */
 	private ToolEntry createSlot2CreationTool() {
-		ImageDescriptor smallImage;
-		ImageDescriptor largeImage;
-
-		smallImage = UMLElementTypes.getImageDescriptor(UMLElementTypes.Slot_3017);
-
-		largeImage = smallImage;
-
-		final List elementTypes = new ArrayList();
-		elementTypes.add(UMLElementTypes.Slot_3017);
-		ToolEntry result = new NodeToolEntry("Slot", "Create Slot", smallImage, largeImage, elementTypes);
-
-		return result;
+		List/*<IElementType>*/types = new ArrayList/*<IElementType>*/(1);
+		types.add(UMLElementTypes.Slot_3017);
+		NodeToolEntry entry = new NodeToolEntry(UMLDiagramEditorPlugin.getString("Slot2CreationTool.title"), UMLDiagramEditorPlugin.getString("Slot2CreationTool.desc"), types); //$NON-NLS-1$ $NON-NLS-2$
+		entry.setSmallIcon(UMLElementTypes.getImageDescriptor(UMLElementTypes.Slot_3017));
+		entry.setLargeIcon(entry.getSmallIcon());
+		return entry;
 	}
 
 	/**
 	 * @generated
 	 */
 	private ToolEntry createAssociation1CreationTool() {
-		ImageDescriptor smallImage;
-		ImageDescriptor largeImage;
-
-		smallImage = UMLElementTypes.getImageDescriptor(UMLElementTypes.Association_4005);
-
-		largeImage = smallImage;
-
-		final List relationshipTypes = new ArrayList();
-		relationshipTypes.add(UMLElementTypes.Association_4005);
-		ToolEntry result = new LinkToolEntry("Association", "Create Association", smallImage, largeImage, relationshipTypes);
-
-		result.setToolClass(NONE.class);
-
-		return result;
+		List/*<IElementType>*/types = new ArrayList/*<IElementType>*/(1);
+		types.add(UMLElementTypes.Association_4005);
+		LinkToolEntry entry = new LinkToolEntry(UMLDiagramEditorPlugin.getString("Association1CreationTool.title"), UMLDiagramEditorPlugin.getString("Association1CreationTool.desc"), types); //$NON-NLS-1$ $NON-NLS-2$
+		entry.setSmallIcon(UMLElementTypes.getImageDescriptor(UMLElementTypes.Association_4005));
+		entry.setLargeIcon(entry.getSmallIcon());
+		entry.setToolClass(CreateAssociationLinkTool.NONE.class);
+		return entry;
 	}
 
 	/**
 	 * @generated
 	 */
 	private ToolEntry createSharedAggregation2CreationTool() {
-		ImageDescriptor smallImage;
-		ImageDescriptor largeImage;
-
-		smallImage = null;
-
-		largeImage = smallImage;
-
-		ToolEntry result = new ToolEntry("Shared Aggregation", "Create Shared Aggregation", smallImage, largeImage) {
-		};
-
-		result.setToolClass(SHARED.class);
-
-		return result;
+		ToolEntry entry = new ToolEntry(UMLDiagramEditorPlugin.getString("SharedAggregation2CreationTool.title"), UMLDiagramEditorPlugin.getString("SharedAggregation2CreationTool.desc"), null, null) {}; //$NON-NLS-1$ $NON-NLS-2$
+		entry.setToolClass(CreateAssociationLinkTool.SHARED.class);
+		return entry;
 	}
 
 	/**
 	 * @generated
 	 */
 	private ToolEntry createCompositeAggregation3CreationTool() {
-		ImageDescriptor smallImage;
-		ImageDescriptor largeImage;
-
-		smallImage = null;
-
-		largeImage = smallImage;
-
-		ToolEntry result = new ToolEntry("Composite Aggregation", "Create Composite Aggregation", smallImage, largeImage) {
-		};
-
-		result.setToolClass(COMPOSITE.class);
-
-		return result;
+		ToolEntry entry = new ToolEntry(
+				UMLDiagramEditorPlugin.getString("CompositeAggregation3CreationTool.title"), UMLDiagramEditorPlugin.getString("CompositeAggregation3CreationTool.desc"), null, null) {}; //$NON-NLS-1$ $NON-NLS-2$
+		entry.setToolClass(CreateAssociationLinkTool.COMPOSITE.class);
+		return entry;
 	}
 
 	/**
@@ -607,8 +449,8 @@ public class UMLPaletteFactory {
 		/**
 		 * @generated
 		 */
-		private NodeToolEntry(String title, String description, ImageDescriptor smallIcon, ImageDescriptor largeIcon, List elementTypes) {
-			super(title, description, smallIcon, largeIcon);
+		private NodeToolEntry(String title, String description, List elementTypes) {
+			super(title, description, null, null);
 			this.elementTypes = elementTypes;
 		}
 
@@ -635,8 +477,8 @@ public class UMLPaletteFactory {
 		/**
 		 * @generated
 		 */
-		private LinkToolEntry(String title, String description, ImageDescriptor smallIcon, ImageDescriptor largeIcon, List relationshipTypes) {
-			super(title, description, smallIcon, largeIcon);
+		private LinkToolEntry(String title, String description, List relationshipTypes) {
+			super(title, description, null, null);
 			this.relationshipTypes = relationshipTypes;
 		}
 

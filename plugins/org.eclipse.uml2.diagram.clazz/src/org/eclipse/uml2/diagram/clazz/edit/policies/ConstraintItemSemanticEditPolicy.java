@@ -7,22 +7,23 @@ import org.eclipse.gmf.runtime.emf.type.core.requests.DestroyElementRequest;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EAnnotation;
 import org.eclipse.gmf.runtime.notation.View;
-import org.eclipse.emf.ecore.EClass;
-
 import org.eclipse.gef.commands.UnexecutableCommand;
 
-import org.eclipse.gmf.runtime.emf.type.core.commands.CreateRelationshipCommand;
 import org.eclipse.gmf.runtime.emf.type.core.commands.SetValueCommand;
 
 import org.eclipse.gmf.runtime.emf.type.core.requests.SetRequest;
+
+import org.eclipse.uml2.diagram.clazz.edit.commands.DependencyTypeLinkCreateCommand;
+import org.eclipse.uml2.diagram.clazz.edit.commands.UsageTypeLinkCreateCommand;
 
 import org.eclipse.uml2.diagram.clazz.providers.UMLElementTypes;
 
 import org.eclipse.uml2.uml.Constraint;
 import org.eclipse.uml2.uml.Dependency;
+import org.eclipse.uml2.uml.Element;
 import org.eclipse.uml2.uml.NamedElement;
+import org.eclipse.uml2.uml.Package;
 import org.eclipse.uml2.uml.UMLPackage;
-import org.eclipse.uml2.uml.Usage;
 
 /**
  * @generated
@@ -73,6 +74,21 @@ public class ConstraintItemSemanticEditPolicy extends UMLBaseItemSemanticEditPol
 	 * @generated
 	 */
 	protected Command getCreateStartOutgoingDependency4002Command(CreateRelationshipRequest req) {
+		EObject sourceEObject = req.getSource();
+		EObject targetEObject = req.getTarget();
+		if (false == sourceEObject instanceof NamedElement || (targetEObject != null && false == targetEObject instanceof NamedElement)) {
+			return UnexecutableCommand.INSTANCE;
+		}
+		NamedElement source = (NamedElement) sourceEObject;
+		NamedElement target = (NamedElement) targetEObject;
+
+		Package container = (Package) getRelationshipContainer(source, UMLPackage.eINSTANCE.getPackage(), req.getElementType());
+		if (container == null) {
+			return UnexecutableCommand.INSTANCE;
+		}
+		if (!UMLBaseItemSemanticEditPolicy.LinkConstraints.canCreateDependency_4002(container, source, target)) {
+			return UnexecutableCommand.INSTANCE;
+		}
 		return new Command() {
 		};
 	}
@@ -81,68 +97,41 @@ public class ConstraintItemSemanticEditPolicy extends UMLBaseItemSemanticEditPol
 	 * @generated
 	 */
 	protected Command getCreateCompleteIncomingDependency4002Command(CreateRelationshipRequest req) {
-		if (!(req.getSource() instanceof NamedElement)) {
+		EObject sourceEObject = req.getSource();
+		EObject targetEObject = req.getTarget();
+		if (false == sourceEObject instanceof NamedElement || false == targetEObject instanceof NamedElement) {
 			return UnexecutableCommand.INSTANCE;
 		}
-		final org.eclipse.uml2.uml.Package element = (org.eclipse.uml2.uml.Package) getRelationshipContainer(req.getSource(), UMLPackage.eINSTANCE.getPackage(), req.getElementType());
-		if (element == null) {
+		NamedElement source = (NamedElement) sourceEObject;
+		NamedElement target = (NamedElement) targetEObject;
+
+		Package container = (Package) getRelationshipContainer(source, UMLPackage.eINSTANCE.getPackage(), req.getElementType());
+		if (container == null) {
+			return UnexecutableCommand.INSTANCE;
+		}
+		if (!UMLBaseItemSemanticEditPolicy.LinkConstraints.canCreateDependency_4002(container, source, target)) {
 			return UnexecutableCommand.INSTANCE;
 		}
 		if (req.getContainmentFeature() == null) {
 			req.setContainmentFeature(UMLPackage.eINSTANCE.getPackage_PackagedElement());
 		}
-		return getMSLWrapper(new CreateIncomingDependency4002Command(req) {
-
-			protected EObject getElementToEdit() {
-				return element;
-			}
-		});
-	}
-
-	/**
-	 * @generated
-	 */
-	private static class CreateIncomingDependency4002Command extends CreateRelationshipCommand {
-
-		/**
-		 * @generated
-		 */
-		public CreateIncomingDependency4002Command(CreateRelationshipRequest req) {
-			super(req);
-		}
-
-		/**
-		 * @generated
-		 */
-		protected EClass getEClassToEdit() {
-			return UMLPackage.eINSTANCE.getPackage();
-		};
-
-		/**
-		 * @generated
-		 */
-		protected void setElementToEdit(EObject element) {
-			throw new UnsupportedOperationException();
-		}
-
-		/**
-		 * @generated
-		 */
-		protected EObject doDefaultElementCreation() {
-			Dependency newElement = (Dependency) super.doDefaultElementCreation();
-			if (newElement != null) {
-				newElement.getSuppliers().add((NamedElement) getTarget());
-				newElement.getClients().add((NamedElement) getSource());
-			}
-			return newElement;
-		}
+		return getMSLWrapper(new DependencyTypeLinkCreateCommand(req, container, source, target));
 	}
 
 	/**
 	 * @generated
 	 */
 	protected Command getCreateStartOutgoingConstraint_ConstrainedElement4004Command(CreateRelationshipRequest req) {
-
+		EObject sourceEObject = req.getSource();
+		EObject targetEObject = req.getTarget();
+		if (false == sourceEObject instanceof Constraint || (targetEObject != null && false == targetEObject instanceof Element)) {
+			return UnexecutableCommand.INSTANCE;
+		}
+		Constraint source = (Constraint) sourceEObject;
+		Element target = (Element) targetEObject;
+		if (!UMLBaseItemSemanticEditPolicy.LinkConstraints.canCreateConstraintConstrainedElement_4004(source, target)) {
+			return UnexecutableCommand.INSTANCE;
+		}
 		return new Command() {
 		};
 	}
@@ -151,11 +140,14 @@ public class ConstraintItemSemanticEditPolicy extends UMLBaseItemSemanticEditPol
 	 * @generated
 	 */
 	protected Command getCreateCompleteIncomingConstraint_ConstrainedElement4004Command(CreateRelationshipRequest req) {
-		if (!(req.getSource() instanceof Constraint)) {
+		EObject sourceEObject = req.getSource();
+		EObject targetEObject = req.getTarget();
+		if (false == sourceEObject instanceof Constraint || false == targetEObject instanceof Element) {
 			return UnexecutableCommand.INSTANCE;
 		}
-		Constraint element = (Constraint) req.getSource();
-		if (element.getConstrainedElements().contains(req.getTarget())) {
+		Constraint source = (Constraint) sourceEObject;
+		Element target = (Element) targetEObject;
+		if (!UMLBaseItemSemanticEditPolicy.LinkConstraints.canCreateConstraintConstrainedElement_4004(source, target)) {
 			return UnexecutableCommand.INSTANCE;
 		}
 		SetRequest setReq = new SetRequest(req.getSource(), UMLPackage.eINSTANCE.getConstraint_ConstrainedElement(), req.getTarget());
@@ -166,11 +158,14 @@ public class ConstraintItemSemanticEditPolicy extends UMLBaseItemSemanticEditPol
 	 * @generated
 	 */
 	protected Command getCreateCompleteIncomingDependency_Supplier4006Command(CreateRelationshipRequest req) {
-		if (!(req.getSource() instanceof Dependency)) {
+		EObject sourceEObject = req.getSource();
+		EObject targetEObject = req.getTarget();
+		if (false == sourceEObject instanceof Dependency || false == targetEObject instanceof NamedElement) {
 			return UnexecutableCommand.INSTANCE;
 		}
-		Dependency element = (Dependency) req.getSource();
-		if (element.getSuppliers().contains(req.getTarget())) {
+		Dependency source = (Dependency) sourceEObject;
+		NamedElement target = (NamedElement) targetEObject;
+		if (!UMLBaseItemSemanticEditPolicy.LinkConstraints.canCreateDependencySupplier_4006(source, target)) {
 			return UnexecutableCommand.INSTANCE;
 		}
 		SetRequest setReq = new SetRequest(req.getSource(), UMLPackage.eINSTANCE.getDependency_Supplier(), req.getTarget());
@@ -181,11 +176,14 @@ public class ConstraintItemSemanticEditPolicy extends UMLBaseItemSemanticEditPol
 	 * @generated
 	 */
 	protected Command getCreateCompleteIncomingDependency_Client4007Command(CreateRelationshipRequest req) {
-		if (!(req.getSource() instanceof Dependency)) {
+		EObject sourceEObject = req.getSource();
+		EObject targetEObject = req.getTarget();
+		if (false == sourceEObject instanceof Dependency || false == targetEObject instanceof NamedElement) {
 			return UnexecutableCommand.INSTANCE;
 		}
-		Dependency element = (Dependency) req.getSource();
-		if (element.getClients().contains(req.getTarget())) {
+		Dependency source = (Dependency) sourceEObject;
+		NamedElement target = (NamedElement) targetEObject;
+		if (!UMLBaseItemSemanticEditPolicy.LinkConstraints.canCreateDependencyClient_4007(source, target)) {
 			return UnexecutableCommand.INSTANCE;
 		}
 		SetRequest setReq = new SetRequest(req.getSource(), UMLPackage.eINSTANCE.getDependency_Client(), req.getTarget());
@@ -196,7 +194,19 @@ public class ConstraintItemSemanticEditPolicy extends UMLBaseItemSemanticEditPol
 	 * @generated
 	 */
 	protected Command getCreateStartOutgoingUsage4009Command(CreateRelationshipRequest req) {
-		if (!UMLBaseItemSemanticEditPolicy.LinkConstraints.Usage_4009.canCreateLink(req, false)) {
+		EObject sourceEObject = req.getSource();
+		EObject targetEObject = req.getTarget();
+		if (false == sourceEObject instanceof NamedElement || (targetEObject != null && false == targetEObject instanceof NamedElement)) {
+			return UnexecutableCommand.INSTANCE;
+		}
+		NamedElement source = (NamedElement) sourceEObject;
+		NamedElement target = (NamedElement) targetEObject;
+
+		Package container = (Package) getRelationshipContainer(source, UMLPackage.eINSTANCE.getPackage(), req.getElementType());
+		if (container == null) {
+			return UnexecutableCommand.INSTANCE;
+		}
+		if (!UMLBaseItemSemanticEditPolicy.LinkConstraints.canCreateUsage_4009(container, source, target)) {
 			return UnexecutableCommand.INSTANCE;
 		}
 		return new Command() {
@@ -207,63 +217,24 @@ public class ConstraintItemSemanticEditPolicy extends UMLBaseItemSemanticEditPol
 	 * @generated
 	 */
 	protected Command getCreateCompleteIncomingUsage4009Command(CreateRelationshipRequest req) {
-		if (!(req.getSource() instanceof NamedElement)) {
+		EObject sourceEObject = req.getSource();
+		EObject targetEObject = req.getTarget();
+		if (false == sourceEObject instanceof NamedElement || false == targetEObject instanceof NamedElement) {
 			return UnexecutableCommand.INSTANCE;
 		}
-		final org.eclipse.uml2.uml.Package element = (org.eclipse.uml2.uml.Package) getRelationshipContainer(req.getSource(), UMLPackage.eINSTANCE.getPackage(), req.getElementType());
-		if (element == null) {
+		NamedElement source = (NamedElement) sourceEObject;
+		NamedElement target = (NamedElement) targetEObject;
+
+		Package container = (Package) getRelationshipContainer(source, UMLPackage.eINSTANCE.getPackage(), req.getElementType());
+		if (container == null) {
 			return UnexecutableCommand.INSTANCE;
 		}
-		if (!UMLBaseItemSemanticEditPolicy.LinkConstraints.Usage_4009.canCreateLink(req, false)) {
+		if (!UMLBaseItemSemanticEditPolicy.LinkConstraints.canCreateUsage_4009(container, source, target)) {
 			return UnexecutableCommand.INSTANCE;
 		}
 		if (req.getContainmentFeature() == null) {
 			req.setContainmentFeature(UMLPackage.eINSTANCE.getPackage_PackagedElement());
 		}
-		return getMSLWrapper(new CreateIncomingUsage4009Command(req) {
-
-			protected EObject getElementToEdit() {
-				return element;
-			}
-		});
-	}
-
-	/**
-	 * @generated
-	 */
-	private static class CreateIncomingUsage4009Command extends CreateRelationshipCommand {
-
-		/**
-		 * @generated
-		 */
-		public CreateIncomingUsage4009Command(CreateRelationshipRequest req) {
-			super(req);
-		}
-
-		/**
-		 * @generated
-		 */
-		protected EClass getEClassToEdit() {
-			return UMLPackage.eINSTANCE.getPackage();
-		};
-
-		/**
-		 * @generated
-		 */
-		protected void setElementToEdit(EObject element) {
-			throw new UnsupportedOperationException();
-		}
-
-		/**
-		 * @generated
-		 */
-		protected EObject doDefaultElementCreation() {
-			Usage newElement = (Usage) super.doDefaultElementCreation();
-			if (newElement != null) {
-				newElement.getSuppliers().add((NamedElement) getTarget());
-				newElement.getClients().add((NamedElement) getSource());
-			}
-			return newElement;
-		}
+		return getMSLWrapper(new UsageTypeLinkCreateCommand(req, container, source, target));
 	}
 }

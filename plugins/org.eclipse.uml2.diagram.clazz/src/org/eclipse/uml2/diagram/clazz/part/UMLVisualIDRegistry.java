@@ -92,6 +92,7 @@ import org.eclipse.uml2.diagram.clazz.expressions.UMLOCLFactory;
 
 import org.eclipse.uml2.uml.Association;
 import org.eclipse.uml2.uml.AssociationClass;
+import org.eclipse.uml2.uml.Class;
 import org.eclipse.uml2.uml.Constraint;
 import org.eclipse.uml2.uml.DataType;
 import org.eclipse.uml2.uml.Dependency;
@@ -103,6 +104,7 @@ import org.eclipse.uml2.uml.Interface;
 import org.eclipse.uml2.uml.InterfaceRealization;
 import org.eclipse.uml2.uml.LiteralString;
 import org.eclipse.uml2.uml.Operation;
+import org.eclipse.uml2.uml.Package;
 import org.eclipse.uml2.uml.Port;
 import org.eclipse.uml2.uml.PrimitiveType;
 import org.eclipse.uml2.uml.Property;
@@ -189,7 +191,7 @@ public class UMLVisualIDRegistry {
 	 * @generated
 	 */
 	private static int getDiagramVisualID(EObject domainElement, EClass domainElementMetaclass) {
-		if (UMLPackage.eINSTANCE.getPackage().isSuperTypeOf(domainElementMetaclass) && isDiagramPackage_1000((org.eclipse.uml2.uml.Package) domainElement)) {
+		if (UMLPackage.eINSTANCE.getPackage().isSuperTypeOf(domainElementMetaclass) && isDiagramPackage_1000((Package) domainElement)) {
 			return PackageEditPart.VISUAL_ID;
 		}
 		return getUnrecognizedDiagramID(domainElement);
@@ -224,6 +226,7 @@ public class UMLVisualIDRegistry {
 				return -1;
 			}
 		}
+
 		int nodeVisualID = semanticHint != null ? getVisualID(semanticHint) : -1;
 		switch (containerVisualID) {
 		case Package2EditPart.VISUAL_ID:
@@ -383,13 +386,13 @@ public class UMLVisualIDRegistry {
 			return getUnrecognizedSlot_3017ChildNodeID(domainElement, semanticHint);
 		case PackagePackagesEditPart.VISUAL_ID:
 			if ((semanticHint == null || Package3EditPart.VISUAL_ID == nodeVisualID) && UMLPackage.eINSTANCE.getPackage().isSuperTypeOf(domainElementMetaclass)
-					&& (domainElement == null || isNodePackage_3006((org.eclipse.uml2.uml.Package) domainElement))) {
+					&& (domainElement == null || isNodePackage_3006((Package) domainElement))) {
 				return Package3EditPart.VISUAL_ID;
 			}
 			return getUnrecognizedPackagePackages_7010ChildNodeID(domainElement, semanticHint);
 		case PackageClassifiersEditPart.VISUAL_ID:
 			if ((semanticHint == null || ClassEditPart.VISUAL_ID == nodeVisualID) && UMLPackage.eINSTANCE.getClass_().isSuperTypeOf(domainElementMetaclass)
-					&& (domainElement == null || isNodeClass_3007((org.eclipse.uml2.uml.Class) domainElement))) {
+					&& (domainElement == null || isNodeClass_3007((Class) domainElement))) {
 				return ClassEditPart.VISUAL_ID;
 			}
 			if ((semanticHint == null || DataTypeEditPart.VISUAL_ID == nodeVisualID) && UMLPackage.eINSTANCE.getDataType().isSuperTypeOf(domainElementMetaclass)
@@ -429,7 +432,7 @@ public class UMLVisualIDRegistry {
 			return getUnrecognizedClassOperations_7002ChildNodeID(domainElement, semanticHint);
 		case ClassClassesEditPart.VISUAL_ID:
 			if ((semanticHint == null || Class3EditPart.VISUAL_ID == nodeVisualID) && UMLPackage.eINSTANCE.getClass_().isSuperTypeOf(domainElementMetaclass)
-					&& (domainElement == null || isNodeClass_3003((org.eclipse.uml2.uml.Class) domainElement))) {
+					&& (domainElement == null || isNodeClass_3003((Class) domainElement))) {
 				return Class3EditPart.VISUAL_ID;
 			}
 			return getUnrecognizedClassClasses_7003ChildNodeID(domainElement, semanticHint);
@@ -447,7 +450,7 @@ public class UMLVisualIDRegistry {
 			return getUnrecognizedAssociationClassOperations_7025ChildNodeID(domainElement, semanticHint);
 		case AssociationClassClassesEditPart.VISUAL_ID:
 			if ((semanticHint == null || Class3EditPart.VISUAL_ID == nodeVisualID) && UMLPackage.eINSTANCE.getClass_().isSuperTypeOf(domainElementMetaclass)
-					&& (domainElement == null || isNodeClass_3003((org.eclipse.uml2.uml.Class) domainElement))) {
+					&& (domainElement == null || isNodeClass_3003((Class) domainElement))) {
 				return Class3EditPart.VISUAL_ID;
 			}
 			return getUnrecognizedAssociationClassClasses_7026ChildNodeID(domainElement, semanticHint);
@@ -507,11 +510,11 @@ public class UMLVisualIDRegistry {
 			return getUnrecognizedInstanceSpecificationSlots_7028ChildNodeID(domainElement, semanticHint);
 		case PackageEditPart.VISUAL_ID:
 			if ((semanticHint == null || Package2EditPart.VISUAL_ID == nodeVisualID) && UMLPackage.eINSTANCE.getPackage().isSuperTypeOf(domainElementMetaclass)
-					&& (domainElement == null || isNodePackage_2002((org.eclipse.uml2.uml.Package) domainElement))) {
+					&& (domainElement == null || isNodePackage_2002((Package) domainElement))) {
 				return Package2EditPart.VISUAL_ID;
 			}
 			if ((semanticHint == null || Class2EditPart.VISUAL_ID == nodeVisualID) && UMLPackage.eINSTANCE.getClass_().isSuperTypeOf(domainElementMetaclass)
-					&& (domainElement == null || isNodeClass_2001((org.eclipse.uml2.uml.Class) domainElement))) {
+					&& (domainElement == null || isNodeClass_2001((Class) domainElement))) {
 				return Class2EditPart.VISUAL_ID;
 			}
 			if ((semanticHint == null || AssociationClass2EditPart.VISUAL_ID == nodeVisualID) && UMLPackage.eINSTANCE.getAssociationClass().isSuperTypeOf(domainElementMetaclass)
@@ -623,7 +626,7 @@ public class UMLVisualIDRegistry {
 	 *
 	 * @generated
 	 */
-	private static boolean isDiagramPackage_1000(org.eclipse.uml2.uml.Package element) {
+	private static boolean isDiagramPackage_1000(Package element) {
 		return true;
 	}
 
@@ -643,7 +646,7 @@ public class UMLVisualIDRegistry {
 	 *
 	 * @generated
 	 */
-	private static boolean isNodePackage_2002(org.eclipse.uml2.uml.Package element) {
+	private static boolean isNodePackage_2002(Package element) {
 		return true;
 	}
 
@@ -653,7 +656,7 @@ public class UMLVisualIDRegistry {
 	 *
 	 * @generated
 	 */
-	private static boolean isNodeClass_2001(org.eclipse.uml2.uml.Class element) {
+	private static boolean isNodeClass_2001(Class element) {
 		return Class_2001.matches(element);
 	}
 
@@ -743,7 +746,7 @@ public class UMLVisualIDRegistry {
 	 *
 	 * @generated
 	 */
-	private static boolean isNodePackage_3006(org.eclipse.uml2.uml.Package element) {
+	private static boolean isNodePackage_3006(Package element) {
 		return true;
 	}
 
@@ -753,7 +756,7 @@ public class UMLVisualIDRegistry {
 	 *
 	 * @generated
 	 */
-	private static boolean isNodeClass_3007(org.eclipse.uml2.uml.Class element) {
+	private static boolean isNodeClass_3007(Class element) {
 		return true;
 	}
 
@@ -833,7 +836,7 @@ public class UMLVisualIDRegistry {
 	 *
 	 * @generated
 	 */
-	private static boolean isNodeClass_3003(org.eclipse.uml2.uml.Class element) {
+	private static boolean isNodeClass_3003(Class element) {
 		return true;
 	}
 

@@ -1,48 +1,42 @@
 package org.eclipse.uml2.diagram.clazz.edit.parts;
 
+import org.eclipse.draw2d.Graphics;
 import org.eclipse.draw2d.IFigure;
 import org.eclipse.draw2d.PositionConstants;
+import org.eclipse.draw2d.RectangleFigure;
 import org.eclipse.draw2d.StackLayout;
-
+import org.eclipse.draw2d.ToolbarLayout;
+import org.eclipse.draw2d.geometry.Dimension;
 import org.eclipse.gef.EditPart;
 import org.eclipse.gef.EditPolicy;
 import org.eclipse.gef.Request;
-
 import org.eclipse.gef.commands.Command;
-
 import org.eclipse.gef.editpolicies.LayoutEditPolicy;
 import org.eclipse.gef.editpolicies.NonResizableEditPolicy;
-
 import org.eclipse.gef.requests.CreateRequest;
-
+import org.eclipse.gmf.internal.codegen.draw2d.GridLayout;
+import org.eclipse.gmf.internal.codegen.draw2d.GridLayoutData;
 import org.eclipse.gmf.runtime.diagram.core.edithelpers.CreateElementRequestAdapter;
-
 import org.eclipse.gmf.runtime.diagram.ui.editparts.AbstractBorderedShapeEditPart;
+import org.eclipse.gmf.runtime.diagram.ui.editparts.IBorderItemEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart;
-
+import org.eclipse.gmf.runtime.diagram.ui.editpolicies.BorderItemSelectionEditPolicy;
 import org.eclipse.gmf.runtime.diagram.ui.editpolicies.CreationEditPolicy;
 import org.eclipse.gmf.runtime.diagram.ui.editpolicies.DragDropEditPolicy;
 import org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles;
-
 import org.eclipse.gmf.runtime.diagram.ui.figures.BorderItemLocator;
-
 import org.eclipse.gmf.runtime.diagram.ui.requests.CreateViewAndElementRequest;
-
 import org.eclipse.gmf.runtime.draw2d.ui.figures.ConstrainedToolbarLayout;
-
+import org.eclipse.gmf.runtime.draw2d.ui.figures.WrapLabel;
 import org.eclipse.gmf.runtime.emf.type.core.IElementType;
-
 import org.eclipse.gmf.runtime.gef.ui.figures.DefaultSizeNodeFigure;
 import org.eclipse.gmf.runtime.gef.ui.figures.NodeFigure;
-
 import org.eclipse.gmf.runtime.notation.View;
-
 import org.eclipse.uml2.diagram.clazz.edit.policies.Class2CanonicalEditPolicy;
 import org.eclipse.uml2.diagram.clazz.edit.policies.Class2ItemSemanticEditPolicy;
-
 import org.eclipse.uml2.diagram.clazz.part.UMLVisualIDRegistry;
-
 import org.eclipse.uml2.diagram.clazz.providers.UMLElementTypes;
+import org.eclipse.uml2.diagram.common.draw2d.CenterLayout;
 
 /**
  * @generated
@@ -101,11 +95,11 @@ public class Class2EditPart extends AbstractBorderedShapeEditPart {
 			}
 		});
 		super.createDefaultEditPolicies();
+
 		installEditPolicy(EditPolicyRoles.SEMANTIC_ROLE, new Class2ItemSemanticEditPolicy());
 		installEditPolicy(EditPolicyRoles.DRAG_DROP_ROLE, new DragDropEditPolicy());
 		installEditPolicy(EditPolicyRoles.CANONICAL_ROLE, new Class2CanonicalEditPolicy());
 		installEditPolicy(EditPolicy.LAYOUT_ROLE, createLayoutEditPolicy());
-
 	}
 
 	/**
@@ -115,6 +109,9 @@ public class Class2EditPart extends AbstractBorderedShapeEditPart {
 		LayoutEditPolicy lep = new LayoutEditPolicy() {
 
 			protected EditPolicy createChildEditPolicy(EditPart child) {
+				if (child instanceof IBorderItemEditPart) {
+					return new BorderItemSelectionEditPolicy();
+				}
 				EditPolicy result = child.getEditPolicy(EditPolicy.PRIMARY_DRAG_ROLE);
 				if (result == null) {
 					result = new NonResizableEditPolicy();
@@ -146,26 +143,6 @@ public class Class2EditPart extends AbstractBorderedShapeEditPart {
 	 */
 	public ClassFigure getPrimaryShape() {
 		return (ClassFigure) primaryShape;
-	}
-
-	/**
-	 * @generated 
-	 */
-	protected IFigure getContentPaneFor(IGraphicalEditPart editPart) {
-		if (editPart instanceof ClassAttributesEditPart) {
-			return getPrimaryShape().getFigureClassFigure_PropertiesCompartment();
-		}
-		if (editPart instanceof ClassOperationsEditPart) {
-			return getPrimaryShape().getFigureClassFigure_OperationsCompartment();
-		}
-		if (editPart instanceof ClassClassesEditPart) {
-			return getPrimaryShape().getFigureClassFigure_ClassesCompartment();
-		}
-		if (editPart instanceof PortEditPart) {
-			return getBorderedFigure().getBorderItemContainer();
-		}
-
-		return super.getContentPaneFor(editPart);
 	}
 
 	/**
@@ -206,6 +183,7 @@ public class Class2EditPart extends AbstractBorderedShapeEditPart {
 	 * @generated
 	 */
 	protected boolean removeFixedChild(EditPart childEditPart) {
+
 		if (childEditPart instanceof ClassAttributesEditPart) {
 			IFigure pane = getPrimaryShape().getFigureClassFigure_PropertiesCompartment();
 			pane.remove(((ClassAttributesEditPart) childEditPart).getFigure());
@@ -231,8 +209,49 @@ public class Class2EditPart extends AbstractBorderedShapeEditPart {
 	/**
 	 * @generated
 	 */
+	protected void addChildVisual(EditPart childEditPart, int index) {
+		if (addFixedChild(childEditPart)) {
+			return;
+		}
+		super.addChildVisual(childEditPart, -1);
+	}
+
+	/**
+	 * @generated
+	 */
+	protected void removeChildVisual(EditPart childEditPart) {
+		if (removeFixedChild(childEditPart)) {
+			return;
+		}
+		super.removeChildVisual(childEditPart);
+	}
+
+	/**
+	 * @generated
+	 */
+	protected IFigure getContentPaneFor(IGraphicalEditPart editPart) {
+
+		if (editPart instanceof ClassAttributesEditPart) {
+			return getPrimaryShape().getFigureClassFigure_PropertiesCompartment();
+		}
+		if (editPart instanceof ClassOperationsEditPart) {
+			return getPrimaryShape().getFigureClassFigure_OperationsCompartment();
+		}
+		if (editPart instanceof ClassClassesEditPart) {
+			return getPrimaryShape().getFigureClassFigure_ClassesCompartment();
+		}
+		if (editPart instanceof PortEditPart) {
+			return getBorderedFigure().getBorderItemContainer();
+		}
+		return super.getContentPaneFor(editPart);
+	}
+
+	/**
+	 * @generated
+	 */
 	protected NodeFigure createNodePlate() {
 		DefaultSizeNodeFigure result = new DefaultSizeNodeFigure(getMapMode().DPtoLP(100), getMapMode().DPtoLP(60));
+
 		return result;
 	}
 
@@ -288,34 +307,14 @@ public class Class2EditPart extends AbstractBorderedShapeEditPart {
 	/**
 	 * @generated
 	 */
-	protected void addChildVisual(EditPart childEditPart, int index) {
-		if (addFixedChild(childEditPart)) {
-			return;
-		}
-		super.addChildVisual(childEditPart, -1);
-	}
-
-	/**
-	 * @generated
-	 */
-	protected void removeChildVisual(EditPart childEditPart) {
-		if (removeFixedChild(childEditPart)) {
-			return;
-		}
-		super.removeChildVisual(childEditPart);
-	}
-
-	/**
-	 * @generated
-	 */
-	public class ClassFigure extends org.eclipse.draw2d.RectangleFigure {
+	public class ClassFigure extends RectangleFigure {
 
 		/**
 		 * @generated
 		 */
 		public ClassFigure() {
 
-			org.eclipse.gmf.internal.codegen.draw2d.GridLayout layoutThis = new org.eclipse.gmf.internal.codegen.draw2d.GridLayout();
+			GridLayout layoutThis = new GridLayout();
 			layoutThis.numColumns = 1;
 			layoutThis.makeColumnsEqualWidth = true;
 			layoutThis.horizontalSpacing = 0;
@@ -329,7 +328,7 @@ public class Class2EditPart extends AbstractBorderedShapeEditPart {
 			this.setOutline(false);
 			this.setOutlineXOR(false);
 			this.setLineWidth(1);
-			this.setLineStyle(org.eclipse.draw2d.Graphics.LINE_SOLID);
+			this.setLineStyle(Graphics.LINE_SOLID);
 			createContents();
 		}
 
@@ -338,18 +337,18 @@ public class Class2EditPart extends AbstractBorderedShapeEditPart {
 		 */
 		private void createContents() {
 
-			org.eclipse.draw2d.RectangleFigure classFigure_NameContainer0 = new org.eclipse.draw2d.RectangleFigure();
+			RectangleFigure classFigure_NameContainer0 = new RectangleFigure();
 			classFigure_NameContainer0.setFill(true);
 			classFigure_NameContainer0.setFillXOR(false);
 			classFigure_NameContainer0.setOutline(true);
 			classFigure_NameContainer0.setOutlineXOR(false);
 			classFigure_NameContainer0.setLineWidth(1);
-			classFigure_NameContainer0.setLineStyle(org.eclipse.draw2d.Graphics.LINE_SOLID);
-			classFigure_NameContainer0.setMinimumSize(new org.eclipse.draw2d.geometry.Dimension(getMapMode().DPtoLP(0), getMapMode().DPtoLP(25)));
+			classFigure_NameContainer0.setLineStyle(Graphics.LINE_SOLID);
+			classFigure_NameContainer0.setMinimumSize(new Dimension(getMapMode().DPtoLP(0), getMapMode().DPtoLP(25)));
 
-			org.eclipse.gmf.internal.codegen.draw2d.GridLayoutData constraintClassFigure_NameContainer0 = new org.eclipse.gmf.internal.codegen.draw2d.GridLayoutData();
-			constraintClassFigure_NameContainer0.verticalAlignment = org.eclipse.gmf.internal.codegen.draw2d.GridLayoutData.FILL;
-			constraintClassFigure_NameContainer0.horizontalAlignment = org.eclipse.gmf.internal.codegen.draw2d.GridLayoutData.FILL;
+			GridLayoutData constraintClassFigure_NameContainer0 = new GridLayoutData();
+			constraintClassFigure_NameContainer0.verticalAlignment = GridLayoutData.FILL;
+			constraintClassFigure_NameContainer0.horizontalAlignment = GridLayoutData.FILL;
 			constraintClassFigure_NameContainer0.horizontalIndent = 0;
 			constraintClassFigure_NameContainer0.horizontalSpan = 2;
 			constraintClassFigure_NameContainer0.verticalSpan = 1;
@@ -357,27 +356,27 @@ public class Class2EditPart extends AbstractBorderedShapeEditPart {
 			constraintClassFigure_NameContainer0.grabExcessVerticalSpace = false;
 			this.add(classFigure_NameContainer0, constraintClassFigure_NameContainer0);
 
-			org.eclipse.uml2.diagram.common.draw2d.CenterLayout layoutClassFigure_NameContainer0 = new org.eclipse.uml2.diagram.common.draw2d.CenterLayout();
+			CenterLayout layoutClassFigure_NameContainer0 = new CenterLayout();
 
 			classFigure_NameContainer0.setLayoutManager(layoutClassFigure_NameContainer0);
 
-			org.eclipse.gmf.runtime.draw2d.ui.figures.WrapLabel classFigure_name1 = new org.eclipse.gmf.runtime.draw2d.ui.figures.WrapLabel();
+			WrapLabel classFigure_name1 = new WrapLabel();
 			classFigure_name1.setText("");
 
 			classFigure_NameContainer0.add(classFigure_name1);
 			setFigureClassFigure_name(classFigure_name1);
 
-			org.eclipse.draw2d.RectangleFigure classFigure_Body0 = new org.eclipse.draw2d.RectangleFigure();
+			RectangleFigure classFigure_Body0 = new RectangleFigure();
 			classFigure_Body0.setFill(true);
 			classFigure_Body0.setFillXOR(false);
 			classFigure_Body0.setOutline(true);
 			classFigure_Body0.setOutlineXOR(false);
 			classFigure_Body0.setLineWidth(1);
-			classFigure_Body0.setLineStyle(org.eclipse.draw2d.Graphics.LINE_SOLID);
+			classFigure_Body0.setLineStyle(Graphics.LINE_SOLID);
 
-			org.eclipse.gmf.internal.codegen.draw2d.GridLayoutData constraintClassFigure_Body0 = new org.eclipse.gmf.internal.codegen.draw2d.GridLayoutData();
-			constraintClassFigure_Body0.verticalAlignment = org.eclipse.gmf.internal.codegen.draw2d.GridLayoutData.FILL;
-			constraintClassFigure_Body0.horizontalAlignment = org.eclipse.gmf.internal.codegen.draw2d.GridLayoutData.FILL;
+			GridLayoutData constraintClassFigure_Body0 = new GridLayoutData();
+			constraintClassFigure_Body0.verticalAlignment = GridLayoutData.FILL;
+			constraintClassFigure_Body0.horizontalAlignment = GridLayoutData.FILL;
 			constraintClassFigure_Body0.horizontalIndent = 0;
 			constraintClassFigure_Body0.horizontalSpan = 2;
 			constraintClassFigure_Body0.verticalSpan = 1;
@@ -385,9 +384,9 @@ public class Class2EditPart extends AbstractBorderedShapeEditPart {
 			constraintClassFigure_Body0.grabExcessVerticalSpace = true;
 			this.add(classFigure_Body0, constraintClassFigure_Body0);
 
-			org.eclipse.draw2d.ToolbarLayout layoutClassFigure_Body0 = new org.eclipse.draw2d.ToolbarLayout();
+			ToolbarLayout layoutClassFigure_Body0 = new ToolbarLayout();
 			layoutClassFigure_Body0.setStretchMinorAxis(true);
-			layoutClassFigure_Body0.setMinorAlignment(org.eclipse.draw2d.ToolbarLayout.ALIGN_CENTER
+			layoutClassFigure_Body0.setMinorAlignment(ToolbarLayout.ALIGN_CENTER
 
 			);
 
@@ -396,57 +395,57 @@ public class Class2EditPart extends AbstractBorderedShapeEditPart {
 
 			classFigure_Body0.setLayoutManager(layoutClassFigure_Body0);
 
-			org.eclipse.draw2d.RectangleFigure classFigure_PropertiesCompartment1 = new org.eclipse.draw2d.RectangleFigure();
+			RectangleFigure classFigure_PropertiesCompartment1 = new RectangleFigure();
 			classFigure_PropertiesCompartment1.setFill(true);
 			classFigure_PropertiesCompartment1.setFillXOR(false);
 			classFigure_PropertiesCompartment1.setOutline(true);
 			classFigure_PropertiesCompartment1.setOutlineXOR(false);
 			classFigure_PropertiesCompartment1.setLineWidth(1);
-			classFigure_PropertiesCompartment1.setLineStyle(org.eclipse.draw2d.Graphics.LINE_SOLID);
+			classFigure_PropertiesCompartment1.setLineStyle(Graphics.LINE_SOLID);
 
 			classFigure_Body0.add(classFigure_PropertiesCompartment1);
 			setFigureClassFigure_PropertiesCompartment(classFigure_PropertiesCompartment1);
 
-			org.eclipse.draw2d.RectangleFigure classFigure_OperationsCompartment1 = new org.eclipse.draw2d.RectangleFigure();
+			RectangleFigure classFigure_OperationsCompartment1 = new RectangleFigure();
 			classFigure_OperationsCompartment1.setFill(true);
 			classFigure_OperationsCompartment1.setFillXOR(false);
 			classFigure_OperationsCompartment1.setOutline(true);
 			classFigure_OperationsCompartment1.setOutlineXOR(false);
 			classFigure_OperationsCompartment1.setLineWidth(1);
-			classFigure_OperationsCompartment1.setLineStyle(org.eclipse.draw2d.Graphics.LINE_SOLID);
+			classFigure_OperationsCompartment1.setLineStyle(Graphics.LINE_SOLID);
 
 			classFigure_Body0.add(classFigure_OperationsCompartment1);
 			setFigureClassFigure_OperationsCompartment(classFigure_OperationsCompartment1);
 
-			org.eclipse.draw2d.RectangleFigure classFigure_ClassesCompartment1 = new org.eclipse.draw2d.RectangleFigure();
+			RectangleFigure classFigure_ClassesCompartment1 = new RectangleFigure();
 			classFigure_ClassesCompartment1.setFill(true);
 			classFigure_ClassesCompartment1.setFillXOR(false);
 			classFigure_ClassesCompartment1.setOutline(true);
 			classFigure_ClassesCompartment1.setOutlineXOR(false);
 			classFigure_ClassesCompartment1.setLineWidth(1);
-			classFigure_ClassesCompartment1.setLineStyle(org.eclipse.draw2d.Graphics.LINE_SOLID);
+			classFigure_ClassesCompartment1.setLineStyle(Graphics.LINE_SOLID);
 
 			classFigure_Body0.add(classFigure_ClassesCompartment1);
 			setFigureClassFigure_ClassesCompartment(classFigure_ClassesCompartment1);
 
-			org.eclipse.draw2d.RectangleFigure classFigure_LiteralsCompartment1 = new org.eclipse.draw2d.RectangleFigure();
+			RectangleFigure classFigure_LiteralsCompartment1 = new RectangleFigure();
 			classFigure_LiteralsCompartment1.setFill(true);
 			classFigure_LiteralsCompartment1.setFillXOR(false);
 			classFigure_LiteralsCompartment1.setOutline(true);
 			classFigure_LiteralsCompartment1.setOutlineXOR(false);
 			classFigure_LiteralsCompartment1.setLineWidth(1);
-			classFigure_LiteralsCompartment1.setLineStyle(org.eclipse.draw2d.Graphics.LINE_SOLID);
+			classFigure_LiteralsCompartment1.setLineStyle(Graphics.LINE_SOLID);
 
 			classFigure_Body0.add(classFigure_LiteralsCompartment1);
 			setFigureClassFigure_LiteralsCompartment(classFigure_LiteralsCompartment1);
 
-			org.eclipse.draw2d.RectangleFigure classFigure_OthersCompartment1 = new org.eclipse.draw2d.RectangleFigure();
+			RectangleFigure classFigure_OthersCompartment1 = new RectangleFigure();
 			classFigure_OthersCompartment1.setFill(true);
 			classFigure_OthersCompartment1.setFillXOR(false);
 			classFigure_OthersCompartment1.setOutline(true);
 			classFigure_OthersCompartment1.setOutlineXOR(false);
 			classFigure_OthersCompartment1.setLineWidth(1);
-			classFigure_OthersCompartment1.setLineStyle(org.eclipse.draw2d.Graphics.LINE_SOLID);
+			classFigure_OthersCompartment1.setLineStyle(Graphics.LINE_SOLID);
 
 			classFigure_Body0.add(classFigure_OthersCompartment1);
 			setFigureClassFigure_OthersCompartment(classFigure_OthersCompartment1);
@@ -456,114 +455,114 @@ public class Class2EditPart extends AbstractBorderedShapeEditPart {
 		/**
 		 * @generated
 		 */
-		private org.eclipse.gmf.runtime.draw2d.ui.figures.WrapLabel fClassFigure_name;
+		private WrapLabel fClassFigure_name;
 
 		/**
 		 * @generated
 		 */
-		public org.eclipse.gmf.runtime.draw2d.ui.figures.WrapLabel getFigureClassFigure_name() {
+		public WrapLabel getFigureClassFigure_name() {
 			return fClassFigure_name;
 		}
 
 		/**
 		 * @generated
 		 */
-		private void setFigureClassFigure_name(org.eclipse.gmf.runtime.draw2d.ui.figures.WrapLabel fig) {
+		private void setFigureClassFigure_name(WrapLabel fig) {
 			fClassFigure_name = fig;
 		}
 
 		/**
 		 * @generated
 		 */
-		private org.eclipse.draw2d.RectangleFigure fClassFigure_PropertiesCompartment;
+		private RectangleFigure fClassFigure_PropertiesCompartment;
 
 		/**
 		 * @generated
 		 */
-		public org.eclipse.draw2d.RectangleFigure getFigureClassFigure_PropertiesCompartment() {
+		public RectangleFigure getFigureClassFigure_PropertiesCompartment() {
 			return fClassFigure_PropertiesCompartment;
 		}
 
 		/**
 		 * @generated
 		 */
-		private void setFigureClassFigure_PropertiesCompartment(org.eclipse.draw2d.RectangleFigure fig) {
+		private void setFigureClassFigure_PropertiesCompartment(RectangleFigure fig) {
 			fClassFigure_PropertiesCompartment = fig;
 		}
 
 		/**
 		 * @generated
 		 */
-		private org.eclipse.draw2d.RectangleFigure fClassFigure_OperationsCompartment;
+		private RectangleFigure fClassFigure_OperationsCompartment;
 
 		/**
 		 * @generated
 		 */
-		public org.eclipse.draw2d.RectangleFigure getFigureClassFigure_OperationsCompartment() {
+		public RectangleFigure getFigureClassFigure_OperationsCompartment() {
 			return fClassFigure_OperationsCompartment;
 		}
 
 		/**
 		 * @generated
 		 */
-		private void setFigureClassFigure_OperationsCompartment(org.eclipse.draw2d.RectangleFigure fig) {
+		private void setFigureClassFigure_OperationsCompartment(RectangleFigure fig) {
 			fClassFigure_OperationsCompartment = fig;
 		}
 
 		/**
 		 * @generated
 		 */
-		private org.eclipse.draw2d.RectangleFigure fClassFigure_ClassesCompartment;
+		private RectangleFigure fClassFigure_ClassesCompartment;
 
 		/**
 		 * @generated
 		 */
-		public org.eclipse.draw2d.RectangleFigure getFigureClassFigure_ClassesCompartment() {
+		public RectangleFigure getFigureClassFigure_ClassesCompartment() {
 			return fClassFigure_ClassesCompartment;
 		}
 
 		/**
 		 * @generated
 		 */
-		private void setFigureClassFigure_ClassesCompartment(org.eclipse.draw2d.RectangleFigure fig) {
+		private void setFigureClassFigure_ClassesCompartment(RectangleFigure fig) {
 			fClassFigure_ClassesCompartment = fig;
 		}
 
 		/**
 		 * @generated
 		 */
-		private org.eclipse.draw2d.RectangleFigure fClassFigure_LiteralsCompartment;
+		private RectangleFigure fClassFigure_LiteralsCompartment;
 
 		/**
 		 * @generated
 		 */
-		public org.eclipse.draw2d.RectangleFigure getFigureClassFigure_LiteralsCompartment() {
+		public RectangleFigure getFigureClassFigure_LiteralsCompartment() {
 			return fClassFigure_LiteralsCompartment;
 		}
 
 		/**
 		 * @generated
 		 */
-		private void setFigureClassFigure_LiteralsCompartment(org.eclipse.draw2d.RectangleFigure fig) {
+		private void setFigureClassFigure_LiteralsCompartment(RectangleFigure fig) {
 			fClassFigure_LiteralsCompartment = fig;
 		}
 
 		/**
 		 * @generated
 		 */
-		private org.eclipse.draw2d.RectangleFigure fClassFigure_OthersCompartment;
+		private RectangleFigure fClassFigure_OthersCompartment;
 
 		/**
 		 * @generated
 		 */
-		public org.eclipse.draw2d.RectangleFigure getFigureClassFigure_OthersCompartment() {
+		public RectangleFigure getFigureClassFigure_OthersCompartment() {
 			return fClassFigure_OthersCompartment;
 		}
 
 		/**
 		 * @generated
 		 */
-		private void setFigureClassFigure_OthersCompartment(org.eclipse.draw2d.RectangleFigure fig) {
+		private void setFigureClassFigure_OthersCompartment(RectangleFigure fig) {
 			fClassFigure_OthersCompartment = fig;
 		}
 

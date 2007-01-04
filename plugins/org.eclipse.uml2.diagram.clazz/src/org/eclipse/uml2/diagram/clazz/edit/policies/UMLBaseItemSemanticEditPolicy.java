@@ -1,9 +1,5 @@
 package org.eclipse.uml2.diagram.clazz.edit.policies;
 
-import java.util.Collections;
-import java.util.HashMap;
-import java.util.Map;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.transaction.TransactionalEditingDomain;
@@ -20,7 +16,6 @@ import org.eclipse.gmf.runtime.emf.commands.core.command.CompositeTransactionalC
 import org.eclipse.gmf.runtime.emf.type.core.ElementTypeRegistry;
 import org.eclipse.gmf.runtime.emf.type.core.IEditHelperContext;
 import org.eclipse.gmf.runtime.emf.type.core.IElementType;
-import org.eclipse.gmf.runtime.emf.type.core.commands.CreateRelationshipCommand;
 import org.eclipse.gmf.runtime.emf.type.core.requests.ConfigureRequest;
 import org.eclipse.gmf.runtime.emf.type.core.requests.CreateElementRequest;
 import org.eclipse.gmf.runtime.emf.type.core.requests.CreateRelationshipRequest;
@@ -35,12 +30,26 @@ import org.eclipse.gmf.runtime.emf.type.core.requests.ReorientReferenceRelations
 import org.eclipse.gmf.runtime.emf.type.core.requests.ReorientRelationshipRequest;
 import org.eclipse.gmf.runtime.emf.type.core.requests.SetRequest;
 import org.eclipse.gmf.runtime.notation.View;
+import java.util.Collections;
+import java.util.HashMap;
+import java.util.Map;
+
 import org.eclipse.uml2.diagram.clazz.edit.helpers.UMLBaseEditHelper;
+
 import org.eclipse.uml2.diagram.clazz.expressions.UMLAbstractExpression;
 import org.eclipse.uml2.diagram.clazz.expressions.UMLOCLFactory;
+
 import org.eclipse.uml2.diagram.clazz.part.UMLDiagramEditorPlugin;
-import org.eclipse.uml2.uml.AggregationKind;
+
 import org.eclipse.uml2.uml.Association;
+import org.eclipse.uml2.uml.BehavioredClassifier;
+import org.eclipse.uml2.uml.Classifier;
+import org.eclipse.uml2.uml.Constraint;
+import org.eclipse.uml2.uml.Dependency;
+import org.eclipse.uml2.uml.Element;
+import org.eclipse.uml2.uml.Interface;
+import org.eclipse.uml2.uml.NamedElement;
+import org.eclipse.uml2.uml.Package;
 import org.eclipse.uml2.uml.Type;
 import org.eclipse.uml2.uml.UMLPackage;
 
@@ -243,66 +252,111 @@ public class UMLBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 		/**
 		 * @generated 
 		 */
-		public static final LinkConstraints Usage_4009 = createUsage_4009();
-
-		/**
-		 * @generated 
-		 */
-		private static LinkConstraints createUsage_4009() {
-			Map sourceEnv = new HashMap(3);
-			sourceEnv.put("oppositeEnd", org.eclipse.uml2.uml.UMLPackage.eINSTANCE.getNamedElement()); //$NON-NLS-1$				
-			UMLAbstractExpression sourceExpression = UMLOCLFactory.getExpression("self.oclIsKindOf(uml::Classifier)", //$NON-NLS-1$
-					UMLPackage.eINSTANCE.getNamedElement(), sourceEnv);
-			UMLAbstractExpression targetExpression = null;
-			return new LinkConstraints(sourceExpression, targetExpression);
-		}
-
-		/**
-		 * @generated 
-		 */
 		private static final String OPPOSITE_END_VAR = "oppositeEnd"; //$NON-NLS-1$
 
 		/**
 		 * @generated 
 		 */
-		private UMLAbstractExpression srcEndInv;
+		private static UMLAbstractExpression Usage_4009_SourceExpression;
 
 		/**
 		 * @generated 
 		 */
-		private UMLAbstractExpression targetEndInv;
-
-		/**
-		 * @generated 
-		 */
-		public LinkConstraints(UMLAbstractExpression sourceEnd, UMLAbstractExpression targetEnd) {
-			this.srcEndInv = sourceEnd;
-			this.targetEndInv = targetEnd;
+		static {
+			Map env = new HashMap(3);
+			env.put("oppositeEnd", UMLPackage.eINSTANCE.getNamedElement()); //$NON-NLS-1$
+			Usage_4009_SourceExpression = UMLOCLFactory.getExpression("self.oclIsKindOf(uml::Classifier)", //$NON-NLS-1$
+					UMLPackage.eINSTANCE.getNamedElement(), env);
 		}
 
 		/**
 		 * @generated 
 		 */
-		public boolean canCreateLink(CreateRelationshipRequest req, boolean isBackDirected) {
-			Object source = req.getSource();
-			Object target = req.getTarget();
+		public static boolean canCreateGeneralization_4001(Classifier source, Classifier target) {
+			return true;
+		}
 
-			UMLAbstractExpression sourceConstraint = isBackDirected ? targetEndInv : srcEndInv;
-			UMLAbstractExpression targetConstraint = null;
-			if (req.getTarget() != null) {
-				targetConstraint = isBackDirected ? srcEndInv : targetEndInv;
+		/**
+		 * @generated 
+		 */
+		public static boolean canCreateDependency_4002(Package container, NamedElement source, NamedElement target) {
+			return true;
+		}
+
+		/**
+		 * @generated 
+		 */
+		public static boolean canCreateProperty_4003(Association source, Type target) {
+			return true;
+		}
+
+		/**
+		 * @generated 
+		 */
+		public static boolean canCreateConstraintConstrainedElement_4004(Constraint source, Element target) {
+			if (source != null) {
+				if (source.getConstrainedElements().contains(target)) {
+					return false;
+				}
 			}
-			boolean isSourceAccepted = sourceConstraint != null ? evaluate(sourceConstraint, source, target, false) : true;
-			if (isSourceAccepted && targetConstraint != null) {
-				return evaluate(targetConstraint, target, source, true);
+			return true;
+		}
+
+		/**
+		 * @generated 
+		 */
+		public static boolean canCreateAssociation_4005(Package container, Type source, Type target) {
+			return true;
+		}
+
+		/**
+		 * @generated 
+		 */
+		public static boolean canCreateDependencySupplier_4006(Dependency source, NamedElement target) {
+			if (source != null) {
+				if (source.getSuppliers().contains(target)) {
+					return false;
+				}
 			}
-			return isSourceAccepted;
+			return true;
+		}
+
+		/**
+		 * @generated 
+		 */
+		public static boolean canCreateDependencyClient_4007(Dependency source, NamedElement target) {
+			if (source != null) {
+				if (source.getClients().contains(target)) {
+					return false;
+				}
+			}
+			return true;
+		}
+
+		/**
+		 * @generated 
+		 */
+		public static boolean canCreateInterfaceRealization_4008(BehavioredClassifier container, BehavioredClassifier source, Interface target) {
+			return true;
+		}
+
+		/**
+		 * @generated 
+		 */
+		public static boolean canCreateUsage_4009(Package container, NamedElement source, NamedElement target) {
+			if (!evaluate(Usage_4009_SourceExpression, source, target, false)) {
+				return false;
+			}
+			return true;
 		}
 
 		/**
 		 * @generated 
 		 */
 		private static boolean evaluate(UMLAbstractExpression constraint, Object sourceEnd, Object oppositeEnd, boolean clearEnv) {
+			if (sourceEnd == null) {
+				return true;
+			}
 			Map evalEnv = Collections.singletonMap(OPPOSITE_END_VAR, oppositeEnd);
 			try {
 				Object val = constraint.evaluate(sourceEnd, evalEnv);
@@ -312,31 +366,6 @@ public class UMLBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 				return false;
 			}
 		}
-	}
-
-	/**
-	 * @NOT-GENERATED
-	 */
-	protected static abstract class CreateAssociationCommand extends CreateRelationshipCommand {
-
-		public CreateAssociationCommand(CreateRelationshipRequest request) {
-			super(request);
-		}
-
-		protected EObject doDefaultElementCreation() {
-			Type sourceType = (Type) getSource();
-			Type targetType = (Type) getTarget();
-
-			//due to association end conventiontions (see AssociationEndConvention) 
-			//we need to have member end of type SourceType to be the first one created
-			//thus, we are calling UML2 createAssociation() in opposite order
-			Association result = targetType.createAssociation(//
-					false, AggregationKind.NONE_LITERAL, "src", 1, 1, // 
-					sourceType, false, AggregationKind.NONE_LITERAL, "dst", 1, 1);
-
-			return result;
-		}
-
 	}
 
 }

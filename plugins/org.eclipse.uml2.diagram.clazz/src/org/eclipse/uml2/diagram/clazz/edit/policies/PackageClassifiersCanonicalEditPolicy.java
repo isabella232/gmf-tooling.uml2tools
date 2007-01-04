@@ -15,6 +15,7 @@ import org.eclipse.uml2.diagram.clazz.edit.parts.EnumerationEditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.PrimitiveTypeEditPart;
 
 import org.eclipse.uml2.diagram.clazz.part.UMLVisualIDRegistry;
+import org.eclipse.uml2.uml.Package;
 
 /**
  * @generated
@@ -30,7 +31,7 @@ public class PackageClassifiersCanonicalEditPolicy extends CanonicalEditPolicy {
 		View viewObject = (View) getHost().getModel();
 		EObject nextValue;
 		int nodeVID;
-		for (Iterator values = ((org.eclipse.uml2.uml.Package) modelObject).getOwnedTypes().iterator(); values.hasNext();) {
+		for (Iterator values = ((Package) modelObject).getOwnedTypes().iterator(); values.hasNext();) {
 			nextValue = (EObject) values.next();
 			nodeVID = UMLVisualIDRegistry.getNodeVisualID(viewObject, nextValue);
 			switch (nodeVID) {

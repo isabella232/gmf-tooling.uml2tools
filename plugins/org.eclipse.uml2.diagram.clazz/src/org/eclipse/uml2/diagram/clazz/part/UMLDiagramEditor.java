@@ -1,10 +1,6 @@
 package org.eclipse.uml2.diagram.clazz.part;
 
-import org.eclipse.draw2d.DelegatingLayout;
-import org.eclipse.draw2d.FreeformLayer;
-import org.eclipse.draw2d.LayeredPane;
-import org.eclipse.gef.LayerConstants;
-import org.eclipse.gmf.runtime.diagram.ui.editparts.DiagramRootEditPart;
+import org.eclipse.gef.palette.PaletteRoot;
 import org.eclipse.gmf.runtime.diagram.ui.resources.editor.parts.DiagramDocumentEditor;
 import org.eclipse.emf.transaction.TransactionalEditingDomain;
 import org.eclipse.core.resources.IFile;
@@ -56,8 +52,6 @@ import org.eclipse.ui.dialogs.SaveAsDialog;
 import org.eclipse.ui.ide.IGotoMarker;
 
 import org.eclipse.ui.part.FileEditorInput;
-
-import org.eclipse.uml2.diagram.clazz.edit.parts.UMLEditPartFactory;
 
 /**
  * @generated
@@ -124,17 +118,10 @@ public class UMLDiagramEditor extends DiagramDocumentEditor implements IGotoMark
 	/**
 	 * @generated
 	 */
-	protected void configureGraphicalViewer() {
-		super.configureGraphicalViewer();
-		DiagramRootEditPart root = (DiagramRootEditPart) getDiagramGraphicalViewer().getRootEditPart();
-		LayeredPane printableLayers = (LayeredPane) root.getLayer(LayerConstants.PRINTABLE_LAYERS);
-		FreeformLayer extLabelsLayer = new FreeformLayer();
-		extLabelsLayer.setLayoutManager(new DelegatingLayout());
-		printableLayers.addLayerAfter(extLabelsLayer, UMLEditPartFactory.EXTERNAL_NODE_LABELS_LAYER, LayerConstants.PRIMARY_LAYER);
-		LayeredPane scalableLayers = (LayeredPane) root.getLayer(LayerConstants.SCALABLE_LAYERS);
-		FreeformLayer scaledFeedbackLayer = new FreeformLayer();
-		scaledFeedbackLayer.setEnabled(false);
-		scalableLayers.addLayerAfter(scaledFeedbackLayer, LayerConstants.SCALED_FEEDBACK_LAYER, DiagramRootEditPart.DECORATION_UNPRINTABLE_LAYER);
+	protected PaletteRoot createPaletteRoot(PaletteRoot existingPaletteRoot) {
+		PaletteRoot root = super.createPaletteRoot(existingPaletteRoot);
+		new UMLPaletteFactory().fillPalette(root);
+		return root;
 	}
 
 	/**

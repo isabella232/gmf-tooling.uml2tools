@@ -1,15 +1,12 @@
 package org.eclipse.uml2.diagram.clazz.edit.parts;
 
-import org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles;
-import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.draw2d.Connection;
-
-import org.eclipse.gef.EditPolicy;
-
+import org.eclipse.draw2d.Graphics;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.ConnectionNodeEditPart;
-
+import org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles;
+import org.eclipse.gmf.runtime.draw2d.ui.figures.PolylineConnectionEx;
+import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.uml2.diagram.clazz.edit.policies.ConstraintConstrainedElementItemSemanticEditPolicy;
-import org.eclipse.uml2.diagram.clazz.edit.policies.UMLReferenceConnectionEditPolicy;
 
 /**
  * @generated
@@ -33,9 +30,7 @@ public class ConstraintConstrainedElementEditPart extends ConnectionNodeEditPart
 	 */
 	protected void createDefaultEditPolicies() {
 		super.createDefaultEditPolicies();
-		installEditPolicy(EditPolicy.CONNECTION_ROLE, new UMLReferenceConnectionEditPolicy());
 		installEditPolicy(EditPolicyRoles.SEMANTIC_ROLE, new ConstraintConstrainedElementItemSemanticEditPolicy());
-
 	}
 
 	/**
@@ -47,13 +42,14 @@ public class ConstraintConstrainedElementEditPart extends ConnectionNodeEditPart
 	 * @generated
 	 */
 	protected Connection createConnectionFigure() {
+
 		return new DashedLineConnection();
 	}
 
 	/**
 	 * @generated
 	 */
-	public class DashedLineConnection extends org.eclipse.gmf.runtime.draw2d.ui.figures.PolylineConnectionEx {
+	public class DashedLineConnection extends PolylineConnectionEx {
 
 		/**
 		 * @generated
@@ -64,7 +60,7 @@ public class ConstraintConstrainedElementEditPart extends ConnectionNodeEditPart
 			this.setOutline(true);
 			this.setOutlineXOR(false);
 			this.setLineWidth(1);
-			this.setLineStyle(org.eclipse.draw2d.Graphics.LINE_DASH);
+			this.setLineStyle(Graphics.LINE_DASH);
 
 		}
 

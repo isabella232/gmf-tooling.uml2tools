@@ -11,6 +11,7 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.uml2.diagram.clazz.edit.parts.InstanceSpecificationEditPart;
 
 import org.eclipse.uml2.diagram.clazz.part.UMLVisualIDRegistry;
+import org.eclipse.uml2.uml.Package;
 
 /**
  * @generated
@@ -26,7 +27,7 @@ public class PackageOtherCanonicalEditPolicy extends CanonicalEditPolicy {
 		View viewObject = (View) getHost().getModel();
 		EObject nextValue;
 		int nodeVID;
-		for (Iterator values = ((org.eclipse.uml2.uml.Package) modelObject).getPackagedElements().iterator(); values.hasNext();) {
+		for (Iterator values = ((Package) modelObject).getPackagedElements().iterator(); values.hasNext();) {
 			nextValue = (EObject) values.next();
 			nodeVID = UMLVisualIDRegistry.getNodeVisualID(viewObject, nextValue);
 			if (InstanceSpecificationEditPart.VISUAL_ID == nodeVID) {

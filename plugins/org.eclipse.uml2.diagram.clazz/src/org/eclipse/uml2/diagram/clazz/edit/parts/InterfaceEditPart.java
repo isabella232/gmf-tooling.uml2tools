@@ -1,47 +1,35 @@
 package org.eclipse.uml2.diagram.clazz.edit.parts;
 
-import java.util.Iterator;
-
+import org.eclipse.draw2d.Ellipse;
+import org.eclipse.draw2d.Graphics;
 import org.eclipse.draw2d.IFigure;
 import org.eclipse.draw2d.PositionConstants;
 import org.eclipse.draw2d.StackLayout;
-
+import org.eclipse.draw2d.geometry.Dimension;
 import org.eclipse.gef.EditPart;
 import org.eclipse.gef.EditPolicy;
-import org.eclipse.gef.GraphicalEditPart;
 import org.eclipse.gef.Request;
-
 import org.eclipse.gef.commands.Command;
-
-import org.eclipse.gef.editparts.LayerManager;
-
 import org.eclipse.gef.editpolicies.LayoutEditPolicy;
 import org.eclipse.gef.editpolicies.NonResizableEditPolicy;
 import org.eclipse.gef.editpolicies.ResizableEditPolicy;
-
 import org.eclipse.gef.requests.CreateRequest;
-
-import org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart;
-import org.eclipse.gmf.runtime.diagram.ui.editparts.ShapeNodeEditPart;
-
+import org.eclipse.gmf.runtime.diagram.ui.editparts.AbstractBorderedShapeEditPart;
+import org.eclipse.gmf.runtime.diagram.ui.editparts.IBorderItemEditPart;
+import org.eclipse.gmf.runtime.diagram.ui.editpolicies.BorderItemSelectionEditPolicy;
 import org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles;
-
+import org.eclipse.gmf.runtime.diagram.ui.figures.BorderItemLocator;
 import org.eclipse.gmf.runtime.draw2d.ui.figures.ConstrainedToolbarLayout;
-
 import org.eclipse.gmf.runtime.gef.ui.figures.DefaultSizeNodeFigure;
 import org.eclipse.gmf.runtime.gef.ui.figures.NodeFigure;
-
 import org.eclipse.gmf.runtime.notation.View;
-
 import org.eclipse.uml2.diagram.clazz.edit.policies.InterfaceItemSemanticEditPolicy;
-import org.eclipse.uml2.diagram.clazz.edit.policies.UMLExtNodeLabelHostLayoutEditPolicy;
-
 import org.eclipse.uml2.diagram.clazz.part.UMLVisualIDRegistry;
 
 /**
  * @generated
  */
-public class InterfaceEditPart extends ShapeNodeEditPart {
+public class InterfaceEditPart extends AbstractBorderedShapeEditPart {
 
 	/**
 	 * @generated
@@ -70,9 +58,9 @@ public class InterfaceEditPart extends ShapeNodeEditPart {
 	 */
 	protected void createDefaultEditPolicies() {
 		super.createDefaultEditPolicies();
+
 		installEditPolicy(EditPolicyRoles.SEMANTIC_ROLE, new InterfaceItemSemanticEditPolicy());
 		installEditPolicy(EditPolicy.LAYOUT_ROLE, createLayoutEditPolicy());
-
 	}
 
 	/**
@@ -81,14 +69,10 @@ public class InterfaceEditPart extends ShapeNodeEditPart {
 	protected LayoutEditPolicy createLayoutEditPolicy() {
 		LayoutEditPolicy lep = new LayoutEditPolicy() {
 
-			protected void decorateChild(EditPart child) {
-				if (isExternalLabel(child)) {
-					return;
-				}
-				super.decorateChild(child);
-			}
-
 			protected EditPolicy createChildEditPolicy(EditPart child) {
+				if (child instanceof IBorderItemEditPart) {
+					return new BorderItemSelectionEditPolicy();
+				}
 				EditPolicy result = child.getEditPolicy(EditPolicy.PRIMARY_DRAG_ROLE);
 				if (result == null) {
 					result = new NonResizableEditPolicy();
@@ -104,14 +88,7 @@ public class InterfaceEditPart extends ShapeNodeEditPart {
 				return null;
 			}
 		};
-		UMLExtNodeLabelHostLayoutEditPolicy xlep = new UMLExtNodeLabelHostLayoutEditPolicy() {
-
-			protected boolean isExternalLabel(EditPart editPart) {
-				return InterfaceEditPart.this.isExternalLabel(editPart);
-			}
-		};
-		xlep.setRealLayoutEditPolicy(lep);
-		return xlep;
+		return lep;
 	}
 
 	/**
@@ -130,14 +107,16 @@ public class InterfaceEditPart extends ShapeNodeEditPart {
 	}
 
 	/**
-	 * @generated 
+	 * @generated
 	 */
-	protected IFigure getContentPaneFor(IGraphicalEditPart editPart) {
-		if (isExternalLabel(editPart)) {
-			return getExternalLabelsContainer();
+	protected void addBorderItem(IFigure borderItemContainer, IBorderItemEditPart borderItemEditPart) {
+		if (borderItemEditPart instanceof InterfaceNameEditPart) {
+			BorderItemLocator locator = new BorderItemLocator(getMainFigure(), PositionConstants.SOUTH);
+			locator.setBorderItemOffset(new Dimension(-20, -20));
+			borderItemContainer.add(borderItemEditPart.getFigure(), locator);
+		} else {
+			super.addBorderItem(borderItemContainer, borderItemEditPart);
 		}
-
-		return super.getContentPaneFor(editPart);
 	}
 
 	/**
@@ -145,6 +124,7 @@ public class InterfaceEditPart extends ShapeNodeEditPart {
 	 */
 	protected NodeFigure createNodePlate() {
 		DefaultSizeNodeFigure result = new DefaultSizeNodeFigure(getMapMode().DPtoLP(15), getMapMode().DPtoLP(15));
+
 		return result;
 	}
 
@@ -155,9 +135,7 @@ public class InterfaceEditPart extends ShapeNodeEditPart {
 		EditPolicy result = super.getPrimaryDragEditPolicy();
 		if (result instanceof ResizableEditPolicy) {
 			ResizableEditPolicy ep = (ResizableEditPolicy) result;
-
 			ep.setResizeDirections(PositionConstants.NONE);
-
 		}
 		return result;
 	}
@@ -170,7 +148,7 @@ public class InterfaceEditPart extends ShapeNodeEditPart {
 	 * 
 	 * @generated
 	 */
-	protected NodeFigure createNodeFigure() {
+	protected NodeFigure createMainFigure() {
 		NodeFigure figure = createNodePlate();
 		figure.setLayoutManager(new StackLayout());
 		IFigure shape = createNodeShape();
@@ -214,63 +192,7 @@ public class InterfaceEditPart extends ShapeNodeEditPart {
 	/**
 	 * @generated
 	 */
-	protected boolean isExternalLabel(EditPart childEditPart) {
-		if (childEditPart instanceof InterfaceNameEditPart) {
-			return true;
-		}
-		return false;
-	}
-
-	/**
-	 * @generated
-	 */
-	protected IFigure getExternalLabelsContainer() {
-		LayerManager root = (LayerManager) getRoot();
-		return root.getLayer(UMLEditPartFactory.EXTERNAL_NODE_LABELS_LAYER);
-	}
-
-	/**
-	 * @generated
-	 */
-	protected void addChildVisual(EditPart childEditPart, int index) {
-		if (isExternalLabel(childEditPart)) {
-			IFigure labelFigure = ((GraphicalEditPart) childEditPart).getFigure();
-			getExternalLabelsContainer().add(labelFigure);
-			return;
-		}
-		super.addChildVisual(childEditPart, -1);
-	}
-
-	/**
-	 * @generated
-	 */
-	protected void removeChildVisual(EditPart childEditPart) {
-		if (isExternalLabel(childEditPart)) {
-			IFigure labelFigure = ((GraphicalEditPart) childEditPart).getFigure();
-			getExternalLabelsContainer().remove(labelFigure);
-			return;
-		}
-		super.removeChildVisual(childEditPart);
-	}
-
-	/**
-	 * @generated
-	 */
-	public void removeNotify() {
-		for (Iterator it = getChildren().iterator(); it.hasNext();) {
-			EditPart childEditPart = (EditPart) it.next();
-			if (isExternalLabel(childEditPart)) {
-				IFigure labelFigure = ((GraphicalEditPart) childEditPart).getFigure();
-				getExternalLabelsContainer().remove(labelFigure);
-			}
-		}
-		super.removeNotify();
-	}
-
-	/**
-	 * @generated
-	 */
-	public class ProvidedInterfaceCircleFigure extends org.eclipse.draw2d.Ellipse {
+	public class ProvidedInterfaceCircleFigure extends Ellipse {
 
 		/**
 		 * @generated
@@ -281,10 +203,10 @@ public class InterfaceEditPart extends ShapeNodeEditPart {
 			this.setOutline(true);
 			this.setOutlineXOR(false);
 			this.setLineWidth(1);
-			this.setLineStyle(org.eclipse.draw2d.Graphics.LINE_SOLID);
-			this.setPreferredSize(new org.eclipse.draw2d.geometry.Dimension(getMapMode().DPtoLP(15), getMapMode().DPtoLP(15)));
-			this.setMaximumSize(new org.eclipse.draw2d.geometry.Dimension(getMapMode().DPtoLP(15), getMapMode().DPtoLP(15)));
-			this.setMinimumSize(new org.eclipse.draw2d.geometry.Dimension(getMapMode().DPtoLP(15), getMapMode().DPtoLP(15)));
+			this.setLineStyle(Graphics.LINE_SOLID);
+			this.setPreferredSize(new Dimension(getMapMode().DPtoLP(15), getMapMode().DPtoLP(15)));
+			this.setMaximumSize(new Dimension(getMapMode().DPtoLP(15), getMapMode().DPtoLP(15)));
+			this.setMinimumSize(new Dimension(getMapMode().DPtoLP(15), getMapMode().DPtoLP(15)));
 		}
 
 		/**

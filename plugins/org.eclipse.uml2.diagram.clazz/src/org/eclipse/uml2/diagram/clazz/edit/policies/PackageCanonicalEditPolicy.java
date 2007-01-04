@@ -77,6 +77,7 @@ import org.eclipse.uml2.uml.Constraint;
 import org.eclipse.uml2.uml.Dependency;
 import org.eclipse.uml2.uml.Generalization;
 import org.eclipse.uml2.uml.InterfaceRealization;
+import org.eclipse.uml2.uml.Package;
 import org.eclipse.uml2.uml.Property;
 import org.eclipse.uml2.uml.TypedElement;
 import org.eclipse.uml2.uml.UMLPackage;
@@ -95,14 +96,14 @@ public class PackageCanonicalEditPolicy extends CanonicalConnectionEditPolicy {
 		View viewObject = (View) getHost().getModel();
 		EObject nextValue;
 		int nodeVID;
-		for (Iterator values = ((org.eclipse.uml2.uml.Package) modelObject).getNestedPackages().iterator(); values.hasNext();) {
+		for (Iterator values = ((Package) modelObject).getNestedPackages().iterator(); values.hasNext();) {
 			nextValue = (EObject) values.next();
 			nodeVID = UMLVisualIDRegistry.getNodeVisualID(viewObject, nextValue);
 			if (Package2EditPart.VISUAL_ID == nodeVID) {
 				result.add(nextValue);
 			}
 		}
-		for (Iterator values = ((org.eclipse.uml2.uml.Package) modelObject).getOwnedTypes().iterator(); values.hasNext();) {
+		for (Iterator values = ((Package) modelObject).getOwnedTypes().iterator(); values.hasNext();) {
 			nextValue = (EObject) values.next();
 			nodeVID = UMLVisualIDRegistry.getNodeVisualID(viewObject, nextValue);
 			switch (nodeVID) {
@@ -132,7 +133,7 @@ public class PackageCanonicalEditPolicy extends CanonicalConnectionEditPolicy {
 			}
 			}
 		}
-		for (Iterator values = ((org.eclipse.uml2.uml.Package) modelObject).getPackagedElements().iterator(); values.hasNext();) {
+		for (Iterator values = ((Package) modelObject).getPackagedElements().iterator(); values.hasNext();) {
 			nextValue = (EObject) values.next();
 			nodeVID = UMLVisualIDRegistry.getNodeVisualID(viewObject, nextValue);
 			switch (nodeVID) {
@@ -399,7 +400,7 @@ public class PackageCanonicalEditPolicy extends CanonicalConnectionEditPolicy {
 	 */
 	private void storeTypeModelFacetLinks_Dependency_4002(EObject container, EClass containerMetaclass) {
 		if (UMLPackage.eINSTANCE.getPackage().isSuperTypeOf(containerMetaclass)) {
-			for (Iterator values = ((org.eclipse.uml2.uml.Package) container).getPackagedElements().iterator(); values.hasNext();) {
+			for (Iterator values = ((Package) container).getPackagedElements().iterator(); values.hasNext();) {
 				EObject nextValue = ((EObject) values.next());
 				int linkVID = UMLVisualIDRegistry.getLinkWithClassVisualID(nextValue);
 				if (Dependency2EditPart.VISUAL_ID == linkVID) {
@@ -446,7 +447,7 @@ public class PackageCanonicalEditPolicy extends CanonicalConnectionEditPolicy {
 	 */
 	private void storeTypeModelFacetLinks_Association_4005(EObject container, EClass containerMetaclass) {
 		if (UMLPackage.eINSTANCE.getPackage().isSuperTypeOf(containerMetaclass)) {
-			for (Iterator values = ((org.eclipse.uml2.uml.Package) container).getPackagedElements().iterator(); values.hasNext();) {
+			for (Iterator values = ((Package) container).getPackagedElements().iterator(); values.hasNext();) {
 				EObject nextValue = ((EObject) values.next());
 				int linkVID = UMLVisualIDRegistry.getLinkWithClassVisualID(nextValue);
 				if (AssociationEditPart.VISUAL_ID == linkVID) {
@@ -491,7 +492,7 @@ public class PackageCanonicalEditPolicy extends CanonicalConnectionEditPolicy {
 	 */
 	private void storeTypeModelFacetLinks_Usage_4009(EObject container, EClass containerMetaclass) {
 		if (UMLPackage.eINSTANCE.getPackage().isSuperTypeOf(containerMetaclass)) {
-			for (Iterator values = ((org.eclipse.uml2.uml.Package) container).getPackagedElements().iterator(); values.hasNext();) {
+			for (Iterator values = ((Package) container).getPackagedElements().iterator(); values.hasNext();) {
 				EObject nextValue = ((EObject) values.next());
 				int linkVID = UMLVisualIDRegistry.getLinkWithClassVisualID(nextValue);
 				if (UsageEditPart.VISUAL_ID == linkVID) {

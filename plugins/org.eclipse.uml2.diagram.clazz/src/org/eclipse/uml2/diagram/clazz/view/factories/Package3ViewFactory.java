@@ -12,6 +12,7 @@ import org.eclipse.gmf.runtime.diagram.ui.view.factories.AbstractLabelViewFactor
 
 import org.eclipse.gmf.runtime.notation.View;
 
+import org.eclipse.uml2.diagram.clazz.edit.parts.Package3EditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.PackageEditPart;
 
 import org.eclipse.uml2.diagram.clazz.part.UMLVisualIDRegistry;
@@ -34,7 +35,7 @@ public class Package3ViewFactory extends AbstractLabelViewFactory {
 	 */
 	protected void decorateView(View containerView, View view, IAdaptable semanticAdapter, String semanticHint, int index, boolean persisted) {
 		if (semanticHint == null) {
-			semanticHint = UMLVisualIDRegistry.getType(org.eclipse.uml2.diagram.clazz.edit.parts.Package3EditPart.VISUAL_ID);
+			semanticHint = UMLVisualIDRegistry.getType(Package3EditPart.VISUAL_ID);
 			view.setType(semanticHint);
 		}
 		super.decorateView(containerView, view, semanticAdapter, semanticHint, index, persisted);

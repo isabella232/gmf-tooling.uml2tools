@@ -4,8 +4,6 @@ import org.eclipse.jface.viewers.ViewerSorter;
 
 import org.eclipse.uml2.diagram.clazz.part.UMLVisualIDRegistry;
 
-import org.eclipse.uml2.diagram.clazz.edit.parts.PackageEditPart;
-
 /**
  * @generated
  */

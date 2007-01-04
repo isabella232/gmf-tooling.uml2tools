@@ -2,13 +2,18 @@ package org.eclipse.uml2.diagram.clazz.edit.parts;
 
 import java.util.Iterator;
 
+import org.eclipse.draw2d.ColorConstants;
 import org.eclipse.draw2d.Connection;
+import org.eclipse.draw2d.Graphics;
+import org.eclipse.draw2d.RotatableDecoration;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.ConnectionNodeEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles;
+import org.eclipse.gmf.runtime.draw2d.ui.figures.PolylineConnectionEx;
 import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.uml2.diagram.clazz.association.AssociationEndConvention;
 import org.eclipse.uml2.diagram.clazz.edit.policies.AssociationItemSemanticEditPolicy;
+import org.eclipse.uml2.diagram.common.draw2d.AssociationDecoration;
 import org.eclipse.uml2.uml.Association;
 import org.eclipse.uml2.uml.Property;
 
@@ -35,7 +40,6 @@ public class AssociationEditPart extends ConnectionNodeEditPart {
 	protected void createDefaultEditPolicies() {
 		super.createDefaultEditPolicies();
 		installEditPolicy(EditPolicyRoles.SEMANTIC_ROLE, new AssociationItemSemanticEditPolicy());
-
 	}
 
 	/**
@@ -47,6 +51,7 @@ public class AssociationEditPart extends ConnectionNodeEditPart {
 	 * @generated
 	 */
 	protected Connection createConnectionFigureGen() {
+
 		return new AssociationLinkFigure();
 	}
 
@@ -96,7 +101,7 @@ public class AssociationEditPart extends ConnectionNodeEditPart {
 	/**
 	 * @generated
 	 */
-	public class AssociationLinkFigure extends org.eclipse.gmf.runtime.draw2d.ui.figures.PolylineConnectionEx {
+	public class AssociationLinkFigure extends PolylineConnectionEx {
 
 		/**
 		 * @generated
@@ -107,8 +112,8 @@ public class AssociationEditPart extends ConnectionNodeEditPart {
 			this.setOutline(true);
 			this.setOutlineXOR(false);
 			this.setLineWidth(1);
-			this.setLineStyle(org.eclipse.draw2d.Graphics.LINE_SOLID);
-			this.setForegroundColor(org.eclipse.draw2d.ColorConstants.blue);
+			this.setLineStyle(Graphics.LINE_SOLID);
+			this.setForegroundColor(ColorConstants.blue);
 
 			setSourceDecoration(createSourceDecoration());
 			setTargetDecoration(createTargetDecoration());
@@ -117,8 +122,8 @@ public class AssociationEditPart extends ConnectionNodeEditPart {
 		/**
 		 * @generated
 		 */
-		private org.eclipse.draw2d.RotatableDecoration createSourceDecoration() {
-			org.eclipse.uml2.diagram.common.draw2d.AssociationDecoration df = new org.eclipse.uml2.diagram.common.draw2d.AssociationDecoration();
+		private RotatableDecoration createSourceDecoration() {
+			AssociationDecoration df = new AssociationDecoration();
 
 			return df;
 		}
@@ -126,8 +131,8 @@ public class AssociationEditPart extends ConnectionNodeEditPart {
 		/**
 		 * @generated
 		 */
-		private org.eclipse.draw2d.RotatableDecoration createTargetDecoration() {
-			org.eclipse.uml2.diagram.common.draw2d.AssociationDecoration df = new org.eclipse.uml2.diagram.common.draw2d.AssociationDecoration();
+		private RotatableDecoration createTargetDecoration() {
+			AssociationDecoration df = new AssociationDecoration();
 
 			return df;
 		}
@@ -135,15 +140,15 @@ public class AssociationEditPart extends ConnectionNodeEditPart {
 		/**
 		 * @generated NOT
 		 */
-		private org.eclipse.uml2.diagram.common.draw2d.AssociationDecoration getTargetDecorationImpl() {
-			return (org.eclipse.uml2.diagram.common.draw2d.AssociationDecoration) getTargetDecoration();
+		private AssociationDecoration getTargetDecorationImpl() {
+			return (AssociationDecoration) getTargetDecoration();
 		}
 
 		/**
 		 * @generated NOT
 		 */
-		private org.eclipse.uml2.diagram.common.draw2d.AssociationDecoration getSourceDecorationImpl() {
-			return (org.eclipse.uml2.diagram.common.draw2d.AssociationDecoration) getSourceDecoration();
+		private AssociationDecoration getSourceDecorationImpl() {
+			return (AssociationDecoration) getSourceDecoration();
 		}
 
 	}

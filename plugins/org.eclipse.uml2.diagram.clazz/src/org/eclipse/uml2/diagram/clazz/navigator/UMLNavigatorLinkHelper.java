@@ -1,7 +1,5 @@
 package org.eclipse.uml2.diagram.clazz.navigator;
 
-import org.eclipse.core.resources.IFile;
-
 import org.eclipse.emf.ecore.EObject;
 
 import org.eclipse.emf.ecore.resource.Resource;
@@ -21,12 +19,6 @@ import org.eclipse.ui.IEditorPart;
 import org.eclipse.ui.IWorkbenchPage;
 
 import org.eclipse.ui.navigator.ILinkHelper;
-
-import org.eclipse.ui.part.FileEditorInput;
-
-import org.eclipse.uml2.diagram.clazz.edit.parts.PackageEditPart;
-
-import org.eclipse.uml2.diagram.clazz.part.UMLDiagramEditor;
 
 /**
  * @generated
