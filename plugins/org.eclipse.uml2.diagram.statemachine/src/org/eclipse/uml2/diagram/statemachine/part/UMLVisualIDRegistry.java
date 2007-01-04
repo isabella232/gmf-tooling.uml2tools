@@ -142,6 +142,7 @@ public class UMLVisualIDRegistry {
 
 	/**
 	 * @generated
+
 	 */
 	public static int getNodeVisualID(View containerView, EObject domainElement, EClass domainElementMetaclass, String semanticHint) {
 		String containerModelID = getModelID(containerView);
@@ -158,6 +159,7 @@ public class UMLVisualIDRegistry {
 				return -1;
 			}
 		}
+
 		int nodeVisualID = semanticHint != null ? getVisualID(semanticHint) : -1;
 		switch (containerVisualID) {
 		case RegionEditPart.VISUAL_ID:

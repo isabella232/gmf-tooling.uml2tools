@@ -32,9 +32,9 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 	public static final OCLLookup<Type> TYPE_LOOKUP = new OCLLookup<Type>(//
 			UMLOCLFactory.getOCLLookupExpression(DefaultOclLookups.DEFAULT_TYPE_LOOKUP, UMLPackage.eINSTANCE.getNamedElement()), // 
 			new IElementType[] { //
-				/*
-				 UMLElementTypes.Class_2004, // 
-				 */
+			/*
+			 UMLElementTypes.Class_2004, // 
+			 */
 			});
 
 	/**

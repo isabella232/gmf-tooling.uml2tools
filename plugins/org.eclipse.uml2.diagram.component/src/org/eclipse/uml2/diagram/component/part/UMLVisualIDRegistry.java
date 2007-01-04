@@ -36,9 +36,11 @@ import org.eclipse.uml2.diagram.component.expressions.UMLAbstractExpression;
 import org.eclipse.uml2.diagram.component.expressions.UMLOCLFactory;
 
 import org.eclipse.uml2.uml.Artifact;
+import org.eclipse.uml2.uml.Class;
 import org.eclipse.uml2.uml.Component;
 import org.eclipse.uml2.uml.Interface;
 import org.eclipse.uml2.uml.InterfaceRealization;
+import org.eclipse.uml2.uml.Package;
 import org.eclipse.uml2.uml.Port;
 import org.eclipse.uml2.uml.UMLPackage;
 
@@ -121,7 +123,7 @@ public class UMLVisualIDRegistry {
 	 * @generated
 	 */
 	private static int getDiagramVisualID(EObject domainElement, EClass domainElementMetaclass) {
-		if (UMLPackage.eINSTANCE.getPackage().isSuperTypeOf(domainElementMetaclass) && isDiagramPackage_1000((org.eclipse.uml2.uml.Package) domainElement)) {
+		if (UMLPackage.eINSTANCE.getPackage().isSuperTypeOf(domainElementMetaclass) && isDiagramPackage_1000((Package) domainElement)) {
 			return PackageEditPart.VISUAL_ID;
 		}
 		return getUnrecognizedDiagramID(domainElement);
@@ -140,6 +142,7 @@ public class UMLVisualIDRegistry {
 
 	/**
 	 * @generated
+
 	 */
 	public static int getNodeVisualID(View containerView, EObject domainElement, EClass domainElementMetaclass, String semanticHint) {
 		String containerModelID = getModelID(containerView);
@@ -156,6 +159,7 @@ public class UMLVisualIDRegistry {
 				return -1;
 			}
 		}
+
 		int nodeVisualID = semanticHint != null ? getVisualID(semanticHint) : -1;
 		switch (containerVisualID) {
 		case ComponentEditPart.VISUAL_ID:
@@ -235,7 +239,7 @@ public class UMLVisualIDRegistry {
 				return ArtifactEditPart.VISUAL_ID;
 			}
 			if ((semanticHint == null || ClassEditPart.VISUAL_ID == nodeVisualID) && UMLPackage.eINSTANCE.getClass_().isSuperTypeOf(domainElementMetaclass)
-					&& (domainElement == null || isNodeClass_3004((org.eclipse.uml2.uml.Class) domainElement))) {
+					&& (domainElement == null || isNodeClass_3004((Class) domainElement))) {
 				return ClassEditPart.VISUAL_ID;
 			}
 			if ((semanticHint == null || InterfaceEditPart.VISUAL_ID == nodeVisualID) && UMLPackage.eINSTANCE.getInterface().isSuperTypeOf(domainElementMetaclass)
@@ -253,7 +257,7 @@ public class UMLVisualIDRegistry {
 				return ArtifactEditPart.VISUAL_ID;
 			}
 			if ((semanticHint == null || ClassEditPart.VISUAL_ID == nodeVisualID) && UMLPackage.eINSTANCE.getClass_().isSuperTypeOf(domainElementMetaclass)
-					&& (domainElement == null || isNodeClass_3004((org.eclipse.uml2.uml.Class) domainElement))) {
+					&& (domainElement == null || isNodeClass_3004((Class) domainElement))) {
 				return ClassEditPart.VISUAL_ID;
 			}
 			if ((semanticHint == null || InterfaceEditPart.VISUAL_ID == nodeVisualID) && UMLPackage.eINSTANCE.getInterface().isSuperTypeOf(domainElementMetaclass)
@@ -275,7 +279,7 @@ public class UMLVisualIDRegistry {
 				return Interface2EditPart.VISUAL_ID;
 			}
 			if ((semanticHint == null || Class2EditPart.VISUAL_ID == nodeVisualID) && UMLPackage.eINSTANCE.getClass_().isSuperTypeOf(domainElementMetaclass)
-					&& (domainElement == null || isNodeClass_2004((org.eclipse.uml2.uml.Class) domainElement))) {
+					&& (domainElement == null || isNodeClass_2004((Class) domainElement))) {
 				return Class2EditPart.VISUAL_ID;
 			}
 			return getUnrecognizedPackage_1000ChildNodeID(domainElement, semanticHint);
@@ -312,7 +316,7 @@ public class UMLVisualIDRegistry {
 	 *
 	 * @generated
 	 */
-	private static boolean isDiagramPackage_1000(org.eclipse.uml2.uml.Package element) {
+	private static boolean isDiagramPackage_1000(Package element) {
 		return true;
 	}
 
@@ -362,7 +366,7 @@ public class UMLVisualIDRegistry {
 	 *
 	 * @generated
 	 */
-	private static boolean isNodeClass_2004(org.eclipse.uml2.uml.Class element) {
+	private static boolean isNodeClass_2004(Class element) {
 		return Class_2004.matches(element);
 	}
 
@@ -402,7 +406,7 @@ public class UMLVisualIDRegistry {
 	 *
 	 * @generated
 	 */
-	private static boolean isNodeClass_3004(org.eclipse.uml2.uml.Class element) {
+	private static boolean isNodeClass_3004(Class element) {
 		return Class_3004.matches(element);
 	}
 

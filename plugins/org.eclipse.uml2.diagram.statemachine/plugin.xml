@@ -8,7 +8,7 @@
 
    <extension point="org.eclipse.core.runtime.preferences">
       <?gmfgen generated="true"?>
-      <initializer class="org.eclipse.uml2.diagram.statemachine.part.UMLDiagramPreferenceInitializer"/>
+      <initializer class="org.eclipse.uml2.diagram.statemachine.preferences.DiagramPreferenceInitializer"/>
    </extension>
 
    <extension point="org.eclipse.team.core.fileTypes">
@@ -608,5 +608,43 @@
             <input type="org.eclipse.uml2.diagram.statemachine.navigator.UMLAbstractNavigatorItem"/>
          </propertySection>
       </propertySections>
+   </extension><extension point="org.eclipse.ui.preferencePages">
+      <?gmfgen generated="true"?>
+      <page
+            name="%preferences.general"
+            class="org.eclipse.uml2.diagram.statemachine.preferences.DiagramGeneralPreferencePage"
+            id="org.eclipse.uml2.diagram.statemachine.general">
+      </page>
+      <page
+            name="%preferences.appearance"
+            category="org.eclipse.uml2.diagram.statemachine.general"
+            class="org.eclipse.uml2.diagram.statemachine.preferences.DiagramAppearancePreferencePage"
+            id="org.eclipse.uml2.diagram.statemachine.appearance">
+      </page>     
+      <page
+            name="%preferences.connections"
+            category="org.eclipse.uml2.diagram.statemachine.general"
+            class="org.eclipse.uml2.diagram.statemachine.preferences.DiagramConnectionsPreferencePage"
+            id="org.eclipse.uml2.diagram.statemachine.connections">
+      </page>    
+      <page
+            name="%preferences.printing"
+            category="org.eclipse.uml2.diagram.statemachine.general"
+            class="org.eclipse.uml2.diagram.statemachine.preferences.DiagramPrintingPreferencePage"
+            id="org.eclipse.uml2.diagram.statemachine.printing">
+      </page>
+      <page
+            name="%preferences.rulersAndGrid"
+            category="org.eclipse.uml2.diagram.statemachine.general"
+            class="org.eclipse.uml2.diagram.statemachine.preferences.DiagramRulersAndGridPreferencePage"
+            id="org.eclipse.uml2.diagram.statemachine.rulersAndGrid">
+      </page>
+      <page
+            name="%preferences.pathmaps"
+            category="org.eclipse.uml2.diagram.statemachine.general"
+            class="org.eclipse.gmf.runtime.emf.ui.preferences.PathmapsPreferencePage"
+            id="org.eclipse.uml2.diagram.statemachine.pathmaps">
+      </page>
    </extension>
+
 </plugin>

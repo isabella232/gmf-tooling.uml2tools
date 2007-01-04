@@ -5,7 +5,6 @@ import org.eclipse.core.runtime.IAdaptable;
 import org.eclipse.gmf.runtime.diagram.ui.parts.DiagramEditorInput;
 
 import org.eclipse.gmf.runtime.notation.Diagram;
-
 import org.eclipse.gmf.runtime.notation.View;
 
 import org.eclipse.jface.action.Action;
@@ -20,7 +19,6 @@ import org.eclipse.ui.PartInitException;
 import org.eclipse.ui.navigator.CommonActionProvider;
 import org.eclipse.ui.navigator.ICommonActionConstants;
 import org.eclipse.ui.navigator.ICommonActionExtensionSite;
-import org.eclipse.ui.navigator.ICommonMenuConstants;
 import org.eclipse.ui.navigator.ICommonViewerWorkbenchSite;
 
 import org.eclipse.uml2.diagram.component.edit.parts.PackageEditPart;

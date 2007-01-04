@@ -1,15 +1,14 @@
 package org.eclipse.uml2.diagram.component.edit.parts;
 
-import org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles;
-import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.draw2d.Connection;
-
-import org.eclipse.gef.EditPolicy;
-
+import org.eclipse.draw2d.Graphics;
+import org.eclipse.draw2d.RotatableDecoration;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.ConnectionNodeEditPart;
-
+import org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles;
+import org.eclipse.gmf.runtime.draw2d.ui.figures.PolylineConnectionEx;
+import org.eclipse.gmf.runtime.notation.View;
+import org.eclipse.uml2.diagram.common.draw2d.RequiredInterfaceDecoration;
 import org.eclipse.uml2.diagram.component.edit.policies.PortRequiredItemSemanticEditPolicy;
-import org.eclipse.uml2.diagram.component.edit.policies.UMLReferenceConnectionEditPolicy;
 
 /**
  * @generated
@@ -33,9 +32,7 @@ public class PortRequiredEditPart extends ConnectionNodeEditPart {
 	 */
 	protected void createDefaultEditPolicies() {
 		super.createDefaultEditPolicies();
-		installEditPolicy(EditPolicy.CONNECTION_ROLE, new UMLReferenceConnectionEditPolicy());
 		installEditPolicy(EditPolicyRoles.SEMANTIC_ROLE, new PortRequiredItemSemanticEditPolicy());
-
 	}
 
 	/**
@@ -47,13 +44,14 @@ public class PortRequiredEditPart extends ConnectionNodeEditPart {
 	 * @generated
 	 */
 	protected Connection createConnectionFigure() {
+
 		return new RequiredInterfaceConnectionFigure();
 	}
 
 	/**
 	 * @generated
 	 */
-	public class RequiredInterfaceConnectionFigure extends org.eclipse.gmf.runtime.draw2d.ui.figures.PolylineConnectionEx {
+	public class RequiredInterfaceConnectionFigure extends PolylineConnectionEx {
 
 		/**
 		 * @generated
@@ -64,7 +62,7 @@ public class PortRequiredEditPart extends ConnectionNodeEditPart {
 			this.setOutline(true);
 			this.setOutlineXOR(false);
 			this.setLineWidth(1);
-			this.setLineStyle(org.eclipse.draw2d.Graphics.LINE_SOLID);
+			this.setLineStyle(Graphics.LINE_SOLID);
 
 			setTargetDecoration(createTargetDecoration());
 		}
@@ -72,8 +70,8 @@ public class PortRequiredEditPart extends ConnectionNodeEditPart {
 		/**
 		 * @generated
 		 */
-		private org.eclipse.draw2d.RotatableDecoration createTargetDecoration() {
-			org.eclipse.uml2.diagram.common.draw2d.RequiredInterfaceDecoration df = new org.eclipse.uml2.diagram.common.draw2d.RequiredInterfaceDecoration();
+		private RotatableDecoration createTargetDecoration() {
+			RequiredInterfaceDecoration df = new RequiredInterfaceDecoration();
 
 			df.setRadius(10);
 

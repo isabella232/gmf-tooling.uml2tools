@@ -7,17 +7,16 @@ import org.eclipse.gmf.runtime.emf.type.core.requests.DestroyElementRequest;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EAnnotation;
 import org.eclipse.gmf.runtime.notation.View;
-import org.eclipse.emf.ecore.EClass;
-
 import org.eclipse.gef.commands.UnexecutableCommand;
-
-import org.eclipse.gmf.runtime.emf.type.core.commands.CreateElementCommand;
 
 import org.eclipse.gmf.runtime.emf.type.core.requests.CreateElementRequest;
 
+import org.eclipse.uml2.diagram.component.edit.commands.PortCreateCommand;
+
 import org.eclipse.uml2.diagram.component.providers.UMLElementTypes;
 
-import org.eclipse.uml2.uml.Port;
+import org.eclipse.uml2.uml.BehavioredClassifier;
+import org.eclipse.uml2.uml.Interface;
 import org.eclipse.uml2.uml.UMLPackage;
 
 /**
@@ -33,51 +32,9 @@ public class Component2ItemSemanticEditPolicy extends UMLBaseItemSemanticEditPol
 			if (req.getContainmentFeature() == null) {
 				req.setContainmentFeature(UMLPackage.eINSTANCE.getStructuredClassifier_OwnedAttribute());
 			}
-			return getMSLWrapper(new CreatePort_3002Command(req));
+			return getMSLWrapper(new PortCreateCommand(req));
 		}
 		return super.getCreateCommand(req);
-	}
-
-	/**
-	 * @generated
-	 */
-	private static class CreatePort_3002Command extends CreateElementCommand {
-
-		/**
-		 * @generated
-		 */
-		public CreatePort_3002Command(CreateElementRequest req) {
-			super(req);
-		}
-
-		/**
-		 * @generated
-		 */
-		protected EClass getEClassToEdit() {
-			return UMLPackage.eINSTANCE.getComponent();
-		};
-
-		/**
-		 * @generated
-		 */
-		protected EObject getElementToEdit() {
-			EObject container = ((CreateElementRequest) getRequest()).getContainer();
-			if (container instanceof View) {
-				container = ((View) container).getElement();
-			}
-			return container;
-		}
-
-		/**
-		 * @generated
-		 */
-		protected EObject doDefaultElementCreation() {
-			Port newElement = (Port) super.doDefaultElementCreation();
-			if (newElement != null) {
-				UMLElementTypes.Initializers.Port_3002.init(newElement);
-			}
-			return newElement;
-		}
 	}
 
 	/**
@@ -112,7 +69,19 @@ public class Component2ItemSemanticEditPolicy extends UMLBaseItemSemanticEditPol
 	 * @generated
 	 */
 	protected Command getCreateStartOutgoingInterfaceRealization4001Command(CreateRelationshipRequest req) {
-		if (!UMLBaseItemSemanticEditPolicy.LinkConstraints.InterfaceRealization_4001.canCreateLink(req, false)) {
+		EObject sourceEObject = req.getSource();
+		EObject targetEObject = req.getTarget();
+		if (false == sourceEObject instanceof BehavioredClassifier || (targetEObject != null && false == targetEObject instanceof Interface)) {
+			return UnexecutableCommand.INSTANCE;
+		}
+		BehavioredClassifier source = (BehavioredClassifier) sourceEObject;
+		Interface target = (Interface) targetEObject;
+
+		BehavioredClassifier container = (BehavioredClassifier) getRelationshipContainer(source, UMLPackage.eINSTANCE.getBehavioredClassifier(), req.getElementType());
+		if (container == null) {
+			return UnexecutableCommand.INSTANCE;
+		}
+		if (!UMLBaseItemSemanticEditPolicy.LinkConstraints.canCreateInterfaceRealization_4001(container, source, target)) {
 			return UnexecutableCommand.INSTANCE;
 		}
 		return new Command() {

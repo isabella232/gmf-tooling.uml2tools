@@ -1,17 +1,11 @@
 package org.eclipse.uml2.diagram.component.edit.parts;
 
-import org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles;
-import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.draw2d.Connection;
-
-import org.eclipse.gef.EditPolicy;
-
 import org.eclipse.gmf.runtime.diagram.ui.editparts.ConnectionNodeEditPart;
-
+import org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles;
 import org.eclipse.gmf.runtime.draw2d.ui.figures.PolylineConnectionEx;
-
+import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.uml2.diagram.component.edit.policies.PortProvidedItemSemanticEditPolicy;
-import org.eclipse.uml2.diagram.component.edit.policies.UMLReferenceConnectionEditPolicy;
 
 /**
  * @generated
@@ -35,9 +29,7 @@ public class PortProvidedEditPart extends ConnectionNodeEditPart {
 	 */
 	protected void createDefaultEditPolicies() {
 		super.createDefaultEditPolicies();
-		installEditPolicy(EditPolicy.CONNECTION_ROLE, new UMLReferenceConnectionEditPolicy());
 		installEditPolicy(EditPolicyRoles.SEMANTIC_ROLE, new PortProvidedItemSemanticEditPolicy());
-
 	}
 
 	/**
@@ -49,6 +41,7 @@ public class PortProvidedEditPart extends ConnectionNodeEditPart {
 	 * @generated
 	 */
 	protected Connection createConnectionFigure() {
+
 		return new PolylineConnectionEx();
 	}
 

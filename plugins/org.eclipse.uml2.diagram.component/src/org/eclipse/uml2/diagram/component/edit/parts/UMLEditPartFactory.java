@@ -1,7 +1,6 @@
 package org.eclipse.uml2.diagram.component.edit.parts;
 
 import org.eclipse.draw2d.FigureUtilities;
-import org.eclipse.draw2d.IFigure;
 import org.eclipse.draw2d.Label;
 import org.eclipse.draw2d.geometry.Dimension;
 import org.eclipse.draw2d.geometry.Rectangle;
@@ -12,7 +11,6 @@ import org.eclipse.gmf.runtime.diagram.ui.editparts.ITextAwareEditPart;
 import org.eclipse.gmf.runtime.draw2d.ui.figures.WrapLabel;
 import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.jface.viewers.CellEditor;
-import org.eclipse.swt.SWT;
 import org.eclipse.swt.widgets.Text;
 import org.eclipse.uml2.diagram.component.part.UMLVisualIDRegistry;
 
@@ -24,62 +22,80 @@ public class UMLEditPartFactory implements EditPartFactory {
 	/**
 	 * @generated
 	 */
-	public static final String EXTERNAL_NODE_LABELS_LAYER = "External Node Labels"; //$NON-NLS-1$
-
-	/**
-	 * @generated
-	 */
 	public EditPart createEditPart(EditPart context, Object model) {
 		if (model instanceof View) {
 			View view = (View) model;
-			int viewVisualID = UMLVisualIDRegistry.getVisualID(view);
-			switch (viewVisualID) {
-			case ComponentEditPart.VISUAL_ID:
-				return new ComponentEditPart(view);
-			case ComponentName2EditPart.VISUAL_ID:
-				return new ComponentName2EditPart(view);
-			case Artifact2EditPart.VISUAL_ID:
-				return new Artifact2EditPart(view);
-			case ArtifactName2EditPart.VISUAL_ID:
-				return new ArtifactName2EditPart(view);
-			case Interface2EditPart.VISUAL_ID:
-				return new Interface2EditPart(view);
-			case InterfaceName2EditPart.VISUAL_ID:
-				return new InterfaceName2EditPart(view);
-			case Class2EditPart.VISUAL_ID:
-				return new Class2EditPart(view);
-			case ClassName2EditPart.VISUAL_ID:
-				return new ClassName2EditPart(view);
-			case Component2EditPart.VISUAL_ID:
-				return new Component2EditPart(view);
-			case ComponentNameEditPart.VISUAL_ID:
-				return new ComponentNameEditPart(view);
-			case PortEditPart.VISUAL_ID:
-				return new PortEditPart(view);
-			case PortNameEditPart.VISUAL_ID:
-				return new PortNameEditPart(view);
-			case ArtifactEditPart.VISUAL_ID:
-				return new ArtifactEditPart(view);
-			case ArtifactNameEditPart.VISUAL_ID:
-				return new ArtifactNameEditPart(view);
-			case ClassEditPart.VISUAL_ID:
-				return new ClassEditPart(view);
-			case ClassNameEditPart.VISUAL_ID:
-				return new ClassNameEditPart(view);
-			case InterfaceEditPart.VISUAL_ID:
-				return new InterfaceEditPart(view);
-			case InterfaceNameEditPart.VISUAL_ID:
-				return new InterfaceNameEditPart(view);
-			case ComponentContentsEditPart.VISUAL_ID:
-				return new ComponentContentsEditPart(view);
-			case ComponentContents2EditPart.VISUAL_ID:
-				return new ComponentContents2EditPart(view);
+			switch (UMLVisualIDRegistry.getVisualID(view)) {
+
 			case PackageEditPart.VISUAL_ID:
 				return new PackageEditPart(view);
+
+			case ComponentEditPart.VISUAL_ID:
+				return new ComponentEditPart(view);
+
+			case ComponentName2EditPart.VISUAL_ID:
+				return new ComponentName2EditPart(view);
+
+			case Artifact2EditPart.VISUAL_ID:
+				return new Artifact2EditPart(view);
+
+			case ArtifactName2EditPart.VISUAL_ID:
+				return new ArtifactName2EditPart(view);
+
+			case Interface2EditPart.VISUAL_ID:
+				return new Interface2EditPart(view);
+
+			case InterfaceName2EditPart.VISUAL_ID:
+				return new InterfaceName2EditPart(view);
+
+			case Class2EditPart.VISUAL_ID:
+				return new Class2EditPart(view);
+
+			case ClassName2EditPart.VISUAL_ID:
+				return new ClassName2EditPart(view);
+
+			case Component2EditPart.VISUAL_ID:
+				return new Component2EditPart(view);
+
+			case ComponentNameEditPart.VISUAL_ID:
+				return new ComponentNameEditPart(view);
+
+			case PortEditPart.VISUAL_ID:
+				return new PortEditPart(view);
+
+			case PortNameEditPart.VISUAL_ID:
+				return new PortNameEditPart(view);
+
+			case ArtifactEditPart.VISUAL_ID:
+				return new ArtifactEditPart(view);
+
+			case ArtifactNameEditPart.VISUAL_ID:
+				return new ArtifactNameEditPart(view);
+
+			case ClassEditPart.VISUAL_ID:
+				return new ClassEditPart(view);
+
+			case ClassNameEditPart.VISUAL_ID:
+				return new ClassNameEditPart(view);
+
+			case InterfaceEditPart.VISUAL_ID:
+				return new InterfaceEditPart(view);
+
+			case InterfaceNameEditPart.VISUAL_ID:
+				return new InterfaceNameEditPart(view);
+
+			case ComponentContentsEditPart.VISUAL_ID:
+				return new ComponentContentsEditPart(view);
+
+			case ComponentContents2EditPart.VISUAL_ID:
+				return new ComponentContents2EditPart(view);
+
 			case InterfaceRealizationEditPart.VISUAL_ID:
 				return new InterfaceRealizationEditPart(view);
+
 			case PortProvidedEditPart.VISUAL_ID:
 				return new PortProvidedEditPart(view);
+
 			case PortRequiredEditPart.VISUAL_ID:
 				return new PortRequiredEditPart(view);
 			}
@@ -102,8 +118,7 @@ public class UMLEditPartFactory implements EditPartFactory {
 		if (source.getFigure() instanceof WrapLabel)
 			return new TextCellEditorLocator((WrapLabel) source.getFigure());
 		else {
-			IFigure figure = source.getFigure();
-			return new LabelCellEditorLocator((Label) figure);
+			return new LabelCellEditorLocator((Label) source.getFigure());
 		}
 	}
 
@@ -121,7 +136,6 @@ public class UMLEditPartFactory implements EditPartFactory {
 		 * @generated
 		 */
 		public TextCellEditorLocator(WrapLabel wrapLabel) {
-			super();
 			this.wrapLabel = wrapLabel;
 		}
 
@@ -139,16 +153,15 @@ public class UMLEditPartFactory implements EditPartFactory {
 			Text text = (Text) celleditor.getControl();
 			Rectangle rect = getWrapLabel().getTextBounds().getCopy();
 			getWrapLabel().translateToAbsolute(rect);
-
-			if (getWrapLabel().isTextWrapped() && getWrapLabel().getText().length() > 0)
-				rect.setSize(new Dimension(text.computeSize(rect.width, SWT.DEFAULT)));
-			else {
+			if (getWrapLabel().isTextWrapped() && getWrapLabel().getText().length() > 0) {
+				rect.setSize(new Dimension(text.computeSize(rect.width, org.eclipse.swt.SWT.DEFAULT)));
+			} else {
 				int avr = FigureUtilities.getFontMetrics(text.getFont()).getAverageCharWidth();
-				rect.setSize(new Dimension(text.computeSize(SWT.DEFAULT, SWT.DEFAULT)).expand(avr * 2, 0));
+				rect.setSize(new Dimension(text.computeSize(org.eclipse.swt.SWT.DEFAULT, org.eclipse.swt.SWT.DEFAULT)).expand(avr * 2, 0));
 			}
-
-			if (!rect.equals(new Rectangle(text.getBounds())))
+			if (!rect.equals(new Rectangle(text.getBounds()))) {
 				text.setBounds(rect.x, rect.y, rect.width, rect.height);
+			}
 		}
 
 	}
@@ -184,12 +197,11 @@ public class UMLEditPartFactory implements EditPartFactory {
 			Text text = (Text) celleditor.getControl();
 			Rectangle rect = getLabel().getTextBounds().getCopy();
 			getLabel().translateToAbsolute(rect);
-
 			int avr = FigureUtilities.getFontMetrics(text.getFont()).getAverageCharWidth();
-			rect.setSize(new Dimension(text.computeSize(SWT.DEFAULT, SWT.DEFAULT)).expand(avr * 2, 0));
-
-			if (!rect.equals(new Rectangle(text.getBounds())))
+			rect.setSize(new Dimension(text.computeSize(org.eclipse.swt.SWT.DEFAULT, org.eclipse.swt.SWT.DEFAULT)).expand(avr * 2, 0));
+			if (!rect.equals(new Rectangle(text.getBounds()))) {
 				text.setBounds(rect.x, rect.y, rect.width, rect.height);
+			}
 		}
 	}
 }

@@ -7,20 +7,18 @@ import org.eclipse.gmf.runtime.emf.type.core.requests.DestroyElementRequest;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EAnnotation;
 import org.eclipse.gmf.runtime.notation.View;
-import org.eclipse.emf.ecore.EClass;
-
 import org.eclipse.gef.commands.UnexecutableCommand;
 
-import org.eclipse.gmf.runtime.emf.type.core.commands.CreateRelationshipCommand;
 import org.eclipse.gmf.runtime.emf.type.core.commands.SetValueCommand;
 
 import org.eclipse.gmf.runtime.emf.type.core.requests.SetRequest;
+
+import org.eclipse.uml2.diagram.component.edit.commands.InterfaceRealizationTypeLinkCreateCommand;
 
 import org.eclipse.uml2.diagram.component.providers.UMLElementTypes;
 
 import org.eclipse.uml2.uml.BehavioredClassifier;
 import org.eclipse.uml2.uml.Interface;
-import org.eclipse.uml2.uml.InterfaceRealization;
 import org.eclipse.uml2.uml.Port;
 import org.eclipse.uml2.uml.UMLPackage;
 
@@ -67,78 +65,39 @@ public class InterfaceItemSemanticEditPolicy extends UMLBaseItemSemanticEditPoli
 	 * @generated
 	 */
 	protected Command getCreateCompleteIncomingInterfaceRealization4001Command(CreateRelationshipRequest req) {
-		if (!(req.getSource() instanceof BehavioredClassifier)) {
+		EObject sourceEObject = req.getSource();
+		EObject targetEObject = req.getTarget();
+		if (false == sourceEObject instanceof BehavioredClassifier || false == targetEObject instanceof Interface) {
 			return UnexecutableCommand.INSTANCE;
 		}
-		final BehavioredClassifier element = (BehavioredClassifier) getRelationshipContainer(req.getSource(), UMLPackage.eINSTANCE.getBehavioredClassifier(), req.getElementType());
-		if (element == null) {
+		BehavioredClassifier source = (BehavioredClassifier) sourceEObject;
+		Interface target = (Interface) targetEObject;
+
+		BehavioredClassifier container = (BehavioredClassifier) getRelationshipContainer(source, UMLPackage.eINSTANCE.getBehavioredClassifier(), req.getElementType());
+		if (container == null) {
 			return UnexecutableCommand.INSTANCE;
 		}
-		if (!UMLBaseItemSemanticEditPolicy.LinkConstraints.InterfaceRealization_4001.canCreateLink(req, false)) {
+		if (!UMLBaseItemSemanticEditPolicy.LinkConstraints.canCreateInterfaceRealization_4001(container, source, target)) {
 			return UnexecutableCommand.INSTANCE;
 		}
 		if (req.getContainmentFeature() == null) {
 			req.setContainmentFeature(UMLPackage.eINSTANCE.getBehavioredClassifier_InterfaceRealization());
 		}
-		return getMSLWrapper(new CreateIncomingInterfaceRealization4001Command(req) {
-
-			protected EObject getElementToEdit() {
-				return element;
-			}
-		});
-	}
-
-	/**
-	 * @generated
-	 */
-	private static class CreateIncomingInterfaceRealization4001Command extends CreateRelationshipCommand {
-
-		/**
-		 * @generated
-		 */
-		public CreateIncomingInterfaceRealization4001Command(CreateRelationshipRequest req) {
-			super(req);
-		}
-
-		/**
-		 * @generated
-		 */
-		protected EClass getEClassToEdit() {
-			return UMLPackage.eINSTANCE.getBehavioredClassifier();
-		};
-
-		/**
-		 * @generated
-		 */
-		protected void setElementToEdit(EObject element) {
-			throw new UnsupportedOperationException();
-		}
-
-		/**
-		 * @generated
-		 */
-		protected EObject doDefaultElementCreation() {
-			InterfaceRealization newElement = (InterfaceRealization) super.doDefaultElementCreation();
-			if (newElement != null) {
-				newElement.setContract((Interface) getTarget());
-				newElement.setImplementingClassifier((BehavioredClassifier) getSource());
-			}
-			return newElement;
-		}
+		return getMSLWrapper(new InterfaceRealizationTypeLinkCreateCommand(req, container, source, target));
 	}
 
 	/**
 	 * @generated
 	 */
 	protected Command getCreateCompleteIncomingPort_Provided4006Command(CreateRelationshipRequest req) {
-		if (!(req.getSource() instanceof Port)) {
+		EObject sourceEObject = req.getSource();
+		EObject targetEObject = req.getTarget();
+		if (false == sourceEObject instanceof Port || false == targetEObject instanceof Interface) {
 			return UnexecutableCommand.INSTANCE;
 		}
-		Port element = (Port) req.getSource();
-		if (element.getProvideds().contains(req.getTarget())) {
-			return UnexecutableCommand.INSTANCE;
-		}
-		if (!UMLBaseItemSemanticEditPolicy.LinkConstraints.PortProvided_4006.canCreateLink(req, false)) {
+		Port source = (Port) sourceEObject;
+		Interface target = (Interface) targetEObject;
+		if (!UMLBaseItemSemanticEditPolicy.LinkConstraints.canCreatePortProvided_4006(source, target)) {
 			return UnexecutableCommand.INSTANCE;
 		}
 		SetRequest setReq = new SetRequest(req.getSource(), UMLPackage.eINSTANCE.getPort_Provided(), req.getTarget());
@@ -149,14 +108,14 @@ public class InterfaceItemSemanticEditPolicy extends UMLBaseItemSemanticEditPoli
 	 * @generated
 	 */
 	protected Command getCreateCompleteIncomingPort_Required4004Command(CreateRelationshipRequest req) {
-		if (!(req.getSource() instanceof Port)) {
+		EObject sourceEObject = req.getSource();
+		EObject targetEObject = req.getTarget();
+		if (false == sourceEObject instanceof Port || false == targetEObject instanceof Interface) {
 			return UnexecutableCommand.INSTANCE;
 		}
-		Port element = (Port) req.getSource();
-		if (element.getRequireds().contains(req.getTarget())) {
-			return UnexecutableCommand.INSTANCE;
-		}
-		if (!UMLBaseItemSemanticEditPolicy.LinkConstraints.PortRequired_4004.canCreateLink(req, false)) {
+		Port source = (Port) sourceEObject;
+		Interface target = (Interface) targetEObject;
+		if (!UMLBaseItemSemanticEditPolicy.LinkConstraints.canCreatePortRequired_4004(source, target)) {
 			return UnexecutableCommand.INSTANCE;
 		}
 		SetRequest setReq = new SetRequest(req.getSource(), UMLPackage.eINSTANCE.getPort_Required(), req.getTarget());

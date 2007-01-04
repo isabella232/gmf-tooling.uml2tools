@@ -1,39 +1,33 @@
 package org.eclipse.uml2.diagram.component.edit.parts;
 
+import org.eclipse.draw2d.Graphics;
 import org.eclipse.draw2d.IFigure;
 import org.eclipse.draw2d.PositionConstants;
+import org.eclipse.draw2d.RectangleFigure;
 import org.eclipse.draw2d.StackLayout;
-
 import org.eclipse.gef.EditPart;
 import org.eclipse.gef.EditPolicy;
 import org.eclipse.gef.Request;
-
 import org.eclipse.gef.commands.Command;
-
 import org.eclipse.gef.editpolicies.LayoutEditPolicy;
 import org.eclipse.gef.editpolicies.NonResizableEditPolicy;
-
 import org.eclipse.gef.requests.CreateRequest;
-
 import org.eclipse.gmf.runtime.diagram.ui.editparts.AbstractBorderedShapeEditPart;
+import org.eclipse.gmf.runtime.diagram.ui.editparts.IBorderItemEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart;
-
+import org.eclipse.gmf.runtime.diagram.ui.editpolicies.BorderItemSelectionEditPolicy;
 import org.eclipse.gmf.runtime.diagram.ui.editpolicies.CreationEditPolicy;
 import org.eclipse.gmf.runtime.diagram.ui.editpolicies.DragDropEditPolicy;
 import org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles;
-
 import org.eclipse.gmf.runtime.diagram.ui.figures.BorderItemLocator;
-
 import org.eclipse.gmf.runtime.draw2d.ui.figures.ConstrainedToolbarLayout;
-
+import org.eclipse.gmf.runtime.draw2d.ui.figures.WrapLabel;
 import org.eclipse.gmf.runtime.gef.ui.figures.DefaultSizeNodeFigure;
 import org.eclipse.gmf.runtime.gef.ui.figures.NodeFigure;
-
 import org.eclipse.gmf.runtime.notation.View;
-
+import org.eclipse.uml2.diagram.common.draw2d.CenterLayout;
 import org.eclipse.uml2.diagram.component.edit.policies.Class2CanonicalEditPolicy;
 import org.eclipse.uml2.diagram.component.edit.policies.Class2ItemSemanticEditPolicy;
-
 import org.eclipse.uml2.diagram.component.part.UMLVisualIDRegistry;
 
 /**
@@ -69,11 +63,11 @@ public class Class2EditPart extends AbstractBorderedShapeEditPart {
 	protected void createDefaultEditPolicies() {
 		installEditPolicy(EditPolicyRoles.CREATION_ROLE, new CreationEditPolicy());
 		super.createDefaultEditPolicies();
+
 		installEditPolicy(EditPolicyRoles.SEMANTIC_ROLE, new Class2ItemSemanticEditPolicy());
 		installEditPolicy(EditPolicyRoles.DRAG_DROP_ROLE, new DragDropEditPolicy());
 		installEditPolicy(EditPolicyRoles.CANONICAL_ROLE, new Class2CanonicalEditPolicy());
 		installEditPolicy(EditPolicy.LAYOUT_ROLE, createLayoutEditPolicy());
-
 	}
 
 	/**
@@ -83,6 +77,9 @@ public class Class2EditPart extends AbstractBorderedShapeEditPart {
 		LayoutEditPolicy lep = new LayoutEditPolicy() {
 
 			protected EditPolicy createChildEditPolicy(EditPart child) {
+				if (child instanceof IBorderItemEditPart) {
+					return new BorderItemSelectionEditPolicy();
+				}
 				EditPolicy result = child.getEditPolicy(EditPolicy.PRIMARY_DRAG_ROLE);
 				if (result == null) {
 					result = new NonResizableEditPolicy();
@@ -117,17 +114,6 @@ public class Class2EditPart extends AbstractBorderedShapeEditPart {
 	}
 
 	/**
-	 * @generated 
-	 */
-	protected IFigure getContentPaneFor(IGraphicalEditPart editPart) {
-		if (editPart instanceof PortEditPart) {
-			return getBorderedFigure().getBorderItemContainer();
-		}
-
-		return super.getContentPaneFor(editPart);
-	}
-
-	/**
 	 * @generated
 	 */
 	protected boolean addFixedChild(EditPart childEditPart) {
@@ -147,6 +133,7 @@ public class Class2EditPart extends AbstractBorderedShapeEditPart {
 	 * @generated
 	 */
 	protected boolean removeFixedChild(EditPart childEditPart) {
+
 		if (childEditPart instanceof PortEditPart) {
 			getBorderedFigure().getBorderItemContainer().remove(((PortEditPart) childEditPart).getFigure());
 			return true;
@@ -157,8 +144,40 @@ public class Class2EditPart extends AbstractBorderedShapeEditPart {
 	/**
 	 * @generated
 	 */
+	protected void addChildVisual(EditPart childEditPart, int index) {
+		if (addFixedChild(childEditPart)) {
+			return;
+		}
+		super.addChildVisual(childEditPart, -1);
+	}
+
+	/**
+	 * @generated
+	 */
+	protected void removeChildVisual(EditPart childEditPart) {
+		if (removeFixedChild(childEditPart)) {
+			return;
+		}
+		super.removeChildVisual(childEditPart);
+	}
+
+	/**
+	 * @generated
+	 */
+	protected IFigure getContentPaneFor(IGraphicalEditPart editPart) {
+
+		if (editPart instanceof PortEditPart) {
+			return getBorderedFigure().getBorderItemContainer();
+		}
+		return super.getContentPaneFor(editPart);
+	}
+
+	/**
+	 * @generated
+	 */
 	protected NodeFigure createNodePlate() {
 		DefaultSizeNodeFigure result = new DefaultSizeNodeFigure(getMapMode().DPtoLP(80), getMapMode().DPtoLP(60));
+
 		return result;
 	}
 
@@ -214,34 +233,14 @@ public class Class2EditPart extends AbstractBorderedShapeEditPart {
 	/**
 	 * @generated
 	 */
-	protected void addChildVisual(EditPart childEditPart, int index) {
-		if (addFixedChild(childEditPart)) {
-			return;
-		}
-		super.addChildVisual(childEditPart, -1);
-	}
-
-	/**
-	 * @generated
-	 */
-	protected void removeChildVisual(EditPart childEditPart) {
-		if (removeFixedChild(childEditPart)) {
-			return;
-		}
-		super.removeChildVisual(childEditPart);
-	}
-
-	/**
-	 * @generated
-	 */
-	public class ComponentClassFigure extends org.eclipse.draw2d.RectangleFigure {
+	public class ComponentClassFigure extends RectangleFigure {
 
 		/**
 		 * @generated
 		 */
 		public ComponentClassFigure() {
 
-			org.eclipse.uml2.diagram.common.draw2d.CenterLayout layoutThis = new org.eclipse.uml2.diagram.common.draw2d.CenterLayout();
+			CenterLayout layoutThis = new CenterLayout();
 
 			this.setLayoutManager(layoutThis);
 
@@ -250,7 +249,7 @@ public class Class2EditPart extends AbstractBorderedShapeEditPart {
 			this.setOutline(true);
 			this.setOutlineXOR(false);
 			this.setLineWidth(1);
-			this.setLineStyle(org.eclipse.draw2d.Graphics.LINE_SOLID);
+			this.setLineStyle(Graphics.LINE_SOLID);
 			createContents();
 		}
 
@@ -259,7 +258,7 @@ public class Class2EditPart extends AbstractBorderedShapeEditPart {
 		 */
 		private void createContents() {
 
-			org.eclipse.gmf.runtime.draw2d.ui.figures.WrapLabel componentClassFigure_name0 = new org.eclipse.gmf.runtime.draw2d.ui.figures.WrapLabel();
+			WrapLabel componentClassFigure_name0 = new WrapLabel();
 			componentClassFigure_name0.setText("");
 
 			this.add(componentClassFigure_name0);
@@ -270,19 +269,19 @@ public class Class2EditPart extends AbstractBorderedShapeEditPart {
 		/**
 		 * @generated
 		 */
-		private org.eclipse.gmf.runtime.draw2d.ui.figures.WrapLabel fComponentClassFigure_name;
+		private WrapLabel fComponentClassFigure_name;
 
 		/**
 		 * @generated
 		 */
-		public org.eclipse.gmf.runtime.draw2d.ui.figures.WrapLabel getFigureComponentClassFigure_name() {
+		public WrapLabel getFigureComponentClassFigure_name() {
 			return fComponentClassFigure_name;
 		}
 
 		/**
 		 * @generated
 		 */
-		private void setFigureComponentClassFigure_name(org.eclipse.gmf.runtime.draw2d.ui.figures.WrapLabel fig) {
+		private void setFigureComponentClassFigure_name(WrapLabel fig) {
 			fComponentClassFigure_name = fig;
 		}
 

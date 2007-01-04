@@ -11,6 +11,9 @@ import org.eclipse.gef.commands.UnexecutableCommand;
 
 import org.eclipse.uml2.diagram.component.providers.UMLElementTypes;
 
+import org.eclipse.uml2.uml.Interface;
+import org.eclipse.uml2.uml.Port;
+
 /**
  * @generated
  */
@@ -51,10 +54,16 @@ public class PortItemSemanticEditPolicy extends UMLBaseItemSemanticEditPolicy {
 	 * @generated
 	 */
 	protected Command getCreateStartOutgoingPort_Provided4006Command(CreateRelationshipRequest req) {
-		if (!UMLBaseItemSemanticEditPolicy.LinkConstraints.PortProvided_4006.canCreateLink(req, false)) {
+		EObject sourceEObject = req.getSource();
+		EObject targetEObject = req.getTarget();
+		if (false == sourceEObject instanceof Port || (targetEObject != null && false == targetEObject instanceof Interface)) {
 			return UnexecutableCommand.INSTANCE;
 		}
-
+		Port source = (Port) sourceEObject;
+		Interface target = (Interface) targetEObject;
+		if (!UMLBaseItemSemanticEditPolicy.LinkConstraints.canCreatePortProvided_4006(source, target)) {
+			return UnexecutableCommand.INSTANCE;
+		}
 		return new Command() {
 		};
 	}
@@ -63,10 +72,16 @@ public class PortItemSemanticEditPolicy extends UMLBaseItemSemanticEditPolicy {
 	 * @generated
 	 */
 	protected Command getCreateStartOutgoingPort_Required4004Command(CreateRelationshipRequest req) {
-		if (!UMLBaseItemSemanticEditPolicy.LinkConstraints.PortRequired_4004.canCreateLink(req, false)) {
+		EObject sourceEObject = req.getSource();
+		EObject targetEObject = req.getTarget();
+		if (false == sourceEObject instanceof Port || (targetEObject != null && false == targetEObject instanceof Interface)) {
 			return UnexecutableCommand.INSTANCE;
 		}
-
+		Port source = (Port) sourceEObject;
+		Interface target = (Interface) targetEObject;
+		if (!UMLBaseItemSemanticEditPolicy.LinkConstraints.canCreatePortRequired_4004(source, target)) {
+			return UnexecutableCommand.INSTANCE;
+		}
 		return new Command() {
 		};
 	}

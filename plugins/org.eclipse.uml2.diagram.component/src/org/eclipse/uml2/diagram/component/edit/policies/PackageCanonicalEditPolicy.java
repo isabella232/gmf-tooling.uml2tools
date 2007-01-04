@@ -57,6 +57,7 @@ import org.eclipse.uml2.diagram.component.providers.UMLElementTypes;
 
 import org.eclipse.uml2.uml.BehavioredClassifier;
 import org.eclipse.uml2.uml.InterfaceRealization;
+import org.eclipse.uml2.uml.Package;
 import org.eclipse.uml2.uml.Port;
 import org.eclipse.uml2.uml.UMLPackage;
 
@@ -74,7 +75,7 @@ public class PackageCanonicalEditPolicy extends CanonicalConnectionEditPolicy {
 		View viewObject = (View) getHost().getModel();
 		EObject nextValue;
 		int nodeVID;
-		for (Iterator values = ((org.eclipse.uml2.uml.Package) modelObject).getOwnedTypes().iterator(); values.hasNext();) {
+		for (Iterator values = ((Package) modelObject).getOwnedTypes().iterator(); values.hasNext();) {
 			nextValue = (EObject) values.next();
 			nodeVID = UMLVisualIDRegistry.getNodeVisualID(viewObject, nextValue);
 			switch (nodeVID) {

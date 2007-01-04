@@ -1,18 +1,15 @@
 package org.eclipse.uml2.diagram.component.part;
 
+import java.util.ArrayList;
 import java.util.List;
+
 import org.eclipse.gef.Tool;
 import org.eclipse.gef.palette.PaletteContainer;
+import org.eclipse.gef.palette.PaletteGroup;
 import org.eclipse.gef.palette.PaletteRoot;
 import org.eclipse.gef.palette.ToolEntry;
-import org.eclipse.jface.resource.ImageDescriptor;
-import java.util.ArrayList;
-
-import org.eclipse.gef.palette.PaletteGroup;
-
 import org.eclipse.gmf.runtime.diagram.ui.tools.UnspecifiedTypeConnectionTool;
 import org.eclipse.gmf.runtime.diagram.ui.tools.UnspecifiedTypeCreationTool;
-
 import org.eclipse.uml2.diagram.component.providers.UMLElementTypes;
 
 /**
@@ -29,11 +26,12 @@ public class UMLPaletteFactory {
 	}
 
 	/**
+	 * Creates "Nodes" palette tool group
 	 * @generated
 	 */
 	private PaletteContainer createNodes1Group() {
-		PaletteContainer paletteContainer = new PaletteGroup("Nodes");
-		paletteContainer.setDescription("Diagram Nodes");
+		PaletteGroup paletteContainer = new PaletteGroup(UMLDiagramEditorPlugin.getString("Nodes1Group.title")); //$NON-NLS-1$
+		paletteContainer.setDescription(UMLDiagramEditorPlugin.getString("Nodes1Group.desc")); //$NON-NLS-1$
 		paletteContainer.add(createComponent1CreationTool());
 		paletteContainer.add(createArtifact2CreationTool());
 		paletteContainer.add(createInterface3CreationTool());
@@ -43,11 +41,12 @@ public class UMLPaletteFactory {
 	}
 
 	/**
+	 * Creates "Links" palette tool group
 	 * @generated
 	 */
 	private PaletteContainer createLinks2Group() {
-		PaletteContainer paletteContainer = new PaletteGroup("Links");
-		paletteContainer.setDescription("Diagram Links");
+		PaletteGroup paletteContainer = new PaletteGroup(UMLDiagramEditorPlugin.getString("Links2Group.title")); //$NON-NLS-1$
+		paletteContainer.setDescription(UMLDiagramEditorPlugin.getString("Links2Group.desc")); //$NON-NLS-1$
 		paletteContainer.add(createProvidedInterface1CreationTool());
 		paletteContainer.add(createRequiredInterface2CreationTool());
 		return paletteContainer;
@@ -57,131 +56,91 @@ public class UMLPaletteFactory {
 	 * @generated
 	 */
 	private ToolEntry createComponent1CreationTool() {
-		ImageDescriptor smallImage;
-		ImageDescriptor largeImage;
-
-		smallImage = UMLElementTypes.getImageDescriptor(UMLElementTypes.Component_2001);
-
-		largeImage = smallImage;
-
-		final List elementTypes = new ArrayList();
-		elementTypes.add(UMLElementTypes.Component_2001);
-		elementTypes.add(UMLElementTypes.Component_3001);
-		ToolEntry result = new NodeToolEntry("Component", "Create Component", smallImage, largeImage, elementTypes);
-
-		return result;
+		List/*<IElementType>*/types = new ArrayList/*<IElementType>*/(2);
+		types.add(UMLElementTypes.Component_2001);
+		types.add(UMLElementTypes.Component_3001);
+		NodeToolEntry entry = new NodeToolEntry(UMLDiagramEditorPlugin.getString("Component1CreationTool.title"), UMLDiagramEditorPlugin.getString("Component1CreationTool.desc"), types); //$NON-NLS-1$ $NON-NLS-2$
+		entry.setSmallIcon(UMLElementTypes.getImageDescriptor(UMLElementTypes.Component_2001));
+		entry.setLargeIcon(entry.getSmallIcon());
+		return entry;
 	}
 
 	/**
 	 * @generated
 	 */
 	private ToolEntry createArtifact2CreationTool() {
-		ImageDescriptor smallImage;
-		ImageDescriptor largeImage;
-
-		smallImage = UMLElementTypes.getImageDescriptor(UMLElementTypes.Artifact_3003);
-
-		largeImage = smallImage;
-
-		final List elementTypes = new ArrayList();
-		elementTypes.add(UMLElementTypes.Artifact_3003);
-		elementTypes.add(UMLElementTypes.Artifact_2002);
-		ToolEntry result = new NodeToolEntry("Artifact", "Create Artifact", smallImage, largeImage, elementTypes);
-
-		return result;
+		List/*<IElementType>*/types = new ArrayList/*<IElementType>*/(2);
+		types.add(UMLElementTypes.Artifact_3003);
+		types.add(UMLElementTypes.Artifact_2002);
+		NodeToolEntry entry = new NodeToolEntry(UMLDiagramEditorPlugin.getString("Artifact2CreationTool.title"), UMLDiagramEditorPlugin.getString("Artifact2CreationTool.desc"), types); //$NON-NLS-1$ $NON-NLS-2$
+		entry.setSmallIcon(UMLElementTypes.getImageDescriptor(UMLElementTypes.Artifact_3003));
+		entry.setLargeIcon(entry.getSmallIcon());
+		return entry;
 	}
 
 	/**
 	 * @generated
 	 */
 	private ToolEntry createInterface3CreationTool() {
-		ImageDescriptor smallImage;
-		ImageDescriptor largeImage;
-
-		smallImage = UMLElementTypes.getImageDescriptor(UMLElementTypes.Interface_3005);
-
-		largeImage = smallImage;
-
-		final List elementTypes = new ArrayList();
-		elementTypes.add(UMLElementTypes.Interface_3005);
-		elementTypes.add(UMLElementTypes.Interface_2003);
-		ToolEntry result = new NodeToolEntry("Interface", "Create Component Interface", smallImage, largeImage, elementTypes);
-
-		return result;
+		List/*<IElementType>*/types = new ArrayList/*<IElementType>*/(2);
+		types.add(UMLElementTypes.Interface_3005);
+		types.add(UMLElementTypes.Interface_2003);
+		NodeToolEntry entry = new NodeToolEntry(UMLDiagramEditorPlugin.getString("Interface3CreationTool.title"), UMLDiagramEditorPlugin.getString("Interface3CreationTool.desc"), types); //$NON-NLS-1$ $NON-NLS-2$
+		entry.setSmallIcon(UMLElementTypes.getImageDescriptor(UMLElementTypes.Interface_3005));
+		entry.setLargeIcon(entry.getSmallIcon());
+		return entry;
 	}
 
 	/**
 	 * @generated
 	 */
 	private ToolEntry createPort4CreationTool() {
-		ImageDescriptor smallImage;
-		ImageDescriptor largeImage;
-
-		smallImage = UMLElementTypes.getImageDescriptor(UMLElementTypes.Port_3002);
-
-		largeImage = smallImage;
-
-		final List elementTypes = new ArrayList();
-		elementTypes.add(UMLElementTypes.Port_3002);
-		ToolEntry result = new NodeToolEntry("Port", "Create Port", smallImage, largeImage, elementTypes);
-
-		return result;
+		List/*<IElementType>*/types = new ArrayList/*<IElementType>*/(1);
+		types.add(UMLElementTypes.Port_3002);
+		NodeToolEntry entry = new NodeToolEntry(UMLDiagramEditorPlugin.getString("Port4CreationTool.title"), UMLDiagramEditorPlugin.getString("Port4CreationTool.desc"), types); //$NON-NLS-1$ $NON-NLS-2$
+		entry.setSmallIcon(UMLElementTypes.getImageDescriptor(UMLElementTypes.Port_3002));
+		entry.setLargeIcon(entry.getSmallIcon());
+		return entry;
 	}
 
 	/**
 	 * @generated
 	 */
 	private ToolEntry createClass5CreationTool() {
-		ImageDescriptor smallImage;
-		ImageDescriptor largeImage;
-
-		smallImage = UMLElementTypes.getImageDescriptor(UMLElementTypes.Class_3004);
-
-		largeImage = smallImage;
-
-		final List elementTypes = new ArrayList();
-		elementTypes.add(UMLElementTypes.Class_3004);
-		elementTypes.add(UMLElementTypes.Class_2004);
-		ToolEntry result = new NodeToolEntry("Class", "Create Class", smallImage, largeImage, elementTypes);
-
-		return result;
+		List/*<IElementType>*/types = new ArrayList/*<IElementType>*/(2);
+		types.add(UMLElementTypes.Class_3004);
+		types.add(UMLElementTypes.Class_2004);
+		NodeToolEntry entry = new NodeToolEntry(UMLDiagramEditorPlugin.getString("Class5CreationTool.title"), UMLDiagramEditorPlugin.getString("Class5CreationTool.desc"), types); //$NON-NLS-1$ $NON-NLS-2$
+		entry.setSmallIcon(UMLElementTypes.getImageDescriptor(UMLElementTypes.Class_3004));
+		entry.setLargeIcon(entry.getSmallIcon());
+		return entry;
 	}
 
 	/**
 	 * @generated
 	 */
 	private ToolEntry createProvidedInterface1CreationTool() {
-		ImageDescriptor smallImage;
-		ImageDescriptor largeImage;
-
-		smallImage = UMLElementTypes.getImageDescriptor(UMLElementTypes.InterfaceRealization_4001);
-
-		largeImage = smallImage;
-
-		final List relationshipTypes = new ArrayList();
-		relationshipTypes.add(UMLElementTypes.InterfaceRealization_4001);
-		relationshipTypes.add(UMLElementTypes.PortProvided_4006);
-		ToolEntry result = new LinkToolEntry("Provided Interface", "Create Provided Interface", smallImage, largeImage, relationshipTypes);
-
-		return result;
+		List/*<IElementType>*/types = new ArrayList/*<IElementType>*/(2);
+		types.add(UMLElementTypes.InterfaceRealization_4001);
+		types.add(UMLElementTypes.PortProvided_4006);
+		LinkToolEntry entry = new LinkToolEntry(
+				UMLDiagramEditorPlugin.getString("ProvidedInterface1CreationTool.title"), UMLDiagramEditorPlugin.getString("ProvidedInterface1CreationTool.desc"), types); //$NON-NLS-1$ $NON-NLS-2$
+		entry.setSmallIcon(UMLElementTypes.getImageDescriptor(UMLElementTypes.InterfaceRealization_4001));
+		entry.setLargeIcon(entry.getSmallIcon());
+		return entry;
 	}
 
 	/**
 	 * @generated
 	 */
 	private ToolEntry createRequiredInterface2CreationTool() {
-		ImageDescriptor smallImage;
-		ImageDescriptor largeImage;
-
-		smallImage = UMLElementTypes.getImageDescriptor(UMLElementTypes.PortRequired_4004);
-
-		largeImage = smallImage;
-
-		final List relationshipTypes = new ArrayList();
-		relationshipTypes.add(UMLElementTypes.PortRequired_4004);
-		ToolEntry result = new LinkToolEntry("Required Interface", "Create Required Interface", smallImage, largeImage, relationshipTypes);
-
-		return result;
+		List/*<IElementType>*/types = new ArrayList/*<IElementType>*/(1);
+		types.add(UMLElementTypes.PortRequired_4004);
+		LinkToolEntry entry = new LinkToolEntry(
+				UMLDiagramEditorPlugin.getString("RequiredInterface2CreationTool.title"), UMLDiagramEditorPlugin.getString("RequiredInterface2CreationTool.desc"), types); //$NON-NLS-1$ $NON-NLS-2$
+		entry.setSmallIcon(UMLElementTypes.getImageDescriptor(UMLElementTypes.PortRequired_4004));
+		entry.setLargeIcon(entry.getSmallIcon());
+		return entry;
 	}
 
 	/**
@@ -197,8 +156,8 @@ public class UMLPaletteFactory {
 		/**
 		 * @generated
 		 */
-		private NodeToolEntry(String title, String description, ImageDescriptor smallIcon, ImageDescriptor largeIcon, List elementTypes) {
-			super(title, description, smallIcon, largeIcon);
+		private NodeToolEntry(String title, String description, List elementTypes) {
+			super(title, description, null, null);
 			this.elementTypes = elementTypes;
 		}
 
@@ -225,8 +184,8 @@ public class UMLPaletteFactory {
 		/**
 		 * @generated
 		 */
-		private LinkToolEntry(String title, String description, ImageDescriptor smallIcon, ImageDescriptor largeIcon, List relationshipTypes) {
-			super(title, description, smallIcon, largeIcon);
+		private LinkToolEntry(String title, String description, List relationshipTypes) {
+			super(title, description, null, null);
 			this.relationshipTypes = relationshipTypes;
 		}
 

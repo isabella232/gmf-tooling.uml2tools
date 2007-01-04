@@ -8,7 +8,7 @@
 
    <extension point="org.eclipse.core.runtime.preferences">
       <?gmfgen generated="true"?>
-      <initializer class="org.eclipse.uml2.diagram.component.part.UMLDiagramPreferenceInitializer"/>
+      <initializer class="org.eclipse.uml2.diagram.component.preferences.DiagramPreferenceInitializer"/>
    </extension>
 
    <extension point="org.eclipse.team.core.fileTypes">
@@ -235,13 +235,7 @@
       </editpartProvider>
    </extension>
 
-   <extension point="org.eclipse.gmf.runtime.diagram.ui.paletteProviders">
-      <?gmfgen generated="true"?>
-      <paletteProvider class="org.eclipse.uml2.diagram.component.providers.UMLPaletteProvider">
-         <Priority name="Lowest"/>
-         <editor id="org.eclipse.uml2.diagram.component.part.UMLDiagramEditorID"/>
-      </paletteProvider>
-   </extension>
+   
 
    <extension point="org.eclipse.gmf.runtime.emf.ui.modelingAssistantProviders">
       <?gmfgen generated="true"?>
@@ -573,5 +567,43 @@
             <input type="org.eclipse.uml2.diagram.component.navigator.UMLAbstractNavigatorItem"/>
          </propertySection>
       </propertySections>
+   </extension><extension point="org.eclipse.ui.preferencePages">
+      <?gmfgen generated="true"?>
+      <page
+            name="%preferences.general"
+            class="org.eclipse.uml2.diagram.component.preferences.DiagramGeneralPreferencePage"
+            id="org.eclipse.uml2.diagram.component.general">
+      </page>
+      <page
+            name="%preferences.appearance"
+            category="org.eclipse.uml2.diagram.component.general"
+            class="org.eclipse.uml2.diagram.component.preferences.DiagramAppearancePreferencePage"
+            id="org.eclipse.uml2.diagram.component.appearance">
+      </page>     
+      <page
+            name="%preferences.connections"
+            category="org.eclipse.uml2.diagram.component.general"
+            class="org.eclipse.uml2.diagram.component.preferences.DiagramConnectionsPreferencePage"
+            id="org.eclipse.uml2.diagram.component.connections">
+      </page>    
+      <page
+            name="%preferences.printing"
+            category="org.eclipse.uml2.diagram.component.general"
+            class="org.eclipse.uml2.diagram.component.preferences.DiagramPrintingPreferencePage"
+            id="org.eclipse.uml2.diagram.component.printing">
+      </page>
+      <page
+            name="%preferences.rulersAndGrid"
+            category="org.eclipse.uml2.diagram.component.general"
+            class="org.eclipse.uml2.diagram.component.preferences.DiagramRulersAndGridPreferencePage"
+            id="org.eclipse.uml2.diagram.component.rulersAndGrid">
+      </page>
+      <page
+            name="%preferences.pathmaps"
+            category="org.eclipse.uml2.diagram.component.general"
+            class="org.eclipse.gmf.runtime.emf.ui.preferences.PathmapsPreferencePage"
+            id="org.eclipse.uml2.diagram.component.pathmaps">
+      </page>
    </extension>
+
 </plugin>

@@ -117,7 +117,6 @@ public class Region2EditPart extends ShapeNodeEditPart {
 
 		if (childEditPart instanceof RegionSubvertices2EditPart) {
 			IFigure pane = getPrimaryShape().getFigureRegionFigure_Compartment();
-			setupContentPane(pane); // FIXME each comparment should handle his content pane in his own way 
 			pane.remove(((RegionSubvertices2EditPart) childEditPart).getFigure());
 			return true;
 		}

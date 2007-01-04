@@ -1,7 +1,6 @@
 package org.eclipse.uml2.diagram.component.navigator;
 
 import org.eclipse.core.runtime.IAdaptable;
-
 import org.eclipse.core.runtime.IAdapterFactory;
 import org.eclipse.core.runtime.Platform;
 

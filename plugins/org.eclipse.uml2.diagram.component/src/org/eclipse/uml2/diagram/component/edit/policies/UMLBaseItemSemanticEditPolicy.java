@@ -41,6 +41,9 @@ import org.eclipse.uml2.diagram.component.expressions.UMLOCLFactory;
 
 import org.eclipse.uml2.diagram.component.part.UMLDiagramEditorPlugin;
 
+import org.eclipse.uml2.uml.BehavioredClassifier;
+import org.eclipse.uml2.uml.Interface;
+import org.eclipse.uml2.uml.Port;
 import org.eclipse.uml2.uml.UMLPackage;
 
 /**
@@ -242,100 +245,100 @@ public class UMLBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 		/**
 		 * @generated 
 		 */
-		public static final LinkConstraints InterfaceRealization_4001 = createInterfaceRealization_4001();
-
-		/**
-		 * @generated 
-		 */
-		public static final LinkConstraints PortProvided_4006 = createPortProvided_4006();
-
-		/**
-		 * @generated 
-		 */
-		public static final LinkConstraints PortRequired_4004 = createPortRequired_4004();
-
-		/**
-		 * @generated 
-		 */
-		private static LinkConstraints createInterfaceRealization_4001() {
-			Map sourceEnv = new HashMap(3);
-			sourceEnv.put("oppositeEnd", org.eclipse.uml2.uml.UMLPackage.eINSTANCE.getInterface()); //$NON-NLS-1$				
-			UMLAbstractExpression sourceExpression = UMLOCLFactory.getExpression("self.oclIsKindOf(uml::Component)", //$NON-NLS-1$
-					UMLPackage.eINSTANCE.getBehavioredClassifier(), sourceEnv);
-			UMLAbstractExpression targetExpression = null;
-			return new LinkConstraints(sourceExpression, targetExpression);
-		}
-
-		/**
-		 * @generated 
-		 */
-		private static LinkConstraints createPortProvided_4006() {
-			Map sourceEnv = new HashMap(3);
-			sourceEnv.put("oppositeEnd", org.eclipse.uml2.uml.UMLPackage.eINSTANCE.getInterface()); //$NON-NLS-1$				
-			UMLAbstractExpression sourceExpression = UMLOCLFactory.getExpression("self.oclIsKindOf(uml::Port)", //$NON-NLS-1$
-					UMLPackage.eINSTANCE.getPort(), sourceEnv);
-			UMLAbstractExpression targetExpression = null;
-			return new LinkConstraints(sourceExpression, targetExpression);
-		}
-
-		/**
-		 * @generated 
-		 */
-		private static LinkConstraints createPortRequired_4004() {
-			Map sourceEnv = new HashMap(3);
-			sourceEnv.put("oppositeEnd", org.eclipse.uml2.uml.UMLPackage.eINSTANCE.getInterface()); //$NON-NLS-1$				
-			UMLAbstractExpression sourceExpression = UMLOCLFactory.getExpression("self.oclIsKindOf(uml::Port)", //$NON-NLS-1$
-					UMLPackage.eINSTANCE.getPort(), sourceEnv);
-			UMLAbstractExpression targetExpression = null;
-			return new LinkConstraints(sourceExpression, targetExpression);
-		}
-
-		/**
-		 * @generated 
-		 */
 		private static final String OPPOSITE_END_VAR = "oppositeEnd"; //$NON-NLS-1$
 
 		/**
 		 * @generated 
 		 */
-		private UMLAbstractExpression srcEndInv;
+		private static UMLAbstractExpression InterfaceRealization_4001_SourceExpression;
 
 		/**
 		 * @generated 
 		 */
-		private UMLAbstractExpression targetEndInv;
-
-		/**
-		 * @generated 
-		 */
-		public LinkConstraints(UMLAbstractExpression sourceEnd, UMLAbstractExpression targetEnd) {
-			this.srcEndInv = sourceEnd;
-			this.targetEndInv = targetEnd;
+		static {
+			Map env = new HashMap(3);
+			env.put("oppositeEnd", UMLPackage.eINSTANCE.getInterface()); //$NON-NLS-1$
+			InterfaceRealization_4001_SourceExpression = UMLOCLFactory.getExpression("self.oclIsKindOf(uml::Component)", //$NON-NLS-1$
+					UMLPackage.eINSTANCE.getBehavioredClassifier(), env);
 		}
 
 		/**
 		 * @generated 
 		 */
-		public boolean canCreateLink(CreateRelationshipRequest req, boolean isBackDirected) {
-			Object source = req.getSource();
-			Object target = req.getTarget();
+		private static UMLAbstractExpression PortProvided_4006_SourceExpression;
 
-			UMLAbstractExpression sourceConstraint = isBackDirected ? targetEndInv : srcEndInv;
-			UMLAbstractExpression targetConstraint = null;
-			if (req.getTarget() != null) {
-				targetConstraint = isBackDirected ? srcEndInv : targetEndInv;
+		/**
+		 * @generated 
+		 */
+		static {
+			Map env = new HashMap(3);
+			env.put("oppositeEnd", UMLPackage.eINSTANCE.getInterface()); //$NON-NLS-1$
+			PortProvided_4006_SourceExpression = UMLOCLFactory.getExpression("self.oclIsKindOf(uml::Port)", //$NON-NLS-1$
+					UMLPackage.eINSTANCE.getPort(), env);
+		}
+
+		/**
+		 * @generated 
+		 */
+		private static UMLAbstractExpression PortRequired_4004_SourceExpression;
+
+		/**
+		 * @generated 
+		 */
+		static {
+			Map env = new HashMap(3);
+			env.put("oppositeEnd", UMLPackage.eINSTANCE.getInterface()); //$NON-NLS-1$
+			PortRequired_4004_SourceExpression = UMLOCLFactory.getExpression("self.oclIsKindOf(uml::Port)", //$NON-NLS-1$
+					UMLPackage.eINSTANCE.getPort(), env);
+		}
+
+		/**
+		 * @generated 
+		 */
+		public static boolean canCreateInterfaceRealization_4001(BehavioredClassifier container, BehavioredClassifier source, Interface target) {
+			if (!evaluate(InterfaceRealization_4001_SourceExpression, source, target, false)) {
+				return false;
 			}
-			boolean isSourceAccepted = sourceConstraint != null ? evaluate(sourceConstraint, source, target, false) : true;
-			if (isSourceAccepted && targetConstraint != null) {
-				return evaluate(targetConstraint, target, source, true);
+			return true;
+		}
+
+		/**
+		 * @generated 
+		 */
+		public static boolean canCreatePortProvided_4006(Port source, Interface target) {
+			if (source != null) {
+				if (source.getProvideds().contains(target)) {
+					return false;
+				}
 			}
-			return isSourceAccepted;
+			if (!evaluate(PortProvided_4006_SourceExpression, source, target, false)) {
+				return false;
+			}
+			return true;
+		}
+
+		/**
+		 * @generated 
+		 */
+		public static boolean canCreatePortRequired_4004(Port source, Interface target) {
+			if (source != null) {
+				if (source.getRequireds().contains(target)) {
+					return false;
+				}
+			}
+			if (!evaluate(PortRequired_4004_SourceExpression, source, target, false)) {
+				return false;
+			}
+			return true;
 		}
 
 		/**
 		 * @generated 
 		 */
 		private static boolean evaluate(UMLAbstractExpression constraint, Object sourceEnd, Object oppositeEnd, boolean clearEnv) {
+			if (sourceEnd == null) {
+				return true;
+			}
 			Map evalEnv = Collections.singletonMap(OPPOSITE_END_VAR, oppositeEnd);
 			try {
 				Object val = constraint.evaluate(sourceEnd, evalEnv);
@@ -346,4 +349,5 @@ public class UMLBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 			}
 		}
 	}
+
 }

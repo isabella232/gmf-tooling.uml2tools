@@ -26,16 +26,6 @@ public class UMLPaletteFactory {
 	}
 
 	/**
-	 * Creates "Links" palette tool group
-	 * @generated
-	 */
-	private PaletteContainer createLinks2Group() {
-		PaletteDrawer paletteContainer = new PaletteDrawer(UMLDiagramEditorPlugin.getString("Links2Group.title")); //$NON-NLS-1$
-		paletteContainer.add(createTransition1CreationTool());
-		return paletteContainer;
-	}
-
-	/**
 	 * Creates "Nodes" palette tool group
 	 * @generated
 	 */
@@ -59,15 +49,13 @@ public class UMLPaletteFactory {
 	}
 
 	/**
+	 * Creates "Links" palette tool group
 	 * @generated
 	 */
-	private ToolEntry createTransition1CreationTool() {
-		List/*<IElementType>*/types = new ArrayList/*<IElementType>*/(1);
-		types.add(UMLElementTypes.Transition_4001);
-		LinkToolEntry entry = new LinkToolEntry(UMLDiagramEditorPlugin.getString("Transition1CreationTool.title"), UMLDiagramEditorPlugin.getString("Transition1CreationTool.desc"), types); //$NON-NLS-1$ $NON-NLS-2$
-		entry.setSmallIcon(UMLElementTypes.getImageDescriptor(UMLElementTypes.Transition_4001));
-		entry.setLargeIcon(entry.getSmallIcon());
-		return entry;
+	private PaletteContainer createLinks2Group() {
+		PaletteDrawer paletteContainer = new PaletteDrawer(UMLDiagramEditorPlugin.getString("Links2Group.title")); //$NON-NLS-1$
+		paletteContainer.add(createTransition1CreationTool());
+		return paletteContainer;
 	}
 
 	/**
@@ -236,6 +224,18 @@ public class UMLPaletteFactory {
 		NodeToolEntry entry = new NodeToolEntry(UMLDiagramEditorPlugin.getString("ExitPoint14CreationTool.title"), UMLDiagramEditorPlugin.getString("ExitPoint14CreationTool.desc"), types); //$NON-NLS-1$ $NON-NLS-2$
 		entry.setSmallIcon(UMLDiagramEditorPlugin.findImageDescriptor("/org.eclipse.uml2.uml.edit/icons/full/obj16/Pseudostate_exitPoint.gif")); //$NON-NLS-1$
 		entry.setLargeIcon(UMLDiagramEditorPlugin.findImageDescriptor("/org.eclipse.uml2.uml.edit/icons/full/obj16/Pseudostate_exitPoint.gif")); //$NON-NLS-1$
+		return entry;
+	}
+
+	/**
+	 * @generated
+	 */
+	private ToolEntry createTransition1CreationTool() {
+		List/*<IElementType>*/types = new ArrayList/*<IElementType>*/(1);
+		types.add(UMLElementTypes.Transition_4001);
+		LinkToolEntry entry = new LinkToolEntry(UMLDiagramEditorPlugin.getString("Transition1CreationTool.title"), UMLDiagramEditorPlugin.getString("Transition1CreationTool.desc"), types); //$NON-NLS-1$ $NON-NLS-2$
+		entry.setSmallIcon(UMLElementTypes.getImageDescriptor(UMLElementTypes.Transition_4001));
+		entry.setLargeIcon(entry.getSmallIcon());
 		return entry;
 	}
 
