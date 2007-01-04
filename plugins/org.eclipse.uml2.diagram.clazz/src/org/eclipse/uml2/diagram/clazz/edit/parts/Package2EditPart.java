@@ -438,6 +438,7 @@ public class Package2EditPart extends ShapeNodeEditPart {
 
 			packageFigure_Body0.add(packageFigure_PackagesCompartment1);
 			setFigurePackageFigure_PackagesCompartment(packageFigure_PackagesCompartment1);
+			packageFigure_PackagesCompartment1.setLayoutManager(new StackLayout());
 
 			RectangleFigure packageFigure_ClassesCompartment1 = new RectangleFigure();
 			packageFigure_ClassesCompartment1.setFill(true);
@@ -449,6 +450,7 @@ public class Package2EditPart extends ShapeNodeEditPart {
 
 			packageFigure_Body0.add(packageFigure_ClassesCompartment1);
 			setFigurePackageFigure_ClassesCompartment(packageFigure_ClassesCompartment1);
+			packageFigure_ClassesCompartment1.setLayoutManager(new StackLayout());
 
 			RectangleFigure packageFigure_OthersCompartment1 = new RectangleFigure();
 			packageFigure_OthersCompartment1.setFill(true);
@@ -460,6 +462,7 @@ public class Package2EditPart extends ShapeNodeEditPart {
 
 			packageFigure_Body0.add(packageFigure_OthersCompartment1);
 			setFigurePackageFigure_OthersCompartment(packageFigure_OthersCompartment1);
+			packageFigure_OthersCompartment1.setLayoutManager(new StackLayout());
 
 		}
 

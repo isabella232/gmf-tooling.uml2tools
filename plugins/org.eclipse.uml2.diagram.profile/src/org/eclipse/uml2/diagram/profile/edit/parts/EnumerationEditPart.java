@@ -346,6 +346,7 @@ public class EnumerationEditPart extends ShapeNodeEditPart {
 
 			classFigure_Body0.add(classFigure_PropertiesCompartment1);
 			setFigureClassFigure_PropertiesCompartment(classFigure_PropertiesCompartment1);
+			classFigure_PropertiesCompartment1.setLayoutManager(new StackLayout());
 
 			RectangleFigure classFigure_OperationsCompartment1 = new RectangleFigure();
 			classFigure_OperationsCompartment1.setFill(true);
@@ -357,6 +358,7 @@ public class EnumerationEditPart extends ShapeNodeEditPart {
 
 			classFigure_Body0.add(classFigure_OperationsCompartment1);
 			setFigureClassFigure_OperationsCompartment(classFigure_OperationsCompartment1);
+			classFigure_OperationsCompartment1.setLayoutManager(new StackLayout());
 
 			RectangleFigure classFigure_ClassesCompartment1 = new RectangleFigure();
 			classFigure_ClassesCompartment1.setFill(true);
@@ -368,6 +370,7 @@ public class EnumerationEditPart extends ShapeNodeEditPart {
 
 			classFigure_Body0.add(classFigure_ClassesCompartment1);
 			setFigureClassFigure_ClassesCompartment(classFigure_ClassesCompartment1);
+			classFigure_ClassesCompartment1.setLayoutManager(new StackLayout());
 
 			RectangleFigure classFigure_LiteralsCompartment1 = new RectangleFigure();
 			classFigure_LiteralsCompartment1.setFill(true);
@@ -379,6 +382,7 @@ public class EnumerationEditPart extends ShapeNodeEditPart {
 
 			classFigure_Body0.add(classFigure_LiteralsCompartment1);
 			setFigureClassFigure_LiteralsCompartment(classFigure_LiteralsCompartment1);
+			classFigure_LiteralsCompartment1.setLayoutManager(new StackLayout());
 
 			RectangleFigure classFigure_OthersCompartment1 = new RectangleFigure();
 			classFigure_OthersCompartment1.setFill(true);
@@ -390,6 +394,7 @@ public class EnumerationEditPart extends ShapeNodeEditPart {
 
 			classFigure_Body0.add(classFigure_OthersCompartment1);
 			setFigureClassFigure_OthersCompartment(classFigure_OthersCompartment1);
+			classFigure_OthersCompartment1.setLayoutManager(new StackLayout());
 
 		}
 
