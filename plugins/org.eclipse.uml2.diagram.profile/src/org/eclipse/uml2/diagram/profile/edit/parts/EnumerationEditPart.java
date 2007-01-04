@@ -150,7 +150,6 @@ public class EnumerationEditPart extends ShapeNodeEditPart {
 
 		if (childEditPart instanceof EnumerationLiteralsEditPart) {
 			IFigure pane = getPrimaryShape().getFigureClassFigure_LiteralsCompartment();
-			setupContentPane(pane); // FIXME each comparment should handle his content pane in his own way 
 			pane.remove(((EnumerationLiteralsEditPart) childEditPart).getFigure());
 			return true;
 		}

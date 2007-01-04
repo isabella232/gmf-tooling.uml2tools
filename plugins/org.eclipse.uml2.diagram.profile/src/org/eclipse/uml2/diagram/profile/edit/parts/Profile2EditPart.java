@@ -152,7 +152,6 @@ public class Profile2EditPart extends ShapeNodeEditPart {
 
 		if (childEditPart instanceof ProfileContentsEditPart) {
 			IFigure pane = getPrimaryShape().getFigureProfileFigure_ContentsCompartment();
-			setupContentPane(pane); // FIXME each comparment should handle his content pane in his own way 
 			pane.remove(((ProfileContentsEditPart) childEditPart).getFigure());
 			return true;
 		}

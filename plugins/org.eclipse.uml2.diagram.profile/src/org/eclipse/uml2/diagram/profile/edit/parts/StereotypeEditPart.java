@@ -159,13 +159,11 @@ public class StereotypeEditPart extends ShapeNodeEditPart {
 
 		if (childEditPart instanceof StereotypeAttributesEditPart) {
 			IFigure pane = getPrimaryShape().getFigureStereotypeFigure_AttributesCompartment();
-			setupContentPane(pane); // FIXME each comparment should handle his content pane in his own way 
 			pane.remove(((StereotypeAttributesEditPart) childEditPart).getFigure());
 			return true;
 		}
 		if (childEditPart instanceof StereotypeConstraintsEditPart) {
 			IFigure pane = getPrimaryShape().getFigureStereotypeFigure_ConstraintsCompartment();
-			setupContentPane(pane); // FIXME each comparment should handle his content pane in his own way 
 			pane.remove(((StereotypeConstraintsEditPart) childEditPart).getFigure());
 			return true;
 		}
