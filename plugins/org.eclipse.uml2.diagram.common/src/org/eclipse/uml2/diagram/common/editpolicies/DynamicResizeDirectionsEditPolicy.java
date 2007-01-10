@@ -61,7 +61,6 @@ public class DynamicResizeDirectionsEditPolicy extends ResizableShapeEditPolicy 
 		correctEditPolicy(size);
 	}
 
-	@Override
 	public void notifyChanged(Notification notification) {
 		Object feature = notification.getFeature();
 		if (NotationPackage.eINSTANCE.getSize_Width().equals(feature) || NotationPackage.eINSTANCE.getSize_Height().equals(feature)) {
