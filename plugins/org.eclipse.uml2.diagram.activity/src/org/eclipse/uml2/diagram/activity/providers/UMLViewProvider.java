@@ -27,6 +27,10 @@ import org.eclipse.uml2.diagram.activity.edit.parts.CallOperationActionName2Edit
 import org.eclipse.uml2.diagram.activity.edit.parts.CallOperationActionNameEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.CentralBufferNode2EditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.CentralBufferNodeEditPart;
+import org.eclipse.uml2.diagram.activity.edit.parts.Constraint2EditPart;
+import org.eclipse.uml2.diagram.activity.edit.parts.ConstraintEditPart;
+import org.eclipse.uml2.diagram.activity.edit.parts.ConstraintPostconditionEditPart;
+import org.eclipse.uml2.diagram.activity.edit.parts.ConstraintPreconditionEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.ControlFlowEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.CreateObjectAction2EditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.CreateObjectActionEditPart;
@@ -53,6 +57,8 @@ import org.eclipse.uml2.diagram.activity.edit.parts.InputPinName5EditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.InputPinNameEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.JoinNode2EditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.JoinNodeEditPart;
+import org.eclipse.uml2.diagram.activity.edit.parts.LiteralString2EditPart;
+import org.eclipse.uml2.diagram.activity.edit.parts.LiteralStringEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.MergeNodeEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.ObjectFlowEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.OpaqueAction2EditPart;
@@ -80,6 +86,7 @@ import org.eclipse.uml2.diagram.activity.view.factories.AcceptEventAction2ViewFa
 import org.eclipse.uml2.diagram.activity.view.factories.AcceptEventAction3ViewFactory;
 import org.eclipse.uml2.diagram.activity.view.factories.AcceptEventAction4ViewFactory;
 import org.eclipse.uml2.diagram.activity.view.factories.AcceptEventActionViewFactory;
+import org.eclipse.uml2.diagram.activity.view.factories.ActionLocalPreconditionViewFactory;
 import org.eclipse.uml2.diagram.activity.view.factories.ActivityFinalNode2ViewFactory;
 import org.eclipse.uml2.diagram.activity.view.factories.ActivityFinalNodeViewFactory;
 import org.eclipse.uml2.diagram.activity.view.factories.ActivityViewFactory;
@@ -97,6 +104,10 @@ import org.eclipse.uml2.diagram.activity.view.factories.CallOperationActionNameV
 import org.eclipse.uml2.diagram.activity.view.factories.CallOperationActionViewFactory;
 import org.eclipse.uml2.diagram.activity.view.factories.CentralBufferNode2ViewFactory;
 import org.eclipse.uml2.diagram.activity.view.factories.CentralBufferNodeViewFactory;
+import org.eclipse.uml2.diagram.activity.view.factories.Constraint2ViewFactory;
+import org.eclipse.uml2.diagram.activity.view.factories.ConstraintPostconditionViewFactory;
+import org.eclipse.uml2.diagram.activity.view.factories.ConstraintPreconditionViewFactory;
+import org.eclipse.uml2.diagram.activity.view.factories.ConstraintViewFactory;
 import org.eclipse.uml2.diagram.activity.view.factories.ControlFlowViewFactory;
 import org.eclipse.uml2.diagram.activity.view.factories.CreateObjectAction2ViewFactory;
 import org.eclipse.uml2.diagram.activity.view.factories.CreateObjectActionName2ViewFactory;
@@ -123,6 +134,8 @@ import org.eclipse.uml2.diagram.activity.view.factories.InputPinNameViewFactory;
 import org.eclipse.uml2.diagram.activity.view.factories.InputPinViewFactory;
 import org.eclipse.uml2.diagram.activity.view.factories.JoinNode2ViewFactory;
 import org.eclipse.uml2.diagram.activity.view.factories.JoinNodeViewFactory;
+import org.eclipse.uml2.diagram.activity.view.factories.LiteralString2ViewFactory;
+import org.eclipse.uml2.diagram.activity.view.factories.LiteralStringViewFactory;
 import org.eclipse.uml2.diagram.activity.view.factories.MergeNodeViewFactory;
 import org.eclipse.uml2.diagram.activity.view.factories.ObjectFlowViewFactory;
 import org.eclipse.uml2.diagram.activity.view.factories.OpaqueAction2ViewFactory;
@@ -223,6 +236,10 @@ public class UMLViewProvider extends AbstractViewProvider {
 			return CallOperationActionNameViewFactory.class;
 		case StructuredActivityNodeEditPart.VISUAL_ID:
 			return StructuredActivityNodeViewFactory.class;
+		case ConstraintEditPart.VISUAL_ID:
+			return ConstraintViewFactory.class;
+		case Constraint2EditPart.VISUAL_ID:
+			return Constraint2ViewFactory.class;
 		case OutputPinEditPart.VISUAL_ID:
 			return OutputPinViewFactory.class;
 		case OutputPinNameEditPart.VISUAL_ID:
@@ -299,10 +316,18 @@ public class UMLViewProvider extends AbstractViewProvider {
 			return DataStoreNode2ViewFactory.class;
 		case CentralBufferNode2EditPart.VISUAL_ID:
 			return CentralBufferNode2ViewFactory.class;
+		case LiteralStringEditPart.VISUAL_ID:
+			return LiteralStringViewFactory.class;
+		case LiteralString2EditPart.VISUAL_ID:
+			return LiteralString2ViewFactory.class;
 		case StructuredActivityNodeStructuredActivityContentPaneCompartmentEditPart.VISUAL_ID:
 			return StructuredActivityNodeStructuredActivityContentPaneCompartmentViewFactory.class;
 		case StructuredActivityNodeStructuredActivityContentPaneCompartment2EditPart.VISUAL_ID:
 			return StructuredActivityNodeStructuredActivityContentPaneCompartment2ViewFactory.class;
+		case ConstraintPreconditionEditPart.VISUAL_ID:
+			return ConstraintPreconditionViewFactory.class;
+		case ConstraintPostconditionEditPart.VISUAL_ID:
+			return ConstraintPostconditionViewFactory.class;
 		}
 		return null;
 	}
@@ -314,6 +339,9 @@ public class UMLViewProvider extends AbstractViewProvider {
 		IElementType elementType = getSemanticElementType(semanticAdapter);
 		if (elementType != null && !UMLElementTypes.isKnownElementType(elementType)) {
 			return null;
+		}
+		if (UMLElementTypes.ActionLocalPrecondition_4003.equals(elementType)) {
+			return ActionLocalPreconditionViewFactory.class;
 		}
 		EClass semanticType = getSemanticEClass(semanticAdapter);
 		if (semanticType == null) {

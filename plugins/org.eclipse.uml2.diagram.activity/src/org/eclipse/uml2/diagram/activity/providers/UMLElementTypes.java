@@ -1,29 +1,21 @@
 package org.eclipse.uml2.diagram.activity.providers;
 
-import java.util.ArrayList;
-import java.util.Collection;
 import java.util.HashSet;
 import java.util.IdentityHashMap;
-import java.util.Iterator;
-import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
 import org.eclipse.core.runtime.IAdaptable;
-import org.eclipse.emf.common.util.BasicEList;
-import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EClassifier;
 import org.eclipse.emf.ecore.ENamedElement;
-import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.gmf.runtime.emf.type.core.ElementTypeRegistry;
 import org.eclipse.gmf.runtime.emf.type.core.IElementType;
 import org.eclipse.jface.resource.ImageDescriptor;
 import org.eclipse.jface.resource.ImageRegistry;
 import org.eclipse.swt.graphics.Image;
-import org.eclipse.uml2.diagram.activity.expressions.UMLAbstractExpression;
 import org.eclipse.uml2.diagram.activity.part.UMLDiagramEditorPlugin;
-import org.eclipse.uml2.uml.AcceptEventAction;
 import org.eclipse.uml2.uml.UMLPackage;
 
 /**
@@ -69,7 +61,14 @@ public class UMLElementTypes extends ElementInitializers {
 	 */
 	private static ImageDescriptor getProvidedImageDescriptor(ENamedElement element) {
 		if (element instanceof EStructuralFeature) {
-			element = ((EStructuralFeature) element).getEContainingClass();
+			EStructuralFeature feature = ((EStructuralFeature) element);
+			EClass eContainingClass = feature.getEContainingClass();
+			EClassifier eType = feature.getEType();
+			if (eContainingClass != null && !eContainingClass.isAbstract()) {
+				element = eContainingClass;
+			} else if (eType instanceof EClass && !((EClass) eType).isAbstract()) {
+				element = eType;
+			}
 		}
 		if (element instanceof EClass) {
 			EClass eClass = (EClass) element;
@@ -184,6 +183,10 @@ public class UMLElementTypes extends ElementInitializers {
 
 			elements.put(StructuredActivityNode_2007, UMLPackage.eINSTANCE.getStructuredActivityNode());
 
+			elements.put(Constraint_2019, UMLPackage.eINSTANCE.getConstraint());
+
+			elements.put(Constraint_2020, UMLPackage.eINSTANCE.getConstraint());
+
 			elements.put(OutputPin_3001, UMLPackage.eINSTANCE.getOutputPin());
 
 			elements.put(OutputPin_3002, UMLPackage.eINSTANCE.getOutputPin());
@@ -232,9 +235,15 @@ public class UMLElementTypes extends ElementInitializers {
 
 			elements.put(CentralBufferNode_3025, UMLPackage.eINSTANCE.getCentralBufferNode());
 
+			elements.put(LiteralString_3026, UMLPackage.eINSTANCE.getLiteralString());
+
+			elements.put(LiteralString_3027, UMLPackage.eINSTANCE.getLiteralString());
+
 			elements.put(ControlFlow_4001, UMLPackage.eINSTANCE.getControlFlow());
 
 			elements.put(ObjectFlow_4002, UMLPackage.eINSTANCE.getObjectFlow());
+
+			elements.put(ActionLocalPrecondition_4003, UMLPackage.eINSTANCE.getAction_LocalPrecondition());
 		}
 		return (ENamedElement) elements.get(type);
 	}
@@ -243,116 +252,6 @@ public class UMLElementTypes extends ElementInitializers {
 	 * @generated
 	 */
 	public static final IElementType Activity_1000 = getElementType("org.eclipse.uml2.diagram.activity.Activity_1000"); //$NON-NLS-1$
-
-	/**
-	 * @generated
-	 */
-	public static final IElementType OutputPin_3001 = getElementType("org.eclipse.uml2.diagram.activity.OutputPin_3001"); //$NON-NLS-1$
-
-	/**
-	 * @generated
-	 */
-	public static final IElementType AcceptEventAction_3012 = getElementType("org.eclipse.uml2.diagram.activity.AcceptEventAction_3012"); //$NON-NLS-1$
-
-	/**
-	 * @generated
-	 */
-	public static final IElementType AcceptEventAction_3013 = getElementType("org.eclipse.uml2.diagram.activity.AcceptEventAction_3013"); //$NON-NLS-1$
-
-	/**
-	 * @generated
-	 */
-	public static final IElementType ActivityFinalNode_3014 = getElementType("org.eclipse.uml2.diagram.activity.ActivityFinalNode_3014"); //$NON-NLS-1$
-
-	/**
-	 * @generated
-	 */
-	public static final IElementType DecisionNode_3015 = getElementType("org.eclipse.uml2.diagram.activity.DecisionNode_3015"); //$NON-NLS-1$
-
-	/**
-	 * @generated
-	 */
-	public static final IElementType FlowFinalNode_3016 = getElementType("org.eclipse.uml2.diagram.activity.FlowFinalNode_3016"); //$NON-NLS-1$
-
-	/**
-	 * @generated
-	 */
-	public static final IElementType Pin_3017 = getElementType("org.eclipse.uml2.diagram.activity.Pin_3017"); //$NON-NLS-1$
-
-	/**
-	 * @generated
-	 */
-	public static final IElementType CreateObjectAction_3018 = getElementType("org.eclipse.uml2.diagram.activity.CreateObjectAction_3018"); //$NON-NLS-1$
-
-	/**
-	 * @generated
-	 */
-	public static final IElementType OutputPin_3002 = getElementType("org.eclipse.uml2.diagram.activity.OutputPin_3002"); //$NON-NLS-1$
-
-	/**
-	 * @generated
-	 */
-	public static final IElementType CallBehaviorAction_3019 = getElementType("org.eclipse.uml2.diagram.activity.CallBehaviorAction_3019"); //$NON-NLS-1$
-
-	/**
-	 * @generated
-	 */
-	public static final IElementType InputPin_3003 = getElementType("org.eclipse.uml2.diagram.activity.InputPin_3003"); //$NON-NLS-1$
-
-	/**
-	 * @generated
-	 */
-	public static final IElementType InputPin_3004 = getElementType("org.eclipse.uml2.diagram.activity.InputPin_3004"); //$NON-NLS-1$
-
-	/**
-	 * @generated
-	 */
-	public static final IElementType InputPin_3005 = getElementType("org.eclipse.uml2.diagram.activity.InputPin_3005"); //$NON-NLS-1$
-
-	/**
-	 * @generated
-	 */
-	public static final IElementType DataStoreNode_3024 = getElementType("org.eclipse.uml2.diagram.activity.DataStoreNode_3024"); //$NON-NLS-1$
-
-	/**
-	 * @generated
-	 */
-	public static final IElementType CentralBufferNode_3025 = getElementType("org.eclipse.uml2.diagram.activity.CentralBufferNode_3025"); //$NON-NLS-1$
-
-	/**
-	 * @generated
-	 */
-	public static final IElementType OutputPin_3006 = getElementType("org.eclipse.uml2.diagram.activity.OutputPin_3006"); //$NON-NLS-1$
-
-	/**
-	 * @generated
-	 */
-	public static final IElementType InputPin_3007 = getElementType("org.eclipse.uml2.diagram.activity.InputPin_3007"); //$NON-NLS-1$
-
-	/**
-	 * @generated
-	 */
-	public static final IElementType CallOperationAction_3020 = getElementType("org.eclipse.uml2.diagram.activity.CallOperationAction_3020"); //$NON-NLS-1$
-
-	/**
-	 * @generated
-	 */
-	public static final IElementType InputPin_3008 = getElementType("org.eclipse.uml2.diagram.activity.InputPin_3008"); //$NON-NLS-1$
-
-	/**
-	 * @generated
-	 */
-	public static final IElementType ForkNode_3021 = getElementType("org.eclipse.uml2.diagram.activity.ForkNode_3021"); //$NON-NLS-1$
-
-	/**
-	 * @generated
-	 */
-	public static final IElementType JoinNode_3022 = getElementType("org.eclipse.uml2.diagram.activity.JoinNode_3022"); //$NON-NLS-1$
-
-	/**
-	 * @generated
-	 */
-	public static final IElementType AddStructuralFeatureValueAction_3023 = getElementType("org.eclipse.uml2.diagram.activity.AddStructuralFeatureValueAction_3023"); //$NON-NLS-1$
 
 	/**
 	 * @generated
@@ -383,11 +282,6 @@ public class UMLElementTypes extends ElementInitializers {
 	 * @generated
 	 */
 	public static final IElementType InitialNode_2006 = getElementType("org.eclipse.uml2.diagram.activity.InitialNode_2006"); //$NON-NLS-1$
-
-	/**
-	 * @generated
-	 */
-	public static final IElementType StructuredActivityNode_2007 = getElementType("org.eclipse.uml2.diagram.activity.StructuredActivityNode_2007"); //$NON-NLS-1$
 
 	/**
 	 * @generated
@@ -447,6 +341,151 @@ public class UMLElementTypes extends ElementInitializers {
 	/**
 	 * @generated
 	 */
+	public static final IElementType StructuredActivityNode_2007 = getElementType("org.eclipse.uml2.diagram.activity.StructuredActivityNode_2007"); //$NON-NLS-1$
+
+	/**
+	 * @generated
+	 */
+	public static final IElementType Constraint_2019 = getElementType("org.eclipse.uml2.diagram.activity.Constraint_2019"); //$NON-NLS-1$
+
+	/**
+	 * @generated
+	 */
+	public static final IElementType Constraint_2020 = getElementType("org.eclipse.uml2.diagram.activity.Constraint_2020"); //$NON-NLS-1$
+
+	/**
+	 * @generated
+	 */
+	public static final IElementType OutputPin_3001 = getElementType("org.eclipse.uml2.diagram.activity.OutputPin_3001"); //$NON-NLS-1$
+
+	/**
+	 * @generated
+	 */
+	public static final IElementType OutputPin_3002 = getElementType("org.eclipse.uml2.diagram.activity.OutputPin_3002"); //$NON-NLS-1$
+
+	/**
+	 * @generated
+	 */
+	public static final IElementType InputPin_3003 = getElementType("org.eclipse.uml2.diagram.activity.InputPin_3003"); //$NON-NLS-1$
+
+	/**
+	 * @generated
+	 */
+	public static final IElementType InputPin_3004 = getElementType("org.eclipse.uml2.diagram.activity.InputPin_3004"); //$NON-NLS-1$
+
+	/**
+	 * @generated
+	 */
+	public static final IElementType InputPin_3005 = getElementType("org.eclipse.uml2.diagram.activity.InputPin_3005"); //$NON-NLS-1$
+
+	/**
+	 * @generated
+	 */
+	public static final IElementType OutputPin_3006 = getElementType("org.eclipse.uml2.diagram.activity.OutputPin_3006"); //$NON-NLS-1$
+
+	/**
+	 * @generated
+	 */
+	public static final IElementType InputPin_3007 = getElementType("org.eclipse.uml2.diagram.activity.InputPin_3007"); //$NON-NLS-1$
+
+	/**
+	 * @generated
+	 */
+	public static final IElementType InputPin_3008 = getElementType("org.eclipse.uml2.diagram.activity.InputPin_3008"); //$NON-NLS-1$
+
+	/**
+	 * @generated
+	 */
+	public static final IElementType StructuredActivityNode_3009 = getElementType("org.eclipse.uml2.diagram.activity.StructuredActivityNode_3009"); //$NON-NLS-1$
+
+	/**
+	 * @generated
+	 */
+	public static final IElementType OpaqueAction_3011 = getElementType("org.eclipse.uml2.diagram.activity.OpaqueAction_3011"); //$NON-NLS-1$
+
+	/**
+	 * @generated
+	 */
+	public static final IElementType AcceptEventAction_3012 = getElementType("org.eclipse.uml2.diagram.activity.AcceptEventAction_3012"); //$NON-NLS-1$
+
+	/**
+	 * @generated
+	 */
+	public static final IElementType AcceptEventAction_3013 = getElementType("org.eclipse.uml2.diagram.activity.AcceptEventAction_3013"); //$NON-NLS-1$
+
+	/**
+	 * @generated
+	 */
+	public static final IElementType ActivityFinalNode_3014 = getElementType("org.eclipse.uml2.diagram.activity.ActivityFinalNode_3014"); //$NON-NLS-1$
+
+	/**
+	 * @generated
+	 */
+	public static final IElementType DecisionNode_3015 = getElementType("org.eclipse.uml2.diagram.activity.DecisionNode_3015"); //$NON-NLS-1$
+
+	/**
+	 * @generated
+	 */
+	public static final IElementType FlowFinalNode_3016 = getElementType("org.eclipse.uml2.diagram.activity.FlowFinalNode_3016"); //$NON-NLS-1$
+
+	/**
+	 * @generated
+	 */
+	public static final IElementType Pin_3017 = getElementType("org.eclipse.uml2.diagram.activity.Pin_3017"); //$NON-NLS-1$
+
+	/**
+	 * @generated
+	 */
+	public static final IElementType CreateObjectAction_3018 = getElementType("org.eclipse.uml2.diagram.activity.CreateObjectAction_3018"); //$NON-NLS-1$
+
+	/**
+	 * @generated
+	 */
+	public static final IElementType CallBehaviorAction_3019 = getElementType("org.eclipse.uml2.diagram.activity.CallBehaviorAction_3019"); //$NON-NLS-1$
+
+	/**
+	 * @generated
+	 */
+	public static final IElementType CallOperationAction_3020 = getElementType("org.eclipse.uml2.diagram.activity.CallOperationAction_3020"); //$NON-NLS-1$
+
+	/**
+	 * @generated
+	 */
+	public static final IElementType ForkNode_3021 = getElementType("org.eclipse.uml2.diagram.activity.ForkNode_3021"); //$NON-NLS-1$
+
+	/**
+	 * @generated
+	 */
+	public static final IElementType JoinNode_3022 = getElementType("org.eclipse.uml2.diagram.activity.JoinNode_3022"); //$NON-NLS-1$
+
+	/**
+	 * @generated
+	 */
+	public static final IElementType AddStructuralFeatureValueAction_3023 = getElementType("org.eclipse.uml2.diagram.activity.AddStructuralFeatureValueAction_3023"); //$NON-NLS-1$
+
+	/**
+	 * @generated
+	 */
+	public static final IElementType DataStoreNode_3024 = getElementType("org.eclipse.uml2.diagram.activity.DataStoreNode_3024"); //$NON-NLS-1$
+
+	/**
+	 * @generated
+	 */
+	public static final IElementType CentralBufferNode_3025 = getElementType("org.eclipse.uml2.diagram.activity.CentralBufferNode_3025"); //$NON-NLS-1$
+
+	/**
+	 * @generated
+	 */
+	public static final IElementType LiteralString_3026 = getElementType("org.eclipse.uml2.diagram.activity.LiteralString_3026"); //$NON-NLS-1$
+
+	/**
+	 * @generated
+	 */
+	public static final IElementType LiteralString_3027 = getElementType("org.eclipse.uml2.diagram.activity.LiteralString_3027"); //$NON-NLS-1$
+
+	/**
+	 * @generated
+	 */
 	public static final IElementType ControlFlow_4001 = getElementType("org.eclipse.uml2.diagram.activity.ControlFlow_4001"); //$NON-NLS-1$
 
 	/**
@@ -457,12 +496,7 @@ public class UMLElementTypes extends ElementInitializers {
 	/**
 	 * @generated
 	 */
-	public static final IElementType StructuredActivityNode_3009 = getElementType("org.eclipse.uml2.diagram.activity.StructuredActivityNode_3009");
-
-	/**
-	 * @generated
-	 */
-	public static final IElementType OpaqueAction_3011 = getElementType("org.eclipse.uml2.diagram.activity.OpaqueAction_3011"); //$NON-NLS-1$
+	public static final IElementType ActionLocalPrecondition_4003 = getElementType("org.eclipse.uml2.diagram.activity.ActionLocalPrecondition_4003"); //$NON-NLS-1$
 
 	/**
 	 * @generated
@@ -501,6 +535,8 @@ public class UMLElementTypes extends ElementInitializers {
 			KNOWN_ELEMENT_TYPES.add(CallBehaviorAction_2017);
 			KNOWN_ELEMENT_TYPES.add(CallOperationAction_2018);
 			KNOWN_ELEMENT_TYPES.add(StructuredActivityNode_2007);
+			KNOWN_ELEMENT_TYPES.add(Constraint_2019);
+			KNOWN_ELEMENT_TYPES.add(Constraint_2020);
 			KNOWN_ELEMENT_TYPES.add(OutputPin_3001);
 			KNOWN_ELEMENT_TYPES.add(OutputPin_3002);
 			KNOWN_ELEMENT_TYPES.add(InputPin_3003);
@@ -525,8 +561,11 @@ public class UMLElementTypes extends ElementInitializers {
 			KNOWN_ELEMENT_TYPES.add(AddStructuralFeatureValueAction_3023);
 			KNOWN_ELEMENT_TYPES.add(DataStoreNode_3024);
 			KNOWN_ELEMENT_TYPES.add(CentralBufferNode_3025);
+			KNOWN_ELEMENT_TYPES.add(LiteralString_3026);
+			KNOWN_ELEMENT_TYPES.add(LiteralString_3027);
 			KNOWN_ELEMENT_TYPES.add(ControlFlow_4001);
 			KNOWN_ELEMENT_TYPES.add(ObjectFlow_4002);
+			KNOWN_ELEMENT_TYPES.add(ActionLocalPrecondition_4003);
 		}
 		return KNOWN_ELEMENT_TYPES.contains(elementType);
 	}

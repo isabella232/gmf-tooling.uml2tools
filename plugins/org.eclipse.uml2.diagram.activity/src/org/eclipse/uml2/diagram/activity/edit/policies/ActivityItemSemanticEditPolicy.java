@@ -14,6 +14,8 @@ import org.eclipse.uml2.diagram.activity.edit.commands.AddStructuralFeatureValue
 import org.eclipse.uml2.diagram.activity.edit.commands.CallBehaviorActionCreateCommand;
 import org.eclipse.uml2.diagram.activity.edit.commands.CallOperationActionCreateCommand;
 import org.eclipse.uml2.diagram.activity.edit.commands.CentralBufferNodeCreateCommand;
+import org.eclipse.uml2.diagram.activity.edit.commands.Constraint2CreateCommand;
+import org.eclipse.uml2.diagram.activity.edit.commands.ConstraintCreateCommand;
 import org.eclipse.uml2.diagram.activity.edit.commands.CreateObjectActionCreateCommand;
 import org.eclipse.uml2.diagram.activity.edit.commands.DataStoreNodeCreateCommand;
 import org.eclipse.uml2.diagram.activity.edit.commands.DecisionNodeCreateCommand;
@@ -146,6 +148,12 @@ public class ActivityItemSemanticEditPolicy extends UMLBaseItemSemanticEditPolic
 				req.setContainmentFeature(UMLPackage.eINSTANCE.getActivity_Group());
 			}
 			return getMSLWrapper(new StructuredActivityNodeCreateCommand(req));
+		}
+		if (UMLElementTypes.Constraint_2019 == req.getElementType()) {
+			return getMSLWrapper(new ConstraintCreateCommand(req));
+		}
+		if (UMLElementTypes.Constraint_2020 == req.getElementType()) {
+			return getMSLWrapper(new Constraint2CreateCommand(req));
 		}
 		return super.getCreateCommand(req);
 	}

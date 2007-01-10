@@ -20,6 +20,8 @@ import org.eclipse.uml2.diagram.activity.edit.parts.InputPinName3EditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.InputPinName4EditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.InputPinName5EditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.InputPinNameEditPart;
+import org.eclipse.uml2.diagram.activity.edit.parts.LiteralString2EditPart;
+import org.eclipse.uml2.diagram.activity.edit.parts.LiteralStringEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.OpaqueActionName2EditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.OpaqueActionNameEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.OutputPinName2EditPart;
@@ -362,6 +364,52 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 	/**
 	 * @generated
 	 */
+	private IParser literalStringLiteralString_3026Parser;
+
+	/**
+	 * @generated
+	 */
+	private IParser getLiteralStringLiteralString_3026Parser() {
+		if (literalStringLiteralString_3026Parser == null) {
+			literalStringLiteralString_3026Parser = createLiteralStringLiteralString_3026Parser();
+		}
+		return literalStringLiteralString_3026Parser;
+	}
+
+	/**
+	 * @generated
+	 */
+	protected IParser createLiteralStringLiteralString_3026Parser() {
+		UMLStructuralFeatureParser parser = new UMLStructuralFeatureParser(UMLPackage.eINSTANCE.getLiteralString_Value());
+		return parser;
+	}
+
+	/**
+	 * @generated
+	 */
+	private IParser literalStringLiteralString_3027Parser;
+
+	/**
+	 * @generated
+	 */
+	private IParser getLiteralStringLiteralString_3027Parser() {
+		if (literalStringLiteralString_3027Parser == null) {
+			literalStringLiteralString_3027Parser = createLiteralStringLiteralString_3027Parser();
+		}
+		return literalStringLiteralString_3027Parser;
+	}
+
+	/**
+	 * @generated
+	 */
+	protected IParser createLiteralStringLiteralString_3027Parser() {
+		UMLStructuralFeatureParser parser = new UMLStructuralFeatureParser(UMLPackage.eINSTANCE.getLiteralString_Value());
+		return parser;
+	}
+
+	/**
+	 * @generated
+	 */
 	private IParser opaqueActionOpaqueActionName_5001Parser;
 
 	/**
@@ -530,6 +578,10 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 			return getCallOperationActionCallOperationActionName_5019Parser();
 		case AddStructuralFeatureValueActionName2EditPart.VISUAL_ID:
 			return getAddStructuralFeatureValueActionAddStructuralFeatureValueActionName_5020Parser();
+		case LiteralStringEditPart.VISUAL_ID:
+			return getLiteralStringLiteralString_3026Parser();
+		case LiteralString2EditPart.VISUAL_ID:
+			return getLiteralStringLiteralString_3027Parser();
 		case OpaqueActionNameEditPart.VISUAL_ID:
 			return getOpaqueActionOpaqueActionName_5001Parser();
 		case PinNameEditPart.VISUAL_ID:

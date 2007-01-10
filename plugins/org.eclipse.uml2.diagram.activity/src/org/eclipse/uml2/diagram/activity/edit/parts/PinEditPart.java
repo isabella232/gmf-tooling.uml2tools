@@ -20,6 +20,7 @@ import org.eclipse.gmf.runtime.draw2d.ui.figures.WrapLabel;
 import org.eclipse.gmf.runtime.gef.ui.figures.DefaultSizeNodeFigure;
 import org.eclipse.gmf.runtime.gef.ui.figures.NodeFigure;
 import org.eclipse.gmf.runtime.notation.View;
+import org.eclipse.uml2.diagram.activity.edit.policies.PinCanonicalEditPolicy;
 import org.eclipse.uml2.diagram.activity.edit.policies.PinItemSemanticEditPolicy;
 import org.eclipse.uml2.diagram.activity.part.UMLVisualIDRegistry;
 
@@ -57,6 +58,7 @@ public class PinEditPart extends ShapeNodeEditPart {
 		super.createDefaultEditPolicies();
 
 		installEditPolicy(EditPolicyRoles.SEMANTIC_ROLE, new PinItemSemanticEditPolicy());
+		installEditPolicy(EditPolicyRoles.CANONICAL_ROLE, new PinCanonicalEditPolicy());
 		installEditPolicy(EditPolicy.LAYOUT_ROLE, createLayoutEditPolicy());
 	}
 

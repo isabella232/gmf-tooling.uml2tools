@@ -27,6 +27,8 @@ import org.eclipse.uml2.diagram.activity.edit.parts.CallBehaviorAction2EditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.CallBehaviorActionEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.CallOperationAction2EditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.CallOperationActionEditPart;
+import org.eclipse.uml2.diagram.activity.edit.parts.Constraint2EditPart;
+import org.eclipse.uml2.diagram.activity.edit.parts.ConstraintEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.CreateObjectAction2EditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.CreateObjectActionEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.OpaqueAction2EditPart;
@@ -74,6 +76,16 @@ public class UMLModelingAssistantProvider extends ModelingAssistantProvider {
 			types.add(UMLElementTypes.OutputPin_3006);
 			types.add(UMLElementTypes.InputPin_3007);
 			types.add(UMLElementTypes.InputPin_3008);
+			return types;
+		}
+		if (editPart instanceof ConstraintEditPart) {
+			List types = new ArrayList();
+			types.add(UMLElementTypes.LiteralString_3026);
+			return types;
+		}
+		if (editPart instanceof Constraint2EditPart) {
+			List types = new ArrayList();
+			types.add(UMLElementTypes.LiteralString_3027);
 			return types;
 		}
 		if (editPart instanceof OpaqueAction2EditPart) {
@@ -166,6 +178,8 @@ public class UMLModelingAssistantProvider extends ModelingAssistantProvider {
 			types.add(UMLElementTypes.CallBehaviorAction_2017);
 			types.add(UMLElementTypes.CallOperationAction_2018);
 			types.add(UMLElementTypes.StructuredActivityNode_2007);
+			types.add(UMLElementTypes.Constraint_2019);
+			types.add(UMLElementTypes.Constraint_2020);
 			return types;
 		}
 		return Collections.EMPTY_LIST;
@@ -182,6 +196,17 @@ public class UMLModelingAssistantProvider extends ModelingAssistantProvider {
 	 * @generated
 	 */
 	public List getRelTypesOnTarget(IAdaptable target) {
+		IGraphicalEditPart targetEditPart = (IGraphicalEditPart) target.getAdapter(IGraphicalEditPart.class);
+		if (targetEditPart instanceof ConstraintEditPart) {
+			List types = new ArrayList();
+			types.add(UMLElementTypes.ActionLocalPrecondition_4003);
+			return types;
+		}
+		if (targetEditPart instanceof Constraint2EditPart) {
+			List types = new ArrayList();
+			types.add(UMLElementTypes.ActionLocalPrecondition_4003);
+			return types;
+		}
 		return Collections.EMPTY_LIST;
 	}
 
@@ -196,6 +221,15 @@ public class UMLModelingAssistantProvider extends ModelingAssistantProvider {
 	 * @generated
 	 */
 	public List getTypesForSource(IAdaptable target, IElementType relationshipType) {
+		IGraphicalEditPart targetEditPart = (IGraphicalEditPart) target.getAdapter(IGraphicalEditPart.class);
+		if (targetEditPart instanceof ConstraintEditPart) {
+			List types = new ArrayList();
+			return types;
+		}
+		if (targetEditPart instanceof Constraint2EditPart) {
+			List types = new ArrayList();
+			return types;
+		}
 		return Collections.EMPTY_LIST;
 	}
 

@@ -19,6 +19,7 @@ import org.eclipse.gmf.runtime.draw2d.ui.figures.ConstrainedToolbarLayout;
 import org.eclipse.gmf.runtime.gef.ui.figures.DefaultSizeNodeFigure;
 import org.eclipse.gmf.runtime.gef.ui.figures.NodeFigure;
 import org.eclipse.gmf.runtime.notation.View;
+import org.eclipse.uml2.diagram.activity.edit.policies.ForkNode2CanonicalEditPolicy;
 import org.eclipse.uml2.diagram.activity.edit.policies.ForkNode2ItemSemanticEditPolicy;
 import org.eclipse.uml2.diagram.common.editpolicies.DynamicResizeDirectionsEditPolicy;
 
@@ -56,6 +57,7 @@ public class ForkNode2EditPart extends ShapeNodeEditPart {
 		super.createDefaultEditPolicies();
 
 		installEditPolicy(EditPolicyRoles.SEMANTIC_ROLE, new ForkNode2ItemSemanticEditPolicy());
+		installEditPolicy(EditPolicyRoles.CANONICAL_ROLE, new ForkNode2CanonicalEditPolicy());
 		installEditPolicy(EditPolicy.LAYOUT_ROLE, createLayoutEditPolicy());
 	}
 

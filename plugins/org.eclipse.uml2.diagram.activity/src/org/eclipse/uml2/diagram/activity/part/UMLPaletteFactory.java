@@ -42,6 +42,8 @@ public class UMLPaletteFactory {
 		paletteContainer.add(createAddFeatureValueAction5CreationTool());
 		paletteContainer.add(createCallBehaviorAction6CreationTool());
 		paletteContainer.add(createCallOperationAction7CreationTool());
+		paletteContainer.add(createConstraint8CreationTool());
+		paletteContainer.add(createConstraintLink9CreationTool());
 		return paletteContainer;
 	}
 
@@ -192,6 +194,31 @@ public class UMLPaletteFactory {
 		NodeToolEntry entry = new NodeToolEntry(
 				UMLDiagramEditorPlugin.getString("CallOperationAction7CreationTool.title"), UMLDiagramEditorPlugin.getString("CallOperationAction7CreationTool.desc"), types); //$NON-NLS-1$ $NON-NLS-2$
 		entry.setSmallIcon(UMLElementTypes.getImageDescriptor(UMLElementTypes.CallOperationAction_2018));
+		entry.setLargeIcon(entry.getSmallIcon());
+		return entry;
+	}
+
+	/**
+	 * @generated
+	 */
+	private ToolEntry createConstraint8CreationTool() {
+		List/*<IElementType>*/types = new ArrayList/*<IElementType>*/(2);
+		types.add(UMLElementTypes.Constraint_2019);
+		types.add(UMLElementTypes.Constraint_2020);
+		NodeToolEntry entry = new NodeToolEntry(UMLDiagramEditorPlugin.getString("Constraint8CreationTool.title"), UMLDiagramEditorPlugin.getString("Constraint8CreationTool.desc"), types); //$NON-NLS-1$ $NON-NLS-2$
+		entry.setSmallIcon(UMLElementTypes.getImageDescriptor(UMLElementTypes.Constraint_2019));
+		entry.setLargeIcon(entry.getSmallIcon());
+		return entry;
+	}
+
+	/**
+	 * @generated
+	 */
+	private ToolEntry createConstraintLink9CreationTool() {
+		List/*<IElementType>*/types = new ArrayList/*<IElementType>*/(1);
+		types.add(UMLElementTypes.ActionLocalPrecondition_4003);
+		LinkToolEntry entry = new LinkToolEntry(UMLDiagramEditorPlugin.getString("ConstraintLink9CreationTool.title"), UMLDiagramEditorPlugin.getString("ConstraintLink9CreationTool.desc"), types); //$NON-NLS-1$ $NON-NLS-2$
+		entry.setSmallIcon(UMLElementTypes.getImageDescriptor(UMLElementTypes.ActionLocalPrecondition_4003));
 		entry.setLargeIcon(entry.getSmallIcon());
 		return entry;
 	}

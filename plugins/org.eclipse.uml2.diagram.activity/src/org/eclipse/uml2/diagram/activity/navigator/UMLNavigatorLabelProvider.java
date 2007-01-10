@@ -33,6 +33,7 @@ import org.eclipse.uml2.diagram.activity.edit.parts.AcceptEventAction2EditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.AcceptEventAction3EditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.AcceptEventAction4EditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.AcceptEventActionEditPart;
+import org.eclipse.uml2.diagram.activity.edit.parts.ActionLocalPreconditionEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.ActivityEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.ActivityFinalNode2EditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.ActivityFinalNodeEditPart;
@@ -50,6 +51,8 @@ import org.eclipse.uml2.diagram.activity.edit.parts.CallOperationActionName2Edit
 import org.eclipse.uml2.diagram.activity.edit.parts.CallOperationActionNameEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.CentralBufferNode2EditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.CentralBufferNodeEditPart;
+import org.eclipse.uml2.diagram.activity.edit.parts.Constraint2EditPart;
+import org.eclipse.uml2.diagram.activity.edit.parts.ConstraintEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.ControlFlowEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.CreateObjectAction2EditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.CreateObjectActionEditPart;
@@ -76,6 +79,8 @@ import org.eclipse.uml2.diagram.activity.edit.parts.InputPinName5EditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.InputPinNameEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.JoinNode2EditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.JoinNodeEditPart;
+import org.eclipse.uml2.diagram.activity.edit.parts.LiteralString2EditPart;
+import org.eclipse.uml2.diagram.activity.edit.parts.LiteralStringEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.MergeNodeEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.ObjectFlowEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.OpaqueAction2EditPart;
@@ -189,6 +194,10 @@ public class UMLNavigatorLabelProvider extends LabelProvider implements ICommonL
 			return getImage("Navigator?TopLevelNode?http://www.eclipse.org/uml2/2.0.0/UML?CallOperationAction", UMLElementTypes.CallOperationAction_2018);
 		case StructuredActivityNodeEditPart.VISUAL_ID:
 			return getImage("Navigator?TopLevelNode?http://www.eclipse.org/uml2/2.0.0/UML?StructuredActivityNode", UMLElementTypes.StructuredActivityNode_2007);
+		case ConstraintEditPart.VISUAL_ID:
+			return getImage("Navigator?TopLevelNode?http://www.eclipse.org/uml2/2.0.0/UML?Constraint", UMLElementTypes.Constraint_2019);
+		case Constraint2EditPart.VISUAL_ID:
+			return getImage("Navigator?TopLevelNode?http://www.eclipse.org/uml2/2.0.0/UML?Constraint", UMLElementTypes.Constraint_2020);
 		case OutputPinEditPart.VISUAL_ID:
 			return getImage("Navigator?Node?http://www.eclipse.org/uml2/2.0.0/UML?OutputPin", UMLElementTypes.OutputPin_3001);
 		case OutputPin2EditPart.VISUAL_ID:
@@ -237,12 +246,18 @@ public class UMLNavigatorLabelProvider extends LabelProvider implements ICommonL
 			return getImage("Navigator?Node?http://www.eclipse.org/uml2/2.0.0/UML?DataStoreNode", UMLElementTypes.DataStoreNode_3024);
 		case CentralBufferNode2EditPart.VISUAL_ID:
 			return getImage("Navigator?Node?http://www.eclipse.org/uml2/2.0.0/UML?CentralBufferNode", UMLElementTypes.CentralBufferNode_3025);
+		case LiteralStringEditPart.VISUAL_ID:
+			return getImage("Navigator?Node?http://www.eclipse.org/uml2/2.0.0/UML?LiteralString", UMLElementTypes.LiteralString_3026);
+		case LiteralString2EditPart.VISUAL_ID:
+			return getImage("Navigator?Node?http://www.eclipse.org/uml2/2.0.0/UML?LiteralString", UMLElementTypes.LiteralString_3027);
 		case ActivityEditPart.VISUAL_ID:
 			return getImage("Navigator?Diagram?http://www.eclipse.org/uml2/2.0.0/UML?Activity", UMLElementTypes.Activity_1000);
 		case ControlFlowEditPart.VISUAL_ID:
 			return getImage("Navigator?Link?http://www.eclipse.org/uml2/2.0.0/UML?ControlFlow", UMLElementTypes.ControlFlow_4001);
 		case ObjectFlowEditPart.VISUAL_ID:
 			return getImage("Navigator?Link?http://www.eclipse.org/uml2/2.0.0/UML?ObjectFlow", UMLElementTypes.ObjectFlow_4002);
+		case ActionLocalPreconditionEditPart.VISUAL_ID:
+			return getImage("Navigator?Link?http://www.eclipse.org/uml2/2.0.0/UML?Action?localPrecondition", UMLElementTypes.ActionLocalPrecondition_4003);
 		default:
 			return getImage("Navigator?UnknownElement", null);
 		}
@@ -327,6 +342,10 @@ public class UMLNavigatorLabelProvider extends LabelProvider implements ICommonL
 			return getCallOperationAction_2018Text(view);
 		case StructuredActivityNodeEditPart.VISUAL_ID:
 			return getStructuredActivityNode_2007Text(view);
+		case ConstraintEditPart.VISUAL_ID:
+			return getConstraint_2019Text(view);
+		case Constraint2EditPart.VISUAL_ID:
+			return getConstraint_2020Text(view);
 		case OutputPinEditPart.VISUAL_ID:
 			return getOutputPin_3001Text(view);
 		case OutputPin2EditPart.VISUAL_ID:
@@ -375,12 +394,18 @@ public class UMLNavigatorLabelProvider extends LabelProvider implements ICommonL
 			return getDataStoreNode_3024Text(view);
 		case CentralBufferNode2EditPart.VISUAL_ID:
 			return getCentralBufferNode_3025Text(view);
+		case LiteralStringEditPart.VISUAL_ID:
+			return getLiteralString_3026Text(view);
+		case LiteralString2EditPart.VISUAL_ID:
+			return getLiteralString_3027Text(view);
 		case ActivityEditPart.VISUAL_ID:
 			return getActivity_1000Text(view);
 		case ControlFlowEditPart.VISUAL_ID:
 			return getControlFlow_4001Text(view);
 		case ObjectFlowEditPart.VISUAL_ID:
 			return getObjectFlow_4002Text(view);
+		case ActionLocalPreconditionEditPart.VISUAL_ID:
+			return getActionLocalPrecondition_4003Text(view);
 		default:
 			return getUnknownElementText(view);
 		}
@@ -682,6 +707,32 @@ public class UMLNavigatorLabelProvider extends LabelProvider implements ICommonL
 			return String.valueOf(((NamedElement) domainModelElement).getName());
 		} else {
 			UMLDiagramEditorPlugin.getInstance().logError("No domain element for view with visualID = " + 2007);
+			return "";
+		}
+	}
+
+	/**
+	 * @generated
+	 */
+	private String getConstraint_2019Text(View view) {
+		EObject domainModelElement = view.getElement();
+		if (domainModelElement != null) {
+			return String.valueOf(((NamedElement) domainModelElement).getName());
+		} else {
+			UMLDiagramEditorPlugin.getInstance().logError("No domain element for view with visualID = " + 2019);
+			return "";
+		}
+	}
+
+	/**
+	 * @generated
+	 */
+	private String getConstraint_2020Text(View view) {
+		EObject domainModelElement = view.getElement();
+		if (domainModelElement != null) {
+			return String.valueOf(((NamedElement) domainModelElement).getName());
+		} else {
+			UMLDiagramEditorPlugin.getInstance().logError("No domain element for view with visualID = " + 2020);
 			return "";
 		}
 	}
@@ -1155,6 +1206,54 @@ public class UMLNavigatorLabelProvider extends LabelProvider implements ICommonL
 	/**
 	 * @generated
 	 */
+	private String getLiteralString_3026Text(View view) {
+		IParser parser = ParserService.getInstance().getParser(new IAdaptable() {
+
+			public Object getAdapter(Class adapter) {
+				if (String.class.equals(adapter)) {
+					return UMLVisualIDRegistry.getType(LiteralStringEditPart.VISUAL_ID);
+				}
+				if (IElementType.class.equals(adapter)) {
+					return UMLElementTypes.LiteralString_3026;
+				}
+				return null;
+			}
+		});
+		if (parser != null) {
+			return parser.getPrintString(new EObjectAdapter(view.getElement() != null ? view.getElement() : view), ParserOptions.NONE.intValue());
+		} else {
+			UMLDiagramEditorPlugin.getInstance().logError("Parser was not found for label " + 3026);
+			return "";
+		}
+	}
+
+	/**
+	 * @generated
+	 */
+	private String getLiteralString_3027Text(View view) {
+		IParser parser = ParserService.getInstance().getParser(new IAdaptable() {
+
+			public Object getAdapter(Class adapter) {
+				if (String.class.equals(adapter)) {
+					return UMLVisualIDRegistry.getType(LiteralString2EditPart.VISUAL_ID);
+				}
+				if (IElementType.class.equals(adapter)) {
+					return UMLElementTypes.LiteralString_3027;
+				}
+				return null;
+			}
+		});
+		if (parser != null) {
+			return parser.getPrintString(new EObjectAdapter(view.getElement() != null ? view.getElement() : view), ParserOptions.NONE.intValue());
+		} else {
+			UMLDiagramEditorPlugin.getInstance().logError("Parser was not found for label " + 3027);
+			return "";
+		}
+	}
+
+	/**
+	 * @generated
+	 */
 	private String getActivity_1000Text(View view) {
 		EObject domainModelElement = view.getElement();
 		if (domainModelElement != null) {
@@ -1189,6 +1288,13 @@ public class UMLNavigatorLabelProvider extends LabelProvider implements ICommonL
 			UMLDiagramEditorPlugin.getInstance().logError("No domain element for view with visualID = " + 4002);
 			return "";
 		}
+	}
+
+	/**
+	 * @generated
+	 */
+	private String getActionLocalPrecondition_4003Text(View view) {
+		return "";
 	}
 
 	/**

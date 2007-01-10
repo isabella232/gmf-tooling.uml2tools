@@ -41,8 +41,10 @@ import org.eclipse.uml2.diagram.activity.expressions.UMLOCLFactory;
 
 import org.eclipse.uml2.diagram.activity.part.UMLDiagramEditorPlugin;
 
+import org.eclipse.uml2.uml.Action;
 import org.eclipse.uml2.uml.Activity;
 import org.eclipse.uml2.uml.ActivityNode;
+import org.eclipse.uml2.uml.Constraint;
 import org.eclipse.uml2.uml.UMLPackage;
 
 /**
@@ -293,6 +295,18 @@ public class UMLBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 		 * @generated 
 		 */
 		public static boolean canCreateObjectFlow_4002(Activity container, ActivityNode source, ActivityNode target) {
+			return true;
+		}
+
+		/**
+		 * @generated 
+		 */
+		public static boolean canCreateActionLocalPrecondition_4003(Action source, Constraint target) {
+			if (source != null) {
+				if (source.getLocalPreconditions().contains(target)) {
+					return false;
+				}
+			}
 			return true;
 		}
 

@@ -20,6 +20,7 @@ import org.eclipse.gmf.runtime.draw2d.ui.figures.ConstrainedToolbarLayout;
 import org.eclipse.gmf.runtime.gef.ui.figures.DefaultSizeNodeFigure;
 import org.eclipse.gmf.runtime.gef.ui.figures.NodeFigure;
 import org.eclipse.gmf.runtime.notation.View;
+import org.eclipse.uml2.diagram.activity.edit.policies.AcceptEventAction2CanonicalEditPolicy;
 import org.eclipse.uml2.diagram.activity.edit.policies.AcceptEventAction2ItemSemanticEditPolicy;
 
 /**
@@ -56,6 +57,7 @@ public class AcceptEventAction2EditPart extends ShapeNodeEditPart {
 		super.createDefaultEditPolicies();
 
 		installEditPolicy(EditPolicyRoles.SEMANTIC_ROLE, new AcceptEventAction2ItemSemanticEditPolicy());
+		installEditPolicy(EditPolicyRoles.CANONICAL_ROLE, new AcceptEventAction2CanonicalEditPolicy());
 		installEditPolicy(EditPolicy.LAYOUT_ROLE, createLayoutEditPolicy());
 	}
 

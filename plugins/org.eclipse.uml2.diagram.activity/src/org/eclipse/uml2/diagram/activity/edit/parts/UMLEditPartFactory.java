@@ -102,6 +102,12 @@ public class UMLEditPartFactory implements EditPartFactory {
 			case StructuredActivityNodeEditPart.VISUAL_ID:
 				return new StructuredActivityNodeEditPart(view);
 
+			case ConstraintEditPart.VISUAL_ID:
+				return new ConstraintEditPart(view);
+
+			case Constraint2EditPart.VISUAL_ID:
+				return new Constraint2EditPart(view);
+
 			case OutputPinEditPart.VISUAL_ID:
 				return new OutputPinEditPart(view);
 
@@ -216,17 +222,32 @@ public class UMLEditPartFactory implements EditPartFactory {
 			case CentralBufferNode2EditPart.VISUAL_ID:
 				return new CentralBufferNode2EditPart(view);
 
+			case LiteralStringEditPart.VISUAL_ID:
+				return new LiteralStringEditPart(view);
+
+			case LiteralString2EditPart.VISUAL_ID:
+				return new LiteralString2EditPart(view);
+
 			case StructuredActivityNodeStructuredActivityContentPaneCompartmentEditPart.VISUAL_ID:
 				return new StructuredActivityNodeStructuredActivityContentPaneCompartmentEditPart(view);
 
 			case StructuredActivityNodeStructuredActivityContentPaneCompartment2EditPart.VISUAL_ID:
 				return new StructuredActivityNodeStructuredActivityContentPaneCompartment2EditPart(view);
 
+			case ConstraintPreconditionEditPart.VISUAL_ID:
+				return new ConstraintPreconditionEditPart(view);
+
+			case ConstraintPostconditionEditPart.VISUAL_ID:
+				return new ConstraintPostconditionEditPart(view);
+
 			case ControlFlowEditPart.VISUAL_ID:
 				return new ControlFlowEditPart(view);
 
 			case ObjectFlowEditPart.VISUAL_ID:
 				return new ObjectFlowEditPart(view);
+
+			case ActionLocalPreconditionEditPart.VISUAL_ID:
+				return new ActionLocalPreconditionEditPart(view);
 			}
 		}
 		return createUnrecognizedEditPart(context, model);

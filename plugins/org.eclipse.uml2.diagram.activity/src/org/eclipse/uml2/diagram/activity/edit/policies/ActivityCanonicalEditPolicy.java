@@ -4,6 +4,7 @@ import java.util.List;
 import java.util.Collection;
 import org.eclipse.gmf.runtime.notation.Edge;
 import org.eclipse.emf.ecore.EObject;
+import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.Iterator;
@@ -14,20 +15,30 @@ import org.eclipse.core.runtime.IAdaptable;
 
 import org.eclipse.emf.ecore.EClass;
 
+import org.eclipse.emf.ecore.resource.Resource;
+
 import org.eclipse.gef.EditPart;
 
 import org.eclipse.gef.commands.Command;
 
+import org.eclipse.gmf.runtime.common.core.command.CompositeCommand;
+import org.eclipse.gmf.runtime.common.core.command.ICommand;
+
 import org.eclipse.gmf.runtime.diagram.core.util.ViewUtil;
 
+import org.eclipse.gmf.runtime.diagram.ui.commands.CreateCommand;
 import org.eclipse.gmf.runtime.diagram.ui.commands.DeferredLayoutCommand;
 import org.eclipse.gmf.runtime.diagram.ui.commands.ICommandProxy;
+import org.eclipse.gmf.runtime.diagram.ui.commands.SetViewMutabilityCommand;
 
 import org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart;
 
 import org.eclipse.gmf.runtime.diagram.ui.editpolicies.CanonicalConnectionEditPolicy;
 
+import org.eclipse.gmf.runtime.diagram.ui.l10n.DiagramUIMessages;
+
 import org.eclipse.gmf.runtime.diagram.ui.requests.CreateConnectionViewRequest;
+import org.eclipse.gmf.runtime.diagram.ui.requests.CreateViewRequest;
 import org.eclipse.gmf.runtime.diagram.ui.requests.RequestConstants;
 
 import org.eclipse.gmf.runtime.emf.core.util.EObjectAdapter;
@@ -41,6 +52,7 @@ import org.eclipse.uml2.diagram.activity.edit.parts.AcceptEventAction2EditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.AcceptEventAction3EditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.AcceptEventAction4EditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.AcceptEventActionEditPart;
+import org.eclipse.uml2.diagram.activity.edit.parts.ActionLocalPreconditionEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.ActivityEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.ActivityFinalNode2EditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.ActivityFinalNodeEditPart;
@@ -52,6 +64,8 @@ import org.eclipse.uml2.diagram.activity.edit.parts.CallOperationAction2EditPart
 import org.eclipse.uml2.diagram.activity.edit.parts.CallOperationActionEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.CentralBufferNode2EditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.CentralBufferNodeEditPart;
+import org.eclipse.uml2.diagram.activity.edit.parts.Constraint2EditPart;
+import org.eclipse.uml2.diagram.activity.edit.parts.ConstraintEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.ControlFlowEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.CreateObjectAction2EditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.CreateObjectActionEditPart;
@@ -71,6 +85,8 @@ import org.eclipse.uml2.diagram.activity.edit.parts.InputPin5EditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.InputPinEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.JoinNode2EditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.JoinNodeEditPart;
+import org.eclipse.uml2.diagram.activity.edit.parts.LiteralString2EditPart;
+import org.eclipse.uml2.diagram.activity.edit.parts.LiteralStringEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.MergeNodeEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.ObjectFlowEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.OpaqueAction2EditPart;
@@ -85,6 +101,9 @@ import org.eclipse.uml2.diagram.activity.edit.parts.StructuredActivityNodeEditPa
 
 import org.eclipse.uml2.diagram.activity.part.UMLVisualIDRegistry;
 
+import org.eclipse.uml2.diagram.activity.providers.UMLElementTypes;
+
+import org.eclipse.uml2.uml.Action;
 import org.eclipse.uml2.uml.Activity;
 import org.eclipse.uml2.uml.ActivityEdge;
 import org.eclipse.uml2.uml.UMLPackage;
@@ -235,6 +254,7 @@ public class ActivityCanonicalEditPolicy extends CanonicalConnectionEditPolicy {
 	protected void refreshSemantic() {
 		List createdViews = new LinkedList();
 		createdViews.addAll(refreshSemanticChildren());
+		createdViews.addAll(refreshPhantoms());
 		List createdConnectionViews = new LinkedList();
 		createdConnectionViews.addAll(refreshSemanticConnections());
 		createdConnectionViews.addAll(refreshConnections());
@@ -247,6 +267,83 @@ public class ActivityCanonicalEditPolicy extends CanonicalConnectionEditPolicy {
 
 		createdViews.addAll(createdConnectionViews);
 		makeViewsImmutable(createdViews);
+	}
+
+	/**
+	 * @generated
+	 */
+	private Collection refreshPhantoms() {
+		Collection phantomNodes = new LinkedList();
+		EObject diagramModelObject = ((View) getHost().getModel()).getElement();
+		Diagram diagram = getDiagram();
+		Resource resource = diagramModelObject.eResource();
+		for (Iterator it = resource.getContents().iterator(); it.hasNext();) {
+			EObject nextResourceObject = (EObject) it.next();
+			if (nextResourceObject == diagramModelObject) {
+				continue;
+			}
+			int nodeVID = UMLVisualIDRegistry.getNodeVisualID(diagram, nextResourceObject);
+			switch (nodeVID) {
+			case Constraint2EditPart.VISUAL_ID: {
+				phantomNodes.add(nextResourceObject);
+				break;
+			}
+			}
+		}
+
+		for (Iterator diagramNodes = getDiagram().getChildren().iterator(); diagramNodes.hasNext();) {
+			View nextView = (View) diagramNodes.next();
+			EObject nextViewElement = nextView.getElement();
+			if (phantomNodes.contains(nextViewElement)) {
+				phantomNodes.remove(nextViewElement);
+			}
+		}
+		return createPhantomNodes(phantomNodes);
+	}
+
+	/**
+	 * @generated
+	 */
+	private Collection createPhantomNodes(Collection nodes) {
+		if (nodes.isEmpty()) {
+			return Collections.EMPTY_LIST;
+		}
+		List descriptors = new ArrayList();
+		for (Iterator elements = nodes.iterator(); elements.hasNext();) {
+			EObject element = (EObject) elements.next();
+			CreateViewRequest.ViewDescriptor descriptor = getViewDescriptor(element);
+			descriptors.add(descriptor);
+		}
+		Diagram diagram = getDiagram();
+		EditPart diagramEditPart = getDiagramEditPart();
+
+		CreateViewRequest request = getCreateViewRequest(descriptors);
+		Command cmd = diagramEditPart.getCommand(request);
+		if (cmd == null) {
+			CompositeCommand cc = new CompositeCommand(DiagramUIMessages.AddCommand_Label);
+			for (Iterator descriptorsIterator = descriptors.iterator(); descriptorsIterator.hasNext();) {
+				CreateViewRequest.ViewDescriptor descriptor = (CreateViewRequest.ViewDescriptor) descriptorsIterator.next();
+				ICommand createCommand = new CreateCommand(((IGraphicalEditPart) getHost()).getEditingDomain(), descriptor, diagram);
+				cc.compose(createCommand);
+			}
+			cmd = new ICommandProxy(cc);
+		}
+
+		List adapters = Collections.EMPTY_LIST;
+		if (cmd != null && cmd.canExecute()) {
+			SetViewMutabilityCommand.makeMutable(new EObjectAdapter(((IGraphicalEditPart) diagramEditPart).getNotationView())).execute();
+			executeCommand(cmd);
+			adapters = (List) request.getNewObject();
+		}
+		diagramEditPart.refresh();
+		return adapters;
+	}
+
+	/**
+	 * @generated
+	 */
+	private EditPart getDiagramEditPart() {
+		return (EditPart) getHost().getViewer().getEditPartRegistry().get(getDiagram());
 	}
 
 	/**
@@ -314,6 +411,8 @@ public class ActivityCanonicalEditPolicy extends CanonicalConnectionEditPolicy {
 		case CallBehaviorActionEditPart.VISUAL_ID:
 		case CallOperationActionEditPart.VISUAL_ID:
 		case StructuredActivityNodeEditPart.VISUAL_ID:
+		case ConstraintEditPart.VISUAL_ID:
+		case Constraint2EditPart.VISUAL_ID:
 		case OutputPinEditPart.VISUAL_ID:
 		case OutputPin2EditPart.VISUAL_ID:
 		case InputPinEditPart.VISUAL_ID:
@@ -338,6 +437,8 @@ public class ActivityCanonicalEditPolicy extends CanonicalConnectionEditPolicy {
 		case AddStructuralFeatureValueAction2EditPart.VISUAL_ID:
 		case DataStoreNode2EditPart.VISUAL_ID:
 		case CentralBufferNode2EditPart.VISUAL_ID:
+		case LiteralStringEditPart.VISUAL_ID:
+		case LiteralString2EditPart.VISUAL_ID:
 		case ActivityEditPart.VISUAL_ID: {
 			myEObject2ViewMap.put(modelElement, view);
 			storeLinks(modelElement, getDiagram());
@@ -464,6 +565,16 @@ public class ActivityCanonicalEditPolicy extends CanonicalConnectionEditPolicy {
 	 *@generated
 	 */
 	private void storeFeatureModelFacetLinks(EObject container, EClass containerMetaclass, Diagram diagram) {
+
+		if (UMLPackage.eINSTANCE.getAction().isSuperTypeOf(containerMetaclass)) {
+			for (Iterator destinations = ((Action) container).getLocalPreconditions().iterator(); destinations.hasNext();) {
+				EObject nextDestination = (EObject) destinations.next();
+				if (Constraint2EditPart.VISUAL_ID == UMLVisualIDRegistry.getNodeVisualID(diagram, nextDestination)) {
+					myLinkDescriptors.add(new LinkDescriptor(container, nextDestination, UMLElementTypes.ActionLocalPrecondition_4003, ActionLocalPreconditionEditPart.VISUAL_ID));
+
+				}
+			}
+		}
 
 	}
 

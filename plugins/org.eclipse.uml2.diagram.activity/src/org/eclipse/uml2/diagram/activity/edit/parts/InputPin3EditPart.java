@@ -23,6 +23,7 @@ import org.eclipse.gmf.runtime.draw2d.ui.figures.ConstrainedToolbarLayout;
 import org.eclipse.gmf.runtime.gef.ui.figures.DefaultSizeNodeFigure;
 import org.eclipse.gmf.runtime.gef.ui.figures.NodeFigure;
 import org.eclipse.gmf.runtime.notation.View;
+import org.eclipse.uml2.diagram.activity.edit.policies.InputPin3CanonicalEditPolicy;
 import org.eclipse.uml2.diagram.activity.edit.policies.InputPin3ItemSemanticEditPolicy;
 import org.eclipse.uml2.diagram.activity.part.UMLVisualIDRegistry;
 
@@ -61,6 +62,7 @@ public class InputPin3EditPart extends BorderedBorderItemEditPart {
 
 		installEditPolicy(EditPolicy.PRIMARY_DRAG_ROLE, getPrimaryDragEditPolicy());
 		installEditPolicy(EditPolicyRoles.SEMANTIC_ROLE, new InputPin3ItemSemanticEditPolicy());
+		installEditPolicy(EditPolicyRoles.CANONICAL_ROLE, new InputPin3CanonicalEditPolicy());
 		installEditPolicy(EditPolicy.LAYOUT_ROLE, createLayoutEditPolicy());
 	}
 

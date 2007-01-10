@@ -30,6 +30,10 @@ import org.eclipse.uml2.diagram.activity.edit.parts.CallOperationActionName2Edit
 import org.eclipse.uml2.diagram.activity.edit.parts.CallOperationActionNameEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.CentralBufferNode2EditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.CentralBufferNodeEditPart;
+import org.eclipse.uml2.diagram.activity.edit.parts.Constraint2EditPart;
+import org.eclipse.uml2.diagram.activity.edit.parts.ConstraintEditPart;
+import org.eclipse.uml2.diagram.activity.edit.parts.ConstraintPostconditionEditPart;
+import org.eclipse.uml2.diagram.activity.edit.parts.ConstraintPreconditionEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.ControlFlowEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.CreateObjectAction2EditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.CreateObjectActionEditPart;
@@ -56,6 +60,8 @@ import org.eclipse.uml2.diagram.activity.edit.parts.InputPinName5EditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.InputPinNameEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.JoinNode2EditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.JoinNodeEditPart;
+import org.eclipse.uml2.diagram.activity.edit.parts.LiteralString2EditPart;
+import org.eclipse.uml2.diagram.activity.edit.parts.LiteralStringEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.MergeNodeEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.ObjectFlowEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.OpaqueAction2EditPart;
@@ -87,6 +93,7 @@ import org.eclipse.uml2.uml.AddStructuralFeatureValueAction;
 import org.eclipse.uml2.uml.CallBehaviorAction;
 import org.eclipse.uml2.uml.CallOperationAction;
 import org.eclipse.uml2.uml.CentralBufferNode;
+import org.eclipse.uml2.uml.Constraint;
 import org.eclipse.uml2.uml.ControlFlow;
 import org.eclipse.uml2.uml.CreateObjectAction;
 import org.eclipse.uml2.uml.DataStoreNode;
@@ -96,6 +103,7 @@ import org.eclipse.uml2.uml.ForkNode;
 import org.eclipse.uml2.uml.InitialNode;
 import org.eclipse.uml2.uml.InputPin;
 import org.eclipse.uml2.uml.JoinNode;
+import org.eclipse.uml2.uml.LiteralString;
 import org.eclipse.uml2.uml.MergeNode;
 import org.eclipse.uml2.uml.ObjectFlow;
 import org.eclipse.uml2.uml.OpaqueAction;
@@ -317,6 +325,16 @@ public class UMLVisualIDRegistry {
 				return StructuredActivityNodeStructuredActivityContentPaneCompartmentEditPart.VISUAL_ID;
 			}
 			return getUnrecognizedStructuredActivityNode_2007ChildNodeID(domainElement, semanticHint);
+		case ConstraintEditPart.VISUAL_ID:
+			if (ConstraintPreconditionEditPart.VISUAL_ID == nodeVisualID) {
+				return ConstraintPreconditionEditPart.VISUAL_ID;
+			}
+			return getUnrecognizedConstraint_2019ChildNodeID(domainElement, semanticHint);
+		case Constraint2EditPart.VISUAL_ID:
+			if (ConstraintPostconditionEditPart.VISUAL_ID == nodeVisualID) {
+				return ConstraintPostconditionEditPart.VISUAL_ID;
+			}
+			return getUnrecognizedConstraint_2020ChildNodeID(domainElement, semanticHint);
 		case OutputPinEditPart.VISUAL_ID:
 			if (OutputPinNameEditPart.VISUAL_ID == nodeVisualID) {
 				return OutputPinNameEditPart.VISUAL_ID;
@@ -450,6 +468,10 @@ public class UMLVisualIDRegistry {
 			return getUnrecognizedDataStoreNode_3024ChildNodeID(domainElement, semanticHint);
 		case CentralBufferNode2EditPart.VISUAL_ID:
 			return getUnrecognizedCentralBufferNode_3025ChildNodeID(domainElement, semanticHint);
+		case LiteralStringEditPart.VISUAL_ID:
+			return getUnrecognizedLiteralString_3026ChildNodeID(domainElement, semanticHint);
+		case LiteralString2EditPart.VISUAL_ID:
+			return getUnrecognizedLiteralString_3027ChildNodeID(domainElement, semanticHint);
 		case StructuredActivityNodeStructuredActivityContentPaneCompartmentEditPart.VISUAL_ID:
 			if ((semanticHint == null || StructuredActivityNode2EditPart.VISUAL_ID == nodeVisualID) && UMLPackage.eINSTANCE.getStructuredActivityNode().isSuperTypeOf(domainElementMetaclass)
 					&& (domainElement == null || isNodeStructuredActivityNode_3009((StructuredActivityNode) domainElement))) {
@@ -584,6 +606,18 @@ public class UMLVisualIDRegistry {
 				return CentralBufferNode2EditPart.VISUAL_ID;
 			}
 			return getUnrecognizedStructuredActivityNodeStructuredActivityContentPaneCompartment_7002ChildNodeID(domainElement, semanticHint);
+		case ConstraintPreconditionEditPart.VISUAL_ID:
+			if ((semanticHint == null || LiteralStringEditPart.VISUAL_ID == nodeVisualID) && UMLPackage.eINSTANCE.getLiteralString().isSuperTypeOf(domainElementMetaclass)
+					&& (domainElement == null || isNodeLiteralString_3026((LiteralString) domainElement))) {
+				return LiteralStringEditPart.VISUAL_ID;
+			}
+			return getUnrecognizedConstraintPrecondition_7003ChildNodeID(domainElement, semanticHint);
+		case ConstraintPostconditionEditPart.VISUAL_ID:
+			if ((semanticHint == null || LiteralString2EditPart.VISUAL_ID == nodeVisualID) && UMLPackage.eINSTANCE.getLiteralString().isSuperTypeOf(domainElementMetaclass)
+					&& (domainElement == null || isNodeLiteralString_3027((LiteralString) domainElement))) {
+				return LiteralString2EditPart.VISUAL_ID;
+			}
+			return getUnrecognizedConstraintPostcondition_7004ChildNodeID(domainElement, semanticHint);
 		case ActivityEditPart.VISUAL_ID:
 			if ((semanticHint == null || AcceptEventActionEditPart.VISUAL_ID == nodeVisualID) && UMLPackage.eINSTANCE.getAcceptEventAction().isSuperTypeOf(domainElementMetaclass)
 					&& (domainElement == null || isNodeAcceptEventAction_2001((AcceptEventAction) domainElement))) {
@@ -657,6 +691,14 @@ public class UMLVisualIDRegistry {
 			if ((semanticHint == null || StructuredActivityNodeEditPart.VISUAL_ID == nodeVisualID) && UMLPackage.eINSTANCE.getStructuredActivityNode().isSuperTypeOf(domainElementMetaclass)
 					&& (domainElement == null || isNodeStructuredActivityNode_2007((StructuredActivityNode) domainElement))) {
 				return StructuredActivityNodeEditPart.VISUAL_ID;
+			}
+			if ((semanticHint == null || ConstraintEditPart.VISUAL_ID == nodeVisualID) && UMLPackage.eINSTANCE.getConstraint().isSuperTypeOf(domainElementMetaclass)
+					&& (domainElement == null || isNodeConstraint_2019((Constraint) domainElement))) {
+				return ConstraintEditPart.VISUAL_ID;
+			}
+			if ((semanticHint == null || Constraint2EditPart.VISUAL_ID == nodeVisualID) && UMLPackage.eINSTANCE.getConstraint().isSuperTypeOf(domainElementMetaclass)
+					&& (domainElement == null || isNodeConstraint_2020((Constraint) domainElement))) {
+				return Constraint2EditPart.VISUAL_ID;
 			}
 			return getUnrecognizedActivity_1000ChildNodeID(domainElement, semanticHint);
 		}
@@ -884,6 +926,26 @@ public class UMLVisualIDRegistry {
 	 * @generated
 	 */
 	private static boolean isNodeStructuredActivityNode_2007(StructuredActivityNode element) {
+		return true;
+	}
+
+	/**
+	 * User can change implementation of this method to check some additional 
+	 * conditions here.
+	 *
+	 * @generated
+	 */
+	private static boolean isNodeConstraint_2019(Constraint element) {
+		return true;
+	}
+
+	/**
+	 * User can change implementation of this method to check some additional 
+	 * conditions here.
+	 *
+	 * @generated
+	 */
+	private static boolean isNodeConstraint_2020(Constraint element) {
 		return true;
 	}
 
@@ -1128,6 +1190,26 @@ public class UMLVisualIDRegistry {
 	}
 
 	/**
+	 * User can change implementation of this method to check some additional 
+	 * conditions here.
+	 *
+	 * @generated
+	 */
+	private static boolean isNodeLiteralString_3026(LiteralString element) {
+		return true;
+	}
+
+	/**
+	 * User can change implementation of this method to check some additional 
+	 * conditions here.
+	 *
+	 * @generated
+	 */
+	private static boolean isNodeLiteralString_3027(LiteralString element) {
+		return true;
+	}
+
+	/**
 	 * User can change implementation of this method to handle some specific
 	 * situations not covered by default logic.
 	 *
@@ -1304,6 +1386,26 @@ public class UMLVisualIDRegistry {
 	 * @generated
 	 */
 	private static int getUnrecognizedStructuredActivityNode_2007ChildNodeID(EObject domainElement, String semanticHint) {
+		return -1;
+	}
+
+	/**
+	 * User can change implementation of this method to handle some specific
+	 * situations not covered by default logic.
+	 *
+	 * @generated
+	 */
+	private static int getUnrecognizedConstraint_2019ChildNodeID(EObject domainElement, String semanticHint) {
+		return -1;
+	}
+
+	/**
+	 * User can change implementation of this method to handle some specific
+	 * situations not covered by default logic.
+	 *
+	 * @generated
+	 */
+	private static int getUnrecognizedConstraint_2020ChildNodeID(EObject domainElement, String semanticHint) {
 		return -1;
 	}
 
@@ -1553,6 +1655,26 @@ public class UMLVisualIDRegistry {
 	 *
 	 * @generated
 	 */
+	private static int getUnrecognizedLiteralString_3026ChildNodeID(EObject domainElement, String semanticHint) {
+		return -1;
+	}
+
+	/**
+	 * User can change implementation of this method to handle some specific
+	 * situations not covered by default logic.
+	 *
+	 * @generated
+	 */
+	private static int getUnrecognizedLiteralString_3027ChildNodeID(EObject domainElement, String semanticHint) {
+		return -1;
+	}
+
+	/**
+	 * User can change implementation of this method to handle some specific
+	 * situations not covered by default logic.
+	 *
+	 * @generated
+	 */
 	private static int getUnrecognizedStructuredActivityNodeStructuredActivityContentPaneCompartment_7001ChildNodeID(EObject domainElement, String semanticHint) {
 		return -1;
 	}
@@ -1564,6 +1686,26 @@ public class UMLVisualIDRegistry {
 	 * @generated
 	 */
 	private static int getUnrecognizedStructuredActivityNodeStructuredActivityContentPaneCompartment_7002ChildNodeID(EObject domainElement, String semanticHint) {
+		return -1;
+	}
+
+	/**
+	 * User can change implementation of this method to handle some specific
+	 * situations not covered by default logic.
+	 *
+	 * @generated
+	 */
+	private static int getUnrecognizedConstraintPrecondition_7003ChildNodeID(EObject domainElement, String semanticHint) {
+		return -1;
+	}
+
+	/**
+	 * User can change implementation of this method to handle some specific
+	 * situations not covered by default logic.
+	 *
+	 * @generated
+	 */
+	private static int getUnrecognizedConstraintPostcondition_7004ChildNodeID(EObject domainElement, String semanticHint) {
 		return -1;
 	}
 

@@ -17,8 +17,10 @@ import org.eclipse.uml2.diagram.activity.edit.commands.OutputPinCreateCommand;
 
 import org.eclipse.uml2.diagram.activity.providers.UMLElementTypes;
 
+import org.eclipse.uml2.uml.Action;
 import org.eclipse.uml2.uml.Activity;
 import org.eclipse.uml2.uml.ActivityNode;
+import org.eclipse.uml2.uml.Constraint;
 import org.eclipse.uml2.uml.UMLPackage;
 
 /**
@@ -66,6 +68,9 @@ public class OpaqueActionItemSemanticEditPolicy extends UMLBaseItemSemanticEditP
 		}
 		if (UMLElementTypes.ObjectFlow_4002 == req.getElementType()) {
 			return req.getTarget() == null ? getCreateStartOutgoingObjectFlow4002Command(req) : getCreateCompleteIncomingObjectFlow4002Command(req);
+		}
+		if (UMLElementTypes.ActionLocalPrecondition_4003 == req.getElementType()) {
+			return req.getTarget() == null ? getCreateStartOutgoingAction_LocalPrecondition4003Command(req) : null;
 		}
 		return super.getCreateRelationshipCommand(req);
 	}
@@ -164,5 +169,23 @@ public class OpaqueActionItemSemanticEditPolicy extends UMLBaseItemSemanticEditP
 			req.setContainmentFeature(UMLPackage.eINSTANCE.getActivity_Edge());
 		}
 		return getMSLWrapper(new ObjectFlowTypeLinkCreateCommand(req, container, source, target));
+	}
+
+	/**
+	 * @generated
+	 */
+	protected Command getCreateStartOutgoingAction_LocalPrecondition4003Command(CreateRelationshipRequest req) {
+		EObject sourceEObject = req.getSource();
+		EObject targetEObject = req.getTarget();
+		if (false == sourceEObject instanceof Action || (targetEObject != null && false == targetEObject instanceof Constraint)) {
+			return UnexecutableCommand.INSTANCE;
+		}
+		Action source = (Action) sourceEObject;
+		Constraint target = (Constraint) targetEObject;
+		if (!UMLBaseItemSemanticEditPolicy.LinkConstraints.canCreateActionLocalPrecondition_4003(source, target)) {
+			return UnexecutableCommand.INSTANCE;
+		}
+		return new Command() {
+		};
 	}
 }
