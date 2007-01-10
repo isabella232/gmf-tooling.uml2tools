@@ -19,6 +19,7 @@ import org.eclipse.gmf.runtime.draw2d.ui.figures.ConstrainedToolbarLayout;
 import org.eclipse.gmf.runtime.gef.ui.figures.DefaultSizeNodeFigure;
 import org.eclipse.gmf.runtime.gef.ui.figures.NodeFigure;
 import org.eclipse.gmf.runtime.notation.View;
+import org.eclipse.uml2.diagram.common.editpolicies.DynamicResizeDirectionsEditPolicy;
 import org.eclipse.uml2.diagram.statemachine.edit.policies.Pseudostate4ItemSemanticEditPolicy;
 
 /**
@@ -105,6 +106,13 @@ public class Pseudostate4EditPart extends ShapeNodeEditPart {
 		DefaultSizeNodeFigure result = new DefaultSizeNodeFigure(getMapMode().DPtoLP(4), getMapMode().DPtoLP(50));
 
 		return result;
+	}
+
+	/**
+	 * @generated
+	 */
+	public EditPolicy getPrimaryDragEditPolicy() {
+		return new DynamicResizeDirectionsEditPolicy();
 	}
 
 	/**

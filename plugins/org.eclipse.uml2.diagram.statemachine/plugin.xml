@@ -4,6 +4,46 @@
 <plugin>
 
 <!-- gmf generator persistent region begin -->
+   <extension point="org.eclipse.ui.popupMenus">
+      <?gmfgen generated="false"?>
+      <objectContribution
+            adaptable="false"
+            id="org.eclipse.uml2.diagram.statemachine.edit.parts.JoinNodeEditPartID"
+            objectClass="org.eclipse.uml2.diagram.statemachine.edit.parts.Pseudostate4EditPart">
+         <menu 
+            id="RotateMenu" 
+            label="Rotate" 
+            path="additions"> 
+         </menu> 
+         <action
+               class="org.eclipse.uml2.diagram.common.actions.RotateAction"
+               definitionId="org.eclipse.uml2.diagram.common.actions.RotateAction.id"
+               enablesFor="1"
+               id="org.eclipse.uml2.diagram.common.actions.RotateActionID"
+               label="Rotate"
+               menubarPath="RotateMenu">
+         </action>
+      </objectContribution>                    
+
+      <objectContribution
+            adaptable="false"
+            id="org.eclipse.uml2.diagram.statemachine.edit.parts.ForkNodeEditPartID"
+            objectClass="org.eclipse.uml2.diagram.statemachine.edit.parts.Pseudostate5EditPart">
+         <menu 
+            id="RotateMenu" 
+            label="Rotate" 
+            path="additions"> 
+         </menu> 
+         <action
+               class="org.eclipse.uml2.diagram.common.actions.RotateAction"
+               definitionId="org.eclipse.uml2.diagram.common.actions.RotateAction.id"
+               enablesFor="1"
+               id="org.eclipse.uml2.diagram.common.actions.RotateActionID"
+               label="Rotate"
+               menubarPath="RotateMenu">
+         </action>
+      </objectContribution>                    
+   </extension>
 <!-- gmf generator persistent region end -->
 
    <extension point="org.eclipse.core.runtime.preferences">
