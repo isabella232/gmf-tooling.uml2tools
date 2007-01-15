@@ -84,7 +84,9 @@ import org.eclipse.uml2.diagram.clazz.edit.parts.Property5EditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.Property6EditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.PropertyEditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.PropertyNameEditPart;
+import org.eclipse.uml2.diagram.clazz.edit.parts.RedefinableTemplateSignatureEditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.SlotEditPart;
+import org.eclipse.uml2.diagram.clazz.edit.parts.TemplateSignatureNode_signatureEditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.UsageEditPart;
 
 import org.eclipse.uml2.diagram.clazz.expressions.UMLAbstractExpression;
@@ -108,6 +110,7 @@ import org.eclipse.uml2.uml.Package;
 import org.eclipse.uml2.uml.Port;
 import org.eclipse.uml2.uml.PrimitiveType;
 import org.eclipse.uml2.uml.Property;
+import org.eclipse.uml2.uml.RedefinableTemplateSignature;
 import org.eclipse.uml2.uml.Slot;
 import org.eclipse.uml2.uml.UMLPackage;
 import org.eclipse.uml2.uml.Usage;
@@ -210,6 +213,7 @@ public class UMLVisualIDRegistry {
 
 	/**
 	 * @generated
+
 	 */
 	public static int getNodeVisualID(View containerView, EObject domainElement, EClass domainElementMetaclass, String semanticHint) {
 		String containerModelID = getModelID(containerView);
@@ -260,6 +264,11 @@ public class UMLVisualIDRegistry {
 					&& (domainElement == null || isNodePort_3025((Port) domainElement))) {
 				return PortEditPart.VISUAL_ID;
 			}
+			if ((semanticHint == null || RedefinableTemplateSignatureEditPart.VISUAL_ID == nodeVisualID)
+					&& UMLPackage.eINSTANCE.getRedefinableTemplateSignature().isSuperTypeOf(domainElementMetaclass)
+					&& (domainElement == null || isNodeRedefinableTemplateSignature_3027((RedefinableTemplateSignature) domainElement))) {
+				return RedefinableTemplateSignatureEditPart.VISUAL_ID;
+			}
 			return getUnrecognizedClass_2001ChildNodeID(domainElement, semanticHint);
 		case AssociationClass2EditPart.VISUAL_ID:
 			if (AssociationClassNameEditPart.VISUAL_ID == nodeVisualID) {
@@ -274,6 +283,11 @@ public class UMLVisualIDRegistry {
 			if (AssociationClassClassesEditPart.VISUAL_ID == nodeVisualID) {
 				return AssociationClassClassesEditPart.VISUAL_ID;
 			}
+			if ((semanticHint == null || RedefinableTemplateSignatureEditPart.VISUAL_ID == nodeVisualID)
+					&& UMLPackage.eINSTANCE.getRedefinableTemplateSignature().isSuperTypeOf(domainElementMetaclass)
+					&& (domainElement == null || isNodeRedefinableTemplateSignature_3027((RedefinableTemplateSignature) domainElement))) {
+				return RedefinableTemplateSignatureEditPart.VISUAL_ID;
+			}
 			return getUnrecognizedAssociationClass_2007ChildNodeID(domainElement, semanticHint);
 		case DataType2EditPart.VISUAL_ID:
 			if (DataTypeNameEditPart.VISUAL_ID == nodeVisualID) {
@@ -285,6 +299,11 @@ public class UMLVisualIDRegistry {
 			if (DataTypeOperationsEditPart.VISUAL_ID == nodeVisualID) {
 				return DataTypeOperationsEditPart.VISUAL_ID;
 			}
+			if ((semanticHint == null || RedefinableTemplateSignatureEditPart.VISUAL_ID == nodeVisualID)
+					&& UMLPackage.eINSTANCE.getRedefinableTemplateSignature().isSuperTypeOf(domainElementMetaclass)
+					&& (domainElement == null || isNodeRedefinableTemplateSignature_3027((RedefinableTemplateSignature) domainElement))) {
+				return RedefinableTemplateSignatureEditPart.VISUAL_ID;
+			}
 			return getUnrecognizedDataType_2004ChildNodeID(domainElement, semanticHint);
 		case PrimitiveType2EditPart.VISUAL_ID:
 			if (PrimitiveTypeNameEditPart.VISUAL_ID == nodeVisualID) {
@@ -295,6 +314,11 @@ public class UMLVisualIDRegistry {
 			}
 			if (PrimitiveTypeOperationsEditPart.VISUAL_ID == nodeVisualID) {
 				return PrimitiveTypeOperationsEditPart.VISUAL_ID;
+			}
+			if ((semanticHint == null || RedefinableTemplateSignatureEditPart.VISUAL_ID == nodeVisualID)
+					&& UMLPackage.eINSTANCE.getRedefinableTemplateSignature().isSuperTypeOf(domainElementMetaclass)
+					&& (domainElement == null || isNodeRedefinableTemplateSignature_3027((RedefinableTemplateSignature) domainElement))) {
+				return RedefinableTemplateSignatureEditPart.VISUAL_ID;
 			}
 			return getUnrecognizedPrimitiveType_2005ChildNodeID(domainElement, semanticHint);
 		case Enumeration2EditPart.VISUAL_ID:
@@ -309,6 +333,11 @@ public class UMLVisualIDRegistry {
 			}
 			if (EnumerationOperationsEditPart.VISUAL_ID == nodeVisualID) {
 				return EnumerationOperationsEditPart.VISUAL_ID;
+			}
+			if ((semanticHint == null || RedefinableTemplateSignatureEditPart.VISUAL_ID == nodeVisualID)
+					&& UMLPackage.eINSTANCE.getRedefinableTemplateSignature().isSuperTypeOf(domainElementMetaclass)
+					&& (domainElement == null || isNodeRedefinableTemplateSignature_3027((RedefinableTemplateSignature) domainElement))) {
+				return RedefinableTemplateSignatureEditPart.VISUAL_ID;
 			}
 			return getUnrecognizedEnumeration_2003ChildNodeID(domainElement, semanticHint);
 		case InterfaceEditPart.VISUAL_ID:
@@ -362,6 +391,11 @@ public class UMLVisualIDRegistry {
 				return PortNameEditPart.VISUAL_ID;
 			}
 			return getUnrecognizedPort_3025ChildNodeID(domainElement, semanticHint);
+		case RedefinableTemplateSignatureEditPart.VISUAL_ID:
+			if (TemplateSignatureNode_signatureEditPart.VISUAL_ID == nodeVisualID) {
+				return TemplateSignatureNode_signatureEditPart.VISUAL_ID;
+			}
+			return getUnrecognizedRedefinableTemplateSignature_3027ChildNodeID(domainElement, semanticHint);
 		case Property2EditPart.VISUAL_ID:
 			return getUnrecognizedProperty_3019ChildNodeID(domainElement, semanticHint);
 		case Operation2EditPart.VISUAL_ID:
@@ -856,6 +890,16 @@ public class UMLVisualIDRegistry {
 	 *
 	 * @generated
 	 */
+	private static boolean isNodeRedefinableTemplateSignature_3027(RedefinableTemplateSignature element) {
+		return true;
+	}
+
+	/**
+	 * User can change implementation of this method to check some additional 
+	 * conditions here.
+	 *
+	 * @generated
+	 */
 	private static boolean isNodeProperty_3019(Property element) {
 		return true;
 	}
@@ -1167,6 +1211,16 @@ public class UMLVisualIDRegistry {
 	 * @generated
 	 */
 	private static int getUnrecognizedPort_3025ChildNodeID(EObject domainElement, String semanticHint) {
+		return -1;
+	}
+
+	/**
+	 * User can change implementation of this method to handle some specific
+	 * situations not covered by default logic.
+	 *
+	 * @generated
+	 */
+	private static int getUnrecognizedRedefinableTemplateSignature_3027ChildNodeID(EObject domainElement, String semanticHint) {
 		return -1;
 	}
 

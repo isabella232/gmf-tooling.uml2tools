@@ -58,6 +58,7 @@ public class UMLModelingAssistantProvider extends ModelingAssistantProvider {
 		if (editPart instanceof Class2EditPart) {
 			List types = new ArrayList();
 			types.add(UMLElementTypes.Port_3025);
+			types.add(UMLElementTypes.RedefinableTemplateSignature_3027);
 			types.add(UMLElementTypes.Property_3001);
 			types.add(UMLElementTypes.Operation_3002);
 			types.add(UMLElementTypes.Class_3003);
@@ -65,6 +66,7 @@ public class UMLModelingAssistantProvider extends ModelingAssistantProvider {
 		}
 		if (editPart instanceof AssociationClass2EditPart) {
 			List types = new ArrayList();
+			types.add(UMLElementTypes.RedefinableTemplateSignature_3027);
 			types.add(UMLElementTypes.Property_3019);
 			types.add(UMLElementTypes.Operation_3020);
 			types.add(UMLElementTypes.Class_3003);
@@ -72,18 +74,21 @@ public class UMLModelingAssistantProvider extends ModelingAssistantProvider {
 		}
 		if (editPart instanceof DataType2EditPart) {
 			List types = new ArrayList();
+			types.add(UMLElementTypes.RedefinableTemplateSignature_3027);
 			types.add(UMLElementTypes.Property_3014);
 			types.add(UMLElementTypes.Operation_3015);
 			return types;
 		}
 		if (editPart instanceof PrimitiveType2EditPart) {
 			List types = new ArrayList();
+			types.add(UMLElementTypes.RedefinableTemplateSignature_3027);
 			types.add(UMLElementTypes.Property_3021);
 			types.add(UMLElementTypes.Operation_3022);
 			return types;
 		}
 		if (editPart instanceof Enumeration2EditPart) {
 			List types = new ArrayList();
+			types.add(UMLElementTypes.RedefinableTemplateSignature_3027);
 			types.add(UMLElementTypes.EnumerationLiteral_3016);
 			types.add(UMLElementTypes.Property_3023);
 			types.add(UMLElementTypes.Operation_3024);

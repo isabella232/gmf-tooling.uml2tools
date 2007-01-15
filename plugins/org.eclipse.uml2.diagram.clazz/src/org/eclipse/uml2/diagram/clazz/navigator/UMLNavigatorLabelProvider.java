@@ -83,7 +83,9 @@ import org.eclipse.uml2.diagram.clazz.edit.parts.Property5EditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.Property6EditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.PropertyEditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.PropertyNameEditPart;
+import org.eclipse.uml2.diagram.clazz.edit.parts.RedefinableTemplateSignatureEditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.SlotEditPart;
+import org.eclipse.uml2.diagram.clazz.edit.parts.TemplateSignatureNode_signatureEditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.UsageEditPart;
 
 import org.eclipse.uml2.diagram.clazz.part.UMLDiagramEditorPlugin;
@@ -187,6 +189,8 @@ public class UMLNavigatorLabelProvider extends LabelProvider implements ICommonL
 			return getImage("Navigator?Node?http://www.eclipse.org/uml2/2.0.0/UML?Class", UMLElementTypes.Class_3003);
 		case PortEditPart.VISUAL_ID:
 			return getImage("Navigator?Node?http://www.eclipse.org/uml2/2.0.0/UML?Port", UMLElementTypes.Port_3025);
+		case RedefinableTemplateSignatureEditPart.VISUAL_ID:
+			return getImage("Navigator?Node?http://www.eclipse.org/uml2/2.0.0/UML?RedefinableTemplateSignature", UMLElementTypes.RedefinableTemplateSignature_3027);
 		case Property2EditPart.VISUAL_ID:
 			return getImage("Navigator?Node?http://www.eclipse.org/uml2/2.0.0/UML?Property", UMLElementTypes.Property_3019);
 		case Operation2EditPart.VISUAL_ID:
@@ -319,6 +323,8 @@ public class UMLNavigatorLabelProvider extends LabelProvider implements ICommonL
 			return getClass_3003Text(view);
 		case PortEditPart.VISUAL_ID:
 			return getPort_3025Text(view);
+		case RedefinableTemplateSignatureEditPart.VISUAL_ID:
+			return getRedefinableTemplateSignature_3027Text(view);
 		case Property2EditPart.VISUAL_ID:
 			return getProperty_3019Text(view);
 		case Operation2EditPart.VISUAL_ID:
@@ -866,6 +872,30 @@ public class UMLNavigatorLabelProvider extends LabelProvider implements ICommonL
 			return parser.getPrintString(new EObjectAdapter(view.getElement() != null ? view.getElement() : view), ParserOptions.NONE.intValue());
 		} else {
 			UMLDiagramEditorPlugin.getInstance().logError("Parser was not found for label " + 5013);
+			return "";
+		}
+	}
+
+	/**
+	 * @generated
+	 */
+	private String getRedefinableTemplateSignature_3027Text(View view) {
+		IParser parser = ParserService.getInstance().getParser(new IAdaptable() {
+
+			public Object getAdapter(Class adapter) {
+				if (String.class.equals(adapter)) {
+					return UMLVisualIDRegistry.getType(TemplateSignatureNode_signatureEditPart.VISUAL_ID);
+				}
+				if (IElementType.class.equals(adapter)) {
+					return UMLElementTypes.RedefinableTemplateSignature_3027;
+				}
+				return null;
+			}
+		});
+		if (parser != null) {
+			return parser.getPrintString(new EObjectAdapter(view.getElement() != null ? view.getElement() : view), ParserOptions.NONE.intValue());
+		} else {
+			UMLDiagramEditorPlugin.getInstance().logError("Parser was not found for label " + 5015);
 			return "";
 		}
 	}

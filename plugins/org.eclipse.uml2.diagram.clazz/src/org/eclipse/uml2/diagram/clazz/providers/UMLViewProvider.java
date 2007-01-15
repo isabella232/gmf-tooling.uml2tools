@@ -81,7 +81,9 @@ import org.eclipse.uml2.diagram.clazz.edit.parts.Property5EditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.Property6EditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.PropertyEditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.PropertyNameEditPart;
+import org.eclipse.uml2.diagram.clazz.edit.parts.RedefinableTemplateSignatureEditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.SlotEditPart;
+import org.eclipse.uml2.diagram.clazz.edit.parts.TemplateSignatureNode_signatureEditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.UsageEditPart;
 
 import org.eclipse.uml2.diagram.clazz.part.UMLVisualIDRegistry;
@@ -164,7 +166,9 @@ import org.eclipse.uml2.diagram.clazz.view.factories.Property5ViewFactory;
 import org.eclipse.uml2.diagram.clazz.view.factories.Property6ViewFactory;
 import org.eclipse.uml2.diagram.clazz.view.factories.PropertyNameViewFactory;
 import org.eclipse.uml2.diagram.clazz.view.factories.PropertyViewFactory;
+import org.eclipse.uml2.diagram.clazz.view.factories.RedefinableTemplateSignatureViewFactory;
 import org.eclipse.uml2.diagram.clazz.view.factories.SlotViewFactory;
+import org.eclipse.uml2.diagram.clazz.view.factories.TemplateSignatureNode_signatureViewFactory;
 import org.eclipse.uml2.diagram.clazz.view.factories.UsageViewFactory;
 
 /**
@@ -262,6 +266,10 @@ public class UMLViewProvider extends AbstractViewProvider {
 			return PortViewFactory.class;
 		case PortNameEditPart.VISUAL_ID:
 			return PortNameViewFactory.class;
+		case RedefinableTemplateSignatureEditPart.VISUAL_ID:
+			return RedefinableTemplateSignatureViewFactory.class;
+		case TemplateSignatureNode_signatureEditPart.VISUAL_ID:
+			return TemplateSignatureNode_signatureViewFactory.class;
 		case Property2EditPart.VISUAL_ID:
 			return Property2ViewFactory.class;
 		case Operation2EditPart.VISUAL_ID:

@@ -66,6 +66,7 @@ import org.eclipse.uml2.diagram.clazz.edit.parts.Property4EditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.Property5EditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.Property6EditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.PropertyEditPart;
+import org.eclipse.uml2.diagram.clazz.edit.parts.RedefinableTemplateSignatureEditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.SlotEditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.UsageEditPart;
 import org.eclipse.uml2.diagram.clazz.part.UMLVisualIDRegistry;
@@ -284,6 +285,7 @@ public class PackageCanonicalEditPolicy extends CanonicalConnectionEditPolicy {
 		case OperationEditPart.VISUAL_ID:
 		case Class3EditPart.VISUAL_ID:
 		case PortEditPart.VISUAL_ID:
+		case RedefinableTemplateSignatureEditPart.VISUAL_ID:
 		case Property2EditPart.VISUAL_ID:
 		case Operation2EditPart.VISUAL_ID:
 		case Property3EditPart.VISUAL_ID:

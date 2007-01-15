@@ -7,6 +7,7 @@ import java.util.Set;
 
 import org.eclipse.core.runtime.IAdaptable;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EClassifier;
 import org.eclipse.emf.ecore.ENamedElement;
 import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.gmf.runtime.emf.type.core.ElementTypeRegistry;
@@ -60,7 +61,14 @@ public class UMLElementTypes extends ElementInitializers {
 	 */
 	private static ImageDescriptor getProvidedImageDescriptor(ENamedElement element) {
 		if (element instanceof EStructuralFeature) {
-			element = ((EStructuralFeature) element).getEContainingClass();
+			EStructuralFeature feature = ((EStructuralFeature) element);
+			EClass eContainingClass = feature.getEContainingClass();
+			EClassifier eType = feature.getEType();
+			if (eContainingClass != null && !eContainingClass.isAbstract()) {
+				element = eContainingClass;
+			} else if (eType instanceof EClass && !((EClass) eType).isAbstract()) {
+				element = eType;
+			}
 		}
 		if (element instanceof EClass) {
 			EClass eClass = (EClass) element;
@@ -180,6 +188,8 @@ public class UMLElementTypes extends ElementInitializers {
 			elements.put(Class_3003, UMLPackage.eINSTANCE.getClass_());
 
 			elements.put(Port_3025, UMLPackage.eINSTANCE.getPort());
+
+			elements.put(RedefinableTemplateSignature_3027, UMLPackage.eINSTANCE.getRedefinableTemplateSignature());
 
 			elements.put(Property_3019, UMLPackage.eINSTANCE.getProperty());
 
@@ -337,6 +347,11 @@ public class UMLElementTypes extends ElementInitializers {
 	/**
 	 * @generated
 	 */
+	public static final IElementType RedefinableTemplateSignature_3027 = getElementType("org.eclipse.uml2.diagram.clazz.RedefinableTemplateSignature_3027"); //$NON-NLS-1$
+
+	/**
+	 * @generated
+	 */
 	public static final IElementType Property_3019 = getElementType("org.eclipse.uml2.diagram.clazz.Property_3019"); //$NON-NLS-1$
 
 	/**
@@ -474,6 +489,7 @@ public class UMLElementTypes extends ElementInitializers {
 			KNOWN_ELEMENT_TYPES.add(Operation_3002);
 			KNOWN_ELEMENT_TYPES.add(Class_3003);
 			KNOWN_ELEMENT_TYPES.add(Port_3025);
+			KNOWN_ELEMENT_TYPES.add(RedefinableTemplateSignature_3027);
 			KNOWN_ELEMENT_TYPES.add(Property_3019);
 			KNOWN_ELEMENT_TYPES.add(Operation_3020);
 			KNOWN_ELEMENT_TYPES.add(Property_3014);

@@ -11,12 +11,14 @@ import org.eclipse.gef.commands.UnexecutableCommand;
 
 import org.eclipse.gmf.runtime.emf.type.core.commands.SetValueCommand;
 
+import org.eclipse.gmf.runtime.emf.type.core.requests.CreateElementRequest;
 import org.eclipse.gmf.runtime.emf.type.core.requests.SetRequest;
 
 import org.eclipse.uml2.diagram.clazz.edit.commands.AssociationTypeLinkCreateCommand;
 import org.eclipse.uml2.diagram.clazz.edit.commands.DependencyTypeLinkCreateCommand;
 import org.eclipse.uml2.diagram.clazz.edit.commands.GeneralizationTypeLinkCreateCommand;
 import org.eclipse.uml2.diagram.clazz.edit.commands.PropertyTypeLinkCreateCommand;
+import org.eclipse.uml2.diagram.clazz.edit.commands.RedefinableTemplateSignatureCreateCommand;
 import org.eclipse.uml2.diagram.clazz.edit.commands.UsageTypeLinkCreateCommand;
 
 import org.eclipse.uml2.diagram.clazz.providers.UMLElementTypes;
@@ -35,6 +37,19 @@ import org.eclipse.uml2.uml.UMLPackage;
  * @generated
  */
 public class PrimitiveType2ItemSemanticEditPolicy extends UMLBaseItemSemanticEditPolicy {
+
+	/**
+	 * @generated
+	 */
+	protected Command getCreateCommand(CreateElementRequest req) {
+		if (UMLElementTypes.RedefinableTemplateSignature_3027 == req.getElementType()) {
+			if (req.getContainmentFeature() == null) {
+				req.setContainmentFeature(UMLPackage.eINSTANCE.getTemplateableElement_OwnedTemplateSignature());
+			}
+			return getMSLWrapper(new RedefinableTemplateSignatureCreateCommand(req));
+		}
+		return super.getCreateCommand(req);
+	}
 
 	/**
 	 * @generated

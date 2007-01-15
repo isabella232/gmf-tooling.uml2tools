@@ -126,6 +126,12 @@ public class UMLEditPartFactory implements EditPartFactory {
 			case PortNameEditPart.VISUAL_ID:
 				return new PortNameEditPart(view);
 
+			case RedefinableTemplateSignatureEditPart.VISUAL_ID:
+				return new RedefinableTemplateSignatureEditPart(view);
+
+			case TemplateSignatureNode_signatureEditPart.VISUAL_ID:
+				return new TemplateSignatureNode_signatureEditPart(view);
+
 			case Property2EditPart.VISUAL_ID:
 				return new Property2EditPart(view);
 

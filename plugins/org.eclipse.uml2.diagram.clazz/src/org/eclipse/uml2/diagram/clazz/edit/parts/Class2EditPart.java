@@ -25,6 +25,7 @@ import org.eclipse.gmf.runtime.diagram.ui.editpolicies.CreationEditPolicy;
 import org.eclipse.gmf.runtime.diagram.ui.editpolicies.DragDropEditPolicy;
 import org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles;
 import org.eclipse.gmf.runtime.diagram.ui.figures.BorderItemLocator;
+import org.eclipse.gmf.runtime.diagram.ui.figures.IBorderItemLocator;
 import org.eclipse.gmf.runtime.diagram.ui.requests.CreateViewAndElementRequest;
 import org.eclipse.gmf.runtime.draw2d.ui.figures.ConstrainedToolbarLayout;
 import org.eclipse.gmf.runtime.draw2d.ui.figures.WrapLabel;
@@ -172,8 +173,14 @@ public class Class2EditPart extends AbstractBorderedShapeEditPart {
 			return true;
 		}
 		if (childEditPart instanceof PortEditPart) {
-			BorderItemLocator locator = new BorderItemLocator(getMainFigure(), PositionConstants.NONE);
+
+			IBorderItemLocator locator = new BorderItemLocator(getMainFigure(), PositionConstants.NONE);
 			getBorderedFigure().getBorderItemContainer().add(((PortEditPart) childEditPart).getFigure(), locator);
+			return true;
+		}
+		if (childEditPart instanceof RedefinableTemplateSignatureEditPart) {
+			IBorderItemLocator locator = new TemplateLocator(getMainFigure());
+			getBorderedFigure().getBorderItemContainer().add(((RedefinableTemplateSignatureEditPart) childEditPart).getFigure(), locator);
 			return true;
 		}
 		return false;
@@ -201,6 +208,10 @@ public class Class2EditPart extends AbstractBorderedShapeEditPart {
 		}
 		if (childEditPart instanceof PortEditPart) {
 			getBorderedFigure().getBorderItemContainer().remove(((PortEditPart) childEditPart).getFigure());
+			return true;
+		}
+		if (childEditPart instanceof RedefinableTemplateSignatureEditPart) {
+			getBorderedFigure().getBorderItemContainer().remove(((RedefinableTemplateSignatureEditPart) childEditPart).getFigure());
 			return true;
 		}
 		return false;
@@ -241,6 +252,9 @@ public class Class2EditPart extends AbstractBorderedShapeEditPart {
 			return getPrimaryShape().getFigureClassFigure_ClassesCompartment();
 		}
 		if (editPart instanceof PortEditPart) {
+			return getBorderedFigure().getBorderItemContainer();
+		}
+		if (editPart instanceof RedefinableTemplateSignatureEditPart) {
 			return getBorderedFigure().getBorderItemContainer();
 		}
 		return super.getContentPaneFor(editPart);

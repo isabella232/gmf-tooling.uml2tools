@@ -16,10 +16,14 @@ import org.eclipse.gef.requests.CreateRequest;
 import org.eclipse.gmf.internal.codegen.draw2d.GridLayout;
 import org.eclipse.gmf.internal.codegen.draw2d.GridLayoutData;
 import org.eclipse.gmf.runtime.diagram.core.edithelpers.CreateElementRequestAdapter;
+import org.eclipse.gmf.runtime.diagram.ui.editparts.AbstractBorderedShapeEditPart;
+import org.eclipse.gmf.runtime.diagram.ui.editparts.IBorderItemEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart;
-import org.eclipse.gmf.runtime.diagram.ui.editparts.ShapeNodeEditPart;
+import org.eclipse.gmf.runtime.diagram.ui.editpolicies.BorderItemSelectionEditPolicy;
 import org.eclipse.gmf.runtime.diagram.ui.editpolicies.CreationEditPolicy;
+import org.eclipse.gmf.runtime.diagram.ui.editpolicies.DragDropEditPolicy;
 import org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles;
+import org.eclipse.gmf.runtime.diagram.ui.figures.IBorderItemLocator;
 import org.eclipse.gmf.runtime.diagram.ui.requests.CreateViewAndElementRequest;
 import org.eclipse.gmf.runtime.draw2d.ui.figures.ConstrainedToolbarLayout;
 import org.eclipse.gmf.runtime.draw2d.ui.figures.WrapLabel;
@@ -27,6 +31,7 @@ import org.eclipse.gmf.runtime.emf.type.core.IElementType;
 import org.eclipse.gmf.runtime.gef.ui.figures.DefaultSizeNodeFigure;
 import org.eclipse.gmf.runtime.gef.ui.figures.NodeFigure;
 import org.eclipse.gmf.runtime.notation.View;
+import org.eclipse.uml2.diagram.clazz.edit.policies.Enumeration2CanonicalEditPolicy;
 import org.eclipse.uml2.diagram.clazz.edit.policies.Enumeration2ItemSemanticEditPolicy;
 import org.eclipse.uml2.diagram.clazz.part.UMLVisualIDRegistry;
 import org.eclipse.uml2.diagram.clazz.providers.UMLElementTypes;
@@ -35,7 +40,7 @@ import org.eclipse.uml2.diagram.common.draw2d.CenterLayout;
 /**
  * @generated
  */
-public class Enumeration2EditPart extends ShapeNodeEditPart {
+public class Enumeration2EditPart extends AbstractBorderedShapeEditPart {
 
 	/**
 	 * @generated
@@ -91,6 +96,8 @@ public class Enumeration2EditPart extends ShapeNodeEditPart {
 		super.createDefaultEditPolicies();
 
 		installEditPolicy(EditPolicyRoles.SEMANTIC_ROLE, new Enumeration2ItemSemanticEditPolicy());
+		installEditPolicy(EditPolicyRoles.DRAG_DROP_ROLE, new DragDropEditPolicy());
+		installEditPolicy(EditPolicyRoles.CANONICAL_ROLE, new Enumeration2CanonicalEditPolicy());
 		installEditPolicy(EditPolicy.LAYOUT_ROLE, createLayoutEditPolicy());
 	}
 
@@ -101,6 +108,9 @@ public class Enumeration2EditPart extends ShapeNodeEditPart {
 		LayoutEditPolicy lep = new LayoutEditPolicy() {
 
 			protected EditPolicy createChildEditPolicy(EditPart child) {
+				if (child instanceof IBorderItemEditPart) {
+					return new BorderItemSelectionEditPolicy();
+				}
 				EditPolicy result = child.getEditPolicy(EditPolicy.PRIMARY_DRAG_ROLE);
 				if (result == null) {
 					result = new NonResizableEditPolicy();
@@ -160,6 +170,11 @@ public class Enumeration2EditPart extends ShapeNodeEditPart {
 			pane.add(((EnumerationOperationsEditPart) childEditPart).getFigure());
 			return true;
 		}
+		if (childEditPart instanceof RedefinableTemplateSignatureEditPart) {
+			IBorderItemLocator locator = new TemplateLocator(getMainFigure());
+			getBorderedFigure().getBorderItemContainer().add(((RedefinableTemplateSignatureEditPart) childEditPart).getFigure(), locator);
+			return true;
+		}
 		return false;
 	}
 
@@ -181,6 +196,10 @@ public class Enumeration2EditPart extends ShapeNodeEditPart {
 		if (childEditPart instanceof EnumerationOperationsEditPart) {
 			IFigure pane = getPrimaryShape().getFigureClassFigure_OperationsCompartment();
 			pane.remove(((EnumerationOperationsEditPart) childEditPart).getFigure());
+			return true;
+		}
+		if (childEditPart instanceof RedefinableTemplateSignatureEditPart) {
+			getBorderedFigure().getBorderItemContainer().remove(((RedefinableTemplateSignatureEditPart) childEditPart).getFigure());
 			return true;
 		}
 		return false;
@@ -220,6 +239,9 @@ public class Enumeration2EditPart extends ShapeNodeEditPart {
 		if (editPart instanceof EnumerationOperationsEditPart) {
 			return getPrimaryShape().getFigureClassFigure_OperationsCompartment();
 		}
+		if (editPart instanceof RedefinableTemplateSignatureEditPart) {
+			return getBorderedFigure().getBorderItemContainer();
+		}
 		return super.getContentPaneFor(editPart);
 	}
 
@@ -240,7 +262,7 @@ public class Enumeration2EditPart extends ShapeNodeEditPart {
 	 * 
 	 * @generated
 	 */
-	protected NodeFigure createNodeFigure() {
+	protected NodeFigure createMainFigure() {
 		NodeFigure figure = createNodePlate();
 		figure.setLayoutManager(new StackLayout());
 		IFigure shape = createNodeShape();
