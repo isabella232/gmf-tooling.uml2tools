@@ -22,9 +22,6 @@
       <update label="%updateSiteName" url="http://download.eclipse.org/modeling/mdt/updates/"/>
    </url>
 
-   <requires>
-   </requires>
-
    <plugin
          id="org.eclipse.uml2tools"
          download-size="0"
