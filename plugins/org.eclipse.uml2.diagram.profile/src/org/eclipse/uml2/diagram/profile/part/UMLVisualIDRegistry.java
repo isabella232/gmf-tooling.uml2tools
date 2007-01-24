@@ -145,7 +145,6 @@ public class UMLVisualIDRegistry {
 	}
 
 	/**
-	 * @generated
 	 *
 	 * We want to additionally show the Canvas Semantical Element in the auxiliary 
 	 * Profile3EditPart (that serves as a visual container for children imports). 
@@ -154,6 +153,7 @@ public class UMLVisualIDRegistry {
 	 * 
 	 * @see ProfileCanonicalEditPolicy#getSemanticChildrenList
 	 *
+	 * @generated
 	 */
 	public static int getNodeVisualID(View containerView, EObject domainElement, EClass domainElementMetaclass, String semanticHint) {
 		String containerModelID = getModelID(containerView);

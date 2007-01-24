@@ -54,7 +54,6 @@ import org.eclipse.uml2.uml.UMLPackage;
 public class ProfileCanonicalEditPolicy extends CanonicalConnectionEditPolicy {
 
 	/**
-	 * @generated
 	 * We have "dummy" TopLevelNode (with vid = 2007). The only purpose 
 	 * for this node is to be a container for children (imports, etc) 
 	 * of the "main" diagram figure (that one shown as Canvas).
@@ -67,6 +66,7 @@ public class ProfileCanonicalEditPolicy extends CanonicalConnectionEditPolicy {
 	 * semantic element as the canvas view. 
 	 * 
 	 * @see VisualIDRegistry 
+	 * @generated
 	 */
 	protected List getSemanticChildrenList() {
 		List result = new LinkedList();
