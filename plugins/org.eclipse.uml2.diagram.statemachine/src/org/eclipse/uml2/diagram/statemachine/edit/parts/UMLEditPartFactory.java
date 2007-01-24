@@ -30,20 +30,14 @@ public class UMLEditPartFactory implements EditPartFactory {
 			case StateMachineEditPart.VISUAL_ID:
 				return new StateMachineEditPart(view);
 
+			case StateMachine2EditPart.VISUAL_ID:
+				return new StateMachine2EditPart(view);
+
+			case StateMachineNameEditPart.VISUAL_ID:
+				return new StateMachineNameEditPart(view);
+
 			case RegionEditPart.VISUAL_ID:
 				return new RegionEditPart(view);
-
-			case Pseudostate9EditPart.VISUAL_ID:
-				return new Pseudostate9EditPart(view);
-
-			case PseudostateNameEditPart.VISUAL_ID:
-				return new PseudostateNameEditPart(view);
-
-			case Pseudostate10EditPart.VISUAL_ID:
-				return new Pseudostate10EditPart(view);
-
-			case PseudostateName2EditPart.VISUAL_ID:
-				return new PseudostateName2EditPart(view);
 
 			case StateEditPart.VISUAL_ID:
 				return new StateEditPart(view);
@@ -86,6 +80,18 @@ public class UMLEditPartFactory implements EditPartFactory {
 
 			case Pseudostate8EditPart.VISUAL_ID:
 				return new Pseudostate8EditPart(view);
+
+			case Pseudostate9EditPart.VISUAL_ID:
+				return new Pseudostate9EditPart(view);
+
+			case PseudostateNameEditPart.VISUAL_ID:
+				return new PseudostateNameEditPart(view);
+
+			case Pseudostate10EditPart.VISUAL_ID:
+				return new Pseudostate10EditPart(view);
+
+			case PseudostateName2EditPart.VISUAL_ID:
+				return new PseudostateName2EditPart(view);
 
 			case RegionSubverticesEditPart.VISUAL_ID:
 				return new RegionSubverticesEditPart(view);

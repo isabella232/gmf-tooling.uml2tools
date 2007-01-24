@@ -8,16 +8,18 @@ import java.util.List;
 
 import org.eclipse.emf.ecore.EObject;
 
-import org.eclipse.uml2.diagram.statemachine.edit.parts.Region2EditPart;
+import org.eclipse.uml2.diagram.statemachine.edit.parts.Pseudostate10EditPart;
+import org.eclipse.uml2.diagram.statemachine.edit.parts.Pseudostate9EditPart;
+import org.eclipse.uml2.diagram.statemachine.edit.parts.RegionEditPart;
 
 import org.eclipse.uml2.diagram.statemachine.part.UMLVisualIDRegistry;
 
-import org.eclipse.uml2.uml.State;
+import org.eclipse.uml2.uml.StateMachine;
 
 /**
  * @generated
  */
-public class State2CanonicalEditPolicy extends CanonicalEditPolicy {
+public class StateMachine2CanonicalEditPolicy extends CanonicalEditPolicy {
 
 	/**
 	 *  
@@ -29,11 +31,25 @@ public class State2CanonicalEditPolicy extends CanonicalEditPolicy {
 		View viewObject = (View) getHost().getModel();
 		EObject nextValue;
 		int nodeVID;
-		for (Iterator values = ((State) modelObject).getRegions().iterator(); values.hasNext();) {
+		for (Iterator values = ((StateMachine) modelObject).getRegions().iterator(); values.hasNext();) {
 			nextValue = (EObject) values.next();
 			nodeVID = UMLVisualIDRegistry.getNodeVisualID(viewObject, nextValue);
-			if (Region2EditPart.VISUAL_ID == nodeVID) {
+			if (RegionEditPart.VISUAL_ID == nodeVID) {
 				result.add(nextValue);
+			}
+		}
+		for (Iterator values = ((StateMachine) modelObject).getConnectionPoints().iterator(); values.hasNext();) {
+			nextValue = (EObject) values.next();
+			nodeVID = UMLVisualIDRegistry.getNodeVisualID(viewObject, nextValue);
+			switch (nodeVID) {
+			case Pseudostate9EditPart.VISUAL_ID: {
+				result.add(nextValue);
+				break;
+			}
+			case Pseudostate10EditPart.VISUAL_ID: {
+				result.add(nextValue);
+				break;
+			}
 			}
 		}
 		return result;

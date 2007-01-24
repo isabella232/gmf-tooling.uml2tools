@@ -128,6 +128,10 @@
             checkPluginLoaded="false">
          <Priority name="Low"/>
          <popupContribution class="org.eclipse.gmf.runtime.diagram.ui.providers.DiagramContextMenuProvider">
+            <popupStructuredContributionCriteria objectClass="org.eclipse.uml2.diagram.statemachine.edit.parts.RegionEditPart"/>
+            <popupPredefinedItem id="deleteFromDiagramAction" remove="true"/>
+         </popupContribution>
+         <popupContribution class="org.eclipse.gmf.runtime.diagram.ui.providers.DiagramContextMenuProvider">
             <popupStructuredContributionCriteria objectClass="org.eclipse.uml2.diagram.statemachine.edit.parts.StateEditPart"/>
             <popupPredefinedItem id="deleteFromDiagramAction" remove="true"/>
          </popupContribution>
@@ -184,10 +188,6 @@
             <popupPredefinedItem id="deleteFromDiagramAction" remove="true"/>
          </popupContribution>
          <popupContribution class="org.eclipse.gmf.runtime.diagram.ui.providers.DiagramContextMenuProvider">
-            <popupStructuredContributionCriteria objectClass="org.eclipse.uml2.diagram.statemachine.edit.parts.RegionEditPart"/>
-            <popupPredefinedItem id="deleteFromDiagramAction" remove="true"/>
-         </popupContribution>
-         <popupContribution class="org.eclipse.gmf.runtime.diagram.ui.providers.DiagramContextMenuProvider">
             <popupStructuredContributionCriteria objectClass="org.eclipse.uml2.diagram.statemachine.edit.parts.Pseudostate9EditPart"/>
             <popupPredefinedItem id="deleteFromDiagramAction" remove="true"/>
          </popupContribution>
@@ -204,6 +204,14 @@
             <popupStructuredContributionCriteria objectClass="org.eclipse.uml2.diagram.statemachine.edit.parts.PseudostateName2EditPart"/>
             <popupPredefinedItem id="deleteFromDiagramAction" remove="true"/>
             <popupPredefinedItem id="deleteFromModelAction" remove="true"/>
+         </popupContribution>
+         <popupContribution class="org.eclipse.gmf.runtime.diagram.ui.providers.DiagramContextMenuProvider">
+            <popupStructuredContributionCriteria objectClass="org.eclipse.uml2.diagram.statemachine.edit.parts.StateMachine2EditPart"/>
+            <popupPredefinedItem id="deleteFromDiagramAction" remove="true"/>
+         </popupContribution>
+         <popupContribution class="org.eclipse.gmf.runtime.diagram.ui.providers.DiagramContextMenuProvider">
+            <popupStructuredContributionCriteria objectClass="org.eclipse.uml2.diagram.statemachine.edit.parts.StateMachineNameEditPart"/>
+            <popupPredefinedItem id="deleteFromDiagramAction" remove="true"/>
          </popupContribution>
          <popupContribution class="org.eclipse.gmf.runtime.diagram.ui.providers.DiagramContextMenuProvider">
             <popupStructuredContributionCriteria objectClass="org.eclipse.uml2.diagram.statemachine.edit.parts.TransitionEditPart"/>
@@ -307,6 +315,17 @@
 
       <metamodel nsURI="http://www.eclipse.org/uml2/2.0.0/UML">
          <metamodelType
+               id="org.eclipse.uml2.diagram.statemachine.Region_3013"
+               name="Region"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
+               eclass="Region"
+               edithelper="org.eclipse.uml2.diagram.statemachine.edit.helpers.RegionEditHelper">
+            <param name="semanticHint" value="3013"/>
+         </metamodelType>
+      </metamodel>
+
+      <metamodel nsURI="http://www.eclipse.org/uml2/2.0.0/UML">
+         <metamodelType
                id="org.eclipse.uml2.diagram.statemachine.State_3001"
                name="State"
                kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
@@ -333,7 +352,7 @@
                name="Region"
                kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
                edithelperadvice="org.eclipse.uml2.diagram.statemachine.edit.helpers.RegionEditHelperAdvice">
-            <specializes id="org.eclipse.uml2.diagram.statemachine.Region_2001"/>
+            <specializes id="org.eclipse.uml2.diagram.statemachine.Region_3013"/>
             <param name="semanticHint" value="3002"/>
          </specializationType>
       </metamodel>
@@ -438,35 +457,35 @@
       </metamodel>
 
       <metamodel nsURI="http://www.eclipse.org/uml2/2.0.0/UML">
-         <metamodelType
-               id="org.eclipse.uml2.diagram.statemachine.Region_2001"
-               name="Region"
-               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
-               eclass="Region"
-               edithelper="org.eclipse.uml2.diagram.statemachine.edit.helpers.RegionEditHelper">
-            <param name="semanticHint" value="2001"/>
-         </metamodelType>
-      </metamodel>
-
-      <metamodel nsURI="http://www.eclipse.org/uml2/2.0.0/UML">
          <specializationType
-               id="org.eclipse.uml2.diagram.statemachine.Pseudostate_2002"
+               id="org.eclipse.uml2.diagram.statemachine.Pseudostate_3014"
                name="Pseudostate"
                kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
                edithelperadvice="org.eclipse.uml2.diagram.statemachine.edit.helpers.Pseudostate8EditHelperAdvice">
             <specializes id="org.eclipse.uml2.diagram.statemachine.Pseudostate_3004"/>
-            <param name="semanticHint" value="2002"/>
+            <param name="semanticHint" value="3014"/>
          </specializationType>
       </metamodel>
 
       <metamodel nsURI="http://www.eclipse.org/uml2/2.0.0/UML">
          <specializationType
-               id="org.eclipse.uml2.diagram.statemachine.Pseudostate_2003"
+               id="org.eclipse.uml2.diagram.statemachine.Pseudostate_3015"
                name="Pseudostate"
                kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
                edithelperadvice="org.eclipse.uml2.diagram.statemachine.edit.helpers.Pseudostate9EditHelperAdvice">
             <specializes id="org.eclipse.uml2.diagram.statemachine.Pseudostate_3004"/>
-            <param name="semanticHint" value="2003"/>
+            <param name="semanticHint" value="3015"/>
+         </specializationType>
+      </metamodel>
+
+      <metamodel nsURI="http://www.eclipse.org/uml2/2.0.0/UML">
+         <specializationType
+               id="org.eclipse.uml2.diagram.statemachine.StateMachine_2004"
+               name="StateMachine"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
+               edithelperadvice="org.eclipse.uml2.diagram.statemachine.edit.helpers.StateMachineEditHelperAdvice">
+            <specializes id="org.eclipse.uml2.diagram.statemachine.StateMachine_1000"/>
+            <param name="semanticHint" value="2004"/>
          </specializationType>
       </metamodel>
 
@@ -493,6 +512,7 @@
       </clientContext> 
       <binding context="UMLStateMachineClientContext">
          <elementType ref="org.eclipse.uml2.diagram.statemachine.StateMachine_1000"/>
+         <elementType ref="org.eclipse.uml2.diagram.statemachine.Region_3013"/>
          <elementType ref="org.eclipse.uml2.diagram.statemachine.State_3001"/>
          <elementType ref="org.eclipse.uml2.diagram.statemachine.State_3012"/>
          <elementType ref="org.eclipse.uml2.diagram.statemachine.Region_3002"/>
@@ -505,9 +525,9 @@
          <elementType ref="org.eclipse.uml2.diagram.statemachine.Pseudostate_3009"/>
          <elementType ref="org.eclipse.uml2.diagram.statemachine.Pseudostate_3010"/>
          <elementType ref="org.eclipse.uml2.diagram.statemachine.Pseudostate_3011"/>
-         <elementType ref="org.eclipse.uml2.diagram.statemachine.Region_2001"/>
-         <elementType ref="org.eclipse.uml2.diagram.statemachine.Pseudostate_2002"/>
-         <elementType ref="org.eclipse.uml2.diagram.statemachine.Pseudostate_2003"/>
+         <elementType ref="org.eclipse.uml2.diagram.statemachine.Pseudostate_3014"/>
+         <elementType ref="org.eclipse.uml2.diagram.statemachine.Pseudostate_3015"/>
+         <elementType ref="org.eclipse.uml2.diagram.statemachine.StateMachine_2004"/>
          <elementType ref="org.eclipse.uml2.diagram.statemachine.Transition_4001"/>
          <advice ref="org.eclipse.gmf.runtime.diagram.core.advice.notationDepdendents"/>
       </binding>

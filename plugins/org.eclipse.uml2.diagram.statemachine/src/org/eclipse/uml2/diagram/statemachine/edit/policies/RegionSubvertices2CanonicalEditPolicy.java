@@ -30,6 +30,7 @@ import org.eclipse.uml2.uml.Region;
 public class RegionSubvertices2CanonicalEditPolicy extends CanonicalEditPolicy {
 
 	/**
+	 *  
 	 * @generated
 	 */
 	protected List getSemanticChildrenList() {

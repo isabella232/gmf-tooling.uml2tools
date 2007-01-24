@@ -29,40 +29,6 @@ public class ElementInitializers {
 		/**
 		 * @generated
 		 */
-		public static final IObjectInitializer Pseudostate_2002 = new ObjectInitializer(UMLPackage.eINSTANCE.getPseudostate()) {
-
-			protected void init() {
-				add(createExpressionFeatureInitializer(UMLPackage.eINSTANCE.getPseudostate_Kind(), UMLOCLFactory.getExpression("PseudostateKind::entryPoint", //$NON-NLS-1$
-						UMLPackage.eINSTANCE.getPseudostate())));
-				add(createExpressionFeatureInitializer(
-						UMLPackage.eINSTANCE.getNamedElement_Name(),
-						UMLOCLFactory
-								.getExpression(
-										" let base : String = \'Entry Point\' in  let suffixes : Sequence(String) = Sequence {\'\', \'1\', \'2\', \'3\', \'4\', \'5\', \'6\', \'7\', \'8\', \'9\', \'10\'} in  let space : Namespace = self.namespace in  let allMissed : Sequence(String) = suffixes-> \tselect(s : String | not space.member->exists(e : NamedElement | e.name = base.concat(s)) ) in  let firstMissed : String = allMissed->first() in  let noMisses : Boolean = firstMissed.oclIsUndefined() in  let allNames : Set(String) =  \tif noMisses \t\tthen \t\tspace.member->collect(e : NamedElement | \t\t\tif e = self or e.name.oclIsUndefined() or e.name.substring(1, e.name.size().min(base.size())) <> base \t\t\tthen \'\' else e.name \t\t\tendif \t\t)->asSet()->excluding(\'\') \t\telse Set{\'not in use\'} \t\tendif in  let longestName : String = \t\tif noMisses \t\tthen allNames->select(n : String | not allNames->exists(nn : String | nn.size() > n.size()))->asSequence()->first()\t\telse \'not in use\' \t\tendif \tin  if noMisses then \t\tif longestName.oclIsUndefined() \t\tthen base \t\telse longestName.concat(\'1\') \t\tendif  else base.concat(firstMissed)  endif ", //$NON-NLS-1$
-										UMLPackage.eINSTANCE.getPseudostate())));
-			}
-		}; // Pseudostate_2002 ObjectInitializer		
-
-		/**
-		 * @generated
-		 */
-		public static final IObjectInitializer Pseudostate_2003 = new ObjectInitializer(UMLPackage.eINSTANCE.getPseudostate()) {
-
-			protected void init() {
-				add(createExpressionFeatureInitializer(UMLPackage.eINSTANCE.getPseudostate_Kind(), UMLOCLFactory.getExpression("PseudostateKind::exitPoint", //$NON-NLS-1$
-						UMLPackage.eINSTANCE.getPseudostate())));
-				add(createExpressionFeatureInitializer(
-						UMLPackage.eINSTANCE.getNamedElement_Name(),
-						UMLOCLFactory
-								.getExpression(
-										" let base : String = \'Exit Point\' in  let suffixes : Sequence(String) = Sequence {\'\', \'1\', \'2\', \'3\', \'4\', \'5\', \'6\', \'7\', \'8\', \'9\', \'10\'} in  let space : Namespace = self.namespace in  let allMissed : Sequence(String) = suffixes-> \tselect(s : String | not space.member->exists(e : NamedElement | e.name = base.concat(s)) ) in  let firstMissed : String = allMissed->first() in  let noMisses : Boolean = firstMissed.oclIsUndefined() in  let allNames : Set(String) =  \tif noMisses \t\tthen \t\tspace.member->collect(e : NamedElement | \t\t\tif e = self or e.name.oclIsUndefined() or e.name.substring(1, e.name.size().min(base.size())) <> base \t\t\tthen \'\' else e.name \t\t\tendif \t\t)->asSet()->excluding(\'\') \t\telse Set{\'not in use\'} \t\tendif in  let longestName : String = \t\tif noMisses \t\tthen allNames->select(n : String | not allNames->exists(nn : String | nn.size() > n.size()))->asSequence()->first()\t\telse \'not in use\' \t\tendif \tin  if noMisses then \t\tif longestName.oclIsUndefined() \t\tthen base \t\telse longestName.concat(\'1\') \t\tendif  else base.concat(firstMissed)  endif ", //$NON-NLS-1$
-										UMLPackage.eINSTANCE.getPseudostate())));
-			}
-		}; // Pseudostate_2003 ObjectInitializer		
-
-		/**
-		 * @generated
-		 */
 		public static final IObjectInitializer State_3001 = new ObjectInitializer(UMLPackage.eINSTANCE.getState()) {
 
 			protected void init() {
@@ -191,7 +157,41 @@ public class ElementInitializers {
 				add(createExpressionFeatureInitializer(UMLPackage.eINSTANCE.getPseudostate_Kind(), UMLOCLFactory.getExpression("PseudostateKind::terminate", //$NON-NLS-1$
 						UMLPackage.eINSTANCE.getPseudostate())));
 			}
-		}; // Pseudostate_3011 ObjectInitializer
+		}; // Pseudostate_3011 ObjectInitializer		
+
+		/**
+		 * @generated
+		 */
+		public static final IObjectInitializer Pseudostate_3014 = new ObjectInitializer(UMLPackage.eINSTANCE.getPseudostate()) {
+
+			protected void init() {
+				add(createExpressionFeatureInitializer(UMLPackage.eINSTANCE.getPseudostate_Kind(), UMLOCLFactory.getExpression("PseudostateKind::entryPoint", //$NON-NLS-1$
+						UMLPackage.eINSTANCE.getPseudostate())));
+				add(createExpressionFeatureInitializer(
+						UMLPackage.eINSTANCE.getNamedElement_Name(),
+						UMLOCLFactory
+								.getExpression(
+										" let base : String = \'Entry Point\' in  let suffixes : Sequence(String) = Sequence {\'\', \'1\', \'2\', \'3\', \'4\', \'5\', \'6\', \'7\', \'8\', \'9\', \'10\'} in  let space : Namespace = self.namespace in  let allMissed : Sequence(String) = suffixes-> \tselect(s : String | not space.member->exists(e : NamedElement | e.name = base.concat(s)) ) in  let firstMissed : String = allMissed->first() in  let noMisses : Boolean = firstMissed.oclIsUndefined() in  let allNames : Set(String) =  \tif noMisses \t\tthen \t\tspace.member->collect(e : NamedElement | \t\t\tif e = self or e.name.oclIsUndefined() or e.name.substring(1, e.name.size().min(base.size())) <> base \t\t\tthen \'\' else e.name \t\t\tendif \t\t)->asSet()->excluding(\'\') \t\telse Set{\'not in use\'} \t\tendif in  let longestName : String = \t\tif noMisses \t\tthen allNames->select(n : String | not allNames->exists(nn : String | nn.size() > n.size()))->asSequence()->first()\t\telse \'not in use\' \t\tendif \tin  if noMisses then \t\tif longestName.oclIsUndefined() \t\tthen base \t\telse longestName.concat(\'1\') \t\tendif  else base.concat(firstMissed)  endif ", //$NON-NLS-1$
+										UMLPackage.eINSTANCE.getPseudostate())));
+			}
+		}; // Pseudostate_3014 ObjectInitializer		
+
+		/**
+		 * @generated
+		 */
+		public static final IObjectInitializer Pseudostate_3015 = new ObjectInitializer(UMLPackage.eINSTANCE.getPseudostate()) {
+
+			protected void init() {
+				add(createExpressionFeatureInitializer(UMLPackage.eINSTANCE.getPseudostate_Kind(), UMLOCLFactory.getExpression("PseudostateKind::exitPoint", //$NON-NLS-1$
+						UMLPackage.eINSTANCE.getPseudostate())));
+				add(createExpressionFeatureInitializer(
+						UMLPackage.eINSTANCE.getNamedElement_Name(),
+						UMLOCLFactory
+								.getExpression(
+										" let base : String = \'Exit Point\' in  let suffixes : Sequence(String) = Sequence {\'\', \'1\', \'2\', \'3\', \'4\', \'5\', \'6\', \'7\', \'8\', \'9\', \'10\'} in  let space : Namespace = self.namespace in  let allMissed : Sequence(String) = suffixes-> \tselect(s : String | not space.member->exists(e : NamedElement | e.name = base.concat(s)) ) in  let firstMissed : String = allMissed->first() in  let noMisses : Boolean = firstMissed.oclIsUndefined() in  let allNames : Set(String) =  \tif noMisses \t\tthen \t\tspace.member->collect(e : NamedElement | \t\t\tif e = self or e.name.oclIsUndefined() or e.name.substring(1, e.name.size().min(base.size())) <> base \t\t\tthen \'\' else e.name \t\t\tendif \t\t)->asSet()->excluding(\'\') \t\telse Set{\'not in use\'} \t\tendif in  let longestName : String = \t\tif noMisses \t\tthen allNames->select(n : String | not allNames->exists(nn : String | nn.size() > n.size()))->asSequence()->first()\t\telse \'not in use\' \t\tendif \tin  if noMisses then \t\tif longestName.oclIsUndefined() \t\tthen base \t\telse longestName.concat(\'1\') \t\tendif  else base.concat(firstMissed)  endif ", //$NON-NLS-1$
+										UMLPackage.eINSTANCE.getPseudostate())));
+			}
+		}; // Pseudostate_3015 ObjectInitializer
 
 		/** 
 		 * @generated

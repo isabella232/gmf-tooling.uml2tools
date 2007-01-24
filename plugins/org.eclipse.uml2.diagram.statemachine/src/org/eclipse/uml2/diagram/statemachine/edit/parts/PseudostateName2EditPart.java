@@ -55,7 +55,7 @@ public class PseudostateName2EditPart extends LabelEditPart implements ITextAwar
 	/**
 	 * @generated
 	 */
-	public static final int VISUAL_ID = 5002;
+	public static final int VISUAL_ID = 5007;
 
 	/**
 	 * @generated
@@ -304,7 +304,7 @@ public class PseudostateName2EditPart extends LabelEditPart implements ITextAwar
 
 				public Object getAdapter(Class adapter) {
 					if (IElementType.class.equals(adapter)) {
-						return UMLElementTypes.Pseudostate_2003;
+						return UMLElementTypes.Pseudostate_3015;
 					}
 					return super.getAdapter(adapter);
 				}

@@ -25,7 +25,9 @@ import org.eclipse.uml2.diagram.statemachine.edit.parts.RegionSubvertices2EditPa
 import org.eclipse.uml2.diagram.statemachine.edit.parts.RegionSubverticesEditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.State2EditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.StateEditPart;
+import org.eclipse.uml2.diagram.statemachine.edit.parts.StateMachine2EditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.StateMachineEditPart;
+import org.eclipse.uml2.diagram.statemachine.edit.parts.StateMachineNameEditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.StateName2EditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.StateNameEditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.TransitionEditPart;
@@ -50,6 +52,8 @@ import org.eclipse.uml2.diagram.statemachine.view.factories.RegionSubvertices2Vi
 import org.eclipse.uml2.diagram.statemachine.view.factories.RegionSubverticesViewFactory;
 import org.eclipse.uml2.diagram.statemachine.view.factories.RegionViewFactory;
 import org.eclipse.uml2.diagram.statemachine.view.factories.State2ViewFactory;
+import org.eclipse.uml2.diagram.statemachine.view.factories.StateMachine2ViewFactory;
+import org.eclipse.uml2.diagram.statemachine.view.factories.StateMachineNameViewFactory;
 import org.eclipse.uml2.diagram.statemachine.view.factories.StateMachineViewFactory;
 import org.eclipse.uml2.diagram.statemachine.view.factories.StateName2ViewFactory;
 import org.eclipse.uml2.diagram.statemachine.view.factories.StateNameViewFactory;
@@ -87,16 +91,12 @@ public class UMLViewProvider extends AbstractViewProvider {
 		EObject semanticElement = getSemanticElement(semanticAdapter);
 		int nodeVID = UMLVisualIDRegistry.getNodeVisualID(containerView, semanticElement, semanticType, semanticHint);
 		switch (nodeVID) {
+		case StateMachine2EditPart.VISUAL_ID:
+			return StateMachine2ViewFactory.class;
+		case StateMachineNameEditPart.VISUAL_ID:
+			return StateMachineNameViewFactory.class;
 		case RegionEditPart.VISUAL_ID:
 			return RegionViewFactory.class;
-		case Pseudostate9EditPart.VISUAL_ID:
-			return Pseudostate9ViewFactory.class;
-		case PseudostateNameEditPart.VISUAL_ID:
-			return PseudostateNameViewFactory.class;
-		case Pseudostate10EditPart.VISUAL_ID:
-			return Pseudostate10ViewFactory.class;
-		case PseudostateName2EditPart.VISUAL_ID:
-			return PseudostateName2ViewFactory.class;
 		case StateEditPart.VISUAL_ID:
 			return StateViewFactory.class;
 		case StateNameEditPart.VISUAL_ID:
@@ -125,6 +125,14 @@ public class UMLViewProvider extends AbstractViewProvider {
 			return Pseudostate7ViewFactory.class;
 		case Pseudostate8EditPart.VISUAL_ID:
 			return Pseudostate8ViewFactory.class;
+		case Pseudostate9EditPart.VISUAL_ID:
+			return Pseudostate9ViewFactory.class;
+		case PseudostateNameEditPart.VISUAL_ID:
+			return PseudostateNameViewFactory.class;
+		case Pseudostate10EditPart.VISUAL_ID:
+			return Pseudostate10ViewFactory.class;
+		case PseudostateName2EditPart.VISUAL_ID:
+			return PseudostateName2ViewFactory.class;
 		case RegionSubverticesEditPart.VISUAL_ID:
 			return RegionSubverticesViewFactory.class;
 		case RegionSubvertices2EditPart.VISUAL_ID:

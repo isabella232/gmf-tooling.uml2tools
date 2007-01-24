@@ -52,13 +52,13 @@ import org.eclipse.uml2.diagram.statemachine.edit.parts.Region2EditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.RegionEditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.State2EditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.StateEditPart;
+import org.eclipse.uml2.diagram.statemachine.edit.parts.StateMachine2EditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.StateMachineEditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.TransitionEditPart;
 
 import org.eclipse.uml2.diagram.statemachine.part.UMLVisualIDRegistry;
 
 import org.eclipse.uml2.uml.Region;
-import org.eclipse.uml2.uml.StateMachine;
 import org.eclipse.uml2.uml.Transition;
 import org.eclipse.uml2.uml.UMLPackage;
 
@@ -68,6 +68,18 @@ import org.eclipse.uml2.uml.UMLPackage;
 public class StateMachineCanonicalEditPolicy extends CanonicalConnectionEditPolicy {
 
 	/**
+	 * We have "dummy" TopLevelNode (with vid = 2004). The only purpose 
+	 * for this node is to be a container for children (imports, etc) 
+	 * of the "main" diagram figure (that one shown as Canvas).
+	 * 
+	 * The code that replace generated SubstituteWithCanvas children associated 
+	 * with vid=2004 with the "main" instance is below.
+	 * 
+	 * Also we have modified the VisualIDRegistry#getNodeVisualID() to return
+	 * VID = 2004, for the case when top-level view is created for the same
+	 * semantic element as the canvas view. 
+	 * 
+	 * @see VisualIDRegistry  
 	 * @generated
 	 */
 	protected List getSemanticChildrenList() {
@@ -76,27 +88,17 @@ public class StateMachineCanonicalEditPolicy extends CanonicalConnectionEditPoli
 		View viewObject = (View) getHost().getModel();
 		EObject nextValue;
 		int nodeVID;
-		for (Iterator values = ((StateMachine) modelObject).getRegions().iterator(); values.hasNext();) {
+		for (Iterator values = ((org.eclipse.uml2.uml.Class) modelObject).getNestedClassifiers().iterator(); values.hasNext();) {
 			nextValue = (EObject) values.next();
 			nodeVID = UMLVisualIDRegistry.getNodeVisualID(viewObject, nextValue);
-			if (RegionEditPart.VISUAL_ID == nodeVID) {
-				result.add(nextValue);
+			if (StateMachine2EditPart.VISUAL_ID == nodeVID) {
+				//Don't add generated SubstituteWithCanvas children
+				//result.add(nextValue);
 			}
 		}
-		for (Iterator values = ((StateMachine) modelObject).getConnectionPoints().iterator(); values.hasNext();) {
-			nextValue = (EObject) values.next();
-			nodeVID = UMLVisualIDRegistry.getNodeVisualID(viewObject, nextValue);
-			switch (nodeVID) {
-			case Pseudostate9EditPart.VISUAL_ID: {
-				result.add(nextValue);
-				break;
-			}
-			case Pseudostate10EditPart.VISUAL_ID: {
-				result.add(nextValue);
-				break;
-			}
-			}
-		}
+
+		// add "main" figure	
+		result.add(modelObject);
 		return result;
 	}
 
@@ -209,9 +211,8 @@ public class StateMachineCanonicalEditPolicy extends CanonicalConnectionEditPoli
 		EObject modelElement = view.getElement();
 		int diagramElementVisualID = UMLVisualIDRegistry.getVisualID(view);
 		switch (diagramElementVisualID) {
+		case StateMachine2EditPart.VISUAL_ID:
 		case RegionEditPart.VISUAL_ID:
-		case Pseudostate9EditPart.VISUAL_ID:
-		case Pseudostate10EditPart.VISUAL_ID:
 		case StateEditPart.VISUAL_ID:
 		case State2EditPart.VISUAL_ID:
 		case Region2EditPart.VISUAL_ID:
@@ -224,6 +225,8 @@ public class StateMachineCanonicalEditPolicy extends CanonicalConnectionEditPoli
 		case Pseudostate6EditPart.VISUAL_ID:
 		case Pseudostate7EditPart.VISUAL_ID:
 		case Pseudostate8EditPart.VISUAL_ID:
+		case Pseudostate9EditPart.VISUAL_ID:
+		case Pseudostate10EditPart.VISUAL_ID:
 		case StateMachineEditPart.VISUAL_ID: {
 			myEObject2ViewMap.put(modelElement, view);
 			storeLinks(modelElement, getDiagram());

@@ -23,6 +23,7 @@ import org.eclipse.emf.edit.ui.provider.AdapterFactoryLabelProvider;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.RegionSubvertices2EditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.RegionSubverticesEditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.State2EditPart;
+import org.eclipse.uml2.diagram.statemachine.edit.parts.StateMachine2EditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.StateMachineEditPart;
 
 import org.eclipse.uml2.diagram.statemachine.part.UMLDiagramEditorPlugin;
@@ -37,6 +38,13 @@ public class UMLModelingAssistantProvider extends ModelingAssistantProvider {
 	 */
 	public List getTypesForPopupBar(IAdaptable host) {
 		IGraphicalEditPart editPart = (IGraphicalEditPart) host.getAdapter(IGraphicalEditPart.class);
+		if (editPart instanceof StateMachine2EditPart) {
+			List types = new ArrayList();
+			types.add(UMLElementTypes.Region_3013);
+			types.add(UMLElementTypes.Pseudostate_3014);
+			types.add(UMLElementTypes.Pseudostate_3015);
+			return types;
+		}
 		if (editPart instanceof State2EditPart) {
 			List types = new ArrayList();
 			types.add(UMLElementTypes.Region_3002);
@@ -74,9 +82,7 @@ public class UMLModelingAssistantProvider extends ModelingAssistantProvider {
 		}
 		if (editPart instanceof StateMachineEditPart) {
 			List types = new ArrayList();
-			types.add(UMLElementTypes.Region_2001);
-			types.add(UMLElementTypes.Pseudostate_2002);
-			types.add(UMLElementTypes.Pseudostate_2003);
+			types.add(UMLElementTypes.StateMachine_2004);
 			return types;
 		}
 		return Collections.EMPTY_LIST;

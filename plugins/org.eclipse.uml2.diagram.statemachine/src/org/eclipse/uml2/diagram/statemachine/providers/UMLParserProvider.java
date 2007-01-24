@@ -9,6 +9,7 @@ import org.eclipse.gmf.runtime.common.ui.services.parser.IParserProvider;
 import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.PseudostateName2EditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.PseudostateNameEditPart;
+import org.eclipse.uml2.diagram.statemachine.edit.parts.StateMachineNameEditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.StateName2EditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.StateNameEditPart;
 
@@ -70,22 +71,22 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 	/**
 	 * @generated
 	 */
-	private IParser pseudostatePseudostateName_5003Parser;
+	private IParser pseudostatePseudostateName_5006Parser;
 
 	/**
 	 * @generated
 	 */
-	private IParser getPseudostatePseudostateName_5003Parser() {
-		if (pseudostatePseudostateName_5003Parser == null) {
-			pseudostatePseudostateName_5003Parser = createPseudostatePseudostateName_5003Parser();
+	private IParser getPseudostatePseudostateName_5006Parser() {
+		if (pseudostatePseudostateName_5006Parser == null) {
+			pseudostatePseudostateName_5006Parser = createPseudostatePseudostateName_5006Parser();
 		}
-		return pseudostatePseudostateName_5003Parser;
+		return pseudostatePseudostateName_5006Parser;
 	}
 
 	/**
 	 * @generated
 	 */
-	protected IParser createPseudostatePseudostateName_5003Parser() {
+	protected IParser createPseudostatePseudostateName_5006Parser() {
 		UMLStructuralFeatureParser parser = new UMLStructuralFeatureParser(UMLPackage.eINSTANCE.getNamedElement_Name());
 		return parser;
 	}
@@ -93,22 +94,45 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 	/**
 	 * @generated
 	 */
-	private IParser pseudostatePseudostateName_5002Parser;
+	private IParser pseudostatePseudostateName_5007Parser;
 
 	/**
 	 * @generated
 	 */
-	private IParser getPseudostatePseudostateName_5002Parser() {
-		if (pseudostatePseudostateName_5002Parser == null) {
-			pseudostatePseudostateName_5002Parser = createPseudostatePseudostateName_5002Parser();
+	private IParser getPseudostatePseudostateName_5007Parser() {
+		if (pseudostatePseudostateName_5007Parser == null) {
+			pseudostatePseudostateName_5007Parser = createPseudostatePseudostateName_5007Parser();
 		}
-		return pseudostatePseudostateName_5002Parser;
+		return pseudostatePseudostateName_5007Parser;
 	}
 
 	/**
 	 * @generated
 	 */
-	protected IParser createPseudostatePseudostateName_5002Parser() {
+	protected IParser createPseudostatePseudostateName_5007Parser() {
+		UMLStructuralFeatureParser parser = new UMLStructuralFeatureParser(UMLPackage.eINSTANCE.getNamedElement_Name());
+		return parser;
+	}
+
+	/**
+	 * @generated
+	 */
+	private IParser stateMachineStateMachineName_5005Parser;
+
+	/**
+	 * @generated
+	 */
+	private IParser getStateMachineStateMachineName_5005Parser() {
+		if (stateMachineStateMachineName_5005Parser == null) {
+			stateMachineStateMachineName_5005Parser = createStateMachineStateMachineName_5005Parser();
+		}
+		return stateMachineStateMachineName_5005Parser;
+	}
+
+	/**
+	 * @generated
+	 */
+	protected IParser createStateMachineStateMachineName_5005Parser() {
 		UMLStructuralFeatureParser parser = new UMLStructuralFeatureParser(UMLPackage.eINSTANCE.getNamedElement_Name());
 		return parser;
 	}
@@ -123,9 +147,11 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 		case StateName2EditPart.VISUAL_ID:
 			return getStateStateName_5004Parser();
 		case PseudostateNameEditPart.VISUAL_ID:
-			return getPseudostatePseudostateName_5003Parser();
+			return getPseudostatePseudostateName_5006Parser();
 		case PseudostateName2EditPart.VISUAL_ID:
-			return getPseudostatePseudostateName_5002Parser();
+			return getPseudostatePseudostateName_5007Parser();
+		case StateMachineNameEditPart.VISUAL_ID:
+			return getStateMachineStateMachineName_5005Parser();
 		}
 		return null;
 	}

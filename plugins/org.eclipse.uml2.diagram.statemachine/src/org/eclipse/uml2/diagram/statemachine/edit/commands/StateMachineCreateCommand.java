@@ -9,20 +9,17 @@ import org.eclipse.gmf.runtime.emf.type.core.requests.CreateElementRequest;
 
 import org.eclipse.gmf.runtime.notation.View;
 
-import org.eclipse.uml2.diagram.statemachine.providers.UMLElementTypes;
-
-import org.eclipse.uml2.uml.Pseudostate;
 import org.eclipse.uml2.uml.UMLPackage;
 
 /**
  * @generated
  */
-public class Pseudostate10CreateCommand extends CreateElementCommand {
+public class StateMachineCreateCommand extends CreateElementCommand {
 
 	/**
 	 * @generated
 	 */
-	public Pseudostate10CreateCommand(CreateElementRequest req) {
+	public StateMachineCreateCommand(CreateElementRequest req) {
 		super(req);
 	}
 
@@ -30,7 +27,7 @@ public class Pseudostate10CreateCommand extends CreateElementCommand {
 	 * @generated
 	 */
 	protected EClass getEClassToEdit() {
-		return UMLPackage.eINSTANCE.getStateMachine();
+		return UMLPackage.eINSTANCE.getClass_();
 	};
 
 	/**
@@ -42,17 +39,6 @@ public class Pseudostate10CreateCommand extends CreateElementCommand {
 			container = ((View) container).getElement();
 		}
 		return container;
-	}
-
-	/**
-	 * @generated
-	 */
-	protected EObject doDefaultElementCreation() {
-		Pseudostate newElement = (Pseudostate) super.doDefaultElementCreation();
-		if (newElement != null) {
-			UMLElementTypes.Initializers.Pseudostate_3015.init(newElement);
-		}
-		return newElement;
 	}
 
 }

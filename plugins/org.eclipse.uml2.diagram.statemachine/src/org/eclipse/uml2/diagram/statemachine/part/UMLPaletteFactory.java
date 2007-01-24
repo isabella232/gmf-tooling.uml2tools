@@ -87,10 +87,10 @@ public class UMLPaletteFactory {
 	 */
 	private ToolEntry createRegion3CreationTool() {
 		List/*<IElementType>*/types = new ArrayList/*<IElementType>*/(2);
-		types.add(UMLElementTypes.Region_2001);
+		types.add(UMLElementTypes.Region_3013);
 		types.add(UMLElementTypes.Region_3002);
 		NodeToolEntry entry = new NodeToolEntry(UMLDiagramEditorPlugin.getString("Region3CreationTool.title"), UMLDiagramEditorPlugin.getString("Region3CreationTool.desc"), types); //$NON-NLS-1$ $NON-NLS-2$
-		entry.setSmallIcon(UMLElementTypes.getImageDescriptor(UMLElementTypes.Region_2001));
+		entry.setSmallIcon(UMLElementTypes.getImageDescriptor(UMLElementTypes.Region_3013));
 		entry.setLargeIcon(entry.getSmallIcon());
 		return entry;
 	}
@@ -208,7 +208,7 @@ public class UMLPaletteFactory {
 	 */
 	private ToolEntry createEntryPoint13CreationTool() {
 		List/*<IElementType>*/types = new ArrayList/*<IElementType>*/(1);
-		types.add(UMLElementTypes.Pseudostate_2002);
+		types.add(UMLElementTypes.Pseudostate_3014);
 		NodeToolEntry entry = new NodeToolEntry(UMLDiagramEditorPlugin.getString("EntryPoint13CreationTool.title"), UMLDiagramEditorPlugin.getString("EntryPoint13CreationTool.desc"), types); //$NON-NLS-1$ $NON-NLS-2$
 		entry.setSmallIcon(UMLDiagramEditorPlugin.findImageDescriptor("/org.eclipse.uml2.uml.edit/icons/full/obj16/Pseudostate_entryPoint.gif")); //$NON-NLS-1$
 		entry.setLargeIcon(UMLDiagramEditorPlugin.findImageDescriptor("/org.eclipse.uml2.uml.edit/icons/full/obj16/Pseudostate_entryPoint.gif")); //$NON-NLS-1$
@@ -220,7 +220,7 @@ public class UMLPaletteFactory {
 	 */
 	private ToolEntry createExitPoint14CreationTool() {
 		List/*<IElementType>*/types = new ArrayList/*<IElementType>*/(1);
-		types.add(UMLElementTypes.Pseudostate_2003);
+		types.add(UMLElementTypes.Pseudostate_3015);
 		NodeToolEntry entry = new NodeToolEntry(UMLDiagramEditorPlugin.getString("ExitPoint14CreationTool.title"), UMLDiagramEditorPlugin.getString("ExitPoint14CreationTool.desc"), types); //$NON-NLS-1$ $NON-NLS-2$
 		entry.setSmallIcon(UMLDiagramEditorPlugin.findImageDescriptor("/org.eclipse.uml2.uml.edit/icons/full/obj16/Pseudostate_exitPoint.gif")); //$NON-NLS-1$
 		entry.setLargeIcon(UMLDiagramEditorPlugin.findImageDescriptor("/org.eclipse.uml2.uml.edit/icons/full/obj16/Pseudostate_exitPoint.gif")); //$NON-NLS-1$

@@ -50,7 +50,7 @@ public class Pseudostate9CreateCommand extends CreateElementCommand {
 	protected EObject doDefaultElementCreation() {
 		Pseudostate newElement = (Pseudostate) super.doDefaultElementCreation();
 		if (newElement != null) {
-			UMLElementTypes.Initializers.Pseudostate_2002.init(newElement);
+			UMLElementTypes.Initializers.Pseudostate_3014.init(newElement);
 		}
 		return newElement;
 	}

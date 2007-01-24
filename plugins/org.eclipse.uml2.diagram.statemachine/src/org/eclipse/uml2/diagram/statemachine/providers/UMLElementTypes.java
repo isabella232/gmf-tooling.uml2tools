@@ -147,11 +147,9 @@ public class UMLElementTypes extends ElementInitializers {
 
 			elements.put(StateMachine_1000, UMLPackage.eINSTANCE.getStateMachine());
 
-			elements.put(Region_2001, UMLPackage.eINSTANCE.getRegion());
+			elements.put(StateMachine_2004, UMLPackage.eINSTANCE.getStateMachine());
 
-			elements.put(Pseudostate_2002, UMLPackage.eINSTANCE.getPseudostate());
-
-			elements.put(Pseudostate_2003, UMLPackage.eINSTANCE.getPseudostate());
+			elements.put(Region_3013, UMLPackage.eINSTANCE.getRegion());
 
 			elements.put(State_3001, UMLPackage.eINSTANCE.getState());
 
@@ -177,6 +175,10 @@ public class UMLElementTypes extends ElementInitializers {
 
 			elements.put(Pseudostate_3011, UMLPackage.eINSTANCE.getPseudostate());
 
+			elements.put(Pseudostate_3014, UMLPackage.eINSTANCE.getPseudostate());
+
+			elements.put(Pseudostate_3015, UMLPackage.eINSTANCE.getPseudostate());
+
 			elements.put(Transition_4001, UMLPackage.eINSTANCE.getTransition());
 		}
 		return (ENamedElement) elements.get(type);
@@ -190,17 +192,12 @@ public class UMLElementTypes extends ElementInitializers {
 	/**
 	 * @generated
 	 */
-	public static final IElementType Region_2001 = getElementType("org.eclipse.uml2.diagram.statemachine.Region_2001"); //$NON-NLS-1$
+	public static final IElementType StateMachine_2004 = getElementType("org.eclipse.uml2.diagram.statemachine.StateMachine_2004"); //$NON-NLS-1$
 
 	/**
 	 * @generated
 	 */
-	public static final IElementType Pseudostate_2002 = getElementType("org.eclipse.uml2.diagram.statemachine.Pseudostate_2002"); //$NON-NLS-1$
-
-	/**
-	 * @generated
-	 */
-	public static final IElementType Pseudostate_2003 = getElementType("org.eclipse.uml2.diagram.statemachine.Pseudostate_2003"); //$NON-NLS-1$
+	public static final IElementType Region_3013 = getElementType("org.eclipse.uml2.diagram.statemachine.Region_3013"); //$NON-NLS-1$
 
 	/**
 	 * @generated
@@ -265,6 +262,16 @@ public class UMLElementTypes extends ElementInitializers {
 	/**
 	 * @generated
 	 */
+	public static final IElementType Pseudostate_3014 = getElementType("org.eclipse.uml2.diagram.statemachine.Pseudostate_3014"); //$NON-NLS-1$
+
+	/**
+	 * @generated
+	 */
+	public static final IElementType Pseudostate_3015 = getElementType("org.eclipse.uml2.diagram.statemachine.Pseudostate_3015"); //$NON-NLS-1$
+
+	/**
+	 * @generated
+	 */
 	public static final IElementType Transition_4001 = getElementType("org.eclipse.uml2.diagram.statemachine.Transition_4001"); //$NON-NLS-1$
 
 	/**
@@ -286,9 +293,8 @@ public class UMLElementTypes extends ElementInitializers {
 		if (KNOWN_ELEMENT_TYPES == null) {
 			KNOWN_ELEMENT_TYPES = new HashSet();
 			KNOWN_ELEMENT_TYPES.add(StateMachine_1000);
-			KNOWN_ELEMENT_TYPES.add(Region_2001);
-			KNOWN_ELEMENT_TYPES.add(Pseudostate_2002);
-			KNOWN_ELEMENT_TYPES.add(Pseudostate_2003);
+			KNOWN_ELEMENT_TYPES.add(StateMachine_2004);
+			KNOWN_ELEMENT_TYPES.add(Region_3013);
 			KNOWN_ELEMENT_TYPES.add(State_3001);
 			KNOWN_ELEMENT_TYPES.add(State_3012);
 			KNOWN_ELEMENT_TYPES.add(Region_3002);
@@ -301,6 +307,8 @@ public class UMLElementTypes extends ElementInitializers {
 			KNOWN_ELEMENT_TYPES.add(Pseudostate_3009);
 			KNOWN_ELEMENT_TYPES.add(Pseudostate_3010);
 			KNOWN_ELEMENT_TYPES.add(Pseudostate_3011);
+			KNOWN_ELEMENT_TYPES.add(Pseudostate_3014);
+			KNOWN_ELEMENT_TYPES.add(Pseudostate_3015);
 			KNOWN_ELEMENT_TYPES.add(Transition_4001);
 		}
 		return KNOWN_ELEMENT_TYPES.contains(elementType);
