@@ -20,6 +20,7 @@ import org.eclipse.uml2.uml.Namespace;
 public class ProfileProfileLabelsCanonicalEditPolicy extends CanonicalEditPolicy {
 
 	/**
+	 *  
 	 * @generated
 	 */
 	protected List getSemanticChildrenList() {

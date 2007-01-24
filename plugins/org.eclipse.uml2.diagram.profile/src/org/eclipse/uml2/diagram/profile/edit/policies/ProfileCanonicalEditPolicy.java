@@ -65,7 +65,7 @@ public class ProfileCanonicalEditPolicy extends CanonicalConnectionEditPolicy {
 	 * VID = 2007, for the case when top-level view is created for the same
 	 * semantic element as the canvas view. 
 	 * 
-	 * @see VisualIDRegistry 
+	 * @see VisualIDRegistry  
 	 * @generated
 	 */
 	protected List getSemanticChildrenList() {
