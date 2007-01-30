@@ -40,7 +40,7 @@
       <import feature="org.eclipse.emf.transaction" version="1.1.0" match="compatible"/>
       <import feature="org.eclipse.emf.validation" 	version="1.1.0" match="compatible"/>
       <import feature="org.eclipse.gef" 			version="3.3.0" match="compatible"/>
-      <import feature="org.eclipse.gmf" 			version="2.0.0" match="compatible"/>
+      <import feature="org.eclipse.gmf" 			version="1.0.0" match="compatible"/>
    </requires>
 
    <plugin
