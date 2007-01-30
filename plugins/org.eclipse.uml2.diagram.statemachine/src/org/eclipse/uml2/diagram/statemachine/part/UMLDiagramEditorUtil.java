@@ -157,10 +157,18 @@ public class UMLDiagramEditorUtil {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private static StateMachine createInitialModel() {
+	private static StateMachine createInitialModelGen() {
 		return UMLFactory.eINSTANCE.createStateMachine();
 	}
 
+	/**
+	 * @generated NOT
+	 */
+	private static StateMachine createInitialModel() {
+		StateMachine result = createInitialModelGen();
+		result.setName("StateMachine");
+		return result;
+	}
 	/**
 	 * Store model element in the resource.
 	 * <!-- begin-user-doc -->
