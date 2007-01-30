@@ -169,6 +169,7 @@ public class UMLDiagramEditorUtil {
 		result.setName("StateMachine");
 		return result;
 	}
+
 	/**
 	 * Store model element in the resource.
 	 * <!-- begin-user-doc -->
