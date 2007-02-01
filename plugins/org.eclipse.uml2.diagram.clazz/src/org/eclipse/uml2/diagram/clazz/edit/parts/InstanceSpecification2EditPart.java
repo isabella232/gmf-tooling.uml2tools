@@ -3,21 +3,21 @@ package org.eclipse.uml2.diagram.clazz.edit.parts;
 import org.eclipse.draw2d.Border;
 import org.eclipse.draw2d.Graphics;
 import org.eclipse.draw2d.IFigure;
+import org.eclipse.draw2d.MarginBorder;
 import org.eclipse.draw2d.PositionConstants;
 import org.eclipse.draw2d.RectangleFigure;
 import org.eclipse.draw2d.StackLayout;
+import org.eclipse.draw2d.ToolbarLayout;
 import org.eclipse.gef.EditPart;
 import org.eclipse.gef.EditPolicy;
 import org.eclipse.gef.Request;
 import org.eclipse.gef.commands.Command;
 import org.eclipse.gef.editpolicies.LayoutEditPolicy;
-import org.eclipse.gef.editpolicies.NonResizableEditPolicy;
-import org.eclipse.gef.requests.CreateRequest;
-import org.eclipse.gmf.internal.codegen.draw2d.GridLayout;
-import org.eclipse.gmf.internal.codegen.draw2d.GridLayoutData;
 import org.eclipse.gmf.runtime.diagram.core.edithelpers.CreateElementRequestAdapter;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart;
+import org.eclipse.gmf.runtime.diagram.ui.editparts.ITextAwareEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.ShapeNodeEditPart;
+import org.eclipse.gmf.runtime.diagram.ui.editpolicies.ConstrainedToolbarLayoutEditPolicy;
 import org.eclipse.gmf.runtime.diagram.ui.editpolicies.CreationEditPolicy;
 import org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles;
 import org.eclipse.gmf.runtime.diagram.ui.requests.CreateViewAndElementRequest;
@@ -29,8 +29,10 @@ import org.eclipse.gmf.runtime.gef.ui.figures.DefaultSizeNodeFigure;
 import org.eclipse.gmf.runtime.gef.ui.figures.NodeFigure;
 import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.uml2.diagram.clazz.edit.policies.InstanceSpecification2ItemSemanticEditPolicy;
+import org.eclipse.uml2.diagram.clazz.edit.policies.UMLTextSelectionEditPolicy;
 import org.eclipse.uml2.diagram.clazz.part.UMLVisualIDRegistry;
 import org.eclipse.uml2.diagram.clazz.providers.UMLElementTypes;
+import org.eclipse.uml2.diagram.common.draw2d.CenterLayout;
 
 /**
  * @generated
@@ -90,22 +92,16 @@ public class InstanceSpecification2EditPart extends ShapeNodeEditPart {
 	 * @generated
 	 */
 	protected LayoutEditPolicy createLayoutEditPolicy() {
-		LayoutEditPolicy lep = new LayoutEditPolicy() {
+
+		ConstrainedToolbarLayoutEditPolicy lep = new ConstrainedToolbarLayoutEditPolicy() {
 
 			protected EditPolicy createChildEditPolicy(EditPart child) {
-				EditPolicy result = child.getEditPolicy(EditPolicy.PRIMARY_DRAG_ROLE);
-				if (result == null) {
-					result = new NonResizableEditPolicy();
+				if (child.getEditPolicy(EditPolicy.PRIMARY_DRAG_ROLE) == null) {
+					if (child instanceof ITextAwareEditPart) {
+						return new UMLTextSelectionEditPolicy();
+					}
 				}
-				return result;
-			}
-
-			protected Command getMoveChildrenCommand(Request request) {
-				return null;
-			}
-
-			protected Command getCreateCommand(CreateRequest request) {
-				return null;
+				return super.createChildEditPolicy(child);
 			}
 		};
 		return lep;
@@ -255,9 +251,15 @@ public class InstanceSpecification2EditPart extends ShapeNodeEditPart {
 		 */
 		public InstanceNodeFigure() {
 
-			GridLayout layoutThis = new GridLayout();
-			layoutThis.numColumns = 1;
-			layoutThis.makeColumnsEqualWidth = true;
+			ToolbarLayout layoutThis = new ToolbarLayout();
+			layoutThis.setStretchMinorAxis(true);
+			layoutThis.setMinorAlignment(ToolbarLayout.ALIGN_CENTER
+
+			);
+
+			layoutThis.setSpacing(0);
+			layoutThis.setVertical(true);
+
 			this.setLayoutManager(layoutThis);
 
 			this.setFill(true);
@@ -266,6 +268,7 @@ public class InstanceSpecification2EditPart extends ShapeNodeEditPart {
 			this.setOutlineXOR(false);
 			this.setLineWidth(1);
 			this.setLineStyle(Graphics.LINE_SOLID);
+			this.setBorder(new MarginBorder(getMapMode().DPtoLP(1), getMapMode().DPtoLP(1), getMapMode().DPtoLP(0), getMapMode().DPtoLP(1)));
 			createContents();
 		}
 
@@ -283,15 +286,7 @@ public class InstanceSpecification2EditPart extends ShapeNodeEditPart {
 			instanceNode_NameContainerFigure0.setLineStyle(Graphics.LINE_SOLID);
 			instanceNode_NameContainerFigure0.setBorder(createBorderinstanceNode_NameContainerFigure0());
 
-			GridLayoutData constraintInstanceNode_NameContainerFigure0 = new GridLayoutData();
-			constraintInstanceNode_NameContainerFigure0.verticalAlignment = GridLayoutData.FILL;
-			constraintInstanceNode_NameContainerFigure0.horizontalAlignment = GridLayoutData.CENTER;
-			constraintInstanceNode_NameContainerFigure0.horizontalIndent = 0;
-			constraintInstanceNode_NameContainerFigure0.horizontalSpan = 1;
-			constraintInstanceNode_NameContainerFigure0.verticalSpan = 1;
-			constraintInstanceNode_NameContainerFigure0.grabExcessHorizontalSpace = true;
-			constraintInstanceNode_NameContainerFigure0.grabExcessVerticalSpace = false;
-			this.add(instanceNode_NameContainerFigure0, constraintInstanceNode_NameContainerFigure0);
+			this.add(instanceNode_NameContainerFigure0);
 
 			instanceNode_NameContainerFigure0.setLayoutManager(new StackLayout());
 
@@ -301,6 +296,10 @@ public class InstanceSpecification2EditPart extends ShapeNodeEditPart {
 			instanceNode_NameContainerFigure0.add(instanceNode_NameLabel1);
 			setFigureInstanceNode_NameLabel(instanceNode_NameLabel1);
 
+			CenterLayout layoutInstanceNode_NameLabel1 = new CenterLayout();
+
+			instanceNode_NameLabel1.setLayoutManager(layoutInstanceNode_NameLabel1);
+
 			RectangleFigure instanceSpecification_SpecificationContainerFigure0 = new RectangleFigure();
 			instanceSpecification_SpecificationContainerFigure0.setFill(true);
 			instanceSpecification_SpecificationContainerFigure0.setFillXOR(false);
@@ -309,17 +308,11 @@ public class InstanceSpecification2EditPart extends ShapeNodeEditPart {
 			instanceSpecification_SpecificationContainerFigure0.setLineWidth(1);
 			instanceSpecification_SpecificationContainerFigure0.setLineStyle(Graphics.LINE_SOLID);
 
-			GridLayoutData constraintInstanceSpecification_SpecificationContainerFigure0 = new GridLayoutData();
-			constraintInstanceSpecification_SpecificationContainerFigure0.verticalAlignment = GridLayoutData.FILL;
-			constraintInstanceSpecification_SpecificationContainerFigure0.horizontalAlignment = GridLayoutData.CENTER;
-			constraintInstanceSpecification_SpecificationContainerFigure0.horizontalIndent = 0;
-			constraintInstanceSpecification_SpecificationContainerFigure0.horizontalSpan = 1;
-			constraintInstanceSpecification_SpecificationContainerFigure0.verticalSpan = 1;
-			constraintInstanceSpecification_SpecificationContainerFigure0.grabExcessHorizontalSpace = true;
-			constraintInstanceSpecification_SpecificationContainerFigure0.grabExcessVerticalSpace = false;
-			this.add(instanceSpecification_SpecificationContainerFigure0, constraintInstanceSpecification_SpecificationContainerFigure0);
+			this.add(instanceSpecification_SpecificationContainerFigure0);
 
-			instanceSpecification_SpecificationContainerFigure0.setLayoutManager(new StackLayout());
+			CenterLayout layoutInstanceSpecification_SpecificationContainerFigure0 = new CenterLayout();
+
+			instanceSpecification_SpecificationContainerFigure0.setLayoutManager(layoutInstanceSpecification_SpecificationContainerFigure0);
 
 			WrapLabel instanceNode_SpecificationLabel1 = new WrapLabel();
 			instanceNode_SpecificationLabel1.setText("");
@@ -335,16 +328,7 @@ public class InstanceSpecification2EditPart extends ShapeNodeEditPart {
 			instanceNode_SlotsCompartmentFigure0.setLineWidth(1);
 			instanceNode_SlotsCompartmentFigure0.setLineStyle(Graphics.LINE_SOLID);
 
-			GridLayoutData constraintInstanceNode_SlotsCompartmentFigure0 = new GridLayoutData();
-			constraintInstanceNode_SlotsCompartmentFigure0.verticalAlignment = GridLayoutData.FILL;
-			constraintInstanceNode_SlotsCompartmentFigure0.horizontalAlignment = GridLayoutData.FILL;
-			constraintInstanceNode_SlotsCompartmentFigure0.horizontalIndent = 0;
-			constraintInstanceNode_SlotsCompartmentFigure0.horizontalSpan = 1;
-			constraintInstanceNode_SlotsCompartmentFigure0.verticalSpan = 1;
-			constraintInstanceNode_SlotsCompartmentFigure0.grabExcessHorizontalSpace = true;
-			constraintInstanceNode_SlotsCompartmentFigure0.grabExcessVerticalSpace = true;
-			this.add(instanceNode_SlotsCompartmentFigure0, constraintInstanceNode_SlotsCompartmentFigure0);
-
+			this.add(instanceNode_SlotsCompartmentFigure0);
 			setFigureInstanceNode_SlotsCompartmentFigure(instanceNode_SlotsCompartmentFigure0);
 
 		}

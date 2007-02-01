@@ -5,6 +5,7 @@ import org.eclipse.draw2d.IFigure;
 import org.eclipse.draw2d.RectangleFigure;
 import org.eclipse.draw2d.Shape;
 import org.eclipse.draw2d.StackLayout;
+import org.eclipse.draw2d.ToolbarLayout;
 import org.eclipse.draw2d.geometry.Point;
 import org.eclipse.draw2d.geometry.PointList;
 import org.eclipse.draw2d.geometry.Rectangle;
@@ -13,13 +14,11 @@ import org.eclipse.gef.EditPolicy;
 import org.eclipse.gef.Request;
 import org.eclipse.gef.commands.Command;
 import org.eclipse.gef.editpolicies.LayoutEditPolicy;
-import org.eclipse.gef.editpolicies.NonResizableEditPolicy;
-import org.eclipse.gef.requests.CreateRequest;
-import org.eclipse.gmf.internal.codegen.draw2d.GridLayout;
-import org.eclipse.gmf.internal.codegen.draw2d.GridLayoutData;
 import org.eclipse.gmf.runtime.diagram.core.edithelpers.CreateElementRequestAdapter;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart;
+import org.eclipse.gmf.runtime.diagram.ui.editparts.ITextAwareEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.ShapeNodeEditPart;
+import org.eclipse.gmf.runtime.diagram.ui.editpolicies.ConstrainedToolbarLayoutEditPolicy;
 import org.eclipse.gmf.runtime.diagram.ui.editpolicies.CreationEditPolicy;
 import org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles;
 import org.eclipse.gmf.runtime.diagram.ui.requests.CreateViewAndElementRequest;
@@ -32,6 +31,7 @@ import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.uml2.diagram.common.editpolicies.DoNothingEditPolicy;
 import org.eclipse.uml2.diagram.common.editpolicies.UnmovableUnselectableShapeEditPolicy;
 import org.eclipse.uml2.diagram.profile.edit.policies.Profile3ItemSemanticEditPolicy;
+import org.eclipse.uml2.diagram.profile.edit.policies.UMLTextSelectionEditPolicy;
 import org.eclipse.uml2.diagram.profile.part.UMLVisualIDRegistry;
 import org.eclipse.uml2.diagram.profile.providers.UMLElementTypes;
 
@@ -94,22 +94,16 @@ public class Profile3EditPart extends ShapeNodeEditPart {
 	 * @generated
 	 */
 	protected LayoutEditPolicy createLayoutEditPolicy() {
-		LayoutEditPolicy lep = new LayoutEditPolicy() {
+
+		ConstrainedToolbarLayoutEditPolicy lep = new ConstrainedToolbarLayoutEditPolicy() {
 
 			protected EditPolicy createChildEditPolicy(EditPart child) {
-				EditPolicy result = child.getEditPolicy(EditPolicy.PRIMARY_DRAG_ROLE);
-				if (result == null) {
-					result = new NonResizableEditPolicy();
+				if (child.getEditPolicy(EditPolicy.PRIMARY_DRAG_ROLE) == null) {
+					if (child instanceof ITextAwareEditPart) {
+						return new UMLTextSelectionEditPolicy();
+					}
 				}
-				return result;
-			}
-
-			protected Command getMoveChildrenCommand(Request request) {
-				return null;
-			}
-
-			protected Command getCreateCommand(CreateRequest request) {
-				return null;
+				return super.createChildEditPolicy(child);
 			}
 		};
 		return lep;
@@ -266,9 +260,15 @@ public class Profile3EditPart extends ShapeNodeEditPart {
 		 */
 		public ProfilelabelsFigure() {
 
-			GridLayout layoutThis = new GridLayout();
-			layoutThis.numColumns = 1;
-			layoutThis.makeColumnsEqualWidth = true;
+			ToolbarLayout layoutThis = new ToolbarLayout();
+			layoutThis.setStretchMinorAxis(true);
+			layoutThis.setMinorAlignment(ToolbarLayout.ALIGN_CENTER
+
+			);
+
+			layoutThis.setSpacing(0);
+			layoutThis.setVertical(true);
+
 			this.setLayoutManager(layoutThis);
 
 			this.addPoint(new Point(getMapMode().DPtoLP(0), getMapMode().DPtoLP(0)));
@@ -293,29 +293,12 @@ public class Profile3EditPart extends ShapeNodeEditPart {
 			WrapLabel profileLabels_profileFigure0 = new WrapLabel();
 			profileLabels_profileFigure0.setText("\u00ABprofile\u00BB");
 
-			GridLayoutData constraintProfileLabels_profileFigure0 = new GridLayoutData();
-			constraintProfileLabels_profileFigure0.verticalAlignment = GridLayoutData.CENTER;
-			constraintProfileLabels_profileFigure0.horizontalAlignment = GridLayoutData.CENTER;
-			constraintProfileLabels_profileFigure0.horizontalIndent = 0;
-			constraintProfileLabels_profileFigure0.horizontalSpan = 1;
-			constraintProfileLabels_profileFigure0.verticalSpan = 1;
-			constraintProfileLabels_profileFigure0.grabExcessHorizontalSpace = false;
-			constraintProfileLabels_profileFigure0.grabExcessVerticalSpace = false;
-			this.add(profileLabels_profileFigure0, constraintProfileLabels_profileFigure0);
+			this.add(profileLabels_profileFigure0);
 
 			WrapLabel profileLabelsFigure_NameFigure0 = new WrapLabel();
 			profileLabelsFigure_NameFigure0.setText("");
 
-			GridLayoutData constraintProfileLabelsFigure_NameFigure0 = new GridLayoutData();
-			constraintProfileLabelsFigure_NameFigure0.verticalAlignment = GridLayoutData.CENTER;
-			constraintProfileLabelsFigure_NameFigure0.horizontalAlignment = GridLayoutData.CENTER;
-			constraintProfileLabelsFigure_NameFigure0.horizontalIndent = 0;
-			constraintProfileLabelsFigure_NameFigure0.horizontalSpan = 1;
-			constraintProfileLabelsFigure_NameFigure0.verticalSpan = 1;
-			constraintProfileLabelsFigure_NameFigure0.grabExcessHorizontalSpace = false;
-			constraintProfileLabelsFigure_NameFigure0.grabExcessVerticalSpace = false;
-			this.add(profileLabelsFigure_NameFigure0, constraintProfileLabelsFigure_NameFigure0);
-
+			this.add(profileLabelsFigure_NameFigure0);
 			setFigureProfileLabelsFigure_NameFigure(profileLabelsFigure_NameFigure0);
 
 			RectangleFigure profileLabelCompartmentFigure0 = new RectangleFigure();
@@ -326,16 +309,7 @@ public class Profile3EditPart extends ShapeNodeEditPart {
 			profileLabelCompartmentFigure0.setLineWidth(1);
 			profileLabelCompartmentFigure0.setLineStyle(Graphics.LINE_SOLID);
 
-			GridLayoutData constraintProfileLabelCompartmentFigure0 = new GridLayoutData();
-			constraintProfileLabelCompartmentFigure0.verticalAlignment = GridLayoutData.CENTER;
-			constraintProfileLabelCompartmentFigure0.horizontalAlignment = GridLayoutData.CENTER;
-			constraintProfileLabelCompartmentFigure0.horizontalIndent = 0;
-			constraintProfileLabelCompartmentFigure0.horizontalSpan = 1;
-			constraintProfileLabelCompartmentFigure0.verticalSpan = 1;
-			constraintProfileLabelCompartmentFigure0.grabExcessHorizontalSpace = false;
-			constraintProfileLabelCompartmentFigure0.grabExcessVerticalSpace = false;
-			this.add(profileLabelCompartmentFigure0, constraintProfileLabelCompartmentFigure0);
-
+			this.add(profileLabelCompartmentFigure0);
 			setFigureProfileLabelCompartmentFigure(profileLabelCompartmentFigure0);
 
 		}

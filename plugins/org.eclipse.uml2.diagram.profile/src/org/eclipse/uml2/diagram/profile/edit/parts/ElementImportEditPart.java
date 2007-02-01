@@ -5,6 +5,7 @@ import org.eclipse.draw2d.Graphics;
 import org.eclipse.draw2d.IFigure;
 import org.eclipse.draw2d.RectangleFigure;
 import org.eclipse.draw2d.StackLayout;
+import org.eclipse.draw2d.ToolbarLayout;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.gef.EditPart;
 import org.eclipse.gef.EditPolicy;
@@ -16,7 +17,9 @@ import org.eclipse.gef.requests.CreateRequest;
 import org.eclipse.gmf.internal.codegen.draw2d.GridLayout;
 import org.eclipse.gmf.internal.codegen.draw2d.GridLayoutData;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart;
+import org.eclipse.gmf.runtime.diagram.ui.editparts.ITextAwareEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.ShapeNodeEditPart;
+import org.eclipse.gmf.runtime.diagram.ui.editpolicies.ConstrainedToolbarLayoutEditPolicy;
 import org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles;
 import org.eclipse.gmf.runtime.draw2d.ui.figures.ConstrainedToolbarLayout;
 import org.eclipse.gmf.runtime.draw2d.ui.figures.WrapLabel;
@@ -25,6 +28,7 @@ import org.eclipse.gmf.runtime.gef.ui.figures.NodeFigure;
 import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.uml2.diagram.common.draw2d.CenterLayout;
 import org.eclipse.uml2.diagram.profile.edit.policies.ElementImportItemSemanticEditPolicy;
+import org.eclipse.uml2.diagram.profile.edit.policies.UMLTextSelectionEditPolicy;
 import org.eclipse.uml2.diagram.profile.part.UMLVisualIDRegistry;
 import org.eclipse.uml2.uml.Class;
 import org.eclipse.uml2.uml.ElementImport;
@@ -71,22 +75,16 @@ public class ElementImportEditPart extends ShapeNodeEditPart {
 	 * @generated
 	 */
 	protected LayoutEditPolicy createLayoutEditPolicy() {
-		LayoutEditPolicy lep = new LayoutEditPolicy() {
+
+		ConstrainedToolbarLayoutEditPolicy lep = new ConstrainedToolbarLayoutEditPolicy() {
 
 			protected EditPolicy createChildEditPolicy(EditPart child) {
-				EditPolicy result = child.getEditPolicy(EditPolicy.PRIMARY_DRAG_ROLE);
-				if (result == null) {
-					result = new NonResizableEditPolicy();
+				if (child.getEditPolicy(EditPolicy.PRIMARY_DRAG_ROLE) == null) {
+					if (child instanceof ITextAwareEditPart) {
+						return new UMLTextSelectionEditPolicy();
+					}
 				}
-				return result;
-			}
-
-			protected Command getMoveChildrenCommand(Request request) {
-				return null;
-			}
-
-			protected Command getCreateCommand(CreateRequest request) {
-				return null;
+				return super.createChildEditPolicy(child);
 			}
 		};
 		return lep;
@@ -257,9 +255,15 @@ public class ElementImportEditPart extends ShapeNodeEditPart {
 		 */
 		public ReferencedMetaclassFigure() {
 
-			GridLayout layoutThis = new GridLayout();
-			layoutThis.numColumns = 1;
-			layoutThis.makeColumnsEqualWidth = true;
+			ToolbarLayout layoutThis = new ToolbarLayout();
+			layoutThis.setStretchMinorAxis(true);
+			layoutThis.setMinorAlignment(ToolbarLayout.ALIGN_CENTER
+
+			);
+
+			layoutThis.setSpacing(0);
+			layoutThis.setVertical(true);
+
 			this.setLayoutManager(layoutThis);
 
 			this.setFill(true);
@@ -285,15 +289,7 @@ public class ElementImportEditPart extends ShapeNodeEditPart {
 			referencedMetaclassFigure_FixedLabelPane0.setLineWidth(1);
 			referencedMetaclassFigure_FixedLabelPane0.setLineStyle(Graphics.LINE_SOLID);
 
-			GridLayoutData constraintReferencedMetaclassFigure_FixedLabelPane0 = new GridLayoutData();
-			constraintReferencedMetaclassFigure_FixedLabelPane0.verticalAlignment = GridLayoutData.CENTER;
-			constraintReferencedMetaclassFigure_FixedLabelPane0.horizontalAlignment = GridLayoutData.CENTER;
-			constraintReferencedMetaclassFigure_FixedLabelPane0.horizontalIndent = 0;
-			constraintReferencedMetaclassFigure_FixedLabelPane0.horizontalSpan = 1;
-			constraintReferencedMetaclassFigure_FixedLabelPane0.verticalSpan = 1;
-			constraintReferencedMetaclassFigure_FixedLabelPane0.grabExcessHorizontalSpace = true;
-			constraintReferencedMetaclassFigure_FixedLabelPane0.grabExcessVerticalSpace = true;
-			this.add(referencedMetaclassFigure_FixedLabelPane0, constraintReferencedMetaclassFigure_FixedLabelPane0);
+			this.add(referencedMetaclassFigure_FixedLabelPane0);
 
 			CenterLayout layoutReferencedMetaclassFigure_FixedLabelPane0 = new CenterLayout();
 
@@ -312,15 +308,7 @@ public class ElementImportEditPart extends ShapeNodeEditPart {
 			referencedMetaclassFigure_LabelPane0.setLineWidth(1);
 			referencedMetaclassFigure_LabelPane0.setLineStyle(Graphics.LINE_SOLID);
 
-			GridLayoutData constraintReferencedMetaclassFigure_LabelPane0 = new GridLayoutData();
-			constraintReferencedMetaclassFigure_LabelPane0.verticalAlignment = GridLayoutData.CENTER;
-			constraintReferencedMetaclassFigure_LabelPane0.horizontalAlignment = GridLayoutData.CENTER;
-			constraintReferencedMetaclassFigure_LabelPane0.horizontalIndent = 0;
-			constraintReferencedMetaclassFigure_LabelPane0.horizontalSpan = 1;
-			constraintReferencedMetaclassFigure_LabelPane0.verticalSpan = 1;
-			constraintReferencedMetaclassFigure_LabelPane0.grabExcessHorizontalSpace = true;
-			constraintReferencedMetaclassFigure_LabelPane0.grabExcessVerticalSpace = true;
-			this.add(referencedMetaclassFigure_LabelPane0, constraintReferencedMetaclassFigure_LabelPane0);
+			this.add(referencedMetaclassFigure_LabelPane0);
 
 			CenterLayout layoutReferencedMetaclassFigure_LabelPane0 = new CenterLayout();
 

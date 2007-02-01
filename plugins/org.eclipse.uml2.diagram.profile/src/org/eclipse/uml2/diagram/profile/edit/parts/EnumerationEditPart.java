@@ -11,13 +11,11 @@ import org.eclipse.gef.EditPolicy;
 import org.eclipse.gef.Request;
 import org.eclipse.gef.commands.Command;
 import org.eclipse.gef.editpolicies.LayoutEditPolicy;
-import org.eclipse.gef.editpolicies.NonResizableEditPolicy;
-import org.eclipse.gef.requests.CreateRequest;
-import org.eclipse.gmf.internal.codegen.draw2d.GridLayout;
-import org.eclipse.gmf.internal.codegen.draw2d.GridLayoutData;
 import org.eclipse.gmf.runtime.diagram.core.edithelpers.CreateElementRequestAdapter;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart;
+import org.eclipse.gmf.runtime.diagram.ui.editparts.ITextAwareEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.ShapeNodeEditPart;
+import org.eclipse.gmf.runtime.diagram.ui.editpolicies.ConstrainedToolbarLayoutEditPolicy;
 import org.eclipse.gmf.runtime.diagram.ui.editpolicies.CreationEditPolicy;
 import org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles;
 import org.eclipse.gmf.runtime.diagram.ui.requests.CreateViewAndElementRequest;
@@ -29,6 +27,7 @@ import org.eclipse.gmf.runtime.gef.ui.figures.NodeFigure;
 import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.uml2.diagram.common.draw2d.CenterLayout;
 import org.eclipse.uml2.diagram.profile.edit.policies.EnumerationItemSemanticEditPolicy;
+import org.eclipse.uml2.diagram.profile.edit.policies.UMLTextSelectionEditPolicy;
 import org.eclipse.uml2.diagram.profile.part.UMLVisualIDRegistry;
 import org.eclipse.uml2.diagram.profile.providers.UMLElementTypes;
 
@@ -90,22 +89,16 @@ public class EnumerationEditPart extends ShapeNodeEditPart {
 	 * @generated
 	 */
 	protected LayoutEditPolicy createLayoutEditPolicy() {
-		LayoutEditPolicy lep = new LayoutEditPolicy() {
+
+		ConstrainedToolbarLayoutEditPolicy lep = new ConstrainedToolbarLayoutEditPolicy() {
 
 			protected EditPolicy createChildEditPolicy(EditPart child) {
-				EditPolicy result = child.getEditPolicy(EditPolicy.PRIMARY_DRAG_ROLE);
-				if (result == null) {
-					result = new NonResizableEditPolicy();
+				if (child.getEditPolicy(EditPolicy.PRIMARY_DRAG_ROLE) == null) {
+					if (child instanceof ITextAwareEditPart) {
+						return new UMLTextSelectionEditPolicy();
+					}
 				}
-				return result;
-			}
-
-			protected Command getMoveChildrenCommand(Request request) {
-				return null;
-			}
-
-			protected Command getCreateCommand(CreateRequest request) {
-				return null;
+				return super.createChildEditPolicy(child);
 			}
 		};
 		return lep;
@@ -255,18 +248,20 @@ public class EnumerationEditPart extends ShapeNodeEditPart {
 		 */
 		public ClassFigure() {
 
-			GridLayout layoutThis = new GridLayout();
-			layoutThis.numColumns = 1;
-			layoutThis.makeColumnsEqualWidth = true;
-			layoutThis.horizontalSpacing = 0;
-			layoutThis.verticalSpacing = 0;
-			layoutThis.marginWidth = 0;
-			layoutThis.marginHeight = 0;
+			ToolbarLayout layoutThis = new ToolbarLayout();
+			layoutThis.setStretchMinorAxis(true);
+			layoutThis.setMinorAlignment(ToolbarLayout.ALIGN_CENTER
+
+			);
+
+			layoutThis.setSpacing(0);
+			layoutThis.setVertical(true);
+
 			this.setLayoutManager(layoutThis);
 
-			this.setFill(false);
+			this.setFill(true);
 			this.setFillXOR(false);
-			this.setOutline(false);
+			this.setOutline(true);
 			this.setOutlineXOR(false);
 			this.setLineWidth(1);
 			this.setLineStyle(Graphics.LINE_SOLID);
@@ -287,15 +282,7 @@ public class EnumerationEditPart extends ShapeNodeEditPart {
 			classFigure_NameContainer0.setLineStyle(Graphics.LINE_SOLID);
 			classFigure_NameContainer0.setMinimumSize(new Dimension(getMapMode().DPtoLP(0), getMapMode().DPtoLP(25)));
 
-			GridLayoutData constraintClassFigure_NameContainer0 = new GridLayoutData();
-			constraintClassFigure_NameContainer0.verticalAlignment = GridLayoutData.FILL;
-			constraintClassFigure_NameContainer0.horizontalAlignment = GridLayoutData.FILL;
-			constraintClassFigure_NameContainer0.horizontalIndent = 0;
-			constraintClassFigure_NameContainer0.horizontalSpan = 2;
-			constraintClassFigure_NameContainer0.verticalSpan = 1;
-			constraintClassFigure_NameContainer0.grabExcessHorizontalSpace = true;
-			constraintClassFigure_NameContainer0.grabExcessVerticalSpace = false;
-			this.add(classFigure_NameContainer0, constraintClassFigure_NameContainer0);
+			this.add(classFigure_NameContainer0);
 
 			CenterLayout layoutClassFigure_NameContainer0 = new CenterLayout();
 
@@ -307,94 +294,65 @@ public class EnumerationEditPart extends ShapeNodeEditPart {
 			classFigure_NameContainer0.add(classFigure_name1);
 			setFigureClassFigure_name(classFigure_name1);
 
-			RectangleFigure classFigure_Body0 = new RectangleFigure();
-			classFigure_Body0.setFill(true);
-			classFigure_Body0.setFillXOR(false);
-			classFigure_Body0.setOutline(true);
-			classFigure_Body0.setOutlineXOR(false);
-			classFigure_Body0.setLineWidth(1);
-			classFigure_Body0.setLineStyle(Graphics.LINE_SOLID);
+			RectangleFigure classFigure_PropertiesCompartment0 = new RectangleFigure();
+			classFigure_PropertiesCompartment0.setFill(true);
+			classFigure_PropertiesCompartment0.setFillXOR(false);
+			classFigure_PropertiesCompartment0.setOutline(true);
+			classFigure_PropertiesCompartment0.setOutlineXOR(false);
+			classFigure_PropertiesCompartment0.setLineWidth(1);
+			classFigure_PropertiesCompartment0.setLineStyle(Graphics.LINE_SOLID);
 
-			GridLayoutData constraintClassFigure_Body0 = new GridLayoutData();
-			constraintClassFigure_Body0.verticalAlignment = GridLayoutData.FILL;
-			constraintClassFigure_Body0.horizontalAlignment = GridLayoutData.FILL;
-			constraintClassFigure_Body0.horizontalIndent = 0;
-			constraintClassFigure_Body0.horizontalSpan = 2;
-			constraintClassFigure_Body0.verticalSpan = 1;
-			constraintClassFigure_Body0.grabExcessHorizontalSpace = true;
-			constraintClassFigure_Body0.grabExcessVerticalSpace = true;
-			this.add(classFigure_Body0, constraintClassFigure_Body0);
+			this.add(classFigure_PropertiesCompartment0);
+			setFigureClassFigure_PropertiesCompartment(classFigure_PropertiesCompartment0);
+			classFigure_PropertiesCompartment0.setLayoutManager(new StackLayout());
 
-			ToolbarLayout layoutClassFigure_Body0 = new ToolbarLayout();
-			layoutClassFigure_Body0.setStretchMinorAxis(true);
-			layoutClassFigure_Body0.setMinorAlignment(ToolbarLayout.ALIGN_CENTER
+			RectangleFigure classFigure_OperationsCompartment0 = new RectangleFigure();
+			classFigure_OperationsCompartment0.setFill(true);
+			classFigure_OperationsCompartment0.setFillXOR(false);
+			classFigure_OperationsCompartment0.setOutline(true);
+			classFigure_OperationsCompartment0.setOutlineXOR(false);
+			classFigure_OperationsCompartment0.setLineWidth(1);
+			classFigure_OperationsCompartment0.setLineStyle(Graphics.LINE_SOLID);
 
-			);
+			this.add(classFigure_OperationsCompartment0);
+			setFigureClassFigure_OperationsCompartment(classFigure_OperationsCompartment0);
+			classFigure_OperationsCompartment0.setLayoutManager(new StackLayout());
 
-			layoutClassFigure_Body0.setSpacing(0);
-			layoutClassFigure_Body0.setVertical(true);
+			RectangleFigure classFigure_ClassesCompartment0 = new RectangleFigure();
+			classFigure_ClassesCompartment0.setFill(true);
+			classFigure_ClassesCompartment0.setFillXOR(false);
+			classFigure_ClassesCompartment0.setOutline(true);
+			classFigure_ClassesCompartment0.setOutlineXOR(false);
+			classFigure_ClassesCompartment0.setLineWidth(1);
+			classFigure_ClassesCompartment0.setLineStyle(Graphics.LINE_SOLID);
 
-			classFigure_Body0.setLayoutManager(layoutClassFigure_Body0);
+			this.add(classFigure_ClassesCompartment0);
+			setFigureClassFigure_ClassesCompartment(classFigure_ClassesCompartment0);
+			classFigure_ClassesCompartment0.setLayoutManager(new StackLayout());
 
-			RectangleFigure classFigure_PropertiesCompartment1 = new RectangleFigure();
-			classFigure_PropertiesCompartment1.setFill(true);
-			classFigure_PropertiesCompartment1.setFillXOR(false);
-			classFigure_PropertiesCompartment1.setOutline(true);
-			classFigure_PropertiesCompartment1.setOutlineXOR(false);
-			classFigure_PropertiesCompartment1.setLineWidth(1);
-			classFigure_PropertiesCompartment1.setLineStyle(Graphics.LINE_SOLID);
+			RectangleFigure classFigure_LiteralsCompartment0 = new RectangleFigure();
+			classFigure_LiteralsCompartment0.setFill(true);
+			classFigure_LiteralsCompartment0.setFillXOR(false);
+			classFigure_LiteralsCompartment0.setOutline(true);
+			classFigure_LiteralsCompartment0.setOutlineXOR(false);
+			classFigure_LiteralsCompartment0.setLineWidth(1);
+			classFigure_LiteralsCompartment0.setLineStyle(Graphics.LINE_SOLID);
 
-			classFigure_Body0.add(classFigure_PropertiesCompartment1);
-			setFigureClassFigure_PropertiesCompartment(classFigure_PropertiesCompartment1);
-			classFigure_PropertiesCompartment1.setLayoutManager(new StackLayout());
+			this.add(classFigure_LiteralsCompartment0);
+			setFigureClassFigure_LiteralsCompartment(classFigure_LiteralsCompartment0);
+			classFigure_LiteralsCompartment0.setLayoutManager(new StackLayout());
 
-			RectangleFigure classFigure_OperationsCompartment1 = new RectangleFigure();
-			classFigure_OperationsCompartment1.setFill(true);
-			classFigure_OperationsCompartment1.setFillXOR(false);
-			classFigure_OperationsCompartment1.setOutline(true);
-			classFigure_OperationsCompartment1.setOutlineXOR(false);
-			classFigure_OperationsCompartment1.setLineWidth(1);
-			classFigure_OperationsCompartment1.setLineStyle(Graphics.LINE_SOLID);
+			RectangleFigure classFigure_OthersCompartment0 = new RectangleFigure();
+			classFigure_OthersCompartment0.setFill(true);
+			classFigure_OthersCompartment0.setFillXOR(false);
+			classFigure_OthersCompartment0.setOutline(true);
+			classFigure_OthersCompartment0.setOutlineXOR(false);
+			classFigure_OthersCompartment0.setLineWidth(1);
+			classFigure_OthersCompartment0.setLineStyle(Graphics.LINE_SOLID);
 
-			classFigure_Body0.add(classFigure_OperationsCompartment1);
-			setFigureClassFigure_OperationsCompartment(classFigure_OperationsCompartment1);
-			classFigure_OperationsCompartment1.setLayoutManager(new StackLayout());
-
-			RectangleFigure classFigure_ClassesCompartment1 = new RectangleFigure();
-			classFigure_ClassesCompartment1.setFill(true);
-			classFigure_ClassesCompartment1.setFillXOR(false);
-			classFigure_ClassesCompartment1.setOutline(true);
-			classFigure_ClassesCompartment1.setOutlineXOR(false);
-			classFigure_ClassesCompartment1.setLineWidth(1);
-			classFigure_ClassesCompartment1.setLineStyle(Graphics.LINE_SOLID);
-
-			classFigure_Body0.add(classFigure_ClassesCompartment1);
-			setFigureClassFigure_ClassesCompartment(classFigure_ClassesCompartment1);
-			classFigure_ClassesCompartment1.setLayoutManager(new StackLayout());
-
-			RectangleFigure classFigure_LiteralsCompartment1 = new RectangleFigure();
-			classFigure_LiteralsCompartment1.setFill(true);
-			classFigure_LiteralsCompartment1.setFillXOR(false);
-			classFigure_LiteralsCompartment1.setOutline(true);
-			classFigure_LiteralsCompartment1.setOutlineXOR(false);
-			classFigure_LiteralsCompartment1.setLineWidth(1);
-			classFigure_LiteralsCompartment1.setLineStyle(Graphics.LINE_SOLID);
-
-			classFigure_Body0.add(classFigure_LiteralsCompartment1);
-			setFigureClassFigure_LiteralsCompartment(classFigure_LiteralsCompartment1);
-			classFigure_LiteralsCompartment1.setLayoutManager(new StackLayout());
-
-			RectangleFigure classFigure_OthersCompartment1 = new RectangleFigure();
-			classFigure_OthersCompartment1.setFill(true);
-			classFigure_OthersCompartment1.setFillXOR(false);
-			classFigure_OthersCompartment1.setOutline(true);
-			classFigure_OthersCompartment1.setOutlineXOR(false);
-			classFigure_OthersCompartment1.setLineWidth(1);
-			classFigure_OthersCompartment1.setLineStyle(Graphics.LINE_SOLID);
-
-			classFigure_Body0.add(classFigure_OthersCompartment1);
-			setFigureClassFigure_OthersCompartment(classFigure_OthersCompartment1);
-			classFigure_OthersCompartment1.setLayoutManager(new StackLayout());
+			this.add(classFigure_OthersCompartment0);
+			setFigureClassFigure_OthersCompartment(classFigure_OthersCompartment0);
+			classFigure_OthersCompartment0.setLayoutManager(new StackLayout());
 
 		}
 

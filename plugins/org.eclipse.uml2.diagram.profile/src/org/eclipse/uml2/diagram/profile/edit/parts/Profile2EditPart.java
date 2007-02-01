@@ -3,7 +3,6 @@ package org.eclipse.uml2.diagram.profile.edit.parts;
 import org.eclipse.draw2d.ColorConstants;
 import org.eclipse.draw2d.Graphics;
 import org.eclipse.draw2d.IFigure;
-import org.eclipse.draw2d.MarginBorder;
 import org.eclipse.draw2d.RectangleFigure;
 import org.eclipse.draw2d.StackLayout;
 import org.eclipse.draw2d.ToolbarLayout;
@@ -15,8 +14,6 @@ import org.eclipse.gef.commands.Command;
 import org.eclipse.gef.editpolicies.LayoutEditPolicy;
 import org.eclipse.gef.editpolicies.NonResizableEditPolicy;
 import org.eclipse.gef.requests.CreateRequest;
-import org.eclipse.gmf.internal.codegen.draw2d.GridLayout;
-import org.eclipse.gmf.internal.codegen.draw2d.GridLayoutData;
 import org.eclipse.gmf.runtime.diagram.core.edithelpers.CreateElementRequestAdapter;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.ShapeNodeEditPart;
@@ -193,7 +190,7 @@ public class Profile2EditPart extends ShapeNodeEditPart {
 	 * @generated
 	 */
 	protected NodeFigure createNodePlate() {
-		DefaultSizeNodeFigure result = new DefaultSizeNodeFigure(getMapMode().DPtoLP(200), getMapMode().DPtoLP(150));
+		DefaultSizeNodeFigure result = new DefaultSizeNodeFigure(getMapMode().DPtoLP(100), getMapMode().DPtoLP(80));
 
 		return result;
 	}
@@ -257,13 +254,12 @@ public class Profile2EditPart extends ShapeNodeEditPart {
 		 */
 		public ProfileFigure() {
 
-			GridLayout layoutThis = new GridLayout();
-			layoutThis.numColumns = 2;
-			layoutThis.makeColumnsEqualWidth = true;
-			layoutThis.horizontalSpacing = 0;
-			layoutThis.verticalSpacing = 0;
-			layoutThis.marginWidth = 0;
-			layoutThis.marginHeight = 0;
+			ConstrainedToolbarLayout layoutThis = new ConstrainedToolbarLayout();
+
+			layoutThis.setStretchMajorAxis(true);
+
+			layoutThis.setMinorAlignment(ToolbarLayout.ALIGN_TOPLEFT);
+
 			this.setLayoutManager(layoutThis);
 
 			this.setFill(false);
@@ -288,127 +284,60 @@ public class Profile2EditPart extends ShapeNodeEditPart {
 			profile_leftTab0.setOutlineXOR(false);
 			profile_leftTab0.setLineWidth(1);
 			profile_leftTab0.setLineStyle(Graphics.LINE_SOLID);
-			profile_leftTab0.setPreferredSize(new Dimension(getMapMode().DPtoLP(0), getMapMode().DPtoLP(25)));
-			profile_leftTab0.setMinimumSize(new Dimension(getMapMode().DPtoLP(0), getMapMode().DPtoLP(25)));
+			profile_leftTab0.setPreferredSize(new Dimension(getMapMode().DPtoLP(40), getMapMode().DPtoLP(20)));
+			profile_leftTab0.setMaximumSize(new Dimension(getMapMode().DPtoLP(40), getMapMode().DPtoLP(20)));
 
-			GridLayoutData constraintProfile_leftTab0 = new GridLayoutData();
-			constraintProfile_leftTab0.verticalAlignment = GridLayoutData.FILL;
-			constraintProfile_leftTab0.horizontalAlignment = GridLayoutData.FILL;
-			constraintProfile_leftTab0.horizontalIndent = 0;
-			constraintProfile_leftTab0.horizontalSpan = 1;
-			constraintProfile_leftTab0.verticalSpan = 1;
-			constraintProfile_leftTab0.grabExcessHorizontalSpace = true;
-			constraintProfile_leftTab0.grabExcessVerticalSpace = false;
-			this.add(profile_leftTab0, constraintProfile_leftTab0);
+			this.add(profile_leftTab0);
 
-			RectangleFigure profile_rightTab0 = new RectangleFigure();
-			profile_rightTab0.setFill(false);
-			profile_rightTab0.setFillXOR(false);
-			profile_rightTab0.setOutline(false);
-			profile_rightTab0.setOutlineXOR(false);
-			profile_rightTab0.setLineWidth(1);
-			profile_rightTab0.setLineStyle(Graphics.LINE_SOLID);
-			profile_rightTab0.setPreferredSize(new Dimension(getMapMode().DPtoLP(0), getMapMode().DPtoLP(25)));
-			profile_rightTab0.setMinimumSize(new Dimension(getMapMode().DPtoLP(0), getMapMode().DPtoLP(25)));
+			RectangleFigure profile_body0 = new RectangleFigure();
+			profile_body0.setFill(true);
+			profile_body0.setFillXOR(false);
+			profile_body0.setOutline(true);
+			profile_body0.setOutlineXOR(false);
+			profile_body0.setLineWidth(1);
+			profile_body0.setLineStyle(Graphics.LINE_SOLID);
 
-			GridLayoutData constraintProfile_rightTab0 = new GridLayoutData();
-			constraintProfile_rightTab0.verticalAlignment = GridLayoutData.FILL;
-			constraintProfile_rightTab0.horizontalAlignment = GridLayoutData.FILL;
-			constraintProfile_rightTab0.horizontalIndent = 0;
-			constraintProfile_rightTab0.horizontalSpan = 1;
-			constraintProfile_rightTab0.verticalSpan = 1;
-			constraintProfile_rightTab0.grabExcessHorizontalSpace = true;
-			constraintProfile_rightTab0.grabExcessVerticalSpace = false;
-			this.add(profile_rightTab0, constraintProfile_rightTab0);
+			this.add(profile_body0);
 
-			RectangleFigure profileFigure_body0 = new RectangleFigure();
-			profileFigure_body0.setFill(true);
-			profileFigure_body0.setFillXOR(false);
-			profileFigure_body0.setOutline(true);
-			profileFigure_body0.setOutlineXOR(false);
-			profileFigure_body0.setLineWidth(1);
-			profileFigure_body0.setLineStyle(Graphics.LINE_SOLID);
-			profileFigure_body0.setBorder(new MarginBorder(getMapMode().DPtoLP(1), getMapMode().DPtoLP(1), getMapMode().DPtoLP(1), getMapMode().DPtoLP(1)));
-
-			GridLayoutData constraintProfileFigure_body0 = new GridLayoutData();
-			constraintProfileFigure_body0.verticalAlignment = GridLayoutData.FILL;
-			constraintProfileFigure_body0.horizontalAlignment = GridLayoutData.FILL;
-			constraintProfileFigure_body0.horizontalIndent = 0;
-			constraintProfileFigure_body0.horizontalSpan = 2;
-			constraintProfileFigure_body0.verticalSpan = 1;
-			constraintProfileFigure_body0.grabExcessHorizontalSpace = true;
-			constraintProfileFigure_body0.grabExcessVerticalSpace = true;
-			this.add(profileFigure_body0, constraintProfileFigure_body0);
-
-			ToolbarLayout layoutProfileFigure_body0 = new ToolbarLayout();
-			layoutProfileFigure_body0.setStretchMinorAxis(true);
-			layoutProfileFigure_body0.setMinorAlignment(ToolbarLayout.ALIGN_CENTER
+			ToolbarLayout layoutProfile_body0 = new ToolbarLayout();
+			layoutProfile_body0.setStretchMinorAxis(true);
+			layoutProfile_body0.setMinorAlignment(ToolbarLayout.ALIGN_CENTER
 
 			);
 
-			layoutProfileFigure_body0.setSpacing(0);
-			layoutProfileFigure_body0.setVertical(true);
+			layoutProfile_body0.setSpacing(0);
+			layoutProfile_body0.setVertical(true);
 
-			profileFigure_body0.setLayoutManager(layoutProfileFigure_body0);
+			profile_body0.setLayoutManager(layoutProfile_body0);
 
-			RectangleFigure profile_NameContainer1 = new RectangleFigure();
-			profile_NameContainer1.setFill(true);
-			profile_NameContainer1.setFillXOR(false);
-			profile_NameContainer1.setOutline(false);
-			profile_NameContainer1.setOutlineXOR(false);
-			profile_NameContainer1.setLineWidth(1);
-			profile_NameContainer1.setLineStyle(Graphics.LINE_SOLID);
-			profile_NameContainer1.setMinimumSize(new Dimension(getMapMode().DPtoLP(0), getMapMode().DPtoLP(25)));
+			WrapLabel profileFigure_ProfileLabel1 = new WrapLabel();
+			profileFigure_ProfileLabel1.setText("\u00ABprofile\u00BB");
 
-			profileFigure_body0.add(profile_NameContainer1);
+			profile_body0.add(profileFigure_ProfileLabel1);
 
-			CenterLayout layoutProfile_NameContainer1 = new CenterLayout();
+			CenterLayout layoutProfileFigure_ProfileLabel1 = new CenterLayout();
 
-			profile_NameContainer1.setLayoutManager(layoutProfile_NameContainer1);
+			profileFigure_ProfileLabel1.setLayoutManager(layoutProfileFigure_ProfileLabel1);
 
-			WrapLabel profileFigure_NameLabel2 = new WrapLabel();
-			profileFigure_NameLabel2.setText("");
+			WrapLabel profileFigure_NameLabel1 = new WrapLabel();
+			profileFigure_NameLabel1.setText("");
 
-			profile_NameContainer1.add(profileFigure_NameLabel2);
-			setFigureProfileFigure_NameLabel(profileFigure_NameLabel2);
+			profile_body0.add(profileFigure_NameLabel1);
+			setFigureProfileFigure_NameLabel(profileFigure_NameLabel1);
 
-			RectangleFigure profileFigure_ProfileContainer1 = new RectangleFigure();
-			profileFigure_ProfileContainer1.setFill(true);
-			profileFigure_ProfileContainer1.setFillXOR(false);
-			profileFigure_ProfileContainer1.setOutline(false);
-			profileFigure_ProfileContainer1.setOutlineXOR(false);
-			profileFigure_ProfileContainer1.setLineWidth(1);
-			profileFigure_ProfileContainer1.setLineStyle(Graphics.LINE_SOLID);
-			profileFigure_ProfileContainer1.setMinimumSize(new Dimension(getMapMode().DPtoLP(0), getMapMode().DPtoLP(25)));
+			CenterLayout layoutProfileFigure_NameLabel1 = new CenterLayout();
 
-			profileFigure_body0.add(profileFigure_ProfileContainer1);
-
-			CenterLayout layoutProfileFigure_ProfileContainer1 = new CenterLayout();
-
-			profileFigure_ProfileContainer1.setLayoutManager(layoutProfileFigure_ProfileContainer1);
-
-			WrapLabel profileFigure_ProfileLabel2 = new WrapLabel();
-			profileFigure_ProfileLabel2.setText("\u00ABprofile\u00BB");
-
-			GridLayoutData constraintProfileFigure_ProfileLabel2 = new GridLayoutData();
-			constraintProfileFigure_ProfileLabel2.verticalAlignment = GridLayoutData.CENTER;
-			constraintProfileFigure_ProfileLabel2.horizontalAlignment = GridLayoutData.CENTER;
-			constraintProfileFigure_ProfileLabel2.horizontalIndent = 0;
-			constraintProfileFigure_ProfileLabel2.horizontalSpan = 1;
-			constraintProfileFigure_ProfileLabel2.verticalSpan = 1;
-			constraintProfileFigure_ProfileLabel2.grabExcessHorizontalSpace = false;
-			constraintProfileFigure_ProfileLabel2.grabExcessVerticalSpace = false;
-			profileFigure_ProfileContainer1.add(profileFigure_ProfileLabel2, constraintProfileFigure_ProfileLabel2);
+			profileFigure_NameLabel1.setLayoutManager(layoutProfileFigure_NameLabel1);
 
 			RectangleFigure profileFigure_ContentsCompartment1 = new RectangleFigure();
 			profileFigure_ContentsCompartment1.setFill(true);
 			profileFigure_ContentsCompartment1.setFillXOR(false);
-			profileFigure_ContentsCompartment1.setOutline(false);
+			profileFigure_ContentsCompartment1.setOutline(true);
 			profileFigure_ContentsCompartment1.setOutlineXOR(false);
 			profileFigure_ContentsCompartment1.setLineWidth(1);
 			profileFigure_ContentsCompartment1.setLineStyle(Graphics.LINE_SOLID);
 
-			profileFigure_body0.add(profileFigure_ContentsCompartment1);
+			profile_body0.add(profileFigure_ContentsCompartment1);
 			setFigureProfileFigure_ContentsCompartment(profileFigure_ContentsCompartment1);
 
 		}

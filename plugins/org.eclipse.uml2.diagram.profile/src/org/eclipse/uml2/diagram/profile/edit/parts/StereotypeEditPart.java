@@ -2,21 +2,21 @@ package org.eclipse.uml2.diagram.profile.edit.parts;
 
 import org.eclipse.draw2d.Graphics;
 import org.eclipse.draw2d.IFigure;
+import org.eclipse.draw2d.MarginBorder;
 import org.eclipse.draw2d.RectangleFigure;
 import org.eclipse.draw2d.StackLayout;
+import org.eclipse.draw2d.ToolbarLayout;
 import org.eclipse.draw2d.geometry.Dimension;
 import org.eclipse.gef.EditPart;
 import org.eclipse.gef.EditPolicy;
 import org.eclipse.gef.Request;
 import org.eclipse.gef.commands.Command;
 import org.eclipse.gef.editpolicies.LayoutEditPolicy;
-import org.eclipse.gef.editpolicies.NonResizableEditPolicy;
-import org.eclipse.gef.requests.CreateRequest;
-import org.eclipse.gmf.internal.codegen.draw2d.GridLayout;
-import org.eclipse.gmf.internal.codegen.draw2d.GridLayoutData;
 import org.eclipse.gmf.runtime.diagram.core.edithelpers.CreateElementRequestAdapter;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart;
+import org.eclipse.gmf.runtime.diagram.ui.editparts.ITextAwareEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.ShapeNodeEditPart;
+import org.eclipse.gmf.runtime.diagram.ui.editpolicies.ConstrainedToolbarLayoutEditPolicy;
 import org.eclipse.gmf.runtime.diagram.ui.editpolicies.CreationEditPolicy;
 import org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles;
 import org.eclipse.gmf.runtime.diagram.ui.requests.CreateViewAndElementRequest;
@@ -28,6 +28,7 @@ import org.eclipse.gmf.runtime.gef.ui.figures.NodeFigure;
 import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.uml2.diagram.common.draw2d.CenterLayout;
 import org.eclipse.uml2.diagram.profile.edit.policies.StereotypeItemSemanticEditPolicy;
+import org.eclipse.uml2.diagram.profile.edit.policies.UMLTextSelectionEditPolicy;
 import org.eclipse.uml2.diagram.profile.part.UMLVisualIDRegistry;
 import org.eclipse.uml2.diagram.profile.providers.UMLElementTypes;
 
@@ -93,22 +94,16 @@ public class StereotypeEditPart extends ShapeNodeEditPart {
 	 * @generated
 	 */
 	protected LayoutEditPolicy createLayoutEditPolicy() {
-		LayoutEditPolicy lep = new LayoutEditPolicy() {
+
+		ConstrainedToolbarLayoutEditPolicy lep = new ConstrainedToolbarLayoutEditPolicy() {
 
 			protected EditPolicy createChildEditPolicy(EditPart child) {
-				EditPolicy result = child.getEditPolicy(EditPolicy.PRIMARY_DRAG_ROLE);
-				if (result == null) {
-					result = new NonResizableEditPolicy();
+				if (child.getEditPolicy(EditPolicy.PRIMARY_DRAG_ROLE) == null) {
+					if (child instanceof ITextAwareEditPart) {
+						return new UMLTextSelectionEditPolicy();
+					}
 				}
-				return result;
-			}
-
-			protected Command getMoveChildrenCommand(Request request) {
-				return null;
-			}
-
-			protected Command getCreateCommand(CreateRequest request) {
-				return null;
+				return super.createChildEditPolicy(child);
 			}
 		};
 		return lep;
@@ -272,9 +267,15 @@ public class StereotypeEditPart extends ShapeNodeEditPart {
 		 */
 		public StereotypeFigure() {
 
-			GridLayout layoutThis = new GridLayout();
-			layoutThis.numColumns = 1;
-			layoutThis.makeColumnsEqualWidth = true;
+			ToolbarLayout layoutThis = new ToolbarLayout();
+			layoutThis.setStretchMinorAxis(true);
+			layoutThis.setMinorAlignment(ToolbarLayout.ALIGN_CENTER
+
+			);
+
+			layoutThis.setSpacing(0);
+			layoutThis.setVertical(true);
+
 			this.setLayoutManager(layoutThis);
 
 			this.setFill(true);
@@ -283,6 +284,7 @@ public class StereotypeEditPart extends ShapeNodeEditPart {
 			this.setOutlineXOR(false);
 			this.setLineWidth(1);
 			this.setLineStyle(Graphics.LINE_SOLID);
+			this.setBorder(new MarginBorder(getMapMode().DPtoLP(1), getMapMode().DPtoLP(1), getMapMode().DPtoLP(1), getMapMode().DPtoLP(1)));
 			createContents();
 		}
 
@@ -294,15 +296,11 @@ public class StereotypeEditPart extends ShapeNodeEditPart {
 			WrapLabel stereotypeFigure_StereotypeLabel0 = new WrapLabel();
 			stereotypeFigure_StereotypeLabel0.setText("\u00ABstereotype\u00BB");
 
-			GridLayoutData constraintStereotypeFigure_StereotypeLabel0 = new GridLayoutData();
-			constraintStereotypeFigure_StereotypeLabel0.verticalAlignment = GridLayoutData.FILL;
-			constraintStereotypeFigure_StereotypeLabel0.horizontalAlignment = GridLayoutData.FILL;
-			constraintStereotypeFigure_StereotypeLabel0.horizontalIndent = 0;
-			constraintStereotypeFigure_StereotypeLabel0.horizontalSpan = 2;
-			constraintStereotypeFigure_StereotypeLabel0.verticalSpan = 1;
-			constraintStereotypeFigure_StereotypeLabel0.grabExcessHorizontalSpace = true;
-			constraintStereotypeFigure_StereotypeLabel0.grabExcessVerticalSpace = false;
-			this.add(stereotypeFigure_StereotypeLabel0, constraintStereotypeFigure_StereotypeLabel0);
+			this.add(stereotypeFigure_StereotypeLabel0);
+
+			CenterLayout layoutStereotypeFigure_StereotypeLabel0 = new CenterLayout();
+
+			stereotypeFigure_StereotypeLabel0.setLayoutManager(layoutStereotypeFigure_StereotypeLabel0);
 
 			RectangleFigure stereotypeFigure_NameContainer0 = new RectangleFigure();
 			stereotypeFigure_NameContainer0.setFill(true);
@@ -313,15 +311,7 @@ public class StereotypeEditPart extends ShapeNodeEditPart {
 			stereotypeFigure_NameContainer0.setLineStyle(Graphics.LINE_SOLID);
 			stereotypeFigure_NameContainer0.setMinimumSize(new Dimension(getMapMode().DPtoLP(0), getMapMode().DPtoLP(25)));
 
-			GridLayoutData constraintStereotypeFigure_NameContainer0 = new GridLayoutData();
-			constraintStereotypeFigure_NameContainer0.verticalAlignment = GridLayoutData.FILL;
-			constraintStereotypeFigure_NameContainer0.horizontalAlignment = GridLayoutData.FILL;
-			constraintStereotypeFigure_NameContainer0.horizontalIndent = 0;
-			constraintStereotypeFigure_NameContainer0.horizontalSpan = 2;
-			constraintStereotypeFigure_NameContainer0.verticalSpan = 1;
-			constraintStereotypeFigure_NameContainer0.grabExcessHorizontalSpace = true;
-			constraintStereotypeFigure_NameContainer0.grabExcessVerticalSpace = false;
-			this.add(stereotypeFigure_NameContainer0, constraintStereotypeFigure_NameContainer0);
+			this.add(stereotypeFigure_NameContainer0);
 
 			CenterLayout layoutStereotypeFigure_NameContainer0 = new CenterLayout();
 
@@ -336,41 +326,23 @@ public class StereotypeEditPart extends ShapeNodeEditPart {
 			RectangleFigure stereotypeFigure_AttributesCompartment0 = new RectangleFigure();
 			stereotypeFigure_AttributesCompartment0.setFill(true);
 			stereotypeFigure_AttributesCompartment0.setFillXOR(false);
-			stereotypeFigure_AttributesCompartment0.setOutline(false);
+			stereotypeFigure_AttributesCompartment0.setOutline(true);
 			stereotypeFigure_AttributesCompartment0.setOutlineXOR(false);
 			stereotypeFigure_AttributesCompartment0.setLineWidth(1);
 			stereotypeFigure_AttributesCompartment0.setLineStyle(Graphics.LINE_SOLID);
 
-			GridLayoutData constraintStereotypeFigure_AttributesCompartment0 = new GridLayoutData();
-			constraintStereotypeFigure_AttributesCompartment0.verticalAlignment = GridLayoutData.FILL;
-			constraintStereotypeFigure_AttributesCompartment0.horizontalAlignment = GridLayoutData.FILL;
-			constraintStereotypeFigure_AttributesCompartment0.horizontalIndent = 0;
-			constraintStereotypeFigure_AttributesCompartment0.horizontalSpan = 2;
-			constraintStereotypeFigure_AttributesCompartment0.verticalSpan = 1;
-			constraintStereotypeFigure_AttributesCompartment0.grabExcessHorizontalSpace = true;
-			constraintStereotypeFigure_AttributesCompartment0.grabExcessVerticalSpace = false;
-			this.add(stereotypeFigure_AttributesCompartment0, constraintStereotypeFigure_AttributesCompartment0);
-
+			this.add(stereotypeFigure_AttributesCompartment0);
 			setFigureStereotypeFigure_AttributesCompartment(stereotypeFigure_AttributesCompartment0);
 
 			RectangleFigure stereotypeFigure_ConstraintsCompartment0 = new RectangleFigure();
 			stereotypeFigure_ConstraintsCompartment0.setFill(true);
 			stereotypeFigure_ConstraintsCompartment0.setFillXOR(false);
-			stereotypeFigure_ConstraintsCompartment0.setOutline(false);
+			stereotypeFigure_ConstraintsCompartment0.setOutline(true);
 			stereotypeFigure_ConstraintsCompartment0.setOutlineXOR(false);
 			stereotypeFigure_ConstraintsCompartment0.setLineWidth(1);
 			stereotypeFigure_ConstraintsCompartment0.setLineStyle(Graphics.LINE_SOLID);
 
-			GridLayoutData constraintStereotypeFigure_ConstraintsCompartment0 = new GridLayoutData();
-			constraintStereotypeFigure_ConstraintsCompartment0.verticalAlignment = GridLayoutData.FILL;
-			constraintStereotypeFigure_ConstraintsCompartment0.horizontalAlignment = GridLayoutData.FILL;
-			constraintStereotypeFigure_ConstraintsCompartment0.horizontalIndent = 0;
-			constraintStereotypeFigure_ConstraintsCompartment0.horizontalSpan = 2;
-			constraintStereotypeFigure_ConstraintsCompartment0.verticalSpan = 1;
-			constraintStereotypeFigure_ConstraintsCompartment0.grabExcessHorizontalSpace = true;
-			constraintStereotypeFigure_ConstraintsCompartment0.grabExcessVerticalSpace = false;
-			this.add(stereotypeFigure_ConstraintsCompartment0, constraintStereotypeFigure_ConstraintsCompartment0);
-
+			this.add(stereotypeFigure_ConstraintsCompartment0);
 			setFigureStereotypeFigure_ConstraintsCompartment(stereotypeFigure_ConstraintsCompartment0);
 
 		}

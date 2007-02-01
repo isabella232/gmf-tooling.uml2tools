@@ -1,7 +1,9 @@
 package org.eclipse.uml2.diagram.clazz.edit.parts;
 
+import org.eclipse.draw2d.BorderLayout;
 import org.eclipse.draw2d.Graphics;
 import org.eclipse.draw2d.IFigure;
+import org.eclipse.draw2d.MarginBorder;
 import org.eclipse.draw2d.RectangleFigure;
 import org.eclipse.draw2d.StackLayout;
 import org.eclipse.draw2d.ToolbarLayout;
@@ -13,8 +15,6 @@ import org.eclipse.gef.commands.Command;
 import org.eclipse.gef.editpolicies.LayoutEditPolicy;
 import org.eclipse.gef.editpolicies.NonResizableEditPolicy;
 import org.eclipse.gef.requests.CreateRequest;
-import org.eclipse.gmf.internal.codegen.draw2d.GridLayout;
-import org.eclipse.gmf.internal.codegen.draw2d.GridLayoutData;
 import org.eclipse.gmf.runtime.diagram.core.edithelpers.CreateElementRequestAdapter;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.ShapeNodeEditPart;
@@ -307,13 +307,7 @@ public class Package2EditPart extends ShapeNodeEditPart {
 		 */
 		public PackageFigure() {
 
-			GridLayout layoutThis = new GridLayout();
-			layoutThis.numColumns = 2;
-			layoutThis.makeColumnsEqualWidth = true;
-			layoutThis.horizontalSpacing = 0;
-			layoutThis.verticalSpacing = 0;
-			layoutThis.marginWidth = 0;
-			layoutThis.marginHeight = 0;
+			BorderLayout layoutThis = new BorderLayout();
 			this.setLayoutManager(layoutThis);
 
 			this.setFill(false);
@@ -330,103 +324,89 @@ public class Package2EditPart extends ShapeNodeEditPart {
 		 */
 		private void createContents() {
 
-			RectangleFigure packageFigure_AuxLeftTab0 = new RectangleFigure();
-			packageFigure_AuxLeftTab0.setFill(true);
-			packageFigure_AuxLeftTab0.setFillXOR(false);
-			packageFigure_AuxLeftTab0.setOutline(true);
-			packageFigure_AuxLeftTab0.setOutlineXOR(false);
-			packageFigure_AuxLeftTab0.setLineWidth(1);
-			packageFigure_AuxLeftTab0.setLineStyle(Graphics.LINE_SOLID);
-			packageFigure_AuxLeftTab0.setPreferredSize(new Dimension(getMapMode().DPtoLP(0), getMapMode().DPtoLP(25)));
-			packageFigure_AuxLeftTab0.setMinimumSize(new Dimension(getMapMode().DPtoLP(0), getMapMode().DPtoLP(25)));
+			RectangleFigure packageFigure_AuxTop0 = new RectangleFigure();
+			packageFigure_AuxTop0.setFill(false);
+			packageFigure_AuxTop0.setFillXOR(false);
+			packageFigure_AuxTop0.setOutline(false);
+			packageFigure_AuxTop0.setOutlineXOR(false);
+			packageFigure_AuxTop0.setLineWidth(1);
+			packageFigure_AuxTop0.setLineStyle(Graphics.LINE_SOLID);
 
-			GridLayoutData constraintPackageFigure_AuxLeftTab0 = new GridLayoutData();
-			constraintPackageFigure_AuxLeftTab0.verticalAlignment = GridLayoutData.FILL;
-			constraintPackageFigure_AuxLeftTab0.horizontalAlignment = GridLayoutData.FILL;
-			constraintPackageFigure_AuxLeftTab0.horizontalIndent = 0;
-			constraintPackageFigure_AuxLeftTab0.horizontalSpan = 1;
-			constraintPackageFigure_AuxLeftTab0.verticalSpan = 1;
-			constraintPackageFigure_AuxLeftTab0.grabExcessHorizontalSpace = true;
-			constraintPackageFigure_AuxLeftTab0.grabExcessVerticalSpace = false;
-			this.add(packageFigure_AuxLeftTab0, constraintPackageFigure_AuxLeftTab0);
+			this.add(packageFigure_AuxTop0, BorderLayout.TOP);
 
-			RectangleFigure packageFigure_AuxRightPadding0 = new RectangleFigure();
-			packageFigure_AuxRightPadding0.setFill(false);
-			packageFigure_AuxRightPadding0.setFillXOR(false);
-			packageFigure_AuxRightPadding0.setOutline(false);
-			packageFigure_AuxRightPadding0.setOutlineXOR(false);
-			packageFigure_AuxRightPadding0.setLineWidth(1);
-			packageFigure_AuxRightPadding0.setLineStyle(Graphics.LINE_SOLID);
-			packageFigure_AuxRightPadding0.setPreferredSize(new Dimension(getMapMode().DPtoLP(0), getMapMode().DPtoLP(25)));
-			packageFigure_AuxRightPadding0.setMinimumSize(new Dimension(getMapMode().DPtoLP(0), getMapMode().DPtoLP(25)));
+			ConstrainedToolbarLayout layoutPackageFigure_AuxTop0 = new ConstrainedToolbarLayout();
 
-			GridLayoutData constraintPackageFigure_AuxRightPadding0 = new GridLayoutData();
-			constraintPackageFigure_AuxRightPadding0.verticalAlignment = GridLayoutData.FILL;
-			constraintPackageFigure_AuxRightPadding0.horizontalAlignment = GridLayoutData.FILL;
-			constraintPackageFigure_AuxRightPadding0.horizontalIndent = 0;
-			constraintPackageFigure_AuxRightPadding0.horizontalSpan = 1;
-			constraintPackageFigure_AuxRightPadding0.verticalSpan = 1;
-			constraintPackageFigure_AuxRightPadding0.grabExcessHorizontalSpace = true;
-			constraintPackageFigure_AuxRightPadding0.grabExcessVerticalSpace = false;
-			this.add(packageFigure_AuxRightPadding0, constraintPackageFigure_AuxRightPadding0);
+			layoutPackageFigure_AuxTop0.setStretchMajorAxis(true);
 
-			RectangleFigure packageFigure_NameContainer0 = new RectangleFigure();
-			packageFigure_NameContainer0.setFill(true);
-			packageFigure_NameContainer0.setFillXOR(false);
-			packageFigure_NameContainer0.setOutline(true);
-			packageFigure_NameContainer0.setOutlineXOR(false);
-			packageFigure_NameContainer0.setLineWidth(1);
-			packageFigure_NameContainer0.setLineStyle(Graphics.LINE_SOLID);
-			packageFigure_NameContainer0.setMinimumSize(new Dimension(getMapMode().DPtoLP(0), getMapMode().DPtoLP(25)));
+			layoutPackageFigure_AuxTop0.setVertical(false);
 
-			GridLayoutData constraintPackageFigure_NameContainer0 = new GridLayoutData();
-			constraintPackageFigure_NameContainer0.verticalAlignment = GridLayoutData.FILL;
-			constraintPackageFigure_NameContainer0.horizontalAlignment = GridLayoutData.FILL;
-			constraintPackageFigure_NameContainer0.horizontalIndent = 0;
-			constraintPackageFigure_NameContainer0.horizontalSpan = 2;
-			constraintPackageFigure_NameContainer0.verticalSpan = 1;
-			constraintPackageFigure_NameContainer0.grabExcessHorizontalSpace = true;
-			constraintPackageFigure_NameContainer0.grabExcessVerticalSpace = false;
-			this.add(packageFigure_NameContainer0, constraintPackageFigure_NameContainer0);
+			packageFigure_AuxTop0.setLayoutManager(layoutPackageFigure_AuxTop0);
 
-			CenterLayout layoutPackageFigure_NameContainer0 = new CenterLayout();
+			RectangleFigure packageFigure_AuxLeftTab1 = new RectangleFigure();
+			packageFigure_AuxLeftTab1.setFill(true);
+			packageFigure_AuxLeftTab1.setFillXOR(false);
+			packageFigure_AuxLeftTab1.setOutline(true);
+			packageFigure_AuxLeftTab1.setOutlineXOR(false);
+			packageFigure_AuxLeftTab1.setLineWidth(1);
+			packageFigure_AuxLeftTab1.setLineStyle(Graphics.LINE_SOLID);
+			packageFigure_AuxLeftTab1.setPreferredSize(new Dimension(getMapMode().DPtoLP(1), getMapMode().DPtoLP(30)));
 
-			packageFigure_NameContainer0.setLayoutManager(layoutPackageFigure_NameContainer0);
+			packageFigure_AuxTop0.add(packageFigure_AuxLeftTab1);
 
-			WrapLabel packageFigure_name1 = new WrapLabel();
-			packageFigure_name1.setText("");
+			RectangleFigure packageFigure_AuxRightPadding1 = new RectangleFigure();
+			packageFigure_AuxRightPadding1.setFill(false);
+			packageFigure_AuxRightPadding1.setFillXOR(false);
+			packageFigure_AuxRightPadding1.setOutline(false);
+			packageFigure_AuxRightPadding1.setOutlineXOR(false);
+			packageFigure_AuxRightPadding1.setLineWidth(1);
+			packageFigure_AuxRightPadding1.setLineStyle(Graphics.LINE_SOLID);
+			packageFigure_AuxRightPadding1.setPreferredSize(new Dimension(getMapMode().DPtoLP(1), getMapMode().DPtoLP(30)));
 
-			packageFigure_NameContainer0.add(packageFigure_name1);
-			setFigurePackageFigure_name(packageFigure_name1);
+			packageFigure_AuxTop0.add(packageFigure_AuxRightPadding1);
 
-			RectangleFigure packageFigure_Body0 = new RectangleFigure();
-			packageFigure_Body0.setFill(true);
-			packageFigure_Body0.setFillXOR(false);
-			packageFigure_Body0.setOutline(true);
-			packageFigure_Body0.setOutlineXOR(false);
-			packageFigure_Body0.setLineWidth(1);
-			packageFigure_Body0.setLineStyle(Graphics.LINE_SOLID);
+			RectangleFigure packageFigure_AuxCenter0 = new RectangleFigure();
+			packageFigure_AuxCenter0.setFill(true);
+			packageFigure_AuxCenter0.setFillXOR(false);
+			packageFigure_AuxCenter0.setOutline(true);
+			packageFigure_AuxCenter0.setOutlineXOR(false);
+			packageFigure_AuxCenter0.setLineWidth(1);
+			packageFigure_AuxCenter0.setLineStyle(Graphics.LINE_SOLID);
 
-			GridLayoutData constraintPackageFigure_Body0 = new GridLayoutData();
-			constraintPackageFigure_Body0.verticalAlignment = GridLayoutData.FILL;
-			constraintPackageFigure_Body0.horizontalAlignment = GridLayoutData.FILL;
-			constraintPackageFigure_Body0.horizontalIndent = 0;
-			constraintPackageFigure_Body0.horizontalSpan = 2;
-			constraintPackageFigure_Body0.verticalSpan = 1;
-			constraintPackageFigure_Body0.grabExcessHorizontalSpace = true;
-			constraintPackageFigure_Body0.grabExcessVerticalSpace = true;
-			this.add(packageFigure_Body0, constraintPackageFigure_Body0);
+			this.add(packageFigure_AuxCenter0, BorderLayout.CENTER);
 
-			ToolbarLayout layoutPackageFigure_Body0 = new ToolbarLayout();
-			layoutPackageFigure_Body0.setStretchMinorAxis(true);
-			layoutPackageFigure_Body0.setMinorAlignment(ToolbarLayout.ALIGN_CENTER
+			ToolbarLayout layoutPackageFigure_AuxCenter0 = new ToolbarLayout();
+			layoutPackageFigure_AuxCenter0.setStretchMinorAxis(true);
+			layoutPackageFigure_AuxCenter0.setMinorAlignment(ToolbarLayout.ALIGN_CENTER
 
 			);
 
-			layoutPackageFigure_Body0.setSpacing(0);
-			layoutPackageFigure_Body0.setVertical(true);
+			layoutPackageFigure_AuxCenter0.setSpacing(0);
+			layoutPackageFigure_AuxCenter0.setVertical(true);
 
-			packageFigure_Body0.setLayoutManager(layoutPackageFigure_Body0);
+			packageFigure_AuxCenter0.setLayoutManager(layoutPackageFigure_AuxCenter0);
+
+			RectangleFigure packageFigure_NameContainer1 = new RectangleFigure();
+			packageFigure_NameContainer1.setFill(true);
+			packageFigure_NameContainer1.setFillXOR(false);
+			packageFigure_NameContainer1.setOutline(true);
+			packageFigure_NameContainer1.setOutlineXOR(false);
+			packageFigure_NameContainer1.setLineWidth(1);
+			packageFigure_NameContainer1.setLineStyle(Graphics.LINE_SOLID);
+			packageFigure_NameContainer1.setMinimumSize(new Dimension(getMapMode().DPtoLP(0), getMapMode().DPtoLP(20)));
+
+			packageFigure_AuxCenter0.add(packageFigure_NameContainer1);
+
+			CenterLayout layoutPackageFigure_NameContainer1 = new CenterLayout();
+
+			packageFigure_NameContainer1.setLayoutManager(layoutPackageFigure_NameContainer1);
+
+			WrapLabel packageFigure_name2 = new WrapLabel();
+			packageFigure_name2.setText("");
+
+			packageFigure_name2.setBorder(new MarginBorder(getMapMode().DPtoLP(0), getMapMode().DPtoLP(5), getMapMode().DPtoLP(0), getMapMode().DPtoLP(5)));
+
+			packageFigure_NameContainer1.add(packageFigure_name2);
+			setFigurePackageFigure_name(packageFigure_name2);
 
 			RectangleFigure packageFigure_PackagesCompartment1 = new RectangleFigure();
 			packageFigure_PackagesCompartment1.setFill(true);
@@ -436,9 +416,8 @@ public class Package2EditPart extends ShapeNodeEditPart {
 			packageFigure_PackagesCompartment1.setLineWidth(1);
 			packageFigure_PackagesCompartment1.setLineStyle(Graphics.LINE_SOLID);
 
-			packageFigure_Body0.add(packageFigure_PackagesCompartment1);
+			packageFigure_AuxCenter0.add(packageFigure_PackagesCompartment1);
 			setFigurePackageFigure_PackagesCompartment(packageFigure_PackagesCompartment1);
-			packageFigure_PackagesCompartment1.setLayoutManager(new StackLayout());
 
 			RectangleFigure packageFigure_ClassesCompartment1 = new RectangleFigure();
 			packageFigure_ClassesCompartment1.setFill(true);
@@ -448,9 +427,8 @@ public class Package2EditPart extends ShapeNodeEditPart {
 			packageFigure_ClassesCompartment1.setLineWidth(1);
 			packageFigure_ClassesCompartment1.setLineStyle(Graphics.LINE_SOLID);
 
-			packageFigure_Body0.add(packageFigure_ClassesCompartment1);
+			packageFigure_AuxCenter0.add(packageFigure_ClassesCompartment1);
 			setFigurePackageFigure_ClassesCompartment(packageFigure_ClassesCompartment1);
-			packageFigure_ClassesCompartment1.setLayoutManager(new StackLayout());
 
 			RectangleFigure packageFigure_OthersCompartment1 = new RectangleFigure();
 			packageFigure_OthersCompartment1.setFill(true);
@@ -460,9 +438,8 @@ public class Package2EditPart extends ShapeNodeEditPart {
 			packageFigure_OthersCompartment1.setLineWidth(1);
 			packageFigure_OthersCompartment1.setLineStyle(Graphics.LINE_SOLID);
 
-			packageFigure_Body0.add(packageFigure_OthersCompartment1);
+			packageFigure_AuxCenter0.add(packageFigure_OthersCompartment1);
 			setFigurePackageFigure_OthersCompartment(packageFigure_OthersCompartment1);
-			packageFigure_OthersCompartment1.setLayoutManager(new StackLayout());
 
 		}
 
