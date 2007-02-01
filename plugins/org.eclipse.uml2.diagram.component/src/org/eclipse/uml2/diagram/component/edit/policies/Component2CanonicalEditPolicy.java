@@ -20,6 +20,7 @@ import org.eclipse.uml2.uml.StructuredClassifier;
 public class Component2CanonicalEditPolicy extends CanonicalEditPolicy {
 
 	/**
+	 *  
 	 * @generated
 	 */
 	protected List getSemanticChildrenList() {
