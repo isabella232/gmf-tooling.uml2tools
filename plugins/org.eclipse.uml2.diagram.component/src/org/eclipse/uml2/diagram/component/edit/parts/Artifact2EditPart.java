@@ -4,17 +4,14 @@ import org.eclipse.draw2d.Graphics;
 import org.eclipse.draw2d.IFigure;
 import org.eclipse.draw2d.RectangleFigure;
 import org.eclipse.draw2d.StackLayout;
+import org.eclipse.draw2d.ToolbarLayout;
 import org.eclipse.gef.EditPart;
 import org.eclipse.gef.EditPolicy;
-import org.eclipse.gef.Request;
-import org.eclipse.gef.commands.Command;
 import org.eclipse.gef.editpolicies.LayoutEditPolicy;
-import org.eclipse.gef.editpolicies.NonResizableEditPolicy;
-import org.eclipse.gef.requests.CreateRequest;
-import org.eclipse.gmf.internal.codegen.draw2d.GridLayout;
-import org.eclipse.gmf.internal.codegen.draw2d.GridLayoutData;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart;
+import org.eclipse.gmf.runtime.diagram.ui.editparts.ITextAwareEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.ShapeNodeEditPart;
+import org.eclipse.gmf.runtime.diagram.ui.editpolicies.ConstrainedToolbarLayoutEditPolicy;
 import org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles;
 import org.eclipse.gmf.runtime.draw2d.ui.figures.ConstrainedToolbarLayout;
 import org.eclipse.gmf.runtime.draw2d.ui.figures.WrapLabel;
@@ -23,6 +20,7 @@ import org.eclipse.gmf.runtime.gef.ui.figures.NodeFigure;
 import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.uml2.diagram.common.draw2d.CenterLayout;
 import org.eclipse.uml2.diagram.component.edit.policies.Artifact2ItemSemanticEditPolicy;
+import org.eclipse.uml2.diagram.component.edit.policies.UMLTextSelectionEditPolicy;
 import org.eclipse.uml2.diagram.component.part.UMLVisualIDRegistry;
 
 /**
@@ -66,22 +64,16 @@ public class Artifact2EditPart extends ShapeNodeEditPart {
 	 * @generated
 	 */
 	protected LayoutEditPolicy createLayoutEditPolicy() {
-		LayoutEditPolicy lep = new LayoutEditPolicy() {
+
+		ConstrainedToolbarLayoutEditPolicy lep = new ConstrainedToolbarLayoutEditPolicy() {
 
 			protected EditPolicy createChildEditPolicy(EditPart child) {
-				EditPolicy result = child.getEditPolicy(EditPolicy.PRIMARY_DRAG_ROLE);
-				if (result == null) {
-					result = new NonResizableEditPolicy();
+				if (child.getEditPolicy(EditPolicy.PRIMARY_DRAG_ROLE) == null) {
+					if (child instanceof ITextAwareEditPart) {
+						return new UMLTextSelectionEditPolicy();
+					}
 				}
-				return result;
-			}
-
-			protected Command getMoveChildrenCommand(Request request) {
-				return null;
-			}
-
-			protected Command getCreateCommand(CreateRequest request) {
-				return null;
+				return super.createChildEditPolicy(child);
 			}
 		};
 		return lep;
@@ -217,13 +209,15 @@ public class Artifact2EditPart extends ShapeNodeEditPart {
 		 */
 		public ArtifactFigure() {
 
-			GridLayout layoutThis = new GridLayout();
-			layoutThis.numColumns = 1;
-			layoutThis.makeColumnsEqualWidth = true;
-			layoutThis.horizontalSpacing = 0;
-			layoutThis.verticalSpacing = 0;
-			layoutThis.marginWidth = 0;
-			layoutThis.marginHeight = 0;
+			ToolbarLayout layoutThis = new ToolbarLayout();
+			layoutThis.setStretchMinorAxis(true);
+			layoutThis.setMinorAlignment(ToolbarLayout.ALIGN_CENTER
+
+			);
+
+			layoutThis.setSpacing(0);
+			layoutThis.setVertical(true);
+
 			this.setLayoutManager(layoutThis);
 
 			this.setFill(true);
@@ -243,15 +237,7 @@ public class Artifact2EditPart extends ShapeNodeEditPart {
 			WrapLabel artifactFigure_fixed_artifact0 = new WrapLabel();
 			artifactFigure_fixed_artifact0.setText("\u00ABartifact\u00BB");
 
-			GridLayoutData constraintArtifactFigure_fixed_artifact0 = new GridLayoutData();
-			constraintArtifactFigure_fixed_artifact0.verticalAlignment = GridLayoutData.CENTER;
-			constraintArtifactFigure_fixed_artifact0.horizontalAlignment = GridLayoutData.CENTER;
-			constraintArtifactFigure_fixed_artifact0.horizontalIndent = 0;
-			constraintArtifactFigure_fixed_artifact0.horizontalSpan = 1;
-			constraintArtifactFigure_fixed_artifact0.verticalSpan = 1;
-			constraintArtifactFigure_fixed_artifact0.grabExcessHorizontalSpace = true;
-			constraintArtifactFigure_fixed_artifact0.grabExcessVerticalSpace = false;
-			this.add(artifactFigure_fixed_artifact0, constraintArtifactFigure_fixed_artifact0);
+			this.add(artifactFigure_fixed_artifact0);
 
 			RectangleFigure artifactFigure_NameContainer0 = new RectangleFigure();
 			artifactFigure_NameContainer0.setFill(false);
@@ -261,15 +247,7 @@ public class Artifact2EditPart extends ShapeNodeEditPart {
 			artifactFigure_NameContainer0.setLineWidth(1);
 			artifactFigure_NameContainer0.setLineStyle(Graphics.LINE_SOLID);
 
-			GridLayoutData constraintArtifactFigure_NameContainer0 = new GridLayoutData();
-			constraintArtifactFigure_NameContainer0.verticalAlignment = GridLayoutData.FILL;
-			constraintArtifactFigure_NameContainer0.horizontalAlignment = GridLayoutData.FILL;
-			constraintArtifactFigure_NameContainer0.horizontalIndent = 0;
-			constraintArtifactFigure_NameContainer0.horizontalSpan = 1;
-			constraintArtifactFigure_NameContainer0.verticalSpan = 1;
-			constraintArtifactFigure_NameContainer0.grabExcessHorizontalSpace = true;
-			constraintArtifactFigure_NameContainer0.grabExcessVerticalSpace = true;
-			this.add(artifactFigure_NameContainer0, constraintArtifactFigure_NameContainer0);
+			this.add(artifactFigure_NameContainer0);
 
 			CenterLayout layoutArtifactFigure_NameContainer0 = new CenterLayout();
 
