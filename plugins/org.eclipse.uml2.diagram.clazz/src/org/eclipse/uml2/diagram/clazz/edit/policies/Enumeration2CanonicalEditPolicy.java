@@ -19,6 +19,7 @@ import org.eclipse.uml2.uml.TemplateableElement;
 public class Enumeration2CanonicalEditPolicy extends CanonicalEditPolicy {
 
 	/**
+	 *  
 	 * @generated
 	 */
 	protected List getSemanticChildrenList() {

@@ -20,6 +20,7 @@ import org.eclipse.uml2.uml.DataType;
 public class EnumerationOperationsCanonicalEditPolicy extends CanonicalEditPolicy {
 
 	/**
+	 *  
 	 * @generated
 	 */
 	protected List getSemanticChildrenList() {

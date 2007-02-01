@@ -19,6 +19,7 @@ import org.eclipse.uml2.uml.Constraint;
 public class ConstraintCompartmentCanonicalEditPolicy extends CanonicalEditPolicy {
 
 	/**
+	 *  
 	 * @generated
 	 */
 	protected List getSemanticChildrenList() {

@@ -20,6 +20,7 @@ import org.eclipse.uml2.uml.DataType;
 public class PrimitiveTypeOperationsCanonicalEditPolicy extends CanonicalEditPolicy {
 
 	/**
+	 *  
 	 * @generated
 	 */
 	protected List getSemanticChildrenList() {

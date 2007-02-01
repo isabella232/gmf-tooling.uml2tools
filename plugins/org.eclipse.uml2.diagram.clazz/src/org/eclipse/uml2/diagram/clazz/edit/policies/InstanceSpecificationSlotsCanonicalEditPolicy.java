@@ -20,6 +20,7 @@ import org.eclipse.uml2.uml.InstanceSpecification;
 public class InstanceSpecificationSlotsCanonicalEditPolicy extends CanonicalEditPolicy {
 
 	/**
+	 *  
 	 * @generated
 	 */
 	protected List getSemanticChildrenList() {
