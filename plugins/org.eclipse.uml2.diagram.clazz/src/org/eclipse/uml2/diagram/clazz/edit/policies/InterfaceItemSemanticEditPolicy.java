@@ -18,7 +18,7 @@ import org.eclipse.uml2.diagram.clazz.edit.commands.DependencyTypeLinkCreateComm
 import org.eclipse.uml2.diagram.clazz.edit.commands.GeneralizationTypeLinkCreateCommand;
 import org.eclipse.uml2.diagram.clazz.edit.commands.InterfaceRealizationTypeLinkCreateCommand;
 import org.eclipse.uml2.diagram.clazz.edit.commands.PropertyTypeLinkCreateCommand;
-import org.eclipse.uml2.diagram.clazz.edit.commands.UsageTypeLinkCreateCommand;
+import org.eclipse.uml2.diagram.clazz.edit.commands.RealizationTypeLinkCreateCommand;
 
 import org.eclipse.uml2.diagram.clazz.providers.UMLElementTypes;
 
@@ -85,8 +85,8 @@ public class InterfaceItemSemanticEditPolicy extends UMLBaseItemSemanticEditPoli
 		if (UMLElementTypes.InterfaceRealization_4008 == req.getElementType()) {
 			return req.getTarget() == null ? null : getCreateCompleteIncomingInterfaceRealization4008Command(req);
 		}
-		if (UMLElementTypes.Usage_4009 == req.getElementType()) {
-			return req.getTarget() == null ? getCreateStartOutgoingUsage4009Command(req) : getCreateCompleteIncomingUsage4009Command(req);
+		if (UMLElementTypes.Realization_4010 == req.getElementType()) {
+			return req.getTarget() == null ? getCreateStartOutgoingRealization4010Command(req) : getCreateCompleteIncomingRealization4010Command(req);
 		}
 		return super.getCreateRelationshipCommand(req);
 	}
@@ -330,7 +330,7 @@ public class InterfaceItemSemanticEditPolicy extends UMLBaseItemSemanticEditPoli
 	/**
 	 * @generated
 	 */
-	protected Command getCreateStartOutgoingUsage4009Command(CreateRelationshipRequest req) {
+	protected Command getCreateStartOutgoingRealization4010Command(CreateRelationshipRequest req) {
 		EObject sourceEObject = req.getSource();
 		EObject targetEObject = req.getTarget();
 		if (false == sourceEObject instanceof NamedElement || (targetEObject != null && false == targetEObject instanceof NamedElement)) {
@@ -343,7 +343,7 @@ public class InterfaceItemSemanticEditPolicy extends UMLBaseItemSemanticEditPoli
 		if (container == null) {
 			return UnexecutableCommand.INSTANCE;
 		}
-		if (!UMLBaseItemSemanticEditPolicy.LinkConstraints.canCreateUsage_4009(container, source, target)) {
+		if (!UMLBaseItemSemanticEditPolicy.LinkConstraints.canCreateRealization_4010(container, source, target)) {
 			return UnexecutableCommand.INSTANCE;
 		}
 		return new Command() {
@@ -353,7 +353,7 @@ public class InterfaceItemSemanticEditPolicy extends UMLBaseItemSemanticEditPoli
 	/**
 	 * @generated
 	 */
-	protected Command getCreateCompleteIncomingUsage4009Command(CreateRelationshipRequest req) {
+	protected Command getCreateCompleteIncomingRealization4010Command(CreateRelationshipRequest req) {
 		EObject sourceEObject = req.getSource();
 		EObject targetEObject = req.getTarget();
 		if (false == sourceEObject instanceof NamedElement || false == targetEObject instanceof NamedElement) {
@@ -366,12 +366,12 @@ public class InterfaceItemSemanticEditPolicy extends UMLBaseItemSemanticEditPoli
 		if (container == null) {
 			return UnexecutableCommand.INSTANCE;
 		}
-		if (!UMLBaseItemSemanticEditPolicy.LinkConstraints.canCreateUsage_4009(container, source, target)) {
+		if (!UMLBaseItemSemanticEditPolicy.LinkConstraints.canCreateRealization_4010(container, source, target)) {
 			return UnexecutableCommand.INSTANCE;
 		}
 		if (req.getContainmentFeature() == null) {
 			req.setContainmentFeature(UMLPackage.eINSTANCE.getPackage_PackagedElement());
 		}
-		return getMSLWrapper(new UsageTypeLinkCreateCommand(req, container, source, target));
+		return getMSLWrapper(new RealizationTypeLinkCreateCommand(req, container, source, target));
 	}
 }

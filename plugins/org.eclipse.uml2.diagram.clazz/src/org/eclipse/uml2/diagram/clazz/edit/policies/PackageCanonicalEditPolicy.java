@@ -66,9 +66,9 @@ import org.eclipse.uml2.diagram.clazz.edit.parts.Property4EditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.Property5EditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.Property6EditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.PropertyEditPart;
+import org.eclipse.uml2.diagram.clazz.edit.parts.RealizationEditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.RedefinableTemplateSignatureEditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.SlotEditPart;
-import org.eclipse.uml2.diagram.clazz.edit.parts.UsageEditPart;
 import org.eclipse.uml2.diagram.clazz.part.UMLVisualIDRegistry;
 import org.eclipse.uml2.diagram.clazz.providers.UMLElementTypes;
 import org.eclipse.uml2.uml.Association;
@@ -374,7 +374,7 @@ public class PackageCanonicalEditPolicy extends CanonicalConnectionEditPolicy {
 		storeTypeModelFacetLinks_Property_4003(container, containerMetaclass);
 		storeTypeModelFacetLinks_Association_4005(container, containerMetaclass);
 		storeTypeModelFacetLinks_InterfaceRealization_4008(container, containerMetaclass);
-		storeTypeModelFacetLinks_Usage_4009(container, containerMetaclass);
+		storeTypeModelFacetLinks_Realization_4010(container, containerMetaclass);
 	}
 
 	/**
@@ -492,12 +492,12 @@ public class PackageCanonicalEditPolicy extends CanonicalConnectionEditPolicy {
 	/**
 	 * @generated
 	 */
-	private void storeTypeModelFacetLinks_Usage_4009(EObject container, EClass containerMetaclass) {
+	private void storeTypeModelFacetLinks_Realization_4010(EObject container, EClass containerMetaclass) {
 		if (UMLPackage.eINSTANCE.getPackage().isSuperTypeOf(containerMetaclass)) {
 			for (Iterator values = ((Package) container).getPackagedElements().iterator(); values.hasNext();) {
 				EObject nextValue = ((EObject) values.next());
 				int linkVID = UMLVisualIDRegistry.getLinkWithClassVisualID(nextValue);
-				if (UsageEditPart.VISUAL_ID == linkVID) {
+				if (RealizationEditPart.VISUAL_ID == linkVID) {
 					Object structuralFeatureResult = ((Dependency) nextValue).getSuppliers();
 					List targets = (List) structuralFeatureResult;
 					structuralFeatureResult = targets.size() == 1 ? targets.get(0) : null;

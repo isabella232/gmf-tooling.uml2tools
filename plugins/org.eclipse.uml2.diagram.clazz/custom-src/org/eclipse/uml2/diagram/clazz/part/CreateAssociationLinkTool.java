@@ -13,18 +13,13 @@
 package org.eclipse.uml2.diagram.clazz.part;
 
 import java.util.Collections;
-import java.util.HashMap;
-import java.util.List;
+import java.util.Map;
 
-import org.eclipse.gef.Request;
-import org.eclipse.gef.requests.CreateRequest;
-import org.eclipse.gmf.runtime.diagram.ui.requests.CreateUnspecifiedTypeConnectionRequest;
-import org.eclipse.gmf.runtime.diagram.ui.tools.UnspecifiedTypeConnectionTool;
 import org.eclipse.uml2.diagram.clazz.edit.helpers.AssociationEditHelper;
 import org.eclipse.uml2.diagram.clazz.providers.UMLElementTypes;
 import org.eclipse.uml2.uml.AggregationKind;
 
-public class CreateAssociationLinkTool extends UnspecifiedTypeConnectionTool {
+public class CreateAssociationLinkTool extends CreateLinkToolBase {
 
 	private final AggregationKind myKind;
 
@@ -33,17 +28,9 @@ public class CreateAssociationLinkTool extends UnspecifiedTypeConnectionTool {
 		myKind = kind;
 	}
 	
-	protected Request createTargetRequest() {
-		CreateUnspecifiedTypeConnectionRequest request = (CreateUnspecifiedTypeConnectionRequest)super.createTargetRequest();
-		
-		//below is the only way to propagate extended data into IEditCommandRequest#parameters  
-		HashMap extendedData = new HashMap();
-		extendedData.putAll(request.getExtendedData());
-		extendedData.put(AssociationEditHelper.PARAMETER_CONFIGURE_AGGREGATION_KIND, myKind);
-		for (CreateRequest next : (List<CreateRequest>)request.getAllRequests()){
-			next.setExtendedData(extendedData);
-		}
-		return request;
+	@Override
+	protected Map<String, ?> createAdditionalExtendedData() {
+		return Collections.singletonMap(AssociationEditHelper.PARAMETER_CONFIGURE_AGGREGATION_KIND, myKind);
 	}
 	
 	public static class NONE extends CreateAssociationLinkTool {

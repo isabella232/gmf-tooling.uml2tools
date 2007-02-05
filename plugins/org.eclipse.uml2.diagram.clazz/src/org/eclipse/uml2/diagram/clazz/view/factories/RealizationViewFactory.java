@@ -15,17 +15,16 @@ import org.eclipse.gmf.runtime.diagram.ui.view.factories.ConnectionViewFactory;
 import org.eclipse.gmf.runtime.notation.NotationFactory;
 import org.eclipse.gmf.runtime.notation.View;
 
-import org.eclipse.uml2.diagram.clazz.edit.parts.Dependency2EditPart;
-import org.eclipse.uml2.diagram.clazz.edit.parts.DependencyName2EditPart;
-import org.eclipse.uml2.diagram.clazz.edit.parts.Dependency_typeEditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.PackageEditPart;
+import org.eclipse.uml2.diagram.clazz.edit.parts.RealizationEditPart;
+import org.eclipse.uml2.diagram.clazz.edit.parts.RealizationNameEditPart;
 
 import org.eclipse.uml2.diagram.clazz.part.UMLVisualIDRegistry;
 
 /**
  * @generated
  */
-public class Dependency2ViewFactory extends ConnectionViewFactory {
+public class RealizationViewFactory extends ConnectionViewFactory {
 
 	/**
 	 * @generated 
@@ -42,7 +41,7 @@ public class Dependency2ViewFactory extends ConnectionViewFactory {
 	 */
 	protected void decorateView(View containerView, View view, IAdaptable semanticAdapter, String semanticHint, int index, boolean persisted) {
 		if (semanticHint == null) {
-			semanticHint = UMLVisualIDRegistry.getType(Dependency2EditPart.VISUAL_ID);
+			semanticHint = UMLVisualIDRegistry.getType(RealizationEditPart.VISUAL_ID);
 			view.setType(semanticHint);
 		}
 		super.decorateView(containerView, view, semanticAdapter, semanticHint, index, persisted);
@@ -52,8 +51,7 @@ public class Dependency2ViewFactory extends ConnectionViewFactory {
 			shortcutAnnotation.getDetails().put("modelID", PackageEditPart.MODEL_ID); //$NON-NLS-1$
 			view.getEAnnotations().add(shortcutAnnotation);
 		}
-		getViewService().createNode(semanticAdapter, view, UMLVisualIDRegistry.getType(DependencyName2EditPart.VISUAL_ID), ViewUtil.APPEND, true, getPreferencesHint());
-		getViewService().createNode(semanticAdapter, view, UMLVisualIDRegistry.getType(Dependency_typeEditPart.VISUAL_ID), ViewUtil.APPEND, true, getPreferencesHint());
+		getViewService().createNode(semanticAdapter, view, UMLVisualIDRegistry.getType(RealizationNameEditPart.VISUAL_ID), ViewUtil.APPEND, true, getPreferencesHint());
 	}
 
 }

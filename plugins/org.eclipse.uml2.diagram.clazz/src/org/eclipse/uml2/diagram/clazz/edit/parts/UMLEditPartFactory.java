@@ -228,6 +228,9 @@ public class UMLEditPartFactory implements EditPartFactory {
 			case DependencyName2EditPart.VISUAL_ID:
 				return new DependencyName2EditPart(view);
 
+			case Dependency_typeEditPart.VISUAL_ID:
+				return new Dependency_typeEditPart(view);
+
 			case Property6EditPart.VISUAL_ID:
 				return new Property6EditPart(view);
 
@@ -270,8 +273,11 @@ public class UMLEditPartFactory implements EditPartFactory {
 			case InterfaceRealizationEditPart.VISUAL_ID:
 				return new InterfaceRealizationEditPart(view);
 
-			case UsageEditPart.VISUAL_ID:
-				return new UsageEditPart(view);
+			case RealizationEditPart.VISUAL_ID:
+				return new RealizationEditPart(view);
+
+			case RealizationNameEditPart.VISUAL_ID:
+				return new RealizationNameEditPart(view);
 			}
 		}
 		return createUnrecognizedEditPart(context, model);

@@ -25,6 +25,7 @@ import org.eclipse.uml2.diagram.clazz.edit.parts.DataTypeEditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.DataTypeNameEditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.DependencyName2EditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.DependencyNameEditPart;
+import org.eclipse.uml2.diagram.clazz.edit.parts.Dependency_typeEditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.EnumerationEditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.EnumerationLiteralEditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.EnumerationNameEditPart;
@@ -48,6 +49,7 @@ import org.eclipse.uml2.diagram.clazz.edit.parts.Property4EditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.Property5EditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.PropertyEditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.PropertyNameEditPart;
+import org.eclipse.uml2.diagram.clazz.edit.parts.RealizationNameEditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.SlotEditPart;
 import org.eclipse.uml2.diagram.clazz.expressions.UMLOCLFactory;
 import org.eclipse.uml2.diagram.clazz.parser.association.end.AssociationEndApplyStrategy;
@@ -55,6 +57,7 @@ import org.eclipse.uml2.diagram.clazz.parser.association.end.AssociationEndParse
 import org.eclipse.uml2.diagram.clazz.parser.association.end.AssociationEndToString;
 import org.eclipse.uml2.diagram.clazz.parser.association.name.AssociationNameParser;
 import org.eclipse.uml2.diagram.clazz.parser.association.name.AssociationNameToString;
+import org.eclipse.uml2.diagram.clazz.parser.dependency.DependencyTypeParser;
 import org.eclipse.uml2.diagram.clazz.parser.instance.InstanceSpecificationParser;
 import org.eclipse.uml2.diagram.clazz.parser.instance.InstanceSpecificationToString;
 import org.eclipse.uml2.diagram.clazz.parser.operation.OperationInplaceApplier;
@@ -864,6 +867,28 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 	/**
 	 * @generated
 	 */
+	private IParser dependencyDependencyName_6010Parser;
+
+	/**
+	 * @generated
+	 */
+	private IParser getDependencyDependencyName_6010Parser() {
+		if (dependencyDependencyName_6010Parser == null) {
+			dependencyDependencyName_6010Parser = createDependencyDependencyName_6010Parser();
+		}
+		return dependencyDependencyName_6010Parser;
+	}
+
+	/**
+	 * @generated NOT
+	 */
+	protected IParser createDependencyDependencyName_6010Parser() {
+		return new DependencyTypeParser();
+	}
+
+	/**
+	 * @generated
+	 */
 	private IParser propertyPropertyName_6002Parser;
 
 	/**
@@ -1067,6 +1092,29 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 	/**
 	 * @generated
 	 */
+	private IParser realizationRealizationName_6011Parser;
+
+	/**
+	 * @generated
+	 */
+	private IParser getRealizationRealizationName_6011Parser() {
+		if (realizationRealizationName_6011Parser == null) {
+			realizationRealizationName_6011Parser = createRealizationRealizationName_6011Parser();
+		}
+		return realizationRealizationName_6011Parser;
+	}
+
+	/**
+	 * @generated
+	 */
+	protected IParser createRealizationRealizationName_6011Parser() {
+		UMLStructuralFeatureParser parser = new UMLStructuralFeatureParser(UMLPackage.eINSTANCE.getNamedElement_Name());
+		return parser;
+	}
+
+	/**
+	 * @generated
+	 */
 	protected IParser getParser(int visualID) {
 		switch (visualID) {
 		case Package3EditPart.VISUAL_ID:
@@ -1135,6 +1183,8 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 			return getDependencyDependencyName_5011Parser();
 		case DependencyName2EditPart.VISUAL_ID:
 			return getDependencyDependencyName_6001Parser();
+		case Dependency_typeEditPart.VISUAL_ID:
+			return getDependencyDependencyName_6010Parser();
 		case PropertyNameEditPart.VISUAL_ID:
 			return getPropertyPropertyName_6002Parser();
 		case AssociationNameEditPart.VISUAL_ID:
@@ -1151,6 +1201,8 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 			return getAssociationAssociationName_6008Parser();
 		case AssociationName7EditPart.VISUAL_ID:
 			return getAssociationAssociationName_6009Parser();
+		case RealizationNameEditPart.VISUAL_ID:
+			return getRealizationRealizationName_6011Parser();
 		}
 		return null;
 	}

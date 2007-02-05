@@ -42,6 +42,7 @@ import org.eclipse.uml2.diagram.clazz.edit.parts.Dependency2EditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.DependencyEditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.DependencyName2EditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.DependencyNameEditPart;
+import org.eclipse.uml2.diagram.clazz.edit.parts.Dependency_typeEditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.Enumeration2EditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.EnumerationAttributesEditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.EnumerationEditPart;
@@ -84,10 +85,11 @@ import org.eclipse.uml2.diagram.clazz.edit.parts.Property5EditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.Property6EditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.PropertyEditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.PropertyNameEditPart;
+import org.eclipse.uml2.diagram.clazz.edit.parts.RealizationEditPart;
+import org.eclipse.uml2.diagram.clazz.edit.parts.RealizationNameEditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.RedefinableTemplateSignatureEditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.SlotEditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.TemplateSignatureNode_signatureEditPart;
-import org.eclipse.uml2.diagram.clazz.edit.parts.UsageEditPart;
 
 import org.eclipse.uml2.diagram.clazz.expressions.UMLAbstractExpression;
 import org.eclipse.uml2.diagram.clazz.expressions.UMLOCLFactory;
@@ -110,10 +112,10 @@ import org.eclipse.uml2.uml.Package;
 import org.eclipse.uml2.uml.Port;
 import org.eclipse.uml2.uml.PrimitiveType;
 import org.eclipse.uml2.uml.Property;
+import org.eclipse.uml2.uml.Realization;
 import org.eclipse.uml2.uml.RedefinableTemplateSignature;
 import org.eclipse.uml2.uml.Slot;
 import org.eclipse.uml2.uml.UMLPackage;
-import org.eclipse.uml2.uml.Usage;
 
 /**
  * This registry is used to determine which type of visual object should be
@@ -212,8 +214,8 @@ public class UMLVisualIDRegistry {
 	}
 
 	/**
-	 * @generated
 
+	 * @generated
 	 */
 	public static int getNodeVisualID(View containerView, EObject domainElement, EClass domainElementMetaclass, String semanticHint) {
 		String containerModelID = getModelID(containerView);
@@ -588,6 +590,9 @@ public class UMLVisualIDRegistry {
 			if (DependencyName2EditPart.VISUAL_ID == nodeVisualID) {
 				return DependencyName2EditPart.VISUAL_ID;
 			}
+			if (Dependency_typeEditPart.VISUAL_ID == nodeVisualID) {
+				return Dependency_typeEditPart.VISUAL_ID;
+			}
 			return getUnrecognizedDependency_4002LinkLabelID(semanticHint);
 		case Property6EditPart.VISUAL_ID:
 			if (PropertyNameEditPart.VISUAL_ID == nodeVisualID) {
@@ -617,6 +622,11 @@ public class UMLVisualIDRegistry {
 				return AssociationName7EditPart.VISUAL_ID;
 			}
 			return getUnrecognizedAssociation_4005LinkLabelID(semanticHint);
+		case RealizationEditPart.VISUAL_ID:
+			if (RealizationNameEditPart.VISUAL_ID == nodeVisualID) {
+				return RealizationNameEditPart.VISUAL_ID;
+			}
+			return getUnrecognizedRealization_4010LinkLabelID(semanticHint);
 		}
 		return -1;
 	}
@@ -647,8 +657,8 @@ public class UMLVisualIDRegistry {
 		} else if (UMLPackage.eINSTANCE.getInterfaceRealization().isSuperTypeOf(domainElementMetaclass)
 				&& (domainElement == null || isLinkWithClassInterfaceRealization_4008((InterfaceRealization) domainElement))) {
 			return InterfaceRealizationEditPart.VISUAL_ID;
-		} else if (UMLPackage.eINSTANCE.getUsage().isSuperTypeOf(domainElementMetaclass) && (domainElement == null || isLinkWithClassUsage_4009((Usage) domainElement))) {
-			return UsageEditPart.VISUAL_ID;
+		} else if (UMLPackage.eINSTANCE.getRealization().isSuperTypeOf(domainElementMetaclass) && (domainElement == null || isLinkWithClassRealization_4010((Realization) domainElement))) {
+			return RealizationEditPart.VISUAL_ID;
 		} else {
 			return getUnrecognizedLinkWithClassID(domainElement);
 		}
@@ -1560,6 +1570,16 @@ public class UMLVisualIDRegistry {
 	 *
 	 * @generated
 	 */
+	private static int getUnrecognizedRealization_4010LinkLabelID(String semanticHint) {
+		return -1;
+	}
+
+	/**
+	 * User can change implementation of this method to handle some specific
+	 * situations not covered by default logic.
+	 *
+	 * @generated
+	 */
 	private static int getUnrecognizedLinkWithClassID(EObject domainElement) {
 		return -1;
 	}
@@ -1620,8 +1640,8 @@ public class UMLVisualIDRegistry {
 	 *
 	 * @generated
 	 */
-	private static boolean isLinkWithClassUsage_4009(Usage element) {
-		return Usage_4009.matches(element);
+	private static boolean isLinkWithClassRealization_4010(Realization element) {
+		return Realization_4010.matches(element);
 	}
 
 	/**
@@ -1651,15 +1671,17 @@ public class UMLVisualIDRegistry {
 	/**
 	 * @generated
 	 */
-	private static final Matcher Dependency_4002 = new Matcher(UMLOCLFactory.getExpression("self.oclIsTypeOf(uml::Dependency) and self.supplier->size() = 1 and self.client->size() = 1", //$NON-NLS-1$
-			UMLPackage.eINSTANCE.getDependency()));
+	private static final Matcher Dependency_4002 = new Matcher(
+			UMLOCLFactory
+					.getExpression(
+							"(self.oclIsTypeOf(uml::Dependency) or self.oclIsTypeOf(uml::Abstraction) or self.oclIsTypeOf(uml::Substitution) or self.oclIsTypeOf(uml::Usage)) and self.supplier->size() = 1 and self.client->size() = 1", //$NON-NLS-1$
+							UMLPackage.eINSTANCE.getDependency()));
 
 	/**
 	 * @generated
 	 */
-	private static final Matcher Usage_4009 = new Matcher(UMLOCLFactory.getExpression(
-			"self.supplier->size() = 1 and self.client->size() = 1 and self.client->forAll(e:NamedElement | e.oclIsKindOf(uml::Classifier))", //$NON-NLS-1$
-			UMLPackage.eINSTANCE.getUsage()));
+	private static final Matcher Realization_4010 = new Matcher(UMLOCLFactory.getExpression("self.oclIsTypeOf(uml::Realization)", //$NON-NLS-1$
+			UMLPackage.eINSTANCE.getRealization()));
 
 	/**
 	 * @generated	

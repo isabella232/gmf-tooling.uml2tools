@@ -2,23 +2,20 @@ package org.eclipse.uml2.diagram.clazz.edit.commands;
 
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
-import org.eclipse.emf.ecore.EReference;
 
-import org.eclipse.gmf.runtime.emf.core.util.EMFCoreUtil;
 import org.eclipse.gmf.runtime.emf.type.core.commands.CreateRelationshipCommand;
 
 import org.eclipse.gmf.runtime.emf.type.core.requests.CreateRelationshipRequest;
 
-import org.eclipse.uml2.diagram.clazz.edit.helpers.DependencyEditHelper;
-import org.eclipse.uml2.uml.Dependency;
 import org.eclipse.uml2.uml.NamedElement;
 import org.eclipse.uml2.uml.Package;
+import org.eclipse.uml2.uml.Realization;
 import org.eclipse.uml2.uml.UMLPackage;
 
 /**
  * @generated
  */
-public class DependencyTypeLinkCreateCommand extends CreateRelationshipCommand {
+public class RealizationTypeLinkCreateCommand extends CreateRelationshipCommand {
 
 	/**
 	 * @generated
@@ -38,7 +35,7 @@ public class DependencyTypeLinkCreateCommand extends CreateRelationshipCommand {
 	/**
 	 * @generated
 	 */
-	public DependencyTypeLinkCreateCommand(CreateRelationshipRequest req, Package container, NamedElement source, NamedElement target) {
+	public RealizationTypeLinkCreateCommand(CreateRelationshipRequest req, Package container, NamedElement source, NamedElement target) {
 		super(req);
 		super.setElementToEdit(container);
 		myContainer = container;
@@ -82,21 +79,10 @@ public class DependencyTypeLinkCreateCommand extends CreateRelationshipCommand {
 	}
 
 	/**
-	 * @generated NOT
+	 * @generated
 	 */
 	protected EObject doDefaultElementCreation() {
-		Dependency newElement;
-		EClass eClass = (EClass) getCreateRequest().getParameter(DependencyEditHelper.PARAMETER_DEPENDENCY_TYPE);
-		if (eClass == null) {
-			newElement = (Dependency)super.doDefaultElementCreation();
-		} else {
-			EReference containment = getContainmentFeature();
-			EObject element = getElementToEdit();
-			if (containment == null || element == null) {
-				return null;
-			}
-			newElement = (Dependency) EMFCoreUtil.create(element, containment, eClass);
-		}
+		Realization newElement = (Realization) super.doDefaultElementCreation();
 		if (newElement != null) {
 			newElement.getSuppliers().add(myTarget);
 			newElement.getClients().add(mySource);

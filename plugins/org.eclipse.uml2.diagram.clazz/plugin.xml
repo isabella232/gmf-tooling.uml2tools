@@ -4,6 +4,49 @@
 <plugin>
 
 <!-- gmf generator persistent region begin -->
+   <extension point="org.eclipse.gmf.runtime.common.ui.services.action.contributionItemProviders">
+      <?gmfgen generated="false"?>
+      <contributionItemProvider
+            checkPluginLoaded="true"
+            class="org.eclipse.uml2.diagram.clazz.action.UMLContributionItemProvider">
+         <Priority name="Medium"/>
+		 <popupContribution
+               class="org.eclipse.gmf.runtime.diagram.ui.providers.DiagramContextMenuProvider">
+			 <popupMenuGroup
+                  id="UMLGroup"
+                  path="/propertiesGroup">
+             </popupMenuGroup>
+             <popupMenu
+                   id="DependencyTypeMenu"
+                   path="/UMLGroup">
+             </popupMenu>           
+             <popupMenuGroup
+                   id="DependencyTypeGroup"
+                   path="/DependencyTypeMenu/">
+             </popupMenuGroup>            
+             <popupAction
+                  path="/DependencyTypeMenu/DependencyTypeGroup"
+                  id="change_dependency_type_abstraction">
+             </popupAction>            
+             <popupAction
+                  path="/DependencyTypeMenu/DependencyTypeGroup"
+                  id="change_dependency_type_dependency">
+             </popupAction>            
+             <popupAction
+                  path="/DependencyTypeMenu/DependencyTypeGroup"
+                  id="change_dependency_type_usage">
+             </popupAction>            
+             <popupAction
+                  path="/DependencyTypeMenu/DependencyTypeGroup"
+                  id="change_dependency_type_substitution">
+             </popupAction>
+             <popupStructuredContributionCriteria
+                   objectClass="org.eclipse.uml2.diagram.clazz.edit.parts.Dependency2EditPart"
+                   objectCount="1">
+             </popupStructuredContributionCriteria>
+		 </popupContribution>
+      </contributionItemProvider>
+   </extension>
 
 <!-- gmf generator persistent region end -->
 
@@ -285,6 +328,11 @@
             <popupPredefinedItem id="deleteFromModelAction" remove="true"/>
          </popupContribution>
          <popupContribution class="org.eclipse.gmf.runtime.diagram.ui.providers.DiagramContextMenuProvider">
+            <popupStructuredContributionCriteria objectClass="org.eclipse.uml2.diagram.clazz.edit.parts.Dependency_typeEditPart"/>
+            <popupPredefinedItem id="deleteFromDiagramAction" remove="true"/>
+            <popupPredefinedItem id="deleteFromModelAction" remove="true"/>
+         </popupContribution>
+         <popupContribution class="org.eclipse.gmf.runtime.diagram.ui.providers.DiagramContextMenuProvider">
             <popupStructuredContributionCriteria objectClass="org.eclipse.uml2.diagram.clazz.edit.parts.Property6EditPart"/>
             <popupPredefinedItem id="deleteFromDiagramAction" remove="true"/>
          </popupContribution>
@@ -352,8 +400,13 @@
             <popupPredefinedItem id="deleteFromDiagramAction" remove="true"/>
          </popupContribution>
          <popupContribution class="org.eclipse.gmf.runtime.diagram.ui.providers.DiagramContextMenuProvider">
-            <popupStructuredContributionCriteria objectClass="org.eclipse.uml2.diagram.clazz.edit.parts.UsageEditPart"/>
+            <popupStructuredContributionCriteria objectClass="org.eclipse.uml2.diagram.clazz.edit.parts.RealizationEditPart"/>
             <popupPredefinedItem id="deleteFromDiagramAction" remove="true"/>
+         </popupContribution>
+         <popupContribution class="org.eclipse.gmf.runtime.diagram.ui.providers.DiagramContextMenuProvider">
+            <popupStructuredContributionCriteria objectClass="org.eclipse.uml2.diagram.clazz.edit.parts.RealizationNameEditPart"/>
+            <popupPredefinedItem id="deleteFromDiagramAction" remove="true"/>
+            <popupPredefinedItem id="deleteFromModelAction" remove="true"/>
          </popupContribution>
       </contributionItemProvider>
    </extension>
@@ -904,12 +957,12 @@
 
       <metamodel nsURI="http://www.eclipse.org/uml2/2.0.0/UML">
          <metamodelType
-               id="org.eclipse.uml2.diagram.clazz.Usage_4009"
-               name="Usage"
+               id="org.eclipse.uml2.diagram.clazz.Realization_4010"
+               name="Realization"
                kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
-               eclass="Usage"
-               edithelper="org.eclipse.uml2.diagram.clazz.edit.helpers.UsageEditHelper">
-            <param name="semanticHint" value="4009"/>
+               eclass="Realization"
+               edithelper="org.eclipse.uml2.diagram.clazz.edit.helpers.RealizationEditHelper">
+            <param name="semanticHint" value="4010"/>
          </metamodelType>
       </metamodel>
    </extension>
@@ -966,7 +1019,7 @@
          <elementType ref="org.eclipse.uml2.diagram.clazz.DependencySupplier_4006"/>
          <elementType ref="org.eclipse.uml2.diagram.clazz.DependencyClient_4007"/>
          <elementType ref="org.eclipse.uml2.diagram.clazz.InterfaceRealization_4008"/>
-         <elementType ref="org.eclipse.uml2.diagram.clazz.Usage_4009"/>
+         <elementType ref="org.eclipse.uml2.diagram.clazz.Realization_4010"/>
          <advice ref="org.eclipse.gmf.runtime.diagram.core.advice.notationDepdendents"/>
       </binding>
    </extension>

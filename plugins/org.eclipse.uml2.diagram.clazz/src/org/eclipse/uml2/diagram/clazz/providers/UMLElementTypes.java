@@ -229,7 +229,7 @@ public class UMLElementTypes extends ElementInitializers {
 
 			elements.put(InterfaceRealization_4008, UMLPackage.eINSTANCE.getInterfaceRealization());
 
-			elements.put(Usage_4009, UMLPackage.eINSTANCE.getUsage());
+			elements.put(Realization_4010, UMLPackage.eINSTANCE.getRealization());
 		}
 		return (ENamedElement) elements.get(type);
 	}
@@ -447,7 +447,7 @@ public class UMLElementTypes extends ElementInitializers {
 	/**
 	 * @generated
 	 */
-	public static final IElementType Usage_4009 = getElementType("org.eclipse.uml2.diagram.clazz.Usage_4009"); //$NON-NLS-1$
+	public static final IElementType Realization_4010 = getElementType("org.eclipse.uml2.diagram.clazz.Realization_4010"); //$NON-NLS-1$
 
 	/**
 	 * @generated
@@ -509,7 +509,7 @@ public class UMLElementTypes extends ElementInitializers {
 			KNOWN_ELEMENT_TYPES.add(DependencySupplier_4006);
 			KNOWN_ELEMENT_TYPES.add(DependencyClient_4007);
 			KNOWN_ELEMENT_TYPES.add(InterfaceRealization_4008);
-			KNOWN_ELEMENT_TYPES.add(Usage_4009);
+			KNOWN_ELEMENT_TYPES.add(Realization_4010);
 		}
 		return KNOWN_ELEMENT_TYPES.contains(elementType);
 	}

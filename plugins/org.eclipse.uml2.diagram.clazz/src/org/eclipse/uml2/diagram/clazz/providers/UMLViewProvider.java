@@ -39,6 +39,7 @@ import org.eclipse.uml2.diagram.clazz.edit.parts.Dependency2EditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.DependencyEditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.DependencyName2EditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.DependencyNameEditPart;
+import org.eclipse.uml2.diagram.clazz.edit.parts.Dependency_typeEditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.Enumeration2EditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.EnumerationAttributesEditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.EnumerationEditPart;
@@ -81,10 +82,11 @@ import org.eclipse.uml2.diagram.clazz.edit.parts.Property5EditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.Property6EditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.PropertyEditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.PropertyNameEditPart;
+import org.eclipse.uml2.diagram.clazz.edit.parts.RealizationEditPart;
+import org.eclipse.uml2.diagram.clazz.edit.parts.RealizationNameEditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.RedefinableTemplateSignatureEditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.SlotEditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.TemplateSignatureNode_signatureEditPart;
-import org.eclipse.uml2.diagram.clazz.edit.parts.UsageEditPart;
 
 import org.eclipse.uml2.diagram.clazz.part.UMLVisualIDRegistry;
 
@@ -124,6 +126,7 @@ import org.eclipse.uml2.diagram.clazz.view.factories.DependencyName2ViewFactory;
 import org.eclipse.uml2.diagram.clazz.view.factories.DependencyNameViewFactory;
 import org.eclipse.uml2.diagram.clazz.view.factories.DependencySupplierViewFactory;
 import org.eclipse.uml2.diagram.clazz.view.factories.DependencyViewFactory;
+import org.eclipse.uml2.diagram.clazz.view.factories.Dependency_typeViewFactory;
 import org.eclipse.uml2.diagram.clazz.view.factories.Enumeration2ViewFactory;
 import org.eclipse.uml2.diagram.clazz.view.factories.EnumerationAttributesViewFactory;
 import org.eclipse.uml2.diagram.clazz.view.factories.EnumerationLiteralViewFactory;
@@ -166,10 +169,11 @@ import org.eclipse.uml2.diagram.clazz.view.factories.Property5ViewFactory;
 import org.eclipse.uml2.diagram.clazz.view.factories.Property6ViewFactory;
 import org.eclipse.uml2.diagram.clazz.view.factories.PropertyNameViewFactory;
 import org.eclipse.uml2.diagram.clazz.view.factories.PropertyViewFactory;
+import org.eclipse.uml2.diagram.clazz.view.factories.RealizationNameViewFactory;
+import org.eclipse.uml2.diagram.clazz.view.factories.RealizationViewFactory;
 import org.eclipse.uml2.diagram.clazz.view.factories.RedefinableTemplateSignatureViewFactory;
 import org.eclipse.uml2.diagram.clazz.view.factories.SlotViewFactory;
 import org.eclipse.uml2.diagram.clazz.view.factories.TemplateSignatureNode_signatureViewFactory;
-import org.eclipse.uml2.diagram.clazz.view.factories.UsageViewFactory;
 
 /**
  * @generated
@@ -330,6 +334,8 @@ public class UMLViewProvider extends AbstractViewProvider {
 			return InstanceSpecificationSlotsViewFactory.class;
 		case DependencyName2EditPart.VISUAL_ID:
 			return DependencyName2ViewFactory.class;
+		case Dependency_typeEditPart.VISUAL_ID:
+			return Dependency_typeViewFactory.class;
 		case PropertyNameEditPart.VISUAL_ID:
 			return PropertyNameViewFactory.class;
 		case AssociationNameEditPart.VISUAL_ID:
@@ -346,6 +352,8 @@ public class UMLViewProvider extends AbstractViewProvider {
 			return AssociationName6ViewFactory.class;
 		case AssociationName7EditPart.VISUAL_ID:
 			return AssociationName7ViewFactory.class;
+		case RealizationNameEditPart.VISUAL_ID:
+			return RealizationNameViewFactory.class;
 		}
 		return null;
 	}
@@ -384,8 +392,8 @@ public class UMLViewProvider extends AbstractViewProvider {
 			return AssociationViewFactory.class;
 		case InterfaceRealizationEditPart.VISUAL_ID:
 			return InterfaceRealizationViewFactory.class;
-		case UsageEditPart.VISUAL_ID:
-			return UsageViewFactory.class;
+		case RealizationEditPart.VISUAL_ID:
+			return RealizationViewFactory.class;
 		}
 		return getUnrecognizedConnectorViewClass(semanticAdapter, containerView, semanticHint);
 	}

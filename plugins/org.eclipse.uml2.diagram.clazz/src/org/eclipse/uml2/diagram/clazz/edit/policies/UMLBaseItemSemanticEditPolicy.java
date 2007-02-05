@@ -30,16 +30,7 @@ import org.eclipse.gmf.runtime.emf.type.core.requests.ReorientReferenceRelations
 import org.eclipse.gmf.runtime.emf.type.core.requests.ReorientRelationshipRequest;
 import org.eclipse.gmf.runtime.emf.type.core.requests.SetRequest;
 import org.eclipse.gmf.runtime.notation.View;
-import java.util.Collections;
-import java.util.HashMap;
-import java.util.Map;
-
 import org.eclipse.uml2.diagram.clazz.edit.helpers.UMLBaseEditHelper;
-
-import org.eclipse.uml2.diagram.clazz.expressions.UMLAbstractExpression;
-import org.eclipse.uml2.diagram.clazz.expressions.UMLOCLFactory;
-
-import org.eclipse.uml2.diagram.clazz.part.UMLDiagramEditorPlugin;
 
 import org.eclipse.uml2.uml.Association;
 import org.eclipse.uml2.uml.BehavioredClassifier;
@@ -51,7 +42,6 @@ import org.eclipse.uml2.uml.Interface;
 import org.eclipse.uml2.uml.NamedElement;
 import org.eclipse.uml2.uml.Package;
 import org.eclipse.uml2.uml.Type;
-import org.eclipse.uml2.uml.UMLPackage;
 
 /**
  * @generated
@@ -257,21 +247,6 @@ public class UMLBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 		/**
 		 * @generated 
 		 */
-		private static UMLAbstractExpression Usage_4009_SourceExpression;
-
-		/**
-		 * @generated 
-		 */
-		static {
-			Map env = new HashMap(3);
-			env.put("oppositeEnd", UMLPackage.eINSTANCE.getNamedElement()); //$NON-NLS-1$
-			Usage_4009_SourceExpression = UMLOCLFactory.getExpression("self.oclIsKindOf(uml::Classifier)", //$NON-NLS-1$
-					UMLPackage.eINSTANCE.getNamedElement(), env);
-		}
-
-		/**
-		 * @generated 
-		 */
 		public static boolean canCreateGeneralization_4001(Classifier source, Classifier target) {
 			return true;
 		}
@@ -343,28 +318,8 @@ public class UMLBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 		/**
 		 * @generated 
 		 */
-		public static boolean canCreateUsage_4009(Package container, NamedElement source, NamedElement target) {
-			if (!evaluate(Usage_4009_SourceExpression, source, target, false)) {
-				return false;
-			}
+		public static boolean canCreateRealization_4010(Package container, NamedElement source, NamedElement target) {
 			return true;
-		}
-
-		/**
-		 * @generated 
-		 */
-		private static boolean evaluate(UMLAbstractExpression constraint, Object sourceEnd, Object oppositeEnd, boolean clearEnv) {
-			if (sourceEnd == null) {
-				return true;
-			}
-			Map evalEnv = Collections.singletonMap(OPPOSITE_END_VAR, oppositeEnd);
-			try {
-				Object val = constraint.evaluate(sourceEnd, evalEnv);
-				return (val instanceof Boolean) ? ((Boolean) val).booleanValue() : false;
-			} catch (Exception e) {
-				UMLDiagramEditorPlugin.getInstance().logError("Link constraint evaluation error", e); //$NON-NLS-1$
-				return false;
-			}
 		}
 	}
 
