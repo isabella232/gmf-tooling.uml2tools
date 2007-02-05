@@ -865,21 +865,6 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 	}
 
 	/**
-	 * @generated
-	 */
-	private IParser dependencyDependencyName_6010Parser;
-
-	/**
-	 * @generated
-	 */
-	private IParser getDependencyDependencyName_6010Parser() {
-		if (dependencyDependencyName_6010Parser == null) {
-			dependencyDependencyName_6010Parser = createDependencyDependencyName_6010Parser();
-		}
-		return dependencyDependencyName_6010Parser;
-	}
-
-	/**
 	 * @generated NOT
 	 */
 	protected IParser createDependencyDependencyName_6010Parser() {
@@ -1183,8 +1168,6 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 			return getDependencyDependencyName_5011Parser();
 		case DependencyName2EditPart.VISUAL_ID:
 			return getDependencyDependencyName_6001Parser();
-		case Dependency_typeEditPart.VISUAL_ID:
-			return getDependencyDependencyName_6010Parser();
 		case PropertyNameEditPart.VISUAL_ID:
 			return getPropertyPropertyName_6002Parser();
 		case AssociationNameEditPart.VISUAL_ID:

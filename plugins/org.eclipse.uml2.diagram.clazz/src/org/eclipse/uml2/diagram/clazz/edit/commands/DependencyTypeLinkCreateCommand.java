@@ -88,7 +88,7 @@ public class DependencyTypeLinkCreateCommand extends CreateRelationshipCommand {
 		Dependency newElement;
 		EClass eClass = (EClass) getCreateRequest().getParameter(DependencyEditHelper.PARAMETER_DEPENDENCY_TYPE);
 		if (eClass == null) {
-			newElement = (Dependency)super.doDefaultElementCreation();
+			newElement = (Dependency) super.doDefaultElementCreation();
 		} else {
 			EReference containment = getContainmentFeature();
 			EObject element = getElementToEdit();
