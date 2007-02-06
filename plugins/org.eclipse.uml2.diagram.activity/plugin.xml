@@ -3,91 +3,48 @@
 
 <plugin>
 
-<!-- gmf generator persistent region begin -->
-   <extension point="org.eclipse.ui.popupMenus">
-      <?gmfgen generated="false"?>
-      <objectContribution
-            adaptable="false"
-            id="org.eclipse.uml2.diagram.activity.edit.parts.JoinNodeEditPartID"
-            objectClass="org.eclipse.uml2.diagram.activity.edit.parts.JoinNodeEditPart">
-         <menu 
-            id="RotateMenu" 
-            label="Rotate" 
-            path="additions"> 
-         </menu> 
-         <action
-               class="org.eclipse.uml2.diagram.common.actions.RotateAction"
-               definitionId="org.eclipse.uml2.diagram.common.actions.RotateAction.id"
-               enablesFor="1"
-               id="org.eclipse.uml2.diagram.common.actions.RotateActionID"
-               label="Rotate"
-               menubarPath="RotateMenu">
-         </action>
-      </objectContribution>                    
-
-      <objectContribution
-            adaptable="false"
-            id="org.eclipse.uml2.diagram.activity.edit.parts.JoinNodeEditPartID2"
-            objectClass="org.eclipse.uml2.diagram.activity.edit.parts.JoinNode2EditPart">
-         <menu 
-            id="RotateMenu" 
-            label="Rotate" 
-            path="additions"> 
-         </menu> 
-         <action
-               class="org.eclipse.uml2.diagram.common.actions.RotateAction"
-               definitionId="org.eclipse.uml2.diagram.common.actions.RotateAction.id"
-               enablesFor="1"
-               id="org.eclipse.uml2.diagram.common.actions.RotateActionID"
-               label="Rotate"
-               menubarPath="RotateMenu">
-         </action>
-      </objectContribution>            
-      
-      <objectContribution
-            adaptable="false"
-            id="org.eclipse.uml2.diagram.activity.edit.parts.JoinNodeEditPartID"
-            objectClass="org.eclipse.uml2.diagram.activity.edit.parts.ForkNodeEditPart">
-         <menu 
-            id="RotateMenu" 
-            label="Rotate" 
-            path="additions"> 
-         </menu> 
-         <action
-               class="org.eclipse.uml2.diagram.common.actions.RotateAction"
-               definitionId="org.eclipse.uml2.diagram.common.actions.RotateAction.id"
-               enablesFor="1"
-               id="org.eclipse.uml2.diagram.common.actions.RotateActionID"
-               label="Rotate"
-               menubarPath="RotateMenu">
-         </action>
-      </objectContribution>                    
-
-      <objectContribution
-            adaptable="false"
-            id="org.eclipse.uml2.diagram.activity.edit.parts.JoinNodeEditPartID2"
-            objectClass="org.eclipse.uml2.diagram.activity.edit.parts.ForkNode2EditPart">
-         <menu 
-            id="RotateMenu" 
-            label="Rotate" 
-            path="additions"> 
-         </menu> 
-         <action
-               class="org.eclipse.uml2.diagram.common.actions.RotateAction"
-               definitionId="org.eclipse.uml2.diagram.common.actions.RotateAction.id"
-               enablesFor="1"
-               id="org.eclipse.uml2.diagram.common.actions.RotateActionID"
-               label="Rotate"
-               menubarPath="RotateMenu">
-         </action>
-      </objectContribution>            
-   </extension>
-
-<!-- gmf generator persistent region end -->
-
    <extension point="org.eclipse.core.runtime.preferences">
       <?gmfgen generated="true"?>
       <initializer class="org.eclipse.uml2.diagram.activity.preferences.DiagramPreferenceInitializer"/>
+   </extension>
+
+   <extension point="org.eclipse.ui.preferencePages">
+      <?gmfgen generated="true"?>
+      <page
+            name="%preferences.general"
+            class="org.eclipse.uml2.diagram.activity.preferences.DiagramGeneralPreferencePage"
+            id="org.eclipse.uml2.diagram.activity.general">
+      </page>
+      <page
+            name="%preferences.appearance"
+            category="org.eclipse.uml2.diagram.activity.general"
+            class="org.eclipse.uml2.diagram.activity.preferences.DiagramAppearancePreferencePage"
+            id="org.eclipse.uml2.diagram.activity.appearance">
+      </page>     
+      <page
+            name="%preferences.connections"
+            category="org.eclipse.uml2.diagram.activity.general"
+            class="org.eclipse.uml2.diagram.activity.preferences.DiagramConnectionsPreferencePage"
+            id="org.eclipse.uml2.diagram.activity.connections">
+      </page>    
+      <page
+            name="%preferences.printing"
+            category="org.eclipse.uml2.diagram.activity.general"
+            class="org.eclipse.uml2.diagram.activity.preferences.DiagramPrintingPreferencePage"
+            id="org.eclipse.uml2.diagram.activity.printing">
+      </page>
+      <page
+            name="%preferences.rulersAndGrid"
+            category="org.eclipse.uml2.diagram.activity.general"
+            class="org.eclipse.uml2.diagram.activity.preferences.DiagramRulersAndGridPreferencePage"
+            id="org.eclipse.uml2.diagram.activity.rulersAndGrid">
+      </page>
+      <page
+            name="%preferences.pathmaps"
+            category="org.eclipse.uml2.diagram.activity.general"
+            class="org.eclipse.gmf.runtime.emf.ui.preferences.PathmapsPreferencePage"
+            id="org.eclipse.uml2.diagram.activity.pathmaps">
+      </page>
    </extension>
 
    <extension point="org.eclipse.team.core.fileTypes">
@@ -439,6 +396,14 @@
             <popupPredefinedItem id="deleteFromDiagramAction" remove="true"/>
          </popupContribution>
          <popupContribution class="org.eclipse.gmf.runtime.diagram.ui.providers.DiagramContextMenuProvider">
+            <popupStructuredContributionCriteria objectClass="org.eclipse.uml2.diagram.activity.edit.parts.OpaqueBehaviorEditPart"/>
+            <popupPredefinedItem id="deleteFromDiagramAction" remove="true"/>
+         </popupContribution>
+         <popupContribution class="org.eclipse.gmf.runtime.diagram.ui.providers.DiagramContextMenuProvider">
+            <popupStructuredContributionCriteria objectClass="org.eclipse.uml2.diagram.activity.edit.parts.OpaqueBehaviorNameEditPart"/>
+            <popupPredefinedItem id="deleteFromDiagramAction" remove="true"/>
+         </popupContribution>
+         <popupContribution class="org.eclipse.gmf.runtime.diagram.ui.providers.DiagramContextMenuProvider">
             <popupStructuredContributionCriteria objectClass="org.eclipse.uml2.diagram.activity.edit.parts.ControlFlowEditPart"/>
             <popupPredefinedItem id="deleteFromDiagramAction" remove="true"/>
          </popupContribution>
@@ -448,6 +413,11 @@
          </popupContribution>
          <popupContribution class="org.eclipse.gmf.runtime.diagram.ui.providers.DiagramContextMenuProvider">
             <popupStructuredContributionCriteria objectClass="org.eclipse.uml2.diagram.activity.edit.parts.ActionLocalPreconditionEditPart"/>
+            <popupAction path="/editGroup" id="deleteFromModelAction"/>
+            <popupPredefinedItem id="deleteFromDiagramAction" remove="true"/>
+         </popupContribution>
+         <popupContribution class="org.eclipse.gmf.runtime.diagram.ui.providers.DiagramContextMenuProvider">
+            <popupStructuredContributionCriteria objectClass="org.eclipse.uml2.diagram.activity.edit.parts.ObjectNodeSelectionEditPart"/>
             <popupAction path="/editGroup" id="deleteFromModelAction"/>
             <popupPredefinedItem id="deleteFromDiagramAction" remove="true"/>
          </popupContribution>
@@ -509,8 +479,6 @@
          <Priority name="Lowest"/>
       </editpartProvider>
    </extension>
-
-   
 
    <extension point="org.eclipse.gmf.runtime.emf.ui.modelingAssistantProviders">
       <?gmfgen generated="true"?>
@@ -1055,6 +1023,17 @@
 
       <metamodel nsURI="http://www.eclipse.org/uml2/2.0.0/UML">
          <metamodelType
+               id="org.eclipse.uml2.diagram.activity.OpaqueBehavior_2021"
+               name="OpaqueBehavior"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
+               eclass="OpaqueBehavior"
+               edithelper="org.eclipse.uml2.diagram.activity.edit.helpers.OpaqueBehaviorEditHelper">
+            <param name="semanticHint" value="2021"/>
+         </metamodelType>
+      </metamodel>
+
+      <metamodel nsURI="http://www.eclipse.org/uml2/2.0.0/UML">
+         <metamodelType
                id="org.eclipse.uml2.diagram.activity.ControlFlow_4001"
                name="ControlFlow"
                kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
@@ -1083,6 +1062,17 @@
                edithelperadvice="org.eclipse.uml2.diagram.activity.edit.helpers.ActionLocalPreconditionEditHelperAdvice">
             <specializes id="org.eclipse.gmf.runtime.emf.type.core.null"/>
             <param name="semanticHint" value="4003"/>
+         </specializationType>
+      </metamodel>
+
+      <metamodel nsURI="http://www.eclipse.org/uml2/2.0.0/UML">
+         <specializationType
+               id="org.eclipse.uml2.diagram.activity.ObjectNodeSelection_4004"
+               name="Undefined"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
+               edithelperadvice="org.eclipse.uml2.diagram.activity.edit.helpers.ObjectNodeSelectionEditHelperAdvice">
+            <specializes id="org.eclipse.gmf.runtime.emf.type.core.null"/>
+            <param name="semanticHint" value="4004"/>
          </specializationType>
       </metamodel>
    </extension>
@@ -1144,15 +1134,18 @@
          <elementType ref="org.eclipse.uml2.diagram.activity.StructuredActivityNode_2007"/>
          <elementType ref="org.eclipse.uml2.diagram.activity.Constraint_2019"/>
          <elementType ref="org.eclipse.uml2.diagram.activity.Constraint_2020"/>
+         <elementType ref="org.eclipse.uml2.diagram.activity.OpaqueBehavior_2021"/>
          <elementType ref="org.eclipse.uml2.diagram.activity.ControlFlow_4001"/>
          <elementType ref="org.eclipse.uml2.diagram.activity.ObjectFlow_4002"/>
          <elementType ref="org.eclipse.uml2.diagram.activity.ActionLocalPrecondition_4003"/>
+         <elementType ref="org.eclipse.uml2.diagram.activity.ObjectNodeSelection_4004"/>
          <advice ref="org.eclipse.gmf.runtime.diagram.core.advice.notationDepdendents"/>
       </binding>
    </extension>
 
 
    <extension point="org.eclipse.ui.navigator.viewer">
+      <?gmfgen generated="true"?>
       <viewerContentBinding viewerId="org.eclipse.ui.navigator.ProjectExplorer">
          <includes>
             <contentExtension pattern="org.eclipse.uml2.diagram.activity.resourceContent"/>
@@ -1167,6 +1160,7 @@
    </extension>
 
    <extension point="org.eclipse.ui.navigator.navigatorContent">
+      <?gmfgen generated="true"?>
       <navigatorContent 
             id="org.eclipse.uml2.diagram.activity.resourceContent" 
             name="%navigatorContentName" 
@@ -1215,6 +1209,7 @@
    </extension>
    
    <extension point="org.eclipse.ui.navigator.linkHelper">
+      <?gmfgen generated="true"?>
       <linkHelper
             id="org.eclipse.uml2.diagram.activity.navigatorLinkHelper"
             class="org.eclipse.uml2.diagram.activity.navigator.UMLNavigatorLinkHelper">
@@ -1228,6 +1223,7 @@
    </extension>
 
    <extension point="org.eclipse.ui.views.properties.tabbed.propertyContributor">
+      <?gmfgen generated="true"?>
       <propertyContributor contributorId="org.eclipse.uml2.diagram.activity"
             labelProvider="org.eclipse.uml2.diagram.activity.sheet.UMLSheetLabelProvider">
          <propertyCategory category="domain"/>
@@ -1237,6 +1233,7 @@
    </extension>
 
    <extension point="org.eclipse.ui.views.properties.tabbed.propertyTabs">
+      <?gmfgen generated="true"?>   
       <propertyTabs contributorId="org.eclipse.uml2.diagram.activity">
          <propertyTab
              category="visual"
@@ -1254,6 +1251,7 @@
    </extension>
 
    <extension point="org.eclipse.ui.views.properties.tabbed.propertySections">
+      <?gmfgen generated="true"?>   
       <propertySections contributorId="org.eclipse.uml2.diagram.activity">
 
          <propertySection id="property.section.ConnectorAppearancePropertySection" 
@@ -1286,43 +1284,5 @@
             <input type="org.eclipse.uml2.diagram.activity.navigator.UMLAbstractNavigatorItem"/>
          </propertySection>
       </propertySections>
-   </extension><extension point="org.eclipse.ui.preferencePages">
-      <?gmfgen generated="true"?>
-      <page
-            name="%preferences.general"
-            class="org.eclipse.uml2.diagram.activity.preferences.DiagramGeneralPreferencePage"
-            id="org.eclipse.uml2.diagram.activity.general">
-      </page>
-      <page
-            name="%preferences.appearance"
-            category="org.eclipse.uml2.diagram.activity.general"
-            class="org.eclipse.uml2.diagram.activity.preferences.DiagramAppearancePreferencePage"
-            id="org.eclipse.uml2.diagram.activity.appearance">
-      </page>     
-      <page
-            name="%preferences.connections"
-            category="org.eclipse.uml2.diagram.activity.general"
-            class="org.eclipse.uml2.diagram.activity.preferences.DiagramConnectionsPreferencePage"
-            id="org.eclipse.uml2.diagram.activity.connections">
-      </page>    
-      <page
-            name="%preferences.printing"
-            category="org.eclipse.uml2.diagram.activity.general"
-            class="org.eclipse.uml2.diagram.activity.preferences.DiagramPrintingPreferencePage"
-            id="org.eclipse.uml2.diagram.activity.printing">
-      </page>
-      <page
-            name="%preferences.rulersAndGrid"
-            category="org.eclipse.uml2.diagram.activity.general"
-            class="org.eclipse.uml2.diagram.activity.preferences.DiagramRulersAndGridPreferencePage"
-            id="org.eclipse.uml2.diagram.activity.rulersAndGrid">
-      </page>
-      <page
-            name="%preferences.pathmaps"
-            category="org.eclipse.uml2.diagram.activity.general"
-            class="org.eclipse.gmf.runtime.emf.ui.preferences.PathmapsPreferencePage"
-            id="org.eclipse.uml2.diagram.activity.pathmaps">
-      </page>
    </extension>
-
 </plugin>

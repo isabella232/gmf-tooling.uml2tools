@@ -89,8 +89,10 @@ import org.eclipse.uml2.diagram.activity.edit.parts.LiteralString2EditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.LiteralStringEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.MergeNodeEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.ObjectFlowEditPart;
+import org.eclipse.uml2.diagram.activity.edit.parts.ObjectNodeSelectionEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.OpaqueAction2EditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.OpaqueActionEditPart;
+import org.eclipse.uml2.diagram.activity.edit.parts.OpaqueBehaviorEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.OutputPin2EditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.OutputPin3EditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.OutputPinEditPart;
@@ -106,6 +108,8 @@ import org.eclipse.uml2.diagram.activity.providers.UMLElementTypes;
 import org.eclipse.uml2.uml.Action;
 import org.eclipse.uml2.uml.Activity;
 import org.eclipse.uml2.uml.ActivityEdge;
+import org.eclipse.uml2.uml.BehavioredClassifier;
+import org.eclipse.uml2.uml.ObjectNode;
 import org.eclipse.uml2.uml.UMLPackage;
 
 /**
@@ -200,6 +204,13 @@ public class ActivityCanonicalEditPolicy extends CanonicalConnectionEditPolicy {
 			nextValue = (EObject) values.next();
 			nodeVID = UMLVisualIDRegistry.getNodeVisualID(viewObject, nextValue);
 			if (StructuredActivityNodeEditPart.VISUAL_ID == nodeVID) {
+				result.add(nextValue);
+			}
+		}
+		for (Iterator values = ((BehavioredClassifier) modelObject).getOwnedBehaviors().iterator(); values.hasNext();) {
+			nextValue = (EObject) values.next();
+			nodeVID = UMLVisualIDRegistry.getNodeVisualID(viewObject, nextValue);
+			if (OpaqueBehaviorEditPart.VISUAL_ID == nodeVID) {
 				result.add(nextValue);
 			}
 		}
@@ -413,6 +424,7 @@ public class ActivityCanonicalEditPolicy extends CanonicalConnectionEditPolicy {
 		case StructuredActivityNodeEditPart.VISUAL_ID:
 		case ConstraintEditPart.VISUAL_ID:
 		case Constraint2EditPart.VISUAL_ID:
+		case OpaqueBehaviorEditPart.VISUAL_ID:
 		case OutputPinEditPart.VISUAL_ID:
 		case OutputPin2EditPart.VISUAL_ID:
 		case InputPinEditPart.VISUAL_ID:
@@ -576,6 +588,11 @@ public class ActivityCanonicalEditPolicy extends CanonicalConnectionEditPolicy {
 			}
 		}
 
+		if (UMLPackage.eINSTANCE.getObjectNode().isSuperTypeOf(containerMetaclass)) {
+			EObject nextDestination = (EObject) ((ObjectNode) container).getSelection();
+			myLinkDescriptors.add(new LinkDescriptor(container, nextDestination, UMLElementTypes.ObjectNodeSelection_4004, ObjectNodeSelectionEditPart.VISUAL_ID));
+
+		}
 	}
 
 	/**

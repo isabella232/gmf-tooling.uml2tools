@@ -187,6 +187,8 @@ public class UMLElementTypes extends ElementInitializers {
 
 			elements.put(Constraint_2020, UMLPackage.eINSTANCE.getConstraint());
 
+			elements.put(OpaqueBehavior_2021, UMLPackage.eINSTANCE.getOpaqueBehavior());
+
 			elements.put(OutputPin_3001, UMLPackage.eINSTANCE.getOutputPin());
 
 			elements.put(OutputPin_3002, UMLPackage.eINSTANCE.getOutputPin());
@@ -244,6 +246,8 @@ public class UMLElementTypes extends ElementInitializers {
 			elements.put(ObjectFlow_4002, UMLPackage.eINSTANCE.getObjectFlow());
 
 			elements.put(ActionLocalPrecondition_4003, UMLPackage.eINSTANCE.getAction_LocalPrecondition());
+
+			elements.put(ObjectNodeSelection_4004, UMLPackage.eINSTANCE.getObjectNode_Selection());
 		}
 		return (ENamedElement) elements.get(type);
 	}
@@ -352,6 +356,11 @@ public class UMLElementTypes extends ElementInitializers {
 	 * @generated
 	 */
 	public static final IElementType Constraint_2020 = getElementType("org.eclipse.uml2.diagram.activity.Constraint_2020"); //$NON-NLS-1$
+
+	/**
+	 * @generated
+	 */
+	public static final IElementType OpaqueBehavior_2021 = getElementType("org.eclipse.uml2.diagram.activity.OpaqueBehavior_2021"); //$NON-NLS-1$
 
 	/**
 	 * @generated
@@ -501,6 +510,11 @@ public class UMLElementTypes extends ElementInitializers {
 	/**
 	 * @generated
 	 */
+	public static final IElementType ObjectNodeSelection_4004 = getElementType("org.eclipse.uml2.diagram.activity.ObjectNodeSelection_4004"); //$NON-NLS-1$
+
+	/**
+	 * @generated
+	 */
 	private static IElementType getElementType(String id) {
 		return ElementTypeRegistry.getInstance().getType(id);
 	}
@@ -537,6 +551,7 @@ public class UMLElementTypes extends ElementInitializers {
 			KNOWN_ELEMENT_TYPES.add(StructuredActivityNode_2007);
 			KNOWN_ELEMENT_TYPES.add(Constraint_2019);
 			KNOWN_ELEMENT_TYPES.add(Constraint_2020);
+			KNOWN_ELEMENT_TYPES.add(OpaqueBehavior_2021);
 			KNOWN_ELEMENT_TYPES.add(OutputPin_3001);
 			KNOWN_ELEMENT_TYPES.add(OutputPin_3002);
 			KNOWN_ELEMENT_TYPES.add(InputPin_3003);
@@ -566,6 +581,7 @@ public class UMLElementTypes extends ElementInitializers {
 			KNOWN_ELEMENT_TYPES.add(ControlFlow_4001);
 			KNOWN_ELEMENT_TYPES.add(ObjectFlow_4002);
 			KNOWN_ELEMENT_TYPES.add(ActionLocalPrecondition_4003);
+			KNOWN_ELEMENT_TYPES.add(ObjectNodeSelection_4004);
 		}
 		return KNOWN_ELEMENT_TYPES.contains(elementType);
 	}

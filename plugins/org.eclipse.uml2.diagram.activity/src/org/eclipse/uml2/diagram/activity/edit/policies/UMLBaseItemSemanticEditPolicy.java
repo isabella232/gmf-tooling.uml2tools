@@ -44,7 +44,10 @@ import org.eclipse.uml2.diagram.activity.part.UMLDiagramEditorPlugin;
 import org.eclipse.uml2.uml.Action;
 import org.eclipse.uml2.uml.Activity;
 import org.eclipse.uml2.uml.ActivityNode;
+import org.eclipse.uml2.uml.Behavior;
 import org.eclipse.uml2.uml.Constraint;
+import org.eclipse.uml2.uml.ObjectFlow;
+import org.eclipse.uml2.uml.ObjectNode;
 import org.eclipse.uml2.uml.UMLPackage;
 
 /**
@@ -304,6 +307,18 @@ public class UMLBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 		public static boolean canCreateActionLocalPrecondition_4003(Action source, Constraint target) {
 			if (source != null) {
 				if (source.getLocalPreconditions().contains(target)) {
+					return false;
+				}
+			}
+			return true;
+		}
+
+		/**
+		 * @generated 
+		 */
+		public static boolean canCreateObjectNodeSelection_4004(ObjectNode source, Behavior target) {
+			if (source != null) {
+				if (source.getSelection() != null) {
 					return false;
 				}
 			}

@@ -108,6 +108,12 @@ public class UMLEditPartFactory implements EditPartFactory {
 			case Constraint2EditPart.VISUAL_ID:
 				return new Constraint2EditPart(view);
 
+			case OpaqueBehaviorEditPart.VISUAL_ID:
+				return new OpaqueBehaviorEditPart(view);
+
+			case OpaqueBehaviorNameEditPart.VISUAL_ID:
+				return new OpaqueBehaviorNameEditPart(view);
+
 			case OutputPinEditPart.VISUAL_ID:
 				return new OutputPinEditPart(view);
 
@@ -248,6 +254,9 @@ public class UMLEditPartFactory implements EditPartFactory {
 
 			case ActionLocalPreconditionEditPart.VISUAL_ID:
 				return new ActionLocalPreconditionEditPart(view);
+
+			case ObjectNodeSelectionEditPart.VISUAL_ID:
+				return new ObjectNodeSelectionEditPart(view);
 			}
 		}
 		return createUnrecognizedEditPart(context, model);

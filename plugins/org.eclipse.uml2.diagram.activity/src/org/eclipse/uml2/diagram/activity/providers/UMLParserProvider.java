@@ -24,6 +24,7 @@ import org.eclipse.uml2.diagram.activity.edit.parts.LiteralString2EditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.LiteralStringEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.OpaqueActionName2EditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.OpaqueActionNameEditPart;
+import org.eclipse.uml2.diagram.activity.edit.parts.OpaqueBehaviorNameEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.OutputPinName2EditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.OutputPinName3EditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.OutputPinNameEditPart;
@@ -548,6 +549,29 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 	/**
 	 * @generated
 	 */
+	private IParser opaqueBehaviorOpaqueBehaviorName_5021Parser;
+
+	/**
+	 * @generated
+	 */
+	private IParser getOpaqueBehaviorOpaqueBehaviorName_5021Parser() {
+		if (opaqueBehaviorOpaqueBehaviorName_5021Parser == null) {
+			opaqueBehaviorOpaqueBehaviorName_5021Parser = createOpaqueBehaviorOpaqueBehaviorName_5021Parser();
+		}
+		return opaqueBehaviorOpaqueBehaviorName_5021Parser;
+	}
+
+	/**
+	 * @generated
+	 */
+	protected IParser createOpaqueBehaviorOpaqueBehaviorName_5021Parser() {
+		UMLStructuralFeatureParser parser = new UMLStructuralFeatureParser(UMLPackage.eINSTANCE.getNamedElement_Name());
+		return parser;
+	}
+
+	/**
+	 * @generated
+	 */
 	protected IParser getParser(int visualID) {
 		switch (visualID) {
 		case OutputPinNameEditPart.VISUAL_ID:
@@ -594,6 +618,8 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 			return getCallBehaviorActionCallBehaviorActionName_5012Parser();
 		case CallOperationActionNameEditPart.VISUAL_ID:
 			return getCallOperationActionCallOperationActionName_5014Parser();
+		case OpaqueBehaviorNameEditPart.VISUAL_ID:
+			return getOpaqueBehaviorOpaqueBehaviorName_5021Parser();
 		}
 		return null;
 	}

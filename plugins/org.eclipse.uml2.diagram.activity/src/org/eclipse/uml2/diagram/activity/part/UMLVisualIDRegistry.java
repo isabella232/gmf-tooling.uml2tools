@@ -68,6 +68,8 @@ import org.eclipse.uml2.diagram.activity.edit.parts.OpaqueAction2EditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.OpaqueActionEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.OpaqueActionName2EditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.OpaqueActionNameEditPart;
+import org.eclipse.uml2.diagram.activity.edit.parts.OpaqueBehaviorEditPart;
+import org.eclipse.uml2.diagram.activity.edit.parts.OpaqueBehaviorNameEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.OutputPin2EditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.OutputPin3EditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.OutputPinEditPart;
@@ -107,6 +109,7 @@ import org.eclipse.uml2.uml.LiteralString;
 import org.eclipse.uml2.uml.MergeNode;
 import org.eclipse.uml2.uml.ObjectFlow;
 import org.eclipse.uml2.uml.OpaqueAction;
+import org.eclipse.uml2.uml.OpaqueBehavior;
 import org.eclipse.uml2.uml.OutputPin;
 import org.eclipse.uml2.uml.Pin;
 import org.eclipse.uml2.uml.StructuredActivityNode;
@@ -335,6 +338,11 @@ public class UMLVisualIDRegistry {
 				return ConstraintPostconditionEditPart.VISUAL_ID;
 			}
 			return getUnrecognizedConstraint_2020ChildNodeID(domainElement, semanticHint);
+		case OpaqueBehaviorEditPart.VISUAL_ID:
+			if (OpaqueBehaviorNameEditPart.VISUAL_ID == nodeVisualID) {
+				return OpaqueBehaviorNameEditPart.VISUAL_ID;
+			}
+			return getUnrecognizedOpaqueBehavior_2021ChildNodeID(domainElement, semanticHint);
 		case OutputPinEditPart.VISUAL_ID:
 			if (OutputPinNameEditPart.VISUAL_ID == nodeVisualID) {
 				return OutputPinNameEditPart.VISUAL_ID;
@@ -700,6 +708,10 @@ public class UMLVisualIDRegistry {
 					&& (domainElement == null || isNodeConstraint_2020((Constraint) domainElement))) {
 				return Constraint2EditPart.VISUAL_ID;
 			}
+			if ((semanticHint == null || OpaqueBehaviorEditPart.VISUAL_ID == nodeVisualID) && UMLPackage.eINSTANCE.getOpaqueBehavior().isSuperTypeOf(domainElementMetaclass)
+					&& (domainElement == null || isNodeOpaqueBehavior_2021((OpaqueBehavior) domainElement))) {
+				return OpaqueBehaviorEditPart.VISUAL_ID;
+			}
 			return getUnrecognizedActivity_1000ChildNodeID(domainElement, semanticHint);
 		}
 		return -1;
@@ -946,6 +958,16 @@ public class UMLVisualIDRegistry {
 	 * @generated
 	 */
 	private static boolean isNodeConstraint_2020(Constraint element) {
+		return true;
+	}
+
+	/**
+	 * User can change implementation of this method to check some additional 
+	 * conditions here.
+	 *
+	 * @generated
+	 */
+	private static boolean isNodeOpaqueBehavior_2021(OpaqueBehavior element) {
 		return true;
 	}
 
@@ -1406,6 +1428,16 @@ public class UMLVisualIDRegistry {
 	 * @generated
 	 */
 	private static int getUnrecognizedConstraint_2020ChildNodeID(EObject domainElement, String semanticHint) {
+		return -1;
+	}
+
+	/**
+	 * User can change implementation of this method to handle some specific
+	 * situations not covered by default logic.
+	 *
+	 * @generated
+	 */
+	private static int getUnrecognizedOpaqueBehavior_2021ChildNodeID(EObject domainElement, String semanticHint) {
 		return -1;
 	}
 

@@ -44,6 +44,7 @@ public class UMLPaletteFactory {
 		paletteContainer.add(createCallOperationAction7CreationTool());
 		paletteContainer.add(createConstraint8CreationTool());
 		paletteContainer.add(createConstraintLink9CreationTool());
+		paletteContainer.add(createOpaqueBehavior10CreationTool());
 		return paletteContainer;
 	}
 
@@ -87,6 +88,7 @@ public class UMLPaletteFactory {
 		paletteContainer.add(createPin3CreationTool());
 		paletteContainer.add(createOutputPin4CreationTool());
 		paletteContainer.add(createInputPin5CreationTool());
+		paletteContainer.add(createSelection6CreationTool());
 		return paletteContainer;
 	}
 
@@ -219,6 +221,18 @@ public class UMLPaletteFactory {
 		types.add(UMLElementTypes.ActionLocalPrecondition_4003);
 		LinkToolEntry entry = new LinkToolEntry(UMLDiagramEditorPlugin.getString("ConstraintLink9CreationTool.title"), UMLDiagramEditorPlugin.getString("ConstraintLink9CreationTool.desc"), types); //$NON-NLS-1$ $NON-NLS-2$
 		entry.setSmallIcon(UMLElementTypes.getImageDescriptor(UMLElementTypes.ActionLocalPrecondition_4003));
+		entry.setLargeIcon(entry.getSmallIcon());
+		return entry;
+	}
+
+	/**
+	 * @generated
+	 */
+	private ToolEntry createOpaqueBehavior10CreationTool() {
+		List/*<IElementType>*/types = new ArrayList/*<IElementType>*/(1);
+		types.add(UMLElementTypes.OpaqueBehavior_2021);
+		NodeToolEntry entry = new NodeToolEntry(UMLDiagramEditorPlugin.getString("OpaqueBehavior10CreationTool.title"), UMLDiagramEditorPlugin.getString("OpaqueBehavior10CreationTool.desc"), types); //$NON-NLS-1$ $NON-NLS-2$
+		entry.setSmallIcon(UMLElementTypes.getImageDescriptor(UMLElementTypes.OpaqueBehavior_2021));
 		entry.setLargeIcon(entry.getSmallIcon());
 		return entry;
 	}
@@ -393,6 +407,18 @@ public class UMLPaletteFactory {
 		types.add(UMLElementTypes.InputPin_3008);
 		NodeToolEntry entry = new NodeToolEntry(UMLDiagramEditorPlugin.getString("InputPin5CreationTool.title"), UMLDiagramEditorPlugin.getString("InputPin5CreationTool.desc"), types); //$NON-NLS-1$ $NON-NLS-2$
 		entry.setSmallIcon(UMLElementTypes.getImageDescriptor(UMLElementTypes.InputPin_3003));
+		entry.setLargeIcon(entry.getSmallIcon());
+		return entry;
+	}
+
+	/**
+	 * @generated
+	 */
+	private ToolEntry createSelection6CreationTool() {
+		List/*<IElementType>*/types = new ArrayList/*<IElementType>*/(1);
+		types.add(UMLElementTypes.ObjectNodeSelection_4004);
+		LinkToolEntry entry = new LinkToolEntry(UMLDiagramEditorPlugin.getString("Selection6CreationTool.title"), UMLDiagramEditorPlugin.getString("Selection6CreationTool.desc"), types); //$NON-NLS-1$ $NON-NLS-2$
+		entry.setSmallIcon(UMLElementTypes.getImageDescriptor(UMLElementTypes.ObjectNodeSelection_4004));
 		entry.setLargeIcon(entry.getSmallIcon());
 		return entry;
 	}

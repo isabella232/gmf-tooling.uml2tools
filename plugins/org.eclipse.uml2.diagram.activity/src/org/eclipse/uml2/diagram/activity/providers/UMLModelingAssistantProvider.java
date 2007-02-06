@@ -180,6 +180,7 @@ public class UMLModelingAssistantProvider extends ModelingAssistantProvider {
 			types.add(UMLElementTypes.StructuredActivityNode_2007);
 			types.add(UMLElementTypes.Constraint_2019);
 			types.add(UMLElementTypes.Constraint_2020);
+			types.add(UMLElementTypes.OpaqueBehavior_2021);
 			return types;
 		}
 		return Collections.EMPTY_LIST;

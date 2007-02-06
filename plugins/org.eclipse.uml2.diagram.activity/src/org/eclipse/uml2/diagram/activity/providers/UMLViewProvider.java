@@ -65,6 +65,8 @@ import org.eclipse.uml2.diagram.activity.edit.parts.OpaqueAction2EditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.OpaqueActionEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.OpaqueActionName2EditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.OpaqueActionNameEditPart;
+import org.eclipse.uml2.diagram.activity.edit.parts.OpaqueBehaviorEditPart;
+import org.eclipse.uml2.diagram.activity.edit.parts.OpaqueBehaviorNameEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.OutputPin2EditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.OutputPin3EditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.OutputPinEditPart;
@@ -138,10 +140,13 @@ import org.eclipse.uml2.diagram.activity.view.factories.LiteralString2ViewFactor
 import org.eclipse.uml2.diagram.activity.view.factories.LiteralStringViewFactory;
 import org.eclipse.uml2.diagram.activity.view.factories.MergeNodeViewFactory;
 import org.eclipse.uml2.diagram.activity.view.factories.ObjectFlowViewFactory;
+import org.eclipse.uml2.diagram.activity.view.factories.ObjectNodeSelectionViewFactory;
 import org.eclipse.uml2.diagram.activity.view.factories.OpaqueAction2ViewFactory;
 import org.eclipse.uml2.diagram.activity.view.factories.OpaqueActionName2ViewFactory;
 import org.eclipse.uml2.diagram.activity.view.factories.OpaqueActionNameViewFactory;
 import org.eclipse.uml2.diagram.activity.view.factories.OpaqueActionViewFactory;
+import org.eclipse.uml2.diagram.activity.view.factories.OpaqueBehaviorNameViewFactory;
+import org.eclipse.uml2.diagram.activity.view.factories.OpaqueBehaviorViewFactory;
 import org.eclipse.uml2.diagram.activity.view.factories.OutputPin2ViewFactory;
 import org.eclipse.uml2.diagram.activity.view.factories.OutputPin3ViewFactory;
 import org.eclipse.uml2.diagram.activity.view.factories.OutputPinName2ViewFactory;
@@ -240,6 +245,10 @@ public class UMLViewProvider extends AbstractViewProvider {
 			return ConstraintViewFactory.class;
 		case Constraint2EditPart.VISUAL_ID:
 			return Constraint2ViewFactory.class;
+		case OpaqueBehaviorEditPart.VISUAL_ID:
+			return OpaqueBehaviorViewFactory.class;
+		case OpaqueBehaviorNameEditPart.VISUAL_ID:
+			return OpaqueBehaviorNameViewFactory.class;
 		case OutputPinEditPart.VISUAL_ID:
 			return OutputPinViewFactory.class;
 		case OutputPinNameEditPart.VISUAL_ID:
@@ -342,6 +351,9 @@ public class UMLViewProvider extends AbstractViewProvider {
 		}
 		if (UMLElementTypes.ActionLocalPrecondition_4003.equals(elementType)) {
 			return ActionLocalPreconditionViewFactory.class;
+		}
+		if (UMLElementTypes.ObjectNodeSelection_4004.equals(elementType)) {
+			return ObjectNodeSelectionViewFactory.class;
 		}
 		EClass semanticType = getSemanticEClass(semanticAdapter);
 		if (semanticType == null) {

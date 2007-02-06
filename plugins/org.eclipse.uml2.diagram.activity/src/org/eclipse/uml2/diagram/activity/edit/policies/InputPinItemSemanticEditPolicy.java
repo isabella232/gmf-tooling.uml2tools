@@ -16,6 +16,8 @@ import org.eclipse.uml2.diagram.activity.providers.UMLElementTypes;
 
 import org.eclipse.uml2.uml.Activity;
 import org.eclipse.uml2.uml.ActivityNode;
+import org.eclipse.uml2.uml.Behavior;
+import org.eclipse.uml2.uml.ObjectNode;
 import org.eclipse.uml2.uml.UMLPackage;
 
 /**
@@ -50,6 +52,9 @@ public class InputPinItemSemanticEditPolicy extends UMLBaseItemSemanticEditPolic
 		}
 		if (UMLElementTypes.ObjectFlow_4002 == req.getElementType()) {
 			return req.getTarget() == null ? getCreateStartOutgoingObjectFlow4002Command(req) : getCreateCompleteIncomingObjectFlow4002Command(req);
+		}
+		if (UMLElementTypes.ObjectNodeSelection_4004 == req.getElementType()) {
+			return req.getTarget() == null ? getCreateStartOutgoingObjectNode_Selection4004Command(req) : null;
 		}
 		return super.getCreateRelationshipCommand(req);
 	}
@@ -148,5 +153,23 @@ public class InputPinItemSemanticEditPolicy extends UMLBaseItemSemanticEditPolic
 			req.setContainmentFeature(UMLPackage.eINSTANCE.getActivity_Edge());
 		}
 		return getMSLWrapper(new ObjectFlowTypeLinkCreateCommand(req, container, source, target));
+	}
+
+	/**
+	 * @generated
+	 */
+	protected Command getCreateStartOutgoingObjectNode_Selection4004Command(CreateRelationshipRequest req) {
+		EObject sourceEObject = req.getSource();
+		EObject targetEObject = req.getTarget();
+		if (false == sourceEObject instanceof ObjectNode || (targetEObject != null && false == targetEObject instanceof Behavior)) {
+			return UnexecutableCommand.INSTANCE;
+		}
+		ObjectNode source = (ObjectNode) sourceEObject;
+		Behavior target = (Behavior) targetEObject;
+		if (!UMLBaseItemSemanticEditPolicy.LinkConstraints.canCreateObjectNodeSelection_4004(source, target)) {
+			return UnexecutableCommand.INSTANCE;
+		}
+		return new Command() {
+		};
 	}
 }

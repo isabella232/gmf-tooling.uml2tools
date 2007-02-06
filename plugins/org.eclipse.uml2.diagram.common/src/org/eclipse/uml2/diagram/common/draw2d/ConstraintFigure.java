@@ -12,6 +12,8 @@
 package org.eclipse.uml2.diagram.common.draw2d;
 
 import org.eclipse.draw2d.BorderLayout;
+import org.eclipse.draw2d.IFigure;
+import org.eclipse.draw2d.LayoutManager;
 import org.eclipse.draw2d.MarginBorder;
 import org.eclipse.draw2d.RectangleFigure;
 import org.eclipse.draw2d.StackLayout;
@@ -21,29 +23,41 @@ import org.eclipse.gmf.runtime.draw2d.ui.figures.WrapLabel;
 
 public class ConstraintFigure extends NoteFigure {
 	private WrapLabel myFixedLabel;
-	private RectangleFigure myContentPane;
+	private IFigure myContentPane;
 
 	public ConstraintFigure() {
 		super(100, 60, new Insets());
-		setLayoutManager(new BorderLayout());
-		
-		myFixedLabel = new WrapLabel("");
-		myFixedLabel.setBorder(new MarginBorder(0, CLIP_MARGIN_DP + 1, 0, CLIP_MARGIN_DP + 1));
-		add(myFixedLabel, BorderLayout.TOP);
-		
-		myContentPane = new RectangleFigure();
-		myContentPane.setOutline(false);
-		myContentPane.setFill(false);
-		myContentPane.setLayoutManager(new StackLayout());
-		add(myContentPane, BorderLayout.CENTER);
+		setLayoutManager( createMainLayout() );
+		myFixedLabel = addLabel();
+		myContentPane = addContentPane();
 	}
 	
-	public RectangleFigure getContentPane(){
+	public IFigure getContentPane(){
 		return myContentPane;
 	}
 	
 	public void setFixedLabelText(String text){
 		myFixedLabel.setText(text == null ? "" : text);
+	}
+	
+	protected LayoutManager createMainLayout() {
+		return new BorderLayout();
+	}
+	
+	protected WrapLabel addLabel() {
+		WrapLabel label = new WrapLabel("");
+		label.setBorder(new MarginBorder(0, CLIP_MARGIN_DP + 1, 0, CLIP_MARGIN_DP + 1));
+		add(label, BorderLayout.TOP);
+		return label;
+	}
+	
+	protected IFigure addContentPane() {
+		RectangleFigure contentPane = new RectangleFigure();
+		contentPane.setOutline(false);
+		contentPane.setFill(false);
+		contentPane.setLayoutManager(new StackLayout());
+		add(contentPane, BorderLayout.CENTER);
+		return contentPane;
 	}
 
 }
