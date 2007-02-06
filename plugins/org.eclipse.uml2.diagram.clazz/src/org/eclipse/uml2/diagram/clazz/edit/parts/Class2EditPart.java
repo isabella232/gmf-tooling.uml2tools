@@ -2,6 +2,7 @@ package org.eclipse.uml2.diagram.clazz.edit.parts;
 
 import org.eclipse.draw2d.Graphics;
 import org.eclipse.draw2d.IFigure;
+import org.eclipse.draw2d.MarginBorder;
 import org.eclipse.draw2d.PositionConstants;
 import org.eclipse.draw2d.RectangleFigure;
 import org.eclipse.draw2d.StackLayout;
@@ -353,7 +354,6 @@ public class Class2EditPart extends AbstractBorderedShapeEditPart {
 			classFigure_NameContainer0.setOutlineXOR(false);
 			classFigure_NameContainer0.setLineWidth(1);
 			classFigure_NameContainer0.setLineStyle(Graphics.LINE_SOLID);
-			classFigure_NameContainer0.setMinimumSize(new Dimension(getMapMode().DPtoLP(0), getMapMode().DPtoLP(25)));
 
 			this.add(classFigure_NameContainer0);
 
@@ -363,6 +363,8 @@ public class Class2EditPart extends AbstractBorderedShapeEditPart {
 
 			WrapLabel classFigure_name1 = new WrapLabel();
 			classFigure_name1.setText("");
+
+			classFigure_name1.setBorder(new MarginBorder(getMapMode().DPtoLP(5), getMapMode().DPtoLP(5), getMapMode().DPtoLP(5), getMapMode().DPtoLP(5)));
 
 			classFigure_NameContainer0.add(classFigure_name1);
 			setFigureClassFigure_name(classFigure_name1);

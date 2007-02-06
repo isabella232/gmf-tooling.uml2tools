@@ -403,7 +403,7 @@ public class Package2EditPart extends ShapeNodeEditPart {
 			WrapLabel packageFigure_name2 = new WrapLabel();
 			packageFigure_name2.setText("");
 
-			packageFigure_name2.setBorder(new MarginBorder(getMapMode().DPtoLP(0), getMapMode().DPtoLP(5), getMapMode().DPtoLP(0), getMapMode().DPtoLP(5)));
+			packageFigure_name2.setBorder(new MarginBorder(getMapMode().DPtoLP(5), getMapMode().DPtoLP(5), getMapMode().DPtoLP(5), getMapMode().DPtoLP(5)));
 
 			packageFigure_NameContainer1.add(packageFigure_name2);
 			setFigurePackageFigure_name(packageFigure_name2);
