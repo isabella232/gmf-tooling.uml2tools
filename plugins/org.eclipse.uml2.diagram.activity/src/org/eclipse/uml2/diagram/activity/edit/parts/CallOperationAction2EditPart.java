@@ -22,6 +22,7 @@ import org.eclipse.gmf.runtime.diagram.ui.editpolicies.CreationEditPolicy;
 import org.eclipse.gmf.runtime.diagram.ui.editpolicies.DragDropEditPolicy;
 import org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles;
 import org.eclipse.gmf.runtime.diagram.ui.figures.BorderItemLocator;
+import org.eclipse.gmf.runtime.diagram.ui.figures.IBorderItemLocator;
 import org.eclipse.gmf.runtime.draw2d.ui.figures.ConstrainedToolbarLayout;
 import org.eclipse.gmf.runtime.draw2d.ui.figures.WrapLabel;
 import org.eclipse.gmf.runtime.gef.ui.figures.DefaultSizeNodeFigure;
@@ -124,17 +125,20 @@ public class CallOperationAction2EditPart extends AbstractBorderedShapeEditPart 
 			return true;
 		}
 		if (childEditPart instanceof OutputPin3EditPart) {
-			BorderItemLocator locator = new BorderItemLocator(getMainFigure(), PositionConstants.EAST);
+
+			IBorderItemLocator locator = new BorderItemLocator(getMainFigure(), PositionConstants.EAST);
 			getBorderedFigure().getBorderItemContainer().add(((OutputPin3EditPart) childEditPart).getFigure(), locator);
 			return true;
 		}
 		if (childEditPart instanceof InputPin4EditPart) {
-			BorderItemLocator locator = new BorderItemLocator(getMainFigure(), PositionConstants.WEST);
+
+			IBorderItemLocator locator = new BorderItemLocator(getMainFigure(), PositionConstants.WEST);
 			getBorderedFigure().getBorderItemContainer().add(((InputPin4EditPart) childEditPart).getFigure(), locator);
 			return true;
 		}
 		if (childEditPart instanceof InputPin5EditPart) {
-			BorderItemLocator locator = new BorderItemLocator(getMainFigure(), PositionConstants.WEST);
+
+			IBorderItemLocator locator = new BorderItemLocator(getMainFigure(), PositionConstants.WEST);
 			getBorderedFigure().getBorderItemContainer().add(((InputPin5EditPart) childEditPart).getFigure(), locator);
 			return true;
 		}
