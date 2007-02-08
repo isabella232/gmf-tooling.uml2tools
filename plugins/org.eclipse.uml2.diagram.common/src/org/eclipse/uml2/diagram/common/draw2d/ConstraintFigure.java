@@ -21,7 +21,7 @@ import org.eclipse.draw2d.geometry.Insets;
 import org.eclipse.gmf.runtime.diagram.ui.figures.NoteFigure;
 import org.eclipse.gmf.runtime.draw2d.ui.figures.WrapLabel;
 
-public class ConstraintFigure extends NoteFigure {
+public class ConstraintFigure extends ConstraintFigureBase {
 	private WrapLabel myFixedLabel;
 	private IFigure myContentPane;
 
