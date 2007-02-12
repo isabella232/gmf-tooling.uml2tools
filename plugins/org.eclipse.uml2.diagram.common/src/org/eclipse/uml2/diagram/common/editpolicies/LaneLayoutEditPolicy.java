@@ -30,7 +30,9 @@ import org.eclipse.gef.requests.CreateRequest;
 import org.eclipse.gmf.runtime.common.core.command.ICommand;
 import org.eclipse.gmf.runtime.diagram.ui.commands.ICommandProxy;
 import org.eclipse.gmf.runtime.diagram.ui.commands.SetBoundsCommand;
+import org.eclipse.gmf.runtime.diagram.ui.editparts.IBorderItemEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart;
+import org.eclipse.gmf.runtime.diagram.ui.editpolicies.BorderItemSelectionEditPolicy;
 import org.eclipse.gmf.runtime.diagram.ui.l10n.DiagramUIMessages;
 import org.eclipse.gmf.runtime.emf.core.util.EObjectAdapter;
 import org.eclipse.gmf.runtime.notation.View;
@@ -88,8 +90,11 @@ public class LaneLayoutEditPolicy extends ConstrainedLayoutEditPolicy {
 
 	@Override
 	protected EditPolicy createChildEditPolicy(EditPart child) {
-		ResizableEditPolicy editPolicy = new ResizableEditPolicy() {
+		if (child instanceof IBorderItemEditPart) {
+			return new BorderItemSelectionEditPolicy();
+		}
 
+		ResizableEditPolicy editPolicy = new ResizableEditPolicy() {
 			@Override
 			protected List createSelectionHandles() {
 				List list = new ArrayList();
