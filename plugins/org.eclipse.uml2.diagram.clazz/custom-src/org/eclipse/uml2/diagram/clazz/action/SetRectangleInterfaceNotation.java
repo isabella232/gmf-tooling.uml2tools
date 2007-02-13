@@ -32,8 +32,7 @@ public class SetRectangleInterfaceNotation extends DiagramAction {
 	public void init() {
 		super.init();
 		setId(UMLContributionItemProvider.ACTION_RECTANGLE_INTERFACE_NOTATION);
-		setText(DISABLED_TEXT);
-		setToolTipText(DISABLED_TOOLTIP);
+		updateText();
 		setImageDescriptor(UMLElementTypes.getImageDescriptor(UMLElementTypes.getElement(UMLElementTypes.Interface_2010)));
 	}
 	
@@ -51,7 +50,7 @@ public class SetRectangleInterfaceNotation extends DiagramAction {
 			return;
 		}
 		if (editPart instanceof Interface2EditPart){
-			setText("Show as circle");
+			setText("Collapse to circle");
 			setToolTipText("Change Interface Notation to Circle");
 			return;
 		}
