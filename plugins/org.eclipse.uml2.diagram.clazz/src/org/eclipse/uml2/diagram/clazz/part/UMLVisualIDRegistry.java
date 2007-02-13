@@ -398,18 +398,6 @@ public class UMLVisualIDRegistry {
 			if (InterfaceClassesEditPart.VISUAL_ID == nodeVisualID) {
 				return InterfaceClassesEditPart.VISUAL_ID;
 			}
-			if ((semanticHint == null || Property6EditPart.VISUAL_ID == nodeVisualID) && UMLPackage.eINSTANCE.getProperty().isSuperTypeOf(domainElementMetaclass)
-					&& (domainElement == null || isNodeProperty_3028((Property) domainElement))) {
-				return Property6EditPart.VISUAL_ID;
-			}
-			if ((semanticHint == null || Operation6EditPart.VISUAL_ID == nodeVisualID) && UMLPackage.eINSTANCE.getOperation().isSuperTypeOf(domainElementMetaclass)
-					&& (domainElement == null || isNodeOperation_3029((Operation) domainElement))) {
-				return Operation6EditPart.VISUAL_ID;
-			}
-			if ((semanticHint == null || Class4EditPart.VISUAL_ID == nodeVisualID) && UMLPackage.eINSTANCE.getClass_().isSuperTypeOf(domainElementMetaclass)
-					&& (domainElement == null || isNodeClass_3030((Class) domainElement))) {
-				return Class4EditPart.VISUAL_ID;
-			}
 			return getUnrecognizedInterface_2013ChildNodeID(domainElement, semanticHint);
 		case Package3EditPart.VISUAL_ID:
 			return getUnrecognizedPackage_3006ChildNodeID(domainElement, semanticHint);
@@ -586,10 +574,22 @@ public class UMLVisualIDRegistry {
 			}
 			return getUnrecognizedInstanceSpecificationSlots_7028ChildNodeID(domainElement, semanticHint);
 		case InterfaceAttributesEditPart.VISUAL_ID:
+			if ((semanticHint == null || Property6EditPart.VISUAL_ID == nodeVisualID) && UMLPackage.eINSTANCE.getProperty().isSuperTypeOf(domainElementMetaclass)
+					&& (domainElement == null || isNodeProperty_3028((Property) domainElement))) {
+				return Property6EditPart.VISUAL_ID;
+			}
 			return getUnrecognizedInterfaceAttributes_7029ChildNodeID(domainElement, semanticHint);
 		case InterfaceOperationsEditPart.VISUAL_ID:
+			if ((semanticHint == null || Operation6EditPart.VISUAL_ID == nodeVisualID) && UMLPackage.eINSTANCE.getOperation().isSuperTypeOf(domainElementMetaclass)
+					&& (domainElement == null || isNodeOperation_3029((Operation) domainElement))) {
+				return Operation6EditPart.VISUAL_ID;
+			}
 			return getUnrecognizedInterfaceOperations_7030ChildNodeID(domainElement, semanticHint);
 		case InterfaceClassesEditPart.VISUAL_ID:
+			if ((semanticHint == null || Class4EditPart.VISUAL_ID == nodeVisualID) && UMLPackage.eINSTANCE.getClass_().isSuperTypeOf(domainElementMetaclass)
+					&& (domainElement == null || isNodeClass_3030((Class) domainElement))) {
+				return Class4EditPart.VISUAL_ID;
+			}
 			return getUnrecognizedInterfaceClasses_7031ChildNodeID(domainElement, semanticHint);
 		case PackageEditPart.VISUAL_ID:
 			if ((semanticHint == null || Package2EditPart.VISUAL_ID == nodeVisualID) && UMLPackage.eINSTANCE.getPackage().isSuperTypeOf(domainElementMetaclass)

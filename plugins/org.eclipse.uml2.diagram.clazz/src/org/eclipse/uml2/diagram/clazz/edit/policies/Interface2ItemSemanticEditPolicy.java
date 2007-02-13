@@ -49,31 +49,6 @@ public class Interface2ItemSemanticEditPolicy extends UMLBaseItemSemanticEditPol
 	/**
 	 * @generated
 	 */
-	protected Command getCreateCommand(CreateElementRequest req) {
-		if (UMLElementTypes.Property_3028 == req.getElementType()) {
-			if (req.getContainmentFeature() == null) {
-				req.setContainmentFeature(UMLPackage.eINSTANCE.getInterface_OwnedAttribute());
-			}
-			return getMSLWrapper(new Property6CreateCommand(req));
-		}
-		if (UMLElementTypes.Operation_3029 == req.getElementType()) {
-			if (req.getContainmentFeature() == null) {
-				req.setContainmentFeature(UMLPackage.eINSTANCE.getInterface_OwnedOperation());
-			}
-			return getMSLWrapper(new Operation6CreateCommand(req));
-		}
-		if (UMLElementTypes.Class_3030 == req.getElementType()) {
-			if (req.getContainmentFeature() == null) {
-				req.setContainmentFeature(UMLPackage.eINSTANCE.getInterface_NestedClassifier());
-			}
-			return getMSLWrapper(new Class4CreateCommand(req));
-		}
-		return super.getCreateCommand(req);
-	}
-
-	/**
-	 * @generated
-	 */
 	protected Command getDestroyElementCommand(DestroyElementRequest req) {
 		return getMSLWrapper(new DestroyElementCommand(req) {
 
