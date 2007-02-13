@@ -18,7 +18,7 @@ import java.util.List;
 
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EStructuralFeature;
-import org.eclipse.uml2.diagram.clazz.association.AssociationEndConvention;
+import org.eclipse.uml2.diagram.clazz.conventions.AssociationEndConvention;
 import org.eclipse.uml2.diagram.common.parser.property.PropertyToString;
 import org.eclipse.uml2.diagram.parser.ExternalToString;
 import org.eclipse.uml2.uml.Association;

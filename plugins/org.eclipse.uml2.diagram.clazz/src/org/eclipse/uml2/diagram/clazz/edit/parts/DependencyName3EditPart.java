@@ -48,7 +48,7 @@ import org.eclipse.uml2.diagram.clazz.providers.UMLElementTypes;
 /**
  * @generated
  */
-public class Dependency_typeEditPart extends LabelEditPart implements ITextAwareEditPart {
+public class DependencyName3EditPart extends LabelEditPart implements ITextAwareEditPart {
 
 	/**
 	 * @generated
@@ -79,13 +79,13 @@ public class Dependency_typeEditPart extends LabelEditPart implements ITextAware
 	 * @generated
 	 */
 	static {
-		registerSnapBackPosition(UMLVisualIDRegistry.getType(Dependency_typeEditPart.VISUAL_ID), new Point(0, 20));
+		registerSnapBackPosition(UMLVisualIDRegistry.getType(DependencyName3EditPart.VISUAL_ID), new Point(0, 20));
 	}
 
 	/**
 	 * @generated
 	 */
-	public Dependency_typeEditPart(View view) {
+	public DependencyName3EditPart(View view) {
 		super(view);
 	}
 

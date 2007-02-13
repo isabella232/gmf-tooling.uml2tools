@@ -15,6 +15,7 @@ import org.eclipse.gmf.runtime.emf.type.core.requests.SetRequest;
 
 import org.eclipse.uml2.diagram.clazz.edit.commands.DependencyTypeLinkCreateCommand;
 import org.eclipse.uml2.diagram.clazz.edit.commands.RealizationTypeLinkCreateCommand;
+import org.eclipse.uml2.diagram.clazz.edit.commands.UsageTypeLinkCreateCommand;
 
 import org.eclipse.uml2.diagram.clazz.providers.UMLElementTypes;
 
@@ -66,6 +67,9 @@ public class Package2ItemSemanticEditPolicy extends UMLBaseItemSemanticEditPolic
 		}
 		if (UMLElementTypes.Realization_4010 == req.getElementType()) {
 			return req.getTarget() == null ? getCreateStartOutgoingRealization4010Command(req) : getCreateCompleteIncomingRealization4010Command(req);
+		}
+		if (UMLElementTypes.Usage_4013 == req.getElementType()) {
+			return req.getTarget() == null ? getCreateStartOutgoingUsage4013Command(req) : getCreateCompleteIncomingUsage4013Command(req);
 		}
 		return super.getCreateRelationshipCommand(req);
 	}
@@ -218,5 +222,53 @@ public class Package2ItemSemanticEditPolicy extends UMLBaseItemSemanticEditPolic
 			req.setContainmentFeature(UMLPackage.eINSTANCE.getPackage_PackagedElement());
 		}
 		return getMSLWrapper(new RealizationTypeLinkCreateCommand(req, container, source, target));
+	}
+
+	/**
+	 * @generated
+	 */
+	protected Command getCreateStartOutgoingUsage4013Command(CreateRelationshipRequest req) {
+		EObject sourceEObject = req.getSource();
+		EObject targetEObject = req.getTarget();
+		if (false == sourceEObject instanceof NamedElement || (targetEObject != null && false == targetEObject instanceof NamedElement)) {
+			return UnexecutableCommand.INSTANCE;
+		}
+		NamedElement source = (NamedElement) sourceEObject;
+		NamedElement target = (NamedElement) targetEObject;
+
+		Package container = (Package) getRelationshipContainer(source, UMLPackage.eINSTANCE.getPackage(), req.getElementType());
+		if (container == null) {
+			return UnexecutableCommand.INSTANCE;
+		}
+		if (!UMLBaseItemSemanticEditPolicy.LinkConstraints.canCreateUsage_4013(container, source, target)) {
+			return UnexecutableCommand.INSTANCE;
+		}
+		return new Command() {
+		};
+	}
+
+	/**
+	 * @generated
+	 */
+	protected Command getCreateCompleteIncomingUsage4013Command(CreateRelationshipRequest req) {
+		EObject sourceEObject = req.getSource();
+		EObject targetEObject = req.getTarget();
+		if (false == sourceEObject instanceof NamedElement || false == targetEObject instanceof NamedElement) {
+			return UnexecutableCommand.INSTANCE;
+		}
+		NamedElement source = (NamedElement) sourceEObject;
+		NamedElement target = (NamedElement) targetEObject;
+
+		Package container = (Package) getRelationshipContainer(source, UMLPackage.eINSTANCE.getPackage(), req.getElementType());
+		if (container == null) {
+			return UnexecutableCommand.INSTANCE;
+		}
+		if (!UMLBaseItemSemanticEditPolicy.LinkConstraints.canCreateUsage_4013(container, source, target)) {
+			return UnexecutableCommand.INSTANCE;
+		}
+		if (req.getContainmentFeature() == null) {
+			req.setContainmentFeature(UMLPackage.eINSTANCE.getPackage_PackagedElement());
+		}
+		return getMSLWrapper(new UsageTypeLinkCreateCommand(req, container, source, target));
 	}
 }

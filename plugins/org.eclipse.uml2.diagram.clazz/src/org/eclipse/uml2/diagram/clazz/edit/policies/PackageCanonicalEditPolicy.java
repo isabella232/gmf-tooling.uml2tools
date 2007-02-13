@@ -9,6 +9,7 @@ import java.util.List;
 import java.util.Map;
 
 import org.eclipse.core.runtime.IAdaptable;
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.gef.EditPart;
@@ -24,13 +25,16 @@ import org.eclipse.gmf.runtime.emf.core.util.EObjectAdapter;
 import org.eclipse.gmf.runtime.emf.type.core.IElementType;
 import org.eclipse.gmf.runtime.notation.Diagram;
 import org.eclipse.gmf.runtime.notation.Edge;
+import org.eclipse.gmf.runtime.notation.NotationPackage;
 import org.eclipse.gmf.runtime.notation.View;
-import org.eclipse.uml2.diagram.clazz.association.AssociationEndConvention;
+import org.eclipse.uml2.diagram.clazz.conventions.AssociationEndConvention;
+import org.eclipse.uml2.diagram.clazz.conventions.InterfaceNotationConvention;
 import org.eclipse.uml2.diagram.clazz.edit.parts.AssociationClass2EditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.AssociationClassEditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.AssociationEditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.Class2EditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.Class3EditPart;
+import org.eclipse.uml2.diagram.clazz.edit.parts.Class4EditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.ClassEditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.ConstraintConstrainedElementEditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.ConstraintEditPart;
@@ -43,16 +47,20 @@ import org.eclipse.uml2.diagram.clazz.edit.parts.DependencySupplierEditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.Enumeration2EditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.EnumerationEditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.EnumerationLiteralEditPart;
+import org.eclipse.uml2.diagram.clazz.edit.parts.Generalization2EditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.GeneralizationEditPart;
+import org.eclipse.uml2.diagram.clazz.edit.parts.GeneralizationGeneralEditPart;
+import org.eclipse.uml2.diagram.clazz.edit.parts.GeneralizationSetEditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.InstanceSpecification2EditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.InstanceSpecificationEditPart;
+import org.eclipse.uml2.diagram.clazz.edit.parts.Interface2EditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.InterfaceEditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.InterfaceRealizationEditPart;
-import org.eclipse.uml2.diagram.clazz.edit.parts.LiteralStringEditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.Operation2EditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.Operation3EditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.Operation4EditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.Operation5EditPart;
+import org.eclipse.uml2.diagram.clazz.edit.parts.Operation6EditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.OperationEditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.Package2EditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.Package3EditPart;
@@ -65,10 +73,12 @@ import org.eclipse.uml2.diagram.clazz.edit.parts.Property3EditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.Property4EditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.Property5EditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.Property6EditPart;
+import org.eclipse.uml2.diagram.clazz.edit.parts.Property7EditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.PropertyEditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.RealizationEditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.RedefinableTemplateSignatureEditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.SlotEditPart;
+import org.eclipse.uml2.diagram.clazz.edit.parts.UsageEditPart;
 import org.eclipse.uml2.diagram.clazz.part.UMLVisualIDRegistry;
 import org.eclipse.uml2.diagram.clazz.providers.UMLElementTypes;
 import org.eclipse.uml2.uml.Association;
@@ -77,6 +87,7 @@ import org.eclipse.uml2.uml.Classifier;
 import org.eclipse.uml2.uml.Constraint;
 import org.eclipse.uml2.uml.Dependency;
 import org.eclipse.uml2.uml.Generalization;
+import org.eclipse.uml2.uml.GeneralizationSet;
 import org.eclipse.uml2.uml.InterfaceRealization;
 import org.eclipse.uml2.uml.Package;
 import org.eclipse.uml2.uml.Property;
@@ -87,6 +98,15 @@ import org.eclipse.uml2.uml.UMLPackage;
  * @generated
  */
 public class PackageCanonicalEditPolicy extends CanonicalConnectionEditPolicy {
+
+	/**
+	 * @NOT-generated
+	 */
+	@Override
+	public void activate() {
+		super.activate();
+		addListenerFilter("NotationListener_Container" + getDiagram().toString(), this, getDiagram(), NotationPackage.eINSTANCE.getView_PersistedChildren());
+	}
 
 	/**
 	 * @generated
@@ -132,6 +152,10 @@ public class PackageCanonicalEditPolicy extends CanonicalConnectionEditPolicy {
 				result.add(nextValue);
 				break;
 			}
+			case Interface2EditPart.VISUAL_ID: {
+				result.add(nextValue);
+				break;
+			}
 			}
 		}
 		for (Iterator values = ((Package) modelObject).getPackagedElements().iterator(); values.hasNext();) {
@@ -150,6 +174,10 @@ public class PackageCanonicalEditPolicy extends CanonicalConnectionEditPolicy {
 				result.add(nextValue);
 				break;
 			}
+			case GeneralizationSetEditPart.VISUAL_ID: {
+				result.add(nextValue);
+				break;
+			}
 			}
 		}
 		return result;
@@ -158,8 +186,15 @@ public class PackageCanonicalEditPolicy extends CanonicalConnectionEditPolicy {
 	/**
 	 * @generated
 	 */
-	protected boolean shouldDeleteView(View view) {
+	protected boolean shouldDeleteViewGen(View view) {
 		return view.isSetElement() && view.getElement() != null && view.getElement().eIsProxy();
+	}
+
+	/**
+	 * @NOT-generated
+	 */
+	protected boolean shouldDeleteView(View view) {
+		return shouldDeleteViewGen(view) || InterfaceNotationConvention.hasAlternativeNotation(view);
 	}
 
 	/**
@@ -274,6 +309,8 @@ public class PackageCanonicalEditPolicy extends CanonicalConnectionEditPolicy {
 		case ConstraintEditPart.VISUAL_ID:
 		case InstanceSpecification2EditPart.VISUAL_ID:
 		case DependencyEditPart.VISUAL_ID:
+		case GeneralizationSetEditPart.VISUAL_ID:
+		case Interface2EditPart.VISUAL_ID:
 		case Package3EditPart.VISUAL_ID:
 		case ClassEditPart.VISUAL_ID:
 		case DataTypeEditPart.VISUAL_ID:
@@ -295,8 +332,10 @@ public class PackageCanonicalEditPolicy extends CanonicalConnectionEditPolicy {
 		case EnumerationLiteralEditPart.VISUAL_ID:
 		case Property5EditPart.VISUAL_ID:
 		case Operation5EditPart.VISUAL_ID:
-		case LiteralStringEditPart.VISUAL_ID:
 		case SlotEditPart.VISUAL_ID:
+		case Property6EditPart.VISUAL_ID:
+		case Operation6EditPart.VISUAL_ID:
+		case Class4EditPart.VISUAL_ID:
 		case PackageEditPart.VISUAL_ID: {
 			myEObject2ViewMap.put(modelElement, view);
 			storeLinks(modelElement, getDiagram());
@@ -375,6 +414,8 @@ public class PackageCanonicalEditPolicy extends CanonicalConnectionEditPolicy {
 		storeTypeModelFacetLinks_Association_4005(container, containerMetaclass);
 		storeTypeModelFacetLinks_InterfaceRealization_4008(container, containerMetaclass);
 		storeTypeModelFacetLinks_Realization_4010(container, containerMetaclass);
+		storeTypeModelFacetLinks_Generalization_4011(container, containerMetaclass);
+		storeTypeModelFacetLinks_Usage_4013(container, containerMetaclass);
 	}
 
 	/**
@@ -432,7 +473,7 @@ public class PackageCanonicalEditPolicy extends CanonicalConnectionEditPolicy {
 			for (Iterator values = ((Association) container).getOwnedEnds().iterator(); values.hasNext();) {
 				EObject nextValue = ((EObject) values.next());
 				int linkVID = UMLVisualIDRegistry.getLinkWithClassVisualID(nextValue);
-				if (Property6EditPart.VISUAL_ID == linkVID) {
+				if (Property7EditPart.VISUAL_ID == linkVID) {
 					Object structuralFeatureResult = ((TypedElement) nextValue).getType();
 					if (structuralFeatureResult instanceof EObject) {
 						EObject dst = (EObject) structuralFeatureResult;
@@ -517,9 +558,74 @@ public class PackageCanonicalEditPolicy extends CanonicalConnectionEditPolicy {
 	}
 
 	/**
-	 *@generated
+	 * @generated
+	 */
+	private void storeTypeModelFacetLinks_Generalization_4011(EObject container, EClass containerMetaclass) {
+		if (UMLPackage.eINSTANCE.getClassifier().isSuperTypeOf(containerMetaclass)) {
+			for (Iterator values = ((Classifier) container).getGeneralizations().iterator(); values.hasNext();) {
+				EObject nextValue = ((EObject) values.next());
+				int linkVID = UMLVisualIDRegistry.getLinkWithClassVisualID(nextValue);
+				if (Generalization2EditPart.VISUAL_ID == linkVID) {
+					Object structuralFeatureResult = ((Generalization) nextValue).getGeneralizationSets();
+					List targets = (List) structuralFeatureResult;
+					structuralFeatureResult = targets.size() == 1 ? targets.get(0) : null;
+					if (structuralFeatureResult instanceof EObject) {
+						EObject dst = (EObject) structuralFeatureResult;
+						EObject src = container;
+						myLinkDescriptors.add(new LinkDescriptor(src, dst, nextValue, linkVID));
+					}
+				}
+			}
+		}
+	}
+
+	/**
+	 * @generated
+	 */
+	private void storeTypeModelFacetLinks_Usage_4013(EObject container, EClass containerMetaclass) {
+		if (UMLPackage.eINSTANCE.getPackage().isSuperTypeOf(containerMetaclass)) {
+			for (Iterator values = ((Package) container).getPackagedElements().iterator(); values.hasNext();) {
+				EObject nextValue = ((EObject) values.next());
+				int linkVID = UMLVisualIDRegistry.getLinkWithClassVisualID(nextValue);
+				if (UsageEditPart.VISUAL_ID == linkVID) {
+					Object structuralFeatureResult = ((Dependency) nextValue).getSuppliers();
+					List targets = (List) structuralFeatureResult;
+					structuralFeatureResult = targets.size() == 1 ? targets.get(0) : null;
+					if (structuralFeatureResult instanceof EObject) {
+						EObject dst = (EObject) structuralFeatureResult;
+						structuralFeatureResult = ((Dependency) nextValue).getClients();
+						List sources = (List) structuralFeatureResult;
+						structuralFeatureResult = sources.size() == 1 ? sources.get(0) : null;
+						if (structuralFeatureResult instanceof EObject) {
+							EObject src = (EObject) structuralFeatureResult;
+							myLinkDescriptors.add(new LinkDescriptor(src, dst, nextValue, linkVID));
+						}
+					}
+				}
+			}
+		}
+	}
+
+	/**
+	 *@generated NOT
 	 */
 	private void storeFeatureModelFacetLinks(EObject container, EClass containerMetaclass, Diagram diagram) {
+		if (UMLPackage.eINSTANCE.getGeneralizationSet().isSuperTypeOf(containerMetaclass)) {
+			EList<Generalization> generalizations = ((GeneralizationSet) container).getGeneralizations();
+			if (generalizations.size() == 0) {
+				return;
+			}
+			EObject nextDestination = (EObject) generalizations.get(0).getGeneral();
+			myLinkDescriptors.add(new LinkDescriptor(container, nextDestination, UMLElementTypes.GeneralizationGeneral_4012, GeneralizationGeneralEditPart.VISUAL_ID));
+
+		}
+		storeFeatureModelFacetLinksGen(container, containerMetaclass, diagram);
+	}
+
+	/**
+	 *@generated
+	 */
+	private void storeFeatureModelFacetLinksGen(EObject container, EClass containerMetaclass, Diagram diagram) {
 
 		if (UMLPackage.eINSTANCE.getConstraint().isSuperTypeOf(containerMetaclass)) {
 			for (Iterator destinations = ((Constraint) container).getConstrainedElements().iterator(); destinations.hasNext();) {
@@ -542,6 +648,12 @@ public class PackageCanonicalEditPolicy extends CanonicalConnectionEditPolicy {
 				myLinkDescriptors.add(new LinkDescriptor(container, nextDestination, UMLElementTypes.DependencyClient_4007, DependencyClientEditPart.VISUAL_ID));
 
 			}
+		}
+
+		if (UMLPackage.eINSTANCE.getGeneralization().isSuperTypeOf(containerMetaclass)) {
+			EObject nextDestination = (EObject) ((Generalization) container).getGeneral();
+			myLinkDescriptors.add(new LinkDescriptor(container, nextDestination, UMLElementTypes.GeneralizationGeneral_4012, GeneralizationGeneralEditPart.VISUAL_ID));
+
 		}
 
 	}

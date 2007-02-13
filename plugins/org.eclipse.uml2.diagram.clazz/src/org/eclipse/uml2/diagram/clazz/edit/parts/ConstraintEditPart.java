@@ -20,7 +20,6 @@ import org.eclipse.gmf.runtime.gef.ui.figures.NodeFigure;
 import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.uml2.diagram.clazz.edit.policies.ConstraintItemSemanticEditPolicy;
 import org.eclipse.uml2.diagram.clazz.part.UMLVisualIDRegistry;
-import org.eclipse.uml2.diagram.common.draw2d.ConstraintFigureBase;
 import org.eclipse.uml2.diagram.common.draw2d.MultilineConstraintFigure;
 
 /**

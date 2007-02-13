@@ -5,6 +5,7 @@ import org.eclipse.gmf.runtime.diagram.ui.editparts.ConnectionNodeEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles;
 import org.eclipse.gmf.runtime.draw2d.ui.figures.PolylineConnectionEx;
 import org.eclipse.gmf.runtime.notation.View;
+import org.eclipse.uml2.diagram.clazz.conventions.InterfaceNotationConvention;
 import org.eclipse.uml2.diagram.clazz.edit.policies.InterfaceRealizationItemSemanticEditPolicy;
 
 /**
@@ -38,10 +39,12 @@ public class InterfaceRealizationEditPart extends ConnectionNodeEditPart {
 	 * Body of this method does not depend on settings in generation model
 	 * so you may safely remove <i>generated</i> tag and modify it.
 	 * 
-	 * @generated
+	 * @generated NOT 
 	 */
 	protected Connection createConnectionFigure() {
-
+		if (InterfaceNotationConvention.needsAlternativeNotation(this)) {
+			return new ConnectionWithClosedArrowPolylineFigure(getMapMode());
+		}
 		return new PolylineConnectionEx();
 	}
 

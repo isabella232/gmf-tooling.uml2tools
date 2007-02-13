@@ -89,7 +89,7 @@ public class UMLEditPartFactory implements EditPartFactory {
 
 			case DependencyNameEditPart.VISUAL_ID:
 				return new DependencyNameEditPart(view);
-/*
+
 			case GeneralizationSetEditPart.VISUAL_ID:
 				return new GeneralizationSetEditPart(view);
 
@@ -104,7 +104,7 @@ public class UMLEditPartFactory implements EditPartFactory {
 
 			case InterfaceName2EditPart.VISUAL_ID:
 				return new InterfaceName2EditPart(view);
-*/
+
 			case Package3EditPart.VISUAL_ID:
 				return new Package3EditPart(view);
 
@@ -176,13 +176,12 @@ public class UMLEditPartFactory implements EditPartFactory {
 
 			case SlotEditPart.VISUAL_ID:
 				return new SlotEditPart(view);
-/*
+
 			case Property6EditPart.VISUAL_ID:
 				return new Property6EditPart(view);
 
 			case Operation6EditPart.VISUAL_ID:
 				return new Operation6EditPart(view);
-*/
 
 			case Class4EditPart.VISUAL_ID:
 				return new Class4EditPart(view);
@@ -237,7 +236,7 @@ public class UMLEditPartFactory implements EditPartFactory {
 
 			case InstanceSpecificationSlotsEditPart.VISUAL_ID:
 				return new InstanceSpecificationSlotsEditPart(view);
-/*
+
 			case InterfaceAttributesEditPart.VISUAL_ID:
 				return new InterfaceAttributesEditPart(view);
 
@@ -246,7 +245,6 @@ public class UMLEditPartFactory implements EditPartFactory {
 
 			case InterfaceClassesEditPart.VISUAL_ID:
 				return new InterfaceClassesEditPart(view);
-*/
 
 			case GeneralizationEditPart.VISUAL_ID:
 				return new GeneralizationEditPart(view);
@@ -307,7 +305,7 @@ public class UMLEditPartFactory implements EditPartFactory {
 
 			case RealizationNameEditPart.VISUAL_ID:
 				return new RealizationNameEditPart(view);
-/*
+
 			case Generalization2EditPart.VISUAL_ID:
 				return new Generalization2EditPart(view);
 
@@ -316,7 +314,6 @@ public class UMLEditPartFactory implements EditPartFactory {
 
 			case UsageEditPart.VISUAL_ID:
 				return new UsageEditPart(view);
-*/
 			}
 		}
 		return createUnrecognizedEditPart(context, model);

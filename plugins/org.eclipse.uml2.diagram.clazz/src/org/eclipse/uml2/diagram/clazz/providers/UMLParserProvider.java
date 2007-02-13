@@ -1,6 +1,7 @@
 package org.eclipse.uml2.diagram.clazz.providers;
 
 import org.eclipse.core.runtime.IAdaptable;
+import org.eclipse.emf.ecore.EObject;
 import org.eclipse.gmf.runtime.common.core.service.AbstractProvider;
 import org.eclipse.gmf.runtime.common.core.service.IOperation;
 import org.eclipse.gmf.runtime.common.ui.services.parser.GetParserOperation;
@@ -8,6 +9,8 @@ import org.eclipse.gmf.runtime.common.ui.services.parser.IParser;
 import org.eclipse.gmf.runtime.common.ui.services.parser.IParserProvider;
 import org.eclipse.gmf.runtime.emf.type.core.IElementType;
 import org.eclipse.gmf.runtime.notation.View;
+import java.util.ArrayList;
+import java.util.List;
 import org.eclipse.uml2.diagram.clazz.edit.parts.AssociationClassEditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.AssociationClassNameEditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.AssociationName2EditPart;
@@ -18,25 +21,29 @@ import org.eclipse.uml2.diagram.clazz.edit.parts.AssociationName6EditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.AssociationName7EditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.AssociationNameEditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.Class3EditPart;
+import org.eclipse.uml2.diagram.clazz.edit.parts.Class4EditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.ClassEditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.ClassNameEditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.ConstraintNameEditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.DataTypeEditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.DataTypeNameEditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.DependencyName2EditPart;
+import org.eclipse.uml2.diagram.clazz.edit.parts.DependencyName3EditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.DependencyNameEditPart;
-import org.eclipse.uml2.diagram.clazz.edit.parts.Dependency_typeEditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.EnumerationEditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.EnumerationLiteralEditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.EnumerationNameEditPart;
+import org.eclipse.uml2.diagram.clazz.edit.parts.GeneralizationSetIsCoveringIsDisjointEditPart;
+import org.eclipse.uml2.diagram.clazz.edit.parts.GeneralizationSetNameEditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.InstanceSpecificationEditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.InstanceSpecificationNameEditPart;
+import org.eclipse.uml2.diagram.clazz.edit.parts.InterfaceName2EditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.InterfaceNameEditPart;
-import org.eclipse.uml2.diagram.clazz.edit.parts.LiteralStringEditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.Operation2EditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.Operation3EditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.Operation4EditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.Operation5EditPart;
+import org.eclipse.uml2.diagram.clazz.edit.parts.Operation6EditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.OperationEditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.Package3EditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.PackageNameEditPart;
@@ -47,11 +54,13 @@ import org.eclipse.uml2.diagram.clazz.edit.parts.Property2EditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.Property3EditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.Property4EditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.Property5EditPart;
+import org.eclipse.uml2.diagram.clazz.edit.parts.Property6EditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.PropertyEditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.PropertyNameEditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.RealizationNameEditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.SlotEditPart;
 import org.eclipse.uml2.diagram.clazz.expressions.UMLOCLFactory;
+import org.eclipse.uml2.diagram.clazz.parser.GeneralizationSetParser;
 import org.eclipse.uml2.diagram.clazz.parser.association.end.AssociationEndApplyStrategy;
 import org.eclipse.uml2.diagram.clazz.parser.association.end.AssociationEndParser;
 import org.eclipse.uml2.diagram.clazz.parser.association.end.AssociationEndToString;
@@ -77,6 +86,7 @@ import org.eclipse.uml2.diagram.parser.lookup.DefaultOclLookups;
 import org.eclipse.uml2.diagram.parser.lookup.LookupSuite;
 import org.eclipse.uml2.diagram.parser.lookup.LookupSuiteImpl;
 import org.eclipse.uml2.diagram.parser.lookup.OCLLookup;
+import org.eclipse.uml2.uml.GeneralizationSet;
 import org.eclipse.uml2.uml.Type;
 import org.eclipse.uml2.uml.UMLPackage;
 
@@ -196,29 +206,6 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 		lookupSuite.addLookup(Type.class, TYPE_LOOKUP);
 
 		return new SemanticParserAdapter(new PortParser(lookupSuite), new BasicApplyStrategy(), new PortToString());
-	}
-
-	/**
-	 * @generated
-	 */
-	private IParser literalStringLiteralString_3005Parser;
-
-	/**
-	 * @generated
-	 */
-	private IParser getLiteralStringLiteralString_3005Parser() {
-		if (literalStringLiteralString_3005Parser == null) {
-			literalStringLiteralString_3005Parser = createLiteralStringLiteralString_3005Parser();
-		}
-		return literalStringLiteralString_3005Parser;
-	}
-
-	/**
-	 * @generated
-	 */
-	protected IParser createLiteralStringLiteralString_3005Parser() {
-		UMLStructuralFeatureParser parser = new UMLStructuralFeatureParser(UMLPackage.eINSTANCE.getLiteralString_Value());
-		return parser;
 	}
 
 	/**
@@ -609,6 +596,75 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 	/**
 	 * @generated
 	 */
+	private IParser propertyProperty_3028Parser;
+
+	/**
+	 * @generated
+	 */
+	private IParser getPropertyProperty_3028Parser() {
+		if (propertyProperty_3028Parser == null) {
+			propertyProperty_3028Parser = createPropertyProperty_3028Parser();
+		}
+		return propertyProperty_3028Parser;
+	}
+
+	/**
+	 * @generated
+	 */
+	protected IParser createPropertyProperty_3028Parser() {
+		UMLStructuralFeatureParser parser = new UMLStructuralFeatureParser(UMLPackage.eINSTANCE.getNamedElement_Name());
+		return parser;
+	}
+
+	/**
+	 * @generated
+	 */
+	private IParser operationOperation_3029Parser;
+
+	/**
+	 * @generated
+	 */
+	private IParser getOperationOperation_3029Parser() {
+		if (operationOperation_3029Parser == null) {
+			operationOperation_3029Parser = createOperationOperation_3029Parser();
+		}
+		return operationOperation_3029Parser;
+	}
+
+	/**
+	 * @generated
+	 */
+	protected IParser createOperationOperation_3029Parser() {
+		UMLStructuralFeatureParser parser = new UMLStructuralFeatureParser(UMLPackage.eINSTANCE.getNamedElement_Name());
+		return parser;
+	}
+
+	/**
+	 * @generated
+	 */
+	private IParser classClass_3030Parser;
+
+	/**
+	 * @generated
+	 */
+	private IParser getClassClass_3030Parser() {
+		if (classClass_3030Parser == null) {
+			classClass_3030Parser = createClassClass_3030Parser();
+		}
+		return classClass_3030Parser;
+	}
+
+	/**
+	 * @generated
+	 */
+	protected IParser createClassClass_3030Parser() {
+		UMLStructuralFeatureParser parser = new UMLStructuralFeatureParser(UMLPackage.eINSTANCE.getNamedElement_Name());
+		return parser;
+	}
+
+	/**
+	 * @generated
+	 */
 	private IParser classClassName_5003Parser;
 
 	/**
@@ -821,6 +877,83 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 	/**
 	 * @generated
 	 */
+	private IParser generalizationSetGeneralizationSetIsCoveringIsDisjoint_5016Parser;
+
+	/**
+	 * @generated
+	 */
+	private IParser getGeneralizationSetGeneralizationSetIsCoveringIsDisjoint_5016Parser() {
+		if (generalizationSetGeneralizationSetIsCoveringIsDisjoint_5016Parser == null) {
+			generalizationSetGeneralizationSetIsCoveringIsDisjoint_5016Parser = createGeneralizationSetGeneralizationSetIsCoveringIsDisjoint_5016Parser();
+		}
+		return generalizationSetGeneralizationSetIsCoveringIsDisjoint_5016Parser;
+	}
+
+	/**
+	 * @generated NOT
+	 */
+	protected IParser createGeneralizationSetGeneralizationSetIsCoveringIsDisjoint_5016Parser() {
+		return new GeneralizationSetParser();
+	}
+
+	/**
+	 * @generated
+	 */
+	private IParser generalizationSetGeneralizationSetName_5017Parser;
+
+	/**
+	 * @generated
+	 */
+	private IParser getGeneralizationSetGeneralizationSetName_5017Parser() {
+		if (generalizationSetGeneralizationSetName_5017Parser == null) {
+			generalizationSetGeneralizationSetName_5017Parser = createGeneralizationSetGeneralizationSetName_5017Parser();
+		}
+		return generalizationSetGeneralizationSetName_5017Parser;
+	}
+
+	/**
+	 * @generated NOT
+	 */
+	protected IParser createGeneralizationSetGeneralizationSetName_5017Parser() {
+		UMLStructuralFeatureParser parser = new UMLStructuralFeatureParser(UMLPackage.eINSTANCE.getNamedElement_Name()) {
+
+			@Override
+			protected EObject getDomainElement(EObject element) {
+				if (element instanceof GeneralizationSet) {
+					return ((GeneralizationSet) element).getPowertype();
+				}
+				return super.getDomainElement(element);
+			}
+		};
+		return parser;
+	}
+
+	/**
+	 * @generated
+	 */
+	private IParser interfaceInterfaceName_5018Parser;
+
+	/**
+	 * @generated
+	 */
+	private IParser getInterfaceInterfaceName_5018Parser() {
+		if (interfaceInterfaceName_5018Parser == null) {
+			interfaceInterfaceName_5018Parser = createInterfaceInterfaceName_5018Parser();
+		}
+		return interfaceInterfaceName_5018Parser;
+	}
+
+	/**
+	 * @generated
+	 */
+	protected IParser createInterfaceInterfaceName_5018Parser() {
+		UMLStructuralFeatureParser parser = new UMLStructuralFeatureParser(UMLPackage.eINSTANCE.getNamedElement_Name());
+		return parser;
+	}
+
+	/**
+	 * @generated
+	 */
 	private IParser interfaceInterfaceName_5012Parser;
 
 	/**
@@ -862,6 +995,21 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 	protected IParser createDependencyDependencyName_6001Parser() {
 		UMLStructuralFeatureParser parser = new UMLStructuralFeatureParser(UMLPackage.eINSTANCE.getNamedElement_Name());
 		return parser;
+	}
+
+	/**
+	 * @generated
+	 */
+	private IParser dependencyDependencyName_6010Parser;
+
+	/**
+	 * @generated
+	 */
+	private IParser getDependencyDependencyName_6010Parser() {
+		if (dependencyDependencyName_6010Parser == null) {
+			dependencyDependencyName_6010Parser = createDependencyDependencyName_6010Parser();
+		}
+		return dependencyDependencyName_6010Parser;
 	}
 
 	/**
@@ -1142,10 +1290,14 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 			return getPropertyProperty_3023Parser();
 		case Operation5EditPart.VISUAL_ID:
 			return getOperationOperation_3024Parser();
-		case LiteralStringEditPart.VISUAL_ID:
-			return getLiteralStringLiteralString_3005Parser();
 		case SlotEditPart.VISUAL_ID:
 			return getSlotSlot_3017Parser();
+		case Property6EditPart.VISUAL_ID:
+			return getPropertyProperty_3028Parser();
+		case Operation6EditPart.VISUAL_ID:
+			return getOperationOperation_3029Parser();
+		case Class4EditPart.VISUAL_ID:
+			return getClassClass_3030Parser();
 		case PackageNameEditPart.VISUAL_ID:
 			return getPackagePackageName_5004Parser();
 		case ClassNameEditPart.VISUAL_ID:
@@ -1166,8 +1318,16 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 			return getInstanceSpecificationInstanceSpecificationName_5010Parser();
 		case DependencyNameEditPart.VISUAL_ID:
 			return getDependencyDependencyName_5011Parser();
+		case GeneralizationSetIsCoveringIsDisjointEditPart.VISUAL_ID:
+			return getGeneralizationSetGeneralizationSetIsCoveringIsDisjoint_5016Parser();
+		case GeneralizationSetNameEditPart.VISUAL_ID:
+			return getGeneralizationSetGeneralizationSetName_5017Parser();
+		case InterfaceName2EditPart.VISUAL_ID:
+			return getInterfaceInterfaceName_5018Parser();
 		case DependencyName2EditPart.VISUAL_ID:
 			return getDependencyDependencyName_6001Parser();
+		case DependencyName3EditPart.VISUAL_ID:
+			return getDependencyDependencyName_6010Parser();
 		case PropertyNameEditPart.VISUAL_ID:
 			return getPropertyPropertyName_6002Parser();
 		case AssociationNameEditPart.VISUAL_ID:

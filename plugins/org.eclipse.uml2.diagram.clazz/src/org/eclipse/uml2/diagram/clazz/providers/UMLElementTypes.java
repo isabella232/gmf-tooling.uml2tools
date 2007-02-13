@@ -167,6 +167,10 @@ public class UMLElementTypes extends ElementInitializers {
 
 			elements.put(Dependency_2009, UMLPackage.eINSTANCE.getDependency());
 
+			elements.put(GeneralizationSet_2012, UMLPackage.eINSTANCE.getGeneralizationSet());
+
+			elements.put(Interface_2013, UMLPackage.eINSTANCE.getInterface());
+
 			elements.put(Package_3006, UMLPackage.eINSTANCE.getPackage());
 
 			elements.put(Class_3007, UMLPackage.eINSTANCE.getClass_());
@@ -209,9 +213,13 @@ public class UMLElementTypes extends ElementInitializers {
 
 			elements.put(Operation_3024, UMLPackage.eINSTANCE.getOperation());
 
-			elements.put(LiteralString_3005, UMLPackage.eINSTANCE.getLiteralString());
-
 			elements.put(Slot_3017, UMLPackage.eINSTANCE.getSlot());
+
+			elements.put(Property_3028, UMLPackage.eINSTANCE.getProperty());
+
+			elements.put(Operation_3029, UMLPackage.eINSTANCE.getOperation());
+
+			elements.put(Class_3030, UMLPackage.eINSTANCE.getClass_());
 
 			elements.put(Generalization_4001, UMLPackage.eINSTANCE.getGeneralization());
 
@@ -230,6 +238,12 @@ public class UMLElementTypes extends ElementInitializers {
 			elements.put(InterfaceRealization_4008, UMLPackage.eINSTANCE.getInterfaceRealization());
 
 			elements.put(Realization_4010, UMLPackage.eINSTANCE.getRealization());
+
+			elements.put(Generalization_4011, UMLPackage.eINSTANCE.getGeneralization());
+
+			elements.put(GeneralizationGeneral_4012, UMLPackage.eINSTANCE.getGeneralization_General());
+
+			elements.put(Usage_4013, UMLPackage.eINSTANCE.getUsage());
 		}
 		return (ENamedElement) elements.get(type);
 	}
@@ -288,6 +302,16 @@ public class UMLElementTypes extends ElementInitializers {
 	 * @generated
 	 */
 	public static final IElementType Dependency_2009 = getElementType("org.eclipse.uml2.diagram.clazz.Dependency_2009"); //$NON-NLS-1$
+
+	/**
+	 * @generated
+	 */
+	public static final IElementType GeneralizationSet_2012 = getElementType("org.eclipse.uml2.diagram.clazz.GeneralizationSet_2012"); //$NON-NLS-1$
+
+	/**
+	 * @generated
+	 */
+	public static final IElementType Interface_2013 = getElementType("org.eclipse.uml2.diagram.clazz.Interface_2013"); //$NON-NLS-1$
 
 	/**
 	 * @generated
@@ -397,12 +421,22 @@ public class UMLElementTypes extends ElementInitializers {
 	/**
 	 * @generated
 	 */
-	public static final IElementType LiteralString_3005 = getElementType("org.eclipse.uml2.diagram.clazz.LiteralString_3005"); //$NON-NLS-1$
+	public static final IElementType Slot_3017 = getElementType("org.eclipse.uml2.diagram.clazz.Slot_3017"); //$NON-NLS-1$
 
 	/**
 	 * @generated
 	 */
-	public static final IElementType Slot_3017 = getElementType("org.eclipse.uml2.diagram.clazz.Slot_3017"); //$NON-NLS-1$
+	public static final IElementType Property_3028 = getElementType("org.eclipse.uml2.diagram.clazz.Property_3028"); //$NON-NLS-1$
+
+	/**
+	 * @generated
+	 */
+	public static final IElementType Operation_3029 = getElementType("org.eclipse.uml2.diagram.clazz.Operation_3029"); //$NON-NLS-1$
+
+	/**
+	 * @generated
+	 */
+	public static final IElementType Class_3030 = getElementType("org.eclipse.uml2.diagram.clazz.Class_3030"); //$NON-NLS-1$
 
 	/**
 	 * @generated
@@ -452,6 +486,21 @@ public class UMLElementTypes extends ElementInitializers {
 	/**
 	 * @generated
 	 */
+	public static final IElementType Generalization_4011 = getElementType("org.eclipse.uml2.diagram.clazz.Generalization_4011"); //$NON-NLS-1$
+
+	/**
+	 * @generated
+	 */
+	public static final IElementType GeneralizationGeneral_4012 = getElementType("org.eclipse.uml2.diagram.clazz.GeneralizationGeneral_4012"); //$NON-NLS-1$
+
+	/**
+	 * @generated
+	 */
+	public static final IElementType Usage_4013 = getElementType("org.eclipse.uml2.diagram.clazz.Usage_4013"); //$NON-NLS-1$
+
+	/**
+	 * @generated
+	 */
 	private static IElementType getElementType(String id) {
 		return ElementTypeRegistry.getInstance().getType(id);
 	}
@@ -478,6 +527,8 @@ public class UMLElementTypes extends ElementInitializers {
 			KNOWN_ELEMENT_TYPES.add(Constraint_2006);
 			KNOWN_ELEMENT_TYPES.add(InstanceSpecification_2008);
 			KNOWN_ELEMENT_TYPES.add(Dependency_2009);
+			KNOWN_ELEMENT_TYPES.add(GeneralizationSet_2012);
+			KNOWN_ELEMENT_TYPES.add(Interface_2013);
 			KNOWN_ELEMENT_TYPES.add(Package_3006);
 			KNOWN_ELEMENT_TYPES.add(Class_3007);
 			KNOWN_ELEMENT_TYPES.add(DataType_3008);
@@ -499,8 +550,10 @@ public class UMLElementTypes extends ElementInitializers {
 			KNOWN_ELEMENT_TYPES.add(EnumerationLiteral_3016);
 			KNOWN_ELEMENT_TYPES.add(Property_3023);
 			KNOWN_ELEMENT_TYPES.add(Operation_3024);
-			KNOWN_ELEMENT_TYPES.add(LiteralString_3005);
 			KNOWN_ELEMENT_TYPES.add(Slot_3017);
+			KNOWN_ELEMENT_TYPES.add(Property_3028);
+			KNOWN_ELEMENT_TYPES.add(Operation_3029);
+			KNOWN_ELEMENT_TYPES.add(Class_3030);
 			KNOWN_ELEMENT_TYPES.add(Generalization_4001);
 			KNOWN_ELEMENT_TYPES.add(Dependency_4002);
 			KNOWN_ELEMENT_TYPES.add(Property_4003);
@@ -510,6 +563,9 @@ public class UMLElementTypes extends ElementInitializers {
 			KNOWN_ELEMENT_TYPES.add(DependencyClient_4007);
 			KNOWN_ELEMENT_TYPES.add(InterfaceRealization_4008);
 			KNOWN_ELEMENT_TYPES.add(Realization_4010);
+			KNOWN_ELEMENT_TYPES.add(Generalization_4011);
+			KNOWN_ELEMENT_TYPES.add(GeneralizationGeneral_4012);
+			KNOWN_ELEMENT_TYPES.add(Usage_4013);
 		}
 		return KNOWN_ELEMENT_TYPES.contains(elementType);
 	}

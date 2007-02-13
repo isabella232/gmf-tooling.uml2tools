@@ -16,6 +16,9 @@
                   id="UMLGroup"
                   path="/propertiesGroup">
              </popupMenuGroup>
+		 </popupContribution>
+		 <popupContribution
+               class="org.eclipse.gmf.runtime.diagram.ui.providers.DiagramContextMenuProvider">
              <popupMenu
                    id="DependencyTypeMenu"
                    path="/UMLGroup">
@@ -42,6 +45,21 @@
              </popupAction>
              <popupStructuredContributionCriteria
                    objectClass="org.eclipse.uml2.diagram.clazz.edit.parts.Dependency2EditPart"
+                   objectCount="1">
+             </popupStructuredContributionCriteria>
+		 </popupContribution>
+		 <popupContribution
+               class="org.eclipse.gmf.runtime.diagram.ui.providers.DiagramContextMenuProvider">
+             <popupAction
+                  path="/UMLGroup"
+                  id="change_interface_notation">
+             </popupAction>            
+             <popupStructuredContributionCriteria
+                   objectClass="org.eclipse.uml2.diagram.clazz.edit.parts.InterfaceEditPart"
+                   objectCount="1">
+             </popupStructuredContributionCriteria>
+             <popupStructuredContributionCriteria
+                   objectClass="org.eclipse.uml2.diagram.clazz.edit.parts.Interface2EditPart"
                    objectCount="1">
              </popupStructuredContributionCriteria>
 		 </popupContribution>
@@ -225,11 +243,19 @@
             <popupPredefinedItem id="deleteFromDiagramAction" remove="true"/>
          </popupContribution>
          <popupContribution class="org.eclipse.gmf.runtime.diagram.ui.providers.DiagramContextMenuProvider">
-            <popupStructuredContributionCriteria objectClass="org.eclipse.uml2.diagram.clazz.edit.parts.LiteralStringEditPart"/>
+            <popupStructuredContributionCriteria objectClass="org.eclipse.uml2.diagram.clazz.edit.parts.SlotEditPart"/>
             <popupPredefinedItem id="deleteFromDiagramAction" remove="true"/>
          </popupContribution>
          <popupContribution class="org.eclipse.gmf.runtime.diagram.ui.providers.DiagramContextMenuProvider">
-            <popupStructuredContributionCriteria objectClass="org.eclipse.uml2.diagram.clazz.edit.parts.SlotEditPart"/>
+            <popupStructuredContributionCriteria objectClass="org.eclipse.uml2.diagram.clazz.edit.parts.Property6EditPart"/>
+            <popupPredefinedItem id="deleteFromDiagramAction" remove="true"/>
+         </popupContribution>
+         <popupContribution class="org.eclipse.gmf.runtime.diagram.ui.providers.DiagramContextMenuProvider">
+            <popupStructuredContributionCriteria objectClass="org.eclipse.uml2.diagram.clazz.edit.parts.Operation6EditPart"/>
+            <popupPredefinedItem id="deleteFromDiagramAction" remove="true"/>
+         </popupContribution>
+         <popupContribution class="org.eclipse.gmf.runtime.diagram.ui.providers.DiagramContextMenuProvider">
+            <popupStructuredContributionCriteria objectClass="org.eclipse.uml2.diagram.clazz.edit.parts.Class4EditPart"/>
             <popupPredefinedItem id="deleteFromDiagramAction" remove="true"/>
          </popupContribution>
          <popupContribution class="org.eclipse.gmf.runtime.diagram.ui.providers.DiagramContextMenuProvider">
@@ -315,6 +341,28 @@
             <popupPredefinedItem id="deleteFromModelAction" remove="true"/>
          </popupContribution>
          <popupContribution class="org.eclipse.gmf.runtime.diagram.ui.providers.DiagramContextMenuProvider">
+            <popupStructuredContributionCriteria objectClass="org.eclipse.uml2.diagram.clazz.edit.parts.GeneralizationSetEditPart"/>
+            <popupPredefinedItem id="deleteFromDiagramAction" remove="true"/>
+         </popupContribution>
+         <popupContribution class="org.eclipse.gmf.runtime.diagram.ui.providers.DiagramContextMenuProvider">
+            <popupStructuredContributionCriteria objectClass="org.eclipse.uml2.diagram.clazz.edit.parts.GeneralizationSetIsCoveringIsDisjointEditPart"/>
+            <popupPredefinedItem id="deleteFromDiagramAction" remove="true"/>
+            <popupPredefinedItem id="deleteFromModelAction" remove="true"/>
+         </popupContribution>
+         <popupContribution class="org.eclipse.gmf.runtime.diagram.ui.providers.DiagramContextMenuProvider">
+            <popupStructuredContributionCriteria objectClass="org.eclipse.uml2.diagram.clazz.edit.parts.GeneralizationSetNameEditPart"/>
+            <popupPredefinedItem id="deleteFromDiagramAction" remove="true"/>
+            <popupPredefinedItem id="deleteFromModelAction" remove="true"/>
+         </popupContribution>
+         <popupContribution class="org.eclipse.gmf.runtime.diagram.ui.providers.DiagramContextMenuProvider">
+            <popupStructuredContributionCriteria objectClass="org.eclipse.uml2.diagram.clazz.edit.parts.Interface2EditPart"/>
+            <popupPredefinedItem id="deleteFromDiagramAction" remove="true"/>
+         </popupContribution>
+         <popupContribution class="org.eclipse.gmf.runtime.diagram.ui.providers.DiagramContextMenuProvider">
+            <popupStructuredContributionCriteria objectClass="org.eclipse.uml2.diagram.clazz.edit.parts.InterfaceName2EditPart"/>
+            <popupPredefinedItem id="deleteFromDiagramAction" remove="true"/>
+         </popupContribution>
+         <popupContribution class="org.eclipse.gmf.runtime.diagram.ui.providers.DiagramContextMenuProvider">
             <popupStructuredContributionCriteria objectClass="org.eclipse.uml2.diagram.clazz.edit.parts.GeneralizationEditPart"/>
             <popupPredefinedItem id="deleteFromDiagramAction" remove="true"/>
          </popupContribution>
@@ -328,12 +376,12 @@
             <popupPredefinedItem id="deleteFromModelAction" remove="true"/>
          </popupContribution>
          <popupContribution class="org.eclipse.gmf.runtime.diagram.ui.providers.DiagramContextMenuProvider">
-            <popupStructuredContributionCriteria objectClass="org.eclipse.uml2.diagram.clazz.edit.parts.Dependency_typeEditPart"/>
+            <popupStructuredContributionCriteria objectClass="org.eclipse.uml2.diagram.clazz.edit.parts.DependencyName3EditPart"/>
             <popupPredefinedItem id="deleteFromDiagramAction" remove="true"/>
             <popupPredefinedItem id="deleteFromModelAction" remove="true"/>
          </popupContribution>
          <popupContribution class="org.eclipse.gmf.runtime.diagram.ui.providers.DiagramContextMenuProvider">
-            <popupStructuredContributionCriteria objectClass="org.eclipse.uml2.diagram.clazz.edit.parts.Property6EditPart"/>
+            <popupStructuredContributionCriteria objectClass="org.eclipse.uml2.diagram.clazz.edit.parts.Property7EditPart"/>
             <popupPredefinedItem id="deleteFromDiagramAction" remove="true"/>
          </popupContribution>
          <popupContribution class="org.eclipse.gmf.runtime.diagram.ui.providers.DiagramContextMenuProvider">
@@ -407,6 +455,19 @@
             <popupStructuredContributionCriteria objectClass="org.eclipse.uml2.diagram.clazz.edit.parts.RealizationNameEditPart"/>
             <popupPredefinedItem id="deleteFromDiagramAction" remove="true"/>
             <popupPredefinedItem id="deleteFromModelAction" remove="true"/>
+         </popupContribution>
+         <popupContribution class="org.eclipse.gmf.runtime.diagram.ui.providers.DiagramContextMenuProvider">
+            <popupStructuredContributionCriteria objectClass="org.eclipse.uml2.diagram.clazz.edit.parts.Generalization2EditPart"/>
+            <popupPredefinedItem id="deleteFromDiagramAction" remove="true"/>
+         </popupContribution>
+         <popupContribution class="org.eclipse.gmf.runtime.diagram.ui.providers.DiagramContextMenuProvider">
+            <popupStructuredContributionCriteria objectClass="org.eclipse.uml2.diagram.clazz.edit.parts.GeneralizationGeneralEditPart"/>
+            <popupAction path="/editGroup" id="deleteFromModelAction"/>
+            <popupPredefinedItem id="deleteFromDiagramAction" remove="true"/>
+         </popupContribution>
+         <popupContribution class="org.eclipse.gmf.runtime.diagram.ui.providers.DiagramContextMenuProvider">
+            <popupStructuredContributionCriteria objectClass="org.eclipse.uml2.diagram.clazz.edit.parts.UsageEditPart"/>
+            <popupPredefinedItem id="deleteFromDiagramAction" remove="true"/>
          </popupContribution>
       </contributionItemProvider>
    </extension>
@@ -737,17 +798,6 @@
 
       <metamodel nsURI="http://www.eclipse.org/uml2/2.0.0/UML">
          <metamodelType
-               id="org.eclipse.uml2.diagram.clazz.LiteralString_3005"
-               name="LiteralString"
-               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
-               eclass="LiteralString"
-               edithelper="org.eclipse.uml2.diagram.clazz.edit.helpers.LiteralStringEditHelper">
-            <param name="semanticHint" value="3005"/>
-         </metamodelType>
-      </metamodel>
-
-      <metamodel nsURI="http://www.eclipse.org/uml2/2.0.0/UML">
-         <metamodelType
                id="org.eclipse.uml2.diagram.clazz.Slot_3017"
                name="Slot"
                kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
@@ -755,6 +805,39 @@
                edithelper="org.eclipse.uml2.diagram.clazz.edit.helpers.SlotEditHelper">
             <param name="semanticHint" value="3017"/>
          </metamodelType>
+      </metamodel>
+
+      <metamodel nsURI="http://www.eclipse.org/uml2/2.0.0/UML">
+         <specializationType
+               id="org.eclipse.uml2.diagram.clazz.Property_3028"
+               name="Property"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
+               edithelperadvice="org.eclipse.uml2.diagram.clazz.edit.helpers.Property5EditHelperAdvice">
+            <specializes id="org.eclipse.uml2.diagram.clazz.Property_3001"/>
+            <param name="semanticHint" value="3028"/>
+         </specializationType>
+      </metamodel>
+
+      <metamodel nsURI="http://www.eclipse.org/uml2/2.0.0/UML">
+         <specializationType
+               id="org.eclipse.uml2.diagram.clazz.Operation_3029"
+               name="Operation"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
+               edithelperadvice="org.eclipse.uml2.diagram.clazz.edit.helpers.Operation5EditHelperAdvice">
+            <specializes id="org.eclipse.uml2.diagram.clazz.Operation_3002"/>
+            <param name="semanticHint" value="3029"/>
+         </specializationType>
+      </metamodel>
+
+      <metamodel nsURI="http://www.eclipse.org/uml2/2.0.0/UML">
+         <specializationType
+               id="org.eclipse.uml2.diagram.clazz.Class_3030"
+               name="Class"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
+               edithelperadvice="org.eclipse.uml2.diagram.clazz.edit.helpers.Class3EditHelperAdvice">
+            <specializes id="org.eclipse.uml2.diagram.clazz.Class_3007"/>
+            <param name="semanticHint" value="3030"/>
+         </specializationType>
       </metamodel>
 
       <metamodel nsURI="http://www.eclipse.org/uml2/2.0.0/UML">
@@ -869,6 +952,28 @@
 
       <metamodel nsURI="http://www.eclipse.org/uml2/2.0.0/UML">
          <metamodelType
+               id="org.eclipse.uml2.diagram.clazz.GeneralizationSet_2012"
+               name="GeneralizationSet"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
+               eclass="GeneralizationSet"
+               edithelper="org.eclipse.uml2.diagram.clazz.edit.helpers.GeneralizationSetEditHelper">
+            <param name="semanticHint" value="2012"/>
+         </metamodelType>
+      </metamodel>
+
+      <metamodel nsURI="http://www.eclipse.org/uml2/2.0.0/UML">
+         <specializationType
+               id="org.eclipse.uml2.diagram.clazz.Interface_2013"
+               name="Interface"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
+               edithelperadvice="org.eclipse.uml2.diagram.clazz.edit.helpers.InterfaceEditHelperAdvice">
+            <specializes id="org.eclipse.uml2.diagram.clazz.Interface_2010"/>
+            <param name="semanticHint" value="2013"/>
+         </specializationType>
+      </metamodel>
+
+      <metamodel nsURI="http://www.eclipse.org/uml2/2.0.0/UML">
+         <metamodelType
                id="org.eclipse.uml2.diagram.clazz.Generalization_4001"
                name="Generalization"
                kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
@@ -894,7 +999,7 @@
                id="org.eclipse.uml2.diagram.clazz.Property_4003"
                name="Property"
                kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
-               edithelperadvice="org.eclipse.uml2.diagram.clazz.edit.helpers.Property5EditHelperAdvice">
+               edithelperadvice="org.eclipse.uml2.diagram.clazz.edit.helpers.Property6EditHelperAdvice">
             <specializes id="org.eclipse.uml2.diagram.clazz.Property_3001"/>
             <param name="semanticHint" value="4003"/>
          </specializationType>
@@ -965,6 +1070,39 @@
             <param name="semanticHint" value="4010"/>
          </metamodelType>
       </metamodel>
+
+      <metamodel nsURI="http://www.eclipse.org/uml2/2.0.0/UML">
+         <specializationType
+               id="org.eclipse.uml2.diagram.clazz.Generalization_4011"
+               name="Generalization"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
+               edithelperadvice="org.eclipse.uml2.diagram.clazz.edit.helpers.GeneralizationEditHelperAdvice">
+            <specializes id="org.eclipse.uml2.diagram.clazz.Generalization_4001"/>
+            <param name="semanticHint" value="4011"/>
+         </specializationType>
+      </metamodel>
+
+      <metamodel nsURI="http://www.eclipse.org/uml2/2.0.0/UML">
+         <specializationType
+               id="org.eclipse.uml2.diagram.clazz.GeneralizationGeneral_4012"
+               name="Undefined"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
+               edithelperadvice="org.eclipse.uml2.diagram.clazz.edit.helpers.GeneralizationGeneralEditHelperAdvice">
+            <specializes id="org.eclipse.gmf.runtime.emf.type.core.null"/>
+            <param name="semanticHint" value="4012"/>
+         </specializationType>
+      </metamodel>
+
+      <metamodel nsURI="http://www.eclipse.org/uml2/2.0.0/UML">
+         <metamodelType
+               id="org.eclipse.uml2.diagram.clazz.Usage_4013"
+               name="Usage"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
+               eclass="Usage"
+               edithelper="org.eclipse.uml2.diagram.clazz.edit.helpers.UsageEditHelper">
+            <param name="semanticHint" value="4013"/>
+         </metamodelType>
+      </metamodel>
    </extension>
 
    <extension point="org.eclipse.gmf.runtime.emf.type.core.elementTypeBindings">
@@ -999,8 +1137,10 @@
          <elementType ref="org.eclipse.uml2.diagram.clazz.EnumerationLiteral_3016"/>
          <elementType ref="org.eclipse.uml2.diagram.clazz.Property_3023"/>
          <elementType ref="org.eclipse.uml2.diagram.clazz.Operation_3024"/>
-         <elementType ref="org.eclipse.uml2.diagram.clazz.LiteralString_3005"/>
          <elementType ref="org.eclipse.uml2.diagram.clazz.Slot_3017"/>
+         <elementType ref="org.eclipse.uml2.diagram.clazz.Property_3028"/>
+         <elementType ref="org.eclipse.uml2.diagram.clazz.Operation_3029"/>
+         <elementType ref="org.eclipse.uml2.diagram.clazz.Class_3030"/>
          <elementType ref="org.eclipse.uml2.diagram.clazz.Package_2002"/>
          <elementType ref="org.eclipse.uml2.diagram.clazz.Class_2001"/>
          <elementType ref="org.eclipse.uml2.diagram.clazz.AssociationClass_2007"/>
@@ -1011,6 +1151,8 @@
          <elementType ref="org.eclipse.uml2.diagram.clazz.Constraint_2006"/>
          <elementType ref="org.eclipse.uml2.diagram.clazz.InstanceSpecification_2008"/>
          <elementType ref="org.eclipse.uml2.diagram.clazz.Dependency_2009"/>
+         <elementType ref="org.eclipse.uml2.diagram.clazz.GeneralizationSet_2012"/>
+         <elementType ref="org.eclipse.uml2.diagram.clazz.Interface_2013"/>
          <elementType ref="org.eclipse.uml2.diagram.clazz.Generalization_4001"/>
          <elementType ref="org.eclipse.uml2.diagram.clazz.Dependency_4002"/>
          <elementType ref="org.eclipse.uml2.diagram.clazz.Property_4003"/>
@@ -1020,6 +1162,9 @@
          <elementType ref="org.eclipse.uml2.diagram.clazz.DependencyClient_4007"/>
          <elementType ref="org.eclipse.uml2.diagram.clazz.InterfaceRealization_4008"/>
          <elementType ref="org.eclipse.uml2.diagram.clazz.Realization_4010"/>
+         <elementType ref="org.eclipse.uml2.diagram.clazz.Generalization_4011"/>
+         <elementType ref="org.eclipse.uml2.diagram.clazz.GeneralizationGeneral_4012"/>
+         <elementType ref="org.eclipse.uml2.diagram.clazz.Usage_4013"/>
          <advice ref="org.eclipse.gmf.runtime.diagram.core.advice.notationDepdendents"/>
       </binding>
    </extension>

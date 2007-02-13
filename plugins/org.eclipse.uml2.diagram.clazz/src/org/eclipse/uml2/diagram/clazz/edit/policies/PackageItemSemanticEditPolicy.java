@@ -13,7 +13,9 @@ import org.eclipse.uml2.diagram.clazz.edit.commands.ConstraintCreateCommand;
 import org.eclipse.uml2.diagram.clazz.edit.commands.DataType2CreateCommand;
 import org.eclipse.uml2.diagram.clazz.edit.commands.DependencyCreateCommand;
 import org.eclipse.uml2.diagram.clazz.edit.commands.Enumeration2CreateCommand;
+import org.eclipse.uml2.diagram.clazz.edit.commands.GeneralizationSetCreateCommand;
 import org.eclipse.uml2.diagram.clazz.edit.commands.InstanceSpecification2CreateCommand;
+import org.eclipse.uml2.diagram.clazz.edit.commands.Interface2CreateCommand;
 import org.eclipse.uml2.diagram.clazz.edit.commands.InterfaceCreateCommand;
 import org.eclipse.uml2.diagram.clazz.edit.commands.PackageCreateCommand;
 import org.eclipse.uml2.diagram.clazz.edit.commands.PrimitiveType2CreateCommand;
@@ -90,6 +92,18 @@ public class PackageItemSemanticEditPolicy extends UMLBaseItemSemanticEditPolicy
 				req.setContainmentFeature(UMLPackage.eINSTANCE.getPackage_PackagedElement());
 			}
 			return getMSLWrapper(new DependencyCreateCommand(req));
+		}
+		if (UMLElementTypes.GeneralizationSet_2012 == req.getElementType()) {
+			if (req.getContainmentFeature() == null) {
+				req.setContainmentFeature(UMLPackage.eINSTANCE.getPackage_PackagedElement());
+			}
+			return getMSLWrapper(new GeneralizationSetCreateCommand(req));
+		}
+		if (UMLElementTypes.Interface_2013 == req.getElementType()) {
+			if (req.getContainmentFeature() == null) {
+				req.setContainmentFeature(UMLPackage.eINSTANCE.getPackage_PackagedElement());
+			}
+			return getMSLWrapper(new Interface2CreateCommand(req));
 		}
 		return super.getCreateCommand(req);
 	}

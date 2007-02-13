@@ -22,12 +22,12 @@ import org.eclipse.uml2.diagram.clazz.edit.parts.AssociationName7EditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.AssociationNameEditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.Class2EditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.Class3EditPart;
+import org.eclipse.uml2.diagram.clazz.edit.parts.Class4EditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.ClassAttributesEditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.ClassClassesEditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.ClassEditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.ClassNameEditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.ClassOperationsEditPart;
-import org.eclipse.uml2.diagram.clazz.edit.parts.ConstraintCompartmentEditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.ConstraintEditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.ConstraintNameEditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.DataType2EditPart;
@@ -38,8 +38,8 @@ import org.eclipse.uml2.diagram.clazz.edit.parts.DataTypeOperationsEditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.Dependency2EditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.DependencyEditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.DependencyName2EditPart;
+import org.eclipse.uml2.diagram.clazz.edit.parts.DependencyName3EditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.DependencyNameEditPart;
-import org.eclipse.uml2.diagram.clazz.edit.parts.Dependency_typeEditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.Enumeration2EditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.EnumerationAttributesEditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.EnumerationEditPart;
@@ -47,19 +47,28 @@ import org.eclipse.uml2.diagram.clazz.edit.parts.EnumerationLiteralEditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.EnumerationLiteralsEditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.EnumerationNameEditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.EnumerationOperationsEditPart;
+import org.eclipse.uml2.diagram.clazz.edit.parts.Generalization2EditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.GeneralizationEditPart;
+import org.eclipse.uml2.diagram.clazz.edit.parts.GeneralizationSetEditPart;
+import org.eclipse.uml2.diagram.clazz.edit.parts.GeneralizationSetIsCoveringIsDisjointEditPart;
+import org.eclipse.uml2.diagram.clazz.edit.parts.GeneralizationSetNameEditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.InstanceSpecification2EditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.InstanceSpecificationEditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.InstanceSpecificationNameEditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.InstanceSpecificationSlotsEditPart;
+import org.eclipse.uml2.diagram.clazz.edit.parts.Interface2EditPart;
+import org.eclipse.uml2.diagram.clazz.edit.parts.InterfaceAttributesEditPart;
+import org.eclipse.uml2.diagram.clazz.edit.parts.InterfaceClassesEditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.InterfaceEditPart;
+import org.eclipse.uml2.diagram.clazz.edit.parts.InterfaceName2EditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.InterfaceNameEditPart;
+import org.eclipse.uml2.diagram.clazz.edit.parts.InterfaceOperationsEditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.InterfaceRealizationEditPart;
-import org.eclipse.uml2.diagram.clazz.edit.parts.LiteralStringEditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.Operation2EditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.Operation3EditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.Operation4EditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.Operation5EditPart;
+import org.eclipse.uml2.diagram.clazz.edit.parts.Operation6EditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.OperationEditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.Package2EditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.Package3EditPart;
@@ -80,6 +89,7 @@ import org.eclipse.uml2.diagram.clazz.edit.parts.Property3EditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.Property4EditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.Property5EditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.Property6EditPart;
+import org.eclipse.uml2.diagram.clazz.edit.parts.Property7EditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.PropertyEditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.PropertyNameEditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.RealizationEditPart;
@@ -87,6 +97,7 @@ import org.eclipse.uml2.diagram.clazz.edit.parts.RealizationNameEditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.RedefinableTemplateSignatureEditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.SlotEditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.TemplateSignatureNode_signatureEditPart;
+import org.eclipse.uml2.diagram.clazz.edit.parts.UsageEditPart;
 
 import org.eclipse.uml2.diagram.clazz.part.UMLVisualIDRegistry;
 
@@ -106,12 +117,12 @@ import org.eclipse.uml2.diagram.clazz.view.factories.AssociationNameViewFactory;
 import org.eclipse.uml2.diagram.clazz.view.factories.AssociationViewFactory;
 import org.eclipse.uml2.diagram.clazz.view.factories.Class2ViewFactory;
 import org.eclipse.uml2.diagram.clazz.view.factories.Class3ViewFactory;
+import org.eclipse.uml2.diagram.clazz.view.factories.Class4ViewFactory;
 import org.eclipse.uml2.diagram.clazz.view.factories.ClassAttributesViewFactory;
 import org.eclipse.uml2.diagram.clazz.view.factories.ClassClassesViewFactory;
 import org.eclipse.uml2.diagram.clazz.view.factories.ClassNameViewFactory;
 import org.eclipse.uml2.diagram.clazz.view.factories.ClassOperationsViewFactory;
 import org.eclipse.uml2.diagram.clazz.view.factories.ClassViewFactory;
-import org.eclipse.uml2.diagram.clazz.view.factories.ConstraintCompartmentViewFactory;
 import org.eclipse.uml2.diagram.clazz.view.factories.ConstraintConstrainedElementViewFactory;
 import org.eclipse.uml2.diagram.clazz.view.factories.ConstraintNameViewFactory;
 import org.eclipse.uml2.diagram.clazz.view.factories.ConstraintViewFactory;
@@ -123,10 +134,10 @@ import org.eclipse.uml2.diagram.clazz.view.factories.DataTypeViewFactory;
 import org.eclipse.uml2.diagram.clazz.view.factories.Dependency2ViewFactory;
 import org.eclipse.uml2.diagram.clazz.view.factories.DependencyClientViewFactory;
 import org.eclipse.uml2.diagram.clazz.view.factories.DependencyName2ViewFactory;
+import org.eclipse.uml2.diagram.clazz.view.factories.DependencyName3ViewFactory;
 import org.eclipse.uml2.diagram.clazz.view.factories.DependencyNameViewFactory;
 import org.eclipse.uml2.diagram.clazz.view.factories.DependencySupplierViewFactory;
 import org.eclipse.uml2.diagram.clazz.view.factories.DependencyViewFactory;
-import org.eclipse.uml2.diagram.clazz.view.factories.Dependency_typeViewFactory;
 import org.eclipse.uml2.diagram.clazz.view.factories.Enumeration2ViewFactory;
 import org.eclipse.uml2.diagram.clazz.view.factories.EnumerationAttributesViewFactory;
 import org.eclipse.uml2.diagram.clazz.view.factories.EnumerationLiteralViewFactory;
@@ -134,19 +145,29 @@ import org.eclipse.uml2.diagram.clazz.view.factories.EnumerationLiteralsViewFact
 import org.eclipse.uml2.diagram.clazz.view.factories.EnumerationNameViewFactory;
 import org.eclipse.uml2.diagram.clazz.view.factories.EnumerationOperationsViewFactory;
 import org.eclipse.uml2.diagram.clazz.view.factories.EnumerationViewFactory;
+import org.eclipse.uml2.diagram.clazz.view.factories.Generalization2ViewFactory;
+import org.eclipse.uml2.diagram.clazz.view.factories.GeneralizationGeneralViewFactory;
+import org.eclipse.uml2.diagram.clazz.view.factories.GeneralizationSetIsCoveringIsDisjointViewFactory;
+import org.eclipse.uml2.diagram.clazz.view.factories.GeneralizationSetNameViewFactory;
+import org.eclipse.uml2.diagram.clazz.view.factories.GeneralizationSetViewFactory;
 import org.eclipse.uml2.diagram.clazz.view.factories.GeneralizationViewFactory;
 import org.eclipse.uml2.diagram.clazz.view.factories.InstanceSpecification2ViewFactory;
 import org.eclipse.uml2.diagram.clazz.view.factories.InstanceSpecificationNameViewFactory;
 import org.eclipse.uml2.diagram.clazz.view.factories.InstanceSpecificationSlotsViewFactory;
 import org.eclipse.uml2.diagram.clazz.view.factories.InstanceSpecificationViewFactory;
+import org.eclipse.uml2.diagram.clazz.view.factories.Interface2ViewFactory;
+import org.eclipse.uml2.diagram.clazz.view.factories.InterfaceAttributesViewFactory;
+import org.eclipse.uml2.diagram.clazz.view.factories.InterfaceClassesViewFactory;
+import org.eclipse.uml2.diagram.clazz.view.factories.InterfaceName2ViewFactory;
 import org.eclipse.uml2.diagram.clazz.view.factories.InterfaceNameViewFactory;
+import org.eclipse.uml2.diagram.clazz.view.factories.InterfaceOperationsViewFactory;
 import org.eclipse.uml2.diagram.clazz.view.factories.InterfaceRealizationViewFactory;
 import org.eclipse.uml2.diagram.clazz.view.factories.InterfaceViewFactory;
-import org.eclipse.uml2.diagram.clazz.view.factories.LiteralStringViewFactory;
 import org.eclipse.uml2.diagram.clazz.view.factories.Operation2ViewFactory;
 import org.eclipse.uml2.diagram.clazz.view.factories.Operation3ViewFactory;
 import org.eclipse.uml2.diagram.clazz.view.factories.Operation4ViewFactory;
 import org.eclipse.uml2.diagram.clazz.view.factories.Operation5ViewFactory;
+import org.eclipse.uml2.diagram.clazz.view.factories.Operation6ViewFactory;
 import org.eclipse.uml2.diagram.clazz.view.factories.OperationViewFactory;
 import org.eclipse.uml2.diagram.clazz.view.factories.Package2ViewFactory;
 import org.eclipse.uml2.diagram.clazz.view.factories.Package3ViewFactory;
@@ -167,6 +188,7 @@ import org.eclipse.uml2.diagram.clazz.view.factories.Property3ViewFactory;
 import org.eclipse.uml2.diagram.clazz.view.factories.Property4ViewFactory;
 import org.eclipse.uml2.diagram.clazz.view.factories.Property5ViewFactory;
 import org.eclipse.uml2.diagram.clazz.view.factories.Property6ViewFactory;
+import org.eclipse.uml2.diagram.clazz.view.factories.Property7ViewFactory;
 import org.eclipse.uml2.diagram.clazz.view.factories.PropertyNameViewFactory;
 import org.eclipse.uml2.diagram.clazz.view.factories.PropertyViewFactory;
 import org.eclipse.uml2.diagram.clazz.view.factories.RealizationNameViewFactory;
@@ -174,6 +196,7 @@ import org.eclipse.uml2.diagram.clazz.view.factories.RealizationViewFactory;
 import org.eclipse.uml2.diagram.clazz.view.factories.RedefinableTemplateSignatureViewFactory;
 import org.eclipse.uml2.diagram.clazz.view.factories.SlotViewFactory;
 import org.eclipse.uml2.diagram.clazz.view.factories.TemplateSignatureNode_signatureViewFactory;
+import org.eclipse.uml2.diagram.clazz.view.factories.UsageViewFactory;
 
 /**
  * @generated
@@ -246,6 +269,16 @@ public class UMLViewProvider extends AbstractViewProvider {
 			return DependencyViewFactory.class;
 		case DependencyNameEditPart.VISUAL_ID:
 			return DependencyNameViewFactory.class;
+		case GeneralizationSetEditPart.VISUAL_ID:
+			return GeneralizationSetViewFactory.class;
+		case GeneralizationSetIsCoveringIsDisjointEditPart.VISUAL_ID:
+			return GeneralizationSetIsCoveringIsDisjointViewFactory.class;
+		case GeneralizationSetNameEditPart.VISUAL_ID:
+			return GeneralizationSetNameViewFactory.class;
+		case Interface2EditPart.VISUAL_ID:
+			return Interface2ViewFactory.class;
+		case InterfaceName2EditPart.VISUAL_ID:
+			return InterfaceName2ViewFactory.class;
 		case Package3EditPart.VISUAL_ID:
 			return Package3ViewFactory.class;
 		case ClassEditPart.VISUAL_ID:
@@ -292,10 +325,14 @@ public class UMLViewProvider extends AbstractViewProvider {
 			return Property5ViewFactory.class;
 		case Operation5EditPart.VISUAL_ID:
 			return Operation5ViewFactory.class;
-		case LiteralStringEditPart.VISUAL_ID:
-			return LiteralStringViewFactory.class;
 		case SlotEditPart.VISUAL_ID:
 			return SlotViewFactory.class;
+		case Property6EditPart.VISUAL_ID:
+			return Property6ViewFactory.class;
+		case Operation6EditPart.VISUAL_ID:
+			return Operation6ViewFactory.class;
+		case Class4EditPart.VISUAL_ID:
+			return Class4ViewFactory.class;
 		case PackagePackagesEditPart.VISUAL_ID:
 			return PackagePackagesViewFactory.class;
 		case PackageClassifiersEditPart.VISUAL_ID:
@@ -328,14 +365,18 @@ public class UMLViewProvider extends AbstractViewProvider {
 			return EnumerationAttributesViewFactory.class;
 		case EnumerationOperationsEditPart.VISUAL_ID:
 			return EnumerationOperationsViewFactory.class;
-		case ConstraintCompartmentEditPart.VISUAL_ID:
-			return ConstraintCompartmentViewFactory.class;
 		case InstanceSpecificationSlotsEditPart.VISUAL_ID:
 			return InstanceSpecificationSlotsViewFactory.class;
+		case InterfaceAttributesEditPart.VISUAL_ID:
+			return InterfaceAttributesViewFactory.class;
+		case InterfaceOperationsEditPart.VISUAL_ID:
+			return InterfaceOperationsViewFactory.class;
+		case InterfaceClassesEditPart.VISUAL_ID:
+			return InterfaceClassesViewFactory.class;
 		case DependencyName2EditPart.VISUAL_ID:
 			return DependencyName2ViewFactory.class;
-		case Dependency_typeEditPart.VISUAL_ID:
-			return Dependency_typeViewFactory.class;
+		case DependencyName3EditPart.VISUAL_ID:
+			return DependencyName3ViewFactory.class;
 		case PropertyNameEditPart.VISUAL_ID:
 			return PropertyNameViewFactory.class;
 		case AssociationNameEditPart.VISUAL_ID:
@@ -375,6 +416,9 @@ public class UMLViewProvider extends AbstractViewProvider {
 		if (UMLElementTypes.DependencyClient_4007.equals(elementType)) {
 			return DependencyClientViewFactory.class;
 		}
+		if (UMLElementTypes.GeneralizationGeneral_4012.equals(elementType)) {
+			return GeneralizationGeneralViewFactory.class;
+		}
 		EClass semanticType = getSemanticEClass(semanticAdapter);
 		if (semanticType == null) {
 			return null;
@@ -386,14 +430,18 @@ public class UMLViewProvider extends AbstractViewProvider {
 			return GeneralizationViewFactory.class;
 		case Dependency2EditPart.VISUAL_ID:
 			return Dependency2ViewFactory.class;
-		case Property6EditPart.VISUAL_ID:
-			return Property6ViewFactory.class;
+		case Property7EditPart.VISUAL_ID:
+			return Property7ViewFactory.class;
 		case AssociationEditPart.VISUAL_ID:
 			return AssociationViewFactory.class;
 		case InterfaceRealizationEditPart.VISUAL_ID:
 			return InterfaceRealizationViewFactory.class;
 		case RealizationEditPart.VISUAL_ID:
 			return RealizationViewFactory.class;
+		case Generalization2EditPart.VISUAL_ID:
+			return Generalization2ViewFactory.class;
+		case UsageEditPart.VISUAL_ID:
+			return UsageViewFactory.class;
 		}
 		return getUnrecognizedConnectorViewClass(semanticAdapter, containerView, semanticHint);
 	}

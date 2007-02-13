@@ -15,7 +15,6 @@ import org.eclipse.gmf.runtime.diagram.ui.view.factories.AbstractShapeViewFactor
 import org.eclipse.gmf.runtime.notation.NotationFactory;
 import org.eclipse.gmf.runtime.notation.View;
 
-import org.eclipse.uml2.diagram.clazz.edit.parts.ConstraintCompartmentEditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.ConstraintEditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.ConstraintNameEditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.PackageEditPart;
@@ -55,7 +54,6 @@ public class ConstraintViewFactory extends AbstractShapeViewFactory {
 			view.getEAnnotations().add(shortcutAnnotation);
 		}
 		getViewService().createNode(semanticAdapter, view, UMLVisualIDRegistry.getType(ConstraintNameEditPart.VISUAL_ID), ViewUtil.APPEND, true, getPreferencesHint());
-		getViewService().createNode(semanticAdapter, view, UMLVisualIDRegistry.getType(ConstraintCompartmentEditPart.VISUAL_ID), ViewUtil.APPEND, true, getPreferencesHint());
 	}
 
 }

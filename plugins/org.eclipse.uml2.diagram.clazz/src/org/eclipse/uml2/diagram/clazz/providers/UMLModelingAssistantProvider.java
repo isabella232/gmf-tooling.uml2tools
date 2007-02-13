@@ -26,7 +26,9 @@ import org.eclipse.uml2.diagram.clazz.edit.parts.ConstraintEditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.DataType2EditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.DependencyEditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.Enumeration2EditPart;
+import org.eclipse.uml2.diagram.clazz.edit.parts.GeneralizationSetEditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.InstanceSpecification2EditPart;
+import org.eclipse.uml2.diagram.clazz.edit.parts.Interface2EditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.InterfaceEditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.Package2EditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.PackageEditPart;
@@ -94,14 +96,16 @@ public class UMLModelingAssistantProvider extends ModelingAssistantProvider {
 			types.add(UMLElementTypes.Operation_3024);
 			return types;
 		}
-		if (editPart instanceof ConstraintEditPart) {
-			List types = new ArrayList();
-			types.add(UMLElementTypes.LiteralString_3005);
-			return types;
-		}
 		if (editPart instanceof InstanceSpecification2EditPart) {
 			List types = new ArrayList();
 			types.add(UMLElementTypes.Slot_3017);
+			return types;
+		}
+		if (editPart instanceof Interface2EditPart) {
+			List types = new ArrayList();
+			types.add(UMLElementTypes.Property_3028);
+			types.add(UMLElementTypes.Operation_3029);
+			types.add(UMLElementTypes.Class_3030);
 			return types;
 		}
 		if (editPart instanceof PackageEditPart) {
@@ -116,6 +120,8 @@ public class UMLModelingAssistantProvider extends ModelingAssistantProvider {
 			types.add(UMLElementTypes.Constraint_2006);
 			types.add(UMLElementTypes.InstanceSpecification_2008);
 			types.add(UMLElementTypes.Dependency_2009);
+			types.add(UMLElementTypes.GeneralizationSet_2012);
+			types.add(UMLElementTypes.Interface_2013);
 			return types;
 		}
 		return Collections.EMPTY_LIST;
@@ -150,6 +156,16 @@ public class UMLModelingAssistantProvider extends ModelingAssistantProvider {
 			types.add(UMLElementTypes.InterfaceRealization_4008);
 			return types;
 		}
+		if (targetEditPart instanceof Interface2EditPart) {
+			List types = new ArrayList();
+			types.add(UMLElementTypes.InterfaceRealization_4008);
+			return types;
+		}
+		if (targetEditPart instanceof GeneralizationSetEditPart) {
+			List types = new ArrayList();
+			types.add(UMLElementTypes.Generalization_4011);
+			return types;
+		}
 		return Collections.EMPTY_LIST;
 	}
 
@@ -176,6 +192,14 @@ public class UMLModelingAssistantProvider extends ModelingAssistantProvider {
 	public List getTypesForSource(IAdaptable target, IElementType relationshipType) {
 		IGraphicalEditPart targetEditPart = (IGraphicalEditPart) target.getAdapter(IGraphicalEditPart.class);
 		if (targetEditPart instanceof InterfaceEditPart) {
+			List types = new ArrayList();
+			return types;
+		}
+		if (targetEditPart instanceof Interface2EditPart) {
+			List types = new ArrayList();
+			return types;
+		}
+		if (targetEditPart instanceof GeneralizationSetEditPart) {
 			List types = new ArrayList();
 			return types;
 		}

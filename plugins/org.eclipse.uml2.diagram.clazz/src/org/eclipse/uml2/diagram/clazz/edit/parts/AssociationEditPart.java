@@ -11,7 +11,7 @@ import org.eclipse.gmf.runtime.diagram.ui.editparts.ConnectionNodeEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles;
 import org.eclipse.gmf.runtime.draw2d.ui.figures.PolylineConnectionEx;
 import org.eclipse.gmf.runtime.notation.View;
-import org.eclipse.uml2.diagram.clazz.association.AssociationEndConvention;
+import org.eclipse.uml2.diagram.clazz.conventions.AssociationEndConvention;
 import org.eclipse.uml2.diagram.clazz.edit.policies.AssociationItemSemanticEditPolicy;
 import org.eclipse.uml2.diagram.common.draw2d.AssociationDecoration;
 import org.eclipse.uml2.uml.Association;

@@ -16,7 +16,7 @@ import org.eclipse.gmf.runtime.notation.Location;
 /**
  * @generated
  */
-public class Dependency_typeViewFactory extends AbstractLabelViewFactory {
+public class DependencyName3ViewFactory extends AbstractLabelViewFactory {
 
 	/**
 	 * @generated

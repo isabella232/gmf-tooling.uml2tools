@@ -8,32 +8,25 @@ import org.eclipse.core.runtime.IAdaptable;
 import org.eclipse.emf.ecore.EAnnotation;
 import org.eclipse.emf.ecore.EcoreFactory;
 
-import org.eclipse.gmf.runtime.diagram.core.util.ViewUtil;
+import org.eclipse.gmf.runtime.diagram.ui.view.factories.AbstractLabelViewFactory;
 
-import org.eclipse.gmf.runtime.diagram.ui.view.factories.ConnectionViewFactory;
-
-import org.eclipse.gmf.runtime.notation.NotationFactory;
 import org.eclipse.gmf.runtime.notation.View;
 
 import org.eclipse.uml2.diagram.clazz.edit.parts.PackageEditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.Property6EditPart;
-import org.eclipse.uml2.diagram.clazz.edit.parts.PropertyNameEditPart;
 
 import org.eclipse.uml2.diagram.clazz.part.UMLVisualIDRegistry;
 
 /**
  * @generated
  */
-public class Property6ViewFactory extends ConnectionViewFactory {
+public class Property6ViewFactory extends AbstractLabelViewFactory {
 
 	/**
 	 * @generated 
 	 */
 	protected List createStyles(View view) {
 		List styles = new ArrayList();
-		styles.add(NotationFactory.eINSTANCE.createRoutingStyle());
-		styles.add(NotationFactory.eINSTANCE.createFontStyle());
-		styles.add(NotationFactory.eINSTANCE.createLineStyle());
 		return styles;
 	}
 
@@ -52,7 +45,6 @@ public class Property6ViewFactory extends ConnectionViewFactory {
 			shortcutAnnotation.getDetails().put("modelID", PackageEditPart.MODEL_ID); //$NON-NLS-1$
 			view.getEAnnotations().add(shortcutAnnotation);
 		}
-		getViewService().createNode(semanticAdapter, view, UMLVisualIDRegistry.getType(PropertyNameEditPart.VISUAL_ID), ViewUtil.APPEND, true, getPreferencesHint());
 	}
 
 }

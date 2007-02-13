@@ -45,7 +45,7 @@ import org.eclipse.swt.accessibility.AccessibleEvent;
 import org.eclipse.swt.graphics.Color;
 import org.eclipse.swt.graphics.FontData;
 import org.eclipse.swt.graphics.Image;
-import org.eclipse.uml2.diagram.clazz.edit.policies.LiteralStringItemSemanticEditPolicy;
+import org.eclipse.uml2.diagram.clazz.edit.policies.Operation6ItemSemanticEditPolicy;
 import org.eclipse.uml2.diagram.clazz.edit.policies.UMLTextNonResizableEditPolicy;
 import org.eclipse.uml2.diagram.clazz.edit.policies.UMLTextSelectionEditPolicy;
 import org.eclipse.uml2.diagram.clazz.providers.UMLElementTypes;
@@ -53,12 +53,12 @@ import org.eclipse.uml2.diagram.clazz.providers.UMLElementTypes;
 /**
  * @generated
  */
-public class LiteralStringEditPart extends CompartmentEditPart implements ITextAwareEditPart {
+public class Operation6EditPart extends CompartmentEditPart implements ITextAwareEditPart {
 
 	/**
 	 * @generated
 	 */
-	public static final int VISUAL_ID = 3005;
+	public static final int VISUAL_ID = 3029;
 
 	/**
 	 * @generated
@@ -83,7 +83,7 @@ public class LiteralStringEditPart extends CompartmentEditPart implements ITextA
 	/**
 	 * @generated
 	 */
-	public LiteralStringEditPart(View view) {
+	public Operation6EditPart(View view) {
 		super(view);
 	}
 
@@ -102,7 +102,7 @@ public class LiteralStringEditPart extends CompartmentEditPart implements ITextA
 	 */
 	protected void createDefaultEditPolicies() {
 		super.createDefaultEditPolicies();
-		installEditPolicy(EditPolicyRoles.SEMANTIC_ROLE, new LiteralStringItemSemanticEditPolicy());
+		installEditPolicy(EditPolicyRoles.SEMANTIC_ROLE, new Operation6ItemSemanticEditPolicy());
 		installEditPolicy(EditPolicy.PRIMARY_DRAG_ROLE, new UMLTextNonResizableEditPolicy());
 		installEditPolicy(EditPolicy.COMPONENT_ROLE, new ListItemComponentEditPolicy());
 		installEditPolicy(EditPolicy.DIRECT_EDIT_ROLE, new LabelDirectEditPolicy());
@@ -290,7 +290,7 @@ public class LiteralStringEditPart extends CompartmentEditPart implements ITextA
 
 				public Object getAdapter(Class adapter) {
 					if (IElementType.class.equals(adapter)) {
-						return UMLElementTypes.LiteralString_3005;
+						return UMLElementTypes.Operation_3029;
 					}
 					return super.getAdapter(adapter);
 				}

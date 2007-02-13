@@ -30,7 +30,16 @@ import org.eclipse.gmf.runtime.emf.type.core.requests.ReorientReferenceRelations
 import org.eclipse.gmf.runtime.emf.type.core.requests.ReorientRelationshipRequest;
 import org.eclipse.gmf.runtime.emf.type.core.requests.SetRequest;
 import org.eclipse.gmf.runtime.notation.View;
+import java.util.Collections;
+import java.util.HashMap;
+import java.util.Map;
+
 import org.eclipse.uml2.diagram.clazz.edit.helpers.UMLBaseEditHelper;
+
+import org.eclipse.uml2.diagram.clazz.expressions.UMLAbstractExpression;
+import org.eclipse.uml2.diagram.clazz.expressions.UMLOCLFactory;
+
+import org.eclipse.uml2.diagram.clazz.part.UMLDiagramEditorPlugin;
 
 import org.eclipse.uml2.uml.Association;
 import org.eclipse.uml2.uml.BehavioredClassifier;
@@ -38,10 +47,13 @@ import org.eclipse.uml2.uml.Classifier;
 import org.eclipse.uml2.uml.Constraint;
 import org.eclipse.uml2.uml.Dependency;
 import org.eclipse.uml2.uml.Element;
+import org.eclipse.uml2.uml.Generalization;
+import org.eclipse.uml2.uml.GeneralizationSet;
 import org.eclipse.uml2.uml.Interface;
 import org.eclipse.uml2.uml.NamedElement;
 import org.eclipse.uml2.uml.Package;
 import org.eclipse.uml2.uml.Type;
+import org.eclipse.uml2.uml.UMLPackage;
 
 /**
  * @generated
@@ -247,6 +259,66 @@ public class UMLBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 		/**
 		 * @generated 
 		 */
+		private static UMLAbstractExpression Dependency_4002_TargetExpression;
+
+		/**
+		 * @generated 
+		 */
+		static {
+			Map env = new HashMap(3);
+			env.put("oppositeEnd", UMLPackage.eINSTANCE.getNamedElement()); //$NON-NLS-1$
+			Dependency_4002_TargetExpression = UMLOCLFactory.getExpression("not self.oclIsKindOf(uml::Interface)\r\n", //$NON-NLS-1$
+					UMLPackage.eINSTANCE.getNamedElement(), env);
+		}
+
+		/**
+		 * @generated 
+		 */
+		private static UMLAbstractExpression InterfaceRealization_4008_TargetExpression;
+
+		/**
+		 * @generated 
+		 */
+		static {
+			Map env = new HashMap(3);
+			env.put("oppositeEnd", UMLPackage.eINSTANCE.getBehavioredClassifier()); //$NON-NLS-1$
+			InterfaceRealization_4008_TargetExpression = UMLOCLFactory.getExpression("self.oclIsKindOf(uml::Interface)", //$NON-NLS-1$
+					UMLPackage.eINSTANCE.getInterface(), env);
+		}
+
+		/**
+		 * @generated 
+		 */
+		private static UMLAbstractExpression Usage_4013_SourceExpression;
+
+		/**
+		 * @generated 
+		 */
+		static {
+			Map env = new HashMap(3);
+			env.put("oppositeEnd", UMLPackage.eINSTANCE.getNamedElement()); //$NON-NLS-1$
+			Usage_4013_SourceExpression = UMLOCLFactory.getExpression("self.oclIsKindOf(uml::Classifier)", //$NON-NLS-1$
+					UMLPackage.eINSTANCE.getNamedElement(), env);
+		}
+
+		/**
+		 * @generated 
+		 */
+		private static UMLAbstractExpression Usage_4013_TargetExpression;
+
+		/**
+		 * @generated 
+		 */
+		static {
+			Map env = new HashMap(3);
+			env.put("oppositeEnd", UMLPackage.eINSTANCE.getNamedElement()); //$NON-NLS-1$
+			Usage_4013_TargetExpression = UMLOCLFactory.getExpression("self.oclIsKindOf(uml::Interface)", //$NON-NLS-1$
+					UMLPackage.eINSTANCE.getNamedElement(), env);
+		}
+
+		/**
+		 * @generated 
+		 */
 		public static boolean canCreateGeneralization_4001(Classifier source, Classifier target) {
 			return true;
 		}
@@ -255,6 +327,9 @@ public class UMLBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 		 * @generated 
 		 */
 		public static boolean canCreateDependency_4002(Package container, NamedElement source, NamedElement target) {
+			if (!evaluate(Dependency_4002_TargetExpression, target, source, true)) {
+				return false;
+			}
 			return true;
 		}
 
@@ -312,6 +387,9 @@ public class UMLBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 		 * @generated 
 		 */
 		public static boolean canCreateInterfaceRealization_4008(BehavioredClassifier container, BehavioredClassifier source, Interface target) {
+			if (!evaluate(InterfaceRealization_4008_TargetExpression, target, source, true)) {
+				return false;
+			}
 			return true;
 		}
 
@@ -320,6 +398,55 @@ public class UMLBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 		 */
 		public static boolean canCreateRealization_4010(Package container, NamedElement source, NamedElement target) {
 			return true;
+		}
+
+		/**
+		 * @generated 
+		 */
+		public static boolean canCreateGeneralization_4011(Classifier source, GeneralizationSet target) {
+			return true;
+		}
+
+		/**
+		 * @generated 
+		 */
+		public static boolean canCreateGeneralizationGeneral_4012(Generalization source, Classifier target) {
+			if (source != null) {
+				if (source.getGeneral() != null) {
+					return false;
+				}
+			}
+			return true;
+		}
+
+		/**
+		 * @generated 
+		 */
+		public static boolean canCreateUsage_4013(Package container, NamedElement source, NamedElement target) {
+			if (!evaluate(Usage_4013_SourceExpression, source, target, false)) {
+				return false;
+			}
+			if (!evaluate(Usage_4013_TargetExpression, target, source, true)) {
+				return false;
+			}
+			return true;
+		}
+
+		/**
+		 * @generated 
+		 */
+		private static boolean evaluate(UMLAbstractExpression constraint, Object sourceEnd, Object oppositeEnd, boolean clearEnv) {
+			if (sourceEnd == null) {
+				return true;
+			}
+			Map evalEnv = Collections.singletonMap(OPPOSITE_END_VAR, oppositeEnd);
+			try {
+				Object val = constraint.evaluate(sourceEnd, evalEnv);
+				return (val instanceof Boolean) ? ((Boolean) val).booleanValue() : false;
+			} catch (Exception e) {
+				UMLDiagramEditorPlugin.getInstance().logError("Link constraint evaluation error", e); //$NON-NLS-1$
+				return false;
+			}
 		}
 	}
 

@@ -17,7 +17,7 @@ import org.eclipse.gmf.runtime.notation.View;
 
 import org.eclipse.uml2.diagram.clazz.edit.parts.Dependency2EditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.DependencyName2EditPart;
-import org.eclipse.uml2.diagram.clazz.edit.parts.Dependency_typeEditPart;
+import org.eclipse.uml2.diagram.clazz.edit.parts.DependencyName3EditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.PackageEditPart;
 
 import org.eclipse.uml2.diagram.clazz.part.UMLVisualIDRegistry;
@@ -53,7 +53,7 @@ public class Dependency2ViewFactory extends ConnectionViewFactory {
 			view.getEAnnotations().add(shortcutAnnotation);
 		}
 		getViewService().createNode(semanticAdapter, view, UMLVisualIDRegistry.getType(DependencyName2EditPart.VISUAL_ID), ViewUtil.APPEND, true, getPreferencesHint());
-		getViewService().createNode(semanticAdapter, view, UMLVisualIDRegistry.getType(Dependency_typeEditPart.VISUAL_ID), ViewUtil.APPEND, true, getPreferencesHint());
+		getViewService().createNode(semanticAdapter, view, UMLVisualIDRegistry.getType(DependencyName3EditPart.VISUAL_ID), ViewUtil.APPEND, true, getPreferencesHint());
 	}
 
 }

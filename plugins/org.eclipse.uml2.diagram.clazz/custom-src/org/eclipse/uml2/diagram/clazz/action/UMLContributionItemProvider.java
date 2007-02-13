@@ -18,6 +18,9 @@ public class UMLContributionItemProvider extends AbstractContributionItemProvide
 	protected IAction createAction(String actionId,
 			IWorkbenchPartDescriptor partDescriptor) {
 		IWorkbenchPage workbenchPage = partDescriptor.getPartPage();
+		if (ACTION_RECTANGLE_INTERFACE_NOTATION.equals(actionId)) {
+			return new SetRectangleInterfaceNotation(workbenchPage);
+		}
 		EClass eclass = getIdToEClassTable().get(actionId);
 		if (eclass != null) {
 			return new ChangeDependencyType(workbenchPage, eclass);
@@ -37,7 +40,8 @@ public class UMLContributionItemProvider extends AbstractContributionItemProvide
 			return super.createMenuManager(menuId, partDescriptor);
 	}
 
-	public static final String ACTION_RECTANGLE_INTERFACE_NOTATION = "rectangle_interface_notation"; //$NON-NLS-1$
+	public static final String ACTION_RECTANGLE_INTERFACE_NOTATION = "change_interface_notation"; //$NON-NLS-1$
+	
 	public static final String ACTION_CHANGE_DEPENDENCY_TYPE_USAGE = "change_dependency_type_usage"; //$NON-NLS-1$
 	public static final String ACTION_CHANGE_DEPENDENCY_TYPE_ABSTRACTION = "change_dependency_type_abstraction"; //$NON-NLS-1$
 	public static final String ACTION_CHANGE_DEPENDENCY_TYPE_DEPENDENCY = "change_dependency_type_dependency"; //$NON-NLS-1$

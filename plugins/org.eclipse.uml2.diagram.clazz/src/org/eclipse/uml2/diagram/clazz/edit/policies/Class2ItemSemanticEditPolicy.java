@@ -21,6 +21,7 @@ import org.eclipse.uml2.diagram.clazz.edit.commands.PortCreateCommand;
 import org.eclipse.uml2.diagram.clazz.edit.commands.PropertyTypeLinkCreateCommand;
 import org.eclipse.uml2.diagram.clazz.edit.commands.RealizationTypeLinkCreateCommand;
 import org.eclipse.uml2.diagram.clazz.edit.commands.RedefinableTemplateSignatureCreateCommand;
+import org.eclipse.uml2.diagram.clazz.edit.commands.UsageTypeLinkCreateCommand;
 
 import org.eclipse.uml2.diagram.clazz.providers.UMLElementTypes;
 
@@ -30,6 +31,8 @@ import org.eclipse.uml2.uml.Classifier;
 import org.eclipse.uml2.uml.Constraint;
 import org.eclipse.uml2.uml.Dependency;
 import org.eclipse.uml2.uml.Element;
+import org.eclipse.uml2.uml.Generalization;
+import org.eclipse.uml2.uml.GeneralizationSet;
 import org.eclipse.uml2.uml.Interface;
 import org.eclipse.uml2.uml.NamedElement;
 import org.eclipse.uml2.uml.Package;
@@ -108,6 +111,15 @@ public class Class2ItemSemanticEditPolicy extends UMLBaseItemSemanticEditPolicy 
 		}
 		if (UMLElementTypes.Realization_4010 == req.getElementType()) {
 			return req.getTarget() == null ? getCreateStartOutgoingRealization4010Command(req) : getCreateCompleteIncomingRealization4010Command(req);
+		}
+		if (UMLElementTypes.Generalization_4011 == req.getElementType()) {
+			return req.getTarget() == null ? getCreateStartOutgoingGeneralization4011Command(req) : null;
+		}
+		if (UMLElementTypes.GeneralizationGeneral_4012 == req.getElementType()) {
+			return req.getTarget() == null ? null : getCreateCompleteIncomingGeneralization_General4012Command(req);
+		}
+		if (UMLElementTypes.Usage_4013 == req.getElementType()) {
+			return req.getTarget() == null ? getCreateStartOutgoingUsage4013Command(req) : getCreateCompleteIncomingUsage4013Command(req);
 		}
 		return super.getCreateRelationshipCommand(req);
 	}
@@ -392,5 +404,90 @@ public class Class2ItemSemanticEditPolicy extends UMLBaseItemSemanticEditPolicy 
 			req.setContainmentFeature(UMLPackage.eINSTANCE.getPackage_PackagedElement());
 		}
 		return getMSLWrapper(new RealizationTypeLinkCreateCommand(req, container, source, target));
+	}
+
+	/**
+	 * @generated
+	 */
+	protected Command getCreateStartOutgoingGeneralization4011Command(CreateRelationshipRequest req) {
+		EObject sourceEObject = req.getSource();
+		EObject targetEObject = req.getTarget();
+		if (false == sourceEObject instanceof Classifier || (targetEObject != null && false == targetEObject instanceof GeneralizationSet)) {
+			return UnexecutableCommand.INSTANCE;
+		}
+		Classifier source = (Classifier) sourceEObject;
+		GeneralizationSet target = (GeneralizationSet) targetEObject;
+
+		if (!UMLBaseItemSemanticEditPolicy.LinkConstraints.canCreateGeneralization_4011(source, target)) {
+			return UnexecutableCommand.INSTANCE;
+		}
+		return new Command() {
+		};
+	}
+
+	/**
+	 * @generated
+	 */
+	protected Command getCreateCompleteIncomingGeneralization_General4012Command(CreateRelationshipRequest req) {
+		EObject sourceEObject = req.getSource();
+		EObject targetEObject = req.getTarget();
+		if (false == sourceEObject instanceof Generalization || false == targetEObject instanceof Classifier) {
+			return UnexecutableCommand.INSTANCE;
+		}
+		Generalization source = (Generalization) sourceEObject;
+		Classifier target = (Classifier) targetEObject;
+		if (!UMLBaseItemSemanticEditPolicy.LinkConstraints.canCreateGeneralizationGeneral_4012(source, target)) {
+			return UnexecutableCommand.INSTANCE;
+		}
+		SetRequest setReq = new SetRequest(req.getSource(), UMLPackage.eINSTANCE.getGeneralization_General(), req.getTarget());
+		return getMSLWrapper(new SetValueCommand(setReq));
+	}
+
+	/**
+	 * @generated
+	 */
+	protected Command getCreateStartOutgoingUsage4013Command(CreateRelationshipRequest req) {
+		EObject sourceEObject = req.getSource();
+		EObject targetEObject = req.getTarget();
+		if (false == sourceEObject instanceof NamedElement || (targetEObject != null && false == targetEObject instanceof NamedElement)) {
+			return UnexecutableCommand.INSTANCE;
+		}
+		NamedElement source = (NamedElement) sourceEObject;
+		NamedElement target = (NamedElement) targetEObject;
+
+		Package container = (Package) getRelationshipContainer(source, UMLPackage.eINSTANCE.getPackage(), req.getElementType());
+		if (container == null) {
+			return UnexecutableCommand.INSTANCE;
+		}
+		if (!UMLBaseItemSemanticEditPolicy.LinkConstraints.canCreateUsage_4013(container, source, target)) {
+			return UnexecutableCommand.INSTANCE;
+		}
+		return new Command() {
+		};
+	}
+
+	/**
+	 * @generated
+	 */
+	protected Command getCreateCompleteIncomingUsage4013Command(CreateRelationshipRequest req) {
+		EObject sourceEObject = req.getSource();
+		EObject targetEObject = req.getTarget();
+		if (false == sourceEObject instanceof NamedElement || false == targetEObject instanceof NamedElement) {
+			return UnexecutableCommand.INSTANCE;
+		}
+		NamedElement source = (NamedElement) sourceEObject;
+		NamedElement target = (NamedElement) targetEObject;
+
+		Package container = (Package) getRelationshipContainer(source, UMLPackage.eINSTANCE.getPackage(), req.getElementType());
+		if (container == null) {
+			return UnexecutableCommand.INSTANCE;
+		}
+		if (!UMLBaseItemSemanticEditPolicy.LinkConstraints.canCreateUsage_4013(container, source, target)) {
+			return UnexecutableCommand.INSTANCE;
+		}
+		if (req.getContainmentFeature() == null) {
+			req.setContainmentFeature(UMLPackage.eINSTANCE.getPackage_PackagedElement());
+		}
+		return getMSLWrapper(new UsageTypeLinkCreateCommand(req, container, source, target));
 	}
 }
