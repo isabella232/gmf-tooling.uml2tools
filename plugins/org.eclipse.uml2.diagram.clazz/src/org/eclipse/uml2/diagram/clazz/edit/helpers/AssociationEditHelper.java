@@ -23,9 +23,18 @@ public class AssociationEditHelper extends UMLBaseEditHelper {
 		if (req.getElementToConfigure() instanceof Association && req.getParameter(PARAMETER_CONFIGURE_AGGREGATION_KIND) instanceof AggregationKind) {
 			Association association = (Association) req.getElementToConfigure();
 			AggregationKind kind = (AggregationKind) req.getParameter(PARAMETER_CONFIGURE_AGGREGATION_KIND);
-			SetRequest request = new SetRequest(AssociationEndConvention.getSourceEnd(association), UMLPackage.eINSTANCE.getProperty_Aggregation(), kind);
+			SetRequest request = new SetAggregationKindRequest(association, kind);
 			return new SetValueCommand(request);
 		}
 		return super.getConfigureCommand(req);
+	}
+
+	/**
+	 * @NOT-generated
+	 */
+	public static class SetAggregationKindRequest extends SetRequest {
+		public SetAggregationKindRequest(Association association, AggregationKind kind) {
+			super(AssociationEndConvention.getSourceEnd(association), UMLPackage.eINSTANCE.getProperty_Aggregation(), kind);
+		}
 	}
 }

@@ -8,12 +8,51 @@
       <?gmfgen generated="false"?>
       <contributionItemProvider
             checkPluginLoaded="true"
-            class="org.eclipse.uml2.diagram.clazz.action.UMLContributionItemProvider">
+            class="org.eclipse.uml2.diagram.clazz.action.AssociationContributionItemProvider">
          <Priority name="Medium"/>
 		 <popupContribution
                class="org.eclipse.gmf.runtime.diagram.ui.providers.DiagramContextMenuProvider">
 			 <popupMenuGroup
-                  id="UMLGroup"
+                  id="AssociationGroup"
+                  path="/propertiesGroup">
+             </popupMenuGroup>
+             <popupMenu
+                   id="AssociationTypeMenu"
+                   path="/AssociationGroup">
+             </popupMenu>           
+             <popupMenuGroup
+                   id="AssociationTypeGroup"
+                   path="/AssociationTypeMenu/">
+             </popupMenuGroup>            
+             <popupAction
+                  path="/AssociationTypeMenu/AssociationTypeGroup"
+                  id="change_association_type_none">
+             </popupAction>            
+             <popupAction
+                  path="/AssociationTypeMenu/AssociationTypeGroup"
+                  id="change_association_type_composite">
+             </popupAction>            
+             <popupAction
+                  path="/AssociationTypeMenu/AssociationTypeGroup"
+                  id="change_association_type_shared">
+             </popupAction>            
+             <popupStructuredContributionCriteria
+                   objectClass="org.eclipse.uml2.diagram.clazz.edit.parts.AssociationEditPart"
+                   objectCount="1">
+             </popupStructuredContributionCriteria>
+		 </popupContribution>
+      </contributionItemProvider>
+   </extension>
+   <extension point="org.eclipse.gmf.runtime.common.ui.services.action.contributionItemProviders">
+      <?gmfgen generated="false"?>
+      <contributionItemProvider
+            checkPluginLoaded="true"
+            class="org.eclipse.uml2.diagram.clazz.action.DependencyContributionItemProvider">
+         <Priority name="Medium"/>
+		 <popupContribution
+               class="org.eclipse.gmf.runtime.diagram.ui.providers.DiagramContextMenuProvider">
+			 <popupMenuGroup
+                  id="DependencyGroup"
                   path="/propertiesGroup">
              </popupMenuGroup>
 		 </popupContribution>
@@ -21,7 +60,7 @@
                class="org.eclipse.gmf.runtime.diagram.ui.providers.DiagramContextMenuProvider">
              <popupMenu
                    id="DependencyTypeMenu"
-                   path="/UMLGroup">
+                   path="/DependencyGroup">
              </popupMenu>           
              <popupMenuGroup
                    id="DependencyTypeGroup"
@@ -48,10 +87,22 @@
                    objectCount="1">
              </popupStructuredContributionCriteria>
 		 </popupContribution>
+      </contributionItemProvider>
+   </extension>
+   <extension point="org.eclipse.gmf.runtime.common.ui.services.action.contributionItemProviders">
+      <?gmfgen generated="false"?>
+      <contributionItemProvider
+            checkPluginLoaded="true"
+            class="org.eclipse.uml2.diagram.clazz.action.InterfaceContributionItemProvider">
+         <Priority name="Medium"/>
 		 <popupContribution
                class="org.eclipse.gmf.runtime.diagram.ui.providers.DiagramContextMenuProvider">
+			 <popupMenuGroup
+                  id="InterfaceGroup"
+                  path="/propertiesGroup">
+             </popupMenuGroup>
              <popupAction
-                  path="/UMLGroup"
+                  path="/InterfaceGroup"
                   id="change_interface_notation">
              </popupAction>            
              <popupStructuredContributionCriteria

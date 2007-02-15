@@ -25,13 +25,14 @@ public class SetRectangleInterfaceNotation extends DiagramAction {
 	private static final String DISABLED_TEXT = "Switch Interface Notation"; 
 	private static final String DISABLED_TOOLTIP = "Change Interface Notation to Circle or Rectangle";
 	
-	public SetRectangleInterfaceNotation(IWorkbenchPage workbenchPage) {
+	public SetRectangleInterfaceNotation(IWorkbenchPage workbenchPage, String actionId) {
 		super(workbenchPage);
+		setId(actionId);
 	}
+	
 	@Override
 	public void init() {
 		super.init();
-		setId(UMLContributionItemProvider.ACTION_RECTANGLE_INTERFACE_NOTATION);
 		updateText();
 		setImageDescriptor(UMLElementTypes.getImageDescriptor(UMLElementTypes.getElement(UMLElementTypes.Interface_2010)));
 	}

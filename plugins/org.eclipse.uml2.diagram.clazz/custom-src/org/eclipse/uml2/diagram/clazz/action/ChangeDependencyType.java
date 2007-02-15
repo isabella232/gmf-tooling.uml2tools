@@ -22,15 +22,15 @@ public class ChangeDependencyType extends DiagramAction {
 
 	EClass dependencyType;
 
-	public ChangeDependencyType(IWorkbenchPage workbenchPage, EClass type) {
+	public ChangeDependencyType(IWorkbenchPage workbenchPage, EClass type, String actionId) {
 		super(workbenchPage);
+		setId(actionId);
 		dependencyType = type;
 	}
 
 	@Override
 	public void init() {
 		super.init();
-		setId(UMLContributionItemProvider.ACTION_RECTANGLE_INTERFACE_NOTATION);
 		setText(dependencyType.getInstanceTypeName());
 		setImageDescriptor(UMLElementTypes.getImageDescriptor(UMLElementTypes.getElement(UMLElementTypes.Interface_2010)));
 	}
