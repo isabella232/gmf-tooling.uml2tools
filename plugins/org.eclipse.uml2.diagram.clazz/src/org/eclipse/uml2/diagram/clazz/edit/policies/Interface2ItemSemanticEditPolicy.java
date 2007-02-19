@@ -11,16 +11,12 @@ import org.eclipse.gef.commands.UnexecutableCommand;
 
 import org.eclipse.gmf.runtime.emf.type.core.commands.SetValueCommand;
 
-import org.eclipse.gmf.runtime.emf.type.core.requests.CreateElementRequest;
 import org.eclipse.gmf.runtime.emf.type.core.requests.SetRequest;
 
 import org.eclipse.uml2.diagram.clazz.edit.commands.AssociationTypeLinkCreateCommand;
-import org.eclipse.uml2.diagram.clazz.edit.commands.Class4CreateCommand;
 import org.eclipse.uml2.diagram.clazz.edit.commands.DependencyTypeLinkCreateCommand;
 import org.eclipse.uml2.diagram.clazz.edit.commands.GeneralizationTypeLinkCreateCommand;
 import org.eclipse.uml2.diagram.clazz.edit.commands.InterfaceRealizationTypeLinkCreateCommand;
-import org.eclipse.uml2.diagram.clazz.edit.commands.Operation6CreateCommand;
-import org.eclipse.uml2.diagram.clazz.edit.commands.Property6CreateCommand;
 import org.eclipse.uml2.diagram.clazz.edit.commands.PropertyTypeLinkCreateCommand;
 import org.eclipse.uml2.diagram.clazz.edit.commands.RealizationTypeLinkCreateCommand;
 import org.eclipse.uml2.diagram.clazz.edit.commands.UsageTypeLinkCreateCommand;

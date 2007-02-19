@@ -33,6 +33,7 @@ public class AssociationEditHelper extends UMLBaseEditHelper {
 	 * @NOT-generated
 	 */
 	public static class SetAggregationKindRequest extends SetRequest {
+
 		public SetAggregationKindRequest(Association association, AggregationKind kind) {
 			super(AssociationEndConvention.getSourceEnd(association), UMLPackage.eINSTANCE.getProperty_Aggregation(), kind);
 		}
