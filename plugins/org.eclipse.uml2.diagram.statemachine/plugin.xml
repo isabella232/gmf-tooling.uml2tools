@@ -144,11 +144,19 @@
             <popupPredefinedItem id="deleteFromDiagramAction" remove="true"/>
          </popupContribution>
          <popupContribution class="org.eclipse.gmf.runtime.diagram.ui.providers.DiagramContextMenuProvider">
-            <popupStructuredContributionCriteria objectClass="org.eclipse.uml2.diagram.statemachine.edit.parts.StateName2EditPart"/>
+            <popupStructuredContributionCriteria objectClass="org.eclipse.uml2.diagram.statemachine.edit.parts.StateName3EditPart"/>
             <popupPredefinedItem id="deleteFromDiagramAction" remove="true"/>
          </popupContribution>
          <popupContribution class="org.eclipse.gmf.runtime.diagram.ui.providers.DiagramContextMenuProvider">
             <popupStructuredContributionCriteria objectClass="org.eclipse.uml2.diagram.statemachine.edit.parts.Region2EditPart"/>
+            <popupPredefinedItem id="deleteFromDiagramAction" remove="true"/>
+         </popupContribution>
+         <popupContribution class="org.eclipse.gmf.runtime.diagram.ui.providers.DiagramContextMenuProvider">
+            <popupStructuredContributionCriteria objectClass="org.eclipse.uml2.diagram.statemachine.edit.parts.State3EditPart"/>
+            <popupPredefinedItem id="deleteFromDiagramAction" remove="true"/>
+         </popupContribution>
+         <popupContribution class="org.eclipse.gmf.runtime.diagram.ui.providers.DiagramContextMenuProvider">
+            <popupStructuredContributionCriteria objectClass="org.eclipse.uml2.diagram.statemachine.edit.parts.StateName2EditPart"/>
             <popupPredefinedItem id="deleteFromDiagramAction" remove="true"/>
          </popupContribution>
          <popupContribution class="org.eclipse.gmf.runtime.diagram.ui.providers.DiagramContextMenuProvider">
@@ -358,6 +366,17 @@
       </metamodel>
 
       <metamodel nsURI="http://www.eclipse.org/uml2/2.0.0/UML">
+         <specializationType
+               id="org.eclipse.uml2.diagram.statemachine.State_3016"
+               name="State"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
+               edithelperadvice="org.eclipse.uml2.diagram.statemachine.edit.helpers.State2EditHelperAdvice">
+            <specializes id="org.eclipse.uml2.diagram.statemachine.State_3001"/>
+            <param name="semanticHint" value="3016"/>
+         </specializationType>
+      </metamodel>
+
+      <metamodel nsURI="http://www.eclipse.org/uml2/2.0.0/UML">
          <metamodelType
                id="org.eclipse.uml2.diagram.statemachine.FinalState_3003"
                name="FinalState"
@@ -516,6 +535,7 @@
          <elementType ref="org.eclipse.uml2.diagram.statemachine.State_3001"/>
          <elementType ref="org.eclipse.uml2.diagram.statemachine.State_3012"/>
          <elementType ref="org.eclipse.uml2.diagram.statemachine.Region_3002"/>
+         <elementType ref="org.eclipse.uml2.diagram.statemachine.State_3016"/>
          <elementType ref="org.eclipse.uml2.diagram.statemachine.FinalState_3003"/>
          <elementType ref="org.eclipse.uml2.diagram.statemachine.Pseudostate_3004"/>
          <elementType ref="org.eclipse.uml2.diagram.statemachine.Pseudostate_3005"/>

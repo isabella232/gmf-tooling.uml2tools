@@ -45,11 +45,13 @@ import org.eclipse.uml2.diagram.statemachine.edit.parts.PseudostateNameEditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.Region2EditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.RegionEditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.State2EditPart;
+import org.eclipse.uml2.diagram.statemachine.edit.parts.State3EditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.StateEditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.StateMachine2EditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.StateMachineEditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.StateMachineNameEditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.StateName2EditPart;
+import org.eclipse.uml2.diagram.statemachine.edit.parts.StateName3EditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.StateNameEditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.TransitionEditPart;
 
@@ -121,6 +123,8 @@ public class UMLNavigatorLabelProvider extends LabelProvider implements ICommonL
 			return getImage("Navigator?Node?http://www.eclipse.org/uml2/2.0.0/UML?State", UMLElementTypes.State_3012);
 		case Region2EditPart.VISUAL_ID:
 			return getImage("Navigator?Node?http://www.eclipse.org/uml2/2.0.0/UML?Region", UMLElementTypes.Region_3002);
+		case State3EditPart.VISUAL_ID:
+			return getImage("Navigator?Node?http://www.eclipse.org/uml2/2.0.0/UML?State", UMLElementTypes.State_3016);
 		case FinalStateEditPart.VISUAL_ID:
 			return getImage("Navigator?Node?http://www.eclipse.org/uml2/2.0.0/UML?FinalState", UMLElementTypes.FinalState_3003);
 		case PseudostateEditPart.VISUAL_ID:
@@ -205,6 +209,8 @@ public class UMLNavigatorLabelProvider extends LabelProvider implements ICommonL
 			return getState_3012Text(view);
 		case Region2EditPart.VISUAL_ID:
 			return getRegion_3002Text(view);
+		case State3EditPart.VISUAL_ID:
+			return getState_3016Text(view);
 		case FinalStateEditPart.VISUAL_ID:
 			return getFinalState_3003Text(view);
 		case PseudostateEditPart.VISUAL_ID:
@@ -305,7 +311,7 @@ public class UMLNavigatorLabelProvider extends LabelProvider implements ICommonL
 
 			public Object getAdapter(Class adapter) {
 				if (String.class.equals(adapter)) {
-					return UMLVisualIDRegistry.getType(StateName2EditPart.VISUAL_ID);
+					return UMLVisualIDRegistry.getType(StateName3EditPart.VISUAL_ID);
 				}
 				if (IElementType.class.equals(adapter)) {
 					return UMLElementTypes.State_3012;
@@ -330,6 +336,30 @@ public class UMLNavigatorLabelProvider extends LabelProvider implements ICommonL
 			return String.valueOf(((NamedElement) domainModelElement).getName());
 		} else {
 			UMLDiagramEditorPlugin.getInstance().logError("No domain element for view with visualID = " + 3002);
+			return "";
+		}
+	}
+
+	/**
+	 * @generated
+	 */
+	private String getState_3016Text(View view) {
+		IParser parser = ParserService.getInstance().getParser(new IAdaptable() {
+
+			public Object getAdapter(Class adapter) {
+				if (String.class.equals(adapter)) {
+					return UMLVisualIDRegistry.getType(StateName2EditPart.VISUAL_ID);
+				}
+				if (IElementType.class.equals(adapter)) {
+					return UMLElementTypes.State_3016;
+				}
+				return null;
+			}
+		});
+		if (parser != null) {
+			return parser.getPrintString(new EObjectAdapter(view.getElement() != null ? view.getElement() : view), ParserOptions.NONE.intValue());
+		} else {
+			UMLDiagramEditorPlugin.getInstance().logError("Parser was not found for label " + 5008);
 			return "";
 		}
 	}

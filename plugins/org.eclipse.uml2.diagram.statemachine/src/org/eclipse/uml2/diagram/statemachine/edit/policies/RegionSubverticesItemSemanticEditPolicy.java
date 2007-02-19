@@ -14,6 +14,7 @@ import org.eclipse.uml2.diagram.statemachine.edit.commands.Pseudostate7CreateCom
 import org.eclipse.uml2.diagram.statemachine.edit.commands.Pseudostate8CreateCommand;
 import org.eclipse.uml2.diagram.statemachine.edit.commands.PseudostateCreateCommand;
 import org.eclipse.uml2.diagram.statemachine.edit.commands.State2CreateCommand;
+import org.eclipse.uml2.diagram.statemachine.edit.commands.State3CreateCommand;
 import org.eclipse.uml2.diagram.statemachine.edit.commands.StateCreateCommand;
 
 import org.eclipse.uml2.diagram.statemachine.providers.UMLElementTypes;
@@ -40,6 +41,12 @@ public class RegionSubverticesItemSemanticEditPolicy extends UMLBaseItemSemantic
 				req.setContainmentFeature(UMLPackage.eINSTANCE.getRegion_Subvertex());
 			}
 			return getMSLWrapper(new State2CreateCommand(req));
+		}
+		if (UMLElementTypes.State_3016 == req.getElementType()) {
+			if (req.getContainmentFeature() == null) {
+				req.setContainmentFeature(UMLPackage.eINSTANCE.getRegion_Subvertex());
+			}
+			return getMSLWrapper(new State3CreateCommand(req));
 		}
 		if (UMLElementTypes.FinalState_3003 == req.getElementType()) {
 			if (req.getContainmentFeature() == null) {

@@ -68,6 +68,7 @@ public class UMLPaletteFactory {
 		paletteContainer.setDescription(UMLDiagramEditorPlugin.getString("State1Group.desc")); //$NON-NLS-1$
 		paletteContainer.add(createSimpleState1CreationTool());
 		paletteContainer.add(createCompositeState2CreationTool());
+		paletteContainer.add(createSubmachineState3CreationTool());
 		return paletteContainer;
 	}
 
@@ -255,6 +256,19 @@ public class UMLPaletteFactory {
 	/**
 	 * @generated
 	 */
+	private ToolEntry createSubmachineState3CreationTool() {
+		List/*<IElementType>*/types = new ArrayList/*<IElementType>*/(1);
+		types.add(UMLElementTypes.State_3016);
+		NodeToolEntry entry = new NodeToolEntry(UMLDiagramEditorPlugin.getString("SubmachineState3CreationTool.title"), UMLDiagramEditorPlugin.getString("SubmachineState3CreationTool.desc"), types); //$NON-NLS-1$ $NON-NLS-2$
+		entry.setSmallIcon(UMLElementTypes.getImageDescriptor(UMLElementTypes.State_3016));
+		entry.setLargeIcon(entry.getSmallIcon());
+		entry.setToolClass(CreateSubmachineStateTool.class);
+		return entry;
+	}
+
+	/**
+	 * @generated
+	 */
 	private static class NodeToolEntry extends ToolEntry {
 
 		/**
@@ -273,10 +287,21 @@ public class UMLPaletteFactory {
 		/**
 		 * @generated
 		 */
-		public Tool createTool() {
+		public Tool createToolGen() {
 			Tool tool = new UnspecifiedTypeCreationTool(elementTypes);
 			tool.setProperties(getToolProperties());
 			return tool;
+		}
+
+		/**
+		 * @generated NOT
+		 */
+		public Tool createTool() {
+			Tool tool = super.createTool();
+			if (tool != null) {
+				return tool;
+			}
+			return createToolGen();
 		}
 	}
 

@@ -23,6 +23,7 @@ import org.eclipse.emf.edit.ui.provider.AdapterFactoryLabelProvider;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.RegionSubvertices2EditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.RegionSubverticesEditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.State2EditPart;
+import org.eclipse.uml2.diagram.statemachine.edit.parts.State3EditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.StateMachine2EditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.StateMachineEditPart;
 
@@ -50,10 +51,16 @@ public class UMLModelingAssistantProvider extends ModelingAssistantProvider {
 			types.add(UMLElementTypes.Region_3002);
 			return types;
 		}
+		if (editPart instanceof State3EditPart) {
+			List types = new ArrayList();
+			types.add(UMLElementTypes.Region_3002);
+			return types;
+		}
 		if (editPart instanceof RegionSubverticesEditPart) {
 			List types = new ArrayList();
 			types.add(UMLElementTypes.State_3001);
 			types.add(UMLElementTypes.State_3012);
+			types.add(UMLElementTypes.State_3016);
 			types.add(UMLElementTypes.FinalState_3003);
 			types.add(UMLElementTypes.Pseudostate_3004);
 			types.add(UMLElementTypes.Pseudostate_3005);
@@ -69,6 +76,7 @@ public class UMLModelingAssistantProvider extends ModelingAssistantProvider {
 			List types = new ArrayList();
 			types.add(UMLElementTypes.State_3001);
 			types.add(UMLElementTypes.State_3012);
+			types.add(UMLElementTypes.State_3016);
 			types.add(UMLElementTypes.FinalState_3003);
 			types.add(UMLElementTypes.Pseudostate_3004);
 			types.add(UMLElementTypes.Pseudostate_3005);

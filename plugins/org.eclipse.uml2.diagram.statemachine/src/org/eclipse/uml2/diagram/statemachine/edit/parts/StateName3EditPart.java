@@ -51,12 +51,12 @@ import org.eclipse.uml2.diagram.statemachine.providers.UMLElementTypes;
 /**
  * @generated
  */
-public class StateName2EditPart extends CompartmentEditPart implements ITextAwareEditPart {
+public class StateName3EditPart extends CompartmentEditPart implements ITextAwareEditPart {
 
 	/**
 	 * @generated
 	 */
-	public static final int VISUAL_ID = 5008;
+	public static final int VISUAL_ID = 5004;
 
 	/**
 	 * @generated
@@ -81,7 +81,7 @@ public class StateName2EditPart extends CompartmentEditPart implements ITextAwar
 	/**
 	 * @generated
 	 */
-	public StateName2EditPart(View view) {
+	public StateName3EditPart(View view) {
 		super(view);
 	}
 
@@ -291,7 +291,7 @@ public class StateName2EditPart extends CompartmentEditPart implements ITextAwar
 
 				public Object getAdapter(Class adapter) {
 					if (IElementType.class.equals(adapter)) {
-						return UMLElementTypes.State_3016;
+						return UMLElementTypes.State_3012;
 					}
 					return super.getAdapter(adapter);
 				}

@@ -28,19 +28,19 @@ import org.eclipse.gmf.runtime.gef.ui.figures.NodeFigure;
 import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.uml2.diagram.common.draw2d.LaneLayout;
 import org.eclipse.uml2.diagram.common.editpolicies.LaneLayoutEditPolicy;
-import org.eclipse.uml2.diagram.statemachine.edit.policies.State2CanonicalEditPolicy;
-import org.eclipse.uml2.diagram.statemachine.edit.policies.State2ItemSemanticEditPolicy;
+import org.eclipse.uml2.diagram.statemachine.edit.policies.State3CanonicalEditPolicy;
+import org.eclipse.uml2.diagram.statemachine.edit.policies.State3ItemSemanticEditPolicy;
 import org.eclipse.uml2.diagram.statemachine.part.UMLVisualIDRegistry;
 
 /**
  * @generated
  */
-public class State2EditPart extends ShapeNodeEditPart {
+public class State3EditPart extends ShapeNodeEditPart {
 
 	/**
 	 * @generated
 	 */
-	public static final int VISUAL_ID = 3012;
+	public static final int VISUAL_ID = 3016;
 
 	/**
 	 * @generated
@@ -55,7 +55,7 @@ public class State2EditPart extends ShapeNodeEditPart {
 	/**
 	 * @generated
 	 */
-	public State2EditPart(View view) {
+	public State3EditPart(View view) {
 		super(view);
 	}
 
@@ -66,9 +66,9 @@ public class State2EditPart extends ShapeNodeEditPart {
 		installEditPolicy(EditPolicyRoles.CREATION_ROLE, new CreationEditPolicy());
 		super.createDefaultEditPolicies();
 
-		installEditPolicy(EditPolicyRoles.SEMANTIC_ROLE, new State2ItemSemanticEditPolicy());
+		installEditPolicy(EditPolicyRoles.SEMANTIC_ROLE, new State3ItemSemanticEditPolicy());
 		installEditPolicy(EditPolicyRoles.DRAG_DROP_ROLE, new DragDropEditPolicy());
-		installEditPolicy(EditPolicyRoles.CANONICAL_ROLE, new State2CanonicalEditPolicy());
+		installEditPolicy(EditPolicyRoles.CANONICAL_ROLE, new State3CanonicalEditPolicy());
 		installEditPolicy(EditPolicy.LAYOUT_ROLE, createLayoutEditPolicy());
 		installEditPolicy("LayoutEditPolicy", new LaneLayoutEditPolicy()); //$NON-NLS-1$
 	}
@@ -117,8 +117,8 @@ public class State2EditPart extends ShapeNodeEditPart {
 	 * @generated
 	 */
 	protected boolean addFixedChild(EditPart childEditPart) {
-		if (childEditPart instanceof StateName3EditPart) {
-			((StateName3EditPart) childEditPart).setLabel(getPrimaryShape().getFigureCompositeStateFigure_name());
+		if (childEditPart instanceof StateName2EditPart) {
+			((StateName2EditPart) childEditPart).setLabel(getPrimaryShape().getFigureCompositeStateFigure_name());
 			return true;
 		}
 		return false;
@@ -164,7 +164,7 @@ public class State2EditPart extends ShapeNodeEditPart {
 	 * @generated
 	 */
 	protected NodeFigure createNodePlate() {
-		DefaultSizeNodeFigure result = new DefaultSizeNodeFigure(getMapMode().DPtoLP(60), getMapMode().DPtoLP(70));
+		DefaultSizeNodeFigure result = new DefaultSizeNodeFigure(getMapMode().DPtoLP(40), getMapMode().DPtoLP(40));
 
 		return result;
 	}
@@ -208,7 +208,7 @@ public class State2EditPart extends ShapeNodeEditPart {
 	 * @generated
 	 */
 	public EditPart getPrimaryChildEditPart() {
-		return getChildBySemanticHint(UMLVisualIDRegistry.getType(StateName3EditPart.VISUAL_ID));
+		return getChildBySemanticHint(UMLVisualIDRegistry.getType(StateName2EditPart.VISUAL_ID));
 	}
 
 	/**

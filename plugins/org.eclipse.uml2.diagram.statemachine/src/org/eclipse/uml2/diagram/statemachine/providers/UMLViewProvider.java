@@ -24,11 +24,13 @@ import org.eclipse.uml2.diagram.statemachine.edit.parts.RegionEditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.RegionSubvertices2EditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.RegionSubverticesEditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.State2EditPart;
+import org.eclipse.uml2.diagram.statemachine.edit.parts.State3EditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.StateEditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.StateMachine2EditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.StateMachineEditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.StateMachineNameEditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.StateName2EditPart;
+import org.eclipse.uml2.diagram.statemachine.edit.parts.StateName3EditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.StateNameEditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.TransitionEditPart;
 
@@ -52,10 +54,12 @@ import org.eclipse.uml2.diagram.statemachine.view.factories.RegionSubvertices2Vi
 import org.eclipse.uml2.diagram.statemachine.view.factories.RegionSubverticesViewFactory;
 import org.eclipse.uml2.diagram.statemachine.view.factories.RegionViewFactory;
 import org.eclipse.uml2.diagram.statemachine.view.factories.State2ViewFactory;
+import org.eclipse.uml2.diagram.statemachine.view.factories.State3ViewFactory;
 import org.eclipse.uml2.diagram.statemachine.view.factories.StateMachine2ViewFactory;
 import org.eclipse.uml2.diagram.statemachine.view.factories.StateMachineNameViewFactory;
 import org.eclipse.uml2.diagram.statemachine.view.factories.StateMachineViewFactory;
 import org.eclipse.uml2.diagram.statemachine.view.factories.StateName2ViewFactory;
+import org.eclipse.uml2.diagram.statemachine.view.factories.StateName3ViewFactory;
 import org.eclipse.uml2.diagram.statemachine.view.factories.StateNameViewFactory;
 import org.eclipse.uml2.diagram.statemachine.view.factories.StateViewFactory;
 import org.eclipse.uml2.diagram.statemachine.view.factories.TransitionViewFactory;
@@ -103,10 +107,14 @@ public class UMLViewProvider extends AbstractViewProvider {
 			return StateNameViewFactory.class;
 		case State2EditPart.VISUAL_ID:
 			return State2ViewFactory.class;
-		case StateName2EditPart.VISUAL_ID:
-			return StateName2ViewFactory.class;
+		case StateName3EditPart.VISUAL_ID:
+			return StateName3ViewFactory.class;
 		case Region2EditPart.VISUAL_ID:
 			return Region2ViewFactory.class;
+		case State3EditPart.VISUAL_ID:
+			return State3ViewFactory.class;
+		case StateName2EditPart.VISUAL_ID:
+			return StateName2ViewFactory.class;
 		case FinalStateEditPart.VISUAL_ID:
 			return FinalStateViewFactory.class;
 		case PseudostateEditPart.VISUAL_ID:

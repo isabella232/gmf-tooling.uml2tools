@@ -48,11 +48,17 @@ public class UMLEditPartFactory implements EditPartFactory {
 			case State2EditPart.VISUAL_ID:
 				return new State2EditPart(view);
 
-			case StateName2EditPart.VISUAL_ID:
-				return new StateName2EditPart(view);
+			case StateName3EditPart.VISUAL_ID:
+				return new StateName3EditPart(view);
 
 			case Region2EditPart.VISUAL_ID:
 				return new Region2EditPart(view);
+
+			case State3EditPart.VISUAL_ID:
+				return new State3EditPart(view);
+
+			case StateName2EditPart.VISUAL_ID:
+				return new StateName2EditPart(view);
 
 			case FinalStateEditPart.VISUAL_ID:
 				return new FinalStateEditPart(view);

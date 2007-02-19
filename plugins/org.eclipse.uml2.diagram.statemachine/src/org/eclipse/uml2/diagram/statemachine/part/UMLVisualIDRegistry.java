@@ -27,11 +27,13 @@ import org.eclipse.uml2.diagram.statemachine.edit.parts.RegionEditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.RegionSubvertices2EditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.RegionSubverticesEditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.State2EditPart;
+import org.eclipse.uml2.diagram.statemachine.edit.parts.State3EditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.StateEditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.StateMachine2EditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.StateMachineEditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.StateMachineNameEditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.StateName2EditPart;
+import org.eclipse.uml2.diagram.statemachine.edit.parts.StateName3EditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.StateNameEditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.TransitionEditPart;
 
@@ -201,8 +203,8 @@ public class UMLVisualIDRegistry {
 			}
 			return getUnrecognizedState_3001ChildNodeID(domainElement, semanticHint);
 		case State2EditPart.VISUAL_ID:
-			if (StateName2EditPart.VISUAL_ID == nodeVisualID) {
-				return StateName2EditPart.VISUAL_ID;
+			if (StateName3EditPart.VISUAL_ID == nodeVisualID) {
+				return StateName3EditPart.VISUAL_ID;
 			}
 			if ((semanticHint == null || Region2EditPart.VISUAL_ID == nodeVisualID) && UMLPackage.eINSTANCE.getRegion().isSuperTypeOf(domainElementMetaclass)
 					&& (domainElement == null || isNodeRegion_3002((Region) domainElement))) {
@@ -214,6 +216,15 @@ public class UMLVisualIDRegistry {
 				return RegionSubvertices2EditPart.VISUAL_ID;
 			}
 			return getUnrecognizedRegion_3002ChildNodeID(domainElement, semanticHint);
+		case State3EditPart.VISUAL_ID:
+			if (StateName2EditPart.VISUAL_ID == nodeVisualID) {
+				return StateName2EditPart.VISUAL_ID;
+			}
+			if ((semanticHint == null || Region2EditPart.VISUAL_ID == nodeVisualID) && UMLPackage.eINSTANCE.getRegion().isSuperTypeOf(domainElementMetaclass)
+					&& (domainElement == null || isNodeRegion_3002((Region) domainElement))) {
+				return Region2EditPart.VISUAL_ID;
+			}
+			return getUnrecognizedState_3016ChildNodeID(domainElement, semanticHint);
 		case FinalStateEditPart.VISUAL_ID:
 			return getUnrecognizedFinalState_3003ChildNodeID(domainElement, semanticHint);
 		case PseudostateEditPart.VISUAL_ID:
@@ -250,6 +261,10 @@ public class UMLVisualIDRegistry {
 			if ((semanticHint == null || State2EditPart.VISUAL_ID == nodeVisualID) && UMLPackage.eINSTANCE.getState().isSuperTypeOf(domainElementMetaclass)
 					&& (domainElement == null || isNodeState_3012((State) domainElement))) {
 				return State2EditPart.VISUAL_ID;
+			}
+			if ((semanticHint == null || State3EditPart.VISUAL_ID == nodeVisualID) && UMLPackage.eINSTANCE.getState().isSuperTypeOf(domainElementMetaclass)
+					&& (domainElement == null || isNodeState_3016((State) domainElement))) {
+				return State3EditPart.VISUAL_ID;
 			}
 			if ((semanticHint == null || FinalStateEditPart.VISUAL_ID == nodeVisualID) && UMLPackage.eINSTANCE.getFinalState().isSuperTypeOf(domainElementMetaclass)
 					&& (domainElement == null || isNodeFinalState_3003((FinalState) domainElement))) {
@@ -296,6 +311,10 @@ public class UMLVisualIDRegistry {
 			if ((semanticHint == null || State2EditPart.VISUAL_ID == nodeVisualID) && UMLPackage.eINSTANCE.getState().isSuperTypeOf(domainElementMetaclass)
 					&& (domainElement == null || isNodeState_3012((State) domainElement))) {
 				return State2EditPart.VISUAL_ID;
+			}
+			if ((semanticHint == null || State3EditPart.VISUAL_ID == nodeVisualID) && UMLPackage.eINSTANCE.getState().isSuperTypeOf(domainElementMetaclass)
+					&& (domainElement == null || isNodeState_3016((State) domainElement))) {
+				return State3EditPart.VISUAL_ID;
 			}
 			if ((semanticHint == null || FinalStateEditPart.VISUAL_ID == nodeVisualID) && UMLPackage.eINSTANCE.getFinalState().isSuperTypeOf(domainElementMetaclass)
 					&& (domainElement == null || isNodeFinalState_3003((FinalState) domainElement))) {
@@ -434,6 +453,16 @@ public class UMLVisualIDRegistry {
 	 */
 	private static boolean isNodeRegion_3002(Region element) {
 		return true;
+	}
+
+	/**
+	 * User can change implementation of this method to check some additional 
+	 * conditions here.
+	 *
+	 * @generated
+	 */
+	private static boolean isNodeState_3016(State element) {
+		return State_3016.matches(element);
 	}
 
 	/**
@@ -593,6 +622,16 @@ public class UMLVisualIDRegistry {
 	 * @generated
 	 */
 	private static int getUnrecognizedRegion_3002ChildNodeID(EObject domainElement, String semanticHint) {
+		return -1;
+	}
+
+	/**
+	 * User can change implementation of this method to handle some specific
+	 * situations not covered by default logic.
+	 *
+	 * @generated
+	 */
+	private static int getUnrecognizedState_3016ChildNodeID(EObject domainElement, String semanticHint) {
 		return -1;
 	}
 
@@ -766,6 +805,12 @@ public class UMLVisualIDRegistry {
 	 * @generated
 	 */
 	private static final Matcher State_3012 = new Matcher(UMLOCLFactory.getExpression("self.oclIsTypeOf(uml::State) and self.isComposite", //$NON-NLS-1$
+			UMLPackage.eINSTANCE.getState()));
+
+	/**
+	 * @generated
+	 */
+	private static final Matcher State_3016 = new Matcher(UMLOCLFactory.getExpression("self.oclIsTypeOf(uml::State) and self.isSubmachineState", //$NON-NLS-1$
 			UMLPackage.eINSTANCE.getState()));
 
 	/**

@@ -51,12 +51,14 @@ import org.eclipse.uml2.diagram.statemachine.edit.parts.PseudostateEditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.Region2EditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.RegionEditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.State2EditPart;
+import org.eclipse.uml2.diagram.statemachine.edit.parts.State3EditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.StateEditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.StateMachine2EditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.StateMachineEditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.TransitionEditPart;
 
 import org.eclipse.uml2.diagram.statemachine.part.UMLVisualIDRegistry;
+import org.eclipse.uml2.diagram.statemachine.providers.UMLElementTypes;
 
 import org.eclipse.uml2.uml.Region;
 import org.eclipse.uml2.uml.Transition;
@@ -216,6 +218,7 @@ public class StateMachineCanonicalEditPolicy extends CanonicalConnectionEditPoli
 		case StateEditPart.VISUAL_ID:
 		case State2EditPart.VISUAL_ID:
 		case Region2EditPart.VISUAL_ID:
+		case State3EditPart.VISUAL_ID:
 		case FinalStateEditPart.VISUAL_ID:
 		case PseudostateEditPart.VISUAL_ID:
 		case Pseudostate2EditPart.VISUAL_ID:
@@ -317,7 +320,7 @@ public class StateMachineCanonicalEditPolicy extends CanonicalConnectionEditPoli
 						structuralFeatureResult = ((Transition) nextValue).getSource();
 						if (structuralFeatureResult instanceof EObject) {
 							EObject src = (EObject) structuralFeatureResult;
-							myLinkDescriptors.add(new LinkDescriptor(src, dst, nextValue, linkVID));
+							myLinkDescriptors.add(new LinkDescriptor(src, dst, UMLElementTypes.Transition_4001, linkVID, nextValue));
 						}
 					}
 				}
@@ -372,26 +375,24 @@ public class StateMachineCanonicalEditPolicy extends CanonicalConnectionEditPoli
 		/**
 		 * @generated
 		 */
-		protected LinkDescriptor(EObject source, EObject destination, EObject linkElement, int linkVID) {
-			this(source, destination, linkVID);
-			myLinkElement = linkElement;
-			mySemanticAdapter = new EObjectAdapter(linkElement);
+		protected LinkDescriptor(EObject source, EObject destination, IElementType elementType, int linkVID) {
+			this(source, destination, elementType, linkVID, null);
 		}
 
 		/**
 		 * @generated
 		 */
-		protected LinkDescriptor(EObject source, EObject destination, IElementType elementType, int linkVID) {
+		protected LinkDescriptor(EObject source, EObject destination, IElementType elementType, int linkVID, EObject linkElement) {
 			this(source, destination, linkVID);
-			myLinkElement = null;
+			myLinkElement = linkElement;
 			final IElementType elementTypeCopy = elementType;
-			mySemanticAdapter = new IAdaptable() {
+			mySemanticAdapter = new EObjectAdapter(myLinkElement) {
 
 				public Object getAdapter(Class adapter) {
 					if (IElementType.class.equals(adapter)) {
 						return elementTypeCopy;
 					}
-					return null;
+					return super.getAdapter(adapter);
 				}
 			};
 		}
