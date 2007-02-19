@@ -1,10 +1,7 @@
 package org.eclipse.uml2.diagram.clazz.edit.parts;
 
-import org.eclipse.draw2d.ColorConstants;
-import org.eclipse.draw2d.Graphics;
 import org.eclipse.draw2d.IFigure;
 import org.eclipse.draw2d.PositionConstants;
-import org.eclipse.draw2d.RectangleFigure;
 import org.eclipse.draw2d.StackLayout;
 import org.eclipse.draw2d.geometry.Dimension;
 import org.eclipse.gef.EditPart;
@@ -96,15 +93,14 @@ public class GeneralizationSetEditPart extends AbstractBorderedShapeEditPart {
 	 * @generated
 	 */
 	protected IFigure createNodeShape() {
-		DependencyNode figure = new DependencyNode();
-		return primaryShape = figure;
+		return primaryShape = new DashedHorizontalLineFigure();
 	}
 
 	/**
 	 * @generated
 	 */
-	public DependencyNode getPrimaryShape() {
-		return (DependencyNode) primaryShape;
+	public DashedHorizontalLineFigure getPrimaryShape() {
+		return (DashedHorizontalLineFigure) primaryShape;
 	}
 
 	/**
@@ -124,7 +120,7 @@ public class GeneralizationSetEditPart extends AbstractBorderedShapeEditPart {
 	 * @generated
 	 */
 	protected NodeFigure createNodePlate() {
-		DefaultSizeNodeFigure result = new DefaultSizeNodeFigure(getMapMode().DPtoLP(10), getMapMode().DPtoLP(10));
+		DefaultSizeNodeFigure result = new DefaultSizeNodeFigure(getMapMode().DPtoLP(50), getMapMode().DPtoLP(4));
 
 		return result;
 	}
@@ -136,7 +132,7 @@ public class GeneralizationSetEditPart extends AbstractBorderedShapeEditPart {
 		EditPolicy result = super.getPrimaryDragEditPolicy();
 		if (result instanceof ResizableEditPolicy) {
 			ResizableEditPolicy ep = (ResizableEditPolicy) result;
-			ep.setResizeDirections(PositionConstants.NONE);
+			ep.setResizeDirections(PositionConstants.WEST | PositionConstants.EAST);
 		}
 		return result;
 	}
@@ -188,47 +184,6 @@ public class GeneralizationSetEditPart extends AbstractBorderedShapeEditPart {
 	 */
 	public EditPart getPrimaryChildEditPart() {
 		return getChildBySemanticHint(UMLVisualIDRegistry.getType(GeneralizationSetIsCoveringIsDisjointEditPart.VISUAL_ID));
-	}
-
-	/**
-	 * @generated
-	 */
-	public class DependencyNode extends RectangleFigure {
-
-		/**
-		 * @generated
-		 */
-		public DependencyNode() {
-			this.setFill(true);
-			this.setFillXOR(false);
-			this.setOutline(true);
-			this.setOutlineXOR(false);
-			this.setLineWidth(1);
-			this.setLineStyle(Graphics.LINE_SOLID);
-			this.setBackgroundColor(ColorConstants.darkGray);
-			this.setPreferredSize(new Dimension(getMapMode().DPtoLP(10), getMapMode().DPtoLP(10)));
-			this.setMaximumSize(new Dimension(getMapMode().DPtoLP(10), getMapMode().DPtoLP(10)));
-		}
-
-		/**
-		 * @generated
-		 */
-		private boolean myUseLocalCoordinates = false;
-
-		/**
-		 * @generated
-		 */
-		protected boolean useLocalCoordinates() {
-			return myUseLocalCoordinates;
-		}
-
-		/**
-		 * @generated
-		 */
-		protected void setUseLocalCoordinates(boolean useLocalCoordinates) {
-			myUseLocalCoordinates = useLocalCoordinates;
-		}
-
 	}
 
 }

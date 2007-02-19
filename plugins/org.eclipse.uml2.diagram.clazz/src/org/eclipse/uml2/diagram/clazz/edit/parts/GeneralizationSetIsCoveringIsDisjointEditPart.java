@@ -544,6 +544,21 @@ public class GeneralizationSetIsCoveringIsDisjointEditPart extends LabelEditPart
 	 * @generated
 	 */
 	protected IFigure createFigurePrim() {
-		return new WrapLabel();
+		return new GeneralizationSet_Constraint();
 	}
+
+	/**
+	 * @generated
+	 */
+	public class GeneralizationSet_Constraint extends WrapLabel {
+
+		/**
+		 * @generated
+		 */
+		public GeneralizationSet_Constraint() {
+			this.setText("");
+		}
+
+	}
+
 }
