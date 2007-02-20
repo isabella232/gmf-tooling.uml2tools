@@ -43,4 +43,4 @@ Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.uml2.diagram.common;visibility:=reexport,
  org.eclipse.uml2.diagram.parser
 Eclipse-LazyStart: true
-Bundle-ClassPath: org.eclipse.uml2.diagram.component.jar
+Bundle-ClassPath: .

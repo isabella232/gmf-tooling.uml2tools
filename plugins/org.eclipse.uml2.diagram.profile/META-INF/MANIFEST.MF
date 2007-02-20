@@ -3,7 +3,7 @@ Bundle-ManifestVersion: 2
 Bundle-Name: %pluginName
 Bundle-SymbolicName: org.eclipse.uml2.diagram.profile;singleton:=true
 Bundle-Version: 1.0.0.qualifier
-Bundle-ClassPath: org.eclipse.uml2.diagram.profile.jar
+Bundle-ClassPath: .
 Bundle-Activator: org.eclipse.uml2.diagram.profile.part.UMLDiagramEditorPlugin
 Bundle-Vendor: %providerName
 Bundle-Localization: plugin
