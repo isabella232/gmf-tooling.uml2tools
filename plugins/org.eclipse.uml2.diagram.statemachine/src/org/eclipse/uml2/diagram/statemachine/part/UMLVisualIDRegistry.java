@@ -9,6 +9,10 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.gmf.runtime.notation.Diagram;
 import org.eclipse.gmf.runtime.notation.View;
 
+import org.eclipse.uml2.diagram.statemachine.edit.parts.ConnectionPointReference2EditPart;
+import org.eclipse.uml2.diagram.statemachine.edit.parts.ConnectionPointReferenceEditPart;
+import org.eclipse.uml2.diagram.statemachine.edit.parts.ConnectionPointReferenceName2EditPart;
+import org.eclipse.uml2.diagram.statemachine.edit.parts.ConnectionPointReferenceNameEditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.FinalStateEditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.Pseudostate10EditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.Pseudostate2EditPart;
@@ -40,6 +44,7 @@ import org.eclipse.uml2.diagram.statemachine.edit.parts.TransitionEditPart;
 import org.eclipse.uml2.diagram.statemachine.expressions.UMLAbstractExpression;
 import org.eclipse.uml2.diagram.statemachine.expressions.UMLOCLFactory;
 
+import org.eclipse.uml2.uml.ConnectionPointReference;
 import org.eclipse.uml2.uml.FinalState;
 import org.eclipse.uml2.uml.Pseudostate;
 import org.eclipse.uml2.uml.Region;
@@ -224,7 +229,25 @@ public class UMLVisualIDRegistry {
 					&& (domainElement == null || isNodeRegion_3002((Region) domainElement))) {
 				return Region2EditPart.VISUAL_ID;
 			}
+			if ((semanticHint == null || ConnectionPointReferenceEditPart.VISUAL_ID == nodeVisualID) && UMLPackage.eINSTANCE.getConnectionPointReference().isSuperTypeOf(domainElementMetaclass)
+					&& (domainElement == null || isNodeConnectionPointReference_3017((ConnectionPointReference) domainElement))) {
+				return ConnectionPointReferenceEditPart.VISUAL_ID;
+			}
+			if ((semanticHint == null || ConnectionPointReference2EditPart.VISUAL_ID == nodeVisualID) && UMLPackage.eINSTANCE.getConnectionPointReference().isSuperTypeOf(domainElementMetaclass)
+					&& (domainElement == null || isNodeConnectionPointReference_3018((ConnectionPointReference) domainElement))) {
+				return ConnectionPointReference2EditPart.VISUAL_ID;
+			}
 			return getUnrecognizedState_3016ChildNodeID(domainElement, semanticHint);
+		case ConnectionPointReferenceEditPart.VISUAL_ID:
+			if (ConnectionPointReferenceNameEditPart.VISUAL_ID == nodeVisualID) {
+				return ConnectionPointReferenceNameEditPart.VISUAL_ID;
+			}
+			return getUnrecognizedConnectionPointReference_3017ChildNodeID(domainElement, semanticHint);
+		case ConnectionPointReference2EditPart.VISUAL_ID:
+			if (ConnectionPointReferenceName2EditPart.VISUAL_ID == nodeVisualID) {
+				return ConnectionPointReferenceName2EditPart.VISUAL_ID;
+			}
+			return getUnrecognizedConnectionPointReference_3018ChildNodeID(domainElement, semanticHint);
 		case FinalStateEditPart.VISUAL_ID:
 			return getUnrecognizedFinalState_3003ChildNodeID(domainElement, semanticHint);
 		case PseudostateEditPart.VISUAL_ID:
@@ -471,6 +494,26 @@ public class UMLVisualIDRegistry {
 	 *
 	 * @generated
 	 */
+	private static boolean isNodeConnectionPointReference_3017(ConnectionPointReference element) {
+		return ConnectionPointReference_3017.matches(element);
+	}
+
+	/**
+	 * User can change implementation of this method to check some additional 
+	 * conditions here.
+	 *
+	 * @generated
+	 */
+	private static boolean isNodeConnectionPointReference_3018(ConnectionPointReference element) {
+		return ConnectionPointReference_3018.matches(element);
+	}
+
+	/**
+	 * User can change implementation of this method to check some additional 
+	 * conditions here.
+	 *
+	 * @generated
+	 */
 	private static boolean isNodeFinalState_3003(FinalState element) {
 		return true;
 	}
@@ -632,6 +675,26 @@ public class UMLVisualIDRegistry {
 	 * @generated
 	 */
 	private static int getUnrecognizedState_3016ChildNodeID(EObject domainElement, String semanticHint) {
+		return -1;
+	}
+
+	/**
+	 * User can change implementation of this method to handle some specific
+	 * situations not covered by default logic.
+	 *
+	 * @generated
+	 */
+	private static int getUnrecognizedConnectionPointReference_3017ChildNodeID(EObject domainElement, String semanticHint) {
+		return -1;
+	}
+
+	/**
+	 * User can change implementation of this method to handle some specific
+	 * situations not covered by default logic.
+	 *
+	 * @generated
+	 */
+	private static int getUnrecognizedConnectionPointReference_3018ChildNodeID(EObject domainElement, String semanticHint) {
 		return -1;
 	}
 
@@ -812,6 +875,18 @@ public class UMLVisualIDRegistry {
 	 */
 	private static final Matcher State_3016 = new Matcher(UMLOCLFactory.getExpression("self.oclIsTypeOf(uml::State) and self.isSubmachineState", //$NON-NLS-1$
 			UMLPackage.eINSTANCE.getState()));
+
+	/**
+	 * @generated
+	 */
+	private static final Matcher ConnectionPointReference_3017 = new Matcher(UMLOCLFactory.getExpression("entry->notEmpty() implies entry->forAll(e | e.kind =  PseudostateKind::entryPoint)", //$NON-NLS-1$
+			UMLPackage.eINSTANCE.getConnectionPointReference()));
+
+	/**
+	 * @generated
+	 */
+	private static final Matcher ConnectionPointReference_3018 = new Matcher(UMLOCLFactory.getExpression("exit->notEmpty() implies exit->forAll(e | e.kind =  PseudostateKind::exitPoint)", //$NON-NLS-1$
+			UMLPackage.eINSTANCE.getConnectionPointReference()));
 
 	/**
 	 * @generated

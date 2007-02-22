@@ -54,6 +54,8 @@ public class UMLModelingAssistantProvider extends ModelingAssistantProvider {
 		if (editPart instanceof State3EditPart) {
 			List types = new ArrayList();
 			types.add(UMLElementTypes.Region_3002);
+			types.add(UMLElementTypes.ConnectionPointReference_3017);
+			types.add(UMLElementTypes.ConnectionPointReference_3018);
 			return types;
 		}
 		if (editPart instanceof RegionSubverticesEditPart) {

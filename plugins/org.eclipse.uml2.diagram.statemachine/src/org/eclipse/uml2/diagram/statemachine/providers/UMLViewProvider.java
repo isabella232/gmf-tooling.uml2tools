@@ -6,6 +6,10 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.gmf.runtime.diagram.core.providers.AbstractViewProvider;
 import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.gmf.runtime.emf.type.core.IElementType;
+import org.eclipse.uml2.diagram.statemachine.edit.parts.ConnectionPointReference2EditPart;
+import org.eclipse.uml2.diagram.statemachine.edit.parts.ConnectionPointReferenceEditPart;
+import org.eclipse.uml2.diagram.statemachine.edit.parts.ConnectionPointReferenceName2EditPart;
+import org.eclipse.uml2.diagram.statemachine.edit.parts.ConnectionPointReferenceNameEditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.FinalStateEditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.Pseudostate10EditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.Pseudostate2EditPart;
@@ -36,6 +40,10 @@ import org.eclipse.uml2.diagram.statemachine.edit.parts.TransitionEditPart;
 
 import org.eclipse.uml2.diagram.statemachine.part.UMLVisualIDRegistry;
 
+import org.eclipse.uml2.diagram.statemachine.view.factories.ConnectionPointReference2ViewFactory;
+import org.eclipse.uml2.diagram.statemachine.view.factories.ConnectionPointReferenceName2ViewFactory;
+import org.eclipse.uml2.diagram.statemachine.view.factories.ConnectionPointReferenceNameViewFactory;
+import org.eclipse.uml2.diagram.statemachine.view.factories.ConnectionPointReferenceViewFactory;
 import org.eclipse.uml2.diagram.statemachine.view.factories.FinalStateViewFactory;
 import org.eclipse.uml2.diagram.statemachine.view.factories.Pseudostate10ViewFactory;
 import org.eclipse.uml2.diagram.statemachine.view.factories.Pseudostate2ViewFactory;
@@ -115,6 +123,14 @@ public class UMLViewProvider extends AbstractViewProvider {
 			return State3ViewFactory.class;
 		case StateName2EditPart.VISUAL_ID:
 			return StateName2ViewFactory.class;
+		case ConnectionPointReferenceEditPart.VISUAL_ID:
+			return ConnectionPointReferenceViewFactory.class;
+		case ConnectionPointReferenceNameEditPart.VISUAL_ID:
+			return ConnectionPointReferenceNameViewFactory.class;
+		case ConnectionPointReference2EditPart.VISUAL_ID:
+			return ConnectionPointReference2ViewFactory.class;
+		case ConnectionPointReferenceName2EditPart.VISUAL_ID:
+			return ConnectionPointReferenceName2ViewFactory.class;
 		case FinalStateEditPart.VISUAL_ID:
 			return FinalStateViewFactory.class;
 		case PseudostateEditPart.VISUAL_ID:

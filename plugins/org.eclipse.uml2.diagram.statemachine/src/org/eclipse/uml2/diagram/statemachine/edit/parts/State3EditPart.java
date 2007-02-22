@@ -3,6 +3,7 @@ package org.eclipse.uml2.diagram.statemachine.edit.parts;
 import org.eclipse.draw2d.Graphics;
 import org.eclipse.draw2d.IFigure;
 import org.eclipse.draw2d.MarginBorder;
+import org.eclipse.draw2d.PositionConstants;
 import org.eclipse.draw2d.RectangleFigure;
 import org.eclipse.draw2d.RoundedRectangle;
 import org.eclipse.draw2d.StackLayout;
@@ -16,11 +17,16 @@ import org.eclipse.gef.editpolicies.NonResizableEditPolicy;
 import org.eclipse.gef.requests.CreateRequest;
 import org.eclipse.gmf.internal.codegen.draw2d.GridLayout;
 import org.eclipse.gmf.internal.codegen.draw2d.GridLayoutData;
+import org.eclipse.gmf.runtime.diagram.ui.editparts.AbstractBorderedShapeEditPart;
+import org.eclipse.gmf.runtime.diagram.ui.editparts.IBorderItemEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.ShapeNodeEditPart;
+import org.eclipse.gmf.runtime.diagram.ui.editpolicies.BorderItemSelectionEditPolicy;
 import org.eclipse.gmf.runtime.diagram.ui.editpolicies.CreationEditPolicy;
 import org.eclipse.gmf.runtime.diagram.ui.editpolicies.DragDropEditPolicy;
 import org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles;
+import org.eclipse.gmf.runtime.diagram.ui.figures.BorderItemLocator;
+import org.eclipse.gmf.runtime.diagram.ui.figures.IBorderItemLocator;
 import org.eclipse.gmf.runtime.draw2d.ui.figures.ConstrainedToolbarLayout;
 import org.eclipse.gmf.runtime.draw2d.ui.figures.WrapLabel;
 import org.eclipse.gmf.runtime.gef.ui.figures.DefaultSizeNodeFigure;
@@ -35,7 +41,7 @@ import org.eclipse.uml2.diagram.statemachine.part.UMLVisualIDRegistry;
 /**
  * @generated
  */
-public class State3EditPart extends ShapeNodeEditPart {
+public class State3EditPart extends AbstractBorderedShapeEditPart {
 
 	/**
 	 * @generated
@@ -80,6 +86,9 @@ public class State3EditPart extends ShapeNodeEditPart {
 		LayoutEditPolicy lep = new LayoutEditPolicy() {
 
 			protected EditPolicy createChildEditPolicy(EditPart child) {
+				if (child instanceof IBorderItemEditPart) {
+					return new BorderItemSelectionEditPolicy();
+				}
 				EditPolicy result = child.getEditPolicy(EditPolicy.PRIMARY_DRAG_ROLE);
 				if (result == null) {
 					result = new NonResizableEditPolicy();
@@ -121,6 +130,18 @@ public class State3EditPart extends ShapeNodeEditPart {
 			((StateName2EditPart) childEditPart).setLabel(getPrimaryShape().getFigureCompositeStateFigure_name());
 			return true;
 		}
+		if (childEditPart instanceof ConnectionPointReferenceEditPart) {
+
+			IBorderItemLocator locator = new BorderItemLocator(getMainFigure(), PositionConstants.WEST);
+			getBorderedFigure().getBorderItemContainer().add(((ConnectionPointReferenceEditPart) childEditPart).getFigure(), locator);
+			return true;
+		}
+		if (childEditPart instanceof ConnectionPointReference2EditPart) {
+
+			IBorderItemLocator locator = new BorderItemLocator(getMainFigure(), PositionConstants.EAST);
+			getBorderedFigure().getBorderItemContainer().add(((ConnectionPointReference2EditPart) childEditPart).getFigure(), locator);
+			return true;
+		}
 		return false;
 	}
 
@@ -129,6 +150,14 @@ public class State3EditPart extends ShapeNodeEditPart {
 	 */
 	protected boolean removeFixedChild(EditPart childEditPart) {
 
+		if (childEditPart instanceof ConnectionPointReferenceEditPart) {
+			getBorderedFigure().getBorderItemContainer().remove(((ConnectionPointReferenceEditPart) childEditPart).getFigure());
+			return true;
+		}
+		if (childEditPart instanceof ConnectionPointReference2EditPart) {
+			getBorderedFigure().getBorderItemContainer().remove(((ConnectionPointReference2EditPart) childEditPart).getFigure());
+			return true;
+		}
 		return false;
 	}
 
@@ -157,6 +186,12 @@ public class State3EditPart extends ShapeNodeEditPart {
 	 */
 	protected IFigure getContentPaneFor(IGraphicalEditPart editPart) {
 
+		if (editPart instanceof ConnectionPointReferenceEditPart) {
+			return getBorderedFigure().getBorderItemContainer();
+		}
+		if (editPart instanceof ConnectionPointReference2EditPart) {
+			return getBorderedFigure().getBorderItemContainer();
+		}
 		return super.getContentPaneFor(editPart);
 	}
 
@@ -177,7 +212,7 @@ public class State3EditPart extends ShapeNodeEditPart {
 	 * 
 	 * @generated
 	 */
-	protected NodeFigure createNodeFigure() {
+	protected NodeFigure createMainFigure() {
 		NodeFigure figure = createNodePlate();
 		figure.setLayoutManager(new StackLayout());
 		IFigure shape = createNodeShape();

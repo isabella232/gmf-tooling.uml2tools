@@ -160,6 +160,24 @@
             <popupPredefinedItem id="deleteFromDiagramAction" remove="true"/>
          </popupContribution>
          <popupContribution class="org.eclipse.gmf.runtime.diagram.ui.providers.DiagramContextMenuProvider">
+            <popupStructuredContributionCriteria objectClass="org.eclipse.uml2.diagram.statemachine.edit.parts.ConnectionPointReferenceEditPart"/>
+            <popupPredefinedItem id="deleteFromDiagramAction" remove="true"/>
+         </popupContribution>
+         <popupContribution class="org.eclipse.gmf.runtime.diagram.ui.providers.DiagramContextMenuProvider">
+            <popupStructuredContributionCriteria objectClass="org.eclipse.uml2.diagram.statemachine.edit.parts.ConnectionPointReferenceNameEditPart"/>
+            <popupPredefinedItem id="deleteFromDiagramAction" remove="true"/>
+            <popupPredefinedItem id="deleteFromModelAction" remove="true"/>
+         </popupContribution>
+         <popupContribution class="org.eclipse.gmf.runtime.diagram.ui.providers.DiagramContextMenuProvider">
+            <popupStructuredContributionCriteria objectClass="org.eclipse.uml2.diagram.statemachine.edit.parts.ConnectionPointReference2EditPart"/>
+            <popupPredefinedItem id="deleteFromDiagramAction" remove="true"/>
+         </popupContribution>
+         <popupContribution class="org.eclipse.gmf.runtime.diagram.ui.providers.DiagramContextMenuProvider">
+            <popupStructuredContributionCriteria objectClass="org.eclipse.uml2.diagram.statemachine.edit.parts.ConnectionPointReferenceName2EditPart"/>
+            <popupPredefinedItem id="deleteFromDiagramAction" remove="true"/>
+            <popupPredefinedItem id="deleteFromModelAction" remove="true"/>
+         </popupContribution>
+         <popupContribution class="org.eclipse.gmf.runtime.diagram.ui.providers.DiagramContextMenuProvider">
             <popupStructuredContributionCriteria objectClass="org.eclipse.uml2.diagram.statemachine.edit.parts.FinalStateEditPart"/>
             <popupPredefinedItem id="deleteFromDiagramAction" remove="true"/>
          </popupContribution>
@@ -378,6 +396,28 @@
 
       <metamodel nsURI="http://www.eclipse.org/uml2/2.0.0/UML">
          <metamodelType
+               id="org.eclipse.uml2.diagram.statemachine.ConnectionPointReference_3017"
+               name="Entry Point Connection Point Reference"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
+               eclass="ConnectionPointReference"
+               edithelper="org.eclipse.uml2.diagram.statemachine.edit.helpers.ConnectionPointReferenceEditHelper">
+            <param name="semanticHint" value="3017"/>
+         </metamodelType>
+      </metamodel>
+
+      <metamodel nsURI="http://www.eclipse.org/uml2/2.0.0/UML">
+         <specializationType
+               id="org.eclipse.uml2.diagram.statemachine.ConnectionPointReference_3018"
+               name="Exit Point Connection Point Reference"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
+               edithelperadvice="org.eclipse.uml2.diagram.statemachine.edit.helpers.ConnectionPointReferenceEditHelperAdvice">
+            <specializes id="org.eclipse.uml2.diagram.statemachine.ConnectionPointReference_3017"/>
+            <param name="semanticHint" value="3018"/>
+         </specializationType>
+      </metamodel>
+
+      <metamodel nsURI="http://www.eclipse.org/uml2/2.0.0/UML">
+         <metamodelType
                id="org.eclipse.uml2.diagram.statemachine.FinalState_3003"
                name="FinalState"
                kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
@@ -536,6 +576,8 @@
          <elementType ref="org.eclipse.uml2.diagram.statemachine.State_3012"/>
          <elementType ref="org.eclipse.uml2.diagram.statemachine.Region_3002"/>
          <elementType ref="org.eclipse.uml2.diagram.statemachine.State_3016"/>
+         <elementType ref="org.eclipse.uml2.diagram.statemachine.ConnectionPointReference_3017"/>
+         <elementType ref="org.eclipse.uml2.diagram.statemachine.ConnectionPointReference_3018"/>
          <elementType ref="org.eclipse.uml2.diagram.statemachine.FinalState_3003"/>
          <elementType ref="org.eclipse.uml2.diagram.statemachine.Pseudostate_3004"/>
          <elementType ref="org.eclipse.uml2.diagram.statemachine.Pseudostate_3005"/>

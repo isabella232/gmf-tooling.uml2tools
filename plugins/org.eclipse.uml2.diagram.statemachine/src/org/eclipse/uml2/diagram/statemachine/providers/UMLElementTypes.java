@@ -159,6 +159,10 @@ public class UMLElementTypes extends ElementInitializers {
 
 			elements.put(State_3016, UMLPackage.eINSTANCE.getState());
 
+			elements.put(ConnectionPointReference_3017, UMLPackage.eINSTANCE.getConnectionPointReference());
+
+			elements.put(ConnectionPointReference_3018, UMLPackage.eINSTANCE.getConnectionPointReference());
+
 			elements.put(FinalState_3003, UMLPackage.eINSTANCE.getFinalState());
 
 			elements.put(Pseudostate_3004, UMLPackage.eINSTANCE.getPseudostate());
@@ -220,6 +224,16 @@ public class UMLElementTypes extends ElementInitializers {
 	 * @generated
 	 */
 	public static final IElementType State_3016 = getElementType("org.eclipse.uml2.diagram.statemachine.State_3016"); //$NON-NLS-1$
+
+	/**
+	 * @generated
+	 */
+	public static final IElementType ConnectionPointReference_3017 = getElementType("org.eclipse.uml2.diagram.statemachine.ConnectionPointReference_3017"); //$NON-NLS-1$
+
+	/**
+	 * @generated
+	 */
+	public static final IElementType ConnectionPointReference_3018 = getElementType("org.eclipse.uml2.diagram.statemachine.ConnectionPointReference_3018"); //$NON-NLS-1$
 
 	/**
 	 * @generated
@@ -306,6 +320,8 @@ public class UMLElementTypes extends ElementInitializers {
 			KNOWN_ELEMENT_TYPES.add(State_3012);
 			KNOWN_ELEMENT_TYPES.add(Region_3002);
 			KNOWN_ELEMENT_TYPES.add(State_3016);
+			KNOWN_ELEMENT_TYPES.add(ConnectionPointReference_3017);
+			KNOWN_ELEMENT_TYPES.add(ConnectionPointReference_3018);
 			KNOWN_ELEMENT_TYPES.add(FinalState_3003);
 			KNOWN_ELEMENT_TYPES.add(Pseudostate_3004);
 			KNOWN_ELEMENT_TYPES.add(Pseudostate_3005);

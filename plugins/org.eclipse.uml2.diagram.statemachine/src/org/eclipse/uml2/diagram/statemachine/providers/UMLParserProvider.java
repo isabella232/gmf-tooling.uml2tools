@@ -7,6 +7,8 @@ import org.eclipse.gmf.runtime.common.ui.services.parser.GetParserOperation;
 import org.eclipse.gmf.runtime.common.ui.services.parser.IParser;
 import org.eclipse.gmf.runtime.common.ui.services.parser.IParserProvider;
 import org.eclipse.gmf.runtime.notation.View;
+import org.eclipse.uml2.diagram.statemachine.edit.parts.ConnectionPointReferenceName2EditPart;
+import org.eclipse.uml2.diagram.statemachine.edit.parts.ConnectionPointReferenceNameEditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.PseudostateName2EditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.PseudostateNameEditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.StateMachineNameEditPart;
@@ -95,6 +97,52 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 	/**
 	 * @generated
 	 */
+	private IParser connectionPointReferenceConnectionPointReferenceName_5009Parser;
+
+	/**
+	 * @generated
+	 */
+	private IParser getConnectionPointReferenceConnectionPointReferenceName_5009Parser() {
+		if (connectionPointReferenceConnectionPointReferenceName_5009Parser == null) {
+			connectionPointReferenceConnectionPointReferenceName_5009Parser = createConnectionPointReferenceConnectionPointReferenceName_5009Parser();
+		}
+		return connectionPointReferenceConnectionPointReferenceName_5009Parser;
+	}
+
+	/**
+	 * @generated
+	 */
+	protected IParser createConnectionPointReferenceConnectionPointReferenceName_5009Parser() {
+		UMLStructuralFeatureParser parser = new UMLStructuralFeatureParser(UMLPackage.eINSTANCE.getNamedElement_Name());
+		return parser;
+	}
+
+	/**
+	 * @generated
+	 */
+	private IParser connectionPointReferenceConnectionPointReferenceName_5010Parser;
+
+	/**
+	 * @generated
+	 */
+	private IParser getConnectionPointReferenceConnectionPointReferenceName_5010Parser() {
+		if (connectionPointReferenceConnectionPointReferenceName_5010Parser == null) {
+			connectionPointReferenceConnectionPointReferenceName_5010Parser = createConnectionPointReferenceConnectionPointReferenceName_5010Parser();
+		}
+		return connectionPointReferenceConnectionPointReferenceName_5010Parser;
+	}
+
+	/**
+	 * @generated
+	 */
+	protected IParser createConnectionPointReferenceConnectionPointReferenceName_5010Parser() {
+		UMLStructuralFeatureParser parser = new UMLStructuralFeatureParser(UMLPackage.eINSTANCE.getNamedElement_Name());
+		return parser;
+	}
+
+	/**
+	 * @generated
+	 */
 	private IParser pseudostatePseudostateName_5006Parser;
 
 	/**
@@ -172,6 +220,10 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 			return getStateStateName_5004Parser();
 		case StateName2EditPart.VISUAL_ID:
 			return getStateStateName_5008Parser();
+		case ConnectionPointReferenceNameEditPart.VISUAL_ID:
+			return getConnectionPointReferenceConnectionPointReferenceName_5009Parser();
+		case ConnectionPointReferenceName2EditPart.VISUAL_ID:
+			return getConnectionPointReferenceConnectionPointReferenceName_5010Parser();
 		case PseudostateNameEditPart.VISUAL_ID:
 			return getPseudostatePseudostateName_5006Parser();
 		case PseudostateName2EditPart.VISUAL_ID:

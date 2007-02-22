@@ -29,14 +29,14 @@ import org.eclipse.gmf.runtime.diagram.ui.editpolicies.CanonicalConnectionEditPo
 
 import org.eclipse.gmf.runtime.diagram.ui.requests.CreateConnectionViewRequest;
 import org.eclipse.gmf.runtime.diagram.ui.requests.RequestConstants;
-
 import org.eclipse.gmf.runtime.emf.core.util.EObjectAdapter;
-
 import org.eclipse.gmf.runtime.emf.type.core.IElementType;
 
 import org.eclipse.gmf.runtime.notation.Diagram;
 import org.eclipse.gmf.runtime.notation.View;
 
+import org.eclipse.uml2.diagram.statemachine.edit.parts.ConnectionPointReference2EditPart;
+import org.eclipse.uml2.diagram.statemachine.edit.parts.ConnectionPointReferenceEditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.FinalStateEditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.Pseudostate10EditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.Pseudostate2EditPart;
@@ -219,6 +219,8 @@ public class StateMachineCanonicalEditPolicy extends CanonicalConnectionEditPoli
 		case State2EditPart.VISUAL_ID:
 		case Region2EditPart.VISUAL_ID:
 		case State3EditPart.VISUAL_ID:
+		case ConnectionPointReferenceEditPart.VISUAL_ID:
+		case ConnectionPointReference2EditPart.VISUAL_ID:
 		case FinalStateEditPart.VISUAL_ID:
 		case PseudostateEditPart.VISUAL_ID:
 		case Pseudostate2EditPart.VISUAL_ID:

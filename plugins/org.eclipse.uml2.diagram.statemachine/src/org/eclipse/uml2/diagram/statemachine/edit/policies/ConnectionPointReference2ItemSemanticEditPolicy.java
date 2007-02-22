@@ -9,11 +9,6 @@ import org.eclipse.emf.ecore.EAnnotation;
 import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.gef.commands.UnexecutableCommand;
 
-import org.eclipse.gmf.runtime.emf.type.core.requests.CreateElementRequest;
-
-import org.eclipse.uml2.diagram.statemachine.edit.commands.ConnectionPointReference2CreateCommand;
-import org.eclipse.uml2.diagram.statemachine.edit.commands.ConnectionPointReferenceCreateCommand;
-import org.eclipse.uml2.diagram.statemachine.edit.commands.Region2CreateCommand;
 import org.eclipse.uml2.diagram.statemachine.edit.commands.TransitionTypeLinkCreateCommand;
 
 import org.eclipse.uml2.diagram.statemachine.providers.UMLElementTypes;
@@ -25,32 +20,7 @@ import org.eclipse.uml2.uml.Vertex;
 /**
  * @generated
  */
-public class State3ItemSemanticEditPolicy extends UMLBaseItemSemanticEditPolicy {
-
-	/**
-	 * @generated
-	 */
-	protected Command getCreateCommand(CreateElementRequest req) {
-		if (UMLElementTypes.Region_3002 == req.getElementType()) {
-			if (req.getContainmentFeature() == null) {
-				req.setContainmentFeature(UMLPackage.eINSTANCE.getState_Region());
-			}
-			return getMSLWrapper(new Region2CreateCommand(req));
-		}
-		if (UMLElementTypes.ConnectionPointReference_3017 == req.getElementType()) {
-			if (req.getContainmentFeature() == null) {
-				req.setContainmentFeature(UMLPackage.eINSTANCE.getState_Connection());
-			}
-			return getMSLWrapper(new ConnectionPointReferenceCreateCommand(req));
-		}
-		if (UMLElementTypes.ConnectionPointReference_3018 == req.getElementType()) {
-			if (req.getContainmentFeature() == null) {
-				req.setContainmentFeature(UMLPackage.eINSTANCE.getState_Connection());
-			}
-			return getMSLWrapper(new ConnectionPointReference2CreateCommand(req));
-		}
-		return super.getCreateCommand(req);
-	}
+public class ConnectionPointReference2ItemSemanticEditPolicy extends UMLBaseItemSemanticEditPolicy {
 
 	/**
 	 * @generated

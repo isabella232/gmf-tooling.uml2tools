@@ -29,6 +29,10 @@ import org.eclipse.ui.IMemento;
 import org.eclipse.ui.navigator.ICommonContentExtensionSite;
 import org.eclipse.ui.navigator.ICommonLabelProvider;
 
+import org.eclipse.uml2.diagram.statemachine.edit.parts.ConnectionPointReference2EditPart;
+import org.eclipse.uml2.diagram.statemachine.edit.parts.ConnectionPointReferenceEditPart;
+import org.eclipse.uml2.diagram.statemachine.edit.parts.ConnectionPointReferenceName2EditPart;
+import org.eclipse.uml2.diagram.statemachine.edit.parts.ConnectionPointReferenceNameEditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.FinalStateEditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.Pseudostate10EditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.Pseudostate2EditPart;
@@ -125,6 +129,10 @@ public class UMLNavigatorLabelProvider extends LabelProvider implements ICommonL
 			return getImage("Navigator?Node?http://www.eclipse.org/uml2/2.0.0/UML?Region", UMLElementTypes.Region_3002);
 		case State3EditPart.VISUAL_ID:
 			return getImage("Navigator?Node?http://www.eclipse.org/uml2/2.0.0/UML?State", UMLElementTypes.State_3016);
+		case ConnectionPointReferenceEditPart.VISUAL_ID:
+			return getImage("Navigator?Node?http://www.eclipse.org/uml2/2.0.0/UML?ConnectionPointReference", UMLElementTypes.ConnectionPointReference_3017);
+		case ConnectionPointReference2EditPart.VISUAL_ID:
+			return getImage("Navigator?Node?http://www.eclipse.org/uml2/2.0.0/UML?ConnectionPointReference", UMLElementTypes.ConnectionPointReference_3018);
 		case FinalStateEditPart.VISUAL_ID:
 			return getImage("Navigator?Node?http://www.eclipse.org/uml2/2.0.0/UML?FinalState", UMLElementTypes.FinalState_3003);
 		case PseudostateEditPart.VISUAL_ID:
@@ -211,6 +219,10 @@ public class UMLNavigatorLabelProvider extends LabelProvider implements ICommonL
 			return getRegion_3002Text(view);
 		case State3EditPart.VISUAL_ID:
 			return getState_3016Text(view);
+		case ConnectionPointReferenceEditPart.VISUAL_ID:
+			return getConnectionPointReference_3017Text(view);
+		case ConnectionPointReference2EditPart.VISUAL_ID:
+			return getConnectionPointReference_3018Text(view);
 		case FinalStateEditPart.VISUAL_ID:
 			return getFinalState_3003Text(view);
 		case PseudostateEditPart.VISUAL_ID:
@@ -360,6 +372,54 @@ public class UMLNavigatorLabelProvider extends LabelProvider implements ICommonL
 			return parser.getPrintString(new EObjectAdapter(view.getElement() != null ? view.getElement() : view), ParserOptions.NONE.intValue());
 		} else {
 			UMLDiagramEditorPlugin.getInstance().logError("Parser was not found for label " + 5008);
+			return "";
+		}
+	}
+
+	/**
+	 * @generated
+	 */
+	private String getConnectionPointReference_3017Text(View view) {
+		IParser parser = ParserService.getInstance().getParser(new IAdaptable() {
+
+			public Object getAdapter(Class adapter) {
+				if (String.class.equals(adapter)) {
+					return UMLVisualIDRegistry.getType(ConnectionPointReferenceNameEditPart.VISUAL_ID);
+				}
+				if (IElementType.class.equals(adapter)) {
+					return UMLElementTypes.ConnectionPointReference_3017;
+				}
+				return null;
+			}
+		});
+		if (parser != null) {
+			return parser.getPrintString(new EObjectAdapter(view.getElement() != null ? view.getElement() : view), ParserOptions.NONE.intValue());
+		} else {
+			UMLDiagramEditorPlugin.getInstance().logError("Parser was not found for label " + 5009);
+			return "";
+		}
+	}
+
+	/**
+	 * @generated
+	 */
+	private String getConnectionPointReference_3018Text(View view) {
+		IParser parser = ParserService.getInstance().getParser(new IAdaptable() {
+
+			public Object getAdapter(Class adapter) {
+				if (String.class.equals(adapter)) {
+					return UMLVisualIDRegistry.getType(ConnectionPointReferenceName2EditPart.VISUAL_ID);
+				}
+				if (IElementType.class.equals(adapter)) {
+					return UMLElementTypes.ConnectionPointReference_3018;
+				}
+				return null;
+			}
+		});
+		if (parser != null) {
+			return parser.getPrintString(new EObjectAdapter(view.getElement() != null ? view.getElement() : view), ParserOptions.NONE.intValue());
+		} else {
+			UMLDiagramEditorPlugin.getInstance().logError("Parser was not found for label " + 5010);
 			return "";
 		}
 	}

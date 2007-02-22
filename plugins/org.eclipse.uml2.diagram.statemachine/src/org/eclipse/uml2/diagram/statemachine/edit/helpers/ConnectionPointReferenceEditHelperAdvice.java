@@ -5,5 +5,5 @@ import org.eclipse.gmf.runtime.emf.type.core.edithelper.AbstractEditHelperAdvice
 /**
  * @generated
  */
-public class State2EditHelperAdvice extends AbstractEditHelperAdvice {
+public class ConnectionPointReferenceEditHelperAdvice extends AbstractEditHelperAdvice {
 }

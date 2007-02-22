@@ -197,7 +197,8 @@ public class UMLPaletteFactory {
 	 * @generated
 	 */
 	private ToolEntry createEntryPoint12CreationTool() {
-		List/*<IElementType>*/types = new ArrayList/*<IElementType>*/(1);
+		List/*<IElementType>*/types = new ArrayList/*<IElementType>*/(2);
+		types.add(UMLElementTypes.ConnectionPointReference_3017);
 		types.add(UMLElementTypes.Pseudostate_3014);
 		NodeToolEntry entry = new NodeToolEntry(UMLDiagramEditorPlugin.getString("EntryPoint12CreationTool.title"), UMLDiagramEditorPlugin.getString("EntryPoint12CreationTool.desc"), types); //$NON-NLS-1$ $NON-NLS-2$
 		entry.setSmallIcon(UMLDiagramEditorPlugin.findImageDescriptor("/org.eclipse.uml2.uml.edit/icons/full/obj16/Pseudostate_entryPoint.gif")); //$NON-NLS-1$
@@ -209,7 +210,8 @@ public class UMLPaletteFactory {
 	 * @generated
 	 */
 	private ToolEntry createExitPoint13CreationTool() {
-		List/*<IElementType>*/types = new ArrayList/*<IElementType>*/(1);
+		List/*<IElementType>*/types = new ArrayList/*<IElementType>*/(2);
+		types.add(UMLElementTypes.ConnectionPointReference_3018);
 		types.add(UMLElementTypes.Pseudostate_3015);
 		NodeToolEntry entry = new NodeToolEntry(UMLDiagramEditorPlugin.getString("ExitPoint13CreationTool.title"), UMLDiagramEditorPlugin.getString("ExitPoint13CreationTool.desc"), types); //$NON-NLS-1$ $NON-NLS-2$
 		entry.setSmallIcon(UMLDiagramEditorPlugin.findImageDescriptor("/org.eclipse.uml2.uml.edit/icons/full/obj16/Pseudostate_exitPoint.gif")); //$NON-NLS-1$
