@@ -52,9 +52,9 @@ import org.eclipse.gmf.runtime.diagram.ui.editparts.IPrimaryEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.parts.IDiagramGraphicalViewer;
 import org.eclipse.gmf.runtime.diagram.ui.parts.IDiagramWorkbenchPart;
 
-import org.eclipse.uml2.diagram.activity.edit.parts.ActivityEditPart;
+import org.eclipse.uml2.diagram.activity.edit.parts.PackageEditPart;
 
-import org.eclipse.uml2.uml.Activity;
+import org.eclipse.uml2.uml.Package;
 import org.eclipse.uml2.uml.UMLFactory;
 
 /**
@@ -121,9 +121,9 @@ public class UMLDiagramEditorUtil {
 		AbstractTransactionalCommand command = new AbstractTransactionalCommand(editingDomain, "Creating diagram and model", Collections.EMPTY_LIST) { //$NON-NLS-1$
 
 			protected CommandResult doExecuteWithResult(IProgressMonitor monitor, IAdaptable info) throws ExecutionException {
-				Activity model = createInitialModel();
+				Package model = createInitialModel();
 				attachModelToResource(model, modelResource);
-				Diagram diagram = ViewService.createDiagram(model, ActivityEditPart.MODEL_ID, UMLDiagramEditorPlugin.DIAGRAM_PREFERENCES_HINT);
+				Diagram diagram = ViewService.createDiagram(model, PackageEditPart.MODEL_ID, UMLDiagramEditorPlugin.DIAGRAM_PREFERENCES_HINT);
 				if (diagram != null) {
 					diagramResource.getContents().add(diagram);
 					diagram.setName(diagramName);
@@ -157,8 +157,8 @@ public class UMLDiagramEditorUtil {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private static Activity createInitialModel() {
-		return UMLFactory.eINSTANCE.createActivity();
+	private static Package createInitialModel() {
+		return UMLFactory.eINSTANCE.createPackage();
 	}
 
 	/**
@@ -167,7 +167,7 @@ public class UMLDiagramEditorUtil {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private static void attachModelToResource(Activity model, Resource resource) {
+	private static void attachModelToResource(Package model, Resource resource) {
 		resource.getContents().add(model);
 	}
 

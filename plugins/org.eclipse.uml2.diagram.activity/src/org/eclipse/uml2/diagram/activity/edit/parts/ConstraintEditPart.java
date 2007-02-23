@@ -25,7 +25,6 @@ import org.eclipse.uml2.diagram.activity.edit.policies.ConstraintItemSemanticEdi
 import org.eclipse.uml2.diagram.activity.part.UMLVisualIDRegistry;
 import org.eclipse.uml2.diagram.activity.providers.UMLElementTypes;
 import org.eclipse.uml2.diagram.common.draw2d.ConstraintFigure;
-import org.eclipse.uml2.diagram.common.draw2d.ConstraintFigure;
 
 /**
  * @generated
@@ -35,7 +34,7 @@ public class ConstraintEditPart extends ShapeNodeEditPart {
 	/**
 	 * @generated
 	 */
-	public static final int VISUAL_ID = 2019;
+	public static final int VISUAL_ID = 2027;
 
 	/**
 	 * @generated
@@ -65,7 +64,7 @@ public class ConstraintEditPart extends ShapeNodeEditPart {
 					if (request instanceof CreateViewAndElementRequest) {
 						CreateElementRequestAdapter adapter = ((CreateViewAndElementRequest) request).getViewAndElementDescriptor().getCreateElementRequestAdapter();
 						IElementType type = (IElementType) adapter.getAdapter(IElementType.class);
-						if (type == UMLElementTypes.LiteralString_3026) {
+						if (type == UMLElementTypes.LiteralString_3049) {
 							EditPart compartmentEditPart = getChildBySemanticHint(UMLVisualIDRegistry.getType(ConstraintPreconditionEditPart.VISUAL_ID));
 							return compartmentEditPart == null ? null : compartmentEditPart.getCommand(request);
 						}

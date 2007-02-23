@@ -41,7 +41,7 @@ public class OpaqueActionEditPart extends AbstractBorderedShapeEditPart {
 	/**
 	 * @generated
 	 */
-	public static final int VISUAL_ID = 2010;
+	public static final int VISUAL_ID = 3029;
 
 	/**
 	 * @generated

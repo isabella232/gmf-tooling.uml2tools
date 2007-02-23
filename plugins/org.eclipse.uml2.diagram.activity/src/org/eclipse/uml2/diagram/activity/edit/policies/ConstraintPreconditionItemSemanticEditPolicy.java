@@ -19,7 +19,7 @@ public class ConstraintPreconditionItemSemanticEditPolicy extends UMLBaseItemSem
 	 * @generated
 	 */
 	protected Command getCreateCommand(CreateElementRequest req) {
-		if (UMLElementTypes.LiteralString_3026 == req.getElementType()) {
+		if (UMLElementTypes.LiteralString_3049 == req.getElementType()) {
 			if (req.getContainmentFeature() == null) {
 				req.setContainmentFeature(UMLPackage.eINSTANCE.getConstraint_Specification());
 			}

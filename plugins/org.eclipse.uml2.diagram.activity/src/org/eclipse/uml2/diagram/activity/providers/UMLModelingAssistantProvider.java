@@ -21,6 +21,7 @@ import org.eclipse.ui.dialogs.ElementListSelectionDialog;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.edit.ui.provider.AdapterFactoryLabelProvider;
 import org.eclipse.uml2.diagram.activity.edit.parts.ActivityEditPart;
+import org.eclipse.uml2.diagram.activity.edit.parts.ActivitySubverticesEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.AddStructuralFeatureValueAction2EditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.AddStructuralFeatureValueActionEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.CallBehaviorAction2EditPart;
@@ -33,6 +34,7 @@ import org.eclipse.uml2.diagram.activity.edit.parts.CreateObjectAction2EditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.CreateObjectActionEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.OpaqueAction2EditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.OpaqueActionEditPart;
+import org.eclipse.uml2.diagram.activity.edit.parts.PackageEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.StructuredActivityNodeStructuredActivityContentPaneCompartment2EditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.StructuredActivityNodeStructuredActivityContentPaneCompartmentEditPart;
 
@@ -48,6 +50,21 @@ public class UMLModelingAssistantProvider extends ModelingAssistantProvider {
 	 */
 	public List getTypesForPopupBar(IAdaptable host) {
 		IGraphicalEditPart editPart = (IGraphicalEditPart) host.getAdapter(IGraphicalEditPart.class);
+		if (editPart instanceof ActivityEditPart) {
+			List types = new ArrayList();
+			types.add(UMLElementTypes.ActivityParameterNode_3052);
+			return types;
+		}
+		if (editPart instanceof ConstraintEditPart) {
+			List types = new ArrayList();
+			types.add(UMLElementTypes.LiteralString_3049);
+			return types;
+		}
+		if (editPart instanceof Constraint2EditPart) {
+			List types = new ArrayList();
+			types.add(UMLElementTypes.LiteralString_3051);
+			return types;
+		}
 		if (editPart instanceof OpaqueActionEditPart) {
 			List types = new ArrayList();
 			types.add(UMLElementTypes.OutputPin_3001);
@@ -78,16 +95,6 @@ public class UMLModelingAssistantProvider extends ModelingAssistantProvider {
 			types.add(UMLElementTypes.InputPin_3008);
 			return types;
 		}
-		if (editPart instanceof ConstraintEditPart) {
-			List types = new ArrayList();
-			types.add(UMLElementTypes.LiteralString_3026);
-			return types;
-		}
-		if (editPart instanceof Constraint2EditPart) {
-			List types = new ArrayList();
-			types.add(UMLElementTypes.LiteralString_3027);
-			return types;
-		}
 		if (editPart instanceof OpaqueAction2EditPart) {
 			List types = new ArrayList();
 			types.add(UMLElementTypes.OutputPin_3001);
@@ -116,6 +123,29 @@ public class UMLModelingAssistantProvider extends ModelingAssistantProvider {
 			types.add(UMLElementTypes.InputPin_3003);
 			types.add(UMLElementTypes.InputPin_3004);
 			types.add(UMLElementTypes.InputPin_3005);
+			return types;
+		}
+		if (editPart instanceof ActivitySubverticesEditPart) {
+			List types = new ArrayList();
+			types.add(UMLElementTypes.AcceptEventAction_3030);
+			types.add(UMLElementTypes.AcceptEventAction_3031);
+			types.add(UMLElementTypes.ActivityFinalNode_3032);
+			types.add(UMLElementTypes.DecisionNode_3033);
+			types.add(UMLElementTypes.MergeNode_3034);
+			types.add(UMLElementTypes.InitialNode_3035);
+			types.add(UMLElementTypes.DataStoreNode_3036);
+			types.add(UMLElementTypes.CentralBufferNode_3037);
+			types.add(UMLElementTypes.OpaqueAction_3029);
+			types.add(UMLElementTypes.FlowFinalNode_3038);
+			types.add(UMLElementTypes.ForkNode_3039);
+			types.add(UMLElementTypes.JoinNode_3040);
+			types.add(UMLElementTypes.Pin_3041);
+			types.add(UMLElementTypes.CreateObjectAction_3042);
+			types.add(UMLElementTypes.AddStructuralFeatureValueAction_3043);
+			types.add(UMLElementTypes.CallBehaviorAction_3044);
+			types.add(UMLElementTypes.CallOperationAction_3045);
+			types.add(UMLElementTypes.StructuredActivityNode_3046);
+			types.add(UMLElementTypes.OpaqueBehavior_3047);
 			return types;
 		}
 		if (editPart instanceof StructuredActivityNodeStructuredActivityContentPaneCompartmentEditPart) {
@@ -158,29 +188,11 @@ public class UMLModelingAssistantProvider extends ModelingAssistantProvider {
 			types.add(UMLElementTypes.CentralBufferNode_3025);
 			return types;
 		}
-		if (editPart instanceof ActivityEditPart) {
+		if (editPart instanceof PackageEditPart) {
 			List types = new ArrayList();
-			types.add(UMLElementTypes.AcceptEventAction_2001);
-			types.add(UMLElementTypes.AcceptEventAction_2002);
-			types.add(UMLElementTypes.ActivityFinalNode_2003);
-			types.add(UMLElementTypes.DecisionNode_2004);
-			types.add(UMLElementTypes.MergeNode_2005);
-			types.add(UMLElementTypes.InitialNode_2006);
-			types.add(UMLElementTypes.DataStoreNode_2008);
-			types.add(UMLElementTypes.CentralBufferNode_2009);
-			types.add(UMLElementTypes.OpaqueAction_2010);
-			types.add(UMLElementTypes.FlowFinalNode_2011);
-			types.add(UMLElementTypes.ForkNode_2012);
-			types.add(UMLElementTypes.JoinNode_2013);
-			types.add(UMLElementTypes.Pin_2014);
-			types.add(UMLElementTypes.CreateObjectAction_2015);
-			types.add(UMLElementTypes.AddStructuralFeatureValueAction_2016);
-			types.add(UMLElementTypes.CallBehaviorAction_2017);
-			types.add(UMLElementTypes.CallOperationAction_2018);
-			types.add(UMLElementTypes.StructuredActivityNode_2007);
-			types.add(UMLElementTypes.Constraint_2019);
-			types.add(UMLElementTypes.Constraint_2020);
-			types.add(UMLElementTypes.OpaqueBehavior_2021);
+			types.add(UMLElementTypes.Activity_2026);
+			types.add(UMLElementTypes.Constraint_2027);
+			types.add(UMLElementTypes.Constraint_2028);
 			return types;
 		}
 		return Collections.EMPTY_LIST;

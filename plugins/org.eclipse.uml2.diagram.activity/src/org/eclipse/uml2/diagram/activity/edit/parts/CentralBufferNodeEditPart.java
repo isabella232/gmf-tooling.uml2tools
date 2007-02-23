@@ -30,7 +30,7 @@ public class CentralBufferNodeEditPart extends ShapeNodeEditPart {
 	/**
 	 * @generated
 	 */
-	public static final int VISUAL_ID = 2009;
+	public static final int VISUAL_ID = 3037;
 
 	/**
 	 * @generated

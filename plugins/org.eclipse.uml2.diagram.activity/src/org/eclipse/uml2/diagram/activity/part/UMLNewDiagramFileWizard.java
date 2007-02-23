@@ -69,7 +69,7 @@ import org.eclipse.ui.PartInitException;
 
 import org.eclipse.ui.dialogs.WizardNewFileCreationPage;
 
-import org.eclipse.uml2.diagram.activity.edit.parts.ActivityEditPart;
+import org.eclipse.uml2.diagram.activity.edit.parts.PackageEditPart;
 
 /**
  * @generated
@@ -144,7 +144,7 @@ public class UMLNewDiagramFileWizard extends Wizard {
 
 		};
 		myFileCreationPage.setTitle("Diagram file");
-		myFileCreationPage.setDescription("Create new diagram based on " + ActivityEditPart.MODEL_ID + " model content");
+		myFileCreationPage.setDescription("Create new diagram based on " + PackageEditPart.MODEL_ID + " model content");
 		addPage(myFileCreationPage);
 		addPage(new RootElementSelectorPage());
 	}
@@ -171,10 +171,10 @@ public class UMLNewDiagramFileWizard extends Wizard {
 
 			protected CommandResult doExecuteWithResult(IProgressMonitor monitor, IAdaptable info) throws ExecutionException {
 				int diagramVID = UMLVisualIDRegistry.getDiagramVisualID(myDiagramRoot);
-				if (diagramVID != ActivityEditPart.VISUAL_ID) {
+				if (diagramVID != PackageEditPart.VISUAL_ID) {
 					return CommandResult.newErrorCommandResult("Incorrect model object stored as a root resource object"); //$NON-NLS-1$
 				}
-				Diagram diagram = ViewService.createDiagram(myDiagramRoot, ActivityEditPart.MODEL_ID, UMLDiagramEditorPlugin.DIAGRAM_PREFERENCES_HINT);
+				Diagram diagram = ViewService.createDiagram(myDiagramRoot, PackageEditPart.MODEL_ID, UMLDiagramEditorPlugin.DIAGRAM_PREFERENCES_HINT);
 				diagramResource.getContents().add(diagram);
 				return CommandResult.newOKCommandResult();
 			}
@@ -280,7 +280,7 @@ public class UMLNewDiagramFileWizard extends Wizard {
 				return false;
 			}
 			boolean result = ViewService.getInstance().provides(
-					new CreateDiagramViewOperation(new EObjectAdapter(myDiagramRoot), ActivityEditPart.MODEL_ID, UMLDiagramEditorPlugin.DIAGRAM_PREFERENCES_HINT));
+					new CreateDiagramViewOperation(new EObjectAdapter(myDiagramRoot), PackageEditPart.MODEL_ID, UMLDiagramEditorPlugin.DIAGRAM_PREFERENCES_HINT));
 			setErrorMessage(result ? null : "Invalid diagram root element was selected");
 			return result;
 		}

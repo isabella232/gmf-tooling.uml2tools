@@ -41,7 +41,7 @@ public class CallOperationActionEditPart extends AbstractBorderedShapeEditPart {
 	/**
 	 * @generated
 	 */
-	public static final int VISUAL_ID = 2018;
+	public static final int VISUAL_ID = 3045;
 
 	/**
 	 * @generated

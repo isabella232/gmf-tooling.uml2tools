@@ -46,7 +46,7 @@ import org.eclipse.uml2.uml.Activity;
 import org.eclipse.uml2.uml.ActivityNode;
 import org.eclipse.uml2.uml.Behavior;
 import org.eclipse.uml2.uml.Constraint;
-import org.eclipse.uml2.uml.ObjectFlow;
+import org.eclipse.uml2.uml.ExecutableNode;
 import org.eclipse.uml2.uml.ObjectNode;
 import org.eclipse.uml2.uml.UMLPackage;
 
@@ -322,6 +322,13 @@ public class UMLBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 					return false;
 				}
 			}
+			return true;
+		}
+
+		/**
+		 * @generated 
+		 */
+		public static boolean canCreateExceptionHandler_4005(ExecutableNode container, ExecutableNode source, ExecutableNode target) {
 			return true;
 		}
 

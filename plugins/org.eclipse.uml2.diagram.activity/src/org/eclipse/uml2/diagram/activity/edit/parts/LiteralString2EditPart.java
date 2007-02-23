@@ -58,7 +58,7 @@ public class LiteralString2EditPart extends CompartmentEditPart implements IText
 	/**
 	 * @generated
 	 */
-	public static final int VISUAL_ID = 3027;
+	public static final int VISUAL_ID = 3051;
 
 	/**
 	 * @generated
@@ -290,7 +290,7 @@ public class LiteralString2EditPart extends CompartmentEditPart implements IText
 
 				public Object getAdapter(Class adapter) {
 					if (IElementType.class.equals(adapter)) {
-						return UMLElementTypes.LiteralString_3027;
+						return UMLElementTypes.LiteralString_3051;
 					}
 					return super.getAdapter(adapter);
 				}

@@ -20,7 +20,7 @@ public class ConstraintPostconditionEditPart extends ListCompartmentEditPart {
 	/**
 	 * @generated
 	 */
-	public static final int VISUAL_ID = 7004;
+	public static final int VISUAL_ID = 7014;
 
 	/**
 	 * @generated

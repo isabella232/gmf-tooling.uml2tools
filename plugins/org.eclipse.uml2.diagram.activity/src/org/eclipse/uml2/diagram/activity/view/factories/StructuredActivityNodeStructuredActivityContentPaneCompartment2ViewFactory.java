@@ -16,7 +16,7 @@ import org.eclipse.gmf.runtime.notation.NotationPackage;
 import org.eclipse.gmf.runtime.notation.TitleStyle;
 import org.eclipse.gmf.runtime.notation.View;
 
-import org.eclipse.uml2.diagram.activity.edit.parts.ActivityEditPart;
+import org.eclipse.uml2.diagram.activity.edit.parts.PackageEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.StructuredActivityNodeStructuredActivityContentPaneCompartment2EditPart;
 
 import org.eclipse.uml2.diagram.activity.part.UMLVisualIDRegistry;
@@ -47,10 +47,10 @@ public class StructuredActivityNodeStructuredActivityContentPaneCompartment2View
 		super.decorateView(containerView, view, semanticAdapter, semanticHint, index, persisted);
 		setupCompartmentTitle(view);
 		setupCompartmentCollapsed(view);
-		if (!ActivityEditPart.MODEL_ID.equals(UMLVisualIDRegistry.getModelID(containerView))) {
+		if (!PackageEditPart.MODEL_ID.equals(UMLVisualIDRegistry.getModelID(containerView))) {
 			EAnnotation shortcutAnnotation = EcoreFactory.eINSTANCE.createEAnnotation();
 			shortcutAnnotation.setSource("Shortcut"); //$NON-NLS-1$
-			shortcutAnnotation.getDetails().put("modelID", ActivityEditPart.MODEL_ID); //$NON-NLS-1$
+			shortcutAnnotation.getDetails().put("modelID", PackageEditPart.MODEL_ID); //$NON-NLS-1$
 			view.getEAnnotations().add(shortcutAnnotation);
 		}
 	}

@@ -21,7 +21,7 @@ import org.eclipse.ui.navigator.ICommonActionConstants;
 import org.eclipse.ui.navigator.ICommonActionExtensionSite;
 import org.eclipse.ui.navigator.ICommonViewerWorkbenchSite;
 
-import org.eclipse.uml2.diagram.activity.edit.parts.ActivityEditPart;
+import org.eclipse.uml2.diagram.activity.edit.parts.PackageEditPart;
 
 import org.eclipse.uml2.diagram.activity.part.UMLDiagramEditor;
 import org.eclipse.uml2.diagram.activity.part.UMLDiagramEditorPlugin;
@@ -119,7 +119,7 @@ public class UMLNavigatorActionProvider extends CommonActionProvider {
 				}
 				if (selectedElement instanceof Diagram) {
 					Diagram diagram = (Diagram) selectedElement;
-					if (ActivityEditPart.MODEL_ID.equals(UMLVisualIDRegistry.getModelID(diagram))) {
+					if (PackageEditPart.MODEL_ID.equals(UMLVisualIDRegistry.getModelID(diagram))) {
 						myDiagram = diagram;
 					}
 				}

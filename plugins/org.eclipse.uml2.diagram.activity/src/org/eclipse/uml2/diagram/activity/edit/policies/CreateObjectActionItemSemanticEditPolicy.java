@@ -12,6 +12,7 @@ import org.eclipse.gef.commands.UnexecutableCommand;
 import org.eclipse.gmf.runtime.emf.type.core.requests.CreateElementRequest;
 
 import org.eclipse.uml2.diagram.activity.edit.commands.ControlFlowTypeLinkCreateCommand;
+import org.eclipse.uml2.diagram.activity.edit.commands.ExceptionHandlerTypeLinkCreateCommand;
 import org.eclipse.uml2.diagram.activity.edit.commands.ObjectFlowTypeLinkCreateCommand;
 import org.eclipse.uml2.diagram.activity.edit.commands.OutputPin2CreateCommand;
 
@@ -21,6 +22,7 @@ import org.eclipse.uml2.uml.Action;
 import org.eclipse.uml2.uml.Activity;
 import org.eclipse.uml2.uml.ActivityNode;
 import org.eclipse.uml2.uml.Constraint;
+import org.eclipse.uml2.uml.ExecutableNode;
 import org.eclipse.uml2.uml.UMLPackage;
 
 /**
@@ -71,6 +73,9 @@ public class CreateObjectActionItemSemanticEditPolicy extends UMLBaseItemSemanti
 		}
 		if (UMLElementTypes.ActionLocalPrecondition_4003 == req.getElementType()) {
 			return req.getTarget() == null ? getCreateStartOutgoingAction_LocalPrecondition4003Command(req) : null;
+		}
+		if (UMLElementTypes.ExceptionHandler_4005 == req.getElementType()) {
+			return req.getTarget() == null ? getCreateStartOutgoingExceptionHandler4005Command(req) : getCreateCompleteIncomingExceptionHandler4005Command(req);
 		}
 		return super.getCreateRelationshipCommand(req);
 	}
@@ -187,5 +192,53 @@ public class CreateObjectActionItemSemanticEditPolicy extends UMLBaseItemSemanti
 		}
 		return new Command() {
 		};
+	}
+
+	/**
+	 * @generated
+	 */
+	protected Command getCreateStartOutgoingExceptionHandler4005Command(CreateRelationshipRequest req) {
+		EObject sourceEObject = req.getSource();
+		EObject targetEObject = req.getTarget();
+		if (false == sourceEObject instanceof ExecutableNode || (targetEObject != null && false == targetEObject instanceof ExecutableNode)) {
+			return UnexecutableCommand.INSTANCE;
+		}
+		ExecutableNode source = (ExecutableNode) sourceEObject;
+		ExecutableNode target = (ExecutableNode) targetEObject;
+
+		ExecutableNode container = (ExecutableNode) getRelationshipContainer(source, UMLPackage.eINSTANCE.getExecutableNode(), req.getElementType());
+		if (container == null) {
+			return UnexecutableCommand.INSTANCE;
+		}
+		if (!UMLBaseItemSemanticEditPolicy.LinkConstraints.canCreateExceptionHandler_4005(container, source, target)) {
+			return UnexecutableCommand.INSTANCE;
+		}
+		return new Command() {
+		};
+	}
+
+	/**
+	 * @generated
+	 */
+	protected Command getCreateCompleteIncomingExceptionHandler4005Command(CreateRelationshipRequest req) {
+		EObject sourceEObject = req.getSource();
+		EObject targetEObject = req.getTarget();
+		if (false == sourceEObject instanceof ExecutableNode || false == targetEObject instanceof ExecutableNode) {
+			return UnexecutableCommand.INSTANCE;
+		}
+		ExecutableNode source = (ExecutableNode) sourceEObject;
+		ExecutableNode target = (ExecutableNode) targetEObject;
+
+		ExecutableNode container = (ExecutableNode) getRelationshipContainer(source, UMLPackage.eINSTANCE.getExecutableNode(), req.getElementType());
+		if (container == null) {
+			return UnexecutableCommand.INSTANCE;
+		}
+		if (!UMLBaseItemSemanticEditPolicy.LinkConstraints.canCreateExceptionHandler_4005(container, source, target)) {
+			return UnexecutableCommand.INSTANCE;
+		}
+		if (req.getContainmentFeature() == null) {
+			req.setContainmentFeature(UMLPackage.eINSTANCE.getExecutableNode_Handler());
+		}
+		return getMSLWrapper(new ExceptionHandlerTypeLinkCreateCommand(req, container, source, target));
 	}
 }

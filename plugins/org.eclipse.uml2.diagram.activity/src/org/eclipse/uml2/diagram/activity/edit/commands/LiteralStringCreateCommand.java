@@ -51,7 +51,7 @@ public class LiteralStringCreateCommand extends CreateElementCommand {
 	protected EObject doDefaultElementCreation() {
 		LiteralString newElement = (LiteralString) super.doDefaultElementCreation();
 		if (newElement != null) {
-			UMLElementTypes.Initializers.LiteralString_3026.init(newElement);
+			UMLElementTypes.Initializers.LiteralString_3049.init(newElement);
 		}
 		return newElement;
 	}

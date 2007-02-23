@@ -31,7 +31,7 @@ public class JoinNodeEditPart extends ShapeNodeEditPart {
 	/**
 	 * @generated
 	 */
-	public static final int VISUAL_ID = 2013;
+	public static final int VISUAL_ID = 3040;
 
 	/**
 	 * @generated

@@ -56,7 +56,7 @@ public class AddStructuralFeatureValueActionNameEditPart extends CompartmentEdit
 	/**
 	 * @generated
 	 */
-	public static final int VISUAL_ID = 5009;
+	public static final int VISUAL_ID = 5026;
 
 	/**
 	 * @generated
@@ -291,7 +291,7 @@ public class AddStructuralFeatureValueActionNameEditPart extends CompartmentEdit
 
 				public Object getAdapter(Class adapter) {
 					if (IElementType.class.equals(adapter)) {
-						return UMLElementTypes.AddStructuralFeatureValueAction_2016;
+						return UMLElementTypes.AddStructuralFeatureValueAction_3043;
 					}
 					return super.getAdapter(adapter);
 				}

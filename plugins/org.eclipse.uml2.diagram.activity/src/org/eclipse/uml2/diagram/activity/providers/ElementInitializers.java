@@ -33,7 +33,22 @@ public class ElementInitializers {
 		/**
 		 * @generated
 		 */
-		public static final IObjectInitializer AcceptEventAction_2002 = new ObjectInitializer(UMLPackage.eINSTANCE.getAcceptEventAction()) {
+		public static final IObjectInitializer Activity_2026 = new ObjectInitializer(UMLPackage.eINSTANCE.getActivity()) {
+
+			protected void init() {
+				add(createExpressionFeatureInitializer(
+						UMLPackage.eINSTANCE.getNamedElement_Name(),
+						UMLOCLFactory
+								.getExpression(
+										" let base : String = \'Activity\' in  let suffixes : Sequence(String) = Sequence {\'\', \'1\', \'2\', \'3\', \'4\', \'5\', \'6\', \'7\', \'8\', \'9\', \'10\'} in  let space : Namespace = self.namespace in  let allMissed : Sequence(String) = suffixes-> \tselect(s : String | not space.member->exists(e : NamedElement | e.name = base.concat(s)) ) in  let firstMissed : String = allMissed->first() in  let noMisses : Boolean = firstMissed.oclIsUndefined() in  let allNames : Set(String) =  \tif noMisses \t\tthen \t\tspace.member->collect(e : NamedElement | \t\t\tif e = self or e.name.oclIsUndefined() or e.name.substring(1, e.name.size().min(base.size())) <> base \t\t\tthen \'\' else e.name \t\t\tendif \t\t)->asSet()->excluding(\'\') \t\telse Set{\'not in use\'} \t\tendif in  let longestName : String = \t\tif noMisses \t\tthen allNames->select(n : String | not allNames->exists(nn : String | nn.size() > n.size()))->asSequence()->first()\t\telse \'not in use\' \t\tendif \tin  if noMisses then \t\tif longestName.oclIsUndefined() \t\tthen base \t\telse longestName.concat(\'1\') \t\tendif  else base.concat(firstMissed)  endif ", //$NON-NLS-1$
+										UMLPackage.eINSTANCE.getActivity())));
+			}
+		}; // Activity_2026 ObjectInitializer		
+
+		/**
+		 * @generated
+		 */
+		public static final IObjectInitializer AcceptEventAction_3031 = new ObjectInitializer(UMLPackage.eINSTANCE.getAcceptEventAction()) {
 
 			protected void init() {
 				add(createExpressionFeatureInitializer(UMLPackage.eINSTANCE.getAcceptEventAction_Trigger(), new UMLAbstractExpression(UMLPackage.eINSTANCE.getAcceptEventAction()) {
@@ -44,7 +59,7 @@ public class ElementInitializers {
 					}
 				}));
 			}
-		}; // AcceptEventAction_2002 ObjectInitializer		
+		}; // AcceptEventAction_3031 ObjectInitializer		
 
 		/**
 		 * @generated
@@ -65,22 +80,22 @@ public class ElementInitializers {
 		/**
 		 * @generated
 		 */
-		public static final IObjectInitializer LiteralString_3026 = new ObjectInitializer(UMLPackage.eINSTANCE.getLiteralString()) {
+		public static final IObjectInitializer ActivityParameterNode_3052 = new ObjectInitializer(UMLPackage.eINSTANCE.getActivityParameterNode()) {
 
 			protected void init() {
 				add(createExpressionFeatureInitializer(
 						UMLPackage.eINSTANCE.getNamedElement_Name(),
 						UMLOCLFactory
 								.getExpression(
-										" let base : String = \'literalString\' in  let suffixes : Sequence(String) = Sequence {\'\', \'1\', \'2\', \'3\', \'4\', \'5\', \'6\', \'7\', \'8\', \'9\', \'10\'} in  let space : Namespace = self.namespace in  let allMissed : Sequence(String) = suffixes-> \tselect(s : String | not space.member->exists(e : NamedElement | e.name = base.concat(s)) ) in  let firstMissed : String = allMissed->first() in  let noMisses : Boolean = firstMissed.oclIsUndefined() in  let allNames : Set(String) =  \tif noMisses \t\tthen \t\tspace.member->collect(e : NamedElement | \t\t\tif e = self or e.name.oclIsUndefined() or e.name.substring(1, e.name.size().min(base.size())) <> base \t\t\tthen \'\' else e.name \t\t\tendif \t\t)->asSet()->excluding(\'\') \t\telse Set{\'not in use\'} \t\tendif in  let longestName : String = \t\tif noMisses \t\tthen allNames->select(n : String | not allNames->exists(nn : String | nn.size() > n.size()))->asSequence()->first()\t\telse \'not in use\' \t\tendif \tin  if noMisses then \t\tif longestName.oclIsUndefined() \t\tthen base \t\telse longestName.concat(\'1\') \t\tendif  else base.concat(firstMissed)  endif ", //$NON-NLS-1$
-										UMLPackage.eINSTANCE.getLiteralString())));
+										" let base : String = \'ActivityParameter\' in  let suffixes : Sequence(String) = Sequence {\'\', \'1\', \'2\', \'3\', \'4\', \'5\', \'6\', \'7\', \'8\', \'9\', \'10\'} in  let space : Namespace = self.namespace in  let allMissed : Sequence(String) = suffixes-> \tselect(s : String | not space.member->exists(e : NamedElement | e.name = base.concat(s)) ) in  let firstMissed : String = allMissed->first() in  let noMisses : Boolean = firstMissed.oclIsUndefined() in  let allNames : Set(String) =  \tif noMisses \t\tthen \t\tspace.member->collect(e : NamedElement | \t\t\tif e = self or e.name.oclIsUndefined() or e.name.substring(1, e.name.size().min(base.size())) <> base \t\t\tthen \'\' else e.name \t\t\tendif \t\t)->asSet()->excluding(\'\') \t\telse Set{\'not in use\'} \t\tendif in  let longestName : String = \t\tif noMisses \t\tthen allNames->select(n : String | not allNames->exists(nn : String | nn.size() > n.size()))->asSequence()->first()\t\telse \'not in use\' \t\tendif \tin  if noMisses then \t\tif longestName.oclIsUndefined() \t\tthen base \t\telse longestName.concat(\'1\') \t\tendif  else base.concat(firstMissed)  endif ", //$NON-NLS-1$
+										UMLPackage.eINSTANCE.getActivityParameterNode())));
 			}
-		}; // LiteralString_3026 ObjectInitializer		
+		}; // ActivityParameterNode_3052 ObjectInitializer		
 
 		/**
 		 * @generated
 		 */
-		public static final IObjectInitializer LiteralString_3027 = new ObjectInitializer(UMLPackage.eINSTANCE.getLiteralString()) {
+		public static final IObjectInitializer LiteralString_3049 = new ObjectInitializer(UMLPackage.eINSTANCE.getLiteralString()) {
 
 			protected void init() {
 				add(createExpressionFeatureInitializer(
@@ -90,7 +105,22 @@ public class ElementInitializers {
 										" let base : String = \'literalString\' in  let suffixes : Sequence(String) = Sequence {\'\', \'1\', \'2\', \'3\', \'4\', \'5\', \'6\', \'7\', \'8\', \'9\', \'10\'} in  let space : Namespace = self.namespace in  let allMissed : Sequence(String) = suffixes-> \tselect(s : String | not space.member->exists(e : NamedElement | e.name = base.concat(s)) ) in  let firstMissed : String = allMissed->first() in  let noMisses : Boolean = firstMissed.oclIsUndefined() in  let allNames : Set(String) =  \tif noMisses \t\tthen \t\tspace.member->collect(e : NamedElement | \t\t\tif e = self or e.name.oclIsUndefined() or e.name.substring(1, e.name.size().min(base.size())) <> base \t\t\tthen \'\' else e.name \t\t\tendif \t\t)->asSet()->excluding(\'\') \t\telse Set{\'not in use\'} \t\tendif in  let longestName : String = \t\tif noMisses \t\tthen allNames->select(n : String | not allNames->exists(nn : String | nn.size() > n.size()))->asSequence()->first()\t\telse \'not in use\' \t\tendif \tin  if noMisses then \t\tif longestName.oclIsUndefined() \t\tthen base \t\telse longestName.concat(\'1\') \t\tendif  else base.concat(firstMissed)  endif ", //$NON-NLS-1$
 										UMLPackage.eINSTANCE.getLiteralString())));
 			}
-		}; // LiteralString_3027 ObjectInitializer
+		}; // LiteralString_3049 ObjectInitializer		
+
+		/**
+		 * @generated
+		 */
+		public static final IObjectInitializer LiteralString_3051 = new ObjectInitializer(UMLPackage.eINSTANCE.getLiteralString()) {
+
+			protected void init() {
+				add(createExpressionFeatureInitializer(
+						UMLPackage.eINSTANCE.getNamedElement_Name(),
+						UMLOCLFactory
+								.getExpression(
+										" let base : String = \'literalString\' in  let suffixes : Sequence(String) = Sequence {\'\', \'1\', \'2\', \'3\', \'4\', \'5\', \'6\', \'7\', \'8\', \'9\', \'10\'} in  let space : Namespace = self.namespace in  let allMissed : Sequence(String) = suffixes-> \tselect(s : String | not space.member->exists(e : NamedElement | e.name = base.concat(s)) ) in  let firstMissed : String = allMissed->first() in  let noMisses : Boolean = firstMissed.oclIsUndefined() in  let allNames : Set(String) =  \tif noMisses \t\tthen \t\tspace.member->collect(e : NamedElement | \t\t\tif e = self or e.name.oclIsUndefined() or e.name.substring(1, e.name.size().min(base.size())) <> base \t\t\tthen \'\' else e.name \t\t\tendif \t\t)->asSet()->excluding(\'\') \t\telse Set{\'not in use\'} \t\tendif in  let longestName : String = \t\tif noMisses \t\tthen allNames->select(n : String | not allNames->exists(nn : String | nn.size() > n.size()))->asSequence()->first()\t\telse \'not in use\' \t\tendif \tin  if noMisses then \t\tif longestName.oclIsUndefined() \t\tthen base \t\telse longestName.concat(\'1\') \t\tendif  else base.concat(firstMissed)  endif ", //$NON-NLS-1$
+										UMLPackage.eINSTANCE.getLiteralString())));
+			}
+		}; // LiteralString_3051 ObjectInitializer
 
 		/** 
 		 * @generated

@@ -19,7 +19,7 @@ public class StructuredActivityNodeStructuredActivityContentPaneCompartmentEditP
 	/**
 	 * @generated
 	 */
-	public static final int VISUAL_ID = 7001;
+	public static final int VISUAL_ID = 7008;
 
 	/**
 	 * @generated

@@ -29,7 +29,7 @@ import org.eclipse.jface.wizard.WizardDialog;
 import org.eclipse.ui.IObjectActionDelegate;
 import org.eclipse.ui.IWorkbenchPart;
 
-import org.eclipse.uml2.diagram.activity.edit.parts.ActivityEditPart;
+import org.eclipse.uml2.diagram.activity.edit.parts.PackageEditPart;
 
 /**
  * @generated
@@ -98,7 +98,7 @@ public class UMLInitDiagramFileAction implements IObjectActionDelegate {
 		}
 		wizard.setDialogSettings(initDiagramFileSettings);
 		wizard.setForcePreviousAndNextButtons(false);
-		wizard.setWindowTitle("Initialize new " + ActivityEditPart.MODEL_ID + " diagram file");
+		wizard.setWindowTitle("Initialize new " + PackageEditPart.MODEL_ID + " diagram file");
 
 		WizardDialog dialog = new WizardDialog(myPart.getSite().getShell(), wizard);
 		dialog.create();

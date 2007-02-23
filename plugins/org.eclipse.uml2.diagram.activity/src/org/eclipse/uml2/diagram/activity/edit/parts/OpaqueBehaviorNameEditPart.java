@@ -56,7 +56,7 @@ public class OpaqueBehaviorNameEditPart extends CompartmentEditPart implements I
 	/**
 	 * @generated
 	 */
-	public static final int VISUAL_ID = 5021;
+	public static final int VISUAL_ID = 5029;
 
 	/**
 	 * @generated
@@ -291,7 +291,7 @@ public class OpaqueBehaviorNameEditPart extends CompartmentEditPart implements I
 
 				public Object getAdapter(Class adapter) {
 					if (IElementType.class.equals(adapter)) {
-						return UMLElementTypes.OpaqueBehavior_2021;
+						return UMLElementTypes.OpaqueBehavior_3047;
 					}
 					return super.getAdapter(adapter);
 				}

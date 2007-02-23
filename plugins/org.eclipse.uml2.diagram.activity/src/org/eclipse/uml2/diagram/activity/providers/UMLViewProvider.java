@@ -13,6 +13,10 @@ import org.eclipse.uml2.diagram.activity.edit.parts.AcceptEventActionEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.ActivityEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.ActivityFinalNode2EditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.ActivityFinalNodeEditPart;
+import org.eclipse.uml2.diagram.activity.edit.parts.ActivityNameEditPart;
+import org.eclipse.uml2.diagram.activity.edit.parts.ActivityParameterNodeEditPart;
+import org.eclipse.uml2.diagram.activity.edit.parts.ActivityParameterNodeNameEditPart;
+import org.eclipse.uml2.diagram.activity.edit.parts.ActivitySubverticesEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.AddStructuralFeatureValueAction2EditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.AddStructuralFeatureValueActionEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.AddStructuralFeatureValueActionName2EditPart;
@@ -40,6 +44,8 @@ import org.eclipse.uml2.diagram.activity.edit.parts.DataStoreNode2EditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.DataStoreNodeEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.DecisionNode2EditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.DecisionNodeEditPart;
+import org.eclipse.uml2.diagram.activity.edit.parts.ExceptionHandlerEditPart;
+import org.eclipse.uml2.diagram.activity.edit.parts.ExceptionHandlerLink_fixed_iconEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.FlowFinalNode2EditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.FlowFinalNodeEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.ForkNode2EditPart;
@@ -73,6 +79,7 @@ import org.eclipse.uml2.diagram.activity.edit.parts.OutputPinEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.OutputPinName2EditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.OutputPinName3EditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.OutputPinNameEditPart;
+import org.eclipse.uml2.diagram.activity.edit.parts.PackageEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.Pin2EditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.PinEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.PinName2EditPart;
@@ -91,6 +98,10 @@ import org.eclipse.uml2.diagram.activity.view.factories.AcceptEventActionViewFac
 import org.eclipse.uml2.diagram.activity.view.factories.ActionLocalPreconditionViewFactory;
 import org.eclipse.uml2.diagram.activity.view.factories.ActivityFinalNode2ViewFactory;
 import org.eclipse.uml2.diagram.activity.view.factories.ActivityFinalNodeViewFactory;
+import org.eclipse.uml2.diagram.activity.view.factories.ActivityNameViewFactory;
+import org.eclipse.uml2.diagram.activity.view.factories.ActivityParameterNodeNameViewFactory;
+import org.eclipse.uml2.diagram.activity.view.factories.ActivityParameterNodeViewFactory;
+import org.eclipse.uml2.diagram.activity.view.factories.ActivitySubverticesViewFactory;
 import org.eclipse.uml2.diagram.activity.view.factories.ActivityViewFactory;
 import org.eclipse.uml2.diagram.activity.view.factories.AddStructuralFeatureValueAction2ViewFactory;
 import org.eclipse.uml2.diagram.activity.view.factories.AddStructuralFeatureValueActionName2ViewFactory;
@@ -119,6 +130,8 @@ import org.eclipse.uml2.diagram.activity.view.factories.DataStoreNode2ViewFactor
 import org.eclipse.uml2.diagram.activity.view.factories.DataStoreNodeViewFactory;
 import org.eclipse.uml2.diagram.activity.view.factories.DecisionNode2ViewFactory;
 import org.eclipse.uml2.diagram.activity.view.factories.DecisionNodeViewFactory;
+import org.eclipse.uml2.diagram.activity.view.factories.ExceptionHandlerLink_fixed_iconViewFactory;
+import org.eclipse.uml2.diagram.activity.view.factories.ExceptionHandlerViewFactory;
 import org.eclipse.uml2.diagram.activity.view.factories.FlowFinalNode2ViewFactory;
 import org.eclipse.uml2.diagram.activity.view.factories.FlowFinalNodeViewFactory;
 import org.eclipse.uml2.diagram.activity.view.factories.ForkNode2ViewFactory;
@@ -153,6 +166,7 @@ import org.eclipse.uml2.diagram.activity.view.factories.OutputPinName2ViewFactor
 import org.eclipse.uml2.diagram.activity.view.factories.OutputPinName3ViewFactory;
 import org.eclipse.uml2.diagram.activity.view.factories.OutputPinNameViewFactory;
 import org.eclipse.uml2.diagram.activity.view.factories.OutputPinViewFactory;
+import org.eclipse.uml2.diagram.activity.view.factories.PackageViewFactory;
 import org.eclipse.uml2.diagram.activity.view.factories.Pin2ViewFactory;
 import org.eclipse.uml2.diagram.activity.view.factories.PinName2ViewFactory;
 import org.eclipse.uml2.diagram.activity.view.factories.PinNameViewFactory;
@@ -172,8 +186,8 @@ public class UMLViewProvider extends AbstractViewProvider {
 	 */
 	protected Class getDiagramViewClass(IAdaptable semanticAdapter, String diagramKind) {
 		EObject semanticElement = getSemanticElement(semanticAdapter);
-		if (ActivityEditPart.MODEL_ID.equals(diagramKind) && UMLVisualIDRegistry.getDiagramVisualID(semanticElement) != -1) {
-			return ActivityViewFactory.class;
+		if (PackageEditPart.MODEL_ID.equals(diagramKind) && UMLVisualIDRegistry.getDiagramVisualID(semanticElement) != -1) {
+			return PackageViewFactory.class;
 		}
 		return null;
 	}
@@ -193,6 +207,14 @@ public class UMLViewProvider extends AbstractViewProvider {
 		EObject semanticElement = getSemanticElement(semanticAdapter);
 		int nodeVID = UMLVisualIDRegistry.getNodeVisualID(containerView, semanticElement, semanticType, semanticHint);
 		switch (nodeVID) {
+		case ActivityEditPart.VISUAL_ID:
+			return ActivityViewFactory.class;
+		case ActivityNameEditPart.VISUAL_ID:
+			return ActivityNameViewFactory.class;
+		case ConstraintEditPart.VISUAL_ID:
+			return ConstraintViewFactory.class;
+		case Constraint2EditPart.VISUAL_ID:
+			return Constraint2ViewFactory.class;
 		case AcceptEventActionEditPart.VISUAL_ID:
 			return AcceptEventActionViewFactory.class;
 		case AcceptEventAction2EditPart.VISUAL_ID:
@@ -213,6 +235,10 @@ public class UMLViewProvider extends AbstractViewProvider {
 			return OpaqueActionViewFactory.class;
 		case OpaqueActionNameEditPart.VISUAL_ID:
 			return OpaqueActionNameViewFactory.class;
+		case OutputPinEditPart.VISUAL_ID:
+			return OutputPinViewFactory.class;
+		case OutputPinNameEditPart.VISUAL_ID:
+			return OutputPinNameViewFactory.class;
 		case FlowFinalNodeEditPart.VISUAL_ID:
 			return FlowFinalNodeViewFactory.class;
 		case ForkNodeEditPart.VISUAL_ID:
@@ -227,36 +253,14 @@ public class UMLViewProvider extends AbstractViewProvider {
 			return CreateObjectActionViewFactory.class;
 		case CreateObjectActionNameEditPart.VISUAL_ID:
 			return CreateObjectActionNameViewFactory.class;
-		case AddStructuralFeatureValueActionEditPart.VISUAL_ID:
-			return AddStructuralFeatureValueActionViewFactory.class;
-		case AddStructuralFeatureValueActionNameEditPart.VISUAL_ID:
-			return AddStructuralFeatureValueActionNameViewFactory.class;
-		case CallBehaviorActionEditPart.VISUAL_ID:
-			return CallBehaviorActionViewFactory.class;
-		case CallBehaviorActionNameEditPart.VISUAL_ID:
-			return CallBehaviorActionNameViewFactory.class;
-		case CallOperationActionEditPart.VISUAL_ID:
-			return CallOperationActionViewFactory.class;
-		case CallOperationActionNameEditPart.VISUAL_ID:
-			return CallOperationActionNameViewFactory.class;
-		case StructuredActivityNodeEditPart.VISUAL_ID:
-			return StructuredActivityNodeViewFactory.class;
-		case ConstraintEditPart.VISUAL_ID:
-			return ConstraintViewFactory.class;
-		case Constraint2EditPart.VISUAL_ID:
-			return Constraint2ViewFactory.class;
-		case OpaqueBehaviorEditPart.VISUAL_ID:
-			return OpaqueBehaviorViewFactory.class;
-		case OpaqueBehaviorNameEditPart.VISUAL_ID:
-			return OpaqueBehaviorNameViewFactory.class;
-		case OutputPinEditPart.VISUAL_ID:
-			return OutputPinViewFactory.class;
-		case OutputPinNameEditPart.VISUAL_ID:
-			return OutputPinNameViewFactory.class;
 		case OutputPin2EditPart.VISUAL_ID:
 			return OutputPin2ViewFactory.class;
 		case OutputPinName2EditPart.VISUAL_ID:
 			return OutputPinName2ViewFactory.class;
+		case AddStructuralFeatureValueActionEditPart.VISUAL_ID:
+			return AddStructuralFeatureValueActionViewFactory.class;
+		case AddStructuralFeatureValueActionNameEditPart.VISUAL_ID:
+			return AddStructuralFeatureValueActionNameViewFactory.class;
 		case InputPinEditPart.VISUAL_ID:
 			return InputPinViewFactory.class;
 		case InputPinNameEditPart.VISUAL_ID:
@@ -269,6 +273,10 @@ public class UMLViewProvider extends AbstractViewProvider {
 			return InputPin3ViewFactory.class;
 		case InputPinName3EditPart.VISUAL_ID:
 			return InputPinName3ViewFactory.class;
+		case CallBehaviorActionEditPart.VISUAL_ID:
+			return CallBehaviorActionViewFactory.class;
+		case CallBehaviorActionNameEditPart.VISUAL_ID:
+			return CallBehaviorActionNameViewFactory.class;
 		case OutputPin3EditPart.VISUAL_ID:
 			return OutputPin3ViewFactory.class;
 		case OutputPinName3EditPart.VISUAL_ID:
@@ -277,10 +285,16 @@ public class UMLViewProvider extends AbstractViewProvider {
 			return InputPin4ViewFactory.class;
 		case InputPinName4EditPart.VISUAL_ID:
 			return InputPinName4ViewFactory.class;
+		case CallOperationActionEditPart.VISUAL_ID:
+			return CallOperationActionViewFactory.class;
+		case CallOperationActionNameEditPart.VISUAL_ID:
+			return CallOperationActionNameViewFactory.class;
 		case InputPin5EditPart.VISUAL_ID:
 			return InputPin5ViewFactory.class;
 		case InputPinName5EditPart.VISUAL_ID:
 			return InputPinName5ViewFactory.class;
+		case StructuredActivityNodeEditPart.VISUAL_ID:
+			return StructuredActivityNodeViewFactory.class;
 		case StructuredActivityNode2EditPart.VISUAL_ID:
 			return StructuredActivityNode2ViewFactory.class;
 		case OpaqueAction2EditPart.VISUAL_ID:
@@ -325,10 +339,20 @@ public class UMLViewProvider extends AbstractViewProvider {
 			return DataStoreNode2ViewFactory.class;
 		case CentralBufferNode2EditPart.VISUAL_ID:
 			return CentralBufferNode2ViewFactory.class;
+		case OpaqueBehaviorEditPart.VISUAL_ID:
+			return OpaqueBehaviorViewFactory.class;
+		case OpaqueBehaviorNameEditPart.VISUAL_ID:
+			return OpaqueBehaviorNameViewFactory.class;
+		case ActivityParameterNodeEditPart.VISUAL_ID:
+			return ActivityParameterNodeViewFactory.class;
+		case ActivityParameterNodeNameEditPart.VISUAL_ID:
+			return ActivityParameterNodeNameViewFactory.class;
 		case LiteralStringEditPart.VISUAL_ID:
 			return LiteralStringViewFactory.class;
 		case LiteralString2EditPart.VISUAL_ID:
 			return LiteralString2ViewFactory.class;
+		case ActivitySubverticesEditPart.VISUAL_ID:
+			return ActivitySubverticesViewFactory.class;
 		case StructuredActivityNodeStructuredActivityContentPaneCompartmentEditPart.VISUAL_ID:
 			return StructuredActivityNodeStructuredActivityContentPaneCompartmentViewFactory.class;
 		case StructuredActivityNodeStructuredActivityContentPaneCompartment2EditPart.VISUAL_ID:
@@ -337,6 +361,8 @@ public class UMLViewProvider extends AbstractViewProvider {
 			return ConstraintPreconditionViewFactory.class;
 		case ConstraintPostconditionEditPart.VISUAL_ID:
 			return ConstraintPostconditionViewFactory.class;
+		case ExceptionHandlerLink_fixed_iconEditPart.VISUAL_ID:
+			return ExceptionHandlerLink_fixed_iconViewFactory.class;
 		}
 		return null;
 	}
@@ -366,6 +392,8 @@ public class UMLViewProvider extends AbstractViewProvider {
 			return ControlFlowViewFactory.class;
 		case ObjectFlowEditPart.VISUAL_ID:
 			return ObjectFlowViewFactory.class;
+		case ExceptionHandlerEditPart.VISUAL_ID:
+			return ExceptionHandlerViewFactory.class;
 		}
 		return getUnrecognizedConnectorViewClass(semanticAdapter, containerView, semanticHint);
 	}

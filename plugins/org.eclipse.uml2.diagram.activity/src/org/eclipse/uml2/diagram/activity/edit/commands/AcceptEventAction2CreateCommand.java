@@ -50,7 +50,7 @@ public class AcceptEventAction2CreateCommand extends CreateElementCommand {
 	protected EObject doDefaultElementCreation() {
 		AcceptEventAction newElement = (AcceptEventAction) super.doDefaultElementCreation();
 		if (newElement != null) {
-			UMLElementTypes.Initializers.AcceptEventAction_2002.init(newElement);
+			UMLElementTypes.Initializers.AcceptEventAction_3031.init(newElement);
 		}
 		return newElement;
 	}

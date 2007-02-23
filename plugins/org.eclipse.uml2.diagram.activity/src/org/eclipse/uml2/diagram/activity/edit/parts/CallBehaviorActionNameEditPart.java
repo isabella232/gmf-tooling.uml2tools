@@ -56,7 +56,7 @@ public class CallBehaviorActionNameEditPart extends CompartmentEditPart implemen
 	/**
 	 * @generated
 	 */
-	public static final int VISUAL_ID = 5012;
+	public static final int VISUAL_ID = 5027;
 
 	/**
 	 * @generated
@@ -291,7 +291,7 @@ public class CallBehaviorActionNameEditPart extends CompartmentEditPart implemen
 
 				public Object getAdapter(Class adapter) {
 					if (IElementType.class.equals(adapter)) {
-						return UMLElementTypes.CallBehaviorAction_2017;
+						return UMLElementTypes.CallBehaviorAction_3044;
 					}
 					return super.getAdapter(adapter);
 				}

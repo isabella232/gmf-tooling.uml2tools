@@ -7,7 +7,7 @@ import org.eclipse.jface.viewers.IStructuredSelection;
 import org.eclipse.swt.widgets.Shell;
 import org.eclipse.ui.IObjectActionDelegate;
 import org.eclipse.ui.IWorkbenchPart;
-import org.eclipse.uml2.diagram.activity.edit.parts.ActivityEditPart;
+import org.eclipse.uml2.diagram.activity.edit.parts.PackageEditPart;
 
 /**
  * @generated
@@ -17,7 +17,7 @@ public class UMLLoadResourceAction implements IObjectActionDelegate {
 	/**
 	 * @generated
 	 */
-	private ActivityEditPart mySelectedElement;
+	private PackageEditPart mySelectedElement;
 
 	/**
 	 * @generated
@@ -46,8 +46,8 @@ public class UMLLoadResourceAction implements IObjectActionDelegate {
 		mySelectedElement = null;
 		if (selection instanceof IStructuredSelection) {
 			IStructuredSelection structuredSelection = (IStructuredSelection) selection;
-			if (structuredSelection.size() == 1 && structuredSelection.getFirstElement() instanceof ActivityEditPart) {
-				mySelectedElement = (ActivityEditPart) structuredSelection.getFirstElement();
+			if (structuredSelection.size() == 1 && structuredSelection.getFirstElement() instanceof PackageEditPart) {
+				mySelectedElement = (PackageEditPart) structuredSelection.getFirstElement();
 			}
 		}
 		action.setEnabled(isEnabled());

@@ -56,7 +56,7 @@ public class OpaqueActionNameEditPart extends CompartmentEditPart implements ITe
 	/**
 	 * @generated
 	 */
-	public static final int VISUAL_ID = 5001;
+	public static final int VISUAL_ID = 5023;
 
 	/**
 	 * @generated
@@ -291,7 +291,7 @@ public class OpaqueActionNameEditPart extends CompartmentEditPart implements ITe
 
 				public Object getAdapter(Class adapter) {
 					if (IElementType.class.equals(adapter)) {
-						return UMLElementTypes.OpaqueAction_2010;
+						return UMLElementTypes.OpaqueAction_3029;
 					}
 					return super.getAdapter(adapter);
 				}

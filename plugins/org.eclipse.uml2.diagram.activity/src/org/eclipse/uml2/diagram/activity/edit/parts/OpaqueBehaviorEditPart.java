@@ -33,7 +33,7 @@ public class OpaqueBehaviorEditPart extends ShapeNodeEditPart {
 	/**
 	 * @generated
 	 */
-	public static final int VISUAL_ID = 2021;
+	public static final int VISUAL_ID = 3047;
 
 	/**
 	 * @generated

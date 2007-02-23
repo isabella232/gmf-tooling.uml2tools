@@ -105,8 +105,8 @@
       </objectContribution>  
       <objectContribution
             adaptable="false"
-            id="org.eclipse.uml2.diagram.activity.ui.objectContribution.ActivityEditPart2"
-            objectClass="org.eclipse.uml2.diagram.activity.edit.parts.ActivityEditPart">
+            id="org.eclipse.uml2.diagram.activity.ui.objectContribution.PackageEditPart2"
+            objectClass="org.eclipse.uml2.diagram.activity.edit.parts.PackageEditPart">
          <action
                class="org.eclipse.uml2.diagram.activity.part.UMLLoadResourceAction"
                enablesFor="1"
@@ -124,6 +124,46 @@
             checkPluginLoaded="false">
          <Priority name="Low"/>
          <popupContribution class="org.eclipse.gmf.runtime.diagram.ui.providers.DiagramContextMenuProvider">
+            <popupStructuredContributionCriteria objectClass="org.eclipse.uml2.diagram.activity.edit.parts.AcceptEventActionEditPart"/>
+            <popupPredefinedItem id="deleteFromDiagramAction" remove="true"/>
+         </popupContribution>
+         <popupContribution class="org.eclipse.gmf.runtime.diagram.ui.providers.DiagramContextMenuProvider">
+            <popupStructuredContributionCriteria objectClass="org.eclipse.uml2.diagram.activity.edit.parts.AcceptEventAction2EditPart"/>
+            <popupPredefinedItem id="deleteFromDiagramAction" remove="true"/>
+         </popupContribution>
+         <popupContribution class="org.eclipse.gmf.runtime.diagram.ui.providers.DiagramContextMenuProvider">
+            <popupStructuredContributionCriteria objectClass="org.eclipse.uml2.diagram.activity.edit.parts.ActivityFinalNodeEditPart"/>
+            <popupPredefinedItem id="deleteFromDiagramAction" remove="true"/>
+         </popupContribution>
+         <popupContribution class="org.eclipse.gmf.runtime.diagram.ui.providers.DiagramContextMenuProvider">
+            <popupStructuredContributionCriteria objectClass="org.eclipse.uml2.diagram.activity.edit.parts.DecisionNodeEditPart"/>
+            <popupPredefinedItem id="deleteFromDiagramAction" remove="true"/>
+         </popupContribution>
+         <popupContribution class="org.eclipse.gmf.runtime.diagram.ui.providers.DiagramContextMenuProvider">
+            <popupStructuredContributionCriteria objectClass="org.eclipse.uml2.diagram.activity.edit.parts.MergeNodeEditPart"/>
+            <popupPredefinedItem id="deleteFromDiagramAction" remove="true"/>
+         </popupContribution>
+         <popupContribution class="org.eclipse.gmf.runtime.diagram.ui.providers.DiagramContextMenuProvider">
+            <popupStructuredContributionCriteria objectClass="org.eclipse.uml2.diagram.activity.edit.parts.InitialNodeEditPart"/>
+            <popupPredefinedItem id="deleteFromDiagramAction" remove="true"/>
+         </popupContribution>
+         <popupContribution class="org.eclipse.gmf.runtime.diagram.ui.providers.DiagramContextMenuProvider">
+            <popupStructuredContributionCriteria objectClass="org.eclipse.uml2.diagram.activity.edit.parts.DataStoreNodeEditPart"/>
+            <popupPredefinedItem id="deleteFromDiagramAction" remove="true"/>
+         </popupContribution>
+         <popupContribution class="org.eclipse.gmf.runtime.diagram.ui.providers.DiagramContextMenuProvider">
+            <popupStructuredContributionCriteria objectClass="org.eclipse.uml2.diagram.activity.edit.parts.CentralBufferNodeEditPart"/>
+            <popupPredefinedItem id="deleteFromDiagramAction" remove="true"/>
+         </popupContribution>
+         <popupContribution class="org.eclipse.gmf.runtime.diagram.ui.providers.DiagramContextMenuProvider">
+            <popupStructuredContributionCriteria objectClass="org.eclipse.uml2.diagram.activity.edit.parts.OpaqueActionEditPart"/>
+            <popupPredefinedItem id="deleteFromDiagramAction" remove="true"/>
+         </popupContribution>
+         <popupContribution class="org.eclipse.gmf.runtime.diagram.ui.providers.DiagramContextMenuProvider">
+            <popupStructuredContributionCriteria objectClass="org.eclipse.uml2.diagram.activity.edit.parts.OpaqueActionNameEditPart"/>
+            <popupPredefinedItem id="deleteFromDiagramAction" remove="true"/>
+         </popupContribution>
+         <popupContribution class="org.eclipse.gmf.runtime.diagram.ui.providers.DiagramContextMenuProvider">
             <popupStructuredContributionCriteria objectClass="org.eclipse.uml2.diagram.activity.edit.parts.OutputPinEditPart"/>
             <popupPredefinedItem id="deleteFromDiagramAction" remove="true"/>
          </popupContribution>
@@ -133,6 +173,34 @@
             <popupPredefinedItem id="deleteFromModelAction" remove="true"/>
          </popupContribution>
          <popupContribution class="org.eclipse.gmf.runtime.diagram.ui.providers.DiagramContextMenuProvider">
+            <popupStructuredContributionCriteria objectClass="org.eclipse.uml2.diagram.activity.edit.parts.FlowFinalNodeEditPart"/>
+            <popupPredefinedItem id="deleteFromDiagramAction" remove="true"/>
+         </popupContribution>
+         <popupContribution class="org.eclipse.gmf.runtime.diagram.ui.providers.DiagramContextMenuProvider">
+            <popupStructuredContributionCriteria objectClass="org.eclipse.uml2.diagram.activity.edit.parts.ForkNodeEditPart"/>
+            <popupPredefinedItem id="deleteFromDiagramAction" remove="true"/>
+         </popupContribution>
+         <popupContribution class="org.eclipse.gmf.runtime.diagram.ui.providers.DiagramContextMenuProvider">
+            <popupStructuredContributionCriteria objectClass="org.eclipse.uml2.diagram.activity.edit.parts.JoinNodeEditPart"/>
+            <popupPredefinedItem id="deleteFromDiagramAction" remove="true"/>
+         </popupContribution>
+         <popupContribution class="org.eclipse.gmf.runtime.diagram.ui.providers.DiagramContextMenuProvider">
+            <popupStructuredContributionCriteria objectClass="org.eclipse.uml2.diagram.activity.edit.parts.PinEditPart"/>
+            <popupPredefinedItem id="deleteFromDiagramAction" remove="true"/>
+         </popupContribution>
+         <popupContribution class="org.eclipse.gmf.runtime.diagram.ui.providers.DiagramContextMenuProvider">
+            <popupStructuredContributionCriteria objectClass="org.eclipse.uml2.diagram.activity.edit.parts.PinNameEditPart"/>
+            <popupPredefinedItem id="deleteFromDiagramAction" remove="true"/>
+         </popupContribution>
+         <popupContribution class="org.eclipse.gmf.runtime.diagram.ui.providers.DiagramContextMenuProvider">
+            <popupStructuredContributionCriteria objectClass="org.eclipse.uml2.diagram.activity.edit.parts.CreateObjectActionEditPart"/>
+            <popupPredefinedItem id="deleteFromDiagramAction" remove="true"/>
+         </popupContribution>
+         <popupContribution class="org.eclipse.gmf.runtime.diagram.ui.providers.DiagramContextMenuProvider">
+            <popupStructuredContributionCriteria objectClass="org.eclipse.uml2.diagram.activity.edit.parts.CreateObjectActionNameEditPart"/>
+            <popupPredefinedItem id="deleteFromDiagramAction" remove="true"/>
+         </popupContribution>
+         <popupContribution class="org.eclipse.gmf.runtime.diagram.ui.providers.DiagramContextMenuProvider">
             <popupStructuredContributionCriteria objectClass="org.eclipse.uml2.diagram.activity.edit.parts.OutputPin2EditPart"/>
             <popupPredefinedItem id="deleteFromDiagramAction" remove="true"/>
          </popupContribution>
@@ -140,6 +208,14 @@
             <popupStructuredContributionCriteria objectClass="org.eclipse.uml2.diagram.activity.edit.parts.OutputPinName2EditPart"/>
             <popupPredefinedItem id="deleteFromDiagramAction" remove="true"/>
             <popupPredefinedItem id="deleteFromModelAction" remove="true"/>
+         </popupContribution>
+         <popupContribution class="org.eclipse.gmf.runtime.diagram.ui.providers.DiagramContextMenuProvider">
+            <popupStructuredContributionCriteria objectClass="org.eclipse.uml2.diagram.activity.edit.parts.AddStructuralFeatureValueActionEditPart"/>
+            <popupPredefinedItem id="deleteFromDiagramAction" remove="true"/>
+         </popupContribution>
+         <popupContribution class="org.eclipse.gmf.runtime.diagram.ui.providers.DiagramContextMenuProvider">
+            <popupStructuredContributionCriteria objectClass="org.eclipse.uml2.diagram.activity.edit.parts.AddStructuralFeatureValueActionNameEditPart"/>
+            <popupPredefinedItem id="deleteFromDiagramAction" remove="true"/>
          </popupContribution>
          <popupContribution class="org.eclipse.gmf.runtime.diagram.ui.providers.DiagramContextMenuProvider">
             <popupStructuredContributionCriteria objectClass="org.eclipse.uml2.diagram.activity.edit.parts.InputPinEditPart"/>
@@ -169,6 +245,14 @@
             <popupPredefinedItem id="deleteFromModelAction" remove="true"/>
          </popupContribution>
          <popupContribution class="org.eclipse.gmf.runtime.diagram.ui.providers.DiagramContextMenuProvider">
+            <popupStructuredContributionCriteria objectClass="org.eclipse.uml2.diagram.activity.edit.parts.CallBehaviorActionEditPart"/>
+            <popupPredefinedItem id="deleteFromDiagramAction" remove="true"/>
+         </popupContribution>
+         <popupContribution class="org.eclipse.gmf.runtime.diagram.ui.providers.DiagramContextMenuProvider">
+            <popupStructuredContributionCriteria objectClass="org.eclipse.uml2.diagram.activity.edit.parts.CallBehaviorActionNameEditPart"/>
+            <popupPredefinedItem id="deleteFromDiagramAction" remove="true"/>
+         </popupContribution>
+         <popupContribution class="org.eclipse.gmf.runtime.diagram.ui.providers.DiagramContextMenuProvider">
             <popupStructuredContributionCriteria objectClass="org.eclipse.uml2.diagram.activity.edit.parts.OutputPin3EditPart"/>
             <popupPredefinedItem id="deleteFromDiagramAction" remove="true"/>
          </popupContribution>
@@ -187,6 +271,14 @@
             <popupPredefinedItem id="deleteFromModelAction" remove="true"/>
          </popupContribution>
          <popupContribution class="org.eclipse.gmf.runtime.diagram.ui.providers.DiagramContextMenuProvider">
+            <popupStructuredContributionCriteria objectClass="org.eclipse.uml2.diagram.activity.edit.parts.CallOperationActionEditPart"/>
+            <popupPredefinedItem id="deleteFromDiagramAction" remove="true"/>
+         </popupContribution>
+         <popupContribution class="org.eclipse.gmf.runtime.diagram.ui.providers.DiagramContextMenuProvider">
+            <popupStructuredContributionCriteria objectClass="org.eclipse.uml2.diagram.activity.edit.parts.CallOperationActionNameEditPart"/>
+            <popupPredefinedItem id="deleteFromDiagramAction" remove="true"/>
+         </popupContribution>
+         <popupContribution class="org.eclipse.gmf.runtime.diagram.ui.providers.DiagramContextMenuProvider">
             <popupStructuredContributionCriteria objectClass="org.eclipse.uml2.diagram.activity.edit.parts.InputPin5EditPart"/>
             <popupPredefinedItem id="deleteFromDiagramAction" remove="true"/>
          </popupContribution>
@@ -194,6 +286,10 @@
             <popupStructuredContributionCriteria objectClass="org.eclipse.uml2.diagram.activity.edit.parts.InputPinName5EditPart"/>
             <popupPredefinedItem id="deleteFromDiagramAction" remove="true"/>
             <popupPredefinedItem id="deleteFromModelAction" remove="true"/>
+         </popupContribution>
+         <popupContribution class="org.eclipse.gmf.runtime.diagram.ui.providers.DiagramContextMenuProvider">
+            <popupStructuredContributionCriteria objectClass="org.eclipse.uml2.diagram.activity.edit.parts.StructuredActivityNodeEditPart"/>
+            <popupPredefinedItem id="deleteFromDiagramAction" remove="true"/>
          </popupContribution>
          <popupContribution class="org.eclipse.gmf.runtime.diagram.ui.providers.DiagramContextMenuProvider">
             <popupStructuredContributionCriteria objectClass="org.eclipse.uml2.diagram.activity.edit.parts.StructuredActivityNode2EditPart"/>
@@ -284,6 +380,22 @@
             <popupPredefinedItem id="deleteFromDiagramAction" remove="true"/>
          </popupContribution>
          <popupContribution class="org.eclipse.gmf.runtime.diagram.ui.providers.DiagramContextMenuProvider">
+            <popupStructuredContributionCriteria objectClass="org.eclipse.uml2.diagram.activity.edit.parts.OpaqueBehaviorEditPart"/>
+            <popupPredefinedItem id="deleteFromDiagramAction" remove="true"/>
+         </popupContribution>
+         <popupContribution class="org.eclipse.gmf.runtime.diagram.ui.providers.DiagramContextMenuProvider">
+            <popupStructuredContributionCriteria objectClass="org.eclipse.uml2.diagram.activity.edit.parts.OpaqueBehaviorNameEditPart"/>
+            <popupPredefinedItem id="deleteFromDiagramAction" remove="true"/>
+         </popupContribution>
+         <popupContribution class="org.eclipse.gmf.runtime.diagram.ui.providers.DiagramContextMenuProvider">
+            <popupStructuredContributionCriteria objectClass="org.eclipse.uml2.diagram.activity.edit.parts.ActivityParameterNodeEditPart"/>
+            <popupPredefinedItem id="deleteFromDiagramAction" remove="true"/>
+         </popupContribution>
+         <popupContribution class="org.eclipse.gmf.runtime.diagram.ui.providers.DiagramContextMenuProvider">
+            <popupStructuredContributionCriteria objectClass="org.eclipse.uml2.diagram.activity.edit.parts.ActivityParameterNodeNameEditPart"/>
+            <popupPredefinedItem id="deleteFromDiagramAction" remove="true"/>
+         </popupContribution>
+         <popupContribution class="org.eclipse.gmf.runtime.diagram.ui.providers.DiagramContextMenuProvider">
             <popupStructuredContributionCriteria objectClass="org.eclipse.uml2.diagram.activity.edit.parts.LiteralStringEditPart"/>
             <popupPredefinedItem id="deleteFromDiagramAction" remove="true"/>
          </popupContribution>
@@ -292,99 +404,11 @@
             <popupPredefinedItem id="deleteFromDiagramAction" remove="true"/>
          </popupContribution>
          <popupContribution class="org.eclipse.gmf.runtime.diagram.ui.providers.DiagramContextMenuProvider">
-            <popupStructuredContributionCriteria objectClass="org.eclipse.uml2.diagram.activity.edit.parts.AcceptEventActionEditPart"/>
+            <popupStructuredContributionCriteria objectClass="org.eclipse.uml2.diagram.activity.edit.parts.ActivityEditPart"/>
             <popupPredefinedItem id="deleteFromDiagramAction" remove="true"/>
          </popupContribution>
          <popupContribution class="org.eclipse.gmf.runtime.diagram.ui.providers.DiagramContextMenuProvider">
-            <popupStructuredContributionCriteria objectClass="org.eclipse.uml2.diagram.activity.edit.parts.AcceptEventAction2EditPart"/>
-            <popupPredefinedItem id="deleteFromDiagramAction" remove="true"/>
-         </popupContribution>
-         <popupContribution class="org.eclipse.gmf.runtime.diagram.ui.providers.DiagramContextMenuProvider">
-            <popupStructuredContributionCriteria objectClass="org.eclipse.uml2.diagram.activity.edit.parts.ActivityFinalNodeEditPart"/>
-            <popupPredefinedItem id="deleteFromDiagramAction" remove="true"/>
-         </popupContribution>
-         <popupContribution class="org.eclipse.gmf.runtime.diagram.ui.providers.DiagramContextMenuProvider">
-            <popupStructuredContributionCriteria objectClass="org.eclipse.uml2.diagram.activity.edit.parts.DecisionNodeEditPart"/>
-            <popupPredefinedItem id="deleteFromDiagramAction" remove="true"/>
-         </popupContribution>
-         <popupContribution class="org.eclipse.gmf.runtime.diagram.ui.providers.DiagramContextMenuProvider">
-            <popupStructuredContributionCriteria objectClass="org.eclipse.uml2.diagram.activity.edit.parts.MergeNodeEditPart"/>
-            <popupPredefinedItem id="deleteFromDiagramAction" remove="true"/>
-         </popupContribution>
-         <popupContribution class="org.eclipse.gmf.runtime.diagram.ui.providers.DiagramContextMenuProvider">
-            <popupStructuredContributionCriteria objectClass="org.eclipse.uml2.diagram.activity.edit.parts.InitialNodeEditPart"/>
-            <popupPredefinedItem id="deleteFromDiagramAction" remove="true"/>
-         </popupContribution>
-         <popupContribution class="org.eclipse.gmf.runtime.diagram.ui.providers.DiagramContextMenuProvider">
-            <popupStructuredContributionCriteria objectClass="org.eclipse.uml2.diagram.activity.edit.parts.DataStoreNodeEditPart"/>
-            <popupPredefinedItem id="deleteFromDiagramAction" remove="true"/>
-         </popupContribution>
-         <popupContribution class="org.eclipse.gmf.runtime.diagram.ui.providers.DiagramContextMenuProvider">
-            <popupStructuredContributionCriteria objectClass="org.eclipse.uml2.diagram.activity.edit.parts.CentralBufferNodeEditPart"/>
-            <popupPredefinedItem id="deleteFromDiagramAction" remove="true"/>
-         </popupContribution>
-         <popupContribution class="org.eclipse.gmf.runtime.diagram.ui.providers.DiagramContextMenuProvider">
-            <popupStructuredContributionCriteria objectClass="org.eclipse.uml2.diagram.activity.edit.parts.OpaqueActionEditPart"/>
-            <popupPredefinedItem id="deleteFromDiagramAction" remove="true"/>
-         </popupContribution>
-         <popupContribution class="org.eclipse.gmf.runtime.diagram.ui.providers.DiagramContextMenuProvider">
-            <popupStructuredContributionCriteria objectClass="org.eclipse.uml2.diagram.activity.edit.parts.OpaqueActionNameEditPart"/>
-            <popupPredefinedItem id="deleteFromDiagramAction" remove="true"/>
-         </popupContribution>
-         <popupContribution class="org.eclipse.gmf.runtime.diagram.ui.providers.DiagramContextMenuProvider">
-            <popupStructuredContributionCriteria objectClass="org.eclipse.uml2.diagram.activity.edit.parts.FlowFinalNodeEditPart"/>
-            <popupPredefinedItem id="deleteFromDiagramAction" remove="true"/>
-         </popupContribution>
-         <popupContribution class="org.eclipse.gmf.runtime.diagram.ui.providers.DiagramContextMenuProvider">
-            <popupStructuredContributionCriteria objectClass="org.eclipse.uml2.diagram.activity.edit.parts.ForkNodeEditPart"/>
-            <popupPredefinedItem id="deleteFromDiagramAction" remove="true"/>
-         </popupContribution>
-         <popupContribution class="org.eclipse.gmf.runtime.diagram.ui.providers.DiagramContextMenuProvider">
-            <popupStructuredContributionCriteria objectClass="org.eclipse.uml2.diagram.activity.edit.parts.JoinNodeEditPart"/>
-            <popupPredefinedItem id="deleteFromDiagramAction" remove="true"/>
-         </popupContribution>
-         <popupContribution class="org.eclipse.gmf.runtime.diagram.ui.providers.DiagramContextMenuProvider">
-            <popupStructuredContributionCriteria objectClass="org.eclipse.uml2.diagram.activity.edit.parts.PinEditPart"/>
-            <popupPredefinedItem id="deleteFromDiagramAction" remove="true"/>
-         </popupContribution>
-         <popupContribution class="org.eclipse.gmf.runtime.diagram.ui.providers.DiagramContextMenuProvider">
-            <popupStructuredContributionCriteria objectClass="org.eclipse.uml2.diagram.activity.edit.parts.PinNameEditPart"/>
-            <popupPredefinedItem id="deleteFromDiagramAction" remove="true"/>
-         </popupContribution>
-         <popupContribution class="org.eclipse.gmf.runtime.diagram.ui.providers.DiagramContextMenuProvider">
-            <popupStructuredContributionCriteria objectClass="org.eclipse.uml2.diagram.activity.edit.parts.CreateObjectActionEditPart"/>
-            <popupPredefinedItem id="deleteFromDiagramAction" remove="true"/>
-         </popupContribution>
-         <popupContribution class="org.eclipse.gmf.runtime.diagram.ui.providers.DiagramContextMenuProvider">
-            <popupStructuredContributionCriteria objectClass="org.eclipse.uml2.diagram.activity.edit.parts.CreateObjectActionNameEditPart"/>
-            <popupPredefinedItem id="deleteFromDiagramAction" remove="true"/>
-         </popupContribution>
-         <popupContribution class="org.eclipse.gmf.runtime.diagram.ui.providers.DiagramContextMenuProvider">
-            <popupStructuredContributionCriteria objectClass="org.eclipse.uml2.diagram.activity.edit.parts.AddStructuralFeatureValueActionEditPart"/>
-            <popupPredefinedItem id="deleteFromDiagramAction" remove="true"/>
-         </popupContribution>
-         <popupContribution class="org.eclipse.gmf.runtime.diagram.ui.providers.DiagramContextMenuProvider">
-            <popupStructuredContributionCriteria objectClass="org.eclipse.uml2.diagram.activity.edit.parts.AddStructuralFeatureValueActionNameEditPart"/>
-            <popupPredefinedItem id="deleteFromDiagramAction" remove="true"/>
-         </popupContribution>
-         <popupContribution class="org.eclipse.gmf.runtime.diagram.ui.providers.DiagramContextMenuProvider">
-            <popupStructuredContributionCriteria objectClass="org.eclipse.uml2.diagram.activity.edit.parts.CallBehaviorActionEditPart"/>
-            <popupPredefinedItem id="deleteFromDiagramAction" remove="true"/>
-         </popupContribution>
-         <popupContribution class="org.eclipse.gmf.runtime.diagram.ui.providers.DiagramContextMenuProvider">
-            <popupStructuredContributionCriteria objectClass="org.eclipse.uml2.diagram.activity.edit.parts.CallBehaviorActionNameEditPart"/>
-            <popupPredefinedItem id="deleteFromDiagramAction" remove="true"/>
-         </popupContribution>
-         <popupContribution class="org.eclipse.gmf.runtime.diagram.ui.providers.DiagramContextMenuProvider">
-            <popupStructuredContributionCriteria objectClass="org.eclipse.uml2.diagram.activity.edit.parts.CallOperationActionEditPart"/>
-            <popupPredefinedItem id="deleteFromDiagramAction" remove="true"/>
-         </popupContribution>
-         <popupContribution class="org.eclipse.gmf.runtime.diagram.ui.providers.DiagramContextMenuProvider">
-            <popupStructuredContributionCriteria objectClass="org.eclipse.uml2.diagram.activity.edit.parts.CallOperationActionNameEditPart"/>
-            <popupPredefinedItem id="deleteFromDiagramAction" remove="true"/>
-         </popupContribution>
-         <popupContribution class="org.eclipse.gmf.runtime.diagram.ui.providers.DiagramContextMenuProvider">
-            <popupStructuredContributionCriteria objectClass="org.eclipse.uml2.diagram.activity.edit.parts.StructuredActivityNodeEditPart"/>
+            <popupStructuredContributionCriteria objectClass="org.eclipse.uml2.diagram.activity.edit.parts.ActivityNameEditPart"/>
             <popupPredefinedItem id="deleteFromDiagramAction" remove="true"/>
          </popupContribution>
          <popupContribution class="org.eclipse.gmf.runtime.diagram.ui.providers.DiagramContextMenuProvider">
@@ -393,14 +417,6 @@
          </popupContribution>
          <popupContribution class="org.eclipse.gmf.runtime.diagram.ui.providers.DiagramContextMenuProvider">
             <popupStructuredContributionCriteria objectClass="org.eclipse.uml2.diagram.activity.edit.parts.Constraint2EditPart"/>
-            <popupPredefinedItem id="deleteFromDiagramAction" remove="true"/>
-         </popupContribution>
-         <popupContribution class="org.eclipse.gmf.runtime.diagram.ui.providers.DiagramContextMenuProvider">
-            <popupStructuredContributionCriteria objectClass="org.eclipse.uml2.diagram.activity.edit.parts.OpaqueBehaviorEditPart"/>
-            <popupPredefinedItem id="deleteFromDiagramAction" remove="true"/>
-         </popupContribution>
-         <popupContribution class="org.eclipse.gmf.runtime.diagram.ui.providers.DiagramContextMenuProvider">
-            <popupStructuredContributionCriteria objectClass="org.eclipse.uml2.diagram.activity.edit.parts.OpaqueBehaviorNameEditPart"/>
             <popupPredefinedItem id="deleteFromDiagramAction" remove="true"/>
          </popupContribution>
          <popupContribution class="org.eclipse.gmf.runtime.diagram.ui.providers.DiagramContextMenuProvider">
@@ -420,6 +436,15 @@
             <popupStructuredContributionCriteria objectClass="org.eclipse.uml2.diagram.activity.edit.parts.ObjectNodeSelectionEditPart"/>
             <popupAction path="/editGroup" id="deleteFromModelAction"/>
             <popupPredefinedItem id="deleteFromDiagramAction" remove="true"/>
+         </popupContribution>
+         <popupContribution class="org.eclipse.gmf.runtime.diagram.ui.providers.DiagramContextMenuProvider">
+            <popupStructuredContributionCriteria objectClass="org.eclipse.uml2.diagram.activity.edit.parts.ExceptionHandlerEditPart"/>
+            <popupPredefinedItem id="deleteFromDiagramAction" remove="true"/>
+         </popupContribution>
+         <popupContribution class="org.eclipse.gmf.runtime.diagram.ui.providers.DiagramContextMenuProvider">
+            <popupStructuredContributionCriteria objectClass="org.eclipse.uml2.diagram.activity.edit.parts.ExceptionHandlerLink_fixed_iconEditPart"/>
+            <popupPredefinedItem id="deleteFromDiagramAction" remove="true"/>
+            <popupPredefinedItem id="deleteFromModelAction" remove="true"/>
          </popupContribution>
       </contributionItemProvider>
    </extension>
@@ -506,12 +531,111 @@
 
       <metamodel nsURI="http://www.eclipse.org/uml2/2.0.0/UML">
          <metamodelType
-               id="org.eclipse.uml2.diagram.activity.Activity_1000"
+               id="org.eclipse.uml2.diagram.activity.Package_1000"
                name="Undefined"
                kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
-               eclass="Activity"
-               edithelper="org.eclipse.uml2.diagram.activity.edit.helpers.ActivityEditHelper">
+               eclass="Package"
+               edithelper="org.eclipse.uml2.diagram.activity.edit.helpers.PackageEditHelper">
             <param name="semanticHint" value="1000"/>
+         </metamodelType>
+      </metamodel>
+
+      <metamodel nsURI="http://www.eclipse.org/uml2/2.0.0/UML">
+         <metamodelType
+               id="org.eclipse.uml2.diagram.activity.AcceptEventAction_3030"
+               name="AcceptEventAction"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
+               eclass="AcceptEventAction"
+               edithelper="org.eclipse.uml2.diagram.activity.edit.helpers.AcceptEventActionEditHelper">
+            <param name="semanticHint" value="3030"/>
+         </metamodelType>
+      </metamodel>
+
+      <metamodel nsURI="http://www.eclipse.org/uml2/2.0.0/UML">
+         <specializationType
+               id="org.eclipse.uml2.diagram.activity.AcceptEventAction_3031"
+               name="AcceptEventAction"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
+               edithelperadvice="org.eclipse.uml2.diagram.activity.edit.helpers.AcceptEventActionEditHelperAdvice">
+            <specializes id="org.eclipse.uml2.diagram.activity.AcceptEventAction_3030"/>
+            <param name="semanticHint" value="3031"/>
+         </specializationType>
+      </metamodel>
+
+      <metamodel nsURI="http://www.eclipse.org/uml2/2.0.0/UML">
+         <metamodelType
+               id="org.eclipse.uml2.diagram.activity.ActivityFinalNode_3032"
+               name="ActivityFinalNode"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
+               eclass="ActivityFinalNode"
+               edithelper="org.eclipse.uml2.diagram.activity.edit.helpers.ActivityFinalNodeEditHelper">
+            <param name="semanticHint" value="3032"/>
+         </metamodelType>
+      </metamodel>
+
+      <metamodel nsURI="http://www.eclipse.org/uml2/2.0.0/UML">
+         <metamodelType
+               id="org.eclipse.uml2.diagram.activity.DecisionNode_3033"
+               name="DecisionNode"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
+               eclass="DecisionNode"
+               edithelper="org.eclipse.uml2.diagram.activity.edit.helpers.DecisionNodeEditHelper">
+            <param name="semanticHint" value="3033"/>
+         </metamodelType>
+      </metamodel>
+
+      <metamodel nsURI="http://www.eclipse.org/uml2/2.0.0/UML">
+         <metamodelType
+               id="org.eclipse.uml2.diagram.activity.MergeNode_3034"
+               name="MergeNode"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
+               eclass="MergeNode"
+               edithelper="org.eclipse.uml2.diagram.activity.edit.helpers.MergeNodeEditHelper">
+            <param name="semanticHint" value="3034"/>
+         </metamodelType>
+      </metamodel>
+
+      <metamodel nsURI="http://www.eclipse.org/uml2/2.0.0/UML">
+         <metamodelType
+               id="org.eclipse.uml2.diagram.activity.InitialNode_3035"
+               name="InitialNode"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
+               eclass="InitialNode"
+               edithelper="org.eclipse.uml2.diagram.activity.edit.helpers.InitialNodeEditHelper">
+            <param name="semanticHint" value="3035"/>
+         </metamodelType>
+      </metamodel>
+
+      <metamodel nsURI="http://www.eclipse.org/uml2/2.0.0/UML">
+         <metamodelType
+               id="org.eclipse.uml2.diagram.activity.DataStoreNode_3036"
+               name="DataStoreNode"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
+               eclass="DataStoreNode"
+               edithelper="org.eclipse.uml2.diagram.activity.edit.helpers.DataStoreNodeEditHelper">
+            <param name="semanticHint" value="3036"/>
+         </metamodelType>
+      </metamodel>
+
+      <metamodel nsURI="http://www.eclipse.org/uml2/2.0.0/UML">
+         <metamodelType
+               id="org.eclipse.uml2.diagram.activity.CentralBufferNode_3037"
+               name="CentralBufferNode"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
+               eclass="CentralBufferNode"
+               edithelper="org.eclipse.uml2.diagram.activity.edit.helpers.CentralBufferNodeEditHelper">
+            <param name="semanticHint" value="3037"/>
+         </metamodelType>
+      </metamodel>
+
+      <metamodel nsURI="http://www.eclipse.org/uml2/2.0.0/UML">
+         <metamodelType
+               id="org.eclipse.uml2.diagram.activity.OpaqueAction_3029"
+               name="OpaqueAction"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
+               eclass="OpaqueAction"
+               edithelper="org.eclipse.uml2.diagram.activity.edit.helpers.OpaqueActionEditHelper">
+            <param name="semanticHint" value="3029"/>
          </metamodelType>
       </metamodel>
 
@@ -527,6 +651,61 @@
       </metamodel>
 
       <metamodel nsURI="http://www.eclipse.org/uml2/2.0.0/UML">
+         <metamodelType
+               id="org.eclipse.uml2.diagram.activity.FlowFinalNode_3038"
+               name="FlowFinalNode"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
+               eclass="FlowFinalNode"
+               edithelper="org.eclipse.uml2.diagram.activity.edit.helpers.FlowFinalNodeEditHelper">
+            <param name="semanticHint" value="3038"/>
+         </metamodelType>
+      </metamodel>
+
+      <metamodel nsURI="http://www.eclipse.org/uml2/2.0.0/UML">
+         <metamodelType
+               id="org.eclipse.uml2.diagram.activity.ForkNode_3039"
+               name="ForkNode"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
+               eclass="ForkNode"
+               edithelper="org.eclipse.uml2.diagram.activity.edit.helpers.ForkNodeEditHelper">
+            <param name="semanticHint" value="3039"/>
+         </metamodelType>
+      </metamodel>
+
+      <metamodel nsURI="http://www.eclipse.org/uml2/2.0.0/UML">
+         <metamodelType
+               id="org.eclipse.uml2.diagram.activity.JoinNode_3040"
+               name="JoinNode"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
+               eclass="JoinNode"
+               edithelper="org.eclipse.uml2.diagram.activity.edit.helpers.JoinNodeEditHelper">
+            <param name="semanticHint" value="3040"/>
+         </metamodelType>
+      </metamodel>
+
+      <metamodel nsURI="http://www.eclipse.org/uml2/2.0.0/UML">
+         <metamodelType
+               id="org.eclipse.uml2.diagram.activity.Pin_3041"
+               name="Pin"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
+               eclass="Pin"
+               edithelper="org.eclipse.uml2.diagram.activity.edit.helpers.PinEditHelper">
+            <param name="semanticHint" value="3041"/>
+         </metamodelType>
+      </metamodel>
+
+      <metamodel nsURI="http://www.eclipse.org/uml2/2.0.0/UML">
+         <metamodelType
+               id="org.eclipse.uml2.diagram.activity.CreateObjectAction_3042"
+               name="CreateObjectAction"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
+               eclass="CreateObjectAction"
+               edithelper="org.eclipse.uml2.diagram.activity.edit.helpers.CreateObjectActionEditHelper">
+            <param name="semanticHint" value="3042"/>
+         </metamodelType>
+      </metamodel>
+
+      <metamodel nsURI="http://www.eclipse.org/uml2/2.0.0/UML">
          <specializationType
                id="org.eclipse.uml2.diagram.activity.OutputPin_3002"
                name="OutputPin"
@@ -535,6 +714,17 @@
             <specializes id="org.eclipse.uml2.diagram.activity.OutputPin_3001"/>
             <param name="semanticHint" value="3002"/>
          </specializationType>
+      </metamodel>
+
+      <metamodel nsURI="http://www.eclipse.org/uml2/2.0.0/UML">
+         <metamodelType
+               id="org.eclipse.uml2.diagram.activity.AddStructuralFeatureValueAction_3043"
+               name="AddStructuralFeatureValueAction"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
+               eclass="AddStructuralFeatureValueAction"
+               edithelper="org.eclipse.uml2.diagram.activity.edit.helpers.AddStructuralFeatureValueActionEditHelper">
+            <param name="semanticHint" value="3043"/>
+         </metamodelType>
       </metamodel>
 
       <metamodel nsURI="http://www.eclipse.org/uml2/2.0.0/UML">
@@ -571,6 +761,17 @@
       </metamodel>
 
       <metamodel nsURI="http://www.eclipse.org/uml2/2.0.0/UML">
+         <metamodelType
+               id="org.eclipse.uml2.diagram.activity.CallBehaviorAction_3044"
+               name="CallBehaviorAction"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
+               eclass="CallBehaviorAction"
+               edithelper="org.eclipse.uml2.diagram.activity.edit.helpers.CallBehaviorActionEditHelper">
+            <param name="semanticHint" value="3044"/>
+         </metamodelType>
+      </metamodel>
+
+      <metamodel nsURI="http://www.eclipse.org/uml2/2.0.0/UML">
          <specializationType
                id="org.eclipse.uml2.diagram.activity.OutputPin_3006"
                name="Output Pin result"
@@ -593,6 +794,17 @@
       </metamodel>
 
       <metamodel nsURI="http://www.eclipse.org/uml2/2.0.0/UML">
+         <metamodelType
+               id="org.eclipse.uml2.diagram.activity.CallOperationAction_3045"
+               name="CallOperationAction"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
+               eclass="CallOperationAction"
+               edithelper="org.eclipse.uml2.diagram.activity.edit.helpers.CallOperationActionEditHelper">
+            <param name="semanticHint" value="3045"/>
+         </metamodelType>
+      </metamodel>
+
+      <metamodel nsURI="http://www.eclipse.org/uml2/2.0.0/UML">
          <specializationType
                id="org.eclipse.uml2.diagram.activity.InputPin_3008"
                name="Input Pin target"
@@ -604,12 +816,23 @@
       </metamodel>
 
       <metamodel nsURI="http://www.eclipse.org/uml2/2.0.0/UML">
+         <metamodelType
+               id="org.eclipse.uml2.diagram.activity.StructuredActivityNode_3046"
+               name="StructuredActivityNode"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
+               eclass="StructuredActivityNode"
+               edithelper="org.eclipse.uml2.diagram.activity.edit.helpers.StructuredActivityNodeEditHelper">
+            <param name="semanticHint" value="3046"/>
+         </metamodelType>
+      </metamodel>
+
+      <metamodel nsURI="http://www.eclipse.org/uml2/2.0.0/UML">
          <specializationType
                id="org.eclipse.uml2.diagram.activity.StructuredActivityNode_3009"
                name="StructuredActivityNode"
                kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
                edithelperadvice="org.eclipse.uml2.diagram.activity.edit.helpers.StructuredActivityNodeEditHelperAdvice">
-            <specializes id="org.eclipse.uml2.diagram.activity.StructuredActivityNode_2007"/>
+            <specializes id="org.eclipse.uml2.diagram.activity.StructuredActivityNode_3046"/>
             <param name="semanticHint" value="3009"/>
          </specializationType>
       </metamodel>
@@ -620,7 +843,7 @@
                name="OpaqueAction"
                kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
                edithelperadvice="org.eclipse.uml2.diagram.activity.edit.helpers.OpaqueActionEditHelperAdvice">
-            <specializes id="org.eclipse.uml2.diagram.activity.OpaqueAction_2010"/>
+            <specializes id="org.eclipse.uml2.diagram.activity.OpaqueAction_3029"/>
             <param name="semanticHint" value="3011"/>
          </specializationType>
       </metamodel>
@@ -631,7 +854,7 @@
                name="AcceptEventAction"
                kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
                edithelperadvice="org.eclipse.uml2.diagram.activity.edit.helpers.AcceptEventAction2EditHelperAdvice">
-            <specializes id="org.eclipse.uml2.diagram.activity.AcceptEventAction_2001"/>
+            <specializes id="org.eclipse.uml2.diagram.activity.AcceptEventAction_3030"/>
             <param name="semanticHint" value="3012"/>
          </specializationType>
       </metamodel>
@@ -642,7 +865,7 @@
                name="AcceptEventAction"
                kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
                edithelperadvice="org.eclipse.uml2.diagram.activity.edit.helpers.AcceptEventAction3EditHelperAdvice">
-            <specializes id="org.eclipse.uml2.diagram.activity.AcceptEventAction_2001"/>
+            <specializes id="org.eclipse.uml2.diagram.activity.AcceptEventAction_3030"/>
             <param name="semanticHint" value="3013"/>
          </specializationType>
       </metamodel>
@@ -653,7 +876,7 @@
                name="ActivityFinalNode"
                kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
                edithelperadvice="org.eclipse.uml2.diagram.activity.edit.helpers.ActivityFinalNodeEditHelperAdvice">
-            <specializes id="org.eclipse.uml2.diagram.activity.ActivityFinalNode_2003"/>
+            <specializes id="org.eclipse.uml2.diagram.activity.ActivityFinalNode_3032"/>
             <param name="semanticHint" value="3014"/>
          </specializationType>
       </metamodel>
@@ -664,7 +887,7 @@
                name="DecisionNode"
                kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
                edithelperadvice="org.eclipse.uml2.diagram.activity.edit.helpers.DecisionNodeEditHelperAdvice">
-            <specializes id="org.eclipse.uml2.diagram.activity.DecisionNode_2004"/>
+            <specializes id="org.eclipse.uml2.diagram.activity.DecisionNode_3033"/>
             <param name="semanticHint" value="3015"/>
          </specializationType>
       </metamodel>
@@ -675,7 +898,7 @@
                name="FlowFinalNode"
                kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
                edithelperadvice="org.eclipse.uml2.diagram.activity.edit.helpers.FlowFinalNodeEditHelperAdvice">
-            <specializes id="org.eclipse.uml2.diagram.activity.FlowFinalNode_2011"/>
+            <specializes id="org.eclipse.uml2.diagram.activity.FlowFinalNode_3038"/>
             <param name="semanticHint" value="3016"/>
          </specializationType>
       </metamodel>
@@ -686,7 +909,7 @@
                name="Pin"
                kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
                edithelperadvice="org.eclipse.uml2.diagram.activity.edit.helpers.PinEditHelperAdvice">
-            <specializes id="org.eclipse.uml2.diagram.activity.Pin_2014"/>
+            <specializes id="org.eclipse.uml2.diagram.activity.Pin_3041"/>
             <param name="semanticHint" value="3017"/>
          </specializationType>
       </metamodel>
@@ -697,7 +920,7 @@
                name="CreateObjectAction"
                kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
                edithelperadvice="org.eclipse.uml2.diagram.activity.edit.helpers.CreateObjectActionEditHelperAdvice">
-            <specializes id="org.eclipse.uml2.diagram.activity.CreateObjectAction_2015"/>
+            <specializes id="org.eclipse.uml2.diagram.activity.CreateObjectAction_3042"/>
             <param name="semanticHint" value="3018"/>
          </specializationType>
       </metamodel>
@@ -708,7 +931,7 @@
                name="CallBehaviorAction"
                kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
                edithelperadvice="org.eclipse.uml2.diagram.activity.edit.helpers.CallBehaviorActionEditHelperAdvice">
-            <specializes id="org.eclipse.uml2.diagram.activity.CallBehaviorAction_2017"/>
+            <specializes id="org.eclipse.uml2.diagram.activity.CallBehaviorAction_3044"/>
             <param name="semanticHint" value="3019"/>
          </specializationType>
       </metamodel>
@@ -719,7 +942,7 @@
                name="CallOperationAction"
                kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
                edithelperadvice="org.eclipse.uml2.diagram.activity.edit.helpers.CallOperationActionEditHelperAdvice">
-            <specializes id="org.eclipse.uml2.diagram.activity.CallOperationAction_2018"/>
+            <specializes id="org.eclipse.uml2.diagram.activity.CallOperationAction_3045"/>
             <param name="semanticHint" value="3020"/>
          </specializationType>
       </metamodel>
@@ -730,7 +953,7 @@
                name="ForkNode"
                kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
                edithelperadvice="org.eclipse.uml2.diagram.activity.edit.helpers.ForkNodeEditHelperAdvice">
-            <specializes id="org.eclipse.uml2.diagram.activity.ForkNode_2012"/>
+            <specializes id="org.eclipse.uml2.diagram.activity.ForkNode_3039"/>
             <param name="semanticHint" value="3021"/>
          </specializationType>
       </metamodel>
@@ -741,7 +964,7 @@
                name="JoinNode"
                kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
                edithelperadvice="org.eclipse.uml2.diagram.activity.edit.helpers.JoinNodeEditHelperAdvice">
-            <specializes id="org.eclipse.uml2.diagram.activity.JoinNode_2013"/>
+            <specializes id="org.eclipse.uml2.diagram.activity.JoinNode_3040"/>
             <param name="semanticHint" value="3022"/>
          </specializationType>
       </metamodel>
@@ -752,7 +975,7 @@
                name="AddStructuralFeatureValueAction"
                kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
                edithelperadvice="org.eclipse.uml2.diagram.activity.edit.helpers.AddStructuralFeatureValueActionEditHelperAdvice">
-            <specializes id="org.eclipse.uml2.diagram.activity.AddStructuralFeatureValueAction_2016"/>
+            <specializes id="org.eclipse.uml2.diagram.activity.AddStructuralFeatureValueAction_3043"/>
             <param name="semanticHint" value="3023"/>
          </specializationType>
       </metamodel>
@@ -763,7 +986,7 @@
                name="DataStoreNode"
                kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
                edithelperadvice="org.eclipse.uml2.diagram.activity.edit.helpers.DataStoreNodeEditHelperAdvice">
-            <specializes id="org.eclipse.uml2.diagram.activity.DataStoreNode_2008"/>
+            <specializes id="org.eclipse.uml2.diagram.activity.DataStoreNode_3036"/>
             <param name="semanticHint" value="3024"/>
          </specializationType>
       </metamodel>
@@ -774,262 +997,86 @@
                name="CentralBufferNode"
                kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
                edithelperadvice="org.eclipse.uml2.diagram.activity.edit.helpers.CentralBufferNodeEditHelperAdvice">
-            <specializes id="org.eclipse.uml2.diagram.activity.CentralBufferNode_2009"/>
+            <specializes id="org.eclipse.uml2.diagram.activity.CentralBufferNode_3037"/>
             <param name="semanticHint" value="3025"/>
          </specializationType>
       </metamodel>
 
       <metamodel nsURI="http://www.eclipse.org/uml2/2.0.0/UML">
          <metamodelType
-               id="org.eclipse.uml2.diagram.activity.LiteralString_3026"
-               name="LiteralString"
-               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
-               eclass="LiteralString"
-               edithelper="org.eclipse.uml2.diagram.activity.edit.helpers.LiteralStringEditHelper">
-            <param name="semanticHint" value="3026"/>
-         </metamodelType>
-      </metamodel>
-
-      <metamodel nsURI="http://www.eclipse.org/uml2/2.0.0/UML">
-         <specializationType
-               id="org.eclipse.uml2.diagram.activity.LiteralString_3027"
-               name="LiteralString"
-               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
-               edithelperadvice="org.eclipse.uml2.diagram.activity.edit.helpers.LiteralStringEditHelperAdvice">
-            <specializes id="org.eclipse.uml2.diagram.activity.LiteralString_3026"/>
-            <param name="semanticHint" value="3027"/>
-         </specializationType>
-      </metamodel>
-
-      <metamodel nsURI="http://www.eclipse.org/uml2/2.0.0/UML">
-         <metamodelType
-               id="org.eclipse.uml2.diagram.activity.AcceptEventAction_2001"
-               name="AcceptEventAction"
-               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
-               eclass="AcceptEventAction"
-               edithelper="org.eclipse.uml2.diagram.activity.edit.helpers.AcceptEventActionEditHelper">
-            <param name="semanticHint" value="2001"/>
-         </metamodelType>
-      </metamodel>
-
-      <metamodel nsURI="http://www.eclipse.org/uml2/2.0.0/UML">
-         <specializationType
-               id="org.eclipse.uml2.diagram.activity.AcceptEventAction_2002"
-               name="AcceptEventAction"
-               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
-               edithelperadvice="org.eclipse.uml2.diagram.activity.edit.helpers.AcceptEventActionEditHelperAdvice">
-            <specializes id="org.eclipse.uml2.diagram.activity.AcceptEventAction_2001"/>
-            <param name="semanticHint" value="2002"/>
-         </specializationType>
-      </metamodel>
-
-      <metamodel nsURI="http://www.eclipse.org/uml2/2.0.0/UML">
-         <metamodelType
-               id="org.eclipse.uml2.diagram.activity.ActivityFinalNode_2003"
-               name="ActivityFinalNode"
-               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
-               eclass="ActivityFinalNode"
-               edithelper="org.eclipse.uml2.diagram.activity.edit.helpers.ActivityFinalNodeEditHelper">
-            <param name="semanticHint" value="2003"/>
-         </metamodelType>
-      </metamodel>
-
-      <metamodel nsURI="http://www.eclipse.org/uml2/2.0.0/UML">
-         <metamodelType
-               id="org.eclipse.uml2.diagram.activity.DecisionNode_2004"
-               name="DecisionNode"
-               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
-               eclass="DecisionNode"
-               edithelper="org.eclipse.uml2.diagram.activity.edit.helpers.DecisionNodeEditHelper">
-            <param name="semanticHint" value="2004"/>
-         </metamodelType>
-      </metamodel>
-
-      <metamodel nsURI="http://www.eclipse.org/uml2/2.0.0/UML">
-         <metamodelType
-               id="org.eclipse.uml2.diagram.activity.MergeNode_2005"
-               name="MergeNode"
-               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
-               eclass="MergeNode"
-               edithelper="org.eclipse.uml2.diagram.activity.edit.helpers.MergeNodeEditHelper">
-            <param name="semanticHint" value="2005"/>
-         </metamodelType>
-      </metamodel>
-
-      <metamodel nsURI="http://www.eclipse.org/uml2/2.0.0/UML">
-         <metamodelType
-               id="org.eclipse.uml2.diagram.activity.InitialNode_2006"
-               name="InitialNode"
-               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
-               eclass="InitialNode"
-               edithelper="org.eclipse.uml2.diagram.activity.edit.helpers.InitialNodeEditHelper">
-            <param name="semanticHint" value="2006"/>
-         </metamodelType>
-      </metamodel>
-
-      <metamodel nsURI="http://www.eclipse.org/uml2/2.0.0/UML">
-         <metamodelType
-               id="org.eclipse.uml2.diagram.activity.DataStoreNode_2008"
-               name="DataStoreNode"
-               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
-               eclass="DataStoreNode"
-               edithelper="org.eclipse.uml2.diagram.activity.edit.helpers.DataStoreNodeEditHelper">
-            <param name="semanticHint" value="2008"/>
-         </metamodelType>
-      </metamodel>
-
-      <metamodel nsURI="http://www.eclipse.org/uml2/2.0.0/UML">
-         <metamodelType
-               id="org.eclipse.uml2.diagram.activity.CentralBufferNode_2009"
-               name="CentralBufferNode"
-               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
-               eclass="CentralBufferNode"
-               edithelper="org.eclipse.uml2.diagram.activity.edit.helpers.CentralBufferNodeEditHelper">
-            <param name="semanticHint" value="2009"/>
-         </metamodelType>
-      </metamodel>
-
-      <metamodel nsURI="http://www.eclipse.org/uml2/2.0.0/UML">
-         <metamodelType
-               id="org.eclipse.uml2.diagram.activity.OpaqueAction_2010"
-               name="OpaqueAction"
-               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
-               eclass="OpaqueAction"
-               edithelper="org.eclipse.uml2.diagram.activity.edit.helpers.OpaqueActionEditHelper">
-            <param name="semanticHint" value="2010"/>
-         </metamodelType>
-      </metamodel>
-
-      <metamodel nsURI="http://www.eclipse.org/uml2/2.0.0/UML">
-         <metamodelType
-               id="org.eclipse.uml2.diagram.activity.FlowFinalNode_2011"
-               name="FlowFinalNode"
-               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
-               eclass="FlowFinalNode"
-               edithelper="org.eclipse.uml2.diagram.activity.edit.helpers.FlowFinalNodeEditHelper">
-            <param name="semanticHint" value="2011"/>
-         </metamodelType>
-      </metamodel>
-
-      <metamodel nsURI="http://www.eclipse.org/uml2/2.0.0/UML">
-         <metamodelType
-               id="org.eclipse.uml2.diagram.activity.ForkNode_2012"
-               name="ForkNode"
-               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
-               eclass="ForkNode"
-               edithelper="org.eclipse.uml2.diagram.activity.edit.helpers.ForkNodeEditHelper">
-            <param name="semanticHint" value="2012"/>
-         </metamodelType>
-      </metamodel>
-
-      <metamodel nsURI="http://www.eclipse.org/uml2/2.0.0/UML">
-         <metamodelType
-               id="org.eclipse.uml2.diagram.activity.JoinNode_2013"
-               name="JoinNode"
-               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
-               eclass="JoinNode"
-               edithelper="org.eclipse.uml2.diagram.activity.edit.helpers.JoinNodeEditHelper">
-            <param name="semanticHint" value="2013"/>
-         </metamodelType>
-      </metamodel>
-
-      <metamodel nsURI="http://www.eclipse.org/uml2/2.0.0/UML">
-         <metamodelType
-               id="org.eclipse.uml2.diagram.activity.Pin_2014"
-               name="Pin"
-               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
-               eclass="Pin"
-               edithelper="org.eclipse.uml2.diagram.activity.edit.helpers.PinEditHelper">
-            <param name="semanticHint" value="2014"/>
-         </metamodelType>
-      </metamodel>
-
-      <metamodel nsURI="http://www.eclipse.org/uml2/2.0.0/UML">
-         <metamodelType
-               id="org.eclipse.uml2.diagram.activity.CreateObjectAction_2015"
-               name="CreateObjectAction"
-               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
-               eclass="CreateObjectAction"
-               edithelper="org.eclipse.uml2.diagram.activity.edit.helpers.CreateObjectActionEditHelper">
-            <param name="semanticHint" value="2015"/>
-         </metamodelType>
-      </metamodel>
-
-      <metamodel nsURI="http://www.eclipse.org/uml2/2.0.0/UML">
-         <metamodelType
-               id="org.eclipse.uml2.diagram.activity.AddStructuralFeatureValueAction_2016"
-               name="AddStructuralFeatureValueAction"
-               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
-               eclass="AddStructuralFeatureValueAction"
-               edithelper="org.eclipse.uml2.diagram.activity.edit.helpers.AddStructuralFeatureValueActionEditHelper">
-            <param name="semanticHint" value="2016"/>
-         </metamodelType>
-      </metamodel>
-
-      <metamodel nsURI="http://www.eclipse.org/uml2/2.0.0/UML">
-         <metamodelType
-               id="org.eclipse.uml2.diagram.activity.CallBehaviorAction_2017"
-               name="CallBehaviorAction"
-               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
-               eclass="CallBehaviorAction"
-               edithelper="org.eclipse.uml2.diagram.activity.edit.helpers.CallBehaviorActionEditHelper">
-            <param name="semanticHint" value="2017"/>
-         </metamodelType>
-      </metamodel>
-
-      <metamodel nsURI="http://www.eclipse.org/uml2/2.0.0/UML">
-         <metamodelType
-               id="org.eclipse.uml2.diagram.activity.CallOperationAction_2018"
-               name="CallOperationAction"
-               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
-               eclass="CallOperationAction"
-               edithelper="org.eclipse.uml2.diagram.activity.edit.helpers.CallOperationActionEditHelper">
-            <param name="semanticHint" value="2018"/>
-         </metamodelType>
-      </metamodel>
-
-      <metamodel nsURI="http://www.eclipse.org/uml2/2.0.0/UML">
-         <metamodelType
-               id="org.eclipse.uml2.diagram.activity.StructuredActivityNode_2007"
-               name="StructuredActivityNode"
-               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
-               eclass="StructuredActivityNode"
-               edithelper="org.eclipse.uml2.diagram.activity.edit.helpers.StructuredActivityNodeEditHelper">
-            <param name="semanticHint" value="2007"/>
-         </metamodelType>
-      </metamodel>
-
-      <metamodel nsURI="http://www.eclipse.org/uml2/2.0.0/UML">
-         <metamodelType
-               id="org.eclipse.uml2.diagram.activity.Constraint_2019"
-               name="Local Precondition"
-               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
-               eclass="Constraint"
-               edithelper="org.eclipse.uml2.diagram.activity.edit.helpers.ConstraintEditHelper">
-            <param name="semanticHint" value="2019"/>
-         </metamodelType>
-      </metamodel>
-
-      <metamodel nsURI="http://www.eclipse.org/uml2/2.0.0/UML">
-         <specializationType
-               id="org.eclipse.uml2.diagram.activity.Constraint_2020"
-               name="Local Postcondition"
-               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
-               edithelperadvice="org.eclipse.uml2.diagram.activity.edit.helpers.ConstraintEditHelperAdvice">
-            <specializes id="org.eclipse.uml2.diagram.activity.Constraint_2019"/>
-            <param name="semanticHint" value="2020"/>
-         </specializationType>
-      </metamodel>
-
-      <metamodel nsURI="http://www.eclipse.org/uml2/2.0.0/UML">
-         <metamodelType
-               id="org.eclipse.uml2.diagram.activity.OpaqueBehavior_2021"
+               id="org.eclipse.uml2.diagram.activity.OpaqueBehavior_3047"
                name="OpaqueBehavior"
                kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
                eclass="OpaqueBehavior"
                edithelper="org.eclipse.uml2.diagram.activity.edit.helpers.OpaqueBehaviorEditHelper">
-            <param name="semanticHint" value="2021"/>
+            <param name="semanticHint" value="3047"/>
          </metamodelType>
+      </metamodel>
+
+      <metamodel nsURI="http://www.eclipse.org/uml2/2.0.0/UML">
+         <metamodelType
+               id="org.eclipse.uml2.diagram.activity.ActivityParameterNode_3052"
+               name="ActivityParameterNode"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
+               eclass="ActivityParameterNode"
+               edithelper="org.eclipse.uml2.diagram.activity.edit.helpers.ActivityParameterNodeEditHelper">
+            <param name="semanticHint" value="3052"/>
+         </metamodelType>
+      </metamodel>
+
+      <metamodel nsURI="http://www.eclipse.org/uml2/2.0.0/UML">
+         <metamodelType
+               id="org.eclipse.uml2.diagram.activity.LiteralString_3049"
+               name="LiteralString"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
+               eclass="LiteralString"
+               edithelper="org.eclipse.uml2.diagram.activity.edit.helpers.LiteralStringEditHelper">
+            <param name="semanticHint" value="3049"/>
+         </metamodelType>
+      </metamodel>
+
+      <metamodel nsURI="http://www.eclipse.org/uml2/2.0.0/UML">
+         <specializationType
+               id="org.eclipse.uml2.diagram.activity.LiteralString_3051"
+               name="LiteralString"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
+               edithelperadvice="org.eclipse.uml2.diagram.activity.edit.helpers.LiteralStringEditHelperAdvice">
+            <specializes id="org.eclipse.uml2.diagram.activity.LiteralString_3049"/>
+            <param name="semanticHint" value="3051"/>
+         </specializationType>
+      </metamodel>
+
+      <metamodel nsURI="http://www.eclipse.org/uml2/2.0.0/UML">
+         <metamodelType
+               id="org.eclipse.uml2.diagram.activity.Activity_2026"
+               name="Activity"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
+               eclass="Activity"
+               edithelper="org.eclipse.uml2.diagram.activity.edit.helpers.ActivityEditHelper">
+            <param name="semanticHint" value="2026"/>
+         </metamodelType>
+      </metamodel>
+
+      <metamodel nsURI="http://www.eclipse.org/uml2/2.0.0/UML">
+         <metamodelType
+               id="org.eclipse.uml2.diagram.activity.Constraint_2027"
+               name="Constraint"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
+               eclass="Constraint"
+               edithelper="org.eclipse.uml2.diagram.activity.edit.helpers.ConstraintEditHelper">
+            <param name="semanticHint" value="2027"/>
+         </metamodelType>
+      </metamodel>
+
+      <metamodel nsURI="http://www.eclipse.org/uml2/2.0.0/UML">
+         <specializationType
+               id="org.eclipse.uml2.diagram.activity.Constraint_2028"
+               name="Constraint"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
+               edithelperadvice="org.eclipse.uml2.diagram.activity.edit.helpers.ConstraintEditHelperAdvice">
+            <specializes id="org.eclipse.uml2.diagram.activity.Constraint_2027"/>
+            <param name="semanticHint" value="2028"/>
+         </specializationType>
       </metamodel>
 
       <metamodel nsURI="http://www.eclipse.org/uml2/2.0.0/UML">
@@ -1075,6 +1122,17 @@
             <param name="semanticHint" value="4004"/>
          </specializationType>
       </metamodel>
+
+      <metamodel nsURI="http://www.eclipse.org/uml2/2.0.0/UML">
+         <metamodelType
+               id="org.eclipse.uml2.diagram.activity.ExceptionHandler_4005"
+               name="ExceptionHandler"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
+               eclass="ExceptionHandler"
+               edithelper="org.eclipse.uml2.diagram.activity.edit.helpers.ExceptionHandlerEditHelper">
+            <param name="semanticHint" value="4005"/>
+         </metamodelType>
+      </metamodel>
    </extension>
 
    <extension point="org.eclipse.gmf.runtime.emf.type.core.elementTypeBindings">
@@ -1087,15 +1145,33 @@
          </enablement>
       </clientContext> 
       <binding context="UMLActivityClientContext">
-         <elementType ref="org.eclipse.uml2.diagram.activity.Activity_1000"/>
+         <elementType ref="org.eclipse.uml2.diagram.activity.Package_1000"/>
+         <elementType ref="org.eclipse.uml2.diagram.activity.AcceptEventAction_3030"/>
+         <elementType ref="org.eclipse.uml2.diagram.activity.AcceptEventAction_3031"/>
+         <elementType ref="org.eclipse.uml2.diagram.activity.ActivityFinalNode_3032"/>
+         <elementType ref="org.eclipse.uml2.diagram.activity.DecisionNode_3033"/>
+         <elementType ref="org.eclipse.uml2.diagram.activity.MergeNode_3034"/>
+         <elementType ref="org.eclipse.uml2.diagram.activity.InitialNode_3035"/>
+         <elementType ref="org.eclipse.uml2.diagram.activity.DataStoreNode_3036"/>
+         <elementType ref="org.eclipse.uml2.diagram.activity.CentralBufferNode_3037"/>
+         <elementType ref="org.eclipse.uml2.diagram.activity.OpaqueAction_3029"/>
          <elementType ref="org.eclipse.uml2.diagram.activity.OutputPin_3001"/>
+         <elementType ref="org.eclipse.uml2.diagram.activity.FlowFinalNode_3038"/>
+         <elementType ref="org.eclipse.uml2.diagram.activity.ForkNode_3039"/>
+         <elementType ref="org.eclipse.uml2.diagram.activity.JoinNode_3040"/>
+         <elementType ref="org.eclipse.uml2.diagram.activity.Pin_3041"/>
+         <elementType ref="org.eclipse.uml2.diagram.activity.CreateObjectAction_3042"/>
          <elementType ref="org.eclipse.uml2.diagram.activity.OutputPin_3002"/>
+         <elementType ref="org.eclipse.uml2.diagram.activity.AddStructuralFeatureValueAction_3043"/>
          <elementType ref="org.eclipse.uml2.diagram.activity.InputPin_3003"/>
          <elementType ref="org.eclipse.uml2.diagram.activity.InputPin_3004"/>
          <elementType ref="org.eclipse.uml2.diagram.activity.InputPin_3005"/>
+         <elementType ref="org.eclipse.uml2.diagram.activity.CallBehaviorAction_3044"/>
          <elementType ref="org.eclipse.uml2.diagram.activity.OutputPin_3006"/>
          <elementType ref="org.eclipse.uml2.diagram.activity.InputPin_3007"/>
+         <elementType ref="org.eclipse.uml2.diagram.activity.CallOperationAction_3045"/>
          <elementType ref="org.eclipse.uml2.diagram.activity.InputPin_3008"/>
+         <elementType ref="org.eclipse.uml2.diagram.activity.StructuredActivityNode_3046"/>
          <elementType ref="org.eclipse.uml2.diagram.activity.StructuredActivityNode_3009"/>
          <elementType ref="org.eclipse.uml2.diagram.activity.OpaqueAction_3011"/>
          <elementType ref="org.eclipse.uml2.diagram.activity.AcceptEventAction_3012"/>
@@ -1112,33 +1188,18 @@
          <elementType ref="org.eclipse.uml2.diagram.activity.AddStructuralFeatureValueAction_3023"/>
          <elementType ref="org.eclipse.uml2.diagram.activity.DataStoreNode_3024"/>
          <elementType ref="org.eclipse.uml2.diagram.activity.CentralBufferNode_3025"/>
-         <elementType ref="org.eclipse.uml2.diagram.activity.LiteralString_3026"/>
-         <elementType ref="org.eclipse.uml2.diagram.activity.LiteralString_3027"/>
-         <elementType ref="org.eclipse.uml2.diagram.activity.AcceptEventAction_2001"/>
-         <elementType ref="org.eclipse.uml2.diagram.activity.AcceptEventAction_2002"/>
-         <elementType ref="org.eclipse.uml2.diagram.activity.ActivityFinalNode_2003"/>
-         <elementType ref="org.eclipse.uml2.diagram.activity.DecisionNode_2004"/>
-         <elementType ref="org.eclipse.uml2.diagram.activity.MergeNode_2005"/>
-         <elementType ref="org.eclipse.uml2.diagram.activity.InitialNode_2006"/>
-         <elementType ref="org.eclipse.uml2.diagram.activity.DataStoreNode_2008"/>
-         <elementType ref="org.eclipse.uml2.diagram.activity.CentralBufferNode_2009"/>
-         <elementType ref="org.eclipse.uml2.diagram.activity.OpaqueAction_2010"/>
-         <elementType ref="org.eclipse.uml2.diagram.activity.FlowFinalNode_2011"/>
-         <elementType ref="org.eclipse.uml2.diagram.activity.ForkNode_2012"/>
-         <elementType ref="org.eclipse.uml2.diagram.activity.JoinNode_2013"/>
-         <elementType ref="org.eclipse.uml2.diagram.activity.Pin_2014"/>
-         <elementType ref="org.eclipse.uml2.diagram.activity.CreateObjectAction_2015"/>
-         <elementType ref="org.eclipse.uml2.diagram.activity.AddStructuralFeatureValueAction_2016"/>
-         <elementType ref="org.eclipse.uml2.diagram.activity.CallBehaviorAction_2017"/>
-         <elementType ref="org.eclipse.uml2.diagram.activity.CallOperationAction_2018"/>
-         <elementType ref="org.eclipse.uml2.diagram.activity.StructuredActivityNode_2007"/>
-         <elementType ref="org.eclipse.uml2.diagram.activity.Constraint_2019"/>
-         <elementType ref="org.eclipse.uml2.diagram.activity.Constraint_2020"/>
-         <elementType ref="org.eclipse.uml2.diagram.activity.OpaqueBehavior_2021"/>
+         <elementType ref="org.eclipse.uml2.diagram.activity.OpaqueBehavior_3047"/>
+         <elementType ref="org.eclipse.uml2.diagram.activity.ActivityParameterNode_3052"/>
+         <elementType ref="org.eclipse.uml2.diagram.activity.LiteralString_3049"/>
+         <elementType ref="org.eclipse.uml2.diagram.activity.LiteralString_3051"/>
+         <elementType ref="org.eclipse.uml2.diagram.activity.Activity_2026"/>
+         <elementType ref="org.eclipse.uml2.diagram.activity.Constraint_2027"/>
+         <elementType ref="org.eclipse.uml2.diagram.activity.Constraint_2028"/>
          <elementType ref="org.eclipse.uml2.diagram.activity.ControlFlow_4001"/>
          <elementType ref="org.eclipse.uml2.diagram.activity.ObjectFlow_4002"/>
          <elementType ref="org.eclipse.uml2.diagram.activity.ActionLocalPrecondition_4003"/>
          <elementType ref="org.eclipse.uml2.diagram.activity.ObjectNodeSelection_4004"/>
+         <elementType ref="org.eclipse.uml2.diagram.activity.ExceptionHandler_4005"/>
          <advice ref="org.eclipse.gmf.runtime.diagram.core.advice.notationDepdendents"/>
       </binding>
    </extension>

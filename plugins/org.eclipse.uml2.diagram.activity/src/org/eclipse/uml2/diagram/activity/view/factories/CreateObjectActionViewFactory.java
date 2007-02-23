@@ -15,9 +15,9 @@ import org.eclipse.gmf.runtime.diagram.ui.view.factories.AbstractShapeViewFactor
 import org.eclipse.gmf.runtime.notation.NotationFactory;
 import org.eclipse.gmf.runtime.notation.View;
 
-import org.eclipse.uml2.diagram.activity.edit.parts.ActivityEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.CreateObjectActionEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.CreateObjectActionNameEditPart;
+import org.eclipse.uml2.diagram.activity.edit.parts.PackageEditPart;
 
 import org.eclipse.uml2.diagram.activity.part.UMLVisualIDRegistry;
 
@@ -47,10 +47,10 @@ public class CreateObjectActionViewFactory extends AbstractShapeViewFactory {
 			view.setType(semanticHint);
 		}
 		super.decorateView(containerView, view, semanticAdapter, semanticHint, index, persisted);
-		if (!ActivityEditPart.MODEL_ID.equals(UMLVisualIDRegistry.getModelID(containerView))) {
+		if (!PackageEditPart.MODEL_ID.equals(UMLVisualIDRegistry.getModelID(containerView))) {
 			EAnnotation shortcutAnnotation = EcoreFactory.eINSTANCE.createEAnnotation();
 			shortcutAnnotation.setSource("Shortcut"); //$NON-NLS-1$
-			shortcutAnnotation.getDetails().put("modelID", ActivityEditPart.MODEL_ID); //$NON-NLS-1$
+			shortcutAnnotation.getDetails().put("modelID", PackageEditPart.MODEL_ID); //$NON-NLS-1$
 			view.getEAnnotations().add(shortcutAnnotation);
 		}
 		getViewService().createNode(semanticAdapter, view, UMLVisualIDRegistry.getType(CreateObjectActionNameEditPart.VISUAL_ID), ViewUtil.APPEND, true, getPreferencesHint());

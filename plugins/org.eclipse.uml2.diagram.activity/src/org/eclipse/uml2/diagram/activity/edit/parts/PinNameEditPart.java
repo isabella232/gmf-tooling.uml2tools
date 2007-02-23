@@ -56,7 +56,7 @@ public class PinNameEditPart extends CompartmentEditPart implements ITextAwareEd
 	/**
 	 * @generated
 	 */
-	public static final int VISUAL_ID = 5002;
+	public static final int VISUAL_ID = 5024;
 
 	/**
 	 * @generated
@@ -291,7 +291,7 @@ public class PinNameEditPart extends CompartmentEditPart implements ITextAwareEd
 
 				public Object getAdapter(Class adapter) {
 					if (IElementType.class.equals(adapter)) {
-						return UMLElementTypes.Pin_2014;
+						return UMLElementTypes.Pin_3041;
 					}
 					return super.getAdapter(adapter);
 				}

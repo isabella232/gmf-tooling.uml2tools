@@ -20,7 +20,7 @@ public class ConstraintPreconditionEditPart extends ListCompartmentEditPart {
 	/**
 	 * @generated
 	 */
-	public static final int VISUAL_ID = 7003;
+	public static final int VISUAL_ID = 7013;
 
 	/**
 	 * @generated

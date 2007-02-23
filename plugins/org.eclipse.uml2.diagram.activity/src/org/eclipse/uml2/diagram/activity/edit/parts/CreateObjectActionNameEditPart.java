@@ -56,7 +56,7 @@ public class CreateObjectActionNameEditPart extends CompartmentEditPart implemen
 	/**
 	 * @generated
 	 */
-	public static final int VISUAL_ID = 5005;
+	public static final int VISUAL_ID = 5025;
 
 	/**
 	 * @generated
@@ -291,7 +291,7 @@ public class CreateObjectActionNameEditPart extends CompartmentEditPart implemen
 
 				public Object getAdapter(Class adapter) {
 					if (IElementType.class.equals(adapter)) {
-						return UMLElementTypes.CreateObjectAction_2015;
+						return UMLElementTypes.CreateObjectAction_3042;
 					}
 					return super.getAdapter(adapter);
 				}

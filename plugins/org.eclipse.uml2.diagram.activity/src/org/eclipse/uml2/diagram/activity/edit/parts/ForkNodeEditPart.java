@@ -31,7 +31,7 @@ public class ForkNodeEditPart extends ShapeNodeEditPart {
 	/**
 	 * @generated
 	 */
-	public static final int VISUAL_ID = 2012;
+	public static final int VISUAL_ID = 3039;
 
 	/**
 	 * @generated
