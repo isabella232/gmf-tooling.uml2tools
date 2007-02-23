@@ -27,4 +27,9 @@
          install-size="0"
          version="0.0.0"/>
 
+   <plugin
+         id="org.eclipse.uml2.diagram.examples.clazz"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"/>
 </feature>
