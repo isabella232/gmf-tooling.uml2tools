@@ -353,7 +353,7 @@
       <metamodel nsURI="http://www.eclipse.org/uml2/2.0.0/UML">
          <metamodelType
                id="org.eclipse.uml2.diagram.statemachine.State_3001"
-               name="State"
+               name="Simple State"
                kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
                eclass="State"
                edithelper="org.eclipse.uml2.diagram.statemachine.edit.helpers.StateEditHelper">
@@ -364,7 +364,7 @@
       <metamodel nsURI="http://www.eclipse.org/uml2/2.0.0/UML">
          <specializationType
                id="org.eclipse.uml2.diagram.statemachine.State_3012"
-               name="State"
+               name="Composite State"
                kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
                edithelperadvice="org.eclipse.uml2.diagram.statemachine.edit.helpers.StateEditHelperAdvice">
             <specializes id="org.eclipse.uml2.diagram.statemachine.State_3001"/>
@@ -386,7 +386,7 @@
       <metamodel nsURI="http://www.eclipse.org/uml2/2.0.0/UML">
          <specializationType
                id="org.eclipse.uml2.diagram.statemachine.State_3016"
-               name="State"
+               name="Submachine State"
                kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
                edithelperadvice="org.eclipse.uml2.diagram.statemachine.edit.helpers.State2EditHelperAdvice">
             <specializes id="org.eclipse.uml2.diagram.statemachine.State_3001"/>
@@ -430,7 +430,7 @@
       <metamodel nsURI="http://www.eclipse.org/uml2/2.0.0/UML">
          <metamodelType
                id="org.eclipse.uml2.diagram.statemachine.Pseudostate_3004"
-               name="Pseudostate"
+               name="Initial Pseudostate"
                kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
                eclass="Pseudostate"
                edithelper="org.eclipse.uml2.diagram.statemachine.edit.helpers.PseudostateEditHelper">
@@ -441,7 +441,7 @@
       <metamodel nsURI="http://www.eclipse.org/uml2/2.0.0/UML">
          <specializationType
                id="org.eclipse.uml2.diagram.statemachine.Pseudostate_3005"
-               name="Pseudostate"
+               name="Shallow History Pseudostate"
                kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
                edithelperadvice="org.eclipse.uml2.diagram.statemachine.edit.helpers.PseudostateEditHelperAdvice">
             <specializes id="org.eclipse.uml2.diagram.statemachine.Pseudostate_3004"/>
@@ -452,7 +452,7 @@
       <metamodel nsURI="http://www.eclipse.org/uml2/2.0.0/UML">
          <specializationType
                id="org.eclipse.uml2.diagram.statemachine.Pseudostate_3006"
-               name="Pseudostate"
+               name="Deep History Pseudostate"
                kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
                edithelperadvice="org.eclipse.uml2.diagram.statemachine.edit.helpers.Pseudostate2EditHelperAdvice">
             <specializes id="org.eclipse.uml2.diagram.statemachine.Pseudostate_3004"/>
@@ -463,7 +463,7 @@
       <metamodel nsURI="http://www.eclipse.org/uml2/2.0.0/UML">
          <specializationType
                id="org.eclipse.uml2.diagram.statemachine.Pseudostate_3007"
-               name="Pseudostate"
+               name="Fork Pseudostate"
                kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
                edithelperadvice="org.eclipse.uml2.diagram.statemachine.edit.helpers.Pseudostate3EditHelperAdvice">
             <specializes id="org.eclipse.uml2.diagram.statemachine.Pseudostate_3004"/>
@@ -474,7 +474,7 @@
       <metamodel nsURI="http://www.eclipse.org/uml2/2.0.0/UML">
          <specializationType
                id="org.eclipse.uml2.diagram.statemachine.Pseudostate_3008"
-               name="Pseudostate"
+               name="Join Pseudostate"
                kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
                edithelperadvice="org.eclipse.uml2.diagram.statemachine.edit.helpers.Pseudostate4EditHelperAdvice">
             <specializes id="org.eclipse.uml2.diagram.statemachine.Pseudostate_3004"/>
@@ -485,7 +485,7 @@
       <metamodel nsURI="http://www.eclipse.org/uml2/2.0.0/UML">
          <specializationType
                id="org.eclipse.uml2.diagram.statemachine.Pseudostate_3009"
-               name="Pseudostate"
+               name="Junction Pseudostate"
                kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
                edithelperadvice="org.eclipse.uml2.diagram.statemachine.edit.helpers.Pseudostate5EditHelperAdvice">
             <specializes id="org.eclipse.uml2.diagram.statemachine.Pseudostate_3004"/>
@@ -496,7 +496,7 @@
       <metamodel nsURI="http://www.eclipse.org/uml2/2.0.0/UML">
          <specializationType
                id="org.eclipse.uml2.diagram.statemachine.Pseudostate_3010"
-               name="Pseudostate"
+               name="Choice Pseudostate"
                kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
                edithelperadvice="org.eclipse.uml2.diagram.statemachine.edit.helpers.Pseudostate6EditHelperAdvice">
             <specializes id="org.eclipse.uml2.diagram.statemachine.Pseudostate_3004"/>
@@ -507,7 +507,7 @@
       <metamodel nsURI="http://www.eclipse.org/uml2/2.0.0/UML">
          <specializationType
                id="org.eclipse.uml2.diagram.statemachine.Pseudostate_3011"
-               name="Pseudostate"
+               name="Terminate Pseudostate"
                kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
                edithelperadvice="org.eclipse.uml2.diagram.statemachine.edit.helpers.Pseudostate7EditHelperAdvice">
             <specializes id="org.eclipse.uml2.diagram.statemachine.Pseudostate_3004"/>
@@ -518,7 +518,7 @@
       <metamodel nsURI="http://www.eclipse.org/uml2/2.0.0/UML">
          <specializationType
                id="org.eclipse.uml2.diagram.statemachine.Pseudostate_3014"
-               name="Pseudostate"
+               name="Entry Point"
                kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
                edithelperadvice="org.eclipse.uml2.diagram.statemachine.edit.helpers.Pseudostate8EditHelperAdvice">
             <specializes id="org.eclipse.uml2.diagram.statemachine.Pseudostate_3004"/>
@@ -529,7 +529,7 @@
       <metamodel nsURI="http://www.eclipse.org/uml2/2.0.0/UML">
          <specializationType
                id="org.eclipse.uml2.diagram.statemachine.Pseudostate_3015"
-               name="Pseudostate"
+               name="Exit Point"
                kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
                edithelperadvice="org.eclipse.uml2.diagram.statemachine.edit.helpers.Pseudostate9EditHelperAdvice">
             <specializes id="org.eclipse.uml2.diagram.statemachine.Pseudostate_3004"/>
