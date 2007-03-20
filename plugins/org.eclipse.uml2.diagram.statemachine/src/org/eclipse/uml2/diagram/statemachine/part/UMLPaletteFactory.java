@@ -116,8 +116,8 @@ public class UMLPaletteFactory {
 		List/*<IElementType>*/types = new ArrayList/*<IElementType>*/(1);
 		types.add(UMLElementTypes.Pseudostate_3005);
 		NodeToolEntry entry = new NodeToolEntry(UMLDiagramEditorPlugin.getString("ShallowHistory5CreationTool.title"), UMLDiagramEditorPlugin.getString("ShallowHistory5CreationTool.desc"), types); //$NON-NLS-1$ $NON-NLS-2$
-		entry.setSmallIcon(UMLDiagramEditorPlugin.findImageDescriptor("/org.eclipse.uml2.uml.edit/icons/full/obj16/Pseudostate_shallowHistory.gif")); //$NON-NLS-1$
-		entry.setLargeIcon(UMLDiagramEditorPlugin.findImageDescriptor("/org.eclipse.uml2.uml.edit/icons/full/obj16/Pseudostate_shallowHistory.gif")); //$NON-NLS-1$
+		entry.setSmallIcon(UMLElementTypes.getImageDescriptor(UMLElementTypes.Pseudostate_3005));
+		entry.setLargeIcon(entry.getSmallIcon());
 		return entry;
 	}
 
@@ -128,8 +128,8 @@ public class UMLPaletteFactory {
 		List/*<IElementType>*/types = new ArrayList/*<IElementType>*/(1);
 		types.add(UMLElementTypes.Pseudostate_3006);
 		NodeToolEntry entry = new NodeToolEntry(UMLDiagramEditorPlugin.getString("DeepHistory6CreationTool.title"), UMLDiagramEditorPlugin.getString("DeepHistory6CreationTool.desc"), types); //$NON-NLS-1$ $NON-NLS-2$
-		entry.setSmallIcon(UMLDiagramEditorPlugin.findImageDescriptor("/org.eclipse.uml2.uml.edit/icons/full/obj16/Pseudostate_deepHistory.gif")); //$NON-NLS-1$
-		entry.setLargeIcon(UMLDiagramEditorPlugin.findImageDescriptor("/org.eclipse.uml2.uml.edit/icons/full/obj16/Pseudostate_deepHistory.gif")); //$NON-NLS-1$
+		entry.setSmallIcon(UMLElementTypes.getImageDescriptor(UMLElementTypes.Pseudostate_3006));
+		entry.setLargeIcon(entry.getSmallIcon());
 		return entry;
 	}
 
@@ -140,8 +140,8 @@ public class UMLPaletteFactory {
 		List/*<IElementType>*/types = new ArrayList/*<IElementType>*/(1);
 		types.add(UMLElementTypes.Pseudostate_3007);
 		NodeToolEntry entry = new NodeToolEntry(UMLDiagramEditorPlugin.getString("Fork7CreationTool.title"), UMLDiagramEditorPlugin.getString("Fork7CreationTool.desc"), types); //$NON-NLS-1$ $NON-NLS-2$
-		entry.setSmallIcon(UMLDiagramEditorPlugin.findImageDescriptor("/org.eclipse.uml2.uml.edit/icons/full/obj16/Pseudostate_fork.gif")); //$NON-NLS-1$
-		entry.setLargeIcon(UMLDiagramEditorPlugin.findImageDescriptor("/org.eclipse.uml2.uml.edit/icons/full/obj16/Pseudostate_fork.gif")); //$NON-NLS-1$
+		entry.setSmallIcon(UMLElementTypes.getImageDescriptor(UMLElementTypes.Pseudostate_3007));
+		entry.setLargeIcon(entry.getSmallIcon());
 		return entry;
 	}
 
@@ -152,8 +152,8 @@ public class UMLPaletteFactory {
 		List/*<IElementType>*/types = new ArrayList/*<IElementType>*/(1);
 		types.add(UMLElementTypes.Pseudostate_3008);
 		NodeToolEntry entry = new NodeToolEntry(UMLDiagramEditorPlugin.getString("Join8CreationTool.title"), UMLDiagramEditorPlugin.getString("Join8CreationTool.desc"), types); //$NON-NLS-1$ $NON-NLS-2$
-		entry.setSmallIcon(UMLDiagramEditorPlugin.findImageDescriptor("/org.eclipse.uml2.uml.edit/icons/full/obj16/Pseudostate_join.gif")); //$NON-NLS-1$
-		entry.setLargeIcon(UMLDiagramEditorPlugin.findImageDescriptor("/org.eclipse.uml2.uml.edit/icons/full/obj16/Pseudostate_join.gif")); //$NON-NLS-1$
+		entry.setSmallIcon(UMLElementTypes.getImageDescriptor(UMLElementTypes.Pseudostate_3008));
+		entry.setLargeIcon(entry.getSmallIcon());
 		return entry;
 	}
 
@@ -164,8 +164,8 @@ public class UMLPaletteFactory {
 		List/*<IElementType>*/types = new ArrayList/*<IElementType>*/(1);
 		types.add(UMLElementTypes.Pseudostate_3009);
 		NodeToolEntry entry = new NodeToolEntry(UMLDiagramEditorPlugin.getString("Junction9CreationTool.title"), UMLDiagramEditorPlugin.getString("Junction9CreationTool.desc"), types); //$NON-NLS-1$ $NON-NLS-2$
-		entry.setSmallIcon(UMLDiagramEditorPlugin.findImageDescriptor("/org.eclipse.uml2.uml.edit/icons/full/obj16/Pseudostate_junction.gif")); //$NON-NLS-1$
-		entry.setLargeIcon(UMLDiagramEditorPlugin.findImageDescriptor("/org.eclipse.uml2.uml.edit/icons/full/obj16/Pseudostate_junction.gif")); //$NON-NLS-1$
+		entry.setSmallIcon(UMLElementTypes.getImageDescriptor(UMLElementTypes.Pseudostate_3009));
+		entry.setLargeIcon(entry.getSmallIcon());
 		return entry;
 	}
 
@@ -176,8 +176,8 @@ public class UMLPaletteFactory {
 		List/*<IElementType>*/types = new ArrayList/*<IElementType>*/(1);
 		types.add(UMLElementTypes.Pseudostate_3010);
 		NodeToolEntry entry = new NodeToolEntry(UMLDiagramEditorPlugin.getString("Choice10CreationTool.title"), UMLDiagramEditorPlugin.getString("Choice10CreationTool.desc"), types); //$NON-NLS-1$ $NON-NLS-2$
-		entry.setSmallIcon(UMLDiagramEditorPlugin.findImageDescriptor("/org.eclipse.uml2.uml.edit/icons/full/obj16/Pseudostate_choice.gif")); //$NON-NLS-1$
-		entry.setLargeIcon(UMLDiagramEditorPlugin.findImageDescriptor("/org.eclipse.uml2.uml.edit/icons/full/obj16/Pseudostate_choice.gif")); //$NON-NLS-1$
+		entry.setSmallIcon(UMLElementTypes.getImageDescriptor(UMLElementTypes.Pseudostate_3010));
+		entry.setLargeIcon(entry.getSmallIcon());
 		return entry;
 	}
 
@@ -188,8 +188,8 @@ public class UMLPaletteFactory {
 		List/*<IElementType>*/types = new ArrayList/*<IElementType>*/(1);
 		types.add(UMLElementTypes.Pseudostate_3011);
 		NodeToolEntry entry = new NodeToolEntry(UMLDiagramEditorPlugin.getString("Terminate11CreationTool.title"), UMLDiagramEditorPlugin.getString("Terminate11CreationTool.desc"), types); //$NON-NLS-1$ $NON-NLS-2$
-		entry.setSmallIcon(UMLDiagramEditorPlugin.findImageDescriptor("/org.eclipse.uml2.uml.edit/icons/full/obj16/Pseudostate_terminate.gif")); //$NON-NLS-1$
-		entry.setLargeIcon(UMLDiagramEditorPlugin.findImageDescriptor("/org.eclipse.uml2.uml.edit/icons/full/obj16/Pseudostate_terminate.gif")); //$NON-NLS-1$
+		entry.setSmallIcon(UMLElementTypes.getImageDescriptor(UMLElementTypes.Pseudostate_3011));
+		entry.setLargeIcon(entry.getSmallIcon());
 		return entry;
 	}
 

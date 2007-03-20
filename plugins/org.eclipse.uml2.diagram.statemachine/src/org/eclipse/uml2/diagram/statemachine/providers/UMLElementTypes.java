@@ -1,5 +1,6 @@
 package org.eclipse.uml2.diagram.statemachine.providers;
 
+import java.util.HashMap;
 import java.util.HashSet;
 import java.util.IdentityHashMap;
 import java.util.Map;
@@ -33,6 +34,11 @@ public class UMLElementTypes extends ElementInitializers {
 	 * @generated
 	 */
 	private static Map elements;
+
+	/**
+	 * @NOT generated
+	 */
+	private static Map<IElementType, ImageDescriptor> pseudostateDescriptors;
 
 	/**
 	 * @generated
@@ -114,9 +120,23 @@ public class UMLElementTypes extends ElementInitializers {
 	}
 
 	/**
-	 * @generated
+	 * @generated NOT
 	 */
 	public static ImageDescriptor getImageDescriptor(IAdaptable hint) {
+		IElementType type = (IElementType) hint.getAdapter(IElementType.class);
+		if (type != null) {
+			ImageDescriptor imageDescriptor = getPseudostateImageDescriptor(type);
+			if (imageDescriptor != null) {
+				return imageDescriptor;
+			}
+		}
+		return getImageDescriptorGen(hint);
+	}
+
+	/**
+	 * @generated
+	 */
+	public static ImageDescriptor getImageDescriptorGen(IAdaptable hint) {
 		ENamedElement element = getElement(hint);
 		if (element == null) {
 			return null;
@@ -125,9 +145,29 @@ public class UMLElementTypes extends ElementInitializers {
 	}
 
 	/**
-	 * @generated
+	 * @generated NOT
 	 */
 	public static Image getImage(IAdaptable hint) {
+		IElementType type = (IElementType) hint.getAdapter(IElementType.class);
+		if (type != null && pseudostateDescriptors.containsKey(type)) {
+			String key = type.getId();
+			Image image = getImageRegistry().get(key);
+			if (image == null) {
+				ImageDescriptor imageDescriptor = getPseudostateImageDescriptor(type);
+				if (imageDescriptor != null) {
+					getImageRegistry().put(key, imageDescriptor);
+					image = getImageRegistry().get(key);
+				}
+			}
+			return image;
+		}
+		return getImageGen(hint);
+	}
+
+	/**
+	 * @generated
+	 */
+	public static Image getImageGen(IAdaptable hint) {
 		ENamedElement element = getElement(hint);
 		if (element == null) {
 			return null;
@@ -188,6 +228,27 @@ public class UMLElementTypes extends ElementInitializers {
 			elements.put(Transition_4001, UMLPackage.eINSTANCE.getTransition());
 		}
 		return (ENamedElement) elements.get(type);
+	}
+
+	/**
+	 * @NOT generated
+	 */
+	private static ImageDescriptor getPseudostateImageDescriptor(IElementType hint) {
+		if (pseudostateDescriptors == null) {
+			pseudostateDescriptors = new HashMap<IElementType, ImageDescriptor>();
+			pseudostateDescriptors.put(Pseudostate_3004, UMLDiagramEditorPlugin.findImageDescriptor("/org.eclipse.uml2.uml.edit/icons/full/obj16/Pseudostate_initial.gif")); //$NON-NLS-1$
+			pseudostateDescriptors.put(Pseudostate_3005, UMLDiagramEditorPlugin.findImageDescriptor("/org.eclipse.uml2.uml.edit/icons/full/obj16/Pseudostate_shallowHistory.gif")); //$NON-NLS-1$
+			pseudostateDescriptors.put(Pseudostate_3006, UMLDiagramEditorPlugin.findImageDescriptor("/org.eclipse.uml2.uml.edit/icons/full/obj16/Pseudostate_deepHistory.gif")); //$NON-NLS-1$
+			pseudostateDescriptors.put(Pseudostate_3007, UMLDiagramEditorPlugin.findImageDescriptor("/org.eclipse.uml2.uml.edit/icons/full/obj16/Pseudostate_fork.gif")); //$NON-NLS-1$
+			pseudostateDescriptors.put(Pseudostate_3008, UMLDiagramEditorPlugin.findImageDescriptor("/org.eclipse.uml2.uml.edit/icons/full/obj16/Pseudostate_join.gif")); //$NON-NLS-1$
+			pseudostateDescriptors.put(Pseudostate_3009, UMLDiagramEditorPlugin.findImageDescriptor("/org.eclipse.uml2.uml.edit/icons/full/obj16/Pseudostate_junction.gif")); //$NON-NLS-1$
+			pseudostateDescriptors.put(Pseudostate_3010, UMLDiagramEditorPlugin.findImageDescriptor("/org.eclipse.uml2.uml.edit/icons/full/obj16/Pseudostate_choice.gif")); //$NON-NLS-1$
+			pseudostateDescriptors.put(Pseudostate_3011, UMLDiagramEditorPlugin.findImageDescriptor("/org.eclipse.uml2.uml.edit/icons/full/obj16/Pseudostate_terminate.gif")); //$NON-NLS-1$
+
+			pseudostateDescriptors.put(Pseudostate_3014, UMLDiagramEditorPlugin.findImageDescriptor("/org.eclipse.uml2.uml.edit/icons/full/obj16/Pseudostate_entryPoint.gif")); //$NON-NLS-1$
+			pseudostateDescriptors.put(Pseudostate_3015, UMLDiagramEditorPlugin.findImageDescriptor("/org.eclipse.uml2.uml.edit/icons/full/obj16/Pseudostate_exitPoint.gif")); //$NON-NLS-1$
+		}
+		return pseudostateDescriptors.get(hint);
 	}
 
 	/**
