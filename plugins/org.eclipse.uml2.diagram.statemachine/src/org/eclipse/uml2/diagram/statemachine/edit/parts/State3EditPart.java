@@ -34,6 +34,7 @@ import org.eclipse.gmf.runtime.gef.ui.figures.NodeFigure;
 import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.uml2.diagram.common.draw2d.LaneLayout;
 import org.eclipse.uml2.diagram.common.editpolicies.LaneLayoutEditPolicy;
+import org.eclipse.uml2.diagram.statemachine.edit.policies.OpenDiagramEditPolicy;
 import org.eclipse.uml2.diagram.statemachine.edit.policies.State3CanonicalEditPolicy;
 import org.eclipse.uml2.diagram.statemachine.edit.policies.State3ItemSemanticEditPolicy;
 import org.eclipse.uml2.diagram.statemachine.part.UMLVisualIDRegistry;
@@ -77,6 +78,7 @@ public class State3EditPart extends AbstractBorderedShapeEditPart {
 		installEditPolicy(EditPolicyRoles.CANONICAL_ROLE, new State3CanonicalEditPolicy());
 		installEditPolicy(EditPolicy.LAYOUT_ROLE, createLayoutEditPolicy());
 		installEditPolicy("LayoutEditPolicy", new LaneLayoutEditPolicy()); //$NON-NLS-1$
+		installEditPolicy(EditPolicyRoles.OPEN_ROLE, new OpenDiagramEditPolicy());
 	}
 
 	/**

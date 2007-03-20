@@ -53,6 +53,9 @@ public class State3ViewFactory extends AbstractShapeViewFactory {
 			shortcutAnnotation.getDetails().put("modelID", StateMachineEditPart.MODEL_ID); //$NON-NLS-1$
 			view.getEAnnotations().add(shortcutAnnotation);
 		}
+		EAnnotation diagramFacet = EcoreFactory.eINSTANCE.createEAnnotation();
+		diagramFacet.setSource("uri://eclipse.org/gmf/openDiagramPolicy");
+		view.getEAnnotations().add(diagramFacet);
 		getViewService().createNode(semanticAdapter, view, UMLVisualIDRegistry.getType(StateName2EditPart.VISUAL_ID), ViewUtil.APPEND, true, getPreferencesHint());
 	}
 

@@ -23,13 +23,19 @@ import org.eclipse.emf.ecore.resource.ResourceSet;
 
 import org.eclipse.emf.transaction.NotificationFilter;
 
+import org.eclipse.emf.workspace.util.WorkspaceSynchronizer;
+
 import org.eclipse.gmf.runtime.common.ui.services.marker.MarkerNavigationService;
 
 import org.eclipse.gmf.runtime.diagram.core.preferences.PreferencesHint;
 
+import org.eclipse.gmf.runtime.diagram.ui.parts.IDiagramEditorInput;
+
 import org.eclipse.gmf.runtime.diagram.ui.resources.editor.document.IDocumentProvider;
 
 import org.eclipse.gmf.runtime.diagram.ui.resources.editor.ide.document.StorageDiagramDocumentProvider;
+
+import org.eclipse.gmf.runtime.notation.Diagram;
 
 import org.eclipse.jface.dialogs.ErrorDialog;
 import org.eclipse.jface.dialogs.IMessageProvider;
@@ -151,6 +157,22 @@ public class UMLDiagramEditor extends DiagramDocumentEditor implements IGotoMark
 			setDocumentProvider(new UMLDocumentProvider(contentObjectURI));
 		} else {
 			setDocumentProvider(new StorageDiagramDocumentProvider());
+		}
+	}
+
+	/**
+	 * @generated
+	 */
+	public void doSetInput(IEditorInput input, boolean releaseEditorContents) throws CoreException {
+		contentObjectURI = null;
+		if (input instanceof IDiagramEditorInput) {
+			final Diagram diagram = ((IDiagramEditorInput) input).getDiagram();
+			final IFile diagramFile = WorkspaceSynchronizer.getFile(diagram.eResource());
+			FileEditorInput newInput = new FileEditorInput(diagramFile);
+			contentObjectURI = diagram.eResource().getURIFragment(diagram);
+			super.doSetInput(newInput, releaseEditorContents);
+		} else {
+			super.doSetInput(input, releaseEditorContents);
 		}
 	}
 
