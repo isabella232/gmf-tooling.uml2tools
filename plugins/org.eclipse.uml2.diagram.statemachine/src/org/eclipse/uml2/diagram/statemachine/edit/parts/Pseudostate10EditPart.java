@@ -27,6 +27,7 @@ import org.eclipse.gmf.runtime.draw2d.ui.figures.ConstrainedToolbarLayout;
 import org.eclipse.gmf.runtime.gef.ui.figures.DefaultSizeNodeFigure;
 import org.eclipse.gmf.runtime.gef.ui.figures.NodeFigure;
 import org.eclipse.gmf.runtime.notation.View;
+import org.eclipse.uml2.diagram.common.draw2d.BorderItemNameLocator;
 import org.eclipse.uml2.diagram.statemachine.edit.policies.Pseudostate10ItemSemanticEditPolicy;
 import org.eclipse.uml2.diagram.statemachine.part.UMLVisualIDRegistry;
 
@@ -114,13 +115,26 @@ public class Pseudostate10EditPart extends BorderedBorderItemEditPart {
 	/**
 	 * @generated
 	 */
-	protected void addBorderItem(IFigure borderItemContainer, IBorderItemEditPart borderItemEditPart) {
-		if (borderItemEditPart instanceof PseudostateName2EditPart) {
+	protected void addBorderItemGen(IFigure borderItemContainer, IBorderItemEditPart borderItemEditPart) {
+		if (borderItemEditPart instanceof org.eclipse.uml2.diagram.statemachine.edit.parts.PseudostateName2EditPart) {
 			BorderItemLocator locator = new BorderItemLocator(getMainFigure(), PositionConstants.SOUTH);
 			locator.setBorderItemOffset(new Dimension(-20, -20));
 			borderItemContainer.add(borderItemEditPart.getFigure(), locator);
 		} else {
 			super.addBorderItem(borderItemContainer, borderItemEditPart);
+		}
+	}
+
+	/**
+	 * @generated NOT
+	 */
+	protected void addBorderItem(IFigure borderItemContainer, IBorderItemEditPart borderItemEditPart) {
+		if (borderItemEditPart instanceof PseudostateName2EditPart) {
+			BorderItemLocator locator = new BorderItemNameLocator(getMainFigure(), PositionConstants.SOUTH);
+			locator.setBorderItemOffset(new Dimension(-20, -20));
+			borderItemContainer.add(borderItemEditPart.getFigure(), locator);
+		} else {
+			addBorderItemGen(borderItemContainer, borderItemEditPart);
 		}
 	}
 
@@ -181,7 +195,7 @@ public class Pseudostate10EditPart extends BorderedBorderItemEditPart {
 	 * @generated
 	 */
 	public EditPart getPrimaryChildEditPart() {
-		return getChildBySemanticHint(UMLVisualIDRegistry.getType(PseudostateName2EditPart.VISUAL_ID));
+		return getChildBySemanticHint(UMLVisualIDRegistry.getType(org.eclipse.uml2.diagram.statemachine.edit.parts.PseudostateName2EditPart.VISUAL_ID));
 	}
 
 	/**
