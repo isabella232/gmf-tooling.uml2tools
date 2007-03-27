@@ -347,7 +347,7 @@ public class UMLVisualIDRegistry {
 	 * @generated
 	 */
 	private static boolean isNodeProfile_2002(Profile element) {
-		return Profile_2002.matches(element);
+		return true;
 	}
 
 	/**
@@ -649,15 +649,6 @@ public class UMLVisualIDRegistry {
 	private static final Matcher Stereotype_2001 = new Matcher(UMLOCLFactory.getExpression(
 			"generalization.general->forAll(e | e.oclIsKindOf(uml::Stereotype)) and\r\ngeneralization.specific->forAll(e | e.oclIsKindOf(uml::Stereotype))", //$NON-NLS-1$
 			UMLPackage.eINSTANCE.getStereotype()));
-
-	/**
-	 * @generated
-	 */
-	private static final Matcher Profile_2002 = new Matcher(
-			UMLOCLFactory
-					.getExpression(
-							"self.metaclassReference.importedElement->\r\nselect(c | c.oclIsKindOf(uml::Classifier) and\r\n(c.oclAsType(uml::Classifier).generalization.general.namespace->exists(n|n=self) or \r\n c.oclAsType(uml::Classifier).generalization.specific.namespace->exists(n|n=self)))->isEmpty()\r\nand \r\n(self.metamodelReference->isEmpty() or self.metaclassReference->isEmpty() or self.metamodelReference.importedPackage.elementImport.importedElement.allOwningPackages()->\r\nunion(self.metaclassReference.importedElement.allOwningPackages() )->notEmpty())", //$NON-NLS-1$
-							UMLPackage.eINSTANCE.getProfile()));
 
 	/**
 	 * @generated
