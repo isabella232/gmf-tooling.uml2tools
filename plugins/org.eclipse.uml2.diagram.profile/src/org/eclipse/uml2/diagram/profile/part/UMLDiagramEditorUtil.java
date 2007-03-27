@@ -101,8 +101,28 @@ public class UMLDiagramEditorUtil {
 	/**
 	 * @generated
 	 */
-	public static boolean exists(IPath path) {
-		return ResourcesPlugin.getWorkspace().getRoot().exists(path);
+	public static String getUniqueFileName(IPath containerFullPath, String fileName, String extension) {
+		if (containerFullPath == null) {
+			containerFullPath = new Path(""); //$NON-NLS-1$
+		}
+		if (fileName == null || fileName.trim().length() == 0) {
+			fileName = "default"; //$NON-NLS-1$
+		}
+		IPath filePath = containerFullPath.append(fileName);
+		if (extension != null && !extension.equals(filePath.getFileExtension())) {
+			filePath = filePath.addFileExtension(extension);
+		}
+		extension = filePath.getFileExtension();
+		fileName = filePath.removeFileExtension().lastSegment();
+		int i = 1;
+		while (ResourcesPlugin.getWorkspace().getRoot().exists(filePath)) {
+			i++;
+			filePath = containerFullPath.append(fileName + i);
+			if (extension != null) {
+				filePath = filePath.addFileExtension(extension);
+			}
+		}
+		return filePath.lastSegment();
 	}
 
 	/**
@@ -112,7 +132,7 @@ public class UMLDiagramEditorUtil {
 	 * @generated
 	 * @return the created resource, or <code>null</code> if the resource was not created
 	 */
-	public static final Resource createDiagram(URI diagramURI, URI modelURI, IProgressMonitor progressMonitor) {
+	public static Resource createDiagram(URI diagramURI, URI modelURI, IProgressMonitor progressMonitor) {
 		TransactionalEditingDomain editingDomain = GMFEditingDomainFactory.INSTANCE.createEditingDomain();
 		progressMonitor.beginTask("Creating diagram and model files", 3);
 		final Resource diagramResource = editingDomain.getResourceSet().createResource(diagramURI);
@@ -123,12 +143,14 @@ public class UMLDiagramEditorUtil {
 			protected CommandResult doExecuteWithResult(IProgressMonitor monitor, IAdaptable info) throws ExecutionException {
 				Profile model = createInitialModel();
 				attachModelToResource(model, modelResource);
+
 				Diagram diagram = ViewService.createDiagram(model, ProfileEditPart.MODEL_ID, UMLDiagramEditorPlugin.DIAGRAM_PREFERENCES_HINT);
 				if (diagram != null) {
 					diagramResource.getContents().add(diagram);
 					diagram.setName(diagramName);
 					diagram.setElement(model);
 				}
+
 				try {
 					Map options = new HashMap();
 					options.put(XMIResource.OPTION_ENCODING, "UTF-8"); //$NON-NLS-1$
