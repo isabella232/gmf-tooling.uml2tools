@@ -28,7 +28,7 @@ public class ElementImport2CreateCommand extends CreateElementCommand {
 	 */
 	protected EClass getEClassToEdit() {
 		return UMLPackage.eINSTANCE.getNamespace();
-	};
+	}
 
 	/**
 	 * @generated

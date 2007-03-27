@@ -31,7 +31,7 @@ public class ConstraintCreateCommand extends CreateElementCommand {
 	 */
 	protected EClass getEClassToEdit() {
 		return UMLPackage.eINSTANCE.getNamespace();
-	};
+	}
 
 	/**
 	 * @generated

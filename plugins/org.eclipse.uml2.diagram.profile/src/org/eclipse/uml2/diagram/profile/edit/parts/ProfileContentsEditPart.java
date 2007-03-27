@@ -13,6 +13,7 @@ import org.eclipse.gmf.runtime.draw2d.ui.figures.ConstrainedToolbarLayout;
 import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.uml2.diagram.profile.edit.policies.ProfileContentsCanonicalEditPolicy;
 import org.eclipse.uml2.diagram.profile.edit.policies.ProfileContentsItemSemanticEditPolicy;
+import org.eclipse.uml2.diagram.profile.part.Messages;
 
 /**
  * @generated
@@ -42,7 +43,7 @@ public class ProfileContentsEditPart extends ListCompartmentEditPart {
 	 * @generated
 	 */
 	public String getCompartmentName() {
-		return "contents";
+		return Messages.ProfileContentsEditPart_title;
 	}
 
 	/**
@@ -74,4 +75,5 @@ public class ProfileContentsEditPart extends ListCompartmentEditPart {
 			super.setRatio(ratio);
 		}
 	}
+
 }

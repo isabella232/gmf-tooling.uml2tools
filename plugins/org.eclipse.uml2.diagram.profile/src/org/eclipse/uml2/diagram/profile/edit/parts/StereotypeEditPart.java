@@ -84,8 +84,8 @@ public class StereotypeEditPart extends ShapeNodeEditPart {
 				return null;
 			}
 		});
-		super.createDefaultEditPolicies();
 
+		super.createDefaultEditPolicies();
 		installEditPolicy(EditPolicyRoles.SEMANTIC_ROLE, new StereotypeItemSemanticEditPolicy());
 		installEditPolicy(EditPolicy.LAYOUT_ROLE, createLayoutEditPolicy());
 	}
@@ -204,7 +204,6 @@ public class StereotypeEditPart extends ShapeNodeEditPart {
 	 */
 	protected NodeFigure createNodePlate() {
 		DefaultSizeNodeFigure result = new DefaultSizeNodeFigure(getMapMode().DPtoLP(100), getMapMode().DPtoLP(25));
-
 		return result;
 	}
 
@@ -326,7 +325,7 @@ public class StereotypeEditPart extends ShapeNodeEditPart {
 			RectangleFigure stereotypeFigure_AttributesCompartment0 = new RectangleFigure();
 			stereotypeFigure_AttributesCompartment0.setFill(true);
 			stereotypeFigure_AttributesCompartment0.setFillXOR(false);
-			stereotypeFigure_AttributesCompartment0.setOutline(true);
+			stereotypeFigure_AttributesCompartment0.setOutline(false);
 			stereotypeFigure_AttributesCompartment0.setOutlineXOR(false);
 			stereotypeFigure_AttributesCompartment0.setLineWidth(1);
 			stereotypeFigure_AttributesCompartment0.setLineStyle(Graphics.LINE_SOLID);
@@ -337,7 +336,7 @@ public class StereotypeEditPart extends ShapeNodeEditPart {
 			RectangleFigure stereotypeFigure_ConstraintsCompartment0 = new RectangleFigure();
 			stereotypeFigure_ConstraintsCompartment0.setFill(true);
 			stereotypeFigure_ConstraintsCompartment0.setFillXOR(false);
-			stereotypeFigure_ConstraintsCompartment0.setOutline(true);
+			stereotypeFigure_ConstraintsCompartment0.setOutline(false);
 			stereotypeFigure_ConstraintsCompartment0.setOutlineXOR(false);
 			stereotypeFigure_ConstraintsCompartment0.setLineWidth(1);
 			stereotypeFigure_ConstraintsCompartment0.setLineStyle(Graphics.LINE_SOLID);

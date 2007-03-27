@@ -1,5 +1,9 @@
 package org.eclipse.uml2.diagram.profile.edit.policies;
 
+import java.util.Collections;
+import java.util.HashMap;
+import java.util.Map;
+
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.transaction.TransactionalEditingDomain;
@@ -30,17 +34,11 @@ import org.eclipse.gmf.runtime.emf.type.core.requests.ReorientReferenceRelations
 import org.eclipse.gmf.runtime.emf.type.core.requests.ReorientRelationshipRequest;
 import org.eclipse.gmf.runtime.emf.type.core.requests.SetRequest;
 import org.eclipse.gmf.runtime.notation.View;
-import java.util.Collections;
-import java.util.HashMap;
-import java.util.Map;
-
 import org.eclipse.uml2.diagram.profile.edit.helpers.UMLBaseEditHelper;
-
 import org.eclipse.uml2.diagram.profile.expressions.UMLAbstractExpression;
 import org.eclipse.uml2.diagram.profile.expressions.UMLOCLFactory;
-
+import org.eclipse.uml2.diagram.profile.part.Messages;
 import org.eclipse.uml2.diagram.profile.part.UMLDiagramEditorPlugin;
-
 import org.eclipse.uml2.uml.Classifier;
 import org.eclipse.uml2.uml.ElementImport;
 import org.eclipse.uml2.uml.Package;
@@ -239,40 +237,40 @@ public class UMLBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 	}
 
 	/**
-	 * @generated 
+	 * @generated
 	 */
 	protected static class LinkConstraints {
 
 		/**
-		 * @generated 
+		 * @generated
 		 */
 		private static final String OPPOSITE_END_VAR = "oppositeEnd"; //$NON-NLS-1$
 
 		/**
-		 * @generated 
+		 * @generated
 		 */
 		private static UMLAbstractExpression Extension_4002_TargetExpression;
 
 		/**
-		 * @generated 
+		 * @generated
 		 */
 		static {
 			Map env = new HashMap(3);
-			env.put("oppositeEnd", UMLPackage.eINSTANCE.getStereotype()); //$NON-NLS-1$
-			Extension_4002_TargetExpression = UMLOCLFactory.getExpression(
-					"let metaclass : Class = self.importedElement.oclAsType(Class) in\r\nmetaclass.isMetaclass() and \r\nnot oppositeEnd.getAllExtendedMetaclasses()->includes(metaclass)\r\n", //$NON-NLS-1$
-					UMLPackage.eINSTANCE.getElementImport(), env);
+			env.put(OPPOSITE_END_VAR, UMLPackage.eINSTANCE.getStereotype());
+			Extension_4002_TargetExpression = UMLOCLFactory
+					.getExpression(
+							"let metaclass : Class = self.importedElement.oclAsType(Class) in\r\nmetaclass.isMetaclass() and \r\nnot oppositeEnd.getAllExtendedMetaclasses()->includes(metaclass)\r\n", UMLPackage.eINSTANCE.getElementImport(), env); //$NON-NLS-1$
 		}
 
 		/**
-		 * @generated 
+		 * @generated
 		 */
 		public static boolean canCreateGeneralization_4001(Classifier source, Classifier target) {
 			return true;
 		}
 
 		/**
-		 * @generated 
+		 * @generated
 		 */
 		public static boolean canCreateExtension_4002(Package container, Stereotype source, ElementImport target) {
 			if (!evaluate(Extension_4002_TargetExpression, target, source, true)) {
@@ -282,7 +280,7 @@ public class UMLBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 		}
 
 		/**
-		 * @generated 
+		 * @generated
 		 */
 		private static boolean evaluate(UMLAbstractExpression constraint, Object sourceEnd, Object oppositeEnd, boolean clearEnv) {
 			if (sourceEnd == null) {
@@ -293,10 +291,11 @@ public class UMLBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 				Object val = constraint.evaluate(sourceEnd, evalEnv);
 				return (val instanceof Boolean) ? ((Boolean) val).booleanValue() : false;
 			} catch (Exception e) {
-				UMLDiagramEditorPlugin.getInstance().logError("Link constraint evaluation error", e); //$NON-NLS-1$
+				UMLDiagramEditorPlugin.getInstance().logError(Messages.EvaluateOCLLinkConstraintError, e);
 				return false;
 			}
 		}
+
 	}
 
 }

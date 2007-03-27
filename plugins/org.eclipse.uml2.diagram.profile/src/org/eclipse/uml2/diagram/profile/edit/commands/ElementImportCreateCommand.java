@@ -32,7 +32,7 @@ public class ElementImportCreateCommand extends CreateElementCommand {
 	 */
 	protected EClass getEClassToEdit() {
 		return UMLPackage.eINSTANCE.getNamespace();
-	};
+	}
 
 	/**
 	 * @generated

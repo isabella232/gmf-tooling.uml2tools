@@ -31,7 +31,7 @@ public class PropertyCreateCommand extends CreateElementCommand {
 	 */
 	protected EClass getEClassToEdit() {
 		return UMLPackage.eINSTANCE.getStructuredClassifier();
-	};
+	}
 
 	/**
 	 * @generated

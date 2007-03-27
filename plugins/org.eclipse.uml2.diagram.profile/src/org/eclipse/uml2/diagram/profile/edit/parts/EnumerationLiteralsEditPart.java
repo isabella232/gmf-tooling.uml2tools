@@ -12,6 +12,7 @@ import org.eclipse.gmf.runtime.diagram.ui.figures.ResizableCompartmentFigure;
 import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.uml2.diagram.profile.edit.policies.EnumerationLiteralsCanonicalEditPolicy;
 import org.eclipse.uml2.diagram.profile.edit.policies.EnumerationLiteralsItemSemanticEditPolicy;
+import org.eclipse.uml2.diagram.profile.part.Messages;
 
 /**
  * @generated
@@ -41,7 +42,7 @@ public class EnumerationLiteralsEditPart extends ListCompartmentEditPart {
 	 * @generated
 	 */
 	public String getCompartmentName() {
-		return "literals";
+		return Messages.EnumerationLiteralsEditPart_title;
 	}
 
 	/**
@@ -72,4 +73,5 @@ public class EnumerationLiteralsEditPart extends ListCompartmentEditPart {
 		// nothing to do -- parent layout does not accept Double constraints as ratio
 		// super.setRatio(ratio); 
 	}
+
 }

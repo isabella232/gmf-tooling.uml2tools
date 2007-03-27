@@ -12,6 +12,7 @@ import org.eclipse.gmf.runtime.diagram.ui.figures.ResizableCompartmentFigure;
 import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.uml2.diagram.profile.edit.policies.StereotypeAttributesCanonicalEditPolicy;
 import org.eclipse.uml2.diagram.profile.edit.policies.StereotypeAttributesItemSemanticEditPolicy;
+import org.eclipse.uml2.diagram.profile.part.Messages;
 
 /**
  * @generated
@@ -41,7 +42,7 @@ public class StereotypeAttributesEditPart extends ListCompartmentEditPart {
 	 * @generated
 	 */
 	public String getCompartmentName() {
-		return "attributes";
+		return Messages.StereotypeAttributesEditPart_title;
 	}
 
 	/**
@@ -72,4 +73,5 @@ public class StereotypeAttributesEditPart extends ListCompartmentEditPart {
 		// nothing to do -- parent layout does not accept Double constraints as ratio
 		// super.setRatio(ratio); 
 	}
+
 }

@@ -31,7 +31,7 @@ public class StereotypeCreateCommand extends CreateElementCommand {
 	 */
 	protected EClass getEClassToEdit() {
 		return UMLPackage.eINSTANCE.getPackage();
-	};
+	}
 
 	/**
 	 * @generated
