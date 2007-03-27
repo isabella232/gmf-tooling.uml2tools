@@ -2,10 +2,10 @@ package org.eclipse.uml2.diagram.profile.edit.parts;
 
 import org.eclipse.draw2d.Graphics;
 import org.eclipse.draw2d.IFigure;
+import org.eclipse.draw2d.MarginBorder;
 import org.eclipse.draw2d.RectangleFigure;
 import org.eclipse.draw2d.StackLayout;
 import org.eclipse.draw2d.ToolbarLayout;
-import org.eclipse.draw2d.geometry.Dimension;
 import org.eclipse.gef.EditPart;
 import org.eclipse.gef.EditPolicy;
 import org.eclipse.gef.Request;
@@ -79,8 +79,8 @@ public class EnumerationEditPart extends ShapeNodeEditPart {
 				return null;
 			}
 		});
-		super.createDefaultEditPolicies();
 
+		super.createDefaultEditPolicies();
 		installEditPolicy(EditPolicyRoles.SEMANTIC_ROLE, new EnumerationItemSemanticEditPolicy());
 		installEditPolicy(EditPolicy.LAYOUT_ROLE, createLayoutEditPolicy());
 	}
@@ -185,7 +185,6 @@ public class EnumerationEditPart extends ShapeNodeEditPart {
 	 */
 	protected NodeFigure createNodePlate() {
 		DefaultSizeNodeFigure result = new DefaultSizeNodeFigure(getMapMode().DPtoLP(100), getMapMode().DPtoLP(60));
-
 		return result;
 	}
 
@@ -280,7 +279,6 @@ public class EnumerationEditPart extends ShapeNodeEditPart {
 			classFigure_NameContainer0.setOutlineXOR(false);
 			classFigure_NameContainer0.setLineWidth(1);
 			classFigure_NameContainer0.setLineStyle(Graphics.LINE_SOLID);
-			classFigure_NameContainer0.setMinimumSize(new Dimension(getMapMode().DPtoLP(0), getMapMode().DPtoLP(25)));
 
 			this.add(classFigure_NameContainer0);
 
@@ -290,6 +288,8 @@ public class EnumerationEditPart extends ShapeNodeEditPart {
 
 			WrapLabel classFigure_name1 = new WrapLabel();
 			classFigure_name1.setText("");
+
+			classFigure_name1.setBorder(new MarginBorder(getMapMode().DPtoLP(5), getMapMode().DPtoLP(5), getMapMode().DPtoLP(5), getMapMode().DPtoLP(5)));
 
 			classFigure_NameContainer0.add(classFigure_name1);
 			setFigureClassFigure_name(classFigure_name1);
