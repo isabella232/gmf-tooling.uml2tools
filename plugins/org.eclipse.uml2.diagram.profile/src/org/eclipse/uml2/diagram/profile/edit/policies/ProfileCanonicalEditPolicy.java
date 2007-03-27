@@ -39,6 +39,7 @@ import org.eclipse.uml2.diagram.profile.edit.parts.PropertyEditPart;
 import org.eclipse.uml2.diagram.profile.edit.parts.Stereotype2EditPart;
 import org.eclipse.uml2.diagram.profile.edit.parts.StereotypeEditPart;
 import org.eclipse.uml2.diagram.profile.part.UMLVisualIDRegistry;
+import org.eclipse.uml2.diagram.profile.providers.UMLElementTypes;
 import org.eclipse.uml2.uml.Classifier;
 import org.eclipse.uml2.uml.ElementImport;
 import org.eclipse.uml2.uml.Extension;
@@ -324,7 +325,7 @@ public class ProfileCanonicalEditPolicy extends CanonicalConnectionEditPolicy {
 					if (structuralFeatureResult instanceof EObject) {
 						EObject dst = (EObject) structuralFeatureResult;
 						EObject src = container;
-						myLinkDescriptors.add(new LinkDescriptor(src, dst, nextValue, linkVID));
+						myLinkDescriptors.add(new LinkDescriptor(src, dst, nextValue, UMLElementTypes.Generalization_4001, linkVID));
 					}
 				}
 			}
@@ -399,10 +400,19 @@ public class ProfileCanonicalEditPolicy extends CanonicalConnectionEditPolicy {
 		/**
 		 * @generated
 		 */
-		protected LinkDescriptor(EObject source, EObject destination, EObject linkElement, int linkVID) {
+		protected LinkDescriptor(EObject source, EObject destination, EObject linkElement, IElementType elementType, int linkVID) {
 			this(source, destination, linkVID);
 			myLinkElement = linkElement;
-			mySemanticAdapter = new EObjectAdapter(linkElement);
+			final IElementType elementTypeCopy = elementType;
+			mySemanticAdapter = new EObjectAdapter(linkElement) {
+
+				public Object getAdapter(Class adapter) {
+					if (IElementType.class.equals(adapter)) {
+						return elementTypeCopy;
+					}
+					return super.getAdapter(adapter);
+				}
+			};
 		}
 
 		/**
