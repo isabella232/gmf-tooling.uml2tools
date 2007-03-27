@@ -42,6 +42,76 @@ public class UMLElementTypes extends ElementInitializers {
 	/**
 	 * @generated
 	 */
+	private static Set KNOWN_ELEMENT_TYPES;
+
+	/**
+	 * @generated
+	 */
+	public static final IElementType Profile_1000 = getElementType("org.eclipse.uml2.diagram.profile.Profile_1000"); //$NON-NLS-1$
+
+	/**
+	 * @generated
+	 */
+	public static final IElementType Stereotype_2001 = getElementType("org.eclipse.uml2.diagram.profile.Stereotype_2001"); //$NON-NLS-1$
+
+	/**
+	 * @generated
+	 */
+	public static final IElementType Profile_2002 = getElementType("org.eclipse.uml2.diagram.profile.Profile_2002"); //$NON-NLS-1$
+
+	/**
+	 * @generated
+	 */
+	public static final IElementType Enumeration_2003 = getElementType("org.eclipse.uml2.diagram.profile.Enumeration_2003"); //$NON-NLS-1$
+
+	/**
+	 * @generated
+	 */
+	public static final IElementType ElementImport_2006 = getElementType("org.eclipse.uml2.diagram.profile.ElementImport_2006"); //$NON-NLS-1$
+
+	/**
+	 * @generated
+	 */
+	public static final IElementType Profile_2007 = getElementType("org.eclipse.uml2.diagram.profile.Profile_2007"); //$NON-NLS-1$
+
+	/**
+	 * @generated
+	 */
+	public static final IElementType Property_3001 = getElementType("org.eclipse.uml2.diagram.profile.Property_3001"); //$NON-NLS-1$
+
+	/**
+	 * @generated
+	 */
+	public static final IElementType Constraint_3008 = getElementType("org.eclipse.uml2.diagram.profile.Constraint_3008"); //$NON-NLS-1$
+
+	/**
+	 * @generated
+	 */
+	public static final IElementType Stereotype_3003 = getElementType("org.eclipse.uml2.diagram.profile.Stereotype_3003"); //$NON-NLS-1$
+
+	/**
+	 * @generated
+	 */
+	public static final IElementType EnumerationLiteral_3005 = getElementType("org.eclipse.uml2.diagram.profile.EnumerationLiteral_3005"); //$NON-NLS-1$
+
+	/**
+	 * @generated
+	 */
+	public static final IElementType ElementImport_3009 = getElementType("org.eclipse.uml2.diagram.profile.ElementImport_3009"); //$NON-NLS-1$
+
+	/**
+	 * @generated
+	 */
+	public static final IElementType Generalization_4001 = getElementType("org.eclipse.uml2.diagram.profile.Generalization_4001"); //$NON-NLS-1$
+
+	/**
+	 * @generated
+	 */
+	public static final IElementType Extension_4002 = getElementType("org.eclipse.uml2.diagram.profile.Extension_4002"); //$NON-NLS-1$
+
+	/**
+	 * @generated
+	 */
 	private static ImageRegistry getImageRegistry() {
 		if (imageRegistry == null) {
 			imageRegistry = new ImageRegistry();
@@ -177,79 +247,9 @@ public class UMLElementTypes extends ElementInitializers {
 	/**
 	 * @generated
 	 */
-	public static final IElementType Profile_1000 = getElementType("org.eclipse.uml2.diagram.profile.Profile_1000"); //$NON-NLS-1$
-
-	/**
-	 * @generated
-	 */
-	public static final IElementType Stereotype_2001 = getElementType("org.eclipse.uml2.diagram.profile.Stereotype_2001"); //$NON-NLS-1$
-
-	/**
-	 * @generated
-	 */
-	public static final IElementType Profile_2002 = getElementType("org.eclipse.uml2.diagram.profile.Profile_2002"); //$NON-NLS-1$
-
-	/**
-	 * @generated
-	 */
-	public static final IElementType Enumeration_2003 = getElementType("org.eclipse.uml2.diagram.profile.Enumeration_2003"); //$NON-NLS-1$
-
-	/**
-	 * @generated
-	 */
-	public static final IElementType ElementImport_2006 = getElementType("org.eclipse.uml2.diagram.profile.ElementImport_2006"); //$NON-NLS-1$
-
-	/**
-	 * @generated
-	 */
-	public static final IElementType Profile_2007 = getElementType("org.eclipse.uml2.diagram.profile.Profile_2007"); //$NON-NLS-1$
-
-	/**
-	 * @generated
-	 */
-	public static final IElementType Property_3001 = getElementType("org.eclipse.uml2.diagram.profile.Property_3001"); //$NON-NLS-1$
-
-	/**
-	 * @generated
-	 */
-	public static final IElementType Constraint_3008 = getElementType("org.eclipse.uml2.diagram.profile.Constraint_3008"); //$NON-NLS-1$
-
-	/**
-	 * @generated
-	 */
-	public static final IElementType Stereotype_3003 = getElementType("org.eclipse.uml2.diagram.profile.Stereotype_3003"); //$NON-NLS-1$
-
-	/**
-	 * @generated
-	 */
-	public static final IElementType EnumerationLiteral_3005 = getElementType("org.eclipse.uml2.diagram.profile.EnumerationLiteral_3005"); //$NON-NLS-1$
-
-	/**
-	 * @generated
-	 */
-	public static final IElementType ElementImport_3009 = getElementType("org.eclipse.uml2.diagram.profile.ElementImport_3009"); //$NON-NLS-1$
-
-	/**
-	 * @generated
-	 */
-	public static final IElementType Generalization_4001 = getElementType("org.eclipse.uml2.diagram.profile.Generalization_4001"); //$NON-NLS-1$
-
-	/**
-	 * @generated
-	 */
-	public static final IElementType Extension_4002 = getElementType("org.eclipse.uml2.diagram.profile.Extension_4002"); //$NON-NLS-1$
-
-	/**
-	 * @generated
-	 */
 	private static IElementType getElementType(String id) {
 		return ElementTypeRegistry.getInstance().getType(id);
 	}
-
-	/**
-	 * @generated
-	 */
-	private static Set KNOWN_ELEMENT_TYPES;
 
 	/**
 	 * @generated
@@ -273,4 +273,5 @@ public class UMLElementTypes extends ElementInitializers {
 		}
 		return KNOWN_ELEMENT_TYPES.contains(elementType);
 	}
+
 }

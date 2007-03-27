@@ -40,7 +40,7 @@ public class StereotypeAttributesCanonicalEditPolicy extends CanonicalEditPolicy
 	}
 
 	/**
-	 * @generated
+	 * @generated 
 	 */
 	protected boolean shouldDeleteView(View view) {
 		return view.isSetElement() && view.getElement() != null && view.getElement().eIsProxy();
