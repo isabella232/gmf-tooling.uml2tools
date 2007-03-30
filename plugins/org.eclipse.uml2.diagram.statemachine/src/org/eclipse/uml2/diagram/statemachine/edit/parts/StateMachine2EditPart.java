@@ -31,6 +31,7 @@ import org.eclipse.gmf.runtime.draw2d.ui.figures.WrapLabel;
 import org.eclipse.gmf.runtime.gef.ui.figures.DefaultSizeNodeFigure;
 import org.eclipse.gmf.runtime.gef.ui.figures.NodeFigure;
 import org.eclipse.gmf.runtime.notation.View;
+import org.eclipse.uml2.diagram.common.draw2d.BisectionBorderItemLocator;
 import org.eclipse.uml2.diagram.common.draw2d.BorderItemNameLocator;
 import org.eclipse.uml2.diagram.common.draw2d.LaneLayout;
 import org.eclipse.uml2.diagram.common.editpolicies.LaneLayoutEditPolicy;
@@ -131,14 +132,12 @@ public class StateMachine2EditPart extends AbstractBorderedShapeEditPart {
 			return true;
 		}
 		if (childEditPart instanceof org.eclipse.uml2.diagram.statemachine.edit.parts.Pseudostate9EditPart) {
-
-			IBorderItemLocator locator = new BorderItemLocator(getMainFigure(), PositionConstants.WEST);
+			IBorderItemLocator locator = new BisectionBorderItemLocator(getMainFigure());
 			getBorderedFigure().getBorderItemContainer().add(((org.eclipse.uml2.diagram.statemachine.edit.parts.Pseudostate9EditPart) childEditPart).getFigure(), locator);
 			return true;
 		}
 		if (childEditPart instanceof org.eclipse.uml2.diagram.statemachine.edit.parts.Pseudostate10EditPart) {
-
-			IBorderItemLocator locator = new BorderItemLocator(getMainFigure(), PositionConstants.EAST);
+			IBorderItemLocator locator = new BisectionBorderItemLocator(getMainFigure());
 			getBorderedFigure().getBorderItemContainer().add(((org.eclipse.uml2.diagram.statemachine.edit.parts.Pseudostate10EditPart) childEditPart).getFigure(), locator);
 			return true;
 		}

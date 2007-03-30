@@ -32,6 +32,7 @@ import org.eclipse.gmf.runtime.draw2d.ui.figures.WrapLabel;
 import org.eclipse.gmf.runtime.gef.ui.figures.DefaultSizeNodeFigure;
 import org.eclipse.gmf.runtime.gef.ui.figures.NodeFigure;
 import org.eclipse.gmf.runtime.notation.View;
+import org.eclipse.uml2.diagram.common.draw2d.BisectionBorderItemLocator;
 import org.eclipse.uml2.diagram.common.draw2d.LaneLayout;
 import org.eclipse.uml2.diagram.common.editpolicies.LaneLayoutEditPolicy;
 import org.eclipse.uml2.diagram.statemachine.edit.policies.OpenDiagramEditPolicy;
@@ -133,14 +134,12 @@ public class State3EditPart extends AbstractBorderedShapeEditPart {
 			return true;
 		}
 		if (childEditPart instanceof ConnectionPointReferenceEditPart) {
-
-			IBorderItemLocator locator = new BorderItemLocator(getMainFigure(), PositionConstants.WEST);
+			IBorderItemLocator locator = new BisectionBorderItemLocator(getMainFigure());
 			getBorderedFigure().getBorderItemContainer().add(((ConnectionPointReferenceEditPart) childEditPart).getFigure(), locator);
 			return true;
 		}
 		if (childEditPart instanceof ConnectionPointReference2EditPart) {
-
-			IBorderItemLocator locator = new BorderItemLocator(getMainFigure(), PositionConstants.EAST);
+			IBorderItemLocator locator = new BisectionBorderItemLocator(getMainFigure());
 			getBorderedFigure().getBorderItemContainer().add(((ConnectionPointReference2EditPart) childEditPart).getFigure(), locator);
 			return true;
 		}
