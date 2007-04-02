@@ -69,17 +69,17 @@
    <extension point="org.eclipse.ui.popupMenus">
       <?gmfgen generated="true"?>
       <objectContribution
-            id="org.eclipse.uml2.diagram.profile.InitDiagram"
-            nameFilter="*.profile.uml"
-            objectClass="org.eclipse.core.resources.IFile">
+            adaptable="false"
+            id="org.eclipse.uml2.diagram.profile.LoadResource"
+            objectClass="org.eclipse.uml2.diagram.profile.edit.parts.ProfileEditPart">
          <action
-               label="%initDiagramActionLabel"
-               class="org.eclipse.uml2.diagram.profile.part.UMLInitDiagramFileAction"
-               menubarPath="additions"
+               class="org.eclipse.uml2.diagram.profile.part.UMLLoadResourceAction"
                enablesFor="1"
-               id="org.eclipse.uml2.diagram.profile.InitDiagramAction">
+               id="org.eclipse.uml2.diagram.profile.LoadResourceAction"
+               label="%loadResourceActionLabel"
+               menubarPath="additions">
          </action>
-      </objectContribution>
+      </objectContribution>           
    </extension>
 
    <extension point="org.eclipse.gmf.runtime.common.ui.services.action.contributionItemProviders">
@@ -491,7 +491,10 @@
             id="org.eclipse.uml2.diagram.profile.navigatorLinkHelper"
             class="org.eclipse.uml2.diagram.profile.navigator.UMLNavigatorLinkHelper">
          <editorInputEnablement>
-            <instanceof value="org.eclipse.gmf.runtime.diagram.ui.resources.editor.ide.document.FileEditorInputProxy"/>
+            <and>
+               <instanceof value="org.eclipse.emf.common.ui.URIEditorInput"/>
+               <test property="org.eclipse.uml2.diagram.profile.isURIEditorInput"/>
+            </and>
          </editorInputEnablement>
          <selectionEnablement>
             <instanceof value="org.eclipse.uml2.diagram.profile.navigator.UMLAbstractNavigatorItem"/>
@@ -537,28 +540,38 @@
    </extension><extension point="org.eclipse.ui.popupMenus">
       <?gmfgen generated="true"?>
       <objectContribution
-            adaptable="false"
-            id="org.eclipse.uml2.diagram.profile.ui.objectContribution.ProfileEditPart2"
-            objectClass="org.eclipse.uml2.diagram.profile.edit.parts.ProfileEditPart">
+            id="org.eclipse.uml2.diagram.profile.InitDiagram"
+            nameFilter="*.profile.uml"
+            objectClass="org.eclipse.core.resources.IFile">
          <action
-               class="org.eclipse.uml2.diagram.profile.part.UMLLoadResourceAction"
+               label="%initDiagramActionLabel"
+               class="org.eclipse.uml2.diagram.profile.part.UMLInitDiagramFileAction"
+               menubarPath="additions"
                enablesFor="1"
-               id="org.eclipse.uml2.diagram.profile.part.UMLLoadResourceActionID"
-               label="%loadResourceActionLabel"
-               menubarPath="additions">
+               id="org.eclipse.uml2.diagram.profile.InitDiagramAction">
          </action>
-      </objectContribution>           
+      </objectContribution>
    </extension>
 <extension point="org.eclipse.core.expressions.propertyTesters">
       <?gmfgen generated="true"?>
        <propertyTester
-           id="org.eclipse.uml2.diagram.profile.DomainModelElementTester"
+           id="org.eclipse.uml2.diagram.profile.URIEditorInputPropertyTester"
+           type="org.eclipse.emf.common.ui.URIEditorInput"
+           namespace="org.eclipse.uml2.diagram.profile"
+           properties="isURIEditorInput"
+           class="org.eclipse.uml2.diagram.profile.part.UMLUriEditorInputTester">
+       </propertyTester>
+   </extension><extension point="org.eclipse.core.expressions.propertyTesters">
+      <?gmfgen generated="true"?>
+       <propertyTester
+           id="org.eclipse.uml2.diagram.profile.DomainModelElementPropertyTester"
            type="org.eclipse.emf.ecore.EObject"
            namespace="org.eclipse.uml2.diagram.profile"
            properties="isDomainModelElement"
            class="org.eclipse.uml2.diagram.profile.part.UMLDomainModelElementTester">
        </propertyTester>
    </extension>
+
 
 
 

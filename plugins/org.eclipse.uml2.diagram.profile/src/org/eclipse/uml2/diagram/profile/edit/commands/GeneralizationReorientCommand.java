@@ -23,6 +23,11 @@ public class GeneralizationReorientCommand extends EditElementCommand {
 	/**
 	 * @generated
 	 */
+	private final EObject oldEnd;
+
+	/**
+	 * @generated
+	 */
 	private final EObject newEnd;
 
 	/**
@@ -31,6 +36,7 @@ public class GeneralizationReorientCommand extends EditElementCommand {
 	public GeneralizationReorientCommand(ReorientRelationshipRequest request) {
 		super(request.getLabel(), request.getRelationship(), request);
 		reorientDirection = request.getDirection();
+		oldEnd = request.getOldRelationshipEnd();
 		newEnd = request.getNewRelationshipEnd();
 	}
 
@@ -42,10 +48,10 @@ public class GeneralizationReorientCommand extends EditElementCommand {
 			return false;
 		}
 		if (reorientDirection == ReorientRelationshipRequest.REORIENT_SOURCE) {
-			return newEnd instanceof Classifier;
+			return oldEnd instanceof Classifier && newEnd instanceof Classifier;
 		}
 		if (reorientDirection == ReorientRelationshipRequest.REORIENT_TARGET) {
-			return newEnd instanceof Classifier;
+			return oldEnd instanceof Classifier && newEnd instanceof Classifier;
 		}
 		return false;
 	}
@@ -54,18 +60,40 @@ public class GeneralizationReorientCommand extends EditElementCommand {
 	 * @generated
 	 */
 	protected CommandResult doExecuteWithResult(IProgressMonitor monitor, IAdaptable info) throws ExecutionException {
-		EObject link = getElementToEdit();
+		if (!canExecute()) {
+			throw new ExecutionException("Invalid arguments in reorient link command"); //$NON-NLS-1$
+		}
 		if (reorientDirection == ReorientRelationshipRequest.REORIENT_SOURCE) {
-
-			((Classifier) link.eContainer()).getGeneralizations().remove(link);
-			((Classifier) newEnd).getGeneralizations().add((Generalization)link);
-			return CommandResult.newOKCommandResult(link);
+			return reorientSource();
 		}
 		if (reorientDirection == ReorientRelationshipRequest.REORIENT_TARGET) {
-
-			((Generalization) link).setGeneral((Classifier) newEnd);
-			return CommandResult.newOKCommandResult(link);
+			return reorientTarget();
 		}
-		return CommandResult.newErrorCommandResult("Unknown link reorient direction: " + reorientDirection);
+		throw new IllegalStateException();
+	}
+
+	/**
+	 * @generated
+	 */
+	private CommandResult reorientSource() throws ExecutionException {
+		Generalization link = (Generalization) getElementToEdit();
+		Classifier oldSource = (Classifier) oldEnd;
+		Classifier newSource = (Classifier) newEnd;
+
+		oldSource.getGeneralizations().remove(link);
+		newSource.getGeneralizations().add(link);
+		return CommandResult.newOKCommandResult(link);
+	}
+
+	/**
+	 * @generated
+	 */
+	private CommandResult reorientTarget() throws ExecutionException {
+		Generalization link = (Generalization) getElementToEdit();
+		Classifier oldTarget = (Classifier) oldEnd;
+		Classifier newTarget = (Classifier) newEnd;
+
+		link.setGeneral(newTarget);
+		return CommandResult.newOKCommandResult(link);
 	}
 }

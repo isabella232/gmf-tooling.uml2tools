@@ -280,6 +280,9 @@ public class UMLDomainModelElementTester extends PropertyTester {
 		if (eClass == UMLPackage.eINSTANCE.getExpression()) {
 			return true;
 		}
+		if (eClass == UMLPackage.eINSTANCE.getUsage()) {
+			return true;
+		}
 		if (eClass == UMLPackage.eINSTANCE.getPackageMerge()) {
 			return true;
 		}
@@ -392,9 +395,6 @@ public class UMLDomainModelElementTester extends PropertyTester {
 			return true;
 		}
 		if (eClass == UMLPackage.eINSTANCE.getSequenceNode()) {
-			return true;
-		}
-		if (eClass == UMLPackage.eINSTANCE.getUsage()) {
 			return true;
 		}
 		if (eClass == UMLPackage.eINSTANCE.getControlNode()) {
