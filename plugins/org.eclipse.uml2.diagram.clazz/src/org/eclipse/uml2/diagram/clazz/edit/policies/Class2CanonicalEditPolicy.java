@@ -22,7 +22,6 @@ import org.eclipse.uml2.uml.TemplateableElement;
 public class Class2CanonicalEditPolicy extends CanonicalEditPolicy {
 
 	/**
-	 *  
 	 * @generated
 	 */
 	protected List getSemanticChildrenList() {
@@ -50,7 +49,17 @@ public class Class2CanonicalEditPolicy extends CanonicalEditPolicy {
 	 * @generated
 	 */
 	protected boolean shouldDeleteView(View view) {
-		return view.isSetElement() && view.getElement() != null && view.getElement().eIsProxy();
+		if (view.getEAnnotation("Shortcut") != null) { //$NON-NLS-1$
+			return view.isSetElement() && (view.getElement() == null || view.getElement().eIsProxy());
+		}
+
+		int nodeVID = UMLVisualIDRegistry.getVisualID(view);
+		switch (nodeVID) {
+		case PortEditPart.VISUAL_ID:
+		case RedefinableTemplateSignatureEditPart.VISUAL_ID:
+			return true;
+		}
+		return false;
 	}
 
 	/**

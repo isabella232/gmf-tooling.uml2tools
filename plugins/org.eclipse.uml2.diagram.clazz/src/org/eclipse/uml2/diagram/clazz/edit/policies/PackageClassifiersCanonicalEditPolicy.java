@@ -23,7 +23,6 @@ import org.eclipse.uml2.uml.Package;
 public class PackageClassifiersCanonicalEditPolicy extends CanonicalEditPolicy {
 
 	/**
-	 *  
 	 * @generated
 	 */
 	protected List getSemanticChildrenList() {
@@ -65,7 +64,20 @@ public class PackageClassifiersCanonicalEditPolicy extends CanonicalEditPolicy {
 	 * @generated
 	 */
 	protected boolean shouldDeleteView(View view) {
-		return view.isSetElement() && view.getElement() != null && view.getElement().eIsProxy();
+		if (view.getEAnnotation("Shortcut") != null) { //$NON-NLS-1$
+			return view.isSetElement() && (view.getElement() == null || view.getElement().eIsProxy());
+		}
+
+		int nodeVID = UMLVisualIDRegistry.getVisualID(view);
+		switch (nodeVID) {
+		case ClassEditPart.VISUAL_ID:
+		case DataTypeEditPart.VISUAL_ID:
+		case PrimitiveTypeEditPart.VISUAL_ID:
+		case EnumerationEditPart.VISUAL_ID:
+		case AssociationClassEditPart.VISUAL_ID:
+			return true;
+		}
+		return false;
 	}
 
 	/**

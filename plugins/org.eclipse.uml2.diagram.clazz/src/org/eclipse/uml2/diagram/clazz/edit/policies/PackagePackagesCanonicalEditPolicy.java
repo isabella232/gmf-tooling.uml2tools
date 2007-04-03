@@ -19,7 +19,6 @@ import org.eclipse.uml2.uml.Package;
 public class PackagePackagesCanonicalEditPolicy extends CanonicalEditPolicy {
 
 	/**
-	 *  
 	 * @generated
 	 */
 	protected List getSemanticChildrenList() {
@@ -42,7 +41,16 @@ public class PackagePackagesCanonicalEditPolicy extends CanonicalEditPolicy {
 	 * @generated
 	 */
 	protected boolean shouldDeleteView(View view) {
-		return view.isSetElement() && view.getElement() != null && view.getElement().eIsProxy();
+		if (view.getEAnnotation("Shortcut") != null) { //$NON-NLS-1$
+			return view.isSetElement() && (view.getElement() == null || view.getElement().eIsProxy());
+		}
+
+		int nodeVID = UMLVisualIDRegistry.getVisualID(view);
+		switch (nodeVID) {
+		case Package3EditPart.VISUAL_ID:
+			return true;
+		}
+		return false;
 	}
 
 	/**
