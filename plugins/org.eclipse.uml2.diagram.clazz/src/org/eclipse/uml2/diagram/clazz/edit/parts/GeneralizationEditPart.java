@@ -1,5 +1,6 @@
 package org.eclipse.uml2.diagram.clazz.edit.parts;
 
+import org.eclipse.draw2d.ColorConstants;
 import org.eclipse.draw2d.Connection;
 import org.eclipse.draw2d.Graphics;
 import org.eclipse.draw2d.PolygonDecoration;
@@ -79,6 +80,7 @@ public class GeneralizationEditPart extends ConnectionNodeEditPart {
 			df.setOutlineXOR(false);
 			df.setLineWidth(1);
 			df.setLineStyle(Graphics.LINE_SOLID);
+			df.setBackgroundColor(ColorConstants.white);
 			PointList pl = new PointList();
 			pl.addPoint(getMapMode().DPtoLP(0), getMapMode().DPtoLP(0));
 			pl.addPoint(getMapMode().DPtoLP(-2), getMapMode().DPtoLP(2));

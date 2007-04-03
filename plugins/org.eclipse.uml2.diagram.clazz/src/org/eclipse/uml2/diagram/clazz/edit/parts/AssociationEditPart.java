@@ -91,7 +91,7 @@ public class AssociationEditPart extends ConnectionNodeEditPart {
 	 */
 	private void refreshDecorations(AssociationLinkFigure linkFigure) {
 		Association association = (Association) resolveSemanticElement();
-		if (association == null){
+		if (association == null) {
 			return;
 		}
 		Property sourceEnd = AssociationEndConvention.getSourceEnd(association);

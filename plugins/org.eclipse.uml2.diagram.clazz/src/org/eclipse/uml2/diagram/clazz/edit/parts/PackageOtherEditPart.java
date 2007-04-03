@@ -11,6 +11,7 @@ import org.eclipse.gmf.runtime.draw2d.ui.figures.ConstrainedToolbarLayout;
 import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.uml2.diagram.clazz.edit.policies.PackageOtherCanonicalEditPolicy;
 import org.eclipse.uml2.diagram.clazz.edit.policies.PackageOtherItemSemanticEditPolicy;
+import org.eclipse.uml2.diagram.clazz.part.Messages;
 
 /**
  * @generated
@@ -40,7 +41,7 @@ public class PackageOtherEditPart extends ListCompartmentEditPart {
 	 * @generated
 	 */
 	public String getCompartmentName() {
-		return "other";
+		return Messages.PackageOtherEditPart_title;
 	}
 
 	/**
@@ -63,4 +64,5 @@ public class PackageOtherEditPart extends ListCompartmentEditPart {
 			super.setRatio(ratio);
 		}
 	}
+
 }

@@ -31,7 +31,7 @@ public class EnumerationLiteralCreateCommand extends CreateElementCommand {
 	 */
 	protected EClass getEClassToEdit() {
 		return UMLPackage.eINSTANCE.getEnumeration();
-	};
+	}
 
 	/**
 	 * @generated

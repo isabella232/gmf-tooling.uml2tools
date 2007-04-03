@@ -31,7 +31,7 @@ public class Property6CreateCommand extends CreateElementCommand {
 	 */
 	protected EClass getEClassToEdit() {
 		return UMLPackage.eINSTANCE.getInterface();
-	};
+	}
 
 	/**
 	 * @generated

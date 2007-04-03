@@ -31,7 +31,7 @@ public class InstanceSpecification2CreateCommand extends CreateElementCommand {
 	 */
 	protected EClass getEClassToEdit() {
 		return UMLPackage.eINSTANCE.getPackage();
-	};
+	}
 
 	/**
 	 * @generated

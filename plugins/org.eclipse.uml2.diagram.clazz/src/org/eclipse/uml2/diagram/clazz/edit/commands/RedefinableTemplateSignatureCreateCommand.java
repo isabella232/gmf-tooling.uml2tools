@@ -29,7 +29,7 @@ public class RedefinableTemplateSignatureCreateCommand extends CreateElementComm
 	 */
 	protected EClass getEClassToEdit() {
 		return UMLPackage.eINSTANCE.getTemplateableElement();
-	};
+	}
 
 	/**
 	 * @generated

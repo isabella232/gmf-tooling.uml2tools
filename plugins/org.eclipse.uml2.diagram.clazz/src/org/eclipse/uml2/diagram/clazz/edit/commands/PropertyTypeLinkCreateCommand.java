@@ -56,7 +56,7 @@ public class PropertyTypeLinkCreateCommand extends CreateRelationshipCommand {
 	 */
 	protected EClass getEClassToEdit() {
 		return UMLPackage.eINSTANCE.getAssociation();
-	};
+	}
 
 	/**
 	 * @generated

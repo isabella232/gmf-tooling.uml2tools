@@ -10,6 +10,7 @@ import org.eclipse.gmf.runtime.diagram.ui.editpolicies.ResizableCompartmentEditP
 import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.uml2.diagram.clazz.edit.policies.AssociationClassClassesCanonicalEditPolicy;
 import org.eclipse.uml2.diagram.clazz.edit.policies.AssociationClassClassesItemSemanticEditPolicy;
+import org.eclipse.uml2.diagram.clazz.part.Messages;
 
 /**
  * @generated
@@ -39,7 +40,7 @@ public class AssociationClassClassesEditPart extends ListCompartmentEditPart {
 	 * @generated
 	 */
 	public String getCompartmentName() {
-		return "classes";
+		return Messages.AssociationClassClassesEditPart_title;
 	}
 
 	/**
@@ -61,4 +62,5 @@ public class AssociationClassClassesEditPart extends ListCompartmentEditPart {
 		// nothing to do -- parent layout does not accept Double constraints as ratio
 		// super.setRatio(ratio); 
 	}
+
 }

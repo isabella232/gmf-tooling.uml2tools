@@ -55,7 +55,7 @@ public class GeneralizationTypeLinkCreateCommand extends CreateRelationshipComma
 	 */
 	protected EClass getEClassToEdit() {
 		return UMLPackage.eINSTANCE.getClassifier();
-	};
+	}
 
 	/**
 	 * @generated

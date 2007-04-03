@@ -28,7 +28,7 @@ public class SlotCreateCommand extends CreateElementCommand {
 	 */
 	protected EClass getEClassToEdit() {
 		return UMLPackage.eINSTANCE.getInstanceSpecification();
-	};
+	}
 
 	/**
 	 * @generated

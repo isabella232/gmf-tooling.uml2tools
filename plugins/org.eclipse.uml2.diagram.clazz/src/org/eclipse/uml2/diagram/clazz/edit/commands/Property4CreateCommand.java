@@ -31,7 +31,7 @@ public class Property4CreateCommand extends CreateElementCommand {
 	 */
 	protected EClass getEClassToEdit() {
 		return UMLPackage.eINSTANCE.getDataType();
-	};
+	}
 
 	/**
 	 * @generated

@@ -8,6 +8,7 @@ import org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles;
 import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.uml2.diagram.clazz.edit.policies.InstanceSpecificationSlotsCanonicalEditPolicy;
 import org.eclipse.uml2.diagram.clazz.edit.policies.InstanceSpecificationSlotsItemSemanticEditPolicy;
+import org.eclipse.uml2.diagram.clazz.part.Messages;
 
 /**
  * @generated
@@ -37,7 +38,7 @@ public class InstanceSpecificationSlotsEditPart extends ListCompartmentEditPart 
 	 * @generated
 	 */
 	public String getCompartmentName() {
-		return "Slots";
+		return Messages.InstanceSpecificationSlotsEditPart_title;
 	}
 
 	/**
@@ -58,4 +59,5 @@ public class InstanceSpecificationSlotsEditPart extends ListCompartmentEditPart 
 		// nothing to do -- parent layout does not accept Double constraints as ratio
 		// super.setRatio(ratio); 
 	}
+
 }

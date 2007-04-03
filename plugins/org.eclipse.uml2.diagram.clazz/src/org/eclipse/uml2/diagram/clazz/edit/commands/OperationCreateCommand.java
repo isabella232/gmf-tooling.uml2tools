@@ -31,7 +31,7 @@ public class OperationCreateCommand extends CreateElementCommand {
 	 */
 	protected EClass getEClassToEdit() {
 		return UMLPackage.eINSTANCE.getClass_();
-	};
+	}
 
 	/**
 	 * @generated
