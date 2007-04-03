@@ -187,7 +187,27 @@ public class PackageCanonicalEditPolicy extends CanonicalConnectionEditPolicy {
 	 * @generated
 	 */
 	protected boolean shouldDeleteViewGen(View view) {
-		return view.isSetElement() && view.getElement() != null && view.getElement().eIsProxy();
+		if (view.getEAnnotation("Shortcut") != null) { //$NON-NLS-1$
+			return view.isSetElement() && (view.getElement() == null || view.getElement().eIsProxy());
+		}
+
+		int nodeVID = UMLVisualIDRegistry.getVisualID(view);
+		switch (nodeVID) {
+		case Package2EditPart.VISUAL_ID:
+		case Class2EditPart.VISUAL_ID:
+		case AssociationClass2EditPart.VISUAL_ID:
+		case DataType2EditPart.VISUAL_ID:
+		case PrimitiveType2EditPart.VISUAL_ID:
+		case Enumeration2EditPart.VISUAL_ID:
+		case InterfaceEditPart.VISUAL_ID:
+		case ConstraintEditPart.VISUAL_ID:
+		case InstanceSpecification2EditPart.VISUAL_ID:
+		case DependencyEditPart.VISUAL_ID:
+		case GeneralizationSetEditPart.VISUAL_ID:
+		case Interface2EditPart.VISUAL_ID:
+			return true;
+		}
+		return false;
 	}
 
 	/**
@@ -431,7 +451,7 @@ public class PackageCanonicalEditPolicy extends CanonicalConnectionEditPolicy {
 					if (structuralFeatureResult instanceof EObject) {
 						EObject dst = (EObject) structuralFeatureResult;
 						EObject src = container;
-						myLinkDescriptors.add(new LinkDescriptor(src, dst, UMLElementTypes.Generalization_4001, linkVID, nextValue));
+						myLinkDescriptors.add(new LinkDescriptor(src, dst, nextValue, UMLElementTypes.Generalization_4001, linkVID));
 					}
 				}
 			}
@@ -457,7 +477,7 @@ public class PackageCanonicalEditPolicy extends CanonicalConnectionEditPolicy {
 						structuralFeatureResult = sources.size() == 1 ? sources.get(0) : null;
 						if (structuralFeatureResult instanceof EObject) {
 							EObject src = (EObject) structuralFeatureResult;
-							myLinkDescriptors.add(new LinkDescriptor(src, dst, UMLElementTypes.Dependency_4002, linkVID, nextValue));
+							myLinkDescriptors.add(new LinkDescriptor(src, dst, nextValue, UMLElementTypes.Dependency_4002, linkVID));
 						}
 					}
 				}
@@ -478,7 +498,7 @@ public class PackageCanonicalEditPolicy extends CanonicalConnectionEditPolicy {
 					if (structuralFeatureResult instanceof EObject) {
 						EObject dst = (EObject) structuralFeatureResult;
 						EObject src = container;
-						myLinkDescriptors.add(new LinkDescriptor(src, dst, UMLElementTypes.Property_4003, linkVID, nextValue));
+						myLinkDescriptors.add(new LinkDescriptor(src, dst, nextValue, UMLElementTypes.Property_4003, linkVID));
 					}
 				}
 			}
@@ -500,7 +520,7 @@ public class PackageCanonicalEditPolicy extends CanonicalConnectionEditPolicy {
 						Property targetEnd = AssociationEndConvention.getTargetEnd(association);
 						EObject gmfSource = sourceEnd.getType();
 						EObject gmfTarget = targetEnd.getType();
-						myLinkDescriptors.add(new LinkDescriptor(gmfSource, gmfTarget, UMLElementTypes.Association_4005, linkVID, association));
+						myLinkDescriptors.add(new LinkDescriptor(gmfSource, gmfTarget, association, UMLElementTypes.Association_4005, linkVID));
 					}
 				}
 			}
@@ -522,7 +542,7 @@ public class PackageCanonicalEditPolicy extends CanonicalConnectionEditPolicy {
 						structuralFeatureResult = ((InterfaceRealization) nextValue).getImplementingClassifier();
 						if (structuralFeatureResult instanceof EObject) {
 							EObject src = (EObject) structuralFeatureResult;
-							myLinkDescriptors.add(new LinkDescriptor(src, dst, UMLElementTypes.InterfaceRealization_4008, linkVID, nextValue));
+							myLinkDescriptors.add(new LinkDescriptor(src, dst, nextValue, UMLElementTypes.InterfaceRealization_4008, linkVID));
 						}
 					}
 				}
@@ -549,7 +569,7 @@ public class PackageCanonicalEditPolicy extends CanonicalConnectionEditPolicy {
 						structuralFeatureResult = sources.size() == 1 ? sources.get(0) : null;
 						if (structuralFeatureResult instanceof EObject) {
 							EObject src = (EObject) structuralFeatureResult;
-							myLinkDescriptors.add(new LinkDescriptor(src, dst, UMLElementTypes.Realization_4010, linkVID, nextValue));
+							myLinkDescriptors.add(new LinkDescriptor(src, dst, nextValue, UMLElementTypes.Realization_4010, linkVID));
 						}
 					}
 				}
@@ -572,7 +592,7 @@ public class PackageCanonicalEditPolicy extends CanonicalConnectionEditPolicy {
 					if (structuralFeatureResult instanceof EObject) {
 						EObject dst = (EObject) structuralFeatureResult;
 						EObject src = container;
-						myLinkDescriptors.add(new LinkDescriptor(src, dst, UMLElementTypes.Generalization_4011, linkVID, nextValue));
+						myLinkDescriptors.add(new LinkDescriptor(src, dst, nextValue, UMLElementTypes.Generalization_4011, linkVID));
 					}
 				}
 			}
@@ -598,7 +618,7 @@ public class PackageCanonicalEditPolicy extends CanonicalConnectionEditPolicy {
 						structuralFeatureResult = sources.size() == 1 ? sources.get(0) : null;
 						if (structuralFeatureResult instanceof EObject) {
 							EObject src = (EObject) structuralFeatureResult;
-							myLinkDescriptors.add(new LinkDescriptor(src, dst, UMLElementTypes.Usage_4013, linkVID, nextValue));
+							myLinkDescriptors.add(new LinkDescriptor(src, dst, nextValue, UMLElementTypes.Usage_4013, linkVID));
 						}
 					}
 				}
@@ -698,24 +718,35 @@ public class PackageCanonicalEditPolicy extends CanonicalConnectionEditPolicy {
 		/**
 		 * @generated
 		 */
-		protected LinkDescriptor(EObject source, EObject destination, IElementType elementType, int linkVID) {
-			this(source, destination, elementType, linkVID, null);
-		}
-
-		/**
-		 * @generated
-		 */
-		protected LinkDescriptor(EObject source, EObject destination, IElementType elementType, int linkVID, EObject linkElement) {
+		protected LinkDescriptor(EObject source, EObject destination, EObject linkElement, IElementType elementType, int linkVID) {
 			this(source, destination, linkVID);
 			myLinkElement = linkElement;
 			final IElementType elementTypeCopy = elementType;
-			mySemanticAdapter = new EObjectAdapter(myLinkElement) {
+			mySemanticAdapter = new EObjectAdapter(linkElement) {
 
 				public Object getAdapter(Class adapter) {
 					if (IElementType.class.equals(adapter)) {
 						return elementTypeCopy;
 					}
 					return super.getAdapter(adapter);
+				}
+			};
+		}
+
+		/**
+		 * @generated
+		 */
+		protected LinkDescriptor(EObject source, EObject destination, IElementType elementType, int linkVID) {
+			this(source, destination, linkVID);
+			myLinkElement = null;
+			final IElementType elementTypeCopy = elementType;
+			mySemanticAdapter = new IAdaptable() {
+
+				public Object getAdapter(Class adapter) {
+					if (IElementType.class.equals(adapter)) {
+						return elementTypeCopy;
+					}
+					return null;
 				}
 			};
 		}
