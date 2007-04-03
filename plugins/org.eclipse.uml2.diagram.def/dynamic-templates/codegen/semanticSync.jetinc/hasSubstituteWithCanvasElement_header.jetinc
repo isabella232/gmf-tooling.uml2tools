@@ -1,0 +1,28 @@
+<%
+int substituteWithCanvasVID = java.lang.Integer.MIN_VALUE;
+boolean substituteWithCanvasVIDwasFound = false;
+for (int nodeIndex = 0; nodeIndex < genNodes.size(); nodeIndex++) {
+	GenNode nextNode = (GenNode) genNodes.get(nodeIndex);
+	org.eclipse.uml2.diagram.codegen.gmfgenext.AuxSecondaryDiagramNodeAttribute attribute = 
+	(org.eclipse.uml2.diagram.codegen.gmfgenext.AuxSecondaryDiagramNodeAttribute)nextNode.getViewmap().find(org.eclipse.uml2.diagram.codegen.gmfgenext.AuxSecondaryDiagramNodeAttribute.class); 
+	if (attribute != null && attribute.isSubstituteWithCanvasElement()) {	
+		substituteWithCanvasVID=nextNode.getVisualID();
+%>* We have "dummy" TopLevelNode (with vid = <%=substituteWithCanvasVID%>). The only purpose 
+ * for this node is to be a container for children (imports, etc) 
+ * of the "main" diagram figure (that one shown as Canvas).
+ * 
+ * The code that replace generated SubstituteWithCanvas children associated 
+ * with vid=<%=substituteWithCanvasVID%> with the "main" instance is below.
+ * 
+ * Also we have modified the VisualIDRegistry#getNodeVisualID() to return
+ * VID = <%=substituteWithCanvasVID%>, for the case when top-level view is created for the same
+ * semantic element as the canvas view. 
+ * 
+ * @see VisualIDRegistry <%
+ 		substituteWithCanvasVIDwasFound = true; 
+ 		break;
+  	}
+}
+if (!substituteWithCanvasVIDwasFound){
+%>* 
+<%}%>

@@ -1,0 +1,22 @@
+<%GenNode substituteWithCanvasNode = null; 
+for (Iterator chidrenNodes = allContainers.iterator(); chidrenNodes.hasNext();) {
+	Object next = chidrenNodes.next();
+	if (next instanceof GenNode) {
+		GenNode childNode = (GenNode) next;
+        org.eclipse.uml2.diagram.codegen.gmfgenext.AuxSecondaryDiagramNodeAttribute attribute = 
+			(org.eclipse.uml2.diagram.codegen.gmfgenext.AuxSecondaryDiagramNodeAttribute)childNode.getViewmap().find(org.eclipse.uml2.diagram.codegen.gmfgenext.AuxSecondaryDiagramNodeAttribute.class);
+		if (attribute != null && attribute.isSubstituteWithCanvasElement()) {
+			substituteWithCanvasNode = childNode;
+%> *
+ * We want to additionally show the Canvas Semantical Element in the auxiliary 
+ * <%=importManager.getImportedName(substituteWithCanvasNode.getEditPartQualifiedClassName())%> (that serves as a visual container for children imports). 
+ * To do this, we modified CanonicalEditPolicy to add the Canvas semantic Element into the children 
+ * list. The only remaining part is to return correct VID for this special case.
+ * 
+ * @see ProfileCanonicalEditPolicy#getSemanticChildrenList
+ *<%
+ 			break;
+		}
+	}
+}
+%>

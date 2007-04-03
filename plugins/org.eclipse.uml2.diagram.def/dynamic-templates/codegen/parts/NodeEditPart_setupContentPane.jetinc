@@ -1,0 +1,40 @@
+<% if ("org.eclipse.uml2.diagram.statemachine.edit.parts.State2EditPart".equals(genNode.getEditPartQualifiedClassName())) {%>
+	/**
+	 * @generated
+	 */
+	protected IFigure setupContentPane(IFigure nodeShape) {
+		return getPrimaryShape().getFigureCompositeStateFigure_Body();
+	}
+<%} else { %>
+	/**
+	 * Default implementation treats passed figure as content pane.
+	 * Respects layout one may have set for generated figure.
+	 * @param nodeShape instance of generated figure class
+	 * @generated
+	 */
+	protected IFigure setupContentPane(IFigure nodeShape) {
+		if (nodeShape.getLayoutManager() == null) {
+<%
+if (isXYLayout) {
+%>
+		nodeShape.setLayoutManager(new <%=importManager.getImportedName("org.eclipse.draw2d.FreeformLayout")%>() {
+
+			public Object getConstraint(IFigure figure) {
+				Object result = constraints.get(figure);
+				if (result == null) {
+					result = new <%=importManager.getImportedName("org.eclipse.draw2d.geometry.Rectangle")%>(0, 0, -1, -1);
+				}
+				return result;
+			}
+		});
+<%} else {
+	String layoutClassName = importManager.getImportedName("org.eclipse.gmf.runtime.draw2d.ui.figures.ConstrainedToolbarLayout");
+%>
+			<%=layoutClassName%> layout = new <%=layoutClassName%>();
+			layout.setSpacing(getMapMode().DPtoLP(5));
+			nodeShape.setLayoutManager(layout);
+<%}%>
+		}
+		return nodeShape; // use nodeShape itself as contentPane
+	}
+<%}%>

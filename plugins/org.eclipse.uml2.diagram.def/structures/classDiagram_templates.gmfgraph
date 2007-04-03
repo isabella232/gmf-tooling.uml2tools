@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gmfgraph:Canvas xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:gmfgraph="http://www.eclipse.org/gmf/2005/GraphicalDefinition" name="cnvTemplates">
+  <figures
+      name="ClassDTemplates"
+      implementationBundle="org.eclipse.uml2.diagram.common">
+    <figures
+        xsi:type="gmfgraph:Rectangle"
+        referencingElements="TemplateSignatureNode"
+        name="TemplateSignatureFigure"
+        lineKind="LINE_DASH">
+      <children
+          xsi:type="gmfgraph:Label"
+          referencingElements="TemplateSignatureNode_signature"
+          name="TemplateSignatureFigure_signature"
+          text="&lt;signature>">
+        <insets
+            top="5"
+            left="5"
+            bottom="5"
+            right="5"/>
+      </children>
+    </figures>
+  </figures>
+  <nodes
+      name="TemplateSignatureNode"
+      figure="TemplateSignatureFigure"
+      affixedParentSide="NORTH_EAST"/>
+  <labels
+      name="TemplateSignatureNode_signature"
+      figure="TemplateSignatureFigure_signature"
+      elementIcon="false"/>
+</gmfgraph:Canvas>

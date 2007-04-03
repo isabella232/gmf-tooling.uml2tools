@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gmfgraph:Canvas xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:gmfgraph="http://www.eclipse.org/gmf/2005/GraphicalDefinition" name="cnv_constraints">
+  <figures
+      name="">
+    <figures
+        xsi:type="gmfgraph:CustomFigure"
+        referencingElements="ConstraintNode"
+        name="ConstraintFigure"
+        qualifiedClassName="org.eclipse.uml2.diagram.common.draw2d.MultilineConstraintFigure"
+        bundleName="org.eclipse.uml2.diagram.common">
+      <children
+          xsi:type="gmfgraph:Label"
+          referencingElements="Constraint_ValueSpecification"
+          name="ConstraintFigure_Value">
+        <insets
+            top="5"
+            left="5"
+            bottom="5"
+            right="5"/>
+      </children>
+    </figures>
+  </figures>
+  <nodes
+      name="ConstraintNode"
+      figure="ConstraintFigure"/>
+  <labels
+      name="Constraint_ValueSpecification"
+      figure="ConstraintFigure_Value"
+      elementIcon="false"/>
+</gmfgraph:Canvas>
