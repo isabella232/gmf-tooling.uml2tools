@@ -42,211 +42,7 @@ public class UMLElementTypes extends ElementInitializers {
 	/**
 	 * @generated
 	 */
-	private static ImageRegistry getImageRegistry() {
-		if (imageRegistry == null) {
-			imageRegistry = new ImageRegistry();
-		}
-		return imageRegistry;
-	}
-
-	/**
-	 * @generated
-	 */
-	private static String getImageRegistryKey(ENamedElement element) {
-		return element.getName();
-	}
-
-	/**
-	 * @generated
-	 */
-	private static ImageDescriptor getProvidedImageDescriptor(ENamedElement element) {
-		if (element instanceof EStructuralFeature) {
-			EStructuralFeature feature = ((EStructuralFeature) element);
-			EClass eContainingClass = feature.getEContainingClass();
-			EClassifier eType = feature.getEType();
-			if (eContainingClass != null && !eContainingClass.isAbstract()) {
-				element = eContainingClass;
-			} else if (eType instanceof EClass && !((EClass) eType).isAbstract()) {
-				element = eType;
-			}
-		}
-		if (element instanceof EClass) {
-			EClass eClass = (EClass) element;
-			if (!eClass.isAbstract()) {
-				return UMLDiagramEditorPlugin.getInstance().getItemImageDescriptor(eClass.getEPackage().getEFactoryInstance().create(eClass));
-			}
-		}
-		// TODO : support structural features
-		return null;
-	}
-
-	/**
-	 * @generated
-	 */
-	public static ImageDescriptor getImageDescriptor(ENamedElement element) {
-		String key = getImageRegistryKey(element);
-		ImageDescriptor imageDescriptor = getImageRegistry().getDescriptor(key);
-		if (imageDescriptor == null) {
-			imageDescriptor = getProvidedImageDescriptor(element);
-			if (imageDescriptor == null) {
-				imageDescriptor = ImageDescriptor.getMissingImageDescriptor();
-			}
-			getImageRegistry().put(key, imageDescriptor);
-		}
-		return imageDescriptor;
-	}
-
-	/**
-	 * @generated
-	 */
-	public static Image getImage(ENamedElement element) {
-		String key = getImageRegistryKey(element);
-		Image image = getImageRegistry().get(key);
-		if (image == null) {
-			ImageDescriptor imageDescriptor = getProvidedImageDescriptor(element);
-			if (imageDescriptor == null) {
-				imageDescriptor = ImageDescriptor.getMissingImageDescriptor();
-			}
-			getImageRegistry().put(key, imageDescriptor);
-			image = getImageRegistry().get(key);
-		}
-		return image;
-	}
-
-	/**
-	 * @generated
-	 */
-	public static ImageDescriptor getImageDescriptor(IAdaptable hint) {
-		ENamedElement element = getElement(hint);
-		if (element == null) {
-			return null;
-		}
-		return getImageDescriptor(element);
-	}
-
-	/**
-	 * @generated
-	 */
-	public static Image getImage(IAdaptable hint) {
-		ENamedElement element = getElement(hint);
-		if (element == null) {
-			return null;
-		}
-		return getImage(element);
-	}
-
-	/**
-	 * Returns 'type' of the ecore object associated with the hint.
-	 * 
-	 * @generated
-	 */
-	public static ENamedElement getElement(IAdaptable hint) {
-		Object type = hint.getAdapter(IElementType.class);
-		if (elements == null) {
-			elements = new IdentityHashMap();
-
-			elements.put(Package_1000, UMLPackage.eINSTANCE.getPackage());
-
-			elements.put(Package_2002, UMLPackage.eINSTANCE.getPackage());
-
-			elements.put(Class_2001, UMLPackage.eINSTANCE.getClass_());
-
-			elements.put(AssociationClass_2007, UMLPackage.eINSTANCE.getAssociationClass());
-
-			elements.put(DataType_2004, UMLPackage.eINSTANCE.getDataType());
-
-			elements.put(PrimitiveType_2005, UMLPackage.eINSTANCE.getPrimitiveType());
-
-			elements.put(Enumeration_2003, UMLPackage.eINSTANCE.getEnumeration());
-
-			elements.put(Interface_2010, UMLPackage.eINSTANCE.getInterface());
-
-			elements.put(Constraint_2006, UMLPackage.eINSTANCE.getConstraint());
-
-			elements.put(InstanceSpecification_2008, UMLPackage.eINSTANCE.getInstanceSpecification());
-
-			elements.put(Dependency_2009, UMLPackage.eINSTANCE.getDependency());
-
-			elements.put(GeneralizationSet_2012, UMLPackage.eINSTANCE.getGeneralizationSet());
-
-			elements.put(Interface_2013, UMLPackage.eINSTANCE.getInterface());
-
-			elements.put(Package_3006, UMLPackage.eINSTANCE.getPackage());
-
-			elements.put(Class_3007, UMLPackage.eINSTANCE.getClass_());
-
-			elements.put(DataType_3008, UMLPackage.eINSTANCE.getDataType());
-
-			elements.put(PrimitiveType_3009, UMLPackage.eINSTANCE.getPrimitiveType());
-
-			elements.put(Enumeration_3011, UMLPackage.eINSTANCE.getEnumeration());
-
-			elements.put(AssociationClass_3012, UMLPackage.eINSTANCE.getAssociationClass());
-
-			elements.put(InstanceSpecification_3013, UMLPackage.eINSTANCE.getInstanceSpecification());
-
-			elements.put(Property_3001, UMLPackage.eINSTANCE.getProperty());
-
-			elements.put(Operation_3002, UMLPackage.eINSTANCE.getOperation());
-
-			elements.put(Class_3003, UMLPackage.eINSTANCE.getClass_());
-
-			elements.put(Port_3025, UMLPackage.eINSTANCE.getPort());
-
-			elements.put(RedefinableTemplateSignature_3027, UMLPackage.eINSTANCE.getRedefinableTemplateSignature());
-
-			elements.put(Property_3019, UMLPackage.eINSTANCE.getProperty());
-
-			elements.put(Operation_3020, UMLPackage.eINSTANCE.getOperation());
-
-			elements.put(Property_3014, UMLPackage.eINSTANCE.getProperty());
-
-			elements.put(Operation_3015, UMLPackage.eINSTANCE.getOperation());
-
-			elements.put(Property_3021, UMLPackage.eINSTANCE.getProperty());
-
-			elements.put(Operation_3022, UMLPackage.eINSTANCE.getOperation());
-
-			elements.put(EnumerationLiteral_3016, UMLPackage.eINSTANCE.getEnumerationLiteral());
-
-			elements.put(Property_3023, UMLPackage.eINSTANCE.getProperty());
-
-			elements.put(Operation_3024, UMLPackage.eINSTANCE.getOperation());
-
-			elements.put(Slot_3017, UMLPackage.eINSTANCE.getSlot());
-
-			elements.put(Property_3028, UMLPackage.eINSTANCE.getProperty());
-
-			elements.put(Operation_3029, UMLPackage.eINSTANCE.getOperation());
-
-			elements.put(Class_3030, UMLPackage.eINSTANCE.getClass_());
-
-			elements.put(Generalization_4001, UMLPackage.eINSTANCE.getGeneralization());
-
-			elements.put(Dependency_4002, UMLPackage.eINSTANCE.getDependency());
-
-			elements.put(Property_4003, UMLPackage.eINSTANCE.getProperty());
-
-			elements.put(ConstraintConstrainedElement_4004, UMLPackage.eINSTANCE.getConstraint_ConstrainedElement());
-
-			elements.put(Association_4005, UMLPackage.eINSTANCE.getAssociation());
-
-			elements.put(DependencySupplier_4006, UMLPackage.eINSTANCE.getDependency_Supplier());
-
-			elements.put(DependencyClient_4007, UMLPackage.eINSTANCE.getDependency_Client());
-
-			elements.put(InterfaceRealization_4008, UMLPackage.eINSTANCE.getInterfaceRealization());
-
-			elements.put(Realization_4010, UMLPackage.eINSTANCE.getRealization());
-
-			elements.put(Generalization_4011, UMLPackage.eINSTANCE.getGeneralization());
-
-			elements.put(GeneralizationGeneral_4012, UMLPackage.eINSTANCE.getGeneralization_General());
-
-			elements.put(Usage_4013, UMLPackage.eINSTANCE.getUsage());
-		}
-		return (ENamedElement) elements.get(type);
-	}
+	private static Set KNOWN_ELEMENT_TYPES;
 
 	/**
 	 * @generated
@@ -501,14 +297,218 @@ public class UMLElementTypes extends ElementInitializers {
 	/**
 	 * @generated
 	 */
-	private static IElementType getElementType(String id) {
-		return ElementTypeRegistry.getInstance().getType(id);
+	private static ImageRegistry getImageRegistry() {
+		if (imageRegistry == null) {
+			imageRegistry = new ImageRegistry();
+		}
+		return imageRegistry;
 	}
 
 	/**
 	 * @generated
 	 */
-	private static Set KNOWN_ELEMENT_TYPES;
+	private static String getImageRegistryKey(ENamedElement element) {
+		return element.getName();
+	}
+
+	/**
+	 * @generated
+	 */
+	private static ImageDescriptor getProvidedImageDescriptor(ENamedElement element) {
+		if (element instanceof EStructuralFeature) {
+			EStructuralFeature feature = ((EStructuralFeature) element);
+			EClass eContainingClass = feature.getEContainingClass();
+			EClassifier eType = feature.getEType();
+			if (eContainingClass != null && !eContainingClass.isAbstract()) {
+				element = eContainingClass;
+			} else if (eType instanceof EClass && !((EClass) eType).isAbstract()) {
+				element = eType;
+			}
+		}
+		if (element instanceof EClass) {
+			EClass eClass = (EClass) element;
+			if (!eClass.isAbstract()) {
+				return UMLDiagramEditorPlugin.getInstance().getItemImageDescriptor(eClass.getEPackage().getEFactoryInstance().create(eClass));
+			}
+		}
+		// TODO : support structural features
+		return null;
+	}
+
+	/**
+	 * @generated
+	 */
+	public static ImageDescriptor getImageDescriptor(ENamedElement element) {
+		String key = getImageRegistryKey(element);
+		ImageDescriptor imageDescriptor = getImageRegistry().getDescriptor(key);
+		if (imageDescriptor == null) {
+			imageDescriptor = getProvidedImageDescriptor(element);
+			if (imageDescriptor == null) {
+				imageDescriptor = ImageDescriptor.getMissingImageDescriptor();
+			}
+			getImageRegistry().put(key, imageDescriptor);
+		}
+		return imageDescriptor;
+	}
+
+	/**
+	 * @generated
+	 */
+	public static Image getImage(ENamedElement element) {
+		String key = getImageRegistryKey(element);
+		Image image = getImageRegistry().get(key);
+		if (image == null) {
+			ImageDescriptor imageDescriptor = getProvidedImageDescriptor(element);
+			if (imageDescriptor == null) {
+				imageDescriptor = ImageDescriptor.getMissingImageDescriptor();
+			}
+			getImageRegistry().put(key, imageDescriptor);
+			image = getImageRegistry().get(key);
+		}
+		return image;
+	}
+
+	/**
+	 * @generated
+	 */
+	public static ImageDescriptor getImageDescriptor(IAdaptable hint) {
+		ENamedElement element = getElement(hint);
+		if (element == null) {
+			return null;
+		}
+		return getImageDescriptor(element);
+	}
+
+	/**
+	 * @generated
+	 */
+	public static Image getImage(IAdaptable hint) {
+		ENamedElement element = getElement(hint);
+		if (element == null) {
+			return null;
+		}
+		return getImage(element);
+	}
+
+	/**
+	 * Returns 'type' of the ecore object associated with the hint.
+	 * 
+	 * @generated
+	 */
+	public static ENamedElement getElement(IAdaptable hint) {
+		Object type = hint.getAdapter(IElementType.class);
+		if (elements == null) {
+			elements = new IdentityHashMap();
+
+			elements.put(Package_1000, UMLPackage.eINSTANCE.getPackage());
+
+			elements.put(Package_2002, UMLPackage.eINSTANCE.getPackage());
+
+			elements.put(Class_2001, UMLPackage.eINSTANCE.getClass_());
+
+			elements.put(AssociationClass_2007, UMLPackage.eINSTANCE.getAssociationClass());
+
+			elements.put(DataType_2004, UMLPackage.eINSTANCE.getDataType());
+
+			elements.put(PrimitiveType_2005, UMLPackage.eINSTANCE.getPrimitiveType());
+
+			elements.put(Enumeration_2003, UMLPackage.eINSTANCE.getEnumeration());
+
+			elements.put(Interface_2010, UMLPackage.eINSTANCE.getInterface());
+
+			elements.put(Constraint_2006, UMLPackage.eINSTANCE.getConstraint());
+
+			elements.put(InstanceSpecification_2008, UMLPackage.eINSTANCE.getInstanceSpecification());
+
+			elements.put(Dependency_2009, UMLPackage.eINSTANCE.getDependency());
+
+			elements.put(GeneralizationSet_2012, UMLPackage.eINSTANCE.getGeneralizationSet());
+
+			elements.put(Interface_2013, UMLPackage.eINSTANCE.getInterface());
+
+			elements.put(Package_3006, UMLPackage.eINSTANCE.getPackage());
+
+			elements.put(Class_3007, UMLPackage.eINSTANCE.getClass_());
+
+			elements.put(DataType_3008, UMLPackage.eINSTANCE.getDataType());
+
+			elements.put(PrimitiveType_3009, UMLPackage.eINSTANCE.getPrimitiveType());
+
+			elements.put(Enumeration_3011, UMLPackage.eINSTANCE.getEnumeration());
+
+			elements.put(AssociationClass_3012, UMLPackage.eINSTANCE.getAssociationClass());
+
+			elements.put(InstanceSpecification_3013, UMLPackage.eINSTANCE.getInstanceSpecification());
+
+			elements.put(Property_3001, UMLPackage.eINSTANCE.getProperty());
+
+			elements.put(Operation_3002, UMLPackage.eINSTANCE.getOperation());
+
+			elements.put(Class_3003, UMLPackage.eINSTANCE.getClass_());
+
+			elements.put(Port_3025, UMLPackage.eINSTANCE.getPort());
+
+			elements.put(RedefinableTemplateSignature_3027, UMLPackage.eINSTANCE.getRedefinableTemplateSignature());
+
+			elements.put(Property_3019, UMLPackage.eINSTANCE.getProperty());
+
+			elements.put(Operation_3020, UMLPackage.eINSTANCE.getOperation());
+
+			elements.put(Property_3014, UMLPackage.eINSTANCE.getProperty());
+
+			elements.put(Operation_3015, UMLPackage.eINSTANCE.getOperation());
+
+			elements.put(Property_3021, UMLPackage.eINSTANCE.getProperty());
+
+			elements.put(Operation_3022, UMLPackage.eINSTANCE.getOperation());
+
+			elements.put(EnumerationLiteral_3016, UMLPackage.eINSTANCE.getEnumerationLiteral());
+
+			elements.put(Property_3023, UMLPackage.eINSTANCE.getProperty());
+
+			elements.put(Operation_3024, UMLPackage.eINSTANCE.getOperation());
+
+			elements.put(Slot_3017, UMLPackage.eINSTANCE.getSlot());
+
+			elements.put(Property_3028, UMLPackage.eINSTANCE.getProperty());
+
+			elements.put(Operation_3029, UMLPackage.eINSTANCE.getOperation());
+
+			elements.put(Class_3030, UMLPackage.eINSTANCE.getClass_());
+
+			elements.put(Generalization_4001, UMLPackage.eINSTANCE.getGeneralization());
+
+			elements.put(Dependency_4002, UMLPackage.eINSTANCE.getDependency());
+
+			elements.put(Property_4003, UMLPackage.eINSTANCE.getProperty());
+
+			elements.put(ConstraintConstrainedElement_4004, UMLPackage.eINSTANCE.getConstraint_ConstrainedElement());
+
+			elements.put(Association_4005, UMLPackage.eINSTANCE.getAssociation());
+
+			elements.put(DependencySupplier_4006, UMLPackage.eINSTANCE.getDependency_Supplier());
+
+			elements.put(DependencyClient_4007, UMLPackage.eINSTANCE.getDependency_Client());
+
+			elements.put(InterfaceRealization_4008, UMLPackage.eINSTANCE.getInterfaceRealization());
+
+			elements.put(Realization_4010, UMLPackage.eINSTANCE.getRealization());
+
+			elements.put(Generalization_4011, UMLPackage.eINSTANCE.getGeneralization());
+
+			elements.put(GeneralizationGeneral_4012, UMLPackage.eINSTANCE.getGeneralization_General());
+
+			elements.put(Usage_4013, UMLPackage.eINSTANCE.getUsage());
+		}
+		return (ENamedElement) elements.get(type);
+	}
+
+	/**
+	 * @generated
+	 */
+	private static IElementType getElementType(String id) {
+		return ElementTypeRegistry.getInstance().getType(id);
+	}
 
 	/**
 	 * @generated
@@ -569,4 +569,5 @@ public class UMLElementTypes extends ElementInitializers {
 		}
 		return KNOWN_ELEMENT_TYPES.contains(elementType);
 	}
+
 }

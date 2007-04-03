@@ -1,17 +1,13 @@
 package org.eclipse.uml2.diagram.clazz.sheet;
 
+import org.eclipse.core.runtime.IAdaptable;
+import org.eclipse.emf.edit.ui.provider.AdapterFactoryLabelProvider;
 import org.eclipse.gef.EditPart;
 import org.eclipse.gmf.runtime.notation.View;
+import org.eclipse.jface.viewers.DecoratingLabelProvider;
 import org.eclipse.jface.viewers.IStructuredSelection;
 import org.eclipse.swt.graphics.Image;
-import org.eclipse.core.runtime.IAdaptable;
-
-import org.eclipse.emf.edit.ui.provider.AdapterFactoryLabelProvider;
-
-import org.eclipse.jface.viewers.DecoratingLabelProvider;
-
 import org.eclipse.uml2.diagram.clazz.navigator.UMLNavigatorGroup;
-
 import org.eclipse.uml2.diagram.clazz.part.UMLDiagramEditorPlugin;
 
 /**
@@ -79,4 +75,5 @@ public class UMLSheetLabelProvider extends DecoratingLabelProvider {
 	private Object unwrapView(View view) {
 		return view.getElement() == null ? view : view.getElement();
 	}
+
 }

@@ -24,6 +24,7 @@ Export-Package: org.eclipse.uml2.diagram.clazz.conventions,
  org.eclipse.uml2.diagram.clazz.sheet,
  org.eclipse.uml2.diagram.clazz.view.factories
 Require-Bundle: org.eclipse.core.runtime,
+ org.eclipse.core.expressions,
  org.eclipse.core.resources,
  org.eclipse.jface,
  org.eclipse.ui.ide,
