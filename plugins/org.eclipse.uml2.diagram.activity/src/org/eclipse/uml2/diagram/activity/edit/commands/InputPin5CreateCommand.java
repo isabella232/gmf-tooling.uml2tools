@@ -29,7 +29,7 @@ public class InputPin5CreateCommand extends CreateElementCommand {
 	 */
 	protected EClass getEClassToEdit() {
 		return UMLPackage.eINSTANCE.getCallOperationAction();
-	};
+	}
 
 	/**
 	 * @generated

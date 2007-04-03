@@ -28,7 +28,7 @@ public class CreateObjectActionCreateCommand extends CreateElementCommand {
 	 */
 	protected EClass getEClassToEdit() {
 		return UMLPackage.eINSTANCE.getActivity();
-	};
+	}
 
 	/**
 	 * @generated

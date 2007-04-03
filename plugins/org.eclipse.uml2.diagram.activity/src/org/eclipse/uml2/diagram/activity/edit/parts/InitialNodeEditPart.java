@@ -55,8 +55,8 @@ public class InitialNodeEditPart extends ShapeNodeEditPart {
 	 * @generated
 	 */
 	protected void createDefaultEditPolicies() {
-		super.createDefaultEditPolicies();
 
+		super.createDefaultEditPolicies();
 		installEditPolicy(EditPolicyRoles.SEMANTIC_ROLE, new InitialNodeItemSemanticEditPolicy());
 		installEditPolicy(EditPolicyRoles.CANONICAL_ROLE, new InitialNodeCanonicalEditPolicy());
 		installEditPolicy(EditPolicy.LAYOUT_ROLE, createLayoutEditPolicy());
@@ -107,7 +107,6 @@ public class InitialNodeEditPart extends ShapeNodeEditPart {
 	 */
 	protected NodeFigure createNodePlate() {
 		DefaultSizeNodeFigure result = new DefaultSizeNodeFigure(getMapMode().DPtoLP(15), getMapMode().DPtoLP(15));
-
 		return result;
 	}
 

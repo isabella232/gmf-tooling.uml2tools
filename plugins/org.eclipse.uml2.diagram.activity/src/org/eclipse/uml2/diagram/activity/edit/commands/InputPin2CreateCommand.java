@@ -29,7 +29,7 @@ public class InputPin2CreateCommand extends CreateElementCommand {
 	 */
 	protected EClass getEClassToEdit() {
 		return UMLPackage.eINSTANCE.getWriteStructuralFeatureAction();
-	};
+	}
 
 	/**
 	 * @generated

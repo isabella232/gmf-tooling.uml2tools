@@ -54,8 +54,8 @@ public class JoinNode2EditPart extends ShapeNodeEditPart {
 	 * @generated
 	 */
 	protected void createDefaultEditPolicies() {
-		super.createDefaultEditPolicies();
 
+		super.createDefaultEditPolicies();
 		installEditPolicy(EditPolicyRoles.SEMANTIC_ROLE, new JoinNode2ItemSemanticEditPolicy());
 		installEditPolicy(EditPolicyRoles.CANONICAL_ROLE, new JoinNode2CanonicalEditPolicy());
 		installEditPolicy(EditPolicy.LAYOUT_ROLE, createLayoutEditPolicy());
@@ -106,7 +106,6 @@ public class JoinNode2EditPart extends ShapeNodeEditPart {
 	 */
 	protected NodeFigure createNodePlate() {
 		DefaultSizeNodeFigure result = new DefaultSizeNodeFigure(getMapMode().DPtoLP(4), getMapMode().DPtoLP(50));
-
 		return result;
 	}
 

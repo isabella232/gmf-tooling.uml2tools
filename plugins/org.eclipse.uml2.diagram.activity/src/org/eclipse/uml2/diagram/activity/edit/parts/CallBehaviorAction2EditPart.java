@@ -71,8 +71,8 @@ public class CallBehaviorAction2EditPart extends AbstractBorderedShapeEditPart {
 	 */
 	protected void createDefaultEditPolicies() {
 		installEditPolicy(EditPolicyRoles.CREATION_ROLE, new CreationEditPolicy());
-		super.createDefaultEditPolicies();
 
+		super.createDefaultEditPolicies();
 		installEditPolicy(EditPolicyRoles.SEMANTIC_ROLE, new CallBehaviorAction2ItemSemanticEditPolicy());
 		installEditPolicy(EditPolicyRoles.DRAG_DROP_ROLE, new DragDropEditPolicy());
 		installEditPolicy(EditPolicyRoles.CANONICAL_ROLE, new CallBehaviorAction2CanonicalEditPolicy());
@@ -200,7 +200,6 @@ public class CallBehaviorAction2EditPart extends AbstractBorderedShapeEditPart {
 	 */
 	protected NodeFigure createNodePlate() {
 		DefaultSizeNodeFigure result = new DefaultSizeNodeFigure(getMapMode().DPtoLP(80), getMapMode().DPtoLP(50));
-
 		return result;
 	}
 

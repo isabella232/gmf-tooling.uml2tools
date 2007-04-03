@@ -28,7 +28,7 @@ public class OutputPinCreateCommand extends CreateElementCommand {
 	 */
 	protected EClass getEClassToEdit() {
 		return UMLPackage.eINSTANCE.getOpaqueAction();
-	};
+	}
 
 	/**
 	 * @generated

@@ -1,18 +1,9 @@
 package org.eclipse.uml2.diagram.activity.part;
 
-import org.eclipse.emf.common.util.URI;
-
-import org.eclipse.emf.ecore.resource.Resource;
-
-import org.eclipse.gmf.runtime.diagram.ui.parts.DiagramEditorInput;
-
-import org.eclipse.gmf.runtime.notation.Diagram;
-
+import org.eclipse.emf.common.ui.URIEditorInput;
 import org.eclipse.ui.IEditorInput;
 import org.eclipse.ui.IEditorMatchingStrategy;
-import org.eclipse.ui.IEditorPart;
 import org.eclipse.ui.IEditorReference;
-import org.eclipse.ui.IFileEditorInput;
 import org.eclipse.ui.PartInitException;
 
 /**
@@ -34,32 +25,8 @@ public class UMLMatchingStrategy implements IEditorMatchingStrategy {
 		if (editorInput.equals(input)) {
 			return true;
 		}
-
-		if (editorInput instanceof IFileEditorInput && input instanceof IFileEditorInput) {
-			return ((IFileEditorInput) editorInput).getFile().equals(((IFileEditorInput) input).getFile());
-		}
-
-		IEditorPart editor = editorRef.getEditor(false);
-		if (input instanceof DiagramEditorInput && editor instanceof UMLDiagramEditor) {
-			Diagram editorDiagram = ((UMLDiagramEditor) editor).getDiagram();
-			Diagram otherDiagram = ((DiagramEditorInput) input).getDiagram();
-			return equals(editorDiagram, otherDiagram);
-		}
-		return false;
-	}
-
-	/**
-	 * @generated
-	 */
-	private boolean equals(Diagram editorDiagram, Diagram otherDiagram) {
-		Resource editorResource = editorDiagram.eResource();
-		Resource otherResource = otherDiagram.eResource();
-		if (editorResource != null && otherResource != null) {
-			URI editorURI = editorResource.getURI();
-			URI otherURI = otherResource.getURI();
-			String editorURIFragment = editorResource.getURIFragment(editorDiagram);
-			String otherURIFragment = otherResource.getURIFragment(otherDiagram);
-			return editorURI.equals(otherURI) && editorURIFragment.equals(otherURIFragment);
+		if (editorInput instanceof URIEditorInput && input instanceof URIEditorInput) {
+			return ((URIEditorInput) editorInput).getURI().equals(((URIEditorInput) input).getURI());
 		}
 		return false;
 	}

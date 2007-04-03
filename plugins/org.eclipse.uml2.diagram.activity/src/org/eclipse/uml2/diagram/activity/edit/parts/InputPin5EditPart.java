@@ -58,8 +58,8 @@ public class InputPin5EditPart extends BorderedBorderItemEditPart {
 	 * @generated
 	 */
 	protected void createDefaultEditPolicies() {
-		super.createDefaultEditPolicies();
 
+		super.createDefaultEditPolicies();
 		installEditPolicy(EditPolicy.PRIMARY_DRAG_ROLE, getPrimaryDragEditPolicy());
 		installEditPolicy(EditPolicyRoles.SEMANTIC_ROLE, new InputPin5ItemSemanticEditPolicy());
 		installEditPolicy(EditPolicyRoles.CANONICAL_ROLE, new InputPin5CanonicalEditPolicy());

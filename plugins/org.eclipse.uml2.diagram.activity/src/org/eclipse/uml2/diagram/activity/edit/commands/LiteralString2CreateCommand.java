@@ -32,7 +32,7 @@ public class LiteralString2CreateCommand extends CreateElementCommand {
 	 */
 	protected EClass getEClassToEdit() {
 		return UMLPackage.eINSTANCE.getConstraint();
-	};
+	}
 
 	/**
 	 * @generated

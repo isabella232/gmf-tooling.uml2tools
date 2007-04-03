@@ -69,7 +69,7 @@ public class ObjectFlowTypeLinkCreateCommand extends CreateRelationshipCommand {
 	 */
 	protected EClass getEClassToEdit() {
 		return UMLPackage.eINSTANCE.getActivity();
-	};
+	}
 
 	/**
 	 * @generated

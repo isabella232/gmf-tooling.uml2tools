@@ -65,8 +65,8 @@ public class AddStructuralFeatureValueAction2EditPart extends AbstractBorderedSh
 	 */
 	protected void createDefaultEditPolicies() {
 		installEditPolicy(EditPolicyRoles.CREATION_ROLE, new CreationEditPolicy());
-		super.createDefaultEditPolicies();
 
+		super.createDefaultEditPolicies();
 		installEditPolicy(EditPolicyRoles.SEMANTIC_ROLE, new AddStructuralFeatureValueAction2ItemSemanticEditPolicy());
 		installEditPolicy(EditPolicyRoles.DRAG_DROP_ROLE, new DragDropEditPolicy());
 		installEditPolicy(EditPolicyRoles.CANONICAL_ROLE, new AddStructuralFeatureValueAction2CanonicalEditPolicy());
@@ -207,7 +207,6 @@ public class AddStructuralFeatureValueAction2EditPart extends AbstractBorderedSh
 	 */
 	protected NodeFigure createNodePlate() {
 		DefaultSizeNodeFigure result = new DefaultSizeNodeFigure(getMapMode().DPtoLP(80), getMapMode().DPtoLP(80));
-
 		return result;
 	}
 

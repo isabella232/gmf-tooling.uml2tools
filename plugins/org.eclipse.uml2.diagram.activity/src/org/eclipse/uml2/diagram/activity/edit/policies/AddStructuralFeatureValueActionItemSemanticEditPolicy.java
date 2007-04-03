@@ -1,29 +1,43 @@
 package org.eclipse.uml2.diagram.activity.edit.policies;
 
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Collections;
+import java.util.Iterator;
+
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.gef.EditPart;
 import org.eclipse.gef.commands.Command;
+import org.eclipse.gef.commands.CompoundCommand;
+import org.eclipse.gef.commands.UnexecutableCommand;
+import org.eclipse.gmf.runtime.diagram.ui.requests.EditCommandRequestWrapper;
 import org.eclipse.gmf.runtime.emf.type.core.commands.DestroyElementCommand;
+import org.eclipse.gmf.runtime.emf.type.core.requests.CreateElementRequest;
 import org.eclipse.gmf.runtime.emf.type.core.requests.CreateRelationshipRequest;
 import org.eclipse.gmf.runtime.emf.type.core.requests.DestroyElementRequest;
-import org.eclipse.emf.ecore.EObject;
-import org.eclipse.emf.ecore.EAnnotation;
+import org.eclipse.gmf.runtime.emf.type.core.requests.ReorientReferenceRelationshipRequest;
+import org.eclipse.gmf.runtime.emf.type.core.requests.ReorientRelationshipRequest;
+import org.eclipse.gmf.runtime.notation.Edge;
 import org.eclipse.gmf.runtime.notation.View;
-import org.eclipse.gef.commands.UnexecutableCommand;
-
-import org.eclipse.gmf.runtime.emf.type.core.requests.CreateElementRequest;
-
+import org.eclipse.uml2.diagram.activity.edit.commands.ActionLocalPreconditionReorientCommand;
+import org.eclipse.uml2.diagram.activity.edit.commands.ControlFlowReorientCommand;
 import org.eclipse.uml2.diagram.activity.edit.commands.ControlFlowTypeLinkCreateCommand;
+import org.eclipse.uml2.diagram.activity.edit.commands.ExceptionHandlerReorientCommand;
 import org.eclipse.uml2.diagram.activity.edit.commands.ExceptionHandlerTypeLinkCreateCommand;
 import org.eclipse.uml2.diagram.activity.edit.commands.InputPin2CreateCommand;
 import org.eclipse.uml2.diagram.activity.edit.commands.InputPin3CreateCommand;
 import org.eclipse.uml2.diagram.activity.edit.commands.InputPinCreateCommand;
+import org.eclipse.uml2.diagram.activity.edit.commands.ObjectFlowReorientCommand;
 import org.eclipse.uml2.diagram.activity.edit.commands.ObjectFlowTypeLinkCreateCommand;
-
+import org.eclipse.uml2.diagram.activity.edit.parts.ActionLocalPreconditionEditPart;
+import org.eclipse.uml2.diagram.activity.edit.parts.AddStructuralFeatureValueActionEditPart;
+import org.eclipse.uml2.diagram.activity.edit.parts.ControlFlowEditPart;
+import org.eclipse.uml2.diagram.activity.edit.parts.ExceptionHandlerEditPart;
+import org.eclipse.uml2.diagram.activity.edit.parts.ObjectFlowEditPart;
 import org.eclipse.uml2.diagram.activity.providers.UMLElementTypes;
-
 import org.eclipse.uml2.uml.Action;
 import org.eclipse.uml2.uml.Activity;
 import org.eclipse.uml2.uml.ActivityNode;
-import org.eclipse.uml2.uml.Constraint;
 import org.eclipse.uml2.uml.ExecutableNode;
 import org.eclipse.uml2.uml.UMLPackage;
 
@@ -61,18 +75,20 @@ public class AddStructuralFeatureValueActionItemSemanticEditPolicy extends UMLBa
 	 * @generated
 	 */
 	protected Command getDestroyElementCommand(DestroyElementRequest req) {
-		return getMSLWrapper(new DestroyElementCommand(req) {
-
-			protected EObject getElementToDestroy() {
-				View view = (View) getHost().getModel();
-				EAnnotation annotation = view.getEAnnotation("Shortcut"); //$NON-NLS-1$
-				if (annotation != null) {
-					return view;
-				}
-				return super.getElementToDestroy();
-			}
-
-		});
+		CompoundCommand cc = new CompoundCommand();
+		Collection allEdges = new ArrayList();
+		View view = (View) getHost().getModel();
+		allEdges.addAll(view.getSourceEdges());
+		allEdges.addAll(view.getTargetEdges());
+		for (Iterator it = allEdges.iterator(); it.hasNext();) {
+			Edge nextEdge = (Edge) it.next();
+			EditPart nextEditPart = (EditPart) getHost().getViewer().getEditPartRegistry().get(nextEdge);
+			EditCommandRequestWrapper editCommandRequest = new EditCommandRequestWrapper(new DestroyElementRequest(((AddStructuralFeatureValueActionEditPart) getHost()).getEditingDomain(), req
+					.isConfirmationRequired()), Collections.EMPTY_MAP);
+			cc.add(nextEditPart.getCommand(editCommandRequest));
+		}
+		cc.add(getMSLWrapper(new DestroyElementCommand(req)));
+		return cc;
 	}
 
 	/**
@@ -80,16 +96,16 @@ public class AddStructuralFeatureValueActionItemSemanticEditPolicy extends UMLBa
 	 */
 	protected Command getCreateRelationshipCommand(CreateRelationshipRequest req) {
 		if (UMLElementTypes.ControlFlow_4001 == req.getElementType()) {
-			return req.getTarget() == null ? getCreateStartOutgoingControlFlow4001Command(req) : getCreateCompleteIncomingControlFlow4001Command(req);
+			return req.getTarget() == null ? getCreateStartOutgoingControlFlow_4001Command(req) : getCreateCompleteIncomingControlFlow_4001Command(req);
 		}
 		if (UMLElementTypes.ObjectFlow_4002 == req.getElementType()) {
-			return req.getTarget() == null ? getCreateStartOutgoingObjectFlow4002Command(req) : getCreateCompleteIncomingObjectFlow4002Command(req);
+			return req.getTarget() == null ? getCreateStartOutgoingObjectFlow_4002Command(req) : getCreateCompleteIncomingObjectFlow_4002Command(req);
 		}
 		if (UMLElementTypes.ActionLocalPrecondition_4003 == req.getElementType()) {
-			return req.getTarget() == null ? getCreateStartOutgoingAction_LocalPrecondition4003Command(req) : null;
+			return req.getTarget() == null ? getCreateStartOutgoingActionLocalPrecondition_4003Command(req) : null;
 		}
 		if (UMLElementTypes.ExceptionHandler_4005 == req.getElementType()) {
-			return req.getTarget() == null ? getCreateStartOutgoingExceptionHandler4005Command(req) : getCreateCompleteIncomingExceptionHandler4005Command(req);
+			return req.getTarget() == null ? getCreateStartOutgoingExceptionHandler_4005Command(req) : getCreateCompleteIncomingExceptionHandler_4005Command(req);
 		}
 		return super.getCreateRelationshipCommand(req);
 	}
@@ -97,20 +113,17 @@ public class AddStructuralFeatureValueActionItemSemanticEditPolicy extends UMLBa
 	/**
 	 * @generated
 	 */
-	protected Command getCreateStartOutgoingControlFlow4001Command(CreateRelationshipRequest req) {
+	protected Command getCreateStartOutgoingControlFlow_4001Command(CreateRelationshipRequest req) {
 		EObject sourceEObject = req.getSource();
-		EObject targetEObject = req.getTarget();
-		if (false == sourceEObject instanceof ActivityNode || (targetEObject != null && false == targetEObject instanceof ActivityNode)) {
+		if (false == sourceEObject instanceof ActivityNode) {
 			return UnexecutableCommand.INSTANCE;
 		}
 		ActivityNode source = (ActivityNode) sourceEObject;
-		ActivityNode target = (ActivityNode) targetEObject;
-
 		Activity container = (Activity) getRelationshipContainer(source, UMLPackage.eINSTANCE.getActivity(), req.getElementType());
 		if (container == null) {
 			return UnexecutableCommand.INSTANCE;
 		}
-		if (!UMLBaseItemSemanticEditPolicy.LinkConstraints.canCreateControlFlow_4001(container, source, target)) {
+		if (!UMLBaseItemSemanticEditPolicy.LinkConstraints.canCreateControlFlow_4001(container, source, null)) {
 			return UnexecutableCommand.INSTANCE;
 		}
 		return new Command() {
@@ -120,7 +133,7 @@ public class AddStructuralFeatureValueActionItemSemanticEditPolicy extends UMLBa
 	/**
 	 * @generated
 	 */
-	protected Command getCreateCompleteIncomingControlFlow4001Command(CreateRelationshipRequest req) {
+	protected Command getCreateCompleteIncomingControlFlow_4001Command(CreateRelationshipRequest req) {
 		EObject sourceEObject = req.getSource();
 		EObject targetEObject = req.getTarget();
 		if (false == sourceEObject instanceof ActivityNode || false == targetEObject instanceof ActivityNode) {
@@ -128,7 +141,6 @@ public class AddStructuralFeatureValueActionItemSemanticEditPolicy extends UMLBa
 		}
 		ActivityNode source = (ActivityNode) sourceEObject;
 		ActivityNode target = (ActivityNode) targetEObject;
-
 		Activity container = (Activity) getRelationshipContainer(source, UMLPackage.eINSTANCE.getActivity(), req.getElementType());
 		if (container == null) {
 			return UnexecutableCommand.INSTANCE;
@@ -145,20 +157,17 @@ public class AddStructuralFeatureValueActionItemSemanticEditPolicy extends UMLBa
 	/**
 	 * @generated
 	 */
-	protected Command getCreateStartOutgoingObjectFlow4002Command(CreateRelationshipRequest req) {
+	protected Command getCreateStartOutgoingObjectFlow_4002Command(CreateRelationshipRequest req) {
 		EObject sourceEObject = req.getSource();
-		EObject targetEObject = req.getTarget();
-		if (false == sourceEObject instanceof ActivityNode || (targetEObject != null && false == targetEObject instanceof ActivityNode)) {
+		if (false == sourceEObject instanceof ActivityNode) {
 			return UnexecutableCommand.INSTANCE;
 		}
 		ActivityNode source = (ActivityNode) sourceEObject;
-		ActivityNode target = (ActivityNode) targetEObject;
-
 		Activity container = (Activity) getRelationshipContainer(source, UMLPackage.eINSTANCE.getActivity(), req.getElementType());
 		if (container == null) {
 			return UnexecutableCommand.INSTANCE;
 		}
-		if (!UMLBaseItemSemanticEditPolicy.LinkConstraints.canCreateObjectFlow_4002(container, source, target)) {
+		if (!UMLBaseItemSemanticEditPolicy.LinkConstraints.canCreateObjectFlow_4002(container, source, null)) {
 			return UnexecutableCommand.INSTANCE;
 		}
 		return new Command() {
@@ -168,7 +177,7 @@ public class AddStructuralFeatureValueActionItemSemanticEditPolicy extends UMLBa
 	/**
 	 * @generated
 	 */
-	protected Command getCreateCompleteIncomingObjectFlow4002Command(CreateRelationshipRequest req) {
+	protected Command getCreateCompleteIncomingObjectFlow_4002Command(CreateRelationshipRequest req) {
 		EObject sourceEObject = req.getSource();
 		EObject targetEObject = req.getTarget();
 		if (false == sourceEObject instanceof ActivityNode || false == targetEObject instanceof ActivityNode) {
@@ -176,7 +185,6 @@ public class AddStructuralFeatureValueActionItemSemanticEditPolicy extends UMLBa
 		}
 		ActivityNode source = (ActivityNode) sourceEObject;
 		ActivityNode target = (ActivityNode) targetEObject;
-
 		Activity container = (Activity) getRelationshipContainer(source, UMLPackage.eINSTANCE.getActivity(), req.getElementType());
 		if (container == null) {
 			return UnexecutableCommand.INSTANCE;
@@ -193,15 +201,13 @@ public class AddStructuralFeatureValueActionItemSemanticEditPolicy extends UMLBa
 	/**
 	 * @generated
 	 */
-	protected Command getCreateStartOutgoingAction_LocalPrecondition4003Command(CreateRelationshipRequest req) {
+	protected Command getCreateStartOutgoingActionLocalPrecondition_4003Command(CreateRelationshipRequest req) {
 		EObject sourceEObject = req.getSource();
-		EObject targetEObject = req.getTarget();
-		if (false == sourceEObject instanceof Action || (targetEObject != null && false == targetEObject instanceof Constraint)) {
+		if (false == sourceEObject instanceof Action) {
 			return UnexecutableCommand.INSTANCE;
 		}
 		Action source = (Action) sourceEObject;
-		Constraint target = (Constraint) targetEObject;
-		if (!UMLBaseItemSemanticEditPolicy.LinkConstraints.canCreateActionLocalPrecondition_4003(source, target)) {
+		if (!UMLBaseItemSemanticEditPolicy.LinkConstraints.canCreateActionLocalPrecondition_4003(source, null)) {
 			return UnexecutableCommand.INSTANCE;
 		}
 		return new Command() {
@@ -211,20 +217,17 @@ public class AddStructuralFeatureValueActionItemSemanticEditPolicy extends UMLBa
 	/**
 	 * @generated
 	 */
-	protected Command getCreateStartOutgoingExceptionHandler4005Command(CreateRelationshipRequest req) {
+	protected Command getCreateStartOutgoingExceptionHandler_4005Command(CreateRelationshipRequest req) {
 		EObject sourceEObject = req.getSource();
-		EObject targetEObject = req.getTarget();
-		if (false == sourceEObject instanceof ExecutableNode || (targetEObject != null && false == targetEObject instanceof ExecutableNode)) {
+		if (false == sourceEObject instanceof ExecutableNode) {
 			return UnexecutableCommand.INSTANCE;
 		}
 		ExecutableNode source = (ExecutableNode) sourceEObject;
-		ExecutableNode target = (ExecutableNode) targetEObject;
-
 		ExecutableNode container = (ExecutableNode) getRelationshipContainer(source, UMLPackage.eINSTANCE.getExecutableNode(), req.getElementType());
 		if (container == null) {
 			return UnexecutableCommand.INSTANCE;
 		}
-		if (!UMLBaseItemSemanticEditPolicy.LinkConstraints.canCreateExceptionHandler_4005(container, source, target)) {
+		if (!UMLBaseItemSemanticEditPolicy.LinkConstraints.canCreateExceptionHandler_4005(container, source, null)) {
 			return UnexecutableCommand.INSTANCE;
 		}
 		return new Command() {
@@ -234,7 +237,7 @@ public class AddStructuralFeatureValueActionItemSemanticEditPolicy extends UMLBa
 	/**
 	 * @generated
 	 */
-	protected Command getCreateCompleteIncomingExceptionHandler4005Command(CreateRelationshipRequest req) {
+	protected Command getCreateCompleteIncomingExceptionHandler_4005Command(CreateRelationshipRequest req) {
 		EObject sourceEObject = req.getSource();
 		EObject targetEObject = req.getTarget();
 		if (false == sourceEObject instanceof ExecutableNode || false == targetEObject instanceof ExecutableNode) {
@@ -242,7 +245,6 @@ public class AddStructuralFeatureValueActionItemSemanticEditPolicy extends UMLBa
 		}
 		ExecutableNode source = (ExecutableNode) sourceEObject;
 		ExecutableNode target = (ExecutableNode) targetEObject;
-
 		ExecutableNode container = (ExecutableNode) getRelationshipContainer(source, UMLPackage.eINSTANCE.getExecutableNode(), req.getElementType());
 		if (container == null) {
 			return UnexecutableCommand.INSTANCE;
@@ -254,5 +256,37 @@ public class AddStructuralFeatureValueActionItemSemanticEditPolicy extends UMLBa
 			req.setContainmentFeature(UMLPackage.eINSTANCE.getExecutableNode_Handler());
 		}
 		return getMSLWrapper(new ExceptionHandlerTypeLinkCreateCommand(req, container, source, target));
+	}
+
+	/**
+	 * Returns command to reorient EClass based link. New link target or source
+	 * should be the domain model element associated with this node.
+	 * 
+	 * @generated
+	 */
+	protected Command getReorientRelationshipCommand(ReorientRelationshipRequest req) {
+		switch (getVisualID(req)) {
+		case ControlFlowEditPart.VISUAL_ID:
+			return getMSLWrapper(new ControlFlowReorientCommand(req));
+		case ObjectFlowEditPart.VISUAL_ID:
+			return getMSLWrapper(new ObjectFlowReorientCommand(req));
+		case ExceptionHandlerEditPart.VISUAL_ID:
+			return getMSLWrapper(new ExceptionHandlerReorientCommand(req));
+		}
+		return super.getReorientRelationshipCommand(req);
+	}
+
+	/**
+	 * Returns command to reorient EReference based link. New link target or source
+	 * should be the domain model element associated with this node.
+	 * 
+	 * @generated
+	 */
+	protected Command getReorientReferenceRelationshipCommand(ReorientReferenceRelationshipRequest req) {
+		switch (getVisualID(req)) {
+		case ActionLocalPreconditionEditPart.VISUAL_ID:
+			return getMSLWrapper(new ActionLocalPreconditionReorientCommand(req));
+		}
+		return super.getReorientReferenceRelationshipCommand(req);
 	}
 }

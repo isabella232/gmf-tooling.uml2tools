@@ -28,7 +28,7 @@ public class OpaqueBehaviorCreateCommand extends CreateElementCommand {
 	 */
 	protected EClass getEClassToEdit() {
 		return UMLPackage.eINSTANCE.getBehavioredClassifier();
-	};
+	}
 
 	/**
 	 * @generated

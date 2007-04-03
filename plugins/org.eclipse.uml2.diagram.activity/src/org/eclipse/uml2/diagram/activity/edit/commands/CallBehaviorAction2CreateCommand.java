@@ -28,7 +28,7 @@ public class CallBehaviorAction2CreateCommand extends CreateElementCommand {
 	 */
 	protected EClass getEClassToEdit() {
 		return UMLPackage.eINSTANCE.getStructuredActivityNode();
-	};
+	}
 
 	/**
 	 * @generated

@@ -28,7 +28,7 @@ public class InputPin4CreateCommand extends CreateElementCommand {
 	 */
 	protected EClass getEClassToEdit() {
 		return UMLPackage.eINSTANCE.getInvocationAction();
-	};
+	}
 
 	/**
 	 * @generated

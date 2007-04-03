@@ -28,7 +28,7 @@ public class OpaqueAction2CreateCommand extends CreateElementCommand {
 	 */
 	protected EClass getEClassToEdit() {
 		return UMLPackage.eINSTANCE.getStructuredActivityNode();
-	};
+	}
 
 	/**
 	 * @generated

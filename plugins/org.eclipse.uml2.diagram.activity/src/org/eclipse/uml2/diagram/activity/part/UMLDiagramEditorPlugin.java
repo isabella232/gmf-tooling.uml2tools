@@ -52,6 +52,11 @@ public class UMLDiagramEditorPlugin extends AbstractUIPlugin {
 	/**
 	 * @generated
 	 */
+	private UMLDocumentProvider myDocumentProvider;
+
+	/**
+	 * @generated
+	 */
 	public UMLDiagramEditorPlugin() {
 	}
 
@@ -172,6 +177,16 @@ public class UMLDiagramEditorPlugin extends AbstractUIPlugin {
 			image = getImageRegistry().get(path);
 		}
 		return image;
+	}
+
+	/**
+	 * @generated
+	 */
+	public UMLDocumentProvider getDocumentProvider() {
+		if (myDocumentProvider == null) {
+			myDocumentProvider = new UMLDocumentProvider();
+		}
+		return myDocumentProvider;
 	}
 
 	/**

@@ -29,7 +29,7 @@ public class OutputPin2CreateCommand extends CreateElementCommand {
 	 */
 	protected EClass getEClassToEdit() {
 		return UMLPackage.eINSTANCE.getCreateObjectAction();
-	};
+	}
 
 	/**
 	 * @generated

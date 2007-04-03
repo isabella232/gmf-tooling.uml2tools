@@ -28,7 +28,7 @@ public class AddStructuralFeatureValueActionCreateCommand extends CreateElementC
 	 */
 	protected EClass getEClassToEdit() {
 		return UMLPackage.eINSTANCE.getActivity();
-	};
+	}
 
 	/**
 	 * @generated

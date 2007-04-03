@@ -11,6 +11,7 @@ import org.eclipse.gmf.runtime.draw2d.ui.figures.ConstrainedToolbarLayout;
 import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.uml2.diagram.activity.edit.policies.ConstraintPreconditionCanonicalEditPolicy;
 import org.eclipse.uml2.diagram.activity.edit.policies.ConstraintPreconditionItemSemanticEditPolicy;
+import org.eclipse.uml2.diagram.activity.part.Messages;
 
 /**
  * @generated
@@ -40,7 +41,7 @@ public class ConstraintPreconditionEditPart extends ListCompartmentEditPart {
 	 * @generated
 	 */
 	public String getCompartmentName() {
-		return "precondition";
+		return Messages.ConstraintPreconditionEditPart_title;
 	}
 
 	/**
@@ -71,4 +72,5 @@ public class ConstraintPreconditionEditPart extends ListCompartmentEditPart {
 			super.setRatio(ratio);
 		}
 	}
+
 }

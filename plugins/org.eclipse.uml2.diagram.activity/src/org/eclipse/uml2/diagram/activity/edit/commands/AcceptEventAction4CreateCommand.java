@@ -31,7 +31,7 @@ public class AcceptEventAction4CreateCommand extends CreateElementCommand {
 	 */
 	protected EClass getEClassToEdit() {
 		return UMLPackage.eINSTANCE.getStructuredActivityNode();
-	};
+	}
 
 	/**
 	 * @generated

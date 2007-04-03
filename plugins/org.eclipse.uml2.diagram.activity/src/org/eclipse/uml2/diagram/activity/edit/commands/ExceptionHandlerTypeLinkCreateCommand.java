@@ -68,7 +68,7 @@ public class ExceptionHandlerTypeLinkCreateCommand extends CreateRelationshipCom
 	 */
 	protected EClass getEClassToEdit() {
 		return UMLPackage.eINSTANCE.getExecutableNode();
-	};
+	}
 
 	/**
 	 * @generated

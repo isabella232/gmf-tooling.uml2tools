@@ -28,7 +28,7 @@ public class CallBehaviorActionCreateCommand extends CreateElementCommand {
 	 */
 	protected EClass getEClassToEdit() {
 		return UMLPackage.eINSTANCE.getActivity();
-	};
+	}
 
 	/**
 	 * @generated

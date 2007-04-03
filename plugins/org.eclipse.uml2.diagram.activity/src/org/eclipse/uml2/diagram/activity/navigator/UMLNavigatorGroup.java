@@ -78,13 +78,20 @@ public class UMLNavigatorGroup extends UMLAbstractNavigatorItem {
 	 * @generated
 	 */
 	public boolean equals(Object obj) {
-		if (obj instanceof UMLNavigatorGroup) {
-			UMLNavigatorGroup anotherGroup = (UMLNavigatorGroup) obj;
+		if (obj instanceof org.eclipse.uml2.diagram.activity.navigator.UMLNavigatorGroup) {
+			org.eclipse.uml2.diagram.activity.navigator.UMLNavigatorGroup anotherGroup = (org.eclipse.uml2.diagram.activity.navigator.UMLNavigatorGroup) obj;
 			if (getGroupName().equals(anotherGroup.getGroupName())) {
 				return getParent().equals(anotherGroup.getParent());
 			}
 		}
 		return super.equals(obj);
+	}
+
+	/**
+	 * @generated
+	 */
+	public int hashCode() {
+		return getGroupName().hashCode();
 	}
 
 }

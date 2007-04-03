@@ -3,8 +3,10 @@ package org.eclipse.uml2.diagram.activity.edit.policies;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.transaction.TransactionalEditingDomain;
+import org.eclipse.gef.Request;
 import org.eclipse.gef.commands.Command;
 import org.eclipse.gef.commands.UnexecutableCommand;
+import org.eclipse.gef.requests.ReconnectRequest;
 import org.eclipse.gmf.runtime.common.core.command.ICommand;
 import org.eclipse.gmf.runtime.diagram.core.commands.DeleteCommand;
 import org.eclipse.gmf.runtime.diagram.core.util.ViewUtil;
@@ -39,8 +41,10 @@ import org.eclipse.uml2.diagram.activity.edit.helpers.UMLBaseEditHelper;
 import org.eclipse.uml2.diagram.activity.expressions.UMLAbstractExpression;
 import org.eclipse.uml2.diagram.activity.expressions.UMLOCLFactory;
 
+import org.eclipse.uml2.diagram.activity.part.Messages;
 import org.eclipse.uml2.diagram.activity.part.UMLDiagramEditorPlugin;
 
+import org.eclipse.uml2.diagram.activity.part.UMLVisualIDRegistry;
 import org.eclipse.uml2.uml.Action;
 import org.eclipse.uml2.uml.Activity;
 import org.eclipse.uml2.uml.ActivityNode;
@@ -54,6 +58,42 @@ import org.eclipse.uml2.uml.UMLPackage;
  * @generated
  */
 public class UMLBaseItemSemanticEditPolicy extends SemanticEditPolicy {
+
+	/**
+	 * Extended request data key to hold editpart visual id.
+	 * 
+	 * @generated
+	 */
+	public static final String VISUAL_ID_KEY = "visual_id"; //$NON-NLS-1$
+
+	/**
+	 * Add visual id of edited editpart to extended data of the request
+	 * so command switch can decide what kind of diagram element is being edited.
+	 * It is done in those cases when it's not possible to deduce diagram
+	 * element kind from domain element.
+	 * 
+	 * @generated
+	 */
+	public Command getCommand(Request request) {
+		if (request instanceof ReconnectRequest) {
+			Object view = ((ReconnectRequest) request).getConnectionEditPart().getModel();
+			if (view instanceof View) {
+				Integer id = new Integer(UMLVisualIDRegistry.getVisualID((View) view));
+				request.getExtendedData().put(VISUAL_ID_KEY, id);
+			}
+		}
+		return super.getCommand(request);
+	}
+
+	/**
+	 * Returns visual id from request parameters.
+	 * 
+	 * @generated
+	 */
+	protected int getVisualID(IEditCommandRequest request) {
+		Object id = request.getParameter(VISUAL_ID_KEY);
+		return id instanceof Integer ? ((Integer) id).intValue() : -1;
+	}
 
 	/**
 	 * @generated
@@ -232,10 +272,13 @@ public class UMLBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 	 * 
 	 * @generated
 	 */
-	protected EObject getRelationshipContainer(EObject element, EClass containerClass, IElementType relationshipType) {
-		for (; element != null; element = element.eContainer()) {
-			if (containerClass.isSuperTypeOf(element.eClass())) {
-				return element;
+	protected EObject getRelationshipContainer(Object uelement, EClass containerClass, IElementType relationshipType) {
+		if (uelement instanceof EObject) {
+			EObject element = (EObject) uelement;
+			for (; element != null; element = element.eContainer()) {
+				if (containerClass.isSuperTypeOf(element.eClass())) {
+					return element;
+				}
 			}
 		}
 		return null;
@@ -261,9 +304,9 @@ public class UMLBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 		 */
 		static {
 			Map env = new HashMap(3);
-			env.put("oppositeEnd", UMLPackage.eINSTANCE.getActivityNode()); //$NON-NLS-1$
-			ControlFlow_4001_SourceExpression = UMLOCLFactory.getExpression("self.oclIsKindOf(uml::ObjectNode) implies self.oclAsType(uml::ObjectNode).isControlType", //$NON-NLS-1$
-					UMLPackage.eINSTANCE.getActivityNode(), env);
+			env.put(OPPOSITE_END_VAR, UMLPackage.eINSTANCE.getActivityNode());
+			ControlFlow_4001_SourceExpression = UMLOCLFactory.getExpression(
+					"self.oclIsKindOf(uml::ObjectNode) implies self.oclAsType(uml::ObjectNode).isControlType", UMLPackage.eINSTANCE.getActivityNode(), env); //$NON-NLS-1$
 		}
 
 		/**
@@ -276,9 +319,9 @@ public class UMLBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 		 */
 		static {
 			Map env = new HashMap(3);
-			env.put("oppositeEnd", UMLPackage.eINSTANCE.getActivityNode()); //$NON-NLS-1$
-			ControlFlow_4001_TargetExpression = UMLOCLFactory.getExpression("self.oclIsKindOf(uml::ObjectNode) implies self.oclAsType(uml::ObjectNode).isControlType", //$NON-NLS-1$
-					UMLPackage.eINSTANCE.getActivityNode(), env);
+			env.put(OPPOSITE_END_VAR, UMLPackage.eINSTANCE.getActivityNode());
+			ControlFlow_4001_TargetExpression = UMLOCLFactory.getExpression(
+					"self.oclIsKindOf(uml::ObjectNode) implies self.oclAsType(uml::ObjectNode).isControlType", UMLPackage.eINSTANCE.getActivityNode(), env); //$NON-NLS-1$
 		}
 
 		/**
@@ -344,7 +387,7 @@ public class UMLBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 				Object val = constraint.evaluate(sourceEnd, evalEnv);
 				return (val instanceof Boolean) ? ((Boolean) val).booleanValue() : false;
 			} catch (Exception e) {
-				UMLDiagramEditorPlugin.getInstance().logError("Link constraint evaluation error", e); //$NON-NLS-1$
+				UMLDiagramEditorPlugin.getInstance().logError(Messages.EvaluateOCLLinkConstraintError, e);
 				return false;
 			}
 		}

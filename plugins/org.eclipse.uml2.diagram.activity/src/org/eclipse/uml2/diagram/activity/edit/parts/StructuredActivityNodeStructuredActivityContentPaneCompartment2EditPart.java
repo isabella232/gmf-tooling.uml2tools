@@ -10,6 +10,7 @@ import org.eclipse.gmf.runtime.draw2d.ui.figures.ConstrainedToolbarLayout;
 import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.uml2.diagram.activity.edit.policies.StructuredActivityNodeStructuredActivityContentPaneCompartment2CanonicalEditPolicy;
 import org.eclipse.uml2.diagram.activity.edit.policies.StructuredActivityNodeStructuredActivityContentPaneCompartment2ItemSemanticEditPolicy;
+import org.eclipse.uml2.diagram.activity.part.Messages;
 
 /**
  * @generated
@@ -32,7 +33,7 @@ public class StructuredActivityNodeStructuredActivityContentPaneCompartment2Edit
 	 * @generated
 	 */
 	public String getCompartmentName() {
-		return "StructuredActivityContentPaneCompartment";
+		return Messages.StructuredActivityNodeStructuredActivityContentPaneCompartment2EditPart_title;
 	}
 
 	/**
@@ -63,4 +64,5 @@ public class StructuredActivityNodeStructuredActivityContentPaneCompartment2Edit
 			super.setRatio(ratio);
 		}
 	}
+
 }
