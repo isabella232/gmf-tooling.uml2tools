@@ -42,6 +42,7 @@ import org.eclipse.gmf.runtime.diagram.ui.requests.CreateViewRequest;
 import org.eclipse.gmf.runtime.diagram.ui.requests.RequestConstants;
 
 import org.eclipse.gmf.runtime.emf.core.util.EObjectAdapter;
+
 import org.eclipse.gmf.runtime.emf.type.core.IElementType;
 
 import org.eclipse.gmf.runtime.notation.Diagram;
@@ -122,6 +123,7 @@ import org.eclipse.uml2.uml.UMLPackage;
 public class PackageCanonicalEditPolicy extends CanonicalConnectionEditPolicy {
 
 	/**
+	 *  
 	 * @generated
 	 */
 	protected List getSemanticChildrenList() {
@@ -144,7 +146,18 @@ public class PackageCanonicalEditPolicy extends CanonicalConnectionEditPolicy {
 	 * @generated
 	 */
 	protected boolean shouldDeleteView(View view) {
-		return view.isSetElement() && view.getElement() != null && view.getElement().eIsProxy();
+		if (view.getEAnnotation("Shortcut") != null) { //$NON-NLS-1$
+			return view.isSetElement() && (view.getElement() == null || view.getElement().eIsProxy());
+		}
+
+		int nodeVID = UMLVisualIDRegistry.getVisualID(view);
+		switch (nodeVID) {
+		case ActivityEditPart.VISUAL_ID:
+		case ConstraintEditPart.VISUAL_ID:
+		case Constraint2EditPart.VISUAL_ID:
+			return true;
+		}
+		return false;
 	}
 
 	/**
@@ -468,7 +481,7 @@ public class PackageCanonicalEditPolicy extends CanonicalConnectionEditPolicy {
 						structuralFeatureResult = ((ActivityEdge) nextValue).getSource();
 						if (structuralFeatureResult instanceof EObject) {
 							EObject src = (EObject) structuralFeatureResult;
-							myLinkDescriptors.add(new LinkDescriptor(src, dst, UMLElementTypes.ControlFlow_4001, linkVID, nextValue));
+							myLinkDescriptors.add(new LinkDescriptor(src, dst, nextValue, UMLElementTypes.ControlFlow_4001, linkVID));
 						}
 					}
 				}
@@ -491,7 +504,7 @@ public class PackageCanonicalEditPolicy extends CanonicalConnectionEditPolicy {
 						structuralFeatureResult = ((ActivityEdge) nextValue).getSource();
 						if (structuralFeatureResult instanceof EObject) {
 							EObject src = (EObject) structuralFeatureResult;
-							myLinkDescriptors.add(new LinkDescriptor(src, dst, UMLElementTypes.ObjectFlow_4002, linkVID, nextValue));
+							myLinkDescriptors.add(new LinkDescriptor(src, dst, nextValue, UMLElementTypes.ObjectFlow_4002, linkVID));
 						}
 					}
 				}
@@ -514,7 +527,7 @@ public class PackageCanonicalEditPolicy extends CanonicalConnectionEditPolicy {
 						structuralFeatureResult = ((ExceptionHandler) nextValue).getProtectedNode();
 						if (structuralFeatureResult instanceof EObject) {
 							EObject src = (EObject) structuralFeatureResult;
-							myLinkDescriptors.add(new LinkDescriptor(src, dst, UMLElementTypes.ExceptionHandler_4005, linkVID, nextValue));
+							myLinkDescriptors.add(new LinkDescriptor(src, dst, nextValue, UMLElementTypes.ExceptionHandler_4005, linkVID));
 						}
 					}
 				}
@@ -585,24 +598,35 @@ public class PackageCanonicalEditPolicy extends CanonicalConnectionEditPolicy {
 		/**
 		 * @generated
 		 */
-		protected LinkDescriptor(EObject source, EObject destination, IElementType elementType, int linkVID) {
-			this(source, destination, elementType, linkVID, null);
-		}
-
-		/**
-		 * @generated
-		 */
-		protected LinkDescriptor(EObject source, EObject destination, IElementType elementType, int linkVID, EObject linkElement) {
+		protected LinkDescriptor(EObject source, EObject destination, EObject linkElement, IElementType elementType, int linkVID) {
 			this(source, destination, linkVID);
 			myLinkElement = linkElement;
 			final IElementType elementTypeCopy = elementType;
-			mySemanticAdapter = new EObjectAdapter(myLinkElement) {
+			mySemanticAdapter = new EObjectAdapter(linkElement) {
 
 				public Object getAdapter(Class adapter) {
 					if (IElementType.class.equals(adapter)) {
 						return elementTypeCopy;
 					}
 					return super.getAdapter(adapter);
+				}
+			};
+		}
+
+		/**
+		 * @generated
+		 */
+		protected LinkDescriptor(EObject source, EObject destination, IElementType elementType, int linkVID) {
+			this(source, destination, linkVID);
+			myLinkElement = null;
+			final IElementType elementTypeCopy = elementType;
+			mySemanticAdapter = new IAdaptable() {
+
+				public Object getAdapter(Class adapter) {
+					if (IElementType.class.equals(adapter)) {
+						return elementTypeCopy;
+					}
+					return null;
 				}
 			};
 		}

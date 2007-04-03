@@ -35,6 +35,7 @@ import org.eclipse.uml2.uml.StructuredActivityNode;
 public class StructuredActivityNodeStructuredActivityContentPaneCompartmentCanonicalEditPolicy extends CanonicalEditPolicy {
 
 	/**
+	 *  
 	 * @generated
 	 */
 	protected List getSemanticChildrenList() {
@@ -120,7 +121,31 @@ public class StructuredActivityNodeStructuredActivityContentPaneCompartmentCanon
 	 * @generated
 	 */
 	protected boolean shouldDeleteView(View view) {
-		return view.isSetElement() && view.getElement() != null && view.getElement().eIsProxy();
+		if (view.getEAnnotation("Shortcut") != null) { //$NON-NLS-1$
+			return view.isSetElement() && (view.getElement() == null || view.getElement().eIsProxy());
+		}
+
+		int nodeVID = UMLVisualIDRegistry.getVisualID(view);
+		switch (nodeVID) {
+		case StructuredActivityNode2EditPart.VISUAL_ID:
+		case OpaqueAction2EditPart.VISUAL_ID:
+		case AcceptEventAction3EditPart.VISUAL_ID:
+		case AcceptEventAction4EditPart.VISUAL_ID:
+		case ActivityFinalNode2EditPart.VISUAL_ID:
+		case DecisionNode2EditPart.VISUAL_ID:
+		case FlowFinalNode2EditPart.VISUAL_ID:
+		case Pin2EditPart.VISUAL_ID:
+		case CreateObjectAction2EditPart.VISUAL_ID:
+		case CallBehaviorAction2EditPart.VISUAL_ID:
+		case CallOperationAction2EditPart.VISUAL_ID:
+		case ForkNode2EditPart.VISUAL_ID:
+		case JoinNode2EditPart.VISUAL_ID:
+		case AddStructuralFeatureValueAction2EditPart.VISUAL_ID:
+		case DataStoreNode2EditPart.VISUAL_ID:
+		case CentralBufferNode2EditPart.VISUAL_ID:
+			return true;
+		}
+		return false;
 	}
 
 	/**

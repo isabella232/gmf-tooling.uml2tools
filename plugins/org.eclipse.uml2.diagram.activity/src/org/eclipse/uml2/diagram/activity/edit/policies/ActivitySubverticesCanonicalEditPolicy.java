@@ -39,6 +39,7 @@ import org.eclipse.uml2.uml.BehavioredClassifier;
 public class ActivitySubverticesCanonicalEditPolicy extends CanonicalEditPolicy {
 
 	/**
+	 *  
 	 * @generated
 	 */
 	protected List getSemanticChildrenList() {
@@ -142,7 +143,34 @@ public class ActivitySubverticesCanonicalEditPolicy extends CanonicalEditPolicy 
 	 * @generated
 	 */
 	protected boolean shouldDeleteView(View view) {
-		return view.isSetElement() && view.getElement() != null && view.getElement().eIsProxy();
+		if (view.getEAnnotation("Shortcut") != null) { //$NON-NLS-1$
+			return view.isSetElement() && (view.getElement() == null || view.getElement().eIsProxy());
+		}
+
+		int nodeVID = UMLVisualIDRegistry.getVisualID(view);
+		switch (nodeVID) {
+		case AcceptEventActionEditPart.VISUAL_ID:
+		case AcceptEventAction2EditPart.VISUAL_ID:
+		case ActivityFinalNodeEditPart.VISUAL_ID:
+		case DecisionNodeEditPart.VISUAL_ID:
+		case MergeNodeEditPart.VISUAL_ID:
+		case InitialNodeEditPart.VISUAL_ID:
+		case DataStoreNodeEditPart.VISUAL_ID:
+		case CentralBufferNodeEditPart.VISUAL_ID:
+		case OpaqueActionEditPart.VISUAL_ID:
+		case FlowFinalNodeEditPart.VISUAL_ID:
+		case ForkNodeEditPart.VISUAL_ID:
+		case JoinNodeEditPart.VISUAL_ID:
+		case PinEditPart.VISUAL_ID:
+		case CreateObjectActionEditPart.VISUAL_ID:
+		case AddStructuralFeatureValueActionEditPart.VISUAL_ID:
+		case CallBehaviorActionEditPart.VISUAL_ID:
+		case CallOperationActionEditPart.VISUAL_ID:
+		case StructuredActivityNodeEditPart.VISUAL_ID:
+		case OpaqueBehaviorEditPart.VISUAL_ID:
+			return true;
+		}
+		return false;
 	}
 
 	/**

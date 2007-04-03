@@ -52,6 +52,7 @@ import org.eclipse.uml2.uml.UMLPackage;
 public class CallOperationActionCanonicalEditPolicy extends CanonicalEditPolicy {
 
 	/**
+	 *  
 	 * @generated
 	 */
 	protected List getSemanticChildrenList() {
@@ -86,7 +87,18 @@ public class CallOperationActionCanonicalEditPolicy extends CanonicalEditPolicy 
 	 * @generated
 	 */
 	protected boolean shouldDeleteView(View view) {
-		return view.isSetElement() && view.getElement() != null && view.getElement().eIsProxy();
+		if (view.getEAnnotation("Shortcut") != null) { //$NON-NLS-1$
+			return view.isSetElement() && (view.getElement() == null || view.getElement().eIsProxy());
+		}
+
+		int nodeVID = UMLVisualIDRegistry.getVisualID(view);
+		switch (nodeVID) {
+		case OutputPin3EditPart.VISUAL_ID:
+		case InputPin4EditPart.VISUAL_ID:
+		case InputPin5EditPart.VISUAL_ID:
+			return true;
+		}
+		return false;
 	}
 
 	/**

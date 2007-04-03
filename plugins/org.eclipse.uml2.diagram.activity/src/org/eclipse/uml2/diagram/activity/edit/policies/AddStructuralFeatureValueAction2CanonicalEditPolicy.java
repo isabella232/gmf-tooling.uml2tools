@@ -52,6 +52,7 @@ import org.eclipse.uml2.uml.WriteStructuralFeatureAction;
 public class AddStructuralFeatureValueAction2CanonicalEditPolicy extends CanonicalEditPolicy {
 
 	/**
+	 *  
 	 * @generated
 	 */
 	protected List getSemanticChildrenList() {
@@ -82,7 +83,18 @@ public class AddStructuralFeatureValueAction2CanonicalEditPolicy extends Canonic
 	 * @generated
 	 */
 	protected boolean shouldDeleteView(View view) {
-		return view.isSetElement() && view.getElement() != null && view.getElement().eIsProxy();
+		if (view.getEAnnotation("Shortcut") != null) { //$NON-NLS-1$
+			return view.isSetElement() && (view.getElement() == null || view.getElement().eIsProxy());
+		}
+
+		int nodeVID = UMLVisualIDRegistry.getVisualID(view);
+		switch (nodeVID) {
+		case InputPinEditPart.VISUAL_ID:
+		case InputPin2EditPart.VISUAL_ID:
+		case InputPin3EditPart.VISUAL_ID:
+			return true;
+		}
+		return false;
 	}
 
 	/**
