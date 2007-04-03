@@ -226,7 +226,6 @@ public class UMLVisualIDRegistry {
 	}
 
 	/**
-
 	 * @generated
 	 */
 	public static int getNodeVisualID(View containerView, EObject domainElement, EClass domainElementMetaclass, String semanticHint) {
