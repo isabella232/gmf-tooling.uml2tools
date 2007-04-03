@@ -46,6 +46,9 @@ import org.eclipse.gmf.runtime.emf.core.util.EMFCoreUtil;
 import org.eclipse.gmf.runtime.notation.Diagram;
 import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.jface.dialogs.ErrorDialog;
+import org.eclipse.jface.dialogs.IDialogSettings;
+import org.eclipse.jface.wizard.Wizard;
+import org.eclipse.jface.wizard.WizardDialog;
 import org.eclipse.swt.widgets.Shell;
 import org.eclipse.ui.IEditorPart;
 import org.eclipse.ui.IWorkbenchPage;
@@ -71,7 +74,7 @@ public class UMLDiagramEditorUtil {
 	/**
 	 * @generated
 	 */
-	private static void setCharset(URI uri) {
+	private static void setCharset(org.eclipse.emf.common.util.URI uri) {
 		IFile file = getFile(uri);
 		if (file == null) {
 			return;
@@ -86,7 +89,7 @@ public class UMLDiagramEditorUtil {
 	/**
 	 * @generated
 	 */
-	public static IFile getFile(URI uri) {
+	public static IFile getFile(org.eclipse.emf.common.util.URI uri) {
 		if (uri.toString().startsWith("platform:/resource")) { //$NON-NLS-1$
 			String path = uri.toString().substring("platform:/resource".length()); //$NON-NLS-1$
 			IResource workspaceResource = ResourcesPlugin.getWorkspace().getRoot().findMember(new Path(path));
@@ -100,18 +103,50 @@ public class UMLDiagramEditorUtil {
 	/**
 	 * @generated
 	 */
-	public static boolean exists(IPath path) {
-		return ResourcesPlugin.getWorkspace().getRoot().exists(path);
+	public static String getUniqueFileName(IPath containerFullPath, String fileName, String extension) {
+		if (containerFullPath == null) {
+			containerFullPath = new Path(""); //$NON-NLS-1$
+		}
+		if (fileName == null || fileName.trim().length() == 0) {
+			fileName = "default"; //$NON-NLS-1$
+		}
+
+		extension = "." + extension;
+		if (fileName.endsWith(extension)) {
+			fileName = fileName.substring(0, fileName.length() - extension.length());
+		}
+		int i = 1;
+		IPath filePath = containerFullPath.append(fileName + extension);
+		while (ResourcesPlugin.getWorkspace().getRoot().exists(filePath)) {
+			i++;
+			filePath = containerFullPath.append(fileName + i + extension);
+		}
+		return filePath.lastSegment();
 	}
 
 	/**
-	 * <p>
-	 * This method should be called within a workspace modify operation since it creates resources.
-	 * </p>
+	 * Runs the wizard in a dialog.
+	 * 
 	 * @generated
-	 * @return the created resource, or <code>null</code> if the resource was not created
 	 */
-	public static final Resource createDiagram(URI diagramURI, URI modelURI, IProgressMonitor progressMonitor) {
+	public static void runWizard(Shell shell, Wizard wizard, String settingsKey) {
+		IDialogSettings pluginDialogSettings = UMLDiagramEditorPlugin.getInstance().getDialogSettings();
+		IDialogSettings wizardDialogSettings = pluginDialogSettings.getSection(settingsKey);
+		if (wizardDialogSettings == null) {
+			wizardDialogSettings = pluginDialogSettings.addNewSection(settingsKey);
+		}
+		wizard.setDialogSettings(wizardDialogSettings);
+		WizardDialog dialog = new WizardDialog(shell, wizard);
+		dialog.create();
+		dialog.getShell().setSize(Math.max(500, dialog.getShell().getSize().x), 500);
+		dialog.open();
+	}
+
+	/**
+	 * This method should be called within a workspace modify operation since it creates resources.
+	 * @generated
+	 */
+	public static Resource createDiagram(org.eclipse.emf.common.util.URI diagramURI, org.eclipse.emf.common.util.URI modelURI, IProgressMonitor progressMonitor) {
 		TransactionalEditingDomain editingDomain = GMFEditingDomainFactory.INSTANCE.createEditingDomain();
 		progressMonitor.beginTask("Creating diagram and model files", 3);
 		final Resource diagramResource = editingDomain.getResourceSet().createResource(diagramURI);
@@ -122,12 +157,14 @@ public class UMLDiagramEditorUtil {
 			protected CommandResult doExecuteWithResult(IProgressMonitor monitor, IAdaptable info) throws ExecutionException {
 				Package model = createInitialModel();
 				attachModelToResource(model, modelResource);
+
 				Diagram diagram = ViewService.createDiagram(model, PackageEditPart.MODEL_ID, UMLDiagramEditorPlugin.DIAGRAM_PREFERENCES_HINT);
 				if (diagram != null) {
 					diagramResource.getContents().add(diagram);
 					diagram.setName(diagramName);
 					diagram.setElement(model);
 				}
+
 				try {
 					Map options = new HashMap();
 					options.put(XMIResource.OPTION_ENCODING, "UTF-8"); //$NON-NLS-1$
