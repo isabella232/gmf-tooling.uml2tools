@@ -1,7 +1,0 @@
-self.metaclassReference.importedElement->
-select(c | c.oclIsKindOf(uml::Classifier) and
-(c.oclAsType(uml::Classifier).generalization.general.namespace->exists(n|n=self) or 
- c.oclAsType(uml::Classifier).generalization.specific.namespace->exists(n|n=self)))->isEmpty()
-and 
-(self.metamodelReference->isEmpty() or self.metaclassReference->isEmpty() or self.metamodelReference.importedPackage.elementImport.importedElement.allOwningPackages()->
-union(self.metaclassReference.importedElement.allOwningPackages() )->notEmpty())
