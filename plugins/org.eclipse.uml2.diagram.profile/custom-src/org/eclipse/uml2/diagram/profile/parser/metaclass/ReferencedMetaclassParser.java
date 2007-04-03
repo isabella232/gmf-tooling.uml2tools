@@ -30,10 +30,9 @@ import org.eclipse.uml2.diagram.profile.part.UMLDiagramEditorPlugin;
 import org.eclipse.uml2.uml.Classifier;
 import org.eclipse.uml2.uml.ElementImport;
 import org.eclipse.uml2.uml.UMLPackage;
-import org.eclipse.uml2.uml.resource.UMLResource;
 
 public class ReferencedMetaclassParser implements ISemanticParser {
-	private final MetaclassesList myMetaclassesList = new MetaclassesList(UMLResource.UML_METAMODEL_URI);
+	private final MetaclassesList myMetaclassesList = new MetaclassesList();
 	private final CompletionProcessor myCompletionProcessor = new CompletionProcessor();
 	private final static String NO_METACLASS = "<enter>";
 

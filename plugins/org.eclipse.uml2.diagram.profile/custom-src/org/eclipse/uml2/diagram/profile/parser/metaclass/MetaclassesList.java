@@ -21,6 +21,7 @@ import java.util.SortedSet;
 import java.util.TreeMap;
 import java.util.TreeSet;
 
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.resource.Resource;
@@ -28,14 +29,12 @@ import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.uml2.uml.resource.UMLResource;
 
 public class MetaclassesList {
-	private final URI myUri;
 	private final SortedMap<String, org.eclipse.uml2.uml.Class> myNamesMap;
 	private final SortedSet<String> myCaseInsensitiveNames;
 	private final SortedSet<String> myCaseInsensitiveNamesRO;
 	private ResourceSet myResourceSet;
 
-	public MetaclassesList(String uri){
-		myUri = URI.createURI(uri);
+	public MetaclassesList(){
 		myNamesMap = new TreeMap<String, org.eclipse.uml2.uml.Class>();
 		myCaseInsensitiveNames = new TreeSet<String>(String.CASE_INSENSITIVE_ORDER);
 		myCaseInsensitiveNamesRO = Collections.unmodifiableSortedSet(myCaseInsensitiveNames);
@@ -58,7 +57,7 @@ public class MetaclassesList {
 	
 	private void setContext(EObject context){
 		ResourceSet resourceSet = context.eResource().getResourceSet();
-		if (myResourceSet != null && myResourceSet.equals(resourceSet)){
+		if (myResourceSet != null && myResourceSet.equals(resourceSet) && !moreResourcesWereLoaded(resourceSet)){
 			return;
 		}
 		
@@ -68,11 +67,14 @@ public class MetaclassesList {
 		myCaseInsensitiveNames.clear();
 		myResourceSet = resourceSet;
 		
-		for (Iterator allMetas = loadAllMetaclasses(resourceSet).iterator(); allMetas.hasNext();){
-			org.eclipse.uml2.uml.Class metaclass = (org.eclipse.uml2.uml.Class)allMetas.next();
+		for (org.eclipse.uml2.uml.Class metaclass : loadAllMetaclasses(resourceSet)){
 			myCaseInsensitiveNames.add(metaclass.getName());
 			myNamesMap.put(metaclass.getName(), metaclass);
 		}
+	}
+
+	private boolean moreResourcesWereLoaded(ResourceSet resourceSet) {
+		return !myResourceSet.getResources().equals(resourceSet.getResources());
 	}
 	
 	/**
@@ -98,14 +100,16 @@ public class MetaclassesList {
 		resourceSet.getResource(URI.createURI(UMLResource.UML_METAMODEL_URI), true);
 	}
 
-	private List loadAllMetaclasses(ResourceSet resourceSet){
-		Resource metamodel = resourceSet.getResource(myUri, true);
-		List allMetaclasses = new LinkedList();
-		for (Iterator contents = metamodel.getAllContents(); contents.hasNext();) {
-			Object next = contents.next();
-			org.eclipse.uml2.uml.Class metaclass = asMetaclass(next);
-			if (metaclass != null){
-				allMetaclasses.add(metaclass);
+	private List<org.eclipse.uml2.uml.Class> loadAllMetaclasses(ResourceSet resourceSet){
+		EList<Resource> resources = resourceSet.getResources();
+		List<org.eclipse.uml2.uml.Class> allMetaclasses = new LinkedList<org.eclipse.uml2.uml.Class>();
+		for (Resource metamodel: resources) {
+			for (Iterator<EObject> contents = metamodel.getAllContents(); contents.hasNext();) {
+				EObject next = contents.next();
+				org.eclipse.uml2.uml.Class metaclass = asMetaclass(next);
+				if (metaclass != null){
+					allMetaclasses.add(metaclass);
+				}
 			}
 		}
 		return allMetaclasses;
