@@ -27,7 +27,7 @@
 			fileName = fileName.substring(0, fileName.length() - extension.length());
 		}
 		int i = 1;
-		IPath filePath = containerFullPath.append(fileName + extension);
+		org.eclipse.core.runtime.IPath filePath = containerFullPath.append(fileName + extension);
 		while (
 		«IF editorGen.application == null-»
 			org.eclipse.core.resources.ResourcesPlugin.getWorkspace().getRoot().exists(filePath)
