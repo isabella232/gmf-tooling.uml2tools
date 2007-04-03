@@ -5,14 +5,16 @@
     xmlns:gmfgen="http://www.eclipse.org/gmf/2005/GenModel/2.0" packageNamePrefix="org.eclipse.uml2.diagram.activity"
     modelID="UMLActivity"
     diagramFileExtension="umlactivity_diagram"
-    templateDirectory="">
+    dynamicTemplates="true"
+    templateDirectory="/org.eclipse.uml2.diagram.def/dynamic-templates/codegen">
   <diagram
       visualID="1000"
       editPartClassName="PackageEditPart"
       itemSemanticEditPolicyClassName="PackageItemSemanticEditPolicy"
       notationViewFactoryClassName="PackageViewFactory"
       canonicalEditPolicyClassName="PackageCanonicalEditPolicy"
-      iconProviderPriority="Low">
+      iconProviderPriority="Low"
+      validationProviderPriority="Low">
     <diagramRunTimeClass
         href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Diagram"/>
     <elementType
@@ -1967,7 +1969,7 @@
             figureQualifiedClassName="org.eclipse.gmf.runtime.draw2d.ui.figures.WrapLabel"/>
         <modelFacet
             xsi:type="gmfgen:FeatureLabelModelFacet"
-            viewPattern=""
+            viewPattern="{0}"
             editPattern="">
           <metaFeatures
               href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/NamedElement/name"/>
@@ -2079,7 +2081,7 @@
       </modelFacet>
       <labelModelFacet
           xsi:type="gmfgen:FeatureLabelModelFacet"
-          viewPattern="">
+          viewPattern="{0}">
         <metaFeatures
             href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/LiteralString/value"/>
       </labelModelFacet>
@@ -2125,7 +2127,7 @@
       </modelFacet>
       <labelModelFacet
           xsi:type="gmfgen:FeatureLabelModelFacet"
-          viewPattern="">
+          viewPattern="{0}">
         <metaFeatures
             href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/LiteralString/value"/>
       </labelModelFacet>
@@ -2246,7 +2248,8 @@
         visualID="4001"
         editPartClassName="ControlFlowEditPart"
         itemSemanticEditPolicyClassName="ControlFlowItemSemanticEditPolicy"
-        notationViewFactoryClassName="ControlFlowViewFactory">
+        notationViewFactoryClassName="ControlFlowViewFactory"
+        reorientCommandClassName="ControlFlowReorientCommand">
       <diagramRunTimeClass
           href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Edge"/>
       <elementType
@@ -2287,7 +2290,8 @@
         visualID="4002"
         editPartClassName="ObjectFlowEditPart"
         itemSemanticEditPolicyClassName="ObjectFlowItemSemanticEditPolicy"
-        notationViewFactoryClassName="ObjectFlowViewFactory">
+        notationViewFactoryClassName="ObjectFlowViewFactory"
+        reorientCommandClassName="ObjectFlowReorientCommand">
       <diagramRunTimeClass
           href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Edge"/>
       <elementType
@@ -2322,7 +2326,8 @@
         visualID="4003"
         editPartClassName="ActionLocalPreconditionEditPart"
         itemSemanticEditPolicyClassName="ActionLocalPreconditionItemSemanticEditPolicy"
-        notationViewFactoryClassName="ActionLocalPreconditionViewFactory">
+        notationViewFactoryClassName="ActionLocalPreconditionViewFactory"
+        reorientCommandClassName="ActionLocalPreconditionReorientCommand">
       <diagramRunTimeClass
           href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Edge"/>
       <elementType
@@ -2345,7 +2350,8 @@
         visualID="4004"
         editPartClassName="ObjectNodeSelectionEditPart"
         itemSemanticEditPolicyClassName="ObjectNodeSelectionItemSemanticEditPolicy"
-        notationViewFactoryClassName="ObjectNodeSelectionViewFactory">
+        notationViewFactoryClassName="ObjectNodeSelectionViewFactory"
+        reorientCommandClassName="ObjectNodeSelectionReorientCommand">
       <diagramRunTimeClass
           href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Edge"/>
       <elementType
@@ -2368,7 +2374,8 @@
         visualID="4005"
         editPartClassName="ExceptionHandlerEditPart"
         itemSemanticEditPolicyClassName="ExceptionHandlerItemSemanticEditPolicy"
-        notationViewFactoryClassName="ExceptionHandlerViewFactory">
+        notationViewFactoryClassName="ExceptionHandlerViewFactory"
+        reorientCommandClassName="ExceptionHandlerReorientCommand">
       <diagramRunTimeClass
           href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Edge"/>
       <elementType
@@ -2683,6 +2690,36 @@
             genLinks="//@diagram/@links.4"/>
       </groups>
     </palette>
+    <preferencePages
+        xsi:type="gmfgen:GenStandardPreferencePage"
+        iD="org.eclipse.uml2.uml.diagram.general"
+        name="UML Diagram">
+      <children
+          xsi:type="gmfgen:GenStandardPreferencePage"
+          iD="org.eclipse.uml2.uml.diagram.appearance"
+          name="Appearance"
+          kind="Appearance"/>
+      <children
+          xsi:type="gmfgen:GenStandardPreferencePage"
+          iD="org.eclipse.uml2.uml.diagram.connections"
+          name="Connections"
+          kind="Connections"/>
+      <children
+          xsi:type="gmfgen:GenStandardPreferencePage"
+          iD="org.eclipse.uml2.uml.diagram.printing"
+          name="Printing"
+          kind="Printing"/>
+      <children
+          xsi:type="gmfgen:GenStandardPreferencePage"
+          iD="org.eclipse.uml2.uml.diagram.rulersAndGrid"
+          name="Rulers And Grid"
+          kind="RulersAndGrid"/>
+      <children
+          xsi:type="gmfgen:GenStandardPreferencePage"
+          iD="org.eclipse.uml2.uml.diagram.pathmaps"
+          name="Pathmaps"
+          kind="Pathmaps"/>
+    </preferencePages>
   </diagram>
   <plugin
       iD="org.eclipse.uml2.diagram.activity"
@@ -2931,7 +2968,7 @@
     <childReferences
         parent="//@diagram/@links.0"
         child="//@diagram/@childNodes.0"
-        referenceType="out_taget"
+        referenceType="out_target"
         groupName="target"
         groupIcon="icons/linkTargetNavigatorGroup.gif"/>
     <childReferences
@@ -2943,7 +2980,7 @@
     <childReferences
         parent="//@diagram/@links.0"
         child="//@diagram/@childNodes.1"
-        referenceType="out_taget"
+        referenceType="out_target"
         groupName="target"
         groupIcon="icons/linkTargetNavigatorGroup.gif"/>
     <childReferences
@@ -2955,7 +2992,7 @@
     <childReferences
         parent="//@diagram/@links.0"
         child="//@diagram/@childNodes.2"
-        referenceType="out_taget"
+        referenceType="out_target"
         groupName="target"
         groupIcon="icons/linkTargetNavigatorGroup.gif"/>
     <childReferences
@@ -2967,7 +3004,7 @@
     <childReferences
         parent="//@diagram/@links.0"
         child="//@diagram/@childNodes.3"
-        referenceType="out_taget"
+        referenceType="out_target"
         groupName="target"
         groupIcon="icons/linkTargetNavigatorGroup.gif"/>
     <childReferences
@@ -2979,7 +3016,7 @@
     <childReferences
         parent="//@diagram/@links.0"
         child="//@diagram/@childNodes.4"
-        referenceType="out_taget"
+        referenceType="out_target"
         groupName="target"
         groupIcon="icons/linkTargetNavigatorGroup.gif"/>
     <childReferences
@@ -2991,7 +3028,7 @@
     <childReferences
         parent="//@diagram/@links.0"
         child="//@diagram/@childNodes.5"
-        referenceType="out_taget"
+        referenceType="out_target"
         groupName="target"
         groupIcon="icons/linkTargetNavigatorGroup.gif"/>
     <childReferences
@@ -3003,7 +3040,7 @@
     <childReferences
         parent="//@diagram/@links.0"
         child="//@diagram/@childNodes.6"
-        referenceType="out_taget"
+        referenceType="out_target"
         groupName="target"
         groupIcon="icons/linkTargetNavigatorGroup.gif"/>
     <childReferences
@@ -3015,7 +3052,7 @@
     <childReferences
         parent="//@diagram/@links.0"
         child="//@diagram/@childNodes.7"
-        referenceType="out_taget"
+        referenceType="out_target"
         groupName="target"
         groupIcon="icons/linkTargetNavigatorGroup.gif"/>
     <childReferences
@@ -3027,7 +3064,7 @@
     <childReferences
         parent="//@diagram/@links.0"
         child="//@diagram/@childNodes.8"
-        referenceType="out_taget"
+        referenceType="out_target"
         groupName="target"
         groupIcon="icons/linkTargetNavigatorGroup.gif"/>
     <childReferences
@@ -3039,7 +3076,7 @@
     <childReferences
         parent="//@diagram/@links.0"
         child="//@diagram/@childNodes.9"
-        referenceType="out_taget"
+        referenceType="out_target"
         groupName="target"
         groupIcon="icons/linkTargetNavigatorGroup.gif"/>
     <childReferences
@@ -3051,7 +3088,7 @@
     <childReferences
         parent="//@diagram/@links.0"
         child="//@diagram/@childNodes.10"
-        referenceType="out_taget"
+        referenceType="out_target"
         groupName="target"
         groupIcon="icons/linkTargetNavigatorGroup.gif"/>
     <childReferences
@@ -3063,7 +3100,7 @@
     <childReferences
         parent="//@diagram/@links.0"
         child="//@diagram/@childNodes.11"
-        referenceType="out_taget"
+        referenceType="out_target"
         groupName="target"
         groupIcon="icons/linkTargetNavigatorGroup.gif"/>
     <childReferences
@@ -3075,7 +3112,7 @@
     <childReferences
         parent="//@diagram/@links.0"
         child="//@diagram/@childNodes.12"
-        referenceType="out_taget"
+        referenceType="out_target"
         groupName="target"
         groupIcon="icons/linkTargetNavigatorGroup.gif"/>
     <childReferences
@@ -3087,7 +3124,7 @@
     <childReferences
         parent="//@diagram/@links.0"
         child="//@diagram/@childNodes.13"
-        referenceType="out_taget"
+        referenceType="out_target"
         groupName="target"
         groupIcon="icons/linkTargetNavigatorGroup.gif"/>
     <childReferences
@@ -3099,7 +3136,7 @@
     <childReferences
         parent="//@diagram/@links.0"
         child="//@diagram/@childNodes.14"
-        referenceType="out_taget"
+        referenceType="out_target"
         groupName="target"
         groupIcon="icons/linkTargetNavigatorGroup.gif"/>
     <childReferences
@@ -3111,7 +3148,7 @@
     <childReferences
         parent="//@diagram/@links.0"
         child="//@diagram/@childNodes.15"
-        referenceType="out_taget"
+        referenceType="out_target"
         groupName="target"
         groupIcon="icons/linkTargetNavigatorGroup.gif"/>
     <childReferences
@@ -3123,7 +3160,7 @@
     <childReferences
         parent="//@diagram/@links.0"
         child="//@diagram/@childNodes.16"
-        referenceType="out_taget"
+        referenceType="out_target"
         groupName="target"
         groupIcon="icons/linkTargetNavigatorGroup.gif"/>
     <childReferences
@@ -3135,7 +3172,7 @@
     <childReferences
         parent="//@diagram/@links.0"
         child="//@diagram/@childNodes.17"
-        referenceType="out_taget"
+        referenceType="out_target"
         groupName="target"
         groupIcon="icons/linkTargetNavigatorGroup.gif"/>
     <childReferences
@@ -3147,7 +3184,7 @@
     <childReferences
         parent="//@diagram/@links.0"
         child="//@diagram/@childNodes.18"
-        referenceType="out_taget"
+        referenceType="out_target"
         groupName="target"
         groupIcon="icons/linkTargetNavigatorGroup.gif"/>
     <childReferences
@@ -3159,7 +3196,7 @@
     <childReferences
         parent="//@diagram/@links.0"
         child="//@diagram/@childNodes.19"
-        referenceType="out_taget"
+        referenceType="out_target"
         groupName="target"
         groupIcon="icons/linkTargetNavigatorGroup.gif"/>
     <childReferences
@@ -3171,7 +3208,7 @@
     <childReferences
         parent="//@diagram/@links.0"
         child="//@diagram/@childNodes.20"
-        referenceType="out_taget"
+        referenceType="out_target"
         groupName="target"
         groupIcon="icons/linkTargetNavigatorGroup.gif"/>
     <childReferences
@@ -3183,7 +3220,7 @@
     <childReferences
         parent="//@diagram/@links.0"
         child="//@diagram/@childNodes.21"
-        referenceType="out_taget"
+        referenceType="out_target"
         groupName="target"
         groupIcon="icons/linkTargetNavigatorGroup.gif"/>
     <childReferences
@@ -3195,7 +3232,7 @@
     <childReferences
         parent="//@diagram/@links.0"
         child="//@diagram/@childNodes.22"
-        referenceType="out_taget"
+        referenceType="out_target"
         groupName="target"
         groupIcon="icons/linkTargetNavigatorGroup.gif"/>
     <childReferences
@@ -3207,7 +3244,7 @@
     <childReferences
         parent="//@diagram/@links.0"
         child="//@diagram/@childNodes.23"
-        referenceType="out_taget"
+        referenceType="out_target"
         groupName="target"
         groupIcon="icons/linkTargetNavigatorGroup.gif"/>
     <childReferences
@@ -3219,7 +3256,7 @@
     <childReferences
         parent="//@diagram/@links.0"
         child="//@diagram/@childNodes.24"
-        referenceType="out_taget"
+        referenceType="out_target"
         groupName="target"
         groupIcon="icons/linkTargetNavigatorGroup.gif"/>
     <childReferences
@@ -3231,7 +3268,7 @@
     <childReferences
         parent="//@diagram/@links.0"
         child="//@diagram/@childNodes.25"
-        referenceType="out_taget"
+        referenceType="out_target"
         groupName="target"
         groupIcon="icons/linkTargetNavigatorGroup.gif"/>
     <childReferences
@@ -3243,7 +3280,7 @@
     <childReferences
         parent="//@diagram/@links.0"
         child="//@diagram/@childNodes.26"
-        referenceType="out_taget"
+        referenceType="out_target"
         groupName="target"
         groupIcon="icons/linkTargetNavigatorGroup.gif"/>
     <childReferences
@@ -3255,7 +3292,7 @@
     <childReferences
         parent="//@diagram/@links.0"
         child="//@diagram/@childNodes.27"
-        referenceType="out_taget"
+        referenceType="out_target"
         groupName="target"
         groupIcon="icons/linkTargetNavigatorGroup.gif"/>
     <childReferences
@@ -3267,7 +3304,7 @@
     <childReferences
         parent="//@diagram/@links.0"
         child="//@diagram/@childNodes.28"
-        referenceType="out_taget"
+        referenceType="out_target"
         groupName="target"
         groupIcon="icons/linkTargetNavigatorGroup.gif"/>
     <childReferences
@@ -3279,7 +3316,7 @@
     <childReferences
         parent="//@diagram/@links.0"
         child="//@diagram/@childNodes.29"
-        referenceType="out_taget"
+        referenceType="out_target"
         groupName="target"
         groupIcon="icons/linkTargetNavigatorGroup.gif"/>
     <childReferences
@@ -3291,7 +3328,7 @@
     <childReferences
         parent="//@diagram/@links.0"
         child="//@diagram/@childNodes.30"
-        referenceType="out_taget"
+        referenceType="out_target"
         groupName="target"
         groupIcon="icons/linkTargetNavigatorGroup.gif"/>
     <childReferences
@@ -3303,7 +3340,7 @@
     <childReferences
         parent="//@diagram/@links.0"
         child="//@diagram/@childNodes.31"
-        referenceType="out_taget"
+        referenceType="out_target"
         groupName="target"
         groupIcon="icons/linkTargetNavigatorGroup.gif"/>
     <childReferences
@@ -3315,7 +3352,7 @@
     <childReferences
         parent="//@diagram/@links.0"
         child="//@diagram/@childNodes.32"
-        referenceType="out_taget"
+        referenceType="out_target"
         groupName="target"
         groupIcon="icons/linkTargetNavigatorGroup.gif"/>
     <childReferences
@@ -3327,7 +3364,7 @@
     <childReferences
         parent="//@diagram/@links.0"
         child="//@diagram/@childNodes.33"
-        referenceType="out_taget"
+        referenceType="out_target"
         groupName="target"
         groupIcon="icons/linkTargetNavigatorGroup.gif"/>
     <childReferences
@@ -3339,7 +3376,7 @@
     <childReferences
         parent="//@diagram/@links.0"
         child="//@diagram/@childNodes.34"
-        referenceType="out_taget"
+        referenceType="out_target"
         groupName="target"
         groupIcon="icons/linkTargetNavigatorGroup.gif"/>
     <childReferences
@@ -3351,7 +3388,7 @@
     <childReferences
         parent="//@diagram/@links.0"
         child="//@diagram/@childNodes.35"
-        referenceType="out_taget"
+        referenceType="out_target"
         groupName="target"
         groupIcon="icons/linkTargetNavigatorGroup.gif"/>
     <childReferences
@@ -3363,7 +3400,7 @@
     <childReferences
         parent="//@diagram/@links.0"
         child="//@diagram/@childNodes.36"
-        referenceType="out_taget"
+        referenceType="out_target"
         groupName="target"
         groupIcon="icons/linkTargetNavigatorGroup.gif"/>
     <childReferences
@@ -3375,7 +3412,7 @@
     <childReferences
         parent="//@diagram/@links.0"
         child="//@diagram/@childNodes.37"
-        referenceType="out_taget"
+        referenceType="out_target"
         groupName="target"
         groupIcon="icons/linkTargetNavigatorGroup.gif"/>
     <childReferences
@@ -3387,7 +3424,7 @@
     <childReferences
         parent="//@diagram/@links.0"
         child="//@diagram/@childNodes.38"
-        referenceType="out_taget"
+        referenceType="out_target"
         groupName="target"
         groupIcon="icons/linkTargetNavigatorGroup.gif"/>
     <childReferences
@@ -3399,7 +3436,7 @@
     <childReferences
         parent="//@diagram/@links.0"
         child="//@diagram/@childNodes.39"
-        referenceType="out_taget"
+        referenceType="out_target"
         groupName="target"
         groupIcon="icons/linkTargetNavigatorGroup.gif"/>
     <childReferences
@@ -3411,7 +3448,7 @@
     <childReferences
         parent="//@diagram/@links.0"
         child="//@diagram/@childNodes.40"
-        referenceType="out_taget"
+        referenceType="out_target"
         groupName="target"
         groupIcon="icons/linkTargetNavigatorGroup.gif"/>
     <childReferences
@@ -3423,7 +3460,7 @@
     <childReferences
         parent="//@diagram/@links.0"
         child="//@diagram/@childNodes.41"
-        referenceType="out_taget"
+        referenceType="out_target"
         groupName="target"
         groupIcon="icons/linkTargetNavigatorGroup.gif"/>
     <childReferences
@@ -3435,7 +3472,7 @@
     <childReferences
         parent="//@diagram/@links.0"
         child="//@diagram/@childNodes.43"
-        referenceType="out_taget"
+        referenceType="out_target"
         groupName="target"
         groupIcon="icons/linkTargetNavigatorGroup.gif"/>
     <childReferences
@@ -3453,7 +3490,7 @@
     <childReferences
         parent="//@diagram/@childNodes.0"
         child="//@diagram/@links.0"
-        referenceType="out_taget"
+        referenceType="out_target"
         groupName="outgoing links"
         groupIcon="icons/outgoingLinksNavigatorGroup.gif"/>
     <childReferences
@@ -3465,7 +3502,7 @@
     <childReferences
         parent="//@diagram/@childNodes.1"
         child="//@diagram/@links.0"
-        referenceType="out_taget"
+        referenceType="out_target"
         groupName="outgoing links"
         groupIcon="icons/outgoingLinksNavigatorGroup.gif"/>
     <childReferences
@@ -3477,7 +3514,7 @@
     <childReferences
         parent="//@diagram/@childNodes.2"
         child="//@diagram/@links.0"
-        referenceType="out_taget"
+        referenceType="out_target"
         groupName="outgoing links"
         groupIcon="icons/outgoingLinksNavigatorGroup.gif"/>
     <childReferences
@@ -3489,7 +3526,7 @@
     <childReferences
         parent="//@diagram/@childNodes.3"
         child="//@diagram/@links.0"
-        referenceType="out_taget"
+        referenceType="out_target"
         groupName="outgoing links"
         groupIcon="icons/outgoingLinksNavigatorGroup.gif"/>
     <childReferences
@@ -3501,7 +3538,7 @@
     <childReferences
         parent="//@diagram/@childNodes.4"
         child="//@diagram/@links.0"
-        referenceType="out_taget"
+        referenceType="out_target"
         groupName="outgoing links"
         groupIcon="icons/outgoingLinksNavigatorGroup.gif"/>
     <childReferences
@@ -3513,7 +3550,7 @@
     <childReferences
         parent="//@diagram/@childNodes.5"
         child="//@diagram/@links.0"
-        referenceType="out_taget"
+        referenceType="out_target"
         groupName="outgoing links"
         groupIcon="icons/outgoingLinksNavigatorGroup.gif"/>
     <childReferences
@@ -3525,7 +3562,7 @@
     <childReferences
         parent="//@diagram/@childNodes.6"
         child="//@diagram/@links.0"
-        referenceType="out_taget"
+        referenceType="out_target"
         groupName="outgoing links"
         groupIcon="icons/outgoingLinksNavigatorGroup.gif"/>
     <childReferences
@@ -3537,7 +3574,7 @@
     <childReferences
         parent="//@diagram/@childNodes.7"
         child="//@diagram/@links.0"
-        referenceType="out_taget"
+        referenceType="out_target"
         groupName="outgoing links"
         groupIcon="icons/outgoingLinksNavigatorGroup.gif"/>
     <childReferences
@@ -3549,7 +3586,7 @@
     <childReferences
         parent="//@diagram/@childNodes.8"
         child="//@diagram/@links.0"
-        referenceType="out_taget"
+        referenceType="out_target"
         groupName="outgoing links"
         groupIcon="icons/outgoingLinksNavigatorGroup.gif"/>
     <childReferences
@@ -3561,7 +3598,7 @@
     <childReferences
         parent="//@diagram/@childNodes.9"
         child="//@diagram/@links.0"
-        referenceType="out_taget"
+        referenceType="out_target"
         groupName="outgoing links"
         groupIcon="icons/outgoingLinksNavigatorGroup.gif"/>
     <childReferences
@@ -3573,7 +3610,7 @@
     <childReferences
         parent="//@diagram/@childNodes.10"
         child="//@diagram/@links.0"
-        referenceType="out_taget"
+        referenceType="out_target"
         groupName="outgoing links"
         groupIcon="icons/outgoingLinksNavigatorGroup.gif"/>
     <childReferences
@@ -3585,7 +3622,7 @@
     <childReferences
         parent="//@diagram/@childNodes.11"
         child="//@diagram/@links.0"
-        referenceType="out_taget"
+        referenceType="out_target"
         groupName="outgoing links"
         groupIcon="icons/outgoingLinksNavigatorGroup.gif"/>
     <childReferences
@@ -3597,7 +3634,7 @@
     <childReferences
         parent="//@diagram/@childNodes.12"
         child="//@diagram/@links.0"
-        referenceType="out_taget"
+        referenceType="out_target"
         groupName="outgoing links"
         groupIcon="icons/outgoingLinksNavigatorGroup.gif"/>
     <childReferences
@@ -3609,7 +3646,7 @@
     <childReferences
         parent="//@diagram/@childNodes.13"
         child="//@diagram/@links.0"
-        referenceType="out_taget"
+        referenceType="out_target"
         groupName="outgoing links"
         groupIcon="icons/outgoingLinksNavigatorGroup.gif"/>
     <childReferences
@@ -3621,7 +3658,7 @@
     <childReferences
         parent="//@diagram/@childNodes.14"
         child="//@diagram/@links.0"
-        referenceType="out_taget"
+        referenceType="out_target"
         groupName="outgoing links"
         groupIcon="icons/outgoingLinksNavigatorGroup.gif"/>
     <childReferences
@@ -3633,7 +3670,7 @@
     <childReferences
         parent="//@diagram/@childNodes.15"
         child="//@diagram/@links.0"
-        referenceType="out_taget"
+        referenceType="out_target"
         groupName="outgoing links"
         groupIcon="icons/outgoingLinksNavigatorGroup.gif"/>
     <childReferences
@@ -3645,7 +3682,7 @@
     <childReferences
         parent="//@diagram/@childNodes.16"
         child="//@diagram/@links.0"
-        referenceType="out_taget"
+        referenceType="out_target"
         groupName="outgoing links"
         groupIcon="icons/outgoingLinksNavigatorGroup.gif"/>
     <childReferences
@@ -3657,7 +3694,7 @@
     <childReferences
         parent="//@diagram/@childNodes.17"
         child="//@diagram/@links.0"
-        referenceType="out_taget"
+        referenceType="out_target"
         groupName="outgoing links"
         groupIcon="icons/outgoingLinksNavigatorGroup.gif"/>
     <childReferences
@@ -3669,7 +3706,7 @@
     <childReferences
         parent="//@diagram/@childNodes.18"
         child="//@diagram/@links.0"
-        referenceType="out_taget"
+        referenceType="out_target"
         groupName="outgoing links"
         groupIcon="icons/outgoingLinksNavigatorGroup.gif"/>
     <childReferences
@@ -3681,7 +3718,7 @@
     <childReferences
         parent="//@diagram/@childNodes.19"
         child="//@diagram/@links.0"
-        referenceType="out_taget"
+        referenceType="out_target"
         groupName="outgoing links"
         groupIcon="icons/outgoingLinksNavigatorGroup.gif"/>
     <childReferences
@@ -3693,7 +3730,7 @@
     <childReferences
         parent="//@diagram/@childNodes.20"
         child="//@diagram/@links.0"
-        referenceType="out_taget"
+        referenceType="out_target"
         groupName="outgoing links"
         groupIcon="icons/outgoingLinksNavigatorGroup.gif"/>
     <childReferences
@@ -3705,7 +3742,7 @@
     <childReferences
         parent="//@diagram/@childNodes.21"
         child="//@diagram/@links.0"
-        referenceType="out_taget"
+        referenceType="out_target"
         groupName="outgoing links"
         groupIcon="icons/outgoingLinksNavigatorGroup.gif"/>
     <childReferences
@@ -3717,7 +3754,7 @@
     <childReferences
         parent="//@diagram/@childNodes.22"
         child="//@diagram/@links.0"
-        referenceType="out_taget"
+        referenceType="out_target"
         groupName="outgoing links"
         groupIcon="icons/outgoingLinksNavigatorGroup.gif"/>
     <childReferences
@@ -3729,7 +3766,7 @@
     <childReferences
         parent="//@diagram/@childNodes.23"
         child="//@diagram/@links.0"
-        referenceType="out_taget"
+        referenceType="out_target"
         groupName="outgoing links"
         groupIcon="icons/outgoingLinksNavigatorGroup.gif"/>
     <childReferences
@@ -3741,7 +3778,7 @@
     <childReferences
         parent="//@diagram/@childNodes.24"
         child="//@diagram/@links.0"
-        referenceType="out_taget"
+        referenceType="out_target"
         groupName="outgoing links"
         groupIcon="icons/outgoingLinksNavigatorGroup.gif"/>
     <childReferences
@@ -3753,7 +3790,7 @@
     <childReferences
         parent="//@diagram/@childNodes.25"
         child="//@diagram/@links.0"
-        referenceType="out_taget"
+        referenceType="out_target"
         groupName="outgoing links"
         groupIcon="icons/outgoingLinksNavigatorGroup.gif"/>
     <childReferences
@@ -3765,7 +3802,7 @@
     <childReferences
         parent="//@diagram/@childNodes.26"
         child="//@diagram/@links.0"
-        referenceType="out_taget"
+        referenceType="out_target"
         groupName="outgoing links"
         groupIcon="icons/outgoingLinksNavigatorGroup.gif"/>
     <childReferences
@@ -3777,7 +3814,7 @@
     <childReferences
         parent="//@diagram/@childNodes.27"
         child="//@diagram/@links.0"
-        referenceType="out_taget"
+        referenceType="out_target"
         groupName="outgoing links"
         groupIcon="icons/outgoingLinksNavigatorGroup.gif"/>
     <childReferences
@@ -3789,7 +3826,7 @@
     <childReferences
         parent="//@diagram/@childNodes.28"
         child="//@diagram/@links.0"
-        referenceType="out_taget"
+        referenceType="out_target"
         groupName="outgoing links"
         groupIcon="icons/outgoingLinksNavigatorGroup.gif"/>
     <childReferences
@@ -3801,7 +3838,7 @@
     <childReferences
         parent="//@diagram/@childNodes.29"
         child="//@diagram/@links.0"
-        referenceType="out_taget"
+        referenceType="out_target"
         groupName="outgoing links"
         groupIcon="icons/outgoingLinksNavigatorGroup.gif"/>
     <childReferences
@@ -3813,7 +3850,7 @@
     <childReferences
         parent="//@diagram/@childNodes.30"
         child="//@diagram/@links.0"
-        referenceType="out_taget"
+        referenceType="out_target"
         groupName="outgoing links"
         groupIcon="icons/outgoingLinksNavigatorGroup.gif"/>
     <childReferences
@@ -3825,7 +3862,7 @@
     <childReferences
         parent="//@diagram/@childNodes.31"
         child="//@diagram/@links.0"
-        referenceType="out_taget"
+        referenceType="out_target"
         groupName="outgoing links"
         groupIcon="icons/outgoingLinksNavigatorGroup.gif"/>
     <childReferences
@@ -3837,7 +3874,7 @@
     <childReferences
         parent="//@diagram/@childNodes.32"
         child="//@diagram/@links.0"
-        referenceType="out_taget"
+        referenceType="out_target"
         groupName="outgoing links"
         groupIcon="icons/outgoingLinksNavigatorGroup.gif"/>
     <childReferences
@@ -3849,7 +3886,7 @@
     <childReferences
         parent="//@diagram/@childNodes.33"
         child="//@diagram/@links.0"
-        referenceType="out_taget"
+        referenceType="out_target"
         groupName="outgoing links"
         groupIcon="icons/outgoingLinksNavigatorGroup.gif"/>
     <childReferences
@@ -3861,7 +3898,7 @@
     <childReferences
         parent="//@diagram/@childNodes.34"
         child="//@diagram/@links.0"
-        referenceType="out_taget"
+        referenceType="out_target"
         groupName="outgoing links"
         groupIcon="icons/outgoingLinksNavigatorGroup.gif"/>
     <childReferences
@@ -3873,7 +3910,7 @@
     <childReferences
         parent="//@diagram/@childNodes.35"
         child="//@diagram/@links.0"
-        referenceType="out_taget"
+        referenceType="out_target"
         groupName="outgoing links"
         groupIcon="icons/outgoingLinksNavigatorGroup.gif"/>
     <childReferences
@@ -3885,7 +3922,7 @@
     <childReferences
         parent="//@diagram/@childNodes.36"
         child="//@diagram/@links.0"
-        referenceType="out_taget"
+        referenceType="out_target"
         groupName="outgoing links"
         groupIcon="icons/outgoingLinksNavigatorGroup.gif"/>
     <childReferences
@@ -3897,7 +3934,7 @@
     <childReferences
         parent="//@diagram/@childNodes.37"
         child="//@diagram/@links.0"
-        referenceType="out_taget"
+        referenceType="out_target"
         groupName="outgoing links"
         groupIcon="icons/outgoingLinksNavigatorGroup.gif"/>
     <childReferences
@@ -3909,7 +3946,7 @@
     <childReferences
         parent="//@diagram/@childNodes.38"
         child="//@diagram/@links.0"
-        referenceType="out_taget"
+        referenceType="out_target"
         groupName="outgoing links"
         groupIcon="icons/outgoingLinksNavigatorGroup.gif"/>
     <childReferences
@@ -3921,7 +3958,7 @@
     <childReferences
         parent="//@diagram/@childNodes.39"
         child="//@diagram/@links.0"
-        referenceType="out_taget"
+        referenceType="out_target"
         groupName="outgoing links"
         groupIcon="icons/outgoingLinksNavigatorGroup.gif"/>
     <childReferences
@@ -3933,7 +3970,7 @@
     <childReferences
         parent="//@diagram/@childNodes.40"
         child="//@diagram/@links.0"
-        referenceType="out_taget"
+        referenceType="out_target"
         groupName="outgoing links"
         groupIcon="icons/outgoingLinksNavigatorGroup.gif"/>
     <childReferences
@@ -3945,7 +3982,7 @@
     <childReferences
         parent="//@diagram/@childNodes.41"
         child="//@diagram/@links.0"
-        referenceType="out_taget"
+        referenceType="out_target"
         groupName="outgoing links"
         groupIcon="icons/outgoingLinksNavigatorGroup.gif"/>
     <childReferences
@@ -3957,7 +3994,7 @@
     <childReferences
         parent="//@diagram/@childNodes.43"
         child="//@diagram/@links.0"
-        referenceType="out_taget"
+        referenceType="out_target"
         groupName="outgoing links"
         groupIcon="icons/outgoingLinksNavigatorGroup.gif"/>
     <childReferences
@@ -3968,7 +4005,7 @@
     <childReferences
         parent="//@diagram/@links.1"
         child="//@diagram/@childNodes.0"
-        referenceType="out_taget"
+        referenceType="out_target"
         groupName="target"
         groupIcon="icons/linkTargetNavigatorGroup.gif"/>
     <childReferences
@@ -3980,7 +4017,7 @@
     <childReferences
         parent="//@diagram/@links.1"
         child="//@diagram/@childNodes.1"
-        referenceType="out_taget"
+        referenceType="out_target"
         groupName="target"
         groupIcon="icons/linkTargetNavigatorGroup.gif"/>
     <childReferences
@@ -3992,7 +4029,7 @@
     <childReferences
         parent="//@diagram/@links.1"
         child="//@diagram/@childNodes.2"
-        referenceType="out_taget"
+        referenceType="out_target"
         groupName="target"
         groupIcon="icons/linkTargetNavigatorGroup.gif"/>
     <childReferences
@@ -4004,7 +4041,7 @@
     <childReferences
         parent="//@diagram/@links.1"
         child="//@diagram/@childNodes.3"
-        referenceType="out_taget"
+        referenceType="out_target"
         groupName="target"
         groupIcon="icons/linkTargetNavigatorGroup.gif"/>
     <childReferences
@@ -4016,7 +4053,7 @@
     <childReferences
         parent="//@diagram/@links.1"
         child="//@diagram/@childNodes.4"
-        referenceType="out_taget"
+        referenceType="out_target"
         groupName="target"
         groupIcon="icons/linkTargetNavigatorGroup.gif"/>
     <childReferences
@@ -4028,7 +4065,7 @@
     <childReferences
         parent="//@diagram/@links.1"
         child="//@diagram/@childNodes.5"
-        referenceType="out_taget"
+        referenceType="out_target"
         groupName="target"
         groupIcon="icons/linkTargetNavigatorGroup.gif"/>
     <childReferences
@@ -4040,7 +4077,7 @@
     <childReferences
         parent="//@diagram/@links.1"
         child="//@diagram/@childNodes.6"
-        referenceType="out_taget"
+        referenceType="out_target"
         groupName="target"
         groupIcon="icons/linkTargetNavigatorGroup.gif"/>
     <childReferences
@@ -4052,7 +4089,7 @@
     <childReferences
         parent="//@diagram/@links.1"
         child="//@diagram/@childNodes.7"
-        referenceType="out_taget"
+        referenceType="out_target"
         groupName="target"
         groupIcon="icons/linkTargetNavigatorGroup.gif"/>
     <childReferences
@@ -4064,7 +4101,7 @@
     <childReferences
         parent="//@diagram/@links.1"
         child="//@diagram/@childNodes.8"
-        referenceType="out_taget"
+        referenceType="out_target"
         groupName="target"
         groupIcon="icons/linkTargetNavigatorGroup.gif"/>
     <childReferences
@@ -4076,7 +4113,7 @@
     <childReferences
         parent="//@diagram/@links.1"
         child="//@diagram/@childNodes.9"
-        referenceType="out_taget"
+        referenceType="out_target"
         groupName="target"
         groupIcon="icons/linkTargetNavigatorGroup.gif"/>
     <childReferences
@@ -4088,7 +4125,7 @@
     <childReferences
         parent="//@diagram/@links.1"
         child="//@diagram/@childNodes.10"
-        referenceType="out_taget"
+        referenceType="out_target"
         groupName="target"
         groupIcon="icons/linkTargetNavigatorGroup.gif"/>
     <childReferences
@@ -4100,7 +4137,7 @@
     <childReferences
         parent="//@diagram/@links.1"
         child="//@diagram/@childNodes.11"
-        referenceType="out_taget"
+        referenceType="out_target"
         groupName="target"
         groupIcon="icons/linkTargetNavigatorGroup.gif"/>
     <childReferences
@@ -4112,7 +4149,7 @@
     <childReferences
         parent="//@diagram/@links.1"
         child="//@diagram/@childNodes.12"
-        referenceType="out_taget"
+        referenceType="out_target"
         groupName="target"
         groupIcon="icons/linkTargetNavigatorGroup.gif"/>
     <childReferences
@@ -4124,7 +4161,7 @@
     <childReferences
         parent="//@diagram/@links.1"
         child="//@diagram/@childNodes.13"
-        referenceType="out_taget"
+        referenceType="out_target"
         groupName="target"
         groupIcon="icons/linkTargetNavigatorGroup.gif"/>
     <childReferences
@@ -4136,7 +4173,7 @@
     <childReferences
         parent="//@diagram/@links.1"
         child="//@diagram/@childNodes.14"
-        referenceType="out_taget"
+        referenceType="out_target"
         groupName="target"
         groupIcon="icons/linkTargetNavigatorGroup.gif"/>
     <childReferences
@@ -4148,7 +4185,7 @@
     <childReferences
         parent="//@diagram/@links.1"
         child="//@diagram/@childNodes.15"
-        referenceType="out_taget"
+        referenceType="out_target"
         groupName="target"
         groupIcon="icons/linkTargetNavigatorGroup.gif"/>
     <childReferences
@@ -4160,7 +4197,7 @@
     <childReferences
         parent="//@diagram/@links.1"
         child="//@diagram/@childNodes.16"
-        referenceType="out_taget"
+        referenceType="out_target"
         groupName="target"
         groupIcon="icons/linkTargetNavigatorGroup.gif"/>
     <childReferences
@@ -4172,7 +4209,7 @@
     <childReferences
         parent="//@diagram/@links.1"
         child="//@diagram/@childNodes.17"
-        referenceType="out_taget"
+        referenceType="out_target"
         groupName="target"
         groupIcon="icons/linkTargetNavigatorGroup.gif"/>
     <childReferences
@@ -4184,7 +4221,7 @@
     <childReferences
         parent="//@diagram/@links.1"
         child="//@diagram/@childNodes.18"
-        referenceType="out_taget"
+        referenceType="out_target"
         groupName="target"
         groupIcon="icons/linkTargetNavigatorGroup.gif"/>
     <childReferences
@@ -4196,7 +4233,7 @@
     <childReferences
         parent="//@diagram/@links.1"
         child="//@diagram/@childNodes.19"
-        referenceType="out_taget"
+        referenceType="out_target"
         groupName="target"
         groupIcon="icons/linkTargetNavigatorGroup.gif"/>
     <childReferences
@@ -4208,7 +4245,7 @@
     <childReferences
         parent="//@diagram/@links.1"
         child="//@diagram/@childNodes.20"
-        referenceType="out_taget"
+        referenceType="out_target"
         groupName="target"
         groupIcon="icons/linkTargetNavigatorGroup.gif"/>
     <childReferences
@@ -4220,7 +4257,7 @@
     <childReferences
         parent="//@diagram/@links.1"
         child="//@diagram/@childNodes.21"
-        referenceType="out_taget"
+        referenceType="out_target"
         groupName="target"
         groupIcon="icons/linkTargetNavigatorGroup.gif"/>
     <childReferences
@@ -4232,7 +4269,7 @@
     <childReferences
         parent="//@diagram/@links.1"
         child="//@diagram/@childNodes.22"
-        referenceType="out_taget"
+        referenceType="out_target"
         groupName="target"
         groupIcon="icons/linkTargetNavigatorGroup.gif"/>
     <childReferences
@@ -4244,7 +4281,7 @@
     <childReferences
         parent="//@diagram/@links.1"
         child="//@diagram/@childNodes.23"
-        referenceType="out_taget"
+        referenceType="out_target"
         groupName="target"
         groupIcon="icons/linkTargetNavigatorGroup.gif"/>
     <childReferences
@@ -4256,7 +4293,7 @@
     <childReferences
         parent="//@diagram/@links.1"
         child="//@diagram/@childNodes.24"
-        referenceType="out_taget"
+        referenceType="out_target"
         groupName="target"
         groupIcon="icons/linkTargetNavigatorGroup.gif"/>
     <childReferences
@@ -4268,7 +4305,7 @@
     <childReferences
         parent="//@diagram/@links.1"
         child="//@diagram/@childNodes.25"
-        referenceType="out_taget"
+        referenceType="out_target"
         groupName="target"
         groupIcon="icons/linkTargetNavigatorGroup.gif"/>
     <childReferences
@@ -4280,7 +4317,7 @@
     <childReferences
         parent="//@diagram/@links.1"
         child="//@diagram/@childNodes.26"
-        referenceType="out_taget"
+        referenceType="out_target"
         groupName="target"
         groupIcon="icons/linkTargetNavigatorGroup.gif"/>
     <childReferences
@@ -4292,7 +4329,7 @@
     <childReferences
         parent="//@diagram/@links.1"
         child="//@diagram/@childNodes.27"
-        referenceType="out_taget"
+        referenceType="out_target"
         groupName="target"
         groupIcon="icons/linkTargetNavigatorGroup.gif"/>
     <childReferences
@@ -4304,7 +4341,7 @@
     <childReferences
         parent="//@diagram/@links.1"
         child="//@diagram/@childNodes.28"
-        referenceType="out_taget"
+        referenceType="out_target"
         groupName="target"
         groupIcon="icons/linkTargetNavigatorGroup.gif"/>
     <childReferences
@@ -4316,7 +4353,7 @@
     <childReferences
         parent="//@diagram/@links.1"
         child="//@diagram/@childNodes.29"
-        referenceType="out_taget"
+        referenceType="out_target"
         groupName="target"
         groupIcon="icons/linkTargetNavigatorGroup.gif"/>
     <childReferences
@@ -4328,7 +4365,7 @@
     <childReferences
         parent="//@diagram/@links.1"
         child="//@diagram/@childNodes.30"
-        referenceType="out_taget"
+        referenceType="out_target"
         groupName="target"
         groupIcon="icons/linkTargetNavigatorGroup.gif"/>
     <childReferences
@@ -4340,7 +4377,7 @@
     <childReferences
         parent="//@diagram/@links.1"
         child="//@diagram/@childNodes.31"
-        referenceType="out_taget"
+        referenceType="out_target"
         groupName="target"
         groupIcon="icons/linkTargetNavigatorGroup.gif"/>
     <childReferences
@@ -4352,7 +4389,7 @@
     <childReferences
         parent="//@diagram/@links.1"
         child="//@diagram/@childNodes.32"
-        referenceType="out_taget"
+        referenceType="out_target"
         groupName="target"
         groupIcon="icons/linkTargetNavigatorGroup.gif"/>
     <childReferences
@@ -4364,7 +4401,7 @@
     <childReferences
         parent="//@diagram/@links.1"
         child="//@diagram/@childNodes.33"
-        referenceType="out_taget"
+        referenceType="out_target"
         groupName="target"
         groupIcon="icons/linkTargetNavigatorGroup.gif"/>
     <childReferences
@@ -4376,7 +4413,7 @@
     <childReferences
         parent="//@diagram/@links.1"
         child="//@diagram/@childNodes.34"
-        referenceType="out_taget"
+        referenceType="out_target"
         groupName="target"
         groupIcon="icons/linkTargetNavigatorGroup.gif"/>
     <childReferences
@@ -4388,7 +4425,7 @@
     <childReferences
         parent="//@diagram/@links.1"
         child="//@diagram/@childNodes.35"
-        referenceType="out_taget"
+        referenceType="out_target"
         groupName="target"
         groupIcon="icons/linkTargetNavigatorGroup.gif"/>
     <childReferences
@@ -4400,7 +4437,7 @@
     <childReferences
         parent="//@diagram/@links.1"
         child="//@diagram/@childNodes.36"
-        referenceType="out_taget"
+        referenceType="out_target"
         groupName="target"
         groupIcon="icons/linkTargetNavigatorGroup.gif"/>
     <childReferences
@@ -4412,7 +4449,7 @@
     <childReferences
         parent="//@diagram/@links.1"
         child="//@diagram/@childNodes.37"
-        referenceType="out_taget"
+        referenceType="out_target"
         groupName="target"
         groupIcon="icons/linkTargetNavigatorGroup.gif"/>
     <childReferences
@@ -4424,7 +4461,7 @@
     <childReferences
         parent="//@diagram/@links.1"
         child="//@diagram/@childNodes.38"
-        referenceType="out_taget"
+        referenceType="out_target"
         groupName="target"
         groupIcon="icons/linkTargetNavigatorGroup.gif"/>
     <childReferences
@@ -4436,7 +4473,7 @@
     <childReferences
         parent="//@diagram/@links.1"
         child="//@diagram/@childNodes.39"
-        referenceType="out_taget"
+        referenceType="out_target"
         groupName="target"
         groupIcon="icons/linkTargetNavigatorGroup.gif"/>
     <childReferences
@@ -4448,7 +4485,7 @@
     <childReferences
         parent="//@diagram/@links.1"
         child="//@diagram/@childNodes.40"
-        referenceType="out_taget"
+        referenceType="out_target"
         groupName="target"
         groupIcon="icons/linkTargetNavigatorGroup.gif"/>
     <childReferences
@@ -4460,7 +4497,7 @@
     <childReferences
         parent="//@diagram/@links.1"
         child="//@diagram/@childNodes.41"
-        referenceType="out_taget"
+        referenceType="out_target"
         groupName="target"
         groupIcon="icons/linkTargetNavigatorGroup.gif"/>
     <childReferences
@@ -4472,7 +4509,7 @@
     <childReferences
         parent="//@diagram/@links.1"
         child="//@diagram/@childNodes.43"
-        referenceType="out_taget"
+        referenceType="out_target"
         groupName="target"
         groupIcon="icons/linkTargetNavigatorGroup.gif"/>
     <childReferences
@@ -4490,7 +4527,7 @@
     <childReferences
         parent="//@diagram/@childNodes.0"
         child="//@diagram/@links.1"
-        referenceType="out_taget"
+        referenceType="out_target"
         groupName="outgoing links"
         groupIcon="icons/outgoingLinksNavigatorGroup.gif"/>
     <childReferences
@@ -4502,7 +4539,7 @@
     <childReferences
         parent="//@diagram/@childNodes.1"
         child="//@diagram/@links.1"
-        referenceType="out_taget"
+        referenceType="out_target"
         groupName="outgoing links"
         groupIcon="icons/outgoingLinksNavigatorGroup.gif"/>
     <childReferences
@@ -4514,7 +4551,7 @@
     <childReferences
         parent="//@diagram/@childNodes.2"
         child="//@diagram/@links.1"
-        referenceType="out_taget"
+        referenceType="out_target"
         groupName="outgoing links"
         groupIcon="icons/outgoingLinksNavigatorGroup.gif"/>
     <childReferences
@@ -4526,7 +4563,7 @@
     <childReferences
         parent="//@diagram/@childNodes.3"
         child="//@diagram/@links.1"
-        referenceType="out_taget"
+        referenceType="out_target"
         groupName="outgoing links"
         groupIcon="icons/outgoingLinksNavigatorGroup.gif"/>
     <childReferences
@@ -4538,7 +4575,7 @@
     <childReferences
         parent="//@diagram/@childNodes.4"
         child="//@diagram/@links.1"
-        referenceType="out_taget"
+        referenceType="out_target"
         groupName="outgoing links"
         groupIcon="icons/outgoingLinksNavigatorGroup.gif"/>
     <childReferences
@@ -4550,7 +4587,7 @@
     <childReferences
         parent="//@diagram/@childNodes.5"
         child="//@diagram/@links.1"
-        referenceType="out_taget"
+        referenceType="out_target"
         groupName="outgoing links"
         groupIcon="icons/outgoingLinksNavigatorGroup.gif"/>
     <childReferences
@@ -4562,7 +4599,7 @@
     <childReferences
         parent="//@diagram/@childNodes.6"
         child="//@diagram/@links.1"
-        referenceType="out_taget"
+        referenceType="out_target"
         groupName="outgoing links"
         groupIcon="icons/outgoingLinksNavigatorGroup.gif"/>
     <childReferences
@@ -4574,7 +4611,7 @@
     <childReferences
         parent="//@diagram/@childNodes.7"
         child="//@diagram/@links.1"
-        referenceType="out_taget"
+        referenceType="out_target"
         groupName="outgoing links"
         groupIcon="icons/outgoingLinksNavigatorGroup.gif"/>
     <childReferences
@@ -4586,7 +4623,7 @@
     <childReferences
         parent="//@diagram/@childNodes.8"
         child="//@diagram/@links.1"
-        referenceType="out_taget"
+        referenceType="out_target"
         groupName="outgoing links"
         groupIcon="icons/outgoingLinksNavigatorGroup.gif"/>
     <childReferences
@@ -4598,7 +4635,7 @@
     <childReferences
         parent="//@diagram/@childNodes.9"
         child="//@diagram/@links.1"
-        referenceType="out_taget"
+        referenceType="out_target"
         groupName="outgoing links"
         groupIcon="icons/outgoingLinksNavigatorGroup.gif"/>
     <childReferences
@@ -4610,7 +4647,7 @@
     <childReferences
         parent="//@diagram/@childNodes.10"
         child="//@diagram/@links.1"
-        referenceType="out_taget"
+        referenceType="out_target"
         groupName="outgoing links"
         groupIcon="icons/outgoingLinksNavigatorGroup.gif"/>
     <childReferences
@@ -4622,7 +4659,7 @@
     <childReferences
         parent="//@diagram/@childNodes.11"
         child="//@diagram/@links.1"
-        referenceType="out_taget"
+        referenceType="out_target"
         groupName="outgoing links"
         groupIcon="icons/outgoingLinksNavigatorGroup.gif"/>
     <childReferences
@@ -4634,7 +4671,7 @@
     <childReferences
         parent="//@diagram/@childNodes.12"
         child="//@diagram/@links.1"
-        referenceType="out_taget"
+        referenceType="out_target"
         groupName="outgoing links"
         groupIcon="icons/outgoingLinksNavigatorGroup.gif"/>
     <childReferences
@@ -4646,7 +4683,7 @@
     <childReferences
         parent="//@diagram/@childNodes.13"
         child="//@diagram/@links.1"
-        referenceType="out_taget"
+        referenceType="out_target"
         groupName="outgoing links"
         groupIcon="icons/outgoingLinksNavigatorGroup.gif"/>
     <childReferences
@@ -4658,7 +4695,7 @@
     <childReferences
         parent="//@diagram/@childNodes.14"
         child="//@diagram/@links.1"
-        referenceType="out_taget"
+        referenceType="out_target"
         groupName="outgoing links"
         groupIcon="icons/outgoingLinksNavigatorGroup.gif"/>
     <childReferences
@@ -4670,7 +4707,7 @@
     <childReferences
         parent="//@diagram/@childNodes.15"
         child="//@diagram/@links.1"
-        referenceType="out_taget"
+        referenceType="out_target"
         groupName="outgoing links"
         groupIcon="icons/outgoingLinksNavigatorGroup.gif"/>
     <childReferences
@@ -4682,7 +4719,7 @@
     <childReferences
         parent="//@diagram/@childNodes.16"
         child="//@diagram/@links.1"
-        referenceType="out_taget"
+        referenceType="out_target"
         groupName="outgoing links"
         groupIcon="icons/outgoingLinksNavigatorGroup.gif"/>
     <childReferences
@@ -4694,7 +4731,7 @@
     <childReferences
         parent="//@diagram/@childNodes.17"
         child="//@diagram/@links.1"
-        referenceType="out_taget"
+        referenceType="out_target"
         groupName="outgoing links"
         groupIcon="icons/outgoingLinksNavigatorGroup.gif"/>
     <childReferences
@@ -4706,7 +4743,7 @@
     <childReferences
         parent="//@diagram/@childNodes.18"
         child="//@diagram/@links.1"
-        referenceType="out_taget"
+        referenceType="out_target"
         groupName="outgoing links"
         groupIcon="icons/outgoingLinksNavigatorGroup.gif"/>
     <childReferences
@@ -4718,7 +4755,7 @@
     <childReferences
         parent="//@diagram/@childNodes.19"
         child="//@diagram/@links.1"
-        referenceType="out_taget"
+        referenceType="out_target"
         groupName="outgoing links"
         groupIcon="icons/outgoingLinksNavigatorGroup.gif"/>
     <childReferences
@@ -4730,7 +4767,7 @@
     <childReferences
         parent="//@diagram/@childNodes.20"
         child="//@diagram/@links.1"
-        referenceType="out_taget"
+        referenceType="out_target"
         groupName="outgoing links"
         groupIcon="icons/outgoingLinksNavigatorGroup.gif"/>
     <childReferences
@@ -4742,7 +4779,7 @@
     <childReferences
         parent="//@diagram/@childNodes.21"
         child="//@diagram/@links.1"
-        referenceType="out_taget"
+        referenceType="out_target"
         groupName="outgoing links"
         groupIcon="icons/outgoingLinksNavigatorGroup.gif"/>
     <childReferences
@@ -4754,7 +4791,7 @@
     <childReferences
         parent="//@diagram/@childNodes.22"
         child="//@diagram/@links.1"
-        referenceType="out_taget"
+        referenceType="out_target"
         groupName="outgoing links"
         groupIcon="icons/outgoingLinksNavigatorGroup.gif"/>
     <childReferences
@@ -4766,7 +4803,7 @@
     <childReferences
         parent="//@diagram/@childNodes.23"
         child="//@diagram/@links.1"
-        referenceType="out_taget"
+        referenceType="out_target"
         groupName="outgoing links"
         groupIcon="icons/outgoingLinksNavigatorGroup.gif"/>
     <childReferences
@@ -4778,7 +4815,7 @@
     <childReferences
         parent="//@diagram/@childNodes.24"
         child="//@diagram/@links.1"
-        referenceType="out_taget"
+        referenceType="out_target"
         groupName="outgoing links"
         groupIcon="icons/outgoingLinksNavigatorGroup.gif"/>
     <childReferences
@@ -4790,7 +4827,7 @@
     <childReferences
         parent="//@diagram/@childNodes.25"
         child="//@diagram/@links.1"
-        referenceType="out_taget"
+        referenceType="out_target"
         groupName="outgoing links"
         groupIcon="icons/outgoingLinksNavigatorGroup.gif"/>
     <childReferences
@@ -4802,7 +4839,7 @@
     <childReferences
         parent="//@diagram/@childNodes.26"
         child="//@diagram/@links.1"
-        referenceType="out_taget"
+        referenceType="out_target"
         groupName="outgoing links"
         groupIcon="icons/outgoingLinksNavigatorGroup.gif"/>
     <childReferences
@@ -4814,7 +4851,7 @@
     <childReferences
         parent="//@diagram/@childNodes.27"
         child="//@diagram/@links.1"
-        referenceType="out_taget"
+        referenceType="out_target"
         groupName="outgoing links"
         groupIcon="icons/outgoingLinksNavigatorGroup.gif"/>
     <childReferences
@@ -4826,7 +4863,7 @@
     <childReferences
         parent="//@diagram/@childNodes.28"
         child="//@diagram/@links.1"
-        referenceType="out_taget"
+        referenceType="out_target"
         groupName="outgoing links"
         groupIcon="icons/outgoingLinksNavigatorGroup.gif"/>
     <childReferences
@@ -4838,7 +4875,7 @@
     <childReferences
         parent="//@diagram/@childNodes.29"
         child="//@diagram/@links.1"
-        referenceType="out_taget"
+        referenceType="out_target"
         groupName="outgoing links"
         groupIcon="icons/outgoingLinksNavigatorGroup.gif"/>
     <childReferences
@@ -4850,7 +4887,7 @@
     <childReferences
         parent="//@diagram/@childNodes.30"
         child="//@diagram/@links.1"
-        referenceType="out_taget"
+        referenceType="out_target"
         groupName="outgoing links"
         groupIcon="icons/outgoingLinksNavigatorGroup.gif"/>
     <childReferences
@@ -4862,7 +4899,7 @@
     <childReferences
         parent="//@diagram/@childNodes.31"
         child="//@diagram/@links.1"
-        referenceType="out_taget"
+        referenceType="out_target"
         groupName="outgoing links"
         groupIcon="icons/outgoingLinksNavigatorGroup.gif"/>
     <childReferences
@@ -4874,7 +4911,7 @@
     <childReferences
         parent="//@diagram/@childNodes.32"
         child="//@diagram/@links.1"
-        referenceType="out_taget"
+        referenceType="out_target"
         groupName="outgoing links"
         groupIcon="icons/outgoingLinksNavigatorGroup.gif"/>
     <childReferences
@@ -4886,7 +4923,7 @@
     <childReferences
         parent="//@diagram/@childNodes.33"
         child="//@diagram/@links.1"
-        referenceType="out_taget"
+        referenceType="out_target"
         groupName="outgoing links"
         groupIcon="icons/outgoingLinksNavigatorGroup.gif"/>
     <childReferences
@@ -4898,7 +4935,7 @@
     <childReferences
         parent="//@diagram/@childNodes.34"
         child="//@diagram/@links.1"
-        referenceType="out_taget"
+        referenceType="out_target"
         groupName="outgoing links"
         groupIcon="icons/outgoingLinksNavigatorGroup.gif"/>
     <childReferences
@@ -4910,7 +4947,7 @@
     <childReferences
         parent="//@diagram/@childNodes.35"
         child="//@diagram/@links.1"
-        referenceType="out_taget"
+        referenceType="out_target"
         groupName="outgoing links"
         groupIcon="icons/outgoingLinksNavigatorGroup.gif"/>
     <childReferences
@@ -4922,7 +4959,7 @@
     <childReferences
         parent="//@diagram/@childNodes.36"
         child="//@diagram/@links.1"
-        referenceType="out_taget"
+        referenceType="out_target"
         groupName="outgoing links"
         groupIcon="icons/outgoingLinksNavigatorGroup.gif"/>
     <childReferences
@@ -4934,7 +4971,7 @@
     <childReferences
         parent="//@diagram/@childNodes.37"
         child="//@diagram/@links.1"
-        referenceType="out_taget"
+        referenceType="out_target"
         groupName="outgoing links"
         groupIcon="icons/outgoingLinksNavigatorGroup.gif"/>
     <childReferences
@@ -4946,7 +4983,7 @@
     <childReferences
         parent="//@diagram/@childNodes.38"
         child="//@diagram/@links.1"
-        referenceType="out_taget"
+        referenceType="out_target"
         groupName="outgoing links"
         groupIcon="icons/outgoingLinksNavigatorGroup.gif"/>
     <childReferences
@@ -4958,7 +4995,7 @@
     <childReferences
         parent="//@diagram/@childNodes.39"
         child="//@diagram/@links.1"
-        referenceType="out_taget"
+        referenceType="out_target"
         groupName="outgoing links"
         groupIcon="icons/outgoingLinksNavigatorGroup.gif"/>
     <childReferences
@@ -4970,7 +5007,7 @@
     <childReferences
         parent="//@diagram/@childNodes.40"
         child="//@diagram/@links.1"
-        referenceType="out_taget"
+        referenceType="out_target"
         groupName="outgoing links"
         groupIcon="icons/outgoingLinksNavigatorGroup.gif"/>
     <childReferences
@@ -4982,7 +5019,7 @@
     <childReferences
         parent="//@diagram/@childNodes.41"
         child="//@diagram/@links.1"
-        referenceType="out_taget"
+        referenceType="out_target"
         groupName="outgoing links"
         groupIcon="icons/outgoingLinksNavigatorGroup.gif"/>
     <childReferences
@@ -4994,7 +5031,7 @@
     <childReferences
         parent="//@diagram/@childNodes.43"
         child="//@diagram/@links.1"
-        referenceType="out_taget"
+        referenceType="out_target"
         groupName="outgoing links"
         groupIcon="icons/outgoingLinksNavigatorGroup.gif"/>
     <childReferences
@@ -5005,7 +5042,7 @@
     <childReferences
         parent="//@diagram/@links.2"
         child="//@diagram/@topLevelNodes.1"
-        referenceType="out_taget"
+        referenceType="out_target"
         groupName="target"
         groupIcon="icons/linkTargetNavigatorGroup.gif"/>
     <childReferences
@@ -5017,7 +5054,7 @@
     <childReferences
         parent="//@diagram/@links.2"
         child="//@diagram/@topLevelNodes.2"
-        referenceType="out_taget"
+        referenceType="out_target"
         groupName="target"
         groupIcon="icons/linkTargetNavigatorGroup.gif"/>
     <childReferences
@@ -5035,7 +5072,7 @@
     <childReferences
         parent="//@diagram/@childNodes.0"
         child="//@diagram/@links.2"
-        referenceType="out_taget"
+        referenceType="out_target"
         groupName="outgoing links"
         groupIcon="icons/outgoingLinksNavigatorGroup.gif"/>
     <childReferences
@@ -5047,7 +5084,7 @@
     <childReferences
         parent="//@diagram/@childNodes.1"
         child="//@diagram/@links.2"
-        referenceType="out_taget"
+        referenceType="out_target"
         groupName="outgoing links"
         groupIcon="icons/outgoingLinksNavigatorGroup.gif"/>
     <childReferences
@@ -5059,7 +5096,7 @@
     <childReferences
         parent="//@diagram/@childNodes.8"
         child="//@diagram/@links.2"
-        referenceType="out_taget"
+        referenceType="out_target"
         groupName="outgoing links"
         groupIcon="icons/outgoingLinksNavigatorGroup.gif"/>
     <childReferences
@@ -5071,7 +5108,7 @@
     <childReferences
         parent="//@diagram/@childNodes.14"
         child="//@diagram/@links.2"
-        referenceType="out_taget"
+        referenceType="out_target"
         groupName="outgoing links"
         groupIcon="icons/outgoingLinksNavigatorGroup.gif"/>
     <childReferences
@@ -5083,7 +5120,7 @@
     <childReferences
         parent="//@diagram/@childNodes.16"
         child="//@diagram/@links.2"
-        referenceType="out_taget"
+        referenceType="out_target"
         groupName="outgoing links"
         groupIcon="icons/outgoingLinksNavigatorGroup.gif"/>
     <childReferences
@@ -5095,7 +5132,7 @@
     <childReferences
         parent="//@diagram/@childNodes.20"
         child="//@diagram/@links.2"
-        referenceType="out_taget"
+        referenceType="out_target"
         groupName="outgoing links"
         groupIcon="icons/outgoingLinksNavigatorGroup.gif"/>
     <childReferences
@@ -5107,7 +5144,7 @@
     <childReferences
         parent="//@diagram/@childNodes.23"
         child="//@diagram/@links.2"
-        referenceType="out_taget"
+        referenceType="out_target"
         groupName="outgoing links"
         groupIcon="icons/outgoingLinksNavigatorGroup.gif"/>
     <childReferences
@@ -5119,7 +5156,7 @@
     <childReferences
         parent="//@diagram/@childNodes.25"
         child="//@diagram/@links.2"
-        referenceType="out_taget"
+        referenceType="out_target"
         groupName="outgoing links"
         groupIcon="icons/outgoingLinksNavigatorGroup.gif"/>
     <childReferences
@@ -5131,7 +5168,7 @@
     <childReferences
         parent="//@diagram/@childNodes.26"
         child="//@diagram/@links.2"
-        referenceType="out_taget"
+        referenceType="out_target"
         groupName="outgoing links"
         groupIcon="icons/outgoingLinksNavigatorGroup.gif"/>
     <childReferences
@@ -5143,7 +5180,7 @@
     <childReferences
         parent="//@diagram/@childNodes.27"
         child="//@diagram/@links.2"
-        referenceType="out_taget"
+        referenceType="out_target"
         groupName="outgoing links"
         groupIcon="icons/outgoingLinksNavigatorGroup.gif"/>
     <childReferences
@@ -5155,7 +5192,7 @@
     <childReferences
         parent="//@diagram/@childNodes.28"
         child="//@diagram/@links.2"
-        referenceType="out_taget"
+        referenceType="out_target"
         groupName="outgoing links"
         groupIcon="icons/outgoingLinksNavigatorGroup.gif"/>
     <childReferences
@@ -5167,7 +5204,7 @@
     <childReferences
         parent="//@diagram/@childNodes.29"
         child="//@diagram/@links.2"
-        referenceType="out_taget"
+        referenceType="out_target"
         groupName="outgoing links"
         groupIcon="icons/outgoingLinksNavigatorGroup.gif"/>
     <childReferences
@@ -5179,7 +5216,7 @@
     <childReferences
         parent="//@diagram/@childNodes.34"
         child="//@diagram/@links.2"
-        referenceType="out_taget"
+        referenceType="out_target"
         groupName="outgoing links"
         groupIcon="icons/outgoingLinksNavigatorGroup.gif"/>
     <childReferences
@@ -5191,7 +5228,7 @@
     <childReferences
         parent="//@diagram/@childNodes.35"
         child="//@diagram/@links.2"
-        referenceType="out_taget"
+        referenceType="out_target"
         groupName="outgoing links"
         groupIcon="icons/outgoingLinksNavigatorGroup.gif"/>
     <childReferences
@@ -5203,7 +5240,7 @@
     <childReferences
         parent="//@diagram/@childNodes.36"
         child="//@diagram/@links.2"
-        referenceType="out_taget"
+        referenceType="out_target"
         groupName="outgoing links"
         groupIcon="icons/outgoingLinksNavigatorGroup.gif"/>
     <childReferences
@@ -5215,7 +5252,7 @@
     <childReferences
         parent="//@diagram/@childNodes.39"
         child="//@diagram/@links.2"
-        referenceType="out_taget"
+        referenceType="out_target"
         groupName="outgoing links"
         groupIcon="icons/outgoingLinksNavigatorGroup.gif"/>
     <childReferences
@@ -5226,7 +5263,7 @@
     <childReferences
         parent="//@diagram/@links.3"
         child="//@diagram/@topLevelNodes.0"
-        referenceType="out_taget"
+        referenceType="out_target"
         groupName="target"
         groupIcon="icons/linkTargetNavigatorGroup.gif"/>
     <childReferences
@@ -5238,7 +5275,7 @@
     <childReferences
         parent="//@diagram/@links.3"
         child="//@diagram/@childNodes.42"
-        referenceType="out_taget"
+        referenceType="out_target"
         groupName="target"
         groupIcon="icons/linkTargetNavigatorGroup.gif"/>
     <childReferences
@@ -5256,7 +5293,7 @@
     <childReferences
         parent="//@diagram/@childNodes.6"
         child="//@diagram/@links.3"
-        referenceType="out_taget"
+        referenceType="out_target"
         groupName="outgoing links"
         groupIcon="icons/outgoingLinksNavigatorGroup.gif"/>
     <childReferences
@@ -5268,7 +5305,7 @@
     <childReferences
         parent="//@diagram/@childNodes.7"
         child="//@diagram/@links.3"
-        referenceType="out_taget"
+        referenceType="out_target"
         groupName="outgoing links"
         groupIcon="icons/outgoingLinksNavigatorGroup.gif"/>
     <childReferences
@@ -5280,7 +5317,7 @@
     <childReferences
         parent="//@diagram/@childNodes.9"
         child="//@diagram/@links.3"
-        referenceType="out_taget"
+        referenceType="out_target"
         groupName="outgoing links"
         groupIcon="icons/outgoingLinksNavigatorGroup.gif"/>
     <childReferences
@@ -5292,7 +5329,7 @@
     <childReferences
         parent="//@diagram/@childNodes.13"
         child="//@diagram/@links.3"
-        referenceType="out_taget"
+        referenceType="out_target"
         groupName="outgoing links"
         groupIcon="icons/outgoingLinksNavigatorGroup.gif"/>
     <childReferences
@@ -5304,7 +5341,7 @@
     <childReferences
         parent="//@diagram/@childNodes.15"
         child="//@diagram/@links.3"
-        referenceType="out_taget"
+        referenceType="out_target"
         groupName="outgoing links"
         groupIcon="icons/outgoingLinksNavigatorGroup.gif"/>
     <childReferences
@@ -5316,7 +5353,7 @@
     <childReferences
         parent="//@diagram/@childNodes.17"
         child="//@diagram/@links.3"
-        referenceType="out_taget"
+        referenceType="out_target"
         groupName="outgoing links"
         groupIcon="icons/outgoingLinksNavigatorGroup.gif"/>
     <childReferences
@@ -5328,7 +5365,7 @@
     <childReferences
         parent="//@diagram/@childNodes.18"
         child="//@diagram/@links.3"
-        referenceType="out_taget"
+        referenceType="out_target"
         groupName="outgoing links"
         groupIcon="icons/outgoingLinksNavigatorGroup.gif"/>
     <childReferences
@@ -5340,7 +5377,7 @@
     <childReferences
         parent="//@diagram/@childNodes.19"
         child="//@diagram/@links.3"
-        referenceType="out_taget"
+        referenceType="out_target"
         groupName="outgoing links"
         groupIcon="icons/outgoingLinksNavigatorGroup.gif"/>
     <childReferences
@@ -5352,7 +5389,7 @@
     <childReferences
         parent="//@diagram/@childNodes.21"
         child="//@diagram/@links.3"
-        referenceType="out_taget"
+        referenceType="out_target"
         groupName="outgoing links"
         groupIcon="icons/outgoingLinksNavigatorGroup.gif"/>
     <childReferences
@@ -5364,7 +5401,7 @@
     <childReferences
         parent="//@diagram/@childNodes.22"
         child="//@diagram/@links.3"
-        referenceType="out_taget"
+        referenceType="out_target"
         groupName="outgoing links"
         groupIcon="icons/outgoingLinksNavigatorGroup.gif"/>
     <childReferences
@@ -5376,7 +5413,7 @@
     <childReferences
         parent="//@diagram/@childNodes.24"
         child="//@diagram/@links.3"
-        referenceType="out_taget"
+        referenceType="out_target"
         groupName="outgoing links"
         groupIcon="icons/outgoingLinksNavigatorGroup.gif"/>
     <childReferences
@@ -5388,7 +5425,7 @@
     <childReferences
         parent="//@diagram/@childNodes.33"
         child="//@diagram/@links.3"
-        referenceType="out_taget"
+        referenceType="out_target"
         groupName="outgoing links"
         groupIcon="icons/outgoingLinksNavigatorGroup.gif"/>
     <childReferences
@@ -5400,7 +5437,7 @@
     <childReferences
         parent="//@diagram/@childNodes.40"
         child="//@diagram/@links.3"
-        referenceType="out_taget"
+        referenceType="out_target"
         groupName="outgoing links"
         groupIcon="icons/outgoingLinksNavigatorGroup.gif"/>
     <childReferences
@@ -5412,7 +5449,7 @@
     <childReferences
         parent="//@diagram/@childNodes.41"
         child="//@diagram/@links.3"
-        referenceType="out_taget"
+        referenceType="out_target"
         groupName="outgoing links"
         groupIcon="icons/outgoingLinksNavigatorGroup.gif"/>
     <childReferences
@@ -5424,7 +5461,7 @@
     <childReferences
         parent="//@diagram/@childNodes.43"
         child="//@diagram/@links.3"
-        referenceType="out_taget"
+        referenceType="out_target"
         groupName="outgoing links"
         groupIcon="icons/outgoingLinksNavigatorGroup.gif"/>
     <childReferences
@@ -5435,7 +5472,7 @@
     <childReferences
         parent="//@diagram/@links.4"
         child="//@diagram/@childNodes.0"
-        referenceType="out_taget"
+        referenceType="out_target"
         groupName="target"
         groupIcon="icons/linkTargetNavigatorGroup.gif"/>
     <childReferences
@@ -5447,7 +5484,7 @@
     <childReferences
         parent="//@diagram/@links.4"
         child="//@diagram/@childNodes.1"
-        referenceType="out_taget"
+        referenceType="out_target"
         groupName="target"
         groupIcon="icons/linkTargetNavigatorGroup.gif"/>
     <childReferences
@@ -5459,7 +5496,7 @@
     <childReferences
         parent="//@diagram/@links.4"
         child="//@diagram/@childNodes.8"
-        referenceType="out_taget"
+        referenceType="out_target"
         groupName="target"
         groupIcon="icons/linkTargetNavigatorGroup.gif"/>
     <childReferences
@@ -5471,7 +5508,7 @@
     <childReferences
         parent="//@diagram/@links.4"
         child="//@diagram/@childNodes.14"
-        referenceType="out_taget"
+        referenceType="out_target"
         groupName="target"
         groupIcon="icons/linkTargetNavigatorGroup.gif"/>
     <childReferences
@@ -5483,7 +5520,7 @@
     <childReferences
         parent="//@diagram/@links.4"
         child="//@diagram/@childNodes.16"
-        referenceType="out_taget"
+        referenceType="out_target"
         groupName="target"
         groupIcon="icons/linkTargetNavigatorGroup.gif"/>
     <childReferences
@@ -5495,7 +5532,7 @@
     <childReferences
         parent="//@diagram/@links.4"
         child="//@diagram/@childNodes.20"
-        referenceType="out_taget"
+        referenceType="out_target"
         groupName="target"
         groupIcon="icons/linkTargetNavigatorGroup.gif"/>
     <childReferences
@@ -5507,7 +5544,7 @@
     <childReferences
         parent="//@diagram/@links.4"
         child="//@diagram/@childNodes.23"
-        referenceType="out_taget"
+        referenceType="out_target"
         groupName="target"
         groupIcon="icons/linkTargetNavigatorGroup.gif"/>
     <childReferences
@@ -5519,7 +5556,7 @@
     <childReferences
         parent="//@diagram/@links.4"
         child="//@diagram/@childNodes.25"
-        referenceType="out_taget"
+        referenceType="out_target"
         groupName="target"
         groupIcon="icons/linkTargetNavigatorGroup.gif"/>
     <childReferences
@@ -5531,7 +5568,7 @@
     <childReferences
         parent="//@diagram/@links.4"
         child="//@diagram/@childNodes.26"
-        referenceType="out_taget"
+        referenceType="out_target"
         groupName="target"
         groupIcon="icons/linkTargetNavigatorGroup.gif"/>
     <childReferences
@@ -5543,7 +5580,7 @@
     <childReferences
         parent="//@diagram/@links.4"
         child="//@diagram/@childNodes.27"
-        referenceType="out_taget"
+        referenceType="out_target"
         groupName="target"
         groupIcon="icons/linkTargetNavigatorGroup.gif"/>
     <childReferences
@@ -5555,7 +5592,7 @@
     <childReferences
         parent="//@diagram/@links.4"
         child="//@diagram/@childNodes.28"
-        referenceType="out_taget"
+        referenceType="out_target"
         groupName="target"
         groupIcon="icons/linkTargetNavigatorGroup.gif"/>
     <childReferences
@@ -5567,7 +5604,7 @@
     <childReferences
         parent="//@diagram/@links.4"
         child="//@diagram/@childNodes.29"
-        referenceType="out_taget"
+        referenceType="out_target"
         groupName="target"
         groupIcon="icons/linkTargetNavigatorGroup.gif"/>
     <childReferences
@@ -5579,7 +5616,7 @@
     <childReferences
         parent="//@diagram/@links.4"
         child="//@diagram/@childNodes.34"
-        referenceType="out_taget"
+        referenceType="out_target"
         groupName="target"
         groupIcon="icons/linkTargetNavigatorGroup.gif"/>
     <childReferences
@@ -5591,7 +5628,7 @@
     <childReferences
         parent="//@diagram/@links.4"
         child="//@diagram/@childNodes.35"
-        referenceType="out_taget"
+        referenceType="out_target"
         groupName="target"
         groupIcon="icons/linkTargetNavigatorGroup.gif"/>
     <childReferences
@@ -5603,7 +5640,7 @@
     <childReferences
         parent="//@diagram/@links.4"
         child="//@diagram/@childNodes.36"
-        referenceType="out_taget"
+        referenceType="out_target"
         groupName="target"
         groupIcon="icons/linkTargetNavigatorGroup.gif"/>
     <childReferences
@@ -5615,7 +5652,7 @@
     <childReferences
         parent="//@diagram/@links.4"
         child="//@diagram/@childNodes.39"
-        referenceType="out_taget"
+        referenceType="out_target"
         groupName="target"
         groupIcon="icons/linkTargetNavigatorGroup.gif"/>
     <childReferences
@@ -5633,7 +5670,7 @@
     <childReferences
         parent="//@diagram/@childNodes.0"
         child="//@diagram/@links.4"
-        referenceType="out_taget"
+        referenceType="out_target"
         groupName="outgoing links"
         groupIcon="icons/outgoingLinksNavigatorGroup.gif"/>
     <childReferences
@@ -5645,7 +5682,7 @@
     <childReferences
         parent="//@diagram/@childNodes.1"
         child="//@diagram/@links.4"
-        referenceType="out_taget"
+        referenceType="out_target"
         groupName="outgoing links"
         groupIcon="icons/outgoingLinksNavigatorGroup.gif"/>
     <childReferences
@@ -5657,7 +5694,7 @@
     <childReferences
         parent="//@diagram/@childNodes.8"
         child="//@diagram/@links.4"
-        referenceType="out_taget"
+        referenceType="out_target"
         groupName="outgoing links"
         groupIcon="icons/outgoingLinksNavigatorGroup.gif"/>
     <childReferences
@@ -5669,7 +5706,7 @@
     <childReferences
         parent="//@diagram/@childNodes.14"
         child="//@diagram/@links.4"
-        referenceType="out_taget"
+        referenceType="out_target"
         groupName="outgoing links"
         groupIcon="icons/outgoingLinksNavigatorGroup.gif"/>
     <childReferences
@@ -5681,7 +5718,7 @@
     <childReferences
         parent="//@diagram/@childNodes.16"
         child="//@diagram/@links.4"
-        referenceType="out_taget"
+        referenceType="out_target"
         groupName="outgoing links"
         groupIcon="icons/outgoingLinksNavigatorGroup.gif"/>
     <childReferences
@@ -5693,7 +5730,7 @@
     <childReferences
         parent="//@diagram/@childNodes.20"
         child="//@diagram/@links.4"
-        referenceType="out_taget"
+        referenceType="out_target"
         groupName="outgoing links"
         groupIcon="icons/outgoingLinksNavigatorGroup.gif"/>
     <childReferences
@@ -5705,7 +5742,7 @@
     <childReferences
         parent="//@diagram/@childNodes.23"
         child="//@diagram/@links.4"
-        referenceType="out_taget"
+        referenceType="out_target"
         groupName="outgoing links"
         groupIcon="icons/outgoingLinksNavigatorGroup.gif"/>
     <childReferences
@@ -5717,7 +5754,7 @@
     <childReferences
         parent="//@diagram/@childNodes.25"
         child="//@diagram/@links.4"
-        referenceType="out_taget"
+        referenceType="out_target"
         groupName="outgoing links"
         groupIcon="icons/outgoingLinksNavigatorGroup.gif"/>
     <childReferences
@@ -5729,7 +5766,7 @@
     <childReferences
         parent="//@diagram/@childNodes.26"
         child="//@diagram/@links.4"
-        referenceType="out_taget"
+        referenceType="out_target"
         groupName="outgoing links"
         groupIcon="icons/outgoingLinksNavigatorGroup.gif"/>
     <childReferences
@@ -5741,7 +5778,7 @@
     <childReferences
         parent="//@diagram/@childNodes.27"
         child="//@diagram/@links.4"
-        referenceType="out_taget"
+        referenceType="out_target"
         groupName="outgoing links"
         groupIcon="icons/outgoingLinksNavigatorGroup.gif"/>
     <childReferences
@@ -5753,7 +5790,7 @@
     <childReferences
         parent="//@diagram/@childNodes.28"
         child="//@diagram/@links.4"
-        referenceType="out_taget"
+        referenceType="out_target"
         groupName="outgoing links"
         groupIcon="icons/outgoingLinksNavigatorGroup.gif"/>
     <childReferences
@@ -5765,7 +5802,7 @@
     <childReferences
         parent="//@diagram/@childNodes.29"
         child="//@diagram/@links.4"
-        referenceType="out_taget"
+        referenceType="out_target"
         groupName="outgoing links"
         groupIcon="icons/outgoingLinksNavigatorGroup.gif"/>
     <childReferences
@@ -5777,7 +5814,7 @@
     <childReferences
         parent="//@diagram/@childNodes.34"
         child="//@diagram/@links.4"
-        referenceType="out_taget"
+        referenceType="out_target"
         groupName="outgoing links"
         groupIcon="icons/outgoingLinksNavigatorGroup.gif"/>
     <childReferences
@@ -5789,7 +5826,7 @@
     <childReferences
         parent="//@diagram/@childNodes.35"
         child="//@diagram/@links.4"
-        referenceType="out_taget"
+        referenceType="out_target"
         groupName="outgoing links"
         groupIcon="icons/outgoingLinksNavigatorGroup.gif"/>
     <childReferences
@@ -5801,7 +5838,7 @@
     <childReferences
         parent="//@diagram/@childNodes.36"
         child="//@diagram/@links.4"
-        referenceType="out_taget"
+        referenceType="out_target"
         groupName="outgoing links"
         groupIcon="icons/outgoingLinksNavigatorGroup.gif"/>
     <childReferences
@@ -5813,7 +5850,7 @@
     <childReferences
         parent="//@diagram/@childNodes.39"
         child="//@diagram/@links.4"
-        referenceType="out_taget"
+        referenceType="out_target"
         groupName="outgoing links"
         groupIcon="icons/outgoingLinksNavigatorGroup.gif"/>
   </navigator>

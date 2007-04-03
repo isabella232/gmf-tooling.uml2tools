@@ -1,0 +1,39 @@
+«IMPORT "http://www.eclipse.org/gmf/2005/GenModel/2.0"»
+«IMPORT "http://www.eclipse.org/emf/2002/Ecore"»
+«EXTENSION xpt::diagram::editpolicies::Utils»
+«EXTENSION xpt::GenModelUtils»
+
+«AROUND createCompleteLinkCommand(gmfgen::GenNode node) FOR gmfgen::GenLink-»
+«EXPAND xpt::Common::generatedMemberComment»
+protected org.eclipse.gef.commands.Command «EXPAND xpt::diagram::editpolicies::NodeItemSemanticEditPolicy::completeLinkCommandCreatorName(node) FOR this»(org.eclipse.gmf.runtime.emf.type.core.requests.CreateRelationshipRequest req) {
+	«EXPAND xpt::diagram::editpolicies::NodeItemSemanticEditPolicy::defineSourceTargetAndCheckConstraints(createCompleteOutgoingLinkCommand(this, node), true)-»
+	«IF null != node.modelFacet && node.modelFacet.isPhantomElement()-»
+		«EXPAND linkToPhantomCreateCommand FOR modelFacet-»
+	«ELSE-»
+		«EXPAND xpt::diagram::editpolicies::NodeItemSemanticEditPolicy::linkCreateCommand FOR modelFacet-»
+	«ENDIF-»
+}
+«ENDAROUND»
+
+«DEFINE linkToPhantomCreateCommand FOR gmfgen::TypeLinkModelFacet-»
+	«REM»nothing special -- delegate to defaults«ENDREM»«-»
+	«EXPAND xpt::diagram::editpolicies::NodeItemSemanticEditPolicy::linkCreateCommand FOR this-»
+«ENDDEFINE»
+
+«DEFINE linkToPhantomCreateCommand FOR gmfgen::FeatureLinkModelFacet-»
+org.eclipse.gmf.runtime.emf.type.core.requests.SetRequest setReq = new org.eclipse.gmf.runtime.emf.type.core.requests.SetRequest(sourceEObject, «getQualifiedPackageInterfaceName(metaFeature.genClass.genPackage)».eINSTANCE.get«getFeatureAccessorName(metaFeature)»(), target);
+return getMSLWrapper(new org.eclipse.gmf.runtime.emf.type.core.commands.SetValueCommand(setReq) {
+			//force removal from resource
+			protected org.eclipse.gmf.runtime.common.core.command.CommandResult doExecuteWithResult(«-»
+					org.eclipse.core.runtime.IProgressMonitor monitor, «-»
+					org.eclipse.core.runtime.IAdaptable info) throws org.eclipse.core.commands.ExecutionException {
+				
+				org.eclipse.gmf.runtime.emf.type.core.requests.SetRequest requestImpl = (org.eclipse.gmf.runtime.emf.type.core.requests.SetRequest)getRequest();
+				org.eclipse.emf.ecore.EObject requestTarget = (org.eclipse.emf.ecore.EObject)requestImpl.getValue();
+				if (requestTarget.eResource() != null){
+					requestTarget.eResource().getContents().remove(requestTarget);
+				}
+				return super.doExecuteWithResult(monitor, info);
+			}
+		});
+«ENDDEFINE»
