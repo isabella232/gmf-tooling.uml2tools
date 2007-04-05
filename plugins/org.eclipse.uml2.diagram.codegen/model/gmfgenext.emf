@@ -1,0 +1,15 @@
+@namespace(uri="http://www.eclipse.org/uml2/diagram/gmfgenext/DiagramFigure/1.0", prefix="uml2.gmfgenext")
+package gmfgenext;
+
+import "platform:/resource/org.eclipse.gmf.codegen/models/gmfgen.ecore";
+
+class AuxSecondaryDiagramNodeAttribute extends gmfgen.Attributes {
+	@genmodel(documentation="When installed into the top-level node, it should always share the domain element with diagram canvas")
+	attr boolean substituteWithCanvasElement; 
+}
+
+class CustomLocatorAttributes extends gmfgen.Attributes {
+	@genmodel(documentation="Applicable for gmfgen::GenChildSideAffixedNode only. Allows to customize IBorderItemLocator implementation")
+	attr String customLocatorFQN; 
+}
+
