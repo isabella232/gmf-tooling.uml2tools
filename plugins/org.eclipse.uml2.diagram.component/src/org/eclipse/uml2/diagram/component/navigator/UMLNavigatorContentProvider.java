@@ -8,8 +8,9 @@ import java.util.Iterator;
 
 import org.eclipse.core.resources.IFile;
 import org.eclipse.emf.ecore.resource.Resource;
-import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emf.edit.domain.AdapterFactoryEditingDomain;
+import org.eclipse.emf.transaction.TransactionalEditingDomain;
+import org.eclipse.emf.workspace.util.WorkspaceSynchronizer;
 import org.eclipse.gmf.runtime.emf.core.GMFEditingDomainFactory;
 import org.eclipse.gmf.runtime.notation.Diagram;
 import org.eclipse.gmf.runtime.notation.Edge;
@@ -33,6 +34,7 @@ import org.eclipse.uml2.diagram.component.edit.parts.PackageEditPart;
 import org.eclipse.uml2.diagram.component.edit.parts.PortEditPart;
 import org.eclipse.uml2.diagram.component.edit.parts.PortProvidedEditPart;
 import org.eclipse.uml2.diagram.component.edit.parts.PortRequiredEditPart;
+import org.eclipse.uml2.diagram.component.part.Messages;
 import org.eclipse.uml2.diagram.component.part.UMLVisualIDRegistry;
 
 /**
@@ -48,13 +50,106 @@ public class UMLNavigatorContentProvider implements ICommonContentProvider {
 	/**
 	 * @generated
 	 */
+	private Viewer myViewer;
+
+	/**
+	 * @generated
+	 */
+	private AdapterFactoryEditingDomain myEditingDomain;
+
+	/**
+	 * @generated
+	 */
+	private WorkspaceSynchronizer myWorkspaceSynchronizer;
+
+	/**
+	 * @generated
+	 */
+	private Runnable myViewerRefreshRunnable;
+
+	/**
+	 * @generated
+	 */
+	public UMLNavigatorContentProvider() {
+		TransactionalEditingDomain editingDomain = GMFEditingDomainFactory.INSTANCE.createEditingDomain();
+		myEditingDomain = (AdapterFactoryEditingDomain) editingDomain;
+		myEditingDomain.setResourceToReadOnlyMap(new HashMap() {
+
+			public Object get(Object key) {
+				if (!containsKey(key)) {
+					put(key, Boolean.TRUE);
+				}
+				return super.get(key);
+			}
+		});
+		myViewerRefreshRunnable = new Runnable() {
+
+			public void run() {
+				if (myViewer != null) {
+					myViewer.refresh();
+				}
+			}
+		};
+		myWorkspaceSynchronizer = new WorkspaceSynchronizer(editingDomain, new WorkspaceSynchronizer.Delegate() {
+
+			public void dispose() {
+			}
+
+			public boolean handleResourceChanged(final Resource resource) {
+				for (Iterator it = myEditingDomain.getResourceSet().getResources().iterator(); it.hasNext();) {
+					Resource nextResource = (Resource) it.next();
+					nextResource.unload();
+				}
+				if (myViewer != null) {
+					myViewer.getControl().getDisplay().asyncExec(myViewerRefreshRunnable);
+				}
+				return true;
+			}
+
+			public boolean handleResourceDeleted(Resource resource) {
+				for (Iterator it = myEditingDomain.getResourceSet().getResources().iterator(); it.hasNext();) {
+					Resource nextResource = (Resource) it.next();
+					nextResource.unload();
+				}
+				if (myViewer != null) {
+					myViewer.getControl().getDisplay().asyncExec(myViewerRefreshRunnable);
+				}
+				return true;
+			}
+
+			public boolean handleResourceMoved(Resource resource, final org.eclipse.emf.common.util.URI newURI) {
+				for (Iterator it = myEditingDomain.getResourceSet().getResources().iterator(); it.hasNext();) {
+					Resource nextResource = (Resource) it.next();
+					nextResource.unload();
+				}
+				if (myViewer != null) {
+					myViewer.getControl().getDisplay().asyncExec(myViewerRefreshRunnable);
+				}
+				return true;
+			}
+		});
+	}
+
+	/**
+	 * @generated
+	 */
 	public void dispose() {
+		myWorkspaceSynchronizer.dispose();
+		myWorkspaceSynchronizer = null;
+		myViewerRefreshRunnable = null;
+		for (Iterator it = myEditingDomain.getResourceSet().getResources().iterator(); it.hasNext();) {
+			Resource resource = (Resource) it.next();
+			resource.unload();
+		}
+		((TransactionalEditingDomain) myEditingDomain).dispose();
+		myEditingDomain = null;
 	}
 
 	/**
 	 * @generated
 	 */
 	public void inputChanged(Viewer viewer, Object oldInput, Object newInput) {
+		myViewer = viewer;
 	}
 
 	/**
@@ -88,20 +183,8 @@ public class UMLNavigatorContentProvider implements ICommonContentProvider {
 	public Object[] getChildren(Object parentElement) {
 		if (parentElement instanceof IFile) {
 			IFile file = (IFile) parentElement;
-			AdapterFactoryEditingDomain editingDomain = (AdapterFactoryEditingDomain) GMFEditingDomainFactory.INSTANCE.createEditingDomain();
-			editingDomain.setResourceToReadOnlyMap(new HashMap() {
-
-				public Object get(Object key) {
-					if (!containsKey(key)) {
-						put(key, Boolean.TRUE);
-					}
-					return super.get(key);
-				}
-			});
-			ResourceSet resourceSet = editingDomain.getResourceSet();
-
 			org.eclipse.emf.common.util.URI fileURI = org.eclipse.emf.common.util.URI.createPlatformResourceURI(file.getFullPath().toString(), true);
-			Resource resource = resourceSet.getResource(fileURI, true);
+			Resource resource = myEditingDomain.getResourceSet().getResource(fileURI, true);
 			Collection result = new ArrayList();
 			result.addAll(createNavigatorItems(selectViewsByType(resource.getContents(), PackageEditPart.MODEL_ID), file, false));
 			return result.toArray();
@@ -131,20 +214,20 @@ public class UMLNavigatorContentProvider implements ICommonContentProvider {
 
 		case PackageEditPart.VISUAL_ID: {
 			Collection result = new ArrayList();
-			UMLNavigatorGroup links = new UMLNavigatorGroup("links", "icons/linksNavigatorGroup.gif", parentElement);
-			Collection connectedViews = getChildrenByType(Collections.singleton(view), UMLVisualIDRegistry.getType(ComponentEditPart.VISUAL_ID));
+			UMLNavigatorGroup links = new UMLNavigatorGroup(Messages.NavigatorGroupName_Package_1000_links, "icons/linksNavigatorGroup.gif", parentElement); //$NON-NLS-1$
+			Collection connectedViews = getChildrenByType(Collections.singleton(view), ComponentEditPart.VISUAL_ID);
 			result.addAll(createNavigatorItems(connectedViews, parentElement, false));
-			connectedViews = getChildrenByType(Collections.singleton(view), UMLVisualIDRegistry.getType(Artifact2EditPart.VISUAL_ID));
+			connectedViews = getChildrenByType(Collections.singleton(view), Artifact2EditPart.VISUAL_ID);
 			result.addAll(createNavigatorItems(connectedViews, parentElement, false));
-			connectedViews = getChildrenByType(Collections.singleton(view), UMLVisualIDRegistry.getType(Interface2EditPart.VISUAL_ID));
+			connectedViews = getChildrenByType(Collections.singleton(view), Interface2EditPart.VISUAL_ID);
 			result.addAll(createNavigatorItems(connectedViews, parentElement, false));
-			connectedViews = getChildrenByType(Collections.singleton(view), UMLVisualIDRegistry.getType(Class2EditPart.VISUAL_ID));
+			connectedViews = getChildrenByType(Collections.singleton(view), Class2EditPart.VISUAL_ID);
 			result.addAll(createNavigatorItems(connectedViews, parentElement, false));
-			connectedViews = getDiagramLinksByType(Collections.singleton(view), UMLVisualIDRegistry.getType(InterfaceRealizationEditPart.VISUAL_ID));
+			connectedViews = getDiagramLinksByType(Collections.singleton(view), InterfaceRealizationEditPart.VISUAL_ID);
 			links.addChildren(createNavigatorItems(connectedViews, links, false));
-			connectedViews = getDiagramLinksByType(Collections.singleton(view), UMLVisualIDRegistry.getType(PortProvidedEditPart.VISUAL_ID));
+			connectedViews = getDiagramLinksByType(Collections.singleton(view), PortProvidedEditPart.VISUAL_ID);
 			links.addChildren(createNavigatorItems(connectedViews, links, false));
-			connectedViews = getDiagramLinksByType(Collections.singleton(view), UMLVisualIDRegistry.getType(PortRequiredEditPart.VISUAL_ID));
+			connectedViews = getDiagramLinksByType(Collections.singleton(view), PortRequiredEditPart.VISUAL_ID);
 			links.addChildren(createNavigatorItems(connectedViews, links, false));
 			if (!links.isEmpty()) {
 				result.add(links);
@@ -154,51 +237,51 @@ public class UMLNavigatorContentProvider implements ICommonContentProvider {
 
 		case ComponentEditPart.VISUAL_ID: {
 			Collection result = new ArrayList();
-			UMLNavigatorGroup outgoinglinks = new UMLNavigatorGroup("outgoing links", "icons/outgoingLinksNavigatorGroup.gif", parentElement);
-			Collection connectedViews = getChildrenByType(Collections.singleton(view), UMLVisualIDRegistry.getType(ComponentContentsEditPart.VISUAL_ID));
-			connectedViews = getChildrenByType(connectedViews, UMLVisualIDRegistry.getType(Component2EditPart.VISUAL_ID));
+			UMLNavigatorGroup outgoinglinks = new UMLNavigatorGroup(Messages.NavigatorGroupName_Component_2001_outgoinglinks, "icons/outgoingLinksNavigatorGroup.gif", parentElement); //$NON-NLS-1$
+			Collection connectedViews = getChildrenByType(Collections.singleton(view), ComponentContentsEditPart.VISUAL_ID);
+			connectedViews = getChildrenByType(connectedViews, Component2EditPart.VISUAL_ID);
 			result.addAll(createNavigatorItems(connectedViews, parentElement, false));
-			connectedViews = getChildrenByType(Collections.singleton(view), UMLVisualIDRegistry.getType(PortEditPart.VISUAL_ID));
+			connectedViews = getChildrenByType(Collections.singleton(view), PortEditPart.VISUAL_ID);
 			result.addAll(createNavigatorItems(connectedViews, parentElement, false));
-			connectedViews = getChildrenByType(Collections.singleton(view), UMLVisualIDRegistry.getType(ComponentContentsEditPart.VISUAL_ID));
-			connectedViews = getChildrenByType(connectedViews, UMLVisualIDRegistry.getType(Component2EditPart.VISUAL_ID));
-			connectedViews = getChildrenByType(connectedViews, UMLVisualIDRegistry.getType(PortEditPart.VISUAL_ID));
+			connectedViews = getChildrenByType(Collections.singleton(view), ComponentContentsEditPart.VISUAL_ID);
+			connectedViews = getChildrenByType(connectedViews, Component2EditPart.VISUAL_ID);
+			connectedViews = getChildrenByType(connectedViews, PortEditPart.VISUAL_ID);
 			result.addAll(createNavigatorItems(connectedViews, parentElement, false));
-			connectedViews = getChildrenByType(Collections.singleton(view), UMLVisualIDRegistry.getType(ComponentContentsEditPart.VISUAL_ID));
-			connectedViews = getChildrenByType(connectedViews, UMLVisualIDRegistry.getType(Component2EditPart.VISUAL_ID));
-			connectedViews = getChildrenByType(connectedViews, UMLVisualIDRegistry.getType(ComponentContents2EditPart.VISUAL_ID));
-			connectedViews = getChildrenByType(connectedViews, UMLVisualIDRegistry.getType(ClassEditPart.VISUAL_ID));
-			connectedViews = getChildrenByType(connectedViews, UMLVisualIDRegistry.getType(PortEditPart.VISUAL_ID));
+			connectedViews = getChildrenByType(Collections.singleton(view), ComponentContentsEditPart.VISUAL_ID);
+			connectedViews = getChildrenByType(connectedViews, Component2EditPart.VISUAL_ID);
+			connectedViews = getChildrenByType(connectedViews, ComponentContents2EditPart.VISUAL_ID);
+			connectedViews = getChildrenByType(connectedViews, ClassEditPart.VISUAL_ID);
+			connectedViews = getChildrenByType(connectedViews, PortEditPart.VISUAL_ID);
 			result.addAll(createNavigatorItems(connectedViews, parentElement, false));
-			connectedViews = getChildrenByType(Collections.singleton(view), UMLVisualIDRegistry.getType(ComponentContentsEditPart.VISUAL_ID));
-			connectedViews = getChildrenByType(connectedViews, UMLVisualIDRegistry.getType(ClassEditPart.VISUAL_ID));
-			connectedViews = getChildrenByType(connectedViews, UMLVisualIDRegistry.getType(PortEditPart.VISUAL_ID));
+			connectedViews = getChildrenByType(Collections.singleton(view), ComponentContentsEditPart.VISUAL_ID);
+			connectedViews = getChildrenByType(connectedViews, ClassEditPart.VISUAL_ID);
+			connectedViews = getChildrenByType(connectedViews, PortEditPart.VISUAL_ID);
 			result.addAll(createNavigatorItems(connectedViews, parentElement, false));
-			connectedViews = getChildrenByType(Collections.singleton(view), UMLVisualIDRegistry.getType(ComponentContentsEditPart.VISUAL_ID));
-			connectedViews = getChildrenByType(connectedViews, UMLVisualIDRegistry.getType(Component2EditPart.VISUAL_ID));
-			connectedViews = getChildrenByType(connectedViews, UMLVisualIDRegistry.getType(ComponentContents2EditPart.VISUAL_ID));
-			connectedViews = getChildrenByType(connectedViews, UMLVisualIDRegistry.getType(ArtifactEditPart.VISUAL_ID));
+			connectedViews = getChildrenByType(Collections.singleton(view), ComponentContentsEditPart.VISUAL_ID);
+			connectedViews = getChildrenByType(connectedViews, Component2EditPart.VISUAL_ID);
+			connectedViews = getChildrenByType(connectedViews, ComponentContents2EditPart.VISUAL_ID);
+			connectedViews = getChildrenByType(connectedViews, ArtifactEditPart.VISUAL_ID);
 			result.addAll(createNavigatorItems(connectedViews, parentElement, false));
-			connectedViews = getChildrenByType(Collections.singleton(view), UMLVisualIDRegistry.getType(ComponentContentsEditPart.VISUAL_ID));
-			connectedViews = getChildrenByType(connectedViews, UMLVisualIDRegistry.getType(ArtifactEditPart.VISUAL_ID));
+			connectedViews = getChildrenByType(Collections.singleton(view), ComponentContentsEditPart.VISUAL_ID);
+			connectedViews = getChildrenByType(connectedViews, ArtifactEditPart.VISUAL_ID);
 			result.addAll(createNavigatorItems(connectedViews, parentElement, false));
-			connectedViews = getChildrenByType(Collections.singleton(view), UMLVisualIDRegistry.getType(ComponentContentsEditPart.VISUAL_ID));
-			connectedViews = getChildrenByType(connectedViews, UMLVisualIDRegistry.getType(Component2EditPart.VISUAL_ID));
-			connectedViews = getChildrenByType(connectedViews, UMLVisualIDRegistry.getType(ComponentContents2EditPart.VISUAL_ID));
-			connectedViews = getChildrenByType(connectedViews, UMLVisualIDRegistry.getType(ClassEditPart.VISUAL_ID));
+			connectedViews = getChildrenByType(Collections.singleton(view), ComponentContentsEditPart.VISUAL_ID);
+			connectedViews = getChildrenByType(connectedViews, Component2EditPart.VISUAL_ID);
+			connectedViews = getChildrenByType(connectedViews, ComponentContents2EditPart.VISUAL_ID);
+			connectedViews = getChildrenByType(connectedViews, ClassEditPart.VISUAL_ID);
 			result.addAll(createNavigatorItems(connectedViews, parentElement, false));
-			connectedViews = getChildrenByType(Collections.singleton(view), UMLVisualIDRegistry.getType(ComponentContentsEditPart.VISUAL_ID));
-			connectedViews = getChildrenByType(connectedViews, UMLVisualIDRegistry.getType(ClassEditPart.VISUAL_ID));
+			connectedViews = getChildrenByType(Collections.singleton(view), ComponentContentsEditPart.VISUAL_ID);
+			connectedViews = getChildrenByType(connectedViews, ClassEditPart.VISUAL_ID);
 			result.addAll(createNavigatorItems(connectedViews, parentElement, false));
-			connectedViews = getChildrenByType(Collections.singleton(view), UMLVisualIDRegistry.getType(ComponentContentsEditPart.VISUAL_ID));
-			connectedViews = getChildrenByType(connectedViews, UMLVisualIDRegistry.getType(Component2EditPart.VISUAL_ID));
-			connectedViews = getChildrenByType(connectedViews, UMLVisualIDRegistry.getType(ComponentContents2EditPart.VISUAL_ID));
-			connectedViews = getChildrenByType(connectedViews, UMLVisualIDRegistry.getType(InterfaceEditPart.VISUAL_ID));
+			connectedViews = getChildrenByType(Collections.singleton(view), ComponentContentsEditPart.VISUAL_ID);
+			connectedViews = getChildrenByType(connectedViews, Component2EditPart.VISUAL_ID);
+			connectedViews = getChildrenByType(connectedViews, ComponentContents2EditPart.VISUAL_ID);
+			connectedViews = getChildrenByType(connectedViews, InterfaceEditPart.VISUAL_ID);
 			result.addAll(createNavigatorItems(connectedViews, parentElement, false));
-			connectedViews = getChildrenByType(Collections.singleton(view), UMLVisualIDRegistry.getType(ComponentContentsEditPart.VISUAL_ID));
-			connectedViews = getChildrenByType(connectedViews, UMLVisualIDRegistry.getType(InterfaceEditPart.VISUAL_ID));
+			connectedViews = getChildrenByType(Collections.singleton(view), ComponentContentsEditPart.VISUAL_ID);
+			connectedViews = getChildrenByType(connectedViews, InterfaceEditPart.VISUAL_ID);
 			result.addAll(createNavigatorItems(connectedViews, parentElement, false));
-			connectedViews = getOutgoingLinksByType(Collections.singleton(view), UMLVisualIDRegistry.getType(InterfaceRealizationEditPart.VISUAL_ID));
+			connectedViews = getOutgoingLinksByType(Collections.singleton(view), InterfaceRealizationEditPart.VISUAL_ID);
 			outgoinglinks.addChildren(createNavigatorItems(connectedViews, outgoinglinks, true));
 			if (!outgoinglinks.isEmpty()) {
 				result.add(outgoinglinks);
@@ -208,12 +291,12 @@ public class UMLNavigatorContentProvider implements ICommonContentProvider {
 
 		case Interface2EditPart.VISUAL_ID: {
 			Collection result = new ArrayList();
-			UMLNavigatorGroup incominglinks = new UMLNavigatorGroup("incoming links", "icons/incomingLinksNavigatorGroup.gif", parentElement);
-			Collection connectedViews = getIncomingLinksByType(Collections.singleton(view), UMLVisualIDRegistry.getType(InterfaceRealizationEditPart.VISUAL_ID));
+			UMLNavigatorGroup incominglinks = new UMLNavigatorGroup(Messages.NavigatorGroupName_Interface_2003_incominglinks, "icons/incomingLinksNavigatorGroup.gif", parentElement); //$NON-NLS-1$
+			Collection connectedViews = getIncomingLinksByType(Collections.singleton(view), InterfaceRealizationEditPart.VISUAL_ID);
 			incominglinks.addChildren(createNavigatorItems(connectedViews, incominglinks, true));
-			connectedViews = getIncomingLinksByType(Collections.singleton(view), UMLVisualIDRegistry.getType(PortProvidedEditPart.VISUAL_ID));
+			connectedViews = getIncomingLinksByType(Collections.singleton(view), PortProvidedEditPart.VISUAL_ID);
 			incominglinks.addChildren(createNavigatorItems(connectedViews, incominglinks, true));
-			connectedViews = getIncomingLinksByType(Collections.singleton(view), UMLVisualIDRegistry.getType(PortRequiredEditPart.VISUAL_ID));
+			connectedViews = getIncomingLinksByType(Collections.singleton(view), PortRequiredEditPart.VISUAL_ID);
 			incominglinks.addChildren(createNavigatorItems(connectedViews, incominglinks, true));
 			if (!incominglinks.isEmpty()) {
 				result.add(incominglinks);
@@ -223,10 +306,10 @@ public class UMLNavigatorContentProvider implements ICommonContentProvider {
 
 		case Class2EditPart.VISUAL_ID: {
 			Collection result = new ArrayList();
-			UMLNavigatorGroup outgoinglinks = new UMLNavigatorGroup("outgoing links", "icons/outgoingLinksNavigatorGroup.gif", parentElement);
-			Collection connectedViews = getChildrenByType(Collections.singleton(view), UMLVisualIDRegistry.getType(PortEditPart.VISUAL_ID));
+			UMLNavigatorGroup outgoinglinks = new UMLNavigatorGroup(Messages.NavigatorGroupName_Class_2004_outgoinglinks, "icons/outgoingLinksNavigatorGroup.gif", parentElement); //$NON-NLS-1$
+			Collection connectedViews = getChildrenByType(Collections.singleton(view), PortEditPart.VISUAL_ID);
 			result.addAll(createNavigatorItems(connectedViews, parentElement, false));
-			connectedViews = getOutgoingLinksByType(Collections.singleton(view), UMLVisualIDRegistry.getType(InterfaceRealizationEditPart.VISUAL_ID));
+			connectedViews = getOutgoingLinksByType(Collections.singleton(view), InterfaceRealizationEditPart.VISUAL_ID);
 			outgoinglinks.addChildren(createNavigatorItems(connectedViews, outgoinglinks, true));
 			if (!outgoinglinks.isEmpty()) {
 				result.add(outgoinglinks);
@@ -236,26 +319,26 @@ public class UMLNavigatorContentProvider implements ICommonContentProvider {
 
 		case Component2EditPart.VISUAL_ID: {
 			Collection result = new ArrayList();
-			UMLNavigatorGroup outgoinglinks = new UMLNavigatorGroup("outgoing links", "icons/outgoingLinksNavigatorGroup.gif", parentElement);
-			Collection connectedViews = getChildrenByType(Collections.singleton(view), UMLVisualIDRegistry.getType(ComponentContents2EditPart.VISUAL_ID));
-			connectedViews = getChildrenByType(connectedViews, UMLVisualIDRegistry.getType(Component2EditPart.VISUAL_ID));
+			UMLNavigatorGroup outgoinglinks = new UMLNavigatorGroup(Messages.NavigatorGroupName_Component_3001_outgoinglinks, "icons/outgoingLinksNavigatorGroup.gif", parentElement); //$NON-NLS-1$
+			Collection connectedViews = getChildrenByType(Collections.singleton(view), ComponentContents2EditPart.VISUAL_ID);
+			connectedViews = getChildrenByType(connectedViews, Component2EditPart.VISUAL_ID);
 			result.addAll(createNavigatorItems(connectedViews, parentElement, false));
-			connectedViews = getChildrenByType(Collections.singleton(view), UMLVisualIDRegistry.getType(PortEditPart.VISUAL_ID));
+			connectedViews = getChildrenByType(Collections.singleton(view), PortEditPart.VISUAL_ID);
 			result.addAll(createNavigatorItems(connectedViews, parentElement, false));
-			connectedViews = getChildrenByType(Collections.singleton(view), UMLVisualIDRegistry.getType(ComponentContents2EditPart.VISUAL_ID));
-			connectedViews = getChildrenByType(connectedViews, UMLVisualIDRegistry.getType(ClassEditPart.VISUAL_ID));
-			connectedViews = getChildrenByType(connectedViews, UMLVisualIDRegistry.getType(PortEditPart.VISUAL_ID));
+			connectedViews = getChildrenByType(Collections.singleton(view), ComponentContents2EditPart.VISUAL_ID);
+			connectedViews = getChildrenByType(connectedViews, ClassEditPart.VISUAL_ID);
+			connectedViews = getChildrenByType(connectedViews, PortEditPart.VISUAL_ID);
 			result.addAll(createNavigatorItems(connectedViews, parentElement, false));
-			connectedViews = getChildrenByType(Collections.singleton(view), UMLVisualIDRegistry.getType(ComponentContents2EditPart.VISUAL_ID));
-			connectedViews = getChildrenByType(connectedViews, UMLVisualIDRegistry.getType(ArtifactEditPart.VISUAL_ID));
+			connectedViews = getChildrenByType(Collections.singleton(view), ComponentContents2EditPart.VISUAL_ID);
+			connectedViews = getChildrenByType(connectedViews, ArtifactEditPart.VISUAL_ID);
 			result.addAll(createNavigatorItems(connectedViews, parentElement, false));
-			connectedViews = getChildrenByType(Collections.singleton(view), UMLVisualIDRegistry.getType(ComponentContents2EditPart.VISUAL_ID));
-			connectedViews = getChildrenByType(connectedViews, UMLVisualIDRegistry.getType(ClassEditPart.VISUAL_ID));
+			connectedViews = getChildrenByType(Collections.singleton(view), ComponentContents2EditPart.VISUAL_ID);
+			connectedViews = getChildrenByType(connectedViews, ClassEditPart.VISUAL_ID);
 			result.addAll(createNavigatorItems(connectedViews, parentElement, false));
-			connectedViews = getChildrenByType(Collections.singleton(view), UMLVisualIDRegistry.getType(ComponentContents2EditPart.VISUAL_ID));
-			connectedViews = getChildrenByType(connectedViews, UMLVisualIDRegistry.getType(InterfaceEditPart.VISUAL_ID));
+			connectedViews = getChildrenByType(Collections.singleton(view), ComponentContents2EditPart.VISUAL_ID);
+			connectedViews = getChildrenByType(connectedViews, InterfaceEditPart.VISUAL_ID);
 			result.addAll(createNavigatorItems(connectedViews, parentElement, false));
-			connectedViews = getOutgoingLinksByType(Collections.singleton(view), UMLVisualIDRegistry.getType(InterfaceRealizationEditPart.VISUAL_ID));
+			connectedViews = getOutgoingLinksByType(Collections.singleton(view), InterfaceRealizationEditPart.VISUAL_ID);
 			outgoinglinks.addChildren(createNavigatorItems(connectedViews, outgoinglinks, true));
 			if (!outgoinglinks.isEmpty()) {
 				result.add(outgoinglinks);
@@ -265,10 +348,10 @@ public class UMLNavigatorContentProvider implements ICommonContentProvider {
 
 		case PortEditPart.VISUAL_ID: {
 			Collection result = new ArrayList();
-			UMLNavigatorGroup outgoinglinks = new UMLNavigatorGroup("outgoing links", "icons/outgoingLinksNavigatorGroup.gif", parentElement);
-			Collection connectedViews = getOutgoingLinksByType(Collections.singleton(view), UMLVisualIDRegistry.getType(PortProvidedEditPart.VISUAL_ID));
+			UMLNavigatorGroup outgoinglinks = new UMLNavigatorGroup(Messages.NavigatorGroupName_Port_3002_outgoinglinks, "icons/outgoingLinksNavigatorGroup.gif", parentElement); //$NON-NLS-1$
+			Collection connectedViews = getOutgoingLinksByType(Collections.singleton(view), PortProvidedEditPart.VISUAL_ID);
 			outgoinglinks.addChildren(createNavigatorItems(connectedViews, outgoinglinks, true));
-			connectedViews = getOutgoingLinksByType(Collections.singleton(view), UMLVisualIDRegistry.getType(PortRequiredEditPart.VISUAL_ID));
+			connectedViews = getOutgoingLinksByType(Collections.singleton(view), PortRequiredEditPart.VISUAL_ID);
 			outgoinglinks.addChildren(createNavigatorItems(connectedViews, outgoinglinks, true));
 			if (!outgoinglinks.isEmpty()) {
 				result.add(outgoinglinks);
@@ -278,10 +361,10 @@ public class UMLNavigatorContentProvider implements ICommonContentProvider {
 
 		case ClassEditPart.VISUAL_ID: {
 			Collection result = new ArrayList();
-			UMLNavigatorGroup outgoinglinks = new UMLNavigatorGroup("outgoing links", "icons/outgoingLinksNavigatorGroup.gif", parentElement);
-			Collection connectedViews = getChildrenByType(Collections.singleton(view), UMLVisualIDRegistry.getType(PortEditPart.VISUAL_ID));
+			UMLNavigatorGroup outgoinglinks = new UMLNavigatorGroup(Messages.NavigatorGroupName_Class_3004_outgoinglinks, "icons/outgoingLinksNavigatorGroup.gif", parentElement); //$NON-NLS-1$
+			Collection connectedViews = getChildrenByType(Collections.singleton(view), PortEditPart.VISUAL_ID);
 			result.addAll(createNavigatorItems(connectedViews, parentElement, false));
-			connectedViews = getOutgoingLinksByType(Collections.singleton(view), UMLVisualIDRegistry.getType(InterfaceRealizationEditPart.VISUAL_ID));
+			connectedViews = getOutgoingLinksByType(Collections.singleton(view), InterfaceRealizationEditPart.VISUAL_ID);
 			outgoinglinks.addChildren(createNavigatorItems(connectedViews, outgoinglinks, true));
 			if (!outgoinglinks.isEmpty()) {
 				result.add(outgoinglinks);
@@ -291,12 +374,12 @@ public class UMLNavigatorContentProvider implements ICommonContentProvider {
 
 		case InterfaceEditPart.VISUAL_ID: {
 			Collection result = new ArrayList();
-			UMLNavigatorGroup incominglinks = new UMLNavigatorGroup("incoming links", "icons/incomingLinksNavigatorGroup.gif", parentElement);
-			Collection connectedViews = getIncomingLinksByType(Collections.singleton(view), UMLVisualIDRegistry.getType(InterfaceRealizationEditPart.VISUAL_ID));
+			UMLNavigatorGroup incominglinks = new UMLNavigatorGroup(Messages.NavigatorGroupName_Interface_3005_incominglinks, "icons/incomingLinksNavigatorGroup.gif", parentElement); //$NON-NLS-1$
+			Collection connectedViews = getIncomingLinksByType(Collections.singleton(view), InterfaceRealizationEditPart.VISUAL_ID);
 			incominglinks.addChildren(createNavigatorItems(connectedViews, incominglinks, true));
-			connectedViews = getIncomingLinksByType(Collections.singleton(view), UMLVisualIDRegistry.getType(PortProvidedEditPart.VISUAL_ID));
+			connectedViews = getIncomingLinksByType(Collections.singleton(view), PortProvidedEditPart.VISUAL_ID);
 			incominglinks.addChildren(createNavigatorItems(connectedViews, incominglinks, true));
-			connectedViews = getIncomingLinksByType(Collections.singleton(view), UMLVisualIDRegistry.getType(PortRequiredEditPart.VISUAL_ID));
+			connectedViews = getIncomingLinksByType(Collections.singleton(view), PortRequiredEditPart.VISUAL_ID);
 			incominglinks.addChildren(createNavigatorItems(connectedViews, incominglinks, true));
 			if (!incominglinks.isEmpty()) {
 				result.add(incominglinks);
@@ -306,19 +389,19 @@ public class UMLNavigatorContentProvider implements ICommonContentProvider {
 
 		case InterfaceRealizationEditPart.VISUAL_ID: {
 			Collection result = new ArrayList();
-			UMLNavigatorGroup source = new UMLNavigatorGroup("source", "icons/linkSourceNavigatorGroup.gif", parentElement);
-			UMLNavigatorGroup target = new UMLNavigatorGroup("target", "icons/linkTargetNavigatorGroup.gif", parentElement);
-			Collection connectedViews = getLinksTargetByType(Collections.singleton(view), UMLVisualIDRegistry.getType(Interface2EditPart.VISUAL_ID));
+			UMLNavigatorGroup source = new UMLNavigatorGroup(Messages.NavigatorGroupName_InterfaceRealization_4001_source, "icons/linkSourceNavigatorGroup.gif", parentElement); //$NON-NLS-1$
+			UMLNavigatorGroup target = new UMLNavigatorGroup(Messages.NavigatorGroupName_InterfaceRealization_4001_target, "icons/linkTargetNavigatorGroup.gif", parentElement); //$NON-NLS-1$
+			Collection connectedViews = getLinksTargetByType(Collections.singleton(view), Interface2EditPart.VISUAL_ID);
 			target.addChildren(createNavigatorItems(connectedViews, target, true));
-			connectedViews = getLinksTargetByType(Collections.singleton(view), UMLVisualIDRegistry.getType(InterfaceEditPart.VISUAL_ID));
+			connectedViews = getLinksTargetByType(Collections.singleton(view), InterfaceEditPart.VISUAL_ID);
 			target.addChildren(createNavigatorItems(connectedViews, target, true));
-			connectedViews = getLinksSourceByType(Collections.singleton(view), UMLVisualIDRegistry.getType(ComponentEditPart.VISUAL_ID));
+			connectedViews = getLinksSourceByType(Collections.singleton(view), ComponentEditPart.VISUAL_ID);
 			source.addChildren(createNavigatorItems(connectedViews, source, true));
-			connectedViews = getLinksSourceByType(Collections.singleton(view), UMLVisualIDRegistry.getType(Class2EditPart.VISUAL_ID));
+			connectedViews = getLinksSourceByType(Collections.singleton(view), Class2EditPart.VISUAL_ID);
 			source.addChildren(createNavigatorItems(connectedViews, source, true));
-			connectedViews = getLinksSourceByType(Collections.singleton(view), UMLVisualIDRegistry.getType(Component2EditPart.VISUAL_ID));
+			connectedViews = getLinksSourceByType(Collections.singleton(view), Component2EditPart.VISUAL_ID);
 			source.addChildren(createNavigatorItems(connectedViews, source, true));
-			connectedViews = getLinksSourceByType(Collections.singleton(view), UMLVisualIDRegistry.getType(ClassEditPart.VISUAL_ID));
+			connectedViews = getLinksSourceByType(Collections.singleton(view), ClassEditPart.VISUAL_ID);
 			source.addChildren(createNavigatorItems(connectedViews, source, true));
 			if (!source.isEmpty()) {
 				result.add(source);
@@ -331,13 +414,13 @@ public class UMLNavigatorContentProvider implements ICommonContentProvider {
 
 		case PortProvidedEditPart.VISUAL_ID: {
 			Collection result = new ArrayList();
-			UMLNavigatorGroup source = new UMLNavigatorGroup("source", "icons/linkSourceNavigatorGroup.gif", parentElement);
-			UMLNavigatorGroup target = new UMLNavigatorGroup("target", "icons/linkTargetNavigatorGroup.gif", parentElement);
-			Collection connectedViews = getLinksTargetByType(Collections.singleton(view), UMLVisualIDRegistry.getType(Interface2EditPart.VISUAL_ID));
+			UMLNavigatorGroup source = new UMLNavigatorGroup(Messages.NavigatorGroupName_PortProvided_4006_source, "icons/linkSourceNavigatorGroup.gif", parentElement); //$NON-NLS-1$
+			UMLNavigatorGroup target = new UMLNavigatorGroup(Messages.NavigatorGroupName_PortProvided_4006_target, "icons/linkTargetNavigatorGroup.gif", parentElement); //$NON-NLS-1$
+			Collection connectedViews = getLinksTargetByType(Collections.singleton(view), Interface2EditPart.VISUAL_ID);
 			target.addChildren(createNavigatorItems(connectedViews, target, true));
-			connectedViews = getLinksTargetByType(Collections.singleton(view), UMLVisualIDRegistry.getType(InterfaceEditPart.VISUAL_ID));
+			connectedViews = getLinksTargetByType(Collections.singleton(view), InterfaceEditPart.VISUAL_ID);
 			target.addChildren(createNavigatorItems(connectedViews, target, true));
-			connectedViews = getLinksSourceByType(Collections.singleton(view), UMLVisualIDRegistry.getType(PortEditPart.VISUAL_ID));
+			connectedViews = getLinksSourceByType(Collections.singleton(view), PortEditPart.VISUAL_ID);
 			source.addChildren(createNavigatorItems(connectedViews, source, true));
 			if (!source.isEmpty()) {
 				result.add(source);
@@ -350,13 +433,13 @@ public class UMLNavigatorContentProvider implements ICommonContentProvider {
 
 		case PortRequiredEditPart.VISUAL_ID: {
 			Collection result = new ArrayList();
-			UMLNavigatorGroup source = new UMLNavigatorGroup("source", "icons/linkSourceNavigatorGroup.gif", parentElement);
-			UMLNavigatorGroup target = new UMLNavigatorGroup("target", "icons/linkTargetNavigatorGroup.gif", parentElement);
-			Collection connectedViews = getLinksTargetByType(Collections.singleton(view), UMLVisualIDRegistry.getType(Interface2EditPart.VISUAL_ID));
+			UMLNavigatorGroup source = new UMLNavigatorGroup(Messages.NavigatorGroupName_PortRequired_4004_source, "icons/linkSourceNavigatorGroup.gif", parentElement); //$NON-NLS-1$
+			UMLNavigatorGroup target = new UMLNavigatorGroup(Messages.NavigatorGroupName_PortRequired_4004_target, "icons/linkTargetNavigatorGroup.gif", parentElement); //$NON-NLS-1$
+			Collection connectedViews = getLinksTargetByType(Collections.singleton(view), Interface2EditPart.VISUAL_ID);
 			target.addChildren(createNavigatorItems(connectedViews, target, true));
-			connectedViews = getLinksTargetByType(Collections.singleton(view), UMLVisualIDRegistry.getType(InterfaceEditPart.VISUAL_ID));
+			connectedViews = getLinksTargetByType(Collections.singleton(view), InterfaceEditPart.VISUAL_ID);
 			target.addChildren(createNavigatorItems(connectedViews, target, true));
-			connectedViews = getLinksSourceByType(Collections.singleton(view), UMLVisualIDRegistry.getType(PortEditPart.VISUAL_ID));
+			connectedViews = getLinksSourceByType(Collections.singleton(view), PortEditPart.VISUAL_ID);
 			source.addChildren(createNavigatorItems(connectedViews, source, true));
 			if (!source.isEmpty()) {
 				result.add(source);
@@ -373,8 +456,9 @@ public class UMLNavigatorContentProvider implements ICommonContentProvider {
 	/**
 	 * @generated
 	 */
-	private Collection getLinksSourceByType(Collection edges, String type) {
+	private Collection getLinksSourceByType(Collection edges, int visualID) {
 		Collection result = new ArrayList();
+		String type = UMLVisualIDRegistry.getType(visualID);
 		for (Iterator it = edges.iterator(); it.hasNext();) {
 			Edge nextEdge = (Edge) it.next();
 			View nextEdgeSource = nextEdge.getSource();
@@ -388,8 +472,9 @@ public class UMLNavigatorContentProvider implements ICommonContentProvider {
 	/**
 	 * @generated
 	 */
-	private Collection getLinksTargetByType(Collection edges, String type) {
+	private Collection getLinksTargetByType(Collection edges, int visualID) {
 		Collection result = new ArrayList();
+		String type = UMLVisualIDRegistry.getType(visualID);
 		for (Iterator it = edges.iterator(); it.hasNext();) {
 			Edge nextEdge = (Edge) it.next();
 			View nextEdgeTarget = nextEdge.getTarget();
@@ -403,8 +488,9 @@ public class UMLNavigatorContentProvider implements ICommonContentProvider {
 	/**
 	 * @generated
 	 */
-	private Collection getOutgoingLinksByType(Collection nodes, String type) {
+	private Collection getOutgoingLinksByType(Collection nodes, int visualID) {
 		Collection result = new ArrayList();
+		String type = UMLVisualIDRegistry.getType(visualID);
 		for (Iterator it = nodes.iterator(); it.hasNext();) {
 			View nextNode = (View) it.next();
 			result.addAll(selectViewsByType(nextNode.getSourceEdges(), type));
@@ -415,8 +501,9 @@ public class UMLNavigatorContentProvider implements ICommonContentProvider {
 	/**
 	 * @generated
 	 */
-	private Collection getIncomingLinksByType(Collection nodes, String type) {
+	private Collection getIncomingLinksByType(Collection nodes, int visualID) {
 		Collection result = new ArrayList();
+		String type = UMLVisualIDRegistry.getType(visualID);
 		for (Iterator it = nodes.iterator(); it.hasNext();) {
 			View nextNode = (View) it.next();
 			result.addAll(selectViewsByType(nextNode.getTargetEdges(), type));
@@ -427,8 +514,9 @@ public class UMLNavigatorContentProvider implements ICommonContentProvider {
 	/**
 	 * @generated
 	 */
-	private Collection getChildrenByType(Collection nodes, String type) {
+	private Collection getChildrenByType(Collection nodes, int visualID) {
 		Collection result = new ArrayList();
+		String type = UMLVisualIDRegistry.getType(visualID);
 		for (Iterator it = nodes.iterator(); it.hasNext();) {
 			View nextNode = (View) it.next();
 			result.addAll(selectViewsByType(nextNode.getChildren(), type));
@@ -439,8 +527,9 @@ public class UMLNavigatorContentProvider implements ICommonContentProvider {
 	/**
 	 * @generated
 	 */
-	private Collection getDiagramLinksByType(Collection diagrams, String type) {
+	private Collection getDiagramLinksByType(Collection diagrams, int visualID) {
 		Collection result = new ArrayList();
+		String type = UMLVisualIDRegistry.getType(visualID);
 		for (Iterator it = diagrams.iterator(); it.hasNext();) {
 			Diagram nextDiagram = (Diagram) it.next();
 			result.addAll(selectViewsByType(nextDiagram.getEdges(), type));

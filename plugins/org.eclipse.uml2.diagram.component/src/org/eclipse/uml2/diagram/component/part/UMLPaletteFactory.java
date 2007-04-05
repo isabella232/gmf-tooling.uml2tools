@@ -30,8 +30,8 @@ public class UMLPaletteFactory {
 	 * @generated
 	 */
 	private PaletteContainer createNodes1Group() {
-		PaletteGroup paletteContainer = new PaletteGroup(UMLDiagramEditorPlugin.getString("Nodes1Group.title")); //$NON-NLS-1$
-		paletteContainer.setDescription(UMLDiagramEditorPlugin.getString("Nodes1Group.desc")); //$NON-NLS-1$
+		PaletteGroup paletteContainer = new PaletteGroup(Messages.Nodes1Group_title);
+		paletteContainer.setDescription(Messages.Nodes1Group_desc);
 		paletteContainer.add(createComponent1CreationTool());
 		paletteContainer.add(createArtifact2CreationTool());
 		paletteContainer.add(createInterface3CreationTool());
@@ -45,8 +45,8 @@ public class UMLPaletteFactory {
 	 * @generated
 	 */
 	private PaletteContainer createLinks2Group() {
-		PaletteGroup paletteContainer = new PaletteGroup(UMLDiagramEditorPlugin.getString("Links2Group.title")); //$NON-NLS-1$
-		paletteContainer.setDescription(UMLDiagramEditorPlugin.getString("Links2Group.desc")); //$NON-NLS-1$
+		PaletteGroup paletteContainer = new PaletteGroup(Messages.Links2Group_title);
+		paletteContainer.setDescription(Messages.Links2Group_desc);
 		paletteContainer.add(createProvidedInterface1CreationTool());
 		paletteContainer.add(createRequiredInterface2CreationTool());
 		return paletteContainer;
@@ -59,7 +59,7 @@ public class UMLPaletteFactory {
 		List/*<IElementType>*/types = new ArrayList/*<IElementType>*/(2);
 		types.add(UMLElementTypes.Component_2001);
 		types.add(UMLElementTypes.Component_3001);
-		NodeToolEntry entry = new NodeToolEntry(UMLDiagramEditorPlugin.getString("Component1CreationTool.title"), UMLDiagramEditorPlugin.getString("Component1CreationTool.desc"), types); //$NON-NLS-1$ $NON-NLS-2$
+		NodeToolEntry entry = new NodeToolEntry(Messages.Component1CreationTool_title, Messages.Component1CreationTool_desc, types);
 		entry.setSmallIcon(UMLElementTypes.getImageDescriptor(UMLElementTypes.Component_2001));
 		entry.setLargeIcon(entry.getSmallIcon());
 		return entry;
@@ -72,7 +72,7 @@ public class UMLPaletteFactory {
 		List/*<IElementType>*/types = new ArrayList/*<IElementType>*/(2);
 		types.add(UMLElementTypes.Artifact_3003);
 		types.add(UMLElementTypes.Artifact_2002);
-		NodeToolEntry entry = new NodeToolEntry(UMLDiagramEditorPlugin.getString("Artifact2CreationTool.title"), UMLDiagramEditorPlugin.getString("Artifact2CreationTool.desc"), types); //$NON-NLS-1$ $NON-NLS-2$
+		NodeToolEntry entry = new NodeToolEntry(Messages.Artifact2CreationTool_title, Messages.Artifact2CreationTool_desc, types);
 		entry.setSmallIcon(UMLElementTypes.getImageDescriptor(UMLElementTypes.Artifact_3003));
 		entry.setLargeIcon(entry.getSmallIcon());
 		return entry;
@@ -85,7 +85,7 @@ public class UMLPaletteFactory {
 		List/*<IElementType>*/types = new ArrayList/*<IElementType>*/(2);
 		types.add(UMLElementTypes.Interface_3005);
 		types.add(UMLElementTypes.Interface_2003);
-		NodeToolEntry entry = new NodeToolEntry(UMLDiagramEditorPlugin.getString("Interface3CreationTool.title"), UMLDiagramEditorPlugin.getString("Interface3CreationTool.desc"), types); //$NON-NLS-1$ $NON-NLS-2$
+		NodeToolEntry entry = new NodeToolEntry(Messages.Interface3CreationTool_title, Messages.Interface3CreationTool_desc, types);
 		entry.setSmallIcon(UMLElementTypes.getImageDescriptor(UMLElementTypes.Interface_3005));
 		entry.setLargeIcon(entry.getSmallIcon());
 		return entry;
@@ -97,7 +97,7 @@ public class UMLPaletteFactory {
 	private ToolEntry createPort4CreationTool() {
 		List/*<IElementType>*/types = new ArrayList/*<IElementType>*/(1);
 		types.add(UMLElementTypes.Port_3002);
-		NodeToolEntry entry = new NodeToolEntry(UMLDiagramEditorPlugin.getString("Port4CreationTool.title"), UMLDiagramEditorPlugin.getString("Port4CreationTool.desc"), types); //$NON-NLS-1$ $NON-NLS-2$
+		NodeToolEntry entry = new NodeToolEntry(Messages.Port4CreationTool_title, Messages.Port4CreationTool_desc, types);
 		entry.setSmallIcon(UMLElementTypes.getImageDescriptor(UMLElementTypes.Port_3002));
 		entry.setLargeIcon(entry.getSmallIcon());
 		return entry;
@@ -110,7 +110,7 @@ public class UMLPaletteFactory {
 		List/*<IElementType>*/types = new ArrayList/*<IElementType>*/(2);
 		types.add(UMLElementTypes.Class_3004);
 		types.add(UMLElementTypes.Class_2004);
-		NodeToolEntry entry = new NodeToolEntry(UMLDiagramEditorPlugin.getString("Class5CreationTool.title"), UMLDiagramEditorPlugin.getString("Class5CreationTool.desc"), types); //$NON-NLS-1$ $NON-NLS-2$
+		NodeToolEntry entry = new NodeToolEntry(Messages.Class5CreationTool_title, Messages.Class5CreationTool_desc, types);
 		entry.setSmallIcon(UMLElementTypes.getImageDescriptor(UMLElementTypes.Class_3004));
 		entry.setLargeIcon(entry.getSmallIcon());
 		return entry;
@@ -123,8 +123,7 @@ public class UMLPaletteFactory {
 		List/*<IElementType>*/types = new ArrayList/*<IElementType>*/(2);
 		types.add(UMLElementTypes.InterfaceRealization_4001);
 		types.add(UMLElementTypes.PortProvided_4006);
-		LinkToolEntry entry = new LinkToolEntry(
-				UMLDiagramEditorPlugin.getString("ProvidedInterface1CreationTool.title"), UMLDiagramEditorPlugin.getString("ProvidedInterface1CreationTool.desc"), types); //$NON-NLS-1$ $NON-NLS-2$
+		LinkToolEntry entry = new LinkToolEntry(Messages.ProvidedInterface1CreationTool_title, Messages.ProvidedInterface1CreationTool_desc, types);
 		entry.setSmallIcon(UMLElementTypes.getImageDescriptor(UMLElementTypes.InterfaceRealization_4001));
 		entry.setLargeIcon(entry.getSmallIcon());
 		return entry;
@@ -136,8 +135,7 @@ public class UMLPaletteFactory {
 	private ToolEntry createRequiredInterface2CreationTool() {
 		List/*<IElementType>*/types = new ArrayList/*<IElementType>*/(1);
 		types.add(UMLElementTypes.PortRequired_4004);
-		LinkToolEntry entry = new LinkToolEntry(
-				UMLDiagramEditorPlugin.getString("RequiredInterface2CreationTool.title"), UMLDiagramEditorPlugin.getString("RequiredInterface2CreationTool.desc"), types); //$NON-NLS-1$ $NON-NLS-2$
+		LinkToolEntry entry = new LinkToolEntry(Messages.RequiredInterface2CreationTool_title, Messages.RequiredInterface2CreationTool_desc, types);
 		entry.setSmallIcon(UMLElementTypes.getImageDescriptor(UMLElementTypes.PortRequired_4004));
 		entry.setLargeIcon(entry.getSmallIcon());
 		return entry;

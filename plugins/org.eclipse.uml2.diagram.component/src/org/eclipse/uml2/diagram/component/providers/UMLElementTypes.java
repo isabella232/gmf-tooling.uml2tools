@@ -42,6 +42,76 @@ public class UMLElementTypes extends ElementInitializers {
 	/**
 	 * @generated
 	 */
+	private static Set KNOWN_ELEMENT_TYPES;
+
+	/**
+	 * @generated
+	 */
+	public static final IElementType Package_1000 = getElementType("org.eclipse.uml2.diagram.component.Package_1000"); //$NON-NLS-1$
+
+	/**
+	 * @generated
+	 */
+	public static final IElementType Component_2001 = getElementType("org.eclipse.uml2.diagram.component.Component_2001"); //$NON-NLS-1$
+
+	/**
+	 * @generated
+	 */
+	public static final IElementType Artifact_2002 = getElementType("org.eclipse.uml2.diagram.component.Artifact_2002"); //$NON-NLS-1$
+
+	/**
+	 * @generated
+	 */
+	public static final IElementType Interface_2003 = getElementType("org.eclipse.uml2.diagram.component.Interface_2003"); //$NON-NLS-1$
+
+	/**
+	 * @generated
+	 */
+	public static final IElementType Class_2004 = getElementType("org.eclipse.uml2.diagram.component.Class_2004"); //$NON-NLS-1$
+
+	/**
+	 * @generated
+	 */
+	public static final IElementType Component_3001 = getElementType("org.eclipse.uml2.diagram.component.Component_3001"); //$NON-NLS-1$
+
+	/**
+	 * @generated
+	 */
+	public static final IElementType Port_3002 = getElementType("org.eclipse.uml2.diagram.component.Port_3002"); //$NON-NLS-1$
+
+	/**
+	 * @generated
+	 */
+	public static final IElementType Artifact_3003 = getElementType("org.eclipse.uml2.diagram.component.Artifact_3003"); //$NON-NLS-1$
+
+	/**
+	 * @generated
+	 */
+	public static final IElementType Class_3004 = getElementType("org.eclipse.uml2.diagram.component.Class_3004"); //$NON-NLS-1$
+
+	/**
+	 * @generated
+	 */
+	public static final IElementType Interface_3005 = getElementType("org.eclipse.uml2.diagram.component.Interface_3005"); //$NON-NLS-1$
+
+	/**
+	 * @generated
+	 */
+	public static final IElementType InterfaceRealization_4001 = getElementType("org.eclipse.uml2.diagram.component.InterfaceRealization_4001"); //$NON-NLS-1$
+
+	/**
+	 * @generated
+	 */
+	public static final IElementType PortProvided_4006 = getElementType("org.eclipse.uml2.diagram.component.PortProvided_4006"); //$NON-NLS-1$
+
+	/**
+	 * @generated
+	 */
+	public static final IElementType PortRequired_4004 = getElementType("org.eclipse.uml2.diagram.component.PortRequired_4004"); //$NON-NLS-1$
+
+	/**
+	 * @generated
+	 */
 	private static ImageRegistry getImageRegistry() {
 		if (imageRegistry == null) {
 			imageRegistry = new ImageRegistry();
@@ -177,79 +247,9 @@ public class UMLElementTypes extends ElementInitializers {
 	/**
 	 * @generated
 	 */
-	public static final IElementType Package_1000 = getElementType("org.eclipse.uml2.diagram.component.Package_1000"); //$NON-NLS-1$
-
-	/**
-	 * @generated
-	 */
-	public static final IElementType Component_2001 = getElementType("org.eclipse.uml2.diagram.component.Component_2001"); //$NON-NLS-1$
-
-	/**
-	 * @generated
-	 */
-	public static final IElementType Artifact_2002 = getElementType("org.eclipse.uml2.diagram.component.Artifact_2002"); //$NON-NLS-1$
-
-	/**
-	 * @generated
-	 */
-	public static final IElementType Interface_2003 = getElementType("org.eclipse.uml2.diagram.component.Interface_2003"); //$NON-NLS-1$
-
-	/**
-	 * @generated
-	 */
-	public static final IElementType Class_2004 = getElementType("org.eclipse.uml2.diagram.component.Class_2004"); //$NON-NLS-1$
-
-	/**
-	 * @generated
-	 */
-	public static final IElementType Component_3001 = getElementType("org.eclipse.uml2.diagram.component.Component_3001"); //$NON-NLS-1$
-
-	/**
-	 * @generated
-	 */
-	public static final IElementType Port_3002 = getElementType("org.eclipse.uml2.diagram.component.Port_3002"); //$NON-NLS-1$
-
-	/**
-	 * @generated
-	 */
-	public static final IElementType Artifact_3003 = getElementType("org.eclipse.uml2.diagram.component.Artifact_3003"); //$NON-NLS-1$
-
-	/**
-	 * @generated
-	 */
-	public static final IElementType Class_3004 = getElementType("org.eclipse.uml2.diagram.component.Class_3004"); //$NON-NLS-1$
-
-	/**
-	 * @generated
-	 */
-	public static final IElementType Interface_3005 = getElementType("org.eclipse.uml2.diagram.component.Interface_3005"); //$NON-NLS-1$
-
-	/**
-	 * @generated
-	 */
-	public static final IElementType InterfaceRealization_4001 = getElementType("org.eclipse.uml2.diagram.component.InterfaceRealization_4001"); //$NON-NLS-1$
-
-	/**
-	 * @generated
-	 */
-	public static final IElementType PortProvided_4006 = getElementType("org.eclipse.uml2.diagram.component.PortProvided_4006"); //$NON-NLS-1$
-
-	/**
-	 * @generated
-	 */
-	public static final IElementType PortRequired_4004 = getElementType("org.eclipse.uml2.diagram.component.PortRequired_4004"); //$NON-NLS-1$
-
-	/**
-	 * @generated
-	 */
 	private static IElementType getElementType(String id) {
 		return ElementTypeRegistry.getInstance().getType(id);
 	}
-
-	/**
-	 * @generated
-	 */
-	private static Set KNOWN_ELEMENT_TYPES;
 
 	/**
 	 * @generated
@@ -273,4 +273,5 @@ public class UMLElementTypes extends ElementInitializers {
 		}
 		return KNOWN_ELEMENT_TYPES.contains(elementType);
 	}
+
 }

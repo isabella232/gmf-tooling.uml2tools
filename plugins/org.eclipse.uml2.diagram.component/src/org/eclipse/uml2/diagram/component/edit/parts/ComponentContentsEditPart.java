@@ -11,6 +11,7 @@ import org.eclipse.gmf.runtime.diagram.ui.figures.ResizableCompartmentFigure;
 import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.uml2.diagram.component.edit.policies.ComponentContentsCanonicalEditPolicy;
 import org.eclipse.uml2.diagram.component.edit.policies.ComponentContentsItemSemanticEditPolicy;
+import org.eclipse.uml2.diagram.component.part.Messages;
 
 /**
  * @generated
@@ -33,7 +34,7 @@ public class ComponentContentsEditPart extends ShapeCompartmentEditPart {
 	 * @generated
 	 */
 	public String getCompartmentName() {
-		return "contents";
+		return Messages.ComponentContentsEditPart_title;
 	}
 
 	/**
@@ -64,4 +65,5 @@ public class ComponentContentsEditPart extends ShapeCompartmentEditPart {
 		// nothing to do -- parent layout does not accept Double constraints as ratio
 		// super.setRatio(ratio); 
 	}
+
 }

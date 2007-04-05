@@ -29,16 +29,16 @@
 
    <extension point="org.eclipse.ui.editors">
       <?gmfgen generated="true"?>
-     <editor
-        id="org.eclipse.uml2.diagram.component.part.UMLDiagramEditorID"
-        name="%editorName"
-        icon="icons/obj16/UMLDiagramFile.gif"
-        extensions="umlcomponent_diagram"
-        default="true"
-        class="org.eclipse.uml2.diagram.component.part.UMLDiagramEditor"
-        matchingStrategy="org.eclipse.uml2.diagram.component.part.UMLMatchingStrategy"
-        contributorClass="org.eclipse.uml2.diagram.component.part.UMLDiagramActionBarContributor">
-     </editor>
+      <editor
+         id="org.eclipse.uml2.diagram.component.part.UMLDiagramEditorID"
+         name="%editorName"
+         icon="icons/obj16/UMLDiagramFile.gif"
+         extensions="umlcomponent_diagram"
+         default="true"
+         class="org.eclipse.uml2.diagram.component.part.UMLDiagramEditor"
+         matchingStrategy="org.eclipse.uml2.diagram.component.part.UMLMatchingStrategy"
+         contributorClass="org.eclipse.uml2.diagram.component.part.UMLDiagramActionBarContributor">
+      </editor>
    </extension>
 
    <extension point="org.eclipse.ui.newWizards">
@@ -56,30 +56,18 @@
    <extension point="org.eclipse.ui.popupMenus">
       <?gmfgen generated="true"?>
       <objectContribution
-            id="org.eclipse.uml2.diagram.component.ui.objectContribution.IFile1"
-            nameFilter="*.uml"
-            objectClass="org.eclipse.core.resources.IFile">
-         <action
-               label="%initDiagramActionLabel"
-               class="org.eclipse.uml2.diagram.component.part.UMLInitDiagramFileAction"
-               menubarPath="additions"
-               enablesFor="1"
-               id="org.eclipse.uml2.diagram.component.part.UMLInitDiagramFileActionID">
-         </action>
-      </objectContribution>  
-      <objectContribution
             adaptable="false"
-            id="org.eclipse.uml2.diagram.component.ui.objectContribution.PackageEditPart2"
+            id="org.eclipse.uml2.diagram.component.LoadResource"
             objectClass="org.eclipse.uml2.diagram.component.edit.parts.PackageEditPart">
          <action
                class="org.eclipse.uml2.diagram.component.part.UMLLoadResourceAction"
                enablesFor="1"
-               id="org.eclipse.uml2.diagram.component.part.UMLLoadResourceActionID"
+               id="org.eclipse.uml2.diagram.component.LoadResourceAction"
                label="%loadResourceActionLabel"
                menubarPath="additions">
          </action>
-      </objectContribution>                      
-  </extension>
+      </objectContribution>           
+   </extension>
 
    <extension point="org.eclipse.gmf.runtime.common.ui.services.action.contributionItemProviders">
       <?gmfgen generated="true"?>
@@ -88,16 +76,9 @@
             checkPluginLoaded="false">
          <Priority name="Low"/>
          <popupContribution class="org.eclipse.gmf.runtime.diagram.ui.providers.DiagramContextMenuProvider">
-            <popupStructuredContributionCriteria objectClass="org.eclipse.uml2.diagram.component.edit.parts.Component2EditPart"/>
+            <popupStructuredContributionCriteria objectClass="org.eclipse.uml2.diagram.component.edit.parts.InterfaceName2EditPart"/>
             <popupPredefinedItem id="deleteFromDiagramAction" remove="true"/>
-         </popupContribution>
-         <popupContribution class="org.eclipse.gmf.runtime.diagram.ui.providers.DiagramContextMenuProvider">
-            <popupStructuredContributionCriteria objectClass="org.eclipse.uml2.diagram.component.edit.parts.ComponentNameEditPart"/>
-            <popupPredefinedItem id="deleteFromDiagramAction" remove="true"/>
-         </popupContribution>
-         <popupContribution class="org.eclipse.gmf.runtime.diagram.ui.providers.DiagramContextMenuProvider">
-            <popupStructuredContributionCriteria objectClass="org.eclipse.uml2.diagram.component.edit.parts.PortEditPart"/>
-            <popupPredefinedItem id="deleteFromDiagramAction" remove="true"/>
+            <popupPredefinedItem id="deleteFromModelAction" remove="true"/>
          </popupContribution>
          <popupContribution class="org.eclipse.gmf.runtime.diagram.ui.providers.DiagramContextMenuProvider">
             <popupStructuredContributionCriteria objectClass="org.eclipse.uml2.diagram.component.edit.parts.PortNameEditPart"/>
@@ -105,66 +86,9 @@
             <popupPredefinedItem id="deleteFromModelAction" remove="true"/>
          </popupContribution>
          <popupContribution class="org.eclipse.gmf.runtime.diagram.ui.providers.DiagramContextMenuProvider">
-            <popupStructuredContributionCriteria objectClass="org.eclipse.uml2.diagram.component.edit.parts.ArtifactEditPart"/>
-            <popupPredefinedItem id="deleteFromDiagramAction" remove="true"/>
-         </popupContribution>
-         <popupContribution class="org.eclipse.gmf.runtime.diagram.ui.providers.DiagramContextMenuProvider">
-            <popupStructuredContributionCriteria objectClass="org.eclipse.uml2.diagram.component.edit.parts.ArtifactNameEditPart"/>
-            <popupPredefinedItem id="deleteFromDiagramAction" remove="true"/>
-         </popupContribution>
-         <popupContribution class="org.eclipse.gmf.runtime.diagram.ui.providers.DiagramContextMenuProvider">
-            <popupStructuredContributionCriteria objectClass="org.eclipse.uml2.diagram.component.edit.parts.ClassEditPart"/>
-            <popupPredefinedItem id="deleteFromDiagramAction" remove="true"/>
-         </popupContribution>
-         <popupContribution class="org.eclipse.gmf.runtime.diagram.ui.providers.DiagramContextMenuProvider">
-            <popupStructuredContributionCriteria objectClass="org.eclipse.uml2.diagram.component.edit.parts.ClassNameEditPart"/>
-            <popupPredefinedItem id="deleteFromDiagramAction" remove="true"/>
-         </popupContribution>
-         <popupContribution class="org.eclipse.gmf.runtime.diagram.ui.providers.DiagramContextMenuProvider">
-            <popupStructuredContributionCriteria objectClass="org.eclipse.uml2.diagram.component.edit.parts.InterfaceEditPart"/>
-            <popupPredefinedItem id="deleteFromDiagramAction" remove="true"/>
-         </popupContribution>
-         <popupContribution class="org.eclipse.gmf.runtime.diagram.ui.providers.DiagramContextMenuProvider">
             <popupStructuredContributionCriteria objectClass="org.eclipse.uml2.diagram.component.edit.parts.InterfaceNameEditPart"/>
             <popupPredefinedItem id="deleteFromDiagramAction" remove="true"/>
             <popupPredefinedItem id="deleteFromModelAction" remove="true"/>
-         </popupContribution>
-         <popupContribution class="org.eclipse.gmf.runtime.diagram.ui.providers.DiagramContextMenuProvider">
-            <popupStructuredContributionCriteria objectClass="org.eclipse.uml2.diagram.component.edit.parts.ComponentEditPart"/>
-            <popupPredefinedItem id="deleteFromDiagramAction" remove="true"/>
-         </popupContribution>
-         <popupContribution class="org.eclipse.gmf.runtime.diagram.ui.providers.DiagramContextMenuProvider">
-            <popupStructuredContributionCriteria objectClass="org.eclipse.uml2.diagram.component.edit.parts.ComponentName2EditPart"/>
-            <popupPredefinedItem id="deleteFromDiagramAction" remove="true"/>
-         </popupContribution>
-         <popupContribution class="org.eclipse.gmf.runtime.diagram.ui.providers.DiagramContextMenuProvider">
-            <popupStructuredContributionCriteria objectClass="org.eclipse.uml2.diagram.component.edit.parts.Artifact2EditPart"/>
-            <popupPredefinedItem id="deleteFromDiagramAction" remove="true"/>
-         </popupContribution>
-         <popupContribution class="org.eclipse.gmf.runtime.diagram.ui.providers.DiagramContextMenuProvider">
-            <popupStructuredContributionCriteria objectClass="org.eclipse.uml2.diagram.component.edit.parts.ArtifactName2EditPart"/>
-            <popupPredefinedItem id="deleteFromDiagramAction" remove="true"/>
-         </popupContribution>
-         <popupContribution class="org.eclipse.gmf.runtime.diagram.ui.providers.DiagramContextMenuProvider">
-            <popupStructuredContributionCriteria objectClass="org.eclipse.uml2.diagram.component.edit.parts.Interface2EditPart"/>
-            <popupPredefinedItem id="deleteFromDiagramAction" remove="true"/>
-         </popupContribution>
-         <popupContribution class="org.eclipse.gmf.runtime.diagram.ui.providers.DiagramContextMenuProvider">
-            <popupStructuredContributionCriteria objectClass="org.eclipse.uml2.diagram.component.edit.parts.InterfaceName2EditPart"/>
-            <popupPredefinedItem id="deleteFromDiagramAction" remove="true"/>
-            <popupPredefinedItem id="deleteFromModelAction" remove="true"/>
-         </popupContribution>
-         <popupContribution class="org.eclipse.gmf.runtime.diagram.ui.providers.DiagramContextMenuProvider">
-            <popupStructuredContributionCriteria objectClass="org.eclipse.uml2.diagram.component.edit.parts.Class2EditPart"/>
-            <popupPredefinedItem id="deleteFromDiagramAction" remove="true"/>
-         </popupContribution>
-         <popupContribution class="org.eclipse.gmf.runtime.diagram.ui.providers.DiagramContextMenuProvider">
-            <popupStructuredContributionCriteria objectClass="org.eclipse.uml2.diagram.component.edit.parts.ClassName2EditPart"/>
-            <popupPredefinedItem id="deleteFromDiagramAction" remove="true"/>
-         </popupContribution>
-         <popupContribution class="org.eclipse.gmf.runtime.diagram.ui.providers.DiagramContextMenuProvider">
-            <popupStructuredContributionCriteria objectClass="org.eclipse.uml2.diagram.component.edit.parts.InterfaceRealizationEditPart"/>
-            <popupPredefinedItem id="deleteFromDiagramAction" remove="true"/>
          </popupContribution>
          <popupContribution class="org.eclipse.gmf.runtime.diagram.ui.providers.DiagramContextMenuProvider">
             <popupStructuredContributionCriteria objectClass="org.eclipse.uml2.diagram.component.edit.parts.PortProvidedEditPart"/>
@@ -260,143 +184,130 @@
 
    <extension point="org.eclipse.gmf.runtime.emf.type.core.elementTypes">
       <?gmfgen generated="true"?>
-
       <metamodel nsURI="http://www.eclipse.org/uml2/2.0.0/UML">
          <metamodelType
                id="org.eclipse.uml2.diagram.component.Package_1000"
-               name="Undefined"
+               name="%metatype.name.Package_1000"
                kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
                eclass="Package"
                edithelper="org.eclipse.uml2.diagram.component.edit.helpers.PackageEditHelper">
             <param name="semanticHint" value="1000"/>
          </metamodelType>
       </metamodel>
-
-      <metamodel nsURI="http://www.eclipse.org/uml2/2.0.0/UML">
-         <specializationType
-               id="org.eclipse.uml2.diagram.component.Component_3001"
-               name="Component"
-               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
-               edithelperadvice="org.eclipse.uml2.diagram.component.edit.helpers.ComponentEditHelperAdvice">
-            <specializes id="org.eclipse.uml2.diagram.component.Component_2001"/>
-            <param name="semanticHint" value="3001"/>
-         </specializationType>
-      </metamodel>
-
-      <metamodel nsURI="http://www.eclipse.org/uml2/2.0.0/UML">
-         <metamodelType
-               id="org.eclipse.uml2.diagram.component.Port_3002"
-               name="Port"
-               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
-               eclass="Port"
-               edithelper="org.eclipse.uml2.diagram.component.edit.helpers.PortEditHelper">
-            <param name="semanticHint" value="3002"/>
-         </metamodelType>
-      </metamodel>
-
-      <metamodel nsURI="http://www.eclipse.org/uml2/2.0.0/UML">
-         <metamodelType
-               id="org.eclipse.uml2.diagram.component.Artifact_3003"
-               name="Artifact"
-               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
-               eclass="Artifact"
-               edithelper="org.eclipse.uml2.diagram.component.edit.helpers.ArtifactEditHelper">
-            <param name="semanticHint" value="3003"/>
-         </metamodelType>
-      </metamodel>
-
-      <metamodel nsURI="http://www.eclipse.org/uml2/2.0.0/UML">
-         <metamodelType
-               id="org.eclipse.uml2.diagram.component.Class_3004"
-               name="Class"
-               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
-               eclass="Class"
-               edithelper="org.eclipse.uml2.diagram.component.edit.helpers.ClassEditHelper">
-            <param name="semanticHint" value="3004"/>
-         </metamodelType>
-      </metamodel>
-
-      <metamodel nsURI="http://www.eclipse.org/uml2/2.0.0/UML">
-         <metamodelType
-               id="org.eclipse.uml2.diagram.component.Interface_3005"
-               name="Interface"
-               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
-               eclass="Interface"
-               edithelper="org.eclipse.uml2.diagram.component.edit.helpers.InterfaceEditHelper">
-            <param name="semanticHint" value="3005"/>
-         </metamodelType>
-      </metamodel>
-
       <metamodel nsURI="http://www.eclipse.org/uml2/2.0.0/UML">
          <metamodelType
                id="org.eclipse.uml2.diagram.component.Component_2001"
-               name="Component"
+               name="%metatype.name.Component_2001"
                kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
                eclass="Component"
                edithelper="org.eclipse.uml2.diagram.component.edit.helpers.ComponentEditHelper">
             <param name="semanticHint" value="2001"/>
          </metamodelType>
       </metamodel>
-
       <metamodel nsURI="http://www.eclipse.org/uml2/2.0.0/UML">
          <specializationType
                id="org.eclipse.uml2.diagram.component.Artifact_2002"
-               name="Artifact"
+               name="%metatype.name.Artifact_2002"
                kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
                edithelperadvice="org.eclipse.uml2.diagram.component.edit.helpers.ArtifactEditHelperAdvice">
             <specializes id="org.eclipse.uml2.diagram.component.Artifact_3003"/>
             <param name="semanticHint" value="2002"/>
          </specializationType>
       </metamodel>
-
       <metamodel nsURI="http://www.eclipse.org/uml2/2.0.0/UML">
          <specializationType
                id="org.eclipse.uml2.diagram.component.Interface_2003"
-               name="Interface"
+               name="%metatype.name.Interface_2003"
                kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
                edithelperadvice="org.eclipse.uml2.diagram.component.edit.helpers.InterfaceEditHelperAdvice">
             <specializes id="org.eclipse.uml2.diagram.component.Interface_3005"/>
             <param name="semanticHint" value="2003"/>
          </specializationType>
       </metamodel>
-
       <metamodel nsURI="http://www.eclipse.org/uml2/2.0.0/UML">
          <specializationType
                id="org.eclipse.uml2.diagram.component.Class_2004"
-               name="Class"
+               name="%metatype.name.Class_2004"
                kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
                edithelperadvice="org.eclipse.uml2.diagram.component.edit.helpers.ClassEditHelperAdvice">
             <specializes id="org.eclipse.uml2.diagram.component.Class_3004"/>
             <param name="semanticHint" value="2004"/>
          </specializationType>
       </metamodel>
-
+      <metamodel nsURI="http://www.eclipse.org/uml2/2.0.0/UML">
+         <specializationType
+               id="org.eclipse.uml2.diagram.component.Component_3001"
+               name="%metatype.name.Component_3001"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
+               edithelperadvice="org.eclipse.uml2.diagram.component.edit.helpers.ComponentEditHelperAdvice">
+            <specializes id="org.eclipse.uml2.diagram.component.Component_2001"/>
+            <param name="semanticHint" value="3001"/>
+         </specializationType>
+      </metamodel>
+      <metamodel nsURI="http://www.eclipse.org/uml2/2.0.0/UML">
+         <metamodelType
+               id="org.eclipse.uml2.diagram.component.Port_3002"
+               name="%metatype.name.Port_3002"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
+               eclass="Port"
+               edithelper="org.eclipse.uml2.diagram.component.edit.helpers.PortEditHelper">
+            <param name="semanticHint" value="3002"/>
+         </metamodelType>
+      </metamodel>
+      <metamodel nsURI="http://www.eclipse.org/uml2/2.0.0/UML">
+         <metamodelType
+               id="org.eclipse.uml2.diagram.component.Artifact_3003"
+               name="%metatype.name.Artifact_3003"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
+               eclass="Artifact"
+               edithelper="org.eclipse.uml2.diagram.component.edit.helpers.ArtifactEditHelper">
+            <param name="semanticHint" value="3003"/>
+         </metamodelType>
+      </metamodel>
+      <metamodel nsURI="http://www.eclipse.org/uml2/2.0.0/UML">
+         <metamodelType
+               id="org.eclipse.uml2.diagram.component.Class_3004"
+               name="%metatype.name.Class_3004"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
+               eclass="Class"
+               edithelper="org.eclipse.uml2.diagram.component.edit.helpers.ClassEditHelper">
+            <param name="semanticHint" value="3004"/>
+         </metamodelType>
+      </metamodel>
+      <metamodel nsURI="http://www.eclipse.org/uml2/2.0.0/UML">
+         <metamodelType
+               id="org.eclipse.uml2.diagram.component.Interface_3005"
+               name="%metatype.name.Interface_3005"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
+               eclass="Interface"
+               edithelper="org.eclipse.uml2.diagram.component.edit.helpers.InterfaceEditHelper">
+            <param name="semanticHint" value="3005"/>
+         </metamodelType>
+      </metamodel>
       <metamodel nsURI="http://www.eclipse.org/uml2/2.0.0/UML">
          <metamodelType
                id="org.eclipse.uml2.diagram.component.InterfaceRealization_4001"
-               name="InterfaceRealization"
+               name="%metatype.name.InterfaceRealization_4001"
                kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
                eclass="InterfaceRealization"
                edithelper="org.eclipse.uml2.diagram.component.edit.helpers.InterfaceRealizationEditHelper">
             <param name="semanticHint" value="4001"/>
          </metamodelType>
       </metamodel>
-
       <metamodel nsURI="http://www.eclipse.org/uml2/2.0.0/UML">
          <specializationType
                id="org.eclipse.uml2.diagram.component.PortProvided_4006"
-               name="Undefined"
+               name="%metatype.name.PortProvided_4006"
                kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
                edithelperadvice="org.eclipse.uml2.diagram.component.edit.helpers.PortProvidedEditHelperAdvice">
             <specializes id="org.eclipse.gmf.runtime.emf.type.core.null"/>
             <param name="semanticHint" value="4006"/>
          </specializationType>
       </metamodel>
-
       <metamodel nsURI="http://www.eclipse.org/uml2/2.0.0/UML">
          <specializationType
                id="org.eclipse.uml2.diagram.component.PortRequired_4004"
-               name="Undefined"
+               name="%metatype.name.PortRequired_4004"
                kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
                edithelperadvice="org.eclipse.uml2.diagram.component.edit.helpers.PortRequiredEditHelperAdvice">
             <specializes id="org.eclipse.gmf.runtime.emf.type.core.null"/>
@@ -416,15 +327,15 @@
       </clientContext> 
       <binding context="UMLComponentClientContext">
          <elementType ref="org.eclipse.uml2.diagram.component.Package_1000"/>
+         <elementType ref="org.eclipse.uml2.diagram.component.Component_2001"/>
+         <elementType ref="org.eclipse.uml2.diagram.component.Artifact_2002"/>
+         <elementType ref="org.eclipse.uml2.diagram.component.Interface_2003"/>
+         <elementType ref="org.eclipse.uml2.diagram.component.Class_2004"/>
          <elementType ref="org.eclipse.uml2.diagram.component.Component_3001"/>
          <elementType ref="org.eclipse.uml2.diagram.component.Port_3002"/>
          <elementType ref="org.eclipse.uml2.diagram.component.Artifact_3003"/>
          <elementType ref="org.eclipse.uml2.diagram.component.Class_3004"/>
          <elementType ref="org.eclipse.uml2.diagram.component.Interface_3005"/>
-         <elementType ref="org.eclipse.uml2.diagram.component.Component_2001"/>
-         <elementType ref="org.eclipse.uml2.diagram.component.Artifact_2002"/>
-         <elementType ref="org.eclipse.uml2.diagram.component.Interface_2003"/>
-         <elementType ref="org.eclipse.uml2.diagram.component.Class_2004"/>
          <elementType ref="org.eclipse.uml2.diagram.component.InterfaceRealization_4001"/>
          <elementType ref="org.eclipse.uml2.diagram.component.PortProvided_4006"/>
          <elementType ref="org.eclipse.uml2.diagram.component.PortRequired_4004"/>
@@ -570,40 +481,75 @@
    </extension><extension point="org.eclipse.ui.preferencePages">
       <?gmfgen generated="true"?>
       <page
-            name="%preferences.general"
-            class="org.eclipse.uml2.diagram.component.preferences.DiagramGeneralPreferencePage"
-            id="org.eclipse.uml2.diagram.component.general">
+            id="org.eclipse.uml2.uml.diagram.general"
+            name="%preference.page.title.org.eclipse.uml2.uml.diagram.general"
+            class="org.eclipse.uml2.diagram.component.preferences.DiagramGeneralPreferencePage">
       </page>
       <page
-            name="%preferences.appearance"
-            category="org.eclipse.uml2.diagram.component.general"
-            class="org.eclipse.uml2.diagram.component.preferences.DiagramAppearancePreferencePage"
-            id="org.eclipse.uml2.diagram.component.appearance">
-      </page>     
-      <page
-            name="%preferences.connections"
-            category="org.eclipse.uml2.diagram.component.general"
-            class="org.eclipse.uml2.diagram.component.preferences.DiagramConnectionsPreferencePage"
-            id="org.eclipse.uml2.diagram.component.connections">
-      </page>    
-      <page
-            name="%preferences.printing"
-            category="org.eclipse.uml2.diagram.component.general"
-            class="org.eclipse.uml2.diagram.component.preferences.DiagramPrintingPreferencePage"
-            id="org.eclipse.uml2.diagram.component.printing">
+            id="org.eclipse.uml2.uml.diagram.appearance"
+            name="%preference.page.title.org.eclipse.uml2.uml.diagram.appearance"
+            category="org.eclipse.uml2.uml.diagram.general"
+            class="org.eclipse.uml2.diagram.component.preferences.DiagramAppearancePreferencePage">
       </page>
       <page
-            name="%preferences.rulersAndGrid"
-            category="org.eclipse.uml2.diagram.component.general"
-            class="org.eclipse.uml2.diagram.component.preferences.DiagramRulersAndGridPreferencePage"
-            id="org.eclipse.uml2.diagram.component.rulersAndGrid">
+            id="org.eclipse.uml2.uml.diagram.connections"
+            name="%preference.page.title.org.eclipse.uml2.uml.diagram.connections"
+            category="org.eclipse.uml2.uml.diagram.general"
+            class="org.eclipse.uml2.diagram.component.preferences.DiagramConnectionsPreferencePage">
       </page>
       <page
-            name="%preferences.pathmaps"
-            category="org.eclipse.uml2.diagram.component.general"
-            class="org.eclipse.gmf.runtime.emf.ui.preferences.PathmapsPreferencePage"
-            id="org.eclipse.uml2.diagram.component.pathmaps">
+            id="org.eclipse.uml2.uml.diagram.printing"
+            name="%preference.page.title.org.eclipse.uml2.uml.diagram.printing"
+            category="org.eclipse.uml2.uml.diagram.general"
+            class="org.eclipse.uml2.diagram.component.preferences.DiagramPrintingPreferencePage">
       </page>
+      <page
+            id="org.eclipse.uml2.uml.diagram.rulersAndGrid"
+            name="%preference.page.title.org.eclipse.uml2.uml.diagram.rulersAndGrid"
+            category="org.eclipse.uml2.uml.diagram.general"
+            class="org.eclipse.uml2.diagram.component.preferences.DiagramRulersAndGridPreferencePage">
+      </page>
+      <page
+            id="org.eclipse.uml2.uml.diagram.pathmaps"
+            name="%preference.page.title.org.eclipse.uml2.uml.diagram.pathmaps"
+            category="org.eclipse.uml2.uml.diagram.general"
+            class="org.eclipse.gmf.runtime.emf.ui.preferences.PathmapsPreferencePage">
+      </page>
+   </extension><extension point="org.eclipse.ui.popupMenus">
+      <?gmfgen generated="true"?>
+      <objectContribution
+            id="org.eclipse.uml2.diagram.component.InitDiagram"
+            nameFilter="*.uml"
+            objectClass="org.eclipse.core.resources.IFile">
+         <action
+               label="%initDiagramActionLabel"
+               class="org.eclipse.uml2.diagram.component.part.UMLInitDiagramFileAction"
+               menubarPath="additions"
+               enablesFor="1"
+               id="org.eclipse.uml2.diagram.component.InitDiagramAction">
+         </action>
+      </objectContribution>
    </extension>
+<extension point="org.eclipse.core.expressions.propertyTesters">
+      <?gmfgen generated="true"?>
+       <propertyTester
+           id="org.eclipse.uml2.diagram.component.URIEditorInputPropertyTester"
+           type="org.eclipse.emf.common.ui.URIEditorInput"
+           namespace="org.eclipse.uml2.diagram.component"
+           properties="isURIEditorInput"
+           class="org.eclipse.uml2.diagram.component.part.UMLUriEditorInputTester">
+       </propertyTester>
+   </extension>
+<extension point="org.eclipse.core.expressions.propertyTesters">
+      <?gmfgen generated="true"?>
+       <propertyTester
+           id="org.eclipse.uml2.diagram.component.DomainModelElementPropertyTester"
+           type="org.eclipse.emf.ecore.EObject"
+           namespace="org.eclipse.uml2.diagram.component"
+           properties="isDomainModelElement"
+           class="org.eclipse.uml2.diagram.component.part.UMLDomainModelElementTester">
+       </propertyTester>
+   </extension>
+
 
 </plugin>

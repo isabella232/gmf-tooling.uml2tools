@@ -57,6 +57,8 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 	 */
 	protected IParser createComponentComponentName_5002Parser() {
 		UMLStructuralFeatureParser parser = new UMLStructuralFeatureParser(UMLPackage.eINSTANCE.getNamedElement_Name());
+		parser.setViewPattern("{0}");
+		parser.setEditPattern("{0}");
 		return parser;
 	}
 
@@ -80,6 +82,8 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 	 */
 	protected IParser createPortPortName_5003Parser() {
 		UMLStructuralFeatureParser parser = new UMLStructuralFeatureParser(UMLPackage.eINSTANCE.getNamedElement_Name());
+		parser.setViewPattern("{0}");
+		parser.setEditPattern("{0}");
 		return parser;
 	}
 
@@ -103,6 +107,8 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 	 */
 	protected IParser createArtifactArtifactName_5006Parser() {
 		UMLStructuralFeatureParser parser = new UMLStructuralFeatureParser(UMLPackage.eINSTANCE.getNamedElement_Name());
+		parser.setViewPattern("{0}");
+		parser.setEditPattern("{0}");
 		return parser;
 	}
 
@@ -126,6 +132,8 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 	 */
 	protected IParser createClassClassName_5007Parser() {
 		UMLStructuralFeatureParser parser = new UMLStructuralFeatureParser(UMLPackage.eINSTANCE.getNamedElement_Name());
+		parser.setViewPattern("{0}");
+		parser.setEditPattern("{0}");
 		return parser;
 	}
 
@@ -149,6 +157,8 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 	 */
 	protected IParser createInterfaceInterfaceName_5009Parser() {
 		UMLStructuralFeatureParser parser = new UMLStructuralFeatureParser(UMLPackage.eINSTANCE.getNamedElement_Name());
+		parser.setViewPattern("{0}");
+		parser.setEditPattern("{0}");
 		return parser;
 	}
 
@@ -172,6 +182,8 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 	 */
 	protected IParser createComponentComponentName_5001Parser() {
 		UMLStructuralFeatureParser parser = new UMLStructuralFeatureParser(UMLPackage.eINSTANCE.getNamedElement_Name());
+		parser.setViewPattern("{0}");
+		parser.setEditPattern("{0}");
 		return parser;
 	}
 
@@ -195,6 +207,8 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 	 */
 	protected IParser createArtifactArtifactName_5004Parser() {
 		UMLStructuralFeatureParser parser = new UMLStructuralFeatureParser(UMLPackage.eINSTANCE.getNamedElement_Name());
+		parser.setViewPattern("{0}");
+		parser.setEditPattern("{0}");
 		return parser;
 	}
 
@@ -218,6 +232,8 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 	 */
 	protected IParser createInterfaceInterfaceName_5005Parser() {
 		UMLStructuralFeatureParser parser = new UMLStructuralFeatureParser(UMLPackage.eINSTANCE.getNamedElement_Name());
+		parser.setViewPattern("{0}");
+		parser.setEditPattern("{0}");
 		return parser;
 	}
 
@@ -241,6 +257,8 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 	 */
 	protected IParser createClassClassName_5008Parser() {
 		UMLStructuralFeatureParser parser = new UMLStructuralFeatureParser(UMLPackage.eINSTANCE.getNamedElement_Name());
+		parser.setViewPattern("{0}");
+		parser.setEditPattern("{0}");
 		return parser;
 	}
 

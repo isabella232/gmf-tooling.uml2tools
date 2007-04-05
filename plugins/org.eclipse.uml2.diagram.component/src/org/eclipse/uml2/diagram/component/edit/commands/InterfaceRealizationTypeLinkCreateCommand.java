@@ -69,7 +69,7 @@ public class InterfaceRealizationTypeLinkCreateCommand extends CreateRelationshi
 	 */
 	protected EClass getEClassToEdit() {
 		return UMLPackage.eINSTANCE.getBehavioredClassifier();
-	};
+	}
 
 	/**
 	 * @generated

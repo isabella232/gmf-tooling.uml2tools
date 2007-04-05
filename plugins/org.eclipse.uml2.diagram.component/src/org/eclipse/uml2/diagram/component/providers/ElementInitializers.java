@@ -1,13 +1,13 @@
 package org.eclipse.uml2.diagram.component.providers;
 
-import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.EStructuralFeature;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Iterator;
 import java.util.List;
 
+import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.EStructuralFeature;
 
 import org.eclipse.uml2.diagram.component.expressions.UMLAbstractExpression;
 import org.eclipse.uml2.diagram.component.expressions.UMLOCLFactory;

@@ -10,6 +10,7 @@ Export-Package: org.eclipse.uml2.diagram.component.edit.parts,
  org.eclipse.uml2.diagram.component.part,
  org.eclipse.uml2.diagram.component.providers
 Require-Bundle: org.eclipse.core.runtime,
+ org.eclipse.core.expressions,
  org.eclipse.core.resources,
  org.eclipse.jface,
  org.eclipse.ui.ide,

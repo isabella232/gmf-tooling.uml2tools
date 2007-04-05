@@ -3,8 +3,10 @@ package org.eclipse.uml2.diagram.component.edit.policies;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.transaction.TransactionalEditingDomain;
+import org.eclipse.gef.Request;
 import org.eclipse.gef.commands.Command;
 import org.eclipse.gef.commands.UnexecutableCommand;
+import org.eclipse.gef.requests.ReconnectRequest;
 import org.eclipse.gmf.runtime.common.core.command.ICommand;
 import org.eclipse.gmf.runtime.diagram.core.commands.DeleteCommand;
 import org.eclipse.gmf.runtime.diagram.core.util.ViewUtil;
@@ -39,8 +41,10 @@ import org.eclipse.uml2.diagram.component.edit.helpers.UMLBaseEditHelper;
 import org.eclipse.uml2.diagram.component.expressions.UMLAbstractExpression;
 import org.eclipse.uml2.diagram.component.expressions.UMLOCLFactory;
 
+import org.eclipse.uml2.diagram.component.part.Messages;
 import org.eclipse.uml2.diagram.component.part.UMLDiagramEditorPlugin;
 
+import org.eclipse.uml2.diagram.component.part.UMLVisualIDRegistry;
 import org.eclipse.uml2.uml.BehavioredClassifier;
 import org.eclipse.uml2.uml.Interface;
 import org.eclipse.uml2.uml.Port;
@@ -50,6 +54,42 @@ import org.eclipse.uml2.uml.UMLPackage;
  * @generated
  */
 public class UMLBaseItemSemanticEditPolicy extends SemanticEditPolicy {
+
+	/**
+	 * Extended request data key to hold editpart visual id.
+	 * 
+	 * @generated
+	 */
+	public static final String VISUAL_ID_KEY = "visual_id"; //$NON-NLS-1$
+
+	/**
+	 * Add visual id of edited editpart to extended data of the request
+	 * so command switch can decide what kind of diagram element is being edited.
+	 * It is done in those cases when it's not possible to deduce diagram
+	 * element kind from domain element.
+	 * 
+	 * @generated
+	 */
+	public Command getCommand(Request request) {
+		if (request instanceof ReconnectRequest) {
+			Object view = ((ReconnectRequest) request).getConnectionEditPart().getModel();
+			if (view instanceof View) {
+				Integer id = new Integer(UMLVisualIDRegistry.getVisualID((View) view));
+				request.getExtendedData().put(VISUAL_ID_KEY, id);
+			}
+		}
+		return super.getCommand(request);
+	}
+
+	/**
+	 * Returns visual id from request parameters.
+	 * 
+	 * @generated
+	 */
+	protected int getVisualID(IEditCommandRequest request) {
+		Object id = request.getParameter(VISUAL_ID_KEY);
+		return id instanceof Integer ? ((Integer) id).intValue() : -1;
+	}
 
 	/**
 	 * @generated
@@ -228,10 +268,13 @@ public class UMLBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 	 * 
 	 * @generated
 	 */
-	protected EObject getRelationshipContainer(EObject element, EClass containerClass, IElementType relationshipType) {
-		for (; element != null; element = element.eContainer()) {
-			if (containerClass.isSuperTypeOf(element.eClass())) {
-				return element;
+	protected EObject getRelationshipContainer(Object uelement, EClass containerClass, IElementType relationshipType) {
+		if (uelement instanceof EObject) {
+			EObject element = (EObject) uelement;
+			for (; element != null; element = element.eContainer()) {
+				if (containerClass.isSuperTypeOf(element.eClass())) {
+					return element;
+				}
 			}
 		}
 		return null;
@@ -240,7 +283,7 @@ public class UMLBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 	/**
 	 * @generated 
 	 */
-	protected static class LinkConstraints {
+	public static class LinkConstraints {
 
 		/**
 		 * @generated 
@@ -257,9 +300,8 @@ public class UMLBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 		 */
 		static {
 			Map env = new HashMap(3);
-			env.put("oppositeEnd", UMLPackage.eINSTANCE.getInterface()); //$NON-NLS-1$
-			InterfaceRealization_4001_SourceExpression = UMLOCLFactory.getExpression("self.oclIsKindOf(uml::Component)", //$NON-NLS-1$
-					UMLPackage.eINSTANCE.getBehavioredClassifier(), env);
+			env.put(OPPOSITE_END_VAR, UMLPackage.eINSTANCE.getInterface());
+			InterfaceRealization_4001_SourceExpression = UMLOCLFactory.getExpression("self.oclIsKindOf(uml::Component)", UMLPackage.eINSTANCE.getBehavioredClassifier(), env); //$NON-NLS-1$
 		}
 
 		/**
@@ -272,9 +314,8 @@ public class UMLBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 		 */
 		static {
 			Map env = new HashMap(3);
-			env.put("oppositeEnd", UMLPackage.eINSTANCE.getInterface()); //$NON-NLS-1$
-			PortProvided_4006_SourceExpression = UMLOCLFactory.getExpression("self.oclIsKindOf(uml::Port)", //$NON-NLS-1$
-					UMLPackage.eINSTANCE.getPort(), env);
+			env.put(OPPOSITE_END_VAR, UMLPackage.eINSTANCE.getInterface());
+			PortProvided_4006_SourceExpression = UMLOCLFactory.getExpression("self.oclIsKindOf(uml::Port)", UMLPackage.eINSTANCE.getPort(), env); //$NON-NLS-1$
 		}
 
 		/**
@@ -287,19 +328,15 @@ public class UMLBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 		 */
 		static {
 			Map env = new HashMap(3);
-			env.put("oppositeEnd", UMLPackage.eINSTANCE.getInterface()); //$NON-NLS-1$
-			PortRequired_4004_SourceExpression = UMLOCLFactory.getExpression("self.oclIsKindOf(uml::Port)", //$NON-NLS-1$
-					UMLPackage.eINSTANCE.getPort(), env);
+			env.put(OPPOSITE_END_VAR, UMLPackage.eINSTANCE.getInterface());
+			PortRequired_4004_SourceExpression = UMLOCLFactory.getExpression("self.oclIsKindOf(uml::Port)", UMLPackage.eINSTANCE.getPort(), env); //$NON-NLS-1$
 		}
 
 		/**
 		 * @generated 
 		 */
 		public static boolean canCreateInterfaceRealization_4001(BehavioredClassifier container, BehavioredClassifier source, Interface target) {
-			if (!evaluate(InterfaceRealization_4001_SourceExpression, source, target, false)) {
-				return false;
-			}
-			return true;
+			return canExistInterfaceRealization_4001(container, source, target);
 		}
 
 		/**
@@ -311,10 +348,7 @@ public class UMLBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 					return false;
 				}
 			}
-			if (!evaluate(PortProvided_4006_SourceExpression, source, target, false)) {
-				return false;
-			}
-			return true;
+			return canExistPortProvided_4006(source, target);
 		}
 
 		/**
@@ -326,6 +360,33 @@ public class UMLBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 					return false;
 				}
 			}
+			return canExistPortRequired_4004(source, target);
+		}
+
+		/**
+		 * @generated
+		 */
+		public static boolean canExistInterfaceRealization_4001(BehavioredClassifier container, BehavioredClassifier source, Interface target) {
+			if (!evaluate(InterfaceRealization_4001_SourceExpression, source, target, false)) {
+				return false;
+			}
+			return true;
+		}
+
+		/**
+		 * @generated
+		 */
+		public static boolean canExistPortProvided_4006(Port source, Interface target) {
+			if (!evaluate(PortProvided_4006_SourceExpression, source, target, false)) {
+				return false;
+			}
+			return true;
+		}
+
+		/**
+		 * @generated
+		 */
+		public static boolean canExistPortRequired_4004(Port source, Interface target) {
 			if (!evaluate(PortRequired_4004_SourceExpression, source, target, false)) {
 				return false;
 			}
@@ -344,7 +405,7 @@ public class UMLBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 				Object val = constraint.evaluate(sourceEnd, evalEnv);
 				return (val instanceof Boolean) ? ((Boolean) val).booleanValue() : false;
 			} catch (Exception e) {
-				UMLDiagramEditorPlugin.getInstance().logError("Link constraint evaluation error", e); //$NON-NLS-1$
+				UMLDiagramEditorPlugin.getInstance().logError(Messages.EvaluateOCLLinkConstraintError, e);
 				return false;
 			}
 		}

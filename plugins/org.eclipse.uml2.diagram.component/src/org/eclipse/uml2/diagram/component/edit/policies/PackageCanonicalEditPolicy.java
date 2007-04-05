@@ -67,7 +67,6 @@ import org.eclipse.uml2.uml.UMLPackage;
 public class PackageCanonicalEditPolicy extends CanonicalConnectionEditPolicy {
 
 	/**
-	 *  
 	 * @generated
 	 */
 	protected List getSemanticChildrenList() {
@@ -105,7 +104,19 @@ public class PackageCanonicalEditPolicy extends CanonicalConnectionEditPolicy {
 	 * @generated
 	 */
 	protected boolean shouldDeleteView(View view) {
-		return view.isSetElement() && view.getElement() != null && view.getElement().eIsProxy();
+		if (view.getEAnnotation("Shortcut") != null) { //$NON-NLS-1$
+			return view.isSetElement() && (view.getElement() == null || view.getElement().eIsProxy());
+		}
+
+		int nodeVID = UMLVisualIDRegistry.getVisualID(view);
+		switch (nodeVID) {
+		case ComponentEditPart.VISUAL_ID:
+		case Artifact2EditPart.VISUAL_ID:
+		case Interface2EditPart.VISUAL_ID:
+		case Class2EditPart.VISUAL_ID:
+			return true;
+		}
+		return false;
 	}
 
 	/**
@@ -309,7 +320,7 @@ public class PackageCanonicalEditPolicy extends CanonicalConnectionEditPolicy {
 						structuralFeatureResult = ((InterfaceRealization) nextValue).getImplementingClassifier();
 						if (structuralFeatureResult instanceof EObject) {
 							EObject src = (EObject) structuralFeatureResult;
-							myLinkDescriptors.add(new LinkDescriptor(src, dst, nextValue, linkVID));
+							myLinkDescriptors.add(new LinkDescriptor(src, dst, nextValue, UMLElementTypes.InterfaceRealization_4001, linkVID));
 						}
 					}
 				}
@@ -378,10 +389,19 @@ public class PackageCanonicalEditPolicy extends CanonicalConnectionEditPolicy {
 		/**
 		 * @generated
 		 */
-		protected LinkDescriptor(EObject source, EObject destination, EObject linkElement, int linkVID) {
+		protected LinkDescriptor(EObject source, EObject destination, EObject linkElement, IElementType elementType, int linkVID) {
 			this(source, destination, linkVID);
 			myLinkElement = linkElement;
-			mySemanticAdapter = new EObjectAdapter(linkElement);
+			final IElementType elementTypeCopy = elementType;
+			mySemanticAdapter = new EObjectAdapter(linkElement) {
+
+				public Object getAdapter(Class adapter) {
+					if (IElementType.class.equals(adapter)) {
+						return elementTypeCopy;
+					}
+					return super.getAdapter(adapter);
+				}
+			};
 		}
 
 		/**
