@@ -121,4 +121,5 @@ public class EnumerationItemSemanticEditPolicy extends UMLBaseItemSemanticEditPo
 		}
 		return super.getReorientRelationshipCommand(req);
 	}
+
 }

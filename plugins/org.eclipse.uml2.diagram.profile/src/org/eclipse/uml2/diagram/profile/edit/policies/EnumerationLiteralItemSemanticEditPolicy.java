@@ -39,4 +39,5 @@ public class EnumerationLiteralItemSemanticEditPolicy extends UMLBaseItemSemanti
 		cc.add(getMSLWrapper(new DestroyElementCommand(req)));
 		return cc;
 	}
+
 }

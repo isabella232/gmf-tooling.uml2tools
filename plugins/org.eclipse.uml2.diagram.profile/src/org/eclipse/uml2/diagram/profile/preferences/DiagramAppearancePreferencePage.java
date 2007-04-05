@@ -11,9 +11,6 @@ public class DiagramAppearancePreferencePage extends AppearancePreferencePage {
 	/**
 	 * @generated
 	 */
-	/**
-	 * @generated
-	 */
 	public DiagramAppearancePreferencePage() {
 		setPreferenceStore(UMLDiagramEditorPlugin.getInstance().getPreferenceStore());
 	}

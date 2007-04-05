@@ -1,9 +1,7 @@
 package org.eclipse.uml2.diagram.profile.edit.policies;
 
 import org.eclipse.gef.commands.Command;
-
 import org.eclipse.gmf.runtime.emf.type.core.commands.DestroyElementCommand;
-
 import org.eclipse.gmf.runtime.emf.type.core.requests.DestroyElementRequest;
 
 /**
@@ -17,4 +15,5 @@ public class GeneralizationItemSemanticEditPolicy extends UMLBaseItemSemanticEdi
 	protected Command getDestroyElementCommand(DestroyElementRequest req) {
 		return getMSLWrapper(new DestroyElementCommand(req));
 	}
+
 }

@@ -39,4 +39,5 @@ public class PropertyItemSemanticEditPolicy extends UMLBaseItemSemanticEditPolic
 		cc.add(getMSLWrapper(new DestroyElementCommand(req)));
 		return cc;
 	}
+
 }

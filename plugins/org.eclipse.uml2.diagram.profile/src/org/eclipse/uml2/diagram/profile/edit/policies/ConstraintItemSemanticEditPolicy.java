@@ -39,4 +39,5 @@ public class ConstraintItemSemanticEditPolicy extends UMLBaseItemSemanticEditPol
 		cc.add(getMSLWrapper(new DestroyElementCommand(req)));
 		return cc;
 	}
+
 }

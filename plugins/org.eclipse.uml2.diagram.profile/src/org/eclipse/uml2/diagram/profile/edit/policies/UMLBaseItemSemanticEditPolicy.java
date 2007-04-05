@@ -281,7 +281,7 @@ public class UMLBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 	/**
 	 * @generated
 	 */
-	protected static class LinkConstraints {
+	public static class LinkConstraints {
 
 		/**
 		 * @generated
@@ -308,13 +308,27 @@ public class UMLBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 		 * @generated
 		 */
 		public static boolean canCreateGeneralization_4001(Classifier source, Classifier target) {
-			return true;
+			return canExistGeneralization_4001(source, target);
 		}
 
 		/**
 		 * @generated
 		 */
 		public static boolean canCreateExtension_4002(Package container, Stereotype source, ElementImport target) {
+			return canExistExtension_4002(container, source, target);
+		}
+
+		/**
+		 * @generated
+		 */
+		public static boolean canExistGeneralization_4001(Classifier source, Classifier target) {
+			return true;
+		}
+
+		/**
+		 * @generated
+		 */
+		public static boolean canExistExtension_4002(Package container, Stereotype source, ElementImport target) {
 			if (!evaluate(Extension_4002_TargetExpression, target, source, true)) {
 				return false;
 			}

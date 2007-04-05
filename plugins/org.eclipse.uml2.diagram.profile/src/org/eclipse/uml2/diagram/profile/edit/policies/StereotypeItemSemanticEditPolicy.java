@@ -150,4 +150,5 @@ public class StereotypeItemSemanticEditPolicy extends UMLBaseItemSemanticEditPol
 		}
 		return super.getReorientRelationshipCommand(req);
 	}
+
 }

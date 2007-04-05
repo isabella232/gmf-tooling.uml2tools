@@ -52,4 +52,5 @@ public class Profile3ItemSemanticEditPolicy extends UMLBaseItemSemanticEditPolic
 		}));
 		return cc;
 	}
+
 }

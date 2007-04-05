@@ -99,4 +99,5 @@ public class ElementImport2ItemSemanticEditPolicy extends UMLBaseItemSemanticEdi
 		}
 		return super.getReorientRelationshipCommand(req);
 	}
+
 }

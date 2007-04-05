@@ -7,6 +7,7 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.gmf.runtime.common.core.command.CommandResult;
 import org.eclipse.gmf.runtime.emf.type.core.commands.EditElementCommand;
 import org.eclipse.gmf.runtime.emf.type.core.requests.ReorientRelationshipRequest;
+import org.eclipse.uml2.diagram.profile.edit.policies.UMLBaseItemSemanticEditPolicy;
 import org.eclipse.uml2.uml.Classifier;
 import org.eclipse.uml2.uml.Generalization;
 
@@ -48,12 +49,39 @@ public class GeneralizationReorientCommand extends EditElementCommand {
 			return false;
 		}
 		if (reorientDirection == ReorientRelationshipRequest.REORIENT_SOURCE) {
-			return oldEnd instanceof Classifier && newEnd instanceof Classifier;
+			return canReorientSource();
 		}
 		if (reorientDirection == ReorientRelationshipRequest.REORIENT_TARGET) {
-			return oldEnd instanceof Classifier && newEnd instanceof Classifier;
+			return canReorientTarget();
 		}
 		return false;
+	}
+
+	/**
+	 * @generated
+	 */
+	protected boolean canReorientSource() {
+		if (!(oldEnd instanceof Classifier && newEnd instanceof Classifier)) {
+			return false;
+		}
+		Classifier source = (Classifier) newEnd;
+		Classifier target = getLink().getGeneral();
+		return UMLBaseItemSemanticEditPolicy.LinkConstraints.canExistGeneralization_4001(source, target);
+	}
+
+	/**
+	 * @generated
+	 */
+	protected boolean canReorientTarget() {
+		if (!(oldEnd instanceof Classifier && newEnd instanceof Classifier)) {
+			return false;
+		}
+		if (!(getLink().eContainer() instanceof Classifier)) {
+			return false;
+		}
+		Classifier source = (Classifier) getLink().eContainer();
+		Classifier target = (Classifier) newEnd;
+		return UMLBaseItemSemanticEditPolicy.LinkConstraints.canExistGeneralization_4001(source, target);
 	}
 
 	/**
@@ -75,25 +103,52 @@ public class GeneralizationReorientCommand extends EditElementCommand {
 	/**
 	 * @generated
 	 */
-	private CommandResult reorientSource() throws ExecutionException {
-		Generalization link = (Generalization) getElementToEdit();
-		Classifier oldSource = (Classifier) oldEnd;
-		Classifier newSource = (Classifier) newEnd;
-
-		oldSource.getGeneralizations().remove(link);
-		newSource.getGeneralizations().add(link);
-		return CommandResult.newOKCommandResult(link);
+	protected CommandResult reorientSource() throws ExecutionException {
+		getOldSource().getGeneralizations().remove(getLink());
+		getNewSource().getGeneralizations().add(getLink());
+		return CommandResult.newOKCommandResult(getLink());
 	}
 
 	/**
 	 * @generated
 	 */
-	private CommandResult reorientTarget() throws ExecutionException {
-		Generalization link = (Generalization) getElementToEdit();
-		Classifier oldTarget = (Classifier) oldEnd;
-		Classifier newTarget = (Classifier) newEnd;
+	protected CommandResult reorientTarget() throws ExecutionException {
+		getLink().setGeneral(getNewTarget());
+		return CommandResult.newOKCommandResult(getLink());
+	}
 
-		link.setGeneral(newTarget);
-		return CommandResult.newOKCommandResult(link);
+	/**
+	 * @generated
+	 */
+	protected Generalization getLink() {
+		return (Generalization) getElementToEdit();
+	}
+
+	/**
+	 * @generated
+	 */
+	protected Classifier getOldSource() {
+		return (Classifier) oldEnd;
+	}
+
+	/**
+	 * @generated
+	 */
+	protected Classifier getNewSource() {
+		return (Classifier) newEnd;
+	}
+
+	/**
+	 * @generated
+	 */
+	protected Classifier getOldTarget() {
+		return (Classifier) oldEnd;
+	}
+
+	/**
+	 * @generated
+	 */
+	protected Classifier getNewTarget() {
+		return (Classifier) newEnd;
 	}
 }
