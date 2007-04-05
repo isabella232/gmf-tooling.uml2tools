@@ -6,14 +6,15 @@
     modelID="UMLComponent"
     diagramFileExtension="umlcomponent_diagram"
     dynamicTemplates="true"
-    templateDirectory="/com.borland.mdt.uml2.diagram/dynamic-templates/codegen">
+    templateDirectory="/org.eclipse.uml2.diagram.def/dynamic-templates/codegen">
   <diagram
       visualID="1000"
       editPartClassName="PackageEditPart"
       itemSemanticEditPolicyClassName="PackageItemSemanticEditPolicy"
       notationViewFactoryClassName="PackageViewFactory"
       canonicalEditPolicyClassName="PackageCanonicalEditPolicy"
-      iconProviderPriority="Low">
+      iconProviderPriority="Low"
+      validationProviderPriority="Low">
     <diagramRunTimeClass
         href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Diagram"/>
     <elementType
@@ -622,7 +623,8 @@
         visualID="4001"
         editPartClassName="InterfaceRealizationEditPart"
         itemSemanticEditPolicyClassName="InterfaceRealizationItemSemanticEditPolicy"
-        notationViewFactoryClassName="InterfaceRealizationViewFactory">
+        notationViewFactoryClassName="InterfaceRealizationViewFactory"
+        reorientCommandClassName="InterfaceRealizationReorientCommand">
       <diagramRunTimeClass
           href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Edge"/>
       <elementType
@@ -660,7 +662,8 @@
         visualID="4006"
         editPartClassName="PortProvidedEditPart"
         itemSemanticEditPolicyClassName="PortProvidedItemSemanticEditPolicy"
-        notationViewFactoryClassName="PortProvidedViewFactory">
+        notationViewFactoryClassName="PortProvidedViewFactory"
+        reorientCommandClassName="PortProvidedReorientCommand">
       <diagramRunTimeClass
           href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Edge"/>
       <elementType
@@ -687,7 +690,8 @@
         visualID="4004"
         editPartClassName="PortRequiredEditPart"
         itemSemanticEditPolicyClassName="PortRequiredItemSemanticEditPolicy"
-        notationViewFactoryClassName="PortRequiredViewFactory">
+        notationViewFactoryClassName="PortRequiredViewFactory"
+        reorientCommandClassName="PortRequiredReorientCommand">
       <diagramRunTimeClass
           href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Edge"/>
       <elementType
@@ -792,6 +796,36 @@
             genLinks="//@diagram/@links.2"/>
       </groups>
     </palette>
+    <preferencePages
+        xsi:type="gmfgen:GenStandardPreferencePage"
+        iD="org.eclipse.uml2.uml.diagram.general"
+        name="UML Diagram">
+      <children
+          xsi:type="gmfgen:GenStandardPreferencePage"
+          iD="org.eclipse.uml2.uml.diagram.appearance"
+          name="Appearance"
+          kind="Appearance"/>
+      <children
+          xsi:type="gmfgen:GenStandardPreferencePage"
+          iD="org.eclipse.uml2.uml.diagram.connections"
+          name="Connections"
+          kind="Connections"/>
+      <children
+          xsi:type="gmfgen:GenStandardPreferencePage"
+          iD="org.eclipse.uml2.uml.diagram.printing"
+          name="Printing"
+          kind="Printing"/>
+      <children
+          xsi:type="gmfgen:GenStandardPreferencePage"
+          iD="org.eclipse.uml2.uml.diagram.rulersAndGrid"
+          name="Rulers And Grid"
+          kind="RulersAndGrid"/>
+      <children
+          xsi:type="gmfgen:GenStandardPreferencePage"
+          iD="org.eclipse.uml2.uml.diagram.pathmaps"
+          name="Pathmaps"
+          kind="Pathmaps"/>
+    </preferencePages>
   </diagram>
   <plugin
       iD="org.eclipse.uml2.diagram.component"/>
@@ -855,7 +889,7 @@
     <childReferences
         parent="//@diagram/@links.0"
         child="//@diagram/@topLevelNodes.2"
-        referenceType="out_taget"
+        referenceType="out_target"
         groupName="target"
         groupIcon="icons/linkTargetNavigatorGroup.gif"/>
     <childReferences
@@ -867,7 +901,7 @@
     <childReferences
         parent="//@diagram/@links.0"
         child="//@diagram/@childNodes.4"
-        referenceType="out_taget"
+        referenceType="out_target"
         groupName="target"
         groupIcon="icons/linkTargetNavigatorGroup.gif"/>
     <childReferences
@@ -885,7 +919,7 @@
     <childReferences
         parent="//@diagram/@topLevelNodes.0"
         child="//@diagram/@links.0"
-        referenceType="out_taget"
+        referenceType="out_target"
         groupName="outgoing links"
         groupIcon="icons/outgoingLinksNavigatorGroup.gif"/>
     <childReferences
@@ -897,7 +931,7 @@
     <childReferences
         parent="//@diagram/@topLevelNodes.3"
         child="//@diagram/@links.0"
-        referenceType="out_taget"
+        referenceType="out_target"
         groupName="outgoing links"
         groupIcon="icons/outgoingLinksNavigatorGroup.gif"/>
     <childReferences
@@ -909,7 +943,7 @@
     <childReferences
         parent="//@diagram/@childNodes.0"
         child="//@diagram/@links.0"
-        referenceType="out_taget"
+        referenceType="out_target"
         groupName="outgoing links"
         groupIcon="icons/outgoingLinksNavigatorGroup.gif"/>
     <childReferences
@@ -921,7 +955,7 @@
     <childReferences
         parent="//@diagram/@childNodes.3"
         child="//@diagram/@links.0"
-        referenceType="out_taget"
+        referenceType="out_target"
         groupName="outgoing links"
         groupIcon="icons/outgoingLinksNavigatorGroup.gif"/>
     <childReferences
@@ -932,7 +966,7 @@
     <childReferences
         parent="//@diagram/@links.1"
         child="//@diagram/@topLevelNodes.2"
-        referenceType="out_taget"
+        referenceType="out_target"
         groupName="target"
         groupIcon="icons/linkTargetNavigatorGroup.gif"/>
     <childReferences
@@ -944,7 +978,7 @@
     <childReferences
         parent="//@diagram/@links.1"
         child="//@diagram/@childNodes.4"
-        referenceType="out_taget"
+        referenceType="out_target"
         groupName="target"
         groupIcon="icons/linkTargetNavigatorGroup.gif"/>
     <childReferences
@@ -962,7 +996,7 @@
     <childReferences
         parent="//@diagram/@childNodes.1"
         child="//@diagram/@links.1"
-        referenceType="out_taget"
+        referenceType="out_target"
         groupName="outgoing links"
         groupIcon="icons/outgoingLinksNavigatorGroup.gif"/>
     <childReferences
@@ -973,7 +1007,7 @@
     <childReferences
         parent="//@diagram/@links.2"
         child="//@diagram/@topLevelNodes.2"
-        referenceType="out_taget"
+        referenceType="out_target"
         groupName="target"
         groupIcon="icons/linkTargetNavigatorGroup.gif"/>
     <childReferences
@@ -985,7 +1019,7 @@
     <childReferences
         parent="//@diagram/@links.2"
         child="//@diagram/@childNodes.4"
-        referenceType="out_taget"
+        referenceType="out_target"
         groupName="target"
         groupIcon="icons/linkTargetNavigatorGroup.gif"/>
     <childReferences
@@ -1003,7 +1037,7 @@
     <childReferences
         parent="//@diagram/@childNodes.1"
         child="//@diagram/@links.2"
-        referenceType="out_taget"
+        referenceType="out_target"
         groupName="outgoing links"
         groupIcon="icons/outgoingLinksNavigatorGroup.gif"/>
   </navigator>
@@ -1015,6 +1049,17 @@
         xsi:type="gmfgen:GenStandardPropertyTab"
         iD="diagram"
         label="Rulers &amp; Grid"/>
+    <tabs
+        xsi:type="gmfgen:GenCustomPropertyTab"
+        iD="domain"
+        label="Core">
+      <filter
+          xsi:type="gmfgen:TypeTabFilter">
+        <types>org.eclipse.gmf.runtime.notation.View</types>
+        <types>org.eclipse.gef.EditPart</types>
+        <generatedTypes>abstractNavigatorItem</generatedTypes>
+      </filter>
+    </tabs>
     <tabs
         xsi:type="gmfgen:GenCustomPropertyTab"
         iD="domain"
