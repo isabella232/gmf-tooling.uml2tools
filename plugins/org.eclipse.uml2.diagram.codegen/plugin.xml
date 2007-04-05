@@ -18,7 +18,7 @@
             nameFilter="*.gmfgen"
             objectClass="org.eclipse.core.resources.IFile">
          <action
-               label="generateDiagramAction.name "
+               label="%generateDiagramAction.name "
                class="org.eclipse.uml2.diagram.codegen.ui.ExecuteTemplatesActionExt"
                menubarPath="additions"
                enablesFor="1"
