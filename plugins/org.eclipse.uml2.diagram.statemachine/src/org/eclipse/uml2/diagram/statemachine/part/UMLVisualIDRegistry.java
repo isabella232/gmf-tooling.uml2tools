@@ -150,14 +150,6 @@ public class UMLVisualIDRegistry {
 	}
 
 	/**
-	 *
-	 * We want to additionally show the Canvas Semantical Element in the auxiliary 
-	 * StateMachine2EditPart (that serves as a visual container for children imports). 
-	 * To do this, we modified CanonicalEditPolicy to add the Canvas semantic Element into the children 
-	 * list. The only remaining part is to return correct VID for this special case.
-	 * 
-	 * @see ProfileCanonicalEditPolicy#getSemanticChildrenList
-	 *
 	 * @generated
 	 */
 	public static int getNodeVisualID(View containerView, EObject domainElement, EClass domainElementMetaclass, String semanticHint) {
@@ -174,9 +166,6 @@ public class UMLVisualIDRegistry {
 			} else {
 				return -1;
 			}
-		}
-		if (containerView instanceof Diagram && domainElement != null && domainElement.equals(containerView.getElement())) {
-			return StateMachine2EditPart.VISUAL_ID;
 		}
 		int nodeVisualID = semanticHint != null ? getVisualID(semanticHint) : -1;
 		switch (containerVisualID) {

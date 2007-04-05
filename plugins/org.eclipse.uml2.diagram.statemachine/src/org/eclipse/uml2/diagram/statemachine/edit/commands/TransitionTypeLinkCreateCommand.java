@@ -69,7 +69,7 @@ public class TransitionTypeLinkCreateCommand extends CreateRelationshipCommand {
 	 */
 	protected EClass getEClassToEdit() {
 		return UMLPackage.eINSTANCE.getRegion();
-	};
+	}
 
 	/**
 	 * @generated

@@ -28,7 +28,7 @@ public class FinalStateCreateCommand extends CreateElementCommand {
 	 */
 	protected EClass getEClassToEdit() {
 		return UMLPackage.eINSTANCE.getRegion();
-	};
+	}
 
 	/**
 	 * @generated

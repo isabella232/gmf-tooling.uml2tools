@@ -71,8 +71,8 @@ public class StateMachine2EditPart extends AbstractBorderedShapeEditPart {
 	 */
 	protected void createDefaultEditPolicies() {
 		installEditPolicy(EditPolicyRoles.CREATION_ROLE, new CreationEditPolicy());
-		super.createDefaultEditPolicies();
 
+		super.createDefaultEditPolicies();
 		installEditPolicy(EditPolicyRoles.SEMANTIC_ROLE, new StateMachine2ItemSemanticEditPolicy());
 		installEditPolicy(EditPolicyRoles.DRAG_DROP_ROLE, new DragDropEditPolicy());
 		installEditPolicy(EditPolicyRoles.CANONICAL_ROLE, new StateMachine2CanonicalEditPolicy());
@@ -131,14 +131,16 @@ public class StateMachine2EditPart extends AbstractBorderedShapeEditPart {
 			((StateMachineNameEditPart) childEditPart).setLabel(getPrimaryShape().getFigureCompositeStateFigure_name());
 			return true;
 		}
-		if (childEditPart instanceof org.eclipse.uml2.diagram.statemachine.edit.parts.Pseudostate9EditPart) {
-			IBorderItemLocator locator = new BisectionBorderItemLocator(getMainFigure());
-			getBorderedFigure().getBorderItemContainer().add(((org.eclipse.uml2.diagram.statemachine.edit.parts.Pseudostate9EditPart) childEditPart).getFigure(), locator);
+		if (childEditPart instanceof Pseudostate9EditPart) {
+
+			IBorderItemLocator locator = new BorderItemLocator(getMainFigure(), PositionConstants.WEST);
+			getBorderedFigure().getBorderItemContainer().add(((Pseudostate9EditPart) childEditPart).getFigure(), locator);
 			return true;
 		}
-		if (childEditPart instanceof org.eclipse.uml2.diagram.statemachine.edit.parts.Pseudostate10EditPart) {
-			IBorderItemLocator locator = new BisectionBorderItemLocator(getMainFigure());
-			getBorderedFigure().getBorderItemContainer().add(((org.eclipse.uml2.diagram.statemachine.edit.parts.Pseudostate10EditPart) childEditPart).getFigure(), locator);
+		if (childEditPart instanceof Pseudostate10EditPart) {
+
+			IBorderItemLocator locator = new BorderItemLocator(getMainFigure(), PositionConstants.EAST);
+			getBorderedFigure().getBorderItemContainer().add(((Pseudostate10EditPart) childEditPart).getFigure(), locator);
 			return true;
 		}
 		return false;
@@ -149,12 +151,12 @@ public class StateMachine2EditPart extends AbstractBorderedShapeEditPart {
 	 */
 	protected boolean removeFixedChild(EditPart childEditPart) {
 
-		if (childEditPart instanceof org.eclipse.uml2.diagram.statemachine.edit.parts.Pseudostate9EditPart) {
-			getBorderedFigure().getBorderItemContainer().remove(((org.eclipse.uml2.diagram.statemachine.edit.parts.Pseudostate9EditPart) childEditPart).getFigure());
+		if (childEditPart instanceof Pseudostate9EditPart) {
+			getBorderedFigure().getBorderItemContainer().remove(((Pseudostate9EditPart) childEditPart).getFigure());
 			return true;
 		}
-		if (childEditPart instanceof org.eclipse.uml2.diagram.statemachine.edit.parts.Pseudostate10EditPart) {
-			getBorderedFigure().getBorderItemContainer().remove(((org.eclipse.uml2.diagram.statemachine.edit.parts.Pseudostate10EditPart) childEditPart).getFigure());
+		if (childEditPart instanceof Pseudostate10EditPart) {
+			getBorderedFigure().getBorderItemContainer().remove(((Pseudostate10EditPart) childEditPart).getFigure());
 			return true;
 		}
 		return false;
@@ -185,10 +187,10 @@ public class StateMachine2EditPart extends AbstractBorderedShapeEditPart {
 	 */
 	protected IFigure getContentPaneForGen(IGraphicalEditPart editPart) {
 
-		if (editPart instanceof org.eclipse.uml2.diagram.statemachine.edit.parts.Pseudostate9EditPart) {
+		if (editPart instanceof Pseudostate9EditPart) {
 			return getBorderedFigure().getBorderItemContainer();
 		}
-		if (editPart instanceof org.eclipse.uml2.diagram.statemachine.edit.parts.Pseudostate10EditPart) {
+		if (editPart instanceof Pseudostate10EditPart) {
 			return getBorderedFigure().getBorderItemContainer();
 		}
 		return super.getContentPaneFor(editPart);
@@ -209,7 +211,6 @@ public class StateMachine2EditPart extends AbstractBorderedShapeEditPart {
 	 */
 	protected NodeFigure createNodePlate() {
 		DefaultSizeNodeFigure result = new DefaultSizeNodeFigure(getMapMode().DPtoLP(40), getMapMode().DPtoLP(40));
-
 		return result;
 	}
 

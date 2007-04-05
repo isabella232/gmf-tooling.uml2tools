@@ -28,7 +28,7 @@ public class RegionCreateCommand extends CreateElementCommand {
 	 */
 	protected EClass getEClassToEdit() {
 		return UMLPackage.eINSTANCE.getStateMachine();
-	};
+	}
 
 	/**
 	 * @generated

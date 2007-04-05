@@ -1,18 +1,27 @@
 package org.eclipse.uml2.diagram.statemachine.edit.policies;
 
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Collections;
+import java.util.Iterator;
+
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.gef.EditPart;
 import org.eclipse.gef.commands.Command;
+import org.eclipse.gef.commands.CompoundCommand;
+import org.eclipse.gef.commands.UnexecutableCommand;
+import org.eclipse.gmf.runtime.diagram.ui.requests.EditCommandRequestWrapper;
 import org.eclipse.gmf.runtime.emf.type.core.commands.DestroyElementCommand;
 import org.eclipse.gmf.runtime.emf.type.core.requests.CreateRelationshipRequest;
 import org.eclipse.gmf.runtime.emf.type.core.requests.DestroyElementRequest;
-import org.eclipse.emf.ecore.EObject;
-import org.eclipse.emf.ecore.EAnnotation;
+import org.eclipse.gmf.runtime.emf.type.core.requests.ReorientRelationshipRequest;
+import org.eclipse.gmf.runtime.notation.Edge;
 import org.eclipse.gmf.runtime.notation.View;
-import org.eclipse.gef.commands.UnexecutableCommand;
-
+import org.eclipse.uml2.diagram.statemachine.edit.commands.TransitionReorientCommand;
 import org.eclipse.uml2.diagram.statemachine.edit.commands.TransitionTypeLinkCreateCommand;
-
+import org.eclipse.uml2.diagram.statemachine.edit.parts.FinalStateEditPart;
+import org.eclipse.uml2.diagram.statemachine.edit.parts.TransitionEditPart;
 import org.eclipse.uml2.diagram.statemachine.providers.UMLElementTypes;
-
 import org.eclipse.uml2.uml.Region;
 import org.eclipse.uml2.uml.UMLPackage;
 import org.eclipse.uml2.uml.Vertex;
@@ -26,18 +35,20 @@ public class FinalStateItemSemanticEditPolicy extends UMLBaseItemSemanticEditPol
 	 * @generated
 	 */
 	protected Command getDestroyElementCommand(DestroyElementRequest req) {
-		return getMSLWrapper(new DestroyElementCommand(req) {
-
-			protected EObject getElementToDestroy() {
-				View view = (View) getHost().getModel();
-				EAnnotation annotation = view.getEAnnotation("Shortcut"); //$NON-NLS-1$
-				if (annotation != null) {
-					return view;
-				}
-				return super.getElementToDestroy();
-			}
-
-		});
+		CompoundCommand cc = new CompoundCommand();
+		Collection allEdges = new ArrayList();
+		View view = (View) getHost().getModel();
+		allEdges.addAll(view.getSourceEdges());
+		allEdges.addAll(view.getTargetEdges());
+		for (Iterator it = allEdges.iterator(); it.hasNext();) {
+			Edge nextEdge = (Edge) it.next();
+			EditPart nextEditPart = (EditPart) getHost().getViewer().getEditPartRegistry().get(nextEdge);
+			EditCommandRequestWrapper editCommandRequest = new EditCommandRequestWrapper(new DestroyElementRequest(((FinalStateEditPart) getHost()).getEditingDomain(), req.isConfirmationRequired()),
+					Collections.EMPTY_MAP);
+			cc.add(nextEditPart.getCommand(editCommandRequest));
+		}
+		cc.add(getMSLWrapper(new DestroyElementCommand(req)));
+		return cc;
 	}
 
 	/**
@@ -45,7 +56,7 @@ public class FinalStateItemSemanticEditPolicy extends UMLBaseItemSemanticEditPol
 	 */
 	protected Command getCreateRelationshipCommand(CreateRelationshipRequest req) {
 		if (UMLElementTypes.Transition_4001 == req.getElementType()) {
-			return req.getTarget() == null ? getCreateStartOutgoingTransition4001Command(req) : getCreateCompleteIncomingTransition4001Command(req);
+			return req.getTarget() == null ? getCreateStartOutgoingTransition_4001Command(req) : getCreateCompleteIncomingTransition_4001Command(req);
 		}
 		return super.getCreateRelationshipCommand(req);
 	}
@@ -53,20 +64,17 @@ public class FinalStateItemSemanticEditPolicy extends UMLBaseItemSemanticEditPol
 	/**
 	 * @generated
 	 */
-	protected Command getCreateStartOutgoingTransition4001Command(CreateRelationshipRequest req) {
+	protected Command getCreateStartOutgoingTransition_4001Command(CreateRelationshipRequest req) {
 		EObject sourceEObject = req.getSource();
-		EObject targetEObject = req.getTarget();
-		if (false == sourceEObject instanceof Vertex || (targetEObject != null && false == targetEObject instanceof Vertex)) {
+		if (false == sourceEObject instanceof Vertex) {
 			return UnexecutableCommand.INSTANCE;
 		}
 		Vertex source = (Vertex) sourceEObject;
-		Vertex target = (Vertex) targetEObject;
-
 		Region container = (Region) getRelationshipContainer(source, UMLPackage.eINSTANCE.getRegion(), req.getElementType());
 		if (container == null) {
 			return UnexecutableCommand.INSTANCE;
 		}
-		if (!UMLBaseItemSemanticEditPolicy.LinkConstraints.canCreateTransition_4001(container, source, target)) {
+		if (!UMLBaseItemSemanticEditPolicy.LinkConstraints.canCreateTransition_4001(container, source, null)) {
 			return UnexecutableCommand.INSTANCE;
 		}
 		return new Command() {
@@ -76,7 +84,7 @@ public class FinalStateItemSemanticEditPolicy extends UMLBaseItemSemanticEditPol
 	/**
 	 * @generated
 	 */
-	protected Command getCreateCompleteIncomingTransition4001Command(CreateRelationshipRequest req) {
+	protected Command getCreateCompleteIncomingTransition_4001Command(CreateRelationshipRequest req) {
 		EObject sourceEObject = req.getSource();
 		EObject targetEObject = req.getTarget();
 		if (false == sourceEObject instanceof Vertex || false == targetEObject instanceof Vertex) {
@@ -84,7 +92,6 @@ public class FinalStateItemSemanticEditPolicy extends UMLBaseItemSemanticEditPol
 		}
 		Vertex source = (Vertex) sourceEObject;
 		Vertex target = (Vertex) targetEObject;
-
 		Region container = (Region) getRelationshipContainer(source, UMLPackage.eINSTANCE.getRegion(), req.getElementType());
 		if (container == null) {
 			return UnexecutableCommand.INSTANCE;
@@ -97,4 +104,19 @@ public class FinalStateItemSemanticEditPolicy extends UMLBaseItemSemanticEditPol
 		}
 		return getMSLWrapper(new TransitionTypeLinkCreateCommand(req, container, source, target));
 	}
+
+	/**
+	 * Returns command to reorient EClass based link. New link target or source
+	 * should be the domain model element associated with this node.
+	 * 
+	 * @generated
+	 */
+	protected Command getReorientRelationshipCommand(ReorientRelationshipRequest req) {
+		switch (getVisualID(req)) {
+		case TransitionEditPart.VISUAL_ID:
+			return getMSLWrapper(new TransitionReorientCommand(req));
+		}
+		return super.getReorientRelationshipCommand(req);
+	}
+
 }

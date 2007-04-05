@@ -10,6 +10,7 @@ import org.eclipse.gmf.runtime.draw2d.ui.figures.ConstrainedToolbarLayout;
 import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.uml2.diagram.statemachine.edit.policies.RegionSubverticesCanonicalEditPolicy;
 import org.eclipse.uml2.diagram.statemachine.edit.policies.RegionSubverticesItemSemanticEditPolicy;
+import org.eclipse.uml2.diagram.statemachine.part.Messages;
 
 /**
  * @generated
@@ -32,7 +33,7 @@ public class RegionSubverticesEditPart extends ShapeCompartmentEditPart {
 	 * @generated
 	 */
 	public String getCompartmentName() {
-		return "subvertices";
+		return Messages.RegionSubverticesEditPart_title;
 	}
 
 	/**
@@ -63,4 +64,5 @@ public class RegionSubverticesEditPart extends ShapeCompartmentEditPart {
 			super.setRatio(ratio);
 		}
 	}
+
 }

@@ -28,7 +28,7 @@ public class StateMachineCreateCommand extends CreateElementCommand {
 	 */
 	protected EClass getEClassToEdit() {
 		return UMLPackage.eINSTANCE.getClass_();
-	};
+	}
 
 	/**
 	 * @generated

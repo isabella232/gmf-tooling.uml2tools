@@ -31,7 +31,7 @@ public class Pseudostate4CreateCommand extends CreateElementCommand {
 	 */
 	protected EClass getEClassToEdit() {
 		return UMLPackage.eINSTANCE.getRegion();
-	};
+	}
 
 	/**
 	 * @generated

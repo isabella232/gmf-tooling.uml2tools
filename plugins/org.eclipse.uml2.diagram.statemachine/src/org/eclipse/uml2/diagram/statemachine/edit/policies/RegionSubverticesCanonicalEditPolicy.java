@@ -31,7 +31,6 @@ import org.eclipse.uml2.uml.Region;
 public class RegionSubverticesCanonicalEditPolicy extends CanonicalEditPolicy {
 
 	/**
-	 *  
 	 * @generated
 	 */
 	protected List getSemanticChildrenList() {
@@ -101,7 +100,26 @@ public class RegionSubverticesCanonicalEditPolicy extends CanonicalEditPolicy {
 	 * @generated
 	 */
 	protected boolean shouldDeleteView(View view) {
-		return view.isSetElement() && view.getElement() != null && view.getElement().eIsProxy();
+		if (view.getEAnnotation("Shortcut") != null) { //$NON-NLS-1$
+			return view.isSetElement() && (view.getElement() == null || view.getElement().eIsProxy());
+		}
+		int nodeVID = UMLVisualIDRegistry.getVisualID(view);
+		switch (nodeVID) {
+		case StateEditPart.VISUAL_ID:
+		case State2EditPart.VISUAL_ID:
+		case State3EditPart.VISUAL_ID:
+		case FinalStateEditPart.VISUAL_ID:
+		case PseudostateEditPart.VISUAL_ID:
+		case Pseudostate2EditPart.VISUAL_ID:
+		case Pseudostate3EditPart.VISUAL_ID:
+		case Pseudostate4EditPart.VISUAL_ID:
+		case Pseudostate5EditPart.VISUAL_ID:
+		case Pseudostate6EditPart.VISUAL_ID:
+		case Pseudostate7EditPart.VISUAL_ID:
+		case Pseudostate8EditPart.VISUAL_ID:
+			return true;
+		}
+		return false;
 	}
 
 	/**

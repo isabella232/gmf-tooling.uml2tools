@@ -31,7 +31,7 @@ public class ConnectionPointReferenceCreateCommand extends CreateElementCommand 
 	 */
 	protected EClass getEClassToEdit() {
 		return UMLPackage.eINSTANCE.getState();
-	};
+	}
 
 	/**
 	 * @generated

@@ -36,28 +36,10 @@ import org.eclipse.emf.ocl.types.util.Types;
 
 import org.eclipse.emf.ocl.utilities.PredefinedType;
 
-import org.eclipse.uml2.diagram.parser.lookup.OCLLookup;
-
 /**
  * @generated 
  */
 public class UMLOCLFactory {
-
-	/**
-	 * @generated
-	 */
-	public static OCLLookup.Expression getOCLLookupExpression(String body, EClassifier context) {
-		final UMLAbstractExpression expression = getExpression(body, context);
-		if (!expression.getStatus().isOK()) {
-			throw new IllegalArgumentException("Bad OCL:" + body);
-		}
-		return new OCLLookup.Expression() {
-
-			public Object evaluate(Object context) {
-				return expression.evaluate(context);
-			}
-		};
-	}
 
 	/**
 	 * @generated 

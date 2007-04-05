@@ -29,7 +29,9 @@ import org.eclipse.gmf.runtime.diagram.ui.editpolicies.CanonicalConnectionEditPo
 
 import org.eclipse.gmf.runtime.diagram.ui.requests.CreateConnectionViewRequest;
 import org.eclipse.gmf.runtime.diagram.ui.requests.RequestConstants;
+
 import org.eclipse.gmf.runtime.emf.core.util.EObjectAdapter;
+
 import org.eclipse.gmf.runtime.emf.type.core.IElementType;
 
 import org.eclipse.gmf.runtime.notation.Diagram;
@@ -70,18 +72,6 @@ import org.eclipse.uml2.uml.UMLPackage;
 public class StateMachineCanonicalEditPolicy extends CanonicalConnectionEditPolicy {
 
 	/**
-	 * We have "dummy" TopLevelNode (with vid = 2004). The only purpose 
-	 * for this node is to be a container for children (imports, etc) 
-	 * of the "main" diagram figure (that one shown as Canvas).
-	 * 
-	 * The code that replace generated SubstituteWithCanvas children associated 
-	 * with vid=2004 with the "main" instance is below.
-	 * 
-	 * Also we have modified the VisualIDRegistry#getNodeVisualID() to return
-	 * VID = 2004, for the case when top-level view is created for the same
-	 * semantic element as the canvas view. 
-	 * 
-	 * @see VisualIDRegistry  
 	 * @generated
 	 */
 	protected List getSemanticChildrenList() {
@@ -94,13 +84,9 @@ public class StateMachineCanonicalEditPolicy extends CanonicalConnectionEditPoli
 			nextValue = (EObject) values.next();
 			nodeVID = UMLVisualIDRegistry.getNodeVisualID(viewObject, nextValue);
 			if (StateMachine2EditPart.VISUAL_ID == nodeVID) {
-				//Don't add generated SubstituteWithCanvas children
-				//result.add(nextValue);
+				result.add(nextValue);
 			}
 		}
-
-		// add "main" figure	
-		result.add(modelObject);
 		return result;
 	}
 
@@ -108,7 +94,15 @@ public class StateMachineCanonicalEditPolicy extends CanonicalConnectionEditPoli
 	 * @generated
 	 */
 	protected boolean shouldDeleteView(View view) {
-		return view.isSetElement() && view.getElement() != null && view.getElement().eIsProxy();
+		if (view.getEAnnotation("Shortcut") != null) { //$NON-NLS-1$
+			return view.isSetElement() && (view.getElement() == null || view.getElement().eIsProxy());
+		}
+		int nodeVID = UMLVisualIDRegistry.getVisualID(view);
+		switch (nodeVID) {
+		case StateMachine2EditPart.VISUAL_ID:
+			return true;
+		}
+		return false;
 	}
 
 	/**
@@ -322,7 +316,7 @@ public class StateMachineCanonicalEditPolicy extends CanonicalConnectionEditPoli
 						structuralFeatureResult = ((Transition) nextValue).getSource();
 						if (structuralFeatureResult instanceof EObject) {
 							EObject src = (EObject) structuralFeatureResult;
-							myLinkDescriptors.add(new LinkDescriptor(src, dst, UMLElementTypes.Transition_4001, linkVID, nextValue));
+							myLinkDescriptors.add(new LinkDescriptor(src, dst, nextValue, UMLElementTypes.Transition_4001, linkVID));
 						}
 					}
 				}
@@ -377,24 +371,35 @@ public class StateMachineCanonicalEditPolicy extends CanonicalConnectionEditPoli
 		/**
 		 * @generated
 		 */
-		protected LinkDescriptor(EObject source, EObject destination, IElementType elementType, int linkVID) {
-			this(source, destination, elementType, linkVID, null);
-		}
-
-		/**
-		 * @generated
-		 */
-		protected LinkDescriptor(EObject source, EObject destination, IElementType elementType, int linkVID, EObject linkElement) {
+		protected LinkDescriptor(EObject source, EObject destination, EObject linkElement, IElementType elementType, int linkVID) {
 			this(source, destination, linkVID);
 			myLinkElement = linkElement;
 			final IElementType elementTypeCopy = elementType;
-			mySemanticAdapter = new EObjectAdapter(myLinkElement) {
+			mySemanticAdapter = new EObjectAdapter(linkElement) {
 
 				public Object getAdapter(Class adapter) {
 					if (IElementType.class.equals(adapter)) {
 						return elementTypeCopy;
 					}
 					return super.getAdapter(adapter);
+				}
+			};
+		}
+
+		/**
+		 * @generated
+		 */
+		protected LinkDescriptor(EObject source, EObject destination, IElementType elementType, int linkVID) {
+			this(source, destination, linkVID);
+			myLinkElement = null;
+			final IElementType elementTypeCopy = elementType;
+			mySemanticAdapter = new IAdaptable() {
+
+				public Object getAdapter(Class adapter) {
+					if (IElementType.class.equals(adapter)) {
+						return elementTypeCopy;
+					}
+					return null;
 				}
 			};
 		}

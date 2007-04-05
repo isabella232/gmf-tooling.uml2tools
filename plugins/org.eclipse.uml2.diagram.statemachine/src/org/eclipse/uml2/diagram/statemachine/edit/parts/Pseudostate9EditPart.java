@@ -57,8 +57,8 @@ public class Pseudostate9EditPart extends BorderedBorderItemEditPart {
 	 * @generated
 	 */
 	protected void createDefaultEditPolicies() {
-		super.createDefaultEditPolicies();
 
+		super.createDefaultEditPolicies();
 		installEditPolicy(EditPolicy.PRIMARY_DRAG_ROLE, getPrimaryDragEditPolicy());
 		installEditPolicy(EditPolicyRoles.SEMANTIC_ROLE, new Pseudostate9ItemSemanticEditPolicy());
 		installEditPolicy(EditPolicy.LAYOUT_ROLE, createLayoutEditPolicy());
@@ -111,7 +111,7 @@ public class Pseudostate9EditPart extends BorderedBorderItemEditPart {
 	 * @generated
 	 */
 	protected void addBorderItemGen(IFigure borderItemContainer, IBorderItemEditPart borderItemEditPart) {
-		if (borderItemEditPart instanceof org.eclipse.uml2.diagram.statemachine.edit.parts.PseudostateNameEditPart) {
+		if (borderItemEditPart instanceof PseudostateNameEditPart) {
 			BorderItemLocator locator = new BorderItemLocator(getMainFigure(), PositionConstants.SOUTH);
 			locator.setBorderItemOffset(new Dimension(-20, -20));
 			borderItemContainer.add(borderItemEditPart.getFigure(), locator);
@@ -190,7 +190,7 @@ public class Pseudostate9EditPart extends BorderedBorderItemEditPart {
 	 * @generated
 	 */
 	public EditPart getPrimaryChildEditPart() {
-		return getChildBySemanticHint(UMLVisualIDRegistry.getType(org.eclipse.uml2.diagram.statemachine.edit.parts.PseudostateNameEditPart.VISUAL_ID));
+		return getChildBySemanticHint(UMLVisualIDRegistry.getType(PseudostateNameEditPart.VISUAL_ID));
 	}
 
 	/**
