@@ -7,6 +7,8 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.gmf.runtime.common.core.command.CommandResult;
 import org.eclipse.gmf.runtime.emf.type.core.commands.EditElementCommand;
 import org.eclipse.gmf.runtime.emf.type.core.requests.ReorientRelationshipRequest;
+import org.eclipse.uml2.diagram.activity.edit.policies.UMLBaseItemSemanticEditPolicy;
+import org.eclipse.uml2.uml.Activity;
 import org.eclipse.uml2.uml.ActivityNode;
 import org.eclipse.uml2.uml.ControlFlow;
 
@@ -48,12 +50,42 @@ public class ControlFlowReorientCommand extends EditElementCommand {
 			return false;
 		}
 		if (reorientDirection == ReorientRelationshipRequest.REORIENT_SOURCE) {
-			return oldEnd instanceof ActivityNode && newEnd instanceof ActivityNode;
+			return canReorientSource();
 		}
 		if (reorientDirection == ReorientRelationshipRequest.REORIENT_TARGET) {
-			return oldEnd instanceof ActivityNode && newEnd instanceof ActivityNode;
+			return canReorientTarget();
 		}
 		return false;
+	}
+
+	/**
+	 * @generated
+	 */
+	protected boolean canReorientSource() {
+		if (!(oldEnd instanceof ActivityNode && newEnd instanceof ActivityNode)) {
+			return false;
+		}
+		ActivityNode target = getLink().getTarget();
+		if (!(getLink().eContainer() instanceof Activity)) {
+			return false;
+		}
+		Activity container = (Activity) getLink().eContainer();
+		return UMLBaseItemSemanticEditPolicy.LinkConstraints.canExistControlFlow_4001(container, getNewSource(), target);
+	}
+
+	/**
+	 * @generated
+	 */
+	protected boolean canReorientTarget() {
+		if (!(oldEnd instanceof ActivityNode && newEnd instanceof ActivityNode)) {
+			return false;
+		}
+		ActivityNode source = getLink().getSource();
+		if (!(getLink().eContainer() instanceof Activity)) {
+			return false;
+		}
+		Activity container = (Activity) getLink().eContainer();
+		return UMLBaseItemSemanticEditPolicy.LinkConstraints.canExistControlFlow_4001(container, source, getNewTarget());
 	}
 
 	/**
@@ -75,25 +107,51 @@ public class ControlFlowReorientCommand extends EditElementCommand {
 	/**
 	 * @generated
 	 */
-	private CommandResult reorientSource() throws ExecutionException {
-		ControlFlow link = (ControlFlow) getElementToEdit();
-		ActivityNode oldSource = (ActivityNode) oldEnd;
-		ActivityNode newSource = (ActivityNode) newEnd;
-
-		link.setSource(newSource);
-
-		return CommandResult.newOKCommandResult(link);
+	protected CommandResult reorientSource() throws ExecutionException {
+		getLink().setSource(getNewSource());
+		return CommandResult.newOKCommandResult(getLink());
 	}
 
 	/**
 	 * @generated
 	 */
-	private CommandResult reorientTarget() throws ExecutionException {
-		ControlFlow link = (ControlFlow) getElementToEdit();
-		ActivityNode oldTarget = (ActivityNode) oldEnd;
-		ActivityNode newTarget = (ActivityNode) newEnd;
+	protected CommandResult reorientTarget() throws ExecutionException {
+		getLink().setTarget(getNewTarget());
+		return CommandResult.newOKCommandResult(getLink());
+	}
 
-		link.setTarget(newTarget);
-		return CommandResult.newOKCommandResult(link);
+	/**
+	 * @generated
+	 */
+	protected ControlFlow getLink() {
+		return (ControlFlow) getElementToEdit();
+	}
+
+	/**
+	 * @generated
+	 */
+	protected ActivityNode getOldSource() {
+		return (ActivityNode) oldEnd;
+	}
+
+	/**
+	 * @generated
+	 */
+	protected ActivityNode getNewSource() {
+		return (ActivityNode) newEnd;
+	}
+
+	/**
+	 * @generated
+	 */
+	protected ActivityNode getOldTarget() {
+		return (ActivityNode) oldEnd;
+	}
+
+	/**
+	 * @generated
+	 */
+	protected ActivityNode getNewTarget() {
+		return (ActivityNode) newEnd;
 	}
 }

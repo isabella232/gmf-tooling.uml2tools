@@ -8,6 +8,7 @@ import org.eclipse.gmf.runtime.common.core.command.CommandResult;
 import org.eclipse.gmf.runtime.emf.type.core.commands.EditElementCommand;
 import org.eclipse.gmf.runtime.emf.type.core.requests.ReorientReferenceRelationshipRequest;
 import org.eclipse.gmf.runtime.emf.type.core.requests.ReorientRelationshipRequest;
+import org.eclipse.uml2.diagram.activity.edit.policies.UMLBaseItemSemanticEditPolicy;
 import org.eclipse.uml2.uml.Action;
 import org.eclipse.uml2.uml.Constraint;
 
@@ -55,12 +56,32 @@ public class ActionLocalPreconditionReorientCommand extends EditElementCommand {
 			return false;
 		}
 		if (reorientDirection == ReorientRelationshipRequest.REORIENT_SOURCE) {
-			return oldEnd instanceof Constraint && newEnd instanceof Action;
+			return canReorientSource();
 		}
 		if (reorientDirection == ReorientRelationshipRequest.REORIENT_TARGET) {
-			return oldEnd instanceof Constraint && newEnd instanceof Constraint;
+			return canReorientTarget();
 		}
 		return false;
+	}
+
+	/**
+	 * @generated
+	 */
+	protected boolean canReorientSource() {
+		if (!(oldEnd instanceof Constraint && newEnd instanceof Action)) {
+			return false;
+		}
+		return UMLBaseItemSemanticEditPolicy.LinkConstraints.canExistActionLocalPrecondition_4003(getNewSource(), getOldTarget());
+	}
+
+	/**
+	 * @generated
+	 */
+	protected boolean canReorientTarget() {
+		if (!(oldEnd instanceof Constraint && newEnd instanceof Constraint)) {
+			return false;
+		}
+		return UMLBaseItemSemanticEditPolicy.LinkConstraints.canExistActionLocalPrecondition_4003(getOldSource(), getNewTarget());
 	}
 
 	/**
@@ -82,26 +103,46 @@ public class ActionLocalPreconditionReorientCommand extends EditElementCommand {
 	/**
 	 * @generated
 	 */
-	private CommandResult reorientSource() throws ExecutionException {
-		Action oldSource = (Action) referenceOwner;
-		Action newSource = (Action) newEnd;
-		Constraint target = (Constraint) oldEnd;
-
-		oldSource.getLocalPreconditions().remove(target);
-		newSource.getLocalPreconditions().add(target);
+	protected CommandResult reorientSource() throws ExecutionException {
+		getOldSource().getLocalPreconditions().remove(getOldTarget());
+		getNewSource().getLocalPreconditions().add(getOldTarget());
 		return CommandResult.newOKCommandResult(referenceOwner);
 	}
 
 	/**
 	 * @generated
 	 */
-	private CommandResult reorientTarget() throws ExecutionException {
-		Action source = (Action) referenceOwner;
-		Constraint oldTarget = (Constraint) oldEnd;
-		Constraint newTarget = (Constraint) newEnd;
-
-		source.getLocalPreconditions().remove(oldTarget);
-		source.getLocalPreconditions().add(newTarget);
+	protected CommandResult reorientTarget() throws ExecutionException {
+		getOldSource().getLocalPreconditions().remove(getOldTarget());
+		getOldSource().getLocalPreconditions().add(getNewTarget());
 		return CommandResult.newOKCommandResult(referenceOwner);
+	}
+
+	/**
+	 * @generated
+	 */
+	protected Action getOldSource() {
+		return (Action) referenceOwner;
+	}
+
+	/**
+	 * @generated
+	 */
+	protected Action getNewSource() {
+		return (Action) newEnd;
+	}
+
+	/**
+	 * @generated
+	 */
+	protected Constraint getOldTarget() {
+		return (Constraint) oldEnd;
+	}
+
+	/**
+	 * @generated
+	 */
+	protected Constraint getNewTarget() {
+		return (Constraint) newEnd;
 	}
 }

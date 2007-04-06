@@ -8,6 +8,7 @@ import org.eclipse.gmf.runtime.common.core.command.CommandResult;
 import org.eclipse.gmf.runtime.emf.type.core.commands.EditElementCommand;
 import org.eclipse.gmf.runtime.emf.type.core.requests.ReorientReferenceRelationshipRequest;
 import org.eclipse.gmf.runtime.emf.type.core.requests.ReorientRelationshipRequest;
+import org.eclipse.uml2.diagram.activity.edit.policies.UMLBaseItemSemanticEditPolicy;
 import org.eclipse.uml2.uml.Behavior;
 import org.eclipse.uml2.uml.ObjectNode;
 
@@ -55,12 +56,32 @@ public class ObjectNodeSelectionReorientCommand extends EditElementCommand {
 			return false;
 		}
 		if (reorientDirection == ReorientRelationshipRequest.REORIENT_SOURCE) {
-			return oldEnd instanceof Behavior && newEnd instanceof ObjectNode;
+			return canReorientSource();
 		}
 		if (reorientDirection == ReorientRelationshipRequest.REORIENT_TARGET) {
-			return oldEnd instanceof Behavior && newEnd instanceof Behavior;
+			return canReorientTarget();
 		}
 		return false;
+	}
+
+	/**
+	 * @generated
+	 */
+	protected boolean canReorientSource() {
+		if (!(oldEnd instanceof Behavior && newEnd instanceof ObjectNode)) {
+			return false;
+		}
+		return UMLBaseItemSemanticEditPolicy.LinkConstraints.canExistObjectNodeSelection_4004(getNewSource(), getOldTarget());
+	}
+
+	/**
+	 * @generated
+	 */
+	protected boolean canReorientTarget() {
+		if (!(oldEnd instanceof Behavior && newEnd instanceof Behavior)) {
+			return false;
+		}
+		return UMLBaseItemSemanticEditPolicy.LinkConstraints.canExistObjectNodeSelection_4004(getOldSource(), getNewTarget());
 	}
 
 	/**
@@ -82,25 +103,45 @@ public class ObjectNodeSelectionReorientCommand extends EditElementCommand {
 	/**
 	 * @generated
 	 */
-	private CommandResult reorientSource() throws ExecutionException {
-		ObjectNode oldSource = (ObjectNode) referenceOwner;
-		ObjectNode newSource = (ObjectNode) newEnd;
-		Behavior target = (Behavior) oldEnd;
-
-		oldSource.setSelection(null);
-		newSource.setSelection(target);
+	protected CommandResult reorientSource() throws ExecutionException {
+		getOldSource().setSelection(null);
+		getNewSource().setSelection(getOldTarget());
 		return CommandResult.newOKCommandResult(referenceOwner);
 	}
 
 	/**
 	 * @generated
 	 */
-	private CommandResult reorientTarget() throws ExecutionException {
-		ObjectNode source = (ObjectNode) referenceOwner;
-		Behavior oldTarget = (Behavior) oldEnd;
-		Behavior newTarget = (Behavior) newEnd;
-
-		source.setSelection(newTarget);
+	protected CommandResult reorientTarget() throws ExecutionException {
+		getOldSource().setSelection(getNewTarget());
 		return CommandResult.newOKCommandResult(referenceOwner);
+	}
+
+	/**
+	 * @generated
+	 */
+	protected ObjectNode getOldSource() {
+		return (ObjectNode) referenceOwner;
+	}
+
+	/**
+	 * @generated
+	 */
+	protected ObjectNode getNewSource() {
+		return (ObjectNode) newEnd;
+	}
+
+	/**
+	 * @generated
+	 */
+	protected Behavior getOldTarget() {
+		return (Behavior) oldEnd;
+	}
+
+	/**
+	 * @generated
+	 */
+	protected Behavior getNewTarget() {
+		return (Behavior) newEnd;
 	}
 }

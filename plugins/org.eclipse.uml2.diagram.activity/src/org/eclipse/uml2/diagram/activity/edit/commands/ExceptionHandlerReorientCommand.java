@@ -7,6 +7,7 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.gmf.runtime.common.core.command.CommandResult;
 import org.eclipse.gmf.runtime.emf.type.core.commands.EditElementCommand;
 import org.eclipse.gmf.runtime.emf.type.core.requests.ReorientRelationshipRequest;
+import org.eclipse.uml2.diagram.activity.edit.policies.UMLBaseItemSemanticEditPolicy;
 import org.eclipse.uml2.uml.ExceptionHandler;
 import org.eclipse.uml2.uml.ExecutableNode;
 
@@ -48,12 +49,42 @@ public class ExceptionHandlerReorientCommand extends EditElementCommand {
 			return false;
 		}
 		if (reorientDirection == ReorientRelationshipRequest.REORIENT_SOURCE) {
-			return oldEnd instanceof ExecutableNode && newEnd instanceof ExecutableNode;
+			return canReorientSource();
 		}
 		if (reorientDirection == ReorientRelationshipRequest.REORIENT_TARGET) {
-			return oldEnd instanceof ExecutableNode && newEnd instanceof ExecutableNode;
+			return canReorientTarget();
 		}
 		return false;
+	}
+
+	/**
+	 * @generated
+	 */
+	protected boolean canReorientSource() {
+		if (!(oldEnd instanceof ExecutableNode && newEnd instanceof ExecutableNode)) {
+			return false;
+		}
+		ExecutableNode target = getLink().getHandlerBody();
+		if (!(getLink().eContainer() instanceof ExecutableNode)) {
+			return false;
+		}
+		ExecutableNode container = (ExecutableNode) getLink().eContainer();
+		return UMLBaseItemSemanticEditPolicy.LinkConstraints.canExistExceptionHandler_4005(container, getNewSource(), target);
+	}
+
+	/**
+	 * @generated
+	 */
+	protected boolean canReorientTarget() {
+		if (!(oldEnd instanceof ExecutableNode && newEnd instanceof ExecutableNode)) {
+			return false;
+		}
+		ExecutableNode source = getLink().getProtectedNode();
+		if (!(getLink().eContainer() instanceof ExecutableNode)) {
+			return false;
+		}
+		ExecutableNode container = (ExecutableNode) getLink().eContainer();
+		return UMLBaseItemSemanticEditPolicy.LinkConstraints.canExistExceptionHandler_4005(container, source, getNewTarget());
 	}
 
 	/**
@@ -75,25 +106,51 @@ public class ExceptionHandlerReorientCommand extends EditElementCommand {
 	/**
 	 * @generated
 	 */
-	private CommandResult reorientSource() throws ExecutionException {
-		ExceptionHandler link = (ExceptionHandler) getElementToEdit();
-		ExecutableNode oldSource = (ExecutableNode) oldEnd;
-		ExecutableNode newSource = (ExecutableNode) newEnd;
-
-		link.setProtectedNode(newSource);
-
-		return CommandResult.newOKCommandResult(link);
+	protected CommandResult reorientSource() throws ExecutionException {
+		getLink().setProtectedNode(getNewSource());
+		return CommandResult.newOKCommandResult(getLink());
 	}
 
 	/**
 	 * @generated
 	 */
-	private CommandResult reorientTarget() throws ExecutionException {
-		ExceptionHandler link = (ExceptionHandler) getElementToEdit();
-		ExecutableNode oldTarget = (ExecutableNode) oldEnd;
-		ExecutableNode newTarget = (ExecutableNode) newEnd;
+	protected CommandResult reorientTarget() throws ExecutionException {
+		getLink().setHandlerBody(getNewTarget());
+		return CommandResult.newOKCommandResult(getLink());
+	}
 
-		link.setHandlerBody(newTarget);
-		return CommandResult.newOKCommandResult(link);
+	/**
+	 * @generated
+	 */
+	protected ExceptionHandler getLink() {
+		return (ExceptionHandler) getElementToEdit();
+	}
+
+	/**
+	 * @generated
+	 */
+	protected ExecutableNode getOldSource() {
+		return (ExecutableNode) oldEnd;
+	}
+
+	/**
+	 * @generated
+	 */
+	protected ExecutableNode getNewSource() {
+		return (ExecutableNode) newEnd;
+	}
+
+	/**
+	 * @generated
+	 */
+	protected ExecutableNode getOldTarget() {
+		return (ExecutableNode) oldEnd;
+	}
+
+	/**
+	 * @generated
+	 */
+	protected ExecutableNode getNewTarget() {
+		return (ExecutableNode) newEnd;
 	}
 }

@@ -287,7 +287,7 @@ public class UMLBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 	/**
 	 * @generated 
 	 */
-	protected static class LinkConstraints {
+	public static class LinkConstraints {
 
 		/**
 		 * @generated 
@@ -328,20 +328,14 @@ public class UMLBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 		 * @generated 
 		 */
 		public static boolean canCreateControlFlow_4001(Activity container, ActivityNode source, ActivityNode target) {
-			if (!evaluate(ControlFlow_4001_SourceExpression, source, target, false)) {
-				return false;
-			}
-			if (!evaluate(ControlFlow_4001_TargetExpression, target, source, true)) {
-				return false;
-			}
-			return true;
+			return canExistControlFlow_4001(container, source, target);
 		}
 
 		/**
 		 * @generated 
 		 */
 		public static boolean canCreateObjectFlow_4002(Activity container, ActivityNode source, ActivityNode target) {
-			return true;
+			return canExistObjectFlow_4002(container, source, target);
 		}
 
 		/**
@@ -353,7 +347,7 @@ public class UMLBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 					return false;
 				}
 			}
-			return true;
+			return canExistActionLocalPrecondition_4003(source, target);
 		}
 
 		/**
@@ -365,13 +359,54 @@ public class UMLBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 					return false;
 				}
 			}
-			return true;
+			return canExistObjectNodeSelection_4004(source, target);
 		}
 
 		/**
 		 * @generated 
 		 */
 		public static boolean canCreateExceptionHandler_4005(ExecutableNode container, ExecutableNode source, ExecutableNode target) {
+			return canExistExceptionHandler_4005(container, source, target);
+		}
+
+		/**
+		 * @generated
+		 */
+		public static boolean canExistControlFlow_4001(Activity container, ActivityNode source, ActivityNode target) {
+			if (!evaluate(ControlFlow_4001_SourceExpression, source, target, false)) {
+				return false;
+			}
+			if (!evaluate(ControlFlow_4001_TargetExpression, target, source, true)) {
+				return false;
+			}
+			return true;
+		}
+
+		/**
+		 * @generated
+		 */
+		public static boolean canExistObjectFlow_4002(Activity container, ActivityNode source, ActivityNode target) {
+			return true;
+		}
+
+		/**
+		 * @generated
+		 */
+		public static boolean canExistActionLocalPrecondition_4003(Action source, Constraint target) {
+			return true;
+		}
+
+		/**
+		 * @generated
+		 */
+		public static boolean canExistObjectNodeSelection_4004(ObjectNode source, Behavior target) {
+			return true;
+		}
+
+		/**
+		 * @generated
+		 */
+		public static boolean canExistExceptionHandler_4005(ExecutableNode container, ExecutableNode source, ExecutableNode target) {
 			return true;
 		}
 

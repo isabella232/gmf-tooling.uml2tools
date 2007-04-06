@@ -55,7 +55,7 @@ public class UMLNavigatorLinkHelper implements ILinkHelper {
 			return StructuredSelection.EMPTY;
 		}
 		Diagram diagram = document.getDiagram();
-		IFile file = diagram == null ? null : WorkspaceSynchronizer.getFile(diagram.eResource());
+		IFile file = WorkspaceSynchronizer.getFile(diagram.eResource());
 		if (file != null) {
 			UMLNavigatorItem item = new UMLNavigatorItem(diagram, file, false);
 			return new StructuredSelection(item);
