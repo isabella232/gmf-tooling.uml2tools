@@ -676,7 +676,7 @@ public class UMLVisualIDRegistry {
 		/**
 		 * @generated	
 		 */
-		boolean matches(EObject object) {
+		boolean matches(Object object) {
 			Object result = condition.evaluate(object);
 			return result instanceof Boolean && ((Boolean) result).booleanValue();
 		}

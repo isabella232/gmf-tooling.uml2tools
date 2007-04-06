@@ -12,6 +12,7 @@ import org.eclipse.jface.dialogs.MessageDialog;
 import org.eclipse.jface.viewers.ISelection;
 import org.eclipse.jface.viewers.IStructuredSelection;
 import org.eclipse.jface.wizard.Wizard;
+import org.eclipse.osgi.util.NLS;
 import org.eclipse.swt.widgets.Shell;
 import org.eclipse.ui.IObjectActionDelegate;
 import org.eclipse.ui.IWorkbenchPart;
@@ -71,14 +72,14 @@ public class UMLInitDiagramFileAction implements IObjectActionDelegate {
 			Resource resource = resourceSet.getResource(domainModelURI, true);
 			diagramRoot = (EObject) resource.getContents().get(0);
 		} catch (WrappedException ex) {
-			UMLDiagramEditorPlugin.getInstance().logError("Unable to load resource: " + domainModelURI, ex);
+			UMLDiagramEditorPlugin.getInstance().logError("Unable to load resource: " + domainModelURI, ex); //$NON-NLS-1$
 		}
 		if (diagramRoot == null) {
-			MessageDialog.openError(getShell(), "Error", "Model file loading failed");
+			MessageDialog.openError(getShell(), Messages.UMLInitDiagramFileAction_InitDiagramFileResourceErrorDialogTitle, Messages.UMLInitDiagramFileAction_InitDiagramFileResourceErrorDialogMessage);
 			return;
 		}
 		Wizard wizard = new UMLNewDiagramFileWizard(domainModelURI, diagramRoot, editingDomain);
-		wizard.setWindowTitle("Initialize new " + ProfileEditPart.MODEL_ID + " diagram file");
+		wizard.setWindowTitle(NLS.bind(Messages.UMLInitDiagramFileAction_InitDiagramFileWizardTitle, ProfileEditPart.MODEL_ID));
 		UMLDiagramEditorUtil.runWizard(getShell(), wizard, "InitDiagramFile"); //$NON-NLS-1$
 	}
 }
