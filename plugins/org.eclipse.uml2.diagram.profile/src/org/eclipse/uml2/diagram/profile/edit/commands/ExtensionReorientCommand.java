@@ -13,6 +13,7 @@ import org.eclipse.uml2.uml.Classifier;
 import org.eclipse.uml2.uml.ElementImport;
 import org.eclipse.uml2.uml.Extension;
 import org.eclipse.uml2.uml.ExtensionEnd;
+import org.eclipse.uml2.uml.Package;
 import org.eclipse.uml2.uml.Profile;
 import org.eclipse.uml2.uml.Property;
 import org.eclipse.uml2.uml.Stereotype;
@@ -72,7 +73,7 @@ public class ExtensionReorientCommand extends EditElementCommand {
 			return false;
 		}
 		Stereotype source = (Stereotype) newEnd;
-		Profile profile = (Profile)getLink().eContainer();
+		Profile profile = (Profile) getLink().eContainer();
 		Classifier metaclass = getLink().getMetaclass();
 		ElementImport target = profile.getElementImport(metaclass, false);
 		return UMLBaseItemSemanticEditPolicy.LinkConstraints.canExistExtension_4002(profile, source, target);
@@ -88,12 +89,11 @@ public class ExtensionReorientCommand extends EditElementCommand {
 		if (!(getLink().eContainer() instanceof Profile)) {
 			return false;
 		}
-		Profile profile = (Profile)getLink().eContainer();
+		Profile profile = (Profile) getLink().eContainer();
 		Stereotype source = getLink().getStereotype();
 		ElementImport target = (ElementImport) newEnd;
 		return UMLBaseItemSemanticEditPolicy.LinkConstraints.canExistExtension_4002(profile, source, target);
 	}
-	
 
 	/**
 	 * @generated
@@ -118,7 +118,7 @@ public class ExtensionReorientCommand extends EditElementCommand {
 		Extension extension = getLink();
 		Stereotype oldSource = (Stereotype) oldEnd;
 		Stereotype newStereotype = (Stereotype) newEnd;
-		
+
 		replaceStereotype(extension, newStereotype);
 
 		return CommandResult.newOKCommandResult(extension);
@@ -132,61 +132,57 @@ public class ExtensionReorientCommand extends EditElementCommand {
 		ElementImport oldTarget = (ElementImport) oldEnd;
 		ElementImport newTarget = (ElementImport) newEnd;
 
-		org.eclipse.uml2.uml.Class newMetaclass = (org.eclipse.uml2.uml.Class)newTarget.getImportedElement();
+		org.eclipse.uml2.uml.Class newMetaclass = (org.eclipse.uml2.uml.Class) newTarget.getImportedElement();
 		replaceMetaclass(extension, newMetaclass);
 
 		return CommandResult.newOKCommandResult(extension);
 	}
-	
+
 	/**
 	 * @NOT-generated
 	 */
-	private void replaceMetaclass(Extension extension, org.eclipse.uml2.uml.Class newMetaclass){
+	private void replaceMetaclass(Extension extension, org.eclipse.uml2.uml.Class newMetaclass) {
 		Stereotype stereotype = extension.getStereotype();
 		if (stereotype == null) {
 			return;
 		}
 		String newExtensionName = newMetaclass.getName() + "_" + stereotype.getName();
 		extension.setName(newExtensionName);
-		
+
 		Property metaclassEnd = extension.metaclassEnd();
 		String newPropertyName = Extension.METACLASS_ROLE_PREFIX + newMetaclass.getName();
 		if (metaclassEnd == null) {
-			Property newMetaclassEnd = stereotype.createOwnedAttribute(
-					newPropertyName, newMetaclass);
+			Property newMetaclassEnd = stereotype.createOwnedAttribute(newPropertyName, newMetaclass);
 		} else {
 			metaclassEnd.setName(newPropertyName);
 			metaclassEnd.setType(newMetaclass);
 		}
 	}
-	
+
 	/**
 	 * @NOT-generated
 	 */
-	private void replaceStereotype(Extension extension, Stereotype newStereotype){
+	private void replaceStereotype(Extension extension, Stereotype newStereotype) {
 		org.eclipse.uml2.uml.Class metaclass = extension.getMetaclass();
 		if (metaclass == null) {
 			return;
 		}
-		
+
 		Property metaclassEnd = extension.metaclassEnd();
 		if (metaclassEnd != null) {
 			metaclassEnd.destroy();
 		}
-		Property newMetaclassEnd = newStereotype.createOwnedAttribute(
-				Extension.METACLASS_ROLE_PREFIX + metaclass.getName(), metaclass);
+		Property newMetaclassEnd = newStereotype.createOwnedAttribute(Extension.METACLASS_ROLE_PREFIX + metaclass.getName(), metaclass);
 		newMetaclassEnd.setAssociation(extension);
 
 		String newExtensionName = metaclass.getName() + "_" + newStereotype.getName();
-		extension.setName(newExtensionName);		
-		
+		extension.setName(newExtensionName);
+
 		Property stereotypeEnd = extension.getStereotypeEnd();
 		String stereotypeEndName = Extension.STEREOTYPE_ROLE_PREFIX + newStereotype.getName();
 		if (stereotypeEnd == null) {
-			ExtensionEnd extensionEnd = (ExtensionEnd) extension.createOwnedEnd(
-					stereotypeEndName, newStereotype,
-					UMLPackage.Literals.EXTENSION_END);
-				extensionEnd.setAggregation(AggregationKind.COMPOSITE_LITERAL);
+			ExtensionEnd extensionEnd = (ExtensionEnd) extension.createOwnedEnd(stereotypeEndName, newStereotype, UMLPackage.Literals.EXTENSION_END);
+			extensionEnd.setAggregation(AggregationKind.COMPOSITE_LITERAL);
 		} else {
 			stereotypeEnd.setType(newStereotype);
 			stereotypeEnd.setName(stereotypeEndName);
