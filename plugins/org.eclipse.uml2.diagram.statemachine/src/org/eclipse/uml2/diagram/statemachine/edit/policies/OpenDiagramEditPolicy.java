@@ -55,6 +55,7 @@ import org.eclipse.ui.PlatformUI;
 import org.eclipse.ui.actions.WorkspaceModifyOperation;
 import org.eclipse.uml2.diagram.statemachine.part.Messages;
 import org.eclipse.uml2.diagram.statemachine.part.UMLDiagramEditorPlugin;
+import org.eclipse.uml2.diagram.statemachine.part.UMLDiagramEditorUtil;
 import org.eclipse.uml2.uml.State;
 
 /**
@@ -161,8 +162,8 @@ public class OpenDiagramEditPolicy extends OpenEditPolicy {
 						try {
 							for (Iterator it = diagramFacet.eResource().getResourceSet().getResources().iterator(); it.hasNext();) {
 								Resource nextResource = (Resource) it.next();
-								if (nextResource.isLoaded() && (!nextResource.isTrackingModification() || nextResource.isModified())) {
-									nextResource.save(Collections.EMPTY_MAP);
+								if (nextResource.isLoaded()) {
+									nextResource.save(UMLDiagramEditorUtil.getSaveOptions());
 								}
 							}
 						} catch (IOException ex) {

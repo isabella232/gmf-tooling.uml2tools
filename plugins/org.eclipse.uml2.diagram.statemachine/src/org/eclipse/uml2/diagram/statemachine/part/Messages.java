@@ -23,12 +23,142 @@ public class Messages extends NLS {
 	/**
 	 * @generated
 	 */
-	public static String DocumentProvider_isModifiable;
+	public static String UMLDiagramEditorUtil_OpenModelResourceErrorDialogTitle;
 
 	/**
 	 * @generated
 	 */
-	public static String DocumentProvider_handleElementContentChanged;
+	public static String UMLDiagramEditorUtil_OpenModelResourceErrorDialogMessage;
+
+	/**
+	 * @generated
+	 */
+	public static String UMLDiagramEditorUtil_CreateDiagramProgressTask;
+
+	/**
+	 * @generated
+	 */
+	public static String UMLDiagramEditorUtil_CreateDiagramCommandLabel;
+
+	/**
+	 * @generated
+	 */
+	public static String UMLDocumentProvider_isModifiable;
+
+	/**
+	 * @generated
+	 */
+	public static String UMLDocumentProvider_handleElementContentChanged;
+
+	/**
+	 * @generated
+	 */
+	public static String UMLDocumentProvider_IncorrectInputError;
+
+	/**
+	 * @generated
+	 */
+	public static String UMLDocumentProvider_UnableToLoadResourceError;
+
+	/**
+	 * @generated
+	 */
+	public static String UMLDocumentProvider_NoDiagramInResourceError;
+
+	/**
+	 * @generated
+	 */
+	public static String UMLDocumentProvider_DiagramLoadingError;
+
+	/**
+	 * @generated
+	 */
+	public static String UMLDocumentProvider_UnsynchronizedFileSaveError;
+
+	/**
+	 * @generated
+	 */
+	public static String UMLDocumentProvider_SaveDiagramTask;
+
+	/**
+	 * @generated
+	 */
+	public static String UMLDocumentProvider_SaveNextResourceTask;
+
+	/**
+	 * @generated
+	 */
+	public static String UMLInitDiagramFileAction_InitDiagramFileResourceErrorDialogTitle;
+
+	/**
+	 * @generated
+	 */
+	public static String UMLInitDiagramFileAction_InitDiagramFileResourceErrorDialogMessage;
+
+	/**
+	 * @generated
+	 */
+	public static String UMLInitDiagramFileAction_InitDiagramFileWizardTitle;
+
+	/**
+	 * @generated
+	 */
+	public static String UMLInitDiagramFileAction_OpenModelFileDialogTitle;
+
+	/**
+	 * @generated
+	 */
+	public static String UMLNewDiagramFileWizard_CreationPageName;
+
+	/**
+	 * @generated
+	 */
+	public static String UMLNewDiagramFileWizard_CreationPageTitle;
+
+	/**
+	 * @generated
+	 */
+	public static String UMLNewDiagramFileWizard_CreationPageDescription;
+
+	/**
+	 * @generated
+	 */
+	public static String UMLNewDiagramFileWizard_RootSelectionPageName;
+
+	/**
+	 * @generated
+	 */
+	public static String UMLNewDiagramFileWizard_RootSelectionPageTitle;
+
+	/**
+	 * @generated
+	 */
+	public static String UMLNewDiagramFileWizard_RootSelectionPageDescription;
+
+	/**
+	 * @generated
+	 */
+	public static String UMLNewDiagramFileWizard_RootSelectionPageSelectionTitle;
+
+	/**
+	 * @generated
+	 */
+	public static String UMLNewDiagramFileWizard_RootSelectionPageNoSelectionMessage;
+
+	/**
+	 * @generated
+	 */
+	public static String UMLNewDiagramFileWizard_RootSelectionPageInvalidSelectionMessage;
+
+	/**
+	 * @generated
+	 */
+	public static String UMLNewDiagramFileWizard_InitDiagramCommand;
+
+	/**
+	 * @generated
+	 */
+	public static String UMLNewDiagramFileWizard_IncorrectRootError;
 
 	/**
 	 * @generated

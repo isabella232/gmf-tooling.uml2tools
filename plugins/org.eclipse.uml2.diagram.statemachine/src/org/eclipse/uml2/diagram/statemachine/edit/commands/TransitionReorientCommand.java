@@ -65,13 +65,12 @@ public class TransitionReorientCommand extends EditElementCommand {
 		if (!(oldEnd instanceof Vertex && newEnd instanceof Vertex)) {
 			return false;
 		}
-		Vertex source = (Vertex) newEnd;
 		Vertex target = getLink().getTarget();
 		if (!(getLink().eContainer() instanceof Region)) {
 			return false;
 		}
 		Region container = (Region) getLink().eContainer();
-		return UMLBaseItemSemanticEditPolicy.LinkConstraints.canExistTransition_4001(container, source, target);
+		return UMLBaseItemSemanticEditPolicy.LinkConstraints.canExistTransition_4001(container, getNewSource(), target);
 	}
 
 	/**
@@ -82,12 +81,11 @@ public class TransitionReorientCommand extends EditElementCommand {
 			return false;
 		}
 		Vertex source = getLink().getSource();
-		Vertex target = (Vertex) newEnd;
 		if (!(getLink().eContainer() instanceof Region)) {
 			return false;
 		}
 		Region container = (Region) getLink().eContainer();
-		return UMLBaseItemSemanticEditPolicy.LinkConstraints.canExistTransition_4001(container, source, target);
+		return UMLBaseItemSemanticEditPolicy.LinkConstraints.canExistTransition_4001(container, source, getNewTarget());
 	}
 
 	/**

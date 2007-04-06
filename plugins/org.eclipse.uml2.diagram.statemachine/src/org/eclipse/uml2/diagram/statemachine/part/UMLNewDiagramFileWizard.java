@@ -26,6 +26,7 @@ import org.eclipse.gmf.runtime.emf.core.util.EObjectAdapter;
 import org.eclipse.gmf.runtime.notation.Diagram;
 import org.eclipse.jface.viewers.StructuredSelection;
 import org.eclipse.jface.wizard.Wizard;
+import org.eclipse.osgi.util.NLS;
 import org.eclipse.ui.PartInitException;
 import org.eclipse.ui.dialogs.WizardNewFileCreationPage;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.StateMachineEditPart;
@@ -58,9 +59,9 @@ public class UMLNewDiagramFileWizard extends Wizard {
 		assert diagramRoot != null : "Doagram root element must be specified"; //$NON-NLS-1$
 		assert editingDomain != null : "Editing domain must be specified"; //$NON-NLS-1$
 
-		myFileCreationPage = new WizardNewFileCreationPage("Initialize new diagram file", StructuredSelection.EMPTY);
-		myFileCreationPage.setTitle("Diagram file");
-		myFileCreationPage.setDescription("Create new diagram based on " + StateMachineEditPart.MODEL_ID + " model content");
+		myFileCreationPage = new WizardNewFileCreationPage(Messages.UMLNewDiagramFileWizard_CreationPageName, StructuredSelection.EMPTY);
+		myFileCreationPage.setTitle(Messages.UMLNewDiagramFileWizard_CreationPageTitle);
+		myFileCreationPage.setDescription(NLS.bind(Messages.UMLNewDiagramFileWizard_CreationPageDescription, StateMachineEditPart.MODEL_ID));
 		IPath filePath;
 		String fileName = domainModelURI.trimFileExtension().lastSegment();
 		if (domainModelURI.isPlatformResource()) {
@@ -69,14 +70,14 @@ public class UMLNewDiagramFileWizard extends Wizard {
 			filePath = new Path(domainModelURI.trimSegments(1).toFileString());
 		} else {
 			// TODO : use some default path
-			throw new IllegalArgumentException("Unsupported URI: " + domainModelURI);
+			throw new IllegalArgumentException("Unsupported URI: " + domainModelURI); //$NON-NLS-1$
 		}
 		myFileCreationPage.setContainerFullPath(filePath);
 		myFileCreationPage.setFileName(UMLDiagramEditorUtil.getUniqueFileName(filePath, fileName, "umlstatemachine_diagram")); //$NON-NLS-1$
 
-		diagramRootElementSelectionPage = new DiagramRootElementSelectionPage("Select diagram root element");
-		diagramRootElementSelectionPage.setTitle("Diagram root element");
-		diagramRootElementSelectionPage.setDescription("Select semantic model element to be depicted on diagram");
+		diagramRootElementSelectionPage = new DiagramRootElementSelectionPage(Messages.UMLNewDiagramFileWizard_RootSelectionPageName);
+		diagramRootElementSelectionPage.setTitle(Messages.UMLNewDiagramFileWizard_RootSelectionPageTitle);
+		diagramRootElementSelectionPage.setDescription(Messages.UMLNewDiagramFileWizard_RootSelectionPageDescription);
 		diagramRootElementSelectionPage.setModelElement(diagramRoot);
 
 		myEditingDomain = editingDomain;
@@ -96,21 +97,17 @@ public class UMLNewDiagramFileWizard extends Wizard {
 	public boolean performFinish() {
 		List affectedFiles = new LinkedList();
 		IFile diagramFile = myFileCreationPage.createNewFile();
-		try {
-			diagramFile.setCharset("UTF-8", new NullProgressMonitor()); //$NON-NLS-1$
-		} catch (CoreException e) {
-			UMLDiagramEditorPlugin.getInstance().logError("Unable to set charset for diagram file", e); //$NON-NLS-1$
-		}
+		UMLDiagramEditorUtil.setCharset(diagramFile);
 		affectedFiles.add(diagramFile);
 		org.eclipse.emf.common.util.URI diagramModelURI = org.eclipse.emf.common.util.URI.createPlatformResourceURI(diagramFile.getFullPath().toString(), true);
 		ResourceSet resourceSet = myEditingDomain.getResourceSet();
 		final Resource diagramResource = resourceSet.createResource(diagramModelURI);
-		AbstractTransactionalCommand command = new AbstractTransactionalCommand(myEditingDomain, "Initializing diagram contents", affectedFiles) { //$NON-NLS-1$
+		AbstractTransactionalCommand command = new AbstractTransactionalCommand(myEditingDomain, Messages.UMLNewDiagramFileWizard_InitDiagramCommand, affectedFiles) {
 
 			protected CommandResult doExecuteWithResult(IProgressMonitor monitor, IAdaptable info) throws ExecutionException {
 				int diagramVID = UMLVisualIDRegistry.getDiagramVisualID(diagramRootElementSelectionPage.getModelElement());
 				if (diagramVID != StateMachineEditPart.VISUAL_ID) {
-					return CommandResult.newErrorCommandResult("Incorrect model object stored as a root resource object"); //$NON-NLS-1$
+					return CommandResult.newErrorCommandResult(Messages.UMLNewDiagramFileWizard_IncorrectRootError);
 				}
 				Diagram diagram = ViewService.createDiagram(diagramRootElementSelectionPage.getModelElement(), StateMachineEditPart.MODEL_ID, UMLDiagramEditorPlugin.DIAGRAM_PREFERENCES_HINT);
 				diagramResource.getContents().add(diagram);
@@ -119,7 +116,7 @@ public class UMLNewDiagramFileWizard extends Wizard {
 		};
 		try {
 			OperationHistoryFactory.getOperationHistory().execute(command, new NullProgressMonitor(), null);
-			diagramResource.save(Collections.EMPTY_MAP);
+			diagramResource.save(UMLDiagramEditorUtil.getSaveOptions());
 			UMLDiagramEditorUtil.openDiagram(diagramResource);
 		} catch (ExecutionException e) {
 			UMLDiagramEditorPlugin.getInstance().logError("Unable to create model and diagram", e); //$NON-NLS-1$
@@ -147,7 +144,7 @@ public class UMLNewDiagramFileWizard extends Wizard {
 		 * @generated
 		 */
 		protected String getSelectionTitle() {
-			return "Select diagram root element:";
+			return Messages.UMLNewDiagramFileWizard_RootSelectionPageSelectionTitle;
 		}
 
 		/**
@@ -155,12 +152,12 @@ public class UMLNewDiagramFileWizard extends Wizard {
 		 */
 		protected boolean validatePage() {
 			if (selectedModelElement == null) {
-				setErrorMessage("Diagram root element is not selected");
+				setErrorMessage(Messages.UMLNewDiagramFileWizard_RootSelectionPageNoSelectionMessage);
 				return false;
 			}
 			boolean result = ViewService.getInstance().provides(
 					new CreateDiagramViewOperation(new EObjectAdapter(selectedModelElement), StateMachineEditPart.MODEL_ID, UMLDiagramEditorPlugin.DIAGRAM_PREFERENCES_HINT));
-			setErrorMessage(result ? null : "Invalid diagram root element is selected");
+			setErrorMessage(result ? null : Messages.UMLNewDiagramFileWizard_RootSelectionPageInvalidSelectionMessage);
 			return result;
 		}
 	}

@@ -480,6 +480,11 @@
             xsi:type="gmfgen:DefaultSizeAttributes"
             width="23"
             height="23"/>
+        <attributes
+            xsi:type="gmfgen:StyleAttributes"
+            fixedForeground="true"/>
+        <attributes
+            xsi:type="gmfgen:ResizeConstraints"/>
         <requiredPluginIDs>org.eclipse.draw2d</requiredPluginIDs>
         <requiredPluginIDs>org.eclipse.uml2.diagram.common</requiredPluginIDs>
       </viewmap>
@@ -520,6 +525,11 @@
             xsi:type="gmfgen:DefaultSizeAttributes"
             width="15"
             height="15"/>
+        <attributes
+            xsi:type="gmfgen:StyleAttributes"
+            fixedBackground="true"/>
+        <attributes
+            xsi:type="gmfgen:ResizeConstraints"/>
         <requiredPluginIDs>org.eclipse.draw2d</requiredPluginIDs>
         <requiredPluginIDs>org.eclipse.uml2.diagram.common</requiredPluginIDs>
       </viewmap>
@@ -665,6 +675,9 @@
             xsi:type="gmfgen:DefaultSizeAttributes"
             width="4"
             height="50"/>
+        <attributes
+            xsi:type="gmfgen:StyleAttributes"
+            fixedBackground="true"/>
         <requiredPluginIDs>org.eclipse.draw2d</requiredPluginIDs>
         <requiredPluginIDs>org.eclipse.uml2.diagram.common</requiredPluginIDs>
       </viewmap>
@@ -716,6 +729,9 @@
             xsi:type="gmfgen:DefaultSizeAttributes"
             width="4"
             height="50"/>
+        <attributes
+            xsi:type="gmfgen:StyleAttributes"
+            fixedBackground="true"/>
         <requiredPluginIDs>org.eclipse.draw2d</requiredPluginIDs>
         <requiredPluginIDs>org.eclipse.uml2.diagram.common</requiredPluginIDs>
       </viewmap>
@@ -766,6 +782,9 @@
             xsi:type="gmfgen:DefaultSizeAttributes"
             width="15"
             height="15"/>
+        <attributes
+            xsi:type="gmfgen:StyleAttributes"
+            fixedBackground="true"/>
         <requiredPluginIDs>org.eclipse.draw2d</requiredPluginIDs>
         <requiredPluginIDs>org.eclipse.gmf.runtime.draw2d.ui</requiredPluginIDs>
       </viewmap>
