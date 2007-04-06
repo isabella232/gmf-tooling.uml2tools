@@ -91,7 +91,8 @@ public class ConstraintItemSemanticEditPolicy extends UMLBaseItemSemanticEditPol
 	}
 
 	/**
-	 * @generated
+	 * @see #181478
+	 * @generated NOT
 	 */
 	protected Command getCreateCompleteIncomingActionLocalPrecondition_4003Command(CreateRelationshipRequest req) {
 		EObject sourceEObject = req.getSource();
