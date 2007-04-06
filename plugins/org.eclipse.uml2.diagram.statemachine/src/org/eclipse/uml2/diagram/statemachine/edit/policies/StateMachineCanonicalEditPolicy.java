@@ -84,9 +84,13 @@ public class StateMachineCanonicalEditPolicy extends CanonicalConnectionEditPoli
 			nextValue = (EObject) values.next();
 			nodeVID = UMLVisualIDRegistry.getNodeVisualID(viewObject, nextValue);
 			if (StateMachine2EditPart.VISUAL_ID == nodeVID) {
-				result.add(nextValue);
+				//Don't add generated SubstituteWithCanvas children
+				//result.add(nextValue);
 			}
 		}
+
+		// add "main" figure	
+		result.add(modelObject);
 		return result;
 	}
 
@@ -97,6 +101,7 @@ public class StateMachineCanonicalEditPolicy extends CanonicalConnectionEditPoli
 		if (view.getEAnnotation("Shortcut") != null) { //$NON-NLS-1$
 			return view.isSetElement() && (view.getElement() == null || view.getElement().eIsProxy());
 		}
+
 		int nodeVID = UMLVisualIDRegistry.getVisualID(view);
 		switch (nodeVID) {
 		case StateMachine2EditPart.VISUAL_ID:

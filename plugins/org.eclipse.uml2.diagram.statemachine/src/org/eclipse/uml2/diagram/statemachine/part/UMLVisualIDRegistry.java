@@ -167,6 +167,9 @@ public class UMLVisualIDRegistry {
 				return -1;
 			}
 		}
+		if (containerView instanceof Diagram && domainElement != null && domainElement.equals(containerView.getElement())) {
+			return StateMachine2EditPart.VISUAL_ID;
+		}
 		int nodeVisualID = semanticHint != null ? getVisualID(semanticHint) : -1;
 		switch (containerVisualID) {
 		case StateMachine2EditPart.VISUAL_ID:

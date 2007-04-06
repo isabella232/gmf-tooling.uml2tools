@@ -7,7 +7,7 @@
     modelID="UMLStateMachine"
     diagramFileExtension="umlstatemachine_diagram"
     dynamicTemplates="true"
-    templateDirectory="/com.borland.mdt.uml2.diagram/dynamic-templates/codegen">
+    templateDirectory="/org.eclipse.uml2.diagram.def/dynamic-templates/codegen">
   <diagram
       visualID="1000"
       editPartClassName="StateMachineEditPart"

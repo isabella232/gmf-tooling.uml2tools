@@ -61,6 +61,7 @@ public class StateMachine2CanonicalEditPolicy extends CanonicalEditPolicy {
 		if (view.getEAnnotation("Shortcut") != null) { //$NON-NLS-1$
 			return view.isSetElement() && (view.getElement() == null || view.getElement().eIsProxy());
 		}
+
 		int nodeVID = UMLVisualIDRegistry.getVisualID(view);
 		switch (nodeVID) {
 		case RegionEditPart.VISUAL_ID:

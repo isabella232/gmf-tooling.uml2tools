@@ -116,19 +116,16 @@ public class UMLDiagramEditorUtil {
 		if (fileName == null || fileName.trim().length() == 0) {
 			fileName = "default"; //$NON-NLS-1$
 		}
-		IPath filePath = containerFullPath.append(fileName);
-		if (extension != null && !extension.equals(filePath.getFileExtension())) {
-			filePath = filePath.addFileExtension(extension);
+
+		extension = "." + extension;
+		if (fileName.endsWith(extension)) {
+			fileName = fileName.substring(0, fileName.length() - extension.length());
 		}
-		extension = filePath.getFileExtension();
-		fileName = filePath.removeFileExtension().lastSegment();
 		int i = 1;
+		IPath filePath = containerFullPath.append(fileName + extension);
 		while (ResourcesPlugin.getWorkspace().getRoot().exists(filePath)) {
 			i++;
-			filePath = containerFullPath.append(fileName + i);
-			if (extension != null) {
-				filePath = filePath.addFileExtension(extension);
-			}
+			filePath = containerFullPath.append(fileName + i + extension);
 		}
 		return filePath.lastSegment();
 	}
@@ -394,4 +391,18 @@ public class UMLDiagramEditorUtil {
 			return element2ViewMap;
 		}
 	} //LazyElement2ViewMap	
+
+	/**
+	 * @generated
+	 */
+	public static IFile getFile(org.eclipse.emf.common.util.URI uri) {
+		if (uri.toString().startsWith("platform:/resource")) { //$NON-NLS-1$
+			String path = uri.toString().substring("platform:/resource".length()); //$NON-NLS-1$
+			IResource workspaceResource = ResourcesPlugin.getWorkspace().getRoot().findMember(new Path(path));
+			if (workspaceResource instanceof IFile) {
+				return (IFile) workspaceResource;
+			}
+		}
+		return null;
+	}
 }
