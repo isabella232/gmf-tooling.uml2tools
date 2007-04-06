@@ -62,7 +62,7 @@ public class StateMachineDiagramTestCase extends TestCase {
 	protected void setUp() throws Exception {
 		createProject();
 
-		createDiagram();
+		diagramResource = createDiagram();
 		openDiagram();
 
 		flushEventQueue();
@@ -73,10 +73,24 @@ public class StateMachineDiagramTestCase extends TestCase {
 
 		closeDiagram();
         
-        resource.unload();
-        resource = null;
+        diagramResource.unload();
+        diagramResource = null;
 
 		closeProject();		
+	}
+
+	protected Resource createDiagram() throws Exception {
+		return UMLDiagramEditorUtil.createDiagram(getDiagramModelURI(), getDomainModelURI(), new NullProgressMonitor());
+	}
+	
+	protected URI getDiagramModelURI() {
+		String projectPath = getProject().getFullPath().toString();
+		return URI.createPlatformResourceURI(projectPath + "/test.umlstatemachine_diagram", false); //$NON-NLS-1$
+	}
+	
+	protected URI getDomainModelURI() {
+		String projectPath = getProject().getFullPath().toString();
+		return URI.createPlatformResourceURI(projectPath + "/test.uml", false); //$NON-NLS-1$
 	}
 
 	private void createProject() throws Exception {
@@ -109,17 +123,8 @@ public class StateMachineDiagramTestCase extends TestCase {
 		return project;
 	}
 
-	private Resource createDiagram() throws Exception {
-		String projectPath = getProject().getFullPath().toString();
-		URI diagramModelURI = URI.createPlatformResourceURI(projectPath + "/test.umlstatemachine_diagram", false); //$NON-NLS-1$
-		URI domainModelURI = URI.createPlatformResourceURI(projectPath + "/test.uml", false); //$NON-NLS-1$
-		
-		resource = UMLDiagramEditorUtil.createDiagram(diagramModelURI, domainModelURI, new NullProgressMonitor()); 
-		return resource;
-	}
-	
 	private void openDiagram() throws PartInitException {
-        String path = resource.getURI().toPlatformString(true);
+        String path = diagramResource.getURI().toPlatformString(true);
         IResource workspaceResource = ResourcesPlugin.getWorkspace().getRoot().findMember(new Path(path));
         if (workspaceResource instanceof IFile)
         {
@@ -150,6 +155,6 @@ public class StateMachineDiagramTestCase extends TestCase {
 	}
 
 	private IProject project;
-	private Resource resource;
+	private Resource diagramResource;
 	private IDiagramWorkbenchPart diagramWorkbenchPart;
 }
