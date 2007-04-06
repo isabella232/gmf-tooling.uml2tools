@@ -35,6 +35,7 @@ import org.eclipse.emf.ocl.query.QueryFactory;
 import org.eclipse.emf.ocl.types.util.Types;
 
 import org.eclipse.emf.ocl.utilities.PredefinedType;
+
 import org.eclipse.uml2.diagram.parser.lookup.OCLLookup;
 
 /**

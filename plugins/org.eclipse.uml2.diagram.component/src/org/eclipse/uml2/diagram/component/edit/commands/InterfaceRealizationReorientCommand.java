@@ -65,13 +65,12 @@ public class InterfaceRealizationReorientCommand extends EditElementCommand {
 		if (!(oldEnd instanceof BehavioredClassifier && newEnd instanceof BehavioredClassifier)) {
 			return false;
 		}
-		BehavioredClassifier source = (BehavioredClassifier) newEnd;
 		Interface target = getLink().getContract();
 		if (!(getLink().eContainer() instanceof BehavioredClassifier)) {
 			return false;
 		}
 		BehavioredClassifier container = (BehavioredClassifier) getLink().eContainer();
-		return UMLBaseItemSemanticEditPolicy.LinkConstraints.canExistInterfaceRealization_4001(container, source, target);
+		return UMLBaseItemSemanticEditPolicy.LinkConstraints.canExistInterfaceRealization_4001(container, getNewSource(), target);
 	}
 
 	/**
@@ -82,12 +81,11 @@ public class InterfaceRealizationReorientCommand extends EditElementCommand {
 			return false;
 		}
 		BehavioredClassifier source = getLink().getImplementingClassifier();
-		Interface target = (Interface) newEnd;
 		if (!(getLink().eContainer() instanceof BehavioredClassifier)) {
 			return false;
 		}
 		BehavioredClassifier container = (BehavioredClassifier) getLink().eContainer();
-		return UMLBaseItemSemanticEditPolicy.LinkConstraints.canExistInterfaceRealization_4001(container, source, target);
+		return UMLBaseItemSemanticEditPolicy.LinkConstraints.canExistInterfaceRealization_4001(container, source, getNewTarget());
 	}
 
 	/**

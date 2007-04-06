@@ -8,6 +8,7 @@ import org.eclipse.gmf.runtime.common.core.command.CommandResult;
 import org.eclipse.gmf.runtime.emf.type.core.commands.EditElementCommand;
 import org.eclipse.gmf.runtime.emf.type.core.requests.ReorientReferenceRelationshipRequest;
 import org.eclipse.gmf.runtime.emf.type.core.requests.ReorientRelationshipRequest;
+import org.eclipse.uml2.diagram.component.edit.policies.UMLBaseItemSemanticEditPolicy;
 import org.eclipse.uml2.uml.Interface;
 import org.eclipse.uml2.uml.Port;
 
@@ -70,7 +71,7 @@ public class PortProvidedReorientCommand extends EditElementCommand {
 		if (!(oldEnd instanceof Interface && newEnd instanceof Port)) {
 			return false;
 		}
-		return true;
+		return UMLBaseItemSemanticEditPolicy.LinkConstraints.canExistPortProvided_4006(getNewSource(), getOldTarget());
 	}
 
 	/**
@@ -80,7 +81,7 @@ public class PortProvidedReorientCommand extends EditElementCommand {
 		if (!(oldEnd instanceof Interface && newEnd instanceof Interface)) {
 			return false;
 		}
-		return true;
+		return UMLBaseItemSemanticEditPolicy.LinkConstraints.canExistPortProvided_4006(getOldSource(), getNewTarget());
 	}
 
 	/**
@@ -103,11 +104,8 @@ public class PortProvidedReorientCommand extends EditElementCommand {
 	 * @generated
 	 */
 	protected CommandResult reorientSource() throws ExecutionException {
-		Port oldSource = (Port) referenceOwner;
-		Port newSource = (Port) newEnd;
-		Interface target = (Interface) oldEnd;
-		oldSource.getProvideds().remove(target);
-		newSource.getProvideds().add(target);
+		getOldSource().getProvideds().remove(getOldTarget());
+		getNewSource().getProvideds().add(getOldTarget());
 		return CommandResult.newOKCommandResult(referenceOwner);
 	}
 
@@ -115,11 +113,36 @@ public class PortProvidedReorientCommand extends EditElementCommand {
 	 * @generated
 	 */
 	protected CommandResult reorientTarget() throws ExecutionException {
-		Port source = (Port) referenceOwner;
-		Interface oldTarget = (Interface) oldEnd;
-		Interface newTarget = (Interface) newEnd;
-		source.getProvideds().remove(oldTarget);
-		source.getProvideds().add(newTarget);
+		getOldSource().getProvideds().remove(getOldTarget());
+		getOldSource().getProvideds().add(getNewTarget());
 		return CommandResult.newOKCommandResult(referenceOwner);
+	}
+
+	/**
+	 * @generated
+	 */
+	protected Port getOldSource() {
+		return (Port) referenceOwner;
+	}
+
+	/**
+	 * @generated
+	 */
+	protected Port getNewSource() {
+		return (Port) newEnd;
+	}
+
+	/**
+	 * @generated
+	 */
+	protected Interface getOldTarget() {
+		return (Interface) oldEnd;
+	}
+
+	/**
+	 * @generated
+	 */
+	protected Interface getNewTarget() {
+		return (Interface) newEnd;
 	}
 }
