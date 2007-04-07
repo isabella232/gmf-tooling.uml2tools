@@ -52,7 +52,6 @@ public class AssociationClassOperationsEditPart extends ListCompartmentEditPart 
 		installEditPolicy(EditPolicyRoles.SEMANTIC_ROLE, new AssociationClassOperationsItemSemanticEditPolicy());
 		installEditPolicy(EditPolicyRoles.CREATION_ROLE, new CreationEditPolicy());
 		installEditPolicy(EditPolicyRoles.DRAG_DROP_ROLE, new DragDropEditPolicy());
-		installEditPolicy(EditPolicyRoles.CANONICAL_ROLE, new AssociationClassOperationsCanonicalEditPolicy());
 	}
 
 	/**
