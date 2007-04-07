@@ -1,8 +1,8 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
-Bundle-Name: Statemachine DiagramTests Plug-in
+Bundle-Name: %pluginName
 Bundle-SymbolicName: org.eclipse.uml2.diagram.statemachine.tests
-Bundle-Version: 1.0.0
+Bundle-Version: 1.0.0.qualifier
 Require-Bundle: org.eclipse.ui,
  org.eclipse.ui.ide,
  org.eclipse.core.runtime,
@@ -11,3 +11,6 @@ Require-Bundle: org.eclipse.ui,
  org.eclipse.gmf.runtime.emf.type.core,
  org.eclipse.gmf.runtime.diagram.ui
 Eclipse-LazyStart: true
+Bundle-ClassPath: .
+Bundle-Vendor: %providerName
+
