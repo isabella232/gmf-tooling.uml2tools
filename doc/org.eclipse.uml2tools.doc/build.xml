@@ -7,7 +7,7 @@
 	<property name="plugin" value="org.eclipse.uml2tools"/>
 	<property name="docPlugin" value="org.eclipse.uml2tools.doc"/>
 
-	<property name="filesToInclude" value="META-INF/,about.*,eclipse*.png,plugin.*,doc.zip,toc.xml,index/**"/>
+	<property name="filesToInclude" value="META-INF/,about.*,modeling*.png,plugin.*,doc.zip,toc.xml,index/**"/>
 
 	<!-- Compiler settings. -->
 	<property name="javacFailOnError" value="false"/>
