@@ -1,3 +1,4 @@
+<%@ jet package="org.eclipse.gmf.codegen.templates.editor" class="BuildPropertiesGenerator"%>
 #seeBugzilla=181484
 jars.compile.order = .
 
