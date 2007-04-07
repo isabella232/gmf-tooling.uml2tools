@@ -402,4 +402,18 @@ public class UMLDiagramEditorUtil {
 			return element2ViewMap;
 		}
 	} //LazyElement2ViewMap	
+
+	/**
+	 * @generated
+	 */
+	public static IFile getFile(org.eclipse.emf.common.util.URI uri) {
+		if (uri.toString().startsWith("platform:/resource")) { //$NON-NLS-1$
+			String path = uri.toString().substring("platform:/resource".length()); //$NON-NLS-1$
+			IResource workspaceResource = ResourcesPlugin.getWorkspace().getRoot().findMember(new Path(path));
+			if (workspaceResource instanceof IFile) {
+				return (IFile) workspaceResource;
+			}
+		}
+		return null;
+	}
 }
