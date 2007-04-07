@@ -7,6 +7,7 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.gmf.runtime.common.core.command.CommandResult;
 import org.eclipse.gmf.runtime.emf.type.core.commands.EditElementCommand;
 import org.eclipse.gmf.runtime.emf.type.core.requests.ReorientRelationshipRequest;
+import org.eclipse.uml2.diagram.clazz.edit.policies.UMLBaseItemSemanticEditPolicy;
 import org.eclipse.uml2.uml.Association;
 import org.eclipse.uml2.uml.Property;
 import org.eclipse.uml2.uml.Type;
@@ -49,12 +50,37 @@ public class PropertyReorientCommand extends EditElementCommand {
 			return false;
 		}
 		if (reorientDirection == ReorientRelationshipRequest.REORIENT_SOURCE) {
-			return oldEnd instanceof Association && newEnd instanceof Association;
+			return canReorientSource();
 		}
 		if (reorientDirection == ReorientRelationshipRequest.REORIENT_TARGET) {
-			return oldEnd instanceof Type && newEnd instanceof Type;
+			return canReorientTarget();
 		}
 		return false;
+	}
+
+	/**
+	 * @generated
+	 */
+	protected boolean canReorientSource() {
+		if (!(oldEnd instanceof Association && newEnd instanceof Association)) {
+			return false;
+		}
+		Type target = getLink().getType();
+		return UMLBaseItemSemanticEditPolicy.LinkConstraints.canExistProperty_4003(getNewSource(), target);
+	}
+
+	/**
+	 * @generated
+	 */
+	protected boolean canReorientTarget() {
+		if (!(oldEnd instanceof Type && newEnd instanceof Type)) {
+			return false;
+		}
+		if (!(getLink().eContainer() instanceof Association)) {
+			return false;
+		}
+		Association source = (Association) getLink().eContainer();
+		return UMLBaseItemSemanticEditPolicy.LinkConstraints.canExistProperty_4003(source, getNewTarget());
 	}
 
 	/**
@@ -76,25 +102,52 @@ public class PropertyReorientCommand extends EditElementCommand {
 	/**
 	 * @generated
 	 */
-	private CommandResult reorientSource() throws ExecutionException {
-		Property link = (Property) getElementToEdit();
-		Association oldSource = (Association) oldEnd;
-		Association newSource = (Association) newEnd;
-
-		oldSource.getOwnedEnds().remove(link);
-		newSource.getOwnedEnds().add(link);
-		return CommandResult.newOKCommandResult(link);
+	protected CommandResult reorientSource() throws ExecutionException {
+		getOldSource().getOwnedEnds().remove(getLink());
+		getNewSource().getOwnedEnds().add(getLink());
+		return CommandResult.newOKCommandResult(getLink());
 	}
 
 	/**
 	 * @generated
 	 */
-	private CommandResult reorientTarget() throws ExecutionException {
-		Property link = (Property) getElementToEdit();
-		Type oldTarget = (Type) oldEnd;
-		Type newTarget = (Type) newEnd;
+	protected CommandResult reorientTarget() throws ExecutionException {
+		getLink().setType(getNewTarget());
+		return CommandResult.newOKCommandResult(getLink());
+	}
 
-		link.setType(newTarget);
-		return CommandResult.newOKCommandResult(link);
+	/**
+	 * @generated
+	 */
+	protected Property getLink() {
+		return (Property) getElementToEdit();
+	}
+
+	/**
+	 * @generated
+	 */
+	protected Association getOldSource() {
+		return (Association) oldEnd;
+	}
+
+	/**
+	 * @generated
+	 */
+	protected Association getNewSource() {
+		return (Association) newEnd;
+	}
+
+	/**
+	 * @generated
+	 */
+	protected Type getOldTarget() {
+		return (Type) oldEnd;
+	}
+
+	/**
+	 * @generated
+	 */
+	protected Type getNewTarget() {
+		return (Type) newEnd;
 	}
 }

@@ -226,6 +226,7 @@ public class UMLVisualIDRegistry {
 	}
 
 	/**
+
 	 * @generated
 	 */
 	public static int getNodeVisualID(View containerView, EObject domainElement, EClass domainElementMetaclass, String semanticHint) {
@@ -1905,7 +1906,7 @@ public class UMLVisualIDRegistry {
 		/**
 		 * @generated	
 		 */
-		boolean matches(EObject object) {
+		boolean matches(Object object) {
 			Object result = condition.evaluate(object);
 			return result instanceof Boolean && ((Boolean) result).booleanValue();
 		}

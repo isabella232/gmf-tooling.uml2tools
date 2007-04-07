@@ -8,6 +8,7 @@ import org.eclipse.gmf.runtime.common.core.command.CommandResult;
 import org.eclipse.gmf.runtime.emf.type.core.commands.EditElementCommand;
 import org.eclipse.gmf.runtime.emf.type.core.requests.ReorientReferenceRelationshipRequest;
 import org.eclipse.gmf.runtime.emf.type.core.requests.ReorientRelationshipRequest;
+import org.eclipse.uml2.diagram.clazz.edit.policies.UMLBaseItemSemanticEditPolicy;
 import org.eclipse.uml2.uml.Dependency;
 import org.eclipse.uml2.uml.NamedElement;
 
@@ -55,12 +56,32 @@ public class DependencyClientReorientCommand extends EditElementCommand {
 			return false;
 		}
 		if (reorientDirection == ReorientRelationshipRequest.REORIENT_SOURCE) {
-			return oldEnd instanceof NamedElement && newEnd instanceof Dependency;
+			return canReorientSource();
 		}
 		if (reorientDirection == ReorientRelationshipRequest.REORIENT_TARGET) {
-			return oldEnd instanceof NamedElement && newEnd instanceof NamedElement;
+			return canReorientTarget();
 		}
 		return false;
+	}
+
+	/**
+	 * @generated
+	 */
+	protected boolean canReorientSource() {
+		if (!(oldEnd instanceof NamedElement && newEnd instanceof Dependency)) {
+			return false;
+		}
+		return UMLBaseItemSemanticEditPolicy.LinkConstraints.canExistDependencyClient_4007(getNewSource(), getOldTarget());
+	}
+
+	/**
+	 * @generated
+	 */
+	protected boolean canReorientTarget() {
+		if (!(oldEnd instanceof NamedElement && newEnd instanceof NamedElement)) {
+			return false;
+		}
+		return UMLBaseItemSemanticEditPolicy.LinkConstraints.canExistDependencyClient_4007(getOldSource(), getNewTarget());
 	}
 
 	/**
@@ -82,26 +103,46 @@ public class DependencyClientReorientCommand extends EditElementCommand {
 	/**
 	 * @generated
 	 */
-	private CommandResult reorientSource() throws ExecutionException {
-		Dependency oldSource = (Dependency) referenceOwner;
-		Dependency newSource = (Dependency) newEnd;
-		NamedElement target = (NamedElement) oldEnd;
-
-		oldSource.getClients().remove(target);
-		newSource.getClients().add(target);
+	protected CommandResult reorientSource() throws ExecutionException {
+		getOldSource().getClients().remove(getOldTarget());
+		getNewSource().getClients().add(getOldTarget());
 		return CommandResult.newOKCommandResult(referenceOwner);
 	}
 
 	/**
 	 * @generated
 	 */
-	private CommandResult reorientTarget() throws ExecutionException {
-		Dependency source = (Dependency) referenceOwner;
-		NamedElement oldTarget = (NamedElement) oldEnd;
-		NamedElement newTarget = (NamedElement) newEnd;
-
-		source.getClients().remove(oldTarget);
-		source.getClients().add(newTarget);
+	protected CommandResult reorientTarget() throws ExecutionException {
+		getOldSource().getClients().remove(getOldTarget());
+		getOldSource().getClients().add(getNewTarget());
 		return CommandResult.newOKCommandResult(referenceOwner);
+	}
+
+	/**
+	 * @generated
+	 */
+	protected Dependency getOldSource() {
+		return (Dependency) referenceOwner;
+	}
+
+	/**
+	 * @generated
+	 */
+	protected Dependency getNewSource() {
+		return (Dependency) newEnd;
+	}
+
+	/**
+	 * @generated
+	 */
+	protected NamedElement getOldTarget() {
+		return (NamedElement) oldEnd;
+	}
+
+	/**
+	 * @generated
+	 */
+	protected NamedElement getNewTarget() {
+		return (NamedElement) newEnd;
 	}
 }

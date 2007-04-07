@@ -8,6 +8,7 @@ import org.eclipse.gmf.runtime.common.core.command.CommandResult;
 import org.eclipse.gmf.runtime.emf.type.core.commands.EditElementCommand;
 import org.eclipse.gmf.runtime.emf.type.core.requests.ReorientReferenceRelationshipRequest;
 import org.eclipse.gmf.runtime.emf.type.core.requests.ReorientRelationshipRequest;
+import org.eclipse.uml2.diagram.clazz.edit.policies.UMLBaseItemSemanticEditPolicy;
 import org.eclipse.uml2.uml.Constraint;
 import org.eclipse.uml2.uml.Element;
 
@@ -55,12 +56,32 @@ public class ConstraintConstrainedElementReorientCommand extends EditElementComm
 			return false;
 		}
 		if (reorientDirection == ReorientRelationshipRequest.REORIENT_SOURCE) {
-			return oldEnd instanceof Element && newEnd instanceof Constraint;
+			return canReorientSource();
 		}
 		if (reorientDirection == ReorientRelationshipRequest.REORIENT_TARGET) {
-			return oldEnd instanceof Element && newEnd instanceof Element;
+			return canReorientTarget();
 		}
 		return false;
+	}
+
+	/**
+	 * @generated
+	 */
+	protected boolean canReorientSource() {
+		if (!(oldEnd instanceof Element && newEnd instanceof Constraint)) {
+			return false;
+		}
+		return UMLBaseItemSemanticEditPolicy.LinkConstraints.canExistConstraintConstrainedElement_4004(getNewSource(), getOldTarget());
+	}
+
+	/**
+	 * @generated
+	 */
+	protected boolean canReorientTarget() {
+		if (!(oldEnd instanceof Element && newEnd instanceof Element)) {
+			return false;
+		}
+		return UMLBaseItemSemanticEditPolicy.LinkConstraints.canExistConstraintConstrainedElement_4004(getOldSource(), getNewTarget());
 	}
 
 	/**
@@ -82,26 +103,46 @@ public class ConstraintConstrainedElementReorientCommand extends EditElementComm
 	/**
 	 * @generated
 	 */
-	private CommandResult reorientSource() throws ExecutionException {
-		Constraint oldSource = (Constraint) referenceOwner;
-		Constraint newSource = (Constraint) newEnd;
-		Element target = (Element) oldEnd;
-
-		oldSource.getConstrainedElements().remove(target);
-		newSource.getConstrainedElements().add(target);
+	protected CommandResult reorientSource() throws ExecutionException {
+		getOldSource().getConstrainedElements().remove(getOldTarget());
+		getNewSource().getConstrainedElements().add(getOldTarget());
 		return CommandResult.newOKCommandResult(referenceOwner);
 	}
 
 	/**
 	 * @generated
 	 */
-	private CommandResult reorientTarget() throws ExecutionException {
-		Constraint source = (Constraint) referenceOwner;
-		Element oldTarget = (Element) oldEnd;
-		Element newTarget = (Element) newEnd;
-
-		source.getConstrainedElements().remove(oldTarget);
-		source.getConstrainedElements().add(newTarget);
+	protected CommandResult reorientTarget() throws ExecutionException {
+		getOldSource().getConstrainedElements().remove(getOldTarget());
+		getOldSource().getConstrainedElements().add(getNewTarget());
 		return CommandResult.newOKCommandResult(referenceOwner);
+	}
+
+	/**
+	 * @generated
+	 */
+	protected Constraint getOldSource() {
+		return (Constraint) referenceOwner;
+	}
+
+	/**
+	 * @generated
+	 */
+	protected Constraint getNewSource() {
+		return (Constraint) newEnd;
+	}
+
+	/**
+	 * @generated
+	 */
+	protected Element getOldTarget() {
+		return (Element) oldEnd;
+	}
+
+	/**
+	 * @generated
+	 */
+	protected Element getNewTarget() {
+		return (Element) newEnd;
 	}
 }

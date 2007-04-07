@@ -292,7 +292,7 @@ public class UMLBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 	/**
 	 * @generated 
 	 */
-	protected static class LinkConstraints {
+	public static class LinkConstraints {
 
 		/**
 		 * @generated 
@@ -359,24 +359,21 @@ public class UMLBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 		 * @generated 
 		 */
 		public static boolean canCreateGeneralization_4001(Classifier source, Classifier target) {
-			return true;
+			return canExistGeneralization_4001(source, target);
 		}
 
 		/**
 		 * @generated 
 		 */
 		public static boolean canCreateDependency_4002(Package container, NamedElement source, NamedElement target) {
-			if (!evaluate(Dependency_4002_TargetExpression, target, source, true)) {
-				return false;
-			}
-			return true;
+			return canExistDependency_4002(container, source, target);
 		}
 
 		/**
 		 * @generated 
 		 */
 		public static boolean canCreateProperty_4003(Association source, Type target) {
-			return true;
+			return canExistProperty_4003(source, target);
 		}
 
 		/**
@@ -388,14 +385,14 @@ public class UMLBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 					return false;
 				}
 			}
-			return true;
+			return canExistConstraintConstrainedElement_4004(source, target);
 		}
 
 		/**
 		 * @generated 
 		 */
 		public static boolean canCreateAssociation_4005(Package container, Type source, Type target) {
-			return true;
+			return canExistAssociation_4005(container, source, target);
 		}
 
 		/**
@@ -407,7 +404,7 @@ public class UMLBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 					return false;
 				}
 			}
-			return true;
+			return canExistDependencySupplier_4006(source, target);
 		}
 
 		/**
@@ -419,31 +416,28 @@ public class UMLBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 					return false;
 				}
 			}
-			return true;
+			return canExistDependencyClient_4007(source, target);
 		}
 
 		/**
 		 * @generated 
 		 */
 		public static boolean canCreateInterfaceRealization_4008(BehavioredClassifier container, BehavioredClassifier source, Interface target) {
-			if (!evaluate(InterfaceRealization_4008_TargetExpression, target, source, true)) {
-				return false;
-			}
-			return true;
+			return canExistInterfaceRealization_4008(container, source, target);
 		}
 
 		/**
 		 * @generated 
 		 */
 		public static boolean canCreateRealization_4010(Package container, NamedElement source, NamedElement target) {
-			return true;
+			return canExistRealization_4010(container, source, target);
 		}
 
 		/**
 		 * @generated 
 		 */
 		public static boolean canCreateGeneralization_4011(Classifier source, GeneralizationSet target) {
-			return true;
+			return canExistGeneralization_4011(source, target);
 		}
 
 		/**
@@ -455,13 +449,103 @@ public class UMLBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 					return false;
 				}
 			}
-			return true;
+			return canExistGeneralizationGeneral_4012(source, target);
 		}
 
 		/**
 		 * @generated 
 		 */
 		public static boolean canCreateUsage_4013(Package container, NamedElement source, NamedElement target) {
+			return canExistUsage_4013(container, source, target);
+		}
+
+		/**
+		 * @generated
+		 */
+		public static boolean canExistGeneralization_4001(Classifier source, Classifier target) {
+			return true;
+		}
+
+		/**
+		 * @generated
+		 */
+		public static boolean canExistDependency_4002(Package container, NamedElement source, NamedElement target) {
+			if (!evaluate(Dependency_4002_TargetExpression, target, source, true)) {
+				return false;
+			}
+			return true;
+		}
+
+		/**
+		 * @generated
+		 */
+		public static boolean canExistProperty_4003(Association source, Type target) {
+			return true;
+		}
+
+		/**
+		 * @generated
+		 */
+		public static boolean canExistConstraintConstrainedElement_4004(Constraint source, Element target) {
+			return true;
+		}
+
+		/**
+		 * @generated
+		 */
+		public static boolean canExistAssociation_4005(Package container, Type source, Type target) {
+			return true;
+		}
+
+		/**
+		 * @generated
+		 */
+		public static boolean canExistDependencySupplier_4006(Dependency source, NamedElement target) {
+			return true;
+		}
+
+		/**
+		 * @generated
+		 */
+		public static boolean canExistDependencyClient_4007(Dependency source, NamedElement target) {
+			return true;
+		}
+
+		/**
+		 * @generated
+		 */
+		public static boolean canExistInterfaceRealization_4008(BehavioredClassifier container, BehavioredClassifier source, Interface target) {
+			if (!evaluate(InterfaceRealization_4008_TargetExpression, target, source, true)) {
+				return false;
+			}
+			return true;
+		}
+
+		/**
+		 * @generated
+		 */
+		public static boolean canExistRealization_4010(Package container, NamedElement source, NamedElement target) {
+			return true;
+		}
+
+		/**
+		 * @generated
+		 */
+		public static boolean canExistGeneralization_4011(Classifier source, GeneralizationSet target) {
+			return true;
+		}
+
+		/**
+		 * @generated
+		 */
+		public static boolean canExistGeneralizationGeneral_4012(Generalization source, Classifier target) {
+			return true;
+		}
+
+		/**
+		 * @generated
+		 */
+		public static boolean canExistUsage_4013(Package container, NamedElement source, NamedElement target) {
 			if (!evaluate(Usage_4013_SourceExpression, source, target, false)) {
 				return false;
 			}

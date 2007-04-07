@@ -1076,7 +1076,7 @@ public class DiagramContentsInitializer {
 					if (structuralFeatureResult instanceof EObject) {
 						EObject dst = (EObject) structuralFeatureResult;
 						EObject src = container;
-						myLinkDescriptors.add(new LinkDescriptor(src, dst, UMLElementTypes.Generalization_4001, linkVID, nextValue));
+						myLinkDescriptors.add(new LinkDescriptor(src, dst, nextValue, UMLElementTypes.Generalization_4001, linkVID));
 					}
 				}
 			}
@@ -1102,7 +1102,7 @@ public class DiagramContentsInitializer {
 						structuralFeatureResult = sources.size() == 1 ? sources.get(0) : null;
 						if (structuralFeatureResult instanceof EObject) {
 							EObject src = (EObject) structuralFeatureResult;
-							myLinkDescriptors.add(new LinkDescriptor(src, dst, UMLElementTypes.Dependency_4002, linkVID, nextValue));
+							myLinkDescriptors.add(new LinkDescriptor(src, dst, nextValue, UMLElementTypes.Dependency_4002, linkVID));
 						}
 					}
 				}
@@ -1123,7 +1123,7 @@ public class DiagramContentsInitializer {
 					if (structuralFeatureResult instanceof EObject) {
 						EObject dst = (EObject) structuralFeatureResult;
 						EObject src = container;
-						myLinkDescriptors.add(new LinkDescriptor(src, dst, UMLElementTypes.Property_4003, linkVID, nextValue));
+						myLinkDescriptors.add(new LinkDescriptor(src, dst, nextValue, UMLElementTypes.Property_4003, linkVID));
 					}
 				}
 			}
@@ -1133,7 +1133,7 @@ public class DiagramContentsInitializer {
 	/**
 	 * @generated NOT
 	 */
-	private void storeTypeModelFacetLinks_Association_4005(EObject container, EClass containerMetaclass) {
+	public void storeTypeModelFacetLinks_Association_4005(EObject container, EClass containerMetaclass) {
 		if (UMLPackage.eINSTANCE.getPackage().isSuperTypeOf(containerMetaclass)) {
 			for (Iterator values = ((Package) container).getPackagedElements().iterator(); values.hasNext();) {
 				EObject nextValue = ((EObject) values.next());
@@ -1145,7 +1145,7 @@ public class DiagramContentsInitializer {
 						Property targetEnd = AssociationEndConvention.getTargetEnd(association);
 						EObject gmfSource = sourceEnd.getType();
 						EObject gmfTarget = targetEnd.getType();
-						myLinkDescriptors.add(new LinkDescriptor(gmfSource, gmfTarget, UMLElementTypes.Association_4005, linkVID, association));
+						myLinkDescriptors.add(new LinkDescriptor(gmfSource, gmfTarget, association, UMLElementTypes.Association_4005, linkVID));
 					}
 				}
 			}
@@ -1167,7 +1167,7 @@ public class DiagramContentsInitializer {
 						structuralFeatureResult = ((InterfaceRealization) nextValue).getImplementingClassifier();
 						if (structuralFeatureResult instanceof EObject) {
 							EObject src = (EObject) structuralFeatureResult;
-							myLinkDescriptors.add(new LinkDescriptor(src, dst, UMLElementTypes.InterfaceRealization_4008, linkVID, nextValue));
+							myLinkDescriptors.add(new LinkDescriptor(src, dst, nextValue, UMLElementTypes.InterfaceRealization_4008, linkVID));
 						}
 					}
 				}
@@ -1194,7 +1194,7 @@ public class DiagramContentsInitializer {
 						structuralFeatureResult = sources.size() == 1 ? sources.get(0) : null;
 						if (structuralFeatureResult instanceof EObject) {
 							EObject src = (EObject) structuralFeatureResult;
-							myLinkDescriptors.add(new LinkDescriptor(src, dst, UMLElementTypes.Realization_4010, linkVID, nextValue));
+							myLinkDescriptors.add(new LinkDescriptor(src, dst, nextValue, UMLElementTypes.Realization_4010, linkVID));
 						}
 					}
 				}
@@ -1217,7 +1217,7 @@ public class DiagramContentsInitializer {
 					if (structuralFeatureResult instanceof EObject) {
 						EObject dst = (EObject) structuralFeatureResult;
 						EObject src = container;
-						myLinkDescriptors.add(new LinkDescriptor(src, dst, UMLElementTypes.Generalization_4011, linkVID, nextValue));
+						myLinkDescriptors.add(new LinkDescriptor(src, dst, nextValue, UMLElementTypes.Generalization_4011, linkVID));
 					}
 				}
 			}
@@ -1243,7 +1243,7 @@ public class DiagramContentsInitializer {
 						structuralFeatureResult = sources.size() == 1 ? sources.get(0) : null;
 						if (structuralFeatureResult instanceof EObject) {
 							EObject src = (EObject) structuralFeatureResult;
-							myLinkDescriptors.add(new LinkDescriptor(src, dst, UMLElementTypes.Usage_4013, linkVID, nextValue));
+							myLinkDescriptors.add(new LinkDescriptor(src, dst, nextValue, UMLElementTypes.Usage_4013, linkVID));
 						}
 					}
 				}
@@ -1254,7 +1254,7 @@ public class DiagramContentsInitializer {
 	/**
 	 *@generated NOT
 	 */
-	private void storeFeatureModelFacetLinks(EObject container, EClass containerMetaclass, Diagram diagram) {
+	public void storeFeatureModelFacetLinks(EObject container, EClass containerMetaclass, Diagram diagram) {
 		if (UMLPackage.eINSTANCE.getGeneralizationSet().isSuperTypeOf(containerMetaclass)) {
 			EList<Generalization> generalizations = ((GeneralizationSet) container).getGeneralizations();
 			if (generalizations.size() == 0) {
@@ -1270,7 +1270,7 @@ public class DiagramContentsInitializer {
 	/**
 	 *@generated
 	 */
-	private void storeFeatureModelFacetLinksGen(EObject container, EClass containerMetaclass, Diagram diagram) {
+	public void storeFeatureModelFacetLinksGen(EObject container, EClass containerMetaclass, Diagram diagram) {
 
 		if (UMLPackage.eINSTANCE.getConstraint().isSuperTypeOf(containerMetaclass)) {
 			for (Iterator destinations = ((Constraint) container).getConstrainedElements().iterator(); destinations.hasNext();) {
@@ -1351,24 +1351,35 @@ public class DiagramContentsInitializer {
 		/**
 		 * @generated
 		 */
-		protected LinkDescriptor(EObject source, EObject destination, IElementType elementType, int linkVID) {
-			this(source, destination, elementType, linkVID, null);
-		}
-
-		/**
-		 * @generated
-		 */
-		protected LinkDescriptor(EObject source, EObject destination, IElementType elementType, int linkVID, EObject linkElement) {
+		protected LinkDescriptor(EObject source, EObject destination, EObject linkElement, IElementType elementType, int linkVID) {
 			this(source, destination, linkVID);
 			myLinkElement = linkElement;
 			final IElementType elementTypeCopy = elementType;
-			mySemanticAdapter = new EObjectAdapter(myLinkElement) {
+			mySemanticAdapter = new EObjectAdapter(linkElement) {
 
 				public Object getAdapter(Class adapter) {
 					if (IElementType.class.equals(adapter)) {
 						return elementTypeCopy;
 					}
 					return super.getAdapter(adapter);
+				}
+			};
+		}
+
+		/**
+		 * @generated
+		 */
+		protected LinkDescriptor(EObject source, EObject destination, IElementType elementType, int linkVID) {
+			this(source, destination, linkVID);
+			myLinkElement = null;
+			final IElementType elementTypeCopy = elementType;
+			mySemanticAdapter = new IAdaptable() {
+
+				public Object getAdapter(Class adapter) {
+					if (IElementType.class.equals(adapter)) {
+						return elementTypeCopy;
+					}
+					return null;
 				}
 			};
 		}

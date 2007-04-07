@@ -7,6 +7,7 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.gmf.runtime.common.core.command.CommandResult;
 import org.eclipse.gmf.runtime.emf.type.core.commands.EditElementCommand;
 import org.eclipse.gmf.runtime.emf.type.core.requests.ReorientRelationshipRequest;
+import org.eclipse.uml2.diagram.clazz.edit.policies.UMLBaseItemSemanticEditPolicy;
 import org.eclipse.uml2.uml.BehavioredClassifier;
 import org.eclipse.uml2.uml.Interface;
 import org.eclipse.uml2.uml.InterfaceRealization;
@@ -49,12 +50,42 @@ public class InterfaceRealizationReorientCommand extends EditElementCommand {
 			return false;
 		}
 		if (reorientDirection == ReorientRelationshipRequest.REORIENT_SOURCE) {
-			return oldEnd instanceof BehavioredClassifier && newEnd instanceof BehavioredClassifier;
+			return canReorientSource();
 		}
 		if (reorientDirection == ReorientRelationshipRequest.REORIENT_TARGET) {
-			return oldEnd instanceof Interface && newEnd instanceof Interface;
+			return canReorientTarget();
 		}
 		return false;
+	}
+
+	/**
+	 * @generated
+	 */
+	protected boolean canReorientSource() {
+		if (!(oldEnd instanceof BehavioredClassifier && newEnd instanceof BehavioredClassifier)) {
+			return false;
+		}
+		Interface target = getLink().getContract();
+		if (!(getLink().eContainer() instanceof BehavioredClassifier)) {
+			return false;
+		}
+		BehavioredClassifier container = (BehavioredClassifier) getLink().eContainer();
+		return UMLBaseItemSemanticEditPolicy.LinkConstraints.canExistInterfaceRealization_4008(container, getNewSource(), target);
+	}
+
+	/**
+	 * @generated
+	 */
+	protected boolean canReorientTarget() {
+		if (!(oldEnd instanceof Interface && newEnd instanceof Interface)) {
+			return false;
+		}
+		BehavioredClassifier source = getLink().getImplementingClassifier();
+		if (!(getLink().eContainer() instanceof BehavioredClassifier)) {
+			return false;
+		}
+		BehavioredClassifier container = (BehavioredClassifier) getLink().eContainer();
+		return UMLBaseItemSemanticEditPolicy.LinkConstraints.canExistInterfaceRealization_4008(container, source, getNewTarget());
 	}
 
 	/**
@@ -76,25 +107,51 @@ public class InterfaceRealizationReorientCommand extends EditElementCommand {
 	/**
 	 * @generated
 	 */
-	private CommandResult reorientSource() throws ExecutionException {
-		InterfaceRealization link = (InterfaceRealization) getElementToEdit();
-		BehavioredClassifier oldSource = (BehavioredClassifier) oldEnd;
-		BehavioredClassifier newSource = (BehavioredClassifier) newEnd;
-
-		link.setImplementingClassifier(newSource);
-
-		return CommandResult.newOKCommandResult(link);
+	protected CommandResult reorientSource() throws ExecutionException {
+		getLink().setImplementingClassifier(getNewSource());
+		return CommandResult.newOKCommandResult(getLink());
 	}
 
 	/**
 	 * @generated
 	 */
-	private CommandResult reorientTarget() throws ExecutionException {
-		InterfaceRealization link = (InterfaceRealization) getElementToEdit();
-		Interface oldTarget = (Interface) oldEnd;
-		Interface newTarget = (Interface) newEnd;
+	protected CommandResult reorientTarget() throws ExecutionException {
+		getLink().setContract(getNewTarget());
+		return CommandResult.newOKCommandResult(getLink());
+	}
 
-		link.setContract(newTarget);
-		return CommandResult.newOKCommandResult(link);
+	/**
+	 * @generated
+	 */
+	protected InterfaceRealization getLink() {
+		return (InterfaceRealization) getElementToEdit();
+	}
+
+	/**
+	 * @generated
+	 */
+	protected BehavioredClassifier getOldSource() {
+		return (BehavioredClassifier) oldEnd;
+	}
+
+	/**
+	 * @generated
+	 */
+	protected BehavioredClassifier getNewSource() {
+		return (BehavioredClassifier) newEnd;
+	}
+
+	/**
+	 * @generated
+	 */
+	protected Interface getOldTarget() {
+		return (Interface) oldEnd;
+	}
+
+	/**
+	 * @generated
+	 */
+	protected Interface getNewTarget() {
+		return (Interface) newEnd;
 	}
 }

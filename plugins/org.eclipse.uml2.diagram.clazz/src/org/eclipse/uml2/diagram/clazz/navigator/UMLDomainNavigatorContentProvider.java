@@ -129,6 +129,7 @@ public class UMLDomainNavigatorContentProvider implements ICommonContentProvider
 			Resource resource = (Resource) it.next();
 			resource.unload();
 		}
+		((TransactionalEditingDomain) myEditingDomain).dispose();
 		myEditingDomain = null;
 	}
 

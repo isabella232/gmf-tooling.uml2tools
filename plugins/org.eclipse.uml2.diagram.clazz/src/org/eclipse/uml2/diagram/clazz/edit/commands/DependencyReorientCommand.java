@@ -7,8 +7,10 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.gmf.runtime.common.core.command.CommandResult;
 import org.eclipse.gmf.runtime.emf.type.core.commands.EditElementCommand;
 import org.eclipse.gmf.runtime.emf.type.core.requests.ReorientRelationshipRequest;
+import org.eclipse.uml2.diagram.clazz.edit.policies.UMLBaseItemSemanticEditPolicy;
 import org.eclipse.uml2.uml.Dependency;
 import org.eclipse.uml2.uml.NamedElement;
+import org.eclipse.uml2.uml.Package;
 
 /**
  * @generated
@@ -48,12 +50,48 @@ public class DependencyReorientCommand extends EditElementCommand {
 			return false;
 		}
 		if (reorientDirection == ReorientRelationshipRequest.REORIENT_SOURCE) {
-			return oldEnd instanceof NamedElement && newEnd instanceof NamedElement;
+			return canReorientSource();
 		}
 		if (reorientDirection == ReorientRelationshipRequest.REORIENT_TARGET) {
-			return oldEnd instanceof NamedElement && newEnd instanceof NamedElement;
+			return canReorientTarget();
 		}
 		return false;
+	}
+
+	/**
+	 * @generated
+	 */
+	protected boolean canReorientSource() {
+		if (!(oldEnd instanceof NamedElement && newEnd instanceof NamedElement)) {
+			return false;
+		}
+		if (getLink().getSuppliers().size() != 1) {
+			return false;
+		}
+		NamedElement target = (NamedElement) getLink().getSuppliers().get(0);
+		if (!(getLink().eContainer() instanceof Package)) {
+			return false;
+		}
+		Package container = (Package) getLink().eContainer();
+		return UMLBaseItemSemanticEditPolicy.LinkConstraints.canExistDependency_4002(container, getNewSource(), target);
+	}
+
+	/**
+	 * @generated
+	 */
+	protected boolean canReorientTarget() {
+		if (!(oldEnd instanceof NamedElement && newEnd instanceof NamedElement)) {
+			return false;
+		}
+		if (getLink().getClients().size() != 1) {
+			return false;
+		}
+		NamedElement source = (NamedElement) getLink().getClients().get(0);
+		if (!(getLink().eContainer() instanceof Package)) {
+			return false;
+		}
+		Package container = (Package) getLink().eContainer();
+		return UMLBaseItemSemanticEditPolicy.LinkConstraints.canExistDependency_4002(container, source, getNewTarget());
 	}
 
 	/**
@@ -75,27 +113,53 @@ public class DependencyReorientCommand extends EditElementCommand {
 	/**
 	 * @generated
 	 */
-	private CommandResult reorientSource() throws ExecutionException {
-		Dependency link = (Dependency) getElementToEdit();
-		NamedElement oldSource = (NamedElement) oldEnd;
-		NamedElement newSource = (NamedElement) newEnd;
-
-		link.getClients().remove(oldSource);
-		link.getClients().add(newSource);
-
-		return CommandResult.newOKCommandResult(link);
+	protected CommandResult reorientSource() throws ExecutionException {
+		getLink().getClients().remove(getOldSource());
+		getLink().getClients().add(getNewSource());
+		return CommandResult.newOKCommandResult(getLink());
 	}
 
 	/**
 	 * @generated
 	 */
-	private CommandResult reorientTarget() throws ExecutionException {
-		Dependency link = (Dependency) getElementToEdit();
-		NamedElement oldTarget = (NamedElement) oldEnd;
-		NamedElement newTarget = (NamedElement) newEnd;
+	protected CommandResult reorientTarget() throws ExecutionException {
+		getLink().getSuppliers().remove(getOldTarget());
+		getLink().getSuppliers().add(getNewTarget());
+		return CommandResult.newOKCommandResult(getLink());
+	}
 
-		link.getSuppliers().remove(oldTarget);
-		link.getSuppliers().add(newTarget);
-		return CommandResult.newOKCommandResult(link);
+	/**
+	 * @generated
+	 */
+	protected Dependency getLink() {
+		return (Dependency) getElementToEdit();
+	}
+
+	/**
+	 * @generated
+	 */
+	protected NamedElement getOldSource() {
+		return (NamedElement) oldEnd;
+	}
+
+	/**
+	 * @generated
+	 */
+	protected NamedElement getNewSource() {
+		return (NamedElement) newEnd;
+	}
+
+	/**
+	 * @generated
+	 */
+	protected NamedElement getOldTarget() {
+		return (NamedElement) oldEnd;
+	}
+
+	/**
+	 * @generated
+	 */
+	protected NamedElement getNewTarget() {
+		return (NamedElement) newEnd;
 	}
 }

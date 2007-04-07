@@ -8,6 +8,7 @@ import org.eclipse.gmf.runtime.common.core.command.CommandResult;
 import org.eclipse.gmf.runtime.emf.type.core.commands.EditElementCommand;
 import org.eclipse.gmf.runtime.emf.type.core.requests.ReorientReferenceRelationshipRequest;
 import org.eclipse.gmf.runtime.emf.type.core.requests.ReorientRelationshipRequest;
+import org.eclipse.uml2.diagram.clazz.edit.policies.UMLBaseItemSemanticEditPolicy;
 import org.eclipse.uml2.uml.Classifier;
 import org.eclipse.uml2.uml.Generalization;
 
@@ -55,12 +56,32 @@ public class GeneralizationGeneralReorientCommand extends EditElementCommand {
 			return false;
 		}
 		if (reorientDirection == ReorientRelationshipRequest.REORIENT_SOURCE) {
-			return oldEnd instanceof Classifier && newEnd instanceof Generalization;
+			return canReorientSource();
 		}
 		if (reorientDirection == ReorientRelationshipRequest.REORIENT_TARGET) {
-			return oldEnd instanceof Classifier && newEnd instanceof Classifier;
+			return canReorientTarget();
 		}
 		return false;
+	}
+
+	/**
+	 * @generated
+	 */
+	protected boolean canReorientSource() {
+		if (!(oldEnd instanceof Classifier && newEnd instanceof Generalization)) {
+			return false;
+		}
+		return UMLBaseItemSemanticEditPolicy.LinkConstraints.canExistGeneralizationGeneral_4012(getNewSource(), getOldTarget());
+	}
+
+	/**
+	 * @generated
+	 */
+	protected boolean canReorientTarget() {
+		if (!(oldEnd instanceof Classifier && newEnd instanceof Classifier)) {
+			return false;
+		}
+		return UMLBaseItemSemanticEditPolicy.LinkConstraints.canExistGeneralizationGeneral_4012(getOldSource(), getNewTarget());
 	}
 
 	/**
@@ -82,25 +103,45 @@ public class GeneralizationGeneralReorientCommand extends EditElementCommand {
 	/**
 	 * @generated
 	 */
-	private CommandResult reorientSource() throws ExecutionException {
-		Generalization oldSource = (Generalization) referenceOwner;
-		Generalization newSource = (Generalization) newEnd;
-		Classifier target = (Classifier) oldEnd;
-
-		oldSource.setGeneral(null);
-		newSource.setGeneral(target);
+	protected CommandResult reorientSource() throws ExecutionException {
+		getOldSource().setGeneral(null);
+		getNewSource().setGeneral(getOldTarget());
 		return CommandResult.newOKCommandResult(referenceOwner);
 	}
 
 	/**
 	 * @generated
 	 */
-	private CommandResult reorientTarget() throws ExecutionException {
-		Generalization source = (Generalization) referenceOwner;
-		Classifier oldTarget = (Classifier) oldEnd;
-		Classifier newTarget = (Classifier) newEnd;
-
-		source.setGeneral(newTarget);
+	protected CommandResult reorientTarget() throws ExecutionException {
+		getOldSource().setGeneral(getNewTarget());
 		return CommandResult.newOKCommandResult(referenceOwner);
+	}
+
+	/**
+	 * @generated
+	 */
+	protected Generalization getOldSource() {
+		return (Generalization) referenceOwner;
+	}
+
+	/**
+	 * @generated
+	 */
+	protected Generalization getNewSource() {
+		return (Generalization) newEnd;
+	}
+
+	/**
+	 * @generated
+	 */
+	protected Classifier getOldTarget() {
+		return (Classifier) oldEnd;
+	}
+
+	/**
+	 * @generated
+	 */
+	protected Classifier getNewTarget() {
+		return (Classifier) newEnd;
 	}
 }
