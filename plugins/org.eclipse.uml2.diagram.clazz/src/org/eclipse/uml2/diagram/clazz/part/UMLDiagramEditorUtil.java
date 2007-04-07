@@ -30,16 +30,16 @@ import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emf.ecore.xmi.XMIResource;
 import org.eclipse.emf.ecore.xmi.XMLResource;
 import org.eclipse.emf.edit.ui.util.EditUIUtil;
-
+import org.eclipse.emf.transaction.TransactionalEditingDomain;
+import org.eclipse.emf.workspace.util.WorkspaceSynchronizer;
 import org.eclipse.gef.EditPart;
+import org.eclipse.gmf.runtime.common.core.command.CommandResult;
+import org.eclipse.gmf.runtime.diagram.core.services.ViewService;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.DiagramEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.IPrimaryEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.parts.IDiagramGraphicalViewer;
 import org.eclipse.gmf.runtime.diagram.ui.parts.IDiagramWorkbenchPart;
-import org.eclipse.emf.transaction.TransactionalEditingDomain;
-import org.eclipse.gmf.runtime.common.core.command.CommandResult;
-import org.eclipse.gmf.runtime.diagram.core.services.ViewService;
 import org.eclipse.gmf.runtime.emf.commands.core.command.AbstractTransactionalCommand;
 import org.eclipse.gmf.runtime.emf.core.GMFEditingDomainFactory;
 import org.eclipse.gmf.runtime.emf.core.util.EMFCoreUtil;
@@ -67,6 +67,24 @@ public class UMLDiagramEditorUtil {
 	/**
 	 * @generated
 	 */
+	private static Map ourSaveOptions = null;
+
+	/**
+	 * @generated
+	 */
+	public static Map getSaveOptions() {
+		if (ourSaveOptions == null) {
+			ourSaveOptions = new HashMap();
+			ourSaveOptions.put(XMIResource.OPTION_ENCODING, "UTF-8"); //$NON-NLS-1$
+			ourSaveOptions.put(XMLResource.OPTION_RECORD_UNKNOWN_FEATURE, Boolean.TRUE);
+			ourSaveOptions.put(Resource.OPTION_SAVE_ONLY_IF_CHANGED, Resource.OPTION_SAVE_ONLY_IF_CHANGED_MEMORY_BUFFER);
+		}
+		return ourSaveOptions;
+	}
+
+	/**
+	 * @generated
+	 */
 	public static boolean openDiagram(Resource diagram) throws PartInitException {
 		return EditUIUtil.openEditor((EObject) diagram.getContents().get(0));
 	}
@@ -74,8 +92,7 @@ public class UMLDiagramEditorUtil {
 	/**
 	 * @generated
 	 */
-	private static void setCharset(org.eclipse.emf.common.util.URI uri) {
-		IFile file = getFile(uri);
+	public static void setCharset(IFile file) {
 		if (file == null) {
 			return;
 		}
@@ -84,20 +101,6 @@ public class UMLDiagramEditorUtil {
 		} catch (CoreException e) {
 			UMLDiagramEditorPlugin.getInstance().logError("Unable to set charset for file " + file.getFullPath(), e); //$NON-NLS-1$
 		}
-	}
-
-	/**
-	 * @generated
-	 */
-	public static IFile getFile(org.eclipse.emf.common.util.URI uri) {
-		if (uri.toString().startsWith("platform:/resource")) { //$NON-NLS-1$
-			String path = uri.toString().substring("platform:/resource".length()); //$NON-NLS-1$
-			IResource workspaceResource = ResourcesPlugin.getWorkspace().getRoot().findMember(new Path(path));
-			if (workspaceResource instanceof IFile) {
-				return (IFile) workspaceResource;
-			}
-		}
-		return null;
 	}
 
 	/**
@@ -148,11 +151,11 @@ public class UMLDiagramEditorUtil {
 	 */
 	public static Resource createDiagram(org.eclipse.emf.common.util.URI diagramURI, org.eclipse.emf.common.util.URI modelURI, IProgressMonitor progressMonitor) {
 		TransactionalEditingDomain editingDomain = GMFEditingDomainFactory.INSTANCE.createEditingDomain();
-		progressMonitor.beginTask("Creating diagram and model files", 3);
+		progressMonitor.beginTask(Messages.UMLDiagramEditorUtil_CreateDiagramProgressTask, 3);
 		final Resource diagramResource = editingDomain.getResourceSet().createResource(diagramURI);
 		final Resource modelResource = editingDomain.getResourceSet().createResource(modelURI);
 		final String diagramName = diagramURI.lastSegment();
-		AbstractTransactionalCommand command = new AbstractTransactionalCommand(editingDomain, "Creating diagram and model", Collections.EMPTY_LIST) { //$NON-NLS-1$
+		AbstractTransactionalCommand command = new AbstractTransactionalCommand(editingDomain, Messages.UMLDiagramEditorUtil_CreateDiagramCommandLabel, Collections.EMPTY_LIST) {
 
 			protected CommandResult doExecuteWithResult(IProgressMonitor monitor, IAdaptable info) throws ExecutionException {
 				Package model = createInitialModel();
@@ -166,10 +169,8 @@ public class UMLDiagramEditorUtil {
 				}
 
 				try {
-					Map options = new HashMap();
-					options.put(XMIResource.OPTION_ENCODING, "UTF-8"); //$NON-NLS-1$
-					modelResource.save(options);
-					diagramResource.save(options);
+					modelResource.save(org.eclipse.uml2.diagram.clazz.part.UMLDiagramEditorUtil.getSaveOptions());
+					diagramResource.save(org.eclipse.uml2.diagram.clazz.part.UMLDiagramEditorUtil.getSaveOptions());
 				} catch (IOException e) {
 
 					UMLDiagramEditorPlugin.getInstance().logError("Unable to store model and diagram resources", e); //$NON-NLS-1$
@@ -182,19 +183,19 @@ public class UMLDiagramEditorUtil {
 		} catch (ExecutionException e) {
 			UMLDiagramEditorPlugin.getInstance().logError("Unable to create model and diagram", e); //$NON-NLS-1$
 		}
-		setCharset(modelURI);
-		setCharset(diagramURI);
+		setCharset(WorkspaceSynchronizer.getFile(modelResource));
+		setCharset(WorkspaceSynchronizer.getFile(diagramResource));
 		return diagramResource;
 	}
 
 	/**
 	 * Create a new instance of domain element associated with canvas.
-	 * @generated NOT
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
 	 */
 	private static Package createInitialModel() {
-		Package root = UMLFactory.eINSTANCE.createModel();
-		root.setName("Model");
-		return root;
+		return UMLFactory.eINSTANCE.createPackage();
 	}
 
 	/**
@@ -225,27 +226,6 @@ public class UMLDiagramEditorUtil {
 		if (!editParts.isEmpty()) {
 			diagramPart.getDiagramGraphicalViewer().reveal(firstPrimary != null ? firstPrimary : (EditPart) editParts.get(0));
 		}
-	}
-
-	/**
-	 * @generated
-	 */
-	public static View findView(DiagramEditPart diagramEditPart, EObject targetElement, LazyElement2ViewMap lazyElement2ViewMap) {
-		boolean hasStructuralURI = false;
-		if (targetElement.eResource() instanceof XMLResource) {
-			hasStructuralURI = ((XMLResource) targetElement.eResource()).getID(targetElement) == null;
-		}
-
-		View view = null;
-		if (hasStructuralURI && !lazyElement2ViewMap.getElement2ViewMap().isEmpty()) {
-			view = (View) lazyElement2ViewMap.getElement2ViewMap().get(targetElement);
-		} else if (findElementsInDiagramByID(diagramEditPart, targetElement, lazyElement2ViewMap.editPartTmpHolder) > 0) {
-			EditPart editPart = (EditPart) lazyElement2ViewMap.editPartTmpHolder.get(0);
-			lazyElement2ViewMap.editPartTmpHolder.clear();
-			view = editPart.getModel() instanceof View ? (View) editPart.getModel() : null;
-		}
-
-		return (view == null) ? diagramEditPart.getDiagramView() : view;
 	}
 
 	/**
@@ -287,6 +267,27 @@ public class UMLDiagramEditorUtil {
 			}
 		}
 		return editPartCollector.size() - intialNumOfEditParts;
+	}
+
+	/**
+	 * @generated
+	 */
+	public static View findView(DiagramEditPart diagramEditPart, EObject targetElement, LazyElement2ViewMap lazyElement2ViewMap) {
+		boolean hasStructuralURI = false;
+		if (targetElement.eResource() instanceof XMLResource) {
+			hasStructuralURI = ((XMLResource) targetElement.eResource()).getID(targetElement) == null;
+		}
+
+		View view = null;
+		if (hasStructuralURI && !lazyElement2ViewMap.getElement2ViewMap().isEmpty()) {
+			view = (View) lazyElement2ViewMap.getElement2ViewMap().get(targetElement);
+		} else if (findElementsInDiagramByID(diagramEditPart, targetElement, lazyElement2ViewMap.editPartTmpHolder) > 0) {
+			EditPart editPart = (EditPart) lazyElement2ViewMap.editPartTmpHolder.get(0);
+			lazyElement2ViewMap.editPartTmpHolder.clear();
+			view = editPart.getModel() instanceof View ? (View) editPart.getModel() : null;
+		}
+
+		return (view == null) ? diagramEditPart.getDiagramView() : view;
 	}
 
 	/**
@@ -375,4 +376,19 @@ public class UMLDiagramEditorUtil {
 			return element2ViewMap;
 		}
 	} //LazyElement2ViewMap	
+
+	/**
+	 * @generated
+	 */
+	public static IFile getFile(org.eclipse.emf.common.util.URI uri) {
+		if (uri.toString().startsWith("platform:/resource")) { //$NON-NLS-1$
+			String path = uri.toString().substring("platform:/resource".length()); //$NON-NLS-1$
+			IResource workspaceResource = ResourcesPlugin.getWorkspace().getRoot().findMember(new Path(path));
+			if (workspaceResource instanceof IFile) {
+				return (IFile) workspaceResource;
+			}
+		}
+		return null;
+	}
+
 }
