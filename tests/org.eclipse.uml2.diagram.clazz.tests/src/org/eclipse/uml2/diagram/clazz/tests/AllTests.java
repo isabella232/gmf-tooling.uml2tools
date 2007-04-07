@@ -31,7 +31,7 @@ public class AllTests {
 		suite.addTestSuite(OperationParserTest.class);
 		suite.addTestSuite(OperationInplaceApplierTest.class);
 		suite.addTestSuite(PropertyParserTest.class);
-		suite.addTestSuite(PropertyParserProblemsTest.class);
+		//suite.addTestSuite(PropertyParserProblemsTest.class);
 		//$JUnit-END$
 		return suite;
 	}
