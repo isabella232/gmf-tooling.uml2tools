@@ -7,7 +7,9 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.gmf.runtime.common.core.command.CommandResult;
 import org.eclipse.gmf.runtime.emf.type.core.commands.EditElementCommand;
 import org.eclipse.gmf.runtime.emf.type.core.requests.ReorientRelationshipRequest;
+import org.eclipse.uml2.diagram.clazz.edit.policies.UMLBaseItemSemanticEditPolicy;
 import org.eclipse.uml2.uml.Association;
+import org.eclipse.uml2.uml.Package;
 import org.eclipse.uml2.uml.Type;
 
 /**
@@ -41,9 +43,26 @@ public class AssociationReorientCommand extends EditElementCommand {
 	}
 
 	/**
+	 * FIXME: 180694
 	 * @generated NOT
 	 */
 	public boolean canExecute() {
+		return false;
+	}
+
+	/**
+	 * FIXME: 180694
+	 * @generated NOT
+	 */
+	protected boolean canReorientSource() {
+		return false;
+	}
+
+	/**
+	 * FIXME: 180694
+	 * @generated NOT
+	 */
+	protected boolean canReorientTarget() {
 		return false;
 	}
 
@@ -66,5 +85,40 @@ public class AssociationReorientCommand extends EditElementCommand {
 	 */
 	private CommandResult reorientTarget() throws ExecutionException {
 		throw new UnsupportedOperationException("#180694");
+	}
+
+	/**
+	 * @generated
+	 */
+	protected Association getLink() {
+		return (Association) getElementToEdit();
+	}
+
+	/**
+	 * @generated
+	 */
+	protected Type getOldSource() {
+		return (Type) oldEnd;
+	}
+
+	/**
+	 * @generated
+	 */
+	protected Type getNewSource() {
+		return (Type) newEnd;
+	}
+
+	/**
+	 * @generated
+	 */
+	protected Type getOldTarget() {
+		return (Type) oldEnd;
+	}
+
+	/**
+	 * @generated
+	 */
+	protected Type getNewTarget() {
+		return (Type) newEnd;
 	}
 }
