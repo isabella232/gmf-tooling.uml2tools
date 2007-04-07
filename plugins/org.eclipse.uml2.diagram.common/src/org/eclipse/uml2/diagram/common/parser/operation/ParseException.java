@@ -10,7 +10,7 @@
  * Contributors:
  *    Michael Golubev (Borland) - initial API and implementation
  */
-package org.eclipse.uml2.diagram.clazz.parser.operation;
+package org.eclipse.uml2.diagram.common.parser.operation;
 
 import org.eclipse.uml2.diagram.parser.ExternalParserException;
 

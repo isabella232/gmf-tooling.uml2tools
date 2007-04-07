@@ -13,7 +13,7 @@
 package org.eclipse.uml2.diagram.clazz.tests.parser;
 
 import org.eclipse.emf.ecore.EObject;
-import org.eclipse.uml2.diagram.clazz.parser.operation.OperationParser;
+import org.eclipse.uml2.diagram.common.parser.operation.OperationParser;
 import org.eclipse.uml2.diagram.parser.ExternalParserException;
 import org.eclipse.uml2.diagram.parser.lookup.LookupSuite;
 import org.eclipse.uml2.uml.Operation;

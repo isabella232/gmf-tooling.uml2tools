@@ -10,7 +10,7 @@
  *    Michael Golubev (Borland) - initial API and implementation
  */
 
-package org.eclipse.uml2.diagram.clazz.parser.operation;
+package org.eclipse.uml2.diagram.common.parser.operation;
 
 import java.util.LinkedList;
 import java.util.List;
