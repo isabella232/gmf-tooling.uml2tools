@@ -28,6 +28,8 @@
             xsi:type="gmfgraph:Label"
             referencingElements="ClassNode_name"
             name="ClassFigure_name">
+          <font
+              xsi:type="gmfgraph:BasicFont"/>
           <insets
               top="5"
               left="5"

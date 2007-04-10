@@ -46,6 +46,7 @@ import org.eclipse.swt.accessibility.AccessibleEvent;
 import org.eclipse.swt.graphics.Color;
 import org.eclipse.swt.graphics.FontData;
 import org.eclipse.swt.graphics.Image;
+import org.eclipse.uml2.diagram.clazz.edit.policies.ClassNameVisualEffectEditPolicy;
 import org.eclipse.uml2.diagram.clazz.edit.policies.UMLTextSelectionEditPolicy;
 import org.eclipse.uml2.diagram.clazz.providers.UMLElementTypes;
 
@@ -108,6 +109,7 @@ public class DataTypeNameEditPart extends CompartmentEditPart implements ITextAw
 				return false;
 			}
 		});
+		installEditPolicy("VisualEffect.Class", new ClassNameVisualEffectEditPolicy()); //$NON-NLS-1$
 	}
 
 	/**
@@ -486,7 +488,7 @@ public class DataTypeNameEditPart extends CompartmentEditPart implements ITextAw
 	 * @generated
 	 */
 	private View getFontStyleOwnerView() {
-		return getPrimaryView();
+		return (View) getModel();
 	}
 
 	/**
