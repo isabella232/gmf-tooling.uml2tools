@@ -37,9 +37,8 @@ public class AcceptEventAction_2002_Initializer extends UMLElementTypes.Initiali
 		}
 	}
 	
-	@Override
 	protected void init() {
-		throw new UnsupportedOperationException("Default generation artifact. Should not be called");
+		//
 	}
 
 }

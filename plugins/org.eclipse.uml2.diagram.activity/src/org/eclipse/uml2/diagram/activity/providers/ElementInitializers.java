@@ -6,16 +6,14 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 
+import org.eclipse.emf.common.util.BasicEList;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EStructuralFeature;
-
 import org.eclipse.uml2.diagram.activity.expressions.UMLAbstractExpression;
 import org.eclipse.uml2.diagram.activity.expressions.UMLOCLFactory;
-
 import org.eclipse.uml2.diagram.activity.part.UMLDiagramEditorPlugin;
-
 import org.eclipse.uml2.uml.AcceptEventAction;
 import org.eclipse.uml2.uml.Trigger;
 import org.eclipse.uml2.uml.UMLPackage;
@@ -241,15 +239,13 @@ public class ElementInitializers {
 		 * @generated
 		 */
 		static class Java {
-
+			
 			/**
-			 * @generated
+			 * @generated NOT
 			 */
 			private static EList<Trigger> initAcceptTimeEventActionTrigger(AcceptEventAction self) {
-				// TODO: implement this method
-				// Ensure that you remove @generated or mark it @generated NOT
-
-				throw new UMLAbstractExpression.NoImplException("No user java implementation provided in 'initAcceptTimeEventActionTrigger' operation"); //$NON-NLS-1$
+				new AcceptEventAction_2002_Initializer().init(self);
+				return new BasicEList<Trigger>(self.getTriggers());
 			}
 		} //Java
 	} // end of Initializers
