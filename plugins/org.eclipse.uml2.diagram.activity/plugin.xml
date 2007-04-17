@@ -2,7 +2,84 @@
 <?eclipse version="3.0"?>
 
 <plugin>
+<!-- gmf generator persistent region begin -->
+   <extension point="org.eclipse.ui.popupMenus">
+      <?gmfgen generated="false"?>
+      <objectContribution
+            adaptable="false"
+            id="org.eclipse.uml2.diagram.activity.edit.parts.JoinNodeEditPart"
+            objectClass="org.eclipse.uml2.diagram.activity.edit.parts.JoinNodeEditPart">
+         <menu 
+            id="RotateMenu" 
+            label="Rotate" 
+            path="additions"> 
+         </menu> 
+         <action
+               class="org.eclipse.uml2.diagram.common.actions.RotateAction"
+               definitionId="org.eclipse.uml2.diagram.activity.rotateJoin.id"
+               enablesFor="1"
+               id="org.eclipse.uml2.diagram.activity.rotateJoin"
+               label="Rotate"
+               menubarPath="RotateMenu">
+         </action>
+      </objectContribution>                    
+      <objectContribution
+            adaptable="false"
+            id="org.eclipse.uml2.diagram.activity.edit.parts.JoinNode2EditPart"
+            objectClass="org.eclipse.uml2.diagram.activity.edit.parts.JoinNode2EditPart">
+         <menu 
+            id="RotateMenu" 
+            label="Rotate" 
+            path="additions"> 
+         </menu> 
+         <action
+               class="org.eclipse.uml2.diagram.common.actions.RotateAction"
+               definitionId="org.eclipse.uml2.diagram.activity.rotateJoin2.id"
+               enablesFor="1"
+               id="org.eclipse.uml2.diagram.activity.rotateJoin2"
+               label="Rotate"
+               menubarPath="RotateMenu">
+         </action>
+      </objectContribution>                    
+      <objectContribution
+            adaptable="false"
+            id="org.eclipse.uml2.diagram.activity.edit.parts.ForkNodeEditPart"
+            objectClass="org.eclipse.uml2.diagram.activity.edit.parts.ForkNodeEditPart">
+         <menu 
+            id="RotateMenu" 
+            label="Rotate" 
+            path="additions"> 
+         </menu> 
+         <action
+               class="org.eclipse.uml2.diagram.common.actions.RotateAction"
+               definitionId="org.eclipse.uml2.diagram.activity.rotateFork.id"
+               enablesFor="1"
+               id="org.eclipse.uml2.diagram.activity.rotateFork"
+               label="Rotate"
+               menubarPath="RotateMenu">
+         </action>
+      </objectContribution>                    
+      <objectContribution
+            adaptable="false"
+            id="org.eclipse.uml2.diagram.activity.edit.parts.ForkNode2EditPart"
+            objectClass="org.eclipse.uml2.diagram.activity.edit.parts.ForkNode2EditPart">
+         <menu 
+            id="RotateMenu" 
+            label="Rotate" 
+            path="additions"> 
+         </menu> 
+         <action
+               class="org.eclipse.uml2.diagram.common.actions.RotateAction"
+               definitionId="org.eclipse.uml2.diagram.activity.rotateFork2.id"
+               enablesFor="1"
+               id="org.eclipse.uml2.diagram.activity.rotateFork2"
+               label="Rotate"
+               menubarPath="RotateMenu">
+         </action>
+      </objectContribution>                    
+   </extension>
 
+<!-- gmf generator persistent region end -->
    <extension point="org.eclipse.core.runtime.preferences">
       <?gmfgen generated="true"?>
       <initializer class="org.eclipse.uml2.diagram.activity.preferences.DiagramPreferenceInitializer"/>

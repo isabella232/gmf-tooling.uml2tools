@@ -17,9 +17,9 @@
          </menu> 
          <action
                class="org.eclipse.uml2.diagram.common.actions.RotateAction"
-               definitionId="org.eclipse.uml2.diagram.common.actions.RotateAction.id"
+               definitionId="org.eclipse.uml2.diagram.statemachine.rotateJoin.id"
                enablesFor="1"
-               id="org.eclipse.uml2.diagram.common.actions.RotateActionID"
+               id="org.eclipse.uml2.diagram.statemachine.rotateJoin"
                label="Rotate"
                menubarPath="RotateMenu">
          </action>
@@ -36,9 +36,9 @@
          </menu> 
          <action
                class="org.eclipse.uml2.diagram.common.actions.RotateAction"
-               definitionId="org.eclipse.uml2.diagram.common.actions.RotateAction.id"
+               definitionId="org.eclipse.uml2.diagram.statemachine.rotateFork.id"
                enablesFor="1"
-               id="org.eclipse.uml2.diagram.common.actions.RotateActionID"
+               id="org.eclipse.uml2.diagram.statemachine.rotateFork"
                label="Rotate"
                menubarPath="RotateMenu">
          </action>
