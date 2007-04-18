@@ -298,7 +298,7 @@ public class UMLPaletteFactory {
 	 * @generated NOT
 	 */
 	private ToolEntry createGeneralization3CreationTool() {
-		ToolEntry entry = new ToolEntry(UMLDiagramEditorPlugin.getString("Generalization3CreationTool.title"), UMLDiagramEditorPlugin.getString("Generalization3CreationTool.desc"), null, null) {}; //$NON-NLS-1$ $NON-NLS-2$
+		ToolEntry entry = new ToolEntry(Messages.Generalization3CreationTool_title, Messages.Generalization3CreationTool_desc, null, null) {};
 		entry.setSmallIcon(UMLElementTypes.getImageDescriptor(UMLElementTypes.Generalization_4001));
 		entry.setLargeIcon(entry.getSmallIcon());
 		entry.setToolClass(CreateGeneralizationLinkTool.class);
