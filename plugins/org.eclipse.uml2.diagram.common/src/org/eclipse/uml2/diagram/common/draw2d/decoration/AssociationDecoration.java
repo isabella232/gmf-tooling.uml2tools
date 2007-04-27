@@ -1,0 +1,119 @@
+/*
+ * Copyright (c) 2006 Borland Software Corporation
+ * 
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
+ *
+ * Contributors:
+ *    Michael Golubev (Borland) - initial API and implementation
+ */
+
+package org.eclipse.uml2.diagram.common.draw2d.decoration;
+
+import org.eclipse.draw2d.ColorConstants;
+import org.eclipse.draw2d.geometry.Point;
+import org.eclipse.draw2d.geometry.PointList;
+import org.eclipse.uml2.uml.AggregationKind;
+import org.eclipse.uml2.uml.Association;
+import org.eclipse.uml2.uml.Property;
+
+public class AssociationDecoration extends CompositeDecoration {
+
+	private static final PointList RHOMB = new PointList(new int[] { //
+			//
+					-1, 1, // 
+					0, 0, //
+					-1, -1, //
+					-2, 0, //
+					-1, 1, //
+			});
+
+	private static final PointList ARROW = new PointList(new int[] { //
+			//
+					-1, 1, // 
+					0, 0, //
+					-1, -1, //
+					0, 0, // 
+					-1, 1, //
+			});
+
+	private ComposablePolygonDecoration myCompositeAggrecationDecoration;
+
+	private ComposablePolygonDecoration mySharedAggrecationDecoration;
+
+	private ComposablePolygonDecoration myNavigableDecoration;
+
+	private DotDecoration myOwnedEndDecoration;
+
+	public AssociationDecoration() {
+		initAggregationDecorations();
+		initNavigabilityDecorations();
+		initOwnedEndDecorations();
+	}
+
+	private void initAggregationDecorations() {
+		myCompositeAggrecationDecoration = new ComposablePolygonDecoration();
+		myCompositeAggrecationDecoration.setTemplate(RHOMB.getCopy());
+		myCompositeAggrecationDecoration.setBoundPoint(new Point(-2, 0));
+		myCompositeAggrecationDecoration.setFill(true);
+		if (getParent() != null && getParent().getForegroundColor() != null) {
+			myCompositeAggrecationDecoration.setBackgroundColor(getParent().getForegroundColor());
+		}
+		mySharedAggrecationDecoration = new ComposablePolygonDecoration();
+		mySharedAggrecationDecoration.setTemplate(RHOMB.getCopy());
+		mySharedAggrecationDecoration.setBoundPoint(new Point(-2, 0));
+		mySharedAggrecationDecoration.setFill(true);
+		mySharedAggrecationDecoration.setBackgroundColor(ColorConstants.white);
+	}
+
+	private void initNavigabilityDecorations() {
+		myNavigableDecoration = new ComposablePolygonDecoration();
+		myNavigableDecoration.setTemplate(ARROW.getCopy());
+		myNavigableDecoration.setBoundPoint(new Point(-1, 0));
+	}
+
+	private void initOwnedEndDecorations() {
+		myOwnedEndDecoration = new DotDecoration();
+		myOwnedEndDecoration.setRadius(1);
+		myOwnedEndDecoration.setFill(true);
+	}
+
+	public void updateAggregationKind(AggregationKind kind) {
+		if (kind == AggregationKind.COMPOSITE_LITERAL) {
+			addDecoration(myCompositeAggrecationDecoration);
+			removeDecoration(mySharedAggrecationDecoration);
+		} else if (kind == AggregationKind.SHARED_LITERAL) {
+			addDecoration(mySharedAggrecationDecoration);
+			removeDecoration(myCompositeAggrecationDecoration);
+		} else {
+			removeDecoration(mySharedAggrecationDecoration);
+			removeDecoration(myCompositeAggrecationDecoration);
+		}
+	}
+
+	public void updateNavigability(Property associationEnd) {
+		if (associationEnd.isNavigable()) {
+			addDecoration(myNavigableDecoration);
+		} else {
+			removeDecoration(myNavigableDecoration);
+		}
+	}
+
+	public void updateOwnedEnd(Association association, Property associationEnd) {
+		if (association.getOwnedEnds().contains(associationEnd)) {
+			addDecoration(myOwnedEndDecoration);
+		} else {
+			removeDecoration(myOwnedEndDecoration);
+		}
+
+	}
+
+	public void update(Association association, Property associationEnd) {
+		updateOwnedEnd(association, associationEnd);
+		updateAggregationKind(associationEnd.getAggregation());
+		updateNavigability(associationEnd);
+	}
+
+}
