@@ -97,8 +97,8 @@ public class AssociationEditPart extends ConnectionNodeEditPart {
 		Property sourceEnd = AssociationEndConvention.getSourceEnd(association);
 		Property targetEnd = AssociationEndConvention.getTargetEnd(association);
 
-		linkFigure.getSourceDecorationImpl().update(association, sourceEnd);
-		linkFigure.getTargetDecorationImpl().update(association, targetEnd);
+		linkFigure.getSourceDecorationImpl().update(association, sourceEnd, targetEnd);
+		linkFigure.getTargetDecorationImpl().update(association, targetEnd, sourceEnd);
 	}
 
 	/**

@@ -101,19 +101,21 @@ public class AssociationDecoration extends CompositeDecoration {
 		}
 	}
 
-	public void updateOwnedEnd(Association association, Property associationEnd) {
-		if (association.getOwnedEnds().contains(associationEnd)) {
-			addDecoration(myOwnedEndDecoration);
-		} else {
+	public void updateOwnedEnd(Association association, Property end) {
+		// dots are shown for property ends that are owned by source/target
+		// classifier, not the association itself.
+		if (association.getOwnedEnds().contains(end)) {
 			removeDecoration(myOwnedEndDecoration);
+		} else {
+			addDecoration(myOwnedEndDecoration);
 		}
 
 	}
 
-	public void update(Association association, Property associationEnd) {
-		updateOwnedEnd(association, associationEnd);
-		updateAggregationKind(associationEnd.getAggregation());
-		updateNavigability(associationEnd);
+	public void update(Association association, Property end, Property otherEnd) {
+		updateOwnedEnd(association, end);
+		updateAggregationKind(otherEnd.getAggregation());
+		updateNavigability(end);
 	}
 
 }
