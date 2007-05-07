@@ -135,11 +135,6 @@
             xsi:type="gmfgen:DefaultSizeAttributes"
             width="23"
             height="23"/>
-        <attributes
-            xsi:type="gmfgen:StyleAttributes"
-            fixedForeground="true"/>
-        <attributes
-            xsi:type="gmfgen:ResizeConstraints"/>
         <requiredPluginIDs>org.eclipse.draw2d</requiredPluginIDs>
         <requiredPluginIDs>org.eclipse.uml2.diagram.common</requiredPluginIDs>
       </viewmap>
@@ -239,11 +234,6 @@
             xsi:type="gmfgen:DefaultSizeAttributes"
             width="15"
             height="15"/>
-        <attributes
-            xsi:type="gmfgen:StyleAttributes"
-            fixedBackground="true"/>
-        <attributes
-            xsi:type="gmfgen:ResizeConstraints"/>
         <requiredPluginIDs>org.eclipse.draw2d</requiredPluginIDs>
         <requiredPluginIDs>org.eclipse.uml2.diagram.common</requiredPluginIDs>
       </viewmap>
@@ -394,8 +384,6 @@
             xsi:type="gmfgen:DefaultSizeAttributes"
             width="15"
             height="15"/>
-        <attributes
-            xsi:type="gmfgen:ResizeConstraints"/>
         <requiredPluginIDs>org.eclipse.draw2d</requiredPluginIDs>
         <requiredPluginIDs>org.eclipse.gmf.runtime.draw2d.ui</requiredPluginIDs>
       </viewmap>
@@ -455,11 +443,6 @@
             xsi:type="gmfgen:DefaultSizeAttributes"
             width="23"
             height="23"/>
-        <attributes
-            xsi:type="gmfgen:StyleAttributes"
-            fixedForeground="true"/>
-        <attributes
-            xsi:type="gmfgen:ResizeConstraints"/>
         <requiredPluginIDs>org.eclipse.draw2d</requiredPluginIDs>
         <requiredPluginIDs>org.eclipse.uml2.diagram.common</requiredPluginIDs>
       </viewmap>
@@ -501,12 +484,6 @@
             xsi:type="gmfgen:DefaultSizeAttributes"
             width="4"
             height="50"/>
-        <attributes
-            xsi:type="gmfgen:StyleAttributes"
-            fixedBackground="true"/>
-        <attributes
-            xsi:type="gmfgen:ResizeConstraints"
-            resizeHandles="5"/>
         <requiredPluginIDs>org.eclipse.draw2d</requiredPluginIDs>
         <requiredPluginIDs>org.eclipse.uml2.diagram.common</requiredPluginIDs>
       </viewmap>
@@ -548,12 +525,6 @@
             xsi:type="gmfgen:DefaultSizeAttributes"
             width="4"
             height="50"/>
-        <attributes
-            xsi:type="gmfgen:StyleAttributes"
-            fixedBackground="true"/>
-        <attributes
-            xsi:type="gmfgen:ResizeConstraints"
-            resizeHandles="5"/>
         <requiredPluginIDs>org.eclipse.draw2d</requiredPluginIDs>
         <requiredPluginIDs>org.eclipse.uml2.diagram.common</requiredPluginIDs>
       </viewmap>
@@ -692,8 +663,6 @@
             xsi:type="gmfgen:DefaultSizeAttributes"
             width="15"
             height="15"/>
-        <attributes
-            xsi:type="gmfgen:ResizeConstraints"/>
         <requiredPluginIDs>org.eclipse.draw2d</requiredPluginIDs>
         <requiredPluginIDs>org.eclipse.gmf.runtime.draw2d.ui</requiredPluginIDs>
       </viewmap>
@@ -805,8 +774,6 @@
             xsi:type="gmfgen:DefaultSizeAttributes"
             width="15"
             height="15"/>
-        <attributes
-            xsi:type="gmfgen:ResizeConstraints"/>
         <requiredPluginIDs>org.eclipse.draw2d</requiredPluginIDs>
         <requiredPluginIDs>org.eclipse.gmf.runtime.draw2d.ui</requiredPluginIDs>
       </viewmap>
@@ -867,8 +834,6 @@
             xsi:type="gmfgen:DefaultSizeAttributes"
             width="15"
             height="15"/>
-        <attributes
-            xsi:type="gmfgen:ResizeConstraints"/>
         <requiredPluginIDs>org.eclipse.draw2d</requiredPluginIDs>
         <requiredPluginIDs>org.eclipse.gmf.runtime.draw2d.ui</requiredPluginIDs>
       </viewmap>
@@ -929,8 +894,6 @@
             xsi:type="gmfgen:DefaultSizeAttributes"
             width="15"
             height="15"/>
-        <attributes
-            xsi:type="gmfgen:ResizeConstraints"/>
         <requiredPluginIDs>org.eclipse.draw2d</requiredPluginIDs>
         <requiredPluginIDs>org.eclipse.gmf.runtime.draw2d.ui</requiredPluginIDs>
       </viewmap>
@@ -1043,8 +1006,6 @@
             xsi:type="gmfgen:DefaultSizeAttributes"
             width="15"
             height="15"/>
-        <attributes
-            xsi:type="gmfgen:ResizeConstraints"/>
         <requiredPluginIDs>org.eclipse.draw2d</requiredPluginIDs>
         <requiredPluginIDs>org.eclipse.gmf.runtime.draw2d.ui</requiredPluginIDs>
       </viewmap>
@@ -1105,8 +1066,6 @@
             xsi:type="gmfgen:DefaultSizeAttributes"
             width="15"
             height="15"/>
-        <attributes
-            xsi:type="gmfgen:ResizeConstraints"/>
         <requiredPluginIDs>org.eclipse.draw2d</requiredPluginIDs>
         <requiredPluginIDs>org.eclipse.gmf.runtime.draw2d.ui</requiredPluginIDs>
       </viewmap>
@@ -1219,8 +1178,6 @@
             xsi:type="gmfgen:DefaultSizeAttributes"
             width="15"
             height="15"/>
-        <attributes
-            xsi:type="gmfgen:ResizeConstraints"/>
         <requiredPluginIDs>org.eclipse.draw2d</requiredPluginIDs>
         <requiredPluginIDs>org.eclipse.gmf.runtime.draw2d.ui</requiredPluginIDs>
       </viewmap>
@@ -1481,11 +1438,6 @@
             xsi:type="gmfgen:DefaultSizeAttributes"
             width="23"
             height="23"/>
-        <attributes
-            xsi:type="gmfgen:StyleAttributes"
-            fixedForeground="true"/>
-        <attributes
-            xsi:type="gmfgen:ResizeConstraints"/>
         <requiredPluginIDs>org.eclipse.draw2d</requiredPluginIDs>
         <requiredPluginIDs>org.eclipse.uml2.diagram.common</requiredPluginIDs>
       </viewmap>
@@ -1557,11 +1509,6 @@
             xsi:type="gmfgen:DefaultSizeAttributes"
             width="23"
             height="23"/>
-        <attributes
-            xsi:type="gmfgen:StyleAttributes"
-            fixedForeground="true"/>
-        <attributes
-            xsi:type="gmfgen:ResizeConstraints"/>
         <requiredPluginIDs>org.eclipse.draw2d</requiredPluginIDs>
         <requiredPluginIDs>org.eclipse.uml2.diagram.common</requiredPluginIDs>
       </viewmap>
@@ -1811,12 +1758,6 @@
             xsi:type="gmfgen:DefaultSizeAttributes"
             width="4"
             height="50"/>
-        <attributes
-            xsi:type="gmfgen:StyleAttributes"
-            fixedBackground="true"/>
-        <attributes
-            xsi:type="gmfgen:ResizeConstraints"
-            resizeHandles="5"/>
         <requiredPluginIDs>org.eclipse.draw2d</requiredPluginIDs>
         <requiredPluginIDs>org.eclipse.uml2.diagram.common</requiredPluginIDs>
       </viewmap>
@@ -1859,12 +1800,6 @@
             xsi:type="gmfgen:DefaultSizeAttributes"
             width="4"
             height="50"/>
-        <attributes
-            xsi:type="gmfgen:StyleAttributes"
-            fixedBackground="true"/>
-        <attributes
-            xsi:type="gmfgen:ResizeConstraints"
-            resizeHandles="5"/>
         <requiredPluginIDs>org.eclipse.draw2d</requiredPluginIDs>
         <requiredPluginIDs>org.eclipse.uml2.diagram.common</requiredPluginIDs>
       </viewmap>
@@ -2009,7 +1944,7 @@
       <viewmap
           xsi:type="gmfgen:InnerClassViewmap"
           className="SelectionFigure"
-          classBody="&#xD;&#xA;/**&#xD;&#xA; * @generated&#xD;&#xA; */&#xD;&#xA;public class SelectionFigure extends org.eclipse.uml2.diagram.common.draw2d.ConstraintFigureBase {&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;public SelectionFigure() {&#xD;&#xA;&#x9;&#x9;&#xD;&#xA;&#xD;&#xA;&#x9;org.eclipse.gmf.internal.codegen.draw2d.GridLayout layoutThis = new org.eclipse.gmf.internal.codegen.draw2d.GridLayout();&#xD;&#xA;&#x9;layoutThis.numColumns = 1;&#xD;&#xA;&#x9;layoutThis.makeColumnsEqualWidth = true;&#xD;&#xA;&#x9;layoutThis.horizontalSpacing = 0;&#xD;&#xA;&#x9;layoutThis.verticalSpacing = 0;&#xD;&#xA;&#x9;layoutThis.marginWidth = 0;&#xD;&#xA;&#x9;layoutThis.marginHeight = 0;&#xD;&#xA;&#x9;this.setLayoutManager(layoutThis);&#xD;&#xA;&#xD;&#xA;&#x9;&#x9;&#xD;&#xA;&#xD;&#xA;&#x9;&#x9;createContents();&#xD;&#xA;&#x9;}&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;private void createContents(){&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;org.eclipse.gmf.runtime.draw2d.ui.figures.WrapLabel selectionFigure_fixed_top0 = new org.eclipse.gmf.runtime.draw2d.ui.figures.WrapLabel();&#xD;&#xA;selectionFigure_fixed_top0.setText(&quot;\u00ABselection\u00BB&quot;);&#xD;&#xA;&#xD;&#xA;selectionFigure_fixed_top0.setBorder(new org.eclipse.draw2d.MarginBorder(getMapMode().DPtoLP(0)&#xD;&#xA;, getMapMode().DPtoLP(16)&#xD;&#xA;, getMapMode().DPtoLP(0)&#xD;&#xA;, getMapMode().DPtoLP(16)&#xD;&#xA;));&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;org.eclipse.gmf.internal.codegen.draw2d.GridLayoutData constraintSelectionFigure_fixed_top0 = new org.eclipse.gmf.internal.codegen.draw2d.GridLayoutData();&#xD;&#xA;constraintSelectionFigure_fixed_top0.verticalAlignment = org.eclipse.gmf.internal.codegen.draw2d.GridLayoutData.BEGINNING;&#xD;&#xA;constraintSelectionFigure_fixed_top0.horizontalAlignment = org.eclipse.gmf.internal.codegen.draw2d.GridLayoutData.FILL;&#xD;&#xA;constraintSelectionFigure_fixed_top0.horizontalIndent = 0;&#xD;&#xA;constraintSelectionFigure_fixed_top0.horizontalSpan = 0;&#xD;&#xA;constraintSelectionFigure_fixed_top0.verticalSpan = 0;&#xD;&#xA;constraintSelectionFigure_fixed_top0.grabExcessHorizontalSpace = true;&#xD;&#xA;constraintSelectionFigure_fixed_top0.grabExcessVerticalSpace = false;&#xD;&#xA;this.add(selectionFigure_fixed_top0, constraintSelectionFigure_fixed_top0);&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;org.eclipse.gmf.runtime.draw2d.ui.figures.WrapLabel selectionFigure_name0 = new org.eclipse.gmf.runtime.draw2d.ui.figures.WrapLabel();&#xD;&#xA;selectionFigure_name0.setText(&quot;&quot;);&#xD;&#xA;&#xD;&#xA;selectionFigure_name0.setBorder(new org.eclipse.draw2d.MarginBorder(getMapMode().DPtoLP(0)&#xD;&#xA;, getMapMode().DPtoLP(5)&#xD;&#xA;, getMapMode().DPtoLP(0)&#xD;&#xA;, getMapMode().DPtoLP(5)&#xD;&#xA;));&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;org.eclipse.gmf.internal.codegen.draw2d.GridLayoutData constraintSelectionFigure_name0 = new org.eclipse.gmf.internal.codegen.draw2d.GridLayoutData();&#xD;&#xA;constraintSelectionFigure_name0.verticalAlignment = org.eclipse.gmf.internal.codegen.draw2d.GridLayoutData.FILL;&#xD;&#xA;constraintSelectionFigure_name0.horizontalAlignment = org.eclipse.gmf.internal.codegen.draw2d.GridLayoutData.FILL;&#xD;&#xA;constraintSelectionFigure_name0.horizontalIndent = 0;&#xD;&#xA;constraintSelectionFigure_name0.horizontalSpan = 0;&#xD;&#xA;constraintSelectionFigure_name0.verticalSpan = 0;&#xD;&#xA;constraintSelectionFigure_name0.grabExcessHorizontalSpace = true;&#xD;&#xA;constraintSelectionFigure_name0.grabExcessVerticalSpace = true;&#xD;&#xA;this.add(selectionFigure_name0, constraintSelectionFigure_name0);&#xD;&#xA;&#xD;&#xA;setFigureSelectionFigure_name(selectionFigure_name0);&#xD;&#xA;&#xD;&#xA;&#x9;}&#xD;&#xA;&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;private org.eclipse.gmf.runtime.draw2d.ui.figures.WrapLabel fSelectionFigure_name; &#xD;&#xA;&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;public org.eclipse.gmf.runtime.draw2d.ui.figures.WrapLabel getFigureSelectionFigure_name() {&#xD;&#xA;&#x9;&#x9;return fSelectionFigure_name;&#xD;&#xA;&#x9;}&#xD;&#xA;&#x9;&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;private void setFigureSelectionFigure_name(org.eclipse.gmf.runtime.draw2d.ui.figures.WrapLabel fig){&#xD;&#xA;&#x9;&#x9;fSelectionFigure_name = fig;&#xD;&#xA;&#x9;}&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;private boolean myUseLocalCoordinates = false;&#xD;&#xA;&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;protected boolean useLocalCoordinates() {&#xD;&#xA;&#x9;&#x9;return myUseLocalCoordinates;&#xD;&#xA;&#x9;}&#xD;&#xA;&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;protected void setUseLocalCoordinates(boolean useLocalCoordinates) {&#xD;&#xA;&#x9;&#x9;myUseLocalCoordinates = useLocalCoordinates;&#xD;&#xA;&#x9;}&#xD;&#xA;&#xD;&#xA;}&#xD;&#xA;&#xD;&#xA;">
+          classBody="&#xD;&#xA;/**&#xD;&#xA; * @generated&#xD;&#xA; */&#xD;&#xA;public class SelectionFigure extends org.eclipse.uml2.diagram.common.draw2d.ConstraintFigureBase {&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;public SelectionFigure() {&#xD;&#xA;&#x9;&#x9;&#xD;&#xA;&#xD;&#xA;&#x9;org.eclipse.draw2d.GridLayout layoutThis = new org.eclipse.draw2d.GridLayout();&#xD;&#xA;&#x9;layoutThis.numColumns = 1;&#xD;&#xA;&#x9;layoutThis.makeColumnsEqualWidth = true;&#xD;&#xA;&#x9;layoutThis.horizontalSpacing = 0;&#xD;&#xA;&#x9;layoutThis.verticalSpacing = 0;&#xD;&#xA;&#x9;layoutThis.marginWidth = 0;&#xD;&#xA;&#x9;layoutThis.marginHeight = 0;&#xD;&#xA;&#x9;this.setLayoutManager(layoutThis);&#xD;&#xA;&#xD;&#xA;&#x9;&#x9;&#xD;&#xA;&#xD;&#xA;&#x9;&#x9;createContents();&#xD;&#xA;&#x9;}&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;private void createContents(){&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;org.eclipse.gmf.runtime.draw2d.ui.figures.WrapLabel selectionFigure_fixed_top0 = new org.eclipse.gmf.runtime.draw2d.ui.figures.WrapLabel();&#xD;&#xA;selectionFigure_fixed_top0.setText(&quot;\u00ABselection\u00BB&quot;);&#xD;&#xA;&#xD;&#xA;selectionFigure_fixed_top0.setBorder(new org.eclipse.draw2d.MarginBorder(getMapMode().DPtoLP(0)&#xD;&#xA;, getMapMode().DPtoLP(16)&#xD;&#xA;, getMapMode().DPtoLP(0)&#xD;&#xA;, getMapMode().DPtoLP(16)&#xD;&#xA;));&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;org.eclipse.draw2d.GridData constraintSelectionFigure_fixed_top0 = new org.eclipse.draw2d.GridData();&#xD;&#xA;constraintSelectionFigure_fixed_top0.verticalAlignment = org.eclipse.draw2d.GridData.BEGINNING;&#xD;&#xA;constraintSelectionFigure_fixed_top0.horizontalAlignment = org.eclipse.draw2d.GridData.FILL;&#xD;&#xA;constraintSelectionFigure_fixed_top0.horizontalIndent = 0;&#xD;&#xA;constraintSelectionFigure_fixed_top0.horizontalSpan = 0;&#xD;&#xA;constraintSelectionFigure_fixed_top0.verticalSpan = 0;&#xD;&#xA;constraintSelectionFigure_fixed_top0.grabExcessHorizontalSpace = true;&#xD;&#xA;constraintSelectionFigure_fixed_top0.grabExcessVerticalSpace = false;&#xD;&#xA;this.add(selectionFigure_fixed_top0, constraintSelectionFigure_fixed_top0);&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;org.eclipse.gmf.runtime.draw2d.ui.figures.WrapLabel selectionFigure_name0 = new org.eclipse.gmf.runtime.draw2d.ui.figures.WrapLabel();&#xD;&#xA;selectionFigure_name0.setText(&quot;&quot;);&#xD;&#xA;&#xD;&#xA;selectionFigure_name0.setBorder(new org.eclipse.draw2d.MarginBorder(getMapMode().DPtoLP(0)&#xD;&#xA;, getMapMode().DPtoLP(5)&#xD;&#xA;, getMapMode().DPtoLP(0)&#xD;&#xA;, getMapMode().DPtoLP(5)&#xD;&#xA;));&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;org.eclipse.draw2d.GridData constraintSelectionFigure_name0 = new org.eclipse.draw2d.GridData();&#xD;&#xA;constraintSelectionFigure_name0.verticalAlignment = org.eclipse.draw2d.GridData.FILL;&#xD;&#xA;constraintSelectionFigure_name0.horizontalAlignment = org.eclipse.draw2d.GridData.FILL;&#xD;&#xA;constraintSelectionFigure_name0.horizontalIndent = 0;&#xD;&#xA;constraintSelectionFigure_name0.horizontalSpan = 0;&#xD;&#xA;constraintSelectionFigure_name0.verticalSpan = 0;&#xD;&#xA;constraintSelectionFigure_name0.grabExcessHorizontalSpace = true;&#xD;&#xA;constraintSelectionFigure_name0.grabExcessVerticalSpace = true;&#xD;&#xA;this.add(selectionFigure_name0, constraintSelectionFigure_name0);&#xD;&#xA;&#xD;&#xA;setFigureSelectionFigure_name(selectionFigure_name0);&#xD;&#xA;&#xD;&#xA;&#x9;}&#xD;&#xA;&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;private org.eclipse.gmf.runtime.draw2d.ui.figures.WrapLabel fSelectionFigure_name; &#xD;&#xA;&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;public org.eclipse.gmf.runtime.draw2d.ui.figures.WrapLabel getFigureSelectionFigure_name() {&#xD;&#xA;&#x9;&#x9;return fSelectionFigure_name;&#xD;&#xA;&#x9;}&#xD;&#xA;&#x9;&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;private void setFigureSelectionFigure_name(org.eclipse.gmf.runtime.draw2d.ui.figures.WrapLabel fig){&#xD;&#xA;&#x9;&#x9;fSelectionFigure_name = fig;&#xD;&#xA;&#x9;}&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;private boolean myUseLocalCoordinates = false;&#xD;&#xA;&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;protected boolean useLocalCoordinates() {&#xD;&#xA;&#x9;&#x9;return myUseLocalCoordinates;&#xD;&#xA;&#x9;}&#xD;&#xA;&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;protected void setUseLocalCoordinates(boolean useLocalCoordinates) {&#xD;&#xA;&#x9;&#x9;myUseLocalCoordinates = useLocalCoordinates;&#xD;&#xA;&#x9;}&#xD;&#xA;&#xD;&#xA;}&#xD;&#xA;&#xD;&#xA;">
         <requiredPluginIDs>org.eclipse.draw2d</requiredPluginIDs>
         <requiredPluginIDs>org.eclipse.gmf.runtime.draw2d.ui</requiredPluginIDs>
       </viewmap>
@@ -2067,8 +2002,6 @@
             xsi:type="gmfgen:DefaultSizeAttributes"
             width="70"
             height="25"/>
-        <attributes
-            xsi:type="gmfgen:ResizeConstraints"/>
         <requiredPluginIDs>org.eclipse.draw2d</requiredPluginIDs>
         <requiredPluginIDs>org.eclipse.gmf.runtime.draw2d.ui</requiredPluginIDs>
       </viewmap>
@@ -2273,6 +2206,7 @@
           href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
       <elementType
           xsi:type="gmfgen:MetamodelType"
+          displayName="Local Precondition"
           editHelperClassName="ConstraintEditHelper"/>
       <viewmap
           xsi:type="gmfgen:InnerClassViewmap"
@@ -2298,6 +2232,7 @@
           href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
       <elementType
           xsi:type="gmfgen:SpecializationType"
+          displayName="Local Postcondition"
           metamodelType="//@diagram/@topLevelNodes.1/@elementType"
           editHelperAdviceClassName="ConstraintEditHelperAdvice"/>
       <viewmap
@@ -2316,6 +2251,7 @@
         editPartClassName="ControlFlowEditPart"
         itemSemanticEditPolicyClassName="ControlFlowItemSemanticEditPolicy"
         notationViewFactoryClassName="ControlFlowViewFactory"
+        createCommandClassName="ControlFlowCreateCommand"
         reorientCommandClassName="ControlFlowReorientCommand">
       <diagramRunTimeClass
           href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Edge"/>
@@ -2333,8 +2269,7 @@
         <requiredPluginIDs>org.eclipse.gmf.runtime.draw2d.ui</requiredPluginIDs>
       </viewmap>
       <modelFacet
-          xsi:type="gmfgen:TypeLinkModelFacet"
-          createCommandClassName="ControlFlowTypeLinkCreateCommand">
+          xsi:type="gmfgen:TypeLinkModelFacet">
         <metaClass
             href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/ControlFlow"/>
         <containmentMetaFeature
@@ -2358,6 +2293,7 @@
         editPartClassName="ObjectFlowEditPart"
         itemSemanticEditPolicyClassName="ObjectFlowItemSemanticEditPolicy"
         notationViewFactoryClassName="ObjectFlowViewFactory"
+        createCommandClassName="ObjectFlowCreateCommand"
         reorientCommandClassName="ObjectFlowReorientCommand">
       <diagramRunTimeClass
           href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Edge"/>
@@ -2375,8 +2311,7 @@
         <requiredPluginIDs>org.eclipse.gmf.runtime.draw2d.ui</requiredPluginIDs>
       </viewmap>
       <modelFacet
-          xsi:type="gmfgen:TypeLinkModelFacet"
-          createCommandClassName="ObjectFlowTypeLinkCreateCommand">
+          xsi:type="gmfgen:TypeLinkModelFacet">
         <metaClass
             href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/ObjectFlow"/>
         <containmentMetaFeature
@@ -2394,6 +2329,7 @@
         editPartClassName="ActionLocalPreconditionEditPart"
         itemSemanticEditPolicyClassName="ActionLocalPreconditionItemSemanticEditPolicy"
         notationViewFactoryClassName="ActionLocalPreconditionViewFactory"
+        createCommandClassName="ActionLocalPreconditionCreateCommand"
         reorientCommandClassName="ActionLocalPreconditionReorientCommand">
       <diagramRunTimeClass
           href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Edge"/>
@@ -2418,6 +2354,7 @@
         editPartClassName="ObjectNodeSelectionEditPart"
         itemSemanticEditPolicyClassName="ObjectNodeSelectionItemSemanticEditPolicy"
         notationViewFactoryClassName="ObjectNodeSelectionViewFactory"
+        createCommandClassName="ObjectNodeSelectionCreateCommand"
         reorientCommandClassName="ObjectNodeSelectionReorientCommand">
       <diagramRunTimeClass
           href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Edge"/>
@@ -2442,6 +2379,7 @@
         editPartClassName="ExceptionHandlerEditPart"
         itemSemanticEditPolicyClassName="ExceptionHandlerItemSemanticEditPolicy"
         notationViewFactoryClassName="ExceptionHandlerViewFactory"
+        createCommandClassName="ExceptionHandlerCreateCommand"
         reorientCommandClassName="ExceptionHandlerReorientCommand">
       <diagramRunTimeClass
           href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Edge"/>
@@ -2456,8 +2394,7 @@
         <requiredPluginIDs>org.eclipse.gmf.runtime.draw2d.ui</requiredPluginIDs>
       </viewmap>
       <modelFacet
-          xsi:type="gmfgen:TypeLinkModelFacet"
-          createCommandClassName="ExceptionHandlerTypeLinkCreateCommand">
+          xsi:type="gmfgen:TypeLinkModelFacet">
         <metaClass
             href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/ExceptionHandler"/>
         <containmentMetaFeature
@@ -5947,8 +5884,7 @@
     <providers
         xsi:type="gmfgen:GenExpressionInterpreter"
         expressions="//@diagram/@topLevelNodes.0/@modelFacet/@modelElementInitializer/@initializers.0 //@diagram/@childNodes.0/@modelFacet/@modelElementSelector //@diagram/@childNodes.1/@modelFacet/@modelElementSelector //@diagram/@childNodes.43/@modelFacet/@modelElementInitializer/@initializers.0 //@diagram/@childNodes.44/@modelFacet/@modelElementInitializer/@initializers.0 //@diagram/@childNodes.45/@modelFacet/@modelElementInitializer/@initializers.0 //@diagram/@links.0/@creationConstraints/@sourceEnd //@diagram/@links.0/@creationConstraints/@targetEnd">
-      <requiredPluginIDs>org.eclipse.emf.ocl</requiredPluginIDs>
-      <requiredPluginIDs>org.eclipse.emf.query.ocl</requiredPluginIDs>
+      <requiredPluginIDs>org.eclipse.ocl.ecore</requiredPluginIDs>
     </providers>
     <providers
         xsi:type="gmfgen:GenJavaExpressionProvider"
