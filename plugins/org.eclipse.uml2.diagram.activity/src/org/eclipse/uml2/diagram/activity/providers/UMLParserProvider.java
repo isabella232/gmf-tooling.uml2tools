@@ -1,11 +1,15 @@
 package org.eclipse.uml2.diagram.activity.providers;
 
 import org.eclipse.core.runtime.IAdaptable;
+import org.eclipse.emf.ecore.EAttribute;
+import org.eclipse.emf.ecore.EObject;
 import org.eclipse.gmf.runtime.common.core.service.AbstractProvider;
 import org.eclipse.gmf.runtime.common.core.service.IOperation;
 import org.eclipse.gmf.runtime.common.ui.services.parser.GetParserOperation;
 import org.eclipse.gmf.runtime.common.ui.services.parser.IParser;
 import org.eclipse.gmf.runtime.common.ui.services.parser.IParserProvider;
+import org.eclipse.gmf.runtime.emf.type.core.IElementType;
+import org.eclipse.gmf.runtime.emf.ui.services.parser.ParserHintAdapter;
 import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.uml2.diagram.activity.edit.parts.ActivityNameEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.ActivityParameterNodeNameEditPart;
@@ -32,9 +36,8 @@ import org.eclipse.uml2.diagram.activity.edit.parts.OutputPinName3EditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.OutputPinNameEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.PinName2EditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.PinNameEditPart;
-
+import org.eclipse.uml2.diagram.activity.parsers.MessageFormatParser;
 import org.eclipse.uml2.diagram.activity.part.UMLVisualIDRegistry;
-
 import org.eclipse.uml2.uml.UMLPackage;
 
 /**
@@ -45,24 +48,25 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 	/**
 	 * @generated
 	 */
-	private IParser opaqueActionOpaqueActionName_5023Parser;
+	private IParser activityName_5030Parser;
 
 	/**
 	 * @generated
 	 */
-	private IParser getOpaqueActionOpaqueActionName_5023Parser() {
-		if (opaqueActionOpaqueActionName_5023Parser == null) {
-			opaqueActionOpaqueActionName_5023Parser = createOpaqueActionOpaqueActionName_5023Parser();
+	private IParser getActivityName_5030Parser() {
+		if (activityName_5030Parser == null) {
+			activityName_5030Parser = createActivityName_5030Parser();
 		}
-		return opaqueActionOpaqueActionName_5023Parser;
+		return activityName_5030Parser;
 	}
 
 	/**
 	 * @generated
 	 */
-	protected IParser createOpaqueActionOpaqueActionName_5023Parser() {
-		UMLStructuralFeatureParser parser = new UMLStructuralFeatureParser(UMLPackage.eINSTANCE.getNamedElement_Name());
+	protected IParser createActivityName_5030Parser() {
+		MessageFormatParser parser = new MessageFormatParser(new EAttribute[] { UMLPackage.eINSTANCE.getNamedElement_Name(), });
 		parser.setViewPattern("{0}");
+		parser.setEditorPattern("{0}");
 		parser.setEditPattern("{0}");
 		return parser;
 	}
@@ -70,24 +74,25 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 	/**
 	 * @generated
 	 */
-	private IParser outputPinOutputPinName_5003Parser;
+	private IParser opaqueActionName_5023Parser;
 
 	/**
 	 * @generated
 	 */
-	private IParser getOutputPinOutputPinName_5003Parser() {
-		if (outputPinOutputPinName_5003Parser == null) {
-			outputPinOutputPinName_5003Parser = createOutputPinOutputPinName_5003Parser();
+	private IParser getOpaqueActionName_5023Parser() {
+		if (opaqueActionName_5023Parser == null) {
+			opaqueActionName_5023Parser = createOpaqueActionName_5023Parser();
 		}
-		return outputPinOutputPinName_5003Parser;
+		return opaqueActionName_5023Parser;
 	}
 
 	/**
 	 * @generated
 	 */
-	protected IParser createOutputPinOutputPinName_5003Parser() {
-		UMLStructuralFeatureParser parser = new UMLStructuralFeatureParser(UMLPackage.eINSTANCE.getNamedElement_Name());
+	protected IParser createOpaqueActionName_5023Parser() {
+		MessageFormatParser parser = new MessageFormatParser(new EAttribute[] { UMLPackage.eINSTANCE.getNamedElement_Name(), });
 		parser.setViewPattern("{0}");
+		parser.setEditorPattern("{0}");
 		parser.setEditPattern("{0}");
 		return parser;
 	}
@@ -95,24 +100,25 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 	/**
 	 * @generated
 	 */
-	private IParser pinPinName_5024Parser;
+	private IParser outputPinName_5003Parser;
 
 	/**
 	 * @generated
 	 */
-	private IParser getPinPinName_5024Parser() {
-		if (pinPinName_5024Parser == null) {
-			pinPinName_5024Parser = createPinPinName_5024Parser();
+	private IParser getOutputPinName_5003Parser() {
+		if (outputPinName_5003Parser == null) {
+			outputPinName_5003Parser = createOutputPinName_5003Parser();
 		}
-		return pinPinName_5024Parser;
+		return outputPinName_5003Parser;
 	}
 
 	/**
 	 * @generated
 	 */
-	protected IParser createPinPinName_5024Parser() {
-		UMLStructuralFeatureParser parser = new UMLStructuralFeatureParser(UMLPackage.eINSTANCE.getNamedElement_Name());
+	protected IParser createOutputPinName_5003Parser() {
+		MessageFormatParser parser = new MessageFormatParser(new EAttribute[] { UMLPackage.eINSTANCE.getNamedElement_Name(), });
 		parser.setViewPattern("{0}");
+		parser.setEditorPattern("{0}");
 		parser.setEditPattern("{0}");
 		return parser;
 	}
@@ -120,24 +126,25 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 	/**
 	 * @generated
 	 */
-	private IParser createObjectActionCreateObjectActionName_5025Parser;
+	private IParser pinName_5024Parser;
 
 	/**
 	 * @generated
 	 */
-	private IParser getCreateObjectActionCreateObjectActionName_5025Parser() {
-		if (createObjectActionCreateObjectActionName_5025Parser == null) {
-			createObjectActionCreateObjectActionName_5025Parser = createCreateObjectActionCreateObjectActionName_5025Parser();
+	private IParser getPinName_5024Parser() {
+		if (pinName_5024Parser == null) {
+			pinName_5024Parser = createPinName_5024Parser();
 		}
-		return createObjectActionCreateObjectActionName_5025Parser;
+		return pinName_5024Parser;
 	}
 
 	/**
 	 * @generated
 	 */
-	protected IParser createCreateObjectActionCreateObjectActionName_5025Parser() {
-		UMLStructuralFeatureParser parser = new UMLStructuralFeatureParser(UMLPackage.eINSTANCE.getNamedElement_Name());
+	protected IParser createPinName_5024Parser() {
+		MessageFormatParser parser = new MessageFormatParser(new EAttribute[] { UMLPackage.eINSTANCE.getNamedElement_Name(), });
 		parser.setViewPattern("{0}");
+		parser.setEditorPattern("{0}");
 		parser.setEditPattern("{0}");
 		return parser;
 	}
@@ -145,24 +152,25 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 	/**
 	 * @generated
 	 */
-	private IParser outputPinOutputPinName_5004Parser;
+	private IParser createObjectActionName_5025Parser;
 
 	/**
 	 * @generated
 	 */
-	private IParser getOutputPinOutputPinName_5004Parser() {
-		if (outputPinOutputPinName_5004Parser == null) {
-			outputPinOutputPinName_5004Parser = createOutputPinOutputPinName_5004Parser();
+	private IParser getCreateObjectActionName_5025Parser() {
+		if (createObjectActionName_5025Parser == null) {
+			createObjectActionName_5025Parser = createCreateObjectActionName_5025Parser();
 		}
-		return outputPinOutputPinName_5004Parser;
+		return createObjectActionName_5025Parser;
 	}
 
 	/**
 	 * @generated
 	 */
-	protected IParser createOutputPinOutputPinName_5004Parser() {
-		UMLStructuralFeatureParser parser = new UMLStructuralFeatureParser(UMLPackage.eINSTANCE.getNamedElement_Name());
+	protected IParser createCreateObjectActionName_5025Parser() {
+		MessageFormatParser parser = new MessageFormatParser(new EAttribute[] { UMLPackage.eINSTANCE.getNamedElement_Name(), });
 		parser.setViewPattern("{0}");
+		parser.setEditorPattern("{0}");
 		parser.setEditPattern("{0}");
 		return parser;
 	}
@@ -170,24 +178,25 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 	/**
 	 * @generated
 	 */
-	private IParser addStructuralFeatureValueActionAddStructuralFeatureValueActionName_5026Parser;
+	private IParser outputPinName_5004Parser;
 
 	/**
 	 * @generated
 	 */
-	private IParser getAddStructuralFeatureValueActionAddStructuralFeatureValueActionName_5026Parser() {
-		if (addStructuralFeatureValueActionAddStructuralFeatureValueActionName_5026Parser == null) {
-			addStructuralFeatureValueActionAddStructuralFeatureValueActionName_5026Parser = createAddStructuralFeatureValueActionAddStructuralFeatureValueActionName_5026Parser();
+	private IParser getOutputPinName_5004Parser() {
+		if (outputPinName_5004Parser == null) {
+			outputPinName_5004Parser = createOutputPinName_5004Parser();
 		}
-		return addStructuralFeatureValueActionAddStructuralFeatureValueActionName_5026Parser;
+		return outputPinName_5004Parser;
 	}
 
 	/**
 	 * @generated
 	 */
-	protected IParser createAddStructuralFeatureValueActionAddStructuralFeatureValueActionName_5026Parser() {
-		UMLStructuralFeatureParser parser = new UMLStructuralFeatureParser(UMLPackage.eINSTANCE.getNamedElement_Name());
+	protected IParser createOutputPinName_5004Parser() {
+		MessageFormatParser parser = new MessageFormatParser(new EAttribute[] { UMLPackage.eINSTANCE.getNamedElement_Name(), });
 		parser.setViewPattern("{0}");
+		parser.setEditorPattern("{0}");
 		parser.setEditPattern("{0}");
 		return parser;
 	}
@@ -195,24 +204,25 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 	/**
 	 * @generated
 	 */
-	private IParser inputPinInputPinName_5006Parser;
+	private IParser addStructuralFeatureValueActionName_5026Parser;
 
 	/**
 	 * @generated
 	 */
-	private IParser getInputPinInputPinName_5006Parser() {
-		if (inputPinInputPinName_5006Parser == null) {
-			inputPinInputPinName_5006Parser = createInputPinInputPinName_5006Parser();
+	private IParser getAddStructuralFeatureValueActionName_5026Parser() {
+		if (addStructuralFeatureValueActionName_5026Parser == null) {
+			addStructuralFeatureValueActionName_5026Parser = createAddStructuralFeatureValueActionName_5026Parser();
 		}
-		return inputPinInputPinName_5006Parser;
+		return addStructuralFeatureValueActionName_5026Parser;
 	}
 
 	/**
 	 * @generated
 	 */
-	protected IParser createInputPinInputPinName_5006Parser() {
-		UMLStructuralFeatureParser parser = new UMLStructuralFeatureParser(UMLPackage.eINSTANCE.getNamedElement_Name());
+	protected IParser createAddStructuralFeatureValueActionName_5026Parser() {
+		MessageFormatParser parser = new MessageFormatParser(new EAttribute[] { UMLPackage.eINSTANCE.getNamedElement_Name(), });
 		parser.setViewPattern("{0}");
+		parser.setEditorPattern("{0}");
 		parser.setEditPattern("{0}");
 		return parser;
 	}
@@ -220,24 +230,25 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 	/**
 	 * @generated
 	 */
-	private IParser inputPinInputPinName_5007Parser;
+	private IParser inputPinName_5006Parser;
 
 	/**
 	 * @generated
 	 */
-	private IParser getInputPinInputPinName_5007Parser() {
-		if (inputPinInputPinName_5007Parser == null) {
-			inputPinInputPinName_5007Parser = createInputPinInputPinName_5007Parser();
+	private IParser getInputPinName_5006Parser() {
+		if (inputPinName_5006Parser == null) {
+			inputPinName_5006Parser = createInputPinName_5006Parser();
 		}
-		return inputPinInputPinName_5007Parser;
+		return inputPinName_5006Parser;
 	}
 
 	/**
 	 * @generated
 	 */
-	protected IParser createInputPinInputPinName_5007Parser() {
-		UMLStructuralFeatureParser parser = new UMLStructuralFeatureParser(UMLPackage.eINSTANCE.getNamedElement_Name());
+	protected IParser createInputPinName_5006Parser() {
+		MessageFormatParser parser = new MessageFormatParser(new EAttribute[] { UMLPackage.eINSTANCE.getNamedElement_Name(), });
 		parser.setViewPattern("{0}");
+		parser.setEditorPattern("{0}");
 		parser.setEditPattern("{0}");
 		return parser;
 	}
@@ -245,24 +256,25 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 	/**
 	 * @generated
 	 */
-	private IParser inputPinInputPinName_5008Parser;
+	private IParser inputPinName_5007Parser;
 
 	/**
 	 * @generated
 	 */
-	private IParser getInputPinInputPinName_5008Parser() {
-		if (inputPinInputPinName_5008Parser == null) {
-			inputPinInputPinName_5008Parser = createInputPinInputPinName_5008Parser();
+	private IParser getInputPinName_5007Parser() {
+		if (inputPinName_5007Parser == null) {
+			inputPinName_5007Parser = createInputPinName_5007Parser();
 		}
-		return inputPinInputPinName_5008Parser;
+		return inputPinName_5007Parser;
 	}
 
 	/**
 	 * @generated
 	 */
-	protected IParser createInputPinInputPinName_5008Parser() {
-		UMLStructuralFeatureParser parser = new UMLStructuralFeatureParser(UMLPackage.eINSTANCE.getNamedElement_Name());
+	protected IParser createInputPinName_5007Parser() {
+		MessageFormatParser parser = new MessageFormatParser(new EAttribute[] { UMLPackage.eINSTANCE.getNamedElement_Name(), });
 		parser.setViewPattern("{0}");
+		parser.setEditorPattern("{0}");
 		parser.setEditPattern("{0}");
 		return parser;
 	}
@@ -270,24 +282,25 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 	/**
 	 * @generated
 	 */
-	private IParser callBehaviorActionCallBehaviorActionName_5027Parser;
+	private IParser inputPinName_5008Parser;
 
 	/**
 	 * @generated
 	 */
-	private IParser getCallBehaviorActionCallBehaviorActionName_5027Parser() {
-		if (callBehaviorActionCallBehaviorActionName_5027Parser == null) {
-			callBehaviorActionCallBehaviorActionName_5027Parser = createCallBehaviorActionCallBehaviorActionName_5027Parser();
+	private IParser getInputPinName_5008Parser() {
+		if (inputPinName_5008Parser == null) {
+			inputPinName_5008Parser = createInputPinName_5008Parser();
 		}
-		return callBehaviorActionCallBehaviorActionName_5027Parser;
+		return inputPinName_5008Parser;
 	}
 
 	/**
 	 * @generated
 	 */
-	protected IParser createCallBehaviorActionCallBehaviorActionName_5027Parser() {
-		UMLStructuralFeatureParser parser = new UMLStructuralFeatureParser(UMLPackage.eINSTANCE.getNamedElement_Name());
+	protected IParser createInputPinName_5008Parser() {
+		MessageFormatParser parser = new MessageFormatParser(new EAttribute[] { UMLPackage.eINSTANCE.getNamedElement_Name(), });
 		parser.setViewPattern("{0}");
+		parser.setEditorPattern("{0}");
 		parser.setEditPattern("{0}");
 		return parser;
 	}
@@ -295,24 +308,25 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 	/**
 	 * @generated
 	 */
-	private IParser outputPinOutputPinName_5010Parser;
+	private IParser callBehaviorActionName_5027Parser;
 
 	/**
 	 * @generated
 	 */
-	private IParser getOutputPinOutputPinName_5010Parser() {
-		if (outputPinOutputPinName_5010Parser == null) {
-			outputPinOutputPinName_5010Parser = createOutputPinOutputPinName_5010Parser();
+	private IParser getCallBehaviorActionName_5027Parser() {
+		if (callBehaviorActionName_5027Parser == null) {
+			callBehaviorActionName_5027Parser = createCallBehaviorActionName_5027Parser();
 		}
-		return outputPinOutputPinName_5010Parser;
+		return callBehaviorActionName_5027Parser;
 	}
 
 	/**
 	 * @generated
 	 */
-	protected IParser createOutputPinOutputPinName_5010Parser() {
-		UMLStructuralFeatureParser parser = new UMLStructuralFeatureParser(UMLPackage.eINSTANCE.getNamedElement_Name());
+	protected IParser createCallBehaviorActionName_5027Parser() {
+		MessageFormatParser parser = new MessageFormatParser(new EAttribute[] { UMLPackage.eINSTANCE.getNamedElement_Name(), });
 		parser.setViewPattern("{0}");
+		parser.setEditorPattern("{0}");
 		parser.setEditPattern("{0}");
 		return parser;
 	}
@@ -320,24 +334,25 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 	/**
 	 * @generated
 	 */
-	private IParser inputPinInputPinName_5011Parser;
+	private IParser outputPinName_5010Parser;
 
 	/**
 	 * @generated
 	 */
-	private IParser getInputPinInputPinName_5011Parser() {
-		if (inputPinInputPinName_5011Parser == null) {
-			inputPinInputPinName_5011Parser = createInputPinInputPinName_5011Parser();
+	private IParser getOutputPinName_5010Parser() {
+		if (outputPinName_5010Parser == null) {
+			outputPinName_5010Parser = createOutputPinName_5010Parser();
 		}
-		return inputPinInputPinName_5011Parser;
+		return outputPinName_5010Parser;
 	}
 
 	/**
 	 * @generated
 	 */
-	protected IParser createInputPinInputPinName_5011Parser() {
-		UMLStructuralFeatureParser parser = new UMLStructuralFeatureParser(UMLPackage.eINSTANCE.getNamedElement_Name());
+	protected IParser createOutputPinName_5010Parser() {
+		MessageFormatParser parser = new MessageFormatParser(new EAttribute[] { UMLPackage.eINSTANCE.getNamedElement_Name(), });
 		parser.setViewPattern("{0}");
+		parser.setEditorPattern("{0}");
 		parser.setEditPattern("{0}");
 		return parser;
 	}
@@ -345,24 +360,25 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 	/**
 	 * @generated
 	 */
-	private IParser callOperationActionCallOperationActionName_5028Parser;
+	private IParser inputPinName_5011Parser;
 
 	/**
 	 * @generated
 	 */
-	private IParser getCallOperationActionCallOperationActionName_5028Parser() {
-		if (callOperationActionCallOperationActionName_5028Parser == null) {
-			callOperationActionCallOperationActionName_5028Parser = createCallOperationActionCallOperationActionName_5028Parser();
+	private IParser getInputPinName_5011Parser() {
+		if (inputPinName_5011Parser == null) {
+			inputPinName_5011Parser = createInputPinName_5011Parser();
 		}
-		return callOperationActionCallOperationActionName_5028Parser;
+		return inputPinName_5011Parser;
 	}
 
 	/**
 	 * @generated
 	 */
-	protected IParser createCallOperationActionCallOperationActionName_5028Parser() {
-		UMLStructuralFeatureParser parser = new UMLStructuralFeatureParser(UMLPackage.eINSTANCE.getNamedElement_Name());
+	protected IParser createInputPinName_5011Parser() {
+		MessageFormatParser parser = new MessageFormatParser(new EAttribute[] { UMLPackage.eINSTANCE.getNamedElement_Name(), });
 		parser.setViewPattern("{0}");
+		parser.setEditorPattern("{0}");
 		parser.setEditPattern("{0}");
 		return parser;
 	}
@@ -370,24 +386,25 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 	/**
 	 * @generated
 	 */
-	private IParser inputPinInputPinName_5013Parser;
+	private IParser callOperationActionName_5028Parser;
 
 	/**
 	 * @generated
 	 */
-	private IParser getInputPinInputPinName_5013Parser() {
-		if (inputPinInputPinName_5013Parser == null) {
-			inputPinInputPinName_5013Parser = createInputPinInputPinName_5013Parser();
+	private IParser getCallOperationActionName_5028Parser() {
+		if (callOperationActionName_5028Parser == null) {
+			callOperationActionName_5028Parser = createCallOperationActionName_5028Parser();
 		}
-		return inputPinInputPinName_5013Parser;
+		return callOperationActionName_5028Parser;
 	}
 
 	/**
 	 * @generated
 	 */
-	protected IParser createInputPinInputPinName_5013Parser() {
-		UMLStructuralFeatureParser parser = new UMLStructuralFeatureParser(UMLPackage.eINSTANCE.getNamedElement_Name());
+	protected IParser createCallOperationActionName_5028Parser() {
+		MessageFormatParser parser = new MessageFormatParser(new EAttribute[] { UMLPackage.eINSTANCE.getNamedElement_Name(), });
 		parser.setViewPattern("{0}");
+		parser.setEditorPattern("{0}");
 		parser.setEditPattern("{0}");
 		return parser;
 	}
@@ -395,24 +412,25 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 	/**
 	 * @generated
 	 */
-	private IParser opaqueActionOpaqueActionName_5015Parser;
+	private IParser inputPinName_5013Parser;
 
 	/**
 	 * @generated
 	 */
-	private IParser getOpaqueActionOpaqueActionName_5015Parser() {
-		if (opaqueActionOpaqueActionName_5015Parser == null) {
-			opaqueActionOpaqueActionName_5015Parser = createOpaqueActionOpaqueActionName_5015Parser();
+	private IParser getInputPinName_5013Parser() {
+		if (inputPinName_5013Parser == null) {
+			inputPinName_5013Parser = createInputPinName_5013Parser();
 		}
-		return opaqueActionOpaqueActionName_5015Parser;
+		return inputPinName_5013Parser;
 	}
 
 	/**
 	 * @generated
 	 */
-	protected IParser createOpaqueActionOpaqueActionName_5015Parser() {
-		UMLStructuralFeatureParser parser = new UMLStructuralFeatureParser(UMLPackage.eINSTANCE.getNamedElement_Name());
+	protected IParser createInputPinName_5013Parser() {
+		MessageFormatParser parser = new MessageFormatParser(new EAttribute[] { UMLPackage.eINSTANCE.getNamedElement_Name(), });
 		parser.setViewPattern("{0}");
+		parser.setEditorPattern("{0}");
 		parser.setEditPattern("{0}");
 		return parser;
 	}
@@ -420,24 +438,25 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 	/**
 	 * @generated
 	 */
-	private IParser pinPinName_5016Parser;
+	private IParser opaqueActionName_5015Parser;
 
 	/**
 	 * @generated
 	 */
-	private IParser getPinPinName_5016Parser() {
-		if (pinPinName_5016Parser == null) {
-			pinPinName_5016Parser = createPinPinName_5016Parser();
+	private IParser getOpaqueActionName_5015Parser() {
+		if (opaqueActionName_5015Parser == null) {
+			opaqueActionName_5015Parser = createOpaqueActionName_5015Parser();
 		}
-		return pinPinName_5016Parser;
+		return opaqueActionName_5015Parser;
 	}
 
 	/**
 	 * @generated
 	 */
-	protected IParser createPinPinName_5016Parser() {
-		UMLStructuralFeatureParser parser = new UMLStructuralFeatureParser(UMLPackage.eINSTANCE.getNamedElement_Name());
+	protected IParser createOpaqueActionName_5015Parser() {
+		MessageFormatParser parser = new MessageFormatParser(new EAttribute[] { UMLPackage.eINSTANCE.getNamedElement_Name(), });
 		parser.setViewPattern("{0}");
+		parser.setEditorPattern("{0}");
 		parser.setEditPattern("{0}");
 		return parser;
 	}
@@ -445,24 +464,25 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 	/**
 	 * @generated
 	 */
-	private IParser createObjectActionCreateObjectActionName_5017Parser;
+	private IParser pinName_5016Parser;
 
 	/**
 	 * @generated
 	 */
-	private IParser getCreateObjectActionCreateObjectActionName_5017Parser() {
-		if (createObjectActionCreateObjectActionName_5017Parser == null) {
-			createObjectActionCreateObjectActionName_5017Parser = createCreateObjectActionCreateObjectActionName_5017Parser();
+	private IParser getPinName_5016Parser() {
+		if (pinName_5016Parser == null) {
+			pinName_5016Parser = createPinName_5016Parser();
 		}
-		return createObjectActionCreateObjectActionName_5017Parser;
+		return pinName_5016Parser;
 	}
 
 	/**
 	 * @generated
 	 */
-	protected IParser createCreateObjectActionCreateObjectActionName_5017Parser() {
-		UMLStructuralFeatureParser parser = new UMLStructuralFeatureParser(UMLPackage.eINSTANCE.getNamedElement_Name());
+	protected IParser createPinName_5016Parser() {
+		MessageFormatParser parser = new MessageFormatParser(new EAttribute[] { UMLPackage.eINSTANCE.getNamedElement_Name(), });
 		parser.setViewPattern("{0}");
+		parser.setEditorPattern("{0}");
 		parser.setEditPattern("{0}");
 		return parser;
 	}
@@ -470,24 +490,25 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 	/**
 	 * @generated
 	 */
-	private IParser callBehaviorActionCallBehaviorActionName_5018Parser;
+	private IParser createObjectActionName_5017Parser;
 
 	/**
 	 * @generated
 	 */
-	private IParser getCallBehaviorActionCallBehaviorActionName_5018Parser() {
-		if (callBehaviorActionCallBehaviorActionName_5018Parser == null) {
-			callBehaviorActionCallBehaviorActionName_5018Parser = createCallBehaviorActionCallBehaviorActionName_5018Parser();
+	private IParser getCreateObjectActionName_5017Parser() {
+		if (createObjectActionName_5017Parser == null) {
+			createObjectActionName_5017Parser = createCreateObjectActionName_5017Parser();
 		}
-		return callBehaviorActionCallBehaviorActionName_5018Parser;
+		return createObjectActionName_5017Parser;
 	}
 
 	/**
 	 * @generated
 	 */
-	protected IParser createCallBehaviorActionCallBehaviorActionName_5018Parser() {
-		UMLStructuralFeatureParser parser = new UMLStructuralFeatureParser(UMLPackage.eINSTANCE.getNamedElement_Name());
+	protected IParser createCreateObjectActionName_5017Parser() {
+		MessageFormatParser parser = new MessageFormatParser(new EAttribute[] { UMLPackage.eINSTANCE.getNamedElement_Name(), });
 		parser.setViewPattern("{0}");
+		parser.setEditorPattern("{0}");
 		parser.setEditPattern("{0}");
 		return parser;
 	}
@@ -495,24 +516,25 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 	/**
 	 * @generated
 	 */
-	private IParser callOperationActionCallOperationActionName_5019Parser;
+	private IParser callBehaviorActionName_5018Parser;
 
 	/**
 	 * @generated
 	 */
-	private IParser getCallOperationActionCallOperationActionName_5019Parser() {
-		if (callOperationActionCallOperationActionName_5019Parser == null) {
-			callOperationActionCallOperationActionName_5019Parser = createCallOperationActionCallOperationActionName_5019Parser();
+	private IParser getCallBehaviorActionName_5018Parser() {
+		if (callBehaviorActionName_5018Parser == null) {
+			callBehaviorActionName_5018Parser = createCallBehaviorActionName_5018Parser();
 		}
-		return callOperationActionCallOperationActionName_5019Parser;
+		return callBehaviorActionName_5018Parser;
 	}
 
 	/**
 	 * @generated
 	 */
-	protected IParser createCallOperationActionCallOperationActionName_5019Parser() {
-		UMLStructuralFeatureParser parser = new UMLStructuralFeatureParser(UMLPackage.eINSTANCE.getNamedElement_Name());
+	protected IParser createCallBehaviorActionName_5018Parser() {
+		MessageFormatParser parser = new MessageFormatParser(new EAttribute[] { UMLPackage.eINSTANCE.getNamedElement_Name(), });
 		parser.setViewPattern("{0}");
+		parser.setEditorPattern("{0}");
 		parser.setEditPattern("{0}");
 		return parser;
 	}
@@ -520,24 +542,25 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 	/**
 	 * @generated
 	 */
-	private IParser addStructuralFeatureValueActionAddStructuralFeatureValueActionName_5020Parser;
+	private IParser callOperationActionName_5019Parser;
 
 	/**
 	 * @generated
 	 */
-	private IParser getAddStructuralFeatureValueActionAddStructuralFeatureValueActionName_5020Parser() {
-		if (addStructuralFeatureValueActionAddStructuralFeatureValueActionName_5020Parser == null) {
-			addStructuralFeatureValueActionAddStructuralFeatureValueActionName_5020Parser = createAddStructuralFeatureValueActionAddStructuralFeatureValueActionName_5020Parser();
+	private IParser getCallOperationActionName_5019Parser() {
+		if (callOperationActionName_5019Parser == null) {
+			callOperationActionName_5019Parser = createCallOperationActionName_5019Parser();
 		}
-		return addStructuralFeatureValueActionAddStructuralFeatureValueActionName_5020Parser;
+		return callOperationActionName_5019Parser;
 	}
 
 	/**
 	 * @generated
 	 */
-	protected IParser createAddStructuralFeatureValueActionAddStructuralFeatureValueActionName_5020Parser() {
-		UMLStructuralFeatureParser parser = new UMLStructuralFeatureParser(UMLPackage.eINSTANCE.getNamedElement_Name());
+	protected IParser createCallOperationActionName_5019Parser() {
+		MessageFormatParser parser = new MessageFormatParser(new EAttribute[] { UMLPackage.eINSTANCE.getNamedElement_Name(), });
 		parser.setViewPattern("{0}");
+		parser.setEditorPattern("{0}");
 		parser.setEditPattern("{0}");
 		return parser;
 	}
@@ -545,24 +568,25 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 	/**
 	 * @generated
 	 */
-	private IParser opaqueBehaviorOpaqueBehaviorName_5029Parser;
+	private IParser addStructuralFeatureValueActionName_5020Parser;
 
 	/**
 	 * @generated
 	 */
-	private IParser getOpaqueBehaviorOpaqueBehaviorName_5029Parser() {
-		if (opaqueBehaviorOpaqueBehaviorName_5029Parser == null) {
-			opaqueBehaviorOpaqueBehaviorName_5029Parser = createOpaqueBehaviorOpaqueBehaviorName_5029Parser();
+	private IParser getAddStructuralFeatureValueActionName_5020Parser() {
+		if (addStructuralFeatureValueActionName_5020Parser == null) {
+			addStructuralFeatureValueActionName_5020Parser = createAddStructuralFeatureValueActionName_5020Parser();
 		}
-		return opaqueBehaviorOpaqueBehaviorName_5029Parser;
+		return addStructuralFeatureValueActionName_5020Parser;
 	}
 
 	/**
 	 * @generated
 	 */
-	protected IParser createOpaqueBehaviorOpaqueBehaviorName_5029Parser() {
-		UMLStructuralFeatureParser parser = new UMLStructuralFeatureParser(UMLPackage.eINSTANCE.getNamedElement_Name());
+	protected IParser createAddStructuralFeatureValueActionName_5020Parser() {
+		MessageFormatParser parser = new MessageFormatParser(new EAttribute[] { UMLPackage.eINSTANCE.getNamedElement_Name(), });
 		parser.setViewPattern("{0}");
+		parser.setEditorPattern("{0}");
 		parser.setEditPattern("{0}");
 		return parser;
 	}
@@ -570,24 +594,25 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 	/**
 	 * @generated
 	 */
-	private IParser activityParameterNodeActivityParameterNodeName_5031Parser;
+	private IParser opaqueBehaviorName_5029Parser;
 
 	/**
 	 * @generated
 	 */
-	private IParser getActivityParameterNodeActivityParameterNodeName_5031Parser() {
-		if (activityParameterNodeActivityParameterNodeName_5031Parser == null) {
-			activityParameterNodeActivityParameterNodeName_5031Parser = createActivityParameterNodeActivityParameterNodeName_5031Parser();
+	private IParser getOpaqueBehaviorName_5029Parser() {
+		if (opaqueBehaviorName_5029Parser == null) {
+			opaqueBehaviorName_5029Parser = createOpaqueBehaviorName_5029Parser();
 		}
-		return activityParameterNodeActivityParameterNodeName_5031Parser;
+		return opaqueBehaviorName_5029Parser;
 	}
 
 	/**
 	 * @generated
 	 */
-	protected IParser createActivityParameterNodeActivityParameterNodeName_5031Parser() {
-		UMLStructuralFeatureParser parser = new UMLStructuralFeatureParser(UMLPackage.eINSTANCE.getNamedElement_Name());
+	protected IParser createOpaqueBehaviorName_5029Parser() {
+		MessageFormatParser parser = new MessageFormatParser(new EAttribute[] { UMLPackage.eINSTANCE.getNamedElement_Name(), });
 		parser.setViewPattern("{0}");
+		parser.setEditorPattern("{0}");
 		parser.setEditPattern("{0}");
 		return parser;
 	}
@@ -595,24 +620,25 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 	/**
 	 * @generated
 	 */
-	private IParser literalStringLiteralString_3049Parser;
+	private IParser activityParameterNodeName_5031Parser;
 
 	/**
 	 * @generated
 	 */
-	private IParser getLiteralStringLiteralString_3049Parser() {
-		if (literalStringLiteralString_3049Parser == null) {
-			literalStringLiteralString_3049Parser = createLiteralStringLiteralString_3049Parser();
+	private IParser getActivityParameterNodeName_5031Parser() {
+		if (activityParameterNodeName_5031Parser == null) {
+			activityParameterNodeName_5031Parser = createActivityParameterNodeName_5031Parser();
 		}
-		return literalStringLiteralString_3049Parser;
+		return activityParameterNodeName_5031Parser;
 	}
 
 	/**
 	 * @generated
 	 */
-	protected IParser createLiteralStringLiteralString_3049Parser() {
-		UMLStructuralFeatureParser parser = new UMLStructuralFeatureParser(UMLPackage.eINSTANCE.getLiteralString_Value());
+	protected IParser createActivityParameterNodeName_5031Parser() {
+		MessageFormatParser parser = new MessageFormatParser(new EAttribute[] { UMLPackage.eINSTANCE.getNamedElement_Name(), });
 		parser.setViewPattern("{0}");
+		parser.setEditorPattern("{0}");
 		parser.setEditPattern("{0}");
 		return parser;
 	}
@@ -620,24 +646,25 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 	/**
 	 * @generated
 	 */
-	private IParser literalStringLiteralString_3051Parser;
+	private IParser literalString_3049Parser;
 
 	/**
 	 * @generated
 	 */
-	private IParser getLiteralStringLiteralString_3051Parser() {
-		if (literalStringLiteralString_3051Parser == null) {
-			literalStringLiteralString_3051Parser = createLiteralStringLiteralString_3051Parser();
+	private IParser getLiteralString_3049Parser() {
+		if (literalString_3049Parser == null) {
+			literalString_3049Parser = createLiteralString_3049Parser();
 		}
-		return literalStringLiteralString_3051Parser;
+		return literalString_3049Parser;
 	}
 
 	/**
 	 * @generated
 	 */
-	protected IParser createLiteralStringLiteralString_3051Parser() {
-		UMLStructuralFeatureParser parser = new UMLStructuralFeatureParser(UMLPackage.eINSTANCE.getLiteralString_Value());
+	protected IParser createLiteralString_3049Parser() {
+		MessageFormatParser parser = new MessageFormatParser(new EAttribute[] { UMLPackage.eINSTANCE.getLiteralString_Value(), });
 		parser.setViewPattern("{0}");
+		parser.setEditorPattern("{0}");
 		parser.setEditPattern("{0}");
 		return parser;
 	}
@@ -645,24 +672,25 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 	/**
 	 * @generated
 	 */
-	private IParser activityActivityName_5030Parser;
+	private IParser literalString_3051Parser;
 
 	/**
 	 * @generated
 	 */
-	private IParser getActivityActivityName_5030Parser() {
-		if (activityActivityName_5030Parser == null) {
-			activityActivityName_5030Parser = createActivityActivityName_5030Parser();
+	private IParser getLiteralString_3051Parser() {
+		if (literalString_3051Parser == null) {
+			literalString_3051Parser = createLiteralString_3051Parser();
 		}
-		return activityActivityName_5030Parser;
+		return literalString_3051Parser;
 	}
 
 	/**
 	 * @generated
 	 */
-	protected IParser createActivityActivityName_5030Parser() {
-		UMLStructuralFeatureParser parser = new UMLStructuralFeatureParser(UMLPackage.eINSTANCE.getNamedElement_Name());
+	protected IParser createLiteralString_3051Parser() {
+		MessageFormatParser parser = new MessageFormatParser(new EAttribute[] { UMLPackage.eINSTANCE.getLiteralString_Value(), });
 		parser.setViewPattern("{0}");
+		parser.setEditorPattern("{0}");
 		parser.setEditPattern("{0}");
 		return parser;
 	}
@@ -672,56 +700,56 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 	 */
 	protected IParser getParser(int visualID) {
 		switch (visualID) {
-		case OpaqueActionNameEditPart.VISUAL_ID:
-			return getOpaqueActionOpaqueActionName_5023Parser();
-		case OutputPinNameEditPart.VISUAL_ID:
-			return getOutputPinOutputPinName_5003Parser();
-		case PinNameEditPart.VISUAL_ID:
-			return getPinPinName_5024Parser();
-		case CreateObjectActionNameEditPart.VISUAL_ID:
-			return getCreateObjectActionCreateObjectActionName_5025Parser();
-		case OutputPinName2EditPart.VISUAL_ID:
-			return getOutputPinOutputPinName_5004Parser();
-		case AddStructuralFeatureValueActionNameEditPart.VISUAL_ID:
-			return getAddStructuralFeatureValueActionAddStructuralFeatureValueActionName_5026Parser();
-		case InputPinNameEditPart.VISUAL_ID:
-			return getInputPinInputPinName_5006Parser();
-		case InputPinName2EditPart.VISUAL_ID:
-			return getInputPinInputPinName_5007Parser();
-		case InputPinName3EditPart.VISUAL_ID:
-			return getInputPinInputPinName_5008Parser();
-		case CallBehaviorActionNameEditPart.VISUAL_ID:
-			return getCallBehaviorActionCallBehaviorActionName_5027Parser();
-		case OutputPinName3EditPart.VISUAL_ID:
-			return getOutputPinOutputPinName_5010Parser();
-		case InputPinName4EditPart.VISUAL_ID:
-			return getInputPinInputPinName_5011Parser();
-		case CallOperationActionNameEditPart.VISUAL_ID:
-			return getCallOperationActionCallOperationActionName_5028Parser();
-		case InputPinName5EditPart.VISUAL_ID:
-			return getInputPinInputPinName_5013Parser();
-		case OpaqueActionName2EditPart.VISUAL_ID:
-			return getOpaqueActionOpaqueActionName_5015Parser();
-		case PinName2EditPart.VISUAL_ID:
-			return getPinPinName_5016Parser();
-		case CreateObjectActionName2EditPart.VISUAL_ID:
-			return getCreateObjectActionCreateObjectActionName_5017Parser();
-		case CallBehaviorActionName2EditPart.VISUAL_ID:
-			return getCallBehaviorActionCallBehaviorActionName_5018Parser();
-		case CallOperationActionName2EditPart.VISUAL_ID:
-			return getCallOperationActionCallOperationActionName_5019Parser();
-		case AddStructuralFeatureValueActionName2EditPart.VISUAL_ID:
-			return getAddStructuralFeatureValueActionAddStructuralFeatureValueActionName_5020Parser();
-		case OpaqueBehaviorNameEditPart.VISUAL_ID:
-			return getOpaqueBehaviorOpaqueBehaviorName_5029Parser();
-		case ActivityParameterNodeNameEditPart.VISUAL_ID:
-			return getActivityParameterNodeActivityParameterNodeName_5031Parser();
-		case LiteralStringEditPart.VISUAL_ID:
-			return getLiteralStringLiteralString_3049Parser();
-		case LiteralString2EditPart.VISUAL_ID:
-			return getLiteralStringLiteralString_3051Parser();
 		case ActivityNameEditPart.VISUAL_ID:
-			return getActivityActivityName_5030Parser();
+			return getActivityName_5030Parser();
+		case OpaqueActionNameEditPart.VISUAL_ID:
+			return getOpaqueActionName_5023Parser();
+		case OutputPinNameEditPart.VISUAL_ID:
+			return getOutputPinName_5003Parser();
+		case PinNameEditPart.VISUAL_ID:
+			return getPinName_5024Parser();
+		case CreateObjectActionNameEditPart.VISUAL_ID:
+			return getCreateObjectActionName_5025Parser();
+		case OutputPinName2EditPart.VISUAL_ID:
+			return getOutputPinName_5004Parser();
+		case AddStructuralFeatureValueActionNameEditPart.VISUAL_ID:
+			return getAddStructuralFeatureValueActionName_5026Parser();
+		case InputPinNameEditPart.VISUAL_ID:
+			return getInputPinName_5006Parser();
+		case InputPinName2EditPart.VISUAL_ID:
+			return getInputPinName_5007Parser();
+		case InputPinName3EditPart.VISUAL_ID:
+			return getInputPinName_5008Parser();
+		case CallBehaviorActionNameEditPart.VISUAL_ID:
+			return getCallBehaviorActionName_5027Parser();
+		case OutputPinName3EditPart.VISUAL_ID:
+			return getOutputPinName_5010Parser();
+		case InputPinName4EditPart.VISUAL_ID:
+			return getInputPinName_5011Parser();
+		case CallOperationActionNameEditPart.VISUAL_ID:
+			return getCallOperationActionName_5028Parser();
+		case InputPinName5EditPart.VISUAL_ID:
+			return getInputPinName_5013Parser();
+		case OpaqueActionName2EditPart.VISUAL_ID:
+			return getOpaqueActionName_5015Parser();
+		case PinName2EditPart.VISUAL_ID:
+			return getPinName_5016Parser();
+		case CreateObjectActionName2EditPart.VISUAL_ID:
+			return getCreateObjectActionName_5017Parser();
+		case CallBehaviorActionName2EditPart.VISUAL_ID:
+			return getCallBehaviorActionName_5018Parser();
+		case CallOperationActionName2EditPart.VISUAL_ID:
+			return getCallOperationActionName_5019Parser();
+		case AddStructuralFeatureValueActionName2EditPart.VISUAL_ID:
+			return getAddStructuralFeatureValueActionName_5020Parser();
+		case OpaqueBehaviorNameEditPart.VISUAL_ID:
+			return getOpaqueBehaviorName_5029Parser();
+		case ActivityParameterNodeNameEditPart.VISUAL_ID:
+			return getActivityParameterNodeName_5031Parser();
+		case LiteralStringEditPart.VISUAL_ID:
+			return getLiteralString_3049Parser();
+		case LiteralString2EditPart.VISUAL_ID:
+			return getLiteralString_3051Parser();
 		}
 		return null;
 	}
@@ -754,4 +782,26 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 		}
 		return false;
 	}
+
+	/**
+	 * @generated
+	 */
+	public static class HintAdapter extends ParserHintAdapter {
+
+		private final IElementType elementType;
+
+		public HintAdapter(IElementType type, EObject object, String parserHint) {
+			super(object, parserHint);
+			assert type != null;
+			elementType = type;
+		}
+
+		public Object getAdapter(Class adapter) {
+			if (IElementType.class.equals(adapter)) {
+				return elementType;
+			}
+			return super.getAdapter(adapter);
+		}
+	}
+
 }

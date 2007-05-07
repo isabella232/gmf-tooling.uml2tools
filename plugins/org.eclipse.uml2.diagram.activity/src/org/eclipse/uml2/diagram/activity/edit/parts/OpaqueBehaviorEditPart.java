@@ -1,5 +1,7 @@
 package org.eclipse.uml2.diagram.activity.edit.parts;
 
+import org.eclipse.draw2d.GridData;
+import org.eclipse.draw2d.GridLayout;
 import org.eclipse.draw2d.IFigure;
 import org.eclipse.draw2d.MarginBorder;
 import org.eclipse.draw2d.StackLayout;
@@ -10,8 +12,6 @@ import org.eclipse.gef.commands.Command;
 import org.eclipse.gef.editpolicies.LayoutEditPolicy;
 import org.eclipse.gef.editpolicies.NonResizableEditPolicy;
 import org.eclipse.gef.requests.CreateRequest;
-import org.eclipse.gmf.internal.codegen.draw2d.GridLayout;
-import org.eclipse.gmf.internal.codegen.draw2d.GridLayoutData;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.ShapeNodeEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles;
@@ -239,9 +239,9 @@ public class OpaqueBehaviorEditPart extends ShapeNodeEditPart {
 
 			selectionFigure_fixed_top0.setBorder(new MarginBorder(getMapMode().DPtoLP(0), getMapMode().DPtoLP(16), getMapMode().DPtoLP(0), getMapMode().DPtoLP(16)));
 
-			GridLayoutData constraintSelectionFigure_fixed_top0 = new GridLayoutData();
-			constraintSelectionFigure_fixed_top0.verticalAlignment = GridLayoutData.BEGINNING;
-			constraintSelectionFigure_fixed_top0.horizontalAlignment = GridLayoutData.FILL;
+			GridData constraintSelectionFigure_fixed_top0 = new GridData();
+			constraintSelectionFigure_fixed_top0.verticalAlignment = GridData.BEGINNING;
+			constraintSelectionFigure_fixed_top0.horizontalAlignment = GridData.FILL;
 			constraintSelectionFigure_fixed_top0.horizontalIndent = 0;
 			constraintSelectionFigure_fixed_top0.horizontalSpan = 0;
 			constraintSelectionFigure_fixed_top0.verticalSpan = 0;
@@ -254,9 +254,9 @@ public class OpaqueBehaviorEditPart extends ShapeNodeEditPart {
 
 			selectionFigure_name0.setBorder(new MarginBorder(getMapMode().DPtoLP(0), getMapMode().DPtoLP(5), getMapMode().DPtoLP(0), getMapMode().DPtoLP(5)));
 
-			GridLayoutData constraintSelectionFigure_name0 = new GridLayoutData();
-			constraintSelectionFigure_name0.verticalAlignment = GridLayoutData.FILL;
-			constraintSelectionFigure_name0.horizontalAlignment = GridLayoutData.FILL;
+			GridData constraintSelectionFigure_name0 = new GridData();
+			constraintSelectionFigure_name0.verticalAlignment = GridData.FILL;
+			constraintSelectionFigure_name0.horizontalAlignment = GridData.FILL;
 			constraintSelectionFigure_name0.horizontalIndent = 0;
 			constraintSelectionFigure_name0.horizontalSpan = 0;
 			constraintSelectionFigure_name0.verticalSpan = 0;
