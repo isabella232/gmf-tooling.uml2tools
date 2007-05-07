@@ -157,12 +157,6 @@ public class CreateAssociationFromProperty extends DiagramAction {
 			association.getMemberEnds().add(mySourceEnd);
 			association.getMemberEnds().add(myTargetEnd);
 			
-			System.err.println("Owned ends: size " + association.getOwnedEnds().size());
-			System.err.println("Member ends: size " + association.getMemberEnds().size());
-
-			System.err.println("Owned ends: ALL \n" + association.getOwnedEnds());
-			System.err.println("Member ends: ALL \n" + association.getMemberEnds());
-			
 			return association;
 		}
 	}
