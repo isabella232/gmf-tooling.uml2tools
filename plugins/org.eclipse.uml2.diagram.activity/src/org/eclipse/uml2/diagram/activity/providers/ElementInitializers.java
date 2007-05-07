@@ -239,7 +239,7 @@ public class ElementInitializers {
 		 * @generated
 		 */
 		static class Java {
-			
+
 			/**
 			 * @generated NOT
 			 */

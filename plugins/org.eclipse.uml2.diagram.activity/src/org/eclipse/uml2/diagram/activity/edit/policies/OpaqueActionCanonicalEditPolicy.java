@@ -1,45 +1,17 @@
 package org.eclipse.uml2.diagram.activity.edit.policies;
 
-import org.eclipse.gmf.runtime.diagram.ui.editpolicies.CanonicalEditPolicy;
-import org.eclipse.gmf.runtime.notation.View;
-import java.util.ArrayList;
 import java.util.Collection;
-import java.util.Collections;
+import java.util.HashSet;
 import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.List;
+import java.util.Set;
 
-import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.EObject;
-
-import org.eclipse.gef.EditPart;
-
-import org.eclipse.gef.commands.Command;
-
-import org.eclipse.gmf.runtime.common.core.command.CompositeCommand;
-import org.eclipse.gmf.runtime.common.core.command.ICommand;
-
-import org.eclipse.gmf.runtime.diagram.ui.commands.CreateCommand;
-import org.eclipse.gmf.runtime.diagram.ui.commands.ICommandProxy;
-import org.eclipse.gmf.runtime.diagram.ui.commands.SetViewMutabilityCommand;
-
-import org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart;
-
-import org.eclipse.gmf.runtime.diagram.ui.l10n.DiagramUIMessages;
-
-import org.eclipse.gmf.runtime.diagram.ui.requests.CreateViewRequest;
-
-import org.eclipse.gmf.runtime.emf.core.util.EObjectAdapter;
-
-import org.eclipse.gmf.runtime.notation.Diagram;
-
-import org.eclipse.uml2.diagram.activity.edit.parts.Constraint2EditPart;
-import org.eclipse.uml2.diagram.activity.edit.parts.OutputPinEditPart;
-
+import org.eclipse.gmf.runtime.diagram.ui.editpolicies.CanonicalEditPolicy;
+import org.eclipse.gmf.runtime.notation.View;
+import org.eclipse.uml2.diagram.activity.part.UMLDiagramUpdater;
+import org.eclipse.uml2.diagram.activity.part.UMLNodeDescriptor;
 import org.eclipse.uml2.diagram.activity.part.UMLVisualIDRegistry;
-
-import org.eclipse.uml2.uml.Action;
-import org.eclipse.uml2.uml.OpaqueAction;
 import org.eclipse.uml2.uml.UMLPackage;
 
 /**
@@ -48,21 +20,18 @@ import org.eclipse.uml2.uml.UMLPackage;
 public class OpaqueActionCanonicalEditPolicy extends CanonicalEditPolicy {
 
 	/**
-	 *  
+	 * @generated
+	 */
+	Set myFeaturesToSynchronize;
+
+	/**
 	 * @generated
 	 */
 	protected List getSemanticChildrenList() {
-		List result = new LinkedList();
-		EObject modelObject = ((View) getHost().getModel()).getElement();
 		View viewObject = (View) getHost().getModel();
-		EObject nextValue;
-		int nodeVID;
-		for (Iterator values = ((OpaqueAction) modelObject).getOutputValues().iterator(); values.hasNext();) {
-			nextValue = (EObject) values.next();
-			nodeVID = UMLVisualIDRegistry.getNodeVisualID(viewObject, nextValue);
-			if (OutputPinEditPart.VISUAL_ID == nodeVID) {
-				result.add(nextValue);
-			}
+		List result = new LinkedList();
+		for (Iterator it = UMLDiagramUpdater.getOpaqueAction_3029SemanticChildren(viewObject).iterator(); it.hasNext();) {
+			result.add(((UMLNodeDescriptor) it.next()).getModelElement());
 		}
 		return result;
 	}
@@ -70,17 +39,10 @@ public class OpaqueActionCanonicalEditPolicy extends CanonicalEditPolicy {
 	/**
 	 * @generated
 	 */
-	protected boolean shouldDeleteView(View view) {
-		if (view.getEAnnotation("Shortcut") != null) { //$NON-NLS-1$
-			return view.isSetElement() && (view.getElement() == null || view.getElement().eIsProxy());
-		}
-
-		int nodeVID = UMLVisualIDRegistry.getVisualID(view);
-		switch (nodeVID) {
-		case OutputPinEditPart.VISUAL_ID:
-			return true;
-		}
-		return false;
+	protected boolean isOrphaned(Collection semanticChildren, final View view) {
+		int visualID = UMLVisualIDRegistry.getVisualID(view);
+		return UMLDiagramUpdater.isOpaqueAction_3029DomainMetaChild(visualID)
+				&& (!semanticChildren.contains(view.getElement()) || visualID != UMLVisualIDRegistry.getNodeVisualID((View) getHost().getModel(), view.getElement()));
 	}
 
 	/**
@@ -93,91 +55,12 @@ public class OpaqueActionCanonicalEditPolicy extends CanonicalEditPolicy {
 	/**
 	 * @generated
 	 */
-	protected void refreshSemantic() {
-		List createdViews = new LinkedList();
-		createdViews.addAll(refreshSemanticChildren());
-		createdViews.addAll(refreshPhantoms());
-		makeViewsImmutable(createdViews);
-	}
-
-	/**
-	 * @generated
-	 */
-	private Collection refreshPhantoms() {
-		Collection phantomNodes = new LinkedList();
-		EObject container = ((View) getHost().getModel()).getElement();
-		EClass containerMetaclass = container.eClass();
-		Diagram diagram = getDiagram();
-		if (UMLPackage.eINSTANCE.getAction().isSuperTypeOf(containerMetaclass)) {
-			for (Iterator destinations = ((Action) container).getLocalPreconditions().iterator(); destinations.hasNext();) {
-				EObject nextDestination = (EObject) destinations.next();
-				if (Constraint2EditPart.VISUAL_ID == UMLVisualIDRegistry.getNodeVisualID(diagram, nextDestination)) {
-					phantomNodes.add(nextDestination);
-
-				}
-			}
+	protected Set getFeaturesToSynchronize() {
+		if (myFeaturesToSynchronize == null) {
+			myFeaturesToSynchronize = new HashSet();
+			myFeaturesToSynchronize.add(UMLPackage.eINSTANCE.getOpaqueAction_OutputValue());
 		}
-
-		for (Iterator diagramNodes = getDiagram().getChildren().iterator(); diagramNodes.hasNext();) {
-			View nextView = (View) diagramNodes.next();
-			EObject nextViewElement = nextView.getElement();
-			if (phantomNodes.contains(nextViewElement)) {
-				phantomNodes.remove(nextViewElement);
-			}
-		}
-		return createPhantomNodes(phantomNodes);
-	}
-
-	/**
-	 * @generated
-	 */
-	private Collection createPhantomNodes(Collection nodes) {
-		if (nodes.isEmpty()) {
-			return Collections.EMPTY_LIST;
-		}
-		List descriptors = new ArrayList();
-		for (Iterator elements = nodes.iterator(); elements.hasNext();) {
-			EObject element = (EObject) elements.next();
-			CreateViewRequest.ViewDescriptor descriptor = getViewDescriptor(element);
-			descriptors.add(descriptor);
-		}
-		Diagram diagram = getDiagram();
-		EditPart diagramEditPart = getDiagramEditPart();
-
-		CreateViewRequest request = getCreateViewRequest(descriptors);
-		Command cmd = diagramEditPart.getCommand(request);
-		if (cmd == null) {
-			CompositeCommand cc = new CompositeCommand(DiagramUIMessages.AddCommand_Label);
-			for (Iterator descriptorsIterator = descriptors.iterator(); descriptorsIterator.hasNext();) {
-				CreateViewRequest.ViewDescriptor descriptor = (CreateViewRequest.ViewDescriptor) descriptorsIterator.next();
-				ICommand createCommand = new CreateCommand(((IGraphicalEditPart) getHost()).getEditingDomain(), descriptor, diagram);
-				cc.compose(createCommand);
-			}
-			cmd = new ICommandProxy(cc);
-		}
-
-		List adapters = Collections.EMPTY_LIST;
-		if (cmd != null && cmd.canExecute()) {
-			SetViewMutabilityCommand.makeMutable(new EObjectAdapter(((IGraphicalEditPart) diagramEditPart).getNotationView())).execute();
-			executeCommand(cmd);
-			adapters = (List) request.getNewObject();
-		}
-		diagramEditPart.refresh();
-		return adapters;
-	}
-
-	/**
-	 * @generated
-	 */
-	private EditPart getDiagramEditPart() {
-		return (EditPart) getHost().getViewer().getEditPartRegistry().get(getDiagram());
-	}
-
-	/**
-	 * @generated
-	 */
-	private Diagram getDiagram() {
-		return ((View) getHost().getModel()).getDiagram();
+		return myFeaturesToSynchronize;
 	}
 
 }

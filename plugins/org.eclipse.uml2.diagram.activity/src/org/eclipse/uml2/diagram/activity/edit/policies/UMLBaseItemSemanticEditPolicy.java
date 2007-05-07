@@ -1,10 +1,16 @@
 package org.eclipse.uml2.diagram.activity.edit.policies;
 
-import org.eclipse.emf.ecore.EClass;
+import java.util.Collections;
+import java.util.HashMap;
+import java.util.Iterator;
+import java.util.Map;
+
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.transaction.TransactionalEditingDomain;
+import org.eclipse.gef.EditPart;
 import org.eclipse.gef.Request;
 import org.eclipse.gef.commands.Command;
+import org.eclipse.gef.commands.CompoundCommand;
 import org.eclipse.gef.commands.UnexecutableCommand;
 import org.eclipse.gef.requests.ReconnectRequest;
 import org.eclipse.gmf.runtime.common.core.command.ICommand;
@@ -14,6 +20,7 @@ import org.eclipse.gmf.runtime.diagram.ui.commands.CommandProxy;
 import org.eclipse.gmf.runtime.diagram.ui.commands.ICommandProxy;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editpolicies.SemanticEditPolicy;
+import org.eclipse.gmf.runtime.diagram.ui.requests.EditCommandRequestWrapper;
 import org.eclipse.gmf.runtime.emf.commands.core.command.CompositeTransactionalCommand;
 import org.eclipse.gmf.runtime.emf.type.core.ElementTypeRegistry;
 import org.eclipse.gmf.runtime.emf.type.core.IEditHelperContext;
@@ -31,19 +38,13 @@ import org.eclipse.gmf.runtime.emf.type.core.requests.MoveRequest;
 import org.eclipse.gmf.runtime.emf.type.core.requests.ReorientReferenceRelationshipRequest;
 import org.eclipse.gmf.runtime.emf.type.core.requests.ReorientRelationshipRequest;
 import org.eclipse.gmf.runtime.emf.type.core.requests.SetRequest;
+import org.eclipse.gmf.runtime.notation.Edge;
 import org.eclipse.gmf.runtime.notation.View;
-import java.util.Collections;
-import java.util.HashMap;
-import java.util.Map;
-
 import org.eclipse.uml2.diagram.activity.edit.helpers.UMLBaseEditHelper;
-
 import org.eclipse.uml2.diagram.activity.expressions.UMLAbstractExpression;
 import org.eclipse.uml2.diagram.activity.expressions.UMLOCLFactory;
-
 import org.eclipse.uml2.diagram.activity.part.Messages;
 import org.eclipse.uml2.diagram.activity.part.UMLDiagramEditorPlugin;
-
 import org.eclipse.uml2.diagram.activity.part.UMLVisualIDRegistry;
 import org.eclipse.uml2.uml.Action;
 import org.eclipse.uml2.uml.Activity;
@@ -253,8 +254,16 @@ public class UMLBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 	/**
 	 * @generated
 	 */
-	protected Command getMSLWrapper(ICommand cmd) {
+	protected final Command getGEFWrapper(ICommand cmd) {
 		return new ICommandProxy(cmd);
+	}
+
+	/**
+	 * @generated
+	 */
+	protected final Command getMSLWrapper(ICommand cmd) {
+		// XXX deprecated: use getGEFWrapper() instead
+		return getGEFWrapper(cmd);
 	}
 
 	/**
@@ -265,23 +274,40 @@ public class UMLBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 	}
 
 	/**
-	 * Finds container element for the new relationship of the specified type.
-	 * Default implementation goes up by containment hierarchy starting from
-	 * the specified element and returns the first element that is instance of
-	 * the specified container class.
+	 * Returns editing domain from the host edit part.
 	 * 
 	 * @generated
 	 */
-	protected EObject getRelationshipContainer(Object uelement, EClass containerClass, IElementType relationshipType) {
-		if (uelement instanceof EObject) {
-			EObject element = (EObject) uelement;
-			for (; element != null; element = element.eContainer()) {
-				if (containerClass.isSuperTypeOf(element.eClass())) {
-					return element;
-				}
-			}
+	protected TransactionalEditingDomain getEditingDomain() {
+		return ((IGraphicalEditPart) getHost()).getEditingDomain();
+	}
+
+	/**
+	 * Creates command to destroy the link.
+	 * 
+	 * @generated
+	 */
+	protected Command getDestroyElementCommand(View view) {
+		EditPart editPart = (EditPart) getHost().getViewer().getEditPartRegistry().get(view);
+		DestroyElementRequest request = new DestroyElementRequest(getEditingDomain(), false);
+		return editPart.getCommand(new EditCommandRequestWrapper(request, Collections.EMPTY_MAP));
+	}
+
+	/**
+	 * Creates commands to destroy all host incoming and outgoing links.
+	 * 
+	 * @generated
+	 */
+	protected CompoundCommand getDestroyEdgesCommand() {
+		CompoundCommand cmd = new CompoundCommand();
+		View view = (View) getHost().getModel();
+		for (Iterator it = view.getSourceEdges().iterator(); it.hasNext();) {
+			cmd.add(getDestroyElementCommand((Edge) it.next()));
 		}
-		return null;
+		for (Iterator it = view.getTargetEdges().iterator(); it.hasNext();) {
+			cmd.add(getDestroyElementCommand((Edge) it.next()));
+		}
+		return cmd;
 	}
 
 	/**

@@ -1,17 +1,18 @@
 package org.eclipse.uml2.diagram.activity.edit.policies;
 
-import org.eclipse.gmf.runtime.diagram.ui.editpolicies.CanonicalEditPolicy;
-import org.eclipse.gmf.runtime.notation.View;
+import java.util.Collection;
+import java.util.HashSet;
+import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.List;
+import java.util.Set;
 
-import org.eclipse.emf.ecore.EObject;
-
-import org.eclipse.uml2.diagram.activity.edit.parts.LiteralString2EditPart;
-
+import org.eclipse.gmf.runtime.diagram.ui.editpolicies.CanonicalEditPolicy;
+import org.eclipse.gmf.runtime.notation.View;
+import org.eclipse.uml2.diagram.activity.part.UMLDiagramUpdater;
+import org.eclipse.uml2.diagram.activity.part.UMLNodeDescriptor;
 import org.eclipse.uml2.diagram.activity.part.UMLVisualIDRegistry;
-
-import org.eclipse.uml2.uml.Constraint;
+import org.eclipse.uml2.uml.UMLPackage;
 
 /**
  * @generated
@@ -19,19 +20,18 @@ import org.eclipse.uml2.uml.Constraint;
 public class ConstraintPostconditionCanonicalEditPolicy extends CanonicalEditPolicy {
 
 	/**
-	 *  
+	 * @generated
+	 */
+	Set myFeaturesToSynchronize;
+
+	/**
 	 * @generated
 	 */
 	protected List getSemanticChildrenList() {
-		List result = new LinkedList();
-		EObject modelObject = ((View) getHost().getModel()).getElement();
 		View viewObject = (View) getHost().getModel();
-		EObject nextValue;
-		int nodeVID;
-		nextValue = ((Constraint) modelObject).getSpecification();
-		nodeVID = UMLVisualIDRegistry.getNodeVisualID(viewObject, nextValue);
-		if (LiteralString2EditPart.VISUAL_ID == nodeVID) {
-			result.add(nextValue);
+		List result = new LinkedList();
+		for (Iterator it = UMLDiagramUpdater.getConstraintPostcondition_7014SemanticChildren(viewObject).iterator(); it.hasNext();) {
+			result.add(((UMLNodeDescriptor) it.next()).getModelElement());
 		}
 		return result;
 	}
@@ -39,17 +39,10 @@ public class ConstraintPostconditionCanonicalEditPolicy extends CanonicalEditPol
 	/**
 	 * @generated
 	 */
-	protected boolean shouldDeleteView(View view) {
-		if (view.getEAnnotation("Shortcut") != null) { //$NON-NLS-1$
-			return view.isSetElement() && (view.getElement() == null || view.getElement().eIsProxy());
-		}
-
-		int nodeVID = UMLVisualIDRegistry.getVisualID(view);
-		switch (nodeVID) {
-		case LiteralString2EditPart.VISUAL_ID:
-			return true;
-		}
-		return false;
+	protected boolean isOrphaned(Collection semanticChildren, final View view) {
+		int visualID = UMLVisualIDRegistry.getVisualID(view);
+		return UMLDiagramUpdater.isConstraintPostcondition_7014DomainMetaChild(visualID)
+				&& (!semanticChildren.contains(view.getElement()) || visualID != UMLVisualIDRegistry.getNodeVisualID((View) getHost().getModel(), view.getElement()));
 	}
 
 	/**
@@ -57,6 +50,17 @@ public class ConstraintPostconditionCanonicalEditPolicy extends CanonicalEditPol
 	 */
 	protected String getDefaultFactoryHint() {
 		return null;
+	}
+
+	/**
+	 * @generated
+	 */
+	protected Set getFeaturesToSynchronize() {
+		if (myFeaturesToSynchronize == null) {
+			myFeaturesToSynchronize = new HashSet();
+			myFeaturesToSynchronize.add(UMLPackage.eINSTANCE.getConstraint_Specification());
+		}
+		return myFeaturesToSynchronize;
 	}
 
 }

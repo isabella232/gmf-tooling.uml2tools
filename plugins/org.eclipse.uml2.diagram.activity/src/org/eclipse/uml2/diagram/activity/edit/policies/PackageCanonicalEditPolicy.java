@@ -1,53 +1,31 @@
 package org.eclipse.uml2.diagram.activity.edit.policies;
 
-import java.util.List;
 import java.util.Collection;
-import org.eclipse.gmf.runtime.notation.Edge;
-import org.eclipse.emf.ecore.EObject;
-import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.Iterator;
 import java.util.LinkedList;
+import java.util.List;
 import java.util.Map;
+import java.util.Set;
 
 import org.eclipse.core.runtime.IAdaptable;
-
-import org.eclipse.emf.ecore.EClass;
-
-import org.eclipse.emf.ecore.resource.Resource;
-
+import org.eclipse.emf.ecore.EObject;
 import org.eclipse.gef.EditPart;
-
 import org.eclipse.gef.commands.Command;
-
-import org.eclipse.gmf.runtime.common.core.command.CompositeCommand;
-import org.eclipse.gmf.runtime.common.core.command.ICommand;
-
 import org.eclipse.gmf.runtime.diagram.core.util.ViewUtil;
-
-import org.eclipse.gmf.runtime.diagram.ui.commands.CreateCommand;
 import org.eclipse.gmf.runtime.diagram.ui.commands.DeferredLayoutCommand;
 import org.eclipse.gmf.runtime.diagram.ui.commands.ICommandProxy;
-import org.eclipse.gmf.runtime.diagram.ui.commands.SetViewMutabilityCommand;
-
 import org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart;
-
 import org.eclipse.gmf.runtime.diagram.ui.editpolicies.CanonicalConnectionEditPolicy;
-
-import org.eclipse.gmf.runtime.diagram.ui.l10n.DiagramUIMessages;
-
 import org.eclipse.gmf.runtime.diagram.ui.requests.CreateConnectionViewRequest;
-import org.eclipse.gmf.runtime.diagram.ui.requests.CreateViewRequest;
 import org.eclipse.gmf.runtime.diagram.ui.requests.RequestConstants;
-
 import org.eclipse.gmf.runtime.emf.core.util.EObjectAdapter;
-
 import org.eclipse.gmf.runtime.emf.type.core.IElementType;
-
 import org.eclipse.gmf.runtime.notation.Diagram;
+import org.eclipse.gmf.runtime.notation.Edge;
 import org.eclipse.gmf.runtime.notation.View;
-
 import org.eclipse.uml2.diagram.activity.edit.parts.AcceptEventAction2EditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.AcceptEventAction3EditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.AcceptEventAction4EditPart;
@@ -98,23 +76,36 @@ import org.eclipse.uml2.diagram.activity.edit.parts.OpaqueBehaviorEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.OutputPin2EditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.OutputPin3EditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.OutputPinEditPart;
-import org.eclipse.uml2.diagram.activity.edit.parts.PackageEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.Pin2EditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.PinEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.StructuredActivityNode2EditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.StructuredActivityNodeEditPart;
-
+import org.eclipse.uml2.diagram.activity.part.UMLDiagramUpdater;
+import org.eclipse.uml2.diagram.activity.part.UMLNodeDescriptor;
 import org.eclipse.uml2.diagram.activity.part.UMLVisualIDRegistry;
-
 import org.eclipse.uml2.diagram.activity.providers.UMLElementTypes;
-
+import org.eclipse.uml2.uml.AcceptEventAction;
 import org.eclipse.uml2.uml.Action;
 import org.eclipse.uml2.uml.Activity;
 import org.eclipse.uml2.uml.ActivityEdge;
+import org.eclipse.uml2.uml.ActivityNode;
+import org.eclipse.uml2.uml.ActivityParameterNode;
+import org.eclipse.uml2.uml.AddStructuralFeatureValueAction;
+import org.eclipse.uml2.uml.Behavior;
+import org.eclipse.uml2.uml.CallBehaviorAction;
+import org.eclipse.uml2.uml.CallOperationAction;
+import org.eclipse.uml2.uml.CentralBufferNode;
+import org.eclipse.uml2.uml.Constraint;
+import org.eclipse.uml2.uml.CreateObjectAction;
+import org.eclipse.uml2.uml.DataStoreNode;
 import org.eclipse.uml2.uml.ExceptionHandler;
 import org.eclipse.uml2.uml.ExecutableNode;
+import org.eclipse.uml2.uml.InputPin;
 import org.eclipse.uml2.uml.ObjectNode;
-import org.eclipse.uml2.uml.Package;
+import org.eclipse.uml2.uml.OpaqueAction;
+import org.eclipse.uml2.uml.OutputPin;
+import org.eclipse.uml2.uml.Pin;
+import org.eclipse.uml2.uml.StructuredActivityNode;
 import org.eclipse.uml2.uml.UMLPackage;
 
 /**
@@ -123,21 +114,18 @@ import org.eclipse.uml2.uml.UMLPackage;
 public class PackageCanonicalEditPolicy extends CanonicalConnectionEditPolicy {
 
 	/**
-	 *  
+	 * @generated
+	 */
+	Set myFeaturesToSynchronize;
+
+	/**
 	 * @generated
 	 */
 	protected List getSemanticChildrenList() {
-		List result = new LinkedList();
-		EObject modelObject = ((View) getHost().getModel()).getElement();
 		View viewObject = (View) getHost().getModel();
-		EObject nextValue;
-		int nodeVID;
-		for (Iterator values = ((Package) modelObject).getPackagedElements().iterator(); values.hasNext();) {
-			nextValue = (EObject) values.next();
-			nodeVID = UMLVisualIDRegistry.getNodeVisualID(viewObject, nextValue);
-			if (ActivityEditPart.VISUAL_ID == nodeVID) {
-				result.add(nextValue);
-			}
+		List result = new LinkedList();
+		for (Iterator it = UMLDiagramUpdater.getPackage_1000SemanticChildren(viewObject).iterator(); it.hasNext();) {
+			result.add(((UMLNodeDescriptor) it.next()).getModelElement());
 		}
 		return result;
 	}
@@ -146,18 +134,16 @@ public class PackageCanonicalEditPolicy extends CanonicalConnectionEditPolicy {
 	 * @generated
 	 */
 	protected boolean shouldDeleteView(View view) {
-		if (view.getEAnnotation("Shortcut") != null) { //$NON-NLS-1$
-			return view.isSetElement() && (view.getElement() == null || view.getElement().eIsProxy());
-		}
+		return true;
+	}
 
-		int nodeVID = UMLVisualIDRegistry.getVisualID(view);
-		switch (nodeVID) {
-		case ActivityEditPart.VISUAL_ID:
-		case ConstraintEditPart.VISUAL_ID:
-		case Constraint2EditPart.VISUAL_ID:
-			return true;
-		}
-		return false;
+	/**
+	 * @generated
+	 */
+	protected boolean isOrphaned(Collection semanticChildren, final View view) {
+		int visualID = UMLVisualIDRegistry.getVisualID(view);
+		return UMLDiagramUpdater.isPackage_1000DomainMetaChild(visualID)
+				&& (!semanticChildren.contains(view.getElement()) || visualID != UMLVisualIDRegistry.getNodeVisualID((View) getHost().getModel(), view.getElement()));
 	}
 
 	/**
@@ -165,6 +151,17 @@ public class PackageCanonicalEditPolicy extends CanonicalConnectionEditPolicy {
 	 */
 	protected String getDefaultFactoryHint() {
 		return null;
+	}
+
+	/**
+	 * @generated
+	 */
+	protected Set getFeaturesToSynchronize() {
+		if (myFeaturesToSynchronize == null) {
+			myFeaturesToSynchronize = new HashSet();
+			myFeaturesToSynchronize.add(UMLPackage.eINSTANCE.getPackage_PackagedElement());
+		}
+		return myFeaturesToSynchronize;
 	}
 
 	/**
@@ -201,7 +198,6 @@ public class PackageCanonicalEditPolicy extends CanonicalConnectionEditPolicy {
 	protected void refreshSemantic() {
 		List createdViews = new LinkedList();
 		createdViews.addAll(refreshSemanticChildren());
-		createdViews.addAll(refreshPhantoms());
 		List createdConnectionViews = new LinkedList();
 		createdConnectionViews.addAll(refreshSemanticConnections());
 		createdConnectionViews.addAll(refreshConnections());
@@ -219,201 +215,423 @@ public class PackageCanonicalEditPolicy extends CanonicalConnectionEditPolicy {
 	/**
 	 * @generated
 	 */
-	private Collection refreshPhantoms() {
-		Collection phantomNodes = new LinkedList();
-		EObject diagramModelObject = ((View) getHost().getModel()).getElement();
-		Diagram diagram = getDiagram();
-		Resource resource = diagramModelObject.eResource();
-		for (Iterator it = resource.getContents().iterator(); it.hasNext();) {
-			EObject nextResourceObject = (EObject) it.next();
-			if (nextResourceObject == diagramModelObject) {
-				continue;
-			}
-			int nodeVID = UMLVisualIDRegistry.getNodeVisualID(diagram, nextResourceObject);
-			switch (nodeVID) {
-			case Constraint2EditPart.VISUAL_ID: {
-				phantomNodes.add(nextResourceObject);
-				break;
-			}
-			}
-		}
-
-		for (Iterator diagramNodes = getDiagram().getChildren().iterator(); diagramNodes.hasNext();) {
-			View nextView = (View) diagramNodes.next();
-			EObject nextViewElement = nextView.getElement();
-			if (phantomNodes.contains(nextViewElement)) {
-				phantomNodes.remove(nextViewElement);
-			}
-		}
-		return createPhantomNodes(phantomNodes);
+	private Diagram getDiagram() {
+		return ((View) getHost().getModel()).getDiagram();
 	}
-
-	/**
-	 * @generated
-	 */
-	private Collection createPhantomNodes(Collection nodes) {
-		if (nodes.isEmpty()) {
-			return Collections.EMPTY_LIST;
-		}
-		List descriptors = new ArrayList();
-		for (Iterator elements = nodes.iterator(); elements.hasNext();) {
-			EObject element = (EObject) elements.next();
-			CreateViewRequest.ViewDescriptor descriptor = getViewDescriptor(element);
-			descriptors.add(descriptor);
-		}
-		Diagram diagram = getDiagram();
-		EditPart diagramEditPart = getDiagramEditPart();
-
-		CreateViewRequest request = getCreateViewRequest(descriptors);
-		Command cmd = diagramEditPart.getCommand(request);
-		if (cmd == null) {
-			CompositeCommand cc = new CompositeCommand(DiagramUIMessages.AddCommand_Label);
-			for (Iterator descriptorsIterator = descriptors.iterator(); descriptorsIterator.hasNext();) {
-				CreateViewRequest.ViewDescriptor descriptor = (CreateViewRequest.ViewDescriptor) descriptorsIterator.next();
-				ICommand createCommand = new CreateCommand(((IGraphicalEditPart) getHost()).getEditingDomain(), descriptor, diagram);
-				cc.compose(createCommand);
-			}
-			cmd = new ICommandProxy(cc);
-		}
-
-		List adapters = Collections.EMPTY_LIST;
-		if (cmd != null && cmd.canExecute()) {
-			SetViewMutabilityCommand.makeMutable(new EObjectAdapter(((IGraphicalEditPart) diagramEditPart).getNotationView())).execute();
-			executeCommand(cmd);
-			adapters = (List) request.getNewObject();
-		}
-		diagramEditPart.refresh();
-		return adapters;
-	}
-
-	/**
-	 * @generated
-	 */
-	private EditPart getDiagramEditPart() {
-		return (EditPart) getHost().getViewer().getEditPartRegistry().get(getDiagram());
-	}
-
-	/**
-	 * @generated
-	 */
-	private Collection myLinkDescriptors = new LinkedList();
-
-	/**
-	 * @generated
-	 */
-	private Map myEObject2ViewMap = new HashMap();
 
 	/**
 	 * @generated
 	 */
 	private Collection refreshConnections() {
-		try {
-			collectAllLinks(getDiagram());
-			Collection existingLinks = new LinkedList(getDiagram().getEdges());
-			for (Iterator diagramLinks = existingLinks.iterator(); diagramLinks.hasNext();) {
-				Edge nextDiagramLink = (Edge) diagramLinks.next();
-				EObject diagramLinkObject = nextDiagramLink.getElement();
-				EObject diagramLinkSrc = nextDiagramLink.getSource().getElement();
-				EObject diagramLinkDst = nextDiagramLink.getTarget().getElement();
-				int diagramLinkVisualID = UMLVisualIDRegistry.getVisualID(nextDiagramLink);
-				for (Iterator modelLinkDescriptors = myLinkDescriptors.iterator(); modelLinkDescriptors.hasNext();) {
-					LinkDescriptor nextLinkDescriptor = (LinkDescriptor) modelLinkDescriptors.next();
-					if (diagramLinkObject == nextLinkDescriptor.getLinkElement() && diagramLinkSrc == nextLinkDescriptor.getSource() && diagramLinkDst == nextLinkDescriptor.getDestination()
-							&& diagramLinkVisualID == nextLinkDescriptor.getVisualID()) {
-						diagramLinks.remove();
-						modelLinkDescriptors.remove();
-					}
+		Map domain2NotationMap = new HashMap();
+		Collection linkDescriptors = collectAllLinks(getDiagram(), domain2NotationMap);
+		Collection existingLinks = new LinkedList(getDiagram().getEdges());
+		for (Iterator linksIterator = existingLinks.iterator(); linksIterator.hasNext();) {
+			Edge nextDiagramLink = (Edge) linksIterator.next();
+			EObject diagramLinkObject = nextDiagramLink.getElement();
+			EObject diagramLinkSrc = nextDiagramLink.getSource().getElement();
+			EObject diagramLinkDst = nextDiagramLink.getTarget().getElement();
+			int diagramLinkVisualID = UMLVisualIDRegistry.getVisualID(nextDiagramLink);
+			for (Iterator LinkDescriptorsIterator = linkDescriptors.iterator(); LinkDescriptorsIterator.hasNext();) {
+				LinkDescriptor nextLinkDescriptor = (LinkDescriptor) LinkDescriptorsIterator.next();
+				if (diagramLinkObject == nextLinkDescriptor.getLinkElement() && diagramLinkSrc == nextLinkDescriptor.getSource() && diagramLinkDst == nextLinkDescriptor.getDestination()
+						&& diagramLinkVisualID == nextLinkDescriptor.getVisualID()) {
+					linksIterator.remove();
+					LinkDescriptorsIterator.remove();
 				}
 			}
-			deleteViews(existingLinks.iterator());
-			return createConnections(myLinkDescriptors);
-		} finally {
-			myLinkDescriptors.clear();
-			myEObject2ViewMap.clear();
 		}
+		deleteViews(existingLinks.iterator());
+		return createConnections(linkDescriptors, domain2NotationMap);
 	}
 
 	/**
 	 * @generated
 	 */
-	private void collectAllLinks(View view) {
-		EObject modelElement = view.getElement();
-		int diagramElementVisualID = UMLVisualIDRegistry.getVisualID(view);
-		switch (diagramElementVisualID) {
-		case ActivityEditPart.VISUAL_ID:
-		case ConstraintEditPart.VISUAL_ID:
-		case Constraint2EditPart.VISUAL_ID:
-		case AcceptEventActionEditPart.VISUAL_ID:
-		case AcceptEventAction2EditPart.VISUAL_ID:
-		case ActivityFinalNodeEditPart.VISUAL_ID:
-		case DecisionNodeEditPart.VISUAL_ID:
-		case MergeNodeEditPart.VISUAL_ID:
-		case InitialNodeEditPart.VISUAL_ID:
-		case DataStoreNodeEditPart.VISUAL_ID:
-		case CentralBufferNodeEditPart.VISUAL_ID:
-		case OpaqueActionEditPart.VISUAL_ID:
-		case OutputPinEditPart.VISUAL_ID:
-		case FlowFinalNodeEditPart.VISUAL_ID:
-		case ForkNodeEditPart.VISUAL_ID:
-		case JoinNodeEditPart.VISUAL_ID:
-		case PinEditPart.VISUAL_ID:
-		case CreateObjectActionEditPart.VISUAL_ID:
-		case OutputPin2EditPart.VISUAL_ID:
-		case AddStructuralFeatureValueActionEditPart.VISUAL_ID:
-		case InputPinEditPart.VISUAL_ID:
-		case InputPin2EditPart.VISUAL_ID:
-		case InputPin3EditPart.VISUAL_ID:
-		case CallBehaviorActionEditPart.VISUAL_ID:
-		case OutputPin3EditPart.VISUAL_ID:
-		case InputPin4EditPart.VISUAL_ID:
-		case CallOperationActionEditPart.VISUAL_ID:
-		case InputPin5EditPart.VISUAL_ID:
-		case StructuredActivityNodeEditPart.VISUAL_ID:
-		case StructuredActivityNode2EditPart.VISUAL_ID:
-		case OpaqueAction2EditPart.VISUAL_ID:
-		case AcceptEventAction3EditPart.VISUAL_ID:
-		case AcceptEventAction4EditPart.VISUAL_ID:
-		case ActivityFinalNode2EditPart.VISUAL_ID:
-		case DecisionNode2EditPart.VISUAL_ID:
-		case FlowFinalNode2EditPart.VISUAL_ID:
-		case Pin2EditPart.VISUAL_ID:
-		case CreateObjectAction2EditPart.VISUAL_ID:
-		case CallBehaviorAction2EditPart.VISUAL_ID:
-		case CallOperationAction2EditPart.VISUAL_ID:
-		case ForkNode2EditPart.VISUAL_ID:
-		case JoinNode2EditPart.VISUAL_ID:
-		case AddStructuralFeatureValueAction2EditPart.VISUAL_ID:
-		case DataStoreNode2EditPart.VISUAL_ID:
-		case CentralBufferNode2EditPart.VISUAL_ID:
-		case OpaqueBehaviorEditPart.VISUAL_ID:
-		case ActivityParameterNodeEditPart.VISUAL_ID:
-		case LiteralStringEditPart.VISUAL_ID:
-		case LiteralString2EditPart.VISUAL_ID:
-		case PackageEditPart.VISUAL_ID: {
-			myEObject2ViewMap.put(modelElement, view);
-			storeLinks(modelElement, getDiagram());
+	private Collection collectAllLinks(View view, Map domain2NotationMap) {
+		Collection result = new LinkedList();
+		switch (UMLVisualIDRegistry.getVisualID(view)) {
+		case ActivityEditPart.VISUAL_ID: {
+			domain2NotationMap.put(view.getElement(), view);
+			Activity modelElement = (Activity) view.getElement();
+			result.addAll(getContainedTypeModelFacetLinks_ControlFlow_4001(modelElement));
+			result.addAll(getContainedTypeModelFacetLinks_ObjectFlow_4002(modelElement));
+			break;
 		}
-		default: {
+		case ConstraintEditPart.VISUAL_ID: {
+			domain2NotationMap.put(view.getElement(), view);
+			break;
 		}
-			for (Iterator children = view.getChildren().iterator(); children.hasNext();) {
-				View childView = (View) children.next();
-				collectAllLinks(childView);
+		case Constraint2EditPart.VISUAL_ID: {
+			domain2NotationMap.put(view.getElement(), view);
+			break;
+		}
+		case AcceptEventActionEditPart.VISUAL_ID: {
+			domain2NotationMap.put(view.getElement(), view);
+			AcceptEventAction modelElement = (AcceptEventAction) view.getElement();
+			result.addAll(getContainedFeatureModelFacetLinks_Action_LocalPrecondition_4003(modelElement));
+			result.addAll(getContainedTypeModelFacetLinks_ExceptionHandler_4005(modelElement));
+			break;
+		}
+		case AcceptEventAction2EditPart.VISUAL_ID: {
+			domain2NotationMap.put(view.getElement(), view);
+			AcceptEventAction modelElement = (AcceptEventAction) view.getElement();
+			result.addAll(getContainedFeatureModelFacetLinks_Action_LocalPrecondition_4003(modelElement));
+			result.addAll(getContainedTypeModelFacetLinks_ExceptionHandler_4005(modelElement));
+			break;
+		}
+		case ActivityFinalNodeEditPart.VISUAL_ID: {
+			domain2NotationMap.put(view.getElement(), view);
+			break;
+		}
+		case DecisionNodeEditPart.VISUAL_ID: {
+			domain2NotationMap.put(view.getElement(), view);
+			break;
+		}
+		case MergeNodeEditPart.VISUAL_ID: {
+			domain2NotationMap.put(view.getElement(), view);
+			break;
+		}
+		case InitialNodeEditPart.VISUAL_ID: {
+			domain2NotationMap.put(view.getElement(), view);
+			break;
+		}
+		case DataStoreNodeEditPart.VISUAL_ID: {
+			domain2NotationMap.put(view.getElement(), view);
+			DataStoreNode modelElement = (DataStoreNode) view.getElement();
+			result.addAll(getContainedFeatureModelFacetLinks_ObjectNode_Selection_4004(modelElement));
+			break;
+		}
+		case CentralBufferNodeEditPart.VISUAL_ID: {
+			domain2NotationMap.put(view.getElement(), view);
+			CentralBufferNode modelElement = (CentralBufferNode) view.getElement();
+			result.addAll(getContainedFeatureModelFacetLinks_ObjectNode_Selection_4004(modelElement));
+			break;
+		}
+		case OpaqueActionEditPart.VISUAL_ID: {
+			domain2NotationMap.put(view.getElement(), view);
+			OpaqueAction modelElement = (OpaqueAction) view.getElement();
+			result.addAll(getContainedFeatureModelFacetLinks_Action_LocalPrecondition_4003(modelElement));
+			result.addAll(getContainedTypeModelFacetLinks_ExceptionHandler_4005(modelElement));
+			break;
+		}
+		case OutputPinEditPart.VISUAL_ID: {
+			domain2NotationMap.put(view.getElement(), view);
+			OutputPin modelElement = (OutputPin) view.getElement();
+			result.addAll(getContainedFeatureModelFacetLinks_ObjectNode_Selection_4004(modelElement));
+			break;
+		}
+		case FlowFinalNodeEditPart.VISUAL_ID: {
+			domain2NotationMap.put(view.getElement(), view);
+			break;
+		}
+		case ForkNodeEditPart.VISUAL_ID: {
+			domain2NotationMap.put(view.getElement(), view);
+			break;
+		}
+		case JoinNodeEditPart.VISUAL_ID: {
+			domain2NotationMap.put(view.getElement(), view);
+			break;
+		}
+		case PinEditPart.VISUAL_ID: {
+			domain2NotationMap.put(view.getElement(), view);
+			Pin modelElement = (Pin) view.getElement();
+			result.addAll(getContainedFeatureModelFacetLinks_ObjectNode_Selection_4004(modelElement));
+			break;
+		}
+		case CreateObjectActionEditPart.VISUAL_ID: {
+			domain2NotationMap.put(view.getElement(), view);
+			CreateObjectAction modelElement = (CreateObjectAction) view.getElement();
+			result.addAll(getContainedFeatureModelFacetLinks_Action_LocalPrecondition_4003(modelElement));
+			result.addAll(getContainedTypeModelFacetLinks_ExceptionHandler_4005(modelElement));
+			break;
+		}
+		case OutputPin2EditPart.VISUAL_ID: {
+			domain2NotationMap.put(view.getElement(), view);
+			OutputPin modelElement = (OutputPin) view.getElement();
+			result.addAll(getContainedFeatureModelFacetLinks_ObjectNode_Selection_4004(modelElement));
+			break;
+		}
+		case AddStructuralFeatureValueActionEditPart.VISUAL_ID: {
+			domain2NotationMap.put(view.getElement(), view);
+			AddStructuralFeatureValueAction modelElement = (AddStructuralFeatureValueAction) view.getElement();
+			result.addAll(getContainedFeatureModelFacetLinks_Action_LocalPrecondition_4003(modelElement));
+			result.addAll(getContainedTypeModelFacetLinks_ExceptionHandler_4005(modelElement));
+			break;
+		}
+		case InputPinEditPart.VISUAL_ID: {
+			domain2NotationMap.put(view.getElement(), view);
+			InputPin modelElement = (InputPin) view.getElement();
+			result.addAll(getContainedFeatureModelFacetLinks_ObjectNode_Selection_4004(modelElement));
+			break;
+		}
+		case InputPin2EditPart.VISUAL_ID: {
+			domain2NotationMap.put(view.getElement(), view);
+			InputPin modelElement = (InputPin) view.getElement();
+			result.addAll(getContainedFeatureModelFacetLinks_ObjectNode_Selection_4004(modelElement));
+			break;
+		}
+		case InputPin3EditPart.VISUAL_ID: {
+			domain2NotationMap.put(view.getElement(), view);
+			InputPin modelElement = (InputPin) view.getElement();
+			result.addAll(getContainedFeatureModelFacetLinks_ObjectNode_Selection_4004(modelElement));
+			break;
+		}
+		case CallBehaviorActionEditPart.VISUAL_ID: {
+			domain2NotationMap.put(view.getElement(), view);
+			CallBehaviorAction modelElement = (CallBehaviorAction) view.getElement();
+			result.addAll(getContainedFeatureModelFacetLinks_Action_LocalPrecondition_4003(modelElement));
+			result.addAll(getContainedTypeModelFacetLinks_ExceptionHandler_4005(modelElement));
+			break;
+		}
+		case OutputPin3EditPart.VISUAL_ID: {
+			domain2NotationMap.put(view.getElement(), view);
+			OutputPin modelElement = (OutputPin) view.getElement();
+			result.addAll(getContainedFeatureModelFacetLinks_ObjectNode_Selection_4004(modelElement));
+			break;
+		}
+		case InputPin4EditPart.VISUAL_ID: {
+			domain2NotationMap.put(view.getElement(), view);
+			InputPin modelElement = (InputPin) view.getElement();
+			result.addAll(getContainedFeatureModelFacetLinks_ObjectNode_Selection_4004(modelElement));
+			break;
+		}
+		case CallOperationActionEditPart.VISUAL_ID: {
+			domain2NotationMap.put(view.getElement(), view);
+			CallOperationAction modelElement = (CallOperationAction) view.getElement();
+			result.addAll(getContainedFeatureModelFacetLinks_Action_LocalPrecondition_4003(modelElement));
+			result.addAll(getContainedTypeModelFacetLinks_ExceptionHandler_4005(modelElement));
+			break;
+		}
+		case InputPin5EditPart.VISUAL_ID: {
+			domain2NotationMap.put(view.getElement(), view);
+			InputPin modelElement = (InputPin) view.getElement();
+			result.addAll(getContainedFeatureModelFacetLinks_ObjectNode_Selection_4004(modelElement));
+			break;
+		}
+		case StructuredActivityNodeEditPart.VISUAL_ID: {
+			domain2NotationMap.put(view.getElement(), view);
+			StructuredActivityNode modelElement = (StructuredActivityNode) view.getElement();
+			result.addAll(getContainedFeatureModelFacetLinks_Action_LocalPrecondition_4003(modelElement));
+			result.addAll(getContainedTypeModelFacetLinks_ExceptionHandler_4005(modelElement));
+			break;
+		}
+		case StructuredActivityNode2EditPart.VISUAL_ID: {
+			domain2NotationMap.put(view.getElement(), view);
+			StructuredActivityNode modelElement = (StructuredActivityNode) view.getElement();
+			result.addAll(getContainedFeatureModelFacetLinks_Action_LocalPrecondition_4003(modelElement));
+			result.addAll(getContainedTypeModelFacetLinks_ExceptionHandler_4005(modelElement));
+			break;
+		}
+		case OpaqueAction2EditPart.VISUAL_ID: {
+			domain2NotationMap.put(view.getElement(), view);
+			OpaqueAction modelElement = (OpaqueAction) view.getElement();
+			result.addAll(getContainedFeatureModelFacetLinks_Action_LocalPrecondition_4003(modelElement));
+			result.addAll(getContainedTypeModelFacetLinks_ExceptionHandler_4005(modelElement));
+			break;
+		}
+		case AcceptEventAction3EditPart.VISUAL_ID: {
+			domain2NotationMap.put(view.getElement(), view);
+			AcceptEventAction modelElement = (AcceptEventAction) view.getElement();
+			result.addAll(getContainedFeatureModelFacetLinks_Action_LocalPrecondition_4003(modelElement));
+			result.addAll(getContainedTypeModelFacetLinks_ExceptionHandler_4005(modelElement));
+			break;
+		}
+		case AcceptEventAction4EditPart.VISUAL_ID: {
+			domain2NotationMap.put(view.getElement(), view);
+			AcceptEventAction modelElement = (AcceptEventAction) view.getElement();
+			result.addAll(getContainedFeatureModelFacetLinks_Action_LocalPrecondition_4003(modelElement));
+			result.addAll(getContainedTypeModelFacetLinks_ExceptionHandler_4005(modelElement));
+			break;
+		}
+		case ActivityFinalNode2EditPart.VISUAL_ID: {
+			domain2NotationMap.put(view.getElement(), view);
+			break;
+		}
+		case DecisionNode2EditPart.VISUAL_ID: {
+			domain2NotationMap.put(view.getElement(), view);
+			break;
+		}
+		case FlowFinalNode2EditPart.VISUAL_ID: {
+			domain2NotationMap.put(view.getElement(), view);
+			break;
+		}
+		case Pin2EditPart.VISUAL_ID: {
+			domain2NotationMap.put(view.getElement(), view);
+			Pin modelElement = (Pin) view.getElement();
+			result.addAll(getContainedFeatureModelFacetLinks_ObjectNode_Selection_4004(modelElement));
+			break;
+		}
+		case CreateObjectAction2EditPart.VISUAL_ID: {
+			domain2NotationMap.put(view.getElement(), view);
+			CreateObjectAction modelElement = (CreateObjectAction) view.getElement();
+			result.addAll(getContainedFeatureModelFacetLinks_Action_LocalPrecondition_4003(modelElement));
+			result.addAll(getContainedTypeModelFacetLinks_ExceptionHandler_4005(modelElement));
+			break;
+		}
+		case CallBehaviorAction2EditPart.VISUAL_ID: {
+			domain2NotationMap.put(view.getElement(), view);
+			CallBehaviorAction modelElement = (CallBehaviorAction) view.getElement();
+			result.addAll(getContainedFeatureModelFacetLinks_Action_LocalPrecondition_4003(modelElement));
+			result.addAll(getContainedTypeModelFacetLinks_ExceptionHandler_4005(modelElement));
+			break;
+		}
+		case CallOperationAction2EditPart.VISUAL_ID: {
+			domain2NotationMap.put(view.getElement(), view);
+			CallOperationAction modelElement = (CallOperationAction) view.getElement();
+			result.addAll(getContainedFeatureModelFacetLinks_Action_LocalPrecondition_4003(modelElement));
+			result.addAll(getContainedTypeModelFacetLinks_ExceptionHandler_4005(modelElement));
+			break;
+		}
+		case ForkNode2EditPart.VISUAL_ID: {
+			domain2NotationMap.put(view.getElement(), view);
+			break;
+		}
+		case JoinNode2EditPart.VISUAL_ID: {
+			domain2NotationMap.put(view.getElement(), view);
+			break;
+		}
+		case AddStructuralFeatureValueAction2EditPart.VISUAL_ID: {
+			domain2NotationMap.put(view.getElement(), view);
+			AddStructuralFeatureValueAction modelElement = (AddStructuralFeatureValueAction) view.getElement();
+			result.addAll(getContainedFeatureModelFacetLinks_Action_LocalPrecondition_4003(modelElement));
+			result.addAll(getContainedTypeModelFacetLinks_ExceptionHandler_4005(modelElement));
+			break;
+		}
+		case DataStoreNode2EditPart.VISUAL_ID: {
+			domain2NotationMap.put(view.getElement(), view);
+			DataStoreNode modelElement = (DataStoreNode) view.getElement();
+			result.addAll(getContainedFeatureModelFacetLinks_ObjectNode_Selection_4004(modelElement));
+			break;
+		}
+		case CentralBufferNode2EditPart.VISUAL_ID: {
+			domain2NotationMap.put(view.getElement(), view);
+			CentralBufferNode modelElement = (CentralBufferNode) view.getElement();
+			result.addAll(getContainedFeatureModelFacetLinks_ObjectNode_Selection_4004(modelElement));
+			break;
+		}
+		case OpaqueBehaviorEditPart.VISUAL_ID: {
+			domain2NotationMap.put(view.getElement(), view);
+			break;
+		}
+		case ActivityParameterNodeEditPart.VISUAL_ID: {
+			domain2NotationMap.put(view.getElement(), view);
+			ActivityParameterNode modelElement = (ActivityParameterNode) view.getElement();
+			result.addAll(getContainedFeatureModelFacetLinks_ObjectNode_Selection_4004(modelElement));
+			break;
+		}
+		case LiteralStringEditPart.VISUAL_ID: {
+			domain2NotationMap.put(view.getElement(), view);
+			break;
+		}
+		case LiteralString2EditPart.VISUAL_ID: {
+			domain2NotationMap.put(view.getElement(), view);
+			break;
+		}
+		case ControlFlowEditPart.VISUAL_ID: {
+			domain2NotationMap.put(view.getElement(), view);
+			break;
+		}
+		case ObjectFlowEditPart.VISUAL_ID: {
+			domain2NotationMap.put(view.getElement(), view);
+			break;
+		}
+		case ExceptionHandlerEditPart.VISUAL_ID: {
+			domain2NotationMap.put(view.getElement(), view);
+			break;
+		}
+		}
+		for (Iterator children = view.getChildren().iterator(); children.hasNext();) {
+			result.addAll(collectAllLinks((View) children.next(), domain2NotationMap));
+		}
+		for (Iterator edges = view.getSourceEdges().iterator(); edges.hasNext();) {
+			result.addAll(collectAllLinks((View) edges.next(), domain2NotationMap));
+		}
+		return result;
+	}
+
+	/**
+	 * @generated
+	 */
+	private Collection getContainedTypeModelFacetLinks_ControlFlow_4001(Activity container) {
+		Collection result = new LinkedList();
+		for (Iterator links = container.getEdges().iterator(); links.hasNext();) {
+			ActivityEdge link = (ActivityEdge) links.next();
+			int linkVID = UMLVisualIDRegistry.getLinkWithClassVisualID(link);
+			if (linkVID == ControlFlowEditPart.VISUAL_ID) {
+				ActivityNode dst = link.getTarget();
+				ActivityNode src = link.getSource();
+				result.add(new LinkDescriptor(src, dst, link, UMLElementTypes.ControlFlow_4001, linkVID));
 			}
 		}
+		return result;
 	}
 
 	/**
 	 * @generated
 	 */
-	private Collection createConnections(Collection linkDescriptors) {
-		if (linkDescriptors.isEmpty()) {
-			return Collections.EMPTY_LIST;
+	private Collection getContainedTypeModelFacetLinks_ObjectFlow_4002(Activity container) {
+		Collection result = new LinkedList();
+		for (Iterator links = container.getEdges().iterator(); links.hasNext();) {
+			ActivityEdge link = (ActivityEdge) links.next();
+			int linkVID = UMLVisualIDRegistry.getLinkWithClassVisualID(link);
+			if (linkVID == ObjectFlowEditPart.VISUAL_ID) {
+				ActivityNode dst = link.getTarget();
+				ActivityNode src = link.getSource();
+				result.add(new LinkDescriptor(src, dst, link, UMLElementTypes.ObjectFlow_4002, linkVID));
+			}
 		}
+		return result;
+	}
+
+	/**
+	 * @generated
+	 */
+	private Collection getContainedFeatureModelFacetLinks_Action_LocalPrecondition_4003(Action container) {
+		Collection result = new LinkedList();
+		for (Iterator destinations = container.getLocalPreconditions().iterator(); destinations.hasNext();) {
+			Constraint destination = (Constraint) destinations.next();
+			result.add(new LinkDescriptor(container, destination, UMLElementTypes.ActionLocalPrecondition_4003, ActionLocalPreconditionEditPart.VISUAL_ID));
+		}
+		return result;
+	}
+
+	/**
+	 * @generated
+	 */
+	private Collection getContainedFeatureModelFacetLinks_ObjectNode_Selection_4004(ObjectNode container) {
+		Collection result = new LinkedList();
+		Behavior destination = container.getSelection();
+		result.add(new LinkDescriptor(container, destination, UMLElementTypes.ObjectNodeSelection_4004, ObjectNodeSelectionEditPart.VISUAL_ID));
+		return result;
+	}
+
+	/**
+	 * @generated
+	 */
+	private Collection getContainedTypeModelFacetLinks_ExceptionHandler_4005(ExecutableNode container) {
+		Collection result = new LinkedList();
+		for (Iterator links = container.getHandlers().iterator(); links.hasNext();) {
+			ExceptionHandler link = (ExceptionHandler) links.next();
+			int linkVID = UMLVisualIDRegistry.getLinkWithClassVisualID(link);
+			if (linkVID == ExceptionHandlerEditPart.VISUAL_ID) {
+				ExecutableNode dst = link.getHandlerBody();
+				ExecutableNode src = link.getProtectedNode();
+				result.add(new LinkDescriptor(src, dst, link, UMLElementTypes.ExceptionHandler_4005, linkVID));
+			}
+		}
+		return result;
+	}
+
+	/**
+	 * @generated
+	 */
+	private Collection createConnections(Collection linkDescriptors, Map domain2NotationMap) {
 		List adapters = new LinkedList();
 		for (Iterator linkDescriptorsIterator = linkDescriptors.iterator(); linkDescriptorsIterator.hasNext();) {
 			final LinkDescriptor nextLinkDescriptor = (LinkDescriptor) linkDescriptorsIterator.next();
-			EditPart sourceEditPart = getEditPartFor(nextLinkDescriptor.getSource());
-			EditPart targetEditPart = getEditPartFor(nextLinkDescriptor.getDestination());
+			EditPart sourceEditPart = getEditPart(nextLinkDescriptor.getSource(), domain2NotationMap);
+			EditPart targetEditPart = getEditPart(nextLinkDescriptor.getDestination(), domain2NotationMap);
 			if (sourceEditPart == null || targetEditPart == null) {
 				continue;
 			}
@@ -440,129 +658,12 @@ public class PackageCanonicalEditPolicy extends CanonicalConnectionEditPolicy {
 	/**
 	 * @generated
 	 */
-	private EditPart getEditPartFor(EObject modelElement) {
-		View view = (View) myEObject2ViewMap.get(modelElement);
+	private EditPart getEditPart(EObject domainModelElement, Map domain2NotationMap) {
+		View view = (View) domain2NotationMap.get(domainModelElement);
 		if (view != null) {
 			return (EditPart) getHost().getViewer().getEditPartRegistry().get(view);
 		}
 		return null;
-	}
-
-	/**
-	 *@generated
-	 */
-	private void storeLinks(EObject container, Diagram diagram) {
-		EClass containerMetaclass = container.eClass();
-		storeFeatureModelFacetLinks(container, containerMetaclass, diagram);
-		storeTypeModelFacetLinks(container, containerMetaclass);
-	}
-
-	/**
-	 * @generated
-	 */
-	private void storeTypeModelFacetLinks(EObject container, EClass containerMetaclass) {
-		storeTypeModelFacetLinks_ControlFlow_4001(container, containerMetaclass);
-		storeTypeModelFacetLinks_ObjectFlow_4002(container, containerMetaclass);
-		storeTypeModelFacetLinks_ExceptionHandler_4005(container, containerMetaclass);
-	}
-
-	/**
-	 * @generated
-	 */
-	private void storeTypeModelFacetLinks_ControlFlow_4001(EObject container, EClass containerMetaclass) {
-		if (UMLPackage.eINSTANCE.getActivity().isSuperTypeOf(containerMetaclass)) {
-			for (Iterator values = ((Activity) container).getEdges().iterator(); values.hasNext();) {
-				EObject nextValue = ((EObject) values.next());
-				int linkVID = UMLVisualIDRegistry.getLinkWithClassVisualID(nextValue);
-				if (ControlFlowEditPart.VISUAL_ID == linkVID) {
-					Object structuralFeatureResult = ((ActivityEdge) nextValue).getTarget();
-					if (structuralFeatureResult instanceof EObject) {
-						EObject dst = (EObject) structuralFeatureResult;
-						structuralFeatureResult = ((ActivityEdge) nextValue).getSource();
-						if (structuralFeatureResult instanceof EObject) {
-							EObject src = (EObject) structuralFeatureResult;
-							myLinkDescriptors.add(new LinkDescriptor(src, dst, nextValue, UMLElementTypes.ControlFlow_4001, linkVID));
-						}
-					}
-				}
-			}
-		}
-	}
-
-	/**
-	 * @generated
-	 */
-	private void storeTypeModelFacetLinks_ObjectFlow_4002(EObject container, EClass containerMetaclass) {
-		if (UMLPackage.eINSTANCE.getActivity().isSuperTypeOf(containerMetaclass)) {
-			for (Iterator values = ((Activity) container).getEdges().iterator(); values.hasNext();) {
-				EObject nextValue = ((EObject) values.next());
-				int linkVID = UMLVisualIDRegistry.getLinkWithClassVisualID(nextValue);
-				if (ObjectFlowEditPart.VISUAL_ID == linkVID) {
-					Object structuralFeatureResult = ((ActivityEdge) nextValue).getTarget();
-					if (structuralFeatureResult instanceof EObject) {
-						EObject dst = (EObject) structuralFeatureResult;
-						structuralFeatureResult = ((ActivityEdge) nextValue).getSource();
-						if (structuralFeatureResult instanceof EObject) {
-							EObject src = (EObject) structuralFeatureResult;
-							myLinkDescriptors.add(new LinkDescriptor(src, dst, nextValue, UMLElementTypes.ObjectFlow_4002, linkVID));
-						}
-					}
-				}
-			}
-		}
-	}
-
-	/**
-	 * @generated
-	 */
-	private void storeTypeModelFacetLinks_ExceptionHandler_4005(EObject container, EClass containerMetaclass) {
-		if (UMLPackage.eINSTANCE.getExecutableNode().isSuperTypeOf(containerMetaclass)) {
-			for (Iterator values = ((ExecutableNode) container).getHandlers().iterator(); values.hasNext();) {
-				EObject nextValue = ((EObject) values.next());
-				int linkVID = UMLVisualIDRegistry.getLinkWithClassVisualID(nextValue);
-				if (ExceptionHandlerEditPart.VISUAL_ID == linkVID) {
-					Object structuralFeatureResult = ((ExceptionHandler) nextValue).getHandlerBody();
-					if (structuralFeatureResult instanceof EObject) {
-						EObject dst = (EObject) structuralFeatureResult;
-						structuralFeatureResult = ((ExceptionHandler) nextValue).getProtectedNode();
-						if (structuralFeatureResult instanceof EObject) {
-							EObject src = (EObject) structuralFeatureResult;
-							myLinkDescriptors.add(new LinkDescriptor(src, dst, nextValue, UMLElementTypes.ExceptionHandler_4005, linkVID));
-						}
-					}
-				}
-			}
-		}
-	}
-
-	/**
-	 *@generated
-	 */
-	private void storeFeatureModelFacetLinks(EObject container, EClass containerMetaclass, Diagram diagram) {
-
-		if (UMLPackage.eINSTANCE.getAction().isSuperTypeOf(containerMetaclass)) {
-			for (Iterator destinations = ((Action) container).getLocalPreconditions().iterator(); destinations.hasNext();) {
-				EObject nextDestination = (EObject) destinations.next();
-				if (Constraint2EditPart.VISUAL_ID == UMLVisualIDRegistry.getNodeVisualID(diagram, nextDestination)) {
-					myLinkDescriptors.add(new LinkDescriptor(container, nextDestination, UMLElementTypes.ActionLocalPrecondition_4003, ActionLocalPreconditionEditPart.VISUAL_ID));
-
-				}
-			}
-		}
-
-		if (UMLPackage.eINSTANCE.getObjectNode().isSuperTypeOf(containerMetaclass)) {
-			EObject nextDestination = (EObject) ((ObjectNode) container).getSelection();
-			myLinkDescriptors.add(new LinkDescriptor(container, nextDestination, UMLElementTypes.ObjectNodeSelection_4004, ObjectNodeSelectionEditPart.VISUAL_ID));
-
-		}
-
-	}
-
-	/**
-	 * @generated
-	 */
-	private Diagram getDiagram() {
-		return ((View) getHost().getModel()).getDiagram();
 	}
 
 	/**
@@ -598,19 +699,10 @@ public class PackageCanonicalEditPolicy extends CanonicalConnectionEditPolicy {
 		/**
 		 * @generated
 		 */
-		protected LinkDescriptor(EObject source, EObject destination, EObject linkElement, IElementType elementType, int linkVID) {
-			this(source, destination, linkVID);
-			myLinkElement = linkElement;
-			final IElementType elementTypeCopy = elementType;
-			mySemanticAdapter = new EObjectAdapter(linkElement) {
-
-				public Object getAdapter(Class adapter) {
-					if (IElementType.class.equals(adapter)) {
-						return elementTypeCopy;
-					}
-					return super.getAdapter(adapter);
-				}
-			};
+		private LinkDescriptor(EObject source, EObject destination, int linkVID) {
+			mySource = source;
+			myDestination = destination;
+			myVisualID = linkVID;
 		}
 
 		/**
@@ -618,8 +710,8 @@ public class PackageCanonicalEditPolicy extends CanonicalConnectionEditPolicy {
 		 */
 		protected LinkDescriptor(EObject source, EObject destination, IElementType elementType, int linkVID) {
 			this(source, destination, linkVID);
-			myLinkElement = null;
 			final IElementType elementTypeCopy = elementType;
+			myLinkElement = null;
 			mySemanticAdapter = new IAdaptable() {
 
 				public Object getAdapter(Class adapter) {
@@ -634,10 +726,19 @@ public class PackageCanonicalEditPolicy extends CanonicalConnectionEditPolicy {
 		/**
 		 * @generated
 		 */
-		private LinkDescriptor(EObject source, EObject destination, int linkVID) {
-			mySource = source;
-			myDestination = destination;
-			myVisualID = linkVID;
+		protected LinkDescriptor(EObject source, EObject destination, EObject linkElement, IElementType elementType, int linkVID) {
+			this(source, destination, linkVID);
+			final IElementType elementTypeCopy = elementType;
+			myLinkElement = linkElement;
+			mySemanticAdapter = new EObjectAdapter(linkElement) {
+
+				public Object getAdapter(Class adapter) {
+					if (IElementType.class.equals(adapter)) {
+						return elementTypeCopy;
+					}
+					return super.getAdapter(adapter);
+				}
+			};
 		}
 
 		/**
@@ -674,6 +775,6 @@ public class PackageCanonicalEditPolicy extends CanonicalConnectionEditPolicy {
 		protected IAdaptable getSemanticAdapter() {
 			return mySemanticAdapter;
 		}
-	}
 
+	}
 }

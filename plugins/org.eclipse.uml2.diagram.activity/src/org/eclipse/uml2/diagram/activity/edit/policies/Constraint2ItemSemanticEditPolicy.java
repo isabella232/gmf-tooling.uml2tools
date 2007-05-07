@@ -1,32 +1,30 @@
 package org.eclipse.uml2.diagram.activity.edit.policies;
 
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.Collections;
 import java.util.Iterator;
+
 import org.eclipse.core.commands.ExecutionException;
 import org.eclipse.core.runtime.IAdaptable;
 import org.eclipse.core.runtime.IProgressMonitor;
 import org.eclipse.emf.ecore.EAnnotation;
 import org.eclipse.emf.ecore.EObject;
-import org.eclipse.emf.ecore.resource.Resource;
-import org.eclipse.gef.EditPart;
 import org.eclipse.gef.commands.Command;
 import org.eclipse.gef.commands.CompoundCommand;
 import org.eclipse.gef.commands.UnexecutableCommand;
 import org.eclipse.gmf.runtime.common.core.command.CommandResult;
-import org.eclipse.gmf.runtime.diagram.ui.requests.EditCommandRequestWrapper;
 import org.eclipse.gmf.runtime.emf.type.core.commands.DestroyElementCommand;
 import org.eclipse.gmf.runtime.emf.type.core.commands.SetValueCommand;
 import org.eclipse.gmf.runtime.emf.type.core.requests.CreateRelationshipRequest;
 import org.eclipse.gmf.runtime.emf.type.core.requests.DestroyElementRequest;
 import org.eclipse.gmf.runtime.emf.type.core.requests.ReorientReferenceRelationshipRequest;
 import org.eclipse.gmf.runtime.emf.type.core.requests.SetRequest;
-import org.eclipse.gmf.runtime.notation.Edge;
+import org.eclipse.gmf.runtime.notation.Node;
 import org.eclipse.gmf.runtime.notation.View;
+import org.eclipse.uml2.diagram.activity.edit.commands.ActionLocalPreconditionCreateCommand;
 import org.eclipse.uml2.diagram.activity.edit.commands.ActionLocalPreconditionReorientCommand;
 import org.eclipse.uml2.diagram.activity.edit.parts.ActionLocalPreconditionEditPart;
-import org.eclipse.uml2.diagram.activity.edit.parts.Constraint2EditPart;
+import org.eclipse.uml2.diagram.activity.edit.parts.ConstraintPostconditionEditPart;
+import org.eclipse.uml2.diagram.activity.edit.parts.LiteralString2EditPart;
+import org.eclipse.uml2.diagram.activity.part.UMLVisualIDRegistry;
 import org.eclipse.uml2.diagram.activity.providers.UMLElementTypes;
 import org.eclipse.uml2.uml.Action;
 import org.eclipse.uml2.uml.Constraint;
@@ -41,52 +39,68 @@ public class Constraint2ItemSemanticEditPolicy extends UMLBaseItemSemanticEditPo
 	 * @generated
 	 */
 	protected Command getDestroyElementCommand(DestroyElementRequest req) {
-		CompoundCommand cc = new CompoundCommand();
-		Collection allEdges = new ArrayList();
+		CompoundCommand cc = getDestroyEdgesCommand();
+		addDestroyChildNodesCommand(cc);
 		View view = (View) getHost().getModel();
-		allEdges.addAll(view.getSourceEdges());
-		allEdges.addAll(view.getTargetEdges());
-		for (Iterator it = allEdges.iterator(); it.hasNext();) {
-			Edge nextEdge = (Edge) it.next();
-			EditPart nextEditPart = (EditPart) getHost().getViewer().getEditPartRegistry().get(nextEdge);
-			EditCommandRequestWrapper editCommandRequest = new EditCommandRequestWrapper(new DestroyElementRequest(((Constraint2EditPart) getHost()).getEditingDomain(), req.isConfirmationRequired()),
-					Collections.EMPTY_MAP);
-			cc.add(nextEditPart.getCommand(editCommandRequest));
+		if (view.getEAnnotation("Shortcut") != null) { //$NON-NLS-1$
+			req.setElementToDestroy(view);
 		}
-		cc.add(getMSLWrapper(new DestroyElementCommand(req) {
+		cc.add(getGEFWrapper(new DestroyElementCommand(req)));
+		return cc.unwrap();
+	}
 
-			protected EObject getElementToDestroy() {
-				View view = (View) getHost().getModel();
-				EAnnotation annotation = view.getEAnnotation("Shortcut"); //$NON-NLS-1$
-				if (annotation != null) {
-					return view;
+	/**
+	 * @generated
+	 */
+	protected void addDestroyChildNodesCommand(CompoundCommand cmd) {
+		View view = (View) getHost().getModel();
+		EAnnotation annotation = view.getEAnnotation("Shortcut"); //$NON-NLS-1$
+		if (annotation != null) {
+			return;
+		}
+		for (Iterator it = view.getChildren().iterator(); it.hasNext();) {
+			Node node = (Node) it.next();
+			switch (UMLVisualIDRegistry.getVisualID(node)) {
+			case ConstraintPostconditionEditPart.VISUAL_ID:
+				for (Iterator cit = node.getChildren().iterator(); cit.hasNext();) {
+					Node cnode = (Node) cit.next();
+					switch (UMLVisualIDRegistry.getVisualID(cnode)) {
+					case LiteralString2EditPart.VISUAL_ID:
+						cmd.add(getDestroyElementCommand(cnode));
+						break;
+					}
 				}
-				return super.getElementToDestroy();
+				break;
 			}
-
-			protected CommandResult doExecuteWithResult(IProgressMonitor progressMonitor, IAdaptable info) throws ExecutionException {
-				EObject eObject = getElementToDestroy();
-				boolean removeFromResource = eObject.eContainer() == null;
-				CommandResult result = super.doExecuteWithResult(progressMonitor, info);
-				Resource resource = eObject.eResource();
-				if (removeFromResource && resource != null) {
-					resource.getContents().remove(eObject);
-				}
-				return result;
-			}
-
-		}));
-		return cc;
+		}
 	}
 
 	/**
 	 * @generated
 	 */
 	protected Command getCreateRelationshipCommand(CreateRelationshipRequest req) {
+		Command command = req.getTarget() == null ? getStartCreateRelationshipCommand(req) : getCompleteCreateRelationshipCommand(req);
+		return command != null ? command : super.getCreateRelationshipCommand(req);
+	}
+
+	/**
+	 * @generated
+	 */
+	protected Command getStartCreateRelationshipCommand(CreateRelationshipRequest req) {
 		if (UMLElementTypes.ActionLocalPrecondition_4003 == req.getElementType()) {
-			return req.getTarget() == null ? null : getCreateCompleteIncomingActionLocalPrecondition_4003Command(req);
+			return null;
 		}
-		return super.getCreateRelationshipCommand(req);
+		return null;
+	}
+
+	/**
+	 * @generated
+	 */
+	protected Command getCompleteCreateRelationshipCommand(CreateRelationshipRequest req) {
+		if (UMLElementTypes.ActionLocalPrecondition_4003 == req.getElementType()) {
+			return getGEFWrapper(new ActionLocalPreconditionCreateCommand(req, req.getSource(), req.getTarget()));
+		}
+		return null;
 	}
 
 	/**
@@ -129,7 +143,7 @@ public class Constraint2ItemSemanticEditPolicy extends UMLBaseItemSemanticEditPo
 	protected Command getReorientReferenceRelationshipCommand(ReorientReferenceRelationshipRequest req) {
 		switch (getVisualID(req)) {
 		case ActionLocalPreconditionEditPart.VISUAL_ID:
-			return getMSLWrapper(new ActionLocalPreconditionReorientCommand(req));
+			return getGEFWrapper(new ActionLocalPreconditionReorientCommand(req));
 		}
 		return super.getReorientReferenceRelationshipCommand(req);
 	}

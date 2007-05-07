@@ -1,37 +1,22 @@
 package org.eclipse.uml2.diagram.activity.edit.policies;
 
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.Collections;
-import java.util.Iterator;
-
-import org.eclipse.emf.ecore.EObject;
-import org.eclipse.gef.EditPart;
 import org.eclipse.gef.commands.Command;
 import org.eclipse.gef.commands.CompoundCommand;
-import org.eclipse.gef.commands.UnexecutableCommand;
-import org.eclipse.gmf.runtime.diagram.ui.requests.EditCommandRequestWrapper;
 import org.eclipse.gmf.runtime.emf.type.core.commands.DestroyElementCommand;
 import org.eclipse.gmf.runtime.emf.type.core.requests.CreateRelationshipRequest;
 import org.eclipse.gmf.runtime.emf.type.core.requests.DestroyElementRequest;
 import org.eclipse.gmf.runtime.emf.type.core.requests.ReorientReferenceRelationshipRequest;
 import org.eclipse.gmf.runtime.emf.type.core.requests.ReorientRelationshipRequest;
-import org.eclipse.gmf.runtime.notation.Edge;
-import org.eclipse.gmf.runtime.notation.View;
+import org.eclipse.uml2.diagram.activity.edit.commands.ControlFlowCreateCommand;
 import org.eclipse.uml2.diagram.activity.edit.commands.ControlFlowReorientCommand;
-import org.eclipse.uml2.diagram.activity.edit.commands.ControlFlowTypeLinkCreateCommand;
+import org.eclipse.uml2.diagram.activity.edit.commands.ObjectFlowCreateCommand;
 import org.eclipse.uml2.diagram.activity.edit.commands.ObjectFlowReorientCommand;
-import org.eclipse.uml2.diagram.activity.edit.commands.ObjectFlowTypeLinkCreateCommand;
+import org.eclipse.uml2.diagram.activity.edit.commands.ObjectNodeSelectionCreateCommand;
 import org.eclipse.uml2.diagram.activity.edit.commands.ObjectNodeSelectionReorientCommand;
 import org.eclipse.uml2.diagram.activity.edit.parts.ControlFlowEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.ObjectFlowEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.ObjectNodeSelectionEditPart;
-import org.eclipse.uml2.diagram.activity.edit.parts.Pin2EditPart;
 import org.eclipse.uml2.diagram.activity.providers.UMLElementTypes;
-import org.eclipse.uml2.uml.Activity;
-import org.eclipse.uml2.uml.ActivityNode;
-import org.eclipse.uml2.uml.ObjectNode;
-import org.eclipse.uml2.uml.UMLPackage;
 
 /**
  * @generated
@@ -42,140 +27,49 @@ public class Pin2ItemSemanticEditPolicy extends UMLBaseItemSemanticEditPolicy {
 	 * @generated
 	 */
 	protected Command getDestroyElementCommand(DestroyElementRequest req) {
-		CompoundCommand cc = new CompoundCommand();
-		Collection allEdges = new ArrayList();
-		View view = (View) getHost().getModel();
-		allEdges.addAll(view.getSourceEdges());
-		allEdges.addAll(view.getTargetEdges());
-		for (Iterator it = allEdges.iterator(); it.hasNext();) {
-			Edge nextEdge = (Edge) it.next();
-			EditPart nextEditPart = (EditPart) getHost().getViewer().getEditPartRegistry().get(nextEdge);
-			EditCommandRequestWrapper editCommandRequest = new EditCommandRequestWrapper(new DestroyElementRequest(((Pin2EditPart) getHost()).getEditingDomain(), req.isConfirmationRequired()),
-					Collections.EMPTY_MAP);
-			cc.add(nextEditPart.getCommand(editCommandRequest));
-		}
-		cc.add(getMSLWrapper(new DestroyElementCommand(req)));
-		return cc;
+		CompoundCommand cc = getDestroyEdgesCommand();
+		cc.add(getGEFWrapper(new DestroyElementCommand(req)));
+		return cc.unwrap();
 	}
 
 	/**
 	 * @generated
 	 */
 	protected Command getCreateRelationshipCommand(CreateRelationshipRequest req) {
+		Command command = req.getTarget() == null ? getStartCreateRelationshipCommand(req) : getCompleteCreateRelationshipCommand(req);
+		return command != null ? command : super.getCreateRelationshipCommand(req);
+	}
+
+	/**
+	 * @generated
+	 */
+	protected Command getStartCreateRelationshipCommand(CreateRelationshipRequest req) {
 		if (UMLElementTypes.ControlFlow_4001 == req.getElementType()) {
-			return req.getTarget() == null ? getCreateStartOutgoingControlFlow_4001Command(req) : getCreateCompleteIncomingControlFlow_4001Command(req);
+			return getGEFWrapper(new ControlFlowCreateCommand(req, req.getSource(), req.getTarget()));
 		}
 		if (UMLElementTypes.ObjectFlow_4002 == req.getElementType()) {
-			return req.getTarget() == null ? getCreateStartOutgoingObjectFlow_4002Command(req) : getCreateCompleteIncomingObjectFlow_4002Command(req);
+			return getGEFWrapper(new ObjectFlowCreateCommand(req, req.getSource(), req.getTarget()));
 		}
 		if (UMLElementTypes.ObjectNodeSelection_4004 == req.getElementType()) {
-			return req.getTarget() == null ? getCreateStartOutgoingObjectNodeSelection_4004Command(req) : null;
+			return getGEFWrapper(new ObjectNodeSelectionCreateCommand(req, req.getSource(), req.getTarget()));
 		}
-		return super.getCreateRelationshipCommand(req);
+		return null;
 	}
 
 	/**
 	 * @generated
 	 */
-	protected Command getCreateStartOutgoingControlFlow_4001Command(CreateRelationshipRequest req) {
-		EObject sourceEObject = req.getSource();
-		if (false == sourceEObject instanceof ActivityNode) {
-			return UnexecutableCommand.INSTANCE;
+	protected Command getCompleteCreateRelationshipCommand(CreateRelationshipRequest req) {
+		if (UMLElementTypes.ControlFlow_4001 == req.getElementType()) {
+			return getGEFWrapper(new ControlFlowCreateCommand(req, req.getSource(), req.getTarget()));
 		}
-		ActivityNode source = (ActivityNode) sourceEObject;
-		Activity container = (Activity) getRelationshipContainer(source, UMLPackage.eINSTANCE.getActivity(), req.getElementType());
-		if (container == null) {
-			return UnexecutableCommand.INSTANCE;
+		if (UMLElementTypes.ObjectFlow_4002 == req.getElementType()) {
+			return getGEFWrapper(new ObjectFlowCreateCommand(req, req.getSource(), req.getTarget()));
 		}
-		if (!UMLBaseItemSemanticEditPolicy.LinkConstraints.canCreateControlFlow_4001(container, source, null)) {
-			return UnexecutableCommand.INSTANCE;
+		if (UMLElementTypes.ObjectNodeSelection_4004 == req.getElementType()) {
+			return null;
 		}
-		return new Command() {
-		};
-	}
-
-	/**
-	 * @generated
-	 */
-	protected Command getCreateCompleteIncomingControlFlow_4001Command(CreateRelationshipRequest req) {
-		EObject sourceEObject = req.getSource();
-		EObject targetEObject = req.getTarget();
-		if (false == sourceEObject instanceof ActivityNode || false == targetEObject instanceof ActivityNode) {
-			return UnexecutableCommand.INSTANCE;
-		}
-		ActivityNode source = (ActivityNode) sourceEObject;
-		ActivityNode target = (ActivityNode) targetEObject;
-		Activity container = (Activity) getRelationshipContainer(source, UMLPackage.eINSTANCE.getActivity(), req.getElementType());
-		if (container == null) {
-			return UnexecutableCommand.INSTANCE;
-		}
-		if (!UMLBaseItemSemanticEditPolicy.LinkConstraints.canCreateControlFlow_4001(container, source, target)) {
-			return UnexecutableCommand.INSTANCE;
-		}
-		if (req.getContainmentFeature() == null) {
-			req.setContainmentFeature(UMLPackage.eINSTANCE.getActivity_Edge());
-		}
-		return getMSLWrapper(new ControlFlowTypeLinkCreateCommand(req, container, source, target));
-	}
-
-	/**
-	 * @generated
-	 */
-	protected Command getCreateStartOutgoingObjectFlow_4002Command(CreateRelationshipRequest req) {
-		EObject sourceEObject = req.getSource();
-		if (false == sourceEObject instanceof ActivityNode) {
-			return UnexecutableCommand.INSTANCE;
-		}
-		ActivityNode source = (ActivityNode) sourceEObject;
-		Activity container = (Activity) getRelationshipContainer(source, UMLPackage.eINSTANCE.getActivity(), req.getElementType());
-		if (container == null) {
-			return UnexecutableCommand.INSTANCE;
-		}
-		if (!UMLBaseItemSemanticEditPolicy.LinkConstraints.canCreateObjectFlow_4002(container, source, null)) {
-			return UnexecutableCommand.INSTANCE;
-		}
-		return new Command() {
-		};
-	}
-
-	/**
-	 * @generated
-	 */
-	protected Command getCreateCompleteIncomingObjectFlow_4002Command(CreateRelationshipRequest req) {
-		EObject sourceEObject = req.getSource();
-		EObject targetEObject = req.getTarget();
-		if (false == sourceEObject instanceof ActivityNode || false == targetEObject instanceof ActivityNode) {
-			return UnexecutableCommand.INSTANCE;
-		}
-		ActivityNode source = (ActivityNode) sourceEObject;
-		ActivityNode target = (ActivityNode) targetEObject;
-		Activity container = (Activity) getRelationshipContainer(source, UMLPackage.eINSTANCE.getActivity(), req.getElementType());
-		if (container == null) {
-			return UnexecutableCommand.INSTANCE;
-		}
-		if (!UMLBaseItemSemanticEditPolicy.LinkConstraints.canCreateObjectFlow_4002(container, source, target)) {
-			return UnexecutableCommand.INSTANCE;
-		}
-		if (req.getContainmentFeature() == null) {
-			req.setContainmentFeature(UMLPackage.eINSTANCE.getActivity_Edge());
-		}
-		return getMSLWrapper(new ObjectFlowTypeLinkCreateCommand(req, container, source, target));
-	}
-
-	/**
-	 * @generated
-	 */
-	protected Command getCreateStartOutgoingObjectNodeSelection_4004Command(CreateRelationshipRequest req) {
-		EObject sourceEObject = req.getSource();
-		if (false == sourceEObject instanceof ObjectNode) {
-			return UnexecutableCommand.INSTANCE;
-		}
-		ObjectNode source = (ObjectNode) sourceEObject;
-		if (!UMLBaseItemSemanticEditPolicy.LinkConstraints.canCreateObjectNodeSelection_4004(source, null)) {
-			return UnexecutableCommand.INSTANCE;
-		}
-		return new Command() {
-		};
+		return null;
 	}
 
 	/**
@@ -187,9 +81,9 @@ public class Pin2ItemSemanticEditPolicy extends UMLBaseItemSemanticEditPolicy {
 	protected Command getReorientRelationshipCommand(ReorientRelationshipRequest req) {
 		switch (getVisualID(req)) {
 		case ControlFlowEditPart.VISUAL_ID:
-			return getMSLWrapper(new ControlFlowReorientCommand(req));
+			return getGEFWrapper(new ControlFlowReorientCommand(req));
 		case ObjectFlowEditPart.VISUAL_ID:
-			return getMSLWrapper(new ObjectFlowReorientCommand(req));
+			return getGEFWrapper(new ObjectFlowReorientCommand(req));
 		}
 		return super.getReorientRelationshipCommand(req);
 	}
@@ -203,8 +97,9 @@ public class Pin2ItemSemanticEditPolicy extends UMLBaseItemSemanticEditPolicy {
 	protected Command getReorientReferenceRelationshipCommand(ReorientReferenceRelationshipRequest req) {
 		switch (getVisualID(req)) {
 		case ObjectNodeSelectionEditPart.VISUAL_ID:
-			return getMSLWrapper(new ObjectNodeSelectionReorientCommand(req));
+			return getGEFWrapper(new ObjectNodeSelectionReorientCommand(req));
 		}
 		return super.getReorientReferenceRelationshipCommand(req);
 	}
+
 }

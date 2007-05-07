@@ -23,7 +23,7 @@ public class ConstraintPreconditionItemSemanticEditPolicy extends UMLBaseItemSem
 			if (req.getContainmentFeature() == null) {
 				req.setContainmentFeature(UMLPackage.eINSTANCE.getConstraint_Specification());
 			}
-			return getMSLWrapper(new LiteralStringCreateCommand(req));
+			return getGEFWrapper(new LiteralStringCreateCommand(req));
 		}
 		return super.getCreateCommand(req);
 	}

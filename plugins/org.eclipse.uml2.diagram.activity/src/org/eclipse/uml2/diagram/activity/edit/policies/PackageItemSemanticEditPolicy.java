@@ -28,13 +28,13 @@ public class PackageItemSemanticEditPolicy extends UMLBaseItemSemanticEditPolicy
 			if (req.getContainmentFeature() == null) {
 				req.setContainmentFeature(UMLPackage.eINSTANCE.getPackage_PackagedElement());
 			}
-			return getMSLWrapper(new ActivityCreateCommand(req));
+			return getGEFWrapper(new ActivityCreateCommand(req));
 		}
 		if (UMLElementTypes.Constraint_2027 == req.getElementType()) {
-			return getMSLWrapper(new ConstraintCreateCommand(req));
+			return getGEFWrapper(new ConstraintCreateCommand(req));
 		}
 		if (UMLElementTypes.Constraint_2028 == req.getElementType()) {
-			return getMSLWrapper(new Constraint2CreateCommand(req));
+			return getGEFWrapper(new Constraint2CreateCommand(req));
 		}
 		return super.getCreateCommand(req);
 	}
@@ -44,7 +44,7 @@ public class PackageItemSemanticEditPolicy extends UMLBaseItemSemanticEditPolicy
 	 */
 	protected Command getDuplicateCommand(DuplicateElementsRequest req) {
 		TransactionalEditingDomain editingDomain = ((IGraphicalEditPart) getHost()).getEditingDomain();
-		return getMSLWrapper(new DuplicateAnythingCommand(editingDomain, req));
+		return getGEFWrapper(new DuplicateAnythingCommand(editingDomain, req));
 	}
 
 	/**
