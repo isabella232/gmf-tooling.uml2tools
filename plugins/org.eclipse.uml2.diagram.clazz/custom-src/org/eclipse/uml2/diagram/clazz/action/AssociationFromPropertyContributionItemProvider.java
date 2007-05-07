@@ -1,7 +1,6 @@
 package org.eclipse.uml2.diagram.clazz.action;
 
 import java.util.ArrayList;
-import java.util.Iterator;
 import java.util.List;
 
 import org.eclipse.gmf.runtime.common.core.service.IProvider;
@@ -36,9 +35,9 @@ public class AssociationFromPropertyContributionItemProvider extends AbstractCon
 		}
 		MenuManager menuManager = new MenuManager("Create Association to...");
 		MenuBuilder builder = new MenuBuilder(partDescriptor);
-		//XXX: build initial content -- otherwise menu is never shown (why?)
-		builder.menuAboutToShow(menuManager);
-		
+		//XXX: build initial content -- otherwise menu is never shown
+		builder.buildMenu(menuManager);
+
 		menuManager.addMenuListener(builder);
 		return menuManager;
 	}
@@ -50,11 +49,17 @@ public class AssociationFromPropertyContributionItemProvider extends AbstractCon
 			myWorkbenchPart = workbenchPart;
 		}
 		
-		@Override
 		public void menuAboutToShow(IMenuManager manager) {
+			buildMenu(manager);
+		}
+		
+		public void buildMenu(IMenuManager manager) {
 			manager.removeAll();
 			GraphicalEditPart selected = (GraphicalEditPart) getSelectedObject(myWorkbenchPart);
 			Property property = (Property) selected.getNotationView().getElement();
+			if (property.getType() == null){
+				return;
+			}
 			List<Property> conjugatedProperties = getConjugatedProperties(property);
 			//default action is cached
 			IAction defaultAction = getAction(ACTION_CREATE_ASSOSIATION, myWorkbenchPart);
@@ -65,7 +70,6 @@ public class AssociationFromPropertyContributionItemProvider extends AbstractCon
 					//no much sense to cache dynamic target specific actions
 					CreateAssociationFromProperty action = new CreateAssociationFromProperty(getWorkbenchPage(), nextProperty);
 					action.init();
-					action.refresh();
 					manager.add(action);
 				}
 			}
@@ -74,15 +78,15 @@ public class AssociationFromPropertyContributionItemProvider extends AbstractCon
 		private List<Property> getConjugatedProperties(Property source) {
 			ArrayList<Property> result = new ArrayList<Property>();
 			Classifier sourceType = (Classifier) source.getType();
-			Iterator<Property> children = sourceType.getAttributes().iterator();
-			while (children.hasNext()) {
-				Property property = children.next();
+			for (Property property : sourceType.getAttributes()){
+				if (property.getAssociation() != null){
+					continue;
+				}
 				if (source.getClass_().equals(property.getType())) {
 					// source and target ends of association should differ
-					if (source.equals(property)) {
-						continue;
+					if (!source.equals(property)) {
+						result.add(property);	
 					}
-					result.add(property);
 				}
 			}
 			return result;

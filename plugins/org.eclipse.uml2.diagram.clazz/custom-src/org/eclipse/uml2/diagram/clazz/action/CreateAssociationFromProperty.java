@@ -37,7 +37,7 @@ import org.eclipse.uml2.uml.UMLPackage;
 
 public class CreateAssociationFromProperty extends DiagramAction {
 
-	private static final String DISABLED_TEXT = " ";
+	private static final String DISABLED_TEXT = "<undefined>";
 
 	private final Property myOtherEnd;
 
@@ -65,7 +65,9 @@ public class CreateAssociationFromProperty extends DiagramAction {
 		GraphicalEditPart propertyEditPart = getSelectedPropertyEditPart();
 		if (propertyEditPart != null) {
 			Property property = (Property) propertyEditPart.getNotationView().getElement();
-			setText(property.getType().getName());
+			if (property.getType() != null){
+				setText(property.getType().getName());
+			}
 		}
 	}
 
