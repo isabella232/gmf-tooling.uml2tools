@@ -4,6 +4,45 @@
 <plugin>
 
 <!-- gmf generator persistent region begin -->
+    <extension point="org.eclipse.gmf.runtime.common.ui.services.action.contributionItemProviders">
+      <?gmfgen generated="false"?>
+      <contributionItemProvider
+            checkPluginLoaded="true"
+            class="org.eclipse.uml2.diagram.clazz.action.DetailLevelContributionItemProvider">
+         <Priority name="Medium"/>
+		 <popupContribution
+               class="org.eclipse.gmf.runtime.diagram.ui.providers.DiagramContextMenuProvider">
+			 <popupMenuGroup
+                  id="DetailGroup"
+                  path="/propertiesGroup">
+             </popupMenuGroup>
+             <popupMenu
+                   id="DetailLevelMenu"
+                   path="/DetailGroup">
+             </popupMenu>           
+             <popupMenuGroup
+                   id="DetailLevelGroup"
+                   path="/DetailLevelMenu/">
+             </popupMenuGroup>
+             <popupAction
+                  path="/DetailLevelMenu/DetailLevelGroup"
+                  id="org.eclipse.uml2.diagram.clazz.detail_level_implementation">
+             </popupAction>            
+             <popupAction
+                  path="/DetailLevelMenu/DetailLevelGroup"
+                  id="org.eclipse.uml2.diagram.clazz.detail_level_analisys">
+             </popupAction>            
+             <popupAction
+                  path="/DetailLevelMenu/DetailLevelGroup"
+                  id="org.eclipse.uml2.diagram.clazz.detail_level_suppressed">
+             </popupAction>            
+             <popupStructuredContributionCriteria
+                   objectClass="org.eclipse.uml2.diagram.clazz.edit.parts.PackageEditPart"
+                   objectCount="1">
+             </popupStructuredContributionCriteria>
+		 </popupContribution>
+      </contributionItemProvider>
+   </extension>
    <extension point="org.eclipse.gmf.runtime.common.ui.services.action.contributionItemProviders">
       <?gmfgen generated="false"?>
       <contributionItemProvider

@@ -39,6 +39,7 @@ import org.eclipse.gmf.runtime.emf.ui.services.parser.ParserHintAdapter;
 import org.eclipse.gmf.runtime.notation.FontStyle;
 import org.eclipse.gmf.runtime.notation.NotationPackage;
 import org.eclipse.gmf.runtime.notation.View;
+import org.eclipse.jface.preference.IPreferenceStore;
 import org.eclipse.jface.text.contentassist.IContentAssistProcessor;
 import org.eclipse.jface.viewers.ICellEditorValidator;
 import org.eclipse.swt.SWT;
@@ -46,6 +47,7 @@ import org.eclipse.swt.accessibility.AccessibleEvent;
 import org.eclipse.swt.graphics.Color;
 import org.eclipse.swt.graphics.FontData;
 import org.eclipse.swt.graphics.Image;
+import org.eclipse.uml2.diagram.clazz.details.UMLDetailLevelService;
 import org.eclipse.uml2.diagram.clazz.edit.policies.Property2ItemSemanticEditPolicy;
 import org.eclipse.uml2.diagram.clazz.edit.policies.UMLTextNonResizableEditPolicy;
 import org.eclipse.uml2.diagram.clazz.edit.policies.UMLTextSelectionEditPolicy;
@@ -275,10 +277,10 @@ public class Property2EditPart extends CompartmentEditPart implements ITextAware
 	}
 
 	/**
-	 * @generated
+	 * @generated NOT
 	 */
 	public ParserOptions getParserOptions() {
-		return ParserOptions.NONE;
+		return UMLDetailLevelService.getLevel(getNotationView()).getParserOptions(); // XXX: [171240] regenerate with DetailLevelAttributes
 	}
 
 	/**

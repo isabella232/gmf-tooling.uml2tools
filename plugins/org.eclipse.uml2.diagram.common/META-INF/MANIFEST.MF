@@ -21,6 +21,7 @@ Export-Package: org.eclipse.gmf.internal.codegen.draw2d,
  org.eclipse.uml2.diagram.common.editpolicies,
  org.eclipse.uml2.diagram.common.parser.operation,
  org.eclipse.uml2.diagram.common.parser.port;x-friends:="org.eclipse.uml2.diagram.clazz,org.eclipse.uml2.diagram.component",
- org.eclipse.uml2.diagram.common.parser.property
+ org.eclipse.uml2.diagram.common.parser.property,
+ org.eclipse.uml2.diagram.common.details
 Bundle-Vendor: %providerName
 Bundle-ClassPath: .

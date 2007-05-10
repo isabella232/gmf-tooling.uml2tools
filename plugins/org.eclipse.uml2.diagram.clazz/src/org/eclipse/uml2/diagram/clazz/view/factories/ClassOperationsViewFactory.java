@@ -16,6 +16,7 @@ import org.eclipse.gmf.runtime.notation.NotationPackage;
 import org.eclipse.gmf.runtime.notation.TitleStyle;
 import org.eclipse.gmf.runtime.notation.View;
 
+import org.eclipse.uml2.diagram.clazz.details.UMLDetailLevelService;
 import org.eclipse.uml2.diagram.clazz.edit.parts.ClassOperationsEditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.PackageEditPart;
 
@@ -27,7 +28,7 @@ import org.eclipse.uml2.diagram.clazz.part.UMLVisualIDRegistry;
 public class ClassOperationsViewFactory extends ListCompartmentViewFactory {
 
 	/**
-	 * @generated 
+	 * @generated
 	 */
 	protected List createStyles(View view) {
 		List styles = new ArrayList();
@@ -41,7 +42,7 @@ public class ClassOperationsViewFactory extends ListCompartmentViewFactory {
 	/**
 	 * @generated
 	 */
-	protected void decorateView(View containerView, View view, IAdaptable semanticAdapter, String semanticHint, int index, boolean persisted) {
+	protected void decorateViewGen(View containerView, View view, IAdaptable semanticAdapter, String semanticHint, int index, boolean persisted) {
 		if (semanticHint == null) {
 			semanticHint = UMLVisualIDRegistry.getType(ClassOperationsEditPart.VISUAL_ID);
 			view.setType(semanticHint);
@@ -55,6 +56,14 @@ public class ClassOperationsViewFactory extends ListCompartmentViewFactory {
 			shortcutAnnotation.getDetails().put("modelID", PackageEditPart.MODEL_ID); //$NON-NLS-1$
 			view.getEAnnotations().add(shortcutAnnotation);
 		}
+	}
+
+	/**
+	 * @generated NOT
+	 */
+	protected void decorateView(View containerView, View view, IAdaptable semanticAdapter, String semanticHint, int index, boolean persisted) {
+		decorateViewGen(containerView, view, semanticAdapter, semanticHint, index, persisted);
+		UMLDetailLevelService.getLevel(view).init(view); // XXX: [171240] regenerate with DetailLevelAttributes
 	}
 
 	/**

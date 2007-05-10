@@ -19,6 +19,7 @@ import java.util.List;
 
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EStructuralFeature;
+import org.eclipse.uml2.diagram.common.details.DetailLevelParserOptions;
 import org.eclipse.uml2.diagram.parser.AbstractToString;
 import org.eclipse.uml2.uml.Operation;
 import org.eclipse.uml2.uml.Parameter;
@@ -28,7 +29,7 @@ import org.eclipse.uml2.uml.UMLPackage;
 public abstract class OperationToString extends AbstractToString {
 	public static class EDIT extends OperationToString {
 		public String getToString(EObject object, int flags) {
-			return getToString(object, true);
+			return getToString(object, true, flags);
 		}
 		
 		public boolean isAffectingFeature(EStructuralFeature feature) {
@@ -50,7 +51,7 @@ public abstract class OperationToString extends AbstractToString {
 		});
 		
 		public String getToString(EObject object, int flags) {
-			return getToString(object, false);
+			return getToString(object, false, flags);
 		}
 
 		public boolean isAffectingFeature(EStructuralFeature feature) {
@@ -76,9 +77,19 @@ public abstract class OperationToString extends AbstractToString {
 		}
 	}
 	
-	protected String getToString(EObject object, boolean editNotView) {
+	protected String getToString(EObject object, boolean editNotView, int flags) {
 		Operation operation = asOperation(object);
 		StringBuffer result = new StringBuffer();
+		
+		if (!editNotView && DetailLevelParserOptions.LEVEL_ANALISYS == flags) {
+			appendName(result, operation);
+			result.append("()");
+			Parameter ret = operation.getReturnResult();
+			if (ret != null){
+				appendType(result, ret);
+			}
+			return result.toString();
+		}
 		
 		result.append(getVisibility(operation));
 		appendName(result, operation);

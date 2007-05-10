@@ -16,6 +16,7 @@ import org.eclipse.gmf.runtime.notation.NotationPackage;
 import org.eclipse.gmf.runtime.notation.TitleStyle;
 import org.eclipse.gmf.runtime.notation.View;
 
+import org.eclipse.uml2.diagram.clazz.details.UMLDetailLevelService;
 import org.eclipse.uml2.diagram.clazz.edit.parts.InterfaceAttributesEditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.PackageEditPart;
 
@@ -41,7 +42,7 @@ public class InterfaceAttributesViewFactory extends ListCompartmentViewFactory {
 	/**
 	 * @generated
 	 */
-	protected void decorateView(View containerView, View view, IAdaptable semanticAdapter, String semanticHint, int index, boolean persisted) {
+	protected void decorateViewGen(View containerView, View view, IAdaptable semanticAdapter, String semanticHint, int index, boolean persisted) {
 		if (semanticHint == null) {
 			semanticHint = UMLVisualIDRegistry.getType(InterfaceAttributesEditPart.VISUAL_ID);
 			view.setType(semanticHint);
@@ -56,6 +57,15 @@ public class InterfaceAttributesViewFactory extends ListCompartmentViewFactory {
 			view.getEAnnotations().add(shortcutAnnotation);
 		}
 	}
+
+	/**
+	 * @generated NOT
+	 */
+	protected void decorateView(View containerView, View view, IAdaptable semanticAdapter, String semanticHint, int index, boolean persisted) {
+		decorateViewGen(containerView, view, semanticAdapter, semanticHint, index, persisted);
+		UMLDetailLevelService.getLevel(view).init(view); // XXX: [171240] regenerate with DetailLevelAttributes
+	}
+	
 
 	/**
 	 * @generated

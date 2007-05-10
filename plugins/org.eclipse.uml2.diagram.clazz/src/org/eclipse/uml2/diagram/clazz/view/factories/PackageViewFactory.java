@@ -19,11 +19,20 @@ public class PackageViewFactory extends DiagramViewFactory {
 	/**
 	 * @generated 
 	 */
-	protected List createStyles(View view) {
+	protected List createStylesGen(View view) {
 		List styles = new ArrayList();
 		styles.add(NotationFactory.eINSTANCE.createPageStyle());
 		styles.add(NotationFactory.eINSTANCE.createGuideStyle());
 		styles.add(NotationFactory.eINSTANCE.createDescriptionStyle());
+		return styles;
+	}
+	
+	/**
+	 * @generated NOT
+	 */
+	protected List createStyles(View view) {
+		List styles = createStylesGen(view);
+		styles.add(NotationFactory.eINSTANCE.createFilteringStyle()); //[171240]
 		return styles;
 	}
 

@@ -1,5 +1,8 @@
 package org.eclipse.uml2.diagram.clazz.edit.parts;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.gef.EditPolicy;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.ListCompartmentEditPart;
@@ -9,6 +12,7 @@ import org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles;
 import org.eclipse.gmf.runtime.diagram.ui.editpolicies.ResizableCompartmentEditPolicy;
 import org.eclipse.gmf.runtime.draw2d.ui.figures.ConstrainedToolbarLayout;
 import org.eclipse.gmf.runtime.notation.View;
+import org.eclipse.uml2.diagram.clazz.details.UMLDetailLevelService;
 import org.eclipse.uml2.diagram.clazz.edit.policies.PackagePackagesCanonicalEditPolicy;
 import org.eclipse.uml2.diagram.clazz.edit.policies.PackagePackagesItemSemanticEditPolicy;
 import org.eclipse.uml2.diagram.clazz.part.Messages;
@@ -64,4 +68,17 @@ public class PackagePackagesEditPart extends ListCompartmentEditPart {
 		}
 	}
 
+	/**
+	 * @NOT-generated
+	 */
+	@Override
+	protected List getChildrenFilteredBy(List filterKeys) { // XXX:  [171240] regenerate with DetailLevelAttributes
+		List result = new ArrayList(super.getChildrenFilteredBy(filterKeys));
+		if (filterKeys.contains(UMLDetailLevelService.FILTER_BY_VISIBILITY)) {
+			View view = getNotationView();
+			result.addAll(UMLDetailLevelService.filterChildrenByVisibility(view));
+		}
+		return result;
+	}
+	
 }
