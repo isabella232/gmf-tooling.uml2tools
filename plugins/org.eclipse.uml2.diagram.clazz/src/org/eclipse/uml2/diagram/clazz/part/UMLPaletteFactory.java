@@ -430,20 +430,38 @@ public class UMLPaletteFactory {
 	/**
 	 * @generated
 	 */
-	private ToolEntry createSharedAggregation2CreationTool() {
+	private ToolEntry createSharedAggregation2CreationToolGen() {
 		ToolEntry entry = new ToolEntry(Messages.SharedAggregation2CreationTool_title, Messages.SharedAggregation2CreationTool_desc, null, null) {
 		};
 		entry.setToolClass(CreateAssociationLinkTool.SHARED.class);
+		return entry;
+	}
+	/**
+	 * @generated NOT
+	 */
+	private ToolEntry createSharedAggregation2CreationTool() {
+		ToolEntry entry = createSharedAggregation2CreationToolGen();
+		entry.setSmallIcon(UMLElementTypes.getImageDescriptor(UMLElementTypes.Association_4005));
+		entry.setLargeIcon(entry.getSmallIcon());
 		return entry;
 	}
 
 	/**
 	 * @generated
 	 */
-	private ToolEntry createCompositeAggregation3CreationTool() {
+	private ToolEntry createCompositeAggregation3CreationToolGen() {
 		ToolEntry entry = new ToolEntry(Messages.CompositeAggregation3CreationTool_title, Messages.CompositeAggregation3CreationTool_desc, null, null) {
 		};
 		entry.setToolClass(CreateAssociationLinkTool.COMPOSITE.class);
+		return entry;
+	}
+	/**
+	 * @generated NOT
+	 */
+	private ToolEntry createCompositeAggregation3CreationTool() {
+		ToolEntry entry = createCompositeAggregation3CreationToolGen();
+		entry.setSmallIcon(UMLElementTypes.getImageDescriptor(UMLElementTypes.Association_4005));
+		entry.setLargeIcon(entry.getSmallIcon());
 		return entry;
 	}
 
@@ -463,17 +481,27 @@ public class UMLPaletteFactory {
 	/**
 	 * @generated
 	 */
-	private ToolEntry createAbstraction2CreationTool() {
+	private ToolEntry createAbstraction2CreationToolGen() {
 		ToolEntry entry = new ToolEntry(Messages.Abstraction2CreationTool_title, Messages.Abstraction2CreationTool_desc, null, null) {
 		};
 		entry.setToolClass(CreateDependencyLinkTool.ABSTRACTION.class);
+		return entry;
+	}
+	
+	/**
+	 * @generated NOT
+	 */
+	private ToolEntry createAbstraction2CreationTool() {
+		ToolEntry entry = createAbstraction2CreationToolGen();
+		entry.setSmallIcon(UMLElementTypes.getImageDescriptor(UMLElementTypes.Dependency_4002));
+		entry.setLargeIcon(entry.getSmallIcon());
 		return entry;
 	}
 
 	/**
 	 * @generated
 	 */
-	private ToolEntry createUsage3CreationTool() {
+	private ToolEntry createUsage3CreationToolGen() {
 		ToolEntry entry = new ToolEntry(Messages.Usage3CreationTool_title, Messages.Usage3CreationTool_desc, null, null) {
 		};
 		entry.setToolClass(CreateDependencyLinkTool.USAGE.class);
@@ -481,12 +509,32 @@ public class UMLPaletteFactory {
 	}
 
 	/**
+	 * @generated NOT
+	 */
+	private ToolEntry createUsage3CreationTool() {
+		ToolEntry entry = createUsage3CreationToolGen();
+		entry.setSmallIcon(UMLElementTypes.getImageDescriptor(UMLElementTypes.Dependency_4002));
+		entry.setLargeIcon(entry.getSmallIcon());
+		return entry;
+	}
+
+	/**
 	 * @generated
 	 */
-	private ToolEntry createSubstitution4CreationTool() {
+	private ToolEntry createSubstitution4CreationToolGen() {
 		ToolEntry entry = new ToolEntry(Messages.Substitution4CreationTool_title, Messages.Substitution4CreationTool_desc, null, null) {
 		};
 		entry.setToolClass(CreateDependencyLinkTool.SUBSTITUTION.class);
+		return entry;
+	}
+
+	/**
+	 * @generated NOT
+	 */
+	private ToolEntry createSubstitution4CreationTool() {
+		ToolEntry entry = createSubstitution4CreationToolGen();
+		entry.setSmallIcon(UMLElementTypes.getImageDescriptor(UMLElementTypes.Dependency_4002));
+		entry.setLargeIcon(entry.getSmallIcon());
 		return entry;
 	}
 
