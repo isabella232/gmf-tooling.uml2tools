@@ -11,6 +11,7 @@ import org.eclipse.gmf.runtime.diagram.ui.editparts.ConnectionNodeEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles;
 import org.eclipse.gmf.runtime.draw2d.ui.figures.PolylineConnectionEx;
 import org.eclipse.gmf.runtime.notation.View;
+import org.eclipse.jface.preference.IPreferenceStore;
 import org.eclipse.uml2.diagram.clazz.conventions.AssociationEndConvention;
 import org.eclipse.uml2.diagram.clazz.edit.policies.AssociationItemSemanticEditPolicy;
 import org.eclipse.uml2.diagram.common.draw2d.decoration.AssociationDecoration;
@@ -96,9 +97,11 @@ public class AssociationEditPart extends ConnectionNodeEditPart {
 		}
 		Property sourceEnd = AssociationEndConvention.getSourceEnd(association);
 		Property targetEnd = AssociationEndConvention.getTargetEnd(association);
+		
+		IPreferenceStore store = (IPreferenceStore) getDiagramPreferencesHint().getPreferenceStore();
 
-		linkFigure.getSourceDecorationImpl().update(association, sourceEnd, targetEnd);
-		linkFigure.getTargetDecorationImpl().update(association, targetEnd, sourceEnd);
+		linkFigure.getSourceDecorationImpl().update(association, sourceEnd, targetEnd, store);
+		linkFigure.getTargetDecorationImpl().update(association, targetEnd, sourceEnd, store);
 	}
 
 	/**

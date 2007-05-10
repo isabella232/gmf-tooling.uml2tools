@@ -15,6 +15,8 @@ package org.eclipse.uml2.diagram.common.draw2d.decoration;
 import org.eclipse.draw2d.ColorConstants;
 import org.eclipse.draw2d.geometry.Point;
 import org.eclipse.draw2d.geometry.PointList;
+import org.eclipse.jface.preference.IPreferenceStore;
+import org.eclipse.uml2.diagram.common.preferences.UMLPreferencesConstants;
 import org.eclipse.uml2.uml.AggregationKind;
 import org.eclipse.uml2.uml.Association;
 import org.eclipse.uml2.uml.Property;
@@ -93,11 +95,22 @@ public class AssociationDecoration extends CompositeDecoration {
 		}
 	}
 
-	public void updateNavigability(Property associationEnd) {
-		if (associationEnd.isNavigable()) {
-			addDecoration(myNavigableDecoration);
-		} else {
+	public void updateNavigability(Property associationEnd, Property otherEnd, IPreferenceStore store) {
+		if (!associationEnd.isNavigable()) {
 			removeDecoration(myNavigableDecoration);
+			return;
+		}
+		String navigability = store.getString(UMLPreferencesConstants.NAVIGATION_ARROWS_OPTION);
+		if (UMLPreferencesConstants.SHOW_ALL_ARROWS.equals(navigability)) {
+			addDecoration(myNavigableDecoration);
+		} else if (UMLPreferencesConstants.SUPRESS_ALL_ARROWS.equals(navigability)) {
+			removeDecoration(myNavigableDecoration);
+		} else  {// show one way navigability only
+			if (otherEnd.isNavigable()) {
+				removeDecoration(myNavigableDecoration);
+			} else {
+				addDecoration(myNavigableDecoration);
+			}
 		}
 	}
 
@@ -112,10 +125,10 @@ public class AssociationDecoration extends CompositeDecoration {
 
 	}
 
-	public void update(Association association, Property end, Property otherEnd) {
+	public void update(Association association, Property end, Property otherEnd, IPreferenceStore store) {
 		updateOwnedEnd(association, end);
 		updateAggregationKind(otherEnd.getAggregation());
-		updateNavigability(end);
+		updateNavigability(end, otherEnd, store);
 	}
 
 }
