@@ -27,7 +27,14 @@
   <nodes
       name="TemplateSignatureNode"
       figure="TemplateSignatureFigure"
-      affixedParentSide="NORTH_EAST"/>
+      affixedParentSide="NORTH_EAST">
+    <facets
+        xsi:type="gmfgraph:DefaultSizeFacet">
+      <defaultSize
+          dx="80"
+          dy="20"/>
+    </facets>
+  </nodes>
   <labels
       name="TemplateSignatureNode_signature"
       figure="TemplateSignatureFigure_signature"
