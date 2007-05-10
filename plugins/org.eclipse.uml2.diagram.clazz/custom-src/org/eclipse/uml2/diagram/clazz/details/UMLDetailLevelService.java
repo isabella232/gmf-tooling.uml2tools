@@ -21,6 +21,12 @@ public class UMLDetailLevelService {
 
 	public static UMLDetailLevel getLevel(View view) {
 		Diagram diagram = view.getDiagram();
+		if (diagram == null){
+			// XXX: workaround for 186343
+			// it is unclear why notification goes to 
+			// edit part for just deleted view
+			return DEFAULT_LEVEL;
+		}
 		FilteringStyle style = (FilteringStyle) diagram.getStyle(NotationPackage.eINSTANCE.getFilteringStyle());
 		if (style == null) {
 			return DEFAULT_LEVEL;
