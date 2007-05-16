@@ -1969,7 +1969,7 @@
             figureQualifiedClassName="org.eclipse.gmf.runtime.draw2d.ui.figures.WrapLabel"/>
         <modelFacet
             xsi:type="gmfgen:FeatureLabelModelFacet"
-            viewPattern="{0}"
+            viewPattern=""
             editPattern="">
           <metaFeatures
               href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/NamedElement/name"/>
@@ -2081,7 +2081,7 @@
       </modelFacet>
       <labelModelFacet
           xsi:type="gmfgen:FeatureLabelModelFacet"
-          viewPattern="{0}">
+          viewPattern="">
         <metaFeatures
             href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/LiteralString/value"/>
       </labelModelFacet>
@@ -2127,7 +2127,7 @@
       </modelFacet>
       <labelModelFacet
           xsi:type="gmfgen:FeatureLabelModelFacet"
-          viewPattern="{0}">
+          viewPattern="">
         <metaFeatures
             href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/LiteralString/value"/>
       </labelModelFacet>
@@ -5858,6 +5858,7 @@
         groupName="outgoing links"
         groupIcon="icons/outgoingLinksNavigatorGroup.gif"/>
   </navigator>
+  <diagramUpdater/>
   <propertySheet>
     <tabs
         xsi:type="gmfgen:GenStandardPropertyTab"

@@ -1,5 +1,7 @@
 package org.eclipse.uml2.diagram.activity.parsers;
 
+import java.util.Arrays;
+
 import org.eclipse.core.runtime.IAdaptable;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EAttribute;
@@ -50,13 +52,16 @@ public abstract class AbstractParser implements IParser {
 	 * @generated
 	 */
 	public AbstractParser(EAttribute[] features) {
+		if (features == null || features.length == 0 || Arrays.asList(features).contains(null)) {
+			throw new IllegalArgumentException(Arrays.toString(features));
+		}
 		this.features = features;
 	}
 
 	/**
 	 * @generated
 	 */
-	public final String getViewPattern() {
+	public String getViewPattern() {
 		return viewPattern;
 	}
 
@@ -70,7 +75,7 @@ public abstract class AbstractParser implements IParser {
 	/**
 	 * @generated
 	 */
-	public final String getEditorPattern() {
+	public String getEditorPattern() {
 		return editorPattern;
 	}
 
@@ -84,7 +89,7 @@ public abstract class AbstractParser implements IParser {
 	/**
 	 * @generated
 	 */
-	public final String getEditPattern() {
+	public String getEditPattern() {
 		return editPattern;
 	}
 

@@ -20,6 +20,11 @@ public class UMLNodeDescriptor {
 	/**
 	 * @generated
 	 */
+	private String myType;
+
+	/**
+	 * @generated
+	 */
 	public UMLNodeDescriptor(EObject modelElement, int visualID) {
 		myModelElement = modelElement;
 		myVisualID = visualID;
@@ -37,6 +42,16 @@ public class UMLNodeDescriptor {
 	 */
 	public int getVisualID() {
 		return myVisualID;
+	}
+
+	/**
+	 * @generated
+	 */
+	public String getType() {
+		if (myType == null) {
+			myType = UMLVisualIDRegistry.getType(getVisualID());
+		}
+		return myType;
 	}
 
 }
