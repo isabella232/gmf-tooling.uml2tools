@@ -3,6 +3,7 @@ package org.eclipse.uml2.diagram.profile.edit.parts;
 import java.util.Collections;
 import java.util.List;
 
+import org.eclipse.core.runtime.IAdaptable;
 import org.eclipse.draw2d.ConnectionLocator;
 import org.eclipse.draw2d.IFigure;
 import org.eclipse.draw2d.Label;
@@ -29,9 +30,7 @@ import org.eclipse.gmf.runtime.diagram.ui.requests.RequestConstants;
 import org.eclipse.gmf.runtime.diagram.ui.tools.TextDirectEditManager;
 import org.eclipse.gmf.runtime.draw2d.ui.figures.WrapLabel;
 import org.eclipse.gmf.runtime.emf.core.util.EObjectAdapter;
-import org.eclipse.gmf.runtime.emf.type.core.IElementType;
 import org.eclipse.gmf.runtime.emf.ui.services.parser.ISemanticParser;
-import org.eclipse.gmf.runtime.emf.ui.services.parser.ParserHintAdapter;
 import org.eclipse.gmf.runtime.notation.FontStyle;
 import org.eclipse.gmf.runtime.notation.NotationPackage;
 import org.eclipse.gmf.runtime.notation.View;
@@ -45,6 +44,7 @@ import org.eclipse.swt.graphics.Image;
 import org.eclipse.uml2.diagram.profile.edit.policies.UMLTextSelectionEditPolicy;
 import org.eclipse.uml2.diagram.profile.part.UMLVisualIDRegistry;
 import org.eclipse.uml2.diagram.profile.providers.UMLElementTypes;
+import org.eclipse.uml2.diagram.profile.providers.UMLParserProvider;
 
 /**
  * @generated
@@ -80,7 +80,7 @@ public class ExtensionLink_requiredEditPart extends LabelEditPart implements ITe
 	 * @generated
 	 */
 	static {
-		registerSnapBackPosition(UMLVisualIDRegistry.getType(ExtensionLink_requiredEditPart.VISUAL_ID), new Point(0, -15));
+		registerSnapBackPosition(UMLVisualIDRegistry.getType(org.eclipse.uml2.diagram.profile.edit.parts.ExtensionLink_requiredEditPart.VISUAL_ID), new Point(0, -15));
 	}
 
 	/**
@@ -283,15 +283,7 @@ public class ExtensionLink_requiredEditPart extends LabelEditPart implements ITe
 	public IParser getParser() {
 		if (parser == null) {
 			String parserHint = ((View) getModel()).getType();
-			ParserHintAdapter hintAdapter = new ParserHintAdapter(getParserElement(), parserHint) {
-
-				public Object getAdapter(Class adapter) {
-					if (IElementType.class.equals(adapter)) {
-						return UMLElementTypes.Extension_4002;
-					}
-					return super.getAdapter(adapter);
-				}
-			};
+			IAdaptable hintAdapter = new UMLParserProvider.HintAdapter(UMLElementTypes.Extension_4002, getParserElement(), parserHint);
 			parser = ParserService.getInstance().getParser(hintAdapter);
 		}
 		return parser;

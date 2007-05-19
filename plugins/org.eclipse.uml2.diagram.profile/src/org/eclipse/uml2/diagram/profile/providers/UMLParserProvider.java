@@ -1,11 +1,15 @@
 package org.eclipse.uml2.diagram.profile.providers;
 
 import org.eclipse.core.runtime.IAdaptable;
+import org.eclipse.emf.ecore.EAttribute;
+import org.eclipse.emf.ecore.EObject;
 import org.eclipse.gmf.runtime.common.core.service.AbstractProvider;
 import org.eclipse.gmf.runtime.common.core.service.IOperation;
 import org.eclipse.gmf.runtime.common.ui.services.parser.GetParserOperation;
 import org.eclipse.gmf.runtime.common.ui.services.parser.IParser;
 import org.eclipse.gmf.runtime.common.ui.services.parser.IParserProvider;
+import org.eclipse.gmf.runtime.emf.type.core.IElementType;
+import org.eclipse.gmf.runtime.emf.ui.services.parser.ParserHintAdapter;
 import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.uml2.diagram.profile.edit.parts.ConstraintEditPart;
 import org.eclipse.uml2.diagram.profile.edit.parts.EnumerationLiteralEditPart;
@@ -14,9 +18,8 @@ import org.eclipse.uml2.diagram.profile.edit.parts.ProfileName2EditPart;
 import org.eclipse.uml2.diagram.profile.edit.parts.ProfileNameEditPart;
 import org.eclipse.uml2.diagram.profile.edit.parts.Stereotype2EditPart;
 import org.eclipse.uml2.diagram.profile.edit.parts.StereotypeNameEditPart;
-
+import org.eclipse.uml2.diagram.profile.parsers.MessageFormatParser;
 import org.eclipse.uml2.diagram.profile.part.UMLVisualIDRegistry;
-
 import org.eclipse.uml2.uml.UMLPackage;
 
 /**
@@ -27,175 +30,168 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 	/**
 	 * @generated
 	 */
-	private IParser constraintConstraint_3008Parser;
+	private IParser stereotypeName_5001Parser;
 
 	/**
 	 * @generated
 	 */
-	private IParser getConstraintConstraint_3008Parser() {
-		if (constraintConstraint_3008Parser == null) {
-			constraintConstraint_3008Parser = createConstraintConstraint_3008Parser();
+	private IParser getStereotypeName_5001Parser() {
+		if (stereotypeName_5001Parser == null) {
+			stereotypeName_5001Parser = createStereotypeName_5001Parser();
 		}
-		return constraintConstraint_3008Parser;
+		return stereotypeName_5001Parser;
 	}
 
 	/**
 	 * @generated
 	 */
-	protected IParser createConstraintConstraint_3008Parser() {
-		UMLStructuralFeatureParser parser = new UMLStructuralFeatureParser(UMLPackage.eINSTANCE.getNamedElement_Name());
-		parser.setViewPattern("{0}");
-		parser.setEditPattern("{0}");
+	protected IParser createStereotypeName_5001Parser() {
+		EAttribute[] features = new EAttribute[] { UMLPackage.eINSTANCE.getNamedElement_Name(), };
+		MessageFormatParser parser = new MessageFormatParser(features);
 		return parser;
 	}
 
 	/**
 	 * @generated
 	 */
-	private IParser stereotypeStereotype_3003Parser;
+	private IParser profileName_5003Parser;
 
 	/**
 	 * @generated
 	 */
-	private IParser getStereotypeStereotype_3003Parser() {
-		if (stereotypeStereotype_3003Parser == null) {
-			stereotypeStereotype_3003Parser = createStereotypeStereotype_3003Parser();
+	private IParser getProfileName_5003Parser() {
+		if (profileName_5003Parser == null) {
+			profileName_5003Parser = createProfileName_5003Parser();
 		}
-		return stereotypeStereotype_3003Parser;
+		return profileName_5003Parser;
 	}
 
 	/**
 	 * @generated
 	 */
-	protected IParser createStereotypeStereotype_3003Parser() {
-		UMLStructuralFeatureParser parser = new UMLStructuralFeatureParser(UMLPackage.eINSTANCE.getNamedElement_Name());
-		parser.setViewPattern("{0}");
-		parser.setEditPattern("{0}");
+	protected IParser createProfileName_5003Parser() {
+		EAttribute[] features = new EAttribute[] { UMLPackage.eINSTANCE.getNamedElement_Name(), };
+		MessageFormatParser parser = new MessageFormatParser(features);
 		return parser;
 	}
 
 	/**
 	 * @generated
 	 */
-	private IParser enumerationLiteralEnumerationLiteral_3005Parser;
+	private IParser enumerationName_5005Parser;
 
 	/**
 	 * @generated
 	 */
-	private IParser getEnumerationLiteralEnumerationLiteral_3005Parser() {
-		if (enumerationLiteralEnumerationLiteral_3005Parser == null) {
-			enumerationLiteralEnumerationLiteral_3005Parser = createEnumerationLiteralEnumerationLiteral_3005Parser();
+	private IParser getEnumerationName_5005Parser() {
+		if (enumerationName_5005Parser == null) {
+			enumerationName_5005Parser = createEnumerationName_5005Parser();
 		}
-		return enumerationLiteralEnumerationLiteral_3005Parser;
+		return enumerationName_5005Parser;
 	}
 
 	/**
 	 * @generated
 	 */
-	protected IParser createEnumerationLiteralEnumerationLiteral_3005Parser() {
-		UMLStructuralFeatureParser parser = new UMLStructuralFeatureParser(UMLPackage.eINSTANCE.getNamedElement_Name());
-		parser.setViewPattern("{0}");
-		parser.setEditPattern("{0}");
+	protected IParser createEnumerationName_5005Parser() {
+		EAttribute[] features = new EAttribute[] { UMLPackage.eINSTANCE.getNamedElement_Name(), };
+		MessageFormatParser parser = new MessageFormatParser(features);
 		return parser;
 	}
 
 	/**
 	 * @generated
 	 */
-	private IParser stereotypeStereotypeName_5001Parser;
+	private IParser profileName_5009Parser;
 
 	/**
 	 * @generated
 	 */
-	private IParser getStereotypeStereotypeName_5001Parser() {
-		if (stereotypeStereotypeName_5001Parser == null) {
-			stereotypeStereotypeName_5001Parser = createStereotypeStereotypeName_5001Parser();
+	private IParser getProfileName_5009Parser() {
+		if (profileName_5009Parser == null) {
+			profileName_5009Parser = createProfileName_5009Parser();
 		}
-		return stereotypeStereotypeName_5001Parser;
+		return profileName_5009Parser;
 	}
 
 	/**
 	 * @generated
 	 */
-	protected IParser createStereotypeStereotypeName_5001Parser() {
-		UMLStructuralFeatureParser parser = new UMLStructuralFeatureParser(UMLPackage.eINSTANCE.getNamedElement_Name());
-		parser.setViewPattern("{0}");
-		parser.setEditPattern("{0}");
+	protected IParser createProfileName_5009Parser() {
+		EAttribute[] features = new EAttribute[] { UMLPackage.eINSTANCE.getNamedElement_Name(), };
+		MessageFormatParser parser = new MessageFormatParser(features);
 		return parser;
 	}
 
 	/**
 	 * @generated
 	 */
-	private IParser profileProfileName_5003Parser;
+	private IParser constraint_3008Parser;
 
 	/**
 	 * @generated
 	 */
-	private IParser getProfileProfileName_5003Parser() {
-		if (profileProfileName_5003Parser == null) {
-			profileProfileName_5003Parser = createProfileProfileName_5003Parser();
+	private IParser getConstraint_3008Parser() {
+		if (constraint_3008Parser == null) {
+			constraint_3008Parser = createConstraint_3008Parser();
 		}
-		return profileProfileName_5003Parser;
+		return constraint_3008Parser;
 	}
 
 	/**
 	 * @generated
 	 */
-	protected IParser createProfileProfileName_5003Parser() {
-		UMLStructuralFeatureParser parser = new UMLStructuralFeatureParser(UMLPackage.eINSTANCE.getNamedElement_Name());
-		parser.setViewPattern("{0}");
-		parser.setEditPattern("{0}");
+	protected IParser createConstraint_3008Parser() {
+		EAttribute[] features = new EAttribute[] { UMLPackage.eINSTANCE.getNamedElement_Name(), };
+		MessageFormatParser parser = new MessageFormatParser(features);
 		return parser;
 	}
 
 	/**
 	 * @generated
 	 */
-	private IParser enumerationEnumerationName_5005Parser;
+	private IParser stereotype_3003Parser;
 
 	/**
 	 * @generated
 	 */
-	private IParser getEnumerationEnumerationName_5005Parser() {
-		if (enumerationEnumerationName_5005Parser == null) {
-			enumerationEnumerationName_5005Parser = createEnumerationEnumerationName_5005Parser();
+	private IParser getStereotype_3003Parser() {
+		if (stereotype_3003Parser == null) {
+			stereotype_3003Parser = createStereotype_3003Parser();
 		}
-		return enumerationEnumerationName_5005Parser;
+		return stereotype_3003Parser;
 	}
 
 	/**
 	 * @generated
 	 */
-	protected IParser createEnumerationEnumerationName_5005Parser() {
-		UMLStructuralFeatureParser parser = new UMLStructuralFeatureParser(UMLPackage.eINSTANCE.getNamedElement_Name());
-		parser.setViewPattern("{0}");
-		parser.setEditPattern("{0}");
+	protected IParser createStereotype_3003Parser() {
+		EAttribute[] features = new EAttribute[] { UMLPackage.eINSTANCE.getNamedElement_Name(), };
+		MessageFormatParser parser = new MessageFormatParser(features);
 		return parser;
 	}
 
 	/**
 	 * @generated
 	 */
-	private IParser profileProfileName_5009Parser;
+	private IParser enumerationLiteral_3005Parser;
 
 	/**
 	 * @generated
 	 */
-	private IParser getProfileProfileName_5009Parser() {
-		if (profileProfileName_5009Parser == null) {
-			profileProfileName_5009Parser = createProfileProfileName_5009Parser();
+	private IParser getEnumerationLiteral_3005Parser() {
+		if (enumerationLiteral_3005Parser == null) {
+			enumerationLiteral_3005Parser = createEnumerationLiteral_3005Parser();
 		}
-		return profileProfileName_5009Parser;
+		return enumerationLiteral_3005Parser;
 	}
 
 	/**
 	 * @generated
 	 */
-	protected IParser createProfileProfileName_5009Parser() {
-		UMLStructuralFeatureParser parser = new UMLStructuralFeatureParser(UMLPackage.eINSTANCE.getNamedElement_Name());
-		parser.setViewPattern("{0}");
-		parser.setEditPattern("{0}");
+	protected IParser createEnumerationLiteral_3005Parser() {
+		EAttribute[] features = new EAttribute[] { UMLPackage.eINSTANCE.getNamedElement_Name(), };
+		MessageFormatParser parser = new MessageFormatParser(features);
 		return parser;
 	}
 
@@ -204,20 +200,20 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 	 */
 	protected IParser getParser(int visualID) {
 		switch (visualID) {
-		case ConstraintEditPart.VISUAL_ID:
-			return getConstraintConstraint_3008Parser();
-		case Stereotype2EditPart.VISUAL_ID:
-			return getStereotypeStereotype_3003Parser();
-		case EnumerationLiteralEditPart.VISUAL_ID:
-			return getEnumerationLiteralEnumerationLiteral_3005Parser();
 		case StereotypeNameEditPart.VISUAL_ID:
-			return getStereotypeStereotypeName_5001Parser();
+			return getStereotypeName_5001Parser();
 		case ProfileNameEditPart.VISUAL_ID:
-			return getProfileProfileName_5003Parser();
+			return getProfileName_5003Parser();
 		case EnumerationNameEditPart.VISUAL_ID:
-			return getEnumerationEnumerationName_5005Parser();
+			return getEnumerationName_5005Parser();
 		case ProfileName2EditPart.VISUAL_ID:
-			return getProfileProfileName_5009Parser();
+			return getProfileName_5009Parser();
+		case ConstraintEditPart.VISUAL_ID:
+			return getConstraint_3008Parser();
+		case Stereotype2EditPart.VISUAL_ID:
+			return getStereotype_3003Parser();
+		case EnumerationLiteralEditPart.VISUAL_ID:
+			return getEnumerationLiteral_3005Parser();
 		}
 		return null;
 	}
@@ -250,4 +246,26 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 		}
 		return false;
 	}
+
+	/**
+	 * @generated
+	 */
+	public static class HintAdapter extends ParserHintAdapter {
+
+		private final IElementType elementType;
+
+		public HintAdapter(IElementType type, EObject object, String parserHint) {
+			super(object, parserHint);
+			assert type != null;
+			elementType = type;
+		}
+
+		public Object getAdapter(Class adapter) {
+			if (IElementType.class.equals(adapter)) {
+				return elementType;
+			}
+			return super.getAdapter(adapter);
+		}
+	}
+
 }
