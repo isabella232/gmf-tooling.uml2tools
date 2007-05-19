@@ -23,7 +23,7 @@ public class ProfileProfileLabelsItemSemanticEditPolicy extends UMLBaseItemSeman
 			if (req.getContainmentFeature() == null) {
 				req.setContainmentFeature(UMLPackage.eINSTANCE.getNamespace_ElementImport());
 			}
-			return getMSLWrapper(new ElementImport2CreateCommand(req));
+			return getGEFWrapper(new ElementImport2CreateCommand(req));
 		}
 		return super.getCreateCommand(req);
 	}

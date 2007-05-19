@@ -23,7 +23,7 @@ public class StereotypeConstraintsItemSemanticEditPolicy extends UMLBaseItemSema
 			if (req.getContainmentFeature() == null) {
 				req.setContainmentFeature(UMLPackage.eINSTANCE.getNamespace_OwnedRule());
 			}
-			return getMSLWrapper(new ConstraintCreateCommand(req));
+			return getGEFWrapper(new ConstraintCreateCommand(req));
 		}
 		return super.getCreateCommand(req);
 	}

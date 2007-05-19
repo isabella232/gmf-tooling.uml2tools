@@ -30,31 +30,31 @@ public class ProfileItemSemanticEditPolicy extends UMLBaseItemSemanticEditPolicy
 			if (req.getContainmentFeature() == null) {
 				req.setContainmentFeature(UMLPackage.eINSTANCE.getPackage_PackagedElement());
 			}
-			return getMSLWrapper(new StereotypeCreateCommand(req));
+			return getGEFWrapper(new StereotypeCreateCommand(req));
 		}
 		if (UMLElementTypes.Profile_2002 == req.getElementType()) {
 			if (req.getContainmentFeature() == null) {
 				req.setContainmentFeature(UMLPackage.eINSTANCE.getPackage_PackagedElement());
 			}
-			return getMSLWrapper(new ProfileCreateCommand(req));
+			return getGEFWrapper(new ProfileCreateCommand(req));
 		}
 		if (UMLElementTypes.Enumeration_2003 == req.getElementType()) {
 			if (req.getContainmentFeature() == null) {
 				req.setContainmentFeature(UMLPackage.eINSTANCE.getPackage_PackagedElement());
 			}
-			return getMSLWrapper(new EnumerationCreateCommand(req));
+			return getGEFWrapper(new EnumerationCreateCommand(req));
 		}
 		if (UMLElementTypes.ElementImport_2006 == req.getElementType()) {
 			if (req.getContainmentFeature() == null) {
 				req.setContainmentFeature(UMLPackage.eINSTANCE.getNamespace_ElementImport());
 			}
-			return getMSLWrapper(new ElementImportCreateCommand(req));
+			return getGEFWrapper(new ElementImportCreateCommand(req));
 		}
 		if (UMLElementTypes.Profile_2007 == req.getElementType()) {
 			if (req.getContainmentFeature() == null) {
 				req.setContainmentFeature(UMLPackage.eINSTANCE.getPackage_PackagedElement());
 			}
-			return getMSLWrapper(new Profile2CreateCommand(req));
+			return getGEFWrapper(new Profile2CreateCommand(req));
 		}
 		return super.getCreateCommand(req);
 	}
@@ -64,7 +64,7 @@ public class ProfileItemSemanticEditPolicy extends UMLBaseItemSemanticEditPolicy
 	 */
 	protected Command getDuplicateCommand(DuplicateElementsRequest req) {
 		TransactionalEditingDomain editingDomain = ((IGraphicalEditPart) getHost()).getEditingDomain();
-		return getMSLWrapper(new DuplicateAnythingCommand(editingDomain, req));
+		return getGEFWrapper(new DuplicateAnythingCommand(editingDomain, req));
 	}
 
 	/**

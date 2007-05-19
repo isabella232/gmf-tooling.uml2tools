@@ -23,7 +23,7 @@ public class ProfileContentsItemSemanticEditPolicy extends UMLBaseItemSemanticEd
 			if (req.getContainmentFeature() == null) {
 				req.setContainmentFeature(UMLPackage.eINSTANCE.getPackage_PackagedElement());
 			}
-			return getMSLWrapper(new Stereotype2CreateCommand(req));
+			return getGEFWrapper(new Stereotype2CreateCommand(req));
 		}
 		return super.getCreateCommand(req);
 	}

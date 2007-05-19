@@ -23,7 +23,7 @@ public class StereotypeAttributesItemSemanticEditPolicy extends UMLBaseItemSeman
 			if (req.getContainmentFeature() == null) {
 				req.setContainmentFeature(UMLPackage.eINSTANCE.getStructuredClassifier_OwnedAttribute());
 			}
-			return getMSLWrapper(new PropertyCreateCommand(req));
+			return getGEFWrapper(new PropertyCreateCommand(req));
 		}
 		return super.getCreateCommand(req);
 	}
