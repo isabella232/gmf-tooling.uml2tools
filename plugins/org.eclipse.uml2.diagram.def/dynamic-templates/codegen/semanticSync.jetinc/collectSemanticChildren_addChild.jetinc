@@ -1,6 +1,0 @@
-<%if (nextNode.getVisualID() == substituteWithCanvasVID) {
-%>	//Don't add generated SubstituteWithCanvas children
-	//result.add(nextValue);
-<%} else {
-%> 	result.add(nextValue);
-<%}%>

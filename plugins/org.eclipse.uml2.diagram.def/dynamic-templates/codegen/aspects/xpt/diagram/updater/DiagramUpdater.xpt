@@ -1,0 +1,57 @@
+/*
+ * Copyright (c) 2007 Borland Software Corporation
+ * 
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
+ *
+ * Contributors:
+ *    Michael Golubev (Borland) - initial API and implementation
+ */
+
+«IMPORT "http://www.eclipse.org/gmf/2006/GenModel"»
+«IMPORT "http://www.eclipse.org/emf/2002/GenModel"»
+«IMPORT "http://www.eclipse.org/emf/2002/Ecore"»
+
+«EXTENSION xpt::diagram::updater::Utils»
+«EXTENSION aspects::xpt::diagram::updater::DiagramHeader»
+
+«AROUND checkChildElementVisualID FOR gmfgen::GenNode-»
+	«IF !isDiagramHeader(this) -»
+		«targetDef.proceed()-»
+	«ENDIF-»
+«ENDAROUND»
+
+«AROUND getSemanticChildrenMethodCall FOR gmfgen::GenContainerBase-»
+«IF null != selectDiagramHeader(getSemanticChildren(this))-»
+«getDiagram().editorGen.diagramUpdater.getDiagramUpdaterQualifiedClassName()».getSemanticChildren
+«ELSE-»
+«targetDef.proceed()-»
+«ENDIF-»
+«ENDAROUND»
+
+«AROUND getSemanticChildrenCase FOR gmfgen::GenContainerBase-»
+	«LET selectDiagramHeader(getSemanticChildren(this)) AS childHeader -»
+	«LET getDiagram().editorGen.diagramUpdater.getNodeDescriptorQualifiedClassName() AS descriptorFQN -»
+	«IF null != childHeader -»
+		«EXPAND xpt::Common::caseVisualID»
+		{
+			//We have "dummy" TopLevelNode (with vid = «EXPAND xpt::editor::VisualIDRegistry::visualID FOR childHeader»). 
+			//The only purpose for this node is to be a container for children (imports, etc)
+			//of the "main" diagram figure (that one shown as Canvas).
+ 			//Also we have modified the VisualIDRegistry#getNodeVisualID() to return
+ 			//VID = «EXPAND xpt::editor::VisualIDRegistry::visualID FOR childHeader», 
+ 			//for the case when top-level view is created for the same semantic element as the canvas view.
+ 			 
+ 			java.util.List resultAndHeader = «EXPAND xpt::diagram::updater::DiagramUpdater::getSemanticChildrenMethodName»(view);
+			resultAndHeader.add(«-»
+				new «descriptorFQN»(view.getElement(), «EXPAND xpt::editor::VisualIDRegistry::visualID FOR childHeader»));
+			return resultAndHeader;
+		}
+	«ELSE-»
+		«targetDef.proceed()-»
+	«ENDIF-»
+	«ENDLET-»
+	«ENDLET-»
+«ENDAROUND»

@@ -1,5 +1,0 @@
-<%if (substituteWithCanvasNode != null) {
-%>	 if (containerView instanceof Diagram && domainElement != null && domainElement.equals(containerView.getElement())) {
-				return <%=importManager.getImportedName(substituteWithCanvasNode.getEditPartQualifiedClassName())%>.VISUAL_ID;
-	}
-<%}%>

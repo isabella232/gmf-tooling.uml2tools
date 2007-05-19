@@ -1,4 +1,0 @@
-<%if (substituteWithCanvasVID > 0) {%>
-	// add "main" figure	
-	result.add(modelObject);
-<%}%>

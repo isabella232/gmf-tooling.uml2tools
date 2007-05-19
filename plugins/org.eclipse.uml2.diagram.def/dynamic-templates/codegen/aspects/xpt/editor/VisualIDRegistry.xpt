@@ -1,0 +1,54 @@
+/*
+ * Copyright (c) 2007 Borland Software Corporation
+ * 
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
+ *
+ * Contributors:
+ *    Michael Golubev (Borland) - initial API and implementation
+ */
+
+«IMPORT "http://www.eclipse.org/gmf/2006/GenModel"»
+«IMPORT "http://www.eclipse.org/emf/2002/Ecore"»
+
+«EXTENSION aspects::xpt::diagram::updater::DiagramHeader»
+«EXTENSION xpt::editor::Utils»
+
+«AROUND checkChildNode FOR gmfgen::GenNode-»
+	«IF isDiagramHeader(this) -»
+		// Diagram header is already processed above
+	«ELSE-»
+		«targetDef.proceed()-»
+	«ENDIF-»
+«ENDAROUND»
+
+«AROUND caseContainerVisualID FOR gmfgen::GenContainerBase-»
+	«LET selectDiagramHeader(containedNodes) AS childHeader -»
+	«IF null != childHeader -»
+		«EXPAND xpt::Common::caseVisualID»
+			«EXPAND checkHeader FOR childHeader-»
+			«EXPAND xpt::editor::VisualIDRegistry::checkNodeEssentialChildren-»
+			«EXPAND xpt::editor::VisualIDRegistry::checkChildNode FOREACH containedNodes-»
+		return «getUnrecognizedChildNodeIDMethodName(this)»(domainElement, semanticHint);
+	«ELSE-»
+		«targetDef.proceed()-»
+	«ENDIF-»
+	«ENDLET-»
+«ENDAROUND»
+
+«DEFINE checkHeader FOR gmfgen::GenNode-»
+	«IF isDiagramHeader(this) -»
+		// We want to additionally show the Canvas Semantical Element in the auxiliary 
+		// «getEditPartQualifiedClassName()» (that serves as a pure visual container for children). 
+		// To do this, we modified CanonicalEditPolicy to add the Canvas semantic Element into the children 
+		// list. The only remaining part is to return correct VID for this special case.
+	
+		if (containerView instanceof org.eclipse.gmf.runtime.notation.Diagram «-»
+			&& domainElement != null && domainElement.equals(containerView.getElement())) {
+				return «EXPAND xpt::editor::VisualIDRegistry::visualID»;
+		}		
+	«ENDIF-»
+«ENDDEFINE»
+
