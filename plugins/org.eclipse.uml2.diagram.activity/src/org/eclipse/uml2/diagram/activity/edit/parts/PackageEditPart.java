@@ -36,4 +36,5 @@ public class PackageEditPart extends DiagramEditPart {
 		installEditPolicy(EditPolicyRoles.SEMANTIC_ROLE, new PackageItemSemanticEditPolicy());
 		installEditPolicy(EditPolicyRoles.CANONICAL_ROLE, new PackageCanonicalEditPolicy());
 	}
+
 }
