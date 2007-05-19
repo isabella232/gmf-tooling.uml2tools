@@ -23,6 +23,7 @@ import org.eclipse.emf.common.notify.Adapter;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.Notifier;
 import org.eclipse.emf.common.ui.URIEditorInput;
+import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.ResourceSet;
@@ -172,7 +173,7 @@ public class UMLDocumentProvider extends AbstractDocumentProvider implements IDi
 			Diagram diagram = DiagramIOUtil.load(domain, storage, true, getProgressMonitor());
 			document.setContent(diagram);
 		} else if (element instanceof URIEditorInput) {
-			org.eclipse.emf.common.util.URI uri = ((URIEditorInput) element).getURI();
+			URI uri = ((URIEditorInput) element).getURI();
 			Resource resource = null;
 			try {
 				resource = domain.getResourceSet().getResource(uri.trimFragment(), false);
@@ -189,9 +190,6 @@ public class UMLDocumentProvider extends AbstractDocumentProvider implements IDi
 						resource.unload();
 						throw e;
 					}
-				}
-				if (resource == null) {
-					throw new RuntimeException(Messages.UMLDocumentProvider_UnableToLoadResourceError);
 				}
 				if (uri.fragment() != null) {
 					EObject rootElement = resource.getEObject(uri.fragment());
@@ -505,7 +503,7 @@ public class UMLDocumentProvider extends AbstractDocumentProvider implements IDi
 				for (Iterator it = resources.iterator(); it.hasNext();) {
 					Resource nextResource = (Resource) it.next();
 					monitor.setTaskName(NLS.bind(Messages.UMLDocumentProvider_SaveNextResourceTask, nextResource.getURI()));
-					if (nextResource.isLoaded()) {
+					if (nextResource.isLoaded() && !info.getEditingDomain().isReadOnly(nextResource)) {
 						try {
 							nextResource.save(UMLDiagramEditorUtil.getSaveOptions());
 						} catch (IOException e) {
@@ -558,9 +556,9 @@ public class UMLDocumentProvider extends AbstractDocumentProvider implements IDi
 	/**
 	 * @generated
 	 */
-	protected void handleElementMoved(IEditorInput input, org.eclipse.emf.common.util.URI uri) {
+	protected void handleElementMoved(IEditorInput input, URI uri) {
 		if (input instanceof FileEditorInput) {
-			IFile newFile = ResourcesPlugin.getWorkspace().getRoot().getFile(new Path(org.eclipse.emf.common.util.URI.decode(uri.path())).removeFirstSegments(1));
+			IFile newFile = ResourcesPlugin.getWorkspace().getRoot().getFile(new Path(URI.decode(uri.path())).removeFirstSegments(1));
 			fireElementMoved(input, newFile == null ? null : new FileEditorInput(newFile));
 			return;
 		}
@@ -672,8 +670,15 @@ public class UMLDocumentProvider extends AbstractDocumentProvider implements IDi
 		/**
 		 * @generated
 		 */
+		public TransactionalEditingDomain getEditingDomain() {
+			return myDocument.getEditingDomain();
+		}
+
+		/**
+		 * @generated
+		 */
 		public ResourceSet getResourceSet() {
-			return myDocument.getEditingDomain().getResourceSet();
+			return getEditingDomain().getResourceSet();
 		}
 
 		/**
@@ -728,7 +733,7 @@ public class UMLDocumentProvider extends AbstractDocumentProvider implements IDi
 		 * @generated
 		 */
 		public final void startResourceListening() {
-			mySynchronizer = new WorkspaceSynchronizer(myDocument.getEditingDomain(), new SynchronizerDelegate());
+			mySynchronizer = new WorkspaceSynchronizer(getEditingDomain(), new SynchronizerDelegate());
 		}
 
 		/**
@@ -825,7 +830,7 @@ public class UMLDocumentProvider extends AbstractDocumentProvider implements IDi
 			/**
 			 * @generated
 			 */
-			public boolean handleResourceMoved(Resource resource, final org.eclipse.emf.common.util.URI newURI) {
+			public boolean handleResourceMoved(Resource resource, final URI newURI) {
 				synchronized (ResourceSetInfo.this) {
 					if (ResourceSetInfo.this.fCanBeSaved) {
 						ResourceSetInfo.this.setUnSynchronized(resource);
