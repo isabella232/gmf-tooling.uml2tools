@@ -52,5 +52,4 @@ public class InputPin3ViewFactory extends AbstractShapeViewFactory {
 		}
 		getViewService().createNode(semanticAdapter, view, UMLVisualIDRegistry.getType(InputPinName3EditPart.VISUAL_ID), ViewUtil.APPEND, true, getPreferencesHint());
 	}
-
 }

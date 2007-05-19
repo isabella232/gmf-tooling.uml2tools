@@ -53,5 +53,4 @@ public class ExceptionHandlerViewFactory extends ConnectionViewFactory {
 		}
 		getViewService().createNode(semanticAdapter, view, UMLVisualIDRegistry.getType(ExceptionHandlerLink_fixed_iconEditPart.VISUAL_ID), ViewUtil.APPEND, true, getPreferencesHint());
 	}
-
 }

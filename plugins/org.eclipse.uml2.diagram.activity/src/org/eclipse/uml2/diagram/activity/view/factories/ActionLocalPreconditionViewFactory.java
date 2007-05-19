@@ -49,5 +49,4 @@ public class ActionLocalPreconditionViewFactory extends ConnectionViewFactory {
 			view.getEAnnotations().add(shortcutAnnotation);
 		}
 	}
-
 }

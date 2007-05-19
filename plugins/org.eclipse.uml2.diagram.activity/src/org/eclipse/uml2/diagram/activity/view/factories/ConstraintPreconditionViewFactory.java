@@ -74,5 +74,4 @@ public class ConstraintPreconditionViewFactory extends ListCompartmentViewFactor
 			drawerStyle.setCollapsed(false);
 		}
 	}
-
 }

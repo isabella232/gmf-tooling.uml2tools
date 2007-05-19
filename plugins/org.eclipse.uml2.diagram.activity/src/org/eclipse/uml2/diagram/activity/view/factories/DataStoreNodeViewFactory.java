@@ -48,5 +48,4 @@ public class DataStoreNodeViewFactory extends AbstractShapeViewFactory {
 			view.getEAnnotations().add(shortcutAnnotation);
 		}
 	}
-
 }

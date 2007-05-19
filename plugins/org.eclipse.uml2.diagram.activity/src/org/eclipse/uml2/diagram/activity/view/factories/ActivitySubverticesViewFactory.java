@@ -74,5 +74,4 @@ public class ActivitySubverticesViewFactory extends ListCompartmentViewFactory {
 			drawerStyle.setCollapsed(false);
 		}
 	}
-
 }

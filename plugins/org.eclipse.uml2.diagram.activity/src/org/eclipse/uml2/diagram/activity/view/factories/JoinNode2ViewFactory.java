@@ -48,5 +48,4 @@ public class JoinNode2ViewFactory extends AbstractShapeViewFactory {
 			view.getEAnnotations().add(shortcutAnnotation);
 		}
 	}
-
 }

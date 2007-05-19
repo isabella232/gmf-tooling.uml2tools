@@ -54,5 +54,4 @@ public class ActivityViewFactory extends AbstractShapeViewFactory {
 		getViewService().createNode(semanticAdapter, view, UMLVisualIDRegistry.getType(ActivityNameEditPart.VISUAL_ID), ViewUtil.APPEND, true, getPreferencesHint());
 		getViewService().createNode(semanticAdapter, view, UMLVisualIDRegistry.getType(ActivitySubverticesEditPart.VISUAL_ID), ViewUtil.APPEND, true, getPreferencesHint());
 	}
-
 }

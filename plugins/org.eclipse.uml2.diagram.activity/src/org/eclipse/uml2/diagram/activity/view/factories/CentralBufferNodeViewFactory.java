@@ -48,5 +48,4 @@ public class CentralBufferNodeViewFactory extends AbstractShapeViewFactory {
 			view.getEAnnotations().add(shortcutAnnotation);
 		}
 	}
-
 }

@@ -74,5 +74,4 @@ public class ConstraintPostconditionViewFactory extends ListCompartmentViewFacto
 			drawerStyle.setCollapsed(false);
 		}
 	}
-
 }

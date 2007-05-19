@@ -74,5 +74,4 @@ public class StructuredActivityNodeStructuredActivityContentPaneCompartment2View
 			drawerStyle.setCollapsed(false);
 		}
 	}
-
 }

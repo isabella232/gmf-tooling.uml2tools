@@ -48,5 +48,4 @@ public class FlowFinalNode2ViewFactory extends AbstractShapeViewFactory {
 			view.getEAnnotations().add(shortcutAnnotation);
 		}
 	}
-
 }

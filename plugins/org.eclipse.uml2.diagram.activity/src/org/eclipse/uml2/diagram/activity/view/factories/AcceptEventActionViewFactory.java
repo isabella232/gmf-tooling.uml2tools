@@ -48,5 +48,4 @@ public class AcceptEventActionViewFactory extends AbstractShapeViewFactory {
 			view.getEAnnotations().add(shortcutAnnotation);
 		}
 	}
-
 }

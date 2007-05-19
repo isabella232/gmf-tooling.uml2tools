@@ -49,5 +49,4 @@ public class ObjectFlowViewFactory extends ConnectionViewFactory {
 			view.getEAnnotations().add(shortcutAnnotation);
 		}
 	}
-
 }

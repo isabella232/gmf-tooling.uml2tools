@@ -49,5 +49,4 @@ public class ObjectNodeSelectionViewFactory extends ConnectionViewFactory {
 			view.getEAnnotations().add(shortcutAnnotation);
 		}
 	}
-
 }

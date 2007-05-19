@@ -48,5 +48,4 @@ public class ActivityFinalNode2ViewFactory extends AbstractShapeViewFactory {
 			view.getEAnnotations().add(shortcutAnnotation);
 		}
 	}
-
 }
