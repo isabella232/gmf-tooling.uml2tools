@@ -7,7 +7,7 @@ Bundle-ClassPath: .
 Bundle-Activator: org.eclipse.uml2.diagram.profile.part.UMLDiagramEditorPlugin
 Bundle-Vendor: %providerName
 Bundle-Localization: plugin
-Export-Package: org.eclipse.uml2.diagram.profile.edit.parts, 
+Export-Package: org.eclipse.uml2.diagram.profile.edit.parts,
  org.eclipse.uml2.diagram.profile.part,
  org.eclipse.uml2.diagram.profile.providers
 Require-Bundle: org.eclipse.core.runtime,
@@ -40,5 +40,6 @@ Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.emf.query.ocl;visibility:=reexport,
  org.eclipse.gmf.runtime.draw2d.ui;visibility:=reexport,
  org.eclipse.uml2.diagram.common;visibility:=reexport,
- org.eclipse.draw2d;visibility:=reexport
+ org.eclipse.draw2d;visibility:=reexport,
+ org.eclipse.ocl.ecore;visibility:=reexport
 Eclipse-LazyStart: true

@@ -58,11 +58,6 @@ public class Messages extends NLS {
 	/**
 	 * @generated
 	 */
-	public static String UMLDocumentProvider_UnableToLoadResourceError;
-
-	/**
-	 * @generated
-	 */
 	public static String UMLDocumentProvider_NoDiagramInResourceError;
 
 	/**
@@ -288,11 +283,6 @@ public class Messages extends NLS {
 	/**
 	 * @generated
 	 */
-	public static String EvaluateOCLLinkConstraintError;
-
-	/**
-	 * @generated
-	 */
 	public static String CommandName_OpenDiagram;
 
 	/**
@@ -303,17 +293,12 @@ public class Messages extends NLS {
 	/**
 	 * @generated
 	 */
-	public static String NavigatorGroupName_Stereotype_2001_outgoinglinks;
-
-	/**
-	 * @generated
-	 */
 	public static String NavigatorGroupName_Stereotype_2001_incominglinks;
 
 	/**
 	 * @generated
 	 */
-	public static String NavigatorGroupName_Enumeration_2003_outgoinglinks;
+	public static String NavigatorGroupName_Stereotype_2001_outgoinglinks;
 
 	/**
 	 * @generated
@@ -323,12 +308,12 @@ public class Messages extends NLS {
 	/**
 	 * @generated
 	 */
-	public static String NavigatorGroupName_ElementImport_2006_incominglinks;
+	public static String NavigatorGroupName_Enumeration_2003_outgoinglinks;
 
 	/**
 	 * @generated
 	 */
-	public static String NavigatorGroupName_Stereotype_3003_outgoinglinks;
+	public static String NavigatorGroupName_ElementImport_2006_incominglinks;
 
 	/**
 	 * @generated
@@ -338,12 +323,12 @@ public class Messages extends NLS {
 	/**
 	 * @generated
 	 */
-	public static String NavigatorGroupName_ElementImport_3009_incominglinks;
+	public static String NavigatorGroupName_Stereotype_3003_outgoinglinks;
 
 	/**
 	 * @generated
 	 */
-	public static String NavigatorGroupName_Generalization_4001_source;
+	public static String NavigatorGroupName_ElementImport_3009_incominglinks;
 
 	/**
 	 * @generated
@@ -353,12 +338,17 @@ public class Messages extends NLS {
 	/**
 	 * @generated
 	 */
-	public static String NavigatorGroupName_Extension_4002_source;
+	public static String NavigatorGroupName_Generalization_4001_source;
 
 	/**
 	 * @generated
 	 */
 	public static String NavigatorGroupName_Extension_4002_target;
+
+	/**
+	 * @generated
+	 */
+	public static String NavigatorGroupName_Extension_4002_source;
 
 	//TODO: put accessor fields manually	
 }

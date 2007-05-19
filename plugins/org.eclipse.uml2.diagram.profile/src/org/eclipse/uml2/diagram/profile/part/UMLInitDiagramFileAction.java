@@ -1,6 +1,7 @@
 package org.eclipse.uml2.diagram.profile.part;
 
 import org.eclipse.core.resources.IFile;
+import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.common.util.WrappedException;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.resource.Resource;
@@ -31,7 +32,7 @@ public class UMLInitDiagramFileAction implements IObjectActionDelegate {
 	/**
 	 * @generated
 	 */
-	private org.eclipse.emf.common.util.URI domainModelURI;
+	private URI domainModelURI;
 
 	/**
 	 * @generated
@@ -50,7 +51,7 @@ public class UMLInitDiagramFileAction implements IObjectActionDelegate {
 			return;
 		}
 		IFile file = (IFile) ((IStructuredSelection) selection).getFirstElement();
-		domainModelURI = org.eclipse.emf.common.util.URI.createPlatformResourceURI(file.getFullPath().toString(), true);
+		domainModelURI = URI.createPlatformResourceURI(file.getFullPath().toString(), true);
 		action.setEnabled(true);
 	}
 
