@@ -9,6 +9,9 @@ import java.util.Set;
 
 import org.eclipse.gmf.runtime.diagram.ui.editpolicies.CanonicalEditPolicy;
 import org.eclipse.gmf.runtime.notation.View;
+import org.eclipse.uml2.diagram.activity.edit.parts.InputPin2EditPart;
+import org.eclipse.uml2.diagram.activity.edit.parts.InputPin3EditPart;
+import org.eclipse.uml2.diagram.activity.edit.parts.InputPinEditPart;
 import org.eclipse.uml2.diagram.activity.part.UMLDiagramUpdater;
 import org.eclipse.uml2.diagram.activity.part.UMLNodeDescriptor;
 import org.eclipse.uml2.diagram.activity.part.UMLVisualIDRegistry;
@@ -41,8 +44,13 @@ public class AddStructuralFeatureValueAction2CanonicalEditPolicy extends Canonic
 	 */
 	protected boolean isOrphaned(Collection semanticChildren, final View view) {
 		int visualID = UMLVisualIDRegistry.getVisualID(view);
-		return UMLDiagramUpdater.isAddStructuralFeatureValueAction_3023DomainMetaChild(visualID)
-				&& (!semanticChildren.contains(view.getElement()) || visualID != UMLVisualIDRegistry.getNodeVisualID((View) getHost().getModel(), view.getElement()));
+		switch (visualID) {
+		case InputPinEditPart.VISUAL_ID:
+		case InputPin2EditPart.VISUAL_ID:
+		case InputPin3EditPart.VISUAL_ID:
+			return !semanticChildren.contains(view.getElement()) || visualID != UMLVisualIDRegistry.getNodeVisualID((View) getHost().getModel(), view.getElement());
+		}
+		return false;
 	}
 
 	/**

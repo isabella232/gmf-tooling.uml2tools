@@ -322,7 +322,7 @@ public class UMLBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 		/**
 		 * @generated 
 		 */
-		private static UMLAbstractExpression ControlFlow_4001_SourceExpression;
+		private static final UMLAbstractExpression ControlFlow_4001_SourceExpression;
 
 		/**
 		 * @generated 
@@ -337,7 +337,7 @@ public class UMLBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 		/**
 		 * @generated 
 		 */
-		private static UMLAbstractExpression ControlFlow_4001_TargetExpression;
+		private static final UMLAbstractExpression ControlFlow_4001_TargetExpression;
 
 		/**
 		 * @generated 
@@ -447,9 +447,16 @@ public class UMLBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 				Object val = constraint.evaluate(sourceEnd, evalEnv);
 				return (val instanceof Boolean) ? ((Boolean) val).booleanValue() : false;
 			} catch (Exception e) {
-				UMLDiagramEditorPlugin.getInstance().logError(Messages.EvaluateOCLLinkConstraintError, e);
+				UMLDiagramEditorPlugin.getInstance().logError("Link constraint evaluation error", e); //$NON-NLS-1$
 				return false;
 			}
+		}
+
+		/**
+		 * @generated
+		 */
+		private static class JavaConstraints {
+
 		}
 	}
 

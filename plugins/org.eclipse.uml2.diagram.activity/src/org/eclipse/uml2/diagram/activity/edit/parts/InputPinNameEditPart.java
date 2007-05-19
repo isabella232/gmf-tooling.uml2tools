@@ -82,7 +82,7 @@ public class InputPinNameEditPart extends LabelEditPart implements ITextAwareEdi
 	 * @generated
 	 */
 	static {
-		registerSnapBackPosition(UMLVisualIDRegistry.getType(InputPinNameEditPart.VISUAL_ID), new Point(0, 0));
+		registerSnapBackPosition(UMLVisualIDRegistry.getType(org.eclipse.uml2.diagram.activity.edit.parts.InputPinNameEditPart.VISUAL_ID), new Point(0, 0));
 	}
 
 	/**

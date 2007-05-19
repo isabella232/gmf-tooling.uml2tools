@@ -81,7 +81,7 @@ public class ExceptionHandlerLink_fixed_iconEditPart extends LabelEditPart imple
 	 * @generated
 	 */
 	static {
-		registerSnapBackPosition(UMLVisualIDRegistry.getType(ExceptionHandlerLink_fixed_iconEditPart.VISUAL_ID), new Point(0, 40));
+		registerSnapBackPosition(UMLVisualIDRegistry.getType(org.eclipse.uml2.diagram.activity.edit.parts.ExceptionHandlerLink_fixed_iconEditPart.VISUAL_ID), new Point(0, 40));
 	}
 
 	/**
