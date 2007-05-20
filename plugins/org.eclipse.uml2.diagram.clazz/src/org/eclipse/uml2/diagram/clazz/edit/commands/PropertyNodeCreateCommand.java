@@ -11,18 +11,18 @@ import org.eclipse.gmf.runtime.notation.View;
 
 import org.eclipse.uml2.diagram.clazz.providers.UMLElementTypes;
 
-import org.eclipse.uml2.uml.Dependency;
+import org.eclipse.uml2.uml.Property;
 import org.eclipse.uml2.uml.UMLPackage;
 
 /**
  * @generated
  */
-public class DependencyCreateCommand extends CreateElementCommand {
+public class PropertyNodeCreateCommand extends CreateElementCommand {
 
 	/**
 	 * @generated
 	 */
-	public DependencyCreateCommand(CreateElementRequest req) {
+	public PropertyNodeCreateCommand(CreateElementRequest req) {
 		super(req);
 	}
 
@@ -30,7 +30,7 @@ public class DependencyCreateCommand extends CreateElementCommand {
 	 * @generated
 	 */
 	protected EClass getEClassToEdit() {
-		return UMLPackage.eINSTANCE.getPackage();
+		return UMLPackage.eINSTANCE.getStructuredClassifier();
 	}
 
 	/**
@@ -48,9 +48,9 @@ public class DependencyCreateCommand extends CreateElementCommand {
 	 * @generated
 	 */
 	protected EObject doDefaultElementCreation() {
-		Dependency newElement = (Dependency) super.doDefaultElementCreation();
+		Property newElement = (Property) super.doDefaultElementCreation();
 		if (newElement != null) {
-			UMLElementTypes.Initializers.Dependency_2009.init(newElement);
+			UMLElementTypes.Initializers.Property_3001.init(newElement);
 		}
 		return newElement;
 	}

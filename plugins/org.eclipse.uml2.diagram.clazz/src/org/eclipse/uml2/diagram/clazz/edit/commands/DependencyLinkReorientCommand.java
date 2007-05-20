@@ -8,14 +8,14 @@ import org.eclipse.gmf.runtime.common.core.command.CommandResult;
 import org.eclipse.gmf.runtime.emf.type.core.commands.EditElementCommand;
 import org.eclipse.gmf.runtime.emf.type.core.requests.ReorientRelationshipRequest;
 import org.eclipse.uml2.diagram.clazz.edit.policies.UMLBaseItemSemanticEditPolicy;
-import org.eclipse.uml2.uml.Association;
-import org.eclipse.uml2.uml.Property;
-import org.eclipse.uml2.uml.Type;
+import org.eclipse.uml2.uml.Dependency;
+import org.eclipse.uml2.uml.NamedElement;
+import org.eclipse.uml2.uml.Package;
 
 /**
  * @generated
  */
-public class PropertyReorientCommand extends EditElementCommand {
+public class DependencyLinkReorientCommand extends EditElementCommand {
 
 	/**
 	 * @generated
@@ -35,7 +35,7 @@ public class PropertyReorientCommand extends EditElementCommand {
 	/**
 	 * @generated
 	 */
-	public PropertyReorientCommand(ReorientRelationshipRequest request) {
+	public DependencyLinkReorientCommand(ReorientRelationshipRequest request) {
 		super(request.getLabel(), request.getRelationship(), request);
 		reorientDirection = request.getDirection();
 		oldEnd = request.getOldRelationshipEnd();
@@ -46,7 +46,7 @@ public class PropertyReorientCommand extends EditElementCommand {
 	 * @generated
 	 */
 	public boolean canExecute() {
-		if (!(getElementToEdit() instanceof Property)) {
+		if (!(getElementToEdit() instanceof Dependency)) {
 			return false;
 		}
 		if (reorientDirection == ReorientRelationshipRequest.REORIENT_SOURCE) {
@@ -62,25 +62,36 @@ public class PropertyReorientCommand extends EditElementCommand {
 	 * @generated
 	 */
 	protected boolean canReorientSource() {
-		if (!(oldEnd instanceof Association && newEnd instanceof Association)) {
+		if (!(oldEnd instanceof NamedElement && newEnd instanceof NamedElement)) {
 			return false;
 		}
-		Type target = getLink().getType();
-		return UMLBaseItemSemanticEditPolicy.LinkConstraints.canExistProperty_4003(getNewSource(), target);
+		if (getLink().getSuppliers().size() != 1) {
+			return false;
+		}
+		NamedElement target = (NamedElement) getLink().getSuppliers().get(0);
+		if (!(getLink().eContainer() instanceof Package)) {
+			return false;
+		}
+		Package container = (Package) getLink().eContainer();
+		return UMLBaseItemSemanticEditPolicy.LinkConstraints.canExistDependency_4002(container, getNewSource(), target);
 	}
 
 	/**
 	 * @generated
 	 */
 	protected boolean canReorientTarget() {
-		if (!(oldEnd instanceof Type && newEnd instanceof Type)) {
+		if (!(oldEnd instanceof NamedElement && newEnd instanceof NamedElement)) {
 			return false;
 		}
-		if (!(getLink().eContainer() instanceof Association)) {
+		if (getLink().getClients().size() != 1) {
 			return false;
 		}
-		Association source = (Association) getLink().eContainer();
-		return UMLBaseItemSemanticEditPolicy.LinkConstraints.canExistProperty_4003(source, getNewTarget());
+		NamedElement source = (NamedElement) getLink().getClients().get(0);
+		if (!(getLink().eContainer() instanceof Package)) {
+			return false;
+		}
+		Package container = (Package) getLink().eContainer();
+		return UMLBaseItemSemanticEditPolicy.LinkConstraints.canExistDependency_4002(container, source, getNewTarget());
 	}
 
 	/**
@@ -103,8 +114,8 @@ public class PropertyReorientCommand extends EditElementCommand {
 	 * @generated
 	 */
 	protected CommandResult reorientSource() throws ExecutionException {
-		getOldSource().getOwnedEnds().remove(getLink());
-		getNewSource().getOwnedEnds().add(getLink());
+		getLink().getClients().remove(getOldSource());
+		getLink().getClients().add(getNewSource());
 		return CommandResult.newOKCommandResult(getLink());
 	}
 
@@ -112,42 +123,43 @@ public class PropertyReorientCommand extends EditElementCommand {
 	 * @generated
 	 */
 	protected CommandResult reorientTarget() throws ExecutionException {
-		getLink().setType(getNewTarget());
+		getLink().getSuppliers().remove(getOldTarget());
+		getLink().getSuppliers().add(getNewTarget());
 		return CommandResult.newOKCommandResult(getLink());
 	}
 
 	/**
 	 * @generated
 	 */
-	protected Property getLink() {
-		return (Property) getElementToEdit();
+	protected Dependency getLink() {
+		return (Dependency) getElementToEdit();
 	}
 
 	/**
 	 * @generated
 	 */
-	protected Association getOldSource() {
-		return (Association) oldEnd;
+	protected NamedElement getOldSource() {
+		return (NamedElement) oldEnd;
 	}
 
 	/**
 	 * @generated
 	 */
-	protected Association getNewSource() {
-		return (Association) newEnd;
+	protected NamedElement getNewSource() {
+		return (NamedElement) newEnd;
 	}
 
 	/**
 	 * @generated
 	 */
-	protected Type getOldTarget() {
-		return (Type) oldEnd;
+	protected NamedElement getOldTarget() {
+		return (NamedElement) oldEnd;
 	}
 
 	/**
 	 * @generated
 	 */
-	protected Type getNewTarget() {
-		return (Type) newEnd;
+	protected NamedElement getNewTarget() {
+		return (NamedElement) newEnd;
 	}
 }
