@@ -2,7 +2,7 @@
  * <copyright>
  * </copyright>
  *
- * $Id: GMFGenExtFactory.java,v 1.1 2007/04/05 17:07:04 mgolubev Exp $
+ * $Id: GMFGenExtFactory.java,v 1.2 2007/05/20 19:31:35 mgolubev Exp $
  */
 package org.eclipse.uml2.diagram.codegen.gmfgenext;
 
@@ -49,6 +49,24 @@ public interface GMFGenExtFactory extends EFactory {
 	 * @generated
 	 */
 	CustomLocatorAttributes createCustomLocatorAttributes();
+
+	/**
+	 * Returns a new object of class '<em>Details Level Attributes</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Details Level Attributes</em>'.
+	 * @generated
+	 */
+	DetailsLevelAttributes createDetailsLevelAttributes();
+
+	/**
+	 * Returns a new object of class '<em>Substitutable By Attributes</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Substitutable By Attributes</em>'.
+	 * @generated
+	 */
+	SubstitutableByAttributes createSubstitutableByAttributes();
 
 	/**
 	 * Returns the package supported by this factory.

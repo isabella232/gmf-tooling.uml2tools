@@ -2,7 +2,7 @@
  * <copyright>
  * </copyright>
  *
- * $Id: GMFGenExtItemProviderAdapterFactory.java,v 1.1 2007/04/05 17:08:18 mgolubev Exp $
+ * $Id: GMFGenExtItemProviderAdapterFactory.java,v 1.2 2007/05/20 19:31:37 mgolubev Exp $
  */
 package org.eclipse.uml2.diagram.codegen.gmfgenext.provider;
 
@@ -127,6 +127,50 @@ public class GMFGenExtItemProviderAdapterFactory extends GMFGenExtAdapterFactory
 	}
 
 	/**
+	 * This keeps track of the one adapter used for all {@link org.eclipse.uml2.diagram.codegen.gmfgenext.DetailsLevelAttributes} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected DetailsLevelAttributesItemProvider detailsLevelAttributesItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link org.eclipse.uml2.diagram.codegen.gmfgenext.DetailsLevelAttributes}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Adapter createDetailsLevelAttributesAdapter() {
+		if (detailsLevelAttributesItemProvider == null) {
+			detailsLevelAttributesItemProvider = new DetailsLevelAttributesItemProvider(this);
+		}
+
+		return detailsLevelAttributesItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link org.eclipse.uml2.diagram.codegen.gmfgenext.SubstitutableByAttributes} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected SubstitutableByAttributesItemProvider substitutableByAttributesItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link org.eclipse.uml2.diagram.codegen.gmfgenext.SubstitutableByAttributes}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Adapter createSubstitutableByAttributesAdapter() {
+		if (substitutableByAttributesItemProvider == null) {
+			substitutableByAttributesItemProvider = new SubstitutableByAttributesItemProvider(this);
+		}
+
+		return substitutableByAttributesItemProvider;
+	}
+
+	/**
 	 * This returns the root adapter factory that contains this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -224,6 +268,8 @@ public class GMFGenExtItemProviderAdapterFactory extends GMFGenExtAdapterFactory
 	public void dispose() {
 		if (auxSecondaryDiagramNodeAttributeItemProvider != null) auxSecondaryDiagramNodeAttributeItemProvider.dispose();
 		if (customLocatorAttributesItemProvider != null) customLocatorAttributesItemProvider.dispose();
+		if (detailsLevelAttributesItemProvider != null) detailsLevelAttributesItemProvider.dispose();
+		if (substitutableByAttributesItemProvider != null) substitutableByAttributesItemProvider.dispose();
 	}
 
 }

@@ -13,3 +13,14 @@ class CustomLocatorAttributes extends gmfgen.Attributes {
 	attr String customLocatorFQN; 
 }
 
+class DetailsLevelAttributes extends gmfgen.Attributes {
+	@genmodel(documentation="Applicable for gmfgen::GenCompartment only. If set, children of this compartment will be filtered according to actual diagram details level.")
+	attr boolean filteringCompartment;
+	@genmodel(documentation="If set, parser for this element should have details-level specific ParserOptions.")
+	attr boolean detailsAwareParser; 
+} 
+
+class SubstitutableByAttributes extends gmfgen.Attributes {
+	@genmodel(documentation="Allows to have different notation for same semantic element. Diagram updater should choose some default notation, but should treat any of the substitutable nodes as correct representation for given semantic element")
+	ref gmfgen.GenCommonBase[*] substitutableBy;
+}

@@ -13,5 +13,12 @@
     <genClasses ecoreClass="gmfgenext.ecore#//CustomLocatorAttributes">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute gmfgenext.ecore#//CustomLocatorAttributes/customLocatorFQN"/>
     </genClasses>
+    <genClasses ecoreClass="gmfgenext.ecore#//DetailsLevelAttributes">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute gmfgenext.ecore#//DetailsLevelAttributes/filteringCompartment"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute gmfgenext.ecore#//DetailsLevelAttributes/detailsAwareParser"/>
+    </genClasses>
+    <genClasses ecoreClass="gmfgenext.ecore#//SubstitutableByAttributes">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference gmfgenext.ecore#//SubstitutableByAttributes/substitutableBy"/>
+    </genClasses>
   </genPackages>
 </genmodel:GenModel>

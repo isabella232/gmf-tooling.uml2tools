@@ -2,7 +2,7 @@
  * <copyright>
  * </copyright>
  *
- * $Id: GMFGenExtSwitch.java,v 1.1 2007/04/05 17:07:04 mgolubev Exp $
+ * $Id: GMFGenExtSwitch.java,v 1.2 2007/05/20 19:31:35 mgolubev Exp $
  */
 package org.eclipse.uml2.diagram.codegen.gmfgenext.util;
 
@@ -110,6 +110,20 @@ public class GMFGenExtSwitch {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
+			case GMFGenExtPackage.DETAILS_LEVEL_ATTRIBUTES: {
+				DetailsLevelAttributes detailsLevelAttributes = (DetailsLevelAttributes)theEObject;
+				Object result = caseDetailsLevelAttributes(detailsLevelAttributes);
+				if (result == null) result = caseAttributes(detailsLevelAttributes);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case GMFGenExtPackage.SUBSTITUTABLE_BY_ATTRIBUTES: {
+				SubstitutableByAttributes substitutableByAttributes = (SubstitutableByAttributes)theEObject;
+				Object result = caseSubstitutableByAttributes(substitutableByAttributes);
+				if (result == null) result = caseAttributes(substitutableByAttributes);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
 			default: return defaultCase(theEObject);
 		}
 	}
@@ -141,6 +155,36 @@ public class GMFGenExtSwitch {
 	 * @generated
 	 */
 	public Object caseCustomLocatorAttributes(CustomLocatorAttributes object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpretting the object as an instance of '<em>Details Level Attributes</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpretting the object as an instance of '<em>Details Level Attributes</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public Object caseDetailsLevelAttributes(DetailsLevelAttributes object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpretting the object as an instance of '<em>Substitutable By Attributes</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpretting the object as an instance of '<em>Substitutable By Attributes</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public Object caseSubstitutableByAttributes(SubstitutableByAttributes object) {
 		return null;
 	}
 

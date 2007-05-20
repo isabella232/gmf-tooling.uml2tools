@@ -1,0 +1,57 @@
+/*
+ * Copyright (c) 2007 Borland Software Corporation
+ * 
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
+ *
+ * Contributors:
+ *    Michael Golubev (Borland) - initial API and implementation
+ */
+
+«IMPORT "http://www.eclipse.org/gmf/2006/GenModel"»
+«IMPORT "http://www.eclipse.org/emf/2002/GenModel"»
+«IMPORT "http://www.eclipse.org/uml2/diagram/gmfgenext/DiagramFigure/1.0"»
+
+«EXTENSION xpt::diagram::updater::Utils»
+«EXTENSION xpt::GenModelUtils»
+
+«AROUND isOrphaned FOR gmfgen::GenContainerBase-»
+	«LET getSemanticChildren(this).select(n| null != n.viewmap.attributes.typeSelect(gmfgenext::SubstitutableByAttributes).first()) AS substitutableChildren-»
+		«IF substitutableChildren.isEmpty()-»
+			«targetDef.proceed()-»
+		«ELSE»
+	«EXPAND xpt::Common::generatedMemberComment»
+protected boolean isOrphaned(java.util.Collection semanticChildren, final org.eclipse.gmf.runtime.notation.View view) {
+	«EXPAND xpt::diagram::updater::containerBaseCanonicalMethods::checkShortcutProperty-»
+	int actualID = «EXPAND xpt::editor::VisualIDRegistry::getVisualIDMethodCall FOR getDiagram()»(view);
+	int suggestedID = «EXPAND xpt::editor::VisualIDRegistry::getNodeVisualIDMethodCall FOR getDiagram()»((org.eclipse.gmf.runtime.notation.View) getHost().getModel(), view.getElement());
+	switch (actualID) {
+	«IF getSemanticChildren(this).size() > substitutableChildren.size() -»
+	«FOREACH getSemanticChildren(this) AS nextChild-»
+		«IF !substitutableChildren.contains(nextChild) -»
+			«EXPAND xpt::Common::caseVisualID FOR nextChild»		
+		«ENDIF-»
+	«ENDFOREACH-»
+		return !semanticChildren.contains(view.getElement()) || actualID != suggestedID;
+	«ENDIF-»
+	«FOREACH substitutableChildren AS nextSubstitutableChild-»
+			«EXPAND xpt::Common::caseVisualID FOR nextSubstitutableChild»
+			if (!semanticChildren.contains(view.getElement())){
+				return true;
+			}
+			return (actualID != suggestedID) &&
+			«LET ((gmfgenext::SubstitutableByAttributes)nextSubstitutableChild.viewmap.attributes.typeSelect(gmfgenext::SubstitutableByAttributes).first()) AS group-»
+				«FOREACH group.substitutableBy AS nextSubstitution-»
+					(suggestedID != «EXPAND xpt::editor::VisualIDRegistry::visualID FOR nextSubstitution») &&
+				«ENDFOREACH-»		
+					true;
+			«ENDLET-»
+	«ENDFOREACH-»
+	}
+	return false;	
+}
+		«ENDIF-»
+	«ENDLET-»
+«ENDAROUND»

@@ -2,7 +2,7 @@
  * <copyright>
  * </copyright>
  *
- * $Id: GMFGenExtPackage.java,v 1.1 2007/04/05 17:07:04 mgolubev Exp $
+ * $Id: GMFGenExtPackage.java,v 1.2 2007/05/20 19:31:35 mgolubev Exp $
  */
 package org.eclipse.uml2.diagram.codegen.gmfgenext;
 
@@ -10,6 +10,7 @@ import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EPackage;
 
+import org.eclipse.emf.ecore.EReference;
 import org.eclipse.gmf.codegen.gmfgen.GMFGenPackage;
 
 /**
@@ -126,6 +127,72 @@ public interface GMFGenExtPackage extends EPackage {
 
 
 	/**
+	 * The meta object id for the '{@link org.eclipse.uml2.diagram.codegen.gmfgenext.impl.DetailsLevelAttributesImpl <em>Details Level Attributes</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.eclipse.uml2.diagram.codegen.gmfgenext.impl.DetailsLevelAttributesImpl
+	 * @see org.eclipse.uml2.diagram.codegen.gmfgenext.impl.GMFGenExtPackageImpl#getDetailsLevelAttributes()
+	 * @generated
+	 */
+	int DETAILS_LEVEL_ATTRIBUTES = 2;
+
+	/**
+	 * The feature id for the '<em><b>Filtering Compartment</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DETAILS_LEVEL_ATTRIBUTES__FILTERING_COMPARTMENT = GMFGenPackage.ATTRIBUTES_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Details Aware Parser</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DETAILS_LEVEL_ATTRIBUTES__DETAILS_AWARE_PARSER = GMFGenPackage.ATTRIBUTES_FEATURE_COUNT + 1;
+
+	/**
+	 * The number of structural features of the '<em>Details Level Attributes</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DETAILS_LEVEL_ATTRIBUTES_FEATURE_COUNT = GMFGenPackage.ATTRIBUTES_FEATURE_COUNT + 2;
+
+	/**
+	 * The meta object id for the '{@link org.eclipse.uml2.diagram.codegen.gmfgenext.impl.SubstitutableByAttributesImpl <em>Substitutable By Attributes</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.eclipse.uml2.diagram.codegen.gmfgenext.impl.SubstitutableByAttributesImpl
+	 * @see org.eclipse.uml2.diagram.codegen.gmfgenext.impl.GMFGenExtPackageImpl#getSubstitutableByAttributes()
+	 * @generated
+	 */
+	int SUBSTITUTABLE_BY_ATTRIBUTES = 3;
+
+	/**
+	 * The feature id for the '<em><b>Substitutable By</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SUBSTITUTABLE_BY_ATTRIBUTES__SUBSTITUTABLE_BY = GMFGenPackage.ATTRIBUTES_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of structural features of the '<em>Substitutable By Attributes</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SUBSTITUTABLE_BY_ATTRIBUTES_FEATURE_COUNT = GMFGenPackage.ATTRIBUTES_FEATURE_COUNT + 1;
+
+
+	/**
 	 * Returns the meta object for class '{@link org.eclipse.uml2.diagram.codegen.gmfgenext.AuxSecondaryDiagramNodeAttribute <em>Aux Secondary Diagram Node Attribute</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -166,6 +233,59 @@ public interface GMFGenExtPackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getCustomLocatorAttributes_CustomLocatorFQN();
+
+	/**
+	 * Returns the meta object for class '{@link org.eclipse.uml2.diagram.codegen.gmfgenext.DetailsLevelAttributes <em>Details Level Attributes</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Details Level Attributes</em>'.
+	 * @see org.eclipse.uml2.diagram.codegen.gmfgenext.DetailsLevelAttributes
+	 * @generated
+	 */
+	EClass getDetailsLevelAttributes();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.eclipse.uml2.diagram.codegen.gmfgenext.DetailsLevelAttributes#isFilteringCompartment <em>Filtering Compartment</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Filtering Compartment</em>'.
+	 * @see org.eclipse.uml2.diagram.codegen.gmfgenext.DetailsLevelAttributes#isFilteringCompartment()
+	 * @see #getDetailsLevelAttributes()
+	 * @generated
+	 */
+	EAttribute getDetailsLevelAttributes_FilteringCompartment();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.eclipse.uml2.diagram.codegen.gmfgenext.DetailsLevelAttributes#isDetailsAwareParser <em>Details Aware Parser</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Details Aware Parser</em>'.
+	 * @see org.eclipse.uml2.diagram.codegen.gmfgenext.DetailsLevelAttributes#isDetailsAwareParser()
+	 * @see #getDetailsLevelAttributes()
+	 * @generated
+	 */
+	EAttribute getDetailsLevelAttributes_DetailsAwareParser();
+
+	/**
+	 * Returns the meta object for class '{@link org.eclipse.uml2.diagram.codegen.gmfgenext.SubstitutableByAttributes <em>Substitutable By Attributes</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Substitutable By Attributes</em>'.
+	 * @see org.eclipse.uml2.diagram.codegen.gmfgenext.SubstitutableByAttributes
+	 * @generated
+	 */
+	EClass getSubstitutableByAttributes();
+
+	/**
+	 * Returns the meta object for the reference list '{@link org.eclipse.uml2.diagram.codegen.gmfgenext.SubstitutableByAttributes#getSubstitutableBy <em>Substitutable By</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference list '<em>Substitutable By</em>'.
+	 * @see org.eclipse.uml2.diagram.codegen.gmfgenext.SubstitutableByAttributes#getSubstitutableBy()
+	 * @see #getSubstitutableByAttributes()
+	 * @generated
+	 */
+	EReference getSubstitutableByAttributes_SubstitutableBy();
 
 	/**
 	 * Returns the factory that creates the instances of the model.
@@ -224,6 +344,50 @@ public interface GMFGenExtPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute CUSTOM_LOCATOR_ATTRIBUTES__CUSTOM_LOCATOR_FQN = eINSTANCE.getCustomLocatorAttributes_CustomLocatorFQN();
+
+		/**
+		 * The meta object literal for the '{@link org.eclipse.uml2.diagram.codegen.gmfgenext.impl.DetailsLevelAttributesImpl <em>Details Level Attributes</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.eclipse.uml2.diagram.codegen.gmfgenext.impl.DetailsLevelAttributesImpl
+		 * @see org.eclipse.uml2.diagram.codegen.gmfgenext.impl.GMFGenExtPackageImpl#getDetailsLevelAttributes()
+		 * @generated
+		 */
+		EClass DETAILS_LEVEL_ATTRIBUTES = eINSTANCE.getDetailsLevelAttributes();
+
+		/**
+		 * The meta object literal for the '<em><b>Filtering Compartment</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute DETAILS_LEVEL_ATTRIBUTES__FILTERING_COMPARTMENT = eINSTANCE.getDetailsLevelAttributes_FilteringCompartment();
+
+		/**
+		 * The meta object literal for the '<em><b>Details Aware Parser</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute DETAILS_LEVEL_ATTRIBUTES__DETAILS_AWARE_PARSER = eINSTANCE.getDetailsLevelAttributes_DetailsAwareParser();
+
+		/**
+		 * The meta object literal for the '{@link org.eclipse.uml2.diagram.codegen.gmfgenext.impl.SubstitutableByAttributesImpl <em>Substitutable By Attributes</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.eclipse.uml2.diagram.codegen.gmfgenext.impl.SubstitutableByAttributesImpl
+		 * @see org.eclipse.uml2.diagram.codegen.gmfgenext.impl.GMFGenExtPackageImpl#getSubstitutableByAttributes()
+		 * @generated
+		 */
+		EClass SUBSTITUTABLE_BY_ATTRIBUTES = eINSTANCE.getSubstitutableByAttributes();
+
+		/**
+		 * The meta object literal for the '<em><b>Substitutable By</b></em>' reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference SUBSTITUTABLE_BY_ATTRIBUTES__SUBSTITUTABLE_BY = eINSTANCE.getSubstitutableByAttributes_SubstitutableBy();
 
 	}
 

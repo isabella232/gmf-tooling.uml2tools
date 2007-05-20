@@ -2,7 +2,7 @@
  * <copyright>
  * </copyright>
  *
- * $Id: GMFGenExtAdapterFactory.java,v 1.1 2007/04/05 17:07:04 mgolubev Exp $
+ * $Id: GMFGenExtAdapterFactory.java,v 1.2 2007/05/20 19:31:35 mgolubev Exp $
  */
 package org.eclipse.uml2.diagram.codegen.gmfgenext.util;
 
@@ -85,6 +85,12 @@ public class GMFGenExtAdapterFactory extends AdapterFactoryImpl {
 			public Object caseCustomLocatorAttributes(CustomLocatorAttributes object) {
 				return createCustomLocatorAttributesAdapter();
 			}
+			public Object caseDetailsLevelAttributes(DetailsLevelAttributes object) {
+				return createDetailsLevelAttributesAdapter();
+			}
+			public Object caseSubstitutableByAttributes(SubstitutableByAttributes object) {
+				return createSubstitutableByAttributesAdapter();
+			}
 			public Object caseAttributes(Attributes object) {
 				return createAttributesAdapter();
 			}
@@ -131,6 +137,34 @@ public class GMFGenExtAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createCustomLocatorAttributesAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.eclipse.uml2.diagram.codegen.gmfgenext.DetailsLevelAttributes <em>Details Level Attributes</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.eclipse.uml2.diagram.codegen.gmfgenext.DetailsLevelAttributes
+	 * @generated
+	 */
+	public Adapter createDetailsLevelAttributesAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.eclipse.uml2.diagram.codegen.gmfgenext.SubstitutableByAttributes <em>Substitutable By Attributes</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.eclipse.uml2.diagram.codegen.gmfgenext.SubstitutableByAttributes
+	 * @generated
+	 */
+	public Adapter createSubstitutableByAttributesAdapter() {
 		return null;
 	}
 

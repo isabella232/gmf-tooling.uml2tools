@@ -2,7 +2,7 @@
  * <copyright>
  * </copyright>
  *
- * $Id: GMFGenExtPackageImpl.java,v 1.1 2007/04/05 17:07:04 mgolubev Exp $
+ * $Id: GMFGenExtPackageImpl.java,v 1.2 2007/05/20 19:31:35 mgolubev Exp $
  */
 package org.eclipse.uml2.diagram.codegen.gmfgenext.impl;
 
@@ -11,6 +11,7 @@ import org.eclipse.emf.codegen.ecore.genmodel.GenModelPackage;
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EPackage;
+import org.eclipse.emf.ecore.EReference;
 import org.eclipse.emf.ecore.EcorePackage;
 
 import org.eclipse.emf.ecore.impl.EPackageImpl;
@@ -19,8 +20,10 @@ import org.eclipse.gmf.codegen.gmfgen.GMFGenPackage;
 
 import org.eclipse.uml2.diagram.codegen.gmfgenext.AuxSecondaryDiagramNodeAttribute;
 import org.eclipse.uml2.diagram.codegen.gmfgenext.CustomLocatorAttributes;
+import org.eclipse.uml2.diagram.codegen.gmfgenext.DetailsLevelAttributes;
 import org.eclipse.uml2.diagram.codegen.gmfgenext.GMFGenExtFactory;
 import org.eclipse.uml2.diagram.codegen.gmfgenext.GMFGenExtPackage;
+import org.eclipse.uml2.diagram.codegen.gmfgenext.SubstitutableByAttributes;
 
 /**
  * <!-- begin-user-doc -->
@@ -49,6 +52,20 @@ public class GMFGenExtPackageImpl extends EPackageImpl implements GMFGenExtPacka
 	 * @generated
 	 */
 	private EClass customLocatorAttributesEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass detailsLevelAttributesEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass substitutableByAttributesEClass = null;
 
 	/**
 	 * Creates an instance of the model <b>Package</b>, registered with
@@ -164,6 +181,51 @@ public class GMFGenExtPackageImpl extends EPackageImpl implements GMFGenExtPacka
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EClass getDetailsLevelAttributes() {
+		return detailsLevelAttributesEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getDetailsLevelAttributes_FilteringCompartment() {
+		return (EAttribute)detailsLevelAttributesEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getDetailsLevelAttributes_DetailsAwareParser() {
+		return (EAttribute)detailsLevelAttributesEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getSubstitutableByAttributes() {
+		return substitutableByAttributesEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getSubstitutableByAttributes_SubstitutableBy() {
+		return (EReference)substitutableByAttributesEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public GMFGenExtFactory getGMFGenExtFactory() {
 		return (GMFGenExtFactory)getEFactoryInstance();
 	}
@@ -192,6 +254,13 @@ public class GMFGenExtPackageImpl extends EPackageImpl implements GMFGenExtPacka
 
 		customLocatorAttributesEClass = createEClass(CUSTOM_LOCATOR_ATTRIBUTES);
 		createEAttribute(customLocatorAttributesEClass, CUSTOM_LOCATOR_ATTRIBUTES__CUSTOM_LOCATOR_FQN);
+
+		detailsLevelAttributesEClass = createEClass(DETAILS_LEVEL_ATTRIBUTES);
+		createEAttribute(detailsLevelAttributesEClass, DETAILS_LEVEL_ATTRIBUTES__FILTERING_COMPARTMENT);
+		createEAttribute(detailsLevelAttributesEClass, DETAILS_LEVEL_ATTRIBUTES__DETAILS_AWARE_PARSER);
+
+		substitutableByAttributesEClass = createEClass(SUBSTITUTABLE_BY_ATTRIBUTES);
+		createEReference(substitutableByAttributesEClass, SUBSTITUTABLE_BY_ATTRIBUTES__SUBSTITUTABLE_BY);
 	}
 
 	/**
@@ -223,6 +292,8 @@ public class GMFGenExtPackageImpl extends EPackageImpl implements GMFGenExtPacka
 		// Add supertypes to classes
 		auxSecondaryDiagramNodeAttributeEClass.getESuperTypes().add(theGMFGenPackage.getAttributes());
 		customLocatorAttributesEClass.getESuperTypes().add(theGMFGenPackage.getAttributes());
+		detailsLevelAttributesEClass.getESuperTypes().add(theGMFGenPackage.getAttributes());
+		substitutableByAttributesEClass.getESuperTypes().add(theGMFGenPackage.getAttributes());
 
 		// Initialize classes and features; add operations and parameters
 		initEClass(auxSecondaryDiagramNodeAttributeEClass, AuxSecondaryDiagramNodeAttribute.class, "AuxSecondaryDiagramNodeAttribute", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -230,6 +301,13 @@ public class GMFGenExtPackageImpl extends EPackageImpl implements GMFGenExtPacka
 
 		initEClass(customLocatorAttributesEClass, CustomLocatorAttributes.class, "CustomLocatorAttributes", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getCustomLocatorAttributes_CustomLocatorFQN(), ecorePackage.getEString(), "customLocatorFQN", null, 0, 1, CustomLocatorAttributes.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(detailsLevelAttributesEClass, DetailsLevelAttributes.class, "DetailsLevelAttributes", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getDetailsLevelAttributes_FilteringCompartment(), ecorePackage.getEBoolean(), "filteringCompartment", null, 0, 1, DetailsLevelAttributes.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getDetailsLevelAttributes_DetailsAwareParser(), ecorePackage.getEBoolean(), "detailsAwareParser", null, 0, 1, DetailsLevelAttributes.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(substitutableByAttributesEClass, SubstitutableByAttributes.class, "SubstitutableByAttributes", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getSubstitutableByAttributes_SubstitutableBy(), theGMFGenPackage.getGenCommonBase(), null, "substitutableBy", null, 0, -1, SubstitutableByAttributes.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		// Create resource
 		createResource(eNS_URI);

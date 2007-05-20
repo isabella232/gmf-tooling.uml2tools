@@ -2,7 +2,7 @@
  * <copyright>
  * </copyright>
  *
- * $Id: GMFGenExtFactoryImpl.java,v 1.1 2007/04/05 17:07:04 mgolubev Exp $
+ * $Id: GMFGenExtFactoryImpl.java,v 1.2 2007/05/20 19:31:35 mgolubev Exp $
  */
 package org.eclipse.uml2.diagram.codegen.gmfgenext.impl;
 
@@ -68,6 +68,8 @@ public class GMFGenExtFactoryImpl extends EFactoryImpl implements GMFGenExtFacto
 		switch (eClass.getClassifierID()) {
 			case GMFGenExtPackage.AUX_SECONDARY_DIAGRAM_NODE_ATTRIBUTE: return createAuxSecondaryDiagramNodeAttribute();
 			case GMFGenExtPackage.CUSTOM_LOCATOR_ATTRIBUTES: return createCustomLocatorAttributes();
+			case GMFGenExtPackage.DETAILS_LEVEL_ATTRIBUTES: return createDetailsLevelAttributes();
+			case GMFGenExtPackage.SUBSTITUTABLE_BY_ATTRIBUTES: return createSubstitutableByAttributes();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -91,6 +93,26 @@ public class GMFGenExtFactoryImpl extends EFactoryImpl implements GMFGenExtFacto
 	public CustomLocatorAttributes createCustomLocatorAttributes() {
 		CustomLocatorAttributesImpl customLocatorAttributes = new CustomLocatorAttributesImpl();
 		return customLocatorAttributes;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public DetailsLevelAttributes createDetailsLevelAttributes() {
+		DetailsLevelAttributesImpl detailsLevelAttributes = new DetailsLevelAttributesImpl();
+		return detailsLevelAttributes;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public SubstitutableByAttributes createSubstitutableByAttributes() {
+		SubstitutableByAttributesImpl substitutableByAttributes = new SubstitutableByAttributesImpl();
+		return substitutableByAttributes;
 	}
 
 	/**
