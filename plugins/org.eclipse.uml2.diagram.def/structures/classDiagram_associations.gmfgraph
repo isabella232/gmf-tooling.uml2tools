@@ -27,11 +27,11 @@
       <children
           xsi:type="gmfgraph:CustomDecoration"
           name="AssociationSourceDecoration"
-          qualifiedClassName="org.eclipse.uml2.diagram.common.draw2d.AssociationDecoration"/>
+          qualifiedClassName="org.eclipse.uml2.diagram.common.draw2d.decoration.AssociationDecoration"/>
       <children
           xsi:type="gmfgraph:CustomDecoration"
           name="AssociationTargetDecoration"
-          qualifiedClassName="org.eclipse.uml2.diagram.common.draw2d.AssociationDecoration"/>
+          qualifiedClassName="org.eclipse.uml2.diagram.common.draw2d.decoration.AssociationDecoration"/>
       <foregroundColor
           xsi:type="gmfgraph:ConstantColor"
           value="blue"/>
