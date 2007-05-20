@@ -1,16 +1,14 @@
 package org.eclipse.uml2.diagram.clazz.parser;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import org.eclipse.core.runtime.IAdaptable;
-import org.eclipse.emf.ecore.EStructuralFeature;
+import org.eclipse.emf.ecore.EAttribute;
+import org.eclipse.emf.ecore.EObject;
 import org.eclipse.jface.text.contentassist.IContentAssistProcessor;
-import org.eclipse.uml2.diagram.clazz.providers.UMLStructuralFeaturesParser;
+import org.eclipse.uml2.diagram.clazz.parsers.MessageFormatParser;
 import org.eclipse.uml2.diagram.parser.assist.FixedSetCompletionProcessor;
 import org.eclipse.uml2.uml.UMLPackage;
 
-public class GeneralizationSetParser extends UMLStructuralFeaturesParser {
+public class GeneralizationSetParser extends MessageFormatParser {
 
 	private static final String COMPLETE = "complete";
 
@@ -20,31 +18,31 @@ public class GeneralizationSetParser extends UMLStructuralFeaturesParser {
 
 	private static final String OVERLAPPING = "overlapping";
 
-	static List features = new ArrayList(2);
-	static {
-		features.add(UMLPackage.eINSTANCE.getGeneralizationSet_IsCovering());
-		features.add(UMLPackage.eINSTANCE.getGeneralizationSet_IsDisjoint());
-	}
+	private static final EAttribute[] features = new EAttribute[] {
+		UMLPackage.eINSTANCE.getGeneralizationSet_IsCovering(),
+		UMLPackage.eINSTANCE.getGeneralizationSet_IsDisjoint(),
+	};
 
 	public GeneralizationSetParser() {
 		super(features);
 		setViewPattern("{0}, {1}");
 		setEditPattern("{0}, {1}");
 	}
-
+	
 	@Override
-	protected Object getValidValue(EStructuralFeature feature, Object value) {
+	protected Object getValue(EObject element, EAttribute feature) {
+		Object value = element.eGet(feature);
 		if (UMLPackage.eINSTANCE.getGeneralizationSet_IsCovering().equals(feature)) {
 			return Boolean.TRUE.equals(value) ? COMPLETE : INCOMPLETE;
 		}
 		if (UMLPackage.eINSTANCE.getGeneralizationSet_IsDisjoint().equals(feature)) {
 			return Boolean.TRUE.equals(value) ? DISJOINT : OVERLAPPING;
 		}
-		return super.getValidValue(feature, value);
+		return super.getValue(element, feature);
 	}
-
+	
 	@Override
-	protected Object getValidNewValue(EStructuralFeature feature, Object value) {
+	protected Object getValidNewValue(EAttribute feature, Object value) {
 		if (UMLPackage.eINSTANCE.getGeneralizationSet_IsCovering().equals(feature)) {
 			return COMPLETE.equals(value);
 		}
