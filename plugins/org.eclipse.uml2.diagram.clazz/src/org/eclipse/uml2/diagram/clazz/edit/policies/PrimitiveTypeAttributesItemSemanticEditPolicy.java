@@ -23,7 +23,7 @@ public class PrimitiveTypeAttributesItemSemanticEditPolicy extends UMLBaseItemSe
 			if (req.getContainmentFeature() == null) {
 				req.setContainmentFeature(UMLPackage.eINSTANCE.getDataType_OwnedAttribute());
 			}
-			return getMSLWrapper(new Property4CreateCommand(req));
+			return getGEFWrapper(new Property4CreateCommand(req));
 		}
 		return super.getCreateCommand(req);
 	}

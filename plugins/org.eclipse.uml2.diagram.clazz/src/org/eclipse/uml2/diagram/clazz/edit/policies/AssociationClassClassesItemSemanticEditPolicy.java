@@ -23,7 +23,7 @@ public class AssociationClassClassesItemSemanticEditPolicy extends UMLBaseItemSe
 			if (req.getContainmentFeature() == null) {
 				req.setContainmentFeature(UMLPackage.eINSTANCE.getClass_NestedClassifier());
 			}
-			return getMSLWrapper(new Class3CreateCommand(req));
+			return getGEFWrapper(new Class3CreateCommand(req));
 		}
 		return super.getCreateCommand(req);
 	}

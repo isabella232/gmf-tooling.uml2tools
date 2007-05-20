@@ -23,7 +23,7 @@ public class AssociationClassOperationsItemSemanticEditPolicy extends UMLBaseIte
 			if (req.getContainmentFeature() == null) {
 				req.setContainmentFeature(UMLPackage.eINSTANCE.getClass_OwnedOperation());
 			}
-			return getMSLWrapper(new Operation2CreateCommand(req));
+			return getGEFWrapper(new Operation2CreateCommand(req));
 		}
 		return super.getCreateCommand(req);
 	}

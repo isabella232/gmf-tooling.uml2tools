@@ -23,7 +23,7 @@ public class PrimitiveTypeOperationsItemSemanticEditPolicy extends UMLBaseItemSe
 			if (req.getContainmentFeature() == null) {
 				req.setContainmentFeature(UMLPackage.eINSTANCE.getDataType_OwnedOperation());
 			}
-			return getMSLWrapper(new Operation4CreateCommand(req));
+			return getGEFWrapper(new Operation4CreateCommand(req));
 		}
 		return super.getCreateCommand(req);
 	}

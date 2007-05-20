@@ -23,7 +23,7 @@ public class AssociationClassAttributesItemSemanticEditPolicy extends UMLBaseIte
 			if (req.getContainmentFeature() == null) {
 				req.setContainmentFeature(UMLPackage.eINSTANCE.getStructuredClassifier_OwnedAttribute());
 			}
-			return getMSLWrapper(new Property2CreateCommand(req));
+			return getGEFWrapper(new Property2CreateCommand(req));
 		}
 		return super.getCreateCommand(req);
 	}

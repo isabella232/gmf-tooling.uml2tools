@@ -23,7 +23,7 @@ public class PackageOtherItemSemanticEditPolicy extends UMLBaseItemSemanticEditP
 			if (req.getContainmentFeature() == null) {
 				req.setContainmentFeature(UMLPackage.eINSTANCE.getPackage_PackagedElement());
 			}
-			return getMSLWrapper(new InstanceSpecificationCreateCommand(req));
+			return getGEFWrapper(new InstanceSpecificationCreateCommand(req));
 		}
 		return super.getCreateCommand(req);
 	}

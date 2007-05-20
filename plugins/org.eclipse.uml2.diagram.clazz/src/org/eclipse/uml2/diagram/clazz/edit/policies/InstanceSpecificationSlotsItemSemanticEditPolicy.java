@@ -23,7 +23,7 @@ public class InstanceSpecificationSlotsItemSemanticEditPolicy extends UMLBaseIte
 			if (req.getContainmentFeature() == null) {
 				req.setContainmentFeature(UMLPackage.eINSTANCE.getInstanceSpecification_Slot());
 			}
-			return getMSLWrapper(new SlotCreateCommand(req));
+			return getGEFWrapper(new SlotCreateCommand(req));
 		}
 		return super.getCreateCommand(req);
 	}

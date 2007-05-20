@@ -23,7 +23,7 @@ public class EnumerationAttributesItemSemanticEditPolicy extends UMLBaseItemSema
 			if (req.getContainmentFeature() == null) {
 				req.setContainmentFeature(UMLPackage.eINSTANCE.getDataType_OwnedAttribute());
 			}
-			return getMSLWrapper(new Property5CreateCommand(req));
+			return getGEFWrapper(new Property5CreateCommand(req));
 		}
 		return super.getCreateCommand(req);
 	}

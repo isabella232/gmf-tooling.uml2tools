@@ -23,7 +23,7 @@ public class DataTypeAttributesItemSemanticEditPolicy extends UMLBaseItemSemanti
 			if (req.getContainmentFeature() == null) {
 				req.setContainmentFeature(UMLPackage.eINSTANCE.getDataType_OwnedAttribute());
 			}
-			return getMSLWrapper(new Property3CreateCommand(req));
+			return getGEFWrapper(new Property3CreateCommand(req));
 		}
 		return super.getCreateCommand(req);
 	}

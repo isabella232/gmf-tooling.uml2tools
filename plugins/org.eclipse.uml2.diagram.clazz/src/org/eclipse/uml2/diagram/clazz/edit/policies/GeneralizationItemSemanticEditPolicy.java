@@ -3,24 +3,19 @@ package org.eclipse.uml2.diagram.clazz.edit.policies;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.gef.commands.Command;
 import org.eclipse.gef.commands.UnexecutableCommand;
-
-import org.eclipse.gmf.runtime.diagram.ui.commands.ICommandProxy;
 import org.eclipse.gmf.runtime.emf.type.core.commands.DestroyElementCommand;
-
-import org.eclipse.gmf.runtime.emf.type.core.commands.SetValueCommand;
 import org.eclipse.gmf.runtime.emf.type.core.requests.CreateRelationshipRequest;
 import org.eclipse.gmf.runtime.emf.type.core.requests.DestroyElementRequest;
 import org.eclipse.gmf.runtime.emf.type.core.requests.ReorientReferenceRelationshipRequest;
-import org.eclipse.gmf.runtime.emf.type.core.requests.SetRequest;
+import org.eclipse.uml2.diagram.clazz.edit.commands.ConstraintConstrainedElementCreateCommand;
 import org.eclipse.uml2.diagram.clazz.edit.commands.ConstraintConstrainedElementReorientCommand;
+import org.eclipse.uml2.diagram.clazz.edit.commands.GeneralizationCreateCommand;
+import org.eclipse.uml2.diagram.clazz.edit.commands.GeneralizationGeneralCreateCommand;
 import org.eclipse.uml2.diagram.clazz.edit.commands.GeneralizationGeneralReorientCommand;
-import org.eclipse.uml2.diagram.clazz.edit.commands.GeneralizationTypeLinkCreateCommand;
 import org.eclipse.uml2.diagram.clazz.edit.parts.ConstraintConstrainedElementEditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.GeneralizationGeneralEditPart;
 import org.eclipse.uml2.diagram.clazz.providers.UMLElementTypes;
 import org.eclipse.uml2.uml.Classifier;
-import org.eclipse.uml2.uml.Constraint;
-import org.eclipse.uml2.uml.Element;
 import org.eclipse.uml2.uml.Generalization;
 import org.eclipse.uml2.uml.UMLPackage;
 
@@ -33,7 +28,7 @@ public class GeneralizationItemSemanticEditPolicy extends UMLBaseItemSemanticEdi
 	 * @generated
 	 */
 	protected Command getDestroyElementCommand(DestroyElementRequest req) {
-		return getMSLWrapper(new DestroyElementCommand(req));
+		return getGEFWrapper(new DestroyElementCommand(req));
 	}
 
 	/**
@@ -50,35 +45,27 @@ public class GeneralizationItemSemanticEditPolicy extends UMLBaseItemSemanticEdi
 	/**
 	 * @generated
 	 */
-	protected Command getCreateCompleteIncomingConstraintConstrainedElement_4004Command(CreateRelationshipRequest req) {
-		EObject sourceEObject = req.getSource();
-		EObject targetEObject = req.getTarget();
-		if (false == sourceEObject instanceof Constraint || false == targetEObject instanceof Element) {
-			return UnexecutableCommand.INSTANCE;
+	protected Command getStartCreateRelationshipCommand(CreateRelationshipRequest req) {
+		if (UMLElementTypes.ConstraintConstrainedElement_4004 == req.getElementType()) {
+			return null;
 		}
-		Constraint source = (Constraint) sourceEObject;
-		Element target = (Element) targetEObject;
-		if (!UMLBaseItemSemanticEditPolicy.LinkConstraints.canCreateConstraintConstrainedElement_4004(source, target)) {
-			return UnexecutableCommand.INSTANCE;
+		if (UMLElementTypes.GeneralizationGeneral_4012 == req.getElementType()) {
+			return getGEFWrapper(new GeneralizationGeneralCreateCommand(req, req.getSource(), req.getTarget()));
 		}
-		SetRequest setReq = new SetRequest(sourceEObject, UMLPackage.eINSTANCE.getConstraint_ConstrainedElement(), target);
-		return getMSLWrapper(new SetValueCommand(setReq));
+		return null;
 	}
 
 	/**
 	 * @generated
 	 */
-	protected Command getCreateStartOutgoingGeneralizationGeneral_4012Command(CreateRelationshipRequest req) {
-		EObject sourceEObject = req.getSource();
-		if (false == sourceEObject instanceof Generalization) {
-			return UnexecutableCommand.INSTANCE;
+	protected Command getCompleteCreateRelationshipCommand(CreateRelationshipRequest req) {
+		if (UMLElementTypes.ConstraintConstrainedElement_4004 == req.getElementType()) {
+			return getGEFWrapper(new ConstraintConstrainedElementCreateCommand(req, req.getSource(), req.getTarget()));
 		}
-		Generalization source = (Generalization) sourceEObject;
-		if (!UMLBaseItemSemanticEditPolicy.LinkConstraints.canCreateGeneralizationGeneral_4012(source, null)) {
-			return UnexecutableCommand.INSTANCE;
+		if (UMLElementTypes.GeneralizationGeneral_4012 == req.getElementType()) {
+			return null;
 		}
-		return new Command() {
-		};
+		return null;
 	}
 
 	/**
@@ -90,15 +77,15 @@ public class GeneralizationItemSemanticEditPolicy extends UMLBaseItemSemanticEdi
 	protected Command getReorientReferenceRelationshipCommand(ReorientReferenceRelationshipRequest req) {
 		switch (getVisualID(req)) {
 		case ConstraintConstrainedElementEditPart.VISUAL_ID:
-			return getMSLWrapper(new ConstraintConstrainedElementReorientCommand(req));
+			return getGEFWrapper(new ConstraintConstrainedElementReorientCommand(req));
 		case GeneralizationGeneralEditPart.VISUAL_ID:
-			return getMSLWrapper(new GeneralizationGeneralReorientCommand(req));
+			return getGEFWrapper(new GeneralizationGeneralReorientCommand(req));
 		}
 		return super.getReorientReferenceRelationshipCommand(req);
 	}
 
 	/**
-	 * @NOT-generated
+	 * @generated NOT
 	 */
 	protected Command getCreateCompleteIncomingGeneralization4001Command(CreateRelationshipRequest req) {
 		EObject sourceEObject = req.getSource();
@@ -119,9 +106,7 @@ public class GeneralizationItemSemanticEditPolicy extends UMLBaseItemSemanticEdi
 		if (req.getContainmentFeature() == null) {
 			req.setContainmentFeature(UMLPackage.eINSTANCE.getClassifier_Generalization());
 		}
-
-		Command createGeneralization = new ICommandProxy(new GeneralizationTypeLinkCreateCommand(req, source, target));
-		return createGeneralization;
+		return getGEFWrapper(new GeneralizationCreateCommand(req, source, target));
 	}
 
 }

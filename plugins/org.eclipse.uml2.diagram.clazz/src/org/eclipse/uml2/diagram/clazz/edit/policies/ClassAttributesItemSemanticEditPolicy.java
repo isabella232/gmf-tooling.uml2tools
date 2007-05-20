@@ -4,7 +4,7 @@ import org.eclipse.gef.commands.Command;
 
 import org.eclipse.gmf.runtime.emf.type.core.requests.CreateElementRequest;
 
-import org.eclipse.uml2.diagram.clazz.edit.commands.PropertyCreateCommand;
+import org.eclipse.uml2.diagram.clazz.edit.commands.PropertyNodeCreateCommand;
 
 import org.eclipse.uml2.diagram.clazz.providers.UMLElementTypes;
 
@@ -23,7 +23,7 @@ public class ClassAttributesItemSemanticEditPolicy extends UMLBaseItemSemanticEd
 			if (req.getContainmentFeature() == null) {
 				req.setContainmentFeature(UMLPackage.eINSTANCE.getStructuredClassifier_OwnedAttribute());
 			}
-			return getMSLWrapper(new PropertyCreateCommand(req));
+			return getGEFWrapper(new PropertyNodeCreateCommand(req));
 		}
 		return super.getCreateCommand(req);
 	}

@@ -23,7 +23,7 @@ public class InterfaceAttributesItemSemanticEditPolicy extends UMLBaseItemSemant
 			if (req.getContainmentFeature() == null) {
 				req.setContainmentFeature(UMLPackage.eINSTANCE.getInterface_OwnedAttribute());
 			}
-			return getMSLWrapper(new Property6CreateCommand(req));
+			return getGEFWrapper(new Property6CreateCommand(req));
 		}
 		return super.getCreateCommand(req);
 	}
