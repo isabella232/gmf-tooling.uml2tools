@@ -3,6 +3,7 @@ package org.eclipse.uml2.diagram.clazz.edit.parts;
 import java.util.Collections;
 import java.util.List;
 
+import org.eclipse.core.runtime.IAdaptable;
 import org.eclipse.draw2d.IFigure;
 import org.eclipse.draw2d.Label;
 import org.eclipse.draw2d.geometry.Point;
@@ -33,9 +34,7 @@ import org.eclipse.gmf.runtime.diagram.ui.tools.DragEditPartsTrackerEx;
 import org.eclipse.gmf.runtime.diagram.ui.tools.TextDirectEditManager;
 import org.eclipse.gmf.runtime.draw2d.ui.figures.WrapLabel;
 import org.eclipse.gmf.runtime.emf.core.util.EObjectAdapter;
-import org.eclipse.gmf.runtime.emf.type.core.IElementType;
 import org.eclipse.gmf.runtime.emf.ui.services.parser.ISemanticParser;
-import org.eclipse.gmf.runtime.emf.ui.services.parser.ParserHintAdapter;
 import org.eclipse.gmf.runtime.notation.FontStyle;
 import org.eclipse.gmf.runtime.notation.NotationPackage;
 import org.eclipse.gmf.runtime.notation.View;
@@ -50,6 +49,7 @@ import org.eclipse.uml2.diagram.clazz.edit.policies.Package3ItemSemanticEditPoli
 import org.eclipse.uml2.diagram.clazz.edit.policies.UMLTextNonResizableEditPolicy;
 import org.eclipse.uml2.diagram.clazz.edit.policies.UMLTextSelectionEditPolicy;
 import org.eclipse.uml2.diagram.clazz.providers.UMLElementTypes;
+import org.eclipse.uml2.diagram.clazz.providers.UMLParserProvider;
 
 /**
  * @generated
@@ -287,15 +287,7 @@ public class Package3EditPart extends CompartmentEditPart implements ITextAwareE
 	public IParser getParser() {
 		if (parser == null) {
 			String parserHint = ((View) getModel()).getType();
-			ParserHintAdapter hintAdapter = new ParserHintAdapter(getParserElement(), parserHint) {
-
-				public Object getAdapter(Class adapter) {
-					if (IElementType.class.equals(adapter)) {
-						return UMLElementTypes.Package_3006;
-					}
-					return super.getAdapter(adapter);
-				}
-			};
+			IAdaptable hintAdapter = new UMLParserProvider.HintAdapter(UMLElementTypes.Package_3006, getParserElement(), parserHint);
 			parser = ParserService.getInstance().getParser(hintAdapter);
 		}
 		return parser;

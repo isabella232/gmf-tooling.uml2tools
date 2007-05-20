@@ -56,6 +56,7 @@ public class AssociationClassClassesEditPart extends ListCompartmentEditPart {
 		installEditPolicy(EditPolicyRoles.SEMANTIC_ROLE, new AssociationClassClassesItemSemanticEditPolicy());
 		installEditPolicy(EditPolicyRoles.CREATION_ROLE, new CreationEditPolicy());
 		installEditPolicy(EditPolicyRoles.DRAG_DROP_ROLE, new DragDropEditPolicy());
+		installEditPolicy(EditPolicyRoles.CANONICAL_ROLE, new AssociationClassClassesCanonicalEditPolicy());
 	}
 
 	/**
@@ -65,7 +66,7 @@ public class AssociationClassClassesEditPart extends ListCompartmentEditPart {
 		// nothing to do -- parent layout does not accept Double constraints as ratio
 		// super.setRatio(ratio); 
 	}
-	
+
 	/**
 	 * @NOT-generated
 	 */

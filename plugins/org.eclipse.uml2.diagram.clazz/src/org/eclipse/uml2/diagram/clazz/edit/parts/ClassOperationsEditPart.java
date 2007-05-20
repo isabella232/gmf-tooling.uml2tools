@@ -58,6 +58,7 @@ public class ClassOperationsEditPart extends ListCompartmentEditPart {
 		installEditPolicy(EditPolicyRoles.SEMANTIC_ROLE, new ClassOperationsItemSemanticEditPolicy());
 		installEditPolicy(EditPolicyRoles.CREATION_ROLE, new CreationEditPolicy());
 		installEditPolicy(EditPolicyRoles.DRAG_DROP_ROLE, new DragDropEditPolicy());
+		installEditPolicy(EditPolicyRoles.CANONICAL_ROLE, new ClassOperationsCanonicalEditPolicy());
 	}
 
 	/**
@@ -80,6 +81,5 @@ public class ClassOperationsEditPart extends ListCompartmentEditPart {
 		}
 		return result;
 	}
-
 
 }

@@ -97,7 +97,7 @@ public class AssociationEditPart extends ConnectionNodeEditPart {
 		}
 		Property sourceEnd = AssociationEndConvention.getSourceEnd(association);
 		Property targetEnd = AssociationEndConvention.getTargetEnd(association);
-		
+
 		IPreferenceStore store = (IPreferenceStore) getDiagramPreferencesHint().getPreferenceStore();
 
 		linkFigure.getSourceDecorationImpl().update(association, sourceEnd, targetEnd, store);

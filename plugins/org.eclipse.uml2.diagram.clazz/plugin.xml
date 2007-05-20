@@ -276,90 +276,14 @@
             checkPluginLoaded="false">
          <Priority name="Low"/>
          <popupContribution class="org.eclipse.gmf.runtime.diagram.ui.providers.DiagramContextMenuProvider">
-            <popupStructuredContributionCriteria objectClass="org.eclipse.uml2.diagram.clazz.edit.parts.Package2EditPart"/>
-            <popupPredefinedItem id="deleteFromDiagramAction" remove="true"/>
-         </popupContribution>
-         <popupContribution class="org.eclipse.gmf.runtime.diagram.ui.providers.DiagramContextMenuProvider">
-            <popupStructuredContributionCriteria objectClass="org.eclipse.uml2.diagram.clazz.edit.parts.PackageNameEditPart"/>
-            <popupPredefinedItem id="deleteFromDiagramAction" remove="true"/>
-         </popupContribution>
-         <popupContribution class="org.eclipse.gmf.runtime.diagram.ui.providers.DiagramContextMenuProvider">
-            <popupStructuredContributionCriteria objectClass="org.eclipse.uml2.diagram.clazz.edit.parts.Class2EditPart"/>
-            <popupPredefinedItem id="deleteFromDiagramAction" remove="true"/>
-         </popupContribution>
-         <popupContribution class="org.eclipse.gmf.runtime.diagram.ui.providers.DiagramContextMenuProvider">
-            <popupStructuredContributionCriteria objectClass="org.eclipse.uml2.diagram.clazz.edit.parts.ClassNameEditPart"/>
-            <popupPredefinedItem id="deleteFromDiagramAction" remove="true"/>
-         </popupContribution>
-         <popupContribution class="org.eclipse.gmf.runtime.diagram.ui.providers.DiagramContextMenuProvider">
-            <popupStructuredContributionCriteria objectClass="org.eclipse.uml2.diagram.clazz.edit.parts.AssociationClass2EditPart"/>
-            <popupPredefinedItem id="deleteFromDiagramAction" remove="true"/>
-         </popupContribution>
-         <popupContribution class="org.eclipse.gmf.runtime.diagram.ui.providers.DiagramContextMenuProvider">
-            <popupStructuredContributionCriteria objectClass="org.eclipse.uml2.diagram.clazz.edit.parts.AssociationClassNameEditPart"/>
-            <popupPredefinedItem id="deleteFromDiagramAction" remove="true"/>
-         </popupContribution>
-         <popupContribution class="org.eclipse.gmf.runtime.diagram.ui.providers.DiagramContextMenuProvider">
-            <popupStructuredContributionCriteria objectClass="org.eclipse.uml2.diagram.clazz.edit.parts.DataType2EditPart"/>
-            <popupPredefinedItem id="deleteFromDiagramAction" remove="true"/>
-         </popupContribution>
-         <popupContribution class="org.eclipse.gmf.runtime.diagram.ui.providers.DiagramContextMenuProvider">
-            <popupStructuredContributionCriteria objectClass="org.eclipse.uml2.diagram.clazz.edit.parts.DataTypeNameEditPart"/>
-            <popupPredefinedItem id="deleteFromDiagramAction" remove="true"/>
-         </popupContribution>
-         <popupContribution class="org.eclipse.gmf.runtime.diagram.ui.providers.DiagramContextMenuProvider">
-            <popupStructuredContributionCriteria objectClass="org.eclipse.uml2.diagram.clazz.edit.parts.PrimitiveType2EditPart"/>
-            <popupPredefinedItem id="deleteFromDiagramAction" remove="true"/>
-         </popupContribution>
-         <popupContribution class="org.eclipse.gmf.runtime.diagram.ui.providers.DiagramContextMenuProvider">
-            <popupStructuredContributionCriteria objectClass="org.eclipse.uml2.diagram.clazz.edit.parts.PrimitiveTypeNameEditPart"/>
-            <popupPredefinedItem id="deleteFromDiagramAction" remove="true"/>
-         </popupContribution>
-         <popupContribution class="org.eclipse.gmf.runtime.diagram.ui.providers.DiagramContextMenuProvider">
-            <popupStructuredContributionCriteria objectClass="org.eclipse.uml2.diagram.clazz.edit.parts.Enumeration2EditPart"/>
-            <popupPredefinedItem id="deleteFromDiagramAction" remove="true"/>
-         </popupContribution>
-         <popupContribution class="org.eclipse.gmf.runtime.diagram.ui.providers.DiagramContextMenuProvider">
-            <popupStructuredContributionCriteria objectClass="org.eclipse.uml2.diagram.clazz.edit.parts.EnumerationNameEditPart"/>
-            <popupPredefinedItem id="deleteFromDiagramAction" remove="true"/>
-         </popupContribution>
-         <popupContribution class="org.eclipse.gmf.runtime.diagram.ui.providers.DiagramContextMenuProvider">
-            <popupStructuredContributionCriteria objectClass="org.eclipse.uml2.diagram.clazz.edit.parts.InterfaceEditPart"/>
-            <popupPredefinedItem id="deleteFromDiagramAction" remove="true"/>
-         </popupContribution>
-         <popupContribution class="org.eclipse.gmf.runtime.diagram.ui.providers.DiagramContextMenuProvider">
             <popupStructuredContributionCriteria objectClass="org.eclipse.uml2.diagram.clazz.edit.parts.InterfaceNameEditPart"/>
             <popupPredefinedItem id="deleteFromDiagramAction" remove="true"/>
             <popupPredefinedItem id="deleteFromModelAction" remove="true"/>
          </popupContribution>
          <popupContribution class="org.eclipse.gmf.runtime.diagram.ui.providers.DiagramContextMenuProvider">
-            <popupStructuredContributionCriteria objectClass="org.eclipse.uml2.diagram.clazz.edit.parts.ConstraintEditPart"/>
-            <popupPredefinedItem id="deleteFromDiagramAction" remove="true"/>
-         </popupContribution>
-         <popupContribution class="org.eclipse.gmf.runtime.diagram.ui.providers.DiagramContextMenuProvider">
-            <popupStructuredContributionCriteria objectClass="org.eclipse.uml2.diagram.clazz.edit.parts.ConstraintNameEditPart"/>
-            <popupPredefinedItem id="deleteFromDiagramAction" remove="true"/>
-         </popupContribution>
-         <popupContribution class="org.eclipse.gmf.runtime.diagram.ui.providers.DiagramContextMenuProvider">
-            <popupStructuredContributionCriteria objectClass="org.eclipse.uml2.diagram.clazz.edit.parts.InstanceSpecification2EditPart"/>
-            <popupPredefinedItem id="deleteFromDiagramAction" remove="true"/>
-         </popupContribution>
-         <popupContribution class="org.eclipse.gmf.runtime.diagram.ui.providers.DiagramContextMenuProvider">
-            <popupStructuredContributionCriteria objectClass="org.eclipse.uml2.diagram.clazz.edit.parts.InstanceSpecificationNameEditPart"/>
-            <popupPredefinedItem id="deleteFromDiagramAction" remove="true"/>
-         </popupContribution>
-         <popupContribution class="org.eclipse.gmf.runtime.diagram.ui.providers.DiagramContextMenuProvider">
-            <popupStructuredContributionCriteria objectClass="org.eclipse.uml2.diagram.clazz.edit.parts.DependencyEditPart"/>
-            <popupPredefinedItem id="deleteFromDiagramAction" remove="true"/>
-         </popupContribution>
-         <popupContribution class="org.eclipse.gmf.runtime.diagram.ui.providers.DiagramContextMenuProvider">
             <popupStructuredContributionCriteria objectClass="org.eclipse.uml2.diagram.clazz.edit.parts.DependencyNameEditPart"/>
             <popupPredefinedItem id="deleteFromDiagramAction" remove="true"/>
             <popupPredefinedItem id="deleteFromModelAction" remove="true"/>
-         </popupContribution>
-         <popupContribution class="org.eclipse.gmf.runtime.diagram.ui.providers.DiagramContextMenuProvider">
-            <popupStructuredContributionCriteria objectClass="org.eclipse.uml2.diagram.clazz.edit.parts.GeneralizationSetEditPart"/>
-            <popupPredefinedItem id="deleteFromDiagramAction" remove="true"/>
          </popupContribution>
          <popupContribution class="org.eclipse.gmf.runtime.diagram.ui.providers.DiagramContextMenuProvider">
             <popupStructuredContributionCriteria objectClass="org.eclipse.uml2.diagram.clazz.edit.parts.GeneralizationSetIsCoveringIsDisjointEditPart"/>
@@ -372,129 +296,9 @@
             <popupPredefinedItem id="deleteFromModelAction" remove="true"/>
          </popupContribution>
          <popupContribution class="org.eclipse.gmf.runtime.diagram.ui.providers.DiagramContextMenuProvider">
-            <popupStructuredContributionCriteria objectClass="org.eclipse.uml2.diagram.clazz.edit.parts.Interface2EditPart"/>
-            <popupPredefinedItem id="deleteFromDiagramAction" remove="true"/>
-         </popupContribution>
-         <popupContribution class="org.eclipse.gmf.runtime.diagram.ui.providers.DiagramContextMenuProvider">
-            <popupStructuredContributionCriteria objectClass="org.eclipse.uml2.diagram.clazz.edit.parts.InterfaceName2EditPart"/>
-            <popupPredefinedItem id="deleteFromDiagramAction" remove="true"/>
-         </popupContribution>
-         <popupContribution class="org.eclipse.gmf.runtime.diagram.ui.providers.DiagramContextMenuProvider">
-            <popupStructuredContributionCriteria objectClass="org.eclipse.uml2.diagram.clazz.edit.parts.Package3EditPart"/>
-            <popupPredefinedItem id="deleteFromDiagramAction" remove="true"/>
-         </popupContribution>
-         <popupContribution class="org.eclipse.gmf.runtime.diagram.ui.providers.DiagramContextMenuProvider">
-            <popupStructuredContributionCriteria objectClass="org.eclipse.uml2.diagram.clazz.edit.parts.ClassEditPart"/>
-            <popupPredefinedItem id="deleteFromDiagramAction" remove="true"/>
-         </popupContribution>
-         <popupContribution class="org.eclipse.gmf.runtime.diagram.ui.providers.DiagramContextMenuProvider">
-            <popupStructuredContributionCriteria objectClass="org.eclipse.uml2.diagram.clazz.edit.parts.DataTypeEditPart"/>
-            <popupPredefinedItem id="deleteFromDiagramAction" remove="true"/>
-         </popupContribution>
-         <popupContribution class="org.eclipse.gmf.runtime.diagram.ui.providers.DiagramContextMenuProvider">
-            <popupStructuredContributionCriteria objectClass="org.eclipse.uml2.diagram.clazz.edit.parts.PrimitiveTypeEditPart"/>
-            <popupPredefinedItem id="deleteFromDiagramAction" remove="true"/>
-         </popupContribution>
-         <popupContribution class="org.eclipse.gmf.runtime.diagram.ui.providers.DiagramContextMenuProvider">
-            <popupStructuredContributionCriteria objectClass="org.eclipse.uml2.diagram.clazz.edit.parts.EnumerationEditPart"/>
-            <popupPredefinedItem id="deleteFromDiagramAction" remove="true"/>
-         </popupContribution>
-         <popupContribution class="org.eclipse.gmf.runtime.diagram.ui.providers.DiagramContextMenuProvider">
-            <popupStructuredContributionCriteria objectClass="org.eclipse.uml2.diagram.clazz.edit.parts.AssociationClassEditPart"/>
-            <popupPredefinedItem id="deleteFromDiagramAction" remove="true"/>
-         </popupContribution>
-         <popupContribution class="org.eclipse.gmf.runtime.diagram.ui.providers.DiagramContextMenuProvider">
-            <popupStructuredContributionCriteria objectClass="org.eclipse.uml2.diagram.clazz.edit.parts.InstanceSpecificationEditPart"/>
-            <popupPredefinedItem id="deleteFromDiagramAction" remove="true"/>
-         </popupContribution>
-         <popupContribution class="org.eclipse.gmf.runtime.diagram.ui.providers.DiagramContextMenuProvider">
-            <popupStructuredContributionCriteria objectClass="org.eclipse.uml2.diagram.clazz.edit.parts.PropertyEditPart"/>
-            <popupPredefinedItem id="deleteFromDiagramAction" remove="true"/>
-         </popupContribution>
-         <popupContribution class="org.eclipse.gmf.runtime.diagram.ui.providers.DiagramContextMenuProvider">
-            <popupStructuredContributionCriteria objectClass="org.eclipse.uml2.diagram.clazz.edit.parts.OperationEditPart"/>
-            <popupPredefinedItem id="deleteFromDiagramAction" remove="true"/>
-         </popupContribution>
-         <popupContribution class="org.eclipse.gmf.runtime.diagram.ui.providers.DiagramContextMenuProvider">
-            <popupStructuredContributionCriteria objectClass="org.eclipse.uml2.diagram.clazz.edit.parts.Class3EditPart"/>
-            <popupPredefinedItem id="deleteFromDiagramAction" remove="true"/>
-         </popupContribution>
-         <popupContribution class="org.eclipse.gmf.runtime.diagram.ui.providers.DiagramContextMenuProvider">
-            <popupStructuredContributionCriteria objectClass="org.eclipse.uml2.diagram.clazz.edit.parts.PortEditPart"/>
-            <popupPredefinedItem id="deleteFromDiagramAction" remove="true"/>
-         </popupContribution>
-         <popupContribution class="org.eclipse.gmf.runtime.diagram.ui.providers.DiagramContextMenuProvider">
             <popupStructuredContributionCriteria objectClass="org.eclipse.uml2.diagram.clazz.edit.parts.PortNameEditPart"/>
             <popupPredefinedItem id="deleteFromDiagramAction" remove="true"/>
             <popupPredefinedItem id="deleteFromModelAction" remove="true"/>
-         </popupContribution>
-         <popupContribution class="org.eclipse.gmf.runtime.diagram.ui.providers.DiagramContextMenuProvider">
-            <popupStructuredContributionCriteria objectClass="org.eclipse.uml2.diagram.clazz.edit.parts.RedefinableTemplateSignatureEditPart"/>
-            <popupPredefinedItem id="deleteFromDiagramAction" remove="true"/>
-         </popupContribution>
-         <popupContribution class="org.eclipse.gmf.runtime.diagram.ui.providers.DiagramContextMenuProvider">
-            <popupStructuredContributionCriteria objectClass="org.eclipse.uml2.diagram.clazz.edit.parts.TemplateSignatureNode_signatureEditPart"/>
-            <popupPredefinedItem id="deleteFromDiagramAction" remove="true"/>
-         </popupContribution>
-         <popupContribution class="org.eclipse.gmf.runtime.diagram.ui.providers.DiagramContextMenuProvider">
-            <popupStructuredContributionCriteria objectClass="org.eclipse.uml2.diagram.clazz.edit.parts.Property2EditPart"/>
-            <popupPredefinedItem id="deleteFromDiagramAction" remove="true"/>
-         </popupContribution>
-         <popupContribution class="org.eclipse.gmf.runtime.diagram.ui.providers.DiagramContextMenuProvider">
-            <popupStructuredContributionCriteria objectClass="org.eclipse.uml2.diagram.clazz.edit.parts.Operation2EditPart"/>
-            <popupPredefinedItem id="deleteFromDiagramAction" remove="true"/>
-         </popupContribution>
-         <popupContribution class="org.eclipse.gmf.runtime.diagram.ui.providers.DiagramContextMenuProvider">
-            <popupStructuredContributionCriteria objectClass="org.eclipse.uml2.diagram.clazz.edit.parts.Property3EditPart"/>
-            <popupPredefinedItem id="deleteFromDiagramAction" remove="true"/>
-         </popupContribution>
-         <popupContribution class="org.eclipse.gmf.runtime.diagram.ui.providers.DiagramContextMenuProvider">
-            <popupStructuredContributionCriteria objectClass="org.eclipse.uml2.diagram.clazz.edit.parts.Operation3EditPart"/>
-            <popupPredefinedItem id="deleteFromDiagramAction" remove="true"/>
-         </popupContribution>
-         <popupContribution class="org.eclipse.gmf.runtime.diagram.ui.providers.DiagramContextMenuProvider">
-            <popupStructuredContributionCriteria objectClass="org.eclipse.uml2.diagram.clazz.edit.parts.Property4EditPart"/>
-            <popupPredefinedItem id="deleteFromDiagramAction" remove="true"/>
-         </popupContribution>
-         <popupContribution class="org.eclipse.gmf.runtime.diagram.ui.providers.DiagramContextMenuProvider">
-            <popupStructuredContributionCriteria objectClass="org.eclipse.uml2.diagram.clazz.edit.parts.Operation4EditPart"/>
-            <popupPredefinedItem id="deleteFromDiagramAction" remove="true"/>
-         </popupContribution>
-         <popupContribution class="org.eclipse.gmf.runtime.diagram.ui.providers.DiagramContextMenuProvider">
-            <popupStructuredContributionCriteria objectClass="org.eclipse.uml2.diagram.clazz.edit.parts.EnumerationLiteralEditPart"/>
-            <popupPredefinedItem id="deleteFromDiagramAction" remove="true"/>
-         </popupContribution>
-         <popupContribution class="org.eclipse.gmf.runtime.diagram.ui.providers.DiagramContextMenuProvider">
-            <popupStructuredContributionCriteria objectClass="org.eclipse.uml2.diagram.clazz.edit.parts.Property5EditPart"/>
-            <popupPredefinedItem id="deleteFromDiagramAction" remove="true"/>
-         </popupContribution>
-         <popupContribution class="org.eclipse.gmf.runtime.diagram.ui.providers.DiagramContextMenuProvider">
-            <popupStructuredContributionCriteria objectClass="org.eclipse.uml2.diagram.clazz.edit.parts.Operation5EditPart"/>
-            <popupPredefinedItem id="deleteFromDiagramAction" remove="true"/>
-         </popupContribution>
-         <popupContribution class="org.eclipse.gmf.runtime.diagram.ui.providers.DiagramContextMenuProvider">
-            <popupStructuredContributionCriteria objectClass="org.eclipse.uml2.diagram.clazz.edit.parts.SlotEditPart"/>
-            <popupPredefinedItem id="deleteFromDiagramAction" remove="true"/>
-         </popupContribution>
-         <popupContribution class="org.eclipse.gmf.runtime.diagram.ui.providers.DiagramContextMenuProvider">
-            <popupStructuredContributionCriteria objectClass="org.eclipse.uml2.diagram.clazz.edit.parts.Property6EditPart"/>
-            <popupPredefinedItem id="deleteFromDiagramAction" remove="true"/>
-         </popupContribution>
-         <popupContribution class="org.eclipse.gmf.runtime.diagram.ui.providers.DiagramContextMenuProvider">
-            <popupStructuredContributionCriteria objectClass="org.eclipse.uml2.diagram.clazz.edit.parts.Operation6EditPart"/>
-            <popupPredefinedItem id="deleteFromDiagramAction" remove="true"/>
-         </popupContribution>
-         <popupContribution class="org.eclipse.gmf.runtime.diagram.ui.providers.DiagramContextMenuProvider">
-            <popupStructuredContributionCriteria objectClass="org.eclipse.uml2.diagram.clazz.edit.parts.Class4EditPart"/>
-            <popupPredefinedItem id="deleteFromDiagramAction" remove="true"/>
-         </popupContribution>
-         <popupContribution class="org.eclipse.gmf.runtime.diagram.ui.providers.DiagramContextMenuProvider">
-            <popupStructuredContributionCriteria objectClass="org.eclipse.uml2.diagram.clazz.edit.parts.GeneralizationEditPart"/>
-            <popupPredefinedItem id="deleteFromDiagramAction" remove="true"/>
-         </popupContribution>
-         <popupContribution class="org.eclipse.gmf.runtime.diagram.ui.providers.DiagramContextMenuProvider">
-            <popupStructuredContributionCriteria objectClass="org.eclipse.uml2.diagram.clazz.edit.parts.Dependency2EditPart"/>
-            <popupPredefinedItem id="deleteFromDiagramAction" remove="true"/>
          </popupContribution>
          <popupContribution class="org.eclipse.gmf.runtime.diagram.ui.providers.DiagramContextMenuProvider">
             <popupStructuredContributionCriteria objectClass="org.eclipse.uml2.diagram.clazz.edit.parts.DependencyName2EditPart"/>
@@ -507,10 +311,6 @@
             <popupPredefinedItem id="deleteFromModelAction" remove="true"/>
          </popupContribution>
          <popupContribution class="org.eclipse.gmf.runtime.diagram.ui.providers.DiagramContextMenuProvider">
-            <popupStructuredContributionCriteria objectClass="org.eclipse.uml2.diagram.clazz.edit.parts.Property7EditPart"/>
-            <popupPredefinedItem id="deleteFromDiagramAction" remove="true"/>
-         </popupContribution>
-         <popupContribution class="org.eclipse.gmf.runtime.diagram.ui.providers.DiagramContextMenuProvider">
             <popupStructuredContributionCriteria objectClass="org.eclipse.uml2.diagram.clazz.edit.parts.PropertyNameEditPart"/>
             <popupPredefinedItem id="deleteFromDiagramAction" remove="true"/>
             <popupPredefinedItem id="deleteFromModelAction" remove="true"/>
@@ -518,9 +318,6 @@
          <popupContribution class="org.eclipse.gmf.runtime.diagram.ui.providers.DiagramContextMenuProvider">
             <popupStructuredContributionCriteria objectClass="org.eclipse.uml2.diagram.clazz.edit.parts.ConstraintConstrainedElementEditPart"/>
             <popupAction path="/editGroup" id="deleteFromModelAction"/>
-         </popupContribution>
-         <popupContribution class="org.eclipse.gmf.runtime.diagram.ui.providers.DiagramContextMenuProvider">
-            <popupStructuredContributionCriteria objectClass="org.eclipse.uml2.diagram.clazz.edit.parts.AssociationEditPart"/>
             <popupPredefinedItem id="deleteFromDiagramAction" remove="true"/>
          </popupContribution>
          <popupContribution class="org.eclipse.gmf.runtime.diagram.ui.providers.DiagramContextMenuProvider">
@@ -561,17 +358,11 @@
          <popupContribution class="org.eclipse.gmf.runtime.diagram.ui.providers.DiagramContextMenuProvider">
             <popupStructuredContributionCriteria objectClass="org.eclipse.uml2.diagram.clazz.edit.parts.DependencySupplierEditPart"/>
             <popupAction path="/editGroup" id="deleteFromModelAction"/>
+            <popupPredefinedItem id="deleteFromDiagramAction" remove="true"/>
          </popupContribution>
          <popupContribution class="org.eclipse.gmf.runtime.diagram.ui.providers.DiagramContextMenuProvider">
             <popupStructuredContributionCriteria objectClass="org.eclipse.uml2.diagram.clazz.edit.parts.DependencyClientEditPart"/>
             <popupAction path="/editGroup" id="deleteFromModelAction"/>
-         </popupContribution>
-         <popupContribution class="org.eclipse.gmf.runtime.diagram.ui.providers.DiagramContextMenuProvider">
-            <popupStructuredContributionCriteria objectClass="org.eclipse.uml2.diagram.clazz.edit.parts.InterfaceRealizationEditPart"/>
-            <popupPredefinedItem id="deleteFromDiagramAction" remove="true"/>
-         </popupContribution>
-         <popupContribution class="org.eclipse.gmf.runtime.diagram.ui.providers.DiagramContextMenuProvider">
-            <popupStructuredContributionCriteria objectClass="org.eclipse.uml2.diagram.clazz.edit.parts.RealizationEditPart"/>
             <popupPredefinedItem id="deleteFromDiagramAction" remove="true"/>
          </popupContribution>
          <popupContribution class="org.eclipse.gmf.runtime.diagram.ui.providers.DiagramContextMenuProvider">
@@ -580,15 +371,8 @@
             <popupPredefinedItem id="deleteFromModelAction" remove="true"/>
          </popupContribution>
          <popupContribution class="org.eclipse.gmf.runtime.diagram.ui.providers.DiagramContextMenuProvider">
-            <popupStructuredContributionCriteria objectClass="org.eclipse.uml2.diagram.clazz.edit.parts.Generalization2EditPart"/>
-            <popupPredefinedItem id="deleteFromDiagramAction" remove="true"/>
-         </popupContribution>
-         <popupContribution class="org.eclipse.gmf.runtime.diagram.ui.providers.DiagramContextMenuProvider">
             <popupStructuredContributionCriteria objectClass="org.eclipse.uml2.diagram.clazz.edit.parts.GeneralizationGeneralEditPart"/>
             <popupAction path="/editGroup" id="deleteFromModelAction"/>
-         </popupContribution>
-         <popupContribution class="org.eclipse.gmf.runtime.diagram.ui.providers.DiagramContextMenuProvider">
-            <popupStructuredContributionCriteria objectClass="org.eclipse.uml2.diagram.clazz.edit.parts.UsageEditPart"/>
             <popupPredefinedItem id="deleteFromDiagramAction" remove="true"/>
          </popupContribution>
       </contributionItemProvider>

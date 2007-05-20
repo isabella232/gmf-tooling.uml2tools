@@ -14,6 +14,7 @@ import org.eclipse.gmf.runtime.diagram.ui.editpolicies.ResizableCompartmentEditP
 import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.jface.preference.IPreferenceStore;
 import org.eclipse.uml2.diagram.clazz.details.UMLDetailLevelService;
+import org.eclipse.uml2.diagram.clazz.edit.policies.ClassAttributesCanonicalEditPolicy;
 import org.eclipse.uml2.diagram.clazz.edit.policies.ClassAttributesItemSemanticEditPolicy;
 import org.eclipse.uml2.diagram.clazz.part.Messages;
 
@@ -57,6 +58,7 @@ public class ClassAttributesEditPart extends ListCompartmentEditPart {
 		installEditPolicy(EditPolicyRoles.SEMANTIC_ROLE, new ClassAttributesItemSemanticEditPolicy());
 		installEditPolicy(EditPolicyRoles.CREATION_ROLE, new CreationEditPolicy());
 		installEditPolicy(EditPolicyRoles.DRAG_DROP_ROLE, new DragDropEditPolicy());
+		installEditPolicy(EditPolicyRoles.CANONICAL_ROLE, new ClassAttributesCanonicalEditPolicy());
 	}
 
 	/**

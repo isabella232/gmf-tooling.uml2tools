@@ -56,6 +56,7 @@ public class InterfaceAttributesEditPart extends ListCompartmentEditPart {
 		installEditPolicy(EditPolicyRoles.SEMANTIC_ROLE, new InterfaceAttributesItemSemanticEditPolicy());
 		installEditPolicy(EditPolicyRoles.CREATION_ROLE, new CreationEditPolicy());
 		installEditPolicy(EditPolicyRoles.DRAG_DROP_ROLE, new DragDropEditPolicy());
+		installEditPolicy(EditPolicyRoles.CANONICAL_ROLE, new InterfaceAttributesCanonicalEditPolicy());
 	}
 
 	/**
@@ -78,5 +79,5 @@ public class InterfaceAttributesEditPart extends ListCompartmentEditPart {
 		}
 		return result;
 	}
-	
+
 }
