@@ -46,5 +46,4 @@ public class Package3ViewFactory extends AbstractLabelViewFactory {
 			view.getEAnnotations().add(shortcutAnnotation);
 		}
 	}
-
 }

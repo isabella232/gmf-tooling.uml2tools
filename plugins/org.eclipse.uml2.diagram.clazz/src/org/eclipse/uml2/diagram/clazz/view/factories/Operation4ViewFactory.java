@@ -46,5 +46,4 @@ public class Operation4ViewFactory extends AbstractLabelViewFactory {
 			view.getEAnnotations().add(shortcutAnnotation);
 		}
 	}
-
 }

@@ -49,5 +49,4 @@ public class DependencySupplierViewFactory extends ConnectionViewFactory {
 			view.getEAnnotations().add(shortcutAnnotation);
 		}
 	}
-
 }

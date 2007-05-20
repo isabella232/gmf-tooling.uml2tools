@@ -65,5 +65,4 @@ public class AssociationViewFactory extends ConnectionViewFactory {
 		getViewService().createNode(semanticAdapter, view, UMLVisualIDRegistry.getType(AssociationName6EditPart.VISUAL_ID), ViewUtil.APPEND, true, getPreferencesHint());
 		getViewService().createNode(semanticAdapter, view, UMLVisualIDRegistry.getType(AssociationName7EditPart.VISUAL_ID), ViewUtil.APPEND, true, getPreferencesHint());
 	}
-
 }

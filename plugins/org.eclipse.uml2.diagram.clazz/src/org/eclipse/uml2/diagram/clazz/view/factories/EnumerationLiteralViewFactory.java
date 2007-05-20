@@ -46,5 +46,4 @@ public class EnumerationLiteralViewFactory extends AbstractLabelViewFactory {
 			view.getEAnnotations().add(shortcutAnnotation);
 		}
 	}
-
 }

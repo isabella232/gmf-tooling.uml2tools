@@ -75,5 +75,4 @@ public class InstanceSpecificationSlotsViewFactory extends ListCompartmentViewFa
 			drawerStyle.setCollapsed(false);
 		}
 	}
-
 }

@@ -46,5 +46,4 @@ public class Property2ViewFactory extends AbstractLabelViewFactory {
 			view.getEAnnotations().add(shortcutAnnotation);
 		}
 	}
-
 }

@@ -34,10 +34,7 @@ public class AssociationClass2ViewFactory extends AbstractShapeViewFactory {
 	 */
 	protected List createStyles(View view) {
 		List styles = new ArrayList();
-		styles.add(NotationFactory.eINSTANCE.createFontStyle());
-		styles.add(NotationFactory.eINSTANCE.createDescriptionStyle());
-		styles.add(NotationFactory.eINSTANCE.createFillStyle());
-		styles.add(NotationFactory.eINSTANCE.createLineStyle());
+		styles.add(NotationFactory.eINSTANCE.createShapeStyle());
 		return styles;
 	}
 
@@ -61,5 +58,4 @@ public class AssociationClass2ViewFactory extends AbstractShapeViewFactory {
 		getViewService().createNode(semanticAdapter, view, UMLVisualIDRegistry.getType(AssociationClassOperationsEditPart.VISUAL_ID), ViewUtil.APPEND, true, getPreferencesHint());
 		getViewService().createNode(semanticAdapter, view, UMLVisualIDRegistry.getType(AssociationClassClassesEditPart.VISUAL_ID), ViewUtil.APPEND, true, getPreferencesHint());
 	}
-
 }

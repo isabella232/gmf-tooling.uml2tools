@@ -55,5 +55,4 @@ public class Dependency2ViewFactory extends ConnectionViewFactory {
 		getViewService().createNode(semanticAdapter, view, UMLVisualIDRegistry.getType(DependencyName2EditPart.VISUAL_ID), ViewUtil.APPEND, true, getPreferencesHint());
 		getViewService().createNode(semanticAdapter, view, UMLVisualIDRegistry.getType(DependencyName3EditPart.VISUAL_ID), ViewUtil.APPEND, true, getPreferencesHint());
 	}
-
 }

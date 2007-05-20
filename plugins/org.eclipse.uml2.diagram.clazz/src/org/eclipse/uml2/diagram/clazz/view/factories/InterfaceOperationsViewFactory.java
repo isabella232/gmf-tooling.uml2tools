@@ -65,7 +65,7 @@ public class InterfaceOperationsViewFactory extends ListCompartmentViewFactory {
 		decorateViewGen(containerView, view, semanticAdapter, semanticHint, index, persisted);
 		UMLDetailLevelService.getLevel(view).init(view); // XXX: [171240] regenerate with DetailLevelAttributes
 	}
-	
+
 	/**
 	 * @generated
 	 */

@@ -38,7 +38,6 @@ public class PrimitiveTypeOperationsViewFactory extends ListCompartmentViewFacto
 		styles.add(NotationFactory.eINSTANCE.createFilteringStyle());
 		return styles;
 	}
-	
 
 	/**
 	 * @generated
@@ -66,7 +65,7 @@ public class PrimitiveTypeOperationsViewFactory extends ListCompartmentViewFacto
 		decorateViewGen(containerView, view, semanticAdapter, semanticHint, index, persisted);
 		UMLDetailLevelService.getLevel(view).init(view); // XXX: [171240] regenerate with DetailLevelAttributes
 	}
-	
+
 	/**
 	 * @generated
 	 */

@@ -46,5 +46,4 @@ public class InstanceSpecificationViewFactory extends AbstractLabelViewFactory {
 			view.getEAnnotations().add(shortcutAnnotation);
 		}
 	}
-
 }

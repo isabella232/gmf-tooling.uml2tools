@@ -53,5 +53,4 @@ public class RealizationViewFactory extends ConnectionViewFactory {
 		}
 		getViewService().createNode(semanticAdapter, view, UMLVisualIDRegistry.getType(RealizationNameEditPart.VISUAL_ID), ViewUtil.APPEND, true, getPreferencesHint());
 	}
-
 }
