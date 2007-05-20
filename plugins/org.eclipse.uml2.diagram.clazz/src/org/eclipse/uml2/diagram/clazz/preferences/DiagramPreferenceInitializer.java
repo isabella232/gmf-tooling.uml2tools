@@ -29,6 +29,7 @@ public class DiagramPreferenceInitializer extends AbstractPreferenceInitializer 
 		IPreferenceStore store = getPreferenceStore();
 		DiagramGeneralPreferencePage.initNavigationArrowsOptions(store);
 	}
+
 	/**
 	 * @generated
 	 */

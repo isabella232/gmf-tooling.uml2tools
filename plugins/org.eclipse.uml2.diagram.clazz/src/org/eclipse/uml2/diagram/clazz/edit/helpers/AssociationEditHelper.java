@@ -33,6 +33,7 @@ public class AssociationEditHelper extends UMLBaseEditHelper {
 	 * @NOT-generated
 	 */
 	public static class SetAggregationKindRequest extends SetRequest {
+
 		// Regarding getTargetEnd() below : consider link from S to T.
 		// composition diamond at the side of S (source) represents aggregation = composite 
 		// for property end t : T that is placed at target end.

@@ -298,7 +298,8 @@ public class UMLPaletteFactory {
 	 * @generated NOT
 	 */
 	private ToolEntry createGeneralization3CreationTool() {
-		ToolEntry entry = new ToolEntry(Messages.Generalization3CreationTool_title, Messages.Generalization3CreationTool_desc, null, null) {};
+		ToolEntry entry = new ToolEntry(Messages.Generalization3CreationTool_title, Messages.Generalization3CreationTool_desc, null, null) {
+		};
 		entry.setSmallIcon(UMLElementTypes.getImageDescriptor(UMLElementTypes.Generalization_4001));
 		entry.setLargeIcon(entry.getSmallIcon());
 		entry.setToolClass(CreateGeneralizationLinkTool.class);
@@ -436,6 +437,7 @@ public class UMLPaletteFactory {
 		entry.setToolClass(CreateAssociationLinkTool.SHARED.class);
 		return entry;
 	}
+
 	/**
 	 * @generated NOT
 	 */
@@ -455,6 +457,7 @@ public class UMLPaletteFactory {
 		entry.setToolClass(CreateAssociationLinkTool.COMPOSITE.class);
 		return entry;
 	}
+
 	/**
 	 * @generated NOT
 	 */
@@ -487,7 +490,7 @@ public class UMLPaletteFactory {
 		entry.setToolClass(CreateDependencyLinkTool.ABSTRACTION.class);
 		return entry;
 	}
-	
+
 	/**
 	 * @generated NOT
 	 */
