@@ -72,6 +72,7 @@ import org.eclipse.uml2.diagram.activity.edit.parts.OpaqueBehaviorEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.OutputPin2EditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.OutputPin3EditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.OutputPinEditPart;
+import org.eclipse.uml2.diagram.activity.edit.parts.PackageEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.Pin2EditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.PinEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.StructuredActivityNode2EditPart;
@@ -488,6 +489,11 @@ public class PackageCanonicalEditPolicy extends CanonicalConnectionEditPolicy {
 		case ExceptionHandlerEditPart.VISUAL_ID: {
 			domain2NotationMap.put(view.getElement(), view);
 			result.addAll(UMLDiagramUpdater.getExceptionHandler_4005ContainedLinks(view));
+			break;
+		}
+		case PackageEditPart.VISUAL_ID: {
+			domain2NotationMap.put(view.getElement(), view);
+			result.addAll(UMLDiagramUpdater.getPackage_1000ContainedLinks(view));
 			break;
 		}
 		}

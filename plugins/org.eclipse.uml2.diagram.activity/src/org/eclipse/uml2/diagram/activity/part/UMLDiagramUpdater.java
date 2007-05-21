@@ -2970,4 +2970,11 @@ public class UMLDiagramUpdater {
 		return result;
 	}
 
+	/**
+	 * @generated
+	 */
+	public static List getPackage_1000ContainedLinks(View view) {
+		return Collections.EMPTY_LIST;
+	}
+
 }
