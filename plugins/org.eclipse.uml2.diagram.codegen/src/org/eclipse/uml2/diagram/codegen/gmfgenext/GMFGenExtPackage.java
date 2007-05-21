@@ -2,7 +2,7 @@
  * <copyright>
  * </copyright>
  *
- * $Id: GMFGenExtPackage.java,v 1.2 2007/05/20 19:31:35 mgolubev Exp $
+ * $Id: GMFGenExtPackage.java,v 1.3 2007/05/21 02:23:19 mgolubev Exp $
  */
 package org.eclipse.uml2.diagram.codegen.gmfgenext;
 
@@ -174,13 +174,13 @@ public interface GMFGenExtPackage extends EPackage {
 	int SUBSTITUTABLE_BY_ATTRIBUTES = 3;
 
 	/**
-	 * The feature id for the '<em><b>Substitutable By</b></em>' reference list.
+	 * The feature id for the '<em><b>Substitutable By IDs</b></em>' attribute list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SUBSTITUTABLE_BY_ATTRIBUTES__SUBSTITUTABLE_BY = GMFGenPackage.ATTRIBUTES_FEATURE_COUNT + 0;
+	int SUBSTITUTABLE_BY_ATTRIBUTES__SUBSTITUTABLE_BY_IDS = GMFGenPackage.ATTRIBUTES_FEATURE_COUNT + 0;
 
 	/**
 	 * The number of structural features of the '<em>Substitutable By Attributes</em>' class.
@@ -277,15 +277,15 @@ public interface GMFGenExtPackage extends EPackage {
 	EClass getSubstitutableByAttributes();
 
 	/**
-	 * Returns the meta object for the reference list '{@link org.eclipse.uml2.diagram.codegen.gmfgenext.SubstitutableByAttributes#getSubstitutableBy <em>Substitutable By</em>}'.
+	 * Returns the meta object for the attribute list '{@link org.eclipse.uml2.diagram.codegen.gmfgenext.SubstitutableByAttributes#getSubstitutableByIDs <em>Substitutable By IDs</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference list '<em>Substitutable By</em>'.
-	 * @see org.eclipse.uml2.diagram.codegen.gmfgenext.SubstitutableByAttributes#getSubstitutableBy()
+	 * @return the meta object for the attribute list '<em>Substitutable By IDs</em>'.
+	 * @see org.eclipse.uml2.diagram.codegen.gmfgenext.SubstitutableByAttributes#getSubstitutableByIDs()
 	 * @see #getSubstitutableByAttributes()
 	 * @generated
 	 */
-	EReference getSubstitutableByAttributes_SubstitutableBy();
+	EAttribute getSubstitutableByAttributes_SubstitutableByIDs();
 
 	/**
 	 * Returns the factory that creates the instances of the model.
@@ -382,12 +382,12 @@ public interface GMFGenExtPackage extends EPackage {
 		EClass SUBSTITUTABLE_BY_ATTRIBUTES = eINSTANCE.getSubstitutableByAttributes();
 
 		/**
-		 * The meta object literal for the '<em><b>Substitutable By</b></em>' reference list feature.
+		 * The meta object literal for the '<em><b>Substitutable By IDs</b></em>' attribute list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference SUBSTITUTABLE_BY_ATTRIBUTES__SUBSTITUTABLE_BY = eINSTANCE.getSubstitutableByAttributes_SubstitutableBy();
+		EAttribute SUBSTITUTABLE_BY_ATTRIBUTES__SUBSTITUTABLE_BY_IDS = eINSTANCE.getSubstitutableByAttributes_SubstitutableByIDs();
 
 	}
 

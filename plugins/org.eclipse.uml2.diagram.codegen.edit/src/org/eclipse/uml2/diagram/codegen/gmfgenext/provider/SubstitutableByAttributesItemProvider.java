@@ -2,7 +2,7 @@
  * <copyright>
  * </copyright>
  *
- * $Id: SubstitutableByAttributesItemProvider.java,v 1.1 2007/05/20 19:31:37 mgolubev Exp $
+ * $Id: SubstitutableByAttributesItemProvider.java,v 1.2 2007/05/21 02:22:09 mgolubev Exp $
  */
 package org.eclipse.uml2.diagram.codegen.gmfgenext.provider;
 
@@ -69,29 +69,29 @@ public class SubstitutableByAttributesItemProvider
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addSubstitutableByPropertyDescriptor(object);
+			addSubstitutableByIDsPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
 
 	/**
-	 * This adds a property descriptor for the Substitutable By feature.
+	 * This adds a property descriptor for the Substitutable By IDs feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addSubstitutableByPropertyDescriptor(Object object) {
+	protected void addSubstitutableByIDsPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_SubstitutableByAttributes_substitutableBy_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_SubstitutableByAttributes_substitutableBy_feature", "_UI_SubstitutableByAttributes_type"),
-				 GMFGenExtPackage.Literals.SUBSTITUTABLE_BY_ATTRIBUTES__SUBSTITUTABLE_BY,
+				 getString("_UI_SubstitutableByAttributes_substitutableByIDs_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_SubstitutableByAttributes_substitutableByIDs_feature", "_UI_SubstitutableByAttributes_type"),
+				 GMFGenExtPackage.Literals.SUBSTITUTABLE_BY_ATTRIBUTES__SUBSTITUTABLE_BY_IDS,
 				 true,
 				 false,
-				 true,
-				 null,
+				 false,
+				 ItemPropertyDescriptor.INTEGRAL_VALUE_IMAGE,
 				 null,
 				 null));
 	}
@@ -125,6 +125,12 @@ public class SubstitutableByAttributesItemProvider
 	 */
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
+
+		switch (notification.getFeatureID(SubstitutableByAttributes.class)) {
+			case GMFGenExtPackage.SUBSTITUTABLE_BY_ATTRIBUTES__SUBSTITUTABLE_BY_IDS:
+				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
+				return;
+		}
 		super.notifyChanged(notification);
 	}
 

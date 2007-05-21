@@ -2,20 +2,27 @@
  * <copyright>
  * </copyright>
  *
- * $Id: SubstitutableByAttributesImpl.java,v 1.1 2007/05/20 19:31:35 mgolubev Exp $
+ * $Id: SubstitutableByAttributesImpl.java,v 1.2 2007/05/21 02:23:18 mgolubev Exp $
  */
 package org.eclipse.uml2.diagram.codegen.gmfgenext.impl;
 
 import java.util.Collection;
+import java.util.HashMap;
 
+import org.eclipse.emf.common.util.BasicEList;
 import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EObject;
 
 import org.eclipse.emf.ecore.impl.EObjectImpl;
 
 import org.eclipse.emf.ecore.util.EObjectResolvingEList;
+import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.gmf.codegen.gmfgen.GenCommonBase;
+import org.eclipse.gmf.codegen.gmfgen.GenDiagram;
+import org.eclipse.gmf.codegen.gmfgen.GenNode;
+import org.eclipse.gmf.codegen.gmfgen.Viewmap;
 import org.eclipse.emf.ecore.util.EDataTypeUniqueEList;
 
 import org.eclipse.uml2.diagram.codegen.gmfgenext.GMFGenExtPackage;
@@ -28,7 +35,7 @@ import org.eclipse.uml2.diagram.codegen.gmfgenext.SubstitutableByAttributes;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.eclipse.uml2.diagram.codegen.gmfgenext.impl.SubstitutableByAttributesImpl#getSubstitutableBy <em>Substitutable By</em>}</li>
+ *   <li>{@link org.eclipse.uml2.diagram.codegen.gmfgenext.impl.SubstitutableByAttributesImpl#getSubstitutableByIDs <em>Substitutable By IDs</em>}</li>
  * </ul>
  * </p>
  *
@@ -43,14 +50,14 @@ public class SubstitutableByAttributesImpl extends EObjectImpl implements Substi
 	public static final String copyright = "";
 
 	/**
-	 * The cached value of the '{@link #getSubstitutableBy() <em>Substitutable By</em>}' reference list.
+	 * The cached value of the '{@link #getSubstitutableByIDs() <em>Substitutable By IDs</em>}' attribute list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getSubstitutableBy()
+	 * @see #getSubstitutableByIDs()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList substitutableBy = null;
+	protected EList substitutableByIDs = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -75,11 +82,50 @@ public class SubstitutableByAttributesImpl extends EObjectImpl implements Substi
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList getSubstitutableBy() {
-		if (substitutableBy == null) {
-			substitutableBy = new EObjectResolvingEList(GenCommonBase.class, this, GMFGenExtPackage.SUBSTITUTABLE_BY_ATTRIBUTES__SUBSTITUTABLE_BY);
+	public EList getSubstitutableByIDs() {
+		if (substitutableByIDs == null) {
+			substitutableByIDs = new EDataTypeUniqueEList(Integer.class, this, GMFGenExtPackage.SUBSTITUTABLE_BY_ATTRIBUTES__SUBSTITUTABLE_BY_IDS);
 		}
-		return substitutableBy;
+		return substitutableByIDs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated NOT
+	 */
+	public EList getSubstitutableByNodes() {
+		EList<GenCommonBase> result = new BasicEList<GenCommonBase>();
+		if (getSubstitutableByIDs().isEmpty()){
+			return result;
+		}
+		
+		GenDiagram diagram = findDiagram();
+		if (diagram == null){
+			return result;
+		}
+		
+		HashMap<Integer, GenNode> nodesMap = new HashMap<Integer, GenNode>();
+		for (GenNode next : diagram.getAllNodes()){
+			nodesMap.put(next.getVisualID(), next);
+		}
+
+		for (Object next : getSubstitutableByIDs()){
+			Integer nextId = (Integer)next;
+			GenNode nextNode = nodesMap.get(nextId);
+			if (nextNode != null){
+				result.add(nextNode);
+			}
+		}
+		return result;
+	}
+
+	private GenDiagram findDiagram() {
+		EObject next = this;
+		while(next != null && false == next instanceof GenDiagram){
+			next = next.eContainer();
+		}
+		return (GenDiagram)next;
 	}
 
 	/**
@@ -89,8 +135,8 @@ public class SubstitutableByAttributesImpl extends EObjectImpl implements Substi
 	 */
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case GMFGenExtPackage.SUBSTITUTABLE_BY_ATTRIBUTES__SUBSTITUTABLE_BY:
-				return getSubstitutableBy();
+			case GMFGenExtPackage.SUBSTITUTABLE_BY_ATTRIBUTES__SUBSTITUTABLE_BY_IDS:
+				return getSubstitutableByIDs();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -102,9 +148,9 @@ public class SubstitutableByAttributesImpl extends EObjectImpl implements Substi
 	 */
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case GMFGenExtPackage.SUBSTITUTABLE_BY_ATTRIBUTES__SUBSTITUTABLE_BY:
-				getSubstitutableBy().clear();
-				getSubstitutableBy().addAll((Collection)newValue);
+			case GMFGenExtPackage.SUBSTITUTABLE_BY_ATTRIBUTES__SUBSTITUTABLE_BY_IDS:
+				getSubstitutableByIDs().clear();
+				getSubstitutableByIDs().addAll((Collection)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -117,8 +163,8 @@ public class SubstitutableByAttributesImpl extends EObjectImpl implements Substi
 	 */
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case GMFGenExtPackage.SUBSTITUTABLE_BY_ATTRIBUTES__SUBSTITUTABLE_BY:
-				getSubstitutableBy().clear();
+			case GMFGenExtPackage.SUBSTITUTABLE_BY_ATTRIBUTES__SUBSTITUTABLE_BY_IDS:
+				getSubstitutableByIDs().clear();
 				return;
 		}
 		super.eUnset(featureID);
@@ -131,10 +177,25 @@ public class SubstitutableByAttributesImpl extends EObjectImpl implements Substi
 	 */
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case GMFGenExtPackage.SUBSTITUTABLE_BY_ATTRIBUTES__SUBSTITUTABLE_BY:
-				return substitutableBy != null && !substitutableBy.isEmpty();
+			case GMFGenExtPackage.SUBSTITUTABLE_BY_ATTRIBUTES__SUBSTITUTABLE_BY_IDS:
+				return substitutableByIDs != null && !substitutableByIDs.isEmpty();
 		}
 		return super.eIsSet(featureID);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String toString() {
+		if (eIsProxy()) return super.toString();
+
+		StringBuffer result = new StringBuffer(super.toString());
+		result.append(" (substitutableByIDs: ");
+		result.append(substitutableByIDs);
+		result.append(')');
+		return result.toString();
 	}
 
 } //SubstitutableByAttributesImpl

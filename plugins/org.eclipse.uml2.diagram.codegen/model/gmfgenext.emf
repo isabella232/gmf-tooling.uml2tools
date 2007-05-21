@@ -22,5 +22,6 @@ class DetailsLevelAttributes extends gmfgen.Attributes {
 
 class SubstitutableByAttributes extends gmfgen.Attributes {
 	@genmodel(documentation="Allows to have different notation for same semantic element. Diagram updater should choose some default notation, but should treat any of the substitutable nodes as correct representation for given semantic element")
-	ref gmfgen.GenCommonBase[*] substitutableBy;
+	attr int[*] substitutableByIDs;
+	op gmfgen.GenCommonBase[*] getSubstitutableByNodes();
 }

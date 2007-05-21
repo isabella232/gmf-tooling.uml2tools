@@ -18,7 +18,8 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute gmfgenext.ecore#//DetailsLevelAttributes/detailsAwareParser"/>
     </genClasses>
     <genClasses ecoreClass="gmfgenext.ecore#//SubstitutableByAttributes">
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference gmfgenext.ecore#//SubstitutableByAttributes/substitutableBy"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute gmfgenext.ecore#//SubstitutableByAttributes/substitutableByIDs"/>
+      <genOperations ecoreOperation="gmfgenext.ecore#//SubstitutableByAttributes/getSubstitutableByNodes"/>
     </genClasses>
   </genPackages>
 </genmodel:GenModel>

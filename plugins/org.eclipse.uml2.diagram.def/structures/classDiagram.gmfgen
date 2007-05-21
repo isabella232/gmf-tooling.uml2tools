@@ -1698,8 +1698,9 @@
         <attributes
             xsi:type="gmfgen:ResizeConstraints"/>
         <attributes
-            xsi:type="uml2.gmfgenext:SubstitutableByAttributes"
-            substitutableBy="//@diagram/@topLevelNodes.11"/>
+            xsi:type="uml2.gmfgenext:SubstitutableByAttributes">
+          <substitutableByIDs>2013</substitutableByIDs>
+        </attributes>
         <requiredPluginIDs>org.eclipse.draw2d</requiredPluginIDs>
         <requiredPluginIDs>org.eclipse.uml2.diagram.common</requiredPluginIDs>
         <requiredPluginIDs>org.eclipse.gmf.runtime.draw2d.ui</requiredPluginIDs>
@@ -2058,8 +2059,9 @@
             width="100"
             height="60"/>
         <attributes
-            xsi:type="uml2.gmfgenext:SubstitutableByAttributes"
-            substitutableBy="//@diagram/@topLevelNodes.6"/>
+            xsi:type="uml2.gmfgenext:SubstitutableByAttributes">
+          <substitutableByIDs>2010</substitutableByIDs>
+        </attributes>
         <requiredPluginIDs>org.eclipse.draw2d</requiredPluginIDs>
         <requiredPluginIDs>org.eclipse.uml2.diagram.common</requiredPluginIDs>
         <requiredPluginIDs>org.eclipse.gmf.runtime.draw2d.ui</requiredPluginIDs>

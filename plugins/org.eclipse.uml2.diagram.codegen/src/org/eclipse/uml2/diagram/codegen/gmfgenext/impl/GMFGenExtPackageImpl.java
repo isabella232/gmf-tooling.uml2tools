@@ -2,7 +2,7 @@
  * <copyright>
  * </copyright>
  *
- * $Id: GMFGenExtPackageImpl.java,v 1.2 2007/05/20 19:31:35 mgolubev Exp $
+ * $Id: GMFGenExtPackageImpl.java,v 1.3 2007/05/21 02:23:18 mgolubev Exp $
  */
 package org.eclipse.uml2.diagram.codegen.gmfgenext.impl;
 
@@ -10,6 +10,7 @@ import org.eclipse.emf.codegen.ecore.genmodel.GenModelPackage;
 
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EOperation;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 import org.eclipse.emf.ecore.EcorePackage;
@@ -217,8 +218,8 @@ public class GMFGenExtPackageImpl extends EPackageImpl implements GMFGenExtPacka
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getSubstitutableByAttributes_SubstitutableBy() {
-		return (EReference)substitutableByAttributesEClass.getEStructuralFeatures().get(0);
+	public EAttribute getSubstitutableByAttributes_SubstitutableByIDs() {
+		return (EAttribute)substitutableByAttributesEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -260,7 +261,7 @@ public class GMFGenExtPackageImpl extends EPackageImpl implements GMFGenExtPacka
 		createEAttribute(detailsLevelAttributesEClass, DETAILS_LEVEL_ATTRIBUTES__DETAILS_AWARE_PARSER);
 
 		substitutableByAttributesEClass = createEClass(SUBSTITUTABLE_BY_ATTRIBUTES);
-		createEReference(substitutableByAttributesEClass, SUBSTITUTABLE_BY_ATTRIBUTES__SUBSTITUTABLE_BY);
+		createEAttribute(substitutableByAttributesEClass, SUBSTITUTABLE_BY_ATTRIBUTES__SUBSTITUTABLE_BY_IDS);
 	}
 
 	/**
@@ -307,7 +308,9 @@ public class GMFGenExtPackageImpl extends EPackageImpl implements GMFGenExtPacka
 		initEAttribute(getDetailsLevelAttributes_DetailsAwareParser(), ecorePackage.getEBoolean(), "detailsAwareParser", null, 0, 1, DetailsLevelAttributes.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(substitutableByAttributesEClass, SubstitutableByAttributes.class, "SubstitutableByAttributes", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getSubstitutableByAttributes_SubstitutableBy(), theGMFGenPackage.getGenCommonBase(), null, "substitutableBy", null, 0, -1, SubstitutableByAttributes.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getSubstitutableByAttributes_SubstitutableByIDs(), ecorePackage.getEInt(), "substitutableByIDs", null, 0, -1, SubstitutableByAttributes.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		EOperation op = addEOperation(substitutableByAttributesEClass, theGMFGenPackage.getGenCommonBase(), "getSubstitutableByNodes", 0, -1);
 
 		// Create resource
 		createResource(eNS_URI);
