@@ -7,9 +7,11 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.gmf.runtime.common.core.command.CommandResult;
 import org.eclipse.gmf.runtime.emf.type.core.commands.EditElementCommand;
 import org.eclipse.gmf.runtime.emf.type.core.requests.ReorientRelationshipRequest;
+import org.eclipse.uml2.diagram.clazz.conventions.AssociationEndConvention;
 import org.eclipse.uml2.diagram.clazz.edit.policies.UMLBaseItemSemanticEditPolicy;
 import org.eclipse.uml2.uml.Association;
 import org.eclipse.uml2.uml.Package;
+import org.eclipse.uml2.uml.Property;
 import org.eclipse.uml2.uml.Type;
 
 /**
@@ -43,48 +45,91 @@ public class AssociationReorientCommand extends EditElementCommand {
 	}
 
 	/**
-	 * FIXME: 180694
-	 * @generated NOT
+	 * @generated
 	 */
 	public boolean canExecute() {
+		if (!(getElementToEdit() instanceof Association)) {
+			return false;
+		}
+		if (reorientDirection == ReorientRelationshipRequest.REORIENT_SOURCE) {
+			return canReorientSource();
+		}
+		if (reorientDirection == ReorientRelationshipRequest.REORIENT_TARGET) {
+			return canReorientTarget();
+		}
 		return false;
 	}
 
 	/**
-	 * FIXME: 180694
 	 * @generated NOT
 	 */
 	protected boolean canReorientSource() {
-		return false;
+		if (!(oldEnd instanceof Type && newEnd instanceof Type)) {
+			return false;
+		}
+		if (!(getLink().eContainer() instanceof Package)) {
+			return false;
+		}
+		Package container = (Package) getLink().eContainer();
+		Property targetEnd = AssociationEndConvention.getTargetEnd(getLink());
+		if (targetEnd == null){
+			return false;
+		}
+		return UMLBaseItemSemanticEditPolicy.LinkConstraints.canExistAssociation_4005(container, getNewSource(), targetEnd.getType());
 	}
 
 	/**
-	 * FIXME: 180694
 	 * @generated NOT
 	 */
 	protected boolean canReorientTarget() {
-		return false;
+		if (!(oldEnd instanceof Type && newEnd instanceof Type)) {
+			return false;
+		}
+		if (!(getLink().eContainer() instanceof Package)) {
+			return false;
+		}
+		Package container = (Package) getLink().eContainer();
+		Property sourceEnd = AssociationEndConvention.getSourceEnd(getLink());
+		if (sourceEnd == null){
+			return false;
+		}
+		return UMLBaseItemSemanticEditPolicy.LinkConstraints.canExistAssociation_4005(container, sourceEnd.getType(), getNewTarget());
 	}
 
 	/**
-	 * @generated NOT 
+	 * @generated
 	 */
 	protected CommandResult doExecuteWithResult(IProgressMonitor monitor, IAdaptable info) throws ExecutionException {
-		throw new ExecutionException("#180694"); //$NON-NLS-1$
+		if (!canExecute()) {
+			throw new ExecutionException("Invalid arguments in reorient link command"); //$NON-NLS-1$
+		}
+		if (reorientDirection == ReorientRelationshipRequest.REORIENT_SOURCE) {
+			return reorientSource();
+		}
+		if (reorientDirection == ReorientRelationshipRequest.REORIENT_TARGET) {
+			return reorientTarget();
+		}
+		throw new IllegalStateException();
 	}
 
 	/**
 	 * @generated NOT
 	 */
-	private CommandResult reorientSource() throws ExecutionException {
-		throw new UnsupportedOperationException("#180694");
+	protected CommandResult reorientSource() throws ExecutionException {
+		Association association = getLink();
+		Property actualSource = AssociationEndConvention.getSourceEnd(association);
+		actualSource.setType(getNewSource());
+		return CommandResult.newOKCommandResult(getLink());
 	}
 
 	/**
 	 * @generated NOT
 	 */
-	private CommandResult reorientTarget() throws ExecutionException {
-		throw new UnsupportedOperationException("#180694");
+	protected CommandResult reorientTarget() throws ExecutionException {
+		Association association = getLink();
+		Property actualTarget = AssociationEndConvention.getTargetEnd(association);
+		actualTarget.setType(getNewTarget());
+		return CommandResult.newOKCommandResult(getLink());
 	}
 
 	/**
