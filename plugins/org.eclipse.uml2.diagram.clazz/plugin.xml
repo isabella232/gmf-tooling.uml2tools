@@ -257,6 +257,18 @@
       <?gmfgen generated="true"?>
       <objectContribution
             adaptable="false"
+            id="org.eclipse.uml2.diagram.clazz.CreateShortcut"
+            objectClass="org.eclipse.uml2.diagram.clazz.edit.parts.PackageEditPart">
+         <action
+               class="org.eclipse.uml2.diagram.clazz.part.UMLCreateShortcutAction"
+               enablesFor="1"
+               id="org.eclipse.uml2.diagram.clazz.CreateShortcutAction"
+               label="%createShortcutActionLabel"
+               menubarPath="additions">
+         </action>
+      </objectContribution>                      
+      <objectContribution
+            adaptable="false"
             id="org.eclipse.uml2.diagram.clazz.LoadResource"
             objectClass="org.eclipse.uml2.diagram.clazz.edit.parts.PackageEditPart">
          <action
@@ -1232,6 +1244,8 @@
            class="org.eclipse.uml2.diagram.clazz.part.UMLDomainModelElementTester">
        </propertyTester>
    </extension>
+
+
 
 
 </plugin>
