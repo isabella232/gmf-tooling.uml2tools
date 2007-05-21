@@ -338,10 +338,8 @@ public class UMLDiagramUpdater {
 	 * @generated
 	 */
 	public static List getProfile_2007ContainedLinks(View view) {
-		Profile modelElement = (Profile) view.getElement();
-		List result = new LinkedList();
-		result.addAll(getContainedTypeModelFacetLinks_Extension_4002(modelElement));
-		return result;
+		//no links to, from and inside the diagram header
+		return Collections.EMPTY_LIST;
 	}
 
 	/**
@@ -443,6 +441,7 @@ public class UMLDiagramUpdater {
 	 * @generated
 	 */
 	public static List getProfile_2007IncomingLinks(View view) {
+		//no links to, from and inside the diagram header
 		return Collections.EMPTY_LIST;
 	}
 
@@ -546,6 +545,7 @@ public class UMLDiagramUpdater {
 	 * @generated
 	 */
 	public static List getProfile_2007OutgoingLinks(View view) {
+		//no links to, from and inside the diagram header
 		return Collections.EMPTY_LIST;
 	}
 
@@ -722,6 +722,16 @@ public class UMLDiagramUpdater {
 				result.add(new UMLLinkDescriptor(source, metaclassImport, nextLink, UMLElementTypes.Extension_4002, ExtensionEditPart.VISUAL_ID));
 			}
 		}
+		return result;
+	}
+
+	/**
+	 * @generated
+	 */
+	public static List getProfile_1000ContainedLinks(View view) {
+		Profile modelElement = (Profile) view.getElement();
+		List result = new LinkedList();
+		result.addAll(getContainedTypeModelFacetLinks_Extension_4002(modelElement));
 		return result;
 	}
 

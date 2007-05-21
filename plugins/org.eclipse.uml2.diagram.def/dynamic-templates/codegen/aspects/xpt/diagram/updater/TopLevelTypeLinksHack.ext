@@ -8,18 +8,13 @@
  *
  * Contributors:
  *    Michael Golubev (Borland) - initial API and implementation
+ * 
+ * This is temporary workaround for scr #188069 
  */
 
 import "http://www.eclipse.org/emf/2002/Ecore";
 import "http://www.eclipse.org/gmf/2006/GenModel";
-import "http://www.eclipse.org/uml2/diagram/gmfgenext/DiagramFigure/1.0";
 
-gmfgen::GenNode selectDiagramHeader(List[gmfgen::GenNode] nodes) :
-	nodes.select(
-		n| isDiagramHeader(n)
-	).first()
-;
-
-boolean isDiagramHeader(gmfgen::GenCommonBase genCommon) :
-	null != genCommon.viewmap.attributes.typeSelect(gmfgenext::AuxSecondaryDiagramNodeAttribute).first()
+gmfgen::TypeModelFacet diagramDomainElementAsFakeTypeModelFacet(gmfgen::GenDiagram gd) :
+JAVA org.eclipse.uml2.diagram.codegen.util.TopLevelTypeLinksHack.diagramDomainElementAsFakeTypeModelFacet(org.eclipse.gmf.codegen.gmfgen.GenDiagram)
 ;

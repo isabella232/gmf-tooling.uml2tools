@@ -3491,4 +3491,17 @@ public class UMLDiagramUpdater {
 		return result;
 	}
 
+	/**
+	 * @generated
+	 */
+	public static List getPackage_1000ContainedLinks(View view) {
+		Package modelElement = (Package) view.getElement();
+		List result = new LinkedList();
+		result.addAll(getContainedTypeModelFacetLinks_Dependency_4002(modelElement));
+		result.addAll(getContainedTypeModelFacetLinks_Association_4005(modelElement));
+		result.addAll(getContainedTypeModelFacetLinks_Realization_4010(modelElement));
+		result.addAll(getContainedTypeModelFacetLinks_Usage_4013(modelElement));
+		return result;
+	}
+
 }

@@ -1,0 +1,38 @@
+/*
+ * Copyright (c) 2007 Borland Software Corporation
+ * 
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
+ *
+ * Contributors:
+ *    Michael Golubev (Borland) - initial API and implementation
+ * 
+ * Workaround for #188069 -- top level type based links are not processed by default in GMF M7 
+ */
+
+«IMPORT "http://www.eclipse.org/gmf/2006/GenModel"»
+«EXTENSION xpt::diagram::editpolicies::Utils»
+«EXTENSION xpt::diagram::updater::Utils»
+«EXTENSION xpt::GenModelUtils»
+
+«AROUND collectAllLinks FOR gmfgen::GenDiagram-»
+	«EXPAND xpt::Common::generatedMemberComment»
+private java.util.Collection collectAllLinks(org.eclipse.gmf.runtime.notation.View view, java.util.Map domain2NotationMap) {
+	java.util.Collection result = new java.util.LinkedList();
+	switch («EXPAND xpt::editor::VisualIDRegistry::getVisualIDMethodCall»(view)) {
+		«EXPAND xpt::diagram::editpolicies::DiagramCanonicalEditPolicy::caseSemanticElement FOREACH getAllSemanticElements(this)-»
+		«IF !getAllSemanticElements(this).contains(this)-»
+			«EXPAND xpt::diagram::editpolicies::DiagramCanonicalEditPolicy::caseSemanticElement FOR this-»
+		«ENDIF-»
+	}
+	for (java.util.Iterator children = view.getChildren().iterator(); children.hasNext();) {
+		result.addAll(collectAllLinks((org.eclipse.gmf.runtime.notation.View) children.next(), domain2NotationMap));
+	}
+	for (java.util.Iterator edges = view.getSourceEdges().iterator(); edges.hasNext();) {
+		result.addAll(collectAllLinks((org.eclipse.gmf.runtime.notation.View) edges.next(), domain2NotationMap));
+	}
+	return result;
+}
+«ENDAROUND»

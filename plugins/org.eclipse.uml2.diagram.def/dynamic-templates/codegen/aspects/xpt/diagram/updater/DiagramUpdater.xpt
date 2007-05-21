@@ -16,6 +16,8 @@
 
 «EXTENSION xpt::diagram::updater::Utils»
 «EXTENSION aspects::xpt::diagram::updater::DiagramHeader»
+«EXTENSION aspects::xpt::diagram::updater::TopLevelTypeLinksHack»
+«EXTENSION xpt::GenModelUtils»
 
 «AROUND checkChildElementVisualID FOR gmfgen::GenNode-»
 	«IF !isDiagramHeader(this) -»
@@ -54,4 +56,42 @@
 	«ENDIF-»
 	«ENDLET-»
 	«ENDLET-»
+«ENDAROUND»
+
+«AROUND additions FOR gmfgen::GenDiagramUpdater-»
+	«EXPAND diagramContainedLinks FOR editorGen.diagram-»
+«ENDAROUND»	
+
+«DEFINE diagramContainedLinks FOR gmfgen::GenDiagram-»
+	«EXPAND getDiagramConnectedLinks(
+		getContainedLinks(diagramDomainElementAsFakeTypeModelFacet(this), getDiagram()), getContainedLinksMethodNameSuffix(), false)-»	
+«ENDDEFINE»	
+
+«DEFINE getDiagramConnectedLinks(List[gmfgen::GenLink] genLinks, String methodNameSuffix, boolean needCrossReferencer) FOR gmfgen::GenDiagram-»
+	«EXPAND xpt::Common::generatedMemberComment»
+public static java.util.List «EXPAND xpt::diagram::updater::DiagramUpdater::linkGetterName(methodNameSuffix)»(org.eclipse.gmf.runtime.notation.View view) {
+	«IF !genLinks.isEmpty()-»
+	«getQualifiedInterfaceName(this.domainDiagramElement)» modelElement = («getQualifiedInterfaceName(this.domainDiagramElement)») view.getElement();
+			«IF needCrossReferencer-»
+	java.util.Map crossReferences = org.eclipse.emf.ecore.util.EcoreUtil.CrossReferencer.find(view.eResource().getResourceSet().getResources());
+			«ENDIF-»
+	java.util.List result = new java.util.LinkedList();
+			«EXPAND xpt::diagram::updater::DiagramUpdater::colectConnnectedLinks(methodNameSuffix, needCrossReferencer, this.domainDiagramElement.isExternalInterface()) FOREACH genLinks-»
+	return result;
+	«ELSE-»
+	return java.util.Collections.EMPTY_LIST;
+	«ENDIF-»
+}
+«ENDDEFINE»
+
+«AROUND getConnectedLinks(List[gmfgen::GenLink] genLinks, String methodNameSuffix, boolean needCrossReferencer) FOR gmfgen::GenCommonBase-»
+	«IF isDiagramHeader(this)-»
+	«EXPAND xpt::Common::generatedMemberComment»
+public static java.util.List «EXPAND xpt::diagram::updater::DiagramUpdater::linkGetterName(methodNameSuffix)»(org.eclipse.gmf.runtime.notation.View view) {
+	//no links to, from and inside the diagram header
+	return java.util.Collections.EMPTY_LIST;
+}
+	«ELSE-»
+		«targetDef.proceed()-»
+	«ENDIF-»
 «ENDAROUND»
