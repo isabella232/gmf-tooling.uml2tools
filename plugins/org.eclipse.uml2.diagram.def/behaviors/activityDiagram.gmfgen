@@ -2,7 +2,8 @@
 <gmfgen:GenEditorGenerator xmi:version="2.0"
     xmlns:xmi="http://www.omg.org/XMI"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xmlns:gmfgen="http://www.eclipse.org/gmf/2006/GenModel" packageNamePrefix="org.eclipse.uml2.diagram.activity"
+    xmlns:gmfgen="http://www.eclipse.org/gmf/2006/GenModel"
+    xmlns:uml2.gmfgenext="http://www.eclipse.org/uml2/diagram/gmfgenext/DiagramFigure/1.0" packageNamePrefix="org.eclipse.uml2.diagram.activity"
     modelID="UMLActivity"
     diagramFileExtension="umlactivity_diagram"
     dynamicTemplates="true"
@@ -2212,6 +2213,10 @@
           xsi:type="gmfgen:InnerClassViewmap"
           className="LocalPreconditionFigure"
           classBody="&#xD;&#xA;/**&#xD;&#xA; * @generated&#xD;&#xA; */&#xD;&#xA;public class LocalPreconditionFigure extends org.eclipse.uml2.diagram.common.draw2d.ConstraintFigure {&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;public LocalPreconditionFigure() {&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;this.setFixedLabelText(&#xD;&#xA;&quot;\u00ABlocalPrecondition\u00BB&quot;);&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#x9;}&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;private boolean myUseLocalCoordinates = false;&#xD;&#xA;&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;protected boolean useLocalCoordinates() {&#xD;&#xA;&#x9;&#x9;return myUseLocalCoordinates;&#xD;&#xA;&#x9;}&#xD;&#xA;&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;protected void setUseLocalCoordinates(boolean useLocalCoordinates) {&#xD;&#xA;&#x9;&#x9;myUseLocalCoordinates = useLocalCoordinates;&#xD;&#xA;&#x9;}&#xD;&#xA;&#xD;&#xA;}&#xD;&#xA;&#xD;&#xA;">
+        <attributes
+            xsi:type="uml2.gmfgenext:SubstitutableByAttributes">
+          <substitutableByIDs>2028</substitutableByIDs>
+        </attributes>
         <requiredPluginIDs>org.eclipse.draw2d</requiredPluginIDs>
       </viewmap>
       <modelFacet>
@@ -2239,6 +2244,10 @@
           xsi:type="gmfgen:InnerClassViewmap"
           className="LocalPostconditionFigure"
           classBody="&#xD;&#xA;/**&#xD;&#xA; * @generated&#xD;&#xA; */&#xD;&#xA;public class LocalPostconditionFigure extends org.eclipse.uml2.diagram.common.draw2d.ConstraintFigure {&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;public LocalPostconditionFigure() {&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;this.setFixedLabelText(&#xD;&#xA;&quot;\u00ABlocalPostcondition\u00BB&quot;);&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#x9;}&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;private boolean myUseLocalCoordinates = false;&#xD;&#xA;&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;protected boolean useLocalCoordinates() {&#xD;&#xA;&#x9;&#x9;return myUseLocalCoordinates;&#xD;&#xA;&#x9;}&#xD;&#xA;&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;protected void setUseLocalCoordinates(boolean useLocalCoordinates) {&#xD;&#xA;&#x9;&#x9;myUseLocalCoordinates = useLocalCoordinates;&#xD;&#xA;&#x9;}&#xD;&#xA;&#xD;&#xA;}&#xD;&#xA;&#xD;&#xA;">
+        <attributes
+            xsi:type="uml2.gmfgenext:SubstitutableByAttributes">
+          <substitutableByIDs>2027</substitutableByIDs>
+        </attributes>
         <requiredPluginIDs>org.eclipse.draw2d</requiredPluginIDs>
       </viewmap>
       <modelFacet>

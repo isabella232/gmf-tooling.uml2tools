@@ -116,12 +116,21 @@ public class PackageCanonicalEditPolicy extends CanonicalConnectionEditPolicy {
 	 * @generated
 	 */
 	protected boolean isOrphaned(Collection semanticChildren, final View view) {
-		int visualID = UMLVisualIDRegistry.getVisualID(view);
-		switch (visualID) {
+		int actualID = UMLVisualIDRegistry.getVisualID(view);
+		int suggestedID = UMLVisualIDRegistry.getNodeVisualID((View) getHost().getModel(), view.getElement());
+		switch (actualID) {
 		case ActivityEditPart.VISUAL_ID:
+			return !semanticChildren.contains(view.getElement()) || actualID != suggestedID;
 		case ConstraintEditPart.VISUAL_ID:
+			if (!semanticChildren.contains(view.getElement())) {
+				return true;
+			}
+			return (actualID != suggestedID) && (suggestedID != Constraint2EditPart.VISUAL_ID) && true;
 		case Constraint2EditPart.VISUAL_ID:
-			return !semanticChildren.contains(view.getElement()) || visualID != UMLVisualIDRegistry.getNodeVisualID((View) getHost().getModel(), view.getElement());
+			if (!semanticChildren.contains(view.getElement())) {
+				return true;
+			}
+			return (actualID != suggestedID) && (suggestedID != ConstraintEditPart.VISUAL_ID) && true;
 		}
 		return false;
 	}
