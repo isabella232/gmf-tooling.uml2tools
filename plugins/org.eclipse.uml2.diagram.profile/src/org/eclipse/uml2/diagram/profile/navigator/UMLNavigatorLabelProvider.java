@@ -108,31 +108,31 @@ public class UMLNavigatorLabelProvider extends LabelProvider implements ICommonL
 	public Image getImage(View view) {
 		switch (UMLVisualIDRegistry.getVisualID(view)) {
 		case StereotypeEditPart.VISUAL_ID:
-			return getImage("Navigator?TopLevelNode?http://www.eclipse.org/uml2/2.0.0/UML?Stereotype", UMLElementTypes.Stereotype_2001);
+			return getImage("Navigator?TopLevelNode?http://www.eclipse.org/uml2/2.1.0/UML?Stereotype", UMLElementTypes.Stereotype_2001);
 		case Profile2EditPart.VISUAL_ID:
-			return getImage("Navigator?TopLevelNode?http://www.eclipse.org/uml2/2.0.0/UML?Profile", UMLElementTypes.Profile_2002);
+			return getImage("Navigator?TopLevelNode?http://www.eclipse.org/uml2/2.1.0/UML?Profile", UMLElementTypes.Profile_2002);
 		case EnumerationEditPart.VISUAL_ID:
-			return getImage("Navigator?TopLevelNode?http://www.eclipse.org/uml2/2.0.0/UML?Enumeration", UMLElementTypes.Enumeration_2003);
+			return getImage("Navigator?TopLevelNode?http://www.eclipse.org/uml2/2.1.0/UML?Enumeration", UMLElementTypes.Enumeration_2003);
 		case ElementImportEditPart.VISUAL_ID:
-			return getImage("Navigator?TopLevelNode?http://www.eclipse.org/uml2/2.0.0/UML?ElementImport", UMLElementTypes.ElementImport_2006);
+			return getImage("Navigator?TopLevelNode?http://www.eclipse.org/uml2/2.1.0/UML?ElementImport", UMLElementTypes.ElementImport_2006);
 		case Profile3EditPart.VISUAL_ID:
-			return getImage("Navigator?TopLevelNode?http://www.eclipse.org/uml2/2.0.0/UML?Profile", UMLElementTypes.Profile_2007);
+			return getImage("Navigator?TopLevelNode?http://www.eclipse.org/uml2/2.1.0/UML?Profile", UMLElementTypes.Profile_2007);
 		case PropertyEditPart.VISUAL_ID:
-			return getImage("Navigator?Node?http://www.eclipse.org/uml2/2.0.0/UML?Property", UMLElementTypes.Property_3001);
+			return getImage("Navigator?Node?http://www.eclipse.org/uml2/2.1.0/UML?Property", UMLElementTypes.Property_3001);
 		case ConstraintEditPart.VISUAL_ID:
-			return getImage("Navigator?Node?http://www.eclipse.org/uml2/2.0.0/UML?Constraint", UMLElementTypes.Constraint_3008);
+			return getImage("Navigator?Node?http://www.eclipse.org/uml2/2.1.0/UML?Constraint", UMLElementTypes.Constraint_3008);
 		case Stereotype2EditPart.VISUAL_ID:
-			return getImage("Navigator?Node?http://www.eclipse.org/uml2/2.0.0/UML?Stereotype", UMLElementTypes.Stereotype_3003);
+			return getImage("Navigator?Node?http://www.eclipse.org/uml2/2.1.0/UML?Stereotype", UMLElementTypes.Stereotype_3003);
 		case EnumerationLiteralEditPart.VISUAL_ID:
-			return getImage("Navigator?Node?http://www.eclipse.org/uml2/2.0.0/UML?EnumerationLiteral", UMLElementTypes.EnumerationLiteral_3005);
+			return getImage("Navigator?Node?http://www.eclipse.org/uml2/2.1.0/UML?EnumerationLiteral", UMLElementTypes.EnumerationLiteral_3005);
 		case ElementImport2EditPart.VISUAL_ID:
-			return getImage("Navigator?Node?http://www.eclipse.org/uml2/2.0.0/UML?ElementImport", UMLElementTypes.ElementImport_3009);
+			return getImage("Navigator?Node?http://www.eclipse.org/uml2/2.1.0/UML?ElementImport", UMLElementTypes.ElementImport_3009);
 		case ProfileEditPart.VISUAL_ID:
-			return getImage("Navigator?Diagram?http://www.eclipse.org/uml2/2.0.0/UML?Profile", UMLElementTypes.Profile_1000);
+			return getImage("Navigator?Diagram?http://www.eclipse.org/uml2/2.1.0/UML?Profile", UMLElementTypes.Profile_1000);
 		case GeneralizationEditPart.VISUAL_ID:
-			return getImage("Navigator?Link?http://www.eclipse.org/uml2/2.0.0/UML?Generalization", UMLElementTypes.Generalization_4001);
+			return getImage("Navigator?Link?http://www.eclipse.org/uml2/2.1.0/UML?Generalization", UMLElementTypes.Generalization_4001);
 		case ExtensionEditPart.VISUAL_ID:
-			return getImage("Navigator?Link?http://www.eclipse.org/uml2/2.0.0/UML?Extension", UMLElementTypes.Extension_4002);
+			return getImage("Navigator?Link?http://www.eclipse.org/uml2/2.1.0/UML?Extension", UMLElementTypes.Extension_4002);
 		default:
 			return getImage("Navigator?UnknownElement", null);
 		}

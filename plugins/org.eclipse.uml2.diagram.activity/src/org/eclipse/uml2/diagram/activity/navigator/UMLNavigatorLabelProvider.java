@@ -167,115 +167,115 @@ public class UMLNavigatorLabelProvider extends LabelProvider implements ICommonL
 	public Image getImage(View view) {
 		switch (UMLVisualIDRegistry.getVisualID(view)) {
 		case ActivityEditPart.VISUAL_ID:
-			return getImage("Navigator?TopLevelNode?http://www.eclipse.org/uml2/2.0.0/UML?Activity", UMLElementTypes.Activity_2026);
+			return getImage("Navigator?TopLevelNode?http://www.eclipse.org/uml2/2.1.0/UML?Activity", UMLElementTypes.Activity_2026);
 		case ConstraintEditPart.VISUAL_ID:
-			return getImage("Navigator?TopLevelNode?http://www.eclipse.org/uml2/2.0.0/UML?Constraint", UMLElementTypes.Constraint_2027);
+			return getImage("Navigator?TopLevelNode?http://www.eclipse.org/uml2/2.1.0/UML?Constraint", UMLElementTypes.Constraint_2027);
 		case Constraint2EditPart.VISUAL_ID:
-			return getImage("Navigator?TopLevelNode?http://www.eclipse.org/uml2/2.0.0/UML?Constraint", UMLElementTypes.Constraint_2028);
+			return getImage("Navigator?TopLevelNode?http://www.eclipse.org/uml2/2.1.0/UML?Constraint", UMLElementTypes.Constraint_2028);
 		case AcceptEventActionEditPart.VISUAL_ID:
-			return getImage("Navigator?Node?http://www.eclipse.org/uml2/2.0.0/UML?AcceptEventAction", UMLElementTypes.AcceptEventAction_3030);
+			return getImage("Navigator?Node?http://www.eclipse.org/uml2/2.1.0/UML?AcceptEventAction", UMLElementTypes.AcceptEventAction_3030);
 		case AcceptEventAction2EditPart.VISUAL_ID:
-			return getImage("Navigator?Node?http://www.eclipse.org/uml2/2.0.0/UML?AcceptEventAction", UMLElementTypes.AcceptEventAction_3031);
+			return getImage("Navigator?Node?http://www.eclipse.org/uml2/2.1.0/UML?AcceptEventAction", UMLElementTypes.AcceptEventAction_3031);
 		case ActivityFinalNodeEditPart.VISUAL_ID:
-			return getImage("Navigator?Node?http://www.eclipse.org/uml2/2.0.0/UML?ActivityFinalNode", UMLElementTypes.ActivityFinalNode_3032);
+			return getImage("Navigator?Node?http://www.eclipse.org/uml2/2.1.0/UML?ActivityFinalNode", UMLElementTypes.ActivityFinalNode_3032);
 		case DecisionNodeEditPart.VISUAL_ID:
-			return getImage("Navigator?Node?http://www.eclipse.org/uml2/2.0.0/UML?DecisionNode", UMLElementTypes.DecisionNode_3033);
+			return getImage("Navigator?Node?http://www.eclipse.org/uml2/2.1.0/UML?DecisionNode", UMLElementTypes.DecisionNode_3033);
 		case MergeNodeEditPart.VISUAL_ID:
-			return getImage("Navigator?Node?http://www.eclipse.org/uml2/2.0.0/UML?MergeNode", UMLElementTypes.MergeNode_3034);
+			return getImage("Navigator?Node?http://www.eclipse.org/uml2/2.1.0/UML?MergeNode", UMLElementTypes.MergeNode_3034);
 		case InitialNodeEditPart.VISUAL_ID:
-			return getImage("Navigator?Node?http://www.eclipse.org/uml2/2.0.0/UML?InitialNode", UMLElementTypes.InitialNode_3035);
+			return getImage("Navigator?Node?http://www.eclipse.org/uml2/2.1.0/UML?InitialNode", UMLElementTypes.InitialNode_3035);
 		case DataStoreNodeEditPart.VISUAL_ID:
-			return getImage("Navigator?Node?http://www.eclipse.org/uml2/2.0.0/UML?DataStoreNode", UMLElementTypes.DataStoreNode_3036);
+			return getImage("Navigator?Node?http://www.eclipse.org/uml2/2.1.0/UML?DataStoreNode", UMLElementTypes.DataStoreNode_3036);
 		case CentralBufferNodeEditPart.VISUAL_ID:
-			return getImage("Navigator?Node?http://www.eclipse.org/uml2/2.0.0/UML?CentralBufferNode", UMLElementTypes.CentralBufferNode_3037);
+			return getImage("Navigator?Node?http://www.eclipse.org/uml2/2.1.0/UML?CentralBufferNode", UMLElementTypes.CentralBufferNode_3037);
 		case OpaqueActionEditPart.VISUAL_ID:
-			return getImage("Navigator?Node?http://www.eclipse.org/uml2/2.0.0/UML?OpaqueAction", UMLElementTypes.OpaqueAction_3029);
+			return getImage("Navigator?Node?http://www.eclipse.org/uml2/2.1.0/UML?OpaqueAction", UMLElementTypes.OpaqueAction_3029);
 		case OutputPinEditPart.VISUAL_ID:
-			return getImage("Navigator?Node?http://www.eclipse.org/uml2/2.0.0/UML?OutputPin", UMLElementTypes.OutputPin_3001);
+			return getImage("Navigator?Node?http://www.eclipse.org/uml2/2.1.0/UML?OutputPin", UMLElementTypes.OutputPin_3001);
 		case FlowFinalNodeEditPart.VISUAL_ID:
-			return getImage("Navigator?Node?http://www.eclipse.org/uml2/2.0.0/UML?FlowFinalNode", UMLElementTypes.FlowFinalNode_3038);
+			return getImage("Navigator?Node?http://www.eclipse.org/uml2/2.1.0/UML?FlowFinalNode", UMLElementTypes.FlowFinalNode_3038);
 		case ForkNodeEditPart.VISUAL_ID:
-			return getImage("Navigator?Node?http://www.eclipse.org/uml2/2.0.0/UML?ForkNode", UMLElementTypes.ForkNode_3039);
+			return getImage("Navigator?Node?http://www.eclipse.org/uml2/2.1.0/UML?ForkNode", UMLElementTypes.ForkNode_3039);
 		case JoinNodeEditPart.VISUAL_ID:
-			return getImage("Navigator?Node?http://www.eclipse.org/uml2/2.0.0/UML?JoinNode", UMLElementTypes.JoinNode_3040);
+			return getImage("Navigator?Node?http://www.eclipse.org/uml2/2.1.0/UML?JoinNode", UMLElementTypes.JoinNode_3040);
 		case PinEditPart.VISUAL_ID:
-			return getImage("Navigator?Node?http://www.eclipse.org/uml2/2.0.0/UML?Pin", UMLElementTypes.Pin_3041);
+			return getImage("Navigator?Node?http://www.eclipse.org/uml2/2.1.0/UML?Pin", UMLElementTypes.Pin_3041);
 		case CreateObjectActionEditPart.VISUAL_ID:
-			return getImage("Navigator?Node?http://www.eclipse.org/uml2/2.0.0/UML?CreateObjectAction", UMLElementTypes.CreateObjectAction_3042);
+			return getImage("Navigator?Node?http://www.eclipse.org/uml2/2.1.0/UML?CreateObjectAction", UMLElementTypes.CreateObjectAction_3042);
 		case OutputPin2EditPart.VISUAL_ID:
-			return getImage("Navigator?Node?http://www.eclipse.org/uml2/2.0.0/UML?OutputPin", UMLElementTypes.OutputPin_3002);
+			return getImage("Navigator?Node?http://www.eclipse.org/uml2/2.1.0/UML?OutputPin", UMLElementTypes.OutputPin_3002);
 		case AddStructuralFeatureValueActionEditPart.VISUAL_ID:
-			return getImage("Navigator?Node?http://www.eclipse.org/uml2/2.0.0/UML?AddStructuralFeatureValueAction", UMLElementTypes.AddStructuralFeatureValueAction_3043);
+			return getImage("Navigator?Node?http://www.eclipse.org/uml2/2.1.0/UML?AddStructuralFeatureValueAction", UMLElementTypes.AddStructuralFeatureValueAction_3043);
 		case InputPinEditPart.VISUAL_ID:
-			return getImage("Navigator?Node?http://www.eclipse.org/uml2/2.0.0/UML?InputPin", UMLElementTypes.InputPin_3003);
+			return getImage("Navigator?Node?http://www.eclipse.org/uml2/2.1.0/UML?InputPin", UMLElementTypes.InputPin_3003);
 		case InputPin2EditPart.VISUAL_ID:
-			return getImage("Navigator?Node?http://www.eclipse.org/uml2/2.0.0/UML?InputPin", UMLElementTypes.InputPin_3004);
+			return getImage("Navigator?Node?http://www.eclipse.org/uml2/2.1.0/UML?InputPin", UMLElementTypes.InputPin_3004);
 		case InputPin3EditPart.VISUAL_ID:
-			return getImage("Navigator?Node?http://www.eclipse.org/uml2/2.0.0/UML?InputPin", UMLElementTypes.InputPin_3005);
+			return getImage("Navigator?Node?http://www.eclipse.org/uml2/2.1.0/UML?InputPin", UMLElementTypes.InputPin_3005);
 		case CallBehaviorActionEditPart.VISUAL_ID:
-			return getImage("Navigator?Node?http://www.eclipse.org/uml2/2.0.0/UML?CallBehaviorAction", UMLElementTypes.CallBehaviorAction_3044);
+			return getImage("Navigator?Node?http://www.eclipse.org/uml2/2.1.0/UML?CallBehaviorAction", UMLElementTypes.CallBehaviorAction_3044);
 		case OutputPin3EditPart.VISUAL_ID:
-			return getImage("Navigator?Node?http://www.eclipse.org/uml2/2.0.0/UML?OutputPin", UMLElementTypes.OutputPin_3006);
+			return getImage("Navigator?Node?http://www.eclipse.org/uml2/2.1.0/UML?OutputPin", UMLElementTypes.OutputPin_3006);
 		case InputPin4EditPart.VISUAL_ID:
-			return getImage("Navigator?Node?http://www.eclipse.org/uml2/2.0.0/UML?InputPin", UMLElementTypes.InputPin_3007);
+			return getImage("Navigator?Node?http://www.eclipse.org/uml2/2.1.0/UML?InputPin", UMLElementTypes.InputPin_3007);
 		case CallOperationActionEditPart.VISUAL_ID:
-			return getImage("Navigator?Node?http://www.eclipse.org/uml2/2.0.0/UML?CallOperationAction", UMLElementTypes.CallOperationAction_3045);
+			return getImage("Navigator?Node?http://www.eclipse.org/uml2/2.1.0/UML?CallOperationAction", UMLElementTypes.CallOperationAction_3045);
 		case InputPin5EditPart.VISUAL_ID:
-			return getImage("Navigator?Node?http://www.eclipse.org/uml2/2.0.0/UML?InputPin", UMLElementTypes.InputPin_3008);
+			return getImage("Navigator?Node?http://www.eclipse.org/uml2/2.1.0/UML?InputPin", UMLElementTypes.InputPin_3008);
 		case StructuredActivityNodeEditPart.VISUAL_ID:
-			return getImage("Navigator?Node?http://www.eclipse.org/uml2/2.0.0/UML?StructuredActivityNode", UMLElementTypes.StructuredActivityNode_3046);
+			return getImage("Navigator?Node?http://www.eclipse.org/uml2/2.1.0/UML?StructuredActivityNode", UMLElementTypes.StructuredActivityNode_3046);
 		case StructuredActivityNode2EditPart.VISUAL_ID:
-			return getImage("Navigator?Node?http://www.eclipse.org/uml2/2.0.0/UML?StructuredActivityNode", UMLElementTypes.StructuredActivityNode_3009);
+			return getImage("Navigator?Node?http://www.eclipse.org/uml2/2.1.0/UML?StructuredActivityNode", UMLElementTypes.StructuredActivityNode_3009);
 		case OpaqueAction2EditPart.VISUAL_ID:
-			return getImage("Navigator?Node?http://www.eclipse.org/uml2/2.0.0/UML?OpaqueAction", UMLElementTypes.OpaqueAction_3011);
+			return getImage("Navigator?Node?http://www.eclipse.org/uml2/2.1.0/UML?OpaqueAction", UMLElementTypes.OpaqueAction_3011);
 		case AcceptEventAction3EditPart.VISUAL_ID:
-			return getImage("Navigator?Node?http://www.eclipse.org/uml2/2.0.0/UML?AcceptEventAction", UMLElementTypes.AcceptEventAction_3012);
+			return getImage("Navigator?Node?http://www.eclipse.org/uml2/2.1.0/UML?AcceptEventAction", UMLElementTypes.AcceptEventAction_3012);
 		case AcceptEventAction4EditPart.VISUAL_ID:
-			return getImage("Navigator?Node?http://www.eclipse.org/uml2/2.0.0/UML?AcceptEventAction", UMLElementTypes.AcceptEventAction_3013);
+			return getImage("Navigator?Node?http://www.eclipse.org/uml2/2.1.0/UML?AcceptEventAction", UMLElementTypes.AcceptEventAction_3013);
 		case ActivityFinalNode2EditPart.VISUAL_ID:
-			return getImage("Navigator?Node?http://www.eclipse.org/uml2/2.0.0/UML?ActivityFinalNode", UMLElementTypes.ActivityFinalNode_3014);
+			return getImage("Navigator?Node?http://www.eclipse.org/uml2/2.1.0/UML?ActivityFinalNode", UMLElementTypes.ActivityFinalNode_3014);
 		case DecisionNode2EditPart.VISUAL_ID:
-			return getImage("Navigator?Node?http://www.eclipse.org/uml2/2.0.0/UML?DecisionNode", UMLElementTypes.DecisionNode_3015);
+			return getImage("Navigator?Node?http://www.eclipse.org/uml2/2.1.0/UML?DecisionNode", UMLElementTypes.DecisionNode_3015);
 		case FlowFinalNode2EditPart.VISUAL_ID:
-			return getImage("Navigator?Node?http://www.eclipse.org/uml2/2.0.0/UML?FlowFinalNode", UMLElementTypes.FlowFinalNode_3016);
+			return getImage("Navigator?Node?http://www.eclipse.org/uml2/2.1.0/UML?FlowFinalNode", UMLElementTypes.FlowFinalNode_3016);
 		case Pin2EditPart.VISUAL_ID:
-			return getImage("Navigator?Node?http://www.eclipse.org/uml2/2.0.0/UML?Pin", UMLElementTypes.Pin_3017);
+			return getImage("Navigator?Node?http://www.eclipse.org/uml2/2.1.0/UML?Pin", UMLElementTypes.Pin_3017);
 		case CreateObjectAction2EditPart.VISUAL_ID:
-			return getImage("Navigator?Node?http://www.eclipse.org/uml2/2.0.0/UML?CreateObjectAction", UMLElementTypes.CreateObjectAction_3018);
+			return getImage("Navigator?Node?http://www.eclipse.org/uml2/2.1.0/UML?CreateObjectAction", UMLElementTypes.CreateObjectAction_3018);
 		case CallBehaviorAction2EditPart.VISUAL_ID:
-			return getImage("Navigator?Node?http://www.eclipse.org/uml2/2.0.0/UML?CallBehaviorAction", UMLElementTypes.CallBehaviorAction_3019);
+			return getImage("Navigator?Node?http://www.eclipse.org/uml2/2.1.0/UML?CallBehaviorAction", UMLElementTypes.CallBehaviorAction_3019);
 		case CallOperationAction2EditPart.VISUAL_ID:
-			return getImage("Navigator?Node?http://www.eclipse.org/uml2/2.0.0/UML?CallOperationAction", UMLElementTypes.CallOperationAction_3020);
+			return getImage("Navigator?Node?http://www.eclipse.org/uml2/2.1.0/UML?CallOperationAction", UMLElementTypes.CallOperationAction_3020);
 		case ForkNode2EditPart.VISUAL_ID:
-			return getImage("Navigator?Node?http://www.eclipse.org/uml2/2.0.0/UML?ForkNode", UMLElementTypes.ForkNode_3021);
+			return getImage("Navigator?Node?http://www.eclipse.org/uml2/2.1.0/UML?ForkNode", UMLElementTypes.ForkNode_3021);
 		case JoinNode2EditPart.VISUAL_ID:
-			return getImage("Navigator?Node?http://www.eclipse.org/uml2/2.0.0/UML?JoinNode", UMLElementTypes.JoinNode_3022);
+			return getImage("Navigator?Node?http://www.eclipse.org/uml2/2.1.0/UML?JoinNode", UMLElementTypes.JoinNode_3022);
 		case AddStructuralFeatureValueAction2EditPart.VISUAL_ID:
-			return getImage("Navigator?Node?http://www.eclipse.org/uml2/2.0.0/UML?AddStructuralFeatureValueAction", UMLElementTypes.AddStructuralFeatureValueAction_3023);
+			return getImage("Navigator?Node?http://www.eclipse.org/uml2/2.1.0/UML?AddStructuralFeatureValueAction", UMLElementTypes.AddStructuralFeatureValueAction_3023);
 		case DataStoreNode2EditPart.VISUAL_ID:
-			return getImage("Navigator?Node?http://www.eclipse.org/uml2/2.0.0/UML?DataStoreNode", UMLElementTypes.DataStoreNode_3024);
+			return getImage("Navigator?Node?http://www.eclipse.org/uml2/2.1.0/UML?DataStoreNode", UMLElementTypes.DataStoreNode_3024);
 		case CentralBufferNode2EditPart.VISUAL_ID:
-			return getImage("Navigator?Node?http://www.eclipse.org/uml2/2.0.0/UML?CentralBufferNode", UMLElementTypes.CentralBufferNode_3025);
+			return getImage("Navigator?Node?http://www.eclipse.org/uml2/2.1.0/UML?CentralBufferNode", UMLElementTypes.CentralBufferNode_3025);
 		case OpaqueBehaviorEditPart.VISUAL_ID:
-			return getImage("Navigator?Node?http://www.eclipse.org/uml2/2.0.0/UML?OpaqueBehavior", UMLElementTypes.OpaqueBehavior_3047);
+			return getImage("Navigator?Node?http://www.eclipse.org/uml2/2.1.0/UML?OpaqueBehavior", UMLElementTypes.OpaqueBehavior_3047);
 		case ActivityParameterNodeEditPart.VISUAL_ID:
-			return getImage("Navigator?Node?http://www.eclipse.org/uml2/2.0.0/UML?ActivityParameterNode", UMLElementTypes.ActivityParameterNode_3052);
+			return getImage("Navigator?Node?http://www.eclipse.org/uml2/2.1.0/UML?ActivityParameterNode", UMLElementTypes.ActivityParameterNode_3052);
 		case LiteralStringEditPart.VISUAL_ID:
-			return getImage("Navigator?Node?http://www.eclipse.org/uml2/2.0.0/UML?LiteralString", UMLElementTypes.LiteralString_3049);
+			return getImage("Navigator?Node?http://www.eclipse.org/uml2/2.1.0/UML?LiteralString", UMLElementTypes.LiteralString_3049);
 		case LiteralString2EditPart.VISUAL_ID:
-			return getImage("Navigator?Node?http://www.eclipse.org/uml2/2.0.0/UML?LiteralString", UMLElementTypes.LiteralString_3051);
+			return getImage("Navigator?Node?http://www.eclipse.org/uml2/2.1.0/UML?LiteralString", UMLElementTypes.LiteralString_3051);
 		case PackageEditPart.VISUAL_ID:
-			return getImage("Navigator?Diagram?http://www.eclipse.org/uml2/2.0.0/UML?Package", UMLElementTypes.Package_1000);
+			return getImage("Navigator?Diagram?http://www.eclipse.org/uml2/2.1.0/UML?Package", UMLElementTypes.Package_1000);
 		case ControlFlowEditPart.VISUAL_ID:
-			return getImage("Navigator?Link?http://www.eclipse.org/uml2/2.0.0/UML?ControlFlow", UMLElementTypes.ControlFlow_4001);
+			return getImage("Navigator?Link?http://www.eclipse.org/uml2/2.1.0/UML?ControlFlow", UMLElementTypes.ControlFlow_4001);
 		case ObjectFlowEditPart.VISUAL_ID:
-			return getImage("Navigator?Link?http://www.eclipse.org/uml2/2.0.0/UML?ObjectFlow", UMLElementTypes.ObjectFlow_4002);
+			return getImage("Navigator?Link?http://www.eclipse.org/uml2/2.1.0/UML?ObjectFlow", UMLElementTypes.ObjectFlow_4002);
 		case ActionLocalPreconditionEditPart.VISUAL_ID:
-			return getImage("Navigator?Link?http://www.eclipse.org/uml2/2.0.0/UML?Action?localPrecondition", UMLElementTypes.ActionLocalPrecondition_4003);
+			return getImage("Navigator?Link?http://www.eclipse.org/uml2/2.1.0/UML?Action?localPrecondition", UMLElementTypes.ActionLocalPrecondition_4003);
 		case ObjectNodeSelectionEditPart.VISUAL_ID:
-			return getImage("Navigator?Link?http://www.eclipse.org/uml2/2.0.0/UML?ObjectNode?selection", UMLElementTypes.ObjectNodeSelection_4004);
+			return getImage("Navigator?Link?http://www.eclipse.org/uml2/2.1.0/UML?ObjectNode?selection", UMLElementTypes.ObjectNodeSelection_4004);
 		case ExceptionHandlerEditPart.VISUAL_ID:
-			return getImage("Navigator?Link?http://www.eclipse.org/uml2/2.0.0/UML?ExceptionHandler", UMLElementTypes.ExceptionHandler_4005);
+			return getImage("Navigator?Link?http://www.eclipse.org/uml2/2.1.0/UML?ExceptionHandler", UMLElementTypes.ExceptionHandler_4005);
 		default:
 			return getImage("Navigator?UnknownElement", null);
 		}
