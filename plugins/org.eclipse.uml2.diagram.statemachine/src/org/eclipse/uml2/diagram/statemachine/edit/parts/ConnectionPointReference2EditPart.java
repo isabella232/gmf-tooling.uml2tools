@@ -295,6 +295,7 @@ public class ConnectionPointReference2EditPart extends BorderedBorderItemEditPar
 			}
 			;
 			ExitPointFigure_Cross0Class exitPointFigure_Cross0 = new ExitPointFigure_Cross0Class();
+
 			exitPointFigure_Cross0.addPoint(new Point(getMapMode().DPtoLP(0), getMapMode().DPtoLP(0)));
 			exitPointFigure_Cross0.addPoint(new Point(getMapMode().DPtoLP(40), getMapMode().DPtoLP(40)));
 			exitPointFigure_Cross0.addPoint(new Point(getMapMode().DPtoLP(20), getMapMode().DPtoLP(20)));

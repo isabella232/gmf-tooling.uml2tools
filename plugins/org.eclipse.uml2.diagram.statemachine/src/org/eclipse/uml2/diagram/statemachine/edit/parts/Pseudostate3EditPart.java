@@ -2,6 +2,8 @@ package org.eclipse.uml2.diagram.statemachine.edit.parts;
 
 import org.eclipse.draw2d.Ellipse;
 import org.eclipse.draw2d.Graphics;
+import org.eclipse.draw2d.GridData;
+import org.eclipse.draw2d.GridLayout;
 import org.eclipse.draw2d.IFigure;
 import org.eclipse.draw2d.MarginBorder;
 import org.eclipse.draw2d.RectangleFigure;
@@ -18,8 +20,6 @@ import org.eclipse.gef.commands.Command;
 import org.eclipse.gef.editpolicies.LayoutEditPolicy;
 import org.eclipse.gef.editpolicies.NonResizableEditPolicy;
 import org.eclipse.gef.requests.CreateRequest;
-import org.eclipse.gmf.internal.codegen.draw2d.GridLayout;
-import org.eclipse.gmf.internal.codegen.draw2d.GridLayoutData;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.ShapeNodeEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles;
 import org.eclipse.gmf.runtime.draw2d.ui.figures.ConstrainedToolbarLayout;
@@ -274,6 +274,7 @@ public class Pseudostate3EditPart extends ShapeNodeEditPart {
 			}
 			;
 			DeepHistoryFigure_Letter0Class deepHistoryFigure_Letter0 = new DeepHistoryFigure_Letter0Class();
+
 			deepHistoryFigure_Letter0.addPoint(new Point(getMapMode().DPtoLP(0), getMapMode().DPtoLP(40)));
 			deepHistoryFigure_Letter0.addPoint(new Point(getMapMode().DPtoLP(0), getMapMode().DPtoLP(20)));
 			deepHistoryFigure_Letter0.addPoint(new Point(getMapMode().DPtoLP(40), getMapMode().DPtoLP(20)));
@@ -291,9 +292,9 @@ public class Pseudostate3EditPart extends ShapeNodeEditPart {
 			deepHistoryFigure_Letter0.setPreferredSize(new Dimension(getMapMode().DPtoLP(15), getMapMode().DPtoLP(15)));
 			deepHistoryFigure_Letter0.setMaximumSize(new Dimension(getMapMode().DPtoLP(15), getMapMode().DPtoLP(15)));
 
-			GridLayoutData constraintDeepHistoryFigure_Letter0 = new GridLayoutData();
-			constraintDeepHistoryFigure_Letter0.verticalAlignment = GridLayoutData.FILL;
-			constraintDeepHistoryFigure_Letter0.horizontalAlignment = GridLayoutData.FILL;
+			GridData constraintDeepHistoryFigure_Letter0 = new GridData();
+			constraintDeepHistoryFigure_Letter0.verticalAlignment = GridData.FILL;
+			constraintDeepHistoryFigure_Letter0.horizontalAlignment = GridData.FILL;
 			constraintDeepHistoryFigure_Letter0.horizontalIndent = 0;
 			constraintDeepHistoryFigure_Letter0.horizontalSpan = 1;
 			constraintDeepHistoryFigure_Letter0.verticalSpan = 1;
@@ -312,9 +313,9 @@ public class Pseudostate3EditPart extends ShapeNodeEditPart {
 			deepHistoryFigure_AsteriskContainer0.setMinimumSize(new Dimension(getMapMode().DPtoLP(15), getMapMode().DPtoLP(15)));
 			deepHistoryFigure_AsteriskContainer0.setBorder(new MarginBorder(getMapMode().DPtoLP(0), getMapMode().DPtoLP(2), getMapMode().DPtoLP(5), getMapMode().DPtoLP(0)));
 
-			GridLayoutData constraintDeepHistoryFigure_AsteriskContainer0 = new GridLayoutData();
-			constraintDeepHistoryFigure_AsteriskContainer0.verticalAlignment = GridLayoutData.FILL;
-			constraintDeepHistoryFigure_AsteriskContainer0.horizontalAlignment = GridLayoutData.FILL;
+			GridData constraintDeepHistoryFigure_AsteriskContainer0 = new GridData();
+			constraintDeepHistoryFigure_AsteriskContainer0.verticalAlignment = GridData.FILL;
+			constraintDeepHistoryFigure_AsteriskContainer0.horizontalAlignment = GridData.FILL;
 			constraintDeepHistoryFigure_AsteriskContainer0.horizontalIndent = 0;
 			constraintDeepHistoryFigure_AsteriskContainer0.horizontalSpan = 1;
 			constraintDeepHistoryFigure_AsteriskContainer0.verticalSpan = 1;
@@ -406,6 +407,7 @@ public class Pseudostate3EditPart extends ShapeNodeEditPart {
 			}
 			;
 			DeepHistoryFigure_Asterisk1Class deepHistoryFigure_Asterisk1 = new DeepHistoryFigure_Asterisk1Class();
+
 			deepHistoryFigure_Asterisk1.addPoint(new Point(getMapMode().DPtoLP(10), getMapMode().DPtoLP(7)));
 			deepHistoryFigure_Asterisk1.addPoint(new Point(getMapMode().DPtoLP(30), getMapMode().DPtoLP(33)));
 			deepHistoryFigure_Asterisk1.addPoint(new Point(getMapMode().DPtoLP(20), getMapMode().DPtoLP(20)));

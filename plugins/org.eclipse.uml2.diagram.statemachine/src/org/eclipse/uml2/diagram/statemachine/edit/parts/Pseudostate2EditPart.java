@@ -263,6 +263,7 @@ public class Pseudostate2EditPart extends ShapeNodeEditPart {
 			}
 			;
 			ShallowHistoryFigure_Letter0Class shallowHistoryFigure_Letter0 = new ShallowHistoryFigure_Letter0Class();
+
 			shallowHistoryFigure_Letter0.addPoint(new Point(getMapMode().DPtoLP(0), getMapMode().DPtoLP(40)));
 			shallowHistoryFigure_Letter0.addPoint(new Point(getMapMode().DPtoLP(0), getMapMode().DPtoLP(20)));
 			shallowHistoryFigure_Letter0.addPoint(new Point(getMapMode().DPtoLP(40), getMapMode().DPtoLP(20)));
