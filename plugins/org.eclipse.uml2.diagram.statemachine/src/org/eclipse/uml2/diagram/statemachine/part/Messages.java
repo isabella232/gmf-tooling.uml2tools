@@ -58,11 +58,6 @@ public class Messages extends NLS {
 	/**
 	 * @generated
 	 */
-	public static String UMLDocumentProvider_UnableToLoadResourceError;
-
-	/**
-	 * @generated
-	 */
 	public static String UMLDocumentProvider_NoDiagramInResourceError;
 
 	/**
@@ -373,17 +368,12 @@ public class Messages extends NLS {
 	/**
 	 * @generated
 	 */
-	public static String NavigatorGroupName_State_3001_outgoinglinks;
-
-	/**
-	 * @generated
-	 */
 	public static String NavigatorGroupName_State_3001_incominglinks;
 
 	/**
 	 * @generated
 	 */
-	public static String NavigatorGroupName_State_3012_outgoinglinks;
+	public static String NavigatorGroupName_State_3001_outgoinglinks;
 
 	/**
 	 * @generated
@@ -393,7 +383,7 @@ public class Messages extends NLS {
 	/**
 	 * @generated
 	 */
-	public static String NavigatorGroupName_State_3016_outgoinglinks;
+	public static String NavigatorGroupName_State_3012_outgoinglinks;
 
 	/**
 	 * @generated
@@ -403,7 +393,7 @@ public class Messages extends NLS {
 	/**
 	 * @generated
 	 */
-	public static String NavigatorGroupName_ConnectionPointReference_3017_outgoinglinks;
+	public static String NavigatorGroupName_State_3016_outgoinglinks;
 
 	/**
 	 * @generated
@@ -413,7 +403,7 @@ public class Messages extends NLS {
 	/**
 	 * @generated
 	 */
-	public static String NavigatorGroupName_ConnectionPointReference_3018_outgoinglinks;
+	public static String NavigatorGroupName_ConnectionPointReference_3017_outgoinglinks;
 
 	/**
 	 * @generated
@@ -423,7 +413,7 @@ public class Messages extends NLS {
 	/**
 	 * @generated
 	 */
-	public static String NavigatorGroupName_FinalState_3003_outgoinglinks;
+	public static String NavigatorGroupName_ConnectionPointReference_3018_outgoinglinks;
 
 	/**
 	 * @generated
@@ -433,7 +423,7 @@ public class Messages extends NLS {
 	/**
 	 * @generated
 	 */
-	public static String NavigatorGroupName_Pseudostate_3004_outgoinglinks;
+	public static String NavigatorGroupName_FinalState_3003_outgoinglinks;
 
 	/**
 	 * @generated
@@ -443,7 +433,7 @@ public class Messages extends NLS {
 	/**
 	 * @generated
 	 */
-	public static String NavigatorGroupName_Pseudostate_3005_outgoinglinks;
+	public static String NavigatorGroupName_Pseudostate_3004_outgoinglinks;
 
 	/**
 	 * @generated
@@ -453,7 +443,7 @@ public class Messages extends NLS {
 	/**
 	 * @generated
 	 */
-	public static String NavigatorGroupName_Pseudostate_3006_outgoinglinks;
+	public static String NavigatorGroupName_Pseudostate_3005_outgoinglinks;
 
 	/**
 	 * @generated
@@ -463,7 +453,7 @@ public class Messages extends NLS {
 	/**
 	 * @generated
 	 */
-	public static String NavigatorGroupName_Pseudostate_3007_outgoinglinks;
+	public static String NavigatorGroupName_Pseudostate_3006_outgoinglinks;
 
 	/**
 	 * @generated
@@ -473,7 +463,7 @@ public class Messages extends NLS {
 	/**
 	 * @generated
 	 */
-	public static String NavigatorGroupName_Pseudostate_3008_outgoinglinks;
+	public static String NavigatorGroupName_Pseudostate_3007_outgoinglinks;
 
 	/**
 	 * @generated
@@ -483,7 +473,7 @@ public class Messages extends NLS {
 	/**
 	 * @generated
 	 */
-	public static String NavigatorGroupName_Pseudostate_3009_outgoinglinks;
+	public static String NavigatorGroupName_Pseudostate_3008_outgoinglinks;
 
 	/**
 	 * @generated
@@ -493,7 +483,7 @@ public class Messages extends NLS {
 	/**
 	 * @generated
 	 */
-	public static String NavigatorGroupName_Pseudostate_3010_outgoinglinks;
+	public static String NavigatorGroupName_Pseudostate_3009_outgoinglinks;
 
 	/**
 	 * @generated
@@ -503,7 +493,7 @@ public class Messages extends NLS {
 	/**
 	 * @generated
 	 */
-	public static String NavigatorGroupName_Pseudostate_3011_outgoinglinks;
+	public static String NavigatorGroupName_Pseudostate_3010_outgoinglinks;
 
 	/**
 	 * @generated
@@ -513,7 +503,7 @@ public class Messages extends NLS {
 	/**
 	 * @generated
 	 */
-	public static String NavigatorGroupName_Pseudostate_3014_outgoinglinks;
+	public static String NavigatorGroupName_Pseudostate_3011_outgoinglinks;
 
 	/**
 	 * @generated
@@ -523,7 +513,7 @@ public class Messages extends NLS {
 	/**
 	 * @generated
 	 */
-	public static String NavigatorGroupName_Pseudostate_3015_outgoinglinks;
+	public static String NavigatorGroupName_Pseudostate_3014_outgoinglinks;
 
 	/**
 	 * @generated
@@ -533,12 +523,17 @@ public class Messages extends NLS {
 	/**
 	 * @generated
 	 */
-	public static String NavigatorGroupName_Transition_4001_source;
+	public static String NavigatorGroupName_Pseudostate_3015_outgoinglinks;
 
 	/**
 	 * @generated
 	 */
 	public static String NavigatorGroupName_Transition_4001_target;
+
+	/**
+	 * @generated
+	 */
+	public static String NavigatorGroupName_Transition_4001_source;
 
 	//TODO: put accessor fields manually	
 }

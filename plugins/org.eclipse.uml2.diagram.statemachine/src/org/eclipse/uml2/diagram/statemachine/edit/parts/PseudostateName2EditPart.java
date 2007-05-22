@@ -3,6 +3,7 @@ package org.eclipse.uml2.diagram.statemachine.edit.parts;
 import java.util.Collections;
 import java.util.List;
 
+import org.eclipse.core.runtime.IAdaptable;
 import org.eclipse.draw2d.IFigure;
 import org.eclipse.draw2d.Label;
 import org.eclipse.draw2d.geometry.Point;
@@ -31,9 +32,7 @@ import org.eclipse.gmf.runtime.diagram.ui.requests.RequestConstants;
 import org.eclipse.gmf.runtime.diagram.ui.tools.TextDirectEditManager;
 import org.eclipse.gmf.runtime.draw2d.ui.figures.WrapLabel;
 import org.eclipse.gmf.runtime.emf.core.util.EObjectAdapter;
-import org.eclipse.gmf.runtime.emf.type.core.IElementType;
 import org.eclipse.gmf.runtime.emf.ui.services.parser.ISemanticParser;
-import org.eclipse.gmf.runtime.emf.ui.services.parser.ParserHintAdapter;
 import org.eclipse.gmf.runtime.notation.FontStyle;
 import org.eclipse.gmf.runtime.notation.NotationPackage;
 import org.eclipse.gmf.runtime.notation.View;
@@ -47,6 +46,7 @@ import org.eclipse.swt.graphics.Image;
 import org.eclipse.uml2.diagram.statemachine.edit.policies.UMLTextSelectionEditPolicy;
 import org.eclipse.uml2.diagram.statemachine.part.UMLVisualIDRegistry;
 import org.eclipse.uml2.diagram.statemachine.providers.UMLElementTypes;
+import org.eclipse.uml2.diagram.statemachine.providers.UMLParserProvider;
 
 /**
  * @generated
@@ -82,7 +82,7 @@ public class PseudostateName2EditPart extends LabelEditPart implements ITextAwar
 	 * @generated
 	 */
 	static {
-		registerSnapBackPosition(UMLVisualIDRegistry.getType(PseudostateName2EditPart.VISUAL_ID), new Point(0, 0));
+		registerSnapBackPosition(UMLVisualIDRegistry.getType(org.eclipse.uml2.diagram.statemachine.edit.parts.PseudostateName2EditPart.VISUAL_ID), new Point(0, 0));
 	}
 
 	/**
@@ -301,15 +301,7 @@ public class PseudostateName2EditPart extends LabelEditPart implements ITextAwar
 	public IParser getParser() {
 		if (parser == null) {
 			String parserHint = ((View) getModel()).getType();
-			ParserHintAdapter hintAdapter = new ParserHintAdapter(getParserElement(), parserHint) {
-
-				public Object getAdapter(Class adapter) {
-					if (IElementType.class.equals(adapter)) {
-						return UMLElementTypes.Pseudostate_3015;
-					}
-					return super.getAdapter(adapter);
-				}
-			};
+			IAdaptable hintAdapter = new UMLParserProvider.HintAdapter(UMLElementTypes.Pseudostate_3015, getParserElement(), parserHint);
 			parser = ParserService.getInstance().getParser(hintAdapter);
 		}
 		return parser;

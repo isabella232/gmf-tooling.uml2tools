@@ -1,6 +1,7 @@
 package org.eclipse.uml2.diagram.statemachine.edit.parts;
 
 import org.eclipse.draw2d.Graphics;
+import org.eclipse.draw2d.GridData;
 import org.eclipse.draw2d.IFigure;
 import org.eclipse.draw2d.MarginBorder;
 import org.eclipse.draw2d.RectangleFigure;
@@ -164,7 +165,7 @@ public class State2EditPart extends ShapeNodeEditPart {
 	 * @generated
 	 */
 	protected NodeFigure createNodePlate() {
-		DefaultSizeNodeFigure result = new DefaultSizeNodeFigure(getMapMode().DPtoLP(60), getMapMode().DPtoLP(70));
+		DefaultSizeNodeFigure result = new DefaultSizeNodeFigure(getMapMode().DPtoLP(40), getMapMode().DPtoLP(40));
 		return result;
 	}
 
@@ -220,7 +221,7 @@ public class State2EditPart extends ShapeNodeEditPart {
 		 */
 		public CompositeStateFigure() {
 
-			GridLayout layoutThis = new GridLayout();
+			org.eclipse.draw2d.GridLayout layoutThis = new org.eclipse.draw2d.GridLayout();
 			layoutThis.numColumns = 1;
 			layoutThis.makeColumnsEqualWidth = true;
 			layoutThis.horizontalSpacing = 0;
@@ -253,9 +254,9 @@ public class State2EditPart extends ShapeNodeEditPart {
 			compositeStateFigure_NameContainer0.setLineWidth(1);
 			compositeStateFigure_NameContainer0.setLineStyle(Graphics.LINE_SOLID);
 
-			GridLayoutData constraintCompositeStateFigure_NameContainer0 = new GridLayoutData();
-			constraintCompositeStateFigure_NameContainer0.verticalAlignment = GridLayoutData.FILL;
-			constraintCompositeStateFigure_NameContainer0.horizontalAlignment = GridLayoutData.FILL;
+			GridData constraintCompositeStateFigure_NameContainer0 = new GridData();
+			constraintCompositeStateFigure_NameContainer0.verticalAlignment = GridData.FILL;
+			constraintCompositeStateFigure_NameContainer0.horizontalAlignment = GridData.FILL;
 			constraintCompositeStateFigure_NameContainer0.horizontalIndent = 0;
 			constraintCompositeStateFigure_NameContainer0.horizontalSpan = 1;
 			constraintCompositeStateFigure_NameContainer0.verticalSpan = 1;
@@ -263,7 +264,7 @@ public class State2EditPart extends ShapeNodeEditPart {
 			constraintCompositeStateFigure_NameContainer0.grabExcessVerticalSpace = false;
 			this.add(compositeStateFigure_NameContainer0, constraintCompositeStateFigure_NameContainer0);
 
-			GridLayout layoutCompositeStateFigure_NameContainer0 = new GridLayout();
+			org.eclipse.draw2d.GridLayout layoutCompositeStateFigure_NameContainer0 = new org.eclipse.draw2d.GridLayout();
 			layoutCompositeStateFigure_NameContainer0.numColumns = 1;
 			layoutCompositeStateFigure_NameContainer0.makeColumnsEqualWidth = true;
 			layoutCompositeStateFigure_NameContainer0.horizontalSpacing = 0;
@@ -275,9 +276,9 @@ public class State2EditPart extends ShapeNodeEditPart {
 			WrapLabel compositeStateFigure_name1 = new WrapLabel();
 			compositeStateFigure_name1.setText("");
 
-			GridLayoutData constraintCompositeStateFigure_name1 = new GridLayoutData();
-			constraintCompositeStateFigure_name1.verticalAlignment = GridLayoutData.CENTER;
-			constraintCompositeStateFigure_name1.horizontalAlignment = GridLayoutData.CENTER;
+			GridData constraintCompositeStateFigure_name1 = new GridData();
+			constraintCompositeStateFigure_name1.verticalAlignment = GridData.CENTER;
+			constraintCompositeStateFigure_name1.horizontalAlignment = GridData.CENTER;
 			constraintCompositeStateFigure_name1.horizontalIndent = 0;
 			constraintCompositeStateFigure_name1.horizontalSpan = 1;
 			constraintCompositeStateFigure_name1.verticalSpan = 1;
@@ -295,9 +296,9 @@ public class State2EditPart extends ShapeNodeEditPart {
 			compositeStateFigure_Body0.setLineWidth(1);
 			compositeStateFigure_Body0.setLineStyle(Graphics.LINE_SOLID);
 
-			GridLayoutData constraintCompositeStateFigure_Body0 = new GridLayoutData();
-			constraintCompositeStateFigure_Body0.verticalAlignment = GridLayoutData.FILL;
-			constraintCompositeStateFigure_Body0.horizontalAlignment = GridLayoutData.FILL;
+			GridData constraintCompositeStateFigure_Body0 = new GridData();
+			constraintCompositeStateFigure_Body0.verticalAlignment = GridData.FILL;
+			constraintCompositeStateFigure_Body0.horizontalAlignment = GridData.FILL;
 			constraintCompositeStateFigure_Body0.horizontalIndent = 0;
 			constraintCompositeStateFigure_Body0.horizontalSpan = 1;
 			constraintCompositeStateFigure_Body0.verticalSpan = 1;
