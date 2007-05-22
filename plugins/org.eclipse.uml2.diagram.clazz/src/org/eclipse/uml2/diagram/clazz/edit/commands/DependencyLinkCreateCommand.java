@@ -96,7 +96,7 @@ public class DependencyLinkCreateCommand extends CreateElementCommand {
 		newElement.getSuppliers().add(getTarget());
 		return newElement;
 	}
-	
+
 	/**
 	 * @generated NOT
 	 */
@@ -120,8 +120,6 @@ public class DependencyLinkCreateCommand extends CreateElementCommand {
 		return newElement;
 	}
 
-
-
 	/**
 	 * @generated
 	 */
@@ -138,7 +136,7 @@ public class DependencyLinkCreateCommand extends CreateElementCommand {
 		}
 		return super.doExecuteWithResult(monitor, info);
 	}
-	
+
 	/**
 	 * @generated
 	 */

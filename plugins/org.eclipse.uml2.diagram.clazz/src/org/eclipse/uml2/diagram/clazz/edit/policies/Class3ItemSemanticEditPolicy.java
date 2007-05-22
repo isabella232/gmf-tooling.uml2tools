@@ -17,6 +17,7 @@ import org.eclipse.uml2.diagram.clazz.edit.commands.DependencyLinkCreateCommand;
 import org.eclipse.uml2.diagram.clazz.edit.commands.DependencyLinkReorientCommand;
 import org.eclipse.uml2.diagram.clazz.edit.commands.DependencySupplierCreateCommand;
 import org.eclipse.uml2.diagram.clazz.edit.commands.DependencySupplierReorientCommand;
+import org.eclipse.uml2.diagram.clazz.edit.commands.Generalization2CreateCommand;
 import org.eclipse.uml2.diagram.clazz.edit.commands.Generalization2ReorientCommand;
 import org.eclipse.uml2.diagram.clazz.edit.commands.GeneralizationCreateCommand;
 import org.eclipse.uml2.diagram.clazz.edit.commands.GeneralizationGeneralCreateCommand;
@@ -98,7 +99,7 @@ public class Class3ItemSemanticEditPolicy extends UMLBaseItemSemanticEditPolicy 
 			return getGEFWrapper(new RealizationCreateCommand(req, req.getSource(), req.getTarget()));
 		}
 		if (UMLElementTypes.Generalization_4011 == req.getElementType()) {
-			return getGEFWrapper(new GeneralizationCreateCommand(req, req.getSource(), req.getTarget()));
+			return getGEFWrapper(new Generalization2CreateCommand(req, req.getSource(), req.getTarget()));
 		}
 		if (UMLElementTypes.GeneralizationGeneral_4012 == req.getElementType()) {
 			return null;

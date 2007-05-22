@@ -2675,7 +2675,7 @@
         editPartClassName="Generalization2EditPart"
         itemSemanticEditPolicyClassName="Generalization2ItemSemanticEditPolicy"
         notationViewFactoryClassName="Generalization2ViewFactory"
-        createCommandClassName="GeneralizationCreateCommand"
+        createCommandClassName="Generalization2CreateCommand"
         reorientCommandClassName="Generalization2ReorientCommand">
       <diagramRunTimeClass
           href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Edge"/>

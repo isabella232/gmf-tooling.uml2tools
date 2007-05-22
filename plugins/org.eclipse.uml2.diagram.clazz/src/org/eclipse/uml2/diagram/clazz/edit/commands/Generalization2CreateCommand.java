@@ -19,7 +19,7 @@ import org.eclipse.uml2.uml.UMLPackage;
 /**
  * @generated
  */
-public class GeneralizationCreateCommand extends CreateElementCommand {
+public class Generalization2CreateCommand extends CreateElementCommand {
 
 	/**
 	 * @generated
@@ -34,7 +34,7 @@ public class GeneralizationCreateCommand extends CreateElementCommand {
 	/**
 	 * @generated
 	 */
-	public GeneralizationCreateCommand(CreateRelationshipRequest request, EObject source, EObject target) {
+	public Generalization2CreateCommand(CreateRelationshipRequest request, EObject source, EObject target) {
 		super(request);
 		this.source = source;
 		this.target = target;
@@ -55,14 +55,14 @@ public class GeneralizationCreateCommand extends CreateElementCommand {
 		if (source != null && !(source instanceof Classifier)) {
 			return false;
 		}
-		if (target != null && !(target instanceof Classifier)) {
+		if (target != null && !(target instanceof GeneralizationSet)) {
 			return false;
 		}
 		if (getSource() == null) {
 			return true; // link creation is in progress; source is not defined yet
 		}
 		// target may be null here but it's possible to check constraint
-		return UMLBaseItemSemanticEditPolicy.LinkConstraints.canCreateGeneralization_4001(getSource(), getTarget());
+		return UMLBaseItemSemanticEditPolicy.LinkConstraints.canCreateGeneralization_4011(getSource(), getTarget());
 	}
 
 	/**
@@ -72,7 +72,7 @@ public class GeneralizationCreateCommand extends CreateElementCommand {
 		// org.eclipse.uml2.uml.Generalization newElement = (org.eclipse.uml2.uml.Generalization) super.doDefaultElementCreation();
 		Generalization newElement = UMLFactory.eINSTANCE.createGeneralization();
 		getSource().getGeneralizations().add(newElement);
-		newElement.setGeneral(getTarget());
+		newElement.getGeneralizationSets().add(getTarget());
 		return newElement;
 	}
 
@@ -120,7 +120,7 @@ public class GeneralizationCreateCommand extends CreateElementCommand {
 	/**
 	 * @generated
 	 */
-	protected Classifier getTarget() {
-		return (Classifier) target;
+	protected GeneralizationSet getTarget() {
+		return (GeneralizationSet) target;
 	}
 }
