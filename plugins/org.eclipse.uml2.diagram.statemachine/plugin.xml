@@ -219,7 +219,7 @@
 
    <extension point="org.eclipse.gmf.runtime.emf.type.core.elementTypes">
       <?gmfgen generated="true"?>
-      <metamodel nsURI="http://www.eclipse.org/uml2/2.0.0/UML">
+      <metamodel nsURI="http://www.eclipse.org/uml2/2.1.0/UML">
          <metamodelType
                id="org.eclipse.uml2.diagram.statemachine.StateMachine_1000"
                name="%metatype.name.StateMachine_1000"
@@ -229,7 +229,7 @@
             <param name="semanticHint" value="1000"/>
          </metamodelType>
       </metamodel>
-      <metamodel nsURI="http://www.eclipse.org/uml2/2.0.0/UML">
+      <metamodel nsURI="http://www.eclipse.org/uml2/2.1.0/UML">
          <specializationType
                id="org.eclipse.uml2.diagram.statemachine.StateMachine_2004"
                name="%metatype.name.StateMachine_2004"
@@ -239,7 +239,7 @@
             <param name="semanticHint" value="2004"/>
          </specializationType>
       </metamodel>
-      <metamodel nsURI="http://www.eclipse.org/uml2/2.0.0/UML">
+      <metamodel nsURI="http://www.eclipse.org/uml2/2.1.0/UML">
          <metamodelType
                id="org.eclipse.uml2.diagram.statemachine.Region_3013"
                name="%metatype.name.Region_3013"
@@ -249,7 +249,7 @@
             <param name="semanticHint" value="3013"/>
          </metamodelType>
       </metamodel>
-      <metamodel nsURI="http://www.eclipse.org/uml2/2.0.0/UML">
+      <metamodel nsURI="http://www.eclipse.org/uml2/2.1.0/UML">
          <metamodelType
                id="org.eclipse.uml2.diagram.statemachine.State_3001"
                name="%metatype.name.State_3001"
@@ -259,7 +259,7 @@
             <param name="semanticHint" value="3001"/>
          </metamodelType>
       </metamodel>
-      <metamodel nsURI="http://www.eclipse.org/uml2/2.0.0/UML">
+      <metamodel nsURI="http://www.eclipse.org/uml2/2.1.0/UML">
          <specializationType
                id="org.eclipse.uml2.diagram.statemachine.State_3012"
                name="%metatype.name.State_3012"
@@ -269,7 +269,7 @@
             <param name="semanticHint" value="3012"/>
          </specializationType>
       </metamodel>
-      <metamodel nsURI="http://www.eclipse.org/uml2/2.0.0/UML">
+      <metamodel nsURI="http://www.eclipse.org/uml2/2.1.0/UML">
          <specializationType
                id="org.eclipse.uml2.diagram.statemachine.Region_3002"
                name="%metatype.name.Region_3002"
@@ -279,7 +279,7 @@
             <param name="semanticHint" value="3002"/>
          </specializationType>
       </metamodel>
-      <metamodel nsURI="http://www.eclipse.org/uml2/2.0.0/UML">
+      <metamodel nsURI="http://www.eclipse.org/uml2/2.1.0/UML">
          <specializationType
                id="org.eclipse.uml2.diagram.statemachine.State_3016"
                name="%metatype.name.State_3016"
@@ -289,7 +289,7 @@
             <param name="semanticHint" value="3016"/>
          </specializationType>
       </metamodel>
-      <metamodel nsURI="http://www.eclipse.org/uml2/2.0.0/UML">
+      <metamodel nsURI="http://www.eclipse.org/uml2/2.1.0/UML">
          <metamodelType
                id="org.eclipse.uml2.diagram.statemachine.ConnectionPointReference_3017"
                name="%metatype.name.ConnectionPointReference_3017"
@@ -299,7 +299,7 @@
             <param name="semanticHint" value="3017"/>
          </metamodelType>
       </metamodel>
-      <metamodel nsURI="http://www.eclipse.org/uml2/2.0.0/UML">
+      <metamodel nsURI="http://www.eclipse.org/uml2/2.1.0/UML">
          <specializationType
                id="org.eclipse.uml2.diagram.statemachine.ConnectionPointReference_3018"
                name="%metatype.name.ConnectionPointReference_3018"
@@ -309,7 +309,7 @@
             <param name="semanticHint" value="3018"/>
          </specializationType>
       </metamodel>
-      <metamodel nsURI="http://www.eclipse.org/uml2/2.0.0/UML">
+      <metamodel nsURI="http://www.eclipse.org/uml2/2.1.0/UML">
          <metamodelType
                id="org.eclipse.uml2.diagram.statemachine.FinalState_3003"
                name="%metatype.name.FinalState_3003"
@@ -319,7 +319,7 @@
             <param name="semanticHint" value="3003"/>
          </metamodelType>
       </metamodel>
-      <metamodel nsURI="http://www.eclipse.org/uml2/2.0.0/UML">
+      <metamodel nsURI="http://www.eclipse.org/uml2/2.1.0/UML">
          <metamodelType
                id="org.eclipse.uml2.diagram.statemachine.Pseudostate_3004"
                name="%metatype.name.Pseudostate_3004"
@@ -329,7 +329,7 @@
             <param name="semanticHint" value="3004"/>
          </metamodelType>
       </metamodel>
-      <metamodel nsURI="http://www.eclipse.org/uml2/2.0.0/UML">
+      <metamodel nsURI="http://www.eclipse.org/uml2/2.1.0/UML">
          <specializationType
                id="org.eclipse.uml2.diagram.statemachine.Pseudostate_3005"
                name="%metatype.name.Pseudostate_3005"
@@ -339,7 +339,7 @@
             <param name="semanticHint" value="3005"/>
          </specializationType>
       </metamodel>
-      <metamodel nsURI="http://www.eclipse.org/uml2/2.0.0/UML">
+      <metamodel nsURI="http://www.eclipse.org/uml2/2.1.0/UML">
          <specializationType
                id="org.eclipse.uml2.diagram.statemachine.Pseudostate_3006"
                name="%metatype.name.Pseudostate_3006"
@@ -349,7 +349,7 @@
             <param name="semanticHint" value="3006"/>
          </specializationType>
       </metamodel>
-      <metamodel nsURI="http://www.eclipse.org/uml2/2.0.0/UML">
+      <metamodel nsURI="http://www.eclipse.org/uml2/2.1.0/UML">
          <specializationType
                id="org.eclipse.uml2.diagram.statemachine.Pseudostate_3007"
                name="%metatype.name.Pseudostate_3007"
@@ -359,7 +359,7 @@
             <param name="semanticHint" value="3007"/>
          </specializationType>
       </metamodel>
-      <metamodel nsURI="http://www.eclipse.org/uml2/2.0.0/UML">
+      <metamodel nsURI="http://www.eclipse.org/uml2/2.1.0/UML">
          <specializationType
                id="org.eclipse.uml2.diagram.statemachine.Pseudostate_3008"
                name="%metatype.name.Pseudostate_3008"
@@ -369,7 +369,7 @@
             <param name="semanticHint" value="3008"/>
          </specializationType>
       </metamodel>
-      <metamodel nsURI="http://www.eclipse.org/uml2/2.0.0/UML">
+      <metamodel nsURI="http://www.eclipse.org/uml2/2.1.0/UML">
          <specializationType
                id="org.eclipse.uml2.diagram.statemachine.Pseudostate_3009"
                name="%metatype.name.Pseudostate_3009"
@@ -379,7 +379,7 @@
             <param name="semanticHint" value="3009"/>
          </specializationType>
       </metamodel>
-      <metamodel nsURI="http://www.eclipse.org/uml2/2.0.0/UML">
+      <metamodel nsURI="http://www.eclipse.org/uml2/2.1.0/UML">
          <specializationType
                id="org.eclipse.uml2.diagram.statemachine.Pseudostate_3010"
                name="%metatype.name.Pseudostate_3010"
@@ -389,7 +389,7 @@
             <param name="semanticHint" value="3010"/>
          </specializationType>
       </metamodel>
-      <metamodel nsURI="http://www.eclipse.org/uml2/2.0.0/UML">
+      <metamodel nsURI="http://www.eclipse.org/uml2/2.1.0/UML">
          <specializationType
                id="org.eclipse.uml2.diagram.statemachine.Pseudostate_3011"
                name="%metatype.name.Pseudostate_3011"
@@ -399,7 +399,7 @@
             <param name="semanticHint" value="3011"/>
          </specializationType>
       </metamodel>
-      <metamodel nsURI="http://www.eclipse.org/uml2/2.0.0/UML">
+      <metamodel nsURI="http://www.eclipse.org/uml2/2.1.0/UML">
          <specializationType
                id="org.eclipse.uml2.diagram.statemachine.Pseudostate_3014"
                name="%metatype.name.Pseudostate_3014"
@@ -409,7 +409,7 @@
             <param name="semanticHint" value="3014"/>
          </specializationType>
       </metamodel>
-      <metamodel nsURI="http://www.eclipse.org/uml2/2.0.0/UML">
+      <metamodel nsURI="http://www.eclipse.org/uml2/2.1.0/UML">
          <specializationType
                id="org.eclipse.uml2.diagram.statemachine.Pseudostate_3015"
                name="%metatype.name.Pseudostate_3015"
@@ -419,7 +419,7 @@
             <param name="semanticHint" value="3015"/>
          </specializationType>
       </metamodel>
-      <metamodel nsURI="http://www.eclipse.org/uml2/2.0.0/UML">
+      <metamodel nsURI="http://www.eclipse.org/uml2/2.1.0/UML">
          <metamodelType
                id="org.eclipse.uml2.diagram.statemachine.Transition_4001"
                name="%metatype.name.Transition_4001"
@@ -604,38 +604,38 @@
    </extension><extension point="org.eclipse.ui.preferencePages">
       <?gmfgen generated="true"?>
       <page
-            id="org.eclipse.uml2.uml.diagram.statemachine.general"
-            name="%preference.page.title.org.eclipse.uml2.uml.diagram.statemachine.general"
+            id="org.eclipse.uml2.uml.diagram.general"
+            name="%preference.page.title.org.eclipse.uml2.uml.diagram.general"
             class="org.eclipse.uml2.diagram.statemachine.preferences.DiagramGeneralPreferencePage">
       </page>
       <page
-            id="org.eclipse.uml2.uml.diagram.statemachine.appearance"
-            name="%preference.page.title.org.eclipse.uml2.uml.diagram.statemachine.appearance"
-            category="org.eclipse.uml2.uml.diagram.statemachine.general"
+            id="org.eclipse.uml2.uml.diagram.appearance"
+            name="%preference.page.title.org.eclipse.uml2.uml.diagram.appearance"
+            category="org.eclipse.uml2.uml.diagram.general"
             class="org.eclipse.uml2.diagram.statemachine.preferences.DiagramAppearancePreferencePage">
       </page>
       <page
-            id="org.eclipse.uml2.uml.diagram.statemachine.connections"
-            name="%preference.page.title.org.eclipse.uml2.uml.diagram.statemachine.connections"
-            category="org.eclipse.uml2.uml.diagram.statemachine.general"
+            id="org.eclipse.uml2.uml.diagram.connections"
+            name="%preference.page.title.org.eclipse.uml2.uml.diagram.connections"
+            category="org.eclipse.uml2.uml.diagram.general"
             class="org.eclipse.uml2.diagram.statemachine.preferences.DiagramConnectionsPreferencePage">
       </page>
       <page
-            id="org.eclipse.uml2.uml.diagram.statemachine.printing"
-            name="%preference.page.title.org.eclipse.uml2.uml.diagram.statemachine.printing"
-            category="org.eclipse.uml2.uml.diagram.statemachine.general"
+            id="org.eclipse.uml2.uml.diagram.printing"
+            name="%preference.page.title.org.eclipse.uml2.uml.diagram.printing"
+            category="org.eclipse.uml2.uml.diagram.general"
             class="org.eclipse.uml2.diagram.statemachine.preferences.DiagramPrintingPreferencePage">
       </page>
       <page
-            id="org.eclipse.uml2.uml.diagram.statemachine.rulersAndGrid"
-            name="%preference.page.title.org.eclipse.uml2.uml.diagram.statemachine.rulersAndGrid"
-            category="org.eclipse.uml2.uml.diagram.statemachine.general"
+            id="org.eclipse.uml2.uml.diagram.rulersAndGrid"
+            name="%preference.page.title.org.eclipse.uml2.uml.diagram.rulersAndGrid"
+            category="org.eclipse.uml2.uml.diagram.general"
             class="org.eclipse.uml2.diagram.statemachine.preferences.DiagramRulersAndGridPreferencePage">
       </page>
       <page
-            id="org.eclipse.uml2.uml.diagram.statemachine.pathmaps"
-            name="%preference.page.title.org.eclipse.uml2.uml.diagram.statemachine.pathmaps"
-            category="org.eclipse.uml2.uml.diagram.statemachine.general"
+            id="org.eclipse.uml2.uml.diagram.pathmaps"
+            name="%preference.page.title.org.eclipse.uml2.uml.diagram.pathmaps"
+            category="org.eclipse.uml2.uml.diagram.general"
             class="org.eclipse.gmf.runtime.emf.ui.preferences.PathmapsPreferencePage">
       </page>
    </extension><extension point="org.eclipse.ui.popupMenus">
