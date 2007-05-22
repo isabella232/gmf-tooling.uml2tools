@@ -74,5 +74,4 @@ public class RegionSubvertices2ViewFactory extends ListCompartmentViewFactory {
 			drawerStyle.setCollapsed(false);
 		}
 	}
-
 }
