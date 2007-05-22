@@ -104,7 +104,7 @@ public class DependencyLinkCreateCommand extends CreateElementCommand {
 		Dependency newElement;
 		EClass eClass = (EClass) getCreateRequest().getParameter(DependencyEditHelper.PARAMETER_DEPENDENCY_TYPE);
 		if (eClass == null) {
-			newElement = (Dependency) doDefaultElementCreation();
+			newElement = (Dependency) doDefaultElementCreationGen();
 		} else {
 			EReference containment = getContainmentFeature();
 			EObject element = getElementToEdit();
