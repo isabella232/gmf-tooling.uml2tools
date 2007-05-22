@@ -1306,21 +1306,14 @@ public class UMLDiagramUpdater {
 	 * @generated
 	 */
 	public static List getGeneralization_4001ContainedLinks(View view) {
-		Generalization modelElement = (Generalization) view.getElement();
-		List result = new LinkedList();
-		result.addAll(getOutgoingFeatureModelFacetLinks_Generalization_General_4012(modelElement));
-		return result;
+		return Collections.EMPTY_LIST;
 	}
 
 	/**
 	 * @generated
 	 */
 	public static List getDependency_4002ContainedLinks(View view) {
-		Dependency modelElement = (Dependency) view.getElement();
-		List result = new LinkedList();
-		result.addAll(getOutgoingFeatureModelFacetLinks_Dependency_Supplier_4006(modelElement));
-		result.addAll(getOutgoingFeatureModelFacetLinks_Dependency_Client_4007(modelElement));
-		return result;
+		return Collections.EMPTY_LIST;
 	}
 
 	/**
@@ -1334,55 +1327,35 @@ public class UMLDiagramUpdater {
 	 * @generated
 	 */
 	public static List getAssociation_4005ContainedLinks(View view) {
-		Association modelElement = (Association) view.getElement();
-		List result = new LinkedList();
-		result.addAll(getContainedTypeModelFacetLinks_Generalization_4001(modelElement));
-		result.addAll(getContainedTypeModelFacetLinks_Property_4003(modelElement));
-		result.addAll(getContainedTypeModelFacetLinks_Generalization_4011(modelElement));
-		return result;
+		return Collections.EMPTY_LIST;
 	}
 
 	/**
 	 * @generated
 	 */
 	public static List getInterfaceRealization_4008ContainedLinks(View view) {
-		InterfaceRealization modelElement = (InterfaceRealization) view.getElement();
-		List result = new LinkedList();
-		result.addAll(getOutgoingFeatureModelFacetLinks_Dependency_Supplier_4006(modelElement));
-		result.addAll(getOutgoingFeatureModelFacetLinks_Dependency_Client_4007(modelElement));
-		return result;
+		return Collections.EMPTY_LIST;
 	}
 
 	/**
 	 * @generated
 	 */
 	public static List getRealization_4010ContainedLinks(View view) {
-		Realization modelElement = (Realization) view.getElement();
-		List result = new LinkedList();
-		result.addAll(getOutgoingFeatureModelFacetLinks_Dependency_Supplier_4006(modelElement));
-		result.addAll(getOutgoingFeatureModelFacetLinks_Dependency_Client_4007(modelElement));
-		return result;
+		return Collections.EMPTY_LIST;
 	}
 
 	/**
 	 * @generated
 	 */
 	public static List getGeneralization_4011ContainedLinks(View view) {
-		Generalization modelElement = (Generalization) view.getElement();
-		List result = new LinkedList();
-		result.addAll(getOutgoingFeatureModelFacetLinks_Generalization_General_4012(modelElement));
-		return result;
+		return Collections.EMPTY_LIST;
 	}
 
 	/**
 	 * @generated
 	 */
 	public static List getUsage_4013ContainedLinks(View view) {
-		Usage modelElement = (Usage) view.getElement();
-		List result = new LinkedList();
-		result.addAll(getOutgoingFeatureModelFacetLinks_Dependency_Supplier_4006(modelElement));
-		result.addAll(getOutgoingFeatureModelFacetLinks_Dependency_Client_4007(modelElement));
-		return result;
+		return Collections.EMPTY_LIST;
 	}
 
 	/**

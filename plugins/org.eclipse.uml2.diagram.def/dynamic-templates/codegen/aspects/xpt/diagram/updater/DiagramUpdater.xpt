@@ -46,9 +46,10 @@
  			//VID = «EXPAND xpt::editor::VisualIDRegistry::visualID FOR childHeader», 
  			//for the case when top-level view is created for the same semantic element as the canvas view.
  			 
- 			java.util.List resultAndHeader = «EXPAND xpt::diagram::updater::DiagramUpdater::getSemanticChildrenMethodName»(view);
+ 			java.util.List resultAndHeader = new java.util.LinkedList();
 			resultAndHeader.add(«-»
 				new «descriptorFQN»(view.getElement(), «EXPAND xpt::editor::VisualIDRegistry::visualID FOR childHeader»));
+ 			resultAndHeader.addAll(«EXPAND xpt::diagram::updater::DiagramUpdater::getSemanticChildrenMethodName»(view));
 			return resultAndHeader;
 		}
 	«ELSE-»
@@ -91,6 +92,16 @@ public static java.util.List «EXPAND xpt::diagram::updater::DiagramUpdater::link
 	//no links to, from and inside the diagram header
 	return java.util.Collections.EMPTY_LIST;
 }
+	«ELSE-»
+		«targetDef.proceed()-»
+	«ENDIF-»
+«ENDAROUND»
+
+«AROUND getContainedLinks FOR gmfgen::GenCommonBase-»
+	«REM»Workaround for #188420. Safe for now as we don't yet have links-to-links«ENDREM»«-»
+	«REM»Below is not trivial way to call instanceof«ENDREM»«-»
+	«IF !{this}.typeSelect(gmfgen::GenLink).isEmpty()-»
+		«EXPAND xpt::diagram::updater::DiagramUpdater::getConnectedLinks({}, getContainedLinksMethodNameSuffix(), false)-»	
 	«ELSE-»
 		«targetDef.proceed()-»
 	«ENDIF-»
