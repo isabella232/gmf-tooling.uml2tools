@@ -160,6 +160,11 @@ public class UMLVisualIDRegistry {
 	/**
 	 * @generated
 	 */
+	private static final UMLAbstractExpression Property_4003_Constraint = UMLOCLFactory.getExpression("self.association.oclIsTypeOf(uml::AssociationClass)", UMLPackage.eINSTANCE.getProperty());
+
+	/**
+	 * @generated
+	 */
 	private static final UMLAbstractExpression InterfaceRealization_4008_Constraint = UMLOCLFactory.getExpression("self.supplier->forAll(e|e.oclIsKindOf(uml::Interface))", UMLPackage.eINSTANCE
 			.getInterfaceRealization());
 
@@ -698,7 +703,7 @@ public class UMLVisualIDRegistry {
 		if (UMLPackage.eINSTANCE.getDependency().isSuperTypeOf(domainElementMetaclass) && (domainElement == null || evaluate(Dependency_4002_Constraint, domainElement))) {
 			return Dependency2EditPart.VISUAL_ID;
 		}
-		if (UMLPackage.eINSTANCE.getProperty().isSuperTypeOf(domainElementMetaclass)) {
+		if (UMLPackage.eINSTANCE.getProperty().isSuperTypeOf(domainElementMetaclass) && (domainElement == null || evaluate(Property_4003_Constraint, domainElement))) {
 			return Property7EditPart.VISUAL_ID;
 		}
 		if (UMLPackage.eINSTANCE.getAssociation().isSuperTypeOf(domainElementMetaclass)) {

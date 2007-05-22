@@ -1356,6 +1356,8 @@
   <links>
     <domainMetaElement
         href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//Property"/>
+    <domainSpecialization
+        body="self.association.oclIsTypeOf(uml::AssociationClass)"/>
     <labelMappings
         xsi:type="gmfmap:FeatureLabelMapping">
       <diagramLabel
