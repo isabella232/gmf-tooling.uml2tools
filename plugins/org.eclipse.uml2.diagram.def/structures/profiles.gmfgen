@@ -776,31 +776,31 @@
     </palette>
     <preferencePages
         xsi:type="gmfgen:GenStandardPreferencePage"
-        iD="org.eclipse.uml2.uml.diagram.general"
-        name="UML Diagram">
+        iD="org.eclipse.uml2.uml.diagram.profile.general"
+        name="UML Profile Definition Diagram">
       <children
           xsi:type="gmfgen:GenStandardPreferencePage"
-          iD="org.eclipse.uml2.uml.diagram.appearance"
+          iD="org.eclipse.uml2.uml.diagram.profile.appearance"
           name="Appearance"
           kind="Appearance"/>
       <children
           xsi:type="gmfgen:GenStandardPreferencePage"
-          iD="org.eclipse.uml2.uml.diagram.connections"
+          iD="org.eclipse.uml2.uml.diagram.profile.connections"
           name="Connections"
           kind="Connections"/>
       <children
           xsi:type="gmfgen:GenStandardPreferencePage"
-          iD="org.eclipse.uml2.uml.diagram.printing"
+          iD="org.eclipse.uml2.uml.diagram.profile.printing"
           name="Printing"
           kind="Printing"/>
       <children
           xsi:type="gmfgen:GenStandardPreferencePage"
-          iD="org.eclipse.uml2.uml.diagram.rulersAndGrid"
+          iD="org.eclipse.uml2.uml.diagram.profile.rulersAndGrid"
           name="Rulers And Grid"
           kind="RulersAndGrid"/>
       <children
           xsi:type="gmfgen:GenStandardPreferencePage"
-          iD="org.eclipse.uml2.uml.diagram.pathmaps"
+          iD="org.eclipse.uml2.uml.diagram.profile.pathmaps"
           name="Pathmaps"
           kind="Pathmaps"/>
     </preferencePages>

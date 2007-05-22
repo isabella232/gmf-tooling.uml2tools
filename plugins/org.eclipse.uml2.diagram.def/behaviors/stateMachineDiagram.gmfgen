@@ -2,7 +2,7 @@
 <gmfgen:GenEditorGenerator xmi:version="2.0"
     xmlns:xmi="http://www.omg.org/XMI"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xmlns:gmfgen="http://www.eclipse.org/gmf/2005/GenModel/2.0"
+    xmlns:gmfgen="http://www.eclipse.org/gmf/2006/GenModel"
     xmlns:uml2.gmfgenext="http://www.eclipse.org/uml2/diagram/gmfgenext/DiagramFigure/1.0" packageNamePrefix="org.eclipse.uml2.diagram.statemachine"
     modelID="UMLStateMachine"
     diagramFileExtension="umlstatemachine_diagram"
@@ -1128,8 +1128,7 @@
         <requiredPluginIDs>org.eclipse.gmf.runtime.draw2d.ui</requiredPluginIDs>
       </viewmap>
       <modelFacet
-          xsi:type="gmfgen:TypeLinkModelFacet"
-          createCommandClassName="TransitionTypeLinkCreateCommand">
+          xsi:type="gmfgen:TypeLinkModelFacet">
         <metaClass
             href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/Transition"/>
         <containmentMetaFeature
@@ -1288,31 +1287,31 @@
     </palette>
     <preferencePages
         xsi:type="gmfgen:GenStandardPreferencePage"
-        iD="org.eclipse.uml2.uml.diagram.general"
-        name="UML Diagram">
+        iD="org.eclipse.uml2.uml.diagram.statemachine.general"
+        name="UML StateMachine Diagram">
       <children
           xsi:type="gmfgen:GenStandardPreferencePage"
-          iD="org.eclipse.uml2.uml.diagram.appearance"
+          iD="org.eclipse.uml2.uml.diagram.statemachine.appearance"
           name="Appearance"
           kind="Appearance"/>
       <children
           xsi:type="gmfgen:GenStandardPreferencePage"
-          iD="org.eclipse.uml2.uml.diagram.connections"
+          iD="org.eclipse.uml2.uml.diagram.statemachine.connections"
           name="Connections"
           kind="Connections"/>
       <children
           xsi:type="gmfgen:GenStandardPreferencePage"
-          iD="org.eclipse.uml2.uml.diagram.printing"
+          iD="org.eclipse.uml2.uml.diagram.statemachine.printing"
           name="Printing"
           kind="Printing"/>
       <children
           xsi:type="gmfgen:GenStandardPreferencePage"
-          iD="org.eclipse.uml2.uml.diagram.rulersAndGrid"
+          iD="org.eclipse.uml2.uml.diagram.statemachine.rulersAndGrid"
           name="Rulers And Grid"
           kind="RulersAndGrid"/>
       <children
           xsi:type="gmfgen:GenStandardPreferencePage"
-          iD="org.eclipse.uml2.uml.diagram.pathmaps"
+          iD="org.eclipse.uml2.uml.diagram.statemachine.pathmaps"
           name="Pathmaps"
           kind="Pathmaps"/>
     </preferencePages>
