@@ -149,7 +149,7 @@ public class UMLElementTypes extends ElementInitializers {
 	 */
 	public static Image getImage(IAdaptable hint) {
 		IElementType type = (IElementType) hint.getAdapter(IElementType.class);
-		if (type != null && pseudostateDescriptors.containsKey(type)) {
+		if (type != null && getPseudostateImageDescriptors().containsKey(type)) {
 			String key = type.getId();
 			Image image = getImageRegistry().get(key);
 			if (image == null) {
@@ -233,7 +233,7 @@ public class UMLElementTypes extends ElementInitializers {
 	/**
 	 * @NOT generated
 	 */
-	private static ImageDescriptor getPseudostateImageDescriptor(IElementType hint) {
+	private static Map<IElementType, ImageDescriptor> getPseudostateImageDescriptors() {
 		if (pseudostateDescriptors == null) {
 			pseudostateDescriptors = new HashMap<IElementType, ImageDescriptor>();
 			pseudostateDescriptors.put(Pseudostate_3004, UMLDiagramEditorPlugin.findImageDescriptor("/org.eclipse.uml2.uml.edit/icons/full/obj16/Pseudostate_initial.gif")); //$NON-NLS-1$
@@ -248,7 +248,13 @@ public class UMLElementTypes extends ElementInitializers {
 			pseudostateDescriptors.put(Pseudostate_3014, UMLDiagramEditorPlugin.findImageDescriptor("/org.eclipse.uml2.uml.edit/icons/full/obj16/Pseudostate_entryPoint.gif")); //$NON-NLS-1$
 			pseudostateDescriptors.put(Pseudostate_3015, UMLDiagramEditorPlugin.findImageDescriptor("/org.eclipse.uml2.uml.edit/icons/full/obj16/Pseudostate_exitPoint.gif")); //$NON-NLS-1$
 		}
-		return pseudostateDescriptors.get(hint);
+		return pseudostateDescriptors;
+	}
+	/**
+	 * @NOT generated
+	 */
+	private static ImageDescriptor getPseudostateImageDescriptor(IElementType hint) {
+		return getPseudostateImageDescriptors().get(hint);
 	}
 
 	/**
