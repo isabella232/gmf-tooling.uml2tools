@@ -5,10 +5,13 @@ import org.eclipse.core.runtime.IAdaptable;
 import org.eclipse.core.runtime.IProgressMonitor;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.EReference;
 import org.eclipse.gmf.runtime.common.core.command.CommandResult;
+import org.eclipse.gmf.runtime.emf.core.util.EMFCoreUtil;
 import org.eclipse.gmf.runtime.emf.type.core.commands.CreateElementCommand;
 import org.eclipse.gmf.runtime.emf.type.core.requests.ConfigureRequest;
 import org.eclipse.gmf.runtime.emf.type.core.requests.CreateRelationshipRequest;
+import org.eclipse.uml2.diagram.clazz.edit.helpers.DependencyEditHelper;
 import org.eclipse.uml2.diagram.clazz.edit.policies.UMLBaseItemSemanticEditPolicy;
 import org.eclipse.uml2.uml.Dependency;
 import org.eclipse.uml2.uml.NamedElement;
@@ -85,7 +88,7 @@ public class DependencyLinkCreateCommand extends CreateElementCommand {
 	/**
 	 * @generated
 	 */
-	protected EObject doDefaultElementCreation() {
+	protected EObject doDefaultElementCreationGen() {
 		// org.eclipse.uml2.uml.Dependency newElement = (org.eclipse.uml2.uml.Dependency) super.doDefaultElementCreation();
 		Dependency newElement = UMLFactory.eINSTANCE.createDependency();
 		getContainer().getPackagedElements().add(newElement);
@@ -93,6 +96,31 @@ public class DependencyLinkCreateCommand extends CreateElementCommand {
 		newElement.getSuppliers().add(getTarget());
 		return newElement;
 	}
+	
+	/**
+	 * @generated NOT
+	 */
+	protected EObject doDefaultElementCreation() {
+		Dependency newElement;
+		EClass eClass = (EClass) getCreateRequest().getParameter(DependencyEditHelper.PARAMETER_DEPENDENCY_TYPE);
+		if (eClass == null) {
+			newElement = (Dependency) doDefaultElementCreation();
+		} else {
+			EReference containment = getContainmentFeature();
+			EObject element = getElementToEdit();
+			if (containment == null || element == null) {
+				return null;
+			}
+			newElement = (Dependency) EMFCoreUtil.create(element, containment, eClass);
+			if (newElement != null) {
+				newElement.getClients().add(getSource());
+				newElement.getSuppliers().add(getTarget());
+			}
+		}
+		return newElement;
+	}
+
+
 
 	/**
 	 * @generated
@@ -110,7 +138,7 @@ public class DependencyLinkCreateCommand extends CreateElementCommand {
 		}
 		return super.doExecuteWithResult(monitor, info);
 	}
-
+	
 	/**
 	 * @generated
 	 */
