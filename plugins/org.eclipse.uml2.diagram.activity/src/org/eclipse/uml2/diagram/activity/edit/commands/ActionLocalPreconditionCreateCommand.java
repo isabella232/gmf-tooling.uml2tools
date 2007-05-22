@@ -58,7 +58,7 @@ public class ActionLocalPreconditionCreateCommand extends EditElementCommand {
 	/**
 	 * @generated
 	 */
-	protected CommandResult doExecuteWithResult(IProgressMonitor monitor, IAdaptable info) throws ExecutionException {
+	protected CommandResult doExecuteWithResultGen(IProgressMonitor monitor, IAdaptable info) throws ExecutionException {
 		if (!canExecute()) {
 			throw new ExecutionException("Invalid arguments in create link command"); //$NON-NLS-1$
 		}
@@ -66,6 +66,17 @@ public class ActionLocalPreconditionCreateCommand extends EditElementCommand {
 			getSource().getLocalPreconditions().add(getTarget());
 		}
 		return CommandResult.newOKCommandResult();
+	}
+
+	/**
+	 * @generated NOT
+	 */
+	protected CommandResult doExecuteWithResult(IProgressMonitor monitor, IAdaptable info) throws ExecutionException {
+		//force removing of the phantom from resource
+		//see #188140
+		Constraint probablyPhantom = getTarget();
+		probablyPhantom.eResource().getContents().remove(probablyPhantom);
+		return doExecuteWithResultGen(monitor, info);
 	}
 
 	/**
