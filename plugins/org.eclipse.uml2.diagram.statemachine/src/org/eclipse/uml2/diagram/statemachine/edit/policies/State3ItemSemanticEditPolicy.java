@@ -1,34 +1,29 @@
 package org.eclipse.uml2.diagram.statemachine.edit.policies;
 
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.Collections;
 import java.util.Iterator;
 
-import org.eclipse.emf.ecore.EObject;
-import org.eclipse.gef.EditPart;
+import org.eclipse.emf.ecore.EAnnotation;
 import org.eclipse.gef.commands.Command;
 import org.eclipse.gef.commands.CompoundCommand;
-import org.eclipse.gef.commands.UnexecutableCommand;
-import org.eclipse.gmf.runtime.diagram.ui.requests.EditCommandRequestWrapper;
 import org.eclipse.gmf.runtime.emf.type.core.commands.DestroyElementCommand;
 import org.eclipse.gmf.runtime.emf.type.core.requests.CreateElementRequest;
 import org.eclipse.gmf.runtime.emf.type.core.requests.CreateRelationshipRequest;
 import org.eclipse.gmf.runtime.emf.type.core.requests.DestroyElementRequest;
 import org.eclipse.gmf.runtime.emf.type.core.requests.ReorientRelationshipRequest;
-import org.eclipse.gmf.runtime.notation.Edge;
+import org.eclipse.gmf.runtime.notation.Node;
 import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.uml2.diagram.statemachine.edit.commands.ConnectionPointReference2CreateCommand;
 import org.eclipse.uml2.diagram.statemachine.edit.commands.ConnectionPointReferenceCreateCommand;
 import org.eclipse.uml2.diagram.statemachine.edit.commands.Region2CreateCommand;
+import org.eclipse.uml2.diagram.statemachine.edit.commands.TransitionCreateCommand;
 import org.eclipse.uml2.diagram.statemachine.edit.commands.TransitionReorientCommand;
-import org.eclipse.uml2.diagram.statemachine.edit.commands.TransitionTypeLinkCreateCommand;
-import org.eclipse.uml2.diagram.statemachine.edit.parts.State3EditPart;
+import org.eclipse.uml2.diagram.statemachine.edit.parts.ConnectionPointReference2EditPart;
+import org.eclipse.uml2.diagram.statemachine.edit.parts.ConnectionPointReferenceEditPart;
+import org.eclipse.uml2.diagram.statemachine.edit.parts.Region2EditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.TransitionEditPart;
+import org.eclipse.uml2.diagram.statemachine.part.UMLVisualIDRegistry;
 import org.eclipse.uml2.diagram.statemachine.providers.UMLElementTypes;
-import org.eclipse.uml2.uml.Region;
 import org.eclipse.uml2.uml.UMLPackage;
-import org.eclipse.uml2.uml.Vertex;
 
 /**
  * @generated
@@ -43,19 +38,19 @@ public class State3ItemSemanticEditPolicy extends UMLBaseItemSemanticEditPolicy 
 			if (req.getContainmentFeature() == null) {
 				req.setContainmentFeature(UMLPackage.eINSTANCE.getState_Region());
 			}
-			return getMSLWrapper(new Region2CreateCommand(req));
+			return getGEFWrapper(new Region2CreateCommand(req));
 		}
 		if (UMLElementTypes.ConnectionPointReference_3017 == req.getElementType()) {
 			if (req.getContainmentFeature() == null) {
 				req.setContainmentFeature(UMLPackage.eINSTANCE.getState_Connection());
 			}
-			return getMSLWrapper(new ConnectionPointReferenceCreateCommand(req));
+			return getGEFWrapper(new ConnectionPointReferenceCreateCommand(req));
 		}
 		if (UMLElementTypes.ConnectionPointReference_3018 == req.getElementType()) {
 			if (req.getContainmentFeature() == null) {
 				req.setContainmentFeature(UMLPackage.eINSTANCE.getState_Connection());
 			}
-			return getMSLWrapper(new ConnectionPointReference2CreateCommand(req));
+			return getGEFWrapper(new ConnectionPointReference2CreateCommand(req));
 		}
 		return super.getCreateCommand(req);
 	}
@@ -64,74 +59,63 @@ public class State3ItemSemanticEditPolicy extends UMLBaseItemSemanticEditPolicy 
 	 * @generated
 	 */
 	protected Command getDestroyElementCommand(DestroyElementRequest req) {
-		CompoundCommand cc = new CompoundCommand();
-		Collection allEdges = new ArrayList();
+		CompoundCommand cc = getDestroyEdgesCommand();
+		addDestroyChildNodesCommand(cc);
+		cc.add(getGEFWrapper(new DestroyElementCommand(req)));
+		return cc.unwrap();
+	}
+
+	/**
+	 * @generated
+	 */
+	protected void addDestroyChildNodesCommand(CompoundCommand cmd) {
 		View view = (View) getHost().getModel();
-		allEdges.addAll(view.getSourceEdges());
-		allEdges.addAll(view.getTargetEdges());
-		for (Iterator it = allEdges.iterator(); it.hasNext();) {
-			Edge nextEdge = (Edge) it.next();
-			EditPart nextEditPart = (EditPart) getHost().getViewer().getEditPartRegistry().get(nextEdge);
-			EditCommandRequestWrapper editCommandRequest = new EditCommandRequestWrapper(new DestroyElementRequest(((State3EditPart) getHost()).getEditingDomain(), req.isConfirmationRequired()),
-					Collections.EMPTY_MAP);
-			cc.add(nextEditPart.getCommand(editCommandRequest));
+		EAnnotation annotation = view.getEAnnotation("Shortcut"); //$NON-NLS-1$
+		if (annotation != null) {
+			return;
 		}
-		cc.add(getMSLWrapper(new DestroyElementCommand(req)));
-		return cc;
+		for (Iterator it = view.getChildren().iterator(); it.hasNext();) {
+			Node node = (Node) it.next();
+			switch (UMLVisualIDRegistry.getVisualID(node)) {
+			case Region2EditPart.VISUAL_ID:
+				cmd.add(getDestroyElementCommand(node));
+				break;
+			case ConnectionPointReferenceEditPart.VISUAL_ID:
+				cmd.add(getDestroyElementCommand(node));
+				break;
+			case ConnectionPointReference2EditPart.VISUAL_ID:
+				cmd.add(getDestroyElementCommand(node));
+				break;
+			}
+		}
 	}
 
 	/**
 	 * @generated
 	 */
 	protected Command getCreateRelationshipCommand(CreateRelationshipRequest req) {
+		Command command = req.getTarget() == null ? getStartCreateRelationshipCommand(req) : getCompleteCreateRelationshipCommand(req);
+		return command != null ? command : super.getCreateRelationshipCommand(req);
+	}
+
+	/**
+	 * @generated
+	 */
+	protected Command getStartCreateRelationshipCommand(CreateRelationshipRequest req) {
 		if (UMLElementTypes.Transition_4001 == req.getElementType()) {
-			return req.getTarget() == null ? getCreateStartOutgoingTransition_4001Command(req) : getCreateCompleteIncomingTransition_4001Command(req);
+			return getGEFWrapper(new TransitionCreateCommand(req, req.getSource(), req.getTarget()));
 		}
-		return super.getCreateRelationshipCommand(req);
+		return null;
 	}
 
 	/**
 	 * @generated
 	 */
-	protected Command getCreateStartOutgoingTransition_4001Command(CreateRelationshipRequest req) {
-		EObject sourceEObject = req.getSource();
-		if (false == sourceEObject instanceof Vertex) {
-			return UnexecutableCommand.INSTANCE;
+	protected Command getCompleteCreateRelationshipCommand(CreateRelationshipRequest req) {
+		if (UMLElementTypes.Transition_4001 == req.getElementType()) {
+			return getGEFWrapper(new TransitionCreateCommand(req, req.getSource(), req.getTarget()));
 		}
-		Vertex source = (Vertex) sourceEObject;
-		Region container = (Region) getRelationshipContainer(source, UMLPackage.eINSTANCE.getRegion(), req.getElementType());
-		if (container == null) {
-			return UnexecutableCommand.INSTANCE;
-		}
-		if (!UMLBaseItemSemanticEditPolicy.LinkConstraints.canCreateTransition_4001(container, source, null)) {
-			return UnexecutableCommand.INSTANCE;
-		}
-		return new Command() {
-		};
-	}
-
-	/**
-	 * @generated
-	 */
-	protected Command getCreateCompleteIncomingTransition_4001Command(CreateRelationshipRequest req) {
-		EObject sourceEObject = req.getSource();
-		EObject targetEObject = req.getTarget();
-		if (false == sourceEObject instanceof Vertex || false == targetEObject instanceof Vertex) {
-			return UnexecutableCommand.INSTANCE;
-		}
-		Vertex source = (Vertex) sourceEObject;
-		Vertex target = (Vertex) targetEObject;
-		Region container = (Region) getRelationshipContainer(source, UMLPackage.eINSTANCE.getRegion(), req.getElementType());
-		if (container == null) {
-			return UnexecutableCommand.INSTANCE;
-		}
-		if (!UMLBaseItemSemanticEditPolicy.LinkConstraints.canCreateTransition_4001(container, source, target)) {
-			return UnexecutableCommand.INSTANCE;
-		}
-		if (req.getContainmentFeature() == null) {
-			req.setContainmentFeature(UMLPackage.eINSTANCE.getRegion_Transition());
-		}
-		return getMSLWrapper(new TransitionTypeLinkCreateCommand(req, container, source, target));
+		return null;
 	}
 
 	/**
@@ -143,7 +127,7 @@ public class State3ItemSemanticEditPolicy extends UMLBaseItemSemanticEditPolicy 
 	protected Command getReorientRelationshipCommand(ReorientRelationshipRequest req) {
 		switch (getVisualID(req)) {
 		case TransitionEditPart.VISUAL_ID:
-			return getMSLWrapper(new TransitionReorientCommand(req));
+			return getGEFWrapper(new TransitionReorientCommand(req));
 		}
 		return super.getReorientRelationshipCommand(req);
 	}

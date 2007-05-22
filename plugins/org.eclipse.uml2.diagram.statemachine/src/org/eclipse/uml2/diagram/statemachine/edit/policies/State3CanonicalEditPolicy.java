@@ -1,20 +1,21 @@
 package org.eclipse.uml2.diagram.statemachine.edit.policies;
 
-import org.eclipse.gmf.runtime.diagram.ui.editpolicies.CanonicalEditPolicy;
-import org.eclipse.gmf.runtime.notation.View;
+import java.util.Collection;
+import java.util.HashSet;
 import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.List;
+import java.util.Set;
 
-import org.eclipse.emf.ecore.EObject;
-
+import org.eclipse.gmf.runtime.diagram.ui.editpolicies.CanonicalEditPolicy;
+import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.ConnectionPointReference2EditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.ConnectionPointReferenceEditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.Region2EditPart;
-
+import org.eclipse.uml2.diagram.statemachine.part.UMLDiagramUpdater;
+import org.eclipse.uml2.diagram.statemachine.part.UMLNodeDescriptor;
 import org.eclipse.uml2.diagram.statemachine.part.UMLVisualIDRegistry;
-
-import org.eclipse.uml2.uml.State;
+import org.eclipse.uml2.uml.UMLPackage;
 
 /**
  * @generated
@@ -24,32 +25,16 @@ public class State3CanonicalEditPolicy extends CanonicalEditPolicy {
 	/**
 	 * @generated
 	 */
+	Set myFeaturesToSynchronize;
+
+	/**
+	 * @generated
+	 */
 	protected List getSemanticChildrenList() {
-		List result = new LinkedList();
-		EObject modelObject = ((View) getHost().getModel()).getElement();
 		View viewObject = (View) getHost().getModel();
-		EObject nextValue;
-		int nodeVID;
-		for (Iterator values = ((State) modelObject).getRegions().iterator(); values.hasNext();) {
-			nextValue = (EObject) values.next();
-			nodeVID = UMLVisualIDRegistry.getNodeVisualID(viewObject, nextValue);
-			if (Region2EditPart.VISUAL_ID == nodeVID) {
-				result.add(nextValue);
-			}
-		}
-		for (Iterator values = ((State) modelObject).getConnections().iterator(); values.hasNext();) {
-			nextValue = (EObject) values.next();
-			nodeVID = UMLVisualIDRegistry.getNodeVisualID(viewObject, nextValue);
-			switch (nodeVID) {
-			case ConnectionPointReferenceEditPart.VISUAL_ID: {
-				result.add(nextValue);
-				break;
-			}
-			case ConnectionPointReference2EditPart.VISUAL_ID: {
-				result.add(nextValue);
-				break;
-			}
-			}
+		List result = new LinkedList();
+		for (Iterator it = UMLDiagramUpdater.getState_3016SemanticChildren(viewObject).iterator(); it.hasNext();) {
+			result.add(((UMLNodeDescriptor) it.next()).getModelElement());
 		}
 		return result;
 	}
@@ -57,17 +42,13 @@ public class State3CanonicalEditPolicy extends CanonicalEditPolicy {
 	/**
 	 * @generated
 	 */
-	protected boolean shouldDeleteView(View view) {
-		if (view.getEAnnotation("Shortcut") != null) { //$NON-NLS-1$
-			return view.isSetElement() && (view.getElement() == null || view.getElement().eIsProxy());
-		}
-
-		int nodeVID = UMLVisualIDRegistry.getVisualID(view);
-		switch (nodeVID) {
+	protected boolean isOrphaned(Collection semanticChildren, final View view) {
+		int visualID = UMLVisualIDRegistry.getVisualID(view);
+		switch (visualID) {
 		case Region2EditPart.VISUAL_ID:
 		case ConnectionPointReferenceEditPart.VISUAL_ID:
 		case ConnectionPointReference2EditPart.VISUAL_ID:
-			return true;
+			return !semanticChildren.contains(view.getElement()) || visualID != UMLVisualIDRegistry.getNodeVisualID((View) getHost().getModel(), view.getElement());
 		}
 		return false;
 	}
@@ -77,6 +58,18 @@ public class State3CanonicalEditPolicy extends CanonicalEditPolicy {
 	 */
 	protected String getDefaultFactoryHint() {
 		return null;
+	}
+
+	/**
+	 * @generated
+	 */
+	protected Set getFeaturesToSynchronize() {
+		if (myFeaturesToSynchronize == null) {
+			myFeaturesToSynchronize = new HashSet();
+			myFeaturesToSynchronize.add(UMLPackage.eINSTANCE.getState_Region());
+			myFeaturesToSynchronize.add(UMLPackage.eINSTANCE.getState_Connection());
+		}
+		return myFeaturesToSynchronize;
 	}
 
 }

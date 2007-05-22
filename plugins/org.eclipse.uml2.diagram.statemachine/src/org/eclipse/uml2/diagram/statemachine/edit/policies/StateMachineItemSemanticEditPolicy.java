@@ -26,7 +26,7 @@ public class StateMachineItemSemanticEditPolicy extends UMLBaseItemSemanticEditP
 			if (req.getContainmentFeature() == null) {
 				req.setContainmentFeature(UMLPackage.eINSTANCE.getClass_NestedClassifier());
 			}
-			return getMSLWrapper(new StateMachineCreateCommand(req));
+			return getGEFWrapper(new StateMachineCreateCommand(req));
 		}
 		return super.getCreateCommand(req);
 	}
@@ -36,7 +36,7 @@ public class StateMachineItemSemanticEditPolicy extends UMLBaseItemSemanticEditP
 	 */
 	protected Command getDuplicateCommand(DuplicateElementsRequest req) {
 		TransactionalEditingDomain editingDomain = ((IGraphicalEditPart) getHost()).getEditingDomain();
-		return getMSLWrapper(new DuplicateAnythingCommand(editingDomain, req));
+		return getGEFWrapper(new DuplicateAnythingCommand(editingDomain, req));
 	}
 
 	/**

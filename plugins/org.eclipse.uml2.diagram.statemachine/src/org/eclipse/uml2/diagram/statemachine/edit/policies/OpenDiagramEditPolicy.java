@@ -13,6 +13,7 @@ import org.eclipse.core.runtime.IAdaptable;
 import org.eclipse.core.runtime.IProgressMonitor;
 
 import org.eclipse.emf.common.ui.URIEditorInput;
+import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EAnnotation;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.resource.Resource;
@@ -44,6 +45,9 @@ import org.eclipse.gmf.runtime.emf.commands.core.command.AbstractTransactionalCo
 import org.eclipse.gmf.runtime.emf.core.util.EMFCoreUtil;
 
 import org.eclipse.gmf.runtime.notation.Diagram;
+import org.eclipse.gmf.runtime.notation.HintedDiagramLinkStyle;
+import org.eclipse.gmf.runtime.notation.NotationPackage;
+import org.eclipse.gmf.runtime.notation.Style;
 import org.eclipse.gmf.runtime.notation.View;
 
 import org.eclipse.ui.IEditorInput;
@@ -71,11 +75,12 @@ public class OpenDiagramEditPolicy extends OpenEditPolicy {
 		if (false == targetEditPart.getModel() instanceof View) {
 			return null;
 		}
-		EAnnotation ann = ((View) targetEditPart.getModel()).getEAnnotation("uri://eclipse.org/gmf/openDiagramPolicy");
-		if (ann == null) {
+		View view = (View) targetEditPart.getModel();
+		Style link = view.getStyle(NotationPackage.eINSTANCE.getHintedDiagramLinkStyle());
+		if (false == link instanceof HintedDiagramLinkStyle) {
 			return null;
 		}
-		return new ICommandProxy(new OpenDiagramCommand(ann));
+		return new ICommandProxy(new OpenDiagramCommand((HintedDiagramLinkStyle) link));
 	}
 
 	/**
@@ -86,16 +91,16 @@ public class OpenDiagramEditPolicy extends OpenEditPolicy {
 		/**
 		 * @generated
 		 */
-		private final EAnnotation diagramFacet;
+		private final HintedDiagramLinkStyle diagramFacet;
 
 		/**
 		 * @generated
 		 */
-		OpenDiagramCommand(EAnnotation annotation) {
+		OpenDiagramCommand(HintedDiagramLinkStyle linkStyle) {
 			// editing domain is taken for original diagram, 
 			// if we open diagram from another file, we should use another editing domain
-			super(TransactionUtil.getEditingDomain(annotation), Messages.CommandName_OpenDiagram, null);
-			diagramFacet = annotation;
+			super(TransactionUtil.getEditingDomain(linkStyle), Messages.CommandName_OpenDiagram, null);
+			diagramFacet = linkStyle;
 		}
 
 		/**
@@ -119,7 +124,7 @@ public class OpenDiagramEditPolicy extends OpenEditPolicy {
 				if (diagram == null) {
 					diagram = intializeNewDiagram();
 				}
-				org.eclipse.emf.common.util.URI uri = diagram.eResource().getURI();
+				URI uri = diagram.eResource().getURI();
 				uri = uri.appendFragment(diagram.eResource().getURIFragment(diagram));
 				IEditorInput editorInput = new URIEditorInput(uri);
 				IWorkbenchPage page = PlatformUI.getWorkbench().getActiveWorkbenchWindow().getActivePage();
@@ -134,14 +139,7 @@ public class OpenDiagramEditPolicy extends OpenEditPolicy {
 		 * @generated
 		 */
 		protected Diagram getDiagramToOpen() {
-			// take first
-			for (Iterator it = diagramFacet.getReferences().iterator(); it.hasNext();) {
-				Object next = it.next();
-				if (next instanceof Diagram) {
-					return (Diagram) next;
-				}
-			}
-			return null;
+			return diagramFacet.getDiagramLink();
 		}
 
 		/**
@@ -152,7 +150,7 @@ public class OpenDiagramEditPolicy extends OpenEditPolicy {
 			if (d == null) {
 				throw new ExecutionException("Can't create diagram of '" + getDiagramKind() + "' kind");
 			}
-			diagramFacet.getReferences().add(d);
+			diagramFacet.setDiagramLink(d);
 			assert diagramFacet.eResource() != null;
 			diagramFacet.eResource().getContents().add(d);
 			try {
@@ -162,7 +160,7 @@ public class OpenDiagramEditPolicy extends OpenEditPolicy {
 						try {
 							for (Iterator it = diagramFacet.eResource().getResourceSet().getResources().iterator(); it.hasNext();) {
 								Resource nextResource = (Resource) it.next();
-								if (nextResource.isLoaded()) {
+								if (nextResource.isLoaded() && !getEditingDomain().isReadOnly(nextResource)) {
 									nextResource.save(UMLDiagramEditorUtil.getSaveOptions());
 								}
 							}
@@ -196,7 +194,7 @@ public class OpenDiagramEditPolicy extends OpenEditPolicy {
 		 */
 		protected EObject getDiagramDomainElementGen() {
 			// use same element as associated with EP
-			return ((View) diagramFacet.getEModelElement()).getElement();
+			return ((View) diagramFacet.eContainer()).getElement();
 		}
 
 		/**
@@ -234,7 +232,7 @@ public class OpenDiagramEditPolicy extends OpenEditPolicy {
 					EditPart editPart = findTopLevelElementInDiagram(diagramEditPart, submachine);
 					if (editPart != null) {
 						if (getDiagramToOpen() == null) {
-							diagramFacet.getReferences().add(((DiagramEditor) editorPart).getDiagram());
+							diagramFacet.setDiagramLink(((DiagramEditor) editorPart).getDiagram());
 						}
 						workbenchPage.activate(editorPart);
 						diagramEditPart.getViewer().select(editPart);
@@ -253,8 +251,8 @@ public class OpenDiagramEditPolicy extends OpenEditPolicy {
 			IDiagramGraphicalViewer viewer = (IDiagramGraphicalViewer) diagramEditPart.getViewer();
 
 			String elementID = EMFCoreUtil.getProxyID(element);
-			List foundEditParts = viewer.findEditPartsForElement(elementID, IGraphicalEditPart.class);
-			for (Iterator iterator = foundEditParts.iterator(); iterator.hasNext();) {
+			List<?> foundEditParts = viewer.findEditPartsForElement(elementID, IGraphicalEditPart.class);
+			for (Iterator<?> iterator = foundEditParts.iterator(); iterator.hasNext();) {
 				EditPart editPart = (EditPart) iterator.next();
 				if (!(editPart instanceof DiagramEditPart)) {
 					return editPart;
