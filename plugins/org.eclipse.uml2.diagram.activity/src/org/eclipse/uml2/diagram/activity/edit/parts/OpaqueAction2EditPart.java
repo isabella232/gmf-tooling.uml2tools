@@ -125,7 +125,6 @@ public class OpaqueAction2EditPart extends AbstractBorderedShapeEditPart {
 			return true;
 		}
 		if (childEditPart instanceof OutputPinEditPart) {
-
 			IBorderItemLocator locator = new BorderItemLocator(getMainFigure(), PositionConstants.EAST);
 			getBorderedFigure().getBorderItemContainer().add(((OutputPinEditPart) childEditPart).getFigure(), locator);
 			return true;

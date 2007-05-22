@@ -125,19 +125,16 @@ public class AddStructuralFeatureValueAction2EditPart extends AbstractBorderedSh
 			return true;
 		}
 		if (childEditPart instanceof InputPinEditPart) {
-
 			IBorderItemLocator locator = new BorderItemLocator(getMainFigure(), PositionConstants.WEST);
 			getBorderedFigure().getBorderItemContainer().add(((InputPinEditPart) childEditPart).getFigure(), locator);
 			return true;
 		}
 		if (childEditPart instanceof InputPin2EditPart) {
-
 			IBorderItemLocator locator = new BorderItemLocator(getMainFigure(), PositionConstants.WEST);
 			getBorderedFigure().getBorderItemContainer().add(((InputPin2EditPart) childEditPart).getFigure(), locator);
 			return true;
 		}
 		if (childEditPart instanceof InputPin3EditPart) {
-
 			IBorderItemLocator locator = new BorderItemLocator(getMainFigure(), PositionConstants.WEST);
 			getBorderedFigure().getBorderItemContainer().add(((InputPin3EditPart) childEditPart).getFigure(), locator);
 			return true;

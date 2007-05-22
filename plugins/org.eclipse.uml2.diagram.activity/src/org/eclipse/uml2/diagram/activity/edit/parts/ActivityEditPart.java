@@ -134,7 +134,6 @@ public class ActivityEditPart extends AbstractBorderedShapeEditPart {
 			return true;
 		}
 		if (childEditPart instanceof ActivityParameterNodeEditPart) {
-
 			IBorderItemLocator locator = new BorderItemLocator(getMainFigure(), PositionConstants.WEST);
 			getBorderedFigure().getBorderItemContainer().add(((ActivityParameterNodeEditPart) childEditPart).getFigure(), locator);
 			return true;

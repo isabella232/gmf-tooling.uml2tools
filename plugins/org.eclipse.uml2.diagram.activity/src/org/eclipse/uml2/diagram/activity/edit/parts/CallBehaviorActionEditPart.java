@@ -131,13 +131,11 @@ public class CallBehaviorActionEditPart extends AbstractBorderedShapeEditPart {
 			return true;
 		}
 		if (childEditPart instanceof OutputPin3EditPart) {
-
 			IBorderItemLocator locator = new BorderItemLocator(getMainFigure(), PositionConstants.EAST);
 			getBorderedFigure().getBorderItemContainer().add(((OutputPin3EditPart) childEditPart).getFigure(), locator);
 			return true;
 		}
 		if (childEditPart instanceof InputPin4EditPart) {
-
 			IBorderItemLocator locator = new BorderItemLocator(getMainFigure(), PositionConstants.WEST);
 			getBorderedFigure().getBorderItemContainer().add(((InputPin4EditPart) childEditPart).getFigure(), locator);
 			return true;

@@ -125,7 +125,6 @@ public class CreateObjectActionEditPart extends AbstractBorderedShapeEditPart {
 			return true;
 		}
 		if (childEditPart instanceof OutputPin2EditPart) {
-
 			IBorderItemLocator locator = new BorderItemLocator(getMainFigure(), PositionConstants.EAST);
 			getBorderedFigure().getBorderItemContainer().add(((OutputPin2EditPart) childEditPart).getFigure(), locator);
 			return true;
