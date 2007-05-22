@@ -1,14 +1,11 @@
 package org.eclipse.uml2.diagram.statemachine.part;
 
 import org.eclipse.core.runtime.Platform;
-
 import org.eclipse.emf.ecore.EAnnotation;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
-
 import org.eclipse.gmf.runtime.notation.Diagram;
 import org.eclipse.gmf.runtime.notation.View;
-
 import org.eclipse.uml2.diagram.statemachine.edit.parts.ConnectionPointReference2EditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.ConnectionPointReferenceEditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.ConnectionPointReferenceName2EditPart;
@@ -40,24 +37,16 @@ import org.eclipse.uml2.diagram.statemachine.edit.parts.StateName2EditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.StateName3EditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.StateNameEditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.TransitionEditPart;
-
 import org.eclipse.uml2.diagram.statemachine.expressions.UMLAbstractExpression;
 import org.eclipse.uml2.diagram.statemachine.expressions.UMLOCLFactory;
-
-import org.eclipse.uml2.uml.ConnectionPointReference;
-import org.eclipse.uml2.uml.FinalState;
-import org.eclipse.uml2.uml.Pseudostate;
-import org.eclipse.uml2.uml.Region;
-import org.eclipse.uml2.uml.State;
 import org.eclipse.uml2.uml.StateMachine;
-import org.eclipse.uml2.uml.Transition;
 import org.eclipse.uml2.uml.UMLPackage;
 
 /**
  * This registry is used to determine which type of visual object should be
- * created for the corresponding Diagram, Node, ChildNode or Link represented 
+ * created for the corresponding Diagram, Node, ChildNode or Link represented
  * by a domain model object.
- *
+ * 
  * @generated
  */
 public class UMLVisualIDRegistry {
@@ -66,6 +55,83 @@ public class UMLVisualIDRegistry {
 	 * @generated
 	 */
 	private static final String DEBUG_KEY = UMLDiagramEditorPlugin.getInstance().getBundle().getSymbolicName() + "/debug/visualID"; //$NON-NLS-1$
+
+	/**
+	 * @generated
+	 */
+	private static final UMLAbstractExpression State_3001_Constraint = UMLOCLFactory.getExpression("self.oclIsTypeOf(uml::State) and self.isSimple", UMLPackage.eINSTANCE.getState());
+
+	/**
+	 * @generated
+	 */
+	private static final UMLAbstractExpression State_3012_Constraint = UMLOCLFactory.getExpression("self.oclIsTypeOf(uml::State) and self.isComposite", UMLPackage.eINSTANCE.getState());
+
+	/**
+	 * @generated
+	 */
+	private static final UMLAbstractExpression State_3016_Constraint = UMLOCLFactory.getExpression("self.oclIsTypeOf(uml::State) and self.isSubmachineState", UMLPackage.eINSTANCE.getState());
+
+	/**
+	 * @generated
+	 */
+	private static final UMLAbstractExpression ConnectionPointReference_3017_Constraint = UMLOCLFactory.getExpression(
+			"entry->notEmpty() implies entry->forAll(e | e.kind =  PseudostateKind::entryPoint)", UMLPackage.eINSTANCE.getConnectionPointReference());
+
+	/**
+	 * @generated
+	 */
+	private static final UMLAbstractExpression ConnectionPointReference_3018_Constraint = UMLOCLFactory.getExpression(
+			"exit->notEmpty() implies exit->forAll(e | e.kind =  PseudostateKind::exitPoint)", UMLPackage.eINSTANCE.getConnectionPointReference());
+
+	/**
+	 * @generated
+	 */
+	private static final UMLAbstractExpression Pseudostate_3004_Constraint = UMLOCLFactory.getExpression("self.kind = PseudostateKind::initial", UMLPackage.eINSTANCE.getPseudostate());
+
+	/**
+	 * @generated
+	 */
+	private static final UMLAbstractExpression Pseudostate_3005_Constraint = UMLOCLFactory.getExpression("self.kind = PseudostateKind::shallowHistory", UMLPackage.eINSTANCE.getPseudostate());
+
+	/**
+	 * @generated
+	 */
+	private static final UMLAbstractExpression Pseudostate_3006_Constraint = UMLOCLFactory.getExpression("self.kind = PseudostateKind::deepHistory", UMLPackage.eINSTANCE.getPseudostate());
+
+	/**
+	 * @generated
+	 */
+	private static final UMLAbstractExpression Pseudostate_3007_Constraint = UMLOCLFactory.getExpression("self.kind = PseudostateKind::fork", UMLPackage.eINSTANCE.getPseudostate());
+
+	/**
+	 * @generated
+	 */
+	private static final UMLAbstractExpression Pseudostate_3008_Constraint = UMLOCLFactory.getExpression("self.kind = PseudostateKind::join", UMLPackage.eINSTANCE.getPseudostate());
+
+	/**
+	 * @generated
+	 */
+	private static final UMLAbstractExpression Pseudostate_3009_Constraint = UMLOCLFactory.getExpression("self.kind = PseudostateKind::junction", UMLPackage.eINSTANCE.getPseudostate());
+
+	/**
+	 * @generated
+	 */
+	private static final UMLAbstractExpression Pseudostate_3010_Constraint = UMLOCLFactory.getExpression("self.kind = PseudostateKind::choice", UMLPackage.eINSTANCE.getPseudostate());
+
+	/**
+	 * @generated
+	 */
+	private static final UMLAbstractExpression Pseudostate_3011_Constraint = UMLOCLFactory.getExpression("self.kind = PseudostateKind::terminate", UMLPackage.eINSTANCE.getPseudostate());
+
+	/**
+	 * @generated
+	 */
+	private static final UMLAbstractExpression Pseudostate_3014_Constraint = UMLOCLFactory.getExpression("self.kind = PseudostateKind::entryPoint", UMLPackage.eINSTANCE.getPseudostate());
+
+	/**
+	 * @generated
+	 */
+	private static final UMLAbstractExpression Pseudostate_3015_Constraint = UMLOCLFactory.getExpression("self.kind = PseudostateKind::exitPoint", UMLPackage.eINSTANCE.getPseudostate());
 
 	/**
 	 * @generated
@@ -132,7 +198,7 @@ public class UMLVisualIDRegistry {
 	 * @generated
 	 */
 	private static int getDiagramVisualID(EObject domainElement, EClass domainElementMetaclass) {
-		if (UMLPackage.eINSTANCE.getStateMachine().isSuperTypeOf(domainElementMetaclass) && isDiagramStateMachine_1000((StateMachine) domainElement)) {
+		if (UMLPackage.eINSTANCE.getStateMachine().isSuperTypeOf(domainElementMetaclass) && isDiagram((StateMachine) domainElement)) {
 			return StateMachineEditPart.VISUAL_ID;
 		}
 		return getUnrecognizedDiagramID(domainElement);
@@ -153,39 +219,35 @@ public class UMLVisualIDRegistry {
 	 * @generated
 	 */
 	public static int getNodeVisualID(View containerView, EObject domainElement, EClass domainElementMetaclass, String semanticHint) {
-		String containerModelID = getModelID(containerView);
+		String containerModelID = org.eclipse.uml2.diagram.statemachine.part.UMLVisualIDRegistry.getModelID(containerView);
 		if (!StateMachineEditPart.MODEL_ID.equals(containerModelID)) {
 			return -1;
 		}
 		int containerVisualID;
 		if (StateMachineEditPart.MODEL_ID.equals(containerModelID)) {
-			containerVisualID = getVisualID(containerView);
+			containerVisualID = org.eclipse.uml2.diagram.statemachine.part.UMLVisualIDRegistry.getVisualID(containerView);
 		} else {
 			if (containerView instanceof Diagram) {
-				containerVisualID = StateMachineEditPart.VISUAL_ID;
+				containerVisualID = 1000;
 			} else {
 				return -1;
 			}
 		}
-		if (containerView instanceof Diagram && domainElement != null && domainElement.equals(containerView.getElement())) {
-			return StateMachine2EditPart.VISUAL_ID;
-		}
-		int nodeVisualID = semanticHint != null ? getVisualID(semanticHint) : -1;
+		int nodeVisualID = semanticHint != null ? org.eclipse.uml2.diagram.statemachine.part.UMLVisualIDRegistry.getVisualID(semanticHint) : -1;
 		switch (containerVisualID) {
 		case StateMachine2EditPart.VISUAL_ID:
 			if (StateMachineNameEditPart.VISUAL_ID == nodeVisualID) {
 				return StateMachineNameEditPart.VISUAL_ID;
 			}
-			if ((semanticHint == null || RegionEditPart.VISUAL_ID == nodeVisualID) && UMLPackage.eINSTANCE.getRegion().isSuperTypeOf(domainElementMetaclass)
-					&& (domainElement == null || isNodeRegion_3013((Region) domainElement))) {
+			if ((semanticHint == null || RegionEditPart.VISUAL_ID == nodeVisualID) && UMLPackage.eINSTANCE.getRegion().isSuperTypeOf(domainElementMetaclass)) {
 				return RegionEditPart.VISUAL_ID;
 			}
 			if ((semanticHint == null || Pseudostate9EditPart.VISUAL_ID == nodeVisualID) && UMLPackage.eINSTANCE.getPseudostate().isSuperTypeOf(domainElementMetaclass)
-					&& (domainElement == null || isNodePseudostate_3014((Pseudostate) domainElement))) {
+					&& (domainElement == null || evaluate(Pseudostate_3014_Constraint, domainElement))) {
 				return Pseudostate9EditPart.VISUAL_ID;
 			}
 			if ((semanticHint == null || Pseudostate10EditPart.VISUAL_ID == nodeVisualID) && UMLPackage.eINSTANCE.getPseudostate().isSuperTypeOf(domainElementMetaclass)
-					&& (domainElement == null || isNodePseudostate_3015((Pseudostate) domainElement))) {
+					&& (domainElement == null || evaluate(Pseudostate_3015_Constraint, domainElement))) {
 				return Pseudostate10EditPart.VISUAL_ID;
 			}
 			return getUnrecognizedStateMachine_2004ChildNodeID(domainElement, semanticHint);
@@ -203,8 +265,7 @@ public class UMLVisualIDRegistry {
 			if (StateName3EditPart.VISUAL_ID == nodeVisualID) {
 				return StateName3EditPart.VISUAL_ID;
 			}
-			if ((semanticHint == null || Region2EditPart.VISUAL_ID == nodeVisualID) && UMLPackage.eINSTANCE.getRegion().isSuperTypeOf(domainElementMetaclass)
-					&& (domainElement == null || isNodeRegion_3002((Region) domainElement))) {
+			if ((semanticHint == null || Region2EditPart.VISUAL_ID == nodeVisualID) && UMLPackage.eINSTANCE.getRegion().isSuperTypeOf(domainElementMetaclass)) {
 				return Region2EditPart.VISUAL_ID;
 			}
 			return getUnrecognizedState_3012ChildNodeID(domainElement, semanticHint);
@@ -217,16 +278,15 @@ public class UMLVisualIDRegistry {
 			if (StateName2EditPart.VISUAL_ID == nodeVisualID) {
 				return StateName2EditPart.VISUAL_ID;
 			}
-			if ((semanticHint == null || Region2EditPart.VISUAL_ID == nodeVisualID) && UMLPackage.eINSTANCE.getRegion().isSuperTypeOf(domainElementMetaclass)
-					&& (domainElement == null || isNodeRegion_3002((Region) domainElement))) {
+			if ((semanticHint == null || Region2EditPart.VISUAL_ID == nodeVisualID) && UMLPackage.eINSTANCE.getRegion().isSuperTypeOf(domainElementMetaclass)) {
 				return Region2EditPart.VISUAL_ID;
 			}
 			if ((semanticHint == null || ConnectionPointReferenceEditPart.VISUAL_ID == nodeVisualID) && UMLPackage.eINSTANCE.getConnectionPointReference().isSuperTypeOf(domainElementMetaclass)
-					&& (domainElement == null || isNodeConnectionPointReference_3017((ConnectionPointReference) domainElement))) {
+					&& (domainElement == null || evaluate(ConnectionPointReference_3017_Constraint, domainElement))) {
 				return ConnectionPointReferenceEditPart.VISUAL_ID;
 			}
 			if ((semanticHint == null || ConnectionPointReference2EditPart.VISUAL_ID == nodeVisualID) && UMLPackage.eINSTANCE.getConnectionPointReference().isSuperTypeOf(domainElementMetaclass)
-					&& (domainElement == null || isNodeConnectionPointReference_3018((ConnectionPointReference) domainElement))) {
+					&& (domainElement == null || evaluate(ConnectionPointReference_3018_Constraint, domainElement))) {
 				return ConnectionPointReference2EditPart.VISUAL_ID;
 			}
 			return getUnrecognizedState_3016ChildNodeID(domainElement, semanticHint);
@@ -270,112 +330,115 @@ public class UMLVisualIDRegistry {
 			return getUnrecognizedPseudostate_3015ChildNodeID(domainElement, semanticHint);
 		case RegionSubverticesEditPart.VISUAL_ID:
 			if ((semanticHint == null || StateEditPart.VISUAL_ID == nodeVisualID) && UMLPackage.eINSTANCE.getState().isSuperTypeOf(domainElementMetaclass)
-					&& (domainElement == null || isNodeState_3001((State) domainElement))) {
+					&& (domainElement == null || evaluate(State_3001_Constraint, domainElement))) {
 				return StateEditPart.VISUAL_ID;
 			}
 			if ((semanticHint == null || State2EditPart.VISUAL_ID == nodeVisualID) && UMLPackage.eINSTANCE.getState().isSuperTypeOf(domainElementMetaclass)
-					&& (domainElement == null || isNodeState_3012((State) domainElement))) {
+					&& (domainElement == null || evaluate(State_3012_Constraint, domainElement))) {
 				return State2EditPart.VISUAL_ID;
 			}
 			if ((semanticHint == null || State3EditPart.VISUAL_ID == nodeVisualID) && UMLPackage.eINSTANCE.getState().isSuperTypeOf(domainElementMetaclass)
-					&& (domainElement == null || isNodeState_3016((State) domainElement))) {
+					&& (domainElement == null || evaluate(State_3016_Constraint, domainElement))) {
 				return State3EditPart.VISUAL_ID;
 			}
-			if ((semanticHint == null || FinalStateEditPart.VISUAL_ID == nodeVisualID) && UMLPackage.eINSTANCE.getFinalState().isSuperTypeOf(domainElementMetaclass)
-					&& (domainElement == null || isNodeFinalState_3003((FinalState) domainElement))) {
+			if ((semanticHint == null || FinalStateEditPart.VISUAL_ID == nodeVisualID) && UMLPackage.eINSTANCE.getFinalState().isSuperTypeOf(domainElementMetaclass)) {
 				return FinalStateEditPart.VISUAL_ID;
 			}
 			if ((semanticHint == null || PseudostateEditPart.VISUAL_ID == nodeVisualID) && UMLPackage.eINSTANCE.getPseudostate().isSuperTypeOf(domainElementMetaclass)
-					&& (domainElement == null || isNodePseudostate_3004((Pseudostate) domainElement))) {
+					&& (domainElement == null || evaluate(Pseudostate_3004_Constraint, domainElement))) {
 				return PseudostateEditPart.VISUAL_ID;
 			}
 			if ((semanticHint == null || Pseudostate2EditPart.VISUAL_ID == nodeVisualID) && UMLPackage.eINSTANCE.getPseudostate().isSuperTypeOf(domainElementMetaclass)
-					&& (domainElement == null || isNodePseudostate_3005((Pseudostate) domainElement))) {
+					&& (domainElement == null || evaluate(Pseudostate_3005_Constraint, domainElement))) {
 				return Pseudostate2EditPart.VISUAL_ID;
 			}
 			if ((semanticHint == null || Pseudostate3EditPart.VISUAL_ID == nodeVisualID) && UMLPackage.eINSTANCE.getPseudostate().isSuperTypeOf(domainElementMetaclass)
-					&& (domainElement == null || isNodePseudostate_3006((Pseudostate) domainElement))) {
+					&& (domainElement == null || evaluate(Pseudostate_3006_Constraint, domainElement))) {
 				return Pseudostate3EditPart.VISUAL_ID;
 			}
 			if ((semanticHint == null || Pseudostate4EditPart.VISUAL_ID == nodeVisualID) && UMLPackage.eINSTANCE.getPseudostate().isSuperTypeOf(domainElementMetaclass)
-					&& (domainElement == null || isNodePseudostate_3007((Pseudostate) domainElement))) {
+					&& (domainElement == null || evaluate(Pseudostate_3007_Constraint, domainElement))) {
 				return Pseudostate4EditPart.VISUAL_ID;
 			}
 			if ((semanticHint == null || Pseudostate5EditPart.VISUAL_ID == nodeVisualID) && UMLPackage.eINSTANCE.getPseudostate().isSuperTypeOf(domainElementMetaclass)
-					&& (domainElement == null || isNodePseudostate_3008((Pseudostate) domainElement))) {
+					&& (domainElement == null || evaluate(Pseudostate_3008_Constraint, domainElement))) {
 				return Pseudostate5EditPart.VISUAL_ID;
 			}
 			if ((semanticHint == null || Pseudostate6EditPart.VISUAL_ID == nodeVisualID) && UMLPackage.eINSTANCE.getPseudostate().isSuperTypeOf(domainElementMetaclass)
-					&& (domainElement == null || isNodePseudostate_3009((Pseudostate) domainElement))) {
+					&& (domainElement == null || evaluate(Pseudostate_3009_Constraint, domainElement))) {
 				return Pseudostate6EditPart.VISUAL_ID;
 			}
 			if ((semanticHint == null || Pseudostate7EditPart.VISUAL_ID == nodeVisualID) && UMLPackage.eINSTANCE.getPseudostate().isSuperTypeOf(domainElementMetaclass)
-					&& (domainElement == null || isNodePseudostate_3010((Pseudostate) domainElement))) {
+					&& (domainElement == null || evaluate(Pseudostate_3010_Constraint, domainElement))) {
 				return Pseudostate7EditPart.VISUAL_ID;
 			}
 			if ((semanticHint == null || Pseudostate8EditPart.VISUAL_ID == nodeVisualID) && UMLPackage.eINSTANCE.getPseudostate().isSuperTypeOf(domainElementMetaclass)
-					&& (domainElement == null || isNodePseudostate_3011((Pseudostate) domainElement))) {
+					&& (domainElement == null || evaluate(Pseudostate_3011_Constraint, domainElement))) {
 				return Pseudostate8EditPart.VISUAL_ID;
 			}
 			return getUnrecognizedRegionSubvertices_7004ChildNodeID(domainElement, semanticHint);
 		case RegionSubvertices2EditPart.VISUAL_ID:
 			if ((semanticHint == null || StateEditPart.VISUAL_ID == nodeVisualID) && UMLPackage.eINSTANCE.getState().isSuperTypeOf(domainElementMetaclass)
-					&& (domainElement == null || isNodeState_3001((State) domainElement))) {
+					&& (domainElement == null || evaluate(State_3001_Constraint, domainElement))) {
 				return StateEditPart.VISUAL_ID;
 			}
 			if ((semanticHint == null || State2EditPart.VISUAL_ID == nodeVisualID) && UMLPackage.eINSTANCE.getState().isSuperTypeOf(domainElementMetaclass)
-					&& (domainElement == null || isNodeState_3012((State) domainElement))) {
+					&& (domainElement == null || evaluate(State_3012_Constraint, domainElement))) {
 				return State2EditPart.VISUAL_ID;
 			}
 			if ((semanticHint == null || State3EditPart.VISUAL_ID == nodeVisualID) && UMLPackage.eINSTANCE.getState().isSuperTypeOf(domainElementMetaclass)
-					&& (domainElement == null || isNodeState_3016((State) domainElement))) {
+					&& (domainElement == null || evaluate(State_3016_Constraint, domainElement))) {
 				return State3EditPart.VISUAL_ID;
 			}
-			if ((semanticHint == null || FinalStateEditPart.VISUAL_ID == nodeVisualID) && UMLPackage.eINSTANCE.getFinalState().isSuperTypeOf(domainElementMetaclass)
-					&& (domainElement == null || isNodeFinalState_3003((FinalState) domainElement))) {
+			if ((semanticHint == null || FinalStateEditPart.VISUAL_ID == nodeVisualID) && UMLPackage.eINSTANCE.getFinalState().isSuperTypeOf(domainElementMetaclass)) {
 				return FinalStateEditPart.VISUAL_ID;
 			}
 			if ((semanticHint == null || PseudostateEditPart.VISUAL_ID == nodeVisualID) && UMLPackage.eINSTANCE.getPseudostate().isSuperTypeOf(domainElementMetaclass)
-					&& (domainElement == null || isNodePseudostate_3004((Pseudostate) domainElement))) {
+					&& (domainElement == null || evaluate(Pseudostate_3004_Constraint, domainElement))) {
 				return PseudostateEditPart.VISUAL_ID;
 			}
 			if ((semanticHint == null || Pseudostate2EditPart.VISUAL_ID == nodeVisualID) && UMLPackage.eINSTANCE.getPseudostate().isSuperTypeOf(domainElementMetaclass)
-					&& (domainElement == null || isNodePseudostate_3005((Pseudostate) domainElement))) {
+					&& (domainElement == null || evaluate(Pseudostate_3005_Constraint, domainElement))) {
 				return Pseudostate2EditPart.VISUAL_ID;
 			}
 			if ((semanticHint == null || Pseudostate3EditPart.VISUAL_ID == nodeVisualID) && UMLPackage.eINSTANCE.getPseudostate().isSuperTypeOf(domainElementMetaclass)
-					&& (domainElement == null || isNodePseudostate_3006((Pseudostate) domainElement))) {
+					&& (domainElement == null || evaluate(Pseudostate_3006_Constraint, domainElement))) {
 				return Pseudostate3EditPart.VISUAL_ID;
 			}
 			if ((semanticHint == null || Pseudostate4EditPart.VISUAL_ID == nodeVisualID) && UMLPackage.eINSTANCE.getPseudostate().isSuperTypeOf(domainElementMetaclass)
-					&& (domainElement == null || isNodePseudostate_3007((Pseudostate) domainElement))) {
+					&& (domainElement == null || evaluate(Pseudostate_3007_Constraint, domainElement))) {
 				return Pseudostate4EditPart.VISUAL_ID;
 			}
 			if ((semanticHint == null || Pseudostate5EditPart.VISUAL_ID == nodeVisualID) && UMLPackage.eINSTANCE.getPseudostate().isSuperTypeOf(domainElementMetaclass)
-					&& (domainElement == null || isNodePseudostate_3008((Pseudostate) domainElement))) {
+					&& (domainElement == null || evaluate(Pseudostate_3008_Constraint, domainElement))) {
 				return Pseudostate5EditPart.VISUAL_ID;
 			}
 			if ((semanticHint == null || Pseudostate6EditPart.VISUAL_ID == nodeVisualID) && UMLPackage.eINSTANCE.getPseudostate().isSuperTypeOf(domainElementMetaclass)
-					&& (domainElement == null || isNodePseudostate_3009((Pseudostate) domainElement))) {
+					&& (domainElement == null || evaluate(Pseudostate_3009_Constraint, domainElement))) {
 				return Pseudostate6EditPart.VISUAL_ID;
 			}
 			if ((semanticHint == null || Pseudostate7EditPart.VISUAL_ID == nodeVisualID) && UMLPackage.eINSTANCE.getPseudostate().isSuperTypeOf(domainElementMetaclass)
-					&& (domainElement == null || isNodePseudostate_3010((Pseudostate) domainElement))) {
+					&& (domainElement == null || evaluate(Pseudostate_3010_Constraint, domainElement))) {
 				return Pseudostate7EditPart.VISUAL_ID;
 			}
 			if ((semanticHint == null || Pseudostate8EditPart.VISUAL_ID == nodeVisualID) && UMLPackage.eINSTANCE.getPseudostate().isSuperTypeOf(domainElementMetaclass)
-					&& (domainElement == null || isNodePseudostate_3011((Pseudostate) domainElement))) {
+					&& (domainElement == null || evaluate(Pseudostate_3011_Constraint, domainElement))) {
 				return Pseudostate8EditPart.VISUAL_ID;
 			}
 			return getUnrecognizedRegionSubvertices_7003ChildNodeID(domainElement, semanticHint);
 		case StateMachineEditPart.VISUAL_ID:
-			if ((semanticHint == null || StateMachine2EditPart.VISUAL_ID == nodeVisualID) && UMLPackage.eINSTANCE.getStateMachine().isSuperTypeOf(domainElementMetaclass)
-					&& (domainElement == null || isNodeStateMachine_2004((StateMachine) domainElement))) {
+			// We want to additionally show the Canvas Semantical Element in the auxiliary 
+			// org.eclipse.uml2.diagram.statemachine.edit.parts.StateMachine2EditPart (that serves as a pure visual container for children). 
+			// To do this, we modified CanonicalEditPolicy to add the Canvas semantic Element into the children 
+			// list. The only remaining part is to return correct VID for this special case.
+
+			if (containerView instanceof Diagram && domainElement != null && domainElement.equals(containerView.getElement())) {
 				return StateMachine2EditPart.VISUAL_ID;
 			}
+			// Diagram header is already processed above
 			return getUnrecognizedStateMachine_1000ChildNodeID(domainElement, semanticHint);
 		}
-		return -1;
+		return getUnrecognizedNodeID(containerView, domainElement);
 	}
 
 	/**
@@ -393,27 +456,26 @@ public class UMLVisualIDRegistry {
 	 * @generated
 	 */
 	public static int getLinkWithClassVisualID(EObject domainElement, EClass domainElementMetaclass) {
-		if (UMLPackage.eINSTANCE.getTransition().isSuperTypeOf(domainElementMetaclass) && (domainElement == null || isLinkWithClassTransition_4001((Transition) domainElement))) {
+		if (UMLPackage.eINSTANCE.getTransition().isSuperTypeOf(domainElementMetaclass)) {
 			return TransitionEditPart.VISUAL_ID;
-		} else {
-			return getUnrecognizedLinkWithClassID(domainElement);
 		}
+		return getUnrecognizedLinkWithClassID(domainElement);
 	}
 
 	/**
-	 * User can change implementation of this method to check some additional 
-	 * conditions here.
-	 *
+	 * User can change implementation of this method to handle some specific
+	 * situations not covered by default logic.
+	 * 
 	 * @generated
 	 */
-	private static boolean isDiagramStateMachine_1000(StateMachine element) {
+	private static boolean isDiagram(StateMachine element) {
 		return true;
 	}
 
 	/**
 	 * User can change implementation of this method to handle some specific
 	 * situations not covered by default logic.
-	 *
+	 * 
 	 * @generated
 	 */
 	private static int getUnrecognizedDiagramID(EObject domainElement) {
@@ -421,199 +483,29 @@ public class UMLVisualIDRegistry {
 	}
 
 	/**
-	 * User can change implementation of this method to check some additional 
-	 * conditions here.
-	 *
+	 * User can change implementation of this method to handle some specific
+	 * situations not covered by default logic.
+	 * 
 	 * @generated
 	 */
-	private static boolean isNodeStateMachine_2004(StateMachine element) {
-		return true;
-	}
-
-	/**
-	 * User can change implementation of this method to check some additional 
-	 * conditions here.
-	 *
-	 * @generated
-	 */
-	private static boolean isNodeRegion_3013(Region element) {
-		return true;
-	}
-
-	/**
-	 * User can change implementation of this method to check some additional 
-	 * conditions here.
-	 *
-	 * @generated
-	 */
-	private static boolean isNodeState_3001(State element) {
-		return State_3001.matches(element);
-	}
-
-	/**
-	 * User can change implementation of this method to check some additional 
-	 * conditions here.
-	 *
-	 * @generated
-	 */
-	private static boolean isNodeState_3012(State element) {
-		return State_3012.matches(element);
-	}
-
-	/**
-	 * User can change implementation of this method to check some additional 
-	 * conditions here.
-	 *
-	 * @generated
-	 */
-	private static boolean isNodeRegion_3002(Region element) {
-		return true;
-	}
-
-	/**
-	 * User can change implementation of this method to check some additional 
-	 * conditions here.
-	 *
-	 * @generated
-	 */
-	private static boolean isNodeState_3016(State element) {
-		return State_3016.matches(element);
-	}
-
-	/**
-	 * User can change implementation of this method to check some additional 
-	 * conditions here.
-	 *
-	 * @generated
-	 */
-	private static boolean isNodeConnectionPointReference_3017(ConnectionPointReference element) {
-		return ConnectionPointReference_3017.matches(element);
-	}
-
-	/**
-	 * User can change implementation of this method to check some additional 
-	 * conditions here.
-	 *
-	 * @generated
-	 */
-	private static boolean isNodeConnectionPointReference_3018(ConnectionPointReference element) {
-		return ConnectionPointReference_3018.matches(element);
-	}
-
-	/**
-	 * User can change implementation of this method to check some additional 
-	 * conditions here.
-	 *
-	 * @generated
-	 */
-	private static boolean isNodeFinalState_3003(FinalState element) {
-		return true;
-	}
-
-	/**
-	 * User can change implementation of this method to check some additional 
-	 * conditions here.
-	 *
-	 * @generated
-	 */
-	private static boolean isNodePseudostate_3004(Pseudostate element) {
-		return Pseudostate_3004.matches(element);
-	}
-
-	/**
-	 * User can change implementation of this method to check some additional 
-	 * conditions here.
-	 *
-	 * @generated
-	 */
-	private static boolean isNodePseudostate_3005(Pseudostate element) {
-		return Pseudostate_3005.matches(element);
-	}
-
-	/**
-	 * User can change implementation of this method to check some additional 
-	 * conditions here.
-	 *
-	 * @generated
-	 */
-	private static boolean isNodePseudostate_3006(Pseudostate element) {
-		return Pseudostate_3006.matches(element);
-	}
-
-	/**
-	 * User can change implementation of this method to check some additional 
-	 * conditions here.
-	 *
-	 * @generated
-	 */
-	private static boolean isNodePseudostate_3007(Pseudostate element) {
-		return Pseudostate_3007.matches(element);
-	}
-
-	/**
-	 * User can change implementation of this method to check some additional 
-	 * conditions here.
-	 *
-	 * @generated
-	 */
-	private static boolean isNodePseudostate_3008(Pseudostate element) {
-		return Pseudostate_3008.matches(element);
-	}
-
-	/**
-	 * User can change implementation of this method to check some additional 
-	 * conditions here.
-	 *
-	 * @generated
-	 */
-	private static boolean isNodePseudostate_3009(Pseudostate element) {
-		return Pseudostate_3009.matches(element);
-	}
-
-	/**
-	 * User can change implementation of this method to check some additional 
-	 * conditions here.
-	 *
-	 * @generated
-	 */
-	private static boolean isNodePseudostate_3010(Pseudostate element) {
-		return Pseudostate_3010.matches(element);
-	}
-
-	/**
-	 * User can change implementation of this method to check some additional 
-	 * conditions here.
-	 *
-	 * @generated
-	 */
-	private static boolean isNodePseudostate_3011(Pseudostate element) {
-		return Pseudostate_3011.matches(element);
-	}
-
-	/**
-	 * User can change implementation of this method to check some additional 
-	 * conditions here.
-	 *
-	 * @generated
-	 */
-	private static boolean isNodePseudostate_3014(Pseudostate element) {
-		return Pseudostate_3014.matches(element);
-	}
-
-	/**
-	 * User can change implementation of this method to check some additional 
-	 * conditions here.
-	 *
-	 * @generated
-	 */
-	private static boolean isNodePseudostate_3015(Pseudostate element) {
-		return Pseudostate_3015.matches(element);
+	private static int getUnrecognizedNodeID(View containerView, EObject domainElement) {
+		return -1;
 	}
 
 	/**
 	 * User can change implementation of this method to handle some specific
 	 * situations not covered by default logic.
-	 *
+	 * 
+	 * @generated
+	 */
+	private static int getUnrecognizedLinkWithClassID(EObject domainElement) {
+		return -1;
+	}
+
+	/**
+	 * User can change implementation of this method to handle some specific
+	 * situations not covered by default logic.
+	 * 
 	 * @generated
 	 */
 	private static int getUnrecognizedStateMachine_2004ChildNodeID(EObject domainElement, String semanticHint) {
@@ -623,7 +515,7 @@ public class UMLVisualIDRegistry {
 	/**
 	 * User can change implementation of this method to handle some specific
 	 * situations not covered by default logic.
-	 *
+	 * 
 	 * @generated
 	 */
 	private static int getUnrecognizedRegion_3013ChildNodeID(EObject domainElement, String semanticHint) {
@@ -633,7 +525,7 @@ public class UMLVisualIDRegistry {
 	/**
 	 * User can change implementation of this method to handle some specific
 	 * situations not covered by default logic.
-	 *
+	 * 
 	 * @generated
 	 */
 	private static int getUnrecognizedState_3001ChildNodeID(EObject domainElement, String semanticHint) {
@@ -643,7 +535,7 @@ public class UMLVisualIDRegistry {
 	/**
 	 * User can change implementation of this method to handle some specific
 	 * situations not covered by default logic.
-	 *
+	 * 
 	 * @generated
 	 */
 	private static int getUnrecognizedState_3012ChildNodeID(EObject domainElement, String semanticHint) {
@@ -653,7 +545,7 @@ public class UMLVisualIDRegistry {
 	/**
 	 * User can change implementation of this method to handle some specific
 	 * situations not covered by default logic.
-	 *
+	 * 
 	 * @generated
 	 */
 	private static int getUnrecognizedRegion_3002ChildNodeID(EObject domainElement, String semanticHint) {
@@ -663,7 +555,7 @@ public class UMLVisualIDRegistry {
 	/**
 	 * User can change implementation of this method to handle some specific
 	 * situations not covered by default logic.
-	 *
+	 * 
 	 * @generated
 	 */
 	private static int getUnrecognizedState_3016ChildNodeID(EObject domainElement, String semanticHint) {
@@ -673,7 +565,7 @@ public class UMLVisualIDRegistry {
 	/**
 	 * User can change implementation of this method to handle some specific
 	 * situations not covered by default logic.
-	 *
+	 * 
 	 * @generated
 	 */
 	private static int getUnrecognizedConnectionPointReference_3017ChildNodeID(EObject domainElement, String semanticHint) {
@@ -683,7 +575,7 @@ public class UMLVisualIDRegistry {
 	/**
 	 * User can change implementation of this method to handle some specific
 	 * situations not covered by default logic.
-	 *
+	 * 
 	 * @generated
 	 */
 	private static int getUnrecognizedConnectionPointReference_3018ChildNodeID(EObject domainElement, String semanticHint) {
@@ -693,7 +585,7 @@ public class UMLVisualIDRegistry {
 	/**
 	 * User can change implementation of this method to handle some specific
 	 * situations not covered by default logic.
-	 *
+	 * 
 	 * @generated
 	 */
 	private static int getUnrecognizedFinalState_3003ChildNodeID(EObject domainElement, String semanticHint) {
@@ -703,7 +595,7 @@ public class UMLVisualIDRegistry {
 	/**
 	 * User can change implementation of this method to handle some specific
 	 * situations not covered by default logic.
-	 *
+	 * 
 	 * @generated
 	 */
 	private static int getUnrecognizedPseudostate_3004ChildNodeID(EObject domainElement, String semanticHint) {
@@ -713,7 +605,7 @@ public class UMLVisualIDRegistry {
 	/**
 	 * User can change implementation of this method to handle some specific
 	 * situations not covered by default logic.
-	 *
+	 * 
 	 * @generated
 	 */
 	private static int getUnrecognizedPseudostate_3005ChildNodeID(EObject domainElement, String semanticHint) {
@@ -723,7 +615,7 @@ public class UMLVisualIDRegistry {
 	/**
 	 * User can change implementation of this method to handle some specific
 	 * situations not covered by default logic.
-	 *
+	 * 
 	 * @generated
 	 */
 	private static int getUnrecognizedPseudostate_3006ChildNodeID(EObject domainElement, String semanticHint) {
@@ -733,7 +625,7 @@ public class UMLVisualIDRegistry {
 	/**
 	 * User can change implementation of this method to handle some specific
 	 * situations not covered by default logic.
-	 *
+	 * 
 	 * @generated
 	 */
 	private static int getUnrecognizedPseudostate_3007ChildNodeID(EObject domainElement, String semanticHint) {
@@ -743,7 +635,7 @@ public class UMLVisualIDRegistry {
 	/**
 	 * User can change implementation of this method to handle some specific
 	 * situations not covered by default logic.
-	 *
+	 * 
 	 * @generated
 	 */
 	private static int getUnrecognizedPseudostate_3008ChildNodeID(EObject domainElement, String semanticHint) {
@@ -753,7 +645,7 @@ public class UMLVisualIDRegistry {
 	/**
 	 * User can change implementation of this method to handle some specific
 	 * situations not covered by default logic.
-	 *
+	 * 
 	 * @generated
 	 */
 	private static int getUnrecognizedPseudostate_3009ChildNodeID(EObject domainElement, String semanticHint) {
@@ -763,7 +655,7 @@ public class UMLVisualIDRegistry {
 	/**
 	 * User can change implementation of this method to handle some specific
 	 * situations not covered by default logic.
-	 *
+	 * 
 	 * @generated
 	 */
 	private static int getUnrecognizedPseudostate_3010ChildNodeID(EObject domainElement, String semanticHint) {
@@ -773,7 +665,7 @@ public class UMLVisualIDRegistry {
 	/**
 	 * User can change implementation of this method to handle some specific
 	 * situations not covered by default logic.
-	 *
+	 * 
 	 * @generated
 	 */
 	private static int getUnrecognizedPseudostate_3011ChildNodeID(EObject domainElement, String semanticHint) {
@@ -783,7 +675,7 @@ public class UMLVisualIDRegistry {
 	/**
 	 * User can change implementation of this method to handle some specific
 	 * situations not covered by default logic.
-	 *
+	 * 
 	 * @generated
 	 */
 	private static int getUnrecognizedPseudostate_3014ChildNodeID(EObject domainElement, String semanticHint) {
@@ -793,7 +685,7 @@ public class UMLVisualIDRegistry {
 	/**
 	 * User can change implementation of this method to handle some specific
 	 * situations not covered by default logic.
-	 *
+	 * 
 	 * @generated
 	 */
 	private static int getUnrecognizedPseudostate_3015ChildNodeID(EObject domainElement, String semanticHint) {
@@ -803,7 +695,7 @@ public class UMLVisualIDRegistry {
 	/**
 	 * User can change implementation of this method to handle some specific
 	 * situations not covered by default logic.
-	 *
+	 * 
 	 * @generated
 	 */
 	private static int getUnrecognizedRegionSubvertices_7004ChildNodeID(EObject domainElement, String semanticHint) {
@@ -813,7 +705,7 @@ public class UMLVisualIDRegistry {
 	/**
 	 * User can change implementation of this method to handle some specific
 	 * situations not covered by default logic.
-	 *
+	 * 
 	 * @generated
 	 */
 	private static int getUnrecognizedRegionSubvertices_7003ChildNodeID(EObject domainElement, String semanticHint) {
@@ -823,7 +715,7 @@ public class UMLVisualIDRegistry {
 	/**
 	 * User can change implementation of this method to handle some specific
 	 * situations not covered by default logic.
-	 *
+	 * 
 	 * @generated
 	 */
 	private static int getUnrecognizedStateMachine_1000ChildNodeID(EObject domainElement, String semanticHint) {
@@ -831,138 +723,11 @@ public class UMLVisualIDRegistry {
 	}
 
 	/**
-	 * User can change implementation of this method to handle some specific
-	 * situations not covered by default logic.
-	 *
 	 * @generated
 	 */
-	private static int getUnrecognizedLinkWithClassID(EObject domainElement) {
-		return -1;
+	private static boolean evaluate(UMLAbstractExpression expression, Object element) {
+		Object result = expression.evaluate(element);
+		return result instanceof Boolean && ((Boolean) result).booleanValue();
 	}
 
-	/**
-	 * User can change implementation of this method to check some additional 
-	 * conditions here.
-	 *
-	 * @generated
-	 */
-	private static boolean isLinkWithClassTransition_4001(Transition element) {
-		return true;
-	}
-
-	/**
-	 * @generated
-	 */
-	private static final Matcher State_3001 = new Matcher(UMLOCLFactory.getExpression("self.oclIsTypeOf(uml::State) and self.isSimple", //$NON-NLS-1$
-			UMLPackage.eINSTANCE.getState()));
-
-	/**
-	 * @generated
-	 */
-	private static final Matcher State_3012 = new Matcher(UMLOCLFactory.getExpression("self.oclIsTypeOf(uml::State) and self.isComposite", //$NON-NLS-1$
-			UMLPackage.eINSTANCE.getState()));
-
-	/**
-	 * @generated
-	 */
-	private static final Matcher State_3016 = new Matcher(UMLOCLFactory.getExpression("self.oclIsTypeOf(uml::State) and self.isSubmachineState", //$NON-NLS-1$
-			UMLPackage.eINSTANCE.getState()));
-
-	/**
-	 * @generated
-	 */
-	private static final Matcher ConnectionPointReference_3017 = new Matcher(UMLOCLFactory.getExpression("entry->notEmpty() implies entry->forAll(e | e.kind =  PseudostateKind::entryPoint)", //$NON-NLS-1$
-			UMLPackage.eINSTANCE.getConnectionPointReference()));
-
-	/**
-	 * @generated
-	 */
-	private static final Matcher ConnectionPointReference_3018 = new Matcher(UMLOCLFactory.getExpression("exit->notEmpty() implies exit->forAll(e | e.kind =  PseudostateKind::exitPoint)", //$NON-NLS-1$
-			UMLPackage.eINSTANCE.getConnectionPointReference()));
-
-	/**
-	 * @generated
-	 */
-	private static final Matcher Pseudostate_3004 = new Matcher(UMLOCLFactory.getExpression("self.kind = PseudostateKind::initial", //$NON-NLS-1$
-			UMLPackage.eINSTANCE.getPseudostate()));
-
-	/**
-	 * @generated
-	 */
-	private static final Matcher Pseudostate_3005 = new Matcher(UMLOCLFactory.getExpression("self.kind = PseudostateKind::shallowHistory", //$NON-NLS-1$
-			UMLPackage.eINSTANCE.getPseudostate()));
-
-	/**
-	 * @generated
-	 */
-	private static final Matcher Pseudostate_3006 = new Matcher(UMLOCLFactory.getExpression("self.kind = PseudostateKind::deepHistory", //$NON-NLS-1$
-			UMLPackage.eINSTANCE.getPseudostate()));
-
-	/**
-	 * @generated
-	 */
-	private static final Matcher Pseudostate_3007 = new Matcher(UMLOCLFactory.getExpression("self.kind = PseudostateKind::fork", //$NON-NLS-1$
-			UMLPackage.eINSTANCE.getPseudostate()));
-
-	/**
-	 * @generated
-	 */
-	private static final Matcher Pseudostate_3008 = new Matcher(UMLOCLFactory.getExpression("self.kind = PseudostateKind::join", //$NON-NLS-1$
-			UMLPackage.eINSTANCE.getPseudostate()));
-
-	/**
-	 * @generated
-	 */
-	private static final Matcher Pseudostate_3009 = new Matcher(UMLOCLFactory.getExpression("self.kind = PseudostateKind::junction", //$NON-NLS-1$
-			UMLPackage.eINSTANCE.getPseudostate()));
-
-	/**
-	 * @generated
-	 */
-	private static final Matcher Pseudostate_3010 = new Matcher(UMLOCLFactory.getExpression("self.kind = PseudostateKind::choice", //$NON-NLS-1$
-			UMLPackage.eINSTANCE.getPseudostate()));
-
-	/**
-	 * @generated
-	 */
-	private static final Matcher Pseudostate_3011 = new Matcher(UMLOCLFactory.getExpression("self.kind = PseudostateKind::terminate", //$NON-NLS-1$
-			UMLPackage.eINSTANCE.getPseudostate()));
-
-	/**
-	 * @generated
-	 */
-	private static final Matcher Pseudostate_3014 = new Matcher(UMLOCLFactory.getExpression("self.kind = PseudostateKind::entryPoint", //$NON-NLS-1$
-			UMLPackage.eINSTANCE.getPseudostate()));
-
-	/**
-	 * @generated
-	 */
-	private static final Matcher Pseudostate_3015 = new Matcher(UMLOCLFactory.getExpression("self.kind = PseudostateKind::exitPoint", //$NON-NLS-1$
-			UMLPackage.eINSTANCE.getPseudostate()));
-
-	/**
-	 * @generated	
-	 */
-	static class Matcher {
-
-		/**
-		 * @generated	
-		 */
-		private UMLAbstractExpression condition;
-
-		/**
-		 * @generated	
-		 */
-		Matcher(UMLAbstractExpression conditionExpression) {
-			this.condition = conditionExpression;
-		}
-
-		/**
-		 * @generated	
-		 */
-		boolean matches(Object object) {
-			Object result = condition.evaluate(object);
-			return result instanceof Boolean && ((Boolean) result).booleanValue();
-		}
-	}// Matcher
 }
