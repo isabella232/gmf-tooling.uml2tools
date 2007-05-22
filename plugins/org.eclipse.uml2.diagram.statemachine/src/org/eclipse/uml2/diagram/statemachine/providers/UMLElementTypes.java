@@ -250,6 +250,7 @@ public class UMLElementTypes extends ElementInitializers {
 		}
 		return pseudostateDescriptors;
 	}
+
 	/**
 	 * @NOT generated
 	 */
