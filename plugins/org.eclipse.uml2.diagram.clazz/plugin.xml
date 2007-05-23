@@ -77,7 +77,7 @@
              </popupAction>            
              <popupAction
                   path="/DetailLevelMenu/DetailLevelGroup"
-                  id="org.eclipse.uml2.diagram.clazz.detail_level_analisys">
+                  id="org.eclipse.uml2.diagram.clazz.detail_level_analysis">
              </popupAction>            
              <popupAction
                   path="/DetailLevelMenu/DetailLevelGroup"
