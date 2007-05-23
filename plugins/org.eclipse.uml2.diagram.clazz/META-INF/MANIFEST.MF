@@ -28,7 +28,6 @@ Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.gmf.runtime.diagram.ui.properties,
  org.eclipse.gmf.runtime.diagram.ui.providers,
  org.eclipse.gmf.runtime.diagram.ui.providers.ide,
- org.eclipse.gmf.runtime.diagram.ui.render,
  org.eclipse.gmf.runtime.diagram.ui.resources.editor,
  org.eclipse.gmf.runtime.diagram.ui.resources.editor.ide,
  org.eclipse.gmf.runtime.notation.providers,
@@ -41,5 +40,6 @@ Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.gmf.runtime.draw2d.ui;visibility:=reexport,
  org.eclipse.uml2.diagram.common;visibility:=reexport,
  org.eclipse.draw2d;visibility:=reexport,
- org.eclipse.ocl.ecore;visibility:=reexport
+ org.eclipse.ocl.ecore;visibility:=reexport,
+ org.eclipse.gmf.runtime.diagram.ui.render
 Eclipse-LazyStart: true
