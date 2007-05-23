@@ -36,6 +36,7 @@ import org.eclipse.uml2.diagram.clazz.part.Messages;
 import org.eclipse.uml2.diagram.clazz.part.UMLDiagramEditor;
 import org.eclipse.uml2.diagram.clazz.part.UMLDiagramEditorPlugin;
 import org.eclipse.uml2.diagram.clazz.part.UMLDiagramEditorUtil;
+import org.eclipse.uml2.uml.NamedElement;
 
 /**
  * @generated
@@ -91,7 +92,8 @@ public class OpenDiagramEditPolicy extends OpenEditPolicy {
 				}
 				URI uri = diagram.eResource().getURI();
 				uri = uri.appendFragment(diagram.eResource().getURIFragment(diagram));
-				IEditorInput editorInput = new URIEditorInput(uri);
+				String diagramName = getDiagramName(getDiagramDomainElement());
+				IEditorInput editorInput = new URIEditorInput(uri, diagramName);
 				IWorkbenchPage page = PlatformUI.getWorkbench().getActiveWorkbenchWindow().getActivePage();
 				page.openEditor(editorInput, getEditorID());
 				return CommandResult.newOKCommandResult();
@@ -171,6 +173,18 @@ public class OpenDiagramEditPolicy extends OpenEditPolicy {
 		protected String getEditorID() {
 			return UMLDiagramEditor.ID;
 		}
+	}
+
+	protected static String getDiagramName(EObject diagramDomainElement) {
+		String result = null;
+		if (diagramDomainElement instanceof NamedElement) {
+			NamedElement named = (NamedElement) diagramDomainElement;
+			result = named.getQualifiedName();
+			if (result == null || result.length() == 0) {
+				result = named.getName();
+			}
+		}
+		return result;
 	}
 
 }
