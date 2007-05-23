@@ -392,10 +392,7 @@ public class UMLDiagramUpdater {
 	 * @generated
 	 */
 	public static List getExtension_4002ContainedLinks(View view) {
-		Extension modelElement = (Extension) view.getElement();
-		List result = new LinkedList();
-		result.addAll(getContainedTypeModelFacetLinks_Generalization_4001(modelElement));
-		return result;
+		return Collections.EMPTY_LIST;
 	}
 
 	/**
