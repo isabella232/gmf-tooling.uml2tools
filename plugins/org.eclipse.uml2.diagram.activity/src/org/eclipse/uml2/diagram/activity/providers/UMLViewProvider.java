@@ -10,6 +10,10 @@ import org.eclipse.uml2.diagram.activity.edit.parts.AcceptEventAction2EditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.AcceptEventAction3EditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.AcceptEventAction4EditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.AcceptEventActionEditPart;
+import org.eclipse.uml2.diagram.activity.edit.parts.AcceptEventActionName2EditPart;
+import org.eclipse.uml2.diagram.activity.edit.parts.AcceptEventActionName3EditPart;
+import org.eclipse.uml2.diagram.activity.edit.parts.AcceptEventActionName4EditPart;
+import org.eclipse.uml2.diagram.activity.edit.parts.AcceptEventActionNameEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.ActivityEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.ActivityFinalNode2EditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.ActivityFinalNodeEditPart;
@@ -31,6 +35,10 @@ import org.eclipse.uml2.diagram.activity.edit.parts.CallOperationActionName2Edit
 import org.eclipse.uml2.diagram.activity.edit.parts.CallOperationActionNameEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.CentralBufferNode2EditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.CentralBufferNodeEditPart;
+import org.eclipse.uml2.diagram.activity.edit.parts.CentralBufferNodeName2EditPart;
+import org.eclipse.uml2.diagram.activity.edit.parts.CentralBufferNodeName3EditPart;
+import org.eclipse.uml2.diagram.activity.edit.parts.CentralBufferNodeName4EditPart;
+import org.eclipse.uml2.diagram.activity.edit.parts.CentralBufferNodeNameEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.Constraint2EditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.ConstraintEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.ConstraintPostconditionEditPart;
@@ -42,6 +50,10 @@ import org.eclipse.uml2.diagram.activity.edit.parts.CreateObjectActionName2EditP
 import org.eclipse.uml2.diagram.activity.edit.parts.CreateObjectActionNameEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.DataStoreNode2EditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.DataStoreNodeEditPart;
+import org.eclipse.uml2.diagram.activity.edit.parts.DataStoreNodeName2EditPart;
+import org.eclipse.uml2.diagram.activity.edit.parts.DataStoreNodeName3EditPart;
+import org.eclipse.uml2.diagram.activity.edit.parts.DataStoreNodeName4EditPart;
+import org.eclipse.uml2.diagram.activity.edit.parts.DataStoreNodeNameEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.DecisionNode2EditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.DecisionNodeEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.ExceptionHandlerEditPart;
@@ -94,6 +106,10 @@ import org.eclipse.uml2.diagram.activity.part.UMLVisualIDRegistry;
 import org.eclipse.uml2.diagram.activity.view.factories.AcceptEventAction2ViewFactory;
 import org.eclipse.uml2.diagram.activity.view.factories.AcceptEventAction3ViewFactory;
 import org.eclipse.uml2.diagram.activity.view.factories.AcceptEventAction4ViewFactory;
+import org.eclipse.uml2.diagram.activity.view.factories.AcceptEventActionName2ViewFactory;
+import org.eclipse.uml2.diagram.activity.view.factories.AcceptEventActionName3ViewFactory;
+import org.eclipse.uml2.diagram.activity.view.factories.AcceptEventActionName4ViewFactory;
+import org.eclipse.uml2.diagram.activity.view.factories.AcceptEventActionNameViewFactory;
 import org.eclipse.uml2.diagram.activity.view.factories.AcceptEventActionViewFactory;
 import org.eclipse.uml2.diagram.activity.view.factories.ActionLocalPreconditionViewFactory;
 import org.eclipse.uml2.diagram.activity.view.factories.ActivityFinalNode2ViewFactory;
@@ -116,6 +132,10 @@ import org.eclipse.uml2.diagram.activity.view.factories.CallOperationActionName2
 import org.eclipse.uml2.diagram.activity.view.factories.CallOperationActionNameViewFactory;
 import org.eclipse.uml2.diagram.activity.view.factories.CallOperationActionViewFactory;
 import org.eclipse.uml2.diagram.activity.view.factories.CentralBufferNode2ViewFactory;
+import org.eclipse.uml2.diagram.activity.view.factories.CentralBufferNodeName2ViewFactory;
+import org.eclipse.uml2.diagram.activity.view.factories.CentralBufferNodeName3ViewFactory;
+import org.eclipse.uml2.diagram.activity.view.factories.CentralBufferNodeName4ViewFactory;
+import org.eclipse.uml2.diagram.activity.view.factories.CentralBufferNodeNameViewFactory;
 import org.eclipse.uml2.diagram.activity.view.factories.CentralBufferNodeViewFactory;
 import org.eclipse.uml2.diagram.activity.view.factories.Constraint2ViewFactory;
 import org.eclipse.uml2.diagram.activity.view.factories.ConstraintPostconditionViewFactory;
@@ -127,6 +147,10 @@ import org.eclipse.uml2.diagram.activity.view.factories.CreateObjectActionName2V
 import org.eclipse.uml2.diagram.activity.view.factories.CreateObjectActionNameViewFactory;
 import org.eclipse.uml2.diagram.activity.view.factories.CreateObjectActionViewFactory;
 import org.eclipse.uml2.diagram.activity.view.factories.DataStoreNode2ViewFactory;
+import org.eclipse.uml2.diagram.activity.view.factories.DataStoreNodeName2ViewFactory;
+import org.eclipse.uml2.diagram.activity.view.factories.DataStoreNodeName3ViewFactory;
+import org.eclipse.uml2.diagram.activity.view.factories.DataStoreNodeName4ViewFactory;
+import org.eclipse.uml2.diagram.activity.view.factories.DataStoreNodeNameViewFactory;
 import org.eclipse.uml2.diagram.activity.view.factories.DataStoreNodeViewFactory;
 import org.eclipse.uml2.diagram.activity.view.factories.DecisionNode2ViewFactory;
 import org.eclipse.uml2.diagram.activity.view.factories.DecisionNodeViewFactory;
@@ -217,8 +241,12 @@ public class UMLViewProvider extends AbstractViewProvider {
 			return Constraint2ViewFactory.class;
 		case AcceptEventActionEditPart.VISUAL_ID:
 			return AcceptEventActionViewFactory.class;
+		case AcceptEventActionNameEditPart.VISUAL_ID:
+			return AcceptEventActionNameViewFactory.class;
 		case AcceptEventAction2EditPart.VISUAL_ID:
 			return AcceptEventAction2ViewFactory.class;
+		case AcceptEventActionName3EditPart.VISUAL_ID:
+			return AcceptEventActionName3ViewFactory.class;
 		case ActivityFinalNodeEditPart.VISUAL_ID:
 			return ActivityFinalNodeViewFactory.class;
 		case DecisionNodeEditPart.VISUAL_ID:
@@ -229,8 +257,16 @@ public class UMLViewProvider extends AbstractViewProvider {
 			return InitialNodeViewFactory.class;
 		case DataStoreNodeEditPart.VISUAL_ID:
 			return DataStoreNodeViewFactory.class;
+		case DataStoreNodeNameEditPart.VISUAL_ID:
+			return DataStoreNodeNameViewFactory.class;
+		case DataStoreNodeName2EditPart.VISUAL_ID:
+			return DataStoreNodeName2ViewFactory.class;
 		case CentralBufferNodeEditPart.VISUAL_ID:
 			return CentralBufferNodeViewFactory.class;
+		case CentralBufferNodeNameEditPart.VISUAL_ID:
+			return CentralBufferNodeNameViewFactory.class;
+		case CentralBufferNodeName2EditPart.VISUAL_ID:
+			return CentralBufferNodeName2ViewFactory.class;
 		case OpaqueActionEditPart.VISUAL_ID:
 			return OpaqueActionViewFactory.class;
 		case OpaqueActionNameEditPart.VISUAL_ID:
@@ -303,8 +339,12 @@ public class UMLViewProvider extends AbstractViewProvider {
 			return OpaqueActionName2ViewFactory.class;
 		case AcceptEventAction3EditPart.VISUAL_ID:
 			return AcceptEventAction3ViewFactory.class;
+		case AcceptEventActionName2EditPart.VISUAL_ID:
+			return AcceptEventActionName2ViewFactory.class;
 		case AcceptEventAction4EditPart.VISUAL_ID:
 			return AcceptEventAction4ViewFactory.class;
+		case AcceptEventActionName4EditPart.VISUAL_ID:
+			return AcceptEventActionName4ViewFactory.class;
 		case ActivityFinalNode2EditPart.VISUAL_ID:
 			return ActivityFinalNode2ViewFactory.class;
 		case DecisionNode2EditPart.VISUAL_ID:
@@ -337,8 +377,16 @@ public class UMLViewProvider extends AbstractViewProvider {
 			return AddStructuralFeatureValueActionName2ViewFactory.class;
 		case DataStoreNode2EditPart.VISUAL_ID:
 			return DataStoreNode2ViewFactory.class;
+		case DataStoreNodeName3EditPart.VISUAL_ID:
+			return DataStoreNodeName3ViewFactory.class;
+		case DataStoreNodeName4EditPart.VISUAL_ID:
+			return DataStoreNodeName4ViewFactory.class;
 		case CentralBufferNode2EditPart.VISUAL_ID:
 			return CentralBufferNode2ViewFactory.class;
+		case CentralBufferNodeName3EditPart.VISUAL_ID:
+			return CentralBufferNodeName3ViewFactory.class;
+		case CentralBufferNodeName4EditPart.VISUAL_ID:
+			return CentralBufferNodeName4ViewFactory.class;
 		case OpaqueBehaviorEditPart.VISUAL_ID:
 			return OpaqueBehaviorViewFactory.class;
 		case OpaqueBehaviorNameEditPart.VISUAL_ID:

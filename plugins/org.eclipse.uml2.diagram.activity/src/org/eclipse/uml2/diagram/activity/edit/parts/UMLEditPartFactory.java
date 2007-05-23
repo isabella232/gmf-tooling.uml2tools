@@ -46,8 +46,14 @@ public class UMLEditPartFactory implements EditPartFactory {
 			case AcceptEventActionEditPart.VISUAL_ID:
 				return new AcceptEventActionEditPart(view);
 
+			case AcceptEventActionNameEditPart.VISUAL_ID:
+				return new AcceptEventActionNameEditPart(view);
+
 			case AcceptEventAction2EditPart.VISUAL_ID:
 				return new AcceptEventAction2EditPart(view);
+
+			case AcceptEventActionName3EditPart.VISUAL_ID:
+				return new AcceptEventActionName3EditPart(view);
 
 			case ActivityFinalNodeEditPart.VISUAL_ID:
 				return new ActivityFinalNodeEditPart(view);
@@ -64,8 +70,20 @@ public class UMLEditPartFactory implements EditPartFactory {
 			case DataStoreNodeEditPart.VISUAL_ID:
 				return new DataStoreNodeEditPart(view);
 
+			case DataStoreNodeNameEditPart.VISUAL_ID:
+				return new DataStoreNodeNameEditPart(view);
+
+			case DataStoreNodeName2EditPart.VISUAL_ID:
+				return new DataStoreNodeName2EditPart(view);
+
 			case CentralBufferNodeEditPart.VISUAL_ID:
 				return new CentralBufferNodeEditPart(view);
+
+			case CentralBufferNodeNameEditPart.VISUAL_ID:
+				return new CentralBufferNodeNameEditPart(view);
+
+			case CentralBufferNodeName2EditPart.VISUAL_ID:
+				return new CentralBufferNodeName2EditPart(view);
 
 			case OpaqueActionEditPart.VISUAL_ID:
 				return new OpaqueActionEditPart(view);
@@ -175,8 +193,14 @@ public class UMLEditPartFactory implements EditPartFactory {
 			case AcceptEventAction3EditPart.VISUAL_ID:
 				return new AcceptEventAction3EditPart(view);
 
+			case AcceptEventActionName2EditPart.VISUAL_ID:
+				return new AcceptEventActionName2EditPart(view);
+
 			case AcceptEventAction4EditPart.VISUAL_ID:
 				return new AcceptEventAction4EditPart(view);
+
+			case AcceptEventActionName4EditPart.VISUAL_ID:
+				return new AcceptEventActionName4EditPart(view);
 
 			case ActivityFinalNode2EditPart.VISUAL_ID:
 				return new ActivityFinalNode2EditPart(view);
@@ -226,8 +250,20 @@ public class UMLEditPartFactory implements EditPartFactory {
 			case DataStoreNode2EditPart.VISUAL_ID:
 				return new DataStoreNode2EditPart(view);
 
+			case DataStoreNodeName3EditPart.VISUAL_ID:
+				return new DataStoreNodeName3EditPart(view);
+
+			case DataStoreNodeName4EditPart.VISUAL_ID:
+				return new DataStoreNodeName4EditPart(view);
+
 			case CentralBufferNode2EditPart.VISUAL_ID:
 				return new CentralBufferNode2EditPart(view);
+
+			case CentralBufferNodeName3EditPart.VISUAL_ID:
+				return new CentralBufferNodeName3EditPart(view);
+
+			case CentralBufferNodeName4EditPart.VISUAL_ID:
+				return new CentralBufferNodeName4EditPart(view);
 
 			case OpaqueBehaviorEditPart.VISUAL_ID:
 				return new OpaqueBehaviorEditPart(view);

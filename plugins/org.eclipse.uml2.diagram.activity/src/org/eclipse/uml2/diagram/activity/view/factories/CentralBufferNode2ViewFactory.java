@@ -8,12 +8,15 @@ import org.eclipse.core.runtime.IAdaptable;
 import org.eclipse.emf.ecore.EAnnotation;
 import org.eclipse.emf.ecore.EcoreFactory;
 
+import org.eclipse.gmf.runtime.diagram.core.util.ViewUtil;
 import org.eclipse.gmf.runtime.diagram.ui.view.factories.AbstractShapeViewFactory;
 
 import org.eclipse.gmf.runtime.notation.NotationFactory;
 import org.eclipse.gmf.runtime.notation.View;
 
 import org.eclipse.uml2.diagram.activity.edit.parts.CentralBufferNode2EditPart;
+import org.eclipse.uml2.diagram.activity.edit.parts.CentralBufferNodeName3EditPart;
+import org.eclipse.uml2.diagram.activity.edit.parts.CentralBufferNodeName4EditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.PackageEditPart;
 
 import org.eclipse.uml2.diagram.activity.part.UMLVisualIDRegistry;
@@ -47,5 +50,7 @@ public class CentralBufferNode2ViewFactory extends AbstractShapeViewFactory {
 			shortcutAnnotation.getDetails().put("modelID", PackageEditPart.MODEL_ID); //$NON-NLS-1$
 			view.getEAnnotations().add(shortcutAnnotation);
 		}
+		getViewService().createNode(semanticAdapter, view, UMLVisualIDRegistry.getType(CentralBufferNodeName3EditPart.VISUAL_ID), ViewUtil.APPEND, true, getPreferencesHint());
+		getViewService().createNode(semanticAdapter, view, UMLVisualIDRegistry.getType(CentralBufferNodeName4EditPart.VISUAL_ID), ViewUtil.APPEND, true, getPreferencesHint());
 	}
 }

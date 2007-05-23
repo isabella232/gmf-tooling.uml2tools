@@ -2,9 +2,12 @@ package org.eclipse.uml2.diagram.activity.edit.parts;
 
 import org.eclipse.draw2d.BorderLayout;
 import org.eclipse.draw2d.Graphics;
+import org.eclipse.draw2d.GridData;
+import org.eclipse.draw2d.GridLayout;
 import org.eclipse.draw2d.IFigure;
 import org.eclipse.draw2d.RectangleFigure;
 import org.eclipse.draw2d.StackLayout;
+import org.eclipse.draw2d.geometry.Dimension;
 import org.eclipse.gef.EditPart;
 import org.eclipse.gef.EditPolicy;
 import org.eclipse.gef.Request;
@@ -12,6 +15,7 @@ import org.eclipse.gef.commands.Command;
 import org.eclipse.gef.editpolicies.LayoutEditPolicy;
 import org.eclipse.gef.editpolicies.NonResizableEditPolicy;
 import org.eclipse.gef.requests.CreateRequest;
+import org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.ShapeNodeEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles;
 import org.eclipse.gmf.runtime.draw2d.ui.figures.ConstrainedToolbarLayout;
@@ -21,6 +25,7 @@ import org.eclipse.gmf.runtime.gef.ui.figures.NodeFigure;
 import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.uml2.diagram.activity.edit.policies.DataStoreNodeCanonicalEditPolicy;
 import org.eclipse.uml2.diagram.activity.edit.policies.DataStoreNodeItemSemanticEditPolicy;
+import org.eclipse.uml2.diagram.activity.part.UMLVisualIDRegistry;
 
 /**
  * @generated
@@ -103,8 +108,59 @@ public class DataStoreNodeEditPart extends ShapeNodeEditPart {
 	/**
 	 * @generated
 	 */
+	protected boolean addFixedChild(EditPart childEditPart) {
+		if (childEditPart instanceof DataStoreNodeNameEditPart) {
+			((DataStoreNodeNameEditPart) childEditPart).setLabel(getPrimaryShape().getFigureDataStoreFigure_name());
+			return true;
+		}
+		if (childEditPart instanceof DataStoreNodeName2EditPart) {
+			((DataStoreNodeName2EditPart) childEditPart).setLabel(getPrimaryShape().getFigureDataStoreFigure_states());
+			return true;
+		}
+		return false;
+	}
+
+	/**
+	 * @generated
+	 */
+	protected boolean removeFixedChild(EditPart childEditPart) {
+
+		return false;
+	}
+
+	/**
+	 * @generated
+	 */
+	protected void addChildVisual(EditPart childEditPart, int index) {
+		if (addFixedChild(childEditPart)) {
+			return;
+		}
+		super.addChildVisual(childEditPart, -1);
+	}
+
+	/**
+	 * @generated
+	 */
+	protected void removeChildVisual(EditPart childEditPart) {
+		if (removeFixedChild(childEditPart)) {
+			return;
+		}
+		super.removeChildVisual(childEditPart);
+	}
+
+	/**
+	 * @generated
+	 */
+	protected IFigure getContentPaneFor(IGraphicalEditPart editPart) {
+
+		return super.getContentPaneFor(editPart);
+	}
+
+	/**
+	 * @generated
+	 */
 	protected NodeFigure createNodePlate() {
-		DefaultSizeNodeFigure result = new DefaultSizeNodeFigure(getMapMode().DPtoLP(40), getMapMode().DPtoLP(40));
+		DefaultSizeNodeFigure result = new DefaultSizeNodeFigure(getMapMode().DPtoLP(60), getMapMode().DPtoLP(30));
 		return result;
 	}
 
@@ -153,6 +209,13 @@ public class DataStoreNodeEditPart extends ShapeNodeEditPart {
 	/**
 	 * @generated
 	 */
+	public EditPart getPrimaryChildEditPart() {
+		return getChildBySemanticHint(UMLVisualIDRegistry.getType(DataStoreNodeNameEditPart.VISUAL_ID));
+	}
+
+	/**
+	 * @generated
+	 */
 	public class DataStoreFigure extends RectangleFigure {
 
 		/**
@@ -160,7 +223,9 @@ public class DataStoreNodeEditPart extends ShapeNodeEditPart {
 		 */
 		public DataStoreFigure() {
 
-			BorderLayout layoutThis = new BorderLayout();
+			GridLayout layoutThis = new GridLayout();
+			layoutThis.numColumns = 1;
+			layoutThis.makeColumnsEqualWidth = true;
 			this.setLayoutManager(layoutThis);
 
 			this.setFill(true);
@@ -169,6 +234,7 @@ public class DataStoreNodeEditPart extends ShapeNodeEditPart {
 			this.setOutlineXOR(false);
 			this.setLineWidth(1);
 			this.setLineStyle(Graphics.LINE_SOLID);
+			this.setPreferredSize(new Dimension(getMapMode().DPtoLP(60), getMapMode().DPtoLP(30)));
 			createContents();
 		}
 
@@ -177,41 +243,110 @@ public class DataStoreNodeEditPart extends ShapeNodeEditPart {
 		 */
 		private void createContents() {
 
-			WrapLabel dataStore_fixed_datastore0 = new WrapLabel();
-			dataStore_fixed_datastore0.setText("\u00ABdatastore\u00BB");
+			RectangleFigure dataStoreFigure_NameContainer0 = new RectangleFigure();
+			dataStoreFigure_NameContainer0.setFill(false);
+			dataStoreFigure_NameContainer0.setFillXOR(false);
+			dataStoreFigure_NameContainer0.setOutline(false);
+			dataStoreFigure_NameContainer0.setOutlineXOR(false);
+			dataStoreFigure_NameContainer0.setLineWidth(1);
+			dataStoreFigure_NameContainer0.setLineStyle(Graphics.LINE_SOLID);
 
-			this.add(dataStore_fixed_datastore0, BorderLayout.TOP);
+			GridData constraintDataStoreFigure_NameContainer0 = new GridData();
+			constraintDataStoreFigure_NameContainer0.verticalAlignment = GridData.CENTER;
+			constraintDataStoreFigure_NameContainer0.horizontalAlignment = GridData.CENTER;
+			constraintDataStoreFigure_NameContainer0.horizontalIndent = 0;
+			constraintDataStoreFigure_NameContainer0.horizontalSpan = 1;
+			constraintDataStoreFigure_NameContainer0.verticalSpan = 1;
+			constraintDataStoreFigure_NameContainer0.grabExcessHorizontalSpace = true;
+			constraintDataStoreFigure_NameContainer0.grabExcessVerticalSpace = true;
+			this.add(dataStoreFigure_NameContainer0, constraintDataStoreFigure_NameContainer0);
 
-			RectangleFigure dataStoreFigure_ContentPane0 = new RectangleFigure();
-			dataStoreFigure_ContentPane0.setFill(false);
-			dataStoreFigure_ContentPane0.setFillXOR(false);
-			dataStoreFigure_ContentPane0.setOutline(false);
-			dataStoreFigure_ContentPane0.setOutlineXOR(false);
-			dataStoreFigure_ContentPane0.setLineWidth(1);
-			dataStoreFigure_ContentPane0.setLineStyle(Graphics.LINE_SOLID);
+			GridLayout layoutDataStoreFigure_NameContainer0 = new GridLayout();
+			layoutDataStoreFigure_NameContainer0.numColumns = 1;
+			layoutDataStoreFigure_NameContainer0.makeColumnsEqualWidth = true;
+			dataStoreFigure_NameContainer0.setLayoutManager(layoutDataStoreFigure_NameContainer0);
 
-			this.add(dataStoreFigure_ContentPane0, BorderLayout.CENTER);
-			setFigureDataStoreFigure_ContentPane(dataStoreFigure_ContentPane0);
+			WrapLabel dataStore_fixed_datastore1 = new WrapLabel();
+			dataStore_fixed_datastore1.setText("\u00ABdatastore\u00BB");
+
+			GridData constraintDataStore_fixed_datastore1 = new GridData();
+			constraintDataStore_fixed_datastore1.verticalAlignment = GridData.CENTER;
+			constraintDataStore_fixed_datastore1.horizontalAlignment = GridData.CENTER;
+			constraintDataStore_fixed_datastore1.horizontalIndent = 0;
+			constraintDataStore_fixed_datastore1.horizontalSpan = 1;
+			constraintDataStore_fixed_datastore1.verticalSpan = 1;
+			constraintDataStore_fixed_datastore1.grabExcessHorizontalSpace = true;
+			constraintDataStore_fixed_datastore1.grabExcessVerticalSpace = false;
+			dataStoreFigure_NameContainer0.add(dataStore_fixed_datastore1, constraintDataStore_fixed_datastore1);
+
+			WrapLabel dataStoreFigure_name1 = new WrapLabel();
+			dataStoreFigure_name1.setText("");
+
+			GridData constraintDataStoreFigure_name1 = new GridData();
+			constraintDataStoreFigure_name1.verticalAlignment = GridData.CENTER;
+			constraintDataStoreFigure_name1.horizontalAlignment = GridData.CENTER;
+			constraintDataStoreFigure_name1.horizontalIndent = 0;
+			constraintDataStoreFigure_name1.horizontalSpan = 1;
+			constraintDataStoreFigure_name1.verticalSpan = 1;
+			constraintDataStoreFigure_name1.grabExcessHorizontalSpace = true;
+			constraintDataStoreFigure_name1.grabExcessVerticalSpace = false;
+			dataStoreFigure_NameContainer0.add(dataStoreFigure_name1, constraintDataStoreFigure_name1);
+
+			setFigureDataStoreFigure_name(dataStoreFigure_name1);
+
+			WrapLabel dataStoreFigure_states1 = new WrapLabel();
+			dataStoreFigure_states1.setText("");
+
+			GridData constraintDataStoreFigure_states1 = new GridData();
+			constraintDataStoreFigure_states1.verticalAlignment = GridData.CENTER;
+			constraintDataStoreFigure_states1.horizontalAlignment = GridData.CENTER;
+			constraintDataStoreFigure_states1.horizontalIndent = 0;
+			constraintDataStoreFigure_states1.horizontalSpan = 1;
+			constraintDataStoreFigure_states1.verticalSpan = 1;
+			constraintDataStoreFigure_states1.grabExcessHorizontalSpace = true;
+			constraintDataStoreFigure_states1.grabExcessVerticalSpace = false;
+			dataStoreFigure_NameContainer0.add(dataStoreFigure_states1, constraintDataStoreFigure_states1);
+
+			setFigureDataStoreFigure_states(dataStoreFigure_states1);
 
 		}
 
 		/**
 		 * @generated
 		 */
-		private RectangleFigure fDataStoreFigure_ContentPane;
+		private WrapLabel fDataStoreFigure_name;
 
 		/**
 		 * @generated
 		 */
-		public RectangleFigure getFigureDataStoreFigure_ContentPane() {
-			return fDataStoreFigure_ContentPane;
+		public WrapLabel getFigureDataStoreFigure_name() {
+			return fDataStoreFigure_name;
 		}
 
 		/**
 		 * @generated
 		 */
-		private void setFigureDataStoreFigure_ContentPane(RectangleFigure fig) {
-			fDataStoreFigure_ContentPane = fig;
+		private void setFigureDataStoreFigure_name(WrapLabel fig) {
+			fDataStoreFigure_name = fig;
+		}
+
+		/**
+		 * @generated
+		 */
+		private WrapLabel fDataStoreFigure_states;
+
+		/**
+		 * @generated
+		 */
+		public WrapLabel getFigureDataStoreFigure_states() {
+			return fDataStoreFigure_states;
+		}
+
+		/**
+		 * @generated
+		 */
+		private void setFigureDataStoreFigure_states(WrapLabel fig) {
+			fDataStoreFigure_states = fig;
 		}
 
 		/**

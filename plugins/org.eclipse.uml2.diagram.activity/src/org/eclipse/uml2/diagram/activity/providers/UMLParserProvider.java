@@ -11,6 +11,10 @@ import org.eclipse.gmf.runtime.common.ui.services.parser.IParserProvider;
 import org.eclipse.gmf.runtime.emf.type.core.IElementType;
 import org.eclipse.gmf.runtime.emf.ui.services.parser.ParserHintAdapter;
 import org.eclipse.gmf.runtime.notation.View;
+import org.eclipse.uml2.diagram.activity.edit.parts.AcceptEventActionName2EditPart;
+import org.eclipse.uml2.diagram.activity.edit.parts.AcceptEventActionName3EditPart;
+import org.eclipse.uml2.diagram.activity.edit.parts.AcceptEventActionName4EditPart;
+import org.eclipse.uml2.diagram.activity.edit.parts.AcceptEventActionNameEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.ActivityNameEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.ActivityParameterNodeNameEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.AddStructuralFeatureValueActionName2EditPart;
@@ -19,8 +23,16 @@ import org.eclipse.uml2.diagram.activity.edit.parts.CallBehaviorActionName2EditP
 import org.eclipse.uml2.diagram.activity.edit.parts.CallBehaviorActionNameEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.CallOperationActionName2EditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.CallOperationActionNameEditPart;
+import org.eclipse.uml2.diagram.activity.edit.parts.CentralBufferNodeName2EditPart;
+import org.eclipse.uml2.diagram.activity.edit.parts.CentralBufferNodeName3EditPart;
+import org.eclipse.uml2.diagram.activity.edit.parts.CentralBufferNodeName4EditPart;
+import org.eclipse.uml2.diagram.activity.edit.parts.CentralBufferNodeNameEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.CreateObjectActionName2EditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.CreateObjectActionNameEditPart;
+import org.eclipse.uml2.diagram.activity.edit.parts.DataStoreNodeName2EditPart;
+import org.eclipse.uml2.diagram.activity.edit.parts.DataStoreNodeName3EditPart;
+import org.eclipse.uml2.diagram.activity.edit.parts.DataStoreNodeName4EditPart;
+import org.eclipse.uml2.diagram.activity.edit.parts.DataStoreNodeNameEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.InputPinName2EditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.InputPinName3EditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.InputPinName4EditPart;
@@ -36,6 +48,7 @@ import org.eclipse.uml2.diagram.activity.edit.parts.OutputPinName3EditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.OutputPinNameEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.PinName2EditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.PinNameEditPart;
+import org.eclipse.uml2.diagram.activity.parser.ObjectNodeInStateParser;
 import org.eclipse.uml2.diagram.activity.parsers.MessageFormatParser;
 import org.eclipse.uml2.diagram.activity.part.UMLVisualIDRegistry;
 import org.eclipse.uml2.uml.UMLPackage;
@@ -67,6 +80,146 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 		EAttribute[] features = new EAttribute[] { UMLPackage.eINSTANCE.getNamedElement_Name(), };
 		MessageFormatParser parser = new MessageFormatParser(features);
 		return parser;
+	}
+
+	/**
+	 * @generated
+	 */
+	private IParser acceptEventActionName_5040Parser;
+
+	/**
+	 * @generated
+	 */
+	private IParser getAcceptEventActionName_5040Parser() {
+		if (acceptEventActionName_5040Parser == null) {
+			acceptEventActionName_5040Parser = createAcceptEventActionName_5040Parser();
+		}
+		return acceptEventActionName_5040Parser;
+	}
+
+	/**
+	 * @generated
+	 */
+	protected IParser createAcceptEventActionName_5040Parser() {
+		EAttribute[] features = new EAttribute[] { UMLPackage.eINSTANCE.getNamedElement_Name(), };
+		MessageFormatParser parser = new MessageFormatParser(features);
+		return parser;
+	}
+
+	/**
+	 * @generated
+	 */
+	private IParser acceptEventActionName_5042Parser;
+
+	/**
+	 * @generated
+	 */
+	private IParser getAcceptEventActionName_5042Parser() {
+		if (acceptEventActionName_5042Parser == null) {
+			acceptEventActionName_5042Parser = createAcceptEventActionName_5042Parser();
+		}
+		return acceptEventActionName_5042Parser;
+	}
+
+	/**
+	 * @generated
+	 */
+	protected IParser createAcceptEventActionName_5042Parser() {
+		EAttribute[] features = new EAttribute[] { UMLPackage.eINSTANCE.getNamedElement_Name(), };
+		MessageFormatParser parser = new MessageFormatParser(features);
+		return parser;
+	}
+
+	/**
+	 * @generated
+	 */
+	private IParser dataStoreNodeName_5034Parser;
+
+	/**
+	 * @generated
+	 */
+	private IParser getDataStoreNodeName_5034Parser() {
+		if (dataStoreNodeName_5034Parser == null) {
+			dataStoreNodeName_5034Parser = createDataStoreNodeName_5034Parser();
+		}
+		return dataStoreNodeName_5034Parser;
+	}
+
+	/**
+	 * @generated
+	 */
+	protected IParser createDataStoreNodeName_5034Parser() {
+		EAttribute[] features = new EAttribute[] { UMLPackage.eINSTANCE.getNamedElement_Name(), };
+		MessageFormatParser parser = new MessageFormatParser(features);
+		return parser;
+	}
+
+	/**
+	 * @generated
+	 */
+	private IParser dataStoreNodeName_5036Parser;
+
+	/**
+	 * @generated
+	 */
+	private IParser getDataStoreNodeName_5036Parser() {
+		if (dataStoreNodeName_5036Parser == null) {
+			dataStoreNodeName_5036Parser = createDataStoreNodeName_5036Parser();
+		}
+		return dataStoreNodeName_5036Parser;
+	}
+
+	/**
+	 * @generated NOT
+	 */
+	protected IParser createDataStoreNodeName_5036Parser() {
+		return new ObjectNodeInStateParser();
+	}
+
+	/**
+	 * @generated
+	 */
+	private IParser centralBufferNodeName_5032Parser;
+
+	/**
+	 * @generated
+	 */
+	private IParser getCentralBufferNodeName_5032Parser() {
+		if (centralBufferNodeName_5032Parser == null) {
+			centralBufferNodeName_5032Parser = createCentralBufferNodeName_5032Parser();
+		}
+		return centralBufferNodeName_5032Parser;
+	}
+
+	/**
+	 * @generated
+	 */
+	protected IParser createCentralBufferNodeName_5032Parser() {
+		EAttribute[] features = new EAttribute[] { UMLPackage.eINSTANCE.getNamedElement_Name(), };
+		MessageFormatParser parser = new MessageFormatParser(features);
+		return parser;
+	}
+
+	/**
+	 * @generated
+	 */
+	private IParser centralBufferNodeName_5038Parser;
+
+	/**
+	 * @generated
+	 */
+	private IParser getCentralBufferNodeName_5038Parser() {
+		if (centralBufferNodeName_5038Parser == null) {
+			centralBufferNodeName_5038Parser = createCentralBufferNodeName_5038Parser();
+		}
+		return centralBufferNodeName_5038Parser;
+	}
+
+	/**
+	 * @generated NOT
+	 */
+	protected IParser createCentralBufferNodeName_5038Parser() {
+		return new ObjectNodeInStateParser();
 	}
 
 	/**
@@ -432,6 +585,54 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 	/**
 	 * @generated
 	 */
+	private IParser acceptEventActionName_5041Parser;
+
+	/**
+	 * @generated
+	 */
+	private IParser getAcceptEventActionName_5041Parser() {
+		if (acceptEventActionName_5041Parser == null) {
+			acceptEventActionName_5041Parser = createAcceptEventActionName_5041Parser();
+		}
+		return acceptEventActionName_5041Parser;
+	}
+
+	/**
+	 * @generated
+	 */
+	protected IParser createAcceptEventActionName_5041Parser() {
+		EAttribute[] features = new EAttribute[] { UMLPackage.eINSTANCE.getNamedElement_Name(), };
+		MessageFormatParser parser = new MessageFormatParser(features);
+		return parser;
+	}
+
+	/**
+	 * @generated
+	 */
+	private IParser acceptEventActionName_5043Parser;
+
+	/**
+	 * @generated
+	 */
+	private IParser getAcceptEventActionName_5043Parser() {
+		if (acceptEventActionName_5043Parser == null) {
+			acceptEventActionName_5043Parser = createAcceptEventActionName_5043Parser();
+		}
+		return acceptEventActionName_5043Parser;
+	}
+
+	/**
+	 * @generated
+	 */
+	protected IParser createAcceptEventActionName_5043Parser() {
+		EAttribute[] features = new EAttribute[] { UMLPackage.eINSTANCE.getNamedElement_Name(), };
+		MessageFormatParser parser = new MessageFormatParser(features);
+		return parser;
+	}
+
+	/**
+	 * @generated
+	 */
 	private IParser pinName_5016Parser;
 
 	/**
@@ -552,6 +753,98 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 	/**
 	 * @generated
 	 */
+	private IParser dataStoreNodeName_5035Parser;
+
+	/**
+	 * @generated
+	 */
+	private IParser getDataStoreNodeName_5035Parser() {
+		if (dataStoreNodeName_5035Parser == null) {
+			dataStoreNodeName_5035Parser = createDataStoreNodeName_5035Parser();
+		}
+		return dataStoreNodeName_5035Parser;
+	}
+
+	/**
+	 * @generated
+	 */
+	protected IParser createDataStoreNodeName_5035Parser() {
+		EAttribute[] features = new EAttribute[] { UMLPackage.eINSTANCE.getNamedElement_Name(), };
+		MessageFormatParser parser = new MessageFormatParser(features);
+		return parser;
+	}
+
+	/**
+	 * @generated
+	 */
+	private IParser dataStoreNodeName_5037Parser;
+
+	/**
+	 * @generated
+	 */
+	private IParser getDataStoreNodeName_5037Parser() {
+		if (dataStoreNodeName_5037Parser == null) {
+			dataStoreNodeName_5037Parser = createDataStoreNodeName_5037Parser();
+		}
+		return dataStoreNodeName_5037Parser;
+	}
+
+	/**
+	 * @generated NOT
+	 */
+	protected IParser createDataStoreNodeName_5037Parser() {
+		return new ObjectNodeInStateParser();
+	}
+
+	/**
+	 * @generated
+	 */
+	private IParser centralBufferNodeName_5033Parser;
+
+	/**
+	 * @generated
+	 */
+	private IParser getCentralBufferNodeName_5033Parser() {
+		if (centralBufferNodeName_5033Parser == null) {
+			centralBufferNodeName_5033Parser = createCentralBufferNodeName_5033Parser();
+		}
+		return centralBufferNodeName_5033Parser;
+	}
+
+	/**
+	 * @generated
+	 */
+	protected IParser createCentralBufferNodeName_5033Parser() {
+		EAttribute[] features = new EAttribute[] { UMLPackage.eINSTANCE.getNamedElement_Name(), };
+		MessageFormatParser parser = new MessageFormatParser(features);
+		return parser;
+	}
+
+	/**
+	 * @generated
+	 */
+	private IParser centralBufferNodeName_5039Parser;
+
+	/**
+	 * @generated
+	 */
+	private IParser getCentralBufferNodeName_5039Parser() {
+		if (centralBufferNodeName_5039Parser == null) {
+			centralBufferNodeName_5039Parser = createCentralBufferNodeName_5039Parser();
+		}
+		return centralBufferNodeName_5039Parser;
+	}
+
+	/**
+	 * @generated NOT
+	 */
+	protected IParser createCentralBufferNodeName_5039Parser() {
+		return new ObjectNodeInStateParser();
+	}
+
+	/**
+	 * @generated
+	 */
 	private IParser opaqueBehaviorName_5029Parser;
 
 	/**
@@ -652,6 +945,18 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 		switch (visualID) {
 		case ActivityNameEditPart.VISUAL_ID:
 			return getActivityName_5030Parser();
+		case AcceptEventActionNameEditPart.VISUAL_ID:
+			return getAcceptEventActionName_5040Parser();
+		case AcceptEventActionName3EditPart.VISUAL_ID:
+			return getAcceptEventActionName_5042Parser();
+		case DataStoreNodeNameEditPart.VISUAL_ID:
+			return getDataStoreNodeName_5034Parser();
+		case DataStoreNodeName2EditPart.VISUAL_ID:
+			return getDataStoreNodeName_5036Parser();
+		case CentralBufferNodeNameEditPart.VISUAL_ID:
+			return getCentralBufferNodeName_5032Parser();
+		case CentralBufferNodeName2EditPart.VISUAL_ID:
+			return getCentralBufferNodeName_5038Parser();
 		case OpaqueActionNameEditPart.VISUAL_ID:
 			return getOpaqueActionName_5023Parser();
 		case OutputPinNameEditPart.VISUAL_ID:
@@ -682,6 +987,10 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 			return getInputPinName_5013Parser();
 		case OpaqueActionName2EditPart.VISUAL_ID:
 			return getOpaqueActionName_5015Parser();
+		case AcceptEventActionName2EditPart.VISUAL_ID:
+			return getAcceptEventActionName_5041Parser();
+		case AcceptEventActionName4EditPart.VISUAL_ID:
+			return getAcceptEventActionName_5043Parser();
 		case PinName2EditPart.VISUAL_ID:
 			return getPinName_5016Parser();
 		case CreateObjectActionName2EditPart.VISUAL_ID:
@@ -692,6 +1001,14 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 			return getCallOperationActionName_5019Parser();
 		case AddStructuralFeatureValueActionName2EditPart.VISUAL_ID:
 			return getAddStructuralFeatureValueActionName_5020Parser();
+		case DataStoreNodeName3EditPart.VISUAL_ID:
+			return getDataStoreNodeName_5035Parser();
+		case DataStoreNodeName4EditPart.VISUAL_ID:
+			return getDataStoreNodeName_5037Parser();
+		case CentralBufferNodeName3EditPart.VISUAL_ID:
+			return getCentralBufferNodeName_5033Parser();
+		case CentralBufferNodeName4EditPart.VISUAL_ID:
+			return getCentralBufferNodeName_5039Parser();
 		case OpaqueBehaviorNameEditPart.VISUAL_ID:
 			return getOpaqueBehaviorName_5029Parser();
 		case ActivityParameterNodeNameEditPart.VISUAL_ID:

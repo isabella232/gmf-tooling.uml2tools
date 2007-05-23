@@ -9,52 +9,94 @@
         referencingElements="CentralBufferNode"
         name="CentralBufferFigure">
       <layout
-          xsi:type="gmfgraph:BorderLayout"/>
-      <children
-          xsi:type="gmfgraph:Label"
-          name="CentralBufferFigure_fixed_central"
-          text="\u00ABcentralBuffer\u00BB">
-        <layoutData
-            xsi:type="gmfgraph:BorderLayoutData"
-            alignment="BEGINNING"
-            vertical="true"/>
-      </children>
+          xsi:type="gmfgraph:GridLayout"/>
       <children
           xsi:type="gmfgraph:Rectangle"
-          referencingElements="CentralBufferNode_ContentPane"
-          name="CentralBufferFigure_ContentPane"
+          name="CentralBufferFigure_NameContainer"
           outline="false"
           fill="false">
         <layoutData
-            xsi:type="gmfgraph:BorderLayoutData"
-            alignment="FILL"/>
+            xsi:type="gmfgraph:GridLayoutData"
+            grabExcessHorizontalSpace="true"
+            grabExcessVerticalSpace="true"/>
+        <layout
+            xsi:type="gmfgraph:GridLayout"/>
+        <children
+            xsi:type="gmfgraph:Label"
+            name="CentralBufferFigure_fixed_central"
+            text="\u00ABcentralBuffer\u00BB">
+          <layoutData
+              xsi:type="gmfgraph:GridLayoutData"
+              grabExcessHorizontalSpace="true"/>
+        </children>
+        <children
+            xsi:type="gmfgraph:Label"
+            referencingElements="CentralBufferNode_name"
+            name="CentralBufferFigure_name"
+            text="">
+          <layoutData
+              xsi:type="gmfgraph:GridLayoutData"
+              grabExcessHorizontalSpace="true"/>
+        </children>
+        <children
+            xsi:type="gmfgraph:Label"
+            referencingElements="CentralBufferNode_states"
+            name="CentralBufferFigure_states">
+          <layoutData
+              xsi:type="gmfgraph:GridLayoutData"
+              grabExcessHorizontalSpace="true"/>
+        </children>
       </children>
+      <preferredSize
+          dx="60"
+          dy="30"/>
     </figures>
     <figures
         xsi:type="gmfgraph:Rectangle"
         referencingElements="DataStoreNode"
         name="DataStoreFigure">
       <layout
-          xsi:type="gmfgraph:BorderLayout"/>
-      <children
-          xsi:type="gmfgraph:Label"
-          name="DataStore_fixed_datastore"
-          text="\u00ABdatastore\u00BB">
-        <layoutData
-            xsi:type="gmfgraph:BorderLayoutData"
-            alignment="BEGINNING"
-            vertical="true"/>
-      </children>
+          xsi:type="gmfgraph:GridLayout"/>
       <children
           xsi:type="gmfgraph:Rectangle"
-          referencingElements="DataStoreNode_ContentPane"
-          name="DataStoreFigure_ContentPane"
+          name="DataStoreFigure_NameContainer"
           outline="false"
           fill="false">
         <layoutData
-            xsi:type="gmfgraph:BorderLayoutData"
-            alignment="FILL"/>
+            xsi:type="gmfgraph:GridLayoutData"
+            grabExcessHorizontalSpace="true"
+            grabExcessVerticalSpace="true"/>
+        <layout
+            xsi:type="gmfgraph:GridLayout"/>
+        <children
+            xsi:type="gmfgraph:Label"
+            name="DataStore_fixed_datastore"
+            text="\u00ABdatastore\u00BB">
+          <layoutData
+              xsi:type="gmfgraph:GridLayoutData"
+              grabExcessHorizontalSpace="true"/>
+        </children>
+        <children
+            xsi:type="gmfgraph:Label"
+            referencingElements="DataStoreNode_name"
+            name="DataStoreFigure_name"
+            text="">
+          <layoutData
+              xsi:type="gmfgraph:GridLayoutData"
+              grabExcessHorizontalSpace="true"/>
+        </children>
+        <children
+            xsi:type="gmfgraph:Label"
+            referencingElements="DataStoreNode_states"
+            name="DataStoreFigure_states">
+          <layoutData
+              xsi:type="gmfgraph:GridLayoutData"
+              grabExcessHorizontalSpace="true"/>
+        </children>
       </children>
+      <preferredSize
+          dx="60"
+          dy="30"/>
     </figures>
     <figures
         xsi:type="gmfgraph:Rectangle"
@@ -143,12 +185,6 @@
           dy="25"/>
     </facets>
   </nodes>
-  <compartments
-      name="DataStoreNode_ContentPane"
-      figure="DataStoreFigure_ContentPane"/>
-  <compartments
-      name="CentralBufferNode_ContentPane"
-      figure="CentralBufferFigure_ContentPane"/>
   <labels
       name="StandalonePinNode_name"
       figure="StandalonePinFigure_name"
@@ -160,4 +196,20 @@
   <labels
       name="ActivityParameterNode_name"
       figure="ActivityParameterFigure_name"/>
+  <labels
+      name="CentralBufferNode_name"
+      figure="CentralBufferFigure_name"
+      elementIcon="false"/>
+  <labels
+      name="CentralBufferNode_states"
+      figure="CentralBufferFigure_states"
+      elementIcon="false"/>
+  <labels
+      name="DataStoreNode_name"
+      figure="DataStoreFigure_name"
+      elementIcon="false"/>
+  <labels
+      name="DataStoreNode_states"
+      figure="DataStoreFigure_states"
+      elementIcon="false"/>
 </gmfgraph:Canvas>

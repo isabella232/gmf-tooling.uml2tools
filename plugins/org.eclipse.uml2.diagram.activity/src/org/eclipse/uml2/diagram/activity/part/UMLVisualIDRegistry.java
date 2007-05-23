@@ -10,6 +10,10 @@ import org.eclipse.uml2.diagram.activity.edit.parts.AcceptEventAction2EditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.AcceptEventAction3EditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.AcceptEventAction4EditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.AcceptEventActionEditPart;
+import org.eclipse.uml2.diagram.activity.edit.parts.AcceptEventActionName2EditPart;
+import org.eclipse.uml2.diagram.activity.edit.parts.AcceptEventActionName3EditPart;
+import org.eclipse.uml2.diagram.activity.edit.parts.AcceptEventActionName4EditPart;
+import org.eclipse.uml2.diagram.activity.edit.parts.AcceptEventActionNameEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.ActivityEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.ActivityFinalNode2EditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.ActivityFinalNodeEditPart;
@@ -31,6 +35,10 @@ import org.eclipse.uml2.diagram.activity.edit.parts.CallOperationActionName2Edit
 import org.eclipse.uml2.diagram.activity.edit.parts.CallOperationActionNameEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.CentralBufferNode2EditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.CentralBufferNodeEditPart;
+import org.eclipse.uml2.diagram.activity.edit.parts.CentralBufferNodeName2EditPart;
+import org.eclipse.uml2.diagram.activity.edit.parts.CentralBufferNodeName3EditPart;
+import org.eclipse.uml2.diagram.activity.edit.parts.CentralBufferNodeName4EditPart;
+import org.eclipse.uml2.diagram.activity.edit.parts.CentralBufferNodeNameEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.Constraint2EditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.ConstraintEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.ConstraintPostconditionEditPart;
@@ -42,6 +50,10 @@ import org.eclipse.uml2.diagram.activity.edit.parts.CreateObjectActionName2EditP
 import org.eclipse.uml2.diagram.activity.edit.parts.CreateObjectActionNameEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.DataStoreNode2EditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.DataStoreNodeEditPart;
+import org.eclipse.uml2.diagram.activity.edit.parts.DataStoreNodeName2EditPart;
+import org.eclipse.uml2.diagram.activity.edit.parts.DataStoreNodeName3EditPart;
+import org.eclipse.uml2.diagram.activity.edit.parts.DataStoreNodeName4EditPart;
+import org.eclipse.uml2.diagram.activity.edit.parts.DataStoreNodeNameEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.DecisionNode2EditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.DecisionNodeEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.ExceptionHandlerEditPart;
@@ -255,8 +267,14 @@ public class UMLVisualIDRegistry {
 			}
 			return getUnrecognizedConstraint_2028ChildNodeID(domainElement, semanticHint);
 		case AcceptEventActionEditPart.VISUAL_ID:
+			if (AcceptEventActionNameEditPart.VISUAL_ID == nodeVisualID) {
+				return AcceptEventActionNameEditPart.VISUAL_ID;
+			}
 			return getUnrecognizedAcceptEventAction_3030ChildNodeID(domainElement, semanticHint);
 		case AcceptEventAction2EditPart.VISUAL_ID:
+			if (AcceptEventActionName3EditPart.VISUAL_ID == nodeVisualID) {
+				return AcceptEventActionName3EditPart.VISUAL_ID;
+			}
 			return getUnrecognizedAcceptEventAction_3031ChildNodeID(domainElement, semanticHint);
 		case ActivityFinalNodeEditPart.VISUAL_ID:
 			return getUnrecognizedActivityFinalNode_3032ChildNodeID(domainElement, semanticHint);
@@ -267,8 +285,20 @@ public class UMLVisualIDRegistry {
 		case InitialNodeEditPart.VISUAL_ID:
 			return getUnrecognizedInitialNode_3035ChildNodeID(domainElement, semanticHint);
 		case DataStoreNodeEditPart.VISUAL_ID:
+			if (DataStoreNodeNameEditPart.VISUAL_ID == nodeVisualID) {
+				return DataStoreNodeNameEditPart.VISUAL_ID;
+			}
+			if (DataStoreNodeName2EditPart.VISUAL_ID == nodeVisualID) {
+				return DataStoreNodeName2EditPart.VISUAL_ID;
+			}
 			return getUnrecognizedDataStoreNode_3036ChildNodeID(domainElement, semanticHint);
 		case CentralBufferNodeEditPart.VISUAL_ID:
+			if (CentralBufferNodeNameEditPart.VISUAL_ID == nodeVisualID) {
+				return CentralBufferNodeNameEditPart.VISUAL_ID;
+			}
+			if (CentralBufferNodeName2EditPart.VISUAL_ID == nodeVisualID) {
+				return CentralBufferNodeName2EditPart.VISUAL_ID;
+			}
 			return getUnrecognizedCentralBufferNode_3037ChildNodeID(domainElement, semanticHint);
 		case OpaqueActionEditPart.VISUAL_ID:
 			if (OpaqueActionNameEditPart.VISUAL_ID == nodeVisualID) {
@@ -395,8 +425,14 @@ public class UMLVisualIDRegistry {
 			}
 			return getUnrecognizedOpaqueAction_3011ChildNodeID(domainElement, semanticHint);
 		case AcceptEventAction3EditPart.VISUAL_ID:
+			if (AcceptEventActionName2EditPart.VISUAL_ID == nodeVisualID) {
+				return AcceptEventActionName2EditPart.VISUAL_ID;
+			}
 			return getUnrecognizedAcceptEventAction_3012ChildNodeID(domainElement, semanticHint);
 		case AcceptEventAction4EditPart.VISUAL_ID:
+			if (AcceptEventActionName4EditPart.VISUAL_ID == nodeVisualID) {
+				return AcceptEventActionName4EditPart.VISUAL_ID;
+			}
 			return getUnrecognizedAcceptEventAction_3013ChildNodeID(domainElement, semanticHint);
 		case ActivityFinalNode2EditPart.VISUAL_ID:
 			return getUnrecognizedActivityFinalNode_3014ChildNodeID(domainElement, semanticHint);
@@ -461,8 +497,20 @@ public class UMLVisualIDRegistry {
 			}
 			return getUnrecognizedAddStructuralFeatureValueAction_3023ChildNodeID(domainElement, semanticHint);
 		case DataStoreNode2EditPart.VISUAL_ID:
+			if (DataStoreNodeName3EditPart.VISUAL_ID == nodeVisualID) {
+				return DataStoreNodeName3EditPart.VISUAL_ID;
+			}
+			if (DataStoreNodeName4EditPart.VISUAL_ID == nodeVisualID) {
+				return DataStoreNodeName4EditPart.VISUAL_ID;
+			}
 			return getUnrecognizedDataStoreNode_3024ChildNodeID(domainElement, semanticHint);
 		case CentralBufferNode2EditPart.VISUAL_ID:
+			if (CentralBufferNodeName3EditPart.VISUAL_ID == nodeVisualID) {
+				return CentralBufferNodeName3EditPart.VISUAL_ID;
+			}
+			if (CentralBufferNodeName4EditPart.VISUAL_ID == nodeVisualID) {
+				return CentralBufferNodeName4EditPart.VISUAL_ID;
+			}
 			return getUnrecognizedCentralBufferNode_3025ChildNodeID(domainElement, semanticHint);
 		case OpaqueBehaviorEditPart.VISUAL_ID:
 			if (OpaqueBehaviorNameEditPart.VISUAL_ID == nodeVisualID) {

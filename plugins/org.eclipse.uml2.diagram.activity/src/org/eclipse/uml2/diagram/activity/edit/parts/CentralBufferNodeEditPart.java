@@ -2,9 +2,12 @@ package org.eclipse.uml2.diagram.activity.edit.parts;
 
 import org.eclipse.draw2d.BorderLayout;
 import org.eclipse.draw2d.Graphics;
+import org.eclipse.draw2d.GridData;
+import org.eclipse.draw2d.GridLayout;
 import org.eclipse.draw2d.IFigure;
 import org.eclipse.draw2d.RectangleFigure;
 import org.eclipse.draw2d.StackLayout;
+import org.eclipse.draw2d.geometry.Dimension;
 import org.eclipse.gef.EditPart;
 import org.eclipse.gef.EditPolicy;
 import org.eclipse.gef.Request;
@@ -12,6 +15,7 @@ import org.eclipse.gef.commands.Command;
 import org.eclipse.gef.editpolicies.LayoutEditPolicy;
 import org.eclipse.gef.editpolicies.NonResizableEditPolicy;
 import org.eclipse.gef.requests.CreateRequest;
+import org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.ShapeNodeEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles;
 import org.eclipse.gmf.runtime.draw2d.ui.figures.ConstrainedToolbarLayout;
@@ -21,6 +25,7 @@ import org.eclipse.gmf.runtime.gef.ui.figures.NodeFigure;
 import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.uml2.diagram.activity.edit.policies.CentralBufferNodeCanonicalEditPolicy;
 import org.eclipse.uml2.diagram.activity.edit.policies.CentralBufferNodeItemSemanticEditPolicy;
+import org.eclipse.uml2.diagram.activity.part.UMLVisualIDRegistry;
 
 /**
  * @generated
@@ -103,8 +108,59 @@ public class CentralBufferNodeEditPart extends ShapeNodeEditPart {
 	/**
 	 * @generated
 	 */
+	protected boolean addFixedChild(EditPart childEditPart) {
+		if (childEditPart instanceof CentralBufferNodeNameEditPart) {
+			((CentralBufferNodeNameEditPart) childEditPart).setLabel(getPrimaryShape().getFigureCentralBufferFigure_name());
+			return true;
+		}
+		if (childEditPart instanceof CentralBufferNodeName2EditPart) {
+			((CentralBufferNodeName2EditPart) childEditPart).setLabel(getPrimaryShape().getFigureCentralBufferFigure_states());
+			return true;
+		}
+		return false;
+	}
+
+	/**
+	 * @generated
+	 */
+	protected boolean removeFixedChild(EditPart childEditPart) {
+
+		return false;
+	}
+
+	/**
+	 * @generated
+	 */
+	protected void addChildVisual(EditPart childEditPart, int index) {
+		if (addFixedChild(childEditPart)) {
+			return;
+		}
+		super.addChildVisual(childEditPart, -1);
+	}
+
+	/**
+	 * @generated
+	 */
+	protected void removeChildVisual(EditPart childEditPart) {
+		if (removeFixedChild(childEditPart)) {
+			return;
+		}
+		super.removeChildVisual(childEditPart);
+	}
+
+	/**
+	 * @generated
+	 */
+	protected IFigure getContentPaneFor(IGraphicalEditPart editPart) {
+
+		return super.getContentPaneFor(editPart);
+	}
+
+	/**
+	 * @generated
+	 */
 	protected NodeFigure createNodePlate() {
-		DefaultSizeNodeFigure result = new DefaultSizeNodeFigure(getMapMode().DPtoLP(40), getMapMode().DPtoLP(40));
+		DefaultSizeNodeFigure result = new DefaultSizeNodeFigure(getMapMode().DPtoLP(60), getMapMode().DPtoLP(30));
 		return result;
 	}
 
@@ -153,6 +209,13 @@ public class CentralBufferNodeEditPart extends ShapeNodeEditPart {
 	/**
 	 * @generated
 	 */
+	public EditPart getPrimaryChildEditPart() {
+		return getChildBySemanticHint(UMLVisualIDRegistry.getType(CentralBufferNodeNameEditPart.VISUAL_ID));
+	}
+
+	/**
+	 * @generated
+	 */
 	public class CentralBufferFigure extends RectangleFigure {
 
 		/**
@@ -160,7 +223,9 @@ public class CentralBufferNodeEditPart extends ShapeNodeEditPart {
 		 */
 		public CentralBufferFigure() {
 
-			BorderLayout layoutThis = new BorderLayout();
+			GridLayout layoutThis = new GridLayout();
+			layoutThis.numColumns = 1;
+			layoutThis.makeColumnsEqualWidth = true;
 			this.setLayoutManager(layoutThis);
 
 			this.setFill(true);
@@ -169,6 +234,7 @@ public class CentralBufferNodeEditPart extends ShapeNodeEditPart {
 			this.setOutlineXOR(false);
 			this.setLineWidth(1);
 			this.setLineStyle(Graphics.LINE_SOLID);
+			this.setPreferredSize(new Dimension(getMapMode().DPtoLP(60), getMapMode().DPtoLP(30)));
 			createContents();
 		}
 
@@ -177,41 +243,110 @@ public class CentralBufferNodeEditPart extends ShapeNodeEditPart {
 		 */
 		private void createContents() {
 
-			WrapLabel centralBufferFigure_fixed_central0 = new WrapLabel();
-			centralBufferFigure_fixed_central0.setText("\u00ABcentralBuffer\u00BB");
+			RectangleFigure centralBufferFigure_NameContainer0 = new RectangleFigure();
+			centralBufferFigure_NameContainer0.setFill(false);
+			centralBufferFigure_NameContainer0.setFillXOR(false);
+			centralBufferFigure_NameContainer0.setOutline(false);
+			centralBufferFigure_NameContainer0.setOutlineXOR(false);
+			centralBufferFigure_NameContainer0.setLineWidth(1);
+			centralBufferFigure_NameContainer0.setLineStyle(Graphics.LINE_SOLID);
 
-			this.add(centralBufferFigure_fixed_central0, BorderLayout.TOP);
+			GridData constraintCentralBufferFigure_NameContainer0 = new GridData();
+			constraintCentralBufferFigure_NameContainer0.verticalAlignment = GridData.CENTER;
+			constraintCentralBufferFigure_NameContainer0.horizontalAlignment = GridData.CENTER;
+			constraintCentralBufferFigure_NameContainer0.horizontalIndent = 0;
+			constraintCentralBufferFigure_NameContainer0.horizontalSpan = 1;
+			constraintCentralBufferFigure_NameContainer0.verticalSpan = 1;
+			constraintCentralBufferFigure_NameContainer0.grabExcessHorizontalSpace = true;
+			constraintCentralBufferFigure_NameContainer0.grabExcessVerticalSpace = true;
+			this.add(centralBufferFigure_NameContainer0, constraintCentralBufferFigure_NameContainer0);
 
-			RectangleFigure centralBufferFigure_ContentPane0 = new RectangleFigure();
-			centralBufferFigure_ContentPane0.setFill(false);
-			centralBufferFigure_ContentPane0.setFillXOR(false);
-			centralBufferFigure_ContentPane0.setOutline(false);
-			centralBufferFigure_ContentPane0.setOutlineXOR(false);
-			centralBufferFigure_ContentPane0.setLineWidth(1);
-			centralBufferFigure_ContentPane0.setLineStyle(Graphics.LINE_SOLID);
+			GridLayout layoutCentralBufferFigure_NameContainer0 = new GridLayout();
+			layoutCentralBufferFigure_NameContainer0.numColumns = 1;
+			layoutCentralBufferFigure_NameContainer0.makeColumnsEqualWidth = true;
+			centralBufferFigure_NameContainer0.setLayoutManager(layoutCentralBufferFigure_NameContainer0);
 
-			this.add(centralBufferFigure_ContentPane0, BorderLayout.CENTER);
-			setFigureCentralBufferFigure_ContentPane(centralBufferFigure_ContentPane0);
+			WrapLabel centralBufferFigure_fixed_central1 = new WrapLabel();
+			centralBufferFigure_fixed_central1.setText("\u00ABcentralBuffer\u00BB");
+
+			GridData constraintCentralBufferFigure_fixed_central1 = new GridData();
+			constraintCentralBufferFigure_fixed_central1.verticalAlignment = GridData.CENTER;
+			constraintCentralBufferFigure_fixed_central1.horizontalAlignment = GridData.CENTER;
+			constraintCentralBufferFigure_fixed_central1.horizontalIndent = 0;
+			constraintCentralBufferFigure_fixed_central1.horizontalSpan = 1;
+			constraintCentralBufferFigure_fixed_central1.verticalSpan = 1;
+			constraintCentralBufferFigure_fixed_central1.grabExcessHorizontalSpace = true;
+			constraintCentralBufferFigure_fixed_central1.grabExcessVerticalSpace = false;
+			centralBufferFigure_NameContainer0.add(centralBufferFigure_fixed_central1, constraintCentralBufferFigure_fixed_central1);
+
+			WrapLabel centralBufferFigure_name1 = new WrapLabel();
+			centralBufferFigure_name1.setText("");
+
+			GridData constraintCentralBufferFigure_name1 = new GridData();
+			constraintCentralBufferFigure_name1.verticalAlignment = GridData.CENTER;
+			constraintCentralBufferFigure_name1.horizontalAlignment = GridData.CENTER;
+			constraintCentralBufferFigure_name1.horizontalIndent = 0;
+			constraintCentralBufferFigure_name1.horizontalSpan = 1;
+			constraintCentralBufferFigure_name1.verticalSpan = 1;
+			constraintCentralBufferFigure_name1.grabExcessHorizontalSpace = true;
+			constraintCentralBufferFigure_name1.grabExcessVerticalSpace = false;
+			centralBufferFigure_NameContainer0.add(centralBufferFigure_name1, constraintCentralBufferFigure_name1);
+
+			setFigureCentralBufferFigure_name(centralBufferFigure_name1);
+
+			WrapLabel centralBufferFigure_states1 = new WrapLabel();
+			centralBufferFigure_states1.setText("");
+
+			GridData constraintCentralBufferFigure_states1 = new GridData();
+			constraintCentralBufferFigure_states1.verticalAlignment = GridData.CENTER;
+			constraintCentralBufferFigure_states1.horizontalAlignment = GridData.CENTER;
+			constraintCentralBufferFigure_states1.horizontalIndent = 0;
+			constraintCentralBufferFigure_states1.horizontalSpan = 1;
+			constraintCentralBufferFigure_states1.verticalSpan = 1;
+			constraintCentralBufferFigure_states1.grabExcessHorizontalSpace = true;
+			constraintCentralBufferFigure_states1.grabExcessVerticalSpace = false;
+			centralBufferFigure_NameContainer0.add(centralBufferFigure_states1, constraintCentralBufferFigure_states1);
+
+			setFigureCentralBufferFigure_states(centralBufferFigure_states1);
 
 		}
 
 		/**
 		 * @generated
 		 */
-		private RectangleFigure fCentralBufferFigure_ContentPane;
+		private WrapLabel fCentralBufferFigure_name;
 
 		/**
 		 * @generated
 		 */
-		public RectangleFigure getFigureCentralBufferFigure_ContentPane() {
-			return fCentralBufferFigure_ContentPane;
+		public WrapLabel getFigureCentralBufferFigure_name() {
+			return fCentralBufferFigure_name;
 		}
 
 		/**
 		 * @generated
 		 */
-		private void setFigureCentralBufferFigure_ContentPane(RectangleFigure fig) {
-			fCentralBufferFigure_ContentPane = fig;
+		private void setFigureCentralBufferFigure_name(WrapLabel fig) {
+			fCentralBufferFigure_name = fig;
+		}
+
+		/**
+		 * @generated
+		 */
+		private WrapLabel fCentralBufferFigure_states;
+
+		/**
+		 * @generated
+		 */
+		public WrapLabel getFigureCentralBufferFigure_states() {
+			return fCentralBufferFigure_states;
+		}
+
+		/**
+		 * @generated
+		 */
+		private void setFigureCentralBufferFigure_states(WrapLabel fig) {
+			fCentralBufferFigure_states = fig;
 		}
 
 		/**
