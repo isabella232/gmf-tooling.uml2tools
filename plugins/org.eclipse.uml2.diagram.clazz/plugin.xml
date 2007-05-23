@@ -4,6 +4,53 @@
 <plugin>
 
 <!-- gmf generator persistent region begin -->
+   <extension point="org.eclipse.gmf.runtime.common.ui.services.action.contributionItemProviders">
+      <?gmfgen generated="false"?>
+      <contributionItemProvider
+            checkPluginLoaded="true"
+            class="org.eclipse.uml2.diagram.clazz.action.ApplicableStereotypesItemProvider">
+         <Priority name="Medium"/>
+		 <popupContribution
+               class="org.eclipse.gmf.runtime.diagram.ui.providers.DiagramContextMenuProvider">
+			 <popupMenuGroup
+                  id="ApplyStereotypeGroup"
+                  path="/propertiesGroup">
+             </popupMenuGroup>
+             <popupMenu
+                  path="/ApplyStereotypeGroup"
+                  id="menu_apply_unapply_stereotype">
+             </popupMenu>            
+             <popupStructuredContributionCriteria
+                   objectClass="org.eclipse.gmf.runtime.diagram.ui.editparts.GraphicalEditPart"
+                   objectCount="1">
+             </popupStructuredContributionCriteria>
+		 </popupContribution>
+      </contributionItemProvider>
+   </extension>
+   <extension point="org.eclipse.gmf.runtime.common.ui.services.action.contributionItemProviders">
+      <?gmfgen generated="false"?>
+      <contributionItemProvider
+            checkPluginLoaded="true"
+            class="org.eclipse.uml2.diagram.clazz.action.ApplicableProfilesItemProvider">
+         <Priority name="Medium"/>
+		 <popupContribution
+               class="org.eclipse.gmf.runtime.diagram.ui.providers.DiagramContextMenuProvider">
+			 <popupMenuGroup
+                  id="ApplyProfileGroup"
+                  path="/propertiesGroup">
+             </popupMenuGroup>
+             <popupMenu
+                  path="/ApplyProfileGroup"
+                  id="menu_apply_unapply_profile">
+             </popupMenu>            
+             <popupStructuredContributionCriteria
+                   objectClass="org.eclipse.uml2.diagram.clazz.edit.parts.PackageEditPart"
+                   objectCount="1">
+             </popupStructuredContributionCriteria>
+		 </popupContribution>
+      </contributionItemProvider>
+   </extension>
+      
     <extension point="org.eclipse.gmf.runtime.common.ui.services.action.contributionItemProviders">
       <?gmfgen generated="false"?>
       <contributionItemProvider
@@ -1180,33 +1227,33 @@
             class="org.eclipse.uml2.diagram.clazz.preferences.DiagramGeneralPreferencePage">
       </page>
       <page
-            id="org.eclipse.uml2.uml.diagram.clazz.appearance"
-            name="%preference.page.title.org.eclipse.uml2.uml.diagram.clazz.appearance"
-            category="org.eclipse.uml2.uml.diagram.clazz.general"
+            id="org.eclipse.uml2.uml.diagram.appearance"
+            name="%preference.page.title.org.eclipse.uml2.uml.diagram.appearance"
+            category="org.eclipse.uml2.uml.diagram.general"
             class="org.eclipse.uml2.diagram.clazz.preferences.DiagramAppearancePreferencePage">
       </page>
       <page
-            id="org.eclipse.uml2.uml.diagram.clazz.connections"
-            name="%preference.page.title.org.eclipse.uml2.uml.diagram.clazz.connections"
-            category="org.eclipse.uml2.uml.diagram.clazz.general"
+            id="org.eclipse.uml2.uml.diagram.connections"
+            name="%preference.page.title.org.eclipse.uml2.uml.diagram.connections"
+            category="org.eclipse.uml2.uml.diagram.general"
             class="org.eclipse.uml2.diagram.clazz.preferences.DiagramConnectionsPreferencePage">
       </page>
       <page
-            id="org.eclipse.uml2.uml.diagram.clazz.printing"
-            name="%preference.page.title.org.eclipse.uml2.uml.diagram.clazz.printing"
-            category="org.eclipse.uml2.uml.diagram.clazz.general"
+            id="org.eclipse.uml2.uml.diagram.printing"
+            name="%preference.page.title.org.eclipse.uml2.uml.diagram.printing"
+            category="org.eclipse.uml2.uml.diagram.general"
             class="org.eclipse.uml2.diagram.clazz.preferences.DiagramPrintingPreferencePage">
       </page>
       <page
-            id="org.eclipse.uml2.uml.diagram.clazz.rulersAndGrid"
-            name="%preference.page.title.org.eclipse.uml2.uml.diagram.clazz.rulersAndGrid"
-            category="org.eclipse.uml2.uml.diagram.clazz.general"
+            id="org.eclipse.uml2.uml.diagram.rulersAndGrid"
+            name="%preference.page.title.org.eclipse.uml2.uml.diagram.rulersAndGrid"
+            category="org.eclipse.uml2.uml.diagram.general"
             class="org.eclipse.uml2.diagram.clazz.preferences.DiagramRulersAndGridPreferencePage">
       </page>
       <page
-            id="org.eclipse.uml2.uml.diagram.clazz.pathmaps"
-            name="%preference.page.title.org.eclipse.uml2.uml.diagram.clazz.pathmaps"
-            category="org.eclipse.uml2.uml.diagram.clazz.general"
+            id="org.eclipse.uml2.uml.diagram.pathmaps"
+            name="%preference.page.title.org.eclipse.uml2.uml.diagram.pathmaps"
+            category="org.eclipse.uml2.uml.diagram.general"
             class="org.eclipse.gmf.runtime.emf.ui.preferences.PathmapsPreferencePage">
       </page>
    </extension><extension point="org.eclipse.ui.popupMenus">
