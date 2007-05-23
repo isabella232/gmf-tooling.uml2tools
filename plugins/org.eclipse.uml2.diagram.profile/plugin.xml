@@ -4,6 +4,37 @@
 <plugin>
 
 <!-- gmf generator persistent region begin -->
+    <extension point="org.eclipse.gmf.runtime.common.ui.services.action.contributionItemProviders">
+      <?gmfgen generated="false"?>
+      <contributionItemProvider
+            checkPluginLoaded="true"
+            class="org.eclipse.uml2.diagram.profile.action.DefineProfileItemProvider">
+         <Priority name="Medium"/>
+		 <popupContribution
+               class="org.eclipse.gmf.runtime.diagram.ui.providers.DiagramContextMenuProvider">
+			 <popupMenuGroup
+                  id="ProfileSubgroup"
+                  path="/propertiesGroup">
+             </popupMenuGroup>
+             <popupMenu
+                   id="ProfileMenu"
+                   path="/ProfileSubgroup">
+             </popupMenu>           
+             <popupMenuGroup
+                   id="ProfileGroup"
+                   path="/ProfileMenu/">
+             </popupMenuGroup>
+             <popupAction
+                  path="/ProfileMenu/ProfileGroup"
+                  id="define_profile">
+             </popupAction>            
+             <popupStructuredContributionCriteria
+                   objectClass="org.eclipse.uml2.diagram.profile.edit.parts.ProfileEditPart"
+                   objectCount="1">
+             </popupStructuredContributionCriteria>
+		 </popupContribution>
+      </contributionItemProvider>
+   </extension>
 
    <extension point="org.eclipse.gmf.runtime.common.ui.services.parserProviders">
       <ParserProvider class="org.eclipse.uml2.diagram.profile.parser.metaclass.ReferencedMetaclassParserProvider">
