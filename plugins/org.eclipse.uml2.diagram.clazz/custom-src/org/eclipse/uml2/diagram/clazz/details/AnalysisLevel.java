@@ -15,7 +15,7 @@ import org.eclipse.gmf.runtime.notation.NotationPackage;
 import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.uml2.diagram.common.details.DetailLevelParserOptions;
 
-class AnalisysLevel extends UMLDetailLevel {
+class AnalysisLevel extends UMLDetailLevel {
 
 	@Override
 	public void init(View view) {
@@ -53,12 +53,12 @@ class AnalisysLevel extends UMLDetailLevel {
 
 	@Override
 	public ParserOptions getParserOptions() {
-		return DetailLevelParserOptions.OPTION_ANALISYS;
+		return DetailLevelParserOptions.OPTION_ANALYSIS;
 	}
 
 	@Override
 	public String getLabel() {
-		return "Analisys";
+		return "Analysis";
 	}
 	
 	@Override
@@ -66,6 +66,6 @@ class AnalisysLevel extends UMLDetailLevel {
 		return ID;
 	}
 
-	public static final String ID = "org.eclipse.uml2.diagram.clazz.detail_level_analisys";
+	public static final String ID = "org.eclipse.uml2.diagram.clazz.detail_level_analysis";
 
 }

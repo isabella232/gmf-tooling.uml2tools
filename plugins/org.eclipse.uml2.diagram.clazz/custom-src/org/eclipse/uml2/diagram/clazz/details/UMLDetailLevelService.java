@@ -36,8 +36,8 @@ public class UMLDetailLevelService {
 	}
 
 	public static UMLDetailLevel getLevel(String id) {
-		if (ID_DETAIL_LEVEL_ANALISYS.equals(id)) {
-			return ANALISYS_LEVEL;
+		if (ID_DETAIL_LEVEL_ANALYSIS.equals(id)) {
+			return ANALYSIS_LEVEL;
 		}
 		if (ID_DETAIL_LEVEL_DETAILS_SUPPRESSED.equals(id)) {
 			return DETAILS_SUPPRESSED_LEVEL;
@@ -69,13 +69,13 @@ public class UMLDetailLevelService {
 
 	public static final UMLDetailLevel IMPLEMENTATION_LEVEL = new ImplementationLevel();
 
-	public static final UMLDetailLevel ANALISYS_LEVEL = new AnalisysLevel();
+	public static final UMLDetailLevel ANALYSIS_LEVEL = new AnalysisLevel();
 
 	public static final UMLDetailLevel DEFAULT_LEVEL = IMPLEMENTATION_LEVEL;
 
 	public static final String ID_DETAIL_LEVEL_IMPLEMENTATION = ImplementationLevel.ID;
 
-	public static final String ID_DETAIL_LEVEL_ANALISYS = AnalisysLevel.ID;
+	public static final String ID_DETAIL_LEVEL_ANALYSIS = AnalysisLevel.ID;
 
 	public static final String ID_DETAIL_LEVEL_DETAILS_SUPPRESSED = DetailsSuppressedLevel.ID;
 

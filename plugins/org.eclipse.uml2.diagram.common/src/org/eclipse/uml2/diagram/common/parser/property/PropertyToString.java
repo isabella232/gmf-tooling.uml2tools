@@ -62,7 +62,7 @@ public abstract class PropertyToString extends AbstractToString {
 			Property property = asProperty(object);
 			StringBuffer result = new StringBuffer();
 			switch (flags) {
-			case DetailLevelParserOptions.LEVEL_ANALISYS:
+			case DetailLevelParserOptions.LEVEL_ANALYSIS:
 				appendName(result, property);
 				appendType(result, property);
 				break;

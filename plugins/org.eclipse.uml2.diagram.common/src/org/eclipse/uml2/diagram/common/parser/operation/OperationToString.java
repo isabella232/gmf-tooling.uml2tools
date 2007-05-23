@@ -81,7 +81,7 @@ public abstract class OperationToString extends AbstractToString {
 		Operation operation = asOperation(object);
 		StringBuffer result = new StringBuffer();
 		
-		if (!editNotView && DetailLevelParserOptions.LEVEL_ANALISYS == flags) {
+		if (!editNotView && DetailLevelParserOptions.LEVEL_ANALYSIS == flags) {
 			appendName(result, operation);
 			result.append("()");
 			Parameter ret = operation.getReturnResult();
