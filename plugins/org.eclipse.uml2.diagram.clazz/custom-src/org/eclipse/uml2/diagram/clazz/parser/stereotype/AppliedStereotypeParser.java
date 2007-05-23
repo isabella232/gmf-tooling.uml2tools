@@ -32,7 +32,7 @@ import org.eclipse.uml2.uml.Stereotype;
 
 public class AppliedStereotypeParser implements ISemanticParser {
 
-	@Override
+	
 	public boolean areSemanticElementsAffected(EObject listener, Object notification) {
 		if (notification instanceof Notification){
 			Object feature = ((Notification)notification).getFeature();
@@ -44,7 +44,7 @@ public class AppliedStereotypeParser implements ISemanticParser {
 		return false;
 	}
 
-	@Override
+	
 	public List getSemanticElementsBeingParsed(EObject eObject) {
 		Element element = (Element)eObject;
 		List<EObject> result = new LinkedList<EObject>();
@@ -53,7 +53,7 @@ public class AppliedStereotypeParser implements ISemanticParser {
 		return result;
 	}
 
-	@Override
+	
 	public IContentAssistProcessor getCompletionProcessor(IAdaptable subject) {
 		Element element = doAdapt(subject);
 		List<Stereotype> remaining = new LinkedList<Stereotype>();
@@ -67,7 +67,7 @@ public class AppliedStereotypeParser implements ISemanticParser {
 		return new FixedSetCompletionProcessor(names);
 	}
 
-	@Override
+	
 	public String getEditString(IAdaptable element, int flags) {
 		NamedElement subject = doAdapt(element);
 		List<Stereotype> stereos = subject.getAppliedStereotypes();
@@ -84,23 +84,23 @@ public class AppliedStereotypeParser implements ISemanticParser {
 		return result.toString();
 	}
 
-	@Override
+	
 	public ICommand getParseCommand(IAdaptable element, String newString, int flags) {
 		return UnexecutableCommand.INSTANCE;
 	}
 
-	@Override
+	
 	public String getPrintString(IAdaptable element, int flags) {
 		String editString = getEditString(element, flags);
 		return editString.isEmpty() ? editString : "<" + editString + ">";
 	}
 
-	@Override
+	
 	public boolean isAffectingEvent(Object event, int flags) {
 		return false;
 	}
 
-	@Override
+	
 	public IParserEditStatus isValidEditString(IAdaptable element, String editString) {
 		return ParserEditStatus.UNEDITABLE_STATUS;
 	}

@@ -161,10 +161,8 @@ public class ApplyStereotypeAction extends DiagramAction {
 		public boolean isApplyNotUnapply() {
 			return myApplyNotUnapply;
 		}
-
-		@Override
+		
 		public Object getEditHelperContext() {
-			// we are not going to use edit helpers infrastructure
 			return null;
 		}
 
