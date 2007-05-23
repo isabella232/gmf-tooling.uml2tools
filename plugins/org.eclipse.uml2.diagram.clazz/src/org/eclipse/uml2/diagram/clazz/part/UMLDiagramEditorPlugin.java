@@ -8,8 +8,8 @@ import org.eclipse.core.runtime.IStatus;
 import org.eclipse.core.runtime.Path;
 import org.eclipse.core.runtime.Platform;
 import org.eclipse.core.runtime.Status;
-
 import org.eclipse.emf.common.notify.AdapterFactory;
+import org.eclipse.emf.ecore.provider.EcoreItemProviderAdapterFactory;
 import org.eclipse.emf.edit.provider.ComposedAdapterFactory;
 import org.eclipse.emf.edit.provider.IItemLabelProvider;
 import org.eclipse.emf.edit.provider.ReflectiveItemProviderAdapterFactory;
@@ -19,10 +19,9 @@ import org.eclipse.gmf.runtime.diagram.core.preferences.PreferencesHint;
 import org.eclipse.jface.resource.ImageDescriptor;
 import org.eclipse.swt.graphics.Image;
 import org.eclipse.ui.plugin.AbstractUIPlugin;
-import org.osgi.framework.BundleContext;
-import org.eclipse.emf.ecore.provider.EcoreItemProviderAdapterFactory;
-
+import org.eclipse.uml2.diagram.common.providers.AlternativeUMLItemProviderAdapterFactory;
 import org.eclipse.uml2.uml.edit.providers.UMLItemProviderAdapterFactory;
+import org.osgi.framework.BundleContext;
 
 /**
  * @generated
@@ -99,11 +98,22 @@ public class UMLDiagramEditorPlugin extends AbstractUIPlugin {
 	/**
 	 * @generated
 	 */
-	protected void fillItemProviderFactories(List factories) {
+	protected void fillItemProviderFactoriesGen(List factories) {
 		factories.add(new UMLItemProviderAdapterFactory());
 		factories.add(new EcoreItemProviderAdapterFactory());
 		factories.add(new ResourceItemProviderAdapterFactory());
 		factories.add(new ReflectiveItemProviderAdapterFactory());
+	}
+	
+	
+	/**
+	 * Use alternative UMLItemProviderAdapterFactory insteadof UMLItemProviderAdapterFactory
+	 * @see org.eclipse.emf.edit.provider.ComposedAdapterFactory#getFactoryForTypes(java.util.Collection)
+	 * @generated NOT
+	 */
+	protected void fillItemProviderFactories(List factories) {
+		factories.add(new AlternativeUMLItemProviderAdapterFactory(getPreferenceStore()));
+		fillItemProviderFactoriesGen(factories);
 	}
 
 	/**
@@ -241,4 +251,5 @@ public class UMLDiagramEditorPlugin extends AbstractUIPlugin {
 			throwable.printStackTrace();
 		}
 	}
+	
 }

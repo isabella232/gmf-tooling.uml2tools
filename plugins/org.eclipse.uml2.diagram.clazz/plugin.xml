@@ -4,6 +4,15 @@
 <plugin>
 
 <!-- gmf generator persistent region begin -->
+   <extension point="org.eclipse.ui.preferencePages">
+      <page
+            name="%preferences.icons"
+            class="org.eclipse.uml2.diagram.clazz.preferences.DiagramIconStylePreferencePage"
+            category="org.eclipse.uml2.uml.diagram.clazz.general"
+            id="org.eclipse.uml2.diagram.clazz.icons">
+      </page>
+   </extension>
+
    <extension point="org.eclipse.gmf.runtime.common.ui.services.action.contributionItemProviders">
       <?gmfgen generated="false"?>
       <contributionItemProvider

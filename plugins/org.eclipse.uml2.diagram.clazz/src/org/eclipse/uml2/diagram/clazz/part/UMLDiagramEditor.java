@@ -1,66 +1,56 @@
 package org.eclipse.uml2.diagram.clazz.part;
 
-import org.eclipse.gef.palette.PaletteRoot;
-import org.eclipse.gmf.runtime.diagram.ui.resources.editor.parts.DiagramDocumentEditor;
-import org.eclipse.emf.transaction.TransactionalEditingDomain;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.HashSet;
 import java.util.Iterator;
 import java.util.List;
+
 import org.eclipse.core.resources.IFile;
 import org.eclipse.core.resources.IMarker;
 import org.eclipse.core.resources.IWorkspaceRoot;
 import org.eclipse.core.resources.ResourcesPlugin;
-
 import org.eclipse.core.runtime.CoreException;
 import org.eclipse.core.runtime.IAdaptable;
 import org.eclipse.core.runtime.IPath;
 import org.eclipse.core.runtime.IProgressMonitor;
 import org.eclipse.core.runtime.IStatus;
 import org.eclipse.core.runtime.NullProgressMonitor;
-
 import org.eclipse.emf.common.ui.URIEditorInput;
-
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.edit.ui.dnd.LocalTransfer;
+import org.eclipse.emf.transaction.TransactionalEditingDomain;
 import org.eclipse.gef.EditPartViewer;
+import org.eclipse.gef.palette.PaletteEntry;
+import org.eclipse.gef.palette.PaletteRoot;
 import org.eclipse.gmf.runtime.common.ui.services.marker.MarkerNavigationService;
-
 import org.eclipse.gmf.runtime.diagram.core.preferences.PreferencesHint;
-
 import org.eclipse.gmf.runtime.diagram.ui.parts.DiagramDropTargetListener;
 import org.eclipse.gmf.runtime.diagram.ui.resources.editor.document.IDiagramDocument;
 import org.eclipse.gmf.runtime.diagram.ui.resources.editor.document.IDocument;
 import org.eclipse.gmf.runtime.diagram.ui.resources.editor.document.IDocumentProvider;
-
+import org.eclipse.gmf.runtime.diagram.ui.resources.editor.parts.DiagramDocumentEditor;
+import org.eclipse.gmf.runtime.diagram.ui.services.palette.PaletteService;
 import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.jface.dialogs.ErrorDialog;
 import org.eclipse.jface.dialogs.IMessageProvider;
 import org.eclipse.jface.dialogs.MessageDialog;
-
 import org.eclipse.jface.util.LocalSelectionTransfer;
 import org.eclipse.jface.viewers.IStructuredSelection;
 import org.eclipse.jface.window.Window;
-
 import org.eclipse.osgi.util.NLS;
-
 import org.eclipse.swt.dnd.Transfer;
 import org.eclipse.swt.dnd.TransferData;
 import org.eclipse.swt.widgets.Shell;
-
 import org.eclipse.ui.IEditorInput;
 import org.eclipse.ui.IEditorMatchingStrategy;
 import org.eclipse.ui.IEditorReference;
 import org.eclipse.ui.IFileEditorInput;
 import org.eclipse.ui.PlatformUI;
-
 import org.eclipse.ui.dialogs.SaveAsDialog;
-
 import org.eclipse.ui.ide.IGotoMarker;
-
 import org.eclipse.ui.part.FileEditorInput;
 import org.eclipse.uml2.diagram.clazz.navigator.UMLNavigatorItem;
 
@@ -245,7 +235,48 @@ public class UMLDiagramEditor extends DiagramDocumentEditor implements IGotoMark
 
 		});
 	}
+	
+	
+	/**
+	 * @NOT-generated
+	 */
+	public void refresh() {
+		refreshPalette();
+        refreshDiagram();
+	}
 
+	/**
+	 * @NOT-generated
+	 */
+	private void refreshDiagram() {
+		getDiagramGraphicalViewer().setContents(getDiagram());
+	}
+
+	/**
+	 * @NOT-generated
+	 */
+	private void refreshPalette() {
+		PaletteRoot paletteRoot = getEditDomain().getPaletteViewer().getPaletteRoot();
+		cleanPaletteRoot(paletteRoot);
+		createPaletteRoot(paletteRoot);
+	}
+
+	/**
+	 * @NOT-generated
+	 */
+	private void cleanPaletteRoot(PaletteRoot paletteRoot) {
+		List entries = new ArrayList();
+		entries.addAll(paletteRoot.getChildren());
+		for (Object entry: entries) {
+			PaletteEntry paletteEntry = (PaletteEntry)entry;
+			// we don't repaint standard palette group
+			if (PaletteService.GROUP_STANDARD.equals(paletteEntry.getId())) {
+				continue;
+			}
+			paletteRoot.remove(paletteEntry);
+		}
+	}
+	
 	/**
 	 * @generated
 	 */

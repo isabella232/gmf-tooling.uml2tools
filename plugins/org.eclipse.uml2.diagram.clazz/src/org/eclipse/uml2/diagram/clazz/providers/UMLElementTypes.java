@@ -570,4 +570,13 @@ public class UMLElementTypes extends ElementInitializers {
 		return KNOWN_ELEMENT_TYPES.contains(elementType);
 	}
 
+
+	
+	/**
+	 * @NOT-generated
+	 */
+	public static void refreshImageRegistry() {
+		imageRegistry = new ImageRegistry();
+	}
+
 }
