@@ -10,7 +10,8 @@
         href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//Package/packagedElement"/>
     <childrenFeature
         href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//Package/nestedPackage"/>
-    <ownedChild>
+    <ownedChild
+        relatedDiagrams="//@diagram">
       <domainMetaElement
           href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//Package"/>
       <domainInitializer
