@@ -24,6 +24,7 @@ import org.eclipse.uml2.diagram.clazz.edit.parts.Class3EditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.Class4EditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.ClassEditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.ClassNameEditPart;
+import org.eclipse.uml2.diagram.clazz.edit.parts.ClassStereotypeEditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.ConstraintNameEditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.DataTypeEditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.DataTypeNameEditPart;
@@ -71,6 +72,7 @@ import org.eclipse.uml2.diagram.clazz.parser.instance.InstanceSpecificationParse
 import org.eclipse.uml2.diagram.clazz.parser.instance.InstanceSpecificationToString;
 import org.eclipse.uml2.diagram.clazz.parser.slot.SlotParser;
 import org.eclipse.uml2.diagram.clazz.parser.slot.SlotToString;
+import org.eclipse.uml2.diagram.clazz.parser.stereotype.AppliedStereotypeParser;
 import org.eclipse.uml2.diagram.clazz.parsers.MessageFormatParser;
 import org.eclipse.uml2.diagram.clazz.part.UMLVisualIDRegistry;
 import org.eclipse.uml2.diagram.common.parser.operation.OperationInplaceApplier;
@@ -141,6 +143,21 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 		EAttribute[] features = new EAttribute[] { UMLPackage.eINSTANCE.getNamedElement_Name(), };
 		MessageFormatParser parser = new MessageFormatParser(features);
 		return parser;
+	}
+
+	/**
+	 * @generated
+	 */
+	private IParser classQualifiedName_5019Parser;
+
+	/**
+	 * @generated
+	 */
+	private IParser getClassQualifiedName_5019Parser() {
+		if (classQualifiedName_5019Parser == null) {
+			classQualifiedName_5019Parser = createClassQualifiedName_5019Parser();
+		}
+		return classQualifiedName_5019Parser;
 	}
 
 	/**
@@ -1280,6 +1297,14 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 	}
 
 	/**
+	 * XXX: Misleading name of the method. The only way to fix it is custom template 
+	 * @generated NOT 
+	 */
+	protected IParser createClassQualifiedName_5019Parser() {
+		return new AppliedStereotypeParser();
+	}
+
+	/**
 	 * @generated
 	 */
 	protected IParser getParser(int visualID) {
@@ -1288,6 +1313,8 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 			return getPackageName_5004Parser();
 		case ClassNameEditPart.VISUAL_ID:
 			return getClassName_5003Parser();
+		case ClassStereotypeEditPart.VISUAL_ID:
+			return getClassQualifiedName_5019Parser();
 		case AssociationClassNameEditPart.VISUAL_ID:
 			return getAssociationClassName_5009Parser();
 		case DataTypeNameEditPart.VISUAL_ID:

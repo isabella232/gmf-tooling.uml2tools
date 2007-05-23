@@ -28,6 +28,7 @@ import org.eclipse.uml2.diagram.clazz.edit.parts.ClassClassesEditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.ClassEditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.ClassNameEditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.ClassOperationsEditPart;
+import org.eclipse.uml2.diagram.clazz.edit.parts.ClassStereotypeEditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.ConstraintEditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.ConstraintNameEditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.DataType2EditPart;
@@ -122,6 +123,7 @@ import org.eclipse.uml2.diagram.clazz.view.factories.ClassAttributesViewFactory;
 import org.eclipse.uml2.diagram.clazz.view.factories.ClassClassesViewFactory;
 import org.eclipse.uml2.diagram.clazz.view.factories.ClassNameViewFactory;
 import org.eclipse.uml2.diagram.clazz.view.factories.ClassOperationsViewFactory;
+import org.eclipse.uml2.diagram.clazz.view.factories.ClassStereotypeViewFactory;
 import org.eclipse.uml2.diagram.clazz.view.factories.ClassViewFactory;
 import org.eclipse.uml2.diagram.clazz.view.factories.ConstraintConstrainedElementViewFactory;
 import org.eclipse.uml2.diagram.clazz.view.factories.ConstraintNameViewFactory;
@@ -237,6 +239,8 @@ public class UMLViewProvider extends AbstractViewProvider {
 			return Class2ViewFactory.class;
 		case ClassNameEditPart.VISUAL_ID:
 			return ClassNameViewFactory.class;
+		case ClassStereotypeEditPart.VISUAL_ID:
+			return ClassStereotypeViewFactory.class;
 		case AssociationClass2EditPart.VISUAL_ID:
 			return AssociationClass2ViewFactory.class;
 		case AssociationClassNameEditPart.VISUAL_ID:

@@ -28,6 +28,7 @@ import org.eclipse.uml2.diagram.clazz.edit.parts.ClassClassesEditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.ClassEditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.ClassNameEditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.ClassOperationsEditPart;
+import org.eclipse.uml2.diagram.clazz.edit.parts.ClassStereotypeEditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.ConstraintEditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.ConstraintNameEditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.DataType2EditPart;
@@ -297,6 +298,9 @@ public class UMLVisualIDRegistry {
 		case Class2EditPart.VISUAL_ID:
 			if (ClassNameEditPart.VISUAL_ID == nodeVisualID) {
 				return ClassNameEditPart.VISUAL_ID;
+			}
+			if (ClassStereotypeEditPart.VISUAL_ID == nodeVisualID) {
+				return ClassStereotypeEditPart.VISUAL_ID;
 			}
 			if (ClassAttributesEditPart.VISUAL_ID == nodeVisualID) {
 				return ClassAttributesEditPart.VISUAL_ID;

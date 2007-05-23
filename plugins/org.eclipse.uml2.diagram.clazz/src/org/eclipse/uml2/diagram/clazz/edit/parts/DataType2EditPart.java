@@ -1,7 +1,9 @@
 package org.eclipse.uml2.diagram.clazz.edit.parts;
 
+import org.eclipse.draw2d.ColorConstants;
 import org.eclipse.draw2d.Graphics;
 import org.eclipse.draw2d.IFigure;
+import org.eclipse.draw2d.LineBorder;
 import org.eclipse.draw2d.MarginBorder;
 import org.eclipse.draw2d.RectangleFigure;
 import org.eclipse.draw2d.StackLayout;
@@ -317,29 +319,75 @@ public class DataType2EditPart extends AbstractBorderedShapeEditPart {
 		 */
 		private void createContents() {
 
-			RectangleFigure classFigure_NameContainer0 = new RectangleFigure();
-			classFigure_NameContainer0.setFill(true);
-			classFigure_NameContainer0.setFillXOR(false);
-			classFigure_NameContainer0.setOutline(true);
-			classFigure_NameContainer0.setOutlineXOR(false);
-			classFigure_NameContainer0.setLineWidth(1);
-			classFigure_NameContainer0.setLineStyle(Graphics.LINE_SOLID);
+			RectangleFigure classFigure_Header0 = new RectangleFigure();
+			classFigure_Header0.setFill(true);
+			classFigure_Header0.setFillXOR(false);
+			classFigure_Header0.setOutline(true);
+			classFigure_Header0.setOutlineXOR(false);
+			classFigure_Header0.setLineWidth(1);
+			classFigure_Header0.setLineStyle(Graphics.LINE_SOLID);
+			classFigure_Header0.setBorder(new LineBorder(null, getMapMode().DPtoLP(1)));
 
-			this.add(classFigure_NameContainer0);
+			this.add(classFigure_Header0);
 
-			CenterLayout layoutClassFigure_NameContainer0 = new CenterLayout();
+			ToolbarLayout layoutClassFigure_Header0 = new ToolbarLayout();
+			layoutClassFigure_Header0.setStretchMinorAxis(true);
+			layoutClassFigure_Header0.setMinorAlignment(ToolbarLayout.ALIGN_TOPLEFT
 
-			classFigure_NameContainer0.setLayoutManager(layoutClassFigure_NameContainer0);
+			);
 
-			WrapLabel classFigure_name1 = new WrapLabel();
-			classFigure_name1.setText("");
+			layoutClassFigure_Header0.setSpacing(0);
+			layoutClassFigure_Header0.setVertical(true);
 
-			classFigure_name1.setFont(ClassFigure_name_FONT);
+			classFigure_Header0.setLayoutManager(layoutClassFigure_Header0);
 
-			classFigure_name1.setBorder(new MarginBorder(getMapMode().DPtoLP(5), getMapMode().DPtoLP(5), getMapMode().DPtoLP(5), getMapMode().DPtoLP(5)));
+			RectangleFigure classFigure_StereoContainer1 = new RectangleFigure();
+			classFigure_StereoContainer1.setFill(true);
+			classFigure_StereoContainer1.setFillXOR(false);
+			classFigure_StereoContainer1.setOutline(false);
+			classFigure_StereoContainer1.setOutlineXOR(false);
+			classFigure_StereoContainer1.setLineWidth(1);
+			classFigure_StereoContainer1.setLineStyle(Graphics.LINE_SOLID);
 
-			classFigure_NameContainer0.add(classFigure_name1);
-			setFigureClassFigure_name(classFigure_name1);
+			classFigure_Header0.add(classFigure_StereoContainer1);
+
+			CenterLayout layoutClassFigure_StereoContainer1 = new CenterLayout();
+
+			classFigure_StereoContainer1.setLayoutManager(layoutClassFigure_StereoContainer1);
+
+			WrapLabel classFigure_stereo2 = new WrapLabel();
+			classFigure_stereo2.setText("");
+
+			classFigure_stereo2.setFont(ClassFigure_stereo_FONT);
+
+			classFigure_stereo2.setBorder(new MarginBorder(getMapMode().DPtoLP(5), getMapMode().DPtoLP(5), getMapMode().DPtoLP(0), getMapMode().DPtoLP(5)));
+
+			classFigure_StereoContainer1.add(classFigure_stereo2);
+			setFigureClassFigure_stereo(classFigure_stereo2);
+
+			RectangleFigure classFigure_NameContainer1 = new RectangleFigure();
+			classFigure_NameContainer1.setFill(true);
+			classFigure_NameContainer1.setFillXOR(false);
+			classFigure_NameContainer1.setOutline(false);
+			classFigure_NameContainer1.setOutlineXOR(false);
+			classFigure_NameContainer1.setLineWidth(1);
+			classFigure_NameContainer1.setLineStyle(Graphics.LINE_SOLID);
+
+			classFigure_Header0.add(classFigure_NameContainer1);
+
+			CenterLayout layoutClassFigure_NameContainer1 = new CenterLayout();
+
+			classFigure_NameContainer1.setLayoutManager(layoutClassFigure_NameContainer1);
+
+			WrapLabel classFigure_name2 = new WrapLabel();
+			classFigure_name2.setText("");
+
+			classFigure_name2.setFont(ClassFigure_name_FONT);
+
+			classFigure_name2.setBorder(new MarginBorder(getMapMode().DPtoLP(0), getMapMode().DPtoLP(5), getMapMode().DPtoLP(5), getMapMode().DPtoLP(5)));
+
+			classFigure_NameContainer1.add(classFigure_name2);
+			setFigureClassFigure_name(classFigure_name2);
 
 			RectangleFigure classFigure_PropertiesCompartment0 = new RectangleFigure();
 			classFigure_PropertiesCompartment0.setFill(true);
@@ -401,6 +449,25 @@ public class DataType2EditPart extends AbstractBorderedShapeEditPart {
 			setFigureClassFigure_OthersCompartment(classFigure_OthersCompartment0);
 			classFigure_OthersCompartment0.setLayoutManager(new StackLayout());
 
+		}
+
+		/**
+		 * @generated
+		 */
+		private WrapLabel fClassFigure_stereo;
+
+		/**
+		 * @generated
+		 */
+		public WrapLabel getFigureClassFigure_stereo() {
+			return fClassFigure_stereo;
+		}
+
+		/**
+		 * @generated
+		 */
+		private void setFigureClassFigure_stereo(WrapLabel fig) {
+			fClassFigure_stereo = fig;
 		}
 
 		/**
@@ -537,6 +604,11 @@ public class DataType2EditPart extends AbstractBorderedShapeEditPart {
 		}
 
 	}
+
+	/**
+	 * @generated
+	 */
+	static final Font ClassFigure_stereo_FONT = new Font(Display.getCurrent(), Display.getDefault().getSystemFont().getFontData()[0].getName(), 9, SWT.NORMAL);
 
 	/**
 	 * @generated

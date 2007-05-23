@@ -20,22 +20,53 @@
           minorSpacing="0"/>
       <children
           xsi:type="gmfgraph:Rectangle"
-          name="ClassFigure_NameContainer">
+          name="ClassFigure_Header">
         <layout
-            xsi:type="gmfgraph:CustomLayout"
-            qualifiedClassName="org.eclipse.uml2.diagram.common.draw2d.CenterLayout"/>
+            xsi:type="gmfgraph:FlowLayout"
+            vertical="true"
+            matchMinorSize="true"
+            forceSingleLine="true"
+            majorSpacing="0"/>
         <children
-            xsi:type="gmfgraph:Label"
-            referencingElements="ClassNode_name"
-            name="ClassFigure_name">
-          <font
-              xsi:type="gmfgraph:BasicFont"/>
-          <insets
-              top="5"
-              left="5"
-              bottom="5"
-              right="5"/>
+            xsi:type="gmfgraph:Rectangle"
+            name="ClassFigure_StereoContainer"
+            outline="false">
+          <layout
+              xsi:type="gmfgraph:CustomLayout"
+              qualifiedClassName="org.eclipse.uml2.diagram.common.draw2d.CenterLayout"/>
+          <children
+              xsi:type="gmfgraph:Label"
+              referencingElements="ClassNode_stereo"
+              name="ClassFigure_stereo">
+            <font
+                xsi:type="gmfgraph:BasicFont"/>
+            <insets
+                top="5"
+                left="5"
+                right="5"/>
+          </children>
         </children>
+        <children
+            xsi:type="gmfgraph:Rectangle"
+            name="ClassFigure_NameContainer"
+            outline="false">
+          <layout
+              xsi:type="gmfgraph:CustomLayout"
+              qualifiedClassName="org.eclipse.uml2.diagram.common.draw2d.CenterLayout"/>
+          <children
+              xsi:type="gmfgraph:Label"
+              referencingElements="ClassNode_name"
+              name="ClassFigure_name">
+            <font
+                xsi:type="gmfgraph:BasicFont"/>
+            <insets
+                left="5"
+                bottom="5"
+                right="5"/>
+          </children>
+        </children>
+        <border
+            xsi:type="gmfgraph:LineBorder"/>
       </children>
       <children
           xsi:type="gmfgraph:Rectangle"
@@ -112,4 +143,8 @@
   <labels
       name="ClassNode_name"
       figure="ClassFigure_name"/>
+  <labels
+      name="ClassNode_stereo"
+      figure="ClassFigure_stereo"
+      elementIcon="false"/>
 </gmfgraph:Canvas>
