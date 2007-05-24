@@ -12,6 +12,7 @@ import org.eclipse.core.runtime.IPath;
 import org.eclipse.core.runtime.IProgressMonitor;
 import org.eclipse.core.runtime.NullProgressMonitor;
 import org.eclipse.core.runtime.Path;
+import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.ResourceSet;
@@ -52,7 +53,7 @@ public class UMLNewDiagramFileWizard extends Wizard {
 	/**
 	 * @generated
 	 */
-	public UMLNewDiagramFileWizard(org.eclipse.emf.common.util.URI domainModelURI, EObject diagramRoot, TransactionalEditingDomain editingDomain) {
+	public UMLNewDiagramFileWizard(URI domainModelURI, EObject diagramRoot, TransactionalEditingDomain editingDomain) {
 		assert domainModelURI != null : "Domain model uri must be specified"; //$NON-NLS-1$
 		assert diagramRoot != null : "Doagram root element must be specified"; //$NON-NLS-1$
 		assert editingDomain != null : "Editing domain must be specified"; //$NON-NLS-1$
@@ -97,7 +98,7 @@ public class UMLNewDiagramFileWizard extends Wizard {
 		IFile diagramFile = myFileCreationPage.createNewFile();
 		UMLDiagramEditorUtil.setCharset(diagramFile);
 		affectedFiles.add(diagramFile);
-		org.eclipse.emf.common.util.URI diagramModelURI = org.eclipse.emf.common.util.URI.createPlatformResourceURI(diagramFile.getFullPath().toString(), true);
+		URI diagramModelURI = URI.createPlatformResourceURI(diagramFile.getFullPath().toString(), true);
 		ResourceSet resourceSet = myEditingDomain.getResourceSet();
 		final Resource diagramResource = resourceSet.createResource(diagramModelURI);
 		AbstractTransactionalCommand command = new AbstractTransactionalCommand(myEditingDomain, Messages.UMLNewDiagramFileWizard_InitDiagramCommand, affectedFiles) {

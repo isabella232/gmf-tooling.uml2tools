@@ -58,11 +58,6 @@ public class Messages extends NLS {
 	/**
 	 * @generated
 	 */
-	public static String UMLDocumentProvider_UnableToLoadResourceError;
-
-	/**
-	 * @generated
-	 */
 	public static String UMLDocumentProvider_NoDiagramInResourceError;
 
 	/**
@@ -263,11 +258,6 @@ public class Messages extends NLS {
 	/**
 	 * @generated
 	 */
-	public static String EvaluateOCLLinkConstraintError;
-
-	/**
-	 * @generated
-	 */
 	public static String CommandName_OpenDiagram;
 
 	/**
@@ -313,17 +303,12 @@ public class Messages extends NLS {
 	/**
 	 * @generated
 	 */
-	public static String NavigatorGroupName_InterfaceRealization_4001_source;
-
-	/**
-	 * @generated
-	 */
 	public static String NavigatorGroupName_InterfaceRealization_4001_target;
 
 	/**
 	 * @generated
 	 */
-	public static String NavigatorGroupName_PortProvided_4006_source;
+	public static String NavigatorGroupName_InterfaceRealization_4001_source;
 
 	/**
 	 * @generated
@@ -333,12 +318,17 @@ public class Messages extends NLS {
 	/**
 	 * @generated
 	 */
-	public static String NavigatorGroupName_PortRequired_4004_source;
+	public static String NavigatorGroupName_PortProvided_4006_source;
 
 	/**
 	 * @generated
 	 */
 	public static String NavigatorGroupName_PortRequired_4004_target;
+
+	/**
+	 * @generated
+	 */
+	public static String NavigatorGroupName_PortRequired_4004_source;
 
 	//TODO: put accessor fields manually	
 }

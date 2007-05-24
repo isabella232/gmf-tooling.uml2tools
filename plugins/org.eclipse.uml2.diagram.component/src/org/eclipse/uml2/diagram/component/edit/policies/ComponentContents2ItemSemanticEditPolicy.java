@@ -26,25 +26,25 @@ public class ComponentContents2ItemSemanticEditPolicy extends UMLBaseItemSemanti
 			if (req.getContainmentFeature() == null) {
 				req.setContainmentFeature(UMLPackage.eINSTANCE.getComponent_PackagedElement());
 			}
-			return getMSLWrapper(new Component2CreateCommand(req));
+			return getGEFWrapper(new Component2CreateCommand(req));
 		}
 		if (UMLElementTypes.Artifact_3003 == req.getElementType()) {
 			if (req.getContainmentFeature() == null) {
 				req.setContainmentFeature(UMLPackage.eINSTANCE.getComponent_PackagedElement());
 			}
-			return getMSLWrapper(new ArtifactCreateCommand(req));
+			return getGEFWrapper(new ArtifactCreateCommand(req));
 		}
 		if (UMLElementTypes.Class_3004 == req.getElementType()) {
 			if (req.getContainmentFeature() == null) {
 				req.setContainmentFeature(UMLPackage.eINSTANCE.getComponent_PackagedElement());
 			}
-			return getMSLWrapper(new ClassCreateCommand(req));
+			return getGEFWrapper(new ClassCreateCommand(req));
 		}
 		if (UMLElementTypes.Interface_3005 == req.getElementType()) {
 			if (req.getContainmentFeature() == null) {
 				req.setContainmentFeature(UMLPackage.eINSTANCE.getComponent_PackagedElement());
 			}
-			return getMSLWrapper(new InterfaceCreateCommand(req));
+			return getGEFWrapper(new InterfaceCreateCommand(req));
 		}
 		return super.getCreateCommand(req);
 	}

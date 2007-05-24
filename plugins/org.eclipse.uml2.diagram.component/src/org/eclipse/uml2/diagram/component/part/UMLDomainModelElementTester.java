@@ -121,6 +121,9 @@ public class UMLDomainModelElementTester extends PropertyTester {
 		if (eClass == UMLPackage.eINSTANCE.getConnectableElement()) {
 			return true;
 		}
+		if (eClass == UMLPackage.eINSTANCE.getConnectableElementTemplateParameter()) {
+			return true;
+		}
 		if (eClass == UMLPackage.eINSTANCE.getConnectorEnd()) {
 			return true;
 		}
@@ -245,9 +248,6 @@ public class UMLDomainModelElementTester extends PropertyTester {
 			return true;
 		}
 		if (eClass == UMLPackage.eINSTANCE.getStructuralFeature()) {
-			return true;
-		}
-		if (eClass == UMLPackage.eINSTANCE.getConnectableElementTemplateParameter()) {
 			return true;
 		}
 		if (eClass == UMLPackage.eINSTANCE.getCollaborationUse()) {

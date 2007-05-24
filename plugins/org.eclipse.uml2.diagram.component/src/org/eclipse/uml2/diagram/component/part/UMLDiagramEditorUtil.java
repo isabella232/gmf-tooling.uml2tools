@@ -21,11 +21,10 @@ import org.eclipse.core.runtime.IProgressMonitor;
 import org.eclipse.core.runtime.NullProgressMonitor;
 import org.eclipse.core.runtime.Path;
 import org.eclipse.core.runtime.SubProgressMonitor;
+import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.resource.Resource;
-import org.eclipse.emf.ecore.xmi.XMIResource;
 import org.eclipse.emf.ecore.xmi.XMLResource;
-import org.eclipse.emf.edit.ui.util.EditUIUtil;
 import org.eclipse.emf.transaction.TransactionalEditingDomain;
 import org.eclipse.emf.workspace.util.WorkspaceSynchronizer;
 import org.eclipse.gef.EditPart;
@@ -45,7 +44,10 @@ import org.eclipse.jface.dialogs.IDialogSettings;
 import org.eclipse.jface.wizard.Wizard;
 import org.eclipse.jface.wizard.WizardDialog;
 import org.eclipse.swt.widgets.Shell;
+import org.eclipse.ui.IWorkbenchPage;
 import org.eclipse.ui.PartInitException;
+import org.eclipse.ui.PlatformUI;
+import org.eclipse.ui.part.FileEditorInput;
 import org.eclipse.uml2.diagram.component.edit.parts.PackageEditPart;
 import org.eclipse.uml2.uml.Package;
 import org.eclipse.uml2.uml.UMLFactory;
@@ -58,26 +60,24 @@ public class UMLDiagramEditorUtil {
 	/**
 	 * @generated
 	 */
-	private static Map ourSaveOptions = null;
-
-	/**
-	 * @generated
-	 */
 	public static Map getSaveOptions() {
-		if (ourSaveOptions == null) {
-			ourSaveOptions = new HashMap();
-			ourSaveOptions.put(XMIResource.OPTION_ENCODING, "UTF-8"); //$NON-NLS-1$
-			ourSaveOptions.put(XMLResource.OPTION_RECORD_UNKNOWN_FEATURE, Boolean.TRUE);
-			ourSaveOptions.put(Resource.OPTION_SAVE_ONLY_IF_CHANGED, Resource.OPTION_SAVE_ONLY_IF_CHANGED_MEMORY_BUFFER);
-		}
-		return ourSaveOptions;
+		Map saveOptions = new HashMap();
+		saveOptions.put(XMLResource.OPTION_ENCODING, "UTF-8"); //$NON-NLS-1$
+		saveOptions.put(Resource.OPTION_SAVE_ONLY_IF_CHANGED, Resource.OPTION_SAVE_ONLY_IF_CHANGED_MEMORY_BUFFER);
+		return saveOptions;
 	}
 
 	/**
 	 * @generated
 	 */
 	public static boolean openDiagram(Resource diagram) throws PartInitException {
-		return EditUIUtil.openEditor((EObject) diagram.getContents().get(0));
+		String path = diagram.getURI().toPlatformString(true);
+		IResource workspaceResource = ResourcesPlugin.getWorkspace().getRoot().findMember(new Path(path));
+		if (workspaceResource instanceof IFile) {
+			IWorkbenchPage page = PlatformUI.getWorkbench().getActiveWorkbenchWindow().getActivePage();
+			return null != page.openEditor(new FileEditorInput((IFile) workspaceResource), UMLDiagramEditor.ID);
+		}
+		return false;
 	}
 
 	/**
@@ -140,7 +140,7 @@ public class UMLDiagramEditorUtil {
 	 * This method should be called within a workspace modify operation since it creates resources.
 	 * @generated
 	 */
-	public static Resource createDiagram(org.eclipse.emf.common.util.URI diagramURI, org.eclipse.emf.common.util.URI modelURI, IProgressMonitor progressMonitor) {
+	public static Resource createDiagram(URI diagramURI, URI modelURI, IProgressMonitor progressMonitor) {
 		TransactionalEditingDomain editingDomain = GMFEditingDomainFactory.INSTANCE.createEditingDomain();
 		progressMonitor.beginTask(Messages.UMLDiagramEditorUtil_CreateDiagramProgressTask, 3);
 		final Resource diagramResource = editingDomain.getResourceSet().createResource(diagramURI);
@@ -371,7 +371,7 @@ public class UMLDiagramEditorUtil {
 	/**
 	 * @generated
 	 */
-	public static IFile getFile(org.eclipse.emf.common.util.URI uri) {
+	public static IFile getFile(URI uri) {
 		if (uri.toString().startsWith("platform:/resource")) { //$NON-NLS-1$
 			String path = uri.toString().substring("platform:/resource".length()); //$NON-NLS-1$
 			IResource workspaceResource = ResourcesPlugin.getWorkspace().getRoot().findMember(new Path(path));

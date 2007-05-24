@@ -29,25 +29,25 @@ public class PackageItemSemanticEditPolicy extends UMLBaseItemSemanticEditPolicy
 			if (req.getContainmentFeature() == null) {
 				req.setContainmentFeature(UMLPackage.eINSTANCE.getPackage_PackagedElement());
 			}
-			return getMSLWrapper(new ComponentCreateCommand(req));
+			return getGEFWrapper(new ComponentCreateCommand(req));
 		}
 		if (UMLElementTypes.Artifact_2002 == req.getElementType()) {
 			if (req.getContainmentFeature() == null) {
 				req.setContainmentFeature(UMLPackage.eINSTANCE.getPackage_PackagedElement());
 			}
-			return getMSLWrapper(new Artifact2CreateCommand(req));
+			return getGEFWrapper(new Artifact2CreateCommand(req));
 		}
 		if (UMLElementTypes.Interface_2003 == req.getElementType()) {
 			if (req.getContainmentFeature() == null) {
 				req.setContainmentFeature(UMLPackage.eINSTANCE.getPackage_PackagedElement());
 			}
-			return getMSLWrapper(new Interface2CreateCommand(req));
+			return getGEFWrapper(new Interface2CreateCommand(req));
 		}
 		if (UMLElementTypes.Class_2004 == req.getElementType()) {
 			if (req.getContainmentFeature() == null) {
 				req.setContainmentFeature(UMLPackage.eINSTANCE.getPackage_PackagedElement());
 			}
-			return getMSLWrapper(new Class2CreateCommand(req));
+			return getGEFWrapper(new Class2CreateCommand(req));
 		}
 		return super.getCreateCommand(req);
 	}
@@ -57,7 +57,7 @@ public class PackageItemSemanticEditPolicy extends UMLBaseItemSemanticEditPolicy
 	 */
 	protected Command getDuplicateCommand(DuplicateElementsRequest req) {
 		TransactionalEditingDomain editingDomain = ((IGraphicalEditPart) getHost()).getEditingDomain();
-		return getMSLWrapper(new DuplicateAnythingCommand(editingDomain, req));
+		return getGEFWrapper(new DuplicateAnythingCommand(editingDomain, req));
 	}
 
 	/**

@@ -75,5 +75,4 @@ public class ComponentContents2ViewFactory extends ListCompartmentViewFactory {
 			drawerStyle.setCollapsed(false);
 		}
 	}
-
 }

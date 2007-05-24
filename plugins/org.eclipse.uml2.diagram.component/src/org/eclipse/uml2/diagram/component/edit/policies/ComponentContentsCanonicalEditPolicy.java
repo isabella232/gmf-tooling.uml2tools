@@ -1,21 +1,22 @@
 package org.eclipse.uml2.diagram.component.edit.policies;
 
-import org.eclipse.gmf.runtime.diagram.ui.editpolicies.CanonicalEditPolicy;
-import org.eclipse.gmf.runtime.notation.View;
+import java.util.Collection;
+import java.util.HashSet;
 import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.List;
+import java.util.Set;
 
-import org.eclipse.emf.ecore.EObject;
-
+import org.eclipse.gmf.runtime.diagram.ui.editpolicies.CanonicalEditPolicy;
+import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.uml2.diagram.component.edit.parts.ArtifactEditPart;
 import org.eclipse.uml2.diagram.component.edit.parts.ClassEditPart;
 import org.eclipse.uml2.diagram.component.edit.parts.Component2EditPart;
 import org.eclipse.uml2.diagram.component.edit.parts.InterfaceEditPart;
-
+import org.eclipse.uml2.diagram.component.part.UMLDiagramUpdater;
+import org.eclipse.uml2.diagram.component.part.UMLNodeDescriptor;
 import org.eclipse.uml2.diagram.component.part.UMLVisualIDRegistry;
-
-import org.eclipse.uml2.uml.Component;
+import org.eclipse.uml2.uml.UMLPackage;
 
 /**
  * @generated
@@ -23,36 +24,18 @@ import org.eclipse.uml2.uml.Component;
 public class ComponentContentsCanonicalEditPolicy extends CanonicalEditPolicy {
 
 	/**
-	 *  
+	 * @generated
+	 */
+	Set myFeaturesToSynchronize;
+
+	/**
 	 * @generated
 	 */
 	protected List getSemanticChildrenList() {
-		List result = new LinkedList();
-		EObject modelObject = ((View) getHost().getModel()).getElement();
 		View viewObject = (View) getHost().getModel();
-		EObject nextValue;
-		int nodeVID;
-		for (Iterator values = ((Component) modelObject).getPackagedElements().iterator(); values.hasNext();) {
-			nextValue = (EObject) values.next();
-			nodeVID = UMLVisualIDRegistry.getNodeVisualID(viewObject, nextValue);
-			switch (nodeVID) {
-			case Component2EditPart.VISUAL_ID: {
-				result.add(nextValue);
-				break;
-			}
-			case ArtifactEditPart.VISUAL_ID: {
-				result.add(nextValue);
-				break;
-			}
-			case ClassEditPart.VISUAL_ID: {
-				result.add(nextValue);
-				break;
-			}
-			case InterfaceEditPart.VISUAL_ID: {
-				result.add(nextValue);
-				break;
-			}
-			}
+		List result = new LinkedList();
+		for (Iterator it = UMLDiagramUpdater.getComponentContents_7001SemanticChildren(viewObject).iterator(); it.hasNext();) {
+			result.add(((UMLNodeDescriptor) it.next()).getModelElement());
 		}
 		return result;
 	}
@@ -60,18 +43,14 @@ public class ComponentContentsCanonicalEditPolicy extends CanonicalEditPolicy {
 	/**
 	 * @generated
 	 */
-	protected boolean shouldDeleteView(View view) {
-		if (view.getEAnnotation("Shortcut") != null) { //$NON-NLS-1$
-			return view.isSetElement() && (view.getElement() == null || view.getElement().eIsProxy());
-		}
-
-		int nodeVID = UMLVisualIDRegistry.getVisualID(view);
-		switch (nodeVID) {
+	protected boolean isOrphaned(Collection semanticChildren, final View view) {
+		int visualID = UMLVisualIDRegistry.getVisualID(view);
+		switch (visualID) {
 		case Component2EditPart.VISUAL_ID:
 		case ArtifactEditPart.VISUAL_ID:
 		case ClassEditPart.VISUAL_ID:
 		case InterfaceEditPart.VISUAL_ID:
-			return true;
+			return !semanticChildren.contains(view.getElement()) || visualID != UMLVisualIDRegistry.getNodeVisualID((View) getHost().getModel(), view.getElement());
 		}
 		return false;
 	}
@@ -81,6 +60,17 @@ public class ComponentContentsCanonicalEditPolicy extends CanonicalEditPolicy {
 	 */
 	protected String getDefaultFactoryHint() {
 		return null;
+	}
+
+	/**
+	 * @generated
+	 */
+	protected Set getFeaturesToSynchronize() {
+		if (myFeaturesToSynchronize == null) {
+			myFeaturesToSynchronize = new HashSet();
+			myFeaturesToSynchronize.add(UMLPackage.eINSTANCE.getComponent_PackagedElement());
+		}
+		return myFeaturesToSynchronize;
 	}
 
 }

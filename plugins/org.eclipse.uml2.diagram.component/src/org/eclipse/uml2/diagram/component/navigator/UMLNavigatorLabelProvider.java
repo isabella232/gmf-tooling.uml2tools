@@ -8,8 +8,6 @@ import org.eclipse.gmf.runtime.common.ui.services.parser.IParser;
 import org.eclipse.gmf.runtime.common.ui.services.parser.ParserOptions;
 import org.eclipse.gmf.runtime.common.ui.services.parser.ParserService;
 
-import org.eclipse.gmf.runtime.emf.core.util.EObjectAdapter;
-
 import org.eclipse.gmf.runtime.emf.type.core.IElementType;
 
 import org.eclipse.gmf.runtime.notation.View;
@@ -56,6 +54,7 @@ import org.eclipse.uml2.diagram.component.part.UMLDiagramEditorPlugin;
 import org.eclipse.uml2.diagram.component.part.UMLVisualIDRegistry;
 
 import org.eclipse.uml2.diagram.component.providers.UMLElementTypes;
+import org.eclipse.uml2.diagram.component.providers.UMLParserProvider;
 
 import org.eclipse.uml2.uml.NamedElement;
 
@@ -111,31 +110,31 @@ public class UMLNavigatorLabelProvider extends LabelProvider implements ICommonL
 	public Image getImage(View view) {
 		switch (UMLVisualIDRegistry.getVisualID(view)) {
 		case ComponentEditPart.VISUAL_ID:
-			return getImage("Navigator?TopLevelNode?http://www.eclipse.org/uml2/2.0.0/UML?Component", UMLElementTypes.Component_2001);
+			return getImage("Navigator?TopLevelNode?http://www.eclipse.org/uml2/2.1.0/UML?Component", UMLElementTypes.Component_2001);
 		case Artifact2EditPart.VISUAL_ID:
-			return getImage("Navigator?TopLevelNode?http://www.eclipse.org/uml2/2.0.0/UML?Artifact", UMLElementTypes.Artifact_2002);
+			return getImage("Navigator?TopLevelNode?http://www.eclipse.org/uml2/2.1.0/UML?Artifact", UMLElementTypes.Artifact_2002);
 		case Interface2EditPart.VISUAL_ID:
-			return getImage("Navigator?TopLevelNode?http://www.eclipse.org/uml2/2.0.0/UML?Interface", UMLElementTypes.Interface_2003);
+			return getImage("Navigator?TopLevelNode?http://www.eclipse.org/uml2/2.1.0/UML?Interface", UMLElementTypes.Interface_2003);
 		case Class2EditPart.VISUAL_ID:
-			return getImage("Navigator?TopLevelNode?http://www.eclipse.org/uml2/2.0.0/UML?Class", UMLElementTypes.Class_2004);
+			return getImage("Navigator?TopLevelNode?http://www.eclipse.org/uml2/2.1.0/UML?Class", UMLElementTypes.Class_2004);
 		case Component2EditPart.VISUAL_ID:
-			return getImage("Navigator?Node?http://www.eclipse.org/uml2/2.0.0/UML?Component", UMLElementTypes.Component_3001);
+			return getImage("Navigator?Node?http://www.eclipse.org/uml2/2.1.0/UML?Component", UMLElementTypes.Component_3001);
 		case PortEditPart.VISUAL_ID:
-			return getImage("Navigator?Node?http://www.eclipse.org/uml2/2.0.0/UML?Port", UMLElementTypes.Port_3002);
+			return getImage("Navigator?Node?http://www.eclipse.org/uml2/2.1.0/UML?Port", UMLElementTypes.Port_3002);
 		case ArtifactEditPart.VISUAL_ID:
-			return getImage("Navigator?Node?http://www.eclipse.org/uml2/2.0.0/UML?Artifact", UMLElementTypes.Artifact_3003);
+			return getImage("Navigator?Node?http://www.eclipse.org/uml2/2.1.0/UML?Artifact", UMLElementTypes.Artifact_3003);
 		case ClassEditPart.VISUAL_ID:
-			return getImage("Navigator?Node?http://www.eclipse.org/uml2/2.0.0/UML?Class", UMLElementTypes.Class_3004);
+			return getImage("Navigator?Node?http://www.eclipse.org/uml2/2.1.0/UML?Class", UMLElementTypes.Class_3004);
 		case InterfaceEditPart.VISUAL_ID:
-			return getImage("Navigator?Node?http://www.eclipse.org/uml2/2.0.0/UML?Interface", UMLElementTypes.Interface_3005);
+			return getImage("Navigator?Node?http://www.eclipse.org/uml2/2.1.0/UML?Interface", UMLElementTypes.Interface_3005);
 		case PackageEditPart.VISUAL_ID:
-			return getImage("Navigator?Diagram?http://www.eclipse.org/uml2/2.0.0/UML?Package", UMLElementTypes.Package_1000);
+			return getImage("Navigator?Diagram?http://www.eclipse.org/uml2/2.1.0/UML?Package", UMLElementTypes.Package_1000);
 		case InterfaceRealizationEditPart.VISUAL_ID:
-			return getImage("Navigator?Link?http://www.eclipse.org/uml2/2.0.0/UML?InterfaceRealization", UMLElementTypes.InterfaceRealization_4001);
+			return getImage("Navigator?Link?http://www.eclipse.org/uml2/2.1.0/UML?InterfaceRealization", UMLElementTypes.InterfaceRealization_4001);
 		case PortProvidedEditPart.VISUAL_ID:
-			return getImage("Navigator?Link?http://www.eclipse.org/uml2/2.0.0/UML?Port?provided", UMLElementTypes.PortProvided_4006);
+			return getImage("Navigator?Link?http://www.eclipse.org/uml2/2.1.0/UML?Port?provided", UMLElementTypes.PortProvided_4006);
 		case PortRequiredEditPart.VISUAL_ID:
-			return getImage("Navigator?Link?http://www.eclipse.org/uml2/2.0.0/UML?Port?required", UMLElementTypes.PortRequired_4004);
+			return getImage("Navigator?Link?http://www.eclipse.org/uml2/2.1.0/UML?Port?required", UMLElementTypes.PortRequired_4004);
 		default:
 			return getImage("Navigator?UnknownElement", null);
 		}
@@ -222,20 +221,12 @@ public class UMLNavigatorLabelProvider extends LabelProvider implements ICommonL
 	 * @generated
 	 */
 	private String getComponent_2001Text(View view) {
-		IParser parser = ParserService.getInstance().getParser(new IAdaptable() {
+		IAdaptable hintAdapter = new UMLParserProvider.HintAdapter(UMLElementTypes.Component_2001, (view.getElement() != null ? view.getElement() : view), UMLVisualIDRegistry
+				.getType(ComponentName2EditPart.VISUAL_ID));
+		IParser parser = ParserService.getInstance().getParser(hintAdapter);
 
-			public Object getAdapter(Class adapter) {
-				if (String.class.equals(adapter)) {
-					return UMLVisualIDRegistry.getType(ComponentName2EditPart.VISUAL_ID);
-				}
-				if (IElementType.class.equals(adapter)) {
-					return UMLElementTypes.Component_2001;
-				}
-				return null;
-			}
-		});
 		if (parser != null) {
-			return parser.getPrintString(new EObjectAdapter(view.getElement() != null ? view.getElement() : view), ParserOptions.NONE.intValue());
+			return parser.getPrintString(hintAdapter, ParserOptions.NONE.intValue());
 		} else {
 			UMLDiagramEditorPlugin.getInstance().logError("Parser was not found for label " + 5001);
 			return "";
@@ -246,20 +237,12 @@ public class UMLNavigatorLabelProvider extends LabelProvider implements ICommonL
 	 * @generated
 	 */
 	private String getArtifact_2002Text(View view) {
-		IParser parser = ParserService.getInstance().getParser(new IAdaptable() {
+		IAdaptable hintAdapter = new UMLParserProvider.HintAdapter(UMLElementTypes.Artifact_2002, (view.getElement() != null ? view.getElement() : view), UMLVisualIDRegistry
+				.getType(ArtifactName2EditPart.VISUAL_ID));
+		IParser parser = ParserService.getInstance().getParser(hintAdapter);
 
-			public Object getAdapter(Class adapter) {
-				if (String.class.equals(adapter)) {
-					return UMLVisualIDRegistry.getType(ArtifactName2EditPart.VISUAL_ID);
-				}
-				if (IElementType.class.equals(adapter)) {
-					return UMLElementTypes.Artifact_2002;
-				}
-				return null;
-			}
-		});
 		if (parser != null) {
-			return parser.getPrintString(new EObjectAdapter(view.getElement() != null ? view.getElement() : view), ParserOptions.NONE.intValue());
+			return parser.getPrintString(hintAdapter, ParserOptions.NONE.intValue());
 		} else {
 			UMLDiagramEditorPlugin.getInstance().logError("Parser was not found for label " + 5004);
 			return "";
@@ -270,20 +253,12 @@ public class UMLNavigatorLabelProvider extends LabelProvider implements ICommonL
 	 * @generated
 	 */
 	private String getInterface_2003Text(View view) {
-		IParser parser = ParserService.getInstance().getParser(new IAdaptable() {
+		IAdaptable hintAdapter = new UMLParserProvider.HintAdapter(UMLElementTypes.Interface_2003, (view.getElement() != null ? view.getElement() : view), UMLVisualIDRegistry
+				.getType(InterfaceName2EditPart.VISUAL_ID));
+		IParser parser = ParserService.getInstance().getParser(hintAdapter);
 
-			public Object getAdapter(Class adapter) {
-				if (String.class.equals(adapter)) {
-					return UMLVisualIDRegistry.getType(InterfaceName2EditPart.VISUAL_ID);
-				}
-				if (IElementType.class.equals(adapter)) {
-					return UMLElementTypes.Interface_2003;
-				}
-				return null;
-			}
-		});
 		if (parser != null) {
-			return parser.getPrintString(new EObjectAdapter(view.getElement() != null ? view.getElement() : view), ParserOptions.NONE.intValue());
+			return parser.getPrintString(hintAdapter, ParserOptions.NONE.intValue());
 		} else {
 			UMLDiagramEditorPlugin.getInstance().logError("Parser was not found for label " + 5005);
 			return "";
@@ -294,20 +269,12 @@ public class UMLNavigatorLabelProvider extends LabelProvider implements ICommonL
 	 * @generated
 	 */
 	private String getClass_2004Text(View view) {
-		IParser parser = ParserService.getInstance().getParser(new IAdaptable() {
+		IAdaptable hintAdapter = new UMLParserProvider.HintAdapter(UMLElementTypes.Class_2004, (view.getElement() != null ? view.getElement() : view), UMLVisualIDRegistry
+				.getType(ClassName2EditPart.VISUAL_ID));
+		IParser parser = ParserService.getInstance().getParser(hintAdapter);
 
-			public Object getAdapter(Class adapter) {
-				if (String.class.equals(adapter)) {
-					return UMLVisualIDRegistry.getType(ClassName2EditPart.VISUAL_ID);
-				}
-				if (IElementType.class.equals(adapter)) {
-					return UMLElementTypes.Class_2004;
-				}
-				return null;
-			}
-		});
 		if (parser != null) {
-			return parser.getPrintString(new EObjectAdapter(view.getElement() != null ? view.getElement() : view), ParserOptions.NONE.intValue());
+			return parser.getPrintString(hintAdapter, ParserOptions.NONE.intValue());
 		} else {
 			UMLDiagramEditorPlugin.getInstance().logError("Parser was not found for label " + 5008);
 			return "";
@@ -318,20 +285,12 @@ public class UMLNavigatorLabelProvider extends LabelProvider implements ICommonL
 	 * @generated
 	 */
 	private String getComponent_3001Text(View view) {
-		IParser parser = ParserService.getInstance().getParser(new IAdaptable() {
+		IAdaptable hintAdapter = new UMLParserProvider.HintAdapter(UMLElementTypes.Component_3001, (view.getElement() != null ? view.getElement() : view), UMLVisualIDRegistry
+				.getType(ComponentNameEditPart.VISUAL_ID));
+		IParser parser = ParserService.getInstance().getParser(hintAdapter);
 
-			public Object getAdapter(Class adapter) {
-				if (String.class.equals(adapter)) {
-					return UMLVisualIDRegistry.getType(ComponentNameEditPart.VISUAL_ID);
-				}
-				if (IElementType.class.equals(adapter)) {
-					return UMLElementTypes.Component_3001;
-				}
-				return null;
-			}
-		});
 		if (parser != null) {
-			return parser.getPrintString(new EObjectAdapter(view.getElement() != null ? view.getElement() : view), ParserOptions.NONE.intValue());
+			return parser.getPrintString(hintAdapter, ParserOptions.NONE.intValue());
 		} else {
 			UMLDiagramEditorPlugin.getInstance().logError("Parser was not found for label " + 5002);
 			return "";
@@ -342,20 +301,12 @@ public class UMLNavigatorLabelProvider extends LabelProvider implements ICommonL
 	 * @generated
 	 */
 	private String getPort_3002Text(View view) {
-		IParser parser = ParserService.getInstance().getParser(new IAdaptable() {
+		IAdaptable hintAdapter = new UMLParserProvider.HintAdapter(UMLElementTypes.Port_3002, (view.getElement() != null ? view.getElement() : view), UMLVisualIDRegistry
+				.getType(PortNameEditPart.VISUAL_ID));
+		IParser parser = ParserService.getInstance().getParser(hintAdapter);
 
-			public Object getAdapter(Class adapter) {
-				if (String.class.equals(adapter)) {
-					return UMLVisualIDRegistry.getType(PortNameEditPart.VISUAL_ID);
-				}
-				if (IElementType.class.equals(adapter)) {
-					return UMLElementTypes.Port_3002;
-				}
-				return null;
-			}
-		});
 		if (parser != null) {
-			return parser.getPrintString(new EObjectAdapter(view.getElement() != null ? view.getElement() : view), ParserOptions.NONE.intValue());
+			return parser.getPrintString(hintAdapter, ParserOptions.NONE.intValue());
 		} else {
 			UMLDiagramEditorPlugin.getInstance().logError("Parser was not found for label " + 5003);
 			return "";
@@ -366,20 +317,12 @@ public class UMLNavigatorLabelProvider extends LabelProvider implements ICommonL
 	 * @generated
 	 */
 	private String getArtifact_3003Text(View view) {
-		IParser parser = ParserService.getInstance().getParser(new IAdaptable() {
+		IAdaptable hintAdapter = new UMLParserProvider.HintAdapter(UMLElementTypes.Artifact_3003, (view.getElement() != null ? view.getElement() : view), UMLVisualIDRegistry
+				.getType(ArtifactNameEditPart.VISUAL_ID));
+		IParser parser = ParserService.getInstance().getParser(hintAdapter);
 
-			public Object getAdapter(Class adapter) {
-				if (String.class.equals(adapter)) {
-					return UMLVisualIDRegistry.getType(ArtifactNameEditPart.VISUAL_ID);
-				}
-				if (IElementType.class.equals(adapter)) {
-					return UMLElementTypes.Artifact_3003;
-				}
-				return null;
-			}
-		});
 		if (parser != null) {
-			return parser.getPrintString(new EObjectAdapter(view.getElement() != null ? view.getElement() : view), ParserOptions.NONE.intValue());
+			return parser.getPrintString(hintAdapter, ParserOptions.NONE.intValue());
 		} else {
 			UMLDiagramEditorPlugin.getInstance().logError("Parser was not found for label " + 5006);
 			return "";
@@ -390,20 +333,12 @@ public class UMLNavigatorLabelProvider extends LabelProvider implements ICommonL
 	 * @generated
 	 */
 	private String getClass_3004Text(View view) {
-		IParser parser = ParserService.getInstance().getParser(new IAdaptable() {
+		IAdaptable hintAdapter = new UMLParserProvider.HintAdapter(UMLElementTypes.Class_3004, (view.getElement() != null ? view.getElement() : view), UMLVisualIDRegistry
+				.getType(ClassNameEditPart.VISUAL_ID));
+		IParser parser = ParserService.getInstance().getParser(hintAdapter);
 
-			public Object getAdapter(Class adapter) {
-				if (String.class.equals(adapter)) {
-					return UMLVisualIDRegistry.getType(ClassNameEditPart.VISUAL_ID);
-				}
-				if (IElementType.class.equals(adapter)) {
-					return UMLElementTypes.Class_3004;
-				}
-				return null;
-			}
-		});
 		if (parser != null) {
-			return parser.getPrintString(new EObjectAdapter(view.getElement() != null ? view.getElement() : view), ParserOptions.NONE.intValue());
+			return parser.getPrintString(hintAdapter, ParserOptions.NONE.intValue());
 		} else {
 			UMLDiagramEditorPlugin.getInstance().logError("Parser was not found for label " + 5007);
 			return "";
@@ -414,20 +349,12 @@ public class UMLNavigatorLabelProvider extends LabelProvider implements ICommonL
 	 * @generated
 	 */
 	private String getInterface_3005Text(View view) {
-		IParser parser = ParserService.getInstance().getParser(new IAdaptable() {
+		IAdaptable hintAdapter = new UMLParserProvider.HintAdapter(UMLElementTypes.Interface_3005, (view.getElement() != null ? view.getElement() : view), UMLVisualIDRegistry
+				.getType(InterfaceNameEditPart.VISUAL_ID));
+		IParser parser = ParserService.getInstance().getParser(hintAdapter);
 
-			public Object getAdapter(Class adapter) {
-				if (String.class.equals(adapter)) {
-					return UMLVisualIDRegistry.getType(InterfaceNameEditPart.VISUAL_ID);
-				}
-				if (IElementType.class.equals(adapter)) {
-					return UMLElementTypes.Interface_3005;
-				}
-				return null;
-			}
-		});
 		if (parser != null) {
-			return parser.getPrintString(new EObjectAdapter(view.getElement() != null ? view.getElement() : view), ParserOptions.NONE.intValue());
+			return parser.getPrintString(hintAdapter, ParserOptions.NONE.intValue());
 		} else {
 			UMLDiagramEditorPlugin.getInstance().logError("Parser was not found for label " + 5009);
 			return "";

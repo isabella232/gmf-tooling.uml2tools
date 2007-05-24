@@ -1,42 +1,29 @@
 package org.eclipse.uml2.diagram.component.edit.policies;
 
-import java.util.List;
 import java.util.Collection;
-import org.eclipse.gmf.runtime.notation.Edge;
-import org.eclipse.emf.ecore.EObject;
 import java.util.Collections;
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.Iterator;
 import java.util.LinkedList;
+import java.util.List;
 import java.util.Map;
+import java.util.Set;
 
 import org.eclipse.core.runtime.IAdaptable;
-
-import org.eclipse.emf.ecore.EClass;
-
+import org.eclipse.emf.ecore.EObject;
 import org.eclipse.gef.EditPart;
-
 import org.eclipse.gef.commands.Command;
-
 import org.eclipse.gmf.runtime.diagram.core.util.ViewUtil;
-
 import org.eclipse.gmf.runtime.diagram.ui.commands.DeferredLayoutCommand;
 import org.eclipse.gmf.runtime.diagram.ui.commands.ICommandProxy;
-
 import org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart;
-
 import org.eclipse.gmf.runtime.diagram.ui.editpolicies.CanonicalConnectionEditPolicy;
-
 import org.eclipse.gmf.runtime.diagram.ui.requests.CreateConnectionViewRequest;
 import org.eclipse.gmf.runtime.diagram.ui.requests.RequestConstants;
-
-import org.eclipse.gmf.runtime.emf.core.util.EObjectAdapter;
-
-import org.eclipse.gmf.runtime.emf.type.core.IElementType;
-
 import org.eclipse.gmf.runtime.notation.Diagram;
+import org.eclipse.gmf.runtime.notation.Edge;
 import org.eclipse.gmf.runtime.notation.View;
-
 import org.eclipse.uml2.diagram.component.edit.parts.Artifact2EditPart;
 import org.eclipse.uml2.diagram.component.edit.parts.ArtifactEditPart;
 import org.eclipse.uml2.diagram.component.edit.parts.Class2EditPart;
@@ -48,17 +35,10 @@ import org.eclipse.uml2.diagram.component.edit.parts.InterfaceEditPart;
 import org.eclipse.uml2.diagram.component.edit.parts.InterfaceRealizationEditPart;
 import org.eclipse.uml2.diagram.component.edit.parts.PackageEditPart;
 import org.eclipse.uml2.diagram.component.edit.parts.PortEditPart;
-import org.eclipse.uml2.diagram.component.edit.parts.PortProvidedEditPart;
-import org.eclipse.uml2.diagram.component.edit.parts.PortRequiredEditPart;
-
+import org.eclipse.uml2.diagram.component.part.UMLDiagramUpdater;
+import org.eclipse.uml2.diagram.component.part.UMLLinkDescriptor;
+import org.eclipse.uml2.diagram.component.part.UMLNodeDescriptor;
 import org.eclipse.uml2.diagram.component.part.UMLVisualIDRegistry;
-
-import org.eclipse.uml2.diagram.component.providers.UMLElementTypes;
-
-import org.eclipse.uml2.uml.BehavioredClassifier;
-import org.eclipse.uml2.uml.InterfaceRealization;
-import org.eclipse.uml2.uml.Package;
-import org.eclipse.uml2.uml.Port;
 import org.eclipse.uml2.uml.UMLPackage;
 
 /**
@@ -67,36 +47,18 @@ import org.eclipse.uml2.uml.UMLPackage;
 public class PackageCanonicalEditPolicy extends CanonicalConnectionEditPolicy {
 
 	/**
-	 *  
+	 * @generated
+	 */
+	Set myFeaturesToSynchronize;
+
+	/**
 	 * @generated
 	 */
 	protected List getSemanticChildrenList() {
-		List result = new LinkedList();
-		EObject modelObject = ((View) getHost().getModel()).getElement();
 		View viewObject = (View) getHost().getModel();
-		EObject nextValue;
-		int nodeVID;
-		for (Iterator values = ((Package) modelObject).getOwnedTypes().iterator(); values.hasNext();) {
-			nextValue = (EObject) values.next();
-			nodeVID = UMLVisualIDRegistry.getNodeVisualID(viewObject, nextValue);
-			switch (nodeVID) {
-			case ComponentEditPart.VISUAL_ID: {
-				result.add(nextValue);
-				break;
-			}
-			case Artifact2EditPart.VISUAL_ID: {
-				result.add(nextValue);
-				break;
-			}
-			case Interface2EditPart.VISUAL_ID: {
-				result.add(nextValue);
-				break;
-			}
-			case Class2EditPart.VISUAL_ID: {
-				result.add(nextValue);
-				break;
-			}
-			}
+		List result = new LinkedList();
+		for (Iterator it = UMLDiagramUpdater.getPackage_1000SemanticChildren(viewObject).iterator(); it.hasNext();) {
+			result.add(((UMLNodeDescriptor) it.next()).getModelElement());
 		}
 		return result;
 	}
@@ -105,17 +67,20 @@ public class PackageCanonicalEditPolicy extends CanonicalConnectionEditPolicy {
 	 * @generated
 	 */
 	protected boolean shouldDeleteView(View view) {
-		if (view.getEAnnotation("Shortcut") != null) { //$NON-NLS-1$
-			return view.isSetElement() && (view.getElement() == null || view.getElement().eIsProxy());
-		}
+		return true;
+	}
 
-		int nodeVID = UMLVisualIDRegistry.getVisualID(view);
-		switch (nodeVID) {
+	/**
+	 * @generated
+	 */
+	protected boolean isOrphaned(Collection semanticChildren, final View view) {
+		int visualID = UMLVisualIDRegistry.getVisualID(view);
+		switch (visualID) {
 		case ComponentEditPart.VISUAL_ID:
 		case Artifact2EditPart.VISUAL_ID:
 		case Interface2EditPart.VISUAL_ID:
 		case Class2EditPart.VISUAL_ID:
-			return true;
+			return !semanticChildren.contains(view.getElement()) || visualID != UMLVisualIDRegistry.getNodeVisualID((View) getHost().getModel(), view.getElement());
 		}
 		return false;
 	}
@@ -125,6 +90,17 @@ public class PackageCanonicalEditPolicy extends CanonicalConnectionEditPolicy {
 	 */
 	protected String getDefaultFactoryHint() {
 		return null;
+	}
+
+	/**
+	 * @generated
+	 */
+	protected Set getFeaturesToSynchronize() {
+		if (myFeaturesToSynchronize == null) {
+			myFeaturesToSynchronize = new HashSet();
+			myFeaturesToSynchronize.add(UMLPackage.eINSTANCE.getPackage_OwnedType());
+		}
+		return myFeaturesToSynchronize;
 	}
 
 	/**
@@ -178,84 +154,116 @@ public class PackageCanonicalEditPolicy extends CanonicalConnectionEditPolicy {
 	/**
 	 * @generated
 	 */
-	private Collection myLinkDescriptors = new LinkedList();
-
-	/**
-	 * @generated
-	 */
-	private Map myEObject2ViewMap = new HashMap();
+	private Diagram getDiagram() {
+		return ((View) getHost().getModel()).getDiagram();
+	}
 
 	/**
 	 * @generated
 	 */
 	private Collection refreshConnections() {
-		try {
-			collectAllLinks(getDiagram());
-			Collection existingLinks = new LinkedList(getDiagram().getEdges());
-			for (Iterator diagramLinks = existingLinks.iterator(); diagramLinks.hasNext();) {
-				Edge nextDiagramLink = (Edge) diagramLinks.next();
-				EObject diagramLinkObject = nextDiagramLink.getElement();
-				EObject diagramLinkSrc = nextDiagramLink.getSource().getElement();
-				EObject diagramLinkDst = nextDiagramLink.getTarget().getElement();
-				int diagramLinkVisualID = UMLVisualIDRegistry.getVisualID(nextDiagramLink);
-				for (Iterator modelLinkDescriptors = myLinkDescriptors.iterator(); modelLinkDescriptors.hasNext();) {
-					LinkDescriptor nextLinkDescriptor = (LinkDescriptor) modelLinkDescriptors.next();
-					if (diagramLinkObject == nextLinkDescriptor.getLinkElement() && diagramLinkSrc == nextLinkDescriptor.getSource() && diagramLinkDst == nextLinkDescriptor.getDestination()
-							&& diagramLinkVisualID == nextLinkDescriptor.getVisualID()) {
-						diagramLinks.remove();
-						modelLinkDescriptors.remove();
-					}
+		Map domain2NotationMap = new HashMap();
+		Collection linkDescriptors = collectAllLinks(getDiagram(), domain2NotationMap);
+		Collection existingLinks = new LinkedList(getDiagram().getEdges());
+		for (Iterator linksIterator = existingLinks.iterator(); linksIterator.hasNext();) {
+			Edge nextDiagramLink = (Edge) linksIterator.next();
+			EObject diagramLinkObject = nextDiagramLink.getElement();
+			EObject diagramLinkSrc = nextDiagramLink.getSource().getElement();
+			EObject diagramLinkDst = nextDiagramLink.getTarget().getElement();
+			int diagramLinkVisualID = UMLVisualIDRegistry.getVisualID(nextDiagramLink);
+			for (Iterator LinkDescriptorsIterator = linkDescriptors.iterator(); LinkDescriptorsIterator.hasNext();) {
+				UMLLinkDescriptor nextLinkDescriptor = (UMLLinkDescriptor) LinkDescriptorsIterator.next();
+				if (diagramLinkObject == nextLinkDescriptor.getModelElement() && diagramLinkSrc == nextLinkDescriptor.getSource() && diagramLinkDst == nextLinkDescriptor.getDestination()
+						&& diagramLinkVisualID == nextLinkDescriptor.getVisualID()) {
+					linksIterator.remove();
+					LinkDescriptorsIterator.remove();
 				}
 			}
-			deleteViews(existingLinks.iterator());
-			return createConnections(myLinkDescriptors);
-		} finally {
-			myLinkDescriptors.clear();
-			myEObject2ViewMap.clear();
 		}
+		deleteViews(existingLinks.iterator());
+		return createConnections(linkDescriptors, domain2NotationMap);
 	}
 
 	/**
 	 * @generated
 	 */
-	private void collectAllLinks(View view) {
-		EObject modelElement = view.getElement();
-		int diagramElementVisualID = UMLVisualIDRegistry.getVisualID(view);
-		switch (diagramElementVisualID) {
-		case ComponentEditPart.VISUAL_ID:
-		case Artifact2EditPart.VISUAL_ID:
-		case Interface2EditPart.VISUAL_ID:
-		case Class2EditPart.VISUAL_ID:
-		case Component2EditPart.VISUAL_ID:
-		case PortEditPart.VISUAL_ID:
-		case ArtifactEditPart.VISUAL_ID:
-		case ClassEditPart.VISUAL_ID:
-		case InterfaceEditPart.VISUAL_ID:
+	private Collection collectAllLinks(View view, Map domain2NotationMap) {
+		Collection result = new LinkedList();
+		switch (UMLVisualIDRegistry.getVisualID(view)) {
+		case ComponentEditPart.VISUAL_ID: {
+			domain2NotationMap.put(view.getElement(), view);
+			result.addAll(UMLDiagramUpdater.getComponent_2001ContainedLinks(view));
+			break;
+		}
+		case Artifact2EditPart.VISUAL_ID: {
+			domain2NotationMap.put(view.getElement(), view);
+			result.addAll(UMLDiagramUpdater.getArtifact_2002ContainedLinks(view));
+			break;
+		}
+		case Interface2EditPart.VISUAL_ID: {
+			domain2NotationMap.put(view.getElement(), view);
+			result.addAll(UMLDiagramUpdater.getInterface_2003ContainedLinks(view));
+			break;
+		}
+		case Class2EditPart.VISUAL_ID: {
+			domain2NotationMap.put(view.getElement(), view);
+			result.addAll(UMLDiagramUpdater.getClass_2004ContainedLinks(view));
+			break;
+		}
+		case Component2EditPart.VISUAL_ID: {
+			domain2NotationMap.put(view.getElement(), view);
+			result.addAll(UMLDiagramUpdater.getComponent_3001ContainedLinks(view));
+			break;
+		}
+		case PortEditPart.VISUAL_ID: {
+			domain2NotationMap.put(view.getElement(), view);
+			result.addAll(UMLDiagramUpdater.getPort_3002ContainedLinks(view));
+			break;
+		}
+		case ArtifactEditPart.VISUAL_ID: {
+			domain2NotationMap.put(view.getElement(), view);
+			result.addAll(UMLDiagramUpdater.getArtifact_3003ContainedLinks(view));
+			break;
+		}
+		case ClassEditPart.VISUAL_ID: {
+			domain2NotationMap.put(view.getElement(), view);
+			result.addAll(UMLDiagramUpdater.getClass_3004ContainedLinks(view));
+			break;
+		}
+		case InterfaceEditPart.VISUAL_ID: {
+			domain2NotationMap.put(view.getElement(), view);
+			result.addAll(UMLDiagramUpdater.getInterface_3005ContainedLinks(view));
+			break;
+		}
+		case InterfaceRealizationEditPart.VISUAL_ID: {
+			domain2NotationMap.put(view.getElement(), view);
+			result.addAll(UMLDiagramUpdater.getInterfaceRealization_4001ContainedLinks(view));
+			break;
+		}
 		case PackageEditPart.VISUAL_ID: {
-			myEObject2ViewMap.put(modelElement, view);
-			storeLinks(modelElement, getDiagram());
+			domain2NotationMap.put(view.getElement(), view);
+			result.addAll(UMLDiagramUpdater.getPackage_1000ContainedLinks(view));
+			break;
 		}
-		default: {
 		}
-			for (Iterator children = view.getChildren().iterator(); children.hasNext();) {
-				View childView = (View) children.next();
-				collectAllLinks(childView);
-			}
+		for (Iterator children = view.getChildren().iterator(); children.hasNext();) {
+			result.addAll(collectAllLinks((View) children.next(), domain2NotationMap));
 		}
+		for (Iterator edges = view.getSourceEdges().iterator(); edges.hasNext();) {
+			result.addAll(collectAllLinks((View) edges.next(), domain2NotationMap));
+		}
+		return result;
 	}
 
 	/**
 	 * @generated
 	 */
-	private Collection createConnections(Collection linkDescriptors) {
-		if (linkDescriptors.isEmpty()) {
-			return Collections.EMPTY_LIST;
-		}
+	private Collection createConnections(Collection linkDescriptors, Map domain2NotationMap) {
 		List adapters = new LinkedList();
 		for (Iterator linkDescriptorsIterator = linkDescriptors.iterator(); linkDescriptorsIterator.hasNext();) {
-			final LinkDescriptor nextLinkDescriptor = (LinkDescriptor) linkDescriptorsIterator.next();
-			EditPart sourceEditPart = getEditPartFor(nextLinkDescriptor.getSource());
-			EditPart targetEditPart = getEditPartFor(nextLinkDescriptor.getDestination());
+			final UMLLinkDescriptor nextLinkDescriptor = (UMLLinkDescriptor) linkDescriptorsIterator.next();
+			EditPart sourceEditPart = getEditPart(nextLinkDescriptor.getSource(), domain2NotationMap);
+			EditPart targetEditPart = getEditPart(nextLinkDescriptor.getDestination(), domain2NotationMap);
 			if (sourceEditPart == null || targetEditPart == null) {
 				continue;
 			}
@@ -282,190 +290,11 @@ public class PackageCanonicalEditPolicy extends CanonicalConnectionEditPolicy {
 	/**
 	 * @generated
 	 */
-	private EditPart getEditPartFor(EObject modelElement) {
-		View view = (View) myEObject2ViewMap.get(modelElement);
+	private EditPart getEditPart(EObject domainModelElement, Map domain2NotationMap) {
+		View view = (View) domain2NotationMap.get(domainModelElement);
 		if (view != null) {
 			return (EditPart) getHost().getViewer().getEditPartRegistry().get(view);
 		}
 		return null;
 	}
-
-	/**
-	 *@generated
-	 */
-	private void storeLinks(EObject container, Diagram diagram) {
-		EClass containerMetaclass = container.eClass();
-		storeFeatureModelFacetLinks(container, containerMetaclass, diagram);
-		storeTypeModelFacetLinks(container, containerMetaclass);
-	}
-
-	/**
-	 * @generated
-	 */
-	private void storeTypeModelFacetLinks(EObject container, EClass containerMetaclass) {
-		storeTypeModelFacetLinks_InterfaceRealization_4001(container, containerMetaclass);
-	}
-
-	/**
-	 * @generated
-	 */
-	private void storeTypeModelFacetLinks_InterfaceRealization_4001(EObject container, EClass containerMetaclass) {
-		if (UMLPackage.eINSTANCE.getBehavioredClassifier().isSuperTypeOf(containerMetaclass)) {
-			for (Iterator values = ((BehavioredClassifier) container).getInterfaceRealizations().iterator(); values.hasNext();) {
-				EObject nextValue = ((EObject) values.next());
-				int linkVID = UMLVisualIDRegistry.getLinkWithClassVisualID(nextValue);
-				if (InterfaceRealizationEditPart.VISUAL_ID == linkVID) {
-					Object structuralFeatureResult = ((InterfaceRealization) nextValue).getContract();
-					if (structuralFeatureResult instanceof EObject) {
-						EObject dst = (EObject) structuralFeatureResult;
-						structuralFeatureResult = ((InterfaceRealization) nextValue).getImplementingClassifier();
-						if (structuralFeatureResult instanceof EObject) {
-							EObject src = (EObject) structuralFeatureResult;
-							myLinkDescriptors.add(new LinkDescriptor(src, dst, nextValue, UMLElementTypes.InterfaceRealization_4001, linkVID));
-						}
-					}
-				}
-			}
-		}
-	}
-
-	/**
-	 *@generated
-	 */
-	private void storeFeatureModelFacetLinks(EObject container, EClass containerMetaclass, Diagram diagram) {
-
-		if (UMLPackage.eINSTANCE.getPort().isSuperTypeOf(containerMetaclass)) {
-			for (Iterator destinations = ((Port) container).getProvideds().iterator(); destinations.hasNext();) {
-				EObject nextDestination = (EObject) destinations.next();
-				myLinkDescriptors.add(new LinkDescriptor(container, nextDestination, UMLElementTypes.PortProvided_4006, PortProvidedEditPart.VISUAL_ID));
-
-			}
-		}
-		if (UMLPackage.eINSTANCE.getPort().isSuperTypeOf(containerMetaclass)) {
-			for (Iterator destinations = ((Port) container).getRequireds().iterator(); destinations.hasNext();) {
-				EObject nextDestination = (EObject) destinations.next();
-				myLinkDescriptors.add(new LinkDescriptor(container, nextDestination, UMLElementTypes.PortRequired_4004, PortRequiredEditPart.VISUAL_ID));
-
-			}
-		}
-	}
-
-	/**
-	 * @generated
-	 */
-	private Diagram getDiagram() {
-		return ((View) getHost().getModel()).getDiagram();
-	}
-
-	/**
-	 * @generated
-	 */
-	private class LinkDescriptor {
-
-		/**
-		 * @generated
-		 */
-		private EObject mySource;
-
-		/**
-		 * @generated
-		 */
-		private EObject myDestination;
-
-		/**
-		 * @generated
-		 */
-		private EObject myLinkElement;
-
-		/**
-		 * @generated
-		 */
-		private int myVisualID;
-
-		/**
-		 * @generated
-		 */
-		private IAdaptable mySemanticAdapter;
-
-		/**
-		 * @generated
-		 */
-		protected LinkDescriptor(EObject source, EObject destination, EObject linkElement, IElementType elementType, int linkVID) {
-			this(source, destination, linkVID);
-			myLinkElement = linkElement;
-			final IElementType elementTypeCopy = elementType;
-			mySemanticAdapter = new EObjectAdapter(linkElement) {
-
-				public Object getAdapter(Class adapter) {
-					if (IElementType.class.equals(adapter)) {
-						return elementTypeCopy;
-					}
-					return super.getAdapter(adapter);
-				}
-			};
-		}
-
-		/**
-		 * @generated
-		 */
-		protected LinkDescriptor(EObject source, EObject destination, IElementType elementType, int linkVID) {
-			this(source, destination, linkVID);
-			myLinkElement = null;
-			final IElementType elementTypeCopy = elementType;
-			mySemanticAdapter = new IAdaptable() {
-
-				public Object getAdapter(Class adapter) {
-					if (IElementType.class.equals(adapter)) {
-						return elementTypeCopy;
-					}
-					return null;
-				}
-			};
-		}
-
-		/**
-		 * @generated
-		 */
-		private LinkDescriptor(EObject source, EObject destination, int linkVID) {
-			mySource = source;
-			myDestination = destination;
-			myVisualID = linkVID;
-		}
-
-		/**
-		 * @generated
-		 */
-		protected EObject getSource() {
-			return mySource;
-		}
-
-		/**
-		 * @generated
-		 */
-		protected EObject getDestination() {
-			return myDestination;
-		}
-
-		/**
-		 * @generated
-		 */
-		protected EObject getLinkElement() {
-			return myLinkElement;
-		}
-
-		/**
-		 * @generated
-		 */
-		protected int getVisualID() {
-			return myVisualID;
-		}
-
-		/**
-		 * @generated
-		 */
-		protected IAdaptable getSemanticAdapter() {
-			return mySemanticAdapter;
-		}
-	}
-
 }

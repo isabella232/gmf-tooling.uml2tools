@@ -1,14 +1,11 @@
 package org.eclipse.uml2.diagram.component.part;
 
 import org.eclipse.core.runtime.Platform;
-
 import org.eclipse.emf.ecore.EAnnotation;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
-
 import org.eclipse.gmf.runtime.notation.Diagram;
 import org.eclipse.gmf.runtime.notation.View;
-
 import org.eclipse.uml2.diagram.component.edit.parts.Artifact2EditPart;
 import org.eclipse.uml2.diagram.component.edit.parts.ArtifactEditPart;
 import org.eclipse.uml2.diagram.component.edit.parts.ArtifactName2EditPart;
@@ -31,24 +28,16 @@ import org.eclipse.uml2.diagram.component.edit.parts.InterfaceRealizationEditPar
 import org.eclipse.uml2.diagram.component.edit.parts.PackageEditPart;
 import org.eclipse.uml2.diagram.component.edit.parts.PortEditPart;
 import org.eclipse.uml2.diagram.component.edit.parts.PortNameEditPart;
-
 import org.eclipse.uml2.diagram.component.expressions.UMLAbstractExpression;
 import org.eclipse.uml2.diagram.component.expressions.UMLOCLFactory;
-
-import org.eclipse.uml2.uml.Artifact;
-import org.eclipse.uml2.uml.Class;
-import org.eclipse.uml2.uml.Component;
-import org.eclipse.uml2.uml.Interface;
-import org.eclipse.uml2.uml.InterfaceRealization;
 import org.eclipse.uml2.uml.Package;
-import org.eclipse.uml2.uml.Port;
 import org.eclipse.uml2.uml.UMLPackage;
 
 /**
  * This registry is used to determine which type of visual object should be
- * created for the corresponding Diagram, Node, ChildNode or Link represented 
+ * created for the corresponding Diagram, Node, ChildNode or Link represented
  * by a domain model object.
- *
+ * 
  * @generated
  */
 public class UMLVisualIDRegistry {
@@ -57,6 +46,22 @@ public class UMLVisualIDRegistry {
 	 * @generated
 	 */
 	private static final String DEBUG_KEY = UMLDiagramEditorPlugin.getInstance().getBundle().getSymbolicName() + "/debug/visualID"; //$NON-NLS-1$
+
+	/**
+	 * @generated
+	 */
+	private static final UMLAbstractExpression Class_2004_Constraint = UMLOCLFactory.getExpression("self.oclIsKindOf(uml::Class)", UMLPackage.eINSTANCE.getClass_());
+
+	/**
+	 * @generated
+	 */
+	private static final UMLAbstractExpression Class_3004_Constraint = UMLOCLFactory.getExpression("self.oclIsKindOf(uml::Class)", UMLPackage.eINSTANCE.getClass_());
+
+	/**
+	 * @generated
+	 */
+	private static final UMLAbstractExpression InterfaceRealization_4001_Constraint = UMLOCLFactory.getExpression("self.implementingClassifier.oclIsKindOf(uml::Component)", UMLPackage.eINSTANCE
+			.getInterfaceRealization());
 
 	/**
 	 * @generated
@@ -123,7 +128,7 @@ public class UMLVisualIDRegistry {
 	 * @generated
 	 */
 	private static int getDiagramVisualID(EObject domainElement, EClass domainElementMetaclass) {
-		if (UMLPackage.eINSTANCE.getPackage().isSuperTypeOf(domainElementMetaclass) && isDiagramPackage_1000((Package) domainElement)) {
+		if (UMLPackage.eINSTANCE.getPackage().isSuperTypeOf(domainElementMetaclass) && isDiagram((Package) domainElement)) {
 			return PackageEditPart.VISUAL_ID;
 		}
 		return getUnrecognizedDiagramID(domainElement);
@@ -141,26 +146,24 @@ public class UMLVisualIDRegistry {
 	}
 
 	/**
-
 	 * @generated
 	 */
 	public static int getNodeVisualID(View containerView, EObject domainElement, EClass domainElementMetaclass, String semanticHint) {
-		String containerModelID = getModelID(containerView);
+		String containerModelID = org.eclipse.uml2.diagram.component.part.UMLVisualIDRegistry.getModelID(containerView);
 		if (!PackageEditPart.MODEL_ID.equals(containerModelID)) {
 			return -1;
 		}
 		int containerVisualID;
 		if (PackageEditPart.MODEL_ID.equals(containerModelID)) {
-			containerVisualID = getVisualID(containerView);
+			containerVisualID = org.eclipse.uml2.diagram.component.part.UMLVisualIDRegistry.getVisualID(containerView);
 		} else {
 			if (containerView instanceof Diagram) {
-				containerVisualID = PackageEditPart.VISUAL_ID;
+				containerVisualID = 1000;
 			} else {
 				return -1;
 			}
 		}
-
-		int nodeVisualID = semanticHint != null ? getVisualID(semanticHint) : -1;
+		int nodeVisualID = semanticHint != null ? org.eclipse.uml2.diagram.component.part.UMLVisualIDRegistry.getVisualID(semanticHint) : -1;
 		switch (containerVisualID) {
 		case ComponentEditPart.VISUAL_ID:
 			if (ComponentName2EditPart.VISUAL_ID == nodeVisualID) {
@@ -169,8 +172,7 @@ public class UMLVisualIDRegistry {
 			if (ComponentContentsEditPart.VISUAL_ID == nodeVisualID) {
 				return ComponentContentsEditPart.VISUAL_ID;
 			}
-			if ((semanticHint == null || PortEditPart.VISUAL_ID == nodeVisualID) && UMLPackage.eINSTANCE.getPort().isSuperTypeOf(domainElementMetaclass)
-					&& (domainElement == null || isNodePort_3002((Port) domainElement))) {
+			if ((semanticHint == null || PortEditPart.VISUAL_ID == nodeVisualID) && UMLPackage.eINSTANCE.getPort().isSuperTypeOf(domainElementMetaclass)) {
 				return PortEditPart.VISUAL_ID;
 			}
 			return getUnrecognizedComponent_2001ChildNodeID(domainElement, semanticHint);
@@ -188,8 +190,7 @@ public class UMLVisualIDRegistry {
 			if (ClassName2EditPart.VISUAL_ID == nodeVisualID) {
 				return ClassName2EditPart.VISUAL_ID;
 			}
-			if ((semanticHint == null || PortEditPart.VISUAL_ID == nodeVisualID) && UMLPackage.eINSTANCE.getPort().isSuperTypeOf(domainElementMetaclass)
-					&& (domainElement == null || isNodePort_3002((Port) domainElement))) {
+			if ((semanticHint == null || PortEditPart.VISUAL_ID == nodeVisualID) && UMLPackage.eINSTANCE.getPort().isSuperTypeOf(domainElementMetaclass)) {
 				return PortEditPart.VISUAL_ID;
 			}
 			return getUnrecognizedClass_2004ChildNodeID(domainElement, semanticHint);
@@ -200,8 +201,7 @@ public class UMLVisualIDRegistry {
 			if (ComponentContents2EditPart.VISUAL_ID == nodeVisualID) {
 				return ComponentContents2EditPart.VISUAL_ID;
 			}
-			if ((semanticHint == null || PortEditPart.VISUAL_ID == nodeVisualID) && UMLPackage.eINSTANCE.getPort().isSuperTypeOf(domainElementMetaclass)
-					&& (domainElement == null || isNodePort_3002((Port) domainElement))) {
+			if ((semanticHint == null || PortEditPart.VISUAL_ID == nodeVisualID) && UMLPackage.eINSTANCE.getPort().isSuperTypeOf(domainElementMetaclass)) {
 				return PortEditPart.VISUAL_ID;
 			}
 			return getUnrecognizedComponent_3001ChildNodeID(domainElement, semanticHint);
@@ -219,8 +219,7 @@ public class UMLVisualIDRegistry {
 			if (ClassNameEditPart.VISUAL_ID == nodeVisualID) {
 				return ClassNameEditPart.VISUAL_ID;
 			}
-			if ((semanticHint == null || PortEditPart.VISUAL_ID == nodeVisualID) && UMLPackage.eINSTANCE.getPort().isSuperTypeOf(domainElementMetaclass)
-					&& (domainElement == null || isNodePort_3002((Port) domainElement))) {
+			if ((semanticHint == null || PortEditPart.VISUAL_ID == nodeVisualID) && UMLPackage.eINSTANCE.getPort().isSuperTypeOf(domainElementMetaclass)) {
 				return PortEditPart.VISUAL_ID;
 			}
 			return getUnrecognizedClass_3004ChildNodeID(domainElement, semanticHint);
@@ -230,61 +229,52 @@ public class UMLVisualIDRegistry {
 			}
 			return getUnrecognizedInterface_3005ChildNodeID(domainElement, semanticHint);
 		case ComponentContentsEditPart.VISUAL_ID:
-			if ((semanticHint == null || Component2EditPart.VISUAL_ID == nodeVisualID) && UMLPackage.eINSTANCE.getComponent().isSuperTypeOf(domainElementMetaclass)
-					&& (domainElement == null || isNodeComponent_3001((Component) domainElement))) {
+			if ((semanticHint == null || Component2EditPart.VISUAL_ID == nodeVisualID) && UMLPackage.eINSTANCE.getComponent().isSuperTypeOf(domainElementMetaclass)) {
 				return Component2EditPart.VISUAL_ID;
 			}
-			if ((semanticHint == null || ArtifactEditPart.VISUAL_ID == nodeVisualID) && UMLPackage.eINSTANCE.getArtifact().isSuperTypeOf(domainElementMetaclass)
-					&& (domainElement == null || isNodeArtifact_3003((Artifact) domainElement))) {
+			if ((semanticHint == null || ArtifactEditPart.VISUAL_ID == nodeVisualID) && UMLPackage.eINSTANCE.getArtifact().isSuperTypeOf(domainElementMetaclass)) {
 				return ArtifactEditPart.VISUAL_ID;
 			}
 			if ((semanticHint == null || ClassEditPart.VISUAL_ID == nodeVisualID) && UMLPackage.eINSTANCE.getClass_().isSuperTypeOf(domainElementMetaclass)
-					&& (domainElement == null || isNodeClass_3004((Class) domainElement))) {
+					&& (domainElement == null || evaluate(Class_3004_Constraint, domainElement))) {
 				return ClassEditPart.VISUAL_ID;
 			}
-			if ((semanticHint == null || InterfaceEditPart.VISUAL_ID == nodeVisualID) && UMLPackage.eINSTANCE.getInterface().isSuperTypeOf(domainElementMetaclass)
-					&& (domainElement == null || isNodeInterface_3005((Interface) domainElement))) {
+			if ((semanticHint == null || InterfaceEditPart.VISUAL_ID == nodeVisualID) && UMLPackage.eINSTANCE.getInterface().isSuperTypeOf(domainElementMetaclass)) {
 				return InterfaceEditPart.VISUAL_ID;
 			}
 			return getUnrecognizedComponentContents_7001ChildNodeID(domainElement, semanticHint);
 		case ComponentContents2EditPart.VISUAL_ID:
-			if ((semanticHint == null || Component2EditPart.VISUAL_ID == nodeVisualID) && UMLPackage.eINSTANCE.getComponent().isSuperTypeOf(domainElementMetaclass)
-					&& (domainElement == null || isNodeComponent_3001((Component) domainElement))) {
+			if ((semanticHint == null || Component2EditPart.VISUAL_ID == nodeVisualID) && UMLPackage.eINSTANCE.getComponent().isSuperTypeOf(domainElementMetaclass)) {
 				return Component2EditPart.VISUAL_ID;
 			}
-			if ((semanticHint == null || ArtifactEditPart.VISUAL_ID == nodeVisualID) && UMLPackage.eINSTANCE.getArtifact().isSuperTypeOf(domainElementMetaclass)
-					&& (domainElement == null || isNodeArtifact_3003((Artifact) domainElement))) {
+			if ((semanticHint == null || ArtifactEditPart.VISUAL_ID == nodeVisualID) && UMLPackage.eINSTANCE.getArtifact().isSuperTypeOf(domainElementMetaclass)) {
 				return ArtifactEditPart.VISUAL_ID;
 			}
 			if ((semanticHint == null || ClassEditPart.VISUAL_ID == nodeVisualID) && UMLPackage.eINSTANCE.getClass_().isSuperTypeOf(domainElementMetaclass)
-					&& (domainElement == null || isNodeClass_3004((Class) domainElement))) {
+					&& (domainElement == null || evaluate(Class_3004_Constraint, domainElement))) {
 				return ClassEditPart.VISUAL_ID;
 			}
-			if ((semanticHint == null || InterfaceEditPart.VISUAL_ID == nodeVisualID) && UMLPackage.eINSTANCE.getInterface().isSuperTypeOf(domainElementMetaclass)
-					&& (domainElement == null || isNodeInterface_3005((Interface) domainElement))) {
+			if ((semanticHint == null || InterfaceEditPart.VISUAL_ID == nodeVisualID) && UMLPackage.eINSTANCE.getInterface().isSuperTypeOf(domainElementMetaclass)) {
 				return InterfaceEditPart.VISUAL_ID;
 			}
 			return getUnrecognizedComponentContents_7002ChildNodeID(domainElement, semanticHint);
 		case PackageEditPart.VISUAL_ID:
-			if ((semanticHint == null || ComponentEditPart.VISUAL_ID == nodeVisualID) && UMLPackage.eINSTANCE.getComponent().isSuperTypeOf(domainElementMetaclass)
-					&& (domainElement == null || isNodeComponent_2001((Component) domainElement))) {
+			if ((semanticHint == null || ComponentEditPart.VISUAL_ID == nodeVisualID) && UMLPackage.eINSTANCE.getComponent().isSuperTypeOf(domainElementMetaclass)) {
 				return ComponentEditPart.VISUAL_ID;
 			}
-			if ((semanticHint == null || Artifact2EditPart.VISUAL_ID == nodeVisualID) && UMLPackage.eINSTANCE.getArtifact().isSuperTypeOf(domainElementMetaclass)
-					&& (domainElement == null || isNodeArtifact_2002((Artifact) domainElement))) {
+			if ((semanticHint == null || Artifact2EditPart.VISUAL_ID == nodeVisualID) && UMLPackage.eINSTANCE.getArtifact().isSuperTypeOf(domainElementMetaclass)) {
 				return Artifact2EditPart.VISUAL_ID;
 			}
-			if ((semanticHint == null || Interface2EditPart.VISUAL_ID == nodeVisualID) && UMLPackage.eINSTANCE.getInterface().isSuperTypeOf(domainElementMetaclass)
-					&& (domainElement == null || isNodeInterface_2003((Interface) domainElement))) {
+			if ((semanticHint == null || Interface2EditPart.VISUAL_ID == nodeVisualID) && UMLPackage.eINSTANCE.getInterface().isSuperTypeOf(domainElementMetaclass)) {
 				return Interface2EditPart.VISUAL_ID;
 			}
 			if ((semanticHint == null || Class2EditPart.VISUAL_ID == nodeVisualID) && UMLPackage.eINSTANCE.getClass_().isSuperTypeOf(domainElementMetaclass)
-					&& (domainElement == null || isNodeClass_2004((Class) domainElement))) {
+					&& (domainElement == null || evaluate(Class_2004_Constraint, domainElement))) {
 				return Class2EditPart.VISUAL_ID;
 			}
 			return getUnrecognizedPackage_1000ChildNodeID(domainElement, semanticHint);
 		}
-		return -1;
+		return getUnrecognizedNodeID(containerView, domainElement);
 	}
 
 	/**
@@ -302,28 +292,26 @@ public class UMLVisualIDRegistry {
 	 * @generated
 	 */
 	public static int getLinkWithClassVisualID(EObject domainElement, EClass domainElementMetaclass) {
-		if (UMLPackage.eINSTANCE.getInterfaceRealization().isSuperTypeOf(domainElementMetaclass)
-				&& (domainElement == null || isLinkWithClassInterfaceRealization_4001((InterfaceRealization) domainElement))) {
+		if (UMLPackage.eINSTANCE.getInterfaceRealization().isSuperTypeOf(domainElementMetaclass) && (domainElement == null || evaluate(InterfaceRealization_4001_Constraint, domainElement))) {
 			return InterfaceRealizationEditPart.VISUAL_ID;
-		} else {
-			return getUnrecognizedLinkWithClassID(domainElement);
 		}
+		return getUnrecognizedLinkWithClassID(domainElement);
 	}
 
 	/**
-	 * User can change implementation of this method to check some additional 
-	 * conditions here.
-	 *
+	 * User can change implementation of this method to handle some specific
+	 * situations not covered by default logic.
+	 * 
 	 * @generated
 	 */
-	private static boolean isDiagramPackage_1000(Package element) {
+	private static boolean isDiagram(Package element) {
 		return true;
 	}
 
 	/**
 	 * User can change implementation of this method to handle some specific
 	 * situations not covered by default logic.
-	 *
+	 * 
 	 * @generated
 	 */
 	private static int getUnrecognizedDiagramID(EObject domainElement) {
@@ -331,99 +319,29 @@ public class UMLVisualIDRegistry {
 	}
 
 	/**
-	 * User can change implementation of this method to check some additional 
-	 * conditions here.
-	 *
+	 * User can change implementation of this method to handle some specific
+	 * situations not covered by default logic.
+	 * 
 	 * @generated
 	 */
-	private static boolean isNodeComponent_2001(Component element) {
-		return true;
-	}
-
-	/**
-	 * User can change implementation of this method to check some additional 
-	 * conditions here.
-	 *
-	 * @generated
-	 */
-	private static boolean isNodeArtifact_2002(Artifact element) {
-		return true;
-	}
-
-	/**
-	 * User can change implementation of this method to check some additional 
-	 * conditions here.
-	 *
-	 * @generated
-	 */
-	private static boolean isNodeInterface_2003(Interface element) {
-		return true;
-	}
-
-	/**
-	 * User can change implementation of this method to check some additional 
-	 * conditions here.
-	 *
-	 * @generated
-	 */
-	private static boolean isNodeClass_2004(Class element) {
-		return Class_2004.matches(element);
-	}
-
-	/**
-	 * User can change implementation of this method to check some additional 
-	 * conditions here.
-	 *
-	 * @generated
-	 */
-	private static boolean isNodeComponent_3001(Component element) {
-		return true;
-	}
-
-	/**
-	 * User can change implementation of this method to check some additional 
-	 * conditions here.
-	 *
-	 * @generated
-	 */
-	private static boolean isNodePort_3002(Port element) {
-		return true;
-	}
-
-	/**
-	 * User can change implementation of this method to check some additional 
-	 * conditions here.
-	 *
-	 * @generated
-	 */
-	private static boolean isNodeArtifact_3003(Artifact element) {
-		return true;
-	}
-
-	/**
-	 * User can change implementation of this method to check some additional 
-	 * conditions here.
-	 *
-	 * @generated
-	 */
-	private static boolean isNodeClass_3004(Class element) {
-		return Class_3004.matches(element);
-	}
-
-	/**
-	 * User can change implementation of this method to check some additional 
-	 * conditions here.
-	 *
-	 * @generated
-	 */
-	private static boolean isNodeInterface_3005(Interface element) {
-		return true;
+	private static int getUnrecognizedNodeID(View containerView, EObject domainElement) {
+		return -1;
 	}
 
 	/**
 	 * User can change implementation of this method to handle some specific
 	 * situations not covered by default logic.
-	 *
+	 * 
+	 * @generated
+	 */
+	private static int getUnrecognizedLinkWithClassID(EObject domainElement) {
+		return -1;
+	}
+
+	/**
+	 * User can change implementation of this method to handle some specific
+	 * situations not covered by default logic.
+	 * 
 	 * @generated
 	 */
 	private static int getUnrecognizedComponent_2001ChildNodeID(EObject domainElement, String semanticHint) {
@@ -433,7 +351,7 @@ public class UMLVisualIDRegistry {
 	/**
 	 * User can change implementation of this method to handle some specific
 	 * situations not covered by default logic.
-	 *
+	 * 
 	 * @generated
 	 */
 	private static int getUnrecognizedArtifact_2002ChildNodeID(EObject domainElement, String semanticHint) {
@@ -443,7 +361,7 @@ public class UMLVisualIDRegistry {
 	/**
 	 * User can change implementation of this method to handle some specific
 	 * situations not covered by default logic.
-	 *
+	 * 
 	 * @generated
 	 */
 	private static int getUnrecognizedInterface_2003ChildNodeID(EObject domainElement, String semanticHint) {
@@ -453,7 +371,7 @@ public class UMLVisualIDRegistry {
 	/**
 	 * User can change implementation of this method to handle some specific
 	 * situations not covered by default logic.
-	 *
+	 * 
 	 * @generated
 	 */
 	private static int getUnrecognizedClass_2004ChildNodeID(EObject domainElement, String semanticHint) {
@@ -463,7 +381,7 @@ public class UMLVisualIDRegistry {
 	/**
 	 * User can change implementation of this method to handle some specific
 	 * situations not covered by default logic.
-	 *
+	 * 
 	 * @generated
 	 */
 	private static int getUnrecognizedComponent_3001ChildNodeID(EObject domainElement, String semanticHint) {
@@ -473,7 +391,7 @@ public class UMLVisualIDRegistry {
 	/**
 	 * User can change implementation of this method to handle some specific
 	 * situations not covered by default logic.
-	 *
+	 * 
 	 * @generated
 	 */
 	private static int getUnrecognizedPort_3002ChildNodeID(EObject domainElement, String semanticHint) {
@@ -483,7 +401,7 @@ public class UMLVisualIDRegistry {
 	/**
 	 * User can change implementation of this method to handle some specific
 	 * situations not covered by default logic.
-	 *
+	 * 
 	 * @generated
 	 */
 	private static int getUnrecognizedArtifact_3003ChildNodeID(EObject domainElement, String semanticHint) {
@@ -493,7 +411,7 @@ public class UMLVisualIDRegistry {
 	/**
 	 * User can change implementation of this method to handle some specific
 	 * situations not covered by default logic.
-	 *
+	 * 
 	 * @generated
 	 */
 	private static int getUnrecognizedClass_3004ChildNodeID(EObject domainElement, String semanticHint) {
@@ -503,7 +421,7 @@ public class UMLVisualIDRegistry {
 	/**
 	 * User can change implementation of this method to handle some specific
 	 * situations not covered by default logic.
-	 *
+	 * 
 	 * @generated
 	 */
 	private static int getUnrecognizedInterface_3005ChildNodeID(EObject domainElement, String semanticHint) {
@@ -513,7 +431,7 @@ public class UMLVisualIDRegistry {
 	/**
 	 * User can change implementation of this method to handle some specific
 	 * situations not covered by default logic.
-	 *
+	 * 
 	 * @generated
 	 */
 	private static int getUnrecognizedComponentContents_7001ChildNodeID(EObject domainElement, String semanticHint) {
@@ -523,7 +441,7 @@ public class UMLVisualIDRegistry {
 	/**
 	 * User can change implementation of this method to handle some specific
 	 * situations not covered by default logic.
-	 *
+	 * 
 	 * @generated
 	 */
 	private static int getUnrecognizedComponentContents_7002ChildNodeID(EObject domainElement, String semanticHint) {
@@ -533,7 +451,7 @@ public class UMLVisualIDRegistry {
 	/**
 	 * User can change implementation of this method to handle some specific
 	 * situations not covered by default logic.
-	 *
+	 * 
 	 * @generated
 	 */
 	private static int getUnrecognizedPackage_1000ChildNodeID(EObject domainElement, String semanticHint) {
@@ -541,66 +459,11 @@ public class UMLVisualIDRegistry {
 	}
 
 	/**
-	 * User can change implementation of this method to handle some specific
-	 * situations not covered by default logic.
-	 *
 	 * @generated
 	 */
-	private static int getUnrecognizedLinkWithClassID(EObject domainElement) {
-		return -1;
+	private static boolean evaluate(UMLAbstractExpression expression, Object element) {
+		Object result = expression.evaluate(element);
+		return result instanceof Boolean && ((Boolean) result).booleanValue();
 	}
 
-	/**
-	 * User can change implementation of this method to check some additional 
-	 * conditions here.
-	 *
-	 * @generated
-	 */
-	private static boolean isLinkWithClassInterfaceRealization_4001(InterfaceRealization element) {
-		return InterfaceRealization_4001.matches(element);
-	}
-
-	/**
-	 * @generated
-	 */
-	private static final Matcher Class_3004 = new Matcher(UMLOCLFactory.getExpression("self.oclIsKindOf(uml::Class)", //$NON-NLS-1$
-			UMLPackage.eINSTANCE.getClass_()));
-
-	/**
-	 * @generated
-	 */
-	private static final Matcher Class_2004 = new Matcher(UMLOCLFactory.getExpression("self.oclIsKindOf(uml::Class)", //$NON-NLS-1$
-			UMLPackage.eINSTANCE.getClass_()));
-
-	/**
-	 * @generated
-	 */
-	private static final Matcher InterfaceRealization_4001 = new Matcher(UMLOCLFactory.getExpression("self.implementingClassifier.oclIsKindOf(uml::Component)", //$NON-NLS-1$
-			UMLPackage.eINSTANCE.getInterfaceRealization()));
-
-	/**
-	 * @generated	
-	 */
-	static class Matcher {
-
-		/**
-		 * @generated	
-		 */
-		private UMLAbstractExpression condition;
-
-		/**
-		 * @generated	
-		 */
-		Matcher(UMLAbstractExpression conditionExpression) {
-			this.condition = conditionExpression;
-		}
-
-		/**
-		 * @generated	
-		 */
-		boolean matches(Object object) {
-			Object result = condition.evaluate(object);
-			return result instanceof Boolean && ((Boolean) result).booleanValue();
-		}
-	}// Matcher
 }
