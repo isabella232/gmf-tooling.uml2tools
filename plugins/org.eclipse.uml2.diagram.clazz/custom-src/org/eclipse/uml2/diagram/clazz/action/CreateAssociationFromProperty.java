@@ -107,7 +107,9 @@ public class CreateAssociationFromProperty extends DiagramAction {
 		//first semantic changes in single transaction, then notation changes 
 		CompoundCommand result = new CompoundCommand();
 		result.add(new ICommandProxy(emfCommand));
-		result.add(new CreateAssociationViewCommand(propertyEditPart, associationSource, associationTarget, semanticRequest, getPreferencesHint()));
+		if (((GraphicalEditPart)propertyEditPart.getParent()).isCanonical()){
+			result.add(new CreateAssociationViewCommand(propertyEditPart, associationSource, associationTarget, semanticRequest, getPreferencesHint()));
+		}
 		return result;
 	}
 
