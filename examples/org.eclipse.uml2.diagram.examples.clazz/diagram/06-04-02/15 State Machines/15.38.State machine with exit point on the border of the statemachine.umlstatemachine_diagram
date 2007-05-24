@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<notation:Diagram xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.1/notation" xmlns:uml="http://www.eclipse.org/uml2/2.1.0/UML" xmi:id="_fnNRkQksEdyF_oRbgI8ypA" type="UMLStateMachine" name="15.38.State machine with exit point on the border of the statemachine.umlstatemachine_diagram" measurementUnit="Pixel">
+  <children xmi:type="notation:Node" xmi:id="_fpABUAksEdyF_oRbgI8ypA" type="2004">
+    <children xmi:type="notation:Node" xmi:id="_fpABUwksEdyF_oRbgI8ypA" type="5005"/>
+    <children xmi:type="notation:Node" xmi:id="_hxySwQksEdyF_oRbgI8ypA" type="3013">
+      <children xmi:type="notation:Node" xmi:id="_hxySxAksEdyF_oRbgI8ypA" type="7004">
+        <children xmi:type="notation:Node" xmi:id="_jZM8gAksEdyF_oRbgI8ypA" type="3001">
+          <children xmi:type="notation:Node" xmi:id="_jZM8gwksEdyF_oRbgI8ypA" type="5001"/>
+          <styles xmi:type="notation:ShapeStyle" xmi:id="_jZM8gQksEdyF_oRbgI8ypA"/>
+          <element xmi:type="uml:State" href="15.38.State machine with exit point on the border of the statemachine.uml#_jY5agAksEdyF_oRbgI8ypA"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_jZM8ggksEdyF_oRbgI8ypA" x="102" y="115" width="100"/>
+        </children>
+        <children xmi:type="notation:Node" xmi:id="_mH1tAAksEdyF_oRbgI8ypA" type="3001">
+          <children xmi:type="notation:Node" xmi:id="_mH1tAwksEdyF_oRbgI8ypA" type="5001"/>
+          <styles xmi:type="notation:ShapeStyle" xmi:id="_mH1tAQksEdyF_oRbgI8ypA"/>
+          <element xmi:type="uml:State" href="15.38.State machine with exit point on the border of the statemachine.uml#_mHiLAAksEdyF_oRbgI8ypA"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_mH1tAgksEdyF_oRbgI8ypA" x="273" y="248" width="95"/>
+        </children>
+        <children xmi:type="notation:Node" xmi:id="_pXjKQQksEdyF_oRbgI8ypA" type="3003">
+          <styles xmi:type="notation:ShapeStyle" xmi:id="_pXjKQgksEdyF_oRbgI8ypA"/>
+          <element xmi:type="uml:FinalState" href="15.38.State machine with exit point on the border of the statemachine.uml#_pXjKQAksEdyF_oRbgI8ypA"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_pXjKQwksEdyF_oRbgI8ypA" x="129" y="248"/>
+        </children>
+        <children xmi:type="notation:Node" xmi:id="_qeLbIQksEdyF_oRbgI8ypA" type="3004">
+          <styles xmi:type="notation:ShapeStyle" xmi:id="_qeLbIgksEdyF_oRbgI8ypA"/>
+          <element xmi:type="uml:Pseudostate" href="15.38.State machine with exit point on the border of the statemachine.uml#_qeLbIAksEdyF_oRbgI8ypA"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_qeLbIwksEdyF_oRbgI8ypA" x="135" y="50"/>
+        </children>
+        <styles xmi:type="notation:SortingStyle" xmi:id="_hxySxQksEdyF_oRbgI8ypA"/>
+        <styles xmi:type="notation:FilteringStyle" xmi:id="_hxySxgksEdyF_oRbgI8ypA"/>
+      </children>
+      <styles xmi:type="notation:ShapeStyle" xmi:id="_hxySwgksEdyF_oRbgI8ypA"/>
+      <element xmi:type="uml:Region" href="15.38.State machine with exit point on the border of the statemachine.uml#_hxySwAksEdyF_oRbgI8ypA"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_hxySwwksEdyF_oRbgI8ypA"/>
+    </children>
+    <children xmi:type="notation:Node" xmi:id="_vvF7IAksEdyF_oRbgI8ypA" type="3015">
+      <children xmi:type="notation:Node" xmi:id="_vvY2EAksEdyF_oRbgI8ypA" type="5007">
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_vvY2EQksEdyF_oRbgI8ypA" y="5"/>
+      </children>
+      <styles xmi:type="notation:ShapeStyle" xmi:id="_vvF7IQksEdyF_oRbgI8ypA"/>
+      <element xmi:type="uml:Pseudostate" href="15.38.State machine with exit point on the border of the statemachine.uml#_vuyZIAksEdyF_oRbgI8ypA"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_vvF7IgksEdyF_oRbgI8ypA" x="720" y="285"/>
+    </children>
+    <styles xmi:type="notation:ShapeStyle" xmi:id="_fpABUQksEdyF_oRbgI8ypA"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_fpABUgksEdyF_oRbgI8ypA"/>
+  </children>
+  <styles xmi:type="notation:DiagramStyle" xmi:id="_fnNRkgksEdyF_oRbgI8ypA"/>
+  <element xmi:type="uml:StateMachine" href="15.38.State machine with exit point on the border of the statemachine.uml#_fnNRkAksEdyF_oRbgI8ypA"/>
+  <edges xmi:type="notation:Edge" xmi:id="_rX2OEQksEdyF_oRbgI8ypA" type="4001" source="_qeLbIQksEdyF_oRbgI8ypA" target="_jZM8gAksEdyF_oRbgI8ypA">
+    <styles xmi:type="notation:ConnectorStyle" xmi:id="_rX2OEgksEdyF_oRbgI8ypA"/>
+    <styles xmi:type="notation:FontStyle" xmi:id="_rX2OEwksEdyF_oRbgI8ypA"/>
+    <element xmi:type="uml:Transition" href="15.38.State machine with exit point on the border of the statemachine.uml#_rX2OEAksEdyF_oRbgI8ypA"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_rX2OFAksEdyF_oRbgI8ypA" points="[2, 8, -8, -65]$[-40, 69, -50, -4]"/>
+  </edges>
+  <edges xmi:type="notation:Edge" xmi:id="_tCZEUQksEdyF_oRbgI8ypA" type="4001" source="_jZM8gAksEdyF_oRbgI8ypA" target="_pXjKQQksEdyF_oRbgI8ypA">
+    <styles xmi:type="notation:ConnectorStyle" xmi:id="_tCZEUgksEdyF_oRbgI8ypA"/>
+    <styles xmi:type="notation:FontStyle" xmi:id="_tCZEUwksEdyF_oRbgI8ypA"/>
+    <element xmi:type="uml:Transition" href="15.38.State machine with exit point on the border of the statemachine.uml#_tCZEUAksEdyF_oRbgI8ypA"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_tCZEVAksEdyF_oRbgI8ypA" points="[-2, 7, -1, -114]$[-2, 110, -1, -11]"/>
+    <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_tCZEVQksEdyF_oRbgI8ypA" id="(0.39,0.76666665)"/>
+  </edges>
+  <edges xmi:type="notation:Edge" xmi:id="_tfczwQksEdyF_oRbgI8ypA" type="4001" source="_jZM8gAksEdyF_oRbgI8ypA" target="_mH1tAAksEdyF_oRbgI8ypA">
+    <styles xmi:type="notation:ConnectorStyle" xmi:id="_tfczwgksEdyF_oRbgI8ypA"/>
+    <styles xmi:type="notation:FontStyle" xmi:id="_tfczwwksEdyF_oRbgI8ypA"/>
+    <element xmi:type="uml:Transition" href="15.38.State machine with exit point on the border of the statemachine.uml#_tfczwAksEdyF_oRbgI8ypA"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_tfczxAksEdyF_oRbgI8ypA" points="[24, 9, -118, -126]$[142, 9, 0, -126]$[142, 120, 0, -15]"/>
+    <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_tfczxQksEdyF_oRbgI8ypA" id="(0.76,0.43333334)"/>
+  </edges>
+  <edges xmi:type="notation:Edge" xmi:id="_ut0rYQksEdyF_oRbgI8ypA" type="4001" source="_mH1tAAksEdyF_oRbgI8ypA" target="_pXjKQQksEdyF_oRbgI8ypA">
+    <styles xmi:type="notation:ConnectorStyle" xmi:id="_ut0rYgksEdyF_oRbgI8ypA"/>
+    <styles xmi:type="notation:FontStyle" xmi:id="_ut0rYwksEdyF_oRbgI8ypA"/>
+    <element xmi:type="uml:Transition" href="15.38.State machine with exit point on the border of the statemachine.uml#_ut0rYAksEdyF_oRbgI8ypA"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_ut0rZAksEdyF_oRbgI8ypA" points="[-17, -1, 133, 2]$[-138, -1, 12, 2]"/>
+    <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_ut0rZQksEdyF_oRbgI8ypA" id="(0.17894737,0.46666667)"/>
+  </edges>
+  <edges xmi:type="notation:Edge" xmi:id="_36ZvsQksEdyF_oRbgI8ypA" type="4001" source="_mH1tAAksEdyF_oRbgI8ypA" target="_vvF7IAksEdyF_oRbgI8ypA">
+    <styles xmi:type="notation:ConnectorStyle" xmi:id="_36ZvsgksEdyF_oRbgI8ypA"/>
+    <styles xmi:type="notation:FontStyle" xmi:id="_36ZvswksEdyF_oRbgI8ypA"/>
+    <element xmi:type="uml:Transition" href="15.38.State machine with exit point on the border of the statemachine.uml#_36ZvsAksEdyF_oRbgI8ypA"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_36ZvtAksEdyF_oRbgI8ypA" points="[23, -6, -352, 2]$[375, 0, 0, 8]"/>
+    <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_36jgsAksEdyF_oRbgI8ypA" id="(0.75789475,0.46666667)"/>
+  </edges>
+  <edges xmi:type="notation:Edge" xmi:id="_5PViUAksEdyF_oRbgI8ypA" type="4001" source="_jZM8gAksEdyF_oRbgI8ypA" target="_vvF7IAksEdyF_oRbgI8ypA">
+    <styles xmi:type="notation:ConnectorStyle" xmi:id="_5PViUQksEdyF_oRbgI8ypA"/>
+    <styles xmi:type="notation:FontStyle" xmi:id="_5PViUgksEdyF_oRbgI8ypA"/>
+    <element xmi:type="uml:Transition" href="15.38.State machine with exit point on the border of the statemachine.uml#_5PMYYAksEdyF_oRbgI8ypA"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_5PViUwksEdyF_oRbgI8ypA" points="[16, 7, -518, -139]$[163, 7, -371, -139]$[527, 143, -7, -3]"/>
+    <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_5PViVAksEdyF_oRbgI8ypA" id="(0.84,0.16666667)"/>
+  </edges>
+</notation:Diagram>

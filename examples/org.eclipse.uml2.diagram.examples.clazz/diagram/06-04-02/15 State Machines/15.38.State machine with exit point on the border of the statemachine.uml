@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<uml:StateMachine xmi:version="2.1" xmlns:xmi="http://schema.omg.org/spec/XMI/2.1" xmlns:uml="http://www.eclipse.org/uml2/2.1.0/UML" xmi:id="_fnNRkAksEdyF_oRbgI8ypA" name="ReadAmountSM">
+  <region xmi:id="_hxySwAksEdyF_oRbgI8ypA">
+    <subvertex xmi:type="uml:State" xmi:id="_jY5agAksEdyF_oRbgI8ypA" name="selectAmount"/>
+    <subvertex xmi:type="uml:State" xmi:id="_mHiLAAksEdyF_oRbgI8ypA" name="enterAmount"/>
+    <subvertex xmi:type="uml:FinalState" xmi:id="_pXjKQAksEdyF_oRbgI8ypA"/>
+    <subvertex xmi:type="uml:Pseudostate" xmi:id="_qeLbIAksEdyF_oRbgI8ypA"/>
+    <transition xmi:id="_rX2OEAksEdyF_oRbgI8ypA" target="_jY5agAksEdyF_oRbgI8ypA" source="_qeLbIAksEdyF_oRbgI8ypA"/>
+    <transition xmi:id="_tCZEUAksEdyF_oRbgI8ypA" target="_pXjKQAksEdyF_oRbgI8ypA" source="_jY5agAksEdyF_oRbgI8ypA"/>
+    <transition xmi:id="_tfczwAksEdyF_oRbgI8ypA" target="_mHiLAAksEdyF_oRbgI8ypA" source="_jY5agAksEdyF_oRbgI8ypA"/>
+    <transition xmi:id="_ut0rYAksEdyF_oRbgI8ypA" target="_pXjKQAksEdyF_oRbgI8ypA" source="_mHiLAAksEdyF_oRbgI8ypA"/>
+    <transition xmi:id="_36ZvsAksEdyF_oRbgI8ypA" name="" target="_vuyZIAksEdyF_oRbgI8ypA" source="_mHiLAAksEdyF_oRbgI8ypA"/>
+    <transition xmi:id="_5PMYYAksEdyF_oRbgI8ypA" target="_vuyZIAksEdyF_oRbgI8ypA" source="_jY5agAksEdyF_oRbgI8ypA"/>
+  </region>
+  <connectionPoint xmi:id="_vuyZIAksEdyF_oRbgI8ypA" name="aborted" kind="exitPoint"/>
+</uml:StateMachine>

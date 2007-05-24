@@ -1,0 +1,217 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<notation:Diagram xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.1/notation" xmlns:uml="http://www.eclipse.org/uml2/2.1.0/UML" xmi:id="_yfGIIAktEdyF_oRbgI8ypA" type="UMLActivity" name="12.35.Example of an activity with input parameter.umlactivity_diagram" measurementUnit="Pixel">
+  <children xmi:type="notation:Node" xmi:id="_zmLsAAktEdyF_oRbgI8ypA" type="2026">
+    <children xmi:type="notation:Node" xmi:id="_zmVdAAktEdyF_oRbgI8ypA" type="5030"/>
+    <children xmi:type="notation:Node" xmi:id="_zmfOAAktEdyF_oRbgI8ypA" type="7010">
+      <children xmi:type="notation:Node" xmi:id="_rA1xYAkuEdyF_oRbgI8ypA" type="3029">
+        <children xmi:type="notation:Node" xmi:id="_rA-7UAkuEdyF_oRbgI8ypA" type="5023"/>
+        <styles xmi:type="notation:ShapeStyle" xmi:id="_rA1xYQkuEdyF_oRbgI8ypA"/>
+        <element xmi:type="uml:OpaqueAction" href="12.35.Example of an activity with input parameter.uml#_rAsAYAkuEdyF_oRbgI8ypA"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_rA1xYgkuEdyF_oRbgI8ypA" x="32" y="64"/>
+      </children>
+      <children xmi:type="notation:Node" xmi:id="_4pFIsAkuEdyF_oRbgI8ypA" type="3029">
+        <children xmi:type="notation:Node" xmi:id="_4pFIswkuEdyF_oRbgI8ypA" type="5023"/>
+        <styles xmi:type="notation:ShapeStyle" xmi:id="_4pFIsQkuEdyF_oRbgI8ypA"/>
+        <element xmi:type="uml:OpaqueAction" href="12.35.Example of an activity with input parameter.uml#_4o7-wAkuEdyF_oRbgI8ypA"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_4pFIsgkuEdyF_oRbgI8ypA" x="223" y="64"/>
+      </children>
+      <children xmi:type="notation:Node" xmi:id="_6InBwQkuEdyF_oRbgI8ypA" type="3029">
+        <children xmi:type="notation:Node" xmi:id="_6InBxAkuEdyF_oRbgI8ypA" type="5023"/>
+        <styles xmi:type="notation:ShapeStyle" xmi:id="_6InBwgkuEdyF_oRbgI8ypA"/>
+        <element xmi:type="uml:OpaqueAction" href="12.35.Example of an activity with input parameter.uml#_6InBwAkuEdyF_oRbgI8ypA"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_6InBwwkuEdyF_oRbgI8ypA" x="379" y="64"/>
+      </children>
+      <children xmi:type="notation:Node" xmi:id="_8M8RAQkuEdyF_oRbgI8ypA" type="3029">
+        <children xmi:type="notation:Node" xmi:id="_8M8RBAkuEdyF_oRbgI8ypA" type="5023"/>
+        <styles xmi:type="notation:ShapeStyle" xmi:id="_8M8RAgkuEdyF_oRbgI8ypA"/>
+        <element xmi:type="uml:OpaqueAction" href="12.35.Example of an activity with input parameter.uml#_8M8RAAkuEdyF_oRbgI8ypA"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_8M8RAwkuEdyF_oRbgI8ypA" x="598" y="64"/>
+      </children>
+      <children xmi:type="notation:Node" xmi:id="_FSuw0QkvEdyF_oRbgI8ypA" type="3035">
+        <styles xmi:type="notation:ShapeStyle" xmi:id="_FSuw0gkvEdyF_oRbgI8ypA"/>
+        <element xmi:type="uml:InitialNode" href="12.35.Example of an activity with input parameter.uml#_FSuw0AkvEdyF_oRbgI8ypA"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_FSuw0wkvEdyF_oRbgI8ypA" x="68" y="172"/>
+      </children>
+      <children xmi:type="notation:Node" xmi:id="_IDUpIQkvEdyF_oRbgI8ypA" type="3034">
+        <styles xmi:type="notation:ShapeStyle" xmi:id="_IDUpIgkvEdyF_oRbgI8ypA"/>
+        <element xmi:type="uml:MergeNode" href="12.35.Example of an activity with input parameter.uml#_IDUpIAkvEdyF_oRbgI8ypA"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_IDUpIwkvEdyF_oRbgI8ypA" x="152" y="64"/>
+      </children>
+      <children xmi:type="notation:Node" xmi:id="_UwNygAkvEdyF_oRbgI8ypA" type="3039">
+        <styles xmi:type="notation:ShapeStyle" xmi:id="_UwNygQkvEdyF_oRbgI8ypA"/>
+        <element xmi:type="uml:ForkNode" href="12.35.Example of an activity with input parameter.uml#_UwEokAkvEdyF_oRbgI8ypA"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_UwNyggkvEdyF_oRbgI8ypA" x="331" y="64"/>
+      </children>
+      <children xmi:type="notation:Node" xmi:id="_ZBhPoQkvEdyF_oRbgI8ypA" type="3040">
+        <styles xmi:type="notation:ShapeStyle" xmi:id="_ZBhPogkvEdyF_oRbgI8ypA"/>
+        <element xmi:type="uml:JoinNode" href="12.35.Example of an activity with input parameter.uml#_ZBhPoAkvEdyF_oRbgI8ypA"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_ZBhPowkvEdyF_oRbgI8ypA" x="484" y="66"/>
+      </children>
+      <children xmi:type="notation:Node" xmi:id="_aHQvsQkvEdyF_oRbgI8ypA" type="3033">
+        <styles xmi:type="notation:ShapeStyle" xmi:id="_aHQvsgkvEdyF_oRbgI8ypA"/>
+        <element xmi:type="uml:DecisionNode" href="12.35.Example of an activity with input parameter.uml#_aHQvsAkvEdyF_oRbgI8ypA"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_aHQvswkvEdyF_oRbgI8ypA" x="526" y="64"/>
+      </children>
+      <children xmi:type="notation:Node" xmi:id="_jboeEQkvEdyF_oRbgI8ypA" type="3032">
+        <styles xmi:type="notation:ShapeStyle" xmi:id="_jboeEgkvEdyF_oRbgI8ypA"/>
+        <element xmi:type="uml:ActivityFinalNode" href="12.35.Example of an activity with input parameter.uml#_jboeEAkvEdyF_oRbgI8ypA"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_jboeEwkvEdyF_oRbgI8ypA" x="633" y="183"/>
+      </children>
+      <children xmi:type="notation:Node" xmi:id="_oNj8AQkvEdyF_oRbgI8ypA" type="3029">
+        <children xmi:type="notation:Node" xmi:id="_oNj8BAkvEdyF_oRbgI8ypA" type="5023"/>
+        <styles xmi:type="notation:ShapeStyle" xmi:id="_oNj8AgkvEdyF_oRbgI8ypA"/>
+        <element xmi:type="uml:OpaqueAction" href="12.35.Example of an activity with input parameter.uml#_oNj8AAkvEdyF_oRbgI8ypA"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_oNj8AwkvEdyF_oRbgI8ypA" x="116" y="162"/>
+      </children>
+      <children xmi:type="notation:Node" xmi:id="_p3z3UQkvEdyF_oRbgI8ypA" type="3029">
+        <children xmi:type="notation:Node" xmi:id="_p3z3VAkvEdyF_oRbgI8ypA" type="5023"/>
+        <styles xmi:type="notation:ShapeStyle" xmi:id="_p3z3UgkvEdyF_oRbgI8ypA"/>
+        <element xmi:type="uml:OpaqueAction" href="12.35.Example of an activity with input parameter.uml#_p3z3UAkvEdyF_oRbgI8ypA"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_p3z3UwkvEdyF_oRbgI8ypA" x="235" y="160"/>
+      </children>
+      <children xmi:type="notation:Node" xmi:id="_toeskAkvEdyF_oRbgI8ypA" type="3041">
+        <children xmi:type="notation:Node" xmi:id="_toxngAkvEdyF_oRbgI8ypA" type="5024"/>
+        <styles xmi:type="notation:ShapeStyle" xmi:id="_toeskQkvEdyF_oRbgI8ypA"/>
+        <element xmi:type="uml:Pin" href="12.35.Example of an activity with input parameter.uml#_toU7kAkvEdyF_oRbgI8ypA"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_toeskgkvEdyF_oRbgI8ypA" x="199" y="244"/>
+      </children>
+      <children xmi:type="notation:Node" xmi:id="_yGJKsQkvEdyF_oRbgI8ypA" type="3029">
+        <children xmi:type="notation:Node" xmi:id="_yGJKtAkvEdyF_oRbgI8ypA" type="5023"/>
+        <styles xmi:type="notation:ShapeStyle" xmi:id="_yGJKsgkvEdyF_oRbgI8ypA"/>
+        <element xmi:type="uml:OpaqueAction" href="12.35.Example of an activity with input parameter.uml#_yGJKsAkvEdyF_oRbgI8ypA"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_yGJKswkvEdyF_oRbgI8ypA" x="355" y="160"/>
+      </children>
+      <styles xmi:type="notation:SortingStyle" xmi:id="_zmfOAQktEdyF_oRbgI8ypA"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_zmfOAgktEdyF_oRbgI8ypA"/>
+    </children>
+    <children xmi:type="notation:Node" xmi:id="_5_A2UAktEdyF_oRbgI8ypA" type="3052">
+      <children xmi:type="notation:Node" xmi:id="_5_KnUAktEdyF_oRbgI8ypA" type="5031"/>
+      <styles xmi:type="notation:ShapeStyle" xmi:id="_5_A2UQktEdyF_oRbgI8ypA"/>
+      <element xmi:type="uml:ActivityParameterNode" href="12.35.Example of an activity with input parameter.uml#_5-t7YAktEdyF_oRbgI8ypA"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_5_A2UgktEdyF_oRbgI8ypA" x="-122" y="96"/>
+    </children>
+    <styles xmi:type="notation:ShapeStyle" xmi:id="_zmLsAQktEdyF_oRbgI8ypA"/>
+    <element xmi:type="uml:Activity" href="12.35.Example of an activity with input parameter.uml#_zkjUUAktEdyF_oRbgI8ypA"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_zmLsAgktEdyF_oRbgI8ypA" x="84" y="12" width="709" height="349"/>
+  </children>
+  <styles xmi:type="notation:DiagramStyle" xmi:id="_yfGIIQktEdyF_oRbgI8ypA"/>
+  <element xmi:type="uml:Package" href="12.35.Example of an activity with input parameter.uml#_ydKOcAktEdyF_oRbgI8ypA"/>
+  <edges xmi:type="notation:Edge" xmi:id="_M5RrcQkvEdyF_oRbgI8ypA" type="4002" source="_5_A2UAktEdyF_oRbgI8ypA" target="_rA1xYAkuEdyF_oRbgI8ypA">
+    <styles xmi:type="notation:RoutingStyle" xmi:id="_M5RrcgkvEdyF_oRbgI8ypA"/>
+    <styles xmi:type="notation:FontStyle" xmi:id="_M5RrcwkvEdyF_oRbgI8ypA"/>
+    <element xmi:type="uml:ObjectFlow" href="12.35.Example of an activity with input parameter.uml#_M5RrcAkvEdyF_oRbgI8ypA"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_M5RrdAkvEdyF_oRbgI8ypA" points="[26, -2, -79, -2]$[62, -2, -43, -2]"/>
+    <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_M54IYAkvEdyF_oRbgI8ypA" id="(0.7886179,0.52)"/>
+  </edges>
+  <edges xmi:type="notation:Edge" xmi:id="_NfIKgQkvEdyF_oRbgI8ypA" type="4001" source="_rA1xYAkuEdyF_oRbgI8ypA" target="_IDUpIQkvEdyF_oRbgI8ypA">
+    <styles xmi:type="notation:RoutingStyle" xmi:id="_NfIKggkvEdyF_oRbgI8ypA"/>
+    <styles xmi:type="notation:FontStyle" xmi:id="_NfIKgwkvEdyF_oRbgI8ypA"/>
+    <element xmi:type="uml:ControlFlow" href="12.35.Example of an activity with input parameter.uml#_NfIKgAkvEdyF_oRbgI8ypA"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_NfIKhAkvEdyF_oRbgI8ypA" points="[44, -5, -53, 0]$[77, -5, -20, 0]"/>
+  </edges>
+  <edges xmi:type="notation:Edge" xmi:id="_P8pV0QkvEdyF_oRbgI8ypA" type="4001" source="_FSuw0QkvEdyF_oRbgI8ypA" target="_rA1xYAkuEdyF_oRbgI8ypA">
+    <styles xmi:type="notation:RoutingStyle" xmi:id="_P8pV0gkvEdyF_oRbgI8ypA"/>
+    <styles xmi:type="notation:FontStyle" xmi:id="_P8pV0wkvEdyF_oRbgI8ypA"/>
+    <element xmi:type="uml:ControlFlow" href="12.35.Example of an activity with input parameter.uml#_P8pV0AkvEdyF_oRbgI8ypA"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_P8pV1AkvEdyF_oRbgI8ypA" points="[-1, -7, -1, 83]$[-9, -65, -9, 25]"/>
+  </edges>
+  <edges xmi:type="notation:Edge" xmi:id="_SeVPcQkvEdyF_oRbgI8ypA" type="4001" source="_IDUpIQkvEdyF_oRbgI8ypA" target="_4pFIsAkuEdyF_oRbgI8ypA">
+    <styles xmi:type="notation:RoutingStyle" xmi:id="_SeVPcgkvEdyF_oRbgI8ypA"/>
+    <styles xmi:type="notation:FontStyle" xmi:id="_SeVPcwkvEdyF_oRbgI8ypA"/>
+    <element xmi:type="uml:ControlFlow" href="12.35.Example of an activity with input parameter.uml#_SeVPcAkvEdyF_oRbgI8ypA"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_SeVPdAkvEdyF_oRbgI8ypA" points="[20, -1, -48, 0]$[51, -5, -17, -4]"/>
+    <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_SeeZYAkvEdyF_oRbgI8ypA" id="(0.2125,0.38)"/>
+  </edges>
+  <edges xmi:type="notation:Edge" xmi:id="_Wa6ZwAkvEdyF_oRbgI8ypA" type="4001" source="_4pFIsAkuEdyF_oRbgI8ypA" target="_UwNygAkvEdyF_oRbgI8ypA">
+    <styles xmi:type="notation:RoutingStyle" xmi:id="_Wa6ZwQkvEdyF_oRbgI8ypA"/>
+    <styles xmi:type="notation:FontStyle" xmi:id="_Wa6ZwgkvEdyF_oRbgI8ypA"/>
+    <element xmi:type="uml:ControlFlow" href="12.35.Example of an activity with input parameter.uml#_WaxP0AkvEdyF_oRbgI8ypA"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_Wa6ZwwkvEdyF_oRbgI8ypA" points="[16, 2, -28, 0]$[44, 2, 0, 0]"/>
+    <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_Wa6ZxAkvEdyF_oRbgI8ypA" id="(0.8,0.38)"/>
+    <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_Wa6ZxQkvEdyF_oRbgI8ypA" id="(0.0,0.42)"/>
+  </edges>
+  <edges xmi:type="notation:Edge" xmi:id="_f_YZoQkvEdyF_oRbgI8ypA" type="4001" source="_UwNygAkvEdyF_oRbgI8ypA" target="_6InBwQkuEdyF_oRbgI8ypA">
+    <styles xmi:type="notation:RoutingStyle" xmi:id="_f_YZogkvEdyF_oRbgI8ypA"/>
+    <styles xmi:type="notation:FontStyle" xmi:id="_f_YZowkvEdyF_oRbgI8ypA"/>
+    <element xmi:type="uml:ControlFlow" href="12.35.Example of an activity with input parameter.uml#_f_YZoAkvEdyF_oRbgI8ypA"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_f_YZpAkvEdyF_oRbgI8ypA" points="[3, 3, -48, 0]$[47, 2, -4, -1]"/>
+    <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_f_hjkAkvEdyF_oRbgI8ypA" id="(0.25,0.24)"/>
+    <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_f_hjkQkvEdyF_oRbgI8ypA" id="(0.05,0.3)"/>
+  </edges>
+  <edges xmi:type="notation:Edge" xmi:id="_g5f4gQkvEdyF_oRbgI8ypA" type="4001" source="_6InBwQkuEdyF_oRbgI8ypA" target="_ZBhPoQkvEdyF_oRbgI8ypA">
+    <styles xmi:type="notation:RoutingStyle" xmi:id="_g5f4ggkvEdyF_oRbgI8ypA"/>
+    <styles xmi:type="notation:FontStyle" xmi:id="_g5f4gwkvEdyF_oRbgI8ypA"/>
+    <element xmi:type="uml:ControlFlow" href="12.35.Example of an activity with input parameter.uml#_g5f4gAkvEdyF_oRbgI8ypA"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_g5f4hAkvEdyF_oRbgI8ypA" points="[1, 3, -25, 0]$[26, 3, 0, 0]"/>
+    <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_g5f4hQkvEdyF_oRbgI8ypA" id="(0.9875,0.18)"/>
+    <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_g5f4hgkvEdyF_oRbgI8ypA" id="(0.0,0.2)"/>
+  </edges>
+  <edges xmi:type="notation:Edge" xmi:id="_h1ZgEQkvEdyF_oRbgI8ypA" type="4001" source="_ZBhPoQkvEdyF_oRbgI8ypA" target="_aHQvsQkvEdyF_oRbgI8ypA">
+    <styles xmi:type="notation:RoutingStyle" xmi:id="_h1ZgEgkvEdyF_oRbgI8ypA"/>
+    <styles xmi:type="notation:FontStyle" xmi:id="_h1ZgEwkvEdyF_oRbgI8ypA"/>
+    <element xmi:type="uml:ControlFlow" href="12.35.Example of an activity with input parameter.uml#_h1ZgEAkvEdyF_oRbgI8ypA"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_h1ZgFAkvEdyF_oRbgI8ypA" points="[4, -3, -42, 0]$[42, -3, -4, 0]"/>
+    <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_h1jREAkvEdyF_oRbgI8ypA" id="(0.0,0.4)"/>
+    <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_h1jREQkvEdyF_oRbgI8ypA" id="(0.1,0.475)"/>
+  </edges>
+  <edges xmi:type="notation:Edge" xmi:id="_if4AcAkvEdyF_oRbgI8ypA" type="4001" source="_aHQvsQkvEdyF_oRbgI8ypA" target="_8M8RAQkuEdyF_oRbgI8ypA">
+    <styles xmi:type="notation:RoutingStyle" xmi:id="_if4AcQkvEdyF_oRbgI8ypA"/>
+    <styles xmi:type="notation:FontStyle" xmi:id="_if4AcgkvEdyF_oRbgI8ypA"/>
+    <element xmi:type="uml:ControlFlow" href="12.35.Example of an activity with input parameter.uml#_ifuPcAkvEdyF_oRbgI8ypA"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_if4AcwkvEdyF_oRbgI8ypA" points="[6, 2, -41, 0]$[38, 0, -9, -2]"/>
+    <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_if4AdAkvEdyF_oRbgI8ypA" id="(0.85,0.425)"/>
+    <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_if4AdQkvEdyF_oRbgI8ypA" id="(0.1125,0.38)"/>
+  </edges>
+  <edges xmi:type="notation:Edge" xmi:id="_kYRsgQkvEdyF_oRbgI8ypA" type="4001" source="_8M8RAQkuEdyF_oRbgI8ypA" target="_jboeEQkvEdyF_oRbgI8ypA">
+    <styles xmi:type="notation:RoutingStyle" xmi:id="_kYRsggkvEdyF_oRbgI8ypA"/>
+    <styles xmi:type="notation:FontStyle" xmi:id="_kYRsgwkvEdyF_oRbgI8ypA"/>
+    <element xmi:type="uml:ControlFlow" href="12.35.Example of an activity with input parameter.uml#_kYRsgAkvEdyF_oRbgI8ypA"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_kYRshAkvEdyF_oRbgI8ypA" points="[2, 9, 0, -73]$[1, 78, -1, -4]"/>
+    <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_kYRshQkvEdyF_oRbgI8ypA" id="(0.525,0.82)"/>
+    <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_kYRshgkvEdyF_oRbgI8ypA" id="(0.39130434,0.17391305)"/>
+  </edges>
+  <edges xmi:type="notation:Edge" xmi:id="_l-zlcAkvEdyF_oRbgI8ypA" type="4001" source="_IDUpIQkvEdyF_oRbgI8ypA" target="_aHQvsQkvEdyF_oRbgI8ypA">
+    <styles xmi:type="notation:RoutingStyle" xmi:id="_l-zlcQkvEdyF_oRbgI8ypA"/>
+    <styles xmi:type="notation:FontStyle" xmi:id="_l-zlcgkvEdyF_oRbgI8ypA"/>
+    <element xmi:type="uml:ControlFlow" href="12.35.Example of an activity with input parameter.uml#_l-p0cAkvEdyF_oRbgI8ypA"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_l-zlcwkvEdyF_oRbgI8ypA" points="[0, -4, -376, -7]$[0, -40, -376, -43]$[376, -40, 0, -43]$[376, -4, 0, -7]"/>
+    <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_l-zldAkvEdyF_oRbgI8ypA" id="(0.45,0.1)"/>
+    <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_l-zldQkvEdyF_oRbgI8ypA" id="(0.5,0.175)"/>
+  </edges>
+  <edges xmi:type="notation:Edge" xmi:id="_3_dHcQkvEdyF_oRbgI8ypA" type="4001" source="_UwNygAkvEdyF_oRbgI8ypA" target="_oNj8AQkvEdyF_oRbgI8ypA">
+    <styles xmi:type="notation:RoutingStyle" xmi:id="_3_dHcgkvEdyF_oRbgI8ypA"/>
+    <styles xmi:type="notation:FontStyle" xmi:id="_3_dHcwkvEdyF_oRbgI8ypA"/>
+    <element xmi:type="uml:ControlFlow" href="12.35.Example of an activity with input parameter.uml#_3_dHcAkvEdyF_oRbgI8ypA"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_3_dHdAkvEdyF_oRbgI8ypA" points="[2, 0, 179, -98]$[24, 0, 201, -98]$[24, 48, 201, -50]$[-177, 48, 0, -50]$[-177, 73, 0, -25]"/>
+  </edges>
+  <edges xmi:type="notation:Edge" xmi:id="_6ev0YAkvEdyF_oRbgI8ypA" type="4002" source="_oNj8AQkvEdyF_oRbgI8ypA" target="_toeskAkvEdyF_oRbgI8ypA">
+    <styles xmi:type="notation:RoutingStyle" xmi:id="_6ev0YQkvEdyF_oRbgI8ypA"/>
+    <styles xmi:type="notation:FontStyle" xmi:id="_6ev0YgkvEdyF_oRbgI8ypA"/>
+    <element xmi:type="uml:ObjectFlow" href="12.35.Example of an activity with input parameter.uml#_6emqcAkvEdyF_oRbgI8ypA"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_6ev0YwkvEdyF_oRbgI8ypA" points="[18, 25, -34, -46]$[43, 67, -9, -4]"/>
+    <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_6ev0ZAkvEdyF_oRbgI8ypA" id="(0.18367347,0.35)"/>
+  </edges>
+  <edges xmi:type="notation:Edge" xmi:id="_6_PSUAkvEdyF_oRbgI8ypA" type="4002" source="_toeskAkvEdyF_oRbgI8ypA" target="_p3z3UQkvEdyF_oRbgI8ypA">
+    <styles xmi:type="notation:RoutingStyle" xmi:id="_6_PSUQkvEdyF_oRbgI8ypA"/>
+    <styles xmi:type="notation:FontStyle" xmi:id="_6_PSUgkvEdyF_oRbgI8ypA"/>
+    <element xmi:type="uml:ObjectFlow" href="12.35.Example of an activity with input parameter.uml#_6_FhUAkvEdyF_oRbgI8ypA"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_6_PSUwkvEdyF_oRbgI8ypA" points="[4, -7, -23, 41]$[20, -41, -7, 7]"/>
+    <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_6_PSVAkvEdyF_oRbgI8ypA" id="(0.71428573,0.175)"/>
+    <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_6_PSVQkvEdyF_oRbgI8ypA" id="(0.2888889,0.86)"/>
+  </edges>
+  <edges xmi:type="notation:Edge" xmi:id="_7p28oQkvEdyF_oRbgI8ypA" type="4001" source="_p3z3UQkvEdyF_oRbgI8ypA" target="_yGJKsQkvEdyF_oRbgI8ypA">
+    <styles xmi:type="notation:RoutingStyle" xmi:id="_7p28ogkvEdyF_oRbgI8ypA"/>
+    <styles xmi:type="notation:FontStyle" xmi:id="_7p28owkvEdyF_oRbgI8ypA"/>
+    <element xmi:type="uml:ControlFlow" href="12.35.Example of an activity with input parameter.uml#_7p28oAkvEdyF_oRbgI8ypA"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_7p28pAkvEdyF_oRbgI8ypA" points="[14, 2, -45, 0]$[44, 2, -15, 0]"/>
+    <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_7qAGkAkvEdyF_oRbgI8ypA" id="(0.84444445,0.46)"/>
+    <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_7qAGkQkvEdyF_oRbgI8ypA" id="(0.14851485,0.5)"/>
+  </edges>
+  <edges xmi:type="notation:Edge" xmi:id="_8kagYQkvEdyF_oRbgI8ypA" type="4001" source="_yGJKsQkvEdyF_oRbgI8ypA" target="_ZBhPoQkvEdyF_oRbgI8ypA">
+    <styles xmi:type="notation:RoutingStyle" xmi:id="_8kagYgkvEdyF_oRbgI8ypA"/>
+    <styles xmi:type="notation:FontStyle" xmi:id="_8kagYwkvEdyF_oRbgI8ypA"/>
+    <element xmi:type="uml:ControlFlow" href="12.35.Example of an activity with input parameter.uml#_8kagYAkvEdyF_oRbgI8ypA"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_8kagZAkvEdyF_oRbgI8ypA" points="[6, 6, -30, 92]$[19, 6, -17, 92]$[19, -80, -17, 6]$[34, -80, -2, 6]"/>
+    <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_8kkRYAkvEdyF_oRbgI8ypA" id="(0.9405941,0.34)"/>
+  </edges>
+</notation:Diagram>

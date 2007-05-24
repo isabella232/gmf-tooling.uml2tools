@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<uml:StateMachine xmi:version="2.1" xmlns:xmi="http://schema.omg.org/spec/XMI/2.1" xmlns:uml="http://www.eclipse.org/uml2/2.1.0/UML" xmi:id="_vSb7sAkpEdyUi59dgcIfPg" name="StateMachine">
+  <region xmi:id="_xCyfAAkpEdyUi59dgcIfPg">
+    <subvertex xmi:type="uml:State" xmi:id="_yzIbQAkpEdyUi59dgcIfPg" name="State0"/>
+    <subvertex xmi:type="uml:State" xmi:id="_0cBrsAkpEdyUi59dgcIfPg" name="State1"/>
+    <subvertex xmi:type="uml:State" xmi:id="_1PSUoAkpEdyUi59dgcIfPg" name="State2"/>
+    <subvertex xmi:type="uml:State" xmi:id="_1x22MAkpEdyUi59dgcIfPg" name="State3"/>
+    <subvertex xmi:type="uml:State" xmi:id="_2VUIkAkpEdyUi59dgcIfPg" name="State4"/>
+    <subvertex xmi:type="uml:Pseudostate" xmi:id="_5rbv0AkpEdyUi59dgcIfPg" kind="junction"/>
+    <transition xmi:id="_7yIWkAkpEdyUi59dgcIfPg" target="_5rbv0AkpEdyUi59dgcIfPg" source="_yzIbQAkpEdyUi59dgcIfPg"/>
+    <transition xmi:id="_8nBXMAkpEdyUi59dgcIfPg" target="_5rbv0AkpEdyUi59dgcIfPg" source="_0cBrsAkpEdyUi59dgcIfPg"/>
+    <transition xmi:id="_9AWdMAkpEdyUi59dgcIfPg" target="_1PSUoAkpEdyUi59dgcIfPg" source="_5rbv0AkpEdyUi59dgcIfPg"/>
+    <transition xmi:id="_9ak7EAkpEdyUi59dgcIfPg" target="_1x22MAkpEdyUi59dgcIfPg" source="_5rbv0AkpEdyUi59dgcIfPg"/>
+    <transition xmi:id="_94iCYAkpEdyUi59dgcIfPg" target="_2VUIkAkpEdyUi59dgcIfPg" source="_5rbv0AkpEdyUi59dgcIfPg"/>
+  </region>
+</uml:StateMachine>
