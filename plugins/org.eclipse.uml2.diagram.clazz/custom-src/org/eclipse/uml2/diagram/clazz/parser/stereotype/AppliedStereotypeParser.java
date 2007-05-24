@@ -92,7 +92,7 @@ public class AppliedStereotypeParser implements ISemanticParser {
 	
 	public String getPrintString(IAdaptable element, int flags) {
 		String editString = getEditString(element, flags);
-		return editString.isEmpty() ? editString : "<" + editString + ">";
+		return editString == null || editString.length() == 0 ? editString : "<" + editString + ">";
 	}
 
 	
