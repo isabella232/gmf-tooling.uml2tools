@@ -12,6 +12,7 @@ import org.eclipse.gef.palette.ToolEntry;
 import org.eclipse.gmf.runtime.diagram.ui.tools.UnspecifiedTypeConnectionTool;
 import org.eclipse.gmf.runtime.diagram.ui.tools.UnspecifiedTypeCreationTool;
 import org.eclipse.uml2.diagram.activity.providers.UMLElementTypes;
+import org.eclipse.uml2.uml.UMLPackage;
 
 /**
  * @generated
@@ -433,11 +434,21 @@ public class UMLPaletteFactory {
 	/**
 	 * @generated
 	 */
-	private ToolEntry createSelection6CreationTool() {
+	private ToolEntry createSelection6CreationToolGen() {
 		List/*<IElementType>*/types = new ArrayList/*<IElementType>*/(1);
 		types.add(UMLElementTypes.ObjectNodeSelection_4004);
 		LinkToolEntry entry = new LinkToolEntry(Messages.Selection6CreationTool_title, Messages.Selection6CreationTool_desc, types);
 		entry.setSmallIcon(UMLElementTypes.getImageDescriptor(UMLElementTypes.ObjectNodeSelection_4004));
+		entry.setLargeIcon(entry.getSmallIcon());
+		return entry;
+	}
+
+	/**
+	 * @generated NOT
+	 */
+	private ToolEntry createSelection6CreationTool() {
+		ToolEntry entry = createSelection6CreationToolGen();
+		entry.setSmallIcon(UMLElementTypes.getImageDescriptor(UMLPackage.eINSTANCE.getStateMachine()));
 		entry.setLargeIcon(entry.getSmallIcon());
 		return entry;
 	}
