@@ -2869,40 +2869,6 @@ public class UMLDiagramUpdater {
 	}
 
 	/**
-	 * @NOT-GENERATED
-	 */
-	private static Collection findRelatedAssociations2(Type type, Map crossReferences, boolean sourceNotTarget) {
-		Collection result = new LinkedList();
-		Collection settings = (Collection) crossReferences.get(type);
-		for (Iterator it = settings.iterator(); it.hasNext();) {
-			EStructuralFeature.Setting setting = (EStructuralFeature.Setting) it.next();
-			if (setting.getEStructuralFeature() != UMLPackage.eINSTANCE.getTypedElement_Type() || false == setting.getEObject() instanceof Property) {
-				continue;
-			}
-			Property thisEnd = (Property) setting.getEObject();
-			Association link = thisEnd.getAssociation();
-			if (link == null) {
-				continue;
-			}
-			if (AssociationEditPart.VISUAL_ID != UMLVisualIDRegistry.getLinkWithClassVisualID(link)) {
-				continue;
-			}
-			if (thisEnd != AssociationEndConvention.getMemberEnd(link, sourceNotTarget)) {
-				continue;
-			}
-			//ok, we found it
-			Property otherEnd = AssociationEndConvention.getMemberEnd(link, !sourceNotTarget);
-
-			Property sourceEnd = sourceNotTarget ? thisEnd : otherEnd;
-			Property targetEnd = sourceNotTarget ? otherEnd : thisEnd;
-			EObject gmfSource = sourceEnd.getType();
-			EObject gmfTarget = targetEnd.getType();
-			result.add(new UMLLinkDescriptor(gmfSource, gmfTarget, link, UMLElementTypes.Association_4005, AssociationEditPart.VISUAL_ID));
-		}
-		return result;
-	}
-
-	/**
 	 * @generated
 	 */
 	private static Collection getContainedTypeModelFacetLinks_InterfaceRealization_4008(BehavioredClassifier container) {
