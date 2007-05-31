@@ -817,6 +817,16 @@
       </metamodel>
       <metamodel nsURI="http://www.eclipse.org/uml2/2.1.0/UML">
          <metamodelType
+               id="org.eclipse.uml2.diagram.activity.SendSignalAction_3053"
+               name="%metatype.name.SendSignalAction_3053"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
+               eclass="SendSignalAction"
+               edithelper="org.eclipse.uml2.diagram.activity.edit.helpers.SendSignalActionEditHelper">
+            <param name="semanticHint" value="3053"/>
+         </metamodelType>
+      </metamodel>
+      <metamodel nsURI="http://www.eclipse.org/uml2/2.1.0/UML">
+         <metamodelType
                id="org.eclipse.uml2.diagram.activity.LiteralString_3049"
                name="%metatype.name.LiteralString_3049"
                kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
@@ -945,6 +955,7 @@
          <elementType ref="org.eclipse.uml2.diagram.activity.CentralBufferNode_3025"/>
          <elementType ref="org.eclipse.uml2.diagram.activity.OpaqueBehavior_3047"/>
          <elementType ref="org.eclipse.uml2.diagram.activity.ActivityParameterNode_3052"/>
+         <elementType ref="org.eclipse.uml2.diagram.activity.SendSignalAction_3053"/>
          <elementType ref="org.eclipse.uml2.diagram.activity.LiteralString_3049"/>
          <elementType ref="org.eclipse.uml2.diagram.activity.LiteralString_3051"/>
          <elementType ref="org.eclipse.uml2.diagram.activity.ControlFlow_4001"/>

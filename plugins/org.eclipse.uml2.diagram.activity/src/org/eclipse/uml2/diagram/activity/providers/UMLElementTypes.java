@@ -287,6 +287,11 @@ public class UMLElementTypes extends ElementInitializers {
 	/**
 	 * @generated
 	 */
+	public static final IElementType SendSignalAction_3053 = getElementType("org.eclipse.uml2.diagram.activity.SendSignalAction_3053"); //$NON-NLS-1$
+
+	/**
+	 * @generated
+	 */
 	public static final IElementType LiteralString_3049 = getElementType("org.eclipse.uml2.diagram.activity.LiteralString_3049"); //$NON-NLS-1$
 
 	/**
@@ -521,6 +526,8 @@ public class UMLElementTypes extends ElementInitializers {
 
 			elements.put(ActivityParameterNode_3052, UMLPackage.eINSTANCE.getActivityParameterNode());
 
+			elements.put(SendSignalAction_3053, UMLPackage.eINSTANCE.getSendSignalAction());
+
 			elements.put(LiteralString_3049, UMLPackage.eINSTANCE.getLiteralString());
 
 			elements.put(LiteralString_3051, UMLPackage.eINSTANCE.getLiteralString());
@@ -599,6 +606,7 @@ public class UMLElementTypes extends ElementInitializers {
 			KNOWN_ELEMENT_TYPES.add(CentralBufferNode_3025);
 			KNOWN_ELEMENT_TYPES.add(OpaqueBehavior_3047);
 			KNOWN_ELEMENT_TYPES.add(ActivityParameterNode_3052);
+			KNOWN_ELEMENT_TYPES.add(SendSignalAction_3053);
 			KNOWN_ELEMENT_TYPES.add(LiteralString_3049);
 			KNOWN_ELEMENT_TYPES.add(LiteralString_3051);
 			KNOWN_ELEMENT_TYPES.add(ControlFlow_4001);

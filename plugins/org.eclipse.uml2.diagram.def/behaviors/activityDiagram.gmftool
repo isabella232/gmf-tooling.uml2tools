@@ -50,6 +50,10 @@
           description="Create Call Operation Action"/>
       <tools
           xsi:type="gmftool:CreationTool"
+          title="Send Signal Action"
+          description="Create Send Signal Action"/>
+      <tools
+          xsi:type="gmftool:CreationTool"
           title="Constraint"
           description="Create Precondition or Postcondition Constraint"/>
       <tools

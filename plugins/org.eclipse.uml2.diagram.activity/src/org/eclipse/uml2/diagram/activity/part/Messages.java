@@ -298,32 +298,42 @@ public class Messages extends NLS {
 	/**
 	 * @generated
 	 */
-	public static String Constraint8CreationTool_title;
+	public static String SendSignalAction8CreationTool_title;
 
 	/**
 	 * @generated
 	 */
-	public static String Constraint8CreationTool_desc;
+	public static String SendSignalAction8CreationTool_desc;
 
 	/**
 	 * @generated
 	 */
-	public static String ConstraintLink9CreationTool_title;
+	public static String Constraint9CreationTool_title;
 
 	/**
 	 * @generated
 	 */
-	public static String ConstraintLink9CreationTool_desc;
+	public static String Constraint9CreationTool_desc;
 
 	/**
 	 * @generated
 	 */
-	public static String OpaqueBehavior10CreationTool_title;
+	public static String ConstraintLink10CreationTool_title;
 
 	/**
 	 * @generated
 	 */
-	public static String OpaqueBehavior10CreationTool_desc;
+	public static String ConstraintLink10CreationTool_desc;
+
+	/**
+	 * @generated
+	 */
+	public static String OpaqueBehavior11CreationTool_title;
+
+	/**
+	 * @generated
+	 */
+	public static String OpaqueBehavior11CreationTool_desc;
 
 	/**
 	 * @generated
@@ -984,6 +994,16 @@ public class Messages extends NLS {
 	 * @generated
 	 */
 	public static String NavigatorGroupName_ActivityParameterNode_3052_outgoinglinks;
+
+	/**
+	 * @generated
+	 */
+	public static String NavigatorGroupName_SendSignalAction_3053_incominglinks;
+
+	/**
+	 * @generated
+	 */
+	public static String NavigatorGroupName_SendSignalAction_3053_outgoinglinks;
 
 	/**
 	 * @generated

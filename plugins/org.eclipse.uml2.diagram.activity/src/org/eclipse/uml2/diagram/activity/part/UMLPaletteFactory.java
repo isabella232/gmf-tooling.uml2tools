@@ -56,9 +56,10 @@ public class UMLPaletteFactory {
 		paletteContainer.add(createAddFeatureValueAction5CreationTool());
 		paletteContainer.add(createCallBehaviorAction6CreationTool());
 		paletteContainer.add(createCallOperationAction7CreationTool());
-		paletteContainer.add(createConstraint8CreationTool());
-		paletteContainer.add(createConstraintLink9CreationTool());
-		paletteContainer.add(createOpaqueBehavior10CreationTool());
+		paletteContainer.add(createSendSignalAction8CreationTool());
+		paletteContainer.add(createConstraint9CreationTool());
+		paletteContainer.add(createConstraintLink10CreationTool());
+		paletteContainer.add(createOpaqueBehavior11CreationTool());
 		return paletteContainer;
 	}
 
@@ -226,11 +227,23 @@ public class UMLPaletteFactory {
 	/**
 	 * @generated
 	 */
-	private ToolEntry createConstraint8CreationTool() {
+	private ToolEntry createSendSignalAction8CreationTool() {
+		List/*<IElementType>*/types = new ArrayList/*<IElementType>*/(1);
+		types.add(UMLElementTypes.SendSignalAction_3053);
+		NodeToolEntry entry = new NodeToolEntry(Messages.SendSignalAction8CreationTool_title, Messages.SendSignalAction8CreationTool_desc, types);
+		entry.setSmallIcon(UMLElementTypes.getImageDescriptor(UMLElementTypes.SendSignalAction_3053));
+		entry.setLargeIcon(entry.getSmallIcon());
+		return entry;
+	}
+
+	/**
+	 * @generated
+	 */
+	private ToolEntry createConstraint9CreationTool() {
 		List/*<IElementType>*/types = new ArrayList/*<IElementType>*/(2);
 		types.add(UMLElementTypes.Constraint_2027);
 		types.add(UMLElementTypes.Constraint_2028);
-		NodeToolEntry entry = new NodeToolEntry(Messages.Constraint8CreationTool_title, Messages.Constraint8CreationTool_desc, types);
+		NodeToolEntry entry = new NodeToolEntry(Messages.Constraint9CreationTool_title, Messages.Constraint9CreationTool_desc, types);
 		entry.setSmallIcon(UMLElementTypes.getImageDescriptor(UMLElementTypes.Constraint_2027));
 		entry.setLargeIcon(entry.getSmallIcon());
 		return entry;
@@ -239,10 +252,10 @@ public class UMLPaletteFactory {
 	/**
 	 * @generated
 	 */
-	private ToolEntry createConstraintLink9CreationTool() {
+	private ToolEntry createConstraintLink10CreationTool() {
 		List/*<IElementType>*/types = new ArrayList/*<IElementType>*/(1);
 		types.add(UMLElementTypes.ActionLocalPrecondition_4003);
-		LinkToolEntry entry = new LinkToolEntry(Messages.ConstraintLink9CreationTool_title, Messages.ConstraintLink9CreationTool_desc, types);
+		LinkToolEntry entry = new LinkToolEntry(Messages.ConstraintLink10CreationTool_title, Messages.ConstraintLink10CreationTool_desc, types);
 		entry.setSmallIcon(UMLElementTypes.getImageDescriptor(UMLElementTypes.ActionLocalPrecondition_4003));
 		entry.setLargeIcon(entry.getSmallIcon());
 		return entry;
@@ -251,10 +264,10 @@ public class UMLPaletteFactory {
 	/**
 	 * @generated
 	 */
-	private ToolEntry createOpaqueBehavior10CreationTool() {
+	private ToolEntry createOpaqueBehavior11CreationTool() {
 		List/*<IElementType>*/types = new ArrayList/*<IElementType>*/(1);
 		types.add(UMLElementTypes.OpaqueBehavior_3047);
-		NodeToolEntry entry = new NodeToolEntry(Messages.OpaqueBehavior10CreationTool_title, Messages.OpaqueBehavior10CreationTool_desc, types);
+		NodeToolEntry entry = new NodeToolEntry(Messages.OpaqueBehavior11CreationTool_title, Messages.OpaqueBehavior11CreationTool_desc, types);
 		entry.setSmallIcon(UMLElementTypes.getImageDescriptor(UMLElementTypes.OpaqueBehavior_3047));
 		entry.setLargeIcon(entry.getSmallIcon());
 		return entry;

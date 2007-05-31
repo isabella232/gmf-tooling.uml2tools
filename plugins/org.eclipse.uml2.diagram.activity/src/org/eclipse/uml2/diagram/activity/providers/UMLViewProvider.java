@@ -96,6 +96,8 @@ import org.eclipse.uml2.diagram.activity.edit.parts.Pin2EditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.PinEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.PinName2EditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.PinNameEditPart;
+import org.eclipse.uml2.diagram.activity.edit.parts.SendSignalActionEditPart;
+import org.eclipse.uml2.diagram.activity.edit.parts.SendSignalActionNameEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.StructuredActivityNode2EditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.StructuredActivityNodeEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.StructuredActivityNodeStructuredActivityContentPaneCompartment2EditPart;
@@ -195,6 +197,8 @@ import org.eclipse.uml2.diagram.activity.view.factories.Pin2ViewFactory;
 import org.eclipse.uml2.diagram.activity.view.factories.PinName2ViewFactory;
 import org.eclipse.uml2.diagram.activity.view.factories.PinNameViewFactory;
 import org.eclipse.uml2.diagram.activity.view.factories.PinViewFactory;
+import org.eclipse.uml2.diagram.activity.view.factories.SendSignalActionNameViewFactory;
+import org.eclipse.uml2.diagram.activity.view.factories.SendSignalActionViewFactory;
 import org.eclipse.uml2.diagram.activity.view.factories.StructuredActivityNode2ViewFactory;
 import org.eclipse.uml2.diagram.activity.view.factories.StructuredActivityNodeStructuredActivityContentPaneCompartment2ViewFactory;
 import org.eclipse.uml2.diagram.activity.view.factories.StructuredActivityNodeStructuredActivityContentPaneCompartmentViewFactory;
@@ -395,6 +399,10 @@ public class UMLViewProvider extends AbstractViewProvider {
 			return ActivityParameterNodeViewFactory.class;
 		case ActivityParameterNodeNameEditPart.VISUAL_ID:
 			return ActivityParameterNodeNameViewFactory.class;
+		case SendSignalActionEditPart.VISUAL_ID:
+			return SendSignalActionViewFactory.class;
+		case SendSignalActionNameEditPart.VISUAL_ID:
+			return SendSignalActionNameViewFactory.class;
 		case LiteralStringEditPart.VISUAL_ID:
 			return LiteralStringViewFactory.class;
 		case LiteralString2EditPart.VISUAL_ID:

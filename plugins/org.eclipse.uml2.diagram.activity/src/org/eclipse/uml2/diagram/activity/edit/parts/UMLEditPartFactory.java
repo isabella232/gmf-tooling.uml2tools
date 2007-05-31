@@ -277,6 +277,12 @@ public class UMLEditPartFactory implements EditPartFactory {
 			case ActivityParameterNodeNameEditPart.VISUAL_ID:
 				return new ActivityParameterNodeNameEditPart(view);
 
+			case SendSignalActionEditPart.VISUAL_ID:
+				return new SendSignalActionEditPart(view);
+
+			case SendSignalActionNameEditPart.VISUAL_ID:
+				return new SendSignalActionNameEditPart(view);
+
 			case LiteralStringEditPart.VISUAL_ID:
 				return new LiteralStringEditPart(view);
 

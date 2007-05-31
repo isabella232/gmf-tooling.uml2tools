@@ -112,6 +112,8 @@ import org.eclipse.uml2.diagram.activity.edit.parts.Pin2EditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.PinEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.PinName2EditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.PinNameEditPart;
+import org.eclipse.uml2.diagram.activity.edit.parts.SendSignalActionEditPart;
+import org.eclipse.uml2.diagram.activity.edit.parts.SendSignalActionNameEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.StructuredActivityNode2EditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.StructuredActivityNodeEditPart;
 
@@ -268,6 +270,8 @@ public class UMLNavigatorLabelProvider extends LabelProvider implements ICommonL
 			return getImage("Navigator?Node?http://www.eclipse.org/uml2/2.1.0/UML?OpaqueBehavior", UMLElementTypes.OpaqueBehavior_3047);
 		case ActivityParameterNodeEditPart.VISUAL_ID:
 			return getImage("Navigator?Node?http://www.eclipse.org/uml2/2.1.0/UML?ActivityParameterNode", UMLElementTypes.ActivityParameterNode_3052);
+		case SendSignalActionEditPart.VISUAL_ID:
+			return getImage("Navigator?Node?http://www.eclipse.org/uml2/2.1.0/UML?SendSignalAction", UMLElementTypes.SendSignalAction_3053);
 		case LiteralStringEditPart.VISUAL_ID:
 			return getImage("Navigator?Node?http://www.eclipse.org/uml2/2.1.0/UML?LiteralString", UMLElementTypes.LiteralString_3049);
 		case LiteralString2EditPart.VISUAL_ID:
@@ -429,6 +433,8 @@ public class UMLNavigatorLabelProvider extends LabelProvider implements ICommonL
 			return getOpaqueBehavior_3047Text(view);
 		case ActivityParameterNodeEditPart.VISUAL_ID:
 			return getActivityParameterNode_3052Text(view);
+		case SendSignalActionEditPart.VISUAL_ID:
+			return getSendSignalAction_3053Text(view);
 		case LiteralStringEditPart.VISUAL_ID:
 			return getLiteralString_3049Text(view);
 		case LiteralString2EditPart.VISUAL_ID:
@@ -1150,6 +1156,22 @@ public class UMLNavigatorLabelProvider extends LabelProvider implements ICommonL
 			return parser.getPrintString(hintAdapter, ParserOptions.NONE.intValue());
 		} else {
 			UMLDiagramEditorPlugin.getInstance().logError("Parser was not found for label " + 5031);
+			return "";
+		}
+	}
+
+	/**
+	 * @generated
+	 */
+	private String getSendSignalAction_3053Text(View view) {
+		IAdaptable hintAdapter = new UMLParserProvider.HintAdapter(UMLElementTypes.SendSignalAction_3053, (view.getElement() != null ? view.getElement() : view), UMLVisualIDRegistry
+				.getType(SendSignalActionNameEditPart.VISUAL_ID));
+		IParser parser = ParserService.getInstance().getParser(hintAdapter);
+
+		if (parser != null) {
+			return parser.getPrintString(hintAdapter, ParserOptions.NONE.intValue());
+		} else {
+			UMLDiagramEditorPlugin.getInstance().logError("Parser was not found for label " + 5044);
 			return "";
 		}
 	}

@@ -22,6 +22,7 @@ import org.eclipse.uml2.diagram.activity.edit.commands.MergeNodeCreateCommand;
 import org.eclipse.uml2.diagram.activity.edit.commands.OpaqueActionCreateCommand;
 import org.eclipse.uml2.diagram.activity.edit.commands.OpaqueBehaviorCreateCommand;
 import org.eclipse.uml2.diagram.activity.edit.commands.PinCreateCommand;
+import org.eclipse.uml2.diagram.activity.edit.commands.SendSignalActionCreateCommand;
 import org.eclipse.uml2.diagram.activity.edit.commands.StructuredActivityNodeCreateCommand;
 
 import org.eclipse.uml2.diagram.activity.providers.UMLElementTypes;
@@ -150,6 +151,12 @@ public class ActivitySubverticesItemSemanticEditPolicy extends UMLBaseItemSemant
 				req.setContainmentFeature(UMLPackage.eINSTANCE.getBehavioredClassifier_OwnedBehavior());
 			}
 			return getGEFWrapper(new OpaqueBehaviorCreateCommand(req));
+		}
+		if (UMLElementTypes.SendSignalAction_3053 == req.getElementType()) {
+			if (req.getContainmentFeature() == null) {
+				req.setContainmentFeature(UMLPackage.eINSTANCE.getActivity_Node());
+			}
+			return getGEFWrapper(new SendSignalActionCreateCommand(req));
 		}
 		return super.getCreateCommand(req);
 	}

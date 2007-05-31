@@ -75,6 +75,7 @@ import org.eclipse.uml2.diagram.activity.edit.parts.OutputPinEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.PackageEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.Pin2EditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.PinEditPart;
+import org.eclipse.uml2.diagram.activity.edit.parts.SendSignalActionEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.StructuredActivityNode2EditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.StructuredActivityNodeEditPart;
 import org.eclipse.uml2.diagram.activity.part.UMLDiagramUpdater;
@@ -473,6 +474,11 @@ public class PackageCanonicalEditPolicy extends CanonicalConnectionEditPolicy {
 		case ActivityParameterNodeEditPart.VISUAL_ID: {
 			domain2NotationMap.put(view.getElement(), view);
 			result.addAll(UMLDiagramUpdater.getActivityParameterNode_3052ContainedLinks(view));
+			break;
+		}
+		case SendSignalActionEditPart.VISUAL_ID: {
+			domain2NotationMap.put(view.getElement(), view);
+			result.addAll(UMLDiagramUpdater.getSendSignalAction_3053ContainedLinks(view));
 			break;
 		}
 		case LiteralStringEditPart.VISUAL_ID: {

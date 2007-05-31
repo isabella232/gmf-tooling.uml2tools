@@ -1,19 +1,16 @@
 package org.eclipse.uml2.diagram.activity.edit.parts;
 
-import org.eclipse.draw2d.GridData;
-import org.eclipse.draw2d.GridLayout;
 import org.eclipse.draw2d.IFigure;
 import org.eclipse.draw2d.MarginBorder;
 import org.eclipse.draw2d.StackLayout;
+import org.eclipse.draw2d.ToolbarLayout;
 import org.eclipse.gef.EditPart;
 import org.eclipse.gef.EditPolicy;
-import org.eclipse.gef.Request;
-import org.eclipse.gef.commands.Command;
 import org.eclipse.gef.editpolicies.LayoutEditPolicy;
-import org.eclipse.gef.editpolicies.NonResizableEditPolicy;
-import org.eclipse.gef.requests.CreateRequest;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart;
+import org.eclipse.gmf.runtime.diagram.ui.editparts.ITextAwareEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.ShapeNodeEditPart;
+import org.eclipse.gmf.runtime.diagram.ui.editpolicies.ConstrainedToolbarLayoutEditPolicy;
 import org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles;
 import org.eclipse.gmf.runtime.draw2d.ui.figures.ConstrainedToolbarLayout;
 import org.eclipse.gmf.runtime.draw2d.ui.figures.WrapLabel;
@@ -22,6 +19,7 @@ import org.eclipse.gmf.runtime.gef.ui.figures.NodeFigure;
 import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.uml2.diagram.activity.edit.policies.OpaqueBehaviorCanonicalEditPolicy;
 import org.eclipse.uml2.diagram.activity.edit.policies.OpaqueBehaviorItemSemanticEditPolicy;
+import org.eclipse.uml2.diagram.activity.edit.policies.UMLTextSelectionEditPolicy;
 import org.eclipse.uml2.diagram.activity.part.UMLVisualIDRegistry;
 import org.eclipse.uml2.diagram.common.draw2d.ConstraintFigureBase;
 
@@ -67,22 +65,16 @@ public class OpaqueBehaviorEditPart extends ShapeNodeEditPart {
 	 * @generated
 	 */
 	protected LayoutEditPolicy createLayoutEditPolicy() {
-		LayoutEditPolicy lep = new LayoutEditPolicy() {
+
+		ConstrainedToolbarLayoutEditPolicy lep = new ConstrainedToolbarLayoutEditPolicy() {
 
 			protected EditPolicy createChildEditPolicy(EditPart child) {
-				EditPolicy result = child.getEditPolicy(EditPolicy.PRIMARY_DRAG_ROLE);
-				if (result == null) {
-					result = new NonResizableEditPolicy();
+				if (child.getEditPolicy(EditPolicy.PRIMARY_DRAG_ROLE) == null) {
+					if (child instanceof ITextAwareEditPart) {
+						return new UMLTextSelectionEditPolicy();
+					}
 				}
-				return result;
-			}
-
-			protected Command getMoveChildrenCommand(Request request) {
-				return null;
-			}
-
-			protected Command getCreateCommand(CreateRequest request) {
-				return null;
+				return super.createChildEditPolicy(child);
 			}
 		};
 		return lep;
@@ -217,15 +209,18 @@ public class OpaqueBehaviorEditPart extends ShapeNodeEditPart {
 		 */
 		public SelectionFigure() {
 
-			GridLayout layoutThis = new GridLayout();
-			layoutThis.numColumns = 1;
-			layoutThis.makeColumnsEqualWidth = true;
-			layoutThis.horizontalSpacing = 0;
-			layoutThis.verticalSpacing = 0;
-			layoutThis.marginWidth = 0;
-			layoutThis.marginHeight = 0;
+			ToolbarLayout layoutThis = new ToolbarLayout();
+			layoutThis.setStretchMinorAxis(false);
+			layoutThis.setMinorAlignment(ToolbarLayout.ALIGN_CENTER
+
+			);
+
+			layoutThis.setSpacing(0);
+			layoutThis.setVertical(true);
+
 			this.setLayoutManager(layoutThis);
 
+			this.setBorder(new MarginBorder(getMapMode().DPtoLP(5), getMapMode().DPtoLP(5), getMapMode().DPtoLP(5), getMapMode().DPtoLP(5)));
 			createContents();
 		}
 
@@ -237,33 +232,12 @@ public class OpaqueBehaviorEditPart extends ShapeNodeEditPart {
 			WrapLabel selectionFigure_fixed_top0 = new WrapLabel();
 			selectionFigure_fixed_top0.setText("\u00ABselection\u00BB");
 
-			selectionFigure_fixed_top0.setBorder(new MarginBorder(getMapMode().DPtoLP(0), getMapMode().DPtoLP(16), getMapMode().DPtoLP(0), getMapMode().DPtoLP(16)));
-
-			GridData constraintSelectionFigure_fixed_top0 = new GridData();
-			constraintSelectionFigure_fixed_top0.verticalAlignment = GridData.BEGINNING;
-			constraintSelectionFigure_fixed_top0.horizontalAlignment = GridData.FILL;
-			constraintSelectionFigure_fixed_top0.horizontalIndent = 0;
-			constraintSelectionFigure_fixed_top0.horizontalSpan = 0;
-			constraintSelectionFigure_fixed_top0.verticalSpan = 0;
-			constraintSelectionFigure_fixed_top0.grabExcessHorizontalSpace = true;
-			constraintSelectionFigure_fixed_top0.grabExcessVerticalSpace = false;
-			this.add(selectionFigure_fixed_top0, constraintSelectionFigure_fixed_top0);
+			this.add(selectionFigure_fixed_top0);
 
 			WrapLabel selectionFigure_name0 = new WrapLabel();
 			selectionFigure_name0.setText("");
 
-			selectionFigure_name0.setBorder(new MarginBorder(getMapMode().DPtoLP(0), getMapMode().DPtoLP(5), getMapMode().DPtoLP(0), getMapMode().DPtoLP(5)));
-
-			GridData constraintSelectionFigure_name0 = new GridData();
-			constraintSelectionFigure_name0.verticalAlignment = GridData.FILL;
-			constraintSelectionFigure_name0.horizontalAlignment = GridData.FILL;
-			constraintSelectionFigure_name0.horizontalIndent = 0;
-			constraintSelectionFigure_name0.horizontalSpan = 0;
-			constraintSelectionFigure_name0.verticalSpan = 0;
-			constraintSelectionFigure_name0.grabExcessHorizontalSpace = true;
-			constraintSelectionFigure_name0.grabExcessVerticalSpace = true;
-			this.add(selectionFigure_name0, constraintSelectionFigure_name0);
-
+			this.add(selectionFigure_name0);
 			setFigureSelectionFigure_name(selectionFigure_name0);
 
 		}

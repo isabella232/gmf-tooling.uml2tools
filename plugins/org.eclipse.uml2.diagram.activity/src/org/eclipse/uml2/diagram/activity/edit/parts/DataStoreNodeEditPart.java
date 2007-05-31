@@ -1,13 +1,11 @@
 package org.eclipse.uml2.diagram.activity.edit.parts;
 
-import org.eclipse.draw2d.BorderLayout;
 import org.eclipse.draw2d.Graphics;
-import org.eclipse.draw2d.GridData;
-import org.eclipse.draw2d.GridLayout;
 import org.eclipse.draw2d.IFigure;
+import org.eclipse.draw2d.MarginBorder;
 import org.eclipse.draw2d.RectangleFigure;
 import org.eclipse.draw2d.StackLayout;
-import org.eclipse.draw2d.geometry.Dimension;
+import org.eclipse.draw2d.ToolbarLayout;
 import org.eclipse.gef.EditPart;
 import org.eclipse.gef.EditPolicy;
 import org.eclipse.gef.Request;
@@ -160,7 +158,7 @@ public class DataStoreNodeEditPart extends ShapeNodeEditPart {
 	 * @generated
 	 */
 	protected NodeFigure createNodePlate() {
-		DefaultSizeNodeFigure result = new DefaultSizeNodeFigure(getMapMode().DPtoLP(60), getMapMode().DPtoLP(30));
+		DefaultSizeNodeFigure result = new DefaultSizeNodeFigure(getMapMode().DPtoLP(40), getMapMode().DPtoLP(40));
 		return result;
 	}
 
@@ -223,18 +221,14 @@ public class DataStoreNodeEditPart extends ShapeNodeEditPart {
 		 */
 		public DataStoreFigure() {
 
-			GridLayout layoutThis = new GridLayout();
-			layoutThis.numColumns = 1;
-			layoutThis.makeColumnsEqualWidth = true;
-			this.setLayoutManager(layoutThis);
-
+			this.setLayoutManager(new StackLayout());
 			this.setFill(true);
 			this.setFillXOR(false);
 			this.setOutline(true);
 			this.setOutlineXOR(false);
 			this.setLineWidth(1);
 			this.setLineStyle(Graphics.LINE_SOLID);
-			this.setPreferredSize(new Dimension(getMapMode().DPtoLP(60), getMapMode().DPtoLP(30)));
+			this.setBorder(new MarginBorder(getMapMode().DPtoLP(5), getMapMode().DPtoLP(5), getMapMode().DPtoLP(5), getMapMode().DPtoLP(5)));
 			createContents();
 		}
 
@@ -251,62 +245,34 @@ public class DataStoreNodeEditPart extends ShapeNodeEditPart {
 			dataStoreFigure_NameContainer0.setLineWidth(1);
 			dataStoreFigure_NameContainer0.setLineStyle(Graphics.LINE_SOLID);
 
-			GridData constraintDataStoreFigure_NameContainer0 = new GridData();
-			constraintDataStoreFigure_NameContainer0.verticalAlignment = GridData.CENTER;
-			constraintDataStoreFigure_NameContainer0.horizontalAlignment = GridData.CENTER;
-			constraintDataStoreFigure_NameContainer0.horizontalIndent = 0;
-			constraintDataStoreFigure_NameContainer0.horizontalSpan = 1;
-			constraintDataStoreFigure_NameContainer0.verticalSpan = 1;
-			constraintDataStoreFigure_NameContainer0.grabExcessHorizontalSpace = true;
-			constraintDataStoreFigure_NameContainer0.grabExcessVerticalSpace = true;
-			this.add(dataStoreFigure_NameContainer0, constraintDataStoreFigure_NameContainer0);
+			this.add(dataStoreFigure_NameContainer0);
 
-			GridLayout layoutDataStoreFigure_NameContainer0 = new GridLayout();
-			layoutDataStoreFigure_NameContainer0.numColumns = 1;
-			layoutDataStoreFigure_NameContainer0.makeColumnsEqualWidth = true;
+			ToolbarLayout layoutDataStoreFigure_NameContainer0 = new ToolbarLayout();
+			layoutDataStoreFigure_NameContainer0.setStretchMinorAxis(false);
+			layoutDataStoreFigure_NameContainer0.setMinorAlignment(ToolbarLayout.ALIGN_CENTER
+
+			);
+
+			layoutDataStoreFigure_NameContainer0.setSpacing(0);
+			layoutDataStoreFigure_NameContainer0.setVertical(true);
+
 			dataStoreFigure_NameContainer0.setLayoutManager(layoutDataStoreFigure_NameContainer0);
 
 			WrapLabel dataStore_fixed_datastore1 = new WrapLabel();
 			dataStore_fixed_datastore1.setText("\u00ABdatastore\u00BB");
 
-			GridData constraintDataStore_fixed_datastore1 = new GridData();
-			constraintDataStore_fixed_datastore1.verticalAlignment = GridData.CENTER;
-			constraintDataStore_fixed_datastore1.horizontalAlignment = GridData.CENTER;
-			constraintDataStore_fixed_datastore1.horizontalIndent = 0;
-			constraintDataStore_fixed_datastore1.horizontalSpan = 1;
-			constraintDataStore_fixed_datastore1.verticalSpan = 1;
-			constraintDataStore_fixed_datastore1.grabExcessHorizontalSpace = true;
-			constraintDataStore_fixed_datastore1.grabExcessVerticalSpace = false;
-			dataStoreFigure_NameContainer0.add(dataStore_fixed_datastore1, constraintDataStore_fixed_datastore1);
+			dataStoreFigure_NameContainer0.add(dataStore_fixed_datastore1);
 
 			WrapLabel dataStoreFigure_name1 = new WrapLabel();
 			dataStoreFigure_name1.setText("");
 
-			GridData constraintDataStoreFigure_name1 = new GridData();
-			constraintDataStoreFigure_name1.verticalAlignment = GridData.CENTER;
-			constraintDataStoreFigure_name1.horizontalAlignment = GridData.CENTER;
-			constraintDataStoreFigure_name1.horizontalIndent = 0;
-			constraintDataStoreFigure_name1.horizontalSpan = 1;
-			constraintDataStoreFigure_name1.verticalSpan = 1;
-			constraintDataStoreFigure_name1.grabExcessHorizontalSpace = true;
-			constraintDataStoreFigure_name1.grabExcessVerticalSpace = false;
-			dataStoreFigure_NameContainer0.add(dataStoreFigure_name1, constraintDataStoreFigure_name1);
-
+			dataStoreFigure_NameContainer0.add(dataStoreFigure_name1);
 			setFigureDataStoreFigure_name(dataStoreFigure_name1);
 
 			WrapLabel dataStoreFigure_states1 = new WrapLabel();
 			dataStoreFigure_states1.setText("");
 
-			GridData constraintDataStoreFigure_states1 = new GridData();
-			constraintDataStoreFigure_states1.verticalAlignment = GridData.CENTER;
-			constraintDataStoreFigure_states1.horizontalAlignment = GridData.CENTER;
-			constraintDataStoreFigure_states1.horizontalIndent = 0;
-			constraintDataStoreFigure_states1.horizontalSpan = 1;
-			constraintDataStoreFigure_states1.verticalSpan = 1;
-			constraintDataStoreFigure_states1.grabExcessHorizontalSpace = true;
-			constraintDataStoreFigure_states1.grabExcessVerticalSpace = false;
-			dataStoreFigure_NameContainer0.add(dataStoreFigure_states1, constraintDataStoreFigure_states1);
-
+			dataStoreFigure_NameContainer0.add(dataStoreFigure_states1);
 			setFigureDataStoreFigure_states(dataStoreFigure_states1);
 
 		}

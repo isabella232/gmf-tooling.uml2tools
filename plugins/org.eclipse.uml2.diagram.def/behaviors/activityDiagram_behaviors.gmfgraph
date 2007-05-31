@@ -11,41 +11,28 @@
         qualifiedClassName="org.eclipse.uml2.diagram.common.draw2d.ConstraintFigureBase"
         bundleName="">
       <layout
-          xsi:type="gmfgraph:GridLayout">
-        <margins/>
-        <spacing/>
-      </layout>
+          xsi:type="gmfgraph:FlowLayout"
+          vertical="true"
+          forceSingleLine="true"
+          minorAlignment="CENTER"
+          majorSpacing="0"
+          minorSpacing="0"/>
       <children
           xsi:type="gmfgraph:Label"
           name="SelectionFigure_fixed_top"
-          text="\u00ABselection\u00BB">
-        <layoutData
-            xsi:type="gmfgraph:GridLayoutData"
-            grabExcessHorizontalSpace="true"
-            verticalAlignment="BEGINNING"
-            horizontalAlignment="FILL"
-            verticalSpan="0"
-            horizontalSpan="0"/>
-        <insets
-            left="16"
-            right="16"/>
-      </children>
+          text="\u00ABselection\u00BB"/>
       <children
           xsi:type="gmfgraph:Label"
           referencingElements="SelectionNode_name"
-          name="SelectionFigure_name">
-        <layoutData
-            xsi:type="gmfgraph:GridLayoutData"
-            grabExcessHorizontalSpace="true"
-            grabExcessVerticalSpace="true"
-            verticalAlignment="FILL"
-            horizontalAlignment="FILL"
-            verticalSpan="0"
-            horizontalSpan="0"/>
+          name="SelectionFigure_name"/>
+      <border
+          xsi:type="gmfgraph:MarginBorder">
         <insets
+            top="5"
             left="5"
+            bottom="5"
             right="5"/>
-      </children>
+      </border>
       <customChildren
           accessor="getContentPane"/>
     </figures>

@@ -96,6 +96,8 @@ import org.eclipse.uml2.diagram.activity.edit.parts.Pin2EditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.PinEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.PinName2EditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.PinNameEditPart;
+import org.eclipse.uml2.diagram.activity.edit.parts.SendSignalActionEditPart;
+import org.eclipse.uml2.diagram.activity.edit.parts.SendSignalActionNameEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.StructuredActivityNode2EditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.StructuredActivityNodeEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.StructuredActivityNodeStructuredActivityContentPaneCompartment2EditPart;
@@ -522,6 +524,11 @@ public class UMLVisualIDRegistry {
 				return ActivityParameterNodeNameEditPart.VISUAL_ID;
 			}
 			return getUnrecognizedActivityParameterNode_3052ChildNodeID(domainElement, semanticHint);
+		case SendSignalActionEditPart.VISUAL_ID:
+			if (SendSignalActionNameEditPart.VISUAL_ID == nodeVisualID) {
+				return SendSignalActionNameEditPart.VISUAL_ID;
+			}
+			return getUnrecognizedSendSignalAction_3053ChildNodeID(domainElement, semanticHint);
 		case LiteralStringEditPart.VISUAL_ID:
 			return getUnrecognizedLiteralString_3049ChildNodeID(domainElement, semanticHint);
 		case LiteralString2EditPart.VISUAL_ID:
@@ -586,6 +593,9 @@ public class UMLVisualIDRegistry {
 			}
 			if ((semanticHint == null || OpaqueBehaviorEditPart.VISUAL_ID == nodeVisualID) && UMLPackage.eINSTANCE.getOpaqueBehavior().isSuperTypeOf(domainElementMetaclass)) {
 				return OpaqueBehaviorEditPart.VISUAL_ID;
+			}
+			if ((semanticHint == null || SendSignalActionEditPart.VISUAL_ID == nodeVisualID) && UMLPackage.eINSTANCE.getSendSignalAction().isSuperTypeOf(domainElementMetaclass)) {
+				return SendSignalActionEditPart.VISUAL_ID;
 			}
 			return getUnrecognizedActivitySubvertices_7010ChildNodeID(domainElement, semanticHint);
 		case StructuredActivityNodeStructuredActivityContentPaneCompartmentEditPart.VISUAL_ID:
@@ -1258,6 +1268,16 @@ public class UMLVisualIDRegistry {
 	 * @generated
 	 */
 	private static int getUnrecognizedActivityParameterNode_3052ChildNodeID(EObject domainElement, String semanticHint) {
+		return -1;
+	}
+
+	/**
+	 * User can change implementation of this method to handle some specific
+	 * situations not covered by default logic.
+	 * 
+	 * @generated
+	 */
+	private static int getUnrecognizedSendSignalAction_3053ChildNodeID(EObject domainElement, String semanticHint) {
 		return -1;
 	}
 

@@ -181,6 +181,40 @@
         xsi:type="gmfgraph:Label"
         referencingElements="AcceptTimeEventActionNode_ExternalLabel"
         name="AcceptTimeEventActionFigure_ExternalLabel"/>
+    <figures
+        xsi:type="gmfgraph:ScalablePolygon"
+        referencingElements="SendSignalActionNode"
+        name="SendSignalActionFigure">
+      <layout
+          xsi:type="gmfgraph:FlowLayout"
+          vertical="true"
+          forceSingleLine="true"
+          minorAlignment="CENTER"
+          majorSpacing="0"
+          minorSpacing="0"/>
+      <children
+          xsi:type="gmfgraph:Label"
+          referencingElements="SendSignalActionNode_name"
+          name="SendSignalActionFigure_name"/>
+      <border
+          xsi:type="gmfgraph:MarginBorder">
+        <insets
+            top="5"
+            left="5"
+            right="15"/>
+      </border>
+      <template/>
+      <template
+          x="40"/>
+      <template
+          x="50"
+          y="20"/>
+      <template
+          x="40"
+          y="40"/>
+      <template
+          y="40"/>
+    </figures>
   </figures>
   <nodes
       name="ActionAcceptEventNode"
@@ -262,6 +296,9 @@
       name="ActionCallBehaviorNode_name"
       figure="ActionCallBehaviorFigure_name"
       elementIcon="false"/>
+  <nodes
+      name="SendSignalActionNode"
+      figure="SendSignalActionFigure"/>
   <labels
       name="AcceptEventActionNode_name"
       figure="AcceptEventActionFigure_name"
@@ -269,5 +306,9 @@
   <labels
       name="AcceptTimeEventActionNode_ExternalLabel"
       figure="AcceptTimeEventActionFigure_ExternalLabel"
+      elementIcon="false"/>
+  <labels
+      name="SendSignalActionNode_name"
+      figure="SendSignalActionFigure_name"
       elementIcon="false"/>
 </gmfgraph:Canvas>

@@ -9,94 +9,82 @@
         referencingElements="CentralBufferNode"
         name="CentralBufferFigure">
       <layout
-          xsi:type="gmfgraph:GridLayout"/>
+          xsi:type="gmfgraph:StackLayout"/>
       <children
           xsi:type="gmfgraph:Rectangle"
           name="CentralBufferFigure_NameContainer"
           outline="false"
           fill="false">
-        <layoutData
-            xsi:type="gmfgraph:GridLayoutData"
-            grabExcessHorizontalSpace="true"
-            grabExcessVerticalSpace="true"/>
         <layout
-            xsi:type="gmfgraph:GridLayout"/>
+            xsi:type="gmfgraph:FlowLayout"
+            vertical="true"
+            forceSingleLine="true"
+            minorAlignment="CENTER"
+            majorSpacing="0"
+            minorSpacing="0"/>
         <children
             xsi:type="gmfgraph:Label"
             name="CentralBufferFigure_fixed_central"
-            text="\u00ABcentralBuffer\u00BB">
-          <layoutData
-              xsi:type="gmfgraph:GridLayoutData"
-              grabExcessHorizontalSpace="true"/>
-        </children>
+            text="\u00ABcentralBuffer\u00BB"/>
         <children
             xsi:type="gmfgraph:Label"
             referencingElements="CentralBufferNode_name"
             name="CentralBufferFigure_name"
-            text="">
-          <layoutData
-              xsi:type="gmfgraph:GridLayoutData"
-              grabExcessHorizontalSpace="true"/>
-        </children>
+            text=""/>
         <children
             xsi:type="gmfgraph:Label"
             referencingElements="CentralBufferNode_states"
-            name="CentralBufferFigure_states">
-          <layoutData
-              xsi:type="gmfgraph:GridLayoutData"
-              grabExcessHorizontalSpace="true"/>
-        </children>
+            name="CentralBufferFigure_states"/>
       </children>
-      <preferredSize
-          dx="60"
-          dy="30"/>
+      <border
+          xsi:type="gmfgraph:MarginBorder">
+        <insets
+            top="5"
+            left="5"
+            bottom="5"
+            right="5"/>
+      </border>
     </figures>
     <figures
         xsi:type="gmfgraph:Rectangle"
         referencingElements="DataStoreNode"
         name="DataStoreFigure">
       <layout
-          xsi:type="gmfgraph:GridLayout"/>
+          xsi:type="gmfgraph:StackLayout"/>
       <children
           xsi:type="gmfgraph:Rectangle"
           name="DataStoreFigure_NameContainer"
           outline="false"
           fill="false">
-        <layoutData
-            xsi:type="gmfgraph:GridLayoutData"
-            grabExcessHorizontalSpace="true"
-            grabExcessVerticalSpace="true"/>
         <layout
-            xsi:type="gmfgraph:GridLayout"/>
+            xsi:type="gmfgraph:FlowLayout"
+            vertical="true"
+            forceSingleLine="true"
+            minorAlignment="CENTER"
+            majorSpacing="0"
+            minorSpacing="0"/>
         <children
             xsi:type="gmfgraph:Label"
             name="DataStore_fixed_datastore"
-            text="\u00ABdatastore\u00BB">
-          <layoutData
-              xsi:type="gmfgraph:GridLayoutData"
-              grabExcessHorizontalSpace="true"/>
-        </children>
+            text="\u00ABdatastore\u00BB"/>
         <children
             xsi:type="gmfgraph:Label"
             referencingElements="DataStoreNode_name"
             name="DataStoreFigure_name"
-            text="">
-          <layoutData
-              xsi:type="gmfgraph:GridLayoutData"
-              grabExcessHorizontalSpace="true"/>
-        </children>
+            text=""/>
         <children
             xsi:type="gmfgraph:Label"
             referencingElements="DataStoreNode_states"
-            name="DataStoreFigure_states">
-          <layoutData
-              xsi:type="gmfgraph:GridLayoutData"
-              grabExcessHorizontalSpace="true"/>
-        </children>
+            name="DataStoreFigure_states"/>
       </children>
-      <preferredSize
-          dx="60"
-          dy="30"/>
+      <border
+          xsi:type="gmfgraph:MarginBorder">
+        <insets
+            top="5"
+            left="5"
+            bottom="5"
+            right="5"/>
+      </border>
     </figures>
     <figures
         xsi:type="gmfgraph:Rectangle"
