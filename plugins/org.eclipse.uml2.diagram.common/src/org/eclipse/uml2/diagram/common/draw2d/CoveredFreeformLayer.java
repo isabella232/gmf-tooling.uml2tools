@@ -19,6 +19,7 @@ import org.eclipse.draw2d.IFigure;
 import org.eclipse.draw2d.geometry.Dimension;
 import org.eclipse.draw2d.geometry.Insets;
 import org.eclipse.draw2d.geometry.Rectangle;
+import org.eclipse.draw2d.geometry.Translatable;
 import org.eclipse.gmf.runtime.diagram.ui.figures.BorderItemsAwareFreeFormLayer;
 import org.eclipse.gmf.runtime.diagram.ui.figures.BorderedNodeFigure;
 import org.eclipse.gmf.runtime.draw2d.ui.figures.WrapLabel;
@@ -88,29 +89,19 @@ public class CoveredFreeformLayer extends BorderItemsAwareFreeFormLayer {
 	}
 	
 	@Override
-	public void setBounds(Rectangle rect) {
-		super.setBounds(rect);
-		myMarginInsets = null;
-	}
-	
-	@Override
 	public void invalidate() {
 		super.invalidate();
 		myFreeformExtent = null;
 	}
 
 	public final Insets getMarginInsets() {
-		if (myMarginInsets == null) {
-			Rectangle bounds = getBounds();
-			int widthMarginInset = (int) (bounds.width * myMarginRatio);
-			int heightMarginInset = (int) (bounds.height * myMarginRatio);
-			myMarginInsets = new Insets(heightMarginInset, widthMarginInset, heightMarginInset, widthMarginInset);
-		}
-		return myMarginInsets;
+		TranslatableInsets insets = new TranslatableInsets(myMarginInsets);
+		translateToRelative(insets);
+		return insets;
 	}
 
-	public void setMarginRatio(double margin) {
-		myMarginRatio = margin;
+	public void setMarginInsets(Insets insets) {
+		myMarginInsets = insets;
 	}
 	
 	private void validateSideAffixedElements(BorderedNodeFigure parent, Rectangle area) {
@@ -136,4 +127,22 @@ public class CoveredFreeformLayer extends BorderItemsAwareFreeFormLayer {
 	private Rectangle myFreeformExtent;
 	private Insets myMarginInsets;
 	private double myMarginRatio = 0.1;
+
+	
+	private static class TranslatableInsets extends Insets implements Translatable {
+		public TranslatableInsets(Insets insets) {
+			super(insets);
+		}
+		
+		public void performScale(double factor) {
+			top  = (int)(Math.floor(top * factor));
+			bottom  = (int)(Math.floor(bottom * factor));
+			left  = (int)(Math.floor(left * factor));
+			right  = (int)(Math.floor(right * factor));
+		}
+
+		public void performTranslate(int dx, int dy) {
+			// do nothing
+		}
+	}
 }

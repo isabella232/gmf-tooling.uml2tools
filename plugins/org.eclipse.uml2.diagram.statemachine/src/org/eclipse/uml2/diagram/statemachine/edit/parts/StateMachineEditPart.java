@@ -1,6 +1,7 @@
 package org.eclipse.uml2.diagram.statemachine.edit.parts;
 
 import org.eclipse.draw2d.IFigure;
+import org.eclipse.draw2d.geometry.Insets;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.DiagramEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles;
 import org.eclipse.gmf.runtime.notation.View;
@@ -37,7 +38,7 @@ public class StateMachineEditPart extends DiagramEditPart {
 	@Override
 	protected IFigure createFigure() {
 		CoveredFreeformLayer figure = new CoveredFreeformLayer();
-		figure.setMarginRatio(0.045);
+		figure.setMarginInsets(new Insets(45, 20, 20, 20));
 		return figure;
 	}
 
