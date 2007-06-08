@@ -218,12 +218,172 @@ public class Messages extends NLS {
 	/**
 	 * @generated
 	 */
+	public static String AcceptEventAction1Group_title;
+
+	/**
+	 * @generated
+	 */
+	public static String AcceptEventAction1Group_desc;
+
+	/**
+	 * @generated
+	 */
+	public static String MergeDecisionNode4Group_title;
+
+	/**
+	 * @generated
+	 */
+	public static String MergeDecisionNode4Group_desc;
+
+	/**
+	 * @generated
+	 */
+	public static String ForkJoinNode5Group_title;
+
+	/**
+	 * @generated
+	 */
+	public static String ForkJoinNode5Group_desc;
+
+	/**
+	 * @generated
+	 */
+	public static String Pin3Group_title;
+
+	/**
+	 * @generated
+	 */
+	public static String Pin3Group_desc;
+
+	/**
+	 * @generated
+	 */
 	public static String Activity1CreationTool_title;
 
 	/**
 	 * @generated
 	 */
 	public static String Activity1CreationTool_desc;
+
+	/**
+	 * @generated
+	 */
+	public static String ActivityParameter2CreationTool_title;
+
+	/**
+	 * @generated
+	 */
+	public static String ActivityParameter2CreationTool_desc;
+
+	/**
+	 * @generated
+	 */
+	public static String AddFeatureValueAction2CreationTool_title;
+
+	/**
+	 * @generated
+	 */
+	public static String AddFeatureValueAction2CreationTool_desc;
+
+	/**
+	 * @generated
+	 */
+	public static String CallBehaviorAction3CreationTool_title;
+
+	/**
+	 * @generated
+	 */
+	public static String CallBehaviorAction3CreationTool_desc;
+
+	/**
+	 * @generated
+	 */
+	public static String CallOperationAction4CreationTool_title;
+
+	/**
+	 * @generated
+	 */
+	public static String CallOperationAction4CreationTool_desc;
+
+	/**
+	 * @generated
+	 */
+	public static String CreateObjectAction5CreationTool_title;
+
+	/**
+	 * @generated
+	 */
+	public static String CreateObjectAction5CreationTool_desc;
+
+	/**
+	 * @generated
+	 */
+	public static String OpaqueAction6CreationTool_title;
+
+	/**
+	 * @generated
+	 */
+	public static String OpaqueAction6CreationTool_desc;
+
+	/**
+	 * @generated
+	 */
+	public static String SendSignalAction7CreationTool_title;
+
+	/**
+	 * @generated
+	 */
+	public static String SendSignalAction7CreationTool_desc;
+
+	/**
+	 * @generated
+	 */
+	public static String Constraint8CreationTool_title;
+
+	/**
+	 * @generated
+	 */
+	public static String Constraint8CreationTool_desc;
+
+	/**
+	 * @generated
+	 */
+	public static String ConstraintLink9CreationTool_title;
+
+	/**
+	 * @generated
+	 */
+	public static String ConstraintLink9CreationTool_desc;
+
+	/**
+	 * @generated
+	 */
+	public static String OpaqueBehavior10CreationTool_title;
+
+	/**
+	 * @generated
+	 */
+	public static String OpaqueBehavior10CreationTool_desc;
+
+	/**
+	 * @generated
+	 */
+	public static String ActivityInitialNode1CreationTool_title;
+
+	/**
+	 * @generated
+	 */
+	public static String ActivityInitialNode1CreationTool_desc;
+
+	/**
+	 * @generated
+	 */
+	public static String ActivityFinalNode2CreationTool_title;
+
+	/**
+	 * @generated
+	 */
+	public static String ActivityFinalNode2CreationTool_desc;
 
 	/**
 	 * @generated
@@ -238,122 +398,82 @@ public class Messages extends NLS {
 	/**
 	 * @generated
 	 */
-	public static String AcceptTimeAction2CreationTool_title;
+	public static String AcceptTimeEventAction2CreationTool_title;
 
 	/**
 	 * @generated
 	 */
-	public static String AcceptTimeAction2CreationTool_desc;
+	public static String AcceptTimeEventAction2CreationTool_desc;
 
 	/**
 	 * @generated
 	 */
-	public static String OpaqueAction3CreationTool_title;
+	public static String MergeNode1CreationTool_title;
 
 	/**
 	 * @generated
 	 */
-	public static String OpaqueAction3CreationTool_desc;
+	public static String MergeNode1CreationTool_desc;
 
 	/**
 	 * @generated
 	 */
-	public static String CreateObjectAction4CreationTool_title;
+	public static String DecisionNode2CreationTool_title;
 
 	/**
 	 * @generated
 	 */
-	public static String CreateObjectAction4CreationTool_desc;
+	public static String DecisionNode2CreationTool_desc;
 
 	/**
 	 * @generated
 	 */
-	public static String AddFeatureValueAction5CreationTool_title;
+	public static String ForkNode1CreationTool_title;
 
 	/**
 	 * @generated
 	 */
-	public static String AddFeatureValueAction5CreationTool_desc;
+	public static String ForkNode1CreationTool_desc;
 
 	/**
 	 * @generated
 	 */
-	public static String CallBehaviorAction6CreationTool_title;
+	public static String JoinNode2CreationTool_title;
 
 	/**
 	 * @generated
 	 */
-	public static String CallBehaviorAction6CreationTool_desc;
+	public static String JoinNode2CreationTool_desc;
 
 	/**
 	 * @generated
 	 */
-	public static String CallOperationAction7CreationTool_title;
+	public static String Pin1CreationTool_title;
 
 	/**
 	 * @generated
 	 */
-	public static String CallOperationAction7CreationTool_desc;
+	public static String Pin1CreationTool_desc;
 
 	/**
 	 * @generated
 	 */
-	public static String SendSignalAction8CreationTool_title;
+	public static String InputPin2CreationTool_title;
 
 	/**
 	 * @generated
 	 */
-	public static String SendSignalAction8CreationTool_desc;
+	public static String InputPin2CreationTool_desc;
 
 	/**
 	 * @generated
 	 */
-	public static String Constraint9CreationTool_title;
+	public static String OutputPin3CreationTool_title;
 
 	/**
 	 * @generated
 	 */
-	public static String Constraint9CreationTool_desc;
-
-	/**
-	 * @generated
-	 */
-	public static String ConstraintLink10CreationTool_title;
-
-	/**
-	 * @generated
-	 */
-	public static String ConstraintLink10CreationTool_desc;
-
-	/**
-	 * @generated
-	 */
-	public static String OpaqueBehavior11CreationTool_title;
-
-	/**
-	 * @generated
-	 */
-	public static String OpaqueBehavior11CreationTool_desc;
-
-	/**
-	 * @generated
-	 */
-	public static String ActivityFinalNode1CreationTool_title;
-
-	/**
-	 * @generated
-	 */
-	public static String ActivityFinalNode1CreationTool_desc;
-
-	/**
-	 * @generated
-	 */
-	public static String ActivityInitialNode2CreationTool_title;
-
-	/**
-	 * @generated
-	 */
-	public static String ActivityInitialNode2CreationTool_desc;
+	public static String OutputPin3CreationTool_desc;
 
 	/**
 	 * @generated
@@ -368,46 +488,6 @@ public class Messages extends NLS {
 	/**
 	 * @generated
 	 */
-	public static String DecisionNode4CreationTool_title;
-
-	/**
-	 * @generated
-	 */
-	public static String DecisionNode4CreationTool_desc;
-
-	/**
-	 * @generated
-	 */
-	public static String MergeNode5CreationTool_title;
-
-	/**
-	 * @generated
-	 */
-	public static String MergeNode5CreationTool_desc;
-
-	/**
-	 * @generated
-	 */
-	public static String ForkNode6CreationTool_title;
-
-	/**
-	 * @generated
-	 */
-	public static String ForkNode6CreationTool_desc;
-
-	/**
-	 * @generated
-	 */
-	public static String JoinNode7CreationTool_title;
-
-	/**
-	 * @generated
-	 */
-	public static String JoinNode7CreationTool_desc;
-
-	/**
-	 * @generated
-	 */
 	public static String StructuredActivityNode1CreationTool_title;
 
 	/**
@@ -418,72 +498,32 @@ public class Messages extends NLS {
 	/**
 	 * @generated
 	 */
-	public static String Datastore1CreationTool_title;
+	public static String CentralBuffer1CreationTool_title;
 
 	/**
 	 * @generated
 	 */
-	public static String Datastore1CreationTool_desc;
+	public static String CentralBuffer1CreationTool_desc;
 
 	/**
 	 * @generated
 	 */
-	public static String CentralBuffer2CreationTool_title;
+	public static String Datastore2CreationTool_title;
 
 	/**
 	 * @generated
 	 */
-	public static String CentralBuffer2CreationTool_desc;
+	public static String Datastore2CreationTool_desc;
 
 	/**
 	 * @generated
 	 */
-	public static String Pin3CreationTool_title;
+	public static String Selection4CreationTool_title;
 
 	/**
 	 * @generated
 	 */
-	public static String Pin3CreationTool_desc;
-
-	/**
-	 * @generated
-	 */
-	public static String OutputPin4CreationTool_title;
-
-	/**
-	 * @generated
-	 */
-	public static String OutputPin4CreationTool_desc;
-
-	/**
-	 * @generated
-	 */
-	public static String InputPin5CreationTool_title;
-
-	/**
-	 * @generated
-	 */
-	public static String InputPin5CreationTool_desc;
-
-	/**
-	 * @generated
-	 */
-	public static String Selection6CreationTool_title;
-
-	/**
-	 * @generated
-	 */
-	public static String Selection6CreationTool_desc;
-
-	/**
-	 * @generated
-	 */
-	public static String ActivityParameter7CreationTool_title;
-
-	/**
-	 * @generated
-	 */
-	public static String ActivityParameter7CreationTool_desc;
+	public static String Selection4CreationTool_desc;
 
 	/**
 	 * @generated

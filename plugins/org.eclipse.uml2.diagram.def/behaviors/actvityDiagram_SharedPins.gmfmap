@@ -17,7 +17,7 @@
       </labelMappings>
       <tool
           xsi:type="gmftool:CreationTool"
-          href="activityDiagram.gmftool#//@palette/@tools.4/@tools.3"/>
+          href="activityDiagram.gmftool#//@palette/@tools.4/@tools.2/@tools.2"/>
       <diagramNode
           href="activityDiagram_objects.gmfgraph#AttachedOutputPinNode"/>
     </ownedChild>
@@ -35,7 +35,7 @@
       </labelMappings>
       <tool
           xsi:type="gmftool:CreationTool"
-          href="activityDiagram.gmftool#//@palette/@tools.4/@tools.4"/>
+          href="activityDiagram.gmftool#//@palette/@tools.4/@tools.2/@tools.1"/>
       <diagramNode
           href="activityDiagram_objects.gmfgraph#AttachedInputPinNode"/>
     </ownedChild>

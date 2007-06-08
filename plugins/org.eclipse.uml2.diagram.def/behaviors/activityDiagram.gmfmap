@@ -61,7 +61,7 @@
           </labelMappings>
           <tool
               xsi:type="gmftool:CreationTool"
-              href="activityDiagram.gmftool#//@palette/@tools.1/@tools.0"/>
+              href="activityDiagram.gmftool#//@palette/@tools.1/@tools.0/@tools.0"/>
           <diagramNode
               href="activityDiagram_actions.gmfgraph#ActionAcceptEventNode"/>
         </ownedChild>
@@ -102,7 +102,7 @@
           </labelMappings>
           <tool
               xsi:type="gmftool:CreationTool"
-              href="activityDiagram.gmftool#//@palette/@tools.1/@tools.1"/>
+              href="activityDiagram.gmftool#//@palette/@tools.1/@tools.0/@tools.1"/>
           <diagramNode
               href="activityDiagram_actions.gmfgraph#ActionAcceptTimeEventNode"/>
         </ownedChild>
@@ -116,7 +116,7 @@
               href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//ActivityFinalNode"/>
           <tool
               xsi:type="gmftool:CreationTool"
-              href="activityDiagram.gmftool#//@palette/@tools.2/@tools.0"/>
+              href="activityDiagram.gmftool#//@palette/@tools.2/@tools.1"/>
           <diagramNode
               href="activityDiagram_controlNodes.gmfgraph#ActivityFinalNode"/>
         </ownedChild>
@@ -130,7 +130,7 @@
               href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//DecisionNode"/>
           <tool
               xsi:type="gmftool:CreationTool"
-              href="activityDiagram.gmftool#//@palette/@tools.2/@tools.4"/>
+              href="activityDiagram.gmftool#//@palette/@tools.2/@tools.3/@tools.1"/>
           <diagramNode
               href="activityDiagram_controlNodes.gmfgraph#DecisionAndMergeNode"/>
         </ownedChild>
@@ -144,7 +144,7 @@
               href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//MergeNode"/>
           <tool
               xsi:type="gmftool:CreationTool"
-              href="activityDiagram.gmftool#//@palette/@tools.2/@tools.3"/>
+              href="activityDiagram.gmftool#//@palette/@tools.2/@tools.3/@tools.0"/>
           <diagramNode
               href="activityDiagram_controlNodes.gmfgraph#DecisionAndMergeNode"/>
         </ownedChild>
@@ -158,7 +158,7 @@
               href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//InitialNode"/>
           <tool
               xsi:type="gmftool:CreationTool"
-              href="activityDiagram.gmftool#//@palette/@tools.2/@tools.1"/>
+              href="activityDiagram.gmftool#//@palette/@tools.2/@tools.0"/>
           <diagramNode
               href="activityDiagram_controlNodes.gmfgraph#ActivityInitialNode"/>
         </ownedChild>
@@ -197,7 +197,7 @@
           </labelMappings>
           <tool
               xsi:type="gmftool:CreationTool"
-              href="activityDiagram.gmftool#//@palette/@tools.4/@tools.0"/>
+              href="activityDiagram.gmftool#//@palette/@tools.4/@tools.1"/>
           <diagramNode
               href="activityDiagram_objects.gmfgraph#DataStoreNode"/>
         </ownedChild>
@@ -235,7 +235,7 @@
           </labelMappings>
           <tool
               xsi:type="gmftool:CreationTool"
-              href="activityDiagram.gmftool#//@palette/@tools.4/@tools.1"/>
+              href="activityDiagram.gmftool#//@palette/@tools.4/@tools.0"/>
           <diagramNode
               href="activityDiagram_objects.gmfgraph#CentralBufferNode"/>
         </ownedChild>
@@ -256,7 +256,7 @@
           </labelMappings>
           <tool
               xsi:type="gmftool:CreationTool"
-              href="activityDiagram.gmftool#//@palette/@tools.1/@tools.2"/>
+              href="activityDiagram.gmftool#//@palette/@tools.1/@tools.5"/>
           <diagramNode
               href="activityDiagram_actions.gmfgraph#Action_BaseNode"/>
           <children>
@@ -290,7 +290,7 @@
               href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//ForkNode"/>
           <tool
               xsi:type="gmftool:CreationTool"
-              href="activityDiagram.gmftool#//@palette/@tools.2/@tools.5"/>
+              href="activityDiagram.gmftool#//@palette/@tools.2/@tools.4/@tools.0"/>
           <diagramNode
               href="activityDiagram_controlNodes.gmfgraph#ForkAndJoinNode"/>
         </ownedChild>
@@ -304,7 +304,7 @@
               href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//JoinNode"/>
           <tool
               xsi:type="gmftool:CreationTool"
-              href="activityDiagram.gmftool#//@palette/@tools.2/@tools.6"/>
+              href="activityDiagram.gmftool#//@palette/@tools.2/@tools.4/@tools.1"/>
           <diagramNode
               href="activityDiagram_controlNodes.gmfgraph#ForkAndJoinNode"/>
         </ownedChild>
@@ -325,7 +325,7 @@
           </labelMappings>
           <tool
               xsi:type="gmftool:CreationTool"
-              href="activityDiagram.gmftool#//@palette/@tools.4/@tools.2"/>
+              href="activityDiagram.gmftool#//@palette/@tools.4/@tools.2/@tools.0"/>
           <diagramNode
               href="activityDiagram_objects.gmfgraph#StandalonePinNode"/>
         </ownedChild>
@@ -346,7 +346,7 @@
           </labelMappings>
           <tool
               xsi:type="gmftool:CreationTool"
-              href="activityDiagram.gmftool#//@palette/@tools.1/@tools.3"/>
+              href="activityDiagram.gmftool#//@palette/@tools.1/@tools.4"/>
           <diagramNode
               href="activityDiagram_actions.gmfgraph#Action_BaseNode"/>
           <children>
@@ -373,7 +373,7 @@
           </labelMappings>
           <tool
               xsi:type="gmftool:CreationTool"
-              href="activityDiagram.gmftool#//@palette/@tools.1/@tools.4"/>
+              href="activityDiagram.gmftool#//@palette/@tools.1/@tools.1"/>
           <diagramNode
               href="activityDiagram_actions.gmfgraph#ActionAddStructuralFeatureValueNode"/>
           <children>
@@ -412,7 +412,7 @@
           </labelMappings>
           <tool
               xsi:type="gmftool:CreationTool"
-              href="activityDiagram.gmftool#//@palette/@tools.1/@tools.5"/>
+              href="activityDiagram.gmftool#//@palette/@tools.1/@tools.2"/>
           <diagramNode
               href="activityDiagram_actions.gmfgraph#ActionCallBehaviorNode"/>
           <children>
@@ -445,7 +445,7 @@
           </labelMappings>
           <tool
               xsi:type="gmftool:CreationTool"
-              href="activityDiagram.gmftool#//@palette/@tools.1/@tools.6"/>
+              href="activityDiagram.gmftool#//@palette/@tools.1/@tools.3"/>
           <diagramNode
               href="activityDiagram_actions.gmfgraph#ActionCallOperationNode"/>
           <children>
@@ -601,7 +601,7 @@
           </labelMappings>
           <tool
               xsi:type="gmftool:CreationTool"
-              href="activityDiagram.gmftool#//@palette/@tools.1/@tools.10"/>
+              href="activityDiagram.gmftool#//@palette/@tools.1/@tools.9"/>
           <diagramNode
               href="activityDiagram_behaviors.gmfgraph#SelectionNode"/>
         </ownedChild>
@@ -631,7 +631,7 @@
           </labelMappings>
           <tool
               xsi:type="gmftool:CreationTool"
-              href="activityDiagram.gmftool#//@palette/@tools.4/@tools.6"/>
+              href="activityDiagram.gmftool#//@palette/@tools.0/@tools.1"/>
           <diagramNode
               href="activityDiagram_objects.gmfgraph#ActivityParameterNode"/>
         </ownedChild>
@@ -662,7 +662,7 @@
           </labelMappings>
           <tool
               xsi:type="gmftool:CreationTool"
-              href="activityDiagram.gmftool#//@palette/@tools.1/@tools.7"/>
+              href="activityDiagram.gmftool#//@palette/@tools.1/@tools.6"/>
           <diagramNode
               href="activityDiagram_actions.gmfgraph#SendSignalActionNode"/>
         </ownedChild>
@@ -680,7 +680,7 @@
           href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//Constraint"/>
       <tool
           xsi:type="gmftool:CreationTool"
-          href="activityDiagram.gmftool#//@palette/@tools.1/@tools.8"/>
+          href="activityDiagram.gmftool#//@palette/@tools.1/@tools.7"/>
       <diagramNode
           href="activityDiagram_constraints.gmfgraph#LocalPreconditionNode"/>
       <children
@@ -725,7 +725,7 @@
           href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//Constraint"/>
       <tool
           xsi:type="gmftool:CreationTool"
-          href="activityDiagram.gmftool#//@palette/@tools.1/@tools.8"/>
+          href="activityDiagram.gmftool#//@palette/@tools.1/@tools.7"/>
       <diagramNode
           href="activityDiagram_constraints.gmfgraph#LocalPostconditionNode"/>
       <children
@@ -807,7 +807,7 @@
   <links>
     <tool
         xsi:type="gmftool:CreationTool"
-        href="activityDiagram.gmftool#//@palette/@tools.1/@tools.9"/>
+        href="activityDiagram.gmftool#//@palette/@tools.1/@tools.8"/>
     <diagramLink
         href="../../../plugin/org.eclipse.gmf.graphdef/models/classDiagram.gmfgraph#DashedConnection"/>
     <linkMetaFeature
@@ -817,7 +817,7 @@
   <links>
     <tool
         xsi:type="gmftool:CreationTool"
-        href="activityDiagram.gmftool#//@palette/@tools.4/@tools.5"/>
+        href="activityDiagram.gmftool#//@palette/@tools.4/@tools.3"/>
     <diagramLink
         href="../../../plugin/org.eclipse.gmf.graphdef/models/classDiagram.gmfgraph#DashedConnection"/>
     <linkMetaFeature

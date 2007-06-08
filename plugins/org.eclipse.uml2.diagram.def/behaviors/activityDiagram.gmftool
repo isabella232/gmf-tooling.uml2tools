@@ -14,28 +14,29 @@
           xsi:type="gmftool:CreationTool"
           title="Activity"
           description="Create activity"/>
+      <tools
+          xsi:type="gmftool:CreationTool"
+          title="Activity Parameter"
+          description="Create Activity Parameter"/>
     </tools>
     <tools
         xsi:type="gmftool:ToolGroup"
         title="Actions"
-        description="Actions"
-        collapsible="true">
+        description="Actions">
       <tools
-          xsi:type="gmftool:CreationTool"
+          xsi:type="gmftool:ToolGroup"
           title="Accept Event Action"
-          description="Create Accept Event Action"/>
-      <tools
-          xsi:type="gmftool:CreationTool"
-          title="Accept Time Action"
-          description="Create Accept Time Action"/>
-      <tools
-          xsi:type="gmftool:CreationTool"
-          title="Opaque Action"
-          description="Create Opaque Action"/>
-      <tools
-          xsi:type="gmftool:CreationTool"
-          title="Create Object Action"
-          description="Create Create Object Action"/>
+          description="Create new Accept Event Action"
+          stack="true">
+        <tools
+            xsi:type="gmftool:CreationTool"
+            title="Accept Event Action"
+            description="Create Accept Event Action"/>
+        <tools
+            xsi:type="gmftool:CreationTool"
+            title="Accept Time Event Action"
+            description="Create Accept Time Event Action"/>
+      </tools>
       <tools
           xsi:type="gmftool:CreationTool"
           title="Add Feature Value Action"
@@ -48,6 +49,14 @@
           xsi:type="gmftool:CreationTool"
           title="Call Operation Action"
           description="Create Call Operation Action"/>
+      <tools
+          xsi:type="gmftool:CreationTool"
+          title="Create Object Action"
+          description="Create Create Object Action"/>
+      <tools
+          xsi:type="gmftool:CreationTool"
+          title="Opaque Action"
+          description="Create Opaque Action"/>
       <tools
           xsi:type="gmftool:CreationTool"
           title="Send Signal Action"
@@ -68,42 +77,52 @@
     <tools
         xsi:type="gmftool:ToolGroup"
         title="Control Nodes"
-        description="Control Nodes"
-        collapsible="true">
-      <tools
-          xsi:type="gmftool:CreationTool"
-          title="Activity Final Node"
-          description="Create Activity Final Node"/>
+        description="Control Nodes">
       <tools
           xsi:type="gmftool:CreationTool"
           title="Activity Initial Node"
           description="Create Activity Initial Node"/>
       <tools
           xsi:type="gmftool:CreationTool"
+          title="Activity Final Node"
+          description="Create Activity Final Node"/>
+      <tools
+          xsi:type="gmftool:CreationTool"
           title="Flow Final Node"
           description="Create Flow Final Node"/>
       <tools
-          xsi:type="gmftool:CreationTool"
-          title="Decision Node"
-          description="Create Decision Node"/>
+          xsi:type="gmftool:ToolGroup"
+          title="Merge/Decision Node"
+          description="Create new Merge/Decision Node"
+          stack="true">
+        <tools
+            xsi:type="gmftool:CreationTool"
+            title="Merge Node"
+            description="Create Merge Node"/>
+        <tools
+            xsi:type="gmftool:CreationTool"
+            title="Decision Node"
+            description="Create Decision Node"/>
+      </tools>
       <tools
-          xsi:type="gmftool:CreationTool"
-          title="Merge Node"
-          description="Create Merge Node"/>
-      <tools
-          xsi:type="gmftool:CreationTool"
-          title="Fork Node"
-          description="Create Fork Node"/>
-      <tools
-          xsi:type="gmftool:CreationTool"
-          title="Join Node"
-          description="Create Join Node"/>
+          xsi:type="gmftool:ToolGroup"
+          title="Fork/Join Node"
+          description="Create new Fork/Join Node"
+          stack="true">
+        <tools
+            xsi:type="gmftool:CreationTool"
+            title="Fork Node"
+            description="Create Fork Node"/>
+        <tools
+            xsi:type="gmftool:CreationTool"
+            title="Join Node"
+            description="Create Join Node"/>
+      </tools>
     </tools>
     <tools
         xsi:type="gmftool:ToolGroup"
         title="Structured Activities"
-        description="Structured Activities"
-        collapsible="true">
+        description="Structured Activities">
       <tools
           xsi:type="gmftool:CreationTool"
           title="Structured Activity Node"
@@ -112,42 +131,42 @@
     <tools
         xsi:type="gmftool:ToolGroup"
         title="Objects"
-        description="Objects"
-        collapsible="true">
-      <tools
-          xsi:type="gmftool:CreationTool"
-          title="Datastore"
-          description="Create Datastore"/>
+        description="Objects">
       <tools
           xsi:type="gmftool:CreationTool"
           title="Central Buffer"
           description="Create Central Buffer"/>
       <tools
           xsi:type="gmftool:CreationTool"
+          title="Datastore"
+          description="Create Datastore"/>
+      <tools
+          xsi:type="gmftool:ToolGroup"
           title="Pin"
-          description="Create Pin"/>
-      <tools
-          xsi:type="gmftool:CreationTool"
-          title="Output Pin"
-          description="Create Output Pin"/>
-      <tools
-          xsi:type="gmftool:CreationTool"
-          title="Input Pin"
-          description="Create Input Pin"/>
+          description="Create new Pin"
+          stack="true">
+        <tools
+            xsi:type="gmftool:CreationTool"
+            title="Pin"
+            description="Create Pin"/>
+        <tools
+            xsi:type="gmftool:CreationTool"
+            title="Input Pin"
+            description="Create Input Pin"/>
+        <tools
+            xsi:type="gmftool:CreationTool"
+            title="Output Pin"
+            description="Create Output Pin"/>
+      </tools>
       <tools
           xsi:type="gmftool:CreationTool"
           title="Selection"
           description="Creating SelectionLink"/>
-      <tools
-          xsi:type="gmftool:CreationTool"
-          title="Activity Parameter"
-          description="Create Activity Parameter"/>
     </tools>
     <tools
         xsi:type="gmftool:ToolGroup"
         title="Edges"
-        description="Edges"
-        collapsible="true">
+        description="Edges">
       <tools
           xsi:type="gmftool:CreationTool"
           title="Control Flow"

@@ -2873,31 +2873,31 @@
             title="Activity"
             description="Create activity"
             genNodes="//@diagram/@topLevelNodes.0"/>
+        <entries
+            xsi:type="gmfgen:ToolEntry"
+            title="Activity Parameter"
+            description="Create Activity Parameter"
+            genNodes="//@diagram/@childNodes.43"/>
       </groups>
       <groups
           title="Actions"
-          description="Actions"
-          collapse="true">
+          description="Actions">
         <entries
-            xsi:type="gmfgen:ToolEntry"
+            xsi:type="gmfgen:ToolGroup"
             title="Accept Event Action"
-            description="Create Accept Event Action"
-            genNodes="//@diagram/@childNodes.0 //@diagram/@childNodes.28"/>
-        <entries
-            xsi:type="gmfgen:ToolEntry"
-            title="Accept Time Action"
-            description="Create Accept Time Action"
-            genNodes="//@diagram/@childNodes.1 //@diagram/@childNodes.29"/>
-        <entries
-            xsi:type="gmfgen:ToolEntry"
-            title="Opaque Action"
-            description="Create Opaque Action"
-            genNodes="//@diagram/@childNodes.8 //@diagram/@childNodes.27"/>
-        <entries
-            xsi:type="gmfgen:ToolEntry"
-            title="Create Object Action"
-            description="Create Create Object Action"
-            genNodes="//@diagram/@childNodes.14 //@diagram/@childNodes.34"/>
+            description="Create new Accept Event Action"
+            stack="true">
+          <entries
+              xsi:type="gmfgen:ToolEntry"
+              title="Accept Event Action"
+              description="Create Accept Event Action"
+              genNodes="//@diagram/@childNodes.0 //@diagram/@childNodes.28"/>
+          <entries
+              xsi:type="gmfgen:ToolEntry"
+              title="Accept Time Event Action"
+              description="Create Accept Time Event Action"
+              genNodes="//@diagram/@childNodes.1 //@diagram/@childNodes.29"/>
+        </entries>
         <entries
             xsi:type="gmfgen:ToolEntry"
             title="Add Feature Value Action"
@@ -2913,6 +2913,16 @@
             title="Call Operation Action"
             description="Create Call Operation Action"
             genNodes="//@diagram/@childNodes.23 //@diagram/@childNodes.36"/>
+        <entries
+            xsi:type="gmfgen:ToolEntry"
+            title="Create Object Action"
+            description="Create Create Object Action"
+            genNodes="//@diagram/@childNodes.14 //@diagram/@childNodes.34"/>
+        <entries
+            xsi:type="gmfgen:ToolEntry"
+            title="Opaque Action"
+            description="Create Opaque Action"
+            genNodes="//@diagram/@childNodes.8 //@diagram/@childNodes.27"/>
         <entries
             xsi:type="gmfgen:ToolEntry"
             title="Send Signal Action"
@@ -2936,13 +2946,7 @@
       </groups>
       <groups
           title="Control Nodes"
-          description="Control Nodes"
-          collapse="true">
-        <entries
-            xsi:type="gmfgen:ToolEntry"
-            title="Activity Final Node"
-            description="Create Activity Final Node"
-            genNodes="//@diagram/@childNodes.2 //@diagram/@childNodes.30"/>
+          description="Control Nodes">
         <entries
             xsi:type="gmfgen:ToolEntry"
             title="Activity Initial Node"
@@ -2950,34 +2954,50 @@
             genNodes="//@diagram/@childNodes.5"/>
         <entries
             xsi:type="gmfgen:ToolEntry"
+            title="Activity Final Node"
+            description="Create Activity Final Node"
+            genNodes="//@diagram/@childNodes.2 //@diagram/@childNodes.30"/>
+        <entries
+            xsi:type="gmfgen:ToolEntry"
             title="Flow Final Node"
             description="Create Flow Final Node"
             genNodes="//@diagram/@childNodes.10 //@diagram/@childNodes.32"/>
         <entries
-            xsi:type="gmfgen:ToolEntry"
-            title="Decision Node"
-            description="Create Decision Node"
-            genNodes="//@diagram/@childNodes.4"/>
+            xsi:type="gmfgen:ToolGroup"
+            title="Merge/Decision Node"
+            description="Create new Merge/Decision Node"
+            stack="true">
+          <entries
+              xsi:type="gmfgen:ToolEntry"
+              title="Merge Node"
+              description="Create Merge Node"
+              genNodes="//@diagram/@childNodes.4"/>
+          <entries
+              xsi:type="gmfgen:ToolEntry"
+              title="Decision Node"
+              description="Create Decision Node"
+              genNodes="//@diagram/@childNodes.3 //@diagram/@childNodes.31"/>
+        </entries>
         <entries
-            xsi:type="gmfgen:ToolEntry"
-            title="Merge Node"
-            description="Create Merge Node"
-            genNodes="//@diagram/@childNodes.3 //@diagram/@childNodes.31"/>
-        <entries
-            xsi:type="gmfgen:ToolEntry"
-            title="Fork Node"
-            description="Create Fork Node"
-            genNodes="//@diagram/@childNodes.11 //@diagram/@childNodes.37"/>
-        <entries
-            xsi:type="gmfgen:ToolEntry"
-            title="Join Node"
-            description="Create Join Node"
-            genNodes="//@diagram/@childNodes.12 //@diagram/@childNodes.38"/>
+            xsi:type="gmfgen:ToolGroup"
+            title="Fork/Join Node"
+            description="Create new Fork/Join Node"
+            stack="true">
+          <entries
+              xsi:type="gmfgen:ToolEntry"
+              title="Fork Node"
+              description="Create Fork Node"
+              genNodes="//@diagram/@childNodes.11 //@diagram/@childNodes.37"/>
+          <entries
+              xsi:type="gmfgen:ToolEntry"
+              title="Join Node"
+              description="Create Join Node"
+              genNodes="//@diagram/@childNodes.12 //@diagram/@childNodes.38"/>
+        </entries>
       </groups>
       <groups
           title="Structured Activities"
-          description="Structured Activities"
-          collapse="true">
+          description="Structured Activities">
         <entries
             xsi:type="gmfgen:ToolEntry"
             title="Structured Activity Node"
@@ -2986,13 +3006,7 @@
       </groups>
       <groups
           title="Objects"
-          description="Objects"
-          collapse="true">
-        <entries
-            xsi:type="gmfgen:ToolEntry"
-            title="Datastore"
-            description="Create Datastore"
-            genNodes="//@diagram/@childNodes.6 //@diagram/@childNodes.40"/>
+          description="Objects">
         <entries
             xsi:type="gmfgen:ToolEntry"
             title="Central Buffer"
@@ -3000,34 +3014,39 @@
             genNodes="//@diagram/@childNodes.7 //@diagram/@childNodes.41"/>
         <entries
             xsi:type="gmfgen:ToolEntry"
+            title="Datastore"
+            description="Create Datastore"
+            genNodes="//@diagram/@childNodes.6 //@diagram/@childNodes.40"/>
+        <entries
+            xsi:type="gmfgen:ToolGroup"
             title="Pin"
-            description="Create Pin"
-            genNodes="//@diagram/@childNodes.13 //@diagram/@childNodes.33"/>
-        <entries
-            xsi:type="gmfgen:ToolEntry"
-            title="Output Pin"
-            description="Create Output Pin"
-            genNodes="//@diagram/@childNodes.9 //@diagram/@childNodes.15 //@diagram/@childNodes.21"/>
-        <entries
-            xsi:type="gmfgen:ToolEntry"
-            title="Input Pin"
-            description="Create Input Pin"
-            genNodes="//@diagram/@childNodes.17 //@diagram/@childNodes.18 //@diagram/@childNodes.19 //@diagram/@childNodes.22 //@diagram/@childNodes.24"/>
+            description="Create new Pin"
+            stack="true">
+          <entries
+              xsi:type="gmfgen:ToolEntry"
+              title="Pin"
+              description="Create Pin"
+              genNodes="//@diagram/@childNodes.13 //@diagram/@childNodes.33"/>
+          <entries
+              xsi:type="gmfgen:ToolEntry"
+              title="Input Pin"
+              description="Create Input Pin"
+              genNodes="//@diagram/@childNodes.17 //@diagram/@childNodes.18 //@diagram/@childNodes.19 //@diagram/@childNodes.22 //@diagram/@childNodes.24"/>
+          <entries
+              xsi:type="gmfgen:ToolEntry"
+              title="Output Pin"
+              description="Create Output Pin"
+              genNodes="//@diagram/@childNodes.9 //@diagram/@childNodes.15 //@diagram/@childNodes.21"/>
+        </entries>
         <entries
             xsi:type="gmfgen:ToolEntry"
             title="Selection"
             description="Creating SelectionLink"
             genLinks="//@diagram/@links.3"/>
-        <entries
-            xsi:type="gmfgen:ToolEntry"
-            title="Activity Parameter"
-            description="Create Activity Parameter"
-            genNodes="//@diagram/@childNodes.43"/>
       </groups>
       <groups
           title="Edges"
-          description="Edges"
-          collapse="true">
+          description="Edges">
         <entries
             xsi:type="gmfgen:ToolEntry"
             title="Control Flow"
@@ -3050,27 +3069,27 @@
         name="UML Activity Diagram">
       <children
           xsi:type="gmfgen:GenStandardPreferencePage"
-          iD="org.eclipse.uml2.uml.diagram.activity.appearance"
+          iD="org.eclipse.uml2.uml.diagram.appearance"
           name="Appearance"
           kind="Appearance"/>
       <children
           xsi:type="gmfgen:GenStandardPreferencePage"
-          iD="org.eclipse.uml2.uml.diagram.activity.connections"
+          iD="org.eclipse.uml2.uml.diagram.connections"
           name="Connections"
           kind="Connections"/>
       <children
           xsi:type="gmfgen:GenStandardPreferencePage"
-          iD="org.eclipse.uml2.uml.diagram.activity.printing"
+          iD="org.eclipse.uml2.uml.diagram.printing"
           name="Printing"
           kind="Printing"/>
       <children
           xsi:type="gmfgen:GenStandardPreferencePage"
-          iD="org.eclipse.uml2.uml.diagram.activity.rulersAndGrid"
+          iD="org.eclipse.uml2.uml.diagram.rulersAndGrid"
           name="Rulers And Grid"
           kind="RulersAndGrid"/>
       <children
           xsi:type="gmfgen:GenStandardPreferencePage"
-          iD="org.eclipse.uml2.uml.diagram.activity.pathmaps"
+          iD="org.eclipse.uml2.uml.diagram.pathmaps"
           name="Pathmaps"
           kind="Pathmaps"/>
     </preferencePages>
