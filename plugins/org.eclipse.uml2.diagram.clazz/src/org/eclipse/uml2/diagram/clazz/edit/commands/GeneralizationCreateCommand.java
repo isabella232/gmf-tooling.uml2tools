@@ -12,7 +12,6 @@ import org.eclipse.gmf.runtime.emf.type.core.requests.CreateRelationshipRequest;
 import org.eclipse.uml2.diagram.clazz.edit.policies.UMLBaseItemSemanticEditPolicy;
 import org.eclipse.uml2.uml.Classifier;
 import org.eclipse.uml2.uml.Generalization;
-import org.eclipse.uml2.uml.GeneralizationSet;
 import org.eclipse.uml2.uml.UMLFactory;
 import org.eclipse.uml2.uml.UMLPackage;
 

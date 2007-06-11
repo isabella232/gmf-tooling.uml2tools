@@ -2132,6 +2132,67 @@
         </modelFacet>
       </labels>
     </topLevelNodes>
+    <topLevelNodes
+        visualID="2014"
+        editPartClassName="Package4EditPart"
+        itemSemanticEditPolicyClassName="Package4ItemSemanticEditPolicy"
+        notationViewFactoryClassName="Package4ViewFactory"
+        canonicalEditPolicyClassName="Package4CanonicalEditPolicy"
+        primaryDragEditPolicyQualifiedClassName="org.eclipse.uml2.diagram.common.editpolicies.UnmovableUnselectableShapeEditPolicy"
+        graphicalNodeEditPolicyClassName="Package3GraphicalNodeEditPolicy"
+        createCommandClassName="Package3CreateCommand">
+      <diagramRunTimeClass
+          href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
+      <elementType
+          xsi:type="gmfgen:SpecializationType"
+          metamodelType="//@diagram/@elementType"/>
+      <viewmap
+          xsi:type="gmfgen:InnerClassViewmap"
+          layoutType="TOOLBAR_LAYOUT"
+          className="SecondaryPackageFigure"
+          classBody="&#xD;&#xA;/**&#xD;&#xA; * @generated&#xD;&#xA; */&#xD;&#xA;public class SecondaryPackageFigure extends org.eclipse.draw2d.Shape {&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;public SecondaryPackageFigure() {&#xD;&#xA;&#x9;&#x9;&#xD;&#xA;&#xD;&#xA;&#x9;org.eclipse.draw2d.ToolbarLayout layoutThis = new org.eclipse.draw2d.ToolbarLayout();&#xD;&#xA;&#x9;layoutThis.setStretchMinorAxis(true);&#xD;&#xA;&#x9;layoutThis.setMinorAlignment(org.eclipse.draw2d.ToolbarLayout.&#xD;&#xA;ALIGN_CENTER&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;);&#xD;&#xA;&#xD;&#xA;&#x9;layoutThis.setSpacing(0);&#xD;&#xA;&#x9;layoutThis.setVertical(true);&#xD;&#xA;&#xD;&#xA;&#x9;this.setLayoutManager(layoutThis);&#xD;&#xA;&#xD;&#xA;&#x9;&#x9;this.addPoint(new org.eclipse.draw2d.geometry.Point(getMapMode().DPtoLP(0)&#xD;&#xA;, getMapMode().DPtoLP(0)&#xD;&#xA;));&#xD;&#xA;this.addPoint(new org.eclipse.draw2d.geometry.Point(getMapMode().DPtoLP(0)&#xD;&#xA;, getMapMode().DPtoLP(40)&#xD;&#xA;));&#xD;&#xA;this.addPoint(new org.eclipse.draw2d.geometry.Point(getMapMode().DPtoLP(35)&#xD;&#xA;, getMapMode().DPtoLP(40)&#xD;&#xA;));&#xD;&#xA;this.addPoint(new org.eclipse.draw2d.geometry.Point(getMapMode().DPtoLP(40)&#xD;&#xA;, getMapMode().DPtoLP(35)&#xD;&#xA;));&#xD;&#xA;this.addPoint(new org.eclipse.draw2d.geometry.Point(getMapMode().DPtoLP(40)&#xD;&#xA;, getMapMode().DPtoLP(0)&#xD;&#xA;));&#xD;&#xA;this.setFill(true);&#xD;&#xA;this.setFillXOR(false);&#xD;&#xA;this.setOutline(true);&#xD;&#xA;this.setOutlineXOR(false);&#xD;&#xA;this.setLineWidth(1);&#xD;&#xA;this.setLineStyle(org.eclipse.draw2d.Graphics.LINE_SOLID);&#xD;&#xA;&#xD;&#xA;this.setBorder(new org.eclipse.draw2d.MarginBorder(getMapMode().DPtoLP(5)&#xD;&#xA;, getMapMode().DPtoLP(5)&#xD;&#xA;, getMapMode().DPtoLP(5)&#xD;&#xA;, getMapMode().DPtoLP(5)&#xD;&#xA;));&#xD;&#xA;&#x9;&#x9;createContents();&#xD;&#xA;&#x9;}&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;private void createContents(){&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;org.eclipse.gmf.runtime.draw2d.ui.figures.WrapLabel secondaryPackage_PackageLabel0 = new org.eclipse.gmf.runtime.draw2d.ui.figures.WrapLabel();&#xD;&#xA;secondaryPackage_PackageLabel0.setText(&quot;Package&quot;);&#xD;&#xA;&#xD;&#xA;this.add(secondaryPackage_PackageLabel0);&#xD;&#xA;setFigureSecondaryPackage_PackageLabel(secondaryPackage_PackageLabel0);&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;org.eclipse.gmf.runtime.draw2d.ui.figures.WrapLabel secondaryPackage_NameLabel0 = new org.eclipse.gmf.runtime.draw2d.ui.figures.WrapLabel();&#xD;&#xA;secondaryPackage_NameLabel0.setText(&quot;&quot;);&#xD;&#xA;&#xD;&#xA;this.add(secondaryPackage_NameLabel0);&#xD;&#xA;setFigureSecondaryPackage_NameLabel(secondaryPackage_NameLabel0);&#xD;&#xA;&#xD;&#xA;&#x9;}&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;private org.eclipse.gmf.runtime.draw2d.ui.figures.WrapLabel fSecondaryPackage_PackageLabel; &#xD;&#xA;&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;public org.eclipse.gmf.runtime.draw2d.ui.figures.WrapLabel getFigureSecondaryPackage_PackageLabel() {&#xD;&#xA;&#x9;&#x9;return fSecondaryPackage_PackageLabel;&#xD;&#xA;&#x9;}&#xD;&#xA;&#x9;&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;private void setFigureSecondaryPackage_PackageLabel(org.eclipse.gmf.runtime.draw2d.ui.figures.WrapLabel fig){&#xD;&#xA;&#x9;&#x9;fSecondaryPackage_PackageLabel = fig;&#xD;&#xA;&#x9;}&#xD;&#xA;&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;private org.eclipse.gmf.runtime.draw2d.ui.figures.WrapLabel fSecondaryPackage_NameLabel; &#xD;&#xA;&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;public org.eclipse.gmf.runtime.draw2d.ui.figures.WrapLabel getFigureSecondaryPackage_NameLabel() {&#xD;&#xA;&#x9;&#x9;return fSecondaryPackage_NameLabel;&#xD;&#xA;&#x9;}&#xD;&#xA;&#x9;&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;private void setFigureSecondaryPackage_NameLabel(org.eclipse.gmf.runtime.draw2d.ui.figures.WrapLabel fig){&#xD;&#xA;&#x9;&#x9;fSecondaryPackage_NameLabel = fig;&#xD;&#xA;&#x9;}&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;private final org.eclipse.draw2d.geometry.PointList myTemplate = new org.eclipse.draw2d.geometry.PointList();&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;private org.eclipse.draw2d.geometry.Rectangle myTemplateBounds;&#xD;&#xA;&#x9;&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;public void addPoint(org.eclipse.draw2d.geometry.Point point){&#xD;&#xA;&#x9;&#x9;myTemplate.addPoint(point);&#xD;&#xA;&#x9;&#x9;myTemplateBounds = null;&#xD;&#xA;&#x9;}&#xD;&#xA;&#x9;&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;protected void fillShape(org.eclipse.draw2d.Graphics graphics) {&#xD;&#xA;&#x9;&#x9;org.eclipse.draw2d.geometry.Rectangle bounds = getBounds();&#xD;&#xA;&#x9;&#x9;graphics.pushState();&#xD;&#xA;&#x9;&#x9;graphics.translate(bounds.x, bounds.y);&#xD;&#xA;&#x9;&#x9;graphics.fillPolygon(scalePointList());&#xD;&#xA;&#x9;&#x9;graphics.popState();&#xD;&#xA;&#x9;}&#xD;&#xA;&#x9;&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;protected void outlineShape(org.eclipse.draw2d.Graphics graphics) {&#xD;&#xA;&#x9;&#x9;org.eclipse.draw2d.geometry.Rectangle bounds = getBounds();&#xD;&#xA;&#x9;&#x9;graphics.pushState();&#xD;&#xA;&#x9;&#x9;graphics.translate(bounds.x, bounds.y);&#xD;&#xA;&#x9;&#x9;graphics.drawPolygon(scalePointList());&#xD;&#xA;&#x9;&#x9;graphics.popState();&#xD;&#xA;&#x9;}&#xD;&#xA;&#x9;&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;private org.eclipse.draw2d.geometry.Rectangle getTemplateBounds(){&#xD;&#xA;&#x9;&#x9;if (myTemplateBounds == null){&#xD;&#xA;&#x9;&#x9;&#x9;myTemplateBounds = myTemplate.getBounds().getCopy().union(0, 0);&#xD;&#xA;&#x9;&#x9;&#x9;//just safety -- we are going to use this as divider &#xD;&#xA;&#x9;&#x9;&#x9;if (myTemplateBounds.width &lt; 1){&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;myTemplateBounds.width = 1;&#xD;&#xA;&#x9;&#x9;&#x9;}&#xD;&#xA;&#x9;&#x9;&#x9;if (myTemplateBounds.height &lt; 1){&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;myTemplateBounds.height = 1;&#xD;&#xA;&#x9;&#x9;&#x9;}&#xD;&#xA;&#x9;&#x9;}&#xD;&#xA;&#x9;&#x9;return myTemplateBounds;&#xD;&#xA;&#x9;}&#xD;&#xA;&#x9;&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;private int[] scalePointList() {&#xD;&#xA;&#x9;&#x9;org.eclipse.draw2d.geometry.Rectangle pointsBounds = getTemplateBounds();&#xD;&#xA;&#x9;&#x9;org.eclipse.draw2d.geometry.Rectangle actualBounds = getBounds();&#xD;&#xA;&#xD;&#xA;&#x9;&#x9;float xScale = ((float) actualBounds.width) / pointsBounds.width;&#xD;&#xA;&#x9;&#x9;float yScale = ((float) actualBounds.height) / pointsBounds.height;&#xD;&#xA;&#xD;&#xA;&#x9;&#x9;if (xScale == 1 &amp;&amp; yScale == 1) {&#xD;&#xA;&#x9;&#x9;&#x9;return myTemplate.toIntArray();&#xD;&#xA;&#x9;&#x9;}&#xD;&#xA;&#x9;&#x9;int[] scaled = (int[]) myTemplate.toIntArray().clone();&#xD;&#xA;&#x9;&#x9;for (int i = 0; i &lt; scaled.length; i += 2) {&#xD;&#xA;&#x9;&#x9;&#x9;scaled[i] = (int) Math.floor(scaled[i] * xScale);&#xD;&#xA;&#x9;&#x9;&#x9;scaled[i + 1] = (int) Math.floor(scaled[i + 1] * yScale);&#xD;&#xA;&#x9;&#x9;}&#xD;&#xA;&#x9;&#x9;return scaled;&#xD;&#xA;&#x9;}&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;}&#xD;&#xA;&#xD;&#xA;">
+        <attributes
+            xsi:type="gmfgen:DefaultSizeAttributes"
+            width="100"
+            height="60"/>
+        <attributes
+            xsi:type="uml2.gmfgenext:AuxSecondaryDiagramNodeAttribute"
+            substituteWithCanvasElement="true"/>
+        <requiredPluginIDs>org.eclipse.draw2d</requiredPluginIDs>
+        <requiredPluginIDs>org.eclipse.uml2.diagram.common</requiredPluginIDs>
+        <requiredPluginIDs>org.eclipse.gmf.runtime.draw2d.ui</requiredPluginIDs>
+      </viewmap>
+      <behaviour
+          xsi:type="gmfgen:CustomBehaviour"
+          key="&quot;ConnectionHandlesPolicy&quot;"
+          editPolicyQualifiedClassName="org.eclipse.uml2.diagram.common.editpolicies.DoNothingEditPolicy"/>
+      <modelFacet>
+        <metaClass
+            href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/Package"/>
+        <containmentMetaFeature
+            href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/Component/packagedElement"/>
+        <childMetaFeature
+            href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/Component/packagedElement"/>
+      </modelFacet>
+      <labels
+          visualID="5020"
+          editPartClassName="PackageName2EditPart"
+          itemSemanticEditPolicyClassName="PackageName2ItemSemanticEditPolicy"
+          notationViewFactoryClassName="PackageName2ViewFactory"
+          elementIcon="true">
+        <diagramRunTimeClass
+            href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
+        <viewmap
+            xsi:type="gmfgen:ParentAssignedViewmap"
+            getterName="getFigureSecondaryPackage_NameLabel"
+            figureQualifiedClassName="org.eclipse.gmf.runtime.draw2d.ui.figures.WrapLabel"/>
+        <modelFacet
+            xsi:type="gmfgen:FeatureLabelModelFacet">
+          <metaFeatures
+              href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/NamedElement/name"/>
+        </modelFacet>
+      </labels>
+    </topLevelNodes>
     <links
         visualID="4001"
         editPartClassName="GeneralizationEditPart"
@@ -3461,6 +3522,9 @@
         child="//@diagram/@topLevelNodes.11"/>
     <childReferences
         parent="//@diagram"
+        child="//@diagram/@topLevelNodes.12"/>
+    <childReferences
+        parent="//@diagram"
         child="//@diagram/@links.0"
         groupName="links"
         groupIcon="icons/linksNavigatorGroup.gif"/>
@@ -3945,6 +4009,18 @@
         groupIcon="icons/linkTargetNavigatorGroup.gif"/>
     <childReferences
         parent="//@diagram/@topLevelNodes.11"
+        child="//@diagram/@links.1"
+        referenceType="in_source"
+        groupName="incoming links"
+        groupIcon="icons/incomingLinksNavigatorGroup.gif"/>
+    <childReferences
+        parent="//@diagram/@links.1"
+        child="//@diagram/@topLevelNodes.12"
+        referenceType="out_target"
+        groupName="target"
+        groupIcon="icons/linkTargetNavigatorGroup.gif"/>
+    <childReferences
+        parent="//@diagram/@topLevelNodes.12"
         child="//@diagram/@links.1"
         referenceType="in_source"
         groupName="incoming links"
@@ -4383,6 +4459,18 @@
         groupIcon="icons/outgoingLinksNavigatorGroup.gif"/>
     <childReferences
         parent="//@diagram/@links.1"
+        child="//@diagram/@topLevelNodes.12"
+        referenceType="in_source"
+        groupName="source"
+        groupIcon="icons/linkSourceNavigatorGroup.gif"/>
+    <childReferences
+        parent="//@diagram/@topLevelNodes.12"
+        child="//@diagram/@links.1"
+        referenceType="out_target"
+        groupName="outgoing links"
+        groupIcon="icons/outgoingLinksNavigatorGroup.gif"/>
+    <childReferences
+        parent="//@diagram/@links.1"
         child="//@diagram/@childNodes.0"
         referenceType="in_source"
         groupName="source"
@@ -5011,6 +5099,18 @@
         groupIcon="icons/linkTargetNavigatorGroup.gif"/>
     <childReferences
         parent="//@diagram/@topLevelNodes.11"
+        child="//@diagram/@links.3"
+        referenceType="in_source"
+        groupName="incoming links"
+        groupIcon="icons/incomingLinksNavigatorGroup.gif"/>
+    <childReferences
+        parent="//@diagram/@links.3"
+        child="//@diagram/@topLevelNodes.12"
+        referenceType="out_target"
+        groupName="target"
+        groupIcon="icons/linkTargetNavigatorGroup.gif"/>
+    <childReferences
+        parent="//@diagram/@topLevelNodes.12"
         child="//@diagram/@links.3"
         referenceType="in_source"
         groupName="incoming links"
@@ -5819,6 +5919,18 @@
         groupIcon="icons/incomingLinksNavigatorGroup.gif"/>
     <childReferences
         parent="//@diagram/@links.5"
+        child="//@diagram/@topLevelNodes.12"
+        referenceType="out_target"
+        groupName="target"
+        groupIcon="icons/linkTargetNavigatorGroup.gif"/>
+    <childReferences
+        parent="//@diagram/@topLevelNodes.12"
+        child="//@diagram/@links.5"
+        referenceType="in_source"
+        groupName="incoming links"
+        groupIcon="icons/incomingLinksNavigatorGroup.gif"/>
+    <childReferences
+        parent="//@diagram/@links.5"
         child="//@diagram/@childNodes.0"
         referenceType="out_target"
         groupName="target"
@@ -6268,6 +6380,18 @@
         groupIcon="icons/incomingLinksNavigatorGroup.gif"/>
     <childReferences
         parent="//@diagram/@links.6"
+        child="//@diagram/@topLevelNodes.12"
+        referenceType="out_target"
+        groupName="target"
+        groupIcon="icons/linkTargetNavigatorGroup.gif"/>
+    <childReferences
+        parent="//@diagram/@topLevelNodes.12"
+        child="//@diagram/@links.6"
+        referenceType="in_source"
+        groupName="incoming links"
+        groupIcon="icons/incomingLinksNavigatorGroup.gif"/>
+    <childReferences
+        parent="//@diagram/@links.6"
         child="//@diagram/@childNodes.0"
         referenceType="out_target"
         groupName="target"
@@ -6818,6 +6942,18 @@
         groupIcon="icons/incomingLinksNavigatorGroup.gif"/>
     <childReferences
         parent="//@diagram/@links.8"
+        child="//@diagram/@topLevelNodes.12"
+        referenceType="out_target"
+        groupName="target"
+        groupIcon="icons/linkTargetNavigatorGroup.gif"/>
+    <childReferences
+        parent="//@diagram/@topLevelNodes.12"
+        child="//@diagram/@links.8"
+        referenceType="in_source"
+        groupName="incoming links"
+        groupIcon="icons/incomingLinksNavigatorGroup.gif"/>
+    <childReferences
+        parent="//@diagram/@links.8"
         child="//@diagram/@childNodes.0"
         referenceType="out_target"
         groupName="target"
@@ -7244,6 +7380,18 @@
         groupIcon="icons/linkSourceNavigatorGroup.gif"/>
     <childReferences
         parent="//@diagram/@topLevelNodes.11"
+        child="//@diagram/@links.8"
+        referenceType="out_target"
+        groupName="outgoing links"
+        groupIcon="icons/outgoingLinksNavigatorGroup.gif"/>
+    <childReferences
+        parent="//@diagram/@links.8"
+        child="//@diagram/@topLevelNodes.12"
+        referenceType="in_source"
+        groupName="source"
+        groupIcon="icons/linkSourceNavigatorGroup.gif"/>
+    <childReferences
+        parent="//@diagram/@topLevelNodes.12"
         child="//@diagram/@links.8"
         referenceType="out_target"
         groupName="outgoing links"
@@ -8045,6 +8193,18 @@
         groupIcon="icons/incomingLinksNavigatorGroup.gif"/>
     <childReferences
         parent="//@diagram/@links.11"
+        child="//@diagram/@topLevelNodes.12"
+        referenceType="out_target"
+        groupName="target"
+        groupIcon="icons/linkTargetNavigatorGroup.gif"/>
+    <childReferences
+        parent="//@diagram/@topLevelNodes.12"
+        child="//@diagram/@links.11"
+        referenceType="in_source"
+        groupName="incoming links"
+        groupIcon="icons/incomingLinksNavigatorGroup.gif"/>
+    <childReferences
+        parent="//@diagram/@links.11"
         child="//@diagram/@childNodes.0"
         referenceType="out_target"
         groupName="target"
@@ -8471,6 +8631,18 @@
         groupIcon="icons/linkSourceNavigatorGroup.gif"/>
     <childReferences
         parent="//@diagram/@topLevelNodes.11"
+        child="//@diagram/@links.11"
+        referenceType="out_target"
+        groupName="outgoing links"
+        groupIcon="icons/outgoingLinksNavigatorGroup.gif"/>
+    <childReferences
+        parent="//@diagram/@links.11"
+        child="//@diagram/@topLevelNodes.12"
+        referenceType="in_source"
+        groupName="source"
+        groupIcon="icons/linkSourceNavigatorGroup.gif"/>
+    <childReferences
+        parent="//@diagram/@topLevelNodes.12"
         child="//@diagram/@links.11"
         referenceType="out_target"
         groupName="outgoing links"

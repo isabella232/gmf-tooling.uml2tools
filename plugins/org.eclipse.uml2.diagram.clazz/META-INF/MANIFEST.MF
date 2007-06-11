@@ -43,3 +43,4 @@ Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.ocl.ecore;visibility:=reexport,
  org.eclipse.gmf.runtime.diagram.ui.render
 Eclipse-LazyStart: true
+Bundle-RequiredExecutionEnvironment: J2SE-1.4

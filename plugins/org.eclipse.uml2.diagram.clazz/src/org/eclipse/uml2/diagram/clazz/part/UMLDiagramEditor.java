@@ -235,14 +235,13 @@ public class UMLDiagramEditor extends DiagramDocumentEditor implements IGotoMark
 
 		});
 	}
-	
-	
+
 	/**
 	 * @NOT-generated
 	 */
 	public void refresh() {
 		refreshPalette();
-        refreshDiagram();
+		refreshDiagram();
 	}
 
 	/**
@@ -267,8 +266,8 @@ public class UMLDiagramEditor extends DiagramDocumentEditor implements IGotoMark
 	private void cleanPaletteRoot(PaletteRoot paletteRoot) {
 		List entries = new ArrayList();
 		entries.addAll(paletteRoot.getChildren());
-		for (Object entry: entries) {
-			PaletteEntry paletteEntry = (PaletteEntry)entry;
+		for (Object entry : entries) {
+			PaletteEntry paletteEntry = (PaletteEntry) entry;
 			// we don't repaint standard palette group
 			if (PaletteService.GROUP_STANDARD.equals(paletteEntry.getId())) {
 				continue;
@@ -276,7 +275,7 @@ public class UMLDiagramEditor extends DiagramDocumentEditor implements IGotoMark
 			paletteRoot.remove(paletteEntry);
 		}
 	}
-	
+
 	/**
 	 * @generated
 	 */

@@ -748,6 +748,16 @@ public class Messages extends NLS {
 	/**
 	 * @generated
 	 */
+	public static String NavigatorGroupName_Package_2014_incominglinks;
+
+	/**
+	 * @generated
+	 */
+	public static String NavigatorGroupName_Package_2014_outgoinglinks;
+
+	/**
+	 * @generated
+	 */
 	public static String NavigatorGroupName_Package_3006_incominglinks;
 
 	/**

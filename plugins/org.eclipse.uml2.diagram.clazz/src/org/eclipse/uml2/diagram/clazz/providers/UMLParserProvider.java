@@ -47,6 +47,7 @@ import org.eclipse.uml2.diagram.clazz.edit.parts.Operation5EditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.Operation6EditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.OperationEditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.Package3EditPart;
+import org.eclipse.uml2.diagram.clazz.edit.parts.PackageName2EditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.PackageNameEditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.PortNameEditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.PrimitiveTypeEditPart;
@@ -404,6 +405,30 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 	 * @generated
 	 */
 	protected IParser createInterfaceName_5018Parser() {
+		EAttribute[] features = new EAttribute[] { UMLPackage.eINSTANCE.getNamedElement_Name(), };
+		MessageFormatParser parser = new MessageFormatParser(features);
+		return parser;
+	}
+
+	/**
+	 * @generated
+	 */
+	private IParser packageName_5020Parser;
+
+	/**
+	 * @generated
+	 */
+	private IParser getPackageName_5020Parser() {
+		if (packageName_5020Parser == null) {
+			packageName_5020Parser = createPackageName_5020Parser();
+		}
+		return packageName_5020Parser;
+	}
+
+	/**
+	 * @generated
+	 */
+	protected IParser createPackageName_5020Parser() {
 		EAttribute[] features = new EAttribute[] { UMLPackage.eINSTANCE.getNamedElement_Name(), };
 		MessageFormatParser parser = new MessageFormatParser(features);
 		return parser;
@@ -1337,6 +1362,8 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 			return getGeneralizationSetName_5017Parser();
 		case InterfaceName2EditPart.VISUAL_ID:
 			return getInterfaceName_5018Parser();
+		case PackageName2EditPart.VISUAL_ID:
+			return getPackageName_5020Parser();
 		case Package3EditPart.VISUAL_ID:
 			return getPackage_3006Parser();
 		case ClassEditPart.VISUAL_ID:

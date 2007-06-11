@@ -57,6 +57,7 @@ import org.eclipse.uml2.diagram.clazz.edit.parts.Operation6EditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.OperationEditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.Package2EditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.Package3EditPart;
+import org.eclipse.uml2.diagram.clazz.edit.parts.Package4EditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.PackageEditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.PortEditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.PrimitiveType2EditPart;
@@ -103,7 +104,7 @@ public class PackageCanonicalEditPolicy extends CanonicalConnectionEditPolicy {
 	protected List getSemanticChildrenList() {
 		View viewObject = (View) getHost().getModel();
 		List result = new LinkedList();
-		for (Iterator it = UMLDiagramUpdater.getPackage_1000SemanticChildren(viewObject).iterator(); it.hasNext();) {
+		for (Iterator it = UMLDiagramUpdater.getSemanticChildren(viewObject).iterator(); it.hasNext();) {
 			result.add(((UMLNodeDescriptor) it.next()).getModelElement());
 		}
 		return result;
@@ -144,6 +145,7 @@ public class PackageCanonicalEditPolicy extends CanonicalConnectionEditPolicy {
 		case InstanceSpecification2EditPart.VISUAL_ID:
 		case DependencyEditPart.VISUAL_ID:
 		case GeneralizationSetEditPart.VISUAL_ID:
+		case Package4EditPart.VISUAL_ID:
 			return !semanticChildren.contains(view.getElement()) || actualID != suggestedID;
 		case InterfaceEditPart.VISUAL_ID:
 			if (!semanticChildren.contains(view.getElement())) {
@@ -175,6 +177,7 @@ public class PackageCanonicalEditPolicy extends CanonicalConnectionEditPolicy {
 			myFeaturesToSynchronize.add(UMLPackage.eINSTANCE.getPackage_NestedPackage());
 			myFeaturesToSynchronize.add(UMLPackage.eINSTANCE.getPackage_OwnedType());
 			myFeaturesToSynchronize.add(UMLPackage.eINSTANCE.getPackage_PackagedElement());
+			myFeaturesToSynchronize.add(UMLPackage.eINSTANCE.getComponent_PackagedElement());
 		}
 		return myFeaturesToSynchronize;
 	}
@@ -317,6 +320,11 @@ public class PackageCanonicalEditPolicy extends CanonicalConnectionEditPolicy {
 		case Interface2EditPart.VISUAL_ID: {
 			domain2NotationMap.put(view.getElement(), view);
 			result.addAll(UMLDiagramUpdater.getInterface_2013ContainedLinks(view));
+			break;
+		}
+		case Package4EditPart.VISUAL_ID: {
+			domain2NotationMap.put(view.getElement(), view);
+			result.addAll(UMLDiagramUpdater.getPackage_2014ContainedLinks(view));
 			break;
 		}
 		case Package3EditPart.VISUAL_ID: {

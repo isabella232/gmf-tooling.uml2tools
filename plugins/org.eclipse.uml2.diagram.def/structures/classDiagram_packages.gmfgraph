@@ -97,6 +97,44 @@
             name="PackageFigure_OthersCompartment"/>
       </children>
     </figures>
+    <figures
+        xsi:type="gmfgraph:ScalablePolygon"
+        referencingElements="SecondaryPackageNode"
+        name="SecondaryPackageFigure">
+      <layout
+          xsi:type="gmfgraph:FlowLayout"
+          vertical="true"
+          matchMinorSize="true"
+          forceSingleLine="true"
+          minorAlignment="FILL"
+          majorSpacing="0"
+          minorSpacing="0"/>
+      <children
+          xsi:type="gmfgraph:Label"
+          referencingElements="SecondaryPackage_package"
+          name="SecondaryPackage_PackageLabel"
+          text="Package"/>
+      <children
+          xsi:type="gmfgraph:Label"
+          referencingElements="SecondaryPackage_name"
+          name="SecondaryPackage_NameLabel"/>
+      <insets
+          top="5"
+          left="5"
+          bottom="5"
+          right="5"/>
+      <template/>
+      <template
+          y="40"/>
+      <template
+          x="35"
+          y="40"/>
+      <template
+          x="40"
+          y="35"/>
+      <template
+          x="40"/>
+    </figures>
   </figures>
   <nodes
       name="PackageNode"
@@ -106,6 +144,16 @@
       <defaultSize
           dx="100"
           dy="80"/>
+    </facets>
+  </nodes>
+  <nodes
+      name="SecondaryPackageNode"
+      figure="SecondaryPackageFigure">
+    <facets
+        xsi:type="gmfgraph:DefaultSizeFacet">
+      <defaultSize
+          dx="100"
+          dy="60"/>
     </facets>
   </nodes>
   <compartments
@@ -126,4 +174,11 @@
   <labels
       name="PackageNode_name"
       figure="PackageFigure_name"/>
+  <labels
+      name="SecondaryPackage_package"
+      figure="SecondaryPackage_PackageLabel"
+      elementIcon="false"/>
+  <labels
+      name="SecondaryPackage_name"
+      figure="SecondaryPackage_NameLabel"/>
 </gmfgraph:Canvas>

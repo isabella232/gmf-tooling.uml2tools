@@ -73,8 +73,10 @@ import org.eclipse.uml2.diagram.clazz.edit.parts.Operation6EditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.OperationEditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.Package2EditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.Package3EditPart;
+import org.eclipse.uml2.diagram.clazz.edit.parts.Package4EditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.PackageClassifiersEditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.PackageEditPart;
+import org.eclipse.uml2.diagram.clazz.edit.parts.PackageName2EditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.PackageNameEditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.PackageOtherEditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.PackagePackagesEditPart;
@@ -173,7 +175,9 @@ import org.eclipse.uml2.diagram.clazz.view.factories.Operation6ViewFactory;
 import org.eclipse.uml2.diagram.clazz.view.factories.OperationViewFactory;
 import org.eclipse.uml2.diagram.clazz.view.factories.Package2ViewFactory;
 import org.eclipse.uml2.diagram.clazz.view.factories.Package3ViewFactory;
+import org.eclipse.uml2.diagram.clazz.view.factories.Package4ViewFactory;
 import org.eclipse.uml2.diagram.clazz.view.factories.PackageClassifiersViewFactory;
+import org.eclipse.uml2.diagram.clazz.view.factories.PackageName2ViewFactory;
 import org.eclipse.uml2.diagram.clazz.view.factories.PackageNameViewFactory;
 import org.eclipse.uml2.diagram.clazz.view.factories.PackageOtherViewFactory;
 import org.eclipse.uml2.diagram.clazz.view.factories.PackagePackagesViewFactory;
@@ -283,6 +287,10 @@ public class UMLViewProvider extends AbstractViewProvider {
 			return Interface2ViewFactory.class;
 		case InterfaceName2EditPart.VISUAL_ID:
 			return InterfaceName2ViewFactory.class;
+		case Package4EditPart.VISUAL_ID:
+			return Package4ViewFactory.class;
+		case PackageName2EditPart.VISUAL_ID:
+			return PackageName2ViewFactory.class;
 		case Package3EditPart.VISUAL_ID:
 			return Package3ViewFactory.class;
 		case ClassEditPart.VISUAL_ID:

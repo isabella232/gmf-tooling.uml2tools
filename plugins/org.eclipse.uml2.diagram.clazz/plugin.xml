@@ -659,6 +659,15 @@
       </metamodel>
       <metamodel nsURI="http://www.eclipse.org/uml2/2.1.0/UML">
          <specializationType
+               id="org.eclipse.uml2.diagram.clazz.Package_2014"
+               name="%metatype.name.Package_2014"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType">
+            <specializes id="org.eclipse.uml2.diagram.clazz.Package_1000"/>
+            <param name="semanticHint" value="2014"/>
+         </specializationType>
+      </metamodel>
+      <metamodel nsURI="http://www.eclipse.org/uml2/2.1.0/UML">
+         <specializationType
                id="org.eclipse.uml2.diagram.clazz.Package_3006"
                name="%metatype.name.Package_3006"
                kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
@@ -1052,6 +1061,7 @@
          <elementType ref="org.eclipse.uml2.diagram.clazz.Dependency_2009"/>
          <elementType ref="org.eclipse.uml2.diagram.clazz.GeneralizationSet_2012"/>
          <elementType ref="org.eclipse.uml2.diagram.clazz.Interface_2013"/>
+         <elementType ref="org.eclipse.uml2.diagram.clazz.Package_2014"/>
          <elementType ref="org.eclipse.uml2.diagram.clazz.Package_3006"/>
          <elementType ref="org.eclipse.uml2.diagram.clazz.Class_3007"/>
          <elementType ref="org.eclipse.uml2.diagram.clazz.DataType_3008"/>

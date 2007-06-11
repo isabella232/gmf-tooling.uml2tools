@@ -104,8 +104,7 @@ public class UMLDiagramEditorPlugin extends AbstractUIPlugin {
 		factories.add(new ResourceItemProviderAdapterFactory());
 		factories.add(new ReflectiveItemProviderAdapterFactory());
 	}
-	
-	
+
 	/**
 	 * Use alternative UMLItemProviderAdapterFactory insteadof UMLItemProviderAdapterFactory
 	 * @see org.eclipse.emf.edit.provider.ComposedAdapterFactory#getFactoryForTypes(java.util.Collection)
@@ -251,5 +250,5 @@ public class UMLDiagramEditorPlugin extends AbstractUIPlugin {
 			throwable.printStackTrace();
 		}
 	}
-	
+
 }

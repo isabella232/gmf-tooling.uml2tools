@@ -122,6 +122,7 @@ public class UMLModelingAssistantProvider extends ModelingAssistantProvider {
 			types.add(UMLElementTypes.Dependency_2009);
 			types.add(UMLElementTypes.GeneralizationSet_2012);
 			types.add(UMLElementTypes.Interface_2013);
+			types.add(UMLElementTypes.Package_2014);
 			return types;
 		}
 		return Collections.EMPTY_LIST;

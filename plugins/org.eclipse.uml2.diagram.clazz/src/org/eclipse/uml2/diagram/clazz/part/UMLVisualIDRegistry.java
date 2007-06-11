@@ -73,8 +73,10 @@ import org.eclipse.uml2.diagram.clazz.edit.parts.Operation6EditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.OperationEditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.Package2EditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.Package3EditPart;
+import org.eclipse.uml2.diagram.clazz.edit.parts.Package4EditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.PackageClassifiersEditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.PackageEditPart;
+import org.eclipse.uml2.diagram.clazz.edit.parts.PackageName2EditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.PackageNameEditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.PackageOtherEditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.PackagePackagesEditPart;
@@ -430,6 +432,11 @@ public class UMLVisualIDRegistry {
 				return InterfaceClassesEditPart.VISUAL_ID;
 			}
 			return getUnrecognizedInterface_2013ChildNodeID(domainElement, semanticHint);
+		case Package4EditPart.VISUAL_ID:
+			if (PackageName2EditPart.VISUAL_ID == nodeVisualID) {
+				return PackageName2EditPart.VISUAL_ID;
+			}
+			return getUnrecognizedPackage_2014ChildNodeID(domainElement, semanticHint);
 		case Package3EditPart.VISUAL_ID:
 			return getUnrecognizedPackage_3006ChildNodeID(domainElement, semanticHint);
 		case ClassEditPart.VISUAL_ID:
@@ -601,6 +608,14 @@ public class UMLVisualIDRegistry {
 			}
 			return getUnrecognizedInterfaceClasses_7031ChildNodeID(domainElement, semanticHint);
 		case PackageEditPart.VISUAL_ID:
+			// We want to additionally show the Canvas Semantical Element in the auxiliary 
+			// org.eclipse.uml2.diagram.clazz.edit.parts.Package4EditPart (that serves as a pure visual container for children). 
+			// To do this, we modified CanonicalEditPolicy to add the Canvas semantic Element into the children 
+			// list. The only remaining part is to return correct VID for this special case.
+
+			if (containerView instanceof Diagram && domainElement != null && domainElement.equals(containerView.getElement())) {
+				return Package4EditPart.VISUAL_ID;
+			}
 			if ((semanticHint == null || Package2EditPart.VISUAL_ID == nodeVisualID) && UMLPackage.eINSTANCE.getPackage().isSuperTypeOf(domainElementMetaclass)) {
 				return Package2EditPart.VISUAL_ID;
 			}
@@ -640,6 +655,7 @@ public class UMLVisualIDRegistry {
 			if ((semanticHint == null || Interface2EditPart.VISUAL_ID == nodeVisualID) && UMLPackage.eINSTANCE.getInterface().isSuperTypeOf(domainElementMetaclass)) {
 				return Interface2EditPart.VISUAL_ID;
 			}
+			// Diagram header is already processed above
 			return getUnrecognizedPackage_1000ChildNodeID(domainElement, semanticHint);
 		case Dependency2EditPart.VISUAL_ID:
 			if (DependencyName2EditPart.VISUAL_ID == nodeVisualID) {
@@ -885,6 +901,16 @@ public class UMLVisualIDRegistry {
 	 * @generated
 	 */
 	private static int getUnrecognizedInterface_2013ChildNodeID(EObject domainElement, String semanticHint) {
+		return -1;
+	}
+
+	/**
+	 * User can change implementation of this method to handle some specific
+	 * situations not covered by default logic.
+	 * 
+	 * @generated
+	 */
+	private static int getUnrecognizedPackage_2014ChildNodeID(EObject domainElement, String semanticHint) {
 		return -1;
 	}
 

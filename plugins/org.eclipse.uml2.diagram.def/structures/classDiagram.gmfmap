@@ -1309,6 +1309,23 @@
       </compartments>
     </ownedChild>
   </nodes>
+  <nodes>
+    <containmentFeature
+        href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//Component/packagedElement"/>
+    <ownedChild>
+      <domainMetaElement
+          href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//Package"/>
+      <labelMappings
+          xsi:type="gmfmap:FeatureLabelMapping">
+        <diagramLabel
+            href="classDiagram_packages.gmfgraph#SecondaryPackage_name"/>
+        <features
+            href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//NamedElement/name"/>
+      </labelMappings>
+      <diagramNode
+          href="classDiagram_packages.gmfgraph#SecondaryPackageNode"/>
+    </ownedChild>
+  </nodes>
   <links>
     <domainMetaElement
         href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//Generalization"/>

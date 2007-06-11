@@ -74,7 +74,9 @@ import org.eclipse.uml2.diagram.clazz.edit.parts.Operation6EditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.OperationEditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.Package2EditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.Package3EditPart;
+import org.eclipse.uml2.diagram.clazz.edit.parts.Package4EditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.PackageEditPart;
+import org.eclipse.uml2.diagram.clazz.edit.parts.PackageName2EditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.PackageNameEditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.PortEditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.PortNameEditPart;
@@ -180,6 +182,8 @@ public class UMLNavigatorLabelProvider extends LabelProvider implements ICommonL
 			return getImage("Navigator?TopLevelNode?http://www.eclipse.org/uml2/2.1.0/UML?GeneralizationSet", UMLElementTypes.GeneralizationSet_2012);
 		case Interface2EditPart.VISUAL_ID:
 			return getImage("Navigator?TopLevelNode?http://www.eclipse.org/uml2/2.1.0/UML?Interface", UMLElementTypes.Interface_2013);
+		case Package4EditPart.VISUAL_ID:
+			return getImage("Navigator?TopLevelNode?http://www.eclipse.org/uml2/2.1.0/UML?Package", UMLElementTypes.Package_2014);
 		case Package3EditPart.VISUAL_ID:
 			return getImage("Navigator?Node?http://www.eclipse.org/uml2/2.1.0/UML?Package", UMLElementTypes.Package_3006);
 		case ClassEditPart.VISUAL_ID:
@@ -331,6 +335,8 @@ public class UMLNavigatorLabelProvider extends LabelProvider implements ICommonL
 			return getGeneralizationSet_2012Text(view);
 		case Interface2EditPart.VISUAL_ID:
 			return getInterface_2013Text(view);
+		case Package4EditPart.VISUAL_ID:
+			return getPackage_2014Text(view);
 		case Package3EditPart.VISUAL_ID:
 			return getPackage_3006Text(view);
 		case ClassEditPart.VISUAL_ID:
@@ -600,6 +606,22 @@ public class UMLNavigatorLabelProvider extends LabelProvider implements ICommonL
 			return parser.getPrintString(hintAdapter, ParserOptions.NONE.intValue());
 		} else {
 			UMLDiagramEditorPlugin.getInstance().logError("Parser was not found for label " + 5018);
+			return "";
+		}
+	}
+
+	/**
+	 * @generated
+	 */
+	private String getPackage_2014Text(View view) {
+		IAdaptable hintAdapter = new UMLParserProvider.HintAdapter(UMLElementTypes.Package_2014, (view.getElement() != null ? view.getElement() : view), UMLVisualIDRegistry
+				.getType(PackageName2EditPart.VISUAL_ID));
+		IParser parser = ParserService.getInstance().getParser(hintAdapter);
+
+		if (parser != null) {
+			return parser.getPrintString(hintAdapter, ParserOptions.NONE.intValue());
+		} else {
+			UMLDiagramEditorPlugin.getInstance().logError("Parser was not found for label " + 5020);
 			return "";
 		}
 	}
