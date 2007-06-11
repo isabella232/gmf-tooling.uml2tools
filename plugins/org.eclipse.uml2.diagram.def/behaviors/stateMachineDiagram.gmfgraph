@@ -387,6 +387,10 @@
         xsi:type="gmfgraph:Label"
         referencingElements="EntryExitPoint_ExternalLabel EntryExitPointConnectionPointReferenceNode_ExternalLabel"
         name="EntryExitPointFigure_ExternalLabel"/>
+    <figures
+        xsi:type="gmfgraph:Label"
+        referencingElements="TransitionLink_transition"
+        name="TransitionConnection_TransitionLabel"/>
   </figures>
   <nodes
       name="StateMachineNode"
@@ -463,5 +467,9 @@
   <labels
       name="EntryExitPointConnectionPointReferenceNode_ExternalLabel"
       figure="EntryExitPointFigure_ExternalLabel"
+      elementIcon="false"/>
+  <labels
+      name="TransitionLink_transition"
+      figure="TransitionConnection_TransitionLabel"
       elementIcon="false"/>
 </gmfgraph:Canvas>
