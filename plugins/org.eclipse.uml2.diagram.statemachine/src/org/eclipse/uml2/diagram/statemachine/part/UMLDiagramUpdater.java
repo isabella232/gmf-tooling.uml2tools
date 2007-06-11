@@ -74,8 +74,9 @@ public class UMLDiagramUpdater {
 			//VID = org.eclipse.uml2.diagram.statemachine.edit.parts.StateMachine2EditPart.VISUAL_ID, 
 			//for the case when top-level view is created for the same semantic element as the canvas view.
 
-			List resultAndHeader = getStateMachine_1000SemanticChildren(view);
+			List resultAndHeader = new LinkedList();
 			resultAndHeader.add(new UMLNodeDescriptor(view.getElement(), StateMachine2EditPart.VISUAL_ID));
+			resultAndHeader.addAll(getStateMachine_1000SemanticChildren(view));
 			return resultAndHeader;
 		}
 		}

@@ -38,6 +38,7 @@ import org.eclipse.uml2.diagram.statemachine.edit.parts.StateName3EditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.StateNameEditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.TransitionEditPart;
 
+import org.eclipse.uml2.diagram.statemachine.edit.parts.TransitionNameEditPart;
 import org.eclipse.uml2.diagram.statemachine.part.UMLVisualIDRegistry;
 
 import org.eclipse.uml2.diagram.statemachine.view.factories.ConnectionPointReference2ViewFactory;
@@ -70,6 +71,7 @@ import org.eclipse.uml2.diagram.statemachine.view.factories.StateName2ViewFactor
 import org.eclipse.uml2.diagram.statemachine.view.factories.StateName3ViewFactory;
 import org.eclipse.uml2.diagram.statemachine.view.factories.StateNameViewFactory;
 import org.eclipse.uml2.diagram.statemachine.view.factories.StateViewFactory;
+import org.eclipse.uml2.diagram.statemachine.view.factories.TransitionNameViewFactory;
 import org.eclipse.uml2.diagram.statemachine.view.factories.TransitionViewFactory;
 
 /**
@@ -161,6 +163,8 @@ public class UMLViewProvider extends AbstractViewProvider {
 			return RegionSubverticesViewFactory.class;
 		case RegionSubvertices2EditPart.VISUAL_ID:
 			return RegionSubvertices2ViewFactory.class;
+		case TransitionNameEditPart.VISUAL_ID:
+			return TransitionNameViewFactory.class;
 		}
 		return null;
 	}

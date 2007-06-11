@@ -120,6 +120,9 @@ public class UMLEditPartFactory implements EditPartFactory {
 
 			case TransitionEditPart.VISUAL_ID:
 				return new TransitionEditPart(view);
+
+			case TransitionNameEditPart.VISUAL_ID:
+				return new TransitionNameEditPart(view);
 			}
 		}
 		return createUnrecognizedEditPart(context, model);

@@ -19,6 +19,8 @@ import org.eclipse.uml2.diagram.statemachine.edit.parts.StateMachineNameEditPart
 import org.eclipse.uml2.diagram.statemachine.edit.parts.StateName2EditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.StateName3EditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.StateNameEditPart;
+import org.eclipse.uml2.diagram.statemachine.edit.parts.TransitionNameEditPart;
+import org.eclipse.uml2.diagram.statemachine.parser.TransitionParser;
 import org.eclipse.uml2.diagram.statemachine.parsers.MessageFormatParser;
 import org.eclipse.uml2.diagram.statemachine.part.UMLVisualIDRegistry;
 import org.eclipse.uml2.uml.UMLPackage;
@@ -223,6 +225,28 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 	/**
 	 * @generated
 	 */
+	private IParser transitionName_6001Parser;
+
+	/**
+	 * @generated
+	 */
+	private IParser getTransitionName_6001Parser() {
+		if (transitionName_6001Parser == null) {
+			transitionName_6001Parser = createTransitionName_6001Parser();
+		}
+		return transitionName_6001Parser;
+	}
+
+	/**
+	 * @generated NOT
+	 */
+	protected IParser createTransitionName_6001Parser() {
+		return new TransitionParser();
+	}
+
+	/**
+	 * @generated
+	 */
 	protected IParser getParser(int visualID) {
 		switch (visualID) {
 		case StateMachineNameEditPart.VISUAL_ID:
@@ -241,6 +265,8 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 			return getPseudostateName_5006Parser();
 		case PseudostateName2EditPart.VISUAL_ID:
 			return getPseudostateName_5007Parser();
+		case TransitionNameEditPart.VISUAL_ID:
+			return getTransitionName_6001Parser();
 		}
 		return null;
 	}

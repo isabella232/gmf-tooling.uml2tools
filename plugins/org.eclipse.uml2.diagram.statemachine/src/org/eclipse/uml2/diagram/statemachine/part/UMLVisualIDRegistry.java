@@ -37,6 +37,7 @@ import org.eclipse.uml2.diagram.statemachine.edit.parts.StateName2EditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.StateName3EditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.StateNameEditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.TransitionEditPart;
+import org.eclipse.uml2.diagram.statemachine.edit.parts.TransitionNameEditPart;
 import org.eclipse.uml2.diagram.statemachine.expressions.UMLAbstractExpression;
 import org.eclipse.uml2.diagram.statemachine.expressions.UMLOCLFactory;
 import org.eclipse.uml2.uml.StateMachine;
@@ -437,6 +438,11 @@ public class UMLVisualIDRegistry {
 			}
 			// Diagram header is already processed above
 			return getUnrecognizedStateMachine_1000ChildNodeID(domainElement, semanticHint);
+		case TransitionEditPart.VISUAL_ID:
+			if (TransitionNameEditPart.VISUAL_ID == nodeVisualID) {
+				return TransitionNameEditPart.VISUAL_ID;
+			}
+			return getUnrecognizedTransition_4001LinkLabelID(semanticHint);
 		}
 		return getUnrecognizedNodeID(containerView, domainElement);
 	}
@@ -719,6 +725,16 @@ public class UMLVisualIDRegistry {
 	 * @generated
 	 */
 	private static int getUnrecognizedStateMachine_1000ChildNodeID(EObject domainElement, String semanticHint) {
+		return -1;
+	}
+
+	/**
+	 * User can change implementation of this method to handle some specific
+	 * situations not covered by default logic.
+	 * 
+	 * @generated
+	 */
+	private static int getUnrecognizedTransition_4001LinkLabelID(String semanticHint) {
 		return -1;
 	}
 
