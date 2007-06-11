@@ -18,7 +18,6 @@ import org.eclipse.uml2.diagram.clazz.edit.commands.DependencySupplierCreateComm
 import org.eclipse.uml2.diagram.clazz.edit.commands.DependencySupplierReorientCommand;
 import org.eclipse.uml2.diagram.clazz.edit.commands.Generalization2CreateCommand;
 import org.eclipse.uml2.diagram.clazz.edit.commands.Generalization2ReorientCommand;
-import org.eclipse.uml2.diagram.clazz.edit.commands.GeneralizationCreateCommand;
 import org.eclipse.uml2.diagram.clazz.edit.commands.RealizationCreateCommand;
 import org.eclipse.uml2.diagram.clazz.edit.commands.RealizationReorientCommand;
 import org.eclipse.uml2.diagram.clazz.edit.commands.UsageCreateCommand;
