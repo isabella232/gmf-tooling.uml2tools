@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2006 Borland Software Corporation
+ * Copyright (c) 2006, 2007 Borland Software Corporation
  * 
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
@@ -7,8 +7,9 @@
  * http://www.eclipse.org/legal/epl-v10.html
  *
  * Contributors:
- *    Michael Golubev (Borland) - initial API and implementation
+ *     Michael Golubev (Borland) - uml2tools specific version (see NodeEditPart_changes_only.xpt)
  */
+
 «IMPORT "http://www.eclipse.org/gmf/2006/GenModel"»
 «IMPORT "http://www.eclipse.org/emf/2002/Ecore"»
 «IMPORT "http://www.eclipse.org/uml2/diagram/gmfgenext/DiagramFigure/1.0"»
@@ -54,7 +55,7 @@ public class «editPartClassName» extends «EXPAND xpt::diagram::editparts::NodeEd
 		«FOREACH getInnerFixedLabels() AS label-»
 			«LET (gmfgen::ParentAssignedViewmap) label.viewmap AS childViewmap-»
 		if (childEditPart instanceof «label.getEditPartQualifiedClassName()») {
-			((«label.getEditPartQualifiedClassName()») childEditPart).«getSetterName(childViewmap)»(
+			((«label.getEditPartQualifiedClassName()») childEditPart).«EXPAND xpt::diagram::editparts::TextAware::labelSetterName FOR childViewmap»(
 				getPrimaryShape().«childViewmap.getterName»());
 			return true;
 		}
@@ -209,6 +210,7 @@ public class «editPartClassName» extends «EXPAND xpt::diagram::editparts::NodeEd
 		"@param nodeShape instance of generated figure class"
 	)»
 	protected org.eclipse.draw2d.IFigure setupContentPane(org.eclipse.draw2d.IFigure nodeShape) {
+«IF !childNodes.isEmpty() || !compartments.isEmpty() || !labels.without(labels.typeSelect(GenExternalNodeLabel)).isEmpty()-»
 		if (nodeShape.getLayoutManager() == null) {
 		«IF getLayoutType().value == gmfgen::ViewmapLayoutType::XY_LAYOUT.value-»
 		nodeShape.setLayoutManager(new org.eclipse.draw2d.FreeformLayout() {
@@ -228,6 +230,7 @@ public class «editPartClassName» extends «EXPAND xpt::diagram::editparts::NodeEd
 			nodeShape.setLayoutManager(layout);
 		«ENDIF-»
 		}
+«ENDIF-»
 		return nodeShape; // use nodeShape itself as contentPane
 	}
 
@@ -265,3 +268,21 @@ public class «editPartClassName» extends «EXPAND xpt::diagram::editparts::NodeEd
 						getMainFigure(), org.eclipse.draw2d.PositionConstants.«preferredSideName»);
 	«ENDIF-»
 «ENDDEFINE»
+
+«AROUND editPoliciesMethodBody FOR gmfgen::GenNode-»
+		«EXPAND xpt::diagram::editparts::NodeEditPart::installCreationRolePolicy»
+		super.createDefaultEditPolicies();
+		«EXPAND xpt::diagram::editparts::NodeEditPart::installPrimaryDragEditPolicy-»
+		«EXPAND xpt::diagram::editparts::Common::installSemanticEditPolicy-»
+		«IF needsGraphicalNodeEditPolicy()-»
+		installEditPolicy(org.eclipse.gef.EditPolicy.GRAPHICAL_NODE_ROLE,
+			new «getGraphicalNodeEditPolicyQualifiedClassName()»());
+		«ENDIF-»
+		«IF !childNodes.isEmpty()-»
+		installEditPolicy(org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles.DRAG_DROP_ROLE,
+			new org.eclipse.gmf.runtime.diagram.ui.editpolicies.DragDropEditPolicy());
+		«ENDIF-»
+		«EXPAND xpt::diagram::editparts::Common::installCanonicalEditPolicy-»
+		installEditPolicy(org.eclipse.gef.EditPolicy.LAYOUT_ROLE, createLayoutEditPolicy());
+		«EXPAND xpt::diagram::editparts::Common::behaviour FOR this-»
+«ENDAROUND»
