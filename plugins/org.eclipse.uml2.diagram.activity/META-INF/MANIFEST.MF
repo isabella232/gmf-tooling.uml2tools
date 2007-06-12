@@ -2,14 +2,15 @@ Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: %pluginName
 Bundle-SymbolicName: org.eclipse.uml2.diagram.activity; singleton:=true
-Bundle-Version: 1.0.0.qualifier
+Bundle-Version: 0.7.0.qualifier
 Bundle-ClassPath: .
 Bundle-Activator: org.eclipse.uml2.diagram.activity.part.UMLDiagramEditorPlugin
 Bundle-Vendor: %providerName
 Bundle-Localization: plugin
 Export-Package: org.eclipse.uml2.diagram.activity.edit.parts,
  org.eclipse.uml2.diagram.activity.part,
- org.eclipse.uml2.diagram.activity.providers
+ org.eclipse.uml2.diagram.activity.providers,
+ org.eclipse.uml2.diagram.activity.navigator
 Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.core.resources,
  org.eclipse.core.expressions,
@@ -44,4 +45,4 @@ Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.ocl.ecore;visibility:=reexport,
  org.eclipse.ui.navigator.resources
 Eclipse-LazyStart: true
-Bundle-RequiredExecutionEnvironment: J2SE-1.4
+Bundle-RequiredExecutionEnvironment: J2SE-1.5
