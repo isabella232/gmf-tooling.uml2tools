@@ -3,13 +3,9 @@ package org.eclipse.uml2.diagram.activity.edit.commands;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EReference;
-
 import org.eclipse.emf.ecore.resource.Resource;
-
 import org.eclipse.gmf.runtime.emf.type.core.commands.CreateElementCommand;
-
 import org.eclipse.gmf.runtime.emf.type.core.requests.CreateElementRequest;
-
 import org.eclipse.gmf.runtime.notation.View;
 
 /**
@@ -57,15 +53,15 @@ public class Constraint2CreateCommand extends CreateElementCommand {
 	 */
 	protected EObject doDefaultElementCreation() {
 		// Uncomment to put "phantom" objects into the diagram file.		
-		//Resource resource = ((CreateElementRequest) getRequest()).getContainer().eResource();
-		//if (resource == null) {
-		//	return null;
-		//}
+		// org.eclipse.emf.ecore.resource.Resource resource = 
+		// 		((org.eclipse.gmf.runtime.emf.type.core.requests.CreateElementRequest) getRequest()).getContainer().eResource();
+		// if (resource == null) {
+		// 	return null;
+		// }
 		Resource resource = getElementToEdit().eResource();
 		EClass eClass = getElementType().getEClass();
 		EObject eObject = eClass.getEPackage().getEFactoryInstance().create(eClass);
 		resource.getContents().add(eObject);
 		return eObject;
 	}
-
 }

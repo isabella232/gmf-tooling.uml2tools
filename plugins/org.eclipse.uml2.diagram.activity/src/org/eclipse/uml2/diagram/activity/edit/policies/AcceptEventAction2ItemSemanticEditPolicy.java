@@ -31,6 +31,7 @@ public class AcceptEventAction2ItemSemanticEditPolicy extends UMLBaseItemSemanti
 	 */
 	protected Command getDestroyElementCommand(DestroyElementRequest req) {
 		CompoundCommand cc = getDestroyEdgesCommand();
+		addDestroyShortcutsCommand(cc);
 		cc.add(getGEFWrapper(new DestroyElementCommand(req)));
 		return cc.unwrap();
 	}

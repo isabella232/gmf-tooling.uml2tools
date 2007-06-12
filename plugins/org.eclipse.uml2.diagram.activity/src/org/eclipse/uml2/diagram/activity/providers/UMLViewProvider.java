@@ -1,11 +1,11 @@
 package org.eclipse.uml2.diagram.activity.providers;
 
 import org.eclipse.core.runtime.IAdaptable;
-import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.gmf.runtime.diagram.core.providers.AbstractViewProvider;
-import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.gmf.runtime.emf.type.core.IElementType;
+import org.eclipse.gmf.runtime.emf.type.core.IHintedType;
+import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.uml2.diagram.activity.edit.parts.AcceptEventAction2EditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.AcceptEventAction3EditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.AcceptEventAction4EditPart;
@@ -14,6 +14,7 @@ import org.eclipse.uml2.diagram.activity.edit.parts.AcceptEventActionName2EditPa
 import org.eclipse.uml2.diagram.activity.edit.parts.AcceptEventActionName3EditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.AcceptEventActionName4EditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.AcceptEventActionNameEditPart;
+import org.eclipse.uml2.diagram.activity.edit.parts.ActionLocalPreconditionEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.ActivityEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.ActivityFinalNode2EditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.ActivityFinalNodeEditPart;
@@ -79,6 +80,7 @@ import org.eclipse.uml2.diagram.activity.edit.parts.LiteralString2EditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.LiteralStringEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.MergeNodeEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.ObjectFlowEditPart;
+import org.eclipse.uml2.diagram.activity.edit.parts.ObjectNodeSelectionEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.OpaqueAction2EditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.OpaqueActionEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.OpaqueActionName2EditPart;
@@ -102,9 +104,7 @@ import org.eclipse.uml2.diagram.activity.edit.parts.StructuredActivityNode2EditP
 import org.eclipse.uml2.diagram.activity.edit.parts.StructuredActivityNodeEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.StructuredActivityNodeStructuredActivityContentPaneCompartment2EditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.StructuredActivityNodeStructuredActivityContentPaneCompartmentEditPart;
-
 import org.eclipse.uml2.diagram.activity.part.UMLVisualIDRegistry;
-
 import org.eclipse.uml2.diagram.activity.view.factories.AcceptEventAction2ViewFactory;
 import org.eclipse.uml2.diagram.activity.view.factories.AcceptEventAction3ViewFactory;
 import org.eclipse.uml2.diagram.activity.view.factories.AcceptEventAction4ViewFactory;
@@ -228,13 +228,93 @@ public class UMLViewProvider extends AbstractViewProvider {
 			return null;
 		}
 		IElementType elementType = getSemanticElementType(semanticAdapter);
-		if (elementType != null && !UMLElementTypes.isKnownElementType(elementType)) {
+		EObject domainElement = getSemanticElement(semanticAdapter);
+
+		int visualID;
+		if (semanticHint == null) {
+			if (elementType != null || domainElement == null) {
+				return null;
+			}
+			visualID = UMLVisualIDRegistry.getNodeVisualID(containerView, domainElement);
+		} else {
+			visualID = UMLVisualIDRegistry.getVisualID(semanticHint);
+			if (elementType != null) {
+				if (!UMLElementTypes.isKnownElementType(elementType) || false == elementType instanceof IHintedType) {
+					return null;
+				}
+				String elementTypeHint = ((IHintedType) elementType).getSemanticHint();
+				if (!semanticHint.equals(elementTypeHint)) {
+					return null;
+				}
+				if (domainElement != null && visualID != UMLVisualIDRegistry.getNodeVisualID(containerView, domainElement)) {
+					return null;
+				}
+			} else {
+				switch (visualID) {
+				case PackageEditPart.VISUAL_ID:
+				case ActivityEditPart.VISUAL_ID:
+				case ConstraintEditPart.VISUAL_ID:
+				case Constraint2EditPart.VISUAL_ID:
+				case AcceptEventActionEditPart.VISUAL_ID:
+				case AcceptEventAction2EditPart.VISUAL_ID:
+				case ActivityFinalNodeEditPart.VISUAL_ID:
+				case DecisionNodeEditPart.VISUAL_ID:
+				case MergeNodeEditPart.VISUAL_ID:
+				case InitialNodeEditPart.VISUAL_ID:
+				case DataStoreNodeEditPart.VISUAL_ID:
+				case CentralBufferNodeEditPart.VISUAL_ID:
+				case OpaqueActionEditPart.VISUAL_ID:
+				case OutputPinEditPart.VISUAL_ID:
+				case FlowFinalNodeEditPart.VISUAL_ID:
+				case ForkNodeEditPart.VISUAL_ID:
+				case JoinNodeEditPart.VISUAL_ID:
+				case PinEditPart.VISUAL_ID:
+				case CreateObjectActionEditPart.VISUAL_ID:
+				case OutputPin2EditPart.VISUAL_ID:
+				case AddStructuralFeatureValueActionEditPart.VISUAL_ID:
+				case InputPinEditPart.VISUAL_ID:
+				case InputPin2EditPart.VISUAL_ID:
+				case InputPin3EditPart.VISUAL_ID:
+				case CallBehaviorActionEditPart.VISUAL_ID:
+				case OutputPin3EditPart.VISUAL_ID:
+				case InputPin4EditPart.VISUAL_ID:
+				case CallOperationActionEditPart.VISUAL_ID:
+				case InputPin5EditPart.VISUAL_ID:
+				case StructuredActivityNodeEditPart.VISUAL_ID:
+				case StructuredActivityNode2EditPart.VISUAL_ID:
+				case OpaqueAction2EditPart.VISUAL_ID:
+				case AcceptEventAction3EditPart.VISUAL_ID:
+				case AcceptEventAction4EditPart.VISUAL_ID:
+				case ActivityFinalNode2EditPart.VISUAL_ID:
+				case DecisionNode2EditPart.VISUAL_ID:
+				case FlowFinalNode2EditPart.VISUAL_ID:
+				case Pin2EditPart.VISUAL_ID:
+				case CreateObjectAction2EditPart.VISUAL_ID:
+				case CallBehaviorAction2EditPart.VISUAL_ID:
+				case CallOperationAction2EditPart.VISUAL_ID:
+				case ForkNode2EditPart.VISUAL_ID:
+				case JoinNode2EditPart.VISUAL_ID:
+				case AddStructuralFeatureValueAction2EditPart.VISUAL_ID:
+				case DataStoreNode2EditPart.VISUAL_ID:
+				case CentralBufferNode2EditPart.VISUAL_ID:
+				case OpaqueBehaviorEditPart.VISUAL_ID:
+				case ActivityParameterNodeEditPart.VISUAL_ID:
+				case SendSignalActionEditPart.VISUAL_ID:
+				case LiteralStringEditPart.VISUAL_ID:
+				case LiteralString2EditPart.VISUAL_ID:
+				case ControlFlowEditPart.VISUAL_ID:
+				case ObjectFlowEditPart.VISUAL_ID:
+				case ActionLocalPreconditionEditPart.VISUAL_ID:
+				case ObjectNodeSelectionEditPart.VISUAL_ID:
+				case ExceptionHandlerEditPart.VISUAL_ID:
+					return null;
+				}
+			}
+		}
+		if (!UMLVisualIDRegistry.canCreateNode(containerView, visualID)) {
 			return null;
 		}
-		EClass semanticType = getSemanticEClass(semanticAdapter);
-		EObject semanticElement = getSemanticElement(semanticAdapter);
-		int nodeVID = UMLVisualIDRegistry.getNodeVisualID(containerView, semanticElement, semanticType, semanticHint);
-		switch (nodeVID) {
+		switch (visualID) {
 		case ActivityEditPart.VISUAL_ID:
 			return ActivityViewFactory.class;
 		case ActivityNameEditPart.VISUAL_ID:
@@ -428,30 +508,37 @@ public class UMLViewProvider extends AbstractViewProvider {
 	 */
 	protected Class getEdgeViewClass(IAdaptable semanticAdapter, View containerView, String semanticHint) {
 		IElementType elementType = getSemanticElementType(semanticAdapter);
-		if (elementType != null && !UMLElementTypes.isKnownElementType(elementType)) {
+		if (elementType == null) {
 			return null;
 		}
-		if (UMLElementTypes.ActionLocalPrecondition_4003.equals(elementType)) {
-			return ActionLocalPreconditionViewFactory.class;
-		}
-		if (UMLElementTypes.ObjectNodeSelection_4004.equals(elementType)) {
-			return ObjectNodeSelectionViewFactory.class;
-		}
-		EClass semanticType = getSemanticEClass(semanticAdapter);
-		if (semanticType == null) {
+		if (!UMLElementTypes.isKnownElementType(elementType) || false == elementType instanceof IHintedType) {
 			return null;
 		}
-		EObject semanticElement = getSemanticElement(semanticAdapter);
-		int linkVID = UMLVisualIDRegistry.getLinkWithClassVisualID(semanticElement, semanticType);
-		switch (linkVID) {
+		String elementTypeHint = ((IHintedType) elementType).getSemanticHint();
+		if (elementTypeHint == null) {
+			return null;
+		}
+		if (semanticHint != null && !semanticHint.equals(elementTypeHint)) {
+			return null;
+		}
+		int visualID = UMLVisualIDRegistry.getVisualID(elementTypeHint);
+		EObject domainElement = getSemanticElement(semanticAdapter);
+		if (domainElement != null && visualID != UMLVisualIDRegistry.getLinkWithClassVisualID(domainElement)) {
+			return null;
+		}
+		switch (visualID) {
 		case ControlFlowEditPart.VISUAL_ID:
 			return ControlFlowViewFactory.class;
 		case ObjectFlowEditPart.VISUAL_ID:
 			return ObjectFlowViewFactory.class;
+		case ActionLocalPreconditionEditPart.VISUAL_ID:
+			return ActionLocalPreconditionViewFactory.class;
+		case ObjectNodeSelectionEditPart.VISUAL_ID:
+			return ObjectNodeSelectionViewFactory.class;
 		case ExceptionHandlerEditPart.VISUAL_ID:
 			return ExceptionHandlerViewFactory.class;
 		}
-		return getUnrecognizedConnectorViewClass(semanticAdapter, containerView, semanticHint);
+		return null;
 	}
 
 	/**
@@ -462,14 +549,6 @@ public class UMLViewProvider extends AbstractViewProvider {
 			return null;
 		}
 		return (IElementType) semanticAdapter.getAdapter(IElementType.class);
-	}
-
-	/**
-	 * @generated
-	 */
-	private Class getUnrecognizedConnectorViewClass(IAdaptable semanticAdapter, View containerView, String semanticHint) {
-		// Handle unrecognized child node classes here
-		return null;
 	}
 
 }

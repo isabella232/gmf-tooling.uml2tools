@@ -83,6 +83,11 @@ public class Messages extends NLS {
 	/**
 	 * @generated
 	 */
+	public static String UMLDocumentProvider_SaveAsOperation;
+
+	/**
+	 * @generated
+	 */
 	public static String UMLInitDiagramFileAction_InitDiagramFileResourceErrorDialogTitle;
 
 	/**
@@ -388,6 +393,81 @@ public class Messages extends NLS {
 	/**
 	 * @generated
 	 */
+	public static String FlowFinalNode3CreationTool_title;
+
+	/**
+	 * @generated
+	 */
+	public static String FlowFinalNode3CreationTool_desc;
+
+	/**
+	 * @generated
+	 */
+	public static String StructuredActivityNode1CreationTool_title;
+
+	/**
+	 * @generated
+	 */
+	public static String StructuredActivityNode1CreationTool_desc;
+
+	/**
+	 * @generated
+	 */
+	public static String CentralBuffer1CreationTool_title;
+
+	/**
+	 * @generated
+	 */
+	public static String CentralBuffer1CreationTool_desc;
+
+	/**
+	 * @generated
+	 */
+	public static String Datastore2CreationTool_title;
+
+	/**
+	 * @generated
+	 */
+	public static String Datastore2CreationTool_desc;
+
+	/**
+	 * @generated
+	 */
+	public static String Selection4CreationTool_title;
+
+	/**
+	 * @generated
+	 */
+	public static String Selection4CreationTool_desc;
+
+	/**
+	 * @generated
+	 */
+	public static String ControlFlow1CreationTool_title;
+
+	/**
+	 * @generated
+	 */
+	public static String ControlFlow1CreationTool_desc;
+
+	/**
+	 * @generated
+	 */
+	public static String ObjectFlow2CreationTool_title;
+
+	/**
+	 * @generated
+	 */
+	public static String ObjectFlow2CreationTool_desc;
+
+	/**
+	 * @generated
+	 */
+	public static String ExceptionHandlerLink3CreationTool_title;
+
+	/**
+	 * @generated
+	 */
 	public static String AcceptEventAction1CreationTool_title;
 
 	/**
@@ -474,81 +554,6 @@ public class Messages extends NLS {
 	 * @generated
 	 */
 	public static String OutputPin3CreationTool_desc;
-
-	/**
-	 * @generated
-	 */
-	public static String FlowFinalNode3CreationTool_title;
-
-	/**
-	 * @generated
-	 */
-	public static String FlowFinalNode3CreationTool_desc;
-
-	/**
-	 * @generated
-	 */
-	public static String StructuredActivityNode1CreationTool_title;
-
-	/**
-	 * @generated
-	 */
-	public static String StructuredActivityNode1CreationTool_desc;
-
-	/**
-	 * @generated
-	 */
-	public static String CentralBuffer1CreationTool_title;
-
-	/**
-	 * @generated
-	 */
-	public static String CentralBuffer1CreationTool_desc;
-
-	/**
-	 * @generated
-	 */
-	public static String Datastore2CreationTool_title;
-
-	/**
-	 * @generated
-	 */
-	public static String Datastore2CreationTool_desc;
-
-	/**
-	 * @generated
-	 */
-	public static String Selection4CreationTool_title;
-
-	/**
-	 * @generated
-	 */
-	public static String Selection4CreationTool_desc;
-
-	/**
-	 * @generated
-	 */
-	public static String ControlFlow1CreationTool_title;
-
-	/**
-	 * @generated
-	 */
-	public static String ControlFlow1CreationTool_desc;
-
-	/**
-	 * @generated
-	 */
-	public static String ObjectFlow2CreationTool_title;
-
-	/**
-	 * @generated
-	 */
-	public static String ObjectFlow2CreationTool_desc;
-
-	/**
-	 * @generated
-	 */
-	public static String ExceptionHandlerLink3CreationTool_title;
 
 	/**
 	 * @generated

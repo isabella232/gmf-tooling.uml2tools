@@ -2,7 +2,6 @@ package org.eclipse.uml2.diagram.activity.part;
 
 import org.eclipse.core.runtime.Platform;
 import org.eclipse.emf.ecore.EAnnotation;
-import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.gmf.runtime.notation.Diagram;
 import org.eclipse.gmf.runtime.notation.View;
@@ -156,7 +155,7 @@ public class UMLVisualIDRegistry {
 				return -1;
 			}
 		}
-		return getVisualID(view.getType());
+		return org.eclipse.uml2.diagram.activity.part.UMLVisualIDRegistry.getVisualID(view.getType());
 	}
 
 	/**
@@ -202,536 +201,759 @@ public class UMLVisualIDRegistry {
 		if (domainElement == null) {
 			return -1;
 		}
-		EClass domainElementMetaclass = domainElement.eClass();
-		return getDiagramVisualID(domainElement, domainElementMetaclass);
-	}
-
-	/**
-	 * @generated
-	 */
-	private static int getDiagramVisualID(EObject domainElement, EClass domainElementMetaclass) {
-		if (UMLPackage.eINSTANCE.getPackage().isSuperTypeOf(domainElementMetaclass) && isDiagram((Package) domainElement)) {
+		if (UMLPackage.eINSTANCE.getPackage().isSuperTypeOf(domainElement.eClass()) && isDiagram((Package) domainElement)) {
 			return PackageEditPart.VISUAL_ID;
 		}
-		return getUnrecognizedDiagramID(domainElement);
+		return -1;
 	}
 
 	/**
 	 * @generated
 	 */
 	public static int getNodeVisualID(View containerView, EObject domainElement) {
-		if (domainElement == null) {
+		if (domainElement == null || !PackageEditPart.MODEL_ID.equals(org.eclipse.uml2.diagram.activity.part.UMLVisualIDRegistry.getModelID(containerView))) {
 			return -1;
 		}
-		EClass domainElementMetaclass = domainElement.eClass();
-		return getNodeVisualID(containerView, domainElement, domainElementMetaclass, null);
+		switch (org.eclipse.uml2.diagram.activity.part.UMLVisualIDRegistry.getVisualID(containerView)) {
+		case ActivityEditPart.VISUAL_ID:
+			if (UMLPackage.eINSTANCE.getActivityParameterNode().isSuperTypeOf(domainElement.eClass())) {
+				return ActivityParameterNodeEditPart.VISUAL_ID;
+			}
+			break;
+		case OpaqueActionEditPart.VISUAL_ID:
+			if (UMLPackage.eINSTANCE.getOutputPin().isSuperTypeOf(domainElement.eClass())) {
+				return OutputPinEditPart.VISUAL_ID;
+			}
+			break;
+		case CreateObjectActionEditPart.VISUAL_ID:
+			if (UMLPackage.eINSTANCE.getOutputPin().isSuperTypeOf(domainElement.eClass())) {
+				return OutputPin2EditPart.VISUAL_ID;
+			}
+			break;
+		case AddStructuralFeatureValueActionEditPart.VISUAL_ID:
+			if (UMLPackage.eINSTANCE.getInputPin().isSuperTypeOf(domainElement.eClass())) {
+				return InputPinEditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getInputPin().isSuperTypeOf(domainElement.eClass())) {
+				return InputPin2EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getInputPin().isSuperTypeOf(domainElement.eClass())) {
+				return InputPin3EditPart.VISUAL_ID;
+			}
+			break;
+		case CallBehaviorActionEditPart.VISUAL_ID:
+			if (UMLPackage.eINSTANCE.getOutputPin().isSuperTypeOf(domainElement.eClass())) {
+				return OutputPin3EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getInputPin().isSuperTypeOf(domainElement.eClass())) {
+				return InputPin4EditPart.VISUAL_ID;
+			}
+			break;
+		case CallOperationActionEditPart.VISUAL_ID:
+			if (UMLPackage.eINSTANCE.getOutputPin().isSuperTypeOf(domainElement.eClass())) {
+				return OutputPin3EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getInputPin().isSuperTypeOf(domainElement.eClass())) {
+				return InputPin4EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getInputPin().isSuperTypeOf(domainElement.eClass())) {
+				return InputPin5EditPart.VISUAL_ID;
+			}
+			break;
+		case OpaqueAction2EditPart.VISUAL_ID:
+			if (UMLPackage.eINSTANCE.getOutputPin().isSuperTypeOf(domainElement.eClass())) {
+				return OutputPinEditPart.VISUAL_ID;
+			}
+			break;
+		case CreateObjectAction2EditPart.VISUAL_ID:
+			if (UMLPackage.eINSTANCE.getOutputPin().isSuperTypeOf(domainElement.eClass())) {
+				return OutputPin2EditPart.VISUAL_ID;
+			}
+			break;
+		case CallBehaviorAction2EditPart.VISUAL_ID:
+			if (UMLPackage.eINSTANCE.getOutputPin().isSuperTypeOf(domainElement.eClass())) {
+				return OutputPin3EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getInputPin().isSuperTypeOf(domainElement.eClass())) {
+				return InputPin4EditPart.VISUAL_ID;
+			}
+			break;
+		case CallOperationAction2EditPart.VISUAL_ID:
+			if (UMLPackage.eINSTANCE.getOutputPin().isSuperTypeOf(domainElement.eClass())) {
+				return OutputPin3EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getInputPin().isSuperTypeOf(domainElement.eClass())) {
+				return InputPin4EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getInputPin().isSuperTypeOf(domainElement.eClass())) {
+				return InputPin5EditPart.VISUAL_ID;
+			}
+			break;
+		case AddStructuralFeatureValueAction2EditPart.VISUAL_ID:
+			if (UMLPackage.eINSTANCE.getInputPin().isSuperTypeOf(domainElement.eClass())) {
+				return InputPinEditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getInputPin().isSuperTypeOf(domainElement.eClass())) {
+				return InputPin2EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getInputPin().isSuperTypeOf(domainElement.eClass())) {
+				return InputPin3EditPart.VISUAL_ID;
+			}
+			break;
+		case ActivitySubverticesEditPart.VISUAL_ID:
+			if (UMLPackage.eINSTANCE.getAcceptEventAction().isSuperTypeOf(domainElement.eClass()) && evaluate(AcceptEventAction_3030_Constraint, domainElement)) {
+				return AcceptEventActionEditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getAcceptEventAction().isSuperTypeOf(domainElement.eClass()) && evaluate(AcceptEventAction_3031_Constraint, domainElement)) {
+				return AcceptEventAction2EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getActivityFinalNode().isSuperTypeOf(domainElement.eClass())) {
+				return ActivityFinalNodeEditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getDecisionNode().isSuperTypeOf(domainElement.eClass())) {
+				return DecisionNodeEditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getMergeNode().isSuperTypeOf(domainElement.eClass())) {
+				return MergeNodeEditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getInitialNode().isSuperTypeOf(domainElement.eClass())) {
+				return InitialNodeEditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getDataStoreNode().isSuperTypeOf(domainElement.eClass())) {
+				return DataStoreNodeEditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getCentralBufferNode().isSuperTypeOf(domainElement.eClass())) {
+				return CentralBufferNodeEditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getOpaqueAction().isSuperTypeOf(domainElement.eClass())) {
+				return OpaqueActionEditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getFlowFinalNode().isSuperTypeOf(domainElement.eClass())) {
+				return FlowFinalNodeEditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getForkNode().isSuperTypeOf(domainElement.eClass())) {
+				return ForkNodeEditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getJoinNode().isSuperTypeOf(domainElement.eClass())) {
+				return JoinNodeEditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getPin().isSuperTypeOf(domainElement.eClass())) {
+				return PinEditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getCreateObjectAction().isSuperTypeOf(domainElement.eClass())) {
+				return CreateObjectActionEditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getAddStructuralFeatureValueAction().isSuperTypeOf(domainElement.eClass())) {
+				return AddStructuralFeatureValueActionEditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getCallBehaviorAction().isSuperTypeOf(domainElement.eClass())) {
+				return CallBehaviorActionEditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getCallOperationAction().isSuperTypeOf(domainElement.eClass())) {
+				return CallOperationActionEditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getStructuredActivityNode().isSuperTypeOf(domainElement.eClass())) {
+				return StructuredActivityNodeEditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getOpaqueBehavior().isSuperTypeOf(domainElement.eClass())) {
+				return OpaqueBehaviorEditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getSendSignalAction().isSuperTypeOf(domainElement.eClass())) {
+				return SendSignalActionEditPart.VISUAL_ID;
+			}
+			break;
+		case StructuredActivityNodeStructuredActivityContentPaneCompartmentEditPart.VISUAL_ID:
+			if (UMLPackage.eINSTANCE.getStructuredActivityNode().isSuperTypeOf(domainElement.eClass())) {
+				return StructuredActivityNode2EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getOpaqueAction().isSuperTypeOf(domainElement.eClass())) {
+				return OpaqueAction2EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getAcceptEventAction().isSuperTypeOf(domainElement.eClass()) && evaluate(AcceptEventAction_3012_Constraint, domainElement)) {
+				return AcceptEventAction3EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getAcceptEventAction().isSuperTypeOf(domainElement.eClass()) && evaluate(AcceptEventAction_3013_Constraint, domainElement)) {
+				return AcceptEventAction4EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getActivityFinalNode().isSuperTypeOf(domainElement.eClass())) {
+				return ActivityFinalNode2EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getDecisionNode().isSuperTypeOf(domainElement.eClass())) {
+				return DecisionNode2EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getFlowFinalNode().isSuperTypeOf(domainElement.eClass())) {
+				return FlowFinalNode2EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getPin().isSuperTypeOf(domainElement.eClass())) {
+				return Pin2EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getCreateObjectAction().isSuperTypeOf(domainElement.eClass())) {
+				return CreateObjectAction2EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getCallBehaviorAction().isSuperTypeOf(domainElement.eClass())) {
+				return CallBehaviorAction2EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getCallOperationAction().isSuperTypeOf(domainElement.eClass())) {
+				return CallOperationAction2EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getForkNode().isSuperTypeOf(domainElement.eClass())) {
+				return ForkNode2EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getJoinNode().isSuperTypeOf(domainElement.eClass())) {
+				return JoinNode2EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getAddStructuralFeatureValueAction().isSuperTypeOf(domainElement.eClass())) {
+				return AddStructuralFeatureValueAction2EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getDataStoreNode().isSuperTypeOf(domainElement.eClass())) {
+				return DataStoreNode2EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getCentralBufferNode().isSuperTypeOf(domainElement.eClass())) {
+				return CentralBufferNode2EditPart.VISUAL_ID;
+			}
+			break;
+		case StructuredActivityNodeStructuredActivityContentPaneCompartment2EditPart.VISUAL_ID:
+			if (UMLPackage.eINSTANCE.getStructuredActivityNode().isSuperTypeOf(domainElement.eClass())) {
+				return StructuredActivityNode2EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getOpaqueAction().isSuperTypeOf(domainElement.eClass())) {
+				return OpaqueAction2EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getAcceptEventAction().isSuperTypeOf(domainElement.eClass()) && evaluate(AcceptEventAction_3012_Constraint, domainElement)) {
+				return AcceptEventAction3EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getAcceptEventAction().isSuperTypeOf(domainElement.eClass()) && evaluate(AcceptEventAction_3013_Constraint, domainElement)) {
+				return AcceptEventAction4EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getActivityFinalNode().isSuperTypeOf(domainElement.eClass())) {
+				return ActivityFinalNode2EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getDecisionNode().isSuperTypeOf(domainElement.eClass())) {
+				return DecisionNode2EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getFlowFinalNode().isSuperTypeOf(domainElement.eClass())) {
+				return FlowFinalNode2EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getPin().isSuperTypeOf(domainElement.eClass())) {
+				return Pin2EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getCreateObjectAction().isSuperTypeOf(domainElement.eClass())) {
+				return CreateObjectAction2EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getCallBehaviorAction().isSuperTypeOf(domainElement.eClass())) {
+				return CallBehaviorAction2EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getCallOperationAction().isSuperTypeOf(domainElement.eClass())) {
+				return CallOperationAction2EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getForkNode().isSuperTypeOf(domainElement.eClass())) {
+				return ForkNode2EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getJoinNode().isSuperTypeOf(domainElement.eClass())) {
+				return JoinNode2EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getAddStructuralFeatureValueAction().isSuperTypeOf(domainElement.eClass())) {
+				return AddStructuralFeatureValueAction2EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getDataStoreNode().isSuperTypeOf(domainElement.eClass())) {
+				return DataStoreNode2EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getCentralBufferNode().isSuperTypeOf(domainElement.eClass())) {
+				return CentralBufferNode2EditPart.VISUAL_ID;
+			}
+			break;
+		case ConstraintPreconditionEditPart.VISUAL_ID:
+			if (UMLPackage.eINSTANCE.getLiteralString().isSuperTypeOf(domainElement.eClass())) {
+				return LiteralStringEditPart.VISUAL_ID;
+			}
+			break;
+		case ConstraintPostconditionEditPart.VISUAL_ID:
+			if (UMLPackage.eINSTANCE.getLiteralString().isSuperTypeOf(domainElement.eClass())) {
+				return LiteralString2EditPart.VISUAL_ID;
+			}
+			break;
+		case PackageEditPart.VISUAL_ID:
+			if (UMLPackage.eINSTANCE.getActivity().isSuperTypeOf(domainElement.eClass())) {
+				return ActivityEditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getConstraint().isSuperTypeOf(domainElement.eClass())) {
+				return ConstraintEditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getConstraint().isSuperTypeOf(domainElement.eClass())) {
+				return Constraint2EditPart.VISUAL_ID;
+			}
+			break;
+		}
+		return -1;
 	}
 
 	/**
 	 * @generated
 	 */
-	public static int getNodeVisualID(View containerView, EObject domainElement, EClass domainElementMetaclass, String semanticHint) {
+	public static boolean canCreateNode(View containerView, int nodeVisualID) {
 		String containerModelID = org.eclipse.uml2.diagram.activity.part.UMLVisualIDRegistry.getModelID(containerView);
 		if (!PackageEditPart.MODEL_ID.equals(containerModelID)) {
-			return -1;
+			return false;
 		}
 		int containerVisualID;
 		if (PackageEditPart.MODEL_ID.equals(containerModelID)) {
 			containerVisualID = org.eclipse.uml2.diagram.activity.part.UMLVisualIDRegistry.getVisualID(containerView);
 		} else {
 			if (containerView instanceof Diagram) {
-				containerVisualID = 1000;
+				containerVisualID = PackageEditPart.VISUAL_ID;
 			} else {
-				return -1;
+				return false;
 			}
 		}
-		int nodeVisualID = semanticHint != null ? org.eclipse.uml2.diagram.activity.part.UMLVisualIDRegistry.getVisualID(semanticHint) : -1;
 		switch (containerVisualID) {
 		case ActivityEditPart.VISUAL_ID:
 			if (ActivityNameEditPart.VISUAL_ID == nodeVisualID) {
-				return ActivityNameEditPart.VISUAL_ID;
+				return true;
 			}
 			if (ActivitySubverticesEditPart.VISUAL_ID == nodeVisualID) {
-				return ActivitySubverticesEditPart.VISUAL_ID;
+				return true;
 			}
-			if ((semanticHint == null || ActivityParameterNodeEditPart.VISUAL_ID == nodeVisualID) && UMLPackage.eINSTANCE.getActivityParameterNode().isSuperTypeOf(domainElementMetaclass)) {
-				return ActivityParameterNodeEditPart.VISUAL_ID;
+			if (ActivityParameterNodeEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
 			}
-			return getUnrecognizedActivity_2026ChildNodeID(domainElement, semanticHint);
+			break;
 		case ConstraintEditPart.VISUAL_ID:
 			if (ConstraintPreconditionEditPart.VISUAL_ID == nodeVisualID) {
-				return ConstraintPreconditionEditPart.VISUAL_ID;
+				return true;
 			}
-			return getUnrecognizedConstraint_2027ChildNodeID(domainElement, semanticHint);
+			break;
 		case Constraint2EditPart.VISUAL_ID:
 			if (ConstraintPostconditionEditPart.VISUAL_ID == nodeVisualID) {
-				return ConstraintPostconditionEditPart.VISUAL_ID;
+				return true;
 			}
-			return getUnrecognizedConstraint_2028ChildNodeID(domainElement, semanticHint);
+			break;
 		case AcceptEventActionEditPart.VISUAL_ID:
 			if (AcceptEventActionNameEditPart.VISUAL_ID == nodeVisualID) {
-				return AcceptEventActionNameEditPart.VISUAL_ID;
+				return true;
 			}
-			return getUnrecognizedAcceptEventAction_3030ChildNodeID(domainElement, semanticHint);
+			break;
 		case AcceptEventAction2EditPart.VISUAL_ID:
 			if (AcceptEventActionName3EditPart.VISUAL_ID == nodeVisualID) {
-				return AcceptEventActionName3EditPart.VISUAL_ID;
+				return true;
 			}
-			return getUnrecognizedAcceptEventAction_3031ChildNodeID(domainElement, semanticHint);
-		case ActivityFinalNodeEditPart.VISUAL_ID:
-			return getUnrecognizedActivityFinalNode_3032ChildNodeID(domainElement, semanticHint);
-		case DecisionNodeEditPart.VISUAL_ID:
-			return getUnrecognizedDecisionNode_3033ChildNodeID(domainElement, semanticHint);
-		case MergeNodeEditPart.VISUAL_ID:
-			return getUnrecognizedMergeNode_3034ChildNodeID(domainElement, semanticHint);
-		case InitialNodeEditPart.VISUAL_ID:
-			return getUnrecognizedInitialNode_3035ChildNodeID(domainElement, semanticHint);
+			break;
 		case DataStoreNodeEditPart.VISUAL_ID:
 			if (DataStoreNodeNameEditPart.VISUAL_ID == nodeVisualID) {
-				return DataStoreNodeNameEditPart.VISUAL_ID;
+				return true;
 			}
 			if (DataStoreNodeName2EditPart.VISUAL_ID == nodeVisualID) {
-				return DataStoreNodeName2EditPart.VISUAL_ID;
+				return true;
 			}
-			return getUnrecognizedDataStoreNode_3036ChildNodeID(domainElement, semanticHint);
+			break;
 		case CentralBufferNodeEditPart.VISUAL_ID:
 			if (CentralBufferNodeNameEditPart.VISUAL_ID == nodeVisualID) {
-				return CentralBufferNodeNameEditPart.VISUAL_ID;
+				return true;
 			}
 			if (CentralBufferNodeName2EditPart.VISUAL_ID == nodeVisualID) {
-				return CentralBufferNodeName2EditPart.VISUAL_ID;
+				return true;
 			}
-			return getUnrecognizedCentralBufferNode_3037ChildNodeID(domainElement, semanticHint);
+			break;
 		case OpaqueActionEditPart.VISUAL_ID:
 			if (OpaqueActionNameEditPart.VISUAL_ID == nodeVisualID) {
-				return OpaqueActionNameEditPart.VISUAL_ID;
+				return true;
 			}
-			if ((semanticHint == null || OutputPinEditPart.VISUAL_ID == nodeVisualID) && UMLPackage.eINSTANCE.getOutputPin().isSuperTypeOf(domainElementMetaclass)) {
-				return OutputPinEditPart.VISUAL_ID;
+			if (OutputPinEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
 			}
-			return getUnrecognizedOpaqueAction_3029ChildNodeID(domainElement, semanticHint);
+			break;
 		case OutputPinEditPart.VISUAL_ID:
 			if (OutputPinNameEditPart.VISUAL_ID == nodeVisualID) {
-				return OutputPinNameEditPart.VISUAL_ID;
+				return true;
 			}
-			return getUnrecognizedOutputPin_3001ChildNodeID(domainElement, semanticHint);
-		case FlowFinalNodeEditPart.VISUAL_ID:
-			return getUnrecognizedFlowFinalNode_3038ChildNodeID(domainElement, semanticHint);
-		case ForkNodeEditPart.VISUAL_ID:
-			return getUnrecognizedForkNode_3039ChildNodeID(domainElement, semanticHint);
-		case JoinNodeEditPart.VISUAL_ID:
-			return getUnrecognizedJoinNode_3040ChildNodeID(domainElement, semanticHint);
+			break;
 		case PinEditPart.VISUAL_ID:
 			if (PinNameEditPart.VISUAL_ID == nodeVisualID) {
-				return PinNameEditPart.VISUAL_ID;
+				return true;
 			}
-			return getUnrecognizedPin_3041ChildNodeID(domainElement, semanticHint);
+			break;
 		case CreateObjectActionEditPart.VISUAL_ID:
 			if (CreateObjectActionNameEditPart.VISUAL_ID == nodeVisualID) {
-				return CreateObjectActionNameEditPart.VISUAL_ID;
+				return true;
 			}
-			if ((semanticHint == null || OutputPin2EditPart.VISUAL_ID == nodeVisualID) && UMLPackage.eINSTANCE.getOutputPin().isSuperTypeOf(domainElementMetaclass)) {
-				return OutputPin2EditPart.VISUAL_ID;
+			if (OutputPin2EditPart.VISUAL_ID == nodeVisualID) {
+				return true;
 			}
-			return getUnrecognizedCreateObjectAction_3042ChildNodeID(domainElement, semanticHint);
+			break;
 		case OutputPin2EditPart.VISUAL_ID:
 			if (OutputPinName2EditPart.VISUAL_ID == nodeVisualID) {
-				return OutputPinName2EditPart.VISUAL_ID;
+				return true;
 			}
-			return getUnrecognizedOutputPin_3002ChildNodeID(domainElement, semanticHint);
+			break;
 		case AddStructuralFeatureValueActionEditPart.VISUAL_ID:
 			if (AddStructuralFeatureValueActionNameEditPart.VISUAL_ID == nodeVisualID) {
-				return AddStructuralFeatureValueActionNameEditPart.VISUAL_ID;
+				return true;
 			}
-			if ((semanticHint == null || InputPinEditPart.VISUAL_ID == nodeVisualID) && UMLPackage.eINSTANCE.getInputPin().isSuperTypeOf(domainElementMetaclass)) {
-				return InputPinEditPart.VISUAL_ID;
+			if (InputPinEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
 			}
-			if ((semanticHint == null || InputPin2EditPart.VISUAL_ID == nodeVisualID) && UMLPackage.eINSTANCE.getInputPin().isSuperTypeOf(domainElementMetaclass)) {
-				return InputPin2EditPart.VISUAL_ID;
+			if (InputPin2EditPart.VISUAL_ID == nodeVisualID) {
+				return true;
 			}
-			if ((semanticHint == null || InputPin3EditPart.VISUAL_ID == nodeVisualID) && UMLPackage.eINSTANCE.getInputPin().isSuperTypeOf(domainElementMetaclass)) {
-				return InputPin3EditPart.VISUAL_ID;
+			if (InputPin3EditPart.VISUAL_ID == nodeVisualID) {
+				return true;
 			}
-			return getUnrecognizedAddStructuralFeatureValueAction_3043ChildNodeID(domainElement, semanticHint);
+			break;
 		case InputPinEditPart.VISUAL_ID:
 			if (InputPinNameEditPart.VISUAL_ID == nodeVisualID) {
-				return InputPinNameEditPart.VISUAL_ID;
+				return true;
 			}
-			return getUnrecognizedInputPin_3003ChildNodeID(domainElement, semanticHint);
+			break;
 		case InputPin2EditPart.VISUAL_ID:
 			if (InputPinName2EditPart.VISUAL_ID == nodeVisualID) {
-				return InputPinName2EditPart.VISUAL_ID;
+				return true;
 			}
-			return getUnrecognizedInputPin_3004ChildNodeID(domainElement, semanticHint);
+			break;
 		case InputPin3EditPart.VISUAL_ID:
 			if (InputPinName3EditPart.VISUAL_ID == nodeVisualID) {
-				return InputPinName3EditPart.VISUAL_ID;
+				return true;
 			}
-			return getUnrecognizedInputPin_3005ChildNodeID(domainElement, semanticHint);
+			break;
 		case CallBehaviorActionEditPart.VISUAL_ID:
 			if (CallBehaviorActionNameEditPart.VISUAL_ID == nodeVisualID) {
-				return CallBehaviorActionNameEditPart.VISUAL_ID;
+				return true;
 			}
-			if ((semanticHint == null || OutputPin3EditPart.VISUAL_ID == nodeVisualID) && UMLPackage.eINSTANCE.getOutputPin().isSuperTypeOf(domainElementMetaclass)) {
-				return OutputPin3EditPart.VISUAL_ID;
+			if (OutputPin3EditPart.VISUAL_ID == nodeVisualID) {
+				return true;
 			}
-			if ((semanticHint == null || InputPin4EditPart.VISUAL_ID == nodeVisualID) && UMLPackage.eINSTANCE.getInputPin().isSuperTypeOf(domainElementMetaclass)) {
-				return InputPin4EditPart.VISUAL_ID;
+			if (InputPin4EditPart.VISUAL_ID == nodeVisualID) {
+				return true;
 			}
-			return getUnrecognizedCallBehaviorAction_3044ChildNodeID(domainElement, semanticHint);
+			break;
 		case OutputPin3EditPart.VISUAL_ID:
 			if (OutputPinName3EditPart.VISUAL_ID == nodeVisualID) {
-				return OutputPinName3EditPart.VISUAL_ID;
+				return true;
 			}
-			return getUnrecognizedOutputPin_3006ChildNodeID(domainElement, semanticHint);
+			break;
 		case InputPin4EditPart.VISUAL_ID:
 			if (InputPinName4EditPart.VISUAL_ID == nodeVisualID) {
-				return InputPinName4EditPart.VISUAL_ID;
+				return true;
 			}
-			return getUnrecognizedInputPin_3007ChildNodeID(domainElement, semanticHint);
+			break;
 		case CallOperationActionEditPart.VISUAL_ID:
 			if (CallOperationActionNameEditPart.VISUAL_ID == nodeVisualID) {
-				return CallOperationActionNameEditPart.VISUAL_ID;
+				return true;
 			}
-			if ((semanticHint == null || OutputPin3EditPart.VISUAL_ID == nodeVisualID) && UMLPackage.eINSTANCE.getOutputPin().isSuperTypeOf(domainElementMetaclass)) {
-				return OutputPin3EditPart.VISUAL_ID;
+			if (OutputPin3EditPart.VISUAL_ID == nodeVisualID) {
+				return true;
 			}
-			if ((semanticHint == null || InputPin4EditPart.VISUAL_ID == nodeVisualID) && UMLPackage.eINSTANCE.getInputPin().isSuperTypeOf(domainElementMetaclass)) {
-				return InputPin4EditPart.VISUAL_ID;
+			if (InputPin4EditPart.VISUAL_ID == nodeVisualID) {
+				return true;
 			}
-			if ((semanticHint == null || InputPin5EditPart.VISUAL_ID == nodeVisualID) && UMLPackage.eINSTANCE.getInputPin().isSuperTypeOf(domainElementMetaclass)) {
-				return InputPin5EditPart.VISUAL_ID;
+			if (InputPin5EditPart.VISUAL_ID == nodeVisualID) {
+				return true;
 			}
-			return getUnrecognizedCallOperationAction_3045ChildNodeID(domainElement, semanticHint);
+			break;
 		case InputPin5EditPart.VISUAL_ID:
 			if (InputPinName5EditPart.VISUAL_ID == nodeVisualID) {
-				return InputPinName5EditPart.VISUAL_ID;
+				return true;
 			}
-			return getUnrecognizedInputPin_3008ChildNodeID(domainElement, semanticHint);
+			break;
 		case StructuredActivityNodeEditPart.VISUAL_ID:
 			if (StructuredActivityNodeStructuredActivityContentPaneCompartmentEditPart.VISUAL_ID == nodeVisualID) {
-				return StructuredActivityNodeStructuredActivityContentPaneCompartmentEditPart.VISUAL_ID;
+				return true;
 			}
-			return getUnrecognizedStructuredActivityNode_3046ChildNodeID(domainElement, semanticHint);
+			break;
 		case StructuredActivityNode2EditPart.VISUAL_ID:
 			if (StructuredActivityNodeStructuredActivityContentPaneCompartment2EditPart.VISUAL_ID == nodeVisualID) {
-				return StructuredActivityNodeStructuredActivityContentPaneCompartment2EditPart.VISUAL_ID;
+				return true;
 			}
-			return getUnrecognizedStructuredActivityNode_3009ChildNodeID(domainElement, semanticHint);
+			break;
 		case OpaqueAction2EditPart.VISUAL_ID:
 			if (OpaqueActionName2EditPart.VISUAL_ID == nodeVisualID) {
-				return OpaqueActionName2EditPart.VISUAL_ID;
+				return true;
 			}
-			if ((semanticHint == null || OutputPinEditPart.VISUAL_ID == nodeVisualID) && UMLPackage.eINSTANCE.getOutputPin().isSuperTypeOf(domainElementMetaclass)) {
-				return OutputPinEditPart.VISUAL_ID;
+			if (OutputPinEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
 			}
-			return getUnrecognizedOpaqueAction_3011ChildNodeID(domainElement, semanticHint);
+			break;
 		case AcceptEventAction3EditPart.VISUAL_ID:
 			if (AcceptEventActionName2EditPart.VISUAL_ID == nodeVisualID) {
-				return AcceptEventActionName2EditPart.VISUAL_ID;
+				return true;
 			}
-			return getUnrecognizedAcceptEventAction_3012ChildNodeID(domainElement, semanticHint);
+			break;
 		case AcceptEventAction4EditPart.VISUAL_ID:
 			if (AcceptEventActionName4EditPart.VISUAL_ID == nodeVisualID) {
-				return AcceptEventActionName4EditPart.VISUAL_ID;
+				return true;
 			}
-			return getUnrecognizedAcceptEventAction_3013ChildNodeID(domainElement, semanticHint);
-		case ActivityFinalNode2EditPart.VISUAL_ID:
-			return getUnrecognizedActivityFinalNode_3014ChildNodeID(domainElement, semanticHint);
-		case DecisionNode2EditPart.VISUAL_ID:
-			return getUnrecognizedDecisionNode_3015ChildNodeID(domainElement, semanticHint);
-		case FlowFinalNode2EditPart.VISUAL_ID:
-			return getUnrecognizedFlowFinalNode_3016ChildNodeID(domainElement, semanticHint);
+			break;
 		case Pin2EditPart.VISUAL_ID:
 			if (PinName2EditPart.VISUAL_ID == nodeVisualID) {
-				return PinName2EditPart.VISUAL_ID;
+				return true;
 			}
-			return getUnrecognizedPin_3017ChildNodeID(domainElement, semanticHint);
+			break;
 		case CreateObjectAction2EditPart.VISUAL_ID:
 			if (CreateObjectActionName2EditPart.VISUAL_ID == nodeVisualID) {
-				return CreateObjectActionName2EditPart.VISUAL_ID;
+				return true;
 			}
-			if ((semanticHint == null || OutputPin2EditPart.VISUAL_ID == nodeVisualID) && UMLPackage.eINSTANCE.getOutputPin().isSuperTypeOf(domainElementMetaclass)) {
-				return OutputPin2EditPart.VISUAL_ID;
+			if (OutputPin2EditPart.VISUAL_ID == nodeVisualID) {
+				return true;
 			}
-			return getUnrecognizedCreateObjectAction_3018ChildNodeID(domainElement, semanticHint);
+			break;
 		case CallBehaviorAction2EditPart.VISUAL_ID:
 			if (CallBehaviorActionName2EditPart.VISUAL_ID == nodeVisualID) {
-				return CallBehaviorActionName2EditPart.VISUAL_ID;
+				return true;
 			}
-			if ((semanticHint == null || OutputPin3EditPart.VISUAL_ID == nodeVisualID) && UMLPackage.eINSTANCE.getOutputPin().isSuperTypeOf(domainElementMetaclass)) {
-				return OutputPin3EditPart.VISUAL_ID;
+			if (OutputPin3EditPart.VISUAL_ID == nodeVisualID) {
+				return true;
 			}
-			if ((semanticHint == null || InputPin4EditPart.VISUAL_ID == nodeVisualID) && UMLPackage.eINSTANCE.getInputPin().isSuperTypeOf(domainElementMetaclass)) {
-				return InputPin4EditPart.VISUAL_ID;
+			if (InputPin4EditPart.VISUAL_ID == nodeVisualID) {
+				return true;
 			}
-			return getUnrecognizedCallBehaviorAction_3019ChildNodeID(domainElement, semanticHint);
+			break;
 		case CallOperationAction2EditPart.VISUAL_ID:
 			if (CallOperationActionName2EditPart.VISUAL_ID == nodeVisualID) {
-				return CallOperationActionName2EditPart.VISUAL_ID;
+				return true;
 			}
-			if ((semanticHint == null || OutputPin3EditPart.VISUAL_ID == nodeVisualID) && UMLPackage.eINSTANCE.getOutputPin().isSuperTypeOf(domainElementMetaclass)) {
-				return OutputPin3EditPart.VISUAL_ID;
+			if (OutputPin3EditPart.VISUAL_ID == nodeVisualID) {
+				return true;
 			}
-			if ((semanticHint == null || InputPin4EditPart.VISUAL_ID == nodeVisualID) && UMLPackage.eINSTANCE.getInputPin().isSuperTypeOf(domainElementMetaclass)) {
-				return InputPin4EditPart.VISUAL_ID;
+			if (InputPin4EditPart.VISUAL_ID == nodeVisualID) {
+				return true;
 			}
-			if ((semanticHint == null || InputPin5EditPart.VISUAL_ID == nodeVisualID) && UMLPackage.eINSTANCE.getInputPin().isSuperTypeOf(domainElementMetaclass)) {
-				return InputPin5EditPart.VISUAL_ID;
+			if (InputPin5EditPart.VISUAL_ID == nodeVisualID) {
+				return true;
 			}
-			return getUnrecognizedCallOperationAction_3020ChildNodeID(domainElement, semanticHint);
-		case ForkNode2EditPart.VISUAL_ID:
-			return getUnrecognizedForkNode_3021ChildNodeID(domainElement, semanticHint);
-		case JoinNode2EditPart.VISUAL_ID:
-			return getUnrecognizedJoinNode_3022ChildNodeID(domainElement, semanticHint);
+			break;
 		case AddStructuralFeatureValueAction2EditPart.VISUAL_ID:
 			if (AddStructuralFeatureValueActionName2EditPart.VISUAL_ID == nodeVisualID) {
-				return AddStructuralFeatureValueActionName2EditPart.VISUAL_ID;
+				return true;
 			}
-			if ((semanticHint == null || InputPinEditPart.VISUAL_ID == nodeVisualID) && UMLPackage.eINSTANCE.getInputPin().isSuperTypeOf(domainElementMetaclass)) {
-				return InputPinEditPart.VISUAL_ID;
+			if (InputPinEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
 			}
-			if ((semanticHint == null || InputPin2EditPart.VISUAL_ID == nodeVisualID) && UMLPackage.eINSTANCE.getInputPin().isSuperTypeOf(domainElementMetaclass)) {
-				return InputPin2EditPart.VISUAL_ID;
+			if (InputPin2EditPart.VISUAL_ID == nodeVisualID) {
+				return true;
 			}
-			if ((semanticHint == null || InputPin3EditPart.VISUAL_ID == nodeVisualID) && UMLPackage.eINSTANCE.getInputPin().isSuperTypeOf(domainElementMetaclass)) {
-				return InputPin3EditPart.VISUAL_ID;
+			if (InputPin3EditPart.VISUAL_ID == nodeVisualID) {
+				return true;
 			}
-			return getUnrecognizedAddStructuralFeatureValueAction_3023ChildNodeID(domainElement, semanticHint);
+			break;
 		case DataStoreNode2EditPart.VISUAL_ID:
 			if (DataStoreNodeName3EditPart.VISUAL_ID == nodeVisualID) {
-				return DataStoreNodeName3EditPart.VISUAL_ID;
+				return true;
 			}
 			if (DataStoreNodeName4EditPart.VISUAL_ID == nodeVisualID) {
-				return DataStoreNodeName4EditPart.VISUAL_ID;
+				return true;
 			}
-			return getUnrecognizedDataStoreNode_3024ChildNodeID(domainElement, semanticHint);
+			break;
 		case CentralBufferNode2EditPart.VISUAL_ID:
 			if (CentralBufferNodeName3EditPart.VISUAL_ID == nodeVisualID) {
-				return CentralBufferNodeName3EditPart.VISUAL_ID;
+				return true;
 			}
 			if (CentralBufferNodeName4EditPart.VISUAL_ID == nodeVisualID) {
-				return CentralBufferNodeName4EditPart.VISUAL_ID;
+				return true;
 			}
-			return getUnrecognizedCentralBufferNode_3025ChildNodeID(domainElement, semanticHint);
+			break;
 		case OpaqueBehaviorEditPart.VISUAL_ID:
 			if (OpaqueBehaviorNameEditPart.VISUAL_ID == nodeVisualID) {
-				return OpaqueBehaviorNameEditPart.VISUAL_ID;
+				return true;
 			}
-			return getUnrecognizedOpaqueBehavior_3047ChildNodeID(domainElement, semanticHint);
+			break;
 		case ActivityParameterNodeEditPart.VISUAL_ID:
 			if (ActivityParameterNodeNameEditPart.VISUAL_ID == nodeVisualID) {
-				return ActivityParameterNodeNameEditPart.VISUAL_ID;
+				return true;
 			}
-			return getUnrecognizedActivityParameterNode_3052ChildNodeID(domainElement, semanticHint);
+			break;
 		case SendSignalActionEditPart.VISUAL_ID:
 			if (SendSignalActionNameEditPart.VISUAL_ID == nodeVisualID) {
-				return SendSignalActionNameEditPart.VISUAL_ID;
+				return true;
 			}
-			return getUnrecognizedSendSignalAction_3053ChildNodeID(domainElement, semanticHint);
-		case LiteralStringEditPart.VISUAL_ID:
-			return getUnrecognizedLiteralString_3049ChildNodeID(domainElement, semanticHint);
-		case LiteralString2EditPart.VISUAL_ID:
-			return getUnrecognizedLiteralString_3051ChildNodeID(domainElement, semanticHint);
+			break;
 		case ActivitySubverticesEditPart.VISUAL_ID:
-			if ((semanticHint == null || AcceptEventActionEditPart.VISUAL_ID == nodeVisualID) && UMLPackage.eINSTANCE.getAcceptEventAction().isSuperTypeOf(domainElementMetaclass)
-					&& (domainElement == null || evaluate(AcceptEventAction_3030_Constraint, domainElement))) {
-				return AcceptEventActionEditPart.VISUAL_ID;
+			if (AcceptEventActionEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
 			}
-			if ((semanticHint == null || AcceptEventAction2EditPart.VISUAL_ID == nodeVisualID) && UMLPackage.eINSTANCE.getAcceptEventAction().isSuperTypeOf(domainElementMetaclass)
-					&& (domainElement == null || evaluate(AcceptEventAction_3031_Constraint, domainElement))) {
-				return AcceptEventAction2EditPart.VISUAL_ID;
+			if (AcceptEventAction2EditPart.VISUAL_ID == nodeVisualID) {
+				return true;
 			}
-			if ((semanticHint == null || ActivityFinalNodeEditPart.VISUAL_ID == nodeVisualID) && UMLPackage.eINSTANCE.getActivityFinalNode().isSuperTypeOf(domainElementMetaclass)) {
-				return ActivityFinalNodeEditPart.VISUAL_ID;
+			if (ActivityFinalNodeEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
 			}
-			if ((semanticHint == null || DecisionNodeEditPart.VISUAL_ID == nodeVisualID) && UMLPackage.eINSTANCE.getDecisionNode().isSuperTypeOf(domainElementMetaclass)) {
-				return DecisionNodeEditPart.VISUAL_ID;
+			if (DecisionNodeEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
 			}
-			if ((semanticHint == null || MergeNodeEditPart.VISUAL_ID == nodeVisualID) && UMLPackage.eINSTANCE.getMergeNode().isSuperTypeOf(domainElementMetaclass)) {
-				return MergeNodeEditPart.VISUAL_ID;
+			if (MergeNodeEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
 			}
-			if ((semanticHint == null || InitialNodeEditPart.VISUAL_ID == nodeVisualID) && UMLPackage.eINSTANCE.getInitialNode().isSuperTypeOf(domainElementMetaclass)) {
-				return InitialNodeEditPart.VISUAL_ID;
+			if (InitialNodeEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
 			}
-			if ((semanticHint == null || DataStoreNodeEditPart.VISUAL_ID == nodeVisualID) && UMLPackage.eINSTANCE.getDataStoreNode().isSuperTypeOf(domainElementMetaclass)) {
-				return DataStoreNodeEditPart.VISUAL_ID;
+			if (DataStoreNodeEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
 			}
-			if ((semanticHint == null || CentralBufferNodeEditPart.VISUAL_ID == nodeVisualID) && UMLPackage.eINSTANCE.getCentralBufferNode().isSuperTypeOf(domainElementMetaclass)) {
-				return CentralBufferNodeEditPart.VISUAL_ID;
+			if (CentralBufferNodeEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
 			}
-			if ((semanticHint == null || OpaqueActionEditPart.VISUAL_ID == nodeVisualID) && UMLPackage.eINSTANCE.getOpaqueAction().isSuperTypeOf(domainElementMetaclass)) {
-				return OpaqueActionEditPart.VISUAL_ID;
+			if (OpaqueActionEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
 			}
-			if ((semanticHint == null || FlowFinalNodeEditPart.VISUAL_ID == nodeVisualID) && UMLPackage.eINSTANCE.getFlowFinalNode().isSuperTypeOf(domainElementMetaclass)) {
-				return FlowFinalNodeEditPart.VISUAL_ID;
+			if (FlowFinalNodeEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
 			}
-			if ((semanticHint == null || ForkNodeEditPart.VISUAL_ID == nodeVisualID) && UMLPackage.eINSTANCE.getForkNode().isSuperTypeOf(domainElementMetaclass)) {
-				return ForkNodeEditPart.VISUAL_ID;
+			if (ForkNodeEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
 			}
-			if ((semanticHint == null || JoinNodeEditPart.VISUAL_ID == nodeVisualID) && UMLPackage.eINSTANCE.getJoinNode().isSuperTypeOf(domainElementMetaclass)) {
-				return JoinNodeEditPart.VISUAL_ID;
+			if (JoinNodeEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
 			}
-			if ((semanticHint == null || PinEditPart.VISUAL_ID == nodeVisualID) && UMLPackage.eINSTANCE.getPin().isSuperTypeOf(domainElementMetaclass)) {
-				return PinEditPart.VISUAL_ID;
+			if (PinEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
 			}
-			if ((semanticHint == null || CreateObjectActionEditPart.VISUAL_ID == nodeVisualID) && UMLPackage.eINSTANCE.getCreateObjectAction().isSuperTypeOf(domainElementMetaclass)) {
-				return CreateObjectActionEditPart.VISUAL_ID;
+			if (CreateObjectActionEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
 			}
-			if ((semanticHint == null || AddStructuralFeatureValueActionEditPart.VISUAL_ID == nodeVisualID)
-					&& UMLPackage.eINSTANCE.getAddStructuralFeatureValueAction().isSuperTypeOf(domainElementMetaclass)) {
-				return AddStructuralFeatureValueActionEditPart.VISUAL_ID;
+			if (AddStructuralFeatureValueActionEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
 			}
-			if ((semanticHint == null || CallBehaviorActionEditPart.VISUAL_ID == nodeVisualID) && UMLPackage.eINSTANCE.getCallBehaviorAction().isSuperTypeOf(domainElementMetaclass)) {
-				return CallBehaviorActionEditPart.VISUAL_ID;
+			if (CallBehaviorActionEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
 			}
-			if ((semanticHint == null || CallOperationActionEditPart.VISUAL_ID == nodeVisualID) && UMLPackage.eINSTANCE.getCallOperationAction().isSuperTypeOf(domainElementMetaclass)) {
-				return CallOperationActionEditPart.VISUAL_ID;
+			if (CallOperationActionEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
 			}
-			if ((semanticHint == null || StructuredActivityNodeEditPart.VISUAL_ID == nodeVisualID) && UMLPackage.eINSTANCE.getStructuredActivityNode().isSuperTypeOf(domainElementMetaclass)) {
-				return StructuredActivityNodeEditPart.VISUAL_ID;
+			if (StructuredActivityNodeEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
 			}
-			if ((semanticHint == null || OpaqueBehaviorEditPart.VISUAL_ID == nodeVisualID) && UMLPackage.eINSTANCE.getOpaqueBehavior().isSuperTypeOf(domainElementMetaclass)) {
-				return OpaqueBehaviorEditPart.VISUAL_ID;
+			if (OpaqueBehaviorEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
 			}
-			if ((semanticHint == null || SendSignalActionEditPart.VISUAL_ID == nodeVisualID) && UMLPackage.eINSTANCE.getSendSignalAction().isSuperTypeOf(domainElementMetaclass)) {
-				return SendSignalActionEditPart.VISUAL_ID;
+			if (SendSignalActionEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
 			}
-			return getUnrecognizedActivitySubvertices_7010ChildNodeID(domainElement, semanticHint);
+			break;
 		case StructuredActivityNodeStructuredActivityContentPaneCompartmentEditPart.VISUAL_ID:
-			if ((semanticHint == null || StructuredActivityNode2EditPart.VISUAL_ID == nodeVisualID) && UMLPackage.eINSTANCE.getStructuredActivityNode().isSuperTypeOf(domainElementMetaclass)) {
-				return StructuredActivityNode2EditPart.VISUAL_ID;
+			if (StructuredActivityNode2EditPart.VISUAL_ID == nodeVisualID) {
+				return true;
 			}
-			if ((semanticHint == null || OpaqueAction2EditPart.VISUAL_ID == nodeVisualID) && UMLPackage.eINSTANCE.getOpaqueAction().isSuperTypeOf(domainElementMetaclass)) {
-				return OpaqueAction2EditPart.VISUAL_ID;
+			if (OpaqueAction2EditPart.VISUAL_ID == nodeVisualID) {
+				return true;
 			}
-			if ((semanticHint == null || AcceptEventAction3EditPart.VISUAL_ID == nodeVisualID) && UMLPackage.eINSTANCE.getAcceptEventAction().isSuperTypeOf(domainElementMetaclass)
-					&& (domainElement == null || evaluate(AcceptEventAction_3012_Constraint, domainElement))) {
-				return AcceptEventAction3EditPart.VISUAL_ID;
+			if (AcceptEventAction3EditPart.VISUAL_ID == nodeVisualID) {
+				return true;
 			}
-			if ((semanticHint == null || AcceptEventAction4EditPart.VISUAL_ID == nodeVisualID) && UMLPackage.eINSTANCE.getAcceptEventAction().isSuperTypeOf(domainElementMetaclass)
-					&& (domainElement == null || evaluate(AcceptEventAction_3013_Constraint, domainElement))) {
-				return AcceptEventAction4EditPart.VISUAL_ID;
+			if (AcceptEventAction4EditPart.VISUAL_ID == nodeVisualID) {
+				return true;
 			}
-			if ((semanticHint == null || ActivityFinalNode2EditPart.VISUAL_ID == nodeVisualID) && UMLPackage.eINSTANCE.getActivityFinalNode().isSuperTypeOf(domainElementMetaclass)) {
-				return ActivityFinalNode2EditPart.VISUAL_ID;
+			if (ActivityFinalNode2EditPart.VISUAL_ID == nodeVisualID) {
+				return true;
 			}
-			if ((semanticHint == null || DecisionNode2EditPart.VISUAL_ID == nodeVisualID) && UMLPackage.eINSTANCE.getDecisionNode().isSuperTypeOf(domainElementMetaclass)) {
-				return DecisionNode2EditPart.VISUAL_ID;
+			if (DecisionNode2EditPart.VISUAL_ID == nodeVisualID) {
+				return true;
 			}
-			if ((semanticHint == null || FlowFinalNode2EditPart.VISUAL_ID == nodeVisualID) && UMLPackage.eINSTANCE.getFlowFinalNode().isSuperTypeOf(domainElementMetaclass)) {
-				return FlowFinalNode2EditPart.VISUAL_ID;
+			if (FlowFinalNode2EditPart.VISUAL_ID == nodeVisualID) {
+				return true;
 			}
-			if ((semanticHint == null || Pin2EditPart.VISUAL_ID == nodeVisualID) && UMLPackage.eINSTANCE.getPin().isSuperTypeOf(domainElementMetaclass)) {
-				return Pin2EditPart.VISUAL_ID;
+			if (Pin2EditPart.VISUAL_ID == nodeVisualID) {
+				return true;
 			}
-			if ((semanticHint == null || CreateObjectAction2EditPart.VISUAL_ID == nodeVisualID) && UMLPackage.eINSTANCE.getCreateObjectAction().isSuperTypeOf(domainElementMetaclass)) {
-				return CreateObjectAction2EditPart.VISUAL_ID;
+			if (CreateObjectAction2EditPart.VISUAL_ID == nodeVisualID) {
+				return true;
 			}
-			if ((semanticHint == null || CallBehaviorAction2EditPart.VISUAL_ID == nodeVisualID) && UMLPackage.eINSTANCE.getCallBehaviorAction().isSuperTypeOf(domainElementMetaclass)) {
-				return CallBehaviorAction2EditPart.VISUAL_ID;
+			if (CallBehaviorAction2EditPart.VISUAL_ID == nodeVisualID) {
+				return true;
 			}
-			if ((semanticHint == null || CallOperationAction2EditPart.VISUAL_ID == nodeVisualID) && UMLPackage.eINSTANCE.getCallOperationAction().isSuperTypeOf(domainElementMetaclass)) {
-				return CallOperationAction2EditPart.VISUAL_ID;
+			if (CallOperationAction2EditPart.VISUAL_ID == nodeVisualID) {
+				return true;
 			}
-			if ((semanticHint == null || ForkNode2EditPart.VISUAL_ID == nodeVisualID) && UMLPackage.eINSTANCE.getForkNode().isSuperTypeOf(domainElementMetaclass)) {
-				return ForkNode2EditPart.VISUAL_ID;
+			if (ForkNode2EditPart.VISUAL_ID == nodeVisualID) {
+				return true;
 			}
-			if ((semanticHint == null || JoinNode2EditPart.VISUAL_ID == nodeVisualID) && UMLPackage.eINSTANCE.getJoinNode().isSuperTypeOf(domainElementMetaclass)) {
-				return JoinNode2EditPart.VISUAL_ID;
+			if (JoinNode2EditPart.VISUAL_ID == nodeVisualID) {
+				return true;
 			}
-			if ((semanticHint == null || AddStructuralFeatureValueAction2EditPart.VISUAL_ID == nodeVisualID)
-					&& UMLPackage.eINSTANCE.getAddStructuralFeatureValueAction().isSuperTypeOf(domainElementMetaclass)) {
-				return AddStructuralFeatureValueAction2EditPart.VISUAL_ID;
+			if (AddStructuralFeatureValueAction2EditPart.VISUAL_ID == nodeVisualID) {
+				return true;
 			}
-			if ((semanticHint == null || DataStoreNode2EditPart.VISUAL_ID == nodeVisualID) && UMLPackage.eINSTANCE.getDataStoreNode().isSuperTypeOf(domainElementMetaclass)) {
-				return DataStoreNode2EditPart.VISUAL_ID;
+			if (DataStoreNode2EditPart.VISUAL_ID == nodeVisualID) {
+				return true;
 			}
-			if ((semanticHint == null || CentralBufferNode2EditPart.VISUAL_ID == nodeVisualID) && UMLPackage.eINSTANCE.getCentralBufferNode().isSuperTypeOf(domainElementMetaclass)) {
-				return CentralBufferNode2EditPart.VISUAL_ID;
+			if (CentralBufferNode2EditPart.VISUAL_ID == nodeVisualID) {
+				return true;
 			}
-			return getUnrecognizedStructuredActivityNodeStructuredActivityContentPaneCompartment_7008ChildNodeID(domainElement, semanticHint);
+			break;
 		case StructuredActivityNodeStructuredActivityContentPaneCompartment2EditPart.VISUAL_ID:
-			if ((semanticHint == null || StructuredActivityNode2EditPart.VISUAL_ID == nodeVisualID) && UMLPackage.eINSTANCE.getStructuredActivityNode().isSuperTypeOf(domainElementMetaclass)) {
-				return StructuredActivityNode2EditPart.VISUAL_ID;
+			if (StructuredActivityNode2EditPart.VISUAL_ID == nodeVisualID) {
+				return true;
 			}
-			if ((semanticHint == null || OpaqueAction2EditPart.VISUAL_ID == nodeVisualID) && UMLPackage.eINSTANCE.getOpaqueAction().isSuperTypeOf(domainElementMetaclass)) {
-				return OpaqueAction2EditPart.VISUAL_ID;
+			if (OpaqueAction2EditPart.VISUAL_ID == nodeVisualID) {
+				return true;
 			}
-			if ((semanticHint == null || AcceptEventAction3EditPart.VISUAL_ID == nodeVisualID) && UMLPackage.eINSTANCE.getAcceptEventAction().isSuperTypeOf(domainElementMetaclass)
-					&& (domainElement == null || evaluate(AcceptEventAction_3012_Constraint, domainElement))) {
-				return AcceptEventAction3EditPart.VISUAL_ID;
+			if (AcceptEventAction3EditPart.VISUAL_ID == nodeVisualID) {
+				return true;
 			}
-			if ((semanticHint == null || AcceptEventAction4EditPart.VISUAL_ID == nodeVisualID) && UMLPackage.eINSTANCE.getAcceptEventAction().isSuperTypeOf(domainElementMetaclass)
-					&& (domainElement == null || evaluate(AcceptEventAction_3013_Constraint, domainElement))) {
-				return AcceptEventAction4EditPart.VISUAL_ID;
+			if (AcceptEventAction4EditPart.VISUAL_ID == nodeVisualID) {
+				return true;
 			}
-			if ((semanticHint == null || ActivityFinalNode2EditPart.VISUAL_ID == nodeVisualID) && UMLPackage.eINSTANCE.getActivityFinalNode().isSuperTypeOf(domainElementMetaclass)) {
-				return ActivityFinalNode2EditPart.VISUAL_ID;
+			if (ActivityFinalNode2EditPart.VISUAL_ID == nodeVisualID) {
+				return true;
 			}
-			if ((semanticHint == null || DecisionNode2EditPart.VISUAL_ID == nodeVisualID) && UMLPackage.eINSTANCE.getDecisionNode().isSuperTypeOf(domainElementMetaclass)) {
-				return DecisionNode2EditPart.VISUAL_ID;
+			if (DecisionNode2EditPart.VISUAL_ID == nodeVisualID) {
+				return true;
 			}
-			if ((semanticHint == null || FlowFinalNode2EditPart.VISUAL_ID == nodeVisualID) && UMLPackage.eINSTANCE.getFlowFinalNode().isSuperTypeOf(domainElementMetaclass)) {
-				return FlowFinalNode2EditPart.VISUAL_ID;
+			if (FlowFinalNode2EditPart.VISUAL_ID == nodeVisualID) {
+				return true;
 			}
-			if ((semanticHint == null || Pin2EditPart.VISUAL_ID == nodeVisualID) && UMLPackage.eINSTANCE.getPin().isSuperTypeOf(domainElementMetaclass)) {
-				return Pin2EditPart.VISUAL_ID;
+			if (Pin2EditPart.VISUAL_ID == nodeVisualID) {
+				return true;
 			}
-			if ((semanticHint == null || CreateObjectAction2EditPart.VISUAL_ID == nodeVisualID) && UMLPackage.eINSTANCE.getCreateObjectAction().isSuperTypeOf(domainElementMetaclass)) {
-				return CreateObjectAction2EditPart.VISUAL_ID;
+			if (CreateObjectAction2EditPart.VISUAL_ID == nodeVisualID) {
+				return true;
 			}
-			if ((semanticHint == null || CallBehaviorAction2EditPart.VISUAL_ID == nodeVisualID) && UMLPackage.eINSTANCE.getCallBehaviorAction().isSuperTypeOf(domainElementMetaclass)) {
-				return CallBehaviorAction2EditPart.VISUAL_ID;
+			if (CallBehaviorAction2EditPart.VISUAL_ID == nodeVisualID) {
+				return true;
 			}
-			if ((semanticHint == null || CallOperationAction2EditPart.VISUAL_ID == nodeVisualID) && UMLPackage.eINSTANCE.getCallOperationAction().isSuperTypeOf(domainElementMetaclass)) {
-				return CallOperationAction2EditPart.VISUAL_ID;
+			if (CallOperationAction2EditPart.VISUAL_ID == nodeVisualID) {
+				return true;
 			}
-			if ((semanticHint == null || ForkNode2EditPart.VISUAL_ID == nodeVisualID) && UMLPackage.eINSTANCE.getForkNode().isSuperTypeOf(domainElementMetaclass)) {
-				return ForkNode2EditPart.VISUAL_ID;
+			if (ForkNode2EditPart.VISUAL_ID == nodeVisualID) {
+				return true;
 			}
-			if ((semanticHint == null || JoinNode2EditPart.VISUAL_ID == nodeVisualID) && UMLPackage.eINSTANCE.getJoinNode().isSuperTypeOf(domainElementMetaclass)) {
-				return JoinNode2EditPart.VISUAL_ID;
+			if (JoinNode2EditPart.VISUAL_ID == nodeVisualID) {
+				return true;
 			}
-			if ((semanticHint == null || AddStructuralFeatureValueAction2EditPart.VISUAL_ID == nodeVisualID)
-					&& UMLPackage.eINSTANCE.getAddStructuralFeatureValueAction().isSuperTypeOf(domainElementMetaclass)) {
-				return AddStructuralFeatureValueAction2EditPart.VISUAL_ID;
+			if (AddStructuralFeatureValueAction2EditPart.VISUAL_ID == nodeVisualID) {
+				return true;
 			}
-			if ((semanticHint == null || DataStoreNode2EditPart.VISUAL_ID == nodeVisualID) && UMLPackage.eINSTANCE.getDataStoreNode().isSuperTypeOf(domainElementMetaclass)) {
-				return DataStoreNode2EditPart.VISUAL_ID;
+			if (DataStoreNode2EditPart.VISUAL_ID == nodeVisualID) {
+				return true;
 			}
-			if ((semanticHint == null || CentralBufferNode2EditPart.VISUAL_ID == nodeVisualID) && UMLPackage.eINSTANCE.getCentralBufferNode().isSuperTypeOf(domainElementMetaclass)) {
-				return CentralBufferNode2EditPart.VISUAL_ID;
+			if (CentralBufferNode2EditPart.VISUAL_ID == nodeVisualID) {
+				return true;
 			}
-			return getUnrecognizedStructuredActivityNodeStructuredActivityContentPaneCompartment_7002ChildNodeID(domainElement, semanticHint);
+			break;
 		case ConstraintPreconditionEditPart.VISUAL_ID:
-			if ((semanticHint == null || LiteralStringEditPart.VISUAL_ID == nodeVisualID) && UMLPackage.eINSTANCE.getLiteralString().isSuperTypeOf(domainElementMetaclass)) {
-				return LiteralStringEditPart.VISUAL_ID;
+			if (LiteralStringEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
 			}
-			return getUnrecognizedConstraintPrecondition_7013ChildNodeID(domainElement, semanticHint);
+			break;
 		case ConstraintPostconditionEditPart.VISUAL_ID:
-			if ((semanticHint == null || LiteralString2EditPart.VISUAL_ID == nodeVisualID) && UMLPackage.eINSTANCE.getLiteralString().isSuperTypeOf(domainElementMetaclass)) {
-				return LiteralString2EditPart.VISUAL_ID;
+			if (LiteralString2EditPart.VISUAL_ID == nodeVisualID) {
+				return true;
 			}
-			return getUnrecognizedConstraintPostcondition_7014ChildNodeID(domainElement, semanticHint);
+			break;
 		case PackageEditPart.VISUAL_ID:
-			if ((semanticHint == null || ActivityEditPart.VISUAL_ID == nodeVisualID) && UMLPackage.eINSTANCE.getActivity().isSuperTypeOf(domainElementMetaclass)) {
-				return ActivityEditPart.VISUAL_ID;
+			if (ActivityEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
 			}
-			if ((semanticHint == null || ConstraintEditPart.VISUAL_ID == nodeVisualID) && UMLPackage.eINSTANCE.getConstraint().isSuperTypeOf(domainElementMetaclass)) {
-				return ConstraintEditPart.VISUAL_ID;
+			if (ConstraintEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
 			}
-			if ((semanticHint == null || Constraint2EditPart.VISUAL_ID == nodeVisualID) && UMLPackage.eINSTANCE.getConstraint().isSuperTypeOf(domainElementMetaclass)) {
-				return Constraint2EditPart.VISUAL_ID;
+			if (Constraint2EditPart.VISUAL_ID == nodeVisualID) {
+				return true;
 			}
-			return getUnrecognizedPackage_1000ChildNodeID(domainElement, semanticHint);
+			break;
 		case ExceptionHandlerEditPart.VISUAL_ID:
 			if (ExceptionHandlerLink_fixed_iconEditPart.VISUAL_ID == nodeVisualID) {
-				return ExceptionHandlerLink_fixed_iconEditPart.VISUAL_ID;
+				return true;
 			}
-			return getUnrecognizedExceptionHandler_4005LinkLabelID(semanticHint);
+			break;
 		}
-		return getUnrecognizedNodeID(containerView, domainElement);
+		return false;
 	}
 
 	/**
@@ -741,24 +963,16 @@ public class UMLVisualIDRegistry {
 		if (domainElement == null) {
 			return -1;
 		}
-		EClass domainElementMetaclass = domainElement.eClass();
-		return getLinkWithClassVisualID(domainElement, domainElementMetaclass);
-	}
-
-	/**
-	 * @generated
-	 */
-	public static int getLinkWithClassVisualID(EObject domainElement, EClass domainElementMetaclass) {
-		if (UMLPackage.eINSTANCE.getControlFlow().isSuperTypeOf(domainElementMetaclass)) {
+		if (UMLPackage.eINSTANCE.getControlFlow().isSuperTypeOf(domainElement.eClass())) {
 			return ControlFlowEditPart.VISUAL_ID;
 		}
-		if (UMLPackage.eINSTANCE.getObjectFlow().isSuperTypeOf(domainElementMetaclass)) {
+		if (UMLPackage.eINSTANCE.getObjectFlow().isSuperTypeOf(domainElement.eClass())) {
 			return ObjectFlowEditPart.VISUAL_ID;
 		}
-		if (UMLPackage.eINSTANCE.getExceptionHandler().isSuperTypeOf(domainElementMetaclass)) {
+		if (UMLPackage.eINSTANCE.getExceptionHandler().isSuperTypeOf(domainElement.eClass())) {
 			return ExceptionHandlerEditPart.VISUAL_ID;
 		}
-		return getUnrecognizedLinkWithClassID(domainElement);
+		return -1;
 	}
 
 	/**
@@ -769,606 +983,6 @@ public class UMLVisualIDRegistry {
 	 */
 	private static boolean isDiagram(Package element) {
 		return true;
-	}
-
-	/**
-	 * User can change implementation of this method to handle some specific
-	 * situations not covered by default logic.
-	 * 
-	 * @generated
-	 */
-	private static int getUnrecognizedDiagramID(EObject domainElement) {
-		return -1;
-	}
-
-	/**
-	 * User can change implementation of this method to handle some specific
-	 * situations not covered by default logic.
-	 * 
-	 * @generated
-	 */
-	private static int getUnrecognizedNodeID(View containerView, EObject domainElement) {
-		return -1;
-	}
-
-	/**
-	 * User can change implementation of this method to handle some specific
-	 * situations not covered by default logic.
-	 * 
-	 * @generated
-	 */
-	private static int getUnrecognizedLinkWithClassID(EObject domainElement) {
-		return -1;
-	}
-
-	/**
-	 * User can change implementation of this method to handle some specific
-	 * situations not covered by default logic.
-	 * 
-	 * @generated
-	 */
-	private static int getUnrecognizedActivity_2026ChildNodeID(EObject domainElement, String semanticHint) {
-		return -1;
-	}
-
-	/**
-	 * User can change implementation of this method to handle some specific
-	 * situations not covered by default logic.
-	 * 
-	 * @generated
-	 */
-	private static int getUnrecognizedConstraint_2027ChildNodeID(EObject domainElement, String semanticHint) {
-		return -1;
-	}
-
-	/**
-	 * User can change implementation of this method to handle some specific
-	 * situations not covered by default logic.
-	 * 
-	 * @generated
-	 */
-	private static int getUnrecognizedConstraint_2028ChildNodeID(EObject domainElement, String semanticHint) {
-		return -1;
-	}
-
-	/**
-	 * User can change implementation of this method to handle some specific
-	 * situations not covered by default logic.
-	 * 
-	 * @generated
-	 */
-	private static int getUnrecognizedAcceptEventAction_3030ChildNodeID(EObject domainElement, String semanticHint) {
-		return -1;
-	}
-
-	/**
-	 * User can change implementation of this method to handle some specific
-	 * situations not covered by default logic.
-	 * 
-	 * @generated
-	 */
-	private static int getUnrecognizedAcceptEventAction_3031ChildNodeID(EObject domainElement, String semanticHint) {
-		return -1;
-	}
-
-	/**
-	 * User can change implementation of this method to handle some specific
-	 * situations not covered by default logic.
-	 * 
-	 * @generated
-	 */
-	private static int getUnrecognizedActivityFinalNode_3032ChildNodeID(EObject domainElement, String semanticHint) {
-		return -1;
-	}
-
-	/**
-	 * User can change implementation of this method to handle some specific
-	 * situations not covered by default logic.
-	 * 
-	 * @generated
-	 */
-	private static int getUnrecognizedDecisionNode_3033ChildNodeID(EObject domainElement, String semanticHint) {
-		return -1;
-	}
-
-	/**
-	 * User can change implementation of this method to handle some specific
-	 * situations not covered by default logic.
-	 * 
-	 * @generated
-	 */
-	private static int getUnrecognizedMergeNode_3034ChildNodeID(EObject domainElement, String semanticHint) {
-		return -1;
-	}
-
-	/**
-	 * User can change implementation of this method to handle some specific
-	 * situations not covered by default logic.
-	 * 
-	 * @generated
-	 */
-	private static int getUnrecognizedInitialNode_3035ChildNodeID(EObject domainElement, String semanticHint) {
-		return -1;
-	}
-
-	/**
-	 * User can change implementation of this method to handle some specific
-	 * situations not covered by default logic.
-	 * 
-	 * @generated
-	 */
-	private static int getUnrecognizedDataStoreNode_3036ChildNodeID(EObject domainElement, String semanticHint) {
-		return -1;
-	}
-
-	/**
-	 * User can change implementation of this method to handle some specific
-	 * situations not covered by default logic.
-	 * 
-	 * @generated
-	 */
-	private static int getUnrecognizedCentralBufferNode_3037ChildNodeID(EObject domainElement, String semanticHint) {
-		return -1;
-	}
-
-	/**
-	 * User can change implementation of this method to handle some specific
-	 * situations not covered by default logic.
-	 * 
-	 * @generated
-	 */
-	private static int getUnrecognizedOpaqueAction_3029ChildNodeID(EObject domainElement, String semanticHint) {
-		return -1;
-	}
-
-	/**
-	 * User can change implementation of this method to handle some specific
-	 * situations not covered by default logic.
-	 * 
-	 * @generated
-	 */
-	private static int getUnrecognizedOutputPin_3001ChildNodeID(EObject domainElement, String semanticHint) {
-		return -1;
-	}
-
-	/**
-	 * User can change implementation of this method to handle some specific
-	 * situations not covered by default logic.
-	 * 
-	 * @generated
-	 */
-	private static int getUnrecognizedFlowFinalNode_3038ChildNodeID(EObject domainElement, String semanticHint) {
-		return -1;
-	}
-
-	/**
-	 * User can change implementation of this method to handle some specific
-	 * situations not covered by default logic.
-	 * 
-	 * @generated
-	 */
-	private static int getUnrecognizedForkNode_3039ChildNodeID(EObject domainElement, String semanticHint) {
-		return -1;
-	}
-
-	/**
-	 * User can change implementation of this method to handle some specific
-	 * situations not covered by default logic.
-	 * 
-	 * @generated
-	 */
-	private static int getUnrecognizedJoinNode_3040ChildNodeID(EObject domainElement, String semanticHint) {
-		return -1;
-	}
-
-	/**
-	 * User can change implementation of this method to handle some specific
-	 * situations not covered by default logic.
-	 * 
-	 * @generated
-	 */
-	private static int getUnrecognizedPin_3041ChildNodeID(EObject domainElement, String semanticHint) {
-		return -1;
-	}
-
-	/**
-	 * User can change implementation of this method to handle some specific
-	 * situations not covered by default logic.
-	 * 
-	 * @generated
-	 */
-	private static int getUnrecognizedCreateObjectAction_3042ChildNodeID(EObject domainElement, String semanticHint) {
-		return -1;
-	}
-
-	/**
-	 * User can change implementation of this method to handle some specific
-	 * situations not covered by default logic.
-	 * 
-	 * @generated
-	 */
-	private static int getUnrecognizedOutputPin_3002ChildNodeID(EObject domainElement, String semanticHint) {
-		return -1;
-	}
-
-	/**
-	 * User can change implementation of this method to handle some specific
-	 * situations not covered by default logic.
-	 * 
-	 * @generated
-	 */
-	private static int getUnrecognizedAddStructuralFeatureValueAction_3043ChildNodeID(EObject domainElement, String semanticHint) {
-		return -1;
-	}
-
-	/**
-	 * User can change implementation of this method to handle some specific
-	 * situations not covered by default logic.
-	 * 
-	 * @generated
-	 */
-	private static int getUnrecognizedInputPin_3003ChildNodeID(EObject domainElement, String semanticHint) {
-		return -1;
-	}
-
-	/**
-	 * User can change implementation of this method to handle some specific
-	 * situations not covered by default logic.
-	 * 
-	 * @generated
-	 */
-	private static int getUnrecognizedInputPin_3004ChildNodeID(EObject domainElement, String semanticHint) {
-		return -1;
-	}
-
-	/**
-	 * User can change implementation of this method to handle some specific
-	 * situations not covered by default logic.
-	 * 
-	 * @generated
-	 */
-	private static int getUnrecognizedInputPin_3005ChildNodeID(EObject domainElement, String semanticHint) {
-		return -1;
-	}
-
-	/**
-	 * User can change implementation of this method to handle some specific
-	 * situations not covered by default logic.
-	 * 
-	 * @generated
-	 */
-	private static int getUnrecognizedCallBehaviorAction_3044ChildNodeID(EObject domainElement, String semanticHint) {
-		return -1;
-	}
-
-	/**
-	 * User can change implementation of this method to handle some specific
-	 * situations not covered by default logic.
-	 * 
-	 * @generated
-	 */
-	private static int getUnrecognizedOutputPin_3006ChildNodeID(EObject domainElement, String semanticHint) {
-		return -1;
-	}
-
-	/**
-	 * User can change implementation of this method to handle some specific
-	 * situations not covered by default logic.
-	 * 
-	 * @generated
-	 */
-	private static int getUnrecognizedInputPin_3007ChildNodeID(EObject domainElement, String semanticHint) {
-		return -1;
-	}
-
-	/**
-	 * User can change implementation of this method to handle some specific
-	 * situations not covered by default logic.
-	 * 
-	 * @generated
-	 */
-	private static int getUnrecognizedCallOperationAction_3045ChildNodeID(EObject domainElement, String semanticHint) {
-		return -1;
-	}
-
-	/**
-	 * User can change implementation of this method to handle some specific
-	 * situations not covered by default logic.
-	 * 
-	 * @generated
-	 */
-	private static int getUnrecognizedInputPin_3008ChildNodeID(EObject domainElement, String semanticHint) {
-		return -1;
-	}
-
-	/**
-	 * User can change implementation of this method to handle some specific
-	 * situations not covered by default logic.
-	 * 
-	 * @generated
-	 */
-	private static int getUnrecognizedStructuredActivityNode_3046ChildNodeID(EObject domainElement, String semanticHint) {
-		return -1;
-	}
-
-	/**
-	 * User can change implementation of this method to handle some specific
-	 * situations not covered by default logic.
-	 * 
-	 * @generated
-	 */
-	private static int getUnrecognizedStructuredActivityNode_3009ChildNodeID(EObject domainElement, String semanticHint) {
-		return -1;
-	}
-
-	/**
-	 * User can change implementation of this method to handle some specific
-	 * situations not covered by default logic.
-	 * 
-	 * @generated
-	 */
-	private static int getUnrecognizedOpaqueAction_3011ChildNodeID(EObject domainElement, String semanticHint) {
-		return -1;
-	}
-
-	/**
-	 * User can change implementation of this method to handle some specific
-	 * situations not covered by default logic.
-	 * 
-	 * @generated
-	 */
-	private static int getUnrecognizedAcceptEventAction_3012ChildNodeID(EObject domainElement, String semanticHint) {
-		return -1;
-	}
-
-	/**
-	 * User can change implementation of this method to handle some specific
-	 * situations not covered by default logic.
-	 * 
-	 * @generated
-	 */
-	private static int getUnrecognizedAcceptEventAction_3013ChildNodeID(EObject domainElement, String semanticHint) {
-		return -1;
-	}
-
-	/**
-	 * User can change implementation of this method to handle some specific
-	 * situations not covered by default logic.
-	 * 
-	 * @generated
-	 */
-	private static int getUnrecognizedActivityFinalNode_3014ChildNodeID(EObject domainElement, String semanticHint) {
-		return -1;
-	}
-
-	/**
-	 * User can change implementation of this method to handle some specific
-	 * situations not covered by default logic.
-	 * 
-	 * @generated
-	 */
-	private static int getUnrecognizedDecisionNode_3015ChildNodeID(EObject domainElement, String semanticHint) {
-		return -1;
-	}
-
-	/**
-	 * User can change implementation of this method to handle some specific
-	 * situations not covered by default logic.
-	 * 
-	 * @generated
-	 */
-	private static int getUnrecognizedFlowFinalNode_3016ChildNodeID(EObject domainElement, String semanticHint) {
-		return -1;
-	}
-
-	/**
-	 * User can change implementation of this method to handle some specific
-	 * situations not covered by default logic.
-	 * 
-	 * @generated
-	 */
-	private static int getUnrecognizedPin_3017ChildNodeID(EObject domainElement, String semanticHint) {
-		return -1;
-	}
-
-	/**
-	 * User can change implementation of this method to handle some specific
-	 * situations not covered by default logic.
-	 * 
-	 * @generated
-	 */
-	private static int getUnrecognizedCreateObjectAction_3018ChildNodeID(EObject domainElement, String semanticHint) {
-		return -1;
-	}
-
-	/**
-	 * User can change implementation of this method to handle some specific
-	 * situations not covered by default logic.
-	 * 
-	 * @generated
-	 */
-	private static int getUnrecognizedCallBehaviorAction_3019ChildNodeID(EObject domainElement, String semanticHint) {
-		return -1;
-	}
-
-	/**
-	 * User can change implementation of this method to handle some specific
-	 * situations not covered by default logic.
-	 * 
-	 * @generated
-	 */
-	private static int getUnrecognizedCallOperationAction_3020ChildNodeID(EObject domainElement, String semanticHint) {
-		return -1;
-	}
-
-	/**
-	 * User can change implementation of this method to handle some specific
-	 * situations not covered by default logic.
-	 * 
-	 * @generated
-	 */
-	private static int getUnrecognizedForkNode_3021ChildNodeID(EObject domainElement, String semanticHint) {
-		return -1;
-	}
-
-	/**
-	 * User can change implementation of this method to handle some specific
-	 * situations not covered by default logic.
-	 * 
-	 * @generated
-	 */
-	private static int getUnrecognizedJoinNode_3022ChildNodeID(EObject domainElement, String semanticHint) {
-		return -1;
-	}
-
-	/**
-	 * User can change implementation of this method to handle some specific
-	 * situations not covered by default logic.
-	 * 
-	 * @generated
-	 */
-	private static int getUnrecognizedAddStructuralFeatureValueAction_3023ChildNodeID(EObject domainElement, String semanticHint) {
-		return -1;
-	}
-
-	/**
-	 * User can change implementation of this method to handle some specific
-	 * situations not covered by default logic.
-	 * 
-	 * @generated
-	 */
-	private static int getUnrecognizedDataStoreNode_3024ChildNodeID(EObject domainElement, String semanticHint) {
-		return -1;
-	}
-
-	/**
-	 * User can change implementation of this method to handle some specific
-	 * situations not covered by default logic.
-	 * 
-	 * @generated
-	 */
-	private static int getUnrecognizedCentralBufferNode_3025ChildNodeID(EObject domainElement, String semanticHint) {
-		return -1;
-	}
-
-	/**
-	 * User can change implementation of this method to handle some specific
-	 * situations not covered by default logic.
-	 * 
-	 * @generated
-	 */
-	private static int getUnrecognizedOpaqueBehavior_3047ChildNodeID(EObject domainElement, String semanticHint) {
-		return -1;
-	}
-
-	/**
-	 * User can change implementation of this method to handle some specific
-	 * situations not covered by default logic.
-	 * 
-	 * @generated
-	 */
-	private static int getUnrecognizedActivityParameterNode_3052ChildNodeID(EObject domainElement, String semanticHint) {
-		return -1;
-	}
-
-	/**
-	 * User can change implementation of this method to handle some specific
-	 * situations not covered by default logic.
-	 * 
-	 * @generated
-	 */
-	private static int getUnrecognizedSendSignalAction_3053ChildNodeID(EObject domainElement, String semanticHint) {
-		return -1;
-	}
-
-	/**
-	 * User can change implementation of this method to handle some specific
-	 * situations not covered by default logic.
-	 * 
-	 * @generated
-	 */
-	private static int getUnrecognizedLiteralString_3049ChildNodeID(EObject domainElement, String semanticHint) {
-		return -1;
-	}
-
-	/**
-	 * User can change implementation of this method to handle some specific
-	 * situations not covered by default logic.
-	 * 
-	 * @generated
-	 */
-	private static int getUnrecognizedLiteralString_3051ChildNodeID(EObject domainElement, String semanticHint) {
-		return -1;
-	}
-
-	/**
-	 * User can change implementation of this method to handle some specific
-	 * situations not covered by default logic.
-	 * 
-	 * @generated
-	 */
-	private static int getUnrecognizedActivitySubvertices_7010ChildNodeID(EObject domainElement, String semanticHint) {
-		return -1;
-	}
-
-	/**
-	 * User can change implementation of this method to handle some specific
-	 * situations not covered by default logic.
-	 * 
-	 * @generated
-	 */
-	private static int getUnrecognizedStructuredActivityNodeStructuredActivityContentPaneCompartment_7008ChildNodeID(EObject domainElement, String semanticHint) {
-		return -1;
-	}
-
-	/**
-	 * User can change implementation of this method to handle some specific
-	 * situations not covered by default logic.
-	 * 
-	 * @generated
-	 */
-	private static int getUnrecognizedStructuredActivityNodeStructuredActivityContentPaneCompartment_7002ChildNodeID(EObject domainElement, String semanticHint) {
-		return -1;
-	}
-
-	/**
-	 * User can change implementation of this method to handle some specific
-	 * situations not covered by default logic.
-	 * 
-	 * @generated
-	 */
-	private static int getUnrecognizedConstraintPrecondition_7013ChildNodeID(EObject domainElement, String semanticHint) {
-		return -1;
-	}
-
-	/**
-	 * User can change implementation of this method to handle some specific
-	 * situations not covered by default logic.
-	 * 
-	 * @generated
-	 */
-	private static int getUnrecognizedConstraintPostcondition_7014ChildNodeID(EObject domainElement, String semanticHint) {
-		return -1;
-	}
-
-	/**
-	 * User can change implementation of this method to handle some specific
-	 * situations not covered by default logic.
-	 * 
-	 * @generated
-	 */
-	private static int getUnrecognizedPackage_1000ChildNodeID(EObject domainElement, String semanticHint) {
-		return -1;
-	}
-
-	/**
-	 * User can change implementation of this method to handle some specific
-	 * situations not covered by default logic.
-	 * 
-	 * @generated
-	 */
-	private static int getUnrecognizedExceptionHandler_4005LinkLabelID(String semanticHint) {
-		return -1;
 	}
 
 	/**

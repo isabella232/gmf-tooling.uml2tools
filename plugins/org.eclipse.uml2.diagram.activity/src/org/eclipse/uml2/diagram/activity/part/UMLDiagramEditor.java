@@ -59,8 +59,20 @@ public class UMLDiagramEditor extends DiagramDocumentEditor implements IGotoMark
 	/**
 	 * @generated
 	 */
+	public static final String CONTEXT_ID = "org.eclipse.uml2.diagram.activity.ui.diagramContext"; //$NON-NLS-1$
+
+	/**
+	 * @generated
+	 */
 	public UMLDiagramEditor() {
 		super(true);
+	}
+
+	/**
+	 * @generated
+	 */
+	protected String getContextID() {
+		return CONTEXT_ID;
 	}
 
 	/**

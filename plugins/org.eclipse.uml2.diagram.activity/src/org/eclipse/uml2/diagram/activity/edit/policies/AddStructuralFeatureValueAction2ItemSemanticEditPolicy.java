@@ -71,6 +71,7 @@ public class AddStructuralFeatureValueAction2ItemSemanticEditPolicy extends UMLB
 	protected Command getDestroyElementCommand(DestroyElementRequest req) {
 		CompoundCommand cc = getDestroyEdgesCommand();
 		addDestroyChildNodesCommand(cc);
+		addDestroyShortcutsCommand(cc);
 		cc.add(getGEFWrapper(new DestroyElementCommand(req)));
 		return cc.unwrap();
 	}
