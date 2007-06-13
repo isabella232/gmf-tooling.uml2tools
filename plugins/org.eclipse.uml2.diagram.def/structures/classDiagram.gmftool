@@ -92,6 +92,11 @@
             title="Composite Aggregation"
             description="Create Composite Aggregation"
             toolClass="org.eclipse.uml2.diagram.clazz.part.CreateAssociationLinkTool.COMPOSITE"/>
+        <tools
+            xsi:type="gmftool:GenericTool"
+            title="Navigable Association"
+            description="Create Association with Navigable Target End "
+            toolClass="org.eclipse.uml2.diagram.clazz.part.CreateAssociationLinkTool.NAVIGABLE"/>
       </tools>
       <tools
           xsi:type="gmftool:ToolGroup"
