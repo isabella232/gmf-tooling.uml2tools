@@ -488,6 +488,7 @@ public class UMLPaletteFactory {
 		entry.setLargeIcon(entry.getSmallIcon());
 		return entry;
 	}
+
 	/**
 	 * @generated
 	 */

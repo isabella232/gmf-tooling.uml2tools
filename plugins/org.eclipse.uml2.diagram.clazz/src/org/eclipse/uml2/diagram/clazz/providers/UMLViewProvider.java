@@ -5,7 +5,9 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.gmf.runtime.diagram.core.providers.AbstractViewProvider;
 import org.eclipse.gmf.runtime.notation.View;
+import org.eclipse.uml2.diagram.clazz.edit.parts.*;
 import org.eclipse.gmf.runtime.emf.type.core.IElementType;
+import org.eclipse.gmf.runtime.emf.type.core.IHintedType;
 import org.eclipse.uml2.diagram.clazz.edit.parts.AssociationClass2EditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.AssociationClassAttributesEditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.AssociationClassClassesEditPart;
@@ -104,6 +106,7 @@ import org.eclipse.uml2.diagram.clazz.edit.parts.UsageEditPart;
 
 import org.eclipse.uml2.diagram.clazz.part.UMLVisualIDRegistry;
 
+import org.eclipse.uml2.diagram.clazz.view.factories.*;
 import org.eclipse.uml2.diagram.clazz.view.factories.AssociationClass2ViewFactory;
 import org.eclipse.uml2.diagram.clazz.view.factories.AssociationClassAttributesViewFactory;
 import org.eclipse.uml2.diagram.clazz.view.factories.AssociationClassClassesViewFactory;
@@ -228,13 +231,88 @@ public class UMLViewProvider extends AbstractViewProvider {
 			return null;
 		}
 		IElementType elementType = getSemanticElementType(semanticAdapter);
-		if (elementType != null && !UMLElementTypes.isKnownElementType(elementType)) {
+		EObject domainElement = getSemanticElement(semanticAdapter);
+
+		int visualID;
+		if (semanticHint == null) {
+			if (elementType != null || domainElement == null) {
+				return null;
+			}
+			visualID = UMLVisualIDRegistry.getNodeVisualID(containerView, domainElement);
+		} else {
+			visualID = UMLVisualIDRegistry.getVisualID(semanticHint);
+			if (elementType != null) {
+				if (!UMLElementTypes.isKnownElementType(elementType) || false == elementType instanceof IHintedType) {
+					return null;
+				}
+				String elementTypeHint = ((IHintedType) elementType).getSemanticHint();
+				if (!semanticHint.equals(elementTypeHint)) {
+					return null;
+				}
+				if (domainElement != null && visualID != UMLVisualIDRegistry.getNodeVisualID(containerView, domainElement)) {
+					return null;
+				}
+			} else {
+				switch (visualID) {
+				case PackageEditPart.VISUAL_ID:
+				case Package2EditPart.VISUAL_ID:
+				case Class2EditPart.VISUAL_ID:
+				case AssociationClass2EditPart.VISUAL_ID:
+				case DataType2EditPart.VISUAL_ID:
+				case PrimitiveType2EditPart.VISUAL_ID:
+				case Enumeration2EditPart.VISUAL_ID:
+				case InterfaceEditPart.VISUAL_ID:
+				case ConstraintEditPart.VISUAL_ID:
+				case InstanceSpecification2EditPart.VISUAL_ID:
+				case DependencyEditPart.VISUAL_ID:
+				case GeneralizationSetEditPart.VISUAL_ID:
+				case Interface2EditPart.VISUAL_ID:
+				case Package4EditPart.VISUAL_ID:
+				case Package3EditPart.VISUAL_ID:
+				case ClassEditPart.VISUAL_ID:
+				case DataTypeEditPart.VISUAL_ID:
+				case PrimitiveTypeEditPart.VISUAL_ID:
+				case EnumerationEditPart.VISUAL_ID:
+				case AssociationClassEditPart.VISUAL_ID:
+				case InstanceSpecificationEditPart.VISUAL_ID:
+				case PropertyEditPart.VISUAL_ID:
+				case OperationEditPart.VISUAL_ID:
+				case Class3EditPart.VISUAL_ID:
+				case PortEditPart.VISUAL_ID:
+				case RedefinableTemplateSignatureEditPart.VISUAL_ID:
+				case Property2EditPart.VISUAL_ID:
+				case Operation2EditPart.VISUAL_ID:
+				case Property3EditPart.VISUAL_ID:
+				case Operation3EditPart.VISUAL_ID:
+				case Property4EditPart.VISUAL_ID:
+				case Operation4EditPart.VISUAL_ID:
+				case EnumerationLiteralEditPart.VISUAL_ID:
+				case Property5EditPart.VISUAL_ID:
+				case Operation5EditPart.VISUAL_ID:
+				case SlotEditPart.VISUAL_ID:
+				case Property6EditPart.VISUAL_ID:
+				case Operation6EditPart.VISUAL_ID:
+				case Class4EditPart.VISUAL_ID:
+				case GeneralizationEditPart.VISUAL_ID:
+				case Dependency2EditPart.VISUAL_ID:
+				case Property7EditPart.VISUAL_ID:
+				case ConstraintConstrainedElementEditPart.VISUAL_ID:
+				case AssociationEditPart.VISUAL_ID:
+				case DependencySupplierEditPart.VISUAL_ID:
+				case DependencyClientEditPart.VISUAL_ID:
+				case InterfaceRealizationEditPart.VISUAL_ID:
+				case RealizationEditPart.VISUAL_ID:
+				case Generalization2EditPart.VISUAL_ID:
+				case GeneralizationGeneralEditPart.VISUAL_ID:
+				case UsageEditPart.VISUAL_ID:
+					return null;
+				}
+			}
+		}
+		if (!UMLVisualIDRegistry.canCreateNode(containerView, visualID)) {
 			return null;
 		}
-		EClass semanticType = getSemanticEClass(semanticAdapter);
-		EObject semanticElement = getSemanticElement(semanticAdapter);
-		int nodeVID = UMLVisualIDRegistry.getNodeVisualID(containerView, semanticElement, semanticType, semanticHint);
-		switch (nodeVID) {
+		switch (visualID) {
 		case Package2EditPart.VISUAL_ID:
 			return Package2ViewFactory.class;
 		case PackageNameEditPart.VISUAL_ID:
@@ -416,46 +494,51 @@ public class UMLViewProvider extends AbstractViewProvider {
 	 */
 	protected Class getEdgeViewClass(IAdaptable semanticAdapter, View containerView, String semanticHint) {
 		IElementType elementType = getSemanticElementType(semanticAdapter);
-		if (elementType != null && !UMLElementTypes.isKnownElementType(elementType)) {
+		if (elementType == null) {
 			return null;
 		}
-		if (UMLElementTypes.ConstraintConstrainedElement_4004.equals(elementType)) {
-			return ConstraintConstrainedElementViewFactory.class;
-		}
-		if (UMLElementTypes.DependencySupplier_4006.equals(elementType)) {
-			return DependencySupplierViewFactory.class;
-		}
-		if (UMLElementTypes.DependencyClient_4007.equals(elementType)) {
-			return DependencyClientViewFactory.class;
-		}
-		if (UMLElementTypes.GeneralizationGeneral_4012.equals(elementType)) {
-			return GeneralizationGeneralViewFactory.class;
-		}
-		EClass semanticType = getSemanticEClass(semanticAdapter);
-		if (semanticType == null) {
+		if (!UMLElementTypes.isKnownElementType(elementType) || false == elementType instanceof IHintedType) {
 			return null;
 		}
-		EObject semanticElement = getSemanticElement(semanticAdapter);
-		int linkVID = UMLVisualIDRegistry.getLinkWithClassVisualID(semanticElement, semanticType);
-		switch (linkVID) {
+		String elementTypeHint = ((IHintedType) elementType).getSemanticHint();
+		if (elementTypeHint == null) {
+			return null;
+		}
+		if (semanticHint != null && !semanticHint.equals(elementTypeHint)) {
+			return null;
+		}
+		int visualID = UMLVisualIDRegistry.getVisualID(elementTypeHint);
+		EObject domainElement = getSemanticElement(semanticAdapter);
+		if (domainElement != null && visualID != UMLVisualIDRegistry.getLinkWithClassVisualID(domainElement)) {
+			return null;
+		}
+		switch (visualID) {
 		case GeneralizationEditPart.VISUAL_ID:
 			return GeneralizationViewFactory.class;
 		case Dependency2EditPart.VISUAL_ID:
 			return Dependency2ViewFactory.class;
 		case Property7EditPart.VISUAL_ID:
 			return Property7ViewFactory.class;
+		case ConstraintConstrainedElementEditPart.VISUAL_ID:
+			return ConstraintConstrainedElementViewFactory.class;
 		case AssociationEditPart.VISUAL_ID:
 			return AssociationViewFactory.class;
+		case DependencySupplierEditPart.VISUAL_ID:
+			return DependencySupplierViewFactory.class;
+		case DependencyClientEditPart.VISUAL_ID:
+			return DependencyClientViewFactory.class;
 		case InterfaceRealizationEditPart.VISUAL_ID:
 			return InterfaceRealizationViewFactory.class;
 		case RealizationEditPart.VISUAL_ID:
 			return RealizationViewFactory.class;
 		case Generalization2EditPart.VISUAL_ID:
 			return Generalization2ViewFactory.class;
+		case GeneralizationGeneralEditPart.VISUAL_ID:
+			return GeneralizationGeneralViewFactory.class;
 		case UsageEditPart.VISUAL_ID:
 			return UsageViewFactory.class;
 		}
-		return getUnrecognizedConnectorViewClass(semanticAdapter, containerView, semanticHint);
+		return null;
 	}
 
 	/**
@@ -466,14 +549,6 @@ public class UMLViewProvider extends AbstractViewProvider {
 			return null;
 		}
 		return (IElementType) semanticAdapter.getAdapter(IElementType.class);
-	}
-
-	/**
-	 * @generated
-	 */
-	private Class getUnrecognizedConnectorViewClass(IAdaptable semanticAdapter, View containerView, String semanticHint) {
-		// Handle unrecognized child node classes here
-		return null;
 	}
 
 }

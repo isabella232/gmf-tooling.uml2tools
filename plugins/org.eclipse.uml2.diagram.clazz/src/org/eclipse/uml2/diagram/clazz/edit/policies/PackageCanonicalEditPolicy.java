@@ -262,6 +262,11 @@ public class PackageCanonicalEditPolicy extends CanonicalConnectionEditPolicy {
 	private Collection collectAllLinks(View view, Map domain2NotationMap) {
 		Collection result = new LinkedList();
 		switch (UMLVisualIDRegistry.getVisualID(view)) {
+		case PackageEditPart.VISUAL_ID: {
+			domain2NotationMap.put(view.getElement(), view);
+			result.addAll(UMLDiagramUpdater.getPackage_1000ContainedLinks(view));
+			break;
+		}
 		case Package2EditPart.VISUAL_ID: {
 			domain2NotationMap.put(view.getElement(), view);
 			result.addAll(UMLDiagramUpdater.getPackage_2002ContainedLinks(view));
@@ -490,11 +495,6 @@ public class PackageCanonicalEditPolicy extends CanonicalConnectionEditPolicy {
 		case UsageEditPart.VISUAL_ID: {
 			domain2NotationMap.put(view.getElement(), view);
 			result.addAll(UMLDiagramUpdater.getUsage_4013ContainedLinks(view));
-			break;
-		}
-		case PackageEditPart.VISUAL_ID: {
-			domain2NotationMap.put(view.getElement(), view);
-			result.addAll(UMLDiagramUpdater.getPackage_1000ContainedLinks(view));
 			break;
 		}
 		}

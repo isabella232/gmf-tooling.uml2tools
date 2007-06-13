@@ -1,5 +1,6 @@
 package org.eclipse.uml2.diagram.clazz.view.factories;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.eclipse.gmf.runtime.diagram.ui.view.factories.DiagramViewFactory;
