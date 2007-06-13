@@ -16,7 +16,7 @@
 «EXTENSION aspects::xpt::diagram::updater::DiagramHeader»
 «EXTENSION xpt::editor::Utils»
 
-«AROUND checkChildNode FOR gmfgen::GenNode-»
+«AROUND returnVisualID FOR gmfgen::GenCommonBase-»
 	«IF isDiagramHeader(this) -»
 		// Diagram header is already processed above
 	«ELSE-»
@@ -24,14 +24,13 @@
 	«ENDIF-»
 «ENDAROUND»
 
-«AROUND caseContainerVisualID FOR gmfgen::GenContainerBase-»
-	«LET selectDiagramHeader(containedNodes) AS childHeader -»
+«AROUND caseDomainContainerVisualID FOR gmfgen::GenContainerBase-»
+	«LET selectDiagramHeader(getContainedSemanticNodes(this)) AS childHeader -»
 	«IF null != childHeader -»
 		«EXPAND xpt::Common::caseVisualID»
 			«EXPAND checkHeader FOR childHeader-»
-			«EXPAND xpt::editor::VisualIDRegistry::checkNodeEssentialChildren-»
-			«EXPAND xpt::editor::VisualIDRegistry::checkChildNode FOREACH containedNodes-»
-		return «getUnrecognizedChildNodeIDMethodName(this)»(domainElement, semanticHint);
+			«EXPAND xpt::editor::VisualIDRegistry::returnVisualID FOREACH getContainedSemanticNodes(this)-»
+			break;
 	«ELSE-»
 		«targetDef.proceed()-»
 	«ENDIF-»
@@ -51,4 +50,3 @@
 		}		
 	«ENDIF-»
 «ENDDEFINE»
-
