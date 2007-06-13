@@ -3394,7 +3394,10 @@
     </preferencePages>
   </diagram>
   <plugin
-      iD="org.eclipse.uml2.diagram.clazz">
+      iD="org.eclipse.uml2.diagram.clazz"
+      name="Class Diagram Plugin"
+      provider="Eclipse.org"
+      version="0.7.0.qualifier">
     <requiredPlugins>org.eclipse.ocl.ecore</requiredPlugins>
   </plugin>
   <editor/>
