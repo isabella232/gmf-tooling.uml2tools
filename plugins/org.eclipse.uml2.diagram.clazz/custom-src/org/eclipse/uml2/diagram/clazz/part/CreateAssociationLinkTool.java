@@ -13,6 +13,7 @@
 package org.eclipse.uml2.diagram.clazz.part;
 
 import java.util.Collections;
+import java.util.HashMap;
 import java.util.Map;
 
 import org.eclipse.uml2.diagram.clazz.edit.helpers.AssociationEditHelper;
@@ -29,8 +30,10 @@ public class CreateAssociationLinkTool extends CreateLinkToolBase {
 	}
 	
 	@Override
-	protected Map<String, ?> createAdditionalExtendedData() {
-		return Collections.singletonMap(AssociationEditHelper.PARAMETER_CONFIGURE_AGGREGATION_KIND, myKind);
+	protected Map<String, Object> createAdditionalExtendedData() {
+		HashMap<String, Object> result = new HashMap<String, Object>();
+		result.put(AssociationEditHelper.PARAMETER_CONFIGURE_AGGREGATION_KIND, myKind);
+		return result;
 	}
 	
 	public static class NONE extends CreateAssociationLinkTool {
@@ -48,6 +51,17 @@ public class CreateAssociationLinkTool extends CreateLinkToolBase {
 	public static class SHARED extends CreateAssociationLinkTool {
 		public SHARED(){
 			super(AggregationKind.SHARED_LITERAL);
+		}
+	}
+	public static class NAVIGABLE extends CreateAssociationLinkTool {
+		public NAVIGABLE(){
+			super(AggregationKind.NONE_LITERAL);
+		}
+		@Override
+		protected Map<String, Object> createAdditionalExtendedData() {
+			Map<String, Object> result = super.createAdditionalExtendedData();
+			result.put(AssociationEditHelper.PARAMETER_SET_TARGET_NAVIGABILITY, Boolean.TRUE);
+			return result;
 		}
 	}
 

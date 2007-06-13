@@ -103,6 +103,7 @@ public class UMLPaletteFactory {
 		paletteContainer.add(createAssociation1CreationTool());
 		paletteContainer.add(createSharedAggregation2CreationTool());
 		paletteContainer.add(createCompositeAggregation3CreationTool());
+		paletteContainer.add(createNavigableAssociation4CreationTool());
 		return paletteContainer;
 	}
 
@@ -468,6 +469,25 @@ public class UMLPaletteFactory {
 		return entry;
 	}
 
+	/**
+	 * @generated
+	 */
+	private ToolEntry createNavigableAssociation4CreationToolGen() {
+		ToolEntry entry = new ToolEntry(Messages.NavigableAssociation4CreationTool_title, Messages.NavigableAssociation4CreationTool_desc, null, null) {
+		};
+		entry.setToolClass(CreateAssociationLinkTool.NAVIGABLE.class);
+		return entry;
+	}
+
+	/**
+	 * @generated NOT
+	 */
+	private ToolEntry createNavigableAssociation4CreationTool() {
+		ToolEntry entry = createNavigableAssociation4CreationToolGen();
+		entry.setSmallIcon(UMLElementTypes.getImageDescriptor(UMLElementTypes.Association_4005));
+		entry.setLargeIcon(entry.getSmallIcon());
+		return entry;
+	}
 	/**
 	 * @generated
 	 */

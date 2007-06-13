@@ -9,6 +9,7 @@ import org.eclipse.gmf.runtime.common.core.command.CommandResult;
 import org.eclipse.gmf.runtime.emf.type.core.commands.CreateElementCommand;
 import org.eclipse.gmf.runtime.emf.type.core.requests.ConfigureRequest;
 import org.eclipse.gmf.runtime.emf.type.core.requests.CreateRelationshipRequest;
+import org.eclipse.uml2.diagram.clazz.edit.helpers.AssociationEditHelper;
 import org.eclipse.uml2.diagram.clazz.edit.policies.UMLBaseItemSemanticEditPolicy;
 import org.eclipse.uml2.uml.AggregationKind;
 import org.eclipse.uml2.uml.Association;
@@ -93,9 +94,10 @@ public class AssociationCreateCommand extends CreateElementCommand {
 		//due to association end conventiontions (see AssociationEndConvention) 
 		//we need to have member end of type SourceType to be the first one created
 		//thus, we are calling UML2 createAssociation() in opposite order
+		boolean setNavigability = getCreateRequest().getParameter(AssociationEditHelper.PARAMETER_SET_TARGET_NAVIGABILITY) != null;
 		Association result = targetType.createAssociation(//
 				false, AggregationKind.NONE_LITERAL, "src", 1, 1, // 
-				sourceType, false, AggregationKind.NONE_LITERAL, "dst", 1, 1);
+				sourceType, setNavigability, AggregationKind.NONE_LITERAL, "dst", 1, 1);
 
 		return result;
 	}
