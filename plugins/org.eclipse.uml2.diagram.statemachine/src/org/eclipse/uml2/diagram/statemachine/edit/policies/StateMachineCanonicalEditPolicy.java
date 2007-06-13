@@ -197,6 +197,11 @@ public class StateMachineCanonicalEditPolicy extends CanonicalConnectionEditPoli
 	private Collection collectAllLinks(View view, Map domain2NotationMap) {
 		Collection result = new LinkedList();
 		switch (UMLVisualIDRegistry.getVisualID(view)) {
+		case StateMachineEditPart.VISUAL_ID: {
+			domain2NotationMap.put(view.getElement(), view);
+			result.addAll(UMLDiagramUpdater.getStateMachine_1000ContainedLinks(view));
+			break;
+		}
 		case StateMachine2EditPart.VISUAL_ID: {
 			domain2NotationMap.put(view.getElement(), view);
 			result.addAll(UMLDiagramUpdater.getStateMachine_2004ContainedLinks(view));
@@ -295,11 +300,6 @@ public class StateMachineCanonicalEditPolicy extends CanonicalConnectionEditPoli
 		case TransitionEditPart.VISUAL_ID: {
 			domain2NotationMap.put(view.getElement(), view);
 			result.addAll(UMLDiagramUpdater.getTransition_4001ContainedLinks(view));
-			break;
-		}
-		case StateMachineEditPart.VISUAL_ID: {
-			domain2NotationMap.put(view.getElement(), view);
-			result.addAll(UMLDiagramUpdater.getStateMachine_1000ContainedLinks(view));
 			break;
 		}
 		}

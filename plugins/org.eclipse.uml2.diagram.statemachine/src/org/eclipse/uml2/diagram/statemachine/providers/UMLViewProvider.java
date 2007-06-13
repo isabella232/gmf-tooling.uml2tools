@@ -1,11 +1,11 @@
 package org.eclipse.uml2.diagram.statemachine.providers;
 
 import org.eclipse.core.runtime.IAdaptable;
-import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.gmf.runtime.diagram.core.providers.AbstractViewProvider;
-import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.gmf.runtime.emf.type.core.IElementType;
+import org.eclipse.gmf.runtime.emf.type.core.IHintedType;
+import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.ConnectionPointReference2EditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.ConnectionPointReferenceEditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.ConnectionPointReferenceName2EditPart;
@@ -37,10 +37,8 @@ import org.eclipse.uml2.diagram.statemachine.edit.parts.StateName2EditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.StateName3EditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.StateNameEditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.TransitionEditPart;
-
 import org.eclipse.uml2.diagram.statemachine.edit.parts.TransitionNameEditPart;
 import org.eclipse.uml2.diagram.statemachine.part.UMLVisualIDRegistry;
-
 import org.eclipse.uml2.diagram.statemachine.view.factories.ConnectionPointReference2ViewFactory;
 import org.eclipse.uml2.diagram.statemachine.view.factories.ConnectionPointReferenceName2ViewFactory;
 import org.eclipse.uml2.diagram.statemachine.view.factories.ConnectionPointReferenceNameViewFactory;
@@ -98,13 +96,58 @@ public class UMLViewProvider extends AbstractViewProvider {
 			return null;
 		}
 		IElementType elementType = getSemanticElementType(semanticAdapter);
-		if (elementType != null && !UMLElementTypes.isKnownElementType(elementType)) {
+		EObject domainElement = getSemanticElement(semanticAdapter);
+
+		int visualID;
+		if (semanticHint == null) {
+			if (elementType != null || domainElement == null) {
+				return null;
+			}
+			visualID = UMLVisualIDRegistry.getNodeVisualID(containerView, domainElement);
+		} else {
+			visualID = UMLVisualIDRegistry.getVisualID(semanticHint);
+			if (elementType != null) {
+				if (!UMLElementTypes.isKnownElementType(elementType) || false == elementType instanceof IHintedType) {
+					return null;
+				}
+				String elementTypeHint = ((IHintedType) elementType).getSemanticHint();
+				if (!semanticHint.equals(elementTypeHint)) {
+					return null;
+				}
+				if (domainElement != null && visualID != UMLVisualIDRegistry.getNodeVisualID(containerView, domainElement)) {
+					return null;
+				}
+			} else {
+				switch (visualID) {
+				case StateMachineEditPart.VISUAL_ID:
+				case StateMachine2EditPart.VISUAL_ID:
+				case RegionEditPart.VISUAL_ID:
+				case StateEditPart.VISUAL_ID:
+				case State2EditPart.VISUAL_ID:
+				case Region2EditPart.VISUAL_ID:
+				case State3EditPart.VISUAL_ID:
+				case ConnectionPointReferenceEditPart.VISUAL_ID:
+				case ConnectionPointReference2EditPart.VISUAL_ID:
+				case FinalStateEditPart.VISUAL_ID:
+				case PseudostateEditPart.VISUAL_ID:
+				case Pseudostate2EditPart.VISUAL_ID:
+				case Pseudostate3EditPart.VISUAL_ID:
+				case Pseudostate4EditPart.VISUAL_ID:
+				case Pseudostate5EditPart.VISUAL_ID:
+				case Pseudostate6EditPart.VISUAL_ID:
+				case Pseudostate7EditPart.VISUAL_ID:
+				case Pseudostate8EditPart.VISUAL_ID:
+				case Pseudostate9EditPart.VISUAL_ID:
+				case Pseudostate10EditPart.VISUAL_ID:
+				case TransitionEditPart.VISUAL_ID:
+					return null;
+				}
+			}
+		}
+		if (!UMLVisualIDRegistry.canCreateNode(containerView, visualID)) {
 			return null;
 		}
-		EClass semanticType = getSemanticEClass(semanticAdapter);
-		EObject semanticElement = getSemanticElement(semanticAdapter);
-		int nodeVID = UMLVisualIDRegistry.getNodeVisualID(containerView, semanticElement, semanticType, semanticHint);
-		switch (nodeVID) {
+		switch (visualID) {
 		case StateMachine2EditPart.VISUAL_ID:
 			return StateMachine2ViewFactory.class;
 		case StateMachineNameEditPart.VISUAL_ID:
@@ -174,20 +217,29 @@ public class UMLViewProvider extends AbstractViewProvider {
 	 */
 	protected Class getEdgeViewClass(IAdaptable semanticAdapter, View containerView, String semanticHint) {
 		IElementType elementType = getSemanticElementType(semanticAdapter);
-		if (elementType != null && !UMLElementTypes.isKnownElementType(elementType)) {
+		if (elementType == null) {
 			return null;
 		}
-		EClass semanticType = getSemanticEClass(semanticAdapter);
-		if (semanticType == null) {
+		if (!UMLElementTypes.isKnownElementType(elementType) || false == elementType instanceof IHintedType) {
 			return null;
 		}
-		EObject semanticElement = getSemanticElement(semanticAdapter);
-		int linkVID = UMLVisualIDRegistry.getLinkWithClassVisualID(semanticElement, semanticType);
-		switch (linkVID) {
+		String elementTypeHint = ((IHintedType) elementType).getSemanticHint();
+		if (elementTypeHint == null) {
+			return null;
+		}
+		if (semanticHint != null && !semanticHint.equals(elementTypeHint)) {
+			return null;
+		}
+		int visualID = UMLVisualIDRegistry.getVisualID(elementTypeHint);
+		EObject domainElement = getSemanticElement(semanticAdapter);
+		if (domainElement != null && visualID != UMLVisualIDRegistry.getLinkWithClassVisualID(domainElement)) {
+			return null;
+		}
+		switch (visualID) {
 		case TransitionEditPart.VISUAL_ID:
 			return TransitionViewFactory.class;
 		}
-		return getUnrecognizedConnectorViewClass(semanticAdapter, containerView, semanticHint);
+		return null;
 	}
 
 	/**
@@ -198,14 +250,6 @@ public class UMLViewProvider extends AbstractViewProvider {
 			return null;
 		}
 		return (IElementType) semanticAdapter.getAdapter(IElementType.class);
-	}
-
-	/**
-	 * @generated
-	 */
-	private Class getUnrecognizedConnectorViewClass(IAdaptable semanticAdapter, View containerView, String semanticHint) {
-		// Handle unrecognized child node classes here
-		return null;
 	}
 
 }

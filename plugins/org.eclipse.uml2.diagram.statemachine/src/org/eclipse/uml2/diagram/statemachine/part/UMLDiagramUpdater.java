@@ -87,6 +87,9 @@ public class UMLDiagramUpdater {
 	 * @generated
 	 */
 	public static List getStateMachine_2004SemanticChildren(View view) {
+		if (!view.isSetElement()) {
+			return Collections.EMPTY_LIST;
+		}
 		StateMachine modelElement = (StateMachine) view.getElement();
 		List result = new LinkedList();
 		for (Iterator it = modelElement.getRegions().iterator(); it.hasNext();) {
@@ -94,6 +97,7 @@ public class UMLDiagramUpdater {
 			int visualID = UMLVisualIDRegistry.getNodeVisualID(view, childElement);
 			if (visualID == RegionEditPart.VISUAL_ID) {
 				result.add(new UMLNodeDescriptor(childElement, visualID));
+				continue;
 			}
 		}
 		for (Iterator it = modelElement.getConnectionPoints().iterator(); it.hasNext();) {
@@ -101,9 +105,11 @@ public class UMLDiagramUpdater {
 			int visualID = UMLVisualIDRegistry.getNodeVisualID(view, childElement);
 			if (visualID == Pseudostate9EditPart.VISUAL_ID) {
 				result.add(new UMLNodeDescriptor(childElement, visualID));
+				continue;
 			}
 			if (visualID == Pseudostate10EditPart.VISUAL_ID) {
 				result.add(new UMLNodeDescriptor(childElement, visualID));
+				continue;
 			}
 		}
 		return result;
@@ -113,6 +119,9 @@ public class UMLDiagramUpdater {
 	 * @generated
 	 */
 	public static List getState_3012SemanticChildren(View view) {
+		if (!view.isSetElement()) {
+			return Collections.EMPTY_LIST;
+		}
 		State modelElement = (State) view.getElement();
 		List result = new LinkedList();
 		for (Iterator it = modelElement.getRegions().iterator(); it.hasNext();) {
@@ -120,6 +129,7 @@ public class UMLDiagramUpdater {
 			int visualID = UMLVisualIDRegistry.getNodeVisualID(view, childElement);
 			if (visualID == Region2EditPart.VISUAL_ID) {
 				result.add(new UMLNodeDescriptor(childElement, visualID));
+				continue;
 			}
 		}
 		return result;
@@ -129,6 +139,9 @@ public class UMLDiagramUpdater {
 	 * @generated
 	 */
 	public static List getState_3016SemanticChildren(View view) {
+		if (!view.isSetElement()) {
+			return Collections.EMPTY_LIST;
+		}
 		State modelElement = (State) view.getElement();
 		List result = new LinkedList();
 		for (Iterator it = modelElement.getRegions().iterator(); it.hasNext();) {
@@ -136,6 +149,7 @@ public class UMLDiagramUpdater {
 			int visualID = UMLVisualIDRegistry.getNodeVisualID(view, childElement);
 			if (visualID == Region2EditPart.VISUAL_ID) {
 				result.add(new UMLNodeDescriptor(childElement, visualID));
+				continue;
 			}
 		}
 		for (Iterator it = modelElement.getConnections().iterator(); it.hasNext();) {
@@ -143,9 +157,11 @@ public class UMLDiagramUpdater {
 			int visualID = UMLVisualIDRegistry.getNodeVisualID(view, childElement);
 			if (visualID == ConnectionPointReferenceEditPart.VISUAL_ID) {
 				result.add(new UMLNodeDescriptor(childElement, visualID));
+				continue;
 			}
 			if (visualID == ConnectionPointReference2EditPart.VISUAL_ID) {
 				result.add(new UMLNodeDescriptor(childElement, visualID));
+				continue;
 			}
 		}
 		return result;
@@ -155,46 +171,65 @@ public class UMLDiagramUpdater {
 	 * @generated
 	 */
 	public static List getRegionSubvertices_7004SemanticChildren(View view) {
-		Region modelElement = (Region) view.getElement();
+		if (false == view.eContainer() instanceof View) {
+			return Collections.EMPTY_LIST;
+		}
+		View containerView = (View) view.eContainer();
+		if (!containerView.isSetElement()) {
+			return Collections.EMPTY_LIST;
+		}
+		Region modelElement = (Region) containerView.getElement();
 		List result = new LinkedList();
 		for (Iterator it = modelElement.getSubvertices().iterator(); it.hasNext();) {
 			Vertex childElement = (Vertex) it.next();
 			int visualID = UMLVisualIDRegistry.getNodeVisualID(view, childElement);
 			if (visualID == StateEditPart.VISUAL_ID) {
 				result.add(new UMLNodeDescriptor(childElement, visualID));
+				continue;
 			}
 			if (visualID == State2EditPart.VISUAL_ID) {
 				result.add(new UMLNodeDescriptor(childElement, visualID));
+				continue;
 			}
 			if (visualID == State3EditPart.VISUAL_ID) {
 				result.add(new UMLNodeDescriptor(childElement, visualID));
+				continue;
 			}
 			if (visualID == FinalStateEditPart.VISUAL_ID) {
 				result.add(new UMLNodeDescriptor(childElement, visualID));
+				continue;
 			}
 			if (visualID == PseudostateEditPart.VISUAL_ID) {
 				result.add(new UMLNodeDescriptor(childElement, visualID));
+				continue;
 			}
 			if (visualID == Pseudostate2EditPart.VISUAL_ID) {
 				result.add(new UMLNodeDescriptor(childElement, visualID));
+				continue;
 			}
 			if (visualID == Pseudostate3EditPart.VISUAL_ID) {
 				result.add(new UMLNodeDescriptor(childElement, visualID));
+				continue;
 			}
 			if (visualID == Pseudostate4EditPart.VISUAL_ID) {
 				result.add(new UMLNodeDescriptor(childElement, visualID));
+				continue;
 			}
 			if (visualID == Pseudostate5EditPart.VISUAL_ID) {
 				result.add(new UMLNodeDescriptor(childElement, visualID));
+				continue;
 			}
 			if (visualID == Pseudostate6EditPart.VISUAL_ID) {
 				result.add(new UMLNodeDescriptor(childElement, visualID));
+				continue;
 			}
 			if (visualID == Pseudostate7EditPart.VISUAL_ID) {
 				result.add(new UMLNodeDescriptor(childElement, visualID));
+				continue;
 			}
 			if (visualID == Pseudostate8EditPart.VISUAL_ID) {
 				result.add(new UMLNodeDescriptor(childElement, visualID));
+				continue;
 			}
 		}
 		return result;
@@ -204,46 +239,65 @@ public class UMLDiagramUpdater {
 	 * @generated
 	 */
 	public static List getRegionSubvertices_7003SemanticChildren(View view) {
-		Region modelElement = (Region) view.getElement();
+		if (false == view.eContainer() instanceof View) {
+			return Collections.EMPTY_LIST;
+		}
+		View containerView = (View) view.eContainer();
+		if (!containerView.isSetElement()) {
+			return Collections.EMPTY_LIST;
+		}
+		Region modelElement = (Region) containerView.getElement();
 		List result = new LinkedList();
 		for (Iterator it = modelElement.getSubvertices().iterator(); it.hasNext();) {
 			Vertex childElement = (Vertex) it.next();
 			int visualID = UMLVisualIDRegistry.getNodeVisualID(view, childElement);
 			if (visualID == StateEditPart.VISUAL_ID) {
 				result.add(new UMLNodeDescriptor(childElement, visualID));
+				continue;
 			}
 			if (visualID == State2EditPart.VISUAL_ID) {
 				result.add(new UMLNodeDescriptor(childElement, visualID));
+				continue;
 			}
 			if (visualID == State3EditPart.VISUAL_ID) {
 				result.add(new UMLNodeDescriptor(childElement, visualID));
+				continue;
 			}
 			if (visualID == FinalStateEditPart.VISUAL_ID) {
 				result.add(new UMLNodeDescriptor(childElement, visualID));
+				continue;
 			}
 			if (visualID == PseudostateEditPart.VISUAL_ID) {
 				result.add(new UMLNodeDescriptor(childElement, visualID));
+				continue;
 			}
 			if (visualID == Pseudostate2EditPart.VISUAL_ID) {
 				result.add(new UMLNodeDescriptor(childElement, visualID));
+				continue;
 			}
 			if (visualID == Pseudostate3EditPart.VISUAL_ID) {
 				result.add(new UMLNodeDescriptor(childElement, visualID));
+				continue;
 			}
 			if (visualID == Pseudostate4EditPart.VISUAL_ID) {
 				result.add(new UMLNodeDescriptor(childElement, visualID));
+				continue;
 			}
 			if (visualID == Pseudostate5EditPart.VISUAL_ID) {
 				result.add(new UMLNodeDescriptor(childElement, visualID));
+				continue;
 			}
 			if (visualID == Pseudostate6EditPart.VISUAL_ID) {
 				result.add(new UMLNodeDescriptor(childElement, visualID));
+				continue;
 			}
 			if (visualID == Pseudostate7EditPart.VISUAL_ID) {
 				result.add(new UMLNodeDescriptor(childElement, visualID));
+				continue;
 			}
 			if (visualID == Pseudostate8EditPart.VISUAL_ID) {
 				result.add(new UMLNodeDescriptor(childElement, visualID));
+				continue;
 			}
 		}
 		return result;
@@ -253,11 +307,18 @@ public class UMLDiagramUpdater {
 	 * @generated
 	 */
 	public static List getStateMachine_1000SemanticChildren(View view) {
+		if (!view.isSetElement()) {
+			return Collections.EMPTY_LIST;
+		}
 		StateMachine modelElement = (StateMachine) view.getElement();
 		List result = new LinkedList();
 		for (Iterator it = modelElement.getNestedClassifiers().iterator(); it.hasNext();) {
 			Classifier childElement = (Classifier) it.next();
 			int visualID = UMLVisualIDRegistry.getNodeVisualID(view, childElement);
+			if (visualID == StateMachine2EditPart.VISUAL_ID) {
+				result.add(new UMLNodeDescriptor(childElement, visualID));
+				continue;
+			}
 		}
 		return result;
 	}
@@ -267,6 +328,8 @@ public class UMLDiagramUpdater {
 	 */
 	public static List getContainedLinks(View view) {
 		switch (UMLVisualIDRegistry.getVisualID(view)) {
+		case StateMachineEditPart.VISUAL_ID:
+			return getStateMachine_1000ContainedLinks(view);
 		case StateMachine2EditPart.VISUAL_ID:
 			return getStateMachine_2004ContainedLinks(view);
 		case RegionEditPart.VISUAL_ID:
@@ -406,6 +469,13 @@ public class UMLDiagramUpdater {
 		case TransitionEditPart.VISUAL_ID:
 			return getTransition_4001OutgoingLinks(view);
 		}
+		return Collections.EMPTY_LIST;
+	}
+
+	/**
+	 * @generated
+	 */
+	public static List getStateMachine_1000ContainedLinks(View view) {
 		return Collections.EMPTY_LIST;
 	}
 
@@ -1028,10 +1098,4 @@ public class UMLDiagramUpdater {
 		return result;
 	}
 
-	/**
-	 * @generated
-	 */
-	public static List getStateMachine_1000ContainedLinks(View view) {
-		return Collections.EMPTY_LIST;
-	}
 }
