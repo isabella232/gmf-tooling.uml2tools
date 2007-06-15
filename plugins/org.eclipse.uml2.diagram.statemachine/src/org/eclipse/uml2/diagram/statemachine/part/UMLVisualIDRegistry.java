@@ -308,9 +308,15 @@ public class UMLVisualIDRegistry {
 			}
 			break;
 		case StateMachineEditPart.VISUAL_ID:
-			if (UMLPackage.eINSTANCE.getStateMachine().isSuperTypeOf(domainElement.eClass())) {
+			// We want to additionally show the Canvas Semantical Element in the auxiliary 
+			// org.eclipse.uml2.diagram.statemachine.edit.parts.StateMachine2EditPart (that serves as a pure visual container for children). 
+			// To do this, we modified CanonicalEditPolicy to add the Canvas semantic Element into the children 
+			// list. The only remaining part is to return correct VID for this special case.
+
+			if (containerView instanceof Diagram && domainElement != null && domainElement.equals(containerView.getElement())) {
 				return StateMachine2EditPart.VISUAL_ID;
 			}
+			// Diagram header is already processed above
 			break;
 		}
 		return -1;

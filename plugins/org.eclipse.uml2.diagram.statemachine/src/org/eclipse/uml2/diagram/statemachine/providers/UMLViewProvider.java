@@ -118,6 +118,9 @@ public class UMLViewProvider extends AbstractViewProvider {
 					return null;
 				}
 			} else {
+				if (domainElement == null) {
+					return null;
+				}
 				switch (visualID) {
 				case StateMachineEditPart.VISUAL_ID:
 				case StateMachine2EditPart.VISUAL_ID:
@@ -140,6 +143,72 @@ public class UMLViewProvider extends AbstractViewProvider {
 				case Pseudostate9EditPart.VISUAL_ID:
 				case Pseudostate10EditPart.VISUAL_ID:
 				case TransitionEditPart.VISUAL_ID:
+					if (visualID != UMLVisualIDRegistry.getNodeVisualID(containerView, domainElement)) {
+						return null;
+					}
+					break;
+				case StateMachineNameEditPart.VISUAL_ID:
+
+					if (StateMachine2EditPart.VISUAL_ID != UMLVisualIDRegistry.getVisualID(containerView) || containerView.getElement() != domainElement) {
+						return null;
+					}
+					break;
+
+				case RegionSubverticesEditPart.VISUAL_ID:
+					if (RegionEditPart.VISUAL_ID != UMLVisualIDRegistry.getVisualID(containerView) || containerView.getElement() != domainElement) {
+						return null;
+					}
+					break;
+				case StateNameEditPart.VISUAL_ID:
+
+					if (StateEditPart.VISUAL_ID != UMLVisualIDRegistry.getVisualID(containerView) || containerView.getElement() != domainElement) {
+						return null;
+					}
+					break;
+				case StateName3EditPart.VISUAL_ID:
+
+					if (State2EditPart.VISUAL_ID != UMLVisualIDRegistry.getVisualID(containerView) || containerView.getElement() != domainElement) {
+						return null;
+					}
+					break;
+
+				case RegionSubvertices2EditPart.VISUAL_ID:
+					if (Region2EditPart.VISUAL_ID != UMLVisualIDRegistry.getVisualID(containerView) || containerView.getElement() != domainElement) {
+						return null;
+					}
+					break;
+				case StateName2EditPart.VISUAL_ID:
+
+					if (State3EditPart.VISUAL_ID != UMLVisualIDRegistry.getVisualID(containerView) || containerView.getElement() != domainElement) {
+						return null;
+					}
+					break;
+				case ConnectionPointReferenceNameEditPart.VISUAL_ID:
+
+					if (ConnectionPointReferenceEditPart.VISUAL_ID != UMLVisualIDRegistry.getVisualID(containerView) || containerView.getElement() != domainElement) {
+						return null;
+					}
+					break;
+				case ConnectionPointReferenceName2EditPart.VISUAL_ID:
+
+					if (ConnectionPointReference2EditPart.VISUAL_ID != UMLVisualIDRegistry.getVisualID(containerView) || containerView.getElement() != domainElement) {
+						return null;
+					}
+					break;
+
+				case PseudostateNameEditPart.VISUAL_ID:
+
+					if (Pseudostate9EditPart.VISUAL_ID != UMLVisualIDRegistry.getVisualID(containerView) || containerView.getElement() != domainElement) {
+						return null;
+					}
+					break;
+				case PseudostateName2EditPart.VISUAL_ID:
+
+					if (Pseudostate10EditPart.VISUAL_ID != UMLVisualIDRegistry.getVisualID(containerView) || containerView.getElement() != domainElement) {
+						return null;
+					}
+					break;
+				default:
 					return null;
 				}
 			}

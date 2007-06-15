@@ -163,6 +163,36 @@ public class Messages extends NLS {
 	/**
 	 * @generated
 	 */
+	public static String UMLDiagramEditor_SavingDeletedFile;
+
+	/**
+	 * @generated
+	 */
+	public static String UMLDiagramEditor_SaveAsErrorTitle;
+
+	/**
+	 * @generated
+	 */
+	public static String UMLDiagramEditor_SaveAsErrorMessage;
+
+	/**
+	 * @generated
+	 */
+	public static String UMLDiagramEditor_SaveErrorTitle;
+
+	/**
+	 * @generated
+	 */
+	public static String UMLDiagramEditor_SaveErrorMessage;
+
+	/**
+	 * @generated
+	 */
+	public static String UMLElementChooserDialog_SelectModelElementTitle;
+
+	/**
+	 * @generated
+	 */
 	public static String Nodes1Group_title;
 
 	/**
@@ -539,6 +569,11 @@ public class Messages extends NLS {
 	 * @generated
 	 */
 	public static String NavigatorGroupName_Transition_4001_source;
+
+	/**
+	 * @generated
+	 */
+	public static String NavigatorActionProvider_OpenDiagramActionName;
 
 	//TODO: put accessor fields manually	
 }

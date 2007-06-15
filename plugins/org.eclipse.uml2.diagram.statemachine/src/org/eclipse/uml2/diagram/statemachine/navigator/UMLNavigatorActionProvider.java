@@ -36,6 +36,7 @@ import org.eclipse.ui.part.FileEditorInput;
 
 import org.eclipse.uml2.diagram.statemachine.edit.parts.StateMachineEditPart;
 
+import org.eclipse.uml2.diagram.statemachine.part.Messages;
 import org.eclipse.uml2.diagram.statemachine.part.UMLDiagramEditor;
 import org.eclipse.uml2.diagram.statemachine.part.UMLDiagramEditorPlugin;
 import org.eclipse.uml2.diagram.statemachine.part.UMLVisualIDRegistry;
@@ -114,7 +115,7 @@ public class UMLNavigatorActionProvider extends CommonActionProvider {
 		 * @generated
 		 */
 		public OpenDiagramAction(ICommonViewerWorkbenchSite viewerSite) {
-			super("Open Diagram");
+			super(Messages.NavigatorActionProvider_OpenDiagramActionName);
 			myViewerSite = viewerSite;
 		}
 
@@ -153,7 +154,7 @@ public class UMLNavigatorActionProvider extends CommonActionProvider {
 			try {
 				page.openEditor(editorInput, UMLDiagramEditor.ID);
 			} catch (PartInitException e) {
-				UMLDiagramEditorPlugin.getInstance().logError("Exception while openning diagram", e);
+				UMLDiagramEditorPlugin.getInstance().logError("Exception while openning diagram", e); //$NON-NLS-1$
 			}
 		}
 
@@ -172,7 +173,8 @@ public class UMLNavigatorActionProvider extends CommonActionProvider {
 			}
 			URI uri = EcoreUtil.getURI(myDiagram);
 			String editorName = uri.lastSegment() + "#" + myDiagram.eResource().getContents().indexOf(myDiagram); //$NON-NLS-1$
-			return new URIEditorInput(uri, editorName);
+			IEditorInput editorInput = new URIEditorInput(uri, editorName);
+			return editorInput;
 		}
 
 	}
