@@ -1,50 +1,45 @@
 package org.eclipse.uml2.diagram.activity.part;
 
-import org.eclipse.gef.palette.PaletteRoot;
-import org.eclipse.gmf.runtime.diagram.ui.resources.editor.parts.DiagramDocumentEditor;
-import org.eclipse.emf.transaction.TransactionalEditingDomain;
 import org.eclipse.core.resources.IFile;
 import org.eclipse.core.resources.IMarker;
 import org.eclipse.core.resources.IWorkspaceRoot;
 import org.eclipse.core.resources.ResourcesPlugin;
-
 import org.eclipse.core.runtime.CoreException;
 import org.eclipse.core.runtime.IPath;
 import org.eclipse.core.runtime.IProgressMonitor;
 import org.eclipse.core.runtime.IStatus;
 import org.eclipse.core.runtime.NullProgressMonitor;
-
 import org.eclipse.emf.common.ui.URIEditorInput;
-
+import org.eclipse.emf.transaction.TransactionalEditingDomain;
+import org.eclipse.emf.workspace.util.WorkspaceSynchronizer;
+import org.eclipse.gef.palette.PaletteRoot;
 import org.eclipse.gmf.runtime.common.ui.services.marker.MarkerNavigationService;
-
 import org.eclipse.gmf.runtime.diagram.core.preferences.PreferencesHint;
-
 import org.eclipse.gmf.runtime.diagram.ui.resources.editor.document.IDiagramDocument;
 import org.eclipse.gmf.runtime.diagram.ui.resources.editor.document.IDocument;
 import org.eclipse.gmf.runtime.diagram.ui.resources.editor.document.IDocumentProvider;
-
+import org.eclipse.gmf.runtime.diagram.ui.resources.editor.parts.DiagramDocumentEditor;
+import org.eclipse.gmf.runtime.notation.Diagram;
 import org.eclipse.jface.dialogs.ErrorDialog;
 import org.eclipse.jface.dialogs.IMessageProvider;
 import org.eclipse.jface.dialogs.MessageDialog;
-
+import org.eclipse.jface.viewers.ISelection;
+import org.eclipse.jface.viewers.StructuredSelection;
 import org.eclipse.jface.window.Window;
-
 import org.eclipse.osgi.util.NLS;
-
 import org.eclipse.swt.widgets.Shell;
-
 import org.eclipse.ui.IEditorInput;
 import org.eclipse.ui.IEditorMatchingStrategy;
 import org.eclipse.ui.IEditorReference;
 import org.eclipse.ui.IFileEditorInput;
 import org.eclipse.ui.PlatformUI;
-
 import org.eclipse.ui.dialogs.SaveAsDialog;
-
 import org.eclipse.ui.ide.IGotoMarker;
-
+import org.eclipse.ui.navigator.resources.ProjectExplorer;
 import org.eclipse.ui.part.FileEditorInput;
+import org.eclipse.ui.part.IShowInTargetList;
+import org.eclipse.ui.part.ShowInContext;
+import org.eclipse.uml2.diagram.activity.navigator.UMLNavigatorItem;
 
 /**
  * @generated
@@ -96,6 +91,21 @@ public class UMLDiagramEditor extends DiagramDocumentEditor implements IGotoMark
 	 */
 	public String getContributorId() {
 		return UMLDiagramEditorPlugin.ID;
+	}
+
+	/**
+	 * @generated
+	 */
+	public Object getAdapter(Class type) {
+		if (type == IShowInTargetList.class) {
+			return new IShowInTargetList() {
+
+				public String[] getShowInTargetIds() {
+					return new String[] { ProjectExplorer.VIEW_ID };
+				}
+			};
+		}
+		return super.getAdapter(type);
 	}
 
 	/**
@@ -169,7 +179,7 @@ public class UMLDiagramEditor extends DiagramDocumentEditor implements IGotoMark
 			return;
 		}
 		if (provider.isDeleted(input) && original != null) {
-			String message = NLS.bind("The original file ''{0}'' has been deleted.", original.getName());
+			String message = NLS.bind(Messages.UMLDiagramEditor_SavingDeletedFile, original.getName());
 			dialog.setErrorMessage(null);
 			dialog.setMessage(message, IMessageProvider.WARNING);
 		}
@@ -194,7 +204,7 @@ public class UMLDiagramEditor extends DiagramDocumentEditor implements IGotoMark
 		IEditorReference[] editorRefs = PlatformUI.getWorkbench().getActiveWorkbenchWindow().getActivePage().getEditorReferences();
 		for (int i = 0; i < editorRefs.length; i++) {
 			if (matchingStrategy.matches(editorRefs[i], newInput)) {
-				MessageDialog.openWarning(shell, "Problem During Save As...", "Save could not be completed. Target file is already open in another editor.");
+				MessageDialog.openWarning(shell, Messages.UMLDiagramEditor_SaveAsErrorTitle, Messages.UMLDiagramEditor_SaveAsErrorMessage);
 				return;
 			}
 		}
@@ -206,7 +216,7 @@ public class UMLDiagramEditor extends DiagramDocumentEditor implements IGotoMark
 		} catch (CoreException x) {
 			IStatus status = x.getStatus();
 			if (status == null || status.getSeverity() != IStatus.CANCEL) {
-				ErrorDialog.openError(shell, "Save Problems", "Could not save file.", x.getStatus());
+				ErrorDialog.openError(shell, Messages.UMLDiagramEditor_SaveErrorTitle, Messages.UMLDiagramEditor_SaveErrorMessage, x.getStatus());
 			}
 		} finally {
 			provider.changed(newInput);
@@ -217,6 +227,30 @@ public class UMLDiagramEditor extends DiagramDocumentEditor implements IGotoMark
 		if (progressMonitor != null) {
 			progressMonitor.setCanceled(!success);
 		}
+	}
+
+	/**
+	 * @generated
+	 */
+	public ShowInContext getShowInContext() {
+		return new ShowInContext(getEditorInput(), getNavigatorSelection());
+	}
+
+	/**
+	 * @generated
+	 */
+	private ISelection getNavigatorSelection() {
+		IDiagramDocument document = getDiagramDocument();
+		if (document == null) {
+			return StructuredSelection.EMPTY;
+		}
+		Diagram diagram = document.getDiagram();
+		IFile file = WorkspaceSynchronizer.getFile(diagram.eResource());
+		if (file != null) {
+			UMLNavigatorItem item = new UMLNavigatorItem(diagram, file, false);
+			return new StructuredSelection(item);
+		}
+		return StructuredSelection.EMPTY;
 	}
 
 }

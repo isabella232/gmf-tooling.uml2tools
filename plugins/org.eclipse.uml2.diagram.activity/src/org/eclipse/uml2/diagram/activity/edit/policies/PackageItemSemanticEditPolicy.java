@@ -4,15 +4,12 @@ import org.eclipse.emf.transaction.TransactionalEditingDomain;
 import org.eclipse.gef.commands.Command;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart;
 import org.eclipse.gmf.runtime.emf.commands.core.commands.DuplicateEObjectsCommand;
-import org.eclipse.gmf.runtime.emf.type.core.requests.DuplicateElementsRequest;
 import org.eclipse.gmf.runtime.emf.type.core.requests.CreateElementRequest;
-
+import org.eclipse.gmf.runtime.emf.type.core.requests.DuplicateElementsRequest;
 import org.eclipse.uml2.diagram.activity.edit.commands.ActivityCreateCommand;
 import org.eclipse.uml2.diagram.activity.edit.commands.Constraint2CreateCommand;
 import org.eclipse.uml2.diagram.activity.edit.commands.ConstraintCreateCommand;
-
 import org.eclipse.uml2.diagram.activity.providers.UMLElementTypes;
-
 import org.eclipse.uml2.uml.UMLPackage;
 
 /**
@@ -58,5 +55,7 @@ public class PackageItemSemanticEditPolicy extends UMLBaseItemSemanticEditPolicy
 		public DuplicateAnythingCommand(TransactionalEditingDomain editingDomain, DuplicateElementsRequest req) {
 			super(editingDomain, req.getLabel(), req.getElementsToBeDuplicated(), req.getAllDuplicatedElementsMap());
 		}
+
 	}
+
 }

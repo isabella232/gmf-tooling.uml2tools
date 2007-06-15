@@ -45,9 +45,16 @@ public class ObjectFlowEditPart extends ConnectionNodeEditPart {
 	 * 
 	 * @generated
 	 */
-	protected Connection createConnectionFigure() {
 
+	protected Connection createConnectionFigure() {
 		return new ActivityEdgeConnection();
+	}
+
+	/**
+	 * @generated
+	 */
+	public ActivityEdgeConnection getPrimaryShape() {
+		return (ActivityEdgeConnection) getFigure();
 	}
 
 	/**

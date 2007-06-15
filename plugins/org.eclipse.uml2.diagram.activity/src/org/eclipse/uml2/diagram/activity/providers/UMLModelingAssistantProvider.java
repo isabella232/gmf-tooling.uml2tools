@@ -8,6 +8,8 @@ import java.util.Iterator;
 import java.util.List;
 
 import org.eclipse.core.runtime.IAdaptable;
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.edit.ui.provider.AdapterFactoryLabelProvider;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart;
 import org.eclipse.gmf.runtime.emf.type.core.ElementTypeRegistry;
 import org.eclipse.gmf.runtime.emf.type.core.IElementType;
@@ -18,8 +20,6 @@ import org.eclipse.jface.window.Window;
 import org.eclipse.swt.widgets.Display;
 import org.eclipse.swt.widgets.Shell;
 import org.eclipse.ui.dialogs.ElementListSelectionDialog;
-import org.eclipse.emf.ecore.EObject;
-import org.eclipse.emf.edit.ui.provider.AdapterFactoryLabelProvider;
 import org.eclipse.uml2.diagram.activity.edit.parts.ActivityEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.ActivitySubverticesEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.AddStructuralFeatureValueAction2EditPart;
@@ -37,7 +37,6 @@ import org.eclipse.uml2.diagram.activity.edit.parts.OpaqueActionEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.PackageEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.StructuredActivityNodeStructuredActivityContentPaneCompartment2EditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.StructuredActivityNodeStructuredActivityContentPaneCompartmentEditPart;
-
 import org.eclipse.uml2.diagram.activity.part.UMLDiagramEditorPlugin;
 
 /**
@@ -203,6 +202,7 @@ public class UMLModelingAssistantProvider extends ModelingAssistantProvider {
 	 * @generated
 	 */
 	public List getRelTypesOnSource(IAdaptable source) {
+		IGraphicalEditPart sourceEditPart = (IGraphicalEditPart) source.getAdapter(IGraphicalEditPart.class);
 		return Collections.EMPTY_LIST;
 	}
 
@@ -228,6 +228,8 @@ public class UMLModelingAssistantProvider extends ModelingAssistantProvider {
 	 * @generated
 	 */
 	public List getRelTypesOnSourceAndTarget(IAdaptable source, IAdaptable target) {
+		IGraphicalEditPart sourceEditPart = (IGraphicalEditPart) source.getAdapter(IGraphicalEditPart.class);
+		IGraphicalEditPart targetEditPart = (IGraphicalEditPart) target.getAdapter(IGraphicalEditPart.class);
 		return Collections.EMPTY_LIST;
 	}
 
@@ -251,6 +253,7 @@ public class UMLModelingAssistantProvider extends ModelingAssistantProvider {
 	 * @generated
 	 */
 	public List getTypesForTarget(IAdaptable source, IElementType relationshipType) {
+		IGraphicalEditPart sourceEditPart = (IGraphicalEditPart) source.getAdapter(IGraphicalEditPart.class);
 		return Collections.EMPTY_LIST;
 	}
 

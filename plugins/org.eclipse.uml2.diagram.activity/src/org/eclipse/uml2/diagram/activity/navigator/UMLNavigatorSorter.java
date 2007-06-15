@@ -1,7 +1,6 @@
 package org.eclipse.uml2.diagram.activity.navigator;
 
 import org.eclipse.jface.viewers.ViewerSorter;
-
 import org.eclipse.uml2.diagram.activity.part.UMLVisualIDRegistry;
 
 /**

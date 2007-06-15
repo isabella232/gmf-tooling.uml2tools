@@ -1,9 +1,7 @@
 package org.eclipse.uml2.diagram.activity.edit.policies;
 
 import org.eclipse.gef.commands.Command;
-
 import org.eclipse.gmf.runtime.emf.type.core.requests.CreateElementRequest;
-
 import org.eclipse.uml2.diagram.activity.edit.commands.AcceptEventAction2CreateCommand;
 import org.eclipse.uml2.diagram.activity.edit.commands.AcceptEventActionCreateCommand;
 import org.eclipse.uml2.diagram.activity.edit.commands.ActivityFinalNodeCreateCommand;
@@ -24,9 +22,7 @@ import org.eclipse.uml2.diagram.activity.edit.commands.OpaqueBehaviorCreateComma
 import org.eclipse.uml2.diagram.activity.edit.commands.PinCreateCommand;
 import org.eclipse.uml2.diagram.activity.edit.commands.SendSignalActionCreateCommand;
 import org.eclipse.uml2.diagram.activity.edit.commands.StructuredActivityNodeCreateCommand;
-
 import org.eclipse.uml2.diagram.activity.providers.UMLElementTypes;
-
 import org.eclipse.uml2.uml.UMLPackage;
 
 /**
@@ -160,4 +156,5 @@ public class ActivitySubverticesItemSemanticEditPolicy extends UMLBaseItemSemant
 		}
 		return super.getCreateCommand(req);
 	}
+
 }

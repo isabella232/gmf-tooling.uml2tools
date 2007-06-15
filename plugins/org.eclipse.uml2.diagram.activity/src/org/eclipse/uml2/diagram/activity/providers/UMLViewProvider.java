@@ -250,11 +250,16 @@ public class UMLViewProvider extends AbstractViewProvider {
 					return null;
 				}
 			} else {
+				if (domainElement == null) {
+					return null;
+				}
 				switch (visualID) {
+				case ConstraintEditPart.VISUAL_ID:
+					return ConstraintViewFactory.class;
+				case Constraint2EditPart.VISUAL_ID:
+					return Constraint2ViewFactory.class;
 				case PackageEditPart.VISUAL_ID:
 				case ActivityEditPart.VISUAL_ID:
-				case ConstraintEditPart.VISUAL_ID:
-				case Constraint2EditPart.VISUAL_ID:
 				case AcceptEventActionEditPart.VISUAL_ID:
 				case AcceptEventAction2EditPart.VISUAL_ID:
 				case ActivityFinalNodeEditPart.VISUAL_ID:
@@ -307,6 +312,236 @@ public class UMLViewProvider extends AbstractViewProvider {
 				case ActionLocalPreconditionEditPart.VISUAL_ID:
 				case ObjectNodeSelectionEditPart.VISUAL_ID:
 				case ExceptionHandlerEditPart.VISUAL_ID:
+					if (visualID != UMLVisualIDRegistry.getNodeVisualID(containerView, domainElement)) {
+						return null;
+					}
+					break;
+				case ActivityNameEditPart.VISUAL_ID:
+				case ActivitySubverticesEditPart.VISUAL_ID:
+					if (ActivityEditPart.VISUAL_ID != UMLVisualIDRegistry.getVisualID(containerView) || containerView.getElement() != domainElement) {
+						return null;
+					}
+					break;
+
+				case ConstraintPreconditionEditPart.VISUAL_ID:
+					if (ConstraintEditPart.VISUAL_ID != UMLVisualIDRegistry.getVisualID(containerView) || containerView.getElement() != domainElement) {
+						return null;
+					}
+					break;
+
+				case ConstraintPostconditionEditPart.VISUAL_ID:
+					if (Constraint2EditPart.VISUAL_ID != UMLVisualIDRegistry.getVisualID(containerView) || containerView.getElement() != domainElement) {
+						return null;
+					}
+					break;
+				case AcceptEventActionNameEditPart.VISUAL_ID:
+
+					if (AcceptEventActionEditPart.VISUAL_ID != UMLVisualIDRegistry.getVisualID(containerView) || containerView.getElement() != domainElement) {
+						return null;
+					}
+					break;
+				case AcceptEventActionName3EditPart.VISUAL_ID:
+
+					if (AcceptEventAction2EditPart.VISUAL_ID != UMLVisualIDRegistry.getVisualID(containerView) || containerView.getElement() != domainElement) {
+						return null;
+					}
+					break;
+
+				case DataStoreNodeNameEditPart.VISUAL_ID:
+				case DataStoreNodeName2EditPart.VISUAL_ID:
+
+					if (DataStoreNodeEditPart.VISUAL_ID != UMLVisualIDRegistry.getVisualID(containerView) || containerView.getElement() != domainElement) {
+						return null;
+					}
+					break;
+				case CentralBufferNodeNameEditPart.VISUAL_ID:
+				case CentralBufferNodeName2EditPart.VISUAL_ID:
+
+					if (CentralBufferNodeEditPart.VISUAL_ID != UMLVisualIDRegistry.getVisualID(containerView) || containerView.getElement() != domainElement) {
+						return null;
+					}
+					break;
+				case OpaqueActionNameEditPart.VISUAL_ID:
+
+					if (OpaqueActionEditPart.VISUAL_ID != UMLVisualIDRegistry.getVisualID(containerView) || containerView.getElement() != domainElement) {
+						return null;
+					}
+					break;
+				case OutputPinNameEditPart.VISUAL_ID:
+
+					if (OutputPinEditPart.VISUAL_ID != UMLVisualIDRegistry.getVisualID(containerView) || containerView.getElement() != domainElement) {
+						return null;
+					}
+					break;
+
+				case PinNameEditPart.VISUAL_ID:
+
+					if (PinEditPart.VISUAL_ID != UMLVisualIDRegistry.getVisualID(containerView) || containerView.getElement() != domainElement) {
+						return null;
+					}
+					break;
+				case CreateObjectActionNameEditPart.VISUAL_ID:
+
+					if (CreateObjectActionEditPart.VISUAL_ID != UMLVisualIDRegistry.getVisualID(containerView) || containerView.getElement() != domainElement) {
+						return null;
+					}
+					break;
+				case OutputPinName2EditPart.VISUAL_ID:
+
+					if (OutputPin2EditPart.VISUAL_ID != UMLVisualIDRegistry.getVisualID(containerView) || containerView.getElement() != domainElement) {
+						return null;
+					}
+					break;
+				case AddStructuralFeatureValueActionNameEditPart.VISUAL_ID:
+
+					if (AddStructuralFeatureValueActionEditPart.VISUAL_ID != UMLVisualIDRegistry.getVisualID(containerView) || containerView.getElement() != domainElement) {
+						return null;
+					}
+					break;
+				case InputPinNameEditPart.VISUAL_ID:
+
+					if (InputPinEditPart.VISUAL_ID != UMLVisualIDRegistry.getVisualID(containerView) || containerView.getElement() != domainElement) {
+						return null;
+					}
+					break;
+				case InputPinName2EditPart.VISUAL_ID:
+
+					if (InputPin2EditPart.VISUAL_ID != UMLVisualIDRegistry.getVisualID(containerView) || containerView.getElement() != domainElement) {
+						return null;
+					}
+					break;
+				case InputPinName3EditPart.VISUAL_ID:
+
+					if (InputPin3EditPart.VISUAL_ID != UMLVisualIDRegistry.getVisualID(containerView) || containerView.getElement() != domainElement) {
+						return null;
+					}
+					break;
+				case CallBehaviorActionNameEditPart.VISUAL_ID:
+
+					if (CallBehaviorActionEditPart.VISUAL_ID != UMLVisualIDRegistry.getVisualID(containerView) || containerView.getElement() != domainElement) {
+						return null;
+					}
+					break;
+				case OutputPinName3EditPart.VISUAL_ID:
+
+					if (OutputPin3EditPart.VISUAL_ID != UMLVisualIDRegistry.getVisualID(containerView) || containerView.getElement() != domainElement) {
+						return null;
+					}
+					break;
+				case InputPinName4EditPart.VISUAL_ID:
+
+					if (InputPin4EditPart.VISUAL_ID != UMLVisualIDRegistry.getVisualID(containerView) || containerView.getElement() != domainElement) {
+						return null;
+					}
+					break;
+				case CallOperationActionNameEditPart.VISUAL_ID:
+
+					if (CallOperationActionEditPart.VISUAL_ID != UMLVisualIDRegistry.getVisualID(containerView) || containerView.getElement() != domainElement) {
+						return null;
+					}
+					break;
+				case InputPinName5EditPart.VISUAL_ID:
+
+					if (InputPin5EditPart.VISUAL_ID != UMLVisualIDRegistry.getVisualID(containerView) || containerView.getElement() != domainElement) {
+						return null;
+					}
+					break;
+
+				case StructuredActivityNodeStructuredActivityContentPaneCompartmentEditPart.VISUAL_ID:
+					if (StructuredActivityNodeEditPart.VISUAL_ID != UMLVisualIDRegistry.getVisualID(containerView) || containerView.getElement() != domainElement) {
+						return null;
+					}
+					break;
+
+				case StructuredActivityNodeStructuredActivityContentPaneCompartment2EditPart.VISUAL_ID:
+					if (StructuredActivityNode2EditPart.VISUAL_ID != UMLVisualIDRegistry.getVisualID(containerView) || containerView.getElement() != domainElement) {
+						return null;
+					}
+					break;
+				case OpaqueActionName2EditPart.VISUAL_ID:
+
+					if (OpaqueAction2EditPart.VISUAL_ID != UMLVisualIDRegistry.getVisualID(containerView) || containerView.getElement() != domainElement) {
+						return null;
+					}
+					break;
+				case AcceptEventActionName2EditPart.VISUAL_ID:
+
+					if (AcceptEventAction3EditPart.VISUAL_ID != UMLVisualIDRegistry.getVisualID(containerView) || containerView.getElement() != domainElement) {
+						return null;
+					}
+					break;
+				case AcceptEventActionName4EditPart.VISUAL_ID:
+
+					if (AcceptEventAction4EditPart.VISUAL_ID != UMLVisualIDRegistry.getVisualID(containerView) || containerView.getElement() != domainElement) {
+						return null;
+					}
+					break;
+
+				case PinName2EditPart.VISUAL_ID:
+
+					if (Pin2EditPart.VISUAL_ID != UMLVisualIDRegistry.getVisualID(containerView) || containerView.getElement() != domainElement) {
+						return null;
+					}
+					break;
+				case CreateObjectActionName2EditPart.VISUAL_ID:
+
+					if (CreateObjectAction2EditPart.VISUAL_ID != UMLVisualIDRegistry.getVisualID(containerView) || containerView.getElement() != domainElement) {
+						return null;
+					}
+					break;
+				case CallBehaviorActionName2EditPart.VISUAL_ID:
+
+					if (CallBehaviorAction2EditPart.VISUAL_ID != UMLVisualIDRegistry.getVisualID(containerView) || containerView.getElement() != domainElement) {
+						return null;
+					}
+					break;
+				case CallOperationActionName2EditPart.VISUAL_ID:
+
+					if (CallOperationAction2EditPart.VISUAL_ID != UMLVisualIDRegistry.getVisualID(containerView) || containerView.getElement() != domainElement) {
+						return null;
+					}
+					break;
+
+				case AddStructuralFeatureValueActionName2EditPart.VISUAL_ID:
+
+					if (AddStructuralFeatureValueAction2EditPart.VISUAL_ID != UMLVisualIDRegistry.getVisualID(containerView) || containerView.getElement() != domainElement) {
+						return null;
+					}
+					break;
+				case DataStoreNodeName3EditPart.VISUAL_ID:
+				case DataStoreNodeName4EditPart.VISUAL_ID:
+
+					if (DataStoreNode2EditPart.VISUAL_ID != UMLVisualIDRegistry.getVisualID(containerView) || containerView.getElement() != domainElement) {
+						return null;
+					}
+					break;
+				case CentralBufferNodeName3EditPart.VISUAL_ID:
+				case CentralBufferNodeName4EditPart.VISUAL_ID:
+
+					if (CentralBufferNode2EditPart.VISUAL_ID != UMLVisualIDRegistry.getVisualID(containerView) || containerView.getElement() != domainElement) {
+						return null;
+					}
+					break;
+				case OpaqueBehaviorNameEditPart.VISUAL_ID:
+
+					if (OpaqueBehaviorEditPart.VISUAL_ID != UMLVisualIDRegistry.getVisualID(containerView) || containerView.getElement() != domainElement) {
+						return null;
+					}
+					break;
+				case ActivityParameterNodeNameEditPart.VISUAL_ID:
+
+					if (ActivityParameterNodeEditPart.VISUAL_ID != UMLVisualIDRegistry.getVisualID(containerView) || containerView.getElement() != domainElement) {
+						return null;
+					}
+					break;
+				case SendSignalActionNameEditPart.VISUAL_ID:
+
+					if (SendSignalActionEditPart.VISUAL_ID != UMLVisualIDRegistry.getVisualID(containerView) || containerView.getElement() != domainElement) {
+						return null;
+					}
+					break;
+
+				default:
 					return null;
 				}
 			}

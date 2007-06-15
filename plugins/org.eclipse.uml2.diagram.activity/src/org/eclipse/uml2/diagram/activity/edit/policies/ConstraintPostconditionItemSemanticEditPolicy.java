@@ -1,13 +1,9 @@
 package org.eclipse.uml2.diagram.activity.edit.policies;
 
 import org.eclipse.gef.commands.Command;
-
 import org.eclipse.gmf.runtime.emf.type.core.requests.CreateElementRequest;
-
 import org.eclipse.uml2.diagram.activity.edit.commands.LiteralString2CreateCommand;
-
 import org.eclipse.uml2.diagram.activity.providers.UMLElementTypes;
-
 import org.eclipse.uml2.uml.UMLPackage;
 
 /**
@@ -27,4 +23,5 @@ public class ConstraintPostconditionItemSemanticEditPolicy extends UMLBaseItemSe
 		}
 		return super.getCreateCommand(req);
 	}
+
 }

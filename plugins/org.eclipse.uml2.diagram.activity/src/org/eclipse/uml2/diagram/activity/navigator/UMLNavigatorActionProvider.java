@@ -3,39 +3,27 @@ package org.eclipse.uml2.diagram.activity.navigator;
 import java.util.Iterator;
 
 import org.eclipse.core.runtime.IAdaptable;
-
 import org.eclipse.emf.common.ui.URIEditorInput;
-
 import org.eclipse.emf.common.util.URI;
-
 import org.eclipse.emf.ecore.EObject;
-
 import org.eclipse.emf.ecore.util.EcoreUtil;
-
 import org.eclipse.emf.workspace.util.WorkspaceSynchronizer;
-
 import org.eclipse.gmf.runtime.notation.Diagram;
 import org.eclipse.gmf.runtime.notation.View;
-
 import org.eclipse.jface.action.Action;
 import org.eclipse.jface.action.IMenuManager;
-
 import org.eclipse.jface.viewers.IStructuredSelection;
-
 import org.eclipse.ui.IActionBars;
 import org.eclipse.ui.IEditorInput;
 import org.eclipse.ui.IWorkbenchPage;
 import org.eclipse.ui.PartInitException;
-
 import org.eclipse.ui.navigator.CommonActionProvider;
 import org.eclipse.ui.navigator.ICommonActionConstants;
 import org.eclipse.ui.navigator.ICommonActionExtensionSite;
 import org.eclipse.ui.navigator.ICommonViewerWorkbenchSite;
-
 import org.eclipse.ui.part.FileEditorInput;
-
 import org.eclipse.uml2.diagram.activity.edit.parts.PackageEditPart;
-
+import org.eclipse.uml2.diagram.activity.part.Messages;
 import org.eclipse.uml2.diagram.activity.part.UMLDiagramEditor;
 import org.eclipse.uml2.diagram.activity.part.UMLDiagramEditorPlugin;
 import org.eclipse.uml2.diagram.activity.part.UMLVisualIDRegistry;
@@ -114,7 +102,7 @@ public class UMLNavigatorActionProvider extends CommonActionProvider {
 		 * @generated
 		 */
 		public OpenDiagramAction(ICommonViewerWorkbenchSite viewerSite) {
-			super("Open Diagram");
+			super(Messages.NavigatorActionProvider_OpenDiagramActionName);
 			myViewerSite = viewerSite;
 		}
 
@@ -153,7 +141,7 @@ public class UMLNavigatorActionProvider extends CommonActionProvider {
 			try {
 				page.openEditor(editorInput, UMLDiagramEditor.ID);
 			} catch (PartInitException e) {
-				UMLDiagramEditorPlugin.getInstance().logError("Exception while openning diagram", e);
+				UMLDiagramEditorPlugin.getInstance().logError("Exception while openning diagram", e); //$NON-NLS-1$
 			}
 		}
 
@@ -172,7 +160,8 @@ public class UMLNavigatorActionProvider extends CommonActionProvider {
 			}
 			URI uri = EcoreUtil.getURI(myDiagram);
 			String editorName = uri.lastSegment() + "#" + myDiagram.eResource().getContents().indexOf(myDiagram); //$NON-NLS-1$
-			return new URIEditorInput(uri, editorName);
+			IEditorInput editorInput = new URIEditorInput(uri, editorName);
+			return editorInput;
 		}
 
 	}
