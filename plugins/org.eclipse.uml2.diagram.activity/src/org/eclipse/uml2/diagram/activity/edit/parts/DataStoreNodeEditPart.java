@@ -1,6 +1,5 @@
 package org.eclipse.uml2.diagram.activity.edit.parts;
 
-import org.eclipse.draw2d.Graphics;
 import org.eclipse.draw2d.IFigure;
 import org.eclipse.draw2d.MarginBorder;
 import org.eclipse.draw2d.RectangleFigure;
@@ -219,15 +218,19 @@ public class DataStoreNodeEditPart extends ShapeNodeEditPart {
 		/**
 		 * @generated
 		 */
+		private WrapLabel fFigureDataStoreFigure_name;
+
+		/**
+		 * @generated
+		 */
+		private WrapLabel fFigureDataStoreFigure_states;
+
+		/**
+		 * @generated
+		 */
 		public DataStoreFigure() {
 
 			this.setLayoutManager(new StackLayout());
-			this.setFill(true);
-			this.setFillXOR(false);
-			this.setOutline(true);
-			this.setOutlineXOR(false);
-			this.setLineWidth(1);
-			this.setLineStyle(Graphics.LINE_SOLID);
 			this.setBorder(new MarginBorder(getMapMode().DPtoLP(5), getMapMode().DPtoLP(5), getMapMode().DPtoLP(5), getMapMode().DPtoLP(5)));
 			createContents();
 		}
@@ -239,19 +242,13 @@ public class DataStoreNodeEditPart extends ShapeNodeEditPart {
 
 			RectangleFigure dataStoreFigure_NameContainer0 = new RectangleFigure();
 			dataStoreFigure_NameContainer0.setFill(false);
-			dataStoreFigure_NameContainer0.setFillXOR(false);
 			dataStoreFigure_NameContainer0.setOutline(false);
-			dataStoreFigure_NameContainer0.setOutlineXOR(false);
-			dataStoreFigure_NameContainer0.setLineWidth(1);
-			dataStoreFigure_NameContainer0.setLineStyle(Graphics.LINE_SOLID);
 
 			this.add(dataStoreFigure_NameContainer0);
 
 			ToolbarLayout layoutDataStoreFigure_NameContainer0 = new ToolbarLayout();
 			layoutDataStoreFigure_NameContainer0.setStretchMinorAxis(false);
-			layoutDataStoreFigure_NameContainer0.setMinorAlignment(ToolbarLayout.ALIGN_CENTER
-
-			);
+			layoutDataStoreFigure_NameContainer0.setMinorAlignment(ToolbarLayout.ALIGN_CENTER);
 
 			layoutDataStoreFigure_NameContainer0.setSpacing(0);
 			layoutDataStoreFigure_NameContainer0.setVertical(true);
@@ -267,52 +264,14 @@ public class DataStoreNodeEditPart extends ShapeNodeEditPart {
 			dataStoreFigure_name1.setText("");
 
 			dataStoreFigure_NameContainer0.add(dataStoreFigure_name1);
-			setFigureDataStoreFigure_name(dataStoreFigure_name1);
+			fFigureDataStoreFigure_name = dataStoreFigure_name1;
 
 			WrapLabel dataStoreFigure_states1 = new WrapLabel();
 			dataStoreFigure_states1.setText("");
 
 			dataStoreFigure_NameContainer0.add(dataStoreFigure_states1);
-			setFigureDataStoreFigure_states(dataStoreFigure_states1);
+			fFigureDataStoreFigure_states = dataStoreFigure_states1;
 
-		}
-
-		/**
-		 * @generated
-		 */
-		private WrapLabel fDataStoreFigure_name;
-
-		/**
-		 * @generated
-		 */
-		public WrapLabel getFigureDataStoreFigure_name() {
-			return fDataStoreFigure_name;
-		}
-
-		/**
-		 * @generated
-		 */
-		private void setFigureDataStoreFigure_name(WrapLabel fig) {
-			fDataStoreFigure_name = fig;
-		}
-
-		/**
-		 * @generated
-		 */
-		private WrapLabel fDataStoreFigure_states;
-
-		/**
-		 * @generated
-		 */
-		public WrapLabel getFigureDataStoreFigure_states() {
-			return fDataStoreFigure_states;
-		}
-
-		/**
-		 * @generated
-		 */
-		private void setFigureDataStoreFigure_states(WrapLabel fig) {
-			fDataStoreFigure_states = fig;
 		}
 
 		/**
@@ -332,6 +291,20 @@ public class DataStoreNodeEditPart extends ShapeNodeEditPart {
 		 */
 		protected void setUseLocalCoordinates(boolean useLocalCoordinates) {
 			myUseLocalCoordinates = useLocalCoordinates;
+		}
+
+		/**
+		 * @generated
+		 */
+		public WrapLabel getFigureDataStoreFigure_name() {
+			return fFigureDataStoreFigure_name;
+		}
+
+		/**
+		 * @generated
+		 */
+		public WrapLabel getFigureDataStoreFigure_states() {
+			return fFigureDataStoreFigure_states;
 		}
 
 	}

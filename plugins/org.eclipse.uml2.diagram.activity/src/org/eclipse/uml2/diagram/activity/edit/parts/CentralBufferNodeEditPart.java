@@ -1,6 +1,5 @@
 package org.eclipse.uml2.diagram.activity.edit.parts;
 
-import org.eclipse.draw2d.Graphics;
 import org.eclipse.draw2d.IFigure;
 import org.eclipse.draw2d.MarginBorder;
 import org.eclipse.draw2d.RectangleFigure;
@@ -219,15 +218,19 @@ public class CentralBufferNodeEditPart extends ShapeNodeEditPart {
 		/**
 		 * @generated
 		 */
+		private WrapLabel fFigureCentralBufferFigure_name;
+
+		/**
+		 * @generated
+		 */
+		private WrapLabel fFigureCentralBufferFigure_states;
+
+		/**
+		 * @generated
+		 */
 		public CentralBufferFigure() {
 
 			this.setLayoutManager(new StackLayout());
-			this.setFill(true);
-			this.setFillXOR(false);
-			this.setOutline(true);
-			this.setOutlineXOR(false);
-			this.setLineWidth(1);
-			this.setLineStyle(Graphics.LINE_SOLID);
 			this.setBorder(new MarginBorder(getMapMode().DPtoLP(5), getMapMode().DPtoLP(5), getMapMode().DPtoLP(5), getMapMode().DPtoLP(5)));
 			createContents();
 		}
@@ -239,19 +242,13 @@ public class CentralBufferNodeEditPart extends ShapeNodeEditPart {
 
 			RectangleFigure centralBufferFigure_NameContainer0 = new RectangleFigure();
 			centralBufferFigure_NameContainer0.setFill(false);
-			centralBufferFigure_NameContainer0.setFillXOR(false);
 			centralBufferFigure_NameContainer0.setOutline(false);
-			centralBufferFigure_NameContainer0.setOutlineXOR(false);
-			centralBufferFigure_NameContainer0.setLineWidth(1);
-			centralBufferFigure_NameContainer0.setLineStyle(Graphics.LINE_SOLID);
 
 			this.add(centralBufferFigure_NameContainer0);
 
 			ToolbarLayout layoutCentralBufferFigure_NameContainer0 = new ToolbarLayout();
 			layoutCentralBufferFigure_NameContainer0.setStretchMinorAxis(false);
-			layoutCentralBufferFigure_NameContainer0.setMinorAlignment(ToolbarLayout.ALIGN_CENTER
-
-			);
+			layoutCentralBufferFigure_NameContainer0.setMinorAlignment(ToolbarLayout.ALIGN_CENTER);
 
 			layoutCentralBufferFigure_NameContainer0.setSpacing(0);
 			layoutCentralBufferFigure_NameContainer0.setVertical(true);
@@ -267,52 +264,14 @@ public class CentralBufferNodeEditPart extends ShapeNodeEditPart {
 			centralBufferFigure_name1.setText("");
 
 			centralBufferFigure_NameContainer0.add(centralBufferFigure_name1);
-			setFigureCentralBufferFigure_name(centralBufferFigure_name1);
+			fFigureCentralBufferFigure_name = centralBufferFigure_name1;
 
 			WrapLabel centralBufferFigure_states1 = new WrapLabel();
 			centralBufferFigure_states1.setText("");
 
 			centralBufferFigure_NameContainer0.add(centralBufferFigure_states1);
-			setFigureCentralBufferFigure_states(centralBufferFigure_states1);
+			fFigureCentralBufferFigure_states = centralBufferFigure_states1;
 
-		}
-
-		/**
-		 * @generated
-		 */
-		private WrapLabel fCentralBufferFigure_name;
-
-		/**
-		 * @generated
-		 */
-		public WrapLabel getFigureCentralBufferFigure_name() {
-			return fCentralBufferFigure_name;
-		}
-
-		/**
-		 * @generated
-		 */
-		private void setFigureCentralBufferFigure_name(WrapLabel fig) {
-			fCentralBufferFigure_name = fig;
-		}
-
-		/**
-		 * @generated
-		 */
-		private WrapLabel fCentralBufferFigure_states;
-
-		/**
-		 * @generated
-		 */
-		public WrapLabel getFigureCentralBufferFigure_states() {
-			return fCentralBufferFigure_states;
-		}
-
-		/**
-		 * @generated
-		 */
-		private void setFigureCentralBufferFigure_states(WrapLabel fig) {
-			fCentralBufferFigure_states = fig;
 		}
 
 		/**
@@ -332,6 +291,20 @@ public class CentralBufferNodeEditPart extends ShapeNodeEditPart {
 		 */
 		protected void setUseLocalCoordinates(boolean useLocalCoordinates) {
 			myUseLocalCoordinates = useLocalCoordinates;
+		}
+
+		/**
+		 * @generated
+		 */
+		public WrapLabel getFigureCentralBufferFigure_name() {
+			return fFigureCentralBufferFigure_name;
+		}
+
+		/**
+		 * @generated
+		 */
+		public WrapLabel getFigureCentralBufferFigure_states() {
+			return fFigureCentralBufferFigure_states;
 		}
 
 	}

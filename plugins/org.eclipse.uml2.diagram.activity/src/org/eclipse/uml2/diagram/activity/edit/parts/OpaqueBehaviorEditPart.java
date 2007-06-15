@@ -207,13 +207,16 @@ public class OpaqueBehaviorEditPart extends ShapeNodeEditPart {
 		/**
 		 * @generated
 		 */
+		private WrapLabel fFigureSelectionFigure_name;
+
+		/**
+		 * @generated
+		 */
 		public SelectionFigure() {
 
 			ToolbarLayout layoutThis = new ToolbarLayout();
 			layoutThis.setStretchMinorAxis(false);
-			layoutThis.setMinorAlignment(ToolbarLayout.ALIGN_CENTER
-
-			);
+			layoutThis.setMinorAlignment(ToolbarLayout.ALIGN_CENTER);
 
 			layoutThis.setSpacing(0);
 			layoutThis.setVertical(true);
@@ -238,27 +241,8 @@ public class OpaqueBehaviorEditPart extends ShapeNodeEditPart {
 			selectionFigure_name0.setText("");
 
 			this.add(selectionFigure_name0);
-			setFigureSelectionFigure_name(selectionFigure_name0);
+			fFigureSelectionFigure_name = selectionFigure_name0;
 
-		}
-
-		/**
-		 * @generated
-		 */
-		private WrapLabel fSelectionFigure_name;
-
-		/**
-		 * @generated
-		 */
-		public WrapLabel getFigureSelectionFigure_name() {
-			return fSelectionFigure_name;
-		}
-
-		/**
-		 * @generated
-		 */
-		private void setFigureSelectionFigure_name(WrapLabel fig) {
-			fSelectionFigure_name = fig;
 		}
 
 		/**
@@ -278,6 +262,13 @@ public class OpaqueBehaviorEditPart extends ShapeNodeEditPart {
 		 */
 		protected void setUseLocalCoordinates(boolean useLocalCoordinates) {
 			myUseLocalCoordinates = useLocalCoordinates;
+		}
+
+		/**
+		 * @generated
+		 */
+		public WrapLabel getFigureSelectionFigure_name() {
+			return fFigureSelectionFigure_name;
 		}
 
 	}

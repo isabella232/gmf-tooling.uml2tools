@@ -1,7 +1,6 @@
 package org.eclipse.uml2.diagram.activity.edit.parts;
 
 import org.eclipse.draw2d.ColorConstants;
-import org.eclipse.draw2d.Graphics;
 import org.eclipse.draw2d.IFigure;
 import org.eclipse.draw2d.RectangleFigure;
 import org.eclipse.draw2d.StackLayout;
@@ -161,12 +160,6 @@ public class ForkNodeEditPart extends ShapeNodeEditPart {
 		 * @generated
 		 */
 		public ForkJoinFigure() {
-			this.setFill(true);
-			this.setFillXOR(false);
-			this.setOutline(true);
-			this.setOutlineXOR(false);
-			this.setLineWidth(1);
-			this.setLineStyle(Graphics.LINE_SOLID);
 			this.setBackgroundColor(ColorConstants.black);
 			this.setPreferredSize(new Dimension(getMapMode().DPtoLP(4), getMapMode().DPtoLP(50)));
 		}

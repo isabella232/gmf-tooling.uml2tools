@@ -2,7 +2,6 @@ package org.eclipse.uml2.diagram.activity.edit.parts;
 
 import org.eclipse.draw2d.ColorConstants;
 import org.eclipse.draw2d.Ellipse;
-import org.eclipse.draw2d.Graphics;
 import org.eclipse.draw2d.IFigure;
 import org.eclipse.draw2d.Polyline;
 import org.eclipse.draw2d.PositionConstants;
@@ -175,12 +174,6 @@ public class FlowFinalNode2EditPart extends ShapeNodeEditPart {
 
 			this.setLayoutManager(layoutThis);
 
-			this.setFill(true);
-			this.setFillXOR(false);
-			this.setOutline(true);
-			this.setOutlineXOR(false);
-			this.setLineWidth(1);
-			this.setLineStyle(Graphics.LINE_SOLID);
 			this.setForegroundColor(ColorConstants.black);
 			this.setPreferredSize(new Dimension(getMapMode().DPtoLP(23), getMapMode().DPtoLP(23)));
 			this.setMaximumSize(new Dimension(getMapMode().DPtoLP(23), getMapMode().DPtoLP(23)));
@@ -196,24 +189,12 @@ public class FlowFinalNode2EditPart extends ShapeNodeEditPart {
 			Polyline aux_FlowFinalFigure_BackSlash0 = new Polyline();
 			aux_FlowFinalFigure_BackSlash0.addPoint(new Point(getMapMode().DPtoLP(4), getMapMode().DPtoLP(4)));
 			aux_FlowFinalFigure_BackSlash0.addPoint(new Point(getMapMode().DPtoLP(19), getMapMode().DPtoLP(19)));
-			aux_FlowFinalFigure_BackSlash0.setFill(true);
-			aux_FlowFinalFigure_BackSlash0.setFillXOR(false);
-			aux_FlowFinalFigure_BackSlash0.setOutline(true);
-			aux_FlowFinalFigure_BackSlash0.setOutlineXOR(false);
-			aux_FlowFinalFigure_BackSlash0.setLineWidth(1);
-			aux_FlowFinalFigure_BackSlash0.setLineStyle(Graphics.LINE_SOLID);
 
 			this.add(aux_FlowFinalFigure_BackSlash0);
 
 			Polyline aux_FlowFinalFigure_Slash0 = new Polyline();
 			aux_FlowFinalFigure_Slash0.addPoint(new Point(getMapMode().DPtoLP(4), getMapMode().DPtoLP(19)));
 			aux_FlowFinalFigure_Slash0.addPoint(new Point(getMapMode().DPtoLP(19), getMapMode().DPtoLP(4)));
-			aux_FlowFinalFigure_Slash0.setFill(true);
-			aux_FlowFinalFigure_Slash0.setFillXOR(false);
-			aux_FlowFinalFigure_Slash0.setOutline(true);
-			aux_FlowFinalFigure_Slash0.setOutlineXOR(false);
-			aux_FlowFinalFigure_Slash0.setLineWidth(1);
-			aux_FlowFinalFigure_Slash0.setLineStyle(Graphics.LINE_SOLID);
 
 			this.add(aux_FlowFinalFigure_Slash0);
 

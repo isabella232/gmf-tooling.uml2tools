@@ -1,6 +1,5 @@
 package org.eclipse.uml2.diagram.activity.edit.parts;
 
-import org.eclipse.draw2d.Graphics;
 import org.eclipse.draw2d.IFigure;
 import org.eclipse.draw2d.MarginBorder;
 import org.eclipse.draw2d.RectangleFigure;
@@ -214,13 +213,12 @@ public class PinEditPart extends ShapeNodeEditPart {
 		/**
 		 * @generated
 		 */
+		private WrapLabel fFigureStandalonePinFigure_name;
+
+		/**
+		 * @generated
+		 */
 		public StandalonePinFigure() {
-			this.setFill(true);
-			this.setFillXOR(false);
-			this.setOutline(true);
-			this.setOutlineXOR(false);
-			this.setLineWidth(1);
-			this.setLineStyle(Graphics.LINE_SOLID);
 			createContents();
 		}
 
@@ -235,27 +233,8 @@ public class PinEditPart extends ShapeNodeEditPart {
 			standalonePinFigure_name0.setBorder(new MarginBorder(getMapMode().DPtoLP(0), getMapMode().DPtoLP(5), getMapMode().DPtoLP(0), getMapMode().DPtoLP(5)));
 
 			this.add(standalonePinFigure_name0);
-			setFigureStandalonePinFigure_name(standalonePinFigure_name0);
+			fFigureStandalonePinFigure_name = standalonePinFigure_name0;
 
-		}
-
-		/**
-		 * @generated
-		 */
-		private WrapLabel fStandalonePinFigure_name;
-
-		/**
-		 * @generated
-		 */
-		public WrapLabel getFigureStandalonePinFigure_name() {
-			return fStandalonePinFigure_name;
-		}
-
-		/**
-		 * @generated
-		 */
-		private void setFigureStandalonePinFigure_name(WrapLabel fig) {
-			fStandalonePinFigure_name = fig;
 		}
 
 		/**
@@ -275,6 +254,13 @@ public class PinEditPart extends ShapeNodeEditPart {
 		 */
 		protected void setUseLocalCoordinates(boolean useLocalCoordinates) {
 			myUseLocalCoordinates = useLocalCoordinates;
+		}
+
+		/**
+		 * @generated
+		 */
+		public WrapLabel getFigureStandalonePinFigure_name() {
+			return fFigureStandalonePinFigure_name;
 		}
 
 	}

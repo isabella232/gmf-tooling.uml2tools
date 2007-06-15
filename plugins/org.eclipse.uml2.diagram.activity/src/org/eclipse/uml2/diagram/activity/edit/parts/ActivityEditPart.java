@@ -2,7 +2,6 @@ package org.eclipse.uml2.diagram.activity.edit.parts;
 
 import org.eclipse.draw2d.Border;
 import org.eclipse.draw2d.BorderLayout;
-import org.eclipse.draw2d.Graphics;
 import org.eclipse.draw2d.IFigure;
 import org.eclipse.draw2d.PositionConstants;
 import org.eclipse.draw2d.RectangleFigure;
@@ -257,18 +256,22 @@ public class ActivityEditPart extends AbstractBorderedShapeEditPart {
 		/**
 		 * @generated
 		 */
+		private WrapLabel fFigureActivityFigure_name;
+
+		/**
+		 * @generated
+		 */
+		private RectangleFigure fFigureActivityFigure_Body;
+
+		/**
+		 * @generated
+		 */
 		public ActivityFigure() {
 
 			BorderLayout layoutThis = new BorderLayout();
 			this.setLayoutManager(layoutThis);
 
 			this.setCornerDimensions(new Dimension(getMapMode().DPtoLP(18), getMapMode().DPtoLP(18)));
-			this.setFill(true);
-			this.setFillXOR(false);
-			this.setOutline(true);
-			this.setOutlineXOR(false);
-			this.setLineWidth(1);
-			this.setLineStyle(Graphics.LINE_SOLID);
 			createContents();
 		}
 
@@ -279,12 +282,8 @@ public class ActivityEditPart extends AbstractBorderedShapeEditPart {
 
 			RectangleFigure activityFigureRectangle_name0 = new RectangleFigure();
 			activityFigureRectangle_name0.setFill(false);
-			activityFigureRectangle_name0.setFillXOR(false);
 			activityFigureRectangle_name0.setOutline(false);
-			activityFigureRectangle_name0.setOutlineXOR(false);
-			activityFigureRectangle_name0.setLineWidth(1);
-			activityFigureRectangle_name0.setLineStyle(Graphics.LINE_SOLID);
-			activityFigureRectangle_name0.setBorder(createBorderactivityFigureRectangle_name0());
+			activityFigureRectangle_name0.setBorder(createBorder0());
 
 			this.add(activityFigureRectangle_name0, BorderLayout.TOP);
 
@@ -294,7 +293,7 @@ public class ActivityEditPart extends AbstractBorderedShapeEditPart {
 			activityFigure_name1.setText("");
 
 			activityFigureRectangle_name0.add(activityFigure_name1);
-			setFigureActivityFigure_name(activityFigure_name1);
+			fFigureActivityFigure_name = activityFigure_name1;
 
 			CenterLayout layoutActivityFigure_name1 = new CenterLayout();
 
@@ -302,59 +301,14 @@ public class ActivityEditPart extends AbstractBorderedShapeEditPart {
 
 			RectangleFigure activityFigure_Body0 = new RectangleFigure();
 			activityFigure_Body0.setFill(false);
-			activityFigure_Body0.setFillXOR(false);
 			activityFigure_Body0.setOutline(false);
-			activityFigure_Body0.setOutlineXOR(false);
-			activityFigure_Body0.setLineWidth(1);
-			activityFigure_Body0.setLineStyle(Graphics.LINE_SOLID);
 
 			this.add(activityFigure_Body0, BorderLayout.CENTER);
-			setFigureActivityFigure_Body(activityFigure_Body0);
+			fFigureActivityFigure_Body = activityFigure_Body0;
 
 		}
 
-		/**
-		 * @generated
-		 */
-		private WrapLabel fActivityFigure_name;
-
-		/**
-		 * @generated
-		 */
-		public WrapLabel getFigureActivityFigure_name() {
-			return fActivityFigure_name;
-		}
-
-		/**
-		 * @generated
-		 */
-		private void setFigureActivityFigure_name(WrapLabel fig) {
-			fActivityFigure_name = fig;
-		}
-
-		/**
-		 * @generated
-		 */
-		private RectangleFigure fActivityFigure_Body;
-
-		/**
-		 * @generated
-		 */
-		public RectangleFigure getFigureActivityFigure_Body() {
-			return fActivityFigure_Body;
-		}
-
-		/**
-		 * @generated
-		 */
-		private void setFigureActivityFigure_Body(RectangleFigure fig) {
-			fActivityFigure_Body = fig;
-		}
-
-		/**
-		 * @generated
-		 */
-		private Border createBorderactivityFigureRectangle_name0() {
+		private Border createBorder0() {
 			OneLineBorder result = new OneLineBorder();
 
 			result.setPosition(PositionConstants.NONE);
@@ -379,6 +333,20 @@ public class ActivityEditPart extends AbstractBorderedShapeEditPart {
 		 */
 		protected void setUseLocalCoordinates(boolean useLocalCoordinates) {
 			myUseLocalCoordinates = useLocalCoordinates;
+		}
+
+		/**
+		 * @generated
+		 */
+		public WrapLabel getFigureActivityFigure_name() {
+			return fFigureActivityFigure_name;
+		}
+
+		/**
+		 * @generated
+		 */
+		public RectangleFigure getFigureActivityFigure_Body() {
+			return fFigureActivityFigure_Body;
 		}
 
 	}

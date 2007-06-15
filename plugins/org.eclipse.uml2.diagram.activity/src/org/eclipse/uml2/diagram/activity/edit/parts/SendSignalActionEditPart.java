@@ -211,13 +211,16 @@ public class SendSignalActionEditPart extends ShapeNodeEditPart {
 		/**
 		 * @generated
 		 */
+		private WrapLabel fFigureSendSignalActionFigure_name;
+
+		/**
+		 * @generated
+		 */
 		public SendSignalActionFigure() {
 
 			ToolbarLayout layoutThis = new ToolbarLayout();
 			layoutThis.setStretchMinorAxis(false);
-			layoutThis.setMinorAlignment(ToolbarLayout.ALIGN_CENTER
-
-			);
+			layoutThis.setMinorAlignment(ToolbarLayout.ALIGN_CENTER);
 
 			layoutThis.setSpacing(0);
 			layoutThis.setVertical(true);
@@ -229,12 +232,6 @@ public class SendSignalActionEditPart extends ShapeNodeEditPart {
 			this.addPoint(new Point(getMapMode().DPtoLP(50), getMapMode().DPtoLP(20)));
 			this.addPoint(new Point(getMapMode().DPtoLP(40), getMapMode().DPtoLP(40)));
 			this.addPoint(new Point(getMapMode().DPtoLP(0), getMapMode().DPtoLP(40)));
-			this.setFill(true);
-			this.setFillXOR(false);
-			this.setOutline(true);
-			this.setOutlineXOR(false);
-			this.setLineWidth(1);
-			this.setLineStyle(Graphics.LINE_SOLID);
 			this.setBorder(new MarginBorder(getMapMode().DPtoLP(5), getMapMode().DPtoLP(5), getMapMode().DPtoLP(0), getMapMode().DPtoLP(15)));
 			createContents();
 		}
@@ -248,27 +245,8 @@ public class SendSignalActionEditPart extends ShapeNodeEditPart {
 			sendSignalActionFigure_name0.setText("");
 
 			this.add(sendSignalActionFigure_name0);
-			setFigureSendSignalActionFigure_name(sendSignalActionFigure_name0);
+			fFigureSendSignalActionFigure_name = sendSignalActionFigure_name0;
 
-		}
-
-		/**
-		 * @generated
-		 */
-		private WrapLabel fSendSignalActionFigure_name;
-
-		/**
-		 * @generated
-		 */
-		public WrapLabel getFigureSendSignalActionFigure_name() {
-			return fSendSignalActionFigure_name;
-		}
-
-		/**
-		 * @generated
-		 */
-		private void setFigureSendSignalActionFigure_name(WrapLabel fig) {
-			fSendSignalActionFigure_name = fig;
 		}
 
 		/**
@@ -347,6 +325,13 @@ public class SendSignalActionEditPart extends ShapeNodeEditPart {
 				scaled[i + 1] = (int) Math.floor(scaled[i + 1] * yScale);
 			}
 			return scaled;
+		}
+
+		/**
+		 * @generated
+		 */
+		public WrapLabel getFigureSendSignalActionFigure_name() {
+			return fFigureSendSignalActionFigure_name;
 		}
 
 	}

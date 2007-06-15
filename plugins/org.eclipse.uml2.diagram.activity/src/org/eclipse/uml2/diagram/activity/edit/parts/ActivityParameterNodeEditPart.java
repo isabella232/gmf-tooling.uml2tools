@@ -1,6 +1,5 @@
 package org.eclipse.uml2.diagram.activity.edit.parts;
 
-import org.eclipse.draw2d.Graphics;
 import org.eclipse.draw2d.IFigure;
 import org.eclipse.draw2d.MarginBorder;
 import org.eclipse.draw2d.PositionConstants;
@@ -232,13 +231,12 @@ public class ActivityParameterNodeEditPart extends AbstractBorderItemEditPart {
 		/**
 		 * @generated
 		 */
+		private WrapLabel fFigureActivityParameterFigure_name;
+
+		/**
+		 * @generated
+		 */
 		public ActivityParameterFigure() {
-			this.setFill(true);
-			this.setFillXOR(false);
-			this.setOutline(true);
-			this.setOutlineXOR(false);
-			this.setLineWidth(1);
-			this.setLineStyle(Graphics.LINE_SOLID);
 			createContents();
 		}
 
@@ -252,27 +250,8 @@ public class ActivityParameterNodeEditPart extends AbstractBorderItemEditPart {
 			activityParameterFigure_name0.setBorder(new MarginBorder(getMapMode().DPtoLP(3), getMapMode().DPtoLP(5), getMapMode().DPtoLP(3), getMapMode().DPtoLP(5)));
 
 			this.add(activityParameterFigure_name0);
-			setFigureActivityParameterFigure_name(activityParameterFigure_name0);
+			fFigureActivityParameterFigure_name = activityParameterFigure_name0;
 
-		}
-
-		/**
-		 * @generated
-		 */
-		private WrapLabel fActivityParameterFigure_name;
-
-		/**
-		 * @generated
-		 */
-		public WrapLabel getFigureActivityParameterFigure_name() {
-			return fActivityParameterFigure_name;
-		}
-
-		/**
-		 * @generated
-		 */
-		private void setFigureActivityParameterFigure_name(WrapLabel fig) {
-			fActivityParameterFigure_name = fig;
 		}
 
 		/**
@@ -292,6 +271,13 @@ public class ActivityParameterNodeEditPart extends AbstractBorderItemEditPart {
 		 */
 		protected void setUseLocalCoordinates(boolean useLocalCoordinates) {
 			myUseLocalCoordinates = useLocalCoordinates;
+		}
+
+		/**
+		 * @generated
+		 */
+		public WrapLabel getFigureActivityParameterFigure_name() {
+			return fFigureActivityParameterFigure_name;
 		}
 
 	}

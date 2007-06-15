@@ -62,11 +62,6 @@ public class ObjectNodeSelectionEditPart extends ConnectionNodeEditPart {
 		 * @generated
 		 */
 		public DashedLineConnection() {
-			this.setFill(true);
-			this.setFillXOR(false);
-			this.setOutline(true);
-			this.setOutlineXOR(false);
-			this.setLineWidth(1);
 			this.setLineStyle(Graphics.LINE_DASH);
 
 		}

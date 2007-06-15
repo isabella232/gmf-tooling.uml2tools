@@ -188,12 +188,6 @@ public class AcceptEventAction2EditPart extends AbstractBorderedShapeEditPart {
 			this.addPoint(new Point(getMapMode().DPtoLP(0), getMapMode().DPtoLP(25)));
 			this.addPoint(new Point(getMapMode().DPtoLP(25), getMapMode().DPtoLP(25)));
 			this.addPoint(new Point(getMapMode().DPtoLP(0), getMapMode().DPtoLP(0)));
-			this.setFill(true);
-			this.setFillXOR(false);
-			this.setOutline(true);
-			this.setOutlineXOR(false);
-			this.setLineWidth(1);
-			this.setLineStyle(Graphics.LINE_SOLID);
 		}
 
 		/**

@@ -236,6 +236,11 @@ public class Constraint2EditPart extends ShapeNodeEditPart {
 		/**
 		 * @generated
 		 */
+		private IFigure fContentPane;
+
+		/**
+		 * @generated
+		 */
 		public LocalPostconditionFigure() {
 
 			this.setFixedLabelText("\u00ABlocalPostcondition\u00BB");
@@ -259,6 +264,13 @@ public class Constraint2EditPart extends ShapeNodeEditPart {
 		 */
 		protected void setUseLocalCoordinates(boolean useLocalCoordinates) {
 			myUseLocalCoordinates = useLocalCoordinates;
+		}
+
+		/**
+		 * @generated
+		 */
+		public IFigure getContentPane() {
+			return fContentPane;
 		}
 
 	}

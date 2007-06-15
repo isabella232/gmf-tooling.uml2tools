@@ -219,17 +219,17 @@ public class StructuredActivityNode2EditPart extends ShapeNodeEditPart {
 		/**
 		 * @generated
 		 */
+		private RectangleFigure fFigureStructuredActivityFigure_ContentPane;
+
+		/**
+		 * @generated
+		 */
 		public StructuredActivityFigure() {
 
 			BorderLayout layoutThis = new BorderLayout();
 			this.setLayoutManager(layoutThis);
 
 			this.setCornerDimensions(new Dimension(getMapMode().DPtoLP(8), getMapMode().DPtoLP(8)));
-			this.setFill(true);
-			this.setFillXOR(false);
-			this.setOutline(true);
-			this.setOutlineXOR(false);
-			this.setLineWidth(1);
 			this.setLineStyle(Graphics.LINE_DASH);
 			createContents();
 		}
@@ -241,22 +241,14 @@ public class StructuredActivityNode2EditPart extends ShapeNodeEditPart {
 
 			RectangleFigure structuredActivityFigure_ContentPane0 = new RectangleFigure();
 			structuredActivityFigure_ContentPane0.setFill(false);
-			structuredActivityFigure_ContentPane0.setFillXOR(false);
 			structuredActivityFigure_ContentPane0.setOutline(false);
-			structuredActivityFigure_ContentPane0.setOutlineXOR(false);
-			structuredActivityFigure_ContentPane0.setLineWidth(1);
-			structuredActivityFigure_ContentPane0.setLineStyle(Graphics.LINE_SOLID);
 
 			this.add(structuredActivityFigure_ContentPane0, BorderLayout.CENTER);
-			setFigureStructuredActivityFigure_ContentPane(structuredActivityFigure_ContentPane0);
+			fFigureStructuredActivityFigure_ContentPane = structuredActivityFigure_ContentPane0;
 
 			RectangleFigure aux_StructuredActivityFigure_LabelContainer0 = new RectangleFigure();
 			aux_StructuredActivityFigure_LabelContainer0.setFill(false);
-			aux_StructuredActivityFigure_LabelContainer0.setFillXOR(false);
 			aux_StructuredActivityFigure_LabelContainer0.setOutline(false);
-			aux_StructuredActivityFigure_LabelContainer0.setOutlineXOR(false);
-			aux_StructuredActivityFigure_LabelContainer0.setLineWidth(1);
-			aux_StructuredActivityFigure_LabelContainer0.setLineStyle(Graphics.LINE_SOLID);
 
 			aux_StructuredActivityFigure_LabelContainer0.setBorder(new MarginBorder(getMapMode().DPtoLP(0), getMapMode().DPtoLP(5), getMapMode().DPtoLP(5), getMapMode().DPtoLP(0)));
 
@@ -270,25 +262,6 @@ public class StructuredActivityNode2EditPart extends ShapeNodeEditPart {
 
 			aux_StructuredActivityFigure_LabelContainer0.add(structuredActivityFigure_fixed_structured1, BorderLayout.LEFT);
 
-		}
-
-		/**
-		 * @generated
-		 */
-		private RectangleFigure fStructuredActivityFigure_ContentPane;
-
-		/**
-		 * @generated
-		 */
-		public RectangleFigure getFigureStructuredActivityFigure_ContentPane() {
-			return fStructuredActivityFigure_ContentPane;
-		}
-
-		/**
-		 * @generated
-		 */
-		private void setFigureStructuredActivityFigure_ContentPane(RectangleFigure fig) {
-			fStructuredActivityFigure_ContentPane = fig;
 		}
 
 		/**
@@ -308,6 +281,13 @@ public class StructuredActivityNode2EditPart extends ShapeNodeEditPart {
 		 */
 		protected void setUseLocalCoordinates(boolean useLocalCoordinates) {
 			myUseLocalCoordinates = useLocalCoordinates;
+		}
+
+		/**
+		 * @generated
+		 */
+		public RectangleFigure getFigureStructuredActivityFigure_ContentPane() {
+			return fFigureStructuredActivityFigure_ContentPane;
 		}
 
 	}

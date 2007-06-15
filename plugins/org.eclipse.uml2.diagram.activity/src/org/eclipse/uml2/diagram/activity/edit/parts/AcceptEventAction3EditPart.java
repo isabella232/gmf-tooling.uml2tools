@@ -219,6 +219,11 @@ public class AcceptEventAction3EditPart extends ShapeNodeEditPart {
 		/**
 		 * @generated
 		 */
+		private WrapLabel fFigureAcceptEventActionFigure_name;
+
+		/**
+		 * @generated
+		 */
 		public AcceptEventActionFigure() {
 
 			GridLayout layoutThis = new GridLayout();
@@ -231,12 +236,6 @@ public class AcceptEventAction3EditPart extends ShapeNodeEditPart {
 			this.addPoint(new Point(getMapMode().DPtoLP(50), getMapMode().DPtoLP(40)));
 			this.addPoint(new Point(getMapMode().DPtoLP(0), getMapMode().DPtoLP(40)));
 			this.addPoint(new Point(getMapMode().DPtoLP(10), getMapMode().DPtoLP(20)));
-			this.setFill(true);
-			this.setFillXOR(false);
-			this.setOutline(true);
-			this.setOutlineXOR(false);
-			this.setLineWidth(1);
-			this.setLineStyle(Graphics.LINE_SOLID);
 			this.setBorder(new MarginBorder(getMapMode().DPtoLP(0), getMapMode().DPtoLP(13), getMapMode().DPtoLP(0), getMapMode().DPtoLP(2)));
 			createContents();
 		}
@@ -259,27 +258,8 @@ public class AcceptEventAction3EditPart extends ShapeNodeEditPart {
 			constraintAcceptEventActionFigure_name0.grabExcessVerticalSpace = true;
 			this.add(acceptEventActionFigure_name0, constraintAcceptEventActionFigure_name0);
 
-			setFigureAcceptEventActionFigure_name(acceptEventActionFigure_name0);
+			fFigureAcceptEventActionFigure_name = acceptEventActionFigure_name0;
 
-		}
-
-		/**
-		 * @generated
-		 */
-		private WrapLabel fAcceptEventActionFigure_name;
-
-		/**
-		 * @generated
-		 */
-		public WrapLabel getFigureAcceptEventActionFigure_name() {
-			return fAcceptEventActionFigure_name;
-		}
-
-		/**
-		 * @generated
-		 */
-		private void setFigureAcceptEventActionFigure_name(WrapLabel fig) {
-			fAcceptEventActionFigure_name = fig;
 		}
 
 		/**
@@ -358,6 +338,13 @@ public class AcceptEventAction3EditPart extends ShapeNodeEditPart {
 				scaled[i + 1] = (int) Math.floor(scaled[i + 1] * yScale);
 			}
 			return scaled;
+		}
+
+		/**
+		 * @generated
+		 */
+		public WrapLabel getFigureAcceptEventActionFigure_name() {
+			return fFigureAcceptEventActionFigure_name;
 		}
 
 	}

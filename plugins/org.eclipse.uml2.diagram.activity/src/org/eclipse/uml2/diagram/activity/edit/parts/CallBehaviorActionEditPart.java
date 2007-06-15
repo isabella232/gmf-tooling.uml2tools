@@ -2,7 +2,6 @@ package org.eclipse.uml2.diagram.activity.edit.parts;
 
 import org.eclipse.draw2d.BorderLayout;
 import org.eclipse.draw2d.ColorConstants;
-import org.eclipse.draw2d.Graphics;
 import org.eclipse.draw2d.IFigure;
 import org.eclipse.draw2d.MarginBorder;
 import org.eclipse.draw2d.Polyline;
@@ -258,18 +257,17 @@ public class CallBehaviorActionEditPart extends AbstractBorderedShapeEditPart {
 		/**
 		 * @generated
 		 */
+		private WrapLabel fFigureActionCallBehaviorFigure_name;
+
+		/**
+		 * @generated
+		 */
 		public ActionCallBehaviorFigure() {
 
 			BorderLayout layoutThis = new BorderLayout();
 			this.setLayoutManager(layoutThis);
 
 			this.setCornerDimensions(new Dimension(getMapMode().DPtoLP(16), getMapMode().DPtoLP(16)));
-			this.setFill(true);
-			this.setFillXOR(false);
-			this.setOutline(true);
-			this.setOutlineXOR(false);
-			this.setLineWidth(1);
-			this.setLineStyle(Graphics.LINE_SOLID);
 			createContents();
 		}
 
@@ -280,11 +278,7 @@ public class CallBehaviorActionEditPart extends AbstractBorderedShapeEditPart {
 
 			RectangleFigure actionCallBehaviorFigure_AuxBottom0 = new RectangleFigure();
 			actionCallBehaviorFigure_AuxBottom0.setFill(false);
-			actionCallBehaviorFigure_AuxBottom0.setFillXOR(false);
 			actionCallBehaviorFigure_AuxBottom0.setOutline(false);
-			actionCallBehaviorFigure_AuxBottom0.setOutlineXOR(false);
-			actionCallBehaviorFigure_AuxBottom0.setLineWidth(1);
-			actionCallBehaviorFigure_AuxBottom0.setLineStyle(Graphics.LINE_SOLID);
 
 			this.add(actionCallBehaviorFigure_AuxBottom0, BorderLayout.BOTTOM);
 
@@ -293,11 +287,7 @@ public class CallBehaviorActionEditPart extends AbstractBorderedShapeEditPart {
 
 			RectangleFigure actionCallBehaviorFigure_AuxBottomLeft1 = new RectangleFigure();
 			actionCallBehaviorFigure_AuxBottomLeft1.setFill(false);
-			actionCallBehaviorFigure_AuxBottomLeft1.setFillXOR(false);
 			actionCallBehaviorFigure_AuxBottomLeft1.setOutline(false);
-			actionCallBehaviorFigure_AuxBottomLeft1.setOutlineXOR(false);
-			actionCallBehaviorFigure_AuxBottomLeft1.setLineWidth(1);
-			actionCallBehaviorFigure_AuxBottomLeft1.setLineStyle(Graphics.LINE_SOLID);
 
 			actionCallBehaviorFigure_AuxBottom0.add(actionCallBehaviorFigure_AuxBottomLeft1, BorderLayout.LEFT);
 
@@ -312,12 +302,7 @@ public class CallBehaviorActionEditPart extends AbstractBorderedShapeEditPart {
 			Polyline actionCallBehaviorFigure_IconCenter3 = new Polyline();
 			actionCallBehaviorFigure_IconCenter3.addPoint(new Point(getMapMode().DPtoLP(10), getMapMode().DPtoLP(4)));
 			actionCallBehaviorFigure_IconCenter3.addPoint(new Point(getMapMode().DPtoLP(10), getMapMode().DPtoLP(16)));
-			actionCallBehaviorFigure_IconCenter3.setFill(true);
-			actionCallBehaviorFigure_IconCenter3.setFillXOR(false);
-			actionCallBehaviorFigure_IconCenter3.setOutline(true);
-			actionCallBehaviorFigure_IconCenter3.setOutlineXOR(false);
 			actionCallBehaviorFigure_IconCenter3.setLineWidth(2);
-			actionCallBehaviorFigure_IconCenter3.setLineStyle(Graphics.LINE_SOLID);
 			actionCallBehaviorFigure_IconCenter3.setForegroundColor(ColorConstants.darkBlue);
 
 			actionCallBehaviorFigure_AuxIconOwner2.add(actionCallBehaviorFigure_IconCenter3);
@@ -326,12 +311,7 @@ public class CallBehaviorActionEditPart extends AbstractBorderedShapeEditPart {
 			actionCallBehaviorFigure_IconLeft3.addPoint(new Point(getMapMode().DPtoLP(10), getMapMode().DPtoLP(10)));
 			actionCallBehaviorFigure_IconLeft3.addPoint(new Point(getMapMode().DPtoLP(5), getMapMode().DPtoLP(10)));
 			actionCallBehaviorFigure_IconLeft3.addPoint(new Point(getMapMode().DPtoLP(5), getMapMode().DPtoLP(16)));
-			actionCallBehaviorFigure_IconLeft3.setFill(true);
-			actionCallBehaviorFigure_IconLeft3.setFillXOR(false);
-			actionCallBehaviorFigure_IconLeft3.setOutline(true);
-			actionCallBehaviorFigure_IconLeft3.setOutlineXOR(false);
 			actionCallBehaviorFigure_IconLeft3.setLineWidth(2);
-			actionCallBehaviorFigure_IconLeft3.setLineStyle(Graphics.LINE_SOLID);
 			actionCallBehaviorFigure_IconLeft3.setForegroundColor(ColorConstants.darkBlue);
 
 			actionCallBehaviorFigure_AuxIconOwner2.add(actionCallBehaviorFigure_IconLeft3);
@@ -340,23 +320,14 @@ public class CallBehaviorActionEditPart extends AbstractBorderedShapeEditPart {
 			actionCallBehaviorFigure_IconRight3.addPoint(new Point(getMapMode().DPtoLP(10), getMapMode().DPtoLP(10)));
 			actionCallBehaviorFigure_IconRight3.addPoint(new Point(getMapMode().DPtoLP(15), getMapMode().DPtoLP(10)));
 			actionCallBehaviorFigure_IconRight3.addPoint(new Point(getMapMode().DPtoLP(15), getMapMode().DPtoLP(16)));
-			actionCallBehaviorFigure_IconRight3.setFill(true);
-			actionCallBehaviorFigure_IconRight3.setFillXOR(false);
-			actionCallBehaviorFigure_IconRight3.setOutline(true);
-			actionCallBehaviorFigure_IconRight3.setOutlineXOR(false);
 			actionCallBehaviorFigure_IconRight3.setLineWidth(2);
-			actionCallBehaviorFigure_IconRight3.setLineStyle(Graphics.LINE_SOLID);
 			actionCallBehaviorFigure_IconRight3.setForegroundColor(ColorConstants.darkBlue);
 
 			actionCallBehaviorFigure_AuxIconOwner2.add(actionCallBehaviorFigure_IconRight3);
 
 			RectangleFigure actionCallBehaviorFigure_AuxCenter0 = new RectangleFigure();
 			actionCallBehaviorFigure_AuxCenter0.setFill(false);
-			actionCallBehaviorFigure_AuxCenter0.setFillXOR(false);
 			actionCallBehaviorFigure_AuxCenter0.setOutline(false);
-			actionCallBehaviorFigure_AuxCenter0.setOutlineXOR(false);
-			actionCallBehaviorFigure_AuxCenter0.setLineWidth(1);
-			actionCallBehaviorFigure_AuxCenter0.setLineStyle(Graphics.LINE_SOLID);
 
 			this.add(actionCallBehaviorFigure_AuxCenter0, BorderLayout.CENTER);
 
@@ -370,27 +341,8 @@ public class CallBehaviorActionEditPart extends AbstractBorderedShapeEditPart {
 			actionCallBehaviorFigure_name1.setBorder(new MarginBorder(getMapMode().DPtoLP(0), getMapMode().DPtoLP(5), getMapMode().DPtoLP(0), getMapMode().DPtoLP(5)));
 
 			actionCallBehaviorFigure_AuxCenter0.add(actionCallBehaviorFigure_name1);
-			setFigureActionCallBehaviorFigure_name(actionCallBehaviorFigure_name1);
+			fFigureActionCallBehaviorFigure_name = actionCallBehaviorFigure_name1;
 
-		}
-
-		/**
-		 * @generated
-		 */
-		private WrapLabel fActionCallBehaviorFigure_name;
-
-		/**
-		 * @generated
-		 */
-		public WrapLabel getFigureActionCallBehaviorFigure_name() {
-			return fActionCallBehaviorFigure_name;
-		}
-
-		/**
-		 * @generated
-		 */
-		private void setFigureActionCallBehaviorFigure_name(WrapLabel fig) {
-			fActionCallBehaviorFigure_name = fig;
 		}
 
 		/**
@@ -410,6 +362,13 @@ public class CallBehaviorActionEditPart extends AbstractBorderedShapeEditPart {
 		 */
 		protected void setUseLocalCoordinates(boolean useLocalCoordinates) {
 			myUseLocalCoordinates = useLocalCoordinates;
+		}
+
+		/**
+		 * @generated
+		 */
+		public WrapLabel getFigureActionCallBehaviorFigure_name() {
+			return fFigureActionCallBehaviorFigure_name;
 		}
 
 	}

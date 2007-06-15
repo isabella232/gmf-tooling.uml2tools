@@ -2,9 +2,9 @@ package org.eclipse.uml2.diagram.activity.edit.parts;
 
 import org.eclipse.draw2d.ColorConstants;
 import org.eclipse.draw2d.Connection;
-import org.eclipse.draw2d.Graphics;
 import org.eclipse.draw2d.PolylineDecoration;
 import org.eclipse.draw2d.RotatableDecoration;
+import org.eclipse.draw2d.geometry.Point;
 import org.eclipse.draw2d.geometry.PointList;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.ConnectionNodeEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles;
@@ -66,15 +66,24 @@ public class ControlFlowEditPart extends ConnectionNodeEditPart {
 		 * @generated
 		 */
 		public ActivityEdgeConnection() {
-			this.setFill(true);
-			this.setFillXOR(false);
-			this.setOutline(true);
-			this.setOutlineXOR(false);
-			this.setLineWidth(1);
-			this.setLineStyle(Graphics.LINE_SOLID);
 			this.setForegroundColor(ColorConstants.black);
 
+			createContents();
 			setTargetDecoration(createTargetDecoration());
+		}
+
+		/**
+		 * @generated
+		 */
+		private void createContents() {
+
+			PolylineDecoration aux_ActivityEdgeConnection_Arrow0 = new PolylineDecoration();
+			aux_ActivityEdgeConnection_Arrow0.addPoint(new Point(getMapMode().DPtoLP(-2), getMapMode().DPtoLP(-1)));
+			aux_ActivityEdgeConnection_Arrow0.addPoint(new Point(getMapMode().DPtoLP(0), getMapMode().DPtoLP(0)));
+			aux_ActivityEdgeConnection_Arrow0.addPoint(new Point(getMapMode().DPtoLP(-2), getMapMode().DPtoLP(1)));
+
+			this.add(aux_ActivityEdgeConnection_Arrow0);
+
 		}
 
 		/**
@@ -82,12 +91,6 @@ public class ControlFlowEditPart extends ConnectionNodeEditPart {
 		 */
 		private RotatableDecoration createTargetDecoration() {
 			PolylineDecoration df = new PolylineDecoration();
-			df.setFill(true);
-			df.setFillXOR(false);
-			df.setOutline(true);
-			df.setOutlineXOR(false);
-			df.setLineWidth(1);
-			df.setLineStyle(Graphics.LINE_SOLID);
 			PointList pl = new PointList();
 			pl.addPoint(getMapMode().DPtoLP(-2), getMapMode().DPtoLP(-1));
 			pl.addPoint(getMapMode().DPtoLP(0), getMapMode().DPtoLP(0));

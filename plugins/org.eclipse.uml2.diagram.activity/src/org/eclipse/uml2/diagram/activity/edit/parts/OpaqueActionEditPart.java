@@ -1,6 +1,5 @@
 package org.eclipse.uml2.diagram.activity.edit.parts;
 
-import org.eclipse.draw2d.Graphics;
 import org.eclipse.draw2d.IFigure;
 import org.eclipse.draw2d.MarginBorder;
 import org.eclipse.draw2d.PositionConstants;
@@ -240,6 +239,11 @@ public class OpaqueActionEditPart extends AbstractBorderedShapeEditPart {
 		/**
 		 * @generated
 		 */
+		private WrapLabel fFigureActionBaseFigure_name;
+
+		/**
+		 * @generated
+		 */
 		public ActionBaseFigure() {
 
 			CenterLayout layoutThis = new CenterLayout();
@@ -247,12 +251,6 @@ public class OpaqueActionEditPart extends AbstractBorderedShapeEditPart {
 			this.setLayoutManager(layoutThis);
 
 			this.setCornerDimensions(new Dimension(getMapMode().DPtoLP(16), getMapMode().DPtoLP(16)));
-			this.setFill(true);
-			this.setFillXOR(false);
-			this.setOutline(true);
-			this.setOutlineXOR(false);
-			this.setLineWidth(1);
-			this.setLineStyle(Graphics.LINE_SOLID);
 			createContents();
 		}
 
@@ -267,27 +265,8 @@ public class OpaqueActionEditPart extends AbstractBorderedShapeEditPart {
 			actionBaseFigure_name0.setBorder(new MarginBorder(getMapMode().DPtoLP(0), getMapMode().DPtoLP(5), getMapMode().DPtoLP(0), getMapMode().DPtoLP(5)));
 
 			this.add(actionBaseFigure_name0);
-			setFigureActionBaseFigure_name(actionBaseFigure_name0);
+			fFigureActionBaseFigure_name = actionBaseFigure_name0;
 
-		}
-
-		/**
-		 * @generated
-		 */
-		private WrapLabel fActionBaseFigure_name;
-
-		/**
-		 * @generated
-		 */
-		public WrapLabel getFigureActionBaseFigure_name() {
-			return fActionBaseFigure_name;
-		}
-
-		/**
-		 * @generated
-		 */
-		private void setFigureActionBaseFigure_name(WrapLabel fig) {
-			fActionBaseFigure_name = fig;
 		}
 
 		/**
@@ -307,6 +286,13 @@ public class OpaqueActionEditPart extends AbstractBorderedShapeEditPart {
 		 */
 		protected void setUseLocalCoordinates(boolean useLocalCoordinates) {
 			myUseLocalCoordinates = useLocalCoordinates;
+		}
+
+		/**
+		 * @generated
+		 */
+		public WrapLabel getFigureActionBaseFigure_name() {
+			return fFigureActionBaseFigure_name;
 		}
 
 	}
