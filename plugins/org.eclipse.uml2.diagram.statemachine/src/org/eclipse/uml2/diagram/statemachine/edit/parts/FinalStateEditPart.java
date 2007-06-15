@@ -2,7 +2,6 @@ package org.eclipse.uml2.diagram.statemachine.edit.parts;
 
 import org.eclipse.draw2d.ColorConstants;
 import org.eclipse.draw2d.Ellipse;
-import org.eclipse.draw2d.Graphics;
 import org.eclipse.draw2d.IFigure;
 import org.eclipse.draw2d.PositionConstants;
 import org.eclipse.draw2d.StackLayout;
@@ -171,12 +170,6 @@ public class FinalStateEditPart extends ShapeNodeEditPart {
 
 			this.setLayoutManager(layoutThis);
 
-			this.setFill(true);
-			this.setFillXOR(false);
-			this.setOutline(true);
-			this.setOutlineXOR(false);
-			this.setLineWidth(1);
-			this.setLineStyle(Graphics.LINE_SOLID);
 			this.setForegroundColor(ColorConstants.black);
 			this.setPreferredSize(new Dimension(getMapMode().DPtoLP(23), getMapMode().DPtoLP(23)));
 			this.setMaximumSize(new Dimension(getMapMode().DPtoLP(23), getMapMode().DPtoLP(23)));
@@ -190,12 +183,6 @@ public class FinalStateEditPart extends ShapeNodeEditPart {
 		private void createContents() {
 
 			Ellipse activityFinalFigure_inner0 = new Ellipse();
-			activityFinalFigure_inner0.setFill(true);
-			activityFinalFigure_inner0.setFillXOR(false);
-			activityFinalFigure_inner0.setOutline(true);
-			activityFinalFigure_inner0.setOutlineXOR(false);
-			activityFinalFigure_inner0.setLineWidth(1);
-			activityFinalFigure_inner0.setLineStyle(Graphics.LINE_SOLID);
 			activityFinalFigure_inner0.setBackgroundColor(ColorConstants.black);
 			activityFinalFigure_inner0.setPreferredSize(new Dimension(getMapMode().DPtoLP(15), getMapMode().DPtoLP(15)));
 			activityFinalFigure_inner0.setMaximumSize(new Dimension(getMapMode().DPtoLP(15), getMapMode().DPtoLP(15)));

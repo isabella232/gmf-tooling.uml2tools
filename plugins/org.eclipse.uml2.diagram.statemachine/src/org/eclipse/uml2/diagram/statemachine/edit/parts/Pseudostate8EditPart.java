@@ -159,12 +159,6 @@ public class Pseudostate8EditPart extends ShapeNodeEditPart {
 			this.addPoint(new Point(getMapMode().DPtoLP(40), getMapMode().DPtoLP(0)));
 			this.addPoint(new Point(getMapMode().DPtoLP(0), getMapMode().DPtoLP(30)));
 			this.addPoint(new Point(getMapMode().DPtoLP(20), getMapMode().DPtoLP(15)));
-			this.setFill(true);
-			this.setFillXOR(false);
-			this.setOutline(true);
-			this.setOutlineXOR(false);
-			this.setLineWidth(1);
-			this.setLineStyle(Graphics.LINE_SOLID);
 			this.setPreferredSize(new Dimension(getMapMode().DPtoLP(30), getMapMode().DPtoLP(25)));
 			this.setMaximumSize(new Dimension(getMapMode().DPtoLP(30), getMapMode().DPtoLP(25)));
 			this.setMinimumSize(new Dimension(getMapMode().DPtoLP(30), getMapMode().DPtoLP(25)));

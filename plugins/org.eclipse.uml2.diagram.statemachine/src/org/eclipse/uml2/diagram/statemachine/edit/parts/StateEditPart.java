@@ -1,6 +1,5 @@
 package org.eclipse.uml2.diagram.statemachine.edit.parts;
 
-import org.eclipse.draw2d.Graphics;
 import org.eclipse.draw2d.IFigure;
 import org.eclipse.draw2d.MarginBorder;
 import org.eclipse.draw2d.RoundedRectangle;
@@ -213,16 +212,15 @@ public class StateEditPart extends ShapeNodeEditPart {
 		/**
 		 * @generated
 		 */
+		private WrapLabel fFigureSimpleStateFigure_name;
+
+		/**
+		 * @generated
+		 */
 		public SimpleStateFigure() {
 
 			this.setLayoutManager(new StackLayout());
 			this.setCornerDimensions(new Dimension(getMapMode().DPtoLP(18), getMapMode().DPtoLP(18)));
-			this.setFill(true);
-			this.setFillXOR(false);
-			this.setOutline(true);
-			this.setOutlineXOR(false);
-			this.setLineWidth(1);
-			this.setLineStyle(Graphics.LINE_SOLID);
 			this.setPreferredSize(new Dimension(getMapMode().DPtoLP(60), getMapMode().DPtoLP(30)));
 			this.setBorder(new MarginBorder(getMapMode().DPtoLP(0), getMapMode().DPtoLP(4), getMapMode().DPtoLP(0), getMapMode().DPtoLP(4)));
 			createContents();
@@ -237,27 +235,8 @@ public class StateEditPart extends ShapeNodeEditPart {
 			simpleStateFigure_name0.setText("");
 
 			this.add(simpleStateFigure_name0);
-			setFigureSimpleStateFigure_name(simpleStateFigure_name0);
+			fFigureSimpleStateFigure_name = simpleStateFigure_name0;
 
-		}
-
-		/**
-		 * @generated
-		 */
-		private WrapLabel fSimpleStateFigure_name;
-
-		/**
-		 * @generated
-		 */
-		public WrapLabel getFigureSimpleStateFigure_name() {
-			return fSimpleStateFigure_name;
-		}
-
-		/**
-		 * @generated
-		 */
-		private void setFigureSimpleStateFigure_name(WrapLabel fig) {
-			fSimpleStateFigure_name = fig;
 		}
 
 		/**
@@ -277,6 +256,13 @@ public class StateEditPart extends ShapeNodeEditPart {
 		 */
 		protected void setUseLocalCoordinates(boolean useLocalCoordinates) {
 			myUseLocalCoordinates = useLocalCoordinates;
+		}
+
+		/**
+		 * @generated
+		 */
+		public WrapLabel getFigureSimpleStateFigure_name() {
+			return fFigureSimpleStateFigure_name;
 		}
 
 	}

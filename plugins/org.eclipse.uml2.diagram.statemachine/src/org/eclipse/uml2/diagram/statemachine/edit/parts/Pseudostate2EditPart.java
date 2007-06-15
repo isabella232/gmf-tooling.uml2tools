@@ -157,12 +157,6 @@ public class Pseudostate2EditPart extends ShapeNodeEditPart {
 		public ShallowHistoryFigure() {
 
 			this.setLayoutManager(new StackLayout());
-			this.setFill(true);
-			this.setFillXOR(false);
-			this.setOutline(true);
-			this.setOutlineXOR(false);
-			this.setLineWidth(1);
-			this.setLineStyle(Graphics.LINE_SOLID);
 			this.setPreferredSize(new Dimension(getMapMode().DPtoLP(25), getMapMode().DPtoLP(25)));
 			this.setMaximumSize(new Dimension(getMapMode().DPtoLP(25), getMapMode().DPtoLP(25)));
 			this.setMinimumSize(new Dimension(getMapMode().DPtoLP(25), getMapMode().DPtoLP(25)));
@@ -266,12 +260,6 @@ public class Pseudostate2EditPart extends ShapeNodeEditPart {
 			shallowHistoryFigure_Letter0.addPoint(new Point(getMapMode().DPtoLP(40), getMapMode().DPtoLP(20)));
 			shallowHistoryFigure_Letter0.addPoint(new Point(getMapMode().DPtoLP(0), getMapMode().DPtoLP(20)));
 			shallowHistoryFigure_Letter0.addPoint(new Point(getMapMode().DPtoLP(0), getMapMode().DPtoLP(0)));
-			shallowHistoryFigure_Letter0.setFill(true);
-			shallowHistoryFigure_Letter0.setFillXOR(false);
-			shallowHistoryFigure_Letter0.setOutline(true);
-			shallowHistoryFigure_Letter0.setOutlineXOR(false);
-			shallowHistoryFigure_Letter0.setLineWidth(1);
-			shallowHistoryFigure_Letter0.setLineStyle(Graphics.LINE_SOLID);
 
 			this.add(shallowHistoryFigure_Letter0);
 

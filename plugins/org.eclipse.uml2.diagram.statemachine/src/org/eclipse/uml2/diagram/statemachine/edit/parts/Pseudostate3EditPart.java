@@ -168,12 +168,6 @@ public class Pseudostate3EditPart extends ShapeNodeEditPart {
 			layoutThis.marginHeight = 0;
 			this.setLayoutManager(layoutThis);
 
-			this.setFill(true);
-			this.setFillXOR(false);
-			this.setOutline(true);
-			this.setOutlineXOR(false);
-			this.setLineWidth(1);
-			this.setLineStyle(Graphics.LINE_SOLID);
 			this.setPreferredSize(new Dimension(getMapMode().DPtoLP(25), getMapMode().DPtoLP(25)));
 			this.setMaximumSize(new Dimension(getMapMode().DPtoLP(25), getMapMode().DPtoLP(25)));
 			this.setMinimumSize(new Dimension(getMapMode().DPtoLP(25), getMapMode().DPtoLP(25)));
@@ -277,12 +271,6 @@ public class Pseudostate3EditPart extends ShapeNodeEditPart {
 			deepHistoryFigure_Letter0.addPoint(new Point(getMapMode().DPtoLP(40), getMapMode().DPtoLP(20)));
 			deepHistoryFigure_Letter0.addPoint(new Point(getMapMode().DPtoLP(0), getMapMode().DPtoLP(20)));
 			deepHistoryFigure_Letter0.addPoint(new Point(getMapMode().DPtoLP(0), getMapMode().DPtoLP(0)));
-			deepHistoryFigure_Letter0.setFill(true);
-			deepHistoryFigure_Letter0.setFillXOR(false);
-			deepHistoryFigure_Letter0.setOutline(true);
-			deepHistoryFigure_Letter0.setOutlineXOR(false);
-			deepHistoryFigure_Letter0.setLineWidth(1);
-			deepHistoryFigure_Letter0.setLineStyle(Graphics.LINE_SOLID);
 			deepHistoryFigure_Letter0.setPreferredSize(new Dimension(getMapMode().DPtoLP(15), getMapMode().DPtoLP(15)));
 			deepHistoryFigure_Letter0.setMaximumSize(new Dimension(getMapMode().DPtoLP(15), getMapMode().DPtoLP(15)));
 
@@ -298,11 +286,7 @@ public class Pseudostate3EditPart extends ShapeNodeEditPart {
 
 			RectangleFigure deepHistoryFigure_AsteriskContainer0 = new RectangleFigure();
 			deepHistoryFigure_AsteriskContainer0.setFill(false);
-			deepHistoryFigure_AsteriskContainer0.setFillXOR(false);
 			deepHistoryFigure_AsteriskContainer0.setOutline(false);
-			deepHistoryFigure_AsteriskContainer0.setOutlineXOR(false);
-			deepHistoryFigure_AsteriskContainer0.setLineWidth(1);
-			deepHistoryFigure_AsteriskContainer0.setLineStyle(Graphics.LINE_SOLID);
 			deepHistoryFigure_AsteriskContainer0.setPreferredSize(new Dimension(getMapMode().DPtoLP(15), getMapMode().DPtoLP(15)));
 			deepHistoryFigure_AsteriskContainer0.setMinimumSize(new Dimension(getMapMode().DPtoLP(15), getMapMode().DPtoLP(15)));
 			deepHistoryFigure_AsteriskContainer0.setBorder(new MarginBorder(getMapMode().DPtoLP(0), getMapMode().DPtoLP(2), getMapMode().DPtoLP(5), getMapMode().DPtoLP(0)));
@@ -411,12 +395,6 @@ public class Pseudostate3EditPart extends ShapeNodeEditPart {
 			deepHistoryFigure_Asterisk1.addPoint(new Point(getMapMode().DPtoLP(40), getMapMode().DPtoLP(20)));
 			deepHistoryFigure_Asterisk1.addPoint(new Point(getMapMode().DPtoLP(0), getMapMode().DPtoLP(20)));
 			deepHistoryFigure_Asterisk1.addPoint(new Point(getMapMode().DPtoLP(20), getMapMode().DPtoLP(20)));
-			deepHistoryFigure_Asterisk1.setFill(true);
-			deepHistoryFigure_Asterisk1.setFillXOR(false);
-			deepHistoryFigure_Asterisk1.setOutline(true);
-			deepHistoryFigure_Asterisk1.setOutlineXOR(false);
-			deepHistoryFigure_Asterisk1.setLineWidth(1);
-			deepHistoryFigure_Asterisk1.setLineStyle(Graphics.LINE_SOLID);
 
 			deepHistoryFigure_AsteriskContainer0.add(deepHistoryFigure_Asterisk1);
 

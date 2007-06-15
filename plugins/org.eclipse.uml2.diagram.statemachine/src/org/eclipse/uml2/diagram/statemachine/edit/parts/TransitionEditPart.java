@@ -1,9 +1,9 @@
 package org.eclipse.uml2.diagram.statemachine.edit.parts;
 
 import org.eclipse.draw2d.Connection;
-import org.eclipse.draw2d.Graphics;
 import org.eclipse.draw2d.PolylineDecoration;
 import org.eclipse.draw2d.RotatableDecoration;
+import org.eclipse.draw2d.geometry.Point;
 import org.eclipse.draw2d.geometry.PointList;
 import org.eclipse.gef.EditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.ConnectionNodeEditPart;
@@ -62,6 +62,7 @@ public class TransitionEditPart extends ConnectionNodeEditPart {
 	 * 
 	 * @generated
 	 */
+
 	protected Connection createConnectionFigure() {
 		return new TransitionConnection();
 	}
@@ -82,14 +83,23 @@ public class TransitionEditPart extends ConnectionNodeEditPart {
 		 * @generated
 		 */
 		public TransitionConnection() {
-			this.setFill(true);
-			this.setFillXOR(false);
-			this.setOutline(true);
-			this.setOutlineXOR(false);
-			this.setLineWidth(1);
-			this.setLineStyle(Graphics.LINE_SOLID);
 
+			createContents();
 			setTargetDecoration(createTargetDecoration());
+		}
+
+		/**
+		 * @generated
+		 */
+		private void createContents() {
+
+			PolylineDecoration transitionConnection_Arrow0 = new PolylineDecoration();
+			transitionConnection_Arrow0.addPoint(new Point(getMapMode().DPtoLP(-2), getMapMode().DPtoLP(-1)));
+			transitionConnection_Arrow0.addPoint(new Point(getMapMode().DPtoLP(0), getMapMode().DPtoLP(0)));
+			transitionConnection_Arrow0.addPoint(new Point(getMapMode().DPtoLP(-2), getMapMode().DPtoLP(1)));
+
+			this.add(transitionConnection_Arrow0);
+
 		}
 
 		/**
@@ -97,12 +107,6 @@ public class TransitionEditPart extends ConnectionNodeEditPart {
 		 */
 		private RotatableDecoration createTargetDecoration() {
 			PolylineDecoration df = new PolylineDecoration();
-			df.setFill(true);
-			df.setFillXOR(false);
-			df.setOutline(true);
-			df.setOutlineXOR(false);
-			df.setLineWidth(1);
-			df.setLineStyle(Graphics.LINE_SOLID);
 			PointList pl = new PointList();
 			pl.addPoint(getMapMode().DPtoLP(-2), getMapMode().DPtoLP(-1));
 			pl.addPoint(getMapMode().DPtoLP(0), getMapMode().DPtoLP(0));

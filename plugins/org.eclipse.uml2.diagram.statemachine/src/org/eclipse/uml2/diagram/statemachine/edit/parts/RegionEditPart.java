@@ -212,12 +212,12 @@ public class RegionEditPart extends ShapeNodeEditPart {
 		/**
 		 * @generated
 		 */
+		private RectangleFigure fFigureRegionFigure_Compartment;
+
+		/**
+		 * @generated
+		 */
 		public RegionFigure() {
-			this.setFill(true);
-			this.setFillXOR(false);
-			this.setOutline(true);
-			this.setOutlineXOR(false);
-			this.setLineWidth(1);
 			this.setLineStyle(Graphics.LINE_DASH);
 			createContents();
 		}
@@ -229,34 +229,11 @@ public class RegionEditPart extends ShapeNodeEditPart {
 
 			RectangleFigure regionFigure_Compartment0 = new RectangleFigure();
 			regionFigure_Compartment0.setFill(false);
-			regionFigure_Compartment0.setFillXOR(false);
 			regionFigure_Compartment0.setOutline(false);
-			regionFigure_Compartment0.setOutlineXOR(false);
-			regionFigure_Compartment0.setLineWidth(1);
-			regionFigure_Compartment0.setLineStyle(Graphics.LINE_SOLID);
 
 			this.add(regionFigure_Compartment0);
-			setFigureRegionFigure_Compartment(regionFigure_Compartment0);
+			fFigureRegionFigure_Compartment = regionFigure_Compartment0;
 
-		}
-
-		/**
-		 * @generated
-		 */
-		private RectangleFigure fRegionFigure_Compartment;
-
-		/**
-		 * @generated
-		 */
-		public RectangleFigure getFigureRegionFigure_Compartment() {
-			return fRegionFigure_Compartment;
-		}
-
-		/**
-		 * @generated
-		 */
-		private void setFigureRegionFigure_Compartment(RectangleFigure fig) {
-			fRegionFigure_Compartment = fig;
 		}
 
 		/**
@@ -276,6 +253,13 @@ public class RegionEditPart extends ShapeNodeEditPart {
 		 */
 		protected void setUseLocalCoordinates(boolean useLocalCoordinates) {
 			myUseLocalCoordinates = useLocalCoordinates;
+		}
+
+		/**
+		 * @generated
+		 */
+		public RectangleFigure getFigureRegionFigure_Compartment() {
+			return fFigureRegionFigure_Compartment;
 		}
 
 	}

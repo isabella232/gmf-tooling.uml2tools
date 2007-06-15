@@ -1,9 +1,7 @@
 package org.eclipse.uml2.diagram.statemachine.edit.policies;
 
 import org.eclipse.gef.commands.Command;
-
 import org.eclipse.gmf.runtime.emf.type.core.requests.CreateElementRequest;
-
 import org.eclipse.uml2.diagram.statemachine.edit.commands.FinalStateCreateCommand;
 import org.eclipse.uml2.diagram.statemachine.edit.commands.Pseudostate2CreateCommand;
 import org.eclipse.uml2.diagram.statemachine.edit.commands.Pseudostate3CreateCommand;
@@ -16,9 +14,7 @@ import org.eclipse.uml2.diagram.statemachine.edit.commands.PseudostateCreateComm
 import org.eclipse.uml2.diagram.statemachine.edit.commands.State2CreateCommand;
 import org.eclipse.uml2.diagram.statemachine.edit.commands.State3CreateCommand;
 import org.eclipse.uml2.diagram.statemachine.edit.commands.StateCreateCommand;
-
 import org.eclipse.uml2.diagram.statemachine.providers.UMLElementTypes;
-
 import org.eclipse.uml2.uml.UMLPackage;
 
 /**
@@ -104,4 +100,5 @@ public class RegionSubvertices2ItemSemanticEditPolicy extends UMLBaseItemSemanti
 		}
 		return super.getCreateCommand(req);
 	}
+
 }

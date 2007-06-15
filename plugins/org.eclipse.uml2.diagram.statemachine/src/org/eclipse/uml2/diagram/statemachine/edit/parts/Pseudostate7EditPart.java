@@ -156,12 +156,6 @@ public class Pseudostate7EditPart extends ShapeNodeEditPart {
 			this.addPoint(new Point(getMapMode().DPtoLP(40), getMapMode().DPtoLP(20)));
 			this.addPoint(new Point(getMapMode().DPtoLP(20), getMapMode().DPtoLP(40)));
 			this.addPoint(new Point(getMapMode().DPtoLP(0), getMapMode().DPtoLP(20)));
-			this.setFill(true);
-			this.setFillXOR(false);
-			this.setOutline(true);
-			this.setOutlineXOR(false);
-			this.setLineWidth(1);
-			this.setLineStyle(Graphics.LINE_SOLID);
 		}
 
 		/**

@@ -189,12 +189,6 @@ public class ConnectionPointReference2EditPart extends BorderedBorderItemEditPar
 		public ExitPointFigure() {
 
 			this.setLayoutManager(new StackLayout());
-			this.setFill(true);
-			this.setFillXOR(false);
-			this.setOutline(true);
-			this.setOutlineXOR(false);
-			this.setLineWidth(1);
-			this.setLineStyle(Graphics.LINE_SOLID);
 			this.setPreferredSize(new Dimension(getMapMode().DPtoLP(15), getMapMode().DPtoLP(15)));
 			this.setMaximumSize(new Dimension(getMapMode().DPtoLP(15), getMapMode().DPtoLP(15)));
 			this.setMinimumSize(new Dimension(getMapMode().DPtoLP(15), getMapMode().DPtoLP(15)));
@@ -296,12 +290,6 @@ public class ConnectionPointReference2EditPart extends BorderedBorderItemEditPar
 			exitPointFigure_Cross0.addPoint(new Point(getMapMode().DPtoLP(40), getMapMode().DPtoLP(0)));
 			exitPointFigure_Cross0.addPoint(new Point(getMapMode().DPtoLP(0), getMapMode().DPtoLP(40)));
 			exitPointFigure_Cross0.addPoint(new Point(getMapMode().DPtoLP(20), getMapMode().DPtoLP(20)));
-			exitPointFigure_Cross0.setFill(true);
-			exitPointFigure_Cross0.setFillXOR(false);
-			exitPointFigure_Cross0.setOutline(true);
-			exitPointFigure_Cross0.setOutlineXOR(false);
-			exitPointFigure_Cross0.setLineWidth(1);
-			exitPointFigure_Cross0.setLineStyle(Graphics.LINE_SOLID);
 
 			this.add(exitPointFigure_Cross0);
 

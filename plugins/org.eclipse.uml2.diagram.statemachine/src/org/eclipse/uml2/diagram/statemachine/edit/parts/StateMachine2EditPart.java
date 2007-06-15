@@ -263,6 +263,16 @@ public class StateMachine2EditPart extends AbstractBorderedShapeEditPart {
 		/**
 		 * @generated
 		 */
+		private WrapLabel fFigureCompositeStateFigure_name;
+
+		/**
+		 * @generated
+		 */
+		private RectangleFigure fFigureCompositeStateFigure_Body;
+
+		/**
+		 * @generated
+		 */
 		public CompositeStateFigure() {
 
 			org.eclipse.draw2d.GridLayout layoutThis = new org.eclipse.draw2d.GridLayout();
@@ -275,12 +285,6 @@ public class StateMachine2EditPart extends AbstractBorderedShapeEditPart {
 			this.setLayoutManager(layoutThis);
 
 			this.setCornerDimensions(new Dimension(getMapMode().DPtoLP(18), getMapMode().DPtoLP(18)));
-			this.setFill(true);
-			this.setFillXOR(false);
-			this.setOutline(true);
-			this.setOutlineXOR(false);
-			this.setLineWidth(1);
-			this.setLineStyle(Graphics.LINE_SOLID);
 			this.setBorder(new MarginBorder(getMapMode().DPtoLP(0), getMapMode().DPtoLP(2), getMapMode().DPtoLP(6), getMapMode().DPtoLP(2)));
 			createContents();
 		}
@@ -292,11 +296,7 @@ public class StateMachine2EditPart extends AbstractBorderedShapeEditPart {
 
 			RectangleFigure compositeStateFigure_NameContainer0 = new RectangleFigure();
 			compositeStateFigure_NameContainer0.setFill(false);
-			compositeStateFigure_NameContainer0.setFillXOR(false);
 			compositeStateFigure_NameContainer0.setOutline(false);
-			compositeStateFigure_NameContainer0.setOutlineXOR(false);
-			compositeStateFigure_NameContainer0.setLineWidth(1);
-			compositeStateFigure_NameContainer0.setLineStyle(Graphics.LINE_SOLID);
 
 			GridData constraintCompositeStateFigure_NameContainer0 = new GridData();
 			constraintCompositeStateFigure_NameContainer0.verticalAlignment = GridData.FILL;
@@ -330,15 +330,10 @@ public class StateMachine2EditPart extends AbstractBorderedShapeEditPart {
 			constraintCompositeStateFigure_name1.grabExcessVerticalSpace = false;
 			compositeStateFigure_NameContainer0.add(compositeStateFigure_name1, constraintCompositeStateFigure_name1);
 
-			setFigureCompositeStateFigure_name(compositeStateFigure_name1);
+			fFigureCompositeStateFigure_name = compositeStateFigure_name1;
 
 			RectangleFigure compositeStateFigure_Body0 = new RectangleFigure();
-			compositeStateFigure_Body0.setFill(true);
-			compositeStateFigure_Body0.setFillXOR(false);
 			compositeStateFigure_Body0.setOutline(false);
-			compositeStateFigure_Body0.setOutlineXOR(false);
-			compositeStateFigure_Body0.setLineWidth(1);
-			compositeStateFigure_Body0.setLineStyle(Graphics.LINE_SOLID);
 
 			GridData constraintCompositeStateFigure_Body0 = new GridData();
 			constraintCompositeStateFigure_Body0.verticalAlignment = GridData.FILL;
@@ -350,7 +345,7 @@ public class StateMachine2EditPart extends AbstractBorderedShapeEditPart {
 			constraintCompositeStateFigure_Body0.grabExcessVerticalSpace = true;
 			this.add(compositeStateFigure_Body0, constraintCompositeStateFigure_Body0);
 
-			setFigureCompositeStateFigure_Body(compositeStateFigure_Body0);
+			fFigureCompositeStateFigure_Body = compositeStateFigure_Body0;
 
 			LaneLayout layoutCompositeStateFigure_Body0 = new LaneLayout();
 
@@ -361,39 +356,15 @@ public class StateMachine2EditPart extends AbstractBorderedShapeEditPart {
 		/**
 		 * @generated
 		 */
-		private WrapLabel fCompositeStateFigure_name;
-
-		/**
-		 * @generated
-		 */
 		public WrapLabel getFigureCompositeStateFigure_name() {
-			return fCompositeStateFigure_name;
+			return fFigureCompositeStateFigure_name;
 		}
-
-		/**
-		 * @generated
-		 */
-		private void setFigureCompositeStateFigure_name(WrapLabel fig) {
-			fCompositeStateFigure_name = fig;
-		}
-
-		/**
-		 * @generated
-		 */
-		private RectangleFigure fCompositeStateFigure_Body;
 
 		/**
 		 * @generated
 		 */
 		public RectangleFigure getFigureCompositeStateFigure_Body() {
-			return fCompositeStateFigure_Body;
-		}
-
-		/**
-		 * @generated
-		 */
-		private void setFigureCompositeStateFigure_Body(RectangleFigure fig) {
-			fCompositeStateFigure_Body = fig;
+			return fFigureCompositeStateFigure_Body;
 		}
 
 		/**
