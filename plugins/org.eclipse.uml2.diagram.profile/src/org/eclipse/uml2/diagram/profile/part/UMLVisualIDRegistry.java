@@ -2,7 +2,6 @@ package org.eclipse.uml2.diagram.profile.part;
 
 import org.eclipse.core.runtime.Platform;
 import org.eclipse.emf.ecore.EAnnotation;
-import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.gmf.runtime.notation.Diagram;
 import org.eclipse.gmf.runtime.notation.View;
@@ -84,7 +83,7 @@ public class UMLVisualIDRegistry {
 				return -1;
 			}
 		}
-		return getVisualID(view.getType());
+		return org.eclipse.uml2.diagram.profile.part.UMLVisualIDRegistry.getVisualID(view.getType());
 	}
 
 	/**
@@ -130,128 +129,45 @@ public class UMLVisualIDRegistry {
 		if (domainElement == null) {
 			return -1;
 		}
-		EClass domainElementMetaclass = domainElement.eClass();
-		return getDiagramVisualID(domainElement, domainElementMetaclass);
-	}
-
-	/**
-	 * @generated
-	 */
-	private static int getDiagramVisualID(EObject domainElement, EClass domainElementMetaclass) {
-		if (UMLPackage.eINSTANCE.getProfile().isSuperTypeOf(domainElementMetaclass) && isDiagram((Profile) domainElement)) {
+		if (UMLPackage.eINSTANCE.getProfile().isSuperTypeOf(domainElement.eClass()) && isDiagram((Profile) domainElement)) {
 			return ProfileEditPart.VISUAL_ID;
 		}
-		return getUnrecognizedDiagramID(domainElement);
+		return -1;
 	}
 
 	/**
 	 * @generated
 	 */
 	public static int getNodeVisualID(View containerView, EObject domainElement) {
-		if (domainElement == null) {
+		if (domainElement == null || !ProfileEditPart.MODEL_ID.equals(org.eclipse.uml2.diagram.profile.part.UMLVisualIDRegistry.getModelID(containerView))) {
 			return -1;
 		}
-		EClass domainElementMetaclass = domainElement.eClass();
-		return getNodeVisualID(containerView, domainElement, domainElementMetaclass, null);
-	}
-
-	/**
-	 * @generated
-	 */
-	public static int getNodeVisualID(View containerView, EObject domainElement, EClass domainElementMetaclass, String semanticHint) {
-		String containerModelID = org.eclipse.uml2.diagram.profile.part.UMLVisualIDRegistry.getModelID(containerView);
-		if (!ProfileEditPart.MODEL_ID.equals(containerModelID)) {
-			return -1;
-		}
-		int containerVisualID;
-		if (ProfileEditPart.MODEL_ID.equals(containerModelID)) {
-			containerVisualID = org.eclipse.uml2.diagram.profile.part.UMLVisualIDRegistry.getVisualID(containerView);
-		} else {
-			if (containerView instanceof Diagram) {
-				containerVisualID = 1000;
-			} else {
-				return -1;
-			}
-		}
-		int nodeVisualID = semanticHint != null ? org.eclipse.uml2.diagram.profile.part.UMLVisualIDRegistry.getVisualID(semanticHint) : -1;
-		switch (containerVisualID) {
-		case StereotypeEditPart.VISUAL_ID:
-			if (StereotypeNameEditPart.VISUAL_ID == nodeVisualID) {
-				return StereotypeNameEditPart.VISUAL_ID;
-			}
-			if (StereotypeAttributesEditPart.VISUAL_ID == nodeVisualID) {
-				return StereotypeAttributesEditPart.VISUAL_ID;
-			}
-			if (StereotypeConstraintsEditPart.VISUAL_ID == nodeVisualID) {
-				return StereotypeConstraintsEditPart.VISUAL_ID;
-			}
-			return getUnrecognizedStereotype_2001ChildNodeID(domainElement, semanticHint);
-		case Profile2EditPart.VISUAL_ID:
-			if (ProfileNameEditPart.VISUAL_ID == nodeVisualID) {
-				return ProfileNameEditPart.VISUAL_ID;
-			}
-			if (ProfileContentsEditPart.VISUAL_ID == nodeVisualID) {
-				return ProfileContentsEditPart.VISUAL_ID;
-			}
-			return getUnrecognizedProfile_2002ChildNodeID(domainElement, semanticHint);
-		case EnumerationEditPart.VISUAL_ID:
-			if (EnumerationNameEditPart.VISUAL_ID == nodeVisualID) {
-				return EnumerationNameEditPart.VISUAL_ID;
-			}
-			if (EnumerationLiteralsEditPart.VISUAL_ID == nodeVisualID) {
-				return EnumerationLiteralsEditPart.VISUAL_ID;
-			}
-			return getUnrecognizedEnumeration_2003ChildNodeID(domainElement, semanticHint);
-		case ElementImportEditPart.VISUAL_ID:
-			if (ReferencedMetaclassNode_classNameEditPart.VISUAL_ID == nodeVisualID) {
-				return ReferencedMetaclassNode_classNameEditPart.VISUAL_ID;
-			}
-			return getUnrecognizedElementImport_2006ChildNodeID(domainElement, semanticHint);
-		case Profile3EditPart.VISUAL_ID:
-			if (ProfileName2EditPart.VISUAL_ID == nodeVisualID) {
-				return ProfileName2EditPart.VISUAL_ID;
-			}
-			if (ProfileProfileLabelsEditPart.VISUAL_ID == nodeVisualID) {
-				return ProfileProfileLabelsEditPart.VISUAL_ID;
-			}
-			return getUnrecognizedProfile_2007ChildNodeID(domainElement, semanticHint);
-		case PropertyEditPart.VISUAL_ID:
-			return getUnrecognizedProperty_3001ChildNodeID(domainElement, semanticHint);
-		case ConstraintEditPart.VISUAL_ID:
-			return getUnrecognizedConstraint_3008ChildNodeID(domainElement, semanticHint);
-		case Stereotype2EditPart.VISUAL_ID:
-			return getUnrecognizedStereotype_3003ChildNodeID(domainElement, semanticHint);
-		case EnumerationLiteralEditPart.VISUAL_ID:
-			return getUnrecognizedEnumerationLiteral_3005ChildNodeID(domainElement, semanticHint);
-		case ElementImport2EditPart.VISUAL_ID:
-			return getUnrecognizedElementImport_3009ChildNodeID(domainElement, semanticHint);
+		switch (org.eclipse.uml2.diagram.profile.part.UMLVisualIDRegistry.getVisualID(containerView)) {
 		case StereotypeAttributesEditPart.VISUAL_ID:
-			if ((semanticHint == null || PropertyEditPart.VISUAL_ID == nodeVisualID) && UMLPackage.eINSTANCE.getProperty().isSuperTypeOf(domainElementMetaclass)
-					&& (domainElement == null || evaluate(Property_3001_Constraint, domainElement))) {
+			if (UMLPackage.eINSTANCE.getProperty().isSuperTypeOf(domainElement.eClass()) && evaluate(Property_3001_Constraint, domainElement)) {
 				return PropertyEditPart.VISUAL_ID;
 			}
-			return getUnrecognizedStereotypeAttributes_7001ChildNodeID(domainElement, semanticHint);
+			break;
 		case StereotypeConstraintsEditPart.VISUAL_ID:
-			if ((semanticHint == null || ConstraintEditPart.VISUAL_ID == nodeVisualID) && UMLPackage.eINSTANCE.getConstraint().isSuperTypeOf(domainElementMetaclass)) {
+			if (UMLPackage.eINSTANCE.getConstraint().isSuperTypeOf(domainElement.eClass())) {
 				return ConstraintEditPart.VISUAL_ID;
 			}
-			return getUnrecognizedStereotypeConstraints_7002ChildNodeID(domainElement, semanticHint);
+			break;
 		case ProfileContentsEditPart.VISUAL_ID:
-			if ((semanticHint == null || Stereotype2EditPart.VISUAL_ID == nodeVisualID) && UMLPackage.eINSTANCE.getStereotype().isSuperTypeOf(domainElementMetaclass)) {
+			if (UMLPackage.eINSTANCE.getStereotype().isSuperTypeOf(domainElement.eClass())) {
 				return Stereotype2EditPart.VISUAL_ID;
 			}
-			return getUnrecognizedProfileContents_7003ChildNodeID(domainElement, semanticHint);
+			break;
 		case EnumerationLiteralsEditPart.VISUAL_ID:
-			if ((semanticHint == null || EnumerationLiteralEditPart.VISUAL_ID == nodeVisualID) && UMLPackage.eINSTANCE.getEnumerationLiteral().isSuperTypeOf(domainElementMetaclass)) {
+			if (UMLPackage.eINSTANCE.getEnumerationLiteral().isSuperTypeOf(domainElement.eClass())) {
 				return EnumerationLiteralEditPart.VISUAL_ID;
 			}
-			return getUnrecognizedEnumerationLiterals_7004ChildNodeID(domainElement, semanticHint);
+			break;
 		case ProfileProfileLabelsEditPart.VISUAL_ID:
-			if ((semanticHint == null || ElementImport2EditPart.VISUAL_ID == nodeVisualID) && UMLPackage.eINSTANCE.getElementImport().isSuperTypeOf(domainElementMetaclass)
-					&& (domainElement == null || evaluate(ElementImport_3009_Constraint, domainElement))) {
+			if (UMLPackage.eINSTANCE.getElementImport().isSuperTypeOf(domainElement.eClass()) && evaluate(ElementImport_3009_Constraint, domainElement)) {
 				return ElementImport2EditPart.VISUAL_ID;
 			}
-			return getUnrecognizedProfileProfileLabels_7005ChildNodeID(domainElement, semanticHint);
+			break;
 		case ProfileEditPart.VISUAL_ID:
 			// We want to additionally show the Canvas Semantical Element in the auxiliary 
 			// org.eclipse.uml2.diagram.profile.edit.parts.Profile3EditPart (that serves as a pure visual container for children). 
@@ -261,29 +177,132 @@ public class UMLVisualIDRegistry {
 			if (containerView instanceof Diagram && domainElement != null && domainElement.equals(containerView.getElement())) {
 				return Profile3EditPart.VISUAL_ID;
 			}
-			if ((semanticHint == null || StereotypeEditPart.VISUAL_ID == nodeVisualID) && UMLPackage.eINSTANCE.getStereotype().isSuperTypeOf(domainElementMetaclass)
-					&& (domainElement == null || evaluate(Stereotype_2001_Constraint, domainElement))) {
+			if (UMLPackage.eINSTANCE.getStereotype().isSuperTypeOf(domainElement.eClass()) && evaluate(Stereotype_2001_Constraint, domainElement)) {
 				return StereotypeEditPart.VISUAL_ID;
 			}
-			if ((semanticHint == null || Profile2EditPart.VISUAL_ID == nodeVisualID) && UMLPackage.eINSTANCE.getProfile().isSuperTypeOf(domainElementMetaclass)) {
+			if (UMLPackage.eINSTANCE.getProfile().isSuperTypeOf(domainElement.eClass())) {
 				return Profile2EditPart.VISUAL_ID;
 			}
-			if ((semanticHint == null || EnumerationEditPart.VISUAL_ID == nodeVisualID) && UMLPackage.eINSTANCE.getEnumeration().isSuperTypeOf(domainElementMetaclass)) {
+			if (UMLPackage.eINSTANCE.getEnumeration().isSuperTypeOf(domainElement.eClass())) {
 				return EnumerationEditPart.VISUAL_ID;
 			}
-			if ((semanticHint == null || ElementImportEditPart.VISUAL_ID == nodeVisualID) && UMLPackage.eINSTANCE.getElementImport().isSuperTypeOf(domainElementMetaclass)
-					&& (domainElement == null || evaluate(ElementImport_2006_Constraint, domainElement))) {
+			if (UMLPackage.eINSTANCE.getElementImport().isSuperTypeOf(domainElement.eClass()) && evaluate(ElementImport_2006_Constraint, domainElement)) {
 				return ElementImportEditPart.VISUAL_ID;
 			}
 			// Diagram header is already processed above
-			return getUnrecognizedProfile_1000ChildNodeID(domainElement, semanticHint);
+			break;
+		}
+		return -1;
+	}
+
+	/**
+	 * @generated
+	 */
+	public static boolean canCreateNode(View containerView, int nodeVisualID) {
+		String containerModelID = org.eclipse.uml2.diagram.profile.part.UMLVisualIDRegistry.getModelID(containerView);
+		if (!ProfileEditPart.MODEL_ID.equals(containerModelID)) {
+			return false;
+		}
+		int containerVisualID;
+		if (ProfileEditPart.MODEL_ID.equals(containerModelID)) {
+			containerVisualID = org.eclipse.uml2.diagram.profile.part.UMLVisualIDRegistry.getVisualID(containerView);
+		} else {
+			if (containerView instanceof Diagram) {
+				containerVisualID = ProfileEditPart.VISUAL_ID;
+			} else {
+				return false;
+			}
+		}
+		switch (containerVisualID) {
+		case StereotypeEditPart.VISUAL_ID:
+			if (StereotypeNameEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			if (StereotypeAttributesEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			if (StereotypeConstraintsEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			break;
+		case Profile2EditPart.VISUAL_ID:
+			if (ProfileNameEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			if (ProfileContentsEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			break;
+		case EnumerationEditPart.VISUAL_ID:
+			if (EnumerationNameEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			if (EnumerationLiteralsEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			break;
+		case ElementImportEditPart.VISUAL_ID:
+			if (ReferencedMetaclassNode_classNameEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			break;
+		case Profile3EditPart.VISUAL_ID:
+			if (ProfileName2EditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			if (ProfileProfileLabelsEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			break;
+		case StereotypeAttributesEditPart.VISUAL_ID:
+			if (PropertyEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			break;
+		case StereotypeConstraintsEditPart.VISUAL_ID:
+			if (ConstraintEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			break;
+		case ProfileContentsEditPart.VISUAL_ID:
+			if (Stereotype2EditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			break;
+		case EnumerationLiteralsEditPart.VISUAL_ID:
+			if (EnumerationLiteralEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			break;
+		case ProfileProfileLabelsEditPart.VISUAL_ID:
+			if (ElementImport2EditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			break;
+		case ProfileEditPart.VISUAL_ID:
+			if (StereotypeEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			if (Profile2EditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			if (EnumerationEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			if (ElementImportEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			if (Profile3EditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			break;
 		case ExtensionEditPart.VISUAL_ID:
 			if (ExtensionLink_requiredEditPart.VISUAL_ID == nodeVisualID) {
-				return ExtensionLink_requiredEditPart.VISUAL_ID;
+				return true;
 			}
-			return getUnrecognizedExtension_4002LinkLabelID(semanticHint);
+			break;
 		}
-		return getUnrecognizedNodeID(containerView, domainElement);
+		return false;
 	}
 
 	/**
@@ -293,21 +312,13 @@ public class UMLVisualIDRegistry {
 		if (domainElement == null) {
 			return -1;
 		}
-		EClass domainElementMetaclass = domainElement.eClass();
-		return getLinkWithClassVisualID(domainElement, domainElementMetaclass);
-	}
-
-	/**
-	 * @generated
-	 */
-	public static int getLinkWithClassVisualID(EObject domainElement, EClass domainElementMetaclass) {
-		if (UMLPackage.eINSTANCE.getGeneralization().isSuperTypeOf(domainElementMetaclass)) {
+		if (UMLPackage.eINSTANCE.getGeneralization().isSuperTypeOf(domainElement.eClass())) {
 			return GeneralizationEditPart.VISUAL_ID;
 		}
-		if (UMLPackage.eINSTANCE.getExtension().isSuperTypeOf(domainElementMetaclass)) {
+		if (UMLPackage.eINSTANCE.getExtension().isSuperTypeOf(domainElement.eClass())) {
 			return ExtensionEditPart.VISUAL_ID;
 		}
-		return getUnrecognizedLinkWithClassID(domainElement);
+		return -1;
 	}
 
 	/**
@@ -318,206 +329,6 @@ public class UMLVisualIDRegistry {
 	 */
 	private static boolean isDiagram(Profile element) {
 		return true;
-	}
-
-	/**
-	 * User can change implementation of this method to handle some specific
-	 * situations not covered by default logic.
-	 * 
-	 * @generated
-	 */
-	private static int getUnrecognizedDiagramID(EObject domainElement) {
-		return -1;
-	}
-
-	/**
-	 * User can change implementation of this method to handle some specific
-	 * situations not covered by default logic.
-	 * 
-	 * @generated
-	 */
-	private static int getUnrecognizedNodeID(View containerView, EObject domainElement) {
-		return -1;
-	}
-
-	/**
-	 * User can change implementation of this method to handle some specific
-	 * situations not covered by default logic.
-	 * 
-	 * @generated
-	 */
-	private static int getUnrecognizedLinkWithClassID(EObject domainElement) {
-		return -1;
-	}
-
-	/**
-	 * User can change implementation of this method to handle some specific
-	 * situations not covered by default logic.
-	 * 
-	 * @generated
-	 */
-	private static int getUnrecognizedStereotype_2001ChildNodeID(EObject domainElement, String semanticHint) {
-		return -1;
-	}
-
-	/**
-	 * User can change implementation of this method to handle some specific
-	 * situations not covered by default logic.
-	 * 
-	 * @generated
-	 */
-	private static int getUnrecognizedProfile_2002ChildNodeID(EObject domainElement, String semanticHint) {
-		return -1;
-	}
-
-	/**
-	 * User can change implementation of this method to handle some specific
-	 * situations not covered by default logic.
-	 * 
-	 * @generated
-	 */
-	private static int getUnrecognizedEnumeration_2003ChildNodeID(EObject domainElement, String semanticHint) {
-		return -1;
-	}
-
-	/**
-	 * User can change implementation of this method to handle some specific
-	 * situations not covered by default logic.
-	 * 
-	 * @generated
-	 */
-	private static int getUnrecognizedElementImport_2006ChildNodeID(EObject domainElement, String semanticHint) {
-		return -1;
-	}
-
-	/**
-	 * User can change implementation of this method to handle some specific
-	 * situations not covered by default logic.
-	 * 
-	 * @generated
-	 */
-	private static int getUnrecognizedProfile_2007ChildNodeID(EObject domainElement, String semanticHint) {
-		return -1;
-	}
-
-	/**
-	 * User can change implementation of this method to handle some specific
-	 * situations not covered by default logic.
-	 * 
-	 * @generated
-	 */
-	private static int getUnrecognizedProperty_3001ChildNodeID(EObject domainElement, String semanticHint) {
-		return -1;
-	}
-
-	/**
-	 * User can change implementation of this method to handle some specific
-	 * situations not covered by default logic.
-	 * 
-	 * @generated
-	 */
-	private static int getUnrecognizedConstraint_3008ChildNodeID(EObject domainElement, String semanticHint) {
-		return -1;
-	}
-
-	/**
-	 * User can change implementation of this method to handle some specific
-	 * situations not covered by default logic.
-	 * 
-	 * @generated
-	 */
-	private static int getUnrecognizedStereotype_3003ChildNodeID(EObject domainElement, String semanticHint) {
-		return -1;
-	}
-
-	/**
-	 * User can change implementation of this method to handle some specific
-	 * situations not covered by default logic.
-	 * 
-	 * @generated
-	 */
-	private static int getUnrecognizedEnumerationLiteral_3005ChildNodeID(EObject domainElement, String semanticHint) {
-		return -1;
-	}
-
-	/**
-	 * User can change implementation of this method to handle some specific
-	 * situations not covered by default logic.
-	 * 
-	 * @generated
-	 */
-	private static int getUnrecognizedElementImport_3009ChildNodeID(EObject domainElement, String semanticHint) {
-		return -1;
-	}
-
-	/**
-	 * User can change implementation of this method to handle some specific
-	 * situations not covered by default logic.
-	 * 
-	 * @generated
-	 */
-	private static int getUnrecognizedStereotypeAttributes_7001ChildNodeID(EObject domainElement, String semanticHint) {
-		return -1;
-	}
-
-	/**
-	 * User can change implementation of this method to handle some specific
-	 * situations not covered by default logic.
-	 * 
-	 * @generated
-	 */
-	private static int getUnrecognizedStereotypeConstraints_7002ChildNodeID(EObject domainElement, String semanticHint) {
-		return -1;
-	}
-
-	/**
-	 * User can change implementation of this method to handle some specific
-	 * situations not covered by default logic.
-	 * 
-	 * @generated
-	 */
-	private static int getUnrecognizedProfileContents_7003ChildNodeID(EObject domainElement, String semanticHint) {
-		return -1;
-	}
-
-	/**
-	 * User can change implementation of this method to handle some specific
-	 * situations not covered by default logic.
-	 * 
-	 * @generated
-	 */
-	private static int getUnrecognizedEnumerationLiterals_7004ChildNodeID(EObject domainElement, String semanticHint) {
-		return -1;
-	}
-
-	/**
-	 * User can change implementation of this method to handle some specific
-	 * situations not covered by default logic.
-	 * 
-	 * @generated
-	 */
-	private static int getUnrecognizedProfileProfileLabels_7005ChildNodeID(EObject domainElement, String semanticHint) {
-		return -1;
-	}
-
-	/**
-	 * User can change implementation of this method to handle some specific
-	 * situations not covered by default logic.
-	 * 
-	 * @generated
-	 */
-	private static int getUnrecognizedProfile_1000ChildNodeID(EObject domainElement, String semanticHint) {
-		return -1;
-	}
-
-	/**
-	 * User can change implementation of this method to handle some specific
-	 * situations not covered by default logic.
-	 * 
-	 * @generated
-	 */
-	private static int getUnrecognizedExtension_4002LinkLabelID(String semanticHint) {
-		return -1;
 	}
 
 	/**

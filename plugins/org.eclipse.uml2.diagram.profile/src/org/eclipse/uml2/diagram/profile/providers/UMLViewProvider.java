@@ -1,11 +1,11 @@
 package org.eclipse.uml2.diagram.profile.providers;
 
 import org.eclipse.core.runtime.IAdaptable;
-import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.gmf.runtime.diagram.core.providers.AbstractViewProvider;
-import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.gmf.runtime.emf.type.core.IElementType;
+import org.eclipse.gmf.runtime.emf.type.core.IHintedType;
+import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.uml2.diagram.profile.edit.parts.ConstraintEditPart;
 import org.eclipse.uml2.diagram.profile.edit.parts.ElementImport2EditPart;
 import org.eclipse.uml2.diagram.profile.edit.parts.ElementImportEditPart;
@@ -30,9 +30,7 @@ import org.eclipse.uml2.diagram.profile.edit.parts.StereotypeAttributesEditPart;
 import org.eclipse.uml2.diagram.profile.edit.parts.StereotypeConstraintsEditPart;
 import org.eclipse.uml2.diagram.profile.edit.parts.StereotypeEditPart;
 import org.eclipse.uml2.diagram.profile.edit.parts.StereotypeNameEditPart;
-
 import org.eclipse.uml2.diagram.profile.part.UMLVisualIDRegistry;
-
 import org.eclipse.uml2.diagram.profile.view.factories.ConstraintViewFactory;
 import org.eclipse.uml2.diagram.profile.view.factories.ElementImport2ViewFactory;
 import org.eclipse.uml2.diagram.profile.view.factories.ElementImportViewFactory;
@@ -82,13 +80,50 @@ public class UMLViewProvider extends AbstractViewProvider {
 			return null;
 		}
 		IElementType elementType = getSemanticElementType(semanticAdapter);
-		if (elementType != null && !UMLElementTypes.isKnownElementType(elementType)) {
+		EObject domainElement = getSemanticElement(semanticAdapter);
+
+		int visualID;
+		if (semanticHint == null) {
+			if (elementType != null || domainElement == null) {
+				return null;
+			}
+			visualID = UMLVisualIDRegistry.getNodeVisualID(containerView, domainElement);
+		} else {
+			visualID = UMLVisualIDRegistry.getVisualID(semanticHint);
+			if (elementType != null) {
+				if (!UMLElementTypes.isKnownElementType(elementType) || false == elementType instanceof IHintedType) {
+					return null;
+				}
+				String elementTypeHint = ((IHintedType) elementType).getSemanticHint();
+				if (!semanticHint.equals(elementTypeHint)) {
+					return null;
+				}
+				if (domainElement != null && visualID != UMLVisualIDRegistry.getNodeVisualID(containerView, domainElement)) {
+					return null;
+				}
+			} else {
+				switch (visualID) {
+				case ProfileEditPart.VISUAL_ID:
+				case StereotypeEditPart.VISUAL_ID:
+				case Profile2EditPart.VISUAL_ID:
+				case EnumerationEditPart.VISUAL_ID:
+				case ElementImportEditPart.VISUAL_ID:
+				case Profile3EditPart.VISUAL_ID:
+				case PropertyEditPart.VISUAL_ID:
+				case ConstraintEditPart.VISUAL_ID:
+				case Stereotype2EditPart.VISUAL_ID:
+				case EnumerationLiteralEditPart.VISUAL_ID:
+				case ElementImport2EditPart.VISUAL_ID:
+				case GeneralizationEditPart.VISUAL_ID:
+				case ExtensionEditPart.VISUAL_ID:
+					return null;
+				}
+			}
+		}
+		if (!UMLVisualIDRegistry.canCreateNode(containerView, visualID)) {
 			return null;
 		}
-		EClass semanticType = getSemanticEClass(semanticAdapter);
-		EObject semanticElement = getSemanticElement(semanticAdapter);
-		int nodeVID = UMLVisualIDRegistry.getNodeVisualID(containerView, semanticElement, semanticType, semanticHint);
-		switch (nodeVID) {
+		switch (visualID) {
 		case StereotypeEditPart.VISUAL_ID:
 			return StereotypeViewFactory.class;
 		case StereotypeNameEditPart.VISUAL_ID:
@@ -140,22 +175,31 @@ public class UMLViewProvider extends AbstractViewProvider {
 	 */
 	protected Class getEdgeViewClass(IAdaptable semanticAdapter, View containerView, String semanticHint) {
 		IElementType elementType = getSemanticElementType(semanticAdapter);
-		if (elementType != null && !UMLElementTypes.isKnownElementType(elementType)) {
+		if (elementType == null) {
 			return null;
 		}
-		EClass semanticType = getSemanticEClass(semanticAdapter);
-		if (semanticType == null) {
+		if (!UMLElementTypes.isKnownElementType(elementType) || false == elementType instanceof IHintedType) {
 			return null;
 		}
-		EObject semanticElement = getSemanticElement(semanticAdapter);
-		int linkVID = UMLVisualIDRegistry.getLinkWithClassVisualID(semanticElement, semanticType);
-		switch (linkVID) {
+		String elementTypeHint = ((IHintedType) elementType).getSemanticHint();
+		if (elementTypeHint == null) {
+			return null;
+		}
+		if (semanticHint != null && !semanticHint.equals(elementTypeHint)) {
+			return null;
+		}
+		int visualID = UMLVisualIDRegistry.getVisualID(elementTypeHint);
+		EObject domainElement = getSemanticElement(semanticAdapter);
+		if (domainElement != null && visualID != UMLVisualIDRegistry.getLinkWithClassVisualID(domainElement)) {
+			return null;
+		}
+		switch (visualID) {
 		case GeneralizationEditPart.VISUAL_ID:
 			return GeneralizationViewFactory.class;
 		case ExtensionEditPart.VISUAL_ID:
 			return ExtensionViewFactory.class;
 		}
-		return getUnrecognizedConnectorViewClass(semanticAdapter, containerView, semanticHint);
+		return null;
 	}
 
 	/**
@@ -166,14 +210,6 @@ public class UMLViewProvider extends AbstractViewProvider {
 			return null;
 		}
 		return (IElementType) semanticAdapter.getAdapter(IElementType.class);
-	}
-
-	/**
-	 * @generated
-	 */
-	private Class getUnrecognizedConnectorViewClass(IAdaptable semanticAdapter, View containerView, String semanticHint) {
-		// Handle unrecognized child node classes here
-		return null;
 	}
 
 }

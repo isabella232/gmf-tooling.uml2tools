@@ -196,6 +196,11 @@ public class ProfileCanonicalEditPolicy extends CanonicalConnectionEditPolicy {
 	private Collection collectAllLinks(View view, Map domain2NotationMap) {
 		Collection result = new LinkedList();
 		switch (UMLVisualIDRegistry.getVisualID(view)) {
+		case ProfileEditPart.VISUAL_ID: {
+			domain2NotationMap.put(view.getElement(), view);
+			result.addAll(UMLDiagramUpdater.getProfile_1000ContainedLinks(view));
+			break;
+		}
 		case StereotypeEditPart.VISUAL_ID: {
 			domain2NotationMap.put(view.getElement(), view);
 			result.addAll(UMLDiagramUpdater.getStereotype_2001ContainedLinks(view));
@@ -254,11 +259,6 @@ public class ProfileCanonicalEditPolicy extends CanonicalConnectionEditPolicy {
 		case ExtensionEditPart.VISUAL_ID: {
 			domain2NotationMap.put(view.getElement(), view);
 			result.addAll(UMLDiagramUpdater.getExtension_4002ContainedLinks(view));
-			break;
-		}
-		case ProfileEditPart.VISUAL_ID: {
-			domain2NotationMap.put(view.getElement(), view);
-			result.addAll(UMLDiagramUpdater.getProfile_1000ContainedLinks(view));
 			break;
 		}
 		}

@@ -83,6 +83,11 @@ public class Messages extends NLS {
 	/**
 	 * @generated
 	 */
+	public static String UMLDocumentProvider_SaveAsOperation;
+
+	/**
+	 * @generated
+	 */
 	public static String UMLInitDiagramFileAction_InitDiagramFileResourceErrorDialogTitle;
 
 	/**
