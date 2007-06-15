@@ -74,7 +74,9 @@ protected Class getNodeViewClass(org.eclipse.core.runtime.IAdaptable semanticAda
 				return null;
 			}
 			switch (visualID) {
-				«EXPAND xpt::providers::ViewProvider::caseEntry FOREACH substitutableChildren-»
+				«FOREACH substitutableChildren AS nextSubstitutableChild-»
+					«EXPAND caseSubstitutableByVisualID(nextSubstitutableChild) FOR nextSubstitutableChild-»
+				«ENDFOREACH-»
 				«EXPAND xpt::Common::caseVisualID FOREACH getElements(this).select(commonBase | null != commonBase.elementType && !substitutableChildren.contains(commonBase))»
 					if (visualID != «EXPAND xpt::editor::VisualIDRegistry::getNodeVisualIDMethodCall FOR getDiagram()»(containerView, domainElement)) {
 						return null;
@@ -101,3 +103,19 @@ protected Class getNodeViewClass(org.eclipse.core.runtime.IAdaptable semanticAda
 		«ENDIF-»
 	«ENDLET-»
 «ENDAROUND»
+
+«DEFINE caseSubstitutableByVisualID(gmfgen::GenCommonBase nextSubstitutableChild) FOR gmfgen::GenCommonBase-»
+«EXPAND xpt::Common::caseVisualID» {
+int suggestedID = «EXPAND xpt::editor::VisualIDRegistry::getNodeVisualIDMethodCall FOR getDiagram()»(containerView, domainElement);
+if (visualID != suggestedID &&
+	«LET ((gmfgenext::SubstitutableByAttributes)nextSubstitutableChild.viewmap.attributes.typeSelect(gmfgenext::SubstitutableByAttributes).first()) AS group-»
+		«FOREACH group.getSubstitutableByNodes() AS nextSubstitution-»
+		«EXPAND xpt::editor::VisualIDRegistry::visualID FOR nextSubstitution» != suggestedID &&
+		«ENDFOREACH-»		
+	true) {
+			return null;
+		}
+	break;
+	}
+	«ENDLET-»
+«ENDDEFINE»

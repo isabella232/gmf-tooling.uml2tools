@@ -254,10 +254,20 @@ public class UMLViewProvider extends AbstractViewProvider {
 					return null;
 				}
 				switch (visualID) {
-				case ConstraintEditPart.VISUAL_ID:
-					return ConstraintViewFactory.class;
-				case Constraint2EditPart.VISUAL_ID:
-					return Constraint2ViewFactory.class;
+				case ConstraintEditPart.VISUAL_ID: {
+					int suggestedID = UMLVisualIDRegistry.getNodeVisualID(containerView, domainElement);
+					if (visualID != suggestedID && Constraint2EditPart.VISUAL_ID != suggestedID && true) {
+						return null;
+					}
+					break;
+				}
+				case Constraint2EditPart.VISUAL_ID: {
+					int suggestedID = UMLVisualIDRegistry.getNodeVisualID(containerView, domainElement);
+					if (visualID != suggestedID && ConstraintEditPart.VISUAL_ID != suggestedID && true) {
+						return null;
+					}
+					break;
+				}
 				case PackageEditPart.VISUAL_ID:
 				case ActivityEditPart.VISUAL_ID:
 				case AcceptEventActionEditPart.VISUAL_ID:
