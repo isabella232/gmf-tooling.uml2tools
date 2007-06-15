@@ -808,7 +808,11 @@
     </preferencePages>
   </diagram>
   <plugin
-      iD="org.eclipse.uml2.diagram.profile"/>
+      iD="org.eclipse.uml2.diagram.profile"
+      provider="Eclipse.org"
+      version="0.7.0.qualifier">
+    <requiredPlugins>org.eclipse.ocl.ecore</requiredPlugins>
+  </plugin>
   <editor/>
   <navigator>
     <childReferences
@@ -1000,8 +1004,6 @@
   <expressionProviders>
     <providers
         xsi:type="gmfgen:GenExpressionInterpreter"
-        expressions="//@diagram/@topLevelNodes.0/@modelFacet/@modelElementSelector //@diagram/@topLevelNodes.0/@modelFacet/@modelElementInitializer/@initializers.0 //@diagram/@childNodes.0/@modelFacet/@modelElementSelector //@diagram/@childNodes.0/@modelFacet/@modelElementInitializer/@initializers.0 //@diagram/@childNodes.1/@modelFacet/@modelElementInitializer/@initializers.0 //@diagram/@topLevelNodes.1/@modelFacet/@modelElementInitializer/@initializers.0 //@diagram/@childNodes.2/@modelFacet/@modelElementInitializer/@initializers.0 //@diagram/@topLevelNodes.2/@modelFacet/@modelElementInitializer/@initializers.0 //@diagram/@childNodes.3/@modelFacet/@modelElementInitializer/@initializers.0 //@diagram/@topLevelNodes.3/@modelFacet/@modelElementSelector //@diagram/@childNodes.4/@modelFacet/@modelElementSelector //@diagram/@links.1/@creationConstraints/@targetEnd">
-      <requiredPluginIDs>org.eclipse.ocl.ecore</requiredPluginIDs>
-    </providers>
+        expressions="//@diagram/@topLevelNodes.0/@modelFacet/@modelElementSelector //@diagram/@topLevelNodes.0/@modelFacet/@modelElementInitializer/@initializers.0 //@diagram/@childNodes.0/@modelFacet/@modelElementSelector //@diagram/@childNodes.0/@modelFacet/@modelElementInitializer/@initializers.0 //@diagram/@childNodes.1/@modelFacet/@modelElementInitializer/@initializers.0 //@diagram/@topLevelNodes.1/@modelFacet/@modelElementInitializer/@initializers.0 //@diagram/@childNodes.2/@modelFacet/@modelElementInitializer/@initializers.0 //@diagram/@topLevelNodes.2/@modelFacet/@modelElementInitializer/@initializers.0 //@diagram/@childNodes.3/@modelFacet/@modelElementInitializer/@initializers.0 //@diagram/@topLevelNodes.3/@modelFacet/@modelElementSelector //@diagram/@childNodes.4/@modelFacet/@modelElementSelector //@diagram/@links.1/@creationConstraints/@targetEnd"/>
   </expressionProviders>
 </gmfgen:GenEditorGenerator>
