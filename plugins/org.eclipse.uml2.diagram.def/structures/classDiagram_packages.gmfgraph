@@ -2,139 +2,148 @@
 <gmfgraph:Canvas xmi:version="2.0"
     xmlns:xmi="http://www.omg.org/XMI"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xmlns:gmfgraph="http://www.eclipse.org/gmf/2005/GraphicalDefinition">
+    xmlns:gmfgraph="http://www.eclipse.org/gmf/2006/GraphicalDefinition">
   <figures
       name=""
       implementationBundle="org.eclipse.uml2.diagram.common">
-    <figures
-        xsi:type="gmfgraph:Rectangle"
-        referencingElements="PackageNode"
-        name="PackageFigure"
-        outline="false"
-        fill="false">
-      <layout
-          xsi:type="gmfgraph:BorderLayout"/>
-      <children
+    <descriptors
+        name="PackageFigure">
+      <actualFigure
           xsi:type="gmfgraph:Rectangle"
-          name="PackageFigure_AuxTop"
+          name="PackageFigure"
           outline="false"
           fill="false">
-        <layoutData
-            xsi:type="gmfgraph:BorderLayoutData"
-            alignment="BEGINNING"
-            vertical="true"/>
         <layout
-            xsi:type="gmfgraph:CustomLayout"
-            qualifiedClassName="org.eclipse.gmf.runtime.draw2d.ui.figures.ConstrainedToolbarLayout"
-            bundleName="org.eclipse.gmf.runtime.draw2d.ui">
-          <attributes
-              name="StretchMajorAxis"
-              value="true"/>
-          <attributes
-              name="vertical"
-              value="false"/>
-        </layout>
+            xsi:type="gmfgraph:BorderLayout"/>
         <children
             xsi:type="gmfgraph:Rectangle"
-            name="PackageFigure_AuxLeftTab">
-          <preferredSize
-              dx="1"
-              dy="30"/>
-        </children>
-        <children
-            xsi:type="gmfgraph:Rectangle"
-            name="PackageFigure_AuxRightPadding"
+            name="PackageFigure_AuxTop"
             outline="false"
             fill="false">
-          <preferredSize
-              dx="1"
-              dy="30"/>
+          <layoutData
+              xsi:type="gmfgraph:BorderLayoutData"
+              alignment="BEGINNING"
+              vertical="true"/>
+          <layout
+              xsi:type="gmfgraph:CustomLayout"
+              qualifiedClassName="org.eclipse.gmf.runtime.draw2d.ui.figures.ConstrainedToolbarLayout">
+            <attributes
+                name="StretchMajorAxis"
+                value="true"/>
+            <attributes
+                name="vertical"
+                value="false"/>
+          </layout>
+          <children
+              xsi:type="gmfgraph:Rectangle"
+              name="PackageFigure_AuxLeftTab">
+            <preferredSize
+                dx="1"
+                dy="30"/>
+          </children>
+          <children
+              xsi:type="gmfgraph:Rectangle"
+              name="PackageFigure_AuxRightPadding"
+              outline="false"
+              fill="false">
+            <preferredSize
+                dx="1"
+                dy="30"/>
+          </children>
         </children>
-      </children>
-      <children
-          xsi:type="gmfgraph:Rectangle"
-          name="PackageFigure_AuxCenter">
-        <layoutData
-            xsi:type="gmfgraph:BorderLayoutData"/>
+        <children
+            xsi:type="gmfgraph:Rectangle"
+            name="PackageFigure_AuxCenter">
+          <layoutData
+              xsi:type="gmfgraph:BorderLayoutData"/>
+          <layout
+              xsi:type="gmfgraph:FlowLayout"
+              vertical="true"
+              matchMinorSize="true"
+              forceSingleLine="true"
+              minorAlignment="CENTER"
+              majorSpacing="0"
+              minorSpacing="0"/>
+          <children
+              xsi:type="gmfgraph:Rectangle"
+              name="PackageFigure_NameContainer">
+            <layout
+                xsi:type="gmfgraph:CustomLayout"
+                qualifiedClassName="org.eclipse.uml2.diagram.common.draw2d.CenterLayout"/>
+            <minimumSize
+                dy="20"/>
+            <children
+                xsi:type="gmfgraph:Label"
+                name="PackageFigure_name">
+              <insets
+                  top="5"
+                  left="5"
+                  bottom="5"
+                  right="5"/>
+            </children>
+          </children>
+          <children
+              xsi:type="gmfgraph:Rectangle"
+              name="PackageFigure_PackagesCompartment"/>
+          <children
+              xsi:type="gmfgraph:Rectangle"
+              name="PackageFigure_ClassesCompartment"/>
+          <children
+              xsi:type="gmfgraph:Rectangle"
+              name="PackageFigure_OthersCompartment"/>
+        </children>
+      </actualFigure>
+      <accessors
+          figure="//@figures.0/@descriptors.0/@actualFigure/@children.1/@children.0/@children.0"/>
+      <accessors
+          figure="//@figures.0/@descriptors.0/@actualFigure/@children.1/@children.1"/>
+      <accessors
+          figure="//@figures.0/@descriptors.0/@actualFigure/@children.1/@children.2"/>
+      <accessors
+          figure="//@figures.0/@descriptors.0/@actualFigure/@children.1/@children.3"/>
+    </descriptors>
+    <descriptors
+        name="SecondaryPackageFigure">
+      <actualFigure
+          xsi:type="gmfgraph:ScalablePolygon"
+          name="SecondaryPackageFigure">
         <layout
             xsi:type="gmfgraph:FlowLayout"
             vertical="true"
             matchMinorSize="true"
             forceSingleLine="true"
-            minorAlignment="CENTER"
+            minorAlignment="FILL"
             majorSpacing="0"
             minorSpacing="0"/>
+        <insets
+            top="5"
+            left="5"
+            bottom="5"
+            right="5"/>
         <children
-            xsi:type="gmfgraph:Rectangle"
-            name="PackageFigure_NameContainer">
-          <layout
-              xsi:type="gmfgraph:CustomLayout"
-              qualifiedClassName="org.eclipse.uml2.diagram.common.draw2d.CenterLayout"/>
-          <children
-              xsi:type="gmfgraph:Label"
-              referencingElements="PackageNode_name"
-              name="PackageFigure_name">
-            <insets
-                top="5"
-                left="5"
-                bottom="5"
-                right="5"/>
-          </children>
-          <minimumSize
-              dy="20"/>
-        </children>
+            xsi:type="gmfgraph:Label"
+            name="SecondaryPackage_PackageLabel"
+            text="Package"/>
         <children
-            xsi:type="gmfgraph:Rectangle"
-            referencingElements="packages"
-            name="PackageFigure_PackagesCompartment"/>
-        <children
-            xsi:type="gmfgraph:Rectangle"
-            referencingElements="classifiers"
-            name="PackageFigure_ClassesCompartment"/>
-        <children
-            xsi:type="gmfgraph:Rectangle"
-            referencingElements="other"
-            name="PackageFigure_OthersCompartment"/>
-      </children>
-    </figures>
-    <figures
-        xsi:type="gmfgraph:ScalablePolygon"
-        referencingElements="SecondaryPackageNode"
-        name="SecondaryPackageFigure">
-      <layout
-          xsi:type="gmfgraph:FlowLayout"
-          vertical="true"
-          matchMinorSize="true"
-          forceSingleLine="true"
-          minorAlignment="FILL"
-          majorSpacing="0"
-          minorSpacing="0"/>
-      <children
-          xsi:type="gmfgraph:Label"
-          referencingElements="SecondaryPackage_package"
-          name="SecondaryPackage_PackageLabel"
-          text="Package"/>
-      <children
-          xsi:type="gmfgraph:Label"
-          referencingElements="SecondaryPackage_name"
-          name="SecondaryPackage_NameLabel"/>
-      <insets
-          top="5"
-          left="5"
-          bottom="5"
-          right="5"/>
-      <template/>
-      <template
-          y="40"/>
-      <template
-          x="35"
-          y="40"/>
-      <template
-          x="40"
-          y="35"/>
-      <template
-          x="40"/>
-    </figures>
+            xsi:type="gmfgraph:Label"
+            name="SecondaryPackage_NameLabel"/>
+        <template/>
+        <template
+            y="40"/>
+        <template
+            x="35"
+            y="40"/>
+        <template
+            x="40"
+            y="35"/>
+        <template
+            x="40"/>
+      </actualFigure>
+      <accessors
+          figure="//@figures.0/@descriptors.1/@actualFigure/@children.0"/>
+      <accessors
+          figure="//@figures.0/@descriptors.1/@actualFigure/@children.1"/>
+    </descriptors>
   </figures>
   <nodes
       name="PackageNode"
@@ -158,27 +167,33 @@
   </nodes>
   <compartments
       name="packages"
-      figure="PackageFigure_PackagesCompartment"
+      figure="PackageFigure"
       collapsible="true"
-      needsTitle="true"/>
+      needsTitle="true"
+      accessor="//@figures.0/@descriptors.0/@accessors.1"/>
   <compartments
       name="classifiers"
-      figure="PackageFigure_ClassesCompartment"
+      figure="PackageFigure"
       collapsible="true"
-      needsTitle="true"/>
+      needsTitle="true"
+      accessor="//@figures.0/@descriptors.0/@accessors.2"/>
   <compartments
       name="other"
-      figure="PackageFigure_OthersCompartment"
+      figure="PackageFigure"
       collapsible="true"
-      needsTitle="true"/>
+      needsTitle="true"
+      accessor="//@figures.0/@descriptors.0/@accessors.3"/>
   <labels
       name="PackageNode_name"
-      figure="PackageFigure_name"/>
+      figure="PackageFigure"
+      accessor="//@figures.0/@descriptors.0/@accessors.0"/>
   <labels
       name="SecondaryPackage_package"
-      figure="SecondaryPackage_PackageLabel"
-      elementIcon="false"/>
+      figure="SecondaryPackageFigure"
+      elementIcon="false"
+      accessor="//@figures.0/@descriptors.1/@accessors.0"/>
   <labels
       name="SecondaryPackage_name"
-      figure="SecondaryPackage_NameLabel"/>
+      figure="SecondaryPackageFigure"
+      accessor="//@figures.0/@descriptors.1/@accessors.1"/>
 </gmfgraph:Canvas>

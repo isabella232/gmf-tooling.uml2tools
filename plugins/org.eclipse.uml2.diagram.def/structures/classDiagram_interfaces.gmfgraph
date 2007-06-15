@@ -2,61 +2,71 @@
 <gmfgraph:Canvas xmi:version="2.0"
     xmlns:xmi="http://www.omg.org/XMI"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xmlns:gmfgraph="http://www.eclipse.org/gmf/2005/GraphicalDefinition" name="cnvInterfaces">
+    xmlns:gmfgraph="http://www.eclipse.org/gmf/2006/GraphicalDefinition" name="cnvInterfaces">
   <figures
       name="InterfacesGallery"
       implementationBundle="org.eclipse.uml2.diagram.common">
-    <figures
-        xsi:type="gmfgraph:Label"
-        referencingElements="Interface_name"
-        name="Interface_NameLabel"/>
-    <figures
-        xsi:type="gmfgraph:Ellipse"
-        referencingElements="ProvidedInterfaceCircleNode"
+    <descriptors
+        name="Interface_NameLabel">
+      <actualFigure
+          xsi:type="gmfgraph:Label"
+          name="Interface_NameLabel"/>
+    </descriptors>
+    <descriptors
         name="ProvidedInterfaceCircleFigure">
-      <maximumSize
-          dx="15"
-          dy="15"/>
-      <minimumSize
-          dx="15"
-          dy="15"/>
-      <preferredSize
-          dx="15"
-          dy="15"/>
-    </figures>
-    <figures
-        xsi:type="gmfgraph:Ellipse"
-        referencingElements="RequiredInterfaceCircleNode"
-        name="RequiredInterfaceCircleFigure"
-        lineKind="LINE_DOT">
-      <maximumSize
-          dx="15"
-          dy="15"/>
-      <minimumSize
-          dx="15"
-          dy="15"/>
-      <preferredSize
-          dx="15"
-          dy="15"/>
-    </figures>
-    <figures
-        xsi:type="gmfgraph:PolylineConnection"
-        referencingElements="ProvidedInterfaceLink"
-        name="ProvidedInterfaceConnectionFigure"/>
-    <figures
-        xsi:type="gmfgraph:PolylineConnection"
-        referencingElements="RequiredInterfaceLink"
-        name="RequiredInterfaceConnectionFigure"
-        targetDecoration="RequiredInterfaceConnectionFigure_Lollypop">
-      <children
-          xsi:type="gmfgraph:CustomDecoration"
-          name="RequiredInterfaceConnectionFigure_Lollypop"
-          qualifiedClassName="org.eclipse.uml2.diagram.common.draw2d.RequiredInterfaceDecoration">
-        <attributes
-            name="radius"
-            value="10"/>
-      </children>
-    </figures>
+      <actualFigure
+          xsi:type="gmfgraph:Ellipse"
+          name="ProvidedInterfaceCircleFigure">
+        <maximumSize
+            dx="15"
+            dy="15"/>
+        <minimumSize
+            dx="15"
+            dy="15"/>
+        <preferredSize
+            dx="15"
+            dy="15"/>
+      </actualFigure>
+    </descriptors>
+    <descriptors
+        name="RequiredInterfaceCircleFigure">
+      <actualFigure
+          xsi:type="gmfgraph:Ellipse"
+          name="RequiredInterfaceCircleFigure"
+          lineKind="LINE_DOT">
+        <maximumSize
+            dx="15"
+            dy="15"/>
+        <minimumSize
+            dx="15"
+            dy="15"/>
+        <preferredSize
+            dx="15"
+            dy="15"/>
+      </actualFigure>
+    </descriptors>
+    <descriptors
+        name="ProvidedInterfaceConnectionFigure">
+      <actualFigure
+          xsi:type="gmfgraph:PolylineConnection"
+          name="ProvidedInterfaceConnectionFigure"/>
+    </descriptors>
+    <descriptors
+        name="RequiredInterfaceConnectionFigure">
+      <actualFigure
+          xsi:type="gmfgraph:PolylineConnection"
+          name="RequiredInterfaceConnectionFigure"
+          targetDecoration="//@figures.0/@descriptors.4/@actualFigure/@children.0">
+        <children
+            xsi:type="gmfgraph:CustomDecoration"
+            name="RequiredInterfaceConnectionFigure_Lollypop"
+            qualifiedClassName="org.eclipse.uml2.diagram.common.draw2d.RequiredInterfaceDecoration">
+          <attributes
+              name="radius"
+              value="10"/>
+        </children>
+      </actualFigure>
+    </descriptors>
   </figures>
   <nodes
       name="ProvidedInterfaceCircleNode"

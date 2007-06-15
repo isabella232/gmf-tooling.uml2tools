@@ -2,145 +2,163 @@
 <gmfgraph:Canvas xmi:version="2.0"
     xmlns:xmi="http://www.omg.org/XMI"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xmlns:gmfgraph="http://www.eclipse.org/gmf/2005/GraphicalDefinition">
+    xmlns:gmfgraph="http://www.eclipse.org/gmf/2006/GraphicalDefinition">
   <figures>
-    <figures
-        xsi:type="gmfgraph:Rectangle"
-        referencingElements="CentralBufferNode"
+    <descriptors
         name="CentralBufferFigure">
-      <layout
-          xsi:type="gmfgraph:StackLayout"/>
-      <children
+      <actualFigure
           xsi:type="gmfgraph:Rectangle"
-          name="CentralBufferFigure_NameContainer"
-          outline="false"
-          fill="false">
+          name="CentralBufferFigure">
         <layout
-            xsi:type="gmfgraph:FlowLayout"
-            vertical="true"
-            forceSingleLine="true"
-            minorAlignment="CENTER"
-            majorSpacing="0"
-            minorSpacing="0"/>
-        <children
-            xsi:type="gmfgraph:Label"
-            name="CentralBufferFigure_fixed_central"
-            text="\u00ABcentralBuffer\u00BB"/>
-        <children
-            xsi:type="gmfgraph:Label"
-            referencingElements="CentralBufferNode_name"
-            name="CentralBufferFigure_name"
-            text=""/>
-        <children
-            xsi:type="gmfgraph:Label"
-            referencingElements="CentralBufferNode_states"
-            name="CentralBufferFigure_states"/>
-      </children>
-      <border
-          xsi:type="gmfgraph:MarginBorder">
-        <insets
-            top="5"
-            left="5"
-            bottom="5"
-            right="5"/>
-      </border>
-    </figures>
-    <figures
-        xsi:type="gmfgraph:Rectangle"
-        referencingElements="DataStoreNode"
-        name="DataStoreFigure">
-      <layout
-          xsi:type="gmfgraph:StackLayout"/>
-      <children
-          xsi:type="gmfgraph:Rectangle"
-          name="DataStoreFigure_NameContainer"
-          outline="false"
-          fill="false">
-        <layout
-            xsi:type="gmfgraph:FlowLayout"
-            vertical="true"
-            forceSingleLine="true"
-            minorAlignment="CENTER"
-            majorSpacing="0"
-            minorSpacing="0"/>
-        <children
-            xsi:type="gmfgraph:Label"
-            name="DataStore_fixed_datastore"
-            text="\u00ABdatastore\u00BB"/>
-        <children
-            xsi:type="gmfgraph:Label"
-            referencingElements="DataStoreNode_name"
-            name="DataStoreFigure_name"
-            text=""/>
-        <children
-            xsi:type="gmfgraph:Label"
-            referencingElements="DataStoreNode_states"
-            name="DataStoreFigure_states"/>
-      </children>
-      <border
-          xsi:type="gmfgraph:MarginBorder">
-        <insets
-            top="5"
-            left="5"
-            bottom="5"
-            right="5"/>
-      </border>
-    </figures>
-    <figures
-        xsi:type="gmfgraph:Rectangle"
-        referencingElements="StandalonePinNode"
-        name="StandalonePinFigure">
-      <layoutData
-          xsi:type="gmfgraph:CustomLayoutData"
-          qualifiedClassName="org.eclipse.uml2.diagram.common.draw2d.CenterLayout"/>
-      <children
-          xsi:type="gmfgraph:Label"
-          referencingElements="StandalonePinNode_name"
-          name="StandalonePinFigure_name">
-        <insets
-            left="5"
-            right="5"/>
-      </children>
-    </figures>
-    <figures
-        xsi:type="gmfgraph:Rectangle"
-        referencingElements="AttachedOutputPinNode AttachedInputPinNode"
-        name="SmallSquareFigure">
-      <maximumSize
-          dx="15"
-          dy="15"/>
-      <minimumSize
-          dx="15"
-          dy="15"/>
-      <preferredSize
-          dx="15"
-          dy="15"/>
-    </figures>
-    <figures
-        xsi:type="gmfgraph:Label"
-        referencingElements="AttachedPinNode_external_name"
-        name="AttachedPin_external_name"/>
-    <figures
-        xsi:type="gmfgraph:Rectangle"
-        referencingElements="ActivityParameterNode"
-        name="ActivityParameterFigure">
-      <layoutData
-          xsi:type="gmfgraph:CustomLayoutData"
-          qualifiedClassName="org.eclipse.uml2.diagram.common.draw2d.CenterLayout"/>
-      <children
-          xsi:type="gmfgraph:Label"
-          referencingElements="ActivityParameterNode_name"
-          name="ActivityParameterFigure_name">
+            xsi:type="gmfgraph:StackLayout"/>
         <border
             xsi:type="gmfgraph:MarginBorder">
           <insets
-              top="3"
+              top="5"
               left="5"
-              bottom="3"
+              bottom="5"
               right="5"/>
         </border>
-      </children>
-    </figures>
+        <children
+            xsi:type="gmfgraph:Rectangle"
+            name="CentralBufferFigure_NameContainer"
+            outline="false"
+            fill="false">
+          <layout
+              xsi:type="gmfgraph:FlowLayout"
+              vertical="true"
+              forceSingleLine="true"
+              minorAlignment="CENTER"
+              majorSpacing="0"
+              minorSpacing="0"/>
+          <children
+              xsi:type="gmfgraph:Label"
+              name="CentralBufferFigure_fixed_central"
+              text="\u00ABcentralBuffer\u00BB"/>
+          <children
+              xsi:type="gmfgraph:Label"
+              name="CentralBufferFigure_name"
+              text=""/>
+          <children
+              xsi:type="gmfgraph:Label"
+              name="CentralBufferFigure_states"/>
+        </children>
+      </actualFigure>
+      <accessors
+          figure="//@figures.0/@descriptors.0/@actualFigure/@children.0/@children.1"/>
+      <accessors
+          figure="//@figures.0/@descriptors.0/@actualFigure/@children.0/@children.2"/>
+    </descriptors>
+    <descriptors
+        name="DataStoreFigure">
+      <actualFigure
+          xsi:type="gmfgraph:Rectangle"
+          name="DataStoreFigure">
+        <layout
+            xsi:type="gmfgraph:StackLayout"/>
+        <border
+            xsi:type="gmfgraph:MarginBorder">
+          <insets
+              top="5"
+              left="5"
+              bottom="5"
+              right="5"/>
+        </border>
+        <children
+            xsi:type="gmfgraph:Rectangle"
+            name="DataStoreFigure_NameContainer"
+            outline="false"
+            fill="false">
+          <layout
+              xsi:type="gmfgraph:FlowLayout"
+              vertical="true"
+              forceSingleLine="true"
+              minorAlignment="CENTER"
+              majorSpacing="0"
+              minorSpacing="0"/>
+          <children
+              xsi:type="gmfgraph:Label"
+              name="DataStore_fixed_datastore"
+              text="\u00ABdatastore\u00BB"/>
+          <children
+              xsi:type="gmfgraph:Label"
+              name="DataStoreFigure_name"
+              text=""/>
+          <children
+              xsi:type="gmfgraph:Label"
+              name="DataStoreFigure_states"/>
+        </children>
+      </actualFigure>
+      <accessors
+          figure="//@figures.0/@descriptors.1/@actualFigure/@children.0/@children.1"/>
+      <accessors
+          figure="//@figures.0/@descriptors.1/@actualFigure/@children.0/@children.2"/>
+    </descriptors>
+    <descriptors
+        name="StandalonePinFigure">
+      <actualFigure
+          xsi:type="gmfgraph:Rectangle"
+          name="StandalonePinFigure">
+        <layoutData
+            xsi:type="gmfgraph:CustomLayoutData"
+            qualifiedClassName="org.eclipse.uml2.diagram.common.draw2d.CenterLayout"/>
+        <children
+            xsi:type="gmfgraph:Label"
+            name="StandalonePinFigure_name">
+          <insets
+              left="5"
+              right="5"/>
+        </children>
+      </actualFigure>
+      <accessors
+          figure="//@figures.0/@descriptors.2/@actualFigure/@children.0"/>
+    </descriptors>
+    <descriptors
+        name="SmallSquareFigure">
+      <actualFigure
+          xsi:type="gmfgraph:Rectangle"
+          name="SmallSquareFigure">
+        <maximumSize
+            dx="15"
+            dy="15"/>
+        <minimumSize
+            dx="15"
+            dy="15"/>
+        <preferredSize
+            dx="15"
+            dy="15"/>
+      </actualFigure>
+    </descriptors>
+    <descriptors
+        name="AttachedPin_external_name">
+      <actualFigure
+          xsi:type="gmfgraph:Label"
+          name="AttachedPin_external_name"/>
+    </descriptors>
+    <descriptors
+        name="ActivityParameterFigure">
+      <actualFigure
+          xsi:type="gmfgraph:Rectangle"
+          name="ActivityParameterFigure">
+        <layoutData
+            xsi:type="gmfgraph:CustomLayoutData"
+            qualifiedClassName="org.eclipse.uml2.diagram.common.draw2d.CenterLayout"/>
+        <children
+            xsi:type="gmfgraph:Label"
+            name="ActivityParameterFigure_name">
+          <border
+              xsi:type="gmfgraph:MarginBorder">
+            <insets
+                top="3"
+                left="5"
+                bottom="3"
+                right="5"/>
+          </border>
+        </children>
+      </actualFigure>
+      <accessors
+          figure="//@figures.0/@descriptors.5/@actualFigure/@children.0"/>
+    </descriptors>
   </figures>
   <nodes
       name="DataStoreNode"
@@ -175,29 +193,35 @@
   </nodes>
   <labels
       name="StandalonePinNode_name"
-      figure="StandalonePinFigure_name"
-      elementIcon="false"/>
+      figure="StandalonePinFigure"
+      elementIcon="false"
+      accessor="//@figures.0/@descriptors.2/@accessors.0"/>
   <labels
       name="AttachedPinNode_external_name"
       figure="AttachedPin_external_name"
       elementIcon="false"/>
   <labels
       name="ActivityParameterNode_name"
-      figure="ActivityParameterFigure_name"/>
+      figure="ActivityParameterFigure"
+      accessor="//@figures.0/@descriptors.5/@accessors.0"/>
   <labels
       name="CentralBufferNode_name"
-      figure="CentralBufferFigure_name"
-      elementIcon="false"/>
+      figure="CentralBufferFigure"
+      elementIcon="false"
+      accessor="//@figures.0/@descriptors.0/@accessors.0"/>
   <labels
       name="CentralBufferNode_states"
-      figure="CentralBufferFigure_states"
-      elementIcon="false"/>
+      figure="CentralBufferFigure"
+      elementIcon="false"
+      accessor="//@figures.0/@descriptors.0/@accessors.1"/>
   <labels
       name="DataStoreNode_name"
-      figure="DataStoreFigure_name"
-      elementIcon="false"/>
+      figure="DataStoreFigure"
+      elementIcon="false"
+      accessor="//@figures.0/@descriptors.1/@accessors.0"/>
   <labels
       name="DataStoreNode_states"
-      figure="DataStoreFigure_states"
-      elementIcon="false"/>
+      figure="DataStoreFigure"
+      elementIcon="false"
+      accessor="//@figures.0/@descriptors.1/@accessors.1"/>
 </gmfgraph:Canvas>

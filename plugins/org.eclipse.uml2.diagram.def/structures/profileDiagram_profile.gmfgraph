@@ -2,116 +2,125 @@
 <gmfgraph:Canvas xmi:version="2.0"
     xmlns:xmi="http://www.omg.org/XMI"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xmlns:gmfgraph="http://www.eclipse.org/gmf/2005/GraphicalDefinition" name="Profile_Profile">
+    xmlns:gmfgraph="http://www.eclipse.org/gmf/2006/GraphicalDefinition" name="Profile_Profile">
   <figures
       name="ProfileGallery">
-    <figures
-        xsi:type="gmfgraph:Rectangle"
-        referencingElements="ProfileNode"
-        name="ProfileFigure"
-        outline="false"
-        fill="false">
-      <layout
-          xsi:type="gmfgraph:CustomLayout"
-          qualifiedClassName="org.eclipse.gmf.runtime.draw2d.ui.figures.ConstrainedToolbarLayout"
-          bundleName="org.eclipse.gmf.runtime.draw2d.ui">
-        <attributes
-            name="StretchMajorAxis"
-            value="true"/>
-        <attributes
-            name="MinorAlignment"
-            value="org.eclipse.draw2d.ToolbarLayout.ALIGN_TOPLEFT"/>
-      </layout>
-      <children
+    <descriptors
+        name="ProfileFigure">
+      <actualFigure
           xsi:type="gmfgraph:Rectangle"
-          name="Profile_leftTab">
-        <maximumSize
-            dx="40"
-            dy="20"/>
-        <preferredSize
-            dx="40"
-            dy="20"/>
-      </children>
-      <children
-          xsi:type="gmfgraph:Rectangle"
-          name="Profile_body">
+          name="ProfileFigure"
+          outline="false"
+          fill="false">
+        <layout
+            xsi:type="gmfgraph:CustomLayout"
+            qualifiedClassName="org.eclipse.gmf.runtime.draw2d.ui.figures.ConstrainedToolbarLayout">
+          <attributes
+              name="StretchMajorAxis"
+              value="true"/>
+          <attributes
+              name="MinorAlignment"
+              value="org.eclipse.draw2d.ToolbarLayout.ALIGN_TOPLEFT"/>
+        </layout>
+        <foregroundColor
+            xsi:type="gmfgraph:ConstantColor"
+            value="lightGray"/>
+        <children
+            xsi:type="gmfgraph:Rectangle"
+            name="Profile_leftTab">
+          <maximumSize
+              dx="40"
+              dy="20"/>
+          <preferredSize
+              dx="40"
+              dy="20"/>
+        </children>
+        <children
+            xsi:type="gmfgraph:Rectangle"
+            name="Profile_body">
+          <layout
+              xsi:type="gmfgraph:FlowLayout"
+              vertical="true"
+              matchMinorSize="true"
+              forceSingleLine="true"
+              minorAlignment="CENTER"
+              majorSpacing="0"
+              minorSpacing="0"/>
+          <children
+              xsi:type="gmfgraph:Label"
+              name="ProfileFigure_ProfileLabel"
+              text="\u00ABprofile\u00BB">
+            <layout
+                xsi:type="gmfgraph:CustomLayout"
+                qualifiedClassName="org.eclipse.uml2.diagram.common.draw2d.CenterLayout"/>
+          </children>
+          <children
+              xsi:type="gmfgraph:Label"
+              name="ProfileFigure_NameLabel"
+              text="">
+            <layout
+                xsi:type="gmfgraph:CustomLayout"
+                qualifiedClassName="org.eclipse.uml2.diagram.common.draw2d.CenterLayout"/>
+          </children>
+          <children
+              xsi:type="gmfgraph:Rectangle"
+              name="ProfileFigure_ContentsCompartment"/>
+        </children>
+      </actualFigure>
+      <accessors
+          figure="//@figures.0/@descriptors.0/@actualFigure/@children.1/@children.1"/>
+      <accessors
+          figure="//@figures.0/@descriptors.0/@actualFigure/@children.1/@children.2"/>
+    </descriptors>
+    <descriptors
+        name="ElementImport_NameLabel">
+      <actualFigure
+          xsi:type="gmfgraph:Label"
+          name="ElementImport_NameLabel"/>
+    </descriptors>
+    <descriptors
+        name="ProfilelabelsFigure">
+      <actualFigure
+          xsi:type="gmfgraph:ScalablePolygon"
+          name="ProfilelabelsFigure">
         <layout
             xsi:type="gmfgraph:FlowLayout"
             vertical="true"
             matchMinorSize="true"
             forceSingleLine="true"
-            minorAlignment="CENTER"
+            minorAlignment="FILL"
             majorSpacing="0"
             minorSpacing="0"/>
         <children
             xsi:type="gmfgraph:Label"
-            name="ProfileFigure_ProfileLabel"
-            text="\u00ABprofile\u00BB">
-          <layout
-              xsi:type="gmfgraph:CustomLayout"
-              qualifiedClassName="org.eclipse.uml2.diagram.common.draw2d.CenterLayout"/>
-        </children>
+            name="ProfileLabels_profileFigure"
+            text="\u00ABprofile\u00BB"/>
         <children
             xsi:type="gmfgraph:Label"
-            referencingElements="ProfileNode_name"
-            name="ProfileFigure_NameLabel"
-            text="">
-          <layout
-              xsi:type="gmfgraph:CustomLayout"
-              qualifiedClassName="org.eclipse.uml2.diagram.common.draw2d.CenterLayout"/>
-        </children>
+            name="ProfileLabelsFigure_NameFigure"
+            text=""/>
         <children
             xsi:type="gmfgraph:Rectangle"
-            referencingElements="contents"
-            name="ProfileFigure_ContentsCompartment"/>
-      </children>
-      <foregroundColor
-          xsi:type="gmfgraph:ConstantColor"
-          value="lightGray"/>
-    </figures>
-    <figures
-        xsi:type="gmfgraph:Label"
-        referencingElements="ProfileLabelFigure_ImportedElement_name"
-        name="ElementImport_NameLabel"/>
-    <figures
-        xsi:type="gmfgraph:ScalablePolygon"
-        referencingElements="ProfileLabelContainer"
-        name="ProfilelabelsFigure">
-      <layout
-          xsi:type="gmfgraph:FlowLayout"
-          vertical="true"
-          matchMinorSize="true"
-          forceSingleLine="true"
-          minorAlignment="FILL"
-          majorSpacing="0"
-          minorSpacing="0"/>
-      <children
-          xsi:type="gmfgraph:Label"
-          name="ProfileLabels_profileFigure"
-          text="\u00ABprofile\u00BB"/>
-      <children
-          xsi:type="gmfgraph:Label"
-          referencingElements="ProfileLabels_name"
-          name="ProfileLabelsFigure_NameFigure"
-          text=""/>
-      <children
-          xsi:type="gmfgraph:Rectangle"
-          referencingElements="ProfileLabels"
-          name="ProfileLabelCompartmentFigure"
-          outline="false"
-          fill="false"/>
-      <template/>
-      <template
-          y="40"/>
-      <template
-          x="35"
-          y="40"/>
-      <template
-          x="40"
-          y="35"/>
-      <template
-          x="40"/>
-    </figures>
+            name="ProfileLabelCompartmentFigure"
+            outline="false"
+            fill="false"/>
+        <template/>
+        <template
+            y="40"/>
+        <template
+            x="35"
+            y="40"/>
+        <template
+            x="40"
+            y="35"/>
+        <template
+            x="40"/>
+      </actualFigure>
+      <accessors
+          figure="//@figures.0/@descriptors.2/@actualFigure/@children.1"/>
+      <accessors
+          figure="//@figures.0/@descriptors.2/@actualFigure/@children.2"/>
+    </descriptors>
   </figures>
   <nodes
       xsi:type="gmfgraph:DiagramLabel"
@@ -133,17 +142,21 @@
   </nodes>
   <compartments
       name="contents"
-      figure="ProfileFigure_ContentsCompartment"
+      figure="ProfileFigure"
       collapsible="true"
-      needsTitle="true"/>
+      needsTitle="true"
+      accessor="//@figures.0/@descriptors.0/@accessors.1"/>
   <compartments
       name="ProfileLabels"
-      figure="ProfileLabelCompartmentFigure"
-      collapsible="true"/>
+      figure="ProfilelabelsFigure"
+      collapsible="true"
+      accessor="//@figures.0/@descriptors.2/@accessors.1"/>
   <labels
       name="ProfileNode_name"
-      figure="ProfileFigure_NameLabel"/>
+      figure="ProfileFigure"
+      accessor="//@figures.0/@descriptors.0/@accessors.0"/>
   <labels
       name="ProfileLabels_name"
-      figure="ProfileLabelsFigure_NameFigure"/>
+      figure="ProfilelabelsFigure"
+      accessor="//@figures.0/@descriptors.2/@accessors.0"/>
 </gmfgraph:Canvas>

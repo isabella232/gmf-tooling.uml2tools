@@ -2,27 +2,30 @@
 <gmfgraph:Canvas xmi:version="2.0"
     xmlns:xmi="http://www.omg.org/XMI"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xmlns:gmfgraph="http://www.eclipse.org/gmf/2005/GraphicalDefinition" name="cnvTemplates">
+    xmlns:gmfgraph="http://www.eclipse.org/gmf/2006/GraphicalDefinition" name="cnvTemplates">
   <figures
       name="ClassDTemplates"
       implementationBundle="org.eclipse.uml2.diagram.common">
-    <figures
-        xsi:type="gmfgraph:Rectangle"
-        referencingElements="TemplateSignatureNode"
-        name="TemplateSignatureFigure"
-        lineKind="LINE_DASH">
-      <children
-          xsi:type="gmfgraph:Label"
-          referencingElements="TemplateSignatureNode_signature"
-          name="TemplateSignatureFigure_signature"
-          text="&lt;signature>">
-        <insets
-            top="5"
-            left="5"
-            bottom="5"
-            right="5"/>
-      </children>
-    </figures>
+    <descriptors
+        name="TemplateSignatureFigure">
+      <actualFigure
+          xsi:type="gmfgraph:Rectangle"
+          name="TemplateSignatureFigure"
+          lineKind="LINE_DASH">
+        <children
+            xsi:type="gmfgraph:Label"
+            name="TemplateSignatureFigure_signature"
+            text="&lt;signature>">
+          <insets
+              top="5"
+              left="5"
+              bottom="5"
+              right="5"/>
+        </children>
+      </actualFigure>
+      <accessors
+          figure="//@figures.0/@descriptors.0/@actualFigure/@children.0"/>
+    </descriptors>
   </figures>
   <nodes
       name="TemplateSignatureNode"
@@ -37,6 +40,7 @@
   </nodes>
   <labels
       name="TemplateSignatureNode_signature"
-      figure="TemplateSignatureFigure_signature"
-      elementIcon="false"/>
+      figure="TemplateSignatureFigure"
+      elementIcon="false"
+      accessor="//@figures.0/@descriptors.0/@accessors.0"/>
 </gmfgraph:Canvas>

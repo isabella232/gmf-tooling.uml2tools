@@ -2,57 +2,60 @@
 <gmfgraph:Canvas xmi:version="2.0"
     xmlns:xmi="http://www.omg.org/XMI"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xmlns:gmfgraph="http://www.eclipse.org/gmf/2005/GraphicalDefinition" name="ActivityDiagramSurface">
+    xmlns:gmfgraph="http://www.eclipse.org/gmf/2006/GraphicalDefinition" name="ActivityDiagramSurface">
   <figures
       name="Default">
-    <figures
-        xsi:type="gmfgraph:RoundedRectangle"
-        referencingElements="ActivityNode"
-        name="ActivityFigure"
-        cornerWidth="18"
-        cornerHeight="18">
-      <layout
-          xsi:type="gmfgraph:BorderLayout"/>
-      <children
-          xsi:type="gmfgraph:Rectangle"
-          name="ActivityFigureRectangle_name"
-          outline="false"
-          fill="false">
-        <layoutData
-            xsi:type="gmfgraph:BorderLayoutData"
-            alignment="BEGINNING"
-            vertical="true"/>
+    <descriptors
+        name="ActivityFigure">
+      <actualFigure
+          xsi:type="gmfgraph:RoundedRectangle"
+          name="ActivityFigure"
+          cornerWidth="18"
+          cornerHeight="18">
         <layout
-            xsi:type="gmfgraph:StackLayout"/>
+            xsi:type="gmfgraph:BorderLayout"/>
         <children
-            xsi:type="gmfgraph:Label"
-            referencingElements="ActivityNode_name"
-            name="ActivityFigure_name"
-            text="">
+            xsi:type="gmfgraph:Rectangle"
+            name="ActivityFigureRectangle_name"
+            outline="false"
+            fill="false">
+          <layoutData
+              xsi:type="gmfgraph:BorderLayoutData"
+              alignment="BEGINNING"
+              vertical="true"/>
           <layout
-              xsi:type="gmfgraph:CustomLayout"
-              qualifiedClassName="org.eclipse.uml2.diagram.common.draw2d.CenterLayout"/>
+              xsi:type="gmfgraph:StackLayout"/>
+          <border
+              xsi:type="gmfgraph:CustomBorder"
+              qualifiedClassName="org.eclipse.gmf.runtime.draw2d.ui.figures.OneLineBorder">
+            <attributes
+                name="position"
+                value="org.eclipse.draw2d.PositionConstants.NONE"/>
+          </border>
+          <children
+              xsi:type="gmfgraph:Label"
+              name="ActivityFigure_name"
+              text="">
+            <layout
+                xsi:type="gmfgraph:CustomLayout"
+                qualifiedClassName="org.eclipse.uml2.diagram.common.draw2d.CenterLayout"/>
+          </children>
         </children>
-        <border
-            xsi:type="gmfgraph:CustomBorder"
-            qualifiedClassName="org.eclipse.gmf.runtime.draw2d.ui.figures.OneLineBorder"
-            bundleName="">
-          <attributes
-              name="position"
-              value="org.eclipse.draw2d.PositionConstants.NONE"/>
-        </border>
-      </children>
-      <children
-          xsi:type="gmfgraph:Rectangle"
-          referencingElements="subvertices"
-          name="ActivityFigure_Body"
-          outline="false"
-          fill="false">
-        <layoutData
-            xsi:type="gmfgraph:BorderLayoutData"
-            alignment="FILL"/>
-      </children>
-    </figures>
+        <children
+            xsi:type="gmfgraph:Rectangle"
+            name="ActivityFigure_Body"
+            outline="false"
+            fill="false">
+          <layoutData
+              xsi:type="gmfgraph:BorderLayoutData"
+              alignment="FILL"/>
+        </children>
+      </actualFigure>
+      <accessors
+          figure="//@figures.0/@descriptors.0/@actualFigure/@children.0/@children.0"/>
+      <accessors
+          figure="//@figures.0/@descriptors.0/@actualFigure/@children.1"/>
+    </descriptors>
   </figures>
   <nodes
       name="ActivityNode"
@@ -67,9 +70,11 @@
   <nodes
       xsi:type="gmfgraph:DiagramLabel"
       name="ActivityNode_name"
-      figure="ActivityFigure_name"
-      elementIcon="false"/>
+      figure="ActivityFigure"
+      elementIcon="false"
+      accessor="//@figures.0/@descriptors.0/@accessors.0"/>
   <compartments
       name="subvertices"
-      figure="ActivityFigure_Body"/>
+      figure="ActivityFigure"
+      accessor="//@figures.0/@descriptors.0/@accessors.1"/>
 </gmfgraph:Canvas>

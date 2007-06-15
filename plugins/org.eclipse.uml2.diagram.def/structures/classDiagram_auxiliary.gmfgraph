@@ -2,13 +2,15 @@
 <gmfgraph:Canvas xmi:version="2.0"
     xmlns:xmi="http://www.omg.org/XMI"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xmlns:gmfgraph="http://www.eclipse.org/gmf/2005/GraphicalDefinition" name="cnvAuxiliary">
+    xmlns:gmfgraph="http://www.eclipse.org/gmf/2006/GraphicalDefinition" name="cnvAuxiliary">
   <figures
       name="AuxiliaryGallery">
-    <figures
-        xsi:type="gmfgraph:Label"
-        referencingElements="AuxiliaryPureLabel"
-        name="SharedPureGraphLabel"/>
+    <descriptors
+        name="SharedPureGraphLabel">
+      <actualFigure
+          xsi:type="gmfgraph:Label"
+          name="SharedPureGraphLabel"/>
+    </descriptors>
   </figures>
   <labels
       name="AuxiliaryPureLabel"

@@ -2,20 +2,70 @@
 <gmfgraph:Canvas xmi:version="2.0"
     xmlns:xmi="http://www.omg.org/XMI"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xmlns:gmfgraph="http://www.eclipse.org/gmf/2005/GraphicalDefinition">
+    xmlns:gmfgraph="http://www.eclipse.org/gmf/2006/GraphicalDefinition">
   <figures
       name="NeedsCenterLayout"
       implementationBundle="org.eclipse.uml2.diagram.common">
-    <figures
-        xsi:type="gmfgraph:Ellipse"
-        referencingElements="ActivityFinalNode FinalStateNode"
+    <descriptors
         name="ActivityFinalFigure">
-      <layout
-          xsi:type="gmfgraph:CustomLayout"
-          qualifiedClassName="org.eclipse.uml2.diagram.common.draw2d.CenterLayout"/>
-      <children
+      <actualFigure
           xsi:type="gmfgraph:Ellipse"
-          name="ActivityFinalFigure_inner">
+          name="ActivityFinalFigure">
+        <layout
+            xsi:type="gmfgraph:CustomLayout"
+            qualifiedClassName="org.eclipse.uml2.diagram.common.draw2d.CenterLayout"/>
+        <foregroundColor
+            xsi:type="gmfgraph:ConstantColor"
+            value="black"/>
+        <maximumSize
+            dx="23"
+            dy="23"/>
+        <minimumSize
+            dx="23"
+            dy="23"/>
+        <preferredSize
+            dx="23"
+            dy="23"/>
+        <children
+            xsi:type="gmfgraph:Ellipse"
+            name="ActivityFinalFigure_inner">
+          <backgroundColor
+              xsi:type="gmfgraph:ConstantColor"
+              value="black"/>
+          <maximumSize
+              dx="15"
+              dy="15"/>
+          <minimumSize
+              dx="15"
+              dy="15"/>
+          <preferredSize
+              dx="15"
+              dy="15"/>
+        </children>
+      </actualFigure>
+    </descriptors>
+    <descriptors
+        name="ScalableRhombFigure">
+      <actualFigure
+          xsi:type="gmfgraph:ScalablePolygon"
+          name="ScalableRhombFigure">
+        <template
+            x="20"/>
+        <template
+            x="40"
+            y="20"/>
+        <template
+            x="20"
+            y="40"/>
+        <template
+            y="20"/>
+      </actualFigure>
+    </descriptors>
+    <descriptors
+        name="ActivityInitialFigure">
+      <actualFigure
+          xsi:type="gmfgraph:Ellipse"
+          name="ActivityInitialFigure">
         <backgroundColor
             xsi:type="gmfgraph:ConstantColor"
             value="black"/>
@@ -28,103 +78,63 @@
         <preferredSize
             dx="15"
             dy="15"/>
-      </children>
-      <foregroundColor
-          xsi:type="gmfgraph:ConstantColor"
-          value="black"/>
-      <maximumSize
-          dx="23"
-          dy="23"/>
-      <minimumSize
-          dx="23"
-          dy="23"/>
-      <preferredSize
-          dx="23"
-          dy="23"/>
-    </figures>
-    <figures
-        xsi:type="gmfgraph:ScalablePolygon"
-        referencingElements="DecisionAndMergeNode ChoicePseudoStateNode"
-        name="ScalableRhombFigure">
-      <template
-          x="20"/>
-      <template
-          x="40"
-          y="20"/>
-      <template
-          x="20"
-          y="40"/>
-      <template
-          y="20"/>
-    </figures>
-    <figures
-        xsi:type="gmfgraph:Ellipse"
-        referencingElements="ActivityInitialNode InitialPseudoStateNode"
-        name="ActivityInitialFigure">
-      <backgroundColor
-          xsi:type="gmfgraph:ConstantColor"
-          value="black"/>
-      <maximumSize
-          dx="15"
-          dy="15"/>
-      <minimumSize
-          dx="15"
-          dy="15"/>
-      <preferredSize
-          dx="15"
-          dy="15"/>
-    </figures>
-    <figures
-        xsi:type="gmfgraph:Ellipse"
-        referencingElements="FlowFinalNode"
+      </actualFigure>
+    </descriptors>
+    <descriptors
         name="FlowFinalFigure">
-      <layout
-          xsi:type="gmfgraph:CustomLayout"
-          qualifiedClassName="org.eclipse.uml2.diagram.common.draw2d.CenterLayout"/>
-      <children
-          xsi:type="gmfgraph:Polyline"
-          name="Aux_FlowFinalFigure_BackSlash">
-        <template
-            x="4"
-            y="4"/>
-        <template
-            x="19"
-            y="19"/>
-      </children>
-      <children
-          xsi:type="gmfgraph:Polyline"
-          name="Aux_FlowFinalFigure_Slash">
-        <template
-            x="4"
-            y="19"/>
-        <template
-            x="19"
-            y="4"/>
-      </children>
-      <foregroundColor
-          xsi:type="gmfgraph:ConstantColor"
-          value="black"/>
-      <maximumSize
-          dx="23"
-          dy="23"/>
-      <minimumSize
-          dx="23"
-          dy="23"/>
-      <preferredSize
-          dx="23"
-          dy="23"/>
-    </figures>
-    <figures
-        xsi:type="gmfgraph:Rectangle"
-        referencingElements="ForkAndJoinNode ForkAndJoinPseudoStateNode"
+      <actualFigure
+          xsi:type="gmfgraph:Ellipse"
+          name="FlowFinalFigure">
+        <layout
+            xsi:type="gmfgraph:CustomLayout"
+            qualifiedClassName="org.eclipse.uml2.diagram.common.draw2d.CenterLayout"/>
+        <foregroundColor
+            xsi:type="gmfgraph:ConstantColor"
+            value="black"/>
+        <maximumSize
+            dx="23"
+            dy="23"/>
+        <minimumSize
+            dx="23"
+            dy="23"/>
+        <preferredSize
+            dx="23"
+            dy="23"/>
+        <children
+            xsi:type="gmfgraph:Polyline"
+            name="Aux_FlowFinalFigure_BackSlash">
+          <template
+              x="4"
+              y="4"/>
+          <template
+              x="19"
+              y="19"/>
+        </children>
+        <children
+            xsi:type="gmfgraph:Polyline"
+            name="Aux_FlowFinalFigure_Slash">
+          <template
+              x="4"
+              y="19"/>
+          <template
+              x="19"
+              y="4"/>
+        </children>
+      </actualFigure>
+    </descriptors>
+    <descriptors
         name="ForkJoinFigure">
-      <backgroundColor
-          xsi:type="gmfgraph:ConstantColor"
-          value="black"/>
-      <preferredSize
-          dx="4"
-          dy="50"/>
-    </figures>
+      <actualFigure
+          xsi:type="gmfgraph:Rectangle"
+          name="ForkJoinFigure">
+        <backgroundColor
+            xsi:type="gmfgraph:ConstantColor"
+            value="black"/>
+        <preferredSize
+            dx="4"
+            dy="50"/>
+      </actualFigure>
+    </descriptors>
   </figures>
   <nodes
       name="ActivityFinalNode"

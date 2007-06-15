@@ -2,27 +2,64 @@
 <gmfgraph:Canvas xmi:version="2.0"
     xmlns:xmi="http://www.omg.org/XMI"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xmlns:gmfgraph="http://www.eclipse.org/gmf/2005/GraphicalDefinition">
+    xmlns:gmfgraph="http://www.eclipse.org/gmf/2006/GraphicalDefinition">
   <figures
       name="BasicComponentDFigures"
       implementationBundle="org.eclipse.uml2.diagram.common">
-    <figures
-        xsi:type="gmfgraph:Rectangle"
-        referencingElements="ComponentNode"
-        name="ComponentFigure"
-        outline="false"
-        fill="false">
-      <layout
-          xsi:type="gmfgraph:FlowLayout"
-          vertical="true"
-          matchMinorSize="true"
-          forceSingleLine="true"
-          minorAlignment="CENTER"
-          majorSpacing="0"
-          minorSpacing="0"/>
-      <children
+    <descriptors
+        name="ComponentFigure">
+      <actualFigure
           xsi:type="gmfgraph:Rectangle"
-          name="ComponentFigure_LabelsContainer">
+          name="ComponentFigure"
+          outline="false"
+          fill="false">
+        <layout
+            xsi:type="gmfgraph:FlowLayout"
+            vertical="true"
+            matchMinorSize="true"
+            forceSingleLine="true"
+            minorAlignment="CENTER"
+            majorSpacing="0"
+            minorSpacing="0"/>
+        <children
+            xsi:type="gmfgraph:Rectangle"
+            name="ComponentFigure_LabelsContainer">
+          <layout
+              xsi:type="gmfgraph:FlowLayout"
+              vertical="true"
+              matchMinorSize="true"
+              forceSingleLine="true"
+              majorAlignment="FILL"
+              minorAlignment="FILL"
+              majorSpacing="0"
+              minorSpacing="0"/>
+          <minimumSize
+              dy="35"/>
+          <children
+              xsi:type="gmfgraph:Label"
+              name="ComponentFigure_fixed_component"
+              text="\u00ABcomponent\u00BB"/>
+          <children
+              xsi:type="gmfgraph:Label"
+              name="ComponentFigure_name"/>
+        </children>
+        <children
+            xsi:type="gmfgraph:Rectangle"
+            name="ComponentFigure_Body">
+          <minimumSize
+              dy="55"/>
+        </children>
+      </actualFigure>
+      <accessors
+          figure="//@figures.0/@descriptors.0/@actualFigure/@children.0/@children.1"/>
+      <accessors
+          figure="//@figures.0/@descriptors.0/@actualFigure/@children.1"/>
+    </descriptors>
+    <descriptors
+        name="ArtifactFigure">
+      <actualFigure
+          xsi:type="gmfgraph:Rectangle"
+          name="ArtifactFigure">
         <layout
             xsi:type="gmfgraph:FlowLayout"
             vertical="true"
@@ -34,67 +71,40 @@
             minorSpacing="0"/>
         <children
             xsi:type="gmfgraph:Label"
-            name="ComponentFigure_fixed_component"
-            text="\u00ABcomponent\u00BB"/>
+            name="ArtifactFigure_fixed_artifact"
+            text="\u00ABartifact\u00BB"/>
         <children
-            xsi:type="gmfgraph:Label"
-            referencingElements="ComponentNode_name"
-            name="ComponentFigure_name"/>
-        <minimumSize
-            dy="35"/>
-      </children>
-      <children
+            xsi:type="gmfgraph:Rectangle"
+            name="ArtifactFigure_NameContainer"
+            outline="false"
+            fill="false">
+          <layout
+              xsi:type="gmfgraph:CustomLayout"
+              qualifiedClassName="org.eclipse.uml2.diagram.common.draw2d.CenterLayout"/>
+          <children
+              xsi:type="gmfgraph:Label"
+              name="ArtifactFigure_name"/>
+        </children>
+      </actualFigure>
+      <accessors
+          figure="//@figures.0/@descriptors.1/@actualFigure/@children.1/@children.0"/>
+    </descriptors>
+    <descriptors
+        name="ComponentClassFigure">
+      <actualFigure
           xsi:type="gmfgraph:Rectangle"
-          referencingElements="contents"
-          name="ComponentFigure_Body">
-        <minimumSize
-            dy="55"/>
-      </children>
-    </figures>
-    <figures
-        xsi:type="gmfgraph:Rectangle"
-        referencingElements="ArtifactNode"
-        name="ArtifactFigure">
-      <layout
-          xsi:type="gmfgraph:FlowLayout"
-          vertical="true"
-          matchMinorSize="true"
-          forceSingleLine="true"
-          majorAlignment="FILL"
-          minorAlignment="FILL"
-          majorSpacing="0"
-          minorSpacing="0"/>
-      <children
-          xsi:type="gmfgraph:Label"
-          name="ArtifactFigure_fixed_artifact"
-          text="\u00ABartifact\u00BB"/>
-      <children
-          xsi:type="gmfgraph:Rectangle"
-          name="ArtifactFigure_NameContainer"
-          outline="false"
-          fill="false">
+          name="ComponentClassFigure">
         <layout
             xsi:type="gmfgraph:CustomLayout"
             qualifiedClassName="org.eclipse.uml2.diagram.common.draw2d.CenterLayout"/>
         <children
             xsi:type="gmfgraph:Label"
-            referencingElements="ArtifactNode_name"
-            name="ArtifactFigure_name"/>
-      </children>
-    </figures>
-    <figures
-        xsi:type="gmfgraph:Rectangle"
-        referencingElements="ComponentClassNode"
-        name="ComponentClassFigure">
-      <layout
-          xsi:type="gmfgraph:CustomLayout"
-          qualifiedClassName="org.eclipse.uml2.diagram.common.draw2d.CenterLayout"/>
-      <children
-          xsi:type="gmfgraph:Label"
-          referencingElements="ComponentClassNode_name"
-          name="ComponentClassFigure_name"
-          text=""/>
-    </figures>
+            name="ComponentClassFigure_name"
+            text=""/>
+      </actualFigure>
+      <accessors
+          figure="//@figures.0/@descriptors.2/@actualFigure/@children.0"/>
+    </descriptors>
   </figures>
   <nodes
       name="ComponentNode"
@@ -128,16 +138,20 @@
   </nodes>
   <compartments
       name="contents"
-      figure="ComponentFigure_Body"
-      collapsible="true"/>
+      figure="ComponentFigure"
+      collapsible="true"
+      accessor="//@figures.0/@descriptors.0/@accessors.1"/>
   <labels
       name="ComponentNode_name"
-      figure="ComponentFigure_name"/>
+      figure="ComponentFigure"
+      accessor="//@figures.0/@descriptors.0/@accessors.0"/>
   <labels
       name="ArtifactNode_name"
-      figure="ArtifactFigure_name"/>
+      figure="ArtifactFigure"
+      accessor="//@figures.0/@descriptors.1/@accessors.0"/>
   <labels
       name="ComponentClassNode_name"
-      figure="ComponentClassFigure_name"
-      elementIcon="false"/>
+      figure="ComponentClassFigure"
+      elementIcon="false"
+      accessor="//@figures.0/@descriptors.2/@accessors.0"/>
 </gmfgraph:Canvas>

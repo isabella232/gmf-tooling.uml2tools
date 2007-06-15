@@ -2,7 +2,7 @@
 <gmfgraph:Canvas xmi:version="2.0"
     xmlns:xmi="http://www.omg.org/XMI"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xmlns:gmfgraph="http://www.eclipse.org/gmf/2005/GraphicalDefinition" name="cnvInstances">
+    xmlns:gmfgraph="http://www.eclipse.org/gmf/2006/GraphicalDefinition" name="cnvInstances">
   <figures
       name="InstancesGallery"
       implementationBundle="org.eclipse.gmf.runtime.draw2d.ui">
@@ -25,87 +25,96 @@
       <template
           y="30"/>
     </figures>
-    <figures
-        xsi:type="gmfgraph:Rectangle"
-        referencingElements="InstanceNode"
+    <descriptors
         name="InstanceNodeFigure">
-      <layout
-          xsi:type="gmfgraph:FlowLayout"
-          vertical="true"
-          matchMinorSize="true"
-          forceSingleLine="true"
-          majorAlignment="FILL"
-          minorAlignment="FILL"
-          majorSpacing="0"
-          minorSpacing="0"/>
-      <children
+      <actualFigure
           xsi:type="gmfgraph:Rectangle"
-          name="InstanceNode_NameContainerFigure"
-          outline="false">
+          name="InstanceNodeFigure">
         <layout
-            xsi:type="gmfgraph:StackLayout"/>
+            xsi:type="gmfgraph:FlowLayout"
+            vertical="true"
+            matchMinorSize="true"
+            forceSingleLine="true"
+            majorAlignment="FILL"
+            minorAlignment="FILL"
+            majorSpacing="0"
+            minorSpacing="0"/>
+        <border
+            xsi:type="gmfgraph:MarginBorder">
+          <insets
+              top="1"
+              left="1"
+              right="1"/>
+        </border>
         <children
-            xsi:type="gmfgraph:Label"
-            referencingElements="InstanceNode_name"
-            name="InstanceNode_NameLabel">
+            xsi:type="gmfgraph:Rectangle"
+            name="InstanceNode_NameContainerFigure"
+            outline="false">
+          <layout
+              xsi:type="gmfgraph:StackLayout"/>
+          <border
+              xsi:type="gmfgraph:CustomBorder"
+              qualifiedClassName="org.eclipse.gmf.runtime.draw2d.ui.figures.OneLineBorder">
+            <attributes
+                name="position"
+                value="org.eclipse.draw2d.PositionConstants.BOTTOM"/>
+          </border>
+          <children
+              xsi:type="gmfgraph:Label"
+              name="InstanceNode_NameLabel">
+            <layout
+                xsi:type="gmfgraph:CustomLayout"
+                qualifiedClassName="org.eclipse.uml2.diagram.common.draw2d.CenterLayout"/>
+          </children>
+        </children>
+        <children
+            xsi:type="gmfgraph:Rectangle"
+            name="InstanceSpecification_SpecificationContainerFigure"
+            outline="false">
           <layout
               xsi:type="gmfgraph:CustomLayout"
               qualifiedClassName="org.eclipse.uml2.diagram.common.draw2d.CenterLayout"/>
+          <children
+              xsi:type="gmfgraph:Label"
+              name="InstanceNode_SpecificationLabel"/>
         </children>
-        <border
-            xsi:type="gmfgraph:CustomBorder"
-            qualifiedClassName="org.eclipse.gmf.runtime.draw2d.ui.figures.OneLineBorder"
-            bundleName="">
-          <attributes
-              name="position"
-              value="org.eclipse.draw2d.PositionConstants.BOTTOM"/>
-        </border>
-      </children>
-      <children
-          xsi:type="gmfgraph:Rectangle"
-          name="InstanceSpecification_SpecificationContainerFigure"
-          outline="false">
-        <layout
-            xsi:type="gmfgraph:CustomLayout"
-            qualifiedClassName="org.eclipse.uml2.diagram.common.draw2d.CenterLayout"/>
         <children
-            xsi:type="gmfgraph:Label"
-            referencingElements="InstanceNode_specification"
-            name="InstanceNode_SpecificationLabel"/>
-      </children>
-      <children
-          xsi:type="gmfgraph:Rectangle"
-          referencingElements="Slots"
-          name="InstanceNode_SlotsCompartmentFigure"
-          outline="false"/>
-      <border
-          xsi:type="gmfgraph:MarginBorder">
-        <insets
-            top="1"
-            left="1"
-            right="1"/>
-      </border>
-    </figures>
-    <figures
-        xsi:type="gmfgraph:Label"
-        referencingElements="Slot_inplace"
-        name="Slot_InplaceLabel"/>
+            xsi:type="gmfgraph:Rectangle"
+            name="InstanceNode_SlotsCompartmentFigure"
+            outline="false"/>
+      </actualFigure>
+      <accessors
+          figure="//@figures.0/@descriptors.0/@actualFigure/@children.0/@children.0"/>
+      <accessors
+          figure="//@figures.0/@descriptors.0/@actualFigure/@children.1/@children.0"/>
+      <accessors
+          figure="//@figures.0/@descriptors.0/@actualFigure/@children.2"/>
+    </descriptors>
+    <descriptors
+        name="Slot_InplaceLabel">
+      <actualFigure
+          xsi:type="gmfgraph:Label"
+          name="Slot_InplaceLabel"/>
+    </descriptors>
   </figures>
   <nodes
       name="InstanceNode"
       figure="InstanceNodeFigure"/>
   <compartments
       name="Slots"
-      figure="InstanceNode_SlotsCompartmentFigure"
-      needsTitle="true"/>
+      figure="InstanceNodeFigure"
+      needsTitle="true"
+      accessor="//@figures.0/@descriptors.0/@accessors.2"/>
   <labels
       name="InstanceNode_name"
-      figure="InstanceNode_NameLabel"/>
+      figure="InstanceNodeFigure"
+      accessor="//@figures.0/@descriptors.0/@accessors.0"/>
   <labels
       name="Slot_inplace"
       figure="Slot_InplaceLabel"/>
   <labels
       name="InstanceNode_specification"
-      figure="InstanceNode_SpecificationLabel"
-      elementIcon="false"/>
+      figure="InstanceNodeFigure"
+      elementIcon="false"
+      accessor="//@figures.0/@descriptors.0/@accessors.1"/>
 </gmfgraph:Canvas>

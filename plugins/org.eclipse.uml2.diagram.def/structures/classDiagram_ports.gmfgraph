@@ -2,31 +2,35 @@
 <gmfgraph:Canvas xmi:version="2.0"
     xmlns:xmi="http://www.omg.org/XMI"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xmlns:gmfgraph="http://www.eclipse.org/gmf/2005/GraphicalDefinition" name="cnvPorts">
+    xmlns:gmfgraph="http://www.eclipse.org/gmf/2006/GraphicalDefinition" name="cnvPorts">
   <figures
       name="BasicClassDFigures"
       implementationBundle="org.eclipse.uml2.diagram.common">
-    <figures
-        xsi:type="gmfgraph:Rectangle"
-        referencingElements="PortNode"
+    <descriptors
         name="PortFigure">
-      <foregroundColor
-          xsi:type="gmfgraph:ConstantColor"
-          value="gray"/>
-      <maximumSize
-          dx="15"
-          dy="15"/>
-      <minimumSize
-          dx="15"
-          dy="15"/>
-      <preferredSize
-          dx="15"
-          dy="15"/>
-    </figures>
-    <figures
-        xsi:type="gmfgraph:Label"
-        referencingElements="PortNode_name"
-        name="Port_external_name"/>
+      <actualFigure
+          xsi:type="gmfgraph:Rectangle"
+          name="PortFigure">
+        <foregroundColor
+            xsi:type="gmfgraph:ConstantColor"
+            value="gray"/>
+        <maximumSize
+            dx="15"
+            dy="15"/>
+        <minimumSize
+            dx="15"
+            dy="15"/>
+        <preferredSize
+            dx="15"
+            dy="15"/>
+      </actualFigure>
+    </descriptors>
+    <descriptors
+        name="Port_external_name">
+      <actualFigure
+          xsi:type="gmfgraph:Label"
+          name="Port_external_name"/>
+    </descriptors>
   </figures>
   <nodes
       name="PortNode"

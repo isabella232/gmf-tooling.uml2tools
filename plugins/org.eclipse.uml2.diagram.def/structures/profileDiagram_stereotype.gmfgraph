@@ -2,64 +2,69 @@
 <gmfgraph:Canvas xmi:version="2.0"
     xmlns:xmi="http://www.omg.org/XMI"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xmlns:gmfgraph="http://www.eclipse.org/gmf/2005/GraphicalDefinition" name="Profile_Stereotype">
+    xmlns:gmfgraph="http://www.eclipse.org/gmf/2006/GraphicalDefinition" name="Profile_Stereotype">
   <figures
       name="StereotypeGallery"
       implementationBundle="org.eclipse.uml2.diagram.common">
-    <figures
-        xsi:type="gmfgraph:Rectangle"
-        referencingElements="StereotypeNode"
+    <descriptors
         name="StereotypeFigure">
-      <layout
-          xsi:type="gmfgraph:FlowLayout"
-          vertical="true"
-          matchMinorSize="true"
-          forceSingleLine="true"
-          minorAlignment="FILL"
-          majorSpacing="0"
-          minorSpacing="0"/>
-      <children
-          xsi:type="gmfgraph:Label"
-          name="StereotypeFigure_StereotypeLabel"
-          text="\u00ABstereotype\u00BB">
-        <layout
-            xsi:type="gmfgraph:CustomLayout"
-            qualifiedClassName="org.eclipse.uml2.diagram.common.draw2d.CenterLayout"/>
-      </children>
-      <children
+      <actualFigure
           xsi:type="gmfgraph:Rectangle"
-          name="StereotypeFigure_NameContainer"
-          outline="false">
+          name="StereotypeFigure">
         <layout
-            xsi:type="gmfgraph:CustomLayout"
-            qualifiedClassName="org.eclipse.uml2.diagram.common.draw2d.CenterLayout"/>
+            xsi:type="gmfgraph:FlowLayout"
+            vertical="true"
+            matchMinorSize="true"
+            forceSingleLine="true"
+            minorAlignment="FILL"
+            majorSpacing="0"
+            minorSpacing="0"/>
+        <border
+            xsi:type="gmfgraph:MarginBorder">
+          <insets
+              top="1"
+              left="1"
+              bottom="1"
+              right="1"/>
+        </border>
         <children
             xsi:type="gmfgraph:Label"
-            referencingElements="StereotypeNode_name"
-            name="StereotypeFigure_NameLabel"
-            text=""/>
-        <minimumSize
-            dy="25"/>
-      </children>
-      <children
-          xsi:type="gmfgraph:Rectangle"
-          referencingElements="attributes"
-          name="StereotypeFigure_AttributesCompartment"
-          outline="false"/>
-      <children
-          xsi:type="gmfgraph:Rectangle"
-          referencingElements="constraints"
-          name="StereotypeFigure_ConstraintsCompartment"
-          outline="false"/>
-      <border
-          xsi:type="gmfgraph:MarginBorder">
-        <insets
-            top="1"
-            left="1"
-            bottom="1"
-            right="1"/>
-      </border>
-    </figures>
+            name="StereotypeFigure_StereotypeLabel"
+            text="\u00ABstereotype\u00BB">
+          <layout
+              xsi:type="gmfgraph:CustomLayout"
+              qualifiedClassName="org.eclipse.uml2.diagram.common.draw2d.CenterLayout"/>
+        </children>
+        <children
+            xsi:type="gmfgraph:Rectangle"
+            name="StereotypeFigure_NameContainer"
+            outline="false">
+          <layout
+              xsi:type="gmfgraph:CustomLayout"
+              qualifiedClassName="org.eclipse.uml2.diagram.common.draw2d.CenterLayout"/>
+          <minimumSize
+              dy="25"/>
+          <children
+              xsi:type="gmfgraph:Label"
+              name="StereotypeFigure_NameLabel"
+              text=""/>
+        </children>
+        <children
+            xsi:type="gmfgraph:Rectangle"
+            name="StereotypeFigure_AttributesCompartment"
+            outline="false"/>
+        <children
+            xsi:type="gmfgraph:Rectangle"
+            name="StereotypeFigure_ConstraintsCompartment"
+            outline="false"/>
+      </actualFigure>
+      <accessors
+          figure="//@figures.0/@descriptors.0/@actualFigure/@children.1/@children.0"/>
+      <accessors
+          figure="//@figures.0/@descriptors.0/@actualFigure/@children.2"/>
+      <accessors
+          figure="//@figures.0/@descriptors.0/@actualFigure/@children.3"/>
+    </descriptors>
   </figures>
   <nodes
       name="StereotypeNode"
@@ -73,13 +78,16 @@
   </nodes>
   <compartments
       name="attributes"
-      figure="StereotypeFigure_AttributesCompartment"
-      collapsible="true"/>
+      figure="StereotypeFigure"
+      collapsible="true"
+      accessor="//@figures.0/@descriptors.0/@accessors.1"/>
   <compartments
       name="constraints"
-      figure="StereotypeFigure_ConstraintsCompartment"
-      collapsible="true"/>
+      figure="StereotypeFigure"
+      collapsible="true"
+      accessor="//@figures.0/@descriptors.0/@accessors.2"/>
   <labels
       name="StereotypeNode_name"
-      figure="StereotypeFigure_NameLabel"/>
+      figure="StereotypeFigure"
+      accessor="//@figures.0/@descriptors.0/@accessors.0"/>
 </gmfgraph:Canvas>

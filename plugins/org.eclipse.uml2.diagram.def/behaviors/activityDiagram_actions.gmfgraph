@@ -2,219 +2,234 @@
 <gmfgraph:Canvas xmi:version="2.0"
     xmlns:xmi="http://www.omg.org/XMI"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xmlns:gmfgraph="http://www.eclipse.org/gmf/2005/GraphicalDefinition">
+    xmlns:gmfgraph="http://www.eclipse.org/gmf/2006/GraphicalDefinition">
   <figures>
-    <figures
-        xsi:type="gmfgraph:RoundedRectangle"
-        referencingElements="Action_BaseNode ActionCallOperationNode ActionAddStructuralFeatureValueNode"
-        name="ActionBaseFigure"
-        cornerWidth="16"
-        cornerHeight="16">
-      <layout
-          xsi:type="gmfgraph:CustomLayout"
-          qualifiedClassName="org.eclipse.uml2.diagram.common.draw2d.CenterLayout"/>
-      <children
-          xsi:type="gmfgraph:Label"
-          referencingElements="Action_BaseNode_name ActionCallOperationNode_name ActionAddStructuralFeatureValueNode_name"
-          name="ActionBaseFigure_name">
-        <insets
-            left="5"
-            right="5"/>
-      </children>
-    </figures>
-    <figures
-        xsi:type="gmfgraph:ScalablePolygon"
-        referencingElements="ActionAcceptEventNode"
-        name="AcceptEventActionFigure">
-      <layout
-          xsi:type="gmfgraph:GridLayout"/>
-      <children
-          xsi:type="gmfgraph:Label"
-          referencingElements="AcceptEventActionNode_name"
-          name="AcceptEventActionFigure_name">
-        <layoutData
-            xsi:type="gmfgraph:GridLayoutData"
-            grabExcessHorizontalSpace="true"
-            grabExcessVerticalSpace="true"/>
-      </children>
-      <border
-          xsi:type="gmfgraph:MarginBorder">
-        <insets
-            left="13"
-            right="2"/>
-      </border>
-      <template/>
-      <template
-          x="50"/>
-      <template
-          x="50"
-          y="40"/>
-      <template
-          y="40"/>
-      <template
-          x="10"
-          y="20"/>
-    </figures>
-    <figures
-        xsi:type="gmfgraph:ScalablePolygon"
-        referencingElements="ActionAcceptTimeEventNode"
-        name="AcceptTimeEventActionFigure">
-      <template/>
-      <template
-          x="25"/>
-      <template
-          y="25"/>
-      <template
-          x="25"
-          y="25"/>
-      <template/>
-    </figures>
-    <figures
-        xsi:type="gmfgraph:RoundedRectangle"
-        referencingElements="ActionCallBehaviorNode"
-        name="ActionCallBehaviorFigure"
-        cornerWidth="16"
-        cornerHeight="16">
-      <layout
-          xsi:type="gmfgraph:BorderLayout"/>
-      <children
-          xsi:type="gmfgraph:Rectangle"
-          name="ActionCallBehaviorFigure_AuxBottom"
-          outline="false"
-          fill="false">
-        <layoutData
-            xsi:type="gmfgraph:BorderLayoutData"
-            alignment="END"
-            vertical="true"/>
-        <layout
-            xsi:type="gmfgraph:BorderLayout"/>
-        <children
-            xsi:type="gmfgraph:Rectangle"
-            name="ActionCallBehaviorFigure_AuxBottomLeft"
-            outline="false"
-            fill="false">
-          <layoutData
-              xsi:type="gmfgraph:BorderLayoutData"
-              alignment="BEGINNING"/>
-          <layout
-              xsi:type="gmfgraph:StackLayout"/>
-          <children
-              xsi:type="gmfgraph:CustomFigure"
-              name="ActionCallBehaviorFigure_AuxIconOwner"
-              qualifiedClassName="org.eclipse.uml2.diagram.common.draw2d.PolylineContainer"
-              bundleName="">
-            <children
-                xsi:type="gmfgraph:Polyline"
-                name="ActionCallBehaviorFigure_IconCenter"
-                lineWidth="2">
-              <foregroundColor
-                  xsi:type="gmfgraph:ConstantColor"
-                  value="darkBlue"/>
-              <template
-                  x="10"
-                  y="4"/>
-              <template
-                  x="10"
-                  y="16"/>
-            </children>
-            <children
-                xsi:type="gmfgraph:Polyline"
-                name="ActionCallBehaviorFigure_IconLeft"
-                lineWidth="2">
-              <foregroundColor
-                  xsi:type="gmfgraph:ConstantColor"
-                  value="darkBlue"/>
-              <template
-                  x="10"
-                  y="10"/>
-              <template
-                  x="5"
-                  y="10"/>
-              <template
-                  x="5"
-                  y="16"/>
-            </children>
-            <children
-                xsi:type="gmfgraph:Polyline"
-                name="ActionCallBehaviorFigure_IconRight"
-                lineWidth="2">
-              <foregroundColor
-                  xsi:type="gmfgraph:ConstantColor"
-                  value="darkBlue"/>
-              <template
-                  x="10"
-                  y="10"/>
-              <template
-                  x="15"
-                  y="10"/>
-              <template
-                  x="15"
-                  y="16"/>
-            </children>
-            <preferredSize
-                dx="20"
-                dy="20"/>
-          </children>
-        </children>
-      </children>
-      <children
-          xsi:type="gmfgraph:Rectangle"
-          name="ActionCallBehaviorFigure_AuxCenter"
-          outline="false"
-          fill="false">
-        <layoutData
-            xsi:type="gmfgraph:BorderLayoutData"/>
+    <descriptors
+        name="ActionBaseFigure">
+      <actualFigure
+          xsi:type="gmfgraph:RoundedRectangle"
+          name="ActionBaseFigure"
+          cornerWidth="16"
+          cornerHeight="16">
         <layout
             xsi:type="gmfgraph:CustomLayout"
             qualifiedClassName="org.eclipse.uml2.diagram.common.draw2d.CenterLayout"/>
         <children
             xsi:type="gmfgraph:Label"
-            referencingElements="ActionCallBehaviorNode_name"
-            name="ActionCallBehaviorFigure_name">
+            name="ActionBaseFigure_name">
           <insets
               left="5"
               right="5"/>
         </children>
-      </children>
-    </figures>
-    <figures
-        xsi:type="gmfgraph:Label"
-        referencingElements="AcceptTimeEventActionNode_ExternalLabel"
-        name="AcceptTimeEventActionFigure_ExternalLabel"/>
-    <figures
-        xsi:type="gmfgraph:ScalablePolygon"
-        referencingElements="SendSignalActionNode"
-        name="SendSignalActionFigure">
-      <layout
-          xsi:type="gmfgraph:FlowLayout"
-          vertical="true"
-          forceSingleLine="true"
-          minorAlignment="CENTER"
-          majorSpacing="0"
-          minorSpacing="0"/>
-      <children
+      </actualFigure>
+      <accessors
+          figure="//@figures.0/@descriptors.0/@actualFigure/@children.0"/>
+    </descriptors>
+    <descriptors
+        name="AcceptEventActionFigure">
+      <actualFigure
+          xsi:type="gmfgraph:ScalablePolygon"
+          name="AcceptEventActionFigure">
+        <layout
+            xsi:type="gmfgraph:GridLayout"/>
+        <border
+            xsi:type="gmfgraph:MarginBorder">
+          <insets
+              left="13"
+              right="2"/>
+        </border>
+        <children
+            xsi:type="gmfgraph:Label"
+            name="AcceptEventActionFigure_name">
+          <layoutData
+              xsi:type="gmfgraph:GridLayoutData"
+              grabExcessHorizontalSpace="true"
+              grabExcessVerticalSpace="true"/>
+        </children>
+        <template/>
+        <template
+            x="50"/>
+        <template
+            x="50"
+            y="40"/>
+        <template
+            y="40"/>
+        <template
+            x="10"
+            y="20"/>
+      </actualFigure>
+      <accessors
+          figure="//@figures.0/@descriptors.1/@actualFigure/@children.0"/>
+    </descriptors>
+    <descriptors
+        name="AcceptTimeEventActionFigure">
+      <actualFigure
+          xsi:type="gmfgraph:ScalablePolygon"
+          name="AcceptTimeEventActionFigure">
+        <template/>
+        <template
+            x="25"/>
+        <template
+            y="25"/>
+        <template
+            x="25"
+            y="25"/>
+        <template/>
+      </actualFigure>
+    </descriptors>
+    <descriptors
+        name="ActionCallBehaviorFigure">
+      <actualFigure
+          xsi:type="gmfgraph:RoundedRectangle"
+          name="ActionCallBehaviorFigure"
+          cornerWidth="16"
+          cornerHeight="16">
+        <layout
+            xsi:type="gmfgraph:BorderLayout"/>
+        <children
+            xsi:type="gmfgraph:Rectangle"
+            name="ActionCallBehaviorFigure_AuxBottom"
+            outline="false"
+            fill="false">
+          <layoutData
+              xsi:type="gmfgraph:BorderLayoutData"
+              alignment="END"
+              vertical="true"/>
+          <layout
+              xsi:type="gmfgraph:BorderLayout"/>
+          <children
+              xsi:type="gmfgraph:Rectangle"
+              name="ActionCallBehaviorFigure_AuxBottomLeft"
+              outline="false"
+              fill="false">
+            <layoutData
+                xsi:type="gmfgraph:BorderLayoutData"
+                alignment="BEGINNING"/>
+            <layout
+                xsi:type="gmfgraph:StackLayout"/>
+            <children
+                xsi:type="gmfgraph:CustomFigure"
+                name="ActionCallBehaviorFigure_AuxIconOwner"
+                qualifiedClassName="org.eclipse.uml2.diagram.common.draw2d.PolylineContainer">
+              <preferredSize
+                  dx="20"
+                  dy="20"/>
+              <children
+                  xsi:type="gmfgraph:Polyline"
+                  name="ActionCallBehaviorFigure_IconCenter"
+                  lineWidth="2">
+                <foregroundColor
+                    xsi:type="gmfgraph:ConstantColor"
+                    value="darkBlue"/>
+                <template
+                    x="10"
+                    y="4"/>
+                <template
+                    x="10"
+                    y="16"/>
+              </children>
+              <children
+                  xsi:type="gmfgraph:Polyline"
+                  name="ActionCallBehaviorFigure_IconLeft"
+                  lineWidth="2">
+                <foregroundColor
+                    xsi:type="gmfgraph:ConstantColor"
+                    value="darkBlue"/>
+                <template
+                    x="10"
+                    y="10"/>
+                <template
+                    x="5"
+                    y="10"/>
+                <template
+                    x="5"
+                    y="16"/>
+              </children>
+              <children
+                  xsi:type="gmfgraph:Polyline"
+                  name="ActionCallBehaviorFigure_IconRight"
+                  lineWidth="2">
+                <foregroundColor
+                    xsi:type="gmfgraph:ConstantColor"
+                    value="darkBlue"/>
+                <template
+                    x="10"
+                    y="10"/>
+                <template
+                    x="15"
+                    y="10"/>
+                <template
+                    x="15"
+                    y="16"/>
+              </children>
+            </children>
+          </children>
+        </children>
+        <children
+            xsi:type="gmfgraph:Rectangle"
+            name="ActionCallBehaviorFigure_AuxCenter"
+            outline="false"
+            fill="false">
+          <layoutData
+              xsi:type="gmfgraph:BorderLayoutData"/>
+          <layout
+              xsi:type="gmfgraph:CustomLayout"
+              qualifiedClassName="org.eclipse.uml2.diagram.common.draw2d.CenterLayout"/>
+          <children
+              xsi:type="gmfgraph:Label"
+              name="ActionCallBehaviorFigure_name">
+            <insets
+                left="5"
+                right="5"/>
+          </children>
+        </children>
+      </actualFigure>
+      <accessors
+          figure="//@figures.0/@descriptors.3/@actualFigure/@children.1/@children.0"/>
+    </descriptors>
+    <descriptors
+        name="AcceptTimeEventActionFigure_ExternalLabel">
+      <actualFigure
           xsi:type="gmfgraph:Label"
-          referencingElements="SendSignalActionNode_name"
-          name="SendSignalActionFigure_name"/>
-      <border
-          xsi:type="gmfgraph:MarginBorder">
-        <insets
-            top="5"
-            left="5"
-            right="15"/>
-      </border>
-      <template/>
-      <template
-          x="40"/>
-      <template
-          x="50"
-          y="20"/>
-      <template
-          x="40"
-          y="40"/>
-      <template
-          y="40"/>
-    </figures>
+          name="AcceptTimeEventActionFigure_ExternalLabel"/>
+    </descriptors>
+    <descriptors
+        name="SendSignalActionFigure">
+      <actualFigure
+          xsi:type="gmfgraph:ScalablePolygon"
+          name="SendSignalActionFigure">
+        <layout
+            xsi:type="gmfgraph:FlowLayout"
+            vertical="true"
+            forceSingleLine="true"
+            minorAlignment="CENTER"
+            majorSpacing="0"
+            minorSpacing="0"/>
+        <border
+            xsi:type="gmfgraph:MarginBorder">
+          <insets
+              top="5"
+              left="5"
+              right="15"/>
+        </border>
+        <children
+            xsi:type="gmfgraph:Label"
+            name="SendSignalActionFigure_name"/>
+        <template/>
+        <template
+            x="40"/>
+        <template
+            x="50"
+            y="20"/>
+        <template
+            x="40"
+            y="40"/>
+        <template
+            y="40"/>
+      </actualFigure>
+      <accessors
+          figure="//@figures.0/@descriptors.5/@actualFigure/@children.0"/>
+    </descriptors>
   </figures>
   <nodes
       name="ActionAcceptEventNode"
@@ -249,13 +264,15 @@
   <nodes
       xsi:type="gmfgraph:DiagramLabel"
       name="Action_BaseNode_name"
-      figure="ActionBaseFigure_name"
-      elementIcon="false"/>
+      figure="ActionBaseFigure"
+      elementIcon="false"
+      accessor="//@figures.0/@descriptors.0/@accessors.0"/>
   <nodes
       xsi:type="gmfgraph:DiagramLabel"
       name="ActionAddStructuralFeatureValueNode_name"
-      figure="ActionBaseFigure_name"
-      elementIcon="false"/>
+      figure="ActionBaseFigure"
+      elementIcon="false"
+      accessor="//@figures.0/@descriptors.0/@accessors.0"/>
   <nodes
       name="ActionAddStructuralFeatureValueNode"
       figure="ActionBaseFigure">
@@ -279,8 +296,9 @@
   <nodes
       xsi:type="gmfgraph:DiagramLabel"
       name="ActionCallOperationNode_name"
-      figure="ActionBaseFigure_name"
-      elementIcon="false"/>
+      figure="ActionBaseFigure"
+      elementIcon="false"
+      accessor="//@figures.0/@descriptors.0/@accessors.0"/>
   <nodes
       name="ActionCallBehaviorNode"
       figure="ActionCallBehaviorFigure">
@@ -294,21 +312,24 @@
   <nodes
       xsi:type="gmfgraph:DiagramLabel"
       name="ActionCallBehaviorNode_name"
-      figure="ActionCallBehaviorFigure_name"
-      elementIcon="false"/>
+      figure="ActionCallBehaviorFigure"
+      elementIcon="false"
+      accessor="//@figures.0/@descriptors.3/@accessors.0"/>
   <nodes
       name="SendSignalActionNode"
       figure="SendSignalActionFigure"/>
   <labels
       name="AcceptEventActionNode_name"
-      figure="AcceptEventActionFigure_name"
-      elementIcon="false"/>
+      figure="AcceptEventActionFigure"
+      elementIcon="false"
+      accessor="//@figures.0/@descriptors.1/@accessors.0"/>
   <labels
       name="AcceptTimeEventActionNode_ExternalLabel"
       figure="AcceptTimeEventActionFigure_ExternalLabel"
       elementIcon="false"/>
   <labels
       name="SendSignalActionNode_name"
-      figure="SendSignalActionFigure_name"
-      elementIcon="false"/>
+      figure="SendSignalActionFigure"
+      elementIcon="false"
+      accessor="//@figures.0/@descriptors.5/@accessors.0"/>
 </gmfgraph:Canvas>

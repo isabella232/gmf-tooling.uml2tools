@@ -2,24 +2,29 @@
 <gmfgraph:Canvas xmi:version="2.0"
     xmlns:xmi="http://www.omg.org/XMI"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xmlns:gmfgraph="http://www.eclipse.org/gmf/2005/GraphicalDefinition" name="cnvGeneralizationSet">
+    xmlns:gmfgraph="http://www.eclipse.org/gmf/2006/GraphicalDefinition" name="cnvGeneralizationSet">
   <figures
       name="GeneralizationSetGallery">
-    <figures
-        xsi:type="gmfgraph:Label"
-        referencingElements="GeneralizationSetPowerType"
-        name="GeneralizationSet_PowerType"/>
-    <figures
-        xsi:type="gmfgraph:Label"
-        referencingElements="GeneralizationSetConstraint"
-        name="GeneralizationSet_Constraint"
-        text=""/>
-    <figures
-        xsi:type="gmfgraph:CustomFigure"
-        referencingElements="GeneralizationSetNode"
-        name="GeneralizationSetFigure"
-        qualifiedClassName="org.eclipse.uml2.diagram.clazz.edit.parts.DashedHorizontalLineFigure"
-        bundleName="org.eclipse.uml2.diagram.clazz"/>
+    <descriptors
+        name="GeneralizationSet_PowerType">
+      <actualFigure
+          xsi:type="gmfgraph:Label"
+          name="GeneralizationSet_PowerType"/>
+    </descriptors>
+    <descriptors
+        name="GeneralizationSet_Constraint">
+      <actualFigure
+          xsi:type="gmfgraph:Label"
+          name="GeneralizationSet_Constraint"
+          text=""/>
+    </descriptors>
+    <descriptors
+        name="GeneralizationSetFigure">
+      <actualFigure
+          xsi:type="gmfgraph:CustomFigure"
+          name="GeneralizationSetFigure"
+          qualifiedClassName="org.eclipse.uml2.diagram.clazz.edit.parts.DashedHorizontalLineFigure"/>
+    </descriptors>
   </figures>
   <nodes
       name="GeneralizationSetNode"
