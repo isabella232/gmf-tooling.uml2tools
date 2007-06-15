@@ -88,7 +88,7 @@ public class UMLElementChooserDialog extends Dialog {
 	 */
 	protected Control createDialogArea(Composite parent) {
 		Composite composite = (Composite) super.createDialogArea(parent);
-		getShell().setText("Select model element");
+		getShell().setText(Messages.UMLElementChooserDialog_SelectModelElementTitle);
 		createModelBrowser(composite);
 		return composite;
 	}
@@ -130,7 +130,7 @@ public class UMLElementChooserDialog extends Dialog {
 	 */
 	private boolean isValidModelFile(IFile file) {
 		String fileExtension = file.getFullPath().getFileExtension();
-		return "uml".equals(fileExtension);
+		return "uml".equals(fileExtension); //$NON-NLS-1$
 	}
 
 	/**

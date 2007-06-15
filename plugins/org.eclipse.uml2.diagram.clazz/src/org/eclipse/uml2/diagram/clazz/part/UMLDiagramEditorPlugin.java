@@ -51,7 +51,7 @@ public class UMLDiagramEditorPlugin extends AbstractUIPlugin {
 	/**
 	 * @generated
 	 */
-	private UMLDocumentProvider myDocumentProvider;
+	private UMLDocumentProvider documentProvider;
 
 	/**
 	 * @generated
@@ -192,10 +192,10 @@ public class UMLDiagramEditorPlugin extends AbstractUIPlugin {
 	 * @generated
 	 */
 	public UMLDocumentProvider getDocumentProvider() {
-		if (myDocumentProvider == null) {
-			myDocumentProvider = new UMLDocumentProvider();
+		if (documentProvider == null) {
+			documentProvider = new UMLDocumentProvider();
 		}
-		return myDocumentProvider;
+		return documentProvider;
 	}
 
 	/**

@@ -253,7 +253,24 @@ public class UMLViewProvider extends AbstractViewProvider {
 					return null;
 				}
 			} else {
+				if (domainElement == null) {
+					return null;
+				}
 				switch (visualID) {
+				case InterfaceEditPart.VISUAL_ID: {
+					int suggestedID = UMLVisualIDRegistry.getNodeVisualID(containerView, domainElement);
+					if (visualID != suggestedID && Interface2EditPart.VISUAL_ID != suggestedID && true) {
+						return null;
+					}
+					break;
+				}
+				case Interface2EditPart.VISUAL_ID: {
+					int suggestedID = UMLVisualIDRegistry.getNodeVisualID(containerView, domainElement);
+					if (visualID != suggestedID && InterfaceEditPart.VISUAL_ID != suggestedID && true) {
+						return null;
+					}
+					break;
+				}
 				case PackageEditPart.VISUAL_ID:
 				case Package2EditPart.VISUAL_ID:
 				case Class2EditPart.VISUAL_ID:
@@ -261,12 +278,10 @@ public class UMLViewProvider extends AbstractViewProvider {
 				case DataType2EditPart.VISUAL_ID:
 				case PrimitiveType2EditPart.VISUAL_ID:
 				case Enumeration2EditPart.VISUAL_ID:
-				case InterfaceEditPart.VISUAL_ID:
 				case ConstraintEditPart.VISUAL_ID:
 				case InstanceSpecification2EditPart.VISUAL_ID:
 				case DependencyEditPart.VISUAL_ID:
 				case GeneralizationSetEditPart.VISUAL_ID:
-				case Interface2EditPart.VISUAL_ID:
 				case Package4EditPart.VISUAL_ID:
 				case Package3EditPart.VISUAL_ID:
 				case ClassEditPart.VISUAL_ID:
@@ -305,6 +320,117 @@ public class UMLViewProvider extends AbstractViewProvider {
 				case Generalization2EditPart.VISUAL_ID:
 				case GeneralizationGeneralEditPart.VISUAL_ID:
 				case UsageEditPart.VISUAL_ID:
+					if (visualID != UMLVisualIDRegistry.getNodeVisualID(containerView, domainElement)) {
+						return null;
+					}
+					break;
+				case PackageNameEditPart.VISUAL_ID:
+				case PackagePackagesEditPart.VISUAL_ID:
+				case PackageClassifiersEditPart.VISUAL_ID:
+				case PackageOtherEditPart.VISUAL_ID:
+					if (Package2EditPart.VISUAL_ID != UMLVisualIDRegistry.getVisualID(containerView) || containerView.getElement() != domainElement) {
+						return null;
+					}
+					break;
+				case ClassNameEditPart.VISUAL_ID:
+				case ClassStereotypeEditPart.VISUAL_ID:
+				case ClassAttributesEditPart.VISUAL_ID:
+				case ClassOperationsEditPart.VISUAL_ID:
+				case ClassClassesEditPart.VISUAL_ID:
+					if (Class2EditPart.VISUAL_ID != UMLVisualIDRegistry.getVisualID(containerView) || containerView.getElement() != domainElement) {
+						return null;
+					}
+					break;
+				case AssociationClassNameEditPart.VISUAL_ID:
+				case AssociationClassAttributesEditPart.VISUAL_ID:
+				case AssociationClassOperationsEditPart.VISUAL_ID:
+				case AssociationClassClassesEditPart.VISUAL_ID:
+					if (AssociationClass2EditPart.VISUAL_ID != UMLVisualIDRegistry.getVisualID(containerView) || containerView.getElement() != domainElement) {
+						return null;
+					}
+					break;
+				case DataTypeNameEditPart.VISUAL_ID:
+				case DataTypeAttributesEditPart.VISUAL_ID:
+				case DataTypeOperationsEditPart.VISUAL_ID:
+					if (DataType2EditPart.VISUAL_ID != UMLVisualIDRegistry.getVisualID(containerView) || containerView.getElement() != domainElement) {
+						return null;
+					}
+					break;
+				case PrimitiveTypeNameEditPart.VISUAL_ID:
+				case PrimitiveTypeAttributesEditPart.VISUAL_ID:
+				case PrimitiveTypeOperationsEditPart.VISUAL_ID:
+					if (PrimitiveType2EditPart.VISUAL_ID != UMLVisualIDRegistry.getVisualID(containerView) || containerView.getElement() != domainElement) {
+						return null;
+					}
+					break;
+				case EnumerationNameEditPart.VISUAL_ID:
+				case EnumerationLiteralsEditPart.VISUAL_ID:
+				case EnumerationAttributesEditPart.VISUAL_ID:
+				case EnumerationOperationsEditPart.VISUAL_ID:
+					if (Enumeration2EditPart.VISUAL_ID != UMLVisualIDRegistry.getVisualID(containerView) || containerView.getElement() != domainElement) {
+						return null;
+					}
+					break;
+				case InterfaceNameEditPart.VISUAL_ID:
+
+					if (InterfaceEditPart.VISUAL_ID != UMLVisualIDRegistry.getVisualID(containerView) || containerView.getElement() != domainElement) {
+						return null;
+					}
+					break;
+				case ConstraintNameEditPart.VISUAL_ID:
+
+					if (ConstraintEditPart.VISUAL_ID != UMLVisualIDRegistry.getVisualID(containerView) || containerView.getElement() != domainElement) {
+						return null;
+					}
+					break;
+				case InstanceSpecificationNameEditPart.VISUAL_ID:
+				case InstanceSpecificationSlotsEditPart.VISUAL_ID:
+					if (InstanceSpecification2EditPart.VISUAL_ID != UMLVisualIDRegistry.getVisualID(containerView) || containerView.getElement() != domainElement) {
+						return null;
+					}
+					break;
+				case DependencyNameEditPart.VISUAL_ID:
+
+					if (DependencyEditPart.VISUAL_ID != UMLVisualIDRegistry.getVisualID(containerView) || containerView.getElement() != domainElement) {
+						return null;
+					}
+					break;
+				case GeneralizationSetIsCoveringIsDisjointEditPart.VISUAL_ID:
+				case GeneralizationSetNameEditPart.VISUAL_ID:
+
+					if (GeneralizationSetEditPart.VISUAL_ID != UMLVisualIDRegistry.getVisualID(containerView) || containerView.getElement() != domainElement) {
+						return null;
+					}
+					break;
+				case InterfaceName2EditPart.VISUAL_ID:
+				case InterfaceAttributesEditPart.VISUAL_ID:
+				case InterfaceOperationsEditPart.VISUAL_ID:
+				case InterfaceClassesEditPart.VISUAL_ID:
+					if (Interface2EditPart.VISUAL_ID != UMLVisualIDRegistry.getVisualID(containerView) || containerView.getElement() != domainElement) {
+						return null;
+					}
+					break;
+				case PackageName2EditPart.VISUAL_ID:
+
+					if (Package4EditPart.VISUAL_ID != UMLVisualIDRegistry.getVisualID(containerView) || containerView.getElement() != domainElement) {
+						return null;
+					}
+					break;
+
+				case PortNameEditPart.VISUAL_ID:
+
+					if (PortEditPart.VISUAL_ID != UMLVisualIDRegistry.getVisualID(containerView) || containerView.getElement() != domainElement) {
+						return null;
+					}
+					break;
+				case TemplateSignatureNode_signatureEditPart.VISUAL_ID:
+
+					if (RedefinableTemplateSignatureEditPart.VISUAL_ID != UMLVisualIDRegistry.getVisualID(containerView) || containerView.getElement() != domainElement) {
+						return null;
+					}
+					break;
+
+				default:
 					return null;
 				}
 			}

@@ -157,14 +157,14 @@ public class UMLModelingAssistantProvider extends ModelingAssistantProvider {
 			types.add(UMLElementTypes.InterfaceRealization_4008);
 			return types;
 		}
-		if (targetEditPart instanceof Interface2EditPart) {
-			List types = new ArrayList();
-			types.add(UMLElementTypes.InterfaceRealization_4008);
-			return types;
-		}
 		if (targetEditPart instanceof GeneralizationSetEditPart) {
 			List types = new ArrayList();
 			types.add(UMLElementTypes.Generalization_4011);
+			return types;
+		}
+		if (targetEditPart instanceof Interface2EditPart) {
+			List types = new ArrayList();
+			types.add(UMLElementTypes.InterfaceRealization_4008);
 			return types;
 		}
 		return Collections.EMPTY_LIST;
@@ -196,11 +196,11 @@ public class UMLModelingAssistantProvider extends ModelingAssistantProvider {
 			List types = new ArrayList();
 			return types;
 		}
-		if (targetEditPart instanceof Interface2EditPart) {
+		if (targetEditPart instanceof GeneralizationSetEditPart) {
 			List types = new ArrayList();
 			return types;
 		}
-		if (targetEditPart instanceof GeneralizationSetEditPart) {
+		if (targetEditPart instanceof Interface2EditPart) {
 			List types = new ArrayList();
 			return types;
 		}

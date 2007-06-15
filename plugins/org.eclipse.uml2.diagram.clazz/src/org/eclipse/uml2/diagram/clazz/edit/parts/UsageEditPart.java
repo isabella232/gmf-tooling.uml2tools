@@ -54,6 +54,13 @@ public class UsageEditPart extends ConnectionNodeEditPart {
 	/**
 	 * @generated
 	 */
+	public RequiredInterfaceConnectionFigure getPrimaryShape() {
+		return (RequiredInterfaceConnectionFigure) getFigure();
+	}
+
+	/**
+	 * @generated
+	 */
 	public class RequiredInterfaceConnectionFigure extends PolylineConnectionEx {
 
 		/**

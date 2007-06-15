@@ -46,8 +46,14 @@ public class DependencySupplierEditPart extends ConnectionNodeEditPart {
 	 * @generated
 	 */
 	protected Connection createConnectionFigure() {
-
 		return new Dependency_WithArrow_Polyline();
+	}
+
+	/**
+	 * @generated
+	 */
+	public Dependency_WithArrow_Polyline getPrimaryShape() {
+		return (Dependency_WithArrow_Polyline) getFigure();
 	}
 
 	/**

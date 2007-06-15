@@ -48,4 +48,11 @@ public class InterfaceRealizationEditPart extends ConnectionNodeEditPart {
 		return new PolylineConnectionEx();
 	}
 
+	/**
+	 * @generated
+	 */
+	public PolylineConnectionEx getPrimaryShape() {
+		return (PolylineConnectionEx) getFigure();
+	}
+
 }

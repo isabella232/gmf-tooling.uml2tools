@@ -41,8 +41,14 @@ public class Generalization2EditPart extends ConnectionNodeEditPart {
 	 * @generated
 	 */
 	protected Connection createConnectionFigure() {
-
 		return new PolylineConnectionEx();
+	}
+
+	/**
+	 * @generated
+	 */
+	public PolylineConnectionEx getPrimaryShape() {
+		return (PolylineConnectionEx) getFigure();
 	}
 
 }

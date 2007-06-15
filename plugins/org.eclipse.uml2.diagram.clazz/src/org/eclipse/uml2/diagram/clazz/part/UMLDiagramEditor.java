@@ -184,7 +184,7 @@ public class UMLDiagramEditor extends DiagramDocumentEditor implements IGotoMark
 			return;
 		}
 		if (provider.isDeleted(input) && original != null) {
-			String message = NLS.bind("The original file ''{0}'' has been deleted.", original.getName());
+			String message = NLS.bind(Messages.UMLDiagramEditor_SavingDeletedFile, original.getName());
 			dialog.setErrorMessage(null);
 			dialog.setMessage(message, IMessageProvider.WARNING);
 		}
@@ -209,7 +209,7 @@ public class UMLDiagramEditor extends DiagramDocumentEditor implements IGotoMark
 		IEditorReference[] editorRefs = PlatformUI.getWorkbench().getActiveWorkbenchWindow().getActivePage().getEditorReferences();
 		for (int i = 0; i < editorRefs.length; i++) {
 			if (matchingStrategy.matches(editorRefs[i], newInput)) {
-				MessageDialog.openWarning(shell, "Problem During Save As...", "Save could not be completed. Target file is already open in another editor.");
+				MessageDialog.openWarning(shell, Messages.UMLDiagramEditor_SaveAsErrorTitle, Messages.UMLDiagramEditor_SaveAsErrorMessage);
 				return;
 			}
 		}
@@ -221,7 +221,7 @@ public class UMLDiagramEditor extends DiagramDocumentEditor implements IGotoMark
 		} catch (CoreException x) {
 			IStatus status = x.getStatus();
 			if (status == null || status.getSeverity() != IStatus.CANCEL) {
-				ErrorDialog.openError(shell, "Save Problems", "Could not save file.", x.getStatus());
+				ErrorDialog.openError(shell, Messages.UMLDiagramEditor_SaveErrorTitle, Messages.UMLDiagramEditor_SaveErrorMessage, x.getStatus());
 			}
 		} finally {
 			provider.changed(newInput);
@@ -282,17 +282,16 @@ public class UMLDiagramEditor extends DiagramDocumentEditor implements IGotoMark
 	/**
 	 * @generated
 	 */
-	public Object getAdapter(Class required) {
-		if (required == IShowInTargetList.class) {
+	public Object getAdapter(Class type) {
+		if (type == IShowInTargetList.class) {
 			return new IShowInTargetList() {
 
 				public String[] getShowInTargetIds() {
 					return new String[] { ProjectExplorer.VIEW_ID };
 				}
-
 			};
 		}
-		return super.getAdapter(required);
+		return super.getAdapter(type);
 	}
 
 	/**
