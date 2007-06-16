@@ -137,16 +137,26 @@ public class AssociationEditPart extends ConnectionNodeEditPart {
 		 * @generated
 		 */
 		public AssociationLinkFigure() {
-			this.setFill(true);
-			this.setFillXOR(false);
-			this.setOutline(true);
-			this.setOutlineXOR(false);
-			this.setLineWidth(1);
-			this.setLineStyle(Graphics.LINE_SOLID);
 			this.setForegroundColor(ColorConstants.blue);
 
+			createContents();
 			setSourceDecoration(createSourceDecoration());
 			setTargetDecoration(createTargetDecoration());
+		}
+
+		/**
+		 * @generated
+		 */
+		private void createContents() {
+
+			AssociationDecoration associationSourceDecoration0 = new AssociationDecoration();
+
+			this.add(associationSourceDecoration0);
+
+			AssociationDecoration associationTargetDecoration0 = new AssociationDecoration();
+
+			this.add(associationTargetDecoration0);
+
 		}
 
 		/**

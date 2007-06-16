@@ -211,6 +211,11 @@ public class ConstraintEditPart extends ShapeNodeEditPart {
 		/**
 		 * @generated
 		 */
+		private WrapLabel fFigureConstraintFigure_Value;
+
+		/**
+		 * @generated
+		 */
 		public ConstraintFigure() {
 
 			createContents();
@@ -227,27 +232,15 @@ public class ConstraintEditPart extends ShapeNodeEditPart {
 			constraintFigure_Value0.setBorder(new MarginBorder(getMapMode().DPtoLP(5), getMapMode().DPtoLP(5), getMapMode().DPtoLP(5), getMapMode().DPtoLP(5)));
 
 			this.add(constraintFigure_Value0);
-			setFigureConstraintFigure_Value(constraintFigure_Value0);
+			fFigureConstraintFigure_Value = constraintFigure_Value0;
 
 		}
-
-		/**
-		 * @generated
-		 */
-		private WrapLabel fConstraintFigure_Value;
 
 		/**
 		 * @generated
 		 */
 		public WrapLabel getFigureConstraintFigure_Value() {
-			return fConstraintFigure_Value;
-		}
-
-		/**
-		 * @generated
-		 */
-		private void setFigureConstraintFigure_Value(WrapLabel fig) {
-			fConstraintFigure_Value = fig;
+			return fFigureConstraintFigure_Value;
 		}
 
 		/**

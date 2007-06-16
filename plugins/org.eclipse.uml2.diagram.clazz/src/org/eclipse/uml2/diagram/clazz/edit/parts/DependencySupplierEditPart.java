@@ -5,6 +5,7 @@ import org.eclipse.draw2d.Connection;
 import org.eclipse.draw2d.Graphics;
 import org.eclipse.draw2d.PolylineDecoration;
 import org.eclipse.draw2d.RotatableDecoration;
+import org.eclipse.draw2d.geometry.Point;
 import org.eclipse.draw2d.geometry.PointList;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.ConnectionNodeEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles;
@@ -65,15 +66,25 @@ public class DependencySupplierEditPart extends ConnectionNodeEditPart {
 		 * @generated
 		 */
 		public Dependency_WithArrow_Polyline() {
-			this.setFill(true);
-			this.setFillXOR(false);
-			this.setOutline(true);
-			this.setOutlineXOR(false);
-			this.setLineWidth(1);
 			this.setLineStyle(Graphics.LINE_DASH);
 			this.setForegroundColor(ColorConstants.lightGray);
 
+			createContents();
 			setTargetDecoration(createTargetDecoration());
+		}
+
+		/**
+		 * @generated
+		 */
+		private void createContents() {
+
+			PolylineDecoration dependency_ArrowDecoration0 = new PolylineDecoration();
+			dependency_ArrowDecoration0.addPoint(new Point(getMapMode().DPtoLP(-1), getMapMode().DPtoLP(1)));
+			dependency_ArrowDecoration0.addPoint(new Point(getMapMode().DPtoLP(0), getMapMode().DPtoLP(0)));
+			dependency_ArrowDecoration0.addPoint(new Point(getMapMode().DPtoLP(-1), getMapMode().DPtoLP(-1)));
+
+			this.add(dependency_ArrowDecoration0);
+
 		}
 
 		/**
@@ -81,12 +92,6 @@ public class DependencySupplierEditPart extends ConnectionNodeEditPart {
 		 */
 		private RotatableDecoration createTargetDecoration() {
 			PolylineDecoration df = new PolylineDecoration();
-			df.setFill(true);
-			df.setFillXOR(false);
-			df.setOutline(true);
-			df.setOutlineXOR(false);
-			df.setLineWidth(1);
-			df.setLineStyle(Graphics.LINE_SOLID);
 			PointList pl = new PointList();
 			pl.addPoint(getMapMode().DPtoLP(-1), getMapMode().DPtoLP(1));
 			pl.addPoint(getMapMode().DPtoLP(0), getMapMode().DPtoLP(0));

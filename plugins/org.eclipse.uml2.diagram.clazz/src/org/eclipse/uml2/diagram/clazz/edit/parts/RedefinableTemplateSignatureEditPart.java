@@ -216,12 +216,12 @@ public class RedefinableTemplateSignatureEditPart extends AbstractBorderItemEdit
 		/**
 		 * @generated
 		 */
+		private WrapLabel fFigureTemplateSignatureFigure_signature;
+
+		/**
+		 * @generated
+		 */
 		public TemplateSignatureFigure() {
-			this.setFill(true);
-			this.setFillXOR(false);
-			this.setOutline(true);
-			this.setOutlineXOR(false);
-			this.setLineWidth(1);
 			this.setLineStyle(Graphics.LINE_DASH);
 			createContents();
 		}
@@ -237,27 +237,15 @@ public class RedefinableTemplateSignatureEditPart extends AbstractBorderItemEdit
 			templateSignatureFigure_signature0.setBorder(new MarginBorder(getMapMode().DPtoLP(5), getMapMode().DPtoLP(5), getMapMode().DPtoLP(5), getMapMode().DPtoLP(5)));
 
 			this.add(templateSignatureFigure_signature0);
-			setFigureTemplateSignatureFigure_signature(templateSignatureFigure_signature0);
+			fFigureTemplateSignatureFigure_signature = templateSignatureFigure_signature0;
 
 		}
-
-		/**
-		 * @generated
-		 */
-		private WrapLabel fTemplateSignatureFigure_signature;
 
 		/**
 		 * @generated
 		 */
 		public WrapLabel getFigureTemplateSignatureFigure_signature() {
-			return fTemplateSignatureFigure_signature;
-		}
-
-		/**
-		 * @generated
-		 */
-		private void setFigureTemplateSignatureFigure_signature(WrapLabel fig) {
-			fTemplateSignatureFigure_signature = fig;
+			return fFigureTemplateSignatureFigure_signature;
 		}
 
 		/**

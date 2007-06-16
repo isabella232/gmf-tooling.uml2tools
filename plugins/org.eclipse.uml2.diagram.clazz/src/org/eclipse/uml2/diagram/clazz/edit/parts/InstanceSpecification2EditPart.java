@@ -248,25 +248,32 @@ public class InstanceSpecification2EditPart extends ShapeNodeEditPart {
 		/**
 		 * @generated
 		 */
+		private WrapLabel fFigureInstanceNode_NameLabel;
+
+		/**
+		 * @generated
+		 */
+		private WrapLabel fFigureInstanceNode_SpecificationLabel;
+
+		/**
+		 * @generated
+		 */
+		private RectangleFigure fFigureInstanceNode_SlotsCompartmentFigure;
+
+		/**
+		 * @generated
+		 */
 		public InstanceNodeFigure() {
 
 			ToolbarLayout layoutThis = new ToolbarLayout();
 			layoutThis.setStretchMinorAxis(true);
-			layoutThis.setMinorAlignment(ToolbarLayout.ALIGN_CENTER
-
-			);
+			layoutThis.setMinorAlignment(ToolbarLayout.ALIGN_CENTER);
 
 			layoutThis.setSpacing(0);
 			layoutThis.setVertical(true);
 
 			this.setLayoutManager(layoutThis);
 
-			this.setFill(true);
-			this.setFillXOR(false);
-			this.setOutline(true);
-			this.setOutlineXOR(false);
-			this.setLineWidth(1);
-			this.setLineStyle(Graphics.LINE_SOLID);
 			this.setBorder(new MarginBorder(getMapMode().DPtoLP(1), getMapMode().DPtoLP(1), getMapMode().DPtoLP(0), getMapMode().DPtoLP(1)));
 			createContents();
 		}
@@ -277,13 +284,8 @@ public class InstanceSpecification2EditPart extends ShapeNodeEditPart {
 		private void createContents() {
 
 			RectangleFigure instanceNode_NameContainerFigure0 = new RectangleFigure();
-			instanceNode_NameContainerFigure0.setFill(true);
-			instanceNode_NameContainerFigure0.setFillXOR(false);
 			instanceNode_NameContainerFigure0.setOutline(false);
-			instanceNode_NameContainerFigure0.setOutlineXOR(false);
-			instanceNode_NameContainerFigure0.setLineWidth(1);
-			instanceNode_NameContainerFigure0.setLineStyle(Graphics.LINE_SOLID);
-			instanceNode_NameContainerFigure0.setBorder(createBorderinstanceNode_NameContainerFigure0());
+			instanceNode_NameContainerFigure0.setBorder(createBorder0());
 
 			this.add(instanceNode_NameContainerFigure0);
 
@@ -293,19 +295,14 @@ public class InstanceSpecification2EditPart extends ShapeNodeEditPart {
 			instanceNode_NameLabel1.setText("");
 
 			instanceNode_NameContainerFigure0.add(instanceNode_NameLabel1);
-			setFigureInstanceNode_NameLabel(instanceNode_NameLabel1);
+			fFigureInstanceNode_NameLabel = instanceNode_NameLabel1;
 
 			CenterLayout layoutInstanceNode_NameLabel1 = new CenterLayout();
 
 			instanceNode_NameLabel1.setLayoutManager(layoutInstanceNode_NameLabel1);
 
 			RectangleFigure instanceSpecification_SpecificationContainerFigure0 = new RectangleFigure();
-			instanceSpecification_SpecificationContainerFigure0.setFill(true);
-			instanceSpecification_SpecificationContainerFigure0.setFillXOR(false);
 			instanceSpecification_SpecificationContainerFigure0.setOutline(false);
-			instanceSpecification_SpecificationContainerFigure0.setOutlineXOR(false);
-			instanceSpecification_SpecificationContainerFigure0.setLineWidth(1);
-			instanceSpecification_SpecificationContainerFigure0.setLineStyle(Graphics.LINE_SOLID);
 
 			this.add(instanceSpecification_SpecificationContainerFigure0);
 
@@ -317,87 +314,43 @@ public class InstanceSpecification2EditPart extends ShapeNodeEditPart {
 			instanceNode_SpecificationLabel1.setText("");
 
 			instanceSpecification_SpecificationContainerFigure0.add(instanceNode_SpecificationLabel1);
-			setFigureInstanceNode_SpecificationLabel(instanceNode_SpecificationLabel1);
+			fFigureInstanceNode_SpecificationLabel = instanceNode_SpecificationLabel1;
 
 			RectangleFigure instanceNode_SlotsCompartmentFigure0 = new RectangleFigure();
-			instanceNode_SlotsCompartmentFigure0.setFill(true);
-			instanceNode_SlotsCompartmentFigure0.setFillXOR(false);
 			instanceNode_SlotsCompartmentFigure0.setOutline(false);
-			instanceNode_SlotsCompartmentFigure0.setOutlineXOR(false);
-			instanceNode_SlotsCompartmentFigure0.setLineWidth(1);
-			instanceNode_SlotsCompartmentFigure0.setLineStyle(Graphics.LINE_SOLID);
 
 			this.add(instanceNode_SlotsCompartmentFigure0);
-			setFigureInstanceNode_SlotsCompartmentFigure(instanceNode_SlotsCompartmentFigure0);
+			fFigureInstanceNode_SlotsCompartmentFigure = instanceNode_SlotsCompartmentFigure0;
 
 		}
 
-		/**
-		 * @generated
-		 */
-		private WrapLabel fInstanceNode_NameLabel;
-
-		/**
-		 * @generated
-		 */
-		public WrapLabel getFigureInstanceNode_NameLabel() {
-			return fInstanceNode_NameLabel;
-		}
-
-		/**
-		 * @generated
-		 */
-		private void setFigureInstanceNode_NameLabel(WrapLabel fig) {
-			fInstanceNode_NameLabel = fig;
-		}
-
-		/**
-		 * @generated
-		 */
-		private WrapLabel fInstanceNode_SpecificationLabel;
-
-		/**
-		 * @generated
-		 */
-		public WrapLabel getFigureInstanceNode_SpecificationLabel() {
-			return fInstanceNode_SpecificationLabel;
-		}
-
-		/**
-		 * @generated
-		 */
-		private void setFigureInstanceNode_SpecificationLabel(WrapLabel fig) {
-			fInstanceNode_SpecificationLabel = fig;
-		}
-
-		/**
-		 * @generated
-		 */
-		private RectangleFigure fInstanceNode_SlotsCompartmentFigure;
-
-		/**
-		 * @generated
-		 */
-		public RectangleFigure getFigureInstanceNode_SlotsCompartmentFigure() {
-			return fInstanceNode_SlotsCompartmentFigure;
-		}
-
-		/**
-		 * @generated
-		 */
-		private void setFigureInstanceNode_SlotsCompartmentFigure(RectangleFigure fig) {
-			fInstanceNode_SlotsCompartmentFigure = fig;
-		}
-
-		/**
-		 * @generated
-		 */
-		private Border createBorderinstanceNode_NameContainerFigure0() {
+		private Border createBorder0() {
 			OneLineBorder result = new OneLineBorder();
 
 			result.setPosition(PositionConstants.BOTTOM);
 
 			return result;
+		}
+
+		/**
+		 * @generated
+		 */
+		public WrapLabel getFigureInstanceNode_NameLabel() {
+			return fFigureInstanceNode_NameLabel;
+		}
+
+		/**
+		 * @generated
+		 */
+		public WrapLabel getFigureInstanceNode_SpecificationLabel() {
+			return fFigureInstanceNode_SpecificationLabel;
+		}
+
+		/**
+		 * @generated
+		 */
+		public RectangleFigure getFigureInstanceNode_SlotsCompartmentFigure() {
+			return fFigureInstanceNode_SlotsCompartmentFigure;
 		}
 
 		/**

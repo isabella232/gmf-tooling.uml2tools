@@ -306,17 +306,33 @@ public class Package2EditPart extends ShapeNodeEditPart {
 		/**
 		 * @generated
 		 */
+		private WrapLabel fFigurePackageFigure_name;
+
+		/**
+		 * @generated
+		 */
+		private RectangleFigure fFigurePackageFigure_PackagesCompartment;
+
+		/**
+		 * @generated
+		 */
+		private RectangleFigure fFigurePackageFigure_ClassesCompartment;
+
+		/**
+		 * @generated
+		 */
+		private RectangleFigure fFigurePackageFigure_OthersCompartment;
+
+		/**
+		 * @generated
+		 */
 		public PackageFigure() {
 
 			BorderLayout layoutThis = new BorderLayout();
 			this.setLayoutManager(layoutThis);
 
 			this.setFill(false);
-			this.setFillXOR(false);
 			this.setOutline(false);
-			this.setOutlineXOR(false);
-			this.setLineWidth(1);
-			this.setLineStyle(Graphics.LINE_SOLID);
 			createContents();
 		}
 
@@ -327,11 +343,7 @@ public class Package2EditPart extends ShapeNodeEditPart {
 
 			RectangleFigure packageFigure_AuxTop0 = new RectangleFigure();
 			packageFigure_AuxTop0.setFill(false);
-			packageFigure_AuxTop0.setFillXOR(false);
 			packageFigure_AuxTop0.setOutline(false);
-			packageFigure_AuxTop0.setOutlineXOR(false);
-			packageFigure_AuxTop0.setLineWidth(1);
-			packageFigure_AuxTop0.setLineStyle(Graphics.LINE_SOLID);
 
 			this.add(packageFigure_AuxTop0, BorderLayout.TOP);
 
@@ -344,42 +356,24 @@ public class Package2EditPart extends ShapeNodeEditPart {
 			packageFigure_AuxTop0.setLayoutManager(layoutPackageFigure_AuxTop0);
 
 			RectangleFigure packageFigure_AuxLeftTab1 = new RectangleFigure();
-			packageFigure_AuxLeftTab1.setFill(true);
-			packageFigure_AuxLeftTab1.setFillXOR(false);
-			packageFigure_AuxLeftTab1.setOutline(true);
-			packageFigure_AuxLeftTab1.setOutlineXOR(false);
-			packageFigure_AuxLeftTab1.setLineWidth(1);
-			packageFigure_AuxLeftTab1.setLineStyle(Graphics.LINE_SOLID);
 			packageFigure_AuxLeftTab1.setPreferredSize(new Dimension(getMapMode().DPtoLP(1), getMapMode().DPtoLP(30)));
 
 			packageFigure_AuxTop0.add(packageFigure_AuxLeftTab1);
 
 			RectangleFigure packageFigure_AuxRightPadding1 = new RectangleFigure();
 			packageFigure_AuxRightPadding1.setFill(false);
-			packageFigure_AuxRightPadding1.setFillXOR(false);
 			packageFigure_AuxRightPadding1.setOutline(false);
-			packageFigure_AuxRightPadding1.setOutlineXOR(false);
-			packageFigure_AuxRightPadding1.setLineWidth(1);
-			packageFigure_AuxRightPadding1.setLineStyle(Graphics.LINE_SOLID);
 			packageFigure_AuxRightPadding1.setPreferredSize(new Dimension(getMapMode().DPtoLP(1), getMapMode().DPtoLP(30)));
 
 			packageFigure_AuxTop0.add(packageFigure_AuxRightPadding1);
 
 			RectangleFigure packageFigure_AuxCenter0 = new RectangleFigure();
-			packageFigure_AuxCenter0.setFill(true);
-			packageFigure_AuxCenter0.setFillXOR(false);
-			packageFigure_AuxCenter0.setOutline(true);
-			packageFigure_AuxCenter0.setOutlineXOR(false);
-			packageFigure_AuxCenter0.setLineWidth(1);
-			packageFigure_AuxCenter0.setLineStyle(Graphics.LINE_SOLID);
 
 			this.add(packageFigure_AuxCenter0, BorderLayout.CENTER);
 
 			ToolbarLayout layoutPackageFigure_AuxCenter0 = new ToolbarLayout();
 			layoutPackageFigure_AuxCenter0.setStretchMinorAxis(true);
-			layoutPackageFigure_AuxCenter0.setMinorAlignment(ToolbarLayout.ALIGN_CENTER
-
-			);
+			layoutPackageFigure_AuxCenter0.setMinorAlignment(ToolbarLayout.ALIGN_CENTER);
 
 			layoutPackageFigure_AuxCenter0.setSpacing(0);
 			layoutPackageFigure_AuxCenter0.setVertical(true);
@@ -387,12 +381,6 @@ public class Package2EditPart extends ShapeNodeEditPart {
 			packageFigure_AuxCenter0.setLayoutManager(layoutPackageFigure_AuxCenter0);
 
 			RectangleFigure packageFigure_NameContainer1 = new RectangleFigure();
-			packageFigure_NameContainer1.setFill(true);
-			packageFigure_NameContainer1.setFillXOR(false);
-			packageFigure_NameContainer1.setOutline(true);
-			packageFigure_NameContainer1.setOutlineXOR(false);
-			packageFigure_NameContainer1.setLineWidth(1);
-			packageFigure_NameContainer1.setLineStyle(Graphics.LINE_SOLID);
 			packageFigure_NameContainer1.setMinimumSize(new Dimension(getMapMode().DPtoLP(0), getMapMode().DPtoLP(20)));
 
 			packageFigure_AuxCenter0.add(packageFigure_NameContainer1);
@@ -407,117 +395,51 @@ public class Package2EditPart extends ShapeNodeEditPart {
 			packageFigure_name2.setBorder(new MarginBorder(getMapMode().DPtoLP(5), getMapMode().DPtoLP(5), getMapMode().DPtoLP(5), getMapMode().DPtoLP(5)));
 
 			packageFigure_NameContainer1.add(packageFigure_name2);
-			setFigurePackageFigure_name(packageFigure_name2);
+			fFigurePackageFigure_name = packageFigure_name2;
 
 			RectangleFigure packageFigure_PackagesCompartment1 = new RectangleFigure();
-			packageFigure_PackagesCompartment1.setFill(true);
-			packageFigure_PackagesCompartment1.setFillXOR(false);
-			packageFigure_PackagesCompartment1.setOutline(true);
-			packageFigure_PackagesCompartment1.setOutlineXOR(false);
-			packageFigure_PackagesCompartment1.setLineWidth(1);
-			packageFigure_PackagesCompartment1.setLineStyle(Graphics.LINE_SOLID);
 
 			packageFigure_AuxCenter0.add(packageFigure_PackagesCompartment1);
-			setFigurePackageFigure_PackagesCompartment(packageFigure_PackagesCompartment1);
+			fFigurePackageFigure_PackagesCompartment = packageFigure_PackagesCompartment1;
 
 			RectangleFigure packageFigure_ClassesCompartment1 = new RectangleFigure();
-			packageFigure_ClassesCompartment1.setFill(true);
-			packageFigure_ClassesCompartment1.setFillXOR(false);
-			packageFigure_ClassesCompartment1.setOutline(true);
-			packageFigure_ClassesCompartment1.setOutlineXOR(false);
-			packageFigure_ClassesCompartment1.setLineWidth(1);
-			packageFigure_ClassesCompartment1.setLineStyle(Graphics.LINE_SOLID);
 
 			packageFigure_AuxCenter0.add(packageFigure_ClassesCompartment1);
-			setFigurePackageFigure_ClassesCompartment(packageFigure_ClassesCompartment1);
+			fFigurePackageFigure_ClassesCompartment = packageFigure_ClassesCompartment1;
 
 			RectangleFigure packageFigure_OthersCompartment1 = new RectangleFigure();
-			packageFigure_OthersCompartment1.setFill(true);
-			packageFigure_OthersCompartment1.setFillXOR(false);
-			packageFigure_OthersCompartment1.setOutline(true);
-			packageFigure_OthersCompartment1.setOutlineXOR(false);
-			packageFigure_OthersCompartment1.setLineWidth(1);
-			packageFigure_OthersCompartment1.setLineStyle(Graphics.LINE_SOLID);
 
 			packageFigure_AuxCenter0.add(packageFigure_OthersCompartment1);
-			setFigurePackageFigure_OthersCompartment(packageFigure_OthersCompartment1);
+			fFigurePackageFigure_OthersCompartment = packageFigure_OthersCompartment1;
 
 		}
-
-		/**
-		 * @generated
-		 */
-		private WrapLabel fPackageFigure_name;
 
 		/**
 		 * @generated
 		 */
 		public WrapLabel getFigurePackageFigure_name() {
-			return fPackageFigure_name;
+			return fFigurePackageFigure_name;
 		}
-
-		/**
-		 * @generated
-		 */
-		private void setFigurePackageFigure_name(WrapLabel fig) {
-			fPackageFigure_name = fig;
-		}
-
-		/**
-		 * @generated
-		 */
-		private RectangleFigure fPackageFigure_PackagesCompartment;
 
 		/**
 		 * @generated
 		 */
 		public RectangleFigure getFigurePackageFigure_PackagesCompartment() {
-			return fPackageFigure_PackagesCompartment;
+			return fFigurePackageFigure_PackagesCompartment;
 		}
-
-		/**
-		 * @generated
-		 */
-		private void setFigurePackageFigure_PackagesCompartment(RectangleFigure fig) {
-			fPackageFigure_PackagesCompartment = fig;
-		}
-
-		/**
-		 * @generated
-		 */
-		private RectangleFigure fPackageFigure_ClassesCompartment;
 
 		/**
 		 * @generated
 		 */
 		public RectangleFigure getFigurePackageFigure_ClassesCompartment() {
-			return fPackageFigure_ClassesCompartment;
+			return fFigurePackageFigure_ClassesCompartment;
 		}
-
-		/**
-		 * @generated
-		 */
-		private void setFigurePackageFigure_ClassesCompartment(RectangleFigure fig) {
-			fPackageFigure_ClassesCompartment = fig;
-		}
-
-		/**
-		 * @generated
-		 */
-		private RectangleFigure fPackageFigure_OthersCompartment;
 
 		/**
 		 * @generated
 		 */
 		public RectangleFigure getFigurePackageFigure_OthersCompartment() {
-			return fPackageFigure_OthersCompartment;
-		}
-
-		/**
-		 * @generated
-		 */
-		private void setFigurePackageFigure_OthersCompartment(RectangleFigure fig) {
-			fPackageFigure_OthersCompartment = fig;
+			return fFigurePackageFigure_OthersCompartment;
 		}
 
 		/**

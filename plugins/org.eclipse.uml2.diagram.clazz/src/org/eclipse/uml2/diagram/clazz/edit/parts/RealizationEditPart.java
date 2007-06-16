@@ -5,6 +5,7 @@ import org.eclipse.draw2d.Connection;
 import org.eclipse.draw2d.Graphics;
 import org.eclipse.draw2d.PolylineDecoration;
 import org.eclipse.draw2d.RotatableDecoration;
+import org.eclipse.draw2d.geometry.Point;
 import org.eclipse.draw2d.geometry.PointList;
 import org.eclipse.gef.EditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.ConnectionNodeEditPart;
@@ -83,15 +84,27 @@ public class RealizationEditPart extends ConnectionNodeEditPart {
 		 * @generated
 		 */
 		public Realization_Polyline() {
-			this.setFill(true);
-			this.setFillXOR(false);
-			this.setOutline(true);
-			this.setOutlineXOR(false);
-			this.setLineWidth(1);
 			this.setLineStyle(Graphics.LINE_DASH);
 			this.setForegroundColor(ColorConstants.lightGray);
 
+			createContents();
 			setSourceDecoration(createSourceDecoration());
+		}
+
+		/**
+		 * @generated
+		 */
+		private void createContents() {
+
+			PolylineDecoration realizationDecoration0 = new PolylineDecoration();
+			realizationDecoration0.addPoint(new Point(getMapMode().DPtoLP(-1), getMapMode().DPtoLP(1)));
+			realizationDecoration0.addPoint(new Point(getMapMode().DPtoLP(0), getMapMode().DPtoLP(0)));
+			realizationDecoration0.addPoint(new Point(getMapMode().DPtoLP(-1), getMapMode().DPtoLP(-1)));
+			realizationDecoration0.addPoint(new Point(getMapMode().DPtoLP(-1), getMapMode().DPtoLP(1)));
+			realizationDecoration0.setFill(false);
+
+			this.add(realizationDecoration0);
+
 		}
 
 		/**
@@ -100,11 +113,6 @@ public class RealizationEditPart extends ConnectionNodeEditPart {
 		private RotatableDecoration createSourceDecoration() {
 			PolylineDecoration df = new PolylineDecoration();
 			df.setFill(false);
-			df.setFillXOR(false);
-			df.setOutline(true);
-			df.setOutlineXOR(false);
-			df.setLineWidth(1);
-			df.setLineStyle(Graphics.LINE_SOLID);
 			PointList pl = new PointList();
 			pl.addPoint(getMapMode().DPtoLP(-1), getMapMode().DPtoLP(1));
 			pl.addPoint(getMapMode().DPtoLP(0), getMapMode().DPtoLP(0));

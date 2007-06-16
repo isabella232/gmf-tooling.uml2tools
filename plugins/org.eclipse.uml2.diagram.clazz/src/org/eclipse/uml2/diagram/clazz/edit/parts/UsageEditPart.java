@@ -67,14 +67,22 @@ public class UsageEditPart extends ConnectionNodeEditPart {
 		 * @generated
 		 */
 		public RequiredInterfaceConnectionFigure() {
-			this.setFill(true);
-			this.setFillXOR(false);
-			this.setOutline(true);
-			this.setOutlineXOR(false);
-			this.setLineWidth(1);
-			this.setLineStyle(Graphics.LINE_SOLID);
 
+			createContents();
 			setTargetDecoration(createTargetDecoration());
+		}
+
+		/**
+		 * @generated
+		 */
+		private void createContents() {
+
+			RequiredInterfaceDecoration requiredInterfaceConnectionFigure_Lollypop0 = new RequiredInterfaceDecoration();
+
+			requiredInterfaceConnectionFigure_Lollypop0.setRadius(10);
+
+			this.add(requiredInterfaceConnectionFigure_Lollypop0);
+
 		}
 
 		/**

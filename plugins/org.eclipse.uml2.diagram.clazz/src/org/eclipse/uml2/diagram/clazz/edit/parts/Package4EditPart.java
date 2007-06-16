@@ -219,13 +219,21 @@ public class Package4EditPart extends ShapeNodeEditPart {
 		/**
 		 * @generated
 		 */
+		private WrapLabel fFigureSecondaryPackage_PackageLabel;
+
+		/**
+		 * @generated
+		 */
+		private WrapLabel fFigureSecondaryPackage_NameLabel;
+
+		/**
+		 * @generated
+		 */
 		public SecondaryPackageFigure() {
 
 			ToolbarLayout layoutThis = new ToolbarLayout();
 			layoutThis.setStretchMinorAxis(true);
-			layoutThis.setMinorAlignment(ToolbarLayout.ALIGN_CENTER
-
-			);
+			layoutThis.setMinorAlignment(ToolbarLayout.ALIGN_CENTER);
 
 			layoutThis.setSpacing(0);
 			layoutThis.setVertical(true);
@@ -237,12 +245,6 @@ public class Package4EditPart extends ShapeNodeEditPart {
 			this.addPoint(new Point(getMapMode().DPtoLP(35), getMapMode().DPtoLP(40)));
 			this.addPoint(new Point(getMapMode().DPtoLP(40), getMapMode().DPtoLP(35)));
 			this.addPoint(new Point(getMapMode().DPtoLP(40), getMapMode().DPtoLP(0)));
-			this.setFill(true);
-			this.setFillXOR(false);
-			this.setOutline(true);
-			this.setOutlineXOR(false);
-			this.setLineWidth(1);
-			this.setLineStyle(Graphics.LINE_SOLID);
 
 			this.setBorder(new MarginBorder(getMapMode().DPtoLP(5), getMapMode().DPtoLP(5), getMapMode().DPtoLP(5), getMapMode().DPtoLP(5)));
 			createContents();
@@ -257,52 +259,28 @@ public class Package4EditPart extends ShapeNodeEditPart {
 			secondaryPackage_PackageLabel0.setText("Package");
 
 			this.add(secondaryPackage_PackageLabel0);
-			setFigureSecondaryPackage_PackageLabel(secondaryPackage_PackageLabel0);
+			fFigureSecondaryPackage_PackageLabel = secondaryPackage_PackageLabel0;
 
 			WrapLabel secondaryPackage_NameLabel0 = new WrapLabel();
 			secondaryPackage_NameLabel0.setText("");
 
 			this.add(secondaryPackage_NameLabel0);
-			setFigureSecondaryPackage_NameLabel(secondaryPackage_NameLabel0);
+			fFigureSecondaryPackage_NameLabel = secondaryPackage_NameLabel0;
 
 		}
-
-		/**
-		 * @generated
-		 */
-		private WrapLabel fSecondaryPackage_PackageLabel;
 
 		/**
 		 * @generated
 		 */
 		public WrapLabel getFigureSecondaryPackage_PackageLabel() {
-			return fSecondaryPackage_PackageLabel;
+			return fFigureSecondaryPackage_PackageLabel;
 		}
-
-		/**
-		 * @generated
-		 */
-		private void setFigureSecondaryPackage_PackageLabel(WrapLabel fig) {
-			fSecondaryPackage_PackageLabel = fig;
-		}
-
-		/**
-		 * @generated
-		 */
-		private WrapLabel fSecondaryPackage_NameLabel;
 
 		/**
 		 * @generated
 		 */
 		public WrapLabel getFigureSecondaryPackage_NameLabel() {
-			return fSecondaryPackage_NameLabel;
-		}
-
-		/**
-		 * @generated
-		 */
-		private void setFigureSecondaryPackage_NameLabel(WrapLabel fig) {
-			fSecondaryPackage_NameLabel = fig;
+			return fFigureSecondaryPackage_NameLabel;
 		}
 
 		/**
