@@ -246,13 +246,21 @@ public class Component2EditPart extends AbstractBorderedShapeEditPart {
 		/**
 		 * @generated
 		 */
+		private WrapLabel fFigureComponentFigure_name;
+
+		/**
+		 * @generated
+		 */
+		private RectangleFigure fFigureComponentFigure_Body;
+
+		/**
+		 * @generated
+		 */
 		public ComponentFigure() {
 
 			ToolbarLayout layoutThis = new ToolbarLayout();
 			layoutThis.setStretchMinorAxis(true);
-			layoutThis.setMinorAlignment(ToolbarLayout.ALIGN_CENTER
-
-			);
+			layoutThis.setMinorAlignment(ToolbarLayout.ALIGN_CENTER);
 
 			layoutThis.setSpacing(0);
 			layoutThis.setVertical(true);
@@ -260,11 +268,7 @@ public class Component2EditPart extends AbstractBorderedShapeEditPart {
 			this.setLayoutManager(layoutThis);
 
 			this.setFill(false);
-			this.setFillXOR(false);
 			this.setOutline(false);
-			this.setOutlineXOR(false);
-			this.setLineWidth(1);
-			this.setLineStyle(Graphics.LINE_SOLID);
 			createContents();
 		}
 
@@ -274,21 +278,13 @@ public class Component2EditPart extends AbstractBorderedShapeEditPart {
 		private void createContents() {
 
 			RectangleFigure componentFigure_LabelsContainer0 = new RectangleFigure();
-			componentFigure_LabelsContainer0.setFill(true);
-			componentFigure_LabelsContainer0.setFillXOR(false);
-			componentFigure_LabelsContainer0.setOutline(true);
-			componentFigure_LabelsContainer0.setOutlineXOR(false);
-			componentFigure_LabelsContainer0.setLineWidth(1);
-			componentFigure_LabelsContainer0.setLineStyle(Graphics.LINE_SOLID);
 			componentFigure_LabelsContainer0.setMinimumSize(new Dimension(getMapMode().DPtoLP(0), getMapMode().DPtoLP(35)));
 
 			this.add(componentFigure_LabelsContainer0);
 
 			ToolbarLayout layoutComponentFigure_LabelsContainer0 = new ToolbarLayout();
 			layoutComponentFigure_LabelsContainer0.setStretchMinorAxis(true);
-			layoutComponentFigure_LabelsContainer0.setMinorAlignment(ToolbarLayout.ALIGN_CENTER
-
-			);
+			layoutComponentFigure_LabelsContainer0.setMinorAlignment(ToolbarLayout.ALIGN_CENTER);
 
 			layoutComponentFigure_LabelsContainer0.setSpacing(0);
 			layoutComponentFigure_LabelsContainer0.setVertical(true);
@@ -304,58 +300,28 @@ public class Component2EditPart extends AbstractBorderedShapeEditPart {
 			componentFigure_name1.setText("");
 
 			componentFigure_LabelsContainer0.add(componentFigure_name1);
-			setFigureComponentFigure_name(componentFigure_name1);
+			fFigureComponentFigure_name = componentFigure_name1;
 
 			RectangleFigure componentFigure_Body0 = new RectangleFigure();
-			componentFigure_Body0.setFill(true);
-			componentFigure_Body0.setFillXOR(false);
-			componentFigure_Body0.setOutline(true);
-			componentFigure_Body0.setOutlineXOR(false);
-			componentFigure_Body0.setLineWidth(1);
-			componentFigure_Body0.setLineStyle(Graphics.LINE_SOLID);
 			componentFigure_Body0.setMinimumSize(new Dimension(getMapMode().DPtoLP(0), getMapMode().DPtoLP(55)));
 
 			this.add(componentFigure_Body0);
-			setFigureComponentFigure_Body(componentFigure_Body0);
+			fFigureComponentFigure_Body = componentFigure_Body0;
 
 		}
-
-		/**
-		 * @generated
-		 */
-		private WrapLabel fComponentFigure_name;
 
 		/**
 		 * @generated
 		 */
 		public WrapLabel getFigureComponentFigure_name() {
-			return fComponentFigure_name;
+			return fFigureComponentFigure_name;
 		}
-
-		/**
-		 * @generated
-		 */
-		private void setFigureComponentFigure_name(WrapLabel fig) {
-			fComponentFigure_name = fig;
-		}
-
-		/**
-		 * @generated
-		 */
-		private RectangleFigure fComponentFigure_Body;
 
 		/**
 		 * @generated
 		 */
 		public RectangleFigure getFigureComponentFigure_Body() {
-			return fComponentFigure_Body;
-		}
-
-		/**
-		 * @generated
-		 */
-		private void setFigureComponentFigure_Body(RectangleFigure fig) {
-			fComponentFigure_Body = fig;
+			return fFigureComponentFigure_Body;
 		}
 
 		/**

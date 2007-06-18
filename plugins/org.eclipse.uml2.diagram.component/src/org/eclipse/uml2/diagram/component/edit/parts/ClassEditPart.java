@@ -238,18 +238,17 @@ public class ClassEditPart extends AbstractBorderedShapeEditPart {
 		/**
 		 * @generated
 		 */
+		private WrapLabel fFigureComponentClassFigure_name;
+
+		/**
+		 * @generated
+		 */
 		public ComponentClassFigure() {
 
 			CenterLayout layoutThis = new CenterLayout();
 
 			this.setLayoutManager(layoutThis);
 
-			this.setFill(true);
-			this.setFillXOR(false);
-			this.setOutline(true);
-			this.setOutlineXOR(false);
-			this.setLineWidth(1);
-			this.setLineStyle(Graphics.LINE_SOLID);
 			createContents();
 		}
 
@@ -262,27 +261,15 @@ public class ClassEditPart extends AbstractBorderedShapeEditPart {
 			componentClassFigure_name0.setText("");
 
 			this.add(componentClassFigure_name0);
-			setFigureComponentClassFigure_name(componentClassFigure_name0);
+			fFigureComponentClassFigure_name = componentClassFigure_name0;
 
 		}
-
-		/**
-		 * @generated
-		 */
-		private WrapLabel fComponentClassFigure_name;
 
 		/**
 		 * @generated
 		 */
 		public WrapLabel getFigureComponentClassFigure_name() {
-			return fComponentClassFigure_name;
-		}
-
-		/**
-		 * @generated
-		 */
-		private void setFigureComponentClassFigure_name(WrapLabel fig) {
-			fComponentClassFigure_name = fig;
+			return fFigureComponentClassFigure_name;
 		}
 
 		/**

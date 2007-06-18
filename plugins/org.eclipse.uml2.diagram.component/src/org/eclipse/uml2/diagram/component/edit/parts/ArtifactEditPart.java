@@ -206,25 +206,22 @@ public class ArtifactEditPart extends ShapeNodeEditPart {
 		/**
 		 * @generated
 		 */
+		private WrapLabel fFigureArtifactFigure_name;
+
+		/**
+		 * @generated
+		 */
 		public ArtifactFigure() {
 
 			ToolbarLayout layoutThis = new ToolbarLayout();
 			layoutThis.setStretchMinorAxis(true);
-			layoutThis.setMinorAlignment(ToolbarLayout.ALIGN_CENTER
-
-			);
+			layoutThis.setMinorAlignment(ToolbarLayout.ALIGN_CENTER);
 
 			layoutThis.setSpacing(0);
 			layoutThis.setVertical(true);
 
 			this.setLayoutManager(layoutThis);
 
-			this.setFill(true);
-			this.setFillXOR(false);
-			this.setOutline(true);
-			this.setOutlineXOR(false);
-			this.setLineWidth(1);
-			this.setLineStyle(Graphics.LINE_SOLID);
 			createContents();
 		}
 
@@ -240,11 +237,7 @@ public class ArtifactEditPart extends ShapeNodeEditPart {
 
 			RectangleFigure artifactFigure_NameContainer0 = new RectangleFigure();
 			artifactFigure_NameContainer0.setFill(false);
-			artifactFigure_NameContainer0.setFillXOR(false);
 			artifactFigure_NameContainer0.setOutline(false);
-			artifactFigure_NameContainer0.setOutlineXOR(false);
-			artifactFigure_NameContainer0.setLineWidth(1);
-			artifactFigure_NameContainer0.setLineStyle(Graphics.LINE_SOLID);
 
 			this.add(artifactFigure_NameContainer0);
 
@@ -256,27 +249,15 @@ public class ArtifactEditPart extends ShapeNodeEditPart {
 			artifactFigure_name1.setText("");
 
 			artifactFigure_NameContainer0.add(artifactFigure_name1);
-			setFigureArtifactFigure_name(artifactFigure_name1);
+			fFigureArtifactFigure_name = artifactFigure_name1;
 
 		}
-
-		/**
-		 * @generated
-		 */
-		private WrapLabel fArtifactFigure_name;
 
 		/**
 		 * @generated
 		 */
 		public WrapLabel getFigureArtifactFigure_name() {
-			return fArtifactFigure_name;
-		}
-
-		/**
-		 * @generated
-		 */
-		private void setFigureArtifactFigure_name(WrapLabel fig) {
-			fArtifactFigure_name = fig;
+			return fFigureArtifactFigure_name;
 		}
 
 		/**
