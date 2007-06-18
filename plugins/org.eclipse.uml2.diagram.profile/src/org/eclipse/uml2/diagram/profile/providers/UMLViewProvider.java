@@ -102,6 +102,9 @@ public class UMLViewProvider extends AbstractViewProvider {
 					return null;
 				}
 			} else {
+				if (domainElement == null) {
+					return null;
+				}
 				switch (visualID) {
 				case ProfileEditPart.VISUAL_ID:
 				case StereotypeEditPart.VISUAL_ID:
@@ -116,6 +119,43 @@ public class UMLViewProvider extends AbstractViewProvider {
 				case ElementImport2EditPart.VISUAL_ID:
 				case GeneralizationEditPart.VISUAL_ID:
 				case ExtensionEditPart.VISUAL_ID:
+					if (visualID != UMLVisualIDRegistry.getNodeVisualID(containerView, domainElement)) {
+						return null;
+					}
+					break;
+				case StereotypeNameEditPart.VISUAL_ID:
+				case StereotypeAttributesEditPart.VISUAL_ID:
+				case StereotypeConstraintsEditPart.VISUAL_ID:
+					if (StereotypeEditPart.VISUAL_ID != UMLVisualIDRegistry.getVisualID(containerView) || containerView.getElement() != domainElement) {
+						return null;
+					}
+					break;
+				case ProfileNameEditPart.VISUAL_ID:
+				case ProfileContentsEditPart.VISUAL_ID:
+					if (Profile2EditPart.VISUAL_ID != UMLVisualIDRegistry.getVisualID(containerView) || containerView.getElement() != domainElement) {
+						return null;
+					}
+					break;
+				case EnumerationNameEditPart.VISUAL_ID:
+				case EnumerationLiteralsEditPart.VISUAL_ID:
+					if (EnumerationEditPart.VISUAL_ID != UMLVisualIDRegistry.getVisualID(containerView) || containerView.getElement() != domainElement) {
+						return null;
+					}
+					break;
+				case ReferencedMetaclassNode_classNameEditPart.VISUAL_ID:
+
+					if (ElementImportEditPart.VISUAL_ID != UMLVisualIDRegistry.getVisualID(containerView) || containerView.getElement() != domainElement) {
+						return null;
+					}
+					break;
+				case ProfileName2EditPart.VISUAL_ID:
+				case ProfileProfileLabelsEditPart.VISUAL_ID:
+					if (Profile3EditPart.VISUAL_ID != UMLVisualIDRegistry.getVisualID(containerView) || containerView.getElement() != domainElement) {
+						return null;
+					}
+					break;
+
+				default:
 					return null;
 				}
 			}

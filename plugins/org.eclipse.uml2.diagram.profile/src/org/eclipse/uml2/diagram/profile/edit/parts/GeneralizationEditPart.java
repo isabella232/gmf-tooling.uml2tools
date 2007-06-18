@@ -46,8 +46,14 @@ public class GeneralizationEditPart extends ConnectionNodeEditPart {
 	 * @generated
 	 */
 	protected Connection createConnectionFigure() {
-
 		return new SolidLineWDstClosedArrow();
+	}
+
+	/**
+	 * @generated
+	 */
+	public SolidLineWDstClosedArrow getPrimaryShape() {
+		return (SolidLineWDstClosedArrow) getFigure();
 	}
 
 	/**
