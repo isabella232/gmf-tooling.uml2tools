@@ -253,6 +253,16 @@ public class Profile2EditPart extends ShapeNodeEditPart {
 		/**
 		 * @generated
 		 */
+		private WrapLabel fFigureProfileFigure_NameLabel;
+
+		/**
+		 * @generated
+		 */
+		private RectangleFigure fFigureProfileFigure_ContentsCompartment;
+
+		/**
+		 * @generated
+		 */
 		public ProfileFigure() {
 
 			ConstrainedToolbarLayout layoutThis = new ConstrainedToolbarLayout();
@@ -264,11 +274,7 @@ public class Profile2EditPart extends ShapeNodeEditPart {
 			this.setLayoutManager(layoutThis);
 
 			this.setFill(false);
-			this.setFillXOR(false);
 			this.setOutline(false);
-			this.setOutlineXOR(false);
-			this.setLineWidth(1);
-			this.setLineStyle(Graphics.LINE_SOLID);
 			this.setForegroundColor(ColorConstants.lightGray);
 			createContents();
 		}
@@ -279,32 +285,18 @@ public class Profile2EditPart extends ShapeNodeEditPart {
 		private void createContents() {
 
 			RectangleFigure profile_leftTab0 = new RectangleFigure();
-			profile_leftTab0.setFill(true);
-			profile_leftTab0.setFillXOR(false);
-			profile_leftTab0.setOutline(true);
-			profile_leftTab0.setOutlineXOR(false);
-			profile_leftTab0.setLineWidth(1);
-			profile_leftTab0.setLineStyle(Graphics.LINE_SOLID);
 			profile_leftTab0.setPreferredSize(new Dimension(getMapMode().DPtoLP(40), getMapMode().DPtoLP(20)));
 			profile_leftTab0.setMaximumSize(new Dimension(getMapMode().DPtoLP(40), getMapMode().DPtoLP(20)));
 
 			this.add(profile_leftTab0);
 
 			RectangleFigure profile_body0 = new RectangleFigure();
-			profile_body0.setFill(true);
-			profile_body0.setFillXOR(false);
-			profile_body0.setOutline(true);
-			profile_body0.setOutlineXOR(false);
-			profile_body0.setLineWidth(1);
-			profile_body0.setLineStyle(Graphics.LINE_SOLID);
 
 			this.add(profile_body0);
 
 			ToolbarLayout layoutProfile_body0 = new ToolbarLayout();
 			layoutProfile_body0.setStretchMinorAxis(true);
-			layoutProfile_body0.setMinorAlignment(ToolbarLayout.ALIGN_CENTER
-
-			);
+			layoutProfile_body0.setMinorAlignment(ToolbarLayout.ALIGN_CENTER);
 
 			layoutProfile_body0.setSpacing(0);
 			layoutProfile_body0.setVertical(true);
@@ -324,61 +316,31 @@ public class Profile2EditPart extends ShapeNodeEditPart {
 			profileFigure_NameLabel1.setText("");
 
 			profile_body0.add(profileFigure_NameLabel1);
-			setFigureProfileFigure_NameLabel(profileFigure_NameLabel1);
+			fFigureProfileFigure_NameLabel = profileFigure_NameLabel1;
 
 			CenterLayout layoutProfileFigure_NameLabel1 = new CenterLayout();
 
 			profileFigure_NameLabel1.setLayoutManager(layoutProfileFigure_NameLabel1);
 
 			RectangleFigure profileFigure_ContentsCompartment1 = new RectangleFigure();
-			profileFigure_ContentsCompartment1.setFill(true);
-			profileFigure_ContentsCompartment1.setFillXOR(false);
-			profileFigure_ContentsCompartment1.setOutline(true);
-			profileFigure_ContentsCompartment1.setOutlineXOR(false);
-			profileFigure_ContentsCompartment1.setLineWidth(1);
-			profileFigure_ContentsCompartment1.setLineStyle(Graphics.LINE_SOLID);
 
 			profile_body0.add(profileFigure_ContentsCompartment1);
-			setFigureProfileFigure_ContentsCompartment(profileFigure_ContentsCompartment1);
+			fFigureProfileFigure_ContentsCompartment = profileFigure_ContentsCompartment1;
 
 		}
-
-		/**
-		 * @generated
-		 */
-		private WrapLabel fProfileFigure_NameLabel;
 
 		/**
 		 * @generated
 		 */
 		public WrapLabel getFigureProfileFigure_NameLabel() {
-			return fProfileFigure_NameLabel;
+			return fFigureProfileFigure_NameLabel;
 		}
-
-		/**
-		 * @generated
-		 */
-		private void setFigureProfileFigure_NameLabel(WrapLabel fig) {
-			fProfileFigure_NameLabel = fig;
-		}
-
-		/**
-		 * @generated
-		 */
-		private RectangleFigure fProfileFigure_ContentsCompartment;
 
 		/**
 		 * @generated
 		 */
 		public RectangleFigure getFigureProfileFigure_ContentsCompartment() {
-			return fProfileFigure_ContentsCompartment;
-		}
-
-		/**
-		 * @generated
-		 */
-		private void setFigureProfileFigure_ContentsCompartment(RectangleFigure fig) {
-			fProfileFigure_ContentsCompartment = fig;
+			return fFigureProfileFigure_ContentsCompartment;
 		}
 
 		/**

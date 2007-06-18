@@ -252,25 +252,22 @@ public class ElementImportEditPart extends ShapeNodeEditPart {
 		/**
 		 * @generated
 		 */
+		private WrapLabel fFigureReferencedMetaclassFigure_className;
+
+		/**
+		 * @generated
+		 */
 		public ReferencedMetaclassFigure() {
 
 			ToolbarLayout layoutThis = new ToolbarLayout();
 			layoutThis.setStretchMinorAxis(true);
-			layoutThis.setMinorAlignment(ToolbarLayout.ALIGN_CENTER
-
-			);
+			layoutThis.setMinorAlignment(ToolbarLayout.ALIGN_CENTER);
 
 			layoutThis.setSpacing(0);
 			layoutThis.setVertical(true);
 
 			this.setLayoutManager(layoutThis);
 
-			this.setFill(true);
-			this.setFillXOR(false);
-			this.setOutline(true);
-			this.setOutlineXOR(false);
-			this.setLineWidth(1);
-			this.setLineStyle(Graphics.LINE_SOLID);
 			this.setForegroundColor(ColorConstants.gray);
 			createContents();
 		}
@@ -282,11 +279,7 @@ public class ElementImportEditPart extends ShapeNodeEditPart {
 
 			RectangleFigure referencedMetaclassFigure_FixedLabelPane0 = new RectangleFigure();
 			referencedMetaclassFigure_FixedLabelPane0.setFill(false);
-			referencedMetaclassFigure_FixedLabelPane0.setFillXOR(false);
 			referencedMetaclassFigure_FixedLabelPane0.setOutline(false);
-			referencedMetaclassFigure_FixedLabelPane0.setOutlineXOR(false);
-			referencedMetaclassFigure_FixedLabelPane0.setLineWidth(1);
-			referencedMetaclassFigure_FixedLabelPane0.setLineStyle(Graphics.LINE_SOLID);
 
 			this.add(referencedMetaclassFigure_FixedLabelPane0);
 
@@ -301,11 +294,7 @@ public class ElementImportEditPart extends ShapeNodeEditPart {
 
 			RectangleFigure referencedMetaclassFigure_LabelPane0 = new RectangleFigure();
 			referencedMetaclassFigure_LabelPane0.setFill(false);
-			referencedMetaclassFigure_LabelPane0.setFillXOR(false);
 			referencedMetaclassFigure_LabelPane0.setOutline(false);
-			referencedMetaclassFigure_LabelPane0.setOutlineXOR(false);
-			referencedMetaclassFigure_LabelPane0.setLineWidth(1);
-			referencedMetaclassFigure_LabelPane0.setLineStyle(Graphics.LINE_SOLID);
 
 			this.add(referencedMetaclassFigure_LabelPane0);
 
@@ -317,27 +306,15 @@ public class ElementImportEditPart extends ShapeNodeEditPart {
 			referencedMetaclassFigure_className1.setText("");
 
 			referencedMetaclassFigure_LabelPane0.add(referencedMetaclassFigure_className1);
-			setFigureReferencedMetaclassFigure_className(referencedMetaclassFigure_className1);
+			fFigureReferencedMetaclassFigure_className = referencedMetaclassFigure_className1;
 
 		}
-
-		/**
-		 * @generated
-		 */
-		private WrapLabel fReferencedMetaclassFigure_className;
 
 		/**
 		 * @generated
 		 */
 		public WrapLabel getFigureReferencedMetaclassFigure_className() {
-			return fReferencedMetaclassFigure_className;
-		}
-
-		/**
-		 * @generated
-		 */
-		private void setFigureReferencedMetaclassFigure_className(WrapLabel fig) {
-			fReferencedMetaclassFigure_className = fig;
+			return fFigureReferencedMetaclassFigure_className;
 		}
 
 		/**

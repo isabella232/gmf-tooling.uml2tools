@@ -257,13 +257,21 @@ public class Profile3EditPart extends ShapeNodeEditPart {
 		/**
 		 * @generated
 		 */
+		private WrapLabel fFigureProfileLabelsFigure_NameFigure;
+
+		/**
+		 * @generated
+		 */
+		private RectangleFigure fFigureProfileLabelCompartmentFigure;
+
+		/**
+		 * @generated
+		 */
 		public ProfilelabelsFigure() {
 
 			ToolbarLayout layoutThis = new ToolbarLayout();
 			layoutThis.setStretchMinorAxis(true);
-			layoutThis.setMinorAlignment(ToolbarLayout.ALIGN_CENTER
-
-			);
+			layoutThis.setMinorAlignment(ToolbarLayout.ALIGN_CENTER);
 
 			layoutThis.setSpacing(0);
 			layoutThis.setVertical(true);
@@ -275,12 +283,6 @@ public class Profile3EditPart extends ShapeNodeEditPart {
 			this.addPoint(new Point(getMapMode().DPtoLP(35), getMapMode().DPtoLP(40)));
 			this.addPoint(new Point(getMapMode().DPtoLP(40), getMapMode().DPtoLP(35)));
 			this.addPoint(new Point(getMapMode().DPtoLP(40), getMapMode().DPtoLP(0)));
-			this.setFill(true);
-			this.setFillXOR(false);
-			this.setOutline(true);
-			this.setOutlineXOR(false);
-			this.setLineWidth(1);
-			this.setLineStyle(Graphics.LINE_SOLID);
 			createContents();
 		}
 
@@ -298,57 +300,29 @@ public class Profile3EditPart extends ShapeNodeEditPart {
 			profileLabelsFigure_NameFigure0.setText("");
 
 			this.add(profileLabelsFigure_NameFigure0);
-			setFigureProfileLabelsFigure_NameFigure(profileLabelsFigure_NameFigure0);
+			fFigureProfileLabelsFigure_NameFigure = profileLabelsFigure_NameFigure0;
 
 			RectangleFigure profileLabelCompartmentFigure0 = new RectangleFigure();
 			profileLabelCompartmentFigure0.setFill(false);
-			profileLabelCompartmentFigure0.setFillXOR(false);
 			profileLabelCompartmentFigure0.setOutline(false);
-			profileLabelCompartmentFigure0.setOutlineXOR(false);
-			profileLabelCompartmentFigure0.setLineWidth(1);
-			profileLabelCompartmentFigure0.setLineStyle(Graphics.LINE_SOLID);
 
 			this.add(profileLabelCompartmentFigure0);
-			setFigureProfileLabelCompartmentFigure(profileLabelCompartmentFigure0);
+			fFigureProfileLabelCompartmentFigure = profileLabelCompartmentFigure0;
 
 		}
-
-		/**
-		 * @generated
-		 */
-		private WrapLabel fProfileLabelsFigure_NameFigure;
 
 		/**
 		 * @generated
 		 */
 		public WrapLabel getFigureProfileLabelsFigure_NameFigure() {
-			return fProfileLabelsFigure_NameFigure;
+			return fFigureProfileLabelsFigure_NameFigure;
 		}
-
-		/**
-		 * @generated
-		 */
-		private void setFigureProfileLabelsFigure_NameFigure(WrapLabel fig) {
-			fProfileLabelsFigure_NameFigure = fig;
-		}
-
-		/**
-		 * @generated
-		 */
-		private RectangleFigure fProfileLabelCompartmentFigure;
 
 		/**
 		 * @generated
 		 */
 		public RectangleFigure getFigureProfileLabelCompartmentFigure() {
-			return fProfileLabelCompartmentFigure;
-		}
-
-		/**
-		 * @generated
-		 */
-		private void setFigureProfileLabelCompartmentFigure(RectangleFigure fig) {
-			fProfileLabelCompartmentFigure = fig;
+			return fFigureProfileLabelCompartmentFigure;
 		}
 
 		/**

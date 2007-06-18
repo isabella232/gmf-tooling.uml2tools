@@ -264,25 +264,32 @@ public class StereotypeEditPart extends ShapeNodeEditPart {
 		/**
 		 * @generated
 		 */
+		private WrapLabel fFigureStereotypeFigure_NameLabel;
+
+		/**
+		 * @generated
+		 */
+		private RectangleFigure fFigureStereotypeFigure_AttributesCompartment;
+
+		/**
+		 * @generated
+		 */
+		private RectangleFigure fFigureStereotypeFigure_ConstraintsCompartment;
+
+		/**
+		 * @generated
+		 */
 		public StereotypeFigure() {
 
 			ToolbarLayout layoutThis = new ToolbarLayout();
 			layoutThis.setStretchMinorAxis(true);
-			layoutThis.setMinorAlignment(ToolbarLayout.ALIGN_CENTER
-
-			);
+			layoutThis.setMinorAlignment(ToolbarLayout.ALIGN_CENTER);
 
 			layoutThis.setSpacing(0);
 			layoutThis.setVertical(true);
 
 			this.setLayoutManager(layoutThis);
 
-			this.setFill(true);
-			this.setFillXOR(false);
-			this.setOutline(true);
-			this.setOutlineXOR(false);
-			this.setLineWidth(1);
-			this.setLineStyle(Graphics.LINE_SOLID);
 			this.setBorder(new MarginBorder(getMapMode().DPtoLP(1), getMapMode().DPtoLP(1), getMapMode().DPtoLP(1), getMapMode().DPtoLP(1)));
 			createContents();
 		}
@@ -302,12 +309,7 @@ public class StereotypeEditPart extends ShapeNodeEditPart {
 			stereotypeFigure_StereotypeLabel0.setLayoutManager(layoutStereotypeFigure_StereotypeLabel0);
 
 			RectangleFigure stereotypeFigure_NameContainer0 = new RectangleFigure();
-			stereotypeFigure_NameContainer0.setFill(true);
-			stereotypeFigure_NameContainer0.setFillXOR(false);
 			stereotypeFigure_NameContainer0.setOutline(false);
-			stereotypeFigure_NameContainer0.setOutlineXOR(false);
-			stereotypeFigure_NameContainer0.setLineWidth(1);
-			stereotypeFigure_NameContainer0.setLineStyle(Graphics.LINE_SOLID);
 			stereotypeFigure_NameContainer0.setMinimumSize(new Dimension(getMapMode().DPtoLP(0), getMapMode().DPtoLP(25)));
 
 			this.add(stereotypeFigure_NameContainer0);
@@ -320,87 +322,41 @@ public class StereotypeEditPart extends ShapeNodeEditPart {
 			stereotypeFigure_NameLabel1.setText("");
 
 			stereotypeFigure_NameContainer0.add(stereotypeFigure_NameLabel1);
-			setFigureStereotypeFigure_NameLabel(stereotypeFigure_NameLabel1);
+			fFigureStereotypeFigure_NameLabel = stereotypeFigure_NameLabel1;
 
 			RectangleFigure stereotypeFigure_AttributesCompartment0 = new RectangleFigure();
-			stereotypeFigure_AttributesCompartment0.setFill(true);
-			stereotypeFigure_AttributesCompartment0.setFillXOR(false);
 			stereotypeFigure_AttributesCompartment0.setOutline(false);
-			stereotypeFigure_AttributesCompartment0.setOutlineXOR(false);
-			stereotypeFigure_AttributesCompartment0.setLineWidth(1);
-			stereotypeFigure_AttributesCompartment0.setLineStyle(Graphics.LINE_SOLID);
 
 			this.add(stereotypeFigure_AttributesCompartment0);
-			setFigureStereotypeFigure_AttributesCompartment(stereotypeFigure_AttributesCompartment0);
+			fFigureStereotypeFigure_AttributesCompartment = stereotypeFigure_AttributesCompartment0;
 
 			RectangleFigure stereotypeFigure_ConstraintsCompartment0 = new RectangleFigure();
-			stereotypeFigure_ConstraintsCompartment0.setFill(true);
-			stereotypeFigure_ConstraintsCompartment0.setFillXOR(false);
 			stereotypeFigure_ConstraintsCompartment0.setOutline(false);
-			stereotypeFigure_ConstraintsCompartment0.setOutlineXOR(false);
-			stereotypeFigure_ConstraintsCompartment0.setLineWidth(1);
-			stereotypeFigure_ConstraintsCompartment0.setLineStyle(Graphics.LINE_SOLID);
 
 			this.add(stereotypeFigure_ConstraintsCompartment0);
-			setFigureStereotypeFigure_ConstraintsCompartment(stereotypeFigure_ConstraintsCompartment0);
+			fFigureStereotypeFigure_ConstraintsCompartment = stereotypeFigure_ConstraintsCompartment0;
 
 		}
-
-		/**
-		 * @generated
-		 */
-		private WrapLabel fStereotypeFigure_NameLabel;
 
 		/**
 		 * @generated
 		 */
 		public WrapLabel getFigureStereotypeFigure_NameLabel() {
-			return fStereotypeFigure_NameLabel;
+			return fFigureStereotypeFigure_NameLabel;
 		}
-
-		/**
-		 * @generated
-		 */
-		private void setFigureStereotypeFigure_NameLabel(WrapLabel fig) {
-			fStereotypeFigure_NameLabel = fig;
-		}
-
-		/**
-		 * @generated
-		 */
-		private RectangleFigure fStereotypeFigure_AttributesCompartment;
 
 		/**
 		 * @generated
 		 */
 		public RectangleFigure getFigureStereotypeFigure_AttributesCompartment() {
-			return fStereotypeFigure_AttributesCompartment;
+			return fFigureStereotypeFigure_AttributesCompartment;
 		}
-
-		/**
-		 * @generated
-		 */
-		private void setFigureStereotypeFigure_AttributesCompartment(RectangleFigure fig) {
-			fStereotypeFigure_AttributesCompartment = fig;
-		}
-
-		/**
-		 * @generated
-		 */
-		private RectangleFigure fStereotypeFigure_ConstraintsCompartment;
 
 		/**
 		 * @generated
 		 */
 		public RectangleFigure getFigureStereotypeFigure_ConstraintsCompartment() {
-			return fStereotypeFigure_ConstraintsCompartment;
-		}
-
-		/**
-		 * @generated
-		 */
-		private void setFigureStereotypeFigure_ConstraintsCompartment(RectangleFigure fig) {
-			fStereotypeFigure_ConstraintsCompartment = fig;
+			return fFigureStereotypeFigure_ConstraintsCompartment;
 		}
 
 		/**

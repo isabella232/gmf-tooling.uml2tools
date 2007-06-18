@@ -249,25 +249,52 @@ public class EnumerationEditPart extends ShapeNodeEditPart {
 		/**
 		 * @generated
 		 */
+		private WrapLabel fFigureClassFigure_stereo;
+
+		/**
+		 * @generated
+		 */
+		private WrapLabel fFigureClassFigure_name;
+
+		/**
+		 * @generated
+		 */
+		private RectangleFigure fFigureClassFigure_PropertiesCompartment;
+
+		/**
+		 * @generated
+		 */
+		private RectangleFigure fFigureClassFigure_OperationsCompartment;
+
+		/**
+		 * @generated
+		 */
+		private RectangleFigure fFigureClassFigure_ClassesCompartment;
+
+		/**
+		 * @generated
+		 */
+		private RectangleFigure fFigureClassFigure_LiteralsCompartment;
+
+		/**
+		 * @generated
+		 */
+		private RectangleFigure fFigureClassFigure_OthersCompartment;
+
+		/**
+		 * @generated
+		 */
 		public ClassFigure() {
 
 			ToolbarLayout layoutThis = new ToolbarLayout();
 			layoutThis.setStretchMinorAxis(true);
-			layoutThis.setMinorAlignment(ToolbarLayout.ALIGN_CENTER
-
-			);
+			layoutThis.setMinorAlignment(ToolbarLayout.ALIGN_CENTER);
 
 			layoutThis.setSpacing(0);
 			layoutThis.setVertical(true);
 
 			this.setLayoutManager(layoutThis);
 
-			this.setFill(true);
-			this.setFillXOR(false);
-			this.setOutline(true);
-			this.setOutlineXOR(false);
-			this.setLineWidth(1);
-			this.setLineStyle(Graphics.LINE_SOLID);
 			createContents();
 		}
 
@@ -277,21 +304,13 @@ public class EnumerationEditPart extends ShapeNodeEditPart {
 		private void createContents() {
 
 			RectangleFigure classFigure_Header0 = new RectangleFigure();
-			classFigure_Header0.setFill(true);
-			classFigure_Header0.setFillXOR(false);
-			classFigure_Header0.setOutline(true);
-			classFigure_Header0.setOutlineXOR(false);
-			classFigure_Header0.setLineWidth(1);
-			classFigure_Header0.setLineStyle(Graphics.LINE_SOLID);
 			classFigure_Header0.setBorder(new LineBorder(null, getMapMode().DPtoLP(1)));
 
 			this.add(classFigure_Header0);
 
 			ToolbarLayout layoutClassFigure_Header0 = new ToolbarLayout();
 			layoutClassFigure_Header0.setStretchMinorAxis(true);
-			layoutClassFigure_Header0.setMinorAlignment(ToolbarLayout.ALIGN_TOPLEFT
-
-			);
+			layoutClassFigure_Header0.setMinorAlignment(ToolbarLayout.ALIGN_TOPLEFT);
 
 			layoutClassFigure_Header0.setSpacing(0);
 			layoutClassFigure_Header0.setVertical(true);
@@ -299,12 +318,7 @@ public class EnumerationEditPart extends ShapeNodeEditPart {
 			classFigure_Header0.setLayoutManager(layoutClassFigure_Header0);
 
 			RectangleFigure classFigure_StereoContainer1 = new RectangleFigure();
-			classFigure_StereoContainer1.setFill(true);
-			classFigure_StereoContainer1.setFillXOR(false);
 			classFigure_StereoContainer1.setOutline(false);
-			classFigure_StereoContainer1.setOutlineXOR(false);
-			classFigure_StereoContainer1.setLineWidth(1);
-			classFigure_StereoContainer1.setLineStyle(Graphics.LINE_SOLID);
 
 			classFigure_Header0.add(classFigure_StereoContainer1);
 
@@ -315,20 +329,15 @@ public class EnumerationEditPart extends ShapeNodeEditPart {
 			WrapLabel classFigure_stereo2 = new WrapLabel();
 			classFigure_stereo2.setText("");
 
-			classFigure_stereo2.setFont(ClassFigure_stereo_FONT);
+			classFigure_stereo2.setFont(CLASSFIGURE_STEREO2_FONT);
 
 			classFigure_stereo2.setBorder(new MarginBorder(getMapMode().DPtoLP(5), getMapMode().DPtoLP(5), getMapMode().DPtoLP(0), getMapMode().DPtoLP(5)));
 
 			classFigure_StereoContainer1.add(classFigure_stereo2);
-			setFigureClassFigure_stereo(classFigure_stereo2);
+			fFigureClassFigure_stereo = classFigure_stereo2;
 
 			RectangleFigure classFigure_NameContainer1 = new RectangleFigure();
-			classFigure_NameContainer1.setFill(true);
-			classFigure_NameContainer1.setFillXOR(false);
 			classFigure_NameContainer1.setOutline(false);
-			classFigure_NameContainer1.setOutlineXOR(false);
-			classFigure_NameContainer1.setLineWidth(1);
-			classFigure_NameContainer1.setLineStyle(Graphics.LINE_SOLID);
 
 			classFigure_Header0.add(classFigure_NameContainer1);
 
@@ -339,71 +348,41 @@ public class EnumerationEditPart extends ShapeNodeEditPart {
 			WrapLabel classFigure_name2 = new WrapLabel();
 			classFigure_name2.setText("");
 
-			classFigure_name2.setFont(ClassFigure_name_FONT);
+			classFigure_name2.setFont(CLASSFIGURE_NAME2_FONT);
 
 			classFigure_name2.setBorder(new MarginBorder(getMapMode().DPtoLP(0), getMapMode().DPtoLP(5), getMapMode().DPtoLP(5), getMapMode().DPtoLP(5)));
 
 			classFigure_NameContainer1.add(classFigure_name2);
-			setFigureClassFigure_name(classFigure_name2);
+			fFigureClassFigure_name = classFigure_name2;
 
 			RectangleFigure classFigure_PropertiesCompartment0 = new RectangleFigure();
-			classFigure_PropertiesCompartment0.setFill(true);
-			classFigure_PropertiesCompartment0.setFillXOR(false);
-			classFigure_PropertiesCompartment0.setOutline(true);
-			classFigure_PropertiesCompartment0.setOutlineXOR(false);
-			classFigure_PropertiesCompartment0.setLineWidth(1);
-			classFigure_PropertiesCompartment0.setLineStyle(Graphics.LINE_SOLID);
 
 			this.add(classFigure_PropertiesCompartment0);
-			setFigureClassFigure_PropertiesCompartment(classFigure_PropertiesCompartment0);
+			fFigureClassFigure_PropertiesCompartment = classFigure_PropertiesCompartment0;
 			classFigure_PropertiesCompartment0.setLayoutManager(new StackLayout());
 
 			RectangleFigure classFigure_OperationsCompartment0 = new RectangleFigure();
-			classFigure_OperationsCompartment0.setFill(true);
-			classFigure_OperationsCompartment0.setFillXOR(false);
-			classFigure_OperationsCompartment0.setOutline(true);
-			classFigure_OperationsCompartment0.setOutlineXOR(false);
-			classFigure_OperationsCompartment0.setLineWidth(1);
-			classFigure_OperationsCompartment0.setLineStyle(Graphics.LINE_SOLID);
 
 			this.add(classFigure_OperationsCompartment0);
-			setFigureClassFigure_OperationsCompartment(classFigure_OperationsCompartment0);
+			fFigureClassFigure_OperationsCompartment = classFigure_OperationsCompartment0;
 			classFigure_OperationsCompartment0.setLayoutManager(new StackLayout());
 
 			RectangleFigure classFigure_ClassesCompartment0 = new RectangleFigure();
-			classFigure_ClassesCompartment0.setFill(true);
-			classFigure_ClassesCompartment0.setFillXOR(false);
-			classFigure_ClassesCompartment0.setOutline(true);
-			classFigure_ClassesCompartment0.setOutlineXOR(false);
-			classFigure_ClassesCompartment0.setLineWidth(1);
-			classFigure_ClassesCompartment0.setLineStyle(Graphics.LINE_SOLID);
 
 			this.add(classFigure_ClassesCompartment0);
-			setFigureClassFigure_ClassesCompartment(classFigure_ClassesCompartment0);
+			fFigureClassFigure_ClassesCompartment = classFigure_ClassesCompartment0;
 			classFigure_ClassesCompartment0.setLayoutManager(new StackLayout());
 
 			RectangleFigure classFigure_LiteralsCompartment0 = new RectangleFigure();
-			classFigure_LiteralsCompartment0.setFill(true);
-			classFigure_LiteralsCompartment0.setFillXOR(false);
-			classFigure_LiteralsCompartment0.setOutline(true);
-			classFigure_LiteralsCompartment0.setOutlineXOR(false);
-			classFigure_LiteralsCompartment0.setLineWidth(1);
-			classFigure_LiteralsCompartment0.setLineStyle(Graphics.LINE_SOLID);
 
 			this.add(classFigure_LiteralsCompartment0);
-			setFigureClassFigure_LiteralsCompartment(classFigure_LiteralsCompartment0);
+			fFigureClassFigure_LiteralsCompartment = classFigure_LiteralsCompartment0;
 			classFigure_LiteralsCompartment0.setLayoutManager(new StackLayout());
 
 			RectangleFigure classFigure_OthersCompartment0 = new RectangleFigure();
-			classFigure_OthersCompartment0.setFill(true);
-			classFigure_OthersCompartment0.setFillXOR(false);
-			classFigure_OthersCompartment0.setOutline(true);
-			classFigure_OthersCompartment0.setOutlineXOR(false);
-			classFigure_OthersCompartment0.setLineWidth(1);
-			classFigure_OthersCompartment0.setLineStyle(Graphics.LINE_SOLID);
 
 			this.add(classFigure_OthersCompartment0);
-			setFigureClassFigure_OthersCompartment(classFigure_OthersCompartment0);
+			fFigureClassFigure_OthersCompartment = classFigure_OthersCompartment0;
 			classFigure_OthersCompartment0.setLayoutManager(new StackLayout());
 
 		}
@@ -411,134 +390,50 @@ public class EnumerationEditPart extends ShapeNodeEditPart {
 		/**
 		 * @generated
 		 */
-		private WrapLabel fClassFigure_stereo;
-
-		/**
-		 * @generated
-		 */
 		public WrapLabel getFigureClassFigure_stereo() {
-			return fClassFigure_stereo;
+			return fFigureClassFigure_stereo;
 		}
-
-		/**
-		 * @generated
-		 */
-		private void setFigureClassFigure_stereo(WrapLabel fig) {
-			fClassFigure_stereo = fig;
-		}
-
-		/**
-		 * @generated
-		 */
-		private WrapLabel fClassFigure_name;
 
 		/**
 		 * @generated
 		 */
 		public WrapLabel getFigureClassFigure_name() {
-			return fClassFigure_name;
+			return fFigureClassFigure_name;
 		}
-
-		/**
-		 * @generated
-		 */
-		private void setFigureClassFigure_name(WrapLabel fig) {
-			fClassFigure_name = fig;
-		}
-
-		/**
-		 * @generated
-		 */
-		private RectangleFigure fClassFigure_PropertiesCompartment;
 
 		/**
 		 * @generated
 		 */
 		public RectangleFigure getFigureClassFigure_PropertiesCompartment() {
-			return fClassFigure_PropertiesCompartment;
+			return fFigureClassFigure_PropertiesCompartment;
 		}
-
-		/**
-		 * @generated
-		 */
-		private void setFigureClassFigure_PropertiesCompartment(RectangleFigure fig) {
-			fClassFigure_PropertiesCompartment = fig;
-		}
-
-		/**
-		 * @generated
-		 */
-		private RectangleFigure fClassFigure_OperationsCompartment;
 
 		/**
 		 * @generated
 		 */
 		public RectangleFigure getFigureClassFigure_OperationsCompartment() {
-			return fClassFigure_OperationsCompartment;
+			return fFigureClassFigure_OperationsCompartment;
 		}
-
-		/**
-		 * @generated
-		 */
-		private void setFigureClassFigure_OperationsCompartment(RectangleFigure fig) {
-			fClassFigure_OperationsCompartment = fig;
-		}
-
-		/**
-		 * @generated
-		 */
-		private RectangleFigure fClassFigure_ClassesCompartment;
 
 		/**
 		 * @generated
 		 */
 		public RectangleFigure getFigureClassFigure_ClassesCompartment() {
-			return fClassFigure_ClassesCompartment;
+			return fFigureClassFigure_ClassesCompartment;
 		}
-
-		/**
-		 * @generated
-		 */
-		private void setFigureClassFigure_ClassesCompartment(RectangleFigure fig) {
-			fClassFigure_ClassesCompartment = fig;
-		}
-
-		/**
-		 * @generated
-		 */
-		private RectangleFigure fClassFigure_LiteralsCompartment;
 
 		/**
 		 * @generated
 		 */
 		public RectangleFigure getFigureClassFigure_LiteralsCompartment() {
-			return fClassFigure_LiteralsCompartment;
+			return fFigureClassFigure_LiteralsCompartment;
 		}
-
-		/**
-		 * @generated
-		 */
-		private void setFigureClassFigure_LiteralsCompartment(RectangleFigure fig) {
-			fClassFigure_LiteralsCompartment = fig;
-		}
-
-		/**
-		 * @generated
-		 */
-		private RectangleFigure fClassFigure_OthersCompartment;
 
 		/**
 		 * @generated
 		 */
 		public RectangleFigure getFigureClassFigure_OthersCompartment() {
-			return fClassFigure_OthersCompartment;
-		}
-
-		/**
-		 * @generated
-		 */
-		private void setFigureClassFigure_OthersCompartment(RectangleFigure fig) {
-			fClassFigure_OthersCompartment = fig;
+			return fFigureClassFigure_OthersCompartment;
 		}
 
 		/**
@@ -565,11 +460,11 @@ public class EnumerationEditPart extends ShapeNodeEditPart {
 	/**
 	 * @generated
 	 */
-	static final Font ClassFigure_stereo_FONT = new Font(Display.getCurrent(), Display.getDefault().getSystemFont().getFontData()[0].getName(), 9, SWT.NORMAL);
+	static final Font CLASSFIGURE_STEREO2_FONT = new Font(Display.getCurrent(), Display.getDefault().getSystemFont().getFontData()[0].getName(), 9, SWT.NORMAL);
 
 	/**
 	 * @generated
 	 */
-	static final Font ClassFigure_name_FONT = new Font(Display.getCurrent(), Display.getDefault().getSystemFont().getFontData()[0].getName(), 9, SWT.NORMAL);
+	static final Font CLASSFIGURE_NAME2_FONT = new Font(Display.getCurrent(), Display.getDefault().getSystemFont().getFontData()[0].getName(), 9, SWT.NORMAL);
 
 }
