@@ -787,10 +787,9 @@ public class UMLNavigatorLabelProvider extends LabelProvider implements ICommonL
 	}
 
 	/**
-	 * @generated NOT
+	 * @generated
 	 */
 	private String getRedefinableTemplateSignature_3027Text(View view) {
-		//XXX: was generated with RC3
 		return "";
 	}
 
