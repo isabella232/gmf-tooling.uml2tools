@@ -2,7 +2,7 @@
 <project name="org.eclipse.uml2tools.doc" default="build.jars" basedir=".">
 
 	<!-- Plug-in version.  This is a HACK.  Do not forget to update. -->
-	<property name="pluginVersion" value="1.0.0"/>
+	<property name="pluginVersion" value="0.7.0"/>
 
 	<property name="plugin" value="org.eclipse.uml2tools"/>
 	<property name="docPlugin" value="org.eclipse.uml2tools.doc"/>
