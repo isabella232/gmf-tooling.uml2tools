@@ -40,9 +40,16 @@ public class PortProvidedEditPart extends ConnectionNodeEditPart {
 	 * 
 	 * @generated
 	 */
-	protected Connection createConnectionFigure() {
 
+	protected Connection createConnectionFigure() {
 		return new PolylineConnectionEx();
+	}
+
+	/**
+	 * @generated
+	 */
+	public PolylineConnectionEx getPrimaryShape() {
+		return (PolylineConnectionEx) getFigure();
 	}
 
 }

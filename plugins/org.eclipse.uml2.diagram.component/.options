@@ -1,7 +1,7 @@
-# Debugging options for the org.eclipse.uml2.diagram.component plug-in
+# Tracing options for the org.eclipse.uml2.diagram.component plug-in
 
-# Turn on general debugging for the org.eclipse.uml2.diagram.component plug-in
+# Common issues
 org.eclipse.uml2.diagram.component/debug=false
 
-# Turn on debugging of visualID processing
-org.eclipse.uml2.diagram.component/debug/visualID=true
+# Visual IDs
+org.eclipse.uml2.diagram.component/debug/visualID=false

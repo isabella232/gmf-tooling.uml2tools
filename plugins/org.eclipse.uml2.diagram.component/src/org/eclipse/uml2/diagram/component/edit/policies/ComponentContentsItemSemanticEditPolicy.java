@@ -1,16 +1,12 @@
 package org.eclipse.uml2.diagram.component.edit.policies;
 
 import org.eclipse.gef.commands.Command;
-
 import org.eclipse.gmf.runtime.emf.type.core.requests.CreateElementRequest;
-
 import org.eclipse.uml2.diagram.component.edit.commands.ArtifactCreateCommand;
 import org.eclipse.uml2.diagram.component.edit.commands.ClassCreateCommand;
 import org.eclipse.uml2.diagram.component.edit.commands.Component2CreateCommand;
 import org.eclipse.uml2.diagram.component.edit.commands.InterfaceCreateCommand;
-
 import org.eclipse.uml2.diagram.component.providers.UMLElementTypes;
-
 import org.eclipse.uml2.uml.UMLPackage;
 
 /**
@@ -48,4 +44,5 @@ public class ComponentContentsItemSemanticEditPolicy extends UMLBaseItemSemantic
 		}
 		return super.getCreateCommand(req);
 	}
+
 }

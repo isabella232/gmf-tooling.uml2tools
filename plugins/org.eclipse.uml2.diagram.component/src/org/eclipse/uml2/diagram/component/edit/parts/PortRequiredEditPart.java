@@ -43,9 +43,16 @@ public class PortRequiredEditPart extends ConnectionNodeEditPart {
 	 * 
 	 * @generated
 	 */
-	protected Connection createConnectionFigure() {
 
+	protected Connection createConnectionFigure() {
 		return new RequiredInterfaceConnectionFigure();
+	}
+
+	/**
+	 * @generated
+	 */
+	public RequiredInterfaceConnectionFigure getPrimaryShape() {
+		return (RequiredInterfaceConnectionFigure) getFigure();
 	}
 
 	/**

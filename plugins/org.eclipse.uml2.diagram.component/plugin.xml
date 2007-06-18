@@ -549,7 +549,33 @@
            properties="isDomainModelElement"
            class="org.eclipse.uml2.diagram.component.part.UMLDomainModelElementTester">
        </propertyTester>
+   </extension><extension point="org.eclipse.ui.contexts">
+      <?gmfgen generated="true"?>
+      <context
+         description="%context.description"
+         id="org.eclipse.uml2.diagram.component.ui.diagramContext"
+         name="%context.name"
+         parentId="org.eclipse.gmf.runtime.diagram.ui.diagramContext">
+      </context>
    </extension>
+<extension point="org.eclipse.ui.commands">
+      <?gmfgen generated="true"?>
+      <command
+         categoryId="org.eclipse.ui.category.edit"
+         defaultHandler="org.eclipse.uml2.diagram.component.part.UMLDiagramUpdateCommand"
+         description="%update.diagram.description"
+         id="org.eclipse.uml2.diagram.component.updateDiagram"
+         name="%update.diagram.name"/>
+   </extension>
+<extension point="org.eclipse.ui.bindings">
+      <?gmfgen generated="true"?>
+      <key 
+         commandId="org.eclipse.uml2.diagram.component.updateDiagram"
+         contextId="org.eclipse.uml2.diagram.component.ui.diagramContext"
+         schemeId="org.eclipse.ui.defaultAcceleratorConfiguration"
+         sequence="F5"/>
+   </extension>
+
 
 
 </plugin>

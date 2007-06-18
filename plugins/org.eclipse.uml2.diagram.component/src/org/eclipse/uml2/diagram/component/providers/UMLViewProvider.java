@@ -1,11 +1,11 @@
 package org.eclipse.uml2.diagram.component.providers;
 
 import org.eclipse.core.runtime.IAdaptable;
-import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.gmf.runtime.diagram.core.providers.AbstractViewProvider;
-import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.gmf.runtime.emf.type.core.IElementType;
+import org.eclipse.gmf.runtime.emf.type.core.IHintedType;
+import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.uml2.diagram.component.edit.parts.Artifact2EditPart;
 import org.eclipse.uml2.diagram.component.edit.parts.ArtifactEditPart;
 import org.eclipse.uml2.diagram.component.edit.parts.ArtifactName2EditPart;
@@ -28,9 +28,9 @@ import org.eclipse.uml2.diagram.component.edit.parts.InterfaceRealizationEditPar
 import org.eclipse.uml2.diagram.component.edit.parts.PackageEditPart;
 import org.eclipse.uml2.diagram.component.edit.parts.PortEditPart;
 import org.eclipse.uml2.diagram.component.edit.parts.PortNameEditPart;
-
+import org.eclipse.uml2.diagram.component.edit.parts.PortProvidedEditPart;
+import org.eclipse.uml2.diagram.component.edit.parts.PortRequiredEditPart;
 import org.eclipse.uml2.diagram.component.part.UMLVisualIDRegistry;
-
 import org.eclipse.uml2.diagram.component.view.factories.Artifact2ViewFactory;
 import org.eclipse.uml2.diagram.component.view.factories.ArtifactName2ViewFactory;
 import org.eclipse.uml2.diagram.component.view.factories.ArtifactNameViewFactory;
@@ -80,13 +80,112 @@ public class UMLViewProvider extends AbstractViewProvider {
 			return null;
 		}
 		IElementType elementType = getSemanticElementType(semanticAdapter);
-		if (elementType != null && !UMLElementTypes.isKnownElementType(elementType)) {
+		EObject domainElement = getSemanticElement(semanticAdapter);
+
+		int visualID;
+		if (semanticHint == null) {
+			if (elementType != null || domainElement == null) {
+				return null;
+			}
+			visualID = UMLVisualIDRegistry.getNodeVisualID(containerView, domainElement);
+		} else {
+			visualID = UMLVisualIDRegistry.getVisualID(semanticHint);
+			if (elementType != null) {
+				if (!UMLElementTypes.isKnownElementType(elementType) || false == elementType instanceof IHintedType) {
+					return null;
+				}
+				String elementTypeHint = ((IHintedType) elementType).getSemanticHint();
+				if (!semanticHint.equals(elementTypeHint)) {
+					return null;
+				}
+				if (domainElement != null && visualID != UMLVisualIDRegistry.getNodeVisualID(containerView, domainElement)) {
+					return null;
+				}
+			} else {
+				if (domainElement == null) {
+					return null;
+				}
+				switch (visualID) {
+				case PackageEditPart.VISUAL_ID:
+				case ComponentEditPart.VISUAL_ID:
+				case Artifact2EditPart.VISUAL_ID:
+				case Interface2EditPart.VISUAL_ID:
+				case Class2EditPart.VISUAL_ID:
+				case Component2EditPart.VISUAL_ID:
+				case PortEditPart.VISUAL_ID:
+				case ArtifactEditPart.VISUAL_ID:
+				case ClassEditPart.VISUAL_ID:
+				case InterfaceEditPart.VISUAL_ID:
+				case InterfaceRealizationEditPart.VISUAL_ID:
+				case PortProvidedEditPart.VISUAL_ID:
+				case PortRequiredEditPart.VISUAL_ID:
+					if (visualID != UMLVisualIDRegistry.getNodeVisualID(containerView, domainElement)) {
+						return null;
+					}
+					break;
+				case ComponentName2EditPart.VISUAL_ID:
+				case ComponentContentsEditPart.VISUAL_ID:
+					if (ComponentEditPart.VISUAL_ID != UMLVisualIDRegistry.getVisualID(containerView) || containerView.getElement() != domainElement) {
+						return null;
+					}
+					break;
+				case ArtifactName2EditPart.VISUAL_ID:
+
+					if (Artifact2EditPart.VISUAL_ID != UMLVisualIDRegistry.getVisualID(containerView) || containerView.getElement() != domainElement) {
+						return null;
+					}
+					break;
+				case InterfaceName2EditPart.VISUAL_ID:
+
+					if (Interface2EditPart.VISUAL_ID != UMLVisualIDRegistry.getVisualID(containerView) || containerView.getElement() != domainElement) {
+						return null;
+					}
+					break;
+				case ClassName2EditPart.VISUAL_ID:
+
+					if (Class2EditPart.VISUAL_ID != UMLVisualIDRegistry.getVisualID(containerView) || containerView.getElement() != domainElement) {
+						return null;
+					}
+					break;
+				case ComponentNameEditPart.VISUAL_ID:
+				case ComponentContents2EditPart.VISUAL_ID:
+					if (Component2EditPart.VISUAL_ID != UMLVisualIDRegistry.getVisualID(containerView) || containerView.getElement() != domainElement) {
+						return null;
+					}
+					break;
+				case PortNameEditPart.VISUAL_ID:
+
+					if (PortEditPart.VISUAL_ID != UMLVisualIDRegistry.getVisualID(containerView) || containerView.getElement() != domainElement) {
+						return null;
+					}
+					break;
+				case ArtifactNameEditPart.VISUAL_ID:
+
+					if (ArtifactEditPart.VISUAL_ID != UMLVisualIDRegistry.getVisualID(containerView) || containerView.getElement() != domainElement) {
+						return null;
+					}
+					break;
+				case ClassNameEditPart.VISUAL_ID:
+
+					if (ClassEditPart.VISUAL_ID != UMLVisualIDRegistry.getVisualID(containerView) || containerView.getElement() != domainElement) {
+						return null;
+					}
+					break;
+				case InterfaceNameEditPart.VISUAL_ID:
+
+					if (InterfaceEditPart.VISUAL_ID != UMLVisualIDRegistry.getVisualID(containerView) || containerView.getElement() != domainElement) {
+						return null;
+					}
+					break;
+				default:
+					return null;
+				}
+			}
+		}
+		if (!UMLVisualIDRegistry.canCreateNode(containerView, visualID)) {
 			return null;
 		}
-		EClass semanticType = getSemanticEClass(semanticAdapter);
-		EObject semanticElement = getSemanticElement(semanticAdapter);
-		int nodeVID = UMLVisualIDRegistry.getNodeVisualID(containerView, semanticElement, semanticType, semanticHint);
-		switch (nodeVID) {
+		switch (visualID) {
 		case ComponentEditPart.VISUAL_ID:
 			return ComponentViewFactory.class;
 		case ComponentName2EditPart.VISUAL_ID:
@@ -136,26 +235,33 @@ public class UMLViewProvider extends AbstractViewProvider {
 	 */
 	protected Class getEdgeViewClass(IAdaptable semanticAdapter, View containerView, String semanticHint) {
 		IElementType elementType = getSemanticElementType(semanticAdapter);
-		if (elementType != null && !UMLElementTypes.isKnownElementType(elementType)) {
+		if (elementType == null) {
 			return null;
 		}
-		if (UMLElementTypes.PortProvided_4006.equals(elementType)) {
-			return PortProvidedViewFactory.class;
-		}
-		if (UMLElementTypes.PortRequired_4004.equals(elementType)) {
-			return PortRequiredViewFactory.class;
-		}
-		EClass semanticType = getSemanticEClass(semanticAdapter);
-		if (semanticType == null) {
+		if (!UMLElementTypes.isKnownElementType(elementType) || false == elementType instanceof IHintedType) {
 			return null;
 		}
-		EObject semanticElement = getSemanticElement(semanticAdapter);
-		int linkVID = UMLVisualIDRegistry.getLinkWithClassVisualID(semanticElement, semanticType);
-		switch (linkVID) {
+		String elementTypeHint = ((IHintedType) elementType).getSemanticHint();
+		if (elementTypeHint == null) {
+			return null;
+		}
+		if (semanticHint != null && !semanticHint.equals(elementTypeHint)) {
+			return null;
+		}
+		int visualID = UMLVisualIDRegistry.getVisualID(elementTypeHint);
+		EObject domainElement = getSemanticElement(semanticAdapter);
+		if (domainElement != null && visualID != UMLVisualIDRegistry.getLinkWithClassVisualID(domainElement)) {
+			return null;
+		}
+		switch (visualID) {
 		case InterfaceRealizationEditPart.VISUAL_ID:
 			return InterfaceRealizationViewFactory.class;
+		case PortProvidedEditPart.VISUAL_ID:
+			return PortProvidedViewFactory.class;
+		case PortRequiredEditPart.VISUAL_ID:
+			return PortRequiredViewFactory.class;
 		}
-		return getUnrecognizedConnectorViewClass(semanticAdapter, containerView, semanticHint);
+		return null;
 	}
 
 	/**
@@ -166,14 +272,6 @@ public class UMLViewProvider extends AbstractViewProvider {
 			return null;
 		}
 		return (IElementType) semanticAdapter.getAdapter(IElementType.class);
-	}
-
-	/**
-	 * @generated
-	 */
-	private Class getUnrecognizedConnectorViewClass(IAdaptable semanticAdapter, View containerView, String semanticHint) {
-		// Handle unrecognized child node classes here
-		return null;
 	}
 
 }

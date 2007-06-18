@@ -29,6 +29,7 @@ public class Interface2ItemSemanticEditPolicy extends UMLBaseItemSemanticEditPol
 	 */
 	protected Command getDestroyElementCommand(DestroyElementRequest req) {
 		CompoundCommand cc = getDestroyEdgesCommand();
+		addDestroyShortcutsCommand(cc);
 		View view = (View) getHost().getModel();
 		if (view.getEAnnotation("Shortcut") != null) { //$NON-NLS-1$
 			req.setElementToDestroy(view);
