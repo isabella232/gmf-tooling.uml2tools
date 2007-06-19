@@ -59,4 +59,13 @@ public class Package4ViewFactory extends AbstractShapeViewFactory {
 		}
 		getViewService().createNode(eObjectAdapter, view, UMLVisualIDRegistry.getType(PackageName2EditPart.VISUAL_ID), ViewUtil.APPEND, true, getPreferencesHint());
 	}
+
+	/**
+	 * @generated
+	 */
+	protected boolean requiresElement(EObject semanticElement, View view) {
+		//this is special node, sharing the semantic element with diagram canvas
+		//thus, the default implementation needs to be overridden
+		return true;
+	}
 }

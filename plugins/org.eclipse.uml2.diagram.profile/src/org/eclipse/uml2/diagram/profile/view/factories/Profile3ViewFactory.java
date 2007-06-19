@@ -55,4 +55,13 @@ public class Profile3ViewFactory extends AbstractShapeViewFactory {
 		getViewService().createNode(eObjectAdapter, view, UMLVisualIDRegistry.getType(ProfileName2EditPart.VISUAL_ID), ViewUtil.APPEND, true, getPreferencesHint());
 		getViewService().createNode(eObjectAdapter, view, UMLVisualIDRegistry.getType(ProfileProfileLabelsEditPart.VISUAL_ID), ViewUtil.APPEND, true, getPreferencesHint());
 	}
+
+	/**
+	 * @generated
+	 */
+	protected boolean requiresElement(EObject semanticElement, View view) {
+		//this is special node, sharing the semantic element with diagram canvas
+		//thus, the default implementation needs to be overridden
+		return true;
+	}
 }
