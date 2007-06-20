@@ -1,211 +1,14 @@
 package org.eclipse.uml2.diagram.clazz.providers;
 
 import org.eclipse.core.runtime.IAdaptable;
-import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.gmf.runtime.diagram.core.providers.AbstractViewProvider;
-import org.eclipse.gmf.runtime.notation.View;
-import org.eclipse.uml2.diagram.clazz.edit.parts.*;
 import org.eclipse.gmf.runtime.emf.type.core.IElementType;
 import org.eclipse.gmf.runtime.emf.type.core.IHintedType;
-import org.eclipse.uml2.diagram.clazz.edit.parts.AssociationClass2EditPart;
-import org.eclipse.uml2.diagram.clazz.edit.parts.AssociationClassAttributesEditPart;
-import org.eclipse.uml2.diagram.clazz.edit.parts.AssociationClassClassesEditPart;
-import org.eclipse.uml2.diagram.clazz.edit.parts.AssociationClassEditPart;
-import org.eclipse.uml2.diagram.clazz.edit.parts.AssociationClassNameEditPart;
-import org.eclipse.uml2.diagram.clazz.edit.parts.AssociationClassOperationsEditPart;
-import org.eclipse.uml2.diagram.clazz.edit.parts.AssociationEditPart;
-import org.eclipse.uml2.diagram.clazz.edit.parts.AssociationName2EditPart;
-import org.eclipse.uml2.diagram.clazz.edit.parts.AssociationName3EditPart;
-import org.eclipse.uml2.diagram.clazz.edit.parts.AssociationName4EditPart;
-import org.eclipse.uml2.diagram.clazz.edit.parts.AssociationName5EditPart;
-import org.eclipse.uml2.diagram.clazz.edit.parts.AssociationName6EditPart;
-import org.eclipse.uml2.diagram.clazz.edit.parts.AssociationName7EditPart;
-import org.eclipse.uml2.diagram.clazz.edit.parts.AssociationNameEditPart;
-import org.eclipse.uml2.diagram.clazz.edit.parts.Class2EditPart;
-import org.eclipse.uml2.diagram.clazz.edit.parts.Class3EditPart;
-import org.eclipse.uml2.diagram.clazz.edit.parts.Class4EditPart;
-import org.eclipse.uml2.diagram.clazz.edit.parts.ClassAttributesEditPart;
-import org.eclipse.uml2.diagram.clazz.edit.parts.ClassClassesEditPart;
-import org.eclipse.uml2.diagram.clazz.edit.parts.ClassEditPart;
-import org.eclipse.uml2.diagram.clazz.edit.parts.ClassNameEditPart;
-import org.eclipse.uml2.diagram.clazz.edit.parts.ClassOperationsEditPart;
-import org.eclipse.uml2.diagram.clazz.edit.parts.ClassStereotypeEditPart;
-import org.eclipse.uml2.diagram.clazz.edit.parts.ConstraintEditPart;
-import org.eclipse.uml2.diagram.clazz.edit.parts.ConstraintNameEditPart;
-import org.eclipse.uml2.diagram.clazz.edit.parts.DataType2EditPart;
-import org.eclipse.uml2.diagram.clazz.edit.parts.DataTypeAttributesEditPart;
-import org.eclipse.uml2.diagram.clazz.edit.parts.DataTypeEditPart;
-import org.eclipse.uml2.diagram.clazz.edit.parts.DataTypeNameEditPart;
-import org.eclipse.uml2.diagram.clazz.edit.parts.DataTypeOperationsEditPart;
-import org.eclipse.uml2.diagram.clazz.edit.parts.Dependency2EditPart;
-import org.eclipse.uml2.diagram.clazz.edit.parts.DependencyEditPart;
-import org.eclipse.uml2.diagram.clazz.edit.parts.DependencyName2EditPart;
-import org.eclipse.uml2.diagram.clazz.edit.parts.DependencyName3EditPart;
-import org.eclipse.uml2.diagram.clazz.edit.parts.DependencyNameEditPart;
-import org.eclipse.uml2.diagram.clazz.edit.parts.Enumeration2EditPart;
-import org.eclipse.uml2.diagram.clazz.edit.parts.EnumerationAttributesEditPart;
-import org.eclipse.uml2.diagram.clazz.edit.parts.EnumerationEditPart;
-import org.eclipse.uml2.diagram.clazz.edit.parts.EnumerationLiteralEditPart;
-import org.eclipse.uml2.diagram.clazz.edit.parts.EnumerationLiteralsEditPart;
-import org.eclipse.uml2.diagram.clazz.edit.parts.EnumerationNameEditPart;
-import org.eclipse.uml2.diagram.clazz.edit.parts.EnumerationOperationsEditPart;
-import org.eclipse.uml2.diagram.clazz.edit.parts.Generalization2EditPart;
-import org.eclipse.uml2.diagram.clazz.edit.parts.GeneralizationEditPart;
-import org.eclipse.uml2.diagram.clazz.edit.parts.GeneralizationSetEditPart;
-import org.eclipse.uml2.diagram.clazz.edit.parts.GeneralizationSetIsCoveringIsDisjointEditPart;
-import org.eclipse.uml2.diagram.clazz.edit.parts.GeneralizationSetNameEditPart;
-import org.eclipse.uml2.diagram.clazz.edit.parts.InstanceSpecification2EditPart;
-import org.eclipse.uml2.diagram.clazz.edit.parts.InstanceSpecificationEditPart;
-import org.eclipse.uml2.diagram.clazz.edit.parts.InstanceSpecificationNameEditPart;
-import org.eclipse.uml2.diagram.clazz.edit.parts.InstanceSpecificationSlotsEditPart;
-import org.eclipse.uml2.diagram.clazz.edit.parts.Interface2EditPart;
-import org.eclipse.uml2.diagram.clazz.edit.parts.InterfaceAttributesEditPart;
-import org.eclipse.uml2.diagram.clazz.edit.parts.InterfaceClassesEditPart;
-import org.eclipse.uml2.diagram.clazz.edit.parts.InterfaceEditPart;
-import org.eclipse.uml2.diagram.clazz.edit.parts.InterfaceName2EditPart;
-import org.eclipse.uml2.diagram.clazz.edit.parts.InterfaceNameEditPart;
-import org.eclipse.uml2.diagram.clazz.edit.parts.InterfaceOperationsEditPart;
-import org.eclipse.uml2.diagram.clazz.edit.parts.InterfaceRealizationEditPart;
-import org.eclipse.uml2.diagram.clazz.edit.parts.Operation2EditPart;
-import org.eclipse.uml2.diagram.clazz.edit.parts.Operation3EditPart;
-import org.eclipse.uml2.diagram.clazz.edit.parts.Operation4EditPart;
-import org.eclipse.uml2.diagram.clazz.edit.parts.Operation5EditPart;
-import org.eclipse.uml2.diagram.clazz.edit.parts.Operation6EditPart;
-import org.eclipse.uml2.diagram.clazz.edit.parts.OperationEditPart;
-import org.eclipse.uml2.diagram.clazz.edit.parts.Package2EditPart;
-import org.eclipse.uml2.diagram.clazz.edit.parts.Package3EditPart;
-import org.eclipse.uml2.diagram.clazz.edit.parts.Package4EditPart;
-import org.eclipse.uml2.diagram.clazz.edit.parts.PackageClassifiersEditPart;
-import org.eclipse.uml2.diagram.clazz.edit.parts.PackageEditPart;
-import org.eclipse.uml2.diagram.clazz.edit.parts.PackageName2EditPart;
-import org.eclipse.uml2.diagram.clazz.edit.parts.PackageNameEditPart;
-import org.eclipse.uml2.diagram.clazz.edit.parts.PackageOtherEditPart;
-import org.eclipse.uml2.diagram.clazz.edit.parts.PackagePackagesEditPart;
-import org.eclipse.uml2.diagram.clazz.edit.parts.PortEditPart;
-import org.eclipse.uml2.diagram.clazz.edit.parts.PortNameEditPart;
-import org.eclipse.uml2.diagram.clazz.edit.parts.PrimitiveType2EditPart;
-import org.eclipse.uml2.diagram.clazz.edit.parts.PrimitiveTypeAttributesEditPart;
-import org.eclipse.uml2.diagram.clazz.edit.parts.PrimitiveTypeEditPart;
-import org.eclipse.uml2.diagram.clazz.edit.parts.PrimitiveTypeNameEditPart;
-import org.eclipse.uml2.diagram.clazz.edit.parts.PrimitiveTypeOperationsEditPart;
-import org.eclipse.uml2.diagram.clazz.edit.parts.Property2EditPart;
-import org.eclipse.uml2.diagram.clazz.edit.parts.Property3EditPart;
-import org.eclipse.uml2.diagram.clazz.edit.parts.Property4EditPart;
-import org.eclipse.uml2.diagram.clazz.edit.parts.Property5EditPart;
-import org.eclipse.uml2.diagram.clazz.edit.parts.Property6EditPart;
-import org.eclipse.uml2.diagram.clazz.edit.parts.Property7EditPart;
-import org.eclipse.uml2.diagram.clazz.edit.parts.PropertyEditPart;
-import org.eclipse.uml2.diagram.clazz.edit.parts.PropertyNameEditPart;
-import org.eclipse.uml2.diagram.clazz.edit.parts.RealizationEditPart;
-import org.eclipse.uml2.diagram.clazz.edit.parts.RealizationNameEditPart;
-import org.eclipse.uml2.diagram.clazz.edit.parts.RedefinableTemplateSignatureEditPart;
-import org.eclipse.uml2.diagram.clazz.edit.parts.SlotEditPart;
-import org.eclipse.uml2.diagram.clazz.edit.parts.TemplateSignatureNode_signatureEditPart;
-import org.eclipse.uml2.diagram.clazz.edit.parts.UsageEditPart;
-
+import org.eclipse.gmf.runtime.notation.View;
+import org.eclipse.uml2.diagram.clazz.edit.parts.*;
 import org.eclipse.uml2.diagram.clazz.part.UMLVisualIDRegistry;
-
 import org.eclipse.uml2.diagram.clazz.view.factories.*;
-import org.eclipse.uml2.diagram.clazz.view.factories.AssociationClass2ViewFactory;
-import org.eclipse.uml2.diagram.clazz.view.factories.AssociationClassAttributesViewFactory;
-import org.eclipse.uml2.diagram.clazz.view.factories.AssociationClassClassesViewFactory;
-import org.eclipse.uml2.diagram.clazz.view.factories.AssociationClassNameViewFactory;
-import org.eclipse.uml2.diagram.clazz.view.factories.AssociationClassOperationsViewFactory;
-import org.eclipse.uml2.diagram.clazz.view.factories.AssociationClassViewFactory;
-import org.eclipse.uml2.diagram.clazz.view.factories.AssociationName2ViewFactory;
-import org.eclipse.uml2.diagram.clazz.view.factories.AssociationName3ViewFactory;
-import org.eclipse.uml2.diagram.clazz.view.factories.AssociationName4ViewFactory;
-import org.eclipse.uml2.diagram.clazz.view.factories.AssociationName5ViewFactory;
-import org.eclipse.uml2.diagram.clazz.view.factories.AssociationName6ViewFactory;
-import org.eclipse.uml2.diagram.clazz.view.factories.AssociationName7ViewFactory;
-import org.eclipse.uml2.diagram.clazz.view.factories.AssociationNameViewFactory;
-import org.eclipse.uml2.diagram.clazz.view.factories.AssociationViewFactory;
-import org.eclipse.uml2.diagram.clazz.view.factories.Class2ViewFactory;
-import org.eclipse.uml2.diagram.clazz.view.factories.Class3ViewFactory;
-import org.eclipse.uml2.diagram.clazz.view.factories.Class4ViewFactory;
-import org.eclipse.uml2.diagram.clazz.view.factories.ClassAttributesViewFactory;
-import org.eclipse.uml2.diagram.clazz.view.factories.ClassClassesViewFactory;
-import org.eclipse.uml2.diagram.clazz.view.factories.ClassNameViewFactory;
-import org.eclipse.uml2.diagram.clazz.view.factories.ClassOperationsViewFactory;
-import org.eclipse.uml2.diagram.clazz.view.factories.ClassStereotypeViewFactory;
-import org.eclipse.uml2.diagram.clazz.view.factories.ClassViewFactory;
-import org.eclipse.uml2.diagram.clazz.view.factories.ConstraintConstrainedElementViewFactory;
-import org.eclipse.uml2.diagram.clazz.view.factories.ConstraintNameViewFactory;
-import org.eclipse.uml2.diagram.clazz.view.factories.ConstraintViewFactory;
-import org.eclipse.uml2.diagram.clazz.view.factories.DataType2ViewFactory;
-import org.eclipse.uml2.diagram.clazz.view.factories.DataTypeAttributesViewFactory;
-import org.eclipse.uml2.diagram.clazz.view.factories.DataTypeNameViewFactory;
-import org.eclipse.uml2.diagram.clazz.view.factories.DataTypeOperationsViewFactory;
-import org.eclipse.uml2.diagram.clazz.view.factories.DataTypeViewFactory;
-import org.eclipse.uml2.diagram.clazz.view.factories.Dependency2ViewFactory;
-import org.eclipse.uml2.diagram.clazz.view.factories.DependencyClientViewFactory;
-import org.eclipse.uml2.diagram.clazz.view.factories.DependencyName2ViewFactory;
-import org.eclipse.uml2.diagram.clazz.view.factories.DependencyName3ViewFactory;
-import org.eclipse.uml2.diagram.clazz.view.factories.DependencyNameViewFactory;
-import org.eclipse.uml2.diagram.clazz.view.factories.DependencySupplierViewFactory;
-import org.eclipse.uml2.diagram.clazz.view.factories.DependencyViewFactory;
-import org.eclipse.uml2.diagram.clazz.view.factories.Enumeration2ViewFactory;
-import org.eclipse.uml2.diagram.clazz.view.factories.EnumerationAttributesViewFactory;
-import org.eclipse.uml2.diagram.clazz.view.factories.EnumerationLiteralViewFactory;
-import org.eclipse.uml2.diagram.clazz.view.factories.EnumerationLiteralsViewFactory;
-import org.eclipse.uml2.diagram.clazz.view.factories.EnumerationNameViewFactory;
-import org.eclipse.uml2.diagram.clazz.view.factories.EnumerationOperationsViewFactory;
-import org.eclipse.uml2.diagram.clazz.view.factories.EnumerationViewFactory;
-import org.eclipse.uml2.diagram.clazz.view.factories.Generalization2ViewFactory;
-import org.eclipse.uml2.diagram.clazz.view.factories.GeneralizationGeneralViewFactory;
-import org.eclipse.uml2.diagram.clazz.view.factories.GeneralizationSetIsCoveringIsDisjointViewFactory;
-import org.eclipse.uml2.diagram.clazz.view.factories.GeneralizationSetNameViewFactory;
-import org.eclipse.uml2.diagram.clazz.view.factories.GeneralizationSetViewFactory;
-import org.eclipse.uml2.diagram.clazz.view.factories.GeneralizationViewFactory;
-import org.eclipse.uml2.diagram.clazz.view.factories.InstanceSpecification2ViewFactory;
-import org.eclipse.uml2.diagram.clazz.view.factories.InstanceSpecificationNameViewFactory;
-import org.eclipse.uml2.diagram.clazz.view.factories.InstanceSpecificationSlotsViewFactory;
-import org.eclipse.uml2.diagram.clazz.view.factories.InstanceSpecificationViewFactory;
-import org.eclipse.uml2.diagram.clazz.view.factories.Interface2ViewFactory;
-import org.eclipse.uml2.diagram.clazz.view.factories.InterfaceAttributesViewFactory;
-import org.eclipse.uml2.diagram.clazz.view.factories.InterfaceClassesViewFactory;
-import org.eclipse.uml2.diagram.clazz.view.factories.InterfaceName2ViewFactory;
-import org.eclipse.uml2.diagram.clazz.view.factories.InterfaceNameViewFactory;
-import org.eclipse.uml2.diagram.clazz.view.factories.InterfaceOperationsViewFactory;
-import org.eclipse.uml2.diagram.clazz.view.factories.InterfaceRealizationViewFactory;
-import org.eclipse.uml2.diagram.clazz.view.factories.InterfaceViewFactory;
-import org.eclipse.uml2.diagram.clazz.view.factories.Operation2ViewFactory;
-import org.eclipse.uml2.diagram.clazz.view.factories.Operation3ViewFactory;
-import org.eclipse.uml2.diagram.clazz.view.factories.Operation4ViewFactory;
-import org.eclipse.uml2.diagram.clazz.view.factories.Operation5ViewFactory;
-import org.eclipse.uml2.diagram.clazz.view.factories.Operation6ViewFactory;
-import org.eclipse.uml2.diagram.clazz.view.factories.OperationViewFactory;
-import org.eclipse.uml2.diagram.clazz.view.factories.Package2ViewFactory;
-import org.eclipse.uml2.diagram.clazz.view.factories.Package3ViewFactory;
-import org.eclipse.uml2.diagram.clazz.view.factories.Package4ViewFactory;
-import org.eclipse.uml2.diagram.clazz.view.factories.PackageClassifiersViewFactory;
-import org.eclipse.uml2.diagram.clazz.view.factories.PackageName2ViewFactory;
-import org.eclipse.uml2.diagram.clazz.view.factories.PackageNameViewFactory;
-import org.eclipse.uml2.diagram.clazz.view.factories.PackageOtherViewFactory;
-import org.eclipse.uml2.diagram.clazz.view.factories.PackagePackagesViewFactory;
-import org.eclipse.uml2.diagram.clazz.view.factories.PackageViewFactory;
-import org.eclipse.uml2.diagram.clazz.view.factories.PortNameViewFactory;
-import org.eclipse.uml2.diagram.clazz.view.factories.PortViewFactory;
-import org.eclipse.uml2.diagram.clazz.view.factories.PrimitiveType2ViewFactory;
-import org.eclipse.uml2.diagram.clazz.view.factories.PrimitiveTypeAttributesViewFactory;
-import org.eclipse.uml2.diagram.clazz.view.factories.PrimitiveTypeNameViewFactory;
-import org.eclipse.uml2.diagram.clazz.view.factories.PrimitiveTypeOperationsViewFactory;
-import org.eclipse.uml2.diagram.clazz.view.factories.PrimitiveTypeViewFactory;
-import org.eclipse.uml2.diagram.clazz.view.factories.Property2ViewFactory;
-import org.eclipse.uml2.diagram.clazz.view.factories.Property3ViewFactory;
-import org.eclipse.uml2.diagram.clazz.view.factories.Property4ViewFactory;
-import org.eclipse.uml2.diagram.clazz.view.factories.Property5ViewFactory;
-import org.eclipse.uml2.diagram.clazz.view.factories.Property6ViewFactory;
-import org.eclipse.uml2.diagram.clazz.view.factories.Property7ViewFactory;
-import org.eclipse.uml2.diagram.clazz.view.factories.PropertyNameViewFactory;
-import org.eclipse.uml2.diagram.clazz.view.factories.PropertyViewFactory;
-import org.eclipse.uml2.diagram.clazz.view.factories.RealizationNameViewFactory;
-import org.eclipse.uml2.diagram.clazz.view.factories.RealizationViewFactory;
-import org.eclipse.uml2.diagram.clazz.view.factories.RedefinableTemplateSignatureViewFactory;
-import org.eclipse.uml2.diagram.clazz.view.factories.SlotViewFactory;
-import org.eclipse.uml2.diagram.clazz.view.factories.TemplateSignatureNode_signatureViewFactory;
-import org.eclipse.uml2.diagram.clazz.view.factories.UsageViewFactory;
 
 /**
  * @generated
@@ -232,9 +35,11 @@ public class UMLViewProvider extends AbstractViewProvider {
 		}
 		IElementType elementType = getSemanticElementType(semanticAdapter);
 		EObject domainElement = getSemanticElement(semanticAdapter);
-
 		int visualID;
 		if (semanticHint == null) {
+			// Semantic hint is not specified. Can be a result of call from CanonicalEditPolicy.
+			// In this situation there should be NO elementType, visualID will be determined
+			// by VisualIDRegistry.getNodeVisualID() for domainElement.
 			if (elementType != null || domainElement == null) {
 				return null;
 			}
@@ -242,22 +47,34 @@ public class UMLViewProvider extends AbstractViewProvider {
 		} else {
 			visualID = UMLVisualIDRegistry.getVisualID(semanticHint);
 			if (elementType != null) {
-				if (!UMLElementTypes.isKnownElementType(elementType) || false == elementType instanceof IHintedType) {
-					return null;
+				// Semantic hint is specified together with element type.
+				// Both parameters should describe exactly the same diagram element.
+				// In addition we check that visualID returned by VisualIDRegistry.getNodeVisualID() for
+				// domainElement (if specified) is the same as in element type.
+				if (!UMLElementTypes.isKnownElementType(elementType) || (!(elementType instanceof IHintedType))) {
+					return null; // foreign element type
 				}
 				String elementTypeHint = ((IHintedType) elementType).getSemanticHint();
 				if (!semanticHint.equals(elementTypeHint)) {
-					return null;
+					return null; // if semantic hint is specified it should be the same as in element type
 				}
 				if (domainElement != null && visualID != UMLVisualIDRegistry.getNodeVisualID(containerView, domainElement)) {
-					return null;
+					return null; // visual id for node EClass should match visual id from element type
 				}
 			} else {
-				if (domainElement == null) {
-					return null;
+				// Element type is not specified. Domain element should be present.
+				// This method is called with EObjectAdapter as parameter from:
+				//   - ViewService.createNode(View container, EObject eObject, String type, PreferencesHint preferencesHint) 
+				//   - generated ViewFactory.decorateView() for parent element
+				if (!PackageEditPart.MODEL_ID.equals(UMLVisualIDRegistry.getModelID(containerView))) {
+					return null; // foreign diagram
 				}
 				switch (visualID) {
 				case InterfaceEditPart.VISUAL_ID: {
+					if (domainElement == null) {
+						return null;
+					}
+
 					int suggestedID = UMLVisualIDRegistry.getNodeVisualID(containerView, domainElement);
 					if (visualID != suggestedID && Interface2EditPart.VISUAL_ID != suggestedID && true) {
 						return null;
@@ -265,13 +82,16 @@ public class UMLViewProvider extends AbstractViewProvider {
 					break;
 				}
 				case Interface2EditPart.VISUAL_ID: {
+					if (domainElement == null) {
+						return null;
+					}
+
 					int suggestedID = UMLVisualIDRegistry.getNodeVisualID(containerView, domainElement);
 					if (visualID != suggestedID && InterfaceEditPart.VISUAL_ID != suggestedID && true) {
 						return null;
 					}
 					break;
 				}
-				case PackageEditPart.VISUAL_ID:
 				case Package2EditPart.VISUAL_ID:
 				case Class2EditPart.VISUAL_ID:
 				case AssociationClass2EditPart.VISUAL_ID:
@@ -308,20 +128,8 @@ public class UMLViewProvider extends AbstractViewProvider {
 				case Property6EditPart.VISUAL_ID:
 				case Operation6EditPart.VISUAL_ID:
 				case Class4EditPart.VISUAL_ID:
-				case GeneralizationEditPart.VISUAL_ID:
-				case Dependency2EditPart.VISUAL_ID:
-				case Property7EditPart.VISUAL_ID:
-				case ConstraintConstrainedElementEditPart.VISUAL_ID:
-				case AssociationEditPart.VISUAL_ID:
-				case DependencySupplierEditPart.VISUAL_ID:
-				case DependencyClientEditPart.VISUAL_ID:
-				case InterfaceRealizationEditPart.VISUAL_ID:
-				case RealizationEditPart.VISUAL_ID:
-				case Generalization2EditPart.VISUAL_ID:
-				case GeneralizationGeneralEditPart.VISUAL_ID:
-				case UsageEditPart.VISUAL_ID:
-					if (visualID != UMLVisualIDRegistry.getNodeVisualID(containerView, domainElement)) {
-						return null;
+					if (domainElement == null || visualID != UMLVisualIDRegistry.getNodeVisualID(containerView, domainElement)) {
+						return null; // visual id in semantic hint should match visual id for domain element
 					}
 					break;
 				case PackageNameEditPart.VISUAL_ID:
@@ -329,7 +137,7 @@ public class UMLViewProvider extends AbstractViewProvider {
 				case PackageClassifiersEditPart.VISUAL_ID:
 				case PackageOtherEditPart.VISUAL_ID:
 					if (Package2EditPart.VISUAL_ID != UMLVisualIDRegistry.getVisualID(containerView) || containerView.getElement() != domainElement) {
-						return null;
+						return null; // wrong container
 					}
 					break;
 				case ClassNameEditPart.VISUAL_ID:
@@ -338,7 +146,7 @@ public class UMLViewProvider extends AbstractViewProvider {
 				case ClassOperationsEditPart.VISUAL_ID:
 				case ClassClassesEditPart.VISUAL_ID:
 					if (Class2EditPart.VISUAL_ID != UMLVisualIDRegistry.getVisualID(containerView) || containerView.getElement() != domainElement) {
-						return null;
+						return null; // wrong container
 					}
 					break;
 				case AssociationClassNameEditPart.VISUAL_ID:
@@ -346,21 +154,21 @@ public class UMLViewProvider extends AbstractViewProvider {
 				case AssociationClassOperationsEditPart.VISUAL_ID:
 				case AssociationClassClassesEditPart.VISUAL_ID:
 					if (AssociationClass2EditPart.VISUAL_ID != UMLVisualIDRegistry.getVisualID(containerView) || containerView.getElement() != domainElement) {
-						return null;
+						return null; // wrong container
 					}
 					break;
 				case DataTypeNameEditPart.VISUAL_ID:
 				case DataTypeAttributesEditPart.VISUAL_ID:
 				case DataTypeOperationsEditPart.VISUAL_ID:
 					if (DataType2EditPart.VISUAL_ID != UMLVisualIDRegistry.getVisualID(containerView) || containerView.getElement() != domainElement) {
-						return null;
+						return null; // wrong container
 					}
 					break;
 				case PrimitiveTypeNameEditPart.VISUAL_ID:
 				case PrimitiveTypeAttributesEditPart.VISUAL_ID:
 				case PrimitiveTypeOperationsEditPart.VISUAL_ID:
 					if (PrimitiveType2EditPart.VISUAL_ID != UMLVisualIDRegistry.getVisualID(containerView) || containerView.getElement() != domainElement) {
-						return null;
+						return null; // wrong container
 					}
 					break;
 				case EnumerationNameEditPart.VISUAL_ID:
@@ -368,38 +176,34 @@ public class UMLViewProvider extends AbstractViewProvider {
 				case EnumerationAttributesEditPart.VISUAL_ID:
 				case EnumerationOperationsEditPart.VISUAL_ID:
 					if (Enumeration2EditPart.VISUAL_ID != UMLVisualIDRegistry.getVisualID(containerView) || containerView.getElement() != domainElement) {
-						return null;
+						return null; // wrong container
 					}
 					break;
 				case InterfaceNameEditPart.VISUAL_ID:
-
 					if (InterfaceEditPart.VISUAL_ID != UMLVisualIDRegistry.getVisualID(containerView) || containerView.getElement() != domainElement) {
-						return null;
+						return null; // wrong container
 					}
 					break;
 				case ConstraintNameEditPart.VISUAL_ID:
-
 					if (ConstraintEditPart.VISUAL_ID != UMLVisualIDRegistry.getVisualID(containerView) || containerView.getElement() != domainElement) {
-						return null;
+						return null; // wrong container
 					}
 					break;
 				case InstanceSpecificationNameEditPart.VISUAL_ID:
 				case InstanceSpecificationSlotsEditPart.VISUAL_ID:
 					if (InstanceSpecification2EditPart.VISUAL_ID != UMLVisualIDRegistry.getVisualID(containerView) || containerView.getElement() != domainElement) {
-						return null;
+						return null; // wrong container
 					}
 					break;
 				case DependencyNameEditPart.VISUAL_ID:
-
 					if (DependencyEditPart.VISUAL_ID != UMLVisualIDRegistry.getVisualID(containerView) || containerView.getElement() != domainElement) {
-						return null;
+						return null; // wrong container
 					}
 					break;
 				case GeneralizationSetIsCoveringIsDisjointEditPart.VISUAL_ID:
 				case GeneralizationSetNameEditPart.VISUAL_ID:
-
 					if (GeneralizationSetEditPart.VISUAL_ID != UMLVisualIDRegistry.getVisualID(containerView) || containerView.getElement() != domainElement) {
-						return null;
+						return null; // wrong container
 					}
 					break;
 				case InterfaceName2EditPart.VISUAL_ID:
@@ -407,35 +211,64 @@ public class UMLViewProvider extends AbstractViewProvider {
 				case InterfaceOperationsEditPart.VISUAL_ID:
 				case InterfaceClassesEditPart.VISUAL_ID:
 					if (Interface2EditPart.VISUAL_ID != UMLVisualIDRegistry.getVisualID(containerView) || containerView.getElement() != domainElement) {
-						return null;
+						return null; // wrong container
 					}
 					break;
 				case PackageName2EditPart.VISUAL_ID:
-
 					if (Package4EditPart.VISUAL_ID != UMLVisualIDRegistry.getVisualID(containerView) || containerView.getElement() != domainElement) {
-						return null;
+						return null; // wrong container
 					}
 					break;
-
 				case PortNameEditPart.VISUAL_ID:
-
 					if (PortEditPart.VISUAL_ID != UMLVisualIDRegistry.getVisualID(containerView) || containerView.getElement() != domainElement) {
-						return null;
+						return null; // wrong container
 					}
 					break;
 				case TemplateSignatureNode_signatureEditPart.VISUAL_ID:
-
 					if (RedefinableTemplateSignatureEditPart.VISUAL_ID != UMLVisualIDRegistry.getVisualID(containerView) || containerView.getElement() != domainElement) {
-						return null;
+						return null; // wrong container
 					}
 					break;
-
+				case DependencyName2EditPart.VISUAL_ID:
+				case DependencyName3EditPart.VISUAL_ID:
+					if (Dependency2EditPart.VISUAL_ID != UMLVisualIDRegistry.getVisualID(containerView) || containerView.getElement() != domainElement) {
+						return null; // wrong container
+					}
+					break;
+				case PropertyNameEditPart.VISUAL_ID:
+					if (Property7EditPart.VISUAL_ID != UMLVisualIDRegistry.getVisualID(containerView) || containerView.getElement() != domainElement) {
+						return null; // wrong container
+					}
+					break;
+				case AssociationNameEditPart.VISUAL_ID:
+				case AssociationName2EditPart.VISUAL_ID:
+				case AssociationName3EditPart.VISUAL_ID:
+				case AssociationName4EditPart.VISUAL_ID:
+				case AssociationName5EditPart.VISUAL_ID:
+				case AssociationName6EditPart.VISUAL_ID:
+				case AssociationName7EditPart.VISUAL_ID:
+					if (AssociationEditPart.VISUAL_ID != UMLVisualIDRegistry.getVisualID(containerView) || containerView.getElement() != domainElement) {
+						return null; // wrong container
+					}
+					break;
+				case RealizationNameEditPart.VISUAL_ID:
+					if (RealizationEditPart.VISUAL_ID != UMLVisualIDRegistry.getVisualID(containerView) || containerView.getElement() != domainElement) {
+						return null; // wrong container
+					}
+					break;
 				default:
 					return null;
 				}
 			}
 		}
-		if (!UMLVisualIDRegistry.canCreateNode(containerView, visualID)) {
+		return getNodeViewClass(containerView, visualID);
+	}
+
+	/**
+	 * @generated
+	 */
+	protected Class getNodeViewClass(View containerView, int visualID) {
+		if (containerView == null || !UMLVisualIDRegistry.canCreateNode(containerView, visualID)) {
 			return null;
 		}
 		switch (visualID) {
@@ -620,24 +453,28 @@ public class UMLViewProvider extends AbstractViewProvider {
 	 */
 	protected Class getEdgeViewClass(IAdaptable semanticAdapter, View containerView, String semanticHint) {
 		IElementType elementType = getSemanticElementType(semanticAdapter);
-		if (elementType == null) {
-			return null;
-		}
-		if (!UMLElementTypes.isKnownElementType(elementType) || false == elementType instanceof IHintedType) {
-			return null;
+		if (!UMLElementTypes.isKnownElementType(elementType) || (!(elementType instanceof IHintedType))) {
+			return null; // foreign element type
 		}
 		String elementTypeHint = ((IHintedType) elementType).getSemanticHint();
 		if (elementTypeHint == null) {
-			return null;
+			return null; // our hint is visual id and must be specified
 		}
 		if (semanticHint != null && !semanticHint.equals(elementTypeHint)) {
-			return null;
+			return null; // if semantic hint is specified it should be the same as in element type
 		}
 		int visualID = UMLVisualIDRegistry.getVisualID(elementTypeHint);
 		EObject domainElement = getSemanticElement(semanticAdapter);
 		if (domainElement != null && visualID != UMLVisualIDRegistry.getLinkWithClassVisualID(domainElement)) {
-			return null;
+			return null; // visual id for link EClass should match visual id from element type
 		}
+		return getEdgeViewClass(visualID);
+	}
+
+	/**
+	 * @generated
+	 */
+	protected Class getEdgeViewClass(int visualID) {
 		switch (visualID) {
 		case GeneralizationEditPart.VISUAL_ID:
 			return GeneralizationViewFactory.class;

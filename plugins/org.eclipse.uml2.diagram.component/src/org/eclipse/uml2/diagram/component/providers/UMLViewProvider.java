@@ -81,9 +81,11 @@ public class UMLViewProvider extends AbstractViewProvider {
 		}
 		IElementType elementType = getSemanticElementType(semanticAdapter);
 		EObject domainElement = getSemanticElement(semanticAdapter);
-
 		int visualID;
 		if (semanticHint == null) {
+			// Semantic hint is not specified. Can be a result of call from CanonicalEditPolicy.
+			// In this situation there should be NO elementType, visualID will be determined
+			// by VisualIDRegistry.getNodeVisualID() for domainElement.
 			if (elementType != null || domainElement == null) {
 				return null;
 			}
@@ -91,22 +93,29 @@ public class UMLViewProvider extends AbstractViewProvider {
 		} else {
 			visualID = UMLVisualIDRegistry.getVisualID(semanticHint);
 			if (elementType != null) {
-				if (!UMLElementTypes.isKnownElementType(elementType) || false == elementType instanceof IHintedType) {
-					return null;
+				// Semantic hint is specified together with element type.
+				// Both parameters should describe exactly the same diagram element.
+				// In addition we check that visualID returned by VisualIDRegistry.getNodeVisualID() for
+				// domainElement (if specified) is the same as in element type.
+				if (!UMLElementTypes.isKnownElementType(elementType) || (!(elementType instanceof IHintedType))) {
+					return null; // foreign element type
 				}
 				String elementTypeHint = ((IHintedType) elementType).getSemanticHint();
 				if (!semanticHint.equals(elementTypeHint)) {
-					return null;
+					return null; // if semantic hint is specified it should be the same as in element type
 				}
 				if (domainElement != null && visualID != UMLVisualIDRegistry.getNodeVisualID(containerView, domainElement)) {
-					return null;
+					return null; // visual id for node EClass should match visual id from element type
 				}
 			} else {
-				if (domainElement == null) {
-					return null;
+				// Element type is not specified. Domain element should be present.
+				// This method is called with EObjectAdapter as parameter from:
+				//   - ViewService.createNode(View container, EObject eObject, String type, PreferencesHint preferencesHint) 
+				//   - generated ViewFactory.decorateView() for parent element
+				if (!PackageEditPart.MODEL_ID.equals(UMLVisualIDRegistry.getModelID(containerView))) {
+					return null; // foreign diagram
 				}
 				switch (visualID) {
-				case PackageEditPart.VISUAL_ID:
 				case ComponentEditPart.VISUAL_ID:
 				case Artifact2EditPart.VISUAL_ID:
 				case Interface2EditPart.VISUAL_ID:
@@ -116,65 +125,55 @@ public class UMLViewProvider extends AbstractViewProvider {
 				case ArtifactEditPart.VISUAL_ID:
 				case ClassEditPart.VISUAL_ID:
 				case InterfaceEditPart.VISUAL_ID:
-				case InterfaceRealizationEditPart.VISUAL_ID:
-				case PortProvidedEditPart.VISUAL_ID:
-				case PortRequiredEditPart.VISUAL_ID:
-					if (visualID != UMLVisualIDRegistry.getNodeVisualID(containerView, domainElement)) {
-						return null;
+					if (domainElement == null || visualID != UMLVisualIDRegistry.getNodeVisualID(containerView, domainElement)) {
+						return null; // visual id in semantic hint should match visual id for domain element
 					}
 					break;
 				case ComponentName2EditPart.VISUAL_ID:
 				case ComponentContentsEditPart.VISUAL_ID:
 					if (ComponentEditPart.VISUAL_ID != UMLVisualIDRegistry.getVisualID(containerView) || containerView.getElement() != domainElement) {
-						return null;
+						return null; // wrong container
 					}
 					break;
 				case ArtifactName2EditPart.VISUAL_ID:
-
 					if (Artifact2EditPart.VISUAL_ID != UMLVisualIDRegistry.getVisualID(containerView) || containerView.getElement() != domainElement) {
-						return null;
+						return null; // wrong container
 					}
 					break;
 				case InterfaceName2EditPart.VISUAL_ID:
-
 					if (Interface2EditPart.VISUAL_ID != UMLVisualIDRegistry.getVisualID(containerView) || containerView.getElement() != domainElement) {
-						return null;
+						return null; // wrong container
 					}
 					break;
 				case ClassName2EditPart.VISUAL_ID:
-
 					if (Class2EditPart.VISUAL_ID != UMLVisualIDRegistry.getVisualID(containerView) || containerView.getElement() != domainElement) {
-						return null;
+						return null; // wrong container
 					}
 					break;
 				case ComponentNameEditPart.VISUAL_ID:
 				case ComponentContents2EditPart.VISUAL_ID:
 					if (Component2EditPart.VISUAL_ID != UMLVisualIDRegistry.getVisualID(containerView) || containerView.getElement() != domainElement) {
-						return null;
+						return null; // wrong container
 					}
 					break;
 				case PortNameEditPart.VISUAL_ID:
-
 					if (PortEditPart.VISUAL_ID != UMLVisualIDRegistry.getVisualID(containerView) || containerView.getElement() != domainElement) {
-						return null;
+						return null; // wrong container
 					}
 					break;
 				case ArtifactNameEditPart.VISUAL_ID:
-
 					if (ArtifactEditPart.VISUAL_ID != UMLVisualIDRegistry.getVisualID(containerView) || containerView.getElement() != domainElement) {
-						return null;
+						return null; // wrong container
 					}
 					break;
 				case ClassNameEditPart.VISUAL_ID:
-
 					if (ClassEditPart.VISUAL_ID != UMLVisualIDRegistry.getVisualID(containerView) || containerView.getElement() != domainElement) {
-						return null;
+						return null; // wrong container
 					}
 					break;
 				case InterfaceNameEditPart.VISUAL_ID:
-
 					if (InterfaceEditPart.VISUAL_ID != UMLVisualIDRegistry.getVisualID(containerView) || containerView.getElement() != domainElement) {
-						return null;
+						return null; // wrong container
 					}
 					break;
 				default:
@@ -182,7 +181,14 @@ public class UMLViewProvider extends AbstractViewProvider {
 				}
 			}
 		}
-		if (!UMLVisualIDRegistry.canCreateNode(containerView, visualID)) {
+		return getNodeViewClass(containerView, visualID);
+	}
+
+	/**
+	 * @generated
+	 */
+	protected Class getNodeViewClass(View containerView, int visualID) {
+		if (containerView == null || !UMLVisualIDRegistry.canCreateNode(containerView, visualID)) {
 			return null;
 		}
 		switch (visualID) {
@@ -235,24 +241,28 @@ public class UMLViewProvider extends AbstractViewProvider {
 	 */
 	protected Class getEdgeViewClass(IAdaptable semanticAdapter, View containerView, String semanticHint) {
 		IElementType elementType = getSemanticElementType(semanticAdapter);
-		if (elementType == null) {
-			return null;
-		}
-		if (!UMLElementTypes.isKnownElementType(elementType) || false == elementType instanceof IHintedType) {
-			return null;
+		if (!UMLElementTypes.isKnownElementType(elementType) || (!(elementType instanceof IHintedType))) {
+			return null; // foreign element type
 		}
 		String elementTypeHint = ((IHintedType) elementType).getSemanticHint();
 		if (elementTypeHint == null) {
-			return null;
+			return null; // our hint is visual id and must be specified
 		}
 		if (semanticHint != null && !semanticHint.equals(elementTypeHint)) {
-			return null;
+			return null; // if semantic hint is specified it should be the same as in element type
 		}
 		int visualID = UMLVisualIDRegistry.getVisualID(elementTypeHint);
 		EObject domainElement = getSemanticElement(semanticAdapter);
 		if (domainElement != null && visualID != UMLVisualIDRegistry.getLinkWithClassVisualID(domainElement)) {
-			return null;
+			return null; // visual id for link EClass should match visual id from element type
 		}
+		return getEdgeViewClass(visualID);
+	}
+
+	/**
+	 * @generated
+	 */
+	protected Class getEdgeViewClass(int visualID) {
 		switch (visualID) {
 		case InterfaceRealizationEditPart.VISUAL_ID:
 			return InterfaceRealizationViewFactory.class;
