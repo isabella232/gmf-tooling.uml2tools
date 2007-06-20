@@ -95,16 +95,6 @@ public class RealizationEditPart extends ConnectionNodeEditPart {
 		 * @generated
 		 */
 		private void createContents() {
-
-			PolylineDecoration realizationDecoration0 = new PolylineDecoration();
-			realizationDecoration0.addPoint(new Point(getMapMode().DPtoLP(-1), getMapMode().DPtoLP(1)));
-			realizationDecoration0.addPoint(new Point(getMapMode().DPtoLP(0), getMapMode().DPtoLP(0)));
-			realizationDecoration0.addPoint(new Point(getMapMode().DPtoLP(-1), getMapMode().DPtoLP(-1)));
-			realizationDecoration0.addPoint(new Point(getMapMode().DPtoLP(-1), getMapMode().DPtoLP(1)));
-			realizationDecoration0.setFill(false);
-
-			this.add(realizationDecoration0);
-
 		}
 
 		/**

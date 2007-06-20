@@ -76,14 +76,6 @@ public class ControlFlowEditPart extends ConnectionNodeEditPart {
 		 * @generated
 		 */
 		private void createContents() {
-
-			PolylineDecoration aux_ActivityEdgeConnection_Arrow0 = new PolylineDecoration();
-			aux_ActivityEdgeConnection_Arrow0.addPoint(new Point(getMapMode().DPtoLP(-2), getMapMode().DPtoLP(-1)));
-			aux_ActivityEdgeConnection_Arrow0.addPoint(new Point(getMapMode().DPtoLP(0), getMapMode().DPtoLP(0)));
-			aux_ActivityEdgeConnection_Arrow0.addPoint(new Point(getMapMode().DPtoLP(-2), getMapMode().DPtoLP(1)));
-
-			this.add(aux_ActivityEdgeConnection_Arrow0);
-
 		}
 
 		/**

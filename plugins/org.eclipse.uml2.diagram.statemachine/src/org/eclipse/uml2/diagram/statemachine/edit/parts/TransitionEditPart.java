@@ -92,14 +92,6 @@ public class TransitionEditPart extends ConnectionNodeEditPart {
 		 * @generated
 		 */
 		private void createContents() {
-
-			PolylineDecoration transitionConnection_Arrow0 = new PolylineDecoration();
-			transitionConnection_Arrow0.addPoint(new Point(getMapMode().DPtoLP(-2), getMapMode().DPtoLP(-1)));
-			transitionConnection_Arrow0.addPoint(new Point(getMapMode().DPtoLP(0), getMapMode().DPtoLP(0)));
-			transitionConnection_Arrow0.addPoint(new Point(getMapMode().DPtoLP(-2), getMapMode().DPtoLP(1)));
-
-			this.add(transitionConnection_Arrow0);
-
 		}
 
 		/**
