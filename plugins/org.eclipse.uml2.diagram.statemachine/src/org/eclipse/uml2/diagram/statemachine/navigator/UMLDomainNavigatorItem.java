@@ -5,13 +5,14 @@ import org.eclipse.core.runtime.Platform;
 import org.eclipse.core.runtime.PlatformObject;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.util.EcoreUtil;
+import org.eclipse.gmf.runtime.common.core.util.IAdaptableSelection;
 import org.eclipse.ui.views.properties.IPropertySource;
 import org.eclipse.ui.views.properties.IPropertySourceProvider;
 
 /**
  * @generated
  */
-public class UMLDomainNavigatorItem extends PlatformObject {
+public class UMLDomainNavigatorItem extends PlatformObject implements IAdaptableSelection {
 
 	/**
 	 * @generated
