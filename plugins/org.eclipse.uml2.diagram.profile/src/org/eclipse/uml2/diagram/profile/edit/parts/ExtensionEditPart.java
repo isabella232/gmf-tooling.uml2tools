@@ -95,14 +95,6 @@ public class ExtensionEditPart extends ConnectionNodeEditPart {
 		 * @generated
 		 */
 		private void createContents() {
-
-			PolygonDecoration extension_Decoration0 = new PolygonDecoration();
-			extension_Decoration0.addPoint(new Point(getMapMode().DPtoLP(-1), getMapMode().DPtoLP(1)));
-			extension_Decoration0.addPoint(new Point(getMapMode().DPtoLP(0), getMapMode().DPtoLP(0)));
-			extension_Decoration0.addPoint(new Point(getMapMode().DPtoLP(-1), getMapMode().DPtoLP(-1)));
-
-			this.add(extension_Decoration0);
-
 		}
 
 		/**
