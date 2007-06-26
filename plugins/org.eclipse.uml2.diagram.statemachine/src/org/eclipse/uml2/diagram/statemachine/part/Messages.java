@@ -23,16 +23,6 @@ public class Messages extends NLS {
 	/**
 	 * @generated
 	 */
-	public static String UMLDiagramEditorUtil_OpenModelResourceErrorDialogTitle;
-
-	/**
-	 * @generated
-	 */
-	public static String UMLDiagramEditorUtil_OpenModelResourceErrorDialogMessage;
-
-	/**
-	 * @generated
-	 */
 	public static String UMLDiagramEditorUtil_CreateDiagramProgressTask;
 
 	/**
@@ -99,11 +89,6 @@ public class Messages extends NLS {
 	 * @generated
 	 */
 	public static String UMLInitDiagramFileAction_InitDiagramFileWizardTitle;
-
-	/**
-	 * @generated
-	 */
-	public static String UMLInitDiagramFileAction_OpenModelFileDialogTitle;
 
 	/**
 	 * @generated
@@ -184,11 +169,6 @@ public class Messages extends NLS {
 	 * @generated
 	 */
 	public static String UMLDiagramEditor_SaveErrorMessage;
-
-	/**
-	 * @generated
-	 */
-	public static String UMLElementChooserDialog_SelectModelElementTitle;
 
 	/**
 	 * @generated
