@@ -38,6 +38,7 @@ import org.eclipse.uml2.diagram.clazz.edit.parts.DataType2EditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.DataTypeEditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.Dependency2EditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.DependencyEditPart;
+import org.eclipse.uml2.diagram.clazz.edit.parts.ElementImportEditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.Enumeration2EditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.EnumerationEditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.EnumerationLiteralEditPart;
@@ -455,6 +456,11 @@ public class PackageCanonicalEditPolicy extends CanonicalConnectionEditPolicy {
 		case Class4EditPart.VISUAL_ID: {
 			domain2NotationMap.put(view.getElement(), view);
 			result.addAll(UMLDiagramUpdater.getClass_3030ContainedLinks(view));
+			break;
+		}
+		case ElementImportEditPart.VISUAL_ID: {
+			domain2NotationMap.put(view.getElement(), view);
+			result.addAll(UMLDiagramUpdater.getElementImport_3031ContainedLinks(view));
 			break;
 		}
 		case GeneralizationEditPart.VISUAL_ID: {

@@ -31,6 +31,7 @@ import org.eclipse.uml2.diagram.clazz.edit.parts.InstanceSpecification2EditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.Interface2EditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.InterfaceEditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.Package2EditPart;
+import org.eclipse.uml2.diagram.clazz.edit.parts.Package4EditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.PackageEditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.PrimitiveType2EditPart;
 
@@ -106,6 +107,11 @@ public class UMLModelingAssistantProvider extends ModelingAssistantProvider {
 			types.add(UMLElementTypes.Property_3028);
 			types.add(UMLElementTypes.Operation_3029);
 			types.add(UMLElementTypes.Class_3030);
+			return types;
+		}
+		if (editPart instanceof Package4EditPart) {
+			List types = new ArrayList();
+			types.add(UMLElementTypes.ElementImport_3031);
 			return types;
 		}
 		if (editPart instanceof PackageEditPart) {

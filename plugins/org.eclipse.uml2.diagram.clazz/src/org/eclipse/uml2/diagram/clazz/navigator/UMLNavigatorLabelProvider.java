@@ -38,6 +38,7 @@ import org.eclipse.uml2.diagram.clazz.edit.parts.DependencyEditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.DependencyName2EditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.DependencyNameEditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.DependencySupplierEditPart;
+import org.eclipse.uml2.diagram.clazz.edit.parts.ElementImportEditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.Enumeration2EditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.EnumerationEditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.EnumerationLiteralEditPart;
@@ -222,6 +223,8 @@ public class UMLNavigatorLabelProvider extends LabelProvider implements ICommonL
 			return getImage("Navigator?Node?http://www.eclipse.org/uml2/2.1.0/UML?Operation", UMLElementTypes.Operation_3029); //$NON-NLS-1$
 		case Class4EditPart.VISUAL_ID:
 			return getImage("Navigator?Node?http://www.eclipse.org/uml2/2.1.0/UML?Class", UMLElementTypes.Class_3030); //$NON-NLS-1$
+		case ElementImportEditPart.VISUAL_ID:
+			return getImage("Navigator?Node?http://www.eclipse.org/uml2/2.1.0/UML?ElementImport", UMLElementTypes.ElementImport_3031); //$NON-NLS-1$
 		case GeneralizationEditPart.VISUAL_ID:
 			return getImage("Navigator?Link?http://www.eclipse.org/uml2/2.1.0/UML?Generalization", UMLElementTypes.Generalization_4001); //$NON-NLS-1$
 		case Dependency2EditPart.VISUAL_ID:
@@ -374,6 +377,8 @@ public class UMLNavigatorLabelProvider extends LabelProvider implements ICommonL
 			return getOperation_3029Text(view);
 		case Class4EditPart.VISUAL_ID:
 			return getClass_3030Text(view);
+		case ElementImportEditPart.VISUAL_ID:
+			return getElementImport_3031Text(view);
 		case GeneralizationEditPart.VISUAL_ID:
 			return getGeneralization_4001Text(view);
 		case Dependency2EditPart.VISUAL_ID:
@@ -997,6 +1002,22 @@ public class UMLNavigatorLabelProvider extends LabelProvider implements ICommonL
 			return parser.getPrintString(hintAdapter, ParserOptions.NONE.intValue());
 		} else {
 			UMLDiagramEditorPlugin.getInstance().logError("Parser was not found for label " + 3030); //$NON-NLS-1$
+			return ""; //$NON-NLS-1$
+		}
+	}
+
+	/**
+	 * @generated
+	 */
+	private String getElementImport_3031Text(View view) {
+		IAdaptable hintAdapter = new UMLParserProvider.HintAdapter(UMLElementTypes.ElementImport_3031, (view.getElement() != null ? view.getElement() : view), UMLVisualIDRegistry
+				.getType(ElementImportEditPart.VISUAL_ID));
+		IParser parser = ParserService.getInstance().getParser(hintAdapter);
+
+		if (parser != null) {
+			return parser.getPrintString(hintAdapter, ParserOptions.NONE.intValue());
+		} else {
+			UMLDiagramEditorPlugin.getInstance().logError("Parser was not found for label " + 3031); //$NON-NLS-1$
 			return ""; //$NON-NLS-1$
 		}
 	}

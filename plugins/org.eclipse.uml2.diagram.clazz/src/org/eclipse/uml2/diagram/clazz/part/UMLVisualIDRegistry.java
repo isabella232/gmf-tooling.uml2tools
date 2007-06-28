@@ -41,6 +41,7 @@ import org.eclipse.uml2.diagram.clazz.edit.parts.DependencyEditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.DependencyName2EditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.DependencyName3EditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.DependencyNameEditPart;
+import org.eclipse.uml2.diagram.clazz.edit.parts.ElementImportEditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.Enumeration2EditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.EnumerationAttributesEditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.EnumerationEditPart;
@@ -76,6 +77,7 @@ import org.eclipse.uml2.diagram.clazz.edit.parts.Package3EditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.Package4EditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.PackageClassifiersEditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.PackageEditPart;
+import org.eclipse.uml2.diagram.clazz.edit.parts.PackageImportsEditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.PackageName2EditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.PackageNameEditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.PackageOtherEditPart;
@@ -392,6 +394,11 @@ public class UMLVisualIDRegistry {
 				return Class4EditPart.VISUAL_ID;
 			}
 			break;
+		case PackageImportsEditPart.VISUAL_ID:
+			if (UMLPackage.eINSTANCE.getElementImport().isSuperTypeOf(domainElement.eClass())) {
+				return ElementImportEditPart.VISUAL_ID;
+			}
+			break;
 		case PackageEditPart.VISUAL_ID:
 			// We want to additionally show the Canvas Semantical Element in the auxiliary 
 			// org.eclipse.uml2.diagram.clazz.edit.parts.Package4EditPart (that serves as a pure visual container for children). 
@@ -610,6 +617,9 @@ public class UMLVisualIDRegistry {
 			if (PackageName2EditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
+			if (PackageImportsEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
 			break;
 		case PortEditPart.VISUAL_ID:
 			if (PortNameEditPart.VISUAL_ID == nodeVisualID) {
@@ -730,6 +740,11 @@ public class UMLVisualIDRegistry {
 			break;
 		case InterfaceClassesEditPart.VISUAL_ID:
 			if (Class4EditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			break;
+		case PackageImportsEditPart.VISUAL_ID:
+			if (ElementImportEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
 			break;

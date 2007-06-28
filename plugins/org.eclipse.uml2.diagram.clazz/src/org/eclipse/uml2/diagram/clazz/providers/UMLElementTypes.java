@@ -242,6 +242,11 @@ public class UMLElementTypes extends ElementInitializers {
 	/**
 	 * @generated
 	 */
+	public static final IElementType ElementImport_3031 = getElementType("org.eclipse.uml2.diagram.clazz.ElementImport_3031"); //$NON-NLS-1$
+
+	/**
+	 * @generated
+	 */
 	public static final IElementType Generalization_4001 = getElementType("org.eclipse.uml2.diagram.clazz.Generalization_4001"); //$NON-NLS-1$
 
 	/**
@@ -483,6 +488,8 @@ public class UMLElementTypes extends ElementInitializers {
 
 			elements.put(Class_3030, UMLPackage.eINSTANCE.getClass_());
 
+			elements.put(ElementImport_3031, UMLPackage.eINSTANCE.getElementImport());
+
 			elements.put(Generalization_4001, UMLPackage.eINSTANCE.getGeneralization());
 
 			elements.put(Dependency_4002, UMLPackage.eINSTANCE.getDependency());
@@ -562,6 +569,7 @@ public class UMLElementTypes extends ElementInitializers {
 			KNOWN_ELEMENT_TYPES.add(Property_3028);
 			KNOWN_ELEMENT_TYPES.add(Operation_3029);
 			KNOWN_ELEMENT_TYPES.add(Class_3030);
+			KNOWN_ELEMENT_TYPES.add(ElementImport_3031);
 			KNOWN_ELEMENT_TYPES.add(Generalization_4001);
 			KNOWN_ELEMENT_TYPES.add(Dependency_4002);
 			KNOWN_ELEMENT_TYPES.add(Property_4003);

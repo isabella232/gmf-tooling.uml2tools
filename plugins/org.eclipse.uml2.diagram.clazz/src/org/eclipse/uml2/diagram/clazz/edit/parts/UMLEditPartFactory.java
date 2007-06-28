@@ -196,6 +196,9 @@ public class UMLEditPartFactory implements EditPartFactory {
 			case Class4EditPart.VISUAL_ID:
 				return new Class4EditPart(view);
 
+			case ElementImportEditPart.VISUAL_ID:
+				return new ElementImportEditPart(view);
+
 			case PackagePackagesEditPart.VISUAL_ID:
 				return new PackagePackagesEditPart(view);
 
@@ -255,6 +258,9 @@ public class UMLEditPartFactory implements EditPartFactory {
 
 			case InterfaceClassesEditPart.VISUAL_ID:
 				return new InterfaceClassesEditPart(view);
+
+			case PackageImportsEditPart.VISUAL_ID:
+				return new PackageImportsEditPart(view);
 
 			case GeneralizationEditPart.VISUAL_ID:
 				return new GeneralizationEditPart(view);

@@ -31,6 +31,7 @@ import org.eclipse.uml2.diagram.clazz.edit.parts.DataTypeNameEditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.DependencyName2EditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.DependencyName3EditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.DependencyNameEditPart;
+import org.eclipse.uml2.diagram.clazz.edit.parts.ElementImportEditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.EnumerationEditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.EnumerationLiteralEditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.EnumerationNameEditPart;
@@ -69,6 +70,7 @@ import org.eclipse.uml2.diagram.clazz.parser.association.end.AssociationEndToStr
 import org.eclipse.uml2.diagram.clazz.parser.association.name.AssociationNameParser;
 import org.eclipse.uml2.diagram.clazz.parser.association.name.AssociationNameToString;
 import org.eclipse.uml2.diagram.clazz.parser.dependency.DependencyTypeParser;
+import org.eclipse.uml2.diagram.clazz.parser.imports.ElementImportParser;
 import org.eclipse.uml2.diagram.clazz.parser.instance.InstanceSpecificationParser;
 import org.eclipse.uml2.diagram.clazz.parser.instance.InstanceSpecificationToString;
 import org.eclipse.uml2.diagram.clazz.parser.slot.SlotParser;
@@ -878,6 +880,28 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 	/**
 	 * @generated
 	 */
+	private IParser elementImport_3031Parser;
+
+	/**
+	 * @generated
+	 */
+	private IParser getElementImport_3031Parser() {
+		if (elementImport_3031Parser == null) {
+			elementImport_3031Parser = createElementImport_3031Parser();
+		}
+		return elementImport_3031Parser;
+	}
+
+	/**
+	 * @generated NOT
+	 */
+	protected IParser createElementImport_3031Parser() {
+		return new ElementImportParser();
+	}
+
+	/**
+	 * @generated
+	 */
 	private IParser dependencyName_6001Parser;
 
 	/**
@@ -1412,6 +1436,8 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 			return getOperation_3029Parser();
 		case Class4EditPart.VISUAL_ID:
 			return getClass_3030Parser();
+		case ElementImportEditPart.VISUAL_ID:
+			return getElementImport_3031Parser();
 		case DependencyName2EditPart.VISUAL_ID:
 			return getDependencyName_6001Parser();
 		case DependencyName3EditPart.VISUAL_ID:

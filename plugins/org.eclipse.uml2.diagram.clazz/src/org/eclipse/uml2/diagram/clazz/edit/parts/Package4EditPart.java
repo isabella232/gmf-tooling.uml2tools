@@ -3,6 +3,7 @@ package org.eclipse.uml2.diagram.clazz.edit.parts;
 import org.eclipse.draw2d.Graphics;
 import org.eclipse.draw2d.IFigure;
 import org.eclipse.draw2d.MarginBorder;
+import org.eclipse.draw2d.RectangleFigure;
 import org.eclipse.draw2d.Shape;
 import org.eclipse.draw2d.StackLayout;
 import org.eclipse.draw2d.ToolbarLayout;
@@ -11,20 +12,27 @@ import org.eclipse.draw2d.geometry.PointList;
 import org.eclipse.draw2d.geometry.Rectangle;
 import org.eclipse.gef.EditPart;
 import org.eclipse.gef.EditPolicy;
+import org.eclipse.gef.Request;
+import org.eclipse.gef.commands.Command;
 import org.eclipse.gef.editpolicies.LayoutEditPolicy;
+import org.eclipse.gmf.runtime.diagram.core.edithelpers.CreateElementRequestAdapter;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.ITextAwareEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.ShapeNodeEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editpolicies.ConstrainedToolbarLayoutEditPolicy;
+import org.eclipse.gmf.runtime.diagram.ui.editpolicies.CreationEditPolicy;
 import org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles;
+import org.eclipse.gmf.runtime.diagram.ui.requests.CreateViewAndElementRequest;
 import org.eclipse.gmf.runtime.draw2d.ui.figures.ConstrainedToolbarLayout;
 import org.eclipse.gmf.runtime.draw2d.ui.figures.WrapLabel;
+import org.eclipse.gmf.runtime.emf.type.core.IElementType;
 import org.eclipse.gmf.runtime.gef.ui.figures.DefaultSizeNodeFigure;
 import org.eclipse.gmf.runtime.gef.ui.figures.NodeFigure;
 import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.uml2.diagram.clazz.edit.policies.Package4ItemSemanticEditPolicy;
 import org.eclipse.uml2.diagram.clazz.edit.policies.UMLTextSelectionEditPolicy;
 import org.eclipse.uml2.diagram.clazz.part.UMLVisualIDRegistry;
+import org.eclipse.uml2.diagram.clazz.providers.UMLElementTypes;
 import org.eclipse.uml2.diagram.common.editpolicies.DoNothingEditPolicy;
 import org.eclipse.uml2.diagram.common.editpolicies.UnmovableUnselectableShapeEditPolicy;
 
@@ -59,6 +67,23 @@ public class Package4EditPart extends ShapeNodeEditPart {
 	 * @generated
 	 */
 	protected void createDefaultEditPolicies() {
+		installEditPolicy(EditPolicyRoles.CREATION_ROLE, new CreationEditPolicy() {
+
+			public Command getCommand(Request request) {
+				if (understandsRequest(request)) {
+					if (request instanceof CreateViewAndElementRequest) {
+						CreateElementRequestAdapter adapter = ((CreateViewAndElementRequest) request).getViewAndElementDescriptor().getCreateElementRequestAdapter();
+						IElementType type = (IElementType) adapter.getAdapter(IElementType.class);
+						if (type == UMLElementTypes.ElementImport_3031) {
+							EditPart compartmentEditPart = getChildBySemanticHint(UMLVisualIDRegistry.getType(PackageImportsEditPart.VISUAL_ID));
+							return compartmentEditPart == null ? null : compartmentEditPart.getCommand(request);
+						}
+					}
+					return super.getCommand(request);
+				}
+				return null;
+			}
+		});
 
 		super.createDefaultEditPolicies();
 		installEditPolicy(EditPolicyRoles.SEMANTIC_ROLE, new Package4ItemSemanticEditPolicy());
@@ -108,6 +133,12 @@ public class Package4EditPart extends ShapeNodeEditPart {
 			((PackageName2EditPart) childEditPart).setLabel(getPrimaryShape().getFigureSecondaryPackage_NameLabel());
 			return true;
 		}
+		if (childEditPart instanceof PackageImportsEditPart) {
+			IFigure pane = getPrimaryShape().getFigureSecondaryPackage_Imports();
+			setupContentPane(pane); // FIXME each comparment should handle his content pane in his own way 
+			pane.add(((PackageImportsEditPart) childEditPart).getFigure());
+			return true;
+		}
 		return false;
 	}
 
@@ -116,6 +147,11 @@ public class Package4EditPart extends ShapeNodeEditPart {
 	 */
 	protected boolean removeFixedChild(EditPart childEditPart) {
 
+		if (childEditPart instanceof PackageImportsEditPart) {
+			IFigure pane = getPrimaryShape().getFigureSecondaryPackage_Imports();
+			pane.remove(((PackageImportsEditPart) childEditPart).getFigure());
+			return true;
+		}
 		return false;
 	}
 
@@ -144,6 +180,9 @@ public class Package4EditPart extends ShapeNodeEditPart {
 	 */
 	protected IFigure getContentPaneFor(IGraphicalEditPart editPart) {
 
+		if (editPart instanceof PackageImportsEditPart) {
+			return getPrimaryShape().getFigureSecondaryPackage_Imports();
+		}
 		return super.getContentPaneFor(editPart);
 	}
 
@@ -229,6 +268,11 @@ public class Package4EditPart extends ShapeNodeEditPart {
 		/**
 		 * @generated
 		 */
+		private RectangleFigure fFigureSecondaryPackage_Imports;
+
+		/**
+		 * @generated
+		 */
 		public SecondaryPackageFigure() {
 
 			ToolbarLayout layoutThis = new ToolbarLayout();
@@ -246,7 +290,7 @@ public class Package4EditPart extends ShapeNodeEditPart {
 			this.addPoint(new Point(getMapMode().DPtoLP(40), getMapMode().DPtoLP(35)));
 			this.addPoint(new Point(getMapMode().DPtoLP(40), getMapMode().DPtoLP(0)));
 
-			this.setBorder(new MarginBorder(getMapMode().DPtoLP(5), getMapMode().DPtoLP(5), getMapMode().DPtoLP(5), getMapMode().DPtoLP(5)));
+			this.setBorder(new MarginBorder(getMapMode().DPtoLP(5), getMapMode().DPtoLP(5), getMapMode().DPtoLP(13), getMapMode().DPtoLP(5)));
 			createContents();
 		}
 
@@ -267,6 +311,12 @@ public class Package4EditPart extends ShapeNodeEditPart {
 			this.add(secondaryPackage_NameLabel0);
 			fFigureSecondaryPackage_NameLabel = secondaryPackage_NameLabel0;
 
+			RectangleFigure secondaryPackage_ImportsCompartment0 = new RectangleFigure();
+			secondaryPackage_ImportsCompartment0.setOutline(false);
+			
+			this.add(secondaryPackage_ImportsCompartment0);
+			fFigureSecondaryPackage_Imports = secondaryPackage_ImportsCompartment0;
+
 		}
 
 		/**
@@ -281,6 +331,13 @@ public class Package4EditPart extends ShapeNodeEditPart {
 		 */
 		public WrapLabel getFigureSecondaryPackage_NameLabel() {
 			return fFigureSecondaryPackage_NameLabel;
+		}
+
+		/**
+		 * @generated
+		 */
+		public RectangleFigure getFigureSecondaryPackage_Imports() {
+			return fFigureSecondaryPackage_Imports;
 		}
 
 		/**

@@ -128,6 +128,7 @@ public class UMLViewProvider extends AbstractViewProvider {
 				case Property6EditPart.VISUAL_ID:
 				case Operation6EditPart.VISUAL_ID:
 				case Class4EditPart.VISUAL_ID:
+				case ElementImportEditPart.VISUAL_ID:
 					if (domainElement == null || visualID != UMLVisualIDRegistry.getNodeVisualID(containerView, domainElement)) {
 						return null; // visual id in semantic hint should match visual id for domain element
 					}
@@ -215,6 +216,7 @@ public class UMLViewProvider extends AbstractViewProvider {
 					}
 					break;
 				case PackageName2EditPart.VISUAL_ID:
+				case PackageImportsEditPart.VISUAL_ID:
 					if (Package4EditPart.VISUAL_ID != UMLVisualIDRegistry.getVisualID(containerView) || containerView.getElement() != domainElement) {
 						return null; // wrong container
 					}
@@ -382,6 +384,8 @@ public class UMLViewProvider extends AbstractViewProvider {
 			return Operation6ViewFactory.class;
 		case Class4EditPart.VISUAL_ID:
 			return Class4ViewFactory.class;
+		case ElementImportEditPart.VISUAL_ID:
+			return ElementImportViewFactory.class;
 		case PackagePackagesEditPart.VISUAL_ID:
 			return PackagePackagesViewFactory.class;
 		case PackageClassifiersEditPart.VISUAL_ID:
@@ -422,6 +426,8 @@ public class UMLViewProvider extends AbstractViewProvider {
 			return InterfaceOperationsViewFactory.class;
 		case InterfaceClassesEditPart.VISUAL_ID:
 			return InterfaceClassesViewFactory.class;
+		case PackageImportsEditPart.VISUAL_ID:
+			return PackageImportsViewFactory.class;
 		case DependencyName2EditPart.VISUAL_ID:
 			return DependencyName2ViewFactory.class;
 		case DependencyName3EditPart.VISUAL_ID:

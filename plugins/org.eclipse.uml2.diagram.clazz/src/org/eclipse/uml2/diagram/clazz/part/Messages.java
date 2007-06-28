@@ -663,6 +663,11 @@ public class Messages extends NLS {
 	/**
 	 * @generated
 	 */
+	public static String PackageImportsEditPart_title;
+
+	/**
+	 * @generated
+	 */
 	public static String CommandName_OpenDiagram;
 
 	/**
@@ -1044,6 +1049,11 @@ public class Messages extends NLS {
 	 * @generated
 	 */
 	public static String NavigatorGroupName_Class_3030_outgoinglinks;
+
+	/**
+	 * @generated
+	 */
+	public static String NavigatorGroupName_ElementImport_3031_incominglinks;
 
 	/**
 	 * @generated
