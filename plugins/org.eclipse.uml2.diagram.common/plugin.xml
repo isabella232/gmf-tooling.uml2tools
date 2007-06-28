@@ -14,4 +14,10 @@
 -->
 
 <plugin>
+   <extension point="org.eclipse.ui.newWizards">
+      <category
+  	     name="%org.eclipse.uml2.diagram.NewWizardGroup"
+  	     id="org.eclipse.uml2.diagram.New">
+      </category>
+   </extension>
 </plugin>

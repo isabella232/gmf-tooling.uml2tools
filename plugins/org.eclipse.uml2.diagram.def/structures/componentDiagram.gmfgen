@@ -8,6 +8,7 @@
     dynamicTemplates="true"
     templateDirectory="/org.eclipse.uml2.diagram.def/dynamic-templates/codegen">
   <diagram
+      creationWizardCategoryID="org.eclipse.uml2.diagram.New"
       visualID="1000"
       editPartClassName="PackageEditPart"
       itemSemanticEditPolicyClassName="PackageItemSemanticEditPolicy"

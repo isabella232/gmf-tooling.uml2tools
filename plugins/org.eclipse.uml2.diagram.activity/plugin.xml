@@ -159,7 +159,7 @@
   	  <wizard
   	     name="%newWizardName"
   	     icon="icons/obj16/UMLDiagramFile.gif"
-  	     category="org.eclipse.ui.Examples"
+  	     category="org.eclipse.uml2.diagram.New"
   	     class="org.eclipse.uml2.diagram.activity.part.UMLCreationWizard"
   	     id="org.eclipse.uml2.diagram.activity.part.UMLCreationWizardID">
   	  	 <description>%newWizardDesc</description>  

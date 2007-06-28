@@ -4,6 +4,7 @@ import org.eclipse.core.runtime.IPath;
 import org.eclipse.core.runtime.Path;
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.jface.viewers.IStructuredSelection;
+import org.eclipse.jface.wizard.IWizardPage;
 import org.eclipse.osgi.util.NLS;
 import org.eclipse.swt.widgets.Composite;
 import org.eclipse.ui.dialogs.WizardNewFileCreationPage;
@@ -80,4 +81,33 @@ public class UMLCreationWizardPage extends WizardNewFileCreationPage {
 		}
 		return true;
 	}
+	
+	/**
+	 * #174315 Automatically set diagram file extension
+	 * @generated
+	 */
+	@Override
+	public IWizardPage getNextPage() {
+		IWizardPage nextPage = super.getNextPage(); 
+		if ("DiagramModelFile".equals(getName())) {
+			setDomainFileName(nextPage);
+		}
+		return nextPage;
+	}
+	
+	/**
+	 * #174315 Automatically set diagram file extension
+	 * @generated
+	 */
+	protected void setDomainFileName(IWizardPage nextPage) {
+		UMLCreationWizardPage nextWizardPage = (UMLCreationWizardPage) nextPage;
+		String fileName = getFileName();
+		String extension = getExtension();
+		if (fileName.endsWith(extension)) {
+			fileName = fileName.substring(0, fileName.length() - extension.length());
+		}
+		fileName += nextWizardPage.getExtension();
+		nextWizardPage.setFileName(fileName);
+	}
+
 }
