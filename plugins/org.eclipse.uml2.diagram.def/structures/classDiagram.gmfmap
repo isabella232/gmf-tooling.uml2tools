@@ -1324,6 +1324,29 @@
       </labelMappings>
       <diagramNode
           href="classDiagram_packages.gmfgraph#SecondaryPackageNode"/>
+      <children
+          compartment="//@nodes.12/@ownedChild/@compartments.0">
+        <containmentFeature
+            href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//Namespace/elementImport"/>
+        <ownedChild>
+          <domainMetaElement
+              href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//ElementImport"/>
+          <labelMappings
+              xsi:type="gmfmap:FeatureLabelMapping">
+            <diagramLabel
+                href="classDiagram_auxiliary.gmfgraph#AuxiliaryPureLabel"/>
+            <features
+                href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//ElementImport/alias"/>
+          </labelMappings>
+          <diagramNode
+              href="classDiagram_auxiliary.gmfgraph#AuxiliaryPureLabel"/>
+        </ownedChild>
+      </children>
+      <compartments
+          children="//@nodes.12/@ownedChild/@children.0">
+        <compartment
+            href="classDiagram_packages.gmfgraph#imports"/>
+      </compartments>
     </ownedChild>
   </nodes>
   <links>

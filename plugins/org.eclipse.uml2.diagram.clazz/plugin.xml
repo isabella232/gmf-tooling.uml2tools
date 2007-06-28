@@ -28,9 +28,9 @@
              <popupMenu
                   path="/ApplyStereotypeGroup"
                   id="menu_apply_unapply_stereotype">
-             </popupMenu>            
+             </popupMenu>      
              <popupStructuredContributionCriteria
-                   objectClass="org.eclipse.gmf.runtime.diagram.ui.editparts.GraphicalEditPart"
+                   objectClass="org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart"
                    objectCount="1">
              </popupStructuredContributionCriteria>
 		 </popupContribution>
@@ -918,6 +918,16 @@
       </metamodel>
       <metamodel nsURI="http://www.eclipse.org/uml2/2.1.0/UML">
          <metamodelType
+               id="org.eclipse.uml2.diagram.clazz.ElementImport_3031"
+               name="%metatype.name.ElementImport_3031"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
+               eclass="ElementImport"
+               edithelper="org.eclipse.uml2.diagram.clazz.edit.helpers.ElementImportEditHelper">
+            <param name="semanticHint" value="3031"/>
+         </metamodelType>
+      </metamodel>
+      <metamodel nsURI="http://www.eclipse.org/uml2/2.1.0/UML">
+         <metamodelType
                id="org.eclipse.uml2.diagram.clazz.Generalization_4001"
                name="%metatype.name.Generalization_4001"
                kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
@@ -1087,6 +1097,7 @@
          <elementType ref="org.eclipse.uml2.diagram.clazz.Property_3028"/>
          <elementType ref="org.eclipse.uml2.diagram.clazz.Operation_3029"/>
          <elementType ref="org.eclipse.uml2.diagram.clazz.Class_3030"/>
+         <elementType ref="org.eclipse.uml2.diagram.clazz.ElementImport_3031"/>
          <elementType ref="org.eclipse.uml2.diagram.clazz.Generalization_4001"/>
          <elementType ref="org.eclipse.uml2.diagram.clazz.Dependency_4002"/>
          <elementType ref="org.eclipse.uml2.diagram.clazz.Property_4003"/>

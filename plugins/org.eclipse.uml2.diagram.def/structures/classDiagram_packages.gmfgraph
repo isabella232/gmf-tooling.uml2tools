@@ -118,7 +118,7 @@
         <insets
             top="5"
             left="5"
-            bottom="5"
+            bottom="13"
             right="5"/>
         <children
             xsi:type="gmfgraph:Label"
@@ -127,6 +127,10 @@
         <children
             xsi:type="gmfgraph:Label"
             name="SecondaryPackage_NameLabel"/>
+        <children
+            xsi:type="gmfgraph:Rectangle"
+            name="SecondaryPackage_ImportsCompartment"
+            outline="false"/>
         <template/>
         <template
             y="40"/>
@@ -143,6 +147,9 @@
           figure="//@figures.0/@descriptors.1/@actualFigure/@children.0"/>
       <accessors
           figure="//@figures.0/@descriptors.1/@actualFigure/@children.1"/>
+      <accessors
+          accessor="getFigureSecondaryPackage_Imports"
+          figure="//@figures.0/@descriptors.1/@actualFigure/@children.2"/>
     </descriptors>
   </figures>
   <nodes
@@ -183,6 +190,11 @@
       collapsible="true"
       needsTitle="true"
       accessor="//@figures.0/@descriptors.0/@accessors.3"/>
+  <compartments
+      name="imports"
+      figure="SecondaryPackageFigure"
+      collapsible="true"
+      accessor="//@figures.0/@descriptors.1/@accessors.2"/>
   <labels
       name="PackageNode_name"
       figure="PackageFigure"
