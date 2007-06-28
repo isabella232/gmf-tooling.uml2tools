@@ -11,6 +11,7 @@
  */
 package org.eclipse.uml2.diagram.clazz.parser.stereotype;
 
+import java.text.MessageFormat;
 import java.util.LinkedList;
 import java.util.List;
 
@@ -32,51 +33,49 @@ import org.eclipse.uml2.uml.Stereotype;
 
 public class AppliedStereotypeParser implements ISemanticParser {
 
-	
+	private static final MessageFormat APPLIED_PROFILE = new MessageFormat("\u00AB{0}\u00BB");
+
 	public boolean areSemanticElementsAffected(EObject listener, Object notification) {
-		if (notification instanceof Notification){
-			Object feature = ((Notification)notification).getFeature();
-			if (feature instanceof EStructuralFeature){
-				EStructuralFeature featureImpl = (EStructuralFeature)feature;
+		if (notification instanceof Notification) {
+			Object feature = ((Notification) notification).getFeature();
+			if (feature instanceof EStructuralFeature) {
+				EStructuralFeature featureImpl = (EStructuralFeature) feature;
 				return featureImpl.getName().startsWith(Extension.METACLASS_ROLE_PREFIX);
 			}
 		}
 		return false;
 	}
 
-	
-	public List getSemanticElementsBeingParsed(EObject eObject) {
-		Element element = (Element)eObject;
+	public List<?> getSemanticElementsBeingParsed(EObject eObject) {
+		Element element = (Element) eObject;
 		List<EObject> result = new LinkedList<EObject>();
-		//result.add(element);
+		// result.add(element);
 		result.addAll(element.getStereotypeApplications());
 		return result;
 	}
 
-	
 	public IContentAssistProcessor getCompletionProcessor(IAdaptable subject) {
 		Element element = doAdapt(subject);
 		List<Stereotype> remaining = new LinkedList<Stereotype>();
 		remaining.addAll(element.getApplicableStereotypes());
 		remaining.removeAll(element.getAppliedStereotypes());
-		
+
 		List<String> names = new LinkedList<String>();
-		for (Stereotype next : remaining){
+		for (Stereotype next : remaining) {
 			names.add(next.getName());
 		}
 		return new FixedSetCompletionProcessor(names);
 	}
 
-	
 	public String getEditString(IAdaptable element, int flags) {
 		NamedElement subject = doAdapt(element);
 		List<Stereotype> stereos = subject.getAppliedStereotypes();
-		if (stereos.isEmpty()){
+		if (stereos.isEmpty()) {
 			return "";
 		}
 		StringBuffer result = new StringBuffer();
-		for (Stereotype next : stereos){
-			if (result.length() > 0){
+		for (Stereotype next : stereos) {
+			if (result.length() > 0) {
 				result.append(", ");
 			}
 			result.append(next.getName());
@@ -84,31 +83,26 @@ public class AppliedStereotypeParser implements ISemanticParser {
 		return result.toString();
 	}
 
-	
 	public ICommand getParseCommand(IAdaptable element, String newString, int flags) {
 		return UnexecutableCommand.INSTANCE;
 	}
 
-	
 	public String getPrintString(IAdaptable element, int flags) {
 		String editString = getEditString(element, flags);
-		return editString == null || editString.length() == 0 ? editString : "<" + editString + ">";
+		return editString == null || editString.length() == 0 ? editString : APPLIED_PROFILE.format(new Object[] { editString });
 	}
 
-	
 	public boolean isAffectingEvent(Object event, int flags) {
 		return false;
 	}
 
-	
 	public IParserEditStatus isValidEditString(IAdaptable element, String editString) {
 		return ParserEditStatus.UNEDITABLE_STATUS;
 	}
 
 	private NamedElement doAdapt(IAdaptable adaptable) {
-		NamedElement element = (NamedElement)adaptable.getAdapter(EObject.class);
+		NamedElement element = (NamedElement) adaptable.getAdapter(EObject.class);
 		return element;
 	}
-	
 
 }

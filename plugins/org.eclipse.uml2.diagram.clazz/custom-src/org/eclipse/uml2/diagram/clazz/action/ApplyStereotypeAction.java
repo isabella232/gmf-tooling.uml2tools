@@ -11,7 +11,7 @@ import org.eclipse.gef.commands.UnexecutableCommand;
 import org.eclipse.gmf.runtime.common.core.command.CommandResult;
 import org.eclipse.gmf.runtime.diagram.ui.actions.DiagramAction;
 import org.eclipse.gmf.runtime.diagram.ui.commands.ICommandProxy;
-import org.eclipse.gmf.runtime.diagram.ui.editparts.GraphicalEditPart;
+import org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.ITextAwareEditPart;
 import org.eclipse.gmf.runtime.emf.type.core.commands.EditElementCommand;
 import org.eclipse.gmf.runtime.emf.type.core.requests.AbstractEditCommandRequest;
@@ -45,7 +45,7 @@ public class ApplyStereotypeAction extends DiagramAction {
 
 	@Override
 	protected Command getCommand() {
-		final GraphicalEditPart elementEditPart = getElementEditPart();
+		final IGraphicalEditPart elementEditPart = getElementEditPart();
 		if (elementEditPart == null) {
 			return UnexecutableCommand.INSTANCE;
 		}
@@ -86,7 +86,7 @@ public class ApplyStereotypeAction extends DiagramAction {
 	}
 
 	private String calculateText() {
-		String name = myStereotype.getName();
+		String name = myStereotype.getQualifiedName();
 		return name != null ? name : EMPTY_NAME;
 	}
 
@@ -94,10 +94,10 @@ public class ApplyStereotypeAction extends DiagramAction {
 		return isStereotypeAppliedTo(myElement, myStereotype);
 	}
 
-	private GraphicalEditPart getElementEditPart() {
+	private IGraphicalEditPart getElementEditPart() {
 		for (Object next : getSelectedObjects()) {
-			if (next instanceof GraphicalEditPart) {
-				GraphicalEditPart elementEditPart = (GraphicalEditPart) next;
+			if (next instanceof IGraphicalEditPart) {
+				IGraphicalEditPart elementEditPart = (IGraphicalEditPart) next;
 				return elementEditPart;
 			}
 		}

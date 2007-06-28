@@ -5,7 +5,7 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.gmf.runtime.common.core.service.IProvider;
 import org.eclipse.gmf.runtime.common.ui.services.action.contributionitem.AbstractContributionItemProvider;
 import org.eclipse.gmf.runtime.common.ui.util.IWorkbenchPartDescriptor;
-import org.eclipse.gmf.runtime.diagram.ui.editparts.GraphicalEditPart;
+import org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart;
 import org.eclipse.jface.action.IMenuListener;
 import org.eclipse.jface.action.IMenuManager;
 import org.eclipse.jface.action.MenuManager;
@@ -43,7 +43,7 @@ public class ApplicableStereotypesItemProvider  extends AbstractContributionItem
 		
 		public void buildMenu(IMenuManager manager) {
 			manager.removeAll();
-			GraphicalEditPart selected = (GraphicalEditPart) getSelectedObject(myWorkbenchPart);
+			IGraphicalEditPart selected = (IGraphicalEditPart) getSelectedObject(myWorkbenchPart);
 			EObject selectedElement = selected.getNotationView().getElement();
 			if (false == selectedElement instanceof Element) {
 				return;
