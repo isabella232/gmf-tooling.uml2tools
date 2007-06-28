@@ -25,7 +25,7 @@ public abstract class AssociationNameToString extends AbstractToString {
 	public static class EDIT extends AssociationNameToString {
 		
 		public boolean isAffectingFeature(EStructuralFeature feature) {
-			throw new UnsupportedOperationException("I am edit toString, I am not expected to be asked");
+			throw new UnsupportedOperationException("I am edit toString, I am not expected to be asked"); //$NON-NLS-1$
 		}
 		
 	}
@@ -52,13 +52,13 @@ public abstract class AssociationNameToString extends AbstractToString {
 
 	protected Association asAssociation(EObject object){
 		if (false == object instanceof Association){
-			throw new IllegalStateException("I can not provide toString for: " + object);
+			throw new IllegalStateException("I can not provide toString for: " + object); //$NON-NLS-1$
 		}
 		return (Association)object;
 	}
 	
 	protected String getIsDerived(Association association) {
-		return association.isDerived() ? "/" : "";
+		return association.isDerived() ? "/" : ""; //$NON-NLS-1$ //$NON-NLS-2$
 	}
 	
 }

@@ -24,7 +24,7 @@ public class SlotParser extends ExternalParserBase implements SlotParserConstant
         private Type myOptionalType;
 
     public SlotParser(){
-        this(new StringReader(""));
+        this(new StringReader("")); //$NON-NLS-1$
     }
 
     public SlotParser(LookupSuite lookup){
@@ -48,12 +48,12 @@ public class SlotParser extends ExternalParserBase implements SlotParserConstant
 
         protected static int parseInt(Token t) throws ParseException {
                 if (t.kind != SlotParserConstants.INTEGER_LITERAL){
-                        throw new IllegalStateException("Token: " + t + ", image: " + t.image);
+                        throw new IllegalStateException("Token: " + t + ", image: " + t.image); //$NON-NLS-1$ //$NON-NLS-2$
                 }
                 try {
                         return Integer.parseInt(t.image); //XXX: "0005", "99999999999999999999999"
                 } catch (NumberFormatException e){
-                        throw new ParseException("Not supported integer value:" + t.image);
+                        throw new ParseException("Not supported integer value:" + t.image); //$NON-NLS-1$
                 }
         }
 
@@ -123,7 +123,7 @@ public class SlotParser extends ExternalParserBase implements SlotParserConstant
                                      result.append(' '); result.append(t.image);
     }
                 {if (true) return result.toString();}
-    throw new Error("Missing return statement in function");
+    throw new Error("Missing return statement in function"); //$NON-NLS-1$
   }
 
 /**

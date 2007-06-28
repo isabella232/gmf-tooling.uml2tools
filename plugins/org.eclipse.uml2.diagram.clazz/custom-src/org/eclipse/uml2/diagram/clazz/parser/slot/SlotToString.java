@@ -31,7 +31,7 @@ import org.eclipse.uml2.uml.ValueSpecification;
 public abstract class SlotToString extends AbstractToString {
 	public static class EDIT extends SlotToString {
 		public boolean isAffectingFeature(EStructuralFeature feature) {
-			throw new UnsupportedOperationException("I am edit toString, I am not expected to be asked");
+			throw new UnsupportedOperationException("I am edit toString, I am not expected to be asked"); //$NON-NLS-1$
 		}
 	}
 	
@@ -83,7 +83,7 @@ public abstract class SlotToString extends AbstractToString {
 			ValueSpecification next = (ValueSpecification)values.next();
 			String nextDisplayValue = getSlotValue(next);
 			if (!isEmpty(nextDisplayValue)){
-				result.append(" = ").append(nextDisplayValue);
+				result.append(" = ").append(nextDisplayValue); //$NON-NLS-1$
 				//FIXME: for now stop on first success
 				break;
 			}
@@ -93,7 +93,7 @@ public abstract class SlotToString extends AbstractToString {
 	protected String getSlotValue(ValueSpecification value){
 		if (value instanceof LiteralString){
 			LiteralString literal = (LiteralString)value;
-			return "\"" + literal.getValue() + "\"";
+			return "\"" + literal.getValue() + "\""; //$NON-NLS-1$ //$NON-NLS-2$
 		}
 		if (value instanceof LiteralInteger){
 			LiteralInteger literal = (LiteralInteger)value;
@@ -108,7 +108,7 @@ public abstract class SlotToString extends AbstractToString {
 	
 	protected Slot asSlot(EObject object){
 		if (false == object instanceof Slot){
-			throw new IllegalStateException("I can not provide toString for: " + object);
+			throw new IllegalStateException("I can not provide toString for: " + object); //$NON-NLS-1$
 		}
 		return (Slot)object;
 	}

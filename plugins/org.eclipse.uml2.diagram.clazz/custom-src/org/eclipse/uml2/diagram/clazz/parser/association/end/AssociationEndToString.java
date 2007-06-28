@@ -19,6 +19,7 @@ import java.util.List;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.uml2.diagram.clazz.conventions.AssociationEndConvention;
+import org.eclipse.uml2.diagram.clazz.part.CustomMessages;
 import org.eclipse.uml2.diagram.common.parser.property.PropertyToString;
 import org.eclipse.uml2.diagram.parser.ExternalToString;
 import org.eclipse.uml2.uml.Association;
@@ -41,11 +42,11 @@ public abstract class AssociationEndToString extends PropertyToString {
 	
 	protected static Property asProperty(EObject object, boolean sourceNotTarget) {
 		if (false == object instanceof Association){
-			throw new IllegalStateException("I can not provide toString for: " + object);
+			throw new IllegalStateException(CustomMessages.AssociationEndToString_not_association_exception + object);
 		}
 		Association association = (Association)object;
 		if (!association.isBinary()){
-			throw new IllegalStateException("I can not provide toString for not binary association: " + object);
+			throw new IllegalStateException(CustomMessages.AssociationEndToString_not_binary_association_exception + object);
 		}
 		return AssociationEndConvention.getMemberEnd(association, sourceNotTarget);
 	}

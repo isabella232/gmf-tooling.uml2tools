@@ -29,7 +29,7 @@ public class AssociationEndApplyStrategy extends BasicApplyStrategy {
 	@Override
 	public List apply(EObject modelObject, EObject parsedObject) {
 		if (false == modelObject instanceof Association){
-			throw new IllegalStateException("Can not apply, association expected: " + modelObject);
+			throw new IllegalStateException("Can not apply, association expected: " + modelObject); //$NON-NLS-1$
 		}
 		Association association = (Association)modelObject;
 		EObject end = AssociationEndConvention.getMemberEnd(association, mySourceNotTarget);

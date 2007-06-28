@@ -10,6 +10,7 @@ import org.eclipse.jface.action.IAction;
 import org.eclipse.jface.action.IMenuManager;
 import org.eclipse.jface.action.MenuManager;
 import org.eclipse.ui.IWorkbenchPage;
+import org.eclipse.uml2.diagram.clazz.part.CustomMessages;
 import org.eclipse.uml2.uml.UMLPackage;
 
 public class DependencyContributionItemProvider extends AbstractContributionItemProvider implements IProvider {
@@ -18,9 +19,9 @@ public class DependencyContributionItemProvider extends AbstractContributionItem
 	public static final String ACTION_CHANGE_DEPENDENCY_TYPE_DEPENDENCY = "change_dependency_type_dependency"; //$NON-NLS-1$
 	public static final String ACTION_CHANGE_DEPENDENCY_TYPE_SUBSTITUTION = "change_dependency_type_substitution"; //$NON-NLS-1$	
 	public static final String MENU_DEPENDENCY = "DependencyTypeMenu"; //$NON-NLS-1$
-	public static final String LABEL_DEPENDENCY = "Dependency Type";
+	public static final String LABEL_DEPENDENCY = CustomMessages.DependencyContributionItemProvider_dependency_type_action_label;
 	public static final String MENU_DEPENDENCY_GROUP = "DependencyTypeGroup"; //$NON-NLS-1$
-	public static final String LABEL_DEPENDENCY_GROUP = "Dependency Type";
+	public static final String LABEL_DEPENDENCY_GROUP = CustomMessages.DependencyContributionItemProvider_dependency_type_group_label;
 	
 	protected IAction createAction(String actionId, IWorkbenchPartDescriptor partDescriptor) {
 		IWorkbenchPage workbenchPage = partDescriptor.getPartPage();

@@ -16,12 +16,13 @@ import org.eclipse.gmf.runtime.diagram.ui.editparts.ITextAwareEditPart;
 import org.eclipse.gmf.runtime.emf.type.core.commands.EditElementCommand;
 import org.eclipse.gmf.runtime.emf.type.core.requests.AbstractEditCommandRequest;
 import org.eclipse.ui.IWorkbenchPage;
+import org.eclipse.uml2.diagram.clazz.part.CustomMessages;
 import org.eclipse.uml2.uml.Element;
 import org.eclipse.uml2.uml.Stereotype;
 
 public class ApplyStereotypeAction extends DiagramAction {
 
-	private static final String EMPTY_NAME = "<null>";
+	private static final String EMPTY_NAME = CustomMessages.ApplyStereotypeAction_empty_name;
 
 	private Element myElement;
 
@@ -111,7 +112,7 @@ public class ApplyStereotypeAction extends DiagramAction {
 	private class StereotypeCommand extends EditElementCommand {
 
 		protected StereotypeCommand(StereotypeRequest request) {
-			super(request.isApplyNotUnapply() ? "Apply Stereotype" : "Unapply Stereotype", request.getElement(), request);
+			super(request.isApplyNotUnapply() ? CustomMessages.ApplyStereotypeAction_apply_stereotype_command : CustomMessages.ApplyStereotypeAction_annapply_stereotype_command, request.getElement(), request);
 		}
 
 		@Override

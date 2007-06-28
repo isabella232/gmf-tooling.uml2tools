@@ -5,18 +5,19 @@ import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.jface.text.contentassist.IContentAssistProcessor;
 import org.eclipse.uml2.diagram.clazz.parsers.MessageFormatParser;
+import org.eclipse.uml2.diagram.clazz.part.CustomMessages;
 import org.eclipse.uml2.diagram.parser.assist.FixedSetCompletionProcessor;
 import org.eclipse.uml2.uml.UMLPackage;
 
 public class GeneralizationSetParser extends MessageFormatParser {
 
-	private static final String COMPLETE = "complete";
+	private static final String COMPLETE = "complete"; //$NON-NLS-1$
 
-	private static final String INCOMPLETE = "incomplete";
+	private static final String INCOMPLETE = "incomplete"; //$NON-NLS-1$
 
-	private static final String DISJOINT = "disjoint";
+	private static final String DISJOINT = "disjoint"; //$NON-NLS-1$
 
-	private static final String OVERLAPPING = "overlapping";
+	private static final String OVERLAPPING = "overlapping"; //$NON-NLS-1$
 
 	private static final EAttribute[] features = new EAttribute[] {
 		UMLPackage.eINSTANCE.getGeneralizationSet_IsCovering(),
@@ -25,8 +26,8 @@ public class GeneralizationSetParser extends MessageFormatParser {
 
 	public GeneralizationSetParser() {
 		super(features);
-		setViewPattern("{0}, {1}");
-		setEditPattern("{0}, {1}");
+		setViewPattern("{0}, {1}"); //$NON-NLS-1$
+		setEditPattern("{0}, {1}"); //$NON-NLS-1$
 	}
 	
 	@Override

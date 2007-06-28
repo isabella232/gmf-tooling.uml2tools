@@ -34,7 +34,7 @@ public abstract class InstanceSpecificationToString extends AbstractToString {
 
 		//anonymous unnamed, see 7.3.22 "Notation" at page 85, 06-04-02
 		if (result.length() == 0){
-			result.append(":");
+			result.append(":"); //$NON-NLS-1$
 		}
 		return result.toString();
 	}
@@ -45,7 +45,7 @@ public abstract class InstanceSpecificationToString extends AbstractToString {
 		for (Iterator classifiers = instance.getClassifiers().iterator(); classifiers.hasNext();){
 			Classifier next = (Classifier)classifiers.next();
 			if (atLeastOneClassifier){
-				result.append(", ");
+				result.append(", "); //$NON-NLS-1$
 			}
 			String nextName = next.getName();
 			if (!isEmpty(nextName)){
@@ -58,14 +58,14 @@ public abstract class InstanceSpecificationToString extends AbstractToString {
 
 	protected InstanceSpecification asInstanceSpecification(EObject object){
 		if (false == object instanceof InstanceSpecification){
-			throw new IllegalStateException("I can not provide toString for: " + object);
+			throw new IllegalStateException("I can not provide toString for: " + object); //$NON-NLS-1$
 		}
 		return (InstanceSpecification)object;
 	}
 	
 	public static class EDIT extends InstanceSpecificationToString {
 		public boolean isAffectingFeature(EStructuralFeature feature) {
-			throw new UnsupportedOperationException("I am edit toString, I am not expected to be asked");
+			throw new UnsupportedOperationException("I am edit toString, I am not expected to be asked"); //$NON-NLS-1$
 		}
 	}
 	

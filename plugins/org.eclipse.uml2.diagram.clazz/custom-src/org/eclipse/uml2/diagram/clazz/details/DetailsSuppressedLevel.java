@@ -11,6 +11,7 @@ import org.eclipse.gmf.runtime.emf.type.core.commands.SetValueCommand;
 import org.eclipse.gmf.runtime.emf.type.core.requests.SetRequest;
 import org.eclipse.gmf.runtime.notation.NotationPackage;
 import org.eclipse.gmf.runtime.notation.View;
+import org.eclipse.uml2.diagram.clazz.part.CustomMessages;
 import org.eclipse.uml2.diagram.common.details.DetailLevelParserOptions;
 
 class DetailsSuppressedLevel extends UMLDetailLevel {
@@ -43,7 +44,7 @@ class DetailsSuppressedLevel extends UMLDetailLevel {
 
 	@Override
 	public String getLabel() {
-		return "Details Suppressed";
+		return CustomMessages.DetailsSuppressedLevel_details_suppressed_label;
 	}
 
 	@Override
@@ -51,6 +52,6 @@ class DetailsSuppressedLevel extends UMLDetailLevel {
 		return ID;
 	}
 
-	public static final String ID = "org.eclipse.uml2.diagram.clazz.detail_level_suppressed";
+	public static final String ID = "org.eclipse.uml2.diagram.clazz.detail_level_suppressed"; //$NON-NLS-1$
 
 }

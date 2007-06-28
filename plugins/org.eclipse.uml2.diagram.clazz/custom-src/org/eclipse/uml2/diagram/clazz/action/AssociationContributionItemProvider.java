@@ -9,6 +9,7 @@ import org.eclipse.jface.action.IAction;
 import org.eclipse.jface.action.IMenuManager;
 import org.eclipse.jface.action.MenuManager;
 import org.eclipse.ui.IWorkbenchPage;
+import org.eclipse.uml2.diagram.clazz.part.CustomMessages;
 import org.eclipse.uml2.uml.AggregationKind;
 
 
@@ -37,13 +38,13 @@ public class AssociationContributionItemProvider extends AbstractContributionIte
 	public static final String ACTION_RECTANGLE_INTERFACE_NOTATION = "rectangle_interface_notation"; //$NON-NLS-1$
 	
 	public static final String MENU_ASSOCIATION = "AssociationTypeMenu";	 //$NON-NLS-1$
-	public static final String LABEL_ASSOCIATION = "Association Type";
+	public static final String LABEL_ASSOCIATION = CustomMessages.AssociationContributionItemProvider_association_type_action;
 	public static final String MENU_ASSOCIATION_GROUP = "AssociationTypeGroup";	 //$NON-NLS-1$
-	public static final String LABEL_ASSOCIATION_GROUP = "Association Type";
+	public static final String LABEL_ASSOCIATION_GROUP = CustomMessages.AssociationContributionItemProvider_association_type_group;
 	
-	public static final String ACTION_CHANGE_ASSOCIATION_KIND_NONE = "change_association_type_none";
-	public static final String ACTION_CHANGE_ASSOCIATION_KIND_COMPOSITE = "change_association_type_composite";
-	public static final String ACTION_CHANGE_ASSOCIATION_KIND_SHARED = "change_association_type_shared";
+	public static final String ACTION_CHANGE_ASSOCIATION_KIND_NONE = "change_association_type_none"; //$NON-NLS-1$
+	public static final String ACTION_CHANGE_ASSOCIATION_KIND_COMPOSITE = "change_association_type_composite"; //$NON-NLS-1$
+	public static final String ACTION_CHANGE_ASSOCIATION_KIND_SHARED = "change_association_type_shared"; //$NON-NLS-1$
 
 	private HashMap<String, AggregationKind> actionIdToAssociationKind;
 	private HashMap<String, AggregationKind> getActionIdToAssociationKindTable() {

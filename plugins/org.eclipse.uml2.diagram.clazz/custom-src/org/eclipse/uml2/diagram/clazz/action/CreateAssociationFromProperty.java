@@ -1,5 +1,6 @@
 package org.eclipse.uml2.diagram.clazz.action;
 
+import java.text.MessageFormat;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -27,6 +28,7 @@ import org.eclipse.uml2.diagram.clazz.edit.parts.Property5EditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.Property6EditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.Property7EditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.PropertyEditPart;
+import org.eclipse.uml2.diagram.clazz.part.CustomMessages;
 import org.eclipse.uml2.diagram.clazz.providers.UMLElementTypes;
 import org.eclipse.uml2.uml.AggregationKind;
 import org.eclipse.uml2.uml.Association;
@@ -37,7 +39,7 @@ import org.eclipse.uml2.uml.UMLPackage;
 
 public class CreateAssociationFromProperty extends DiagramAction {
 
-	private static final String DISABLED_TEXT = "<undefined>";
+	private static final String DISABLED_TEXT = CustomMessages.CreateAssociationFromProperty_disabled_text;
 
 	private final Property myOtherEnd;
 
@@ -59,7 +61,8 @@ public class CreateAssociationFromProperty extends DiagramAction {
 	private void updateText() {
 		setText(DISABLED_TEXT);
 		if (myOtherEnd != null) {
-			setText(myOtherEnd.getClass_().getName() + ": " + myOtherEnd.getName());
+			MessageFormat labelFormat = new MessageFormat("{0}: {1}"); //$NON-NLS-1$
+			setText(labelFormat.format(new Object[]{myOtherEnd.getClass_().getName(), myOtherEnd.getName()}));
 			return;
 		}
 		GraphicalEditPart propertyEditPart = getSelectedPropertyEditPart();
@@ -84,7 +87,7 @@ public class CreateAssociationFromProperty extends DiagramAction {
 		}
 		
 		TransactionalEditingDomain domain = propertyEditPart.getEditingDomain();
-		CompositeTransactionalCommand emfCommand = new CompositeTransactionalCommand(domain, "");
+		CompositeTransactionalCommand emfCommand = new CompositeTransactionalCommand(domain, CustomMessages.CreateAssociationFromProperty_create_association_command);
 		
 		Property property = (Property) propertyEditPart.getNotationView().getElement();
 		Type associationSource = property.getClass_();

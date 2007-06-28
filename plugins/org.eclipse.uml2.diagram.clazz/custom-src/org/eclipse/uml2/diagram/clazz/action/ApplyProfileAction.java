@@ -15,12 +15,13 @@ import org.eclipse.gmf.runtime.emf.type.core.requests.AbstractEditCommandRequest
 import org.eclipse.gmf.runtime.emf.type.core.requests.IEditCommandRequest;
 import org.eclipse.ui.IWorkbenchPage;
 import org.eclipse.uml2.diagram.clazz.edit.parts.PackageEditPart;
+import org.eclipse.uml2.diagram.clazz.part.CustomMessages;
 import org.eclipse.uml2.uml.Profile;
 import org.eclipse.uml2.uml.ProfileApplication;
 
 
 public class ApplyProfileAction extends DiagramAction {
-	private static final String EMPTY_NAME = "<null>";
+	private static final String EMPTY_NAME = CustomMessages.ApplyProfileAction_empty_name;
 	private  org.eclipse.uml2.uml.Package myPackage;
 	private Profile myProfile;
 
@@ -54,9 +55,9 @@ public class ApplyProfileAction extends DiagramAction {
 			}};
 		boolean toApply = !isProfileAppliedTo(myPackage, myProfile);
 		if (toApply) {
-			return new ICommandProxy(new ApplyProfileCommand("Apply Profile", myPackage, myProfile, request));
+			return new ICommandProxy(new ApplyProfileCommand(CustomMessages.ApplyProfileAction_apply_profile_command, myPackage, myProfile, request));
 		} 
-		return new ICommandProxy(new UnapplyProfileCommand("Unapply Profile", myPackage, myProfile, request));
+		return new ICommandProxy(new UnapplyProfileCommand(CustomMessages.ApplyProfileAction_unapply_profile_command, myPackage, myProfile, request));
 	}
 
 

@@ -27,6 +27,7 @@ import org.eclipse.gmf.runtime.emf.type.core.requests.CreateRelationshipRequest;
 import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.uml2.diagram.clazz.edit.helpers.DependencyEditHelper;
 import org.eclipse.uml2.diagram.clazz.edit.parts.Dependency2EditPart;
+import org.eclipse.uml2.diagram.clazz.part.CustomMessages;
 import org.eclipse.uml2.diagram.clazz.providers.UMLElementTypes;
 import org.eclipse.uml2.uml.Dependency;
 
@@ -42,7 +43,7 @@ public class ChangeDependencyTypeCommand extends CompoundCommand {
 	}
 
 	public ChangeDependencyTypeCommand(ConnectionEditPart editPart, EClass dependencyType, PreferencesHint preferencesHint) {
-		super("Change Dependency Type");
+		super(CustomMessages.ChangeDependencyTypeCommand_command_label);
 		this.dependencyType = dependencyType;
 		this.editPart = editPart;
 		add(getDeleteViewCommand());

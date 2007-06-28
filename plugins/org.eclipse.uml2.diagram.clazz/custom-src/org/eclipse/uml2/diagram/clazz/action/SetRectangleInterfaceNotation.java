@@ -17,13 +17,14 @@ import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.ui.IWorkbenchPage;
 import org.eclipse.uml2.diagram.clazz.edit.parts.Interface2EditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.InterfaceEditPart;
+import org.eclipse.uml2.diagram.clazz.part.CustomMessages;
 import org.eclipse.uml2.diagram.clazz.providers.UMLElementTypes;
 import org.eclipse.uml2.uml.Interface;
 
 
 public class SetRectangleInterfaceNotation extends DiagramAction {
-	private static final String DISABLED_TEXT = "Switch Interface Notation"; 
-	private static final String DISABLED_TOOLTIP = "Change Interface Notation to Circle or Rectangle";
+	private static final String DISABLED_TEXT = CustomMessages.SetRectangleInterfaceNotation_disabled_text; 
+	private static final String DISABLED_TOOLTIP = CustomMessages.SetRectangleInterfaceNotation_disabled_tooltip;
 	
 	public SetRectangleInterfaceNotation(IWorkbenchPage workbenchPage, String actionId) {
 		super(workbenchPage);
@@ -46,13 +47,13 @@ public class SetRectangleInterfaceNotation extends DiagramAction {
 	private void updateText(){
 		GraphicalEditPart editPart = getSelectedEditPart();
 		if (editPart instanceof InterfaceEditPart){
-			setText("Show as class");
-			setToolTipText("Change Interface Notation to Rectangle");
+			setText(CustomMessages.SetRectangleInterfaceNotation_show_as_class_text);
+			setToolTipText(CustomMessages.SetRectangleInterfaceNotation_show_as_class_tooltip);
 			return;
 		}
 		if (editPart instanceof Interface2EditPart){
-			setText("Collapse to circle");
-			setToolTipText("Change Interface Notation to Circle");
+			setText(CustomMessages.SetRectangleInterfaceNotation_collapse_to_circle_text);
+			setToolTipText(CustomMessages.SetRectangleInterfaceNotation_collapse_to_circle_tooltip);
 			return;
 		}
 		setText(DISABLED_TEXT);

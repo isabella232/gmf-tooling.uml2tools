@@ -16,7 +16,7 @@ import org.eclipse.uml2.uml.UMLPackage;
  */
 public class GeneralizationSetEditHelper extends UMLBaseEditHelper {
 
-	public static final String PARAMETER_SET_GENERALIZATION = GeneralizationSetEditHelper.class.getName() + ":SetGeneralizationSet";
+	public static final String PARAMETER_SET_GENERALIZATION = GeneralizationSetEditHelper.class.getName() + ":SetGeneralizationSet"; //$NON-NLS-1$
 
 	/**
 	 * @NOT-generated 

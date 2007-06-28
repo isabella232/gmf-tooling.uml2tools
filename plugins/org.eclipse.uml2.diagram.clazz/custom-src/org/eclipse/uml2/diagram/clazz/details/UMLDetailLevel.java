@@ -33,6 +33,7 @@ import org.eclipse.uml2.diagram.clazz.edit.parts.PackageClassifiersEditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.PackageOtherEditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.PrimitiveTypeAttributesEditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.PrimitiveTypeOperationsEditPart;
+import org.eclipse.uml2.diagram.clazz.part.CustomMessages;
 
 public abstract class UMLDetailLevel {
 
@@ -43,7 +44,7 @@ public abstract class UMLDetailLevel {
 	}
 
 	public String getLabel() {
-		return "None Detail Level";
+		return CustomMessages.UMLDetailLevel_none_detail_level;
 	}
 
 	public List<EditElementCommand> getApplyCommands(TransactionalEditingDomain editingDomain, View view) {
@@ -120,7 +121,7 @@ public abstract class UMLDetailLevel {
 	}
 
 	public String getId() {
-		return "";
+		return ""; //$NON-NLS-1$
 	}
 
 }

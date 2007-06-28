@@ -18,7 +18,7 @@ import org.eclipse.uml2.uml.UMLPackage;
 
 public class ElementImportParser implements ISemanticParser {
 
-	@SuppressWarnings("serial")
+	@SuppressWarnings("serial") //$NON-NLS-1$
 	public List<?> getSemanticElementsBeingParsed(EObject eObject) {
 		ElementImport immport = (ElementImport) eObject;
 		List<EObject> result = new LinkedList<EObject>() {
@@ -54,7 +54,7 @@ public class ElementImportParser implements ISemanticParser {
 		}
 		String alias = subject.getAlias();
 		if (!isEmpty(alias)) {
-			result.append(" as ");
+			result.append(" as "); //$NON-NLS-1$
 			result.append(alias);
 		}
 		return result.toString();

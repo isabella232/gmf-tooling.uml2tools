@@ -11,6 +11,7 @@
 
 package org.eclipse.uml2.diagram.clazz.parser.dependency;
 
+import java.text.MessageFormat;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
@@ -35,6 +36,7 @@ import org.eclipse.jface.viewers.ISelection;
 import org.eclipse.jface.viewers.IStructuredSelection;
 import org.eclipse.ui.PlatformUI;
 import org.eclipse.uml2.diagram.clazz.edit.commands.ChangeDependencyTypeCommand;
+import org.eclipse.uml2.diagram.clazz.part.CustomMessages;
 import org.eclipse.uml2.diagram.parser.assist.FixedSetCompletionProcessor;
 import org.eclipse.uml2.uml.Abstraction;
 import org.eclipse.uml2.uml.Dependency;
@@ -44,12 +46,12 @@ import org.eclipse.uml2.uml.Usage;
 import org.eclipse.uml2.uml.util.UMLSwitch;
 
 public class DependencyTypeParser implements ISemanticParser {
-	private final static String NOT_APPLICABLE = "<not applicable>";
-	private final static String LABEL_DEPENDENCY_SHORT = "";
-	private final static String LABEL_DEPENDENCY_FULL = "dependency";
-	private final static String LABEL_ABSTRACTION = "abstraction";
-	private final static String LABEL_USAGE = "usage";
-	private final static String LABEL_SUBSTITUTION = "substitute";	
+	private final static String NOT_APPLICABLE = CustomMessages.DependencyTypeParser_not_applicable;
+	private final static String LABEL_DEPENDENCY_SHORT = ""; //$NON-NLS-1$
+	private final static String LABEL_DEPENDENCY_FULL = "dependency"; //$NON-NLS-1$
+	private final static String LABEL_ABSTRACTION = "abstraction"; //$NON-NLS-1$
+	private final static String LABEL_USAGE = "usage"; //$NON-NLS-1$
+	private final static String LABEL_SUBSTITUTION = "substitute";	 //$NON-NLS-1$
 	
 	private final ViewSwitch myViewSwitch = new ViewSwitch();
 	private final EditSwitch myEditSwitch = new EditSwitch();
@@ -123,7 +125,7 @@ public class DependencyTypeParser implements ISemanticParser {
 
 	private EClass getType(String newString) {
 		if (newString == null){
-			newString = "";
+			newString = ""; //$NON-NLS-1$
 		}
 		newString = newString.trim();
 		return getEditStringToTypeTable().get(newString);
@@ -141,17 +143,13 @@ public class DependencyTypeParser implements ISemanticParser {
 		return (selected instanceof ConnectionEditPart) ? (ConnectionEditPart)selected : null;
 	}
 	
-	private static String umlQuote(String text){
-		return "\u00AB" + text + "\u00BB";
-	}
-
 	private HashMap<String, EClass> getEditStringToTypeTable() {
 		if (myEditStringToType == null) {
 			myEditStringToType = new HashMap<String, EClass>(){
 				@Override
 				public EClass put(String key, EClass value) {
 					EClass result = super.put(key, value);
-					super.put(umlQuote(key), value);
+					super.put(QUOTE_FORMAT.format(new Object[]{key}), value);
 					return result;
 				}
 			};
@@ -206,7 +204,7 @@ public class DependencyTypeParser implements ISemanticParser {
 	private static class ViewSwitch extends EditSwitch {
 		@Override
 		protected String quote(String text) {
-			 return umlQuote(text);
+			 return QUOTE_FORMAT.format(new Object[]{text});
 		}
 		
 		@Override
@@ -214,5 +212,7 @@ public class DependencyTypeParser implements ISemanticParser {
 			return LABEL_DEPENDENCY_SHORT;
 		}
 	}
+	
+	private static final MessageFormat QUOTE_FORMAT = new MessageFormat("\u00AB{0}\u00BB"); //$NON-NLS-1$
 
 }

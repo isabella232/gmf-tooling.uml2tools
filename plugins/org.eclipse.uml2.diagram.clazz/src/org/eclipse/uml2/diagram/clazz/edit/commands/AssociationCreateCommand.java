@@ -11,6 +11,7 @@ import org.eclipse.gmf.runtime.emf.type.core.requests.ConfigureRequest;
 import org.eclipse.gmf.runtime.emf.type.core.requests.CreateRelationshipRequest;
 import org.eclipse.uml2.diagram.clazz.edit.helpers.AssociationEditHelper;
 import org.eclipse.uml2.diagram.clazz.edit.policies.UMLBaseItemSemanticEditPolicy;
+import org.eclipse.uml2.diagram.clazz.part.CustomMessages;
 import org.eclipse.uml2.uml.AggregationKind;
 import org.eclipse.uml2.uml.Association;
 import org.eclipse.uml2.uml.Package;
@@ -96,8 +97,8 @@ public class AssociationCreateCommand extends CreateElementCommand {
 		//thus, we are calling UML2 createAssociation() in opposite order
 		boolean setNavigability = getCreateRequest().getParameter(AssociationEditHelper.PARAMETER_SET_TARGET_NAVIGABILITY) != null;
 		Association result = targetType.createAssociation(//
-				false, AggregationKind.NONE_LITERAL, "src", 1, 1, // 
-				sourceType, setNavigability, AggregationKind.NONE_LITERAL, "dst", 1, 1);
+				false, AggregationKind.NONE_LITERAL, CustomMessages.AssociationCreateCommand_source_end, 1, 1, // 
+				sourceType, setNavigability, AggregationKind.NONE_LITERAL, CustomMessages.AssociationCreateCommand_target_end, 1, 1);
 
 		return result;
 	}

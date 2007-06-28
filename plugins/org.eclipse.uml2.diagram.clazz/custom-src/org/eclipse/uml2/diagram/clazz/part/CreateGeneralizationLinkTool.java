@@ -105,7 +105,7 @@ public class CreateGeneralizationLinkTool extends UnspecifiedTypeConnectionTool 
 
 
 	private Command getCreateGeneralizationGeneralCommand(GraphicalEditPart packageEditPart, final ViewAndElementDescriptor created, final EditPart targetEditPart) {
-		AbstractTransactionalCommand createGeneralizationGeneral = new AbstractTransactionalCommand(packageEditPart.getEditingDomain(), "Change Generalization Notation", null) {
+		AbstractTransactionalCommand createGeneralizationGeneral = new AbstractTransactionalCommand(packageEditPart.getEditingDomain(), CustomMessages.CreateGeneralizationLinkTool_change_generalization_notation_command, null) {
 
 			@Override
 			protected CommandResult doExecuteWithResult(IProgressMonitor monitor, IAdaptable info) throws ExecutionException {
@@ -120,7 +120,7 @@ public class CreateGeneralizationLinkTool extends UnspecifiedTypeConnectionTool 
 	}
 	
 	private Command getCompleteCreateGeneralizationCommand(final EObject element, GraphicalEditPart packageEditPart, final EditPart sourceEditPart, final ViewAndElementDescriptor created) {
-		AbstractTransactionalCommand createGeneralization = new AbstractTransactionalCommand(packageEditPart.getEditingDomain(), "Change Generalization Notation", null) {
+		AbstractTransactionalCommand createGeneralization = new AbstractTransactionalCommand(packageEditPart.getEditingDomain(), CustomMessages.CreateGeneralizationLinkTool_change_generalization_notation_command_2, null) {
 
 			@Override
 			protected CommandResult doExecuteWithResult(IProgressMonitor monitor, IAdaptable info) throws ExecutionException {
@@ -177,7 +177,7 @@ public class CreateGeneralizationLinkTool extends UnspecifiedTypeConnectionTool 
 	}
 
 	private Command getCreateGeneralizationCommand(GraphicalEditPart packageEditPart, final ViewAndElementDescriptor created) {
-		AbstractTransactionalCommand createGeneralization = new AbstractTransactionalCommand(packageEditPart.getEditingDomain(), "Change Generalization Notation", null) {
+		AbstractTransactionalCommand createGeneralization = new AbstractTransactionalCommand(packageEditPart.getEditingDomain(), CustomMessages.CreateGeneralizationLinkTool_change_generalization_notation_command_3, null) {
 
 			@Override
 			protected CommandResult doExecuteWithResult(IProgressMonitor monitor, IAdaptable info) throws ExecutionException {

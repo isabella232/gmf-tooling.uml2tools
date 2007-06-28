@@ -10,14 +10,15 @@ import org.eclipse.gmf.runtime.notation.Diagram;
 import org.eclipse.gmf.runtime.notation.FilteringStyle;
 import org.eclipse.gmf.runtime.notation.NotationPackage;
 import org.eclipse.gmf.runtime.notation.View;
+import org.eclipse.uml2.diagram.clazz.part.CustomMessages;
 import org.eclipse.uml2.uml.NamedElement;
 import org.eclipse.uml2.uml.VisibilityKind;
 
 public class UMLDetailLevelService {
 
-	public static final String SORT_BY_VISIBILITY = "org.eclipse.uml2.diagram.clazz.sort.visibility";
+	public static final String SORT_BY_VISIBILITY = "org.eclipse.uml2.diagram.clazz.sort.visibility"; //$NON-NLS-1$
 
-	public static final String FILTER_BY_VISIBILITY = "org.eclipse.uml2.diagram.clazz.filter.visibility";
+	public static final String FILTER_BY_VISIBILITY = "org.eclipse.uml2.diagram.clazz.filter.visibility"; //$NON-NLS-1$
 
 	public static UMLDetailLevel getLevel(View view) {
 		Diagram diagram = view.getDiagram();
@@ -86,7 +87,7 @@ public class UMLDetailLevelService {
 		}
 	};
 	
-	@SuppressWarnings("unchecked")
+	@SuppressWarnings("unchecked") //$NON-NLS-1$
 	private static List<String> getFilteringKeysImpl(FilteringStyle style){
 		return style.getFilteringKeys();
 	}

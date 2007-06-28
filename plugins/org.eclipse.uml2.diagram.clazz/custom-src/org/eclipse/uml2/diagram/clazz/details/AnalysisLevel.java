@@ -13,6 +13,7 @@ import org.eclipse.gmf.runtime.notation.Filtering;
 import org.eclipse.gmf.runtime.notation.FilteringStyle;
 import org.eclipse.gmf.runtime.notation.NotationPackage;
 import org.eclipse.gmf.runtime.notation.View;
+import org.eclipse.uml2.diagram.clazz.part.CustomMessages;
 import org.eclipse.uml2.diagram.common.details.DetailLevelParserOptions;
 
 class AnalysisLevel extends UMLDetailLevel {
@@ -58,7 +59,7 @@ class AnalysisLevel extends UMLDetailLevel {
 
 	@Override
 	public String getLabel() {
-		return "Analysis";
+		return CustomMessages.AnalysisLevel_analysis_label;
 	}
 	
 	@Override
@@ -66,6 +67,6 @@ class AnalysisLevel extends UMLDetailLevel {
 		return ID;
 	}
 
-	public static final String ID = "org.eclipse.uml2.diagram.clazz.detail_level_analysis";
+	public static final String ID = "org.eclipse.uml2.diagram.clazz.detail_level_analysis"; //$NON-NLS-1$
 
 }

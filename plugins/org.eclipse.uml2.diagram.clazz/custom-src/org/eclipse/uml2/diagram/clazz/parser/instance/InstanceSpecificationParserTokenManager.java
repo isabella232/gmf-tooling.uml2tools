@@ -572,13 +572,13 @@ private static final boolean jjCanMove_0(int hiByte, int i1, int i2, long l1, lo
    }
 }
 public static final String[] jjstrLiteralImages = {
-"", null, null, "\57", "\72", "\75", "\133", "\135", "\173", "\175", "\54", 
-"\53", "\55", "\43", "\176", "\56", "\52", "\162\145\141\144\117\156\154\171", 
-"\165\156\151\157\156", "\163\165\142\163\145\164\163", "\162\145\144\145\146\151\156\145\163", 
-"\157\162\144\145\162\145\144", "\165\156\157\162\144\145\162\145\144", "\165\156\151\161\165\145", 
-"\156\157\156\165\156\151\161\165\145", null, null, null, null, };
+"", null, null, "\57", "\72", "\75", "\133", "\135", "\173", "\175", "\54",  //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$ //$NON-NLS-4$ //$NON-NLS-5$ //$NON-NLS-6$ //$NON-NLS-7$ //$NON-NLS-8$ //$NON-NLS-9$
+"\53", "\55", "\43", "\176", "\56", "\52", "\162\145\141\144\117\156\154\171",  //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$ //$NON-NLS-4$ //$NON-NLS-5$ //$NON-NLS-6$ //$NON-NLS-7$
+"\165\156\151\157\156", "\163\165\142\163\145\164\163", "\162\145\144\145\146\151\156\145\163",  //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
+"\157\162\144\145\162\145\144", "\165\156\157\162\144\145\162\145\144", "\165\156\151\161\165\145",  //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
+"\156\157\156\165\156\151\161\165\145", null, null, null, null, }; //$NON-NLS-1$
 public static final String[] lexStateNames = {
-   "DEFAULT", 
+   "DEFAULT",  //$NON-NLS-1$
 };
 static final long[] jjtoToken = {
    0x7fffff9L, 
@@ -596,7 +596,7 @@ protected char curChar;
 public InstanceSpecificationParserTokenManager(JavaCharStream stream)
 {
    if (JavaCharStream.staticFlag)
-      throw new Error("ERROR: Cannot use a static CharStream class with a non-static lexical analyzer.");
+      throw new Error("ERROR: Cannot use a static CharStream class with a non-static lexical analyzer."); //$NON-NLS-1$
    input_stream = stream;
 }
 public InstanceSpecificationParserTokenManager(JavaCharStream stream, int lexState)
@@ -626,7 +626,7 @@ public void ReInit(JavaCharStream stream, int lexState)
 public void SwitchTo(int lexState)
 {
    if (lexState >= 1 || lexState < 0)
-      throw new TokenMgrError("Error: Ignoring invalid lexical state : " + lexState + ". State unchanged.", TokenMgrError.INVALID_LEXICAL_STATE);
+      throw new TokenMgrError("Error: Ignoring invalid lexical state : " + lexState + ". State unchanged.", TokenMgrError.INVALID_LEXICAL_STATE); //$NON-NLS-1$ //$NON-NLS-2$
    else
       curLexState = lexState;
 }
@@ -709,7 +709,7 @@ public Token getNextToken()
    try { input_stream.readChar(); input_stream.backup(1); }
    catch (java.io.IOException e1) {
       EOFSeen = true;
-      error_after = curPos <= 1 ? "" : input_stream.GetImage();
+      error_after = curPos <= 1 ? "" : input_stream.GetImage(); //$NON-NLS-1$
       if (curChar == '\n' || curChar == '\r') {
          error_line++;
          error_column = 0;
@@ -719,7 +719,7 @@ public Token getNextToken()
    }
    if (!EOFSeen) {
       input_stream.backup(1);
-      error_after = curPos <= 1 ? "" : input_stream.GetImage();
+      error_after = curPos <= 1 ? "" : input_stream.GetImage(); //$NON-NLS-1$
    }
    throw new TokenMgrError(EOFSeen, curLexState, error_line, error_column, error_after, curChar, TokenMgrError.LEXICAL_ERROR);
   }

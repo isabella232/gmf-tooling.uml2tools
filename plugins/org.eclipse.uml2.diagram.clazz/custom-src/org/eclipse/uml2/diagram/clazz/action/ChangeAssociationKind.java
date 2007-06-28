@@ -15,6 +15,7 @@ import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.ui.IWorkbenchPage;
 import org.eclipse.uml2.diagram.clazz.conventions.AssociationEndConvention;
 import org.eclipse.uml2.diagram.clazz.edit.helpers.AssociationEditHelper;
+import org.eclipse.uml2.diagram.clazz.part.CustomMessages;
 import org.eclipse.uml2.uml.AggregationKind;
 import org.eclipse.uml2.uml.Association;
 
@@ -78,7 +79,7 @@ public class ChangeAssociationKind extends DiagramAction {
 		return oursKindToLabelTable;
 	}
 	private static Map<AggregationKind, String> oursKindToLabelTable;
-	private static final String LABEL_NONE="None";
-	private static final String LABEL_COMPOSITE="Composite";
-	private static final String LABEL_SHARED="Shared";
+	private static final String LABEL_NONE=CustomMessages.ChangeAssociationKind_none_action_label;
+	private static final String LABEL_COMPOSITE=CustomMessages.ChangeAssociationKind_composite_action_label;
+	private static final String LABEL_SHARED=CustomMessages.ChangeAssociationKind_shared_action_label;
 }

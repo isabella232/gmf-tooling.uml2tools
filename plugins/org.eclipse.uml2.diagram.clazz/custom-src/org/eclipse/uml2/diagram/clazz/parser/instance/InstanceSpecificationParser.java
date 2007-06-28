@@ -39,7 +39,7 @@ public class InstanceSpecificationParser extends ExternalParserBase implements I
     }
 
     public InstanceSpecificationParser(){
-        this(new StringReader(""));
+        this(new StringReader("")); //$NON-NLS-1$
     }
 
     public InstanceSpecificationParser(LookupSuite lookup){
@@ -67,12 +67,12 @@ public class InstanceSpecificationParser extends ExternalParserBase implements I
 
         protected static int parseInt(Token t) throws ParseException {
                 if (t.kind != InstanceSpecificationParserConstants.INTEGER_LITERAL){
-                        throw new IllegalStateException("Token: " + t + ", image: " + t.image);
+                        throw new IllegalStateException("Token: " + t + ", image: " + t.image); //$NON-NLS-1$ //$NON-NLS-2$
                 }
                 try {
                         return Integer.parseInt(t.image); //XXX: "0005", "99999999999999999999999"
                 } catch (NumberFormatException e){
-                        throw new ParseException("Not supported integer value:" + t.image);
+                        throw new ParseException("Not supported integer value:" + t.image); //$NON-NLS-1$
                 }
         }
 
@@ -161,7 +161,7 @@ public class InstanceSpecificationParser extends ExternalParserBase implements I
                                      result.append(' '); result.append(t.image);
     }
                 {if (true) return result.toString();}
-    throw new Error("Missing return statement in function");
+    throw new Error("Missing return statement in function"); //$NON-NLS-1$
   }
 
   final private boolean jj_2_1(int xla) {

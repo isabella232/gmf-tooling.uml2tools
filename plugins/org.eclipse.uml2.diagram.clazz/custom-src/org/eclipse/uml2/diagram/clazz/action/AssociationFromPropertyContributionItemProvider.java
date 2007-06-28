@@ -13,6 +13,7 @@ import org.eclipse.jface.action.IMenuManager;
 import org.eclipse.jface.action.MenuManager;
 import org.eclipse.jface.action.Separator;
 import org.eclipse.ui.IWorkbenchPage;
+import org.eclipse.uml2.diagram.clazz.part.CustomMessages;
 import org.eclipse.uml2.uml.Classifier;
 import org.eclipse.uml2.uml.Property;
 
@@ -33,7 +34,7 @@ public class AssociationFromPropertyContributionItemProvider extends AbstractCon
 		if (!MENU_CREATE_ASSOSIATION.equals(menuId)) {
 			return super.createMenuManager(menuId, partDescriptor);
 		}
-		MenuManager menuManager = new MenuManager("Create Association to...");
+		MenuManager menuManager = new MenuManager(CustomMessages.AssociationFromPropertyContributionItemProvider_create_association_action);
 		MenuBuilder builder = new MenuBuilder(partDescriptor);
 		//XXX: build initial content -- otherwise menu is never shown
 		builder.buildMenu(menuManager);

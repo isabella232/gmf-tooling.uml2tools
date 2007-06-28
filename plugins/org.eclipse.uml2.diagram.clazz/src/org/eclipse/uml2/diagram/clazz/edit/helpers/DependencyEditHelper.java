@@ -12,9 +12,9 @@ import org.eclipse.uml2.uml.UMLPackage;
  */
 public class DependencyEditHelper extends UMLBaseEditHelper {
 
-	public static final String PARAMETER_DEPENDENCY_TYPE = DependencyEditHelper.class.getName() + ":ConfigureDependencyKind";
+	public static final String PARAMETER_DEPENDENCY_TYPE = DependencyEditHelper.class.getName() + ":ConfigureDependencyKind"; //$NON-NLS-1$
 
-	public static final String PARAMETER_DEPENDENCY_NAME = DependencyEditHelper.class.getName() + ":SetDependencyName";
+	public static final String PARAMETER_DEPENDENCY_NAME = DependencyEditHelper.class.getName() + ":SetDependencyName"; //$NON-NLS-1$
 
 	/**
 	 * @NOT-generated

@@ -14,9 +14,9 @@ import org.eclipse.uml2.uml.UMLPackage;
  */
 public class AssociationEditHelper extends UMLBaseEditHelper {
 
-	public static final String PARAMETER_CONFIGURE_AGGREGATION_KIND = AssociationEditHelper.class.getName() + ":ConfigureAggregationKind";
+	public static final String PARAMETER_CONFIGURE_AGGREGATION_KIND = AssociationEditHelper.class.getName() + ":ConfigureAggregationKind"; //$NON-NLS-1$
 
-	public static final String PARAMETER_SET_TARGET_NAVIGABILITY = AssociationEditHelper.class.getName() + ":ConfigureTargetNavigability";
+	public static final String PARAMETER_SET_TARGET_NAVIGABILITY = AssociationEditHelper.class.getName() + ":ConfigureTargetNavigability"; //$NON-NLS-1$
 
 	/**
 	 * @generated NOT

@@ -9,6 +9,7 @@ import org.eclipse.jface.action.MenuManager;
 import org.eclipse.ui.IWorkbenchPage;
 import org.eclipse.uml2.diagram.clazz.details.UMLDetailLevel;
 import org.eclipse.uml2.diagram.clazz.details.UMLDetailLevelService;
+import org.eclipse.uml2.diagram.clazz.part.CustomMessages;
 
 public class DetailLevelContributionItemProvider extends AbstractContributionItemProvider implements IProvider {
 
@@ -31,9 +32,9 @@ public class DetailLevelContributionItemProvider extends AbstractContributionIte
 
 	public static final String MENU_DETAIL_LEVEL = "DetailLevelMenu"; //$NON-NLS-1$
 
-	public static final String LABEL_DETAIL_LEVEL = "Detail Level";
+	public static final String LABEL_DETAIL_LEVEL = CustomMessages.DetailLevelContributionItemProvider_detail_level;
 
 	public static final String MENU_DETAIL_LEVEL_GROUP = "DetailLevelGroup"; //$NON-NLS-1$
 
-	public static final String LABEL_DETAIL_LEVEL_GROUP = "Detail Level";
+	public static final String LABEL_DETAIL_LEVEL_GROUP = CustomMessages.DetailLevelContributionItemProvider_detail_level_group;
 }

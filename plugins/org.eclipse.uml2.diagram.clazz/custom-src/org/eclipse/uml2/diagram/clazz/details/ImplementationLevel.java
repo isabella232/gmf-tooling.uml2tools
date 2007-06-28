@@ -2,6 +2,7 @@ package org.eclipse.uml2.diagram.clazz.details;
 
 import org.eclipse.gmf.runtime.common.ui.services.parser.ParserOptions;
 import org.eclipse.gmf.runtime.notation.View;
+import org.eclipse.uml2.diagram.clazz.part.CustomMessages;
 import org.eclipse.uml2.diagram.common.details.DetailLevelParserOptions;
 
 class ImplementationLevel extends UMLDetailLevel {
@@ -18,7 +19,7 @@ class ImplementationLevel extends UMLDetailLevel {
 
 	@Override
 	public String getLabel() {
-		return "Implementation";
+		return CustomMessages.ImplementationLevel_implementation_label;
 	}
 
 	@Override
@@ -26,6 +27,6 @@ class ImplementationLevel extends UMLDetailLevel {
 		return ID;
 	}
 
-	public static final String ID = "org.eclipse.uml2.diagram.clazz.detail_level_implementation";
+	public static final String ID = "org.eclipse.uml2.diagram.clazz.detail_level_implementation"; //$NON-NLS-1$
 
 }

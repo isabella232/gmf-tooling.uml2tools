@@ -33,7 +33,7 @@ import org.eclipse.uml2.uml.Stereotype;
 
 public class AppliedStereotypeParser implements ISemanticParser {
 
-	private static final MessageFormat APPLIED_PROFILE = new MessageFormat("\u00AB{0}\u00BB");
+	private static final MessageFormat APPLIED_PROFILE = new MessageFormat("\u00AB{0}\u00BB"); //$NON-NLS-1$
 
 	public boolean areSemanticElementsAffected(EObject listener, Object notification) {
 		if (notification instanceof Notification) {
@@ -71,12 +71,12 @@ public class AppliedStereotypeParser implements ISemanticParser {
 		NamedElement subject = doAdapt(element);
 		List<Stereotype> stereos = subject.getAppliedStereotypes();
 		if (stereos.isEmpty()) {
-			return "";
+			return ""; //$NON-NLS-1$
 		}
 		StringBuffer result = new StringBuffer();
 		for (Stereotype next : stereos) {
 			if (result.length() > 0) {
-				result.append(", ");
+				result.append(", "); //$NON-NLS-1$
 			}
 			result.append(next.getName());
 		}
