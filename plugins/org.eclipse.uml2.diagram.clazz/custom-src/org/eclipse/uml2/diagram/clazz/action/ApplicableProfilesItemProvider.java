@@ -19,6 +19,7 @@ import org.eclipse.jface.action.IMenuListener;
 import org.eclipse.jface.action.IMenuManager;
 import org.eclipse.jface.action.MenuManager;
 import org.eclipse.ui.IWorkbenchPage;
+import org.eclipse.uml2.diagram.clazz.part.CustomMessages;
 import org.eclipse.uml2.diagram.common.pathmap.PathMapService;
 import org.eclipse.uml2.uml.Profile;
 import org.eclipse.uml2.uml.resource.UMLResource;
@@ -33,7 +34,7 @@ public class ApplicableProfilesItemProvider extends AbstractContributionItemProv
 		if (!MENU_APPLY_PROFILE.equals(menuId)) {
 			return super.createMenuManager(menuId, partDescriptor);
 		}
-		MenuManager menuManager = new MenuManager("Apply Profile");
+		MenuManager menuManager = new MenuManager(CustomMessages.ApplicableProfilesItemProvider_apply_profile_menu);
 		MenuBuilder builder = new MenuBuilder(partDescriptor);
 		// XXX: build initial content -- otherwise menu is never shown
 		builder.buildMenu(menuManager);
