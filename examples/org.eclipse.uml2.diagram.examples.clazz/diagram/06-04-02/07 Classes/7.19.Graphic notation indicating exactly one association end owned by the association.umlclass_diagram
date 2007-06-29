@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<notation:Diagram xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.0/notation" xmlns:uml="http://www.eclipse.org/uml2/2.0.0/UML" xmi:id="_LQHvELw9EduWjOs2RiriMw" type="UMLClass" measurementUnit="Pixel">
+<notation:Diagram xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.1/notation" xmlns:uml="http://www.eclipse.org/uml2/2.1.0/UML" xmi:id="_LQHvELw9EduWjOs2RiriMw" type="UMLClass" measurementUnit="Pixel">
   <children xmi:type="notation:Node" xmi:id="_L5_ygLw9EduWjOs2RiriMw" type="2001">
-    <children xmi:type="notation:Node" xmi:id="_L5_yhrw9EduWjOs2RiriMw" type="5003"/>
+    <children xmi:type="notation:Node" xmi:id="_L5_yhrw9EduWjOs2RiriMw" type="5003">
+      <styles xmi:type="notation:FontStyle" xmi:id="_6dFqkCWWEdyxgIRBW3DYbQ"/>
+    </children>
     <children xmi:type="notation:Node" xmi:id="_L5_yh7w9EduWjOs2RiriMw" type="7001">
       <styles xmi:type="notation:DrawerStyle" xmi:id="_L5_yiLw9EduWjOs2RiriMw"/>
       <styles xmi:type="notation:TitleStyle" xmi:id="_L5_yibw9EduWjOs2RiriMw" showTitle="true"/>
@@ -28,7 +30,9 @@
     <layoutConstraint xmi:type="notation:Bounds" xmi:id="_L5_yhbw9EduWjOs2RiriMw" x="61" y="87"/>
   </children>
   <children xmi:type="notation:Node" xmi:id="_MoLuMLw9EduWjOs2RiriMw" type="2001">
-    <children xmi:type="notation:Node" xmi:id="_MoLuNrw9EduWjOs2RiriMw" type="5003"/>
+    <children xmi:type="notation:Node" xmi:id="_MoLuNrw9EduWjOs2RiriMw" type="5003">
+      <styles xmi:type="notation:FontStyle" xmi:id="_6d_CcCWWEdyxgIRBW3DYbQ"/>
+    </children>
     <children xmi:type="notation:Node" xmi:id="_MoLuN7w9EduWjOs2RiriMw" type="7001">
       <styles xmi:type="notation:DrawerStyle" xmi:id="_MoLuOLw9EduWjOs2RiriMw"/>
       <styles xmi:type="notation:TitleStyle" xmi:id="_MoLuObw9EduWjOs2RiriMw" showTitle="true"/>
@@ -64,17 +68,6 @@
     <styles xmi:type="notation:ShapeStyle" xmi:id="_FHi_kbxDEduWjOs2RiriMw" description="Figure 7.19 - Graphic notation indicating exactly one association end owned by the association"/>
     <element xsi:nil="true"/>
     <layoutConstraint xmi:type="notation:Bounds" xmi:id="_FHi_krxDEduWjOs2RiriMw" x="12" y="180"/>
-  </children>
-  <children xmi:type="notation:Node" xmi:id="_RBCWELxDEduWjOs2RiriMw" type="Note">
-    <children xmi:type="notation:Node" xmi:id="_RBCWE7xDEduWjOs2RiriMw" type="DiagramName">
-      <element xsi:nil="true"/>
-    </children>
-    <children xmi:type="notation:Node" xmi:id="_RBCWFLxDEduWjOs2RiriMw" type="Description">
-      <element xsi:nil="true"/>
-    </children>
-    <styles xmi:type="notation:ShapeStyle" xmi:id="_RBCWEbxDEduWjOs2RiriMw" description="Dots to be supported after fixing https://bugs.eclipse.org/bugs/show_bug.cgi?id=174173" fillColor="13369343" lineColor="6737151"/>
-    <element xsi:nil="true"/>
-    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_RBCWErxDEduWjOs2RiriMw" x="60" y="228" width="217" height="61"/>
   </children>
   <styles xmi:type="notation:PageStyle" xmi:id="_LQHvEbw9EduWjOs2RiriMw"/>
   <styles xmi:type="notation:GuideStyle" xmi:id="_LQHvErw9EduWjOs2RiriMw"/>

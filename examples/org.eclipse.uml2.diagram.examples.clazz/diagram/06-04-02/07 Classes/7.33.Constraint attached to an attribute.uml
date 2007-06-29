@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<uml:Model xmi:version="2.1" xmlns:xmi="http://schema.omg.org/spec/XMI/2.1" xmlns:uml="http://www.eclipse.org/uml2/2.0.0/UML" xmi:id="_UrSiUMAJEdukCPcSYjz9wg" name="Model">
+<uml:Model xmi:version="2.1" xmlns:xmi="http://schema.omg.org/spec/XMI/2.1" xmlns:uml="http://www.eclipse.org/uml2/2.1.0/UML" xmi:id="_UrSiUMAJEdukCPcSYjz9wg" name="Model">
   <elementImport xmi:id="_jSWSUMAJEdukCPcSYjz9wg">
     <importedElement xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Boolean"/>
   </elementImport>
@@ -16,5 +16,8 @@
     <ownedAttribute xmi:id="_WLQgQMAJEdukCPcSYjz9wg" name="size" aggregation="composite">
       <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
     </ownedAttribute>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Constraint" xmi:id="_uMSRACV6Edy4m_r_Ph01Ow" name="size >= 0" constrainedElement="_WLQgQMAJEdukCPcSYjz9wg">
+    <specification xmi:type="uml:LiteralString" xmi:id="_uMSRASV6Edy4m_r_Ph01Ow" value="ValueSpecification"/>
   </packagedElement>
 </uml:Model>

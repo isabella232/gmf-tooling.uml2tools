@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<notation:Diagram xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.0/notation" xmlns:uml="http://www.eclipse.org/uml2/2.0.0/UML" xmi:id="_2VvLULz2EduWjOs2RiriMw" type="UMLClass" measurementUnit="Pixel">
+<notation:Diagram xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.1/notation" xmlns:uml="http://www.eclipse.org/uml2/2.1.0/UML" xmi:id="_2VvLULz2EduWjOs2RiriMw" type="UMLClass" measurementUnit="Pixel">
   <children xmi:type="notation:Node" xmi:id="_28fCQLz2EduWjOs2RiriMw" type="2001">
-    <children xmi:type="notation:Node" xmi:id="_28fCRrz2EduWjOs2RiriMw" type="5003"/>
+    <children xmi:type="notation:Node" xmi:id="_28fCRrz2EduWjOs2RiriMw" type="5003">
+      <styles xmi:type="notation:FontStyle" xmi:id="__swhUCV-EdybE_0sx8Ftag"/>
+    </children>
     <children xmi:type="notation:Node" xmi:id="_28fCR7z2EduWjOs2RiriMw" type="7001">
       <styles xmi:type="notation:DrawerStyle" xmi:id="_28fCSLz2EduWjOs2RiriMw"/>
       <styles xmi:type="notation:TitleStyle" xmi:id="_28fCSbz2EduWjOs2RiriMw" showTitle="true"/>
@@ -25,10 +27,12 @@
     <styles xmi:type="notation:FillStyle" xmi:id="_28fCQ7z2EduWjOs2RiriMw"/>
     <styles xmi:type="notation:LineStyle" xmi:id="_28fCRLz2EduWjOs2RiriMw"/>
     <element xmi:type="uml:Class" href="7.25.Derived%20supersets%20(union).uml#_28VRQLz2EduWjOs2RiriMw"/>
-    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_28fCRbz2EduWjOs2RiriMw" x="52" y="43"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_28fCRbz2EduWjOs2RiriMw" x="60" y="72"/>
   </children>
   <children xmi:type="notation:Node" xmi:id="_3pyNILz2EduWjOs2RiriMw" type="2001">
-    <children xmi:type="notation:Node" xmi:id="_3pyNJrz2EduWjOs2RiriMw" type="5003"/>
+    <children xmi:type="notation:Node" xmi:id="_3pyNJrz2EduWjOs2RiriMw" type="5003">
+      <styles xmi:type="notation:FontStyle" xmi:id="__swhUSV-EdybE_0sx8Ftag"/>
+    </children>
     <children xmi:type="notation:Node" xmi:id="_3pyNJ7z2EduWjOs2RiriMw" type="7001">
       <styles xmi:type="notation:DrawerStyle" xmi:id="_3pyNKLz2EduWjOs2RiriMw"/>
       <styles xmi:type="notation:TitleStyle" xmi:id="_3pyNKbz2EduWjOs2RiriMw" showTitle="true"/>
@@ -52,10 +56,12 @@
     <styles xmi:type="notation:FillStyle" xmi:id="_3pyNI7z2EduWjOs2RiriMw"/>
     <styles xmi:type="notation:LineStyle" xmi:id="_3pyNJLz2EduWjOs2RiriMw"/>
     <element xmi:type="uml:Class" href="7.25.Derived%20supersets%20(union).uml#_3pocILz2EduWjOs2RiriMw"/>
-    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_3pyNJbz2EduWjOs2RiriMw" x="311" y="48"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_3pyNJbz2EduWjOs2RiriMw" x="288" y="72"/>
   </children>
   <children xmi:type="notation:Node" xmi:id="_4eOh0Lz2EduWjOs2RiriMw" type="2001">
-    <children xmi:type="notation:Node" xmi:id="_4eOh1rz2EduWjOs2RiriMw" type="5003"/>
+    <children xmi:type="notation:Node" xmi:id="_4eOh1rz2EduWjOs2RiriMw" type="5003">
+      <styles xmi:type="notation:FontStyle" xmi:id="__swhUiV-EdybE_0sx8Ftag"/>
+    </children>
     <children xmi:type="notation:Node" xmi:id="_4eOh17z2EduWjOs2RiriMw" type="7001">
       <styles xmi:type="notation:DrawerStyle" xmi:id="_4eOh2Lz2EduWjOs2RiriMw"/>
       <styles xmi:type="notation:TitleStyle" xmi:id="_4eOh2bz2EduWjOs2RiriMw" showTitle="true"/>
@@ -79,10 +85,12 @@
     <styles xmi:type="notation:FillStyle" xmi:id="_4eOh07z2EduWjOs2RiriMw"/>
     <styles xmi:type="notation:LineStyle" xmi:id="_4eOh1Lz2EduWjOs2RiriMw"/>
     <element xmi:type="uml:Class" href="7.25.Derived%20supersets%20(union).uml#_4eFX4Lz2EduWjOs2RiriMw"/>
-    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_4eOh1bz2EduWjOs2RiriMw" x="56" y="171"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_4eOh1bz2EduWjOs2RiriMw" x="72" y="240"/>
   </children>
   <children xmi:type="notation:Node" xmi:id="_5P2MALz2EduWjOs2RiriMw" type="2001">
-    <children xmi:type="notation:Node" xmi:id="_5P2MBrz2EduWjOs2RiriMw" type="5003"/>
+    <children xmi:type="notation:Node" xmi:id="_5P2MBrz2EduWjOs2RiriMw" type="5003">
+      <styles xmi:type="notation:FontStyle" xmi:id="__swhUyV-EdybE_0sx8Ftag"/>
+    </children>
     <children xmi:type="notation:Node" xmi:id="_5P2MB7z2EduWjOs2RiriMw" type="7001">
       <styles xmi:type="notation:DrawerStyle" xmi:id="_5P2MCLz2EduWjOs2RiriMw"/>
       <styles xmi:type="notation:TitleStyle" xmi:id="_5P2MCbz2EduWjOs2RiriMw" showTitle="true"/>
@@ -106,7 +114,7 @@
     <styles xmi:type="notation:FillStyle" xmi:id="_5P2MA7z2EduWjOs2RiriMw"/>
     <styles xmi:type="notation:LineStyle" xmi:id="_5P2MBLz2EduWjOs2RiriMw"/>
     <element xmi:type="uml:Class" href="7.25.Derived%20supersets%20(union).uml#_5PtCELz2EduWjOs2RiriMw"/>
-    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_5P2MBbz2EduWjOs2RiriMw" x="309" y="173"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_5P2MBbz2EduWjOs2RiriMw" x="288" y="240"/>
   </children>
   <children xmi:type="notation:Node" xmi:id="_gx7ZsLz4EduWjOs2RiriMw" type="Text">
     <children xmi:type="notation:Node" xmi:id="_gx7Zs7z4EduWjOs2RiriMw" type="DiagramName">
@@ -117,7 +125,7 @@
     </children>
     <styles xmi:type="notation:ShapeStyle" xmi:id="_gx7Zsbz4EduWjOs2RiriMw" description="Figure 7.25 - Derived supersets (union)"/>
     <element xsi:nil="true"/>
-    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_gx7Zsrz4EduWjOs2RiriMw" x="98" y="285"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_gx7Zsrz4EduWjOs2RiriMw" x="96" y="348"/>
   </children>
   <styles xmi:type="notation:PageStyle" xmi:id="_2VvLUbz2EduWjOs2RiriMw"/>
   <styles xmi:type="notation:GuideStyle" xmi:id="_2VvLUrz2EduWjOs2RiriMw"/>

@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<notation:Diagram xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.1/notation" xmlns:uml="http://www.eclipse.org/uml2/2.1.0/UML" xmi:id="_Cd24USVxEdy4m_r_Ph01Ow" type="UMLClass" name="Example of stereotyped class notation.umlclass_diagram" measurementUnit="Pixel">
+  <children xmi:type="notation:Node" xmi:id="_CfpBACVxEdy4m_r_Ph01Ow" type="2014">
+    <children xmi:type="notation:Node" xmi:id="_CfpBAyVxEdy4m_r_Ph01Ow" type="5020"/>
+    <children xmi:type="notation:Node" xmi:id="_CfpBBCVxEdy4m_r_Ph01Ow" type="7032">
+      <styles xmi:type="notation:DrawerStyle" xmi:id="_CfpBBSVxEdy4m_r_Ph01Ow"/>
+      <styles xmi:type="notation:SortingStyle" xmi:id="_CfpBBiVxEdy4m_r_Ph01Ow"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_CfpBByVxEdy4m_r_Ph01Ow"/>
+    </children>
+    <styles xmi:type="notation:ShapeStyle" xmi:id="_CfpBASVxEdy4m_r_Ph01Ow"/>
+    <element xmi:type="uml:Package" href="Example of stereotyped class notation.uml#_Cd24UCVxEdy4m_r_Ph01Ow"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_CfpBAiVxEdy4m_r_Ph01Ow"/>
+  </children>
+  <children xmi:type="notation:Node" xmi:id="_DDtXYCVxEdy4m_r_Ph01Ow" type="2001">
+    <children xmi:type="notation:Node" xmi:id="_DDtXYyVxEdy4m_r_Ph01Ow" type="5003">
+      <styles xmi:type="notation:FontStyle" xmi:id="_DD2hVSVxEdy4m_r_Ph01Ow"/>
+    </children>
+    <children xmi:type="notation:Node" xmi:id="_DDtXZCVxEdy4m_r_Ph01Ow" type="5019"/>
+    <children xmi:type="notation:Node" xmi:id="_DDtXZSVxEdy4m_r_Ph01Ow" type="7001">
+      <styles xmi:type="notation:DrawerStyle" xmi:id="_DDtXZiVxEdy4m_r_Ph01Ow"/>
+      <styles xmi:type="notation:TitleStyle" xmi:id="_DDtXZyVxEdy4m_r_Ph01Ow" showTitle="true"/>
+      <styles xmi:type="notation:SortingStyle" xmi:id="_DDtXaCVxEdy4m_r_Ph01Ow"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_DDtXaSVxEdy4m_r_Ph01Ow"/>
+    </children>
+    <children xmi:type="notation:Node" xmi:id="_DDtXaiVxEdy4m_r_Ph01Ow" type="7002">
+      <styles xmi:type="notation:DrawerStyle" xmi:id="_DDtXayVxEdy4m_r_Ph01Ow"/>
+      <styles xmi:type="notation:TitleStyle" xmi:id="_DDtXbCVxEdy4m_r_Ph01Ow" showTitle="true"/>
+      <styles xmi:type="notation:SortingStyle" xmi:id="_DDtXbSVxEdy4m_r_Ph01Ow"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_DDtXbiVxEdy4m_r_Ph01Ow"/>
+    </children>
+    <children xmi:type="notation:Node" xmi:id="_DD2hUCVxEdy4m_r_Ph01Ow" type="7003">
+      <styles xmi:type="notation:DrawerStyle" xmi:id="_DD2hUSVxEdy4m_r_Ph01Ow"/>
+      <styles xmi:type="notation:TitleStyle" xmi:id="_DD2hUiVxEdy4m_r_Ph01Ow" showTitle="true"/>
+      <styles xmi:type="notation:SortingStyle" xmi:id="_DD2hUyVxEdy4m_r_Ph01Ow"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_DD2hVCVxEdy4m_r_Ph01Ow"/>
+    </children>
+    <styles xmi:type="notation:ShapeStyle" xmi:id="_DDtXYSVxEdy4m_r_Ph01Ow"/>
+    <element xmi:type="uml:Class" href="Example of stereotyped class notation.uml#_DDaccCVxEdy4m_r_Ph01Ow"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_DDtXYiVxEdy4m_r_Ph01Ow" x="96" y="96"/>
+  </children>
+  <children xmi:type="notation:Node" xmi:id="_DwtnUCVxEdy4m_r_Ph01Ow" type="Text">
+    <children xmi:type="notation:Node" xmi:id="_DwtnUyVxEdy4m_r_Ph01Ow" type="DiagramName">
+      <element xsi:nil="true"/>
+    </children>
+    <children xmi:type="notation:Node" xmi:id="_DwtnVCVxEdy4m_r_Ph01Ow" type="Description">
+      <element xsi:nil="true"/>
+    </children>
+    <styles xmi:type="notation:ShapeStyle" xmi:id="_DwtnUSVxEdy4m_r_Ph01Ow" description="Example of stereotyped class notation"/>
+    <element xsi:nil="true"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_DwtnUiVxEdy4m_r_Ph01Ow" x="36" y="204" width="289" height="25"/>
+  </children>
+  <children xmi:type="notation:Node" xmi:id="_8rO88CVxEdy4m_r_Ph01Ow" type="Note">
+    <children xmi:type="notation:Node" xmi:id="_8rO88yVxEdy4m_r_Ph01Ow" type="DiagramName">
+      <element xsi:nil="true"/>
+    </children>
+    <children xmi:type="notation:Node" xmi:id="_8rO89CVxEdy4m_r_Ph01Ow" type="Description">
+      <element xsi:nil="true"/>
+    </children>
+    <styles xmi:type="notation:ShapeStyle" xmi:id="_8rO88SVxEdy4m_r_Ph01Ow" description="Example of element with multiple stereotypes applied" fillColor="13369343" lineColor="6737151"/>
+    <element xsi:nil="true"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_8rO88iVxEdy4m_r_Ph01Ow" x="312" y="96" width="169" height="73"/>
+  </children>
+  <styles xmi:type="notation:DiagramStyle" xmi:id="_Cd24UiVxEdy4m_r_Ph01Ow"/>
+  <styles xmi:type="notation:FilteringStyle" xmi:id="_Cd24UyVxEdy4m_r_Ph01Ow"/>
+  <element xmi:type="uml:Package" href="Example of stereotyped class notation.uml#_Cd24UCVxEdy4m_r_Ph01Ow"/>
+</notation:Diagram>

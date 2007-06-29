@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<notation:Diagram xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.0/notation" xmlns:uml="http://www.eclipse.org/uml2/2.0.0/UML" xmi:id="_XY3eALxHEduWjOs2RiriMw" type="UMLClass" measurementUnit="Pixel">
+<notation:Diagram xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.1/notation" xmlns:uml="http://www.eclipse.org/uml2/2.1.0/UML" xmi:id="_XY3eALxHEduWjOs2RiriMw" type="UMLClass" measurementUnit="Pixel">
   <children xmi:type="notation:Node" xmi:id="_Y1soYLxHEduWjOs2RiriMw" type="2001">
-    <children xmi:type="notation:Node" xmi:id="_Y1soZrxHEduWjOs2RiriMw" type="5003"/>
+    <children xmi:type="notation:Node" xmi:id="_Y1soZrxHEduWjOs2RiriMw" type="5003">
+      <styles xmi:type="notation:FontStyle" xmi:id="_2m7TUCWAEdybE_0sx8Ftag"/>
+    </children>
     <children xmi:type="notation:Node" xmi:id="_Y1soZ7xHEduWjOs2RiriMw" type="7001">
       <styles xmi:type="notation:DrawerStyle" xmi:id="_Y1soaLxHEduWjOs2RiriMw"/>
       <styles xmi:type="notation:TitleStyle" xmi:id="_Y1soabxHEduWjOs2RiriMw" showTitle="true"/>
@@ -28,7 +30,9 @@
     <layoutConstraint xmi:type="notation:Bounds" xmi:id="_Y1soZbxHEduWjOs2RiriMw" x="201" y="56"/>
   </children>
   <children xmi:type="notation:Node" xmi:id="_ZiHCcLxHEduWjOs2RiriMw" type="2001">
-    <children xmi:type="notation:Node" xmi:id="_ZiQMYLxHEduWjOs2RiriMw" type="5003"/>
+    <children xmi:type="notation:Node" xmi:id="_ZiQMYLxHEduWjOs2RiriMw" type="5003">
+      <styles xmi:type="notation:FontStyle" xmi:id="_2m7TUSWAEdybE_0sx8Ftag"/>
+    </children>
     <children xmi:type="notation:Node" xmi:id="_ZiQMYbxHEduWjOs2RiriMw" type="7001">
       <styles xmi:type="notation:DrawerStyle" xmi:id="_ZiQMYrxHEduWjOs2RiriMw"/>
       <styles xmi:type="notation:TitleStyle" xmi:id="_ZiQMY7xHEduWjOs2RiriMw" showTitle="true"/>
@@ -55,7 +59,9 @@
     <layoutConstraint xmi:type="notation:Bounds" xmi:id="_ZiHCdbxHEduWjOs2RiriMw" x="28" y="192"/>
   </children>
   <children xmi:type="notation:Node" xmi:id="_aWj-MLxHEduWjOs2RiriMw" type="2001">
-    <children xmi:type="notation:Node" xmi:id="_aWj-NrxHEduWjOs2RiriMw" type="5003"/>
+    <children xmi:type="notation:Node" xmi:id="_aWj-NrxHEduWjOs2RiriMw" type="5003">
+      <styles xmi:type="notation:FontStyle" xmi:id="_2m7TUiWAEdybE_0sx8Ftag"/>
+    </children>
     <children xmi:type="notation:Node" xmi:id="_aWj-N7xHEduWjOs2RiriMw" type="7001">
       <styles xmi:type="notation:DrawerStyle" xmi:id="_aWj-OLxHEduWjOs2RiriMw"/>
       <styles xmi:type="notation:TitleStyle" xmi:id="_aWj-ObxHEduWjOs2RiriMw" showTitle="true"/>
@@ -82,7 +88,9 @@
     <layoutConstraint xmi:type="notation:Bounds" xmi:id="_aWj-NbxHEduWjOs2RiriMw" x="441" y="192"/>
   </children>
   <children xmi:type="notation:Node" xmi:id="_bohVULxHEduWjOs2RiriMw" type="2007">
-    <children xmi:type="notation:Node" xmi:id="_borGULxHEduWjOs2RiriMw" type="5009"/>
+    <children xmi:type="notation:Node" xmi:id="_borGULxHEduWjOs2RiriMw" type="5009">
+      <styles xmi:type="notation:FontStyle" xmi:id="_2m7TUyWAEdybE_0sx8Ftag"/>
+    </children>
     <children xmi:type="notation:Node" xmi:id="_borGUbxHEduWjOs2RiriMw" type="7024">
       <styles xmi:type="notation:DrawerStyle" xmi:id="_borGUrxHEduWjOs2RiriMw"/>
       <styles xmi:type="notation:TitleStyle" xmi:id="_borGU7xHEduWjOs2RiriMw" showTitle="true"/>
@@ -142,9 +150,9 @@
     <styles xmi:type="notation:FontStyle" xmi:id="_loj247xHEduWjOs2RiriMw"/>
     <styles xmi:type="notation:LineStyle" xmi:id="_loj25LxHEduWjOs2RiriMw"/>
     <element xmi:type="uml:Property" href="7.21.Binary%20and%20ternary%20associations.uml#_loj24LxHEduWjOs2RiriMw"/>
-    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_loj25bxHEduWjOs2RiriMw" points="[-4, -7, 0, 134]$[-2, -143, 2, -2]"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_loj25bxHEduWjOs2RiriMw" points="[7, -8, -14, 134]$[7, -10, -14, 132]$[13, -68, -8, 74]"/>
     <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_lo_7wLxHEduWjOs2RiriMw" id="(0.48076922,0.109375)"/>
-    <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_lo_7wbxHEduWjOs2RiriMw" id="(0.73,0.03125)"/>
+    <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_lo_7wbxHEduWjOs2RiriMw" id="(0.43,0.13157895)"/>
   </edges>
   <edges xmi:type="notation:Edge" xmi:id="_mQ8FgbxHEduWjOs2RiriMw" type="4003" source="_bohVULxHEduWjOs2RiriMw" target="_ZiHCcLxHEduWjOs2RiriMw">
     <children xmi:type="notation:Node" xmi:id="_mQ8FhrxHEduWjOs2RiriMw" type="6002">

@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<notation:Diagram xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.0/notation" xmlns:uml="http://www.eclipse.org/uml2/2.0.0/UML" xmi:id="_ulrRoL2hEduWjOs2RiriMw" type="UMLClass" measurementUnit="Pixel">
+<notation:Diagram xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.1/notation" xmlns:uml="http://www.eclipse.org/uml2/2.1.0/UML" xmi:id="_ulrRoL2hEduWjOs2RiriMw" type="UMLClass" measurementUnit="Pixel">
   <children xmi:type="notation:Node" xmi:id="_vkRA0L2hEduWjOs2RiriMw" type="2001">
-    <children xmi:type="notation:Node" xmi:id="_vkRA1r2hEduWjOs2RiriMw" type="5003"/>
+    <children xmi:type="notation:Node" xmi:id="_vkRA1r2hEduWjOs2RiriMw" type="5003">
+      <styles xmi:type="notation:FontStyle" xmi:id="_N6B_sCV8Edy4m_r_Ph01Ow"/>
+    </children>
     <children xmi:type="notation:Node" xmi:id="_vkRA172hEduWjOs2RiriMw" type="7001">
       <styles xmi:type="notation:DrawerStyle" xmi:id="_vkRA2L2hEduWjOs2RiriMw"/>
       <styles xmi:type="notation:TitleStyle" xmi:id="_vkRA2b2hEduWjOs2RiriMw" showTitle="true"/>
@@ -28,7 +30,9 @@
     <layoutConstraint xmi:type="notation:Bounds" xmi:id="_vkRA1b2hEduWjOs2RiriMw" x="37" y="87"/>
   </children>
   <children xmi:type="notation:Node" xmi:id="_wdfu4L2hEduWjOs2RiriMw" type="2001">
-    <children xmi:type="notation:Node" xmi:id="_wdfu5r2hEduWjOs2RiriMw" type="5003"/>
+    <children xmi:type="notation:Node" xmi:id="_wdfu5r2hEduWjOs2RiriMw" type="5003">
+      <styles xmi:type="notation:FontStyle" xmi:id="_N6LJoCV8Edy4m_r_Ph01Ow"/>
+    </children>
     <children xmi:type="notation:Node" xmi:id="_wdfu572hEduWjOs2RiriMw" type="7001">
       <styles xmi:type="notation:DrawerStyle" xmi:id="_wdfu6L2hEduWjOs2RiriMw"/>
       <styles xmi:type="notation:TitleStyle" xmi:id="_wdfu6b2hEduWjOs2RiriMw" showTitle="true"/>
@@ -55,7 +59,9 @@
     <layoutConstraint xmi:type="notation:Bounds" xmi:id="_wdfu5b2hEduWjOs2RiriMw" x="380" y="86"/>
   </children>
   <children xmi:type="notation:Node" xmi:id="_4O8R8L2hEduWjOs2RiriMw" type="2007">
-    <children xmi:type="notation:Node" xmi:id="_4O8R9r2hEduWjOs2RiriMw" type="5009"/>
+    <children xmi:type="notation:Node" xmi:id="_4O8R9r2hEduWjOs2RiriMw" type="5009">
+      <styles xmi:type="notation:FontStyle" xmi:id="_N6LJoSV8Edy4m_r_Ph01Ow"/>
+    </children>
     <children xmi:type="notation:Node" xmi:id="_4O8R972hEduWjOs2RiriMw" type="7024">
       <styles xmi:type="notation:DrawerStyle" xmi:id="_4O8R-L2hEduWjOs2RiriMw"/>
       <styles xmi:type="notation:TitleStyle" xmi:id="_4O8R-b2hEduWjOs2RiriMw" showTitle="true"/>
@@ -88,7 +94,7 @@
     <children xmi:type="notation:Node" xmi:id="_qh4LZL2pEduWjOs2RiriMw" type="Description">
       <element xsi:nil="true"/>
     </children>
-    <styles xmi:type="notation:ShapeStyle" xmi:id="_qh4LYb2pEduWjOs2RiriMw" description="Impossible to draw:&#xD;&#xA;Figure 7.27 - An AssociationClass is depicted by an association symbol (a line) and a class symbol (a box) connected&#xD;&#xA;with a dashed line. The diagram shows the association class Job, which is defined between the two classes Person&#xD;&#xA;and Company." fillColor="255" lineColor="6737151"/>
+    <styles xmi:type="notation:ShapeStyle" xmi:id="_qh4LYb2pEduWjOs2RiriMw" description="Impossible to draw:&#xD;&#xA;Figure 7.27 - An AssociationClass is depicted by an association symbol (a line) and a class symbol (a box) connected&#xD;&#xA;with a dashed line. The diagram shows the association class Job, which is defined between the two classes Person&#xD;&#xA;and Company." fillColor="4227327" lineColor="6737151"/>
     <element xsi:nil="true"/>
     <layoutConstraint xmi:type="notation:Bounds" xmi:id="_qh4LYr2pEduWjOs2RiriMw" x="48" y="300" width="385" height="97"/>
   </children>

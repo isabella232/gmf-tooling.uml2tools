@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<notation:Diagram xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.0/notation" xmlns:uml="http://www.eclipse.org/uml2/2.0.0/UML" xmi:id="_PNtTELxKEduWjOs2RiriMw" type="UMLClass" measurementUnit="Pixel">
+<notation:Diagram xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.1/notation" xmlns:uml="http://www.eclipse.org/uml2/2.1.0/UML" xmi:id="_PNtTELxKEduWjOs2RiriMw" type="UMLClass" measurementUnit="Pixel">
   <children xmi:type="notation:Node" xmi:id="_QS2WMLxKEduWjOs2RiriMw" type="2001">
-    <children xmi:type="notation:Node" xmi:id="_QS2WNrxKEduWjOs2RiriMw" type="5003"/>
+    <children xmi:type="notation:Node" xmi:id="_QS2WNrxKEduWjOs2RiriMw" type="5003">
+      <styles xmi:type="notation:FontStyle" xmi:id="_0Kwy4CWAEdybE_0sx8Ftag"/>
+    </children>
     <children xmi:type="notation:Node" xmi:id="_QS2WN7xKEduWjOs2RiriMw" type="7001">
       <styles xmi:type="notation:DrawerStyle" xmi:id="_QS2WOLxKEduWjOs2RiriMw"/>
       <styles xmi:type="notation:TitleStyle" xmi:id="_QS2WObxKEduWjOs2RiriMw" showTitle="true"/>
@@ -25,10 +27,12 @@
     <styles xmi:type="notation:FillStyle" xmi:id="_QS2WM7xKEduWjOs2RiriMw"/>
     <styles xmi:type="notation:LineStyle" xmi:id="_QS2WNLxKEduWjOs2RiriMw"/>
     <element xmi:type="uml:Class" href="7.22.Association%20ends%20with%20various%20adornments.uml#_QStMQLxKEduWjOs2RiriMw"/>
-    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_QS2WNbxKEduWjOs2RiriMw" x="60" y="54"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_QS2WNbxKEduWjOs2RiriMw" x="96" y="72"/>
   </children>
   <children xmi:type="notation:Node" xmi:id="_Q5TSMLxKEduWjOs2RiriMw" type="2001">
-    <children xmi:type="notation:Node" xmi:id="_Q5TSNrxKEduWjOs2RiriMw" type="5003"/>
+    <children xmi:type="notation:Node" xmi:id="_Q5TSNrxKEduWjOs2RiriMw" type="5003">
+      <styles xmi:type="notation:FontStyle" xmi:id="_0K580CWAEdybE_0sx8Ftag"/>
+    </children>
     <children xmi:type="notation:Node" xmi:id="_Q5TSN7xKEduWjOs2RiriMw" type="7001">
       <styles xmi:type="notation:DrawerStyle" xmi:id="_Q5TSOLxKEduWjOs2RiriMw"/>
       <styles xmi:type="notation:TitleStyle" xmi:id="_Q5TSObxKEduWjOs2RiriMw" showTitle="true"/>
@@ -52,10 +56,12 @@
     <styles xmi:type="notation:FillStyle" xmi:id="_Q5TSM7xKEduWjOs2RiriMw"/>
     <styles xmi:type="notation:LineStyle" xmi:id="_Q5TSNLxKEduWjOs2RiriMw"/>
     <element xmi:type="uml:Class" href="7.22.Association%20ends%20with%20various%20adornments.uml#_Q5JhMLxKEduWjOs2RiriMw"/>
-    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_Q5TSNbxKEduWjOs2RiriMw" x="396" y="54"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_Q5TSNbxKEduWjOs2RiriMw" x="372" y="72"/>
   </children>
   <children xmi:type="notation:Node" xmi:id="_RdztcLxKEduWjOs2RiriMw" type="2001">
-    <children xmi:type="notation:Node" xmi:id="_RdztdrxKEduWjOs2RiriMw" type="5003"/>
+    <children xmi:type="notation:Node" xmi:id="_RdztdrxKEduWjOs2RiriMw" type="5003">
+      <styles xmi:type="notation:FontStyle" xmi:id="_0K580SWAEdybE_0sx8Ftag"/>
+    </children>
     <children xmi:type="notation:Node" xmi:id="_Rdztd7xKEduWjOs2RiriMw" type="7001">
       <styles xmi:type="notation:DrawerStyle" xmi:id="_RdzteLxKEduWjOs2RiriMw"/>
       <styles xmi:type="notation:TitleStyle" xmi:id="_RdztebxKEduWjOs2RiriMw" showTitle="true"/>
@@ -79,10 +85,12 @@
     <styles xmi:type="notation:FillStyle" xmi:id="_Rdztc7xKEduWjOs2RiriMw"/>
     <styles xmi:type="notation:LineStyle" xmi:id="_RdztdLxKEduWjOs2RiriMw"/>
     <element xmi:type="uml:Class" href="7.22.Association%20ends%20with%20various%20adornments.uml#_Rdp8cLxKEduWjOs2RiriMw"/>
-    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_RdztdbxKEduWjOs2RiriMw" x="60" y="232"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_RdztdbxKEduWjOs2RiriMw" x="108" y="228"/>
   </children>
   <children xmi:type="notation:Node" xmi:id="_SHh_4LxKEduWjOs2RiriMw" type="2001">
-    <children xmi:type="notation:Node" xmi:id="_SHrw4LxKEduWjOs2RiriMw" type="5003"/>
+    <children xmi:type="notation:Node" xmi:id="_SHrw4LxKEduWjOs2RiriMw" type="5003">
+      <styles xmi:type="notation:FontStyle" xmi:id="_0K580iWAEdybE_0sx8Ftag"/>
+    </children>
     <children xmi:type="notation:Node" xmi:id="_SHrw4bxKEduWjOs2RiriMw" type="7001">
       <styles xmi:type="notation:DrawerStyle" xmi:id="_SHrw4rxKEduWjOs2RiriMw"/>
       <styles xmi:type="notation:TitleStyle" xmi:id="_SHrw47xKEduWjOs2RiriMw" showTitle="true"/>
@@ -106,7 +114,7 @@
     <styles xmi:type="notation:FillStyle" xmi:id="_SHh_47xKEduWjOs2RiriMw"/>
     <styles xmi:type="notation:LineStyle" xmi:id="_SHh_5LxKEduWjOs2RiriMw"/>
     <element xmi:type="uml:Class" href="7.22.Association%20ends%20with%20various%20adornments.uml#_SHY18LxKEduWjOs2RiriMw"/>
-    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_SHh_5bxKEduWjOs2RiriMw" x="396" y="232"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_SHh_5bxKEduWjOs2RiriMw" x="372" y="228"/>
   </children>
   <children xmi:type="notation:Node" xmi:id="_uh02QLxKEduWjOs2RiriMw" type="Text">
     <children xmi:type="notation:Node" xmi:id="_uh02Q7xKEduWjOs2RiriMw" type="DiagramName">
@@ -148,7 +156,7 @@
     <styles xmi:type="notation:RoutingStyle" xmi:id="_VNY9mLxKEduWjOs2RiriMw"/>
     <styles xmi:type="notation:FontStyle" xmi:id="_VNY9mbxKEduWjOs2RiriMw"/>
     <element xmi:type="uml:Association" href="7.22.Association%20ends%20with%20various%20adornments.uml#_VNY9kLxKEduWjOs2RiriMw"/>
-    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_VNY9mrxKEduWjOs2RiriMw" points="[12, -2, -257, 0]$[258, -10, -11, -8]"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_VNY9mrxKEduWjOs2RiriMw" points="[12, 0, -192, 12]$[188, 0, -16, 12]$[188, 0, -16, 12]"/>
     <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_VNiulLxKEduWjOs2RiriMw" id="(0.88,0.125)"/>
     <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_VNiulbxKEduWjOs2RiriMw" id="(0.16,0.125)"/>
   </edges>
@@ -186,7 +194,7 @@
     <styles xmi:type="notation:FontStyle" xmi:id="_WYZ_M7xKEduWjOs2RiriMw"/>
     <styles xmi:type="notation:LineStyle" xmi:id="_WYZ_NLxKEduWjOs2RiriMw"/>
     <element xmi:type="uml:Generalization" href="7.22.Association%20ends%20with%20various%20adornments.uml#_WYZ_MLxKEduWjOs2RiriMw"/>
-    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_WYZ_NbxKEduWjOs2RiriMw" points="[5, -3, 0, 174]$[0, -181, -5, -4]"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_WYZ_NbxKEduWjOs2RiriMw" points="[3, -4, 0, 151]$[3, -84, 0, 71]"/>
     <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_WYZ_NrxKEduWjOs2RiriMw" id="(0.14,0.046875)"/>
     <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_WYZ_N7xKEduWjOs2RiriMw" id="(0.17,0.0625)"/>
   </edges>

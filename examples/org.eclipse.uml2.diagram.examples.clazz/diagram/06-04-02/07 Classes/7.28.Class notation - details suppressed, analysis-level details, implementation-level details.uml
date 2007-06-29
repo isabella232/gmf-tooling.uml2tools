@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<uml:Model xmi:version="2.1" xmlns:xmi="http://schema.omg.org/spec/XMI/2.1" xmlns:uml="http://www.eclipse.org/uml2/2.0.0/UML" xmi:id="_BcUt4L2qEduWjOs2RiriMw">
+<uml:Model xmi:version="2.1" xmlns:xmi="http://schema.omg.org/spec/XMI/2.1" xmlns:uml="http://www.eclipse.org/uml2/2.1.0/UML" xmi:id="_BcUt4L2qEduWjOs2RiriMw">
   <packagedElement xmi:type="uml:Class" xmi:id="_DpIjsL2qEduWjOs2RiriMw" name="Window">
     <ownedAttribute xmi:id="_F-5hML2qEduWjOs2RiriMw" name="size" type="_HMFtEL2qEduWjOs2RiriMw" aggregation="composite">
       <defaultValue xmi:type="uml:LiteralString" xmi:id="_MHrA0L2rEduWjOs2RiriMw" value="(100,100)"/>

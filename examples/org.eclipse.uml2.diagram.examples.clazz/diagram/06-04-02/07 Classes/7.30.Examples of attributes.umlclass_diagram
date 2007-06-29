@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<notation:Diagram xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.0/notation" xmlns:uml="http://www.eclipse.org/uml2/2.0.0/UML" xmi:id="_ygQ9QL20EduWjOs2RiriMw" type="UMLClass" measurementUnit="Pixel">
+<notation:Diagram xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.1/notation" xmlns:uml="http://www.eclipse.org/uml2/2.1.0/UML" xmi:id="_ygQ9QL20EduWjOs2RiriMw" type="UMLClass" measurementUnit="Pixel">
   <children xmi:type="notation:Node" xmi:id="_189GkL20EduWjOs2RiriMw" type="2001">
-    <children xmi:type="notation:Node" xmi:id="_189Glr20EduWjOs2RiriMw" type="5003"/>
+    <children xmi:type="notation:Node" xmi:id="_189Glr20EduWjOs2RiriMw" type="5003">
+      <styles xmi:type="notation:FontStyle" xmi:id="_Dgt38CV7Edy4m_r_Ph01Ow"/>
+    </children>
     <children xmi:type="notation:Node" xmi:id="_189Gl720EduWjOs2RiriMw" type="7001">
       <children xmi:type="notation:Node" xmi:id="_65Tr0L20EduWjOs2RiriMw" type="3001">
         <element xmi:type="uml:Property" href="7.30.Examples%20of%20attributes.uml#_65Kh4L20EduWjOs2RiriMw"/>
@@ -49,10 +51,12 @@
     <styles xmi:type="notation:FillStyle" xmi:id="_189Gk720EduWjOs2RiriMw"/>
     <styles xmi:type="notation:LineStyle" xmi:id="_189GlL20EduWjOs2RiriMw"/>
     <element xmi:type="uml:Class" href="7.30.Examples%20of%20attributes.uml#_18zVkL20EduWjOs2RiriMw"/>
-    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_189Glb20EduWjOs2RiriMw" x="27" y="39"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_189Glb20EduWjOs2RiriMw" x="264" y="12"/>
   </children>
   <children xmi:type="notation:Node" xmi:id="_NKg84L22EduWjOs2RiriMw" type="2001">
-    <children xmi:type="notation:Node" xmi:id="_NKg85r22EduWjOs2RiriMw" type="5003"/>
+    <children xmi:type="notation:Node" xmi:id="_NKg85r22EduWjOs2RiriMw" type="5003">
+      <styles xmi:type="notation:FontStyle" xmi:id="_Dgt38SV7Edy4m_r_Ph01Ow"/>
+    </children>
     <children xmi:type="notation:Node" xmi:id="_NKg85722EduWjOs2RiriMw" visible="false" type="7001">
       <styles xmi:type="notation:DrawerStyle" xmi:id="_NKg86L22EduWjOs2RiriMw"/>
       <styles xmi:type="notation:TitleStyle" xmi:id="_NKg86b22EduWjOs2RiriMw" showTitle="true"/>
@@ -76,7 +80,7 @@
     <styles xmi:type="notation:FillStyle" xmi:id="_NKg84722EduWjOs2RiriMw"/>
     <styles xmi:type="notation:LineStyle" xmi:id="_NKg85L22EduWjOs2RiriMw"/>
     <element xmi:type="uml:Class" href="7.30.Examples%20of%20attributes.uml#_NKXy8L22EduWjOs2RiriMw"/>
-    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_NKg85b22EduWjOs2RiriMw" x="252" y="36"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_NKg85b22EduWjOs2RiriMw" x="456" y="240"/>
   </children>
   <children xmi:type="notation:Node" xmi:id="_7qwiQL_2EdukCPcSYjz9wg" type="Note">
     <children xmi:type="notation:Node" xmi:id="_7qwiQ7_2EdukCPcSYjz9wg" type="DiagramName">
@@ -87,10 +91,12 @@
     </children>
     <styles xmi:type="notation:ShapeStyle" xmi:id="_7qwiQb_2EdukCPcSYjz9wg" description="Probaly read-only attribute should have decoration {readOnly}?" fillColor="13369343" lineColor="6737151"/>
     <element xsi:nil="true"/>
-    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_7qwiQr_2EdukCPcSYjz9wg" x="252" y="288" width="181" height="193"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_7qwiQr_2EdukCPcSYjz9wg" x="48" y="144" width="181" height="193"/>
   </children>
   <children xmi:type="notation:Node" xmi:id="_IYEiYL_3EdukCPcSYjz9wg" type="2001">
-    <children xmi:type="notation:Node" xmi:id="_IYXdUL_3EdukCPcSYjz9wg" type="5003"/>
+    <children xmi:type="notation:Node" xmi:id="_IYXdUL_3EdukCPcSYjz9wg" type="5003">
+      <styles xmi:type="notation:FontStyle" xmi:id="_Dgt38iV7Edy4m_r_Ph01Ow"/>
+    </children>
     <children xmi:type="notation:Node" xmi:id="_IYXdUb_3EdukCPcSYjz9wg" type="7001">
       <children xmi:type="notation:Node" xmi:id="_K2d3cL_3EdukCPcSYjz9wg" type="3001">
         <element xmi:type="uml:Property" href="7.30.Examples%20of%20attributes.uml#_K2UtgL_3EdukCPcSYjz9wg"/>
@@ -138,10 +144,12 @@
     <styles xmi:type="notation:FillStyle" xmi:id="_IYEiY7_3EdukCPcSYjz9wg"/>
     <styles xmi:type="notation:LineStyle" xmi:id="_IYEiZL_3EdukCPcSYjz9wg"/>
     <element xmi:type="uml:Class" href="7.30.Examples%20of%20attributes.uml#_IX6xYL_3EdukCPcSYjz9wg"/>
-    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_IYEiZb_3EdukCPcSYjz9wg" x="33" y="256"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_IYEiZb_3EdukCPcSYjz9wg" x="264" y="264" width="133"/>
   </children>
   <children xmi:type="notation:Node" xmi:id="_dlc-wL_6EdukCPcSYjz9wg" type="2005">
-    <children xmi:type="notation:Node" xmi:id="_dlv5sL_6EdukCPcSYjz9wg" type="5007"/>
+    <children xmi:type="notation:Node" xmi:id="_dlv5sL_6EdukCPcSYjz9wg" type="5007">
+      <styles xmi:type="notation:FontStyle" xmi:id="_Dgt38yV7Edy4m_r_Ph01Ow"/>
+    </children>
     <children xmi:type="notation:Node" xmi:id="_dlv5sb_6EdukCPcSYjz9wg" visible="false" type="7020">
       <styles xmi:type="notation:DrawerStyle" xmi:id="_dlv5sr_6EdukCPcSYjz9wg"/>
       <styles xmi:type="notation:TitleStyle" xmi:id="_dlv5s7_6EdukCPcSYjz9wg" showTitle="true"/>
@@ -159,7 +167,7 @@
     <styles xmi:type="notation:FillStyle" xmi:id="_dlc-w7_6EdukCPcSYjz9wg"/>
     <styles xmi:type="notation:LineStyle" xmi:id="_dlc-xL_6EdukCPcSYjz9wg"/>
     <element xmi:type="uml:PrimitiveType" href="7.30.Examples%20of%20attributes.uml#_dlTNwL_6EdukCPcSYjz9wg"/>
-    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_dlc-xb_6EdukCPcSYjz9wg" x="252" y="134"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_dlc-xb_6EdukCPcSYjz9wg" x="456" y="360"/>
   </children>
   <children xmi:type="notation:Node" xmi:id="_y0JeMMAHEdukCPcSYjz9wg" type="Text">
     <children xmi:type="notation:Node" xmi:id="_y0JeM8AHEdukCPcSYjz9wg" type="DiagramName">
@@ -170,7 +178,7 @@
     </children>
     <styles xmi:type="notation:ShapeStyle" xmi:id="_y0JeMcAHEdukCPcSYjz9wg" description="Figure 7.30 - Examples of attributes"/>
     <element xsi:nil="true"/>
-    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_y0JeMsAHEdukCPcSYjz9wg" x="36" y="504" width="253" height="25"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_y0JeMsAHEdukCPcSYjz9wg" x="180" y="456" width="253" height="25"/>
   </children>
   <styles xmi:type="notation:PageStyle" xmi:id="_ygQ9Qb20EduWjOs2RiriMw"/>
   <styles xmi:type="notation:GuideStyle" xmi:id="_ygQ9Qr20EduWjOs2RiriMw"/>

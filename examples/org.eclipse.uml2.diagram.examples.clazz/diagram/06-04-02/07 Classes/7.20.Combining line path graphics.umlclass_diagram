@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<notation:Diagram xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.0/notation" xmlns:uml="http://www.eclipse.org/uml2/2.0.0/UML" xmi:id="_4v3J0LxFEduWjOs2RiriMw" type="UMLClass" measurementUnit="Pixel">
+<notation:Diagram xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.1/notation" xmlns:uml="http://www.eclipse.org/uml2/2.1.0/UML" xmi:id="_4v3J0LxFEduWjOs2RiriMw" type="UMLClass" measurementUnit="Pixel">
   <children xmi:type="notation:Node" xmi:id="_5YGOgLxFEduWjOs2RiriMw" type="2001">
-    <children xmi:type="notation:Node" xmi:id="_5YP_gLxFEduWjOs2RiriMw" type="5003"/>
+    <children xmi:type="notation:Node" xmi:id="_5YP_gLxFEduWjOs2RiriMw" type="5003">
+      <styles xmi:type="notation:FontStyle" xmi:id="_9BF4YCWWEdyxgIRBW3DYbQ"/>
+    </children>
     <children xmi:type="notation:Node" xmi:id="_5YP_gbxFEduWjOs2RiriMw" type="7001">
       <styles xmi:type="notation:DrawerStyle" xmi:id="_5YP_grxFEduWjOs2RiriMw"/>
       <styles xmi:type="notation:TitleStyle" xmi:id="_5YP_g7xFEduWjOs2RiriMw" showTitle="true"/>
@@ -28,7 +30,9 @@
     <layoutConstraint xmi:type="notation:Bounds" xmi:id="_5YGOhbxFEduWjOs2RiriMw" x="78" y="61"/>
   </children>
   <children xmi:type="notation:Node" xmi:id="_6A7wILxFEduWjOs2RiriMw" type="2001">
-    <children xmi:type="notation:Node" xmi:id="_6A7wJrxFEduWjOs2RiriMw" type="5003"/>
+    <children xmi:type="notation:Node" xmi:id="_6A7wJrxFEduWjOs2RiriMw" type="5003">
+      <styles xmi:type="notation:FontStyle" xmi:id="_9BF4YSWWEdyxgIRBW3DYbQ"/>
+    </children>
     <children xmi:type="notation:Node" xmi:id="_6A7wJ7xFEduWjOs2RiriMw" type="7001">
       <styles xmi:type="notation:DrawerStyle" xmi:id="_6A7wKLxFEduWjOs2RiriMw"/>
       <styles xmi:type="notation:TitleStyle" xmi:id="_6A7wKbxFEduWjOs2RiriMw" showTitle="true"/>
@@ -55,7 +59,9 @@
     <layoutConstraint xmi:type="notation:Bounds" xmi:id="_6A7wJbxFEduWjOs2RiriMw" x="373" y="61"/>
   </children>
   <children xmi:type="notation:Node" xmi:id="_6oRc8LxFEduWjOs2RiriMw" type="2001">
-    <children xmi:type="notation:Node" xmi:id="_6oRc9rxFEduWjOs2RiriMw" type="5003"/>
+    <children xmi:type="notation:Node" xmi:id="_6oRc9rxFEduWjOs2RiriMw" type="5003">
+      <styles xmi:type="notation:FontStyle" xmi:id="_9BF4YiWWEdyxgIRBW3DYbQ"/>
+    </children>
     <children xmi:type="notation:Node" xmi:id="_6oRc97xFEduWjOs2RiriMw" type="7001">
       <styles xmi:type="notation:DrawerStyle" xmi:id="_6oRc-LxFEduWjOs2RiriMw"/>
       <styles xmi:type="notation:TitleStyle" xmi:id="_6oRc-bxFEduWjOs2RiriMw" showTitle="true"/>
@@ -82,7 +88,9 @@
     <layoutConstraint xmi:type="notation:Bounds" xmi:id="_6oRc9bxFEduWjOs2RiriMw" x="78" y="220"/>
   </children>
   <children xmi:type="notation:Node" xmi:id="_7R1-YLxFEduWjOs2RiriMw" type="2001">
-    <children xmi:type="notation:Node" xmi:id="_7R_vZbxFEduWjOs2RiriMw" type="5003"/>
+    <children xmi:type="notation:Node" xmi:id="_7R_vZbxFEduWjOs2RiriMw" type="5003">
+      <styles xmi:type="notation:FontStyle" xmi:id="_9BF4YyWWEdyxgIRBW3DYbQ"/>
+    </children>
     <children xmi:type="notation:Node" xmi:id="_7R_vZrxFEduWjOs2RiriMw" type="7001">
       <styles xmi:type="notation:DrawerStyle" xmi:id="_7R_vZ7xFEduWjOs2RiriMw"/>
       <styles xmi:type="notation:TitleStyle" xmi:id="_7R_vaLxFEduWjOs2RiriMw" showTitle="true"/>
@@ -108,17 +116,6 @@
     <element xmi:type="uml:Class" href="7.20.Combining%20line%20path%20graphics.uml#_7Rs0cLxFEduWjOs2RiriMw"/>
     <layoutConstraint xmi:type="notation:Bounds" xmi:id="_7R_vZLxFEduWjOs2RiriMw" x="373" y="220"/>
   </children>
-  <children xmi:type="notation:Node" xmi:id="_z7m7MLxGEduWjOs2RiriMw" type="Note">
-    <children xmi:type="notation:Node" xmi:id="_z7m7M7xGEduWjOs2RiriMw" type="DiagramName">
-      <element xsi:nil="true"/>
-    </children>
-    <children xmi:type="notation:Node" xmi:id="_z7m7NLxGEduWjOs2RiriMw" type="Description">
-      <element xsi:nil="true"/>
-    </children>
-    <styles xmi:type="notation:ShapeStyle" xmi:id="_z7m7MbxGEduWjOs2RiriMw" description="Crosses and arrows at the ends are not supported yet: https://bugs.eclipse.org/bugs/show_bug.cgi?id=174175" fillColor="4227327" lineColor="6737151"/>
-    <element xsi:nil="true"/>
-    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_z7m7MrxGEduWjOs2RiriMw" x="72" y="384" width="337" height="49"/>
-  </children>
   <children xmi:type="notation:Node" xmi:id="_8TyHELxGEduWjOs2RiriMw" type="Text">
     <children xmi:type="notation:Node" xmi:id="_8TyHE7xGEduWjOs2RiriMw" type="DiagramName">
       <element xsi:nil="true"/>
@@ -128,7 +125,7 @@
     </children>
     <styles xmi:type="notation:ShapeStyle" xmi:id="_8TyHEbxGEduWjOs2RiriMw" description="Figure 7.20 Combining line path graphics"/>
     <element xsi:nil="true"/>
-    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_8TyHErxGEduWjOs2RiriMw" x="72" y="312" width="373" height="14"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_8TyHErxGEduWjOs2RiriMw" x="72" y="336" width="373" height="14"/>
   </children>
   <styles xmi:type="notation:PageStyle" xmi:id="_4v3J0bxFEduWjOs2RiriMw"/>
   <styles xmi:type="notation:GuideStyle" xmi:id="_4v3J0rxFEduWjOs2RiriMw"/>
