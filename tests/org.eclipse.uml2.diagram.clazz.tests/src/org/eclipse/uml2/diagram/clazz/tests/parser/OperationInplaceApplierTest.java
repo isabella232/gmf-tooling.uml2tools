@@ -71,9 +71,9 @@ public class OperationInplaceApplierTest extends TestCase {
 		aux.createOwnedParameter("b", null);
 		SetRequest usingEListFromAuxOperation = new SetRequest(target, operationParameters, aux.getOwnedParameters());
 		
-		assertFalse(new SetValueCommand(usingArraysAsList).canExecute());
-		assertFalse(new SetValueCommand(usingNewListInstance).canExecute());
-		assertFalse(new SetValueCommand(usingEListFromAuxOperation).canExecute());
+		assertTrue(new SetValueCommand(usingArraysAsList).canExecute());
+		assertTrue(new SetValueCommand(usingNewListInstance).canExecute());
+		assertTrue(new SetValueCommand(usingEListFromAuxOperation).canExecute());
 		
 		CompositeTransactionalCommand command = new CompositeTransactionalCommand(editingDomain, "");
 		for (Parameter nextActual : (Collection<Parameter>)target.getOwnedParameters()){
