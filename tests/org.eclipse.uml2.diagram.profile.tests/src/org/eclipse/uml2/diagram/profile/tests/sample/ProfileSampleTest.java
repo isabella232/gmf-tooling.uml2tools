@@ -27,9 +27,10 @@ public class ProfileSampleTest extends DiagramSampleTest {
 	}
 
 	protected URL getURL(String fileName) {
-		return FileLocator.find(UML_TEST_BUNDLE, new Path(fileName), Collections.EMPTY_MAP);
+		return FileLocator.find(UML_TEST_BUNDLE, new Path(EXAMPLE_FOLDER + fileName), Collections.EMPTY_MAP);
 	}
 
 	private final static Bundle UML_TEST_BUNDLE = Platform.getBundle("org.eclipse.uml2.diagram.profile.tests");
 
+	private final static String EXAMPLE_FOLDER = "examples/";
 }

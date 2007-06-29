@@ -12,6 +12,7 @@
 
 package org.eclipse.uml2.diagram.profile.tests;
 
+import org.eclipse.uml2.diagram.profile.tests.palette.ProfileDPaletteEntriesSuite;
 import org.eclipse.uml2.diagram.profile.tests.sample.ProfileTestSampleSuite;
 
 import junit.framework.Test;
@@ -23,6 +24,7 @@ public class AllTests {
 		TestSuite suite = new TestSuite("Test for org.eclipse.uml2.diagram.clazz");
 		//$JUnit-BEGIN$
 		suite.addTest(new ProfileTestSampleSuite());
+		suite.addTest(new ProfileDPaletteEntriesSuite());
 		//$JUnit-END$
 		return suite;
 	}

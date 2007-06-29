@@ -87,8 +87,8 @@ public abstract class UMLTestDiagram {
 		return myDiagramWorkbenchPart;
 	}
 
-	public View getView() {
-		return (View) myDiagramResource.getContents().get(0);
+	public Diagram getView() {
+		return (Diagram) myDiagramResource.getContents().get(0);
 	}
 
 	private Resource createRestoredDiagram(IFile modelFile, IFile diagramFile) throws ExecutionException, IOException, CoreException {
