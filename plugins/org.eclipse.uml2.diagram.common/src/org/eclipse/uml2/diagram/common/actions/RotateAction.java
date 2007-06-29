@@ -23,10 +23,11 @@ import org.eclipse.jface.viewers.ISelection;
 import org.eclipse.jface.viewers.IStructuredSelection;
 import org.eclipse.ui.IObjectActionDelegate;
 import org.eclipse.ui.IWorkbenchPart;
+import org.eclipse.uml2.diagram.common.Messages;
 
 public class RotateAction implements IObjectActionDelegate {
 
-	public final static String ID = "org.eclipse.uml2.diagram.common.actions.RotateAction.id";
+	public final static String ID = "org.eclipse.uml2.diagram.common.actions.RotateAction.id"; //$NON-NLS-1$
 
 	private ShapeNodeEditPart selectedElement;
 
@@ -41,7 +42,7 @@ public class RotateAction implements IObjectActionDelegate {
 		int y = (Integer) selectedElement.getStructuralFeatureValue(NotationPackage.eINSTANCE.getLocation_Y());
 
 		Rectangle rectangle = new Rectangle(x + size.width / 2 - size.height / 2, y - size.width / 2 + size.height / 2, size.height, size.width);
-		SetBoundsCommand command = new SetBoundsCommand(selectedElement.getEditingDomain(), "", new EObjectAdapter(selectedElement.getNotationView()), rectangle);
+		SetBoundsCommand command = new SetBoundsCommand(selectedElement.getEditingDomain(), Messages.RotateAction_rotate_command, new EObjectAdapter(selectedElement.getNotationView()), rectangle);
 		selectedElement.getDiagramEditDomain().getDiagramCommandStack().execute(new ICommandProxy(command));
 	}
 

@@ -61,7 +61,7 @@ public class CompositeDecoration extends Figure implements RotatableDecoration {
 		}
 	}
 	
-	@SuppressWarnings("unchecked")
+	@SuppressWarnings("unchecked") //$NON-NLS-1$
 	private List<ComposableRotatableDecoration> getChildrenImpl(){
 		return getChildren();
 	}

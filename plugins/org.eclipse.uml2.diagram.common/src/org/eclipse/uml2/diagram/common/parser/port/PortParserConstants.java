@@ -45,35 +45,35 @@ public interface PortParserConstants {
   int DEFAULT = 0;
 
   String[] tokenImage = {
-    "<EOF>",
-    "\" \"",
-    "\"\\t\"",
-    "\"/\"",
-    "\":\"",
-    "\"=\"",
-    "\"[\"",
-    "\"]\"",
-    "\"{\"",
-    "\"}\"",
-    "\",\"",
-    "\"+\"",
-    "\"-\"",
-    "\"#\"",
-    "\"~\"",
-    "\".\"",
-    "\"*\"",
-    "\"readOnly\"",
-    "\"union\"",
-    "\"subsets\"",
-    "\"redefines\"",
-    "\"ordered\"",
-    "\"unordered\"",
-    "\"unique\"",
-    "\"nonunique\"",
-    "<INTEGER_LITERAL>",
-    "<IDENTIFIER>",
-    "<LETTER>",
-    "<DIGIT>",
+    "<EOF>", //$NON-NLS-1$
+    "\" \"", //$NON-NLS-1$
+    "\"\\t\"", //$NON-NLS-1$
+    "\"/\"", //$NON-NLS-1$
+    "\":\"", //$NON-NLS-1$
+    "\"=\"", //$NON-NLS-1$
+    "\"[\"", //$NON-NLS-1$
+    "\"]\"", //$NON-NLS-1$
+    "\"{\"", //$NON-NLS-1$
+    "\"}\"", //$NON-NLS-1$
+    "\",\"", //$NON-NLS-1$
+    "\"+\"", //$NON-NLS-1$
+    "\"-\"", //$NON-NLS-1$
+    "\"#\"", //$NON-NLS-1$
+    "\"~\"", //$NON-NLS-1$
+    "\".\"", //$NON-NLS-1$
+    "\"*\"", //$NON-NLS-1$
+    "\"readOnly\"", //$NON-NLS-1$
+    "\"union\"", //$NON-NLS-1$
+    "\"subsets\"", //$NON-NLS-1$
+    "\"redefines\"", //$NON-NLS-1$
+    "\"ordered\"", //$NON-NLS-1$
+    "\"unordered\"", //$NON-NLS-1$
+    "\"unique\"", //$NON-NLS-1$
+    "\"nonunique\"", //$NON-NLS-1$
+    "<INTEGER_LITERAL>", //$NON-NLS-1$
+    "<IDENTIFIER>", //$NON-NLS-1$
+    "<LETTER>", //$NON-NLS-1$
+    "<DIGIT>", //$NON-NLS-1$
   };
 
 }

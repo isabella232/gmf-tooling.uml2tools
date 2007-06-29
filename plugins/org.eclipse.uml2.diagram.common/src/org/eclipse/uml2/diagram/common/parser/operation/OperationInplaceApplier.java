@@ -47,7 +47,7 @@ public class OperationInplaceApplier extends BasicApplyStrategy implements Apply
 	
 	protected void assertOperation(EObject object){
 		if (false == object instanceof Operation){
-			throw new IllegalStateException("Operation expected: " + object);
+			throw new IllegalStateException("Operation expected: " + object); //$NON-NLS-1$
 		}
 	}
 	

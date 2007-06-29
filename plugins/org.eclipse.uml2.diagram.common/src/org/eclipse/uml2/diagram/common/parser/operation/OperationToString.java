@@ -83,7 +83,7 @@ public abstract class OperationToString extends AbstractToString {
 		
 		if (!editNotView && DetailLevelParserOptions.LEVEL_ANALYSIS == flags) {
 			appendName(result, operation);
-			result.append("()");
+			result.append("()"); //$NON-NLS-1$
 			Parameter ret = operation.getReturnResult();
 			if (ret != null){
 				appendType(result, ret);
@@ -93,7 +93,7 @@ public abstract class OperationToString extends AbstractToString {
 		
 		result.append(getVisibility(operation));
 		appendName(result, operation);
-		result.append("( ");
+		result.append("( "); //$NON-NLS-1$
 		
 		Parameter ret = operation.getReturnResult();
 		boolean firstWritten = false;
@@ -103,7 +103,7 @@ public abstract class OperationToString extends AbstractToString {
 				continue;
 			}
 			if (firstWritten){
-				result.append(", ");
+				result.append(", "); //$NON-NLS-1$
 			}
 			firstWritten = true;
 			result.append(getDirection(next));
@@ -115,7 +115,7 @@ public abstract class OperationToString extends AbstractToString {
 			}
 			
 		}
-		result.append(" )");
+		result.append(" )"); //$NON-NLS-1$
 		
 		if (ret != null){
 			appendType(result, ret);
@@ -129,7 +129,7 @@ public abstract class OperationToString extends AbstractToString {
 	protected void appendDefaultParameterValue(StringBuffer result, Parameter parameter){
 		String def = parameter.getDefault();
 		if (!isEmpty(def)){
-			result.append(" = ");
+			result.append(" = "); //$NON-NLS-1$
 			result.append(def);
 		}
 	}
@@ -138,21 +138,21 @@ public abstract class OperationToString extends AbstractToString {
 		ParameterDirectionKind direction = parameter.getDirection();
 		switch(direction.getValue()){
 			case ParameterDirectionKind.IN : 
-				return ""; //default is omitted
+				return ""; //default is omitted //$NON-NLS-1$
 			case ParameterDirectionKind.OUT:
-				return "out ";
+				return "out "; //$NON-NLS-1$
 			case ParameterDirectionKind.INOUT:
-				return "inout ";
+				return "inout "; //$NON-NLS-1$
 			case ParameterDirectionKind.RETURN:
-				throw new IllegalStateException("Return parameter should not be included into parameters list");
+				throw new IllegalStateException("Return parameter should not be included into parameters list"); //$NON-NLS-1$
 		}
 		
-		throw new IllegalStateException("Unknown parameter direction kind: " + direction + " for parameter: " + parameter);
+		throw new IllegalStateException("Unknown parameter direction kind: " + direction + " for parameter: " + parameter); //$NON-NLS-1$ //$NON-NLS-2$
 	}
 	
 	protected Operation asOperation(EObject object){
 		if (false == object instanceof Operation){
-			throw new IllegalStateException("I can not provide toString for: " + object);
+			throw new IllegalStateException("I can not provide toString for: " + object); //$NON-NLS-1$
 		}
 		return (Operation)object;
 	}
@@ -160,19 +160,19 @@ public abstract class OperationToString extends AbstractToString {
 	public void appendModifiers(StringBuffer result, Operation operation) {
 		ModifiersBuilder builder = new ModifiersBuilder();
 		if (operation.isQuery()){
-			builder.appendModifier("query");
+			builder.appendModifier("query"); //$NON-NLS-1$
 		}
 		if (operation.isOrdered()){
-			builder.appendModifier("ordered");
+			builder.appendModifier("ordered"); //$NON-NLS-1$
 		}
 		if (operation.isUnique()){
-			builder.appendModifier("unique");
+			builder.appendModifier("unique"); //$NON-NLS-1$
 		}
 		for (Iterator redefines = operation.getRedefinedOperations().iterator(); redefines.hasNext();){
 			Operation next = (Operation) redefines.next();
 			String nextName = next.getName();
 			if (!isEmpty(nextName)){
-				builder.appendModifier("redefines " + nextName);
+				builder.appendModifier("redefines " + nextName); //$NON-NLS-1$
 			}
 		}
 		

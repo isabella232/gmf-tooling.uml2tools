@@ -8,6 +8,7 @@ import org.eclipse.swt.SWT;
 import org.eclipse.swt.layout.GridData;
 import org.eclipse.swt.layout.GridLayout;
 import org.eclipse.swt.widgets.Composite;
+import org.eclipse.uml2.diagram.common.Messages;
 
 
 public abstract class IconStylePreferencePage extends AbstractPreferencePage {
@@ -40,9 +41,9 @@ public abstract class IconStylePreferencePage extends AbstractPreferencePage {
     	store.setDefault(UmlPreferenceConstants.PREF_ICON_STYLE, UmlPreferenceConstants.PREF_ICON_STYLE_STANDARD);
     }
 
-    private static final String ICONSTYLE_GROUPBOX_LABEL = "Icon Style";
-	private static final String ALTERNATIVE_STYLE_ICON_LABEL = "Cheerful Style";
-	private static final String ECLIPSE_STYLE_ICON_LABEL = "Classic Eclipse Style";
+    private static final String ICONSTYLE_GROUPBOX_LABEL = Messages.IconStylePreferencePage_icon_style_group;
+	private static final String ALTERNATIVE_STYLE_ICON_LABEL = Messages.IconStylePreferencePage_cheerful_style;
+	private static final String ECLIPSE_STYLE_ICON_LABEL = Messages.IconStylePreferencePage_eclipse_style;
     private RadioGroupFieldEditor myIconStyleFieldEditor;
 
 }

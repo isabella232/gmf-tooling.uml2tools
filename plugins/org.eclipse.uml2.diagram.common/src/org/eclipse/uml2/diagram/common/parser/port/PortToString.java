@@ -69,7 +69,7 @@ public class PortToString extends AbstractToString implements WithReferences {
 
 	protected Port asPort(EObject object){
 		if (false == object instanceof Port){
-			throw new IllegalStateException("I can not provide toString for: " + object);
+			throw new IllegalStateException("I can not provide toString for: " + object); //$NON-NLS-1$
 		}
 		return (Port)object;
 	}

@@ -36,7 +36,7 @@ public class ConstraintFigure extends ConstraintFigureBase {
 	}
 	
 	public void setFixedLabelText(String text){
-		myFixedLabel.setText(text == null ? "" : text);
+		myFixedLabel.setText(text == null ? "" : text); //$NON-NLS-1$
 	}
 	
 	protected LayoutManager createMainLayout() {
@@ -44,7 +44,7 @@ public class ConstraintFigure extends ConstraintFigureBase {
 	}
 	
 	protected WrapLabel addLabel() {
-		WrapLabel label = new WrapLabel("");
+		WrapLabel label = new WrapLabel(""); //$NON-NLS-1$
 		label.setBorder(new MarginBorder(0, CLIP_MARGIN_DP + 1, 0, CLIP_MARGIN_DP + 1));
 		add(label, BorderLayout.TOP);
 		return label;

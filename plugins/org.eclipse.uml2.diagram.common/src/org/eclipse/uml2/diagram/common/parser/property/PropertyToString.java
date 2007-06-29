@@ -46,7 +46,7 @@ public abstract class PropertyToString extends AbstractToString {
 		}
 
 		public boolean isAffectingFeature(EStructuralFeature feature) {
-			throw new UnsupportedOperationException("I am edit toString, I am not expected to be asked");
+			throw new UnsupportedOperationException("I am edit toString, I am not expected to be asked"); //$NON-NLS-1$
 		}
 
 	}
@@ -103,7 +103,7 @@ public abstract class PropertyToString extends AbstractToString {
 
 	protected Property asProperty(EObject object) {
 		if (false == object instanceof Property) {
-			throw new IllegalStateException("I can not provide toString for: " + object);
+			throw new IllegalStateException("I can not provide toString for: " + object); //$NON-NLS-1$
 		}
 		return (Property) object;
 	}
@@ -111,29 +111,29 @@ public abstract class PropertyToString extends AbstractToString {
 	protected void appendPropertyModifiers(StringBuffer result, Property property) {
 		ModifiersBuilder builder = new ModifiersBuilder();
 		if (property.isReadOnly()) {
-			builder.appendModifier("readOnly");
+			builder.appendModifier("readOnly"); //$NON-NLS-1$
 		}
 		if (property.isDerivedUnion()) {
-			builder.appendModifier("union");
+			builder.appendModifier("union"); //$NON-NLS-1$
 		}
 		if (property.isOrdered()) {
-			builder.appendModifier("ordered");
+			builder.appendModifier("ordered"); //$NON-NLS-1$
 		}
 		if (property.isUnique() != DEFAULT_VALUES_PROTOTYPE.isUnique()) {
-			builder.appendModifier(property.isUnique() ? "unique" : "nonunique");
+			builder.appendModifier(property.isUnique() ? "unique" : "nonunique"); //$NON-NLS-1$ //$NON-NLS-2$
 		}
 		for (Iterator subsets = property.getSubsettedProperties().iterator(); subsets.hasNext();) {
 			Property next = (Property) subsets.next();
 			String nextName = next.getName();
 			if (!isEmpty(nextName)) {
-				builder.appendModifier("subsets " + nextName);
+				builder.appendModifier("subsets " + nextName); //$NON-NLS-1$
 			}
 		}
 		for (Iterator redefines = property.getRedefinedProperties().iterator(); redefines.hasNext();) {
 			Property next = (Property) redefines.next();
 			String nextName = next.getName();
 			if (!isEmpty(nextName)) {
-				builder.appendModifier("redefines " + nextName);
+				builder.appendModifier("redefines " + nextName); //$NON-NLS-1$
 			}
 		}
 		builder.writeInto(result);
@@ -144,7 +144,7 @@ public abstract class PropertyToString extends AbstractToString {
 		if (isEmpty(def)) {
 			return;
 		}
-		result.append(" = ");
+		result.append(" = "); //$NON-NLS-1$
 		result.append(def);
 	}
 
@@ -153,7 +153,7 @@ public abstract class PropertyToString extends AbstractToString {
 	}
 
 	protected void appendIsDerived(StringBuffer result, Property property) {
-		result.append(property.isDerived() ? "/" : "");
+		result.append(property.isDerived() ? "/" : ""); //$NON-NLS-1$ //$NON-NLS-2$
 	}
 
 }

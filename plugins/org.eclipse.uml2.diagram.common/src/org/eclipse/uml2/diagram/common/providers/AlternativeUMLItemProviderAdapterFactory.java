@@ -22,7 +22,7 @@ public class AlternativeUMLItemProviderAdapterFactory extends UMLItemProviderAda
 				@Override
 				public Object getImage(Object object) {
 					if (useAlternativeIcons(object)) {
-						return overlayImage(object, FileLocator.find(UML_BUNDLE, new Path("icons/obj16/Comment.gif"), null));
+						return overlayImage(object, FileLocator.find(UML_BUNDLE, new Path("icons/obj16/Comment.gif"), null)); //$NON-NLS-1$
 					}
 					return super.getImage(object);
 				}
@@ -38,7 +38,7 @@ public class AlternativeUMLItemProviderAdapterFactory extends UMLItemProviderAda
 				@Override
 				public Object getImage(Object object) {
 					if (useAlternativeIcons(object)) {
-						return overlayImage(object, FileLocator.find(UML_BUNDLE, new Path("icons/obj16/Dependency.gif"), null));
+						return overlayImage(object, FileLocator.find(UML_BUNDLE, new Path("icons/obj16/Dependency.gif"), null)); //$NON-NLS-1$
 					}
 					return super.getImage(object);
 				}
@@ -54,7 +54,7 @@ public class AlternativeUMLItemProviderAdapterFactory extends UMLItemProviderAda
 				@Override
 				public Object getImage(Object object) {
 					if (useAlternativeIcons(object)) {
-						return overlayImage(object, FileLocator.find(UML_BUNDLE, new Path("icons/obj16/TemplateParameter.gif"), null));
+						return overlayImage(object, FileLocator.find(UML_BUNDLE, new Path("icons/obj16/TemplateParameter.gif"), null)); //$NON-NLS-1$
 					}
 					return super.getImage(object);
 				}
@@ -70,7 +70,7 @@ public class AlternativeUMLItemProviderAdapterFactory extends UMLItemProviderAda
 				@Override
 				public Object getImage(Object object) {
 					if (useAlternativeIcons(object)) {
-						return overlayImage(object, FileLocator.find(UML_BUNDLE, new Path("icons/obj16/TemplateSignature.gif"), null));
+						return overlayImage(object, FileLocator.find(UML_BUNDLE, new Path("icons/obj16/TemplateSignature.gif"), null)); //$NON-NLS-1$
 					}
 					return super.getImage(object);
 				}
@@ -86,7 +86,7 @@ public class AlternativeUMLItemProviderAdapterFactory extends UMLItemProviderAda
 				@Override
 				public Object getImage(Object object) {
 					if (useAlternativeIcons(object)) {
-						return overlayImage(object, FileLocator.find(UML_BUNDLE, new Path("icons/obj16/TemplateBinding.gif"), null));
+						return overlayImage(object, FileLocator.find(UML_BUNDLE, new Path("icons/obj16/TemplateBinding.gif"), null)); //$NON-NLS-1$
 					}
 					return super.getImage(object);
 				}
@@ -102,7 +102,7 @@ public class AlternativeUMLItemProviderAdapterFactory extends UMLItemProviderAda
 				@Override
 				public Object getImage(Object object) {
 					if (useAlternativeIcons(object)) {
-						return overlayImage(object, FileLocator.find(UML_BUNDLE, new Path("icons/obj16/TemplateParameterSubstitution.gif"), null));
+						return overlayImage(object, FileLocator.find(UML_BUNDLE, new Path("icons/obj16/TemplateParameterSubstitution.gif"), null)); //$NON-NLS-1$
 					}
 					return super.getImage(object);
 				}
@@ -118,7 +118,7 @@ public class AlternativeUMLItemProviderAdapterFactory extends UMLItemProviderAda
 				@Override
 				public Object getImage(Object object) {
 					if (useAlternativeIcons(object)) {
-						return overlayImage(object, FileLocator.find(UML_BUNDLE, new Path("icons/obj16/ElementImport.gif"), null));
+						return overlayImage(object, FileLocator.find(UML_BUNDLE, new Path("icons/obj16/ElementImport.gif"), null)); //$NON-NLS-1$
 					}
 					return super.getImage(object);
 				}
@@ -134,7 +134,7 @@ public class AlternativeUMLItemProviderAdapterFactory extends UMLItemProviderAda
 				@Override
 				public Object getImage(Object object) {
 					if (useAlternativeIcons(object)) {
-						return overlayImage(object, FileLocator.find(UML_BUNDLE, new Path("icons/obj16/PackageImport.gif"), null));
+						return overlayImage(object, FileLocator.find(UML_BUNDLE, new Path("icons/obj16/PackageImport.gif"), null)); //$NON-NLS-1$
 					}
 					return super.getImage(object);
 				}
@@ -150,7 +150,7 @@ public class AlternativeUMLItemProviderAdapterFactory extends UMLItemProviderAda
 				@Override
 				public Object getImage(Object object) {
 					if (useAlternativeIcons(object)) {
-						return overlayImage(object, FileLocator.find(UML_BUNDLE, new Path("icons/obj16/Package.gif"), null));
+						return overlayImage(object, FileLocator.find(UML_BUNDLE, new Path("icons/obj16/Package.gif"), null)); //$NON-NLS-1$
 					}
 					return super.getImage(object);
 				}
@@ -166,7 +166,7 @@ public class AlternativeUMLItemProviderAdapterFactory extends UMLItemProviderAda
 				@Override
 				public Object getImage(Object object) {
 					if (useAlternativeIcons(object)) {
-						return overlayImage(object, FileLocator.find(UML_BUNDLE, new Path("icons/obj16/PackageMerge.gif"), null));
+						return overlayImage(object, FileLocator.find(UML_BUNDLE, new Path("icons/obj16/PackageMerge.gif"), null)); //$NON-NLS-1$
 					}
 					return super.getImage(object);
 				}
@@ -182,7 +182,7 @@ public class AlternativeUMLItemProviderAdapterFactory extends UMLItemProviderAda
 				@Override
 				public Object getImage(Object object) {
 					if (useAlternativeIcons(object)) {
-						return overlayImage(object, FileLocator.find(UML_BUNDLE, new Path("icons/obj16/ProfileApplication.gif"), null));
+						return overlayImage(object, FileLocator.find(UML_BUNDLE, new Path("icons/obj16/ProfileApplication.gif"), null)); //$NON-NLS-1$
 					}
 					return super.getImage(object);
 				}
@@ -198,7 +198,7 @@ public class AlternativeUMLItemProviderAdapterFactory extends UMLItemProviderAda
 				@Override
 				public Object getImage(Object object) {
 					if (useAlternativeIcons(object)) {
-						return overlayImage(object, FileLocator.find(UML_BUNDLE, new Path("icons/obj16/Profile.gif"), null));
+						return overlayImage(object, FileLocator.find(UML_BUNDLE, new Path("icons/obj16/Profile.gif"), null)); //$NON-NLS-1$
 					}
 					return super.getImage(object);
 				}
@@ -214,7 +214,7 @@ public class AlternativeUMLItemProviderAdapterFactory extends UMLItemProviderAda
 				@Override
 				public Object getImage(Object object) {
 					if (useAlternativeIcons(object)) {
-						return overlayImage(object, FileLocator.find(UML_BUNDLE, new Path("icons/obj16/Stereotype.gif"), null));
+						return overlayImage(object, FileLocator.find(UML_BUNDLE, new Path("icons/obj16/Stereotype.gif"), null)); //$NON-NLS-1$
 					}
 					return super.getImage(object);
 				}
@@ -230,7 +230,7 @@ public class AlternativeUMLItemProviderAdapterFactory extends UMLItemProviderAda
 				@Override
 				public Object getImage(Object object) {
 					if (useAlternativeIcons(object)) {
-						return overlayImage(object, FileLocator.find(UML_BUNDLE, new Path("icons/obj16/Image.gif"), null));
+						return overlayImage(object, FileLocator.find(UML_BUNDLE, new Path("icons/obj16/Image.gif"), null)); //$NON-NLS-1$
 					}
 					return super.getImage(object);
 				}
@@ -246,7 +246,7 @@ public class AlternativeUMLItemProviderAdapterFactory extends UMLItemProviderAda
 				@Override
 				public Object getImage(Object object) {
 					if (useAlternativeIcons(object)) {
-						return overlayImage(object, FileLocator.find(UML_BUNDLE, new Path("icons/obj16/Class.gif"), null));
+						return overlayImage(object, FileLocator.find(UML_BUNDLE, new Path("icons/obj16/Class.gif"), null)); //$NON-NLS-1$
 					}
 					return super.getImage(object);
 				}
@@ -262,7 +262,7 @@ public class AlternativeUMLItemProviderAdapterFactory extends UMLItemProviderAda
 				@Override
 				public Object getImage(Object object) {
 					if (useAlternativeIcons(object)) {
-						return overlayImage(object, FileLocator.find(UML_BUNDLE, new Path("icons/obj16/Generalization.gif"), null));
+						return overlayImage(object, FileLocator.find(UML_BUNDLE, new Path("icons/obj16/Generalization.gif"), null)); //$NON-NLS-1$
 					}
 					return super.getImage(object);
 				}
@@ -278,7 +278,7 @@ public class AlternativeUMLItemProviderAdapterFactory extends UMLItemProviderAda
 				@Override
 				public Object getImage(Object object) {
 					if (useAlternativeIcons(object)) {
-						return overlayImage(object, FileLocator.find(UML_BUNDLE, new Path("icons/obj16/GeneralizationSet.gif"), null));
+						return overlayImage(object, FileLocator.find(UML_BUNDLE, new Path("icons/obj16/GeneralizationSet.gif"), null)); //$NON-NLS-1$
 					}
 					return super.getImage(object);
 				}
@@ -294,7 +294,7 @@ public class AlternativeUMLItemProviderAdapterFactory extends UMLItemProviderAda
 				@Override
 				public Object getImage(Object object) {
 					if (useAlternativeIcons(object)) {
-						return overlayImage(object, FileLocator.find(UML_BUNDLE, new Path("icons/obj16/UseCase.gif"), null));
+						return overlayImage(object, FileLocator.find(UML_BUNDLE, new Path("icons/obj16/UseCase.gif"), null)); //$NON-NLS-1$
 					}
 					return super.getImage(object);
 				}
@@ -310,7 +310,7 @@ public class AlternativeUMLItemProviderAdapterFactory extends UMLItemProviderAda
 				@Override
 				public Object getImage(Object object) {
 					if (useAlternativeIcons(object)) {
-						return overlayImage(object, FileLocator.find(UML_BUNDLE, new Path("icons/obj16/Include.gif"), null));
+						return overlayImage(object, FileLocator.find(UML_BUNDLE, new Path("icons/obj16/Include.gif"), null)); //$NON-NLS-1$
 					}
 					return super.getImage(object);
 				}
@@ -326,7 +326,7 @@ public class AlternativeUMLItemProviderAdapterFactory extends UMLItemProviderAda
 				@Override
 				public Object getImage(Object object) {
 					if (useAlternativeIcons(object)) {
-						return overlayImage(object, FileLocator.find(UML_BUNDLE, new Path("icons/obj16/Extend.gif"), null));
+						return overlayImage(object, FileLocator.find(UML_BUNDLE, new Path("icons/obj16/Extend.gif"), null)); //$NON-NLS-1$
 					}
 					return super.getImage(object);
 				}
@@ -342,7 +342,7 @@ public class AlternativeUMLItemProviderAdapterFactory extends UMLItemProviderAda
 				@Override
 				public Object getImage(Object object) {
 					if (useAlternativeIcons(object)) {
-						return overlayImage(object, FileLocator.find(UML_BUNDLE, new Path("icons/obj16/Constraint.gif"), null));
+						return overlayImage(object, FileLocator.find(UML_BUNDLE, new Path("icons/obj16/Constraint.gif"), null)); //$NON-NLS-1$
 					}
 					return super.getImage(object);
 				}
@@ -358,7 +358,7 @@ public class AlternativeUMLItemProviderAdapterFactory extends UMLItemProviderAda
 				@Override
 				public Object getImage(Object object) {
 					if (useAlternativeIcons(object)) {
-						return overlayImage(object, FileLocator.find(UML_BUNDLE, new Path("icons/obj16/ExtensionPoint.gif"), null));
+						return overlayImage(object, FileLocator.find(UML_BUNDLE, new Path("icons/obj16/ExtensionPoint.gif"), null)); //$NON-NLS-1$
 					}
 					return super.getImage(object);
 				}
@@ -374,7 +374,7 @@ public class AlternativeUMLItemProviderAdapterFactory extends UMLItemProviderAda
 				@Override
 				public Object getImage(Object object) {
 					if (useAlternativeIcons(object)) {
-						return overlayImage(object, FileLocator.find(UML_BUNDLE, new Path("icons/obj16/Substitution.gif"), null));
+						return overlayImage(object, FileLocator.find(UML_BUNDLE, new Path("icons/obj16/Substitution.gif"), null)); //$NON-NLS-1$
 					}
 					return super.getImage(object);
 				}
@@ -390,7 +390,7 @@ public class AlternativeUMLItemProviderAdapterFactory extends UMLItemProviderAda
 				@Override
 				public Object getImage(Object object) {
 					if (useAlternativeIcons(object)) {
-						return overlayImage(object, FileLocator.find(UML_BUNDLE, new Path("icons/obj16/Realization.gif"), null));
+						return overlayImage(object, FileLocator.find(UML_BUNDLE, new Path("icons/obj16/Realization.gif"), null)); //$NON-NLS-1$
 					}
 					return super.getImage(object);
 				}
@@ -406,7 +406,7 @@ public class AlternativeUMLItemProviderAdapterFactory extends UMLItemProviderAda
 				@Override
 				public Object getImage(Object object) {
 					if (useAlternativeIcons(object)) {
-						return overlayImage(object, FileLocator.find(UML_BUNDLE, new Path("icons/obj16/Abstraction.gif"), null));
+						return overlayImage(object, FileLocator.find(UML_BUNDLE, new Path("icons/obj16/Abstraction.gif"), null)); //$NON-NLS-1$
 					}
 					return super.getImage(object);
 				}
@@ -422,7 +422,7 @@ public class AlternativeUMLItemProviderAdapterFactory extends UMLItemProviderAda
 				@Override
 				public Object getImage(Object object) {
 					if (useAlternativeIcons(object)) {
-						return overlayImage(object, FileLocator.find(UML_BUNDLE, new Path("icons/obj16/OpaqueExpression.gif"), null));
+						return overlayImage(object, FileLocator.find(UML_BUNDLE, new Path("icons/obj16/OpaqueExpression.gif"), null)); //$NON-NLS-1$
 					}
 					return super.getImage(object);
 				}
@@ -438,7 +438,7 @@ public class AlternativeUMLItemProviderAdapterFactory extends UMLItemProviderAda
 				@Override
 				public Object getImage(Object object) {
 					if (useAlternativeIcons(object)) {
-						return overlayImage(object, FileLocator.find(UML_BUNDLE, new Path("icons/obj16/Parameter.gif"), null));
+						return overlayImage(object, FileLocator.find(UML_BUNDLE, new Path("icons/obj16/Parameter.gif"), null)); //$NON-NLS-1$
 					}
 					return super.getImage(object);
 				}
@@ -454,7 +454,7 @@ public class AlternativeUMLItemProviderAdapterFactory extends UMLItemProviderAda
 				@Override
 				public Object getImage(Object object) {
 					if (useAlternativeIcons(object)) {
-						return overlayImage(object, FileLocator.find(UML_BUNDLE, new Path("icons/obj16/ConnectorEnd.gif"), null));
+						return overlayImage(object, FileLocator.find(UML_BUNDLE, new Path("icons/obj16/ConnectorEnd.gif"), null)); //$NON-NLS-1$
 					}
 					return super.getImage(object);
 				}
@@ -470,7 +470,7 @@ public class AlternativeUMLItemProviderAdapterFactory extends UMLItemProviderAda
 				@Override
 				public Object getImage(Object object) {
 					if (useAlternativeIcons(object)) {
-						return overlayImage(object, FileLocator.find(UML_BUNDLE, new Path("icons/obj16/Property.gif"), null));
+						return overlayImage(object, FileLocator.find(UML_BUNDLE, new Path("icons/obj16/Property.gif"), null)); //$NON-NLS-1$
 					}
 					return super.getImage(object);
 				}
@@ -486,7 +486,7 @@ public class AlternativeUMLItemProviderAdapterFactory extends UMLItemProviderAda
 				@Override
 				public Object getImage(Object object) {
 					if (useAlternativeIcons(object)) {
-						return overlayImage(object, FileLocator.find(UML_BUNDLE, new Path("icons/obj16/Deployment.gif"), null));
+						return overlayImage(object, FileLocator.find(UML_BUNDLE, new Path("icons/obj16/Deployment.gif"), null)); //$NON-NLS-1$
 					}
 					return super.getImage(object);
 				}
@@ -502,7 +502,7 @@ public class AlternativeUMLItemProviderAdapterFactory extends UMLItemProviderAda
 				@Override
 				public Object getImage(Object object) {
 					if (useAlternativeIcons(object)) {
-						return overlayImage(object, FileLocator.find(UML_BUNDLE, new Path("icons/obj16/DeploymentSpecification.gif"), null));
+						return overlayImage(object, FileLocator.find(UML_BUNDLE, new Path("icons/obj16/DeploymentSpecification.gif"), null)); //$NON-NLS-1$
 					}
 					return super.getImage(object);
 				}
@@ -518,7 +518,7 @@ public class AlternativeUMLItemProviderAdapterFactory extends UMLItemProviderAda
 				@Override
 				public Object getImage(Object object) {
 					if (useAlternativeIcons(object)) {
-						return overlayImage(object, FileLocator.find(UML_BUNDLE, new Path("icons/obj16/Artifact.gif"), null));
+						return overlayImage(object, FileLocator.find(UML_BUNDLE, new Path("icons/obj16/Artifact.gif"), null)); //$NON-NLS-1$
 					}
 					return super.getImage(object);
 				}
@@ -534,7 +534,7 @@ public class AlternativeUMLItemProviderAdapterFactory extends UMLItemProviderAda
 				@Override
 				public Object getImage(Object object) {
 					if (useAlternativeIcons(object)) {
-						return overlayImage(object, FileLocator.find(UML_BUNDLE, new Path("icons/obj16/Manifestation.gif"), null));
+						return overlayImage(object, FileLocator.find(UML_BUNDLE, new Path("icons/obj16/Manifestation.gif"), null)); //$NON-NLS-1$
 					}
 					return super.getImage(object);
 				}
@@ -550,7 +550,7 @@ public class AlternativeUMLItemProviderAdapterFactory extends UMLItemProviderAda
 				@Override
 				public Object getImage(Object object) {
 					if (useAlternativeIcons(object)) {
-						return overlayImage(object, FileLocator.find(UML_BUNDLE, new Path("icons/obj16/Operation.gif"), null));
+						return overlayImage(object, FileLocator.find(UML_BUNDLE, new Path("icons/obj16/Operation.gif"), null)); //$NON-NLS-1$
 					}
 					return super.getImage(object);
 				}
@@ -566,7 +566,7 @@ public class AlternativeUMLItemProviderAdapterFactory extends UMLItemProviderAda
 				@Override
 				public Object getImage(Object object) {
 					if (useAlternativeIcons(object)) {
-						return overlayImage(object, FileLocator.find(UML_BUNDLE, new Path("icons/obj16/ParameterSet.gif"), null));
+						return overlayImage(object, FileLocator.find(UML_BUNDLE, new Path("icons/obj16/ParameterSet.gif"), null)); //$NON-NLS-1$
 					}
 					return super.getImage(object);
 				}
@@ -582,7 +582,7 @@ public class AlternativeUMLItemProviderAdapterFactory extends UMLItemProviderAda
 				@Override
 				public Object getImage(Object object) {
 					if (useAlternativeIcons(object)) {
-						return overlayImage(object, FileLocator.find(UML_BUNDLE, new Path("icons/obj16/DataType.gif"), null));
+						return overlayImage(object, FileLocator.find(UML_BUNDLE, new Path("icons/obj16/DataType.gif"), null)); //$NON-NLS-1$
 					}
 					return super.getImage(object);
 				}
@@ -598,7 +598,7 @@ public class AlternativeUMLItemProviderAdapterFactory extends UMLItemProviderAda
 				@Override
 				public Object getImage(Object object) {
 					if (useAlternativeIcons(object)) {
-						return overlayImage(object, FileLocator.find(UML_BUNDLE, new Path("icons/obj16/Interface.gif"), null));
+						return overlayImage(object, FileLocator.find(UML_BUNDLE, new Path("icons/obj16/Interface.gif"), null)); //$NON-NLS-1$
 					}
 					return super.getImage(object);
 				}
@@ -614,7 +614,7 @@ public class AlternativeUMLItemProviderAdapterFactory extends UMLItemProviderAda
 				@Override
 				public Object getImage(Object object) {
 					if (useAlternativeIcons(object)) {
-						return overlayImage(object, FileLocator.find(UML_BUNDLE, new Path("icons/obj16/Reception.gif"), null));
+						return overlayImage(object, FileLocator.find(UML_BUNDLE, new Path("icons/obj16/Reception.gif"), null)); //$NON-NLS-1$
 					}
 					return super.getImage(object);
 				}
@@ -630,7 +630,7 @@ public class AlternativeUMLItemProviderAdapterFactory extends UMLItemProviderAda
 				@Override
 				public Object getImage(Object object) {
 					if (useAlternativeIcons(object)) {
-						return overlayImage(object, FileLocator.find(UML_BUNDLE, new Path("icons/obj16/Signal.gif"), null));
+						return overlayImage(object, FileLocator.find(UML_BUNDLE, new Path("icons/obj16/Signal.gif"), null)); //$NON-NLS-1$
 					}
 					return super.getImage(object);
 				}
@@ -646,7 +646,7 @@ public class AlternativeUMLItemProviderAdapterFactory extends UMLItemProviderAda
 				@Override
 				public Object getImage(Object object) {
 					if (useAlternativeIcons(object)) {
-						return overlayImage(object, FileLocator.find(UML_BUNDLE, new Path("icons/obj16/ProtocolStateMachine.gif"), null));
+						return overlayImage(object, FileLocator.find(UML_BUNDLE, new Path("icons/obj16/ProtocolStateMachine.gif"), null)); //$NON-NLS-1$
 					}
 					return super.getImage(object);
 				}
@@ -662,7 +662,7 @@ public class AlternativeUMLItemProviderAdapterFactory extends UMLItemProviderAda
 				@Override
 				public Object getImage(Object object) {
 					if (useAlternativeIcons(object)) {
-						return overlayImage(object, FileLocator.find(UML_BUNDLE, new Path("icons/obj16/StateMachine.gif"), null));
+						return overlayImage(object, FileLocator.find(UML_BUNDLE, new Path("icons/obj16/StateMachine.gif"), null)); //$NON-NLS-1$
 					}
 					return super.getImage(object);
 				}
@@ -678,7 +678,7 @@ public class AlternativeUMLItemProviderAdapterFactory extends UMLItemProviderAda
 				@Override
 				public Object getImage(Object object) {
 					if (useAlternativeIcons(object)) {
-						return overlayImage(object, FileLocator.find(UML_BUNDLE, new Path("icons/obj16/Region.gif"), null));
+						return overlayImage(object, FileLocator.find(UML_BUNDLE, new Path("icons/obj16/Region.gif"), null)); //$NON-NLS-1$
 					}
 					return super.getImage(object);
 				}
@@ -694,7 +694,7 @@ public class AlternativeUMLItemProviderAdapterFactory extends UMLItemProviderAda
 				@Override
 				public Object getImage(Object object) {
 					if (useAlternativeIcons(object)) {
-						return overlayImage(object, FileLocator.find(UML_BUNDLE, new Path("icons/obj16/Transition.gif"), null));
+						return overlayImage(object, FileLocator.find(UML_BUNDLE, new Path("icons/obj16/Transition.gif"), null)); //$NON-NLS-1$
 					}
 					return super.getImage(object);
 				}
@@ -710,7 +710,7 @@ public class AlternativeUMLItemProviderAdapterFactory extends UMLItemProviderAda
 				@Override
 				public Object getImage(Object object) {
 					if (useAlternativeIcons(object)) {
-						return overlayImage(object, FileLocator.find(UML_BUNDLE, new Path("icons/obj16/Trigger.gif"), null));
+						return overlayImage(object, FileLocator.find(UML_BUNDLE, new Path("icons/obj16/Trigger.gif"), null)); //$NON-NLS-1$
 					}
 					return super.getImage(object);
 				}
@@ -726,7 +726,7 @@ public class AlternativeUMLItemProviderAdapterFactory extends UMLItemProviderAda
 				@Override
 				public Object getImage(Object object) {
 					if (useAlternativeIcons(object)) {
-						return overlayImage(object, FileLocator.find(UML_BUNDLE, new Path("icons/obj16/Port.gif"), null));
+						return overlayImage(object, FileLocator.find(UML_BUNDLE, new Path("icons/obj16/Port.gif"), null)); //$NON-NLS-1$
 					}
 					return super.getImage(object);
 				}
@@ -742,7 +742,7 @@ public class AlternativeUMLItemProviderAdapterFactory extends UMLItemProviderAda
 				@Override
 				public Object getImage(Object object) {
 					if (useAlternativeIcons(object)) {
-						return overlayImage(object, FileLocator.find(UML_BUNDLE, new Path("icons/obj16/State.gif"), null));
+						return overlayImage(object, FileLocator.find(UML_BUNDLE, new Path("icons/obj16/State.gif"), null)); //$NON-NLS-1$
 					}
 					return super.getImage(object);
 				}
@@ -758,7 +758,7 @@ public class AlternativeUMLItemProviderAdapterFactory extends UMLItemProviderAda
 				@Override
 				public Object getImage(Object object) {
 					if (useAlternativeIcons(object)) {
-						return overlayImage(object, FileLocator.find(UML_BUNDLE, new Path("icons/obj16/ConnectionPointReference.gif"), null));
+						return overlayImage(object, FileLocator.find(UML_BUNDLE, new Path("icons/obj16/ConnectionPointReference.gif"), null)); //$NON-NLS-1$
 					}
 					return super.getImage(object);
 				}
@@ -774,7 +774,7 @@ public class AlternativeUMLItemProviderAdapterFactory extends UMLItemProviderAda
 				@Override
 				public Object getImage(Object object) {
 					if (useAlternativeIcons(object)) {
-						return overlayImage(object, FileLocator.find(UML_BUNDLE, new Path("icons/obj16/Pseudostate.gif"), null));
+						return overlayImage(object, FileLocator.find(UML_BUNDLE, new Path("icons/obj16/Pseudostate.gif"), null)); //$NON-NLS-1$
 					}
 					return super.getImage(object);
 				}
@@ -790,7 +790,7 @@ public class AlternativeUMLItemProviderAdapterFactory extends UMLItemProviderAda
 				@Override
 				public Object getImage(Object object) {
 					if (useAlternativeIcons(object)) {
-						return overlayImage(object, FileLocator.find(UML_BUNDLE, new Path("icons/obj16/ProtocolConformance.gif"), null));
+						return overlayImage(object, FileLocator.find(UML_BUNDLE, new Path("icons/obj16/ProtocolConformance.gif"), null)); //$NON-NLS-1$
 					}
 					return super.getImage(object);
 				}
@@ -806,7 +806,7 @@ public class AlternativeUMLItemProviderAdapterFactory extends UMLItemProviderAda
 				@Override
 				public Object getImage(Object object) {
 					if (useAlternativeIcons(object)) {
-						return overlayImage(object, FileLocator.find(UML_BUNDLE, new Path("icons/obj16/OperationTemplateParameter.gif"), null));
+						return overlayImage(object, FileLocator.find(UML_BUNDLE, new Path("icons/obj16/OperationTemplateParameter.gif"), null)); //$NON-NLS-1$
 					}
 					return super.getImage(object);
 				}
@@ -822,7 +822,7 @@ public class AlternativeUMLItemProviderAdapterFactory extends UMLItemProviderAda
 				@Override
 				public Object getImage(Object object) {
 					if (useAlternativeIcons(object)) {
-						return overlayImage(object, FileLocator.find(UML_BUNDLE, new Path("icons/obj16/Association.gif"), null));
+						return overlayImage(object, FileLocator.find(UML_BUNDLE, new Path("icons/obj16/Association.gif"), null)); //$NON-NLS-1$
 					}
 					return super.getImage(object);
 				}
@@ -838,7 +838,7 @@ public class AlternativeUMLItemProviderAdapterFactory extends UMLItemProviderAda
 				@Override
 				public Object getImage(Object object) {
 					if (useAlternativeIcons(object)) {
-						return overlayImage(object, FileLocator.find(UML_BUNDLE, new Path("icons/obj16/ConnectableElementTemplateParameter.gif"), null));
+						return overlayImage(object, FileLocator.find(UML_BUNDLE, new Path("icons/obj16/ConnectableElementTemplateParameter.gif"), null)); //$NON-NLS-1$
 					}
 					return super.getImage(object);
 				}
@@ -854,7 +854,7 @@ public class AlternativeUMLItemProviderAdapterFactory extends UMLItemProviderAda
 				@Override
 				public Object getImage(Object object) {
 					if (useAlternativeIcons(object)) {
-						return overlayImage(object, FileLocator.find(UML_BUNDLE, new Path("icons/obj16/CollaborationUse.gif"), null));
+						return overlayImage(object, FileLocator.find(UML_BUNDLE, new Path("icons/obj16/CollaborationUse.gif"), null)); //$NON-NLS-1$
 					}
 					return super.getImage(object);
 				}
@@ -870,7 +870,7 @@ public class AlternativeUMLItemProviderAdapterFactory extends UMLItemProviderAda
 				@Override
 				public Object getImage(Object object) {
 					if (useAlternativeIcons(object)) {
-						return overlayImage(object, FileLocator.find(UML_BUNDLE, new Path("icons/obj16/Collaboration.gif"), null));
+						return overlayImage(object, FileLocator.find(UML_BUNDLE, new Path("icons/obj16/Collaboration.gif"), null)); //$NON-NLS-1$
 					}
 					return super.getImage(object);
 				}
@@ -886,7 +886,7 @@ public class AlternativeUMLItemProviderAdapterFactory extends UMLItemProviderAda
 				@Override
 				public Object getImage(Object object) {
 					if (useAlternativeIcons(object)) {
-						return overlayImage(object, FileLocator.find(UML_BUNDLE, new Path("icons/obj16/Connector.gif"), null));
+						return overlayImage(object, FileLocator.find(UML_BUNDLE, new Path("icons/obj16/Connector.gif"), null)); //$NON-NLS-1$
 					}
 					return super.getImage(object);
 				}
@@ -902,7 +902,7 @@ public class AlternativeUMLItemProviderAdapterFactory extends UMLItemProviderAda
 				@Override
 				public Object getImage(Object object) {
 					if (useAlternativeIcons(object)) {
-						return overlayImage(object, FileLocator.find(UML_BUNDLE, new Path("icons/obj16/RedefinableTemplateSignature.gif"), null));
+						return overlayImage(object, FileLocator.find(UML_BUNDLE, new Path("icons/obj16/RedefinableTemplateSignature.gif"), null)); //$NON-NLS-1$
 					}
 					return super.getImage(object);
 				}
@@ -918,7 +918,7 @@ public class AlternativeUMLItemProviderAdapterFactory extends UMLItemProviderAda
 				@Override
 				public Object getImage(Object object) {
 					if (useAlternativeIcons(object)) {
-						return overlayImage(object, FileLocator.find(UML_BUNDLE, new Path("icons/obj16/ClassifierTemplateParameter.gif"), null));
+						return overlayImage(object, FileLocator.find(UML_BUNDLE, new Path("icons/obj16/ClassifierTemplateParameter.gif"), null)); //$NON-NLS-1$
 					}
 					return super.getImage(object);
 				}
@@ -934,7 +934,7 @@ public class AlternativeUMLItemProviderAdapterFactory extends UMLItemProviderAda
 				@Override
 				public Object getImage(Object object) {
 					if (useAlternativeIcons(object)) {
-						return overlayImage(object, FileLocator.find(UML_BUNDLE, new Path("icons/obj16/InterfaceRealization.gif"), null));
+						return overlayImage(object, FileLocator.find(UML_BUNDLE, new Path("icons/obj16/InterfaceRealization.gif"), null)); //$NON-NLS-1$
 					}
 					return super.getImage(object);
 				}
@@ -950,7 +950,7 @@ public class AlternativeUMLItemProviderAdapterFactory extends UMLItemProviderAda
 				@Override
 				public Object getImage(Object object) {
 					if (useAlternativeIcons(object)) {
-						return overlayImage(object, FileLocator.find(UML_BUNDLE, new Path("icons/obj16/Extension.gif"), null));
+						return overlayImage(object, FileLocator.find(UML_BUNDLE, new Path("icons/obj16/Extension.gif"), null)); //$NON-NLS-1$
 					}
 					return super.getImage(object);
 				}
@@ -966,7 +966,7 @@ public class AlternativeUMLItemProviderAdapterFactory extends UMLItemProviderAda
 				@Override
 				public Object getImage(Object object) {
 					if (useAlternativeIcons(object)) {
-						return overlayImage(object, FileLocator.find(UML_BUNDLE, new Path("icons/obj16/ExtensionEnd.gif"), null));
+						return overlayImage(object, FileLocator.find(UML_BUNDLE, new Path("icons/obj16/ExtensionEnd.gif"), null)); //$NON-NLS-1$
 					}
 					return super.getImage(object);
 				}
@@ -982,7 +982,7 @@ public class AlternativeUMLItemProviderAdapterFactory extends UMLItemProviderAda
 				@Override
 				public Object getImage(Object object) {
 					if (useAlternativeIcons(object)) {
-						return overlayImage(object, FileLocator.find(UML_BUNDLE, new Path("icons/obj16/StringExpression.gif"), null));
+						return overlayImage(object, FileLocator.find(UML_BUNDLE, new Path("icons/obj16/StringExpression.gif"), null)); //$NON-NLS-1$
 					}
 					return super.getImage(object);
 				}
@@ -998,7 +998,7 @@ public class AlternativeUMLItemProviderAdapterFactory extends UMLItemProviderAda
 				@Override
 				public Object getImage(Object object) {
 					if (useAlternativeIcons(object)) {
-						return overlayImage(object, FileLocator.find(UML_BUNDLE, new Path("icons/obj16/Expression.gif"), null));
+						return overlayImage(object, FileLocator.find(UML_BUNDLE, new Path("icons/obj16/Expression.gif"), null)); //$NON-NLS-1$
 					}
 					return super.getImage(object);
 				}
@@ -1014,7 +1014,7 @@ public class AlternativeUMLItemProviderAdapterFactory extends UMLItemProviderAda
 				@Override
 				public Object getImage(Object object) {
 					if (useAlternativeIcons(object)) {
-						return overlayImage(object, FileLocator.find(UML_BUNDLE, new Path("icons/obj16/LiteralInteger.gif"), null));
+						return overlayImage(object, FileLocator.find(UML_BUNDLE, new Path("icons/obj16/LiteralInteger.gif"), null)); //$NON-NLS-1$
 					}
 					return super.getImage(object);
 				}
@@ -1030,7 +1030,7 @@ public class AlternativeUMLItemProviderAdapterFactory extends UMLItemProviderAda
 				@Override
 				public Object getImage(Object object) {
 					if (useAlternativeIcons(object)) {
-						return overlayImage(object, FileLocator.find(UML_BUNDLE, new Path("icons/obj16/LiteralString.gif"), null));
+						return overlayImage(object, FileLocator.find(UML_BUNDLE, new Path("icons/obj16/LiteralString.gif"), null)); //$NON-NLS-1$
 					}
 					return super.getImage(object);
 				}
@@ -1046,7 +1046,7 @@ public class AlternativeUMLItemProviderAdapterFactory extends UMLItemProviderAda
 				@Override
 				public Object getImage(Object object) {
 					if (useAlternativeIcons(object)) {
-						return overlayImage(object, FileLocator.find(UML_BUNDLE, new Path("icons/obj16/LiteralBoolean.gif"), null));
+						return overlayImage(object, FileLocator.find(UML_BUNDLE, new Path("icons/obj16/LiteralBoolean.gif"), null)); //$NON-NLS-1$
 					}
 					return super.getImage(object);
 				}
@@ -1062,7 +1062,7 @@ public class AlternativeUMLItemProviderAdapterFactory extends UMLItemProviderAda
 				@Override
 				public Object getImage(Object object) {
 					if (useAlternativeIcons(object)) {
-						return overlayImage(object, FileLocator.find(UML_BUNDLE, new Path("icons/obj16/LiteralNull.gif"), null));
+						return overlayImage(object, FileLocator.find(UML_BUNDLE, new Path("icons/obj16/LiteralNull.gif"), null)); //$NON-NLS-1$
 					}
 					return super.getImage(object);
 				}
@@ -1078,7 +1078,7 @@ public class AlternativeUMLItemProviderAdapterFactory extends UMLItemProviderAda
 				@Override
 				public Object getImage(Object object) {
 					if (useAlternativeIcons(object)) {
-						return overlayImage(object, FileLocator.find(UML_BUNDLE, new Path("icons/obj16/Slot.gif"), null));
+						return overlayImage(object, FileLocator.find(UML_BUNDLE, new Path("icons/obj16/Slot.gif"), null)); //$NON-NLS-1$
 					}
 					return super.getImage(object);
 				}
@@ -1094,7 +1094,7 @@ public class AlternativeUMLItemProviderAdapterFactory extends UMLItemProviderAda
 				@Override
 				public Object getImage(Object object) {
 					if (useAlternativeIcons(object)) {
-						return overlayImage(object, FileLocator.find(UML_BUNDLE, new Path("icons/obj16/InstanceSpecification.gif"), null));
+						return overlayImage(object, FileLocator.find(UML_BUNDLE, new Path("icons/obj16/InstanceSpecification.gif"), null)); //$NON-NLS-1$
 					}
 					return super.getImage(object);
 				}
@@ -1110,7 +1110,7 @@ public class AlternativeUMLItemProviderAdapterFactory extends UMLItemProviderAda
 				@Override
 				public Object getImage(Object object) {
 					if (useAlternativeIcons(object)) {
-						return overlayImage(object, FileLocator.find(UML_BUNDLE, new Path("icons/obj16/Enumeration.gif"), null));
+						return overlayImage(object, FileLocator.find(UML_BUNDLE, new Path("icons/obj16/Enumeration.gif"), null)); //$NON-NLS-1$
 					}
 					return super.getImage(object);
 				}
@@ -1126,7 +1126,7 @@ public class AlternativeUMLItemProviderAdapterFactory extends UMLItemProviderAda
 				@Override
 				public Object getImage(Object object) {
 					if (useAlternativeIcons(object)) {
-						return overlayImage(object, FileLocator.find(UML_BUNDLE, new Path("icons/obj16/EnumerationLiteral.gif"), null));
+						return overlayImage(object, FileLocator.find(UML_BUNDLE, new Path("icons/obj16/EnumerationLiteral.gif"), null)); //$NON-NLS-1$
 					}
 					return super.getImage(object);
 				}
@@ -1142,7 +1142,7 @@ public class AlternativeUMLItemProviderAdapterFactory extends UMLItemProviderAda
 				@Override
 				public Object getImage(Object object) {
 					if (useAlternativeIcons(object)) {
-						return overlayImage(object, FileLocator.find(UML_BUNDLE, new Path("icons/obj16/PrimitiveType.gif"), null));
+						return overlayImage(object, FileLocator.find(UML_BUNDLE, new Path("icons/obj16/PrimitiveType.gif"), null)); //$NON-NLS-1$
 					}
 					return super.getImage(object);
 				}
@@ -1158,7 +1158,7 @@ public class AlternativeUMLItemProviderAdapterFactory extends UMLItemProviderAda
 				@Override
 				public Object getImage(Object object) {
 					if (useAlternativeIcons(object)) {
-						return overlayImage(object, FileLocator.find(UML_BUNDLE, new Path("icons/obj16/InstanceValue.gif"), null));
+						return overlayImage(object, FileLocator.find(UML_BUNDLE, new Path("icons/obj16/InstanceValue.gif"), null)); //$NON-NLS-1$
 					}
 					return super.getImage(object);
 				}
@@ -1174,7 +1174,7 @@ public class AlternativeUMLItemProviderAdapterFactory extends UMLItemProviderAda
 				@Override
 				public Object getImage(Object object) {
 					if (useAlternativeIcons(object)) {
-						return overlayImage(object, FileLocator.find(UML_BUNDLE, new Path("icons/obj16/LiteralUnlimitedNatural.gif"), null));
+						return overlayImage(object, FileLocator.find(UML_BUNDLE, new Path("icons/obj16/LiteralUnlimitedNatural.gif"), null)); //$NON-NLS-1$
 					}
 					return super.getImage(object);
 				}
@@ -1190,7 +1190,7 @@ public class AlternativeUMLItemProviderAdapterFactory extends UMLItemProviderAda
 				@Override
 				public Object getImage(Object object) {
 					if (useAlternativeIcons(object)) {
-						return overlayImage(object, FileLocator.find(UML_BUNDLE, new Path("icons/obj16/OpaqueBehavior.gif"), null));
+						return overlayImage(object, FileLocator.find(UML_BUNDLE, new Path("icons/obj16/OpaqueBehavior.gif"), null)); //$NON-NLS-1$
 					}
 					return super.getImage(object);
 				}
@@ -1206,7 +1206,7 @@ public class AlternativeUMLItemProviderAdapterFactory extends UMLItemProviderAda
 				@Override
 				public Object getImage(Object object) {
 					if (useAlternativeIcons(object)) {
-						return overlayImage(object, FileLocator.find(UML_BUNDLE, new Path("icons/obj16/FunctionBehavior.gif"), null));
+						return overlayImage(object, FileLocator.find(UML_BUNDLE, new Path("icons/obj16/FunctionBehavior.gif"), null)); //$NON-NLS-1$
 					}
 					return super.getImage(object);
 				}
@@ -1222,7 +1222,7 @@ public class AlternativeUMLItemProviderAdapterFactory extends UMLItemProviderAda
 				@Override
 				public Object getImage(Object object) {
 					if (useAlternativeIcons(object)) {
-						return overlayImage(object, FileLocator.find(UML_BUNDLE, new Path("icons/obj16/Actor.gif"), null));
+						return overlayImage(object, FileLocator.find(UML_BUNDLE, new Path("icons/obj16/Actor.gif"), null)); //$NON-NLS-1$
 					}
 					return super.getImage(object);
 				}
@@ -1238,7 +1238,7 @@ public class AlternativeUMLItemProviderAdapterFactory extends UMLItemProviderAda
 				@Override
 				public Object getImage(Object object) {
 					if (useAlternativeIcons(object)) {
-						return overlayImage(object, FileLocator.find(UML_BUNDLE, new Path("icons/obj16/Usage.gif"), null));
+						return overlayImage(object, FileLocator.find(UML_BUNDLE, new Path("icons/obj16/Usage.gif"), null)); //$NON-NLS-1$
 					}
 					return super.getImage(object);
 				}
@@ -1254,7 +1254,7 @@ public class AlternativeUMLItemProviderAdapterFactory extends UMLItemProviderAda
 				@Override
 				public Object getImage(Object object) {
 					if (useAlternativeIcons(object)) {
-						return overlayImage(object, FileLocator.find(UML_BUNDLE, new Path("icons/obj16/Message.gif"), null));
+						return overlayImage(object, FileLocator.find(UML_BUNDLE, new Path("icons/obj16/Message.gif"), null)); //$NON-NLS-1$
 					}
 					return super.getImage(object);
 				}
@@ -1270,7 +1270,7 @@ public class AlternativeUMLItemProviderAdapterFactory extends UMLItemProviderAda
 				@Override
 				public Object getImage(Object object) {
 					if (useAlternativeIcons(object)) {
-						return overlayImage(object, FileLocator.find(UML_BUNDLE, new Path("icons/obj16/Interaction.gif"), null));
+						return overlayImage(object, FileLocator.find(UML_BUNDLE, new Path("icons/obj16/Interaction.gif"), null)); //$NON-NLS-1$
 					}
 					return super.getImage(object);
 				}
@@ -1286,7 +1286,7 @@ public class AlternativeUMLItemProviderAdapterFactory extends UMLItemProviderAda
 				@Override
 				public Object getImage(Object object) {
 					if (useAlternativeIcons(object)) {
-						return overlayImage(object, FileLocator.find(UML_BUNDLE, new Path("icons/obj16/Lifeline.gif"), null));
+						return overlayImage(object, FileLocator.find(UML_BUNDLE, new Path("icons/obj16/Lifeline.gif"), null)); //$NON-NLS-1$
 					}
 					return super.getImage(object);
 				}
@@ -1302,7 +1302,7 @@ public class AlternativeUMLItemProviderAdapterFactory extends UMLItemProviderAda
 				@Override
 				public Object getImage(Object object) {
 					if (useAlternativeIcons(object)) {
-						return overlayImage(object, FileLocator.find(UML_BUNDLE, new Path("icons/obj16/PartDecomposition.gif"), null));
+						return overlayImage(object, FileLocator.find(UML_BUNDLE, new Path("icons/obj16/PartDecomposition.gif"), null)); //$NON-NLS-1$
 					}
 					return super.getImage(object);
 				}
@@ -1318,7 +1318,7 @@ public class AlternativeUMLItemProviderAdapterFactory extends UMLItemProviderAda
 				@Override
 				public Object getImage(Object object) {
 					if (useAlternativeIcons(object)) {
-						return overlayImage(object, FileLocator.find(UML_BUNDLE, new Path("icons/obj16/InteractionUse.gif"), null));
+						return overlayImage(object, FileLocator.find(UML_BUNDLE, new Path("icons/obj16/InteractionUse.gif"), null)); //$NON-NLS-1$
 					}
 					return super.getImage(object);
 				}
@@ -1334,7 +1334,7 @@ public class AlternativeUMLItemProviderAdapterFactory extends UMLItemProviderAda
 				@Override
 				public Object getImage(Object object) {
 					if (useAlternativeIcons(object)) {
-						return overlayImage(object, FileLocator.find(UML_BUNDLE, new Path("icons/obj16/Gate.gif"), null));
+						return overlayImage(object, FileLocator.find(UML_BUNDLE, new Path("icons/obj16/Gate.gif"), null)); //$NON-NLS-1$
 					}
 					return super.getImage(object);
 				}
@@ -1350,7 +1350,7 @@ public class AlternativeUMLItemProviderAdapterFactory extends UMLItemProviderAda
 				@Override
 				public Object getImage(Object object) {
 					if (useAlternativeIcons(object)) {
-						return overlayImage(object, FileLocator.find(UML_BUNDLE, new Path("icons/obj16/Activity.gif"), null));
+						return overlayImage(object, FileLocator.find(UML_BUNDLE, new Path("icons/obj16/Activity.gif"), null)); //$NON-NLS-1$
 					}
 					return super.getImage(object);
 				}
@@ -1366,7 +1366,7 @@ public class AlternativeUMLItemProviderAdapterFactory extends UMLItemProviderAda
 				@Override
 				public Object getImage(Object object) {
 					if (useAlternativeIcons(object)) {
-						return overlayImage(object, FileLocator.find(UML_BUNDLE, new Path("icons/obj16/ActivityPartition.gif"), null));
+						return overlayImage(object, FileLocator.find(UML_BUNDLE, new Path("icons/obj16/ActivityPartition.gif"), null)); //$NON-NLS-1$
 					}
 					return super.getImage(object);
 				}
@@ -1382,7 +1382,7 @@ public class AlternativeUMLItemProviderAdapterFactory extends UMLItemProviderAda
 				@Override
 				public Object getImage(Object object) {
 					if (useAlternativeIcons(object)) {
-						return overlayImage(object, FileLocator.find(UML_BUNDLE, new Path("icons/obj16/StructuredActivityNode.gif"), null));
+						return overlayImage(object, FileLocator.find(UML_BUNDLE, new Path("icons/obj16/StructuredActivityNode.gif"), null)); //$NON-NLS-1$
 					}
 					return super.getImage(object);
 				}
@@ -1398,7 +1398,7 @@ public class AlternativeUMLItemProviderAdapterFactory extends UMLItemProviderAda
 				@Override
 				public Object getImage(Object object) {
 					if (useAlternativeIcons(object)) {
-						return overlayImage(object, FileLocator.find(UML_BUNDLE, new Path("icons/obj16/Variable.gif"), null));
+						return overlayImage(object, FileLocator.find(UML_BUNDLE, new Path("icons/obj16/Variable.gif"), null)); //$NON-NLS-1$
 					}
 					return super.getImage(object);
 				}
@@ -1414,7 +1414,7 @@ public class AlternativeUMLItemProviderAdapterFactory extends UMLItemProviderAda
 				@Override
 				public Object getImage(Object object) {
 					if (useAlternativeIcons(object)) {
-						return overlayImage(object, FileLocator.find(UML_BUNDLE, new Path("icons/obj16/InterruptibleActivityRegion.gif"), null));
+						return overlayImage(object, FileLocator.find(UML_BUNDLE, new Path("icons/obj16/InterruptibleActivityRegion.gif"), null)); //$NON-NLS-1$
 					}
 					return super.getImage(object);
 				}
@@ -1430,7 +1430,7 @@ public class AlternativeUMLItemProviderAdapterFactory extends UMLItemProviderAda
 				@Override
 				public Object getImage(Object object) {
 					if (useAlternativeIcons(object)) {
-						return overlayImage(object, FileLocator.find(UML_BUNDLE, new Path("icons/obj16/ExceptionHandler.gif"), null));
+						return overlayImage(object, FileLocator.find(UML_BUNDLE, new Path("icons/obj16/ExceptionHandler.gif"), null)); //$NON-NLS-1$
 					}
 					return super.getImage(object);
 				}
@@ -1446,7 +1446,7 @@ public class AlternativeUMLItemProviderAdapterFactory extends UMLItemProviderAda
 				@Override
 				public Object getImage(Object object) {
 					if (useAlternativeIcons(object)) {
-						return overlayImage(object, FileLocator.find(UML_BUNDLE, new Path("icons/obj16/OutputPin.gif"), null));
+						return overlayImage(object, FileLocator.find(UML_BUNDLE, new Path("icons/obj16/OutputPin.gif"), null)); //$NON-NLS-1$
 					}
 					return super.getImage(object);
 				}
@@ -1462,7 +1462,7 @@ public class AlternativeUMLItemProviderAdapterFactory extends UMLItemProviderAda
 				@Override
 				public Object getImage(Object object) {
 					if (useAlternativeIcons(object)) {
-						return overlayImage(object, FileLocator.find(UML_BUNDLE, new Path("icons/obj16/Pin.gif"), null));
+						return overlayImage(object, FileLocator.find(UML_BUNDLE, new Path("icons/obj16/Pin.gif"), null)); //$NON-NLS-1$
 					}
 					return super.getImage(object);
 				}
@@ -1478,7 +1478,7 @@ public class AlternativeUMLItemProviderAdapterFactory extends UMLItemProviderAda
 				@Override
 				public Object getImage(Object object) {
 					if (useAlternativeIcons(object)) {
-						return overlayImage(object, FileLocator.find(UML_BUNDLE, new Path("icons/obj16/InputPin.gif"), null));
+						return overlayImage(object, FileLocator.find(UML_BUNDLE, new Path("icons/obj16/InputPin.gif"), null)); //$NON-NLS-1$
 					}
 					return super.getImage(object);
 				}
@@ -1494,7 +1494,7 @@ public class AlternativeUMLItemProviderAdapterFactory extends UMLItemProviderAda
 				@Override
 				public Object getImage(Object object) {
 					if (useAlternativeIcons(object)) {
-						return overlayImage(object, FileLocator.find(UML_BUNDLE, new Path("icons/obj16/GeneralOrdering.gif"), null));
+						return overlayImage(object, FileLocator.find(UML_BUNDLE, new Path("icons/obj16/GeneralOrdering.gif"), null)); //$NON-NLS-1$
 					}
 					return super.getImage(object);
 				}
@@ -1510,7 +1510,7 @@ public class AlternativeUMLItemProviderAdapterFactory extends UMLItemProviderAda
 				@Override
 				public Object getImage(Object object) {
 					if (useAlternativeIcons(object)) {
-						return overlayImage(object, FileLocator.find(UML_BUNDLE, new Path("icons/obj16/OccurrenceSpecification.gif"), null));
+						return overlayImage(object, FileLocator.find(UML_BUNDLE, new Path("icons/obj16/OccurrenceSpecification.gif"), null)); //$NON-NLS-1$
 					}
 					return super.getImage(object);
 				}
@@ -1526,7 +1526,7 @@ public class AlternativeUMLItemProviderAdapterFactory extends UMLItemProviderAda
 				@Override
 				public Object getImage(Object object) {
 					if (useAlternativeIcons(object)) {
-						return overlayImage(object, FileLocator.find(UML_BUNDLE, new Path("icons/obj16/InteractionOperand.gif"), null));
+						return overlayImage(object, FileLocator.find(UML_BUNDLE, new Path("icons/obj16/InteractionOperand.gif"), null)); //$NON-NLS-1$
 					}
 					return super.getImage(object);
 				}
@@ -1542,7 +1542,7 @@ public class AlternativeUMLItemProviderAdapterFactory extends UMLItemProviderAda
 				@Override
 				public Object getImage(Object object) {
 					if (useAlternativeIcons(object)) {
-						return overlayImage(object, FileLocator.find(UML_BUNDLE, new Path("icons/obj16/InteractionConstraint.gif"), null));
+						return overlayImage(object, FileLocator.find(UML_BUNDLE, new Path("icons/obj16/InteractionConstraint.gif"), null)); //$NON-NLS-1$
 					}
 					return super.getImage(object);
 				}
@@ -1558,7 +1558,7 @@ public class AlternativeUMLItemProviderAdapterFactory extends UMLItemProviderAda
 				@Override
 				public Object getImage(Object object) {
 					if (useAlternativeIcons(object)) {
-						return overlayImage(object, FileLocator.find(UML_BUNDLE, new Path("icons/obj16/ExecutionOccurrenceSpecification.gif"), null));
+						return overlayImage(object, FileLocator.find(UML_BUNDLE, new Path("icons/obj16/ExecutionOccurrenceSpecification.gif"), null)); //$NON-NLS-1$
 					}
 					return super.getImage(object);
 				}
@@ -1574,7 +1574,7 @@ public class AlternativeUMLItemProviderAdapterFactory extends UMLItemProviderAda
 				@Override
 				public Object getImage(Object object) {
 					if (useAlternativeIcons(object)) {
-						return overlayImage(object, FileLocator.find(UML_BUNDLE, new Path("icons/obj16/ExecutionEvent.gif"), null));
+						return overlayImage(object, FileLocator.find(UML_BUNDLE, new Path("icons/obj16/ExecutionEvent.gif"), null)); //$NON-NLS-1$
 					}
 					return super.getImage(object);
 				}
@@ -1590,7 +1590,7 @@ public class AlternativeUMLItemProviderAdapterFactory extends UMLItemProviderAda
 				@Override
 				public Object getImage(Object object) {
 					if (useAlternativeIcons(object)) {
-						return overlayImage(object, FileLocator.find(UML_BUNDLE, new Path("icons/obj16/StateInvariant.gif"), null));
+						return overlayImage(object, FileLocator.find(UML_BUNDLE, new Path("icons/obj16/StateInvariant.gif"), null)); //$NON-NLS-1$
 					}
 					return super.getImage(object);
 				}
@@ -1606,7 +1606,7 @@ public class AlternativeUMLItemProviderAdapterFactory extends UMLItemProviderAda
 				@Override
 				public Object getImage(Object object) {
 					if (useAlternativeIcons(object)) {
-						return overlayImage(object, FileLocator.find(UML_BUNDLE, new Path("icons/obj16/ActionExecutionSpecification.gif"), null));
+						return overlayImage(object, FileLocator.find(UML_BUNDLE, new Path("icons/obj16/ActionExecutionSpecification.gif"), null)); //$NON-NLS-1$
 					}
 					return super.getImage(object);
 				}
@@ -1622,7 +1622,7 @@ public class AlternativeUMLItemProviderAdapterFactory extends UMLItemProviderAda
 				@Override
 				public Object getImage(Object object) {
 					if (useAlternativeIcons(object)) {
-						return overlayImage(object, FileLocator.find(UML_BUNDLE, new Path("icons/obj16/BehaviorExecutionSpecification.gif"), null));
+						return overlayImage(object, FileLocator.find(UML_BUNDLE, new Path("icons/obj16/BehaviorExecutionSpecification.gif"), null)); //$NON-NLS-1$
 					}
 					return super.getImage(object);
 				}
@@ -1638,7 +1638,7 @@ public class AlternativeUMLItemProviderAdapterFactory extends UMLItemProviderAda
 				@Override
 				public Object getImage(Object object) {
 					if (useAlternativeIcons(object)) {
-						return overlayImage(object, FileLocator.find(UML_BUNDLE, new Path("icons/obj16/CreationEvent.gif"), null));
+						return overlayImage(object, FileLocator.find(UML_BUNDLE, new Path("icons/obj16/CreationEvent.gif"), null)); //$NON-NLS-1$
 					}
 					return super.getImage(object);
 				}
@@ -1654,7 +1654,7 @@ public class AlternativeUMLItemProviderAdapterFactory extends UMLItemProviderAda
 				@Override
 				public Object getImage(Object object) {
 					if (useAlternativeIcons(object)) {
-						return overlayImage(object, FileLocator.find(UML_BUNDLE, new Path("icons/obj16/DestructionEvent.gif"), null));
+						return overlayImage(object, FileLocator.find(UML_BUNDLE, new Path("icons/obj16/DestructionEvent.gif"), null)); //$NON-NLS-1$
 					}
 					return super.getImage(object);
 				}
@@ -1670,7 +1670,7 @@ public class AlternativeUMLItemProviderAdapterFactory extends UMLItemProviderAda
 				@Override
 				public Object getImage(Object object) {
 					if (useAlternativeIcons(object)) {
-						return overlayImage(object, FileLocator.find(UML_BUNDLE, new Path("icons/obj16/SendOperationEvent.gif"), null));
+						return overlayImage(object, FileLocator.find(UML_BUNDLE, new Path("icons/obj16/SendOperationEvent.gif"), null)); //$NON-NLS-1$
 					}
 					return super.getImage(object);
 				}
@@ -1686,7 +1686,7 @@ public class AlternativeUMLItemProviderAdapterFactory extends UMLItemProviderAda
 				@Override
 				public Object getImage(Object object) {
 					if (useAlternativeIcons(object)) {
-						return overlayImage(object, FileLocator.find(UML_BUNDLE, new Path("icons/obj16/SendSignalEvent.gif"), null));
+						return overlayImage(object, FileLocator.find(UML_BUNDLE, new Path("icons/obj16/SendSignalEvent.gif"), null)); //$NON-NLS-1$
 					}
 					return super.getImage(object);
 				}
@@ -1702,7 +1702,7 @@ public class AlternativeUMLItemProviderAdapterFactory extends UMLItemProviderAda
 				@Override
 				public Object getImage(Object object) {
 					if (useAlternativeIcons(object)) {
-						return overlayImage(object, FileLocator.find(UML_BUNDLE, new Path("icons/obj16/MessageOccurrenceSpecification.gif"), null));
+						return overlayImage(object, FileLocator.find(UML_BUNDLE, new Path("icons/obj16/MessageOccurrenceSpecification.gif"), null)); //$NON-NLS-1$
 					}
 					return super.getImage(object);
 				}
@@ -1718,7 +1718,7 @@ public class AlternativeUMLItemProviderAdapterFactory extends UMLItemProviderAda
 				@Override
 				public Object getImage(Object object) {
 					if (useAlternativeIcons(object)) {
-						return overlayImage(object, FileLocator.find(UML_BUNDLE, new Path("icons/obj16/ReceiveOperationEvent.gif"), null));
+						return overlayImage(object, FileLocator.find(UML_BUNDLE, new Path("icons/obj16/ReceiveOperationEvent.gif"), null)); //$NON-NLS-1$
 					}
 					return super.getImage(object);
 				}
@@ -1734,7 +1734,7 @@ public class AlternativeUMLItemProviderAdapterFactory extends UMLItemProviderAda
 				@Override
 				public Object getImage(Object object) {
 					if (useAlternativeIcons(object)) {
-						return overlayImage(object, FileLocator.find(UML_BUNDLE, new Path("icons/obj16/ReceiveSignalEvent.gif"), null));
+						return overlayImage(object, FileLocator.find(UML_BUNDLE, new Path("icons/obj16/ReceiveSignalEvent.gif"), null)); //$NON-NLS-1$
 					}
 					return super.getImage(object);
 				}
@@ -1750,7 +1750,7 @@ public class AlternativeUMLItemProviderAdapterFactory extends UMLItemProviderAda
 				@Override
 				public Object getImage(Object object) {
 					if (useAlternativeIcons(object)) {
-						return overlayImage(object, FileLocator.find(UML_BUNDLE, new Path("icons/obj16/CombinedFragment.gif"), null));
+						return overlayImage(object, FileLocator.find(UML_BUNDLE, new Path("icons/obj16/CombinedFragment.gif"), null)); //$NON-NLS-1$
 					}
 					return super.getImage(object);
 				}
@@ -1766,7 +1766,7 @@ public class AlternativeUMLItemProviderAdapterFactory extends UMLItemProviderAda
 				@Override
 				public Object getImage(Object object) {
 					if (useAlternativeIcons(object)) {
-						return overlayImage(object, FileLocator.find(UML_BUNDLE, new Path("icons/obj16/Continuation.gif"), null));
+						return overlayImage(object, FileLocator.find(UML_BUNDLE, new Path("icons/obj16/Continuation.gif"), null)); //$NON-NLS-1$
 					}
 					return super.getImage(object);
 				}
@@ -1782,7 +1782,7 @@ public class AlternativeUMLItemProviderAdapterFactory extends UMLItemProviderAda
 				@Override
 				public Object getImage(Object object) {
 					if (useAlternativeIcons(object)) {
-						return overlayImage(object, FileLocator.find(UML_BUNDLE, new Path("icons/obj16/ConsiderIgnoreFragment.gif"), null));
+						return overlayImage(object, FileLocator.find(UML_BUNDLE, new Path("icons/obj16/ConsiderIgnoreFragment.gif"), null)); //$NON-NLS-1$
 					}
 					return super.getImage(object);
 				}
@@ -1798,7 +1798,7 @@ public class AlternativeUMLItemProviderAdapterFactory extends UMLItemProviderAda
 				@Override
 				public Object getImage(Object object) {
 					if (useAlternativeIcons(object)) {
-						return overlayImage(object, FileLocator.find(UML_BUNDLE, new Path("icons/obj16/CallEvent.gif"), null));
+						return overlayImage(object, FileLocator.find(UML_BUNDLE, new Path("icons/obj16/CallEvent.gif"), null)); //$NON-NLS-1$
 					}
 					return super.getImage(object);
 				}
@@ -1814,7 +1814,7 @@ public class AlternativeUMLItemProviderAdapterFactory extends UMLItemProviderAda
 				@Override
 				public Object getImage(Object object) {
 					if (useAlternativeIcons(object)) {
-						return overlayImage(object, FileLocator.find(UML_BUNDLE, new Path("icons/obj16/ChangeEvent.gif"), null));
+						return overlayImage(object, FileLocator.find(UML_BUNDLE, new Path("icons/obj16/ChangeEvent.gif"), null)); //$NON-NLS-1$
 					}
 					return super.getImage(object);
 				}
@@ -1830,7 +1830,7 @@ public class AlternativeUMLItemProviderAdapterFactory extends UMLItemProviderAda
 				@Override
 				public Object getImage(Object object) {
 					if (useAlternativeIcons(object)) {
-						return overlayImage(object, FileLocator.find(UML_BUNDLE, new Path("icons/obj16/SignalEvent.gif"), null));
+						return overlayImage(object, FileLocator.find(UML_BUNDLE, new Path("icons/obj16/SignalEvent.gif"), null)); //$NON-NLS-1$
 					}
 					return super.getImage(object);
 				}
@@ -1846,7 +1846,7 @@ public class AlternativeUMLItemProviderAdapterFactory extends UMLItemProviderAda
 				@Override
 				public Object getImage(Object object) {
 					if (useAlternativeIcons(object)) {
-						return overlayImage(object, FileLocator.find(UML_BUNDLE, new Path("icons/obj16/AnyReceiveEvent.gif"), null));
+						return overlayImage(object, FileLocator.find(UML_BUNDLE, new Path("icons/obj16/AnyReceiveEvent.gif"), null)); //$NON-NLS-1$
 					}
 					return super.getImage(object);
 				}
@@ -1862,7 +1862,7 @@ public class AlternativeUMLItemProviderAdapterFactory extends UMLItemProviderAda
 				@Override
 				public Object getImage(Object object) {
 					if (useAlternativeIcons(object)) {
-						return overlayImage(object, FileLocator.find(UML_BUNDLE, new Path("icons/obj16/CreateObjectAction.gif"), null));
+						return overlayImage(object, FileLocator.find(UML_BUNDLE, new Path("icons/obj16/CreateObjectAction.gif"), null)); //$NON-NLS-1$
 					}
 					return super.getImage(object);
 				}
@@ -1878,7 +1878,7 @@ public class AlternativeUMLItemProviderAdapterFactory extends UMLItemProviderAda
 				@Override
 				public Object getImage(Object object) {
 					if (useAlternativeIcons(object)) {
-						return overlayImage(object, FileLocator.find(UML_BUNDLE, new Path("icons/obj16/DestroyObjectAction.gif"), null));
+						return overlayImage(object, FileLocator.find(UML_BUNDLE, new Path("icons/obj16/DestroyObjectAction.gif"), null)); //$NON-NLS-1$
 					}
 					return super.getImage(object);
 				}
@@ -1894,7 +1894,7 @@ public class AlternativeUMLItemProviderAdapterFactory extends UMLItemProviderAda
 				@Override
 				public Object getImage(Object object) {
 					if (useAlternativeIcons(object)) {
-						return overlayImage(object, FileLocator.find(UML_BUNDLE, new Path("icons/obj16/TestIdentityAction.gif"), null));
+						return overlayImage(object, FileLocator.find(UML_BUNDLE, new Path("icons/obj16/TestIdentityAction.gif"), null)); //$NON-NLS-1$
 					}
 					return super.getImage(object);
 				}
@@ -1910,7 +1910,7 @@ public class AlternativeUMLItemProviderAdapterFactory extends UMLItemProviderAda
 				@Override
 				public Object getImage(Object object) {
 					if (useAlternativeIcons(object)) {
-						return overlayImage(object, FileLocator.find(UML_BUNDLE, new Path("icons/obj16/ReadSelfAction.gif"), null));
+						return overlayImage(object, FileLocator.find(UML_BUNDLE, new Path("icons/obj16/ReadSelfAction.gif"), null)); //$NON-NLS-1$
 					}
 					return super.getImage(object);
 				}
@@ -1926,7 +1926,7 @@ public class AlternativeUMLItemProviderAdapterFactory extends UMLItemProviderAda
 				@Override
 				public Object getImage(Object object) {
 					if (useAlternativeIcons(object)) {
-						return overlayImage(object, FileLocator.find(UML_BUNDLE, new Path("icons/obj16/ReadStructuralFeatureAction.gif"), null));
+						return overlayImage(object, FileLocator.find(UML_BUNDLE, new Path("icons/obj16/ReadStructuralFeatureAction.gif"), null)); //$NON-NLS-1$
 					}
 					return super.getImage(object);
 				}
@@ -1942,7 +1942,7 @@ public class AlternativeUMLItemProviderAdapterFactory extends UMLItemProviderAda
 				@Override
 				public Object getImage(Object object) {
 					if (useAlternativeIcons(object)) {
-						return overlayImage(object, FileLocator.find(UML_BUNDLE, new Path("icons/obj16/ClearStructuralFeatureAction.gif"), null));
+						return overlayImage(object, FileLocator.find(UML_BUNDLE, new Path("icons/obj16/ClearStructuralFeatureAction.gif"), null)); //$NON-NLS-1$
 					}
 					return super.getImage(object);
 				}
@@ -1958,7 +1958,7 @@ public class AlternativeUMLItemProviderAdapterFactory extends UMLItemProviderAda
 				@Override
 				public Object getImage(Object object) {
 					if (useAlternativeIcons(object)) {
-						return overlayImage(object, FileLocator.find(UML_BUNDLE, new Path("icons/obj16/RemoveStructuralFeatureValueAction.gif"), null));
+						return overlayImage(object, FileLocator.find(UML_BUNDLE, new Path("icons/obj16/RemoveStructuralFeatureValueAction.gif"), null)); //$NON-NLS-1$
 					}
 					return super.getImage(object);
 				}
@@ -1974,7 +1974,7 @@ public class AlternativeUMLItemProviderAdapterFactory extends UMLItemProviderAda
 				@Override
 				public Object getImage(Object object) {
 					if (useAlternativeIcons(object)) {
-						return overlayImage(object, FileLocator.find(UML_BUNDLE, new Path("icons/obj16/AddStructuralFeatureValueAction.gif"), null));
+						return overlayImage(object, FileLocator.find(UML_BUNDLE, new Path("icons/obj16/AddStructuralFeatureValueAction.gif"), null)); //$NON-NLS-1$
 					}
 					return super.getImage(object);
 				}
@@ -1990,7 +1990,7 @@ public class AlternativeUMLItemProviderAdapterFactory extends UMLItemProviderAda
 				@Override
 				public Object getImage(Object object) {
 					if (useAlternativeIcons(object)) {
-						return overlayImage(object, FileLocator.find(UML_BUNDLE, new Path("icons/obj16/LinkEndData.gif"), null));
+						return overlayImage(object, FileLocator.find(UML_BUNDLE, new Path("icons/obj16/LinkEndData.gif"), null)); //$NON-NLS-1$
 					}
 					return super.getImage(object);
 				}
@@ -2006,7 +2006,7 @@ public class AlternativeUMLItemProviderAdapterFactory extends UMLItemProviderAda
 				@Override
 				public Object getImage(Object object) {
 					if (useAlternativeIcons(object)) {
-						return overlayImage(object, FileLocator.find(UML_BUNDLE, new Path("icons/obj16/QualifierValue.gif"), null));
+						return overlayImage(object, FileLocator.find(UML_BUNDLE, new Path("icons/obj16/QualifierValue.gif"), null)); //$NON-NLS-1$
 					}
 					return super.getImage(object);
 				}
@@ -2022,7 +2022,7 @@ public class AlternativeUMLItemProviderAdapterFactory extends UMLItemProviderAda
 				@Override
 				public Object getImage(Object object) {
 					if (useAlternativeIcons(object)) {
-						return overlayImage(object, FileLocator.find(UML_BUNDLE, new Path("icons/obj16/ReadLinkAction.gif"), null));
+						return overlayImage(object, FileLocator.find(UML_BUNDLE, new Path("icons/obj16/ReadLinkAction.gif"), null)); //$NON-NLS-1$
 					}
 					return super.getImage(object);
 				}
@@ -2038,7 +2038,7 @@ public class AlternativeUMLItemProviderAdapterFactory extends UMLItemProviderAda
 				@Override
 				public Object getImage(Object object) {
 					if (useAlternativeIcons(object)) {
-						return overlayImage(object, FileLocator.find(UML_BUNDLE, new Path("icons/obj16/LinkEndCreationData.gif"), null));
+						return overlayImage(object, FileLocator.find(UML_BUNDLE, new Path("icons/obj16/LinkEndCreationData.gif"), null)); //$NON-NLS-1$
 					}
 					return super.getImage(object);
 				}
@@ -2054,7 +2054,7 @@ public class AlternativeUMLItemProviderAdapterFactory extends UMLItemProviderAda
 				@Override
 				public Object getImage(Object object) {
 					if (useAlternativeIcons(object)) {
-						return overlayImage(object, FileLocator.find(UML_BUNDLE, new Path("icons/obj16/CreateLinkAction.gif"), null));
+						return overlayImage(object, FileLocator.find(UML_BUNDLE, new Path("icons/obj16/CreateLinkAction.gif"), null)); //$NON-NLS-1$
 					}
 					return super.getImage(object);
 				}
@@ -2070,7 +2070,7 @@ public class AlternativeUMLItemProviderAdapterFactory extends UMLItemProviderAda
 				@Override
 				public Object getImage(Object object) {
 					if (useAlternativeIcons(object)) {
-						return overlayImage(object, FileLocator.find(UML_BUNDLE, new Path("icons/obj16/DestroyLinkAction.gif"), null));
+						return overlayImage(object, FileLocator.find(UML_BUNDLE, new Path("icons/obj16/DestroyLinkAction.gif"), null)); //$NON-NLS-1$
 					}
 					return super.getImage(object);
 				}
@@ -2086,7 +2086,7 @@ public class AlternativeUMLItemProviderAdapterFactory extends UMLItemProviderAda
 				@Override
 				public Object getImage(Object object) {
 					if (useAlternativeIcons(object)) {
-						return overlayImage(object, FileLocator.find(UML_BUNDLE, new Path("icons/obj16/LinkEndDestructionData.gif"), null));
+						return overlayImage(object, FileLocator.find(UML_BUNDLE, new Path("icons/obj16/LinkEndDestructionData.gif"), null)); //$NON-NLS-1$
 					}
 					return super.getImage(object);
 				}
@@ -2102,7 +2102,7 @@ public class AlternativeUMLItemProviderAdapterFactory extends UMLItemProviderAda
 				@Override
 				public Object getImage(Object object) {
 					if (useAlternativeIcons(object)) {
-						return overlayImage(object, FileLocator.find(UML_BUNDLE, new Path("icons/obj16/ClearAssociationAction.gif"), null));
+						return overlayImage(object, FileLocator.find(UML_BUNDLE, new Path("icons/obj16/ClearAssociationAction.gif"), null)); //$NON-NLS-1$
 					}
 					return super.getImage(object);
 				}
@@ -2118,7 +2118,7 @@ public class AlternativeUMLItemProviderAdapterFactory extends UMLItemProviderAda
 				@Override
 				public Object getImage(Object object) {
 					if (useAlternativeIcons(object)) {
-						return overlayImage(object, FileLocator.find(UML_BUNDLE, new Path("icons/obj16/BroadcastSignalAction.gif"), null));
+						return overlayImage(object, FileLocator.find(UML_BUNDLE, new Path("icons/obj16/BroadcastSignalAction.gif"), null)); //$NON-NLS-1$
 					}
 					return super.getImage(object);
 				}
@@ -2134,7 +2134,7 @@ public class AlternativeUMLItemProviderAdapterFactory extends UMLItemProviderAda
 				@Override
 				public Object getImage(Object object) {
 					if (useAlternativeIcons(object)) {
-						return overlayImage(object, FileLocator.find(UML_BUNDLE, new Path("icons/obj16/SendObjectAction.gif"), null));
+						return overlayImage(object, FileLocator.find(UML_BUNDLE, new Path("icons/obj16/SendObjectAction.gif"), null)); //$NON-NLS-1$
 					}
 					return super.getImage(object);
 				}
@@ -2150,7 +2150,7 @@ public class AlternativeUMLItemProviderAdapterFactory extends UMLItemProviderAda
 				@Override
 				public Object getImage(Object object) {
 					if (useAlternativeIcons(object)) {
-						return overlayImage(object, FileLocator.find(UML_BUNDLE, new Path("icons/obj16/ValueSpecificationAction.gif"), null));
+						return overlayImage(object, FileLocator.find(UML_BUNDLE, new Path("icons/obj16/ValueSpecificationAction.gif"), null)); //$NON-NLS-1$
 					}
 					return super.getImage(object);
 				}
@@ -2166,7 +2166,7 @@ public class AlternativeUMLItemProviderAdapterFactory extends UMLItemProviderAda
 				@Override
 				public Object getImage(Object object) {
 					if (useAlternativeIcons(object)) {
-						return overlayImage(object, FileLocator.find(UML_BUNDLE, new Path("icons/obj16/TimeExpression.gif"), null));
+						return overlayImage(object, FileLocator.find(UML_BUNDLE, new Path("icons/obj16/TimeExpression.gif"), null)); //$NON-NLS-1$
 					}
 					return super.getImage(object);
 				}
@@ -2182,7 +2182,7 @@ public class AlternativeUMLItemProviderAdapterFactory extends UMLItemProviderAda
 				@Override
 				public Object getImage(Object object) {
 					if (useAlternativeIcons(object)) {
-						return overlayImage(object, FileLocator.find(UML_BUNDLE, new Path("icons/obj16/Duration.gif"), null));
+						return overlayImage(object, FileLocator.find(UML_BUNDLE, new Path("icons/obj16/Duration.gif"), null)); //$NON-NLS-1$
 					}
 					return super.getImage(object);
 				}
@@ -2198,7 +2198,7 @@ public class AlternativeUMLItemProviderAdapterFactory extends UMLItemProviderAda
 				@Override
 				public Object getImage(Object object) {
 					if (useAlternativeIcons(object)) {
-						return overlayImage(object, FileLocator.find(UML_BUNDLE, new Path("icons/obj16/ValuePin.gif"), null));
+						return overlayImage(object, FileLocator.find(UML_BUNDLE, new Path("icons/obj16/ValuePin.gif"), null)); //$NON-NLS-1$
 					}
 					return super.getImage(object);
 				}
@@ -2214,7 +2214,7 @@ public class AlternativeUMLItemProviderAdapterFactory extends UMLItemProviderAda
 				@Override
 				public Object getImage(Object object) {
 					if (useAlternativeIcons(object)) {
-						return overlayImage(object, FileLocator.find(UML_BUNDLE, new Path("icons/obj16/DurationInterval.gif"), null));
+						return overlayImage(object, FileLocator.find(UML_BUNDLE, new Path("icons/obj16/DurationInterval.gif"), null)); //$NON-NLS-1$
 					}
 					return super.getImage(object);
 				}
@@ -2230,7 +2230,7 @@ public class AlternativeUMLItemProviderAdapterFactory extends UMLItemProviderAda
 				@Override
 				public Object getImage(Object object) {
 					if (useAlternativeIcons(object)) {
-						return overlayImage(object, FileLocator.find(UML_BUNDLE, new Path("icons/obj16/Interval.gif"), null));
+						return overlayImage(object, FileLocator.find(UML_BUNDLE, new Path("icons/obj16/Interval.gif"), null)); //$NON-NLS-1$
 					}
 					return super.getImage(object);
 				}
@@ -2246,7 +2246,7 @@ public class AlternativeUMLItemProviderAdapterFactory extends UMLItemProviderAda
 				@Override
 				public Object getImage(Object object) {
 					if (useAlternativeIcons(object)) {
-						return overlayImage(object, FileLocator.find(UML_BUNDLE, new Path("icons/obj16/TimeConstraint.gif"), null));
+						return overlayImage(object, FileLocator.find(UML_BUNDLE, new Path("icons/obj16/TimeConstraint.gif"), null)); //$NON-NLS-1$
 					}
 					return super.getImage(object);
 				}
@@ -2262,7 +2262,7 @@ public class AlternativeUMLItemProviderAdapterFactory extends UMLItemProviderAda
 				@Override
 				public Object getImage(Object object) {
 					if (useAlternativeIcons(object)) {
-						return overlayImage(object, FileLocator.find(UML_BUNDLE, new Path("icons/obj16/IntervalConstraint.gif"), null));
+						return overlayImage(object, FileLocator.find(UML_BUNDLE, new Path("icons/obj16/IntervalConstraint.gif"), null)); //$NON-NLS-1$
 					}
 					return super.getImage(object);
 				}
@@ -2278,7 +2278,7 @@ public class AlternativeUMLItemProviderAdapterFactory extends UMLItemProviderAda
 				@Override
 				public Object getImage(Object object) {
 					if (useAlternativeIcons(object)) {
-						return overlayImage(object, FileLocator.find(UML_BUNDLE, new Path("icons/obj16/TimeInterval.gif"), null));
+						return overlayImage(object, FileLocator.find(UML_BUNDLE, new Path("icons/obj16/TimeInterval.gif"), null)); //$NON-NLS-1$
 					}
 					return super.getImage(object);
 				}
@@ -2294,7 +2294,7 @@ public class AlternativeUMLItemProviderAdapterFactory extends UMLItemProviderAda
 				@Override
 				public Object getImage(Object object) {
 					if (useAlternativeIcons(object)) {
-						return overlayImage(object, FileLocator.find(UML_BUNDLE, new Path("icons/obj16/DurationConstraint.gif"), null));
+						return overlayImage(object, FileLocator.find(UML_BUNDLE, new Path("icons/obj16/DurationConstraint.gif"), null)); //$NON-NLS-1$
 					}
 					return super.getImage(object);
 				}
@@ -2310,7 +2310,7 @@ public class AlternativeUMLItemProviderAdapterFactory extends UMLItemProviderAda
 				@Override
 				public Object getImage(Object object) {
 					if (useAlternativeIcons(object)) {
-						return overlayImage(object, FileLocator.find(UML_BUNDLE, new Path("icons/obj16/TimeObservation.gif"), null));
+						return overlayImage(object, FileLocator.find(UML_BUNDLE, new Path("icons/obj16/TimeObservation.gif"), null)); //$NON-NLS-1$
 					}
 					return super.getImage(object);
 				}
@@ -2326,7 +2326,7 @@ public class AlternativeUMLItemProviderAdapterFactory extends UMLItemProviderAda
 				@Override
 				public Object getImage(Object object) {
 					if (useAlternativeIcons(object)) {
-						return overlayImage(object, FileLocator.find(UML_BUNDLE, new Path("icons/obj16/DurationObservation.gif"), null));
+						return overlayImage(object, FileLocator.find(UML_BUNDLE, new Path("icons/obj16/DurationObservation.gif"), null)); //$NON-NLS-1$
 					}
 					return super.getImage(object);
 				}
@@ -2342,7 +2342,7 @@ public class AlternativeUMLItemProviderAdapterFactory extends UMLItemProviderAda
 				@Override
 				public Object getImage(Object object) {
 					if (useAlternativeIcons(object)) {
-						return overlayImage(object, FileLocator.find(UML_BUNDLE, new Path("icons/obj16/OpaqueAction.gif"), null));
+						return overlayImage(object, FileLocator.find(UML_BUNDLE, new Path("icons/obj16/OpaqueAction.gif"), null)); //$NON-NLS-1$
 					}
 					return super.getImage(object);
 				}
@@ -2358,7 +2358,7 @@ public class AlternativeUMLItemProviderAdapterFactory extends UMLItemProviderAda
 				@Override
 				public Object getImage(Object object) {
 					if (useAlternativeIcons(object)) {
-						return overlayImage(object, FileLocator.find(UML_BUNDLE, new Path("icons/obj16/SendSignalAction.gif"), null));
+						return overlayImage(object, FileLocator.find(UML_BUNDLE, new Path("icons/obj16/SendSignalAction.gif"), null)); //$NON-NLS-1$
 					}
 					return super.getImage(object);
 				}
@@ -2374,7 +2374,7 @@ public class AlternativeUMLItemProviderAdapterFactory extends UMLItemProviderAda
 				@Override
 				public Object getImage(Object object) {
 					if (useAlternativeIcons(object)) {
-						return overlayImage(object, FileLocator.find(UML_BUNDLE, new Path("icons/obj16/CallOperationAction.gif"), null));
+						return overlayImage(object, FileLocator.find(UML_BUNDLE, new Path("icons/obj16/CallOperationAction.gif"), null)); //$NON-NLS-1$
 					}
 					return super.getImage(object);
 				}
@@ -2390,7 +2390,7 @@ public class AlternativeUMLItemProviderAdapterFactory extends UMLItemProviderAda
 				@Override
 				public Object getImage(Object object) {
 					if (useAlternativeIcons(object)) {
-						return overlayImage(object, FileLocator.find(UML_BUNDLE, new Path("icons/obj16/CallBehaviorAction.gif"), null));
+						return overlayImage(object, FileLocator.find(UML_BUNDLE, new Path("icons/obj16/CallBehaviorAction.gif"), null)); //$NON-NLS-1$
 					}
 					return super.getImage(object);
 				}
@@ -2406,7 +2406,7 @@ public class AlternativeUMLItemProviderAdapterFactory extends UMLItemProviderAda
 				@Override
 				public Object getImage(Object object) {
 					if (useAlternativeIcons(object)) {
-						return overlayImage(object, FileLocator.find(UML_BUNDLE, new Path("icons/obj16/InformationItem.gif"), null));
+						return overlayImage(object, FileLocator.find(UML_BUNDLE, new Path("icons/obj16/InformationItem.gif"), null)); //$NON-NLS-1$
 					}
 					return super.getImage(object);
 				}
@@ -2422,7 +2422,7 @@ public class AlternativeUMLItemProviderAdapterFactory extends UMLItemProviderAda
 				@Override
 				public Object getImage(Object object) {
 					if (useAlternativeIcons(object)) {
-						return overlayImage(object, FileLocator.find(UML_BUNDLE, new Path("icons/obj16/InformationFlow.gif"), null));
+						return overlayImage(object, FileLocator.find(UML_BUNDLE, new Path("icons/obj16/InformationFlow.gif"), null)); //$NON-NLS-1$
 					}
 					return super.getImage(object);
 				}
@@ -2438,7 +2438,7 @@ public class AlternativeUMLItemProviderAdapterFactory extends UMLItemProviderAda
 				@Override
 				public Object getImage(Object object) {
 					if (useAlternativeIcons(object)) {
-						return overlayImage(object, FileLocator.find(UML_BUNDLE, new Path("icons/obj16/Model.gif"), null));
+						return overlayImage(object, FileLocator.find(UML_BUNDLE, new Path("icons/obj16/Model.gif"), null)); //$NON-NLS-1$
 					}
 					return super.getImage(object);
 				}
@@ -2454,7 +2454,7 @@ public class AlternativeUMLItemProviderAdapterFactory extends UMLItemProviderAda
 				@Override
 				public Object getImage(Object object) {
 					if (useAlternativeIcons(object)) {
-						return overlayImage(object, FileLocator.find(UML_BUNDLE, new Path("icons/obj16/ReadVariableAction.gif"), null));
+						return overlayImage(object, FileLocator.find(UML_BUNDLE, new Path("icons/obj16/ReadVariableAction.gif"), null)); //$NON-NLS-1$
 					}
 					return super.getImage(object);
 				}
@@ -2470,7 +2470,7 @@ public class AlternativeUMLItemProviderAdapterFactory extends UMLItemProviderAda
 				@Override
 				public Object getImage(Object object) {
 					if (useAlternativeIcons(object)) {
-						return overlayImage(object, FileLocator.find(UML_BUNDLE, new Path("icons/obj16/ClearVariableAction.gif"), null));
+						return overlayImage(object, FileLocator.find(UML_BUNDLE, new Path("icons/obj16/ClearVariableAction.gif"), null)); //$NON-NLS-1$
 					}
 					return super.getImage(object);
 				}
@@ -2486,7 +2486,7 @@ public class AlternativeUMLItemProviderAdapterFactory extends UMLItemProviderAda
 				@Override
 				public Object getImage(Object object) {
 					if (useAlternativeIcons(object)) {
-						return overlayImage(object, FileLocator.find(UML_BUNDLE, new Path("icons/obj16/AddVariableValueAction.gif"), null));
+						return overlayImage(object, FileLocator.find(UML_BUNDLE, new Path("icons/obj16/AddVariableValueAction.gif"), null)); //$NON-NLS-1$
 					}
 					return super.getImage(object);
 				}
@@ -2502,7 +2502,7 @@ public class AlternativeUMLItemProviderAdapterFactory extends UMLItemProviderAda
 				@Override
 				public Object getImage(Object object) {
 					if (useAlternativeIcons(object)) {
-						return overlayImage(object, FileLocator.find(UML_BUNDLE, new Path("icons/obj16/RemoveVariableValueAction.gif"), null));
+						return overlayImage(object, FileLocator.find(UML_BUNDLE, new Path("icons/obj16/RemoveVariableValueAction.gif"), null)); //$NON-NLS-1$
 					}
 					return super.getImage(object);
 				}
@@ -2518,7 +2518,7 @@ public class AlternativeUMLItemProviderAdapterFactory extends UMLItemProviderAda
 				@Override
 				public Object getImage(Object object) {
 					if (useAlternativeIcons(object)) {
-						return overlayImage(object, FileLocator.find(UML_BUNDLE, new Path("icons/obj16/RaiseExceptionAction.gif"), null));
+						return overlayImage(object, FileLocator.find(UML_BUNDLE, new Path("icons/obj16/RaiseExceptionAction.gif"), null)); //$NON-NLS-1$
 					}
 					return super.getImage(object);
 				}
@@ -2534,7 +2534,7 @@ public class AlternativeUMLItemProviderAdapterFactory extends UMLItemProviderAda
 				@Override
 				public Object getImage(Object object) {
 					if (useAlternativeIcons(object)) {
-						return overlayImage(object, FileLocator.find(UML_BUNDLE, new Path("icons/obj16/ActionInputPin.gif"), null));
+						return overlayImage(object, FileLocator.find(UML_BUNDLE, new Path("icons/obj16/ActionInputPin.gif"), null)); //$NON-NLS-1$
 					}
 					return super.getImage(object);
 				}
@@ -2550,7 +2550,7 @@ public class AlternativeUMLItemProviderAdapterFactory extends UMLItemProviderAda
 				@Override
 				public Object getImage(Object object) {
 					if (useAlternativeIcons(object)) {
-						return overlayImage(object, FileLocator.find(UML_BUNDLE, new Path("icons/obj16/ReadExtentAction.gif"), null));
+						return overlayImage(object, FileLocator.find(UML_BUNDLE, new Path("icons/obj16/ReadExtentAction.gif"), null)); //$NON-NLS-1$
 					}
 					return super.getImage(object);
 				}
@@ -2566,7 +2566,7 @@ public class AlternativeUMLItemProviderAdapterFactory extends UMLItemProviderAda
 				@Override
 				public Object getImage(Object object) {
 					if (useAlternativeIcons(object)) {
-						return overlayImage(object, FileLocator.find(UML_BUNDLE, new Path("icons/obj16/ReclassifyObjectAction.gif"), null));
+						return overlayImage(object, FileLocator.find(UML_BUNDLE, new Path("icons/obj16/ReclassifyObjectAction.gif"), null)); //$NON-NLS-1$
 					}
 					return super.getImage(object);
 				}
@@ -2582,7 +2582,7 @@ public class AlternativeUMLItemProviderAdapterFactory extends UMLItemProviderAda
 				@Override
 				public Object getImage(Object object) {
 					if (useAlternativeIcons(object)) {
-						return overlayImage(object, FileLocator.find(UML_BUNDLE, new Path("icons/obj16/ReadIsClassifiedObjectAction.gif"), null));
+						return overlayImage(object, FileLocator.find(UML_BUNDLE, new Path("icons/obj16/ReadIsClassifiedObjectAction.gif"), null)); //$NON-NLS-1$
 					}
 					return super.getImage(object);
 				}
@@ -2598,7 +2598,7 @@ public class AlternativeUMLItemProviderAdapterFactory extends UMLItemProviderAda
 				@Override
 				public Object getImage(Object object) {
 					if (useAlternativeIcons(object)) {
-						return overlayImage(object, FileLocator.find(UML_BUNDLE, new Path("icons/obj16/StartClassifierBehaviorAction.gif"), null));
+						return overlayImage(object, FileLocator.find(UML_BUNDLE, new Path("icons/obj16/StartClassifierBehaviorAction.gif"), null)); //$NON-NLS-1$
 					}
 					return super.getImage(object);
 				}
@@ -2614,7 +2614,7 @@ public class AlternativeUMLItemProviderAdapterFactory extends UMLItemProviderAda
 				@Override
 				public Object getImage(Object object) {
 					if (useAlternativeIcons(object)) {
-						return overlayImage(object, FileLocator.find(UML_BUNDLE, new Path("icons/obj16/ReadLinkObjectEndAction.gif"), null));
+						return overlayImage(object, FileLocator.find(UML_BUNDLE, new Path("icons/obj16/ReadLinkObjectEndAction.gif"), null)); //$NON-NLS-1$
 					}
 					return super.getImage(object);
 				}
@@ -2630,7 +2630,7 @@ public class AlternativeUMLItemProviderAdapterFactory extends UMLItemProviderAda
 				@Override
 				public Object getImage(Object object) {
 					if (useAlternativeIcons(object)) {
-						return overlayImage(object, FileLocator.find(UML_BUNDLE, new Path("icons/obj16/ReadLinkObjectEndQualifierAction.gif"), null));
+						return overlayImage(object, FileLocator.find(UML_BUNDLE, new Path("icons/obj16/ReadLinkObjectEndQualifierAction.gif"), null)); //$NON-NLS-1$
 					}
 					return super.getImage(object);
 				}
@@ -2646,7 +2646,7 @@ public class AlternativeUMLItemProviderAdapterFactory extends UMLItemProviderAda
 				@Override
 				public Object getImage(Object object) {
 					if (useAlternativeIcons(object)) {
-						return overlayImage(object, FileLocator.find(UML_BUNDLE, new Path("icons/obj16/CreateLinkObjectAction.gif"), null));
+						return overlayImage(object, FileLocator.find(UML_BUNDLE, new Path("icons/obj16/CreateLinkObjectAction.gif"), null)); //$NON-NLS-1$
 					}
 					return super.getImage(object);
 				}
@@ -2662,7 +2662,7 @@ public class AlternativeUMLItemProviderAdapterFactory extends UMLItemProviderAda
 				@Override
 				public Object getImage(Object object) {
 					if (useAlternativeIcons(object)) {
-						return overlayImage(object, FileLocator.find(UML_BUNDLE, new Path("icons/obj16/AcceptEventAction.gif"), null));
+						return overlayImage(object, FileLocator.find(UML_BUNDLE, new Path("icons/obj16/AcceptEventAction.gif"), null)); //$NON-NLS-1$
 					}
 					return super.getImage(object);
 				}
@@ -2678,7 +2678,7 @@ public class AlternativeUMLItemProviderAdapterFactory extends UMLItemProviderAda
 				@Override
 				public Object getImage(Object object) {
 					if (useAlternativeIcons(object)) {
-						return overlayImage(object, FileLocator.find(UML_BUNDLE, new Path("icons/obj16/AcceptCallAction.gif"), null));
+						return overlayImage(object, FileLocator.find(UML_BUNDLE, new Path("icons/obj16/AcceptCallAction.gif"), null)); //$NON-NLS-1$
 					}
 					return super.getImage(object);
 				}
@@ -2694,7 +2694,7 @@ public class AlternativeUMLItemProviderAdapterFactory extends UMLItemProviderAda
 				@Override
 				public Object getImage(Object object) {
 					if (useAlternativeIcons(object)) {
-						return overlayImage(object, FileLocator.find(UML_BUNDLE, new Path("icons/obj16/ReplyAction.gif"), null));
+						return overlayImage(object, FileLocator.find(UML_BUNDLE, new Path("icons/obj16/ReplyAction.gif"), null)); //$NON-NLS-1$
 					}
 					return super.getImage(object);
 				}
@@ -2710,7 +2710,7 @@ public class AlternativeUMLItemProviderAdapterFactory extends UMLItemProviderAda
 				@Override
 				public Object getImage(Object object) {
 					if (useAlternativeIcons(object)) {
-						return overlayImage(object, FileLocator.find(UML_BUNDLE, new Path("icons/obj16/UnmarshallAction.gif"), null));
+						return overlayImage(object, FileLocator.find(UML_BUNDLE, new Path("icons/obj16/UnmarshallAction.gif"), null)); //$NON-NLS-1$
 					}
 					return super.getImage(object);
 				}
@@ -2726,7 +2726,7 @@ public class AlternativeUMLItemProviderAdapterFactory extends UMLItemProviderAda
 				@Override
 				public Object getImage(Object object) {
 					if (useAlternativeIcons(object)) {
-						return overlayImage(object, FileLocator.find(UML_BUNDLE, new Path("icons/obj16/ReduceAction.gif"), null));
+						return overlayImage(object, FileLocator.find(UML_BUNDLE, new Path("icons/obj16/ReduceAction.gif"), null)); //$NON-NLS-1$
 					}
 					return super.getImage(object);
 				}
@@ -2742,7 +2742,7 @@ public class AlternativeUMLItemProviderAdapterFactory extends UMLItemProviderAda
 				@Override
 				public Object getImage(Object object) {
 					if (useAlternativeIcons(object)) {
-						return overlayImage(object, FileLocator.find(UML_BUNDLE, new Path("icons/obj16/ControlFlow.gif"), null));
+						return overlayImage(object, FileLocator.find(UML_BUNDLE, new Path("icons/obj16/ControlFlow.gif"), null)); //$NON-NLS-1$
 					}
 					return super.getImage(object);
 				}
@@ -2758,7 +2758,7 @@ public class AlternativeUMLItemProviderAdapterFactory extends UMLItemProviderAda
 				@Override
 				public Object getImage(Object object) {
 					if (useAlternativeIcons(object)) {
-						return overlayImage(object, FileLocator.find(UML_BUNDLE, new Path("icons/obj16/InitialNode.gif"), null));
+						return overlayImage(object, FileLocator.find(UML_BUNDLE, new Path("icons/obj16/InitialNode.gif"), null)); //$NON-NLS-1$
 					}
 					return super.getImage(object);
 				}
@@ -2774,7 +2774,7 @@ public class AlternativeUMLItemProviderAdapterFactory extends UMLItemProviderAda
 				@Override
 				public Object getImage(Object object) {
 					if (useAlternativeIcons(object)) {
-						return overlayImage(object, FileLocator.find(UML_BUNDLE, new Path("icons/obj16/ActivityParameterNode.gif"), null));
+						return overlayImage(object, FileLocator.find(UML_BUNDLE, new Path("icons/obj16/ActivityParameterNode.gif"), null)); //$NON-NLS-1$
 					}
 					return super.getImage(object);
 				}
@@ -2790,7 +2790,7 @@ public class AlternativeUMLItemProviderAdapterFactory extends UMLItemProviderAda
 				@Override
 				public Object getImage(Object object) {
 					if (useAlternativeIcons(object)) {
-						return overlayImage(object, FileLocator.find(UML_BUNDLE, new Path("icons/obj16/ForkNode.gif"), null));
+						return overlayImage(object, FileLocator.find(UML_BUNDLE, new Path("icons/obj16/ForkNode.gif"), null)); //$NON-NLS-1$
 					}
 					return super.getImage(object);
 				}
@@ -2806,7 +2806,7 @@ public class AlternativeUMLItemProviderAdapterFactory extends UMLItemProviderAda
 				@Override
 				public Object getImage(Object object) {
 					if (useAlternativeIcons(object)) {
-						return overlayImage(object, FileLocator.find(UML_BUNDLE, new Path("icons/obj16/FlowFinalNode.gif"), null));
+						return overlayImage(object, FileLocator.find(UML_BUNDLE, new Path("icons/obj16/FlowFinalNode.gif"), null)); //$NON-NLS-1$
 					}
 					return super.getImage(object);
 				}
@@ -2822,7 +2822,7 @@ public class AlternativeUMLItemProviderAdapterFactory extends UMLItemProviderAda
 				@Override
 				public Object getImage(Object object) {
 					if (useAlternativeIcons(object)) {
-						return overlayImage(object, FileLocator.find(UML_BUNDLE, new Path("icons/obj16/CentralBufferNode.gif"), null));
+						return overlayImage(object, FileLocator.find(UML_BUNDLE, new Path("icons/obj16/CentralBufferNode.gif"), null)); //$NON-NLS-1$
 					}
 					return super.getImage(object);
 				}
@@ -2838,7 +2838,7 @@ public class AlternativeUMLItemProviderAdapterFactory extends UMLItemProviderAda
 				@Override
 				public Object getImage(Object object) {
 					if (useAlternativeIcons(object)) {
-						return overlayImage(object, FileLocator.find(UML_BUNDLE, new Path("icons/obj16/MergeNode.gif"), null));
+						return overlayImage(object, FileLocator.find(UML_BUNDLE, new Path("icons/obj16/MergeNode.gif"), null)); //$NON-NLS-1$
 					}
 					return super.getImage(object);
 				}
@@ -2854,7 +2854,7 @@ public class AlternativeUMLItemProviderAdapterFactory extends UMLItemProviderAda
 				@Override
 				public Object getImage(Object object) {
 					if (useAlternativeIcons(object)) {
-						return overlayImage(object, FileLocator.find(UML_BUNDLE, new Path("icons/obj16/DecisionNode.gif"), null));
+						return overlayImage(object, FileLocator.find(UML_BUNDLE, new Path("icons/obj16/DecisionNode.gif"), null)); //$NON-NLS-1$
 					}
 					return super.getImage(object);
 				}
@@ -2870,7 +2870,7 @@ public class AlternativeUMLItemProviderAdapterFactory extends UMLItemProviderAda
 				@Override
 				public Object getImage(Object object) {
 					if (useAlternativeIcons(object)) {
-						return overlayImage(object, FileLocator.find(UML_BUNDLE, new Path("icons/obj16/ActivityFinalNode.gif"), null));
+						return overlayImage(object, FileLocator.find(UML_BUNDLE, new Path("icons/obj16/ActivityFinalNode.gif"), null)); //$NON-NLS-1$
 					}
 					return super.getImage(object);
 				}
@@ -2886,7 +2886,7 @@ public class AlternativeUMLItemProviderAdapterFactory extends UMLItemProviderAda
 				@Override
 				public Object getImage(Object object) {
 					if (useAlternativeIcons(object)) {
-						return overlayImage(object, FileLocator.find(UML_BUNDLE, new Path("icons/obj16/JoinNode.gif"), null));
+						return overlayImage(object, FileLocator.find(UML_BUNDLE, new Path("icons/obj16/JoinNode.gif"), null)); //$NON-NLS-1$
 					}
 					return super.getImage(object);
 				}
@@ -2902,7 +2902,7 @@ public class AlternativeUMLItemProviderAdapterFactory extends UMLItemProviderAda
 				@Override
 				public Object getImage(Object object) {
 					if (useAlternativeIcons(object)) {
-						return overlayImage(object, FileLocator.find(UML_BUNDLE, new Path("icons/obj16/DataStoreNode.gif"), null));
+						return overlayImage(object, FileLocator.find(UML_BUNDLE, new Path("icons/obj16/DataStoreNode.gif"), null)); //$NON-NLS-1$
 					}
 					return super.getImage(object);
 				}
@@ -2918,7 +2918,7 @@ public class AlternativeUMLItemProviderAdapterFactory extends UMLItemProviderAda
 				@Override
 				public Object getImage(Object object) {
 					if (useAlternativeIcons(object)) {
-						return overlayImage(object, FileLocator.find(UML_BUNDLE, new Path("icons/obj16/ObjectFlow.gif"), null));
+						return overlayImage(object, FileLocator.find(UML_BUNDLE, new Path("icons/obj16/ObjectFlow.gif"), null)); //$NON-NLS-1$
 					}
 					return super.getImage(object);
 				}
@@ -2934,7 +2934,7 @@ public class AlternativeUMLItemProviderAdapterFactory extends UMLItemProviderAda
 				@Override
 				public Object getImage(Object object) {
 					if (useAlternativeIcons(object)) {
-						return overlayImage(object, FileLocator.find(UML_BUNDLE, new Path("icons/obj16/SequenceNode.gif"), null));
+						return overlayImage(object, FileLocator.find(UML_BUNDLE, new Path("icons/obj16/SequenceNode.gif"), null)); //$NON-NLS-1$
 					}
 					return super.getImage(object);
 				}
@@ -2950,7 +2950,7 @@ public class AlternativeUMLItemProviderAdapterFactory extends UMLItemProviderAda
 				@Override
 				public Object getImage(Object object) {
 					if (useAlternativeIcons(object)) {
-						return overlayImage(object, FileLocator.find(UML_BUNDLE, new Path("icons/obj16/ConditionalNode.gif"), null));
+						return overlayImage(object, FileLocator.find(UML_BUNDLE, new Path("icons/obj16/ConditionalNode.gif"), null)); //$NON-NLS-1$
 					}
 					return super.getImage(object);
 				}
@@ -2966,7 +2966,7 @@ public class AlternativeUMLItemProviderAdapterFactory extends UMLItemProviderAda
 				@Override
 				public Object getImage(Object object) {
 					if (useAlternativeIcons(object)) {
-						return overlayImage(object, FileLocator.find(UML_BUNDLE, new Path("icons/obj16/Clause.gif"), null));
+						return overlayImage(object, FileLocator.find(UML_BUNDLE, new Path("icons/obj16/Clause.gif"), null)); //$NON-NLS-1$
 					}
 					return super.getImage(object);
 				}
@@ -2982,7 +2982,7 @@ public class AlternativeUMLItemProviderAdapterFactory extends UMLItemProviderAda
 				@Override
 				public Object getImage(Object object) {
 					if (useAlternativeIcons(object)) {
-						return overlayImage(object, FileLocator.find(UML_BUNDLE, new Path("icons/obj16/LoopNode.gif"), null));
+						return overlayImage(object, FileLocator.find(UML_BUNDLE, new Path("icons/obj16/LoopNode.gif"), null)); //$NON-NLS-1$
 					}
 					return super.getImage(object);
 				}
@@ -2998,7 +2998,7 @@ public class AlternativeUMLItemProviderAdapterFactory extends UMLItemProviderAda
 				@Override
 				public Object getImage(Object object) {
 					if (useAlternativeIcons(object)) {
-						return overlayImage(object, FileLocator.find(UML_BUNDLE, new Path("icons/obj16/ExpansionNode.gif"), null));
+						return overlayImage(object, FileLocator.find(UML_BUNDLE, new Path("icons/obj16/ExpansionNode.gif"), null)); //$NON-NLS-1$
 					}
 					return super.getImage(object);
 				}
@@ -3014,7 +3014,7 @@ public class AlternativeUMLItemProviderAdapterFactory extends UMLItemProviderAda
 				@Override
 				public Object getImage(Object object) {
 					if (useAlternativeIcons(object)) {
-						return overlayImage(object, FileLocator.find(UML_BUNDLE, new Path("icons/obj16/ExpansionRegion.gif"), null));
+						return overlayImage(object, FileLocator.find(UML_BUNDLE, new Path("icons/obj16/ExpansionRegion.gif"), null)); //$NON-NLS-1$
 					}
 					return super.getImage(object);
 				}
@@ -3030,7 +3030,7 @@ public class AlternativeUMLItemProviderAdapterFactory extends UMLItemProviderAda
 				@Override
 				public Object getImage(Object object) {
 					if (useAlternativeIcons(object)) {
-						return overlayImage(object, FileLocator.find(UML_BUNDLE, new Path("icons/obj16/ComponentRealization.gif"), null));
+						return overlayImage(object, FileLocator.find(UML_BUNDLE, new Path("icons/obj16/ComponentRealization.gif"), null)); //$NON-NLS-1$
 					}
 					return super.getImage(object);
 				}
@@ -3046,7 +3046,7 @@ public class AlternativeUMLItemProviderAdapterFactory extends UMLItemProviderAda
 				@Override
 				public Object getImage(Object object) {
 					if (useAlternativeIcons(object)) {
-						return overlayImage(object, FileLocator.find(UML_BUNDLE, new Path("icons/obj16/Component.gif"), null));
+						return overlayImage(object, FileLocator.find(UML_BUNDLE, new Path("icons/obj16/Component.gif"), null)); //$NON-NLS-1$
 					}
 					return super.getImage(object);
 				}
@@ -3062,7 +3062,7 @@ public class AlternativeUMLItemProviderAdapterFactory extends UMLItemProviderAda
 				@Override
 				public Object getImage(Object object) {
 					if (useAlternativeIcons(object)) {
-						return overlayImage(object, FileLocator.find(UML_BUNDLE, new Path("icons/obj16/Node.gif"), null));
+						return overlayImage(object, FileLocator.find(UML_BUNDLE, new Path("icons/obj16/Node.gif"), null)); //$NON-NLS-1$
 					}
 					return super.getImage(object);
 				}
@@ -3078,7 +3078,7 @@ public class AlternativeUMLItemProviderAdapterFactory extends UMLItemProviderAda
 				@Override
 				public Object getImage(Object object) {
 					if (useAlternativeIcons(object)) {
-						return overlayImage(object, FileLocator.find(UML_BUNDLE, new Path("icons/obj16/Device.gif"), null));
+						return overlayImage(object, FileLocator.find(UML_BUNDLE, new Path("icons/obj16/Device.gif"), null)); //$NON-NLS-1$
 					}
 					return super.getImage(object);
 				}
@@ -3094,7 +3094,7 @@ public class AlternativeUMLItemProviderAdapterFactory extends UMLItemProviderAda
 				@Override
 				public Object getImage(Object object) {
 					if (useAlternativeIcons(object)) {
-						return overlayImage(object, FileLocator.find(UML_BUNDLE, new Path("icons/obj16/ExecutionEnvironment.gif"), null));
+						return overlayImage(object, FileLocator.find(UML_BUNDLE, new Path("icons/obj16/ExecutionEnvironment.gif"), null)); //$NON-NLS-1$
 					}
 					return super.getImage(object);
 				}
@@ -3110,7 +3110,7 @@ public class AlternativeUMLItemProviderAdapterFactory extends UMLItemProviderAda
 				@Override
 				public Object getImage(Object object) {
 					if (useAlternativeIcons(object)) {
-						return overlayImage(object, FileLocator.find(UML_BUNDLE, new Path("icons/obj16/CommunicationPath.gif"), null));
+						return overlayImage(object, FileLocator.find(UML_BUNDLE, new Path("icons/obj16/CommunicationPath.gif"), null)); //$NON-NLS-1$
 					}
 					return super.getImage(object);
 				}
@@ -3126,7 +3126,7 @@ public class AlternativeUMLItemProviderAdapterFactory extends UMLItemProviderAda
 				@Override
 				public Object getImage(Object object) {
 					if (useAlternativeIcons(object)) {
-						return overlayImage(object, FileLocator.find(UML_BUNDLE, new Path("icons/obj16/FinalState.gif"), null));
+						return overlayImage(object, FileLocator.find(UML_BUNDLE, new Path("icons/obj16/FinalState.gif"), null)); //$NON-NLS-1$
 					}
 					return super.getImage(object);
 				}
@@ -3142,7 +3142,7 @@ public class AlternativeUMLItemProviderAdapterFactory extends UMLItemProviderAda
 				@Override
 				public Object getImage(Object object) {
 					if (useAlternativeIcons(object)) {
-						return overlayImage(object, FileLocator.find(UML_BUNDLE, new Path("icons/obj16/TimeEvent.gif"), null));
+						return overlayImage(object, FileLocator.find(UML_BUNDLE, new Path("icons/obj16/TimeEvent.gif"), null)); //$NON-NLS-1$
 					}
 					return super.getImage(object);
 				}
@@ -3158,7 +3158,7 @@ public class AlternativeUMLItemProviderAdapterFactory extends UMLItemProviderAda
 				@Override
 				public Object getImage(Object object) {
 					if (useAlternativeIcons(object)) {
-						return overlayImage(object, FileLocator.find(UML_BUNDLE, new Path("icons/obj16/ProtocolTransition.gif"), null));
+						return overlayImage(object, FileLocator.find(UML_BUNDLE, new Path("icons/obj16/ProtocolTransition.gif"), null)); //$NON-NLS-1$
 					}
 					return super.getImage(object);
 				}
@@ -3174,7 +3174,7 @@ public class AlternativeUMLItemProviderAdapterFactory extends UMLItemProviderAda
 				@Override
 				public Object getImage(Object object) {
 					if (useAlternativeIcons(object)) {
-						return overlayImage(object, FileLocator.find(UML_BUNDLE, new Path("icons/obj16/AssociationClass.gif"), null));
+						return overlayImage(object, FileLocator.find(UML_BUNDLE, new Path("icons/obj16/AssociationClass.gif"), null)); //$NON-NLS-1$
 					}
 					return super.getImage(object);
 				}
@@ -3187,7 +3187,7 @@ public class AlternativeUMLItemProviderAdapterFactory extends UMLItemProviderAda
 		return UmlPreferenceConstants.PREF_ICON_STYLE_CHEERFUL.equals(myPreferenceStore.getString(UmlPreferenceConstants.PREF_ICON_STYLE));
 	}
 
-	private static final Bundle UML_BUNDLE = Platform.getBundle("org.eclipse.uml2.diagram.common");
+	private static final Bundle UML_BUNDLE = Platform.getBundle("org.eclipse.uml2.diagram.common"); //$NON-NLS-1$
 
 	private IPreferenceStore myPreferenceStore;
 }

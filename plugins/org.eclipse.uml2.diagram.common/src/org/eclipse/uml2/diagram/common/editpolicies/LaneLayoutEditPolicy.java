@@ -52,7 +52,7 @@ public class LaneLayoutEditPolicy extends ConstrainedLayoutEditPolicy {
 
 	public void setLaneOrientation(int orientation) {
 		if (orientation != LaneLayout.HORIZONTAL && orientation != LaneLayout.VERTICAL) {
-			throw new IllegalArgumentException("Incorrect lane orientation constant: " + orientation);
+			throw new IllegalArgumentException("Incorrect lane orientation constant: " + orientation); //$NON-NLS-1$
 		}
 		myLaneOrientation = orientation;
 	}

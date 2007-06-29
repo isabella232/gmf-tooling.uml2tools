@@ -48,38 +48,38 @@ public interface OperationParserConstants {
   int DEFAULT = 0;
 
   String[] tokenImage = {
-    "<EOF>",
-    "\" \"",
-    "\"\\t\"",
-    "\"/\"",
-    "\":\"",
-    "\"=\"",
-    "\"[\"",
-    "\"]\"",
-    "\"{\"",
-    "\"}\"",
-    "\"(\"",
-    "\")\"",
-    "\",\"",
-    "\"+\"",
-    "\"-\"",
-    "\"#\"",
-    "\"~\"",
-    "\".\"",
-    "\"*\"",
-    "\"redefines\"",
-    "\"ordered\"",
-    "\"unordered\"",
-    "\"unique\"",
-    "\"nonunique\"",
-    "\"query\"",
-    "\"in\"",
-    "\"out\"",
-    "\"inout\"",
-    "<INTEGER_LITERAL>",
-    "<IDENTIFIER>",
-    "<LETTER>",
-    "<DIGIT>",
+    "<EOF>", //$NON-NLS-1$
+    "\" \"", //$NON-NLS-1$
+    "\"\\t\"", //$NON-NLS-1$
+    "\"/\"", //$NON-NLS-1$
+    "\":\"", //$NON-NLS-1$
+    "\"=\"", //$NON-NLS-1$
+    "\"[\"", //$NON-NLS-1$
+    "\"]\"", //$NON-NLS-1$
+    "\"{\"", //$NON-NLS-1$
+    "\"}\"", //$NON-NLS-1$
+    "\"(\"", //$NON-NLS-1$
+    "\")\"", //$NON-NLS-1$
+    "\",\"", //$NON-NLS-1$
+    "\"+\"", //$NON-NLS-1$
+    "\"-\"", //$NON-NLS-1$
+    "\"#\"", //$NON-NLS-1$
+    "\"~\"", //$NON-NLS-1$
+    "\".\"", //$NON-NLS-1$
+    "\"*\"", //$NON-NLS-1$
+    "\"redefines\"", //$NON-NLS-1$
+    "\"ordered\"", //$NON-NLS-1$
+    "\"unordered\"", //$NON-NLS-1$
+    "\"unique\"", //$NON-NLS-1$
+    "\"nonunique\"", //$NON-NLS-1$
+    "\"query\"", //$NON-NLS-1$
+    "\"in\"", //$NON-NLS-1$
+    "\"out\"", //$NON-NLS-1$
+    "\"inout\"", //$NON-NLS-1$
+    "<INTEGER_LITERAL>", //$NON-NLS-1$
+    "<IDENTIFIER>", //$NON-NLS-1$
+    "<LETTER>", //$NON-NLS-1$
+    "<DIGIT>", //$NON-NLS-1$
   };
 
 }

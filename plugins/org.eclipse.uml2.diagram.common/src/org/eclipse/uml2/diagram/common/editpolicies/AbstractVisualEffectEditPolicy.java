@@ -55,7 +55,7 @@ public abstract class AbstractVisualEffectEditPolicy extends CanonicalEditPolicy
 	
 	protected final void ensureHasStyle(EClass styleClass){
 		if (!NotationPackage.eINSTANCE.getStyle().isSuperTypeOf(styleClass)){
-			throw new IllegalArgumentException("Notation Style expected:" + styleClass);
+			throw new IllegalArgumentException("Notation Style expected:" + styleClass); //$NON-NLS-1$
 		}
 		IGraphicalEditPart editPart = getHostImpl();
 		View view = editPart.getNotationView();

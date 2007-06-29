@@ -50,7 +50,7 @@ public class LaneLayout extends AbstractHintLayout {
 
 	public void setLaneOrientation(int orientation) {
 		if (orientation != HORIZONTAL && orientation != VERTICAL) {
-			throw new IllegalArgumentException("Incorrect lane orientation constant: " + orientation);
+			throw new IllegalArgumentException("Incorrect lane orientation constant: " + orientation); //$NON-NLS-1$
 		}
 		myTransposer.setEnabled(orientation == VERTICAL);
 		myLaneOrientation = orientation;
