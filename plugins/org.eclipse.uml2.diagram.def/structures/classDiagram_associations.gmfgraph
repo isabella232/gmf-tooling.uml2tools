@@ -6,6 +6,14 @@
   <figures
       name="AssociationsGallery"
       implementationBundle="org.eclipse.uml2.diagram.common">
+    <figures
+        xsi:type="gmfgraph:CustomDecoration"
+        name="AssociationSourceDecoration"
+        qualifiedClassName="org.eclipse.uml2.diagram.common.draw2d.decoration.AssociationDecoration"/>
+    <figures
+        xsi:type="gmfgraph:CustomDecoration"
+        name="AssociationTargetDecoration"
+        qualifiedClassName="org.eclipse.uml2.diagram.common.draw2d.decoration.AssociationDecoration"/>
     <descriptors
         name="Association_label_name">
       <actualFigure
@@ -29,19 +37,11 @@
       <actualFigure
           xsi:type="gmfgraph:PolylineConnection"
           name="AssociationLinkFigure"
-          sourceDecoration="//@figures.0/@descriptors.3/@actualFigure/@children.0"
-          targetDecoration="//@figures.0/@descriptors.3/@actualFigure/@children.1">
+          sourceDecoration="//@figures.0/@figures.0"
+          targetDecoration="//@figures.0/@figures.1">
         <foregroundColor
             xsi:type="gmfgraph:ConstantColor"
             value="blue"/>
-        <children
-            xsi:type="gmfgraph:CustomDecoration"
-            name="AssociationSourceDecoration"
-            qualifiedClassName="org.eclipse.uml2.diagram.common.draw2d.decoration.AssociationDecoration"/>
-        <children
-            xsi:type="gmfgraph:CustomDecoration"
-            name="AssociationTargetDecoration"
-            qualifiedClassName="org.eclipse.uml2.diagram.common.draw2d.decoration.AssociationDecoration"/>
       </actualFigure>
     </descriptors>
     <descriptors
