@@ -61,6 +61,7 @@ import org.eclipse.ui.PlatformUI;
 import org.eclipse.ui.part.FileEditorInput;
 import org.eclipse.uml2.diagram.profile.edit.parts.ProfileEditPart;
 import org.eclipse.uml2.uml.Model;
+import org.eclipse.uml2.uml.Package;
 import org.eclipse.uml2.uml.Profile;
 import org.eclipse.uml2.uml.UMLFactory;
 import org.eclipse.uml2.uml.resource.UMLResource;
@@ -201,8 +202,17 @@ public class UMLDiagramEditorUtil {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private static Profile createInitialModel() {
+	private static Profile createInitialModelGen() {
 		return UMLFactory.eINSTANCE.createProfile();
+	}
+
+	/**
+	 * @generated NOT
+	 */
+	private static Profile createInitialModel() {
+		Profile profile = createInitialModelGen();
+		profile.setName("Profile");
+		return profile;
 	}
 
 	/**

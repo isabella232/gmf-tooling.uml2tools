@@ -185,8 +185,17 @@ public class UMLDiagramEditorUtil {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private static Package createInitialModel() {
+	private static Package createInitialModelGen() {
 		return UMLFactory.eINSTANCE.createPackage();
+	}
+
+	/**
+	 * @generated NOT
+	 */
+	private static Package createInitialModel() {
+		Package package_ = createInitialModelGen();
+		package_.setName("Package");
+		return package_;
 	}
 
 	/**
