@@ -1329,10 +1329,13 @@ public class UMLDiagramUpdater {
 	}
 
 	/**
-	 * @generated
+	 * @generated NOT
 	 */
 	public static List getGeneralizationSet_2012ContainedLinks(View view) {
-		return Collections.EMPTY_LIST;
+		GeneralizationSet modelElement = (GeneralizationSet) view.getElement();
+		List result = new LinkedList();
+		result.addAll(getOutgoingFeatureModelFacetLinks_Generalization_General_4012(modelElement));
+		return result;
 	}
 
 	/**
@@ -2565,12 +2568,23 @@ public class UMLDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List getGeneralizationSet_2012OutgoingLinks(View view) {
+	public static List getGeneralizationSet_2012OutgoingLinksGen(View view) {
 		GeneralizationSet modelElement = (GeneralizationSet) view.getElement();
 		List result = new LinkedList();
 		result.addAll(getOutgoingTypeModelFacetLinks_Dependency_4002(modelElement));
 		result.addAll(getOutgoingTypeModelFacetLinks_Realization_4010(modelElement));
 		result.addAll(getOutgoingTypeModelFacetLinks_Usage_4013(modelElement));
+		return result;
+	}
+
+	/**
+	 * @generated NOT
+	 */
+	public static List getGeneralizationSet_2012OutgoingLinks(View view) {
+		GeneralizationSet modelElement = (GeneralizationSet) view.getElement();
+		List result = new LinkedList();
+		result.addAll(getGeneralizationSet_2012OutgoingLinksGen(view));
+		result.add(getOutgoingFeatureModelFacetLinks_Generalization_General_4012(modelElement));
 		return result;
 	}
 
@@ -3747,6 +3761,20 @@ public class UMLDiagramUpdater {
 		result.addAll(getContainedTypeModelFacetLinks_Association_4005(modelElement));
 		result.addAll(getContainedTypeModelFacetLinks_Realization_4010(modelElement));
 		result.addAll(getContainedTypeModelFacetLinks_Usage_4013(modelElement));
+		return result;
+	}
+
+	/**
+	 * @NOT-generated
+	 */
+	private static Collection getOutgoingFeatureModelFacetLinks_Generalization_General_4012(GeneralizationSet source) {
+		Collection result = new LinkedList();
+		List<Generalization> generalizations = source.getGeneralizations();
+		if (generalizations.size() > 0) {
+			Generalization generalization = generalizations.get(0);
+			Classifier destination = generalization.getGeneral();
+			result.add(new UMLLinkDescriptor(source, destination, UMLElementTypes.GeneralizationGeneral_4012, GeneralizationGeneralEditPart.VISUAL_ID));
+		}
 		return result;
 	}
 

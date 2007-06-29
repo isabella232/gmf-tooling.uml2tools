@@ -291,15 +291,14 @@ public class InstanceSpecification2EditPart extends ShapeNodeEditPart {
 
 			instanceNode_NameContainerFigure0.setLayoutManager(new StackLayout());
 
-			WrapLabel instanceNode_NameLabel1 = new WrapLabel();
-			instanceNode_NameLabel1.setText("");
+			fFigureInstanceNode_NameLabel = new WrapLabel();
+			fFigureInstanceNode_NameLabel.setText("");
 
-			instanceNode_NameContainerFigure0.add(instanceNode_NameLabel1);
-			fFigureInstanceNode_NameLabel = instanceNode_NameLabel1;
+			instanceNode_NameContainerFigure0.add(fFigureInstanceNode_NameLabel);
 
-			CenterLayout layoutInstanceNode_NameLabel1 = new CenterLayout();
+			CenterLayout layoutFFigureInstanceNode_NameLabel = new CenterLayout();
 
-			instanceNode_NameLabel1.setLayoutManager(layoutInstanceNode_NameLabel1);
+			fFigureInstanceNode_NameLabel.setLayoutManager(layoutFFigureInstanceNode_NameLabel);
 
 			RectangleFigure instanceSpecification_SpecificationContainerFigure0 = new RectangleFigure();
 			instanceSpecification_SpecificationContainerFigure0.setOutline(false);
@@ -310,17 +309,15 @@ public class InstanceSpecification2EditPart extends ShapeNodeEditPart {
 
 			instanceSpecification_SpecificationContainerFigure0.setLayoutManager(layoutInstanceSpecification_SpecificationContainerFigure0);
 
-			WrapLabel instanceNode_SpecificationLabel1 = new WrapLabel();
-			instanceNode_SpecificationLabel1.setText("");
+			fFigureInstanceNode_SpecificationLabel = new WrapLabel();
+			fFigureInstanceNode_SpecificationLabel.setText("");
 
-			instanceSpecification_SpecificationContainerFigure0.add(instanceNode_SpecificationLabel1);
-			fFigureInstanceNode_SpecificationLabel = instanceNode_SpecificationLabel1;
+			instanceSpecification_SpecificationContainerFigure0.add(fFigureInstanceNode_SpecificationLabel);
 
-			RectangleFigure instanceNode_SlotsCompartmentFigure0 = new RectangleFigure();
-			instanceNode_SlotsCompartmentFigure0.setOutline(false);
+			fFigureInstanceNode_SlotsCompartmentFigure = new RectangleFigure();
+			fFigureInstanceNode_SlotsCompartmentFigure.setOutline(false);
 
-			this.add(instanceNode_SlotsCompartmentFigure0);
-			fFigureInstanceNode_SlotsCompartmentFigure = instanceNode_SlotsCompartmentFigure0;
+			this.add(fFigureInstanceNode_SlotsCompartmentFigure);
 
 		}
 

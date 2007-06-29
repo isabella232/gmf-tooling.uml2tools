@@ -231,13 +231,12 @@ public class RedefinableTemplateSignatureEditPart extends AbstractBorderItemEdit
 		 */
 		private void createContents() {
 
-			WrapLabel templateSignatureFigure_signature0 = new WrapLabel();
-			templateSignatureFigure_signature0.setText("<signature>");
+			fFigureTemplateSignatureFigure_signature = new WrapLabel();
+			fFigureTemplateSignatureFigure_signature.setText("<signature>");
 
-			templateSignatureFigure_signature0.setBorder(new MarginBorder(getMapMode().DPtoLP(5), getMapMode().DPtoLP(5), getMapMode().DPtoLP(5), getMapMode().DPtoLP(5)));
+			fFigureTemplateSignatureFigure_signature.setBorder(new MarginBorder(getMapMode().DPtoLP(5), getMapMode().DPtoLP(5), getMapMode().DPtoLP(5), getMapMode().DPtoLP(5)));
 
-			this.add(templateSignatureFigure_signature0);
-			fFigureTemplateSignatureFigure_signature = templateSignatureFigure_signature0;
+			this.add(fFigureTemplateSignatureFigure_signature);
 
 		}
 

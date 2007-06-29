@@ -226,13 +226,12 @@ public class ConstraintEditPart extends ShapeNodeEditPart {
 		 */
 		private void createContents() {
 
-			WrapLabel constraintFigure_Value0 = new WrapLabel();
-			constraintFigure_Value0.setText("");
+			fFigureConstraintFigure_Value = new WrapLabel();
+			fFigureConstraintFigure_Value.setText("");
 
-			constraintFigure_Value0.setBorder(new MarginBorder(getMapMode().DPtoLP(5), getMapMode().DPtoLP(5), getMapMode().DPtoLP(5), getMapMode().DPtoLP(5)));
+			fFigureConstraintFigure_Value.setBorder(new MarginBorder(getMapMode().DPtoLP(5), getMapMode().DPtoLP(5), getMapMode().DPtoLP(5), getMapMode().DPtoLP(5)));
 
-			this.add(constraintFigure_Value0);
-			fFigureConstraintFigure_Value = constraintFigure_Value0;
+			this.add(fFigureConstraintFigure_Value);
 
 		}
 

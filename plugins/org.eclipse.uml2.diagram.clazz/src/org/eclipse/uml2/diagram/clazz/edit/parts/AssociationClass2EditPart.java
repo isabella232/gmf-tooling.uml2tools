@@ -384,15 +384,14 @@ public class AssociationClass2EditPart extends AbstractBorderedShapeEditPart {
 
 			classFigure_StereoContainer1.setLayoutManager(layoutClassFigure_StereoContainer1);
 
-			WrapLabel classFigure_stereo2 = new WrapLabel();
-			classFigure_stereo2.setText("");
+			fFigureClassFigure_stereo = new WrapLabel();
+			fFigureClassFigure_stereo.setText("");
 
-			classFigure_stereo2.setFont(CLASSFIGURE_STEREO2_FONT);
+			fFigureClassFigure_stereo.setFont(FFIGURECLASSFIGURE_STEREO_FONT);
 
-			classFigure_stereo2.setBorder(new MarginBorder(getMapMode().DPtoLP(5), getMapMode().DPtoLP(5), getMapMode().DPtoLP(0), getMapMode().DPtoLP(5)));
+			fFigureClassFigure_stereo.setBorder(new MarginBorder(getMapMode().DPtoLP(5), getMapMode().DPtoLP(5), getMapMode().DPtoLP(0), getMapMode().DPtoLP(5)));
 
-			classFigure_StereoContainer1.add(classFigure_stereo2);
-			fFigureClassFigure_stereo = classFigure_stereo2;
+			classFigure_StereoContainer1.add(fFigureClassFigure_stereo);
 
 			RectangleFigure classFigure_NameContainer1 = new RectangleFigure();
 			classFigure_NameContainer1.setOutline(false);
@@ -403,45 +402,44 @@ public class AssociationClass2EditPart extends AbstractBorderedShapeEditPart {
 
 			classFigure_NameContainer1.setLayoutManager(layoutClassFigure_NameContainer1);
 
-			WrapLabel classFigure_name2 = new WrapLabel();
-			classFigure_name2.setText("");
+			fFigureClassFigure_name = new WrapLabel();
+			fFigureClassFigure_name.setText("");
 
-			classFigure_name2.setFont(CLASSFIGURE_NAME2_FONT);
+			fFigureClassFigure_name.setFont(FFIGURECLASSFIGURE_NAME_FONT);
 
-			classFigure_name2.setBorder(new MarginBorder(getMapMode().DPtoLP(0), getMapMode().DPtoLP(5), getMapMode().DPtoLP(5), getMapMode().DPtoLP(5)));
+			fFigureClassFigure_name.setBorder(new MarginBorder(getMapMode().DPtoLP(0), getMapMode().DPtoLP(5), getMapMode().DPtoLP(5), getMapMode().DPtoLP(5)));
 
-			classFigure_NameContainer1.add(classFigure_name2);
-			fFigureClassFigure_name = classFigure_name2;
+			classFigure_NameContainer1.add(fFigureClassFigure_name);
 
-			RectangleFigure classFigure_PropertiesCompartment0 = new RectangleFigure();
+			fFigureClassFigure_PropertiesCompartment = new RectangleFigure();
 
-			this.add(classFigure_PropertiesCompartment0);
-			fFigureClassFigure_PropertiesCompartment = classFigure_PropertiesCompartment0;
-			classFigure_PropertiesCompartment0.setLayoutManager(new StackLayout());
+			this.add(fFigureClassFigure_PropertiesCompartment);
 
-			RectangleFigure classFigure_OperationsCompartment0 = new RectangleFigure();
+			fFigureClassFigure_PropertiesCompartment.setLayoutManager(new StackLayout());
 
-			this.add(classFigure_OperationsCompartment0);
-			fFigureClassFigure_OperationsCompartment = classFigure_OperationsCompartment0;
-			classFigure_OperationsCompartment0.setLayoutManager(new StackLayout());
+			fFigureClassFigure_OperationsCompartment = new RectangleFigure();
 
-			RectangleFigure classFigure_ClassesCompartment0 = new RectangleFigure();
+			this.add(fFigureClassFigure_OperationsCompartment);
 
-			this.add(classFigure_ClassesCompartment0);
-			fFigureClassFigure_ClassesCompartment = classFigure_ClassesCompartment0;
-			classFigure_ClassesCompartment0.setLayoutManager(new StackLayout());
+			fFigureClassFigure_OperationsCompartment.setLayoutManager(new StackLayout());
 
-			RectangleFigure classFigure_LiteralsCompartment0 = new RectangleFigure();
+			fFigureClassFigure_ClassesCompartment = new RectangleFigure();
 
-			this.add(classFigure_LiteralsCompartment0);
-			fFigureClassFigure_LiteralsCompartment = classFigure_LiteralsCompartment0;
-			classFigure_LiteralsCompartment0.setLayoutManager(new StackLayout());
+			this.add(fFigureClassFigure_ClassesCompartment);
 
-			RectangleFigure classFigure_OthersCompartment0 = new RectangleFigure();
+			fFigureClassFigure_ClassesCompartment.setLayoutManager(new StackLayout());
 
-			this.add(classFigure_OthersCompartment0);
-			fFigureClassFigure_OthersCompartment = classFigure_OthersCompartment0;
-			classFigure_OthersCompartment0.setLayoutManager(new StackLayout());
+			fFigureClassFigure_LiteralsCompartment = new RectangleFigure();
+
+			this.add(fFigureClassFigure_LiteralsCompartment);
+
+			fFigureClassFigure_LiteralsCompartment.setLayoutManager(new StackLayout());
+
+			fFigureClassFigure_OthersCompartment = new RectangleFigure();
+
+			this.add(fFigureClassFigure_OthersCompartment);
+
+			fFigureClassFigure_OthersCompartment.setLayoutManager(new StackLayout());
 
 		}
 
@@ -518,11 +516,11 @@ public class AssociationClass2EditPart extends AbstractBorderedShapeEditPart {
 	/**
 	 * @generated
 	 */
-	static final Font CLASSFIGURE_STEREO2_FONT = new Font(Display.getCurrent(), Display.getDefault().getSystemFont().getFontData()[0].getName(), 9, SWT.NORMAL);
+	static final Font FFIGURECLASSFIGURE_STEREO_FONT = new Font(Display.getCurrent(), Display.getDefault().getSystemFont().getFontData()[0].getName(), 9, SWT.NORMAL);
 
 	/**
 	 * @generated
 	 */
-	static final Font CLASSFIGURE_NAME2_FONT = new Font(Display.getCurrent(), Display.getDefault().getSystemFont().getFontData()[0].getName(), 9, SWT.NORMAL);
+	static final Font FFIGURECLASSFIGURE_NAME_FONT = new Font(Display.getCurrent(), Display.getDefault().getSystemFont().getFontData()[0].getName(), 9, SWT.NORMAL);
 
 }

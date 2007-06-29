@@ -299,23 +299,20 @@ public class Package4EditPart extends ShapeNodeEditPart {
 		 */
 		private void createContents() {
 
-			WrapLabel secondaryPackage_PackageLabel0 = new WrapLabel();
-			secondaryPackage_PackageLabel0.setText("Package");
+			fFigureSecondaryPackage_PackageLabel = new WrapLabel();
+			fFigureSecondaryPackage_PackageLabel.setText("Package");
 
-			this.add(secondaryPackage_PackageLabel0);
-			fFigureSecondaryPackage_PackageLabel = secondaryPackage_PackageLabel0;
+			this.add(fFigureSecondaryPackage_PackageLabel);
 
-			WrapLabel secondaryPackage_NameLabel0 = new WrapLabel();
-			secondaryPackage_NameLabel0.setText("");
+			fFigureSecondaryPackage_NameLabel = new WrapLabel();
+			fFigureSecondaryPackage_NameLabel.setText("");
 
-			this.add(secondaryPackage_NameLabel0);
-			fFigureSecondaryPackage_NameLabel = secondaryPackage_NameLabel0;
+			this.add(fFigureSecondaryPackage_NameLabel);
 
-			RectangleFigure secondaryPackage_ImportsCompartment0 = new RectangleFigure();
-			secondaryPackage_ImportsCompartment0.setOutline(false);
-			
-			this.add(secondaryPackage_ImportsCompartment0);
-			fFigureSecondaryPackage_Imports = secondaryPackage_ImportsCompartment0;
+			fFigureSecondaryPackage_Imports = new RectangleFigure();
+			fFigureSecondaryPackage_Imports.setOutline(false);
+
+			this.add(fFigureSecondaryPackage_Imports);
 
 		}
 

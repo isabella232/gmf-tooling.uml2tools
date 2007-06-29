@@ -76,24 +76,25 @@ public class UMLCreationWizardPage extends WizardNewFileCreationPage {
 		}
 		String extension = getExtension();
 		if (extension != null && !getFilePath().toString().endsWith("." + extension)) {
-			setErrorMessage(NLS.bind("File name should have ''{0}'' extension.", extension));
+			setErrorMessage(NLS.bind(Messages.UMLCreationWizardPageExtensionError, extension));
+			return false;
 		}
 		return true;
 	}
-	
+
 	/**
 	 * #174315 Automatically set diagram file extension
 	 * @generated
 	 */
 	@Override
 	public IWizardPage getNextPage() {
-		IWizardPage nextPage = super.getNextPage(); 
-		if ("DiagramModelFile".equals(getName())) {
+		IWizardPage nextPage = super.getNextPage();
+		if ("DiagramModelFile".equals(getName()) && "DomainModelFile".equals(nextPage.getName())) {
 			setDomainFileName(nextPage);
 		}
 		return nextPage;
 	}
-	
+
 	/**
 	 * #174315 Automatically set diagram file extension
 	 * @generated

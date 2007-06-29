@@ -389,28 +389,24 @@ public class Package2EditPart extends ShapeNodeEditPart {
 
 			packageFigure_NameContainer1.setLayoutManager(layoutPackageFigure_NameContainer1);
 
-			WrapLabel packageFigure_name2 = new WrapLabel();
-			packageFigure_name2.setText("");
+			fFigurePackageFigure_name = new WrapLabel();
+			fFigurePackageFigure_name.setText("");
 
-			packageFigure_name2.setBorder(new MarginBorder(getMapMode().DPtoLP(5), getMapMode().DPtoLP(5), getMapMode().DPtoLP(5), getMapMode().DPtoLP(5)));
+			fFigurePackageFigure_name.setBorder(new MarginBorder(getMapMode().DPtoLP(5), getMapMode().DPtoLP(5), getMapMode().DPtoLP(5), getMapMode().DPtoLP(5)));
 
-			packageFigure_NameContainer1.add(packageFigure_name2);
-			fFigurePackageFigure_name = packageFigure_name2;
+			packageFigure_NameContainer1.add(fFigurePackageFigure_name);
 
-			RectangleFigure packageFigure_PackagesCompartment1 = new RectangleFigure();
+			fFigurePackageFigure_PackagesCompartment = new RectangleFigure();
 
-			packageFigure_AuxCenter0.add(packageFigure_PackagesCompartment1);
-			fFigurePackageFigure_PackagesCompartment = packageFigure_PackagesCompartment1;
+			packageFigure_AuxCenter0.add(fFigurePackageFigure_PackagesCompartment);
 
-			RectangleFigure packageFigure_ClassesCompartment1 = new RectangleFigure();
+			fFigurePackageFigure_ClassesCompartment = new RectangleFigure();
 
-			packageFigure_AuxCenter0.add(packageFigure_ClassesCompartment1);
-			fFigurePackageFigure_ClassesCompartment = packageFigure_ClassesCompartment1;
+			packageFigure_AuxCenter0.add(fFigurePackageFigure_ClassesCompartment);
 
-			RectangleFigure packageFigure_OthersCompartment1 = new RectangleFigure();
+			fFigurePackageFigure_OthersCompartment = new RectangleFigure();
 
-			packageFigure_AuxCenter0.add(packageFigure_OthersCompartment1);
-			fFigurePackageFigure_OthersCompartment = packageFigure_OthersCompartment1;
+			packageFigure_AuxCenter0.add(fFigurePackageFigure_OthersCompartment);
 
 		}
 

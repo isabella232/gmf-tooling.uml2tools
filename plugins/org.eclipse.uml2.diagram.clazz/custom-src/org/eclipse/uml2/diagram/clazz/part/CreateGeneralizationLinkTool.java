@@ -94,7 +94,7 @@ public class CreateGeneralizationLinkTool extends UnspecifiedTypeConnectionTool 
 
 		// restore existing generalization EditPart
 		result.add(getCompleteCreateGeneralizationCommand(generalization, packageEditPart, generalizationSource, created));
-		result.add(getCreateGeneralizationGeneralCommand(packageEditPart, created, generalizationTarget));
+//		result.add(getCreateGeneralizationGeneralCommand(packageEditPart, created, generalizationTarget));
 		return result;
 	}
 

@@ -69,22 +69,7 @@ public class DependencySupplierEditPart extends ConnectionNodeEditPart {
 			this.setLineStyle(Graphics.LINE_DASH);
 			this.setForegroundColor(ColorConstants.lightGray);
 
-			createContents();
 			setTargetDecoration(createTargetDecoration());
-		}
-
-		/**
-		 * @generated
-		 */
-		private void createContents() {
-
-			PolylineDecoration dependency_ArrowDecoration0 = new PolylineDecoration();
-			dependency_ArrowDecoration0.addPoint(new Point(getMapMode().DPtoLP(-1), getMapMode().DPtoLP(1)));
-			dependency_ArrowDecoration0.addPoint(new Point(getMapMode().DPtoLP(0), getMapMode().DPtoLP(0)));
-			dependency_ArrowDecoration0.addPoint(new Point(getMapMode().DPtoLP(-1), getMapMode().DPtoLP(-1)));
-
-			this.add(dependency_ArrowDecoration0);
-
 		}
 
 		/**

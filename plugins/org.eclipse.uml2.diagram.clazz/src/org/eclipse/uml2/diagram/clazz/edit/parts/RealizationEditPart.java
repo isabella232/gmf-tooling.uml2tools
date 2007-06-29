@@ -87,14 +87,7 @@ public class RealizationEditPart extends ConnectionNodeEditPart {
 			this.setLineStyle(Graphics.LINE_DASH);
 			this.setForegroundColor(ColorConstants.lightGray);
 
-			createContents();
 			setSourceDecoration(createSourceDecoration());
-		}
-
-		/**
-		 * @generated
-		 */
-		private void createContents() {
 		}
 
 		/**
