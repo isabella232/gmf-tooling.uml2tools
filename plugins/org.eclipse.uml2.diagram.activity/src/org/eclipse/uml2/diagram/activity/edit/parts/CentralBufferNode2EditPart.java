@@ -260,17 +260,15 @@ public class CentralBufferNode2EditPart extends ShapeNodeEditPart {
 
 			centralBufferFigure_NameContainer0.add(centralBufferFigure_fixed_central1);
 
-			WrapLabel centralBufferFigure_name1 = new WrapLabel();
-			centralBufferFigure_name1.setText("");
+			fFigureCentralBufferFigure_name = new WrapLabel();
+			fFigureCentralBufferFigure_name.setText("");
 
-			centralBufferFigure_NameContainer0.add(centralBufferFigure_name1);
-			fFigureCentralBufferFigure_name = centralBufferFigure_name1;
+			centralBufferFigure_NameContainer0.add(fFigureCentralBufferFigure_name);
 
-			WrapLabel centralBufferFigure_states1 = new WrapLabel();
-			centralBufferFigure_states1.setText("");
+			fFigureCentralBufferFigure_states = new WrapLabel();
+			fFigureCentralBufferFigure_states.setText("");
 
-			centralBufferFigure_NameContainer0.add(centralBufferFigure_states1);
-			fFigureCentralBufferFigure_states = centralBufferFigure_states1;
+			centralBufferFigure_NameContainer0.add(fFigureCentralBufferFigure_states);
 
 		}
 

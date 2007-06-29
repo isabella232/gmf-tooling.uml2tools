@@ -68,14 +68,7 @@ public class ObjectFlowEditPart extends ConnectionNodeEditPart {
 		public ActivityEdgeConnection() {
 			this.setForegroundColor(ColorConstants.black);
 
-			createContents();
 			setTargetDecoration(createTargetDecoration());
-		}
-
-		/**
-		 * @generated
-		 */
-		private void createContents() {
 		}
 
 		/**

@@ -237,11 +237,10 @@ public class OpaqueBehaviorEditPart extends ShapeNodeEditPart {
 
 			this.add(selectionFigure_fixed_top0);
 
-			WrapLabel selectionFigure_name0 = new WrapLabel();
-			selectionFigure_name0.setText("");
+			fFigureSelectionFigure_name = new WrapLabel();
+			fFigureSelectionFigure_name.setText("");
 
-			this.add(selectionFigure_name0);
-			fFigureSelectionFigure_name = selectionFigure_name0;
+			this.add(fFigureSelectionFigure_name);
 
 		}
 

@@ -76,12 +76,12 @@ public class UMLCreationWizardPage extends WizardNewFileCreationPage {
 		}
 		String extension = getExtension();
 		if (extension != null && !getFilePath().toString().endsWith("." + extension)) {
-			setErrorMessage(NLS.bind("File name should have ''{0}'' extension.", extension));
+			setErrorMessage(NLS.bind(Messages.UMLCreationWizardPageExtensionError, extension));
 			return false;
 		}
 		return true;
 	}
-	
+
 	/**
 	 * #174315 Automatically set diagram file extension
 	 * @generated

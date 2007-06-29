@@ -227,13 +227,12 @@ public class Pin2EditPart extends ShapeNodeEditPart {
 		 */
 		private void createContents() {
 
-			WrapLabel standalonePinFigure_name0 = new WrapLabel();
-			standalonePinFigure_name0.setText("");
+			fFigureStandalonePinFigure_name = new WrapLabel();
+			fFigureStandalonePinFigure_name.setText("");
 
-			standalonePinFigure_name0.setBorder(new MarginBorder(getMapMode().DPtoLP(0), getMapMode().DPtoLP(5), getMapMode().DPtoLP(0), getMapMode().DPtoLP(5)));
+			fFigureStandalonePinFigure_name.setBorder(new MarginBorder(getMapMode().DPtoLP(0), getMapMode().DPtoLP(5), getMapMode().DPtoLP(0), getMapMode().DPtoLP(5)));
 
-			this.add(standalonePinFigure_name0);
-			fFigureStandalonePinFigure_name = standalonePinFigure_name0;
+			this.add(fFigureStandalonePinFigure_name);
 
 		}
 

@@ -335,13 +335,12 @@ public class CallBehaviorAction2EditPart extends AbstractBorderedShapeEditPart {
 
 			actionCallBehaviorFigure_AuxCenter0.setLayoutManager(layoutActionCallBehaviorFigure_AuxCenter0);
 
-			WrapLabel actionCallBehaviorFigure_name1 = new WrapLabel();
-			actionCallBehaviorFigure_name1.setText("");
+			fFigureActionCallBehaviorFigure_name = new WrapLabel();
+			fFigureActionCallBehaviorFigure_name.setText("");
 
-			actionCallBehaviorFigure_name1.setBorder(new MarginBorder(getMapMode().DPtoLP(0), getMapMode().DPtoLP(5), getMapMode().DPtoLP(0), getMapMode().DPtoLP(5)));
+			fFigureActionCallBehaviorFigure_name.setBorder(new MarginBorder(getMapMode().DPtoLP(0), getMapMode().DPtoLP(5), getMapMode().DPtoLP(0), getMapMode().DPtoLP(5)));
 
-			actionCallBehaviorFigure_AuxCenter0.add(actionCallBehaviorFigure_name1);
-			fFigureActionCallBehaviorFigure_name = actionCallBehaviorFigure_name1;
+			actionCallBehaviorFigure_AuxCenter0.add(fFigureActionCallBehaviorFigure_name);
 
 		}
 

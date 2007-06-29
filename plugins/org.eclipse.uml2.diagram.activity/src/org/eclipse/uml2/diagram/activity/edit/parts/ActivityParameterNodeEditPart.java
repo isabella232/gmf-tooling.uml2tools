@@ -245,12 +245,11 @@ public class ActivityParameterNodeEditPart extends AbstractBorderItemEditPart {
 		 */
 		private void createContents() {
 
-			WrapLabel activityParameterFigure_name0 = new WrapLabel();
-			activityParameterFigure_name0.setText("");
-			activityParameterFigure_name0.setBorder(new MarginBorder(getMapMode().DPtoLP(3), getMapMode().DPtoLP(5), getMapMode().DPtoLP(3), getMapMode().DPtoLP(5)));
+			fFigureActivityParameterFigure_name = new WrapLabel();
+			fFigureActivityParameterFigure_name.setText("");
+			fFigureActivityParameterFigure_name.setBorder(new MarginBorder(getMapMode().DPtoLP(3), getMapMode().DPtoLP(5), getMapMode().DPtoLP(3), getMapMode().DPtoLP(5)));
 
-			this.add(activityParameterFigure_name0);
-			fFigureActivityParameterFigure_name = activityParameterFigure_name0;
+			this.add(fFigureActivityParameterFigure_name);
 
 		}
 

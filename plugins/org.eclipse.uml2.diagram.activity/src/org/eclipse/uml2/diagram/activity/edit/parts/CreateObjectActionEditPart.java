@@ -259,13 +259,12 @@ public class CreateObjectActionEditPart extends AbstractBorderedShapeEditPart {
 		 */
 		private void createContents() {
 
-			WrapLabel actionBaseFigure_name0 = new WrapLabel();
-			actionBaseFigure_name0.setText("");
+			fFigureActionBaseFigure_name = new WrapLabel();
+			fFigureActionBaseFigure_name.setText("");
 
-			actionBaseFigure_name0.setBorder(new MarginBorder(getMapMode().DPtoLP(0), getMapMode().DPtoLP(5), getMapMode().DPtoLP(0), getMapMode().DPtoLP(5)));
+			fFigureActionBaseFigure_name.setBorder(new MarginBorder(getMapMode().DPtoLP(0), getMapMode().DPtoLP(5), getMapMode().DPtoLP(0), getMapMode().DPtoLP(5)));
 
-			this.add(actionBaseFigure_name0);
-			fFigureActionBaseFigure_name = actionBaseFigure_name0;
+			this.add(fFigureActionBaseFigure_name);
 
 		}
 

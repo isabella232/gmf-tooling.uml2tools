@@ -84,14 +84,7 @@ public class ExceptionHandlerEditPart extends ConnectionNodeEditPart {
 		 */
 		public ExceptionHandlerConnection() {
 
-			createContents();
 			setTargetDecoration(createTargetDecoration());
-		}
-
-		/**
-		 * @generated
-		 */
-		private void createContents() {
 		}
 
 		/**

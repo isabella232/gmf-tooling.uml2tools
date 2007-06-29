@@ -245,20 +245,18 @@ public class AcceptEventAction3EditPart extends ShapeNodeEditPart {
 		 */
 		private void createContents() {
 
-			WrapLabel acceptEventActionFigure_name0 = new WrapLabel();
-			acceptEventActionFigure_name0.setText("");
+			fFigureAcceptEventActionFigure_name = new WrapLabel();
+			fFigureAcceptEventActionFigure_name.setText("");
 
-			GridData constraintAcceptEventActionFigure_name0 = new GridData();
-			constraintAcceptEventActionFigure_name0.verticalAlignment = GridData.CENTER;
-			constraintAcceptEventActionFigure_name0.horizontalAlignment = GridData.CENTER;
-			constraintAcceptEventActionFigure_name0.horizontalIndent = 0;
-			constraintAcceptEventActionFigure_name0.horizontalSpan = 1;
-			constraintAcceptEventActionFigure_name0.verticalSpan = 1;
-			constraintAcceptEventActionFigure_name0.grabExcessHorizontalSpace = true;
-			constraintAcceptEventActionFigure_name0.grabExcessVerticalSpace = true;
-			this.add(acceptEventActionFigure_name0, constraintAcceptEventActionFigure_name0);
-
-			fFigureAcceptEventActionFigure_name = acceptEventActionFigure_name0;
+			GridData constraintFFigureAcceptEventActionFigure_name = new GridData();
+			constraintFFigureAcceptEventActionFigure_name.verticalAlignment = GridData.CENTER;
+			constraintFFigureAcceptEventActionFigure_name.horizontalAlignment = GridData.CENTER;
+			constraintFFigureAcceptEventActionFigure_name.horizontalIndent = 0;
+			constraintFFigureAcceptEventActionFigure_name.horizontalSpan = 1;
+			constraintFFigureAcceptEventActionFigure_name.verticalSpan = 1;
+			constraintFFigureAcceptEventActionFigure_name.grabExcessHorizontalSpace = true;
+			constraintFFigureAcceptEventActionFigure_name.grabExcessVerticalSpace = true;
+			this.add(fFigureAcceptEventActionFigure_name, constraintFFigureAcceptEventActionFigure_name);
 
 		}
 

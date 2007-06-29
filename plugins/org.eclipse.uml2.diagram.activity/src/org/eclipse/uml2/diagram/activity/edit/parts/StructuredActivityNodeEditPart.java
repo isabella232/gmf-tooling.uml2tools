@@ -239,12 +239,11 @@ public class StructuredActivityNodeEditPart extends ShapeNodeEditPart {
 		 */
 		private void createContents() {
 
-			RectangleFigure structuredActivityFigure_ContentPane0 = new RectangleFigure();
-			structuredActivityFigure_ContentPane0.setFill(false);
-			structuredActivityFigure_ContentPane0.setOutline(false);
+			fFigureStructuredActivityFigure_ContentPane = new RectangleFigure();
+			fFigureStructuredActivityFigure_ContentPane.setFill(false);
+			fFigureStructuredActivityFigure_ContentPane.setOutline(false);
 
-			this.add(structuredActivityFigure_ContentPane0, BorderLayout.CENTER);
-			fFigureStructuredActivityFigure_ContentPane = structuredActivityFigure_ContentPane0;
+			this.add(fFigureStructuredActivityFigure_ContentPane, BorderLayout.CENTER);
 
 			RectangleFigure aux_StructuredActivityFigure_LabelContainer0 = new RectangleFigure();
 			aux_StructuredActivityFigure_LabelContainer0.setFill(false);

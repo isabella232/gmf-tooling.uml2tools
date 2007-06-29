@@ -289,22 +289,20 @@ public class ActivityEditPart extends AbstractBorderedShapeEditPart {
 
 			activityFigureRectangle_name0.setLayoutManager(new StackLayout());
 
-			WrapLabel activityFigure_name1 = new WrapLabel();
-			activityFigure_name1.setText("");
+			fFigureActivityFigure_name = new WrapLabel();
+			fFigureActivityFigure_name.setText("");
 
-			activityFigureRectangle_name0.add(activityFigure_name1);
-			fFigureActivityFigure_name = activityFigure_name1;
+			activityFigureRectangle_name0.add(fFigureActivityFigure_name);
 
-			CenterLayout layoutActivityFigure_name1 = new CenterLayout();
+			CenterLayout layoutFFigureActivityFigure_name = new CenterLayout();
 
-			activityFigure_name1.setLayoutManager(layoutActivityFigure_name1);
+			fFigureActivityFigure_name.setLayoutManager(layoutFFigureActivityFigure_name);
 
-			RectangleFigure activityFigure_Body0 = new RectangleFigure();
-			activityFigure_Body0.setFill(false);
-			activityFigure_Body0.setOutline(false);
+			fFigureActivityFigure_Body = new RectangleFigure();
+			fFigureActivityFigure_Body.setFill(false);
+			fFigureActivityFigure_Body.setOutline(false);
 
-			this.add(activityFigure_Body0, BorderLayout.CENTER);
-			fFigureActivityFigure_Body = activityFigure_Body0;
+			this.add(fFigureActivityFigure_Body, BorderLayout.CENTER);
 
 		}
 

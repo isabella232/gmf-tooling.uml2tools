@@ -241,11 +241,10 @@ public class SendSignalActionEditPart extends ShapeNodeEditPart {
 		 */
 		private void createContents() {
 
-			WrapLabel sendSignalActionFigure_name0 = new WrapLabel();
-			sendSignalActionFigure_name0.setText("");
+			fFigureSendSignalActionFigure_name = new WrapLabel();
+			fFigureSendSignalActionFigure_name.setText("");
 
-			this.add(sendSignalActionFigure_name0);
-			fFigureSendSignalActionFigure_name = sendSignalActionFigure_name0;
+			this.add(fFigureSendSignalActionFigure_name);
 
 		}
 

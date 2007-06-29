@@ -260,17 +260,15 @@ public class DataStoreNode2EditPart extends ShapeNodeEditPart {
 
 			dataStoreFigure_NameContainer0.add(dataStore_fixed_datastore1);
 
-			WrapLabel dataStoreFigure_name1 = new WrapLabel();
-			dataStoreFigure_name1.setText("");
+			fFigureDataStoreFigure_name = new WrapLabel();
+			fFigureDataStoreFigure_name.setText("");
 
-			dataStoreFigure_NameContainer0.add(dataStoreFigure_name1);
-			fFigureDataStoreFigure_name = dataStoreFigure_name1;
+			dataStoreFigure_NameContainer0.add(fFigureDataStoreFigure_name);
 
-			WrapLabel dataStoreFigure_states1 = new WrapLabel();
-			dataStoreFigure_states1.setText("");
+			fFigureDataStoreFigure_states = new WrapLabel();
+			fFigureDataStoreFigure_states.setText("");
 
-			dataStoreFigure_NameContainer0.add(dataStoreFigure_states1);
-			fFigureDataStoreFigure_states = dataStoreFigure_states1;
+			dataStoreFigure_NameContainer0.add(fFigureDataStoreFigure_states);
 
 		}
 
