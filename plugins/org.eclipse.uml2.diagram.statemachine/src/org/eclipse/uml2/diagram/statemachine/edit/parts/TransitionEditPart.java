@@ -84,14 +84,7 @@ public class TransitionEditPart extends ConnectionNodeEditPart {
 		 */
 		public TransitionConnection() {
 
-			createContents();
 			setTargetDecoration(createTargetDecoration());
-		}
-
-		/**
-		 * @generated
-		 */
-		private void createContents() {
 		}
 
 		/**

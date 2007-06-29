@@ -23,6 +23,56 @@ public class Messages extends NLS {
 	/**
 	 * @generated
 	 */
+	public static String UMLCreationWizardTitle;
+
+	/**
+	 * @generated
+	 */
+	public static String UMLCreationWizard_DiagramModelFilePageTitle;
+
+	/**
+	 * @generated
+	 */
+	public static String UMLCreationWizard_DiagramModelFilePageDescription;
+
+	/**
+	 * @generated
+	 */
+	public static String UMLCreationWizard_DomainModelFilePageTitle;
+
+	/**
+	 * @generated
+	 */
+	public static String UMLCreationWizard_DomainModelFilePageDescription;
+
+	/**
+	 * @generated
+	 */
+	public static String UMLCreationWizardOpenEditorError;
+
+	/**
+	 * @generated
+	 */
+	public static String UMLCreationWizardCreationError;
+
+	/**
+	 * @generated
+	 */
+	public static String UMLCreationWizardPageExtensionError;
+
+	/**
+	 * @generated
+	 */
+	public static String UMLDiagramEditorUtil_OpenModelResourceErrorDialogTitle;
+
+	/**
+	 * @generated
+	 */
+	public static String UMLDiagramEditorUtil_OpenModelResourceErrorDialogMessage;
+
+	/**
+	 * @generated
+	 */
 	public static String UMLDiagramEditorUtil_CreateDiagramProgressTask;
 
 	/**
@@ -89,6 +139,11 @@ public class Messages extends NLS {
 	 * @generated
 	 */
 	public static String UMLInitDiagramFileAction_InitDiagramFileWizardTitle;
+
+	/**
+	 * @generated
+	 */
+	public static String UMLInitDiagramFileAction_OpenModelFileDialogTitle;
 
 	/**
 	 * @generated
@@ -169,6 +224,21 @@ public class Messages extends NLS {
 	 * @generated
 	 */
 	public static String UMLDiagramEditor_SaveErrorMessage;
+
+	/**
+	 * @generated
+	 */
+	public static String UMLElementChooserDialog_SelectModelElementTitle;
+
+	/**
+	 * @generated
+	 */
+	public static String ModelElementSelectionPageMessage;
+
+	/**
+	 * @generated
+	 */
+	public static String ValidateActionMessage;
 
 	/**
 	 * @generated
@@ -554,6 +624,36 @@ public class Messages extends NLS {
 	 * @generated
 	 */
 	public static String NavigatorActionProvider_OpenDiagramActionName;
+
+	/**
+	 * @generated
+	 */
+	public static String AbstractParser_UnexpectedValueTypeMessage;
+
+	/**
+	 * @generated
+	 */
+	public static String AbstractParser_WrongStringConversionMessage;
+
+	/**
+	 * @generated
+	 */
+	public static String AbstractParser_UnknownLiteralMessage;
+
+	/**
+	 * @generated
+	 */
+	public static String MessageFormatParser_InvalidInputError;
+
+	/**
+	 * @generated
+	 */
+	public static String UMLModelingAssistantProviderTitle;
+
+	/**
+	 * @generated
+	 */
+	public static String UMLModelingAssistantProviderMessage;
 
 	//TODO: put accessor fields manually	
 }

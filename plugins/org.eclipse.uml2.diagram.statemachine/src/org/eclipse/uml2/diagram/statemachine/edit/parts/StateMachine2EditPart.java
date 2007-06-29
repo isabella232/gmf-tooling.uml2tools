@@ -1,6 +1,7 @@
 package org.eclipse.uml2.diagram.statemachine.edit.parts;
 
 import org.eclipse.draw2d.GridData;
+import org.eclipse.draw2d.GridLayout;
 import org.eclipse.draw2d.IFigure;
 import org.eclipse.draw2d.MarginBorder;
 import org.eclipse.draw2d.RectangleFigure;
@@ -22,6 +23,7 @@ import org.eclipse.gmf.runtime.diagram.ui.editpolicies.CreationEditPolicy;
 import org.eclipse.gmf.runtime.diagram.ui.editpolicies.DragDropEditPolicy;
 import org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles;
 import org.eclipse.gmf.runtime.diagram.ui.figures.IBorderItemLocator;
+import org.eclipse.gmf.runtime.draw2d.ui.figures.ConstrainedToolbarLayout;
 import org.eclipse.gmf.runtime.draw2d.ui.figures.WrapLabel;
 import org.eclipse.gmf.runtime.gef.ui.figures.DefaultSizeNodeFigure;
 import org.eclipse.gmf.runtime.gef.ui.figures.NodeFigure;
@@ -268,7 +270,7 @@ public class StateMachine2EditPart extends AbstractBorderedShapeEditPart {
 		 */
 		public CompositeStateFigure() {
 
-			org.eclipse.draw2d.GridLayout layoutThis = new org.eclipse.draw2d.GridLayout();
+			GridLayout layoutThis = new GridLayout();
 			layoutThis.numColumns = 1;
 			layoutThis.makeColumnsEqualWidth = true;
 			layoutThis.horizontalSpacing = 0;
@@ -301,7 +303,7 @@ public class StateMachine2EditPart extends AbstractBorderedShapeEditPart {
 			constraintCompositeStateFigure_NameContainer0.grabExcessVerticalSpace = false;
 			this.add(compositeStateFigure_NameContainer0, constraintCompositeStateFigure_NameContainer0);
 
-			org.eclipse.draw2d.GridLayout layoutCompositeStateFigure_NameContainer0 = new org.eclipse.draw2d.GridLayout();
+			GridLayout layoutCompositeStateFigure_NameContainer0 = new GridLayout();
 			layoutCompositeStateFigure_NameContainer0.numColumns = 1;
 			layoutCompositeStateFigure_NameContainer0.makeColumnsEqualWidth = true;
 			layoutCompositeStateFigure_NameContainer0.horizontalSpacing = 0;
@@ -310,39 +312,35 @@ public class StateMachine2EditPart extends AbstractBorderedShapeEditPart {
 			layoutCompositeStateFigure_NameContainer0.marginHeight = 3;
 			compositeStateFigure_NameContainer0.setLayoutManager(layoutCompositeStateFigure_NameContainer0);
 
-			WrapLabel compositeStateFigure_name1 = new WrapLabel();
-			compositeStateFigure_name1.setText("");
+			fFigureCompositeStateFigure_name = new WrapLabel();
+			fFigureCompositeStateFigure_name.setText("");
 
-			GridData constraintCompositeStateFigure_name1 = new GridData();
-			constraintCompositeStateFigure_name1.verticalAlignment = GridData.CENTER;
-			constraintCompositeStateFigure_name1.horizontalAlignment = GridData.CENTER;
-			constraintCompositeStateFigure_name1.horizontalIndent = 0;
-			constraintCompositeStateFigure_name1.horizontalSpan = 1;
-			constraintCompositeStateFigure_name1.verticalSpan = 1;
-			constraintCompositeStateFigure_name1.grabExcessHorizontalSpace = true;
-			constraintCompositeStateFigure_name1.grabExcessVerticalSpace = false;
-			compositeStateFigure_NameContainer0.add(compositeStateFigure_name1, constraintCompositeStateFigure_name1);
+			GridData constraintFFigureCompositeStateFigure_name = new GridData();
+			constraintFFigureCompositeStateFigure_name.verticalAlignment = GridData.CENTER;
+			constraintFFigureCompositeStateFigure_name.horizontalAlignment = GridData.CENTER;
+			constraintFFigureCompositeStateFigure_name.horizontalIndent = 0;
+			constraintFFigureCompositeStateFigure_name.horizontalSpan = 1;
+			constraintFFigureCompositeStateFigure_name.verticalSpan = 1;
+			constraintFFigureCompositeStateFigure_name.grabExcessHorizontalSpace = true;
+			constraintFFigureCompositeStateFigure_name.grabExcessVerticalSpace = false;
+			compositeStateFigure_NameContainer0.add(fFigureCompositeStateFigure_name, constraintFFigureCompositeStateFigure_name);
 
-			fFigureCompositeStateFigure_name = compositeStateFigure_name1;
+			fFigureCompositeStateFigure_Body = new RectangleFigure();
+			fFigureCompositeStateFigure_Body.setOutline(false);
 
-			RectangleFigure compositeStateFigure_Body0 = new RectangleFigure();
-			compositeStateFigure_Body0.setOutline(false);
+			GridData constraintFFigureCompositeStateFigure_Body = new GridData();
+			constraintFFigureCompositeStateFigure_Body.verticalAlignment = GridData.FILL;
+			constraintFFigureCompositeStateFigure_Body.horizontalAlignment = GridData.FILL;
+			constraintFFigureCompositeStateFigure_Body.horizontalIndent = 0;
+			constraintFFigureCompositeStateFigure_Body.horizontalSpan = 1;
+			constraintFFigureCompositeStateFigure_Body.verticalSpan = 1;
+			constraintFFigureCompositeStateFigure_Body.grabExcessHorizontalSpace = true;
+			constraintFFigureCompositeStateFigure_Body.grabExcessVerticalSpace = true;
+			this.add(fFigureCompositeStateFigure_Body, constraintFFigureCompositeStateFigure_Body);
 
-			GridData constraintCompositeStateFigure_Body0 = new GridData();
-			constraintCompositeStateFigure_Body0.verticalAlignment = GridData.FILL;
-			constraintCompositeStateFigure_Body0.horizontalAlignment = GridData.FILL;
-			constraintCompositeStateFigure_Body0.horizontalIndent = 0;
-			constraintCompositeStateFigure_Body0.horizontalSpan = 1;
-			constraintCompositeStateFigure_Body0.verticalSpan = 1;
-			constraintCompositeStateFigure_Body0.grabExcessHorizontalSpace = true;
-			constraintCompositeStateFigure_Body0.grabExcessVerticalSpace = true;
-			this.add(compositeStateFigure_Body0, constraintCompositeStateFigure_Body0);
+			LaneLayout layoutFFigureCompositeStateFigure_Body = new LaneLayout();
 
-			fFigureCompositeStateFigure_Body = compositeStateFigure_Body0;
-
-			LaneLayout layoutCompositeStateFigure_Body0 = new LaneLayout();
-
-			compositeStateFigure_Body0.setLayoutManager(layoutCompositeStateFigure_Body0);
+			fFigureCompositeStateFigure_Body.setLayoutManager(layoutFFigureCompositeStateFigure_Body);
 
 		}
 

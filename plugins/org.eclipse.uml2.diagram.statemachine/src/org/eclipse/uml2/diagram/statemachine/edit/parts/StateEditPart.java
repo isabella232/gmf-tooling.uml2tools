@@ -231,11 +231,10 @@ public class StateEditPart extends ShapeNodeEditPart {
 		 */
 		private void createContents() {
 
-			WrapLabel simpleStateFigure_name0 = new WrapLabel();
-			simpleStateFigure_name0.setText("");
+			fFigureSimpleStateFigure_name = new WrapLabel();
+			fFigureSimpleStateFigure_name.setText("");
 
-			this.add(simpleStateFigure_name0);
-			fFigureSimpleStateFigure_name = simpleStateFigure_name0;
+			this.add(fFigureSimpleStateFigure_name);
 
 		}
 

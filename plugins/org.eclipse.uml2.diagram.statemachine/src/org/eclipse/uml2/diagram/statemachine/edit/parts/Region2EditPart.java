@@ -227,12 +227,11 @@ public class Region2EditPart extends ShapeNodeEditPart {
 		 */
 		private void createContents() {
 
-			RectangleFigure regionFigure_Compartment0 = new RectangleFigure();
-			regionFigure_Compartment0.setFill(false);
-			regionFigure_Compartment0.setOutline(false);
+			fFigureRegionFigure_Compartment = new RectangleFigure();
+			fFigureRegionFigure_Compartment.setFill(false);
+			fFigureRegionFigure_Compartment.setOutline(false);
 
-			this.add(regionFigure_Compartment0);
-			fFigureRegionFigure_Compartment = regionFigure_Compartment0;
+			this.add(fFigureRegionFigure_Compartment);
 
 		}
 
