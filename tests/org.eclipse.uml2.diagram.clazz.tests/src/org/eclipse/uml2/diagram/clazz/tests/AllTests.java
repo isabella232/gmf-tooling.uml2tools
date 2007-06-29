@@ -18,9 +18,7 @@ import junit.framework.TestSuite;
 import org.eclipse.uml2.diagram.clazz.tests.lookup.TypeLookupTest;
 import org.eclipse.uml2.diagram.clazz.tests.parser.OperationInplaceApplierTest;
 import org.eclipse.uml2.diagram.clazz.tests.parser.OperationParserTest;
-import org.eclipse.uml2.diagram.clazz.tests.parser.PropertyParserProblemsTest;
 import org.eclipse.uml2.diagram.clazz.tests.parser.PropertyParserTest;
-
 
 public class AllTests {
 
