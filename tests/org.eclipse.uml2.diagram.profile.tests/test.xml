@@ -23,10 +23,10 @@
   <target name="suite">
     <property name="uml2-tools-folder" value="${eclipse-home}/uml2_tools_folder"/>
     <delete dir="${uml2-tools-folder}" quiet="true"/>
-    <ant target="ui-test" antfile="${library-file}" dir="${eclipse-home}">
+    <ant target="core-test" antfile="${library-file}" dir="${eclipse-home}">
       <property name="data-dir" value="${uml2-tools-folder}"/>
       <property name="plugin-name" value="${plugin-name}"/>
-      <property name="classname" value="org.eclipse.uml2.diagram.profile.tests.AllTests"/>
+      <property name="classname" value="org.eclipse.uml2.diagram.profile.tests.AllNonUITests"/>
       <property name="vmargs" value="-ea -Xmx512M"/>
     </ant>
   </target>
