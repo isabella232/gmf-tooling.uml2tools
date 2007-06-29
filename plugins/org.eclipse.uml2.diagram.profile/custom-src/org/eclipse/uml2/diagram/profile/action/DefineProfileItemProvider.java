@@ -7,6 +7,7 @@ import org.eclipse.jface.action.IAction;
 import org.eclipse.jface.action.IMenuManager;
 import org.eclipse.jface.action.MenuManager;
 import org.eclipse.ui.IWorkbenchPage;
+import org.eclipse.uml2.diagram.profile.part.CustomMessages;
 
 
 public class DefineProfileItemProvider extends AbstractContributionItemProvider implements IProvider  {
@@ -31,10 +32,10 @@ public class DefineProfileItemProvider extends AbstractContributionItemProvider 
 	}
 
 	public static final String MENU_PROFILE = "ProfileMenu";	 //$NON-NLS-1$
-	public static final String LABEL_PROFILE_MENU = "Profile";
+	public static final String LABEL_PROFILE_MENU = CustomMessages.DefineProfileItemProvider_profile_menu;
 
 	public static final String MENU_PROFILE_GROUP = "ProfileGroup"; //$NON-NLS-1$
-	public static final String LABEL_PROFILE_GROUP = "Profile"; 
+	public static final String LABEL_PROFILE_GROUP = CustomMessages.DefineProfileItemProvider_profile_group; 
 	
 	public static final String ACTION_DEFINE_PROFILE = "define_profile"; //$NON-NLS-1$
 

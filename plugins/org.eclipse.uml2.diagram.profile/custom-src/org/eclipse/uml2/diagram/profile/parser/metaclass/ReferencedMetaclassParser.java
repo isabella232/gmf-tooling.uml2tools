@@ -26,6 +26,7 @@ import org.eclipse.gmf.runtime.common.ui.services.parser.ParserEditStatus;
 import org.eclipse.gmf.runtime.emf.ui.services.parser.ISemanticParser;
 import org.eclipse.jface.text.contentassist.IContentAssistProcessor;
 import org.eclipse.uml2.diagram.parser.assist.EObjectCompletionProcessor;
+import org.eclipse.uml2.diagram.profile.part.CustomMessages;
 import org.eclipse.uml2.diagram.profile.part.UMLDiagramEditorPlugin;
 import org.eclipse.uml2.uml.Classifier;
 import org.eclipse.uml2.uml.ElementImport;
@@ -34,7 +35,7 @@ import org.eclipse.uml2.uml.UMLPackage;
 public class ReferencedMetaclassParser implements ISemanticParser {
 	private final MetaclassesList myMetaclassesList = new MetaclassesList();
 	private final CompletionProcessor myCompletionProcessor = new CompletionProcessor();
-	private final static String NO_METACLASS = "<enter>";
+	private final static String NO_METACLASS = CustomMessages.ReferencedMetaclassParser_no_metaclass;
 
 	public IContentAssistProcessor getCompletionProcessor(IAdaptable element) {
 		myCompletionProcessor.setContext(doAdapt(element));
@@ -85,7 +86,7 @@ public class ReferencedMetaclassParser implements ISemanticParser {
 	public IParserEditStatus isValidEditString(IAdaptable element, String editString) {
 		Classifier metaclass = findMetaclass(element, editString);
 		if (metaclass == null) {
-			return new ParserEditStatus(IStatus.ERROR, UMLDiagramEditorPlugin.ID, ParserEditStatus.UNEDITABLE, "Unknown metaclass: " + editString, null);
+			return new ParserEditStatus(IStatus.ERROR, UMLDiagramEditorPlugin.ID, ParserEditStatus.UNEDITABLE, "Unknown metaclass: " + editString, null); //$NON-NLS-1$
 		}
 		return ParserEditStatus.EDITABLE_STATUS;
 	}

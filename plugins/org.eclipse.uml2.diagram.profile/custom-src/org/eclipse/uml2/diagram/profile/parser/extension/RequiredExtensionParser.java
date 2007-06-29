@@ -33,11 +33,11 @@ import org.eclipse.uml2.uml.UMLPackage;
 import org.eclipse.uml2.uml.ValueSpecification;
 
 public class RequiredExtensionParser implements ISemanticParser {
-	private final static String IS_REQUIRED = "{required}";
-	private final static String NOT_REQUIRED = "";
+	private final static String IS_REQUIRED = "{required}"; //$NON-NLS-1$
+	private final static String NOT_REQUIRED = ""; //$NON-NLS-1$
 	
 	private final static String PROPOSAL_IS_REQUIRED = IS_REQUIRED;
-	private final static String PROPOSAL_NOT_REQUIRED = "{}";
+	private final static String PROPOSAL_NOT_REQUIRED = "{}"; //$NON-NLS-1$
 
 	private final FixedSetCompletionProcessor myCompletionProcessor = new FixedSetCompletionProcessor(PROPOSAL_IS_REQUIRED, PROPOSAL_NOT_REQUIRED);	
 

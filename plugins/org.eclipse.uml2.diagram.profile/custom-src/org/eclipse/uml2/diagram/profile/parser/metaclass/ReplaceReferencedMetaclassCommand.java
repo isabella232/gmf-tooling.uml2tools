@@ -68,7 +68,7 @@ public class ReplaceReferencedMetaclassCommand extends SetValueCommand {
 		
 		Property metaclassEnd = extension.metaclassEnd();
 		
-		String newExtensionName = newMetaclass.getName() + "_" + stereotype.getName();
+		String newExtensionName = newMetaclass.getName() + "_" + stereotype.getName(); //$NON-NLS-1$
 		String newPropertyName = Extension.METACLASS_ROLE_PREFIX + newMetaclass.getName();
 		
 		extension.setName(newExtensionName);

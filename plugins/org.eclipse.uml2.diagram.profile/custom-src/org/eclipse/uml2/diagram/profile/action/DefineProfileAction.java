@@ -14,10 +14,11 @@ import org.eclipse.gmf.runtime.emf.type.core.requests.AbstractEditCommandRequest
 import org.eclipse.gmf.runtime.emf.type.core.requests.IEditCommandRequest;
 import org.eclipse.ui.IWorkbenchPage;
 import org.eclipse.uml2.diagram.profile.edit.parts.ProfileEditPart;
+import org.eclipse.uml2.diagram.profile.part.CustomMessages;
 import org.eclipse.uml2.uml.Profile;
 
 public class DefineProfileAction extends DiagramAction {
-	private static final String UNDEFINED_LABEL = "<Undefined>";
+	private static final String UNDEFINED_LABEL = CustomMessages.DefineProfileAction_indefined;
 
 	public DefineProfileAction(IWorkbenchPage workbenchPage) {
 		super(workbenchPage);
@@ -36,7 +37,7 @@ public class DefineProfileAction extends DiagramAction {
 				return null;
 			}};
 			
-		Command command = new ICommandProxy(new DefineProfileCommand("Define Profile", profile, request));
+		Command command = new ICommandProxy(new DefineProfileCommand(CustomMessages.DefineProfileAction_define_profile_command, profile, request));
 		return command;
 	}
 
@@ -68,7 +69,7 @@ public class DefineProfileAction extends DiagramAction {
 			return UNDEFINED_LABEL;
 		}
 		Profile profile = (Profile) profileEditPart.getNotationView().getElement();
-		return (profile.isDefined())? "Re-define" : "Define";
+		return (profile.isDefined())? CustomMessages.DefineProfileAction_redefine_action : CustomMessages.DefineProfileAction_define_action;
 	}
 
 
