@@ -87,14 +87,7 @@ public class ExtensionEditPart extends ConnectionNodeEditPart {
 			this.setForegroundColor(ColorConstants.black);
 			this.setBackgroundColor(ColorConstants.black);
 
-			createContents();
 			setTargetDecoration(createTargetDecoration());
-		}
-
-		/**
-		 * @generated
-		 */
-		private void createContents() {
 		}
 
 		/**

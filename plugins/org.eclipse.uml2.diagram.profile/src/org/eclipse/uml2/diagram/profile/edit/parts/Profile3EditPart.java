@@ -296,18 +296,16 @@ public class Profile3EditPart extends ShapeNodeEditPart {
 
 			this.add(profileLabels_profileFigure0);
 
-			WrapLabel profileLabelsFigure_NameFigure0 = new WrapLabel();
-			profileLabelsFigure_NameFigure0.setText("");
+			fFigureProfileLabelsFigure_NameFigure = new WrapLabel();
+			fFigureProfileLabelsFigure_NameFigure.setText("");
 
-			this.add(profileLabelsFigure_NameFigure0);
-			fFigureProfileLabelsFigure_NameFigure = profileLabelsFigure_NameFigure0;
+			this.add(fFigureProfileLabelsFigure_NameFigure);
 
-			RectangleFigure profileLabelCompartmentFigure0 = new RectangleFigure();
-			profileLabelCompartmentFigure0.setFill(false);
-			profileLabelCompartmentFigure0.setOutline(false);
+			fFigureProfileLabelCompartmentFigure = new RectangleFigure();
+			fFigureProfileLabelCompartmentFigure.setFill(false);
+			fFigureProfileLabelCompartmentFigure.setOutline(false);
 
-			this.add(profileLabelCompartmentFigure0);
-			fFigureProfileLabelCompartmentFigure = profileLabelCompartmentFigure0;
+			this.add(fFigureProfileLabelCompartmentFigure);
 
 		}
 

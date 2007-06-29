@@ -312,20 +312,18 @@ public class Profile2EditPart extends ShapeNodeEditPart {
 
 			profileFigure_ProfileLabel1.setLayoutManager(layoutProfileFigure_ProfileLabel1);
 
-			WrapLabel profileFigure_NameLabel1 = new WrapLabel();
-			profileFigure_NameLabel1.setText("");
+			fFigureProfileFigure_NameLabel = new WrapLabel();
+			fFigureProfileFigure_NameLabel.setText("");
 
-			profile_body0.add(profileFigure_NameLabel1);
-			fFigureProfileFigure_NameLabel = profileFigure_NameLabel1;
+			profile_body0.add(fFigureProfileFigure_NameLabel);
 
-			CenterLayout layoutProfileFigure_NameLabel1 = new CenterLayout();
+			CenterLayout layoutFFigureProfileFigure_NameLabel = new CenterLayout();
 
-			profileFigure_NameLabel1.setLayoutManager(layoutProfileFigure_NameLabel1);
+			fFigureProfileFigure_NameLabel.setLayoutManager(layoutFFigureProfileFigure_NameLabel);
 
-			RectangleFigure profileFigure_ContentsCompartment1 = new RectangleFigure();
+			fFigureProfileFigure_ContentsCompartment = new RectangleFigure();
 
-			profile_body0.add(profileFigure_ContentsCompartment1);
-			fFigureProfileFigure_ContentsCompartment = profileFigure_ContentsCompartment1;
+			profile_body0.add(fFigureProfileFigure_ContentsCompartment);
 
 		}
 

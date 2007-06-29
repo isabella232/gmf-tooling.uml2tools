@@ -29,6 +29,7 @@ import org.eclipse.uml2.diagram.profile.edit.parts.ProfileEditPart;
 import org.eclipse.uml2.diagram.profile.edit.parts.Stereotype2EditPart;
 import org.eclipse.uml2.diagram.profile.edit.parts.StereotypeEditPart;
 
+import org.eclipse.uml2.diagram.profile.part.Messages;
 import org.eclipse.uml2.diagram.profile.part.UMLDiagramEditorPlugin;
 
 /**
@@ -249,8 +250,8 @@ public class UMLModelingAssistantProvider extends ModelingAssistantProvider {
 		Shell shell = Display.getCurrent().getActiveShell();
 		ILabelProvider labelProvider = new AdapterFactoryLabelProvider(UMLDiagramEditorPlugin.getInstance().getItemProvidersAdapterFactory());
 		ElementListSelectionDialog dialog = new ElementListSelectionDialog(shell, labelProvider);
-		dialog.setMessage("Available domain model elements:");
-		dialog.setTitle("Select domain model element");
+		dialog.setMessage(Messages.UMLModelingAssistantProviderMessage);
+		dialog.setTitle(Messages.UMLModelingAssistantProviderTitle);
 		dialog.setMultipleSelection(false);
 		dialog.setElements(elements);
 		EObject selected = null;

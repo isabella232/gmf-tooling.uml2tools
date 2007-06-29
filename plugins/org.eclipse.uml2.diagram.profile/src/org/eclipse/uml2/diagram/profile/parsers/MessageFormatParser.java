@@ -10,6 +10,8 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.gmf.runtime.common.core.command.ICommand;
 import org.eclipse.gmf.runtime.common.ui.services.parser.IParserEditStatus;
 import org.eclipse.gmf.runtime.common.ui.services.parser.ParserEditStatus;
+import org.eclipse.osgi.util.NLS;
+import org.eclipse.uml2.diagram.profile.part.Messages;
 import org.eclipse.uml2.diagram.profile.part.UMLDiagramEditorPlugin;
 
 /**
@@ -185,7 +187,7 @@ public class MessageFormatParser extends AbstractParser {
 		ParsePosition pos = new ParsePosition(0);
 		Object[] values = getEditProcessor().parse(editString, pos);
 		if (values == null) {
-			return new ParserEditStatus(UMLDiagramEditorPlugin.ID, IParserEditStatus.UNEDITABLE, "Invalid input at " + pos.getErrorIndex());
+			return new ParserEditStatus(UMLDiagramEditorPlugin.ID, IParserEditStatus.UNEDITABLE, NLS.bind(Messages.MessageFormatParser_InvalidInputError, new Integer(pos.getErrorIndex())));
 		}
 		return validateNewValues(values);
 	}

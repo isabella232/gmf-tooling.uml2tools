@@ -318,23 +318,20 @@ public class StereotypeEditPart extends ShapeNodeEditPart {
 
 			stereotypeFigure_NameContainer0.setLayoutManager(layoutStereotypeFigure_NameContainer0);
 
-			WrapLabel stereotypeFigure_NameLabel1 = new WrapLabel();
-			stereotypeFigure_NameLabel1.setText("");
+			fFigureStereotypeFigure_NameLabel = new WrapLabel();
+			fFigureStereotypeFigure_NameLabel.setText("");
 
-			stereotypeFigure_NameContainer0.add(stereotypeFigure_NameLabel1);
-			fFigureStereotypeFigure_NameLabel = stereotypeFigure_NameLabel1;
+			stereotypeFigure_NameContainer0.add(fFigureStereotypeFigure_NameLabel);
 
-			RectangleFigure stereotypeFigure_AttributesCompartment0 = new RectangleFigure();
-			stereotypeFigure_AttributesCompartment0.setOutline(false);
+			fFigureStereotypeFigure_AttributesCompartment = new RectangleFigure();
+			fFigureStereotypeFigure_AttributesCompartment.setOutline(false);
 
-			this.add(stereotypeFigure_AttributesCompartment0);
-			fFigureStereotypeFigure_AttributesCompartment = stereotypeFigure_AttributesCompartment0;
+			this.add(fFigureStereotypeFigure_AttributesCompartment);
 
-			RectangleFigure stereotypeFigure_ConstraintsCompartment0 = new RectangleFigure();
-			stereotypeFigure_ConstraintsCompartment0.setOutline(false);
+			fFigureStereotypeFigure_ConstraintsCompartment = new RectangleFigure();
+			fFigureStereotypeFigure_ConstraintsCompartment.setOutline(false);
 
-			this.add(stereotypeFigure_ConstraintsCompartment0);
-			fFigureStereotypeFigure_ConstraintsCompartment = stereotypeFigure_ConstraintsCompartment0;
+			this.add(fFigureStereotypeFigure_ConstraintsCompartment);
 
 		}
 

@@ -295,11 +295,10 @@ public class ElementImportEditPart extends ShapeNodeEditPart {
 
 			referencedMetaclassFigure_LabelPane0.setLayoutManager(layoutReferencedMetaclassFigure_LabelPane0);
 
-			WrapLabel referencedMetaclassFigure_className1 = new WrapLabel();
-			referencedMetaclassFigure_className1.setText("");
+			fFigureReferencedMetaclassFigure_className = new WrapLabel();
+			fFigureReferencedMetaclassFigure_className.setText("");
 
-			referencedMetaclassFigure_LabelPane0.add(referencedMetaclassFigure_className1);
-			fFigureReferencedMetaclassFigure_className = referencedMetaclassFigure_className1;
+			referencedMetaclassFigure_LabelPane0.add(fFigureReferencedMetaclassFigure_className);
 
 		}
 
