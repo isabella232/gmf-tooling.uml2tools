@@ -46,7 +46,7 @@ public class RequiredExtensionParser implements ISemanticParser {
 		return myCompletionProcessor;
 	}
 	
-	public List getSemanticElementsBeingParsed(EObject element) {
+	public List<?> getSemanticElementsBeingParsed(EObject element) {
 		if (element instanceof Extension == false) {
 			return Collections.EMPTY_LIST;
 		}
