@@ -14,16 +14,14 @@
           outline="false"
           fill="false">
         <layout
-            xsi:type="gmfgraph:FlowLayout"
-            vertical="true"
-            matchMinorSize="true"
-            forceSingleLine="true"
-            minorAlignment="CENTER"
-            majorSpacing="0"
-            minorSpacing="0"/>
+            xsi:type="gmfgraph:BorderLayout"/>
         <children
             xsi:type="gmfgraph:Rectangle"
             name="ComponentFigure_LabelsContainer">
+          <layoutData
+              xsi:type="gmfgraph:BorderLayoutData"
+              alignment="BEGINNING"
+              vertical="true"/>
           <layout
               xsi:type="gmfgraph:FlowLayout"
               vertical="true"
@@ -46,6 +44,9 @@
         <children
             xsi:type="gmfgraph:Rectangle"
             name="ComponentFigure_Body">
+          <layoutData
+              xsi:type="gmfgraph:BorderLayoutData"
+              alignment="FILL"/>
           <minimumSize
               dy="55"/>
         </children>
