@@ -70,7 +70,6 @@ import org.eclipse.uml2.diagram.clazz.parser.association.end.AssociationEndToStr
 import org.eclipse.uml2.diagram.clazz.parser.association.name.AssociationNameParser;
 import org.eclipse.uml2.diagram.clazz.parser.association.name.AssociationNameToString;
 import org.eclipse.uml2.diagram.clazz.parser.dependency.DependencyTypeParser;
-import org.eclipse.uml2.diagram.clazz.parser.imports.ElementImportParser;
 import org.eclipse.uml2.diagram.clazz.parser.instance.InstanceSpecificationParser;
 import org.eclipse.uml2.diagram.clazz.parser.instance.InstanceSpecificationToString;
 import org.eclipse.uml2.diagram.clazz.parser.slot.SlotParser;
@@ -78,6 +77,7 @@ import org.eclipse.uml2.diagram.clazz.parser.slot.SlotToString;
 import org.eclipse.uml2.diagram.clazz.parser.stereotype.AppliedStereotypeParser;
 import org.eclipse.uml2.diagram.clazz.parsers.MessageFormatParser;
 import org.eclipse.uml2.diagram.clazz.part.UMLVisualIDRegistry;
+import org.eclipse.uml2.diagram.common.parser.imports.ElementImportParser;
 import org.eclipse.uml2.diagram.common.parser.operation.OperationInplaceApplier;
 import org.eclipse.uml2.diagram.common.parser.operation.OperationParser;
 import org.eclipse.uml2.diagram.common.parser.operation.OperationToString;

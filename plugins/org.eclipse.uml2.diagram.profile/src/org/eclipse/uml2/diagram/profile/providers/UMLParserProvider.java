@@ -11,7 +11,10 @@ import org.eclipse.gmf.runtime.common.ui.services.parser.IParserProvider;
 import org.eclipse.gmf.runtime.emf.type.core.IElementType;
 import org.eclipse.gmf.runtime.emf.ui.services.parser.ParserHintAdapter;
 import org.eclipse.gmf.runtime.notation.View;
+import org.eclipse.uml2.diagram.common.parser.imports.ElementImportParser;
+import org.eclipse.uml2.diagram.common.parser.imports.ElementImportProvider;
 import org.eclipse.uml2.diagram.profile.edit.parts.ConstraintEditPart;
+import org.eclipse.uml2.diagram.profile.edit.parts.ElementImport2EditPart;
 import org.eclipse.uml2.diagram.profile.edit.parts.EnumerationLiteralEditPart;
 import org.eclipse.uml2.diagram.profile.edit.parts.EnumerationNameEditPart;
 import org.eclipse.uml2.diagram.profile.edit.parts.ProfileName2EditPart;
@@ -198,6 +201,37 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 	/**
 	 * @generated
 	 */
+	private IParser elementImport_3009Parser;
+
+	/**
+	 * @generated
+	 */
+	private IParser getElementImport_3009Parser() {
+		if (elementImport_3009Parser == null) {
+			elementImport_3009Parser = createElementImport_3009Parser();
+		}
+		return elementImport_3009Parser;
+	}
+
+	/**
+	 * @generated NOT
+	 */
+	protected IParser createElementImport_3009Parser() {
+		return new ElementImportParser(new ElementImportProvider(){
+			@Override
+			protected boolean isSuitable(Object object) {
+				return super.isSuitable(object) && !isMetaclass(object);
+			}
+			private boolean isMetaclass(Object object) {
+				return object instanceof org.eclipse.uml2.uml.Class && ((org.eclipse.uml2.uml.Class)object).isMetaclass();
+			}
+
+		});
+	}
+
+	/**
+	 * @generated
+	 */
 	protected IParser getParser(int visualID) {
 		switch (visualID) {
 		case StereotypeNameEditPart.VISUAL_ID:
@@ -214,6 +248,8 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 			return getStereotype_3003Parser();
 		case EnumerationLiteralEditPart.VISUAL_ID:
 			return getEnumerationLiteral_3005Parser();
+		case ElementImport2EditPart.VISUAL_ID:
+			return getElementImport_3009Parser();
 		}
 		return null;
 	}

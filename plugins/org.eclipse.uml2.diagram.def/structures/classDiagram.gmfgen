@@ -3247,6 +3247,11 @@
             title="Template Signature"
             description="Create Template Signature"
             genNodes="//@diagram/@childNodes.11"/>
+        <entries
+            xsi:type="gmfgen:ToolEntry"
+            title="Element Import"
+            description="Create Element Import"
+            genNodes="//@diagram/@childNodes.25"/>
       </groups>
       <groups
           title="Links"

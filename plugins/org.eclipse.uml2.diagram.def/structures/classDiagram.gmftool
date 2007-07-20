@@ -67,6 +67,10 @@
           xsi:type="gmftool:CreationTool"
           title="Template Signature"
           description="Create Template Signature"/>
+      <tools
+          xsi:type="gmftool:CreationTool"
+          title="Element Import"
+          description="Create Element Import"/>
     </tools>
     <tools
         xsi:type="gmftool:ToolGroup"

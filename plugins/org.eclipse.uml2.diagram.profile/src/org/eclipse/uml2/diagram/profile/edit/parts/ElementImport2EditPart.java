@@ -4,6 +4,7 @@ import java.util.Collections;
 import java.util.List;
 
 import org.eclipse.core.runtime.IAdaptable;
+import org.eclipse.draw2d.ColorConstants;
 import org.eclipse.draw2d.IFigure;
 import org.eclipse.draw2d.Label;
 import org.eclipse.draw2d.geometry.Point;
@@ -50,6 +51,9 @@ import org.eclipse.uml2.diagram.profile.edit.policies.UMLTextNonResizableEditPol
 import org.eclipse.uml2.diagram.profile.edit.policies.UMLTextSelectionEditPolicy;
 import org.eclipse.uml2.diagram.profile.providers.UMLElementTypes;
 import org.eclipse.uml2.diagram.profile.providers.UMLParserProvider;
+import org.eclipse.uml2.uml.Class;
+import org.eclipse.uml2.uml.ElementImport;
+import org.eclipse.uml2.uml.PackageableElement;
 
 /**
  * @generated
@@ -369,13 +373,21 @@ public class ElementImport2EditPart extends CompartmentEditPart implements IText
 	/**
 	 * @generated
 	 */
-	protected void refreshVisuals() {
+	protected void refreshVisualsGen() {
 		super.refreshVisuals();
 		refreshLabel();
 		refreshFont();
 		refreshFontColor();
 		refreshUnderline();
 		refreshStrikeThrough();
+	}
+
+	/**
+	 * @generated NOT
+	 */
+	protected void refreshVisuals() {
+		refreshVisualsGen();
+		refreshHasImportedElement();
 	}
 
 	/**
@@ -497,7 +509,7 @@ public class ElementImport2EditPart extends CompartmentEditPart implements IText
 	/**
 	 * @generated
 	 */
-	protected void handleNotificationEvent(Notification event) {
+	protected void handleNotificationEventGen(Notification event) {
 		Object feature = event.getFeature();
 		if (NotationPackage.eINSTANCE.getFontStyle_FontColor().equals(feature)) {
 			Integer c = (Integer) event.getNewValue();
@@ -528,6 +540,16 @@ public class ElementImport2EditPart extends CompartmentEditPart implements IText
 	}
 
 	/**
+	 * @generated NOT
+	 */
+	protected void handleNotificationEvent(Notification notification) {
+		super.handleNotificationEvent(notification);
+		if (notification.getNotifier() instanceof ElementImport) {
+			refreshVisuals();
+		}
+	}
+
+	/**
 	 * @generated
 	 */
 	protected IFigure createFigure() {
@@ -542,4 +564,27 @@ public class ElementImport2EditPart extends CompartmentEditPart implements IText
 	protected IFigure createFigurePrim() {
 		return new WrapLabel();
 	}
+	
+	/**
+	 * @NOT-GENERATED
+	 */
+	protected void refreshHasImportedElement() {
+		boolean hasActualMetaclassImport = hasImportedElement();
+		if (!hasActualMetaclassImport) {
+			setForegroundColor(ColorConstants.red);
+		}
+	}
+
+	
+	/**
+	 * @NOT-GENERATED
+	 */
+	private boolean hasImportedElement() {
+		ElementImport elementImport = (ElementImport) resolveSemanticElement();
+		if (elementImport == null) {
+			return false;
+		}
+		return elementImport.getImportedElement() != null;
+	}
+
 }

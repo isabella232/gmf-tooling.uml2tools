@@ -49,6 +49,10 @@
           xsi:type="gmftool:CreationTool"
           title="Literal"
           description="Create Literal"/>
+      <tools
+          xsi:type="gmftool:CreationTool"
+          title="Element Import"
+          description="Create Element Import"/>
     </tools>
   </palette>
 </gmftool:ToolRegistry>

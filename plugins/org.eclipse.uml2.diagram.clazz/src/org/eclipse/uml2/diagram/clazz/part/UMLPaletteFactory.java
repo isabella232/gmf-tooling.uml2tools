@@ -58,6 +58,7 @@ public class UMLPaletteFactory {
 		paletteContainer.add(createEnumLiteral3CreationTool());
 		paletteContainer.add(createPort4CreationTool());
 		paletteContainer.add(createTemplateSignature5CreationTool());
+		paletteContainer.add(createElementImport6CreationTool());
 		return paletteContainer;
 	}
 
@@ -291,6 +292,18 @@ public class UMLPaletteFactory {
 		types.add(UMLElementTypes.RedefinableTemplateSignature_3027);
 		NodeToolEntry entry = new NodeToolEntry(Messages.TemplateSignature5CreationTool_title, Messages.TemplateSignature5CreationTool_desc, types);
 		entry.setSmallIcon(UMLElementTypes.getImageDescriptor(UMLElementTypes.RedefinableTemplateSignature_3027));
+		entry.setLargeIcon(entry.getSmallIcon());
+		return entry;
+	}
+
+	/**
+	 * @generated
+	 */
+	private ToolEntry createElementImport6CreationTool() {
+		List/*<IElementType>*/types = new ArrayList/*<IElementType>*/(1);
+		types.add(UMLElementTypes.ElementImport_3031);
+		NodeToolEntry entry = new NodeToolEntry(Messages.ElementImport6CreationTool_title, Messages.ElementImport6CreationTool_desc, types);
+		entry.setSmallIcon(UMLElementTypes.getImageDescriptor(UMLElementTypes.ElementImport_3031));
 		entry.setLargeIcon(entry.getSmallIcon());
 		return entry;
 	}

@@ -70,7 +70,8 @@ public class UMLVisualIDRegistry {
 	 * @generated
 	 */
 	private static final UMLAbstractExpression ElementImport_3009_Constraint = UMLOCLFactory.getExpression(
-			"let imported : NamedElement = self.importedElement in \r\nnot imported.oclIsKindOf(Class) or not imported.oclAsType(Class).isMetaclass()\r\n", UMLPackage.eINSTANCE.getElementImport());
+			"let imported : NamedElement = self.importedElement in \r\nimported.oclIsUndefined() or not imported.oclIsKindOf(Class) or not imported.oclAsType(Class).isMetaclass()\r\n",
+			UMLPackage.eINSTANCE.getElementImport());
 
 	/**
 	 * @generated

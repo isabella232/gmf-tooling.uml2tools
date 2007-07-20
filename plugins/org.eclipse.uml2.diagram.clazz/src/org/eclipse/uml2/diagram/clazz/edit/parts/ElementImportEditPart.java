@@ -4,6 +4,7 @@ import java.util.Collections;
 import java.util.List;
 
 import org.eclipse.core.runtime.IAdaptable;
+import org.eclipse.draw2d.ColorConstants;
 import org.eclipse.draw2d.IFigure;
 import org.eclipse.draw2d.Label;
 import org.eclipse.draw2d.geometry.Point;
@@ -50,6 +51,7 @@ import org.eclipse.uml2.diagram.clazz.edit.policies.UMLTextNonResizableEditPolic
 import org.eclipse.uml2.diagram.clazz.edit.policies.UMLTextSelectionEditPolicy;
 import org.eclipse.uml2.diagram.clazz.providers.UMLElementTypes;
 import org.eclipse.uml2.diagram.clazz.providers.UMLParserProvider;
+import org.eclipse.uml2.uml.ElementImport;
 
 /**
  * @generated
@@ -367,13 +369,21 @@ public class ElementImportEditPart extends CompartmentEditPart implements ITextA
 	/**
 	 * @generated
 	 */
-	protected void refreshVisuals() {
+	protected void refreshVisualsGen() {
 		super.refreshVisuals();
 		refreshLabel();
 		refreshFont();
 		refreshFontColor();
 		refreshUnderline();
 		refreshStrikeThrough();
+	}
+	
+	/**
+	 * @generated NOT
+	 */
+	protected void refreshVisuals() {
+		refreshVisualsGen();
+		refreshHasImportedElement();
 	}
 
 	/**
@@ -495,7 +505,7 @@ public class ElementImportEditPart extends CompartmentEditPart implements ITextA
 	/**
 	 * @generated
 	 */
-	protected void handleNotificationEvent(Notification event) {
+	protected void handleNotificationEventGen(Notification event) {
 		Object feature = event.getFeature();
 		if (NotationPackage.eINSTANCE.getFontStyle_FontColor().equals(feature)) {
 			Integer c = (Integer) event.getNewValue();
@@ -504,8 +514,8 @@ public class ElementImportEditPart extends CompartmentEditPart implements ITextA
 			refreshUnderline();
 		} else if (NotationPackage.eINSTANCE.getFontStyle_StrikeThrough().equals(feature)) {
 			refreshStrikeThrough();
-		} else if (NotationPackage.eINSTANCE.getFontStyle_FontHeight().equals(feature) || NotationPackage.eINSTANCE.getFontStyle_FontName().equals(feature)
-				|| NotationPackage.eINSTANCE.getFontStyle_Bold().equals(feature) || NotationPackage.eINSTANCE.getFontStyle_Italic().equals(feature)) {
+		} else if (NotationPackage.eINSTANCE.getFontStyle_FontHeight().equals(feature) || NotationPackage.eINSTANCE.getFontStyle_FontName().equals(feature) ||
+				NotationPackage.eINSTANCE.getFontStyle_Bold().equals(feature) || NotationPackage.eINSTANCE.getFontStyle_Italic().equals(feature)) {
 			refreshFont();
 		} else {
 			if (getParser() != null && getParser().isAffectingEvent(event, getParserOptions().intValue())) {
@@ -526,6 +536,16 @@ public class ElementImportEditPart extends CompartmentEditPart implements ITextA
 	}
 
 	/**
+	 * @generated NOT
+	 */
+	protected void handleNotificationEvent(Notification notification) {
+		handleNotificationEventGen(notification);
+		if (notification.getNotifier() instanceof ElementImport) {
+			refreshVisuals();
+		}
+	}
+
+	/**
 	 * @generated
 	 */
 	protected IFigure createFigure() {
@@ -540,4 +560,28 @@ public class ElementImportEditPart extends CompartmentEditPart implements ITextA
 	protected IFigure createFigurePrim() {
 		return new WrapLabel();
 	}
+	
+	/**
+	 * @NOT-GENERATED
+	 */
+	protected void refreshHasImportedElement() {
+		boolean hasActualMetaclassImport = hasImportedElement();
+		if (!hasActualMetaclassImport) {
+			setForegroundColor(ColorConstants.red);
+		}
+	}
+
+	
+	/**
+	 * @NOT-GENERATED
+	 */
+	private boolean hasImportedElement() {
+		ElementImport elementImport = (ElementImport) resolveSemanticElement();
+		if (elementImport == null) {
+			return false;
+		}
+		return elementImport.getImportedElement() != null;
+	}
+
+
 }

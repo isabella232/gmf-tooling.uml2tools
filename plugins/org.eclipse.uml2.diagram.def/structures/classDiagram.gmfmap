@@ -1338,6 +1338,9 @@
             <features
                 href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//ElementImport/alias"/>
           </labelMappings>
+          <tool
+              xsi:type="gmftool:CreationTool"
+              href="classDiagram.gmftool#//@palette/@tools.1/@tools.5"/>
           <diagramNode
               href="classDiagram_auxiliary.gmfgraph#AuxiliaryPureLabel"/>
         </ownedChild>

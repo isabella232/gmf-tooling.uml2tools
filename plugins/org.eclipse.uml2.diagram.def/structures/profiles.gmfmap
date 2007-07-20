@@ -296,11 +296,15 @@
           <domainMetaElement
               href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//ElementImport"/>
           <domainSpecialization
-              body="let imported : NamedElement = self.importedElement in &#xD;&#xA;not imported.oclIsKindOf(Class) or not imported.oclAsType(Class).isMetaclass()&#xD;&#xA;"/>
-          <labelMappings>
+              body="let imported : NamedElement = self.importedElement in &#xD;&#xA;imported.oclIsUndefined() or not imported.oclIsKindOf(Class) or not imported.oclAsType(Class).isMetaclass()&#xD;&#xA;"/>
+          <labelMappings
+              xsi:type="gmfmap:FeatureLabelMapping">
             <diagramLabel
                 href="profileDiagram_profile.gmfgraph#ProfileLabelFigure_ImportedElement_name"/>
           </labelMappings>
+          <tool
+              xsi:type="gmftool:CreationTool"
+              href="profiles.gmftool#//@palette/@tools.1/@tools.5"/>
           <diagramNode
               href="profileDiagram_profile.gmfgraph#ProfileLabelFigure_ImportedElement_name"/>
         </ownedChild>

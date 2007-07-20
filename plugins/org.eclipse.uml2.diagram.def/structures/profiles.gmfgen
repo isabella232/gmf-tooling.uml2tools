@@ -229,8 +229,10 @@
         <childMetaFeature
             href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/Namespace/elementImport"/>
         <modelElementSelector
-            body="let imported : NamedElement = self.importedElement in &#xD;&#xA;not imported.oclIsKindOf(Class) or not imported.oclAsType(Class).isMetaclass()&#xD;&#xA;"/>
+            body="let imported : NamedElement = self.importedElement in &#xD;&#xA;imported.oclIsUndefined() or not imported.oclIsKindOf(Class) or not imported.oclAsType(Class).isMetaclass()&#xD;&#xA;"/>
       </modelFacet>
+      <labelModelFacet
+          xsi:type="gmfgen:FeatureLabelModelFacet"/>
     </childNodes>
     <topLevelNodes
         visualID="2001"
@@ -763,6 +765,11 @@
             title="Literal"
             description="Create Literal"
             genNodes="//@diagram/@childNodes.3"/>
+        <entries
+            xsi:type="gmfgen:ToolEntry"
+            title="Element Import"
+            description="Create Element Import"
+            genNodes="//@diagram/@childNodes.4"/>
       </groups>
     </palette>
     <preferencePages

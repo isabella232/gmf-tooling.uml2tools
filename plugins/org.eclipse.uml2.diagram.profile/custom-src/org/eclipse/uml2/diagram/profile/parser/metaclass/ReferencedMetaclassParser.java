@@ -50,7 +50,7 @@ public class ReferencedMetaclassParser implements ISemanticParser {
 		return false;
 	}
 
-	public List getSemanticElementsBeingParsed(EObject element) {
+	public List<?> getSemanticElementsBeingParsed(EObject element) {
 		return Collections.singletonList(element);
 	}
 
@@ -99,7 +99,7 @@ public class ReferencedMetaclassParser implements ISemanticParser {
 		if (editString.length() == 0){
 			return null;
 		}
-		return myMetaclassesList.findMetaclass(doAdapt(parserElement), editString);
+		return myMetaclassesList.findElement(doAdapt(parserElement), editString);
 	}
 	
 	private ElementImport doAdapt(IAdaptable adaptable) {
@@ -111,7 +111,7 @@ public class ReferencedMetaclassParser implements ISemanticParser {
 	private class CompletionProcessor extends EObjectCompletionProcessor {
 		@Override
 		protected Iterable<String> computeContextProposals(EObject context) {
-			return myMetaclassesList.getMetaclassNames(context);
+			return myMetaclassesList.getElementNames(context);
 		}
 	}
 
