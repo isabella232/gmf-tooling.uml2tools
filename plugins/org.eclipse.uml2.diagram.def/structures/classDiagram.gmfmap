@@ -1318,12 +1318,12 @@
       <labelMappings
           xsi:type="gmfmap:FeatureLabelMapping">
         <diagramLabel
-            href="classDiagram_packages.gmfgraph#SecondaryPackage_name"/>
+            href="classDiagram_auxiliary.gmfgraph#SecondaryPackage_name"/>
         <features
             href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//NamedElement/name"/>
       </labelMappings>
       <diagramNode
-          href="classDiagram_packages.gmfgraph#SecondaryPackageNode"/>
+          href="classDiagram_auxiliary.gmfgraph#SecondaryPackageNode"/>
       <children
           compartment="//@nodes.12/@ownedChild/@compartments.0">
         <containmentFeature

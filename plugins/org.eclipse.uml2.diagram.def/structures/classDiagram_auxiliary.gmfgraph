@@ -11,7 +11,66 @@
           xsi:type="gmfgraph:Label"
           name="SharedPureGraphLabel"/>
     </descriptors>
+    <descriptors
+        name="SecondaryPackageFigure">
+      <actualFigure
+          xsi:type="gmfgraph:ScalablePolygon"
+          name="SecondaryPackageFigure">
+        <layout
+            xsi:type="gmfgraph:FlowLayout"
+            vertical="true"
+            matchMinorSize="true"
+            forceSingleLine="true"
+            minorAlignment="FILL"
+            majorSpacing="0"
+            minorSpacing="0"/>
+        <insets
+            top="5"
+            left="5"
+            bottom="13"
+            right="5"/>
+        <children
+            xsi:type="gmfgraph:Label"
+            name="SecondaryPackage_PackageLabel"
+            text="Package"/>
+        <children
+            xsi:type="gmfgraph:Label"
+            name="SecondaryPackage_NameLabel"/>
+        <children
+            xsi:type="gmfgraph:Rectangle"
+            name="SecondaryPackage_ImportsCompartment"
+            outline="false"/>
+        <template/>
+        <template
+            y="40"/>
+        <template
+            x="35"
+            y="40"/>
+        <template
+            x="40"
+            y="35"/>
+        <template
+            x="40"/>
+      </actualFigure>
+      <accessors
+          figure="//@figures.0/@descriptors.1/@actualFigure/@children.0"/>
+      <accessors
+          figure="//@figures.0/@descriptors.1/@actualFigure/@children.1"/>
+      <accessors
+          accessor="getFigureSecondaryPackage_Imports"
+          figure="//@figures.0/@descriptors.1/@actualFigure/@children.2"/>
+    </descriptors>
   </figures>
+  <nodes
+      name="SecondaryPackageNode"
+      figure="SecondaryPackageFigure">
+    <facets
+        xsi:type="gmfgraph:DefaultSizeFacet">
+      <defaultSize
+          dx="100"
+          dy="60"/>
+    </facets>
+  </nodes>
   <labels
       name="AuxiliaryPureLabel"
       figure="SharedPureGraphLabel"
@@ -20,4 +79,13 @@
         xsi:type="gmfgraph:AlignmentFacet"
         alignment="CENTER"/>
   </labels>
+  <labels
+      name="SecondaryPackage_package"
+      figure="SecondaryPackageFigure"
+      elementIcon="false"
+      accessor="//@figures.0/@descriptors.1/@accessors.0"/>
+  <labels
+      name="SecondaryPackage_name"
+      figure="SecondaryPackageFigure"
+      accessor="//@figures.0/@descriptors.1/@accessors.1"/>
 </gmfgraph:Canvas>
