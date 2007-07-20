@@ -95,6 +95,16 @@ public class UMLModelingAssistantProvider extends ModelingAssistantProvider {
 	 */
 	public List getRelTypesOnSource(IAdaptable source) {
 		IGraphicalEditPart sourceEditPart = (IGraphicalEditPart) source.getAdapter(IGraphicalEditPart.class);
+		if (sourceEditPart instanceof ComponentEditPart) {
+			List types = new ArrayList();
+			types.add(UMLElementTypes.ComponentRequired_4007);
+			return types;
+		}
+		if (sourceEditPart instanceof Component2EditPart) {
+			List types = new ArrayList();
+			types.add(UMLElementTypes.ComponentRequired_4007);
+			return types;
+		}
 		if (sourceEditPart instanceof PortEditPart) {
 			List types = new ArrayList();
 			types.add(UMLElementTypes.PortProvided_4006);
@@ -114,6 +124,7 @@ public class UMLModelingAssistantProvider extends ModelingAssistantProvider {
 			types.add(UMLElementTypes.InterfaceRealization_4001);
 			types.add(UMLElementTypes.PortProvided_4006);
 			types.add(UMLElementTypes.PortRequired_4004);
+			types.add(UMLElementTypes.ComponentRequired_4007);
 			return types;
 		}
 		if (targetEditPart instanceof InterfaceEditPart) {
@@ -121,6 +132,7 @@ public class UMLModelingAssistantProvider extends ModelingAssistantProvider {
 			types.add(UMLElementTypes.InterfaceRealization_4001);
 			types.add(UMLElementTypes.PortProvided_4006);
 			types.add(UMLElementTypes.PortRequired_4004);
+			types.add(UMLElementTypes.ComponentRequired_4007);
 			return types;
 		}
 		return Collections.EMPTY_LIST;
@@ -132,6 +144,26 @@ public class UMLModelingAssistantProvider extends ModelingAssistantProvider {
 	public List getRelTypesOnSourceAndTarget(IAdaptable source, IAdaptable target) {
 		IGraphicalEditPart sourceEditPart = (IGraphicalEditPart) source.getAdapter(IGraphicalEditPart.class);
 		IGraphicalEditPart targetEditPart = (IGraphicalEditPart) target.getAdapter(IGraphicalEditPart.class);
+		if (sourceEditPart instanceof ComponentEditPart) {
+			List types = new ArrayList();
+			if (targetEditPart instanceof Interface2EditPart) {
+				types.add(UMLElementTypes.ComponentRequired_4007);
+			}
+			if (targetEditPart instanceof InterfaceEditPart) {
+				types.add(UMLElementTypes.ComponentRequired_4007);
+			}
+			return types;
+		}
+		if (sourceEditPart instanceof Component2EditPart) {
+			List types = new ArrayList();
+			if (targetEditPart instanceof Interface2EditPart) {
+				types.add(UMLElementTypes.ComponentRequired_4007);
+			}
+			if (targetEditPart instanceof InterfaceEditPart) {
+				types.add(UMLElementTypes.ComponentRequired_4007);
+			}
+			return types;
+		}
 		if (sourceEditPart instanceof PortEditPart) {
 			List types = new ArrayList();
 			if (targetEditPart instanceof Interface2EditPart) {
@@ -164,6 +196,12 @@ public class UMLModelingAssistantProvider extends ModelingAssistantProvider {
 			if (relationshipType == UMLElementTypes.PortRequired_4004) {
 				types.add(UMLElementTypes.Port_3002);
 			}
+			if (relationshipType == UMLElementTypes.ComponentRequired_4007) {
+				types.add(UMLElementTypes.Component_2001);
+			}
+			if (relationshipType == UMLElementTypes.ComponentRequired_4007) {
+				types.add(UMLElementTypes.Component_3001);
+			}
 			return types;
 		}
 		if (targetEditPart instanceof InterfaceEditPart) {
@@ -173,6 +211,12 @@ public class UMLModelingAssistantProvider extends ModelingAssistantProvider {
 			}
 			if (relationshipType == UMLElementTypes.PortRequired_4004) {
 				types.add(UMLElementTypes.Port_3002);
+			}
+			if (relationshipType == UMLElementTypes.ComponentRequired_4007) {
+				types.add(UMLElementTypes.Component_2001);
+			}
+			if (relationshipType == UMLElementTypes.ComponentRequired_4007) {
+				types.add(UMLElementTypes.Component_3001);
 			}
 			return types;
 		}
@@ -184,6 +228,26 @@ public class UMLModelingAssistantProvider extends ModelingAssistantProvider {
 	 */
 	public List getTypesForTarget(IAdaptable source, IElementType relationshipType) {
 		IGraphicalEditPart sourceEditPart = (IGraphicalEditPart) source.getAdapter(IGraphicalEditPart.class);
+		if (sourceEditPart instanceof ComponentEditPart) {
+			List types = new ArrayList();
+			if (relationshipType == UMLElementTypes.ComponentRequired_4007) {
+				types.add(UMLElementTypes.Interface_2003);
+			}
+			if (relationshipType == UMLElementTypes.ComponentRequired_4007) {
+				types.add(UMLElementTypes.Interface_3005);
+			}
+			return types;
+		}
+		if (sourceEditPart instanceof Component2EditPart) {
+			List types = new ArrayList();
+			if (relationshipType == UMLElementTypes.ComponentRequired_4007) {
+				types.add(UMLElementTypes.Interface_2003);
+			}
+			if (relationshipType == UMLElementTypes.ComponentRequired_4007) {
+				types.add(UMLElementTypes.Interface_3005);
+			}
+			return types;
+		}
 		if (sourceEditPart instanceof PortEditPart) {
 			List types = new ArrayList();
 			if (relationshipType == UMLElementTypes.PortProvided_4006) {

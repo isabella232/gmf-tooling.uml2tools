@@ -99,6 +99,9 @@ public class UMLEditPartFactory implements EditPartFactory {
 
 			case PortRequiredEditPart.VISUAL_ID:
 				return new PortRequiredEditPart(view);
+
+			case ComponentRequiredEditPart.VISUAL_ID:
+				return new ComponentRequiredEditPart(view);
 			}
 		}
 		return createUnrecognizedEditPart(context, model);

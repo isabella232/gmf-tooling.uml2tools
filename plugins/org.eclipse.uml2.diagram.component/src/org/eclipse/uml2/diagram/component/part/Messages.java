@@ -418,6 +418,16 @@ public class Messages extends NLS {
 	/**
 	 * @generated
 	 */
+	public static String NavigatorGroupName_ComponentRequired_4007_target;
+
+	/**
+	 * @generated
+	 */
+	public static String NavigatorGroupName_ComponentRequired_4007_source;
+
+	/**
+	 * @generated
+	 */
 	public static String NavigatorActionProvider_OpenDiagramActionName;
 
 	/**

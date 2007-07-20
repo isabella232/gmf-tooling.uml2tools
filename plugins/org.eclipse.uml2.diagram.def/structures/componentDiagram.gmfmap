@@ -258,6 +258,16 @@
           body="self.oclIsKindOf(uml::Port)"/>
     </creationConstraints>
   </links>
+  <links>
+    <tool
+        xsi:type="gmftool:CreationTool"
+        href="componentDiagram.gmftool#//@palette/@tools.1/@tools.1"/>
+    <diagramLink
+        href="classDiagram_interfaces.gmfgraph#RequiredInterfaceLink"/>
+    <linkMetaFeature
+        xsi:type="ecore:EReference"
+        href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//Component/required"/>
+  </links>
   <diagram>
     <diagramCanvas
         href="classDiagram_auxiliary.gmfgraph#cnvAuxiliary"/>

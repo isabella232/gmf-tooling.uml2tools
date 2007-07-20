@@ -51,6 +51,7 @@ import org.eclipse.uml2.diagram.component.part.UMLDiagramEditorPlugin;
 
 import org.eclipse.uml2.diagram.component.part.UMLVisualIDRegistry;
 import org.eclipse.uml2.uml.BehavioredClassifier;
+import org.eclipse.uml2.uml.Component;
 import org.eclipse.uml2.uml.Interface;
 import org.eclipse.uml2.uml.Port;
 import org.eclipse.uml2.uml.UMLPackage;
@@ -414,6 +415,18 @@ public class UMLBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 		/**
 		 * @generated
 		 */
+		public static boolean canCreateComponentRequired_4007(Component source, Interface target) {
+			if (source != null) {
+				if (source.getRequireds().contains(target)) {
+					return false;
+				}
+			}
+			return canExistComponentRequired_4007(source, target);
+		}
+
+		/**
+		 * @generated
+		 */
 		public static boolean canExistInterfaceRealization_4001(BehavioredClassifier container, BehavioredClassifier source, Interface target) {
 			if (!evaluate(InterfaceRealization_4001_SourceExpression, source, target, false)) {
 				return false;
@@ -438,6 +451,13 @@ public class UMLBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 			if (!evaluate(PortRequired_4004_SourceExpression, source, target, false)) {
 				return false;
 			}
+			return true;
+		}
+
+		/**
+		 * @generated
+		 */
+		public static boolean canExistComponentRequired_4007(Component source, Interface target) {
 			return true;
 		}
 

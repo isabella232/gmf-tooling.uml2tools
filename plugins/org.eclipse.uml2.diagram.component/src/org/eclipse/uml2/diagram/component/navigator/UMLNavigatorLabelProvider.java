@@ -28,6 +28,7 @@ import org.eclipse.uml2.diagram.component.edit.parts.Component2EditPart;
 import org.eclipse.uml2.diagram.component.edit.parts.ComponentEditPart;
 import org.eclipse.uml2.diagram.component.edit.parts.ComponentName2EditPart;
 import org.eclipse.uml2.diagram.component.edit.parts.ComponentNameEditPart;
+import org.eclipse.uml2.diagram.component.edit.parts.ComponentRequiredEditPart;
 import org.eclipse.uml2.diagram.component.edit.parts.Interface2EditPart;
 import org.eclipse.uml2.diagram.component.edit.parts.InterfaceEditPart;
 import org.eclipse.uml2.diagram.component.edit.parts.InterfaceName2EditPart;
@@ -121,6 +122,8 @@ public class UMLNavigatorLabelProvider extends LabelProvider implements ICommonL
 			return getImage("Navigator?Link?http://www.eclipse.org/uml2/2.1.0/UML?Port?provided", UMLElementTypes.PortProvided_4006); //$NON-NLS-1$
 		case PortRequiredEditPart.VISUAL_ID:
 			return getImage("Navigator?Link?http://www.eclipse.org/uml2/2.1.0/UML?Port?required", UMLElementTypes.PortRequired_4004); //$NON-NLS-1$
+		case ComponentRequiredEditPart.VISUAL_ID:
+			return getImage("Navigator?Link?http://www.eclipse.org/uml2/2.1.0/UML?Component?required", UMLElementTypes.ComponentRequired_4007); //$NON-NLS-1$
 		}
 		return getImage("Navigator?UnknownElement", null); //$NON-NLS-1$
 	}
@@ -197,6 +200,8 @@ public class UMLNavigatorLabelProvider extends LabelProvider implements ICommonL
 			return getPortProvided_4006Text(view);
 		case PortRequiredEditPart.VISUAL_ID:
 			return getPortRequired_4004Text(view);
+		case ComponentRequiredEditPart.VISUAL_ID:
+			return getComponentRequired_4007Text(view);
 		}
 		return getUnknownElementText(view);
 	}
@@ -391,6 +396,13 @@ public class UMLNavigatorLabelProvider extends LabelProvider implements ICommonL
 	 * @generated
 	 */
 	private String getPortRequired_4004Text(View view) {
+		return ""; //$NON-NLS-1$
+	}
+
+	/**
+	 * @generated
+	 */
+	private String getComponentRequired_4007Text(View view) {
 		return ""; //$NON-NLS-1$
 	}
 

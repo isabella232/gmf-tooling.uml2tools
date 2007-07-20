@@ -133,8 +133,9 @@ public class UMLPaletteFactory {
 	 * @generated
 	 */
 	private ToolEntry createRequiredInterface2CreationTool() {
-		List/*<IElementType>*/types = new ArrayList/*<IElementType>*/(1);
+		List/*<IElementType>*/types = new ArrayList/*<IElementType>*/(2);
 		types.add(UMLElementTypes.PortRequired_4004);
+		types.add(UMLElementTypes.ComponentRequired_4007);
 		LinkToolEntry entry = new LinkToolEntry(Messages.RequiredInterface2CreationTool_title, Messages.RequiredInterface2CreationTool_desc, types);
 		entry.setSmallIcon(UMLElementTypes.getImageDescriptor(UMLElementTypes.PortRequired_4004));
 		entry.setLargeIcon(entry.getSmallIcon());

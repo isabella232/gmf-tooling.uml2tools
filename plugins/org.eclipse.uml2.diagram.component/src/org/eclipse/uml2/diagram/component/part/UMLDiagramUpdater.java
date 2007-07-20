@@ -19,6 +19,7 @@ import org.eclipse.uml2.diagram.component.edit.parts.Component2EditPart;
 import org.eclipse.uml2.diagram.component.edit.parts.ComponentContents2EditPart;
 import org.eclipse.uml2.diagram.component.edit.parts.ComponentContentsEditPart;
 import org.eclipse.uml2.diagram.component.edit.parts.ComponentEditPart;
+import org.eclipse.uml2.diagram.component.edit.parts.ComponentRequiredEditPart;
 import org.eclipse.uml2.diagram.component.edit.parts.Interface2EditPart;
 import org.eclipse.uml2.diagram.component.edit.parts.InterfaceEditPart;
 import org.eclipse.uml2.diagram.component.edit.parts.InterfaceRealizationEditPart;
@@ -354,6 +355,7 @@ public class UMLDiagramUpdater {
 		Component modelElement = (Component) view.getElement();
 		List result = new LinkedList();
 		result.addAll(getContainedTypeModelFacetLinks_InterfaceRealization_4001(modelElement));
+		result.addAll(getOutgoingFeatureModelFacetLinks_Component_Required_4007(modelElement));
 		return result;
 	}
 
@@ -388,6 +390,7 @@ public class UMLDiagramUpdater {
 		Component modelElement = (Component) view.getElement();
 		List result = new LinkedList();
 		result.addAll(getContainedTypeModelFacetLinks_InterfaceRealization_4001(modelElement));
+		result.addAll(getOutgoingFeatureModelFacetLinks_Component_Required_4007(modelElement));
 		return result;
 	}
 
@@ -457,6 +460,7 @@ public class UMLDiagramUpdater {
 		result.addAll(getIncomingTypeModelFacetLinks_InterfaceRealization_4001(modelElement, crossReferences));
 		result.addAll(getIncomingFeatureModelFacetLinks_Port_Provided_4006(modelElement, crossReferences));
 		result.addAll(getIncomingFeatureModelFacetLinks_Port_Required_4004(modelElement, crossReferences));
+		result.addAll(getIncomingFeatureModelFacetLinks_Component_Required_4007(modelElement, crossReferences));
 		return result;
 	}
 
@@ -505,6 +509,7 @@ public class UMLDiagramUpdater {
 		result.addAll(getIncomingTypeModelFacetLinks_InterfaceRealization_4001(modelElement, crossReferences));
 		result.addAll(getIncomingFeatureModelFacetLinks_Port_Provided_4006(modelElement, crossReferences));
 		result.addAll(getIncomingFeatureModelFacetLinks_Port_Required_4004(modelElement, crossReferences));
+		result.addAll(getIncomingFeatureModelFacetLinks_Component_Required_4007(modelElement, crossReferences));
 		return result;
 	}
 
@@ -522,6 +527,7 @@ public class UMLDiagramUpdater {
 		Component modelElement = (Component) view.getElement();
 		List result = new LinkedList();
 		result.addAll(getOutgoingTypeModelFacetLinks_InterfaceRealization_4001(modelElement));
+		result.addAll(getOutgoingFeatureModelFacetLinks_Component_Required_4007(modelElement));
 		return result;
 	}
 
@@ -556,6 +562,7 @@ public class UMLDiagramUpdater {
 		Component modelElement = (Component) view.getElement();
 		List result = new LinkedList();
 		result.addAll(getOutgoingTypeModelFacetLinks_InterfaceRealization_4001(modelElement));
+		result.addAll(getOutgoingFeatureModelFacetLinks_Component_Required_4007(modelElement));
 		return result;
 	}
 
@@ -676,6 +683,21 @@ public class UMLDiagramUpdater {
 	/**
 	 * @generated
 	 */
+	private static Collection getIncomingFeatureModelFacetLinks_Component_Required_4007(Interface target, Map crossReferences) {
+		Collection result = new LinkedList();
+		Collection settings = (Collection) crossReferences.get(target);
+		for (Iterator it = settings.iterator(); it.hasNext();) {
+			EStructuralFeature.Setting setting = (EStructuralFeature.Setting) it.next();
+			if (setting.getEStructuralFeature() == UMLPackage.eINSTANCE.getComponent_Required()) {
+				result.add(new UMLLinkDescriptor(setting.getEObject(), target, UMLElementTypes.ComponentRequired_4007, ComponentRequiredEditPart.VISUAL_ID));
+			}
+		}
+		return result;
+	}
+
+	/**
+	 * @generated
+	 */
 	private static Collection getOutgoingTypeModelFacetLinks_InterfaceRealization_4001(BehavioredClassifier source) {
 		BehavioredClassifier container = null;
 		// Find container element for the link.
@@ -729,6 +751,18 @@ public class UMLDiagramUpdater {
 		for (Iterator destinations = source.getRequireds().iterator(); destinations.hasNext();) {
 			Interface destination = (Interface) destinations.next();
 			result.add(new UMLLinkDescriptor(source, destination, UMLElementTypes.PortRequired_4004, PortRequiredEditPart.VISUAL_ID));
+		}
+		return result;
+	}
+
+	/**
+	 * @generated
+	 */
+	private static Collection getOutgoingFeatureModelFacetLinks_Component_Required_4007(Component source) {
+		Collection result = new LinkedList();
+		for (Iterator destinations = source.getRequireds().iterator(); destinations.hasNext();) {
+			Interface destination = (Interface) destinations.next();
+			result.add(new UMLLinkDescriptor(source, destination, UMLElementTypes.ComponentRequired_4007, ComponentRequiredEditPart.VISUAL_ID));
 		}
 		return result;
 	}
