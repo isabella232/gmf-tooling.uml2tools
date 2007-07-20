@@ -106,6 +106,21 @@
       <accessors
           figure="//@figures.0/@descriptors.2/@actualFigure/@children.0"/>
     </descriptors>
+    <descriptors
+        name="PartFigure">
+      <actualFigure
+          xsi:type="gmfgraph:Rectangle"
+          name="_PartFigure">
+        <layout
+            xsi:type="gmfgraph:CustomLayout"
+            qualifiedClassName="org.eclipse.uml2.diagram.common.draw2d.CenterLayout"/>
+        <children
+            xsi:type="gmfgraph:Label"
+            name="_PartFigure_name"/>
+      </actualFigure>
+      <accessors
+          figure="//@figures.0/@descriptors.3/@actualFigure/@children.0"/>
+    </descriptors>
   </figures>
   <nodes
       name="ComponentNode"
@@ -137,6 +152,9 @@
           dy="60"/>
     </facets>
   </nodes>
+  <nodes
+      name="PartNode"
+      figure="PartFigure"/>
   <compartments
       name="contents"
       figure="ComponentFigure"
@@ -155,4 +173,8 @@
       figure="ComponentClassFigure"
       elementIcon="false"
       accessor="//@figures.0/@descriptors.2/@accessors.0"/>
+  <labels
+      name="PartNode_name"
+      figure="PartFigure"
+      accessor="//@figures.0/@descriptors.3/@accessors.0"/>
 </gmfgraph:Canvas>

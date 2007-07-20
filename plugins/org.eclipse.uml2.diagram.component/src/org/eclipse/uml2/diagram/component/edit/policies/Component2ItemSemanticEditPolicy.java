@@ -26,6 +26,7 @@ import org.eclipse.uml2.diagram.component.edit.parts.ComponentRequiredEditPart;
 import org.eclipse.uml2.diagram.component.edit.parts.InterfaceEditPart;
 import org.eclipse.uml2.diagram.component.edit.parts.InterfaceRealizationEditPart;
 import org.eclipse.uml2.diagram.component.edit.parts.PortEditPart;
+import org.eclipse.uml2.diagram.component.edit.parts.PropertyEditPart;
 import org.eclipse.uml2.diagram.component.part.UMLVisualIDRegistry;
 import org.eclipse.uml2.diagram.component.providers.UMLElementTypes;
 import org.eclipse.uml2.uml.UMLPackage;
@@ -88,6 +89,9 @@ public class Component2ItemSemanticEditPolicy extends UMLBaseItemSemanticEditPol
 						cmd.add(getDestroyElementCommand(cnode));
 						break;
 					case InterfaceEditPart.VISUAL_ID:
+						cmd.add(getDestroyElementCommand(cnode));
+						break;
+					case PropertyEditPart.VISUAL_ID:
 						cmd.add(getDestroyElementCommand(cnode));
 						break;
 					}

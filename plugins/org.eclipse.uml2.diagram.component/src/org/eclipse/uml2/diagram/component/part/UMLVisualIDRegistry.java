@@ -28,6 +28,8 @@ import org.eclipse.uml2.diagram.component.edit.parts.InterfaceRealizationEditPar
 import org.eclipse.uml2.diagram.component.edit.parts.PackageEditPart;
 import org.eclipse.uml2.diagram.component.edit.parts.PortEditPart;
 import org.eclipse.uml2.diagram.component.edit.parts.PortNameEditPart;
+import org.eclipse.uml2.diagram.component.edit.parts.PropertyEditPart;
+import org.eclipse.uml2.diagram.component.edit.parts.PropertyNameEditPart;
 import org.eclipse.uml2.diagram.component.expressions.UMLAbstractExpression;
 import org.eclipse.uml2.diagram.component.expressions.UMLOCLFactory;
 import org.eclipse.uml2.uml.Package;
@@ -56,6 +58,11 @@ public class UMLVisualIDRegistry {
 	 * @generated
 	 */
 	private static final UMLAbstractExpression Class_3004_Constraint = UMLOCLFactory.getExpression("self.oclIsKindOf(uml::Class)", UMLPackage.eINSTANCE.getClass_());
+
+	/**
+	 * @generated
+	 */
+	private static final UMLAbstractExpression Property_3006_Constraint = UMLOCLFactory.getExpression("not self.oclIsKindOf(uml::Port)", UMLPackage.eINSTANCE.getProperty());
 
 	/**
 	 * @generated
@@ -167,6 +174,9 @@ public class UMLVisualIDRegistry {
 			if (UMLPackage.eINSTANCE.getInterface().isSuperTypeOf(domainElement.eClass())) {
 				return InterfaceEditPart.VISUAL_ID;
 			}
+			if (UMLPackage.eINSTANCE.getProperty().isSuperTypeOf(domainElement.eClass()) && evaluate(Property_3006_Constraint, domainElement)) {
+				return PropertyEditPart.VISUAL_ID;
+			}
 			break;
 		case ComponentContents2EditPart.VISUAL_ID:
 			if (UMLPackage.eINSTANCE.getComponent().isSuperTypeOf(domainElement.eClass())) {
@@ -180,6 +190,9 @@ public class UMLVisualIDRegistry {
 			}
 			if (UMLPackage.eINSTANCE.getInterface().isSuperTypeOf(domainElement.eClass())) {
 				return InterfaceEditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getProperty().isSuperTypeOf(domainElement.eClass()) && evaluate(Property_3006_Constraint, domainElement)) {
+				return PropertyEditPart.VISUAL_ID;
 			}
 			break;
 		case PackageEditPart.VISUAL_ID:
@@ -282,6 +295,11 @@ public class UMLVisualIDRegistry {
 				return true;
 			}
 			break;
+		case PropertyEditPart.VISUAL_ID:
+			if (PropertyNameEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			break;
 		case ComponentContentsEditPart.VISUAL_ID:
 			if (Component2EditPart.VISUAL_ID == nodeVisualID) {
 				return true;
@@ -293,6 +311,9 @@ public class UMLVisualIDRegistry {
 				return true;
 			}
 			if (InterfaceEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			if (PropertyEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
 			break;
@@ -307,6 +328,9 @@ public class UMLVisualIDRegistry {
 				return true;
 			}
 			if (InterfaceEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			if (PropertyEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
 			break;

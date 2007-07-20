@@ -13,6 +13,7 @@ import org.eclipse.uml2.diagram.component.edit.parts.ArtifactEditPart;
 import org.eclipse.uml2.diagram.component.edit.parts.ClassEditPart;
 import org.eclipse.uml2.diagram.component.edit.parts.Component2EditPart;
 import org.eclipse.uml2.diagram.component.edit.parts.InterfaceEditPart;
+import org.eclipse.uml2.diagram.component.edit.parts.PropertyEditPart;
 import org.eclipse.uml2.diagram.component.part.UMLDiagramUpdater;
 import org.eclipse.uml2.diagram.component.part.UMLNodeDescriptor;
 import org.eclipse.uml2.diagram.component.part.UMLVisualIDRegistry;
@@ -50,6 +51,7 @@ public class ComponentContentsCanonicalEditPolicy extends CanonicalEditPolicy {
 		case ArtifactEditPart.VISUAL_ID:
 		case ClassEditPart.VISUAL_ID:
 		case InterfaceEditPart.VISUAL_ID:
+		case PropertyEditPart.VISUAL_ID:
 			return !semanticChildren.contains(view.getElement()) || visualID != UMLVisualIDRegistry.getNodeVisualID((View) getHost().getModel(), view.getElement());
 		}
 		return false;
@@ -69,6 +71,7 @@ public class ComponentContentsCanonicalEditPolicy extends CanonicalEditPolicy {
 		if (myFeaturesToSynchronize == null) {
 			myFeaturesToSynchronize = new HashSet();
 			myFeaturesToSynchronize.add(UMLPackage.eINSTANCE.getComponent_PackagedElement());
+			myFeaturesToSynchronize.add(UMLPackage.eINSTANCE.getStructuredClassifier_OwnedAttribute());
 		}
 		return myFeaturesToSynchronize;
 	}

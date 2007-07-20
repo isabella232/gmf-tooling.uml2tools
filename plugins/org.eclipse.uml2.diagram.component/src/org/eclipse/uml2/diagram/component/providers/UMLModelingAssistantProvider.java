@@ -69,6 +69,7 @@ public class UMLModelingAssistantProvider extends ModelingAssistantProvider {
 			types.add(UMLElementTypes.Artifact_3003);
 			types.add(UMLElementTypes.Class_3004);
 			types.add(UMLElementTypes.Interface_3005);
+			types.add(UMLElementTypes.Property_3006);
 			return types;
 		}
 		if (editPart instanceof ComponentContents2EditPart) {
@@ -77,6 +78,7 @@ public class UMLModelingAssistantProvider extends ModelingAssistantProvider {
 			types.add(UMLElementTypes.Artifact_3003);
 			types.add(UMLElementTypes.Class_3004);
 			types.add(UMLElementTypes.Interface_3005);
+			types.add(UMLElementTypes.Property_3006);
 			return types;
 		}
 		if (editPart instanceof PackageEditPart) {

@@ -293,22 +293,32 @@ public class Messages extends NLS {
 	/**
 	 * @generated
 	 */
-	public static String Port4CreationTool_title;
+	public static String Class4CreationTool_title;
 
 	/**
 	 * @generated
 	 */
-	public static String Port4CreationTool_desc;
+	public static String Class4CreationTool_desc;
 
 	/**
 	 * @generated
 	 */
-	public static String Class5CreationTool_title;
+	public static String Port5CreationTool_title;
 
 	/**
 	 * @generated
 	 */
-	public static String Class5CreationTool_desc;
+	public static String Port5CreationTool_desc;
+
+	/**
+	 * @generated
+	 */
+	public static String Part6CreationTool_title;
+
+	/**
+	 * @generated
+	 */
+	public static String Part6CreationTool_desc;
 
 	/**
 	 * @generated
@@ -399,6 +409,16 @@ public class Messages extends NLS {
 	 * @generated
 	 */
 	public static String NavigatorGroupName_Interface_3005_incominglinks;
+
+	/**
+	 * @generated
+	 */
+	public static String NavigatorGroupName_Property_3006_incominglinks;
+
+	/**
+	 * @generated
+	 */
+	public static String NavigatorGroupName_Property_3006_outgoinglinks;
 
 	/**
 	 * @generated

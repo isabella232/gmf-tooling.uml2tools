@@ -36,6 +36,7 @@ import org.eclipse.uml2.diagram.component.edit.parts.InterfaceEditPart;
 import org.eclipse.uml2.diagram.component.edit.parts.InterfaceRealizationEditPart;
 import org.eclipse.uml2.diagram.component.edit.parts.PackageEditPart;
 import org.eclipse.uml2.diagram.component.edit.parts.PortEditPart;
+import org.eclipse.uml2.diagram.component.edit.parts.PropertyEditPart;
 import org.eclipse.uml2.diagram.component.part.UMLDiagramUpdater;
 import org.eclipse.uml2.diagram.component.part.UMLLinkDescriptor;
 import org.eclipse.uml2.diagram.component.part.UMLNodeDescriptor;
@@ -239,6 +240,11 @@ public class PackageCanonicalEditPolicy extends CanonicalConnectionEditPolicy {
 		case InterfaceEditPart.VISUAL_ID: {
 			domain2NotationMap.put(view.getElement(), view);
 			result.addAll(UMLDiagramUpdater.getInterface_3005ContainedLinks(view));
+			break;
+		}
+		case PropertyEditPart.VISUAL_ID: {
+			domain2NotationMap.put(view.getElement(), view);
+			result.addAll(UMLDiagramUpdater.getProperty_3006ContainedLinks(view));
 			break;
 		}
 		case InterfaceRealizationEditPart.VISUAL_ID: {

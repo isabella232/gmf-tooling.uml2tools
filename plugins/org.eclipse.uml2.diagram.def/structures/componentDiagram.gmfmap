@@ -74,7 +74,7 @@
           </labelMappings>
           <tool
               xsi:type="gmftool:CreationTool"
-              href="componentDiagram.gmftool#//@palette/@tools.0/@tools.3"/>
+              href="componentDiagram.gmftool#//@palette/@tools.0/@tools.4"/>
           <diagramNode
               href="classDiagram_ports.gmfgraph#PortNode"/>
         </ownedChild>
@@ -97,8 +97,31 @@
         <containmentFeature
             href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//Component/packagedElement"/>
       </children>
+      <children
+          compartment="//@nodes.0/@ownedChild/@compartments.0">
+        <containmentFeature
+            href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//StructuredClassifier/ownedAttribute"/>
+        <ownedChild>
+          <domainMetaElement
+              href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//Property"/>
+          <domainSpecialization
+              body="not self.oclIsKindOf(uml::Port)"/>
+          <labelMappings
+              xsi:type="gmfmap:FeatureLabelMapping">
+            <diagramLabel
+                href="componentDiagram_classifiers.gmfgraph#PartNode_name"/>
+            <features
+                href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//NamedElement/name"/>
+          </labelMappings>
+          <tool
+              xsi:type="gmftool:CreationTool"
+              href="componentDiagram.gmftool#//@palette/@tools.0/@tools.5"/>
+          <diagramNode
+              href="componentDiagram_classifiers.gmfgraph#PartNode"/>
+        </ownedChild>
+      </children>
       <compartments
-          children="//@nodes.0/@ownedChild/@children.0 //@nodes.0/@ownedChild/@children.2 //@nodes.0/@ownedChild/@children.3 //@nodes.0/@ownedChild/@children.4">
+          children="//@nodes.0/@ownedChild/@children.0 //@nodes.0/@ownedChild/@children.2 //@nodes.0/@ownedChild/@children.3 //@nodes.0/@ownedChild/@children.4 //@nodes.0/@ownedChild/@children.5">
         <compartment
             href="componentDiagram_classifiers.gmfgraph#contents"/>
       </compartments>
@@ -197,7 +220,7 @@
       </labelMappings>
       <tool
           xsi:type="gmftool:CreationTool"
-          href="componentDiagram.gmftool#//@palette/@tools.0/@tools.4"/>
+          href="componentDiagram.gmftool#//@palette/@tools.0/@tools.3"/>
       <diagramNode
           href="componentDiagram_classifiers.gmfgraph#ComponentClassNode"/>
       <children

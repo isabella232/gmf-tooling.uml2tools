@@ -24,12 +24,16 @@
           description="Create Component Interface"/>
       <tools
           xsi:type="gmftool:CreationTool"
+          title="Class"
+          description="Create Class"/>
+      <tools
+          xsi:type="gmftool:CreationTool"
           title="Port"
           description="Create Port"/>
       <tools
           xsi:type="gmftool:CreationTool"
-          title="Class"
-          description="Create Class"/>
+          title="Part"
+          description="Create Part"/>
     </tools>
     <tools
         xsi:type="gmftool:ToolGroup"

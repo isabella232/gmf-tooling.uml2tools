@@ -20,6 +20,7 @@ import org.eclipse.uml2.diagram.component.edit.parts.ComponentNameEditPart;
 import org.eclipse.uml2.diagram.component.edit.parts.InterfaceName2EditPart;
 import org.eclipse.uml2.diagram.component.edit.parts.InterfaceNameEditPart;
 import org.eclipse.uml2.diagram.component.edit.parts.PortNameEditPart;
+import org.eclipse.uml2.diagram.component.edit.parts.PropertyNameEditPart;
 import org.eclipse.uml2.diagram.component.expressions.UMLOCLFactory;
 import org.eclipse.uml2.diagram.component.parsers.MessageFormatParser;
 import org.eclipse.uml2.diagram.component.part.UMLVisualIDRegistry;
@@ -249,6 +250,30 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 		return parser;
 	}
 
+	/**
+	 * @generated
+	 */
+	private IParser propertyName_5010Parser;
+
+	/**
+	 * @generated
+	 */
+	private IParser getPropertyName_5010Parser() {
+		if (propertyName_5010Parser == null) {
+			propertyName_5010Parser = createPropertyName_5010Parser();
+		}
+		return propertyName_5010Parser;
+	}
+
+	/**
+	 * @generated
+	 */
+	protected IParser createPropertyName_5010Parser() {
+		EAttribute[] features = new EAttribute[] { UMLPackage.eINSTANCE.getNamedElement_Name(), };
+		MessageFormatParser parser = new MessageFormatParser(features);
+		return parser;
+	}
+
 	public static final OCLLookup<Type> TYPE_LOOKUP = new OCLLookup<Type>(//
 			UMLOCLFactory.getOCLLookupExpression(DefaultOclLookups.DEFAULT_TYPE_LOOKUP, UMLPackage.eINSTANCE.getNamedElement()), // 
 			new IElementType[] { //
@@ -280,6 +305,8 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 			return getClassName_5007Parser();
 		case InterfaceNameEditPart.VISUAL_ID:
 			return getInterfaceName_5009Parser();
+		case PropertyNameEditPart.VISUAL_ID:
+			return getPropertyName_5010Parser();
 		}
 		return null;
 	}
