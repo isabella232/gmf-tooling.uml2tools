@@ -333,6 +333,16 @@ public class Messages extends NLS {
 	/**
 	 * @generated
 	 */
+	public static String DelegationConnector3CreationTool_title;
+
+	/**
+	 * @generated
+	 */
+	public static String DelegationConnector3CreationTool_desc;
+
+	/**
+	 * @generated
+	 */
 	public static String ComponentContentsEditPart_title;
 
 	/**
@@ -374,6 +384,11 @@ public class Messages extends NLS {
 	 * @generated
 	 */
 	public static String NavigatorGroupName_Port_3002_outgoinglinks;
+
+	/**
+	 * @generated
+	 */
+	public static String NavigatorGroupName_Port_3002_incominglinks;
 
 	/**
 	 * @generated
@@ -424,6 +439,16 @@ public class Messages extends NLS {
 	 * @generated
 	 */
 	public static String NavigatorGroupName_ComponentRequired_4007_source;
+
+	/**
+	 * @generated
+	 */
+	public static String NavigatorGroupName_Connector_4008_target;
+
+	/**
+	 * @generated
+	 */
+	public static String NavigatorGroupName_Connector_4008_source;
 
 	/**
 	 * @generated

@@ -133,7 +133,7 @@ public class ComponentRequiredReorientCommand extends EditElementCommand {
 	protected CommandResult reorientTarget() throws ExecutionException {
 		Component component = getOldSource();
 		Usage usage = findUsage(component, getOldTarget());
-		if (usage != null){
+		if (usage != null) {
 			usage.getSuppliers().remove(getOldTarget());
 			usage.getSuppliers().add(getNewTarget());
 		}

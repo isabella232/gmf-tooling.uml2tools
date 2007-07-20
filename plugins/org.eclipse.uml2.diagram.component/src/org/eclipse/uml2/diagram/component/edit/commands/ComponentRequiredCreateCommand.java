@@ -64,7 +64,7 @@ public class ComponentRequiredCreateCommand extends EditElementCommand {
 		}
 		Component component = getSource();
 		Interface required = getTarget();
-		if (component != null && required != null){
+		if (component != null && required != null) {
 			component.createUsage(required);
 		}
 		return CommandResult.newOKCommandResult();

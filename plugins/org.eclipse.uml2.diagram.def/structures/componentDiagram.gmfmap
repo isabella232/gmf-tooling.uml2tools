@@ -268,6 +268,23 @@
         xsi:type="ecore:EReference"
         href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//Component/required"/>
   </links>
+  <links>
+    <domainMetaElement
+        href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//Connector"/>
+    <containmentFeature
+        href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//StructuredClassifier/ownedConnector"/>
+    <tool
+        xsi:type="gmftool:CreationTool"
+        href="componentDiagram.gmftool#//@palette/@tools.1/@tools.2"/>
+    <diagramLink
+        href="componentDiagram_connectors.gmfgraph#DelegationConnectorLink"/>
+    <sourceMetaFeature
+        xsi:type="ecore:EReference"
+        href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//ConnectorEnd/role"/>
+    <linkMetaFeature
+        xsi:type="ecore:EReference"
+        href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//ConnectorEnd/role"/>
+  </links>
   <diagram>
     <diagramCanvas
         href="classDiagram_auxiliary.gmfgraph#cnvAuxiliary"/>

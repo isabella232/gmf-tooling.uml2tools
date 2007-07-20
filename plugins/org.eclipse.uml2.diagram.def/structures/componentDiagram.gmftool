@@ -43,6 +43,10 @@
           xsi:type="gmftool:CreationTool"
           title="Required Interface"
           description="Create Required Interface"/>
+      <tools
+          xsi:type="gmftool:CreationTool"
+          title="Delegation Connector"
+          description="Create Delegation Connector"/>
     </tools>
   </palette>
 </gmftool:ToolRegistry>

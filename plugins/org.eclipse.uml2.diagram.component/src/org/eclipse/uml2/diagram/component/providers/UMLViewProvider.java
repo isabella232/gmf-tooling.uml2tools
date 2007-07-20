@@ -21,6 +21,7 @@ import org.eclipse.uml2.diagram.component.edit.parts.ComponentEditPart;
 import org.eclipse.uml2.diagram.component.edit.parts.ComponentName2EditPart;
 import org.eclipse.uml2.diagram.component.edit.parts.ComponentNameEditPart;
 import org.eclipse.uml2.diagram.component.edit.parts.ComponentRequiredEditPart;
+import org.eclipse.uml2.diagram.component.edit.parts.ConnectorEditPart;
 import org.eclipse.uml2.diagram.component.edit.parts.Interface2EditPart;
 import org.eclipse.uml2.diagram.component.edit.parts.InterfaceEditPart;
 import org.eclipse.uml2.diagram.component.edit.parts.InterfaceName2EditPart;
@@ -47,6 +48,7 @@ import org.eclipse.uml2.diagram.component.view.factories.ComponentName2ViewFacto
 import org.eclipse.uml2.diagram.component.view.factories.ComponentNameViewFactory;
 import org.eclipse.uml2.diagram.component.view.factories.ComponentRequiredViewFactory;
 import org.eclipse.uml2.diagram.component.view.factories.ComponentViewFactory;
+import org.eclipse.uml2.diagram.component.view.factories.ConnectorViewFactory;
 import org.eclipse.uml2.diagram.component.view.factories.Interface2ViewFactory;
 import org.eclipse.uml2.diagram.component.view.factories.InterfaceName2ViewFactory;
 import org.eclipse.uml2.diagram.component.view.factories.InterfaceNameViewFactory;
@@ -274,6 +276,8 @@ public class UMLViewProvider extends AbstractViewProvider {
 			return PortRequiredViewFactory.class;
 		case ComponentRequiredEditPart.VISUAL_ID:
 			return ComponentRequiredViewFactory.class;
+		case ConnectorEditPart.VISUAL_ID:
+			return ConnectorViewFactory.class;
 		}
 		return null;
 	}

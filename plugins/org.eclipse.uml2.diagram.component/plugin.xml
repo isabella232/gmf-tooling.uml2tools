@@ -328,6 +328,16 @@
             <param name="semanticHint" value="4007"/>
          </specializationType>
       </metamodel>
+      <metamodel nsURI="http://www.eclipse.org/uml2/2.1.0/UML">
+         <metamodelType
+               id="org.eclipse.uml2.diagram.component.Connector_4008"
+               name="%metatype.name.Connector_4008"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
+               eclass="Connector"
+               edithelper="org.eclipse.uml2.diagram.component.edit.helpers.ConnectorEditHelper">
+            <param name="semanticHint" value="4008"/>
+         </metamodelType>
+      </metamodel>
    </extension>
 
    <extension point="org.eclipse.gmf.runtime.emf.type.core.elementTypeBindings">
@@ -354,6 +364,7 @@
          <elementType ref="org.eclipse.uml2.diagram.component.PortProvided_4006"/>
          <elementType ref="org.eclipse.uml2.diagram.component.PortRequired_4004"/>
          <elementType ref="org.eclipse.uml2.diagram.component.ComponentRequired_4007"/>
+         <elementType ref="org.eclipse.uml2.diagram.component.Connector_4008"/>
          <advice ref="org.eclipse.gmf.runtime.diagram.core.advice.notationDepdendents"/>
       </binding>
    </extension>

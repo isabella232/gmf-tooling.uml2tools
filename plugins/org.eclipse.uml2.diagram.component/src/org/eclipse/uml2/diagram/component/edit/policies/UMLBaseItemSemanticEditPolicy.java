@@ -52,8 +52,10 @@ import org.eclipse.uml2.diagram.component.part.UMLDiagramEditorPlugin;
 import org.eclipse.uml2.diagram.component.part.UMLVisualIDRegistry;
 import org.eclipse.uml2.uml.BehavioredClassifier;
 import org.eclipse.uml2.uml.Component;
+import org.eclipse.uml2.uml.ConnectableElement;
 import org.eclipse.uml2.uml.Interface;
 import org.eclipse.uml2.uml.Port;
+import org.eclipse.uml2.uml.StructuredClassifier;
 import org.eclipse.uml2.uml.UMLPackage;
 
 /**
@@ -427,6 +429,13 @@ public class UMLBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 		/**
 		 * @generated
 		 */
+		public static boolean canCreateConnector_4008(StructuredClassifier container, ConnectableElement source, ConnectableElement target) {
+			return canExistConnector_4008(container, source, target);
+		}
+
+		/**
+		 * @generated
+		 */
 		public static boolean canExistInterfaceRealization_4001(BehavioredClassifier container, BehavioredClassifier source, Interface target) {
 			if (!evaluate(InterfaceRealization_4001_SourceExpression, source, target, false)) {
 				return false;
@@ -458,6 +467,13 @@ public class UMLBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 		 * @generated
 		 */
 		public static boolean canExistComponentRequired_4007(Component source, Interface target) {
+			return true;
+		}
+
+		/**
+		 * @generated
+		 */
+		public static boolean canExistConnector_4008(StructuredClassifier container, ConnectableElement source, ConnectableElement target) {
 			return true;
 		}
 
