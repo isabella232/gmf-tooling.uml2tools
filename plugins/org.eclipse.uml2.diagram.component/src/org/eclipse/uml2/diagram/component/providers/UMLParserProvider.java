@@ -11,14 +11,17 @@ import org.eclipse.gmf.runtime.common.ui.services.parser.IParserProvider;
 import org.eclipse.gmf.runtime.emf.type.core.IElementType;
 import org.eclipse.gmf.runtime.emf.ui.services.parser.ParserHintAdapter;
 import org.eclipse.gmf.runtime.notation.View;
+import org.eclipse.uml2.diagram.common.parser.imports.ElementImportParser;
 import org.eclipse.uml2.diagram.component.edit.parts.ArtifactName2EditPart;
 import org.eclipse.uml2.diagram.component.edit.parts.ArtifactNameEditPart;
 import org.eclipse.uml2.diagram.component.edit.parts.ClassName2EditPart;
 import org.eclipse.uml2.diagram.component.edit.parts.ClassNameEditPart;
 import org.eclipse.uml2.diagram.component.edit.parts.ComponentName2EditPart;
 import org.eclipse.uml2.diagram.component.edit.parts.ComponentNameEditPart;
+import org.eclipse.uml2.diagram.component.edit.parts.ElementImportEditPart;
 import org.eclipse.uml2.diagram.component.edit.parts.InterfaceName2EditPart;
 import org.eclipse.uml2.diagram.component.edit.parts.InterfaceNameEditPart;
+import org.eclipse.uml2.diagram.component.edit.parts.PackageNameEditPart;
 import org.eclipse.uml2.diagram.component.edit.parts.PortNameEditPart;
 import org.eclipse.uml2.diagram.component.edit.parts.PropertyNameEditPart;
 import org.eclipse.uml2.diagram.component.expressions.UMLOCLFactory;
@@ -125,6 +128,30 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 	 * @generated
 	 */
 	protected IParser createClassName_5008Parser() {
+		EAttribute[] features = new EAttribute[] { UMLPackage.eINSTANCE.getNamedElement_Name(), };
+		MessageFormatParser parser = new MessageFormatParser(features);
+		return parser;
+	}
+
+	/**
+	 * @generated
+	 */
+	private IParser packageName_5011Parser;
+
+	/**
+	 * @generated
+	 */
+	private IParser getPackageName_5011Parser() {
+		if (packageName_5011Parser == null) {
+			packageName_5011Parser = createPackageName_5011Parser();
+		}
+		return packageName_5011Parser;
+	}
+
+	/**
+	 * @generated
+	 */
+	protected IParser createPackageName_5011Parser() {
 		EAttribute[] features = new EAttribute[] { UMLPackage.eINSTANCE.getNamedElement_Name(), };
 		MessageFormatParser parser = new MessageFormatParser(features);
 		return parser;
@@ -274,6 +301,28 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 		return parser;
 	}
 
+	/**
+	 * @generated
+	 */
+	private IParser elementImport_3007Parser;
+
+	/**
+	 * @generated
+	 */
+	private IParser getElementImport_3007Parser() {
+		if (elementImport_3007Parser == null) {
+			elementImport_3007Parser = createElementImport_3007Parser();
+		}
+		return elementImport_3007Parser;
+	}
+
+	/**
+	 * @generated NOT
+	 */
+	protected IParser createElementImport_3007Parser() {
+		return new ElementImportParser();
+	}
+
 	public static final OCLLookup<Type> TYPE_LOOKUP = new OCLLookup<Type>(//
 			UMLOCLFactory.getOCLLookupExpression(DefaultOclLookups.DEFAULT_TYPE_LOOKUP, UMLPackage.eINSTANCE.getNamedElement()), // 
 			new IElementType[] { //
@@ -295,6 +344,8 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 			return getInterfaceName_5005Parser();
 		case ClassName2EditPart.VISUAL_ID:
 			return getClassName_5008Parser();
+		case PackageNameEditPart.VISUAL_ID:
+			return getPackageName_5011Parser();
 		case ComponentNameEditPart.VISUAL_ID:
 			return getComponentName_5002Parser();
 		case PortNameEditPart.VISUAL_ID:
@@ -307,6 +358,8 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 			return getInterfaceName_5009Parser();
 		case PropertyNameEditPart.VISUAL_ID:
 			return getPropertyName_5010Parser();
+		case ElementImportEditPart.VISUAL_ID:
+			return getElementImport_3007Parser();
 		}
 		return null;
 	}

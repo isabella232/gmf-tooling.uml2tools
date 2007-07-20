@@ -22,10 +22,13 @@ import org.eclipse.uml2.diagram.component.edit.parts.ComponentContentsEditPart;
 import org.eclipse.uml2.diagram.component.edit.parts.ComponentEditPart;
 import org.eclipse.uml2.diagram.component.edit.parts.ComponentRequiredEditPart;
 import org.eclipse.uml2.diagram.component.edit.parts.ConnectorEditPart;
+import org.eclipse.uml2.diagram.component.edit.parts.ElementImportEditPart;
 import org.eclipse.uml2.diagram.component.edit.parts.Interface2EditPart;
 import org.eclipse.uml2.diagram.component.edit.parts.InterfaceEditPart;
 import org.eclipse.uml2.diagram.component.edit.parts.InterfaceRealizationEditPart;
+import org.eclipse.uml2.diagram.component.edit.parts.Package2EditPart;
 import org.eclipse.uml2.diagram.component.edit.parts.PackageEditPart;
+import org.eclipse.uml2.diagram.component.edit.parts.PackageImportsEditPart;
 import org.eclipse.uml2.diagram.component.edit.parts.PortEditPart;
 import org.eclipse.uml2.diagram.component.edit.parts.PortProvidedEditPart;
 import org.eclipse.uml2.diagram.component.edit.parts.PortRequiredEditPart;
@@ -37,6 +40,7 @@ import org.eclipse.uml2.uml.Component;
 import org.eclipse.uml2.uml.ConnectableElement;
 import org.eclipse.uml2.uml.Connector;
 import org.eclipse.uml2.uml.ConnectorEnd;
+import org.eclipse.uml2.uml.ElementImport;
 import org.eclipse.uml2.uml.Interface;
 import org.eclipse.uml2.uml.InterfaceRealization;
 import org.eclipse.uml2.uml.Package;
@@ -69,8 +73,21 @@ public class UMLDiagramUpdater {
 			return getComponentContents_7001SemanticChildren(view);
 		case ComponentContents2EditPart.VISUAL_ID:
 			return getComponentContents_7002SemanticChildren(view);
-		case PackageEditPart.VISUAL_ID:
-			return getPackage_1000SemanticChildren(view);
+		case PackageImportsEditPart.VISUAL_ID:
+			return getPackageImports_7003SemanticChildren(view);
+		case PackageEditPart.VISUAL_ID: {
+			//We have "dummy" TopLevelNode (with vid = org.eclipse.uml2.diagram.component.edit.parts.Package2EditPart.VISUAL_ID). 
+			//The only purpose for this node is to be a container for children (imports, etc)
+			//of the "main" diagram figure (that one shown as Canvas).
+			//Also we have modified the VisualIDRegistry#getNodeVisualID() to return
+			//VID = org.eclipse.uml2.diagram.component.edit.parts.Package2EditPart.VISUAL_ID, 
+			//for the case when top-level view is created for the same semantic element as the canvas view.
+
+			List resultAndHeader = new LinkedList();
+			resultAndHeader.add(new UMLNodeDescriptor(view.getElement(), Package2EditPart.VISUAL_ID));
+			resultAndHeader.addAll(getPackage_1000SemanticChildren(view));
+			return resultAndHeader;
+		}
 		}
 		return Collections.EMPTY_LIST;
 	}
@@ -246,6 +263,30 @@ public class UMLDiagramUpdater {
 	/**
 	 * @generated
 	 */
+	public static List getPackageImports_7003SemanticChildren(View view) {
+		if (false == view.eContainer() instanceof View) {
+			return Collections.EMPTY_LIST;
+		}
+		View containerView = (View) view.eContainer();
+		if (!containerView.isSetElement()) {
+			return Collections.EMPTY_LIST;
+		}
+		Package modelElement = (Package) containerView.getElement();
+		List result = new LinkedList();
+		for (Iterator it = modelElement.getElementImports().iterator(); it.hasNext();) {
+			ElementImport childElement = (ElementImport) it.next();
+			int visualID = UMLVisualIDRegistry.getNodeVisualID(view, childElement);
+			if (visualID == ElementImportEditPart.VISUAL_ID) {
+				result.add(new UMLNodeDescriptor(childElement, visualID));
+				continue;
+			}
+		}
+		return result;
+	}
+
+	/**
+	 * @generated
+	 */
 	public static List getPackage_1000SemanticChildren(View view) {
 		if (!view.isSetElement()) {
 			return Collections.EMPTY_LIST;
@@ -272,6 +313,14 @@ public class UMLDiagramUpdater {
 				continue;
 			}
 		}
+		for (Iterator it = modelElement.getPackagedElements().iterator(); it.hasNext();) {
+			PackageableElement childElement = (PackageableElement) it.next();
+			int visualID = UMLVisualIDRegistry.getNodeVisualID(view, childElement);
+			if (visualID == Package2EditPart.VISUAL_ID) {
+				result.add(new UMLNodeDescriptor(childElement, visualID));
+				continue;
+			}
+		}
 		return result;
 	}
 
@@ -290,6 +339,8 @@ public class UMLDiagramUpdater {
 			return getInterface_2003ContainedLinks(view);
 		case Class2EditPart.VISUAL_ID:
 			return getClass_2004ContainedLinks(view);
+		case Package2EditPart.VISUAL_ID:
+			return getPackage_2005ContainedLinks(view);
 		case Component2EditPart.VISUAL_ID:
 			return getComponent_3001ContainedLinks(view);
 		case PortEditPart.VISUAL_ID:
@@ -302,6 +353,8 @@ public class UMLDiagramUpdater {
 			return getInterface_3005ContainedLinks(view);
 		case PropertyEditPart.VISUAL_ID:
 			return getProperty_3006ContainedLinks(view);
+		case ElementImportEditPart.VISUAL_ID:
+			return getElementImport_3007ContainedLinks(view);
 		case InterfaceRealizationEditPart.VISUAL_ID:
 			return getInterfaceRealization_4001ContainedLinks(view);
 		case ConnectorEditPart.VISUAL_ID:
@@ -323,6 +376,8 @@ public class UMLDiagramUpdater {
 			return getInterface_2003IncomingLinks(view);
 		case Class2EditPart.VISUAL_ID:
 			return getClass_2004IncomingLinks(view);
+		case Package2EditPart.VISUAL_ID:
+			return getPackage_2005IncomingLinks(view);
 		case Component2EditPart.VISUAL_ID:
 			return getComponent_3001IncomingLinks(view);
 		case PortEditPart.VISUAL_ID:
@@ -335,6 +390,8 @@ public class UMLDiagramUpdater {
 			return getInterface_3005IncomingLinks(view);
 		case PropertyEditPart.VISUAL_ID:
 			return getProperty_3006IncomingLinks(view);
+		case ElementImportEditPart.VISUAL_ID:
+			return getElementImport_3007IncomingLinks(view);
 		case InterfaceRealizationEditPart.VISUAL_ID:
 			return getInterfaceRealization_4001IncomingLinks(view);
 		case ConnectorEditPart.VISUAL_ID:
@@ -356,6 +413,8 @@ public class UMLDiagramUpdater {
 			return getInterface_2003OutgoingLinks(view);
 		case Class2EditPart.VISUAL_ID:
 			return getClass_2004OutgoingLinks(view);
+		case Package2EditPart.VISUAL_ID:
+			return getPackage_2005OutgoingLinks(view);
 		case Component2EditPart.VISUAL_ID:
 			return getComponent_3001OutgoingLinks(view);
 		case PortEditPart.VISUAL_ID:
@@ -368,6 +427,8 @@ public class UMLDiagramUpdater {
 			return getInterface_3005OutgoingLinks(view);
 		case PropertyEditPart.VISUAL_ID:
 			return getProperty_3006OutgoingLinks(view);
+		case ElementImportEditPart.VISUAL_ID:
+			return getElementImport_3007OutgoingLinks(view);
 		case InterfaceRealizationEditPart.VISUAL_ID:
 			return getInterfaceRealization_4001OutgoingLinks(view);
 		case ConnectorEditPart.VISUAL_ID:
@@ -418,6 +479,14 @@ public class UMLDiagramUpdater {
 		result.addAll(getContainedTypeModelFacetLinks_InterfaceRealization_4001(modelElement));
 		result.addAll(getContainedTypeModelFacetLinks_Connector_4008(modelElement));
 		return result;
+	}
+
+	/**
+	 * @generated
+	 */
+	public static List getPackage_2005ContainedLinks(View view) {
+		//no links to, from and inside the diagram header
+		return Collections.EMPTY_LIST;
 	}
 
 	/**
@@ -478,6 +547,13 @@ public class UMLDiagramUpdater {
 	/**
 	 * @generated
 	 */
+	public static List getElementImport_3007ContainedLinks(View view) {
+		return Collections.EMPTY_LIST;
+	}
+
+	/**
+	 * @generated
+	 */
 	public static List getInterfaceRealization_4001ContainedLinks(View view) {
 		return Collections.EMPTY_LIST;
 	}
@@ -521,6 +597,14 @@ public class UMLDiagramUpdater {
 	 * @generated
 	 */
 	public static List getClass_2004IncomingLinks(View view) {
+		return Collections.EMPTY_LIST;
+	}
+
+	/**
+	 * @generated
+	 */
+	public static List getPackage_2005IncomingLinks(View view) {
+		//no links to, from and inside the diagram header
 		return Collections.EMPTY_LIST;
 	}
 
@@ -584,6 +668,13 @@ public class UMLDiagramUpdater {
 	/**
 	 * @generated
 	 */
+	public static List getElementImport_3007IncomingLinks(View view) {
+		return Collections.EMPTY_LIST;
+	}
+
+	/**
+	 * @generated
+	 */
 	public static List getInterfaceRealization_4001IncomingLinks(View view) {
 		return Collections.EMPTY_LIST;
 	}
@@ -628,6 +719,14 @@ public class UMLDiagramUpdater {
 		List result = new LinkedList();
 		result.addAll(getOutgoingTypeModelFacetLinks_InterfaceRealization_4001(modelElement));
 		return result;
+	}
+
+	/**
+	 * @generated
+	 */
+	public static List getPackage_2005OutgoingLinks(View view) {
+		//no links to, from and inside the diagram header
+		return Collections.EMPTY_LIST;
 	}
 
 	/**
@@ -685,6 +784,13 @@ public class UMLDiagramUpdater {
 		List result = new LinkedList();
 		result.addAll(getOutgoingTypeModelFacetLinks_Connector_4008(modelElement));
 		return result;
+	}
+
+	/**
+	 * @generated
+	 */
+	public static List getElementImport_3007OutgoingLinks(View view) {
+		return Collections.EMPTY_LIST;
 	}
 
 	/**

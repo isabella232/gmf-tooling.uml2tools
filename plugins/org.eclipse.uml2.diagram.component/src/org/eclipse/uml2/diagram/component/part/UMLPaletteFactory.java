@@ -23,6 +23,7 @@ public class UMLPaletteFactory {
 	public void fillPalette(PaletteRoot paletteRoot) {
 		paletteRoot.add(createNodes1Group());
 		paletteRoot.add(createLinks2Group());
+		paletteRoot.add(createMisreferencedtools3Group());
 	}
 
 	/**
@@ -51,6 +52,17 @@ public class UMLPaletteFactory {
 		paletteContainer.add(createProvidedInterface1CreationTool());
 		paletteContainer.add(createRequiredInterface2CreationTool());
 		paletteContainer.add(createDelegationConnector3CreationTool());
+		return paletteContainer;
+	}
+
+	/**
+	 * Creates "-- Mis-referenced tools --" palette tool group
+	 * @generated
+	 */
+	private PaletteContainer createMisreferencedtools3Group() {
+		PaletteGroup paletteContainer = new PaletteGroup(Messages.Misreferencedtools3Group_title);
+		paletteContainer.setDescription(Messages.Misreferencedtools3Group_desc);
+		paletteContainer.add(createElementImport1CreationTool());
 		return paletteContainer;
 	}
 
@@ -164,6 +176,18 @@ public class UMLPaletteFactory {
 		types.add(UMLElementTypes.Connector_4008);
 		LinkToolEntry entry = new LinkToolEntry(Messages.DelegationConnector3CreationTool_title, Messages.DelegationConnector3CreationTool_desc, types);
 		entry.setSmallIcon(UMLElementTypes.getImageDescriptor(UMLElementTypes.Connector_4008));
+		entry.setLargeIcon(entry.getSmallIcon());
+		return entry;
+	}
+
+	/**
+	 * @generated
+	 */
+	private ToolEntry createElementImport1CreationTool() {
+		List/*<IElementType>*/types = new ArrayList/*<IElementType>*/(1);
+		types.add(UMLElementTypes.ElementImport_3007);
+		NodeToolEntry entry = new NodeToolEntry(Messages.ElementImport1CreationTool_title, Messages.ElementImport1CreationTool_desc, types);
+		entry.setSmallIcon(UMLElementTypes.getImageDescriptor(UMLElementTypes.ElementImport_3007));
 		entry.setLargeIcon(entry.getSmallIcon());
 		return entry;
 	}

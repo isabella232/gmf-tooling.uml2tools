@@ -31,9 +31,11 @@ import org.eclipse.uml2.diagram.component.edit.parts.ClassEditPart;
 import org.eclipse.uml2.diagram.component.edit.parts.Component2EditPart;
 import org.eclipse.uml2.diagram.component.edit.parts.ComponentEditPart;
 import org.eclipse.uml2.diagram.component.edit.parts.ConnectorEditPart;
+import org.eclipse.uml2.diagram.component.edit.parts.ElementImportEditPart;
 import org.eclipse.uml2.diagram.component.edit.parts.Interface2EditPart;
 import org.eclipse.uml2.diagram.component.edit.parts.InterfaceEditPart;
 import org.eclipse.uml2.diagram.component.edit.parts.InterfaceRealizationEditPart;
+import org.eclipse.uml2.diagram.component.edit.parts.Package2EditPart;
 import org.eclipse.uml2.diagram.component.edit.parts.PackageEditPart;
 import org.eclipse.uml2.diagram.component.edit.parts.PortEditPart;
 import org.eclipse.uml2.diagram.component.edit.parts.PropertyEditPart;
@@ -59,7 +61,7 @@ public class PackageCanonicalEditPolicy extends CanonicalConnectionEditPolicy {
 	protected List getSemanticChildrenList() {
 		View viewObject = (View) getHost().getModel();
 		List result = new LinkedList();
-		for (Iterator it = UMLDiagramUpdater.getPackage_1000SemanticChildren(viewObject).iterator(); it.hasNext();) {
+		for (Iterator it = UMLDiagramUpdater.getSemanticChildren(viewObject).iterator(); it.hasNext();) {
 			result.add(((UMLNodeDescriptor) it.next()).getModelElement());
 		}
 		return result;
@@ -82,6 +84,7 @@ public class PackageCanonicalEditPolicy extends CanonicalConnectionEditPolicy {
 		case Artifact2EditPart.VISUAL_ID:
 		case Interface2EditPart.VISUAL_ID:
 		case Class2EditPart.VISUAL_ID:
+		case Package2EditPart.VISUAL_ID:
 			return !semanticChildren.contains(view.getElement()) || visualID != UMLVisualIDRegistry.getNodeVisualID((View) getHost().getModel(), view.getElement());
 		}
 		return false;
@@ -101,6 +104,7 @@ public class PackageCanonicalEditPolicy extends CanonicalConnectionEditPolicy {
 		if (myFeaturesToSynchronize == null) {
 			myFeaturesToSynchronize = new HashSet();
 			myFeaturesToSynchronize.add(UMLPackage.eINSTANCE.getPackage_OwnedType());
+			myFeaturesToSynchronize.add(UMLPackage.eINSTANCE.getPackage_PackagedElement());
 		}
 		return myFeaturesToSynchronize;
 	}
@@ -217,6 +221,11 @@ public class PackageCanonicalEditPolicy extends CanonicalConnectionEditPolicy {
 			result.addAll(UMLDiagramUpdater.getClass_2004ContainedLinks(view));
 			break;
 		}
+		case Package2EditPart.VISUAL_ID: {
+			domain2NotationMap.put(view.getElement(), view);
+			result.addAll(UMLDiagramUpdater.getPackage_2005ContainedLinks(view));
+			break;
+		}
 		case Component2EditPart.VISUAL_ID: {
 			domain2NotationMap.put(view.getElement(), view);
 			result.addAll(UMLDiagramUpdater.getComponent_3001ContainedLinks(view));
@@ -245,6 +254,11 @@ public class PackageCanonicalEditPolicy extends CanonicalConnectionEditPolicy {
 		case PropertyEditPart.VISUAL_ID: {
 			domain2NotationMap.put(view.getElement(), view);
 			result.addAll(UMLDiagramUpdater.getProperty_3006ContainedLinks(view));
+			break;
+		}
+		case ElementImportEditPart.VISUAL_ID: {
+			domain2NotationMap.put(view.getElement(), view);
+			result.addAll(UMLDiagramUpdater.getElementImport_3007ContainedLinks(view));
 			break;
 		}
 		case InterfaceRealizationEditPart.VISUAL_ID: {

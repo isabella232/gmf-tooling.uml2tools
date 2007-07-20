@@ -28,6 +28,7 @@ import org.eclipse.uml2.diagram.component.edit.parts.ComponentContentsEditPart;
 import org.eclipse.uml2.diagram.component.edit.parts.ComponentEditPart;
 import org.eclipse.uml2.diagram.component.edit.parts.Interface2EditPart;
 import org.eclipse.uml2.diagram.component.edit.parts.InterfaceEditPart;
+import org.eclipse.uml2.diagram.component.edit.parts.Package2EditPart;
 import org.eclipse.uml2.diagram.component.edit.parts.PackageEditPart;
 import org.eclipse.uml2.diagram.component.edit.parts.PortEditPart;
 import org.eclipse.uml2.diagram.component.part.Messages;
@@ -51,6 +52,11 @@ public class UMLModelingAssistantProvider extends ModelingAssistantProvider {
 		if (editPart instanceof Class2EditPart) {
 			List types = new ArrayList();
 			types.add(UMLElementTypes.Port_3002);
+			return types;
+		}
+		if (editPart instanceof Package2EditPart) {
+			List types = new ArrayList();
+			types.add(UMLElementTypes.ElementImport_3007);
 			return types;
 		}
 		if (editPart instanceof Component2EditPart) {
@@ -87,6 +93,7 @@ public class UMLModelingAssistantProvider extends ModelingAssistantProvider {
 			types.add(UMLElementTypes.Artifact_2002);
 			types.add(UMLElementTypes.Interface_2003);
 			types.add(UMLElementTypes.Class_2004);
+			types.add(UMLElementTypes.Package_2005);
 			return types;
 		}
 		return Collections.EMPTY_LIST;

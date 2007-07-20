@@ -230,6 +230,49 @@
       </children>
     </ownedChild>
   </nodes>
+  <nodes>
+    <containmentFeature
+        href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//Package/packagedElement"/>
+    <ownedChild>
+      <domainMetaElement
+          href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//Package"/>
+      <labelMappings
+          xsi:type="gmfmap:FeatureLabelMapping">
+        <diagramLabel
+            href="classDiagram_auxiliary.gmfgraph#SecondaryPackage_name"/>
+        <features
+            href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//NamedElement/name"/>
+      </labelMappings>
+      <diagramNode
+          href="classDiagram_auxiliary.gmfgraph#SecondaryPackageNode"/>
+      <children
+          compartment="//@nodes.4/@ownedChild/@compartments.0">
+        <containmentFeature
+            href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//Namespace/elementImport"/>
+        <ownedChild>
+          <domainMetaElement
+              href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//ElementImport"/>
+          <labelMappings
+              xsi:type="gmfmap:FeatureLabelMapping">
+            <diagramLabel
+                href="classDiagram_auxiliary.gmfgraph#AuxiliaryPureLabel"/>
+            <features
+                href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//ElementImport/alias"/>
+          </labelMappings>
+          <tool
+              xsi:type="gmftool:CreationTool"
+              href="classDiagram.gmftool#//@palette/@tools.1/@tools.5"/>
+          <diagramNode
+              href="classDiagram_auxiliary.gmfgraph#AuxiliaryPureLabel"/>
+        </ownedChild>
+      </children>
+      <compartments
+          children="//@nodes.4/@ownedChild/@children.0">
+        <compartment
+            href="classDiagram_packages.gmfgraph#imports"/>
+      </compartments>
+    </ownedChild>
+  </nodes>
   <links>
     <domainMetaElement
         href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//InterfaceRealization"/>

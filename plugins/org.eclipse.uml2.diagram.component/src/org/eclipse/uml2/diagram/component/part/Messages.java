@@ -263,6 +263,16 @@ public class Messages extends NLS {
 	/**
 	 * @generated
 	 */
+	public static String Misreferencedtools3Group_title;
+
+	/**
+	 * @generated
+	 */
+	public static String Misreferencedtools3Group_desc;
+
+	/**
+	 * @generated
+	 */
 	public static String Component1CreationTool_title;
 
 	/**
@@ -353,12 +363,27 @@ public class Messages extends NLS {
 	/**
 	 * @generated
 	 */
+	public static String ElementImport1CreationTool_title;
+
+	/**
+	 * @generated
+	 */
+	public static String ElementImport1CreationTool_desc;
+
+	/**
+	 * @generated
+	 */
 	public static String ComponentContentsEditPart_title;
 
 	/**
 	 * @generated
 	 */
 	public static String ComponentContents2EditPart_title;
+
+	/**
+	 * @generated
+	 */
+	public static String PackageImportsEditPart_title;
 
 	/**
 	 * @generated

@@ -20,12 +20,16 @@ import org.eclipse.uml2.diagram.component.edit.parts.ComponentEditPart;
 import org.eclipse.uml2.diagram.component.edit.parts.ComponentName2EditPart;
 import org.eclipse.uml2.diagram.component.edit.parts.ComponentNameEditPart;
 import org.eclipse.uml2.diagram.component.edit.parts.ConnectorEditPart;
+import org.eclipse.uml2.diagram.component.edit.parts.ElementImportEditPart;
 import org.eclipse.uml2.diagram.component.edit.parts.Interface2EditPart;
 import org.eclipse.uml2.diagram.component.edit.parts.InterfaceEditPart;
 import org.eclipse.uml2.diagram.component.edit.parts.InterfaceName2EditPart;
 import org.eclipse.uml2.diagram.component.edit.parts.InterfaceNameEditPart;
 import org.eclipse.uml2.diagram.component.edit.parts.InterfaceRealizationEditPart;
+import org.eclipse.uml2.diagram.component.edit.parts.Package2EditPart;
 import org.eclipse.uml2.diagram.component.edit.parts.PackageEditPart;
+import org.eclipse.uml2.diagram.component.edit.parts.PackageImportsEditPart;
+import org.eclipse.uml2.diagram.component.edit.parts.PackageNameEditPart;
 import org.eclipse.uml2.diagram.component.edit.parts.PortEditPart;
 import org.eclipse.uml2.diagram.component.edit.parts.PortNameEditPart;
 import org.eclipse.uml2.diagram.component.edit.parts.PropertyEditPart;
@@ -195,7 +199,20 @@ public class UMLVisualIDRegistry {
 				return PropertyEditPart.VISUAL_ID;
 			}
 			break;
+		case PackageImportsEditPart.VISUAL_ID:
+			if (UMLPackage.eINSTANCE.getElementImport().isSuperTypeOf(domainElement.eClass())) {
+				return ElementImportEditPart.VISUAL_ID;
+			}
+			break;
 		case PackageEditPart.VISUAL_ID:
+			// We want to additionally show the Canvas Semantical Element in the auxiliary 
+			// org.eclipse.uml2.diagram.component.edit.parts.Package2EditPart (that serves as a pure visual container for children). 
+			// To do this, we modified CanonicalEditPolicy to add the Canvas semantic Element into the children 
+			// list. The only remaining part is to return correct VID for this special case.
+
+			if (containerView instanceof Diagram && domainElement != null && domainElement.equals(containerView.getElement())) {
+				return Package2EditPart.VISUAL_ID;
+			}
 			if (UMLPackage.eINSTANCE.getComponent().isSuperTypeOf(domainElement.eClass())) {
 				return ComponentEditPart.VISUAL_ID;
 			}
@@ -208,6 +225,7 @@ public class UMLVisualIDRegistry {
 			if (UMLPackage.eINSTANCE.getClass_().isSuperTypeOf(domainElement.eClass()) && evaluate(Class_2004_Constraint, domainElement)) {
 				return Class2EditPart.VISUAL_ID;
 			}
+			// Diagram header is already processed above
 			break;
 		}
 		return -1;
@@ -258,6 +276,14 @@ public class UMLVisualIDRegistry {
 				return true;
 			}
 			if (PortEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			break;
+		case Package2EditPart.VISUAL_ID:
+			if (PackageNameEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			if (PackageImportsEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
 			break;
@@ -334,6 +360,11 @@ public class UMLVisualIDRegistry {
 				return true;
 			}
 			break;
+		case PackageImportsEditPart.VISUAL_ID:
+			if (ElementImportEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			break;
 		case PackageEditPart.VISUAL_ID:
 			if (ComponentEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
@@ -345,6 +376,9 @@ public class UMLVisualIDRegistry {
 				return true;
 			}
 			if (Class2EditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			if (Package2EditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
 			break;

@@ -72,6 +72,11 @@ public class UMLElementTypes extends ElementInitializers {
 	/**
 	 * @generated
 	 */
+	public static final IElementType Package_2005 = getElementType("org.eclipse.uml2.diagram.component.Package_2005"); //$NON-NLS-1$
+
+	/**
+	 * @generated
+	 */
 	public static final IElementType Component_3001 = getElementType("org.eclipse.uml2.diagram.component.Component_3001"); //$NON-NLS-1$
 
 	/**
@@ -98,6 +103,11 @@ public class UMLElementTypes extends ElementInitializers {
 	 * @generated
 	 */
 	public static final IElementType Property_3006 = getElementType("org.eclipse.uml2.diagram.component.Property_3006"); //$NON-NLS-1$
+
+	/**
+	 * @generated
+	 */
+	public static final IElementType ElementImport_3007 = getElementType("org.eclipse.uml2.diagram.component.ElementImport_3007"); //$NON-NLS-1$
 
 	/**
 	 * @generated
@@ -240,6 +250,8 @@ public class UMLElementTypes extends ElementInitializers {
 
 			elements.put(Class_2004, UMLPackage.eINSTANCE.getClass_());
 
+			elements.put(Package_2005, UMLPackage.eINSTANCE.getPackage());
+
 			elements.put(Component_3001, UMLPackage.eINSTANCE.getComponent());
 
 			elements.put(Port_3002, UMLPackage.eINSTANCE.getPort());
@@ -251,6 +263,8 @@ public class UMLElementTypes extends ElementInitializers {
 			elements.put(Interface_3005, UMLPackage.eINSTANCE.getInterface());
 
 			elements.put(Property_3006, UMLPackage.eINSTANCE.getProperty());
+
+			elements.put(ElementImport_3007, UMLPackage.eINSTANCE.getElementImport());
 
 			elements.put(InterfaceRealization_4001, UMLPackage.eINSTANCE.getInterfaceRealization());
 
@@ -283,12 +297,14 @@ public class UMLElementTypes extends ElementInitializers {
 			KNOWN_ELEMENT_TYPES.add(Artifact_2002);
 			KNOWN_ELEMENT_TYPES.add(Interface_2003);
 			KNOWN_ELEMENT_TYPES.add(Class_2004);
+			KNOWN_ELEMENT_TYPES.add(Package_2005);
 			KNOWN_ELEMENT_TYPES.add(Component_3001);
 			KNOWN_ELEMENT_TYPES.add(Port_3002);
 			KNOWN_ELEMENT_TYPES.add(Artifact_3003);
 			KNOWN_ELEMENT_TYPES.add(Class_3004);
 			KNOWN_ELEMENT_TYPES.add(Interface_3005);
 			KNOWN_ELEMENT_TYPES.add(Property_3006);
+			KNOWN_ELEMENT_TYPES.add(ElementImport_3007);
 			KNOWN_ELEMENT_TYPES.add(InterfaceRealization_4001);
 			KNOWN_ELEMENT_TYPES.add(PortProvided_4006);
 			KNOWN_ELEMENT_TYPES.add(PortRequired_4004);
