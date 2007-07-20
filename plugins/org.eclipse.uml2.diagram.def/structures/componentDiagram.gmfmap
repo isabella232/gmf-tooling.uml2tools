@@ -241,7 +241,7 @@
         href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//Port/provided"/>
     <creationConstraints>
       <sourceEnd
-          body="self.oclIsKindOf(uml::Port)"/>
+          body="self.oclIsKindOf(uml::Port) and (self.oclAsType(uml::Port).type.oclIsUndefined() or self.oclAsType(uml::Port).type.oclIsKindOf(uml::Classifier))"/>
     </creationConstraints>
   </links>
   <links>
@@ -262,7 +262,7 @@
     <diagramCanvas
         href="classDiagram_auxiliary.gmfgraph#cnvAuxiliary"/>
     <domainModel
-        href="http://www.eclipse.org/uml2/2.0.0/UML#/"/>
+        href="http://www.eclipse.org/uml2/2.1.0/UML#/"/>
     <domainMetaElement
         href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//Package"/>
     <palette

@@ -361,7 +361,9 @@ public class UMLBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 		static {
 			Map env = new HashMap(3);
 			env.put(OPPOSITE_END_VAR, UMLPackage.eINSTANCE.getInterface());
-			PortProvided_4006_SourceExpression = UMLOCLFactory.getExpression("self.oclIsKindOf(uml::Port)", UMLPackage.eINSTANCE.getPort(), env); //$NON-NLS-1$
+			PortProvided_4006_SourceExpression = UMLOCLFactory
+					.getExpression(
+							"self.oclIsKindOf(uml::Port) and (self.oclAsType(uml::Port).type.oclIsUndefined() or self.oclAsType(uml::Port).type.oclIsKindOf(uml::Classifier))", UMLPackage.eINSTANCE.getPort(), env); //$NON-NLS-1$
 		}
 
 		/**

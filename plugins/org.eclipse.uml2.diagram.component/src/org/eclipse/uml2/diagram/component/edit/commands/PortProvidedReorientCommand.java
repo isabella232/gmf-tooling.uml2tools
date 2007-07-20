@@ -9,8 +9,11 @@ import org.eclipse.gmf.runtime.emf.type.core.commands.EditElementCommand;
 import org.eclipse.gmf.runtime.emf.type.core.requests.ReorientReferenceRelationshipRequest;
 import org.eclipse.gmf.runtime.emf.type.core.requests.ReorientRelationshipRequest;
 import org.eclipse.uml2.diagram.component.edit.policies.UMLBaseItemSemanticEditPolicy;
+import org.eclipse.uml2.uml.Classifier;
+import org.eclipse.uml2.uml.Dependency;
 import org.eclipse.uml2.uml.Interface;
 import org.eclipse.uml2.uml.Port;
+import org.eclipse.uml2.uml.Realization;
 
 /**
  * @generated
@@ -110,11 +113,25 @@ public class PortProvidedReorientCommand extends EditElementCommand {
 	}
 
 	/**
-	 * @generated
+	 * @generated NOT
 	 */
 	protected CommandResult reorientTarget() throws ExecutionException {
-		getOldSource().getProvideds().remove(getOldTarget());
-		getOldSource().getProvideds().add(getNewTarget());
+		//see PortProvidedCreateCommand
+		Interface oldTarget = getOldTarget();
+		Interface newTarget = getNewTarget();
+
+		Port port = getOldSource();
+		Classifier portType = (Classifier) port.getType();
+		if (oldTarget.equals(portType)) {
+			port.setType(newTarget);
+		} else {
+			for (Dependency nextDependency : portType.getClientDependencies()) {
+				if (isInterfaceRealization(nextDependency, oldTarget)) {
+					nextDependency.getSuppliers().remove(oldTarget);
+					nextDependency.getSuppliers().add(newTarget);
+				}
+			}
+		}
 		return CommandResult.newOKCommandResult(referenceOwner);
 	}
 
@@ -145,4 +162,9 @@ public class PortProvidedReorientCommand extends EditElementCommand {
 	protected Interface getNewTarget() {
 		return (Interface) newEnd;
 	}
+
+	private static boolean isInterfaceRealization(Dependency dependency, Interface innterface) {
+		return dependency instanceof Realization && dependency.getSuppliers().contains(innterface);
+	}
+
 }
