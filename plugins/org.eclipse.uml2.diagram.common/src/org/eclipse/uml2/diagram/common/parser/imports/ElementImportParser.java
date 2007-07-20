@@ -1,22 +1,42 @@
-package org.eclipse.uml2.diagram.clazz.parser.imports;
+package org.eclipse.uml2.diagram.common.parser.imports;
 
 import java.util.LinkedList;
 import java.util.List;
 
 import org.eclipse.core.runtime.IAdaptable;
+import org.eclipse.core.runtime.IStatus;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.gmf.runtime.common.core.command.ICommand;
 import org.eclipse.gmf.runtime.common.core.command.UnexecutableCommand;
 import org.eclipse.gmf.runtime.common.ui.services.parser.IParserEditStatus;
 import org.eclipse.gmf.runtime.common.ui.services.parser.ParserEditStatus;
+import org.eclipse.gmf.runtime.emf.type.core.commands.SetValueCommand;
+import org.eclipse.gmf.runtime.emf.type.core.requests.SetRequest;
 import org.eclipse.gmf.runtime.emf.ui.services.parser.ISemanticParser;
 import org.eclipse.jface.text.contentassist.IContentAssistProcessor;
+import org.eclipse.uml2.diagram.common.Messages;
+import org.eclipse.uml2.diagram.common.parser.ElementProvider;
+import org.eclipse.uml2.diagram.parser.assist.EObjectCompletionProcessor;
 import org.eclipse.uml2.uml.ElementImport;
 import org.eclipse.uml2.uml.PackageableElement;
 import org.eclipse.uml2.uml.UMLPackage;
 
 public class ElementImportParser implements ISemanticParser {
+	
+	private final ElementProvider myElementProvider;
+	private final CompletionProcessor myCompletionProcessor = new CompletionProcessor();
+
+	private static final String UNDEFINED_VALUE = Messages.ElementImportParser_undefined_value;
+	
+	
+	public ElementImportParser() {
+		this(new ElementImportProvider());
+	}
+	
+	public ElementImportParser(ElementProvider elementProvider) {
+		myElementProvider = elementProvider;
+	}
 
 	@SuppressWarnings("serial") //$NON-NLS-1$
 	public List<?> getSemanticElementsBeingParsed(EObject eObject) {
@@ -36,7 +56,8 @@ public class ElementImportParser implements ISemanticParser {
 	}
 
 	public IContentAssistProcessor getCompletionProcessor(IAdaptable element) {
-		return null;
+		myCompletionProcessor.setContext(doAdapt(element));
+		return myCompletionProcessor;
 	}
 
 	public String getEditString(IAdaptable element, int flags) {
@@ -51,6 +72,8 @@ public class ElementImportParser implements ISemanticParser {
 			if (!isEmpty(fqn)) {
 				result.append(fqn);
 			}
+		} else {
+			result.append(UNDEFINED_VALUE);
 		}
 		String alias = subject.getAlias();
 		if (!isEmpty(alias)) {
@@ -65,7 +88,15 @@ public class ElementImportParser implements ISemanticParser {
 	}
 
 	public ICommand getParseCommand(IAdaptable element, String newString, int flags) {
-		return UnexecutableCommand.INSTANCE;
+		PackageableElement imported = findElement(element, newString);
+		if (imported == null) {
+			return UnexecutableCommand.INSTANCE;
+		}
+		ElementImport elementImport = doAdapt(element);
+		if (imported.equals(elementImport.getImportedElement())){
+			return UnexecutableCommand.INSTANCE;
+		}
+		return new SetValueCommand(new SetRequest(elementImport, UMLPackage.eINSTANCE.getElementImport_ImportedElement(), imported)); 
 	}
 
 	public boolean areSemanticElementsAffected(EObject listener, Object notification) {
@@ -77,7 +108,22 @@ public class ElementImportParser implements ISemanticParser {
 	}
 	
 	public IParserEditStatus isValidEditString(IAdaptable element, String editString) {
-		return ParserEditStatus.UNEDITABLE_STATUS;
+		PackageableElement imported = findElement(element, editString);
+		if (imported == null) {
+			return new ParserEditStatus(IStatus.ERROR, PLUGIN_ID, ParserEditStatus.UNEDITABLE, "Unknown metaclass: " + editString, null); //$NON-NLS-1$
+		}
+		return ParserEditStatus.EDITABLE_STATUS;
+	}
+	
+	private PackageableElement findElement(IAdaptable parserElement, String editString){
+		if (editString == null){
+			return null;
+		}
+		editString = editString.trim();
+		if (editString.length() == 0){
+			return null;
+		}
+		return myElementProvider.findElement(doAdapt(parserElement), editString);
 	}
 
 	private ElementImport doAdapt(IAdaptable adaptable) {
@@ -97,4 +143,14 @@ public class ElementImportParser implements ISemanticParser {
 		}
 		return false;
 	}
+	
+	private class CompletionProcessor extends EObjectCompletionProcessor {
+		@Override
+		protected Iterable<String> computeContextProposals(EObject context) {
+			return myElementProvider.getElementNames(context);
+		}
+	}
+	
+	private static final String PLUGIN_ID = "org.eclipse.uml2.diagram.common"; //$NON-NLS-1$
+
 }

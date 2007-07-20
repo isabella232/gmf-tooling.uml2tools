@@ -60,6 +60,9 @@ public abstract class EObjectCompletionProcessor implements IContentAssistProces
 
 		List<ICompletionProposal> result = new LinkedList<ICompletionProposal>();
 		for (String next : computeContextProposals(myContext)) {
+			if (!next.startsWith(prefix)){
+				continue;
+			}
 			ICompletionProposal proposal = new CompletionProposal(next, selectionStart - prefixLength, selectionLength + prefixLength, next.length(), null, next, null, null);
 			result.add(proposal);
 		}

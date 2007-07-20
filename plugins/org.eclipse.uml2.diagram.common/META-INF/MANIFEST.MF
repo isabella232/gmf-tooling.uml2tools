@@ -24,6 +24,8 @@ Export-Package: org.eclipse.uml2.diagram.common.actions,
  org.eclipse.uml2.diagram.common.parser.property,
  org.eclipse.uml2.diagram.common.pathmap,
  org.eclipse.uml2.diagram.common.preferences,
- org.eclipse.uml2.diagram.common.providers
+ org.eclipse.uml2.diagram.common.providers,
+ org.eclipse.uml2.diagram.common.parser,
+ org.eclipse.uml2.diagram.common.parser.imports
 Bundle-Vendor: %providerName
 Bundle-ClassPath: .

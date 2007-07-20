@@ -6,6 +6,8 @@ public class Messages extends NLS {
 
 	private static final String BUNDLE_NAME = "messages"; //$NON-NLS-1$
 
+	public static String ElementImportParser_undefined_value;
+
 	public static String IconStylePreferencePage_cheerful_style;
 
 	public static String IconStylePreferencePage_eclipse_style;
