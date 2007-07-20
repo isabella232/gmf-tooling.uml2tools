@@ -228,6 +228,7 @@ public class UMLNavigatorLabelProvider extends LabelProvider implements ICommonL
 			UMLDiagramEditorPlugin.getInstance().logError("Parser was not found for label " + 5001); //$NON-NLS-1$
 			return ""; //$NON-NLS-1$
 		}
+
 	}
 
 	/**
@@ -244,6 +245,7 @@ public class UMLNavigatorLabelProvider extends LabelProvider implements ICommonL
 			UMLDiagramEditorPlugin.getInstance().logError("Parser was not found for label " + 5004); //$NON-NLS-1$
 			return ""; //$NON-NLS-1$
 		}
+
 	}
 
 	/**
@@ -260,6 +262,7 @@ public class UMLNavigatorLabelProvider extends LabelProvider implements ICommonL
 			UMLDiagramEditorPlugin.getInstance().logError("Parser was not found for label " + 5005); //$NON-NLS-1$
 			return ""; //$NON-NLS-1$
 		}
+
 	}
 
 	/**
@@ -276,6 +279,7 @@ public class UMLNavigatorLabelProvider extends LabelProvider implements ICommonL
 			UMLDiagramEditorPlugin.getInstance().logError("Parser was not found for label " + 5008); //$NON-NLS-1$
 			return ""; //$NON-NLS-1$
 		}
+
 	}
 
 	/**
@@ -292,6 +296,7 @@ public class UMLNavigatorLabelProvider extends LabelProvider implements ICommonL
 			UMLDiagramEditorPlugin.getInstance().logError("Parser was not found for label " + 5002); //$NON-NLS-1$
 			return ""; //$NON-NLS-1$
 		}
+
 	}
 
 	/**
@@ -308,6 +313,7 @@ public class UMLNavigatorLabelProvider extends LabelProvider implements ICommonL
 			UMLDiagramEditorPlugin.getInstance().logError("Parser was not found for label " + 5003); //$NON-NLS-1$
 			return ""; //$NON-NLS-1$
 		}
+
 	}
 
 	/**
@@ -324,6 +330,7 @@ public class UMLNavigatorLabelProvider extends LabelProvider implements ICommonL
 			UMLDiagramEditorPlugin.getInstance().logError("Parser was not found for label " + 5006); //$NON-NLS-1$
 			return ""; //$NON-NLS-1$
 		}
+
 	}
 
 	/**
@@ -340,6 +347,7 @@ public class UMLNavigatorLabelProvider extends LabelProvider implements ICommonL
 			UMLDiagramEditorPlugin.getInstance().logError("Parser was not found for label " + 5007); //$NON-NLS-1$
 			return ""; //$NON-NLS-1$
 		}
+
 	}
 
 	/**
@@ -356,6 +364,7 @@ public class UMLNavigatorLabelProvider extends LabelProvider implements ICommonL
 			UMLDiagramEditorPlugin.getInstance().logError("Parser was not found for label " + 5009); //$NON-NLS-1$
 			return ""; //$NON-NLS-1$
 		}
+
 	}
 
 	/**

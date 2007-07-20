@@ -65,21 +65,7 @@ public class PortRequiredEditPart extends ConnectionNodeEditPart {
 		 */
 		public RequiredInterfaceConnectionFigure() {
 
-			createContents();
 			setTargetDecoration(createTargetDecoration());
-		}
-
-		/**
-		 * @generated
-		 */
-		private void createContents() {
-
-			RequiredInterfaceDecoration requiredInterfaceConnectionFigure_Lollypop0 = new RequiredInterfaceDecoration();
-
-			requiredInterfaceConnectionFigure_Lollypop0.setRadius(10);
-
-			this.add(requiredInterfaceConnectionFigure_Lollypop0);
-
 		}
 
 		/**

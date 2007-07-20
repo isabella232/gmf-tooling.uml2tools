@@ -296,17 +296,15 @@ public class ComponentEditPart extends AbstractBorderedShapeEditPart {
 
 			componentFigure_LabelsContainer0.add(componentFigure_fixed_component1);
 
-			WrapLabel componentFigure_name1 = new WrapLabel();
-			componentFigure_name1.setText("");
+			fFigureComponentFigure_name = new WrapLabel();
+			fFigureComponentFigure_name.setText("");
 
-			componentFigure_LabelsContainer0.add(componentFigure_name1);
-			fFigureComponentFigure_name = componentFigure_name1;
+			componentFigure_LabelsContainer0.add(fFigureComponentFigure_name);
 
-			RectangleFigure componentFigure_Body0 = new RectangleFigure();
-			componentFigure_Body0.setMinimumSize(new Dimension(getMapMode().DPtoLP(0), getMapMode().DPtoLP(55)));
+			fFigureComponentFigure_Body = new RectangleFigure();
+			fFigureComponentFigure_Body.setMinimumSize(new Dimension(getMapMode().DPtoLP(0), getMapMode().DPtoLP(55)));
 
-			this.add(componentFigure_Body0);
-			fFigureComponentFigure_Body = componentFigure_Body0;
+			this.add(fFigureComponentFigure_Body);
 
 		}
 

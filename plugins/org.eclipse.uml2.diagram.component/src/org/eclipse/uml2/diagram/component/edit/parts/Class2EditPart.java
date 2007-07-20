@@ -257,11 +257,10 @@ public class Class2EditPart extends AbstractBorderedShapeEditPart {
 		 */
 		private void createContents() {
 
-			WrapLabel componentClassFigure_name0 = new WrapLabel();
-			componentClassFigure_name0.setText("");
+			fFigureComponentClassFigure_name = new WrapLabel();
+			fFigureComponentClassFigure_name.setText("");
 
-			this.add(componentClassFigure_name0);
-			fFigureComponentClassFigure_name = componentClassFigure_name0;
+			this.add(fFigureComponentClassFigure_name);
 
 		}
 

@@ -30,6 +30,7 @@ import org.eclipse.uml2.diagram.component.edit.parts.Interface2EditPart;
 import org.eclipse.uml2.diagram.component.edit.parts.InterfaceEditPart;
 import org.eclipse.uml2.diagram.component.edit.parts.PackageEditPart;
 import org.eclipse.uml2.diagram.component.edit.parts.PortEditPart;
+import org.eclipse.uml2.diagram.component.part.Messages;
 import org.eclipse.uml2.diagram.component.part.UMLDiagramEditorPlugin;
 
 /**
@@ -256,8 +257,8 @@ public class UMLModelingAssistantProvider extends ModelingAssistantProvider {
 		Shell shell = Display.getCurrent().getActiveShell();
 		ILabelProvider labelProvider = new AdapterFactoryLabelProvider(UMLDiagramEditorPlugin.getInstance().getItemProvidersAdapterFactory());
 		ElementListSelectionDialog dialog = new ElementListSelectionDialog(shell, labelProvider);
-		dialog.setMessage("Available domain model elements:");
-		dialog.setTitle("Select domain model element");
+		dialog.setMessage(Messages.UMLModelingAssistantProviderMessage);
+		dialog.setTitle(Messages.UMLModelingAssistantProviderTitle);
 		dialog.setMultipleSelection(false);
 		dialog.setElements(elements);
 		EObject selected = null;

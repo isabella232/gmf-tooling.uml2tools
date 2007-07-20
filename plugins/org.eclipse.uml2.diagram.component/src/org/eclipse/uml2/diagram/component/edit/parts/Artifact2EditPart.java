@@ -245,11 +245,10 @@ public class Artifact2EditPart extends ShapeNodeEditPart {
 
 			artifactFigure_NameContainer0.setLayoutManager(layoutArtifactFigure_NameContainer0);
 
-			WrapLabel artifactFigure_name1 = new WrapLabel();
-			artifactFigure_name1.setText("");
+			fFigureArtifactFigure_name = new WrapLabel();
+			fFigureArtifactFigure_name.setText("");
 
-			artifactFigure_NameContainer0.add(artifactFigure_name1);
-			fFigureArtifactFigure_name = artifactFigure_name1;
+			artifactFigure_NameContainer0.add(fFigureArtifactFigure_name);
 
 		}
 
