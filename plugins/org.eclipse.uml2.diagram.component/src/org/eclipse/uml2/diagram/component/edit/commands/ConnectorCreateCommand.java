@@ -90,11 +90,11 @@ public class ConnectorCreateCommand extends CreateElementCommand {
 		Connector connector = getContainer().createOwnedConnector(null);
 		ConnectorEnd sourceEnd = UMLFactory.eINSTANCE.createConnectorEnd();
 		ConnectorEnd targetEnd = UMLFactory.eINSTANCE.createConnectorEnd();
-		
+
 		//see ConnectorEndsConvention -- source first, than target
 		connector.getEnds().add(sourceEnd);
 		connector.getEnds().add(targetEnd);
-		
+
 		sourceEnd.setRole(getSource());
 		targetEnd.setRole(getTarget());
 

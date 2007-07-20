@@ -97,7 +97,8 @@ public class ConnectorReorientCommand extends EditElementCommand {
 	}
 
 	/**
-	 * @generated
+	 * @see #197259
+	 * @generated NOT
 	 */
 	protected CommandResult reorientTarget() throws ExecutionException {
 		throw new UnsupportedOperationException("See #197259");
