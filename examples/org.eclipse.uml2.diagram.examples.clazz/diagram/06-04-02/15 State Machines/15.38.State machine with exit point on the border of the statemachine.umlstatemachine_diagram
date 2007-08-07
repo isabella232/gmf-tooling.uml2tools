@@ -43,6 +43,7 @@
     </children>
     <styles xmi:type="notation:ShapeStyle" xmi:id="_fpABUQksEdyF_oRbgI8ypA"/>
     <layoutConstraint xmi:type="notation:Bounds" xmi:id="_fpABUgksEdyF_oRbgI8ypA"/>
+    <element xmi:type="uml:StateMachine" href="15.38.State machine with exit point on the border of the statemachine.uml#_fnNRkAksEdyF_oRbgI8ypA"/>
   </children>
   <styles xmi:type="notation:DiagramStyle" xmi:id="_fnNRkgksEdyF_oRbgI8ypA"/>
   <element xmi:type="uml:StateMachine" href="15.38.State machine with exit point on the border of the statemachine.uml#_fnNRkAksEdyF_oRbgI8ypA"/>

@@ -117,6 +117,7 @@
     </children>
     <styles xmi:type="notation:ShapeStyle" xmi:id="_gCG6UQkrEdyF_oRbgI8ypA"/>
     <layoutConstraint xmi:type="notation:Bounds" xmi:id="_gCG6UgkrEdyF_oRbgI8ypA"/>
+    <element xmi:type="uml:StateMachine" href="15.35.Orthogonal state with regions.uml#_gAxdkAkrEdyF_oRbgI8ypA"/>
   </children>
   <styles xmi:type="notation:DiagramStyle" xmi:id="_gAxdkgkrEdyF_oRbgI8ypA"/>
   <element xmi:type="uml:StateMachine" href="15.35.Orthogonal state with regions.uml#_gAxdkAkrEdyF_oRbgI8ypA"/>

@@ -48,6 +48,7 @@
     </children>
     <styles xmi:type="notation:ShapeStyle" xmi:id="_2nI84RZlEdyzvZTv-3508A"/>
     <layoutConstraint xmi:type="notation:Bounds" xmi:id="_2nI84hZlEdyzvZTv-3508A"/>
+    <element xmi:type="uml:StateMachine" href="15.22.Junction.uml#_2lNDMBZlEdyzvZTv-3508A"/>
   </children>
   <styles xmi:type="notation:DiagramStyle" xmi:id="_2lf-IRZlEdyzvZTv-3508A"/>
   <element xmi:type="uml:StateMachine" href="15.22.Junction.uml#_2lNDMBZlEdyzvZTv-3508A"/>

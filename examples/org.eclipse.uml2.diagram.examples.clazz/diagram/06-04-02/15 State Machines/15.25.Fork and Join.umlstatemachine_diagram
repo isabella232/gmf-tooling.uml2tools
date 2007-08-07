@@ -83,6 +83,7 @@
     </children>
     <styles xmi:type="notation:ShapeStyle" xmi:id="_MV0yYQkqEdyF_oRbgI8ypA"/>
     <layoutConstraint xmi:type="notation:Bounds" xmi:id="_MV0yYgkqEdyF_oRbgI8ypA"/>
+    <element xmi:type="uml:StateMachine" href="15.25.Fork and Join.uml#_MTl9wAkqEdyF_oRbgI8ypA"/>
   </children>
   <styles xmi:type="notation:DiagramStyle" xmi:id="_MT44sQkqEdyF_oRbgI8ypA"/>
   <element xmi:type="uml:StateMachine" href="15.25.Fork and Join.uml#_MTl9wAkqEdyF_oRbgI8ypA"/>
