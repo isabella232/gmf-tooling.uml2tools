@@ -68,8 +68,8 @@ public abstract class DiagramTestCase extends TestCase {
 
 	protected void tearDown() throws Exception {
 		flushEventQueue();
-		project.close();
 		diagram.close();
+		project.close();
 	}
 
 	protected UMLTestProject createProject() throws CoreException {
