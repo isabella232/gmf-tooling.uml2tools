@@ -2230,6 +2230,9 @@
             xsi:type="gmfgen:DefaultSizeAttributes"
             width="70"
             height="25"/>
+        <attributes
+            xsi:type="uml2.gmfgenext:CustomLocatorAttributes"
+            customLocatorFQN="org.eclipse.uml2.diagram.common.draw2d.BisectionBorderItemLocator"/>
         <requiredPluginIDs>org.eclipse.gmf.runtime.draw2d.ui</requiredPluginIDs>
       </viewmap>
       <modelFacet>

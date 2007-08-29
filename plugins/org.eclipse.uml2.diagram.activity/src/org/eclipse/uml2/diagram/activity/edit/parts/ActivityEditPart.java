@@ -33,6 +33,7 @@ import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.uml2.diagram.activity.edit.policies.ActivityCanonicalEditPolicy;
 import org.eclipse.uml2.diagram.activity.edit.policies.ActivityItemSemanticEditPolicy;
 import org.eclipse.uml2.diagram.activity.part.UMLVisualIDRegistry;
+import org.eclipse.uml2.diagram.common.draw2d.BisectionBorderItemLocator;
 import org.eclipse.uml2.diagram.common.draw2d.CenterLayout;
 
 /**
@@ -133,7 +134,7 @@ public class ActivityEditPart extends AbstractBorderedShapeEditPart {
 			return true;
 		}
 		if (childEditPart instanceof ActivityParameterNodeEditPart) {
-			IBorderItemLocator locator = new BorderItemLocator(getMainFigure(), PositionConstants.WEST);
+			IBorderItemLocator locator = new BisectionBorderItemLocator(getMainFigure());
 			getBorderedFigure().getBorderItemContainer().add(((ActivityParameterNodeEditPart) childEditPart).getFigure(), locator);
 			return true;
 		}
