@@ -261,7 +261,7 @@
           </labelMappings>
           <tool
               xsi:type="gmftool:CreationTool"
-              href="classDiagram.gmftool#//@palette/@tools.1/@tools.5"/>
+              href="componentDiagram.gmftool#//@palette/@tools.2/@tools.0"/>
           <diagramNode
               href="classDiagram_auxiliary.gmfgraph#AuxiliaryPureLabel"/>
         </ownedChild>

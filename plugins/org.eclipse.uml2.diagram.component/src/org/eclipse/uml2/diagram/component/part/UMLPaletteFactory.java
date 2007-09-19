@@ -23,7 +23,7 @@ public class UMLPaletteFactory {
 	public void fillPalette(PaletteRoot paletteRoot) {
 		paletteRoot.add(createNodes1Group());
 		paletteRoot.add(createLinks2Group());
-		paletteRoot.add(createMisreferencedtools3Group());
+		paletteRoot.add(createChildren3Group());
 	}
 
 	/**
@@ -56,12 +56,12 @@ public class UMLPaletteFactory {
 	}
 
 	/**
-	 * Creates "-- Mis-referenced tools --" palette tool group
+	 * Creates "Children" palette tool group
 	 * @generated
 	 */
-	private PaletteContainer createMisreferencedtools3Group() {
-		PaletteGroup paletteContainer = new PaletteGroup(Messages.Misreferencedtools3Group_title);
-		paletteContainer.setDescription(Messages.Misreferencedtools3Group_desc);
+	private PaletteContainer createChildren3Group() {
+		PaletteGroup paletteContainer = new PaletteGroup(Messages.Children3Group_title);
+		paletteContainer.setDescription(Messages.Children3Group_desc);
 		paletteContainer.add(createElementImport1CreationTool());
 		return paletteContainer;
 	}

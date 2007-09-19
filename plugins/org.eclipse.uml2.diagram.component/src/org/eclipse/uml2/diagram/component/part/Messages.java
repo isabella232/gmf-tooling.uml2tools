@@ -263,12 +263,12 @@ public class Messages extends NLS {
 	/**
 	 * @generated
 	 */
-	public static String Misreferencedtools3Group_title;
+	public static String Children3Group_title;
 
 	/**
 	 * @generated
 	 */
-	public static String Misreferencedtools3Group_desc;
+	public static String Children3Group_desc;
 
 	/**
 	 * @generated

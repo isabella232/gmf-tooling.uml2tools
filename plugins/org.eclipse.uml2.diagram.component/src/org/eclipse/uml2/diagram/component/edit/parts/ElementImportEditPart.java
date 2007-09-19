@@ -377,7 +377,7 @@ public class ElementImportEditPart extends CompartmentEditPart implements ITextA
 		refreshUnderline();
 		refreshStrikeThrough();
 	}
-	
+
 	/**
 	 * @generated NOT
 	 */
@@ -385,7 +385,6 @@ public class ElementImportEditPart extends CompartmentEditPart implements ITextA
 		refreshVisualsGen();
 		refreshHasImportedElement();
 	}
-	
 
 	/**
 	 * @generated
@@ -535,7 +534,7 @@ public class ElementImportEditPart extends CompartmentEditPart implements ITextA
 		}
 		super.handleNotificationEvent(event);
 	}
-	
+
 	/**
 	 * XXX: Again, duplication of the generated NOT code, see, e.g. ClassD. 
 	 * 
@@ -547,7 +546,6 @@ public class ElementImportEditPart extends CompartmentEditPart implements ITextA
 			refreshVisuals();
 		}
 	}
-	
 
 	/**
 	 * @generated
@@ -576,7 +574,6 @@ public class ElementImportEditPart extends CompartmentEditPart implements ITextA
 		}
 	}
 
-	
 	/**
 	 * @NOT-GENERATED
 	 */

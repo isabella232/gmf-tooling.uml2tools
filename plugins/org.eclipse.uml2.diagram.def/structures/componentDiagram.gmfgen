@@ -117,9 +117,6 @@
             xsi:type="gmfgen:DefaultSizeAttributes"
             width="15"
             height="15"/>
-        <attributes
-            xsi:type="gmfgen:StyleAttributes"
-            fixedForeground="true"/>
         <requiredPluginIDs>org.eclipse.uml2.diagram.common</requiredPluginIDs>
         <requiredPluginIDs>org.eclipse.gmf.runtime.draw2d.ui</requiredPluginIDs>
       </viewmap>
@@ -317,8 +314,6 @@
             xsi:type="gmfgen:DefaultSizeAttributes"
             width="15"
             height="15"/>
-        <attributes
-            xsi:type="gmfgen:ResizeConstraints"/>
         <requiredPluginIDs>org.eclipse.uml2.diagram.common</requiredPluginIDs>
         <requiredPluginIDs>org.eclipse.gmf.runtime.draw2d.ui</requiredPluginIDs>
       </viewmap>
@@ -592,8 +587,6 @@
             xsi:type="gmfgen:DefaultSizeAttributes"
             width="15"
             height="15"/>
-        <attributes
-            xsi:type="gmfgen:ResizeConstraints"/>
         <requiredPluginIDs>org.eclipse.uml2.diagram.common</requiredPluginIDs>
         <requiredPluginIDs>org.eclipse.gmf.runtime.draw2d.ui</requiredPluginIDs>
       </viewmap>
@@ -1022,8 +1015,8 @@
             genLinks="//@diagram/@links.4"/>
       </groups>
       <groups
-          title="-- Mis-referenced tools --"
-          description="Mapping element referenced tools from palette other than one specified in Mapping instance">
+          title="Children"
+          description="Child Elements of the Diagram Nodes">
         <entries
             xsi:type="gmfgen:ToolEntry"
             title="Element Import"

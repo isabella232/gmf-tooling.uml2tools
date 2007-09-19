@@ -52,5 +52,14 @@
           title="Delegation Connector"
           description="Create Delegation Connector"/>
     </tools>
+    <tools
+        xsi:type="gmftool:ToolGroup"
+        title="Children"
+        description="Child Elements of the Diagram Nodes">
+      <tools
+          xsi:type="gmftool:CreationTool"
+          title="Element Import"
+          description="Create Element Import"/>
+    </tools>
   </palette>
 </gmftool:ToolRegistry>
