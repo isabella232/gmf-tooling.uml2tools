@@ -25,6 +25,7 @@
     <viewmap
         xsi:type="gmfgen:FigureViewmap"
         figureQualifiedClassName="org.eclipse.draw2d.FreeformLayer"/>
+    <containsShortcutsTo>uml</containsShortcutsTo>
     <domainDiagramElement
         href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/Package"/>
     <childNodes

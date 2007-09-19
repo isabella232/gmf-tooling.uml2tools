@@ -65,6 +65,13 @@ public class UMLDiagramUpdater {
 	/**
 	 * @generated
 	 */
+	public static boolean isShortcutOrphaned(View view) {
+		return !view.isSetElement() || view.getElement() == null || view.getElement().eIsProxy();
+	}
+
+	/**
+	 * @generated
+	 */
 	public static List getSemanticChildren(View view) {
 		switch (UMLVisualIDRegistry.getVisualID(view)) {
 		case ComponentEditPart.VISUAL_ID:

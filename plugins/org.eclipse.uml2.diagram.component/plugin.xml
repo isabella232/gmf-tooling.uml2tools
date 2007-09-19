@@ -57,6 +57,18 @@
       <?gmfgen generated="true"?>
       <objectContribution
             adaptable="false"
+            id="org.eclipse.uml2.diagram.component.CreateShortcut"
+            objectClass="org.eclipse.uml2.diagram.component.edit.parts.PackageEditPart">
+         <action
+               class="org.eclipse.uml2.diagram.component.part.UMLCreateShortcutAction"
+               enablesFor="1"
+               id="org.eclipse.uml2.diagram.component.CreateShortcutAction"
+               label="%createShortcutActionLabel"
+               menubarPath="additions">
+         </action>
+      </objectContribution>                      
+      <objectContribution
+            adaptable="false"
             id="org.eclipse.uml2.diagram.component.LoadResource"
             objectClass="org.eclipse.uml2.diagram.component.edit.parts.PackageEditPart">
          <action
