@@ -11,10 +11,12 @@ import org.eclipse.uml2.diagram.component.edit.parts.ArtifactEditPart;
 import org.eclipse.uml2.diagram.component.edit.parts.ArtifactName2EditPart;
 import org.eclipse.uml2.diagram.component.edit.parts.ArtifactNameEditPart;
 import org.eclipse.uml2.diagram.component.edit.parts.Class2EditPart;
+import org.eclipse.uml2.diagram.component.edit.parts.Class3EditPart;
 import org.eclipse.uml2.diagram.component.edit.parts.ClassEditPart;
 import org.eclipse.uml2.diagram.component.edit.parts.ClassName2EditPart;
 import org.eclipse.uml2.diagram.component.edit.parts.ClassNameEditPart;
 import org.eclipse.uml2.diagram.component.edit.parts.Component2EditPart;
+import org.eclipse.uml2.diagram.component.edit.parts.Component3EditPart;
 import org.eclipse.uml2.diagram.component.edit.parts.ComponentContents2EditPart;
 import org.eclipse.uml2.diagram.component.edit.parts.ComponentContentsEditPart;
 import org.eclipse.uml2.diagram.component.edit.parts.ComponentEditPart;
@@ -29,9 +31,14 @@ import org.eclipse.uml2.diagram.component.edit.parts.InterfaceName2EditPart;
 import org.eclipse.uml2.diagram.component.edit.parts.InterfaceNameEditPart;
 import org.eclipse.uml2.diagram.component.edit.parts.InterfaceRealizationEditPart;
 import org.eclipse.uml2.diagram.component.edit.parts.Package2EditPart;
+import org.eclipse.uml2.diagram.component.edit.parts.Package3EditPart;
+import org.eclipse.uml2.diagram.component.edit.parts.Package4EditPart;
+import org.eclipse.uml2.diagram.component.edit.parts.PackageClassifiersEditPart;
 import org.eclipse.uml2.diagram.component.edit.parts.PackageEditPart;
 import org.eclipse.uml2.diagram.component.edit.parts.PackageImportsEditPart;
+import org.eclipse.uml2.diagram.component.edit.parts.PackageName2EditPart;
 import org.eclipse.uml2.diagram.component.edit.parts.PackageNameEditPart;
+import org.eclipse.uml2.diagram.component.edit.parts.PackagePackagesEditPart;
 import org.eclipse.uml2.diagram.component.edit.parts.PortEditPart;
 import org.eclipse.uml2.diagram.component.edit.parts.PortNameEditPart;
 import org.eclipse.uml2.diagram.component.edit.parts.PortProvidedEditPart;
@@ -44,10 +51,12 @@ import org.eclipse.uml2.diagram.component.view.factories.ArtifactName2ViewFactor
 import org.eclipse.uml2.diagram.component.view.factories.ArtifactNameViewFactory;
 import org.eclipse.uml2.diagram.component.view.factories.ArtifactViewFactory;
 import org.eclipse.uml2.diagram.component.view.factories.Class2ViewFactory;
+import org.eclipse.uml2.diagram.component.view.factories.Class3ViewFactory;
 import org.eclipse.uml2.diagram.component.view.factories.ClassName2ViewFactory;
 import org.eclipse.uml2.diagram.component.view.factories.ClassNameViewFactory;
 import org.eclipse.uml2.diagram.component.view.factories.ClassViewFactory;
 import org.eclipse.uml2.diagram.component.view.factories.Component2ViewFactory;
+import org.eclipse.uml2.diagram.component.view.factories.Component3ViewFactory;
 import org.eclipse.uml2.diagram.component.view.factories.ComponentContents2ViewFactory;
 import org.eclipse.uml2.diagram.component.view.factories.ComponentContentsViewFactory;
 import org.eclipse.uml2.diagram.component.view.factories.ComponentName2ViewFactory;
@@ -62,8 +71,13 @@ import org.eclipse.uml2.diagram.component.view.factories.InterfaceNameViewFactor
 import org.eclipse.uml2.diagram.component.view.factories.InterfaceRealizationViewFactory;
 import org.eclipse.uml2.diagram.component.view.factories.InterfaceViewFactory;
 import org.eclipse.uml2.diagram.component.view.factories.Package2ViewFactory;
+import org.eclipse.uml2.diagram.component.view.factories.Package3ViewFactory;
+import org.eclipse.uml2.diagram.component.view.factories.Package4ViewFactory;
+import org.eclipse.uml2.diagram.component.view.factories.PackageClassifiersViewFactory;
 import org.eclipse.uml2.diagram.component.view.factories.PackageImportsViewFactory;
+import org.eclipse.uml2.diagram.component.view.factories.PackageName2ViewFactory;
 import org.eclipse.uml2.diagram.component.view.factories.PackageNameViewFactory;
+import org.eclipse.uml2.diagram.component.view.factories.PackagePackagesViewFactory;
 import org.eclipse.uml2.diagram.component.view.factories.PackageViewFactory;
 import org.eclipse.uml2.diagram.component.view.factories.PortNameViewFactory;
 import org.eclipse.uml2.diagram.component.view.factories.PortProvidedViewFactory;
@@ -137,6 +151,7 @@ public class UMLViewProvider extends AbstractViewProvider {
 				case Interface2EditPart.VISUAL_ID:
 				case Class2EditPart.VISUAL_ID:
 				case Package2EditPart.VISUAL_ID:
+				case Package3EditPart.VISUAL_ID:
 				case Component2EditPart.VISUAL_ID:
 				case PortEditPart.VISUAL_ID:
 				case ArtifactEditPart.VISUAL_ID:
@@ -144,6 +159,9 @@ public class UMLViewProvider extends AbstractViewProvider {
 				case InterfaceEditPart.VISUAL_ID:
 				case PropertyEditPart.VISUAL_ID:
 				case ElementImportEditPart.VISUAL_ID:
+				case Package4EditPart.VISUAL_ID:
+				case Class3EditPart.VISUAL_ID:
+				case Component3EditPart.VISUAL_ID:
 					if (domainElement == null || visualID != UMLVisualIDRegistry.getNodeVisualID(containerView, domainElement)) {
 						return null; // visual id in semantic hint should match visual id for domain element
 					}
@@ -172,6 +190,13 @@ public class UMLViewProvider extends AbstractViewProvider {
 				case PackageNameEditPart.VISUAL_ID:
 				case PackageImportsEditPart.VISUAL_ID:
 					if (Package2EditPart.VISUAL_ID != UMLVisualIDRegistry.getVisualID(containerView) || containerView.getElement() != domainElement) {
+						return null; // wrong container
+					}
+					break;
+				case PackageName2EditPart.VISUAL_ID:
+				case PackagePackagesEditPart.VISUAL_ID:
+				case PackageClassifiersEditPart.VISUAL_ID:
+					if (Package3EditPart.VISUAL_ID != UMLVisualIDRegistry.getVisualID(containerView) || containerView.getElement() != domainElement) {
 						return null; // wrong container
 					}
 					break;
@@ -242,6 +267,10 @@ public class UMLViewProvider extends AbstractViewProvider {
 			return Package2ViewFactory.class;
 		case PackageNameEditPart.VISUAL_ID:
 			return PackageNameViewFactory.class;
+		case Package3EditPart.VISUAL_ID:
+			return Package3ViewFactory.class;
+		case PackageName2EditPart.VISUAL_ID:
+			return PackageName2ViewFactory.class;
 		case Component2EditPart.VISUAL_ID:
 			return Component2ViewFactory.class;
 		case ComponentNameEditPart.VISUAL_ID:
@@ -268,12 +297,22 @@ public class UMLViewProvider extends AbstractViewProvider {
 			return PropertyNameViewFactory.class;
 		case ElementImportEditPart.VISUAL_ID:
 			return ElementImportViewFactory.class;
+		case Package4EditPart.VISUAL_ID:
+			return Package4ViewFactory.class;
+		case Class3EditPart.VISUAL_ID:
+			return Class3ViewFactory.class;
+		case Component3EditPart.VISUAL_ID:
+			return Component3ViewFactory.class;
 		case ComponentContentsEditPart.VISUAL_ID:
 			return ComponentContentsViewFactory.class;
 		case ComponentContents2EditPart.VISUAL_ID:
 			return ComponentContents2ViewFactory.class;
 		case PackageImportsEditPart.VISUAL_ID:
 			return PackageImportsViewFactory.class;
+		case PackagePackagesEditPart.VISUAL_ID:
+			return PackagePackagesViewFactory.class;
+		case PackageClassifiersEditPart.VISUAL_ID:
+			return PackageClassifiersViewFactory.class;
 		}
 		return null;
 	}

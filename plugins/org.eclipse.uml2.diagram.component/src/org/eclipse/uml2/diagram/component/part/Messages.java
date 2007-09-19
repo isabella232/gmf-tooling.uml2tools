@@ -333,6 +333,16 @@ public class Messages extends NLS {
 	/**
 	 * @generated
 	 */
+	public static String Package7CreationTool_title;
+
+	/**
+	 * @generated
+	 */
+	public static String Package7CreationTool_desc;
+
+	/**
+	 * @generated
+	 */
 	public static String ProvidedInterface1CreationTool_title;
 
 	/**
@@ -384,6 +394,16 @@ public class Messages extends NLS {
 	 * @generated
 	 */
 	public static String PackageImportsEditPart_title;
+
+	/**
+	 * @generated
+	 */
+	public static String PackagePackagesEditPart_title;
+
+	/**
+	 * @generated
+	 */
+	public static String PackageClassifiersEditPart_title;
 
 	/**
 	 * @generated
@@ -444,6 +464,16 @@ public class Messages extends NLS {
 	 * @generated
 	 */
 	public static String NavigatorGroupName_Property_3006_outgoinglinks;
+
+	/**
+	 * @generated
+	 */
+	public static String NavigatorGroupName_Class_3009_outgoinglinks;
+
+	/**
+	 * @generated
+	 */
+	public static String NavigatorGroupName_Component_3010_outgoinglinks;
 
 	/**
 	 * @generated

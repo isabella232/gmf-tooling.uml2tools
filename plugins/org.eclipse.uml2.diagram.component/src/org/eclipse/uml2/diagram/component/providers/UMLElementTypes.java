@@ -77,6 +77,11 @@ public class UMLElementTypes extends ElementInitializers {
 	/**
 	 * @generated
 	 */
+	public static final IElementType Package_2006 = getElementType("org.eclipse.uml2.diagram.component.Package_2006"); //$NON-NLS-1$
+
+	/**
+	 * @generated
+	 */
 	public static final IElementType Component_3001 = getElementType("org.eclipse.uml2.diagram.component.Component_3001"); //$NON-NLS-1$
 
 	/**
@@ -108,6 +113,21 @@ public class UMLElementTypes extends ElementInitializers {
 	 * @generated
 	 */
 	public static final IElementType ElementImport_3007 = getElementType("org.eclipse.uml2.diagram.component.ElementImport_3007"); //$NON-NLS-1$
+
+	/**
+	 * @generated
+	 */
+	public static final IElementType Package_3008 = getElementType("org.eclipse.uml2.diagram.component.Package_3008"); //$NON-NLS-1$
+
+	/**
+	 * @generated
+	 */
+	public static final IElementType Class_3009 = getElementType("org.eclipse.uml2.diagram.component.Class_3009"); //$NON-NLS-1$
+
+	/**
+	 * @generated
+	 */
+	public static final IElementType Component_3010 = getElementType("org.eclipse.uml2.diagram.component.Component_3010"); //$NON-NLS-1$
 
 	/**
 	 * @generated
@@ -252,6 +272,8 @@ public class UMLElementTypes extends ElementInitializers {
 
 			elements.put(Package_2005, UMLPackage.eINSTANCE.getPackage());
 
+			elements.put(Package_2006, UMLPackage.eINSTANCE.getPackage());
+
 			elements.put(Component_3001, UMLPackage.eINSTANCE.getComponent());
 
 			elements.put(Port_3002, UMLPackage.eINSTANCE.getPort());
@@ -265,6 +287,12 @@ public class UMLElementTypes extends ElementInitializers {
 			elements.put(Property_3006, UMLPackage.eINSTANCE.getProperty());
 
 			elements.put(ElementImport_3007, UMLPackage.eINSTANCE.getElementImport());
+
+			elements.put(Package_3008, UMLPackage.eINSTANCE.getPackage());
+
+			elements.put(Class_3009, UMLPackage.eINSTANCE.getClass_());
+
+			elements.put(Component_3010, UMLPackage.eINSTANCE.getComponent());
 
 			elements.put(InterfaceRealization_4001, UMLPackage.eINSTANCE.getInterfaceRealization());
 
@@ -298,6 +326,7 @@ public class UMLElementTypes extends ElementInitializers {
 			KNOWN_ELEMENT_TYPES.add(Interface_2003);
 			KNOWN_ELEMENT_TYPES.add(Class_2004);
 			KNOWN_ELEMENT_TYPES.add(Package_2005);
+			KNOWN_ELEMENT_TYPES.add(Package_2006);
 			KNOWN_ELEMENT_TYPES.add(Component_3001);
 			KNOWN_ELEMENT_TYPES.add(Port_3002);
 			KNOWN_ELEMENT_TYPES.add(Artifact_3003);
@@ -305,6 +334,9 @@ public class UMLElementTypes extends ElementInitializers {
 			KNOWN_ELEMENT_TYPES.add(Interface_3005);
 			KNOWN_ELEMENT_TYPES.add(Property_3006);
 			KNOWN_ELEMENT_TYPES.add(ElementImport_3007);
+			KNOWN_ELEMENT_TYPES.add(Package_3008);
+			KNOWN_ELEMENT_TYPES.add(Class_3009);
+			KNOWN_ELEMENT_TYPES.add(Component_3010);
 			KNOWN_ELEMENT_TYPES.add(InterfaceRealization_4001);
 			KNOWN_ELEMENT_TYPES.add(PortProvided_4006);
 			KNOWN_ELEMENT_TYPES.add(PortRequired_4004);

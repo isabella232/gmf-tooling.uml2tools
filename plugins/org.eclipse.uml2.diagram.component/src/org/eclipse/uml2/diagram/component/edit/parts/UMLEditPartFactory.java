@@ -61,6 +61,12 @@ public class UMLEditPartFactory implements EditPartFactory {
 			case PackageNameEditPart.VISUAL_ID:
 				return new PackageNameEditPart(view);
 
+			case Package3EditPart.VISUAL_ID:
+				return new Package3EditPart(view);
+
+			case PackageName2EditPart.VISUAL_ID:
+				return new PackageName2EditPart(view);
+
 			case Component2EditPart.VISUAL_ID:
 				return new Component2EditPart(view);
 
@@ -100,6 +106,15 @@ public class UMLEditPartFactory implements EditPartFactory {
 			case ElementImportEditPart.VISUAL_ID:
 				return new ElementImportEditPart(view);
 
+			case Package4EditPart.VISUAL_ID:
+				return new Package4EditPart(view);
+
+			case Class3EditPart.VISUAL_ID:
+				return new Class3EditPart(view);
+
+			case Component3EditPart.VISUAL_ID:
+				return new Component3EditPart(view);
+
 			case ComponentContentsEditPart.VISUAL_ID:
 				return new ComponentContentsEditPart(view);
 
@@ -108,6 +123,12 @@ public class UMLEditPartFactory implements EditPartFactory {
 
 			case PackageImportsEditPart.VISUAL_ID:
 				return new PackageImportsEditPart(view);
+
+			case PackagePackagesEditPart.VISUAL_ID:
+				return new PackagePackagesEditPart(view);
+
+			case PackageClassifiersEditPart.VISUAL_ID:
+				return new PackageClassifiersEditPart(view);
 
 			case InterfaceRealizationEditPart.VISUAL_ID:
 				return new InterfaceRealizationEditPart(view);
