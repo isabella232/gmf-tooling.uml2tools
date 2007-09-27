@@ -294,7 +294,6 @@ public class Profile3EditPart extends ShapeNodeEditPart {
 
 			WrapLabel profileLabels_profileFigure0 = new WrapLabel();
 			profileLabels_profileFigure0.setText("\u00ABprofile\u00BB");
-			profileLabels_profileFigure0.setForegroundColor(ColorConstants.blue);
 
 			this.add(profileLabels_profileFigure0);
 

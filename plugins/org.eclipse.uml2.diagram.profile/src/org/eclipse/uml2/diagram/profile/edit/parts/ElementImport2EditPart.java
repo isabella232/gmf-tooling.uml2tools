@@ -186,9 +186,7 @@ public class ElementImport2EditPart extends CompartmentEditPart implements IText
 	 * @generated
 	 */
 	protected EObject getParserElement() {
-
-		EObject element = resolveSemanticElement();
-		return element != null ? element : (View) getModel();
+		return resolveSemanticElement();
 	}
 
 	/**
@@ -564,7 +562,7 @@ public class ElementImport2EditPart extends CompartmentEditPart implements IText
 	protected IFigure createFigurePrim() {
 		return new WrapLabel();
 	}
-	
+
 	/**
 	 * @NOT-GENERATED
 	 */
@@ -575,7 +573,6 @@ public class ElementImport2EditPart extends CompartmentEditPart implements IText
 		}
 	}
 
-	
 	/**
 	 * @NOT-GENERATED
 	 */
