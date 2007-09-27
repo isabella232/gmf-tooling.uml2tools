@@ -15,7 +15,7 @@ package org.eclipse.uml2.diagram.clazz.parser.association.end;
 import java.util.List;
 
 import org.eclipse.emf.ecore.EObject;
-import org.eclipse.uml2.diagram.clazz.conventions.AssociationEndConvention;
+import org.eclipse.uml2.diagram.common.conventions.AssociationEndConvention;
 import org.eclipse.uml2.diagram.parser.BasicApplyStrategy;
 import org.eclipse.uml2.uml.Association;
 

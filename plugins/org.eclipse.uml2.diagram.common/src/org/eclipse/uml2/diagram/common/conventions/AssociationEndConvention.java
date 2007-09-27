@@ -10,7 +10,7 @@
  *    Michael Golubev (Borland) - initial API and implementation
  */
 
-package org.eclipse.uml2.diagram.clazz.conventions;
+package org.eclipse.uml2.diagram.common.conventions;
 
 import org.eclipse.uml2.uml.Association;
 import org.eclipse.uml2.uml.Property;

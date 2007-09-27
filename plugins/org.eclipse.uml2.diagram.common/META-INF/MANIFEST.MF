@@ -15,17 +15,18 @@ Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.gmf.runtime.diagram.ui,
  org.eclipse.uml2.diagram.parser;visibility:=reexport
 Export-Package: org.eclipse.uml2.diagram.common.actions,
+ org.eclipse.uml2.diagram.common.conventions,
  org.eclipse.uml2.diagram.common.details,
  org.eclipse.uml2.diagram.common.draw2d,
  org.eclipse.uml2.diagram.common.draw2d.decoration,
  org.eclipse.uml2.diagram.common.editpolicies,
+ org.eclipse.uml2.diagram.common.parser,
+ org.eclipse.uml2.diagram.common.parser.imports,
  org.eclipse.uml2.diagram.common.parser.operation,
  org.eclipse.uml2.diagram.common.parser.port;x-friends:="org.eclipse.uml2.diagram.clazz,org.eclipse.uml2.diagram.component",
  org.eclipse.uml2.diagram.common.parser.property,
  org.eclipse.uml2.diagram.common.pathmap,
  org.eclipse.uml2.diagram.common.preferences,
- org.eclipse.uml2.diagram.common.providers,
- org.eclipse.uml2.diagram.common.parser,
- org.eclipse.uml2.diagram.common.parser.imports
+ org.eclipse.uml2.diagram.common.providers
 Bundle-Vendor: %providerName
 Bundle-ClassPath: .
