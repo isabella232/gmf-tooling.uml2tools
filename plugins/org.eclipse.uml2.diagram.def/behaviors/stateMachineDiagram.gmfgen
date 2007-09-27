@@ -1336,7 +1336,7 @@
       iD="org.eclipse.uml2.diagram.statemachine"
       name="State Machine Diagram Plugin"
       provider="Eclipse.org"
-      version="0.7.0.qualifier"/>
+      version="0.7.1.qualifier"/>
   <editor/>
   <navigator>
     <childReferences
