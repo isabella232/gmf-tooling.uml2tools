@@ -4,7 +4,8 @@
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xmlns:gmfgraph="http://www.eclipse.org/gmf/2006/GraphicalDefinition" name="cnvAuxiliary">
   <figures
-      name="AuxiliaryGallery">
+      name="AuxiliaryGallery"
+      implementationBundle="org.eclipse.uml2.diagram.common">
     <descriptors
         name="SharedPureGraphLabel">
       <actualFigure
@@ -28,7 +29,7 @@
             top="5"
             left="5"
             bottom="13"
-            right="5"/>
+            right="10"/>
         <children
             xsi:type="gmfgraph:Label"
             name="SecondaryPackage_PackageLabel"
@@ -71,6 +72,11 @@
           dy="60"/>
     </facets>
   </nodes>
+  <compartments
+      name="imports"
+      figure="SecondaryPackageFigure"
+      collapsible="true"
+      accessor="//@figures.0/@descriptors.1/@accessors.2"/>
   <labels
       name="AuxiliaryPureLabel"
       figure="SharedPureGraphLabel"
