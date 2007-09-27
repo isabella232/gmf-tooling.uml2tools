@@ -221,28 +221,10 @@ public class UMLDiagramEditorUtil {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private static void attachModelToResourceGen(Profile model, Resource resource) {
-		resource.getContents().add(model);
-	}
-
-	/**
-	 * @generated NOT
-	 */
 	private static void attachModelToResource(Profile model, Resource resource) {
-		attachModelToResourceGen(model, resource);
-		decorateProfile(model);
-	}
+		resource.getContents().add(model);
+		loadDefaultImports(model);
 
-	/**
-	 * @NOT-GENERATED
-	 */
-	private static void decorateProfile(Profile profile) {
-		ResourceSet resourceSet = profile.eResource().getResourceSet();
-		Model umlLibrary = (Model) resourceSet.getResource(URI.createURI(UMLResource.UML_PRIMITIVE_TYPES_LIBRARY_URI), true).getContents().get(0);
-		profile.createElementImport(umlLibrary.getOwnedType("Boolean"));
-		profile.createElementImport(umlLibrary.getOwnedType("String"));
-		profile.createElementImport(umlLibrary.getOwnedType("UnlimitedNatural"));
-		profile.createElementImport(umlLibrary.getOwnedType("Integer"));
 	}
 
 	/**
@@ -426,5 +408,17 @@ public class UMLDiagramEditorUtil {
 			}
 		}
 		return null;
+	}
+
+	/**
+	 * @generated
+	 */
+	private static void loadDefaultImports(Profile model) {
+		ResourceSet resourceSet = model.eResource().getResourceSet();
+		Model umlLibrary = (Model) resourceSet.getResource(URI.createURI(UMLResource.UML_PRIMITIVE_TYPES_LIBRARY_URI), true).getContents().get(0);
+		model.createElementImport(umlLibrary.getOwnedType("Boolean"));
+		model.createElementImport(umlLibrary.getOwnedType("String"));
+		model.createElementImport(umlLibrary.getOwnedType("UnlimitedNatural"));
+		model.createElementImport(umlLibrary.getOwnedType("Integer"));
 	}
 }
