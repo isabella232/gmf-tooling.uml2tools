@@ -79,7 +79,7 @@ public class Cube3DFigure extends Shape {
 	@Override
 	protected void outlineShape(Graphics graphics) {
 		Rectangle bounds = getBounds();
-		if (bounds.x < myDepthGap * 2 || bounds.y < myDepthGap * 2){
+		if (bounds.width < myDepthGap * 2 || bounds.height < myDepthGap * 2){
 			graphics.drawRectangle(bounds);
 			return;
 		}
@@ -100,7 +100,7 @@ public class Cube3DFigure extends Shape {
 	@Override
 	protected void fillShape(Graphics graphics) {
 		Rectangle bounds = getBounds();
-		if (bounds.x < myDepthGap * 2 || bounds.y < myDepthGap * 2){
+		if (bounds.width < myDepthGap * 2 || bounds.height < myDepthGap * 2){
 			graphics.fillRectangle(bounds);
 			return;
 		}
