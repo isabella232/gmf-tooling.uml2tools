@@ -72,9 +72,17 @@ public static java.util.List «EXPAND xpt::diagram::updater::DiagramUpdater::link
 
 «AROUND getContainedLinks FOR gmfgen::GenCommonBase-»
 	«REM»Workaround for #188420. Safe for now as we don't yet have links-to-links«ENDREM»«-»
+	«REM»Except the only one at the Deployment Diagram.«ENDREM»«-»
 	«REM»Below is not trivial way to call instanceof«ENDREM»«-»
 	«IF !{this}.typeSelect(gmfgen::GenLink).isEmpty()-»
-		«EXPAND xpt::diagram::updater::DiagramUpdater::getConnectedLinks({}, getContainedLinksMethodNameSuffix(), false)-»	
+		«REM»Special case: Deployment diagram link from DeploymenSpecification to DeploymentLink«ENDREM»«-»
+		«LET this.getDiagram() AS diagram -»
+		«IF diagram.editorGen.plugin.iD == "org.eclipse.uml2.diagram.deploy" && this.visualID == 4001-»
+			«targetDef.proceed()-»
+		«ELSE-»
+			«EXPAND xpt::diagram::updater::DiagramUpdater::getConnectedLinks({}, getContainedLinksMethodNameSuffix(), false)-»
+		«ENDIF-»
+		«ENDLET»
 	«ELSE-»
 		«targetDef.proceed()-»
 	«ENDIF-»
