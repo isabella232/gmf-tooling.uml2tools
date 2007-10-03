@@ -161,7 +161,7 @@ public class ForkNodeEditPart extends ShapeNodeEditPart {
 		 */
 		public ForkJoinFigure() {
 			this.setBackgroundColor(ColorConstants.black);
-			this.setPreferredSize(new Dimension(getMapMode().DPtoLP(4), getMapMode().DPtoLP(50)));
+			this.setPreferredSize(new Dimension(getMapMode().DPtoLP(4), getMapMode().DPtoLP(4)));
 		}
 
 		/**

@@ -132,7 +132,7 @@
             value="black"/>
         <preferredSize
             dx="4"
-            dy="50"/>
+            dy="4"/>
       </actualFigure>
     </descriptors>
   </figures>
@@ -154,7 +154,14 @@
   <nodes
       name="ForkAndJoinNode"
       figure="ForkJoinFigure"
-      resizeConstraint="NORTH_SOUTH"/>
+      resizeConstraint="NORTH_SOUTH">
+    <facets
+        xsi:type="gmfgraph:DefaultSizeFacet">
+      <defaultSize
+          dx="4"
+          dy="50"/>
+    </facets>
+  </nodes>
   <nodes
       name="FinalStateNode"
       figure="ActivityFinalFigure"
@@ -165,7 +172,14 @@
       resizeConstraint="NONE"/>
   <nodes
       name="ForkAndJoinPseudoStateNode"
-      figure="ForkJoinFigure"/>
+      figure="ForkJoinFigure">
+    <facets
+        xsi:type="gmfgraph:DefaultSizeFacet">
+      <defaultSize
+          dx="4"
+          dy="50"/>
+    </facets>
+  </nodes>
   <nodes
       name="ChoicePseudoStateNode"
       figure="ScalableRhombFigure"/>
