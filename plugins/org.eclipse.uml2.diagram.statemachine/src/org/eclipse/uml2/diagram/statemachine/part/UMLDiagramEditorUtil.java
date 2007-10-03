@@ -222,6 +222,7 @@ public class UMLDiagramEditorUtil {
 	 */
 	private static void attachModelToResource(StateMachine model, Resource resource) {
 		resource.getContents().add(model);
+
 	}
 
 	/**
