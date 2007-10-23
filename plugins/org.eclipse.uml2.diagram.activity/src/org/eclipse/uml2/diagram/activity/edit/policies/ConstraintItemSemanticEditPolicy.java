@@ -19,8 +19,11 @@ import org.eclipse.gmf.runtime.emf.type.core.requests.ReorientReferenceRelations
 import org.eclipse.gmf.runtime.emf.type.core.requests.SetRequest;
 import org.eclipse.gmf.runtime.notation.Node;
 import org.eclipse.gmf.runtime.notation.View;
+import org.eclipse.uml2.diagram.activity.edit.commands.ActionLocalPostconditionCreateCommand;
+import org.eclipse.uml2.diagram.activity.edit.commands.ActionLocalPostconditionReorientCommand;
 import org.eclipse.uml2.diagram.activity.edit.commands.ActionLocalPreconditionCreateCommand;
 import org.eclipse.uml2.diagram.activity.edit.commands.ActionLocalPreconditionReorientCommand;
+import org.eclipse.uml2.diagram.activity.edit.parts.ActionLocalPostconditionEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.ActionLocalPreconditionEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.ConstraintPreconditionEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.LiteralStringEditPart;
@@ -91,6 +94,9 @@ public class ConstraintItemSemanticEditPolicy extends UMLBaseItemSemanticEditPol
 		if (UMLElementTypes.ActionLocalPrecondition_4003 == req.getElementType()) {
 			return null;
 		}
+		if (UMLElementTypes.ActionLocalPostcondition_4006 == req.getElementType()) {
+			return null;
+		}
 		return null;
 	}
 
@@ -100,6 +106,9 @@ public class ConstraintItemSemanticEditPolicy extends UMLBaseItemSemanticEditPol
 	protected Command getCompleteCreateRelationshipCommand(CreateRelationshipRequest req) {
 		if (UMLElementTypes.ActionLocalPrecondition_4003 == req.getElementType()) {
 			return getGEFWrapper(new ActionLocalPreconditionCreateCommand(req, req.getSource(), req.getTarget()));
+		}
+		if (UMLElementTypes.ActionLocalPostcondition_4006 == req.getElementType()) {
+			return getGEFWrapper(new ActionLocalPostconditionCreateCommand(req, req.getSource(), req.getTarget()));
 		}
 		return null;
 	}
@@ -145,6 +154,8 @@ public class ConstraintItemSemanticEditPolicy extends UMLBaseItemSemanticEditPol
 		switch (getVisualID(req)) {
 		case ActionLocalPreconditionEditPart.VISUAL_ID:
 			return getGEFWrapper(new ActionLocalPreconditionReorientCommand(req));
+		case ActionLocalPostconditionEditPart.VISUAL_ID:
+			return getGEFWrapper(new ActionLocalPostconditionReorientCommand(req));
 		}
 		return super.getReorientReferenceRelationshipCommand(req);
 	}

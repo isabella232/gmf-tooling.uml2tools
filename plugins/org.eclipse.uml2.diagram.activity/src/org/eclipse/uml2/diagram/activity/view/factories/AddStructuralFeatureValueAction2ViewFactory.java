@@ -44,4 +44,5 @@ public class AddStructuralFeatureValueAction2ViewFactory extends AbstractShapeVi
 		}
 		getViewService().createNode(eObjectAdapter, view, UMLVisualIDRegistry.getType(AddStructuralFeatureValueActionName2EditPart.VISUAL_ID), ViewUtil.APPEND, true, getPreferencesHint());
 	}
+
 }

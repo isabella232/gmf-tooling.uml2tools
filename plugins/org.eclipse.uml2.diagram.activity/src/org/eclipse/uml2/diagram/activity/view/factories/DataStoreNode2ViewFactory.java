@@ -46,4 +46,5 @@ public class DataStoreNode2ViewFactory extends AbstractShapeViewFactory {
 		getViewService().createNode(eObjectAdapter, view, UMLVisualIDRegistry.getType(DataStoreNodeName3EditPart.VISUAL_ID), ViewUtil.APPEND, true, getPreferencesHint());
 		getViewService().createNode(eObjectAdapter, view, UMLVisualIDRegistry.getType(DataStoreNodeName4EditPart.VISUAL_ID), ViewUtil.APPEND, true, getPreferencesHint());
 	}
+
 }

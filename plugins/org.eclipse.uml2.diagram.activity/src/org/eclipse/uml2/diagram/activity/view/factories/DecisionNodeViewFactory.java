@@ -34,4 +34,5 @@ public class DecisionNodeViewFactory extends AbstractShapeViewFactory {
 		}
 		super.decorateView(containerView, view, semanticAdapter, semanticHint, index, persisted);
 	}
+
 }

@@ -44,4 +44,5 @@ public class AcceptEventAction2ViewFactory extends AbstractShapeViewFactory {
 		}
 		getViewService().createNode(eObjectAdapter, view, UMLVisualIDRegistry.getType(AcceptEventActionName3EditPart.VISUAL_ID), ViewUtil.APPEND, true, getPreferencesHint());
 	}
+
 }

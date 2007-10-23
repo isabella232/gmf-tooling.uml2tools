@@ -393,6 +393,18 @@ public class UMLBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 		}
 
 		/**
+		 * @generated
+		 */
+		public static boolean canCreateActionLocalPostcondition_4006(Action source, Constraint target) {
+			if (source != null) {
+				if (source.getLocalPostconditions().contains(target)) {
+					return false;
+				}
+			}
+			return canExistActionLocalPostcondition_4006(source, target);
+		}
+
+		/**
 		 * @generated 
 		 */
 		public static boolean canCreateObjectNodeSelection_4004(ObjectNode source, Behavior target) {
@@ -435,6 +447,13 @@ public class UMLBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 		 * @generated
 		 */
 		public static boolean canExistActionLocalPrecondition_4003(Action source, Constraint target) {
+			return true;
+		}
+
+		/**
+		 * @generated
+		 */
+		public static boolean canExistActionLocalPostcondition_4006(Action source, Constraint target) {
 			return true;
 		}
 

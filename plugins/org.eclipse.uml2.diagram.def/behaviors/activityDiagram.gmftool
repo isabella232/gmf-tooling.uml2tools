@@ -63,14 +63,6 @@
           description="Create Send Signal Action"/>
       <tools
           xsi:type="gmftool:CreationTool"
-          title="Constraint"
-          description="Create Precondition or Postcondition Constraint"/>
-      <tools
-          xsi:type="gmftool:CreationTool"
-          title="Constraint Link"
-          description="Link Action and Pre- / Post- condition"/>
-      <tools
-          xsi:type="gmftool:CreationTool"
           title="OpaqueBehavior"
           description="Creating OpaqueBehavior"/>
     </tools>

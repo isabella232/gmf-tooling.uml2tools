@@ -13,6 +13,8 @@ import org.eclipse.gmf.runtime.emf.type.core.requests.ReorientReferenceRelations
 import org.eclipse.gmf.runtime.emf.type.core.requests.ReorientRelationshipRequest;
 import org.eclipse.gmf.runtime.notation.Node;
 import org.eclipse.gmf.runtime.notation.View;
+import org.eclipse.uml2.diagram.activity.edit.commands.ActionLocalPostconditionCreateCommand;
+import org.eclipse.uml2.diagram.activity.edit.commands.ActionLocalPostconditionReorientCommand;
 import org.eclipse.uml2.diagram.activity.edit.commands.ActionLocalPreconditionCreateCommand;
 import org.eclipse.uml2.diagram.activity.edit.commands.ActionLocalPreconditionReorientCommand;
 import org.eclipse.uml2.diagram.activity.edit.commands.ControlFlowCreateCommand;
@@ -24,6 +26,7 @@ import org.eclipse.uml2.diagram.activity.edit.commands.InputPin3CreateCommand;
 import org.eclipse.uml2.diagram.activity.edit.commands.InputPinCreateCommand;
 import org.eclipse.uml2.diagram.activity.edit.commands.ObjectFlowCreateCommand;
 import org.eclipse.uml2.diagram.activity.edit.commands.ObjectFlowReorientCommand;
+import org.eclipse.uml2.diagram.activity.edit.parts.ActionLocalPostconditionEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.ActionLocalPreconditionEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.ControlFlowEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.ExceptionHandlerEditPart;
@@ -122,6 +125,9 @@ public class AddStructuralFeatureValueActionItemSemanticEditPolicy extends UMLBa
 		if (UMLElementTypes.ActionLocalPrecondition_4003 == req.getElementType()) {
 			return getGEFWrapper(new ActionLocalPreconditionCreateCommand(req, req.getSource(), req.getTarget()));
 		}
+		if (UMLElementTypes.ActionLocalPostcondition_4006 == req.getElementType()) {
+			return getGEFWrapper(new ActionLocalPostconditionCreateCommand(req, req.getSource(), req.getTarget()));
+		}
 		if (UMLElementTypes.ExceptionHandler_4005 == req.getElementType()) {
 			return getGEFWrapper(new ExceptionHandlerCreateCommand(req, req.getSource(), req.getTarget()));
 		}
@@ -139,6 +145,9 @@ public class AddStructuralFeatureValueActionItemSemanticEditPolicy extends UMLBa
 			return getGEFWrapper(new ObjectFlowCreateCommand(req, req.getSource(), req.getTarget()));
 		}
 		if (UMLElementTypes.ActionLocalPrecondition_4003 == req.getElementType()) {
+			return null;
+		}
+		if (UMLElementTypes.ActionLocalPostcondition_4006 == req.getElementType()) {
 			return null;
 		}
 		if (UMLElementTypes.ExceptionHandler_4005 == req.getElementType()) {
@@ -175,6 +184,8 @@ public class AddStructuralFeatureValueActionItemSemanticEditPolicy extends UMLBa
 		switch (getVisualID(req)) {
 		case ActionLocalPreconditionEditPart.VISUAL_ID:
 			return getGEFWrapper(new ActionLocalPreconditionReorientCommand(req));
+		case ActionLocalPostconditionEditPart.VISUAL_ID:
+			return getGEFWrapper(new ActionLocalPostconditionReorientCommand(req));
 		}
 		return super.getReorientReferenceRelationshipCommand(req);
 	}

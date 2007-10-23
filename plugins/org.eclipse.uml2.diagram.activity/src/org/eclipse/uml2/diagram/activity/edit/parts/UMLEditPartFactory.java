@@ -313,6 +313,9 @@ public class UMLEditPartFactory implements EditPartFactory {
 			case ActionLocalPreconditionEditPart.VISUAL_ID:
 				return new ActionLocalPreconditionEditPart(view);
 
+			case ActionLocalPostconditionEditPart.VISUAL_ID:
+				return new ActionLocalPostconditionEditPart(view);
+
 			case ObjectNodeSelectionEditPart.VISUAL_ID:
 				return new ObjectNodeSelectionEditPart(view);
 

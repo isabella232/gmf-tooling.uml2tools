@@ -651,7 +651,7 @@
           </labelMappings>
           <tool
               xsi:type="gmftool:CreationTool"
-              href="activityDiagram.gmftool#//@palette/@tools.1/@tools.9"/>
+              href="activityDiagram.gmftool#//@palette/@tools.1/@tools.7"/>
           <diagramNode
               href="activityDiagram_behaviors.gmfgraph#SelectionNode"/>
         </ownedChild>
@@ -728,9 +728,9 @@
     <ownedChild>
       <domainMetaElement
           href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//Constraint"/>
-      <tool
-          xsi:type="gmftool:CreationTool"
-          href="activityDiagram.gmftool#//@palette/@tools.1/@tools.7"/>
+      <domainSpecialization
+          body="isLocalPrecondition"
+          language="java"/>
       <diagramNode
           href="activityDiagram_constraints.gmfgraph#LocalPreconditionNode"/>
       <children
@@ -773,9 +773,9 @@
     <ownedChild>
       <domainMetaElement
           href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//Constraint"/>
-      <tool
-          xsi:type="gmftool:CreationTool"
-          href="activityDiagram.gmftool#//@palette/@tools.1/@tools.7"/>
+      <domainSpecialization
+          body="isLocalPostcondition"
+          language="java"/>
       <diagramNode
           href="activityDiagram_constraints.gmfgraph#LocalPostconditionNode"/>
       <children
@@ -855,14 +855,18 @@
         href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//ActivityEdge/target"/>
   </links>
   <links>
-    <tool
-        xsi:type="gmftool:CreationTool"
-        href="activityDiagram.gmftool#//@palette/@tools.1/@tools.8"/>
     <diagramLink
         href="../../../plugin/org.eclipse.gmf.graphdef/models/classDiagram.gmfgraph#DashedConnection"/>
     <linkMetaFeature
         xsi:type="ecore:EReference"
         href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//Action/localPrecondition"/>
+  </links>
+  <links>
+    <diagramLink
+        href="../../../plugin/org.eclipse.gmf.graphdef/models/classDiagram.gmfgraph#DashedConnection"/>
+    <linkMetaFeature
+        xsi:type="ecore:EReference"
+        href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//Action/localPostcondition"/>
   </links>
   <links>
     <tool

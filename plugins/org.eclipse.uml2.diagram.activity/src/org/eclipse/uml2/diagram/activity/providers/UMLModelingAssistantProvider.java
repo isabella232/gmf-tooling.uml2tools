@@ -215,11 +215,13 @@ public class UMLModelingAssistantProvider extends ModelingAssistantProvider {
 		if (targetEditPart instanceof ConstraintEditPart) {
 			List types = new ArrayList();
 			types.add(UMLElementTypes.ActionLocalPrecondition_4003);
+			types.add(UMLElementTypes.ActionLocalPostcondition_4006);
 			return types;
 		}
 		if (targetEditPart instanceof Constraint2EditPart) {
 			List types = new ArrayList();
 			types.add(UMLElementTypes.ActionLocalPrecondition_4003);
+			types.add(UMLElementTypes.ActionLocalPostcondition_4006);
 			return types;
 		}
 		return Collections.EMPTY_LIST;

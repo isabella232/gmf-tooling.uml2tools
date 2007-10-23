@@ -317,6 +317,11 @@ public class UMLElementTypes extends ElementInitializers {
 	/**
 	 * @generated
 	 */
+	public static final IElementType ActionLocalPostcondition_4006 = getElementType("org.eclipse.uml2.diagram.activity.ActionLocalPostcondition_4006"); //$NON-NLS-1$
+
+	/**
+	 * @generated
+	 */
 	public static final IElementType ObjectNodeSelection_4004 = getElementType("org.eclipse.uml2.diagram.activity.ObjectNodeSelection_4004"); //$NON-NLS-1$
 
 	/**
@@ -538,6 +543,8 @@ public class UMLElementTypes extends ElementInitializers {
 
 			elements.put(ActionLocalPrecondition_4003, UMLPackage.eINSTANCE.getAction_LocalPrecondition());
 
+			elements.put(ActionLocalPostcondition_4006, UMLPackage.eINSTANCE.getAction_LocalPostcondition());
+
 			elements.put(ObjectNodeSelection_4004, UMLPackage.eINSTANCE.getObjectNode_Selection());
 
 			elements.put(ExceptionHandler_4005, UMLPackage.eINSTANCE.getExceptionHandler());
@@ -612,6 +619,7 @@ public class UMLElementTypes extends ElementInitializers {
 			KNOWN_ELEMENT_TYPES.add(ControlFlow_4001);
 			KNOWN_ELEMENT_TYPES.add(ObjectFlow_4002);
 			KNOWN_ELEMENT_TYPES.add(ActionLocalPrecondition_4003);
+			KNOWN_ELEMENT_TYPES.add(ActionLocalPostcondition_4006);
 			KNOWN_ELEMENT_TYPES.add(ObjectNodeSelection_4004);
 			KNOWN_ELEMENT_TYPES.add(ExceptionHandler_4005);
 		}

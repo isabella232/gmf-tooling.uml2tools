@@ -45,4 +45,5 @@ public class StructuredActivityNodeViewFactory extends AbstractShapeViewFactory 
 		getViewService().createNode(eObjectAdapter, view, UMLVisualIDRegistry.getType(StructuredActivityNodeStructuredActivityContentPaneCompartmentEditPart.VISUAL_ID), ViewUtil.APPEND, true,
 				getPreferencesHint());
 	}
+
 }

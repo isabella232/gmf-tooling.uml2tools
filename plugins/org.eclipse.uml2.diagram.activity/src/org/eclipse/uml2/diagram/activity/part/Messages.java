@@ -63,6 +63,16 @@ public class Messages extends NLS {
 	/**
 	 * @generated
 	 */
+	public static String UMLDiagramEditorUtil_OpenModelResourceErrorDialogTitle;
+
+	/**
+	 * @generated
+	 */
+	public static String UMLDiagramEditorUtil_OpenModelResourceErrorDialogMessage;
+
+	/**
+	 * @generated
+	 */
 	public static String UMLDiagramEditorUtil_CreateDiagramProgressTask;
 
 	/**
@@ -129,6 +139,11 @@ public class Messages extends NLS {
 	 * @generated
 	 */
 	public static String UMLInitDiagramFileAction_InitDiagramFileWizardTitle;
+
+	/**
+	 * @generated
+	 */
+	public static String UMLInitDiagramFileAction_OpenModelFileDialogTitle;
 
 	/**
 	 * @generated
@@ -209,6 +224,11 @@ public class Messages extends NLS {
 	 * @generated
 	 */
 	public static String UMLDiagramEditor_SaveErrorMessage;
+
+	/**
+	 * @generated
+	 */
+	public static String UMLElementChooserDialog_SelectModelElementTitle;
 
 	/**
 	 * @generated
@@ -403,32 +423,12 @@ public class Messages extends NLS {
 	/**
 	 * @generated
 	 */
-	public static String Constraint8CreationTool_title;
+	public static String OpaqueBehavior8CreationTool_title;
 
 	/**
 	 * @generated
 	 */
-	public static String Constraint8CreationTool_desc;
-
-	/**
-	 * @generated
-	 */
-	public static String ConstraintLink9CreationTool_title;
-
-	/**
-	 * @generated
-	 */
-	public static String ConstraintLink9CreationTool_desc;
-
-	/**
-	 * @generated
-	 */
-	public static String OpaqueBehavior10CreationTool_title;
-
-	/**
-	 * @generated
-	 */
-	public static String OpaqueBehavior10CreationTool_desc;
+	public static String OpaqueBehavior8CreationTool_desc;
 
 	/**
 	 * @generated
@@ -1139,6 +1139,16 @@ public class Messages extends NLS {
 	 * @generated
 	 */
 	public static String NavigatorGroupName_ActionLocalPrecondition_4003_source;
+
+	/**
+	 * @generated
+	 */
+	public static String NavigatorGroupName_ActionLocalPostcondition_4006_target;
+
+	/**
+	 * @generated
+	 */
+	public static String NavigatorGroupName_ActionLocalPostcondition_4006_source;
 
 	/**
 	 * @generated

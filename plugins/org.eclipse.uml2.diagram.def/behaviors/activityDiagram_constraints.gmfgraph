@@ -10,6 +10,10 @@
           xsi:type="gmfgraph:CustomFigure"
           name="LocalPreconditionFigure"
           qualifiedClassName="org.eclipse.uml2.diagram.common.draw2d.ConstraintFigure">
+        <children
+            xsi:type="gmfgraph:Rectangle"
+            name="LocalPreconditionFigure_Body"
+            outline="false"/>
         <attributes
             name="FixedLabelText"
             value="&quot;\u00ABlocalPrecondition\u00BB&quot;"/>
@@ -21,7 +25,7 @@
         </customChildren>
       </actualFigure>
       <accessors
-          figure="//@figures.0/@descriptors.0/@actualFigure/@customChildren.0/@typedFigure"/>
+          figure="//@figures.0/@descriptors.0/@actualFigure/@children.0"/>
     </descriptors>
     <descriptors
         name="LocalPostconditionFigure">
@@ -29,6 +33,9 @@
           xsi:type="gmfgraph:CustomFigure"
           name="LocalPostconditionFigure"
           qualifiedClassName="org.eclipse.uml2.diagram.common.draw2d.ConstraintFigure">
+        <children
+            xsi:type="gmfgraph:Rectangle"
+            name="LocalPostconditionFigure_Body"/>
         <attributes
             name="FixedLabelText"
             value="&quot;\u00ABlocalPostcondition\u00BB&quot;"/>
@@ -40,7 +47,7 @@
         </customChildren>
       </actualFigure>
       <accessors
-          figure="//@figures.0/@descriptors.1/@actualFigure/@customChildren.0/@typedFigure"/>
+          figure="//@figures.0/@descriptors.1/@actualFigure/@children.0"/>
     </descriptors>
   </figures>
   <nodes

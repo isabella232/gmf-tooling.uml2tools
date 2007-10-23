@@ -1,6 +1,9 @@
 package org.eclipse.uml2.diagram.activity.part;
 
+import java.util.Iterator;
+
 import org.eclipse.core.runtime.Platform;
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EAnnotation;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.gmf.runtime.notation.Diagram;
@@ -103,6 +106,9 @@ import org.eclipse.uml2.diagram.activity.edit.parts.StructuredActivityNodeStruct
 import org.eclipse.uml2.diagram.activity.edit.parts.StructuredActivityNodeStructuredActivityContentPaneCompartmentEditPart;
 import org.eclipse.uml2.diagram.activity.expressions.UMLAbstractExpression;
 import org.eclipse.uml2.diagram.activity.expressions.UMLOCLFactory;
+import org.eclipse.uml2.uml.Action;
+import org.eclipse.uml2.uml.Constraint;
+import org.eclipse.uml2.uml.Element;
 import org.eclipse.uml2.uml.Package;
 import org.eclipse.uml2.uml.UMLPackage;
 
@@ -211,24 +217,10 @@ public class UMLVisualIDRegistry {
 	 * @generated
 	 */
 	public static int getNodeVisualID(View containerView, EObject domainElement) {
-		if (domainElement == null) {
+		if (domainElement == null || !PackageEditPart.MODEL_ID.equals(org.eclipse.uml2.diagram.activity.part.UMLVisualIDRegistry.getModelID(containerView))) {
 			return -1;
 		}
-		String containerModelID = org.eclipse.uml2.diagram.activity.part.UMLVisualIDRegistry.getModelID(containerView);
-		if (!PackageEditPart.MODEL_ID.equals(containerModelID)) {
-			return -1;
-		}
-		int containerVisualID;
-		if (PackageEditPart.MODEL_ID.equals(containerModelID)) {
-			containerVisualID = org.eclipse.uml2.diagram.activity.part.UMLVisualIDRegistry.getVisualID(containerView);
-		} else {
-			if (containerView instanceof Diagram) {
-				containerVisualID = PackageEditPart.VISUAL_ID;
-			} else {
-				return -1;
-			}
-		}
-		switch (containerVisualID) {
+		switch (org.eclipse.uml2.diagram.activity.part.UMLVisualIDRegistry.getVisualID(containerView)) {
 		case ActivityEditPart.VISUAL_ID:
 			if (UMLPackage.eINSTANCE.getActivityParameterNode().isSuperTypeOf(domainElement.eClass())) {
 				return ActivityParameterNodeEditPart.VISUAL_ID;
@@ -490,10 +482,10 @@ public class UMLVisualIDRegistry {
 			if (UMLPackage.eINSTANCE.getActivity().isSuperTypeOf(domainElement.eClass())) {
 				return ActivityEditPart.VISUAL_ID;
 			}
-			if (UMLPackage.eINSTANCE.getConstraint().isSuperTypeOf(domainElement.eClass())) {
+			if (UMLPackage.eINSTANCE.getConstraint().isSuperTypeOf(domainElement.eClass()) && JavaConstraints.isLocalPrecondition((Constraint) domainElement).booleanValue()) {
 				return ConstraintEditPart.VISUAL_ID;
 			}
-			if (UMLPackage.eINSTANCE.getConstraint().isSuperTypeOf(domainElement.eClass())) {
+			if (UMLPackage.eINSTANCE.getConstraint().isSuperTypeOf(domainElement.eClass()) && JavaConstraints.isLocalPostcondition((Constraint) domainElement).booleanValue()) {
 				return Constraint2EditPart.VISUAL_ID;
 			}
 			break;
@@ -1011,6 +1003,38 @@ public class UMLVisualIDRegistry {
 	 * @generated
 	 */
 	private static class JavaConstraints {
+
+		/**
+		 * @generated NOT
+		 */
+		private static java.lang.Boolean isLocalPrecondition(Constraint self) {
+			Element owner = self.getOwner();
+			if (owner instanceof Action) {
+				EList<Constraint> preconditions = ((Action) owner).getLocalPreconditions();
+				for (Iterator<Constraint> pcIterator = preconditions.iterator(); pcIterator.hasNext();) {
+					if (self.equals(pcIterator.next())) {
+						return Boolean.TRUE;
+					}
+				}
+			}
+			return Boolean.FALSE;
+		}
+
+		/**
+		 * @generated NOT
+		 */
+		private static java.lang.Boolean isLocalPostcondition(Constraint self) {
+			Element owner = self.getOwner();
+			if (owner instanceof Action) {
+				EList<Constraint> postconditions = ((Action) owner).getLocalPostconditions();
+				for (Iterator<Constraint> pcIterator = postconditions.iterator(); pcIterator.hasNext();) {
+					if (self.equals(pcIterator.next())) {
+						return Boolean.TRUE;
+					}
+				}
+			}
+			return Boolean.FALSE;
+		}
 
 	}
 

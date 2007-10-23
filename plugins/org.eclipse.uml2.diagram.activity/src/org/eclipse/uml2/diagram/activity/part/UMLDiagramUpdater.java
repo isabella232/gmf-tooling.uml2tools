@@ -16,6 +16,7 @@ import org.eclipse.uml2.diagram.activity.edit.parts.AcceptEventAction2EditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.AcceptEventAction3EditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.AcceptEventAction4EditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.AcceptEventActionEditPart;
+import org.eclipse.uml2.diagram.activity.edit.parts.ActionLocalPostconditionEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.ActionLocalPreconditionEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.ActivityEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.ActivityFinalNode2EditPart;
@@ -1200,6 +1201,7 @@ public class UMLDiagramUpdater {
 		AcceptEventAction modelElement = (AcceptEventAction) view.getElement();
 		List result = new LinkedList();
 		result.addAll(getOutgoingFeatureModelFacetLinks_Action_LocalPrecondition_4003(modelElement));
+		result.addAll(getOutgoingFeatureModelFacetLinks_Action_LocalPostcondition_4006(modelElement));
 		result.addAll(getContainedTypeModelFacetLinks_ExceptionHandler_4005(modelElement));
 		return result;
 	}
@@ -1211,6 +1213,7 @@ public class UMLDiagramUpdater {
 		AcceptEventAction modelElement = (AcceptEventAction) view.getElement();
 		List result = new LinkedList();
 		result.addAll(getOutgoingFeatureModelFacetLinks_Action_LocalPrecondition_4003(modelElement));
+		result.addAll(getOutgoingFeatureModelFacetLinks_Action_LocalPostcondition_4006(modelElement));
 		result.addAll(getContainedTypeModelFacetLinks_ExceptionHandler_4005(modelElement));
 		return result;
 	}
@@ -1270,6 +1273,7 @@ public class UMLDiagramUpdater {
 		OpaqueAction modelElement = (OpaqueAction) view.getElement();
 		List result = new LinkedList();
 		result.addAll(getOutgoingFeatureModelFacetLinks_Action_LocalPrecondition_4003(modelElement));
+		result.addAll(getOutgoingFeatureModelFacetLinks_Action_LocalPostcondition_4006(modelElement));
 		result.addAll(getContainedTypeModelFacetLinks_ExceptionHandler_4005(modelElement));
 		return result;
 	}
@@ -1322,6 +1326,7 @@ public class UMLDiagramUpdater {
 		CreateObjectAction modelElement = (CreateObjectAction) view.getElement();
 		List result = new LinkedList();
 		result.addAll(getOutgoingFeatureModelFacetLinks_Action_LocalPrecondition_4003(modelElement));
+		result.addAll(getOutgoingFeatureModelFacetLinks_Action_LocalPostcondition_4006(modelElement));
 		result.addAll(getContainedTypeModelFacetLinks_ExceptionHandler_4005(modelElement));
 		return result;
 	}
@@ -1343,6 +1348,7 @@ public class UMLDiagramUpdater {
 		AddStructuralFeatureValueAction modelElement = (AddStructuralFeatureValueAction) view.getElement();
 		List result = new LinkedList();
 		result.addAll(getOutgoingFeatureModelFacetLinks_Action_LocalPrecondition_4003(modelElement));
+		result.addAll(getOutgoingFeatureModelFacetLinks_Action_LocalPostcondition_4006(modelElement));
 		result.addAll(getContainedTypeModelFacetLinks_ExceptionHandler_4005(modelElement));
 		return result;
 	}
@@ -1384,6 +1390,7 @@ public class UMLDiagramUpdater {
 		CallBehaviorAction modelElement = (CallBehaviorAction) view.getElement();
 		List result = new LinkedList();
 		result.addAll(getOutgoingFeatureModelFacetLinks_Action_LocalPrecondition_4003(modelElement));
+		result.addAll(getOutgoingFeatureModelFacetLinks_Action_LocalPostcondition_4006(modelElement));
 		result.addAll(getContainedTypeModelFacetLinks_ExceptionHandler_4005(modelElement));
 		return result;
 	}
@@ -1415,6 +1422,7 @@ public class UMLDiagramUpdater {
 		CallOperationAction modelElement = (CallOperationAction) view.getElement();
 		List result = new LinkedList();
 		result.addAll(getOutgoingFeatureModelFacetLinks_Action_LocalPrecondition_4003(modelElement));
+		result.addAll(getOutgoingFeatureModelFacetLinks_Action_LocalPostcondition_4006(modelElement));
 		result.addAll(getContainedTypeModelFacetLinks_ExceptionHandler_4005(modelElement));
 		return result;
 	}
@@ -1436,6 +1444,7 @@ public class UMLDiagramUpdater {
 		StructuredActivityNode modelElement = (StructuredActivityNode) view.getElement();
 		List result = new LinkedList();
 		result.addAll(getOutgoingFeatureModelFacetLinks_Action_LocalPrecondition_4003(modelElement));
+		result.addAll(getOutgoingFeatureModelFacetLinks_Action_LocalPostcondition_4006(modelElement));
 		result.addAll(getContainedTypeModelFacetLinks_ExceptionHandler_4005(modelElement));
 		return result;
 	}
@@ -1447,6 +1456,7 @@ public class UMLDiagramUpdater {
 		StructuredActivityNode modelElement = (StructuredActivityNode) view.getElement();
 		List result = new LinkedList();
 		result.addAll(getOutgoingFeatureModelFacetLinks_Action_LocalPrecondition_4003(modelElement));
+		result.addAll(getOutgoingFeatureModelFacetLinks_Action_LocalPostcondition_4006(modelElement));
 		result.addAll(getContainedTypeModelFacetLinks_ExceptionHandler_4005(modelElement));
 		return result;
 	}
@@ -1458,6 +1468,7 @@ public class UMLDiagramUpdater {
 		OpaqueAction modelElement = (OpaqueAction) view.getElement();
 		List result = new LinkedList();
 		result.addAll(getOutgoingFeatureModelFacetLinks_Action_LocalPrecondition_4003(modelElement));
+		result.addAll(getOutgoingFeatureModelFacetLinks_Action_LocalPostcondition_4006(modelElement));
 		result.addAll(getContainedTypeModelFacetLinks_ExceptionHandler_4005(modelElement));
 		return result;
 	}
@@ -1469,6 +1480,7 @@ public class UMLDiagramUpdater {
 		AcceptEventAction modelElement = (AcceptEventAction) view.getElement();
 		List result = new LinkedList();
 		result.addAll(getOutgoingFeatureModelFacetLinks_Action_LocalPrecondition_4003(modelElement));
+		result.addAll(getOutgoingFeatureModelFacetLinks_Action_LocalPostcondition_4006(modelElement));
 		result.addAll(getContainedTypeModelFacetLinks_ExceptionHandler_4005(modelElement));
 		return result;
 	}
@@ -1480,6 +1492,7 @@ public class UMLDiagramUpdater {
 		AcceptEventAction modelElement = (AcceptEventAction) view.getElement();
 		List result = new LinkedList();
 		result.addAll(getOutgoingFeatureModelFacetLinks_Action_LocalPrecondition_4003(modelElement));
+		result.addAll(getOutgoingFeatureModelFacetLinks_Action_LocalPostcondition_4006(modelElement));
 		result.addAll(getContainedTypeModelFacetLinks_ExceptionHandler_4005(modelElement));
 		return result;
 	}
@@ -1522,6 +1535,7 @@ public class UMLDiagramUpdater {
 		CreateObjectAction modelElement = (CreateObjectAction) view.getElement();
 		List result = new LinkedList();
 		result.addAll(getOutgoingFeatureModelFacetLinks_Action_LocalPrecondition_4003(modelElement));
+		result.addAll(getOutgoingFeatureModelFacetLinks_Action_LocalPostcondition_4006(modelElement));
 		result.addAll(getContainedTypeModelFacetLinks_ExceptionHandler_4005(modelElement));
 		return result;
 	}
@@ -1533,6 +1547,7 @@ public class UMLDiagramUpdater {
 		CallBehaviorAction modelElement = (CallBehaviorAction) view.getElement();
 		List result = new LinkedList();
 		result.addAll(getOutgoingFeatureModelFacetLinks_Action_LocalPrecondition_4003(modelElement));
+		result.addAll(getOutgoingFeatureModelFacetLinks_Action_LocalPostcondition_4006(modelElement));
 		result.addAll(getContainedTypeModelFacetLinks_ExceptionHandler_4005(modelElement));
 		return result;
 	}
@@ -1544,6 +1559,7 @@ public class UMLDiagramUpdater {
 		CallOperationAction modelElement = (CallOperationAction) view.getElement();
 		List result = new LinkedList();
 		result.addAll(getOutgoingFeatureModelFacetLinks_Action_LocalPrecondition_4003(modelElement));
+		result.addAll(getOutgoingFeatureModelFacetLinks_Action_LocalPostcondition_4006(modelElement));
 		result.addAll(getContainedTypeModelFacetLinks_ExceptionHandler_4005(modelElement));
 		return result;
 	}
@@ -1569,6 +1585,7 @@ public class UMLDiagramUpdater {
 		AddStructuralFeatureValueAction modelElement = (AddStructuralFeatureValueAction) view.getElement();
 		List result = new LinkedList();
 		result.addAll(getOutgoingFeatureModelFacetLinks_Action_LocalPrecondition_4003(modelElement));
+		result.addAll(getOutgoingFeatureModelFacetLinks_Action_LocalPostcondition_4006(modelElement));
 		result.addAll(getContainedTypeModelFacetLinks_ExceptionHandler_4005(modelElement));
 		return result;
 	}
@@ -1617,6 +1634,7 @@ public class UMLDiagramUpdater {
 		SendSignalAction modelElement = (SendSignalAction) view.getElement();
 		List result = new LinkedList();
 		result.addAll(getOutgoingFeatureModelFacetLinks_Action_LocalPrecondition_4003(modelElement));
+		result.addAll(getOutgoingFeatureModelFacetLinks_Action_LocalPostcondition_4006(modelElement));
 		result.addAll(getContainedTypeModelFacetLinks_ExceptionHandler_4005(modelElement));
 		return result;
 	}
@@ -1675,6 +1693,7 @@ public class UMLDiagramUpdater {
 		Map crossReferences = EcoreUtil.CrossReferencer.find(view.eResource().getResourceSet().getResources());
 		List result = new LinkedList();
 		result.addAll(getIncomingFeatureModelFacetLinks_Action_LocalPrecondition_4003(modelElement, crossReferences));
+		result.addAll(getIncomingFeatureModelFacetLinks_Action_LocalPostcondition_4006(modelElement, crossReferences));
 		return result;
 	}
 
@@ -1686,6 +1705,7 @@ public class UMLDiagramUpdater {
 		Map crossReferences = EcoreUtil.CrossReferencer.find(view.eResource().getResourceSet().getResources());
 		List result = new LinkedList();
 		result.addAll(getIncomingFeatureModelFacetLinks_Action_LocalPrecondition_4003(modelElement, crossReferences));
+		result.addAll(getIncomingFeatureModelFacetLinks_Action_LocalPostcondition_4006(modelElement, crossReferences));
 		return result;
 	}
 
@@ -2310,6 +2330,7 @@ public class UMLDiagramUpdater {
 		result.addAll(getOutgoingTypeModelFacetLinks_ControlFlow_4001(modelElement));
 		result.addAll(getOutgoingTypeModelFacetLinks_ObjectFlow_4002(modelElement));
 		result.addAll(getOutgoingFeatureModelFacetLinks_Action_LocalPrecondition_4003(modelElement));
+		result.addAll(getOutgoingFeatureModelFacetLinks_Action_LocalPostcondition_4006(modelElement));
 		result.addAll(getOutgoingTypeModelFacetLinks_ExceptionHandler_4005(modelElement));
 		return result;
 	}
@@ -2323,6 +2344,7 @@ public class UMLDiagramUpdater {
 		result.addAll(getOutgoingTypeModelFacetLinks_ControlFlow_4001(modelElement));
 		result.addAll(getOutgoingTypeModelFacetLinks_ObjectFlow_4002(modelElement));
 		result.addAll(getOutgoingFeatureModelFacetLinks_Action_LocalPrecondition_4003(modelElement));
+		result.addAll(getOutgoingFeatureModelFacetLinks_Action_LocalPostcondition_4006(modelElement));
 		result.addAll(getOutgoingTypeModelFacetLinks_ExceptionHandler_4005(modelElement));
 		return result;
 	}
@@ -2404,6 +2426,7 @@ public class UMLDiagramUpdater {
 		result.addAll(getOutgoingTypeModelFacetLinks_ControlFlow_4001(modelElement));
 		result.addAll(getOutgoingTypeModelFacetLinks_ObjectFlow_4002(modelElement));
 		result.addAll(getOutgoingFeatureModelFacetLinks_Action_LocalPrecondition_4003(modelElement));
+		result.addAll(getOutgoingFeatureModelFacetLinks_Action_LocalPostcondition_4006(modelElement));
 		result.addAll(getOutgoingTypeModelFacetLinks_ExceptionHandler_4005(modelElement));
 		return result;
 	}
@@ -2474,6 +2497,7 @@ public class UMLDiagramUpdater {
 		result.addAll(getOutgoingTypeModelFacetLinks_ControlFlow_4001(modelElement));
 		result.addAll(getOutgoingTypeModelFacetLinks_ObjectFlow_4002(modelElement));
 		result.addAll(getOutgoingFeatureModelFacetLinks_Action_LocalPrecondition_4003(modelElement));
+		result.addAll(getOutgoingFeatureModelFacetLinks_Action_LocalPostcondition_4006(modelElement));
 		result.addAll(getOutgoingTypeModelFacetLinks_ExceptionHandler_4005(modelElement));
 		return result;
 	}
@@ -2499,6 +2523,7 @@ public class UMLDiagramUpdater {
 		result.addAll(getOutgoingTypeModelFacetLinks_ControlFlow_4001(modelElement));
 		result.addAll(getOutgoingTypeModelFacetLinks_ObjectFlow_4002(modelElement));
 		result.addAll(getOutgoingFeatureModelFacetLinks_Action_LocalPrecondition_4003(modelElement));
+		result.addAll(getOutgoingFeatureModelFacetLinks_Action_LocalPostcondition_4006(modelElement));
 		result.addAll(getOutgoingTypeModelFacetLinks_ExceptionHandler_4005(modelElement));
 		return result;
 	}
@@ -2548,6 +2573,7 @@ public class UMLDiagramUpdater {
 		result.addAll(getOutgoingTypeModelFacetLinks_ControlFlow_4001(modelElement));
 		result.addAll(getOutgoingTypeModelFacetLinks_ObjectFlow_4002(modelElement));
 		result.addAll(getOutgoingFeatureModelFacetLinks_Action_LocalPrecondition_4003(modelElement));
+		result.addAll(getOutgoingFeatureModelFacetLinks_Action_LocalPostcondition_4006(modelElement));
 		result.addAll(getOutgoingTypeModelFacetLinks_ExceptionHandler_4005(modelElement));
 		return result;
 	}
@@ -2585,6 +2611,7 @@ public class UMLDiagramUpdater {
 		result.addAll(getOutgoingTypeModelFacetLinks_ControlFlow_4001(modelElement));
 		result.addAll(getOutgoingTypeModelFacetLinks_ObjectFlow_4002(modelElement));
 		result.addAll(getOutgoingFeatureModelFacetLinks_Action_LocalPrecondition_4003(modelElement));
+		result.addAll(getOutgoingFeatureModelFacetLinks_Action_LocalPostcondition_4006(modelElement));
 		result.addAll(getOutgoingTypeModelFacetLinks_ExceptionHandler_4005(modelElement));
 		return result;
 	}
@@ -2610,6 +2637,7 @@ public class UMLDiagramUpdater {
 		result.addAll(getOutgoingTypeModelFacetLinks_ControlFlow_4001(modelElement));
 		result.addAll(getOutgoingTypeModelFacetLinks_ObjectFlow_4002(modelElement));
 		result.addAll(getOutgoingFeatureModelFacetLinks_Action_LocalPrecondition_4003(modelElement));
+		result.addAll(getOutgoingFeatureModelFacetLinks_Action_LocalPostcondition_4006(modelElement));
 		result.addAll(getOutgoingTypeModelFacetLinks_ExceptionHandler_4005(modelElement));
 		return result;
 	}
@@ -2623,6 +2651,7 @@ public class UMLDiagramUpdater {
 		result.addAll(getOutgoingTypeModelFacetLinks_ControlFlow_4001(modelElement));
 		result.addAll(getOutgoingTypeModelFacetLinks_ObjectFlow_4002(modelElement));
 		result.addAll(getOutgoingFeatureModelFacetLinks_Action_LocalPrecondition_4003(modelElement));
+		result.addAll(getOutgoingFeatureModelFacetLinks_Action_LocalPostcondition_4006(modelElement));
 		result.addAll(getOutgoingTypeModelFacetLinks_ExceptionHandler_4005(modelElement));
 		return result;
 	}
@@ -2636,6 +2665,7 @@ public class UMLDiagramUpdater {
 		result.addAll(getOutgoingTypeModelFacetLinks_ControlFlow_4001(modelElement));
 		result.addAll(getOutgoingTypeModelFacetLinks_ObjectFlow_4002(modelElement));
 		result.addAll(getOutgoingFeatureModelFacetLinks_Action_LocalPrecondition_4003(modelElement));
+		result.addAll(getOutgoingFeatureModelFacetLinks_Action_LocalPostcondition_4006(modelElement));
 		result.addAll(getOutgoingTypeModelFacetLinks_ExceptionHandler_4005(modelElement));
 		return result;
 	}
@@ -2649,6 +2679,7 @@ public class UMLDiagramUpdater {
 		result.addAll(getOutgoingTypeModelFacetLinks_ControlFlow_4001(modelElement));
 		result.addAll(getOutgoingTypeModelFacetLinks_ObjectFlow_4002(modelElement));
 		result.addAll(getOutgoingFeatureModelFacetLinks_Action_LocalPrecondition_4003(modelElement));
+		result.addAll(getOutgoingFeatureModelFacetLinks_Action_LocalPostcondition_4006(modelElement));
 		result.addAll(getOutgoingTypeModelFacetLinks_ExceptionHandler_4005(modelElement));
 		return result;
 	}
@@ -2662,6 +2693,7 @@ public class UMLDiagramUpdater {
 		result.addAll(getOutgoingTypeModelFacetLinks_ControlFlow_4001(modelElement));
 		result.addAll(getOutgoingTypeModelFacetLinks_ObjectFlow_4002(modelElement));
 		result.addAll(getOutgoingFeatureModelFacetLinks_Action_LocalPrecondition_4003(modelElement));
+		result.addAll(getOutgoingFeatureModelFacetLinks_Action_LocalPostcondition_4006(modelElement));
 		result.addAll(getOutgoingTypeModelFacetLinks_ExceptionHandler_4005(modelElement));
 		return result;
 	}
@@ -2720,6 +2752,7 @@ public class UMLDiagramUpdater {
 		result.addAll(getOutgoingTypeModelFacetLinks_ControlFlow_4001(modelElement));
 		result.addAll(getOutgoingTypeModelFacetLinks_ObjectFlow_4002(modelElement));
 		result.addAll(getOutgoingFeatureModelFacetLinks_Action_LocalPrecondition_4003(modelElement));
+		result.addAll(getOutgoingFeatureModelFacetLinks_Action_LocalPostcondition_4006(modelElement));
 		result.addAll(getOutgoingTypeModelFacetLinks_ExceptionHandler_4005(modelElement));
 		return result;
 	}
@@ -2733,6 +2766,7 @@ public class UMLDiagramUpdater {
 		result.addAll(getOutgoingTypeModelFacetLinks_ControlFlow_4001(modelElement));
 		result.addAll(getOutgoingTypeModelFacetLinks_ObjectFlow_4002(modelElement));
 		result.addAll(getOutgoingFeatureModelFacetLinks_Action_LocalPrecondition_4003(modelElement));
+		result.addAll(getOutgoingFeatureModelFacetLinks_Action_LocalPostcondition_4006(modelElement));
 		result.addAll(getOutgoingTypeModelFacetLinks_ExceptionHandler_4005(modelElement));
 		return result;
 	}
@@ -2746,6 +2780,7 @@ public class UMLDiagramUpdater {
 		result.addAll(getOutgoingTypeModelFacetLinks_ControlFlow_4001(modelElement));
 		result.addAll(getOutgoingTypeModelFacetLinks_ObjectFlow_4002(modelElement));
 		result.addAll(getOutgoingFeatureModelFacetLinks_Action_LocalPrecondition_4003(modelElement));
+		result.addAll(getOutgoingFeatureModelFacetLinks_Action_LocalPostcondition_4006(modelElement));
 		result.addAll(getOutgoingTypeModelFacetLinks_ExceptionHandler_4005(modelElement));
 		return result;
 	}
@@ -2781,6 +2816,7 @@ public class UMLDiagramUpdater {
 		result.addAll(getOutgoingTypeModelFacetLinks_ControlFlow_4001(modelElement));
 		result.addAll(getOutgoingTypeModelFacetLinks_ObjectFlow_4002(modelElement));
 		result.addAll(getOutgoingFeatureModelFacetLinks_Action_LocalPrecondition_4003(modelElement));
+		result.addAll(getOutgoingFeatureModelFacetLinks_Action_LocalPostcondition_4006(modelElement));
 		result.addAll(getOutgoingTypeModelFacetLinks_ExceptionHandler_4005(modelElement));
 		return result;
 	}
@@ -2837,6 +2873,7 @@ public class UMLDiagramUpdater {
 		result.addAll(getOutgoingTypeModelFacetLinks_ControlFlow_4001(modelElement));
 		result.addAll(getOutgoingTypeModelFacetLinks_ObjectFlow_4002(modelElement));
 		result.addAll(getOutgoingFeatureModelFacetLinks_Action_LocalPrecondition_4003(modelElement));
+		result.addAll(getOutgoingFeatureModelFacetLinks_Action_LocalPostcondition_4006(modelElement));
 		result.addAll(getOutgoingTypeModelFacetLinks_ExceptionHandler_4005(modelElement));
 		return result;
 	}
@@ -2999,6 +3036,21 @@ public class UMLDiagramUpdater {
 	/**
 	 * @generated
 	 */
+	private static Collection getIncomingFeatureModelFacetLinks_Action_LocalPostcondition_4006(Constraint target, Map crossReferences) {
+		Collection result = new LinkedList();
+		Collection settings = (Collection) crossReferences.get(target);
+		for (Iterator it = settings.iterator(); it.hasNext();) {
+			EStructuralFeature.Setting setting = (EStructuralFeature.Setting) it.next();
+			if (setting.getEStructuralFeature() == UMLPackage.eINSTANCE.getAction_LocalPostcondition()) {
+				result.add(new UMLLinkDescriptor(setting.getEObject(), target, UMLElementTypes.ActionLocalPostcondition_4006, ActionLocalPostconditionEditPart.VISUAL_ID));
+			}
+		}
+		return result;
+	}
+
+	/**
+	 * @generated
+	 */
 	private static Collection getIncomingFeatureModelFacetLinks_ObjectNode_Selection_4004(Behavior target, Map crossReferences) {
 		Collection result = new LinkedList();
 		Collection settings = (Collection) crossReferences.get(target);
@@ -3112,6 +3164,18 @@ public class UMLDiagramUpdater {
 		for (Iterator destinations = source.getLocalPreconditions().iterator(); destinations.hasNext();) {
 			Constraint destination = (Constraint) destinations.next();
 			result.add(new UMLLinkDescriptor(source, destination, UMLElementTypes.ActionLocalPrecondition_4003, ActionLocalPreconditionEditPart.VISUAL_ID));
+		}
+		return result;
+	}
+
+	/**
+	 * @generated
+	 */
+	private static Collection getOutgoingFeatureModelFacetLinks_Action_LocalPostcondition_4006(Action source) {
+		Collection result = new LinkedList();
+		for (Iterator destinations = source.getLocalPostconditions().iterator(); destinations.hasNext();) {
+			Constraint destination = (Constraint) destinations.next();
+			result.add(new UMLLinkDescriptor(source, destination, UMLElementTypes.ActionLocalPostcondition_4006, ActionLocalPostconditionEditPart.VISUAL_ID));
 		}
 		return result;
 	}

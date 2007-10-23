@@ -25,6 +25,7 @@ import org.eclipse.uml2.diagram.activity.edit.parts.AcceptEventActionName2EditPa
 import org.eclipse.uml2.diagram.activity.edit.parts.AcceptEventActionName3EditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.AcceptEventActionName4EditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.AcceptEventActionNameEditPart;
+import org.eclipse.uml2.diagram.activity.edit.parts.ActionLocalPostconditionEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.ActionLocalPreconditionEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.ActivityEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.ActivityFinalNode2EditPart;
@@ -280,6 +281,8 @@ public class UMLNavigatorLabelProvider extends LabelProvider implements ICommonL
 			return getImage("Navigator?Link?http://www.eclipse.org/uml2/2.1.0/UML?ObjectFlow", UMLElementTypes.ObjectFlow_4002); //$NON-NLS-1$
 		case ActionLocalPreconditionEditPart.VISUAL_ID:
 			return getImage("Navigator?Link?http://www.eclipse.org/uml2/2.1.0/UML?Action?localPrecondition", UMLElementTypes.ActionLocalPrecondition_4003); //$NON-NLS-1$
+		case ActionLocalPostconditionEditPart.VISUAL_ID:
+			return getImage("Navigator?Link?http://www.eclipse.org/uml2/2.1.0/UML?Action?localPostcondition", UMLElementTypes.ActionLocalPostcondition_4006); //$NON-NLS-1$
 		case ObjectNodeSelectionEditPart.VISUAL_ID:
 			return getImage("Navigator?Link?http://www.eclipse.org/uml2/2.1.0/UML?ObjectNode?selection", UMLElementTypes.ObjectNodeSelection_4004); //$NON-NLS-1$
 		case ExceptionHandlerEditPart.VISUAL_ID:
@@ -442,6 +445,8 @@ public class UMLNavigatorLabelProvider extends LabelProvider implements ICommonL
 			return getObjectFlow_4002Text(view);
 		case ActionLocalPreconditionEditPart.VISUAL_ID:
 			return getActionLocalPrecondition_4003Text(view);
+		case ActionLocalPostconditionEditPart.VISUAL_ID:
+			return getActionLocalPostcondition_4006Text(view);
 		case ObjectNodeSelectionEditPart.VISUAL_ID:
 			return getObjectNodeSelection_4004Text(view);
 		case ExceptionHandlerEditPart.VISUAL_ID:
@@ -1277,6 +1282,13 @@ public class UMLNavigatorLabelProvider extends LabelProvider implements ICommonL
 	 * @generated
 	 */
 	private String getActionLocalPrecondition_4003Text(View view) {
+		return ""; //$NON-NLS-1$
+	}
+
+	/**
+	 * @generated
+	 */
+	private String getActionLocalPostcondition_4006Text(View view) {
 		return ""; //$NON-NLS-1$
 	}
 

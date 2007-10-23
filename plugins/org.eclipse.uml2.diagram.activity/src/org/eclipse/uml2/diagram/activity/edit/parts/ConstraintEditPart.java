@@ -1,6 +1,7 @@
 package org.eclipse.uml2.diagram.activity.edit.parts;
 
 import org.eclipse.draw2d.IFigure;
+import org.eclipse.draw2d.RectangleFigure;
 import org.eclipse.draw2d.StackLayout;
 import org.eclipse.gef.EditPart;
 import org.eclipse.gef.EditPolicy;
@@ -126,7 +127,7 @@ public class ConstraintEditPart extends ShapeNodeEditPart {
 	 */
 	protected boolean addFixedChild(EditPart childEditPart) {
 		if (childEditPart instanceof ConstraintPreconditionEditPart) {
-			IFigure pane = getPrimaryShape().getContentPane();
+			IFigure pane = getPrimaryShape().getFigureLocalPreconditionFigure_Body();
 			setupContentPane(pane); // FIXME each comparment should handle his content pane in his own way 
 			pane.add(((ConstraintPreconditionEditPart) childEditPart).getFigure());
 			return true;
@@ -140,7 +141,7 @@ public class ConstraintEditPart extends ShapeNodeEditPart {
 	protected boolean removeFixedChild(EditPart childEditPart) {
 
 		if (childEditPart instanceof ConstraintPreconditionEditPart) {
-			IFigure pane = getPrimaryShape().getContentPane();
+			IFigure pane = getPrimaryShape().getFigureLocalPreconditionFigure_Body();
 			pane.remove(((ConstraintPreconditionEditPart) childEditPart).getFigure());
 			return true;
 		}
@@ -173,7 +174,7 @@ public class ConstraintEditPart extends ShapeNodeEditPart {
 	protected IFigure getContentPaneFor(IGraphicalEditPart editPart) {
 
 		if (editPart instanceof ConstraintPreconditionEditPart) {
-			return getPrimaryShape().getContentPane();
+			return getPrimaryShape().getFigureLocalPreconditionFigure_Body();
 		}
 		return super.getContentPaneFor(editPart);
 	}
@@ -236,7 +237,7 @@ public class ConstraintEditPart extends ShapeNodeEditPart {
 		/**
 		 * @generated
 		 */
-		private IFigure fContentPane;
+		private RectangleFigure fFigureLocalPreconditionFigure_Body;
 
 		/**
 		 * @generated
@@ -244,6 +245,19 @@ public class ConstraintEditPart extends ShapeNodeEditPart {
 		public LocalPreconditionFigure() {
 
 			this.setFixedLabelText("\u00ABlocalPrecondition\u00BB");
+
+			createContents();
+		}
+
+		/**
+		 * @generated
+		 */
+		private void createContents() {
+
+			fFigureLocalPreconditionFigure_Body = new RectangleFigure();
+			fFigureLocalPreconditionFigure_Body.setOutline(false);
+
+			this.add(fFigureLocalPreconditionFigure_Body);
 
 		}
 
@@ -269,8 +283,8 @@ public class ConstraintEditPart extends ShapeNodeEditPart {
 		/**
 		 * @generated
 		 */
-		public IFigure getContentPane() {
-			return fContentPane;
+		public RectangleFigure getFigureLocalPreconditionFigure_Body() {
+			return fFigureLocalPreconditionFigure_Body;
 		}
 
 	}
