@@ -40,6 +40,7 @@
           href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
       <elementType
           xsi:type="gmfgen:MetamodelType"
+          displayName="Accept Event Action"
           editHelperClassName="AcceptEventActionEditHelper"/>
       <viewmap
           xsi:type="gmfgen:InnerClassViewmap"
@@ -101,6 +102,7 @@
           href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
       <elementType
           xsi:type="gmfgen:SpecializationType"
+          displayName="Accept Time Event Action"
           metamodelType="//@diagram/@childNodes.0/@elementType"
           editHelperAdviceClassName="AcceptEventActionEditHelperAdvice"/>
       <viewmap
@@ -172,6 +174,7 @@
           href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
       <elementType
           xsi:type="gmfgen:MetamodelType"
+          displayName="Activity Final Node"
           editHelperClassName="ActivityFinalNodeEditHelper"/>
       <viewmap
           xsi:type="gmfgen:InnerClassViewmap"
@@ -210,6 +213,7 @@
           href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
       <elementType
           xsi:type="gmfgen:MetamodelType"
+          displayName="Decision Node"
           editHelperClassName="DecisionNodeEditHelper"/>
       <viewmap
           xsi:type="gmfgen:InnerClassViewmap"
@@ -239,6 +243,7 @@
           href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
       <elementType
           xsi:type="gmfgen:MetamodelType"
+          displayName="Merge Node"
           editHelperClassName="MergeNodeEditHelper"/>
       <viewmap
           xsi:type="gmfgen:InnerClassViewmap"
@@ -268,6 +273,7 @@
           href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
       <elementType
           xsi:type="gmfgen:MetamodelType"
+          displayName="Initial Node"
           editHelperClassName="InitialNodeEditHelper"/>
       <viewmap
           xsi:type="gmfgen:InnerClassViewmap"
@@ -306,6 +312,7 @@
           href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
       <elementType
           xsi:type="gmfgen:MetamodelType"
+          displayName="Data Store Node"
           editHelperClassName="DataStoreNodeEditHelper"/>
       <viewmap
           xsi:type="gmfgen:InnerClassViewmap"
@@ -379,6 +386,7 @@
           href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
       <elementType
           xsi:type="gmfgen:MetamodelType"
+          displayName="Central Buffer Node"
           editHelperClassName="CentralBufferNodeEditHelper"/>
       <viewmap
           xsi:type="gmfgen:InnerClassViewmap"
@@ -452,6 +460,7 @@
           href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
       <elementType
           xsi:type="gmfgen:MetamodelType"
+          displayName="Opaque Action"
           editHelperClassName="OpaqueActionEditHelper"/>
       <viewmap
           xsi:type="gmfgen:InnerClassViewmap"
@@ -513,6 +522,7 @@
           href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
       <elementType
           xsi:type="gmfgen:MetamodelType"
+          displayName="Output Pin"
           editHelperClassName="OutputPinEditHelper"/>
       <viewmap
           xsi:type="gmfgen:InnerClassViewmap"
@@ -567,6 +577,7 @@
           href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
       <elementType
           xsi:type="gmfgen:MetamodelType"
+          displayName="Flow Final Node"
           editHelperClassName="FlowFinalNodeEditHelper"/>
       <viewmap
           xsi:type="gmfgen:InnerClassViewmap"
@@ -606,6 +617,7 @@
           href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
       <elementType
           xsi:type="gmfgen:MetamodelType"
+          displayName="Fork Node"
           editHelperClassName="ForkNodeEditHelper"/>
       <viewmap
           xsi:type="gmfgen:InnerClassViewmap"
@@ -646,6 +658,7 @@
           href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
       <elementType
           xsi:type="gmfgen:MetamodelType"
+          displayName="Join Node"
           editHelperClassName="JoinNodeEditHelper"/>
       <viewmap
           xsi:type="gmfgen:InnerClassViewmap"
@@ -732,6 +745,7 @@
           href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
       <elementType
           xsi:type="gmfgen:MetamodelType"
+          displayName="Create Object Action"
           editHelperClassName="CreateObjectActionEditHelper"/>
       <viewmap
           xsi:type="gmfgen:InnerClassViewmap"
@@ -793,6 +807,7 @@
           href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
       <elementType
           xsi:type="gmfgen:SpecializationType"
+          displayName="Output Pin"
           metamodelType="//@diagram/@childNodes.9/@elementType"
           editHelperAdviceClassName="OutputPinEditHelperAdvice"/>
       <viewmap
@@ -849,6 +864,7 @@
           href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
       <elementType
           xsi:type="gmfgen:MetamodelType"
+          displayName="Add Structural Feature Value Action"
           editHelperClassName="AddStructuralFeatureValueActionEditHelper"/>
       <viewmap
           xsi:type="gmfgen:InnerClassViewmap"
@@ -1082,6 +1098,7 @@
           href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
       <elementType
           xsi:type="gmfgen:MetamodelType"
+          displayName="Call Behavior Action"
           editHelperClassName="CallBehaviorActionEditHelper"/>
       <viewmap
           xsi:type="gmfgen:InnerClassViewmap"
@@ -1258,6 +1275,7 @@
           href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
       <elementType
           xsi:type="gmfgen:MetamodelType"
+          displayName="Call Operation Action"
           editHelperClassName="CallOperationActionEditHelper"/>
       <viewmap
           xsi:type="gmfgen:InnerClassViewmap"
@@ -1376,6 +1394,7 @@
           href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
       <elementType
           xsi:type="gmfgen:MetamodelType"
+          displayName="Structured Activity Node"
           editHelperClassName="StructuredActivityNodeEditHelper"/>
       <viewmap
           xsi:type="gmfgen:InnerClassViewmap"
@@ -1406,6 +1425,7 @@
           href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
       <elementType
           xsi:type="gmfgen:SpecializationType"
+          displayName="Structured Activity Node"
           metamodelType="//@diagram/@childNodes.25/@elementType"
           editHelperAdviceClassName="StructuredActivityNodeEditHelperAdvice"/>
       <viewmap
@@ -1437,6 +1457,7 @@
           href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
       <elementType
           xsi:type="gmfgen:SpecializationType"
+          displayName="Opaque Action"
           metamodelType="//@diagram/@childNodes.8/@elementType"
           editHelperAdviceClassName="OpaqueActionEditHelperAdvice"/>
       <viewmap
@@ -1497,6 +1518,7 @@
           href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
       <elementType
           xsi:type="gmfgen:SpecializationType"
+          displayName="Accept Event Action"
           metamodelType="//@diagram/@childNodes.0/@elementType"
           editHelperAdviceClassName="AcceptEventAction2EditHelperAdvice"/>
       <viewmap
@@ -1559,6 +1581,7 @@
           href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
       <elementType
           xsi:type="gmfgen:SpecializationType"
+          displayName="Accept Time Event Action"
           metamodelType="//@diagram/@childNodes.0/@elementType"
           editHelperAdviceClassName="AcceptEventAction3EditHelperAdvice"/>
       <viewmap
@@ -1630,6 +1653,7 @@
           href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
       <elementType
           xsi:type="gmfgen:SpecializationType"
+          displayName="Activity Final Node"
           metamodelType="//@diagram/@childNodes.2/@elementType"
           editHelperAdviceClassName="ActivityFinalNodeEditHelperAdvice"/>
       <viewmap
@@ -1669,6 +1693,7 @@
           href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
       <elementType
           xsi:type="gmfgen:SpecializationType"
+          displayName="Decision Node"
           metamodelType="//@diagram/@childNodes.3/@elementType"
           editHelperAdviceClassName="DecisionNodeEditHelperAdvice"/>
       <viewmap
@@ -1699,6 +1724,7 @@
           href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
       <elementType
           xsi:type="gmfgen:SpecializationType"
+          displayName="Flow Final Node"
           metamodelType="//@diagram/@childNodes.10/@elementType"
           editHelperAdviceClassName="FlowFinalNodeEditHelperAdvice"/>
       <viewmap
@@ -1786,6 +1812,7 @@
           href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
       <elementType
           xsi:type="gmfgen:SpecializationType"
+          displayName="Create Object Action"
           metamodelType="//@diagram/@childNodes.14/@elementType"
           editHelperAdviceClassName="CreateObjectActionEditHelperAdvice"/>
       <viewmap
@@ -1847,6 +1874,7 @@
           href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
       <elementType
           xsi:type="gmfgen:SpecializationType"
+          displayName="Call Behavior Action"
           metamodelType="//@diagram/@childNodes.20/@elementType"
           editHelperAdviceClassName="CallBehaviorActionEditHelperAdvice"/>
       <viewmap
@@ -1908,6 +1936,7 @@
           href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
       <elementType
           xsi:type="gmfgen:SpecializationType"
+          displayName="Call Operation Action"
           metamodelType="//@diagram/@childNodes.23/@elementType"
           editHelperAdviceClassName="CallOperationActionEditHelperAdvice"/>
       <viewmap
@@ -1969,6 +1998,7 @@
           href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
       <elementType
           xsi:type="gmfgen:SpecializationType"
+          displayName="Fork Node"
           metamodelType="//@diagram/@childNodes.11/@elementType"
           editHelperAdviceClassName="ForkNodeEditHelperAdvice"/>
       <viewmap
@@ -2010,6 +2040,7 @@
           href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
       <elementType
           xsi:type="gmfgen:SpecializationType"
+          displayName="Join Node"
           metamodelType="//@diagram/@childNodes.12/@elementType"
           editHelperAdviceClassName="JoinNodeEditHelperAdvice"/>
       <viewmap
@@ -2051,6 +2082,7 @@
           href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
       <elementType
           xsi:type="gmfgen:SpecializationType"
+          displayName="Add Structural Feature Value Action"
           metamodelType="//@diagram/@childNodes.16/@elementType"
           editHelperAdviceClassName="AddStructuralFeatureValueActionEditHelperAdvice"/>
       <viewmap
@@ -2111,6 +2143,7 @@
           href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
       <elementType
           xsi:type="gmfgen:SpecializationType"
+          displayName="Data Store Node"
           metamodelType="//@diagram/@childNodes.6/@elementType"
           editHelperAdviceClassName="DataStoreNodeEditHelperAdvice"/>
       <viewmap
@@ -2185,6 +2218,7 @@
           href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
       <elementType
           xsi:type="gmfgen:SpecializationType"
+          displayName="Central Buffer Node"
           metamodelType="//@diagram/@childNodes.7/@elementType"
           editHelperAdviceClassName="CentralBufferNodeEditHelperAdvice"/>
       <viewmap
@@ -2258,6 +2292,7 @@
           href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
       <elementType
           xsi:type="gmfgen:MetamodelType"
+          displayName="Opaque Behavior"
           editHelperClassName="OpaqueBehaviorEditHelper"/>
       <viewmap
           xsi:type="gmfgen:InnerClassViewmap"
@@ -2309,6 +2344,7 @@
           href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
       <elementType
           xsi:type="gmfgen:MetamodelType"
+          displayName="Activity Parameter Node"
           editHelperClassName="ActivityParameterNodeEditHelper"/>
       <viewmap
           xsi:type="gmfgen:InnerClassViewmap"
@@ -2374,6 +2410,7 @@
           href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
       <elementType
           xsi:type="gmfgen:MetamodelType"
+          displayName="Send Signal Action"
           editHelperClassName="SendSignalActionEditHelper"/>
       <viewmap
           xsi:type="gmfgen:InnerClassViewmap"
@@ -2431,6 +2468,7 @@
           href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
       <elementType
           xsi:type="gmfgen:MetamodelType"
+          displayName="Literal String"
           editHelperClassName="LiteralStringEditHelper"/>
       <viewmap
           xsi:type="gmfgen:FigureViewmap"
@@ -2476,6 +2514,7 @@
           href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
       <elementType
           xsi:type="gmfgen:SpecializationType"
+          displayName="Literal String"
           metamodelType="//@diagram/@childNodes.45/@elementType"
           editHelperAdviceClassName="LiteralStringEditHelperAdvice"/>
       <viewmap
@@ -2638,6 +2677,7 @@
           href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Edge"/>
       <elementType
           xsi:type="gmfgen:MetamodelType"
+          displayName="Control Flow"
           editHelperClassName="ControlFlowEditHelper"/>
       <viewmap
           xsi:type="gmfgen:InnerClassViewmap"
@@ -2680,6 +2720,7 @@
           href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Edge"/>
       <elementType
           xsi:type="gmfgen:MetamodelType"
+          displayName="Object Flow"
           editHelperClassName="ObjectFlowEditHelper"/>
       <viewmap
           xsi:type="gmfgen:InnerClassViewmap"
@@ -2716,6 +2757,7 @@
           href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Edge"/>
       <elementType
           xsi:type="gmfgen:SpecializationType"
+          displayName="Action Local Precondition"
           editHelperAdviceClassName="ActionLocalPreconditionEditHelperAdvice"/>
       <viewmap
           xsi:type="gmfgen:InnerClassViewmap"
@@ -2741,6 +2783,7 @@
           href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Edge"/>
       <elementType
           xsi:type="gmfgen:SpecializationType"
+          displayName="Object Node Selection"
           editHelperAdviceClassName="ObjectNodeSelectionEditHelperAdvice"/>
       <viewmap
           xsi:type="gmfgen:InnerClassViewmap"
@@ -2766,6 +2809,7 @@
           href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Edge"/>
       <elementType
           xsi:type="gmfgen:MetamodelType"
+          displayName="Exception Handler"
           editHelperClassName="ExceptionHandlerEditHelper"/>
       <viewmap
           xsi:type="gmfgen:InnerClassViewmap"
