@@ -8,8 +8,7 @@
       description="State Machine Diagram Palette">
     <tools
         xsi:type="gmftool:ToolGroup"
-        title="Nodes"
-        collapsible="true">
+        title="Nodes">
       <tools
           xsi:type="gmftool:CreationTool"
           title="State Machine"
@@ -172,8 +171,7 @@
     </tools>
     <tools
         xsi:type="gmftool:ToolGroup"
-        title="Links"
-        collapsible="true">
+        title="Links">
       <tools
           xsi:type="gmftool:CreationTool"
           title="Transition"

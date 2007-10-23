@@ -1197,8 +1197,7 @@
     </compartments>
     <palette>
       <groups
-          title="Nodes"
-          collapse="true">
+          title="Nodes">
         <entries
             xsi:type="gmfgen:ToolEntry"
             title="State Machine"
@@ -1292,8 +1291,7 @@
             genNodes="//@diagram/@childNodes.6 //@diagram/@childNodes.17"/>
       </groups>
       <groups
-          title="Links"
-          collapse="true">
+          title="Links">
         <entries
             xsi:type="gmfgen:ToolEntry"
             title="Transition"

@@ -55,7 +55,7 @@ public class UMLPaletteFactory {
 	 * @generated
 	 */
 	private PaletteContainer createLinks2Group() {
-		PaletteDrawer paletteContainer = new PaletteDrawer(Messages.Links2Group_title);
+		PaletteGroup paletteContainer = new PaletteGroup(Messages.Links2Group_title);
 		paletteContainer.add(createTransition1CreationTool());
 		return paletteContainer;
 	}
