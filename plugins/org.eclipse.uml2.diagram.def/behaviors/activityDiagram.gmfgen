@@ -2382,8 +2382,7 @@
           visualID="5031"
           editPartClassName="ActivityParameterNodeNameEditPart"
           itemSemanticEditPolicyClassName="ActivityParameterNodeNameItemSemanticEditPolicy"
-          notationViewFactoryClassName="ActivityParameterNodeNameViewFactory"
-          elementIcon="true">
+          notationViewFactoryClassName="ActivityParameterNodeNameViewFactory">
         <diagramRunTimeClass
             href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
         <viewmap

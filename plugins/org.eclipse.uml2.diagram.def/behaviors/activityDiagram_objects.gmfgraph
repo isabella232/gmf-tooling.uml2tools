@@ -203,6 +203,7 @@
   <labels
       name="ActivityParameterNode_name"
       figure="ActivityParameterFigure"
+      elementIcon="false"
       accessor="//@figures.0/@descriptors.5/@accessors.0"/>
   <labels
       name="CentralBufferNode_name"
