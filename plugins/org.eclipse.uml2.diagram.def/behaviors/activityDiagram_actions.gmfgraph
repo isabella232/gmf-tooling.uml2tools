@@ -280,7 +280,7 @@
         xsi:type="gmfgraph:DefaultSizeFacet">
       <defaultSize
           dx="80"
-          dy="80"/>
+          dy="50"/>
     </facets>
   </nodes>
   <nodes
@@ -290,7 +290,7 @@
         xsi:type="gmfgraph:DefaultSizeFacet">
       <defaultSize
           dx="80"
-          dy="80"/>
+          dy="50"/>
     </facets>
   </nodes>
   <nodes

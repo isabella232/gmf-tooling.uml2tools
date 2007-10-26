@@ -873,7 +873,7 @@
         <attributes
             xsi:type="gmfgen:DefaultSizeAttributes"
             width="80"
-            height="80"/>
+            height="50"/>
         <requiredPluginIDs>org.eclipse.gmf.runtime.draw2d.ui</requiredPluginIDs>
       </viewmap>
       <modelFacet>
@@ -1284,7 +1284,7 @@
         <attributes
             xsi:type="gmfgen:DefaultSizeAttributes"
             width="80"
-            height="80"/>
+            height="50"/>
         <requiredPluginIDs>org.eclipse.gmf.runtime.draw2d.ui</requiredPluginIDs>
       </viewmap>
       <modelFacet>
@@ -1946,7 +1946,7 @@
         <attributes
             xsi:type="gmfgen:DefaultSizeAttributes"
             width="80"
-            height="80"/>
+            height="50"/>
         <requiredPluginIDs>org.eclipse.gmf.runtime.draw2d.ui</requiredPluginIDs>
       </viewmap>
       <modelFacet>
@@ -2092,7 +2092,7 @@
         <attributes
             xsi:type="gmfgen:DefaultSizeAttributes"
             width="80"
-            height="80"/>
+            height="50"/>
         <requiredPluginIDs>org.eclipse.gmf.runtime.draw2d.ui</requiredPluginIDs>
       </viewmap>
       <modelFacet>
