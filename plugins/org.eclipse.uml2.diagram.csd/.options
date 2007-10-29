@@ -1,0 +1,7 @@
+# Tracing options for the org.eclipse.uml2.diagram.compositestructures plug-in
+
+# Common issues
+org.eclipse.uml2.diagram.compositestructures/debug=false
+
+# Visual IDs
+org.eclipse.uml2.diagram.compositestructures/debug/visualID=false
