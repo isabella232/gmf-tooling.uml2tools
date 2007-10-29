@@ -49,12 +49,12 @@ public class UMLDiagramEditor extends DiagramDocumentEditor implements IGotoMark
 	/**
 	 * @generated
 	 */
-	public static final String ID = "org.eclipse.uml2.diagram.compositestructures.part.UMLDiagramEditorID"; //$NON-NLS-1$
+	public static final String ID = "org.eclipse.uml2.diagram.csd.part.UMLDiagramEditorID"; //$NON-NLS-1$
 
 	/**
 	 * @generated
 	 */
-	public static final String CONTEXT_ID = "org.eclipse.uml2.diagram.compositestructures.ui.diagramContext"; //$NON-NLS-1$
+	public static final String CONTEXT_ID = "org.eclipse.uml2.diagram.csd.ui.diagramContext"; //$NON-NLS-1$
 
 	/**
 	 * @generated

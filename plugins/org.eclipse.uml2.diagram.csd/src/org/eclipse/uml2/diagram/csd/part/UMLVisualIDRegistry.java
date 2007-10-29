@@ -214,7 +214,7 @@ public class UMLVisualIDRegistry {
 			break;
 		case PackageEditPart.VISUAL_ID:
 			// We want to additionally show the Canvas Semantical Element in the auxiliary 
-			// org.eclipse.uml2.diagram.compositestructures.edit.parts.Package2EditPart (that serves as a pure visual container for children). 
+			// org.eclipse.uml2.diagram.csd.edit.parts.Package2EditPart (that serves as a pure visual container for children). 
 			// To do this, we modified CanonicalEditPolicy to add the Canvas semantic Element into the children 
 			// list. The only remaining part is to return correct VID for this special case.
 

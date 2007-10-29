@@ -18,7 +18,7 @@ public abstract class UMLAbstractNavigatorItem extends PlatformObject {
 		final ITabbedPropertySheetPageContributor propertySheetPageContributor = new ITabbedPropertySheetPageContributor() {
 
 			public String getContributorId() {
-				return "org.eclipse.uml2.diagram.compositestructures"; //$NON-NLS-1$
+				return "org.eclipse.uml2.diagram.csd"; //$NON-NLS-1$
 			}
 		};
 		Platform.getAdapterManager().registerAdapters(new IAdapterFactory() {

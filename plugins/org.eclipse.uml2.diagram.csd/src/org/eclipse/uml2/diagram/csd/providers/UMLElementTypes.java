@@ -47,82 +47,82 @@ public class UMLElementTypes extends ElementInitializers {
 	/**
 	 * @generated
 	 */
-	public static final IElementType Package_1000 = getElementType("org.eclipse.uml2.diagram.compositestructures.Package_1000"); //$NON-NLS-1$
+	public static final IElementType Package_1000 = getElementType("org.eclipse.uml2.diagram.csd.Package_1000"); //$NON-NLS-1$
 
 	/**
 	 * @generated
 	 */
-	public static final IElementType Collaboration_2005 = getElementType("org.eclipse.uml2.diagram.compositestructures.Collaboration_2005"); //$NON-NLS-1$
+	public static final IElementType Collaboration_2005 = getElementType("org.eclipse.uml2.diagram.csd.Collaboration_2005"); //$NON-NLS-1$
 
 	/**
 	 * @generated
 	 */
-	public static final IElementType Class_2006 = getElementType("org.eclipse.uml2.diagram.compositestructures.Class_2006"); //$NON-NLS-1$
+	public static final IElementType Class_2006 = getElementType("org.eclipse.uml2.diagram.csd.Class_2006"); //$NON-NLS-1$
 
 	/**
 	 * @generated
 	 */
-	public static final IElementType Package_2003 = getElementType("org.eclipse.uml2.diagram.compositestructures.Package_2003"); //$NON-NLS-1$
+	public static final IElementType Package_2003 = getElementType("org.eclipse.uml2.diagram.csd.Package_2003"); //$NON-NLS-1$
 
 	/**
 	 * @generated
 	 */
-	public static final IElementType Class_2007 = getElementType("org.eclipse.uml2.diagram.compositestructures.Class_2007"); //$NON-NLS-1$
+	public static final IElementType Class_2007 = getElementType("org.eclipse.uml2.diagram.csd.Class_2007"); //$NON-NLS-1$
 
 	/**
 	 * @generated
 	 */
-	public static final IElementType CollaborationUse_3002 = getElementType("org.eclipse.uml2.diagram.compositestructures.CollaborationUse_3002"); //$NON-NLS-1$
+	public static final IElementType CollaborationUse_3002 = getElementType("org.eclipse.uml2.diagram.csd.CollaborationUse_3002"); //$NON-NLS-1$
 
 	/**
 	 * @generated
 	 */
-	public static final IElementType Property_3007 = getElementType("org.eclipse.uml2.diagram.compositestructures.Property_3007"); //$NON-NLS-1$
+	public static final IElementType Property_3007 = getElementType("org.eclipse.uml2.diagram.csd.Property_3007"); //$NON-NLS-1$
 
 	/**
 	 * @generated
 	 */
-	public static final IElementType Parameter_3013 = getElementType("org.eclipse.uml2.diagram.compositestructures.Parameter_3013"); //$NON-NLS-1$
+	public static final IElementType Parameter_3013 = getElementType("org.eclipse.uml2.diagram.csd.Parameter_3013"); //$NON-NLS-1$
 
 	/**
 	 * @generated
 	 */
-	public static final IElementType Property_3008 = getElementType("org.eclipse.uml2.diagram.compositestructures.Property_3008"); //$NON-NLS-1$
+	public static final IElementType Property_3008 = getElementType("org.eclipse.uml2.diagram.csd.Property_3008"); //$NON-NLS-1$
 
 	/**
 	 * @generated
 	 */
-	public static final IElementType Operation_3009 = getElementType("org.eclipse.uml2.diagram.compositestructures.Operation_3009"); //$NON-NLS-1$
+	public static final IElementType Operation_3009 = getElementType("org.eclipse.uml2.diagram.csd.Operation_3009"); //$NON-NLS-1$
 
 	/**
 	 * @generated
 	 */
-	public static final IElementType Class_3010 = getElementType("org.eclipse.uml2.diagram.compositestructures.Class_3010"); //$NON-NLS-1$
+	public static final IElementType Class_3010 = getElementType("org.eclipse.uml2.diagram.csd.Class_3010"); //$NON-NLS-1$
 
 	/**
 	 * @generated
 	 */
-	public static final IElementType Port_3011 = getElementType("org.eclipse.uml2.diagram.compositestructures.Port_3011"); //$NON-NLS-1$
+	public static final IElementType Port_3011 = getElementType("org.eclipse.uml2.diagram.csd.Port_3011"); //$NON-NLS-1$
 
 	/**
 	 * @generated
 	 */
-	public static final IElementType ElementImport_3004 = getElementType("org.eclipse.uml2.diagram.compositestructures.ElementImport_3004"); //$NON-NLS-1$
+	public static final IElementType ElementImport_3004 = getElementType("org.eclipse.uml2.diagram.csd.ElementImport_3004"); //$NON-NLS-1$
 
 	/**
 	 * @generated
 	 */
-	public static final IElementType Property_3014 = getElementType("org.eclipse.uml2.diagram.compositestructures.Property_3014"); //$NON-NLS-1$
+	public static final IElementType Property_3014 = getElementType("org.eclipse.uml2.diagram.csd.Property_3014"); //$NON-NLS-1$
 
 	/**
 	 * @generated
 	 */
-	public static final IElementType Connector_4005 = getElementType("org.eclipse.uml2.diagram.compositestructures.Connector_4005"); //$NON-NLS-1$
+	public static final IElementType Connector_4005 = getElementType("org.eclipse.uml2.diagram.csd.Connector_4005"); //$NON-NLS-1$
 
 	/**
 	 * @generated
 	 */
-	public static final IElementType Dependency_4006 = getElementType("org.eclipse.uml2.diagram.compositestructures.Dependency_4006"); //$NON-NLS-1$
+	public static final IElementType Dependency_4006 = getElementType("org.eclipse.uml2.diagram.csd.Dependency_4006"); //$NON-NLS-1$
 
 	/**
 	 * @generated

@@ -79,11 +79,11 @@ public class UMLDiagramUpdater {
 		case ClassClass_contentsEditPart.VISUAL_ID:
 			return getClassClass_contents_7007SemanticChildren(view);
 		case PackageEditPart.VISUAL_ID: {
-			//We have "dummy" TopLevelNode (with vid = org.eclipse.uml2.diagram.compositestructures.edit.parts.Package2EditPart.VISUAL_ID). 
+			//We have "dummy" TopLevelNode (with vid = org.eclipse.uml2.diagram.csd.edit.parts.Package2EditPart.VISUAL_ID). 
 			//The only purpose for this node is to be a container for children (imports, etc)
 			//of the "main" diagram figure (that one shown as Canvas).
 			//Also we have modified the VisualIDRegistry#getNodeVisualID() to return
-			//VID = org.eclipse.uml2.diagram.compositestructures.edit.parts.Package2EditPart.VISUAL_ID, 
+			//VID = org.eclipse.uml2.diagram.csd.edit.parts.Package2EditPart.VISUAL_ID, 
 			//for the case when top-level view is created for the same semantic element as the canvas view.
 
 			List resultAndHeader = new LinkedList();
