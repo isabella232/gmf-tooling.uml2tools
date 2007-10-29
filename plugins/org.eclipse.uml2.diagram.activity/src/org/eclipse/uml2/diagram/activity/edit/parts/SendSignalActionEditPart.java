@@ -1,21 +1,23 @@
 package org.eclipse.uml2.diagram.activity.edit.parts;
 
+import org.eclipse.draw2d.BorderLayout;
 import org.eclipse.draw2d.Graphics;
 import org.eclipse.draw2d.IFigure;
 import org.eclipse.draw2d.MarginBorder;
 import org.eclipse.draw2d.Shape;
 import org.eclipse.draw2d.StackLayout;
-import org.eclipse.draw2d.ToolbarLayout;
 import org.eclipse.draw2d.geometry.Point;
 import org.eclipse.draw2d.geometry.PointList;
 import org.eclipse.draw2d.geometry.Rectangle;
 import org.eclipse.gef.EditPart;
 import org.eclipse.gef.EditPolicy;
+import org.eclipse.gef.Request;
+import org.eclipse.gef.commands.Command;
 import org.eclipse.gef.editpolicies.LayoutEditPolicy;
+import org.eclipse.gef.editpolicies.NonResizableEditPolicy;
+import org.eclipse.gef.requests.CreateRequest;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart;
-import org.eclipse.gmf.runtime.diagram.ui.editparts.ITextAwareEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.ShapeNodeEditPart;
-import org.eclipse.gmf.runtime.diagram.ui.editpolicies.ConstrainedToolbarLayoutEditPolicy;
 import org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles;
 import org.eclipse.gmf.runtime.draw2d.ui.figures.ConstrainedToolbarLayout;
 import org.eclipse.gmf.runtime.draw2d.ui.figures.WrapLabel;
@@ -24,7 +26,6 @@ import org.eclipse.gmf.runtime.gef.ui.figures.NodeFigure;
 import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.uml2.diagram.activity.edit.policies.SendSignalActionCanonicalEditPolicy;
 import org.eclipse.uml2.diagram.activity.edit.policies.SendSignalActionItemSemanticEditPolicy;
-import org.eclipse.uml2.diagram.activity.edit.policies.UMLTextSelectionEditPolicy;
 import org.eclipse.uml2.diagram.activity.part.UMLVisualIDRegistry;
 
 /**
@@ -69,16 +70,22 @@ public class SendSignalActionEditPart extends ShapeNodeEditPart {
 	 * @generated
 	 */
 	protected LayoutEditPolicy createLayoutEditPolicy() {
-
-		ConstrainedToolbarLayoutEditPolicy lep = new ConstrainedToolbarLayoutEditPolicy() {
+		LayoutEditPolicy lep = new LayoutEditPolicy() {
 
 			protected EditPolicy createChildEditPolicy(EditPart child) {
-				if (child.getEditPolicy(EditPolicy.PRIMARY_DRAG_ROLE) == null) {
-					if (child instanceof ITextAwareEditPart) {
-						return new UMLTextSelectionEditPolicy();
-					}
+				EditPolicy result = child.getEditPolicy(EditPolicy.PRIMARY_DRAG_ROLE);
+				if (result == null) {
+					result = new NonResizableEditPolicy();
 				}
-				return super.createChildEditPolicy(child);
+				return result;
+			}
+
+			protected Command getMoveChildrenCommand(Request request) {
+				return null;
+			}
+
+			protected Command getCreateCommand(CreateRequest request) {
+				return null;
 			}
 		};
 		return lep;
@@ -150,7 +157,7 @@ public class SendSignalActionEditPart extends ShapeNodeEditPart {
 	 * @generated
 	 */
 	protected NodeFigure createNodePlate() {
-		DefaultSizeNodeFigure result = new DefaultSizeNodeFigure(getMapMode().DPtoLP(40), getMapMode().DPtoLP(40));
+		DefaultSizeNodeFigure result = new DefaultSizeNodeFigure(getMapMode().DPtoLP(80), getMapMode().DPtoLP(50));
 		return result;
 	}
 
@@ -218,13 +225,7 @@ public class SendSignalActionEditPart extends ShapeNodeEditPart {
 		 */
 		public SendSignalActionFigure() {
 
-			ToolbarLayout layoutThis = new ToolbarLayout();
-			layoutThis.setStretchMinorAxis(false);
-			layoutThis.setMinorAlignment(ToolbarLayout.ALIGN_CENTER);
-
-			layoutThis.setSpacing(0);
-			layoutThis.setVertical(true);
-
+			BorderLayout layoutThis = new BorderLayout();
 			this.setLayoutManager(layoutThis);
 
 			this.addPoint(new Point(getMapMode().DPtoLP(0), getMapMode().DPtoLP(0)));
@@ -232,7 +233,7 @@ public class SendSignalActionEditPart extends ShapeNodeEditPart {
 			this.addPoint(new Point(getMapMode().DPtoLP(50), getMapMode().DPtoLP(20)));
 			this.addPoint(new Point(getMapMode().DPtoLP(40), getMapMode().DPtoLP(40)));
 			this.addPoint(new Point(getMapMode().DPtoLP(0), getMapMode().DPtoLP(40)));
-			this.setBorder(new MarginBorder(getMapMode().DPtoLP(5), getMapMode().DPtoLP(5), getMapMode().DPtoLP(0), getMapMode().DPtoLP(15)));
+			this.setBorder(new MarginBorder(getMapMode().DPtoLP(0), getMapMode().DPtoLP(5), getMapMode().DPtoLP(0), getMapMode().DPtoLP(17)));
 			createContents();
 		}
 
@@ -244,7 +245,7 @@ public class SendSignalActionEditPart extends ShapeNodeEditPart {
 			fFigureSendSignalActionFigure_name = new WrapLabel();
 			fFigureSendSignalActionFigure_name.setText("");
 
-			this.add(fFigureSendSignalActionFigure_name);
+			this.add(fFigureSendSignalActionFigure_name, BorderLayout.CENTER);
 
 		}
 

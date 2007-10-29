@@ -31,20 +31,19 @@
           xsi:type="gmfgraph:ScalablePolygon"
           name="AcceptEventActionFigure">
         <layout
-            xsi:type="gmfgraph:GridLayout"/>
+            xsi:type="gmfgraph:BorderLayout"/>
         <border
             xsi:type="gmfgraph:MarginBorder">
           <insets
-              left="13"
+              left="20"
               right="2"/>
         </border>
         <children
             xsi:type="gmfgraph:Label"
             name="AcceptEventActionFigure_name">
           <layoutData
-              xsi:type="gmfgraph:GridLayoutData"
-              grabExcessHorizontalSpace="true"
-              grabExcessVerticalSpace="true"/>
+              xsi:type="gmfgraph:BorderLayoutData"
+              vertical="true"/>
         </children>
         <template/>
         <template
@@ -199,22 +198,20 @@
           xsi:type="gmfgraph:ScalablePolygon"
           name="SendSignalActionFigure">
         <layout
-            xsi:type="gmfgraph:FlowLayout"
-            vertical="true"
-            forceSingleLine="true"
-            minorAlignment="CENTER"
-            majorSpacing="0"
-            minorSpacing="0"/>
+            xsi:type="gmfgraph:BorderLayout"/>
         <border
             xsi:type="gmfgraph:MarginBorder">
           <insets
-              top="5"
               left="5"
-              right="15"/>
+              right="17"/>
         </border>
         <children
             xsi:type="gmfgraph:Label"
-            name="SendSignalActionFigure_name"/>
+            name="SendSignalActionFigure_name">
+          <layoutData
+              xsi:type="gmfgraph:BorderLayoutData"
+              vertical="true"/>
+        </children>
         <template/>
         <template
             x="40"/>
@@ -317,7 +314,14 @@
       accessor="//@figures.0/@descriptors.3/@accessors.0"/>
   <nodes
       name="SendSignalActionNode"
-      figure="SendSignalActionFigure"/>
+      figure="SendSignalActionFigure">
+    <facets
+        xsi:type="gmfgraph:DefaultSizeFacet">
+      <defaultSize
+          dx="80"
+          dy="50"/>
+    </facets>
+  </nodes>
   <labels
       name="AcceptEventActionNode_name"
       figure="AcceptEventActionFigure"

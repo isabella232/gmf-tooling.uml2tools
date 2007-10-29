@@ -1,8 +1,7 @@
 package org.eclipse.uml2.diagram.activity.edit.parts;
 
+import org.eclipse.draw2d.BorderLayout;
 import org.eclipse.draw2d.Graphics;
-import org.eclipse.draw2d.GridData;
-import org.eclipse.draw2d.GridLayout;
 import org.eclipse.draw2d.IFigure;
 import org.eclipse.draw2d.MarginBorder;
 import org.eclipse.draw2d.Shape;
@@ -226,9 +225,7 @@ public class AcceptEventActionEditPart extends ShapeNodeEditPart {
 		 */
 		public AcceptEventActionFigure() {
 
-			GridLayout layoutThis = new GridLayout();
-			layoutThis.numColumns = 1;
-			layoutThis.makeColumnsEqualWidth = true;
+			BorderLayout layoutThis = new BorderLayout();
 			this.setLayoutManager(layoutThis);
 
 			this.addPoint(new Point(getMapMode().DPtoLP(0), getMapMode().DPtoLP(0)));
@@ -236,7 +233,7 @@ public class AcceptEventActionEditPart extends ShapeNodeEditPart {
 			this.addPoint(new Point(getMapMode().DPtoLP(50), getMapMode().DPtoLP(40)));
 			this.addPoint(new Point(getMapMode().DPtoLP(0), getMapMode().DPtoLP(40)));
 			this.addPoint(new Point(getMapMode().DPtoLP(10), getMapMode().DPtoLP(20)));
-			this.setBorder(new MarginBorder(getMapMode().DPtoLP(0), getMapMode().DPtoLP(13), getMapMode().DPtoLP(0), getMapMode().DPtoLP(2)));
+			this.setBorder(new MarginBorder(getMapMode().DPtoLP(0), getMapMode().DPtoLP(20), getMapMode().DPtoLP(0), getMapMode().DPtoLP(2)));
 			createContents();
 		}
 
@@ -248,15 +245,7 @@ public class AcceptEventActionEditPart extends ShapeNodeEditPart {
 			fFigureAcceptEventActionFigure_name = new WrapLabel();
 			fFigureAcceptEventActionFigure_name.setText("");
 
-			GridData constraintFFigureAcceptEventActionFigure_name = new GridData();
-			constraintFFigureAcceptEventActionFigure_name.verticalAlignment = GridData.CENTER;
-			constraintFFigureAcceptEventActionFigure_name.horizontalAlignment = GridData.CENTER;
-			constraintFFigureAcceptEventActionFigure_name.horizontalIndent = 0;
-			constraintFFigureAcceptEventActionFigure_name.horizontalSpan = 1;
-			constraintFFigureAcceptEventActionFigure_name.verticalSpan = 1;
-			constraintFFigureAcceptEventActionFigure_name.grabExcessHorizontalSpace = true;
-			constraintFFigureAcceptEventActionFigure_name.grabExcessVerticalSpace = true;
-			this.add(fFigureAcceptEventActionFigure_name, constraintFFigureAcceptEventActionFigure_name);
+			this.add(fFigureAcceptEventActionFigure_name, BorderLayout.CENTER);
 
 		}
 
