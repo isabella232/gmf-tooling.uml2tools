@@ -5,6 +5,8 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.gmf.runtime.emf.type.core.commands.CreateElementCommand;
 import org.eclipse.gmf.runtime.emf.type.core.requests.CreateElementRequest;
 import org.eclipse.gmf.runtime.notation.View;
+import org.eclipse.uml2.diagram.activity.providers.UMLElementTypes;
+import org.eclipse.uml2.uml.MergeNode;
 import org.eclipse.uml2.uml.UMLPackage;
 
 /**
@@ -35,5 +37,16 @@ public class MergeNodeCreateCommand extends CreateElementCommand {
 	 */
 	protected EClass getEClassToEdit() {
 		return UMLPackage.eINSTANCE.getActivity();
+	}
+
+	/**
+	 * @generated
+	 */
+	protected EObject doDefaultElementCreation() {
+		MergeNode newElement = (MergeNode) super.doDefaultElementCreation();
+		if (newElement != null) {
+			UMLElementTypes.Initializers.MergeNode_3034.init(newElement);
+		}
+		return newElement;
 	}
 }
