@@ -307,8 +307,14 @@ public class UMLEditPartFactory implements EditPartFactory {
 			case ControlFlowEditPart.VISUAL_ID:
 				return new ControlFlowEditPart(view);
 
+			case ControlFlowNameEditPart.VISUAL_ID:
+				return new ControlFlowNameEditPart(view);
+
 			case ObjectFlowEditPart.VISUAL_ID:
 				return new ObjectFlowEditPart(view);
+
+			case ObjectFlowNameEditPart.VISUAL_ID:
+				return new ObjectFlowNameEditPart(view);
 
 			case ActionLocalPreconditionEditPart.VISUAL_ID:
 				return new ActionLocalPreconditionEditPart(view);

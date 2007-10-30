@@ -51,6 +51,12 @@
           name="ZigZagLabel"
           text=""/>
     </descriptors>
+    <descriptors
+        name="NameLabel">
+      <actualFigure
+          xsi:type="gmfgraph:Label"
+          name="NameLabel"/>
+    </descriptors>
   </figures>
   <connections
       name="ActivityEdgeLink"
@@ -61,4 +67,11 @@
   <labels
       name="ExceptionHandlerLink_fixed_icon"
       figure="ZigZagLabel"/>
+  <labels
+      name="ActivityEdge_name"
+      figure="NameLabel"
+      elementIcon="false">
+    <facets
+        xsi:type="gmfgraph:AlignmentFacet"/>
+  </labels>
 </gmfgraph:Canvas>

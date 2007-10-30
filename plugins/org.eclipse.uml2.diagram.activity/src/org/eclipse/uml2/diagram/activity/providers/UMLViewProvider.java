@@ -329,6 +329,16 @@ public class UMLViewProvider extends AbstractViewProvider {
 						return null; // wrong container
 					}
 					break;
+				case ControlFlowNameEditPart.VISUAL_ID:
+					if (ControlFlowEditPart.VISUAL_ID != UMLVisualIDRegistry.getVisualID(containerView) || containerView.getElement() != domainElement) {
+						return null; // wrong container
+					}
+					break;
+				case ObjectFlowNameEditPart.VISUAL_ID:
+					if (ObjectFlowEditPart.VISUAL_ID != UMLVisualIDRegistry.getVisualID(containerView) || containerView.getElement() != domainElement) {
+						return null; // wrong container
+					}
+					break;
 				case ExceptionHandlerLink_fixed_iconEditPart.VISUAL_ID:
 					if (ExceptionHandlerEditPart.VISUAL_ID != UMLVisualIDRegistry.getVisualID(containerView) || containerView.getElement() != domainElement) {
 						return null; // wrong container
@@ -532,6 +542,10 @@ public class UMLViewProvider extends AbstractViewProvider {
 			return ConstraintPreconditionViewFactory.class;
 		case ConstraintPostconditionEditPart.VISUAL_ID:
 			return ConstraintPostconditionViewFactory.class;
+		case ControlFlowNameEditPart.VISUAL_ID:
+			return ControlFlowNameViewFactory.class;
+		case ObjectFlowNameEditPart.VISUAL_ID:
+			return ObjectFlowNameViewFactory.class;
 		case ExceptionHandlerLink_fixed_iconEditPart.VISUAL_ID:
 			return ExceptionHandlerLink_fixed_iconViewFactory.class;
 		}
