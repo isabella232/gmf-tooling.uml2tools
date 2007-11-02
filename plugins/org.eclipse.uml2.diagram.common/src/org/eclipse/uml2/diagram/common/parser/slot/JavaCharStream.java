@@ -10,7 +10,7 @@
  * Contributors:
  *    Michael Golubev (Borland) - initial API and implementation
  */
-package org.eclipse.uml2.diagram.clazz.parser.slot;
+package org.eclipse.uml2.diagram.common.parser.slot;
 
 /**
  * An implementation of interface CharStream, where the stream is assumed to

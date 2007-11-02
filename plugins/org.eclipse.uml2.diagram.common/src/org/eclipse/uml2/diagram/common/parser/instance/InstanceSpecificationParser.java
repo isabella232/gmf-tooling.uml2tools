@@ -10,7 +10,7 @@
  * Contributors:
  *    Michael Golubev (Borland) - initial API and implementation
  */
-package org.eclipse.uml2.diagram.clazz.parser.instance;
+package org.eclipse.uml2.diagram.common.parser.instance;
 
 import java.io.*;
 import java.util.*;
