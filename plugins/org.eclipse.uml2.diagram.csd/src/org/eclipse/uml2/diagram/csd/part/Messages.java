@@ -353,6 +353,16 @@ public class Messages extends NLS {
 	/**
 	 * @generated
 	 */
+	public static String Interface3CreationTool_title;
+
+	/**
+	 * @generated
+	 */
+	public static String Interface3CreationTool_desc;
+
+	/**
+	 * @generated
+	 */
 	public static String Connector1CreationTool_title;
 
 	/**
@@ -369,6 +379,26 @@ public class Messages extends NLS {
 	 * @generated
 	 */
 	public static String RoleBinding2CreationTool_desc;
+
+	/**
+	 * @generated
+	 */
+	public static String ProvidedInterface3CreationTool_title;
+
+	/**
+	 * @generated
+	 */
+	public static String ProvidedInterface3CreationTool_desc;
+
+	/**
+	 * @generated
+	 */
+	public static String RequiredInterface4CreationTool_title;
+
+	/**
+	 * @generated
+	 */
+	public static String RequiredInterface4CreationTool_desc;
 
 	/**
 	 * @generated
@@ -449,6 +479,16 @@ public class Messages extends NLS {
 	 * @generated
 	 */
 	public static String NavigatorGroupName_Class_2007_outgoinglinks;
+
+	/**
+	 * @generated
+	 */
+	public static String NavigatorGroupName_Interface_2009_incominglinks;
+
+	/**
+	 * @generated
+	 */
+	public static String NavigatorGroupName_Interface_2009_outgoinglinks;
 
 	/**
 	 * @generated
@@ -549,6 +589,36 @@ public class Messages extends NLS {
 	 * @generated
 	 */
 	public static String NavigatorGroupName_Dependency_4006_source;
+
+	/**
+	 * @generated
+	 */
+	public static String NavigatorGroupName_InterfaceRealization_4007_target;
+
+	/**
+	 * @generated
+	 */
+	public static String NavigatorGroupName_InterfaceRealization_4007_source;
+
+	/**
+	 * @generated
+	 */
+	public static String NavigatorGroupName_Usage_4008_target;
+
+	/**
+	 * @generated
+	 */
+	public static String NavigatorGroupName_Usage_4008_source;
+
+	/**
+	 * @generated
+	 */
+	public static String NavigatorGroupName_PortProvided_4010_target;
+
+	/**
+	 * @generated
+	 */
+	public static String NavigatorGroupName_PortProvided_4010_source;
 
 	/**
 	 * @generated

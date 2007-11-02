@@ -5,22 +5,22 @@ import org.eclipse.gmf.runtime.diagram.ui.editparts.ConnectionNodeEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles;
 import org.eclipse.gmf.runtime.draw2d.ui.figures.PolylineConnectionEx;
 import org.eclipse.gmf.runtime.notation.View;
-import org.eclipse.uml2.diagram.csd.edit.policies.PortProvidedItemSemanticEditPolicy;
+import org.eclipse.uml2.diagram.csd.edit.policies.InterfaceRealizationItemSemanticEditPolicy;
 
 /**
  * @generated
  */
-public class PortProvidedEditPart extends ConnectionNodeEditPart {
+public class InterfaceRealizationEditPart extends ConnectionNodeEditPart {
 
 	/**
 	 * @generated
 	 */
-	public static final int VISUAL_ID = 4010;
+	public static final int VISUAL_ID = 4007;
 
 	/**
 	 * @generated
 	 */
-	public PortProvidedEditPart(View view) {
+	public InterfaceRealizationEditPart(View view) {
 		super(view);
 	}
 
@@ -29,7 +29,7 @@ public class PortProvidedEditPart extends ConnectionNodeEditPart {
 	 */
 	protected void createDefaultEditPolicies() {
 		super.createDefaultEditPolicies();
-		installEditPolicy(EditPolicyRoles.SEMANTIC_ROLE, new PortProvidedItemSemanticEditPolicy());
+		installEditPolicy(EditPolicyRoles.SEMANTIC_ROLE, new InterfaceRealizationItemSemanticEditPolicy());
 	}
 
 	/**

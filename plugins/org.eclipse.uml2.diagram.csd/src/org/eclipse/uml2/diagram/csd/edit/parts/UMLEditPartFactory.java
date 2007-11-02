@@ -58,6 +58,12 @@ public class UMLEditPartFactory implements EditPartFactory {
 			case ClassName2EditPart.VISUAL_ID:
 				return new ClassName2EditPart(view);
 
+			case InterfaceEditPart.VISUAL_ID:
+				return new InterfaceEditPart(view);
+
+			case InterfaceNameEditPart.VISUAL_ID:
+				return new InterfaceNameEditPart(view);
+
 			case CollaborationUse2EditPart.VISUAL_ID:
 				return new CollaborationUse2EditPart(view);
 
@@ -126,6 +132,15 @@ public class UMLEditPartFactory implements EditPartFactory {
 
 			case DependencyNameEditPart.VISUAL_ID:
 				return new DependencyNameEditPart(view);
+
+			case InterfaceRealizationEditPart.VISUAL_ID:
+				return new InterfaceRealizationEditPart(view);
+
+			case UsageEditPart.VISUAL_ID:
+				return new UsageEditPart(view);
+
+			case PortProvidedEditPart.VISUAL_ID:
+				return new PortProvidedEditPart(view);
 			}
 		}
 		return createUnrecognizedEditPart(context, model);

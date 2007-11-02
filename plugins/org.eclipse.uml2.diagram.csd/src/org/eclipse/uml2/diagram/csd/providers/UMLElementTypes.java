@@ -72,6 +72,11 @@ public class UMLElementTypes extends ElementInitializers {
 	/**
 	 * @generated
 	 */
+	public static final IElementType Interface_2009 = getElementType("org.eclipse.uml2.diagram.csd.Interface_2009"); //$NON-NLS-1$
+
+	/**
+	 * @generated
+	 */
 	public static final IElementType CollaborationUse_3002 = getElementType("org.eclipse.uml2.diagram.csd.CollaborationUse_3002"); //$NON-NLS-1$
 
 	/**
@@ -123,6 +128,21 @@ public class UMLElementTypes extends ElementInitializers {
 	 * @generated
 	 */
 	public static final IElementType Dependency_4006 = getElementType("org.eclipse.uml2.diagram.csd.Dependency_4006"); //$NON-NLS-1$
+
+	/**
+	 * @generated
+	 */
+	public static final IElementType InterfaceRealization_4007 = getElementType("org.eclipse.uml2.diagram.csd.InterfaceRealization_4007"); //$NON-NLS-1$
+
+	/**
+	 * @generated
+	 */
+	public static final IElementType Usage_4008 = getElementType("org.eclipse.uml2.diagram.csd.Usage_4008"); //$NON-NLS-1$
+
+	/**
+	 * @generated
+	 */
+	public static final IElementType PortProvided_4010 = getElementType("org.eclipse.uml2.diagram.csd.PortProvided_4010"); //$NON-NLS-1$
 
 	/**
 	 * @generated
@@ -240,6 +260,8 @@ public class UMLElementTypes extends ElementInitializers {
 
 			elements.put(Class_2007, UMLPackage.eINSTANCE.getClass_());
 
+			elements.put(Interface_2009, UMLPackage.eINSTANCE.getInterface());
+
 			elements.put(CollaborationUse_3002, UMLPackage.eINSTANCE.getCollaborationUse());
 
 			elements.put(Property_3007, UMLPackage.eINSTANCE.getProperty());
@@ -261,6 +283,12 @@ public class UMLElementTypes extends ElementInitializers {
 			elements.put(Connector_4005, UMLPackage.eINSTANCE.getConnector());
 
 			elements.put(Dependency_4006, UMLPackage.eINSTANCE.getDependency());
+
+			elements.put(InterfaceRealization_4007, UMLPackage.eINSTANCE.getInterfaceRealization());
+
+			elements.put(Usage_4008, UMLPackage.eINSTANCE.getUsage());
+
+			elements.put(PortProvided_4010, UMLPackage.eINSTANCE.getPort_Provided());
 		}
 		return (ENamedElement) elements.get(type);
 	}
@@ -283,6 +311,7 @@ public class UMLElementTypes extends ElementInitializers {
 			KNOWN_ELEMENT_TYPES.add(Class_2006);
 			KNOWN_ELEMENT_TYPES.add(Package_2003);
 			KNOWN_ELEMENT_TYPES.add(Class_2007);
+			KNOWN_ELEMENT_TYPES.add(Interface_2009);
 			KNOWN_ELEMENT_TYPES.add(CollaborationUse_3002);
 			KNOWN_ELEMENT_TYPES.add(Property_3007);
 			KNOWN_ELEMENT_TYPES.add(Parameter_3013);
@@ -294,6 +323,9 @@ public class UMLElementTypes extends ElementInitializers {
 			KNOWN_ELEMENT_TYPES.add(Property_3014);
 			KNOWN_ELEMENT_TYPES.add(Connector_4005);
 			KNOWN_ELEMENT_TYPES.add(Dependency_4006);
+			KNOWN_ELEMENT_TYPES.add(InterfaceRealization_4007);
+			KNOWN_ELEMENT_TYPES.add(Usage_4008);
+			KNOWN_ELEMENT_TYPES.add(PortProvided_4010);
 		}
 		return KNOWN_ELEMENT_TYPES.contains(elementType);
 	}

@@ -51,6 +51,7 @@ public class UMLPaletteFactory {
 		paletteContainer.setDescription(Messages.Nodes2Group_desc);
 		paletteContainer.add(createCollaboration1CreationTool());
 		paletteContainer.add(createClass2CreationTool());
+		paletteContainer.add(createInterface3CreationTool());
 		return paletteContainer;
 	}
 
@@ -63,6 +64,8 @@ public class UMLPaletteFactory {
 		paletteContainer.setDescription(Messages.Links3Group_desc);
 		paletteContainer.add(createConnector1CreationTool());
 		paletteContainer.add(createRoleBinding2CreationTool());
+		paletteContainer.add(createProvidedInterface3CreationTool());
+		paletteContainer.add(createRequiredInterface4CreationTool());
 		return paletteContainer;
 	}
 
@@ -167,6 +170,18 @@ public class UMLPaletteFactory {
 	/**
 	 * @generated
 	 */
+	private ToolEntry createInterface3CreationTool() {
+		List/*<IElementType>*/types = new ArrayList/*<IElementType>*/(1);
+		types.add(UMLElementTypes.Interface_2009);
+		NodeToolEntry entry = new NodeToolEntry(Messages.Interface3CreationTool_title, Messages.Interface3CreationTool_desc, types);
+		entry.setSmallIcon(UMLElementTypes.getImageDescriptor(UMLElementTypes.Interface_2009));
+		entry.setLargeIcon(entry.getSmallIcon());
+		return entry;
+	}
+
+	/**
+	 * @generated
+	 */
 	private ToolEntry createConnector1CreationTool() {
 		List/*<IElementType>*/types = new ArrayList/*<IElementType>*/(1);
 		types.add(UMLElementTypes.Connector_4005);
@@ -184,6 +199,31 @@ public class UMLPaletteFactory {
 		types.add(UMLElementTypes.Dependency_4006);
 		LinkToolEntry entry = new LinkToolEntry(Messages.RoleBinding2CreationTool_title, Messages.RoleBinding2CreationTool_desc, types);
 		entry.setSmallIcon(UMLElementTypes.getImageDescriptor(UMLElementTypes.Dependency_4006));
+		entry.setLargeIcon(entry.getSmallIcon());
+		return entry;
+	}
+
+	/**
+	 * @generated
+	 */
+	private ToolEntry createProvidedInterface3CreationTool() {
+		List/*<IElementType>*/types = new ArrayList/*<IElementType>*/(2);
+		types.add(UMLElementTypes.InterfaceRealization_4007);
+		types.add(UMLElementTypes.PortProvided_4010);
+		LinkToolEntry entry = new LinkToolEntry(Messages.ProvidedInterface3CreationTool_title, Messages.ProvidedInterface3CreationTool_desc, types);
+		entry.setSmallIcon(UMLElementTypes.getImageDescriptor(UMLElementTypes.InterfaceRealization_4007));
+		entry.setLargeIcon(entry.getSmallIcon());
+		return entry;
+	}
+
+	/**
+	 * @generated
+	 */
+	private ToolEntry createRequiredInterface4CreationTool() {
+		List/*<IElementType>*/types = new ArrayList/*<IElementType>*/(1);
+		types.add(UMLElementTypes.Usage_4008);
+		LinkToolEntry entry = new LinkToolEntry(Messages.RequiredInterface4CreationTool_title, Messages.RequiredInterface4CreationTool_desc, types);
+		entry.setSmallIcon(UMLElementTypes.getImageDescriptor(UMLElementTypes.Usage_4008));
 		entry.setLargeIcon(entry.getSmallIcon());
 		return entry;
 	}

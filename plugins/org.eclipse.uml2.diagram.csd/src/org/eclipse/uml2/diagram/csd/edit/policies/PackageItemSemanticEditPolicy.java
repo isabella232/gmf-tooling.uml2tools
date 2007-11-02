@@ -9,6 +9,7 @@ import org.eclipse.gmf.runtime.emf.type.core.requests.DuplicateElementsRequest;
 import org.eclipse.uml2.diagram.csd.edit.commands.Class3CreateCommand;
 import org.eclipse.uml2.diagram.csd.edit.commands.ClassCreateCommand;
 import org.eclipse.uml2.diagram.csd.edit.commands.CollaborationCreateCommand;
+import org.eclipse.uml2.diagram.csd.edit.commands.InterfaceCreateCommand;
 import org.eclipse.uml2.diagram.csd.edit.commands.PackageCreateCommand;
 import org.eclipse.uml2.diagram.csd.providers.UMLElementTypes;
 import org.eclipse.uml2.uml.UMLPackage;
@@ -45,6 +46,12 @@ public class PackageItemSemanticEditPolicy extends UMLBaseItemSemanticEditPolicy
 				req.setContainmentFeature(UMLPackage.eINSTANCE.getPackage_PackagedElement());
 			}
 			return getGEFWrapper(new Class3CreateCommand(req));
+		}
+		if (UMLElementTypes.Interface_2009 == req.getElementType()) {
+			if (req.getContainmentFeature() == null) {
+				req.setContainmentFeature(UMLPackage.eINSTANCE.getPackage_PackagedElement());
+			}
+			return getGEFWrapper(new InterfaceCreateCommand(req));
 		}
 		return super.getCreateCommand(req);
 	}

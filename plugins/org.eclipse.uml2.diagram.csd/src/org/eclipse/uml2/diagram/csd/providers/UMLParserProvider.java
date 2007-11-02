@@ -22,6 +22,7 @@ import org.eclipse.uml2.diagram.csd.edit.parts.CollaborationNameEditPart;
 import org.eclipse.uml2.diagram.csd.edit.parts.CollaborationUseName2EditPart;
 import org.eclipse.uml2.diagram.csd.edit.parts.DependencyNameEditPart;
 import org.eclipse.uml2.diagram.csd.edit.parts.ElementImportEditPart;
+import org.eclipse.uml2.diagram.csd.edit.parts.InterfaceNameEditPart;
 import org.eclipse.uml2.diagram.csd.edit.parts.OperationEditPart;
 import org.eclipse.uml2.diagram.csd.edit.parts.PackageNameEditPart;
 import org.eclipse.uml2.diagram.csd.edit.parts.ParameterNameEditPart;
@@ -168,6 +169,30 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 	 * @generated
 	 */
 	protected IParser createClassName_5018Parser() {
+		EAttribute[] features = new EAttribute[] { UMLPackage.eINSTANCE.getNamedElement_Name(), };
+		MessageFormatParser parser = new MessageFormatParser(features);
+		return parser;
+	}
+
+	/**
+	 * @generated
+	 */
+	private IParser interfaceName_5020Parser;
+
+	/**
+	 * @generated
+	 */
+	private IParser getInterfaceName_5020Parser() {
+		if (interfaceName_5020Parser == null) {
+			interfaceName_5020Parser = createInterfaceName_5020Parser();
+		}
+		return interfaceName_5020Parser;
+	}
+
+	/**
+	 * @generated
+	 */
+	protected IParser createInterfaceName_5020Parser() {
 		EAttribute[] features = new EAttribute[] { UMLPackage.eINSTANCE.getNamedElement_Name(), };
 		MessageFormatParser parser = new MessageFormatParser(features);
 		return parser;
@@ -405,6 +430,8 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 			return getPackageName_5006Parser();
 		case ClassName2EditPart.VISUAL_ID:
 			return getClassName_5018Parser();
+		case InterfaceNameEditPart.VISUAL_ID:
+			return getInterfaceName_5020Parser();
 		case CollaborationUseName2EditPart.VISUAL_ID:
 			return getCollaborationUseName_5002Parser();
 		case PropertyNameEditPart.VISUAL_ID:

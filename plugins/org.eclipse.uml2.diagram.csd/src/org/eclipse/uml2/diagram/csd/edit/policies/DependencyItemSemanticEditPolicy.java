@@ -7,7 +7,10 @@ import org.eclipse.gmf.runtime.emf.type.core.requests.DestroyElementRequest;
 import org.eclipse.gmf.runtime.emf.type.core.requests.ReorientRelationshipRequest;
 import org.eclipse.uml2.diagram.csd.edit.commands.DependencyCreateCommand;
 import org.eclipse.uml2.diagram.csd.edit.commands.DependencyReorientCommand;
+import org.eclipse.uml2.diagram.csd.edit.commands.UsageCreateCommand;
+import org.eclipse.uml2.diagram.csd.edit.commands.UsageReorientCommand;
 import org.eclipse.uml2.diagram.csd.edit.parts.DependencyEditPart;
+import org.eclipse.uml2.diagram.csd.edit.parts.UsageEditPart;
 import org.eclipse.uml2.diagram.csd.providers.UMLElementTypes;
 
 /**
@@ -37,6 +40,9 @@ public class DependencyItemSemanticEditPolicy extends UMLBaseItemSemanticEditPol
 		if (UMLElementTypes.Dependency_4006 == req.getElementType()) {
 			return getGEFWrapper(new DependencyCreateCommand(req, req.getSource(), req.getTarget()));
 		}
+		if (UMLElementTypes.Usage_4008 == req.getElementType()) {
+			return getGEFWrapper(new UsageCreateCommand(req, req.getSource(), req.getTarget()));
+		}
 		return null;
 	}
 
@@ -46,6 +52,9 @@ public class DependencyItemSemanticEditPolicy extends UMLBaseItemSemanticEditPol
 	protected Command getCompleteCreateRelationshipCommand(CreateRelationshipRequest req) {
 		if (UMLElementTypes.Dependency_4006 == req.getElementType()) {
 			return getGEFWrapper(new DependencyCreateCommand(req, req.getSource(), req.getTarget()));
+		}
+		if (UMLElementTypes.Usage_4008 == req.getElementType()) {
+			return getGEFWrapper(new UsageCreateCommand(req, req.getSource(), req.getTarget()));
 		}
 		return null;
 	}
@@ -60,6 +69,8 @@ public class DependencyItemSemanticEditPolicy extends UMLBaseItemSemanticEditPol
 		switch (getVisualID(req)) {
 		case DependencyEditPart.VISUAL_ID:
 			return getGEFWrapper(new DependencyReorientCommand(req));
+		case UsageEditPart.VISUAL_ID:
+			return getGEFWrapper(new UsageReorientCommand(req));
 		}
 		return super.getReorientRelationshipCommand(req);
 	}

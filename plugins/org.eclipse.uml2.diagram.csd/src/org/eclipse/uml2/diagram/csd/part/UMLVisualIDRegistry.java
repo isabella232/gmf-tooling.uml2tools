@@ -24,6 +24,9 @@ import org.eclipse.uml2.diagram.csd.edit.parts.ConnectorEditPart;
 import org.eclipse.uml2.diagram.csd.edit.parts.DependencyEditPart;
 import org.eclipse.uml2.diagram.csd.edit.parts.DependencyNameEditPart;
 import org.eclipse.uml2.diagram.csd.edit.parts.ElementImportEditPart;
+import org.eclipse.uml2.diagram.csd.edit.parts.InterfaceEditPart;
+import org.eclipse.uml2.diagram.csd.edit.parts.InterfaceNameEditPart;
+import org.eclipse.uml2.diagram.csd.edit.parts.InterfaceRealizationEditPart;
 import org.eclipse.uml2.diagram.csd.edit.parts.OperationEditPart;
 import org.eclipse.uml2.diagram.csd.edit.parts.Package2EditPart;
 import org.eclipse.uml2.diagram.csd.edit.parts.PackageEditPart;
@@ -38,6 +41,7 @@ import org.eclipse.uml2.diagram.csd.edit.parts.Property3EditPart;
 import org.eclipse.uml2.diagram.csd.edit.parts.PropertyEditPart;
 import org.eclipse.uml2.diagram.csd.edit.parts.PropertyName2EditPart;
 import org.eclipse.uml2.diagram.csd.edit.parts.PropertyNameEditPart;
+import org.eclipse.uml2.diagram.csd.edit.parts.UsageEditPart;
 import org.eclipse.uml2.diagram.csd.expressions.UMLAbstractExpression;
 import org.eclipse.uml2.diagram.csd.expressions.UMLOCLFactory;
 import org.eclipse.uml2.uml.Package;
@@ -83,6 +87,23 @@ public class UMLVisualIDRegistry {
 	 * @generated
 	 */
 	private static final UMLAbstractExpression Property_3014_Constraint = UMLOCLFactory.getExpression("not self.oclIsKindOf(uml::Port)", UMLPackage.eINSTANCE.getProperty());
+
+	/**
+	 * @generated
+	 */
+	private static final UMLAbstractExpression Dependency_4006_Constraint = UMLOCLFactory.getExpression("not self.oclIsKindOf(uml::Usage) and not self.oclIsKindOf(uml::InterfaceRealization)",
+			UMLPackage.eINSTANCE.getDependency());
+
+	/**
+	 * @generated
+	 */
+	private static final UMLAbstractExpression InterfaceRealization_4007_Constraint = UMLOCLFactory.getExpression("self.supplier->forAll(e|e.oclIsKindOf(uml::Interface))", UMLPackage.eINSTANCE
+			.getInterfaceRealization());
+
+	/**
+	 * @generated
+	 */
+	private static final UMLAbstractExpression Usage_4008_Constraint = UMLOCLFactory.getExpression("self.supplier->forAll(e|e.oclIsKindOf(uml::Interface))", UMLPackage.eINSTANCE.getUsage());
 
 	/**
 	 * @generated
@@ -231,6 +252,9 @@ public class UMLVisualIDRegistry {
 			if (UMLPackage.eINSTANCE.getClass_().isSuperTypeOf(domainElement.eClass()) && evaluate(Class_2007_Constraint, domainElement)) {
 				return Class3EditPart.VISUAL_ID;
 			}
+			if (UMLPackage.eINSTANCE.getInterface().isSuperTypeOf(domainElement.eClass())) {
+				return InterfaceEditPart.VISUAL_ID;
+			}
 			break;
 		}
 		return -1;
@@ -305,6 +329,11 @@ public class UMLVisualIDRegistry {
 				return true;
 			}
 			break;
+		case InterfaceEditPart.VISUAL_ID:
+			if (InterfaceNameEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			break;
 		case CollaborationUse2EditPart.VISUAL_ID:
 			if (CollaborationUseName2EditPart.VISUAL_ID == nodeVisualID) {
 				return true;
@@ -371,6 +400,9 @@ public class UMLVisualIDRegistry {
 			if (Class3EditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
+			if (InterfaceEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
 			break;
 		case DependencyEditPart.VISUAL_ID:
 			if (DependencyNameEditPart.VISUAL_ID == nodeVisualID) {
@@ -391,8 +423,14 @@ public class UMLVisualIDRegistry {
 		if (UMLPackage.eINSTANCE.getConnector().isSuperTypeOf(domainElement.eClass())) {
 			return ConnectorEditPart.VISUAL_ID;
 		}
-		if (UMLPackage.eINSTANCE.getDependency().isSuperTypeOf(domainElement.eClass())) {
+		if (UMLPackage.eINSTANCE.getDependency().isSuperTypeOf(domainElement.eClass()) && evaluate(Dependency_4006_Constraint, domainElement)) {
 			return DependencyEditPart.VISUAL_ID;
+		}
+		if (UMLPackage.eINSTANCE.getInterfaceRealization().isSuperTypeOf(domainElement.eClass()) && evaluate(InterfaceRealization_4007_Constraint, domainElement)) {
+			return InterfaceRealizationEditPart.VISUAL_ID;
+		}
+		if (UMLPackage.eINSTANCE.getUsage().isSuperTypeOf(domainElement.eClass()) && evaluate(Usage_4008_Constraint, domainElement)) {
+			return UsageEditPart.VISUAL_ID;
 		}
 		return -1;
 	}

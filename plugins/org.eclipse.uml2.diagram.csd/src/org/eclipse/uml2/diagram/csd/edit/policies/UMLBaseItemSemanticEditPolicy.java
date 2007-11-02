@@ -50,6 +50,7 @@ import org.eclipse.uml2.uml.CollaborationUse;
 import org.eclipse.uml2.uml.ConnectableElement;
 import org.eclipse.uml2.uml.Interface;
 import org.eclipse.uml2.uml.NamedElement;
+import org.eclipse.uml2.uml.Package;
 import org.eclipse.uml2.uml.Port;
 import org.eclipse.uml2.uml.StructuredClassifier;
 import org.eclipse.uml2.uml.UMLPackage;
@@ -340,6 +341,48 @@ public class UMLBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 		/**
 		 * @generated
 		 */
+		private static final UMLAbstractExpression InterfaceRealization_4007_TargetExpression;
+
+		/**
+		 * @generated
+		 */
+		static {
+			Map env = new HashMap(3);
+			env.put(OPPOSITE_END_VAR, UMLPackage.eINSTANCE.getBehavioredClassifier());
+			InterfaceRealization_4007_TargetExpression = UMLOCLFactory.getExpression("self.oclIsKindOf(uml::Interface)", UMLPackage.eINSTANCE.getInterface(), env); //$NON-NLS-1$
+		}
+
+		/**
+		 * @generated
+		 */
+		private static final UMLAbstractExpression Usage_4008_TargetExpression;
+
+		/**
+		 * @generated
+		 */
+		static {
+			Map env = new HashMap(3);
+			env.put(OPPOSITE_END_VAR, UMLPackage.eINSTANCE.getNamedElement());
+			Usage_4008_TargetExpression = UMLOCLFactory.getExpression("self.oclIsKindOf(uml::Interface)", UMLPackage.eINSTANCE.getNamedElement(), env); //$NON-NLS-1$
+		}
+
+		/**
+		 * @generated
+		 */
+		private static final UMLAbstractExpression PortProvided_4010_SourceExpression;
+
+		/**
+		 * @generated
+		 */
+		static {
+			Map env = new HashMap(3);
+			env.put(OPPOSITE_END_VAR, UMLPackage.eINSTANCE.getInterface());
+			PortProvided_4010_SourceExpression = UMLOCLFactory.getExpression("self.oclIsKindOf(uml::Port)", UMLPackage.eINSTANCE.getPort(), env); //$NON-NLS-1$
+		}
+
+		/**
+		 * @generated
+		 */
 		public static boolean canCreateConnector_4005(StructuredClassifier container, ConnectableElement source, ConnectableElement target) {
 			return canExistConnector_4005(container, source, target);
 		}
@@ -354,6 +397,32 @@ public class UMLBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 		/**
 		 * @generated
 		 */
+		public static boolean canCreateInterfaceRealization_4007(BehavioredClassifier container, BehavioredClassifier source, Interface target) {
+			return canExistInterfaceRealization_4007(container, source, target);
+		}
+
+		/**
+		 * @generated
+		 */
+		public static boolean canCreateUsage_4008(Package container, NamedElement source, NamedElement target) {
+			return canExistUsage_4008(container, source, target);
+		}
+
+		/**
+		 * @generated
+		 */
+		public static boolean canCreatePortProvided_4010(Port source, Interface target) {
+			if (source != null) {
+				if (source.getProvideds().contains(target)) {
+					return false;
+				}
+			}
+			return canExistPortProvided_4010(source, target);
+		}
+
+		/**
+		 * @generated
+		 */
 		public static boolean canExistConnector_4005(StructuredClassifier container, ConnectableElement source, ConnectableElement target) {
 			return true;
 		}
@@ -362,6 +431,36 @@ public class UMLBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 		 * @generated
 		 */
 		public static boolean canExistDependency_4006(CollaborationUse container, NamedElement source, NamedElement target) {
+			return true;
+		}
+
+		/**
+		 * @generated
+		 */
+		public static boolean canExistInterfaceRealization_4007(BehavioredClassifier container, BehavioredClassifier source, Interface target) {
+			if (!evaluate(InterfaceRealization_4007_TargetExpression, target, source, true)) {
+				return false;
+			}
+			return true;
+		}
+
+		/**
+		 * @generated
+		 */
+		public static boolean canExistUsage_4008(Package container, NamedElement source, NamedElement target) {
+			if (!evaluate(Usage_4008_TargetExpression, target, source, true)) {
+				return false;
+			}
+			return true;
+		}
+
+		/**
+		 * @generated
+		 */
+		public static boolean canExistPortProvided_4010(Port source, Interface target) {
+			if (!evaluate(PortProvided_4010_SourceExpression, source, target, false)) {
+				return false;
+			}
 			return true;
 		}
 

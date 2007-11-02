@@ -25,8 +25,10 @@ import org.eclipse.uml2.diagram.csd.edit.parts.ClassClass_contentsEditPart;
 import org.eclipse.uml2.diagram.csd.edit.parts.ClassEditPart;
 import org.eclipse.uml2.diagram.csd.edit.parts.CollaborationContentsEditPart;
 import org.eclipse.uml2.diagram.csd.edit.parts.CollaborationEditPart;
+import org.eclipse.uml2.diagram.csd.edit.parts.InterfaceEditPart;
 import org.eclipse.uml2.diagram.csd.edit.parts.Package2EditPart;
 import org.eclipse.uml2.diagram.csd.edit.parts.PackageEditPart;
+import org.eclipse.uml2.diagram.csd.edit.parts.PortEditPart;
 import org.eclipse.uml2.diagram.csd.part.Messages;
 import org.eclipse.uml2.diagram.csd.part.UMLDiagramEditorPlugin;
 
@@ -75,6 +77,7 @@ public class UMLModelingAssistantProvider extends ModelingAssistantProvider {
 			types.add(UMLElementTypes.Class_2006);
 			types.add(UMLElementTypes.Package_2003);
 			types.add(UMLElementTypes.Class_2007);
+			types.add(UMLElementTypes.Interface_2009);
 			return types;
 		}
 		return Collections.EMPTY_LIST;
@@ -85,6 +88,11 @@ public class UMLModelingAssistantProvider extends ModelingAssistantProvider {
 	 */
 	public List getRelTypesOnSource(IAdaptable source) {
 		IGraphicalEditPart sourceEditPart = (IGraphicalEditPart) source.getAdapter(IGraphicalEditPart.class);
+		if (sourceEditPart instanceof PortEditPart) {
+			List types = new ArrayList();
+			types.add(UMLElementTypes.PortProvided_4010);
+			return types;
+		}
 		return Collections.EMPTY_LIST;
 	}
 
@@ -93,6 +101,12 @@ public class UMLModelingAssistantProvider extends ModelingAssistantProvider {
 	 */
 	public List getRelTypesOnTarget(IAdaptable target) {
 		IGraphicalEditPart targetEditPart = (IGraphicalEditPart) target.getAdapter(IGraphicalEditPart.class);
+		if (targetEditPart instanceof InterfaceEditPart) {
+			List types = new ArrayList();
+			types.add(UMLElementTypes.InterfaceRealization_4007);
+			types.add(UMLElementTypes.PortProvided_4010);
+			return types;
+		}
 		return Collections.EMPTY_LIST;
 	}
 
@@ -102,6 +116,13 @@ public class UMLModelingAssistantProvider extends ModelingAssistantProvider {
 	public List getRelTypesOnSourceAndTarget(IAdaptable source, IAdaptable target) {
 		IGraphicalEditPart sourceEditPart = (IGraphicalEditPart) source.getAdapter(IGraphicalEditPart.class);
 		IGraphicalEditPart targetEditPart = (IGraphicalEditPart) target.getAdapter(IGraphicalEditPart.class);
+		if (sourceEditPart instanceof PortEditPart) {
+			List types = new ArrayList();
+			if (targetEditPart instanceof InterfaceEditPart) {
+				types.add(UMLElementTypes.PortProvided_4010);
+			}
+			return types;
+		}
 		return Collections.EMPTY_LIST;
 	}
 
@@ -110,6 +131,13 @@ public class UMLModelingAssistantProvider extends ModelingAssistantProvider {
 	 */
 	public List getTypesForSource(IAdaptable target, IElementType relationshipType) {
 		IGraphicalEditPart targetEditPart = (IGraphicalEditPart) target.getAdapter(IGraphicalEditPart.class);
+		if (targetEditPart instanceof InterfaceEditPart) {
+			List types = new ArrayList();
+			if (relationshipType == UMLElementTypes.PortProvided_4010) {
+				types.add(UMLElementTypes.Port_3011);
+			}
+			return types;
+		}
 		return Collections.EMPTY_LIST;
 	}
 
@@ -118,6 +146,13 @@ public class UMLModelingAssistantProvider extends ModelingAssistantProvider {
 	 */
 	public List getTypesForTarget(IAdaptable source, IElementType relationshipType) {
 		IGraphicalEditPart sourceEditPart = (IGraphicalEditPart) source.getAdapter(IGraphicalEditPart.class);
+		if (sourceEditPart instanceof PortEditPart) {
+			List types = new ArrayList();
+			if (relationshipType == UMLElementTypes.PortProvided_4010) {
+				types.add(UMLElementTypes.Interface_2009);
+			}
+			return types;
+		}
 		return Collections.EMPTY_LIST;
 	}
 

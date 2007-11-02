@@ -25,6 +25,9 @@ import org.eclipse.uml2.diagram.csd.edit.parts.ConnectorEditPart;
 import org.eclipse.uml2.diagram.csd.edit.parts.DependencyEditPart;
 import org.eclipse.uml2.diagram.csd.edit.parts.DependencyNameEditPart;
 import org.eclipse.uml2.diagram.csd.edit.parts.ElementImportEditPart;
+import org.eclipse.uml2.diagram.csd.edit.parts.InterfaceEditPart;
+import org.eclipse.uml2.diagram.csd.edit.parts.InterfaceNameEditPart;
+import org.eclipse.uml2.diagram.csd.edit.parts.InterfaceRealizationEditPart;
 import org.eclipse.uml2.diagram.csd.edit.parts.OperationEditPart;
 import org.eclipse.uml2.diagram.csd.edit.parts.Package2EditPart;
 import org.eclipse.uml2.diagram.csd.edit.parts.PackageEditPart;
@@ -34,11 +37,13 @@ import org.eclipse.uml2.diagram.csd.edit.parts.ParameterEditPart;
 import org.eclipse.uml2.diagram.csd.edit.parts.ParameterNameEditPart;
 import org.eclipse.uml2.diagram.csd.edit.parts.PortEditPart;
 import org.eclipse.uml2.diagram.csd.edit.parts.PortNameEditPart;
+import org.eclipse.uml2.diagram.csd.edit.parts.PortProvidedEditPart;
 import org.eclipse.uml2.diagram.csd.edit.parts.Property2EditPart;
 import org.eclipse.uml2.diagram.csd.edit.parts.Property3EditPart;
 import org.eclipse.uml2.diagram.csd.edit.parts.PropertyEditPart;
 import org.eclipse.uml2.diagram.csd.edit.parts.PropertyName2EditPart;
 import org.eclipse.uml2.diagram.csd.edit.parts.PropertyNameEditPart;
+import org.eclipse.uml2.diagram.csd.edit.parts.UsageEditPart;
 import org.eclipse.uml2.diagram.csd.part.UMLVisualIDRegistry;
 import org.eclipse.uml2.diagram.csd.view.factories.Class2ViewFactory;
 import org.eclipse.uml2.diagram.csd.view.factories.Class3ViewFactory;
@@ -59,6 +64,9 @@ import org.eclipse.uml2.diagram.csd.view.factories.ConnectorViewFactory;
 import org.eclipse.uml2.diagram.csd.view.factories.DependencyNameViewFactory;
 import org.eclipse.uml2.diagram.csd.view.factories.DependencyViewFactory;
 import org.eclipse.uml2.diagram.csd.view.factories.ElementImportViewFactory;
+import org.eclipse.uml2.diagram.csd.view.factories.InterfaceNameViewFactory;
+import org.eclipse.uml2.diagram.csd.view.factories.InterfaceRealizationViewFactory;
+import org.eclipse.uml2.diagram.csd.view.factories.InterfaceViewFactory;
 import org.eclipse.uml2.diagram.csd.view.factories.OperationViewFactory;
 import org.eclipse.uml2.diagram.csd.view.factories.Package2ViewFactory;
 import org.eclipse.uml2.diagram.csd.view.factories.PackageImportsViewFactory;
@@ -67,12 +75,14 @@ import org.eclipse.uml2.diagram.csd.view.factories.PackageViewFactory;
 import org.eclipse.uml2.diagram.csd.view.factories.ParameterNameViewFactory;
 import org.eclipse.uml2.diagram.csd.view.factories.ParameterViewFactory;
 import org.eclipse.uml2.diagram.csd.view.factories.PortNameViewFactory;
+import org.eclipse.uml2.diagram.csd.view.factories.PortProvidedViewFactory;
 import org.eclipse.uml2.diagram.csd.view.factories.PortViewFactory;
 import org.eclipse.uml2.diagram.csd.view.factories.Property2ViewFactory;
 import org.eclipse.uml2.diagram.csd.view.factories.Property3ViewFactory;
 import org.eclipse.uml2.diagram.csd.view.factories.PropertyName2ViewFactory;
 import org.eclipse.uml2.diagram.csd.view.factories.PropertyNameViewFactory;
 import org.eclipse.uml2.diagram.csd.view.factories.PropertyViewFactory;
+import org.eclipse.uml2.diagram.csd.view.factories.UsageViewFactory;
 
 /**
  * @generated
@@ -158,6 +168,7 @@ public class UMLViewProvider extends AbstractViewProvider {
 				}
 				case CollaborationEditPart.VISUAL_ID:
 				case Package2EditPart.VISUAL_ID:
+				case InterfaceEditPart.VISUAL_ID:
 				case CollaborationUse2EditPart.VISUAL_ID:
 				case PropertyEditPart.VISUAL_ID:
 				case ParameterEditPart.VISUAL_ID:
@@ -195,6 +206,11 @@ public class UMLViewProvider extends AbstractViewProvider {
 				case ClassName2EditPart.VISUAL_ID:
 				case ClassClass_contentsEditPart.VISUAL_ID:
 					if (Class3EditPart.VISUAL_ID != UMLVisualIDRegistry.getVisualID(containerView) || containerView.getElement() != domainElement) {
+						return null; // wrong container
+					}
+					break;
+				case InterfaceNameEditPart.VISUAL_ID:
+					if (InterfaceEditPart.VISUAL_ID != UMLVisualIDRegistry.getVisualID(containerView) || containerView.getElement() != domainElement) {
 						return null; // wrong container
 					}
 					break;
@@ -262,6 +278,10 @@ public class UMLViewProvider extends AbstractViewProvider {
 			return Class3ViewFactory.class;
 		case ClassName2EditPart.VISUAL_ID:
 			return ClassName2ViewFactory.class;
+		case InterfaceEditPart.VISUAL_ID:
+			return InterfaceViewFactory.class;
+		case InterfaceNameEditPart.VISUAL_ID:
+			return InterfaceNameViewFactory.class;
 		case CollaborationUse2EditPart.VISUAL_ID:
 			return CollaborationUse2ViewFactory.class;
 		case CollaborationUseName2EditPart.VISUAL_ID:
@@ -340,6 +360,12 @@ public class UMLViewProvider extends AbstractViewProvider {
 			return ConnectorViewFactory.class;
 		case DependencyEditPart.VISUAL_ID:
 			return DependencyViewFactory.class;
+		case InterfaceRealizationEditPart.VISUAL_ID:
+			return InterfaceRealizationViewFactory.class;
+		case UsageEditPart.VISUAL_ID:
+			return UsageViewFactory.class;
+		case PortProvidedEditPart.VISUAL_ID:
+			return PortProvidedViewFactory.class;
 		}
 		return null;
 	}
