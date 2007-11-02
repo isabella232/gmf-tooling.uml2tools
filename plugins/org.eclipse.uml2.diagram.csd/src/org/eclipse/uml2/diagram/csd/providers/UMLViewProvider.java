@@ -25,6 +25,9 @@ import org.eclipse.uml2.diagram.csd.edit.parts.ConnectorEditPart;
 import org.eclipse.uml2.diagram.csd.edit.parts.DependencyEditPart;
 import org.eclipse.uml2.diagram.csd.edit.parts.DependencyNameEditPart;
 import org.eclipse.uml2.diagram.csd.edit.parts.ElementImportEditPart;
+import org.eclipse.uml2.diagram.csd.edit.parts.InstanceSpecificationEditPart;
+import org.eclipse.uml2.diagram.csd.edit.parts.InstanceSpecificationNameEditPart;
+import org.eclipse.uml2.diagram.csd.edit.parts.InstanceSpecificationSlotsEditPart;
 import org.eclipse.uml2.diagram.csd.edit.parts.InterfaceEditPart;
 import org.eclipse.uml2.diagram.csd.edit.parts.InterfaceNameEditPart;
 import org.eclipse.uml2.diagram.csd.edit.parts.InterfaceRealizationEditPart;
@@ -43,6 +46,8 @@ import org.eclipse.uml2.diagram.csd.edit.parts.Property3EditPart;
 import org.eclipse.uml2.diagram.csd.edit.parts.PropertyEditPart;
 import org.eclipse.uml2.diagram.csd.edit.parts.PropertyName2EditPart;
 import org.eclipse.uml2.diagram.csd.edit.parts.PropertyNameEditPart;
+import org.eclipse.uml2.diagram.csd.edit.parts.SlotEditPart;
+import org.eclipse.uml2.diagram.csd.edit.parts.SlotNameEditPart;
 import org.eclipse.uml2.diagram.csd.edit.parts.UsageEditPart;
 import org.eclipse.uml2.diagram.csd.part.UMLVisualIDRegistry;
 import org.eclipse.uml2.diagram.csd.view.factories.Class2ViewFactory;
@@ -64,6 +69,9 @@ import org.eclipse.uml2.diagram.csd.view.factories.ConnectorViewFactory;
 import org.eclipse.uml2.diagram.csd.view.factories.DependencyNameViewFactory;
 import org.eclipse.uml2.diagram.csd.view.factories.DependencyViewFactory;
 import org.eclipse.uml2.diagram.csd.view.factories.ElementImportViewFactory;
+import org.eclipse.uml2.diagram.csd.view.factories.InstanceSpecificationNameViewFactory;
+import org.eclipse.uml2.diagram.csd.view.factories.InstanceSpecificationSlotsViewFactory;
+import org.eclipse.uml2.diagram.csd.view.factories.InstanceSpecificationViewFactory;
 import org.eclipse.uml2.diagram.csd.view.factories.InterfaceNameViewFactory;
 import org.eclipse.uml2.diagram.csd.view.factories.InterfaceRealizationViewFactory;
 import org.eclipse.uml2.diagram.csd.view.factories.InterfaceViewFactory;
@@ -82,6 +90,8 @@ import org.eclipse.uml2.diagram.csd.view.factories.Property3ViewFactory;
 import org.eclipse.uml2.diagram.csd.view.factories.PropertyName2ViewFactory;
 import org.eclipse.uml2.diagram.csd.view.factories.PropertyNameViewFactory;
 import org.eclipse.uml2.diagram.csd.view.factories.PropertyViewFactory;
+import org.eclipse.uml2.diagram.csd.view.factories.SlotNameViewFactory;
+import org.eclipse.uml2.diagram.csd.view.factories.SlotViewFactory;
 import org.eclipse.uml2.diagram.csd.view.factories.UsageViewFactory;
 
 /**
@@ -169,6 +179,7 @@ public class UMLViewProvider extends AbstractViewProvider {
 				case CollaborationEditPart.VISUAL_ID:
 				case Package2EditPart.VISUAL_ID:
 				case InterfaceEditPart.VISUAL_ID:
+				case InstanceSpecificationEditPart.VISUAL_ID:
 				case CollaborationUse2EditPart.VISUAL_ID:
 				case PropertyEditPart.VISUAL_ID:
 				case ParameterEditPart.VISUAL_ID:
@@ -178,6 +189,7 @@ public class UMLViewProvider extends AbstractViewProvider {
 				case PortEditPart.VISUAL_ID:
 				case ElementImportEditPart.VISUAL_ID:
 				case Property3EditPart.VISUAL_ID:
+				case SlotEditPart.VISUAL_ID:
 					if (domainElement == null || visualID != UMLVisualIDRegistry.getNodeVisualID(containerView, domainElement)) {
 						return null; // visual id in semantic hint should match visual id for domain element
 					}
@@ -214,6 +226,12 @@ public class UMLViewProvider extends AbstractViewProvider {
 						return null; // wrong container
 					}
 					break;
+				case InstanceSpecificationNameEditPart.VISUAL_ID:
+				case InstanceSpecificationSlotsEditPart.VISUAL_ID:
+					if (InstanceSpecificationEditPart.VISUAL_ID != UMLVisualIDRegistry.getVisualID(containerView) || containerView.getElement() != domainElement) {
+						return null; // wrong container
+					}
+					break;
 				case CollaborationUseName2EditPart.VISUAL_ID:
 					if (CollaborationUse2EditPart.VISUAL_ID != UMLVisualIDRegistry.getVisualID(containerView) || containerView.getElement() != domainElement) {
 						return null; // wrong container
@@ -236,6 +254,11 @@ public class UMLViewProvider extends AbstractViewProvider {
 					break;
 				case PropertyName2EditPart.VISUAL_ID:
 					if (Property3EditPart.VISUAL_ID != UMLVisualIDRegistry.getVisualID(containerView) || containerView.getElement() != domainElement) {
+						return null; // wrong container
+					}
+					break;
+				case SlotNameEditPart.VISUAL_ID:
+					if (SlotEditPart.VISUAL_ID != UMLVisualIDRegistry.getVisualID(containerView) || containerView.getElement() != domainElement) {
 						return null; // wrong container
 					}
 					break;
@@ -282,6 +305,10 @@ public class UMLViewProvider extends AbstractViewProvider {
 			return InterfaceViewFactory.class;
 		case InterfaceNameEditPart.VISUAL_ID:
 			return InterfaceNameViewFactory.class;
+		case InstanceSpecificationEditPart.VISUAL_ID:
+			return InstanceSpecificationViewFactory.class;
+		case InstanceSpecificationNameEditPart.VISUAL_ID:
+			return InstanceSpecificationNameViewFactory.class;
 		case CollaborationUse2EditPart.VISUAL_ID:
 			return CollaborationUse2ViewFactory.class;
 		case CollaborationUseName2EditPart.VISUAL_ID:
@@ -310,6 +337,10 @@ public class UMLViewProvider extends AbstractViewProvider {
 			return Property3ViewFactory.class;
 		case PropertyName2EditPart.VISUAL_ID:
 			return PropertyName2ViewFactory.class;
+		case SlotEditPart.VISUAL_ID:
+			return SlotViewFactory.class;
+		case SlotNameEditPart.VISUAL_ID:
+			return SlotNameViewFactory.class;
 		case CollaborationContentsEditPart.VISUAL_ID:
 			return CollaborationContentsViewFactory.class;
 		case ClassAttributesEditPart.VISUAL_ID:
@@ -322,6 +353,8 @@ public class UMLViewProvider extends AbstractViewProvider {
 			return PackageImportsViewFactory.class;
 		case ClassClass_contentsEditPart.VISUAL_ID:
 			return ClassClass_contentsViewFactory.class;
+		case InstanceSpecificationSlotsEditPart.VISUAL_ID:
+			return InstanceSpecificationSlotsViewFactory.class;
 		case DependencyNameEditPart.VISUAL_ID:
 			return DependencyNameViewFactory.class;
 		}

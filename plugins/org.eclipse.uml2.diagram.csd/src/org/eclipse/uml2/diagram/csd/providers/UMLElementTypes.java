@@ -77,6 +77,11 @@ public class UMLElementTypes extends ElementInitializers {
 	/**
 	 * @generated
 	 */
+	public static final IElementType InstanceSpecification_2011 = getElementType("org.eclipse.uml2.diagram.csd.InstanceSpecification_2011"); //$NON-NLS-1$
+
+	/**
+	 * @generated
+	 */
 	public static final IElementType CollaborationUse_3002 = getElementType("org.eclipse.uml2.diagram.csd.CollaborationUse_3002"); //$NON-NLS-1$
 
 	/**
@@ -118,6 +123,11 @@ public class UMLElementTypes extends ElementInitializers {
 	 * @generated
 	 */
 	public static final IElementType Property_3014 = getElementType("org.eclipse.uml2.diagram.csd.Property_3014"); //$NON-NLS-1$
+
+	/**
+	 * @generated
+	 */
+	public static final IElementType Slot_3015 = getElementType("org.eclipse.uml2.diagram.csd.Slot_3015"); //$NON-NLS-1$
 
 	/**
 	 * @generated
@@ -262,6 +272,8 @@ public class UMLElementTypes extends ElementInitializers {
 
 			elements.put(Interface_2009, UMLPackage.eINSTANCE.getInterface());
 
+			elements.put(InstanceSpecification_2011, UMLPackage.eINSTANCE.getInstanceSpecification());
+
 			elements.put(CollaborationUse_3002, UMLPackage.eINSTANCE.getCollaborationUse());
 
 			elements.put(Property_3007, UMLPackage.eINSTANCE.getProperty());
@@ -279,6 +291,8 @@ public class UMLElementTypes extends ElementInitializers {
 			elements.put(ElementImport_3004, UMLPackage.eINSTANCE.getElementImport());
 
 			elements.put(Property_3014, UMLPackage.eINSTANCE.getProperty());
+
+			elements.put(Slot_3015, UMLPackage.eINSTANCE.getSlot());
 
 			elements.put(Connector_4005, UMLPackage.eINSTANCE.getConnector());
 
@@ -312,6 +326,7 @@ public class UMLElementTypes extends ElementInitializers {
 			KNOWN_ELEMENT_TYPES.add(Package_2003);
 			KNOWN_ELEMENT_TYPES.add(Class_2007);
 			KNOWN_ELEMENT_TYPES.add(Interface_2009);
+			KNOWN_ELEMENT_TYPES.add(InstanceSpecification_2011);
 			KNOWN_ELEMENT_TYPES.add(CollaborationUse_3002);
 			KNOWN_ELEMENT_TYPES.add(Property_3007);
 			KNOWN_ELEMENT_TYPES.add(Parameter_3013);
@@ -321,6 +336,7 @@ public class UMLElementTypes extends ElementInitializers {
 			KNOWN_ELEMENT_TYPES.add(Port_3011);
 			KNOWN_ELEMENT_TYPES.add(ElementImport_3004);
 			KNOWN_ELEMENT_TYPES.add(Property_3014);
+			KNOWN_ELEMENT_TYPES.add(Slot_3015);
 			KNOWN_ELEMENT_TYPES.add(Connector_4005);
 			KNOWN_ELEMENT_TYPES.add(Dependency_4006);
 			KNOWN_ELEMENT_TYPES.add(InterfaceRealization_4007);

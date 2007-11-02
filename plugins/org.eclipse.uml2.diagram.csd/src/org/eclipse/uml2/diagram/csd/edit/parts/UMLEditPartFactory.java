@@ -64,6 +64,12 @@ public class UMLEditPartFactory implements EditPartFactory {
 			case InterfaceNameEditPart.VISUAL_ID:
 				return new InterfaceNameEditPart(view);
 
+			case InstanceSpecificationEditPart.VISUAL_ID:
+				return new InstanceSpecificationEditPart(view);
+
+			case InstanceSpecificationNameEditPart.VISUAL_ID:
+				return new InstanceSpecificationNameEditPart(view);
+
 			case CollaborationUse2EditPart.VISUAL_ID:
 				return new CollaborationUse2EditPart(view);
 
@@ -106,6 +112,12 @@ public class UMLEditPartFactory implements EditPartFactory {
 			case PropertyName2EditPart.VISUAL_ID:
 				return new PropertyName2EditPart(view);
 
+			case SlotEditPart.VISUAL_ID:
+				return new SlotEditPart(view);
+
+			case SlotNameEditPart.VISUAL_ID:
+				return new SlotNameEditPart(view);
+
 			case CollaborationContentsEditPart.VISUAL_ID:
 				return new CollaborationContentsEditPart(view);
 
@@ -123,6 +135,9 @@ public class UMLEditPartFactory implements EditPartFactory {
 
 			case ClassClass_contentsEditPart.VISUAL_ID:
 				return new ClassClass_contentsEditPart(view);
+
+			case InstanceSpecificationSlotsEditPart.VISUAL_ID:
+				return new InstanceSpecificationSlotsEditPart(view);
 
 			case ConnectorEditPart.VISUAL_ID:
 				return new ConnectorEditPart(view);

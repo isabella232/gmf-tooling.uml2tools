@@ -333,6 +333,16 @@ public class Messages extends NLS {
 	/**
 	 * @generated
 	 */
+	public static String Slot7CreationTool_title;
+
+	/**
+	 * @generated
+	 */
+	public static String Slot7CreationTool_desc;
+
+	/**
+	 * @generated
+	 */
 	public static String Collaboration1CreationTool_title;
 
 	/**
@@ -359,6 +369,16 @@ public class Messages extends NLS {
 	 * @generated
 	 */
 	public static String Interface3CreationTool_desc;
+
+	/**
+	 * @generated
+	 */
+	public static String InstanceSpecification4CreationTool_title;
+
+	/**
+	 * @generated
+	 */
+	public static String InstanceSpecification4CreationTool_desc;
 
 	/**
 	 * @generated
@@ -433,6 +453,11 @@ public class Messages extends NLS {
 	/**
 	 * @generated
 	 */
+	public static String InstanceSpecificationSlotsEditPart_title;
+
+	/**
+	 * @generated
+	 */
 	public static String CommandName_OpenDiagram;
 
 	/**
@@ -489,6 +514,16 @@ public class Messages extends NLS {
 	 * @generated
 	 */
 	public static String NavigatorGroupName_Interface_2009_outgoinglinks;
+
+	/**
+	 * @generated
+	 */
+	public static String NavigatorGroupName_InstanceSpecification_2011_incominglinks;
+
+	/**
+	 * @generated
+	 */
+	public static String NavigatorGroupName_InstanceSpecification_2011_outgoinglinks;
 
 	/**
 	 * @generated

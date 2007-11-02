@@ -39,6 +39,7 @@ public class UMLPaletteFactory {
 		paletteContainer.add(createPort4CreationTool());
 		paletteContainer.add(createRole5CreationTool());
 		paletteContainer.add(createCollaborationUse6CreationTool());
+		paletteContainer.add(createSlot7CreationTool());
 		return paletteContainer;
 	}
 
@@ -52,6 +53,7 @@ public class UMLPaletteFactory {
 		paletteContainer.add(createCollaboration1CreationTool());
 		paletteContainer.add(createClass2CreationTool());
 		paletteContainer.add(createInterface3CreationTool());
+		paletteContainer.add(createInstanceSpecification4CreationTool());
 		return paletteContainer;
 	}
 
@@ -144,6 +146,18 @@ public class UMLPaletteFactory {
 	/**
 	 * @generated
 	 */
+	private ToolEntry createSlot7CreationTool() {
+		List/*<IElementType>*/types = new ArrayList/*<IElementType>*/(1);
+		types.add(UMLElementTypes.Slot_3015);
+		NodeToolEntry entry = new NodeToolEntry(Messages.Slot7CreationTool_title, Messages.Slot7CreationTool_desc, types);
+		entry.setSmallIcon(UMLElementTypes.getImageDescriptor(UMLElementTypes.Slot_3015));
+		entry.setLargeIcon(entry.getSmallIcon());
+		return entry;
+	}
+
+	/**
+	 * @generated
+	 */
 	private ToolEntry createCollaboration1CreationTool() {
 		List/*<IElementType>*/types = new ArrayList/*<IElementType>*/(1);
 		types.add(UMLElementTypes.Collaboration_2005);
@@ -175,6 +189,18 @@ public class UMLPaletteFactory {
 		types.add(UMLElementTypes.Interface_2009);
 		NodeToolEntry entry = new NodeToolEntry(Messages.Interface3CreationTool_title, Messages.Interface3CreationTool_desc, types);
 		entry.setSmallIcon(UMLElementTypes.getImageDescriptor(UMLElementTypes.Interface_2009));
+		entry.setLargeIcon(entry.getSmallIcon());
+		return entry;
+	}
+
+	/**
+	 * @generated
+	 */
+	private ToolEntry createInstanceSpecification4CreationTool() {
+		List/*<IElementType>*/types = new ArrayList/*<IElementType>*/(1);
+		types.add(UMLElementTypes.InstanceSpecification_2011);
+		NodeToolEntry entry = new NodeToolEntry(Messages.InstanceSpecification4CreationTool_title, Messages.InstanceSpecification4CreationTool_desc, types);
+		entry.setSmallIcon(UMLElementTypes.getImageDescriptor(UMLElementTypes.InstanceSpecification_2011));
 		entry.setLargeIcon(entry.getSmallIcon());
 		return entry;
 	}

@@ -32,6 +32,7 @@ import org.eclipse.uml2.diagram.csd.edit.parts.CollaborationUse2EditPart;
 import org.eclipse.uml2.diagram.csd.edit.parts.ConnectorEditPart;
 import org.eclipse.uml2.diagram.csd.edit.parts.DependencyEditPart;
 import org.eclipse.uml2.diagram.csd.edit.parts.ElementImportEditPart;
+import org.eclipse.uml2.diagram.csd.edit.parts.InstanceSpecificationEditPart;
 import org.eclipse.uml2.diagram.csd.edit.parts.InterfaceEditPart;
 import org.eclipse.uml2.diagram.csd.edit.parts.InterfaceRealizationEditPart;
 import org.eclipse.uml2.diagram.csd.edit.parts.OperationEditPart;
@@ -42,6 +43,7 @@ import org.eclipse.uml2.diagram.csd.edit.parts.PortEditPart;
 import org.eclipse.uml2.diagram.csd.edit.parts.Property2EditPart;
 import org.eclipse.uml2.diagram.csd.edit.parts.Property3EditPart;
 import org.eclipse.uml2.diagram.csd.edit.parts.PropertyEditPart;
+import org.eclipse.uml2.diagram.csd.edit.parts.SlotEditPart;
 import org.eclipse.uml2.diagram.csd.edit.parts.UsageEditPart;
 import org.eclipse.uml2.diagram.csd.part.UMLDiagramUpdater;
 import org.eclipse.uml2.diagram.csd.part.UMLLinkDescriptor;
@@ -88,6 +90,7 @@ public class PackageCanonicalEditPolicy extends CanonicalConnectionEditPolicy {
 		case CollaborationEditPart.VISUAL_ID:
 		case Package2EditPart.VISUAL_ID:
 		case InterfaceEditPart.VISUAL_ID:
+		case InstanceSpecificationEditPart.VISUAL_ID:
 			return !semanticChildren.contains(view.getElement()) || actualID != suggestedID;
 		case ClassEditPart.VISUAL_ID:
 			if (!semanticChildren.contains(view.getElement())) {
@@ -239,6 +242,11 @@ public class PackageCanonicalEditPolicy extends CanonicalConnectionEditPolicy {
 			result.addAll(UMLDiagramUpdater.getInterface_2009ContainedLinks(view));
 			break;
 		}
+		case InstanceSpecificationEditPart.VISUAL_ID: {
+			domain2NotationMap.put(view.getElement(), view);
+			result.addAll(UMLDiagramUpdater.getInstanceSpecification_2011ContainedLinks(view));
+			break;
+		}
 		case CollaborationUse2EditPart.VISUAL_ID: {
 			domain2NotationMap.put(view.getElement(), view);
 			result.addAll(UMLDiagramUpdater.getCollaborationUse_3002ContainedLinks(view));
@@ -282,6 +290,11 @@ public class PackageCanonicalEditPolicy extends CanonicalConnectionEditPolicy {
 		case Property3EditPart.VISUAL_ID: {
 			domain2NotationMap.put(view.getElement(), view);
 			result.addAll(UMLDiagramUpdater.getProperty_3014ContainedLinks(view));
+			break;
+		}
+		case SlotEditPart.VISUAL_ID: {
+			domain2NotationMap.put(view.getElement(), view);
+			result.addAll(UMLDiagramUpdater.getSlot_3015ContainedLinks(view));
 			break;
 		}
 		case ConnectorEditPart.VISUAL_ID: {

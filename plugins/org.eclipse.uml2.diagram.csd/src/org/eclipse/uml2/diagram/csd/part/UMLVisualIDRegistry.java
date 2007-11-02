@@ -24,6 +24,9 @@ import org.eclipse.uml2.diagram.csd.edit.parts.ConnectorEditPart;
 import org.eclipse.uml2.diagram.csd.edit.parts.DependencyEditPart;
 import org.eclipse.uml2.diagram.csd.edit.parts.DependencyNameEditPart;
 import org.eclipse.uml2.diagram.csd.edit.parts.ElementImportEditPart;
+import org.eclipse.uml2.diagram.csd.edit.parts.InstanceSpecificationEditPart;
+import org.eclipse.uml2.diagram.csd.edit.parts.InstanceSpecificationNameEditPart;
+import org.eclipse.uml2.diagram.csd.edit.parts.InstanceSpecificationSlotsEditPart;
 import org.eclipse.uml2.diagram.csd.edit.parts.InterfaceEditPart;
 import org.eclipse.uml2.diagram.csd.edit.parts.InterfaceNameEditPart;
 import org.eclipse.uml2.diagram.csd.edit.parts.InterfaceRealizationEditPart;
@@ -41,6 +44,8 @@ import org.eclipse.uml2.diagram.csd.edit.parts.Property3EditPart;
 import org.eclipse.uml2.diagram.csd.edit.parts.PropertyEditPart;
 import org.eclipse.uml2.diagram.csd.edit.parts.PropertyName2EditPart;
 import org.eclipse.uml2.diagram.csd.edit.parts.PropertyNameEditPart;
+import org.eclipse.uml2.diagram.csd.edit.parts.SlotEditPart;
+import org.eclipse.uml2.diagram.csd.edit.parts.SlotNameEditPart;
 import org.eclipse.uml2.diagram.csd.edit.parts.UsageEditPart;
 import org.eclipse.uml2.diagram.csd.expressions.UMLAbstractExpression;
 import org.eclipse.uml2.diagram.csd.expressions.UMLOCLFactory;
@@ -233,6 +238,11 @@ public class UMLVisualIDRegistry {
 				return Property3EditPart.VISUAL_ID;
 			}
 			break;
+		case InstanceSpecificationSlotsEditPart.VISUAL_ID:
+			if (UMLPackage.eINSTANCE.getSlot().isSuperTypeOf(domainElement.eClass())) {
+				return SlotEditPart.VISUAL_ID;
+			}
+			break;
 		case PackageEditPart.VISUAL_ID:
 			// We want to additionally show the Canvas Semantical Element in the auxiliary 
 			// org.eclipse.uml2.diagram.csd.edit.parts.Package2EditPart (that serves as a pure visual container for children). 
@@ -254,6 +264,9 @@ public class UMLVisualIDRegistry {
 			}
 			if (UMLPackage.eINSTANCE.getInterface().isSuperTypeOf(domainElement.eClass())) {
 				return InterfaceEditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getInstanceSpecification().isSuperTypeOf(domainElement.eClass())) {
+				return InstanceSpecificationEditPart.VISUAL_ID;
 			}
 			break;
 		}
@@ -334,6 +347,14 @@ public class UMLVisualIDRegistry {
 				return true;
 			}
 			break;
+		case InstanceSpecificationEditPart.VISUAL_ID:
+			if (InstanceSpecificationNameEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			if (InstanceSpecificationSlotsEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			break;
 		case CollaborationUse2EditPart.VISUAL_ID:
 			if (CollaborationUseName2EditPart.VISUAL_ID == nodeVisualID) {
 				return true;
@@ -356,6 +377,11 @@ public class UMLVisualIDRegistry {
 			break;
 		case Property3EditPart.VISUAL_ID:
 			if (PropertyName2EditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			break;
+		case SlotEditPart.VISUAL_ID:
+			if (SlotNameEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
 			break;
@@ -387,6 +413,11 @@ public class UMLVisualIDRegistry {
 				return true;
 			}
 			break;
+		case InstanceSpecificationSlotsEditPart.VISUAL_ID:
+			if (SlotEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			break;
 		case PackageEditPart.VISUAL_ID:
 			if (CollaborationEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
@@ -401,6 +432,9 @@ public class UMLVisualIDRegistry {
 				return true;
 			}
 			if (InterfaceEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			if (InstanceSpecificationEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
 			break;

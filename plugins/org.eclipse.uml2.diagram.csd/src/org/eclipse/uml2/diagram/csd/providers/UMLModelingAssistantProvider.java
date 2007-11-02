@@ -25,6 +25,8 @@ import org.eclipse.uml2.diagram.csd.edit.parts.ClassClass_contentsEditPart;
 import org.eclipse.uml2.diagram.csd.edit.parts.ClassEditPart;
 import org.eclipse.uml2.diagram.csd.edit.parts.CollaborationContentsEditPart;
 import org.eclipse.uml2.diagram.csd.edit.parts.CollaborationEditPart;
+import org.eclipse.uml2.diagram.csd.edit.parts.InstanceSpecificationEditPart;
+import org.eclipse.uml2.diagram.csd.edit.parts.InstanceSpecificationSlotsEditPart;
 import org.eclipse.uml2.diagram.csd.edit.parts.InterfaceEditPart;
 import org.eclipse.uml2.diagram.csd.edit.parts.Package2EditPart;
 import org.eclipse.uml2.diagram.csd.edit.parts.PackageEditPart;
@@ -71,6 +73,11 @@ public class UMLModelingAssistantProvider extends ModelingAssistantProvider {
 			types.add(UMLElementTypes.Property_3014);
 			return types;
 		}
+		if (editPart instanceof InstanceSpecificationSlotsEditPart) {
+			List types = new ArrayList();
+			types.add(UMLElementTypes.Slot_3015);
+			return types;
+		}
 		if (editPart instanceof PackageEditPart) {
 			List types = new ArrayList();
 			types.add(UMLElementTypes.Collaboration_2005);
@@ -78,6 +85,7 @@ public class UMLModelingAssistantProvider extends ModelingAssistantProvider {
 			types.add(UMLElementTypes.Package_2003);
 			types.add(UMLElementTypes.Class_2007);
 			types.add(UMLElementTypes.Interface_2009);
+			types.add(UMLElementTypes.InstanceSpecification_2011);
 			return types;
 		}
 		return Collections.EMPTY_LIST;

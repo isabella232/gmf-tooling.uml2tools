@@ -34,6 +34,10 @@
           xsi:type="gmftool:CreationTool"
           title="Collaboration Use"
           description="Create Collaboration Use"/>
+      <tools
+          xsi:type="gmftool:CreationTool"
+          title="Slot"
+          description="Create Slot"/>
     </tools>
     <tools
         xsi:type="gmftool:ToolGroup"
@@ -51,6 +55,10 @@
           xsi:type="gmftool:CreationTool"
           title="Interface"
           description="Create Interface"/>
+      <tools
+          xsi:type="gmftool:CreationTool"
+          title="Instance Specification"
+          description="Create Instance Specification"/>
     </tools>
     <tools
         xsi:type="gmftool:ToolGroup"

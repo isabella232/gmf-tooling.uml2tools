@@ -361,6 +361,16 @@
       </metamodel>
       <metamodel nsURI="http://www.eclipse.org/uml2/2.1.0/UML">
          <metamodelType
+               id="org.eclipse.uml2.diagram.csd.InstanceSpecification_2011"
+               name="%metatype.name.InstanceSpecification_2011"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
+               eclass="InstanceSpecification"
+               edithelper="org.eclipse.uml2.diagram.csd.edit.helpers.InstanceSpecificationEditHelper">
+            <param name="semanticHint" value="2011"/>
+         </metamodelType>
+      </metamodel>
+      <metamodel nsURI="http://www.eclipse.org/uml2/2.1.0/UML">
+         <metamodelType
                id="org.eclipse.uml2.diagram.csd.CollaborationUse_3002"
                name="%metatype.name.CollaborationUse_3002"
                kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
@@ -448,6 +458,16 @@
       </metamodel>
       <metamodel nsURI="http://www.eclipse.org/uml2/2.1.0/UML">
          <metamodelType
+               id="org.eclipse.uml2.diagram.csd.Slot_3015"
+               name="%metatype.name.Slot_3015"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
+               eclass="Slot"
+               edithelper="org.eclipse.uml2.diagram.csd.edit.helpers.SlotEditHelper">
+            <param name="semanticHint" value="3015"/>
+         </metamodelType>
+      </metamodel>
+      <metamodel nsURI="http://www.eclipse.org/uml2/2.1.0/UML">
+         <metamodelType
                id="org.eclipse.uml2.diagram.csd.Connector_4005"
                name="%metatype.name.Connector_4005"
                kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
@@ -513,6 +533,7 @@
          <elementType ref="org.eclipse.uml2.diagram.csd.Package_2003"/>
          <elementType ref="org.eclipse.uml2.diagram.csd.Class_2007"/>
          <elementType ref="org.eclipse.uml2.diagram.csd.Interface_2009"/>
+         <elementType ref="org.eclipse.uml2.diagram.csd.InstanceSpecification_2011"/>
          <elementType ref="org.eclipse.uml2.diagram.csd.CollaborationUse_3002"/>
          <elementType ref="org.eclipse.uml2.diagram.csd.Property_3007"/>
          <elementType ref="org.eclipse.uml2.diagram.csd.Parameter_3013"/>
@@ -522,6 +543,7 @@
          <elementType ref="org.eclipse.uml2.diagram.csd.Port_3011"/>
          <elementType ref="org.eclipse.uml2.diagram.csd.ElementImport_3004"/>
          <elementType ref="org.eclipse.uml2.diagram.csd.Property_3014"/>
+         <elementType ref="org.eclipse.uml2.diagram.csd.Slot_3015"/>
          <elementType ref="org.eclipse.uml2.diagram.csd.Connector_4005"/>
          <elementType ref="org.eclipse.uml2.diagram.csd.Dependency_4006"/>
          <elementType ref="org.eclipse.uml2.diagram.csd.InterfaceRealization_4007"/>
