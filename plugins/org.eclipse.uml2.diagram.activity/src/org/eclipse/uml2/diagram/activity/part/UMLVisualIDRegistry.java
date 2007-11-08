@@ -984,9 +984,15 @@ public class UMLVisualIDRegistry {
 			if (ControlFlowNameEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
+			if (ControlFlowName2EditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
 			break;
 		case ObjectFlowEditPart.VISUAL_ID:
 			if (ObjectFlowNameEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			if (ObjectFlowName2EditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
 			break;

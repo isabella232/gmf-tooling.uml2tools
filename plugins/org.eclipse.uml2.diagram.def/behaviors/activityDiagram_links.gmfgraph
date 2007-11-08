@@ -57,6 +57,12 @@
           xsi:type="gmfgraph:Label"
           name="NameLabel"/>
     </descriptors>
+    <descriptors
+        name="WeightLabel">
+      <actualFigure
+          xsi:type="gmfgraph:Label"
+          name="WeightLabel"/>
+    </descriptors>
   </figures>
   <connections
       name="ActivityEdgeLink"
@@ -73,5 +79,13 @@
       elementIcon="false">
     <facets
         xsi:type="gmfgraph:AlignmentFacet"/>
+  </labels>
+  <labels
+      name="ActivityEdge_weight"
+      figure="WeightLabel"
+      elementIcon="false">
+    <facets
+        xsi:type="gmfgraph:AlignmentFacet"
+        alignment="CENTER"/>
   </labels>
 </gmfgraph:Canvas>

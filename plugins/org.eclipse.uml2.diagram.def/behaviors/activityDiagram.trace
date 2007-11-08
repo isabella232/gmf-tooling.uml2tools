@@ -323,12 +323,18 @@
     <linkLabelTraces
         visualID="6003"
         queryText="true"/>
+    <linkLabelTraces
+        visualID="6005"
+        queryText="true"/>
   </linkTraces>
   <linkTraces
       visualID="4002"
       queryText="modelFacet.oclIsKindOf(gmfgen::TypeLinkModelFacet) and (let _eClass_:ecore::EClass = modelFacet.oclAsType(gmfgen::TypeLinkModelFacet).metaClass.ecoreClass in _eClass_.ePackage.nsURI = 'http://www.eclipse.org/uml2/2.1.0/UML' and _eClass_.name = 'ObjectFlow')">
     <linkLabelTraces
         visualID="6004"
+        queryText="true"/>
+    <linkLabelTraces
+        visualID="6006"
         queryText="true"/>
   </linkTraces>
   <linkTraces
