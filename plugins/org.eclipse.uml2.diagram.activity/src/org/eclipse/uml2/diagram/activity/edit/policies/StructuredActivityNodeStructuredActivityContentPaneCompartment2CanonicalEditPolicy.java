@@ -21,8 +21,10 @@ import org.eclipse.uml2.diagram.activity.edit.parts.DataStoreNode2EditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.DecisionNode2EditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.FlowFinalNode2EditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.ForkNode2EditPart;
+import org.eclipse.uml2.diagram.activity.edit.parts.InputPin6EditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.JoinNode2EditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.OpaqueAction2EditPart;
+import org.eclipse.uml2.diagram.activity.edit.parts.OutputPin4EditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.Pin2EditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.StructuredActivityNode2EditPart;
 import org.eclipse.uml2.diagram.activity.part.UMLDiagramUpdater;
@@ -74,6 +76,8 @@ public class StructuredActivityNodeStructuredActivityContentPaneCompartment2Cano
 		case AddStructuralFeatureValueAction2EditPart.VISUAL_ID:
 		case DataStoreNode2EditPart.VISUAL_ID:
 		case CentralBufferNode2EditPart.VISUAL_ID:
+		case InputPin6EditPart.VISUAL_ID:
+		case OutputPin4EditPart.VISUAL_ID:
 			return !semanticChildren.contains(view.getElement()) || visualID != UMLVisualIDRegistry.getNodeVisualID((View) getHost().getModel(), view.getElement());
 		}
 		return false;

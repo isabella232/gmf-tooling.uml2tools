@@ -167,6 +167,8 @@ public class UMLModelingAssistantProvider extends ModelingAssistantProvider {
 			types.add(UMLElementTypes.AddStructuralFeatureValueAction_3023);
 			types.add(UMLElementTypes.DataStoreNode_3024);
 			types.add(UMLElementTypes.CentralBufferNode_3025);
+			types.add(UMLElementTypes.InputPin_3054);
+			types.add(UMLElementTypes.OutputPin_3055);
 			return types;
 		}
 		if (editPart instanceof StructuredActivityNodeStructuredActivityContentPaneCompartment2EditPart) {
@@ -187,6 +189,8 @@ public class UMLModelingAssistantProvider extends ModelingAssistantProvider {
 			types.add(UMLElementTypes.AddStructuralFeatureValueAction_3023);
 			types.add(UMLElementTypes.DataStoreNode_3024);
 			types.add(UMLElementTypes.CentralBufferNode_3025);
+			types.add(UMLElementTypes.InputPin_3054);
+			types.add(UMLElementTypes.OutputPin_3055);
 			return types;
 		}
 		if (editPart instanceof PackageEditPart) {

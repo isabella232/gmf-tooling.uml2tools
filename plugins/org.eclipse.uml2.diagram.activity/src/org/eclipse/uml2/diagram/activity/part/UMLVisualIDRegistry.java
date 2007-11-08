@@ -8,6 +8,7 @@ import org.eclipse.emf.ecore.EAnnotation;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.gmf.runtime.notation.Diagram;
 import org.eclipse.gmf.runtime.notation.View;
+import org.eclipse.uml2.diagram.activity.edit.parts.*;
 import org.eclipse.uml2.diagram.activity.edit.parts.AcceptEventAction2EditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.AcceptEventAction3EditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.AcceptEventAction4EditPart;
@@ -419,6 +420,12 @@ public class UMLVisualIDRegistry {
 			if (UMLPackage.eINSTANCE.getCentralBufferNode().isSuperTypeOf(domainElement.eClass())) {
 				return CentralBufferNode2EditPart.VISUAL_ID;
 			}
+			if (UMLPackage.eINSTANCE.getInputPin().isSuperTypeOf(domainElement.eClass())) {
+				return InputPin6EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getOutputPin().isSuperTypeOf(domainElement.eClass())) {
+				return OutputPin4EditPart.VISUAL_ID;
+			}
 			break;
 		case StructuredActivityNodeStructuredActivityContentPaneCompartment2EditPart.VISUAL_ID:
 			if (UMLPackage.eINSTANCE.getStructuredActivityNode().isSuperTypeOf(domainElement.eClass())) {
@@ -468,6 +475,12 @@ public class UMLVisualIDRegistry {
 			}
 			if (UMLPackage.eINSTANCE.getCentralBufferNode().isSuperTypeOf(domainElement.eClass())) {
 				return CentralBufferNode2EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getInputPin().isSuperTypeOf(domainElement.eClass())) {
+				return InputPin6EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getOutputPin().isSuperTypeOf(domainElement.eClass())) {
+				return OutputPin4EditPart.VISUAL_ID;
 			}
 			break;
 		case ConstraintPreconditionEditPart.VISUAL_ID:
@@ -883,6 +896,12 @@ public class UMLVisualIDRegistry {
 			if (CentralBufferNode2EditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
+			if (InputPin6EditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			if (OutputPin4EditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
 			break;
 		case StructuredActivityNodeStructuredActivityContentPaneCompartment2EditPart.VISUAL_ID:
 			if (StructuredActivityNode2EditPart.VISUAL_ID == nodeVisualID) {
@@ -931,6 +950,12 @@ public class UMLVisualIDRegistry {
 				return true;
 			}
 			if (CentralBufferNode2EditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			if (InputPin6EditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			if (OutputPin4EditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
 			break;

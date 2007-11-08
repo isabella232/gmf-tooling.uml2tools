@@ -277,6 +277,16 @@ public class UMLElementTypes extends ElementInitializers {
 	/**
 	 * @generated
 	 */
+	public static final IElementType InputPin_3054 = getElementType("org.eclipse.uml2.diagram.activity.InputPin_3054"); //$NON-NLS-1$
+
+	/**
+	 * @generated
+	 */
+	public static final IElementType OutputPin_3055 = getElementType("org.eclipse.uml2.diagram.activity.OutputPin_3055"); //$NON-NLS-1$
+
+	/**
+	 * @generated
+	 */
 	public static final IElementType OpaqueBehavior_3047 = getElementType("org.eclipse.uml2.diagram.activity.OpaqueBehavior_3047"); //$NON-NLS-1$
 
 	/**
@@ -527,6 +537,10 @@ public class UMLElementTypes extends ElementInitializers {
 
 			elements.put(CentralBufferNode_3025, UMLPackage.eINSTANCE.getCentralBufferNode());
 
+			elements.put(InputPin_3054, UMLPackage.eINSTANCE.getInputPin());
+
+			elements.put(OutputPin_3055, UMLPackage.eINSTANCE.getOutputPin());
+
 			elements.put(OpaqueBehavior_3047, UMLPackage.eINSTANCE.getOpaqueBehavior());
 
 			elements.put(ActivityParameterNode_3052, UMLPackage.eINSTANCE.getActivityParameterNode());
@@ -611,6 +625,8 @@ public class UMLElementTypes extends ElementInitializers {
 			KNOWN_ELEMENT_TYPES.add(AddStructuralFeatureValueAction_3023);
 			KNOWN_ELEMENT_TYPES.add(DataStoreNode_3024);
 			KNOWN_ELEMENT_TYPES.add(CentralBufferNode_3025);
+			KNOWN_ELEMENT_TYPES.add(InputPin_3054);
+			KNOWN_ELEMENT_TYPES.add(OutputPin_3055);
 			KNOWN_ELEMENT_TYPES.add(OpaqueBehavior_3047);
 			KNOWN_ELEMENT_TYPES.add(ActivityParameterNode_3052);
 			KNOWN_ELEMENT_TYPES.add(SendSignalAction_3053);

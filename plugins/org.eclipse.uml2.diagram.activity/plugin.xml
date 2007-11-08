@@ -811,6 +811,24 @@
          </specializationType>
       </metamodel>
       <metamodel nsURI="http://www.eclipse.org/uml2/2.1.0/UML">
+         <specializationType
+               id="org.eclipse.uml2.diagram.activity.InputPin_3054"
+               name="%metatype.name.InputPin_3054"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType">
+            <specializes id="org.eclipse.uml2.diagram.activity.InputPin_3003"/>
+            <param name="semanticHint" value="3054"/>
+         </specializationType>
+      </metamodel>
+      <metamodel nsURI="http://www.eclipse.org/uml2/2.1.0/UML">
+         <specializationType
+               id="org.eclipse.uml2.diagram.activity.OutputPin_3055"
+               name="%metatype.name.OutputPin_3055"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType">
+            <specializes id="org.eclipse.uml2.diagram.activity.OutputPin_3001"/>
+            <param name="semanticHint" value="3055"/>
+         </specializationType>
+      </metamodel>
+      <metamodel nsURI="http://www.eclipse.org/uml2/2.1.0/UML">
          <metamodelType
                id="org.eclipse.uml2.diagram.activity.OpaqueBehavior_3047"
                name="%metatype.name.OpaqueBehavior_3047"
@@ -977,6 +995,8 @@
          <elementType ref="org.eclipse.uml2.diagram.activity.AddStructuralFeatureValueAction_3023"/>
          <elementType ref="org.eclipse.uml2.diagram.activity.DataStoreNode_3024"/>
          <elementType ref="org.eclipse.uml2.diagram.activity.CentralBufferNode_3025"/>
+         <elementType ref="org.eclipse.uml2.diagram.activity.InputPin_3054"/>
+         <elementType ref="org.eclipse.uml2.diagram.activity.OutputPin_3055"/>
          <elementType ref="org.eclipse.uml2.diagram.activity.OpaqueBehavior_3047"/>
          <elementType ref="org.eclipse.uml2.diagram.activity.ActivityParameterNode_3052"/>
          <elementType ref="org.eclipse.uml2.diagram.activity.SendSignalAction_3053"/>

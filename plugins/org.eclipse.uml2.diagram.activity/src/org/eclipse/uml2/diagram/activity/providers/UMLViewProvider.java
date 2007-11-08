@@ -135,6 +135,8 @@ public class UMLViewProvider extends AbstractViewProvider {
 				case AddStructuralFeatureValueAction2EditPart.VISUAL_ID:
 				case DataStoreNode2EditPart.VISUAL_ID:
 				case CentralBufferNode2EditPart.VISUAL_ID:
+				case InputPin6EditPart.VISUAL_ID:
+				case OutputPin4EditPart.VISUAL_ID:
 				case OpaqueBehaviorEditPart.VISUAL_ID:
 				case ActivityParameterNodeEditPart.VISUAL_ID:
 				case SendSignalActionEditPart.VISUAL_ID:
@@ -516,6 +518,10 @@ public class UMLViewProvider extends AbstractViewProvider {
 			return CentralBufferNodeName3ViewFactory.class;
 		case CentralBufferNodeName4EditPart.VISUAL_ID:
 			return CentralBufferNodeName4ViewFactory.class;
+		case InputPin6EditPart.VISUAL_ID:
+			return InputPin6ViewFactory.class;
+		case OutputPin4EditPart.VISUAL_ID:
+			return OutputPin4ViewFactory.class;
 		case OpaqueBehaviorEditPart.VISUAL_ID:
 			return OpaqueBehaviorViewFactory.class;
 		case OpaqueBehaviorNameEditPart.VISUAL_ID:

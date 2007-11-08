@@ -14,8 +14,10 @@ import org.eclipse.uml2.diagram.activity.edit.commands.DataStoreNode2CreateComma
 import org.eclipse.uml2.diagram.activity.edit.commands.DecisionNode2CreateCommand;
 import org.eclipse.uml2.diagram.activity.edit.commands.FlowFinalNode2CreateCommand;
 import org.eclipse.uml2.diagram.activity.edit.commands.ForkNode2CreateCommand;
+import org.eclipse.uml2.diagram.activity.edit.commands.InputPin6CreateCommand;
 import org.eclipse.uml2.diagram.activity.edit.commands.JoinNode2CreateCommand;
 import org.eclipse.uml2.diagram.activity.edit.commands.OpaqueAction2CreateCommand;
+import org.eclipse.uml2.diagram.activity.edit.commands.OutputPin4CreateCommand;
 import org.eclipse.uml2.diagram.activity.edit.commands.Pin2CreateCommand;
 import org.eclipse.uml2.diagram.activity.edit.commands.StructuredActivityNode2CreateCommand;
 import org.eclipse.uml2.diagram.activity.providers.UMLElementTypes;
@@ -125,6 +127,18 @@ public class StructuredActivityNodeStructuredActivityContentPaneCompartmentItemS
 				req.setContainmentFeature(UMLPackage.eINSTANCE.getStructuredActivityNode_Node());
 			}
 			return getGEFWrapper(new CentralBufferNode2CreateCommand(req));
+		}
+		if (UMLElementTypes.InputPin_3054 == req.getElementType()) {
+			if (req.getContainmentFeature() == null) {
+				req.setContainmentFeature(UMLPackage.eINSTANCE.getStructuredActivityNode_Node());
+			}
+			return getGEFWrapper(new InputPin6CreateCommand(req));
+		}
+		if (UMLElementTypes.OutputPin_3055 == req.getElementType()) {
+			if (req.getContainmentFeature() == null) {
+				req.setContainmentFeature(UMLPackage.eINSTANCE.getStructuredActivityNode_Node());
+			}
+			return getGEFWrapper(new OutputPin4CreateCommand(req));
 		}
 		return super.getCreateCommand(req);
 	}
