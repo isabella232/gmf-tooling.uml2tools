@@ -80,6 +80,32 @@
           xsi:type="gmftool:CreationTool"
           title="Required Interface"
           description="Create Required Interface"/>
+      <tools
+          xsi:type="gmftool:ToolGroup"
+          title="Association"
+          description="Create Association"
+          stack="true">
+        <tools
+            xsi:type="gmftool:GenericTool"
+            title="Association"
+            description="Create Association"
+            toolClass="org.eclipse.uml2.diagram.csd.part.CreateAssociationLinkTool.NONE"/>
+        <tools
+            xsi:type="gmftool:GenericTool"
+            title="Shared Association"
+            description="Create Shared Association"
+            toolClass="org.eclipse.uml2.diagram.csd.part.CreateAssociationLinkTool.SHARED"/>
+        <tools
+            xsi:type="gmftool:GenericTool"
+            title="Composite Association"
+            description="Create Composite Association"
+            toolClass="org.eclipse.uml2.diagram.csd.part.CreateAssociationLinkTool.COMPOSITE"/>
+        <tools
+            xsi:type="gmftool:GenericTool"
+            title="Navigable Association"
+            description="Create Navigable Association"
+            toolClass="org.eclipse.uml2.diagram.csd.part.CreateAssociationLinkTool.NAVIGABLE"/>
+      </tools>
     </tools>
   </palette>
 </gmftool:ToolRegistry>

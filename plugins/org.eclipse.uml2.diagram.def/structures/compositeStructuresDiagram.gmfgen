@@ -1133,6 +1133,211 @@
             body="self.oclIsKindOf(uml::Port)"/>
       </creationConstraints>
     </links>
+    <links
+        visualID="4011"
+        editPartClassName="AssociationEditPart"
+        itemSemanticEditPolicyClassName="AssociationItemSemanticEditPolicy"
+        notationViewFactoryClassName="AssociationViewFactory"
+        createCommandClassName="AssociationCreateCommand"
+        reorientCommandClassName="AssociationReorientCommand">
+      <diagramRunTimeClass
+          href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Edge"/>
+      <elementType
+          xsi:type="gmfgen:MetamodelType"
+          editHelperClassName="AssociationEditHelper"/>
+      <viewmap
+          xsi:type="gmfgen:InnerClassViewmap"
+          className="AssociationLinkFigure"
+          classBody="&#xD;&#xA;/**&#xD;&#xA; * @generated&#xD;&#xA; */&#xD;&#xA;public class AssociationLinkFigure extends org.eclipse.gmf.runtime.draw2d.ui.figures.PolylineConnectionEx {&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;public AssociationLinkFigure() {&#xD;&#xA;&#x9;&#x9;&#x9;this.setForegroundColor(org.eclipse.draw2d.ColorConstants.blue);&#xD;&#xA;&#xD;&#xA;&#x9;&#x9;setSourceDecoration(createSourceDecoration());&#xD;&#xA;&#x9;&#x9;setTargetDecoration(createTargetDecoration());&#xD;&#xA;&#x9;}&#xD;&#xA;&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;private org.eclipse.draw2d.RotatableDecoration createSourceDecoration() {&#xD;&#xA;&#x9;&#x9;org.eclipse.uml2.diagram.common.draw2d.decoration.AssociationDecoration df = new org.eclipse.uml2.diagram.common.draw2d.decoration.AssociationDecoration();&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#x9;&#x9;return df;&#xD;&#xA;&#x9;}&#xD;&#xA;&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;private org.eclipse.draw2d.RotatableDecoration createTargetDecoration() {&#xD;&#xA;&#x9;&#x9;org.eclipse.uml2.diagram.common.draw2d.decoration.AssociationDecoration df = new org.eclipse.uml2.diagram.common.draw2d.decoration.AssociationDecoration();&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#x9;&#x9;return df;&#xD;&#xA;&#x9;}&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;}&#xD;&#xA;&#xD;&#xA;">
+        <attributes
+            xsi:type="gmfgen:StyleAttributes"
+            fixedForeground="true"/>
+        <requiredPluginIDs>org.eclipse.draw2d</requiredPluginIDs>
+        <requiredPluginIDs>org.eclipse.uml2.diagram.common</requiredPluginIDs>
+        <requiredPluginIDs>org.eclipse.gmf.runtime.draw2d.ui</requiredPluginIDs>
+      </viewmap>
+      <modelFacet
+          xsi:type="gmfgen:TypeLinkModelFacet">
+        <metaClass
+            href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/Association"/>
+        <containmentMetaFeature
+            href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/Package/packagedElement"/>
+        <childMetaFeature
+            href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/Package/packagedElement"/>
+        <sourceMetaFeature
+            href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/TypedElement/type"/>
+        <targetMetaFeature
+            href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/TypedElement/type"/>
+      </modelFacet>
+      <labels
+          visualID="6002"
+          editPartClassName="AssociationNameEditPart"
+          itemSemanticEditPolicyClassName="AssociationNameItemSemanticEditPolicy"
+          notationViewFactoryClassName="AssociationNameViewFactory">
+        <diagramRunTimeClass
+            href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
+        <viewmap
+            xsi:type="gmfgen:FigureViewmap"
+            figureQualifiedClassName="org.eclipse.gmf.runtime.draw2d.ui.figures.WrapLabel">
+          <attributes
+              xsi:type="gmfgen:LabelOffsetAttributes"
+              y="20"/>
+          <requiredPluginIDs>org.eclipse.draw2d</requiredPluginIDs>
+          <requiredPluginIDs>org.eclipse.uml2.diagram.common</requiredPluginIDs>
+          <requiredPluginIDs>org.eclipse.gmf.runtime.draw2d.ui</requiredPluginIDs>
+        </viewmap>
+        <modelFacet
+            xsi:type="gmfgen:FeatureLabelModelFacet">
+          <metaFeatures
+              href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/NamedElement/name"/>
+        </modelFacet>
+      </labels>
+      <labels
+          visualID="6003"
+          editPartClassName="AssociationName2EditPart"
+          itemSemanticEditPolicyClassName="AssociationName2ItemSemanticEditPolicy"
+          notationViewFactoryClassName="AssociationName2ViewFactory"
+          alignment="TARGET">
+        <diagramRunTimeClass
+            href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
+        <viewmap
+            xsi:type="gmfgen:FigureViewmap"
+            figureQualifiedClassName="org.eclipse.gmf.runtime.draw2d.ui.figures.WrapLabel">
+          <attributes
+              xsi:type="gmfgen:LabelOffsetAttributes"
+              y="-15"/>
+          <requiredPluginIDs>org.eclipse.draw2d</requiredPluginIDs>
+          <requiredPluginIDs>org.eclipse.uml2.diagram.common</requiredPluginIDs>
+          <requiredPluginIDs>org.eclipse.gmf.runtime.draw2d.ui</requiredPluginIDs>
+        </viewmap>
+        <modelFacet
+            xsi:type="gmfgen:FeatureLabelModelFacet">
+          <metaFeatures
+              href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/NamedElement/name"/>
+        </modelFacet>
+      </labels>
+      <labels
+          visualID="6004"
+          editPartClassName="AssociationName3EditPart"
+          itemSemanticEditPolicyClassName="AssociationName3ItemSemanticEditPolicy"
+          notationViewFactoryClassName="AssociationName3ViewFactory"
+          alignment="SOURCE">
+        <diagramRunTimeClass
+            href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
+        <viewmap
+            xsi:type="gmfgen:FigureViewmap"
+            figureQualifiedClassName="org.eclipse.gmf.runtime.draw2d.ui.figures.WrapLabel">
+          <attributes
+              xsi:type="gmfgen:LabelOffsetAttributes"
+              y="-15"/>
+          <requiredPluginIDs>org.eclipse.draw2d</requiredPluginIDs>
+          <requiredPluginIDs>org.eclipse.uml2.diagram.common</requiredPluginIDs>
+          <requiredPluginIDs>org.eclipse.gmf.runtime.draw2d.ui</requiredPluginIDs>
+        </viewmap>
+        <modelFacet
+            xsi:type="gmfgen:FeatureLabelModelFacet">
+          <metaFeatures
+              href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/NamedElement/name"/>
+        </modelFacet>
+      </labels>
+      <labels
+          visualID="6005"
+          editPartClassName="AssociationName4EditPart"
+          itemSemanticEditPolicyClassName="AssociationName4ItemSemanticEditPolicy"
+          notationViewFactoryClassName="AssociationName4ViewFactory"
+          alignment="TARGET">
+        <diagramRunTimeClass
+            href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
+        <viewmap
+            xsi:type="gmfgen:FigureViewmap"
+            figureQualifiedClassName="org.eclipse.gmf.runtime.draw2d.ui.figures.WrapLabel">
+          <attributes
+              xsi:type="gmfgen:LabelOffsetAttributes"
+              y="-30"/>
+          <requiredPluginIDs>org.eclipse.draw2d</requiredPluginIDs>
+          <requiredPluginIDs>org.eclipse.uml2.diagram.common</requiredPluginIDs>
+          <requiredPluginIDs>org.eclipse.gmf.runtime.draw2d.ui</requiredPluginIDs>
+        </viewmap>
+        <modelFacet
+            xsi:type="gmfgen:FeatureLabelModelFacet"
+            editPattern="">
+          <metaFeatures
+              href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/NamedElement/name"/>
+        </modelFacet>
+      </labels>
+      <labels
+          visualID="6006"
+          editPartClassName="AssociationName5EditPart"
+          itemSemanticEditPolicyClassName="AssociationName5ItemSemanticEditPolicy"
+          notationViewFactoryClassName="AssociationName5ViewFactory"
+          alignment="SOURCE">
+        <diagramRunTimeClass
+            href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
+        <viewmap
+            xsi:type="gmfgen:FigureViewmap"
+            figureQualifiedClassName="org.eclipse.gmf.runtime.draw2d.ui.figures.WrapLabel">
+          <attributes
+              xsi:type="gmfgen:LabelOffsetAttributes"
+              y="-30"/>
+          <requiredPluginIDs>org.eclipse.draw2d</requiredPluginIDs>
+          <requiredPluginIDs>org.eclipse.uml2.diagram.common</requiredPluginIDs>
+          <requiredPluginIDs>org.eclipse.gmf.runtime.draw2d.ui</requiredPluginIDs>
+        </viewmap>
+        <modelFacet
+            xsi:type="gmfgen:FeatureLabelModelFacet">
+          <metaFeatures
+              href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/NamedElement/name"/>
+        </modelFacet>
+      </labels>
+      <labels
+          visualID="6007"
+          editPartClassName="AssociationName6EditPart"
+          itemSemanticEditPolicyClassName="AssociationName6ItemSemanticEditPolicy"
+          notationViewFactoryClassName="AssociationName6ViewFactory"
+          alignment="TARGET">
+        <diagramRunTimeClass
+            href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
+        <viewmap
+            xsi:type="gmfgen:FigureViewmap"
+            figureQualifiedClassName="org.eclipse.gmf.runtime.draw2d.ui.figures.WrapLabel">
+          <attributes
+              xsi:type="gmfgen:LabelOffsetAttributes"
+              y="15"/>
+          <requiredPluginIDs>org.eclipse.draw2d</requiredPluginIDs>
+          <requiredPluginIDs>org.eclipse.uml2.diagram.common</requiredPluginIDs>
+          <requiredPluginIDs>org.eclipse.gmf.runtime.draw2d.ui</requiredPluginIDs>
+        </viewmap>
+        <modelFacet
+            xsi:type="gmfgen:FeatureLabelModelFacet">
+          <metaFeatures
+              href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/NamedElement/name"/>
+        </modelFacet>
+      </labels>
+      <labels
+          visualID="6008"
+          editPartClassName="AssociationName7EditPart"
+          itemSemanticEditPolicyClassName="AssociationName7ItemSemanticEditPolicy"
+          notationViewFactoryClassName="AssociationName7ViewFactory"
+          alignment="SOURCE">
+        <diagramRunTimeClass
+            href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
+        <viewmap
+            xsi:type="gmfgen:FigureViewmap"
+            figureQualifiedClassName="org.eclipse.gmf.runtime.draw2d.ui.figures.WrapLabel">
+          <attributes
+              xsi:type="gmfgen:LabelOffsetAttributes"
+              y="15"/>
+          <requiredPluginIDs>org.eclipse.draw2d</requiredPluginIDs>
+          <requiredPluginIDs>org.eclipse.uml2.diagram.common</requiredPluginIDs>
+          <requiredPluginIDs>org.eclipse.gmf.runtime.draw2d.ui</requiredPluginIDs>
+        </viewmap>
+        <modelFacet
+            xsi:type="gmfgen:FeatureLabelModelFacet">
+          <metaFeatures
+              href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/NamedElement/name"/>
+        </modelFacet>
+      </labels>
+    </links>
     <compartments
         visualID="7003"
         editPartClassName="CollaborationContentsEditPart"
@@ -1340,6 +1545,33 @@
             title="Required Interface"
             description="Create Required Interface"
             genLinks="//@diagram/@links.3"/>
+        <entries
+            xsi:type="gmfgen:ToolGroup"
+            title="Association"
+            description="Create Association"
+            stack="true">
+          <entries
+              xsi:type="gmfgen:ToolEntry"
+              title="Association"
+              description="Create Association"
+              qualifiedToolName="org.eclipse.uml2.diagram.csd.part.CreateAssociationLinkTool.NONE"
+              genLinks="//@diagram/@links.5"/>
+          <entries
+              xsi:type="gmfgen:ToolEntry"
+              title="Shared Association"
+              description="Create Shared Association"
+              qualifiedToolName="org.eclipse.uml2.diagram.csd.part.CreateAssociationLinkTool.SHARED"/>
+          <entries
+              xsi:type="gmfgen:ToolEntry"
+              title="Composite Association"
+              description="Create Composite Association"
+              qualifiedToolName="org.eclipse.uml2.diagram.csd.part.CreateAssociationLinkTool.COMPOSITE"/>
+          <entries
+              xsi:type="gmfgen:ToolEntry"
+              title="Navigable Association"
+              description="Create Navigable Association"
+              qualifiedToolName="org.eclipse.uml2.diagram.csd.part.CreateAssociationLinkTool.NAVIGABLE"/>
+        </entries>
       </groups>
     </palette>
     <preferencePages
@@ -2328,6 +2560,131 @@
     <childReferences
         parent="//@diagram/@childNodes.6"
         child="//@diagram/@links.4"
+        referenceType="out_target"
+        groupName="outgoing links"
+        groupIcon="icons/outgoingLinksNavigatorGroup.gif"/>
+    <childReferences
+        parent="//@diagram"
+        child="//@diagram/@links.5"
+        groupName="links"
+        groupIcon="icons/linksNavigatorGroup.gif"/>
+    <childReferences
+        parent="//@diagram/@links.5"
+        child="//@diagram/@topLevelNodes.0"
+        referenceType="out_target"
+        groupName="target"
+        groupIcon="icons/linkTargetNavigatorGroup.gif"/>
+    <childReferences
+        parent="//@diagram/@topLevelNodes.0"
+        child="//@diagram/@links.5"
+        referenceType="in_source"
+        groupName="incoming links"
+        groupIcon="icons/incomingLinksNavigatorGroup.gif"/>
+    <childReferences
+        parent="//@diagram/@links.5"
+        child="//@diagram/@topLevelNodes.1"
+        referenceType="out_target"
+        groupName="target"
+        groupIcon="icons/linkTargetNavigatorGroup.gif"/>
+    <childReferences
+        parent="//@diagram/@topLevelNodes.1"
+        child="//@diagram/@links.5"
+        referenceType="in_source"
+        groupName="incoming links"
+        groupIcon="icons/incomingLinksNavigatorGroup.gif"/>
+    <childReferences
+        parent="//@diagram/@links.5"
+        child="//@diagram/@topLevelNodes.3"
+        referenceType="out_target"
+        groupName="target"
+        groupIcon="icons/linkTargetNavigatorGroup.gif"/>
+    <childReferences
+        parent="//@diagram/@topLevelNodes.3"
+        child="//@diagram/@links.5"
+        referenceType="in_source"
+        groupName="incoming links"
+        groupIcon="icons/incomingLinksNavigatorGroup.gif"/>
+    <childReferences
+        parent="//@diagram/@links.5"
+        child="//@diagram/@topLevelNodes.4"
+        referenceType="out_target"
+        groupName="target"
+        groupIcon="icons/linkTargetNavigatorGroup.gif"/>
+    <childReferences
+        parent="//@diagram/@topLevelNodes.4"
+        child="//@diagram/@links.5"
+        referenceType="in_source"
+        groupName="incoming links"
+        groupIcon="icons/incomingLinksNavigatorGroup.gif"/>
+    <childReferences
+        parent="//@diagram/@links.5"
+        child="//@diagram/@childNodes.5"
+        referenceType="out_target"
+        groupName="target"
+        groupIcon="icons/linkTargetNavigatorGroup.gif"/>
+    <childReferences
+        parent="//@diagram/@childNodes.5"
+        child="//@diagram/@links.5"
+        referenceType="in_source"
+        groupName="incoming links"
+        groupIcon="icons/incomingLinksNavigatorGroup.gif"/>
+    <childReferences
+        parent="//@diagram/@links.5"
+        child="//@diagram/@topLevelNodes.0"
+        referenceType="in_source"
+        groupName="source"
+        groupIcon="icons/linkSourceNavigatorGroup.gif"/>
+    <childReferences
+        parent="//@diagram/@topLevelNodes.0"
+        child="//@diagram/@links.5"
+        referenceType="out_target"
+        groupName="outgoing links"
+        groupIcon="icons/outgoingLinksNavigatorGroup.gif"/>
+    <childReferences
+        parent="//@diagram/@links.5"
+        child="//@diagram/@topLevelNodes.1"
+        referenceType="in_source"
+        groupName="source"
+        groupIcon="icons/linkSourceNavigatorGroup.gif"/>
+    <childReferences
+        parent="//@diagram/@topLevelNodes.1"
+        child="//@diagram/@links.5"
+        referenceType="out_target"
+        groupName="outgoing links"
+        groupIcon="icons/outgoingLinksNavigatorGroup.gif"/>
+    <childReferences
+        parent="//@diagram/@links.5"
+        child="//@diagram/@topLevelNodes.3"
+        referenceType="in_source"
+        groupName="source"
+        groupIcon="icons/linkSourceNavigatorGroup.gif"/>
+    <childReferences
+        parent="//@diagram/@topLevelNodes.3"
+        child="//@diagram/@links.5"
+        referenceType="out_target"
+        groupName="outgoing links"
+        groupIcon="icons/outgoingLinksNavigatorGroup.gif"/>
+    <childReferences
+        parent="//@diagram/@links.5"
+        child="//@diagram/@topLevelNodes.4"
+        referenceType="in_source"
+        groupName="source"
+        groupIcon="icons/linkSourceNavigatorGroup.gif"/>
+    <childReferences
+        parent="//@diagram/@topLevelNodes.4"
+        child="//@diagram/@links.5"
+        referenceType="out_target"
+        groupName="outgoing links"
+        groupIcon="icons/outgoingLinksNavigatorGroup.gif"/>
+    <childReferences
+        parent="//@diagram/@links.5"
+        child="//@diagram/@childNodes.5"
+        referenceType="in_source"
+        groupName="source"
+        groupIcon="icons/linkSourceNavigatorGroup.gif"/>
+    <childReferences
+        parent="//@diagram/@childNodes.5"
+        child="//@diagram/@links.5"
         referenceType="out_target"
         groupName="outgoing links"
         groupIcon="icons/outgoingLinksNavigatorGroup.gif"/>
