@@ -35,6 +35,7 @@ import org.eclipse.uml2.diagram.csd.edit.parts.ClassNameEditPart;
 import org.eclipse.uml2.diagram.csd.edit.parts.ClassQualifiedNameEditPart;
 import org.eclipse.uml2.diagram.csd.edit.parts.CollaborationNameEditPart;
 import org.eclipse.uml2.diagram.csd.edit.parts.CollaborationUseName2EditPart;
+import org.eclipse.uml2.diagram.csd.edit.parts.ConstraintNameEditPart;
 import org.eclipse.uml2.diagram.csd.edit.parts.DependencyNameEditPart;
 import org.eclipse.uml2.diagram.csd.edit.parts.ElementImportEditPart;
 import org.eclipse.uml2.diagram.csd.edit.parts.InstanceSpecificationNameEditPart;
@@ -240,6 +241,30 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 		LookupSuiteImpl lookupSuite = new LookupSuiteImpl();
 		lookupSuite.addLookup(Type.class, TYPE_LOOKUP);
 		return new SemanticParserAdapter(new InstanceSpecificationParser(lookupSuite), new BasicApplyStrategy(), new InstanceSpecificationToString.VIEW(), new InstanceSpecificationToString.EDIT());
+	}
+
+	/**
+	 * @generated
+	 */
+	private IParser constraintName_5024Parser;
+
+	/**
+	 * @generated
+	 */
+	private IParser getConstraintName_5024Parser() {
+		if (constraintName_5024Parser == null) {
+			constraintName_5024Parser = createConstraintName_5024Parser();
+		}
+		return constraintName_5024Parser;
+	}
+
+	/**
+	 * @generated
+	 */
+	protected IParser createConstraintName_5024Parser() {
+		EAttribute[] features = new EAttribute[] { UMLPackage.eINSTANCE.getNamedElement_Name(), };
+		MessageFormatParser parser = new MessageFormatParser(features);
+		return parser;
 	}
 
 	/**
@@ -690,6 +715,8 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 			return getInterfaceName_5020Parser();
 		case InstanceSpecificationNameEditPart.VISUAL_ID:
 			return getInstanceSpecificationName_5022Parser();
+		case ConstraintNameEditPart.VISUAL_ID:
+			return getConstraintName_5024Parser();
 		case CollaborationUseName2EditPart.VISUAL_ID:
 			return getCollaborationUseName_5002Parser();
 		case PropertyNameEditPart.VISUAL_ID:

@@ -59,6 +59,10 @@
           xsi:type="gmftool:CreationTool"
           title="Instance Specification"
           description="Create Instance Specification"/>
+      <tools
+          xsi:type="gmftool:CreationTool"
+          title="Constraint"
+          description="Create Constraint"/>
     </tools>
     <tools
         xsi:type="gmftool:ToolGroup"
@@ -106,6 +110,10 @@
             description="Create Navigable Association"
             toolClass="org.eclipse.uml2.diagram.csd.part.CreateAssociationLinkTool.NAVIGABLE"/>
       </tools>
+      <tools
+          xsi:type="gmftool:CreationTool"
+          title="Constrained Element"
+          description="Create Constrained Element Link"/>
     </tools>
   </palette>
 </gmftool:ToolRegistry>

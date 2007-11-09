@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<notation:Diagram xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.1/notation" xmlns:uml="http://www.eclipse.org/uml2/2.1.0/UML" xmi:id="_y8f0tH1_EdyWXew6izX-PQ" type="UMLCompositeStructures" name="Figure 9.11 - The internal structure of the Observer collaboration shown inside the collaboration icon.umlcompositestructures_diagram" measurementUnit="Pixel">
+<notation:Diagram xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.1/notation" xmlns:uml="http://www.eclipse.org/uml2/2.1.0/UML" xmi:id="_y8f0tH1_EdyWXew6izX-PQ" type="UMLCompositeStructures" name="Figure 9.11 - The internal structure of the Observer collaboration shown inside the collaboration icon.umlcompositestructures_diagram" measurementUnit="Pixel">
   <children xmi:type="notation:Node" xmi:id="_0G0SwH1_EdyWXew6izX-PQ" type="2005">
     <children xmi:type="notation:Node" xmi:id="_0G0SxH1_EdyWXew6izX-PQ" type="5009"/>
     <children xmi:type="notation:Node" xmi:id="_0G0SxX1_EdyWXew6izX-PQ" type="7003">
@@ -73,6 +73,37 @@
     <element xmi:type="uml:Class" href="Figure 9.11 - The internal structure of the Observer collaboration shown inside the collaboration icon.uml#_WYi5wH2EEdyr-MCpgrIrqw"/>
     <layoutConstraint xmi:type="notation:Bounds" xmi:id="_WZIvon2EEdyr-MCpgrIrqw" x="876" y="276"/>
   </children>
+  <children xmi:type="notation:Node" xmi:id="_dTn5EI7pEdyDstIgzrrLww" type="2003">
+    <children xmi:type="notation:Node" xmi:id="_dTn5E47pEdyDstIgzrrLww" type="5006"/>
+    <children xmi:type="notation:Node" xmi:id="_dTn5FI7pEdyDstIgzrrLww" type="7002">
+      <styles xmi:type="notation:DrawerStyle" xmi:id="_dTn5FY7pEdyDstIgzrrLww"/>
+      <styles xmi:type="notation:SortingStyle" xmi:id="_dTn5Fo7pEdyDstIgzrrLww"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_dTn5F47pEdyDstIgzrrLww"/>
+    </children>
+    <styles xmi:type="notation:ShapeStyle" xmi:id="_dTn5EY7pEdyDstIgzrrLww"/>
+    <element xmi:type="uml:Package" href="Figure 9.11 - The internal structure of the Observer collaboration shown inside the collaboration icon.uml#_y6tsAH1_EdyWXew6izX-PQ"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_dTn5Eo7pEdyDstIgzrrLww"/>
+  </children>
+  <children xmi:type="notation:Node" xmi:id="_eV2LEI7pEdyDstIgzrrLww" type="2012">
+    <children xmi:type="notation:Node" xmi:id="_eV2LE47pEdyDstIgzrrLww" type="5024"/>
+    <styles xmi:type="notation:ShapeStyle" xmi:id="_eV2LEY7pEdyDstIgzrrLww"/>
+    <element xmi:type="uml:Constraint" href="Figure 9.11 - The internal structure of the Observer collaboration shown inside the collaboration icon.uml#_eUpRMI7pEdyDstIgzrrLww"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_eV2LEo7pEdyDstIgzrrLww" x="48" y="408"/>
+  </children>
   <styles xmi:type="notation:DiagramStyle" xmi:id="_y8f0tX1_EdyWXew6izX-PQ"/>
   <element xmi:type="uml:Package" href="Figure 9.11 - The internal structure of the Observer collaboration shown inside the collaboration icon.uml#_y6tsAH1_EdyWXew6izX-PQ"/>
+  <edges xmi:type="notation:Edge" xmi:id="_dUElAI7pEdyDstIgzrrLww" type="4005" source="_7GEj4X1_EdyWXew6izX-PQ" target="_6_roAX1_EdyWXew6izX-PQ">
+    <styles xmi:type="notation:ConnectorStyle" xmi:id="_dUElAY7pEdyDstIgzrrLww"/>
+    <styles xmi:type="notation:FontStyle" xmi:id="_dUElAo7pEdyDstIgzrrLww"/>
+    <element xmi:type="uml:Connector" href="Figure 9.11 - The internal structure of the Observer collaboration shown inside the collaboration icon.uml#_XwAmgH2FEdyTpqaR0PW8XQ"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_dUElA47pEdyDstIgzrrLww" points="[0, 0, 0, 0]$[0, 0, 0, 0]"/>
+  </edges>
+  <edges xmi:type="notation:Edge" xmi:id="_fj2PQI7pEdyDstIgzrrLww" type="4012" source="_eV2LEI7pEdyDstIgzrrLww" target="_dUElAI7pEdyDstIgzrrLww">
+    <styles xmi:type="notation:ConnectorStyle" xmi:id="_fj2PQY7pEdyDstIgzrrLww"/>
+    <styles xmi:type="notation:FontStyle" xmi:id="_fj2PQo7pEdyDstIgzrrLww"/>
+    <element xsi:nil="true"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_fj2PQ47pEdyDstIgzrrLww" points="[-8, -48, 43, 252]$[-50, -300, 1, 0]"/>
+    <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_fj2PRI7pEdyDstIgzrrLww" id="(0.404,0.8)"/>
+    <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_fj2PRY7pEdyDstIgzrrLww" id="(0.5555556,0.4074074)"/>
+  </edges>
 </notation:Diagram>

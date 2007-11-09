@@ -55,6 +55,7 @@ public class UMLPaletteFactory {
 		paletteContainer.add(createClass2CreationTool());
 		paletteContainer.add(createInterface3CreationTool());
 		paletteContainer.add(createInstanceSpecification4CreationTool());
+		paletteContainer.add(createConstraint5CreationTool());
 		return paletteContainer;
 	}
 
@@ -70,6 +71,7 @@ public class UMLPaletteFactory {
 		paletteContainer.add(createProvidedInterface3CreationTool());
 		paletteContainer.add(createRequiredInterface4CreationTool());
 		paletteContainer.add(createAssociation5Group());
+		paletteContainer.add(createConstrainedElement6CreationTool());
 		return paletteContainer;
 	}
 
@@ -224,6 +226,18 @@ public class UMLPaletteFactory {
 	/**
 	 * @generated
 	 */
+	private ToolEntry createConstraint5CreationTool() {
+		List/*<IElementType>*/types = new ArrayList/*<IElementType>*/(1);
+		types.add(UMLElementTypes.Constraint_2012);
+		NodeToolEntry entry = new NodeToolEntry(Messages.Constraint5CreationTool_title, Messages.Constraint5CreationTool_desc, types);
+		entry.setSmallIcon(UMLElementTypes.getImageDescriptor(UMLElementTypes.Constraint_2012));
+		entry.setLargeIcon(entry.getSmallIcon());
+		return entry;
+	}
+
+	/**
+	 * @generated
+	 */
 	private ToolEntry createConnector1CreationTool() {
 		List/*<IElementType>*/types = new ArrayList/*<IElementType>*/(1);
 		types.add(UMLElementTypes.Connector_4005);
@@ -266,6 +280,18 @@ public class UMLPaletteFactory {
 		types.add(UMLElementTypes.Usage_4008);
 		LinkToolEntry entry = new LinkToolEntry(Messages.RequiredInterface4CreationTool_title, Messages.RequiredInterface4CreationTool_desc, types);
 		entry.setSmallIcon(UMLElementTypes.getImageDescriptor(UMLElementTypes.Usage_4008));
+		entry.setLargeIcon(entry.getSmallIcon());
+		return entry;
+	}
+
+	/**
+	 * @generated
+	 */
+	private ToolEntry createConstrainedElement6CreationTool() {
+		List/*<IElementType>*/types = new ArrayList/*<IElementType>*/(1);
+		types.add(UMLElementTypes.ConstraintConstrainedElement_4012);
+		LinkToolEntry entry = new LinkToolEntry(Messages.ConstrainedElement6CreationTool_title, Messages.ConstrainedElement6CreationTool_desc, types);
+		entry.setSmallIcon(UMLElementTypes.getImageDescriptor(UMLElementTypes.ConstraintConstrainedElement_4012));
 		entry.setLargeIcon(entry.getSmallIcon());
 		return entry;
 	}

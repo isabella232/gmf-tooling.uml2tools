@@ -48,6 +48,8 @@ import org.eclipse.uml2.diagram.csd.part.UMLVisualIDRegistry;
 import org.eclipse.uml2.uml.BehavioredClassifier;
 import org.eclipse.uml2.uml.CollaborationUse;
 import org.eclipse.uml2.uml.ConnectableElement;
+import org.eclipse.uml2.uml.Constraint;
+import org.eclipse.uml2.uml.Element;
 import org.eclipse.uml2.uml.Interface;
 import org.eclipse.uml2.uml.NamedElement;
 import org.eclipse.uml2.uml.Package;
@@ -431,6 +433,18 @@ public class UMLBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 		/**
 		 * @generated
 		 */
+		public static boolean canCreateConstraintConstrainedElement_4012(Constraint source, Element target) {
+			if (source != null) {
+				if (source.getConstrainedElements().contains(target)) {
+					return false;
+				}
+			}
+			return canExistConstraintConstrainedElement_4012(source, target);
+		}
+
+		/**
+		 * @generated
+		 */
 		public static boolean canExistConnector_4005(StructuredClassifier container, ConnectableElement source, ConnectableElement target) {
 			return true;
 		}
@@ -476,6 +490,13 @@ public class UMLBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 		 * @generated
 		 */
 		public static boolean canExistAssociation_4011(Package container, Type source, Type target) {
+			return true;
+		}
+
+		/**
+		 * @generated
+		 */
+		public static boolean canExistConstraintConstrainedElement_4012(Constraint source, Element target) {
 			return true;
 		}
 

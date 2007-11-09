@@ -22,4 +22,7 @@
   </packagedElement>
   <packagedElement xmi:type="uml:Class" xmi:id="_QKomAH2EEdyr-MCpgrIrqw" name="CallQueue"/>
   <packagedElement xmi:type="uml:Class" xmi:id="_WYi5wH2EEdyr-MCpgrIrqw" name="SlidingBarIcon"/>
+  <packagedElement xmi:type="uml:Constraint" xmi:id="_eUpRMI7pEdyDstIgzrrLww" name="Observer.reading = length (Subject.queue)&#xD;&#xA;capacity: Integer&#xD;&#xA;Observer.range = (0 .. Subject.capacity)" constrainedElement="_XwAmgH2FEdyTpqaR0PW8XQ">
+    <specification xmi:type="uml:LiteralString" xmi:id="_eVPuII7pEdyDstIgzrrLww" value="ValueSpecification"/>
+  </packagedElement>
 </uml:Package>

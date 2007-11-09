@@ -29,6 +29,8 @@ import org.eclipse.uml2.diagram.csd.edit.parts.CollaborationNameEditPart;
 import org.eclipse.uml2.diagram.csd.edit.parts.CollaborationUse2EditPart;
 import org.eclipse.uml2.diagram.csd.edit.parts.CollaborationUseName2EditPart;
 import org.eclipse.uml2.diagram.csd.edit.parts.ConnectorEditPart;
+import org.eclipse.uml2.diagram.csd.edit.parts.ConstraintEditPart;
+import org.eclipse.uml2.diagram.csd.edit.parts.ConstraintNameEditPart;
 import org.eclipse.uml2.diagram.csd.edit.parts.DependencyEditPart;
 import org.eclipse.uml2.diagram.csd.edit.parts.DependencyNameEditPart;
 import org.eclipse.uml2.diagram.csd.edit.parts.ElementImportEditPart;
@@ -276,6 +278,9 @@ public class UMLVisualIDRegistry {
 			if (UMLPackage.eINSTANCE.getInstanceSpecification().isSuperTypeOf(domainElement.eClass())) {
 				return InstanceSpecificationEditPart.VISUAL_ID;
 			}
+			if (UMLPackage.eINSTANCE.getConstraint().isSuperTypeOf(domainElement.eClass())) {
+				return ConstraintEditPart.VISUAL_ID;
+			}
 			break;
 		}
 		return -1;
@@ -363,6 +368,11 @@ public class UMLVisualIDRegistry {
 				return true;
 			}
 			break;
+		case ConstraintEditPart.VISUAL_ID:
+			if (ConstraintNameEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			break;
 		case CollaborationUse2EditPart.VISUAL_ID:
 			if (CollaborationUseName2EditPart.VISUAL_ID == nodeVisualID) {
 				return true;
@@ -443,6 +453,9 @@ public class UMLVisualIDRegistry {
 				return true;
 			}
 			if (InstanceSpecificationEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			if (ConstraintEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
 			break;

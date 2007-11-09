@@ -9,14 +9,18 @@ import org.eclipse.gmf.runtime.emf.type.core.commands.DestroyElementCommand;
 import org.eclipse.gmf.runtime.emf.type.core.requests.CreateElementRequest;
 import org.eclipse.gmf.runtime.emf.type.core.requests.CreateRelationshipRequest;
 import org.eclipse.gmf.runtime.emf.type.core.requests.DestroyElementRequest;
+import org.eclipse.gmf.runtime.emf.type.core.requests.ReorientReferenceRelationshipRequest;
 import org.eclipse.gmf.runtime.emf.type.core.requests.ReorientRelationshipRequest;
 import org.eclipse.gmf.runtime.notation.Node;
 import org.eclipse.gmf.runtime.notation.View;
+import org.eclipse.uml2.diagram.csd.edit.commands.ConstraintConstrainedElementCreateCommand;
+import org.eclipse.uml2.diagram.csd.edit.commands.ConstraintConstrainedElementReorientCommand;
 import org.eclipse.uml2.diagram.csd.edit.commands.DependencyCreateCommand;
 import org.eclipse.uml2.diagram.csd.edit.commands.DependencyReorientCommand;
 import org.eclipse.uml2.diagram.csd.edit.commands.ElementImportCreateCommand;
 import org.eclipse.uml2.diagram.csd.edit.commands.UsageCreateCommand;
 import org.eclipse.uml2.diagram.csd.edit.commands.UsageReorientCommand;
+import org.eclipse.uml2.diagram.csd.edit.parts.ConstraintConstrainedElementEditPart;
 import org.eclipse.uml2.diagram.csd.edit.parts.DependencyEditPart;
 import org.eclipse.uml2.diagram.csd.edit.parts.ElementImportEditPart;
 import org.eclipse.uml2.diagram.csd.edit.parts.PackageImportsEditPart;
@@ -102,6 +106,9 @@ public class Package2ItemSemanticEditPolicy extends UMLBaseItemSemanticEditPolic
 		if (UMLElementTypes.Usage_4008 == req.getElementType()) {
 			return getGEFWrapper(new UsageCreateCommand(req, req.getSource(), req.getTarget()));
 		}
+		if (UMLElementTypes.ConstraintConstrainedElement_4012 == req.getElementType()) {
+			return null;
+		}
 		return null;
 	}
 
@@ -114,6 +121,9 @@ public class Package2ItemSemanticEditPolicy extends UMLBaseItemSemanticEditPolic
 		}
 		if (UMLElementTypes.Usage_4008 == req.getElementType()) {
 			return getGEFWrapper(new UsageCreateCommand(req, req.getSource(), req.getTarget()));
+		}
+		if (UMLElementTypes.ConstraintConstrainedElement_4012 == req.getElementType()) {
+			return getGEFWrapper(new ConstraintConstrainedElementCreateCommand(req, req.getSource(), req.getTarget()));
 		}
 		return null;
 	}
@@ -132,6 +142,20 @@ public class Package2ItemSemanticEditPolicy extends UMLBaseItemSemanticEditPolic
 			return getGEFWrapper(new UsageReorientCommand(req));
 		}
 		return super.getReorientRelationshipCommand(req);
+	}
+
+	/**
+	 * Returns command to reorient EReference based link. New link target or source
+	 * should be the domain model element associated with this node.
+	 * 
+	 * @generated
+	 */
+	protected Command getReorientReferenceRelationshipCommand(ReorientReferenceRelationshipRequest req) {
+		switch (getVisualID(req)) {
+		case ConstraintConstrainedElementEditPart.VISUAL_ID:
+			return getGEFWrapper(new ConstraintConstrainedElementReorientCommand(req));
+		}
+		return super.getReorientReferenceRelationshipCommand(req);
 	}
 
 }

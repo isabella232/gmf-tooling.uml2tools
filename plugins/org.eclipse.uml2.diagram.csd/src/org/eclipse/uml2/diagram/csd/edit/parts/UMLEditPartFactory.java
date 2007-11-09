@@ -70,6 +70,12 @@ public class UMLEditPartFactory implements EditPartFactory {
 			case InstanceSpecificationNameEditPart.VISUAL_ID:
 				return new InstanceSpecificationNameEditPart(view);
 
+			case ConstraintEditPart.VISUAL_ID:
+				return new ConstraintEditPart(view);
+
+			case ConstraintNameEditPart.VISUAL_ID:
+				return new ConstraintNameEditPart(view);
+
 			case CollaborationUse2EditPart.VISUAL_ID:
 				return new CollaborationUse2EditPart(view);
 
@@ -180,6 +186,9 @@ public class UMLEditPartFactory implements EditPartFactory {
 
 			case AssociationName7EditPart.VISUAL_ID:
 				return new AssociationName7EditPart(view);
+
+			case ConstraintConstrainedElementEditPart.VISUAL_ID:
+				return new ConstraintConstrainedElementEditPart(view);
 			}
 		}
 		return createUnrecognizedEditPart(context, model);

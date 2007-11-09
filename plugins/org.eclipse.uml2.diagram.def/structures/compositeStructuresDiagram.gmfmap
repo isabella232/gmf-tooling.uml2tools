@@ -501,6 +501,47 @@
       </compartments>
     </ownedChild>
   </nodes>
+  <nodes>
+    <containmentFeature
+        href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//Package/packagedElement"/>
+    <ownedChild>
+      <domainMetaElement
+          href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//Constraint"/>
+      <domainInitializer
+          xsi:type="gmfmap:FeatureSeqInitializer">
+        <initializers
+            xsi:type="gmfmap:ReferenceNewElementSpec">
+          <feature
+              xsi:type="ecore:EReference"
+              href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//Constraint/specification"/>
+          <newElementInitializers>
+            <initializers
+                xsi:type="gmfmap:FeatureValueSpec"
+                body="'ValueSpecification'">
+              <feature
+                  xsi:type="ecore:EAttribute"
+                  href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//LiteralString/value"/>
+            </initializers>
+            <elementClass
+                href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//LiteralString"/>
+          </newElementInitializers>
+        </initializers>
+      </domainInitializer>
+      <labelMappings
+          xsi:type="gmfmap:FeatureLabelMapping"
+          editPattern="">
+        <diagramLabel
+            href="classDiagram_constraints.gmfgraph#Constraint_ValueSpecification"/>
+        <features
+            href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//NamedElement/name"/>
+      </labelMappings>
+      <tool
+          xsi:type="gmftool:CreationTool"
+          href="compositeStructuresDiagram.gmftool#//@palette/@tools.1/@tools.4"/>
+      <diagramNode
+          href="classDiagram_constraints.gmfgraph#ConstraintNode"/>
+    </ownedChild>
+  </nodes>
   <links>
     <domainMetaElement
         href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//Connector"/>
@@ -670,6 +711,16 @@
     <linkMetaFeature
         xsi:type="ecore:EReference"
         href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//TypedElement/type"/>
+  </links>
+  <links>
+    <tool
+        xsi:type="gmftool:CreationTool"
+        href="compositeStructuresDiagram.gmftool#//@palette/@tools.2/@tools.5"/>
+    <diagramLink
+        href="../../../plugin/org.eclipse.gmf.graphdef/models/classDiagram.gmfgraph#DashedConnection"/>
+    <linkMetaFeature
+        xsi:type="ecore:EReference"
+        href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//Constraint/constrainedElement"/>
   </links>
   <diagram>
     <diagramCanvas

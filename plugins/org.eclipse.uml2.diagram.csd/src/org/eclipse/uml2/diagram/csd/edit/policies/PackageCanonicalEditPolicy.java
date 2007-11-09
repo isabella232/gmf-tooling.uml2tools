@@ -31,6 +31,7 @@ import org.eclipse.uml2.diagram.csd.edit.parts.ClassEditPart;
 import org.eclipse.uml2.diagram.csd.edit.parts.CollaborationEditPart;
 import org.eclipse.uml2.diagram.csd.edit.parts.CollaborationUse2EditPart;
 import org.eclipse.uml2.diagram.csd.edit.parts.ConnectorEditPart;
+import org.eclipse.uml2.diagram.csd.edit.parts.ConstraintEditPart;
 import org.eclipse.uml2.diagram.csd.edit.parts.DependencyEditPart;
 import org.eclipse.uml2.diagram.csd.edit.parts.ElementImportEditPart;
 import org.eclipse.uml2.diagram.csd.edit.parts.InstanceSpecificationEditPart;
@@ -92,6 +93,7 @@ public class PackageCanonicalEditPolicy extends CanonicalConnectionEditPolicy {
 		case Package2EditPart.VISUAL_ID:
 		case InterfaceEditPart.VISUAL_ID:
 		case InstanceSpecificationEditPart.VISUAL_ID:
+		case ConstraintEditPart.VISUAL_ID:
 			return !semanticChildren.contains(view.getElement()) || actualID != suggestedID;
 		case ClassEditPart.VISUAL_ID:
 			if (!semanticChildren.contains(view.getElement())) {
@@ -246,6 +248,11 @@ public class PackageCanonicalEditPolicy extends CanonicalConnectionEditPolicy {
 		case InstanceSpecificationEditPart.VISUAL_ID: {
 			domain2NotationMap.put(view.getElement(), view);
 			result.addAll(UMLDiagramUpdater.getInstanceSpecification_2011ContainedLinks(view));
+			break;
+		}
+		case ConstraintEditPart.VISUAL_ID: {
+			domain2NotationMap.put(view.getElement(), view);
+			result.addAll(UMLDiagramUpdater.getConstraint_2012ContainedLinks(view));
 			break;
 		}
 		case CollaborationUse2EditPart.VISUAL_ID: {

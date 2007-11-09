@@ -82,6 +82,11 @@ public class UMLElementTypes extends ElementInitializers {
 	/**
 	 * @generated
 	 */
+	public static final IElementType Constraint_2012 = getElementType("org.eclipse.uml2.diagram.csd.Constraint_2012"); //$NON-NLS-1$
+
+	/**
+	 * @generated
+	 */
 	public static final IElementType CollaborationUse_3002 = getElementType("org.eclipse.uml2.diagram.csd.CollaborationUse_3002"); //$NON-NLS-1$
 
 	/**
@@ -158,6 +163,11 @@ public class UMLElementTypes extends ElementInitializers {
 	 * @generated
 	 */
 	public static final IElementType Association_4011 = getElementType("org.eclipse.uml2.diagram.csd.Association_4011"); //$NON-NLS-1$
+
+	/**
+	 * @generated
+	 */
+	public static final IElementType ConstraintConstrainedElement_4012 = getElementType("org.eclipse.uml2.diagram.csd.ConstraintConstrainedElement_4012"); //$NON-NLS-1$
 
 	/**
 	 * @generated
@@ -279,6 +289,8 @@ public class UMLElementTypes extends ElementInitializers {
 
 			elements.put(InstanceSpecification_2011, UMLPackage.eINSTANCE.getInstanceSpecification());
 
+			elements.put(Constraint_2012, UMLPackage.eINSTANCE.getConstraint());
+
 			elements.put(CollaborationUse_3002, UMLPackage.eINSTANCE.getCollaborationUse());
 
 			elements.put(Property_3007, UMLPackage.eINSTANCE.getProperty());
@@ -310,6 +322,8 @@ public class UMLElementTypes extends ElementInitializers {
 			elements.put(PortProvided_4010, UMLPackage.eINSTANCE.getPort_Provided());
 
 			elements.put(Association_4011, UMLPackage.eINSTANCE.getAssociation());
+
+			elements.put(ConstraintConstrainedElement_4012, UMLPackage.eINSTANCE.getConstraint_ConstrainedElement());
 		}
 		return (ENamedElement) elements.get(type);
 	}
@@ -334,6 +348,7 @@ public class UMLElementTypes extends ElementInitializers {
 			KNOWN_ELEMENT_TYPES.add(Class_2007);
 			KNOWN_ELEMENT_TYPES.add(Interface_2009);
 			KNOWN_ELEMENT_TYPES.add(InstanceSpecification_2011);
+			KNOWN_ELEMENT_TYPES.add(Constraint_2012);
 			KNOWN_ELEMENT_TYPES.add(CollaborationUse_3002);
 			KNOWN_ELEMENT_TYPES.add(Property_3007);
 			KNOWN_ELEMENT_TYPES.add(Parameter_3013);
@@ -350,6 +365,7 @@ public class UMLElementTypes extends ElementInitializers {
 			KNOWN_ELEMENT_TYPES.add(Usage_4008);
 			KNOWN_ELEMENT_TYPES.add(PortProvided_4010);
 			KNOWN_ELEMENT_TYPES.add(Association_4011);
+			KNOWN_ELEMENT_TYPES.add(ConstraintConstrainedElement_4012);
 		}
 		return KNOWN_ELEMENT_TYPES.contains(elementType);
 	}

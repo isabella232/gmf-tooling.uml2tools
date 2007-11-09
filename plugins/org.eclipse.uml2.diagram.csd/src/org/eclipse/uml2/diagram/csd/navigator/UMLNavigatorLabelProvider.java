@@ -28,6 +28,9 @@ import org.eclipse.uml2.diagram.csd.edit.parts.CollaborationNameEditPart;
 import org.eclipse.uml2.diagram.csd.edit.parts.CollaborationUse2EditPart;
 import org.eclipse.uml2.diagram.csd.edit.parts.CollaborationUseName2EditPart;
 import org.eclipse.uml2.diagram.csd.edit.parts.ConnectorEditPart;
+import org.eclipse.uml2.diagram.csd.edit.parts.ConstraintConstrainedElementEditPart;
+import org.eclipse.uml2.diagram.csd.edit.parts.ConstraintEditPart;
+import org.eclipse.uml2.diagram.csd.edit.parts.ConstraintNameEditPart;
 import org.eclipse.uml2.diagram.csd.edit.parts.DependencyEditPart;
 import org.eclipse.uml2.diagram.csd.edit.parts.DependencyNameEditPart;
 import org.eclipse.uml2.diagram.csd.edit.parts.ElementImportEditPart;
@@ -127,6 +130,8 @@ public class UMLNavigatorLabelProvider extends LabelProvider implements ICommonL
 			return getImage("Navigator?TopLevelNode?http://www.eclipse.org/uml2/2.1.0/UML?Interface", UMLElementTypes.Interface_2009); //$NON-NLS-1$
 		case InstanceSpecificationEditPart.VISUAL_ID:
 			return getImage("Navigator?TopLevelNode?http://www.eclipse.org/uml2/2.1.0/UML?InstanceSpecification", UMLElementTypes.InstanceSpecification_2011); //$NON-NLS-1$
+		case ConstraintEditPart.VISUAL_ID:
+			return getImage("Navigator?TopLevelNode?http://www.eclipse.org/uml2/2.1.0/UML?Constraint", UMLElementTypes.Constraint_2012); //$NON-NLS-1$
 		case CollaborationUse2EditPart.VISUAL_ID:
 			return getImage("Navigator?Node?http://www.eclipse.org/uml2/2.1.0/UML?CollaborationUse", UMLElementTypes.CollaborationUse_3002); //$NON-NLS-1$
 		case PropertyEditPart.VISUAL_ID:
@@ -159,6 +164,8 @@ public class UMLNavigatorLabelProvider extends LabelProvider implements ICommonL
 			return getImage("Navigator?Link?http://www.eclipse.org/uml2/2.1.0/UML?Port?provided", UMLElementTypes.PortProvided_4010); //$NON-NLS-1$
 		case AssociationEditPart.VISUAL_ID:
 			return getImage("Navigator?Link?http://www.eclipse.org/uml2/2.1.0/UML?Association", UMLElementTypes.Association_4011); //$NON-NLS-1$
+		case ConstraintConstrainedElementEditPart.VISUAL_ID:
+			return getImage("Navigator?Link?http://www.eclipse.org/uml2/2.1.0/UML?Constraint?constrainedElement", UMLElementTypes.ConstraintConstrainedElement_4012); //$NON-NLS-1$
 		}
 		return getImage("Navigator?UnknownElement", null); //$NON-NLS-1$
 	}
@@ -223,6 +230,8 @@ public class UMLNavigatorLabelProvider extends LabelProvider implements ICommonL
 			return getInterface_2009Text(view);
 		case InstanceSpecificationEditPart.VISUAL_ID:
 			return getInstanceSpecification_2011Text(view);
+		case ConstraintEditPart.VISUAL_ID:
+			return getConstraint_2012Text(view);
 		case CollaborationUse2EditPart.VISUAL_ID:
 			return getCollaborationUse_3002Text(view);
 		case PropertyEditPart.VISUAL_ID:
@@ -255,6 +264,8 @@ public class UMLNavigatorLabelProvider extends LabelProvider implements ICommonL
 			return getPortProvided_4010Text(view);
 		case AssociationEditPart.VISUAL_ID:
 			return getAssociation_4011Text(view);
+		case ConstraintConstrainedElementEditPart.VISUAL_ID:
+			return getConstraintConstrainedElement_4012Text(view);
 		}
 		return getUnknownElementText(view);
 	}
@@ -369,6 +380,23 @@ public class UMLNavigatorLabelProvider extends LabelProvider implements ICommonL
 			return parser.getPrintString(hintAdapter, ParserOptions.NONE.intValue());
 		} else {
 			UMLDiagramEditorPlugin.getInstance().logError("Parser was not found for label " + 5022); //$NON-NLS-1$
+			return ""; //$NON-NLS-1$
+		}
+
+	}
+
+	/**
+	 * @generated
+	 */
+	private String getConstraint_2012Text(View view) {
+		IAdaptable hintAdapter = new UMLParserProvider.HintAdapter(UMLElementTypes.Constraint_2012, (view.getElement() != null ? view.getElement() : view), UMLVisualIDRegistry
+				.getType(ConstraintNameEditPart.VISUAL_ID));
+		IParser parser = ParserService.getInstance().getParser(hintAdapter);
+
+		if (parser != null) {
+			return parser.getPrintString(hintAdapter, ParserOptions.NONE.intValue());
+		} else {
+			UMLDiagramEditorPlugin.getInstance().logError("Parser was not found for label " + 5024); //$NON-NLS-1$
 			return ""; //$NON-NLS-1$
 		}
 
@@ -615,6 +643,13 @@ public class UMLNavigatorLabelProvider extends LabelProvider implements ICommonL
 			return ""; //$NON-NLS-1$
 		}
 
+	}
+
+	/**
+	 * @generated
+	 */
+	private String getConstraintConstrainedElement_4012Text(View view) {
+		return ""; //$NON-NLS-1$
 	}
 
 	/**

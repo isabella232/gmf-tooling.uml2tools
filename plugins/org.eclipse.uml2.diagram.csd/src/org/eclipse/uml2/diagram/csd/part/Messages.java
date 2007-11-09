@@ -393,6 +393,16 @@ public class Messages extends NLS {
 	/**
 	 * @generated
 	 */
+	public static String Constraint5CreationTool_title;
+
+	/**
+	 * @generated
+	 */
+	public static String Constraint5CreationTool_desc;
+
+	/**
+	 * @generated
+	 */
 	public static String Connector1CreationTool_title;
 
 	/**
@@ -429,6 +439,16 @@ public class Messages extends NLS {
 	 * @generated
 	 */
 	public static String RequiredInterface4CreationTool_desc;
+
+	/**
+	 * @generated
+	 */
+	public static String ConstrainedElement6CreationTool_title;
+
+	/**
+	 * @generated
+	 */
+	public static String ConstrainedElement6CreationTool_desc;
 
 	/**
 	 * @generated
@@ -578,6 +598,16 @@ public class Messages extends NLS {
 	/**
 	 * @generated
 	 */
+	public static String NavigatorGroupName_Constraint_2012_incominglinks;
+
+	/**
+	 * @generated
+	 */
+	public static String NavigatorGroupName_Constraint_2012_outgoinglinks;
+
+	/**
+	 * @generated
+	 */
 	public static String NavigatorGroupName_CollaborationUse_3002_incominglinks;
 
 	/**
@@ -643,12 +673,22 @@ public class Messages extends NLS {
 	/**
 	 * @generated
 	 */
+	public static String NavigatorGroupName_ElementImport_3004_incominglinks;
+
+	/**
+	 * @generated
+	 */
 	public static String NavigatorGroupName_Property_3014_incominglinks;
 
 	/**
 	 * @generated
 	 */
 	public static String NavigatorGroupName_Property_3014_outgoinglinks;
+
+	/**
+	 * @generated
+	 */
+	public static String NavigatorGroupName_Slot_3015_incominglinks;
 
 	/**
 	 * @generated
@@ -714,6 +754,16 @@ public class Messages extends NLS {
 	 * @generated
 	 */
 	public static String NavigatorGroupName_Association_4011_source;
+
+	/**
+	 * @generated
+	 */
+	public static String NavigatorGroupName_ConstraintConstrainedElement_4012_target;
+
+	/**
+	 * @generated
+	 */
+	public static String NavigatorGroupName_ConstraintConstrainedElement_4012_source;
 
 	/**
 	 * @generated

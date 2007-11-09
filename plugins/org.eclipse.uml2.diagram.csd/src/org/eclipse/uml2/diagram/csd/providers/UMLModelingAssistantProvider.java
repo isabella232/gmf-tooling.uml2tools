@@ -25,6 +25,7 @@ import org.eclipse.uml2.diagram.csd.edit.parts.ClassClass_contentsEditPart;
 import org.eclipse.uml2.diagram.csd.edit.parts.ClassEditPart;
 import org.eclipse.uml2.diagram.csd.edit.parts.CollaborationContentsEditPart;
 import org.eclipse.uml2.diagram.csd.edit.parts.CollaborationEditPart;
+import org.eclipse.uml2.diagram.csd.edit.parts.ConstraintEditPart;
 import org.eclipse.uml2.diagram.csd.edit.parts.InstanceSpecificationEditPart;
 import org.eclipse.uml2.diagram.csd.edit.parts.InstanceSpecificationSlotsEditPart;
 import org.eclipse.uml2.diagram.csd.edit.parts.InterfaceEditPart;
@@ -86,6 +87,7 @@ public class UMLModelingAssistantProvider extends ModelingAssistantProvider {
 			types.add(UMLElementTypes.Class_2007);
 			types.add(UMLElementTypes.Interface_2009);
 			types.add(UMLElementTypes.InstanceSpecification_2011);
+			types.add(UMLElementTypes.Constraint_2012);
 			return types;
 		}
 		return Collections.EMPTY_LIST;
@@ -96,6 +98,11 @@ public class UMLModelingAssistantProvider extends ModelingAssistantProvider {
 	 */
 	public List getRelTypesOnSource(IAdaptable source) {
 		IGraphicalEditPart sourceEditPart = (IGraphicalEditPart) source.getAdapter(IGraphicalEditPart.class);
+		if (sourceEditPart instanceof ConstraintEditPart) {
+			List types = new ArrayList();
+			types.add(UMLElementTypes.ConstraintConstrainedElement_4012);
+			return types;
+		}
 		if (sourceEditPart instanceof PortEditPart) {
 			List types = new ArrayList();
 			types.add(UMLElementTypes.PortProvided_4010);
@@ -124,6 +131,10 @@ public class UMLModelingAssistantProvider extends ModelingAssistantProvider {
 	public List getRelTypesOnSourceAndTarget(IAdaptable source, IAdaptable target) {
 		IGraphicalEditPart sourceEditPart = (IGraphicalEditPart) source.getAdapter(IGraphicalEditPart.class);
 		IGraphicalEditPart targetEditPart = (IGraphicalEditPart) target.getAdapter(IGraphicalEditPart.class);
+		if (sourceEditPart instanceof ConstraintEditPart) {
+			List types = new ArrayList();
+			return types;
+		}
 		if (sourceEditPart instanceof PortEditPart) {
 			List types = new ArrayList();
 			if (targetEditPart instanceof InterfaceEditPart) {
@@ -154,6 +165,10 @@ public class UMLModelingAssistantProvider extends ModelingAssistantProvider {
 	 */
 	public List getTypesForTarget(IAdaptable source, IElementType relationshipType) {
 		IGraphicalEditPart sourceEditPart = (IGraphicalEditPart) source.getAdapter(IGraphicalEditPart.class);
+		if (sourceEditPart instanceof ConstraintEditPart) {
+			List types = new ArrayList();
+			return types;
+		}
 		if (sourceEditPart instanceof PortEditPart) {
 			List types = new ArrayList();
 			if (relationshipType == UMLElementTypes.PortProvided_4010) {
