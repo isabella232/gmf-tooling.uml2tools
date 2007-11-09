@@ -9,7 +9,7 @@
  * Contributors:
  *    Tatiana Fesenko (Borland) - initial API and implementation
  */
-package org.eclipse.uml2.diagram.compositestructures.parser.collaborationuse;
+package org.eclipse.uml2.diagram.csd.parser.collaborationuse;
 
 import java.text.MessageFormat;
 import java.text.ParseException;

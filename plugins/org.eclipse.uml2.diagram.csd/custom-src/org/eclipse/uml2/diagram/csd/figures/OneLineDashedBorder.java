@@ -1,4 +1,4 @@
-package org.eclipse.uml2.diagram.compositestructures.figures;
+package org.eclipse.uml2.diagram.csd.figures;
 
 import org.eclipse.draw2d.Graphics;
 import org.eclipse.draw2d.IFigure;

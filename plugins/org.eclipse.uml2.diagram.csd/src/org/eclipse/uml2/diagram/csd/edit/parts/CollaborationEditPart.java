@@ -1,7 +1,6 @@
 package org.eclipse.uml2.diagram.csd.edit.parts;
 
 import org.eclipse.draw2d.Border;
-import org.eclipse.draw2d.ColorConstants;
 import org.eclipse.draw2d.Ellipse;
 import org.eclipse.draw2d.Graphics;
 import org.eclipse.draw2d.IFigure;
@@ -25,11 +24,11 @@ import org.eclipse.gmf.runtime.draw2d.ui.figures.WrapLabel;
 import org.eclipse.gmf.runtime.gef.ui.figures.DefaultSizeNodeFigure;
 import org.eclipse.gmf.runtime.gef.ui.figures.NodeFigure;
 import org.eclipse.gmf.runtime.notation.View;
-import org.eclipse.uml2.diagram.compositestructures.figures.OneLineDashedBorder;
 import org.eclipse.uml2.diagram.csd.edit.policies.CollaborationCanonicalEditPolicy;
 import org.eclipse.uml2.diagram.csd.edit.policies.CollaborationItemSemanticEditPolicy;
 import org.eclipse.uml2.diagram.csd.edit.policies.OpenDiagramEditPolicy;
 import org.eclipse.uml2.diagram.csd.edit.policies.UMLTextSelectionEditPolicy;
+import org.eclipse.uml2.diagram.csd.figures.OneLineDashedBorder;
 import org.eclipse.uml2.diagram.csd.part.UMLVisualIDRegistry;
 
 /**

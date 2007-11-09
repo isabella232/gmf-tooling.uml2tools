@@ -7,7 +7,6 @@ import org.eclipse.gmf.runtime.diagram.ui.editpolicies.DragDropEditPolicy;
 import org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles;
 import org.eclipse.gmf.runtime.diagram.ui.figures.ResizableCompartmentFigure;
 import org.eclipse.gmf.runtime.notation.View;
-import org.eclipse.uml2.diagram.compositestructures.figures.OneLineDashedBorder;
 import org.eclipse.uml2.diagram.csd.edit.policies.CollaborationContentsCanonicalEditPolicy;
 import org.eclipse.uml2.diagram.csd.edit.policies.CollaborationContentsItemSemanticEditPolicy;
 import org.eclipse.uml2.diagram.csd.part.Messages;
