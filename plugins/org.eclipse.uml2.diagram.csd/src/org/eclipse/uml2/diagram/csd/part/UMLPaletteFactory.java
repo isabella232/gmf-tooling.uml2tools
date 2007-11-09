@@ -312,33 +312,63 @@ public class UMLPaletteFactory {
 	/**
 	 * @generated
 	 */
-	private ToolEntry createSharedAssociation2CreationTool() {
+	private ToolEntry createSharedAssociation2CreationToolGen() {
 		ToolEntry entry = new ToolEntry(Messages.SharedAssociation2CreationTool_title, Messages.SharedAssociation2CreationTool_desc, null, null) {
 		};
 		entry.setToolClass(CreateAssociationLinkTool.SHARED.class);
 		return entry;
 	}
+	
+	/**
+	 * @generated NOT
+	 */
+	private ToolEntry createSharedAssociation2CreationTool() {
+		ToolEntry entry = createSharedAssociation2CreationToolGen();
+		entry.setSmallIcon(UMLElementTypes.getImageDescriptor(UMLElementTypes.Association_4011));
+		entry.setLargeIcon(entry.getSmallIcon());
+		return entry;
+	}
+
 
 	/**
 	 * @generated
 	 */
-	private ToolEntry createCompositeAssociation3CreationTool() {
+	private ToolEntry createCompositeAssociation3CreationToolGen() {
 		ToolEntry entry = new ToolEntry(Messages.CompositeAssociation3CreationTool_title, Messages.CompositeAssociation3CreationTool_desc, null, null) {
 		};
 		entry.setToolClass(CreateAssociationLinkTool.COMPOSITE.class);
+		return entry;
+	}
+	
+	/**
+	 * @generated NOT
+	 */
+	private ToolEntry createCompositeAssociation3CreationTool() {
+		ToolEntry entry = createCompositeAssociation3CreationToolGen();
+		entry.setSmallIcon(UMLElementTypes.getImageDescriptor(UMLElementTypes.Association_4011));
+		entry.setLargeIcon(entry.getSmallIcon());
 		return entry;
 	}
 
 	/**
 	 * @generated
 	 */
-	private ToolEntry createNavigableAssociation4CreationTool() {
+	private ToolEntry createNavigableAssociation4CreationToolGen() {
 		ToolEntry entry = new ToolEntry(Messages.NavigableAssociation4CreationTool_title, Messages.NavigableAssociation4CreationTool_desc, null, null) {
 		};
 		entry.setToolClass(CreateAssociationLinkTool.NAVIGABLE.class);
 		return entry;
 	}
 
+	/**
+	 * @generated NOT
+	 */
+	private ToolEntry createNavigableAssociation4CreationTool() {
+		ToolEntry entry = createNavigableAssociation4CreationToolGen();
+		entry.setSmallIcon(UMLElementTypes.getImageDescriptor(UMLElementTypes.Association_4011));
+		entry.setLargeIcon(entry.getSmallIcon());
+		return entry;
+	}
 	/**
 	 * @generated
 	 */
