@@ -18,6 +18,7 @@ import java.util.Map;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.uml2.diagram.clazz.edit.helpers.DependencyEditHelper;
 import org.eclipse.uml2.diagram.clazz.providers.UMLElementTypes;
+import org.eclipse.uml2.diagram.common.part.CreateLinkToolBase;
 import org.eclipse.uml2.uml.UMLPackage;
 
 public class CreateDependencyLinkTool extends CreateLinkToolBase {

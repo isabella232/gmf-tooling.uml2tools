@@ -7,6 +7,7 @@ import org.eclipse.gef.Tool;
 import org.eclipse.gef.palette.PaletteContainer;
 import org.eclipse.gef.palette.PaletteGroup;
 import org.eclipse.gef.palette.PaletteRoot;
+import org.eclipse.gef.palette.PaletteStack;
 import org.eclipse.gef.palette.ToolEntry;
 import org.eclipse.gmf.runtime.diagram.ui.tools.UnspecifiedTypeConnectionTool;
 import org.eclipse.gmf.runtime.diagram.ui.tools.UnspecifiedTypeCreationTool;
@@ -68,6 +69,21 @@ public class UMLPaletteFactory {
 		paletteContainer.add(createRoleBinding2CreationTool());
 		paletteContainer.add(createProvidedInterface3CreationTool());
 		paletteContainer.add(createRequiredInterface4CreationTool());
+		paletteContainer.add(createAssociation5Group());
+		return paletteContainer;
+	}
+
+	/**
+	 * Creates "Association" palette tool group
+	 * @generated
+	 */
+	private PaletteContainer createAssociation5Group() {
+		PaletteStack paletteContainer = new PaletteStack(Messages.Association5Group_title, null, null);
+		paletteContainer.setDescription(Messages.Association5Group_desc);
+		paletteContainer.add(createAssociation1CreationTool());
+		paletteContainer.add(createSharedAssociation2CreationTool());
+		paletteContainer.add(createCompositeAssociation3CreationTool());
+		paletteContainer.add(createNavigableAssociation4CreationTool());
 		return paletteContainer;
 	}
 
@@ -251,6 +267,49 @@ public class UMLPaletteFactory {
 		LinkToolEntry entry = new LinkToolEntry(Messages.RequiredInterface4CreationTool_title, Messages.RequiredInterface4CreationTool_desc, types);
 		entry.setSmallIcon(UMLElementTypes.getImageDescriptor(UMLElementTypes.Usage_4008));
 		entry.setLargeIcon(entry.getSmallIcon());
+		return entry;
+	}
+
+	/**
+	 * @generated
+	 */
+	private ToolEntry createAssociation1CreationTool() {
+		List/*<IElementType>*/types = new ArrayList/*<IElementType>*/(1);
+		types.add(UMLElementTypes.Association_4011);
+		LinkToolEntry entry = new LinkToolEntry(Messages.Association1CreationTool_title, Messages.Association1CreationTool_desc, types);
+		entry.setSmallIcon(UMLElementTypes.getImageDescriptor(UMLElementTypes.Association_4011));
+		entry.setLargeIcon(entry.getSmallIcon());
+		entry.setToolClass(CreateAssociationLinkTool.NONE.class);
+		return entry;
+	}
+
+	/**
+	 * @generated
+	 */
+	private ToolEntry createSharedAssociation2CreationTool() {
+		ToolEntry entry = new ToolEntry(Messages.SharedAssociation2CreationTool_title, Messages.SharedAssociation2CreationTool_desc, null, null) {
+		};
+		entry.setToolClass(CreateAssociationLinkTool.SHARED.class);
+		return entry;
+	}
+
+	/**
+	 * @generated
+	 */
+	private ToolEntry createCompositeAssociation3CreationTool() {
+		ToolEntry entry = new ToolEntry(Messages.CompositeAssociation3CreationTool_title, Messages.CompositeAssociation3CreationTool_desc, null, null) {
+		};
+		entry.setToolClass(CreateAssociationLinkTool.COMPOSITE.class);
+		return entry;
+	}
+
+	/**
+	 * @generated
+	 */
+	private ToolEntry createNavigableAssociation4CreationTool() {
+		ToolEntry entry = new ToolEntry(Messages.NavigableAssociation4CreationTool_title, Messages.NavigableAssociation4CreationTool_desc, null, null) {
+		};
+		entry.setToolClass(CreateAssociationLinkTool.NAVIGABLE.class);
 		return entry;
 	}
 

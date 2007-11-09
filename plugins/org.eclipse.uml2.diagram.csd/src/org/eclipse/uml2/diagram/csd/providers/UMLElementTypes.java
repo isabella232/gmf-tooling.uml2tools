@@ -157,6 +157,11 @@ public class UMLElementTypes extends ElementInitializers {
 	/**
 	 * @generated
 	 */
+	public static final IElementType Association_4011 = getElementType("org.eclipse.uml2.diagram.csd.Association_4011"); //$NON-NLS-1$
+
+	/**
+	 * @generated
+	 */
 	private static ImageRegistry getImageRegistry() {
 		if (imageRegistry == null) {
 			imageRegistry = new ImageRegistry();
@@ -303,6 +308,8 @@ public class UMLElementTypes extends ElementInitializers {
 			elements.put(Usage_4008, UMLPackage.eINSTANCE.getUsage());
 
 			elements.put(PortProvided_4010, UMLPackage.eINSTANCE.getPort_Provided());
+
+			elements.put(Association_4011, UMLPackage.eINSTANCE.getAssociation());
 		}
 		return (ENamedElement) elements.get(type);
 	}
@@ -342,6 +349,7 @@ public class UMLElementTypes extends ElementInitializers {
 			KNOWN_ELEMENT_TYPES.add(InterfaceRealization_4007);
 			KNOWN_ELEMENT_TYPES.add(Usage_4008);
 			KNOWN_ELEMENT_TYPES.add(PortProvided_4010);
+			KNOWN_ELEMENT_TYPES.add(Association_4011);
 		}
 		return KNOWN_ELEMENT_TYPES.contains(elementType);
 	}

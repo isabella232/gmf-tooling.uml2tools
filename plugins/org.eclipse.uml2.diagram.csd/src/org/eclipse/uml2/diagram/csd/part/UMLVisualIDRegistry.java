@@ -5,6 +5,14 @@ import org.eclipse.emf.ecore.EAnnotation;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.gmf.runtime.notation.Diagram;
 import org.eclipse.gmf.runtime.notation.View;
+import org.eclipse.uml2.diagram.csd.edit.parts.AssociationEditPart;
+import org.eclipse.uml2.diagram.csd.edit.parts.AssociationName2EditPart;
+import org.eclipse.uml2.diagram.csd.edit.parts.AssociationName3EditPart;
+import org.eclipse.uml2.diagram.csd.edit.parts.AssociationName4EditPart;
+import org.eclipse.uml2.diagram.csd.edit.parts.AssociationName5EditPart;
+import org.eclipse.uml2.diagram.csd.edit.parts.AssociationName6EditPart;
+import org.eclipse.uml2.diagram.csd.edit.parts.AssociationName7EditPart;
+import org.eclipse.uml2.diagram.csd.edit.parts.AssociationNameEditPart;
 import org.eclipse.uml2.diagram.csd.edit.parts.Class2EditPart;
 import org.eclipse.uml2.diagram.csd.edit.parts.Class3EditPart;
 import org.eclipse.uml2.diagram.csd.edit.parts.ClassAttributesEditPart;
@@ -443,6 +451,29 @@ public class UMLVisualIDRegistry {
 				return true;
 			}
 			break;
+		case AssociationEditPart.VISUAL_ID:
+			if (AssociationNameEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			if (AssociationName2EditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			if (AssociationName3EditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			if (AssociationName4EditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			if (AssociationName5EditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			if (AssociationName6EditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			if (AssociationName7EditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			break;
 		}
 		return false;
 	}
@@ -465,6 +496,9 @@ public class UMLVisualIDRegistry {
 		}
 		if (UMLPackage.eINSTANCE.getUsage().isSuperTypeOf(domainElement.eClass()) && evaluate(Usage_4008_Constraint, domainElement)) {
 			return UsageEditPart.VISUAL_ID;
+		}
+		if (UMLPackage.eINSTANCE.getAssociation().isSuperTypeOf(domainElement.eClass())) {
+			return AssociationEditPart.VISUAL_ID;
 		}
 		return -1;
 	}

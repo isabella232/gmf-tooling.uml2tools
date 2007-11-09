@@ -25,8 +25,6 @@ public class CustomMessages extends NLS {
 	public static String AssociationContributionItemProvider_association_type_group;
 	public static String AssociationCreateCommand_source_end;
 	public static String AssociationCreateCommand_target_end;
-	public static String AssociationEndToString_not_association_exception;
-	public static String AssociationEndToString_not_binary_association_exception;
 	public static String AssociationFromPropertyContributionItemProvider_create_association_action;
 	public static String ChangeAssociationKind_composite_action_label;
 	public static String ChangeAssociationKind_none_action_label;

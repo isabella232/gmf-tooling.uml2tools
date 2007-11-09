@@ -13,8 +13,8 @@ import org.eclipse.gmf.runtime.emf.type.core.commands.SetValueCommand;
 import org.eclipse.gmf.runtime.emf.type.core.requests.SetRequest;
 import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.ui.IWorkbenchPage;
-import org.eclipse.uml2.diagram.clazz.edit.helpers.AssociationEditHelper;
 import org.eclipse.uml2.diagram.clazz.part.CustomMessages;
+import org.eclipse.uml2.diagram.common.commands.ChangeAssociationKindCommand;
 import org.eclipse.uml2.diagram.common.conventions.AssociationEndConvention;
 import org.eclipse.uml2.uml.AggregationKind;
 import org.eclipse.uml2.uml.Association;
@@ -38,7 +38,7 @@ public class ChangeAssociationKind extends DiagramAction {
 		if (currentKind != null && currentKind.getValue() == kind.getValue()) {
 			return UnexecutableCommand.INSTANCE;
 		}
-		SetRequest request = new AssociationEditHelper.SetAggregationKindRequest(association, kind);
+		SetRequest request = new ChangeAssociationKindCommand.SetAggregationKindRequest(association, kind);
 		SetValueCommand setValueCommand = new SetValueCommand(request);
 		return new ICommandProxy(setValueCommand);
 	}

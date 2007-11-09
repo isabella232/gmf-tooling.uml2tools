@@ -18,6 +18,7 @@ import java.util.Map;
 
 import org.eclipse.uml2.diagram.clazz.edit.helpers.AssociationEditHelper;
 import org.eclipse.uml2.diagram.clazz.providers.UMLElementTypes;
+import org.eclipse.uml2.diagram.common.part.CreateLinkToolBase;
 import org.eclipse.uml2.uml.AggregationKind;
 
 public class CreateAssociationLinkTool extends CreateLinkToolBase {

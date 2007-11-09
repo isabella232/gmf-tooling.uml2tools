@@ -6,6 +6,14 @@ import org.eclipse.gmf.runtime.diagram.core.providers.AbstractViewProvider;
 import org.eclipse.gmf.runtime.emf.type.core.IElementType;
 import org.eclipse.gmf.runtime.emf.type.core.IHintedType;
 import org.eclipse.gmf.runtime.notation.View;
+import org.eclipse.uml2.diagram.csd.edit.parts.AssociationEditPart;
+import org.eclipse.uml2.diagram.csd.edit.parts.AssociationName2EditPart;
+import org.eclipse.uml2.diagram.csd.edit.parts.AssociationName3EditPart;
+import org.eclipse.uml2.diagram.csd.edit.parts.AssociationName4EditPart;
+import org.eclipse.uml2.diagram.csd.edit.parts.AssociationName5EditPart;
+import org.eclipse.uml2.diagram.csd.edit.parts.AssociationName6EditPart;
+import org.eclipse.uml2.diagram.csd.edit.parts.AssociationName7EditPart;
+import org.eclipse.uml2.diagram.csd.edit.parts.AssociationNameEditPart;
 import org.eclipse.uml2.diagram.csd.edit.parts.Class2EditPart;
 import org.eclipse.uml2.diagram.csd.edit.parts.Class3EditPart;
 import org.eclipse.uml2.diagram.csd.edit.parts.ClassAttributesEditPart;
@@ -50,6 +58,14 @@ import org.eclipse.uml2.diagram.csd.edit.parts.SlotEditPart;
 import org.eclipse.uml2.diagram.csd.edit.parts.SlotNameEditPart;
 import org.eclipse.uml2.diagram.csd.edit.parts.UsageEditPart;
 import org.eclipse.uml2.diagram.csd.part.UMLVisualIDRegistry;
+import org.eclipse.uml2.diagram.csd.view.factories.AssociationName2ViewFactory;
+import org.eclipse.uml2.diagram.csd.view.factories.AssociationName3ViewFactory;
+import org.eclipse.uml2.diagram.csd.view.factories.AssociationName4ViewFactory;
+import org.eclipse.uml2.diagram.csd.view.factories.AssociationName5ViewFactory;
+import org.eclipse.uml2.diagram.csd.view.factories.AssociationName6ViewFactory;
+import org.eclipse.uml2.diagram.csd.view.factories.AssociationName7ViewFactory;
+import org.eclipse.uml2.diagram.csd.view.factories.AssociationNameViewFactory;
+import org.eclipse.uml2.diagram.csd.view.factories.AssociationViewFactory;
 import org.eclipse.uml2.diagram.csd.view.factories.Class2ViewFactory;
 import org.eclipse.uml2.diagram.csd.view.factories.Class3ViewFactory;
 import org.eclipse.uml2.diagram.csd.view.factories.ClassAttributesViewFactory;
@@ -267,6 +283,17 @@ public class UMLViewProvider extends AbstractViewProvider {
 						return null; // wrong container
 					}
 					break;
+				case AssociationNameEditPart.VISUAL_ID:
+				case AssociationName2EditPart.VISUAL_ID:
+				case AssociationName3EditPart.VISUAL_ID:
+				case AssociationName4EditPart.VISUAL_ID:
+				case AssociationName5EditPart.VISUAL_ID:
+				case AssociationName6EditPart.VISUAL_ID:
+				case AssociationName7EditPart.VISUAL_ID:
+					if (AssociationEditPart.VISUAL_ID != UMLVisualIDRegistry.getVisualID(containerView) || containerView.getElement() != domainElement) {
+						return null; // wrong container
+					}
+					break;
 				default:
 					return null;
 				}
@@ -357,6 +384,20 @@ public class UMLViewProvider extends AbstractViewProvider {
 			return InstanceSpecificationSlotsViewFactory.class;
 		case DependencyNameEditPart.VISUAL_ID:
 			return DependencyNameViewFactory.class;
+		case AssociationNameEditPart.VISUAL_ID:
+			return AssociationNameViewFactory.class;
+		case AssociationName2EditPart.VISUAL_ID:
+			return AssociationName2ViewFactory.class;
+		case AssociationName3EditPart.VISUAL_ID:
+			return AssociationName3ViewFactory.class;
+		case AssociationName4EditPart.VISUAL_ID:
+			return AssociationName4ViewFactory.class;
+		case AssociationName5EditPart.VISUAL_ID:
+			return AssociationName5ViewFactory.class;
+		case AssociationName6EditPart.VISUAL_ID:
+			return AssociationName6ViewFactory.class;
+		case AssociationName7EditPart.VISUAL_ID:
+			return AssociationName7ViewFactory.class;
 		}
 		return null;
 	}
@@ -399,6 +440,8 @@ public class UMLViewProvider extends AbstractViewProvider {
 			return UsageViewFactory.class;
 		case PortProvidedEditPart.VISUAL_ID:
 			return PortProvidedViewFactory.class;
+		case AssociationEditPart.VISUAL_ID:
+			return AssociationViewFactory.class;
 		}
 		return null;
 	}

@@ -53,6 +53,7 @@ import org.eclipse.uml2.uml.NamedElement;
 import org.eclipse.uml2.uml.Package;
 import org.eclipse.uml2.uml.Port;
 import org.eclipse.uml2.uml.StructuredClassifier;
+import org.eclipse.uml2.uml.Type;
 import org.eclipse.uml2.uml.UMLPackage;
 
 /**
@@ -423,6 +424,13 @@ public class UMLBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 		/**
 		 * @generated
 		 */
+		public static boolean canCreateAssociation_4011(Package container, Type source, Type target) {
+			return canExistAssociation_4011(container, source, target);
+		}
+
+		/**
+		 * @generated
+		 */
 		public static boolean canExistConnector_4005(StructuredClassifier container, ConnectableElement source, ConnectableElement target) {
 			return true;
 		}
@@ -461,6 +469,13 @@ public class UMLBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 			if (!evaluate(PortProvided_4010_SourceExpression, source, target, false)) {
 				return false;
 			}
+			return true;
+		}
+
+		/**
+		 * @generated
+		 */
+		public static boolean canExistAssociation_4011(Package container, Type source, Type target) {
 			return true;
 		}
 
