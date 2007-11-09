@@ -19,6 +19,7 @@ import org.eclipse.uml2.diagram.activity.edit.parts.AcceptEventAction2EditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.AcceptEventActionEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.ActivityFinalNodeEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.ActivityParameterNodeEditPart;
+import org.eclipse.uml2.diagram.activity.edit.parts.ActivityPartitionEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.ActivitySubverticesEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.AddStructuralFeatureValueActionEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.CallBehaviorActionEditPart;
@@ -152,6 +153,9 @@ public class ActivityItemSemanticEditPolicy extends UMLBaseItemSemanticEditPolic
 						cmd.add(getDestroyElementCommand(cnode));
 						break;
 					case SendSignalActionEditPart.VISUAL_ID:
+						cmd.add(getDestroyElementCommand(cnode));
+						break;
+					case ActivityPartitionEditPart.VISUAL_ID:
 						cmd.add(getDestroyElementCommand(cnode));
 						break;
 					}

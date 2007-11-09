@@ -870,6 +870,16 @@
       </metamodel>
       <metamodel nsURI="http://www.eclipse.org/uml2/2.1.0/UML">
          <metamodelType
+               id="org.eclipse.uml2.diagram.activity.ActivityPartition_3056"
+               name="%metatype.name.ActivityPartition_3056"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
+               eclass="ActivityPartition"
+               edithelper="org.eclipse.uml2.diagram.activity.edit.helpers.ActivityPartitionEditHelper">
+            <param name="semanticHint" value="3056"/>
+         </metamodelType>
+      </metamodel>
+      <metamodel nsURI="http://www.eclipse.org/uml2/2.1.0/UML">
+         <metamodelType
                id="org.eclipse.uml2.diagram.activity.LiteralString_3049"
                name="%metatype.name.LiteralString_3049"
                kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
@@ -1010,6 +1020,7 @@
          <elementType ref="org.eclipse.uml2.diagram.activity.OpaqueBehavior_3047"/>
          <elementType ref="org.eclipse.uml2.diagram.activity.ActivityParameterNode_3052"/>
          <elementType ref="org.eclipse.uml2.diagram.activity.SendSignalAction_3053"/>
+         <elementType ref="org.eclipse.uml2.diagram.activity.ActivityPartition_3056"/>
          <elementType ref="org.eclipse.uml2.diagram.activity.LiteralString_3049"/>
          <elementType ref="org.eclipse.uml2.diagram.activity.LiteralString_3051"/>
          <elementType ref="org.eclipse.uml2.diagram.activity.ControlFlow_4001"/>

@@ -140,6 +140,7 @@ public class UMLViewProvider extends AbstractViewProvider {
 				case OpaqueBehaviorEditPart.VISUAL_ID:
 				case ActivityParameterNodeEditPart.VISUAL_ID:
 				case SendSignalActionEditPart.VISUAL_ID:
+				case ActivityPartitionEditPart.VISUAL_ID:
 				case LiteralStringEditPart.VISUAL_ID:
 				case LiteralString2EditPart.VISUAL_ID:
 					if (domainElement == null || visualID != UMLVisualIDRegistry.getNodeVisualID(containerView, domainElement)) {
@@ -328,6 +329,12 @@ public class UMLViewProvider extends AbstractViewProvider {
 					break;
 				case SendSignalActionNameEditPart.VISUAL_ID:
 					if (SendSignalActionEditPart.VISUAL_ID != UMLVisualIDRegistry.getVisualID(containerView) || containerView.getElement() != domainElement) {
+						return null; // wrong container
+					}
+					break;
+				case ActivityPartitionNameEditPart.VISUAL_ID:
+				case ActivityPartitionActivityPartition_nodesEditPart.VISUAL_ID:
+					if (ActivityPartitionEditPart.VISUAL_ID != UMLVisualIDRegistry.getVisualID(containerView) || containerView.getElement() != domainElement) {
 						return null; // wrong container
 					}
 					break;
@@ -536,6 +543,10 @@ public class UMLViewProvider extends AbstractViewProvider {
 			return SendSignalActionViewFactory.class;
 		case SendSignalActionNameEditPart.VISUAL_ID:
 			return SendSignalActionNameViewFactory.class;
+		case ActivityPartitionEditPart.VISUAL_ID:
+			return ActivityPartitionViewFactory.class;
+		case ActivityPartitionNameEditPart.VISUAL_ID:
+			return ActivityPartitionNameViewFactory.class;
 		case LiteralStringEditPart.VISUAL_ID:
 			return LiteralStringViewFactory.class;
 		case LiteralString2EditPart.VISUAL_ID:
@@ -546,6 +557,8 @@ public class UMLViewProvider extends AbstractViewProvider {
 			return StructuredActivityNodeStructuredActivityContentPaneCompartmentViewFactory.class;
 		case StructuredActivityNodeStructuredActivityContentPaneCompartment2EditPart.VISUAL_ID:
 			return StructuredActivityNodeStructuredActivityContentPaneCompartment2ViewFactory.class;
+		case ActivityPartitionActivityPartition_nodesEditPart.VISUAL_ID:
+			return ActivityPartitionActivityPartition_nodesViewFactory.class;
 		case ConstraintPreconditionEditPart.VISUAL_ID:
 			return ConstraintPreconditionViewFactory.class;
 		case ConstraintPostconditionEditPart.VISUAL_ID:

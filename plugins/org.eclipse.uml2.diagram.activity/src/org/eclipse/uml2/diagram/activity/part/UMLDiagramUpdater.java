@@ -22,6 +22,7 @@ import org.eclipse.uml2.diagram.activity.edit.parts.ActivityEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.ActivityFinalNode2EditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.ActivityFinalNodeEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.ActivityParameterNodeEditPart;
+import org.eclipse.uml2.diagram.activity.edit.parts.ActivityPartitionEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.ActivitySubverticesEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.AddStructuralFeatureValueAction2EditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.AddStructuralFeatureValueActionEditPart;
@@ -549,6 +550,10 @@ public class UMLDiagramUpdater {
 				result.add(new UMLNodeDescriptor(childElement, visualID));
 				continue;
 			}
+			if (visualID == ActivityPartitionEditPart.VISUAL_ID) {
+				result.add(new UMLNodeDescriptor(childElement, visualID));
+				continue;
+			}
 		}
 		for (Iterator it = modelElement.getOwnedBehaviors().iterator(); it.hasNext();) {
 			Behavior childElement = (Behavior) it.next();
@@ -940,6 +945,8 @@ public class UMLDiagramUpdater {
 			return getActivityParameterNode_3052ContainedLinks(view);
 		case SendSignalActionEditPart.VISUAL_ID:
 			return getSendSignalAction_3053ContainedLinks(view);
+		case ActivityPartitionEditPart.VISUAL_ID:
+			return getActivityPartition_3056ContainedLinks(view);
 		case LiteralStringEditPart.VISUAL_ID:
 			return getLiteralString_3049ContainedLinks(view);
 		case LiteralString2EditPart.VISUAL_ID:
@@ -1059,6 +1066,8 @@ public class UMLDiagramUpdater {
 			return getActivityParameterNode_3052IncomingLinks(view);
 		case SendSignalActionEditPart.VISUAL_ID:
 			return getSendSignalAction_3053IncomingLinks(view);
+		case ActivityPartitionEditPart.VISUAL_ID:
+			return getActivityPartition_3056IncomingLinks(view);
 		case LiteralStringEditPart.VISUAL_ID:
 			return getLiteralString_3049IncomingLinks(view);
 		case LiteralString2EditPart.VISUAL_ID:
@@ -1178,6 +1187,8 @@ public class UMLDiagramUpdater {
 			return getActivityParameterNode_3052OutgoingLinks(view);
 		case SendSignalActionEditPart.VISUAL_ID:
 			return getSendSignalAction_3053OutgoingLinks(view);
+		case ActivityPartitionEditPart.VISUAL_ID:
+			return getActivityPartition_3056OutgoingLinks(view);
 		case LiteralStringEditPart.VISUAL_ID:
 			return getLiteralString_3049OutgoingLinks(view);
 		case LiteralString2EditPart.VISUAL_ID:
@@ -1687,6 +1698,13 @@ public class UMLDiagramUpdater {
 		result.addAll(getOutgoingFeatureModelFacetLinks_Action_LocalPostcondition_4006(modelElement));
 		result.addAll(getContainedTypeModelFacetLinks_ExceptionHandler_4005(modelElement));
 		return result;
+	}
+
+	/**
+	 * @generated
+	 */
+	public static List getActivityPartition_3056ContainedLinks(View view) {
+		return Collections.EMPTY_LIST;
 	}
 
 	/**
@@ -2342,6 +2360,13 @@ public class UMLDiagramUpdater {
 	/**
 	 * @generated
 	 */
+	public static List getActivityPartition_3056IncomingLinks(View view) {
+		return Collections.EMPTY_LIST;
+	}
+
+	/**
+	 * @generated
+	 */
 	public static List getLiteralString_3049IncomingLinks(View view) {
 		return Collections.EMPTY_LIST;
 	}
@@ -2974,6 +2999,13 @@ public class UMLDiagramUpdater {
 		result.addAll(getOutgoingFeatureModelFacetLinks_Action_LocalPostcondition_4006(modelElement));
 		result.addAll(getOutgoingTypeModelFacetLinks_ExceptionHandler_4005(modelElement));
 		return result;
+	}
+
+	/**
+	 * @generated
+	 */
+	public static List getActivityPartition_3056OutgoingLinks(View view) {
+		return Collections.EMPTY_LIST;
 	}
 
 	/**

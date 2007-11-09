@@ -56,6 +56,39 @@
       <accessors
           figure="//@figures.0/@descriptors.0/@actualFigure/@children.1"/>
     </descriptors>
+    <descriptors
+        name="ActivityPartitionFigure">
+      <actualFigure
+          xsi:type="gmfgraph:Rectangle"
+          name="ActivityPartitionFigure">
+        <layout
+            xsi:type="gmfgraph:BorderLayout"/>
+        <children
+            xsi:type="gmfgraph:CustomFigure"
+            name="ActivityPartitionFigure_name"
+            qualifiedClassName="org.eclipse.uml2.diagram.common.draw2d.RotatedImageOfString">
+          <layoutData
+              xsi:type="gmfgraph:BorderLayoutData"
+              alignment="BEGINNING"/>
+          <insets
+              top="5"
+              left="2"
+              bottom="5"
+              right="2"/>
+        </children>
+        <children
+            xsi:type="gmfgraph:Rectangle"
+            name="ActivityPartitionFigure_body">
+          <layoutData
+              xsi:type="gmfgraph:BorderLayoutData"
+              alignment="FILL"/>
+        </children>
+      </actualFigure>
+      <accessors
+          figure="//@figures.0/@descriptors.1/@actualFigure/@children.0"/>
+      <accessors
+          figure="//@figures.0/@descriptors.1/@actualFigure/@children.1"/>
+    </descriptors>
   </figures>
   <nodes
       name="ActivityNode"
@@ -73,8 +106,20 @@
       figure="ActivityFigure"
       elementIcon="false"
       accessor="//@figures.0/@descriptors.0/@accessors.0"/>
+  <nodes
+      name="ActivityPartitionNode"
+      figure="ActivityPartitionFigure"/>
   <compartments
       name="subvertices"
       figure="ActivityFigure"
       accessor="//@figures.0/@descriptors.0/@accessors.1"/>
+  <compartments
+      name="ActivityPartition_nodes"
+      figure="ActivityPartitionFigure"
+      accessor="//@figures.0/@descriptors.1/@accessors.1"/>
+  <labels
+      name="ActivityPartitionNode_name"
+      figure="ActivityPartitionFigure"
+      elementIcon="false"
+      accessor="//@figures.0/@descriptors.1/@accessors.0"/>
 </gmfgraph:Canvas>

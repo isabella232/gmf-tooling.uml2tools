@@ -5,6 +5,7 @@ import org.eclipse.gmf.runtime.emf.type.core.requests.CreateElementRequest;
 import org.eclipse.uml2.diagram.activity.edit.commands.AcceptEventAction2CreateCommand;
 import org.eclipse.uml2.diagram.activity.edit.commands.AcceptEventActionCreateCommand;
 import org.eclipse.uml2.diagram.activity.edit.commands.ActivityFinalNodeCreateCommand;
+import org.eclipse.uml2.diagram.activity.edit.commands.ActivityPartitionCreateCommand;
 import org.eclipse.uml2.diagram.activity.edit.commands.AddStructuralFeatureValueActionCreateCommand;
 import org.eclipse.uml2.diagram.activity.edit.commands.CallBehaviorActionCreateCommand;
 import org.eclipse.uml2.diagram.activity.edit.commands.CallOperationActionCreateCommand;
@@ -153,6 +154,12 @@ public class ActivitySubverticesItemSemanticEditPolicy extends UMLBaseItemSemant
 				req.setContainmentFeature(UMLPackage.eINSTANCE.getActivity_Node());
 			}
 			return getGEFWrapper(new SendSignalActionCreateCommand(req));
+		}
+		if (UMLElementTypes.ActivityPartition_3056 == req.getElementType()) {
+			if (req.getContainmentFeature() == null) {
+				req.setContainmentFeature(UMLPackage.eINSTANCE.getActivity_Group());
+			}
+			return getGEFWrapper(new ActivityPartitionCreateCommand(req));
 		}
 		return super.getCreateCommand(req);
 	}

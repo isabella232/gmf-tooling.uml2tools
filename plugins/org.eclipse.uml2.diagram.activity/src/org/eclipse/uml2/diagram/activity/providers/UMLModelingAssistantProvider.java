@@ -147,6 +147,7 @@ public class UMLModelingAssistantProvider extends ModelingAssistantProvider {
 			types.add(UMLElementTypes.StructuredActivityNode_3046);
 			types.add(UMLElementTypes.OpaqueBehavior_3047);
 			types.add(UMLElementTypes.SendSignalAction_3053);
+			types.add(UMLElementTypes.ActivityPartition_3056);
 			return types;
 		}
 		if (editPart instanceof StructuredActivityNodeStructuredActivityContentPaneCompartmentEditPart) {

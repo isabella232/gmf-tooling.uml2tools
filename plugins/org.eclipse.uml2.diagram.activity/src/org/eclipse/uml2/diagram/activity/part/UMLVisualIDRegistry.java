@@ -370,6 +370,9 @@ public class UMLVisualIDRegistry {
 			if (UMLPackage.eINSTANCE.getSendSignalAction().isSuperTypeOf(domainElement.eClass())) {
 				return SendSignalActionEditPart.VISUAL_ID;
 			}
+			if (UMLPackage.eINSTANCE.getActivityPartition().isSuperTypeOf(domainElement.eClass())) {
+				return ActivityPartitionEditPart.VISUAL_ID;
+			}
 			break;
 		case StructuredActivityNodeStructuredActivityContentPaneCompartmentEditPart.VISUAL_ID:
 			if (UMLPackage.eINSTANCE.getStructuredActivityNode().isSuperTypeOf(domainElement.eClass())) {
@@ -785,6 +788,14 @@ public class UMLVisualIDRegistry {
 				return true;
 			}
 			break;
+		case ActivityPartitionEditPart.VISUAL_ID:
+			if (ActivityPartitionNameEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			if (ActivityPartitionActivityPartition_nodesEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			break;
 		case ActivitySubverticesEditPart.VISUAL_ID:
 			if (AcceptEventActionEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
@@ -844,6 +855,9 @@ public class UMLVisualIDRegistry {
 				return true;
 			}
 			if (SendSignalActionEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			if (ActivityPartitionEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
 			break;

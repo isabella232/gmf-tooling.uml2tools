@@ -41,6 +41,7 @@ public class UMLPaletteFactory {
 		paletteContainer.setDescription(Messages.Activities1Group_desc);
 		paletteContainer.add(createActivity1CreationTool());
 		paletteContainer.add(createActivityParameter2CreationTool());
+		paletteContainer.add(createActivityPartition3CreationTool());
 		return paletteContainer;
 	}
 
@@ -184,6 +185,18 @@ public class UMLPaletteFactory {
 		types.add(UMLElementTypes.ActivityParameterNode_3052);
 		NodeToolEntry entry = new NodeToolEntry(Messages.ActivityParameter2CreationTool_title, Messages.ActivityParameter2CreationTool_desc, types);
 		entry.setSmallIcon(UMLElementTypes.getImageDescriptor(UMLElementTypes.ActivityParameterNode_3052));
+		entry.setLargeIcon(entry.getSmallIcon());
+		return entry;
+	}
+
+	/**
+	 * @generated
+	 */
+	private ToolEntry createActivityPartition3CreationTool() {
+		List/*<IElementType>*/types = new ArrayList/*<IElementType>*/(1);
+		types.add(UMLElementTypes.ActivityPartition_3056);
+		NodeToolEntry entry = new NodeToolEntry(Messages.ActivityPartition3CreationTool_title, Messages.ActivityPartition3CreationTool_desc, types);
+		entry.setSmallIcon(UMLElementTypes.getImageDescriptor(UMLElementTypes.ActivityPartition_3056));
 		entry.setLargeIcon(entry.getSmallIcon());
 		return entry;
 	}

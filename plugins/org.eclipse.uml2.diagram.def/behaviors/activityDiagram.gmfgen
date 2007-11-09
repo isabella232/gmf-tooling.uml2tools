@@ -2542,6 +2542,62 @@
       </labels>
     </childNodes>
     <childNodes
+        visualID="3056"
+        editPartClassName="ActivityPartitionEditPart"
+        itemSemanticEditPolicyClassName="ActivityPartitionItemSemanticEditPolicy"
+        notationViewFactoryClassName="ActivityPartitionViewFactory"
+        canonicalEditPolicyClassName="ActivityPartitionCanonicalEditPolicy"
+        compartments="//@diagram/@compartments.3"
+        graphicalNodeEditPolicyClassName="ActivityPartitionGraphicalNodeEditPolicy"
+        createCommandClassName="ActivityPartitionCreateCommand"
+        containers="//@diagram/@compartments.0">
+      <diagramRunTimeClass
+          href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
+      <elementType
+          xsi:type="gmfgen:MetamodelType"
+          editHelperClassName="ActivityPartitionEditHelper"/>
+      <viewmap
+          xsi:type="gmfgen:InnerClassViewmap"
+          className="ActivityPartitionFigure"
+          classBody="&#xD;&#xA;/**&#xD;&#xA; * @generated&#xD;&#xA; */&#xD;&#xA;public class ActivityPartitionFigure extends org.eclipse.draw2d.RectangleFigure {&#xD;&#xA;&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;private org.eclipse.uml2.diagram.common.draw2d.RotatedImageOfString fFigureActivityPartitionFigure_name; &#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;private org.eclipse.draw2d.RectangleFigure fFigureActivityPartitionFigure_body; &#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;public ActivityPartitionFigure() {&#xD;&#xA;&#x9;&#x9;&#xD;&#xA;&#xD;&#xA;&#x9;org.eclipse.draw2d.BorderLayout layoutThis = new org.eclipse.draw2d.BorderLayout();&#xD;&#xA;&#x9;this.setLayoutManager(layoutThis);&#xD;&#xA;&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;createContents();&#xD;&#xA;&#x9;}&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;private void createContents(){&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;fFigureActivityPartitionFigure_name = new org.eclipse.uml2.diagram.common.draw2d.RotatedImageOfString();&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;fFigureActivityPartitionFigure_name.setBorder(new org.eclipse.draw2d.MarginBorder(getMapMode().DPtoLP(5)&#xD;&#xA;, getMapMode().DPtoLP(2)&#xD;&#xA;, getMapMode().DPtoLP(5)&#xD;&#xA;, getMapMode().DPtoLP(2)&#xD;&#xA;));&#xD;&#xA;&#xD;&#xA;this.add(fFigureActivityPartitionFigure_name, org.eclipse.draw2d.BorderLayout.LEFT);&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;fFigureActivityPartitionFigure_body = new org.eclipse.draw2d.RectangleFigure();&#xD;&#xA;&#xD;&#xA;this.add(fFigureActivityPartitionFigure_body, org.eclipse.draw2d.BorderLayout.CENTER);&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#x9;}&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;private boolean myUseLocalCoordinates = false;&#xD;&#xA;&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;protected boolean useLocalCoordinates() {&#xD;&#xA;&#x9;&#x9;return myUseLocalCoordinates;&#xD;&#xA;&#x9;}&#xD;&#xA;&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;protected void setUseLocalCoordinates(boolean useLocalCoordinates) {&#xD;&#xA;&#x9;&#x9;myUseLocalCoordinates = useLocalCoordinates;&#xD;&#xA;&#x9;}&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;public org.eclipse.uml2.diagram.common.draw2d.RotatedImageOfString getFigureActivityPartitionFigure_name() {&#xD;&#xA;&#x9;&#x9;return fFigureActivityPartitionFigure_name;&#xD;&#xA;&#x9;}&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;public org.eclipse.draw2d.RectangleFigure getFigureActivityPartitionFigure_body() {&#xD;&#xA;&#x9;&#x9;return fFigureActivityPartitionFigure_body;&#xD;&#xA;&#x9;}&#xD;&#xA;&#xD;&#xA;}&#xD;&#xA;&#xD;&#xA;">
+        <requiredPluginIDs>org.eclipse.gmf.runtime.draw2d.ui</requiredPluginIDs>
+      </viewmap>
+      <modelFacet>
+        <metaClass
+            href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/ActivityPartition"/>
+        <containmentMetaFeature
+            href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/Activity/group"/>
+        <childMetaFeature
+            href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/Activity/group"/>
+        <modelElementInitializer
+            xsi:type="gmfgen:GenFeatureSeqInitializer">
+          <initializers
+              xsi:type="gmfgen:GenFeatureValueSpec"
+              body=" let base : String = 'ActivityPartition' in  let suffixes : Sequence(String) = Sequence {'', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10'} in  let space : Namespace = self.namespace in  let allMissed : Sequence(String) = suffixes-> &#x9;select(s : String | not space.member->exists(e : NamedElement | e.name = base.concat(s)) ) in  let firstMissed : String = allMissed->first() in  let noMisses : Boolean = firstMissed.oclIsUndefined() in  let allNames : Set(String) =  &#x9;if noMisses &#x9;&#x9;then &#x9;&#x9;space.member->collect(e : NamedElement | &#x9;&#x9;&#x9;if e = self or e.name.oclIsUndefined() or e.name.substring(1, e.name.size().min(base.size())) &lt;> base &#x9;&#x9;&#x9;then '' else e.name &#x9;&#x9;&#x9;endif &#x9;&#x9;)->asSet()->excluding('') &#x9;&#x9;else Set{'not in use'} &#x9;&#x9;endif in  let longestName : String = &#x9;&#x9;if noMisses &#x9;&#x9;then allNames->select(n : String | not allNames->exists(nn : String | nn.size() > n.size()))->asSequence()->first()&#x9;&#x9;else 'not in use' &#x9;&#x9;endif &#x9;in  if noMisses then &#x9;&#x9;if longestName.oclIsUndefined() &#x9;&#x9;then base &#x9;&#x9;else longestName.concat('1') &#x9;&#x9;endif  else base.concat(firstMissed)  endif ">
+            <feature
+                href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/NamedElement/name"/>
+          </initializers>
+        </modelElementInitializer>
+      </modelFacet>
+      <labels
+          visualID="5045"
+          editPartClassName="ActivityPartitionNameEditPart"
+          itemSemanticEditPolicyClassName="ActivityPartitionNameItemSemanticEditPolicy"
+          notationViewFactoryClassName="ActivityPartitionNameViewFactory">
+        <diagramRunTimeClass
+            href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
+        <viewmap
+            xsi:type="gmfgen:ParentAssignedViewmap"
+            getterName="getFigureActivityPartitionFigure_name"
+            figureQualifiedClassName="org.eclipse.uml2.diagram.common.draw2d.RotatedImageOfString"/>
+        <modelFacet
+            xsi:type="gmfgen:FeatureLabelModelFacet">
+          <metaFeatures
+              href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/NamedElement/name"/>
+        </modelFacet>
+      </labels>
+    </childNodes>
+    <childNodes
         xsi:type="gmfgen:GenChildLabelNode"
         visualID="3049"
         editPartClassName="LiteralStringEditPart"
@@ -2550,7 +2606,7 @@
         canonicalEditPolicyClassName="LiteralStringCanonicalEditPolicy"
         graphicalNodeEditPolicyClassName="LiteralStringGraphicalNodeEditPolicy"
         createCommandClassName="LiteralStringCreateCommand"
-        containers="//@diagram/@compartments.3">
+        containers="//@diagram/@compartments.4">
       <diagramRunTimeClass
           href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
       <elementType
@@ -2596,13 +2652,13 @@
         canonicalEditPolicyClassName="LiteralString2CanonicalEditPolicy"
         graphicalNodeEditPolicyClassName="LiteralString2GraphicalNodeEditPolicy"
         createCommandClassName="LiteralString2CreateCommand"
-        containers="//@diagram/@compartments.4">
+        containers="//@diagram/@compartments.5">
       <diagramRunTimeClass
           href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
       <elementType
           xsi:type="gmfgen:SpecializationType"
           displayName="Literal String"
-          metamodelType="//@diagram/@childNodes.47/@elementType"
+          metamodelType="//@diagram/@childNodes.48/@elementType"
           editHelperAdviceClassName="LiteralStringEditHelperAdvice"/>
       <viewmap
           xsi:type="gmfgen:FigureViewmap"
@@ -2700,7 +2756,7 @@
         itemSemanticEditPolicyClassName="ConstraintItemSemanticEditPolicy"
         notationViewFactoryClassName="ConstraintViewFactory"
         canonicalEditPolicyClassName="ConstraintCanonicalEditPolicy"
-        compartments="//@diagram/@compartments.3"
+        compartments="//@diagram/@compartments.4"
         graphicalNodeEditPolicyClassName="ConstraintGraphicalNodeEditPolicy"
         createCommandClassName="ConstraintCreateCommand">
       <diagramRunTimeClass
@@ -2732,7 +2788,7 @@
         itemSemanticEditPolicyClassName="Constraint2ItemSemanticEditPolicy"
         notationViewFactoryClassName="Constraint2ViewFactory"
         canonicalEditPolicyClassName="Constraint2CanonicalEditPolicy"
-        compartments="//@diagram/@compartments.4"
+        compartments="//@diagram/@compartments.5"
         graphicalNodeEditPolicyClassName="Constraint2GraphicalNodeEditPolicy"
         createCommandClassName="Constraint2CreateCommand">
       <diagramRunTimeClass
@@ -3068,7 +3124,7 @@
         itemSemanticEditPolicyClassName="ActivitySubverticesItemSemanticEditPolicy"
         notationViewFactoryClassName="ActivitySubverticesViewFactory"
         canonicalEditPolicyClassName="ActivitySubverticesCanonicalEditPolicy"
-        childNodes="//@diagram/@childNodes.0 //@diagram/@childNodes.1 //@diagram/@childNodes.2 //@diagram/@childNodes.3 //@diagram/@childNodes.4 //@diagram/@childNodes.5 //@diagram/@childNodes.6 //@diagram/@childNodes.7 //@diagram/@childNodes.8 //@diagram/@childNodes.10 //@diagram/@childNodes.11 //@diagram/@childNodes.12 //@diagram/@childNodes.13 //@diagram/@childNodes.14 //@diagram/@childNodes.16 //@diagram/@childNodes.20 //@diagram/@childNodes.23 //@diagram/@childNodes.25 //@diagram/@childNodes.44 //@diagram/@childNodes.46"
+        childNodes="//@diagram/@childNodes.0 //@diagram/@childNodes.1 //@diagram/@childNodes.2 //@diagram/@childNodes.3 //@diagram/@childNodes.4 //@diagram/@childNodes.5 //@diagram/@childNodes.6 //@diagram/@childNodes.7 //@diagram/@childNodes.8 //@diagram/@childNodes.10 //@diagram/@childNodes.11 //@diagram/@childNodes.12 //@diagram/@childNodes.13 //@diagram/@childNodes.14 //@diagram/@childNodes.16 //@diagram/@childNodes.20 //@diagram/@childNodes.23 //@diagram/@childNodes.25 //@diagram/@childNodes.44 //@diagram/@childNodes.46 //@diagram/@childNodes.47"
         title="subvertices"
         canCollapse="false"
         needsTitle="false"
@@ -3120,12 +3176,29 @@
           figureQualifiedClassName="org.eclipse.draw2d.RectangleFigure"/>
     </compartments>
     <compartments
+        visualID="7015"
+        editPartClassName="ActivityPartitionActivityPartition_nodesEditPart"
+        itemSemanticEditPolicyClassName="ActivityPartitionActivityPartition_nodesItemSemanticEditPolicy"
+        notationViewFactoryClassName="ActivityPartitionActivityPartition_nodesViewFactory"
+        canonicalEditPolicyClassName="ActivityPartitionActivityPartition_nodesCanonicalEditPolicy"
+        title="ActivityPartition_nodes"
+        canCollapse="false"
+        needsTitle="false"
+        node="//@diagram/@childNodes.47">
+      <diagramRunTimeClass
+          href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
+      <viewmap
+          xsi:type="gmfgen:ParentAssignedViewmap"
+          getterName="getFigureActivityPartitionFigure_body"
+          figureQualifiedClassName="org.eclipse.draw2d.RectangleFigure"/>
+    </compartments>
+    <compartments
         visualID="7013"
         editPartClassName="ConstraintPreconditionEditPart"
         itemSemanticEditPolicyClassName="ConstraintPreconditionItemSemanticEditPolicy"
         notationViewFactoryClassName="ConstraintPreconditionViewFactory"
         canonicalEditPolicyClassName="ConstraintPreconditionCanonicalEditPolicy"
-        childNodes="//@diagram/@childNodes.47"
+        childNodes="//@diagram/@childNodes.48"
         title="precondition"
         canCollapse="false"
         needsTitle="false"
@@ -3143,7 +3216,7 @@
         itemSemanticEditPolicyClassName="ConstraintPostconditionItemSemanticEditPolicy"
         notationViewFactoryClassName="ConstraintPostconditionViewFactory"
         canonicalEditPolicyClassName="ConstraintPostconditionCanonicalEditPolicy"
-        childNodes="//@diagram/@childNodes.48"
+        childNodes="//@diagram/@childNodes.49"
         title="postcondition"
         canCollapse="false"
         needsTitle="false"
@@ -3169,6 +3242,11 @@
             title="Activity Parameter"
             description="Create Activity Parameter"
             genNodes="//@diagram/@childNodes.45"/>
+        <entries
+            xsi:type="gmfgen:ToolEntry"
+            title="Activity Partition"
+            description="Create Activity Partition"
+            genNodes="//@diagram/@childNodes.47"/>
       </groups>
       <groups
           title="Actions"
@@ -3616,17 +3694,20 @@
         parent="//@diagram/@topLevelNodes.0"
         child="//@diagram/@childNodes.46"/>
     <childReferences
+        parent="//@diagram/@topLevelNodes.0"
+        child="//@diagram/@childNodes.47"/>
+    <childReferences
         parent="//@diagram"
         child="//@diagram/@topLevelNodes.0"/>
     <childReferences
         parent="//@diagram/@topLevelNodes.1"
-        child="//@diagram/@childNodes.47"/>
+        child="//@diagram/@childNodes.48"/>
     <childReferences
         parent="//@diagram"
         child="//@diagram/@topLevelNodes.1"/>
     <childReferences
         parent="//@diagram/@topLevelNodes.2"
-        child="//@diagram/@childNodes.48"/>
+        child="//@diagram/@childNodes.49"/>
     <childReferences
         parent="//@diagram"
         child="//@diagram/@topLevelNodes.2"/>
@@ -6987,7 +7068,7 @@
   <expressionProviders>
     <providers
         xsi:type="gmfgen:GenExpressionInterpreter"
-        expressions="//@diagram/@topLevelNodes.0/@modelFacet/@modelElementInitializer/@initializers.0 //@diagram/@childNodes.0/@modelFacet/@modelElementSelector //@diagram/@childNodes.0/@modelFacet/@modelElementInitializer/@initializers.0 //@diagram/@childNodes.1/@modelFacet/@modelElementSelector //@diagram/@childNodes.1/@modelFacet/@modelElementInitializer/@initializers.1 //@diagram/@childNodes.3/@modelFacet/@modelElementInitializer/@initializers.0 //@diagram/@childNodes.4/@modelFacet/@modelElementInitializer/@initializers.0 //@diagram/@childNodes.6/@modelFacet/@modelElementInitializer/@initializers.0 //@diagram/@childNodes.7/@modelFacet/@modelElementInitializer/@initializers.0 //@diagram/@childNodes.8/@modelFacet/@modelElementInitializer/@initializers.0 //@diagram/@childNodes.14/@modelFacet/@modelElementInitializer/@initializers.0 //@diagram/@childNodes.16/@modelFacet/@modelElementInitializer/@initializers.0 //@diagram/@childNodes.20/@modelFacet/@modelElementInitializer/@initializers.0 //@diagram/@childNodes.23/@modelFacet/@modelElementInitializer/@initializers.0 //@diagram/@childNodes.45/@modelFacet/@modelElementInitializer/@initializers.0 //@diagram/@childNodes.46/@modelFacet/@modelElementInitializer/@initializers.0 //@diagram/@childNodes.47/@modelFacet/@modelElementInitializer/@initializers.0 //@diagram/@childNodes.48/@modelFacet/@modelElementInitializer/@initializers.0 //@diagram/@links.0/@creationConstraints/@sourceEnd //@diagram/@links.0/@creationConstraints/@targetEnd"/>
+        expressions="//@diagram/@topLevelNodes.0/@modelFacet/@modelElementInitializer/@initializers.0 //@diagram/@childNodes.0/@modelFacet/@modelElementSelector //@diagram/@childNodes.0/@modelFacet/@modelElementInitializer/@initializers.0 //@diagram/@childNodes.1/@modelFacet/@modelElementSelector //@diagram/@childNodes.1/@modelFacet/@modelElementInitializer/@initializers.1 //@diagram/@childNodes.3/@modelFacet/@modelElementInitializer/@initializers.0 //@diagram/@childNodes.4/@modelFacet/@modelElementInitializer/@initializers.0 //@diagram/@childNodes.6/@modelFacet/@modelElementInitializer/@initializers.0 //@diagram/@childNodes.7/@modelFacet/@modelElementInitializer/@initializers.0 //@diagram/@childNodes.8/@modelFacet/@modelElementInitializer/@initializers.0 //@diagram/@childNodes.14/@modelFacet/@modelElementInitializer/@initializers.0 //@diagram/@childNodes.16/@modelFacet/@modelElementInitializer/@initializers.0 //@diagram/@childNodes.20/@modelFacet/@modelElementInitializer/@initializers.0 //@diagram/@childNodes.23/@modelFacet/@modelElementInitializer/@initializers.0 //@diagram/@childNodes.45/@modelFacet/@modelElementInitializer/@initializers.0 //@diagram/@childNodes.46/@modelFacet/@modelElementInitializer/@initializers.0 //@diagram/@childNodes.47/@modelFacet/@modelElementInitializer/@initializers.0 //@diagram/@childNodes.48/@modelFacet/@modelElementInitializer/@initializers.0 //@diagram/@childNodes.49/@modelFacet/@modelElementInitializer/@initializers.0 //@diagram/@links.0/@creationConstraints/@sourceEnd //@diagram/@links.0/@creationConstraints/@targetEnd"/>
     <providers
         xsi:type="gmfgen:GenJavaExpressionProvider"
         expressions="//@diagram/@childNodes.1/@modelFacet/@modelElementInitializer/@initializers.0 //@diagram/@topLevelNodes.1/@modelFacet/@modelElementSelector //@diagram/@topLevelNodes.2/@modelFacet/@modelElementSelector"/>

@@ -363,6 +363,16 @@ public class Messages extends NLS {
 	/**
 	 * @generated
 	 */
+	public static String ActivityPartition3CreationTool_title;
+
+	/**
+	 * @generated
+	 */
+	public static String ActivityPartition3CreationTool_desc;
+
+	/**
+	 * @generated
+	 */
 	public static String AddFeatureValueAction2CreationTool_title;
 
 	/**
@@ -629,6 +639,11 @@ public class Messages extends NLS {
 	 * @generated
 	 */
 	public static String StructuredActivityNodeStructuredActivityContentPaneCompartment2EditPart_title;
+
+	/**
+	 * @generated
+	 */
+	public static String ActivityPartitionActivityPartition_nodesEditPart_title;
 
 	/**
 	 * @generated

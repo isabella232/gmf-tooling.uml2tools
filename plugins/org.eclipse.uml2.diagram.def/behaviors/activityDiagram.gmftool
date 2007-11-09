@@ -18,6 +18,10 @@
           xsi:type="gmftool:CreationTool"
           title="Activity Parameter"
           description="Create Activity Parameter"/>
+      <tools
+          xsi:type="gmftool:CreationTool"
+          title="Activity Partition"
+          description="Create Activity Partition"/>
     </tools>
     <tools
         xsi:type="gmftool:ToolGroup"

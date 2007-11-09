@@ -289,6 +289,12 @@ public class UMLEditPartFactory implements EditPartFactory {
 			case SendSignalActionNameEditPart.VISUAL_ID:
 				return new SendSignalActionNameEditPart(view);
 
+			case ActivityPartitionEditPart.VISUAL_ID:
+				return new ActivityPartitionEditPart(view);
+
+			case ActivityPartitionNameEditPart.VISUAL_ID:
+				return new ActivityPartitionNameEditPart(view);
+
 			case LiteralStringEditPart.VISUAL_ID:
 				return new LiteralStringEditPart(view);
 
@@ -303,6 +309,9 @@ public class UMLEditPartFactory implements EditPartFactory {
 
 			case StructuredActivityNodeStructuredActivityContentPaneCompartment2EditPart.VISUAL_ID:
 				return new StructuredActivityNodeStructuredActivityContentPaneCompartment2EditPart(view);
+
+			case ActivityPartitionActivityPartition_nodesEditPart.VISUAL_ID:
+				return new ActivityPartitionActivityPartition_nodesEditPart(view);
 
 			case ConstraintPreconditionEditPart.VISUAL_ID:
 				return new ConstraintPreconditionEditPart(view);
