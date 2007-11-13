@@ -25,7 +25,7 @@
       <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_LziIdI7TEdyb7ozkoKU63Q" value="1"/>
     </ownedEnd>
   </packagedElement>
-  <packagedElement xmi:type="uml:Association" xmi:id="_MwAXwI7TEdyb7ozkoKU63Q" memberEnd="_MwAXwY7TEdyb7ozkoKU63Q _MwJhso7TEdyb7ozkoKU63Q">
+  <packagedElement xmi:type="uml:Association" xmi:id="_MwAXwI7TEdyb7ozkoKU63Q" name="Axle" memberEnd="_MwAXwY7TEdyb7ozkoKU63Q _MwJhso7TEdyb7ozkoKU63Q">
     <ownedEnd xmi:id="_MwAXwY7TEdyb7ozkoKU63Q" name="src" type="_B0AkQI7TEdyb7ozkoKU63Q" association="_MwAXwI7TEdyb7ozkoKU63Q">
       <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_MwJhsY7TEdyb7ozkoKU63Q" value="*"/>
       <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_MwJhsI7TEdyb7ozkoKU63Q"/>
@@ -44,5 +44,15 @@
       <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_Oc4JRo7TEdyb7ozkoKU63Q" value="2"/>
       <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_Oc4JRY7TEdyb7ozkoKU63Q" value="1"/>
     </ownedEnd>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="_tC6jkJH2Edyt7sFQzxejuQ" name="Car">
+    <ownedAttribute xmi:id="_vG1jIJH2Edyt7sFQzxejuQ" name="rear" type="_B0AkQI7TEdyb7ozkoKU63Q" aggregation="composite">
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_ko7H4JH4EdyLU8hXuWDsRQ" value="2"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="_v7pEMJH2Edyt7sFQzxejuQ" name="e" type="_CBQ9II7TEdyb7ozkoKU63Q"/>
+    <ownedConnector xmi:id="_MobYwJH3Edyt7sFQzxejuQ" name="a" type="_MwAXwI7TEdyb7ozkoKU63Q">
+      <end xmi:id="_MobYwZH3Edyt7sFQzxejuQ" role="_vG1jIJH2Edyt7sFQzxejuQ"/>
+      <end xmi:id="_MobYwpH3Edyt7sFQzxejuQ" role="_v7pEMJH2Edyt7sFQzxejuQ"/>
+    </ownedConnector>
   </packagedElement>
 </uml:Package>

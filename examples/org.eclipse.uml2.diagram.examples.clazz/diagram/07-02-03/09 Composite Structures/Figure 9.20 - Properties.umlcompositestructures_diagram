@@ -86,6 +86,28 @@
     <element xmi:type="uml:Class" href="Figure 9.20 - Properties.uml#_CBQ9II7TEdyb7ozkoKU63Q"/>
     <layoutConstraint xmi:type="notation:Bounds" xmi:id="_CBj4Eo7TEdyb7ozkoKU63Q" x="516" y="312"/>
   </children>
+  <children xmi:type="notation:Node" xmi:id="_uKAugJH2Edyt7sFQzxejuQ" type="2007">
+    <children xmi:type="notation:Node" xmi:id="_uKAug5H2Edyt7sFQzxejuQ" type="5018"/>
+    <children xmi:type="notation:Node" xmi:id="_uKAuhJH2Edyt7sFQzxejuQ" type="7007">
+      <children xmi:type="notation:Node" xmi:id="_vG1jIZH2Edyt7sFQzxejuQ" type="3014">
+        <children xmi:type="notation:Node" xmi:id="_vG_UIJH2Edyt7sFQzxejuQ" type="5017"/>
+        <styles xmi:type="notation:ShapeStyle" xmi:id="_vG1jIpH2Edyt7sFQzxejuQ"/>
+        <element xmi:type="uml:Property" href="Figure 9.20 - Properties.uml#_vG1jIJH2Edyt7sFQzxejuQ"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_vG1jI5H2Edyt7sFQzxejuQ" x="29" y="24"/>
+      </children>
+      <children xmi:type="notation:Node" xmi:id="_v7pEMZH2Edyt7sFQzxejuQ" type="3014">
+        <children xmi:type="notation:Node" xmi:id="_v7pENJH2Edyt7sFQzxejuQ" type="5017"/>
+        <styles xmi:type="notation:ShapeStyle" xmi:id="_v7pEMpH2Edyt7sFQzxejuQ"/>
+        <element xmi:type="uml:Property" href="Figure 9.20 - Properties.uml#_v7pEMJH2Edyt7sFQzxejuQ"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_v7pEM5H2Edyt7sFQzxejuQ" x="185" y="24"/>
+      </children>
+      <styles xmi:type="notation:SortingStyle" xmi:id="_uKAuhZH2Edyt7sFQzxejuQ"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_uKAuhpH2Edyt7sFQzxejuQ"/>
+    </children>
+    <styles xmi:type="notation:ShapeStyle" xmi:id="_uKAugZH2Edyt7sFQzxejuQ"/>
+    <element xmi:type="uml:Class" href="Figure 9.20 - Properties.uml#_tC6jkJH2Edyt7sFQzxejuQ"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_uKAugpH2Edyt7sFQzxejuQ" x="744" y="204" width="289" height="109"/>
+  </children>
   <styles xmi:type="notation:DiagramStyle" xmi:id="_A8KWQY7TEdyb7ozkoKU63Q"/>
   <element xmi:type="uml:Package" href="Figure 9.20 - Properties.uml#_A6XmgI7TEdyb7ozkoKU63Q"/>
   <edges xmi:type="notation:Edge" xmi:id="_LziIdo7TEdyb7ozkoKU63Q" type="4011" source="_B8Wn8I7TEdyb7ozkoKU63Q" target="_CBj4EI7TEdyb7ozkoKU63Q">
