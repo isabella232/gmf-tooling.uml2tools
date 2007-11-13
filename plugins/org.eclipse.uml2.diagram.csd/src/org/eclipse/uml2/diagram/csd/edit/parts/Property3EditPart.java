@@ -3,6 +3,7 @@ package org.eclipse.uml2.diagram.csd.edit.parts;
 import org.eclipse.draw2d.IFigure;
 import org.eclipse.draw2d.RectangleFigure;
 import org.eclipse.draw2d.StackLayout;
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.gef.EditPart;
 import org.eclipse.gef.EditPolicy;
 import org.eclipse.gef.Request;
@@ -18,9 +19,13 @@ import org.eclipse.gmf.runtime.draw2d.ui.figures.WrapLabel;
 import org.eclipse.gmf.runtime.gef.ui.figures.DefaultSizeNodeFigure;
 import org.eclipse.gmf.runtime.gef.ui.figures.NodeFigure;
 import org.eclipse.gmf.runtime.notation.View;
+import org.eclipse.swt.SWT;
 import org.eclipse.uml2.diagram.common.draw2d.CenterLayout;
 import org.eclipse.uml2.diagram.csd.edit.policies.Property3ItemSemanticEditPolicy;
 import org.eclipse.uml2.diagram.csd.part.UMLVisualIDRegistry;
+import org.eclipse.uml2.uml.AggregationKind;
+import org.eclipse.uml2.uml.Property;
+import org.eclipse.uml2.uml.UMLPackage;
 
 /**
  * @generated
@@ -87,9 +92,18 @@ public class Property3EditPart extends ShapeNodeEditPart {
 	/**
 	 * @generated
 	 */
-	protected IFigure createNodeShape() {
+	protected IFigure createNodeShapeGen() {
 		PartFigure figure = new PartFigure();
 		return primaryShape = figure;
+	}
+
+	/**
+	 * @generated NOT
+	 */
+	protected IFigure createNodeShape() {
+		PartFigure figure = (PartFigure) createNodeShapeGen();
+		refreshOutline(figure);
+		return figure;
 	}
 
 	/**
@@ -201,6 +215,40 @@ public class Property3EditPart extends ShapeNodeEditPart {
 	 */
 	public EditPart getPrimaryChildEditPart() {
 		return getChildBySemanticHint(UMLVisualIDRegistry.getType(PropertyName2EditPart.VISUAL_ID));
+	}
+	
+	/**
+	 * @NOT-GENERATED
+	 */
+	protected void addSemanticListeners() {
+		super.addSemanticListeners();
+		Property part = (Property) resolveSemanticElement();
+		addListenerFilter("SemanticModel_PartAggregationListener", this, part, UMLPackage.eINSTANCE.getProperty_Aggregation());
+	}
+
+	/**
+	 * @NOT-GENERATED
+	 */
+	protected void handleNotificationEvent(Notification notification) {
+		super.handleNotificationEvent(notification);
+		if (UMLPackage.eINSTANCE.getProperty_Aggregation().equals(notification.getFeature())) {
+			refreshOutline(getPrimaryShape());
+		}
+	}
+
+	/**
+	 * @NOT-GENERATED
+	 */
+	private void refreshOutline(PartFigure partFigure) {
+		Property part = (Property) resolveSemanticElement();
+		if (part == null) {
+			return;
+		}
+		if (AggregationKind.COMPOSITE_LITERAL.equals(part.getAggregation())) {
+			partFigure.setLineStyle(SWT.LINE_SOLID);
+		} else {
+			partFigure.setLineStyle(SWT.LINE_DASH);
+		}
 	}
 
 	/**
