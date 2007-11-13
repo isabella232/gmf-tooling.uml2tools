@@ -1,9 +1,7 @@
 package org.eclipse.uml2.diagram.activity.edit.parts;
 
 import org.eclipse.draw2d.BorderLayout;
-import org.eclipse.draw2d.ColorConstants;
 import org.eclipse.draw2d.IFigure;
-import org.eclipse.draw2d.LineBorder;
 import org.eclipse.draw2d.MarginBorder;
 import org.eclipse.draw2d.RectangleFigure;
 import org.eclipse.draw2d.StackLayout;
@@ -24,8 +22,8 @@ import org.eclipse.gmf.runtime.draw2d.ui.figures.ConstrainedToolbarLayout;
 import org.eclipse.gmf.runtime.gef.ui.figures.DefaultSizeNodeFigure;
 import org.eclipse.gmf.runtime.gef.ui.figures.NodeFigure;
 import org.eclipse.gmf.runtime.notation.View;
-import org.eclipse.uml2.diagram.activity.edit.policies.ActivityPartitionCanonicalEditPolicy;
-import org.eclipse.uml2.diagram.activity.edit.policies.ActivityPartitionItemSemanticEditPolicy;
+import org.eclipse.uml2.diagram.activity.edit.policies.ActivityPartition2CanonicalEditPolicy;
+import org.eclipse.uml2.diagram.activity.edit.policies.ActivityPartition2ItemSemanticEditPolicy;
 import org.eclipse.uml2.diagram.activity.part.UMLVisualIDRegistry;
 import org.eclipse.uml2.diagram.common.draw2d.PartitionLayout;
 import org.eclipse.uml2.diagram.common.draw2d.RotatedImageOfString;
@@ -33,12 +31,12 @@ import org.eclipse.uml2.diagram.common.draw2d.RotatedImageOfString;
 /**
  * @generated
  */
-public class ActivityPartitionEditPart extends ShapeNodeEditPart {
+public class ActivityPartition2EditPart extends ShapeNodeEditPart {
 
 	/**
 	 * @generated
 	 */
-	public static final int VISUAL_ID = 3056;
+	public static final int VISUAL_ID = 3057;
 
 	/**
 	 * @generated
@@ -53,7 +51,7 @@ public class ActivityPartitionEditPart extends ShapeNodeEditPart {
 	/**
 	 * @generated
 	 */
-	public ActivityPartitionEditPart(View view) {
+	public ActivityPartition2EditPart(View view) {
 		super(view);
 	}
 
@@ -64,9 +62,9 @@ public class ActivityPartitionEditPart extends ShapeNodeEditPart {
 		installEditPolicy(EditPolicyRoles.CREATION_ROLE, new CreationEditPolicy());
 
 		super.createDefaultEditPolicies();
-		installEditPolicy(EditPolicyRoles.SEMANTIC_ROLE, new ActivityPartitionItemSemanticEditPolicy());
+		installEditPolicy(EditPolicyRoles.SEMANTIC_ROLE, new ActivityPartition2ItemSemanticEditPolicy());
 		installEditPolicy(EditPolicyRoles.DRAG_DROP_ROLE, new DragDropEditPolicy());
-		installEditPolicy(EditPolicyRoles.CANONICAL_ROLE, new ActivityPartitionCanonicalEditPolicy());
+		installEditPolicy(EditPolicyRoles.CANONICAL_ROLE, new ActivityPartition2CanonicalEditPolicy());
 		installEditPolicy(EditPolicy.LAYOUT_ROLE, createLayoutEditPolicy());
 		installEditPolicy(EditPolicy.LAYOUT_ROLE, new XYLayoutEditPolicy());
 	}
@@ -115,8 +113,8 @@ public class ActivityPartitionEditPart extends ShapeNodeEditPart {
 	 * @generated
 	 */
 	protected boolean addFixedChild(EditPart childEditPart) {
-		if (childEditPart instanceof ActivityPartitionNameEditPart) {
-			((ActivityPartitionNameEditPart) childEditPart).setLabel(getPrimaryShape().getFigureActivityPartitionFigure_name());
+		if (childEditPart instanceof ActivityPartitionName2EditPart) {
+			((ActivityPartitionName2EditPart) childEditPart).setLabel(getPrimaryShape().getFigureActivityPartitionFigure_name());
 			return true;
 		}
 		return false;
@@ -204,7 +202,7 @@ public class ActivityPartitionEditPart extends ShapeNodeEditPart {
 	 * @generated
 	 */
 	public EditPart getPrimaryChildEditPart() {
-		return getChildBySemanticHint(UMLVisualIDRegistry.getType(ActivityPartitionNameEditPart.VISUAL_ID));
+		return getChildBySemanticHint(UMLVisualIDRegistry.getType(ActivityPartitionName2EditPart.VISUAL_ID));
 	}
 
 	/**

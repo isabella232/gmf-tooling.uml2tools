@@ -307,6 +307,11 @@ public class UMLElementTypes extends ElementInitializers {
 	/**
 	 * @generated
 	 */
+	public static final IElementType ActivityPartition_3057 = getElementType("org.eclipse.uml2.diagram.activity.ActivityPartition_3057"); //$NON-NLS-1$
+
+	/**
+	 * @generated
+	 */
 	public static final IElementType LiteralString_3049 = getElementType("org.eclipse.uml2.diagram.activity.LiteralString_3049"); //$NON-NLS-1$
 
 	/**
@@ -554,6 +559,8 @@ public class UMLElementTypes extends ElementInitializers {
 
 			elements.put(ActivityPartition_3056, UMLPackage.eINSTANCE.getActivityPartition());
 
+			elements.put(ActivityPartition_3057, UMLPackage.eINSTANCE.getActivityPartition());
+
 			elements.put(LiteralString_3049, UMLPackage.eINSTANCE.getLiteralString());
 
 			elements.put(LiteralString_3051, UMLPackage.eINSTANCE.getLiteralString());
@@ -638,6 +645,7 @@ public class UMLElementTypes extends ElementInitializers {
 			KNOWN_ELEMENT_TYPES.add(ActivityParameterNode_3052);
 			KNOWN_ELEMENT_TYPES.add(SendSignalAction_3053);
 			KNOWN_ELEMENT_TYPES.add(ActivityPartition_3056);
+			KNOWN_ELEMENT_TYPES.add(ActivityPartition_3057);
 			KNOWN_ELEMENT_TYPES.add(LiteralString_3049);
 			KNOWN_ELEMENT_TYPES.add(LiteralString_3051);
 			KNOWN_ELEMENT_TYPES.add(ControlFlow_4001);

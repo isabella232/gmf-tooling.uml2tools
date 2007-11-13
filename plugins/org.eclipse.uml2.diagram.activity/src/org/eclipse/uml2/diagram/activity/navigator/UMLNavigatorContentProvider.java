@@ -30,8 +30,8 @@ import org.eclipse.uml2.diagram.activity.edit.parts.ActivityEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.ActivityFinalNode2EditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.ActivityFinalNodeEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.ActivityParameterNodeEditPart;
+import org.eclipse.uml2.diagram.activity.edit.parts.ActivityPartition2EditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.ActivityPartitionEditPart;
-import org.eclipse.uml2.diagram.activity.edit.parts.ActivitySubverticesEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.AddStructuralFeatureValueAction2EditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.AddStructuralFeatureValueActionEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.CallBehaviorAction2EditPart;
@@ -293,70 +293,49 @@ public class UMLNavigatorContentProvider implements ICommonContentProvider {
 		case ActivityEditPart.VISUAL_ID: {
 			Collection result = new ArrayList();
 			UMLNavigatorGroup incominglinks = new UMLNavigatorGroup(Messages.NavigatorGroupName_Activity_2026_incominglinks, "icons/incomingLinksNavigatorGroup.gif", parentElement); //$NON-NLS-1$
-			Collection connectedViews = getChildrenByType(Collections.singleton(view), ActivitySubverticesEditPart.VISUAL_ID);
-			connectedViews = getChildrenByType(connectedViews, AcceptEventActionEditPart.VISUAL_ID);
+			Collection connectedViews = getChildrenByType(Collections.singleton(view), AcceptEventActionEditPart.VISUAL_ID);
 			result.addAll(createNavigatorItems(connectedViews, parentElement, false));
-			connectedViews = getChildrenByType(Collections.singleton(view), ActivitySubverticesEditPart.VISUAL_ID);
-			connectedViews = getChildrenByType(connectedViews, AcceptEventAction2EditPart.VISUAL_ID);
+			connectedViews = getChildrenByType(Collections.singleton(view), AcceptEventAction2EditPart.VISUAL_ID);
 			result.addAll(createNavigatorItems(connectedViews, parentElement, false));
-			connectedViews = getChildrenByType(Collections.singleton(view), ActivitySubverticesEditPart.VISUAL_ID);
-			connectedViews = getChildrenByType(connectedViews, ActivityFinalNodeEditPart.VISUAL_ID);
+			connectedViews = getChildrenByType(Collections.singleton(view), ActivityFinalNodeEditPart.VISUAL_ID);
 			result.addAll(createNavigatorItems(connectedViews, parentElement, false));
-			connectedViews = getChildrenByType(Collections.singleton(view), ActivitySubverticesEditPart.VISUAL_ID);
-			connectedViews = getChildrenByType(connectedViews, DecisionNodeEditPart.VISUAL_ID);
+			connectedViews = getChildrenByType(Collections.singleton(view), DecisionNodeEditPart.VISUAL_ID);
 			result.addAll(createNavigatorItems(connectedViews, parentElement, false));
-			connectedViews = getChildrenByType(Collections.singleton(view), ActivitySubverticesEditPart.VISUAL_ID);
-			connectedViews = getChildrenByType(connectedViews, MergeNodeEditPart.VISUAL_ID);
+			connectedViews = getChildrenByType(Collections.singleton(view), MergeNodeEditPart.VISUAL_ID);
 			result.addAll(createNavigatorItems(connectedViews, parentElement, false));
-			connectedViews = getChildrenByType(Collections.singleton(view), ActivitySubverticesEditPart.VISUAL_ID);
-			connectedViews = getChildrenByType(connectedViews, InitialNodeEditPart.VISUAL_ID);
+			connectedViews = getChildrenByType(Collections.singleton(view), InitialNodeEditPart.VISUAL_ID);
 			result.addAll(createNavigatorItems(connectedViews, parentElement, false));
-			connectedViews = getChildrenByType(Collections.singleton(view), ActivitySubverticesEditPart.VISUAL_ID);
-			connectedViews = getChildrenByType(connectedViews, DataStoreNodeEditPart.VISUAL_ID);
+			connectedViews = getChildrenByType(Collections.singleton(view), DataStoreNodeEditPart.VISUAL_ID);
 			result.addAll(createNavigatorItems(connectedViews, parentElement, false));
-			connectedViews = getChildrenByType(Collections.singleton(view), ActivitySubverticesEditPart.VISUAL_ID);
-			connectedViews = getChildrenByType(connectedViews, CentralBufferNodeEditPart.VISUAL_ID);
+			connectedViews = getChildrenByType(Collections.singleton(view), CentralBufferNodeEditPart.VISUAL_ID);
 			result.addAll(createNavigatorItems(connectedViews, parentElement, false));
-			connectedViews = getChildrenByType(Collections.singleton(view), ActivitySubverticesEditPart.VISUAL_ID);
-			connectedViews = getChildrenByType(connectedViews, OpaqueActionEditPart.VISUAL_ID);
+			connectedViews = getChildrenByType(Collections.singleton(view), OpaqueActionEditPart.VISUAL_ID);
 			result.addAll(createNavigatorItems(connectedViews, parentElement, false));
-			connectedViews = getChildrenByType(Collections.singleton(view), ActivitySubverticesEditPart.VISUAL_ID);
-			connectedViews = getChildrenByType(connectedViews, FlowFinalNodeEditPart.VISUAL_ID);
+			connectedViews = getChildrenByType(Collections.singleton(view), FlowFinalNodeEditPart.VISUAL_ID);
 			result.addAll(createNavigatorItems(connectedViews, parentElement, false));
-			connectedViews = getChildrenByType(Collections.singleton(view), ActivitySubverticesEditPart.VISUAL_ID);
-			connectedViews = getChildrenByType(connectedViews, ForkNodeEditPart.VISUAL_ID);
+			connectedViews = getChildrenByType(Collections.singleton(view), ForkNodeEditPart.VISUAL_ID);
 			result.addAll(createNavigatorItems(connectedViews, parentElement, false));
-			connectedViews = getChildrenByType(Collections.singleton(view), ActivitySubverticesEditPart.VISUAL_ID);
-			connectedViews = getChildrenByType(connectedViews, JoinNodeEditPart.VISUAL_ID);
+			connectedViews = getChildrenByType(Collections.singleton(view), JoinNodeEditPart.VISUAL_ID);
 			result.addAll(createNavigatorItems(connectedViews, parentElement, false));
-			connectedViews = getChildrenByType(Collections.singleton(view), ActivitySubverticesEditPart.VISUAL_ID);
-			connectedViews = getChildrenByType(connectedViews, PinEditPart.VISUAL_ID);
+			connectedViews = getChildrenByType(Collections.singleton(view), PinEditPart.VISUAL_ID);
 			result.addAll(createNavigatorItems(connectedViews, parentElement, false));
-			connectedViews = getChildrenByType(Collections.singleton(view), ActivitySubverticesEditPart.VISUAL_ID);
-			connectedViews = getChildrenByType(connectedViews, CreateObjectActionEditPart.VISUAL_ID);
+			connectedViews = getChildrenByType(Collections.singleton(view), CreateObjectActionEditPart.VISUAL_ID);
 			result.addAll(createNavigatorItems(connectedViews, parentElement, false));
-			connectedViews = getChildrenByType(Collections.singleton(view), ActivitySubverticesEditPart.VISUAL_ID);
-			connectedViews = getChildrenByType(connectedViews, AddStructuralFeatureValueActionEditPart.VISUAL_ID);
+			connectedViews = getChildrenByType(Collections.singleton(view), AddStructuralFeatureValueActionEditPart.VISUAL_ID);
 			result.addAll(createNavigatorItems(connectedViews, parentElement, false));
-			connectedViews = getChildrenByType(Collections.singleton(view), ActivitySubverticesEditPart.VISUAL_ID);
-			connectedViews = getChildrenByType(connectedViews, CallBehaviorActionEditPart.VISUAL_ID);
+			connectedViews = getChildrenByType(Collections.singleton(view), CallBehaviorActionEditPart.VISUAL_ID);
 			result.addAll(createNavigatorItems(connectedViews, parentElement, false));
-			connectedViews = getChildrenByType(Collections.singleton(view), ActivitySubverticesEditPart.VISUAL_ID);
-			connectedViews = getChildrenByType(connectedViews, CallOperationActionEditPart.VISUAL_ID);
+			connectedViews = getChildrenByType(Collections.singleton(view), CallOperationActionEditPart.VISUAL_ID);
 			result.addAll(createNavigatorItems(connectedViews, parentElement, false));
-			connectedViews = getChildrenByType(Collections.singleton(view), ActivitySubverticesEditPart.VISUAL_ID);
-			connectedViews = getChildrenByType(connectedViews, StructuredActivityNodeEditPart.VISUAL_ID);
+			connectedViews = getChildrenByType(Collections.singleton(view), StructuredActivityNodeEditPart.VISUAL_ID);
 			result.addAll(createNavigatorItems(connectedViews, parentElement, false));
-			connectedViews = getChildrenByType(Collections.singleton(view), ActivitySubverticesEditPart.VISUAL_ID);
-			connectedViews = getChildrenByType(connectedViews, OpaqueBehaviorEditPart.VISUAL_ID);
+			connectedViews = getChildrenByType(Collections.singleton(view), OpaqueBehaviorEditPart.VISUAL_ID);
 			result.addAll(createNavigatorItems(connectedViews, parentElement, false));
 			connectedViews = getChildrenByType(Collections.singleton(view), ActivityParameterNodeEditPart.VISUAL_ID);
 			result.addAll(createNavigatorItems(connectedViews, parentElement, false));
-			connectedViews = getChildrenByType(Collections.singleton(view), ActivitySubverticesEditPart.VISUAL_ID);
-			connectedViews = getChildrenByType(connectedViews, SendSignalActionEditPart.VISUAL_ID);
+			connectedViews = getChildrenByType(Collections.singleton(view), SendSignalActionEditPart.VISUAL_ID);
 			result.addAll(createNavigatorItems(connectedViews, parentElement, false));
-			connectedViews = getChildrenByType(Collections.singleton(view), ActivitySubverticesEditPart.VISUAL_ID);
-			connectedViews = getChildrenByType(connectedViews, ActivityPartitionEditPart.VISUAL_ID);
+			connectedViews = getChildrenByType(Collections.singleton(view), ActivityPartitionEditPart.VISUAL_ID);
 			result.addAll(createNavigatorItems(connectedViews, parentElement, false));
 			connectedViews = getIncomingLinksByType(Collections.singleton(view), ObjectNodeSelectionEditPart.VISUAL_ID);
 			incominglinks.addChildren(createNavigatorItems(connectedViews, incominglinks, true));
@@ -1694,6 +1673,20 @@ public class UMLNavigatorContentProvider implements ICommonContentProvider {
 			if (!outgoinglinks.isEmpty()) {
 				result.add(outgoinglinks);
 			}
+			return result.toArray();
+		}
+
+		case ActivityPartitionEditPart.VISUAL_ID: {
+			Collection result = new ArrayList();
+			Collection connectedViews = getChildrenByType(Collections.singleton(view), ActivityPartition2EditPart.VISUAL_ID);
+			result.addAll(createNavigatorItems(connectedViews, parentElement, false));
+			return result.toArray();
+		}
+
+		case ActivityPartition2EditPart.VISUAL_ID: {
+			Collection result = new ArrayList();
+			Collection connectedViews = getChildrenByType(Collections.singleton(view), ActivityPartition2EditPart.VISUAL_ID);
+			result.addAll(createNavigatorItems(connectedViews, parentElement, false));
 			return result.toArray();
 		}
 

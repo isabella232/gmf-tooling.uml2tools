@@ -141,6 +141,7 @@ public class UMLViewProvider extends AbstractViewProvider {
 				case ActivityParameterNodeEditPart.VISUAL_ID:
 				case SendSignalActionEditPart.VISUAL_ID:
 				case ActivityPartitionEditPart.VISUAL_ID:
+				case ActivityPartition2EditPart.VISUAL_ID:
 				case LiteralStringEditPart.VISUAL_ID:
 				case LiteralString2EditPart.VISUAL_ID:
 					if (domainElement == null || visualID != UMLVisualIDRegistry.getNodeVisualID(containerView, domainElement)) {
@@ -148,7 +149,6 @@ public class UMLViewProvider extends AbstractViewProvider {
 					}
 					break;
 				case ActivityNameEditPart.VISUAL_ID:
-				case ActivitySubverticesEditPart.VISUAL_ID:
 					if (ActivityEditPart.VISUAL_ID != UMLVisualIDRegistry.getVisualID(containerView) || containerView.getElement() != domainElement) {
 						return null; // wrong container
 					}
@@ -333,8 +333,12 @@ public class UMLViewProvider extends AbstractViewProvider {
 					}
 					break;
 				case ActivityPartitionNameEditPart.VISUAL_ID:
-				case ActivityPartitionActivityPartition_nodesEditPart.VISUAL_ID:
 					if (ActivityPartitionEditPart.VISUAL_ID != UMLVisualIDRegistry.getVisualID(containerView) || containerView.getElement() != domainElement) {
+						return null; // wrong container
+					}
+					break;
+				case ActivityPartitionName2EditPart.VISUAL_ID:
+					if (ActivityPartition2EditPart.VISUAL_ID != UMLVisualIDRegistry.getVisualID(containerView) || containerView.getElement() != domainElement) {
 						return null; // wrong container
 					}
 					break;
@@ -547,18 +551,18 @@ public class UMLViewProvider extends AbstractViewProvider {
 			return ActivityPartitionViewFactory.class;
 		case ActivityPartitionNameEditPart.VISUAL_ID:
 			return ActivityPartitionNameViewFactory.class;
+		case ActivityPartition2EditPart.VISUAL_ID:
+			return ActivityPartition2ViewFactory.class;
+		case ActivityPartitionName2EditPart.VISUAL_ID:
+			return ActivityPartitionName2ViewFactory.class;
 		case LiteralStringEditPart.VISUAL_ID:
 			return LiteralStringViewFactory.class;
 		case LiteralString2EditPart.VISUAL_ID:
 			return LiteralString2ViewFactory.class;
-		case ActivitySubverticesEditPart.VISUAL_ID:
-			return ActivitySubverticesViewFactory.class;
 		case StructuredActivityNodeStructuredActivityContentPaneCompartmentEditPart.VISUAL_ID:
 			return StructuredActivityNodeStructuredActivityContentPaneCompartmentViewFactory.class;
 		case StructuredActivityNodeStructuredActivityContentPaneCompartment2EditPart.VISUAL_ID:
 			return StructuredActivityNodeStructuredActivityContentPaneCompartment2ViewFactory.class;
-		case ActivityPartitionActivityPartition_nodesEditPart.VISUAL_ID:
-			return ActivityPartitionActivityPartition_nodesViewFactory.class;
 		case ConstraintPreconditionEditPart.VISUAL_ID:
 			return ConstraintPreconditionViewFactory.class;
 		case ConstraintPostconditionEditPart.VISUAL_ID:

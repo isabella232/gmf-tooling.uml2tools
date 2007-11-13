@@ -628,22 +628,12 @@ public class Messages extends NLS {
 	/**
 	 * @generated
 	 */
-	public static String ActivitySubverticesEditPart_title;
-
-	/**
-	 * @generated
-	 */
 	public static String StructuredActivityNodeStructuredActivityContentPaneCompartmentEditPart_title;
 
 	/**
 	 * @generated
 	 */
 	public static String StructuredActivityNodeStructuredActivityContentPaneCompartment2EditPart_title;
-
-	/**
-	 * @generated
-	 */
-	public static String ActivityPartitionActivityPartition_nodesEditPart_title;
 
 	/**
 	 * @generated

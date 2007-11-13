@@ -49,6 +49,8 @@
           <layoutData
               xsi:type="gmfgraph:BorderLayoutData"
               alignment="FILL"/>
+          <layout
+              xsi:type="gmfgraph:XYLayout"/>
         </children>
       </actualFigure>
       <accessors
@@ -82,6 +84,9 @@
           <layoutData
               xsi:type="gmfgraph:BorderLayoutData"
               alignment="FILL"/>
+          <layout
+              xsi:type="gmfgraph:CustomLayout"
+              qualifiedClassName="org.eclipse.uml2.diagram.common.draw2d.PartitionLayout"/>
         </children>
       </actualFigure>
       <accessors
@@ -109,14 +114,6 @@
   <nodes
       name="ActivityPartitionNode"
       figure="ActivityPartitionFigure"/>
-  <compartments
-      name="subvertices"
-      figure="ActivityFigure"
-      accessor="//@figures.0/@descriptors.0/@accessors.1"/>
-  <compartments
-      name="ActivityPartition_nodes"
-      figure="ActivityPartitionFigure"
-      accessor="//@figures.0/@descriptors.1/@accessors.1"/>
   <labels
       name="ActivityPartitionNode_name"
       figure="ActivityPartitionFigure"

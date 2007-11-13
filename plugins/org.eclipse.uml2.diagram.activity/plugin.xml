@@ -879,6 +879,15 @@
          </metamodelType>
       </metamodel>
       <metamodel nsURI="http://www.eclipse.org/uml2/2.1.0/UML">
+         <specializationType
+               id="org.eclipse.uml2.diagram.activity.ActivityPartition_3057"
+               name="%metatype.name.ActivityPartition_3057"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType">
+            <specializes id="org.eclipse.uml2.diagram.activity.ActivityPartition_3056"/>
+            <param name="semanticHint" value="3057"/>
+         </specializationType>
+      </metamodel>
+      <metamodel nsURI="http://www.eclipse.org/uml2/2.1.0/UML">
          <metamodelType
                id="org.eclipse.uml2.diagram.activity.LiteralString_3049"
                name="%metatype.name.LiteralString_3049"
@@ -1021,6 +1030,7 @@
          <elementType ref="org.eclipse.uml2.diagram.activity.ActivityParameterNode_3052"/>
          <elementType ref="org.eclipse.uml2.diagram.activity.SendSignalAction_3053"/>
          <elementType ref="org.eclipse.uml2.diagram.activity.ActivityPartition_3056"/>
+         <elementType ref="org.eclipse.uml2.diagram.activity.ActivityPartition_3057"/>
          <elementType ref="org.eclipse.uml2.diagram.activity.LiteralString_3049"/>
          <elementType ref="org.eclipse.uml2.diagram.activity.LiteralString_3051"/>
          <elementType ref="org.eclipse.uml2.diagram.activity.ControlFlow_4001"/>

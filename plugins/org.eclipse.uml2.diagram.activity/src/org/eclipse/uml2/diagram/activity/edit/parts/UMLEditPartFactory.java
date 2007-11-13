@@ -295,23 +295,23 @@ public class UMLEditPartFactory implements EditPartFactory {
 			case ActivityPartitionNameEditPart.VISUAL_ID:
 				return new ActivityPartitionNameEditPart(view);
 
+			case ActivityPartition2EditPart.VISUAL_ID:
+				return new ActivityPartition2EditPart(view);
+
+			case ActivityPartitionName2EditPart.VISUAL_ID:
+				return new ActivityPartitionName2EditPart(view);
+
 			case LiteralStringEditPart.VISUAL_ID:
 				return new LiteralStringEditPart(view);
 
 			case LiteralString2EditPart.VISUAL_ID:
 				return new LiteralString2EditPart(view);
 
-			case ActivitySubverticesEditPart.VISUAL_ID:
-				return new ActivitySubverticesEditPart(view);
-
 			case StructuredActivityNodeStructuredActivityContentPaneCompartmentEditPart.VISUAL_ID:
 				return new StructuredActivityNodeStructuredActivityContentPaneCompartmentEditPart(view);
 
 			case StructuredActivityNodeStructuredActivityContentPaneCompartment2EditPart.VISUAL_ID:
 				return new StructuredActivityNodeStructuredActivityContentPaneCompartment2EditPart(view);
-
-			case ActivityPartitionActivityPartition_nodesEditPart.VISUAL_ID:
-				return new ActivityPartitionActivityPartition_nodesEditPart(view);
 
 			case ConstraintPreconditionEditPart.VISUAL_ID:
 				return new ConstraintPreconditionEditPart(view);

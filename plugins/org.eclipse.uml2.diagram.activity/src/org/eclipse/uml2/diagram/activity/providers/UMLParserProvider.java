@@ -17,6 +17,7 @@ import org.eclipse.uml2.diagram.activity.edit.parts.AcceptEventActionName4EditPa
 import org.eclipse.uml2.diagram.activity.edit.parts.AcceptEventActionNameEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.ActivityNameEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.ActivityParameterNodeNameEditPart;
+import org.eclipse.uml2.diagram.activity.edit.parts.ActivityPartitionName2EditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.ActivityPartitionNameEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.AddStructuralFeatureValueActionName2EditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.AddStructuralFeatureValueActionNameEditPart;
@@ -921,6 +922,30 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 	/**
 	 * @generated
 	 */
+	private IParser activityPartitionName_5046Parser;
+
+	/**
+	 * @generated
+	 */
+	private IParser getActivityPartitionName_5046Parser() {
+		if (activityPartitionName_5046Parser == null) {
+			activityPartitionName_5046Parser = createActivityPartitionName_5046Parser();
+		}
+		return activityPartitionName_5046Parser;
+	}
+
+	/**
+	 * @generated
+	 */
+	protected IParser createActivityPartitionName_5046Parser() {
+		EAttribute[] features = new EAttribute[] { UMLPackage.eINSTANCE.getNamedElement_Name(), };
+		MessageFormatParser parser = new MessageFormatParser(features);
+		return parser;
+	}
+
+	/**
+	 * @generated
+	 */
 	private IParser literalString_3049Parser;
 
 	/**
@@ -1137,6 +1162,8 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 			return getSendSignalActionName_5044Parser();
 		case ActivityPartitionNameEditPart.VISUAL_ID:
 			return getActivityPartitionName_5045Parser();
+		case ActivityPartitionName2EditPart.VISUAL_ID:
+			return getActivityPartitionName_5046Parser();
 		case LiteralStringEditPart.VISUAL_ID:
 			return getLiteralString_3049Parser();
 		case LiteralString2EditPart.VISUAL_ID:

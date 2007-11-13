@@ -19,7 +19,7 @@ import org.eclipse.uml2.uml.UMLPackage;
 /**
  * @generated
  */
-public class ActivityPartitionItemSemanticEditPolicy extends UMLBaseItemSemanticEditPolicy {
+public class ActivityPartition2ItemSemanticEditPolicy extends UMLBaseItemSemanticEditPolicy {
 
 	/**
 	 * @generated

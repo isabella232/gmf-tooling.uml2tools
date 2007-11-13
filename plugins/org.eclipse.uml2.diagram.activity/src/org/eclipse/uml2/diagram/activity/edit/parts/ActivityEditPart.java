@@ -7,6 +7,7 @@ import org.eclipse.draw2d.PositionConstants;
 import org.eclipse.draw2d.RectangleFigure;
 import org.eclipse.draw2d.RoundedRectangle;
 import org.eclipse.draw2d.StackLayout;
+import org.eclipse.draw2d.XYLayout;
 import org.eclipse.draw2d.geometry.Dimension;
 import org.eclipse.gef.EditPart;
 import org.eclipse.gef.EditPolicy;
@@ -22,6 +23,7 @@ import org.eclipse.gmf.runtime.diagram.ui.editpolicies.BorderItemSelectionEditPo
 import org.eclipse.gmf.runtime.diagram.ui.editpolicies.CreationEditPolicy;
 import org.eclipse.gmf.runtime.diagram.ui.editpolicies.DragDropEditPolicy;
 import org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles;
+import org.eclipse.gmf.runtime.diagram.ui.editpolicies.XYLayoutEditPolicy;
 import org.eclipse.gmf.runtime.diagram.ui.figures.BorderItemLocator;
 import org.eclipse.gmf.runtime.diagram.ui.figures.IBorderItemLocator;
 import org.eclipse.gmf.runtime.draw2d.ui.figures.ConstrainedToolbarLayout;
@@ -74,6 +76,7 @@ public class ActivityEditPart extends AbstractBorderedShapeEditPart {
 		installEditPolicy(EditPolicyRoles.DRAG_DROP_ROLE, new DragDropEditPolicy());
 		installEditPolicy(EditPolicyRoles.CANONICAL_ROLE, new ActivityCanonicalEditPolicy());
 		installEditPolicy(EditPolicy.LAYOUT_ROLE, createLayoutEditPolicy());
+		installEditPolicy(EditPolicy.LAYOUT_ROLE, new XYLayoutEditPolicy());
 	}
 
 	/**
@@ -127,12 +130,6 @@ public class ActivityEditPart extends AbstractBorderedShapeEditPart {
 			((ActivityNameEditPart) childEditPart).setLabel(getPrimaryShape().getFigureActivityFigure_name());
 			return true;
 		}
-		if (childEditPart instanceof ActivitySubverticesEditPart) {
-			IFigure pane = getPrimaryShape().getFigureActivityFigure_Body();
-			setupContentPane(pane); // FIXME each comparment should handle his content pane in his own way 
-			pane.add(((ActivitySubverticesEditPart) childEditPart).getFigure());
-			return true;
-		}
 		if (childEditPart instanceof ActivityParameterNodeEditPart) {
 			IBorderItemLocator locator = new BisectionBorderItemLocator(getMainFigure());
 			getBorderedFigure().getBorderItemContainer().add(((ActivityParameterNodeEditPart) childEditPart).getFigure(), locator);
@@ -146,11 +143,6 @@ public class ActivityEditPart extends AbstractBorderedShapeEditPart {
 	 */
 	protected boolean removeFixedChild(EditPart childEditPart) {
 
-		if (childEditPart instanceof ActivitySubverticesEditPart) {
-			IFigure pane = getPrimaryShape().getFigureActivityFigure_Body();
-			pane.remove(((ActivitySubverticesEditPart) childEditPart).getFigure());
-			return true;
-		}
 		if (childEditPart instanceof ActivityParameterNodeEditPart) {
 			getBorderedFigure().getBorderItemContainer().remove(((ActivityParameterNodeEditPart) childEditPart).getFigure());
 			return true;
@@ -179,17 +171,14 @@ public class ActivityEditPart extends AbstractBorderedShapeEditPart {
 	}
 
 	/**
-	 * @generated
+	 * @generated NOT
 	 */
 	protected IFigure getContentPaneFor(IGraphicalEditPart editPart) {
 
-		if (editPart instanceof ActivitySubverticesEditPart) {
-			return getPrimaryShape().getFigureActivityFigure_Body();
-		}
 		if (editPart instanceof ActivityParameterNodeEditPart) {
 			return getBorderedFigure().getBorderItemContainer();
 		}
-		return super.getContentPaneFor(editPart);
+		return getContentPane();
 	}
 
 	/**
@@ -218,18 +207,11 @@ public class ActivityEditPart extends AbstractBorderedShapeEditPart {
 	}
 
 	/**
-	 * Default implementation treats passed figure as content pane.
-	 * Respects layout one may have set for generated figure.
-	 * @param nodeShape instance of generated figure class
-	 * @generated
+	 * @generated NOT
+	 * XXX: Support content pane in xPand custom templates
 	 */
 	protected IFigure setupContentPane(IFigure nodeShape) {
-		if (nodeShape.getLayoutManager() == null) {
-			ConstrainedToolbarLayout layout = new ConstrainedToolbarLayout();
-			layout.setSpacing(getMapMode().DPtoLP(5));
-			nodeShape.setLayoutManager(layout);
-		}
-		return nodeShape; // use nodeShape itself as contentPane
+		return getPrimaryShape().getFigureActivityFigure_Body();
 	}
 
 	/**
@@ -304,6 +286,8 @@ public class ActivityEditPart extends AbstractBorderedShapeEditPart {
 			fFigureActivityFigure_Body.setOutline(false);
 
 			this.add(fFigureActivityFigure_Body, BorderLayout.CENTER);
+
+			fFigureActivityFigure_Body.setLayoutManager(new XYLayout());
 
 		}
 

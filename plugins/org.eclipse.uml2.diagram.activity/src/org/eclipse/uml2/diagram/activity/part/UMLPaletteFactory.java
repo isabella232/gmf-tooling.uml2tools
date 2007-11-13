@@ -193,8 +193,9 @@ public class UMLPaletteFactory {
 	 * @generated
 	 */
 	private ToolEntry createActivityPartition3CreationTool() {
-		List/*<IElementType>*/types = new ArrayList/*<IElementType>*/(1);
+		List/*<IElementType>*/types = new ArrayList/*<IElementType>*/(2);
 		types.add(UMLElementTypes.ActivityPartition_3056);
+		types.add(UMLElementTypes.ActivityPartition_3057);
 		NodeToolEntry entry = new NodeToolEntry(Messages.ActivityPartition3CreationTool_title, Messages.ActivityPartition3CreationTool_desc, types);
 		entry.setSmallIcon(UMLElementTypes.getImageDescriptor(UMLElementTypes.ActivityPartition_3056));
 		entry.setLargeIcon(entry.getSmallIcon());

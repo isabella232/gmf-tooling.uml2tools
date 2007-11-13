@@ -23,7 +23,6 @@ import org.eclipse.uml2.diagram.activity.edit.parts.ActivityFinalNodeEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.ActivityNameEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.ActivityParameterNodeEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.ActivityParameterNodeNameEditPart;
-import org.eclipse.uml2.diagram.activity.edit.parts.ActivitySubverticesEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.AddStructuralFeatureValueAction2EditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.AddStructuralFeatureValueActionEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.AddStructuralFeatureValueActionName2EditPart;
@@ -225,8 +224,71 @@ public class UMLVisualIDRegistry {
 		}
 		switch (org.eclipse.uml2.diagram.activity.part.UMLVisualIDRegistry.getVisualID(containerView)) {
 		case ActivityEditPart.VISUAL_ID:
+			if (UMLPackage.eINSTANCE.getAcceptEventAction().isSuperTypeOf(domainElement.eClass()) && evaluate(AcceptEventAction_3030_Constraint, domainElement)) {
+				return AcceptEventActionEditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getAcceptEventAction().isSuperTypeOf(domainElement.eClass()) && evaluate(AcceptEventAction_3031_Constraint, domainElement)) {
+				return AcceptEventAction2EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getActivityFinalNode().isSuperTypeOf(domainElement.eClass())) {
+				return ActivityFinalNodeEditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getDecisionNode().isSuperTypeOf(domainElement.eClass())) {
+				return DecisionNodeEditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getMergeNode().isSuperTypeOf(domainElement.eClass())) {
+				return MergeNodeEditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getInitialNode().isSuperTypeOf(domainElement.eClass())) {
+				return InitialNodeEditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getDataStoreNode().isSuperTypeOf(domainElement.eClass())) {
+				return DataStoreNodeEditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getCentralBufferNode().isSuperTypeOf(domainElement.eClass())) {
+				return CentralBufferNodeEditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getOpaqueAction().isSuperTypeOf(domainElement.eClass())) {
+				return OpaqueActionEditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getFlowFinalNode().isSuperTypeOf(domainElement.eClass())) {
+				return FlowFinalNodeEditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getForkNode().isSuperTypeOf(domainElement.eClass())) {
+				return ForkNodeEditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getJoinNode().isSuperTypeOf(domainElement.eClass())) {
+				return JoinNodeEditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getPin().isSuperTypeOf(domainElement.eClass())) {
+				return PinEditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getCreateObjectAction().isSuperTypeOf(domainElement.eClass())) {
+				return CreateObjectActionEditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getAddStructuralFeatureValueAction().isSuperTypeOf(domainElement.eClass())) {
+				return AddStructuralFeatureValueActionEditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getCallBehaviorAction().isSuperTypeOf(domainElement.eClass())) {
+				return CallBehaviorActionEditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getCallOperationAction().isSuperTypeOf(domainElement.eClass())) {
+				return CallOperationActionEditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getStructuredActivityNode().isSuperTypeOf(domainElement.eClass())) {
+				return StructuredActivityNodeEditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getOpaqueBehavior().isSuperTypeOf(domainElement.eClass())) {
+				return OpaqueBehaviorEditPart.VISUAL_ID;
+			}
 			if (UMLPackage.eINSTANCE.getActivityParameterNode().isSuperTypeOf(domainElement.eClass())) {
 				return ActivityParameterNodeEditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getSendSignalAction().isSuperTypeOf(domainElement.eClass())) {
+				return SendSignalActionEditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getActivityPartition().isSuperTypeOf(domainElement.eClass())) {
+				return ActivityPartitionEditPart.VISUAL_ID;
 			}
 			break;
 		case OpaqueActionEditPart.VISUAL_ID:
@@ -309,69 +371,14 @@ public class UMLVisualIDRegistry {
 				return InputPin3EditPart.VISUAL_ID;
 			}
 			break;
-		case ActivitySubverticesEditPart.VISUAL_ID:
-			if (UMLPackage.eINSTANCE.getAcceptEventAction().isSuperTypeOf(domainElement.eClass()) && evaluate(AcceptEventAction_3030_Constraint, domainElement)) {
-				return AcceptEventActionEditPart.VISUAL_ID;
-			}
-			if (UMLPackage.eINSTANCE.getAcceptEventAction().isSuperTypeOf(domainElement.eClass()) && evaluate(AcceptEventAction_3031_Constraint, domainElement)) {
-				return AcceptEventAction2EditPart.VISUAL_ID;
-			}
-			if (UMLPackage.eINSTANCE.getActivityFinalNode().isSuperTypeOf(domainElement.eClass())) {
-				return ActivityFinalNodeEditPart.VISUAL_ID;
-			}
-			if (UMLPackage.eINSTANCE.getDecisionNode().isSuperTypeOf(domainElement.eClass())) {
-				return DecisionNodeEditPart.VISUAL_ID;
-			}
-			if (UMLPackage.eINSTANCE.getMergeNode().isSuperTypeOf(domainElement.eClass())) {
-				return MergeNodeEditPart.VISUAL_ID;
-			}
-			if (UMLPackage.eINSTANCE.getInitialNode().isSuperTypeOf(domainElement.eClass())) {
-				return InitialNodeEditPart.VISUAL_ID;
-			}
-			if (UMLPackage.eINSTANCE.getDataStoreNode().isSuperTypeOf(domainElement.eClass())) {
-				return DataStoreNodeEditPart.VISUAL_ID;
-			}
-			if (UMLPackage.eINSTANCE.getCentralBufferNode().isSuperTypeOf(domainElement.eClass())) {
-				return CentralBufferNodeEditPart.VISUAL_ID;
-			}
-			if (UMLPackage.eINSTANCE.getOpaqueAction().isSuperTypeOf(domainElement.eClass())) {
-				return OpaqueActionEditPart.VISUAL_ID;
-			}
-			if (UMLPackage.eINSTANCE.getFlowFinalNode().isSuperTypeOf(domainElement.eClass())) {
-				return FlowFinalNodeEditPart.VISUAL_ID;
-			}
-			if (UMLPackage.eINSTANCE.getForkNode().isSuperTypeOf(domainElement.eClass())) {
-				return ForkNodeEditPart.VISUAL_ID;
-			}
-			if (UMLPackage.eINSTANCE.getJoinNode().isSuperTypeOf(domainElement.eClass())) {
-				return JoinNodeEditPart.VISUAL_ID;
-			}
-			if (UMLPackage.eINSTANCE.getPin().isSuperTypeOf(domainElement.eClass())) {
-				return PinEditPart.VISUAL_ID;
-			}
-			if (UMLPackage.eINSTANCE.getCreateObjectAction().isSuperTypeOf(domainElement.eClass())) {
-				return CreateObjectActionEditPart.VISUAL_ID;
-			}
-			if (UMLPackage.eINSTANCE.getAddStructuralFeatureValueAction().isSuperTypeOf(domainElement.eClass())) {
-				return AddStructuralFeatureValueActionEditPart.VISUAL_ID;
-			}
-			if (UMLPackage.eINSTANCE.getCallBehaviorAction().isSuperTypeOf(domainElement.eClass())) {
-				return CallBehaviorActionEditPart.VISUAL_ID;
-			}
-			if (UMLPackage.eINSTANCE.getCallOperationAction().isSuperTypeOf(domainElement.eClass())) {
-				return CallOperationActionEditPart.VISUAL_ID;
-			}
-			if (UMLPackage.eINSTANCE.getStructuredActivityNode().isSuperTypeOf(domainElement.eClass())) {
-				return StructuredActivityNodeEditPart.VISUAL_ID;
-			}
-			if (UMLPackage.eINSTANCE.getOpaqueBehavior().isSuperTypeOf(domainElement.eClass())) {
-				return OpaqueBehaviorEditPart.VISUAL_ID;
-			}
-			if (UMLPackage.eINSTANCE.getSendSignalAction().isSuperTypeOf(domainElement.eClass())) {
-				return SendSignalActionEditPart.VISUAL_ID;
-			}
+		case ActivityPartitionEditPart.VISUAL_ID:
 			if (UMLPackage.eINSTANCE.getActivityPartition().isSuperTypeOf(domainElement.eClass())) {
-				return ActivityPartitionEditPart.VISUAL_ID;
+				return ActivityPartition2EditPart.VISUAL_ID;
+			}
+			break;
+		case ActivityPartition2EditPart.VISUAL_ID:
+			if (UMLPackage.eINSTANCE.getActivityPartition().isSuperTypeOf(domainElement.eClass())) {
+				return ActivityPartition2EditPart.VISUAL_ID;
 			}
 			break;
 		case StructuredActivityNodeStructuredActivityContentPaneCompartmentEditPart.VISUAL_ID:
@@ -534,10 +541,70 @@ public class UMLVisualIDRegistry {
 			if (ActivityNameEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
-			if (ActivitySubverticesEditPart.VISUAL_ID == nodeVisualID) {
+			if (AcceptEventActionEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			if (AcceptEventAction2EditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			if (ActivityFinalNodeEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			if (DecisionNodeEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			if (MergeNodeEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			if (InitialNodeEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			if (DataStoreNodeEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			if (CentralBufferNodeEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			if (OpaqueActionEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			if (FlowFinalNodeEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			if (ForkNodeEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			if (JoinNodeEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			if (PinEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			if (CreateObjectActionEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			if (AddStructuralFeatureValueActionEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			if (CallBehaviorActionEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			if (CallOperationActionEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			if (StructuredActivityNodeEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			if (OpaqueBehaviorEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
 			if (ActivityParameterNodeEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			if (SendSignalActionEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			if (ActivityPartitionEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
 			break;
@@ -792,72 +859,15 @@ public class UMLVisualIDRegistry {
 			if (ActivityPartitionNameEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
-			if (ActivityPartitionActivityPartition_nodesEditPart.VISUAL_ID == nodeVisualID) {
+			if (ActivityPartition2EditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
 			break;
-		case ActivitySubverticesEditPart.VISUAL_ID:
-			if (AcceptEventActionEditPart.VISUAL_ID == nodeVisualID) {
+		case ActivityPartition2EditPart.VISUAL_ID:
+			if (ActivityPartitionName2EditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
-			if (AcceptEventAction2EditPart.VISUAL_ID == nodeVisualID) {
-				return true;
-			}
-			if (ActivityFinalNodeEditPart.VISUAL_ID == nodeVisualID) {
-				return true;
-			}
-			if (DecisionNodeEditPart.VISUAL_ID == nodeVisualID) {
-				return true;
-			}
-			if (MergeNodeEditPart.VISUAL_ID == nodeVisualID) {
-				return true;
-			}
-			if (InitialNodeEditPart.VISUAL_ID == nodeVisualID) {
-				return true;
-			}
-			if (DataStoreNodeEditPart.VISUAL_ID == nodeVisualID) {
-				return true;
-			}
-			if (CentralBufferNodeEditPart.VISUAL_ID == nodeVisualID) {
-				return true;
-			}
-			if (OpaqueActionEditPart.VISUAL_ID == nodeVisualID) {
-				return true;
-			}
-			if (FlowFinalNodeEditPart.VISUAL_ID == nodeVisualID) {
-				return true;
-			}
-			if (ForkNodeEditPart.VISUAL_ID == nodeVisualID) {
-				return true;
-			}
-			if (JoinNodeEditPart.VISUAL_ID == nodeVisualID) {
-				return true;
-			}
-			if (PinEditPart.VISUAL_ID == nodeVisualID) {
-				return true;
-			}
-			if (CreateObjectActionEditPart.VISUAL_ID == nodeVisualID) {
-				return true;
-			}
-			if (AddStructuralFeatureValueActionEditPart.VISUAL_ID == nodeVisualID) {
-				return true;
-			}
-			if (CallBehaviorActionEditPart.VISUAL_ID == nodeVisualID) {
-				return true;
-			}
-			if (CallOperationActionEditPart.VISUAL_ID == nodeVisualID) {
-				return true;
-			}
-			if (StructuredActivityNodeEditPart.VISUAL_ID == nodeVisualID) {
-				return true;
-			}
-			if (OpaqueBehaviorEditPart.VISUAL_ID == nodeVisualID) {
-				return true;
-			}
-			if (SendSignalActionEditPart.VISUAL_ID == nodeVisualID) {
-				return true;
-			}
-			if (ActivityPartitionEditPart.VISUAL_ID == nodeVisualID) {
+			if (ActivityPartition2EditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
 			break;

@@ -12,15 +12,35 @@ import org.eclipse.gmf.runtime.emf.type.core.requests.DestroyElementRequest;
 import org.eclipse.gmf.runtime.emf.type.core.requests.ReorientReferenceRelationshipRequest;
 import org.eclipse.gmf.runtime.notation.Node;
 import org.eclipse.gmf.runtime.notation.View;
+import org.eclipse.uml2.diagram.activity.edit.commands.AcceptEventAction2CreateCommand;
+import org.eclipse.uml2.diagram.activity.edit.commands.AcceptEventActionCreateCommand;
+import org.eclipse.uml2.diagram.activity.edit.commands.ActivityFinalNodeCreateCommand;
 import org.eclipse.uml2.diagram.activity.edit.commands.ActivityParameterNodeCreateCommand;
+import org.eclipse.uml2.diagram.activity.edit.commands.ActivityPartitionCreateCommand;
+import org.eclipse.uml2.diagram.activity.edit.commands.AddStructuralFeatureValueActionCreateCommand;
+import org.eclipse.uml2.diagram.activity.edit.commands.CallBehaviorActionCreateCommand;
+import org.eclipse.uml2.diagram.activity.edit.commands.CallOperationActionCreateCommand;
+import org.eclipse.uml2.diagram.activity.edit.commands.CentralBufferNodeCreateCommand;
+import org.eclipse.uml2.diagram.activity.edit.commands.CreateObjectActionCreateCommand;
+import org.eclipse.uml2.diagram.activity.edit.commands.DataStoreNodeCreateCommand;
+import org.eclipse.uml2.diagram.activity.edit.commands.DecisionNodeCreateCommand;
+import org.eclipse.uml2.diagram.activity.edit.commands.FlowFinalNodeCreateCommand;
+import org.eclipse.uml2.diagram.activity.edit.commands.ForkNodeCreateCommand;
+import org.eclipse.uml2.diagram.activity.edit.commands.InitialNodeCreateCommand;
+import org.eclipse.uml2.diagram.activity.edit.commands.JoinNodeCreateCommand;
+import org.eclipse.uml2.diagram.activity.edit.commands.MergeNodeCreateCommand;
 import org.eclipse.uml2.diagram.activity.edit.commands.ObjectNodeSelectionCreateCommand;
 import org.eclipse.uml2.diagram.activity.edit.commands.ObjectNodeSelectionReorientCommand;
+import org.eclipse.uml2.diagram.activity.edit.commands.OpaqueActionCreateCommand;
+import org.eclipse.uml2.diagram.activity.edit.commands.OpaqueBehaviorCreateCommand;
+import org.eclipse.uml2.diagram.activity.edit.commands.PinCreateCommand;
+import org.eclipse.uml2.diagram.activity.edit.commands.SendSignalActionCreateCommand;
+import org.eclipse.uml2.diagram.activity.edit.commands.StructuredActivityNodeCreateCommand;
 import org.eclipse.uml2.diagram.activity.edit.parts.AcceptEventAction2EditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.AcceptEventActionEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.ActivityFinalNodeEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.ActivityParameterNodeEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.ActivityPartitionEditPart;
-import org.eclipse.uml2.diagram.activity.edit.parts.ActivitySubverticesEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.AddStructuralFeatureValueActionEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.CallBehaviorActionEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.CallOperationActionEditPart;
@@ -52,11 +72,137 @@ public class ActivityItemSemanticEditPolicy extends UMLBaseItemSemanticEditPolic
 	 * @generated
 	 */
 	protected Command getCreateCommand(CreateElementRequest req) {
+		if (UMLElementTypes.AcceptEventAction_3030 == req.getElementType()) {
+			if (req.getContainmentFeature() == null) {
+				req.setContainmentFeature(UMLPackage.eINSTANCE.getActivity_Node());
+			}
+			return getGEFWrapper(new AcceptEventActionCreateCommand(req));
+		}
+		if (UMLElementTypes.AcceptEventAction_3031 == req.getElementType()) {
+			if (req.getContainmentFeature() == null) {
+				req.setContainmentFeature(UMLPackage.eINSTANCE.getActivity_Node());
+			}
+			return getGEFWrapper(new AcceptEventAction2CreateCommand(req));
+		}
+		if (UMLElementTypes.ActivityFinalNode_3032 == req.getElementType()) {
+			if (req.getContainmentFeature() == null) {
+				req.setContainmentFeature(UMLPackage.eINSTANCE.getActivity_Node());
+			}
+			return getGEFWrapper(new ActivityFinalNodeCreateCommand(req));
+		}
+		if (UMLElementTypes.DecisionNode_3033 == req.getElementType()) {
+			if (req.getContainmentFeature() == null) {
+				req.setContainmentFeature(UMLPackage.eINSTANCE.getActivity_Node());
+			}
+			return getGEFWrapper(new DecisionNodeCreateCommand(req));
+		}
+		if (UMLElementTypes.MergeNode_3034 == req.getElementType()) {
+			if (req.getContainmentFeature() == null) {
+				req.setContainmentFeature(UMLPackage.eINSTANCE.getActivity_Node());
+			}
+			return getGEFWrapper(new MergeNodeCreateCommand(req));
+		}
+		if (UMLElementTypes.InitialNode_3035 == req.getElementType()) {
+			if (req.getContainmentFeature() == null) {
+				req.setContainmentFeature(UMLPackage.eINSTANCE.getActivity_Node());
+			}
+			return getGEFWrapper(new InitialNodeCreateCommand(req));
+		}
+		if (UMLElementTypes.DataStoreNode_3036 == req.getElementType()) {
+			if (req.getContainmentFeature() == null) {
+				req.setContainmentFeature(UMLPackage.eINSTANCE.getActivity_Node());
+			}
+			return getGEFWrapper(new DataStoreNodeCreateCommand(req));
+		}
+		if (UMLElementTypes.CentralBufferNode_3037 == req.getElementType()) {
+			if (req.getContainmentFeature() == null) {
+				req.setContainmentFeature(UMLPackage.eINSTANCE.getActivity_Node());
+			}
+			return getGEFWrapper(new CentralBufferNodeCreateCommand(req));
+		}
+		if (UMLElementTypes.OpaqueAction_3029 == req.getElementType()) {
+			if (req.getContainmentFeature() == null) {
+				req.setContainmentFeature(UMLPackage.eINSTANCE.getActivity_Node());
+			}
+			return getGEFWrapper(new OpaqueActionCreateCommand(req));
+		}
+		if (UMLElementTypes.FlowFinalNode_3038 == req.getElementType()) {
+			if (req.getContainmentFeature() == null) {
+				req.setContainmentFeature(UMLPackage.eINSTANCE.getActivity_Node());
+			}
+			return getGEFWrapper(new FlowFinalNodeCreateCommand(req));
+		}
+		if (UMLElementTypes.ForkNode_3039 == req.getElementType()) {
+			if (req.getContainmentFeature() == null) {
+				req.setContainmentFeature(UMLPackage.eINSTANCE.getActivity_Node());
+			}
+			return getGEFWrapper(new ForkNodeCreateCommand(req));
+		}
+		if (UMLElementTypes.JoinNode_3040 == req.getElementType()) {
+			if (req.getContainmentFeature() == null) {
+				req.setContainmentFeature(UMLPackage.eINSTANCE.getActivity_Node());
+			}
+			return getGEFWrapper(new JoinNodeCreateCommand(req));
+		}
+		if (UMLElementTypes.Pin_3041 == req.getElementType()) {
+			if (req.getContainmentFeature() == null) {
+				req.setContainmentFeature(UMLPackage.eINSTANCE.getActivity_Node());
+			}
+			return getGEFWrapper(new PinCreateCommand(req));
+		}
+		if (UMLElementTypes.CreateObjectAction_3042 == req.getElementType()) {
+			if (req.getContainmentFeature() == null) {
+				req.setContainmentFeature(UMLPackage.eINSTANCE.getActivity_Node());
+			}
+			return getGEFWrapper(new CreateObjectActionCreateCommand(req));
+		}
+		if (UMLElementTypes.AddStructuralFeatureValueAction_3043 == req.getElementType()) {
+			if (req.getContainmentFeature() == null) {
+				req.setContainmentFeature(UMLPackage.eINSTANCE.getActivity_Node());
+			}
+			return getGEFWrapper(new AddStructuralFeatureValueActionCreateCommand(req));
+		}
+		if (UMLElementTypes.CallBehaviorAction_3044 == req.getElementType()) {
+			if (req.getContainmentFeature() == null) {
+				req.setContainmentFeature(UMLPackage.eINSTANCE.getActivity_Node());
+			}
+			return getGEFWrapper(new CallBehaviorActionCreateCommand(req));
+		}
+		if (UMLElementTypes.CallOperationAction_3045 == req.getElementType()) {
+			if (req.getContainmentFeature() == null) {
+				req.setContainmentFeature(UMLPackage.eINSTANCE.getActivity_Node());
+			}
+			return getGEFWrapper(new CallOperationActionCreateCommand(req));
+		}
+		if (UMLElementTypes.StructuredActivityNode_3046 == req.getElementType()) {
+			if (req.getContainmentFeature() == null) {
+				req.setContainmentFeature(UMLPackage.eINSTANCE.getActivity_Group());
+			}
+			return getGEFWrapper(new StructuredActivityNodeCreateCommand(req));
+		}
+		if (UMLElementTypes.OpaqueBehavior_3047 == req.getElementType()) {
+			if (req.getContainmentFeature() == null) {
+				req.setContainmentFeature(UMLPackage.eINSTANCE.getBehavioredClassifier_OwnedBehavior());
+			}
+			return getGEFWrapper(new OpaqueBehaviorCreateCommand(req));
+		}
 		if (UMLElementTypes.ActivityParameterNode_3052 == req.getElementType()) {
 			if (req.getContainmentFeature() == null) {
 				req.setContainmentFeature(UMLPackage.eINSTANCE.getActivity_Node());
 			}
 			return getGEFWrapper(new ActivityParameterNodeCreateCommand(req));
+		}
+		if (UMLElementTypes.SendSignalAction_3053 == req.getElementType()) {
+			if (req.getContainmentFeature() == null) {
+				req.setContainmentFeature(UMLPackage.eINSTANCE.getActivity_Node());
+			}
+			return getGEFWrapper(new SendSignalActionCreateCommand(req));
+		}
+		if (UMLElementTypes.ActivityPartition_3056 == req.getElementType()) {
+			if (req.getContainmentFeature() == null) {
+				req.setContainmentFeature(UMLPackage.eINSTANCE.getActivity_Group());
+			}
+			return getGEFWrapper(new ActivityPartitionCreateCommand(req));
 		}
 		return super.getCreateCommand(req);
 	}
@@ -88,78 +234,71 @@ public class ActivityItemSemanticEditPolicy extends UMLBaseItemSemanticEditPolic
 		for (Iterator it = view.getChildren().iterator(); it.hasNext();) {
 			Node node = (Node) it.next();
 			switch (UMLVisualIDRegistry.getVisualID(node)) {
+			case AcceptEventActionEditPart.VISUAL_ID:
+				cmd.add(getDestroyElementCommand(node));
+				break;
+			case AcceptEventAction2EditPart.VISUAL_ID:
+				cmd.add(getDestroyElementCommand(node));
+				break;
+			case ActivityFinalNodeEditPart.VISUAL_ID:
+				cmd.add(getDestroyElementCommand(node));
+				break;
+			case DecisionNodeEditPart.VISUAL_ID:
+				cmd.add(getDestroyElementCommand(node));
+				break;
+			case MergeNodeEditPart.VISUAL_ID:
+				cmd.add(getDestroyElementCommand(node));
+				break;
+			case InitialNodeEditPart.VISUAL_ID:
+				cmd.add(getDestroyElementCommand(node));
+				break;
+			case DataStoreNodeEditPart.VISUAL_ID:
+				cmd.add(getDestroyElementCommand(node));
+				break;
+			case CentralBufferNodeEditPart.VISUAL_ID:
+				cmd.add(getDestroyElementCommand(node));
+				break;
+			case OpaqueActionEditPart.VISUAL_ID:
+				cmd.add(getDestroyElementCommand(node));
+				break;
+			case FlowFinalNodeEditPart.VISUAL_ID:
+				cmd.add(getDestroyElementCommand(node));
+				break;
+			case ForkNodeEditPart.VISUAL_ID:
+				cmd.add(getDestroyElementCommand(node));
+				break;
+			case JoinNodeEditPart.VISUAL_ID:
+				cmd.add(getDestroyElementCommand(node));
+				break;
+			case PinEditPart.VISUAL_ID:
+				cmd.add(getDestroyElementCommand(node));
+				break;
+			case CreateObjectActionEditPart.VISUAL_ID:
+				cmd.add(getDestroyElementCommand(node));
+				break;
+			case AddStructuralFeatureValueActionEditPart.VISUAL_ID:
+				cmd.add(getDestroyElementCommand(node));
+				break;
+			case CallBehaviorActionEditPart.VISUAL_ID:
+				cmd.add(getDestroyElementCommand(node));
+				break;
+			case CallOperationActionEditPart.VISUAL_ID:
+				cmd.add(getDestroyElementCommand(node));
+				break;
+			case StructuredActivityNodeEditPart.VISUAL_ID:
+				cmd.add(getDestroyElementCommand(node));
+				break;
+			case OpaqueBehaviorEditPart.VISUAL_ID:
+				cmd.add(getDestroyElementCommand(node));
+				break;
 			case ActivityParameterNodeEditPart.VISUAL_ID:
 				cmd.add(getDestroyElementCommand(node));
 				break;
-			case ActivitySubverticesEditPart.VISUAL_ID:
-				for (Iterator cit = node.getChildren().iterator(); cit.hasNext();) {
-					Node cnode = (Node) cit.next();
-					switch (UMLVisualIDRegistry.getVisualID(cnode)) {
-					case AcceptEventActionEditPart.VISUAL_ID:
-						cmd.add(getDestroyElementCommand(cnode));
-						break;
-					case AcceptEventAction2EditPart.VISUAL_ID:
-						cmd.add(getDestroyElementCommand(cnode));
-						break;
-					case ActivityFinalNodeEditPart.VISUAL_ID:
-						cmd.add(getDestroyElementCommand(cnode));
-						break;
-					case DecisionNodeEditPart.VISUAL_ID:
-						cmd.add(getDestroyElementCommand(cnode));
-						break;
-					case MergeNodeEditPart.VISUAL_ID:
-						cmd.add(getDestroyElementCommand(cnode));
-						break;
-					case InitialNodeEditPart.VISUAL_ID:
-						cmd.add(getDestroyElementCommand(cnode));
-						break;
-					case DataStoreNodeEditPart.VISUAL_ID:
-						cmd.add(getDestroyElementCommand(cnode));
-						break;
-					case CentralBufferNodeEditPart.VISUAL_ID:
-						cmd.add(getDestroyElementCommand(cnode));
-						break;
-					case OpaqueActionEditPart.VISUAL_ID:
-						cmd.add(getDestroyElementCommand(cnode));
-						break;
-					case FlowFinalNodeEditPart.VISUAL_ID:
-						cmd.add(getDestroyElementCommand(cnode));
-						break;
-					case ForkNodeEditPart.VISUAL_ID:
-						cmd.add(getDestroyElementCommand(cnode));
-						break;
-					case JoinNodeEditPart.VISUAL_ID:
-						cmd.add(getDestroyElementCommand(cnode));
-						break;
-					case PinEditPart.VISUAL_ID:
-						cmd.add(getDestroyElementCommand(cnode));
-						break;
-					case CreateObjectActionEditPart.VISUAL_ID:
-						cmd.add(getDestroyElementCommand(cnode));
-						break;
-					case AddStructuralFeatureValueActionEditPart.VISUAL_ID:
-						cmd.add(getDestroyElementCommand(cnode));
-						break;
-					case CallBehaviorActionEditPart.VISUAL_ID:
-						cmd.add(getDestroyElementCommand(cnode));
-						break;
-					case CallOperationActionEditPart.VISUAL_ID:
-						cmd.add(getDestroyElementCommand(cnode));
-						break;
-					case StructuredActivityNodeEditPart.VISUAL_ID:
-						cmd.add(getDestroyElementCommand(cnode));
-						break;
-					case OpaqueBehaviorEditPart.VISUAL_ID:
-						cmd.add(getDestroyElementCommand(cnode));
-						break;
-					case SendSignalActionEditPart.VISUAL_ID:
-						cmd.add(getDestroyElementCommand(cnode));
-						break;
-					case ActivityPartitionEditPart.VISUAL_ID:
-						cmd.add(getDestroyElementCommand(cnode));
-						break;
-					}
-				}
+			case SendSignalActionEditPart.VISUAL_ID:
+				cmd.add(getDestroyElementCommand(node));
+				break;
+			case ActivityPartitionEditPart.VISUAL_ID:
+				cmd.add(getDestroyElementCommand(node));
 				break;
 			}
 		}

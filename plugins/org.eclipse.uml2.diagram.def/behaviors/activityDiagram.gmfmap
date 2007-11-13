@@ -33,8 +33,7 @@
           href="activityDiagram.gmftool#//@palette/@tools.0/@tools.0"/>
       <diagramNode
           href="activityDiagram_activities.gmfgraph#ActivityNode"/>
-      <children
-          compartment="//@nodes.0/@ownedChild/@compartments.0">
+      <children>
         <containmentFeature
             href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//Activity/node"/>
         <ownedChild>
@@ -66,8 +65,7 @@
               href="activityDiagram_actions.gmfgraph#ActionAcceptEventNode"/>
         </ownedChild>
       </children>
-      <children
-          compartment="//@nodes.0/@ownedChild/@compartments.0">
+      <children>
         <containmentFeature
             href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//Activity/node"/>
         <ownedChild>
@@ -107,8 +105,7 @@
               href="activityDiagram_actions.gmfgraph#ActionAcceptTimeEventNode"/>
         </ownedChild>
       </children>
-      <children
-          compartment="//@nodes.0/@ownedChild/@compartments.0">
+      <children>
         <containmentFeature
             href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//Activity/node"/>
         <ownedChild>
@@ -121,8 +118,7 @@
               href="activityDiagram_controlNodes.gmfgraph#ActivityFinalNode"/>
         </ownedChild>
       </children>
-      <children
-          compartment="//@nodes.0/@ownedChild/@compartments.0">
+      <children>
         <containmentFeature
             href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//Activity/node"/>
         <ownedChild>
@@ -145,8 +141,7 @@
               href="activityDiagram_controlNodes.gmfgraph#DecisionAndMergeNode"/>
         </ownedChild>
       </children>
-      <children
-          compartment="//@nodes.0/@ownedChild/@compartments.0">
+      <children>
         <containmentFeature
             href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//Activity/node"/>
         <ownedChild>
@@ -169,8 +164,7 @@
               href="activityDiagram_controlNodes.gmfgraph#DecisionAndMergeNode"/>
         </ownedChild>
       </children>
-      <children
-          compartment="//@nodes.0/@ownedChild/@compartments.0">
+      <children>
         <containmentFeature
             href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//Activity/node"/>
         <ownedChild>
@@ -183,8 +177,7 @@
               href="activityDiagram_controlNodes.gmfgraph#ActivityInitialNode"/>
         </ownedChild>
       </children>
-      <children
-          compartment="//@nodes.0/@ownedChild/@compartments.0">
+      <children>
         <containmentFeature
             href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//Activity/node"/>
         <ownedChild>
@@ -222,8 +215,7 @@
               href="activityDiagram_objects.gmfgraph#DataStoreNode"/>
         </ownedChild>
       </children>
-      <children
-          compartment="//@nodes.0/@ownedChild/@compartments.0">
+      <children>
         <containmentFeature
             href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//Activity/node"/>
         <ownedChild>
@@ -260,8 +252,7 @@
               href="activityDiagram_objects.gmfgraph#CentralBufferNode"/>
         </ownedChild>
       </children>
-      <children
-          compartment="//@nodes.0/@ownedChild/@compartments.0">
+      <children>
         <containmentFeature
             href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//Activity/node"/>
         <ownedChild>
@@ -297,8 +288,7 @@
           </children>
         </ownedChild>
       </children>
-      <children
-          compartment="//@nodes.0/@ownedChild/@compartments.0">
+      <children>
         <containmentFeature
             href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//Activity/node"/>
         <ownedChild>
@@ -311,8 +301,7 @@
               href="activityDiagram_controlNodes.gmfgraph#FlowFinalNode"/>
         </ownedChild>
       </children>
-      <children
-          compartment="//@nodes.0/@ownedChild/@compartments.0">
+      <children>
         <containmentFeature
             href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//Activity/node"/>
         <ownedChild>
@@ -325,8 +314,7 @@
               href="activityDiagram_controlNodes.gmfgraph#ForkAndJoinNode"/>
         </ownedChild>
       </children>
-      <children
-          compartment="//@nodes.0/@ownedChild/@compartments.0">
+      <children>
         <containmentFeature
             href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//Activity/node"/>
         <ownedChild>
@@ -339,8 +327,7 @@
               href="activityDiagram_controlNodes.gmfgraph#ForkAndJoinNode"/>
         </ownedChild>
       </children>
-      <children
-          compartment="//@nodes.0/@ownedChild/@compartments.0">
+      <children>
         <containmentFeature
             href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//Activity/node"/>
         <ownedChild>
@@ -360,8 +347,7 @@
               href="activityDiagram_objects.gmfgraph#StandalonePinNode"/>
         </ownedChild>
       </children>
-      <children
-          compartment="//@nodes.0/@ownedChild/@compartments.0">
+      <children>
         <containmentFeature
             href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//Activity/node"/>
         <ownedChild>
@@ -397,8 +383,7 @@
           </children>
         </ownedChild>
       </children>
-      <children
-          compartment="//@nodes.0/@ownedChild/@compartments.0">
+      <children>
         <containmentFeature
             href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//Activity/node"/>
         <ownedChild>
@@ -446,8 +431,7 @@
           </children>
         </ownedChild>
       </children>
-      <children
-          compartment="//@nodes.0/@ownedChild/@compartments.0">
+      <children>
         <containmentFeature
             href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//Activity/node"/>
         <ownedChild>
@@ -489,8 +473,7 @@
           </children>
         </ownedChild>
       </children>
-      <children
-          compartment="//@nodes.0/@ownedChild/@compartments.0">
+      <children>
         <containmentFeature
             href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//Activity/node"/>
         <ownedChild>
@@ -538,8 +521,7 @@
           </children>
         </ownedChild>
       </children>
-      <children
-          compartment="//@nodes.0/@ownedChild/@compartments.0">
+      <children>
         <containmentFeature
             href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//Activity/group"/>
         <ownedChild>
@@ -681,8 +663,7 @@
           </compartments>
         </ownedChild>
       </children>
-      <children
-          compartment="//@nodes.0/@ownedChild/@compartments.0">
+      <children>
         <containmentFeature
             href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//BehavioredClassifier/ownedBehavior"/>
         <ownedChild>
@@ -734,8 +715,7 @@
               href="activityDiagram_objects.gmfgraph#ActivityParameterNode"/>
         </ownedChild>
       </children>
-      <children
-          compartment="//@nodes.0/@ownedChild/@compartments.0">
+      <children>
         <containmentFeature
             href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//Activity/node"/>
         <ownedChild>
@@ -765,8 +745,7 @@
               href="activityDiagram_actions.gmfgraph#SendSignalActionNode"/>
         </ownedChild>
       </children>
-      <children
-          compartment="//@nodes.0/@ownedChild/@compartments.0">
+      <children>
         <containmentFeature
             href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//Activity/group"/>
         <ownedChild>
@@ -794,17 +773,13 @@
               href="activityDiagram.gmftool#//@palette/@tools.0/@tools.2"/>
           <diagramNode
               href="activityDiagram_activities.gmfgraph#ActivityPartitionNode"/>
-          <compartments>
-            <compartment
-                href="activityDiagram_activities.gmfgraph#ActivityPartition_nodes"/>
-          </compartments>
+          <children
+              referencedChild="//@nodes.0/@ownedChild/@children.21/@ownedChild">
+            <containmentFeature
+                href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//ActivityPartition/subpartition"/>
+          </children>
         </ownedChild>
       </children>
-      <compartments
-          children="//@nodes.0/@ownedChild/@children.0 //@nodes.0/@ownedChild/@children.1 //@nodes.0/@ownedChild/@children.2 //@nodes.0/@ownedChild/@children.3 //@nodes.0/@ownedChild/@children.4 //@nodes.0/@ownedChild/@children.5 //@nodes.0/@ownedChild/@children.6 //@nodes.0/@ownedChild/@children.7 //@nodes.0/@ownedChild/@children.8 //@nodes.0/@ownedChild/@children.9 //@nodes.0/@ownedChild/@children.10 //@nodes.0/@ownedChild/@children.11 //@nodes.0/@ownedChild/@children.12 //@nodes.0/@ownedChild/@children.13 //@nodes.0/@ownedChild/@children.14 //@nodes.0/@ownedChild/@children.15 //@nodes.0/@ownedChild/@children.16 //@nodes.0/@ownedChild/@children.17 //@nodes.0/@ownedChild/@children.18 //@nodes.0/@ownedChild/@children.20 //@nodes.0/@ownedChild/@children.21">
-        <compartment
-            href="activityDiagram_activities.gmfgraph#subvertices"/>
-      </compartments>
     </ownedChild>
   </nodes>
   <nodes>
