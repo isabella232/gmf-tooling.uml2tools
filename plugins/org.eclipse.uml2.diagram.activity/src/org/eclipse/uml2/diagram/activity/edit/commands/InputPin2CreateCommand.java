@@ -5,6 +5,8 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.gmf.runtime.emf.type.core.commands.CreateElementCommand;
 import org.eclipse.gmf.runtime.emf.type.core.requests.CreateElementRequest;
 import org.eclipse.gmf.runtime.notation.View;
+import org.eclipse.uml2.diagram.activity.providers.UMLElementTypes;
+import org.eclipse.uml2.uml.InputPin;
 import org.eclipse.uml2.uml.UMLPackage;
 import org.eclipse.uml2.uml.WriteStructuralFeatureAction;
 
@@ -36,6 +38,17 @@ public class InputPin2CreateCommand extends CreateElementCommand {
 	 */
 	protected EClass getEClassToEdit() {
 		return UMLPackage.eINSTANCE.getWriteStructuralFeatureAction();
+	}
+
+	/**
+	 * @generated
+	 */
+	protected EObject doDefaultElementCreation() {
+		InputPin newElement = (InputPin) super.doDefaultElementCreation();
+		if (newElement != null) {
+			UMLElementTypes.Initializers.InputPin_3004.init(newElement);
+		}
+		return newElement;
 	}
 
 	/**

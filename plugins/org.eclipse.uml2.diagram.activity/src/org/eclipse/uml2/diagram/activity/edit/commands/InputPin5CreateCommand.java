@@ -5,7 +5,9 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.gmf.runtime.emf.type.core.commands.CreateElementCommand;
 import org.eclipse.gmf.runtime.emf.type.core.requests.CreateElementRequest;
 import org.eclipse.gmf.runtime.notation.View;
+import org.eclipse.uml2.diagram.activity.providers.UMLElementTypes;
 import org.eclipse.uml2.uml.CallOperationAction;
+import org.eclipse.uml2.uml.InputPin;
 import org.eclipse.uml2.uml.UMLPackage;
 
 /**
@@ -36,6 +38,17 @@ public class InputPin5CreateCommand extends CreateElementCommand {
 	 */
 	protected EClass getEClassToEdit() {
 		return UMLPackage.eINSTANCE.getCallOperationAction();
+	}
+
+	/**
+	 * @generated
+	 */
+	protected EObject doDefaultElementCreation() {
+		InputPin newElement = (InputPin) super.doDefaultElementCreation();
+		if (newElement != null) {
+			UMLElementTypes.Initializers.InputPin_3008.init(newElement);
+		}
+		return newElement;
 	}
 
 	/**
