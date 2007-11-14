@@ -147,7 +147,7 @@ public class ElementInitializers {
 						add(createExpressionFeatureInitializer(UMLPackage.eINSTANCE.getLiteralString_Value(), UMLOCLFactory.getExpression("\'ValueSpecification\'", //$NON-NLS-1$
 								UMLPackage.eINSTANCE.getLiteralString())));
 					}
-				}; // specification ObjectInitializer
+				};
 			}
 		}; // Constraint_2006 ObjectInitializer		
 
@@ -668,6 +668,12 @@ public class ElementInitializers {
 					expression.assignTo(feature, contextInstance);
 				}
 			};
+		}
+
+		/**
+		 * @generated
+		 */
+		static class Java {
 		}
 	} // end of Initializers
 }
