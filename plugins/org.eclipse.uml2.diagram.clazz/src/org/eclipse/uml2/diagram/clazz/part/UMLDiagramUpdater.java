@@ -3701,6 +3701,9 @@ public class UMLDiagramUpdater {
 	private static Collection getOutgoingFeatureModelFacetLinks_Generalization_General_4012(Generalization source) {
 		Collection result = new LinkedList();
 		Classifier destination = source.getGeneral();
+		if (destination == null) {
+			return result;
+		}
 		result.add(new UMLLinkDescriptor(source, destination, UMLElementTypes.GeneralizationGeneral_4012, GeneralizationGeneralEditPart.VISUAL_ID));
 		return result;
 	}

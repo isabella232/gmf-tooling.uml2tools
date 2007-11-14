@@ -62,7 +62,7 @@ public class PackagePackagesCanonicalEditPolicy extends CanonicalEditPolicy {
 	protected Set getFeaturesToSynchronize() {
 		if (myFeaturesToSynchronize == null) {
 			myFeaturesToSynchronize = new HashSet();
-			myFeaturesToSynchronize.add(UMLPackage.eINSTANCE.getPackage_NestedPackage());
+			myFeaturesToSynchronize.add(UMLPackage.eINSTANCE.getPackage_PackagedElement());
 		}
 		return myFeaturesToSynchronize;
 	}
