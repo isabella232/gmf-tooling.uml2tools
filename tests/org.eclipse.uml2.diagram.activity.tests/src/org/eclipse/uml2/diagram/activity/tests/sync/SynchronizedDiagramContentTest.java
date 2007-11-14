@@ -84,51 +84,44 @@ public class SynchronizedDiagramContentTest extends DiagramTestCase {
 			EObject element = child.getElement();
 			if (element instanceof ActivityParameterNode) {
 				hasActivityParameterNode = true;
-			} else if ("7010".equals(child.getType())) { //$NON-NLS-1$
-				EList subvertices = child.getChildren();
-				for (Iterator subverticesIterator = subvertices.iterator(); subverticesIterator.hasNext();) {
-					View subvertex = (View) subverticesIterator.next();
-					EObject subvertexElement = subvertex.getElement();
-					if (subvertexElement instanceof AcceptEventAction) {
-						AcceptEventAction action = (AcceptEventAction) subvertexElement;
-						EList<Trigger> triggers = action.getTriggers();
-						for (Iterator<Trigger> triggersIterator = triggers.iterator(); triggersIterator.hasNext();) {
-							Trigger trigger = triggersIterator.next();
-							if (trigger.getEvent() instanceof TimeEvent) {
-								hasAcceptTimeEventAction = true;
-							}
-						}
-						if (!hasAcceptTimeEventAction) {
-							hasAcceptEventAction = true;
-						}
-					} else if (subvertexElement instanceof AddStructuralFeatureValueAction) {
-						hasAddStructuralFeatureValueAction = true;
-					} else if (subvertexElement instanceof CallBehaviorAction) {
-						hasCallBehaviorAction = true;
-					} else if (subvertexElement instanceof CallOperationAction) {
-						hasCallOperationAction = true;
-					} else if (subvertexElement instanceof CreateObjectAction) {
-						hasCreateObjectAction = true;
-					} else if (subvertexElement instanceof OpaqueAction) {
-						hasOpaqueAction = true;
-					} else if (subvertexElement instanceof SendSignalAction) {
-						hasSendSignalAction = true;
-					} else if (subvertexElement instanceof InitialNode) {
-						hasInitialNode = true;
-					} else if (subvertexElement instanceof ActivityFinalNode) {
-						hasActivityFinalNode = true;
-					} else if (subvertexElement instanceof FlowFinalNode) {
-						hasFlowFinalNode = true;
-					} else if (subvertexElement instanceof MergeNode) {
-						hasMergeNode = true;
-					} else if (subvertexElement instanceof DecisionNode) {
-						hasDecisionNode = true;
-					} else if (subvertexElement instanceof ForkNode) {
-						hasForkNode = true;
-					} else if (subvertexElement instanceof JoinNode) {
-						hasJoinNode = true;
+			} else if (element instanceof AcceptEventAction) {
+				AcceptEventAction action = (AcceptEventAction) element;
+				EList<Trigger> triggers = action.getTriggers();
+				for (Iterator<Trigger> triggersIterator = triggers.iterator(); triggersIterator.hasNext();) {
+					Trigger trigger = triggersIterator.next();
+					if (trigger.getEvent() instanceof TimeEvent) {
+						hasAcceptTimeEventAction = true;
 					}
 				}
+				if (!hasAcceptTimeEventAction) {
+					hasAcceptEventAction = true;
+				}
+			} else if (element instanceof AddStructuralFeatureValueAction) {
+				hasAddStructuralFeatureValueAction = true;
+			} else if (element instanceof CallBehaviorAction) {
+				hasCallBehaviorAction = true;
+			} else if (element instanceof CallOperationAction) {
+				hasCallOperationAction = true;
+			} else if (element instanceof CreateObjectAction) {
+				hasCreateObjectAction = true;
+			} else if (element instanceof OpaqueAction) {
+				hasOpaqueAction = true;
+			} else if (element instanceof SendSignalAction) {
+				hasSendSignalAction = true;
+			} else if (element instanceof InitialNode) {
+				hasInitialNode = true;
+			} else if (element instanceof ActivityFinalNode) {
+				hasActivityFinalNode = true;
+			} else if (element instanceof FlowFinalNode) {
+				hasFlowFinalNode = true;
+			} else if (element instanceof MergeNode) {
+				hasMergeNode = true;
+			} else if (element instanceof DecisionNode) {
+				hasDecisionNode = true;
+			} else if (element instanceof ForkNode) {
+				hasForkNode = true;
+			} else if (element instanceof JoinNode) {
+				hasJoinNode = true;
 			}
 		}
 		
