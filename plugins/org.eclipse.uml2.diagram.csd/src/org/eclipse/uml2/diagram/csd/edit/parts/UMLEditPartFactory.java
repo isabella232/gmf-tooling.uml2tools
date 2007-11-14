@@ -121,9 +121,6 @@ public class UMLEditPartFactory implements EditPartFactory {
 			case SlotEditPart.VISUAL_ID:
 				return new SlotEditPart(view);
 
-			case SlotNameEditPart.VISUAL_ID:
-				return new SlotNameEditPart(view);
-
 			case CollaborationContentsEditPart.VISUAL_ID:
 				return new CollaborationContentsEditPart(view);
 

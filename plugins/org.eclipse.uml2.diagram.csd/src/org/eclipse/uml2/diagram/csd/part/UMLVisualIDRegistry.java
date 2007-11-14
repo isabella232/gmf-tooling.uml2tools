@@ -398,11 +398,6 @@ public class UMLVisualIDRegistry {
 				return true;
 			}
 			break;
-		case SlotEditPart.VISUAL_ID:
-			if (SlotNameEditPart.VISUAL_ID == nodeVisualID) {
-				return true;
-			}
-			break;
 		case CollaborationContentsEditPart.VISUAL_ID:
 			if (CollaborationUse2EditPart.VISUAL_ID == nodeVisualID) {
 				return true;

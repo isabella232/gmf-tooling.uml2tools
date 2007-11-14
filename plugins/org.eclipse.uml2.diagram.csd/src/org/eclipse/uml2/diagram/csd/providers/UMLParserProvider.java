@@ -47,7 +47,7 @@ import org.eclipse.uml2.diagram.csd.edit.parts.PortNameEditPart;
 import org.eclipse.uml2.diagram.csd.edit.parts.Property2EditPart;
 import org.eclipse.uml2.diagram.csd.edit.parts.PropertyName2EditPart;
 import org.eclipse.uml2.diagram.csd.edit.parts.PropertyNameEditPart;
-import org.eclipse.uml2.diagram.csd.edit.parts.SlotNameEditPart;
+import org.eclipse.uml2.diagram.csd.edit.parts.SlotEditPart;
 import org.eclipse.uml2.diagram.csd.expressions.UMLOCLFactory;
 import org.eclipse.uml2.diagram.csd.parser.collaborationuse.CollaborationUseParser;
 import org.eclipse.uml2.diagram.csd.parsers.MessageFormatParser;
@@ -461,22 +461,22 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 	/**
 	 * @generated
 	 */
-	private IParser slotName_5023Parser;
+	private IParser slot_3015Parser;
 
 	/**
 	 * @generated
 	 */
-	private IParser getSlotName_5023Parser() {
-		if (slotName_5023Parser == null) {
-			slotName_5023Parser = createSlotName_5023Parser();
+	private IParser getSlot_3015Parser() {
+		if (slot_3015Parser == null) {
+			slot_3015Parser = createSlot_3015Parser();
 		}
-		return slotName_5023Parser;
+		return slot_3015Parser;
 	}
 
 	/**
 	 * @generated NOT
 	 */
-	protected IParser createSlotName_5023Parser() {
+	protected IParser createSlot_3015Parser() {
 		return new SemanticParserAdapter(new SlotParser(), new BasicApplyStrategy(), new SlotToString.VIEW(), new SlotToString.EDIT());
 	}
 
@@ -731,8 +731,8 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 			return getElementImport_3004Parser();
 		case PropertyName2EditPart.VISUAL_ID:
 			return getPropertyName_5017Parser();
-		case SlotNameEditPart.VISUAL_ID:
-			return getSlotName_5023Parser();
+		case SlotEditPart.VISUAL_ID:
+			return getSlot_3015Parser();
 		case DependencyNameEditPart.VISUAL_ID:
 			return getDependencyName_6001Parser();
 		case AssociationNameEditPart.VISUAL_ID:

@@ -285,11 +285,6 @@ public class UMLViewProvider extends AbstractViewProvider {
 						return null; // wrong container
 					}
 					break;
-				case SlotNameEditPart.VISUAL_ID:
-					if (SlotEditPart.VISUAL_ID != UMLVisualIDRegistry.getVisualID(containerView) || containerView.getElement() != domainElement) {
-						return null; // wrong container
-					}
-					break;
 				case DependencyNameEditPart.VISUAL_ID:
 					if (DependencyEditPart.VISUAL_ID != UMLVisualIDRegistry.getVisualID(containerView) || containerView.getElement() != domainElement) {
 						return null; // wrong container
@@ -382,8 +377,6 @@ public class UMLViewProvider extends AbstractViewProvider {
 			return PropertyName2ViewFactory.class;
 		case SlotEditPart.VISUAL_ID:
 			return SlotViewFactory.class;
-		case SlotNameEditPart.VISUAL_ID:
-			return SlotNameViewFactory.class;
 		case CollaborationContentsEditPart.VISUAL_ID:
 			return CollaborationContentsViewFactory.class;
 		case ClassAttributesEditPart.VISUAL_ID:

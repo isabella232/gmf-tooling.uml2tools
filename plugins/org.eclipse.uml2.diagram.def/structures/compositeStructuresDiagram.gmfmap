@@ -483,7 +483,7 @@
           <labelMappings
               xsi:type="gmfmap:FeatureLabelMapping">
             <diagramLabel
-                href="componentDiagram_classifiers.gmfgraph#PartNode_name"/>
+                href="classDiagram_instances.gmfgraph#Slot_inplace"/>
             <features
                 href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//NamedElement/name"/>
           </labelMappings>
@@ -491,7 +491,7 @@
               xsi:type="gmftool:CreationTool"
               href="compositeStructuresDiagram.gmftool#//@palette/@tools.0/@tools.6"/>
           <diagramNode
-              href="componentDiagram_classifiers.gmfgraph#PartNode"/>
+              href="classDiagram_instances.gmfgraph#Slot_inplace"/>
         </ownedChild>
       </children>
       <compartments

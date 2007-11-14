@@ -318,7 +318,7 @@ public class UMLPaletteFactory {
 		entry.setToolClass(CreateAssociationLinkTool.SHARED.class);
 		return entry;
 	}
-	
+
 	/**
 	 * @generated NOT
 	 */
@@ -329,7 +329,6 @@ public class UMLPaletteFactory {
 		return entry;
 	}
 
-
 	/**
 	 * @generated
 	 */
@@ -339,7 +338,7 @@ public class UMLPaletteFactory {
 		entry.setToolClass(CreateAssociationLinkTool.COMPOSITE.class);
 		return entry;
 	}
-	
+
 	/**
 	 * @generated NOT
 	 */
@@ -369,6 +368,7 @@ public class UMLPaletteFactory {
 		entry.setLargeIcon(entry.getSmallIcon());
 		return entry;
 	}
+
 	/**
 	 * @generated
 	 */

@@ -63,6 +63,11 @@ public class UMLModelingAssistantProvider extends ModelingAssistantProvider {
 			types.add(UMLElementTypes.ElementImport_3004);
 			return types;
 		}
+		if (editPart instanceof InstanceSpecificationEditPart) {
+			List types = new ArrayList();
+			types.add(UMLElementTypes.Slot_3015);
+			return types;
+		}
 		if (editPart instanceof CollaborationContentsEditPart) {
 			List types = new ArrayList();
 			types.add(UMLElementTypes.CollaborationUse_3002);
@@ -72,11 +77,6 @@ public class UMLModelingAssistantProvider extends ModelingAssistantProvider {
 		if (editPart instanceof ClassClass_contentsEditPart) {
 			List types = new ArrayList();
 			types.add(UMLElementTypes.Property_3014);
-			return types;
-		}
-		if (editPart instanceof InstanceSpecificationSlotsEditPart) {
-			List types = new ArrayList();
-			types.add(UMLElementTypes.Slot_3015);
 			return types;
 		}
 		if (editPart instanceof PackageEditPart) {

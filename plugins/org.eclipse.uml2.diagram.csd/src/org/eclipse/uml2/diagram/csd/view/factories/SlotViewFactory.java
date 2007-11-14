@@ -18,14 +18,13 @@ import org.eclipse.uml2.diagram.csd.part.UMLVisualIDRegistry;
 /**
  * @generated
  */
-public class SlotViewFactory extends AbstractShapeViewFactory {
+public class SlotViewFactory extends AbstractLabelViewFactory {
 
 	/**
 	 * @generated
 	 */
 	protected List createStyles(View view) {
 		List styles = new ArrayList();
-		styles.add(NotationFactory.eINSTANCE.createShapeStyle());
 		return styles;
 	}
 
@@ -38,11 +37,5 @@ public class SlotViewFactory extends AbstractShapeViewFactory {
 			view.setType(semanticHint);
 		}
 		super.decorateView(containerView, view, semanticAdapter, semanticHint, index, persisted);
-		IAdaptable eObjectAdapter = null;
-		EObject eObject = (EObject) semanticAdapter.getAdapter(EObject.class);
-		if (eObject != null) {
-			eObjectAdapter = new EObjectAdapter(eObject);
-		}
-		getViewService().createNode(eObjectAdapter, view, UMLVisualIDRegistry.getType(SlotNameEditPart.VISUAL_ID), ViewUtil.APPEND, true, getPreferencesHint());
 	}
 }
