@@ -217,13 +217,15 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 	 * @generated NOT
 	 */
 	protected IParser createElementImport_3009Parser() {
-		return new ElementImportParser(new ElementImportProvider(){
+		return new ElementImportParser(new ElementImportProvider() {
+
 			@Override
 			protected boolean isSuitable(Object object) {
 				return super.isSuitable(object) && !isMetaclass(object);
 			}
+
 			private boolean isMetaclass(Object object) {
-				return object instanceof org.eclipse.uml2.uml.Class && ((org.eclipse.uml2.uml.Class)object).isMetaclass();
+				return object instanceof org.eclipse.uml2.uml.Class && ((org.eclipse.uml2.uml.Class) object).isMetaclass();
 			}
 
 		});

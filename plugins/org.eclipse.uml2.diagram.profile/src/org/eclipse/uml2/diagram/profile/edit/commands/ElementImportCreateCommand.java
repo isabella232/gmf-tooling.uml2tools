@@ -49,8 +49,7 @@ public class ElementImportCreateCommand extends CreateElementCommand {
 		if (newElement != null) {
 			Profile container = (Profile) getElementToEdit();
 			if (container != null) {
-				Collection featureValues = container.getMetaclassReferences();
-				featureValues.add(newElement);
+				container.getMetaclassReferences().add(newElement);
 			}
 		}
 		return newElement;

@@ -140,10 +140,24 @@ public class UMLVisualIDRegistry {
 	 * @generated
 	 */
 	public static int getNodeVisualID(View containerView, EObject domainElement) {
-		if (domainElement == null || !ProfileEditPart.MODEL_ID.equals(org.eclipse.uml2.diagram.profile.part.UMLVisualIDRegistry.getModelID(containerView))) {
+		if (domainElement == null) {
 			return -1;
 		}
-		switch (org.eclipse.uml2.diagram.profile.part.UMLVisualIDRegistry.getVisualID(containerView)) {
+		String containerModelID = org.eclipse.uml2.diagram.profile.part.UMLVisualIDRegistry.getModelID(containerView);
+		if (!ProfileEditPart.MODEL_ID.equals(containerModelID)) {
+			return -1;
+		}
+		int containerVisualID;
+		if (ProfileEditPart.MODEL_ID.equals(containerModelID)) {
+			containerVisualID = org.eclipse.uml2.diagram.profile.part.UMLVisualIDRegistry.getVisualID(containerView);
+		} else {
+			if (containerView instanceof Diagram) {
+				containerVisualID = ProfileEditPart.VISUAL_ID;
+			} else {
+				return -1;
+			}
+		}
+		switch (containerVisualID) {
 		case StereotypeAttributesEditPart.VISUAL_ID:
 			if (UMLPackage.eINSTANCE.getProperty().isSuperTypeOf(domainElement.eClass()) && evaluate(Property_3001_Constraint, domainElement)) {
 				return PropertyEditPart.VISUAL_ID;
