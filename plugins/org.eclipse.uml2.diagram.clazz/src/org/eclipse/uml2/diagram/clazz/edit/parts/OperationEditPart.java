@@ -539,6 +539,6 @@ public class OperationEditPart extends CompartmentEditPart implements ITextAware
 	 * @generated
 	 */
 	protected IFigure createFigurePrim() {
-		return new WrapLabel();
+		return new Label();
 	}
 }

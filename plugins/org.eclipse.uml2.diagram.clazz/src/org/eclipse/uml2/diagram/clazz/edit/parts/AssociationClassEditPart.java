@@ -538,6 +538,6 @@ public class AssociationClassEditPart extends CompartmentEditPart implements ITe
 	 * @generated
 	 */
 	protected IFigure createFigurePrim() {
-		return new WrapLabel();
+		return new Label();
 	}
 }

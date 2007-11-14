@@ -542,7 +542,7 @@ public class GeneralizationSetIsCoveringIsDisjointEditPart extends LabelEditPart
 	/**
 	 * @generated
 	 */
-	public class GeneralizationSet_Constraint extends WrapLabel {
+	public class GeneralizationSet_Constraint extends Label {
 
 		/**
 		 * @generated

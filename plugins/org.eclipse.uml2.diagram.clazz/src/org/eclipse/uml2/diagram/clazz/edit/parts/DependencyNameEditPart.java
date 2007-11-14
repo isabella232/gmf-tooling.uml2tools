@@ -540,6 +540,6 @@ public class DependencyNameEditPart extends LabelEditPart implements ITextAwareE
 	 * @generated
 	 */
 	protected IFigure createFigurePrim() {
-		return new WrapLabel();
+		return new Label();
 	}
 }

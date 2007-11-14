@@ -518,6 +518,6 @@ public class PropertyNameEditPart extends LabelEditPart implements ITextAwareEdi
 	 * @generated
 	 */
 	protected IFigure createFigurePrim() {
-		return new WrapLabel();
+		return new Label();
 	}
 }

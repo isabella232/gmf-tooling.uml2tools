@@ -538,6 +538,6 @@ public class InstanceSpecificationEditPart extends CompartmentEditPart implement
 	 * @generated
 	 */
 	protected IFigure createFigurePrim() {
-		return new WrapLabel();
+		return new Label();
 	}
 }

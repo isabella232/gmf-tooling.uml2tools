@@ -539,6 +539,6 @@ public class Operation2EditPart extends CompartmentEditPart implements ITextAwar
 	 * @generated
 	 */
 	protected IFigure createFigurePrim() {
-		return new WrapLabel();
+		return new Label();
 	}
 }

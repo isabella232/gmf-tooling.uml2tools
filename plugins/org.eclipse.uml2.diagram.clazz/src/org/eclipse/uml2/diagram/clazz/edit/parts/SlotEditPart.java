@@ -542,6 +542,6 @@ public class SlotEditPart extends CompartmentEditPart implements ITextAwareEditP
 	 * @generated
 	 */
 	protected IFigure createFigurePrim() {
-		return new WrapLabel();
+		return new Label();
 	}
 }

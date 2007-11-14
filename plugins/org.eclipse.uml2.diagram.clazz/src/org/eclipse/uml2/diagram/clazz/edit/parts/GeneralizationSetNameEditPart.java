@@ -541,6 +541,6 @@ public class GeneralizationSetNameEditPart extends LabelEditPart implements ITex
 	 * @generated
 	 */
 	protected IFigure createFigurePrim() {
-		return new WrapLabel();
+		return new Label();
 	}
 }

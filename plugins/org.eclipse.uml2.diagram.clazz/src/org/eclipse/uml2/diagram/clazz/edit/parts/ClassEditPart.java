@@ -538,6 +538,6 @@ public class ClassEditPart extends CompartmentEditPart implements ITextAwareEdit
 	 * @generated
 	 */
 	protected IFigure createFigurePrim() {
-		return new WrapLabel();
+		return new Label();
 	}
 }

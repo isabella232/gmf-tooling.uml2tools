@@ -1,6 +1,7 @@
 package org.eclipse.uml2.diagram.clazz.edit.parts;
 
 import org.eclipse.draw2d.IFigure;
+import org.eclipse.draw2d.Label;
 import org.eclipse.draw2d.LineBorder;
 import org.eclipse.draw2d.MarginBorder;
 import org.eclipse.draw2d.RectangleFigure;
@@ -285,12 +286,12 @@ public class Interface2EditPart extends ShapeNodeEditPart {
 		/**
 		 * @generated
 		 */
-		private WrapLabel fFigureClassFigure_stereo;
+		private Label fFigureClassFigure_stereo;
 
 		/**
 		 * @generated
 		 */
-		private WrapLabel fFigureClassFigure_name;
+		private Label fFigureClassFigure_name;
 
 		/**
 		 * @generated
@@ -362,7 +363,7 @@ public class Interface2EditPart extends ShapeNodeEditPart {
 
 			classFigure_StereoContainer1.setLayoutManager(layoutClassFigure_StereoContainer1);
 
-			fFigureClassFigure_stereo = new WrapLabel();
+			fFigureClassFigure_stereo = new Label();
 			fFigureClassFigure_stereo.setText("");
 
 			fFigureClassFigure_stereo.setFont(FFIGURECLASSFIGURE_STEREO_FONT);
@@ -380,7 +381,7 @@ public class Interface2EditPart extends ShapeNodeEditPart {
 
 			classFigure_NameContainer1.setLayoutManager(layoutClassFigure_NameContainer1);
 
-			fFigureClassFigure_name = new WrapLabel();
+			fFigureClassFigure_name = new Label();
 			fFigureClassFigure_name.setText("");
 
 			fFigureClassFigure_name.setFont(FFIGURECLASSFIGURE_NAME_FONT);
@@ -424,14 +425,14 @@ public class Interface2EditPart extends ShapeNodeEditPart {
 		/**
 		 * @generated
 		 */
-		public WrapLabel getFigureClassFigure_stereo() {
+		public Label getFigureClassFigure_stereo() {
 			return fFigureClassFigure_stereo;
 		}
 
 		/**
 		 * @generated
 		 */
-		public WrapLabel getFigureClassFigure_name() {
+		public Label getFigureClassFigure_name() {
 			return fFigureClassFigure_name;
 		}
 
