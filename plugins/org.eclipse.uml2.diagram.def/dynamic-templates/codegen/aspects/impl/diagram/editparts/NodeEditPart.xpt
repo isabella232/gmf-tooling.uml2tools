@@ -1,0 +1,88 @@
+/*
+ * Copyright (c) 2006, 2007 Borland Software Corporation
+ * 
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
+ *
+ * Contributors:
+ *    Dmitry Stadnik (Borland) - initial API and implementation
+ *    Alexander Shatalin (Borland) - initial API and implementation
+ */
+
+«IMPORT "http://www.eclipse.org/gmf/2006/GenModel"»
+«IMPORT "http://www.eclipse.org/emf/2002/Ecore"»
+«IMPORT "http://www.eclipse.org/uml2/diagram/gmfgenext/DiagramFigure/1.0"»
+«EXTENSION xpt::diagram::ViewmapAttributesUtils»
+«EXTENSION xpt::diagram::editparts::Utils»
+
+«AROUND addFixedChild FOR gmfgen::GenNode-»
+	«IF hasFixedChildren()-»
+		«EXPAND xpt::Common::generatedMemberComment»
+		protected boolean addFixedChild(org.eclipse.gef.EditPart childEditPart) {
+			«FOREACH getInnerFixedLabels() AS label-»
+				«LET (gmfgen::ParentAssignedViewmap) label.viewmap AS childViewmap-»
+					if (childEditPart instanceof «label.getEditPartQualifiedClassName()») {
+						((«label.getEditPartQualifiedClassName()») childEditPart).«EXPAND impl::diagram::editparts::TextAware::labelSetterName FOR childViewmap»(getPrimaryShape().«childViewmap.getterName»());
+						return true;
+					}
+				«ENDLET-»
+			«ENDFOREACH-»
+			«FOREACH getPinnedCompartments() AS compartment-»
+				«LET (gmfgen::ParentAssignedViewmap) compartment.viewmap AS childViewmap-»
+					if (childEditPart instanceof «compartment.getEditPartQualifiedClassName()») {
+						org.eclipse.draw2d.IFigure pane = getPrimaryShape().«childViewmap.getterName»();
+						setupContentPane(pane); // FIXME each comparment should handle his content pane in his own way 
+						pane.add(((«compartment.getEditPartQualifiedClassName()») childEditPart).getFigure());
+						return true;
+					}	
+				«ENDLET-»
+			«ENDFOREACH-»
+			«FOREACH getSideAffixedChildren() AS child-»
+				if (childEditPart instanceof «child.getEditPartQualifiedClassName()») {
+					«EXPAND createSideAffixedNodeLocator FOR child-»
+					getBorderedFigure().getBorderItemContainer().add(((«child.getEditPartQualifiedClassName()») childEditPart).getFigure(), locator);
+					return true;
+				}
+			«ENDFOREACH-»
+			return false;
+		}
+	«ENDIF-»
+«ENDAROUND»
+
+«AROUND  removeFixedChild FOR gmfgen::GenNode-»
+	«IF hasFixedChildren()-»
+		«EXPAND xpt::Common::generatedMemberComment»
+		protected boolean removeFixedChild(org.eclipse.gef.EditPart childEditPart) {
+			«REM»ignore labels assuming that they never may be removed«ENDREM»
+			«FOREACH getPinnedCompartments() AS compartment-»
+				«LET (gmfgen::ParentAssignedViewmap) compartment.viewmap AS childViewmap-»
+					if (childEditPart instanceof «compartment.getEditPartQualifiedClassName()») {
+						org.eclipse.draw2d.IFigure pane = getPrimaryShape().«childViewmap.getterName»();
+						pane.remove(((«compartment.getEditPartQualifiedClassName()») childEditPart).getFigure());
+						return true;
+					}	
+				«ENDLET-»
+			«ENDFOREACH-»
+			«FOREACH getSideAffixedChildren() AS child-»
+				if (childEditPart instanceof «child.getEditPartQualifiedClassName()») {
+					getBorderedFigure().getBorderItemContainer().remove(((«child.getEditPartQualifiedClassName()») childEditPart).getFigure());
+					return true;
+				}
+			«ENDFOREACH-»
+			return false;
+		}
+	«ENDIF-»
+«ENDAROUND»
+
+
+«DEFINE createSideAffixedNodeLocator FOR gmfgen::GenChildSideAffixedNode-»
+	«IF null != viewmap.attributes.typeSelect(gmfgenext::CustomLocatorAttributes).first()-»
+		org.eclipse.gmf.runtime.draw2d.ui.figures.IBorderItemLocator locator = «-»
+			new «((gmfgenext::CustomLocatorAttributes)viewmap.attributes.typeSelect(gmfgenext::CustomLocatorAttributes).first()).customLocatorFQN»(getMainFigure());
+	«ELSE-»
+		org.eclipse.gmf.runtime.diagram.ui.figures.BorderItemLocator locator = «-»
+		   new org.eclipse.gmf.runtime.diagram.ui.figures.BorderItemLocator(getMainFigure(), org.eclipse.draw2d.PositionConstants.«preferredSideName»);
+	«ENDIF-»
+«ENDDEFINE»
