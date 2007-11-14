@@ -2,6 +2,7 @@ package org.eclipse.uml2.diagram.profile.edit.parts;
 
 import org.eclipse.draw2d.Graphics;
 import org.eclipse.draw2d.IFigure;
+import org.eclipse.draw2d.Label;
 import org.eclipse.draw2d.MarginBorder;
 import org.eclipse.draw2d.RectangleFigure;
 import org.eclipse.draw2d.StackLayout;
@@ -84,10 +85,11 @@ public class StereotypeEditPart extends ShapeNodeEditPart {
 				return null;
 			}
 		});
-
 		super.createDefaultEditPolicies();
 		installEditPolicy(EditPolicyRoles.SEMANTIC_ROLE, new StereotypeItemSemanticEditPolicy());
 		installEditPolicy(EditPolicy.LAYOUT_ROLE, createLayoutEditPolicy());
+		// XXX need an SCR to runtime to have another abstract superclass that would let children add reasonable editpolicies
+		// removeEditPolicy(org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles.CONNECTION_HANDLES_ROLE);
 	}
 
 	/**
@@ -264,7 +266,7 @@ public class StereotypeEditPart extends ShapeNodeEditPart {
 		/**
 		 * @generated
 		 */
-		private WrapLabel fFigureStereotypeFigure_NameLabel;
+		private Label fFigureStereotypeFigure_NameLabel;
 
 		/**
 		 * @generated
@@ -299,7 +301,7 @@ public class StereotypeEditPart extends ShapeNodeEditPart {
 		 */
 		private void createContents() {
 
-			WrapLabel stereotypeFigure_StereotypeLabel0 = new WrapLabel();
+			Label stereotypeFigure_StereotypeLabel0 = new Label();
 			stereotypeFigure_StereotypeLabel0.setText("\u00ABstereotype\u00BB");
 
 			this.add(stereotypeFigure_StereotypeLabel0);
@@ -318,7 +320,7 @@ public class StereotypeEditPart extends ShapeNodeEditPart {
 
 			stereotypeFigure_NameContainer0.setLayoutManager(layoutStereotypeFigure_NameContainer0);
 
-			fFigureStereotypeFigure_NameLabel = new WrapLabel();
+			fFigureStereotypeFigure_NameLabel = new Label();
 			fFigureStereotypeFigure_NameLabel.setText("");
 
 			stereotypeFigure_NameContainer0.add(fFigureStereotypeFigure_NameLabel);
@@ -338,7 +340,7 @@ public class StereotypeEditPart extends ShapeNodeEditPart {
 		/**
 		 * @generated
 		 */
-		public WrapLabel getFigureStereotypeFigure_NameLabel() {
+		public Label getFigureStereotypeFigure_NameLabel() {
 			return fFigureStereotypeFigure_NameLabel;
 		}
 

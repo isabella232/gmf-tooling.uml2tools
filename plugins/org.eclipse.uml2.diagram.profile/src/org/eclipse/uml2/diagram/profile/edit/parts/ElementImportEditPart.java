@@ -2,6 +2,7 @@ package org.eclipse.uml2.diagram.profile.edit.parts;
 
 import org.eclipse.draw2d.ColorConstants;
 import org.eclipse.draw2d.IFigure;
+import org.eclipse.draw2d.Label;
 import org.eclipse.draw2d.RectangleFigure;
 import org.eclipse.draw2d.StackLayout;
 import org.eclipse.draw2d.ToolbarLayout;
@@ -58,10 +59,11 @@ public class ElementImportEditPart extends ShapeNodeEditPart {
 	 * @generated
 	 */
 	protected void createDefaultEditPolicies() {
-
 		super.createDefaultEditPolicies();
 		installEditPolicy(EditPolicyRoles.SEMANTIC_ROLE, new ElementImportItemSemanticEditPolicy());
 		installEditPolicy(EditPolicy.LAYOUT_ROLE, createLayoutEditPolicy());
+		// XXX need an SCR to runtime to have another abstract superclass that would let children add reasonable editpolicies
+		// removeEditPolicy(org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles.CONNECTION_HANDLES_ROLE);
 	}
 
 	/**
@@ -245,7 +247,7 @@ public class ElementImportEditPart extends ShapeNodeEditPart {
 		/**
 		 * @generated
 		 */
-		private WrapLabel fFigureReferencedMetaclassFigure_className;
+		private Label fFigureReferencedMetaclassFigure_className;
 
 		/**
 		 * @generated
@@ -280,7 +282,7 @@ public class ElementImportEditPart extends ShapeNodeEditPart {
 
 			referencedMetaclassFigure_FixedLabelPane0.setLayoutManager(layoutReferencedMetaclassFigure_FixedLabelPane0);
 
-			WrapLabel referencedMetaclassFigure_fixed_metaclass1 = new WrapLabel();
+			Label referencedMetaclassFigure_fixed_metaclass1 = new Label();
 			referencedMetaclassFigure_fixed_metaclass1.setText("\u00ABmetaclass\u00BB");
 
 			referencedMetaclassFigure_FixedLabelPane0.add(referencedMetaclassFigure_fixed_metaclass1);
@@ -295,7 +297,7 @@ public class ElementImportEditPart extends ShapeNodeEditPart {
 
 			referencedMetaclassFigure_LabelPane0.setLayoutManager(layoutReferencedMetaclassFigure_LabelPane0);
 
-			fFigureReferencedMetaclassFigure_className = new WrapLabel();
+			fFigureReferencedMetaclassFigure_className = new Label();
 			fFigureReferencedMetaclassFigure_className.setText("");
 
 			referencedMetaclassFigure_LabelPane0.add(fFigureReferencedMetaclassFigure_className);
@@ -305,7 +307,7 @@ public class ElementImportEditPart extends ShapeNodeEditPart {
 		/**
 		 * @generated
 		 */
-		public WrapLabel getFigureReferencedMetaclassFigure_className() {
+		public Label getFigureReferencedMetaclassFigure_className() {
 			return fFigureReferencedMetaclassFigure_className;
 		}
 

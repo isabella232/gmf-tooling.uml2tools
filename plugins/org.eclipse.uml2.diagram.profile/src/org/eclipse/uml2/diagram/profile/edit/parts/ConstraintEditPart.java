@@ -538,6 +538,6 @@ public class ConstraintEditPart extends CompartmentEditPart implements ITextAwar
 	 * @generated
 	 */
 	protected IFigure createFigurePrim() {
-		return new WrapLabel();
+		return new Label();
 	}
 }

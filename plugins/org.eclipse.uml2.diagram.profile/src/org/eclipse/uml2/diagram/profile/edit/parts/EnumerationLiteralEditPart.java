@@ -538,6 +538,6 @@ public class EnumerationLiteralEditPart extends CompartmentEditPart implements I
 	 * @generated
 	 */
 	protected IFigure createFigurePrim() {
-		return new WrapLabel();
+		return new Label();
 	}
 }

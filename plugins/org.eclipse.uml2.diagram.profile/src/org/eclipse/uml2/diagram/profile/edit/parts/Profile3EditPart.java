@@ -3,6 +3,7 @@ package org.eclipse.uml2.diagram.profile.edit.parts;
 import org.eclipse.draw2d.ColorConstants;
 import org.eclipse.draw2d.Graphics;
 import org.eclipse.draw2d.IFigure;
+import org.eclipse.draw2d.Label;
 import org.eclipse.draw2d.RectangleFigure;
 import org.eclipse.draw2d.Shape;
 import org.eclipse.draw2d.StackLayout;
@@ -84,11 +85,12 @@ public class Profile3EditPart extends ShapeNodeEditPart {
 				return null;
 			}
 		});
-
 		super.createDefaultEditPolicies();
 		installEditPolicy(EditPolicyRoles.SEMANTIC_ROLE, new Profile3ItemSemanticEditPolicy());
 		installEditPolicy(EditPolicy.LAYOUT_ROLE, createLayoutEditPolicy());
 		installEditPolicy("ConnectionHandlesPolicy", new DoNothingEditPolicy()); //$NON-NLS-1$
+		// XXX need an SCR to runtime to have another abstract superclass that would let children add reasonable editpolicies
+		// removeEditPolicy(org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles.CONNECTION_HANDLES_ROLE);
 	}
 
 	/**
@@ -258,7 +260,7 @@ public class Profile3EditPart extends ShapeNodeEditPart {
 		/**
 		 * @generated
 		 */
-		private WrapLabel fFigureProfileLabelsFigure_NameFigure;
+		private Label fFigureProfileLabelsFigure_NameFigure;
 
 		/**
 		 * @generated
@@ -292,12 +294,12 @@ public class Profile3EditPart extends ShapeNodeEditPart {
 		 */
 		private void createContents() {
 
-			WrapLabel profileLabels_profileFigure0 = new WrapLabel();
+			Label profileLabels_profileFigure0 = new Label();
 			profileLabels_profileFigure0.setText("\u00ABprofile\u00BB");
 
 			this.add(profileLabels_profileFigure0);
 
-			fFigureProfileLabelsFigure_NameFigure = new WrapLabel();
+			fFigureProfileLabelsFigure_NameFigure = new Label();
 			fFigureProfileLabelsFigure_NameFigure.setText("");
 
 			this.add(fFigureProfileLabelsFigure_NameFigure);
@@ -313,7 +315,7 @@ public class Profile3EditPart extends ShapeNodeEditPart {
 		/**
 		 * @generated
 		 */
-		public WrapLabel getFigureProfileLabelsFigure_NameFigure() {
+		public Label getFigureProfileLabelsFigure_NameFigure() {
 			return fFigureProfileLabelsFigure_NameFigure;
 		}
 

@@ -3,6 +3,7 @@ package org.eclipse.uml2.diagram.profile.edit.parts;
 import org.eclipse.draw2d.ColorConstants;
 import org.eclipse.draw2d.Graphics;
 import org.eclipse.draw2d.IFigure;
+import org.eclipse.draw2d.Label;
 import org.eclipse.draw2d.RectangleFigure;
 import org.eclipse.draw2d.StackLayout;
 import org.eclipse.draw2d.ToolbarLayout;
@@ -80,11 +81,12 @@ public class Profile2EditPart extends ShapeNodeEditPart {
 				return null;
 			}
 		});
-
 		super.createDefaultEditPolicies();
 		installEditPolicy(EditPolicyRoles.SEMANTIC_ROLE, new Profile2ItemSemanticEditPolicy());
 		installEditPolicy(EditPolicy.LAYOUT_ROLE, createLayoutEditPolicy());
 		installEditPolicy(EditPolicyRoles.OPEN_ROLE, new OpenDiagramEditPolicy());
+		// XXX need an SCR to runtime to have another abstract superclass that would let children add reasonable editpolicies
+		// removeEditPolicy(org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles.CONNECTION_HANDLES_ROLE);
 	}
 
 	/**
@@ -253,7 +255,7 @@ public class Profile2EditPart extends ShapeNodeEditPart {
 		/**
 		 * @generated
 		 */
-		private WrapLabel fFigureProfileFigure_NameLabel;
+		private Label fFigureProfileFigure_NameLabel;
 
 		/**
 		 * @generated
@@ -303,7 +305,7 @@ public class Profile2EditPart extends ShapeNodeEditPart {
 
 			profile_body0.setLayoutManager(layoutProfile_body0);
 
-			WrapLabel profileFigure_ProfileLabel1 = new WrapLabel();
+			Label profileFigure_ProfileLabel1 = new Label();
 			profileFigure_ProfileLabel1.setText("\u00ABprofile\u00BB");
 
 			profile_body0.add(profileFigure_ProfileLabel1);
@@ -312,7 +314,7 @@ public class Profile2EditPart extends ShapeNodeEditPart {
 
 			profileFigure_ProfileLabel1.setLayoutManager(layoutProfileFigure_ProfileLabel1);
 
-			fFigureProfileFigure_NameLabel = new WrapLabel();
+			fFigureProfileFigure_NameLabel = new Label();
 			fFigureProfileFigure_NameLabel.setText("");
 
 			profile_body0.add(fFigureProfileFigure_NameLabel);
@@ -330,7 +332,7 @@ public class Profile2EditPart extends ShapeNodeEditPart {
 		/**
 		 * @generated
 		 */
-		public WrapLabel getFigureProfileFigure_NameLabel() {
+		public Label getFigureProfileFigure_NameLabel() {
 			return fFigureProfileFigure_NameLabel;
 		}
 

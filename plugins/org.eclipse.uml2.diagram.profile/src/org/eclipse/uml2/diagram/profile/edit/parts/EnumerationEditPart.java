@@ -2,6 +2,7 @@ package org.eclipse.uml2.diagram.profile.edit.parts;
 
 import org.eclipse.draw2d.Graphics;
 import org.eclipse.draw2d.IFigure;
+import org.eclipse.draw2d.Label;
 import org.eclipse.draw2d.LineBorder;
 import org.eclipse.draw2d.MarginBorder;
 import org.eclipse.draw2d.RectangleFigure;
@@ -83,10 +84,11 @@ public class EnumerationEditPart extends ShapeNodeEditPart {
 				return null;
 			}
 		});
-
 		super.createDefaultEditPolicies();
 		installEditPolicy(EditPolicyRoles.SEMANTIC_ROLE, new EnumerationItemSemanticEditPolicy());
 		installEditPolicy(EditPolicy.LAYOUT_ROLE, createLayoutEditPolicy());
+		// XXX need an SCR to runtime to have another abstract superclass that would let children add reasonable editpolicies
+		// removeEditPolicy(org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles.CONNECTION_HANDLES_ROLE);
 	}
 
 	/**
@@ -249,12 +251,12 @@ public class EnumerationEditPart extends ShapeNodeEditPart {
 		/**
 		 * @generated
 		 */
-		private WrapLabel fFigureClassFigure_stereo;
+		private Label fFigureClassFigure_stereo;
 
 		/**
 		 * @generated
 		 */
-		private WrapLabel fFigureClassFigure_name;
+		private Label fFigureClassFigure_name;
 
 		/**
 		 * @generated
@@ -326,7 +328,7 @@ public class EnumerationEditPart extends ShapeNodeEditPart {
 
 			classFigure_StereoContainer1.setLayoutManager(layoutClassFigure_StereoContainer1);
 
-			fFigureClassFigure_stereo = new WrapLabel();
+			fFigureClassFigure_stereo = new Label();
 			fFigureClassFigure_stereo.setText("");
 
 			fFigureClassFigure_stereo.setFont(FFIGURECLASSFIGURE_STEREO_FONT);
@@ -344,7 +346,7 @@ public class EnumerationEditPart extends ShapeNodeEditPart {
 
 			classFigure_NameContainer1.setLayoutManager(layoutClassFigure_NameContainer1);
 
-			fFigureClassFigure_name = new WrapLabel();
+			fFigureClassFigure_name = new Label();
 			fFigureClassFigure_name.setText("");
 
 			fFigureClassFigure_name.setFont(FFIGURECLASSFIGURE_NAME_FONT);
@@ -388,14 +390,14 @@ public class EnumerationEditPart extends ShapeNodeEditPart {
 		/**
 		 * @generated
 		 */
-		public WrapLabel getFigureClassFigure_stereo() {
+		public Label getFigureClassFigure_stereo() {
 			return fFigureClassFigure_stereo;
 		}
 
 		/**
 		 * @generated
 		 */
-		public WrapLabel getFigureClassFigure_name() {
+		public Label getFigureClassFigure_name() {
 			return fFigureClassFigure_name;
 		}
 

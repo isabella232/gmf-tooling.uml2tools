@@ -526,7 +526,7 @@ public class ExtensionLink_requiredEditPart extends LabelEditPart implements ITe
 	/**
 	 * @generated
 	 */
-	public class ExtensionPolyline_required extends WrapLabel {
+	public class ExtensionPolyline_required extends Label {
 
 		/**
 		 * @generated

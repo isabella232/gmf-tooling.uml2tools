@@ -538,6 +538,6 @@ public class Stereotype2EditPart extends CompartmentEditPart implements ITextAwa
 	 * @generated
 	 */
 	protected IFigure createFigurePrim() {
-		return new WrapLabel();
+		return new Label();
 	}
 }
