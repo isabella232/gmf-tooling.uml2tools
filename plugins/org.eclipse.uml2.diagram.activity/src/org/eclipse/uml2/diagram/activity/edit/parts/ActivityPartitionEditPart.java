@@ -24,10 +24,10 @@ import org.eclipse.gmf.runtime.draw2d.ui.figures.ConstrainedToolbarLayout;
 import org.eclipse.gmf.runtime.gef.ui.figures.DefaultSizeNodeFigure;
 import org.eclipse.gmf.runtime.gef.ui.figures.NodeFigure;
 import org.eclipse.gmf.runtime.notation.View;
+import org.eclipse.uml2.diagram.activity.draw2d.PartitionLayout;
 import org.eclipse.uml2.diagram.activity.edit.policies.ActivityPartitionCanonicalEditPolicy;
 import org.eclipse.uml2.diagram.activity.edit.policies.ActivityPartitionItemSemanticEditPolicy;
 import org.eclipse.uml2.diagram.activity.part.UMLVisualIDRegistry;
-import org.eclipse.uml2.diagram.common.draw2d.PartitionLayout;
 import org.eclipse.uml2.diagram.common.draw2d.RotatedImageOfString;
 
 /**
@@ -249,6 +249,8 @@ public class ActivityPartitionEditPart extends ShapeNodeEditPart {
 			this.add(fFigureActivityPartitionFigure_body, BorderLayout.CENTER);
 
 			PartitionLayout layoutFFigureActivityPartitionFigure_body = new PartitionLayout();
+
+			layoutFFigureActivityPartitionFigure_body.setViewer(getViewer());
 
 			fFigureActivityPartitionFigure_body.setLayoutManager(layoutFFigureActivityPartitionFigure_body);
 

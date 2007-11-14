@@ -50,7 +50,12 @@
               xsi:type="gmfgraph:BorderLayoutData"
               alignment="FILL"/>
           <layout
-              xsi:type="gmfgraph:XYLayout"/>
+              xsi:type="gmfgraph:CustomLayout"
+              qualifiedClassName="org.eclipse.uml2.diagram.activity.draw2d.PartitionLayout">
+            <attributes
+                name="viewer"
+                value="getViewer()"/>
+          </layout>
         </children>
       </actualFigure>
       <accessors
@@ -86,7 +91,11 @@
               alignment="FILL"/>
           <layout
               xsi:type="gmfgraph:CustomLayout"
-              qualifiedClassName="org.eclipse.uml2.diagram.common.draw2d.PartitionLayout"/>
+              qualifiedClassName="org.eclipse.uml2.diagram.activity.draw2d.PartitionLayout">
+            <attributes
+                name="viewer"
+                value="getViewer()"/>
+          </layout>
         </children>
       </actualFigure>
       <accessors

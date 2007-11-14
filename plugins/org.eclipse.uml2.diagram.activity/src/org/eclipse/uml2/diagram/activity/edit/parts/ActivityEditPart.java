@@ -32,6 +32,7 @@ import org.eclipse.gmf.runtime.draw2d.ui.figures.WrapLabel;
 import org.eclipse.gmf.runtime.gef.ui.figures.DefaultSizeNodeFigure;
 import org.eclipse.gmf.runtime.gef.ui.figures.NodeFigure;
 import org.eclipse.gmf.runtime.notation.View;
+import org.eclipse.uml2.diagram.activity.draw2d.PartitionLayout;
 import org.eclipse.uml2.diagram.activity.edit.policies.ActivityCanonicalEditPolicy;
 import org.eclipse.uml2.diagram.activity.edit.policies.ActivityItemSemanticEditPolicy;
 import org.eclipse.uml2.diagram.activity.part.UMLVisualIDRegistry;
@@ -287,7 +288,11 @@ public class ActivityEditPart extends AbstractBorderedShapeEditPart {
 
 			this.add(fFigureActivityFigure_Body, BorderLayout.CENTER);
 
-			fFigureActivityFigure_Body.setLayoutManager(new XYLayout());
+			PartitionLayout layoutFFigureActivityFigure_Body = new PartitionLayout();
+
+			layoutFFigureActivityFigure_Body.setViewer(getViewer());
+
+			fFigureActivityFigure_Body.setLayoutManager(layoutFFigureActivityFigure_Body);
 
 		}
 

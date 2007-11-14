@@ -10,15 +10,20 @@
  *    Sergey Gribovsky (Borland) - initial API and implementation
  */
 
-package org.eclipse.uml2.diagram.common.draw2d;
+package org.eclipse.uml2.diagram.activity.draw2d;
 
 import java.util.Iterator;
+import java.util.Map;
 
 import org.eclipse.draw2d.IFigure;
 import org.eclipse.draw2d.XYLayout;
 import org.eclipse.draw2d.geometry.Dimension;
 import org.eclipse.draw2d.geometry.Point;
 import org.eclipse.draw2d.geometry.Rectangle;
+import org.eclipse.gef.EditPart;
+import org.eclipse.gef.EditPartViewer;
+import org.eclipse.uml2.diagram.activity.edit.parts.ActivityPartition2EditPart;
+import org.eclipse.uml2.diagram.activity.edit.parts.ActivityPartitionEditPart;
 
 
 public class PartitionLayout extends XYLayout {
@@ -26,6 +31,7 @@ public class PartitionLayout extends XYLayout {
 	public static int VERTICAL = 1;
 
 	private int partitionOrientation;
+	private Map visualPartMap;
 
 	public PartitionLayout() {
 		this(HORIZONTAL);
@@ -37,6 +43,10 @@ public class PartitionLayout extends XYLayout {
 	
 	public int getPartitionOrientation() {
 		return partitionOrientation;
+	}
+	
+	public void setViewer(EditPartViewer viewer) {
+		visualPartMap = viewer.getVisualPartMap();
 	}
 
 	@Override
@@ -75,6 +85,15 @@ public class PartitionLayout extends XYLayout {
 	}
 	
 	private boolean isPartition(IFigure figure) {
-		return true;
+		if (visualPartMap == null) {
+			return false;
+		}
+		
+		EditPart editPart = (EditPart) visualPartMap.get(figure);
+		if (editPart == null) { 
+			return false;
+		}
+		return editPart instanceof ActivityPartitionEditPart ||
+			editPart instanceof ActivityPartition2EditPart;
 	}
 }
