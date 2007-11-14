@@ -1,3 +1,8 @@
+«IMPORT "http://www.eclipse.org/gmf/2006/GenModel"»
+«IMPORT "http://www.eclipse.org/emf/2002/GenModel"»
+«IMPORT "http://www.eclipse.org/emf/2002/Ecore"»
+«EXTENSION xpt::GenModelUtils»
+
 «AROUND NavigatorItem FOR gmfgen::GenNavigator-»
 	«EXPAND xpt::Common::copyright FOR editorGen-»
 package «packageName»;

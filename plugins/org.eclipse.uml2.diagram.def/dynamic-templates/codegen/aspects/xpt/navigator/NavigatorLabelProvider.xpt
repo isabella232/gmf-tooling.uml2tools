@@ -9,7 +9,7 @@
  * Contributors:
  *    Michael Golubev (Borland) - UML2Tools tweaked version
  * 
- * Generates code for labels without, assuming they have the default parser provide implementation 
+ * Generates code for labels without labelModelFacet's, assuming they have the default parser provider implementation 
  */
  
 «IMPORT "http://www.eclipse.org/gmf/2006/GenModel"»
