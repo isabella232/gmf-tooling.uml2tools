@@ -230,38 +230,38 @@
    <extension point="org.eclipse.ui.preferencePages">
       <?gmfgen generated="true"?>
       <page
-            id="org.eclipse.uml2.uml.diagram.general"
-            name="%preference.page.title.org.eclipse.uml2.uml.diagram.general"
+            id="org.eclipse.uml2.uml.csd.general"
+            name="%preference.page.title.org.eclipse.uml2.uml.csd.general"
             class="org.eclipse.uml2.diagram.csd.preferences.DiagramGeneralPreferencePage">
       </page>
       <page
-            id="org.eclipse.uml2.uml.diagram.appearance"
-            name="%preference.page.title.org.eclipse.uml2.uml.diagram.appearance"
-            category="org.eclipse.uml2.uml.diagram.general"
+            id="org.eclipse.uml2.uml.csd.appearance"
+            name="%preference.page.title.org.eclipse.uml2.uml.csd.appearance"
+            category="org.eclipse.uml2.uml.csd.general"
             class="org.eclipse.uml2.diagram.csd.preferences.DiagramAppearancePreferencePage">
       </page>
       <page
-            id="org.eclipse.uml2.uml.diagram.connections"
-            name="%preference.page.title.org.eclipse.uml2.uml.diagram.connections"
-            category="org.eclipse.uml2.uml.diagram.general"
+            id="org.eclipse.uml2.uml.csd.connections"
+            name="%preference.page.title.org.eclipse.uml2.uml.csd.connections"
+            category="org.eclipse.uml2.uml.csd.general"
             class="org.eclipse.uml2.diagram.csd.preferences.DiagramConnectionsPreferencePage">
       </page>
       <page
-            id="org.eclipse.uml2.uml.diagram.printing"
-            name="%preference.page.title.org.eclipse.uml2.uml.diagram.printing"
-            category="org.eclipse.uml2.uml.diagram.general"
+            id="org.eclipse.uml2.uml.csd.printing"
+            name="%preference.page.title.org.eclipse.uml2.uml.csd.printing"
+            category="org.eclipse.uml2.uml.csd.general"
             class="org.eclipse.uml2.diagram.csd.preferences.DiagramPrintingPreferencePage">
       </page>
       <page
-            id="org.eclipse.uml2.uml.diagram.rulersAndGrid"
-            name="%preference.page.title.org.eclipse.uml2.uml.diagram.rulersAndGrid"
-            category="org.eclipse.uml2.uml.diagram.general"
+            id="org.eclipse.uml2.uml.csd.rulersAndGrid"
+            name="%preference.page.title.org.eclipse.uml2.uml.csd.rulersAndGrid"
+            category="org.eclipse.uml2.uml.csd.general"
             class="org.eclipse.uml2.diagram.csd.preferences.DiagramRulersAndGridPreferencePage">
       </page>
       <page
-            id="org.eclipse.uml2.uml.diagram.pathmaps"
-            name="%preference.page.title.org.eclipse.uml2.uml.diagram.pathmaps"
-            category="org.eclipse.uml2.uml.diagram.general"
+            id="org.eclipse.uml2.uml.csd.pathmaps"
+            name="%preference.page.title.org.eclipse.uml2.uml.csd.pathmaps"
+            category="org.eclipse.uml2.uml.csd.general"
             class="org.eclipse.gmf.runtime.emf.ui.preferences.PathmapsPreferencePage">
       </page>
    </extension>
