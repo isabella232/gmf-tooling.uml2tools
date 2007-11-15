@@ -2,13 +2,13 @@ package org.eclipse.uml2.diagram.common.draw2d;
 
 import org.eclipse.draw2d.BorderLayout;
 import org.eclipse.draw2d.Graphics;
+import org.eclipse.draw2d.Label;
 import org.eclipse.draw2d.MarginBorder;
 import org.eclipse.draw2d.RectangleFigure;
 import org.eclipse.draw2d.Shape;
 import org.eclipse.draw2d.StackLayout;
 import org.eclipse.draw2d.ToolbarLayout;
 import org.eclipse.draw2d.geometry.Rectangle;
-import org.eclipse.gmf.runtime.draw2d.ui.figures.WrapLabel;
 
 
 public class Cube3DFigure extends Shape {
@@ -18,8 +18,8 @@ public class Cube3DFigure extends Shape {
 	private final int[] myFillPath = new int[14];
 	private final RectangleFigure myLabelPane;
 	private final RectangleFigure myContentPane;
-	private final WrapLabel myNameLabel;
-	private final WrapLabel myTypeLabel; 
+	private final Label myNameLabel;
+	private final Label myTypeLabel; 
 	
 	public Cube3DFigure(){
 		setDepthGap(DEFAULT_DEPTH_GAP);
@@ -60,11 +60,11 @@ public class Cube3DFigure extends Shape {
 		return myLabelPane;
 	}
 	
-	public WrapLabel getNameLabel() {
+	public Label getNameLabel() {
 		return myNameLabel;
 	}
 	
-	public WrapLabel getTypeLabel() {
+	public Label getTypeLabel() {
 		return myTypeLabel;
 	}
 	
@@ -136,8 +136,8 @@ public class Cube3DFigure extends Shape {
 		return result;
 	}
 	
-	private static WrapLabel wrapLabel(){
-		WrapLabel result = new WrapLabel();
+	private static Label wrapLabel(){
+		Label result = new Label();
 		result.setBorder(new MarginBorder(0, 3, 0, 3));
 		return result;
 	}

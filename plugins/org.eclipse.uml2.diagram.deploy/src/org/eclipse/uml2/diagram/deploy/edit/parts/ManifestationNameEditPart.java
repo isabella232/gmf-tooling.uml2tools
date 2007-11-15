@@ -518,6 +518,6 @@ public class ManifestationNameEditPart extends LabelEditPart implements ITextAwa
 	 * @generated
 	 */
 	protected IFigure createFigurePrim() {
-		return new WrapLabel();
+		return new Label();
 	}
 }

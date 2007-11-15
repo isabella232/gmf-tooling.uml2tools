@@ -157,7 +157,7 @@ public class NodeName2EditPart extends CompartmentEditPart implements ITextAware
 	/**
 	 * @generated
 	 */
-	public void setLabel(WrapLabel figure) {
+	public void setLabel(Label figure) {
 		unregisterVisuals();
 		setFigure(figure);
 		defaultText = getLabelTextHelper(figure);

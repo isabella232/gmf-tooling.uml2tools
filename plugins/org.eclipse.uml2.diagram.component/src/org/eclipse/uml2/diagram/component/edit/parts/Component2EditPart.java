@@ -3,6 +3,7 @@ package org.eclipse.uml2.diagram.component.edit.parts;
 import org.eclipse.draw2d.BorderLayout;
 import org.eclipse.draw2d.Graphics;
 import org.eclipse.draw2d.IFigure;
+import org.eclipse.draw2d.Label;
 import org.eclipse.draw2d.PositionConstants;
 import org.eclipse.draw2d.RectangleFigure;
 import org.eclipse.draw2d.StackLayout;
@@ -68,12 +69,13 @@ public class Component2EditPart extends AbstractBorderedShapeEditPart {
 	 */
 	protected void createDefaultEditPolicies() {
 		installEditPolicy(EditPolicyRoles.CREATION_ROLE, new CreationEditPolicy());
-
 		super.createDefaultEditPolicies();
 		installEditPolicy(EditPolicyRoles.SEMANTIC_ROLE, new Component2ItemSemanticEditPolicy());
 		installEditPolicy(EditPolicyRoles.DRAG_DROP_ROLE, new DragDropEditPolicy());
 		installEditPolicy(EditPolicyRoles.CANONICAL_ROLE, new Component2CanonicalEditPolicy());
 		installEditPolicy(EditPolicy.LAYOUT_ROLE, createLayoutEditPolicy());
+		// XXX need an SCR to runtime to have another abstract superclass that would let children add reasonable editpolicies
+		// removeEditPolicy(org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles.CONNECTION_HANDLES_ROLE);
 	}
 
 	/**
@@ -134,7 +136,7 @@ public class Component2EditPart extends AbstractBorderedShapeEditPart {
 			return true;
 		}
 		if (childEditPart instanceof PortEditPart) {
-			IBorderItemLocator locator = new BorderItemLocator(getMainFigure(), PositionConstants.NONE);
+			BorderItemLocator locator = new BorderItemLocator(getMainFigure(), PositionConstants.NONE);
 			getBorderedFigure().getBorderItemContainer().add(((PortEditPart) childEditPart).getFigure(), locator);
 			return true;
 		}
@@ -257,7 +259,7 @@ public class Component2EditPart extends AbstractBorderedShapeEditPart {
 		/**
 		 * @generated
 		 */
-		private WrapLabel fFigureComponentFigure_name;
+		private Label fFigureComponentFigure_name;
 
 		/**
 		 * @generated
@@ -296,12 +298,12 @@ public class Component2EditPart extends AbstractBorderedShapeEditPart {
 
 			componentFigure_LabelsContainer0.setLayoutManager(layoutComponentFigure_LabelsContainer0);
 
-			WrapLabel componentFigure_fixed_component1 = new WrapLabel();
+			Label componentFigure_fixed_component1 = new Label();
 			componentFigure_fixed_component1.setText("\u00ABcomponent\u00BB");
 
 			componentFigure_LabelsContainer0.add(componentFigure_fixed_component1);
 
-			fFigureComponentFigure_name = new WrapLabel();
+			fFigureComponentFigure_name = new Label();
 			fFigureComponentFigure_name.setText("");
 
 			componentFigure_LabelsContainer0.add(fFigureComponentFigure_name);
@@ -316,7 +318,7 @@ public class Component2EditPart extends AbstractBorderedShapeEditPart {
 		/**
 		 * @generated
 		 */
-		public WrapLabel getFigureComponentFigure_name() {
+		public Label getFigureComponentFigure_name() {
 			return fFigureComponentFigure_name;
 		}
 

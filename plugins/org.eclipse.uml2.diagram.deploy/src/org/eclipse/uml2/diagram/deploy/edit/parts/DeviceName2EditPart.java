@@ -157,7 +157,7 @@ public class DeviceName2EditPart extends CompartmentEditPart implements ITextAwa
 	/**
 	 * @generated
 	 */
-	public void setLabel(WrapLabel figure) {
+	public void setLabel(Label figure) {
 		unregisterVisuals();
 		setFigure(figure);
 		defaultText = getLabelTextHelper(figure);

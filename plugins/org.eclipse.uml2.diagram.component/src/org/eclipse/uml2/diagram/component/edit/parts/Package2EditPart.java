@@ -2,6 +2,7 @@ package org.eclipse.uml2.diagram.component.edit.parts;
 
 import org.eclipse.draw2d.Graphics;
 import org.eclipse.draw2d.IFigure;
+import org.eclipse.draw2d.Label;
 import org.eclipse.draw2d.MarginBorder;
 import org.eclipse.draw2d.RectangleFigure;
 import org.eclipse.draw2d.Shape;
@@ -84,11 +85,12 @@ public class Package2EditPart extends ShapeNodeEditPart {
 				return null;
 			}
 		});
-
 		super.createDefaultEditPolicies();
 		installEditPolicy(EditPolicyRoles.SEMANTIC_ROLE, new Package2ItemSemanticEditPolicy());
 		installEditPolicy(EditPolicy.LAYOUT_ROLE, createLayoutEditPolicy());
 		installEditPolicy("ConnectionHandlesPolicy", new DoNothingEditPolicy()); //$NON-NLS-1$
+		// XXX need an SCR to runtime to have another abstract superclass that would let children add reasonable editpolicies
+		// removeEditPolicy(org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles.CONNECTION_HANDLES_ROLE);
 	}
 
 	/**
@@ -258,12 +260,12 @@ public class Package2EditPart extends ShapeNodeEditPart {
 		/**
 		 * @generated
 		 */
-		private WrapLabel fFigureSecondaryPackage_PackageLabel;
+		private Label fFigureSecondaryPackage_PackageLabel;
 
 		/**
 		 * @generated
 		 */
-		private WrapLabel fFigureSecondaryPackage_NameLabel;
+		private Label fFigureSecondaryPackage_NameLabel;
 
 		/**
 		 * @generated
@@ -290,7 +292,7 @@ public class Package2EditPart extends ShapeNodeEditPart {
 			this.addPoint(new Point(getMapMode().DPtoLP(40), getMapMode().DPtoLP(35)));
 			this.addPoint(new Point(getMapMode().DPtoLP(40), getMapMode().DPtoLP(0)));
 
-			this.setBorder(new MarginBorder(getMapMode().DPtoLP(5), getMapMode().DPtoLP(5), getMapMode().DPtoLP(13), getMapMode().DPtoLP(5)));
+			this.setBorder(new MarginBorder(getMapMode().DPtoLP(5), getMapMode().DPtoLP(5), getMapMode().DPtoLP(13), getMapMode().DPtoLP(10)));
 			createContents();
 		}
 
@@ -299,12 +301,12 @@ public class Package2EditPart extends ShapeNodeEditPart {
 		 */
 		private void createContents() {
 
-			fFigureSecondaryPackage_PackageLabel = new WrapLabel();
+			fFigureSecondaryPackage_PackageLabel = new Label();
 			fFigureSecondaryPackage_PackageLabel.setText("Package");
 
 			this.add(fFigureSecondaryPackage_PackageLabel);
 
-			fFigureSecondaryPackage_NameLabel = new WrapLabel();
+			fFigureSecondaryPackage_NameLabel = new Label();
 			fFigureSecondaryPackage_NameLabel.setText("");
 
 			this.add(fFigureSecondaryPackage_NameLabel);
@@ -397,14 +399,14 @@ public class Package2EditPart extends ShapeNodeEditPart {
 		/**
 		 * @generated
 		 */
-		public WrapLabel getFigureSecondaryPackage_PackageLabel() {
+		public Label getFigureSecondaryPackage_PackageLabel() {
 			return fFigureSecondaryPackage_PackageLabel;
 		}
 
 		/**
 		 * @generated
 		 */
-		public WrapLabel getFigureSecondaryPackage_NameLabel() {
+		public Label getFigureSecondaryPackage_NameLabel() {
 			return fFigureSecondaryPackage_NameLabel;
 		}
 

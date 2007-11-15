@@ -2,6 +2,7 @@ package org.eclipse.uml2.diagram.deploy.edit.parts;
 
 import org.eclipse.draw2d.ColorConstants;
 import org.eclipse.draw2d.IFigure;
+import org.eclipse.draw2d.Label;
 import org.eclipse.draw2d.LineBorder;
 import org.eclipse.draw2d.MarginBorder;
 import org.eclipse.draw2d.RectangleFigure;
@@ -86,11 +87,12 @@ public class DeploymentSpecificationEditPart extends ShapeNodeEditPart {
 				return null;
 			}
 		});
-
 		super.createDefaultEditPolicies();
 		installEditPolicy(EditPolicyRoles.SEMANTIC_ROLE, new DeploymentSpecificationItemSemanticEditPolicy());
 		installEditPolicy(EditPolicyRoles.CANONICAL_ROLE, new DeploymentSpecificationCanonicalEditPolicy());
 		installEditPolicy(EditPolicy.LAYOUT_ROLE, createLayoutEditPolicy());
+		// XXX need an SCR to runtime to have another abstract superclass that would let children add reasonable editpolicies
+		// removeEditPolicy(org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles.CONNECTION_HANDLES_ROLE);
 	}
 
 	/**
@@ -253,12 +255,12 @@ public class DeploymentSpecificationEditPart extends ShapeNodeEditPart {
 		/**
 		 * @generated
 		 */
-		private WrapLabel fFigureDeploymentSpecificationFigure_stereo;
+		private Label fFigureDeploymentSpecificationFigure_stereo;
 
 		/**
 		 * @generated
 		 */
-		private WrapLabel fFigureDeploymentSpecificationFigure_name;
+		private Label fFigureDeploymentSpecificationFigure_name;
 
 		/**
 		 * @generated
@@ -310,7 +312,7 @@ public class DeploymentSpecificationEditPart extends ShapeNodeEditPart {
 
 			deploymentSpecificationFigure_StereoContainer1.setLayoutManager(layoutDeploymentSpecificationFigure_StereoContainer1);
 
-			fFigureDeploymentSpecificationFigure_stereo = new WrapLabel();
+			fFigureDeploymentSpecificationFigure_stereo = new Label();
 			fFigureDeploymentSpecificationFigure_stereo.setText("\u00ABdeployment spec\u00BB");
 
 			fFigureDeploymentSpecificationFigure_stereo.setFont(FFIGUREDEPLOYMENTSPECIFICATIONFIGURE_STEREO_FONT);
@@ -328,7 +330,7 @@ public class DeploymentSpecificationEditPart extends ShapeNodeEditPart {
 
 			deploymentSpecificationFigure_NameContainer1.setLayoutManager(layoutDeploymentSpecificationFigure_NameContainer1);
 
-			fFigureDeploymentSpecificationFigure_name = new WrapLabel();
+			fFigureDeploymentSpecificationFigure_name = new Label();
 			fFigureDeploymentSpecificationFigure_name.setText("");
 
 			fFigureDeploymentSpecificationFigure_name.setFont(FFIGUREDEPLOYMENTSPECIFICATIONFIGURE_NAME_FONT);
@@ -367,14 +369,14 @@ public class DeploymentSpecificationEditPart extends ShapeNodeEditPart {
 		/**
 		 * @generated
 		 */
-		public WrapLabel getFigureDeploymentSpecificationFigure_stereo() {
+		public Label getFigureDeploymentSpecificationFigure_stereo() {
 			return fFigureDeploymentSpecificationFigure_stereo;
 		}
 
 		/**
 		 * @generated
 		 */
-		public WrapLabel getFigureDeploymentSpecificationFigure_name() {
+		public Label getFigureDeploymentSpecificationFigure_name() {
 			return fFigureDeploymentSpecificationFigure_name;
 		}
 

@@ -538,6 +538,6 @@ public class ElementImportEditPart extends CompartmentEditPart implements ITextA
 	 * @generated
 	 */
 	protected IFigure createFigurePrim() {
-		return new WrapLabel();
+		return new Label();
 	}
 }

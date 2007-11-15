@@ -2,6 +2,7 @@ package org.eclipse.uml2.diagram.component.edit.parts;
 
 import org.eclipse.draw2d.BorderLayout;
 import org.eclipse.draw2d.IFigure;
+import org.eclipse.draw2d.Label;
 import org.eclipse.draw2d.MarginBorder;
 import org.eclipse.draw2d.RectangleFigure;
 import org.eclipse.draw2d.StackLayout;
@@ -88,11 +89,12 @@ public class Package3EditPart extends ShapeNodeEditPart {
 				return null;
 			}
 		});
-
 		super.createDefaultEditPolicies();
 		installEditPolicy(EditPolicyRoles.SEMANTIC_ROLE, new Package3ItemSemanticEditPolicy());
 		installEditPolicy(EditPolicy.LAYOUT_ROLE, createLayoutEditPolicy());
 		installEditPolicy(EditPolicyRoles.OPEN_ROLE, new OpenDiagramEditPolicy());
+		// XXX need an SCR to runtime to have another abstract superclass that would let children add reasonable editpolicies
+		// removeEditPolicy(org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles.CONNECTION_HANDLES_ROLE);
 	}
 
 	/**
@@ -275,7 +277,7 @@ public class Package3EditPart extends ShapeNodeEditPart {
 		/**
 		 * @generated
 		 */
-		private WrapLabel fFigurePackageFigure_name;
+		private Label fFigurePackageFigure_name;
 
 		/**
 		 * @generated
@@ -358,7 +360,7 @@ public class Package3EditPart extends ShapeNodeEditPart {
 
 			packageFigure_NameContainer1.setLayoutManager(layoutPackageFigure_NameContainer1);
 
-			fFigurePackageFigure_name = new WrapLabel();
+			fFigurePackageFigure_name = new Label();
 			fFigurePackageFigure_name.setText("");
 
 			fFigurePackageFigure_name.setBorder(new MarginBorder(getMapMode().DPtoLP(5), getMapMode().DPtoLP(5), getMapMode().DPtoLP(5), getMapMode().DPtoLP(5)));
@@ -401,7 +403,7 @@ public class Package3EditPart extends ShapeNodeEditPart {
 		/**
 		 * @generated
 		 */
-		public WrapLabel getFigurePackageFigure_name() {
+		public Label getFigurePackageFigure_name() {
 			return fFigurePackageFigure_name;
 		}
 

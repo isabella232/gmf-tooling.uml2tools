@@ -95,11 +95,12 @@ public class ArtifactEditPart extends ShapeNodeEditPart {
 	 * @generated
 	 */
 	protected void createDefaultEditPolicies() {
-
 		super.createDefaultEditPolicies();
 		installEditPolicy(EditPolicyRoles.SEMANTIC_ROLE, new ArtifactItemSemanticEditPolicy());
 		installEditPolicy(EditPolicyRoles.CANONICAL_ROLE, new ArtifactCanonicalEditPolicy());
 		installEditPolicy(EditPolicy.LAYOUT_ROLE, createLayoutEditPolicy());
+		// XXX need an SCR to runtime to have another abstract superclass that would let children add reasonable editpolicies
+		// removeEditPolicy(org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles.CONNECTION_HANDLES_ROLE);
 	}
 
 	/**
@@ -248,7 +249,7 @@ public class ArtifactEditPart extends ShapeNodeEditPart {
 		/**
 		 * @generated
 		 */
-		private WrapLabel fFigureArtifactFigure_name;
+		private Label fFigureArtifactFigure_name;
 
 		/**
 		 * @generated
@@ -272,7 +273,7 @@ public class ArtifactEditPart extends ShapeNodeEditPart {
 		 */
 		private void createContents() {
 
-			WrapLabel artifactFigure_fixed_artifact0 = new WrapLabel();
+			Label artifactFigure_fixed_artifact0 = new Label();
 			artifactFigure_fixed_artifact0.setText("\u00ABartifact\u00BB");
 
 			this.add(artifactFigure_fixed_artifact0);
@@ -287,7 +288,7 @@ public class ArtifactEditPart extends ShapeNodeEditPart {
 
 			artifactFigure_NameContainer0.setLayoutManager(layoutArtifactFigure_NameContainer0);
 
-			fFigureArtifactFigure_name = new WrapLabel();
+			fFigureArtifactFigure_name = new Label();
 			fFigureArtifactFigure_name.setText("");
 
 			artifactFigure_NameContainer0.add(fFigureArtifactFigure_name);
@@ -316,7 +317,7 @@ public class ArtifactEditPart extends ShapeNodeEditPart {
 		/**
 		 * @generated
 		 */
-		public WrapLabel getFigureArtifactFigure_name() {
+		public Label getFigureArtifactFigure_name() {
 			return fFigureArtifactFigure_name;
 		}
 
