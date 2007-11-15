@@ -388,6 +388,9 @@ public class UMLBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 				if (source.getLocalPreconditions().contains(target)) {
 					return false;
 				}
+				if (source == target) {
+					return false;
+				}
 			}
 			return canExistActionLocalPrecondition_4003(source, target);
 		}
@@ -398,6 +401,9 @@ public class UMLBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 		public static boolean canCreateActionLocalPostcondition_4006(Action source, Constraint target) {
 			if (source != null) {
 				if (source.getLocalPostconditions().contains(target)) {
+					return false;
+				}
+				if (source == target) {
 					return false;
 				}
 			}

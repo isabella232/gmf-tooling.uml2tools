@@ -60,8 +60,8 @@ public class ConstraintCreateCommand extends CreateElementCommand {
 		// }
 		Resource resource = getElementToEdit().eResource();
 		EClass eClass = getElementType().getEClass();
-		EObject eObject = eClass.getEPackage().getEFactoryInstance().create(eClass);
-		resource.getContents().add(eObject);
-		return eObject;
+		EObject newElement = eClass.getEPackage().getEFactoryInstance().create(eClass);
+		resource.getContents().add(newElement);
+		return newElement;
 	}
 }

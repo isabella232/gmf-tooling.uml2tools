@@ -3366,6 +3366,9 @@ public class UMLDiagramUpdater {
 	private static Collection getOutgoingFeatureModelFacetLinks_ObjectNode_Selection_4004(ObjectNode source) {
 		Collection result = new LinkedList();
 		Behavior destination = source.getSelection();
+		if (destination == null) {
+			return result;
+		}
 		result.add(new UMLLinkDescriptor(source, destination, UMLElementTypes.ObjectNodeSelection_4004, ObjectNodeSelectionEditPart.VISUAL_ID));
 		return result;
 	}
