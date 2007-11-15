@@ -65,7 +65,7 @@ public class CollaborationContentsCanonicalEditPolicy extends CanonicalEditPolic
 		if (myFeaturesToSynchronize == null) {
 			myFeaturesToSynchronize = new HashSet();
 			myFeaturesToSynchronize.add(UMLPackage.eINSTANCE.getClassifier_CollaborationUse());
-			myFeaturesToSynchronize.add(UMLPackage.eINSTANCE.getCollaboration_CollaborationRole());
+			myFeaturesToSynchronize.add(UMLPackage.eINSTANCE.getStructuredClassifier_OwnedAttribute());
 		}
 		return myFeaturesToSynchronize;
 	}

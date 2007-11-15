@@ -49,8 +49,7 @@ public class PropertyCreateCommand extends CreateElementCommand {
 		if (newElement != null) {
 			Collaboration container = (Collaboration) getElementToEdit();
 			if (container != null) {
-				Collection featureValues = container.getCollaborationRoles();
-				featureValues.add(newElement);
+				container.getCollaborationRoles().add(newElement);
 			}
 		}
 		return newElement;
