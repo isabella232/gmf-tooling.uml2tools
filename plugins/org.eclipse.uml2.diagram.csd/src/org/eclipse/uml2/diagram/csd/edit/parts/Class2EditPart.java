@@ -1,6 +1,7 @@
 package org.eclipse.uml2.diagram.csd.edit.parts;
 
 import org.eclipse.draw2d.IFigure;
+import org.eclipse.draw2d.Label;
 import org.eclipse.draw2d.StackLayout;
 import org.eclipse.gef.EditPart;
 import org.eclipse.gef.EditPolicy;
@@ -48,10 +49,11 @@ public class Class2EditPart extends ShapeNodeEditPart {
 	 * @generated
 	 */
 	protected void createDefaultEditPolicies() {
-
 		super.createDefaultEditPolicies();
 		installEditPolicy(EditPolicyRoles.SEMANTIC_ROLE, new Class2ItemSemanticEditPolicy());
 		installEditPolicy(EditPolicy.LAYOUT_ROLE, createLayoutEditPolicy());
+		// XXX need an SCR to runtime to have another abstract superclass that would let children add reasonable editpolicies
+		// removeEditPolicy(org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles.CONNECTION_HANDLES_ROLE);
 	}
 
 	/**
@@ -83,14 +85,14 @@ public class Class2EditPart extends ShapeNodeEditPart {
 	 * @generated
 	 */
 	protected IFigure createNodeShape() {
-		return primaryShape = new WrapLabel();
+		return primaryShape = new Label();
 	}
 
 	/**
 	 * @generated
 	 */
-	public WrapLabel getPrimaryShape() {
-		return (WrapLabel) primaryShape;
+	public Label getPrimaryShape() {
+		return (Label) primaryShape;
 	}
 
 	/**

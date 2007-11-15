@@ -1,6 +1,7 @@
 package org.eclipse.uml2.diagram.csd.edit.parts;
 
 import org.eclipse.draw2d.IFigure;
+import org.eclipse.draw2d.Label;
 import org.eclipse.draw2d.RectangleFigure;
 import org.eclipse.draw2d.StackLayout;
 import org.eclipse.gef.EditPart;
@@ -53,10 +54,11 @@ public class ParameterEditPart extends ShapeNodeEditPart {
 	 * @generated
 	 */
 	protected void createDefaultEditPolicies() {
-
 		super.createDefaultEditPolicies();
 		installEditPolicy(EditPolicyRoles.SEMANTIC_ROLE, new ParameterItemSemanticEditPolicy());
 		installEditPolicy(EditPolicy.LAYOUT_ROLE, createLayoutEditPolicy());
+		// XXX need an SCR to runtime to have another abstract superclass that would let children add reasonable editpolicies
+		// removeEditPolicy(org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles.CONNECTION_HANDLES_ROLE);
 	}
 
 	/**
@@ -211,7 +213,7 @@ public class ParameterEditPart extends ShapeNodeEditPart {
 		/**
 		 * @generated
 		 */
-		private WrapLabel fFigure_PartFigure_name;
+		private Label fFigure_PartFigure_name;
 
 		/**
 		 * @generated
@@ -230,7 +232,7 @@ public class ParameterEditPart extends ShapeNodeEditPart {
 		 */
 		private void createContents() {
 
-			fFigure_PartFigure_name = new WrapLabel();
+			fFigure_PartFigure_name = new Label();
 			fFigure_PartFigure_name.setText("");
 
 			this.add(fFigure_PartFigure_name);
@@ -259,7 +261,7 @@ public class ParameterEditPart extends ShapeNodeEditPart {
 		/**
 		 * @generated
 		 */
-		public WrapLabel getFigure_PartFigure_name() {
+		public Label getFigure_PartFigure_name() {
 			return fFigure_PartFigure_name;
 		}
 

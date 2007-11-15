@@ -1,6 +1,7 @@
 package org.eclipse.uml2.diagram.csd.edit.parts;
 
 import org.eclipse.draw2d.IFigure;
+import org.eclipse.draw2d.Label;
 import org.eclipse.draw2d.MarginBorder;
 import org.eclipse.draw2d.StackLayout;
 import org.eclipse.gef.EditPart;
@@ -53,10 +54,11 @@ public class ConstraintEditPart extends ShapeNodeEditPart {
 	 * @generated
 	 */
 	protected void createDefaultEditPolicies() {
-
 		super.createDefaultEditPolicies();
 		installEditPolicy(EditPolicyRoles.SEMANTIC_ROLE, new ConstraintItemSemanticEditPolicy());
 		installEditPolicy(EditPolicy.LAYOUT_ROLE, createLayoutEditPolicy());
+		// XXX need an SCR to runtime to have another abstract superclass that would let children add reasonable editpolicies
+		// removeEditPolicy(org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles.CONNECTION_HANDLES_ROLE);
 	}
 
 	/**
@@ -211,7 +213,7 @@ public class ConstraintEditPart extends ShapeNodeEditPart {
 		/**
 		 * @generated
 		 */
-		private WrapLabel fFigureConstraintFigure_Value;
+		private Label fFigureConstraintFigure_Value;
 
 		/**
 		 * @generated
@@ -226,7 +228,7 @@ public class ConstraintEditPart extends ShapeNodeEditPart {
 		 */
 		private void createContents() {
 
-			fFigureConstraintFigure_Value = new WrapLabel();
+			fFigureConstraintFigure_Value = new Label();
 			fFigureConstraintFigure_Value.setText("");
 
 			fFigureConstraintFigure_Value.setBorder(new MarginBorder(getMapMode().DPtoLP(5), getMapMode().DPtoLP(5), getMapMode().DPtoLP(5), getMapMode().DPtoLP(5)));
@@ -257,7 +259,7 @@ public class ConstraintEditPart extends ShapeNodeEditPart {
 		/**
 		 * @generated
 		 */
-		public WrapLabel getFigureConstraintFigure_Value() {
+		public Label getFigureConstraintFigure_Value() {
 			return fFigureConstraintFigure_Value;
 		}
 

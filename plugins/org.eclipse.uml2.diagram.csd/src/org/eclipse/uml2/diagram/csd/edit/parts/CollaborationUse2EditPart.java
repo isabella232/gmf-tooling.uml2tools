@@ -3,6 +3,7 @@ package org.eclipse.uml2.diagram.csd.edit.parts;
 import org.eclipse.draw2d.Ellipse;
 import org.eclipse.draw2d.Graphics;
 import org.eclipse.draw2d.IFigure;
+import org.eclipse.draw2d.Label;
 import org.eclipse.draw2d.MarginBorder;
 import org.eclipse.draw2d.StackLayout;
 import org.eclipse.draw2d.geometry.Rectangle;
@@ -55,10 +56,11 @@ public class CollaborationUse2EditPart extends ShapeNodeEditPart {
 	 * @generated
 	 */
 	protected void createDefaultEditPolicies() {
-
 		super.createDefaultEditPolicies();
 		installEditPolicy(EditPolicyRoles.SEMANTIC_ROLE, new CollaborationUse2ItemSemanticEditPolicy());
 		installEditPolicy(EditPolicy.LAYOUT_ROLE, createLayoutEditPolicy());
+		// XXX need an SCR to runtime to have another abstract superclass that would let children add reasonable editpolicies
+		// removeEditPolicy(org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles.CONNECTION_HANDLES_ROLE);
 	}
 
 	/**
@@ -239,7 +241,7 @@ public class CollaborationUse2EditPart extends ShapeNodeEditPart {
 		/**
 		 * @generated
 		 */
-		private WrapLabel fFigureCollaborationUseFigure_name;
+		private Label fFigureCollaborationUseFigure_name;
 
 		/**
 		 * @generated
@@ -254,7 +256,7 @@ public class CollaborationUse2EditPart extends ShapeNodeEditPart {
 		 */
 		private void createContents() {
 
-			fFigureCollaborationUseFigure_name = new WrapLabel();
+			fFigureCollaborationUseFigure_name = new Label();
 			fFigureCollaborationUseFigure_name.setText("");
 
 			this.add(fFigureCollaborationUseFigure_name);
@@ -283,7 +285,7 @@ public class CollaborationUse2EditPart extends ShapeNodeEditPart {
 		/**
 		 * @generated
 		 */
-		public WrapLabel getFigureCollaborationUseFigure_name() {
+		public Label getFigureCollaborationUseFigure_name() {
 			return fFigureCollaborationUseFigure_name;
 		}
 

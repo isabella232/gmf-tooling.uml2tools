@@ -4,6 +4,7 @@ import org.eclipse.draw2d.Border;
 import org.eclipse.draw2d.Ellipse;
 import org.eclipse.draw2d.Graphics;
 import org.eclipse.draw2d.IFigure;
+import org.eclipse.draw2d.Label;
 import org.eclipse.draw2d.MarginBorder;
 import org.eclipse.draw2d.RectangleFigure;
 import org.eclipse.draw2d.StackLayout;
@@ -63,13 +64,14 @@ public class CollaborationEditPart extends ShapeNodeEditPart {
 	 */
 	protected void createDefaultEditPolicies() {
 		installEditPolicy(EditPolicyRoles.CREATION_ROLE, new CreationEditPolicy());
-
 		super.createDefaultEditPolicies();
 		installEditPolicy(EditPolicyRoles.SEMANTIC_ROLE, new CollaborationItemSemanticEditPolicy());
 		installEditPolicy(EditPolicyRoles.DRAG_DROP_ROLE, new DragDropEditPolicy());
 		installEditPolicy(EditPolicyRoles.CANONICAL_ROLE, new CollaborationCanonicalEditPolicy());
 		installEditPolicy(EditPolicy.LAYOUT_ROLE, createLayoutEditPolicy());
 		installEditPolicy(EditPolicyRoles.OPEN_ROLE, new OpenDiagramEditPolicy());
+		// XXX need an SCR to runtime to have another abstract superclass that would let children add reasonable editpolicies
+		// removeEditPolicy(org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles.CONNECTION_HANDLES_ROLE);
 	}
 
 	/**
@@ -258,7 +260,7 @@ public class CollaborationEditPart extends ShapeNodeEditPart {
 		/**
 		 * @generated
 		 */
-		private WrapLabel fFigureCollaborationFigure_name;
+		private Label fFigureCollaborationFigure_name;
 
 		/**
 		 * @generated
@@ -288,7 +290,7 @@ public class CollaborationEditPart extends ShapeNodeEditPart {
 		 */
 		private void createContents() {
 
-			fFigureCollaborationFigure_name = new WrapLabel();
+			fFigureCollaborationFigure_name = new Label();
 			fFigureCollaborationFigure_name.setText("");
 
 			this.add(fFigureCollaborationFigure_name);
@@ -330,7 +332,7 @@ public class CollaborationEditPart extends ShapeNodeEditPart {
 		/**
 		 * @generated
 		 */
-		public WrapLabel getFigureCollaborationFigure_name() {
+		public Label getFigureCollaborationFigure_name() {
 			return fFigureCollaborationFigure_name;
 		}
 

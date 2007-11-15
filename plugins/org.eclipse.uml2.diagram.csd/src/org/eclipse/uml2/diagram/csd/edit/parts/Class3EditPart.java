@@ -1,6 +1,7 @@
 package org.eclipse.uml2.diagram.csd.edit.parts;
 
 import org.eclipse.draw2d.IFigure;
+import org.eclipse.draw2d.Label;
 import org.eclipse.draw2d.MarginBorder;
 import org.eclipse.draw2d.RectangleFigure;
 import org.eclipse.draw2d.StackLayout;
@@ -53,10 +54,11 @@ public class Class3EditPart extends ShapeNodeEditPart {
 	 * @generated
 	 */
 	protected void createDefaultEditPolicies() {
-
 		super.createDefaultEditPolicies();
 		installEditPolicy(EditPolicyRoles.SEMANTIC_ROLE, new Class3ItemSemanticEditPolicy());
 		installEditPolicy(EditPolicy.LAYOUT_ROLE, createLayoutEditPolicy());
+		// XXX need an SCR to runtime to have another abstract superclass that would let children add reasonable editpolicies
+		// removeEditPolicy(org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles.CONNECTION_HANDLES_ROLE);
 	}
 
 	/**
@@ -219,7 +221,7 @@ public class Class3EditPart extends ShapeNodeEditPart {
 		/**
 		 * @generated
 		 */
-		private WrapLabel fFigureExpandedClassFigure_name;
+		private Label fFigureExpandedClassFigure_name;
 
 		/**
 		 * @generated
@@ -249,7 +251,7 @@ public class Class3EditPart extends ShapeNodeEditPart {
 		 */
 		private void createContents() {
 
-			fFigureExpandedClassFigure_name = new WrapLabel();
+			fFigureExpandedClassFigure_name = new Label();
 			fFigureExpandedClassFigure_name.setText("");
 
 			this.add(fFigureExpandedClassFigure_name);
@@ -283,7 +285,7 @@ public class Class3EditPart extends ShapeNodeEditPart {
 		/**
 		 * @generated
 		 */
-		public WrapLabel getFigureExpandedClassFigure_name() {
+		public Label getFigureExpandedClassFigure_name() {
 			return fFigureExpandedClassFigure_name;
 		}
 

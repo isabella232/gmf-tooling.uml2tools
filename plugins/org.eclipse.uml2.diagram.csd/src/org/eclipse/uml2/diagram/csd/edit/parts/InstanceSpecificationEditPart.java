@@ -2,6 +2,7 @@ package org.eclipse.uml2.diagram.csd.edit.parts;
 
 import org.eclipse.draw2d.Border;
 import org.eclipse.draw2d.IFigure;
+import org.eclipse.draw2d.Label;
 import org.eclipse.draw2d.MarginBorder;
 import org.eclipse.draw2d.PositionConstants;
 import org.eclipse.draw2d.RectangleFigure;
@@ -81,10 +82,11 @@ public class InstanceSpecificationEditPart extends ShapeNodeEditPart {
 				return null;
 			}
 		});
-
 		super.createDefaultEditPolicies();
 		installEditPolicy(EditPolicyRoles.SEMANTIC_ROLE, new InstanceSpecificationItemSemanticEditPolicy());
 		installEditPolicy(EditPolicy.LAYOUT_ROLE, createLayoutEditPolicy());
+		// XXX need an SCR to runtime to have another abstract superclass that would let children add reasonable editpolicies
+		// removeEditPolicy(org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles.CONNECTION_HANDLES_ROLE);
 	}
 
 	/**
@@ -247,12 +249,12 @@ public class InstanceSpecificationEditPart extends ShapeNodeEditPart {
 		/**
 		 * @generated
 		 */
-		private WrapLabel fFigureInstanceNode_NameLabel;
+		private Label fFigureInstanceNode_NameLabel;
 
 		/**
 		 * @generated
 		 */
-		private WrapLabel fFigureInstanceNode_SpecificationLabel;
+		private Label fFigureInstanceNode_SpecificationLabel;
 
 		/**
 		 * @generated
@@ -290,7 +292,7 @@ public class InstanceSpecificationEditPart extends ShapeNodeEditPart {
 
 			instanceNode_NameContainerFigure0.setLayoutManager(new StackLayout());
 
-			fFigureInstanceNode_NameLabel = new WrapLabel();
+			fFigureInstanceNode_NameLabel = new Label();
 			fFigureInstanceNode_NameLabel.setText("");
 
 			instanceNode_NameContainerFigure0.add(fFigureInstanceNode_NameLabel);
@@ -308,7 +310,7 @@ public class InstanceSpecificationEditPart extends ShapeNodeEditPart {
 
 			instanceSpecification_SpecificationContainerFigure0.setLayoutManager(layoutInstanceSpecification_SpecificationContainerFigure0);
 
-			fFigureInstanceNode_SpecificationLabel = new WrapLabel();
+			fFigureInstanceNode_SpecificationLabel = new Label();
 			fFigureInstanceNode_SpecificationLabel.setText("");
 
 			instanceSpecification_SpecificationContainerFigure0.add(fFigureInstanceNode_SpecificationLabel);
@@ -350,14 +352,14 @@ public class InstanceSpecificationEditPart extends ShapeNodeEditPart {
 		/**
 		 * @generated
 		 */
-		public WrapLabel getFigureInstanceNode_NameLabel() {
+		public Label getFigureInstanceNode_NameLabel() {
 			return fFigureInstanceNode_NameLabel;
 		}
 
 		/**
 		 * @generated
 		 */
-		public WrapLabel getFigureInstanceNode_SpecificationLabel() {
+		public Label getFigureInstanceNode_SpecificationLabel() {
 			return fFigureInstanceNode_SpecificationLabel;
 		}
 
