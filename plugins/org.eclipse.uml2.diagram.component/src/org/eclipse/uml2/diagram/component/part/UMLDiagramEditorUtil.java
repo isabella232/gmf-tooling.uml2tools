@@ -24,6 +24,7 @@ import org.eclipse.core.runtime.SubProgressMonitor;
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.resource.Resource;
+import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emf.ecore.xmi.XMLResource;
 import org.eclipse.emf.transaction.TransactionalEditingDomain;
 import org.eclipse.emf.workspace.util.WorkspaceSynchronizer;
@@ -49,8 +50,10 @@ import org.eclipse.ui.PartInitException;
 import org.eclipse.ui.PlatformUI;
 import org.eclipse.ui.part.FileEditorInput;
 import org.eclipse.uml2.diagram.component.edit.parts.PackageEditPart;
+import org.eclipse.uml2.uml.Model;
 import org.eclipse.uml2.uml.Package;
 import org.eclipse.uml2.uml.UMLFactory;
+import org.eclipse.uml2.uml.resource.UMLResource;
 
 /**
  * @generated
@@ -197,6 +200,8 @@ public class UMLDiagramEditorUtil {
 	 */
 	private static void attachModelToResource(Package model, Resource resource) {
 		resource.getContents().add(model);
+		loadDefaultImports(model);
+
 	}
 
 	/**
@@ -380,6 +385,18 @@ public class UMLDiagramEditorUtil {
 			}
 		}
 		return null;
+	}
+
+	/**
+	 * @generated
+	 */
+	private static void loadDefaultImports(Package model) {
+		ResourceSet resourceSet = model.eResource().getResourceSet();
+		Model umlLibrary = (Model) resourceSet.getResource(URI.createURI(UMLResource.UML_PRIMITIVE_TYPES_LIBRARY_URI), true).getContents().get(0);
+		model.createElementImport(umlLibrary.getOwnedType("Boolean"));
+		model.createElementImport(umlLibrary.getOwnedType("String"));
+		model.createElementImport(umlLibrary.getOwnedType("UnlimitedNatural"));
+		model.createElementImport(umlLibrary.getOwnedType("Integer"));
 	}
 
 }
