@@ -149,10 +149,24 @@ public class UMLVisualIDRegistry {
 	 * @generated
 	 */
 	public static int getNodeVisualID(View containerView, EObject domainElement) {
-		if (domainElement == null || !PackageEditPart.MODEL_ID.equals(org.eclipse.uml2.diagram.deploy.part.UMLVisualIDRegistry.getModelID(containerView))) {
+		if (domainElement == null) {
 			return -1;
 		}
-		switch (org.eclipse.uml2.diagram.deploy.part.UMLVisualIDRegistry.getVisualID(containerView)) {
+		String containerModelID = org.eclipse.uml2.diagram.deploy.part.UMLVisualIDRegistry.getModelID(containerView);
+		if (!PackageEditPart.MODEL_ID.equals(containerModelID)) {
+			return -1;
+		}
+		int containerVisualID;
+		if (PackageEditPart.MODEL_ID.equals(containerModelID)) {
+			containerVisualID = org.eclipse.uml2.diagram.deploy.part.UMLVisualIDRegistry.getVisualID(containerView);
+		} else {
+			if (containerView instanceof Diagram) {
+				containerVisualID = PackageEditPart.VISUAL_ID;
+			} else {
+				return -1;
+			}
+		}
+		switch (containerVisualID) {
 		case PackageImportsEditPart.VISUAL_ID:
 			if (UMLPackage.eINSTANCE.getElementImport().isSuperTypeOf(domainElement.eClass())) {
 				return ElementImportEditPart.VISUAL_ID;

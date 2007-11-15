@@ -337,5 +337,11 @@ public class ElementInitializers {
 				}
 			};
 		}
+
+		/**
+		 * @generated
+		 */
+		static class Java {
+		}
 	} // end of Initializers
 }

@@ -389,6 +389,9 @@ public class UMLBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 				if (source.getConfigurations().contains(target)) {
 					return false;
 				}
+				if (source == target) {
+					return false;
+				}
 			}
 			return canExistDeploymentConfiguration_4003(source, target);
 		}
