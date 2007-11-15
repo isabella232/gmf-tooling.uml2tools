@@ -1,6 +1,7 @@
 package org.eclipse.uml2.diagram.activity.edit.parts;
 
 import org.eclipse.draw2d.IFigure;
+import org.eclipse.draw2d.Label;
 import org.eclipse.draw2d.MarginBorder;
 import org.eclipse.draw2d.RectangleFigure;
 import org.eclipse.draw2d.StackLayout;
@@ -55,11 +56,12 @@ public class CentralBufferNode2EditPart extends ShapeNodeEditPart {
 	 * @generated
 	 */
 	protected void createDefaultEditPolicies() {
-
 		super.createDefaultEditPolicies();
 		installEditPolicy(EditPolicyRoles.SEMANTIC_ROLE, new CentralBufferNode2ItemSemanticEditPolicy());
 		installEditPolicy(EditPolicyRoles.CANONICAL_ROLE, new CentralBufferNode2CanonicalEditPolicy());
 		installEditPolicy(EditPolicy.LAYOUT_ROLE, createLayoutEditPolicy());
+		// XXX need an SCR to runtime to have another abstract superclass that would let children add reasonable editpolicies
+		// removeEditPolicy(org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles.CONNECTION_HANDLES_ROLE);
 	}
 
 	/**
@@ -218,12 +220,12 @@ public class CentralBufferNode2EditPart extends ShapeNodeEditPart {
 		/**
 		 * @generated
 		 */
-		private WrapLabel fFigureCentralBufferFigure_name;
+		private Label fFigureCentralBufferFigure_name;
 
 		/**
 		 * @generated
 		 */
-		private WrapLabel fFigureCentralBufferFigure_states;
+		private Label fFigureCentralBufferFigure_states;
 
 		/**
 		 * @generated
@@ -255,17 +257,17 @@ public class CentralBufferNode2EditPart extends ShapeNodeEditPart {
 
 			centralBufferFigure_NameContainer0.setLayoutManager(layoutCentralBufferFigure_NameContainer0);
 
-			WrapLabel centralBufferFigure_fixed_central1 = new WrapLabel();
+			Label centralBufferFigure_fixed_central1 = new Label();
 			centralBufferFigure_fixed_central1.setText("\u00ABcentralBuffer\u00BB");
 
 			centralBufferFigure_NameContainer0.add(centralBufferFigure_fixed_central1);
 
-			fFigureCentralBufferFigure_name = new WrapLabel();
+			fFigureCentralBufferFigure_name = new Label();
 			fFigureCentralBufferFigure_name.setText("");
 
 			centralBufferFigure_NameContainer0.add(fFigureCentralBufferFigure_name);
 
-			fFigureCentralBufferFigure_states = new WrapLabel();
+			fFigureCentralBufferFigure_states = new Label();
 			fFigureCentralBufferFigure_states.setText("");
 
 			centralBufferFigure_NameContainer0.add(fFigureCentralBufferFigure_states);
@@ -294,14 +296,14 @@ public class CentralBufferNode2EditPart extends ShapeNodeEditPart {
 		/**
 		 * @generated
 		 */
-		public WrapLabel getFigureCentralBufferFigure_name() {
+		public Label getFigureCentralBufferFigure_name() {
 			return fFigureCentralBufferFigure_name;
 		}
 
 		/**
 		 * @generated
 		 */
-		public WrapLabel getFigureCentralBufferFigure_states() {
+		public Label getFigureCentralBufferFigure_states() {
 			return fFigureCentralBufferFigure_states;
 		}
 

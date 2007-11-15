@@ -3,6 +3,7 @@ package org.eclipse.uml2.diagram.statemachine.edit.parts;
 import org.eclipse.draw2d.GridData;
 import org.eclipse.draw2d.GridLayout;
 import org.eclipse.draw2d.IFigure;
+import org.eclipse.draw2d.Label;
 import org.eclipse.draw2d.MarginBorder;
 import org.eclipse.draw2d.RectangleFigure;
 import org.eclipse.draw2d.RoundedRectangle;
@@ -67,13 +68,14 @@ public class StateMachine2EditPart extends AbstractBorderedShapeEditPart {
 	 */
 	protected void createDefaultEditPolicies() {
 		installEditPolicy(EditPolicyRoles.CREATION_ROLE, new CreationEditPolicy());
-
 		super.createDefaultEditPolicies();
 		installEditPolicy(EditPolicyRoles.SEMANTIC_ROLE, new StateMachine2ItemSemanticEditPolicy());
 		installEditPolicy(EditPolicyRoles.DRAG_DROP_ROLE, new DragDropEditPolicy());
 		installEditPolicy(EditPolicyRoles.CANONICAL_ROLE, new StateMachine2CanonicalEditPolicy());
 		installEditPolicy(EditPolicy.LAYOUT_ROLE, createLayoutEditPolicy());
 		installEditPolicy("LayoutEditPolicy", new LaneLayoutEditPolicy()); //$NON-NLS-1$
+		// XXX need an SCR to runtime to have another abstract superclass that would let children add reasonable editpolicies
+		// removeEditPolicy(org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles.CONNECTION_HANDLES_ROLE);
 	}
 
 	/**
@@ -128,12 +130,12 @@ public class StateMachine2EditPart extends AbstractBorderedShapeEditPart {
 			return true;
 		}
 		if (childEditPart instanceof Pseudostate9EditPart) {
-			IBorderItemLocator locator = new BisectionBorderItemLocator(getMainFigure());
+			org.eclipse.gmf.runtime.draw2d.ui.figures.IBorderItemLocator locator = new BisectionBorderItemLocator(getMainFigure());
 			getBorderedFigure().getBorderItemContainer().add(((Pseudostate9EditPart) childEditPart).getFigure(), locator);
 			return true;
 		}
 		if (childEditPart instanceof Pseudostate10EditPart) {
-			IBorderItemLocator locator = new BisectionBorderItemLocator(getMainFigure());
+			org.eclipse.gmf.runtime.draw2d.ui.figures.IBorderItemLocator locator = new BisectionBorderItemLocator(getMainFigure());
 			getBorderedFigure().getBorderItemContainer().add(((Pseudostate10EditPart) childEditPart).getFigure(), locator);
 			return true;
 		}
@@ -258,7 +260,7 @@ public class StateMachine2EditPart extends AbstractBorderedShapeEditPart {
 		/**
 		 * @generated
 		 */
-		private WrapLabel fFigureCompositeStateFigure_name;
+		private Label fFigureCompositeStateFigure_name;
 
 		/**
 		 * @generated
@@ -312,7 +314,7 @@ public class StateMachine2EditPart extends AbstractBorderedShapeEditPart {
 			layoutCompositeStateFigure_NameContainer0.marginHeight = 3;
 			compositeStateFigure_NameContainer0.setLayoutManager(layoutCompositeStateFigure_NameContainer0);
 
-			fFigureCompositeStateFigure_name = new WrapLabel();
+			fFigureCompositeStateFigure_name = new Label();
 			fFigureCompositeStateFigure_name.setText("");
 
 			GridData constraintFFigureCompositeStateFigure_name = new GridData();
@@ -347,7 +349,7 @@ public class StateMachine2EditPart extends AbstractBorderedShapeEditPart {
 		/**
 		 * @generated
 		 */
-		public WrapLabel getFigureCompositeStateFigure_name() {
+		public Label getFigureCompositeStateFigure_name() {
 			return fFigureCompositeStateFigure_name;
 		}
 

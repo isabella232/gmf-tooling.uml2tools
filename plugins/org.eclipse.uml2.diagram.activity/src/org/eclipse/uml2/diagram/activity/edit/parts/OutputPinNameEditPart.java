@@ -536,6 +536,6 @@ public class OutputPinNameEditPart extends LabelEditPart implements ITextAwareEd
 	 * @generated
 	 */
 	protected IFigure createFigurePrim() {
-		return new WrapLabel();
+		return new Label();
 	}
 }

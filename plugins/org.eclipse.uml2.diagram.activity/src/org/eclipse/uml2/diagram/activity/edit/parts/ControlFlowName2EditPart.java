@@ -518,6 +518,6 @@ public class ControlFlowName2EditPart extends LabelEditPart implements ITextAwar
 	 * @generated
 	 */
 	protected IFigure createFigurePrim() {
-		return new WrapLabel();
+		return new Label();
 	}
 }

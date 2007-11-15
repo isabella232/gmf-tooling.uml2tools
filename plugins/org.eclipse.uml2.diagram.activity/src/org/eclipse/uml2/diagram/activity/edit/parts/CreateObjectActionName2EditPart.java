@@ -157,7 +157,7 @@ public class CreateObjectActionName2EditPart extends CompartmentEditPart impleme
 	/**
 	 * @generated
 	 */
-	public void setLabel(WrapLabel figure) {
+	public void setLabel(Label figure) {
 		unregisterVisuals();
 		setFigure(figure);
 		defaultText = getLabelTextHelper(figure);

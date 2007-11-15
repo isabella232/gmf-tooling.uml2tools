@@ -157,7 +157,7 @@ public class PinName2EditPart extends CompartmentEditPart implements ITextAwareE
 	/**
 	 * @generated
 	 */
-	public void setLabel(WrapLabel figure) {
+	public void setLabel(Label figure) {
 		unregisterVisuals();
 		setFigure(figure);
 		defaultText = getLabelTextHelper(figure);

@@ -3,6 +3,7 @@ package org.eclipse.uml2.diagram.activity.edit.parts;
 import org.eclipse.draw2d.BorderLayout;
 import org.eclipse.draw2d.Graphics;
 import org.eclipse.draw2d.IFigure;
+import org.eclipse.draw2d.Label;
 import org.eclipse.draw2d.MarginBorder;
 import org.eclipse.draw2d.Shape;
 import org.eclipse.draw2d.StackLayout;
@@ -59,11 +60,12 @@ public class SendSignalActionEditPart extends ShapeNodeEditPart {
 	 * @generated
 	 */
 	protected void createDefaultEditPolicies() {
-
 		super.createDefaultEditPolicies();
 		installEditPolicy(EditPolicyRoles.SEMANTIC_ROLE, new SendSignalActionItemSemanticEditPolicy());
 		installEditPolicy(EditPolicyRoles.CANONICAL_ROLE, new SendSignalActionCanonicalEditPolicy());
 		installEditPolicy(EditPolicy.LAYOUT_ROLE, createLayoutEditPolicy());
+		// XXX need an SCR to runtime to have another abstract superclass that would let children add reasonable editpolicies
+		// removeEditPolicy(org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles.CONNECTION_HANDLES_ROLE);
 	}
 
 	/**
@@ -218,7 +220,7 @@ public class SendSignalActionEditPart extends ShapeNodeEditPart {
 		/**
 		 * @generated
 		 */
-		private WrapLabel fFigureSendSignalActionFigure_name;
+		private Label fFigureSendSignalActionFigure_name;
 
 		/**
 		 * @generated
@@ -242,7 +244,7 @@ public class SendSignalActionEditPart extends ShapeNodeEditPart {
 		 */
 		private void createContents() {
 
-			fFigureSendSignalActionFigure_name = new WrapLabel();
+			fFigureSendSignalActionFigure_name = new Label();
 			fFigureSendSignalActionFigure_name.setText("");
 
 			this.add(fFigureSendSignalActionFigure_name, BorderLayout.CENTER);
@@ -330,7 +332,7 @@ public class SendSignalActionEditPart extends ShapeNodeEditPart {
 		/**
 		 * @generated
 		 */
-		public WrapLabel getFigureSendSignalActionFigure_name() {
+		public Label getFigureSendSignalActionFigure_name() {
 			return fFigureSendSignalActionFigure_name;
 		}
 

@@ -1,6 +1,7 @@
 package org.eclipse.uml2.diagram.activity.edit.parts;
 
 import org.eclipse.draw2d.IFigure;
+import org.eclipse.draw2d.Label;
 import org.eclipse.draw2d.MarginBorder;
 import org.eclipse.draw2d.PositionConstants;
 import org.eclipse.draw2d.RoundedRectangle;
@@ -64,12 +65,13 @@ public class AddStructuralFeatureValueAction2EditPart extends AbstractBorderedSh
 	 */
 	protected void createDefaultEditPolicies() {
 		installEditPolicy(EditPolicyRoles.CREATION_ROLE, new CreationEditPolicy());
-
 		super.createDefaultEditPolicies();
 		installEditPolicy(EditPolicyRoles.SEMANTIC_ROLE, new AddStructuralFeatureValueAction2ItemSemanticEditPolicy());
 		installEditPolicy(EditPolicyRoles.DRAG_DROP_ROLE, new DragDropEditPolicy());
 		installEditPolicy(EditPolicyRoles.CANONICAL_ROLE, new AddStructuralFeatureValueAction2CanonicalEditPolicy());
 		installEditPolicy(EditPolicy.LAYOUT_ROLE, createLayoutEditPolicy());
+		// XXX need an SCR to runtime to have another abstract superclass that would let children add reasonable editpolicies
+		// removeEditPolicy(org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles.CONNECTION_HANDLES_ROLE);
 	}
 
 	/**
@@ -124,17 +126,17 @@ public class AddStructuralFeatureValueAction2EditPart extends AbstractBorderedSh
 			return true;
 		}
 		if (childEditPart instanceof InputPinEditPart) {
-			IBorderItemLocator locator = new BorderItemLocator(getMainFigure(), PositionConstants.WEST);
+			BorderItemLocator locator = new BorderItemLocator(getMainFigure(), PositionConstants.WEST);
 			getBorderedFigure().getBorderItemContainer().add(((InputPinEditPart) childEditPart).getFigure(), locator);
 			return true;
 		}
 		if (childEditPart instanceof InputPin2EditPart) {
-			IBorderItemLocator locator = new BorderItemLocator(getMainFigure(), PositionConstants.WEST);
+			BorderItemLocator locator = new BorderItemLocator(getMainFigure(), PositionConstants.WEST);
 			getBorderedFigure().getBorderItemContainer().add(((InputPin2EditPart) childEditPart).getFigure(), locator);
 			return true;
 		}
 		if (childEditPart instanceof InputPin3EditPart) {
-			IBorderItemLocator locator = new BorderItemLocator(getMainFigure(), PositionConstants.WEST);
+			BorderItemLocator locator = new BorderItemLocator(getMainFigure(), PositionConstants.WEST);
 			getBorderedFigure().getBorderItemContainer().add(((InputPin3EditPart) childEditPart).getFigure(), locator);
 			return true;
 		}
@@ -263,7 +265,7 @@ public class AddStructuralFeatureValueAction2EditPart extends AbstractBorderedSh
 		/**
 		 * @generated
 		 */
-		private WrapLabel fFigureActionBaseFigure_name;
+		private Label fFigureActionBaseFigure_name;
 
 		/**
 		 * @generated
@@ -283,7 +285,7 @@ public class AddStructuralFeatureValueAction2EditPart extends AbstractBorderedSh
 		 */
 		private void createContents() {
 
-			fFigureActionBaseFigure_name = new WrapLabel();
+			fFigureActionBaseFigure_name = new Label();
 			fFigureActionBaseFigure_name.setText("");
 
 			fFigureActionBaseFigure_name.setBorder(new MarginBorder(getMapMode().DPtoLP(0), getMapMode().DPtoLP(5), getMapMode().DPtoLP(0), getMapMode().DPtoLP(5)));
@@ -314,7 +316,7 @@ public class AddStructuralFeatureValueAction2EditPart extends AbstractBorderedSh
 		/**
 		 * @generated
 		 */
-		public WrapLabel getFigureActionBaseFigure_name() {
+		public Label getFigureActionBaseFigure_name() {
 			return fFigureActionBaseFigure_name;
 		}
 

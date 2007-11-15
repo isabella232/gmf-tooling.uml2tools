@@ -538,6 +538,6 @@ public class LiteralString2EditPart extends CompartmentEditPart implements IText
 	 * @generated
 	 */
 	protected IFigure createFigurePrim() {
-		return new WrapLabel();
+		return new Label();
 	}
 }

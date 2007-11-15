@@ -3,6 +3,7 @@ package org.eclipse.uml2.diagram.activity.edit.parts;
 import org.eclipse.draw2d.BorderLayout;
 import org.eclipse.draw2d.Graphics;
 import org.eclipse.draw2d.IFigure;
+import org.eclipse.draw2d.Label;
 import org.eclipse.draw2d.MarginBorder;
 import org.eclipse.draw2d.Shape;
 import org.eclipse.draw2d.StackLayout;
@@ -59,11 +60,12 @@ public class AcceptEventAction3EditPart extends ShapeNodeEditPart {
 	 * @generated
 	 */
 	protected void createDefaultEditPolicies() {
-
 		super.createDefaultEditPolicies();
 		installEditPolicy(EditPolicyRoles.SEMANTIC_ROLE, new AcceptEventAction3ItemSemanticEditPolicy());
 		installEditPolicy(EditPolicyRoles.CANONICAL_ROLE, new AcceptEventAction3CanonicalEditPolicy());
 		installEditPolicy(EditPolicy.LAYOUT_ROLE, createLayoutEditPolicy());
+		// XXX need an SCR to runtime to have another abstract superclass that would let children add reasonable editpolicies
+		// removeEditPolicy(org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles.CONNECTION_HANDLES_ROLE);
 	}
 
 	/**
@@ -218,7 +220,7 @@ public class AcceptEventAction3EditPart extends ShapeNodeEditPart {
 		/**
 		 * @generated
 		 */
-		private WrapLabel fFigureAcceptEventActionFigure_name;
+		private Label fFigureAcceptEventActionFigure_name;
 
 		/**
 		 * @generated
@@ -242,7 +244,7 @@ public class AcceptEventAction3EditPart extends ShapeNodeEditPart {
 		 */
 		private void createContents() {
 
-			fFigureAcceptEventActionFigure_name = new WrapLabel();
+			fFigureAcceptEventActionFigure_name = new Label();
 			fFigureAcceptEventActionFigure_name.setText("");
 
 			this.add(fFigureAcceptEventActionFigure_name, BorderLayout.CENTER);
@@ -330,7 +332,7 @@ public class AcceptEventAction3EditPart extends ShapeNodeEditPart {
 		/**
 		 * @generated
 		 */
-		public WrapLabel getFigureAcceptEventActionFigure_name() {
+		public Label getFigureAcceptEventActionFigure_name() {
 			return fFigureAcceptEventActionFigure_name;
 		}
 

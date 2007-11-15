@@ -1,6 +1,7 @@
 package org.eclipse.uml2.diagram.activity.edit.parts;
 
 import org.eclipse.draw2d.IFigure;
+import org.eclipse.draw2d.Label;
 import org.eclipse.draw2d.MarginBorder;
 import org.eclipse.draw2d.PositionConstants;
 import org.eclipse.draw2d.RectangleFigure;
@@ -56,12 +57,13 @@ public class ActivityParameterNodeEditPart extends AbstractBorderItemEditPart {
 	 * @generated
 	 */
 	protected void createDefaultEditPolicies() {
-
 		super.createDefaultEditPolicies();
 		installEditPolicy(EditPolicy.PRIMARY_DRAG_ROLE, getPrimaryDragEditPolicy());
 		installEditPolicy(EditPolicyRoles.SEMANTIC_ROLE, new ActivityParameterNodeItemSemanticEditPolicy());
 		installEditPolicy(EditPolicyRoles.CANONICAL_ROLE, new ActivityParameterNodeCanonicalEditPolicy());
 		installEditPolicy(EditPolicy.LAYOUT_ROLE, createLayoutEditPolicy());
+		// XXX need an SCR to runtime to have another abstract superclass that would let children add reasonable editpolicies
+		// removeEditPolicy(org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles.CONNECTION_HANDLES_ROLE);
 	}
 
 	/**
@@ -231,7 +233,7 @@ public class ActivityParameterNodeEditPart extends AbstractBorderItemEditPart {
 		/**
 		 * @generated
 		 */
-		private WrapLabel fFigureActivityParameterFigure_name;
+		private Label fFigureActivityParameterFigure_name;
 
 		/**
 		 * @generated
@@ -245,7 +247,7 @@ public class ActivityParameterNodeEditPart extends AbstractBorderItemEditPart {
 		 */
 		private void createContents() {
 
-			fFigureActivityParameterFigure_name = new WrapLabel();
+			fFigureActivityParameterFigure_name = new Label();
 			fFigureActivityParameterFigure_name.setText("");
 			fFigureActivityParameterFigure_name.setBorder(new MarginBorder(getMapMode().DPtoLP(3), getMapMode().DPtoLP(5), getMapMode().DPtoLP(3), getMapMode().DPtoLP(5)));
 
@@ -275,7 +277,7 @@ public class ActivityParameterNodeEditPart extends AbstractBorderItemEditPart {
 		/**
 		 * @generated
 		 */
-		public WrapLabel getFigureActivityParameterFigure_name() {
+		public Label getFigureActivityParameterFigure_name() {
 			return fFigureActivityParameterFigure_name;
 		}
 

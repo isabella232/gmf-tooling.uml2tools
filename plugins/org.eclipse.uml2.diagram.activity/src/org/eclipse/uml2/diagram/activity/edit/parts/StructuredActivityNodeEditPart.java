@@ -3,6 +3,7 @@ package org.eclipse.uml2.diagram.activity.edit.parts;
 import org.eclipse.draw2d.BorderLayout;
 import org.eclipse.draw2d.Graphics;
 import org.eclipse.draw2d.IFigure;
+import org.eclipse.draw2d.Label;
 import org.eclipse.draw2d.MarginBorder;
 import org.eclipse.draw2d.RectangleFigure;
 import org.eclipse.draw2d.RoundedRectangle;
@@ -57,11 +58,12 @@ public class StructuredActivityNodeEditPart extends ShapeNodeEditPart {
 	 * @generated
 	 */
 	protected void createDefaultEditPolicies() {
-
 		super.createDefaultEditPolicies();
 		installEditPolicy(EditPolicyRoles.SEMANTIC_ROLE, new StructuredActivityNodeItemSemanticEditPolicy());
 		installEditPolicy(EditPolicyRoles.CANONICAL_ROLE, new StructuredActivityNodeCanonicalEditPolicy());
 		installEditPolicy(EditPolicy.LAYOUT_ROLE, createLayoutEditPolicy());
+		// XXX need an SCR to runtime to have another abstract superclass that would let children add reasonable editpolicies
+		// removeEditPolicy(org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles.CONNECTION_HANDLES_ROLE);
 	}
 
 	/**
@@ -256,7 +258,7 @@ public class StructuredActivityNodeEditPart extends ShapeNodeEditPart {
 			BorderLayout layoutAux_StructuredActivityFigure_LabelContainer0 = new BorderLayout();
 			aux_StructuredActivityFigure_LabelContainer0.setLayoutManager(layoutAux_StructuredActivityFigure_LabelContainer0);
 
-			WrapLabel structuredActivityFigure_fixed_structured1 = new WrapLabel();
+			Label structuredActivityFigure_fixed_structured1 = new Label();
 			structuredActivityFigure_fixed_structured1.setText("\u00ABstructured\u00BB");
 
 			aux_StructuredActivityFigure_LabelContainer0.add(structuredActivityFigure_fixed_structured1, BorderLayout.LEFT);

@@ -536,6 +536,6 @@ public class AcceptEventActionName3EditPart extends LabelEditPart implements ITe
 	 * @generated
 	 */
 	protected IFigure createFigurePrim() {
-		return new WrapLabel();
+		return new Label();
 	}
 }

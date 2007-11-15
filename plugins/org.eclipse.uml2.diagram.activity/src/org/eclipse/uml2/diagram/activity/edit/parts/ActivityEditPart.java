@@ -3,6 +3,7 @@ package org.eclipse.uml2.diagram.activity.edit.parts;
 import org.eclipse.draw2d.Border;
 import org.eclipse.draw2d.BorderLayout;
 import org.eclipse.draw2d.IFigure;
+import org.eclipse.draw2d.Label;
 import org.eclipse.draw2d.PositionConstants;
 import org.eclipse.draw2d.RectangleFigure;
 import org.eclipse.draw2d.RoundedRectangle;
@@ -71,13 +72,14 @@ public class ActivityEditPart extends AbstractBorderedShapeEditPart {
 	 */
 	protected void createDefaultEditPolicies() {
 		installEditPolicy(EditPolicyRoles.CREATION_ROLE, new CreationEditPolicy());
-
 		super.createDefaultEditPolicies();
 		installEditPolicy(EditPolicyRoles.SEMANTIC_ROLE, new ActivityItemSemanticEditPolicy());
 		installEditPolicy(EditPolicyRoles.DRAG_DROP_ROLE, new DragDropEditPolicy());
 		installEditPolicy(EditPolicyRoles.CANONICAL_ROLE, new ActivityCanonicalEditPolicy());
 		installEditPolicy(EditPolicy.LAYOUT_ROLE, createLayoutEditPolicy());
 		installEditPolicy(EditPolicy.LAYOUT_ROLE, new XYLayoutEditPolicy());
+		// XXX need an SCR to runtime to have another abstract superclass that would let children add reasonable editpolicies
+		// removeEditPolicy(org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles.CONNECTION_HANDLES_ROLE);
 	}
 
 	/**
@@ -132,7 +134,7 @@ public class ActivityEditPart extends AbstractBorderedShapeEditPart {
 			return true;
 		}
 		if (childEditPart instanceof ActivityParameterNodeEditPart) {
-			IBorderItemLocator locator = new BisectionBorderItemLocator(getMainFigure());
+			org.eclipse.gmf.runtime.draw2d.ui.figures.IBorderItemLocator locator = new BisectionBorderItemLocator(getMainFigure());
 			getBorderedFigure().getBorderItemContainer().add(((ActivityParameterNodeEditPart) childEditPart).getFigure(), locator);
 			return true;
 		}
@@ -240,7 +242,7 @@ public class ActivityEditPart extends AbstractBorderedShapeEditPart {
 		/**
 		 * @generated
 		 */
-		private WrapLabel fFigureActivityFigure_name;
+		private Label fFigureActivityFigure_name;
 
 		/**
 		 * @generated
@@ -273,7 +275,7 @@ public class ActivityEditPart extends AbstractBorderedShapeEditPart {
 
 			activityFigureRectangle_name0.setLayoutManager(new StackLayout());
 
-			fFigureActivityFigure_name = new WrapLabel();
+			fFigureActivityFigure_name = new Label();
 			fFigureActivityFigure_name.setText("");
 
 			activityFigureRectangle_name0.add(fFigureActivityFigure_name);
@@ -326,7 +328,7 @@ public class ActivityEditPart extends AbstractBorderedShapeEditPart {
 		/**
 		 * @generated
 		 */
-		public WrapLabel getFigureActivityFigure_name() {
+		public Label getFigureActivityFigure_name() {
 			return fFigureActivityFigure_name;
 		}
 

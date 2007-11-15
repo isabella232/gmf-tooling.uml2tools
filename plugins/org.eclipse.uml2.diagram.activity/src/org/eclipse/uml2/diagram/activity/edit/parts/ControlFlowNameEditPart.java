@@ -518,6 +518,6 @@ public class ControlFlowNameEditPart extends LabelEditPart implements ITextAware
 	 * @generated
 	 */
 	protected IFigure createFigurePrim() {
-		return new WrapLabel();
+		return new Label();
 	}
 }

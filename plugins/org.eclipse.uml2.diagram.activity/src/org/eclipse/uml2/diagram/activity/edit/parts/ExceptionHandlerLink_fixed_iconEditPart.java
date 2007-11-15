@@ -529,7 +529,7 @@ public class ExceptionHandlerLink_fixed_iconEditPart extends LabelEditPart imple
 	/**
 	 * @generated
 	 */
-	public class ZigZagLabel extends WrapLabel {
+	public class ZigZagLabel extends Label {
 
 		/**
 		 * @generated

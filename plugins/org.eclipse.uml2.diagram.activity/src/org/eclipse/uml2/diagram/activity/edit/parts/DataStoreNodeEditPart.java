@@ -1,6 +1,7 @@
 package org.eclipse.uml2.diagram.activity.edit.parts;
 
 import org.eclipse.draw2d.IFigure;
+import org.eclipse.draw2d.Label;
 import org.eclipse.draw2d.MarginBorder;
 import org.eclipse.draw2d.RectangleFigure;
 import org.eclipse.draw2d.StackLayout;
@@ -55,11 +56,12 @@ public class DataStoreNodeEditPart extends ShapeNodeEditPart {
 	 * @generated
 	 */
 	protected void createDefaultEditPolicies() {
-
 		super.createDefaultEditPolicies();
 		installEditPolicy(EditPolicyRoles.SEMANTIC_ROLE, new DataStoreNodeItemSemanticEditPolicy());
 		installEditPolicy(EditPolicyRoles.CANONICAL_ROLE, new DataStoreNodeCanonicalEditPolicy());
 		installEditPolicy(EditPolicy.LAYOUT_ROLE, createLayoutEditPolicy());
+		// XXX need an SCR to runtime to have another abstract superclass that would let children add reasonable editpolicies
+		// removeEditPolicy(org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles.CONNECTION_HANDLES_ROLE);
 	}
 
 	/**
@@ -218,12 +220,12 @@ public class DataStoreNodeEditPart extends ShapeNodeEditPart {
 		/**
 		 * @generated
 		 */
-		private WrapLabel fFigureDataStoreFigure_name;
+		private Label fFigureDataStoreFigure_name;
 
 		/**
 		 * @generated
 		 */
-		private WrapLabel fFigureDataStoreFigure_states;
+		private Label fFigureDataStoreFigure_states;
 
 		/**
 		 * @generated
@@ -255,17 +257,17 @@ public class DataStoreNodeEditPart extends ShapeNodeEditPart {
 
 			dataStoreFigure_NameContainer0.setLayoutManager(layoutDataStoreFigure_NameContainer0);
 
-			WrapLabel dataStore_fixed_datastore1 = new WrapLabel();
+			Label dataStore_fixed_datastore1 = new Label();
 			dataStore_fixed_datastore1.setText("\u00ABdatastore\u00BB");
 
 			dataStoreFigure_NameContainer0.add(dataStore_fixed_datastore1);
 
-			fFigureDataStoreFigure_name = new WrapLabel();
+			fFigureDataStoreFigure_name = new Label();
 			fFigureDataStoreFigure_name.setText("");
 
 			dataStoreFigure_NameContainer0.add(fFigureDataStoreFigure_name);
 
-			fFigureDataStoreFigure_states = new WrapLabel();
+			fFigureDataStoreFigure_states = new Label();
 			fFigureDataStoreFigure_states.setText("");
 
 			dataStoreFigure_NameContainer0.add(fFigureDataStoreFigure_states);
@@ -294,14 +296,14 @@ public class DataStoreNodeEditPart extends ShapeNodeEditPart {
 		/**
 		 * @generated
 		 */
-		public WrapLabel getFigureDataStoreFigure_name() {
+		public Label getFigureDataStoreFigure_name() {
 			return fFigureDataStoreFigure_name;
 		}
 
 		/**
 		 * @generated
 		 */
-		public WrapLabel getFigureDataStoreFigure_states() {
+		public Label getFigureDataStoreFigure_states() {
 			return fFigureDataStoreFigure_states;
 		}
 

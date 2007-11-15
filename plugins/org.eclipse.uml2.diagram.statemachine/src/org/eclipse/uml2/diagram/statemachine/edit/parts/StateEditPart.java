@@ -1,6 +1,7 @@
 package org.eclipse.uml2.diagram.statemachine.edit.parts;
 
 import org.eclipse.draw2d.IFigure;
+import org.eclipse.draw2d.Label;
 import org.eclipse.draw2d.MarginBorder;
 import org.eclipse.draw2d.RoundedRectangle;
 import org.eclipse.draw2d.StackLayout;
@@ -54,10 +55,11 @@ public class StateEditPart extends ShapeNodeEditPart {
 	 * @generated
 	 */
 	protected void createDefaultEditPolicies() {
-
 		super.createDefaultEditPolicies();
 		installEditPolicy(EditPolicyRoles.SEMANTIC_ROLE, new StateItemSemanticEditPolicy());
 		installEditPolicy(EditPolicy.LAYOUT_ROLE, createLayoutEditPolicy());
+		// XXX need an SCR to runtime to have another abstract superclass that would let children add reasonable editpolicies
+		// removeEditPolicy(org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles.CONNECTION_HANDLES_ROLE);
 	}
 
 	/**
@@ -212,7 +214,7 @@ public class StateEditPart extends ShapeNodeEditPart {
 		/**
 		 * @generated
 		 */
-		private WrapLabel fFigureSimpleStateFigure_name;
+		private Label fFigureSimpleStateFigure_name;
 
 		/**
 		 * @generated
@@ -231,7 +233,7 @@ public class StateEditPart extends ShapeNodeEditPart {
 		 */
 		private void createContents() {
 
-			fFigureSimpleStateFigure_name = new WrapLabel();
+			fFigureSimpleStateFigure_name = new Label();
 			fFigureSimpleStateFigure_name.setText("");
 
 			this.add(fFigureSimpleStateFigure_name);
@@ -260,7 +262,7 @@ public class StateEditPart extends ShapeNodeEditPart {
 		/**
 		 * @generated
 		 */
-		public WrapLabel getFigureSimpleStateFigure_name() {
+		public Label getFigureSimpleStateFigure_name() {
 			return fFigureSimpleStateFigure_name;
 		}
 

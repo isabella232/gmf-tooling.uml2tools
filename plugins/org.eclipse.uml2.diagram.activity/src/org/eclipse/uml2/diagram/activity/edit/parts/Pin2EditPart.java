@@ -1,6 +1,7 @@
 package org.eclipse.uml2.diagram.activity.edit.parts;
 
 import org.eclipse.draw2d.IFigure;
+import org.eclipse.draw2d.Label;
 import org.eclipse.draw2d.MarginBorder;
 import org.eclipse.draw2d.RectangleFigure;
 import org.eclipse.draw2d.StackLayout;
@@ -54,11 +55,12 @@ public class Pin2EditPart extends ShapeNodeEditPart {
 	 * @generated
 	 */
 	protected void createDefaultEditPolicies() {
-
 		super.createDefaultEditPolicies();
 		installEditPolicy(EditPolicyRoles.SEMANTIC_ROLE, new Pin2ItemSemanticEditPolicy());
 		installEditPolicy(EditPolicyRoles.CANONICAL_ROLE, new Pin2CanonicalEditPolicy());
 		installEditPolicy(EditPolicy.LAYOUT_ROLE, createLayoutEditPolicy());
+		// XXX need an SCR to runtime to have another abstract superclass that would let children add reasonable editpolicies
+		// removeEditPolicy(org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles.CONNECTION_HANDLES_ROLE);
 	}
 
 	/**
@@ -213,7 +215,7 @@ public class Pin2EditPart extends ShapeNodeEditPart {
 		/**
 		 * @generated
 		 */
-		private WrapLabel fFigureStandalonePinFigure_name;
+		private Label fFigureStandalonePinFigure_name;
 
 		/**
 		 * @generated
@@ -227,7 +229,7 @@ public class Pin2EditPart extends ShapeNodeEditPart {
 		 */
 		private void createContents() {
 
-			fFigureStandalonePinFigure_name = new WrapLabel();
+			fFigureStandalonePinFigure_name = new Label();
 			fFigureStandalonePinFigure_name.setText("");
 
 			fFigureStandalonePinFigure_name.setBorder(new MarginBorder(getMapMode().DPtoLP(0), getMapMode().DPtoLP(5), getMapMode().DPtoLP(0), getMapMode().DPtoLP(5)));
@@ -258,7 +260,7 @@ public class Pin2EditPart extends ShapeNodeEditPart {
 		/**
 		 * @generated
 		 */
-		public WrapLabel getFigureStandalonePinFigure_name() {
+		public Label getFigureStandalonePinFigure_name() {
 			return fFigureStandalonePinFigure_name;
 		}
 
