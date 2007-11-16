@@ -30,6 +30,13 @@ import org.eclipse.uml2.diagram.csd.edit.parts.CollaborationNameEditPart;
 import org.eclipse.uml2.diagram.csd.edit.parts.CollaborationUse2EditPart;
 import org.eclipse.uml2.diagram.csd.edit.parts.CollaborationUseName2EditPart;
 import org.eclipse.uml2.diagram.csd.edit.parts.ConnectorEditPart;
+import org.eclipse.uml2.diagram.csd.edit.parts.ConnectorName2EditPart;
+import org.eclipse.uml2.diagram.csd.edit.parts.ConnectorName3EditPart;
+import org.eclipse.uml2.diagram.csd.edit.parts.ConnectorName4EditPart;
+import org.eclipse.uml2.diagram.csd.edit.parts.ConnectorName5EditPart;
+import org.eclipse.uml2.diagram.csd.edit.parts.ConnectorName6EditPart;
+import org.eclipse.uml2.diagram.csd.edit.parts.ConnectorName7EditPart;
+import org.eclipse.uml2.diagram.csd.edit.parts.ConnectorNameEditPart;
 import org.eclipse.uml2.diagram.csd.edit.parts.ConstraintConstrainedElementEditPart;
 import org.eclipse.uml2.diagram.csd.edit.parts.ConstraintEditPart;
 import org.eclipse.uml2.diagram.csd.edit.parts.ConstraintNameEditPart;
@@ -84,6 +91,13 @@ import org.eclipse.uml2.diagram.csd.view.factories.CollaborationNameViewFactory;
 import org.eclipse.uml2.diagram.csd.view.factories.CollaborationUse2ViewFactory;
 import org.eclipse.uml2.diagram.csd.view.factories.CollaborationUseName2ViewFactory;
 import org.eclipse.uml2.diagram.csd.view.factories.CollaborationViewFactory;
+import org.eclipse.uml2.diagram.csd.view.factories.ConnectorName2ViewFactory;
+import org.eclipse.uml2.diagram.csd.view.factories.ConnectorName3ViewFactory;
+import org.eclipse.uml2.diagram.csd.view.factories.ConnectorName4ViewFactory;
+import org.eclipse.uml2.diagram.csd.view.factories.ConnectorName5ViewFactory;
+import org.eclipse.uml2.diagram.csd.view.factories.ConnectorName6ViewFactory;
+import org.eclipse.uml2.diagram.csd.view.factories.ConnectorName7ViewFactory;
+import org.eclipse.uml2.diagram.csd.view.factories.ConnectorNameViewFactory;
 import org.eclipse.uml2.diagram.csd.view.factories.ConnectorViewFactory;
 import org.eclipse.uml2.diagram.csd.view.factories.ConstraintConstrainedElementViewFactory;
 import org.eclipse.uml2.diagram.csd.view.factories.ConstraintNameViewFactory;
@@ -285,6 +299,17 @@ public class UMLViewProvider extends AbstractViewProvider {
 						return null; // wrong container
 					}
 					break;
+				case ConnectorNameEditPart.VISUAL_ID:
+				case ConnectorName2EditPart.VISUAL_ID:
+				case ConnectorName3EditPart.VISUAL_ID:
+				case ConnectorName4EditPart.VISUAL_ID:
+				case ConnectorName5EditPart.VISUAL_ID:
+				case ConnectorName6EditPart.VISUAL_ID:
+				case ConnectorName7EditPart.VISUAL_ID:
+					if (ConnectorEditPart.VISUAL_ID != UMLVisualIDRegistry.getVisualID(containerView) || containerView.getElement() != domainElement) {
+						return null; // wrong container
+					}
+					break;
 				case DependencyNameEditPart.VISUAL_ID:
 					if (DependencyEditPart.VISUAL_ID != UMLVisualIDRegistry.getVisualID(containerView) || containerView.getElement() != domainElement) {
 						return null; // wrong container
@@ -391,6 +416,20 @@ public class UMLViewProvider extends AbstractViewProvider {
 			return ClassClass_contentsViewFactory.class;
 		case InstanceSpecificationSlotsEditPart.VISUAL_ID:
 			return InstanceSpecificationSlotsViewFactory.class;
+		case ConnectorNameEditPart.VISUAL_ID:
+			return ConnectorNameViewFactory.class;
+		case ConnectorName2EditPart.VISUAL_ID:
+			return ConnectorName2ViewFactory.class;
+		case ConnectorName3EditPart.VISUAL_ID:
+			return ConnectorName3ViewFactory.class;
+		case ConnectorName4EditPart.VISUAL_ID:
+			return ConnectorName4ViewFactory.class;
+		case ConnectorName5EditPart.VISUAL_ID:
+			return ConnectorName5ViewFactory.class;
+		case ConnectorName6EditPart.VISUAL_ID:
+			return ConnectorName6ViewFactory.class;
+		case ConnectorName7EditPart.VISUAL_ID:
+			return ConnectorName7ViewFactory.class;
 		case DependencyNameEditPart.VISUAL_ID:
 			return DependencyNameViewFactory.class;
 		case AssociationNameEditPart.VISUAL_ID:

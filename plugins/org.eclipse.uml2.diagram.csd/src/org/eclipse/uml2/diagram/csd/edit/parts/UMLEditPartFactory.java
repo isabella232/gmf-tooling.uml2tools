@@ -145,6 +145,27 @@ public class UMLEditPartFactory implements EditPartFactory {
 			case ConnectorEditPart.VISUAL_ID:
 				return new ConnectorEditPart(view);
 
+			case ConnectorNameEditPart.VISUAL_ID:
+				return new ConnectorNameEditPart(view);
+
+			case ConnectorName2EditPart.VISUAL_ID:
+				return new ConnectorName2EditPart(view);
+
+			case ConnectorName3EditPart.VISUAL_ID:
+				return new ConnectorName3EditPart(view);
+
+			case ConnectorName4EditPart.VISUAL_ID:
+				return new ConnectorName4EditPart(view);
+
+			case ConnectorName5EditPart.VISUAL_ID:
+				return new ConnectorName5EditPart(view);
+
+			case ConnectorName6EditPart.VISUAL_ID:
+				return new ConnectorName6EditPart(view);
+
+			case ConnectorName7EditPart.VISUAL_ID:
+				return new ConnectorName7EditPart(view);
+
 			case DependencyEditPart.VISUAL_ID:
 				return new DependencyEditPart(view);
 

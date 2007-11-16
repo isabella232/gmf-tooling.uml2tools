@@ -35,6 +35,13 @@ import org.eclipse.uml2.diagram.csd.edit.parts.ClassNameEditPart;
 import org.eclipse.uml2.diagram.csd.edit.parts.ClassQualifiedNameEditPart;
 import org.eclipse.uml2.diagram.csd.edit.parts.CollaborationNameEditPart;
 import org.eclipse.uml2.diagram.csd.edit.parts.CollaborationUseName2EditPart;
+import org.eclipse.uml2.diagram.csd.edit.parts.ConnectorName2EditPart;
+import org.eclipse.uml2.diagram.csd.edit.parts.ConnectorName3EditPart;
+import org.eclipse.uml2.diagram.csd.edit.parts.ConnectorName4EditPart;
+import org.eclipse.uml2.diagram.csd.edit.parts.ConnectorName5EditPart;
+import org.eclipse.uml2.diagram.csd.edit.parts.ConnectorName6EditPart;
+import org.eclipse.uml2.diagram.csd.edit.parts.ConnectorName7EditPart;
+import org.eclipse.uml2.diagram.csd.edit.parts.ConnectorNameEditPart;
 import org.eclipse.uml2.diagram.csd.edit.parts.ConstraintNameEditPart;
 import org.eclipse.uml2.diagram.csd.edit.parts.DependencyNameEditPart;
 import org.eclipse.uml2.diagram.csd.edit.parts.ElementImportEditPart;
@@ -50,6 +57,7 @@ import org.eclipse.uml2.diagram.csd.edit.parts.PropertyNameEditPart;
 import org.eclipse.uml2.diagram.csd.edit.parts.SlotEditPart;
 import org.eclipse.uml2.diagram.csd.expressions.UMLOCLFactory;
 import org.eclipse.uml2.diagram.csd.parser.collaborationuse.CollaborationUseParser;
+import org.eclipse.uml2.diagram.csd.parser.connector.ConnectorNameParser;
 import org.eclipse.uml2.diagram.csd.parsers.MessageFormatParser;
 import org.eclipse.uml2.diagram.csd.part.UMLVisualIDRegistry;
 import org.eclipse.uml2.diagram.parser.BasicApplyStrategy;
@@ -483,6 +491,172 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 	/**
 	 * @generated
 	 */
+	private IParser connectorName_6009Parser;
+
+	/**
+	 * @generated
+	 */
+	private IParser getConnectorName_6009Parser() {
+		if (connectorName_6009Parser == null) {
+			connectorName_6009Parser = createConnectorName_6009Parser();
+		}
+		return connectorName_6009Parser;
+	}
+
+	/**
+	 * @generated NOT
+	 */
+	protected IParser createConnectorName_6009Parser() {
+		return new ConnectorNameParser();
+	}
+
+	/**
+	 * @generated
+	 */
+	private IParser connectorName_6010Parser;
+
+	/**
+	 * @generated
+	 */
+	private IParser getConnectorName_6010Parser() {
+		if (connectorName_6010Parser == null) {
+			connectorName_6010Parser = createConnectorName_6010Parser();
+		}
+		return connectorName_6010Parser;
+	}
+
+	/**
+	 * @generated
+	 */
+	protected IParser createConnectorName_6010Parser() {
+		EAttribute[] features = new EAttribute[] { UMLPackage.eINSTANCE.getNamedElement_Name(), };
+		MessageFormatParser parser = new MessageFormatParser(features);
+		return parser;
+	}
+
+	/**
+	 * @generated
+	 */
+	private IParser connectorName_6011Parser;
+
+	/**
+	 * @generated
+	 */
+	private IParser getConnectorName_6011Parser() {
+		if (connectorName_6011Parser == null) {
+			connectorName_6011Parser = createConnectorName_6011Parser();
+		}
+		return connectorName_6011Parser;
+	}
+
+	/**
+	 * @generated
+	 */
+	protected IParser createConnectorName_6011Parser() {
+		EAttribute[] features = new EAttribute[] { UMLPackage.eINSTANCE.getNamedElement_Name(), };
+		MessageFormatParser parser = new MessageFormatParser(features);
+		return parser;
+	}
+
+	/**
+	 * @generated
+	 */
+	private IParser connectorName_6012Parser;
+
+	/**
+	 * @generated
+	 */
+	private IParser getConnectorName_6012Parser() {
+		if (connectorName_6012Parser == null) {
+			connectorName_6012Parser = createConnectorName_6012Parser();
+		}
+		return connectorName_6012Parser;
+	}
+
+	/**
+	 * @generated
+	 */
+	protected IParser createConnectorName_6012Parser() {
+		EAttribute[] features = new EAttribute[] { UMLPackage.eINSTANCE.getNamedElement_Name(), };
+		MessageFormatParser parser = new MessageFormatParser(features);
+		return parser;
+	}
+
+	/**
+	 * @generated
+	 */
+	private IParser connectorName_6013Parser;
+
+	/**
+	 * @generated
+	 */
+	private IParser getConnectorName_6013Parser() {
+		if (connectorName_6013Parser == null) {
+			connectorName_6013Parser = createConnectorName_6013Parser();
+		}
+		return connectorName_6013Parser;
+	}
+
+	/**
+	 * @generated
+	 */
+	protected IParser createConnectorName_6013Parser() {
+		EAttribute[] features = new EAttribute[] { UMLPackage.eINSTANCE.getNamedElement_Name(), };
+		MessageFormatParser parser = new MessageFormatParser(features);
+		return parser;
+	}
+
+	/**
+	 * @generated
+	 */
+	private IParser connectorName_6014Parser;
+
+	/**
+	 * @generated
+	 */
+	private IParser getConnectorName_6014Parser() {
+		if (connectorName_6014Parser == null) {
+			connectorName_6014Parser = createConnectorName_6014Parser();
+		}
+		return connectorName_6014Parser;
+	}
+
+	/**
+	 * @generated
+	 */
+	protected IParser createConnectorName_6014Parser() {
+		EAttribute[] features = new EAttribute[] { UMLPackage.eINSTANCE.getNamedElement_Name(), };
+		MessageFormatParser parser = new MessageFormatParser(features);
+		return parser;
+	}
+
+	/**
+	 * @generated
+	 */
+	private IParser connectorName_6015Parser;
+
+	/**
+	 * @generated
+	 */
+	private IParser getConnectorName_6015Parser() {
+		if (connectorName_6015Parser == null) {
+			connectorName_6015Parser = createConnectorName_6015Parser();
+		}
+		return connectorName_6015Parser;
+	}
+
+	/**
+	 * @generated
+	 */
+	protected IParser createConnectorName_6015Parser() {
+		EAttribute[] features = new EAttribute[] { UMLPackage.eINSTANCE.getNamedElement_Name(), };
+		MessageFormatParser parser = new MessageFormatParser(features);
+		return parser;
+	}
+
+	/**
+	 * @generated
+	 */
 	private IParser dependencyName_6001Parser;
 
 	/**
@@ -733,6 +907,20 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 			return getPropertyName_5017Parser();
 		case SlotEditPart.VISUAL_ID:
 			return getSlot_3015Parser();
+		case ConnectorNameEditPart.VISUAL_ID:
+			return getConnectorName_6009Parser();
+		case ConnectorName2EditPart.VISUAL_ID:
+			return getConnectorName_6010Parser();
+		case ConnectorName3EditPart.VISUAL_ID:
+			return getConnectorName_6011Parser();
+		case ConnectorName4EditPart.VISUAL_ID:
+			return getConnectorName_6012Parser();
+		case ConnectorName5EditPart.VISUAL_ID:
+			return getConnectorName_6013Parser();
+		case ConnectorName6EditPart.VISUAL_ID:
+			return getConnectorName_6014Parser();
+		case ConnectorName7EditPart.VISUAL_ID:
+			return getConnectorName_6015Parser();
 		case DependencyNameEditPart.VISUAL_ID:
 			return getDependencyName_6001Parser();
 		case AssociationNameEditPart.VISUAL_ID:

@@ -29,6 +29,13 @@ import org.eclipse.uml2.diagram.csd.edit.parts.CollaborationNameEditPart;
 import org.eclipse.uml2.diagram.csd.edit.parts.CollaborationUse2EditPart;
 import org.eclipse.uml2.diagram.csd.edit.parts.CollaborationUseName2EditPart;
 import org.eclipse.uml2.diagram.csd.edit.parts.ConnectorEditPart;
+import org.eclipse.uml2.diagram.csd.edit.parts.ConnectorName2EditPart;
+import org.eclipse.uml2.diagram.csd.edit.parts.ConnectorName3EditPart;
+import org.eclipse.uml2.diagram.csd.edit.parts.ConnectorName4EditPart;
+import org.eclipse.uml2.diagram.csd.edit.parts.ConnectorName5EditPart;
+import org.eclipse.uml2.diagram.csd.edit.parts.ConnectorName6EditPart;
+import org.eclipse.uml2.diagram.csd.edit.parts.ConnectorName7EditPart;
+import org.eclipse.uml2.diagram.csd.edit.parts.ConnectorNameEditPart;
 import org.eclipse.uml2.diagram.csd.edit.parts.ConstraintEditPart;
 import org.eclipse.uml2.diagram.csd.edit.parts.ConstraintNameEditPart;
 import org.eclipse.uml2.diagram.csd.edit.parts.DependencyEditPart;
@@ -451,6 +458,29 @@ public class UMLVisualIDRegistry {
 				return true;
 			}
 			if (ConstraintEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			break;
+		case ConnectorEditPart.VISUAL_ID:
+			if (ConnectorNameEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			if (ConnectorName2EditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			if (ConnectorName3EditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			if (ConnectorName4EditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			if (ConnectorName5EditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			if (ConnectorName6EditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			if (ConnectorName7EditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
 			break;
