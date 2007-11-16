@@ -1,12 +1,16 @@
 package org.eclipse.uml2.diagram.csd.edit.parts;
 
+import org.eclipse.draw2d.ColorConstants;
 import org.eclipse.draw2d.Connection;
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.gef.EditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.ConnectionNodeEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles;
 import org.eclipse.gmf.runtime.draw2d.ui.figures.PolylineConnectionEx;
 import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.uml2.diagram.csd.edit.policies.ConnectorItemSemanticEditPolicy;
+import org.eclipse.uml2.uml.Connector;
+import org.eclipse.uml2.uml.UMLPackage;
 
 /**
  * @generated
@@ -68,6 +72,48 @@ public class ConnectorEditPart extends ConnectionNodeEditPart {
 	 */
 	public PolylineConnectionEx getPrimaryShape() {
 		return (PolylineConnectionEx) getFigure();
+	}
+	/**
+	 * @NOT-GENERATED
+	 */
+	protected void addSemanticListeners() {
+		super.addSemanticListeners();
+		Connector c = (Connector) resolveSemanticElement();
+		addListenerFilter("SemanticModel_TypeListener", this, c, UMLPackage.eINSTANCE.getConnector_Type());
+	}
+
+	/**
+	 * @NOT-GENERATED
+	 */
+	protected void handleNotificationEvent(Notification notification) {
+		super.handleNotificationEvent(notification);
+		if (UMLPackage.eINSTANCE.getConnector_Type().equals(notification.getFeature())) {
+			refreshConnectorTypeColor(getPrimaryShape());
+		}
+	}
+	
+	/**
+	 * @NOT-GENERATED
+	 */
+	@Override
+	protected void refreshVisuals() {
+		super.refreshVisuals();
+		refreshConnectorTypeColor(getPrimaryShape());
+	}
+
+	/**
+	 * @NOT-GENERATED
+	 */
+	private void refreshConnectorTypeColor(Connection connectorFigure) {
+		Connector c = (Connector) resolveSemanticElement();
+		if (c == null) {
+			return;
+		}
+		if (c.getType() != null) {
+			connectorFigure.setForegroundColor(ColorConstants.blue);
+		} else {
+			connectorFigure.setForegroundColor(ColorConstants.black);
+		}
 	}
 
 }
