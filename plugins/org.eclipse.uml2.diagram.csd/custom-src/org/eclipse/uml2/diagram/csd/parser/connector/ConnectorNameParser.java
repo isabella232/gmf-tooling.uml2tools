@@ -91,6 +91,9 @@ public class ConnectorNameParser implements ISemanticParser {
 					break;
 				}
 			}
+			if (newType.equals("") && !newType.equals(oldType)) {
+				cc.add(new SetValueCommand(new SetRequest(c, UMLPackage.eINSTANCE.getConnector_Type(), null)));
+			}
 			return cc;
 		} catch (ParseException e) {
 		}

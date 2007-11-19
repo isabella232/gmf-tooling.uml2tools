@@ -553,42 +553,48 @@
           href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//NamedElement/name"/>
     </labelMappings>
     <labelMappings
-        xsi:type="gmfmap:FeatureLabelMapping">
+        xsi:type="gmfmap:FeatureLabelMapping"
+        readOnly="true">
       <diagramLabel
           href="compositeStructuresDiagram_links.gmfgraph#ConnectorLink_sourceRole"/>
       <features
           href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//NamedElement/name"/>
     </labelMappings>
     <labelMappings
-        xsi:type="gmfmap:FeatureLabelMapping">
+        xsi:type="gmfmap:FeatureLabelMapping"
+        readOnly="true">
       <diagramLabel
           href="compositeStructuresDiagram_links.gmfgraph#ConnectorLink_targetRole"/>
       <features
           href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//NamedElement/name"/>
     </labelMappings>
     <labelMappings
-        xsi:type="gmfmap:FeatureLabelMapping">
+        xsi:type="gmfmap:FeatureLabelMapping"
+        readOnly="true">
       <diagramLabel
           href="compositeStructuresDiagram_links.gmfgraph#ConnectorLink_sourceOptions"/>
       <features
           href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//NamedElement/name"/>
     </labelMappings>
     <labelMappings
-        xsi:type="gmfmap:FeatureLabelMapping">
+        xsi:type="gmfmap:FeatureLabelMapping"
+        readOnly="true">
       <diagramLabel
           href="compositeStructuresDiagram_links.gmfgraph#ConnectorLink_targetOptions"/>
       <features
           href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//NamedElement/name"/>
     </labelMappings>
     <labelMappings
-        xsi:type="gmfmap:FeatureLabelMapping">
+        xsi:type="gmfmap:FeatureLabelMapping"
+        readOnly="true">
       <diagramLabel
           href="compositeStructuresDiagram_links.gmfgraph#ConnectorLink_sourceMulti"/>
       <features
           href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//NamedElement/name"/>
     </labelMappings>
     <labelMappings
-        xsi:type="gmfmap:FeatureLabelMapping">
+        xsi:type="gmfmap:FeatureLabelMapping"
+        readOnly="true">
       <diagramLabel
           href="compositeStructuresDiagram_links.gmfgraph#ConnectorLink_targetMulti"/>
       <features

@@ -58,6 +58,7 @@ import org.eclipse.uml2.diagram.csd.edit.parts.SlotEditPart;
 import org.eclipse.uml2.diagram.csd.expressions.UMLOCLFactory;
 import org.eclipse.uml2.diagram.csd.parser.collaborationuse.CollaborationUseParser;
 import org.eclipse.uml2.diagram.csd.parser.connector.ConnectorNameParser;
+import org.eclipse.uml2.diagram.csd.parser.connector.ConnectorParser;
 import org.eclipse.uml2.diagram.csd.parsers.MessageFormatParser;
 import org.eclipse.uml2.diagram.csd.part.UMLVisualIDRegistry;
 import org.eclipse.uml2.diagram.parser.BasicApplyStrategy;
@@ -526,12 +527,10 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 	}
 
 	/**
-	 * @generated
+	 * @generated NOT
 	 */
 	protected IParser createConnectorName_6010Parser() {
-		EAttribute[] features = new EAttribute[] { UMLPackage.eINSTANCE.getNamedElement_Name(), };
-		MessageFormatParser parser = new MessageFormatParser(features);
-		return parser;
+		return createConnectorRoleParser(true);
 	}
 
 	/**
@@ -550,12 +549,10 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 	}
 
 	/**
-	 * @generated
+	 * @generated NOT
 	 */
 	protected IParser createConnectorName_6011Parser() {
-		EAttribute[] features = new EAttribute[] { UMLPackage.eINSTANCE.getNamedElement_Name(), };
-		MessageFormatParser parser = new MessageFormatParser(features);
-		return parser;
+		return createConnectorRoleParser(false);
 	}
 
 	/**
@@ -574,12 +571,10 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 	}
 
 	/**
-	 * @generated
+	 * @generated NOT
 	 */
 	protected IParser createConnectorName_6012Parser() {
-		EAttribute[] features = new EAttribute[] { UMLPackage.eINSTANCE.getNamedElement_Name(), };
-		MessageFormatParser parser = new MessageFormatParser(features);
-		return parser;
+		return createConnectorMultiplicityParser(true);
 	}
 
 	/**
@@ -598,12 +593,10 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 	}
 
 	/**
-	 * @generated
+	 * @generated NOT
 	 */
 	protected IParser createConnectorName_6013Parser() {
-		EAttribute[] features = new EAttribute[] { UMLPackage.eINSTANCE.getNamedElement_Name(), };
-		MessageFormatParser parser = new MessageFormatParser(features);
-		return parser;
+		return createConnectorMultiplicityParser(false);
 	}
 
 	/**
@@ -622,12 +615,10 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 	}
 
 	/**
-	 * @generated
+	 * @generated NOT
 	 */
 	protected IParser createConnectorName_6014Parser() {
-		EAttribute[] features = new EAttribute[] { UMLPackage.eINSTANCE.getNamedElement_Name(), };
-		MessageFormatParser parser = new MessageFormatParser(features);
-		return parser;
+		return createConnectorModifiersParser(true);
 	}
 
 	/**
@@ -646,12 +637,10 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 	}
 
 	/**
-	 * @generated
+	 * @generated NOT
 	 */
 	protected IParser createConnectorName_6015Parser() {
-		EAttribute[] features = new EAttribute[] { UMLPackage.eINSTANCE.getNamedElement_Name(), };
-		MessageFormatParser parser = new MessageFormatParser(features);
-		return parser;
+		return createConnectorModifiersParser(false);
 	}
 
 	/**
@@ -716,6 +705,27 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 	 */
 	private LookupSuite getAssociationLookupSuite() {
 		return LookupSuite.NULL_SUITE;
+	}
+
+	/**
+	 * @NOT-GENERATED
+	 */
+	private IParser createConnectorRoleParser(boolean sourceNotTarget) {
+		return new ConnectorParser.ROLE_PARSER(sourceNotTarget);
+	}
+
+	/**
+	 * @NOT-GENERATED
+	 */
+	private IParser createConnectorModifiersParser(boolean sourceNotTarget) {
+		return new ConnectorParser.MODIFIERS_PARSER(sourceNotTarget);
+	}
+
+	/**
+	 * @NOT-GENERATED
+	 */
+	protected IParser createConnectorMultiplicityParser(boolean sourceNotTarget) {
+		return new ConnectorParser.MULTIPLICITY_PARSER(sourceNotTarget);
 	}
 
 	/**

@@ -45,6 +45,8 @@ import org.eclipse.uml2.diagram.csd.edit.policies.UMLTextSelectionEditPolicy;
 import org.eclipse.uml2.diagram.csd.part.UMLVisualIDRegistry;
 import org.eclipse.uml2.diagram.csd.providers.UMLElementTypes;
 import org.eclipse.uml2.diagram.csd.providers.UMLParserProvider;
+import org.eclipse.uml2.uml.Connector;
+import org.eclipse.uml2.uml.UMLPackage;
 
 /**
  * @generated
@@ -175,10 +177,11 @@ public class ConnectorName5EditPart extends LabelEditPart implements ITextAwareE
 	}
 
 	/**
-	 * @generated
+	 * @generated NOT
 	 */
 	protected EObject getParserElement() {
-		return resolveSemanticElement();
+		Connector c = (Connector)resolveSemanticElement();
+		return c.getType();
 	}
 
 	/**
@@ -228,7 +231,7 @@ public class ConnectorName5EditPart extends LabelEditPart implements ITextAwareE
 	 * @generated
 	 */
 	protected boolean isEditable() {
-		return getParser() != null;
+		return false;
 	}
 
 	/**
@@ -425,7 +428,7 @@ public class ConnectorName5EditPart extends LabelEditPart implements ITextAwareE
 	/**
 	 * @generated
 	 */
-	protected void addSemanticListeners() {
+	protected void addSemanticListenersGen() {
 		if (getParser() instanceof ISemanticParser) {
 			EObject element = resolveSemanticElement();
 			parserElements = ((ISemanticParser) getParser()).getSemanticElementsBeingParsed(element);
@@ -435,6 +438,15 @@ public class ConnectorName5EditPart extends LabelEditPart implements ITextAwareE
 		} else {
 			super.addSemanticListeners();
 		}
+	}
+
+	/**
+	 * @generated NOT
+	 */
+	protected void addSemanticListeners() {
+		addSemanticListenersGen();
+		Connector c = (Connector) resolveSemanticElement();
+		addListenerFilter("SemanticModel_TypeListener", this, c, UMLPackage.eINSTANCE.getConnector_Type());
 	}
 
 	/**
