@@ -75,14 +75,16 @@ public class ConnectorNameParser implements ISemanticParser {
 		String oldName = c.getName() == null ? "" : c.getName();
 		List<Association> types = getTypeProposals(c);
 		try {
-			Object[] parsed = CONNECTOR_NAME_FORMAT.parse(newString);
+			Object[] parsed;
+			if (!newString.contains(":")) {
+				parsed = new String[]{newString, ""};
+			} else {
+				parsed = CONNECTOR_NAME_FORMAT.parse(newString);
+			}
 			String newName = ((String) parsed[0]).trim();
 			CompositeCommand cc = new CompositeCommand("");
 			if (!oldName.equals(newName)) {
 				cc.add(new SetValueCommand(new SetRequest(c, UMLPackage.eINSTANCE.getNamedElement_Name(), newName)));
-			}
-			if (parsed.length < 2) {
-				return cc;
 			}
 			String newType = ((String) parsed[1]).trim();
 			for (Type next : types) {
