@@ -52,8 +52,15 @@
   <nodes
       name="StructuredActivityNode"
       figure="StructuredActivityFigure"/>
+  <nodes
+      name="LoopNode"
+      figure="StructuredActivityFigure"/>
   <compartments
       name="StructuredActivityContentPaneCompartment"
+      figure="StructuredActivityFigure"
+      accessor="//@figures.0/@descriptors.0/@accessors.0"/>
+  <compartments
+      name="LoopNodeContentPaneCompartment"
       figure="StructuredActivityFigure"
       accessor="//@figures.0/@descriptors.0/@accessors.0"/>
 </gmfgraph:Canvas>

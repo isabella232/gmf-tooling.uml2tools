@@ -85,7 +85,8 @@ public class UMLPaletteFactory {
 	private PaletteContainer createStructuredActivities4Group() {
 		PaletteGroup paletteContainer = new PaletteGroup(Messages.StructuredActivities4Group_title);
 		paletteContainer.setDescription(Messages.StructuredActivities4Group_desc);
-		paletteContainer.add(createStructuredActivityNode1CreationTool());
+		paletteContainer.add(createLoopNode1CreationTool());
+		paletteContainer.add(createStructuredActivityNode2CreationTool());
 		return paletteContainer;
 	}
 
@@ -454,11 +455,23 @@ public class UMLPaletteFactory {
 	/**
 	 * @generated
 	 */
-	private ToolEntry createStructuredActivityNode1CreationTool() {
+	private ToolEntry createLoopNode1CreationTool() {
+		List/*<IElementType>*/types = new ArrayList/*<IElementType>*/(1);
+		types.add(UMLElementTypes.LoopNode_3058);
+		NodeToolEntry entry = new NodeToolEntry(Messages.LoopNode1CreationTool_title, Messages.LoopNode1CreationTool_desc, types);
+		entry.setSmallIcon(UMLElementTypes.getImageDescriptor(UMLElementTypes.LoopNode_3058));
+		entry.setLargeIcon(entry.getSmallIcon());
+		return entry;
+	}
+
+	/**
+	 * @generated
+	 */
+	private ToolEntry createStructuredActivityNode2CreationTool() {
 		List/*<IElementType>*/types = new ArrayList/*<IElementType>*/(2);
 		types.add(UMLElementTypes.StructuredActivityNode_3046);
 		types.add(UMLElementTypes.StructuredActivityNode_3009);
-		NodeToolEntry entry = new NodeToolEntry(Messages.StructuredActivityNode1CreationTool_title, Messages.StructuredActivityNode1CreationTool_desc, types);
+		NodeToolEntry entry = new NodeToolEntry(Messages.StructuredActivityNode2CreationTool_title, Messages.StructuredActivityNode2CreationTool_desc, types);
 		entry.setSmallIcon(UMLElementTypes.getImageDescriptor(UMLElementTypes.StructuredActivityNode_3046));
 		entry.setLargeIcon(entry.getSmallIcon());
 		return entry;

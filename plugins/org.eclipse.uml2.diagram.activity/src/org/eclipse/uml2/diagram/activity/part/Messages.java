@@ -473,12 +473,22 @@ public class Messages extends NLS {
 	/**
 	 * @generated
 	 */
-	public static String StructuredActivityNode1CreationTool_title;
+	public static String LoopNode1CreationTool_title;
 
 	/**
 	 * @generated
 	 */
-	public static String StructuredActivityNode1CreationTool_desc;
+	public static String LoopNode1CreationTool_desc;
+
+	/**
+	 * @generated
+	 */
+	public static String StructuredActivityNode2CreationTool_title;
+
+	/**
+	 * @generated
+	 */
+	public static String StructuredActivityNode2CreationTool_desc;
 
 	/**
 	 * @generated
@@ -634,6 +644,11 @@ public class Messages extends NLS {
 	 * @generated
 	 */
 	public static String StructuredActivityNodeStructuredActivityContentPaneCompartment2EditPart_title;
+
+	/**
+	 * @generated
+	 */
+	public static String LoopNodeLoopNodeContentPaneCompartmentEditPart_title;
 
 	/**
 	 * @generated
@@ -1134,6 +1149,16 @@ public class Messages extends NLS {
 	 * @generated
 	 */
 	public static String NavigatorGroupName_SendSignalAction_3053_outgoinglinks;
+
+	/**
+	 * @generated
+	 */
+	public static String NavigatorGroupName_LoopNode_3058_incominglinks;
+
+	/**
+	 * @generated
+	 */
+	public static String NavigatorGroupName_LoopNode_3058_outgoinglinks;
 
 	/**
 	 * @generated

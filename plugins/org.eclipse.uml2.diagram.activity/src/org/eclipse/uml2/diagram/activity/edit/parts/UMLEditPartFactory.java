@@ -301,6 +301,9 @@ public class UMLEditPartFactory implements EditPartFactory {
 			case ActivityPartitionName2EditPart.VISUAL_ID:
 				return new ActivityPartitionName2EditPart(view);
 
+			case LoopNodeEditPart.VISUAL_ID:
+				return new LoopNodeEditPart(view);
+
 			case LiteralStringEditPart.VISUAL_ID:
 				return new LiteralStringEditPart(view);
 
@@ -312,6 +315,9 @@ public class UMLEditPartFactory implements EditPartFactory {
 
 			case StructuredActivityNodeStructuredActivityContentPaneCompartment2EditPart.VISUAL_ID:
 				return new StructuredActivityNodeStructuredActivityContentPaneCompartment2EditPart(view);
+
+			case LoopNodeLoopNodeContentPaneCompartmentEditPart.VISUAL_ID:
+				return new LoopNodeLoopNodeContentPaneCompartmentEditPart(view);
 
 			case ConstraintPreconditionEditPart.VISUAL_ID:
 				return new ConstraintPreconditionEditPart(view);

@@ -121,6 +121,10 @@
         description="Structured Activities">
       <tools
           xsi:type="gmftool:CreationTool"
+          title="Loop Node"
+          description="Create Loop Node"/>
+      <tools
+          xsi:type="gmftool:CreationTool"
           title="Structured Activity Node"
           description="Create Structured Activity Node"/>
     </tools>

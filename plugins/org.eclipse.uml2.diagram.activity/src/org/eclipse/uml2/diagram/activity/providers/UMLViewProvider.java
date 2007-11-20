@@ -142,6 +142,7 @@ public class UMLViewProvider extends AbstractViewProvider {
 				case SendSignalActionEditPart.VISUAL_ID:
 				case ActivityPartitionEditPart.VISUAL_ID:
 				case ActivityPartition2EditPart.VISUAL_ID:
+				case LoopNodeEditPart.VISUAL_ID:
 				case LiteralStringEditPart.VISUAL_ID:
 				case LiteralString2EditPart.VISUAL_ID:
 					if (domainElement == null || visualID != UMLVisualIDRegistry.getNodeVisualID(containerView, domainElement)) {
@@ -339,6 +340,11 @@ public class UMLViewProvider extends AbstractViewProvider {
 					break;
 				case ActivityPartitionName2EditPart.VISUAL_ID:
 					if (ActivityPartition2EditPart.VISUAL_ID != UMLVisualIDRegistry.getVisualID(containerView) || containerView.getElement() != domainElement) {
+						return null; // wrong container
+					}
+					break;
+				case LoopNodeLoopNodeContentPaneCompartmentEditPart.VISUAL_ID:
+					if (LoopNodeEditPart.VISUAL_ID != UMLVisualIDRegistry.getVisualID(containerView) || containerView.getElement() != domainElement) {
 						return null; // wrong container
 					}
 					break;
@@ -555,6 +561,8 @@ public class UMLViewProvider extends AbstractViewProvider {
 			return ActivityPartition2ViewFactory.class;
 		case ActivityPartitionName2EditPart.VISUAL_ID:
 			return ActivityPartitionName2ViewFactory.class;
+		case LoopNodeEditPart.VISUAL_ID:
+			return LoopNodeViewFactory.class;
 		case LiteralStringEditPart.VISUAL_ID:
 			return LiteralStringViewFactory.class;
 		case LiteralString2EditPart.VISUAL_ID:
@@ -563,6 +571,8 @@ public class UMLViewProvider extends AbstractViewProvider {
 			return StructuredActivityNodeStructuredActivityContentPaneCompartmentViewFactory.class;
 		case StructuredActivityNodeStructuredActivityContentPaneCompartment2EditPart.VISUAL_ID:
 			return StructuredActivityNodeStructuredActivityContentPaneCompartment2ViewFactory.class;
+		case LoopNodeLoopNodeContentPaneCompartmentEditPart.VISUAL_ID:
+			return LoopNodeLoopNodeContentPaneCompartmentViewFactory.class;
 		case ConstraintPreconditionEditPart.VISUAL_ID:
 			return ConstraintPreconditionViewFactory.class;
 		case ConstraintPostconditionEditPart.VISUAL_ID:

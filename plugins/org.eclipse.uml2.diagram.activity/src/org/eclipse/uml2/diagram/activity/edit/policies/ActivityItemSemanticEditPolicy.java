@@ -28,6 +28,7 @@ import org.eclipse.uml2.diagram.activity.edit.commands.FlowFinalNodeCreateComman
 import org.eclipse.uml2.diagram.activity.edit.commands.ForkNodeCreateCommand;
 import org.eclipse.uml2.diagram.activity.edit.commands.InitialNodeCreateCommand;
 import org.eclipse.uml2.diagram.activity.edit.commands.JoinNodeCreateCommand;
+import org.eclipse.uml2.diagram.activity.edit.commands.LoopNodeCreateCommand;
 import org.eclipse.uml2.diagram.activity.edit.commands.MergeNodeCreateCommand;
 import org.eclipse.uml2.diagram.activity.edit.commands.ObjectNodeSelectionCreateCommand;
 import org.eclipse.uml2.diagram.activity.edit.commands.ObjectNodeSelectionReorientCommand;
@@ -52,6 +53,7 @@ import org.eclipse.uml2.diagram.activity.edit.parts.FlowFinalNodeEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.ForkNodeEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.InitialNodeEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.JoinNodeEditPart;
+import org.eclipse.uml2.diagram.activity.edit.parts.LoopNodeEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.MergeNodeEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.ObjectNodeSelectionEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.OpaqueActionEditPart;
@@ -204,6 +206,12 @@ public class ActivityItemSemanticEditPolicy extends UMLBaseItemSemanticEditPolic
 			}
 			return getGEFWrapper(new ActivityPartitionCreateCommand(req));
 		}
+		if (UMLElementTypes.LoopNode_3058 == req.getElementType()) {
+			if (req.getContainmentFeature() == null) {
+				req.setContainmentFeature(UMLPackage.eINSTANCE.getActivity_Group());
+			}
+			return getGEFWrapper(new LoopNodeCreateCommand(req));
+		}
 		return super.getCreateCommand(req);
 	}
 
@@ -298,6 +306,9 @@ public class ActivityItemSemanticEditPolicy extends UMLBaseItemSemanticEditPolic
 				cmd.add(getDestroyElementCommand(node));
 				break;
 			case ActivityPartitionEditPart.VISUAL_ID:
+				cmd.add(getDestroyElementCommand(node));
+				break;
+			case LoopNodeEditPart.VISUAL_ID:
 				cmd.add(getDestroyElementCommand(node));
 				break;
 			}
