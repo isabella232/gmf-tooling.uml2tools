@@ -41,6 +41,7 @@ import org.eclipse.uml2.diagram.activity.edit.parts.InputPinName2EditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.InputPinName3EditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.InputPinName4EditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.InputPinName5EditPart;
+import org.eclipse.uml2.diagram.activity.edit.parts.InputPinName6EditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.InputPinNameEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.LiteralString2EditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.LiteralStringEditPart;
@@ -51,6 +52,7 @@ import org.eclipse.uml2.diagram.activity.edit.parts.OpaqueActionNameEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.OpaqueBehaviorNameEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.OutputPinName2EditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.OutputPinName3EditPart;
+import org.eclipse.uml2.diagram.activity.edit.parts.OutputPinName4EditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.OutputPinNameEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.PinName2EditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.PinNameEditPart;
@@ -826,6 +828,54 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 	/**
 	 * @generated
 	 */
+	private IParser inputPinName_5047Parser;
+
+	/**
+	 * @generated
+	 */
+	private IParser getInputPinName_5047Parser() {
+		if (inputPinName_5047Parser == null) {
+			inputPinName_5047Parser = createInputPinName_5047Parser();
+		}
+		return inputPinName_5047Parser;
+	}
+
+	/**
+	 * @generated
+	 */
+	protected IParser createInputPinName_5047Parser() {
+		EAttribute[] features = new EAttribute[] { UMLPackage.eINSTANCE.getNamedElement_Name(), };
+		MessageFormatParser parser = new MessageFormatParser(features);
+		return parser;
+	}
+
+	/**
+	 * @generated
+	 */
+	private IParser outputPinName_5048Parser;
+
+	/**
+	 * @generated
+	 */
+	private IParser getOutputPinName_5048Parser() {
+		if (outputPinName_5048Parser == null) {
+			outputPinName_5048Parser = createOutputPinName_5048Parser();
+		}
+		return outputPinName_5048Parser;
+	}
+
+	/**
+	 * @generated
+	 */
+	protected IParser createOutputPinName_5048Parser() {
+		EAttribute[] features = new EAttribute[] { UMLPackage.eINSTANCE.getNamedElement_Name(), };
+		MessageFormatParser parser = new MessageFormatParser(features);
+		return parser;
+	}
+
+	/**
+	 * @generated
+	 */
 	private IParser opaqueBehaviorName_5029Parser;
 
 	/**
@@ -1154,6 +1204,10 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 			return getCentralBufferNodeName_5033Parser();
 		case CentralBufferNodeName4EditPart.VISUAL_ID:
 			return getCentralBufferNodeName_5039Parser();
+		case InputPinName6EditPart.VISUAL_ID:
+			return getInputPinName_5047Parser();
+		case OutputPinName4EditPart.VISUAL_ID:
+			return getOutputPinName_5048Parser();
 		case OpaqueBehaviorNameEditPart.VISUAL_ID:
 			return getOpaqueBehaviorName_5029Parser();
 		case ActivityParameterNodeNameEditPart.VISUAL_ID:

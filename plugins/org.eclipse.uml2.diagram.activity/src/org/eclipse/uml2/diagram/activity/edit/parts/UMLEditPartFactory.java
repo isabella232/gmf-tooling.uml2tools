@@ -268,8 +268,14 @@ public class UMLEditPartFactory implements EditPartFactory {
 			case InputPin6EditPart.VISUAL_ID:
 				return new InputPin6EditPart(view);
 
+			case InputPinName6EditPart.VISUAL_ID:
+				return new InputPinName6EditPart(view);
+
 			case OutputPin4EditPart.VISUAL_ID:
 				return new OutputPin4EditPart(view);
+
+			case OutputPinName4EditPart.VISUAL_ID:
+				return new OutputPinName4EditPart(view);
 
 			case OpaqueBehaviorEditPart.VISUAL_ID:
 				return new OpaqueBehaviorEditPart(view);

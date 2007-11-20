@@ -318,6 +318,16 @@ public class UMLViewProvider extends AbstractViewProvider {
 						return null; // wrong container
 					}
 					break;
+				case InputPinName6EditPart.VISUAL_ID:
+					if (InputPin6EditPart.VISUAL_ID != UMLVisualIDRegistry.getVisualID(containerView) || containerView.getElement() != domainElement) {
+						return null; // wrong container
+					}
+					break;
+				case OutputPinName4EditPart.VISUAL_ID:
+					if (OutputPin4EditPart.VISUAL_ID != UMLVisualIDRegistry.getVisualID(containerView) || containerView.getElement() != domainElement) {
+						return null; // wrong container
+					}
+					break;
 				case OpaqueBehaviorNameEditPart.VISUAL_ID:
 					if (OpaqueBehaviorEditPart.VISUAL_ID != UMLVisualIDRegistry.getVisualID(containerView) || containerView.getElement() != domainElement) {
 						return null; // wrong container
@@ -539,8 +549,12 @@ public class UMLViewProvider extends AbstractViewProvider {
 			return CentralBufferNodeName4ViewFactory.class;
 		case InputPin6EditPart.VISUAL_ID:
 			return InputPin6ViewFactory.class;
+		case InputPinName6EditPart.VISUAL_ID:
+			return InputPinName6ViewFactory.class;
 		case OutputPin4EditPart.VISUAL_ID:
 			return OutputPin4ViewFactory.class;
+		case OutputPinName4EditPart.VISUAL_ID:
+			return OutputPinName4ViewFactory.class;
 		case OpaqueBehaviorEditPart.VISUAL_ID:
 			return OpaqueBehaviorViewFactory.class;
 		case OpaqueBehaviorNameEditPart.VISUAL_ID:

@@ -143,6 +143,12 @@ public class UMLVisualIDRegistry {
 	/**
 	 * @generated
 	 */
+	private static final UMLAbstractExpression Pin_3041_Constraint = UMLOCLFactory.getExpression("(not self.oclIsTypeOf(uml::InputPin)) and (not self.oclIsTypeOf(uml::OutputPin))",
+			UMLPackage.eINSTANCE.getPin());
+
+	/**
+	 * @generated
+	 */
 	private static final UMLAbstractExpression StructuredActivityNode_3046_Constraint = UMLOCLFactory.getExpression("not self.oclIsTypeOf(uml::LoopNode)", UMLPackage.eINSTANCE
 			.getStructuredActivityNode());
 
@@ -163,6 +169,12 @@ public class UMLVisualIDRegistry {
 	 */
 	private static final UMLAbstractExpression AcceptEventAction_3013_Constraint = UMLOCLFactory.getExpression(
 			"(not self.trigger->isEmpty()) and (self.trigger->forAll(tr | tr.event.oclIsKindOf(uml::TimeEvent)))", UMLPackage.eINSTANCE.getAcceptEventAction());
+
+	/**
+	 * @generated
+	 */
+	private static final UMLAbstractExpression Pin_3017_Constraint = UMLOCLFactory.getExpression("(not self.oclIsTypeOf(uml::InputPin)) and (not self.oclIsTypeOf(uml::OutputPin))",
+			UMLPackage.eINSTANCE.getPin());
 
 	/**
 	 * @generated
@@ -286,7 +298,7 @@ public class UMLVisualIDRegistry {
 			if (UMLPackage.eINSTANCE.getJoinNode().isSuperTypeOf(domainElement.eClass())) {
 				return JoinNodeEditPart.VISUAL_ID;
 			}
-			if (UMLPackage.eINSTANCE.getPin().isSuperTypeOf(domainElement.eClass())) {
+			if (UMLPackage.eINSTANCE.getPin().isSuperTypeOf(domainElement.eClass()) && evaluate(Pin_3041_Constraint, domainElement)) {
 				return PinEditPart.VISUAL_ID;
 			}
 			if (UMLPackage.eINSTANCE.getCreateObjectAction().isSuperTypeOf(domainElement.eClass())) {
@@ -432,7 +444,7 @@ public class UMLVisualIDRegistry {
 			if (UMLPackage.eINSTANCE.getFlowFinalNode().isSuperTypeOf(domainElement.eClass())) {
 				return FlowFinalNode2EditPart.VISUAL_ID;
 			}
-			if (UMLPackage.eINSTANCE.getPin().isSuperTypeOf(domainElement.eClass())) {
+			if (UMLPackage.eINSTANCE.getPin().isSuperTypeOf(domainElement.eClass()) && evaluate(Pin_3017_Constraint, domainElement)) {
 				return Pin2EditPart.VISUAL_ID;
 			}
 			if (UMLPackage.eINSTANCE.getCreateObjectAction().isSuperTypeOf(domainElement.eClass())) {
@@ -488,7 +500,7 @@ public class UMLVisualIDRegistry {
 			if (UMLPackage.eINSTANCE.getFlowFinalNode().isSuperTypeOf(domainElement.eClass())) {
 				return FlowFinalNode2EditPart.VISUAL_ID;
 			}
-			if (UMLPackage.eINSTANCE.getPin().isSuperTypeOf(domainElement.eClass())) {
+			if (UMLPackage.eINSTANCE.getPin().isSuperTypeOf(domainElement.eClass()) && evaluate(Pin_3017_Constraint, domainElement)) {
 				return Pin2EditPart.VISUAL_ID;
 			}
 			if (UMLPackage.eINSTANCE.getCreateObjectAction().isSuperTypeOf(domainElement.eClass())) {
@@ -544,7 +556,7 @@ public class UMLVisualIDRegistry {
 			if (UMLPackage.eINSTANCE.getFlowFinalNode().isSuperTypeOf(domainElement.eClass())) {
 				return FlowFinalNode2EditPart.VISUAL_ID;
 			}
-			if (UMLPackage.eINSTANCE.getPin().isSuperTypeOf(domainElement.eClass())) {
+			if (UMLPackage.eINSTANCE.getPin().isSuperTypeOf(domainElement.eClass()) && evaluate(Pin_3017_Constraint, domainElement)) {
 				return Pin2EditPart.VISUAL_ID;
 			}
 			if (UMLPackage.eINSTANCE.getCreateObjectAction().isSuperTypeOf(domainElement.eClass())) {
@@ -925,6 +937,16 @@ public class UMLVisualIDRegistry {
 				return true;
 			}
 			if (CentralBufferNodeName4EditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			break;
+		case InputPin6EditPart.VISUAL_ID:
+			if (InputPinName6EditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			break;
+		case OutputPin4EditPart.VISUAL_ID:
+			if (OutputPinName4EditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
 			break;
