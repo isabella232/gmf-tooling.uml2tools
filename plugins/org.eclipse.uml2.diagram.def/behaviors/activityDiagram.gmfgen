@@ -463,6 +463,26 @@
               href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/NamedElement/name"/>
         </modelFacet>
       </labels>
+      <labels
+          xsi:type="gmfgen:GenExternalNodeLabel"
+          visualID="5049"
+          editPartClassName="CentralBufferNodeOrderingEditPart"
+          itemSemanticEditPolicyClassName="CentralBufferNodeOrderingItemSemanticEditPolicy"
+          notationViewFactoryClassName="CentralBufferNodeOrderingViewFactory"
+          readOnly="true">
+        <diagramRunTimeClass
+            href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
+        <viewmap
+            xsi:type="gmfgen:FigureViewmap"
+            figureQualifiedClassName="org.eclipse.draw2d.Label">
+          <requiredPluginIDs>org.eclipse.gmf.runtime.draw2d.ui</requiredPluginIDs>
+        </viewmap>
+        <modelFacet
+            xsi:type="gmfgen:FeatureLabelModelFacet">
+          <metaFeatures
+              href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/ObjectNode/ordering"/>
+        </modelFacet>
+      </labels>
     </childNodes>
     <childNodes
         visualID="3029"
@@ -2401,6 +2421,26 @@
             xsi:type="gmfgen:FeatureLabelModelFacet">
           <metaFeatures
               href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/NamedElement/name"/>
+        </modelFacet>
+      </labels>
+      <labels
+          xsi:type="gmfgen:GenExternalNodeLabel"
+          visualID="5050"
+          editPartClassName="CentralBufferNodeOrdering2EditPart"
+          itemSemanticEditPolicyClassName="CentralBufferNodeOrdering2ItemSemanticEditPolicy"
+          notationViewFactoryClassName="CentralBufferNodeOrdering2ViewFactory"
+          readOnly="true">
+        <diagramRunTimeClass
+            href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
+        <viewmap
+            xsi:type="gmfgen:FigureViewmap"
+            figureQualifiedClassName="org.eclipse.draw2d.Label">
+          <requiredPluginIDs>org.eclipse.gmf.runtime.draw2d.ui</requiredPluginIDs>
+        </viewmap>
+        <modelFacet
+            xsi:type="gmfgen:FeatureLabelModelFacet">
+          <metaFeatures
+              href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/ObjectNode/ordering"/>
         </modelFacet>
       </labels>
     </childNodes>

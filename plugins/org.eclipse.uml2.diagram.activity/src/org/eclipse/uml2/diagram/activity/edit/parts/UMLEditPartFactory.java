@@ -85,6 +85,9 @@ public class UMLEditPartFactory implements EditPartFactory {
 			case CentralBufferNodeName2EditPart.VISUAL_ID:
 				return new CentralBufferNodeName2EditPart(view);
 
+			case CentralBufferNodeOrderingEditPart.VISUAL_ID:
+				return new CentralBufferNodeOrderingEditPart(view);
+
 			case OpaqueActionEditPart.VISUAL_ID:
 				return new OpaqueActionEditPart(view);
 
@@ -264,6 +267,9 @@ public class UMLEditPartFactory implements EditPartFactory {
 
 			case CentralBufferNodeName4EditPart.VISUAL_ID:
 				return new CentralBufferNodeName4EditPart(view);
+
+			case CentralBufferNodeOrdering2EditPart.VISUAL_ID:
+				return new CentralBufferNodeOrdering2EditPart(view);
 
 			case InputPin6EditPart.VISUAL_ID:
 				return new InputPin6EditPart(view);

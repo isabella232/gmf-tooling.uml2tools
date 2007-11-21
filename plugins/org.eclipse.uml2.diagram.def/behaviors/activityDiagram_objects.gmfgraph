@@ -159,6 +159,12 @@
       <accessors
           figure="//@figures.0/@descriptors.5/@actualFigure/@children.0"/>
     </descriptors>
+    <descriptors
+        name="ObjectNodeAttributesLabelFigre">
+      <actualFigure
+          xsi:type="gmfgraph:Label"
+          name="ObjectNodeAttributesLabel"/>
+    </descriptors>
   </figures>
   <nodes
       name="DataStoreNode"
@@ -225,4 +231,8 @@
       figure="DataStoreFigure"
       elementIcon="false"
       accessor="//@figures.0/@descriptors.1/@accessors.1"/>
+  <labels
+      name="ObjectNodeAttributesLabel"
+      figure="ObjectNodeAttributesLabelFigre"
+      elementIcon="false"/>
 </gmfgraph:Canvas>

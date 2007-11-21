@@ -29,6 +29,8 @@ import org.eclipse.uml2.diagram.activity.edit.parts.CentralBufferNodeName2EditPa
 import org.eclipse.uml2.diagram.activity.edit.parts.CentralBufferNodeName3EditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.CentralBufferNodeName4EditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.CentralBufferNodeNameEditPart;
+import org.eclipse.uml2.diagram.activity.edit.parts.CentralBufferNodeOrdering2EditPart;
+import org.eclipse.uml2.diagram.activity.edit.parts.CentralBufferNodeOrderingEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.ControlFlowName2EditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.ControlFlowNameEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.CreateObjectActionName2EditPart;
@@ -58,6 +60,7 @@ import org.eclipse.uml2.diagram.activity.edit.parts.PinName2EditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.PinNameEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.SendSignalActionNameEditPart;
 import org.eclipse.uml2.diagram.activity.parser.ActivityEdgeWeightParser;
+import org.eclipse.uml2.diagram.activity.parser.ObjectNodeAttributesParser;
 import org.eclipse.uml2.diagram.activity.parser.ObjectNodeInStateParser;
 import org.eclipse.uml2.diagram.activity.parser.ObjectNodeTypeParser;
 import org.eclipse.uml2.diagram.activity.parsers.MessageFormatParser;
@@ -227,6 +230,28 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 	 */
 	protected IParser createCentralBufferNodeName_5038Parser() {
 		return new ObjectNodeInStateParser();
+	}
+
+	/**
+	 * @generated
+	 */
+	private IParser centralBufferNodeOrdering_5049Parser;
+
+	/**
+	 * @generated
+	 */
+	private IParser getCentralBufferNodeOrdering_5049Parser() {
+		if (centralBufferNodeOrdering_5049Parser == null) {
+			centralBufferNodeOrdering_5049Parser = createCentralBufferNodeOrdering_5049Parser();
+		}
+		return centralBufferNodeOrdering_5049Parser;
+	}
+
+	/**
+	 * @generated NOT
+	 */
+	protected IParser createCentralBufferNodeOrdering_5049Parser() {
+		return new ObjectNodeAttributesParser();
 	}
 
 	/**
@@ -828,6 +853,28 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 	/**
 	 * @generated
 	 */
+	private IParser centralBufferNodeOrdering_5050Parser;
+
+	/**
+	 * @generated
+	 */
+	private IParser getCentralBufferNodeOrdering_5050Parser() {
+		if (centralBufferNodeOrdering_5050Parser == null) {
+			centralBufferNodeOrdering_5050Parser = createCentralBufferNodeOrdering_5050Parser();
+		}
+		return centralBufferNodeOrdering_5050Parser;
+	}
+
+	/**
+	 * @generated NOT
+	 */
+	protected IParser createCentralBufferNodeOrdering_5050Parser() {
+		return new ObjectNodeAttributesParser();
+	}
+
+	/**
+	 * @generated
+	 */
 	private IParser inputPinName_5047Parser;
 
 	/**
@@ -1152,6 +1199,8 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 			return getCentralBufferNodeName_5032Parser();
 		case CentralBufferNodeName2EditPart.VISUAL_ID:
 			return getCentralBufferNodeName_5038Parser();
+		case CentralBufferNodeOrderingEditPart.VISUAL_ID:
+			return getCentralBufferNodeOrdering_5049Parser();
 		case OpaqueActionNameEditPart.VISUAL_ID:
 			return getOpaqueActionName_5023Parser();
 		case OutputPinNameEditPart.VISUAL_ID:
@@ -1204,6 +1253,8 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 			return getCentralBufferNodeName_5033Parser();
 		case CentralBufferNodeName4EditPart.VISUAL_ID:
 			return getCentralBufferNodeName_5039Parser();
+		case CentralBufferNodeOrdering2EditPart.VISUAL_ID:
+			return getCentralBufferNodeOrdering_5050Parser();
 		case InputPinName6EditPart.VISUAL_ID:
 			return getInputPinName_5047Parser();
 		case OutputPinName4EditPart.VISUAL_ID:

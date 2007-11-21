@@ -743,6 +743,9 @@ public class UMLVisualIDRegistry {
 			if (CentralBufferNodeName2EditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
+			if (CentralBufferNodeOrderingEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
 			break;
 		case OpaqueActionEditPart.VISUAL_ID:
 			if (OpaqueActionNameEditPart.VISUAL_ID == nodeVisualID) {
@@ -937,6 +940,9 @@ public class UMLVisualIDRegistry {
 				return true;
 			}
 			if (CentralBufferNodeName4EditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			if (CentralBufferNodeOrdering2EditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
 			break;
