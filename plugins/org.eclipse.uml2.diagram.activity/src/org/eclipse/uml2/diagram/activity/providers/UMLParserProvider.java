@@ -39,6 +39,8 @@ import org.eclipse.uml2.diagram.activity.edit.parts.DataStoreNodeName2EditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.DataStoreNodeName3EditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.DataStoreNodeName4EditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.DataStoreNodeNameEditPart;
+import org.eclipse.uml2.diagram.activity.edit.parts.DataStoreNodeOrdering2EditPart;
+import org.eclipse.uml2.diagram.activity.edit.parts.DataStoreNodeOrderingEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.InputPinName2EditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.InputPinName3EditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.InputPinName4EditPart;
@@ -58,6 +60,8 @@ import org.eclipse.uml2.diagram.activity.edit.parts.OutputPinName4EditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.OutputPinNameEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.PinName2EditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.PinNameEditPart;
+import org.eclipse.uml2.diagram.activity.edit.parts.PinOrdering2EditPart;
+import org.eclipse.uml2.diagram.activity.edit.parts.PinOrderingEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.SendSignalActionNameEditPart;
 import org.eclipse.uml2.diagram.activity.parser.ActivityEdgeWeightParser;
 import org.eclipse.uml2.diagram.activity.parser.ObjectNodeAttributesParser;
@@ -186,6 +190,28 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 	 */
 	protected IParser createDataStoreNodeName_5036Parser() {
 		return new ObjectNodeInStateParser();
+	}
+
+	/**
+	 * @generated
+	 */
+	private IParser dataStoreNodeOrdering_5051Parser;
+
+	/**
+	 * @generated
+	 */
+	private IParser getDataStoreNodeOrdering_5051Parser() {
+		if (dataStoreNodeOrdering_5051Parser == null) {
+			dataStoreNodeOrdering_5051Parser = createDataStoreNodeOrdering_5051Parser();
+		}
+		return dataStoreNodeOrdering_5051Parser;
+	}
+
+	/**
+	 * @generated NOT
+	 */
+	protected IParser createDataStoreNodeOrdering_5051Parser() {
+		return new ObjectNodeAttributesParser();
 	}
 
 	/**
@@ -320,6 +346,28 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 	 */
 	protected IParser createPinName_5024Parser() {
 		return new ObjectNodeTypeParser();
+	}
+
+	/**
+	 * @generated
+	 */
+	private IParser pinOrdering_5052Parser;
+
+	/**
+	 * @generated
+	 */
+	private IParser getPinOrdering_5052Parser() {
+		if (pinOrdering_5052Parser == null) {
+			pinOrdering_5052Parser = createPinOrdering_5052Parser();
+		}
+		return pinOrdering_5052Parser;
+	}
+
+	/**
+	 * @generated NOT
+	 */
+	protected IParser createPinOrdering_5052Parser() {
+		return new ObjectNodeAttributesParser();
 	}
 
 	/**
@@ -669,6 +717,28 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 	/**
 	 * @generated
 	 */
+	private IParser pinOrdering_5053Parser;
+
+	/**
+	 * @generated
+	 */
+	private IParser getPinOrdering_5053Parser() {
+		if (pinOrdering_5053Parser == null) {
+			pinOrdering_5053Parser = createPinOrdering_5053Parser();
+		}
+		return pinOrdering_5053Parser;
+	}
+
+	/**
+	 * @generated NOT
+	 */
+	protected IParser createPinOrdering_5053Parser() {
+		return new ObjectNodeAttributesParser();
+	}
+
+	/**
+	 * @generated
+	 */
 	private IParser createObjectActionName_5017Parser;
 
 	/**
@@ -804,6 +874,28 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 	 */
 	protected IParser createDataStoreNodeName_5037Parser() {
 		return new ObjectNodeInStateParser();
+	}
+
+	/**
+	 * @generated
+	 */
+	private IParser dataStoreNodeOrdering_5054Parser;
+
+	/**
+	 * @generated
+	 */
+	private IParser getDataStoreNodeOrdering_5054Parser() {
+		if (dataStoreNodeOrdering_5054Parser == null) {
+			dataStoreNodeOrdering_5054Parser = createDataStoreNodeOrdering_5054Parser();
+		}
+		return dataStoreNodeOrdering_5054Parser;
+	}
+
+	/**
+	 * @generated NOT
+	 */
+	protected IParser createDataStoreNodeOrdering_5054Parser() {
+		return new ObjectNodeAttributesParser();
 	}
 
 	/**
@@ -1195,6 +1287,8 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 			return getDataStoreNodeName_5034Parser();
 		case DataStoreNodeName2EditPart.VISUAL_ID:
 			return getDataStoreNodeName_5036Parser();
+		case DataStoreNodeOrderingEditPart.VISUAL_ID:
+			return getDataStoreNodeOrdering_5051Parser();
 		case CentralBufferNodeNameEditPart.VISUAL_ID:
 			return getCentralBufferNodeName_5032Parser();
 		case CentralBufferNodeName2EditPart.VISUAL_ID:
@@ -1207,6 +1301,8 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 			return getOutputPinName_5003Parser();
 		case PinNameEditPart.VISUAL_ID:
 			return getPinName_5024Parser();
+		case PinOrderingEditPart.VISUAL_ID:
+			return getPinOrdering_5052Parser();
 		case CreateObjectActionNameEditPart.VISUAL_ID:
 			return getCreateObjectActionName_5025Parser();
 		case OutputPinName2EditPart.VISUAL_ID:
@@ -1237,6 +1333,8 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 			return getAcceptEventActionName_5043Parser();
 		case PinName2EditPart.VISUAL_ID:
 			return getPinName_5016Parser();
+		case PinOrdering2EditPart.VISUAL_ID:
+			return getPinOrdering_5053Parser();
 		case CreateObjectActionName2EditPart.VISUAL_ID:
 			return getCreateObjectActionName_5017Parser();
 		case CallBehaviorActionName2EditPart.VISUAL_ID:
@@ -1249,6 +1347,8 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 			return getDataStoreNodeName_5035Parser();
 		case DataStoreNodeName4EditPart.VISUAL_ID:
 			return getDataStoreNodeName_5037Parser();
+		case DataStoreNodeOrdering2EditPart.VISUAL_ID:
+			return getDataStoreNodeOrdering_5054Parser();
 		case CentralBufferNodeName3EditPart.VISUAL_ID:
 			return getCentralBufferNodeName_5033Parser();
 		case CentralBufferNodeName4EditPart.VISUAL_ID:

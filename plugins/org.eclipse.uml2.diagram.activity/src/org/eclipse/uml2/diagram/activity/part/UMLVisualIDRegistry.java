@@ -735,6 +735,9 @@ public class UMLVisualIDRegistry {
 			if (DataStoreNodeName2EditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
+			if (DataStoreNodeOrderingEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
 			break;
 		case CentralBufferNodeEditPart.VISUAL_ID:
 			if (CentralBufferNodeNameEditPart.VISUAL_ID == nodeVisualID) {
@@ -762,6 +765,9 @@ public class UMLVisualIDRegistry {
 			break;
 		case PinEditPart.VISUAL_ID:
 			if (PinNameEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			if (PinOrderingEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
 			break;
@@ -879,6 +885,9 @@ public class UMLVisualIDRegistry {
 			if (PinName2EditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
+			if (PinOrdering2EditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
 			break;
 		case CreateObjectAction2EditPart.VISUAL_ID:
 			if (CreateObjectActionName2EditPart.VISUAL_ID == nodeVisualID) {
@@ -932,6 +941,9 @@ public class UMLVisualIDRegistry {
 				return true;
 			}
 			if (DataStoreNodeName4EditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			if (DataStoreNodeOrdering2EditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
 			break;

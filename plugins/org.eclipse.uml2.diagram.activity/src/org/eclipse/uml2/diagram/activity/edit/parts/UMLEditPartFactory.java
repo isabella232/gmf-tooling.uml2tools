@@ -76,6 +76,9 @@ public class UMLEditPartFactory implements EditPartFactory {
 			case DataStoreNodeName2EditPart.VISUAL_ID:
 				return new DataStoreNodeName2EditPart(view);
 
+			case DataStoreNodeOrderingEditPart.VISUAL_ID:
+				return new DataStoreNodeOrderingEditPart(view);
+
 			case CentralBufferNodeEditPart.VISUAL_ID:
 				return new CentralBufferNodeEditPart(view);
 
@@ -114,6 +117,9 @@ public class UMLEditPartFactory implements EditPartFactory {
 
 			case PinNameEditPart.VISUAL_ID:
 				return new PinNameEditPart(view);
+
+			case PinOrderingEditPart.VISUAL_ID:
+				return new PinOrderingEditPart(view);
 
 			case CreateObjectActionEditPart.VISUAL_ID:
 				return new CreateObjectActionEditPart(view);
@@ -220,6 +226,9 @@ public class UMLEditPartFactory implements EditPartFactory {
 			case PinName2EditPart.VISUAL_ID:
 				return new PinName2EditPart(view);
 
+			case PinOrdering2EditPart.VISUAL_ID:
+				return new PinOrdering2EditPart(view);
+
 			case CreateObjectAction2EditPart.VISUAL_ID:
 				return new CreateObjectAction2EditPart(view);
 
@@ -258,6 +267,9 @@ public class UMLEditPartFactory implements EditPartFactory {
 
 			case DataStoreNodeName4EditPart.VISUAL_ID:
 				return new DataStoreNodeName4EditPart(view);
+
+			case DataStoreNodeOrdering2EditPart.VISUAL_ID:
+				return new DataStoreNodeOrdering2EditPart(view);
 
 			case CentralBufferNode2EditPart.VISUAL_ID:
 				return new CentralBufferNode2EditPart(view);
