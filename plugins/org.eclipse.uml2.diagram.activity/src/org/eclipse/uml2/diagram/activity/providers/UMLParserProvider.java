@@ -47,6 +47,12 @@ import org.eclipse.uml2.diagram.activity.edit.parts.InputPinName4EditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.InputPinName5EditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.InputPinName6EditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.InputPinNameEditPart;
+import org.eclipse.uml2.diagram.activity.edit.parts.InputPinOrdering2EditPart;
+import org.eclipse.uml2.diagram.activity.edit.parts.InputPinOrdering3EditPart;
+import org.eclipse.uml2.diagram.activity.edit.parts.InputPinOrdering4EditPart;
+import org.eclipse.uml2.diagram.activity.edit.parts.InputPinOrdering5EditPart;
+import org.eclipse.uml2.diagram.activity.edit.parts.InputPinOrdering6EditPart;
+import org.eclipse.uml2.diagram.activity.edit.parts.InputPinOrderingEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.LiteralString2EditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.LiteralStringEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.ObjectFlowName2EditPart;
@@ -58,6 +64,10 @@ import org.eclipse.uml2.diagram.activity.edit.parts.OutputPinName2EditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.OutputPinName3EditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.OutputPinName4EditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.OutputPinNameEditPart;
+import org.eclipse.uml2.diagram.activity.edit.parts.OutputPinOrdering2EditPart;
+import org.eclipse.uml2.diagram.activity.edit.parts.OutputPinOrdering3EditPart;
+import org.eclipse.uml2.diagram.activity.edit.parts.OutputPinOrdering4EditPart;
+import org.eclipse.uml2.diagram.activity.edit.parts.OutputPinOrderingEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.PinName2EditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.PinNameEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.PinOrdering2EditPart;
@@ -329,6 +339,28 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 	/**
 	 * @generated
 	 */
+	private IParser outputPinOrdering_5055Parser;
+
+	/**
+	 * @generated
+	 */
+	private IParser getOutputPinOrdering_5055Parser() {
+		if (outputPinOrdering_5055Parser == null) {
+			outputPinOrdering_5055Parser = createOutputPinOrdering_5055Parser();
+		}
+		return outputPinOrdering_5055Parser;
+	}
+
+	/**
+	 * @generated NOT
+	 */
+	protected IParser createOutputPinOrdering_5055Parser() {
+		return new ObjectNodeAttributesParser();
+	}
+
+	/**
+	 * @generated
+	 */
 	private IParser pinName_5024Parser;
 
 	/**
@@ -419,6 +451,28 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 	/**
 	 * @generated
 	 */
+	private IParser outputPinOrdering_5056Parser;
+
+	/**
+	 * @generated
+	 */
+	private IParser getOutputPinOrdering_5056Parser() {
+		if (outputPinOrdering_5056Parser == null) {
+			outputPinOrdering_5056Parser = createOutputPinOrdering_5056Parser();
+		}
+		return outputPinOrdering_5056Parser;
+	}
+
+	/**
+	 * @generated NOT
+	 */
+	protected IParser createOutputPinOrdering_5056Parser() {
+		return new ObjectNodeAttributesParser();
+	}
+
+	/**
+	 * @generated
+	 */
 	private IParser addStructuralFeatureValueActionName_5026Parser;
 
 	/**
@@ -465,6 +519,28 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 	/**
 	 * @generated
 	 */
+	private IParser inputPinOrdering_5057Parser;
+
+	/**
+	 * @generated
+	 */
+	private IParser getInputPinOrdering_5057Parser() {
+		if (inputPinOrdering_5057Parser == null) {
+			inputPinOrdering_5057Parser = createInputPinOrdering_5057Parser();
+		}
+		return inputPinOrdering_5057Parser;
+	}
+
+	/**
+	 * @generated NOT
+	 */
+	protected IParser createInputPinOrdering_5057Parser() {
+		return new ObjectNodeAttributesParser();
+	}
+
+	/**
+	 * @generated
+	 */
 	private IParser inputPinName_5007Parser;
 
 	/**
@@ -487,6 +563,28 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 	/**
 	 * @generated
 	 */
+	private IParser inputPinOrdering_5058Parser;
+
+	/**
+	 * @generated
+	 */
+	private IParser getInputPinOrdering_5058Parser() {
+		if (inputPinOrdering_5058Parser == null) {
+			inputPinOrdering_5058Parser = createInputPinOrdering_5058Parser();
+		}
+		return inputPinOrdering_5058Parser;
+	}
+
+	/**
+	 * @generated NOT
+	 */
+	protected IParser createInputPinOrdering_5058Parser() {
+		return new ObjectNodeAttributesParser();
+	}
+
+	/**
+	 * @generated
+	 */
 	private IParser inputPinName_5008Parser;
 
 	/**
@@ -504,6 +602,28 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 	 */
 	protected IParser createInputPinName_5008Parser() {
 		return new ObjectNodeTypeParser();
+	}
+
+	/**
+	 * @generated
+	 */
+	private IParser inputPinOrdering_5059Parser;
+
+	/**
+	 * @generated
+	 */
+	private IParser getInputPinOrdering_5059Parser() {
+		if (inputPinOrdering_5059Parser == null) {
+			inputPinOrdering_5059Parser = createInputPinOrdering_5059Parser();
+		}
+		return inputPinOrdering_5059Parser;
+	}
+
+	/**
+	 * @generated NOT
+	 */
+	protected IParser createInputPinOrdering_5059Parser() {
+		return new ObjectNodeAttributesParser();
 	}
 
 	/**
@@ -555,6 +675,28 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 	/**
 	 * @generated
 	 */
+	private IParser outputPinOrdering_5060Parser;
+
+	/**
+	 * @generated
+	 */
+	private IParser getOutputPinOrdering_5060Parser() {
+		if (outputPinOrdering_5060Parser == null) {
+			outputPinOrdering_5060Parser = createOutputPinOrdering_5060Parser();
+		}
+		return outputPinOrdering_5060Parser;
+	}
+
+	/**
+	 * @generated NOT
+	 */
+	protected IParser createOutputPinOrdering_5060Parser() {
+		return new ObjectNodeAttributesParser();
+	}
+
+	/**
+	 * @generated
+	 */
 	private IParser inputPinName_5011Parser;
 
 	/**
@@ -572,6 +714,28 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 	 */
 	protected IParser createInputPinName_5011Parser() {
 		return new ObjectNodeTypeParser();
+	}
+
+	/**
+	 * @generated
+	 */
+	private IParser inputPinOrdering_5061Parser;
+
+	/**
+	 * @generated
+	 */
+	private IParser getInputPinOrdering_5061Parser() {
+		if (inputPinOrdering_5061Parser == null) {
+			inputPinOrdering_5061Parser = createInputPinOrdering_5061Parser();
+		}
+		return inputPinOrdering_5061Parser;
+	}
+
+	/**
+	 * @generated NOT
+	 */
+	protected IParser createInputPinOrdering_5061Parser() {
+		return new ObjectNodeAttributesParser();
 	}
 
 	/**
@@ -618,6 +782,28 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 	 */
 	protected IParser createInputPinName_5013Parser() {
 		return new ObjectNodeTypeParser();
+	}
+
+	/**
+	 * @generated
+	 */
+	private IParser inputPinOrdering_5062Parser;
+
+	/**
+	 * @generated
+	 */
+	private IParser getInputPinOrdering_5062Parser() {
+		if (inputPinOrdering_5062Parser == null) {
+			inputPinOrdering_5062Parser = createInputPinOrdering_5062Parser();
+		}
+		return inputPinOrdering_5062Parser;
+	}
+
+	/**
+	 * @generated NOT
+	 */
+	protected IParser createInputPinOrdering_5062Parser() {
+		return new ObjectNodeAttributesParser();
 	}
 
 	/**
@@ -991,6 +1177,28 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 	/**
 	 * @generated
 	 */
+	private IParser inputPinOrdering_5063Parser;
+
+	/**
+	 * @generated
+	 */
+	private IParser getInputPinOrdering_5063Parser() {
+		if (inputPinOrdering_5063Parser == null) {
+			inputPinOrdering_5063Parser = createInputPinOrdering_5063Parser();
+		}
+		return inputPinOrdering_5063Parser;
+	}
+
+	/**
+	 * @generated NOT
+	 */
+	protected IParser createInputPinOrdering_5063Parser() {
+		return new ObjectNodeAttributesParser();
+	}
+
+	/**
+	 * @generated
+	 */
 	private IParser outputPinName_5048Parser;
 
 	/**
@@ -1010,6 +1218,28 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 		EAttribute[] features = new EAttribute[] { UMLPackage.eINSTANCE.getNamedElement_Name(), };
 		MessageFormatParser parser = new MessageFormatParser(features);
 		return parser;
+	}
+
+	/**
+	 * @generated
+	 */
+	private IParser outputPinOrdering_5064Parser;
+
+	/**
+	 * @generated
+	 */
+	private IParser getOutputPinOrdering_5064Parser() {
+		if (outputPinOrdering_5064Parser == null) {
+			outputPinOrdering_5064Parser = createOutputPinOrdering_5064Parser();
+		}
+		return outputPinOrdering_5064Parser;
+	}
+
+	/**
+	 * @generated NOT
+	 */
+	protected IParser createOutputPinOrdering_5064Parser() {
+		return new ObjectNodeAttributesParser();
 	}
 
 	/**
@@ -1299,6 +1529,8 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 			return getOpaqueActionName_5023Parser();
 		case OutputPinNameEditPart.VISUAL_ID:
 			return getOutputPinName_5003Parser();
+		case OutputPinOrderingEditPart.VISUAL_ID:
+			return getOutputPinOrdering_5055Parser();
 		case PinNameEditPart.VISUAL_ID:
 			return getPinName_5024Parser();
 		case PinOrderingEditPart.VISUAL_ID:
@@ -1307,24 +1539,38 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 			return getCreateObjectActionName_5025Parser();
 		case OutputPinName2EditPart.VISUAL_ID:
 			return getOutputPinName_5004Parser();
+		case OutputPinOrdering2EditPart.VISUAL_ID:
+			return getOutputPinOrdering_5056Parser();
 		case AddStructuralFeatureValueActionNameEditPart.VISUAL_ID:
 			return getAddStructuralFeatureValueActionName_5026Parser();
 		case InputPinNameEditPart.VISUAL_ID:
 			return getInputPinName_5006Parser();
+		case InputPinOrderingEditPart.VISUAL_ID:
+			return getInputPinOrdering_5057Parser();
 		case InputPinName2EditPart.VISUAL_ID:
 			return getInputPinName_5007Parser();
+		case InputPinOrdering2EditPart.VISUAL_ID:
+			return getInputPinOrdering_5058Parser();
 		case InputPinName3EditPart.VISUAL_ID:
 			return getInputPinName_5008Parser();
+		case InputPinOrdering3EditPart.VISUAL_ID:
+			return getInputPinOrdering_5059Parser();
 		case CallBehaviorActionNameEditPart.VISUAL_ID:
 			return getCallBehaviorActionName_5027Parser();
 		case OutputPinName3EditPart.VISUAL_ID:
 			return getOutputPinName_5010Parser();
+		case OutputPinOrdering3EditPart.VISUAL_ID:
+			return getOutputPinOrdering_5060Parser();
 		case InputPinName4EditPart.VISUAL_ID:
 			return getInputPinName_5011Parser();
+		case InputPinOrdering4EditPart.VISUAL_ID:
+			return getInputPinOrdering_5061Parser();
 		case CallOperationActionNameEditPart.VISUAL_ID:
 			return getCallOperationActionName_5028Parser();
 		case InputPinName5EditPart.VISUAL_ID:
 			return getInputPinName_5013Parser();
+		case InputPinOrdering5EditPart.VISUAL_ID:
+			return getInputPinOrdering_5062Parser();
 		case OpaqueActionName2EditPart.VISUAL_ID:
 			return getOpaqueActionName_5015Parser();
 		case AcceptEventActionName2EditPart.VISUAL_ID:
@@ -1357,8 +1603,12 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 			return getCentralBufferNodeOrdering_5050Parser();
 		case InputPinName6EditPart.VISUAL_ID:
 			return getInputPinName_5047Parser();
+		case InputPinOrdering6EditPart.VISUAL_ID:
+			return getInputPinOrdering_5063Parser();
 		case OutputPinName4EditPart.VISUAL_ID:
 			return getOutputPinName_5048Parser();
+		case OutputPinOrdering4EditPart.VISUAL_ID:
+			return getOutputPinOrdering_5064Parser();
 		case OpaqueBehaviorNameEditPart.VISUAL_ID:
 			return getOpaqueBehaviorName_5029Parser();
 		case ActivityParameterNodeNameEditPart.VISUAL_ID:

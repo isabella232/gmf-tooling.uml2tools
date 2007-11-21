@@ -630,6 +630,26 @@
               href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/NamedElement/name"/>
         </modelFacet>
       </labels>
+      <labels
+          xsi:type="gmfgen:GenExternalNodeLabel"
+          visualID="5055"
+          editPartClassName="OutputPinOrderingEditPart"
+          itemSemanticEditPolicyClassName="OutputPinOrderingItemSemanticEditPolicy"
+          notationViewFactoryClassName="OutputPinOrderingViewFactory"
+          readOnly="true">
+        <diagramRunTimeClass
+            href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
+        <viewmap
+            xsi:type="gmfgen:FigureViewmap"
+            figureQualifiedClassName="org.eclipse.draw2d.Label">
+          <requiredPluginIDs>org.eclipse.gmf.runtime.draw2d.ui</requiredPluginIDs>
+        </viewmap>
+        <modelFacet
+            xsi:type="gmfgen:FeatureLabelModelFacet">
+          <metaFeatures
+              href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/ObjectNode/ordering"/>
+        </modelFacet>
+      </labels>
     </childNodes>
     <childNodes
         visualID="3038"
@@ -956,6 +976,26 @@
               href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/NamedElement/name"/>
         </modelFacet>
       </labels>
+      <labels
+          xsi:type="gmfgen:GenExternalNodeLabel"
+          visualID="5056"
+          editPartClassName="OutputPinOrdering2EditPart"
+          itemSemanticEditPolicyClassName="OutputPinOrdering2ItemSemanticEditPolicy"
+          notationViewFactoryClassName="OutputPinOrdering2ViewFactory"
+          readOnly="true">
+        <diagramRunTimeClass
+            href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
+        <viewmap
+            xsi:type="gmfgen:FigureViewmap"
+            figureQualifiedClassName="org.eclipse.draw2d.Label">
+          <requiredPluginIDs>org.eclipse.gmf.runtime.draw2d.ui</requiredPluginIDs>
+        </viewmap>
+        <modelFacet
+            xsi:type="gmfgen:FeatureLabelModelFacet">
+          <metaFeatures
+              href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/ObjectNode/ordering"/>
+        </modelFacet>
+      </labels>
     </childNodes>
     <childNodes
         visualID="3043"
@@ -1083,6 +1123,26 @@
               href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/NamedElement/name"/>
         </modelFacet>
       </labels>
+      <labels
+          xsi:type="gmfgen:GenExternalNodeLabel"
+          visualID="5057"
+          editPartClassName="InputPinOrderingEditPart"
+          itemSemanticEditPolicyClassName="InputPinOrderingItemSemanticEditPolicy"
+          notationViewFactoryClassName="InputPinOrderingViewFactory"
+          readOnly="true">
+        <diagramRunTimeClass
+            href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
+        <viewmap
+            xsi:type="gmfgen:FigureViewmap"
+            figureQualifiedClassName="org.eclipse.draw2d.Label">
+          <requiredPluginIDs>org.eclipse.gmf.runtime.draw2d.ui</requiredPluginIDs>
+        </viewmap>
+        <modelFacet
+            xsi:type="gmfgen:FeatureLabelModelFacet">
+          <metaFeatures
+              href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/ObjectNode/ordering"/>
+        </modelFacet>
+      </labels>
     </childNodes>
     <childNodes
         xsi:type="gmfgen:GenChildSideAffixedNode"
@@ -1150,6 +1210,26 @@
               href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/NamedElement/name"/>
         </modelFacet>
       </labels>
+      <labels
+          xsi:type="gmfgen:GenExternalNodeLabel"
+          visualID="5058"
+          editPartClassName="InputPinOrdering2EditPart"
+          itemSemanticEditPolicyClassName="InputPinOrdering2ItemSemanticEditPolicy"
+          notationViewFactoryClassName="InputPinOrdering2ViewFactory"
+          readOnly="true">
+        <diagramRunTimeClass
+            href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
+        <viewmap
+            xsi:type="gmfgen:FigureViewmap"
+            figureQualifiedClassName="org.eclipse.draw2d.Label">
+          <requiredPluginIDs>org.eclipse.gmf.runtime.draw2d.ui</requiredPluginIDs>
+        </viewmap>
+        <modelFacet
+            xsi:type="gmfgen:FeatureLabelModelFacet">
+          <metaFeatures
+              href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/ObjectNode/ordering"/>
+        </modelFacet>
+      </labels>
     </childNodes>
     <childNodes
         xsi:type="gmfgen:GenChildSideAffixedNode"
@@ -1215,6 +1295,26 @@
             xsi:type="gmfgen:FeatureLabelModelFacet">
           <metaFeatures
               href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/NamedElement/name"/>
+        </modelFacet>
+      </labels>
+      <labels
+          xsi:type="gmfgen:GenExternalNodeLabel"
+          visualID="5059"
+          editPartClassName="InputPinOrdering3EditPart"
+          itemSemanticEditPolicyClassName="InputPinOrdering3ItemSemanticEditPolicy"
+          notationViewFactoryClassName="InputPinOrdering3ViewFactory"
+          readOnly="true">
+        <diagramRunTimeClass
+            href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
+        <viewmap
+            xsi:type="gmfgen:FigureViewmap"
+            figureQualifiedClassName="org.eclipse.draw2d.Label">
+          <requiredPluginIDs>org.eclipse.gmf.runtime.draw2d.ui</requiredPluginIDs>
+        </viewmap>
+        <modelFacet
+            xsi:type="gmfgen:FeatureLabelModelFacet">
+          <metaFeatures
+              href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/ObjectNode/ordering"/>
         </modelFacet>
       </labels>
     </childNodes>
@@ -1345,6 +1445,26 @@
               href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/NamedElement/name"/>
         </modelFacet>
       </labels>
+      <labels
+          xsi:type="gmfgen:GenExternalNodeLabel"
+          visualID="5060"
+          editPartClassName="OutputPinOrdering3EditPart"
+          itemSemanticEditPolicyClassName="OutputPinOrdering3ItemSemanticEditPolicy"
+          notationViewFactoryClassName="OutputPinOrdering3ViewFactory"
+          readOnly="true">
+        <diagramRunTimeClass
+            href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
+        <viewmap
+            xsi:type="gmfgen:FigureViewmap"
+            figureQualifiedClassName="org.eclipse.draw2d.Label">
+          <requiredPluginIDs>org.eclipse.gmf.runtime.draw2d.ui</requiredPluginIDs>
+        </viewmap>
+        <modelFacet
+            xsi:type="gmfgen:FeatureLabelModelFacet">
+          <metaFeatures
+              href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/ObjectNode/ordering"/>
+        </modelFacet>
+      </labels>
     </childNodes>
     <childNodes
         xsi:type="gmfgen:GenChildSideAffixedNode"
@@ -1410,6 +1530,26 @@
             xsi:type="gmfgen:FeatureLabelModelFacet">
           <metaFeatures
               href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/NamedElement/name"/>
+        </modelFacet>
+      </labels>
+      <labels
+          xsi:type="gmfgen:GenExternalNodeLabel"
+          visualID="5061"
+          editPartClassName="InputPinOrdering4EditPart"
+          itemSemanticEditPolicyClassName="InputPinOrdering4ItemSemanticEditPolicy"
+          notationViewFactoryClassName="InputPinOrdering4ViewFactory"
+          readOnly="true">
+        <diagramRunTimeClass
+            href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
+        <viewmap
+            xsi:type="gmfgen:FigureViewmap"
+            figureQualifiedClassName="org.eclipse.draw2d.Label">
+          <requiredPluginIDs>org.eclipse.gmf.runtime.draw2d.ui</requiredPluginIDs>
+        </viewmap>
+        <modelFacet
+            xsi:type="gmfgen:FeatureLabelModelFacet">
+          <metaFeatures
+              href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/ObjectNode/ordering"/>
         </modelFacet>
       </labels>
     </childNodes>
@@ -1538,6 +1678,26 @@
             xsi:type="gmfgen:FeatureLabelModelFacet">
           <metaFeatures
               href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/NamedElement/name"/>
+        </modelFacet>
+      </labels>
+      <labels
+          xsi:type="gmfgen:GenExternalNodeLabel"
+          visualID="5062"
+          editPartClassName="InputPinOrdering5EditPart"
+          itemSemanticEditPolicyClassName="InputPinOrdering5ItemSemanticEditPolicy"
+          notationViewFactoryClassName="InputPinOrdering5ViewFactory"
+          readOnly="true">
+        <diagramRunTimeClass
+            href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
+        <viewmap
+            xsi:type="gmfgen:FigureViewmap"
+            figureQualifiedClassName="org.eclipse.draw2d.Label">
+          <requiredPluginIDs>org.eclipse.gmf.runtime.draw2d.ui</requiredPluginIDs>
+        </viewmap>
+        <modelFacet
+            xsi:type="gmfgen:FeatureLabelModelFacet">
+          <metaFeatures
+              href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/ObjectNode/ordering"/>
         </modelFacet>
       </labels>
     </childNodes>
@@ -2578,6 +2738,26 @@
               href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/NamedElement/name"/>
         </modelFacet>
       </labels>
+      <labels
+          xsi:type="gmfgen:GenExternalNodeLabel"
+          visualID="5063"
+          editPartClassName="InputPinOrdering6EditPart"
+          itemSemanticEditPolicyClassName="InputPinOrdering6ItemSemanticEditPolicy"
+          notationViewFactoryClassName="InputPinOrdering6ViewFactory"
+          readOnly="true">
+        <diagramRunTimeClass
+            href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
+        <viewmap
+            xsi:type="gmfgen:FigureViewmap"
+            figureQualifiedClassName="org.eclipse.draw2d.Label">
+          <requiredPluginIDs>org.eclipse.gmf.runtime.draw2d.ui</requiredPluginIDs>
+        </viewmap>
+        <modelFacet
+            xsi:type="gmfgen:FeatureLabelModelFacet">
+          <metaFeatures
+              href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/ObjectNode/ordering"/>
+        </modelFacet>
+      </labels>
     </childNodes>
     <childNodes
         visualID="3055"
@@ -2631,6 +2811,26 @@
             xsi:type="gmfgen:FeatureLabelModelFacet">
           <metaFeatures
               href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/NamedElement/name"/>
+        </modelFacet>
+      </labels>
+      <labels
+          xsi:type="gmfgen:GenExternalNodeLabel"
+          visualID="5064"
+          editPartClassName="OutputPinOrdering4EditPart"
+          itemSemanticEditPolicyClassName="OutputPinOrdering4ItemSemanticEditPolicy"
+          notationViewFactoryClassName="OutputPinOrdering4ViewFactory"
+          readOnly="true">
+        <diagramRunTimeClass
+            href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
+        <viewmap
+            xsi:type="gmfgen:FigureViewmap"
+            figureQualifiedClassName="org.eclipse.draw2d.Label">
+          <requiredPluginIDs>org.eclipse.gmf.runtime.draw2d.ui</requiredPluginIDs>
+        </viewmap>
+        <modelFacet
+            xsi:type="gmfgen:FeatureLabelModelFacet">
+          <metaFeatures
+              href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/ObjectNode/ordering"/>
         </modelFacet>
       </labels>
     </childNodes>

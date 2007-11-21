@@ -112,7 +112,7 @@ public class InputPinEditPart extends BorderedBorderItemEditPart {
 	 * @generated
 	 */
 	protected void addBorderItem(IFigure borderItemContainer, IBorderItemEditPart borderItemEditPart) {
-		if (borderItemEditPart instanceof InputPinNameEditPart) {
+		if (borderItemEditPart instanceof InputPinNameEditPart || borderItemEditPart instanceof InputPinOrderingEditPart) {
 			BorderItemLocator locator = new BorderItemLocator(getMainFigure(), PositionConstants.SOUTH);
 			locator.setBorderItemOffset(new Dimension(-20, -20));
 			borderItemContainer.add(borderItemEditPart.getFigure(), locator);

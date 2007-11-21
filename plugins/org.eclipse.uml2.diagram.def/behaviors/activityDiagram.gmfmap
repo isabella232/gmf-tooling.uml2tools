@@ -690,6 +690,14 @@
                 <features
                     href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//NamedElement/name"/>
               </labelMappings>
+              <labelMappings
+                  xsi:type="gmfmap:FeatureLabelMapping"
+                  readOnly="true">
+                <diagramLabel
+                    href="activityDiagram_objects.gmfgraph#ObjectNodeAttributesLabel"/>
+                <features
+                    href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//ObjectNode/ordering"/>
+              </labelMappings>
               <tool
                   xsi:type="gmftool:CreationTool"
                   href="activityDiagram.gmftool#//@palette/@tools.4/@tools.2/@tools.1"/>
@@ -720,6 +728,14 @@
                     href="activityDiagram_objects.gmfgraph#StandalonePinNode_name"/>
                 <features
                     href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//NamedElement/name"/>
+              </labelMappings>
+              <labelMappings
+                  xsi:type="gmfmap:FeatureLabelMapping"
+                  readOnly="true">
+                <diagramLabel
+                    href="activityDiagram_objects.gmfgraph#ObjectNodeAttributesLabel"/>
+                <features
+                    href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//ObjectNode/ordering"/>
               </labelMappings>
               <tool
                   xsi:type="gmftool:CreationTool"
