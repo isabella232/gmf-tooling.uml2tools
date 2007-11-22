@@ -18,6 +18,7 @@ import org.eclipse.gmf.runtime.emf.type.core.commands.SetValueCommand;
 import org.eclipse.gmf.runtime.emf.type.core.requests.SetRequest;
 import org.eclipse.gmf.runtime.emf.ui.services.parser.ISemanticParser;
 import org.eclipse.jface.text.contentassist.IContentAssistProcessor;
+import org.eclipse.uml2.diagram.csd.part.CustomMessages;
 import org.eclipse.uml2.diagram.parser.assist.FixedSetCompletionProcessor;
 import org.eclipse.uml2.uml.Association;
 import org.eclipse.uml2.uml.Connector;
@@ -26,7 +27,7 @@ import org.eclipse.uml2.uml.UMLPackage;
 
 
 public class ConnectorNameParser implements ISemanticParser {
-	private static final MessageFormat CONNECTOR_NAME_FORMAT = new MessageFormat("{0}:{1}"); 
+	private static final MessageFormat CONNECTOR_NAME_FORMAT = new MessageFormat("{0}:{1}");  //$NON-NLS-1$
 
 	public boolean areSemanticElementsAffected(EObject listener, Object notification) {
 		if (notification instanceof Notification) {
@@ -42,7 +43,7 @@ public class ConnectorNameParser implements ISemanticParser {
 
 	public IContentAssistProcessor getCompletionProcessor(IAdaptable subject) {
 		Connector c = doAdapt(subject);
-		String name = c.getName() == null ? "" : c.getName();
+		String name = c.getName() == null ? "" : c.getName(); //$NON-NLS-1$
 		List<Association> types = getTypeProposals(c);
 		LinkedList<String> names = new LinkedList<String>();
 		for (Type next : types) {
@@ -55,7 +56,7 @@ public class ConnectorNameParser implements ISemanticParser {
 
 	public String getEditString(IAdaptable element, int flags) {
 		Connector c = doAdapt(element);
-		String name = c.getName() == null ? "" : c.getName();
+		String name = c.getName() == null ? "" : c.getName(); //$NON-NLS-1$
 		if (c.getType() == null) {
 			return name;
 		}
@@ -72,17 +73,17 @@ public class ConnectorNameParser implements ISemanticParser {
 			return UnexecutableCommand.INSTANCE;
 		}
 		Association oldType = c.getType();
-		String oldName = c.getName() == null ? "" : c.getName();
+		String oldName = c.getName() == null ? "" : c.getName(); //$NON-NLS-1$
 		List<Association> types = getTypeProposals(c);
 		try {
 			Object[] parsed;
-			if (!newString.contains(":")) {
-				parsed = new String[]{newString, ""};
+			if (!newString.contains(":")) { //$NON-NLS-1$
+				parsed = new String[]{newString, ""}; //$NON-NLS-1$
 			} else {
 				parsed = CONNECTOR_NAME_FORMAT.parse(newString);
 			}
 			String newName = ((String) parsed[0]).trim();
-			CompositeCommand cc = new CompositeCommand("");
+			CompositeCommand cc = new CompositeCommand(CustomMessages.ConnectorNameParser_connector_name_parser_command);
 			if (!oldName.equals(newName)) {
 				cc.add(new SetValueCommand(new SetRequest(c, UMLPackage.eINSTANCE.getNamedElement_Name(), newName)));
 			}
@@ -93,7 +94,7 @@ public class ConnectorNameParser implements ISemanticParser {
 					break;
 				}
 			}
-			if (newType.equals("") && !newType.equals(oldType)) {
+			if (newType.equals("") && !newType.equals(oldType)) { //$NON-NLS-1$
 				cc.add(new SetValueCommand(new SetRequest(c, UMLPackage.eINSTANCE.getConnector_Type(), null)));
 			}
 			return cc;

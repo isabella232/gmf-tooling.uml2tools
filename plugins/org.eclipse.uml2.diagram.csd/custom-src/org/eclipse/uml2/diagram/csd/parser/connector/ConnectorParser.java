@@ -8,6 +8,7 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.uml2.diagram.common.parser.association.end.AssociationEndToString;
+import org.eclipse.uml2.diagram.csd.part.CustomMessages;
 import org.eclipse.uml2.diagram.parser.ApplyStrategy;
 import org.eclipse.uml2.diagram.parser.BasicApplyStrategy;
 import org.eclipse.uml2.diagram.parser.ExternalParserBase;
@@ -71,7 +72,7 @@ public class ConnectorParser extends SemanticParserAdapter {
 		}
 		@Override
 		public void parse(EObject target, String text) throws ExternalParserException {
-			throw new ExternalParserException("Properties of the Type of the Connector are not intented to be modified");
+			throw new ExternalParserException(CustomMessages.ConnectorParser_parsing_is_not_supported_exception);
 		}
 	};
 	

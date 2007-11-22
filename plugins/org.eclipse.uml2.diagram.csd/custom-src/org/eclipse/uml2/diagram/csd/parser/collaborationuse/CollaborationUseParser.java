@@ -29,6 +29,7 @@ import org.eclipse.gmf.runtime.emf.type.core.commands.SetValueCommand;
 import org.eclipse.gmf.runtime.emf.type.core.requests.SetRequest;
 import org.eclipse.gmf.runtime.emf.ui.services.parser.ISemanticParser;
 import org.eclipse.jface.text.contentassist.IContentAssistProcessor;
+import org.eclipse.uml2.diagram.csd.part.CustomMessages;
 import org.eclipse.uml2.diagram.parser.assist.FixedSetCompletionProcessor;
 import org.eclipse.uml2.uml.Collaboration;
 import org.eclipse.uml2.uml.CollaborationUse;
@@ -37,7 +38,7 @@ import org.eclipse.uml2.uml.UMLPackage;
 
 public class CollaborationUseParser implements ISemanticParser {
 	
-	private static final MessageFormat COLLABORATION_USE_FORMAT = new MessageFormat("{0}:{1}"); 
+	private static final MessageFormat COLLABORATION_USE_FORMAT = new MessageFormat("{0}:{1}");  //$NON-NLS-1$
 
 	public boolean areSemanticElementsAffected(EObject listener, Object notification) {
 		if (notification instanceof Notification) {
@@ -55,7 +56,7 @@ public class CollaborationUseParser implements ISemanticParser {
 	// traverse deep into the nested packages
 	public IContentAssistProcessor getCompletionProcessor(IAdaptable subject) {
 		CollaborationUse cu = doAdapt(subject);
-		String name = cu.getName() == null ? "" : cu.getName();
+		String name = cu.getName() == null ? "" : cu.getName(); //$NON-NLS-1$
 		List<Type> types = getTypeProposals(cu);
 		LinkedList<String> names = new LinkedList<String>();
 		for (Type next : types) {
@@ -68,8 +69,8 @@ public class CollaborationUseParser implements ISemanticParser {
 
 	public String getEditString(IAdaptable element, int flags) {
 		CollaborationUse cu = doAdapt(element);
-		String name = cu.getName() == null ? "" : cu.getName();
-		String type = cu.getType() == null ? "" : cu.getType().getName();
+		String name = cu.getName() == null ? "" : cu.getName(); //$NON-NLS-1$
+		String type = cu.getType() == null ? "" : cu.getType().getName(); //$NON-NLS-1$
 		return COLLABORATION_USE_FORMAT.format(new Object[]{name, type});
 	}
 
@@ -82,12 +83,12 @@ public class CollaborationUseParser implements ISemanticParser {
 			return UnexecutableCommand.INSTANCE;
 		}
 		Collaboration oldType = cu.getType();
-		String oldName = cu.getName() == null ? "" : cu.getName();
+		String oldName = cu.getName() == null ? "" : cu.getName(); //$NON-NLS-1$
 		List<Type> types = getTypeProposals(cu);
 		try {
 			Object[] parsed = COLLABORATION_USE_FORMAT.parse(newString);
 			String newName = (String) parsed[0];
-			CompositeCommand cc = new CompositeCommand("");
+			CompositeCommand cc = new CompositeCommand(CustomMessages.CollaborationUseParser_collaboration_use_name_parser_command);
 			if (!oldName.equals(newName)) {
 				cc.add(new SetValueCommand(new SetRequest(cu, UMLPackage.eINSTANCE.getNamedElement_Name(), newName)));
 			}
