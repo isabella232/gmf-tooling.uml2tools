@@ -2,7 +2,7 @@
  * <copyright>
  * </copyright>
  *
- * $Id: DetailsLevelAttributesItemProvider.java,v 1.1 2007/05/20 19:31:37 mgolubev Exp $
+ * $Id: DetailsLevelAttributesItemProvider.java,v 1.2 2007/11/22 16:59:35 mgolubev Exp $
  */
 package org.eclipse.uml2.diagram.codegen.gmfgenext.provider;
 
@@ -42,13 +42,6 @@ public class DetailsLevelAttributesItemProvider
 		ITreeItemContentProvider,	
 		IItemLabelProvider,	
 		IItemPropertySource {
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public static final String copyright = "";
-
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
@@ -160,8 +153,8 @@ public class DetailsLevelAttributesItemProvider
 	}
 
 	/**
-	 * This adds to the collection of {@link org.eclipse.emf.edit.command.CommandParameter}s
-	 * describing all of the children that can be created under this object.
+	 * This adds {@link org.eclipse.emf.edit.command.CommandParameter}s describing the children
+	 * that can be created under this object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated

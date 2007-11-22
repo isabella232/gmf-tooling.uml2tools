@@ -2,7 +2,7 @@
  * <copyright>
  * </copyright>
  *
- * $Id: GMFGenExtFactory.java,v 1.2 2007/05/20 19:31:35 mgolubev Exp $
+ * $Id: GMFGenExtFactory.java,v 1.3 2007/11/22 16:59:33 mgolubev Exp $
  */
 package org.eclipse.uml2.diagram.codegen.gmfgenext;
 
@@ -17,13 +17,6 @@ import org.eclipse.emf.ecore.EFactory;
  * @generated
  */
 public interface GMFGenExtFactory extends EFactory {
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	String copyright = "";
-
 	/**
 	 * The singleton instance of the factory.
 	 * <!-- begin-user-doc -->

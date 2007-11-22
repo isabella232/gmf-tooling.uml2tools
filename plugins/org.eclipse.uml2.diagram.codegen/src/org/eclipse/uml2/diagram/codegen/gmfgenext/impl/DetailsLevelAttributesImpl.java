@@ -2,7 +2,7 @@
  * <copyright>
  * </copyright>
  *
- * $Id: DetailsLevelAttributesImpl.java,v 1.1 2007/05/20 19:31:35 mgolubev Exp $
+ * $Id: DetailsLevelAttributesImpl.java,v 1.2 2007/11/22 16:59:33 mgolubev Exp $
  */
 package org.eclipse.uml2.diagram.codegen.gmfgenext.impl;
 
@@ -31,13 +31,6 @@ import org.eclipse.uml2.diagram.codegen.gmfgenext.GMFGenExtPackage;
  * @generated
  */
 public class DetailsLevelAttributesImpl extends EObjectImpl implements DetailsLevelAttributes {
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public static final String copyright = "";
-
 	/**
 	 * The default value of the '{@link #isFilteringCompartment() <em>Filtering Compartment</em>}' attribute.
 	 * <!-- begin-user-doc -->

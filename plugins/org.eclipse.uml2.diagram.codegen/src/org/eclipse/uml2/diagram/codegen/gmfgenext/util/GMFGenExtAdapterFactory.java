@@ -2,7 +2,7 @@
  * <copyright>
  * </copyright>
  *
- * $Id: GMFGenExtAdapterFactory.java,v 1.2 2007/05/20 19:31:35 mgolubev Exp $
+ * $Id: GMFGenExtAdapterFactory.java,v 1.3 2007/11/22 16:59:34 mgolubev Exp $
  */
 package org.eclipse.uml2.diagram.codegen.gmfgenext.util;
 
@@ -26,13 +26,6 @@ import org.eclipse.uml2.diagram.codegen.gmfgenext.*;
  * @generated
  */
 public class GMFGenExtAdapterFactory extends AdapterFactoryImpl {
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public static final String copyright = "";
-
 	/**
 	 * The cached model package.
 	 * <!-- begin-user-doc -->

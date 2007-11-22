@@ -3,7 +3,7 @@
     xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="gmfgenext"
     nsURI="http://www.eclipse.org/uml2/diagram/gmfgenext/DiagramFigure/1.0" nsPrefix="uml2.gmfgenext">
-  <eClassifiers xsi:type="ecore:EClass" name="AuxSecondaryDiagramNodeAttribute" eSuperTypes="../../../plugin/org.eclipse.gmf.codegen/models/gmfgen.ecore#//Attributes">
+  <eClassifiers xsi:type="ecore:EClass" name="AuxSecondaryDiagramNodeAttribute" eSuperTypes="platform:/plugin/org.eclipse.gmf.codegen/models/gmfgen.ecore#//Attributes">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="substituteWithCanvasElement"
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
@@ -11,14 +11,14 @@
       </eAnnotations>
     </eStructuralFeatures>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="CustomLocatorAttributes" eSuperTypes="../../../plugin/org.eclipse.gmf.codegen/models/gmfgen.ecore#//Attributes">
+  <eClassifiers xsi:type="ecore:EClass" name="CustomLocatorAttributes" eSuperTypes="platform:/plugin/org.eclipse.gmf.codegen/models/gmfgen.ecore#//Attributes">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="customLocatorFQN" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="Applicable for gmfgen::GenChildSideAffixedNode only. Allows to customize IBorderItemLocator implementation"/>
       </eAnnotations>
     </eStructuralFeatures>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="DetailsLevelAttributes" eSuperTypes="../../../plugin/org.eclipse.gmf.codegen/models/gmfgen.ecore#//Attributes">
+  <eClassifiers xsi:type="ecore:EClass" name="DetailsLevelAttributes" eSuperTypes="platform:/plugin/org.eclipse.gmf.codegen/models/gmfgen.ecore#//Attributes">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="filteringCompartment" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="Applicable for gmfgen::GenCompartment only. If set, children of this compartment will be filtered according to actual diagram details level."/>
@@ -30,13 +30,14 @@
       </eAnnotations>
     </eStructuralFeatures>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="SubstitutableByAttributes" eSuperTypes="../../../plugin/org.eclipse.gmf.codegen/models/gmfgen.ecore#//Attributes">
-    <eOperations name="getSubstitutableByNodes" upperBound="-1" eType="ecore:EClass ../../../plugin/org.eclipse.gmf.codegen/models/gmfgen.ecore#//GenCommonBase"/>
+  <eClassifiers xsi:type="ecore:EClass" name="SubstitutableByAttributes" eSuperTypes="platform:/plugin/org.eclipse.gmf.codegen/models/gmfgen.ecore#//Attributes">
+    <eOperations name="getSubstitutableByNodes" upperBound="-1" eType="ecore:EClass platform:/plugin/org.eclipse.gmf.codegen/models/gmfgen.ecore#//GenCommonBase"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="substitutableByIDs" upperBound="-1"
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="Allows to have different notation for same semantic element. Diagram updater should choose some default notation, but should treat any of the substitutable nodes as correct representation for given semantic element"/>
       </eAnnotations>
     </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="requiresAll" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
   </eClassifiers>
 </ecore:EPackage>

@@ -2,7 +2,7 @@
  * <copyright>
  * </copyright>
  *
- * $Id: AuxSecondaryDiagramNodeAttributeImpl.java,v 1.1 2007/04/05 17:07:04 mgolubev Exp $
+ * $Id: AuxSecondaryDiagramNodeAttributeImpl.java,v 1.2 2007/11/22 16:59:33 mgolubev Exp $
  */
 package org.eclipse.uml2.diagram.codegen.gmfgenext.impl;
 
@@ -30,13 +30,6 @@ import org.eclipse.uml2.diagram.codegen.gmfgenext.GMFGenExtPackage;
  * @generated
  */
 public class AuxSecondaryDiagramNodeAttributeImpl extends EObjectImpl implements AuxSecondaryDiagramNodeAttribute {
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public static final String copyright = "";
-
 	/**
 	 * The default value of the '{@link #isSubstituteWithCanvasElement() <em>Substitute With Canvas Element</em>}' attribute.
 	 * <!-- begin-user-doc -->

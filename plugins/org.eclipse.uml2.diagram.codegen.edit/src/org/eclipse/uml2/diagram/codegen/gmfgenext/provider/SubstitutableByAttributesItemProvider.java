@@ -2,7 +2,7 @@
  * <copyright>
  * </copyright>
  *
- * $Id: SubstitutableByAttributesItemProvider.java,v 1.2 2007/05/21 02:22:09 mgolubev Exp $
+ * $Id: SubstitutableByAttributesItemProvider.java,v 1.3 2007/11/22 16:59:35 mgolubev Exp $
  */
 package org.eclipse.uml2.diagram.codegen.gmfgenext.provider;
 
@@ -43,13 +43,6 @@ public class SubstitutableByAttributesItemProvider
 		IItemLabelProvider,	
 		IItemPropertySource {
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public static final String copyright = "";
-
-	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -70,6 +63,7 @@ public class SubstitutableByAttributesItemProvider
 			super.getPropertyDescriptors(object);
 
 			addSubstitutableByIDsPropertyDescriptor(object);
+			addRequiresAllPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -97,6 +91,28 @@ public class SubstitutableByAttributesItemProvider
 	}
 
 	/**
+	 * This adds a property descriptor for the Requires All feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addRequiresAllPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_SubstitutableByAttributes_requiresAll_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_SubstitutableByAttributes_requiresAll_feature", "_UI_SubstitutableByAttributes_type"),
+				 GMFGenExtPackage.Literals.SUBSTITUTABLE_BY_ATTRIBUTES__REQUIRES_ALL,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
 	 * This returns SubstitutableByAttributes.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -113,7 +129,8 @@ public class SubstitutableByAttributesItemProvider
 	 * @generated
 	 */
 	public String getText(Object object) {
-		return getString("_UI_SubstitutableByAttributes_type");
+		SubstitutableByAttributes substitutableByAttributes = (SubstitutableByAttributes)object;
+		return getString("_UI_SubstitutableByAttributes_type") + " " + substitutableByAttributes.isRequiresAll();
 	}
 
 	/**
@@ -128,6 +145,7 @@ public class SubstitutableByAttributesItemProvider
 
 		switch (notification.getFeatureID(SubstitutableByAttributes.class)) {
 			case GMFGenExtPackage.SUBSTITUTABLE_BY_ATTRIBUTES__SUBSTITUTABLE_BY_IDS:
+			case GMFGenExtPackage.SUBSTITUTABLE_BY_ATTRIBUTES__REQUIRES_ALL:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 		}
@@ -135,8 +153,8 @@ public class SubstitutableByAttributesItemProvider
 	}
 
 	/**
-	 * This adds to the collection of {@link org.eclipse.emf.edit.command.CommandParameter}s
-	 * describing all of the children that can be created under this object.
+	 * This adds {@link org.eclipse.emf.edit.command.CommandParameter}s describing the children
+	 * that can be created under this object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated

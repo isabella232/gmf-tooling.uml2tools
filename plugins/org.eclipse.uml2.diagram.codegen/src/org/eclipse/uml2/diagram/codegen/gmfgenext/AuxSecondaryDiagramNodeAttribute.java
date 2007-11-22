@@ -2,7 +2,7 @@
  * <copyright>
  * </copyright>
  *
- * $Id: AuxSecondaryDiagramNodeAttribute.java,v 1.1 2007/04/05 17:07:04 mgolubev Exp $
+ * $Id: AuxSecondaryDiagramNodeAttribute.java,v 1.2 2007/11/22 16:59:33 mgolubev Exp $
  */
 package org.eclipse.uml2.diagram.codegen.gmfgenext;
 
@@ -25,13 +25,6 @@ import org.eclipse.gmf.codegen.gmfgen.Attributes;
  * @generated
  */
 public interface AuxSecondaryDiagramNodeAttribute extends Attributes {
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	String copyright = "";
-
 	/**
 	 * Returns the value of the '<em><b>Substitute With Canvas Element</b></em>' attribute.
 	 * <!-- begin-user-doc -->

@@ -2,7 +2,7 @@
  * <copyright>
  * </copyright>
  *
- * $Id: GMFGenExtItemProviderAdapterFactory.java,v 1.2 2007/05/20 19:31:37 mgolubev Exp $
+ * $Id: GMFGenExtItemProviderAdapterFactory.java,v 1.3 2007/11/22 16:59:35 mgolubev Exp $
  */
 package org.eclipse.uml2.diagram.codegen.gmfgenext.provider;
 
@@ -38,13 +38,6 @@ import org.eclipse.uml2.diagram.codegen.gmfgenext.util.GMFGenExtAdapterFactory;
  */
 public class GMFGenExtItemProviderAdapterFactory extends GMFGenExtAdapterFactory implements ComposeableAdapterFactory, IChangeNotifier, IDisposable {
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public static final String copyright = "";
-
-	/**
 	 * This keeps track of the root adapter factory that delegates to this adapter factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -79,7 +72,7 @@ public class GMFGenExtItemProviderAdapterFactory extends GMFGenExtAdapterFactory
 		supportedTypes.add(IStructuredItemContentProvider.class);
 		supportedTypes.add(ITreeItemContentProvider.class);
 		supportedTypes.add(IItemLabelProvider.class);
-		supportedTypes.add(IItemPropertySource.class);		
+		supportedTypes.add(IItemPropertySource.class);
 	}
 
 	/**

@@ -2,7 +2,7 @@
  * <copyright>
  * </copyright>
  *
- * $Id: CustomLocatorAttributesImpl.java,v 1.1 2007/04/05 17:07:04 mgolubev Exp $
+ * $Id: CustomLocatorAttributesImpl.java,v 1.2 2007/11/22 16:59:33 mgolubev Exp $
  */
 package org.eclipse.uml2.diagram.codegen.gmfgenext.impl;
 
@@ -30,13 +30,6 @@ import org.eclipse.uml2.diagram.codegen.gmfgenext.GMFGenExtPackage;
  * @generated
  */
 public class CustomLocatorAttributesImpl extends EObjectImpl implements CustomLocatorAttributes {
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public static final String copyright = "";
-
 	/**
 	 * The default value of the '{@link #getCustomLocatorFQN() <em>Custom Locator FQN</em>}' attribute.
 	 * <!-- begin-user-doc -->

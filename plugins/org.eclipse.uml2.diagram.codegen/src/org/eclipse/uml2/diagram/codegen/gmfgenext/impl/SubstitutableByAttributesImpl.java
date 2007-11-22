@@ -2,17 +2,19 @@
  * <copyright>
  * </copyright>
  *
- * $Id: SubstitutableByAttributesImpl.java,v 1.2 2007/05/21 02:23:18 mgolubev Exp $
+ * $Id: SubstitutableByAttributesImpl.java,v 1.3 2007/11/22 16:59:33 mgolubev Exp $
  */
 package org.eclipse.uml2.diagram.codegen.gmfgenext.impl;
 
 import java.util.Collection;
+import org.eclipse.emf.common.notify.Notification;
 import java.util.HashMap;
 
 import org.eclipse.emf.common.util.BasicEList;
 import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.EObject;
 
 import org.eclipse.emf.ecore.impl.EObjectImpl;
@@ -36,19 +38,13 @@ import org.eclipse.uml2.diagram.codegen.gmfgenext.SubstitutableByAttributes;
  * The following features are implemented:
  * <ul>
  *   <li>{@link org.eclipse.uml2.diagram.codegen.gmfgenext.impl.SubstitutableByAttributesImpl#getSubstitutableByIDs <em>Substitutable By IDs</em>}</li>
+ *   <li>{@link org.eclipse.uml2.diagram.codegen.gmfgenext.impl.SubstitutableByAttributesImpl#isRequiresAll <em>Requires All</em>}</li>
  * </ul>
  * </p>
  *
  * @generated
  */
 public class SubstitutableByAttributesImpl extends EObjectImpl implements SubstitutableByAttributes {
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public static final String copyright = "";
-
 	/**
 	 * The cached value of the '{@link #getSubstitutableByIDs() <em>Substitutable By IDs</em>}' attribute list.
 	 * <!-- begin-user-doc -->
@@ -57,7 +53,27 @@ public class SubstitutableByAttributesImpl extends EObjectImpl implements Substi
 	 * @generated
 	 * @ordered
 	 */
-	protected EList substitutableByIDs = null;
+	protected EList substitutableByIDs;
+
+	/**
+	 * The default value of the '{@link #isRequiresAll() <em>Requires All</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #isRequiresAll()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final boolean REQUIRES_ALL_EDEFAULT = false;
+
+	/**
+	 * The cached value of the '{@link #isRequiresAll() <em>Requires All</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #isRequiresAll()
+	 * @generated
+	 * @ordered
+	 */
+	protected boolean requiresAll = REQUIRES_ALL_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -87,6 +103,27 @@ public class SubstitutableByAttributesImpl extends EObjectImpl implements Substi
 			substitutableByIDs = new EDataTypeUniqueEList(Integer.class, this, GMFGenExtPackage.SUBSTITUTABLE_BY_ATTRIBUTES__SUBSTITUTABLE_BY_IDS);
 		}
 		return substitutableByIDs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean isRequiresAll() {
+		return requiresAll;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setRequiresAll(boolean newRequiresAll) {
+		boolean oldRequiresAll = requiresAll;
+		requiresAll = newRequiresAll;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, GMFGenExtPackage.SUBSTITUTABLE_BY_ATTRIBUTES__REQUIRES_ALL, oldRequiresAll, requiresAll));
 	}
 
 	/**
@@ -137,6 +174,8 @@ public class SubstitutableByAttributesImpl extends EObjectImpl implements Substi
 		switch (featureID) {
 			case GMFGenExtPackage.SUBSTITUTABLE_BY_ATTRIBUTES__SUBSTITUTABLE_BY_IDS:
 				return getSubstitutableByIDs();
+			case GMFGenExtPackage.SUBSTITUTABLE_BY_ATTRIBUTES__REQUIRES_ALL:
+				return isRequiresAll() ? Boolean.TRUE : Boolean.FALSE;
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -152,6 +191,9 @@ public class SubstitutableByAttributesImpl extends EObjectImpl implements Substi
 				getSubstitutableByIDs().clear();
 				getSubstitutableByIDs().addAll((Collection)newValue);
 				return;
+			case GMFGenExtPackage.SUBSTITUTABLE_BY_ATTRIBUTES__REQUIRES_ALL:
+				setRequiresAll(((Boolean)newValue).booleanValue());
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -166,6 +208,9 @@ public class SubstitutableByAttributesImpl extends EObjectImpl implements Substi
 			case GMFGenExtPackage.SUBSTITUTABLE_BY_ATTRIBUTES__SUBSTITUTABLE_BY_IDS:
 				getSubstitutableByIDs().clear();
 				return;
+			case GMFGenExtPackage.SUBSTITUTABLE_BY_ATTRIBUTES__REQUIRES_ALL:
+				setRequiresAll(REQUIRES_ALL_EDEFAULT);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -179,6 +224,8 @@ public class SubstitutableByAttributesImpl extends EObjectImpl implements Substi
 		switch (featureID) {
 			case GMFGenExtPackage.SUBSTITUTABLE_BY_ATTRIBUTES__SUBSTITUTABLE_BY_IDS:
 				return substitutableByIDs != null && !substitutableByIDs.isEmpty();
+			case GMFGenExtPackage.SUBSTITUTABLE_BY_ATTRIBUTES__REQUIRES_ALL:
+				return requiresAll != REQUIRES_ALL_EDEFAULT;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -194,6 +241,8 @@ public class SubstitutableByAttributesImpl extends EObjectImpl implements Substi
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (substitutableByIDs: ");
 		result.append(substitutableByIDs);
+		result.append(", requiresAll: ");
+		result.append(requiresAll);
 		result.append(')');
 		return result.toString();
 	}

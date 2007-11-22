@@ -2,7 +2,7 @@
  * <copyright>
  * </copyright>
  *
- * $Id: GMFGenExtPackage.java,v 1.3 2007/05/21 02:23:19 mgolubev Exp $
+ * $Id: GMFGenExtPackage.java,v 1.4 2007/11/22 16:59:33 mgolubev Exp $
  */
 package org.eclipse.uml2.diagram.codegen.gmfgenext;
 
@@ -29,13 +29,6 @@ import org.eclipse.gmf.codegen.gmfgen.GMFGenPackage;
  * @generated
  */
 public interface GMFGenExtPackage extends EPackage {
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	String copyright = "";
-
 	/**
 	 * The package name.
 	 * <!-- begin-user-doc -->
@@ -183,13 +176,22 @@ public interface GMFGenExtPackage extends EPackage {
 	int SUBSTITUTABLE_BY_ATTRIBUTES__SUBSTITUTABLE_BY_IDS = GMFGenPackage.ATTRIBUTES_FEATURE_COUNT + 0;
 
 	/**
+	 * The feature id for the '<em><b>Requires All</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SUBSTITUTABLE_BY_ATTRIBUTES__REQUIRES_ALL = GMFGenPackage.ATTRIBUTES_FEATURE_COUNT + 1;
+
+	/**
 	 * The number of structural features of the '<em>Substitutable By Attributes</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SUBSTITUTABLE_BY_ATTRIBUTES_FEATURE_COUNT = GMFGenPackage.ATTRIBUTES_FEATURE_COUNT + 1;
+	int SUBSTITUTABLE_BY_ATTRIBUTES_FEATURE_COUNT = GMFGenPackage.ATTRIBUTES_FEATURE_COUNT + 2;
 
 
 	/**
@@ -286,6 +288,17 @@ public interface GMFGenExtPackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getSubstitutableByAttributes_SubstitutableByIDs();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.eclipse.uml2.diagram.codegen.gmfgenext.SubstitutableByAttributes#isRequiresAll <em>Requires All</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Requires All</em>'.
+	 * @see org.eclipse.uml2.diagram.codegen.gmfgenext.SubstitutableByAttributes#isRequiresAll()
+	 * @see #getSubstitutableByAttributes()
+	 * @generated
+	 */
+	EAttribute getSubstitutableByAttributes_RequiresAll();
 
 	/**
 	 * Returns the factory that creates the instances of the model.
@@ -388,6 +401,14 @@ public interface GMFGenExtPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute SUBSTITUTABLE_BY_ATTRIBUTES__SUBSTITUTABLE_BY_IDS = eINSTANCE.getSubstitutableByAttributes_SubstitutableByIDs();
+
+		/**
+		 * The meta object literal for the '<em><b>Requires All</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute SUBSTITUTABLE_BY_ATTRIBUTES__REQUIRES_ALL = eINSTANCE.getSubstitutableByAttributes_RequiresAll();
 
 	}
 

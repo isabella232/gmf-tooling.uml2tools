@@ -2,7 +2,7 @@
  * <copyright>
  * </copyright>
  *
- * $Id: SubstitutableByAttributes.java,v 1.2 2007/05/21 02:23:19 mgolubev Exp $
+ * $Id: SubstitutableByAttributes.java,v 1.3 2007/11/22 16:59:33 mgolubev Exp $
  */
 package org.eclipse.uml2.diagram.codegen.gmfgenext;
 
@@ -19,6 +19,7 @@ import org.eclipse.gmf.codegen.gmfgen.Attributes;
  * The following features are supported:
  * <ul>
  *   <li>{@link org.eclipse.uml2.diagram.codegen.gmfgenext.SubstitutableByAttributes#getSubstitutableByIDs <em>Substitutable By IDs</em>}</li>
+ *   <li>{@link org.eclipse.uml2.diagram.codegen.gmfgenext.SubstitutableByAttributes#isRequiresAll <em>Requires All</em>}</li>
  * </ul>
  * </p>
  *
@@ -27,13 +28,6 @@ import org.eclipse.gmf.codegen.gmfgen.Attributes;
  * @generated
  */
 public interface SubstitutableByAttributes extends Attributes {
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	String copyright = "";
-
 	/**
 	 * Returns the value of the '<em><b>Substitutable By IDs</b></em>' attribute list.
 	 * The list contents are of type {@link java.lang.Integer}.
@@ -44,10 +38,36 @@ public interface SubstitutableByAttributes extends Attributes {
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Substitutable By IDs</em>' attribute list.
 	 * @see org.eclipse.uml2.diagram.codegen.gmfgenext.GMFGenExtPackage#getSubstitutableByAttributes_SubstitutableByIDs()
-	 * @model type="int"
+	 * @model
 	 * @generated
 	 */
 	EList getSubstitutableByIDs();
+
+	/**
+	 * Returns the value of the '<em><b>Requires All</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Requires All</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Requires All</em>' attribute.
+	 * @see #setRequiresAll(boolean)
+	 * @see org.eclipse.uml2.diagram.codegen.gmfgenext.GMFGenExtPackage#getSubstitutableByAttributes_RequiresAll()
+	 * @model
+	 * @generated
+	 */
+	boolean isRequiresAll();
+
+	/**
+	 * Sets the value of the '{@link org.eclipse.uml2.diagram.codegen.gmfgenext.SubstitutableByAttributes#isRequiresAll <em>Requires All</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Requires All</em>' attribute.
+	 * @see #isRequiresAll()
+	 * @generated
+	 */
+	void setRequiresAll(boolean value);
 
 	/**
 	 * <!-- begin-user-doc -->

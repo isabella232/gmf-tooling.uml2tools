@@ -2,7 +2,7 @@
  * <copyright>
  * </copyright>
  *
- * $Id: DetailsLevelAttributes.java,v 1.1 2007/05/20 19:31:35 mgolubev Exp $
+ * $Id: DetailsLevelAttributes.java,v 1.2 2007/11/22 16:59:33 mgolubev Exp $
  */
 package org.eclipse.uml2.diagram.codegen.gmfgenext;
 
@@ -26,13 +26,6 @@ import org.eclipse.gmf.codegen.gmfgen.Attributes;
  * @generated
  */
 public interface DetailsLevelAttributes extends Attributes {
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	String copyright = "";
-
 	/**
 	 * Returns the value of the '<em><b>Filtering Compartment</b></em>' attribute.
 	 * <!-- begin-user-doc -->

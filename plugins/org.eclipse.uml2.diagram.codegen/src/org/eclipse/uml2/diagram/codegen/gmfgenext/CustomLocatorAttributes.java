@@ -2,7 +2,7 @@
  * <copyright>
  * </copyright>
  *
- * $Id: CustomLocatorAttributes.java,v 1.1 2007/04/05 17:07:04 mgolubev Exp $
+ * $Id: CustomLocatorAttributes.java,v 1.2 2007/11/22 16:59:34 mgolubev Exp $
  */
 package org.eclipse.uml2.diagram.codegen.gmfgenext;
 
@@ -25,13 +25,6 @@ import org.eclipse.gmf.codegen.gmfgen.Attributes;
  * @generated
  */
 public interface CustomLocatorAttributes extends Attributes {
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	String copyright = "";
-
 	/**
 	 * Returns the value of the '<em><b>Custom Locator FQN</b></em>' attribute.
 	 * <!-- begin-user-doc -->

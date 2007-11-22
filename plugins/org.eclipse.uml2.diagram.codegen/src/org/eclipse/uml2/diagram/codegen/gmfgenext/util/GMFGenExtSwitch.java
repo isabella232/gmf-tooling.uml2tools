@@ -2,7 +2,7 @@
  * <copyright>
  * </copyright>
  *
- * $Id: GMFGenExtSwitch.java,v 1.2 2007/05/20 19:31:35 mgolubev Exp $
+ * $Id: GMFGenExtSwitch.java,v 1.3 2007/11/22 16:59:34 mgolubev Exp $
  */
 package org.eclipse.uml2.diagram.codegen.gmfgenext.util;
 
@@ -29,13 +29,6 @@ import org.eclipse.uml2.diagram.codegen.gmfgenext.*;
  * @generated
  */
 public class GMFGenExtSwitch {
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public static final String copyright = "";
-
 	/**
 	 * The cached model package
 	 * <!-- begin-user-doc -->
@@ -129,13 +122,13 @@ public class GMFGenExtSwitch {
 	}
 
 	/**
-	 * Returns the result of interpretting the object as an instance of '<em>Aux Secondary Diagram Node Attribute</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>Aux Secondary Diagram Node Attribute</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpretting the object as an instance of '<em>Aux Secondary Diagram Node Attribute</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>Aux Secondary Diagram Node Attribute</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
@@ -144,13 +137,13 @@ public class GMFGenExtSwitch {
 	}
 
 	/**
-	 * Returns the result of interpretting the object as an instance of '<em>Custom Locator Attributes</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>Custom Locator Attributes</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpretting the object as an instance of '<em>Custom Locator Attributes</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>Custom Locator Attributes</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
@@ -159,13 +152,13 @@ public class GMFGenExtSwitch {
 	}
 
 	/**
-	 * Returns the result of interpretting the object as an instance of '<em>Details Level Attributes</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>Details Level Attributes</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpretting the object as an instance of '<em>Details Level Attributes</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>Details Level Attributes</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
@@ -174,13 +167,13 @@ public class GMFGenExtSwitch {
 	}
 
 	/**
-	 * Returns the result of interpretting the object as an instance of '<em>Substitutable By Attributes</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>Substitutable By Attributes</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpretting the object as an instance of '<em>Substitutable By Attributes</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>Substitutable By Attributes</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
@@ -189,13 +182,13 @@ public class GMFGenExtSwitch {
 	}
 
 	/**
-	 * Returns the result of interpretting the object as an instance of '<em>Attributes</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>Attributes</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpretting the object as an instance of '<em>Attributes</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>Attributes</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
@@ -204,13 +197,13 @@ public class GMFGenExtSwitch {
 	}
 
 	/**
-	 * Returns the result of interpretting the object as an instance of '<em>EObject</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>EObject</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch, but this is the last case anyway.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpretting the object as an instance of '<em>EObject</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>EObject</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject)
 	 * @generated
 	 */

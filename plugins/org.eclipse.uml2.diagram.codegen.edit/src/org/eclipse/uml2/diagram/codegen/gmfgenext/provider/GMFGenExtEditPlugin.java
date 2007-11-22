@@ -2,7 +2,7 @@
  * <copyright>
  * </copyright>
  *
- * $Id: GMFGenExtEditPlugin.java,v 1.1 2007/04/05 17:08:18 mgolubev Exp $
+ * $Id: GMFGenExtEditPlugin.java,v 1.2 2007/11/22 16:59:35 mgolubev Exp $
  */
 package org.eclipse.uml2.diagram.codegen.gmfgenext.provider;
 
@@ -19,13 +19,6 @@ import org.eclipse.gmf.codegen.gmfgen.presentation.EditorPlugin;
  * @generated
  */
 public final class GMFGenExtEditPlugin extends EMFPlugin {
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public static final String copyright = "";
-
 	/**
 	 * Keep track of the singleton.
 	 * <!-- begin-user-doc -->

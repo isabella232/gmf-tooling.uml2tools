@@ -2,7 +2,7 @@
  * <copyright>
  * </copyright>
  *
- * $Id: CustomLocatorAttributesItemProvider.java,v 1.1 2007/04/05 17:08:18 mgolubev Exp $
+ * $Id: CustomLocatorAttributesItemProvider.java,v 1.2 2007/11/22 16:59:35 mgolubev Exp $
  */
 package org.eclipse.uml2.diagram.codegen.gmfgenext.provider;
 
@@ -42,13 +42,6 @@ public class CustomLocatorAttributesItemProvider
 		ITreeItemContentProvider,	
 		IItemLabelProvider,	
 		IItemPropertySource {
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public static final String copyright = "";
-
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
@@ -138,8 +131,8 @@ public class CustomLocatorAttributesItemProvider
 	}
 
 	/**
-	 * This adds to the collection of {@link org.eclipse.emf.edit.command.CommandParameter}s
-	 * describing all of the children that can be created under this object.
+	 * This adds {@link org.eclipse.emf.edit.command.CommandParameter}s describing the children
+	 * that can be created under this object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
