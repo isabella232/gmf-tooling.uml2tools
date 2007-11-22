@@ -8,7 +8,7 @@
  *
  * Contributors:
  *    Michael Golubev (Borland) - initial API and implementation
- * 
+ *    [210678] - Allow multi-view representation for single domain element
  */
 
 «IMPORT "http://www.eclipse.org/gmf/2006/GenModel"»
