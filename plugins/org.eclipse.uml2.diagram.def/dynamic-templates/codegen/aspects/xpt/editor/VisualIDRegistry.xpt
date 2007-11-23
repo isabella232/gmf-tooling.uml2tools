@@ -38,7 +38,7 @@
 	«ELSE -»
 		«targetDef.proceed()-»
 	«ENDIF-»
-	«ENDLET»
+	«ENDLET-»
 «ENDAROUND»
 
 «AROUND caseDomainContainerVisualID FOR gmfgen::GenContainerBase-»
