@@ -47,6 +47,21 @@
 		«EXPAND xpt::Common::caseVisualID»
 			«EXPAND checkHeader FOR childHeader-»
 			«EXPAND xpt::editor::VisualIDRegistry::returnVisualID FOREACH getContainedSemanticNodes(this)-»
+			«REM»
+			For multipart nodes, we have added additional check hasViewChild into each group item case, in order to allow other group items to create their views.
+			When all views are created, we still need to return arbitrary choosen part's id for given container + semantic pair, to avoid removing the whole group from diagram by updater
+			«ENDREM-»
+			«FOREACH getContainedSemanticNodes(this) AS nextChild -»
+					«REM»It would be better to add one "escape" block per group, but its not clear how to do it «ENDREM»«-»
+					«LET ((gmfgenext::SubstitutableByAttributes)nextChild.viewmap.attributes.typeSelect(gmfgenext::SubstitutableByAttributes).first()) AS nextGroup -»
+					«IF null != nextGroup && nextGroup.requiresAll -»
+							// "escape" for multi-views part : «EXPAND xpt::editor::VisualIDRegistry::visualID» -- prevents from removing the whole group from diagram
+							if («EXPAND xpt::editor::VisualIDRegistry::checkSemanticElement FOR nextChild») {
+								return «EXPAND xpt::editor::VisualIDRegistry::visualID»;
+							}
+					«ENDIF-»
+					«ENDLET-»		
+			«ENDFOREACH-»
 			break;
 	«ELSE-»
 		«targetDef.proceed()-»
