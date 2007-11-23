@@ -713,7 +713,10 @@ public class PackageCanonicalEditPolicy extends CanonicalConnectionEditPolicy {
 	 */
 	private EditPart getTargetEditPart(UMLLinkDescriptor descriptor, Domain2Notation domain2NotationMap) {
 		if (AssociationClassConnectorEditPart.VISUAL_ID == descriptor.getVisualID()) {
-			return getHintedEditPart(descriptor.getSource(), domain2NotationMap, AssociationClassRhombEditPart.VISUAL_ID);
+			return getHintedEditPart(descriptor.getDestination(), domain2NotationMap, AssociationClassRhombEditPart.VISUAL_ID);
+		}
+		if (Property7EditPart.VISUAL_ID == descriptor.getVisualID()) {
+			return getHintedEditPart(descriptor.getDestination(), domain2NotationMap, AssociationClassRhombEditPart.VISUAL_ID);
 		}
 		return getTargetEditPartGen(descriptor, domain2NotationMap);
 	}
