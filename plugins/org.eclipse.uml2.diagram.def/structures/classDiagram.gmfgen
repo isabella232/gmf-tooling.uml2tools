@@ -2484,7 +2484,7 @@
         <childMetaFeature
             href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/Package/packagedElement"/>
         <modelElementSelector
-            body="!self.oclIsTypeOf(uml::AssociationClass)"/>
+            body="not self.oclIsTypeOf(uml::AssociationClass)"/>
         <sourceMetaFeature
             href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/TypedElement/type"/>
         <targetMetaFeature

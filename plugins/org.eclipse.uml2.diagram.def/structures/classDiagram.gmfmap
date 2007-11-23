@@ -1454,7 +1454,7 @@
     <domainMetaElement
         href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//Association"/>
     <domainSpecialization
-        body="!self.oclIsTypeOf(uml::AssociationClass)"/>
+        body="not self.oclIsTypeOf(uml::AssociationClass)"/>
     <labelMappings
         xsi:type="gmfmap:FeatureLabelMapping">
       <diagramLabel
