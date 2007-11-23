@@ -3209,11 +3209,14 @@ public class UMLDiagramUpdater {
 	}
 
 	/**
-	 * @generated
+	 * We wants to create links for any member ends, not only owned ends. 
+	 * Unfortunately, its not possible to set not containment feature in the GMF map
+	 * 
+	 * @generated NOT
 	 */
 	private static Collection getContainedTypeModelFacetLinks_Property_4003(Association container) {
 		Collection result = new LinkedList();
-		for (Iterator links = container.getOwnedEnds().iterator(); links.hasNext();) {
+		for (Iterator links = container.getMemberEnds().iterator(); links.hasNext();) { //the only change is here : getOwnedEnds -> getMemberEnds
 			Object linkObject = links.next();
 			if (false == linkObject instanceof Property) {
 				continue;
