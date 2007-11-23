@@ -53,6 +53,7 @@ import org.eclipse.uml2.diagram.clazz.part.UMLVisualIDRegistry;
 import org.eclipse.uml2.uml.Association;
 import org.eclipse.uml2.uml.BehavioredClassifier;
 import org.eclipse.uml2.uml.Classifier;
+import org.eclipse.uml2.uml.CollaborationUse;
 import org.eclipse.uml2.uml.Constraint;
 import org.eclipse.uml2.uml.Dependency;
 import org.eclipse.uml2.uml.Element;
@@ -508,6 +509,13 @@ public class UMLBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 		/**
 		 * @generated
 		 */
+		public static boolean canCreateAssociationClass_4014(Package container, CollaborationUse source, CollaborationUse target) {
+			return canExistAssociationClass_4014(container, source, target);
+		}
+
+		/**
+		 * @generated
+		 */
 		public static boolean canExistGeneralization_4001(Classifier source, Classifier target) {
 			return true;
 		}
@@ -598,6 +606,13 @@ public class UMLBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 			if (!evaluate(Usage_4013_TargetExpression, target, source, true)) {
 				return false;
 			}
+			return true;
+		}
+
+		/**
+		 * @generated
+		 */
+		public static boolean canExistAssociationClass_4014(Package container, CollaborationUse source, CollaborationUse target) {
 			return true;
 		}
 

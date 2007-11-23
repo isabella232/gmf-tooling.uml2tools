@@ -13,7 +13,7 @@
           lineKind="LINE_DASH">
         <targetDecoration
             xsi:type="gmfgraph:PolylineDecoration"
-            href="../../../plugin/org.eclipse.gmf.graphdef/models/classDiagram.gmfgraph#Arrow"/>
+            href="../../../plugin/org.eclipse.gmf.graphdef/models/classDiagram.gmfgraph#//@figures.0/@figures.2"/>
       </actualFigure>
     </descriptors>
   </figures>

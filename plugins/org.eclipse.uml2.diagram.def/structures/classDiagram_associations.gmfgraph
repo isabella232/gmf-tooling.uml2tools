@@ -68,6 +68,13 @@
           xsi:type="gmfgraph:Label"
           name="Association_label_targetMulti"/>
     </descriptors>
+    <descriptors
+        name="AssociationClass2RhombConnectorFigure">
+      <actualFigure
+          xsi:type="gmfgraph:PolylineConnection"
+          name="AssociationClass2RhombConnectorFigure"
+          lineKind="LINE_DASH"/>
+    </descriptors>
   </figures>
   <nodes
       xsi:type="gmfgraph:DiagramLabel"
@@ -141,6 +148,9 @@
   <connections
       name="AssociationLink"
       figure="AssociationLinkFigure"/>
+  <connections
+      name="AssociationClass2RhombConnector"
+      figure="AssociationClass2RhombConnectorFigure"/>
   <labels
       name="AssociationLink_name"
       figure="Association_label_name"

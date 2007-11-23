@@ -668,6 +668,15 @@
       </metamodel>
       <metamodel nsURI="http://www.eclipse.org/uml2/2.1.0/UML">
          <specializationType
+               id="org.eclipse.uml2.diagram.clazz.AssociationClass_2015"
+               name="%metatype.name.AssociationClass_2015"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType">
+            <specializes id="org.eclipse.uml2.diagram.clazz.AssociationClass_3012"/>
+            <param name="semanticHint" value="2015"/>
+         </specializationType>
+      </metamodel>
+      <metamodel nsURI="http://www.eclipse.org/uml2/2.1.0/UML">
+         <specializationType
                id="org.eclipse.uml2.diagram.clazz.Package_3006"
                name="%metatype.name.Package_3006"
                kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
@@ -1046,6 +1055,15 @@
             <param name="semanticHint" value="4013"/>
          </metamodelType>
       </metamodel>
+      <metamodel nsURI="http://www.eclipse.org/uml2/2.1.0/UML">
+         <specializationType
+               id="org.eclipse.uml2.diagram.clazz.AssociationClass_4014"
+               name="%metatype.name.AssociationClass_4014"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType">
+            <specializes id="org.eclipse.uml2.diagram.clazz.AssociationClass_3012"/>
+            <param name="semanticHint" value="4014"/>
+         </specializationType>
+      </metamodel>
    </extension>
 
    <extension point="org.eclipse.gmf.runtime.emf.type.core.elementTypeBindings">
@@ -1072,6 +1090,7 @@
          <elementType ref="org.eclipse.uml2.diagram.clazz.GeneralizationSet_2012"/>
          <elementType ref="org.eclipse.uml2.diagram.clazz.Interface_2013"/>
          <elementType ref="org.eclipse.uml2.diagram.clazz.Package_2014"/>
+         <elementType ref="org.eclipse.uml2.diagram.clazz.AssociationClass_2015"/>
          <elementType ref="org.eclipse.uml2.diagram.clazz.Package_3006"/>
          <elementType ref="org.eclipse.uml2.diagram.clazz.Class_3007"/>
          <elementType ref="org.eclipse.uml2.diagram.clazz.DataType_3008"/>
@@ -1110,6 +1129,7 @@
          <elementType ref="org.eclipse.uml2.diagram.clazz.Generalization_4011"/>
          <elementType ref="org.eclipse.uml2.diagram.clazz.GeneralizationGeneral_4012"/>
          <elementType ref="org.eclipse.uml2.diagram.clazz.Usage_4013"/>
+         <elementType ref="org.eclipse.uml2.diagram.clazz.AssociationClass_4014"/>
          <advice ref="org.eclipse.gmf.runtime.diagram.core.advice.notationDepdendents"/>
       </binding>
    </extension>

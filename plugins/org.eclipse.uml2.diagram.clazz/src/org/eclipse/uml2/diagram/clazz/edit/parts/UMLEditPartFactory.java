@@ -115,6 +115,9 @@ public class UMLEditPartFactory implements EditPartFactory {
 			case PackageName2EditPart.VISUAL_ID:
 				return new PackageName2EditPart(view);
 
+			case AssociationClassRhombEditPart.VISUAL_ID:
+				return new AssociationClassRhombEditPart(view);
+
 			case Package3EditPart.VISUAL_ID:
 				return new Package3EditPart(view);
 
@@ -330,6 +333,9 @@ public class UMLEditPartFactory implements EditPartFactory {
 
 			case UsageEditPart.VISUAL_ID:
 				return new UsageEditPart(view);
+
+			case AssociationClassConnectorEditPart.VISUAL_ID:
+				return new AssociationClassConnectorEditPart(view);
 			}
 		}
 		return createUnrecognizedEditPart(context, model);

@@ -70,6 +70,17 @@ public class UMLViewProvider extends AbstractViewProvider {
 					return null; // foreign diagram
 				}
 				switch (visualID) {
+				case AssociationClass2EditPart.VISUAL_ID: {
+					if (domainElement == null) {
+						return null;
+					}
+
+					int suggestedID = UMLVisualIDRegistry.getNodeVisualID(containerView, domainElement);
+					if (visualID != suggestedID && AssociationClassRhombEditPart.VISUAL_ID != suggestedID && true) {
+						return null;
+					}
+					break;
+				}
 				case InterfaceEditPart.VISUAL_ID: {
 					if (domainElement == null) {
 						return null;
@@ -92,9 +103,19 @@ public class UMLViewProvider extends AbstractViewProvider {
 					}
 					break;
 				}
+				case AssociationClassRhombEditPart.VISUAL_ID: {
+					if (domainElement == null) {
+						return null;
+					}
+
+					int suggestedID = UMLVisualIDRegistry.getNodeVisualID(containerView, domainElement);
+					if (visualID != suggestedID && AssociationClass2EditPart.VISUAL_ID != suggestedID && true) {
+						return null;
+					}
+					break;
+				}
 				case Package2EditPart.VISUAL_ID:
 				case Class2EditPart.VISUAL_ID:
-				case AssociationClass2EditPart.VISUAL_ID:
 				case DataType2EditPart.VISUAL_ID:
 				case PrimitiveType2EditPart.VISUAL_ID:
 				case Enumeration2EditPart.VISUAL_ID:
@@ -330,6 +351,8 @@ public class UMLViewProvider extends AbstractViewProvider {
 			return Package4ViewFactory.class;
 		case PackageName2EditPart.VISUAL_ID:
 			return PackageName2ViewFactory.class;
+		case AssociationClassRhombEditPart.VISUAL_ID:
+			return AssociationClassRhombViewFactory.class;
 		case Package3EditPart.VISUAL_ID:
 			return Package3ViewFactory.class;
 		case ClassEditPart.VISUAL_ID:
@@ -506,6 +529,8 @@ public class UMLViewProvider extends AbstractViewProvider {
 			return GeneralizationGeneralViewFactory.class;
 		case UsageEditPart.VISUAL_ID:
 			return UsageViewFactory.class;
+		case AssociationClassConnectorEditPart.VISUAL_ID:
+			return AssociationClassConnectorViewFactory.class;
 		}
 		return null;
 	}

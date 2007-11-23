@@ -6,6 +6,7 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.gmf.runtime.notation.Diagram;
 import org.eclipse.gmf.runtime.notation.View;
+import org.eclipse.uml2.diagram.clazz.edit.parts.*;
 import org.eclipse.uml2.diagram.clazz.edit.parts.AssociationClass2EditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.AssociationClassAttributesEditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.AssociationClassClassesEditPart;
@@ -428,7 +429,13 @@ public class UMLVisualIDRegistry {
 			if (UMLPackage.eINSTANCE.getClass_().isSuperTypeOf(domainElement.eClass()) && evaluate(Class_2001_Constraint, domainElement)) {
 				return Class2EditPart.VISUAL_ID;
 			}
-			if (UMLPackage.eINSTANCE.getAssociationClass().isSuperTypeOf(domainElement.eClass())) {
+			// there is a group of nodes for single semantic element
+			// the group for this element consists of 
+			// org.eclipse.uml2.diagram.clazz.edit.parts.AssociationClass2EditPart.VISUAL_ID
+			// org.eclipse.uml2.diagram.clazz.edit.parts.AssociationClassRhombEditPart.VISUAL_ID
+			// diagram updater is expected to return one node descriptor (and thus one instance of that semantic element) per node in group
+			// we need to give other parts a chance to create their views
+			if (UMLPackage.eINSTANCE.getAssociationClass().isSuperTypeOf(domainElement.eClass()) && !hasViewChild(containerView, domainElement, AssociationClass2EditPart.VISUAL_ID)) {
 				return AssociationClass2EditPart.VISUAL_ID;
 			}
 			if (UMLPackage.eINSTANCE.getDataType().isSuperTypeOf(domainElement.eClass()) && evaluate(DataType_2004_Constraint, domainElement)) {
@@ -459,6 +466,15 @@ public class UMLVisualIDRegistry {
 				return Interface2EditPart.VISUAL_ID;
 			}
 			// Diagram header is already processed above
+			// there is a group of nodes for single semantic element
+			// the group for this element consists of 
+			// org.eclipse.uml2.diagram.clazz.edit.parts.AssociationClassRhombEditPart.VISUAL_ID
+			// org.eclipse.uml2.diagram.clazz.edit.parts.AssociationClass2EditPart.VISUAL_ID
+			// diagram updater is expected to return one node descriptor (and thus one instance of that semantic element) per node in group
+			// we need to give other parts a chance to create their views
+			if (UMLPackage.eINSTANCE.getAssociationClass().isSuperTypeOf(domainElement.eClass()) && !hasViewChild(containerView, domainElement, AssociationClassRhombEditPart.VISUAL_ID)) {
+				return AssociationClassRhombEditPart.VISUAL_ID;
+			}
 			break;
 		}
 		return -1;
@@ -802,6 +818,9 @@ public class UMLVisualIDRegistry {
 			if (Package4EditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
+			if (AssociationClassRhombEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
 			break;
 		case Dependency2EditPart.VISUAL_ID:
 			if (DependencyName2EditPart.VISUAL_ID == nodeVisualID) {
@@ -879,6 +898,9 @@ public class UMLVisualIDRegistry {
 		if (UMLPackage.eINSTANCE.getUsage().isSuperTypeOf(domainElement.eClass()) && evaluate(Usage_4013_Constraint, domainElement)) {
 			return UsageEditPart.VISUAL_ID;
 		}
+		if (UMLPackage.eINSTANCE.getAssociationClass().isSuperTypeOf(domainElement.eClass())) {
+			return AssociationClassConnectorEditPart.VISUAL_ID;
+		}
 		return -1;
 	}
 
@@ -898,6 +920,22 @@ public class UMLVisualIDRegistry {
 	private static boolean evaluate(UMLAbstractExpression expression, Object element) {
 		Object result = expression.evaluate(element);
 		return result instanceof Boolean && ((Boolean) result).booleanValue();
+	}
+
+	/**
+	 * @generated
+	 */
+	protected static boolean hasViewChild(View containerView, EObject domainElement, int visualId) {
+		if (domainElement == null) {
+			return false;
+		}
+		for (Object next : containerView.getChildren()) {
+			View nextView = (View) next;
+			if (domainElement.equals(nextView.getElement()) && getType(visualId).equals(nextView.getType())) {
+				return true;
+			}
+		}
+		return false;
 	}
 
 }

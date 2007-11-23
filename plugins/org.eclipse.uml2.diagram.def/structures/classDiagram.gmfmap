@@ -1352,6 +1352,18 @@
       </compartments>
     </ownedChild>
   </nodes>
+  <nodes>
+    <containmentFeature
+        href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//Package/packagedElement"/>
+    <childrenFeature
+        href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//Package/ownedType"/>
+    <ownedChild>
+      <domainMetaElement
+          href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//AssociationClass"/>
+      <diagramNode
+          href="classDiagram_classifiers.gmfgraph#AssociationClassRhombNode"/>
+    </ownedChild>
+  </nodes>
   <links>
     <domainMetaElement
         href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//Generalization"/>
@@ -1619,6 +1631,20 @@
       <targetEnd
           body="self.oclIsKindOf(uml::Interface)"/>
     </creationConstraints>
+  </links>
+  <links>
+    <domainMetaElement
+        href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//AssociationClass"/>
+    <containmentFeature
+        href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//Package/packagedElement"/>
+    <diagramLink
+        href="classDiagram_associations.gmfgraph#AssociationClass2RhombConnector"/>
+    <sourceMetaFeature
+        xsi:type="ecore:EReference"
+        href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//Classifier/collaborationUse"/>
+    <linkMetaFeature
+        xsi:type="ecore:EReference"
+        href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//Classifier/collaborationUse"/>
   </links>
   <diagram>
     <diagramCanvas

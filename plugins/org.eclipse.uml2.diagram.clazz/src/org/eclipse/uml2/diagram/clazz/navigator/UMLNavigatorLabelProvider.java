@@ -17,8 +17,10 @@ import org.eclipse.ui.IMemento;
 import org.eclipse.ui.navigator.ICommonContentExtensionSite;
 import org.eclipse.ui.navigator.ICommonLabelProvider;
 import org.eclipse.uml2.diagram.clazz.edit.parts.AssociationClass2EditPart;
+import org.eclipse.uml2.diagram.clazz.edit.parts.AssociationClassConnectorEditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.AssociationClassEditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.AssociationClassNameEditPart;
+import org.eclipse.uml2.diagram.clazz.edit.parts.AssociationClassRhombEditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.AssociationEditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.AssociationNameEditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.Class2EditPart;
@@ -90,6 +92,7 @@ import org.eclipse.uml2.diagram.clazz.part.UMLDiagramEditorPlugin;
 import org.eclipse.uml2.diagram.clazz.part.UMLVisualIDRegistry;
 import org.eclipse.uml2.diagram.clazz.providers.UMLElementTypes;
 import org.eclipse.uml2.diagram.clazz.providers.UMLParserProvider;
+import org.eclipse.uml2.uml.AssociationClass;
 import org.eclipse.uml2.uml.Generalization;
 import org.eclipse.uml2.uml.InterfaceRealization;
 import org.eclipse.uml2.uml.Package;
@@ -173,6 +176,8 @@ public class UMLNavigatorLabelProvider extends LabelProvider implements ICommonL
 			return getImage("Navigator?TopLevelNode?http://www.eclipse.org/uml2/2.1.0/UML?Interface", UMLElementTypes.Interface_2013); //$NON-NLS-1$
 		case Package4EditPart.VISUAL_ID:
 			return getImage("Navigator?TopLevelNode?http://www.eclipse.org/uml2/2.1.0/UML?Package", UMLElementTypes.Package_2014); //$NON-NLS-1$
+		case AssociationClassRhombEditPart.VISUAL_ID:
+			return getImage("Navigator?TopLevelNode?http://www.eclipse.org/uml2/2.1.0/UML?AssociationClass", UMLElementTypes.AssociationClass_2015); //$NON-NLS-1$
 		case Package3EditPart.VISUAL_ID:
 			return getImage("Navigator?Node?http://www.eclipse.org/uml2/2.1.0/UML?Package", UMLElementTypes.Package_3006); //$NON-NLS-1$
 		case ClassEditPart.VISUAL_ID:
@@ -249,6 +254,8 @@ public class UMLNavigatorLabelProvider extends LabelProvider implements ICommonL
 			return getImage("Navigator?Link?http://www.eclipse.org/uml2/2.1.0/UML?Generalization?general", UMLElementTypes.GeneralizationGeneral_4012); //$NON-NLS-1$
 		case UsageEditPart.VISUAL_ID:
 			return getImage("Navigator?Link?http://www.eclipse.org/uml2/2.1.0/UML?Usage", UMLElementTypes.Usage_4013); //$NON-NLS-1$
+		case AssociationClassConnectorEditPart.VISUAL_ID:
+			return getImage("Navigator?Link?http://www.eclipse.org/uml2/2.1.0/UML?AssociationClass", UMLElementTypes.AssociationClass_4014); //$NON-NLS-1$
 		}
 		return getImage("Navigator?UnknownElement", null); //$NON-NLS-1$
 	}
@@ -327,6 +334,8 @@ public class UMLNavigatorLabelProvider extends LabelProvider implements ICommonL
 			return getInterface_2013Text(view);
 		case Package4EditPart.VISUAL_ID:
 			return getPackage_2014Text(view);
+		case AssociationClassRhombEditPart.VISUAL_ID:
+			return getAssociationClass_2015Text(view);
 		case Package3EditPart.VISUAL_ID:
 			return getPackage_3006Text(view);
 		case ClassEditPart.VISUAL_ID:
@@ -403,6 +412,8 @@ public class UMLNavigatorLabelProvider extends LabelProvider implements ICommonL
 			return getGeneralizationGeneral_4012Text(view);
 		case UsageEditPart.VISUAL_ID:
 			return getUsage_4013Text(view);
+		case AssociationClassConnectorEditPart.VISUAL_ID:
+			return getAssociationClass_4014Text(view);
 		}
 		return getUnknownElementText(view);
 	}
@@ -626,6 +637,19 @@ public class UMLNavigatorLabelProvider extends LabelProvider implements ICommonL
 			return ""; //$NON-NLS-1$
 		}
 
+	}
+
+	/**
+	 * @generated
+	 */
+	private String getAssociationClass_2015Text(View view) {
+		AssociationClass domainModelElement = (AssociationClass) view.getElement();
+		if (domainModelElement != null) {
+			return String.valueOf(domainModelElement.getName());
+		} else {
+			UMLDiagramEditorPlugin.getInstance().logError("No domain element for view with visualID = " + 2015); //$NON-NLS-1$
+			return ""; //$NON-NLS-1$
+		}
 	}
 
 	/**
@@ -1193,6 +1217,19 @@ public class UMLNavigatorLabelProvider extends LabelProvider implements ICommonL
 			return String.valueOf(domainModelElement.getName());
 		} else {
 			UMLDiagramEditorPlugin.getInstance().logError("No domain element for view with visualID = " + 4013); //$NON-NLS-1$
+			return ""; //$NON-NLS-1$
+		}
+	}
+
+	/**
+	 * @generated
+	 */
+	private String getAssociationClass_4014Text(View view) {
+		AssociationClass domainModelElement = (AssociationClass) view.getElement();
+		if (domainModelElement != null) {
+			return String.valueOf(domainModelElement.getName());
+		} else {
+			UMLDiagramEditorPlugin.getInstance().logError("No domain element for view with visualID = " + 4014); //$NON-NLS-1$
 			return ""; //$NON-NLS-1$
 		}
 	}
