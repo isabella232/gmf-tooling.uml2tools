@@ -685,17 +685,48 @@ public class PackageCanonicalEditPolicy extends CanonicalConnectionEditPolicy {
 	}
 
 	/**
-	 * @generated
+	 * @generated 
+	 */
+	private EditPart getSourceEditPartGen(UMLLinkDescriptor descriptor, Domain2Notation domain2NotationMap) {
+		return getEditPart(descriptor.getSource(), domain2NotationMap);
+	}
+
+	/**
+	 * @generated NOT
 	 */
 	private EditPart getSourceEditPart(UMLLinkDescriptor descriptor, Domain2Notation domain2NotationMap) {
-		return getEditPart(descriptor.getSource(), domain2NotationMap);
+		if (AssociationClassConnectorEditPart.VISUAL_ID == descriptor.getVisualID()){
+			return getHintedEditPart(descriptor.getSource(), domain2NotationMap, AssociationClass2EditPart.VISUAL_ID);
+		}
+		return getSourceEditPartGen(descriptor, domain2NotationMap);
 	}
 
 	/**
 	 * @generated
 	 */
-	private EditPart getTargetEditPart(UMLLinkDescriptor descriptor, Domain2Notation domain2NotationMap) {
+	private EditPart getTargetEditPartGen(UMLLinkDescriptor descriptor, Domain2Notation domain2NotationMap) {
 		return getEditPart(descriptor.getDestination(), domain2NotationMap);
+	}
+
+	/**
+	 * @generated NOT
+	 */
+	private EditPart getTargetEditPart(UMLLinkDescriptor descriptor, Domain2Notation domain2NotationMap) {
+		if (AssociationClassConnectorEditPart.VISUAL_ID == descriptor.getVisualID()){
+			return getHintedEditPart(descriptor.getSource(), domain2NotationMap, AssociationClassRhombEditPart.VISUAL_ID);
+		}
+		return getTargetEditPartGen(descriptor, domain2NotationMap);
+	}
+
+	/**
+	 * @generated
+	 */
+	protected final EditPart getHintedEditPart(EObject domainModelElement, Domain2Notation domain2NotationMap, int hintVisualId) {
+		View view = (View) domain2NotationMap.getHinted(domainModelElement, UMLVisualIDRegistry.getType(hintVisualId));
+		if (view != null) {
+			return (EditPart) getHost().getViewer().getEditPartRegistry().get(view);
+		}
+		return null;
 	}
 
 	/**

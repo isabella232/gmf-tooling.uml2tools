@@ -86,6 +86,7 @@ import org.eclipse.uml2.diagram.clazz.edit.parts.RealizationEditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.RedefinableTemplateSignatureEditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.SlotEditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.UsageEditPart;
+import org.eclipse.uml2.diagram.clazz.edit.policies.PackageCanonicalEditPolicy;
 import org.eclipse.uml2.diagram.clazz.providers.UMLElementTypes;
 import org.eclipse.uml2.diagram.common.conventions.AssociationEndConvention;
 import org.eclipse.uml2.uml.Association;
@@ -3411,7 +3412,20 @@ public class UMLDiagramUpdater {
 	}
 
 	/**
-	 * @generated
+	 * This link is connector between association class' rhomb and rectangle parts
+	 * CollaborationUse's were selected in the gmfmap instead of not allowed "null" features, 
+	 * because they are completely unrelated and can not interfere with link-related editpolicies. 
+	 * 
+	 * In the ideal world we would prefere to specify either custom relationship between 
+	 * AssociationClass and source/target for this link or don't specify these features at all.
+	 * 
+	 * In this method we are going to create link descriptor with identical semantic 
+	 * elements (association class itself for source, target and link itself). 
+	 * The selection of the node's for source/target is made in the custom code of the 
+	 * PackageCanonicalEditPolicy#getSourceEditPart(...)/PackageCanonicalEditPolicy#getTargetEditPart(...) 
+	 * methods.
+	 * 
+	 * @generated NOT
 	 */
 	private static Collection getContainedTypeModelFacetLinks_AssociationClass_4014(Package container) {
 		Collection result = new LinkedList();
@@ -3424,18 +3438,10 @@ public class UMLDiagramUpdater {
 			if (AssociationClassConnectorEditPart.VISUAL_ID != UMLVisualIDRegistry.getLinkWithClassVisualID(link)) {
 				continue;
 			}
-			List targets = link.getCollaborationUses();
-			Object theTarget = targets.size() == 1 ? targets.get(0) : null;
-			if (false == theTarget instanceof CollaborationUse) {
-				continue;
-			}
-			CollaborationUse dst = (CollaborationUse) theTarget;
-			List sources = link.getCollaborationUses();
-			Object theSource = sources.size() == 1 ? sources.get(0) : null;
-			if (false == theSource instanceof CollaborationUse) {
-				continue;
-			}
-			CollaborationUse src = (CollaborationUse) theSource;
+
+			//the same link-element, source and target
+			AssociationClass src = link;
+			AssociationClass dst = link;
 			result.add(new UMLLinkDescriptor(src, dst, link, UMLElementTypes.AssociationClass_4014, AssociationClassConnectorEditPart.VISUAL_ID));
 		}
 		return result;
