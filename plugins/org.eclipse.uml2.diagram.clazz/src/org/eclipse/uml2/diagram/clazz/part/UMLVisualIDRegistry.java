@@ -171,7 +171,7 @@ public class UMLVisualIDRegistry {
 	/**
 	 * @generated
 	 */
-	private static final UMLAbstractExpression Association_4005_Constraint = UMLOCLFactory.getExpression("!self.oclIsTypeOf(uml::AssociationClass)", UMLPackage.eINSTANCE.getAssociation());
+	private static final UMLAbstractExpression Association_4005_Constraint = UMLOCLFactory.getExpression("not self.oclIsTypeOf(uml::AssociationClass)", UMLPackage.eINSTANCE.getAssociation());
 
 	/**
 	 * @generated
