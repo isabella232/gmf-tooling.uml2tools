@@ -1324,4 +1324,20 @@ public class UMLVisualIDRegistry {
 
 	}
 
+	/**
+	 * @generated
+	 */
+	protected static boolean hasViewChild(View containerView, EObject domainElement, int visualId) {
+		if (domainElement == null) {
+			return false;
+		}
+		for (Object next : containerView.getChildren()) {
+			View nextView = (View) next;
+			if (domainElement.equals(nextView.getElement()) && getType(visualId).equals(nextView.getType())) {
+				return true;
+			}
+		}
+		return false;
+	}
+
 }
