@@ -482,11 +482,11 @@ public class UMLVisualIDRegistry {
 			}
 			// "escape" for multi-views part : org.eclipse.uml2.diagram.clazz.edit.parts.PackageEditPart.VISUAL_ID -- prevents from removing the whole group from diagram
 			if (UMLPackage.eINSTANCE.getAssociationClass().isSuperTypeOf(domainElement.eClass())) {
-				return PackageEditPart.VISUAL_ID;
+				return AssociationClass2EditPart.VISUAL_ID;
 			}
 			// "escape" for multi-views part : org.eclipse.uml2.diagram.clazz.edit.parts.PackageEditPart.VISUAL_ID -- prevents from removing the whole group from diagram
 			if (UMLPackage.eINSTANCE.getAssociationClass().isSuperTypeOf(domainElement.eClass())) {
-				return PackageEditPart.VISUAL_ID;
+				return AssociationClassRhombEditPart.VISUAL_ID;
 			}
 			break;
 		}
