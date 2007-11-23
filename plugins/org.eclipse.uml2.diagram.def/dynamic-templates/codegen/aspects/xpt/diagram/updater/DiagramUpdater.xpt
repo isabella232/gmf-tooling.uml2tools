@@ -29,7 +29,7 @@ if (visualID == «EXPAND xpt::editor::VisualIDRegistry::visualID») {
 	result.add(new «getDiagram().editorGen.diagramUpdater.getNodeDescriptorQualifiedClassName()»(«-»
 		«IF null != modelFacet.childMetaFeature»«EXPAND xpt::Common::castToEObject FOR getTypeGenClassX(modelFacet.childMetaFeature)»«ENDIF»childElement, visualID));
 		«REM» Addition here -- if node is multi-view, add node descriptors for each of the parts«ENDREM»«-»
-		«LET viewmap.attributes.typeSelect(gmfgenext::SubstitutableByAttributes).first() AS group -»
+		«LET ((gmfgenext::SubstitutableByAttributes)viewmap.attributes.typeSelect(gmfgenext::SubstitutableByAttributes).first()) AS group -»
 				«IF null != group && group.requiresAll -»
 						«FOREACH group.getSubstitutableByNodes() AS nextPart-»
 	result.add(new «getDiagram().editorGen.diagramUpdater.getNodeDescriptorQualifiedClassName()»(«-»
