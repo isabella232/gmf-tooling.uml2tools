@@ -648,6 +648,16 @@ public class Messages extends NLS {
 	/**
 	 * @generated
 	 */
+	public static String StructuredActivityNodeStructuredActivityContentPaneCompartment3EditPart_title;
+
+	/**
+	 * @generated
+	 */
+	public static String LoopNodeLoopNodeContentPaneCompartment2EditPart_title;
+
+	/**
+	 * @generated
+	 */
 	public static String LoopNodeLoopNodeContentPaneCompartmentEditPart_title;
 
 	/**
@@ -1149,6 +1159,206 @@ public class Messages extends NLS {
 	 * @generated
 	 */
 	public static String NavigatorGroupName_SendSignalAction_3053_outgoinglinks;
+
+	/**
+	 * @generated
+	 */
+	public static String NavigatorGroupName_AcceptEventAction_3059_incominglinks;
+
+	/**
+	 * @generated
+	 */
+	public static String NavigatorGroupName_AcceptEventAction_3059_outgoinglinks;
+
+	/**
+	 * @generated
+	 */
+	public static String NavigatorGroupName_AcceptEventAction_3060_incominglinks;
+
+	/**
+	 * @generated
+	 */
+	public static String NavigatorGroupName_AcceptEventAction_3060_outgoinglinks;
+
+	/**
+	 * @generated
+	 */
+	public static String NavigatorGroupName_ActivityFinalNode_3061_incominglinks;
+
+	/**
+	 * @generated
+	 */
+	public static String NavigatorGroupName_ActivityFinalNode_3061_outgoinglinks;
+
+	/**
+	 * @generated
+	 */
+	public static String NavigatorGroupName_DecisionNode_3062_incominglinks;
+
+	/**
+	 * @generated
+	 */
+	public static String NavigatorGroupName_DecisionNode_3062_outgoinglinks;
+
+	/**
+	 * @generated
+	 */
+	public static String NavigatorGroupName_MergeNode_3063_incominglinks;
+
+	/**
+	 * @generated
+	 */
+	public static String NavigatorGroupName_MergeNode_3063_outgoinglinks;
+
+	/**
+	 * @generated
+	 */
+	public static String NavigatorGroupName_InitialNode_3064_incominglinks;
+
+	/**
+	 * @generated
+	 */
+	public static String NavigatorGroupName_InitialNode_3064_outgoinglinks;
+
+	/**
+	 * @generated
+	 */
+	public static String NavigatorGroupName_DataStoreNode_3065_incominglinks;
+
+	/**
+	 * @generated
+	 */
+	public static String NavigatorGroupName_DataStoreNode_3065_outgoinglinks;
+
+	/**
+	 * @generated
+	 */
+	public static String NavigatorGroupName_CentralBufferNode_3066_incominglinks;
+
+	/**
+	 * @generated
+	 */
+	public static String NavigatorGroupName_CentralBufferNode_3066_outgoinglinks;
+
+	/**
+	 * @generated
+	 */
+	public static String NavigatorGroupName_OpaqueAction_3067_incominglinks;
+
+	/**
+	 * @generated
+	 */
+	public static String NavigatorGroupName_OpaqueAction_3067_outgoinglinks;
+
+	/**
+	 * @generated
+	 */
+	public static String NavigatorGroupName_FlowFinalNode_3068_incominglinks;
+
+	/**
+	 * @generated
+	 */
+	public static String NavigatorGroupName_FlowFinalNode_3068_outgoinglinks;
+
+	/**
+	 * @generated
+	 */
+	public static String NavigatorGroupName_ForkNode_3069_incominglinks;
+
+	/**
+	 * @generated
+	 */
+	public static String NavigatorGroupName_ForkNode_3069_outgoinglinks;
+
+	/**
+	 * @generated
+	 */
+	public static String NavigatorGroupName_JoinNode_3070_incominglinks;
+
+	/**
+	 * @generated
+	 */
+	public static String NavigatorGroupName_JoinNode_3070_outgoinglinks;
+
+	/**
+	 * @generated
+	 */
+	public static String NavigatorGroupName_Pin_3071_incominglinks;
+
+	/**
+	 * @generated
+	 */
+	public static String NavigatorGroupName_Pin_3071_outgoinglinks;
+
+	/**
+	 * @generated
+	 */
+	public static String NavigatorGroupName_CreateObjectAction_3072_incominglinks;
+
+	/**
+	 * @generated
+	 */
+	public static String NavigatorGroupName_CreateObjectAction_3072_outgoinglinks;
+
+	/**
+	 * @generated
+	 */
+	public static String NavigatorGroupName_AddStructuralFeatureValueAction_3073_incominglinks;
+
+	/**
+	 * @generated
+	 */
+	public static String NavigatorGroupName_AddStructuralFeatureValueAction_3073_outgoinglinks;
+
+	/**
+	 * @generated
+	 */
+	public static String NavigatorGroupName_CallBehaviorAction_3074_incominglinks;
+
+	/**
+	 * @generated
+	 */
+	public static String NavigatorGroupName_CallBehaviorAction_3074_outgoinglinks;
+
+	/**
+	 * @generated
+	 */
+	public static String NavigatorGroupName_CallOperationAction_3075_incominglinks;
+
+	/**
+	 * @generated
+	 */
+	public static String NavigatorGroupName_CallOperationAction_3075_outgoinglinks;
+
+	/**
+	 * @generated
+	 */
+	public static String NavigatorGroupName_StructuredActivityNode_3076_incominglinks;
+
+	/**
+	 * @generated
+	 */
+	public static String NavigatorGroupName_StructuredActivityNode_3076_outgoinglinks;
+
+	/**
+	 * @generated
+	 */
+	public static String NavigatorGroupName_SendSignalAction_3077_incominglinks;
+
+	/**
+	 * @generated
+	 */
+	public static String NavigatorGroupName_SendSignalAction_3077_outgoinglinks;
+
+	/**
+	 * @generated
+	 */
+	public static String NavigatorGroupName_LoopNode_3078_incominglinks;
+
+	/**
+	 * @generated
+	 */
+	public static String NavigatorGroupName_LoopNode_3078_outgoinglinks;
 
 	/**
 	 * @generated

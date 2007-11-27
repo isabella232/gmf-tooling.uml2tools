@@ -290,6 +290,46 @@ public class UMLNavigatorLabelProvider extends LabelProvider implements ICommonL
 			return getImage("Navigator?Node?http://www.eclipse.org/uml2/2.1.0/UML?ActivityPartition", UMLElementTypes.ActivityPartition_3056); //$NON-NLS-1$
 		case ActivityPartition2EditPart.VISUAL_ID:
 			return getImage("Navigator?Node?http://www.eclipse.org/uml2/2.1.0/UML?ActivityPartition", UMLElementTypes.ActivityPartition_3057); //$NON-NLS-1$
+		case AcceptEventAction5EditPart.VISUAL_ID:
+			return getImage("Navigator?Node?http://www.eclipse.org/uml2/2.1.0/UML?AcceptEventAction", UMLElementTypes.AcceptEventAction_3059); //$NON-NLS-1$
+		case AcceptEventAction6EditPart.VISUAL_ID:
+			return getImage("Navigator?Node?http://www.eclipse.org/uml2/2.1.0/UML?AcceptEventAction", UMLElementTypes.AcceptEventAction_3060); //$NON-NLS-1$
+		case ActivityFinalNode3EditPart.VISUAL_ID:
+			return getImage("Navigator?Node?http://www.eclipse.org/uml2/2.1.0/UML?ActivityFinalNode", UMLElementTypes.ActivityFinalNode_3061); //$NON-NLS-1$
+		case DecisionNode3EditPart.VISUAL_ID:
+			return getImage("Navigator?Node?http://www.eclipse.org/uml2/2.1.0/UML?DecisionNode", UMLElementTypes.DecisionNode_3062); //$NON-NLS-1$
+		case MergeNode2EditPart.VISUAL_ID:
+			return getImage("Navigator?Node?http://www.eclipse.org/uml2/2.1.0/UML?MergeNode", UMLElementTypes.MergeNode_3063); //$NON-NLS-1$
+		case InitialNode2EditPart.VISUAL_ID:
+			return getImage("Navigator?Node?http://www.eclipse.org/uml2/2.1.0/UML?InitialNode", UMLElementTypes.InitialNode_3064); //$NON-NLS-1$
+		case DataStoreNode3EditPart.VISUAL_ID:
+			return getImage("Navigator?Node?http://www.eclipse.org/uml2/2.1.0/UML?DataStoreNode", UMLElementTypes.DataStoreNode_3065); //$NON-NLS-1$
+		case CentralBufferNode3EditPart.VISUAL_ID:
+			return getImage("Navigator?Node?http://www.eclipse.org/uml2/2.1.0/UML?CentralBufferNode", UMLElementTypes.CentralBufferNode_3066); //$NON-NLS-1$
+		case OpaqueAction3EditPart.VISUAL_ID:
+			return getImage("Navigator?Node?http://www.eclipse.org/uml2/2.1.0/UML?OpaqueAction", UMLElementTypes.OpaqueAction_3067); //$NON-NLS-1$
+		case FlowFinalNode3EditPart.VISUAL_ID:
+			return getImage("Navigator?Node?http://www.eclipse.org/uml2/2.1.0/UML?FlowFinalNode", UMLElementTypes.FlowFinalNode_3068); //$NON-NLS-1$
+		case ForkNode3EditPart.VISUAL_ID:
+			return getImage("Navigator?Node?http://www.eclipse.org/uml2/2.1.0/UML?ForkNode", UMLElementTypes.ForkNode_3069); //$NON-NLS-1$
+		case JoinNode3EditPart.VISUAL_ID:
+			return getImage("Navigator?Node?http://www.eclipse.org/uml2/2.1.0/UML?JoinNode", UMLElementTypes.JoinNode_3070); //$NON-NLS-1$
+		case Pin3EditPart.VISUAL_ID:
+			return getImage("Navigator?Node?http://www.eclipse.org/uml2/2.1.0/UML?Pin", UMLElementTypes.Pin_3071); //$NON-NLS-1$
+		case CreateObjectAction3EditPart.VISUAL_ID:
+			return getImage("Navigator?Node?http://www.eclipse.org/uml2/2.1.0/UML?CreateObjectAction", UMLElementTypes.CreateObjectAction_3072); //$NON-NLS-1$
+		case AddStructuralFeatureValueAction3EditPart.VISUAL_ID:
+			return getImage("Navigator?Node?http://www.eclipse.org/uml2/2.1.0/UML?AddStructuralFeatureValueAction", UMLElementTypes.AddStructuralFeatureValueAction_3073); //$NON-NLS-1$
+		case CallBehaviorAction3EditPart.VISUAL_ID:
+			return getImage("Navigator?Node?http://www.eclipse.org/uml2/2.1.0/UML?CallBehaviorAction", UMLElementTypes.CallBehaviorAction_3074); //$NON-NLS-1$
+		case CallOperationAction3EditPart.VISUAL_ID:
+			return getImage("Navigator?Node?http://www.eclipse.org/uml2/2.1.0/UML?CallOperationAction", UMLElementTypes.CallOperationAction_3075); //$NON-NLS-1$
+		case StructuredActivityNode3EditPart.VISUAL_ID:
+			return getImage("Navigator?Node?http://www.eclipse.org/uml2/2.1.0/UML?StructuredActivityNode", UMLElementTypes.StructuredActivityNode_3076); //$NON-NLS-1$
+		case SendSignalAction2EditPart.VISUAL_ID:
+			return getImage("Navigator?Node?http://www.eclipse.org/uml2/2.1.0/UML?SendSignalAction", UMLElementTypes.SendSignalAction_3077); //$NON-NLS-1$
+		case LoopNode2EditPart.VISUAL_ID:
+			return getImage("Navigator?Node?http://www.eclipse.org/uml2/2.1.0/UML?LoopNode", UMLElementTypes.LoopNode_3078); //$NON-NLS-1$
 		case LoopNodeEditPart.VISUAL_ID:
 			return getImage("Navigator?Node?http://www.eclipse.org/uml2/2.1.0/UML?LoopNode", UMLElementTypes.LoopNode_3058); //$NON-NLS-1$
 		case LiteralStringEditPart.VISUAL_ID:
@@ -464,6 +504,46 @@ public class UMLNavigatorLabelProvider extends LabelProvider implements ICommonL
 			return getActivityPartition_3056Text(view);
 		case ActivityPartition2EditPart.VISUAL_ID:
 			return getActivityPartition_3057Text(view);
+		case AcceptEventAction5EditPart.VISUAL_ID:
+			return getAcceptEventAction_3059Text(view);
+		case AcceptEventAction6EditPart.VISUAL_ID:
+			return getAcceptEventAction_3060Text(view);
+		case ActivityFinalNode3EditPart.VISUAL_ID:
+			return getActivityFinalNode_3061Text(view);
+		case DecisionNode3EditPart.VISUAL_ID:
+			return getDecisionNode_3062Text(view);
+		case MergeNode2EditPart.VISUAL_ID:
+			return getMergeNode_3063Text(view);
+		case InitialNode2EditPart.VISUAL_ID:
+			return getInitialNode_3064Text(view);
+		case DataStoreNode3EditPart.VISUAL_ID:
+			return getDataStoreNode_3065Text(view);
+		case CentralBufferNode3EditPart.VISUAL_ID:
+			return getCentralBufferNode_3066Text(view);
+		case OpaqueAction3EditPart.VISUAL_ID:
+			return getOpaqueAction_3067Text(view);
+		case FlowFinalNode3EditPart.VISUAL_ID:
+			return getFlowFinalNode_3068Text(view);
+		case ForkNode3EditPart.VISUAL_ID:
+			return getForkNode_3069Text(view);
+		case JoinNode3EditPart.VISUAL_ID:
+			return getJoinNode_3070Text(view);
+		case Pin3EditPart.VISUAL_ID:
+			return getPin_3071Text(view);
+		case CreateObjectAction3EditPart.VISUAL_ID:
+			return getCreateObjectAction_3072Text(view);
+		case AddStructuralFeatureValueAction3EditPart.VISUAL_ID:
+			return getAddStructuralFeatureValueAction_3073Text(view);
+		case CallBehaviorAction3EditPart.VISUAL_ID:
+			return getCallBehaviorAction_3074Text(view);
+		case CallOperationAction3EditPart.VISUAL_ID:
+			return getCallOperationAction_3075Text(view);
+		case StructuredActivityNode3EditPart.VISUAL_ID:
+			return getStructuredActivityNode_3076Text(view);
+		case SendSignalAction2EditPart.VISUAL_ID:
+			return getSendSignalAction_3077Text(view);
+		case LoopNode2EditPart.VISUAL_ID:
+			return getLoopNode_3078Text(view);
 		case LoopNodeEditPart.VISUAL_ID:
 			return getLoopNode_3058Text(view);
 		case LiteralStringEditPart.VISUAL_ID:
@@ -1317,6 +1397,310 @@ public class UMLNavigatorLabelProvider extends LabelProvider implements ICommonL
 			return ""; //$NON-NLS-1$
 		}
 
+	}
+
+	/**
+	 * @generated
+	 */
+	private String getAcceptEventAction_3059Text(View view) {
+		IAdaptable hintAdapter = new UMLParserProvider.HintAdapter(UMLElementTypes.AcceptEventAction_3059, (view.getElement() != null ? view.getElement() : view), UMLVisualIDRegistry
+				.getType(AcceptEventActionName5EditPart.VISUAL_ID));
+		IParser parser = ParserService.getInstance().getParser(hintAdapter);
+
+		if (parser != null) {
+			return parser.getPrintString(hintAdapter, ParserOptions.NONE.intValue());
+		} else {
+			UMLDiagramEditorPlugin.getInstance().logError("Parser was not found for label " + 5065); //$NON-NLS-1$
+			return ""; //$NON-NLS-1$
+		}
+
+	}
+
+	/**
+	 * @generated
+	 */
+	private String getAcceptEventAction_3060Text(View view) {
+		IAdaptable hintAdapter = new UMLParserProvider.HintAdapter(UMLElementTypes.AcceptEventAction_3060, (view.getElement() != null ? view.getElement() : view), UMLVisualIDRegistry
+				.getType(AcceptEventActionName6EditPart.VISUAL_ID));
+		IParser parser = ParserService.getInstance().getParser(hintAdapter);
+
+		if (parser != null) {
+			return parser.getPrintString(hintAdapter, ParserOptions.NONE.intValue());
+		} else {
+			UMLDiagramEditorPlugin.getInstance().logError("Parser was not found for label " + 5066); //$NON-NLS-1$
+			return ""; //$NON-NLS-1$
+		}
+
+	}
+
+	/**
+	 * @generated
+	 */
+	private String getActivityFinalNode_3061Text(View view) {
+		ActivityFinalNode domainModelElement = (ActivityFinalNode) view.getElement();
+		if (domainModelElement != null) {
+			return String.valueOf(domainModelElement.getName());
+		} else {
+			UMLDiagramEditorPlugin.getInstance().logError("No domain element for view with visualID = " + 3061); //$NON-NLS-1$
+			return ""; //$NON-NLS-1$
+		}
+	}
+
+	/**
+	 * @generated
+	 */
+	private String getDecisionNode_3062Text(View view) {
+		DecisionNode domainModelElement = (DecisionNode) view.getElement();
+		if (domainModelElement != null) {
+			return String.valueOf(domainModelElement.getName());
+		} else {
+			UMLDiagramEditorPlugin.getInstance().logError("No domain element for view with visualID = " + 3062); //$NON-NLS-1$
+			return ""; //$NON-NLS-1$
+		}
+	}
+
+	/**
+	 * @generated
+	 */
+	private String getMergeNode_3063Text(View view) {
+		MergeNode domainModelElement = (MergeNode) view.getElement();
+		if (domainModelElement != null) {
+			return String.valueOf(domainModelElement.getName());
+		} else {
+			UMLDiagramEditorPlugin.getInstance().logError("No domain element for view with visualID = " + 3063); //$NON-NLS-1$
+			return ""; //$NON-NLS-1$
+		}
+	}
+
+	/**
+	 * @generated
+	 */
+	private String getInitialNode_3064Text(View view) {
+		InitialNode domainModelElement = (InitialNode) view.getElement();
+		if (domainModelElement != null) {
+			return String.valueOf(domainModelElement.getName());
+		} else {
+			UMLDiagramEditorPlugin.getInstance().logError("No domain element for view with visualID = " + 3064); //$NON-NLS-1$
+			return ""; //$NON-NLS-1$
+		}
+	}
+
+	/**
+	 * @generated
+	 */
+	private String getDataStoreNode_3065Text(View view) {
+		IAdaptable hintAdapter = new UMLParserProvider.HintAdapter(UMLElementTypes.DataStoreNode_3065, (view.getElement() != null ? view.getElement() : view), UMLVisualIDRegistry
+				.getType(DataStoreNodeName5EditPart.VISUAL_ID));
+		IParser parser = ParserService.getInstance().getParser(hintAdapter);
+
+		if (parser != null) {
+			return parser.getPrintString(hintAdapter, ParserOptions.NONE.intValue());
+		} else {
+			UMLDiagramEditorPlugin.getInstance().logError("Parser was not found for label " + 5067); //$NON-NLS-1$
+			return ""; //$NON-NLS-1$
+		}
+
+	}
+
+	/**
+	 * @generated
+	 */
+	private String getCentralBufferNode_3066Text(View view) {
+		IAdaptable hintAdapter = new UMLParserProvider.HintAdapter(UMLElementTypes.CentralBufferNode_3066, (view.getElement() != null ? view.getElement() : view), UMLVisualIDRegistry
+				.getType(CentralBufferNodeName5EditPart.VISUAL_ID));
+		IParser parser = ParserService.getInstance().getParser(hintAdapter);
+
+		if (parser != null) {
+			return parser.getPrintString(hintAdapter, ParserOptions.NONE.intValue());
+		} else {
+			UMLDiagramEditorPlugin.getInstance().logError("Parser was not found for label " + 5070); //$NON-NLS-1$
+			return ""; //$NON-NLS-1$
+		}
+
+	}
+
+	/**
+	 * @generated
+	 */
+	private String getOpaqueAction_3067Text(View view) {
+		IAdaptable hintAdapter = new UMLParserProvider.HintAdapter(UMLElementTypes.OpaqueAction_3067, (view.getElement() != null ? view.getElement() : view), UMLVisualIDRegistry
+				.getType(OpaqueActionName3EditPart.VISUAL_ID));
+		IParser parser = ParserService.getInstance().getParser(hintAdapter);
+
+		if (parser != null) {
+			return parser.getPrintString(hintAdapter, ParserOptions.NONE.intValue());
+		} else {
+			UMLDiagramEditorPlugin.getInstance().logError("Parser was not found for label " + 5073); //$NON-NLS-1$
+			return ""; //$NON-NLS-1$
+		}
+
+	}
+
+	/**
+	 * @generated
+	 */
+	private String getFlowFinalNode_3068Text(View view) {
+		FlowFinalNode domainModelElement = (FlowFinalNode) view.getElement();
+		if (domainModelElement != null) {
+			return String.valueOf(domainModelElement.getName());
+		} else {
+			UMLDiagramEditorPlugin.getInstance().logError("No domain element for view with visualID = " + 3068); //$NON-NLS-1$
+			return ""; //$NON-NLS-1$
+		}
+	}
+
+	/**
+	 * @generated
+	 */
+	private String getForkNode_3069Text(View view) {
+		ForkNode domainModelElement = (ForkNode) view.getElement();
+		if (domainModelElement != null) {
+			return String.valueOf(domainModelElement.getName());
+		} else {
+			UMLDiagramEditorPlugin.getInstance().logError("No domain element for view with visualID = " + 3069); //$NON-NLS-1$
+			return ""; //$NON-NLS-1$
+		}
+	}
+
+	/**
+	 * @generated
+	 */
+	private String getJoinNode_3070Text(View view) {
+		JoinNode domainModelElement = (JoinNode) view.getElement();
+		if (domainModelElement != null) {
+			return String.valueOf(domainModelElement.getName());
+		} else {
+			UMLDiagramEditorPlugin.getInstance().logError("No domain element for view with visualID = " + 3070); //$NON-NLS-1$
+			return ""; //$NON-NLS-1$
+		}
+	}
+
+	/**
+	 * @generated
+	 */
+	private String getPin_3071Text(View view) {
+		IAdaptable hintAdapter = new UMLParserProvider.HintAdapter(UMLElementTypes.Pin_3071, (view.getElement() != null ? view.getElement() : view), UMLVisualIDRegistry
+				.getType(PinName3EditPart.VISUAL_ID));
+		IParser parser = ParserService.getInstance().getParser(hintAdapter);
+
+		if (parser != null) {
+			return parser.getPrintString(hintAdapter, ParserOptions.NONE.intValue());
+		} else {
+			UMLDiagramEditorPlugin.getInstance().logError("Parser was not found for label " + 5074); //$NON-NLS-1$
+			return ""; //$NON-NLS-1$
+		}
+
+	}
+
+	/**
+	 * @generated
+	 */
+	private String getCreateObjectAction_3072Text(View view) {
+		IAdaptable hintAdapter = new UMLParserProvider.HintAdapter(UMLElementTypes.CreateObjectAction_3072, (view.getElement() != null ? view.getElement() : view), UMLVisualIDRegistry
+				.getType(CreateObjectActionName3EditPart.VISUAL_ID));
+		IParser parser = ParserService.getInstance().getParser(hintAdapter);
+
+		if (parser != null) {
+			return parser.getPrintString(hintAdapter, ParserOptions.NONE.intValue());
+		} else {
+			UMLDiagramEditorPlugin.getInstance().logError("Parser was not found for label " + 5076); //$NON-NLS-1$
+			return ""; //$NON-NLS-1$
+		}
+
+	}
+
+	/**
+	 * @generated
+	 */
+	private String getAddStructuralFeatureValueAction_3073Text(View view) {
+		IAdaptable hintAdapter = new UMLParserProvider.HintAdapter(UMLElementTypes.AddStructuralFeatureValueAction_3073, (view.getElement() != null ? view.getElement() : view), UMLVisualIDRegistry
+				.getType(AddStructuralFeatureValueActionName3EditPart.VISUAL_ID));
+		IParser parser = ParserService.getInstance().getParser(hintAdapter);
+
+		if (parser != null) {
+			return parser.getPrintString(hintAdapter, ParserOptions.NONE.intValue());
+		} else {
+			UMLDiagramEditorPlugin.getInstance().logError("Parser was not found for label " + 5077); //$NON-NLS-1$
+			return ""; //$NON-NLS-1$
+		}
+
+	}
+
+	/**
+	 * @generated
+	 */
+	private String getCallBehaviorAction_3074Text(View view) {
+		IAdaptable hintAdapter = new UMLParserProvider.HintAdapter(UMLElementTypes.CallBehaviorAction_3074, (view.getElement() != null ? view.getElement() : view), UMLVisualIDRegistry
+				.getType(CallBehaviorActionName3EditPart.VISUAL_ID));
+		IParser parser = ParserService.getInstance().getParser(hintAdapter);
+
+		if (parser != null) {
+			return parser.getPrintString(hintAdapter, ParserOptions.NONE.intValue());
+		} else {
+			UMLDiagramEditorPlugin.getInstance().logError("Parser was not found for label " + 5078); //$NON-NLS-1$
+			return ""; //$NON-NLS-1$
+		}
+
+	}
+
+	/**
+	 * @generated
+	 */
+	private String getCallOperationAction_3075Text(View view) {
+		IAdaptable hintAdapter = new UMLParserProvider.HintAdapter(UMLElementTypes.CallOperationAction_3075, (view.getElement() != null ? view.getElement() : view), UMLVisualIDRegistry
+				.getType(CallOperationActionName3EditPart.VISUAL_ID));
+		IParser parser = ParserService.getInstance().getParser(hintAdapter);
+
+		if (parser != null) {
+			return parser.getPrintString(hintAdapter, ParserOptions.NONE.intValue());
+		} else {
+			UMLDiagramEditorPlugin.getInstance().logError("Parser was not found for label " + 5079); //$NON-NLS-1$
+			return ""; //$NON-NLS-1$
+		}
+
+	}
+
+	/**
+	 * @generated
+	 */
+	private String getStructuredActivityNode_3076Text(View view) {
+		StructuredActivityNode domainModelElement = (StructuredActivityNode) view.getElement();
+		if (domainModelElement != null) {
+			return String.valueOf(domainModelElement.getName());
+		} else {
+			UMLDiagramEditorPlugin.getInstance().logError("No domain element for view with visualID = " + 3076); //$NON-NLS-1$
+			return ""; //$NON-NLS-1$
+		}
+	}
+
+	/**
+	 * @generated
+	 */
+	private String getSendSignalAction_3077Text(View view) {
+		IAdaptable hintAdapter = new UMLParserProvider.HintAdapter(UMLElementTypes.SendSignalAction_3077, (view.getElement() != null ? view.getElement() : view), UMLVisualIDRegistry
+				.getType(SendSignalActionName2EditPart.VISUAL_ID));
+		IParser parser = ParserService.getInstance().getParser(hintAdapter);
+
+		if (parser != null) {
+			return parser.getPrintString(hintAdapter, ParserOptions.NONE.intValue());
+		} else {
+			UMLDiagramEditorPlugin.getInstance().logError("Parser was not found for label " + 5080); //$NON-NLS-1$
+			return ""; //$NON-NLS-1$
+		}
+
+	}
+
+	/**
+	 * @generated
+	 */
+	private String getLoopNode_3078Text(View view) {
+		LoopNode domainModelElement = (LoopNode) view.getElement();
+		if (domainModelElement != null) {
+			return String.valueOf(domainModelElement.getName());
+		} else {
+			UMLDiagramEditorPlugin.getInstance().logError("No domain element for view with visualID = " + 3078); //$NON-NLS-1$
+			return ""; //$NON-NLS-1$
+		}
 	}
 
 	/**

@@ -207,9 +207,10 @@ public class UMLPaletteFactory {
 	 * @generated
 	 */
 	private ToolEntry createAddFeatureValueAction2CreationTool() {
-		List/*<IElementType>*/types = new ArrayList/*<IElementType>*/(2);
+		List/*<IElementType>*/types = new ArrayList/*<IElementType>*/(3);
 		types.add(UMLElementTypes.AddStructuralFeatureValueAction_3043);
 		types.add(UMLElementTypes.AddStructuralFeatureValueAction_3023);
+		types.add(UMLElementTypes.AddStructuralFeatureValueAction_3073);
 		NodeToolEntry entry = new NodeToolEntry(Messages.AddFeatureValueAction2CreationTool_title, Messages.AddFeatureValueAction2CreationTool_desc, types);
 		entry.setSmallIcon(UMLElementTypes.getImageDescriptor(UMLElementTypes.AddStructuralFeatureValueAction_3043));
 		entry.setLargeIcon(entry.getSmallIcon());
@@ -220,9 +221,10 @@ public class UMLPaletteFactory {
 	 * @generated
 	 */
 	private ToolEntry createCallBehaviorAction3CreationTool() {
-		List/*<IElementType>*/types = new ArrayList/*<IElementType>*/(2);
+		List/*<IElementType>*/types = new ArrayList/*<IElementType>*/(3);
 		types.add(UMLElementTypes.CallBehaviorAction_3044);
 		types.add(UMLElementTypes.CallBehaviorAction_3019);
+		types.add(UMLElementTypes.CallBehaviorAction_3074);
 		NodeToolEntry entry = new NodeToolEntry(Messages.CallBehaviorAction3CreationTool_title, Messages.CallBehaviorAction3CreationTool_desc, types);
 		entry.setSmallIcon(UMLElementTypes.getImageDescriptor(UMLElementTypes.CallBehaviorAction_3044));
 		entry.setLargeIcon(entry.getSmallIcon());
@@ -233,9 +235,10 @@ public class UMLPaletteFactory {
 	 * @generated
 	 */
 	private ToolEntry createCallOperationAction4CreationTool() {
-		List/*<IElementType>*/types = new ArrayList/*<IElementType>*/(2);
+		List/*<IElementType>*/types = new ArrayList/*<IElementType>*/(3);
 		types.add(UMLElementTypes.CallOperationAction_3045);
 		types.add(UMLElementTypes.CallOperationAction_3020);
+		types.add(UMLElementTypes.CallOperationAction_3075);
 		NodeToolEntry entry = new NodeToolEntry(Messages.CallOperationAction4CreationTool_title, Messages.CallOperationAction4CreationTool_desc, types);
 		entry.setSmallIcon(UMLElementTypes.getImageDescriptor(UMLElementTypes.CallOperationAction_3045));
 		entry.setLargeIcon(entry.getSmallIcon());
@@ -246,9 +249,10 @@ public class UMLPaletteFactory {
 	 * @generated
 	 */
 	private ToolEntry createCreateObjectAction5CreationTool() {
-		List/*<IElementType>*/types = new ArrayList/*<IElementType>*/(2);
+		List/*<IElementType>*/types = new ArrayList/*<IElementType>*/(3);
 		types.add(UMLElementTypes.CreateObjectAction_3042);
 		types.add(UMLElementTypes.CreateObjectAction_3018);
+		types.add(UMLElementTypes.CreateObjectAction_3072);
 		NodeToolEntry entry = new NodeToolEntry(Messages.CreateObjectAction5CreationTool_title, Messages.CreateObjectAction5CreationTool_desc, types);
 		entry.setSmallIcon(UMLElementTypes.getImageDescriptor(UMLElementTypes.CreateObjectAction_3042));
 		entry.setLargeIcon(entry.getSmallIcon());
@@ -259,9 +263,10 @@ public class UMLPaletteFactory {
 	 * @generated
 	 */
 	private ToolEntry createOpaqueAction6CreationTool() {
-		List/*<IElementType>*/types = new ArrayList/*<IElementType>*/(2);
+		List/*<IElementType>*/types = new ArrayList/*<IElementType>*/(3);
 		types.add(UMLElementTypes.OpaqueAction_3029);
 		types.add(UMLElementTypes.OpaqueAction_3011);
+		types.add(UMLElementTypes.OpaqueAction_3067);
 		NodeToolEntry entry = new NodeToolEntry(Messages.OpaqueAction6CreationTool_title, Messages.OpaqueAction6CreationTool_desc, types);
 		entry.setSmallIcon(UMLElementTypes.getImageDescriptor(UMLElementTypes.OpaqueAction_3029));
 		entry.setLargeIcon(entry.getSmallIcon());
@@ -272,8 +277,9 @@ public class UMLPaletteFactory {
 	 * @generated
 	 */
 	private ToolEntry createSendSignalAction7CreationTool() {
-		List/*<IElementType>*/types = new ArrayList/*<IElementType>*/(1);
+		List/*<IElementType>*/types = new ArrayList/*<IElementType>*/(2);
 		types.add(UMLElementTypes.SendSignalAction_3053);
+		types.add(UMLElementTypes.SendSignalAction_3077);
 		NodeToolEntry entry = new NodeToolEntry(Messages.SendSignalAction7CreationTool_title, Messages.SendSignalAction7CreationTool_desc, types);
 		entry.setSmallIcon(UMLElementTypes.getImageDescriptor(UMLElementTypes.SendSignalAction_3053));
 		entry.setLargeIcon(entry.getSmallIcon());
@@ -296,8 +302,9 @@ public class UMLPaletteFactory {
 	 * @generated
 	 */
 	private ToolEntry createActivityInitialNode1CreationTool() {
-		List/*<IElementType>*/types = new ArrayList/*<IElementType>*/(1);
+		List/*<IElementType>*/types = new ArrayList/*<IElementType>*/(2);
 		types.add(UMLElementTypes.InitialNode_3035);
+		types.add(UMLElementTypes.InitialNode_3064);
 		NodeToolEntry entry = new NodeToolEntry(Messages.ActivityInitialNode1CreationTool_title, Messages.ActivityInitialNode1CreationTool_desc, types);
 		entry.setSmallIcon(UMLElementTypes.getImageDescriptor(UMLElementTypes.InitialNode_3035));
 		entry.setLargeIcon(entry.getSmallIcon());
@@ -308,9 +315,10 @@ public class UMLPaletteFactory {
 	 * @generated
 	 */
 	private ToolEntry createActivityFinalNode2CreationTool() {
-		List/*<IElementType>*/types = new ArrayList/*<IElementType>*/(2);
+		List/*<IElementType>*/types = new ArrayList/*<IElementType>*/(3);
 		types.add(UMLElementTypes.ActivityFinalNode_3032);
 		types.add(UMLElementTypes.ActivityFinalNode_3014);
+		types.add(UMLElementTypes.ActivityFinalNode_3061);
 		NodeToolEntry entry = new NodeToolEntry(Messages.ActivityFinalNode2CreationTool_title, Messages.ActivityFinalNode2CreationTool_desc, types);
 		entry.setSmallIcon(UMLElementTypes.getImageDescriptor(UMLElementTypes.ActivityFinalNode_3032));
 		entry.setLargeIcon(entry.getSmallIcon());
@@ -321,9 +329,10 @@ public class UMLPaletteFactory {
 	 * @generated
 	 */
 	private ToolEntry createAcceptEventAction1CreationTool() {
-		List/*<IElementType>*/types = new ArrayList/*<IElementType>*/(2);
+		List/*<IElementType>*/types = new ArrayList/*<IElementType>*/(3);
 		types.add(UMLElementTypes.AcceptEventAction_3030);
 		types.add(UMLElementTypes.AcceptEventAction_3012);
+		types.add(UMLElementTypes.AcceptEventAction_3059);
 		NodeToolEntry entry = new NodeToolEntry(Messages.AcceptEventAction1CreationTool_title, Messages.AcceptEventAction1CreationTool_desc, types);
 		entry.setSmallIcon(UMLElementTypes.getImageDescriptor(UMLElementTypes.AcceptEventAction_3030));
 		entry.setLargeIcon(entry.getSmallIcon());
@@ -334,9 +343,10 @@ public class UMLPaletteFactory {
 	 * @generated
 	 */
 	private ToolEntry createAcceptTimeEventAction2CreationTool() {
-		List/*<IElementType>*/types = new ArrayList/*<IElementType>*/(2);
+		List/*<IElementType>*/types = new ArrayList/*<IElementType>*/(3);
 		types.add(UMLElementTypes.AcceptEventAction_3031);
 		types.add(UMLElementTypes.AcceptEventAction_3013);
+		types.add(UMLElementTypes.AcceptEventAction_3060);
 		NodeToolEntry entry = new NodeToolEntry(Messages.AcceptTimeEventAction2CreationTool_title, Messages.AcceptTimeEventAction2CreationTool_desc, types);
 		entry.setSmallIcon(UMLElementTypes.getImageDescriptor(UMLElementTypes.AcceptEventAction_3031));
 		entry.setLargeIcon(entry.getSmallIcon());
@@ -347,8 +357,9 @@ public class UMLPaletteFactory {
 	 * @generated
 	 */
 	private ToolEntry createMergeNode1CreationTool() {
-		List/*<IElementType>*/types = new ArrayList/*<IElementType>*/(1);
+		List/*<IElementType>*/types = new ArrayList/*<IElementType>*/(2);
 		types.add(UMLElementTypes.MergeNode_3034);
+		types.add(UMLElementTypes.MergeNode_3063);
 		NodeToolEntry entry = new NodeToolEntry(Messages.MergeNode1CreationTool_title, Messages.MergeNode1CreationTool_desc, types);
 		entry.setSmallIcon(UMLElementTypes.getImageDescriptor(UMLElementTypes.MergeNode_3034));
 		entry.setLargeIcon(entry.getSmallIcon());
@@ -359,9 +370,10 @@ public class UMLPaletteFactory {
 	 * @generated
 	 */
 	private ToolEntry createDecisionNode2CreationTool() {
-		List/*<IElementType>*/types = new ArrayList/*<IElementType>*/(2);
+		List/*<IElementType>*/types = new ArrayList/*<IElementType>*/(3);
 		types.add(UMLElementTypes.DecisionNode_3033);
 		types.add(UMLElementTypes.DecisionNode_3015);
+		types.add(UMLElementTypes.DecisionNode_3062);
 		NodeToolEntry entry = new NodeToolEntry(Messages.DecisionNode2CreationTool_title, Messages.DecisionNode2CreationTool_desc, types);
 		entry.setSmallIcon(UMLElementTypes.getImageDescriptor(UMLElementTypes.DecisionNode_3033));
 		entry.setLargeIcon(entry.getSmallIcon());
@@ -372,9 +384,10 @@ public class UMLPaletteFactory {
 	 * @generated
 	 */
 	private ToolEntry createForkNode1CreationTool() {
-		List/*<IElementType>*/types = new ArrayList/*<IElementType>*/(2);
+		List/*<IElementType>*/types = new ArrayList/*<IElementType>*/(3);
 		types.add(UMLElementTypes.ForkNode_3039);
 		types.add(UMLElementTypes.ForkNode_3021);
+		types.add(UMLElementTypes.ForkNode_3069);
 		NodeToolEntry entry = new NodeToolEntry(Messages.ForkNode1CreationTool_title, Messages.ForkNode1CreationTool_desc, types);
 		entry.setSmallIcon(UMLElementTypes.getImageDescriptor(UMLElementTypes.ForkNode_3039));
 		entry.setLargeIcon(entry.getSmallIcon());
@@ -385,9 +398,10 @@ public class UMLPaletteFactory {
 	 * @generated
 	 */
 	private ToolEntry createJoinNode2CreationTool() {
-		List/*<IElementType>*/types = new ArrayList/*<IElementType>*/(2);
+		List/*<IElementType>*/types = new ArrayList/*<IElementType>*/(3);
 		types.add(UMLElementTypes.JoinNode_3040);
 		types.add(UMLElementTypes.JoinNode_3022);
+		types.add(UMLElementTypes.JoinNode_3070);
 		NodeToolEntry entry = new NodeToolEntry(Messages.JoinNode2CreationTool_title, Messages.JoinNode2CreationTool_desc, types);
 		entry.setSmallIcon(UMLElementTypes.getImageDescriptor(UMLElementTypes.JoinNode_3040));
 		entry.setLargeIcon(entry.getSmallIcon());
@@ -398,9 +412,10 @@ public class UMLPaletteFactory {
 	 * @generated
 	 */
 	private ToolEntry createPin1CreationTool() {
-		List/*<IElementType>*/types = new ArrayList/*<IElementType>*/(2);
+		List/*<IElementType>*/types = new ArrayList/*<IElementType>*/(3);
 		types.add(UMLElementTypes.Pin_3041);
 		types.add(UMLElementTypes.Pin_3017);
+		types.add(UMLElementTypes.Pin_3071);
 		NodeToolEntry entry = new NodeToolEntry(Messages.Pin1CreationTool_title, Messages.Pin1CreationTool_desc, types);
 		entry.setSmallIcon(UMLElementTypes.getImageDescriptor(UMLElementTypes.Pin_3041));
 		entry.setLargeIcon(entry.getSmallIcon());
@@ -443,9 +458,10 @@ public class UMLPaletteFactory {
 	 * @generated
 	 */
 	private ToolEntry createFlowFinalNode3CreationTool() {
-		List/*<IElementType>*/types = new ArrayList/*<IElementType>*/(2);
+		List/*<IElementType>*/types = new ArrayList/*<IElementType>*/(3);
 		types.add(UMLElementTypes.FlowFinalNode_3038);
 		types.add(UMLElementTypes.FlowFinalNode_3016);
+		types.add(UMLElementTypes.FlowFinalNode_3068);
 		NodeToolEntry entry = new NodeToolEntry(Messages.FlowFinalNode3CreationTool_title, Messages.FlowFinalNode3CreationTool_desc, types);
 		entry.setSmallIcon(UMLElementTypes.getImageDescriptor(UMLElementTypes.FlowFinalNode_3038));
 		entry.setLargeIcon(entry.getSmallIcon());
@@ -456,10 +472,11 @@ public class UMLPaletteFactory {
 	 * @generated
 	 */
 	private ToolEntry createLoopNode1CreationTool() {
-		List/*<IElementType>*/types = new ArrayList/*<IElementType>*/(1);
+		List/*<IElementType>*/types = new ArrayList/*<IElementType>*/(2);
+		types.add(UMLElementTypes.LoopNode_3078);
 		types.add(UMLElementTypes.LoopNode_3058);
 		NodeToolEntry entry = new NodeToolEntry(Messages.LoopNode1CreationTool_title, Messages.LoopNode1CreationTool_desc, types);
-		entry.setSmallIcon(UMLElementTypes.getImageDescriptor(UMLElementTypes.LoopNode_3058));
+		entry.setSmallIcon(UMLElementTypes.getImageDescriptor(UMLElementTypes.LoopNode_3078));
 		entry.setLargeIcon(entry.getSmallIcon());
 		return entry;
 	}
@@ -468,9 +485,10 @@ public class UMLPaletteFactory {
 	 * @generated
 	 */
 	private ToolEntry createStructuredActivityNode2CreationTool() {
-		List/*<IElementType>*/types = new ArrayList/*<IElementType>*/(2);
+		List/*<IElementType>*/types = new ArrayList/*<IElementType>*/(3);
 		types.add(UMLElementTypes.StructuredActivityNode_3046);
 		types.add(UMLElementTypes.StructuredActivityNode_3009);
+		types.add(UMLElementTypes.StructuredActivityNode_3076);
 		NodeToolEntry entry = new NodeToolEntry(Messages.StructuredActivityNode2CreationTool_title, Messages.StructuredActivityNode2CreationTool_desc, types);
 		entry.setSmallIcon(UMLElementTypes.getImageDescriptor(UMLElementTypes.StructuredActivityNode_3046));
 		entry.setLargeIcon(entry.getSmallIcon());
@@ -481,9 +499,10 @@ public class UMLPaletteFactory {
 	 * @generated
 	 */
 	private ToolEntry createCentralBuffer1CreationTool() {
-		List/*<IElementType>*/types = new ArrayList/*<IElementType>*/(2);
+		List/*<IElementType>*/types = new ArrayList/*<IElementType>*/(3);
 		types.add(UMLElementTypes.CentralBufferNode_3037);
 		types.add(UMLElementTypes.CentralBufferNode_3025);
+		types.add(UMLElementTypes.CentralBufferNode_3066);
 		NodeToolEntry entry = new NodeToolEntry(Messages.CentralBuffer1CreationTool_title, Messages.CentralBuffer1CreationTool_desc, types);
 		entry.setSmallIcon(UMLElementTypes.getImageDescriptor(UMLElementTypes.CentralBufferNode_3037));
 		entry.setLargeIcon(entry.getSmallIcon());
@@ -494,9 +513,10 @@ public class UMLPaletteFactory {
 	 * @generated
 	 */
 	private ToolEntry createDatastore2CreationTool() {
-		List/*<IElementType>*/types = new ArrayList/*<IElementType>*/(2);
+		List/*<IElementType>*/types = new ArrayList/*<IElementType>*/(3);
 		types.add(UMLElementTypes.DataStoreNode_3036);
 		types.add(UMLElementTypes.DataStoreNode_3024);
+		types.add(UMLElementTypes.DataStoreNode_3065);
 		NodeToolEntry entry = new NodeToolEntry(Messages.Datastore2CreationTool_title, Messages.Datastore2CreationTool_desc, types);
 		entry.setSmallIcon(UMLElementTypes.getImageDescriptor(UMLElementTypes.DataStoreNode_3036));
 		entry.setLargeIcon(entry.getSmallIcon());

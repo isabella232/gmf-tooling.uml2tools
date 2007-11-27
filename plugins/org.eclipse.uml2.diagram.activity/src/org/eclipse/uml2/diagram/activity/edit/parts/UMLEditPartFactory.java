@@ -355,6 +355,114 @@ public class UMLEditPartFactory implements EditPartFactory {
 			case ActivityPartitionName2EditPart.VISUAL_ID:
 				return new ActivityPartitionName2EditPart(view);
 
+			case AcceptEventAction5EditPart.VISUAL_ID:
+				return new AcceptEventAction5EditPart(view);
+
+			case AcceptEventActionName5EditPart.VISUAL_ID:
+				return new AcceptEventActionName5EditPart(view);
+
+			case AcceptEventAction6EditPart.VISUAL_ID:
+				return new AcceptEventAction6EditPart(view);
+
+			case AcceptEventActionName6EditPart.VISUAL_ID:
+				return new AcceptEventActionName6EditPart(view);
+
+			case ActivityFinalNode3EditPart.VISUAL_ID:
+				return new ActivityFinalNode3EditPart(view);
+
+			case DecisionNode3EditPart.VISUAL_ID:
+				return new DecisionNode3EditPart(view);
+
+			case MergeNode2EditPart.VISUAL_ID:
+				return new MergeNode2EditPart(view);
+
+			case InitialNode2EditPart.VISUAL_ID:
+				return new InitialNode2EditPart(view);
+
+			case DataStoreNode3EditPart.VISUAL_ID:
+				return new DataStoreNode3EditPart(view);
+
+			case DataStoreNodeName5EditPart.VISUAL_ID:
+				return new DataStoreNodeName5EditPart(view);
+
+			case DataStoreNodeName6EditPart.VISUAL_ID:
+				return new DataStoreNodeName6EditPart(view);
+
+			case DataStoreNodeOrdering3EditPart.VISUAL_ID:
+				return new DataStoreNodeOrdering3EditPart(view);
+
+			case CentralBufferNode3EditPart.VISUAL_ID:
+				return new CentralBufferNode3EditPart(view);
+
+			case CentralBufferNodeName5EditPart.VISUAL_ID:
+				return new CentralBufferNodeName5EditPart(view);
+
+			case CentralBufferNodeName6EditPart.VISUAL_ID:
+				return new CentralBufferNodeName6EditPart(view);
+
+			case CentralBufferNodeOrdering3EditPart.VISUAL_ID:
+				return new CentralBufferNodeOrdering3EditPart(view);
+
+			case OpaqueAction3EditPart.VISUAL_ID:
+				return new OpaqueAction3EditPart(view);
+
+			case OpaqueActionName3EditPart.VISUAL_ID:
+				return new OpaqueActionName3EditPart(view);
+
+			case FlowFinalNode3EditPart.VISUAL_ID:
+				return new FlowFinalNode3EditPart(view);
+
+			case ForkNode3EditPart.VISUAL_ID:
+				return new ForkNode3EditPart(view);
+
+			case JoinNode3EditPart.VISUAL_ID:
+				return new JoinNode3EditPart(view);
+
+			case Pin3EditPart.VISUAL_ID:
+				return new Pin3EditPart(view);
+
+			case PinName3EditPart.VISUAL_ID:
+				return new PinName3EditPart(view);
+
+			case PinOrdering3EditPart.VISUAL_ID:
+				return new PinOrdering3EditPart(view);
+
+			case CreateObjectAction3EditPart.VISUAL_ID:
+				return new CreateObjectAction3EditPart(view);
+
+			case CreateObjectActionName3EditPart.VISUAL_ID:
+				return new CreateObjectActionName3EditPart(view);
+
+			case AddStructuralFeatureValueAction3EditPart.VISUAL_ID:
+				return new AddStructuralFeatureValueAction3EditPart(view);
+
+			case AddStructuralFeatureValueActionName3EditPart.VISUAL_ID:
+				return new AddStructuralFeatureValueActionName3EditPart(view);
+
+			case CallBehaviorAction3EditPart.VISUAL_ID:
+				return new CallBehaviorAction3EditPart(view);
+
+			case CallBehaviorActionName3EditPart.VISUAL_ID:
+				return new CallBehaviorActionName3EditPart(view);
+
+			case CallOperationAction3EditPart.VISUAL_ID:
+				return new CallOperationAction3EditPart(view);
+
+			case CallOperationActionName3EditPart.VISUAL_ID:
+				return new CallOperationActionName3EditPart(view);
+
+			case StructuredActivityNode3EditPart.VISUAL_ID:
+				return new StructuredActivityNode3EditPart(view);
+
+			case SendSignalAction2EditPart.VISUAL_ID:
+				return new SendSignalAction2EditPart(view);
+
+			case SendSignalActionName2EditPart.VISUAL_ID:
+				return new SendSignalActionName2EditPart(view);
+
+			case LoopNode2EditPart.VISUAL_ID:
+				return new LoopNode2EditPart(view);
+
 			case LoopNodeEditPart.VISUAL_ID:
 				return new LoopNodeEditPart(view);
 
@@ -369,6 +477,12 @@ public class UMLEditPartFactory implements EditPartFactory {
 
 			case StructuredActivityNodeStructuredActivityContentPaneCompartment2EditPart.VISUAL_ID:
 				return new StructuredActivityNodeStructuredActivityContentPaneCompartment2EditPart(view);
+
+			case StructuredActivityNodeStructuredActivityContentPaneCompartment3EditPart.VISUAL_ID:
+				return new StructuredActivityNodeStructuredActivityContentPaneCompartment3EditPart(view);
+
+			case LoopNodeLoopNodeContentPaneCompartment2EditPart.VISUAL_ID:
+				return new LoopNodeLoopNodeContentPaneCompartment2EditPart(view);
 
 			case LoopNodeLoopNodeContentPaneCompartmentEditPart.VISUAL_ID:
 				return new LoopNodeLoopNodeContentPaneCompartmentEditPart(view);

@@ -312,6 +312,106 @@ public class UMLElementTypes extends ElementInitializers {
 	/**
 	 * @generated
 	 */
+	public static final IElementType AcceptEventAction_3059 = getElementType("org.eclipse.uml2.diagram.activity.AcceptEventAction_3059"); //$NON-NLS-1$
+
+	/**
+	 * @generated
+	 */
+	public static final IElementType AcceptEventAction_3060 = getElementType("org.eclipse.uml2.diagram.activity.AcceptEventAction_3060"); //$NON-NLS-1$
+
+	/**
+	 * @generated
+	 */
+	public static final IElementType ActivityFinalNode_3061 = getElementType("org.eclipse.uml2.diagram.activity.ActivityFinalNode_3061"); //$NON-NLS-1$
+
+	/**
+	 * @generated
+	 */
+	public static final IElementType DecisionNode_3062 = getElementType("org.eclipse.uml2.diagram.activity.DecisionNode_3062"); //$NON-NLS-1$
+
+	/**
+	 * @generated
+	 */
+	public static final IElementType MergeNode_3063 = getElementType("org.eclipse.uml2.diagram.activity.MergeNode_3063"); //$NON-NLS-1$
+
+	/**
+	 * @generated
+	 */
+	public static final IElementType InitialNode_3064 = getElementType("org.eclipse.uml2.diagram.activity.InitialNode_3064"); //$NON-NLS-1$
+
+	/**
+	 * @generated
+	 */
+	public static final IElementType DataStoreNode_3065 = getElementType("org.eclipse.uml2.diagram.activity.DataStoreNode_3065"); //$NON-NLS-1$
+
+	/**
+	 * @generated
+	 */
+	public static final IElementType CentralBufferNode_3066 = getElementType("org.eclipse.uml2.diagram.activity.CentralBufferNode_3066"); //$NON-NLS-1$
+
+	/**
+	 * @generated
+	 */
+	public static final IElementType OpaqueAction_3067 = getElementType("org.eclipse.uml2.diagram.activity.OpaqueAction_3067"); //$NON-NLS-1$
+
+	/**
+	 * @generated
+	 */
+	public static final IElementType FlowFinalNode_3068 = getElementType("org.eclipse.uml2.diagram.activity.FlowFinalNode_3068"); //$NON-NLS-1$
+
+	/**
+	 * @generated
+	 */
+	public static final IElementType ForkNode_3069 = getElementType("org.eclipse.uml2.diagram.activity.ForkNode_3069"); //$NON-NLS-1$
+
+	/**
+	 * @generated
+	 */
+	public static final IElementType JoinNode_3070 = getElementType("org.eclipse.uml2.diagram.activity.JoinNode_3070"); //$NON-NLS-1$
+
+	/**
+	 * @generated
+	 */
+	public static final IElementType Pin_3071 = getElementType("org.eclipse.uml2.diagram.activity.Pin_3071"); //$NON-NLS-1$
+
+	/**
+	 * @generated
+	 */
+	public static final IElementType CreateObjectAction_3072 = getElementType("org.eclipse.uml2.diagram.activity.CreateObjectAction_3072"); //$NON-NLS-1$
+
+	/**
+	 * @generated
+	 */
+	public static final IElementType AddStructuralFeatureValueAction_3073 = getElementType("org.eclipse.uml2.diagram.activity.AddStructuralFeatureValueAction_3073"); //$NON-NLS-1$
+
+	/**
+	 * @generated
+	 */
+	public static final IElementType CallBehaviorAction_3074 = getElementType("org.eclipse.uml2.diagram.activity.CallBehaviorAction_3074"); //$NON-NLS-1$
+
+	/**
+	 * @generated
+	 */
+	public static final IElementType CallOperationAction_3075 = getElementType("org.eclipse.uml2.diagram.activity.CallOperationAction_3075"); //$NON-NLS-1$
+
+	/**
+	 * @generated
+	 */
+	public static final IElementType StructuredActivityNode_3076 = getElementType("org.eclipse.uml2.diagram.activity.StructuredActivityNode_3076"); //$NON-NLS-1$
+
+	/**
+	 * @generated
+	 */
+	public static final IElementType SendSignalAction_3077 = getElementType("org.eclipse.uml2.diagram.activity.SendSignalAction_3077"); //$NON-NLS-1$
+
+	/**
+	 * @generated
+	 */
+	public static final IElementType LoopNode_3078 = getElementType("org.eclipse.uml2.diagram.activity.LoopNode_3078"); //$NON-NLS-1$
+
+	/**
+	 * @generated
+	 */
 	public static final IElementType LoopNode_3058 = getElementType("org.eclipse.uml2.diagram.activity.LoopNode_3058"); //$NON-NLS-1$
 
 	/**
@@ -566,6 +666,46 @@ public class UMLElementTypes extends ElementInitializers {
 
 			elements.put(ActivityPartition_3057, UMLPackage.eINSTANCE.getActivityPartition());
 
+			elements.put(AcceptEventAction_3059, UMLPackage.eINSTANCE.getAcceptEventAction());
+
+			elements.put(AcceptEventAction_3060, UMLPackage.eINSTANCE.getAcceptEventAction());
+
+			elements.put(ActivityFinalNode_3061, UMLPackage.eINSTANCE.getActivityFinalNode());
+
+			elements.put(DecisionNode_3062, UMLPackage.eINSTANCE.getDecisionNode());
+
+			elements.put(MergeNode_3063, UMLPackage.eINSTANCE.getMergeNode());
+
+			elements.put(InitialNode_3064, UMLPackage.eINSTANCE.getInitialNode());
+
+			elements.put(DataStoreNode_3065, UMLPackage.eINSTANCE.getDataStoreNode());
+
+			elements.put(CentralBufferNode_3066, UMLPackage.eINSTANCE.getCentralBufferNode());
+
+			elements.put(OpaqueAction_3067, UMLPackage.eINSTANCE.getOpaqueAction());
+
+			elements.put(FlowFinalNode_3068, UMLPackage.eINSTANCE.getFlowFinalNode());
+
+			elements.put(ForkNode_3069, UMLPackage.eINSTANCE.getForkNode());
+
+			elements.put(JoinNode_3070, UMLPackage.eINSTANCE.getJoinNode());
+
+			elements.put(Pin_3071, UMLPackage.eINSTANCE.getPin());
+
+			elements.put(CreateObjectAction_3072, UMLPackage.eINSTANCE.getCreateObjectAction());
+
+			elements.put(AddStructuralFeatureValueAction_3073, UMLPackage.eINSTANCE.getAddStructuralFeatureValueAction());
+
+			elements.put(CallBehaviorAction_3074, UMLPackage.eINSTANCE.getCallBehaviorAction());
+
+			elements.put(CallOperationAction_3075, UMLPackage.eINSTANCE.getCallOperationAction());
+
+			elements.put(StructuredActivityNode_3076, UMLPackage.eINSTANCE.getStructuredActivityNode());
+
+			elements.put(SendSignalAction_3077, UMLPackage.eINSTANCE.getSendSignalAction());
+
+			elements.put(LoopNode_3078, UMLPackage.eINSTANCE.getLoopNode());
+
 			elements.put(LoopNode_3058, UMLPackage.eINSTANCE.getLoopNode());
 
 			elements.put(LiteralString_3049, UMLPackage.eINSTANCE.getLiteralString());
@@ -653,6 +793,26 @@ public class UMLElementTypes extends ElementInitializers {
 			KNOWN_ELEMENT_TYPES.add(SendSignalAction_3053);
 			KNOWN_ELEMENT_TYPES.add(ActivityPartition_3056);
 			KNOWN_ELEMENT_TYPES.add(ActivityPartition_3057);
+			KNOWN_ELEMENT_TYPES.add(AcceptEventAction_3059);
+			KNOWN_ELEMENT_TYPES.add(AcceptEventAction_3060);
+			KNOWN_ELEMENT_TYPES.add(ActivityFinalNode_3061);
+			KNOWN_ELEMENT_TYPES.add(DecisionNode_3062);
+			KNOWN_ELEMENT_TYPES.add(MergeNode_3063);
+			KNOWN_ELEMENT_TYPES.add(InitialNode_3064);
+			KNOWN_ELEMENT_TYPES.add(DataStoreNode_3065);
+			KNOWN_ELEMENT_TYPES.add(CentralBufferNode_3066);
+			KNOWN_ELEMENT_TYPES.add(OpaqueAction_3067);
+			KNOWN_ELEMENT_TYPES.add(FlowFinalNode_3068);
+			KNOWN_ELEMENT_TYPES.add(ForkNode_3069);
+			KNOWN_ELEMENT_TYPES.add(JoinNode_3070);
+			KNOWN_ELEMENT_TYPES.add(Pin_3071);
+			KNOWN_ELEMENT_TYPES.add(CreateObjectAction_3072);
+			KNOWN_ELEMENT_TYPES.add(AddStructuralFeatureValueAction_3073);
+			KNOWN_ELEMENT_TYPES.add(CallBehaviorAction_3074);
+			KNOWN_ELEMENT_TYPES.add(CallOperationAction_3075);
+			KNOWN_ELEMENT_TYPES.add(StructuredActivityNode_3076);
+			KNOWN_ELEMENT_TYPES.add(SendSignalAction_3077);
+			KNOWN_ELEMENT_TYPES.add(LoopNode_3078);
 			KNOWN_ELEMENT_TYPES.add(LoopNode_3058);
 			KNOWN_ELEMENT_TYPES.add(LiteralString_3049);
 			KNOWN_ELEMENT_TYPES.add(LiteralString_3051);
