@@ -1425,7 +1425,14 @@
     <labelMappings
         xsi:type="gmfmap:FeatureLabelMapping">
       <diagramLabel
-          href="classDiagram_auxiliary.gmfgraph#AuxiliaryPureLabel"/>
+          href="classDiagram_associations.gmfgraph#AssociationLink_targetRole"/>
+      <features
+          href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//NamedElement/name"/>
+    </labelMappings>
+    <labelMappings
+        xsi:type="gmfmap:FeatureLabelMapping">
+      <diagramLabel
+          href="classDiagram_associations.gmfgraph#AssociationLink_targetMultiplicity"/>
       <features
           href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//NamedElement/name"/>
     </labelMappings>

@@ -2237,7 +2237,8 @@
             xsi:type="gmfgen:ResizeConstraints"/>
         <attributes
             xsi:type="gmfgen:DefaultSizeAttributes"
-            height="40"/>
+            width="10"
+            height="10"/>
         <attributes
             xsi:type="uml2.gmfgenext:SubstitutableByAttributes"
             requiresAll="true">
@@ -2408,7 +2409,8 @@
           visualID="6002"
           editPartClassName="PropertyNameEditPart"
           itemSemanticEditPolicyClassName="PropertyNameItemSemanticEditPolicy"
-          notationViewFactoryClassName="PropertyNameViewFactory">
+          notationViewFactoryClassName="PropertyNameViewFactory"
+          alignment="SOURCE">
         <diagramRunTimeClass
             href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
         <viewmap
@@ -2416,7 +2418,32 @@
             figureQualifiedClassName="org.eclipse.draw2d.Label">
           <attributes
               xsi:type="gmfgen:LabelOffsetAttributes"
-              y="40"/>
+              y="-15"/>
+          <requiredPluginIDs>org.eclipse.draw2d</requiredPluginIDs>
+          <requiredPluginIDs>org.eclipse.uml2.diagram.common</requiredPluginIDs>
+          <requiredPluginIDs>org.eclipse.gmf.runtime.draw2d.ui</requiredPluginIDs>
+        </viewmap>
+        <modelFacet
+            xsi:type="gmfgen:FeatureLabelModelFacet">
+          <metaFeatures
+              href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/NamedElement/name"/>
+        </modelFacet>
+      </labels>
+      <labels
+          visualID="6012"
+          editPartClassName="PropertyName2EditPart"
+          itemSemanticEditPolicyClassName="PropertyName2ItemSemanticEditPolicy"
+          notationViewFactoryClassName="PropertyName2ViewFactory"
+          alignment="SOURCE">
+        <diagramRunTimeClass
+            href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
+        <viewmap
+            xsi:type="gmfgen:FigureViewmap"
+            figureQualifiedClassName="org.eclipse.draw2d.Label">
+          <attributes
+              xsi:type="gmfgen:LabelOffsetAttributes"
+              y="15"/>
+          <requiredPluginIDs>org.eclipse.draw2d</requiredPluginIDs>
           <requiredPluginIDs>org.eclipse.uml2.diagram.common</requiredPluginIDs>
           <requiredPluginIDs>org.eclipse.gmf.runtime.draw2d.ui</requiredPluginIDs>
         </viewmap>
