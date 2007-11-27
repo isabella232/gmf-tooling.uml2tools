@@ -847,6 +847,9 @@ public class UMLVisualIDRegistry {
 			if (PropertyNameEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
+			if (PropertyName2EditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
 			break;
 		case AssociationEditPart.VISUAL_ID:
 			if (AssociationNameEditPart.VISUAL_ID == nodeVisualID) {

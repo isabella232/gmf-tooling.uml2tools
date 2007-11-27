@@ -49,12 +49,12 @@ import org.eclipse.uml2.diagram.clazz.providers.UMLParserProvider;
 /**
  * @generated
  */
-public class PropertyNameEditPart extends LabelEditPart implements ITextAwareEditPart {
+public class PropertyName2EditPart extends LabelEditPart implements ITextAwareEditPart {
 
 	/**
 	 * @generated
 	 */
-	public static final int VISUAL_ID = 6002;
+	public static final int VISUAL_ID = 6012;
 
 	/**
 	 * @generated
@@ -80,13 +80,13 @@ public class PropertyNameEditPart extends LabelEditPart implements ITextAwareEdi
 	 * @generated
 	 */
 	static {
-		registerSnapBackPosition(UMLVisualIDRegistry.getType(org.eclipse.uml2.diagram.clazz.edit.parts.PropertyNameEditPart.VISUAL_ID), new Point(0, -15));
+		registerSnapBackPosition(UMLVisualIDRegistry.getType(org.eclipse.uml2.diagram.clazz.edit.parts.PropertyName2EditPart.VISUAL_ID), new Point(0, 15));
 	}
 
 	/**
 	 * @generated
 	 */
-	public PropertyNameEditPart(View view) {
+	public PropertyName2EditPart(View view) {
 		super(view);
 	}
 
@@ -520,4 +520,5 @@ public class PropertyNameEditPart extends LabelEditPart implements ITextAwareEdi
 	protected IFigure createFigurePrim() {
 		return new Label();
 	}
+
 }

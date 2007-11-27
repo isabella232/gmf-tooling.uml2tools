@@ -40,6 +40,9 @@ public abstract class AssociationEndToString extends PropertyToString {
 	}
 	
 	protected static Property asProperty(EObject object, boolean sourceNotTarget) {
+		if (object instanceof Property){
+			return (Property)object;
+		}
 		if (false == object instanceof Association){
 			throw new IllegalStateException("I can not provide toString for:" + object);
 		}

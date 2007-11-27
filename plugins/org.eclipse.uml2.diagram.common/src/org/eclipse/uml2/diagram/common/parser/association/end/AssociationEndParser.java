@@ -20,25 +20,31 @@ import org.eclipse.uml2.diagram.parser.lookup.LookupSuite;
 import org.eclipse.uml2.uml.*;
 
 public class AssociationEndParser extends ExternalParserBase implements AssociationEndParserConstants {
-        private Property mySubject;
+	private Property mySubject;
+	private EClass mySubjectEClass;
 
     public AssociationEndParser(){
-        this(new StringReader("")); //$NON-NLS-1$
+    	this(new StringReader(""));
     }
-
+    
     public AssociationEndParser(LookupSuite lookup){
-        this();
-        setLookupSuite(lookup);
+    	this(lookup, UMLPackage.eINSTANCE.getAssociation());
+    }
+    
+    public AssociationEndParser(LookupSuite lookup, EClass subjectEClass){
+    	this();
+    	setLookupSuite(lookup);
+    	mySubjectEClass = subjectEClass;
     }
 
-        public EClass getSubjectClass(){
-                // though we expects the Property instance, the input object is still Association 
-                // @see createSubjectPrototype()
-                return UMLPackage.eINSTANCE.getAssociation();
-        }
-
+	public EClass getSubjectClass(){
+		// though we expects the Property instance, the input object may be either Property or Association 
+		// @see createSubjectPrototype()
+		return mySubjectEClass;
+	}
+	
     public EObject createSubjectPrototype() {
-        return UMLFactory.eINSTANCE.createProperty();
+    	return UMLFactory.eINSTANCE.createProperty();
     }
 
         public void parse(EObject target, String text) throws ExternalParserException {

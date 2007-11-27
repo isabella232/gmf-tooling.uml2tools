@@ -283,6 +283,9 @@ public class UMLEditPartFactory implements EditPartFactory {
 			case PropertyNameEditPart.VISUAL_ID:
 				return new PropertyNameEditPart(view);
 
+			case PropertyName2EditPart.VISUAL_ID:
+				return new PropertyName2EditPart(view);
+
 			case ConstraintConstrainedElementEditPart.VISUAL_ID:
 				return new ConstraintConstrainedElementEditPart(view);
 
