@@ -58,21 +58,22 @@ public class GeneratorExt extends Generator {
 //			generateChangeNotationAction(node);
 //		}
 	}
-	
+
 	private void generateChangeNotationAction(GenTopLevelNode node) throws InterruptedException, UnexpectedBehaviourException {
-		for (org.eclipse.gmf.codegen.gmfgen.Attributes attr: node.getViewmap().getAttributes()) {
-			if (attr instanceof SubstitutableByAttributes) {
-				SubstitutableByAttributes sba = (SubstitutableByAttributes)attr;
-				if (sba.isRequiresAll()) {
-					return;
-				}
-				for (Object id: sba.getSubstitutableByIDs()) {		
-					doGenerateJavaClass(myEmitters.getChangeNotationActionEmitter(), myEmitters.getChangeNotationActionName(new Object[]{node, id}), node, id);
-				}
-				// we process only the first attribute
+		for (org.eclipse.gmf.codegen.gmfgen.Attributes attr : node.getViewmap().getAttributes()) {
+			if (false == attr instanceof SubstitutableByAttributes) {
+				continue;
+			}
+			SubstitutableByAttributes sba = (SubstitutableByAttributes) attr;
+			if (sba.isRequiresAll()) {
 				return;
 			}
+			doGenerateJavaClass(myEmitters.getChangeNotationContributionItemProviderEmitter(), myEmitters.getChangeNotationContributionItemProviderName(new Object[] { node }), node);
+			for (Object id : sba.getSubstitutableByIDs()) {
+				doGenerateJavaClass(myEmitters.getChangeNotationActionEmitter(), myEmitters.getChangeNotationActionName(new Object[] { node, id }), node, id);
+			}
+			// we process only the first attribute
+			return;
 		}
 	}
-
 }

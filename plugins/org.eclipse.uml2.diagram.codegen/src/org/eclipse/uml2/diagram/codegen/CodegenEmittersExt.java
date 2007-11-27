@@ -39,6 +39,14 @@ public class CodegenEmittersExt extends CodegenEmitters {
 		return getQualifiedClassName("xpt::actions::ChangeNotationAction::qualifiedClassName", input); //$NON-NLS-1$
 	}
 
+	public TextEmitter getChangeNotationContributionItemProviderEmitter() throws UnexpectedBehaviourException {
+		return newXpandEmitter("xpt::actions::ChangeNotationContributionItemProvider::ChangeNotationContributionItemProvider"); //$NON-NLS-1$
+	}
+
+	public String getChangeNotationContributionItemProviderName(Object... input) throws UnexpectedBehaviourException {
+		return getQualifiedClassName("xpt::actions::ChangeNotationContributionItemProvider::qualifiedClassName", input); //$NON-NLS-1$
+	}
+
 	/**
 	 * Returns qualified class name defined in template.
 	 */
