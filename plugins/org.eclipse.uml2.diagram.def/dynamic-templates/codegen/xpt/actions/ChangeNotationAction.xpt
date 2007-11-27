@@ -1,0 +1,73 @@
+/*
+ * Copyright (c) 2007 Borland Software Corporation
+ * 
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
+ *
+ * Contributors:
+ *    Tatiana Fesenko (Borland) - initial API and implementation
+ */
+
+«IMPORT "http://www.eclipse.org/gmf/2006/GenModel"»
+«IMPORT "http://www.eclipse.org/emf/2002/Ecore"»
+«IMPORT "http://www.eclipse.org/emf/2002/GenModel"»
+«IMPORT "http://www.eclipse.org/uml2/diagram/gmfgenext/DiagramFigure/1.0"»
+
+«DEFINE ChangeNotationAction(Integer newVID) FOR gmfgen::GenTopLevelNode»
+package «EXPAND packageName»;
+
+«EXPAND xpt::Common::generatedClassComment»
+public class «EXPAND className(newVID)» extends org.eclipse.uml2.diagram.common.actions.ChangeNotationAction {
+
+	public static final String ACTION_ID = "set_«newVID»_notation"; //$NON-NLS-1$
+
+	private static final int NEW_VID = «newVID»;
+
+	«EXPAND xpt::Common::generatedMemberComment»
+	public «EXPAND className(newVID)»(org.eclipse.ui.IWorkbenchPage workbenchPage, String actionId) {
+		super(workbenchPage, actionId);
+	}
+	
+	«EXPAND xpt::Common::generatedMemberComment»
+	@Override
+	public void refresh() {
+		super.refresh();
+		setChecked(calculateChecked());
+	}
+	
+	«EXPAND xpt::Common::generatedMemberComment»
+	@Override
+	public boolean isEnabled() {
+		org.eclipse.gmf.runtime.diagram.ui.editparts.GraphicalEditPart ep = getSelectedEditPart();
+		return (ep == null) ? false : org.eclipse.uml2.diagram.csd.part.UMLVisualIDRegistry.getVisualID(ep.getNotationView()) != NEW_VID;
+	}
+
+	«EXPAND xpt::Common::generatedMemberComment»
+	public boolean calculateChecked() {
+		org.eclipse.gmf.runtime.diagram.ui.editparts.GraphicalEditPart ep = getSelectedEditPart();
+		return (ep == null) ? false : org.eclipse.uml2.diagram.csd.part.UMLVisualIDRegistry.getVisualID(ep.getNotationView()) == NEW_VID;
+	}
+
+	«EXPAND xpt::Common::generatedMemberComment»
+	@Override
+	protected void updateText() {
+		setText("Set «newVID» Notation");
+		setToolTipText("Set «newVID» Notation");
+		return;
+	}
+
+	«EXPAND xpt::Common::generatedMemberComment»
+	@Override
+	protected String getSemanticHint(org.eclipse.gmf.runtime.diagram.ui.editparts.GraphicalEditPart editPart) {
+		return String.valueOf(NEW_VID);
+	}
+
+}
+«ENDDEFINE»
+«DEFINE className(Integer newVID) FOR gmfgen::GenTopLevelNode»Set«newVID»Notation«ENDDEFINE»
+
+«DEFINE packageName FOR gmfgen::GenTopLevelNode»«getDiagram().editorGen.packageNamePrefix».action«ENDDEFINE»
+
+«DEFINE qualifiedClassName(Integer newVID) FOR gmfgen::GenTopLevelNode»«EXPAND packageName».«EXPAND className(newVID)»«ENDDEFINE»

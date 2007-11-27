@@ -1,15 +1,26 @@
 package org.eclipse.uml2.diagram.codegen;
 
+import org.eclipse.emf.common.util.EList;
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.gmf.codegen.gmfgen.GenDiagram;
 import org.eclipse.gmf.codegen.gmfgen.GenEditorGenerator;
+import org.eclipse.gmf.codegen.gmfgen.GenNode;
+import org.eclipse.gmf.codegen.gmfgen.GenTopLevelNode;
 import org.eclipse.gmf.codegen.util.Generator;
+import org.eclipse.gmf.common.UnexpectedBehaviourException;
 import org.eclipse.gmf.internal.common.codegen.TextMerger;
+import org.eclipse.uml2.diagram.codegen.gmfgenext.SubstitutableByAttributes;
 
 public class GeneratorExt extends Generator {
 
+	private final GenDiagram myDiagram;
+	private final CodegenEmittersExt myEmitters;
+
 	public GeneratorExt(GenEditorGenerator genModel, CodegenEmittersExt emitters) {
 		super(genModel, emitters);
+		myDiagram = genModel.getDiagram();
+		myEmitters = emitters;
 	}
-	
 	@Override
 	protected TextMerger createMergeService() {
 		//see #181484, temporary workaround
@@ -38,6 +49,30 @@ public class GeneratorExt extends Generator {
 				return defaultMerger.mergeXML(oldText, newText);
 			}
 		};
+	}
+
+	@Override
+	protected void customRun() throws InterruptedException, UnexpectedBehaviourException {
+		super.customRun();
+//		for (GenTopLevelNode node : myDiagram.getTopLevelNodes()) {
+//			generateChangeNotationAction(node);
+//		}
+	}
+	
+	private void generateChangeNotationAction(GenTopLevelNode node) throws InterruptedException, UnexpectedBehaviourException {
+		for (org.eclipse.gmf.codegen.gmfgen.Attributes attr: node.getViewmap().getAttributes()) {
+			if (attr instanceof SubstitutableByAttributes) {
+				SubstitutableByAttributes sba = (SubstitutableByAttributes)attr;
+				if (sba.isRequiresAll()) {
+					return;
+				}
+				for (Object id: sba.getSubstitutableByIDs()) {		
+					doGenerateJavaClass(myEmitters.getChangeNotationActionEmitter(), myEmitters.getChangeNotationActionName(new Object[]{node, id}), node, id);
+				}
+				// we process only the first attribute
+				return;
+			}
+		}
 	}
 
 }
