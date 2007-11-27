@@ -148,8 +148,8 @@
     <facets
         xsi:type="gmfgraph:DefaultSizeFacet">
       <defaultSize
-          dx="40"
-          dy="40"/>
+          dx="10"
+          dy="10"/>
     </facets>
   </nodes>
   <compartments
