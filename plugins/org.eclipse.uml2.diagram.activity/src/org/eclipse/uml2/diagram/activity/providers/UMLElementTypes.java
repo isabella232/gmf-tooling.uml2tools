@@ -402,6 +402,21 @@ public class UMLElementTypes extends ElementInitializers {
 	/**
 	 * @generated
 	 */
+	public static final IElementType StructuredActivityNode_3079 = getElementType("org.eclipse.uml2.diagram.activity.StructuredActivityNode_3079"); //$NON-NLS-1$
+
+	/**
+	 * @generated
+	 */
+	public static final IElementType InputPin_3080 = getElementType("org.eclipse.uml2.diagram.activity.InputPin_3080"); //$NON-NLS-1$
+
+	/**
+	 * @generated
+	 */
+	public static final IElementType OutputPin_3081 = getElementType("org.eclipse.uml2.diagram.activity.OutputPin_3081"); //$NON-NLS-1$
+
+	/**
+	 * @generated
+	 */
 	public static final IElementType SendSignalAction_3077 = getElementType("org.eclipse.uml2.diagram.activity.SendSignalAction_3077"); //$NON-NLS-1$
 
 	/**
@@ -702,6 +717,12 @@ public class UMLElementTypes extends ElementInitializers {
 
 			elements.put(StructuredActivityNode_3076, UMLPackage.eINSTANCE.getStructuredActivityNode());
 
+			elements.put(StructuredActivityNode_3079, UMLPackage.eINSTANCE.getStructuredActivityNode());
+
+			elements.put(InputPin_3080, UMLPackage.eINSTANCE.getInputPin());
+
+			elements.put(OutputPin_3081, UMLPackage.eINSTANCE.getOutputPin());
+
 			elements.put(SendSignalAction_3077, UMLPackage.eINSTANCE.getSendSignalAction());
 
 			elements.put(LoopNode_3078, UMLPackage.eINSTANCE.getLoopNode());
@@ -811,6 +832,9 @@ public class UMLElementTypes extends ElementInitializers {
 			KNOWN_ELEMENT_TYPES.add(CallBehaviorAction_3074);
 			KNOWN_ELEMENT_TYPES.add(CallOperationAction_3075);
 			KNOWN_ELEMENT_TYPES.add(StructuredActivityNode_3076);
+			KNOWN_ELEMENT_TYPES.add(StructuredActivityNode_3079);
+			KNOWN_ELEMENT_TYPES.add(InputPin_3080);
+			KNOWN_ELEMENT_TYPES.add(OutputPin_3081);
 			KNOWN_ELEMENT_TYPES.add(SendSignalAction_3077);
 			KNOWN_ELEMENT_TYPES.add(LoopNode_3078);
 			KNOWN_ELEMENT_TYPES.add(LoopNode_3058);

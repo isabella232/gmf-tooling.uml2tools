@@ -39,12 +39,15 @@ import org.eclipse.uml2.diagram.activity.edit.parts.ExceptionHandlerEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.FlowFinalNode2EditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.ForkNode2EditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.InputPin6EditPart;
+import org.eclipse.uml2.diagram.activity.edit.parts.InputPin7EditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.JoinNode2EditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.ObjectFlowEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.OpaqueAction2EditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.OutputPin4EditPart;
+import org.eclipse.uml2.diagram.activity.edit.parts.OutputPin5EditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.Pin2EditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.StructuredActivityNode2EditPart;
+import org.eclipse.uml2.diagram.activity.edit.parts.StructuredActivityNode4EditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.StructuredActivityNodeStructuredActivityContentPaneCompartment3EditPart;
 import org.eclipse.uml2.diagram.activity.part.UMLVisualIDRegistry;
 import org.eclipse.uml2.diagram.activity.providers.UMLElementTypes;
@@ -81,7 +84,7 @@ public class StructuredActivityNode3ItemSemanticEditPolicy extends UMLBaseItemSe
 				for (Iterator cit = node.getChildren().iterator(); cit.hasNext();) {
 					Node cnode = (Node) cit.next();
 					switch (UMLVisualIDRegistry.getVisualID(cnode)) {
-					case StructuredActivityNode2EditPart.VISUAL_ID:
+					case StructuredActivityNode4EditPart.VISUAL_ID:
 						cmd.add(getDestroyElementCommand(cnode));
 						break;
 					case OpaqueAction2EditPart.VISUAL_ID:
@@ -129,10 +132,10 @@ public class StructuredActivityNode3ItemSemanticEditPolicy extends UMLBaseItemSe
 					case CentralBufferNode2EditPart.VISUAL_ID:
 						cmd.add(getDestroyElementCommand(cnode));
 						break;
-					case InputPin6EditPart.VISUAL_ID:
+					case InputPin7EditPart.VISUAL_ID:
 						cmd.add(getDestroyElementCommand(cnode));
 						break;
-					case OutputPin4EditPart.VISUAL_ID:
+					case OutputPin5EditPart.VISUAL_ID:
 						cmd.add(getDestroyElementCommand(cnode));
 						break;
 					}

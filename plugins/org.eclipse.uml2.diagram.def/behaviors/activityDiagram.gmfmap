@@ -40,7 +40,7 @@
           <domainMetaElement
               href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//AcceptEventAction"/>
           <domainSpecialization
-              body="self.trigger->isEmpty() or (not self.trigger->forAll(tr | tr.event.oclIsKindOf(uml::TimeEvent)))"/>
+              body="(self.trigger->isEmpty() or (not self.trigger->forAll(tr | tr.event.oclIsKindOf(uml::TimeEvent)))) and self.inPartition->isEmpty()"/>
           <domainInitializer
               xsi:type="gmfmap:FeatureSeqInitializer">
             <initializers
@@ -72,7 +72,7 @@
           <domainMetaElement
               href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//AcceptEventAction"/>
           <domainSpecialization
-              body="(not self.trigger->isEmpty()) and (self.trigger->forAll(tr | tr.event.oclIsKindOf(uml::TimeEvent)))"/>
+              body="(not self.trigger->isEmpty()) and (self.trigger->forAll(tr | tr.event.oclIsKindOf(uml::TimeEvent))) and self.inPartition->isEmpty()"/>
           <domainInitializer
               xsi:type="gmfmap:FeatureSeqInitializer">
             <initializers
@@ -111,6 +111,8 @@
         <ownedChild>
           <domainMetaElement
               href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//ActivityFinalNode"/>
+          <domainSpecialization
+              body="self.inPartition->isEmpty()"/>
           <tool
               xsi:type="gmftool:CreationTool"
               href="activityDiagram.gmftool#//@palette/@tools.2/@tools.1"/>
@@ -124,6 +126,8 @@
         <ownedChild>
           <domainMetaElement
               href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//DecisionNode"/>
+          <domainSpecialization
+              body="self.inPartition->isEmpty()"/>
           <domainInitializer
               xsi:type="gmfmap:FeatureSeqInitializer">
             <initializers
@@ -147,6 +151,8 @@
         <ownedChild>
           <domainMetaElement
               href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//MergeNode"/>
+          <domainSpecialization
+              body="self.inPartition->isEmpty()"/>
           <domainInitializer
               xsi:type="gmfmap:FeatureSeqInitializer">
             <initializers
@@ -170,6 +176,8 @@
         <ownedChild>
           <domainMetaElement
               href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//InitialNode"/>
+          <domainSpecialization
+              body="self.inPartition->isEmpty()"/>
           <tool
               xsi:type="gmftool:CreationTool"
               href="activityDiagram.gmftool#//@palette/@tools.2/@tools.0"/>
@@ -183,6 +191,8 @@
         <ownedChild>
           <domainMetaElement
               href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//DataStoreNode"/>
+          <domainSpecialization
+              body="self.inPartition->isEmpty()"/>
           <domainInitializer
               xsi:type="gmfmap:FeatureSeqInitializer">
             <initializers
@@ -229,6 +239,8 @@
         <ownedChild>
           <domainMetaElement
               href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//CentralBufferNode"/>
+          <domainSpecialization
+              body="self.inPartition->isEmpty()"/>
           <domainInitializer
               xsi:type="gmfmap:FeatureSeqInitializer">
             <initializers
@@ -274,6 +286,8 @@
         <ownedChild>
           <domainMetaElement
               href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//OpaqueAction"/>
+          <domainSpecialization
+              body="self.inPartition->isEmpty()"/>
           <domainInitializer
               xsi:type="gmfmap:FeatureSeqInitializer">
             <initializers
@@ -310,6 +324,8 @@
         <ownedChild>
           <domainMetaElement
               href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//FlowFinalNode"/>
+          <domainSpecialization
+              body="self.inPartition->isEmpty()"/>
           <tool
               xsi:type="gmftool:CreationTool"
               href="activityDiagram.gmftool#//@palette/@tools.2/@tools.2"/>
@@ -323,6 +339,8 @@
         <ownedChild>
           <domainMetaElement
               href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//ForkNode"/>
+          <domainSpecialization
+              body="self.inPartition->isEmpty()"/>
           <tool
               xsi:type="gmftool:CreationTool"
               href="activityDiagram.gmftool#//@palette/@tools.2/@tools.4/@tools.0"/>
@@ -336,6 +354,8 @@
         <ownedChild>
           <domainMetaElement
               href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//JoinNode"/>
+          <domainSpecialization
+              body="self.inPartition->isEmpty()"/>
           <tool
               xsi:type="gmftool:CreationTool"
               href="activityDiagram.gmftool#//@palette/@tools.2/@tools.4/@tools.1"/>
@@ -350,7 +370,7 @@
           <domainMetaElement
               href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//Pin"/>
           <domainSpecialization
-              body="(not self.oclIsTypeOf(uml::InputPin)) and (not self.oclIsTypeOf(uml::OutputPin))"/>
+              body="(not self.oclIsTypeOf(uml::InputPin)) and (not self.oclIsTypeOf(uml::OutputPin)) and self.inPartition->isEmpty()"/>
           <domainInitializer
               xsi:type="gmfmap:FeatureSeqInitializer">
             <initializers
@@ -389,6 +409,8 @@
         <ownedChild>
           <domainMetaElement
               href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//CreateObjectAction"/>
+          <domainSpecialization
+              body="self.inPartition->isEmpty()"/>
           <domainInitializer
               xsi:type="gmfmap:FeatureSeqInitializer">
             <initializers
@@ -425,6 +447,8 @@
         <ownedChild>
           <domainMetaElement
               href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//AddStructuralFeatureValueAction"/>
+          <domainSpecialization
+              body="self.inPartition->isEmpty()"/>
           <domainInitializer
               xsi:type="gmfmap:FeatureSeqInitializer">
             <initializers
@@ -473,6 +497,8 @@
         <ownedChild>
           <domainMetaElement
               href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//CallBehaviorAction"/>
+          <domainSpecialization
+              body="self.inPartition->isEmpty()"/>
           <domainInitializer
               xsi:type="gmfmap:FeatureSeqInitializer">
             <initializers
@@ -515,6 +541,8 @@
         <ownedChild>
           <domainMetaElement
               href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//CallOperationAction"/>
+          <domainSpecialization
+              body="self.inPartition->isEmpty()"/>
           <domainInitializer
               xsi:type="gmfmap:FeatureSeqInitializer">
             <initializers
@@ -564,7 +592,7 @@
           <domainMetaElement
               href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//StructuredActivityNode"/>
           <domainSpecialization
-              body="not self.oclIsTypeOf(uml::LoopNode)"/>
+              body="not self.oclIsTypeOf(uml::LoopNode) and self.inPartition->isEmpty()"/>
           <tool
               xsi:type="gmftool:CreationTool"
               href="activityDiagram.gmftool#//@palette/@tools.3/@tools.1"/>
@@ -809,6 +837,8 @@
         <ownedChild>
           <domainMetaElement
               href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//SendSignalAction"/>
+          <domainSpecialization
+              body="self.inPartition->isEmpty()"/>
           <domainInitializer
               xsi:type="gmfmap:FeatureSeqInitializer">
             <initializers
@@ -866,145 +896,951 @@
             <containmentFeature
                 href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//ActivityPartition/subpartition"/>
           </children>
-          <children
-              referencedChild="//@nodes.0/@ownedChild/@children.0/@ownedChild">
+          <children>
             <containmentFeature
                 href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//Activity/node"/>
             <childrenFeature
                 href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//ActivityPartition/node"/>
+            <ownedChild>
+              <domainMetaElement
+                  href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//AcceptEventAction"/>
+              <domainSpecialization
+                  body="(self.trigger->isEmpty() or (not self.trigger->forAll(tr | tr.event.oclIsKindOf(uml::TimeEvent)))) and self.inPartition->notEmpty()"/>
+              <domainInitializer
+                  xsi:type="gmfmap:FeatureSeqInitializer">
+                <initializers
+                    xsi:type="gmfmap:FeatureValueSpec"
+                    body=" let base : String = 'EventAction' in  let suffixes : Sequence(String) = Sequence {'', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10'} in  let space : Namespace = self.namespace in  let allMissed : Sequence(String) = suffixes-> &#x9;select(s : String | not space.member->exists(e : NamedElement | e.name = base.concat(s)) ) in  let firstMissed : String = allMissed->first() in  let noMisses : Boolean = firstMissed.oclIsUndefined() in  let allNames : Set(String) =  &#x9;if noMisses &#x9;&#x9;then &#x9;&#x9;space.member->collect(e : NamedElement | &#x9;&#x9;&#x9;if e = self or e.name.oclIsUndefined() or e.name.substring(1, e.name.size().min(base.size())) &lt;> base &#x9;&#x9;&#x9;then '' else e.name &#x9;&#x9;&#x9;endif &#x9;&#x9;)->asSet()->excluding('') &#x9;&#x9;else Set{'not in use'} &#x9;&#x9;endif in  let longestName : String = &#x9;&#x9;if noMisses &#x9;&#x9;then allNames->select(n : String | not allNames->exists(nn : String | nn.size() > n.size()))->asSequence()->first()&#x9;&#x9;else 'not in use' &#x9;&#x9;endif &#x9;in  if noMisses then &#x9;&#x9;if longestName.oclIsUndefined() &#x9;&#x9;then base &#x9;&#x9;else longestName.concat('1') &#x9;&#x9;endif  else base.concat(firstMissed)  endif ">
+                  <feature
+                      xsi:type="ecore:EAttribute"
+                      href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//NamedElement/name"/>
+                </initializers>
+              </domainInitializer>
+              <labelMappings
+                  xsi:type="gmfmap:FeatureLabelMapping">
+                <diagramLabel
+                    href="activityDiagram_actions.gmfgraph#AcceptEventActionNode_name"/>
+                <features
+                    href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//NamedElement/name"/>
+              </labelMappings>
+              <tool
+                  xsi:type="gmftool:CreationTool"
+                  href="activityDiagram.gmftool#//@palette/@tools.1/@tools.0/@tools.0"/>
+              <diagramNode
+                  href="activityDiagram_actions.gmfgraph#ActionAcceptEventNode"/>
+            </ownedChild>
           </children>
-          <children
-              referencedChild="//@nodes.0/@ownedChild/@children.1/@ownedChild">
+          <children>
             <containmentFeature
                 href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//Activity/node"/>
             <childrenFeature
                 href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//ActivityPartition/node"/>
+            <ownedChild>
+              <domainMetaElement
+                  href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//AcceptEventAction"/>
+              <domainSpecialization
+                  body="(not self.trigger->isEmpty()) and (self.trigger->forAll(tr | tr.event.oclIsKindOf(uml::TimeEvent))) and self.inPartition->notEmpty()"/>
+              <domainInitializer
+                  xsi:type="gmfmap:FeatureSeqInitializer">
+                <initializers
+                    xsi:type="gmfmap:FeatureValueSpec"
+                    body="initAcceptTimeEventActionTrigger"
+                    language="java">
+                  <feature
+                      xsi:type="ecore:EReference"
+                      href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//AcceptEventAction/trigger"/>
+                </initializers>
+                <initializers
+                    xsi:type="gmfmap:FeatureValueSpec"
+                    body=" let base : String = 'TimeAction' in  let suffixes : Sequence(String) = Sequence {'', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10'} in  let space : Namespace = self.namespace in  let allMissed : Sequence(String) = suffixes-> &#x9;select(s : String | not space.member->exists(e : NamedElement | e.name = base.concat(s)) ) in  let firstMissed : String = allMissed->first() in  let noMisses : Boolean = firstMissed.oclIsUndefined() in  let allNames : Set(String) =  &#x9;if noMisses &#x9;&#x9;then &#x9;&#x9;space.member->collect(e : NamedElement | &#x9;&#x9;&#x9;if e = self or e.name.oclIsUndefined() or e.name.substring(1, e.name.size().min(base.size())) &lt;> base &#x9;&#x9;&#x9;then '' else e.name &#x9;&#x9;&#x9;endif &#x9;&#x9;)->asSet()->excluding('') &#x9;&#x9;else Set{'not in use'} &#x9;&#x9;endif in  let longestName : String = &#x9;&#x9;if noMisses &#x9;&#x9;then allNames->select(n : String | not allNames->exists(nn : String | nn.size() > n.size()))->asSequence()->first()&#x9;&#x9;else 'not in use' &#x9;&#x9;endif &#x9;in  if noMisses then &#x9;&#x9;if longestName.oclIsUndefined() &#x9;&#x9;then base &#x9;&#x9;else longestName.concat('1') &#x9;&#x9;endif  else base.concat(firstMissed)  endif ">
+                  <feature
+                      xsi:type="ecore:EAttribute"
+                      href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//NamedElement/name"/>
+                </initializers>
+              </domainInitializer>
+              <labelMappings
+                  xsi:type="gmfmap:FeatureLabelMapping">
+                <diagramLabel
+                    href="activityDiagram_actions.gmfgraph#AcceptTimeEventActionNode_ExternalLabel"/>
+                <features
+                    href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//NamedElement/name"/>
+              </labelMappings>
+              <tool
+                  xsi:type="gmftool:CreationTool"
+                  href="activityDiagram.gmftool#//@palette/@tools.1/@tools.0/@tools.1"/>
+              <diagramNode
+                  href="activityDiagram_actions.gmfgraph#ActionAcceptTimeEventNode"/>
+            </ownedChild>
           </children>
-          <children
-              referencedChild="//@nodes.0/@ownedChild/@children.2/@ownedChild">
+          <children>
             <containmentFeature
                 href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//Activity/node"/>
             <childrenFeature
                 href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//ActivityPartition/node"/>
+            <ownedChild>
+              <domainMetaElement
+                  href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//ActivityFinalNode"/>
+              <domainSpecialization
+                  body="self.inPartition->notEmpty()"/>
+              <tool
+                  xsi:type="gmftool:CreationTool"
+                  href="activityDiagram.gmftool#//@palette/@tools.2/@tools.1"/>
+              <diagramNode
+                  href="activityDiagram_controlNodes.gmfgraph#ActivityFinalNode"/>
+            </ownedChild>
           </children>
-          <children
-              referencedChild="//@nodes.0/@ownedChild/@children.3/@ownedChild">
+          <children>
             <containmentFeature
                 href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//Activity/node"/>
             <childrenFeature
                 href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//ActivityPartition/node"/>
+            <ownedChild>
+              <domainMetaElement
+                  href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//DecisionNode"/>
+              <domainSpecialization
+                  body="self.inPartition->notEmpty()"/>
+              <domainInitializer
+                  xsi:type="gmfmap:FeatureSeqInitializer">
+                <initializers
+                    xsi:type="gmfmap:FeatureValueSpec"
+                    body=" let base : String = 'DecisionNode' in  let suffixes : Sequence(String) = Sequence {'', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10'} in  let space : Namespace = self.namespace in  let allMissed : Sequence(String) = suffixes-> &#x9;select(s : String | not space.member->exists(e : NamedElement | e.name = base.concat(s)) ) in  let firstMissed : String = allMissed->first() in  let noMisses : Boolean = firstMissed.oclIsUndefined() in  let allNames : Set(String) =  &#x9;if noMisses &#x9;&#x9;then &#x9;&#x9;space.member->collect(e : NamedElement | &#x9;&#x9;&#x9;if e = self or e.name.oclIsUndefined() or e.name.substring(1, e.name.size().min(base.size())) &lt;> base &#x9;&#x9;&#x9;then '' else e.name &#x9;&#x9;&#x9;endif &#x9;&#x9;)->asSet()->excluding('') &#x9;&#x9;else Set{'not in use'} &#x9;&#x9;endif in  let longestName : String = &#x9;&#x9;if noMisses &#x9;&#x9;then allNames->select(n : String | not allNames->exists(nn : String | nn.size() > n.size()))->asSequence()->first()&#x9;&#x9;else 'not in use' &#x9;&#x9;endif &#x9;in  if noMisses then &#x9;&#x9;if longestName.oclIsUndefined() &#x9;&#x9;then base &#x9;&#x9;else longestName.concat('1') &#x9;&#x9;endif  else base.concat(firstMissed)  endif ">
+                  <feature
+                      xsi:type="ecore:EAttribute"
+                      href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//NamedElement/name"/>
+                </initializers>
+              </domainInitializer>
+              <tool
+                  xsi:type="gmftool:CreationTool"
+                  href="activityDiagram.gmftool#//@palette/@tools.2/@tools.3/@tools.1"/>
+              <diagramNode
+                  href="activityDiagram_controlNodes.gmfgraph#DecisionAndMergeNode"/>
+            </ownedChild>
           </children>
-          <children
-              referencedChild="//@nodes.0/@ownedChild/@children.4/@ownedChild">
+          <children>
             <containmentFeature
                 href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//Activity/node"/>
             <childrenFeature
                 href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//ActivityPartition/node"/>
+            <ownedChild>
+              <domainMetaElement
+                  href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//MergeNode"/>
+              <domainSpecialization
+                  body="self.inPartition->notEmpty()"/>
+              <domainInitializer
+                  xsi:type="gmfmap:FeatureSeqInitializer">
+                <initializers
+                    xsi:type="gmfmap:FeatureValueSpec"
+                    body=" let base : String = 'MergeNode' in  let suffixes : Sequence(String) = Sequence {'', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10'} in  let space : Namespace = self.namespace in  let allMissed : Sequence(String) = suffixes-> &#x9;select(s : String | not space.member->exists(e : NamedElement | e.name = base.concat(s)) ) in  let firstMissed : String = allMissed->first() in  let noMisses : Boolean = firstMissed.oclIsUndefined() in  let allNames : Set(String) =  &#x9;if noMisses &#x9;&#x9;then &#x9;&#x9;space.member->collect(e : NamedElement | &#x9;&#x9;&#x9;if e = self or e.name.oclIsUndefined() or e.name.substring(1, e.name.size().min(base.size())) &lt;> base &#x9;&#x9;&#x9;then '' else e.name &#x9;&#x9;&#x9;endif &#x9;&#x9;)->asSet()->excluding('') &#x9;&#x9;else Set{'not in use'} &#x9;&#x9;endif in  let longestName : String = &#x9;&#x9;if noMisses &#x9;&#x9;then allNames->select(n : String | not allNames->exists(nn : String | nn.size() > n.size()))->asSequence()->first()&#x9;&#x9;else 'not in use' &#x9;&#x9;endif &#x9;in  if noMisses then &#x9;&#x9;if longestName.oclIsUndefined() &#x9;&#x9;then base &#x9;&#x9;else longestName.concat('1') &#x9;&#x9;endif  else base.concat(firstMissed)  endif ">
+                  <feature
+                      xsi:type="ecore:EAttribute"
+                      href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//NamedElement/name"/>
+                </initializers>
+              </domainInitializer>
+              <tool
+                  xsi:type="gmftool:CreationTool"
+                  href="activityDiagram.gmftool#//@palette/@tools.2/@tools.3/@tools.0"/>
+              <diagramNode
+                  href="activityDiagram_controlNodes.gmfgraph#DecisionAndMergeNode"/>
+            </ownedChild>
           </children>
-          <children
-              referencedChild="//@nodes.0/@ownedChild/@children.5/@ownedChild">
+          <children>
             <containmentFeature
                 href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//Activity/node"/>
             <childrenFeature
                 href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//ActivityPartition/node"/>
+            <ownedChild>
+              <domainMetaElement
+                  href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//InitialNode"/>
+              <domainSpecialization
+                  body="self.inPartition->notEmpty()"/>
+              <tool
+                  xsi:type="gmftool:CreationTool"
+                  href="activityDiagram.gmftool#//@palette/@tools.2/@tools.0"/>
+              <diagramNode
+                  href="activityDiagram_controlNodes.gmfgraph#ActivityInitialNode"/>
+            </ownedChild>
           </children>
-          <children
-              referencedChild="//@nodes.0/@ownedChild/@children.6/@ownedChild">
+          <children>
             <containmentFeature
                 href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//Activity/node"/>
             <childrenFeature
                 href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//ActivityPartition/node"/>
+            <ownedChild>
+              <domainMetaElement
+                  href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//DataStoreNode"/>
+              <domainSpecialization
+                  body="self.inPartition->notEmpty()"/>
+              <domainInitializer
+                  xsi:type="gmfmap:FeatureSeqInitializer">
+                <initializers
+                    xsi:type="gmfmap:FeatureValueSpec"
+                    body=" let base : String = 'DataStoreNode' in  let suffixes : Sequence(String) = Sequence {'', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10'} in  let space : Namespace = self.namespace in  let allMissed : Sequence(String) = suffixes-> &#x9;select(s : String | not space.member->exists(e : NamedElement | e.name = base.concat(s)) ) in  let firstMissed : String = allMissed->first() in  let noMisses : Boolean = firstMissed.oclIsUndefined() in  let allNames : Set(String) =  &#x9;if noMisses &#x9;&#x9;then &#x9;&#x9;space.member->collect(e : NamedElement | &#x9;&#x9;&#x9;if e = self or e.name.oclIsUndefined() or e.name.substring(1, e.name.size().min(base.size())) &lt;> base &#x9;&#x9;&#x9;then '' else e.name &#x9;&#x9;&#x9;endif &#x9;&#x9;)->asSet()->excluding('') &#x9;&#x9;else Set{'not in use'} &#x9;&#x9;endif in  let longestName : String = &#x9;&#x9;if noMisses &#x9;&#x9;then allNames->select(n : String | not allNames->exists(nn : String | nn.size() > n.size()))->asSequence()->first()&#x9;&#x9;else 'not in use' &#x9;&#x9;endif &#x9;in  if noMisses then &#x9;&#x9;if longestName.oclIsUndefined() &#x9;&#x9;then base &#x9;&#x9;else longestName.concat('1') &#x9;&#x9;endif  else base.concat(firstMissed)  endif ">
+                  <feature
+                      xsi:type="ecore:EAttribute"
+                      href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//NamedElement/name"/>
+                </initializers>
+              </domainInitializer>
+              <labelMappings
+                  xsi:type="gmfmap:FeatureLabelMapping">
+                <diagramLabel
+                    href="activityDiagram_objects.gmfgraph#DataStoreNode_name"/>
+                <features
+                    href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//NamedElement/name"/>
+              </labelMappings>
+              <labelMappings
+                  xsi:type="gmfmap:FeatureLabelMapping"
+                  readOnly="true">
+                <diagramLabel
+                    href="activityDiagram_objects.gmfgraph#DataStoreNode_states"/>
+                <features
+                    href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//NamedElement/name"/>
+              </labelMappings>
+              <labelMappings
+                  xsi:type="gmfmap:FeatureLabelMapping"
+                  readOnly="true">
+                <diagramLabel
+                    href="activityDiagram_objects.gmfgraph#ObjectNodeAttributesLabel"/>
+                <features
+                    href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//ObjectNode/ordering"/>
+              </labelMappings>
+              <tool
+                  xsi:type="gmftool:CreationTool"
+                  href="activityDiagram.gmftool#//@palette/@tools.4/@tools.1"/>
+              <diagramNode
+                  href="activityDiagram_objects.gmfgraph#DataStoreNode"/>
+            </ownedChild>
           </children>
-          <children
-              referencedChild="//@nodes.0/@ownedChild/@children.7/@ownedChild">
+          <children>
             <containmentFeature
                 href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//Activity/node"/>
             <childrenFeature
                 href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//ActivityPartition/node"/>
+            <ownedChild>
+              <domainMetaElement
+                  href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//CentralBufferNode"/>
+              <domainSpecialization
+                  body="self.inPartition->notEmpty()"/>
+              <domainInitializer
+                  xsi:type="gmfmap:FeatureSeqInitializer">
+                <initializers
+                    xsi:type="gmfmap:FeatureValueSpec"
+                    body=" let base : String = 'CentralBufferNode' in  let suffixes : Sequence(String) = Sequence {'', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10'} in  let space : Namespace = self.namespace in  let allMissed : Sequence(String) = suffixes-> &#x9;select(s : String | not space.member->exists(e : NamedElement | e.name = base.concat(s)) ) in  let firstMissed : String = allMissed->first() in  let noMisses : Boolean = firstMissed.oclIsUndefined() in  let allNames : Set(String) =  &#x9;if noMisses &#x9;&#x9;then &#x9;&#x9;space.member->collect(e : NamedElement | &#x9;&#x9;&#x9;if e = self or e.name.oclIsUndefined() or e.name.substring(1, e.name.size().min(base.size())) &lt;> base &#x9;&#x9;&#x9;then '' else e.name &#x9;&#x9;&#x9;endif &#x9;&#x9;)->asSet()->excluding('') &#x9;&#x9;else Set{'not in use'} &#x9;&#x9;endif in  let longestName : String = &#x9;&#x9;if noMisses &#x9;&#x9;then allNames->select(n : String | not allNames->exists(nn : String | nn.size() > n.size()))->asSequence()->first()&#x9;&#x9;else 'not in use' &#x9;&#x9;endif &#x9;in  if noMisses then &#x9;&#x9;if longestName.oclIsUndefined() &#x9;&#x9;then base &#x9;&#x9;else longestName.concat('1') &#x9;&#x9;endif  else base.concat(firstMissed)  endif ">
+                  <feature
+                      xsi:type="ecore:EAttribute"
+                      href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//NamedElement/name"/>
+                </initializers>
+              </domainInitializer>
+              <labelMappings
+                  xsi:type="gmfmap:FeatureLabelMapping">
+                <diagramLabel
+                    href="activityDiagram_objects.gmfgraph#CentralBufferNode_name"/>
+                <features
+                    href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//NamedElement/name"/>
+              </labelMappings>
+              <labelMappings
+                  xsi:type="gmfmap:FeatureLabelMapping">
+                <diagramLabel
+                    href="activityDiagram_objects.gmfgraph#CentralBufferNode_states"/>
+                <features
+                    href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//NamedElement/name"/>
+              </labelMappings>
+              <labelMappings
+                  xsi:type="gmfmap:FeatureLabelMapping"
+                  readOnly="true">
+                <diagramLabel
+                    href="activityDiagram_objects.gmfgraph#ObjectNodeAttributesLabel"/>
+                <features
+                    href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//ObjectNode/ordering"/>
+              </labelMappings>
+              <tool
+                  xsi:type="gmftool:CreationTool"
+                  href="activityDiagram.gmftool#//@palette/@tools.4/@tools.0"/>
+              <diagramNode
+                  href="activityDiagram_objects.gmfgraph#CentralBufferNode"/>
+            </ownedChild>
           </children>
-          <children
-              referencedChild="//@nodes.0/@ownedChild/@children.8/@ownedChild">
+          <children>
             <containmentFeature
                 href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//Activity/node"/>
             <childrenFeature
                 href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//ActivityPartition/node"/>
+            <ownedChild>
+              <domainMetaElement
+                  href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//OpaqueAction"/>
+              <domainSpecialization
+                  body="self.inPartition->notEmpty()"/>
+              <domainInitializer
+                  xsi:type="gmfmap:FeatureSeqInitializer">
+                <initializers
+                    xsi:type="gmfmap:FeatureValueSpec"
+                    body=" let base : String = 'OpaqueAction' in  let suffixes : Sequence(String) = Sequence {'', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10'} in  let space : Namespace = self.namespace in  let allMissed : Sequence(String) = suffixes-> &#x9;select(s : String | not space.member->exists(e : NamedElement | e.name = base.concat(s)) ) in  let firstMissed : String = allMissed->first() in  let noMisses : Boolean = firstMissed.oclIsUndefined() in  let allNames : Set(String) =  &#x9;if noMisses &#x9;&#x9;then &#x9;&#x9;space.member->collect(e : NamedElement | &#x9;&#x9;&#x9;if e = self or e.name.oclIsUndefined() or e.name.substring(1, e.name.size().min(base.size())) &lt;> base &#x9;&#x9;&#x9;then '' else e.name &#x9;&#x9;&#x9;endif &#x9;&#x9;)->asSet()->excluding('') &#x9;&#x9;else Set{'not in use'} &#x9;&#x9;endif in  let longestName : String = &#x9;&#x9;if noMisses &#x9;&#x9;then allNames->select(n : String | not allNames->exists(nn : String | nn.size() > n.size()))->asSequence()->first()&#x9;&#x9;else 'not in use' &#x9;&#x9;endif &#x9;in  if noMisses then &#x9;&#x9;if longestName.oclIsUndefined() &#x9;&#x9;then base &#x9;&#x9;else longestName.concat('1') &#x9;&#x9;endif  else base.concat(firstMissed)  endif ">
+                  <feature
+                      xsi:type="ecore:EAttribute"
+                      href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//NamedElement/name"/>
+                </initializers>
+              </domainInitializer>
+              <labelMappings
+                  xsi:type="gmfmap:FeatureLabelMapping">
+                <diagramLabel
+                    href="activityDiagram_actions.gmfgraph#Action_BaseNode_name"/>
+                <features
+                    href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//NamedElement/name"/>
+              </labelMappings>
+              <tool
+                  xsi:type="gmftool:CreationTool"
+                  href="activityDiagram.gmftool#//@palette/@tools.1/@tools.5"/>
+              <diagramNode
+                  href="activityDiagram_actions.gmfgraph#Action_BaseNode"/>
+              <children>
+                <containmentFeature
+                    href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//OpaqueAction/outputValue"/>
+                <referencedChild
+                    href="actvityDiagram_SharedPins.gmfmap#//@nodes.0/@ownedChild"/>
+              </children>
+            </ownedChild>
           </children>
-          <children
-              referencedChild="//@nodes.0/@ownedChild/@children.9/@ownedChild">
+          <children>
             <containmentFeature
                 href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//Activity/node"/>
             <childrenFeature
                 href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//ActivityPartition/node"/>
+            <ownedChild>
+              <domainMetaElement
+                  href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//FlowFinalNode"/>
+              <domainSpecialization
+                  body="self.inPartition->notEmpty()"/>
+              <tool
+                  xsi:type="gmftool:CreationTool"
+                  href="activityDiagram.gmftool#//@palette/@tools.2/@tools.2"/>
+              <diagramNode
+                  href="activityDiagram_controlNodes.gmfgraph#FlowFinalNode"/>
+            </ownedChild>
           </children>
-          <children
-              referencedChild="//@nodes.0/@ownedChild/@children.10/@ownedChild">
+          <children>
             <containmentFeature
                 href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//Activity/node"/>
             <childrenFeature
                 href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//ActivityPartition/node"/>
+            <ownedChild>
+              <domainMetaElement
+                  href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//ForkNode"/>
+              <domainSpecialization
+                  body="self.inPartition->notEmpty()"/>
+              <tool
+                  xsi:type="gmftool:CreationTool"
+                  href="activityDiagram.gmftool#//@palette/@tools.2/@tools.4/@tools.0"/>
+              <diagramNode
+                  href="activityDiagram_controlNodes.gmfgraph#ForkAndJoinNode"/>
+            </ownedChild>
           </children>
-          <children
-              referencedChild="//@nodes.0/@ownedChild/@children.11/@ownedChild">
+          <children>
             <containmentFeature
                 href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//Activity/node"/>
             <childrenFeature
                 href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//ActivityPartition/node"/>
+            <ownedChild>
+              <domainMetaElement
+                  href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//JoinNode"/>
+              <domainSpecialization
+                  body="self.inPartition->notEmpty()"/>
+              <tool
+                  xsi:type="gmftool:CreationTool"
+                  href="activityDiagram.gmftool#//@palette/@tools.2/@tools.4/@tools.1"/>
+              <diagramNode
+                  href="activityDiagram_controlNodes.gmfgraph#ForkAndJoinNode"/>
+            </ownedChild>
           </children>
-          <children
-              referencedChild="//@nodes.0/@ownedChild/@children.12/@ownedChild">
+          <children>
             <containmentFeature
                 href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//Activity/node"/>
             <childrenFeature
                 href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//ActivityPartition/node"/>
+            <ownedChild>
+              <domainMetaElement
+                  href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//Pin"/>
+              <domainSpecialization
+                  body="(not self.oclIsTypeOf(uml::InputPin)) and (not self.oclIsTypeOf(uml::OutputPin)) and self.inPartition->notEmpty()"/>
+              <domainInitializer
+                  xsi:type="gmfmap:FeatureSeqInitializer">
+                <initializers
+                    xsi:type="gmfmap:FeatureValueSpec"
+                    body=" let base : String = 'Pin' in  let suffixes : Sequence(String) = Sequence {'', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10'} in  let space : Namespace = self.namespace in  let allMissed : Sequence(String) = suffixes-> &#x9;select(s : String | not space.member->exists(e : NamedElement | e.name = base.concat(s)) ) in  let firstMissed : String = allMissed->first() in  let noMisses : Boolean = firstMissed.oclIsUndefined() in  let allNames : Set(String) =  &#x9;if noMisses &#x9;&#x9;then &#x9;&#x9;space.member->collect(e : NamedElement | &#x9;&#x9;&#x9;if e = self or e.name.oclIsUndefined() or e.name.substring(1, e.name.size().min(base.size())) &lt;> base &#x9;&#x9;&#x9;then '' else e.name &#x9;&#x9;&#x9;endif &#x9;&#x9;)->asSet()->excluding('') &#x9;&#x9;else Set{'not in use'} &#x9;&#x9;endif in  let longestName : String = &#x9;&#x9;if noMisses &#x9;&#x9;then allNames->select(n : String | not allNames->exists(nn : String | nn.size() > n.size()))->asSequence()->first()&#x9;&#x9;else 'not in use' &#x9;&#x9;endif &#x9;in  if noMisses then &#x9;&#x9;if longestName.oclIsUndefined() &#x9;&#x9;then base &#x9;&#x9;else longestName.concat('1') &#x9;&#x9;endif  else base.concat(firstMissed)  endif ">
+                  <feature
+                      xsi:type="ecore:EAttribute"
+                      href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//NamedElement/name"/>
+                </initializers>
+              </domainInitializer>
+              <labelMappings
+                  xsi:type="gmfmap:FeatureLabelMapping">
+                <diagramLabel
+                    href="activityDiagram_objects.gmfgraph#StandalonePinNode_name"/>
+                <features
+                    href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//NamedElement/name"/>
+              </labelMappings>
+              <labelMappings
+                  xsi:type="gmfmap:FeatureLabelMapping"
+                  readOnly="true">
+                <diagramLabel
+                    href="activityDiagram_objects.gmfgraph#ObjectNodeAttributesLabel"/>
+                <features
+                    href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//ObjectNode/ordering"/>
+              </labelMappings>
+              <tool
+                  xsi:type="gmftool:CreationTool"
+                  href="activityDiagram.gmftool#//@palette/@tools.4/@tools.2/@tools.0"/>
+              <diagramNode
+                  href="activityDiagram_objects.gmfgraph#StandalonePinNode"/>
+            </ownedChild>
           </children>
-          <children
-              referencedChild="//@nodes.0/@ownedChild/@children.13/@ownedChild">
+          <children>
             <containmentFeature
                 href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//Activity/node"/>
             <childrenFeature
                 href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//ActivityPartition/node"/>
+            <ownedChild>
+              <domainMetaElement
+                  href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//CreateObjectAction"/>
+              <domainSpecialization
+                  body="self.inPartition->notEmpty()"/>
+              <domainInitializer
+                  xsi:type="gmfmap:FeatureSeqInitializer">
+                <initializers
+                    xsi:type="gmfmap:FeatureValueSpec"
+                    body=" let base : String = 'CreateObjectAction' in  let suffixes : Sequence(String) = Sequence {'', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10'} in  let space : Namespace = self.namespace in  let allMissed : Sequence(String) = suffixes-> &#x9;select(s : String | not space.member->exists(e : NamedElement | e.name = base.concat(s)) ) in  let firstMissed : String = allMissed->first() in  let noMisses : Boolean = firstMissed.oclIsUndefined() in  let allNames : Set(String) =  &#x9;if noMisses &#x9;&#x9;then &#x9;&#x9;space.member->collect(e : NamedElement | &#x9;&#x9;&#x9;if e = self or e.name.oclIsUndefined() or e.name.substring(1, e.name.size().min(base.size())) &lt;> base &#x9;&#x9;&#x9;then '' else e.name &#x9;&#x9;&#x9;endif &#x9;&#x9;)->asSet()->excluding('') &#x9;&#x9;else Set{'not in use'} &#x9;&#x9;endif in  let longestName : String = &#x9;&#x9;if noMisses &#x9;&#x9;then allNames->select(n : String | not allNames->exists(nn : String | nn.size() > n.size()))->asSequence()->first()&#x9;&#x9;else 'not in use' &#x9;&#x9;endif &#x9;in  if noMisses then &#x9;&#x9;if longestName.oclIsUndefined() &#x9;&#x9;then base &#x9;&#x9;else longestName.concat('1') &#x9;&#x9;endif  else base.concat(firstMissed)  endif ">
+                  <feature
+                      xsi:type="ecore:EAttribute"
+                      href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//NamedElement/name"/>
+                </initializers>
+              </domainInitializer>
+              <labelMappings
+                  xsi:type="gmfmap:FeatureLabelMapping">
+                <diagramLabel
+                    href="activityDiagram_actions.gmfgraph#Action_BaseNode_name"/>
+                <features
+                    href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//NamedElement/name"/>
+              </labelMappings>
+              <tool
+                  xsi:type="gmftool:CreationTool"
+                  href="activityDiagram.gmftool#//@palette/@tools.1/@tools.4"/>
+              <diagramNode
+                  href="activityDiagram_actions.gmfgraph#Action_BaseNode"/>
+              <children>
+                <containmentFeature
+                    href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//CreateObjectAction/result"/>
+                <referencedChild
+                    href="actvityDiagram_SharedPins.gmfmap#//@nodes.0/@ownedChild"/>
+              </children>
+            </ownedChild>
           </children>
-          <children
-              referencedChild="//@nodes.0/@ownedChild/@children.14/@ownedChild">
+          <children>
             <containmentFeature
                 href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//Activity/node"/>
             <childrenFeature
                 href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//ActivityPartition/node"/>
+            <ownedChild>
+              <domainMetaElement
+                  href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//AddStructuralFeatureValueAction"/>
+              <domainSpecialization
+                  body="self.inPartition->notEmpty()"/>
+              <domainInitializer
+                  xsi:type="gmfmap:FeatureSeqInitializer">
+                <initializers
+                    xsi:type="gmfmap:FeatureValueSpec"
+                    body=" let base : String = 'AddFeatureValueAction' in  let suffixes : Sequence(String) = Sequence {'', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10'} in  let space : Namespace = self.namespace in  let allMissed : Sequence(String) = suffixes-> &#x9;select(s : String | not space.member->exists(e : NamedElement | e.name = base.concat(s)) ) in  let firstMissed : String = allMissed->first() in  let noMisses : Boolean = firstMissed.oclIsUndefined() in  let allNames : Set(String) =  &#x9;if noMisses &#x9;&#x9;then &#x9;&#x9;space.member->collect(e : NamedElement | &#x9;&#x9;&#x9;if e = self or e.name.oclIsUndefined() or e.name.substring(1, e.name.size().min(base.size())) &lt;> base &#x9;&#x9;&#x9;then '' else e.name &#x9;&#x9;&#x9;endif &#x9;&#x9;)->asSet()->excluding('') &#x9;&#x9;else Set{'not in use'} &#x9;&#x9;endif in  let longestName : String = &#x9;&#x9;if noMisses &#x9;&#x9;then allNames->select(n : String | not allNames->exists(nn : String | nn.size() > n.size()))->asSequence()->first()&#x9;&#x9;else 'not in use' &#x9;&#x9;endif &#x9;in  if noMisses then &#x9;&#x9;if longestName.oclIsUndefined() &#x9;&#x9;then base &#x9;&#x9;else longestName.concat('1') &#x9;&#x9;endif  else base.concat(firstMissed)  endif ">
+                  <feature
+                      xsi:type="ecore:EAttribute"
+                      href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//NamedElement/name"/>
+                </initializers>
+              </domainInitializer>
+              <labelMappings
+                  xsi:type="gmfmap:FeatureLabelMapping">
+                <diagramLabel
+                    href="activityDiagram_actions.gmfgraph#ActionAddStructuralFeatureValueNode_name"/>
+                <features
+                    href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//NamedElement/name"/>
+              </labelMappings>
+              <tool
+                  xsi:type="gmftool:CreationTool"
+                  href="activityDiagram.gmftool#//@palette/@tools.1/@tools.1"/>
+              <diagramNode
+                  href="activityDiagram_actions.gmfgraph#ActionAddStructuralFeatureValueNode"/>
+              <children>
+                <containmentFeature
+                    href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//AddStructuralFeatureValueAction/insertAt"/>
+                <referencedChild
+                    href="actvityDiagram_SharedPins.gmfmap#//@nodes.1/@ownedChild"/>
+              </children>
+              <children>
+                <containmentFeature
+                    href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//WriteStructuralFeatureAction/value"/>
+                <referencedChild
+                    href="actvityDiagram_SharedPins.gmfmap#//@nodes.1/@ownedChild"/>
+              </children>
+              <children>
+                <containmentFeature
+                    href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//StructuralFeatureAction/object"/>
+                <referencedChild
+                    href="actvityDiagram_SharedPins.gmfmap#//@nodes.1/@ownedChild"/>
+              </children>
+            </ownedChild>
           </children>
-          <children
-              referencedChild="//@nodes.0/@ownedChild/@children.15/@ownedChild">
+          <children>
             <containmentFeature
                 href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//Activity/node"/>
             <childrenFeature
                 href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//ActivityPartition/node"/>
+            <ownedChild>
+              <domainMetaElement
+                  href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//CallBehaviorAction"/>
+              <domainSpecialization
+                  body="self.inPartition->notEmpty()"/>
+              <domainInitializer
+                  xsi:type="gmfmap:FeatureSeqInitializer">
+                <initializers
+                    xsi:type="gmfmap:FeatureValueSpec"
+                    body=" let base : String = 'CallBehaviorAction' in  let suffixes : Sequence(String) = Sequence {'', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10'} in  let space : Namespace = self.namespace in  let allMissed : Sequence(String) = suffixes-> &#x9;select(s : String | not space.member->exists(e : NamedElement | e.name = base.concat(s)) ) in  let firstMissed : String = allMissed->first() in  let noMisses : Boolean = firstMissed.oclIsUndefined() in  let allNames : Set(String) =  &#x9;if noMisses &#x9;&#x9;then &#x9;&#x9;space.member->collect(e : NamedElement | &#x9;&#x9;&#x9;if e = self or e.name.oclIsUndefined() or e.name.substring(1, e.name.size().min(base.size())) &lt;> base &#x9;&#x9;&#x9;then '' else e.name &#x9;&#x9;&#x9;endif &#x9;&#x9;)->asSet()->excluding('') &#x9;&#x9;else Set{'not in use'} &#x9;&#x9;endif in  let longestName : String = &#x9;&#x9;if noMisses &#x9;&#x9;then allNames->select(n : String | not allNames->exists(nn : String | nn.size() > n.size()))->asSequence()->first()&#x9;&#x9;else 'not in use' &#x9;&#x9;endif &#x9;in  if noMisses then &#x9;&#x9;if longestName.oclIsUndefined() &#x9;&#x9;then base &#x9;&#x9;else longestName.concat('1') &#x9;&#x9;endif  else base.concat(firstMissed)  endif ">
+                  <feature
+                      xsi:type="ecore:EAttribute"
+                      href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//NamedElement/name"/>
+                </initializers>
+              </domainInitializer>
+              <labelMappings
+                  xsi:type="gmfmap:FeatureLabelMapping">
+                <diagramLabel
+                    href="activityDiagram_actions.gmfgraph#ActionCallBehaviorNode_name"/>
+                <features
+                    href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//NamedElement/name"/>
+              </labelMappings>
+              <tool
+                  xsi:type="gmftool:CreationTool"
+                  href="activityDiagram.gmftool#//@palette/@tools.1/@tools.2"/>
+              <diagramNode
+                  href="activityDiagram_actions.gmfgraph#ActionCallBehaviorNode"/>
+              <children>
+                <containmentFeature
+                    href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//CallAction/result"/>
+                <referencedChild
+                    href="actvityDiagram_SharedPins.gmfmap#//@nodes.0/@ownedChild"/>
+              </children>
+              <children>
+                <containmentFeature
+                    href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//InvocationAction/argument"/>
+                <referencedChild
+                    href="actvityDiagram_SharedPins.gmfmap#//@nodes.1/@ownedChild"/>
+              </children>
+            </ownedChild>
           </children>
-          <children
-              referencedChild="//@nodes.0/@ownedChild/@children.16/@ownedChild">
+          <children>
             <containmentFeature
                 href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//Activity/node"/>
             <childrenFeature
                 href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//ActivityPartition/node"/>
+            <ownedChild>
+              <domainMetaElement
+                  href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//CallOperationAction"/>
+              <domainSpecialization
+                  body="self.inPartition->notEmpty()"/>
+              <domainInitializer
+                  xsi:type="gmfmap:FeatureSeqInitializer">
+                <initializers
+                    xsi:type="gmfmap:FeatureValueSpec"
+                    body=" let base : String = 'CallOperationAction' in  let suffixes : Sequence(String) = Sequence {'', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10'} in  let space : Namespace = self.namespace in  let allMissed : Sequence(String) = suffixes-> &#x9;select(s : String | not space.member->exists(e : NamedElement | e.name = base.concat(s)) ) in  let firstMissed : String = allMissed->first() in  let noMisses : Boolean = firstMissed.oclIsUndefined() in  let allNames : Set(String) =  &#x9;if noMisses &#x9;&#x9;then &#x9;&#x9;space.member->collect(e : NamedElement | &#x9;&#x9;&#x9;if e = self or e.name.oclIsUndefined() or e.name.substring(1, e.name.size().min(base.size())) &lt;> base &#x9;&#x9;&#x9;then '' else e.name &#x9;&#x9;&#x9;endif &#x9;&#x9;)->asSet()->excluding('') &#x9;&#x9;else Set{'not in use'} &#x9;&#x9;endif in  let longestName : String = &#x9;&#x9;if noMisses &#x9;&#x9;then allNames->select(n : String | not allNames->exists(nn : String | nn.size() > n.size()))->asSequence()->first()&#x9;&#x9;else 'not in use' &#x9;&#x9;endif &#x9;in  if noMisses then &#x9;&#x9;if longestName.oclIsUndefined() &#x9;&#x9;then base &#x9;&#x9;else longestName.concat('1') &#x9;&#x9;endif  else base.concat(firstMissed)  endif ">
+                  <feature
+                      xsi:type="ecore:EAttribute"
+                      href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//NamedElement/name"/>
+                </initializers>
+              </domainInitializer>
+              <labelMappings
+                  xsi:type="gmfmap:FeatureLabelMapping">
+                <diagramLabel
+                    href="activityDiagram_actions.gmfgraph#ActionCallOperationNode_name"/>
+                <features
+                    href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//NamedElement/name"/>
+              </labelMappings>
+              <tool
+                  xsi:type="gmftool:CreationTool"
+                  href="activityDiagram.gmftool#//@palette/@tools.1/@tools.3"/>
+              <diagramNode
+                  href="activityDiagram_actions.gmfgraph#ActionCallOperationNode"/>
+              <children>
+                <containmentFeature
+                    href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//CallAction/result"/>
+                <referencedChild
+                    href="actvityDiagram_SharedPins.gmfmap#//@nodes.0/@ownedChild"/>
+              </children>
+              <children>
+                <containmentFeature
+                    href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//InvocationAction/argument"/>
+                <referencedChild
+                    href="actvityDiagram_SharedPins.gmfmap#//@nodes.1/@ownedChild"/>
+              </children>
+              <children>
+                <containmentFeature
+                    href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//CallOperationAction/target"/>
+                <referencedChild
+                    href="actvityDiagram_SharedPins.gmfmap#//@nodes.1/@ownedChild"/>
+              </children>
+            </ownedChild>
           </children>
-          <children
-              referencedChild="//@nodes.0/@ownedChild/@children.17/@ownedChild">
+          <children>
             <containmentFeature
                 href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//Activity/node"/>
             <childrenFeature
                 href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//ActivityPartition/node"/>
+            <ownedChild>
+              <domainMetaElement
+                  href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//StructuredActivityNode"/>
+              <domainSpecialization
+                  body="not self.oclIsTypeOf(uml::LoopNode) and self.inPartition->notEmpty()"/>
+              <tool
+                  xsi:type="gmftool:CreationTool"
+                  href="activityDiagram.gmftool#//@palette/@tools.3/@tools.1"/>
+              <diagramNode
+                  href="activityDiagram_structured.gmfgraph#StructuredActivityNode"/>
+              <children
+                  compartment="//@nodes.0/@ownedChild/@children.21/@ownedChild/@children.18/@ownedChild/@compartments.0"
+                  referencedChild="//@nodes.0/@ownedChild/@children.21/@ownedChild/@children.18/@ownedChild">
+                <containmentFeature
+                    href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//StructuredActivityNode/node"/>
+              </children>
+              <children
+                  compartment="//@nodes.0/@ownedChild/@children.21/@ownedChild/@children.18/@ownedChild/@compartments.0"
+                  referencedChild="//@nodes.0/@ownedChild/@children.8/@ownedChild">
+                <containmentFeature
+                    href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//StructuredActivityNode/node"/>
+              </children>
+              <children
+                  compartment="//@nodes.0/@ownedChild/@children.21/@ownedChild/@children.18/@ownedChild/@compartments.0"
+                  referencedChild="//@nodes.0/@ownedChild/@children.0/@ownedChild">
+                <containmentFeature
+                    href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//StructuredActivityNode/node"/>
+              </children>
+              <children
+                  compartment="//@nodes.0/@ownedChild/@children.21/@ownedChild/@children.18/@ownedChild/@compartments.0"
+                  referencedChild="//@nodes.0/@ownedChild/@children.1/@ownedChild">
+                <containmentFeature
+                    href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//StructuredActivityNode/node"/>
+              </children>
+              <children
+                  compartment="//@nodes.0/@ownedChild/@children.21/@ownedChild/@children.18/@ownedChild/@compartments.0"
+                  referencedChild="//@nodes.0/@ownedChild/@children.2/@ownedChild">
+                <containmentFeature
+                    href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//StructuredActivityNode/node"/>
+              </children>
+              <children
+                  compartment="//@nodes.0/@ownedChild/@children.21/@ownedChild/@children.18/@ownedChild/@compartments.0"
+                  referencedChild="//@nodes.0/@ownedChild/@children.3/@ownedChild">
+                <containmentFeature
+                    href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//StructuredActivityNode/node"/>
+              </children>
+              <children
+                  compartment="//@nodes.0/@ownedChild/@children.21/@ownedChild/@children.18/@ownedChild/@compartments.0"
+                  referencedChild="//@nodes.0/@ownedChild/@children.9/@ownedChild">
+                <containmentFeature
+                    href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//StructuredActivityNode/node"/>
+              </children>
+              <children
+                  compartment="//@nodes.0/@ownedChild/@children.21/@ownedChild/@children.18/@ownedChild/@compartments.0"
+                  referencedChild="//@nodes.0/@ownedChild/@children.12/@ownedChild">
+                <containmentFeature
+                    href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//StructuredActivityNode/node"/>
+              </children>
+              <children
+                  compartment="//@nodes.0/@ownedChild/@children.21/@ownedChild/@children.18/@ownedChild/@compartments.0"
+                  referencedChild="//@nodes.0/@ownedChild/@children.13/@ownedChild">
+                <containmentFeature
+                    href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//StructuredActivityNode/node"/>
+              </children>
+              <children
+                  compartment="//@nodes.0/@ownedChild/@children.21/@ownedChild/@children.18/@ownedChild/@compartments.0"
+                  referencedChild="//@nodes.0/@ownedChild/@children.15/@ownedChild">
+                <containmentFeature
+                    href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//StructuredActivityNode/node"/>
+              </children>
+              <children
+                  compartment="//@nodes.0/@ownedChild/@children.21/@ownedChild/@children.18/@ownedChild/@compartments.0"
+                  referencedChild="//@nodes.0/@ownedChild/@children.16/@ownedChild">
+                <containmentFeature
+                    href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//StructuredActivityNode/node"/>
+              </children>
+              <children
+                  compartment="//@nodes.0/@ownedChild/@children.21/@ownedChild/@children.18/@ownedChild/@compartments.0"
+                  referencedChild="//@nodes.0/@ownedChild/@children.10/@ownedChild">
+                <containmentFeature
+                    href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//StructuredActivityNode/node"/>
+              </children>
+              <children
+                  compartment="//@nodes.0/@ownedChild/@children.21/@ownedChild/@children.18/@ownedChild/@compartments.0"
+                  referencedChild="//@nodes.0/@ownedChild/@children.11/@ownedChild">
+                <containmentFeature
+                    href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//StructuredActivityNode/node"/>
+              </children>
+              <children
+                  compartment="//@nodes.0/@ownedChild/@children.21/@ownedChild/@children.18/@ownedChild/@compartments.0"
+                  referencedChild="//@nodes.0/@ownedChild/@children.14/@ownedChild">
+                <containmentFeature
+                    href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//StructuredActivityNode/node"/>
+              </children>
+              <children
+                  compartment="//@nodes.0/@ownedChild/@children.21/@ownedChild/@children.18/@ownedChild/@compartments.0"
+                  referencedChild="//@nodes.0/@ownedChild/@children.6/@ownedChild">
+                <containmentFeature
+                    href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//StructuredActivityNode/node"/>
+              </children>
+              <children
+                  compartment="//@nodes.0/@ownedChild/@children.21/@ownedChild/@children.18/@ownedChild/@compartments.0"
+                  referencedChild="//@nodes.0/@ownedChild/@children.7/@ownedChild">
+                <containmentFeature
+                    href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//StructuredActivityNode/node"/>
+              </children>
+              <children
+                  compartment="//@nodes.0/@ownedChild/@children.21/@ownedChild/@children.18/@ownedChild/@compartments.0">
+                <containmentFeature
+                    href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//StructuredActivityNode/node"/>
+                <ownedChild>
+                  <domainMetaElement
+                      href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//InputPin"/>
+                  <domainInitializer
+                      xsi:type="gmfmap:FeatureSeqInitializer">
+                    <initializers
+                        xsi:type="gmfmap:FeatureValueSpec"
+                        body=" let base : String = 'InputPin' in  let suffixes : Sequence(String) = Sequence {'', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10'} in  let space : Namespace = self.namespace in  let allMissed : Sequence(String) = suffixes-> &#x9;select(s : String | not space.member->exists(e : NamedElement | e.name = base.concat(s)) ) in  let firstMissed : String = allMissed->first() in  let noMisses : Boolean = firstMissed.oclIsUndefined() in  let allNames : Set(String) =  &#x9;if noMisses &#x9;&#x9;then &#x9;&#x9;space.member->collect(e : NamedElement | &#x9;&#x9;&#x9;if e = self or e.name.oclIsUndefined() or e.name.substring(1, e.name.size().min(base.size())) &lt;> base &#x9;&#x9;&#x9;then '' else e.name &#x9;&#x9;&#x9;endif &#x9;&#x9;)->asSet()->excluding('') &#x9;&#x9;else Set{'not in use'} &#x9;&#x9;endif in  let longestName : String = &#x9;&#x9;if noMisses &#x9;&#x9;then allNames->select(n : String | not allNames->exists(nn : String | nn.size() > n.size()))->asSequence()->first()&#x9;&#x9;else 'not in use' &#x9;&#x9;endif &#x9;in  if noMisses then &#x9;&#x9;if longestName.oclIsUndefined() &#x9;&#x9;then base &#x9;&#x9;else longestName.concat('1') &#x9;&#x9;endif  else base.concat(firstMissed)  endif ">
+                      <feature
+                          xsi:type="ecore:EAttribute"
+                          href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//NamedElement/name"/>
+                    </initializers>
+                  </domainInitializer>
+                  <labelMappings
+                      xsi:type="gmfmap:FeatureLabelMapping">
+                    <diagramLabel
+                        href="activityDiagram_objects.gmfgraph#StandalonePinNode_name"/>
+                    <features
+                        href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//NamedElement/name"/>
+                  </labelMappings>
+                  <labelMappings
+                      xsi:type="gmfmap:FeatureLabelMapping"
+                      readOnly="true">
+                    <diagramLabel
+                        href="activityDiagram_objects.gmfgraph#ObjectNodeAttributesLabel"/>
+                    <features
+                        href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//ObjectNode/ordering"/>
+                  </labelMappings>
+                  <tool
+                      xsi:type="gmftool:CreationTool"
+                      href="activityDiagram.gmftool#//@palette/@tools.4/@tools.2/@tools.1"/>
+                  <diagramNode
+                      href="activityDiagram_objects.gmfgraph#StandalonePinNode"/>
+                </ownedChild>
+              </children>
+              <children
+                  compartment="//@nodes.0/@ownedChild/@children.21/@ownedChild/@children.18/@ownedChild/@compartments.0">
+                <containmentFeature
+                    href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//StructuredActivityNode/node"/>
+                <ownedChild>
+                  <domainMetaElement
+                      href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//OutputPin"/>
+                  <domainInitializer
+                      xsi:type="gmfmap:FeatureSeqInitializer">
+                    <initializers
+                        xsi:type="gmfmap:FeatureValueSpec"
+                        body=" let base : String = 'OutputPin' in  let suffixes : Sequence(String) = Sequence {'', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10'} in  let space : Namespace = self.namespace in  let allMissed : Sequence(String) = suffixes-> &#x9;select(s : String | not space.member->exists(e : NamedElement | e.name = base.concat(s)) ) in  let firstMissed : String = allMissed->first() in  let noMisses : Boolean = firstMissed.oclIsUndefined() in  let allNames : Set(String) =  &#x9;if noMisses &#x9;&#x9;then &#x9;&#x9;space.member->collect(e : NamedElement | &#x9;&#x9;&#x9;if e = self or e.name.oclIsUndefined() or e.name.substring(1, e.name.size().min(base.size())) &lt;> base &#x9;&#x9;&#x9;then '' else e.name &#x9;&#x9;&#x9;endif &#x9;&#x9;)->asSet()->excluding('') &#x9;&#x9;else Set{'not in use'} &#x9;&#x9;endif in  let longestName : String = &#x9;&#x9;if noMisses &#x9;&#x9;then allNames->select(n : String | not allNames->exists(nn : String | nn.size() > n.size()))->asSequence()->first()&#x9;&#x9;else 'not in use' &#x9;&#x9;endif &#x9;in  if noMisses then &#x9;&#x9;if longestName.oclIsUndefined() &#x9;&#x9;then base &#x9;&#x9;else longestName.concat('1') &#x9;&#x9;endif  else base.concat(firstMissed)  endif ">
+                      <feature
+                          xsi:type="ecore:EAttribute"
+                          href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//NamedElement/name"/>
+                    </initializers>
+                  </domainInitializer>
+                  <labelMappings
+                      xsi:type="gmfmap:FeatureLabelMapping">
+                    <diagramLabel
+                        href="activityDiagram_objects.gmfgraph#StandalonePinNode_name"/>
+                    <features
+                        href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//NamedElement/name"/>
+                  </labelMappings>
+                  <labelMappings
+                      xsi:type="gmfmap:FeatureLabelMapping"
+                      readOnly="true">
+                    <diagramLabel
+                        href="activityDiagram_objects.gmfgraph#ObjectNodeAttributesLabel"/>
+                    <features
+                        href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//ObjectNode/ordering"/>
+                  </labelMappings>
+                  <tool
+                      xsi:type="gmftool:CreationTool"
+                      href="activityDiagram.gmftool#//@palette/@tools.4/@tools.2/@tools.2"/>
+                  <diagramNode
+                      href="activityDiagram_objects.gmfgraph#StandalonePinNode"/>
+                </ownedChild>
+              </children>
+              <compartments
+                  children="//@nodes.0/@ownedChild/@children.21/@ownedChild/@children.18/@ownedChild/@children.0 //@nodes.0/@ownedChild/@children.21/@ownedChild/@children.18/@ownedChild/@children.1 //@nodes.0/@ownedChild/@children.21/@ownedChild/@children.18/@ownedChild/@children.2 //@nodes.0/@ownedChild/@children.21/@ownedChild/@children.18/@ownedChild/@children.3 //@nodes.0/@ownedChild/@children.21/@ownedChild/@children.18/@ownedChild/@children.4 //@nodes.0/@ownedChild/@children.21/@ownedChild/@children.18/@ownedChild/@children.5 //@nodes.0/@ownedChild/@children.21/@ownedChild/@children.18/@ownedChild/@children.6 //@nodes.0/@ownedChild/@children.21/@ownedChild/@children.18/@ownedChild/@children.7 //@nodes.0/@ownedChild/@children.21/@ownedChild/@children.18/@ownedChild/@children.8 //@nodes.0/@ownedChild/@children.21/@ownedChild/@children.18/@ownedChild/@children.9 //@nodes.0/@ownedChild/@children.21/@ownedChild/@children.18/@ownedChild/@children.10 //@nodes.0/@ownedChild/@children.21/@ownedChild/@children.18/@ownedChild/@children.11 //@nodes.0/@ownedChild/@children.21/@ownedChild/@children.18/@ownedChild/@children.12 //@nodes.0/@ownedChild/@children.21/@ownedChild/@children.18/@ownedChild/@children.13 //@nodes.0/@ownedChild/@children.21/@ownedChild/@children.18/@ownedChild/@children.14 //@nodes.0/@ownedChild/@children.21/@ownedChild/@children.18/@ownedChild/@children.15 //@nodes.0/@ownedChild/@children.21/@ownedChild/@children.18/@ownedChild/@children.16 //@nodes.0/@ownedChild/@children.21/@ownedChild/@children.18/@ownedChild/@children.17">
+                <compartment
+                    href="activityDiagram_structured.gmfgraph#StructuredActivityContentPaneCompartment"/>
+              </compartments>
+            </ownedChild>
           </children>
-          <children
-              referencedChild="//@nodes.0/@ownedChild/@children.20/@ownedChild">
+          <children>
             <containmentFeature
                 href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//Activity/node"/>
             <childrenFeature
                 href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//ActivityPartition/node"/>
+            <ownedChild>
+              <domainMetaElement
+                  href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//SendSignalAction"/>
+              <domainSpecialization
+                  body="self.inPartition->notEmpty()"/>
+              <domainInitializer
+                  xsi:type="gmfmap:FeatureSeqInitializer">
+                <initializers
+                    xsi:type="gmfmap:FeatureValueSpec"
+                    body=" let base : String = 'SendSignalAction' in  let suffixes : Sequence(String) = Sequence {'', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10'} in  let space : Namespace = self.namespace in  let allMissed : Sequence(String) = suffixes-> &#x9;select(s : String | not space.member->exists(e : NamedElement | e.name = base.concat(s)) ) in  let firstMissed : String = allMissed->first() in  let noMisses : Boolean = firstMissed.oclIsUndefined() in  let allNames : Set(String) =  &#x9;if noMisses &#x9;&#x9;then &#x9;&#x9;space.member->collect(e : NamedElement | &#x9;&#x9;&#x9;if e = self or e.name.oclIsUndefined() or e.name.substring(1, e.name.size().min(base.size())) &lt;> base &#x9;&#x9;&#x9;then '' else e.name &#x9;&#x9;&#x9;endif &#x9;&#x9;)->asSet()->excluding('') &#x9;&#x9;else Set{'not in use'} &#x9;&#x9;endif in  let longestName : String = &#x9;&#x9;if noMisses &#x9;&#x9;then allNames->select(n : String | not allNames->exists(nn : String | nn.size() > n.size()))->asSequence()->first()&#x9;&#x9;else 'not in use' &#x9;&#x9;endif &#x9;in  if noMisses then &#x9;&#x9;if longestName.oclIsUndefined() &#x9;&#x9;then base &#x9;&#x9;else longestName.concat('1') &#x9;&#x9;endif  else base.concat(firstMissed)  endif ">
+                  <feature
+                      xsi:type="ecore:EAttribute"
+                      href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//NamedElement/name"/>
+                </initializers>
+              </domainInitializer>
+              <labelMappings
+                  xsi:type="gmfmap:FeatureLabelMapping">
+                <diagramLabel
+                    href="activityDiagram_actions.gmfgraph#SendSignalActionNode_name"/>
+                <features
+                    href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//NamedElement/name"/>
+              </labelMappings>
+              <tool
+                  xsi:type="gmftool:CreationTool"
+                  href="activityDiagram.gmftool#//@palette/@tools.1/@tools.6"/>
+              <diagramNode
+                  href="activityDiagram_actions.gmfgraph#SendSignalActionNode"/>
+            </ownedChild>
           </children>
-          <children
-              referencedChild="//@nodes.0/@ownedChild/@children.22/@ownedChild">
+          <children>
             <containmentFeature
                 href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//Activity/node"/>
             <childrenFeature
                 href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//ActivityPartition/node"/>
+            <ownedChild>
+              <domainMetaElement
+                  href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//LoopNode"/>
+              <domainSpecialization
+                  body="self.inPartition->notEmpty()"/>
+              <tool
+                  xsi:type="gmftool:CreationTool"
+                  href="activityDiagram.gmftool#//@palette/@tools.3/@tools.0"/>
+              <diagramNode
+                  href="activityDiagram_structured.gmfgraph#LoopNode"/>
+              <children
+                  compartment="//@nodes.0/@ownedChild/@children.21/@ownedChild/@children.20/@ownedChild/@compartments.0"
+                  referencedChild="//@nodes.0/@ownedChild/@children.17/@ownedChild">
+                <containmentFeature
+                    href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//StructuredActivityNode/node"/>
+              </children>
+              <children
+                  compartment="//@nodes.0/@ownedChild/@children.21/@ownedChild/@children.20/@ownedChild/@compartments.0"
+                  referencedChild="//@nodes.0/@ownedChild/@children.8/@ownedChild">
+                <containmentFeature
+                    href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//StructuredActivityNode/node"/>
+              </children>
+              <children
+                  compartment="//@nodes.0/@ownedChild/@children.21/@ownedChild/@children.20/@ownedChild/@compartments.0"
+                  referencedChild="//@nodes.0/@ownedChild/@children.0/@ownedChild">
+                <containmentFeature
+                    href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//StructuredActivityNode/node"/>
+              </children>
+              <children
+                  compartment="//@nodes.0/@ownedChild/@children.21/@ownedChild/@children.20/@ownedChild/@compartments.0"
+                  referencedChild="//@nodes.0/@ownedChild/@children.1/@ownedChild">
+                <containmentFeature
+                    href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//StructuredActivityNode/node"/>
+              </children>
+              <children
+                  compartment="//@nodes.0/@ownedChild/@children.21/@ownedChild/@children.20/@ownedChild/@compartments.0"
+                  referencedChild="//@nodes.0/@ownedChild/@children.2/@ownedChild">
+                <containmentFeature
+                    href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//StructuredActivityNode/node"/>
+              </children>
+              <children
+                  compartment="//@nodes.0/@ownedChild/@children.21/@ownedChild/@children.20/@ownedChild/@compartments.0"
+                  referencedChild="//@nodes.0/@ownedChild/@children.3/@ownedChild">
+                <containmentFeature
+                    href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//StructuredActivityNode/node"/>
+              </children>
+              <children
+                  compartment="//@nodes.0/@ownedChild/@children.21/@ownedChild/@children.20/@ownedChild/@compartments.0"
+                  referencedChild="//@nodes.0/@ownedChild/@children.9/@ownedChild">
+                <containmentFeature
+                    href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//StructuredActivityNode/node"/>
+              </children>
+              <children
+                  compartment="//@nodes.0/@ownedChild/@children.21/@ownedChild/@children.20/@ownedChild/@compartments.0"
+                  referencedChild="//@nodes.0/@ownedChild/@children.12/@ownedChild">
+                <containmentFeature
+                    href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//StructuredActivityNode/node"/>
+              </children>
+              <children
+                  compartment="//@nodes.0/@ownedChild/@children.21/@ownedChild/@children.20/@ownedChild/@compartments.0"
+                  referencedChild="//@nodes.0/@ownedChild/@children.13/@ownedChild">
+                <containmentFeature
+                    href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//StructuredActivityNode/node"/>
+              </children>
+              <children
+                  compartment="//@nodes.0/@ownedChild/@children.21/@ownedChild/@children.20/@ownedChild/@compartments.0"
+                  referencedChild="//@nodes.0/@ownedChild/@children.15/@ownedChild">
+                <containmentFeature
+                    href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//StructuredActivityNode/node"/>
+              </children>
+              <children
+                  compartment="//@nodes.0/@ownedChild/@children.21/@ownedChild/@children.20/@ownedChild/@compartments.0"
+                  referencedChild="//@nodes.0/@ownedChild/@children.16/@ownedChild">
+                <containmentFeature
+                    href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//StructuredActivityNode/node"/>
+              </children>
+              <children
+                  compartment="//@nodes.0/@ownedChild/@children.21/@ownedChild/@children.20/@ownedChild/@compartments.0"
+                  referencedChild="//@nodes.0/@ownedChild/@children.10/@ownedChild">
+                <containmentFeature
+                    href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//StructuredActivityNode/node"/>
+              </children>
+              <children
+                  compartment="//@nodes.0/@ownedChild/@children.21/@ownedChild/@children.20/@ownedChild/@compartments.0"
+                  referencedChild="//@nodes.0/@ownedChild/@children.11/@ownedChild">
+                <containmentFeature
+                    href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//StructuredActivityNode/node"/>
+              </children>
+              <children
+                  compartment="//@nodes.0/@ownedChild/@children.21/@ownedChild/@children.20/@ownedChild/@compartments.0"
+                  referencedChild="//@nodes.0/@ownedChild/@children.14/@ownedChild">
+                <containmentFeature
+                    href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//StructuredActivityNode/node"/>
+              </children>
+              <children
+                  compartment="//@nodes.0/@ownedChild/@children.21/@ownedChild/@children.20/@ownedChild/@compartments.0"
+                  referencedChild="//@nodes.0/@ownedChild/@children.6/@ownedChild">
+                <containmentFeature
+                    href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//StructuredActivityNode/node"/>
+              </children>
+              <children
+                  compartment="//@nodes.0/@ownedChild/@children.21/@ownedChild/@children.20/@ownedChild/@compartments.0"
+                  referencedChild="//@nodes.0/@ownedChild/@children.7/@ownedChild">
+                <containmentFeature
+                    href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//StructuredActivityNode/node"/>
+              </children>
+              <children
+                  compartment="//@nodes.0/@ownedChild/@children.21/@ownedChild/@children.20/@ownedChild/@compartments.0"
+                  referencedChild="//@nodes.0/@ownedChild/@children.17/@ownedChild/@children.16/@ownedChild">
+                <containmentFeature
+                    href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//StructuredActivityNode/node"/>
+              </children>
+              <children
+                  compartment="//@nodes.0/@ownedChild/@children.21/@ownedChild/@children.20/@ownedChild/@compartments.0"
+                  referencedChild="//@nodes.0/@ownedChild/@children.17/@ownedChild/@children.17/@ownedChild">
+                <containmentFeature
+                    href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//StructuredActivityNode/node"/>
+              </children>
+              <compartments
+                  children="//@nodes.0/@ownedChild/@children.21/@ownedChild/@children.20/@ownedChild/@children.0 //@nodes.0/@ownedChild/@children.21/@ownedChild/@children.20/@ownedChild/@children.1 //@nodes.0/@ownedChild/@children.21/@ownedChild/@children.20/@ownedChild/@children.2 //@nodes.0/@ownedChild/@children.21/@ownedChild/@children.20/@ownedChild/@children.3 //@nodes.0/@ownedChild/@children.21/@ownedChild/@children.20/@ownedChild/@children.4 //@nodes.0/@ownedChild/@children.21/@ownedChild/@children.20/@ownedChild/@children.5 //@nodes.0/@ownedChild/@children.21/@ownedChild/@children.20/@ownedChild/@children.6 //@nodes.0/@ownedChild/@children.21/@ownedChild/@children.20/@ownedChild/@children.7 //@nodes.0/@ownedChild/@children.21/@ownedChild/@children.20/@ownedChild/@children.8 //@nodes.0/@ownedChild/@children.21/@ownedChild/@children.20/@ownedChild/@children.9 //@nodes.0/@ownedChild/@children.21/@ownedChild/@children.20/@ownedChild/@children.10 //@nodes.0/@ownedChild/@children.21/@ownedChild/@children.20/@ownedChild/@children.11 //@nodes.0/@ownedChild/@children.21/@ownedChild/@children.20/@ownedChild/@children.12 //@nodes.0/@ownedChild/@children.21/@ownedChild/@children.20/@ownedChild/@children.13 //@nodes.0/@ownedChild/@children.21/@ownedChild/@children.20/@ownedChild/@children.14 //@nodes.0/@ownedChild/@children.21/@ownedChild/@children.20/@ownedChild/@children.15 //@nodes.0/@ownedChild/@children.21/@ownedChild/@children.20/@ownedChild/@children.16 //@nodes.0/@ownedChild/@children.21/@ownedChild/@children.20/@ownedChild/@children.17">
+                <compartment
+                    href="activityDiagram_structured.gmfgraph#LoopNodeContentPaneCompartment"/>
+              </compartments>
+            </ownedChild>
           </children>
         </ownedChild>
       </children>
@@ -1014,6 +1850,8 @@
         <ownedChild>
           <domainMetaElement
               href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//LoopNode"/>
+          <domainSpecialization
+              body="self.inPartition->isEmpty()"/>
           <tool
               xsi:type="gmftool:CreationTool"
               href="activityDiagram.gmftool#//@palette/@tools.3/@tools.0"/>

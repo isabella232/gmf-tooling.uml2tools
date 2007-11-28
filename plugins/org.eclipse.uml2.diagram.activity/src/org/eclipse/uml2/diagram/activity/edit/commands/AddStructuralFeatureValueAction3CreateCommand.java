@@ -73,7 +73,7 @@ public class AddStructuralFeatureValueAction3CreateCommand extends CreateElement
 			if (container != null) {
 				container.getNodes().add(newElement);
 			}
-			
+
 			ActivityPartition partition = (ActivityPartition) getElementToEditGen();
 			newElement.getInPartitions().add(partition);
 

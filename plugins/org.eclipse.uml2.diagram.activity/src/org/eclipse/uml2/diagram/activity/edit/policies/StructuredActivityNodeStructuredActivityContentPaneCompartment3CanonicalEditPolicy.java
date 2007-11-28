@@ -22,11 +22,14 @@ import org.eclipse.uml2.diagram.activity.edit.parts.DecisionNode2EditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.FlowFinalNode2EditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.ForkNode2EditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.InputPin6EditPart;
+import org.eclipse.uml2.diagram.activity.edit.parts.InputPin7EditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.JoinNode2EditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.OpaqueAction2EditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.OutputPin4EditPart;
+import org.eclipse.uml2.diagram.activity.edit.parts.OutputPin5EditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.Pin2EditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.StructuredActivityNode2EditPart;
+import org.eclipse.uml2.diagram.activity.edit.parts.StructuredActivityNode4EditPart;
 import org.eclipse.uml2.diagram.activity.part.UMLDiagramUpdater;
 import org.eclipse.uml2.diagram.activity.part.UMLNodeDescriptor;
 import org.eclipse.uml2.diagram.activity.part.UMLVisualIDRegistry;
@@ -60,7 +63,7 @@ public class StructuredActivityNodeStructuredActivityContentPaneCompartment3Cano
 	protected boolean isOrphaned(Collection semanticChildren, final View view) {
 		int visualID = UMLVisualIDRegistry.getVisualID(view);
 		switch (visualID) {
-		case StructuredActivityNode2EditPart.VISUAL_ID:
+		case StructuredActivityNode4EditPart.VISUAL_ID:
 		case OpaqueAction2EditPart.VISUAL_ID:
 		case AcceptEventAction3EditPart.VISUAL_ID:
 		case AcceptEventAction4EditPart.VISUAL_ID:
@@ -76,8 +79,8 @@ public class StructuredActivityNodeStructuredActivityContentPaneCompartment3Cano
 		case AddStructuralFeatureValueAction2EditPart.VISUAL_ID:
 		case DataStoreNode2EditPart.VISUAL_ID:
 		case CentralBufferNode2EditPart.VISUAL_ID:
-		case InputPin6EditPart.VISUAL_ID:
-		case OutputPin4EditPart.VISUAL_ID:
+		case InputPin7EditPart.VISUAL_ID:
+		case OutputPin5EditPart.VISUAL_ID:
 			return !semanticChildren.contains(view.getElement()) || visualID != UMLVisualIDRegistry.getNodeVisualID((View) getHost().getModel(), view.getElement());
 		}
 		return false;

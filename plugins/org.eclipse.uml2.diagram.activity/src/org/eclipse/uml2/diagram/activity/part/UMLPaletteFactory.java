@@ -426,13 +426,14 @@ public class UMLPaletteFactory {
 	 * @generated
 	 */
 	private ToolEntry createInputPin2CreationTool() {
-		List/*<IElementType>*/types = new ArrayList/*<IElementType>*/(6);
+		List/*<IElementType>*/types = new ArrayList/*<IElementType>*/(7);
 		types.add(UMLElementTypes.InputPin_3003);
 		types.add(UMLElementTypes.InputPin_3004);
 		types.add(UMLElementTypes.InputPin_3005);
 		types.add(UMLElementTypes.InputPin_3007);
 		types.add(UMLElementTypes.InputPin_3008);
 		types.add(UMLElementTypes.InputPin_3054);
+		types.add(UMLElementTypes.InputPin_3080);
 		NodeToolEntry entry = new NodeToolEntry(Messages.InputPin2CreationTool_title, Messages.InputPin2CreationTool_desc, types);
 		entry.setSmallIcon(UMLElementTypes.getImageDescriptor(UMLElementTypes.InputPin_3003));
 		entry.setLargeIcon(entry.getSmallIcon());
@@ -443,11 +444,12 @@ public class UMLPaletteFactory {
 	 * @generated
 	 */
 	private ToolEntry createOutputPin3CreationTool() {
-		List/*<IElementType>*/types = new ArrayList/*<IElementType>*/(4);
+		List/*<IElementType>*/types = new ArrayList/*<IElementType>*/(5);
 		types.add(UMLElementTypes.OutputPin_3001);
 		types.add(UMLElementTypes.OutputPin_3002);
 		types.add(UMLElementTypes.OutputPin_3006);
 		types.add(UMLElementTypes.OutputPin_3055);
+		types.add(UMLElementTypes.OutputPin_3081);
 		NodeToolEntry entry = new NodeToolEntry(Messages.OutputPin3CreationTool_title, Messages.OutputPin3CreationTool_desc, types);
 		entry.setSmallIcon(UMLElementTypes.getImageDescriptor(UMLElementTypes.OutputPin_3001));
 		entry.setLargeIcon(entry.getSmallIcon());
@@ -485,10 +487,11 @@ public class UMLPaletteFactory {
 	 * @generated
 	 */
 	private ToolEntry createStructuredActivityNode2CreationTool() {
-		List/*<IElementType>*/types = new ArrayList/*<IElementType>*/(3);
+		List/*<IElementType>*/types = new ArrayList/*<IElementType>*/(4);
 		types.add(UMLElementTypes.StructuredActivityNode_3046);
 		types.add(UMLElementTypes.StructuredActivityNode_3009);
 		types.add(UMLElementTypes.StructuredActivityNode_3076);
+		types.add(UMLElementTypes.StructuredActivityNode_3079);
 		NodeToolEntry entry = new NodeToolEntry(Messages.StructuredActivityNode2CreationTool_title, Messages.StructuredActivityNode2CreationTool_desc, types);
 		entry.setSmallIcon(UMLElementTypes.getImageDescriptor(UMLElementTypes.StructuredActivityNode_3046));
 		entry.setLargeIcon(entry.getSmallIcon());

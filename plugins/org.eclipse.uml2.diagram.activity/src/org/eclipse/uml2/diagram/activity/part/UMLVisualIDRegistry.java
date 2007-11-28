@@ -132,73 +132,302 @@ public class UMLVisualIDRegistry {
 	 * @generated
 	 */
 	private static final UMLAbstractExpression AcceptEventAction_3030_Constraint = UMLOCLFactory.getExpression(
-			"self.trigger->isEmpty() or (not self.trigger->forAll(tr | tr.event.oclIsKindOf(uml::TimeEvent)))", UMLPackage.eINSTANCE.getAcceptEventAction());
+			"(self.trigger->isEmpty() or (not self.trigger->forAll(tr | tr.event.oclIsKindOf(uml::TimeEvent)))) and self.inPartition->isEmpty()", UMLPackage.eINSTANCE.getAcceptEventAction());
 
 	/**
 	 * @generated
 	 */
 	private static final UMLAbstractExpression AcceptEventAction_3031_Constraint = UMLOCLFactory.getExpression(
-			"(not self.trigger->isEmpty()) and (self.trigger->forAll(tr | tr.event.oclIsKindOf(uml::TimeEvent)))", UMLPackage.eINSTANCE.getAcceptEventAction());
+			"(not self.trigger->isEmpty()) and (self.trigger->forAll(tr | tr.event.oclIsKindOf(uml::TimeEvent))) and self.inPartition->isEmpty()", UMLPackage.eINSTANCE.getAcceptEventAction());
 
 	/**
 	 * @generated
 	 */
-	private static final UMLAbstractExpression Pin_3041_Constraint = UMLOCLFactory.getExpression("(not self.oclIsTypeOf(uml::InputPin)) and (not self.oclIsTypeOf(uml::OutputPin))",
-			UMLPackage.eINSTANCE.getPin());
+	private static final UMLAbstractExpression ActivityFinalNode_3032_Constraint = UMLOCLFactory.getExpression("self.inPartition->isEmpty()", UMLPackage.eINSTANCE.getActivityFinalNode());
 
 	/**
 	 * @generated
 	 */
-	private static final UMLAbstractExpression StructuredActivityNode_3046_Constraint = UMLOCLFactory.getExpression("not self.oclIsTypeOf(uml::LoopNode)", UMLPackage.eINSTANCE
-			.getStructuredActivityNode());
+	private static final UMLAbstractExpression DecisionNode_3033_Constraint = UMLOCLFactory.getExpression("self.inPartition->isEmpty()", UMLPackage.eINSTANCE.getDecisionNode());
 
 	/**
 	 * @generated
 	 */
-	private static final UMLAbstractExpression StructuredActivityNode_3009_Constraint = UMLOCLFactory.getExpression("not self.oclIsTypeOf(uml::LoopNode)", UMLPackage.eINSTANCE
-			.getStructuredActivityNode());
+	private static final UMLAbstractExpression MergeNode_3034_Constraint = UMLOCLFactory.getExpression("self.inPartition->isEmpty()", UMLPackage.eINSTANCE.getMergeNode());
+
+	/**
+	 * @generated
+	 */
+	private static final UMLAbstractExpression InitialNode_3035_Constraint = UMLOCLFactory.getExpression("self.inPartition->isEmpty()", UMLPackage.eINSTANCE.getInitialNode());
+
+	/**
+	 * @generated
+	 */
+	private static final UMLAbstractExpression DataStoreNode_3036_Constraint = UMLOCLFactory.getExpression("self.inPartition->isEmpty()", UMLPackage.eINSTANCE.getDataStoreNode());
+
+	/**
+	 * @generated
+	 */
+	private static final UMLAbstractExpression CentralBufferNode_3037_Constraint = UMLOCLFactory.getExpression("self.inPartition->isEmpty()", UMLPackage.eINSTANCE.getCentralBufferNode());
+
+	/**
+	 * @generated
+	 */
+	private static final UMLAbstractExpression OpaqueAction_3029_Constraint = UMLOCLFactory.getExpression("self.inPartition->isEmpty()", UMLPackage.eINSTANCE.getOpaqueAction());
+
+	/**
+	 * @generated
+	 */
+	private static final UMLAbstractExpression FlowFinalNode_3038_Constraint = UMLOCLFactory.getExpression("self.inPartition->isEmpty()", UMLPackage.eINSTANCE.getFlowFinalNode());
+
+	/**
+	 * @generated
+	 */
+	private static final UMLAbstractExpression ForkNode_3039_Constraint = UMLOCLFactory.getExpression("self.inPartition->isEmpty()", UMLPackage.eINSTANCE.getForkNode());
+
+	/**
+	 * @generated
+	 */
+	private static final UMLAbstractExpression JoinNode_3040_Constraint = UMLOCLFactory.getExpression("self.inPartition->isEmpty()", UMLPackage.eINSTANCE.getJoinNode());
+
+	/**
+	 * @generated
+	 */
+	private static final UMLAbstractExpression Pin_3041_Constraint = UMLOCLFactory.getExpression(
+			"(not self.oclIsTypeOf(uml::InputPin)) and (not self.oclIsTypeOf(uml::OutputPin)) and self.inPartition->isEmpty()", UMLPackage.eINSTANCE.getPin());
+
+	/**
+	 * @generated
+	 */
+	private static final UMLAbstractExpression CreateObjectAction_3042_Constraint = UMLOCLFactory.getExpression("self.inPartition->isEmpty()", UMLPackage.eINSTANCE.getCreateObjectAction());
+
+	/**
+	 * @generated
+	 */
+	private static final UMLAbstractExpression AddStructuralFeatureValueAction_3043_Constraint = UMLOCLFactory.getExpression("self.inPartition->isEmpty()", UMLPackage.eINSTANCE
+			.getAddStructuralFeatureValueAction());
+
+	/**
+	 * @generated
+	 */
+	private static final UMLAbstractExpression CallBehaviorAction_3044_Constraint = UMLOCLFactory.getExpression("self.inPartition->isEmpty()", UMLPackage.eINSTANCE.getCallBehaviorAction());
+
+	/**
+	 * @generated
+	 */
+	private static final UMLAbstractExpression CallOperationAction_3045_Constraint = UMLOCLFactory.getExpression("self.inPartition->isEmpty()", UMLPackage.eINSTANCE.getCallOperationAction());
+
+	/**
+	 * @generated
+	 */
+	private static final UMLAbstractExpression StructuredActivityNode_3046_Constraint = UMLOCLFactory.getExpression("not self.oclIsTypeOf(uml::LoopNode) and self.inPartition->isEmpty()",
+			UMLPackage.eINSTANCE.getStructuredActivityNode());
+
+	/**
+	 * @generated
+	 */
+	private static final UMLAbstractExpression StructuredActivityNode_3009_Constraint = UMLOCLFactory.getExpression("not self.oclIsTypeOf(uml::LoopNode) and self.inPartition->isEmpty()",
+			UMLPackage.eINSTANCE.getStructuredActivityNode());
+
+	/**
+	 * @generated
+	 */
+	private static final UMLAbstractExpression OpaqueAction_3011_Constraint = UMLOCLFactory.getExpression("self.inPartition->isEmpty()", UMLPackage.eINSTANCE.getOpaqueAction());
 
 	/**
 	 * @generated
 	 */
 	private static final UMLAbstractExpression AcceptEventAction_3012_Constraint = UMLOCLFactory.getExpression(
-			"self.trigger->isEmpty() or (not self.trigger->forAll(tr | tr.event.oclIsKindOf(uml::TimeEvent)))", UMLPackage.eINSTANCE.getAcceptEventAction());
+			"(self.trigger->isEmpty() or (not self.trigger->forAll(tr | tr.event.oclIsKindOf(uml::TimeEvent)))) and self.inPartition->isEmpty()", UMLPackage.eINSTANCE.getAcceptEventAction());
 
 	/**
 	 * @generated
 	 */
 	private static final UMLAbstractExpression AcceptEventAction_3013_Constraint = UMLOCLFactory.getExpression(
-			"(not self.trigger->isEmpty()) and (self.trigger->forAll(tr | tr.event.oclIsKindOf(uml::TimeEvent)))", UMLPackage.eINSTANCE.getAcceptEventAction());
+			"(not self.trigger->isEmpty()) and (self.trigger->forAll(tr | tr.event.oclIsKindOf(uml::TimeEvent))) and self.inPartition->isEmpty()", UMLPackage.eINSTANCE.getAcceptEventAction());
 
 	/**
 	 * @generated
 	 */
-	private static final UMLAbstractExpression Pin_3017_Constraint = UMLOCLFactory.getExpression("(not self.oclIsTypeOf(uml::InputPin)) and (not self.oclIsTypeOf(uml::OutputPin))",
-			UMLPackage.eINSTANCE.getPin());
+	private static final UMLAbstractExpression ActivityFinalNode_3014_Constraint = UMLOCLFactory.getExpression("self.inPartition->isEmpty()", UMLPackage.eINSTANCE.getActivityFinalNode());
+
+	/**
+	 * @generated
+	 */
+	private static final UMLAbstractExpression DecisionNode_3015_Constraint = UMLOCLFactory.getExpression("self.inPartition->isEmpty()", UMLPackage.eINSTANCE.getDecisionNode());
+
+	/**
+	 * @generated
+	 */
+	private static final UMLAbstractExpression FlowFinalNode_3016_Constraint = UMLOCLFactory.getExpression("self.inPartition->isEmpty()", UMLPackage.eINSTANCE.getFlowFinalNode());
+
+	/**
+	 * @generated
+	 */
+	private static final UMLAbstractExpression Pin_3017_Constraint = UMLOCLFactory.getExpression(
+			"(not self.oclIsTypeOf(uml::InputPin)) and (not self.oclIsTypeOf(uml::OutputPin)) and self.inPartition->isEmpty()", UMLPackage.eINSTANCE.getPin());
+
+	/**
+	 * @generated
+	 */
+	private static final UMLAbstractExpression CreateObjectAction_3018_Constraint = UMLOCLFactory.getExpression("self.inPartition->isEmpty()", UMLPackage.eINSTANCE.getCreateObjectAction());
+
+	/**
+	 * @generated
+	 */
+	private static final UMLAbstractExpression CallBehaviorAction_3019_Constraint = UMLOCLFactory.getExpression("self.inPartition->isEmpty()", UMLPackage.eINSTANCE.getCallBehaviorAction());
+
+	/**
+	 * @generated
+	 */
+	private static final UMLAbstractExpression CallOperationAction_3020_Constraint = UMLOCLFactory.getExpression("self.inPartition->isEmpty()", UMLPackage.eINSTANCE.getCallOperationAction());
+
+	/**
+	 * @generated
+	 */
+	private static final UMLAbstractExpression ForkNode_3021_Constraint = UMLOCLFactory.getExpression("self.inPartition->isEmpty()", UMLPackage.eINSTANCE.getForkNode());
+
+	/**
+	 * @generated
+	 */
+	private static final UMLAbstractExpression JoinNode_3022_Constraint = UMLOCLFactory.getExpression("self.inPartition->isEmpty()", UMLPackage.eINSTANCE.getJoinNode());
+
+	/**
+	 * @generated
+	 */
+	private static final UMLAbstractExpression AddStructuralFeatureValueAction_3023_Constraint = UMLOCLFactory.getExpression("self.inPartition->isEmpty()", UMLPackage.eINSTANCE
+			.getAddStructuralFeatureValueAction());
+
+	/**
+	 * @generated
+	 */
+	private static final UMLAbstractExpression DataStoreNode_3024_Constraint = UMLOCLFactory.getExpression("self.inPartition->isEmpty()", UMLPackage.eINSTANCE.getDataStoreNode());
+
+	/**
+	 * @generated
+	 */
+	private static final UMLAbstractExpression CentralBufferNode_3025_Constraint = UMLOCLFactory.getExpression("self.inPartition->isEmpty()", UMLPackage.eINSTANCE.getCentralBufferNode());
+
+	/**
+	 * @generated
+	 */
+	private static final UMLAbstractExpression SendSignalAction_3053_Constraint = UMLOCLFactory.getExpression("self.inPartition->isEmpty()", UMLPackage.eINSTANCE.getSendSignalAction());
 
 	/**
 	 * @generated
 	 */
 	private static final UMLAbstractExpression AcceptEventAction_3059_Constraint = UMLOCLFactory.getExpression(
-			"self.trigger->isEmpty() or (not self.trigger->forAll(tr | tr.event.oclIsKindOf(uml::TimeEvent)))", UMLPackage.eINSTANCE.getAcceptEventAction());
+			"(self.trigger->isEmpty() or (not self.trigger->forAll(tr | tr.event.oclIsKindOf(uml::TimeEvent)))) and self.inPartition->notEmpty()", UMLPackage.eINSTANCE.getAcceptEventAction());
 
 	/**
 	 * @generated
 	 */
 	private static final UMLAbstractExpression AcceptEventAction_3060_Constraint = UMLOCLFactory.getExpression(
-			"(not self.trigger->isEmpty()) and (self.trigger->forAll(tr | tr.event.oclIsKindOf(uml::TimeEvent)))", UMLPackage.eINSTANCE.getAcceptEventAction());
+			"(not self.trigger->isEmpty()) and (self.trigger->forAll(tr | tr.event.oclIsKindOf(uml::TimeEvent))) and self.inPartition->notEmpty()", UMLPackage.eINSTANCE.getAcceptEventAction());
 
 	/**
 	 * @generated
 	 */
-	private static final UMLAbstractExpression Pin_3071_Constraint = UMLOCLFactory.getExpression("(not self.oclIsTypeOf(uml::InputPin)) and (not self.oclIsTypeOf(uml::OutputPin))",
-			UMLPackage.eINSTANCE.getPin());
+	private static final UMLAbstractExpression ActivityFinalNode_3061_Constraint = UMLOCLFactory.getExpression("self.inPartition->notEmpty()", UMLPackage.eINSTANCE.getActivityFinalNode());
 
 	/**
 	 * @generated
 	 */
-	private static final UMLAbstractExpression StructuredActivityNode_3076_Constraint = UMLOCLFactory.getExpression("not self.oclIsTypeOf(uml::LoopNode)", UMLPackage.eINSTANCE
-			.getStructuredActivityNode());
+	private static final UMLAbstractExpression DecisionNode_3062_Constraint = UMLOCLFactory.getExpression("self.inPartition->notEmpty()", UMLPackage.eINSTANCE.getDecisionNode());
+
+	/**
+	 * @generated
+	 */
+	private static final UMLAbstractExpression MergeNode_3063_Constraint = UMLOCLFactory.getExpression("self.inPartition->notEmpty()", UMLPackage.eINSTANCE.getMergeNode());
+
+	/**
+	 * @generated
+	 */
+	private static final UMLAbstractExpression InitialNode_3064_Constraint = UMLOCLFactory.getExpression("self.inPartition->notEmpty()", UMLPackage.eINSTANCE.getInitialNode());
+
+	/**
+	 * @generated
+	 */
+	private static final UMLAbstractExpression DataStoreNode_3065_Constraint = UMLOCLFactory.getExpression("self.inPartition->notEmpty()", UMLPackage.eINSTANCE.getDataStoreNode());
+
+	/**
+	 * @generated
+	 */
+	private static final UMLAbstractExpression CentralBufferNode_3066_Constraint = UMLOCLFactory.getExpression("self.inPartition->notEmpty()", UMLPackage.eINSTANCE.getCentralBufferNode());
+
+	/**
+	 * @generated
+	 */
+	private static final UMLAbstractExpression OpaqueAction_3067_Constraint = UMLOCLFactory.getExpression("self.inPartition->notEmpty()", UMLPackage.eINSTANCE.getOpaqueAction());
+
+	/**
+	 * @generated
+	 */
+	private static final UMLAbstractExpression FlowFinalNode_3068_Constraint = UMLOCLFactory.getExpression("self.inPartition->notEmpty()", UMLPackage.eINSTANCE.getFlowFinalNode());
+
+	/**
+	 * @generated
+	 */
+	private static final UMLAbstractExpression ForkNode_3069_Constraint = UMLOCLFactory.getExpression("self.inPartition->notEmpty()", UMLPackage.eINSTANCE.getForkNode());
+
+	/**
+	 * @generated
+	 */
+	private static final UMLAbstractExpression JoinNode_3070_Constraint = UMLOCLFactory.getExpression("self.inPartition->notEmpty()", UMLPackage.eINSTANCE.getJoinNode());
+
+	/**
+	 * @generated
+	 */
+	private static final UMLAbstractExpression Pin_3071_Constraint = UMLOCLFactory.getExpression(
+			"(not self.oclIsTypeOf(uml::InputPin)) and (not self.oclIsTypeOf(uml::OutputPin)) and self.inPartition->notEmpty()", UMLPackage.eINSTANCE.getPin());
+
+	/**
+	 * @generated
+	 */
+	private static final UMLAbstractExpression CreateObjectAction_3072_Constraint = UMLOCLFactory.getExpression("self.inPartition->notEmpty()", UMLPackage.eINSTANCE.getCreateObjectAction());
+
+	/**
+	 * @generated
+	 */
+	private static final UMLAbstractExpression AddStructuralFeatureValueAction_3073_Constraint = UMLOCLFactory.getExpression("self.inPartition->notEmpty()", UMLPackage.eINSTANCE
+			.getAddStructuralFeatureValueAction());
+
+	/**
+	 * @generated
+	 */
+	private static final UMLAbstractExpression CallBehaviorAction_3074_Constraint = UMLOCLFactory.getExpression("self.inPartition->notEmpty()", UMLPackage.eINSTANCE.getCallBehaviorAction());
+
+	/**
+	 * @generated
+	 */
+	private static final UMLAbstractExpression CallOperationAction_3075_Constraint = UMLOCLFactory.getExpression("self.inPartition->notEmpty()", UMLPackage.eINSTANCE.getCallOperationAction());
+
+	/**
+	 * @generated
+	 */
+	private static final UMLAbstractExpression StructuredActivityNode_3076_Constraint = UMLOCLFactory.getExpression("not self.oclIsTypeOf(uml::LoopNode) and self.inPartition->notEmpty()",
+			UMLPackage.eINSTANCE.getStructuredActivityNode());
+
+	/**
+	 * @generated
+	 */
+	private static final UMLAbstractExpression StructuredActivityNode_3079_Constraint = UMLOCLFactory.getExpression("not self.oclIsTypeOf(uml::LoopNode) and self.inPartition->notEmpty()",
+			UMLPackage.eINSTANCE.getStructuredActivityNode());
+
+	/**
+	 * @generated
+	 */
+	private static final UMLAbstractExpression SendSignalAction_3077_Constraint = UMLOCLFactory.getExpression("self.inPartition->notEmpty()", UMLPackage.eINSTANCE.getSendSignalAction());
+
+	/**
+	 * @generated
+	 */
+	private static final UMLAbstractExpression LoopNode_3078_Constraint = UMLOCLFactory.getExpression("self.inPartition->notEmpty()", UMLPackage.eINSTANCE.getLoopNode());
+
+	/**
+	 * @generated
+	 */
+	private static final UMLAbstractExpression LoopNode_3058_Constraint = UMLOCLFactory.getExpression("self.inPartition->isEmpty()", UMLPackage.eINSTANCE.getLoopNode());
 
 	/**
 	 * @generated
@@ -292,49 +521,49 @@ public class UMLVisualIDRegistry {
 			if (UMLPackage.eINSTANCE.getAcceptEventAction().isSuperTypeOf(domainElement.eClass()) && evaluate(AcceptEventAction_3031_Constraint, domainElement)) {
 				return AcceptEventAction2EditPart.VISUAL_ID;
 			}
-			if (UMLPackage.eINSTANCE.getActivityFinalNode().isSuperTypeOf(domainElement.eClass())) {
+			if (UMLPackage.eINSTANCE.getActivityFinalNode().isSuperTypeOf(domainElement.eClass()) && evaluate(ActivityFinalNode_3032_Constraint, domainElement)) {
 				return ActivityFinalNodeEditPart.VISUAL_ID;
 			}
-			if (UMLPackage.eINSTANCE.getDecisionNode().isSuperTypeOf(domainElement.eClass())) {
+			if (UMLPackage.eINSTANCE.getDecisionNode().isSuperTypeOf(domainElement.eClass()) && evaluate(DecisionNode_3033_Constraint, domainElement)) {
 				return DecisionNodeEditPart.VISUAL_ID;
 			}
-			if (UMLPackage.eINSTANCE.getMergeNode().isSuperTypeOf(domainElement.eClass())) {
+			if (UMLPackage.eINSTANCE.getMergeNode().isSuperTypeOf(domainElement.eClass()) && evaluate(MergeNode_3034_Constraint, domainElement)) {
 				return MergeNodeEditPart.VISUAL_ID;
 			}
-			if (UMLPackage.eINSTANCE.getInitialNode().isSuperTypeOf(domainElement.eClass())) {
+			if (UMLPackage.eINSTANCE.getInitialNode().isSuperTypeOf(domainElement.eClass()) && evaluate(InitialNode_3035_Constraint, domainElement)) {
 				return InitialNodeEditPart.VISUAL_ID;
 			}
-			if (UMLPackage.eINSTANCE.getDataStoreNode().isSuperTypeOf(domainElement.eClass())) {
+			if (UMLPackage.eINSTANCE.getDataStoreNode().isSuperTypeOf(domainElement.eClass()) && evaluate(DataStoreNode_3036_Constraint, domainElement)) {
 				return DataStoreNodeEditPart.VISUAL_ID;
 			}
-			if (UMLPackage.eINSTANCE.getCentralBufferNode().isSuperTypeOf(domainElement.eClass())) {
+			if (UMLPackage.eINSTANCE.getCentralBufferNode().isSuperTypeOf(domainElement.eClass()) && evaluate(CentralBufferNode_3037_Constraint, domainElement)) {
 				return CentralBufferNodeEditPart.VISUAL_ID;
 			}
-			if (UMLPackage.eINSTANCE.getOpaqueAction().isSuperTypeOf(domainElement.eClass())) {
+			if (UMLPackage.eINSTANCE.getOpaqueAction().isSuperTypeOf(domainElement.eClass()) && evaluate(OpaqueAction_3029_Constraint, domainElement)) {
 				return OpaqueActionEditPart.VISUAL_ID;
 			}
-			if (UMLPackage.eINSTANCE.getFlowFinalNode().isSuperTypeOf(domainElement.eClass())) {
+			if (UMLPackage.eINSTANCE.getFlowFinalNode().isSuperTypeOf(domainElement.eClass()) && evaluate(FlowFinalNode_3038_Constraint, domainElement)) {
 				return FlowFinalNodeEditPart.VISUAL_ID;
 			}
-			if (UMLPackage.eINSTANCE.getForkNode().isSuperTypeOf(domainElement.eClass())) {
+			if (UMLPackage.eINSTANCE.getForkNode().isSuperTypeOf(domainElement.eClass()) && evaluate(ForkNode_3039_Constraint, domainElement)) {
 				return ForkNodeEditPart.VISUAL_ID;
 			}
-			if (UMLPackage.eINSTANCE.getJoinNode().isSuperTypeOf(domainElement.eClass())) {
+			if (UMLPackage.eINSTANCE.getJoinNode().isSuperTypeOf(domainElement.eClass()) && evaluate(JoinNode_3040_Constraint, domainElement)) {
 				return JoinNodeEditPart.VISUAL_ID;
 			}
 			if (UMLPackage.eINSTANCE.getPin().isSuperTypeOf(domainElement.eClass()) && evaluate(Pin_3041_Constraint, domainElement)) {
 				return PinEditPart.VISUAL_ID;
 			}
-			if (UMLPackage.eINSTANCE.getCreateObjectAction().isSuperTypeOf(domainElement.eClass())) {
+			if (UMLPackage.eINSTANCE.getCreateObjectAction().isSuperTypeOf(domainElement.eClass()) && evaluate(CreateObjectAction_3042_Constraint, domainElement)) {
 				return CreateObjectActionEditPart.VISUAL_ID;
 			}
-			if (UMLPackage.eINSTANCE.getAddStructuralFeatureValueAction().isSuperTypeOf(domainElement.eClass())) {
+			if (UMLPackage.eINSTANCE.getAddStructuralFeatureValueAction().isSuperTypeOf(domainElement.eClass()) && evaluate(AddStructuralFeatureValueAction_3043_Constraint, domainElement)) {
 				return AddStructuralFeatureValueActionEditPart.VISUAL_ID;
 			}
-			if (UMLPackage.eINSTANCE.getCallBehaviorAction().isSuperTypeOf(domainElement.eClass())) {
+			if (UMLPackage.eINSTANCE.getCallBehaviorAction().isSuperTypeOf(domainElement.eClass()) && evaluate(CallBehaviorAction_3044_Constraint, domainElement)) {
 				return CallBehaviorActionEditPart.VISUAL_ID;
 			}
-			if (UMLPackage.eINSTANCE.getCallOperationAction().isSuperTypeOf(domainElement.eClass())) {
+			if (UMLPackage.eINSTANCE.getCallOperationAction().isSuperTypeOf(domainElement.eClass()) && evaluate(CallOperationAction_3045_Constraint, domainElement)) {
 				return CallOperationActionEditPart.VISUAL_ID;
 			}
 			if (UMLPackage.eINSTANCE.getStructuredActivityNode().isSuperTypeOf(domainElement.eClass()) && evaluate(StructuredActivityNode_3046_Constraint, domainElement)) {
@@ -346,13 +575,13 @@ public class UMLVisualIDRegistry {
 			if (UMLPackage.eINSTANCE.getActivityParameterNode().isSuperTypeOf(domainElement.eClass())) {
 				return ActivityParameterNodeEditPart.VISUAL_ID;
 			}
-			if (UMLPackage.eINSTANCE.getSendSignalAction().isSuperTypeOf(domainElement.eClass())) {
+			if (UMLPackage.eINSTANCE.getSendSignalAction().isSuperTypeOf(domainElement.eClass()) && evaluate(SendSignalAction_3053_Constraint, domainElement)) {
 				return SendSignalActionEditPart.VISUAL_ID;
 			}
 			if (UMLPackage.eINSTANCE.getActivityPartition().isSuperTypeOf(domainElement.eClass())) {
 				return ActivityPartitionEditPart.VISUAL_ID;
 			}
-			if (UMLPackage.eINSTANCE.getLoopNode().isSuperTypeOf(domainElement.eClass())) {
+			if (UMLPackage.eINSTANCE.getLoopNode().isSuperTypeOf(domainElement.eClass()) && evaluate(LoopNode_3058_Constraint, domainElement)) {
 				return LoopNodeEditPart.VISUAL_ID;
 			}
 			break;
@@ -446,58 +675,58 @@ public class UMLVisualIDRegistry {
 			if (UMLPackage.eINSTANCE.getAcceptEventAction().isSuperTypeOf(domainElement.eClass()) && evaluate(AcceptEventAction_3060_Constraint, domainElement)) {
 				return AcceptEventAction6EditPart.VISUAL_ID;
 			}
-			if (UMLPackage.eINSTANCE.getActivityFinalNode().isSuperTypeOf(domainElement.eClass())) {
+			if (UMLPackage.eINSTANCE.getActivityFinalNode().isSuperTypeOf(domainElement.eClass()) && evaluate(ActivityFinalNode_3061_Constraint, domainElement)) {
 				return ActivityFinalNode3EditPart.VISUAL_ID;
 			}
-			if (UMLPackage.eINSTANCE.getDecisionNode().isSuperTypeOf(domainElement.eClass())) {
+			if (UMLPackage.eINSTANCE.getDecisionNode().isSuperTypeOf(domainElement.eClass()) && evaluate(DecisionNode_3062_Constraint, domainElement)) {
 				return DecisionNode3EditPart.VISUAL_ID;
 			}
-			if (UMLPackage.eINSTANCE.getMergeNode().isSuperTypeOf(domainElement.eClass())) {
+			if (UMLPackage.eINSTANCE.getMergeNode().isSuperTypeOf(domainElement.eClass()) && evaluate(MergeNode_3063_Constraint, domainElement)) {
 				return MergeNode2EditPart.VISUAL_ID;
 			}
-			if (UMLPackage.eINSTANCE.getInitialNode().isSuperTypeOf(domainElement.eClass())) {
+			if (UMLPackage.eINSTANCE.getInitialNode().isSuperTypeOf(domainElement.eClass()) && evaluate(InitialNode_3064_Constraint, domainElement)) {
 				return InitialNode2EditPart.VISUAL_ID;
 			}
-			if (UMLPackage.eINSTANCE.getDataStoreNode().isSuperTypeOf(domainElement.eClass())) {
+			if (UMLPackage.eINSTANCE.getDataStoreNode().isSuperTypeOf(domainElement.eClass()) && evaluate(DataStoreNode_3065_Constraint, domainElement)) {
 				return DataStoreNode3EditPart.VISUAL_ID;
 			}
-			if (UMLPackage.eINSTANCE.getCentralBufferNode().isSuperTypeOf(domainElement.eClass())) {
+			if (UMLPackage.eINSTANCE.getCentralBufferNode().isSuperTypeOf(domainElement.eClass()) && evaluate(CentralBufferNode_3066_Constraint, domainElement)) {
 				return CentralBufferNode3EditPart.VISUAL_ID;
 			}
-			if (UMLPackage.eINSTANCE.getOpaqueAction().isSuperTypeOf(domainElement.eClass())) {
+			if (UMLPackage.eINSTANCE.getOpaqueAction().isSuperTypeOf(domainElement.eClass()) && evaluate(OpaqueAction_3067_Constraint, domainElement)) {
 				return OpaqueAction3EditPart.VISUAL_ID;
 			}
-			if (UMLPackage.eINSTANCE.getFlowFinalNode().isSuperTypeOf(domainElement.eClass())) {
+			if (UMLPackage.eINSTANCE.getFlowFinalNode().isSuperTypeOf(domainElement.eClass()) && evaluate(FlowFinalNode_3068_Constraint, domainElement)) {
 				return FlowFinalNode3EditPart.VISUAL_ID;
 			}
-			if (UMLPackage.eINSTANCE.getForkNode().isSuperTypeOf(domainElement.eClass())) {
+			if (UMLPackage.eINSTANCE.getForkNode().isSuperTypeOf(domainElement.eClass()) && evaluate(ForkNode_3069_Constraint, domainElement)) {
 				return ForkNode3EditPart.VISUAL_ID;
 			}
-			if (UMLPackage.eINSTANCE.getJoinNode().isSuperTypeOf(domainElement.eClass())) {
+			if (UMLPackage.eINSTANCE.getJoinNode().isSuperTypeOf(domainElement.eClass()) && evaluate(JoinNode_3070_Constraint, domainElement)) {
 				return JoinNode3EditPart.VISUAL_ID;
 			}
 			if (UMLPackage.eINSTANCE.getPin().isSuperTypeOf(domainElement.eClass()) && evaluate(Pin_3071_Constraint, domainElement)) {
 				return Pin3EditPart.VISUAL_ID;
 			}
-			if (UMLPackage.eINSTANCE.getCreateObjectAction().isSuperTypeOf(domainElement.eClass())) {
+			if (UMLPackage.eINSTANCE.getCreateObjectAction().isSuperTypeOf(domainElement.eClass()) && evaluate(CreateObjectAction_3072_Constraint, domainElement)) {
 				return CreateObjectAction3EditPart.VISUAL_ID;
 			}
-			if (UMLPackage.eINSTANCE.getAddStructuralFeatureValueAction().isSuperTypeOf(domainElement.eClass())) {
+			if (UMLPackage.eINSTANCE.getAddStructuralFeatureValueAction().isSuperTypeOf(domainElement.eClass()) && evaluate(AddStructuralFeatureValueAction_3073_Constraint, domainElement)) {
 				return AddStructuralFeatureValueAction3EditPart.VISUAL_ID;
 			}
-			if (UMLPackage.eINSTANCE.getCallBehaviorAction().isSuperTypeOf(domainElement.eClass())) {
+			if (UMLPackage.eINSTANCE.getCallBehaviorAction().isSuperTypeOf(domainElement.eClass()) && evaluate(CallBehaviorAction_3074_Constraint, domainElement)) {
 				return CallBehaviorAction3EditPart.VISUAL_ID;
 			}
-			if (UMLPackage.eINSTANCE.getCallOperationAction().isSuperTypeOf(domainElement.eClass())) {
+			if (UMLPackage.eINSTANCE.getCallOperationAction().isSuperTypeOf(domainElement.eClass()) && evaluate(CallOperationAction_3075_Constraint, domainElement)) {
 				return CallOperationAction3EditPart.VISUAL_ID;
 			}
 			if (UMLPackage.eINSTANCE.getStructuredActivityNode().isSuperTypeOf(domainElement.eClass()) && evaluate(StructuredActivityNode_3076_Constraint, domainElement)) {
 				return StructuredActivityNode3EditPart.VISUAL_ID;
 			}
-			if (UMLPackage.eINSTANCE.getSendSignalAction().isSuperTypeOf(domainElement.eClass())) {
+			if (UMLPackage.eINSTANCE.getSendSignalAction().isSuperTypeOf(domainElement.eClass()) && evaluate(SendSignalAction_3077_Constraint, domainElement)) {
 				return SendSignalAction2EditPart.VISUAL_ID;
 			}
-			if (UMLPackage.eINSTANCE.getLoopNode().isSuperTypeOf(domainElement.eClass())) {
+			if (UMLPackage.eINSTANCE.getLoopNode().isSuperTypeOf(domainElement.eClass()) && evaluate(LoopNode_3078_Constraint, domainElement)) {
 				return LoopNode2EditPart.VISUAL_ID;
 			}
 			break;
@@ -511,58 +740,58 @@ public class UMLVisualIDRegistry {
 			if (UMLPackage.eINSTANCE.getAcceptEventAction().isSuperTypeOf(domainElement.eClass()) && evaluate(AcceptEventAction_3060_Constraint, domainElement)) {
 				return AcceptEventAction6EditPart.VISUAL_ID;
 			}
-			if (UMLPackage.eINSTANCE.getActivityFinalNode().isSuperTypeOf(domainElement.eClass())) {
+			if (UMLPackage.eINSTANCE.getActivityFinalNode().isSuperTypeOf(domainElement.eClass()) && evaluate(ActivityFinalNode_3061_Constraint, domainElement)) {
 				return ActivityFinalNode3EditPart.VISUAL_ID;
 			}
-			if (UMLPackage.eINSTANCE.getDecisionNode().isSuperTypeOf(domainElement.eClass())) {
+			if (UMLPackage.eINSTANCE.getDecisionNode().isSuperTypeOf(domainElement.eClass()) && evaluate(DecisionNode_3062_Constraint, domainElement)) {
 				return DecisionNode3EditPart.VISUAL_ID;
 			}
-			if (UMLPackage.eINSTANCE.getMergeNode().isSuperTypeOf(domainElement.eClass())) {
+			if (UMLPackage.eINSTANCE.getMergeNode().isSuperTypeOf(domainElement.eClass()) && evaluate(MergeNode_3063_Constraint, domainElement)) {
 				return MergeNode2EditPart.VISUAL_ID;
 			}
-			if (UMLPackage.eINSTANCE.getInitialNode().isSuperTypeOf(domainElement.eClass())) {
+			if (UMLPackage.eINSTANCE.getInitialNode().isSuperTypeOf(domainElement.eClass()) && evaluate(InitialNode_3064_Constraint, domainElement)) {
 				return InitialNode2EditPart.VISUAL_ID;
 			}
-			if (UMLPackage.eINSTANCE.getDataStoreNode().isSuperTypeOf(domainElement.eClass())) {
+			if (UMLPackage.eINSTANCE.getDataStoreNode().isSuperTypeOf(domainElement.eClass()) && evaluate(DataStoreNode_3065_Constraint, domainElement)) {
 				return DataStoreNode3EditPart.VISUAL_ID;
 			}
-			if (UMLPackage.eINSTANCE.getCentralBufferNode().isSuperTypeOf(domainElement.eClass())) {
+			if (UMLPackage.eINSTANCE.getCentralBufferNode().isSuperTypeOf(domainElement.eClass()) && evaluate(CentralBufferNode_3066_Constraint, domainElement)) {
 				return CentralBufferNode3EditPart.VISUAL_ID;
 			}
-			if (UMLPackage.eINSTANCE.getOpaqueAction().isSuperTypeOf(domainElement.eClass())) {
+			if (UMLPackage.eINSTANCE.getOpaqueAction().isSuperTypeOf(domainElement.eClass()) && evaluate(OpaqueAction_3067_Constraint, domainElement)) {
 				return OpaqueAction3EditPart.VISUAL_ID;
 			}
-			if (UMLPackage.eINSTANCE.getFlowFinalNode().isSuperTypeOf(domainElement.eClass())) {
+			if (UMLPackage.eINSTANCE.getFlowFinalNode().isSuperTypeOf(domainElement.eClass()) && evaluate(FlowFinalNode_3068_Constraint, domainElement)) {
 				return FlowFinalNode3EditPart.VISUAL_ID;
 			}
-			if (UMLPackage.eINSTANCE.getForkNode().isSuperTypeOf(domainElement.eClass())) {
+			if (UMLPackage.eINSTANCE.getForkNode().isSuperTypeOf(domainElement.eClass()) && evaluate(ForkNode_3069_Constraint, domainElement)) {
 				return ForkNode3EditPart.VISUAL_ID;
 			}
-			if (UMLPackage.eINSTANCE.getJoinNode().isSuperTypeOf(domainElement.eClass())) {
+			if (UMLPackage.eINSTANCE.getJoinNode().isSuperTypeOf(domainElement.eClass()) && evaluate(JoinNode_3070_Constraint, domainElement)) {
 				return JoinNode3EditPart.VISUAL_ID;
 			}
 			if (UMLPackage.eINSTANCE.getPin().isSuperTypeOf(domainElement.eClass()) && evaluate(Pin_3071_Constraint, domainElement)) {
 				return Pin3EditPart.VISUAL_ID;
 			}
-			if (UMLPackage.eINSTANCE.getCreateObjectAction().isSuperTypeOf(domainElement.eClass())) {
+			if (UMLPackage.eINSTANCE.getCreateObjectAction().isSuperTypeOf(domainElement.eClass()) && evaluate(CreateObjectAction_3072_Constraint, domainElement)) {
 				return CreateObjectAction3EditPart.VISUAL_ID;
 			}
-			if (UMLPackage.eINSTANCE.getAddStructuralFeatureValueAction().isSuperTypeOf(domainElement.eClass())) {
+			if (UMLPackage.eINSTANCE.getAddStructuralFeatureValueAction().isSuperTypeOf(domainElement.eClass()) && evaluate(AddStructuralFeatureValueAction_3073_Constraint, domainElement)) {
 				return AddStructuralFeatureValueAction3EditPart.VISUAL_ID;
 			}
-			if (UMLPackage.eINSTANCE.getCallBehaviorAction().isSuperTypeOf(domainElement.eClass())) {
+			if (UMLPackage.eINSTANCE.getCallBehaviorAction().isSuperTypeOf(domainElement.eClass()) && evaluate(CallBehaviorAction_3074_Constraint, domainElement)) {
 				return CallBehaviorAction3EditPart.VISUAL_ID;
 			}
-			if (UMLPackage.eINSTANCE.getCallOperationAction().isSuperTypeOf(domainElement.eClass())) {
+			if (UMLPackage.eINSTANCE.getCallOperationAction().isSuperTypeOf(domainElement.eClass()) && evaluate(CallOperationAction_3075_Constraint, domainElement)) {
 				return CallOperationAction3EditPart.VISUAL_ID;
 			}
 			if (UMLPackage.eINSTANCE.getStructuredActivityNode().isSuperTypeOf(domainElement.eClass()) && evaluate(StructuredActivityNode_3076_Constraint, domainElement)) {
 				return StructuredActivityNode3EditPart.VISUAL_ID;
 			}
-			if (UMLPackage.eINSTANCE.getSendSignalAction().isSuperTypeOf(domainElement.eClass())) {
+			if (UMLPackage.eINSTANCE.getSendSignalAction().isSuperTypeOf(domainElement.eClass()) && evaluate(SendSignalAction_3077_Constraint, domainElement)) {
 				return SendSignalAction2EditPart.VISUAL_ID;
 			}
-			if (UMLPackage.eINSTANCE.getLoopNode().isSuperTypeOf(domainElement.eClass())) {
+			if (UMLPackage.eINSTANCE.getLoopNode().isSuperTypeOf(domainElement.eClass()) && evaluate(LoopNode_3078_Constraint, domainElement)) {
 				return LoopNode2EditPart.VISUAL_ID;
 			}
 			break;
@@ -610,7 +839,7 @@ public class UMLVisualIDRegistry {
 			if (UMLPackage.eINSTANCE.getStructuredActivityNode().isSuperTypeOf(domainElement.eClass()) && evaluate(StructuredActivityNode_3009_Constraint, domainElement)) {
 				return StructuredActivityNode2EditPart.VISUAL_ID;
 			}
-			if (UMLPackage.eINSTANCE.getOpaqueAction().isSuperTypeOf(domainElement.eClass())) {
+			if (UMLPackage.eINSTANCE.getOpaqueAction().isSuperTypeOf(domainElement.eClass()) && evaluate(OpaqueAction_3011_Constraint, domainElement)) {
 				return OpaqueAction2EditPart.VISUAL_ID;
 			}
 			if (UMLPackage.eINSTANCE.getAcceptEventAction().isSuperTypeOf(domainElement.eClass()) && evaluate(AcceptEventAction_3012_Constraint, domainElement)) {
@@ -619,40 +848,40 @@ public class UMLVisualIDRegistry {
 			if (UMLPackage.eINSTANCE.getAcceptEventAction().isSuperTypeOf(domainElement.eClass()) && evaluate(AcceptEventAction_3013_Constraint, domainElement)) {
 				return AcceptEventAction4EditPart.VISUAL_ID;
 			}
-			if (UMLPackage.eINSTANCE.getActivityFinalNode().isSuperTypeOf(domainElement.eClass())) {
+			if (UMLPackage.eINSTANCE.getActivityFinalNode().isSuperTypeOf(domainElement.eClass()) && evaluate(ActivityFinalNode_3014_Constraint, domainElement)) {
 				return ActivityFinalNode2EditPart.VISUAL_ID;
 			}
-			if (UMLPackage.eINSTANCE.getDecisionNode().isSuperTypeOf(domainElement.eClass())) {
+			if (UMLPackage.eINSTANCE.getDecisionNode().isSuperTypeOf(domainElement.eClass()) && evaluate(DecisionNode_3015_Constraint, domainElement)) {
 				return DecisionNode2EditPart.VISUAL_ID;
 			}
-			if (UMLPackage.eINSTANCE.getFlowFinalNode().isSuperTypeOf(domainElement.eClass())) {
+			if (UMLPackage.eINSTANCE.getFlowFinalNode().isSuperTypeOf(domainElement.eClass()) && evaluate(FlowFinalNode_3016_Constraint, domainElement)) {
 				return FlowFinalNode2EditPart.VISUAL_ID;
 			}
 			if (UMLPackage.eINSTANCE.getPin().isSuperTypeOf(domainElement.eClass()) && evaluate(Pin_3017_Constraint, domainElement)) {
 				return Pin2EditPart.VISUAL_ID;
 			}
-			if (UMLPackage.eINSTANCE.getCreateObjectAction().isSuperTypeOf(domainElement.eClass())) {
+			if (UMLPackage.eINSTANCE.getCreateObjectAction().isSuperTypeOf(domainElement.eClass()) && evaluate(CreateObjectAction_3018_Constraint, domainElement)) {
 				return CreateObjectAction2EditPart.VISUAL_ID;
 			}
-			if (UMLPackage.eINSTANCE.getCallBehaviorAction().isSuperTypeOf(domainElement.eClass())) {
+			if (UMLPackage.eINSTANCE.getCallBehaviorAction().isSuperTypeOf(domainElement.eClass()) && evaluate(CallBehaviorAction_3019_Constraint, domainElement)) {
 				return CallBehaviorAction2EditPart.VISUAL_ID;
 			}
-			if (UMLPackage.eINSTANCE.getCallOperationAction().isSuperTypeOf(domainElement.eClass())) {
+			if (UMLPackage.eINSTANCE.getCallOperationAction().isSuperTypeOf(domainElement.eClass()) && evaluate(CallOperationAction_3020_Constraint, domainElement)) {
 				return CallOperationAction2EditPart.VISUAL_ID;
 			}
-			if (UMLPackage.eINSTANCE.getForkNode().isSuperTypeOf(domainElement.eClass())) {
+			if (UMLPackage.eINSTANCE.getForkNode().isSuperTypeOf(domainElement.eClass()) && evaluate(ForkNode_3021_Constraint, domainElement)) {
 				return ForkNode2EditPart.VISUAL_ID;
 			}
-			if (UMLPackage.eINSTANCE.getJoinNode().isSuperTypeOf(domainElement.eClass())) {
+			if (UMLPackage.eINSTANCE.getJoinNode().isSuperTypeOf(domainElement.eClass()) && evaluate(JoinNode_3022_Constraint, domainElement)) {
 				return JoinNode2EditPart.VISUAL_ID;
 			}
-			if (UMLPackage.eINSTANCE.getAddStructuralFeatureValueAction().isSuperTypeOf(domainElement.eClass())) {
+			if (UMLPackage.eINSTANCE.getAddStructuralFeatureValueAction().isSuperTypeOf(domainElement.eClass()) && evaluate(AddStructuralFeatureValueAction_3023_Constraint, domainElement)) {
 				return AddStructuralFeatureValueAction2EditPart.VISUAL_ID;
 			}
-			if (UMLPackage.eINSTANCE.getDataStoreNode().isSuperTypeOf(domainElement.eClass())) {
+			if (UMLPackage.eINSTANCE.getDataStoreNode().isSuperTypeOf(domainElement.eClass()) && evaluate(DataStoreNode_3024_Constraint, domainElement)) {
 				return DataStoreNode2EditPart.VISUAL_ID;
 			}
-			if (UMLPackage.eINSTANCE.getCentralBufferNode().isSuperTypeOf(domainElement.eClass())) {
+			if (UMLPackage.eINSTANCE.getCentralBufferNode().isSuperTypeOf(domainElement.eClass()) && evaluate(CentralBufferNode_3025_Constraint, domainElement)) {
 				return CentralBufferNode2EditPart.VISUAL_ID;
 			}
 			if (UMLPackage.eINSTANCE.getInputPin().isSuperTypeOf(domainElement.eClass())) {
@@ -666,7 +895,7 @@ public class UMLVisualIDRegistry {
 			if (UMLPackage.eINSTANCE.getStructuredActivityNode().isSuperTypeOf(domainElement.eClass()) && evaluate(StructuredActivityNode_3009_Constraint, domainElement)) {
 				return StructuredActivityNode2EditPart.VISUAL_ID;
 			}
-			if (UMLPackage.eINSTANCE.getOpaqueAction().isSuperTypeOf(domainElement.eClass())) {
+			if (UMLPackage.eINSTANCE.getOpaqueAction().isSuperTypeOf(domainElement.eClass()) && evaluate(OpaqueAction_3011_Constraint, domainElement)) {
 				return OpaqueAction2EditPart.VISUAL_ID;
 			}
 			if (UMLPackage.eINSTANCE.getAcceptEventAction().isSuperTypeOf(domainElement.eClass()) && evaluate(AcceptEventAction_3012_Constraint, domainElement)) {
@@ -675,40 +904,40 @@ public class UMLVisualIDRegistry {
 			if (UMLPackage.eINSTANCE.getAcceptEventAction().isSuperTypeOf(domainElement.eClass()) && evaluate(AcceptEventAction_3013_Constraint, domainElement)) {
 				return AcceptEventAction4EditPart.VISUAL_ID;
 			}
-			if (UMLPackage.eINSTANCE.getActivityFinalNode().isSuperTypeOf(domainElement.eClass())) {
+			if (UMLPackage.eINSTANCE.getActivityFinalNode().isSuperTypeOf(domainElement.eClass()) && evaluate(ActivityFinalNode_3014_Constraint, domainElement)) {
 				return ActivityFinalNode2EditPart.VISUAL_ID;
 			}
-			if (UMLPackage.eINSTANCE.getDecisionNode().isSuperTypeOf(domainElement.eClass())) {
+			if (UMLPackage.eINSTANCE.getDecisionNode().isSuperTypeOf(domainElement.eClass()) && evaluate(DecisionNode_3015_Constraint, domainElement)) {
 				return DecisionNode2EditPart.VISUAL_ID;
 			}
-			if (UMLPackage.eINSTANCE.getFlowFinalNode().isSuperTypeOf(domainElement.eClass())) {
+			if (UMLPackage.eINSTANCE.getFlowFinalNode().isSuperTypeOf(domainElement.eClass()) && evaluate(FlowFinalNode_3016_Constraint, domainElement)) {
 				return FlowFinalNode2EditPart.VISUAL_ID;
 			}
 			if (UMLPackage.eINSTANCE.getPin().isSuperTypeOf(domainElement.eClass()) && evaluate(Pin_3017_Constraint, domainElement)) {
 				return Pin2EditPart.VISUAL_ID;
 			}
-			if (UMLPackage.eINSTANCE.getCreateObjectAction().isSuperTypeOf(domainElement.eClass())) {
+			if (UMLPackage.eINSTANCE.getCreateObjectAction().isSuperTypeOf(domainElement.eClass()) && evaluate(CreateObjectAction_3018_Constraint, domainElement)) {
 				return CreateObjectAction2EditPart.VISUAL_ID;
 			}
-			if (UMLPackage.eINSTANCE.getCallBehaviorAction().isSuperTypeOf(domainElement.eClass())) {
+			if (UMLPackage.eINSTANCE.getCallBehaviorAction().isSuperTypeOf(domainElement.eClass()) && evaluate(CallBehaviorAction_3019_Constraint, domainElement)) {
 				return CallBehaviorAction2EditPart.VISUAL_ID;
 			}
-			if (UMLPackage.eINSTANCE.getCallOperationAction().isSuperTypeOf(domainElement.eClass())) {
+			if (UMLPackage.eINSTANCE.getCallOperationAction().isSuperTypeOf(domainElement.eClass()) && evaluate(CallOperationAction_3020_Constraint, domainElement)) {
 				return CallOperationAction2EditPart.VISUAL_ID;
 			}
-			if (UMLPackage.eINSTANCE.getForkNode().isSuperTypeOf(domainElement.eClass())) {
+			if (UMLPackage.eINSTANCE.getForkNode().isSuperTypeOf(domainElement.eClass()) && evaluate(ForkNode_3021_Constraint, domainElement)) {
 				return ForkNode2EditPart.VISUAL_ID;
 			}
-			if (UMLPackage.eINSTANCE.getJoinNode().isSuperTypeOf(domainElement.eClass())) {
+			if (UMLPackage.eINSTANCE.getJoinNode().isSuperTypeOf(domainElement.eClass()) && evaluate(JoinNode_3022_Constraint, domainElement)) {
 				return JoinNode2EditPart.VISUAL_ID;
 			}
-			if (UMLPackage.eINSTANCE.getAddStructuralFeatureValueAction().isSuperTypeOf(domainElement.eClass())) {
+			if (UMLPackage.eINSTANCE.getAddStructuralFeatureValueAction().isSuperTypeOf(domainElement.eClass()) && evaluate(AddStructuralFeatureValueAction_3023_Constraint, domainElement)) {
 				return AddStructuralFeatureValueAction2EditPart.VISUAL_ID;
 			}
-			if (UMLPackage.eINSTANCE.getDataStoreNode().isSuperTypeOf(domainElement.eClass())) {
+			if (UMLPackage.eINSTANCE.getDataStoreNode().isSuperTypeOf(domainElement.eClass()) && evaluate(DataStoreNode_3024_Constraint, domainElement)) {
 				return DataStoreNode2EditPart.VISUAL_ID;
 			}
-			if (UMLPackage.eINSTANCE.getCentralBufferNode().isSuperTypeOf(domainElement.eClass())) {
+			if (UMLPackage.eINSTANCE.getCentralBufferNode().isSuperTypeOf(domainElement.eClass()) && evaluate(CentralBufferNode_3025_Constraint, domainElement)) {
 				return CentralBufferNode2EditPart.VISUAL_ID;
 			}
 			if (UMLPackage.eINSTANCE.getInputPin().isSuperTypeOf(domainElement.eClass())) {
@@ -719,10 +948,10 @@ public class UMLVisualIDRegistry {
 			}
 			break;
 		case StructuredActivityNodeStructuredActivityContentPaneCompartment3EditPart.VISUAL_ID:
-			if (UMLPackage.eINSTANCE.getStructuredActivityNode().isSuperTypeOf(domainElement.eClass()) && evaluate(StructuredActivityNode_3009_Constraint, domainElement)) {
-				return StructuredActivityNode2EditPart.VISUAL_ID;
+			if (UMLPackage.eINSTANCE.getStructuredActivityNode().isSuperTypeOf(domainElement.eClass()) && evaluate(StructuredActivityNode_3079_Constraint, domainElement)) {
+				return StructuredActivityNode4EditPart.VISUAL_ID;
 			}
-			if (UMLPackage.eINSTANCE.getOpaqueAction().isSuperTypeOf(domainElement.eClass())) {
+			if (UMLPackage.eINSTANCE.getOpaqueAction().isSuperTypeOf(domainElement.eClass()) && evaluate(OpaqueAction_3011_Constraint, domainElement)) {
 				return OpaqueAction2EditPart.VISUAL_ID;
 			}
 			if (UMLPackage.eINSTANCE.getAcceptEventAction().isSuperTypeOf(domainElement.eClass()) && evaluate(AcceptEventAction_3012_Constraint, domainElement)) {
@@ -731,54 +960,110 @@ public class UMLVisualIDRegistry {
 			if (UMLPackage.eINSTANCE.getAcceptEventAction().isSuperTypeOf(domainElement.eClass()) && evaluate(AcceptEventAction_3013_Constraint, domainElement)) {
 				return AcceptEventAction4EditPart.VISUAL_ID;
 			}
-			if (UMLPackage.eINSTANCE.getActivityFinalNode().isSuperTypeOf(domainElement.eClass())) {
+			if (UMLPackage.eINSTANCE.getActivityFinalNode().isSuperTypeOf(domainElement.eClass()) && evaluate(ActivityFinalNode_3014_Constraint, domainElement)) {
 				return ActivityFinalNode2EditPart.VISUAL_ID;
 			}
-			if (UMLPackage.eINSTANCE.getDecisionNode().isSuperTypeOf(domainElement.eClass())) {
+			if (UMLPackage.eINSTANCE.getDecisionNode().isSuperTypeOf(domainElement.eClass()) && evaluate(DecisionNode_3015_Constraint, domainElement)) {
 				return DecisionNode2EditPart.VISUAL_ID;
 			}
-			if (UMLPackage.eINSTANCE.getFlowFinalNode().isSuperTypeOf(domainElement.eClass())) {
+			if (UMLPackage.eINSTANCE.getFlowFinalNode().isSuperTypeOf(domainElement.eClass()) && evaluate(FlowFinalNode_3016_Constraint, domainElement)) {
 				return FlowFinalNode2EditPart.VISUAL_ID;
 			}
 			if (UMLPackage.eINSTANCE.getPin().isSuperTypeOf(domainElement.eClass()) && evaluate(Pin_3017_Constraint, domainElement)) {
 				return Pin2EditPart.VISUAL_ID;
 			}
-			if (UMLPackage.eINSTANCE.getCreateObjectAction().isSuperTypeOf(domainElement.eClass())) {
+			if (UMLPackage.eINSTANCE.getCreateObjectAction().isSuperTypeOf(domainElement.eClass()) && evaluate(CreateObjectAction_3018_Constraint, domainElement)) {
 				return CreateObjectAction2EditPart.VISUAL_ID;
 			}
-			if (UMLPackage.eINSTANCE.getCallBehaviorAction().isSuperTypeOf(domainElement.eClass())) {
+			if (UMLPackage.eINSTANCE.getCallBehaviorAction().isSuperTypeOf(domainElement.eClass()) && evaluate(CallBehaviorAction_3019_Constraint, domainElement)) {
 				return CallBehaviorAction2EditPart.VISUAL_ID;
 			}
-			if (UMLPackage.eINSTANCE.getCallOperationAction().isSuperTypeOf(domainElement.eClass())) {
+			if (UMLPackage.eINSTANCE.getCallOperationAction().isSuperTypeOf(domainElement.eClass()) && evaluate(CallOperationAction_3020_Constraint, domainElement)) {
 				return CallOperationAction2EditPart.VISUAL_ID;
 			}
-			if (UMLPackage.eINSTANCE.getForkNode().isSuperTypeOf(domainElement.eClass())) {
+			if (UMLPackage.eINSTANCE.getForkNode().isSuperTypeOf(domainElement.eClass()) && evaluate(ForkNode_3021_Constraint, domainElement)) {
 				return ForkNode2EditPart.VISUAL_ID;
 			}
-			if (UMLPackage.eINSTANCE.getJoinNode().isSuperTypeOf(domainElement.eClass())) {
+			if (UMLPackage.eINSTANCE.getJoinNode().isSuperTypeOf(domainElement.eClass()) && evaluate(JoinNode_3022_Constraint, domainElement)) {
 				return JoinNode2EditPart.VISUAL_ID;
 			}
-			if (UMLPackage.eINSTANCE.getAddStructuralFeatureValueAction().isSuperTypeOf(domainElement.eClass())) {
+			if (UMLPackage.eINSTANCE.getAddStructuralFeatureValueAction().isSuperTypeOf(domainElement.eClass()) && evaluate(AddStructuralFeatureValueAction_3023_Constraint, domainElement)) {
 				return AddStructuralFeatureValueAction2EditPart.VISUAL_ID;
 			}
-			if (UMLPackage.eINSTANCE.getDataStoreNode().isSuperTypeOf(domainElement.eClass())) {
+			if (UMLPackage.eINSTANCE.getDataStoreNode().isSuperTypeOf(domainElement.eClass()) && evaluate(DataStoreNode_3024_Constraint, domainElement)) {
 				return DataStoreNode2EditPart.VISUAL_ID;
 			}
-			if (UMLPackage.eINSTANCE.getCentralBufferNode().isSuperTypeOf(domainElement.eClass())) {
+			if (UMLPackage.eINSTANCE.getCentralBufferNode().isSuperTypeOf(domainElement.eClass()) && evaluate(CentralBufferNode_3025_Constraint, domainElement)) {
 				return CentralBufferNode2EditPart.VISUAL_ID;
 			}
 			if (UMLPackage.eINSTANCE.getInputPin().isSuperTypeOf(domainElement.eClass())) {
-				return InputPin6EditPart.VISUAL_ID;
+				return InputPin7EditPart.VISUAL_ID;
 			}
 			if (UMLPackage.eINSTANCE.getOutputPin().isSuperTypeOf(domainElement.eClass())) {
-				return OutputPin4EditPart.VISUAL_ID;
+				return OutputPin5EditPart.VISUAL_ID;
+			}
+			break;
+		case StructuredActivityNodeStructuredActivityContentPaneCompartment4EditPart.VISUAL_ID:
+			if (UMLPackage.eINSTANCE.getStructuredActivityNode().isSuperTypeOf(domainElement.eClass()) && evaluate(StructuredActivityNode_3079_Constraint, domainElement)) {
+				return StructuredActivityNode4EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getOpaqueAction().isSuperTypeOf(domainElement.eClass()) && evaluate(OpaqueAction_3011_Constraint, domainElement)) {
+				return OpaqueAction2EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getAcceptEventAction().isSuperTypeOf(domainElement.eClass()) && evaluate(AcceptEventAction_3012_Constraint, domainElement)) {
+				return AcceptEventAction3EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getAcceptEventAction().isSuperTypeOf(domainElement.eClass()) && evaluate(AcceptEventAction_3013_Constraint, domainElement)) {
+				return AcceptEventAction4EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getActivityFinalNode().isSuperTypeOf(domainElement.eClass()) && evaluate(ActivityFinalNode_3014_Constraint, domainElement)) {
+				return ActivityFinalNode2EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getDecisionNode().isSuperTypeOf(domainElement.eClass()) && evaluate(DecisionNode_3015_Constraint, domainElement)) {
+				return DecisionNode2EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getFlowFinalNode().isSuperTypeOf(domainElement.eClass()) && evaluate(FlowFinalNode_3016_Constraint, domainElement)) {
+				return FlowFinalNode2EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getPin().isSuperTypeOf(domainElement.eClass()) && evaluate(Pin_3017_Constraint, domainElement)) {
+				return Pin2EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getCreateObjectAction().isSuperTypeOf(domainElement.eClass()) && evaluate(CreateObjectAction_3018_Constraint, domainElement)) {
+				return CreateObjectAction2EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getCallBehaviorAction().isSuperTypeOf(domainElement.eClass()) && evaluate(CallBehaviorAction_3019_Constraint, domainElement)) {
+				return CallBehaviorAction2EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getCallOperationAction().isSuperTypeOf(domainElement.eClass()) && evaluate(CallOperationAction_3020_Constraint, domainElement)) {
+				return CallOperationAction2EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getForkNode().isSuperTypeOf(domainElement.eClass()) && evaluate(ForkNode_3021_Constraint, domainElement)) {
+				return ForkNode2EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getJoinNode().isSuperTypeOf(domainElement.eClass()) && evaluate(JoinNode_3022_Constraint, domainElement)) {
+				return JoinNode2EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getAddStructuralFeatureValueAction().isSuperTypeOf(domainElement.eClass()) && evaluate(AddStructuralFeatureValueAction_3023_Constraint, domainElement)) {
+				return AddStructuralFeatureValueAction2EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getDataStoreNode().isSuperTypeOf(domainElement.eClass()) && evaluate(DataStoreNode_3024_Constraint, domainElement)) {
+				return DataStoreNode2EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getCentralBufferNode().isSuperTypeOf(domainElement.eClass()) && evaluate(CentralBufferNode_3025_Constraint, domainElement)) {
+				return CentralBufferNode2EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getInputPin().isSuperTypeOf(domainElement.eClass())) {
+				return InputPin7EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getOutputPin().isSuperTypeOf(domainElement.eClass())) {
+				return OutputPin5EditPart.VISUAL_ID;
 			}
 			break;
 		case LoopNodeLoopNodeContentPaneCompartment2EditPart.VISUAL_ID:
 			if (UMLPackage.eINSTANCE.getStructuredActivityNode().isSuperTypeOf(domainElement.eClass()) && evaluate(StructuredActivityNode_3009_Constraint, domainElement)) {
 				return StructuredActivityNode2EditPart.VISUAL_ID;
 			}
-			if (UMLPackage.eINSTANCE.getOpaqueAction().isSuperTypeOf(domainElement.eClass())) {
+			if (UMLPackage.eINSTANCE.getOpaqueAction().isSuperTypeOf(domainElement.eClass()) && evaluate(OpaqueAction_3011_Constraint, domainElement)) {
 				return OpaqueAction2EditPart.VISUAL_ID;
 			}
 			if (UMLPackage.eINSTANCE.getAcceptEventAction().isSuperTypeOf(domainElement.eClass()) && evaluate(AcceptEventAction_3012_Constraint, domainElement)) {
@@ -787,40 +1072,40 @@ public class UMLVisualIDRegistry {
 			if (UMLPackage.eINSTANCE.getAcceptEventAction().isSuperTypeOf(domainElement.eClass()) && evaluate(AcceptEventAction_3013_Constraint, domainElement)) {
 				return AcceptEventAction4EditPart.VISUAL_ID;
 			}
-			if (UMLPackage.eINSTANCE.getActivityFinalNode().isSuperTypeOf(domainElement.eClass())) {
+			if (UMLPackage.eINSTANCE.getActivityFinalNode().isSuperTypeOf(domainElement.eClass()) && evaluate(ActivityFinalNode_3014_Constraint, domainElement)) {
 				return ActivityFinalNode2EditPart.VISUAL_ID;
 			}
-			if (UMLPackage.eINSTANCE.getDecisionNode().isSuperTypeOf(domainElement.eClass())) {
+			if (UMLPackage.eINSTANCE.getDecisionNode().isSuperTypeOf(domainElement.eClass()) && evaluate(DecisionNode_3015_Constraint, domainElement)) {
 				return DecisionNode2EditPart.VISUAL_ID;
 			}
-			if (UMLPackage.eINSTANCE.getFlowFinalNode().isSuperTypeOf(domainElement.eClass())) {
+			if (UMLPackage.eINSTANCE.getFlowFinalNode().isSuperTypeOf(domainElement.eClass()) && evaluate(FlowFinalNode_3016_Constraint, domainElement)) {
 				return FlowFinalNode2EditPart.VISUAL_ID;
 			}
 			if (UMLPackage.eINSTANCE.getPin().isSuperTypeOf(domainElement.eClass()) && evaluate(Pin_3017_Constraint, domainElement)) {
 				return Pin2EditPart.VISUAL_ID;
 			}
-			if (UMLPackage.eINSTANCE.getCreateObjectAction().isSuperTypeOf(domainElement.eClass())) {
+			if (UMLPackage.eINSTANCE.getCreateObjectAction().isSuperTypeOf(domainElement.eClass()) && evaluate(CreateObjectAction_3018_Constraint, domainElement)) {
 				return CreateObjectAction2EditPart.VISUAL_ID;
 			}
-			if (UMLPackage.eINSTANCE.getCallBehaviorAction().isSuperTypeOf(domainElement.eClass())) {
+			if (UMLPackage.eINSTANCE.getCallBehaviorAction().isSuperTypeOf(domainElement.eClass()) && evaluate(CallBehaviorAction_3019_Constraint, domainElement)) {
 				return CallBehaviorAction2EditPart.VISUAL_ID;
 			}
-			if (UMLPackage.eINSTANCE.getCallOperationAction().isSuperTypeOf(domainElement.eClass())) {
+			if (UMLPackage.eINSTANCE.getCallOperationAction().isSuperTypeOf(domainElement.eClass()) && evaluate(CallOperationAction_3020_Constraint, domainElement)) {
 				return CallOperationAction2EditPart.VISUAL_ID;
 			}
-			if (UMLPackage.eINSTANCE.getForkNode().isSuperTypeOf(domainElement.eClass())) {
+			if (UMLPackage.eINSTANCE.getForkNode().isSuperTypeOf(domainElement.eClass()) && evaluate(ForkNode_3021_Constraint, domainElement)) {
 				return ForkNode2EditPart.VISUAL_ID;
 			}
-			if (UMLPackage.eINSTANCE.getJoinNode().isSuperTypeOf(domainElement.eClass())) {
+			if (UMLPackage.eINSTANCE.getJoinNode().isSuperTypeOf(domainElement.eClass()) && evaluate(JoinNode_3022_Constraint, domainElement)) {
 				return JoinNode2EditPart.VISUAL_ID;
 			}
-			if (UMLPackage.eINSTANCE.getAddStructuralFeatureValueAction().isSuperTypeOf(domainElement.eClass())) {
+			if (UMLPackage.eINSTANCE.getAddStructuralFeatureValueAction().isSuperTypeOf(domainElement.eClass()) && evaluate(AddStructuralFeatureValueAction_3023_Constraint, domainElement)) {
 				return AddStructuralFeatureValueAction2EditPart.VISUAL_ID;
 			}
-			if (UMLPackage.eINSTANCE.getDataStoreNode().isSuperTypeOf(domainElement.eClass())) {
+			if (UMLPackage.eINSTANCE.getDataStoreNode().isSuperTypeOf(domainElement.eClass()) && evaluate(DataStoreNode_3024_Constraint, domainElement)) {
 				return DataStoreNode2EditPart.VISUAL_ID;
 			}
-			if (UMLPackage.eINSTANCE.getCentralBufferNode().isSuperTypeOf(domainElement.eClass())) {
+			if (UMLPackage.eINSTANCE.getCentralBufferNode().isSuperTypeOf(domainElement.eClass()) && evaluate(CentralBufferNode_3025_Constraint, domainElement)) {
 				return CentralBufferNode2EditPart.VISUAL_ID;
 			}
 			if (UMLPackage.eINSTANCE.getInputPin().isSuperTypeOf(domainElement.eClass())) {
@@ -834,7 +1119,7 @@ public class UMLVisualIDRegistry {
 			if (UMLPackage.eINSTANCE.getStructuredActivityNode().isSuperTypeOf(domainElement.eClass()) && evaluate(StructuredActivityNode_3009_Constraint, domainElement)) {
 				return StructuredActivityNode2EditPart.VISUAL_ID;
 			}
-			if (UMLPackage.eINSTANCE.getOpaqueAction().isSuperTypeOf(domainElement.eClass())) {
+			if (UMLPackage.eINSTANCE.getOpaqueAction().isSuperTypeOf(domainElement.eClass()) && evaluate(OpaqueAction_3011_Constraint, domainElement)) {
 				return OpaqueAction2EditPart.VISUAL_ID;
 			}
 			if (UMLPackage.eINSTANCE.getAcceptEventAction().isSuperTypeOf(domainElement.eClass()) && evaluate(AcceptEventAction_3012_Constraint, domainElement)) {
@@ -843,40 +1128,40 @@ public class UMLVisualIDRegistry {
 			if (UMLPackage.eINSTANCE.getAcceptEventAction().isSuperTypeOf(domainElement.eClass()) && evaluate(AcceptEventAction_3013_Constraint, domainElement)) {
 				return AcceptEventAction4EditPart.VISUAL_ID;
 			}
-			if (UMLPackage.eINSTANCE.getActivityFinalNode().isSuperTypeOf(domainElement.eClass())) {
+			if (UMLPackage.eINSTANCE.getActivityFinalNode().isSuperTypeOf(domainElement.eClass()) && evaluate(ActivityFinalNode_3014_Constraint, domainElement)) {
 				return ActivityFinalNode2EditPart.VISUAL_ID;
 			}
-			if (UMLPackage.eINSTANCE.getDecisionNode().isSuperTypeOf(domainElement.eClass())) {
+			if (UMLPackage.eINSTANCE.getDecisionNode().isSuperTypeOf(domainElement.eClass()) && evaluate(DecisionNode_3015_Constraint, domainElement)) {
 				return DecisionNode2EditPart.VISUAL_ID;
 			}
-			if (UMLPackage.eINSTANCE.getFlowFinalNode().isSuperTypeOf(domainElement.eClass())) {
+			if (UMLPackage.eINSTANCE.getFlowFinalNode().isSuperTypeOf(domainElement.eClass()) && evaluate(FlowFinalNode_3016_Constraint, domainElement)) {
 				return FlowFinalNode2EditPart.VISUAL_ID;
 			}
 			if (UMLPackage.eINSTANCE.getPin().isSuperTypeOf(domainElement.eClass()) && evaluate(Pin_3017_Constraint, domainElement)) {
 				return Pin2EditPart.VISUAL_ID;
 			}
-			if (UMLPackage.eINSTANCE.getCreateObjectAction().isSuperTypeOf(domainElement.eClass())) {
+			if (UMLPackage.eINSTANCE.getCreateObjectAction().isSuperTypeOf(domainElement.eClass()) && evaluate(CreateObjectAction_3018_Constraint, domainElement)) {
 				return CreateObjectAction2EditPart.VISUAL_ID;
 			}
-			if (UMLPackage.eINSTANCE.getCallBehaviorAction().isSuperTypeOf(domainElement.eClass())) {
+			if (UMLPackage.eINSTANCE.getCallBehaviorAction().isSuperTypeOf(domainElement.eClass()) && evaluate(CallBehaviorAction_3019_Constraint, domainElement)) {
 				return CallBehaviorAction2EditPart.VISUAL_ID;
 			}
-			if (UMLPackage.eINSTANCE.getCallOperationAction().isSuperTypeOf(domainElement.eClass())) {
+			if (UMLPackage.eINSTANCE.getCallOperationAction().isSuperTypeOf(domainElement.eClass()) && evaluate(CallOperationAction_3020_Constraint, domainElement)) {
 				return CallOperationAction2EditPart.VISUAL_ID;
 			}
-			if (UMLPackage.eINSTANCE.getForkNode().isSuperTypeOf(domainElement.eClass())) {
+			if (UMLPackage.eINSTANCE.getForkNode().isSuperTypeOf(domainElement.eClass()) && evaluate(ForkNode_3021_Constraint, domainElement)) {
 				return ForkNode2EditPart.VISUAL_ID;
 			}
-			if (UMLPackage.eINSTANCE.getJoinNode().isSuperTypeOf(domainElement.eClass())) {
+			if (UMLPackage.eINSTANCE.getJoinNode().isSuperTypeOf(domainElement.eClass()) && evaluate(JoinNode_3022_Constraint, domainElement)) {
 				return JoinNode2EditPart.VISUAL_ID;
 			}
-			if (UMLPackage.eINSTANCE.getAddStructuralFeatureValueAction().isSuperTypeOf(domainElement.eClass())) {
+			if (UMLPackage.eINSTANCE.getAddStructuralFeatureValueAction().isSuperTypeOf(domainElement.eClass()) && evaluate(AddStructuralFeatureValueAction_3023_Constraint, domainElement)) {
 				return AddStructuralFeatureValueAction2EditPart.VISUAL_ID;
 			}
-			if (UMLPackage.eINSTANCE.getDataStoreNode().isSuperTypeOf(domainElement.eClass())) {
+			if (UMLPackage.eINSTANCE.getDataStoreNode().isSuperTypeOf(domainElement.eClass()) && evaluate(DataStoreNode_3024_Constraint, domainElement)) {
 				return DataStoreNode2EditPart.VISUAL_ID;
 			}
-			if (UMLPackage.eINSTANCE.getCentralBufferNode().isSuperTypeOf(domainElement.eClass())) {
+			if (UMLPackage.eINSTANCE.getCentralBufferNode().isSuperTypeOf(domainElement.eClass()) && evaluate(CentralBufferNode_3025_Constraint, domainElement)) {
 				return CentralBufferNode2EditPart.VISUAL_ID;
 			}
 			if (UMLPackage.eINSTANCE.getInputPin().isSuperTypeOf(domainElement.eClass())) {
@@ -1545,6 +1830,27 @@ public class UMLVisualIDRegistry {
 				return true;
 			}
 			break;
+		case StructuredActivityNode4EditPart.VISUAL_ID:
+			if (StructuredActivityNodeStructuredActivityContentPaneCompartment4EditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			break;
+		case InputPin7EditPart.VISUAL_ID:
+			if (InputPinName7EditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			if (InputPinOrdering7EditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			break;
+		case OutputPin5EditPart.VISUAL_ID:
+			if (OutputPinName5EditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			if (OutputPinOrdering5EditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			break;
 		case SendSignalAction2EditPart.VISUAL_ID:
 			if (SendSignalActionName2EditPart.VISUAL_ID == nodeVisualID) {
 				return true;
@@ -1673,7 +1979,7 @@ public class UMLVisualIDRegistry {
 			}
 			break;
 		case StructuredActivityNodeStructuredActivityContentPaneCompartment3EditPart.VISUAL_ID:
-			if (StructuredActivityNode2EditPart.VISUAL_ID == nodeVisualID) {
+			if (StructuredActivityNode4EditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
 			if (OpaqueAction2EditPart.VISUAL_ID == nodeVisualID) {
@@ -1721,10 +2027,66 @@ public class UMLVisualIDRegistry {
 			if (CentralBufferNode2EditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
-			if (InputPin6EditPart.VISUAL_ID == nodeVisualID) {
+			if (InputPin7EditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
-			if (OutputPin4EditPart.VISUAL_ID == nodeVisualID) {
+			if (OutputPin5EditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			break;
+		case StructuredActivityNodeStructuredActivityContentPaneCompartment4EditPart.VISUAL_ID:
+			if (StructuredActivityNode4EditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			if (OpaqueAction2EditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			if (AcceptEventAction3EditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			if (AcceptEventAction4EditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			if (ActivityFinalNode2EditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			if (DecisionNode2EditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			if (FlowFinalNode2EditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			if (Pin2EditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			if (CreateObjectAction2EditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			if (CallBehaviorAction2EditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			if (CallOperationAction2EditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			if (ForkNode2EditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			if (JoinNode2EditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			if (AddStructuralFeatureValueAction2EditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			if (DataStoreNode2EditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			if (CentralBufferNode2EditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			if (InputPin7EditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			if (OutputPin5EditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
 			break;

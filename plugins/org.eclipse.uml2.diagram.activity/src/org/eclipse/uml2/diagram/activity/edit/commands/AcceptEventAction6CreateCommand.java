@@ -73,10 +73,10 @@ public class AcceptEventAction6CreateCommand extends CreateElementCommand {
 			if (container != null) {
 				container.getNodes().add(newElement);
 			}
-			
+
 			ActivityPartition partition = (ActivityPartition) getElementToEditGen();
 			newElement.getInPartitions().add(partition);
-			
+
 			UMLElementTypes.Initializers.AcceptEventAction_3060.init(newElement);
 		}
 		return newElement;

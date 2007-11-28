@@ -60,7 +60,7 @@
         <childMetaFeature
             href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/Activity/node"/>
         <modelElementSelector
-            body="self.trigger->isEmpty() or (not self.trigger->forAll(tr | tr.event.oclIsKindOf(uml::TimeEvent)))"/>
+            body="(self.trigger->isEmpty() or (not self.trigger->forAll(tr | tr.event.oclIsKindOf(uml::TimeEvent)))) and self.inPartition->isEmpty()"/>
         <modelElementInitializer
             xsi:type="gmfgen:GenFeatureSeqInitializer">
           <initializers
@@ -123,7 +123,7 @@
         <childMetaFeature
             href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/Activity/node"/>
         <modelElementSelector
-            body="(not self.trigger->isEmpty()) and (self.trigger->forAll(tr | tr.event.oclIsKindOf(uml::TimeEvent)))"/>
+            body="(not self.trigger->isEmpty()) and (self.trigger->forAll(tr | tr.event.oclIsKindOf(uml::TimeEvent))) and self.inPartition->isEmpty()"/>
         <modelElementInitializer
             xsi:type="gmfgen:GenFeatureSeqInitializer">
           <initializers
@@ -198,6 +198,8 @@
             href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/Activity/node"/>
         <childMetaFeature
             href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/Activity/node"/>
+        <modelElementSelector
+            body="self.inPartition->isEmpty()"/>
       </modelFacet>
     </childNodes>
     <childNodes
@@ -228,6 +230,8 @@
             href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/Activity/node"/>
         <childMetaFeature
             href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/Activity/node"/>
+        <modelElementSelector
+            body="self.inPartition->isEmpty()"/>
         <modelElementInitializer
             xsi:type="gmfgen:GenFeatureSeqInitializer">
           <initializers
@@ -267,6 +271,8 @@
             href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/Activity/node"/>
         <childMetaFeature
             href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/Activity/node"/>
+        <modelElementSelector
+            body="self.inPartition->isEmpty()"/>
         <modelElementInitializer
             xsi:type="gmfgen:GenFeatureSeqInitializer">
           <initializers
@@ -315,6 +321,8 @@
             href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/Activity/node"/>
         <childMetaFeature
             href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/Activity/node"/>
+        <modelElementSelector
+            body="self.inPartition->isEmpty()"/>
       </modelFacet>
     </childNodes>
     <childNodes
@@ -345,6 +353,8 @@
             href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/Activity/node"/>
         <childMetaFeature
             href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/Activity/node"/>
+        <modelElementSelector
+            body="self.inPartition->isEmpty()"/>
         <modelElementInitializer
             xsi:type="gmfgen:GenFeatureSeqInitializer">
           <initializers
@@ -439,6 +449,8 @@
             href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/Activity/node"/>
         <childMetaFeature
             href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/Activity/node"/>
+        <modelElementSelector
+            body="self.inPartition->isEmpty()"/>
         <modelElementInitializer
             xsi:type="gmfgen:GenFeatureSeqInitializer">
           <initializers
@@ -537,6 +549,8 @@
             href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/Activity/node"/>
         <childMetaFeature
             href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/Activity/node"/>
+        <modelElementSelector
+            body="self.inPartition->isEmpty()"/>
         <modelElementInitializer
             xsi:type="gmfgen:GenFeatureSeqInitializer">
           <initializers
@@ -688,6 +702,8 @@
             href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/Activity/node"/>
         <childMetaFeature
             href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/Activity/node"/>
+        <modelElementSelector
+            body="self.inPartition->isEmpty()"/>
       </modelFacet>
     </childNodes>
     <childNodes
@@ -729,6 +745,8 @@
             href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/Activity/node"/>
         <childMetaFeature
             href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/Activity/node"/>
+        <modelElementSelector
+            body="self.inPartition->isEmpty()"/>
       </modelFacet>
     </childNodes>
     <childNodes
@@ -770,6 +788,8 @@
             href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/Activity/node"/>
         <childMetaFeature
             href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/Activity/node"/>
+        <modelElementSelector
+            body="self.inPartition->isEmpty()"/>
       </modelFacet>
     </childNodes>
     <childNodes
@@ -800,7 +820,7 @@
         <childMetaFeature
             href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/Activity/node"/>
         <modelElementSelector
-            body="(not self.oclIsTypeOf(uml::InputPin)) and (not self.oclIsTypeOf(uml::OutputPin))"/>
+            body="(not self.oclIsTypeOf(uml::InputPin)) and (not self.oclIsTypeOf(uml::OutputPin)) and self.inPartition->isEmpty()"/>
         <modelElementInitializer
             xsi:type="gmfgen:GenFeatureSeqInitializer">
           <initializers
@@ -882,6 +902,8 @@
             href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/Activity/node"/>
         <childMetaFeature
             href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/Activity/node"/>
+        <modelElementSelector
+            body="self.inPartition->isEmpty()"/>
         <modelElementInitializer
             xsi:type="gmfgen:GenFeatureSeqInitializer">
           <initializers
@@ -1030,6 +1052,8 @@
             href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/Activity/node"/>
         <childMetaFeature
             href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/Activity/node"/>
+        <modelElementSelector
+            body="self.inPartition->isEmpty()"/>
         <modelElementInitializer
             xsi:type="gmfgen:GenFeatureSeqInitializer">
           <initializers
@@ -1351,6 +1375,8 @@
             href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/Activity/node"/>
         <childMetaFeature
             href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/Activity/node"/>
+        <modelElementSelector
+            body="self.inPartition->isEmpty()"/>
         <modelElementInitializer
             xsi:type="gmfgen:GenFeatureSeqInitializer">
           <initializers
@@ -1586,6 +1612,8 @@
             href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/Activity/node"/>
         <childMetaFeature
             href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/Activity/node"/>
+        <modelElementSelector
+            body="self.inPartition->isEmpty()"/>
         <modelElementInitializer
             xsi:type="gmfgen:GenFeatureSeqInitializer">
           <initializers
@@ -1731,7 +1759,7 @@
         <childMetaFeature
             href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/Activity/group"/>
         <modelElementSelector
-            body="not self.oclIsTypeOf(uml::LoopNode)"/>
+            body="not self.oclIsTypeOf(uml::LoopNode) and self.inPartition->isEmpty()"/>
       </modelFacet>
     </childNodes>
     <childNodes
@@ -1743,7 +1771,7 @@
         compartments="//@diagram/@compartments.1"
         graphicalNodeEditPolicyClassName="StructuredActivityNode2GraphicalNodeEditPolicy"
         createCommandClassName="StructuredActivityNode2CreateCommand"
-        containers="//@diagram/@compartments.1 //@diagram/@compartments.0 //@diagram/@compartments.2 //@diagram/@compartments.3 //@diagram/@compartments.4">
+        containers="//@diagram/@compartments.1 //@diagram/@compartments.0 //@diagram/@compartments.4 //@diagram/@compartments.5">
       <diagramRunTimeClass
           href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
       <elementType
@@ -1765,7 +1793,7 @@
         <childMetaFeature
             href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/StructuredActivityNode/node"/>
         <modelElementSelector
-            body="not self.oclIsTypeOf(uml::LoopNode)"/>
+            body="not self.oclIsTypeOf(uml::LoopNode) and self.inPartition->isEmpty()"/>
       </modelFacet>
     </childNodes>
     <childNodes
@@ -1777,7 +1805,7 @@
         childNodes="//@diagram/@childNodes.9"
         graphicalNodeEditPolicyClassName="OpaqueAction2GraphicalNodeEditPolicy"
         createCommandClassName="OpaqueAction2CreateCommand"
-        containers="//@diagram/@compartments.1 //@diagram/@compartments.0 //@diagram/@compartments.2 //@diagram/@compartments.3 //@diagram/@compartments.4">
+        containers="//@diagram/@compartments.1 //@diagram/@compartments.0 //@diagram/@compartments.3 //@diagram/@compartments.2 //@diagram/@compartments.4 //@diagram/@compartments.5">
       <diagramRunTimeClass
           href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
       <elementType
@@ -1802,6 +1830,8 @@
             href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/StructuredActivityNode/node"/>
         <childMetaFeature
             href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/StructuredActivityNode/node"/>
+        <modelElementSelector
+            body="self.inPartition->isEmpty()"/>
         <modelElementInitializer
             xsi:type="gmfgen:GenFeatureSeqInitializer">
           <initializers
@@ -1838,7 +1868,7 @@
         canonicalEditPolicyClassName="AcceptEventAction3CanonicalEditPolicy"
         graphicalNodeEditPolicyClassName="AcceptEventAction3GraphicalNodeEditPolicy"
         createCommandClassName="AcceptEventAction3CreateCommand"
-        containers="//@diagram/@compartments.1 //@diagram/@compartments.0 //@diagram/@compartments.2 //@diagram/@compartments.3 //@diagram/@compartments.4">
+        containers="//@diagram/@compartments.1 //@diagram/@compartments.0 //@diagram/@compartments.3 //@diagram/@compartments.2 //@diagram/@compartments.4 //@diagram/@compartments.5">
       <diagramRunTimeClass
           href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
       <elementType
@@ -1864,7 +1894,7 @@
         <childMetaFeature
             href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/StructuredActivityNode/node"/>
         <modelElementSelector
-            body="self.trigger->isEmpty() or (not self.trigger->forAll(tr | tr.event.oclIsKindOf(uml::TimeEvent)))"/>
+            body="(self.trigger->isEmpty() or (not self.trigger->forAll(tr | tr.event.oclIsKindOf(uml::TimeEvent)))) and self.inPartition->isEmpty()"/>
         <modelElementInitializer
             xsi:type="gmfgen:GenFeatureSeqInitializer">
           <initializers
@@ -1901,7 +1931,7 @@
         canonicalEditPolicyClassName="AcceptEventAction4CanonicalEditPolicy"
         graphicalNodeEditPolicyClassName="AcceptEventAction4GraphicalNodeEditPolicy"
         createCommandClassName="AcceptEventAction4CreateCommand"
-        containers="//@diagram/@compartments.1 //@diagram/@compartments.0 //@diagram/@compartments.2 //@diagram/@compartments.3 //@diagram/@compartments.4">
+        containers="//@diagram/@compartments.1 //@diagram/@compartments.0 //@diagram/@compartments.3 //@diagram/@compartments.2 //@diagram/@compartments.4 //@diagram/@compartments.5">
       <diagramRunTimeClass
           href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
       <elementType
@@ -1927,7 +1957,7 @@
         <childMetaFeature
             href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/StructuredActivityNode/node"/>
         <modelElementSelector
-            body="(not self.trigger->isEmpty()) and (self.trigger->forAll(tr | tr.event.oclIsKindOf(uml::TimeEvent)))"/>
+            body="(not self.trigger->isEmpty()) and (self.trigger->forAll(tr | tr.event.oclIsKindOf(uml::TimeEvent))) and self.inPartition->isEmpty()"/>
         <modelElementInitializer
             xsi:type="gmfgen:GenFeatureSeqInitializer">
           <initializers
@@ -1973,7 +2003,7 @@
         canonicalEditPolicyClassName="ActivityFinalNode2CanonicalEditPolicy"
         graphicalNodeEditPolicyClassName="ActivityFinalNode2GraphicalNodeEditPolicy"
         createCommandClassName="ActivityFinalNode2CreateCommand"
-        containers="//@diagram/@compartments.1 //@diagram/@compartments.0 //@diagram/@compartments.2 //@diagram/@compartments.3 //@diagram/@compartments.4">
+        containers="//@diagram/@compartments.1 //@diagram/@compartments.0 //@diagram/@compartments.3 //@diagram/@compartments.2 //@diagram/@compartments.4 //@diagram/@compartments.5">
       <diagramRunTimeClass
           href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
       <elementType
@@ -2003,6 +2033,8 @@
             href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/StructuredActivityNode/node"/>
         <childMetaFeature
             href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/StructuredActivityNode/node"/>
+        <modelElementSelector
+            body="self.inPartition->isEmpty()"/>
       </modelFacet>
     </childNodes>
     <childNodes
@@ -2013,7 +2045,7 @@
         canonicalEditPolicyClassName="DecisionNode2CanonicalEditPolicy"
         graphicalNodeEditPolicyClassName="DecisionNode2GraphicalNodeEditPolicy"
         createCommandClassName="DecisionNode2CreateCommand"
-        containers="//@diagram/@compartments.1 //@diagram/@compartments.0 //@diagram/@compartments.2 //@diagram/@compartments.3 //@diagram/@compartments.4">
+        containers="//@diagram/@compartments.1 //@diagram/@compartments.0 //@diagram/@compartments.3 //@diagram/@compartments.2 //@diagram/@compartments.4 //@diagram/@compartments.5">
       <diagramRunTimeClass
           href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
       <elementType
@@ -2034,6 +2066,8 @@
             href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/StructuredActivityNode/node"/>
         <childMetaFeature
             href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/StructuredActivityNode/node"/>
+        <modelElementSelector
+            body="self.inPartition->isEmpty()"/>
         <modelElementInitializer
             xsi:type="gmfgen:GenFeatureSeqInitializer">
           <initializers
@@ -2053,7 +2087,7 @@
         canonicalEditPolicyClassName="FlowFinalNode2CanonicalEditPolicy"
         graphicalNodeEditPolicyClassName="FlowFinalNode2GraphicalNodeEditPolicy"
         createCommandClassName="FlowFinalNode2CreateCommand"
-        containers="//@diagram/@compartments.1 //@diagram/@compartments.0 //@diagram/@compartments.2 //@diagram/@compartments.3 //@diagram/@compartments.4">
+        containers="//@diagram/@compartments.1 //@diagram/@compartments.0 //@diagram/@compartments.3 //@diagram/@compartments.2 //@diagram/@compartments.4 //@diagram/@compartments.5">
       <diagramRunTimeClass
           href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
       <elementType
@@ -2083,6 +2117,8 @@
             href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/StructuredActivityNode/node"/>
         <childMetaFeature
             href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/StructuredActivityNode/node"/>
+        <modelElementSelector
+            body="self.inPartition->isEmpty()"/>
       </modelFacet>
     </childNodes>
     <childNodes
@@ -2093,7 +2129,7 @@
         canonicalEditPolicyClassName="Pin2CanonicalEditPolicy"
         graphicalNodeEditPolicyClassName="Pin2GraphicalNodeEditPolicy"
         createCommandClassName="Pin2CreateCommand"
-        containers="//@diagram/@compartments.1 //@diagram/@compartments.0 //@diagram/@compartments.2 //@diagram/@compartments.3 //@diagram/@compartments.4">
+        containers="//@diagram/@compartments.1 //@diagram/@compartments.0 //@diagram/@compartments.3 //@diagram/@compartments.2 //@diagram/@compartments.4 //@diagram/@compartments.5">
       <diagramRunTimeClass
           href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
       <elementType
@@ -2114,7 +2150,7 @@
         <childMetaFeature
             href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/StructuredActivityNode/node"/>
         <modelElementSelector
-            body="(not self.oclIsTypeOf(uml::InputPin)) and (not self.oclIsTypeOf(uml::OutputPin))"/>
+            body="(not self.oclIsTypeOf(uml::InputPin)) and (not self.oclIsTypeOf(uml::OutputPin)) and self.inPartition->isEmpty()"/>
         <modelElementInitializer
             xsi:type="gmfgen:GenFeatureSeqInitializer">
           <initializers
@@ -2172,7 +2208,7 @@
         childNodes="//@diagram/@childNodes.15"
         graphicalNodeEditPolicyClassName="CreateObjectAction2GraphicalNodeEditPolicy"
         createCommandClassName="CreateObjectAction2CreateCommand"
-        containers="//@diagram/@compartments.1 //@diagram/@compartments.0 //@diagram/@compartments.2 //@diagram/@compartments.3 //@diagram/@compartments.4">
+        containers="//@diagram/@compartments.1 //@diagram/@compartments.0 //@diagram/@compartments.3 //@diagram/@compartments.2 //@diagram/@compartments.4 //@diagram/@compartments.5">
       <diagramRunTimeClass
           href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
       <elementType
@@ -2197,6 +2233,8 @@
             href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/StructuredActivityNode/node"/>
         <childMetaFeature
             href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/StructuredActivityNode/node"/>
+        <modelElementSelector
+            body="self.inPartition->isEmpty()"/>
         <modelElementInitializer
             xsi:type="gmfgen:GenFeatureSeqInitializer">
           <initializers
@@ -2234,7 +2272,7 @@
         childNodes="//@diagram/@childNodes.21 //@diagram/@childNodes.22"
         graphicalNodeEditPolicyClassName="CallBehaviorAction2GraphicalNodeEditPolicy"
         createCommandClassName="CallBehaviorAction2CreateCommand"
-        containers="//@diagram/@compartments.1 //@diagram/@compartments.0 //@diagram/@compartments.2 //@diagram/@compartments.3 //@diagram/@compartments.4">
+        containers="//@diagram/@compartments.1 //@diagram/@compartments.0 //@diagram/@compartments.3 //@diagram/@compartments.2 //@diagram/@compartments.4 //@diagram/@compartments.5">
       <diagramRunTimeClass
           href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
       <elementType
@@ -2259,6 +2297,8 @@
             href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/StructuredActivityNode/node"/>
         <childMetaFeature
             href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/StructuredActivityNode/node"/>
+        <modelElementSelector
+            body="self.inPartition->isEmpty()"/>
         <modelElementInitializer
             xsi:type="gmfgen:GenFeatureSeqInitializer">
           <initializers
@@ -2296,7 +2336,7 @@
         childNodes="//@diagram/@childNodes.21 //@diagram/@childNodes.22 //@diagram/@childNodes.24"
         graphicalNodeEditPolicyClassName="CallOperationAction2GraphicalNodeEditPolicy"
         createCommandClassName="CallOperationAction2CreateCommand"
-        containers="//@diagram/@compartments.1 //@diagram/@compartments.0 //@diagram/@compartments.2 //@diagram/@compartments.3 //@diagram/@compartments.4">
+        containers="//@diagram/@compartments.1 //@diagram/@compartments.0 //@diagram/@compartments.3 //@diagram/@compartments.2 //@diagram/@compartments.4 //@diagram/@compartments.5">
       <diagramRunTimeClass
           href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
       <elementType
@@ -2321,6 +2361,8 @@
             href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/StructuredActivityNode/node"/>
         <childMetaFeature
             href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/StructuredActivityNode/node"/>
+        <modelElementSelector
+            body="self.inPartition->isEmpty()"/>
         <modelElementInitializer
             xsi:type="gmfgen:GenFeatureSeqInitializer">
           <initializers
@@ -2358,7 +2400,7 @@
         primaryDragEditPolicyQualifiedClassName="org.eclipse.uml2.diagram.common.editpolicies.DynamicResizeDirectionsEditPolicy"
         graphicalNodeEditPolicyClassName="ForkNode2GraphicalNodeEditPolicy"
         createCommandClassName="ForkNode2CreateCommand"
-        containers="//@diagram/@compartments.1 //@diagram/@compartments.0 //@diagram/@compartments.2 //@diagram/@compartments.3 //@diagram/@compartments.4">
+        containers="//@diagram/@compartments.1 //@diagram/@compartments.0 //@diagram/@compartments.3 //@diagram/@compartments.2 //@diagram/@compartments.4 //@diagram/@compartments.5">
       <diagramRunTimeClass
           href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
       <elementType
@@ -2389,6 +2431,8 @@
             href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/StructuredActivityNode/node"/>
         <childMetaFeature
             href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/StructuredActivityNode/node"/>
+        <modelElementSelector
+            body="self.inPartition->isEmpty()"/>
       </modelFacet>
     </childNodes>
     <childNodes
@@ -2400,7 +2444,7 @@
         primaryDragEditPolicyQualifiedClassName="org.eclipse.uml2.diagram.common.editpolicies.DynamicResizeDirectionsEditPolicy"
         graphicalNodeEditPolicyClassName="JoinNode2GraphicalNodeEditPolicy"
         createCommandClassName="JoinNode2CreateCommand"
-        containers="//@diagram/@compartments.1 //@diagram/@compartments.0 //@diagram/@compartments.2 //@diagram/@compartments.3 //@diagram/@compartments.4">
+        containers="//@diagram/@compartments.1 //@diagram/@compartments.0 //@diagram/@compartments.3 //@diagram/@compartments.2 //@diagram/@compartments.4 //@diagram/@compartments.5">
       <diagramRunTimeClass
           href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
       <elementType
@@ -2431,6 +2475,8 @@
             href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/StructuredActivityNode/node"/>
         <childMetaFeature
             href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/StructuredActivityNode/node"/>
+        <modelElementSelector
+            body="self.inPartition->isEmpty()"/>
       </modelFacet>
     </childNodes>
     <childNodes
@@ -2442,7 +2488,7 @@
         childNodes="//@diagram/@childNodes.17 //@diagram/@childNodes.18 //@diagram/@childNodes.19"
         graphicalNodeEditPolicyClassName="AddStructuralFeatureValueAction2GraphicalNodeEditPolicy"
         createCommandClassName="AddStructuralFeatureValueAction2CreateCommand"
-        containers="//@diagram/@compartments.1 //@diagram/@compartments.0 //@diagram/@compartments.2 //@diagram/@compartments.3 //@diagram/@compartments.4">
+        containers="//@diagram/@compartments.1 //@diagram/@compartments.0 //@diagram/@compartments.3 //@diagram/@compartments.2 //@diagram/@compartments.4 //@diagram/@compartments.5">
       <diagramRunTimeClass
           href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
       <elementType
@@ -2467,6 +2513,8 @@
             href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/StructuredActivityNode/node"/>
         <childMetaFeature
             href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/StructuredActivityNode/node"/>
+        <modelElementSelector
+            body="self.inPartition->isEmpty()"/>
         <modelElementInitializer
             xsi:type="gmfgen:GenFeatureSeqInitializer">
           <initializers
@@ -2503,7 +2551,7 @@
         canonicalEditPolicyClassName="DataStoreNode2CanonicalEditPolicy"
         graphicalNodeEditPolicyClassName="DataStoreNode2GraphicalNodeEditPolicy"
         createCommandClassName="DataStoreNode2CreateCommand"
-        containers="//@diagram/@compartments.1 //@diagram/@compartments.0 //@diagram/@compartments.2 //@diagram/@compartments.3 //@diagram/@compartments.4">
+        containers="//@diagram/@compartments.1 //@diagram/@compartments.0 //@diagram/@compartments.3 //@diagram/@compartments.2 //@diagram/@compartments.4 //@diagram/@compartments.5">
       <diagramRunTimeClass
           href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
       <elementType
@@ -2524,6 +2572,8 @@
             href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/StructuredActivityNode/node"/>
         <childMetaFeature
             href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/StructuredActivityNode/node"/>
+        <modelElementSelector
+            body="self.inPartition->isEmpty()"/>
         <modelElementInitializer
             xsi:type="gmfgen:GenFeatureSeqInitializer">
           <initializers
@@ -2598,7 +2648,7 @@
         canonicalEditPolicyClassName="CentralBufferNode2CanonicalEditPolicy"
         graphicalNodeEditPolicyClassName="CentralBufferNode2GraphicalNodeEditPolicy"
         createCommandClassName="CentralBufferNode2CreateCommand"
-        containers="//@diagram/@compartments.1 //@diagram/@compartments.0 //@diagram/@compartments.2 //@diagram/@compartments.3 //@diagram/@compartments.4">
+        containers="//@diagram/@compartments.1 //@diagram/@compartments.0 //@diagram/@compartments.3 //@diagram/@compartments.2 //@diagram/@compartments.4 //@diagram/@compartments.5">
       <diagramRunTimeClass
           href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
       <elementType
@@ -2619,6 +2669,8 @@
             href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/StructuredActivityNode/node"/>
         <childMetaFeature
             href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/StructuredActivityNode/node"/>
+        <modelElementSelector
+            body="self.inPartition->isEmpty()"/>
         <modelElementInitializer
             xsi:type="gmfgen:GenFeatureSeqInitializer">
           <initializers
@@ -2692,7 +2744,7 @@
         canonicalEditPolicyClassName="InputPin6CanonicalEditPolicy"
         graphicalNodeEditPolicyClassName="InputPin6GraphicalNodeEditPolicy"
         createCommandClassName="InputPin6CreateCommand"
-        containers="//@diagram/@compartments.1 //@diagram/@compartments.0 //@diagram/@compartments.2 //@diagram/@compartments.3 //@diagram/@compartments.4">
+        containers="//@diagram/@compartments.1 //@diagram/@compartments.0 //@diagram/@compartments.4 //@diagram/@compartments.5">
       <diagramRunTimeClass
           href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
       <elementType
@@ -2767,7 +2819,7 @@
         canonicalEditPolicyClassName="OutputPin4CanonicalEditPolicy"
         graphicalNodeEditPolicyClassName="OutputPin4GraphicalNodeEditPolicy"
         createCommandClassName="OutputPin4CreateCommand"
-        containers="//@diagram/@compartments.1 //@diagram/@compartments.0 //@diagram/@compartments.2 //@diagram/@compartments.3 //@diagram/@compartments.4">
+        containers="//@diagram/@compartments.1 //@diagram/@compartments.0 //@diagram/@compartments.4 //@diagram/@compartments.5">
       <diagramRunTimeClass
           href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
       <elementType
@@ -2983,6 +3035,8 @@
             href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/Activity/node"/>
         <childMetaFeature
             href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/Activity/node"/>
+        <modelElementSelector
+            body="self.inPartition->isEmpty()"/>
         <modelElementInitializer
             xsi:type="gmfgen:GenFeatureSeqInitializer">
           <initializers
@@ -3017,7 +3071,7 @@
         itemSemanticEditPolicyClassName="ActivityPartitionItemSemanticEditPolicy"
         notationViewFactoryClassName="ActivityPartitionViewFactory"
         canonicalEditPolicyClassName="ActivityPartitionCanonicalEditPolicy"
-        childNodes="//@diagram/@childNodes.48 //@diagram/@childNodes.49 //@diagram/@childNodes.50 //@diagram/@childNodes.51 //@diagram/@childNodes.52 //@diagram/@childNodes.53 //@diagram/@childNodes.54 //@diagram/@childNodes.55 //@diagram/@childNodes.56 //@diagram/@childNodes.57 //@diagram/@childNodes.58 //@diagram/@childNodes.59 //@diagram/@childNodes.60 //@diagram/@childNodes.61 //@diagram/@childNodes.62 //@diagram/@childNodes.63 //@diagram/@childNodes.64 //@diagram/@childNodes.65 //@diagram/@childNodes.66 //@diagram/@childNodes.67 //@diagram/@childNodes.68"
+        childNodes="//@diagram/@childNodes.48 //@diagram/@childNodes.49 //@diagram/@childNodes.50 //@diagram/@childNodes.51 //@diagram/@childNodes.52 //@diagram/@childNodes.53 //@diagram/@childNodes.54 //@diagram/@childNodes.55 //@diagram/@childNodes.56 //@diagram/@childNodes.57 //@diagram/@childNodes.58 //@diagram/@childNodes.59 //@diagram/@childNodes.60 //@diagram/@childNodes.61 //@diagram/@childNodes.62 //@diagram/@childNodes.63 //@diagram/@childNodes.64 //@diagram/@childNodes.65 //@diagram/@childNodes.66 //@diagram/@childNodes.70 //@diagram/@childNodes.71"
         graphicalNodeEditPolicyClassName="ActivityPartitionGraphicalNodeEditPolicy"
         createCommandClassName="ActivityPartitionCreateCommand"
         containers="//@diagram/@topLevelNodes.0">
@@ -3077,7 +3131,7 @@
         itemSemanticEditPolicyClassName="ActivityPartition2ItemSemanticEditPolicy"
         notationViewFactoryClassName="ActivityPartition2ViewFactory"
         canonicalEditPolicyClassName="ActivityPartition2CanonicalEditPolicy"
-        childNodes="//@diagram/@childNodes.48 //@diagram/@childNodes.49 //@diagram/@childNodes.50 //@diagram/@childNodes.51 //@diagram/@childNodes.52 //@diagram/@childNodes.53 //@diagram/@childNodes.54 //@diagram/@childNodes.55 //@diagram/@childNodes.56 //@diagram/@childNodes.57 //@diagram/@childNodes.58 //@diagram/@childNodes.59 //@diagram/@childNodes.60 //@diagram/@childNodes.61 //@diagram/@childNodes.62 //@diagram/@childNodes.63 //@diagram/@childNodes.64 //@diagram/@childNodes.65 //@diagram/@childNodes.66 //@diagram/@childNodes.67 //@diagram/@childNodes.68"
+        childNodes="//@diagram/@childNodes.48 //@diagram/@childNodes.49 //@diagram/@childNodes.50 //@diagram/@childNodes.51 //@diagram/@childNodes.52 //@diagram/@childNodes.53 //@diagram/@childNodes.54 //@diagram/@childNodes.55 //@diagram/@childNodes.56 //@diagram/@childNodes.57 //@diagram/@childNodes.58 //@diagram/@childNodes.59 //@diagram/@childNodes.60 //@diagram/@childNodes.61 //@diagram/@childNodes.62 //@diagram/@childNodes.63 //@diagram/@childNodes.64 //@diagram/@childNodes.65 //@diagram/@childNodes.66 //@diagram/@childNodes.70 //@diagram/@childNodes.71"
         graphicalNodeEditPolicyClassName="ActivityPartition2GraphicalNodeEditPolicy"
         createCommandClassName="ActivityPartition2CreateCommand"
         containers="//@diagram/@childNodes.48 //@diagram/@childNodes.47">
@@ -3163,7 +3217,7 @@
         <childMetaFeature
             href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/ActivityPartition/node"/>
         <modelElementSelector
-            body="self.trigger->isEmpty() or (not self.trigger->forAll(tr | tr.event.oclIsKindOf(uml::TimeEvent)))"/>
+            body="(self.trigger->isEmpty() or (not self.trigger->forAll(tr | tr.event.oclIsKindOf(uml::TimeEvent)))) and self.inPartition->notEmpty()"/>
         <modelElementInitializer
             xsi:type="gmfgen:GenFeatureSeqInitializer">
           <initializers
@@ -3224,7 +3278,7 @@
         <childMetaFeature
             href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/ActivityPartition/node"/>
         <modelElementSelector
-            body="(not self.trigger->isEmpty()) and (self.trigger->forAll(tr | tr.event.oclIsKindOf(uml::TimeEvent)))"/>
+            body="(not self.trigger->isEmpty()) and (self.trigger->forAll(tr | tr.event.oclIsKindOf(uml::TimeEvent))) and self.inPartition->notEmpty()"/>
         <modelElementInitializer
             xsi:type="gmfgen:GenFeatureSeqInitializer">
           <initializers
@@ -3298,6 +3352,8 @@
             href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/Activity/node"/>
         <childMetaFeature
             href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/ActivityPartition/node"/>
+        <modelElementSelector
+            body="self.inPartition->notEmpty()"/>
       </modelFacet>
     </childNodes>
     <childNodes
@@ -3327,6 +3383,8 @@
             href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/Activity/node"/>
         <childMetaFeature
             href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/ActivityPartition/node"/>
+        <modelElementSelector
+            body="self.inPartition->notEmpty()"/>
         <modelElementInitializer
             xsi:type="gmfgen:GenFeatureSeqInitializer">
           <initializers
@@ -3365,6 +3423,8 @@
             href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/Activity/node"/>
         <childMetaFeature
             href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/ActivityPartition/node"/>
+        <modelElementSelector
+            body="self.inPartition->notEmpty()"/>
         <modelElementInitializer
             xsi:type="gmfgen:GenFeatureSeqInitializer">
           <initializers
@@ -3412,6 +3472,8 @@
             href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/Activity/node"/>
         <childMetaFeature
             href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/ActivityPartition/node"/>
+        <modelElementSelector
+            body="self.inPartition->notEmpty()"/>
       </modelFacet>
     </childNodes>
     <childNodes
@@ -3441,6 +3503,8 @@
             href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/Activity/node"/>
         <childMetaFeature
             href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/ActivityPartition/node"/>
+        <modelElementSelector
+            body="self.inPartition->notEmpty()"/>
         <modelElementInitializer
             xsi:type="gmfgen:GenFeatureSeqInitializer">
           <initializers
@@ -3534,6 +3598,8 @@
             href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/Activity/node"/>
         <childMetaFeature
             href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/ActivityPartition/node"/>
+        <modelElementSelector
+            body="self.inPartition->notEmpty()"/>
         <modelElementInitializer
             xsi:type="gmfgen:GenFeatureSeqInitializer">
           <initializers
@@ -3631,6 +3697,8 @@
             href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/Activity/node"/>
         <childMetaFeature
             href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/ActivityPartition/node"/>
+        <modelElementSelector
+            body="self.inPartition->notEmpty()"/>
         <modelElementInitializer
             xsi:type="gmfgen:GenFeatureSeqInitializer">
           <initializers
@@ -3695,6 +3763,8 @@
             href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/Activity/node"/>
         <childMetaFeature
             href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/ActivityPartition/node"/>
+        <modelElementSelector
+            body="self.inPartition->notEmpty()"/>
       </modelFacet>
     </childNodes>
     <childNodes
@@ -3734,6 +3804,8 @@
             href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/Activity/node"/>
         <childMetaFeature
             href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/ActivityPartition/node"/>
+        <modelElementSelector
+            body="self.inPartition->notEmpty()"/>
       </modelFacet>
     </childNodes>
     <childNodes
@@ -3773,6 +3845,8 @@
             href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/Activity/node"/>
         <childMetaFeature
             href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/ActivityPartition/node"/>
+        <modelElementSelector
+            body="self.inPartition->notEmpty()"/>
       </modelFacet>
     </childNodes>
     <childNodes
@@ -3803,7 +3877,7 @@
         <childMetaFeature
             href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/ActivityPartition/node"/>
         <modelElementSelector
-            body="(not self.oclIsTypeOf(uml::InputPin)) and (not self.oclIsTypeOf(uml::OutputPin))"/>
+            body="(not self.oclIsTypeOf(uml::InputPin)) and (not self.oclIsTypeOf(uml::OutputPin)) and self.inPartition->notEmpty()"/>
         <modelElementInitializer
             xsi:type="gmfgen:GenFeatureSeqInitializer">
           <initializers
@@ -3884,6 +3958,8 @@
             href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/Activity/node"/>
         <childMetaFeature
             href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/ActivityPartition/node"/>
+        <modelElementSelector
+            body="self.inPartition->notEmpty()"/>
         <modelElementInitializer
             xsi:type="gmfgen:GenFeatureSeqInitializer">
           <initializers
@@ -3944,6 +4020,8 @@
             href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/Activity/node"/>
         <childMetaFeature
             href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/ActivityPartition/node"/>
+        <modelElementSelector
+            body="self.inPartition->notEmpty()"/>
         <modelElementInitializer
             xsi:type="gmfgen:GenFeatureSeqInitializer">
           <initializers
@@ -4004,6 +4082,8 @@
             href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/Activity/node"/>
         <childMetaFeature
             href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/ActivityPartition/node"/>
+        <modelElementSelector
+            body="self.inPartition->notEmpty()"/>
         <modelElementInitializer
             xsi:type="gmfgen:GenFeatureSeqInitializer">
           <initializers
@@ -4064,6 +4144,8 @@
             href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/Activity/node"/>
         <childMetaFeature
             href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/ActivityPartition/node"/>
+        <modelElementSelector
+            body="self.inPartition->notEmpty()"/>
         <modelElementInitializer
             xsi:type="gmfgen:GenFeatureSeqInitializer">
           <initializers
@@ -4121,8 +4203,190 @@
         <childMetaFeature
             href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/ActivityPartition/node"/>
         <modelElementSelector
-            body="not self.oclIsTypeOf(uml::LoopNode)"/>
+            body="not self.oclIsTypeOf(uml::LoopNode) and self.inPartition->notEmpty()"/>
       </modelFacet>
+    </childNodes>
+    <childNodes
+        visualID="3079"
+        editPartClassName="StructuredActivityNode4EditPart"
+        itemSemanticEditPolicyClassName="StructuredActivityNode4ItemSemanticEditPolicy"
+        notationViewFactoryClassName="StructuredActivityNode4ViewFactory"
+        canonicalEditPolicyClassName="StructuredActivityNode4CanonicalEditPolicy"
+        compartments="//@diagram/@compartments.3"
+        graphicalNodeEditPolicyClassName="StructuredActivityNode4GraphicalNodeEditPolicy"
+        createCommandClassName="StructuredActivityNode4CreateCommand"
+        containers="//@diagram/@compartments.3 //@diagram/@compartments.2">
+      <diagramRunTimeClass
+          href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
+      <elementType
+          xsi:type="gmfgen:SpecializationType"
+          metamodelType="//@diagram/@childNodes.25/@elementType"/>
+      <viewmap
+          xsi:type="gmfgen:InnerClassViewmap"
+          className="StructuredActivityFigure"
+          classBody="&#xD;&#xA;/**&#xD;&#xA; * @generated&#xD;&#xA; */&#xD;&#xA;public class StructuredActivityFigure extends org.eclipse.draw2d.RoundedRectangle {&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;private org.eclipse.draw2d.RectangleFigure fFigureStructuredActivityFigure_ContentPane; &#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;public StructuredActivityFigure() {&#xD;&#xA;&#x9;&#x9;&#xD;&#xA;&#xD;&#xA;&#x9;org.eclipse.draw2d.BorderLayout layoutThis = new org.eclipse.draw2d.BorderLayout();&#xD;&#xA;&#x9;this.setLayoutManager(layoutThis);&#xD;&#xA;&#xD;&#xA;&#x9;&#x9;this.setCornerDimensions(new org.eclipse.draw2d.geometry.Dimension(getMapMode().DPtoLP(8)&#xD;&#xA;, getMapMode().DPtoLP(8)&#xD;&#xA;));&#xD;&#xA;this.setLineStyle(org.eclipse.draw2d.Graphics.LINE_DASH);&#xD;&#xA;&#x9;&#x9;createContents();&#xD;&#xA;&#x9;}&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;private void createContents(){&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;fFigureStructuredActivityFigure_ContentPane = new org.eclipse.draw2d.RectangleFigure();&#xD;&#xA;fFigureStructuredActivityFigure_ContentPane.setFill(false);&#xD;&#xA;fFigureStructuredActivityFigure_ContentPane.setOutline(false);&#xD;&#xA;&#xD;&#xA;this.add(fFigureStructuredActivityFigure_ContentPane, org.eclipse.draw2d.BorderLayout.CENTER);&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;org.eclipse.draw2d.RectangleFigure aux_StructuredActivityFigure_LabelContainer0 = new org.eclipse.draw2d.RectangleFigure();&#xD;&#xA;aux_StructuredActivityFigure_LabelContainer0.setFill(false);&#xD;&#xA;aux_StructuredActivityFigure_LabelContainer0.setOutline(false);&#xD;&#xA;&#xD;&#xA;aux_StructuredActivityFigure_LabelContainer0.setBorder(new org.eclipse.draw2d.MarginBorder(getMapMode().DPtoLP(0)&#xD;&#xA;, getMapMode().DPtoLP(5)&#xD;&#xA;, getMapMode().DPtoLP(5)&#xD;&#xA;, getMapMode().DPtoLP(0)&#xD;&#xA;));&#xD;&#xA;&#xD;&#xA;this.add(aux_StructuredActivityFigure_LabelContainer0, org.eclipse.draw2d.BorderLayout.TOP);&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#x9;org.eclipse.draw2d.BorderLayout layoutAux_StructuredActivityFigure_LabelContainer0 = new org.eclipse.draw2d.BorderLayout();&#xD;&#xA;&#x9;aux_StructuredActivityFigure_LabelContainer0.setLayoutManager(layoutAux_StructuredActivityFigure_LabelContainer0);&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;org.eclipse.draw2d.Label structuredActivityFigure_fixed_structured1 = new org.eclipse.draw2d.Label();&#xD;&#xA;structuredActivityFigure_fixed_structured1.setText(&quot;\u00ABstructured\u00BB&quot;);&#xD;&#xA;&#xD;&#xA;aux_StructuredActivityFigure_LabelContainer0.add(structuredActivityFigure_fixed_structured1, org.eclipse.draw2d.BorderLayout.LEFT);&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#x9;}&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;private boolean myUseLocalCoordinates = false;&#xD;&#xA;&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;protected boolean useLocalCoordinates() {&#xD;&#xA;&#x9;&#x9;return myUseLocalCoordinates;&#xD;&#xA;&#x9;}&#xD;&#xA;&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;protected void setUseLocalCoordinates(boolean useLocalCoordinates) {&#xD;&#xA;&#x9;&#x9;myUseLocalCoordinates = useLocalCoordinates;&#xD;&#xA;&#x9;}&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;public org.eclipse.draw2d.RectangleFigure getFigureStructuredActivityFigure_ContentPane() {&#xD;&#xA;&#x9;&#x9;return fFigureStructuredActivityFigure_ContentPane;&#xD;&#xA;&#x9;}&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;}&#xD;&#xA;&#xD;&#xA;">
+        <requiredPluginIDs>org.eclipse.gmf.runtime.draw2d.ui</requiredPluginIDs>
+      </viewmap>
+      <modelFacet>
+        <metaClass
+            href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/StructuredActivityNode"/>
+        <containmentMetaFeature
+            href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/StructuredActivityNode/node"/>
+        <childMetaFeature
+            href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/StructuredActivityNode/node"/>
+        <modelElementSelector
+            body="not self.oclIsTypeOf(uml::LoopNode) and self.inPartition->notEmpty()"/>
+      </modelFacet>
+    </childNodes>
+    <childNodes
+        visualID="3080"
+        editPartClassName="InputPin7EditPart"
+        itemSemanticEditPolicyClassName="InputPin7ItemSemanticEditPolicy"
+        notationViewFactoryClassName="InputPin7ViewFactory"
+        canonicalEditPolicyClassName="InputPin7CanonicalEditPolicy"
+        graphicalNodeEditPolicyClassName="InputPin7GraphicalNodeEditPolicy"
+        createCommandClassName="InputPin7CreateCommand"
+        containers="//@diagram/@compartments.3 //@diagram/@compartments.2">
+      <diagramRunTimeClass
+          href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
+      <elementType
+          xsi:type="gmfgen:SpecializationType"
+          metamodelType="//@diagram/@childNodes.17/@elementType"/>
+      <viewmap
+          xsi:type="gmfgen:InnerClassViewmap"
+          className="StandalonePinFigure"
+          classBody="&#xD;&#xA;/**&#xD;&#xA; * @generated&#xD;&#xA; */&#xD;&#xA;public class StandalonePinFigure extends org.eclipse.draw2d.RectangleFigure {&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;private org.eclipse.draw2d.Label fFigureStandalonePinFigure_name; &#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;public StandalonePinFigure() {&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;createContents();&#xD;&#xA;&#x9;}&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;private void createContents(){&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;fFigureStandalonePinFigure_name = new org.eclipse.draw2d.Label();&#xD;&#xA;fFigureStandalonePinFigure_name.setText(&quot;&quot;);&#xD;&#xA;&#xD;&#xA;fFigureStandalonePinFigure_name.setBorder(new org.eclipse.draw2d.MarginBorder(getMapMode().DPtoLP(0)&#xD;&#xA;, getMapMode().DPtoLP(5)&#xD;&#xA;, getMapMode().DPtoLP(0)&#xD;&#xA;, getMapMode().DPtoLP(5)&#xD;&#xA;));&#xD;&#xA;&#xD;&#xA;this.add(fFigureStandalonePinFigure_name);&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#x9;}&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;private boolean myUseLocalCoordinates = false;&#xD;&#xA;&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;protected boolean useLocalCoordinates() {&#xD;&#xA;&#x9;&#x9;return myUseLocalCoordinates;&#xD;&#xA;&#x9;}&#xD;&#xA;&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;protected void setUseLocalCoordinates(boolean useLocalCoordinates) {&#xD;&#xA;&#x9;&#x9;myUseLocalCoordinates = useLocalCoordinates;&#xD;&#xA;&#x9;}&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;public org.eclipse.draw2d.Label getFigureStandalonePinFigure_name() {&#xD;&#xA;&#x9;&#x9;return fFigureStandalonePinFigure_name;&#xD;&#xA;&#x9;}&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;}&#xD;&#xA;&#xD;&#xA;">
+        <requiredPluginIDs>org.eclipse.gmf.runtime.draw2d.ui</requiredPluginIDs>
+      </viewmap>
+      <modelFacet>
+        <metaClass
+            href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/InputPin"/>
+        <containmentMetaFeature
+            href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/StructuredActivityNode/node"/>
+        <childMetaFeature
+            href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/StructuredActivityNode/node"/>
+        <modelElementInitializer
+            xsi:type="gmfgen:GenFeatureSeqInitializer">
+          <initializers
+              xsi:type="gmfgen:GenFeatureValueSpec"
+              body=" let base : String = 'InputPin' in  let suffixes : Sequence(String) = Sequence {'', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10'} in  let space : Namespace = self.namespace in  let allMissed : Sequence(String) = suffixes-> &#x9;select(s : String | not space.member->exists(e : NamedElement | e.name = base.concat(s)) ) in  let firstMissed : String = allMissed->first() in  let noMisses : Boolean = firstMissed.oclIsUndefined() in  let allNames : Set(String) =  &#x9;if noMisses &#x9;&#x9;then &#x9;&#x9;space.member->collect(e : NamedElement | &#x9;&#x9;&#x9;if e = self or e.name.oclIsUndefined() or e.name.substring(1, e.name.size().min(base.size())) &lt;> base &#x9;&#x9;&#x9;then '' else e.name &#x9;&#x9;&#x9;endif &#x9;&#x9;)->asSet()->excluding('') &#x9;&#x9;else Set{'not in use'} &#x9;&#x9;endif in  let longestName : String = &#x9;&#x9;if noMisses &#x9;&#x9;then allNames->select(n : String | not allNames->exists(nn : String | nn.size() > n.size()))->asSequence()->first()&#x9;&#x9;else 'not in use' &#x9;&#x9;endif &#x9;in  if noMisses then &#x9;&#x9;if longestName.oclIsUndefined() &#x9;&#x9;then base &#x9;&#x9;else longestName.concat('1') &#x9;&#x9;endif  else base.concat(firstMissed)  endif ">
+            <feature
+                href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/NamedElement/name"/>
+          </initializers>
+        </modelElementInitializer>
+      </modelFacet>
+      <labels
+          visualID="5081"
+          editPartClassName="InputPinName7EditPart"
+          itemSemanticEditPolicyClassName="InputPinName7ItemSemanticEditPolicy"
+          notationViewFactoryClassName="InputPinName7ViewFactory">
+        <diagramRunTimeClass
+            href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
+        <viewmap
+            xsi:type="gmfgen:ParentAssignedViewmap"
+            getterName="getFigureStandalonePinFigure_name"
+            figureQualifiedClassName="org.eclipse.draw2d.Label"/>
+        <modelFacet
+            xsi:type="gmfgen:FeatureLabelModelFacet">
+          <metaFeatures
+              href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/NamedElement/name"/>
+        </modelFacet>
+      </labels>
+      <labels
+          xsi:type="gmfgen:GenExternalNodeLabel"
+          visualID="5082"
+          editPartClassName="InputPinOrdering7EditPart"
+          itemSemanticEditPolicyClassName="InputPinOrdering7ItemSemanticEditPolicy"
+          notationViewFactoryClassName="InputPinOrdering7ViewFactory"
+          readOnly="true">
+        <diagramRunTimeClass
+            href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
+        <viewmap
+            xsi:type="gmfgen:FigureViewmap"
+            figureQualifiedClassName="org.eclipse.draw2d.Label">
+          <requiredPluginIDs>org.eclipse.gmf.runtime.draw2d.ui</requiredPluginIDs>
+        </viewmap>
+        <modelFacet
+            xsi:type="gmfgen:FeatureLabelModelFacet">
+          <metaFeatures
+              href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/ObjectNode/ordering"/>
+        </modelFacet>
+      </labels>
+    </childNodes>
+    <childNodes
+        visualID="3081"
+        editPartClassName="OutputPin5EditPart"
+        itemSemanticEditPolicyClassName="OutputPin5ItemSemanticEditPolicy"
+        notationViewFactoryClassName="OutputPin5ViewFactory"
+        canonicalEditPolicyClassName="OutputPin5CanonicalEditPolicy"
+        graphicalNodeEditPolicyClassName="OutputPin5GraphicalNodeEditPolicy"
+        createCommandClassName="OutputPin5CreateCommand"
+        containers="//@diagram/@compartments.3 //@diagram/@compartments.2">
+      <diagramRunTimeClass
+          href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
+      <elementType
+          xsi:type="gmfgen:SpecializationType"
+          metamodelType="//@diagram/@childNodes.9/@elementType"/>
+      <viewmap
+          xsi:type="gmfgen:InnerClassViewmap"
+          className="StandalonePinFigure"
+          classBody="&#xD;&#xA;/**&#xD;&#xA; * @generated&#xD;&#xA; */&#xD;&#xA;public class StandalonePinFigure extends org.eclipse.draw2d.RectangleFigure {&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;private org.eclipse.draw2d.Label fFigureStandalonePinFigure_name; &#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;public StandalonePinFigure() {&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;createContents();&#xD;&#xA;&#x9;}&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;private void createContents(){&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;fFigureStandalonePinFigure_name = new org.eclipse.draw2d.Label();&#xD;&#xA;fFigureStandalonePinFigure_name.setText(&quot;&quot;);&#xD;&#xA;&#xD;&#xA;fFigureStandalonePinFigure_name.setBorder(new org.eclipse.draw2d.MarginBorder(getMapMode().DPtoLP(0)&#xD;&#xA;, getMapMode().DPtoLP(5)&#xD;&#xA;, getMapMode().DPtoLP(0)&#xD;&#xA;, getMapMode().DPtoLP(5)&#xD;&#xA;));&#xD;&#xA;&#xD;&#xA;this.add(fFigureStandalonePinFigure_name);&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#x9;}&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;private boolean myUseLocalCoordinates = false;&#xD;&#xA;&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;protected boolean useLocalCoordinates() {&#xD;&#xA;&#x9;&#x9;return myUseLocalCoordinates;&#xD;&#xA;&#x9;}&#xD;&#xA;&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;protected void setUseLocalCoordinates(boolean useLocalCoordinates) {&#xD;&#xA;&#x9;&#x9;myUseLocalCoordinates = useLocalCoordinates;&#xD;&#xA;&#x9;}&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;public org.eclipse.draw2d.Label getFigureStandalonePinFigure_name() {&#xD;&#xA;&#x9;&#x9;return fFigureStandalonePinFigure_name;&#xD;&#xA;&#x9;}&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;}&#xD;&#xA;&#xD;&#xA;">
+        <requiredPluginIDs>org.eclipse.gmf.runtime.draw2d.ui</requiredPluginIDs>
+      </viewmap>
+      <modelFacet>
+        <metaClass
+            href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/OutputPin"/>
+        <containmentMetaFeature
+            href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/StructuredActivityNode/node"/>
+        <childMetaFeature
+            href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/StructuredActivityNode/node"/>
+        <modelElementInitializer
+            xsi:type="gmfgen:GenFeatureSeqInitializer">
+          <initializers
+              xsi:type="gmfgen:GenFeatureValueSpec"
+              body=" let base : String = 'OutputPin' in  let suffixes : Sequence(String) = Sequence {'', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10'} in  let space : Namespace = self.namespace in  let allMissed : Sequence(String) = suffixes-> &#x9;select(s : String | not space.member->exists(e : NamedElement | e.name = base.concat(s)) ) in  let firstMissed : String = allMissed->first() in  let noMisses : Boolean = firstMissed.oclIsUndefined() in  let allNames : Set(String) =  &#x9;if noMisses &#x9;&#x9;then &#x9;&#x9;space.member->collect(e : NamedElement | &#x9;&#x9;&#x9;if e = self or e.name.oclIsUndefined() or e.name.substring(1, e.name.size().min(base.size())) &lt;> base &#x9;&#x9;&#x9;then '' else e.name &#x9;&#x9;&#x9;endif &#x9;&#x9;)->asSet()->excluding('') &#x9;&#x9;else Set{'not in use'} &#x9;&#x9;endif in  let longestName : String = &#x9;&#x9;if noMisses &#x9;&#x9;then allNames->select(n : String | not allNames->exists(nn : String | nn.size() > n.size()))->asSequence()->first()&#x9;&#x9;else 'not in use' &#x9;&#x9;endif &#x9;in  if noMisses then &#x9;&#x9;if longestName.oclIsUndefined() &#x9;&#x9;then base &#x9;&#x9;else longestName.concat('1') &#x9;&#x9;endif  else base.concat(firstMissed)  endif ">
+            <feature
+                href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/NamedElement/name"/>
+          </initializers>
+        </modelElementInitializer>
+      </modelFacet>
+      <labels
+          visualID="5083"
+          editPartClassName="OutputPinName5EditPart"
+          itemSemanticEditPolicyClassName="OutputPinName5ItemSemanticEditPolicy"
+          notationViewFactoryClassName="OutputPinName5ViewFactory">
+        <diagramRunTimeClass
+            href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
+        <viewmap
+            xsi:type="gmfgen:ParentAssignedViewmap"
+            getterName="getFigureStandalonePinFigure_name"
+            figureQualifiedClassName="org.eclipse.draw2d.Label"/>
+        <modelFacet
+            xsi:type="gmfgen:FeatureLabelModelFacet">
+          <metaFeatures
+              href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/NamedElement/name"/>
+        </modelFacet>
+      </labels>
+      <labels
+          xsi:type="gmfgen:GenExternalNodeLabel"
+          visualID="5084"
+          editPartClassName="OutputPinOrdering5EditPart"
+          itemSemanticEditPolicyClassName="OutputPinOrdering5ItemSemanticEditPolicy"
+          notationViewFactoryClassName="OutputPinOrdering5ViewFactory"
+          readOnly="true">
+        <diagramRunTimeClass
+            href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
+        <viewmap
+            xsi:type="gmfgen:FigureViewmap"
+            figureQualifiedClassName="org.eclipse.draw2d.Label">
+          <requiredPluginIDs>org.eclipse.gmf.runtime.draw2d.ui</requiredPluginIDs>
+        </viewmap>
+        <modelFacet
+            xsi:type="gmfgen:FeatureLabelModelFacet">
+          <metaFeatures
+              href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/ObjectNode/ordering"/>
+        </modelFacet>
+      </labels>
     </childNodes>
     <childNodes
         visualID="3077"
@@ -4155,6 +4419,8 @@
             href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/Activity/node"/>
         <childMetaFeature
             href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/ActivityPartition/node"/>
+        <modelElementSelector
+            body="self.inPartition->notEmpty()"/>
         <modelElementInitializer
             xsi:type="gmfgen:GenFeatureSeqInitializer">
           <initializers
@@ -4189,7 +4455,7 @@
         itemSemanticEditPolicyClassName="LoopNode2ItemSemanticEditPolicy"
         notationViewFactoryClassName="LoopNode2ViewFactory"
         canonicalEditPolicyClassName="LoopNode2CanonicalEditPolicy"
-        compartments="//@diagram/@compartments.3"
+        compartments="//@diagram/@compartments.4"
         graphicalNodeEditPolicyClassName="LoopNode2GraphicalNodeEditPolicy"
         createCommandClassName="LoopNode2CreateCommand"
         containers="//@diagram/@childNodes.48 //@diagram/@childNodes.47">
@@ -4211,6 +4477,8 @@
             href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/Activity/node"/>
         <childMetaFeature
             href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/ActivityPartition/node"/>
+        <modelElementSelector
+            body="self.inPartition->notEmpty()"/>
       </modelFacet>
     </childNodes>
     <childNodes
@@ -4219,7 +4487,7 @@
         itemSemanticEditPolicyClassName="LoopNodeItemSemanticEditPolicy"
         notationViewFactoryClassName="LoopNodeViewFactory"
         canonicalEditPolicyClassName="LoopNodeCanonicalEditPolicy"
-        compartments="//@diagram/@compartments.4"
+        compartments="//@diagram/@compartments.5"
         graphicalNodeEditPolicyClassName="LoopNodeGraphicalNodeEditPolicy"
         createCommandClassName="LoopNodeCreateCommand"
         containers="//@diagram/@topLevelNodes.0">
@@ -4227,7 +4495,7 @@
           href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
       <elementType
           xsi:type="gmfgen:SpecializationType"
-          metamodelType="//@diagram/@childNodes.68/@elementType"/>
+          metamodelType="//@diagram/@childNodes.71/@elementType"/>
       <viewmap
           xsi:type="gmfgen:InnerClassViewmap"
           className="StructuredActivityFigure"
@@ -4241,6 +4509,8 @@
             href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/Activity/group"/>
         <childMetaFeature
             href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/Activity/group"/>
+        <modelElementSelector
+            body="self.inPartition->isEmpty()"/>
       </modelFacet>
     </childNodes>
     <childNodes
@@ -4252,7 +4522,7 @@
         canonicalEditPolicyClassName="LiteralStringCanonicalEditPolicy"
         graphicalNodeEditPolicyClassName="LiteralStringGraphicalNodeEditPolicy"
         createCommandClassName="LiteralStringCreateCommand"
-        containers="//@diagram/@compartments.5">
+        containers="//@diagram/@compartments.6">
       <diagramRunTimeClass
           href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
       <elementType
@@ -4298,13 +4568,13 @@
         canonicalEditPolicyClassName="LiteralString2CanonicalEditPolicy"
         graphicalNodeEditPolicyClassName="LiteralString2GraphicalNodeEditPolicy"
         createCommandClassName="LiteralString2CreateCommand"
-        containers="//@diagram/@compartments.6">
+        containers="//@diagram/@compartments.7">
       <diagramRunTimeClass
           href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
       <elementType
           xsi:type="gmfgen:SpecializationType"
           displayName="Literal String"
-          metamodelType="//@diagram/@childNodes.70/@elementType"
+          metamodelType="//@diagram/@childNodes.73/@elementType"
           editHelperAdviceClassName="LiteralStringEditHelperAdvice"/>
       <viewmap
           xsi:type="gmfgen:FigureViewmap"
@@ -4342,7 +4612,7 @@
         itemSemanticEditPolicyClassName="ActivityItemSemanticEditPolicy"
         notationViewFactoryClassName="ActivityViewFactory"
         canonicalEditPolicyClassName="ActivityCanonicalEditPolicy"
-        childNodes="//@diagram/@childNodes.0 //@diagram/@childNodes.1 //@diagram/@childNodes.2 //@diagram/@childNodes.3 //@diagram/@childNodes.4 //@diagram/@childNodes.5 //@diagram/@childNodes.6 //@diagram/@childNodes.7 //@diagram/@childNodes.8 //@diagram/@childNodes.10 //@diagram/@childNodes.11 //@diagram/@childNodes.12 //@diagram/@childNodes.13 //@diagram/@childNodes.14 //@diagram/@childNodes.16 //@diagram/@childNodes.20 //@diagram/@childNodes.23 //@diagram/@childNodes.25 //@diagram/@childNodes.44 //@diagram/@childNodes.45 //@diagram/@childNodes.46 //@diagram/@childNodes.47 //@diagram/@childNodes.69"
+        childNodes="//@diagram/@childNodes.0 //@diagram/@childNodes.1 //@diagram/@childNodes.2 //@diagram/@childNodes.3 //@diagram/@childNodes.4 //@diagram/@childNodes.5 //@diagram/@childNodes.6 //@diagram/@childNodes.7 //@diagram/@childNodes.8 //@diagram/@childNodes.10 //@diagram/@childNodes.11 //@diagram/@childNodes.12 //@diagram/@childNodes.13 //@diagram/@childNodes.14 //@diagram/@childNodes.16 //@diagram/@childNodes.20 //@diagram/@childNodes.23 //@diagram/@childNodes.25 //@diagram/@childNodes.44 //@diagram/@childNodes.45 //@diagram/@childNodes.46 //@diagram/@childNodes.47 //@diagram/@childNodes.72"
         graphicalNodeEditPolicyClassName="ActivityGraphicalNodeEditPolicy"
         createCommandClassName="ActivityCreateCommand">
       <diagramRunTimeClass
@@ -4405,7 +4675,7 @@
         itemSemanticEditPolicyClassName="ConstraintItemSemanticEditPolicy"
         notationViewFactoryClassName="ConstraintViewFactory"
         canonicalEditPolicyClassName="ConstraintCanonicalEditPolicy"
-        compartments="//@diagram/@compartments.5"
+        compartments="//@diagram/@compartments.6"
         graphicalNodeEditPolicyClassName="ConstraintGraphicalNodeEditPolicy"
         createCommandClassName="ConstraintCreateCommand">
       <diagramRunTimeClass
@@ -4437,7 +4707,7 @@
         itemSemanticEditPolicyClassName="Constraint2ItemSemanticEditPolicy"
         notationViewFactoryClassName="Constraint2ViewFactory"
         canonicalEditPolicyClassName="Constraint2CanonicalEditPolicy"
-        compartments="//@diagram/@compartments.6"
+        compartments="//@diagram/@compartments.7"
         graphicalNodeEditPolicyClassName="Constraint2GraphicalNodeEditPolicy"
         createCommandClassName="Constraint2CreateCommand">
       <diagramRunTimeClass
@@ -4811,11 +5081,30 @@
         itemSemanticEditPolicyClassName="StructuredActivityNodeStructuredActivityContentPaneCompartment3ItemSemanticEditPolicy"
         notationViewFactoryClassName="StructuredActivityNodeStructuredActivityContentPaneCompartment3ViewFactory"
         canonicalEditPolicyClassName="StructuredActivityNodeStructuredActivityContentPaneCompartment3CanonicalEditPolicy"
-        childNodes="//@diagram/@childNodes.26 //@diagram/@childNodes.27 //@diagram/@childNodes.28 //@diagram/@childNodes.29 //@diagram/@childNodes.30 //@diagram/@childNodes.31 //@diagram/@childNodes.32 //@diagram/@childNodes.33 //@diagram/@childNodes.34 //@diagram/@childNodes.35 //@diagram/@childNodes.36 //@diagram/@childNodes.37 //@diagram/@childNodes.38 //@diagram/@childNodes.39 //@diagram/@childNodes.40 //@diagram/@childNodes.41 //@diagram/@childNodes.42 //@diagram/@childNodes.43"
+        childNodes="//@diagram/@childNodes.67 //@diagram/@childNodes.27 //@diagram/@childNodes.28 //@diagram/@childNodes.29 //@diagram/@childNodes.30 //@diagram/@childNodes.31 //@diagram/@childNodes.32 //@diagram/@childNodes.33 //@diagram/@childNodes.34 //@diagram/@childNodes.35 //@diagram/@childNodes.36 //@diagram/@childNodes.37 //@diagram/@childNodes.38 //@diagram/@childNodes.39 //@diagram/@childNodes.40 //@diagram/@childNodes.41 //@diagram/@childNodes.68 //@diagram/@childNodes.69"
         title="StructuredActivityContentPaneCompartment"
         canCollapse="false"
         needsTitle="false"
         node="//@diagram/@childNodes.66"
+        listLayout="false">
+      <diagramRunTimeClass
+          href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
+      <viewmap
+          xsi:type="gmfgen:ParentAssignedViewmap"
+          getterName="getFigureStructuredActivityFigure_ContentPane"
+          figureQualifiedClassName="org.eclipse.draw2d.RectangleFigure"/>
+    </compartments>
+    <compartments
+        visualID="7018"
+        editPartClassName="StructuredActivityNodeStructuredActivityContentPaneCompartment4EditPart"
+        itemSemanticEditPolicyClassName="StructuredActivityNodeStructuredActivityContentPaneCompartment4ItemSemanticEditPolicy"
+        notationViewFactoryClassName="StructuredActivityNodeStructuredActivityContentPaneCompartment4ViewFactory"
+        canonicalEditPolicyClassName="StructuredActivityNodeStructuredActivityContentPaneCompartment4CanonicalEditPolicy"
+        childNodes="//@diagram/@childNodes.67 //@diagram/@childNodes.27 //@diagram/@childNodes.28 //@diagram/@childNodes.29 //@diagram/@childNodes.30 //@diagram/@childNodes.31 //@diagram/@childNodes.32 //@diagram/@childNodes.33 //@diagram/@childNodes.34 //@diagram/@childNodes.35 //@diagram/@childNodes.36 //@diagram/@childNodes.37 //@diagram/@childNodes.38 //@diagram/@childNodes.39 //@diagram/@childNodes.40 //@diagram/@childNodes.41 //@diagram/@childNodes.68 //@diagram/@childNodes.69"
+        title="StructuredActivityContentPaneCompartment"
+        canCollapse="false"
+        needsTitle="false"
+        node="//@diagram/@childNodes.67"
         listLayout="false">
       <diagramRunTimeClass
           href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
@@ -4834,7 +5123,7 @@
         title="LoopNodeContentPaneCompartment"
         canCollapse="false"
         needsTitle="false"
-        node="//@diagram/@childNodes.68"
+        node="//@diagram/@childNodes.71"
         listLayout="false">
       <diagramRunTimeClass
           href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
@@ -4853,7 +5142,7 @@
         title="LoopNodeContentPaneCompartment"
         canCollapse="false"
         needsTitle="false"
-        node="//@diagram/@childNodes.69"
+        node="//@diagram/@childNodes.72"
         listLayout="false">
       <diagramRunTimeClass
           href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
@@ -4868,7 +5157,7 @@
         itemSemanticEditPolicyClassName="ConstraintPreconditionItemSemanticEditPolicy"
         notationViewFactoryClassName="ConstraintPreconditionViewFactory"
         canonicalEditPolicyClassName="ConstraintPreconditionCanonicalEditPolicy"
-        childNodes="//@diagram/@childNodes.70"
+        childNodes="//@diagram/@childNodes.73"
         title="precondition"
         canCollapse="false"
         needsTitle="false"
@@ -4886,7 +5175,7 @@
         itemSemanticEditPolicyClassName="ConstraintPostconditionItemSemanticEditPolicy"
         notationViewFactoryClassName="ConstraintPostconditionViewFactory"
         canonicalEditPolicyClassName="ConstraintPostconditionCanonicalEditPolicy"
-        childNodes="//@diagram/@childNodes.71"
+        childNodes="//@diagram/@childNodes.74"
         title="postcondition"
         canCollapse="false"
         needsTitle="false"
@@ -4966,7 +5255,7 @@
             xsi:type="gmfgen:ToolEntry"
             title="Send Signal Action"
             description="Create Send Signal Action"
-            genNodes="//@diagram/@childNodes.46 //@diagram/@childNodes.67"/>
+            genNodes="//@diagram/@childNodes.46 //@diagram/@childNodes.70"/>
         <entries
             xsi:type="gmfgen:ToolEntry"
             title="OpaqueBehavior"
@@ -5031,12 +5320,12 @@
             xsi:type="gmfgen:ToolEntry"
             title="Loop Node"
             description="Create Loop Node"
-            genNodes="//@diagram/@childNodes.68 //@diagram/@childNodes.69"/>
+            genNodes="//@diagram/@childNodes.71 //@diagram/@childNodes.72"/>
         <entries
             xsi:type="gmfgen:ToolEntry"
             title="Structured Activity Node"
             description="Create Structured Activity Node"
-            genNodes="//@diagram/@childNodes.25 //@diagram/@childNodes.26 //@diagram/@childNodes.66"/>
+            genNodes="//@diagram/@childNodes.25 //@diagram/@childNodes.26 //@diagram/@childNodes.66 //@diagram/@childNodes.67"/>
       </groups>
       <groups
           title="Objects"
@@ -5065,12 +5354,12 @@
               xsi:type="gmfgen:ToolEntry"
               title="Input Pin"
               description="Create Input Pin"
-              genNodes="//@diagram/@childNodes.17 //@diagram/@childNodes.18 //@diagram/@childNodes.19 //@diagram/@childNodes.22 //@diagram/@childNodes.24 //@diagram/@childNodes.42"/>
+              genNodes="//@diagram/@childNodes.17 //@diagram/@childNodes.18 //@diagram/@childNodes.19 //@diagram/@childNodes.22 //@diagram/@childNodes.24 //@diagram/@childNodes.42 //@diagram/@childNodes.68"/>
           <entries
               xsi:type="gmfgen:ToolEntry"
               title="Output Pin"
               description="Create Output Pin"
-              genNodes="//@diagram/@childNodes.9 //@diagram/@childNodes.15 //@diagram/@childNodes.21 //@diagram/@childNodes.43"/>
+              genNodes="//@diagram/@childNodes.9 //@diagram/@childNodes.15 //@diagram/@childNodes.21 //@diagram/@childNodes.43 //@diagram/@childNodes.69"/>
         </entries>
         <entries
             xsi:type="gmfgen:ToolEntry"
@@ -5453,8 +5742,62 @@
         parent="//@diagram/@childNodes.48"
         child="//@diagram/@childNodes.65"/>
     <childReferences
+        parent="//@diagram/@childNodes.67"
+        child="//@diagram/@childNodes.67"/>
+    <childReferences
+        parent="//@diagram/@childNodes.67"
+        child="//@diagram/@childNodes.27"/>
+    <childReferences
+        parent="//@diagram/@childNodes.67"
+        child="//@diagram/@childNodes.28"/>
+    <childReferences
+        parent="//@diagram/@childNodes.67"
+        child="//@diagram/@childNodes.29"/>
+    <childReferences
+        parent="//@diagram/@childNodes.67"
+        child="//@diagram/@childNodes.30"/>
+    <childReferences
+        parent="//@diagram/@childNodes.67"
+        child="//@diagram/@childNodes.31"/>
+    <childReferences
+        parent="//@diagram/@childNodes.67"
+        child="//@diagram/@childNodes.32"/>
+    <childReferences
+        parent="//@diagram/@childNodes.67"
+        child="//@diagram/@childNodes.33"/>
+    <childReferences
+        parent="//@diagram/@childNodes.67"
+        child="//@diagram/@childNodes.34"/>
+    <childReferences
+        parent="//@diagram/@childNodes.67"
+        child="//@diagram/@childNodes.35"/>
+    <childReferences
+        parent="//@diagram/@childNodes.67"
+        child="//@diagram/@childNodes.36"/>
+    <childReferences
+        parent="//@diagram/@childNodes.67"
+        child="//@diagram/@childNodes.37"/>
+    <childReferences
+        parent="//@diagram/@childNodes.67"
+        child="//@diagram/@childNodes.38"/>
+    <childReferences
+        parent="//@diagram/@childNodes.67"
+        child="//@diagram/@childNodes.39"/>
+    <childReferences
+        parent="//@diagram/@childNodes.67"
+        child="//@diagram/@childNodes.40"/>
+    <childReferences
+        parent="//@diagram/@childNodes.67"
+        child="//@diagram/@childNodes.41"/>
+    <childReferences
+        parent="//@diagram/@childNodes.67"
+        child="//@diagram/@childNodes.68"/>
+    <childReferences
+        parent="//@diagram/@childNodes.67"
+        child="//@diagram/@childNodes.69"/>
+    <childReferences
         parent="//@diagram/@childNodes.66"
-        child="//@diagram/@childNodes.26"/>
+        child="//@diagram/@childNodes.67"/>
     <childReferences
         parent="//@diagram/@childNodes.66"
         child="//@diagram/@childNodes.27"/>
@@ -5502,73 +5845,73 @@
         child="//@diagram/@childNodes.41"/>
     <childReferences
         parent="//@diagram/@childNodes.66"
-        child="//@diagram/@childNodes.42"/>
+        child="//@diagram/@childNodes.68"/>
     <childReferences
         parent="//@diagram/@childNodes.66"
-        child="//@diagram/@childNodes.43"/>
+        child="//@diagram/@childNodes.69"/>
     <childReferences
         parent="//@diagram/@childNodes.48"
         child="//@diagram/@childNodes.66"/>
     <childReferences
         parent="//@diagram/@childNodes.48"
-        child="//@diagram/@childNodes.67"/>
+        child="//@diagram/@childNodes.70"/>
     <childReferences
-        parent="//@diagram/@childNodes.68"
+        parent="//@diagram/@childNodes.71"
         child="//@diagram/@childNodes.26"/>
     <childReferences
-        parent="//@diagram/@childNodes.68"
+        parent="//@diagram/@childNodes.71"
         child="//@diagram/@childNodes.27"/>
     <childReferences
-        parent="//@diagram/@childNodes.68"
+        parent="//@diagram/@childNodes.71"
         child="//@diagram/@childNodes.28"/>
     <childReferences
-        parent="//@diagram/@childNodes.68"
+        parent="//@diagram/@childNodes.71"
         child="//@diagram/@childNodes.29"/>
     <childReferences
-        parent="//@diagram/@childNodes.68"
+        parent="//@diagram/@childNodes.71"
         child="//@diagram/@childNodes.30"/>
     <childReferences
-        parent="//@diagram/@childNodes.68"
+        parent="//@diagram/@childNodes.71"
         child="//@diagram/@childNodes.31"/>
     <childReferences
-        parent="//@diagram/@childNodes.68"
+        parent="//@diagram/@childNodes.71"
         child="//@diagram/@childNodes.32"/>
     <childReferences
-        parent="//@diagram/@childNodes.68"
+        parent="//@diagram/@childNodes.71"
         child="//@diagram/@childNodes.33"/>
     <childReferences
-        parent="//@diagram/@childNodes.68"
+        parent="//@diagram/@childNodes.71"
         child="//@diagram/@childNodes.34"/>
     <childReferences
-        parent="//@diagram/@childNodes.68"
+        parent="//@diagram/@childNodes.71"
         child="//@diagram/@childNodes.35"/>
     <childReferences
-        parent="//@diagram/@childNodes.68"
+        parent="//@diagram/@childNodes.71"
         child="//@diagram/@childNodes.36"/>
     <childReferences
-        parent="//@diagram/@childNodes.68"
+        parent="//@diagram/@childNodes.71"
         child="//@diagram/@childNodes.37"/>
     <childReferences
-        parent="//@diagram/@childNodes.68"
+        parent="//@diagram/@childNodes.71"
         child="//@diagram/@childNodes.38"/>
     <childReferences
-        parent="//@diagram/@childNodes.68"
+        parent="//@diagram/@childNodes.71"
         child="//@diagram/@childNodes.39"/>
     <childReferences
-        parent="//@diagram/@childNodes.68"
+        parent="//@diagram/@childNodes.71"
         child="//@diagram/@childNodes.40"/>
     <childReferences
-        parent="//@diagram/@childNodes.68"
+        parent="//@diagram/@childNodes.71"
         child="//@diagram/@childNodes.41"/>
     <childReferences
-        parent="//@diagram/@childNodes.68"
+        parent="//@diagram/@childNodes.71"
         child="//@diagram/@childNodes.42"/>
     <childReferences
-        parent="//@diagram/@childNodes.68"
+        parent="//@diagram/@childNodes.71"
         child="//@diagram/@childNodes.43"/>
     <childReferences
         parent="//@diagram/@childNodes.48"
-        child="//@diagram/@childNodes.68"/>
+        child="//@diagram/@childNodes.71"/>
     <childReferences
         parent="//@diagram/@childNodes.47"
         child="//@diagram/@childNodes.48"/>
@@ -5628,82 +5971,82 @@
         child="//@diagram/@childNodes.66"/>
     <childReferences
         parent="//@diagram/@childNodes.47"
-        child="//@diagram/@childNodes.67"/>
+        child="//@diagram/@childNodes.70"/>
     <childReferences
         parent="//@diagram/@childNodes.47"
-        child="//@diagram/@childNodes.68"/>
+        child="//@diagram/@childNodes.71"/>
     <childReferences
         parent="//@diagram/@topLevelNodes.0"
         child="//@diagram/@childNodes.47"/>
     <childReferences
-        parent="//@diagram/@childNodes.69"
+        parent="//@diagram/@childNodes.72"
         child="//@diagram/@childNodes.26"/>
     <childReferences
-        parent="//@diagram/@childNodes.69"
+        parent="//@diagram/@childNodes.72"
         child="//@diagram/@childNodes.27"/>
     <childReferences
-        parent="//@diagram/@childNodes.69"
+        parent="//@diagram/@childNodes.72"
         child="//@diagram/@childNodes.28"/>
     <childReferences
-        parent="//@diagram/@childNodes.69"
+        parent="//@diagram/@childNodes.72"
         child="//@diagram/@childNodes.29"/>
     <childReferences
-        parent="//@diagram/@childNodes.69"
+        parent="//@diagram/@childNodes.72"
         child="//@diagram/@childNodes.30"/>
     <childReferences
-        parent="//@diagram/@childNodes.69"
+        parent="//@diagram/@childNodes.72"
         child="//@diagram/@childNodes.31"/>
     <childReferences
-        parent="//@diagram/@childNodes.69"
+        parent="//@diagram/@childNodes.72"
         child="//@diagram/@childNodes.32"/>
     <childReferences
-        parent="//@diagram/@childNodes.69"
+        parent="//@diagram/@childNodes.72"
         child="//@diagram/@childNodes.33"/>
     <childReferences
-        parent="//@diagram/@childNodes.69"
+        parent="//@diagram/@childNodes.72"
         child="//@diagram/@childNodes.34"/>
     <childReferences
-        parent="//@diagram/@childNodes.69"
+        parent="//@diagram/@childNodes.72"
         child="//@diagram/@childNodes.35"/>
     <childReferences
-        parent="//@diagram/@childNodes.69"
+        parent="//@diagram/@childNodes.72"
         child="//@diagram/@childNodes.36"/>
     <childReferences
-        parent="//@diagram/@childNodes.69"
+        parent="//@diagram/@childNodes.72"
         child="//@diagram/@childNodes.37"/>
     <childReferences
-        parent="//@diagram/@childNodes.69"
+        parent="//@diagram/@childNodes.72"
         child="//@diagram/@childNodes.38"/>
     <childReferences
-        parent="//@diagram/@childNodes.69"
+        parent="//@diagram/@childNodes.72"
         child="//@diagram/@childNodes.39"/>
     <childReferences
-        parent="//@diagram/@childNodes.69"
+        parent="//@diagram/@childNodes.72"
         child="//@diagram/@childNodes.40"/>
     <childReferences
-        parent="//@diagram/@childNodes.69"
+        parent="//@diagram/@childNodes.72"
         child="//@diagram/@childNodes.41"/>
     <childReferences
-        parent="//@diagram/@childNodes.69"
+        parent="//@diagram/@childNodes.72"
         child="//@diagram/@childNodes.42"/>
     <childReferences
-        parent="//@diagram/@childNodes.69"
+        parent="//@diagram/@childNodes.72"
         child="//@diagram/@childNodes.43"/>
     <childReferences
         parent="//@diagram/@topLevelNodes.0"
-        child="//@diagram/@childNodes.69"/>
+        child="//@diagram/@childNodes.72"/>
     <childReferences
         parent="//@diagram"
         child="//@diagram/@topLevelNodes.0"/>
     <childReferences
         parent="//@diagram/@topLevelNodes.1"
-        child="//@diagram/@childNodes.70"/>
+        child="//@diagram/@childNodes.73"/>
     <childReferences
         parent="//@diagram"
         child="//@diagram/@topLevelNodes.1"/>
     <childReferences
         parent="//@diagram/@topLevelNodes.2"
-        child="//@diagram/@childNodes.71"/>
+        child="//@diagram/@childNodes.74"/>
     <childReferences
         parent="//@diagram"
         child="//@diagram/@topLevelNodes.2"/>
@@ -6518,6 +6861,42 @@
         groupIcon="icons/incomingLinksNavigatorGroup.gif"/>
     <childReferences
         parent="//@diagram/@links.0"
+        child="//@diagram/@childNodes.70"
+        referenceType="out_target"
+        groupName="target"
+        groupIcon="icons/linkTargetNavigatorGroup.gif"/>
+    <childReferences
+        parent="//@diagram/@childNodes.70"
+        child="//@diagram/@links.0"
+        referenceType="in_source"
+        groupName="incoming links"
+        groupIcon="icons/incomingLinksNavigatorGroup.gif"/>
+    <childReferences
+        parent="//@diagram/@links.0"
+        child="//@diagram/@childNodes.71"
+        referenceType="out_target"
+        groupName="target"
+        groupIcon="icons/linkTargetNavigatorGroup.gif"/>
+    <childReferences
+        parent="//@diagram/@childNodes.71"
+        child="//@diagram/@links.0"
+        referenceType="in_source"
+        groupName="incoming links"
+        groupIcon="icons/incomingLinksNavigatorGroup.gif"/>
+    <childReferences
+        parent="//@diagram/@links.0"
+        child="//@diagram/@childNodes.72"
+        referenceType="out_target"
+        groupName="target"
+        groupIcon="icons/linkTargetNavigatorGroup.gif"/>
+    <childReferences
+        parent="//@diagram/@childNodes.72"
+        child="//@diagram/@links.0"
+        referenceType="in_source"
+        groupName="incoming links"
+        groupIcon="icons/incomingLinksNavigatorGroup.gif"/>
+    <childReferences
+        parent="//@diagram/@links.0"
         child="//@diagram/@childNodes.0"
         referenceType="in_source"
         groupName="source"
@@ -7316,6 +7695,42 @@
         groupIcon="icons/linkSourceNavigatorGroup.gif"/>
     <childReferences
         parent="//@diagram/@childNodes.69"
+        child="//@diagram/@links.0"
+        referenceType="out_target"
+        groupName="outgoing links"
+        groupIcon="icons/outgoingLinksNavigatorGroup.gif"/>
+    <childReferences
+        parent="//@diagram/@links.0"
+        child="//@diagram/@childNodes.70"
+        referenceType="in_source"
+        groupName="source"
+        groupIcon="icons/linkSourceNavigatorGroup.gif"/>
+    <childReferences
+        parent="//@diagram/@childNodes.70"
+        child="//@diagram/@links.0"
+        referenceType="out_target"
+        groupName="outgoing links"
+        groupIcon="icons/outgoingLinksNavigatorGroup.gif"/>
+    <childReferences
+        parent="//@diagram/@links.0"
+        child="//@diagram/@childNodes.71"
+        referenceType="in_source"
+        groupName="source"
+        groupIcon="icons/linkSourceNavigatorGroup.gif"/>
+    <childReferences
+        parent="//@diagram/@childNodes.71"
+        child="//@diagram/@links.0"
+        referenceType="out_target"
+        groupName="outgoing links"
+        groupIcon="icons/outgoingLinksNavigatorGroup.gif"/>
+    <childReferences
+        parent="//@diagram/@links.0"
+        child="//@diagram/@childNodes.72"
+        referenceType="in_source"
+        groupName="source"
+        groupIcon="icons/linkSourceNavigatorGroup.gif"/>
+    <childReferences
+        parent="//@diagram/@childNodes.72"
         child="//@diagram/@links.0"
         referenceType="out_target"
         groupName="outgoing links"
@@ -8131,6 +8546,42 @@
         groupIcon="icons/incomingLinksNavigatorGroup.gif"/>
     <childReferences
         parent="//@diagram/@links.1"
+        child="//@diagram/@childNodes.70"
+        referenceType="out_target"
+        groupName="target"
+        groupIcon="icons/linkTargetNavigatorGroup.gif"/>
+    <childReferences
+        parent="//@diagram/@childNodes.70"
+        child="//@diagram/@links.1"
+        referenceType="in_source"
+        groupName="incoming links"
+        groupIcon="icons/incomingLinksNavigatorGroup.gif"/>
+    <childReferences
+        parent="//@diagram/@links.1"
+        child="//@diagram/@childNodes.71"
+        referenceType="out_target"
+        groupName="target"
+        groupIcon="icons/linkTargetNavigatorGroup.gif"/>
+    <childReferences
+        parent="//@diagram/@childNodes.71"
+        child="//@diagram/@links.1"
+        referenceType="in_source"
+        groupName="incoming links"
+        groupIcon="icons/incomingLinksNavigatorGroup.gif"/>
+    <childReferences
+        parent="//@diagram/@links.1"
+        child="//@diagram/@childNodes.72"
+        referenceType="out_target"
+        groupName="target"
+        groupIcon="icons/linkTargetNavigatorGroup.gif"/>
+    <childReferences
+        parent="//@diagram/@childNodes.72"
+        child="//@diagram/@links.1"
+        referenceType="in_source"
+        groupName="incoming links"
+        groupIcon="icons/incomingLinksNavigatorGroup.gif"/>
+    <childReferences
+        parent="//@diagram/@links.1"
         child="//@diagram/@childNodes.0"
         referenceType="in_source"
         groupName="source"
@@ -8929,6 +9380,42 @@
         groupIcon="icons/linkSourceNavigatorGroup.gif"/>
     <childReferences
         parent="//@diagram/@childNodes.69"
+        child="//@diagram/@links.1"
+        referenceType="out_target"
+        groupName="outgoing links"
+        groupIcon="icons/outgoingLinksNavigatorGroup.gif"/>
+    <childReferences
+        parent="//@diagram/@links.1"
+        child="//@diagram/@childNodes.70"
+        referenceType="in_source"
+        groupName="source"
+        groupIcon="icons/linkSourceNavigatorGroup.gif"/>
+    <childReferences
+        parent="//@diagram/@childNodes.70"
+        child="//@diagram/@links.1"
+        referenceType="out_target"
+        groupName="outgoing links"
+        groupIcon="icons/outgoingLinksNavigatorGroup.gif"/>
+    <childReferences
+        parent="//@diagram/@links.1"
+        child="//@diagram/@childNodes.71"
+        referenceType="in_source"
+        groupName="source"
+        groupIcon="icons/linkSourceNavigatorGroup.gif"/>
+    <childReferences
+        parent="//@diagram/@childNodes.71"
+        child="//@diagram/@links.1"
+        referenceType="out_target"
+        groupName="outgoing links"
+        groupIcon="icons/outgoingLinksNavigatorGroup.gif"/>
+    <childReferences
+        parent="//@diagram/@links.1"
+        child="//@diagram/@childNodes.72"
+        referenceType="in_source"
+        groupName="source"
+        groupIcon="icons/linkSourceNavigatorGroup.gif"/>
+    <childReferences
+        parent="//@diagram/@childNodes.72"
         child="//@diagram/@links.1"
         referenceType="out_target"
         groupName="outgoing links"
@@ -9276,24 +9763,36 @@
         groupIcon="icons/outgoingLinksNavigatorGroup.gif"/>
     <childReferences
         parent="//@diagram/@links.2"
-        child="//@diagram/@childNodes.68"
+        child="//@diagram/@childNodes.70"
         referenceType="in_source"
         groupName="source"
         groupIcon="icons/linkSourceNavigatorGroup.gif"/>
     <childReferences
-        parent="//@diagram/@childNodes.68"
+        parent="//@diagram/@childNodes.70"
         child="//@diagram/@links.2"
         referenceType="out_target"
         groupName="outgoing links"
         groupIcon="icons/outgoingLinksNavigatorGroup.gif"/>
     <childReferences
         parent="//@diagram/@links.2"
-        child="//@diagram/@childNodes.69"
+        child="//@diagram/@childNodes.71"
         referenceType="in_source"
         groupName="source"
         groupIcon="icons/linkSourceNavigatorGroup.gif"/>
     <childReferences
-        parent="//@diagram/@childNodes.69"
+        parent="//@diagram/@childNodes.71"
+        child="//@diagram/@links.2"
+        referenceType="out_target"
+        groupName="outgoing links"
+        groupIcon="icons/outgoingLinksNavigatorGroup.gif"/>
+    <childReferences
+        parent="//@diagram/@links.2"
+        child="//@diagram/@childNodes.72"
+        referenceType="in_source"
+        groupName="source"
+        groupIcon="icons/linkSourceNavigatorGroup.gif"/>
+    <childReferences
+        parent="//@diagram/@childNodes.72"
         child="//@diagram/@links.2"
         referenceType="out_target"
         groupName="outgoing links"
@@ -9641,24 +10140,36 @@
         groupIcon="icons/outgoingLinksNavigatorGroup.gif"/>
     <childReferences
         parent="//@diagram/@links.3"
-        child="//@diagram/@childNodes.68"
+        child="//@diagram/@childNodes.70"
         referenceType="in_source"
         groupName="source"
         groupIcon="icons/linkSourceNavigatorGroup.gif"/>
     <childReferences
-        parent="//@diagram/@childNodes.68"
+        parent="//@diagram/@childNodes.70"
         child="//@diagram/@links.3"
         referenceType="out_target"
         groupName="outgoing links"
         groupIcon="icons/outgoingLinksNavigatorGroup.gif"/>
     <childReferences
         parent="//@diagram/@links.3"
-        child="//@diagram/@childNodes.69"
+        child="//@diagram/@childNodes.71"
         referenceType="in_source"
         groupName="source"
         groupIcon="icons/linkSourceNavigatorGroup.gif"/>
     <childReferences
-        parent="//@diagram/@childNodes.69"
+        parent="//@diagram/@childNodes.71"
+        child="//@diagram/@links.3"
+        referenceType="out_target"
+        groupName="outgoing links"
+        groupIcon="icons/outgoingLinksNavigatorGroup.gif"/>
+    <childReferences
+        parent="//@diagram/@links.3"
+        child="//@diagram/@childNodes.72"
+        referenceType="in_source"
+        groupName="source"
+        groupIcon="icons/linkSourceNavigatorGroup.gif"/>
+    <childReferences
+        parent="//@diagram/@childNodes.72"
         child="//@diagram/@links.3"
         referenceType="out_target"
         groupName="outgoing links"
@@ -9933,6 +10444,30 @@
         groupName="outgoing links"
         groupIcon="icons/outgoingLinksNavigatorGroup.gif"/>
     <childReferences
+        parent="//@diagram/@links.4"
+        child="//@diagram/@childNodes.68"
+        referenceType="in_source"
+        groupName="source"
+        groupIcon="icons/linkSourceNavigatorGroup.gif"/>
+    <childReferences
+        parent="//@diagram/@childNodes.68"
+        child="//@diagram/@links.4"
+        referenceType="out_target"
+        groupName="outgoing links"
+        groupIcon="icons/outgoingLinksNavigatorGroup.gif"/>
+    <childReferences
+        parent="//@diagram/@links.4"
+        child="//@diagram/@childNodes.69"
+        referenceType="in_source"
+        groupName="source"
+        groupIcon="icons/linkSourceNavigatorGroup.gif"/>
+    <childReferences
+        parent="//@diagram/@childNodes.69"
+        child="//@diagram/@links.4"
+        referenceType="out_target"
+        groupName="outgoing links"
+        groupIcon="icons/outgoingLinksNavigatorGroup.gif"/>
+    <childReferences
         parent="//@diagram"
         child="//@diagram/@links.5"
         groupName="links"
@@ -10251,24 +10786,36 @@
         groupIcon="icons/incomingLinksNavigatorGroup.gif"/>
     <childReferences
         parent="//@diagram/@links.5"
-        child="//@diagram/@childNodes.68"
+        child="//@diagram/@childNodes.70"
         referenceType="out_target"
         groupName="target"
         groupIcon="icons/linkTargetNavigatorGroup.gif"/>
     <childReferences
-        parent="//@diagram/@childNodes.68"
+        parent="//@diagram/@childNodes.70"
         child="//@diagram/@links.5"
         referenceType="in_source"
         groupName="incoming links"
         groupIcon="icons/incomingLinksNavigatorGroup.gif"/>
     <childReferences
         parent="//@diagram/@links.5"
-        child="//@diagram/@childNodes.69"
+        child="//@diagram/@childNodes.71"
         referenceType="out_target"
         groupName="target"
         groupIcon="icons/linkTargetNavigatorGroup.gif"/>
     <childReferences
-        parent="//@diagram/@childNodes.69"
+        parent="//@diagram/@childNodes.71"
+        child="//@diagram/@links.5"
+        referenceType="in_source"
+        groupName="incoming links"
+        groupIcon="icons/incomingLinksNavigatorGroup.gif"/>
+    <childReferences
+        parent="//@diagram/@links.5"
+        child="//@diagram/@childNodes.72"
+        referenceType="out_target"
+        groupName="target"
+        groupIcon="icons/linkTargetNavigatorGroup.gif"/>
+    <childReferences
+        parent="//@diagram/@childNodes.72"
         child="//@diagram/@links.5"
         referenceType="in_source"
         groupName="incoming links"
@@ -10587,24 +11134,36 @@
         groupIcon="icons/outgoingLinksNavigatorGroup.gif"/>
     <childReferences
         parent="//@diagram/@links.5"
-        child="//@diagram/@childNodes.68"
+        child="//@diagram/@childNodes.70"
         referenceType="in_source"
         groupName="source"
         groupIcon="icons/linkSourceNavigatorGroup.gif"/>
     <childReferences
-        parent="//@diagram/@childNodes.68"
+        parent="//@diagram/@childNodes.70"
         child="//@diagram/@links.5"
         referenceType="out_target"
         groupName="outgoing links"
         groupIcon="icons/outgoingLinksNavigatorGroup.gif"/>
     <childReferences
         parent="//@diagram/@links.5"
-        child="//@diagram/@childNodes.69"
+        child="//@diagram/@childNodes.71"
         referenceType="in_source"
         groupName="source"
         groupIcon="icons/linkSourceNavigatorGroup.gif"/>
     <childReferences
-        parent="//@diagram/@childNodes.69"
+        parent="//@diagram/@childNodes.71"
+        child="//@diagram/@links.5"
+        referenceType="out_target"
+        groupName="outgoing links"
+        groupIcon="icons/outgoingLinksNavigatorGroup.gif"/>
+    <childReferences
+        parent="//@diagram/@links.5"
+        child="//@diagram/@childNodes.72"
+        referenceType="in_source"
+        groupName="source"
+        groupIcon="icons/linkSourceNavigatorGroup.gif"/>
+    <childReferences
+        parent="//@diagram/@childNodes.72"
         child="//@diagram/@links.5"
         referenceType="out_target"
         groupName="outgoing links"
@@ -10636,9 +11195,9 @@
   <expressionProviders>
     <providers
         xsi:type="gmfgen:GenExpressionInterpreter"
-        expressions="//@diagram/@topLevelNodes.0/@modelFacet/@modelElementInitializer/@initializers.0 //@diagram/@childNodes.0/@modelFacet/@modelElementSelector //@diagram/@childNodes.0/@modelFacet/@modelElementInitializer/@initializers.0 //@diagram/@childNodes.1/@modelFacet/@modelElementSelector //@diagram/@childNodes.1/@modelFacet/@modelElementInitializer/@initializers.1 //@diagram/@childNodes.3/@modelFacet/@modelElementInitializer/@initializers.0 //@diagram/@childNodes.4/@modelFacet/@modelElementInitializer/@initializers.0 //@diagram/@childNodes.6/@modelFacet/@modelElementInitializer/@initializers.0 //@diagram/@childNodes.7/@modelFacet/@modelElementInitializer/@initializers.0 //@diagram/@childNodes.8/@modelFacet/@modelElementInitializer/@initializers.0 //@diagram/@childNodes.9/@modelFacet/@modelElementInitializer/@initializers.0 //@diagram/@childNodes.13/@modelFacet/@modelElementSelector //@diagram/@childNodes.13/@modelFacet/@modelElementInitializer/@initializers.0 //@diagram/@childNodes.14/@modelFacet/@modelElementInitializer/@initializers.0 //@diagram/@childNodes.16/@modelFacet/@modelElementInitializer/@initializers.0 //@diagram/@childNodes.17/@modelFacet/@modelElementInitializer/@initializers.0 //@diagram/@childNodes.20/@modelFacet/@modelElementInitializer/@initializers.0 //@diagram/@childNodes.23/@modelFacet/@modelElementInitializer/@initializers.0 //@diagram/@childNodes.25/@modelFacet/@modelElementSelector //@diagram/@childNodes.42/@modelFacet/@modelElementInitializer/@initializers.0 //@diagram/@childNodes.43/@modelFacet/@modelElementInitializer/@initializers.0 //@diagram/@childNodes.45/@modelFacet/@modelElementInitializer/@initializers.0 //@diagram/@childNodes.46/@modelFacet/@modelElementInitializer/@initializers.0 //@diagram/@childNodes.47/@modelFacet/@modelElementInitializer/@initializers.0 //@diagram/@childNodes.70/@modelFacet/@modelElementInitializer/@initializers.0 //@diagram/@childNodes.71/@modelFacet/@modelElementInitializer/@initializers.0 //@diagram/@links.0/@creationConstraints/@sourceEnd //@diagram/@links.0/@creationConstraints/@targetEnd"/>
+        expressions="//@diagram/@topLevelNodes.0/@modelFacet/@modelElementInitializer/@initializers.0 //@diagram/@childNodes.0/@modelFacet/@modelElementSelector //@diagram/@childNodes.0/@modelFacet/@modelElementInitializer/@initializers.0 //@diagram/@childNodes.1/@modelFacet/@modelElementSelector //@diagram/@childNodes.1/@modelFacet/@modelElementInitializer/@initializers.1 //@diagram/@childNodes.2/@modelFacet/@modelElementSelector //@diagram/@childNodes.3/@modelFacet/@modelElementSelector //@diagram/@childNodes.3/@modelFacet/@modelElementInitializer/@initializers.0 //@diagram/@childNodes.4/@modelFacet/@modelElementSelector //@diagram/@childNodes.4/@modelFacet/@modelElementInitializer/@initializers.0 //@diagram/@childNodes.5/@modelFacet/@modelElementSelector //@diagram/@childNodes.6/@modelFacet/@modelElementSelector //@diagram/@childNodes.6/@modelFacet/@modelElementInitializer/@initializers.0 //@diagram/@childNodes.7/@modelFacet/@modelElementSelector //@diagram/@childNodes.7/@modelFacet/@modelElementInitializer/@initializers.0 //@diagram/@childNodes.8/@modelFacet/@modelElementSelector //@diagram/@childNodes.8/@modelFacet/@modelElementInitializer/@initializers.0 //@diagram/@childNodes.9/@modelFacet/@modelElementInitializer/@initializers.0 //@diagram/@childNodes.10/@modelFacet/@modelElementSelector //@diagram/@childNodes.11/@modelFacet/@modelElementSelector //@diagram/@childNodes.12/@modelFacet/@modelElementSelector //@diagram/@childNodes.13/@modelFacet/@modelElementSelector //@diagram/@childNodes.13/@modelFacet/@modelElementInitializer/@initializers.0 //@diagram/@childNodes.14/@modelFacet/@modelElementSelector //@diagram/@childNodes.14/@modelFacet/@modelElementInitializer/@initializers.0 //@diagram/@childNodes.16/@modelFacet/@modelElementSelector //@diagram/@childNodes.16/@modelFacet/@modelElementInitializer/@initializers.0 //@diagram/@childNodes.17/@modelFacet/@modelElementInitializer/@initializers.0 //@diagram/@childNodes.20/@modelFacet/@modelElementSelector //@diagram/@childNodes.20/@modelFacet/@modelElementInitializer/@initializers.0 //@diagram/@childNodes.23/@modelFacet/@modelElementSelector //@diagram/@childNodes.23/@modelFacet/@modelElementInitializer/@initializers.0 //@diagram/@childNodes.25/@modelFacet/@modelElementSelector //@diagram/@childNodes.42/@modelFacet/@modelElementInitializer/@initializers.0 //@diagram/@childNodes.43/@modelFacet/@modelElementInitializer/@initializers.0 //@diagram/@childNodes.45/@modelFacet/@modelElementInitializer/@initializers.0 //@diagram/@childNodes.46/@modelFacet/@modelElementSelector //@diagram/@childNodes.46/@modelFacet/@modelElementInitializer/@initializers.0 //@diagram/@childNodes.47/@modelFacet/@modelElementInitializer/@initializers.0 //@diagram/@childNodes.49/@modelFacet/@modelElementSelector //@diagram/@childNodes.49/@modelFacet/@modelElementInitializer/@initializers.0 //@diagram/@childNodes.50/@modelFacet/@modelElementSelector //@diagram/@childNodes.50/@modelFacet/@modelElementInitializer/@initializers.1 //@diagram/@childNodes.51/@modelFacet/@modelElementSelector //@diagram/@childNodes.52/@modelFacet/@modelElementSelector //@diagram/@childNodes.52/@modelFacet/@modelElementInitializer/@initializers.0 //@diagram/@childNodes.53/@modelFacet/@modelElementSelector //@diagram/@childNodes.53/@modelFacet/@modelElementInitializer/@initializers.0 //@diagram/@childNodes.54/@modelFacet/@modelElementSelector //@diagram/@childNodes.55/@modelFacet/@modelElementSelector //@diagram/@childNodes.55/@modelFacet/@modelElementInitializer/@initializers.0 //@diagram/@childNodes.56/@modelFacet/@modelElementSelector //@diagram/@childNodes.56/@modelFacet/@modelElementInitializer/@initializers.0 //@diagram/@childNodes.57/@modelFacet/@modelElementSelector //@diagram/@childNodes.57/@modelFacet/@modelElementInitializer/@initializers.0 //@diagram/@childNodes.58/@modelFacet/@modelElementSelector //@diagram/@childNodes.59/@modelFacet/@modelElementSelector //@diagram/@childNodes.60/@modelFacet/@modelElementSelector //@diagram/@childNodes.61/@modelFacet/@modelElementSelector //@diagram/@childNodes.61/@modelFacet/@modelElementInitializer/@initializers.0 //@diagram/@childNodes.62/@modelFacet/@modelElementSelector //@diagram/@childNodes.62/@modelFacet/@modelElementInitializer/@initializers.0 //@diagram/@childNodes.63/@modelFacet/@modelElementSelector //@diagram/@childNodes.63/@modelFacet/@modelElementInitializer/@initializers.0 //@diagram/@childNodes.64/@modelFacet/@modelElementSelector //@diagram/@childNodes.64/@modelFacet/@modelElementInitializer/@initializers.0 //@diagram/@childNodes.65/@modelFacet/@modelElementSelector //@diagram/@childNodes.65/@modelFacet/@modelElementInitializer/@initializers.0 //@diagram/@childNodes.66/@modelFacet/@modelElementSelector //@diagram/@childNodes.68/@modelFacet/@modelElementInitializer/@initializers.0 //@diagram/@childNodes.69/@modelFacet/@modelElementInitializer/@initializers.0 //@diagram/@childNodes.70/@modelFacet/@modelElementSelector //@diagram/@childNodes.70/@modelFacet/@modelElementInitializer/@initializers.0 //@diagram/@childNodes.71/@modelFacet/@modelElementSelector //@diagram/@childNodes.72/@modelFacet/@modelElementSelector //@diagram/@childNodes.73/@modelFacet/@modelElementInitializer/@initializers.0 //@diagram/@childNodes.74/@modelFacet/@modelElementInitializer/@initializers.0 //@diagram/@links.0/@creationConstraints/@sourceEnd //@diagram/@links.0/@creationConstraints/@targetEnd"/>
     <providers
         xsi:type="gmfgen:GenJavaExpressionProvider"
-        expressions="//@diagram/@childNodes.1/@modelFacet/@modelElementInitializer/@initializers.0 //@diagram/@topLevelNodes.1/@modelFacet/@modelElementSelector //@diagram/@topLevelNodes.2/@modelFacet/@modelElementSelector"/>
+        expressions="//@diagram/@childNodes.1/@modelFacet/@modelElementInitializer/@initializers.0 //@diagram/@childNodes.50/@modelFacet/@modelElementInitializer/@initializers.0 //@diagram/@topLevelNodes.1/@modelFacet/@modelElementSelector //@diagram/@topLevelNodes.2/@modelFacet/@modelElementSelector"/>
   </expressionProviders>
 </gmfgen:GenEditorGenerator>

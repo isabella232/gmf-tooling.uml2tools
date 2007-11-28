@@ -454,6 +454,27 @@ public class UMLEditPartFactory implements EditPartFactory {
 			case StructuredActivityNode3EditPart.VISUAL_ID:
 				return new StructuredActivityNode3EditPart(view);
 
+			case StructuredActivityNode4EditPart.VISUAL_ID:
+				return new StructuredActivityNode4EditPart(view);
+
+			case InputPin7EditPart.VISUAL_ID:
+				return new InputPin7EditPart(view);
+
+			case InputPinName7EditPart.VISUAL_ID:
+				return new InputPinName7EditPart(view);
+
+			case InputPinOrdering7EditPart.VISUAL_ID:
+				return new InputPinOrdering7EditPart(view);
+
+			case OutputPin5EditPart.VISUAL_ID:
+				return new OutputPin5EditPart(view);
+
+			case OutputPinName5EditPart.VISUAL_ID:
+				return new OutputPinName5EditPart(view);
+
+			case OutputPinOrdering5EditPart.VISUAL_ID:
+				return new OutputPinOrdering5EditPart(view);
+
 			case SendSignalAction2EditPart.VISUAL_ID:
 				return new SendSignalAction2EditPart(view);
 
@@ -480,6 +501,9 @@ public class UMLEditPartFactory implements EditPartFactory {
 
 			case StructuredActivityNodeStructuredActivityContentPaneCompartment3EditPart.VISUAL_ID:
 				return new StructuredActivityNodeStructuredActivityContentPaneCompartment3EditPart(view);
+
+			case StructuredActivityNodeStructuredActivityContentPaneCompartment4EditPart.VISUAL_ID:
+				return new StructuredActivityNodeStructuredActivityContentPaneCompartment4EditPart(view);
 
 			case LoopNodeLoopNodeContentPaneCompartment2EditPart.VISUAL_ID:
 				return new LoopNodeLoopNodeContentPaneCompartment2EditPart(view);

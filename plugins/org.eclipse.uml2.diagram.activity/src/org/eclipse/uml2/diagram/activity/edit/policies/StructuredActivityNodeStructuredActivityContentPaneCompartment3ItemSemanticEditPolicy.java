@@ -15,11 +15,14 @@ import org.eclipse.uml2.diagram.activity.edit.commands.DecisionNode2CreateComman
 import org.eclipse.uml2.diagram.activity.edit.commands.FlowFinalNode2CreateCommand;
 import org.eclipse.uml2.diagram.activity.edit.commands.ForkNode2CreateCommand;
 import org.eclipse.uml2.diagram.activity.edit.commands.InputPin6CreateCommand;
+import org.eclipse.uml2.diagram.activity.edit.commands.InputPin7CreateCommand;
 import org.eclipse.uml2.diagram.activity.edit.commands.JoinNode2CreateCommand;
 import org.eclipse.uml2.diagram.activity.edit.commands.OpaqueAction2CreateCommand;
 import org.eclipse.uml2.diagram.activity.edit.commands.OutputPin4CreateCommand;
+import org.eclipse.uml2.diagram.activity.edit.commands.OutputPin5CreateCommand;
 import org.eclipse.uml2.diagram.activity.edit.commands.Pin2CreateCommand;
 import org.eclipse.uml2.diagram.activity.edit.commands.StructuredActivityNode2CreateCommand;
+import org.eclipse.uml2.diagram.activity.edit.commands.StructuredActivityNode4CreateCommand;
 import org.eclipse.uml2.diagram.activity.providers.UMLElementTypes;
 import org.eclipse.uml2.uml.UMLPackage;
 
@@ -32,11 +35,11 @@ public class StructuredActivityNodeStructuredActivityContentPaneCompartment3Item
 	 * @generated
 	 */
 	protected Command getCreateCommand(CreateElementRequest req) {
-		if (UMLElementTypes.StructuredActivityNode_3009 == req.getElementType()) {
+		if (UMLElementTypes.StructuredActivityNode_3079 == req.getElementType()) {
 			if (req.getContainmentFeature() == null) {
 				req.setContainmentFeature(UMLPackage.eINSTANCE.getStructuredActivityNode_Node());
 			}
-			return getGEFWrapper(new StructuredActivityNode2CreateCommand(req));
+			return getGEFWrapper(new StructuredActivityNode4CreateCommand(req));
 		}
 		if (UMLElementTypes.OpaqueAction_3011 == req.getElementType()) {
 			if (req.getContainmentFeature() == null) {
@@ -128,17 +131,17 @@ public class StructuredActivityNodeStructuredActivityContentPaneCompartment3Item
 			}
 			return getGEFWrapper(new CentralBufferNode2CreateCommand(req));
 		}
-		if (UMLElementTypes.InputPin_3054 == req.getElementType()) {
+		if (UMLElementTypes.InputPin_3080 == req.getElementType()) {
 			if (req.getContainmentFeature() == null) {
 				req.setContainmentFeature(UMLPackage.eINSTANCE.getStructuredActivityNode_Node());
 			}
-			return getGEFWrapper(new InputPin6CreateCommand(req));
+			return getGEFWrapper(new InputPin7CreateCommand(req));
 		}
-		if (UMLElementTypes.OutputPin_3055 == req.getElementType()) {
+		if (UMLElementTypes.OutputPin_3081 == req.getElementType()) {
 			if (req.getContainmentFeature() == null) {
 				req.setContainmentFeature(UMLPackage.eINSTANCE.getStructuredActivityNode_Node());
 			}
-			return getGEFWrapper(new OutputPin4CreateCommand(req));
+			return getGEFWrapper(new OutputPin5CreateCommand(req));
 		}
 		return super.getCreateCommand(req);
 	}

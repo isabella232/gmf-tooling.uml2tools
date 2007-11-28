@@ -71,7 +71,7 @@ public class InitialNode2CreateCommand extends CreateElementCommand {
 			if (container != null) {
 				container.getNodes().add(newElement);
 			}
-			
+
 			ActivityPartition partition = (ActivityPartition) getElementToEditGen();
 			newElement.getInPartitions().add(partition);
 		}
