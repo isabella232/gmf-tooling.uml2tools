@@ -3,8 +3,10 @@ package org.eclipse.uml2.diagram.statemachine.edit.parts;
 import org.eclipse.draw2d.IFigure;
 import org.eclipse.draw2d.Label;
 import org.eclipse.draw2d.MarginBorder;
+import org.eclipse.draw2d.RectangleFigure;
 import org.eclipse.draw2d.RoundedRectangle;
 import org.eclipse.draw2d.StackLayout;
+import org.eclipse.draw2d.ToolbarLayout;
 import org.eclipse.draw2d.geometry.Dimension;
 import org.eclipse.gef.EditPart;
 import org.eclipse.gef.EditPolicy;
@@ -13,16 +15,24 @@ import org.eclipse.gef.commands.Command;
 import org.eclipse.gef.editpolicies.LayoutEditPolicy;
 import org.eclipse.gef.editpolicies.NonResizableEditPolicy;
 import org.eclipse.gef.requests.CreateRequest;
+import org.eclipse.gmf.runtime.diagram.core.edithelpers.CreateElementRequestAdapter;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart;
+import org.eclipse.gmf.runtime.diagram.ui.editparts.ITextAwareEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.ShapeNodeEditPart;
+import org.eclipse.gmf.runtime.diagram.ui.editpolicies.ConstrainedToolbarLayoutEditPolicy;
+import org.eclipse.gmf.runtime.diagram.ui.editpolicies.CreationEditPolicy;
 import org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles;
+import org.eclipse.gmf.runtime.diagram.ui.requests.CreateViewAndElementRequest;
 import org.eclipse.gmf.runtime.draw2d.ui.figures.ConstrainedToolbarLayout;
 import org.eclipse.gmf.runtime.draw2d.ui.figures.WrapLabel;
+import org.eclipse.gmf.runtime.emf.type.core.IElementType;
 import org.eclipse.gmf.runtime.gef.ui.figures.DefaultSizeNodeFigure;
 import org.eclipse.gmf.runtime.gef.ui.figures.NodeFigure;
 import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.uml2.diagram.statemachine.edit.policies.StateItemSemanticEditPolicy;
+import org.eclipse.uml2.diagram.statemachine.edit.policies.UMLTextSelectionEditPolicy;
 import org.eclipse.uml2.diagram.statemachine.part.UMLVisualIDRegistry;
+import org.eclipse.uml2.diagram.statemachine.providers.UMLElementTypes;
 
 /**
  * @generated
@@ -55,6 +65,31 @@ public class StateEditPart extends ShapeNodeEditPart {
 	 * @generated
 	 */
 	protected void createDefaultEditPolicies() {
+		installEditPolicy(EditPolicyRoles.CREATION_ROLE, new CreationEditPolicy() {
+
+			public Command getCommand(Request request) {
+				if (understandsRequest(request)) {
+					if (request instanceof CreateViewAndElementRequest) {
+						CreateElementRequestAdapter adapter = ((CreateViewAndElementRequest) request).getViewAndElementDescriptor().getCreateElementRequestAdapter();
+						IElementType type = (IElementType) adapter.getAdapter(IElementType.class);
+						if (type == UMLElementTypes.Behavior_3019) {
+							EditPart compartmentEditPart = getChildBySemanticHint(UMLVisualIDRegistry.getType(StateSimpleState_InternalActivitiesEditPart.VISUAL_ID));
+							return compartmentEditPart == null ? null : compartmentEditPart.getCommand(request);
+						}
+						if (type == UMLElementTypes.Behavior_3020) {
+							EditPart compartmentEditPart = getChildBySemanticHint(UMLVisualIDRegistry.getType(StateSimpleState_InternalActivitiesEditPart.VISUAL_ID));
+							return compartmentEditPart == null ? null : compartmentEditPart.getCommand(request);
+						}
+						if (type == UMLElementTypes.Behavior_3021) {
+							EditPart compartmentEditPart = getChildBySemanticHint(UMLVisualIDRegistry.getType(StateSimpleState_InternalActivitiesEditPart.VISUAL_ID));
+							return compartmentEditPart == null ? null : compartmentEditPart.getCommand(request);
+						}
+					}
+					return super.getCommand(request);
+				}
+				return null;
+			}
+		});
 		super.createDefaultEditPolicies();
 		installEditPolicy(EditPolicyRoles.SEMANTIC_ROLE, new StateItemSemanticEditPolicy());
 		installEditPolicy(EditPolicy.LAYOUT_ROLE, createLayoutEditPolicy());
@@ -66,22 +101,16 @@ public class StateEditPart extends ShapeNodeEditPart {
 	 * @generated
 	 */
 	protected LayoutEditPolicy createLayoutEditPolicy() {
-		LayoutEditPolicy lep = new LayoutEditPolicy() {
+
+		ConstrainedToolbarLayoutEditPolicy lep = new ConstrainedToolbarLayoutEditPolicy() {
 
 			protected EditPolicy createChildEditPolicy(EditPart child) {
-				EditPolicy result = child.getEditPolicy(EditPolicy.PRIMARY_DRAG_ROLE);
-				if (result == null) {
-					result = new NonResizableEditPolicy();
+				if (child.getEditPolicy(EditPolicy.PRIMARY_DRAG_ROLE) == null) {
+					if (child instanceof ITextAwareEditPart) {
+						return new UMLTextSelectionEditPolicy();
+					}
 				}
-				return result;
-			}
-
-			protected Command getMoveChildrenCommand(Request request) {
-				return null;
-			}
-
-			protected Command getCreateCommand(CreateRequest request) {
-				return null;
+				return super.createChildEditPolicy(child);
 			}
 		};
 		return lep;
@@ -110,6 +139,12 @@ public class StateEditPart extends ShapeNodeEditPart {
 			((StateNameEditPart) childEditPart).setLabel(getPrimaryShape().getFigureSimpleStateFigure_name());
 			return true;
 		}
+		if (childEditPart instanceof StateSimpleState_InternalActivitiesEditPart) {
+			IFigure pane = getPrimaryShape().getFigureSimpleStateFigure_InternalActivitiesCompartment();
+			setupContentPane(pane); // FIXME each comparment should handle his content pane in his own way 
+			pane.add(((StateSimpleState_InternalActivitiesEditPart) childEditPart).getFigure());
+			return true;
+		}
 		return false;
 	}
 
@@ -118,6 +153,11 @@ public class StateEditPart extends ShapeNodeEditPart {
 	 */
 	protected boolean removeFixedChild(EditPart childEditPart) {
 
+		if (childEditPart instanceof StateSimpleState_InternalActivitiesEditPart) {
+			IFigure pane = getPrimaryShape().getFigureSimpleStateFigure_InternalActivitiesCompartment();
+			pane.remove(((StateSimpleState_InternalActivitiesEditPart) childEditPart).getFigure());
+			return true;
+		}
 		return false;
 	}
 
@@ -146,6 +186,9 @@ public class StateEditPart extends ShapeNodeEditPart {
 	 */
 	protected IFigure getContentPaneFor(IGraphicalEditPart editPart) {
 
+		if (editPart instanceof StateSimpleState_InternalActivitiesEditPart) {
+			return getPrimaryShape().getFigureSimpleStateFigure_InternalActivitiesCompartment();
+		}
 		return super.getContentPaneFor(editPart);
 	}
 
@@ -153,7 +196,7 @@ public class StateEditPart extends ShapeNodeEditPart {
 	 * @generated
 	 */
 	protected NodeFigure createNodePlate() {
-		DefaultSizeNodeFigure result = new DefaultSizeNodeFigure(getMapMode().DPtoLP(60), getMapMode().DPtoLP(20));
+		DefaultSizeNodeFigure result = new DefaultSizeNodeFigure(getMapMode().DPtoLP(40), getMapMode().DPtoLP(40));
 		return result;
 	}
 
@@ -219,12 +262,24 @@ public class StateEditPart extends ShapeNodeEditPart {
 		/**
 		 * @generated
 		 */
+		private RectangleFigure fFigureSimpleStateFigure_InternalActivitiesCompartment;
+
+		/**
+		 * @generated
+		 */
 		public SimpleStateFigure() {
 
-			this.setLayoutManager(new StackLayout());
+			ToolbarLayout layoutThis = new ToolbarLayout();
+			layoutThis.setStretchMinorAxis(true);
+			layoutThis.setMinorAlignment(ToolbarLayout.ALIGN_CENTER);
+
+			layoutThis.setSpacing(5);
+			layoutThis.setVertical(true);
+
+			this.setLayoutManager(layoutThis);
+
 			this.setCornerDimensions(new Dimension(getMapMode().DPtoLP(18), getMapMode().DPtoLP(18)));
-			this.setPreferredSize(new Dimension(getMapMode().DPtoLP(60), getMapMode().DPtoLP(30)));
-			this.setBorder(new MarginBorder(getMapMode().DPtoLP(0), getMapMode().DPtoLP(4), getMapMode().DPtoLP(0), getMapMode().DPtoLP(4)));
+			this.setBorder(new MarginBorder(getMapMode().DPtoLP(4), getMapMode().DPtoLP(4), getMapMode().DPtoLP(4), getMapMode().DPtoLP(4)));
 			createContents();
 		}
 
@@ -237,6 +292,13 @@ public class StateEditPart extends ShapeNodeEditPart {
 			fFigureSimpleStateFigure_name.setText("");
 
 			this.add(fFigureSimpleStateFigure_name);
+
+			fFigureSimpleStateFigure_InternalActivitiesCompartment = new RectangleFigure();
+			fFigureSimpleStateFigure_InternalActivitiesCompartment.setOutline(false);
+
+			this.add(fFigureSimpleStateFigure_InternalActivitiesCompartment);
+
+			fFigureSimpleStateFigure_InternalActivitiesCompartment.setLayoutManager(new StackLayout());
 
 		}
 
@@ -264,6 +326,13 @@ public class StateEditPart extends ShapeNodeEditPart {
 		 */
 		public Label getFigureSimpleStateFigure_name() {
 			return fFigureSimpleStateFigure_name;
+		}
+
+		/**
+		 * @generated
+		 */
+		public RectangleFigure getFigureSimpleStateFigure_InternalActivitiesCompartment() {
+			return fFigureSimpleStateFigure_InternalActivitiesCompartment;
 		}
 
 	}

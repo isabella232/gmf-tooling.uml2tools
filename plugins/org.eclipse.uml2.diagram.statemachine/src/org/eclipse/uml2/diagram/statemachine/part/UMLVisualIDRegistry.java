@@ -5,6 +5,9 @@ import org.eclipse.emf.ecore.EAnnotation;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.gmf.runtime.notation.Diagram;
 import org.eclipse.gmf.runtime.notation.View;
+import org.eclipse.uml2.diagram.statemachine.edit.parts.Behavior2EditPart;
+import org.eclipse.uml2.diagram.statemachine.edit.parts.Behavior3EditPart;
+import org.eclipse.uml2.diagram.statemachine.edit.parts.BehaviorEditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.ConnectionPointReference2EditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.ConnectionPointReferenceEditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.ConnectionPointReferenceName2EditPart;
@@ -35,10 +38,14 @@ import org.eclipse.uml2.diagram.statemachine.edit.parts.StateMachineNameEditPart
 import org.eclipse.uml2.diagram.statemachine.edit.parts.StateName2EditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.StateName3EditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.StateNameEditPart;
+import org.eclipse.uml2.diagram.statemachine.edit.parts.StateSimpleState_InternalActivitiesEditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.TransitionEditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.TransitionNameEditPart;
 import org.eclipse.uml2.diagram.statemachine.expressions.UMLAbstractExpression;
 import org.eclipse.uml2.diagram.statemachine.expressions.UMLOCLFactory;
+import org.eclipse.uml2.uml.Behavior;
+import org.eclipse.uml2.uml.Element;
+import org.eclipse.uml2.uml.State;
 import org.eclipse.uml2.uml.StateMachine;
 import org.eclipse.uml2.uml.UMLPackage;
 
@@ -283,6 +290,17 @@ public class UMLVisualIDRegistry {
 				return Pseudostate8EditPart.VISUAL_ID;
 			}
 			break;
+		case StateSimpleState_InternalActivitiesEditPart.VISUAL_ID:
+			if (UMLPackage.eINSTANCE.getBehavior().isSuperTypeOf(domainElement.eClass()) && JavaConstraints.isEntryActivity((Behavior) domainElement).booleanValue()) {
+				return BehaviorEditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getBehavior().isSuperTypeOf(domainElement.eClass()) && JavaConstraints.isExitActivity((Behavior) domainElement).booleanValue()) {
+				return Behavior2EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getBehavior().isSuperTypeOf(domainElement.eClass()) && JavaConstraints.isDoActivity((Behavior) domainElement).booleanValue()) {
+				return Behavior3EditPart.VISUAL_ID;
+			}
+			break;
 		case RegionSubvertices2EditPart.VISUAL_ID:
 			if (UMLPackage.eINSTANCE.getState().isSuperTypeOf(domainElement.eClass()) && evaluate(State_3001_Constraint, domainElement)) {
 				return StateEditPart.VISUAL_ID;
@@ -378,6 +396,9 @@ public class UMLVisualIDRegistry {
 			if (StateNameEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
+			if (StateSimpleState_InternalActivitiesEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
 			break;
 		case State2EditPart.VISUAL_ID:
 			if (StateName3EditPart.VISUAL_ID == nodeVisualID) {
@@ -464,6 +485,17 @@ public class UMLVisualIDRegistry {
 				return true;
 			}
 			break;
+		case StateSimpleState_InternalActivitiesEditPart.VISUAL_ID:
+			if (BehaviorEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			if (Behavior2EditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			if (Behavior3EditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			break;
 		case RegionSubvertices2EditPart.VISUAL_ID:
 			if (StateEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
@@ -545,6 +577,55 @@ public class UMLVisualIDRegistry {
 	private static boolean evaluate(UMLAbstractExpression expression, Object element) {
 		Object result = expression.evaluate(element);
 		return result instanceof Boolean && ((Boolean) result).booleanValue();
+	}
+
+	/**
+	 * @generated
+	 */
+	private static class JavaConstraints {
+
+		/**
+		 * @generated NOT
+		 */
+		private static java.lang.Boolean isEntryActivity(Behavior self) {
+			Element owner = self.getOwner();
+			if (owner instanceof State) {
+				State state = (State) owner;
+				if (state.getEntry().equals(self)) {
+					return Boolean.TRUE;
+				}
+			}
+			return Boolean.FALSE;
+		}
+
+		/**
+		 * @generated NOT
+		 */
+		private static java.lang.Boolean isExitActivity(Behavior self) {
+			Element owner = self.getOwner();
+			if (owner instanceof State) {
+				State state = (State) owner;
+				if (state.getExit().equals(self)) {
+					return Boolean.TRUE;
+				}
+			}
+			return Boolean.FALSE;
+		}
+
+		/**
+		 * @generated NOT
+		 */
+		private static java.lang.Boolean isDoActivity(Behavior self) {
+			Element owner = self.getOwner();
+			if (owner instanceof State) {
+				State state = (State) owner;
+				if (state.getDoActivity().equals(self)) {
+					return Boolean.TRUE;
+				}
+			}
+			return Boolean.FALSE;
+		}
+
 	}
 
 	/**

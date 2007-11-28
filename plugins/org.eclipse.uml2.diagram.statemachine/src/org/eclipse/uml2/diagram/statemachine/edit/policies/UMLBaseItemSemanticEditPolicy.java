@@ -360,6 +360,12 @@ public class UMLBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 			}
 		}
 
+		/**
+		 * @generated
+		 */
+		private static class JavaConstraints {
+		}
+
 	}
 
 }

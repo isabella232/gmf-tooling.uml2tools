@@ -24,6 +24,7 @@ import org.eclipse.uml2.diagram.statemachine.edit.parts.RegionSubvertices2EditPa
 import org.eclipse.uml2.diagram.statemachine.edit.parts.RegionSubverticesEditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.State2EditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.State3EditPart;
+import org.eclipse.uml2.diagram.statemachine.edit.parts.StateEditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.StateMachine2EditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.StateMachineEditPart;
 import org.eclipse.uml2.diagram.statemachine.part.Messages;
@@ -44,6 +45,13 @@ public class UMLModelingAssistantProvider extends ModelingAssistantProvider {
 			types.add(UMLElementTypes.Region_3013);
 			types.add(UMLElementTypes.Pseudostate_3014);
 			types.add(UMLElementTypes.Pseudostate_3015);
+			return types;
+		}
+		if (editPart instanceof StateEditPart) {
+			List types = new ArrayList();
+			types.add(UMLElementTypes.Behavior_3019);
+			types.add(UMLElementTypes.Behavior_3020);
+			types.add(UMLElementTypes.Behavior_3021);
 			return types;
 		}
 		if (editPart instanceof State2EditPart) {

@@ -65,6 +65,80 @@
                   href="stateMachineDiagram.gmftool#//@palette/@tools.0/@tools.1/@tools.0"/>
               <diagramNode
                   href="stateMachineDiagram.gmfgraph#SimpleStateNode"/>
+              <children
+                  compartment="//@nodes.0/@ownedChild/@children.0/@ownedChild/@children.0/@ownedChild/@compartments.0">
+                <containmentFeature
+                    href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//State/entry"/>
+                <ownedChild>
+                  <domainMetaElement
+                      href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//Behavior"/>
+                  <domainSpecialization
+                      body="isEntryActivity"
+                      language="java"/>
+                  <labelMappings
+                      xsi:type="gmfmap:FeatureLabelMapping"
+                      readOnly="true"
+                      viewPattern="entry / {0}">
+                    <diagramLabel
+                        href="stateMachineDiagram.gmfgraph#InternalActivity_name"/>
+                    <features
+                        href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//NamedElement/name"/>
+                  </labelMappings>
+                  <diagramNode
+                      href="stateMachineDiagram.gmfgraph#InternalActivity_name"/>
+                </ownedChild>
+              </children>
+              <children
+                  compartment="//@nodes.0/@ownedChild/@children.0/@ownedChild/@children.0/@ownedChild/@compartments.0">
+                <containmentFeature
+                    href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//State/exit"/>
+                <ownedChild>
+                  <domainMetaElement
+                      href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//Behavior"/>
+                  <domainSpecialization
+                      body="isExitActivity"
+                      language="java"/>
+                  <labelMappings
+                      xsi:type="gmfmap:FeatureLabelMapping"
+                      readOnly="true"
+                      viewPattern="exit / {0}">
+                    <diagramLabel
+                        href="stateMachineDiagram.gmfgraph#InternalActivity_name"/>
+                    <features
+                        href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//NamedElement/name"/>
+                  </labelMappings>
+                  <diagramNode
+                      href="stateMachineDiagram.gmfgraph#InternalActivity_name"/>
+                </ownedChild>
+              </children>
+              <children
+                  compartment="//@nodes.0/@ownedChild/@children.0/@ownedChild/@children.0/@ownedChild/@compartments.0">
+                <containmentFeature
+                    href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//State/doActivity"/>
+                <ownedChild>
+                  <domainMetaElement
+                      href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//Behavior"/>
+                  <domainSpecialization
+                      body="isDoActivity"
+                      language="java"/>
+                  <labelMappings
+                      xsi:type="gmfmap:FeatureLabelMapping"
+                      readOnly="true"
+                      viewPattern="do / {0}">
+                    <diagramLabel
+                        href="stateMachineDiagram.gmfgraph#InternalActivity_name"/>
+                    <features
+                        href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//NamedElement/name"/>
+                  </labelMappings>
+                  <diagramNode
+                      href="stateMachineDiagram.gmfgraph#InternalActivity_name"/>
+                </ownedChild>
+              </children>
+              <compartments
+                  children="//@nodes.0/@ownedChild/@children.0/@ownedChild/@children.0/@ownedChild/@children.0 //@nodes.0/@ownedChild/@children.0/@ownedChild/@children.0/@ownedChild/@children.1 //@nodes.0/@ownedChild/@children.0/@ownedChild/@children.0/@ownedChild/@children.2">
+                <compartment
+                    href="stateMachineDiagram.gmfgraph#SimpleState_InternalActivities"/>
+              </compartments>
             </ownedChild>
           </children>
           <children

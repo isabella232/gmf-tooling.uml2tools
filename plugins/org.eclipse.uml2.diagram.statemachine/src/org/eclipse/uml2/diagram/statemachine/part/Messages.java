@@ -438,6 +438,11 @@ public class Messages extends NLS {
 	/**
 	 * @generated
 	 */
+	public static String StateSimpleState_InternalActivitiesEditPart_title;
+
+	/**
+	 * @generated
+	 */
 	public static String RegionSubvertices2EditPart_title;
 
 	/**

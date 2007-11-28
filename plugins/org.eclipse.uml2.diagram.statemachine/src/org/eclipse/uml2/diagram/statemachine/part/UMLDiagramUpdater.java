@@ -11,6 +11,9 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.gmf.runtime.notation.View;
+import org.eclipse.uml2.diagram.statemachine.edit.parts.Behavior2EditPart;
+import org.eclipse.uml2.diagram.statemachine.edit.parts.Behavior3EditPart;
+import org.eclipse.uml2.diagram.statemachine.edit.parts.BehaviorEditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.ConnectionPointReference2EditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.ConnectionPointReferenceEditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.FinalStateEditPart;
@@ -33,8 +36,10 @@ import org.eclipse.uml2.diagram.statemachine.edit.parts.State3EditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.StateEditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.StateMachine2EditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.StateMachineEditPart;
+import org.eclipse.uml2.diagram.statemachine.edit.parts.StateSimpleState_InternalActivitiesEditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.TransitionEditPart;
 import org.eclipse.uml2.diagram.statemachine.providers.UMLElementTypes;
+import org.eclipse.uml2.uml.Behavior;
 import org.eclipse.uml2.uml.Classifier;
 import org.eclipse.uml2.uml.ConnectionPointReference;
 import org.eclipse.uml2.uml.FinalState;
@@ -64,6 +69,8 @@ public class UMLDiagramUpdater {
 			return getState_3016SemanticChildren(view);
 		case RegionSubverticesEditPart.VISUAL_ID:
 			return getRegionSubvertices_7004SemanticChildren(view);
+		case StateSimpleState_InternalActivitiesEditPart.VISUAL_ID:
+			return getStateSimpleState_InternalActivities_7005SemanticChildren(view);
 		case RegionSubvertices2EditPart.VISUAL_ID:
 			return getRegionSubvertices_7003SemanticChildren(view);
 		case StateMachineEditPart.VISUAL_ID: {
@@ -238,6 +245,43 @@ public class UMLDiagramUpdater {
 	/**
 	 * @generated
 	 */
+	public static List getStateSimpleState_InternalActivities_7005SemanticChildren(View view) {
+		if (false == view.eContainer() instanceof View) {
+			return Collections.EMPTY_LIST;
+		}
+		View containerView = (View) view.eContainer();
+		if (!containerView.isSetElement()) {
+			return Collections.EMPTY_LIST;
+		}
+		State modelElement = (State) containerView.getElement();
+		List result = new LinkedList();
+		{
+			Behavior childElement = modelElement.getEntry();
+			int visualID = UMLVisualIDRegistry.getNodeVisualID(view, childElement);
+			if (visualID == BehaviorEditPart.VISUAL_ID) {
+				result.add(new UMLNodeDescriptor(childElement, visualID));
+			}
+		}
+		{
+			Behavior childElement = modelElement.getExit();
+			int visualID = UMLVisualIDRegistry.getNodeVisualID(view, childElement);
+			if (visualID == Behavior2EditPart.VISUAL_ID) {
+				result.add(new UMLNodeDescriptor(childElement, visualID));
+			}
+		}
+		{
+			Behavior childElement = modelElement.getDoActivity();
+			int visualID = UMLVisualIDRegistry.getNodeVisualID(view, childElement);
+			if (visualID == Behavior3EditPart.VISUAL_ID) {
+				result.add(new UMLNodeDescriptor(childElement, visualID));
+			}
+		}
+		return result;
+	}
+
+	/**
+	 * @generated
+	 */
 	public static List getRegionSubvertices_7003SemanticChildren(View view) {
 		if (false == view.eContainer() instanceof View) {
 			return Collections.EMPTY_LIST;
@@ -332,6 +376,12 @@ public class UMLDiagramUpdater {
 			return getRegion_3013ContainedLinks(view);
 		case StateEditPart.VISUAL_ID:
 			return getState_3001ContainedLinks(view);
+		case BehaviorEditPart.VISUAL_ID:
+			return getBehavior_3019ContainedLinks(view);
+		case Behavior2EditPart.VISUAL_ID:
+			return getBehavior_3020ContainedLinks(view);
+		case Behavior3EditPart.VISUAL_ID:
+			return getBehavior_3021ContainedLinks(view);
 		case State2EditPart.VISUAL_ID:
 			return getState_3012ContainedLinks(view);
 		case Region2EditPart.VISUAL_ID:
@@ -381,6 +431,12 @@ public class UMLDiagramUpdater {
 			return getRegion_3013IncomingLinks(view);
 		case StateEditPart.VISUAL_ID:
 			return getState_3001IncomingLinks(view);
+		case BehaviorEditPart.VISUAL_ID:
+			return getBehavior_3019IncomingLinks(view);
+		case Behavior2EditPart.VISUAL_ID:
+			return getBehavior_3020IncomingLinks(view);
+		case Behavior3EditPart.VISUAL_ID:
+			return getBehavior_3021IncomingLinks(view);
 		case State2EditPart.VISUAL_ID:
 			return getState_3012IncomingLinks(view);
 		case Region2EditPart.VISUAL_ID:
@@ -430,6 +486,12 @@ public class UMLDiagramUpdater {
 			return getRegion_3013OutgoingLinks(view);
 		case StateEditPart.VISUAL_ID:
 			return getState_3001OutgoingLinks(view);
+		case BehaviorEditPart.VISUAL_ID:
+			return getBehavior_3019OutgoingLinks(view);
+		case Behavior2EditPart.VISUAL_ID:
+			return getBehavior_3020OutgoingLinks(view);
+		case Behavior3EditPart.VISUAL_ID:
+			return getBehavior_3021OutgoingLinks(view);
 		case State2EditPart.VISUAL_ID:
 			return getState_3012OutgoingLinks(view);
 		case Region2EditPart.VISUAL_ID:
@@ -497,6 +559,27 @@ public class UMLDiagramUpdater {
 	 * @generated
 	 */
 	public static List getState_3001ContainedLinks(View view) {
+		return Collections.EMPTY_LIST;
+	}
+
+	/**
+	 * @generated
+	 */
+	public static List getBehavior_3019ContainedLinks(View view) {
+		return Collections.EMPTY_LIST;
+	}
+
+	/**
+	 * @generated
+	 */
+	public static List getBehavior_3020ContainedLinks(View view) {
+		return Collections.EMPTY_LIST;
+	}
+
+	/**
+	 * @generated
+	 */
+	public static List getBehavior_3021ContainedLinks(View view) {
 		return Collections.EMPTY_LIST;
 	}
 
@@ -646,6 +729,27 @@ public class UMLDiagramUpdater {
 		List result = new LinkedList();
 		result.addAll(getIncomingTypeModelFacetLinks_Transition_4001(modelElement, crossReferences));
 		return result;
+	}
+
+	/**
+	 * @generated
+	 */
+	public static List getBehavior_3019IncomingLinks(View view) {
+		return Collections.EMPTY_LIST;
+	}
+
+	/**
+	 * @generated
+	 */
+	public static List getBehavior_3020IncomingLinks(View view) {
+		return Collections.EMPTY_LIST;
+	}
+
+	/**
+	 * @generated
+	 */
+	public static List getBehavior_3021IncomingLinks(View view) {
+		return Collections.EMPTY_LIST;
 	}
 
 	/**
@@ -850,6 +954,27 @@ public class UMLDiagramUpdater {
 		List result = new LinkedList();
 		result.addAll(getOutgoingTypeModelFacetLinks_Transition_4001(modelElement));
 		return result;
+	}
+
+	/**
+	 * @generated
+	 */
+	public static List getBehavior_3019OutgoingLinks(View view) {
+		return Collections.EMPTY_LIST;
+	}
+
+	/**
+	 * @generated
+	 */
+	public static List getBehavior_3020OutgoingLinks(View view) {
+		return Collections.EMPTY_LIST;
+	}
+
+	/**
+	 * @generated
+	 */
+	public static List getBehavior_3021OutgoingLinks(View view) {
+		return Collections.EMPTY_LIST;
 	}
 
 	/**

@@ -20,6 +20,9 @@ import org.eclipse.jface.viewers.Viewer;
 import org.eclipse.ui.IMemento;
 import org.eclipse.ui.navigator.ICommonContentExtensionSite;
 import org.eclipse.ui.navigator.ICommonContentProvider;
+import org.eclipse.uml2.diagram.statemachine.edit.parts.Behavior2EditPart;
+import org.eclipse.uml2.diagram.statemachine.edit.parts.Behavior3EditPart;
+import org.eclipse.uml2.diagram.statemachine.edit.parts.BehaviorEditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.ConnectionPointReference2EditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.ConnectionPointReferenceEditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.FinalStateEditPart;
@@ -42,6 +45,7 @@ import org.eclipse.uml2.diagram.statemachine.edit.parts.State3EditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.StateEditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.StateMachine2EditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.StateMachineEditPart;
+import org.eclipse.uml2.diagram.statemachine.edit.parts.StateSimpleState_InternalActivitiesEditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.TransitionEditPart;
 import org.eclipse.uml2.diagram.statemachine.part.Messages;
 import org.eclipse.uml2.diagram.statemachine.part.UMLVisualIDRegistry;
@@ -290,7 +294,16 @@ public class UMLNavigatorContentProvider implements ICommonContentProvider {
 			Collection result = new ArrayList();
 			UMLNavigatorGroup incominglinks = new UMLNavigatorGroup(Messages.NavigatorGroupName_State_3001_incominglinks, "icons/incomingLinksNavigatorGroup.gif", parentElement); //$NON-NLS-1$
 			UMLNavigatorGroup outgoinglinks = new UMLNavigatorGroup(Messages.NavigatorGroupName_State_3001_outgoinglinks, "icons/outgoingLinksNavigatorGroup.gif", parentElement); //$NON-NLS-1$
-			Collection connectedViews = getIncomingLinksByType(Collections.singleton(view), TransitionEditPart.VISUAL_ID);
+			Collection connectedViews = getChildrenByType(Collections.singleton(view), StateSimpleState_InternalActivitiesEditPart.VISUAL_ID);
+			connectedViews = getChildrenByType(connectedViews, BehaviorEditPart.VISUAL_ID);
+			result.addAll(createNavigatorItems(connectedViews, parentElement, false));
+			connectedViews = getChildrenByType(Collections.singleton(view), StateSimpleState_InternalActivitiesEditPart.VISUAL_ID);
+			connectedViews = getChildrenByType(connectedViews, Behavior2EditPart.VISUAL_ID);
+			result.addAll(createNavigatorItems(connectedViews, parentElement, false));
+			connectedViews = getChildrenByType(Collections.singleton(view), StateSimpleState_InternalActivitiesEditPart.VISUAL_ID);
+			connectedViews = getChildrenByType(connectedViews, Behavior3EditPart.VISUAL_ID);
+			result.addAll(createNavigatorItems(connectedViews, parentElement, false));
+			connectedViews = getIncomingLinksByType(Collections.singleton(view), TransitionEditPart.VISUAL_ID);
 			incominglinks.addChildren(createNavigatorItems(connectedViews, incominglinks, true));
 			connectedViews = getOutgoingLinksByType(Collections.singleton(view), TransitionEditPart.VISUAL_ID);
 			outgoinglinks.addChildren(createNavigatorItems(connectedViews, outgoinglinks, true));

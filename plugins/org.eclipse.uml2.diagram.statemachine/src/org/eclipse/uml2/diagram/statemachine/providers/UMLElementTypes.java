@@ -193,6 +193,12 @@ public class UMLElementTypes extends ElementInitializers {
 
 			elements.put(State_3001, UMLPackage.eINSTANCE.getState());
 
+			elements.put(Behavior_3019, UMLPackage.eINSTANCE.getBehavior());
+
+			elements.put(Behavior_3020, UMLPackage.eINSTANCE.getBehavior());
+
+			elements.put(Behavior_3021, UMLPackage.eINSTANCE.getBehavior());
+
 			elements.put(State_3012, UMLPackage.eINSTANCE.getState());
 
 			elements.put(Region_3002, UMLPackage.eINSTANCE.getRegion());
@@ -277,6 +283,21 @@ public class UMLElementTypes extends ElementInitializers {
 	 * @generated
 	 */
 	public static final IElementType State_3001 = getElementType("org.eclipse.uml2.diagram.statemachine.State_3001"); //$NON-NLS-1$
+
+	/**
+	 * @generated
+	 */
+	public static final IElementType Behavior_3019 = getElementType("org.eclipse.uml2.diagram.statemachine.Behavior_3019"); //$NON-NLS-1$
+
+	/**
+	 * @generated
+	 */
+	public static final IElementType Behavior_3020 = getElementType("org.eclipse.uml2.diagram.statemachine.Behavior_3020"); //$NON-NLS-1$
+
+	/**
+	 * @generated
+	 */
+	public static final IElementType Behavior_3021 = getElementType("org.eclipse.uml2.diagram.statemachine.Behavior_3021"); //$NON-NLS-1$
 
 	/**
 	 * @generated
@@ -385,6 +406,9 @@ public class UMLElementTypes extends ElementInitializers {
 			KNOWN_ELEMENT_TYPES.add(StateMachine_2004);
 			KNOWN_ELEMENT_TYPES.add(Region_3013);
 			KNOWN_ELEMENT_TYPES.add(State_3001);
+			KNOWN_ELEMENT_TYPES.add(Behavior_3019);
+			KNOWN_ELEMENT_TYPES.add(Behavior_3020);
+			KNOWN_ELEMENT_TYPES.add(Behavior_3021);
 			KNOWN_ELEMENT_TYPES.add(State_3012);
 			KNOWN_ELEMENT_TYPES.add(Region_3002);
 			KNOWN_ELEMENT_TYPES.add(State_3016);

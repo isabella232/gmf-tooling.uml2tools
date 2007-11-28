@@ -11,6 +11,9 @@ import org.eclipse.gmf.runtime.common.ui.services.parser.IParserProvider;
 import org.eclipse.gmf.runtime.emf.type.core.IElementType;
 import org.eclipse.gmf.runtime.emf.ui.services.parser.ParserHintAdapter;
 import org.eclipse.gmf.runtime.notation.View;
+import org.eclipse.uml2.diagram.statemachine.edit.parts.Behavior2EditPart;
+import org.eclipse.uml2.diagram.statemachine.edit.parts.Behavior3EditPart;
+import org.eclipse.uml2.diagram.statemachine.edit.parts.BehaviorEditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.ConnectionPointReferenceName2EditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.ConnectionPointReferenceNameEditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.PseudostateName2EditPart;
@@ -75,6 +78,87 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 	protected IParser createStateName_5001Parser() {
 		EAttribute[] features = new EAttribute[] { UMLPackage.eINSTANCE.getNamedElement_Name(), };
 		MessageFormatParser parser = new MessageFormatParser(features);
+		return parser;
+	}
+
+	/**
+	 * @generated
+	 */
+	private IParser behavior_3019Parser;
+
+	/**
+	 * @generated
+	 */
+	private IParser getBehavior_3019Parser() {
+		if (behavior_3019Parser == null) {
+			behavior_3019Parser = createBehavior_3019Parser();
+		}
+		return behavior_3019Parser;
+	}
+
+	/**
+	 * @generated
+	 */
+	protected IParser createBehavior_3019Parser() {
+		EAttribute[] features = new EAttribute[] { UMLPackage.eINSTANCE.getNamedElement_Name(), };
+		MessageFormatParser parser = new MessageFormatParser(features);
+		parser.setViewPattern("entry / {0}");
+		parser.setEditorPattern("entry / {0}");
+		parser.setEditPattern("entry / {0}");
+		return parser;
+	}
+
+	/**
+	 * @generated
+	 */
+	private IParser behavior_3020Parser;
+
+	/**
+	 * @generated
+	 */
+	private IParser getBehavior_3020Parser() {
+		if (behavior_3020Parser == null) {
+			behavior_3020Parser = createBehavior_3020Parser();
+		}
+		return behavior_3020Parser;
+	}
+
+	/**
+	 * @generated
+	 */
+	protected IParser createBehavior_3020Parser() {
+		EAttribute[] features = new EAttribute[] { UMLPackage.eINSTANCE.getNamedElement_Name(), };
+		MessageFormatParser parser = new MessageFormatParser(features);
+		parser.setViewPattern("exit / {0}");
+		parser.setEditorPattern("exit / {0}");
+		parser.setEditPattern("exit / {0}");
+		return parser;
+	}
+
+	/**
+	 * @generated
+	 */
+	private IParser behavior_3021Parser;
+
+	/**
+	 * @generated
+	 */
+	private IParser getBehavior_3021Parser() {
+		if (behavior_3021Parser == null) {
+			behavior_3021Parser = createBehavior_3021Parser();
+		}
+		return behavior_3021Parser;
+	}
+
+	/**
+	 * @generated
+	 */
+	protected IParser createBehavior_3021Parser() {
+		EAttribute[] features = new EAttribute[] { UMLPackage.eINSTANCE.getNamedElement_Name(), };
+		MessageFormatParser parser = new MessageFormatParser(features);
+		parser.setViewPattern("do / {0}");
+		parser.setEditorPattern("do / {0}");
+		parser.setEditPattern("do / {0}");
 		return parser;
 	}
 
@@ -253,6 +337,12 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 			return getStateMachineName_5005Parser();
 		case StateNameEditPart.VISUAL_ID:
 			return getStateName_5001Parser();
+		case BehaviorEditPart.VISUAL_ID:
+			return getBehavior_3019Parser();
+		case Behavior2EditPart.VISUAL_ID:
+			return getBehavior_3020Parser();
+		case Behavior3EditPart.VISUAL_ID:
+			return getBehavior_3021Parser();
 		case StateName3EditPart.VISUAL_ID:
 			return getStateName_5004Parser();
 		case StateName2EditPart.VISUAL_ID:

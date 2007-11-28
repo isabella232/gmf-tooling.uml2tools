@@ -24,22 +24,34 @@
           cornerWidth="18"
           cornerHeight="18">
         <layout
-            xsi:type="gmfgraph:StackLayout"/>
-        <preferredSize
-            dx="60"
-            dy="30"/>
+            xsi:type="gmfgraph:FlowLayout"
+            vertical="true"
+            matchMinorSize="true"
+            forceSingleLine="true"
+            minorAlignment="CENTER"/>
         <border
             xsi:type="gmfgraph:MarginBorder">
           <insets
+              top="4"
               left="4"
+              bottom="4"
               right="4"/>
         </border>
         <children
             xsi:type="gmfgraph:Label"
             name="SimpleStateFigure_name"/>
+        <children
+            xsi:type="gmfgraph:Rectangle"
+            name="SimpleStateFigure_InternalActivitiesCompartment"
+            outline="false">
+          <layout
+              xsi:type="gmfgraph:StackLayout"/>
+        </children>
       </actualFigure>
       <accessors
           figure="//@figures.0/@descriptors.0/@actualFigure/@children.0"/>
+      <accessors
+          figure="//@figures.0/@descriptors.0/@actualFigure/@children.1"/>
     </descriptors>
     <descriptors
         name="CompositeStateFigure">
@@ -417,6 +429,12 @@
           xsi:type="gmfgraph:Label"
           name="TransitionConnection_TransitionLabel"/>
     </descriptors>
+    <descriptors
+        name="InternalActivityFigure">
+      <actualFigure
+          xsi:type="gmfgraph:Label"
+          name="InternalActivityFigure_name"/>
+    </descriptors>
   </figures>
   <nodes
       name="StateMachineNode"
@@ -472,6 +490,10 @@
       name="CompositeStateContent"
       figure="CompositeStateFigure"
       accessor="//@figures.0/@descriptors.1/@accessors.1"/>
+  <compartments
+      name="SimpleState_InternalActivities"
+      figure="SimpleStateFigure"
+      accessor="//@figures.0/@descriptors.0/@accessors.1"/>
   <labels
       name="CompositeStateNode_name"
       figure="CompositeStateFigure"
@@ -503,5 +525,9 @@
   <labels
       name="TransitionLink_transition"
       figure="TransitionConnection_TransitionLabel"
+      elementIcon="false"/>
+  <labels
+      name="InternalActivity_name"
+      figure="InternalActivityFigure"
       elementIcon="false"/>
 </gmfgraph:Canvas>

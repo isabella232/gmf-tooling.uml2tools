@@ -24,6 +24,9 @@ import org.eclipse.gmf.runtime.diagram.ui.requests.RequestConstants;
 import org.eclipse.gmf.runtime.notation.Diagram;
 import org.eclipse.gmf.runtime.notation.Edge;
 import org.eclipse.gmf.runtime.notation.View;
+import org.eclipse.uml2.diagram.statemachine.edit.parts.Behavior2EditPart;
+import org.eclipse.uml2.diagram.statemachine.edit.parts.Behavior3EditPart;
+import org.eclipse.uml2.diagram.statemachine.edit.parts.BehaviorEditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.ConnectionPointReference2EditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.ConnectionPointReferenceEditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.FinalStateEditPart;
@@ -230,6 +233,27 @@ public class StateMachineCanonicalEditPolicy extends CanonicalConnectionEditPoli
 		case StateEditPart.VISUAL_ID: {
 			if (!domain2NotationMap.containsKey(view.getElement())) {
 				result.addAll(UMLDiagramUpdater.getState_3001ContainedLinks(view));
+			}
+			domain2NotationMap.put(view.getElement(), view);
+			break;
+		}
+		case BehaviorEditPart.VISUAL_ID: {
+			if (!domain2NotationMap.containsKey(view.getElement())) {
+				result.addAll(UMLDiagramUpdater.getBehavior_3019ContainedLinks(view));
+			}
+			domain2NotationMap.put(view.getElement(), view);
+			break;
+		}
+		case Behavior2EditPart.VISUAL_ID: {
+			if (!domain2NotationMap.containsKey(view.getElement())) {
+				result.addAll(UMLDiagramUpdater.getBehavior_3020ContainedLinks(view));
+			}
+			domain2NotationMap.put(view.getElement(), view);
+			break;
+		}
+		case Behavior3EditPart.VISUAL_ID: {
+			if (!domain2NotationMap.containsKey(view.getElement())) {
+				result.addAll(UMLDiagramUpdater.getBehavior_3021ContainedLinks(view));
 			}
 			domain2NotationMap.put(view.getElement(), view);
 			break;
