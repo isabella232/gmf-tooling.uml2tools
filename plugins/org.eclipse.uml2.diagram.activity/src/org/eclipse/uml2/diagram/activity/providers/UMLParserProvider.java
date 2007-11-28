@@ -1446,12 +1446,10 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 	}
 
 	/**
-	 * @generated
+	 * @generated NOT
 	 */
 	protected IParser createDataStoreNodeName_5067Parser() {
-		EAttribute[] features = new EAttribute[] { UMLPackage.eINSTANCE.getNamedElement_Name(), };
-		MessageFormatParser parser = new MessageFormatParser(features);
-		return parser;
+		return new ObjectNodeTypeParser();
 	}
 
 	/**
@@ -1470,12 +1468,10 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 	}
 
 	/**
-	 * @generated
+	 * @generated NOT
 	 */
 	protected IParser createDataStoreNodeName_5068Parser() {
-		EAttribute[] features = new EAttribute[] { UMLPackage.eINSTANCE.getNamedElement_Name(), };
-		MessageFormatParser parser = new MessageFormatParser(features);
-		return parser;
+		return new ObjectNodeInStateParser();
 	}
 
 	/**
@@ -1494,12 +1490,10 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 	}
 
 	/**
-	 * @generated
+	 * @generated NOT
 	 */
 	protected IParser createDataStoreNodeOrdering_5069Parser() {
-		EAttribute[] features = new EAttribute[] { UMLPackage.eINSTANCE.getObjectNode_Ordering(), };
-		MessageFormatParser parser = new MessageFormatParser(features);
-		return parser;
+		return new ObjectNodeAttributesParser();
 	}
 
 	/**
@@ -1518,12 +1512,10 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 	}
 
 	/**
-	 * @generated
+	 * @generated NOT
 	 */
 	protected IParser createCentralBufferNodeName_5070Parser() {
-		EAttribute[] features = new EAttribute[] { UMLPackage.eINSTANCE.getNamedElement_Name(), };
-		MessageFormatParser parser = new MessageFormatParser(features);
-		return parser;
+		return new ObjectNodeTypeParser();
 	}
 
 	/**
@@ -1542,12 +1534,10 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 	}
 
 	/**
-	 * @generated
+	 * @generated NOT
 	 */
 	protected IParser createCentralBufferNodeName_5071Parser() {
-		EAttribute[] features = new EAttribute[] { UMLPackage.eINSTANCE.getNamedElement_Name(), };
-		MessageFormatParser parser = new MessageFormatParser(features);
-		return parser;
+		return new ObjectNodeInStateParser();
 	}
 
 	/**
@@ -1566,12 +1556,10 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 	}
 
 	/**
-	 * @generated
+	 * @generated NOT
 	 */
 	protected IParser createCentralBufferNodeOrdering_5072Parser() {
-		EAttribute[] features = new EAttribute[] { UMLPackage.eINSTANCE.getObjectNode_Ordering(), };
-		MessageFormatParser parser = new MessageFormatParser(features);
-		return parser;
+		return new ObjectNodeAttributesParser();
 	}
 
 	/**
@@ -1614,12 +1602,10 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 	}
 
 	/**
-	 * @generated
+	 * @generated NOT
 	 */
 	protected IParser createPinName_5074Parser() {
-		EAttribute[] features = new EAttribute[] { UMLPackage.eINSTANCE.getNamedElement_Name(), };
-		MessageFormatParser parser = new MessageFormatParser(features);
-		return parser;
+		return new ObjectNodeTypeParser();
 	}
 
 	/**
@@ -1638,12 +1624,10 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 	}
 
 	/**
-	 * @generated
+	 * @generated NOT
 	 */
 	protected IParser createPinOrdering_5075Parser() {
-		EAttribute[] features = new EAttribute[] { UMLPackage.eINSTANCE.getObjectNode_Ordering(), };
-		MessageFormatParser parser = new MessageFormatParser(features);
-		return parser;
+		return new ObjectNodeAttributesParser();
 	}
 
 	/**
