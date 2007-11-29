@@ -1,0 +1,49 @@
+/*
+ * Copyright (c) 2006 Borland Software Corporation
+ * 
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
+ *
+ * Contributors:
+ *    Tatiana Fesenko (Borland) - initial API and implementation
+ */
+
+«IMPORT "http://www.eclipse.org/gmf/2006/GenModel"»
+«IMPORT "http://www.eclipse.org/emf/2002/Ecore"»
+
+«EXTENSION xpt::ExternalizerUtils»
+
+«AROUND Access FOR gmfgen::GenEditorGenerator-»
+«EXPAND xpt::Common::copyright-»
+package «getAccessorQualifier()»;
+
+«EXPAND xpt::Common::generatedClassComment»
+public class «getAccessorName()» extends org.eclipse.osgi.util.NLS {
+
+	«EXPAND xpt::Common::generatedMemberComment»
+	static {
+		org.eclipse.osgi.util.NLS.initializeMessages("«getAccessorName().toLowerCase()»", «getAccessorName()».class); «EXPAND xpt::Common::nonNLS»
+	}
+
+	«EXPAND xpt::Common::generatedMemberComment»
+	private «getAccessorName()»() {
+	}
+
+	«EXPAND xpt::Externalizer::Fields»
+    //TODO: put accessor fields manually	
+«EXPAND additions»
+}
+«ENDAROUND»
+
+«DEFINE Values_Ex FOR gmfgen::GenEditorGenerator»
+«EXPAND xpt::Externalizer::Values»
+«EXPAND xpt::actions::ChangeNotationAction::i18nValues FOR diagram-»
+«EXPAND xpt::actions::ChangeNotationContributionItemProvider::i18nValues FOR diagram-»
+«ENDDEFINE»
+
+«DEFINE additions FOR gmfgen::GenEditorGenerator-»
+	«EXPAND xpt::actions::ChangeNotationAction::i18nAccessors FOR diagram-»
+	«EXPAND xpt::actions::ChangeNotationContributionItemProvider::i18nAccessors FOR diagram-»
+«ENDDEFINE»

@@ -6,18 +6,6 @@ public class CustomMessages extends NLS {
 
 	private static final String BUNDLE_NAME = "custom-messages"; //$NON-NLS-1$
 
-	public static String ChangePropertyNotation_disabled_text;
-
-	public static String ChangePropertyNotation_disabled_tooltip;
-
-	public static String ChangePropertyNotation_first_substitutable_text;
-
-	public static String ChangePropertyNotation_first_substitutable_tooltip;
-
-	public static String ChangePropertyNotation_second_substitutable_text;
-
-	public static String ChangePropertyNotation_second_substitutable_tooltip;
-
 	public static String CollaborationUseParser_collaboration_use_name_parser_command;
 
 	public static String ConnectorNameParser_connector_name_parser_command;

@@ -73,6 +73,7 @@ public class ConnectorEditPart extends ConnectionNodeEditPart {
 	public PolylineConnectionEx getPrimaryShape() {
 		return (PolylineConnectionEx) getFigure();
 	}
+
 	/**
 	 * @NOT-GENERATED
 	 */
@@ -91,7 +92,7 @@ public class ConnectorEditPart extends ConnectionNodeEditPart {
 			refreshConnectorTypeColor(getPrimaryShape());
 		}
 	}
-	
+
 	/**
 	 * @NOT-GENERATED
 	 */

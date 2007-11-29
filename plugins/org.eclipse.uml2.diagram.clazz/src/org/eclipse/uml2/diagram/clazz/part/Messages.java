@@ -1275,5 +1275,45 @@ public class Messages extends NLS {
 	 */
 	public static String UMLModelingAssistantProviderMessage;
 
+	/**
+	 * @generated
+	 */
+	public static String Set2013Notation_text;
+
+	/**
+	 * @generated
+	 */
+	public static String Set2013Notation_tooltiptext;
+
+	/**
+	 * @generated
+	 */
+	public static String Set2010Notation_text;
+
+	/**
+	 * @generated
+	 */
+	public static String Set2010Notation_tooltiptext;
+
+	/**
+	 * @generated
+	 */
+	public static String InterfaceContributionItemProvider_menu;
+
+	/**
+	 * @generated
+	 */
+	public static String InterfaceContributionItemProvider_group;
+
+	/**
+	 * @generated
+	 */
+	public static String Interface2ContributionItemProvider_menu;
+
+	/**
+	 * @generated
+	 */
+	public static String Interface2ContributionItemProvider_group;
+
 	//TODO: put accessor fields manually	
 }

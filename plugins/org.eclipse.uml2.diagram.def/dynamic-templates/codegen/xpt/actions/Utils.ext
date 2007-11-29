@@ -1,0 +1,31 @@
+/*
+ * Copyright (c) 2007 Borland Software Corporation
+ * 
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
+ *
+ * Contributors:
+ *    Tatiana Fesenko (Borland) - initial API and implementation
+ */
+
+import "http://www.eclipse.org/gmf/2006/GenModel";
+import "http://www.eclipse.org/emf/2002/Ecore";
+import "http://www.eclipse.org/uml2/diagram/gmfgenext/DiagramFigure/1.0";
+
+String changeNotationActionClassName(GenTopLevelNode node, int vid) :
+'Set'+vid+'Notation'
+;
+
+String changeNotationContributionItemProviderClassName(GenTopLevelNode node) :
+node.editPartClassName.subString(0, node.editPartClassName.length()-'EditPart'.length())+'ContributionItemProvider'
+;
+
+Boolean hasAlternativeNotation(GenTopLevelNode node) :
+hasAlternationNotation(node.viewmap.attributes.typeSelect(gmfgenext::SubstitutableByAttributes).first())
+;
+
+private Boolean hasAlternationNotation(gmfgenext::SubstitutableByAttributes substitutable) :
+substitutable != null && !substitutable.requiresAll
+;

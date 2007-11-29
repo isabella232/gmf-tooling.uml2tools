@@ -180,7 +180,7 @@ public class ConnectorName4EditPart extends LabelEditPart implements ITextAwareE
 	 * @generated NOT
 	 */
 	protected EObject getParserElement() {
-		Connector c = (Connector)resolveSemanticElement();
+		Connector c = (Connector) resolveSemanticElement();
 		return c.getType();
 	}
 
@@ -448,7 +448,7 @@ public class ConnectorName4EditPart extends LabelEditPart implements ITextAwareE
 		Connector c = (Connector) resolveSemanticElement();
 		addListenerFilter("SemanticModel_TypeListener", this, c, UMLPackage.eINSTANCE.getConnector_Type());
 	}
-	
+
 	/**
 	 * @generated
 	 */

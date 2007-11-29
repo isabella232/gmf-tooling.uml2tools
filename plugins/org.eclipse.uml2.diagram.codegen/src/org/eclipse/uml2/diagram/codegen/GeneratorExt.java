@@ -54,9 +54,9 @@ public class GeneratorExt extends Generator {
 	@Override
 	protected void customRun() throws InterruptedException, UnexpectedBehaviourException {
 		super.customRun();
-//		for (GenTopLevelNode node : myDiagram.getTopLevelNodes()) {
-//			generateChangeNotationAction(node);
-//		}
+		for (GenTopLevelNode node : myDiagram.getTopLevelNodes()) {
+			generateChangeNotationAction(node);
+		}
 	}
 
 	private void generateChangeNotationAction(GenTopLevelNode node) throws InterruptedException, UnexpectedBehaviourException {

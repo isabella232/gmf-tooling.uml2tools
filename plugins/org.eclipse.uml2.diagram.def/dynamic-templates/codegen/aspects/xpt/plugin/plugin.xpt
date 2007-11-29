@@ -1,0 +1,66 @@
+/*
+ * Copyright (c) 2007 Borland Software Corporation
+ * 
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
+ *
+ * Contributors:
+ *    Tatiana Fesenko (Borland) - initial API and implementation
+ */
+
+«IMPORT "http://www.eclipse.org/gmf/2006/GenModel"»
+«IMPORT "http://www.eclipse.org/emf/2002/Ecore"»
+«IMPORT "http://www.eclipse.org/emf/2002/GenModel"»
+«IMPORT "http://www.eclipse.org/uml2/diagram/gmfgenext/DiagramFigure/1.0"»
+
+«EXTENSION xpt::actions::Utils»
+
+«AROUND additions FOR gmfgen::GenPlugin»
+«EXPAND contributionItemProviders FOREACH editorGen.diagram.topLevelNodes»
+«ENDAROUND»
+
+«DEFINE contributionItemProviders FOR gmfgen::GenTopLevelNode»
+«IF hasAlternativeNotation(this)-»
+	<extension point="org.eclipse.gmf.runtime.common.ui.services.action.contributionItemProviders">
+      «EXPAND xpt::Common::xmlGeneratedTag»
+      <contributionItemProvider
+            checkPluginLoaded="true"
+            class="«EXPAND xpt::actions::ChangeNotationContributionItemProvider::qualifiedClassName»">
+         <Priority name="Medium"/>
+		 <popupContribution
+               class="org.eclipse.gmf.runtime.diagram.ui.providers.DiagramContextMenuProvider">
+			 <popupMenuGroup
+                  id="ChangeNotation"
+                  path="/propertiesGroup">
+             </popupMenuGroup>
+             <popupMenu
+                   id="ChangeNotationMenu"
+                   path="/ChangeNotation">
+             </popupMenu>                        
+             <popupMenuGroup
+                   id="ChangeNotationGroup"
+                   path="/ChangeNotationMenu/">
+             </popupMenuGroup>
+		«LET viewmap.attributes.typeSelect(gmfgenext::SubstitutableByAttributes).first() AS subChild-»
+		«IF subChild != null && !subChild.requiresAll-»
+			«FOREACH subChild.substitutableByIDs AS id»«EXPAND popupAction(id)»«ENDFOREACH-»
+		«ENDIF-»
+		«ENDLET-»
+<popupStructuredContributionCriteria
+                   objectClass="«getEditPartQualifiedClassName()»"
+                   objectCount="1">
+             </popupStructuredContributionCriteria>
+		 </popupContribution>
+      </contributionItemProvider>
+   </extension>
+«ENDIF-»
+«ENDDEFINE»
+
+«DEFINE popupAction(int vid) FOR gmfgen::GenTopLevelNode»
+			<popupAction
+				path="/ChangeNotationMenu/ChangeNotationGroup"
+				id="«EXPAND xpt::actions::ChangeNotationAction::actionId(vid)»">
+			</popupAction>            
+«ENDDEFINE»

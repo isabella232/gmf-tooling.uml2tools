@@ -180,7 +180,7 @@ public class ConnectorName7EditPart extends LabelEditPart implements ITextAwareE
 	 * @generated NOT
 	 */
 	protected EObject getParserElement() {
-		Connector c = (Connector)resolveSemanticElement();
+		Connector c = (Connector) resolveSemanticElement();
 		return c.getType();
 	}
 
