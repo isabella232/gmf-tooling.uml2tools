@@ -270,6 +270,11 @@ public class StateMachine2EditPart extends AbstractBorderedShapeEditPart {
 		/**
 		 * @generated
 		 */
+		private RectangleFigure fFigureCompositeStateFigure_InternalActivitiesCompartment;
+
+		/**
+		 * @generated
+		 */
 		public CompositeStateFigure() {
 
 			GridLayout layoutThis = new GridLayout();
@@ -282,7 +287,7 @@ public class StateMachine2EditPart extends AbstractBorderedShapeEditPart {
 			this.setLayoutManager(layoutThis);
 
 			this.setCornerDimensions(new Dimension(getMapMode().DPtoLP(18), getMapMode().DPtoLP(18)));
-			this.setBorder(new MarginBorder(getMapMode().DPtoLP(0), getMapMode().DPtoLP(2), getMapMode().DPtoLP(6), getMapMode().DPtoLP(2)));
+			this.setBorder(new MarginBorder(getMapMode().DPtoLP(4), getMapMode().DPtoLP(4), getMapMode().DPtoLP(4), getMapMode().DPtoLP(4)));
 			createContents();
 		}
 
@@ -327,6 +332,21 @@ public class StateMachine2EditPart extends AbstractBorderedShapeEditPart {
 			constraintFFigureCompositeStateFigure_name.grabExcessVerticalSpace = false;
 			compositeStateFigure_NameContainer0.add(fFigureCompositeStateFigure_name, constraintFFigureCompositeStateFigure_name);
 
+			fFigureCompositeStateFigure_InternalActivitiesCompartment = new RectangleFigure();
+			fFigureCompositeStateFigure_InternalActivitiesCompartment.setOutline(false);
+
+			GridData constraintFFigureCompositeStateFigure_InternalActivitiesCompartment = new GridData();
+			constraintFFigureCompositeStateFigure_InternalActivitiesCompartment.verticalAlignment = GridData.FILL;
+			constraintFFigureCompositeStateFigure_InternalActivitiesCompartment.horizontalAlignment = GridData.FILL;
+			constraintFFigureCompositeStateFigure_InternalActivitiesCompartment.horizontalIndent = 0;
+			constraintFFigureCompositeStateFigure_InternalActivitiesCompartment.horizontalSpan = 1;
+			constraintFFigureCompositeStateFigure_InternalActivitiesCompartment.verticalSpan = 1;
+			constraintFFigureCompositeStateFigure_InternalActivitiesCompartment.grabExcessHorizontalSpace = true;
+			constraintFFigureCompositeStateFigure_InternalActivitiesCompartment.grabExcessVerticalSpace = false;
+			this.add(fFigureCompositeStateFigure_InternalActivitiesCompartment, constraintFFigureCompositeStateFigure_InternalActivitiesCompartment);
+
+			fFigureCompositeStateFigure_InternalActivitiesCompartment.setLayoutManager(new StackLayout());
+
 			fFigureCompositeStateFigure_Body = new RectangleFigure();
 			fFigureCompositeStateFigure_Body.setOutline(false);
 
@@ -358,6 +378,13 @@ public class StateMachine2EditPart extends AbstractBorderedShapeEditPart {
 		 */
 		public RectangleFigure getFigureCompositeStateFigure_Body() {
 			return fFigureCompositeStateFigure_Body;
+		}
+
+		/**
+		 * @generated
+		 */
+		public RectangleFigure getFigureCompositeStateFigure_InternalActivitiesCompartment() {
+			return fFigureCompositeStateFigure_InternalActivitiesCompartment;
 		}
 
 		/**

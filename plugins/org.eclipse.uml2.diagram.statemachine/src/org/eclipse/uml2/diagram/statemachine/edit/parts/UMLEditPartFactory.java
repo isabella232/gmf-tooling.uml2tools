@@ -127,8 +127,14 @@ public class UMLEditPartFactory implements EditPartFactory {
 			case StateSimpleState_InternalActivitiesEditPart.VISUAL_ID:
 				return new StateSimpleState_InternalActivitiesEditPart(view);
 
+			case StateCompositeState_InternalActivitiesEditPart.VISUAL_ID:
+				return new StateCompositeState_InternalActivitiesEditPart(view);
+
 			case RegionSubvertices2EditPart.VISUAL_ID:
 				return new RegionSubvertices2EditPart(view);
+
+			case StateCompositeState_InternalActivities2EditPart.VISUAL_ID:
+				return new StateCompositeState_InternalActivities2EditPart(view);
 
 			case TransitionEditPart.VISUAL_ID:
 				return new TransitionEditPart(view);

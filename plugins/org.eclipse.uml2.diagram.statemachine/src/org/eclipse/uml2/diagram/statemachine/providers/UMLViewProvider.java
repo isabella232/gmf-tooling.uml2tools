@@ -32,6 +32,8 @@ import org.eclipse.uml2.diagram.statemachine.edit.parts.RegionSubvertices2EditPa
 import org.eclipse.uml2.diagram.statemachine.edit.parts.RegionSubverticesEditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.State2EditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.State3EditPart;
+import org.eclipse.uml2.diagram.statemachine.edit.parts.StateCompositeState_InternalActivities2EditPart;
+import org.eclipse.uml2.diagram.statemachine.edit.parts.StateCompositeState_InternalActivitiesEditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.StateEditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.StateMachine2EditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.StateMachineEditPart;
@@ -69,6 +71,8 @@ import org.eclipse.uml2.diagram.statemachine.view.factories.RegionSubverticesVie
 import org.eclipse.uml2.diagram.statemachine.view.factories.RegionViewFactory;
 import org.eclipse.uml2.diagram.statemachine.view.factories.State2ViewFactory;
 import org.eclipse.uml2.diagram.statemachine.view.factories.State3ViewFactory;
+import org.eclipse.uml2.diagram.statemachine.view.factories.StateCompositeState_InternalActivities2ViewFactory;
+import org.eclipse.uml2.diagram.statemachine.view.factories.StateCompositeState_InternalActivitiesViewFactory;
 import org.eclipse.uml2.diagram.statemachine.view.factories.StateMachine2ViewFactory;
 import org.eclipse.uml2.diagram.statemachine.view.factories.StateMachineNameViewFactory;
 import org.eclipse.uml2.diagram.statemachine.view.factories.StateMachineViewFactory;
@@ -183,6 +187,7 @@ public class UMLViewProvider extends AbstractViewProvider {
 					}
 					break;
 				case StateName3EditPart.VISUAL_ID:
+				case StateCompositeState_InternalActivitiesEditPart.VISUAL_ID:
 					if (State2EditPart.VISUAL_ID != UMLVisualIDRegistry.getVisualID(containerView) || containerView.getElement() != domainElement) {
 						return null; // wrong container
 					}
@@ -193,6 +198,7 @@ public class UMLViewProvider extends AbstractViewProvider {
 					}
 					break;
 				case StateName2EditPart.VISUAL_ID:
+				case StateCompositeState_InternalActivities2EditPart.VISUAL_ID:
 					if (State3EditPart.VISUAL_ID != UMLVisualIDRegistry.getVisualID(containerView) || containerView.getElement() != domainElement) {
 						return null; // wrong container
 					}
@@ -302,8 +308,12 @@ public class UMLViewProvider extends AbstractViewProvider {
 			return RegionSubverticesViewFactory.class;
 		case StateSimpleState_InternalActivitiesEditPart.VISUAL_ID:
 			return StateSimpleState_InternalActivitiesViewFactory.class;
+		case StateCompositeState_InternalActivitiesEditPart.VISUAL_ID:
+			return StateCompositeState_InternalActivitiesViewFactory.class;
 		case RegionSubvertices2EditPart.VISUAL_ID:
 			return RegionSubvertices2ViewFactory.class;
+		case StateCompositeState_InternalActivities2EditPart.VISUAL_ID:
+			return StateCompositeState_InternalActivities2ViewFactory.class;
 		case TransitionNameEditPart.VISUAL_ID:
 			return TransitionNameViewFactory.class;
 		}

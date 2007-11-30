@@ -443,7 +443,17 @@ public class Messages extends NLS {
 	/**
 	 * @generated
 	 */
+	public static String StateCompositeState_InternalActivitiesEditPart_title;
+
+	/**
+	 * @generated
+	 */
 	public static String RegionSubvertices2EditPart_title;
+
+	/**
+	 * @generated
+	 */
+	public static String StateCompositeState_InternalActivities2EditPart_title;
 
 	/**
 	 * @generated

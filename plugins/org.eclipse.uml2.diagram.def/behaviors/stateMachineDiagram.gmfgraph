@@ -68,9 +68,10 @@
         <border
             xsi:type="gmfgraph:MarginBorder">
           <insets
-              left="2"
-              bottom="6"
-              right="2"/>
+              top="4"
+              left="4"
+              bottom="4"
+              right="4"/>
         </border>
         <children
             xsi:type="gmfgraph:Rectangle"
@@ -100,6 +101,18 @@
         </children>
         <children
             xsi:type="gmfgraph:Rectangle"
+            name="CompositeStateFigure_InternalActivitiesCompartment"
+            outline="false">
+          <layoutData
+              xsi:type="gmfgraph:GridLayoutData"
+              grabExcessHorizontalSpace="true"
+              verticalAlignment="FILL"
+              horizontalAlignment="FILL"/>
+          <layout
+              xsi:type="gmfgraph:StackLayout"/>
+        </children>
+        <children
+            xsi:type="gmfgraph:Rectangle"
             name="CompositeStateFigure_Body"
             outline="false">
           <layoutData
@@ -115,6 +128,8 @@
       </actualFigure>
       <accessors
           figure="//@figures.0/@descriptors.1/@actualFigure/@children.0/@children.0"/>
+      <accessors
+          figure="//@figures.0/@descriptors.1/@actualFigure/@children.2"/>
       <accessors
           figure="//@figures.0/@descriptors.1/@actualFigure/@children.1"/>
     </descriptors>
@@ -494,6 +509,10 @@
       name="SimpleState_InternalActivities"
       figure="SimpleStateFigure"
       accessor="//@figures.0/@descriptors.0/@accessors.1"/>
+  <compartments
+      name="CompositeState_InternalActivities"
+      figure="CompositeStateFigure"
+      accessor="//@figures.0/@descriptors.1/@accessors.2"/>
   <labels
       name="CompositeStateNode_name"
       figure="CompositeStateFigure"

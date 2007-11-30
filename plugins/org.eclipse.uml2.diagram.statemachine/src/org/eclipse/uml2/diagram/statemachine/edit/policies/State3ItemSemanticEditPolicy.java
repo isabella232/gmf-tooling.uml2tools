@@ -17,9 +17,13 @@ import org.eclipse.uml2.diagram.statemachine.edit.commands.ConnectionPointRefere
 import org.eclipse.uml2.diagram.statemachine.edit.commands.Region2CreateCommand;
 import org.eclipse.uml2.diagram.statemachine.edit.commands.TransitionCreateCommand;
 import org.eclipse.uml2.diagram.statemachine.edit.commands.TransitionReorientCommand;
+import org.eclipse.uml2.diagram.statemachine.edit.parts.Behavior2EditPart;
+import org.eclipse.uml2.diagram.statemachine.edit.parts.Behavior3EditPart;
+import org.eclipse.uml2.diagram.statemachine.edit.parts.BehaviorEditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.ConnectionPointReference2EditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.ConnectionPointReferenceEditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.Region2EditPart;
+import org.eclipse.uml2.diagram.statemachine.edit.parts.StateCompositeState_InternalActivities2EditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.TransitionEditPart;
 import org.eclipse.uml2.diagram.statemachine.part.UMLVisualIDRegistry;
 import org.eclipse.uml2.diagram.statemachine.providers.UMLElementTypes;
@@ -86,6 +90,22 @@ public class State3ItemSemanticEditPolicy extends UMLBaseItemSemanticEditPolicy 
 				break;
 			case ConnectionPointReference2EditPart.VISUAL_ID:
 				cmd.add(getDestroyElementCommand(node));
+				break;
+			case StateCompositeState_InternalActivities2EditPart.VISUAL_ID:
+				for (Iterator cit = node.getChildren().iterator(); cit.hasNext();) {
+					Node cnode = (Node) cit.next();
+					switch (UMLVisualIDRegistry.getVisualID(cnode)) {
+					case BehaviorEditPart.VISUAL_ID:
+						cmd.add(getDestroyElementCommand(cnode));
+						break;
+					case Behavior2EditPart.VISUAL_ID:
+						cmd.add(getDestroyElementCommand(cnode));
+						break;
+					case Behavior3EditPart.VISUAL_ID:
+						cmd.add(getDestroyElementCommand(cnode));
+						break;
+					}
+				}
 				break;
 			}
 		}

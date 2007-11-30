@@ -33,6 +33,8 @@ import org.eclipse.uml2.diagram.statemachine.edit.parts.RegionSubvertices2EditPa
 import org.eclipse.uml2.diagram.statemachine.edit.parts.RegionSubverticesEditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.State2EditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.State3EditPart;
+import org.eclipse.uml2.diagram.statemachine.edit.parts.StateCompositeState_InternalActivities2EditPart;
+import org.eclipse.uml2.diagram.statemachine.edit.parts.StateCompositeState_InternalActivitiesEditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.StateEditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.StateMachine2EditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.StateMachineEditPart;
@@ -71,8 +73,12 @@ public class UMLDiagramUpdater {
 			return getRegionSubvertices_7004SemanticChildren(view);
 		case StateSimpleState_InternalActivitiesEditPart.VISUAL_ID:
 			return getStateSimpleState_InternalActivities_7005SemanticChildren(view);
+		case StateCompositeState_InternalActivitiesEditPart.VISUAL_ID:
+			return getStateCompositeState_InternalActivities_7006SemanticChildren(view);
 		case RegionSubvertices2EditPart.VISUAL_ID:
 			return getRegionSubvertices_7003SemanticChildren(view);
+		case StateCompositeState_InternalActivities2EditPart.VISUAL_ID:
+			return getStateCompositeState_InternalActivities_7007SemanticChildren(view);
 		case StateMachineEditPart.VISUAL_ID: {
 			//We have "dummy" TopLevelNode (with vid = org.eclipse.uml2.diagram.statemachine.edit.parts.StateMachine2EditPart.VISUAL_ID). 
 			//The only purpose for this node is to be a container for children (imports, etc)
@@ -282,6 +288,43 @@ public class UMLDiagramUpdater {
 	/**
 	 * @generated
 	 */
+	public static List getStateCompositeState_InternalActivities_7006SemanticChildren(View view) {
+		if (false == view.eContainer() instanceof View) {
+			return Collections.EMPTY_LIST;
+		}
+		View containerView = (View) view.eContainer();
+		if (!containerView.isSetElement()) {
+			return Collections.EMPTY_LIST;
+		}
+		State modelElement = (State) containerView.getElement();
+		List result = new LinkedList();
+		{
+			Behavior childElement = modelElement.getEntry();
+			int visualID = UMLVisualIDRegistry.getNodeVisualID(view, childElement);
+			if (visualID == BehaviorEditPart.VISUAL_ID) {
+				result.add(new UMLNodeDescriptor(childElement, visualID));
+			}
+		}
+		{
+			Behavior childElement = modelElement.getExit();
+			int visualID = UMLVisualIDRegistry.getNodeVisualID(view, childElement);
+			if (visualID == Behavior2EditPart.VISUAL_ID) {
+				result.add(new UMLNodeDescriptor(childElement, visualID));
+			}
+		}
+		{
+			Behavior childElement = modelElement.getDoActivity();
+			int visualID = UMLVisualIDRegistry.getNodeVisualID(view, childElement);
+			if (visualID == Behavior3EditPart.VISUAL_ID) {
+				result.add(new UMLNodeDescriptor(childElement, visualID));
+			}
+		}
+		return result;
+	}
+
+	/**
+	 * @generated
+	 */
 	public static List getRegionSubvertices_7003SemanticChildren(View view) {
 		if (false == view.eContainer() instanceof View) {
 			return Collections.EMPTY_LIST;
@@ -342,6 +385,43 @@ public class UMLDiagramUpdater {
 			if (visualID == Pseudostate8EditPart.VISUAL_ID) {
 				result.add(new UMLNodeDescriptor(childElement, visualID));
 				continue;
+			}
+		}
+		return result;
+	}
+
+	/**
+	 * @generated
+	 */
+	public static List getStateCompositeState_InternalActivities_7007SemanticChildren(View view) {
+		if (false == view.eContainer() instanceof View) {
+			return Collections.EMPTY_LIST;
+		}
+		View containerView = (View) view.eContainer();
+		if (!containerView.isSetElement()) {
+			return Collections.EMPTY_LIST;
+		}
+		State modelElement = (State) containerView.getElement();
+		List result = new LinkedList();
+		{
+			Behavior childElement = modelElement.getEntry();
+			int visualID = UMLVisualIDRegistry.getNodeVisualID(view, childElement);
+			if (visualID == BehaviorEditPart.VISUAL_ID) {
+				result.add(new UMLNodeDescriptor(childElement, visualID));
+			}
+		}
+		{
+			Behavior childElement = modelElement.getExit();
+			int visualID = UMLVisualIDRegistry.getNodeVisualID(view, childElement);
+			if (visualID == Behavior2EditPart.VISUAL_ID) {
+				result.add(new UMLNodeDescriptor(childElement, visualID));
+			}
+		}
+		{
+			Behavior childElement = modelElement.getDoActivity();
+			int visualID = UMLVisualIDRegistry.getNodeVisualID(view, childElement);
+			if (visualID == Behavior3EditPart.VISUAL_ID) {
+				result.add(new UMLNodeDescriptor(childElement, visualID));
 			}
 		}
 		return result;

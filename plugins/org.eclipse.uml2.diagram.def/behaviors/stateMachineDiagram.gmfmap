@@ -194,6 +194,29 @@
                 <containmentFeature
                     href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//State/region"/>
               </children>
+              <children
+                  compartment="//@nodes.0/@ownedChild/@children.0/@ownedChild/@children.1/@ownedChild/@compartments.0"
+                  referencedChild="//@nodes.0/@ownedChild/@children.0/@ownedChild/@children.0/@ownedChild/@children.0/@ownedChild">
+                <containmentFeature
+                    href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//State/entry"/>
+              </children>
+              <children
+                  compartment="//@nodes.0/@ownedChild/@children.0/@ownedChild/@children.1/@ownedChild/@compartments.0"
+                  referencedChild="//@nodes.0/@ownedChild/@children.0/@ownedChild/@children.0/@ownedChild/@children.1/@ownedChild">
+                <containmentFeature
+                    href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//State/exit"/>
+              </children>
+              <children
+                  compartment="//@nodes.0/@ownedChild/@children.0/@ownedChild/@children.1/@ownedChild/@compartments.0"
+                  referencedChild="//@nodes.0/@ownedChild/@children.0/@ownedChild/@children.0/@ownedChild/@children.2/@ownedChild">
+                <containmentFeature
+                    href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//State/doActivity"/>
+              </children>
+              <compartments
+                  children="//@nodes.0/@ownedChild/@children.0/@ownedChild/@children.1/@ownedChild/@children.3 //@nodes.0/@ownedChild/@children.0/@ownedChild/@children.1/@ownedChild/@children.2 //@nodes.0/@ownedChild/@children.0/@ownedChild/@children.1/@ownedChild/@children.1">
+                <compartment
+                    href="stateMachineDiagram.gmfgraph#CompositeState_InternalActivities"/>
+              </compartments>
             </ownedChild>
           </children>
           <children
@@ -298,6 +321,29 @@
                       href="stateMachineDiagram.gmfgraph#ExitPointConnectionPointReferenceNode"/>
                 </ownedChild>
               </children>
+              <children
+                  compartment="//@nodes.0/@ownedChild/@children.0/@ownedChild/@children.2/@ownedChild/@compartments.0"
+                  referencedChild="//@nodes.0/@ownedChild/@children.0/@ownedChild/@children.0/@ownedChild/@children.0/@ownedChild">
+                <containmentFeature
+                    href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//State/entry"/>
+              </children>
+              <children
+                  compartment="//@nodes.0/@ownedChild/@children.0/@ownedChild/@children.2/@ownedChild/@compartments.0"
+                  referencedChild="//@nodes.0/@ownedChild/@children.0/@ownedChild/@children.0/@ownedChild/@children.1/@ownedChild">
+                <containmentFeature
+                    href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//State/exit"/>
+              </children>
+              <children
+                  compartment="//@nodes.0/@ownedChild/@children.0/@ownedChild/@children.2/@ownedChild/@compartments.0"
+                  referencedChild="//@nodes.0/@ownedChild/@children.0/@ownedChild/@children.0/@ownedChild/@children.2/@ownedChild">
+                <containmentFeature
+                    href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//State/doActivity"/>
+              </children>
+              <compartments
+                  children="//@nodes.0/@ownedChild/@children.0/@ownedChild/@children.2/@ownedChild/@children.3 //@nodes.0/@ownedChild/@children.0/@ownedChild/@children.2/@ownedChild/@children.4 //@nodes.0/@ownedChild/@children.0/@ownedChild/@children.2/@ownedChild/@children.5">
+                <compartment
+                    href="stateMachineDiagram.gmfgraph#CompositeState_InternalActivities"/>
+              </compartments>
             </ownedChild>
           </children>
           <children

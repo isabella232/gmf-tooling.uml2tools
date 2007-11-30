@@ -59,6 +59,9 @@
     <nodeLabelTraces
         visualID="5004"
         queryText="true"/>
+    <compartmentTraces
+        visualID="7006"
+        queryText="true"/>
   </childNodeTraces>
   <childNodeTraces
       visualID="3013"
@@ -86,6 +89,9 @@
       queryText="(let _eClass_:ecore::EClass = modelFacet.metaClass.ecoreClass in _eClass_.ePackage.nsURI = 'http://www.eclipse.org/uml2/2.1.0/UML' and _eClass_.name = 'State') and (let _containmentMF_:ecore::EStructuralFeature = modelFacet.containmentMetaFeature.ecoreFeature in (let _eClass_:ecore::EClass = _containmentMF_.eContainingClass in _eClass_.ePackage.nsURI = 'http://www.eclipse.org/uml2/2.1.0/UML' and _eClass_.name = 'Region') and _containmentMF_.name = 'subvertex')">
     <nodeLabelTraces
         visualID="5008"
+        queryText="true"/>
+    <compartmentTraces
+        visualID="7007"
         queryText="true"/>
   </childNodeTraces>
   <childNodeTraces
