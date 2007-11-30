@@ -68,12 +68,14 @@ public class UMLVisualIDRegistry {
 	/**
 	 * @generated
 	 */
-	private static final UMLAbstractExpression State_3001_Constraint = UMLOCLFactory.getExpression("self.oclIsTypeOf(uml::State) and self.isSimple", UMLPackage.eINSTANCE.getState());
+	private static final UMLAbstractExpression State_3001_Constraint = UMLOCLFactory.getExpression("self.oclIsTypeOf(uml::State) and self.isSimple and (not self.isSubmachineState)",
+			UMLPackage.eINSTANCE.getState());
 
 	/**
 	 * @generated
 	 */
-	private static final UMLAbstractExpression State_3012_Constraint = UMLOCLFactory.getExpression("self.oclIsTypeOf(uml::State) and self.isComposite", UMLPackage.eINSTANCE.getState());
+	private static final UMLAbstractExpression State_3012_Constraint = UMLOCLFactory.getExpression("self.oclIsTypeOf(uml::State) and self.isComposite and (not self.isSubmachineState)",
+			UMLPackage.eINSTANCE.getState());
 
 	/**
 	 * @generated

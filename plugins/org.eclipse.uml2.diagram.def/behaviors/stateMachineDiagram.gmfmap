@@ -42,7 +42,7 @@
               <domainMetaElement
                   href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//State"/>
               <domainSpecialization
-                  body="self.oclIsTypeOf(uml::State) and self.isSimple"/>
+                  body="self.oclIsTypeOf(uml::State) and self.isSimple and (not self.isSubmachineState)"/>
               <domainInitializer
                   xsi:type="gmfmap:FeatureSeqInitializer">
                 <initializers
@@ -149,7 +149,7 @@
               <domainMetaElement
                   href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//State"/>
               <domainSpecialization
-                  body="self.oclIsTypeOf(uml::State) and self.isComposite"/>
+                  body="self.oclIsTypeOf(uml::State) and self.isComposite and (not self.isSubmachineState)"/>
               <domainInitializer
                   xsi:type="gmfmap:FeatureSeqInitializer">
                 <initializers

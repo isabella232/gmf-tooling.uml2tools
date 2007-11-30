@@ -94,7 +94,7 @@
         <childMetaFeature
             href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/Region/subvertex"/>
         <modelElementSelector
-            body="self.oclIsTypeOf(uml::State) and self.isSimple"/>
+            body="self.oclIsTypeOf(uml::State) and self.isSimple and (not self.isSubmachineState)"/>
         <modelElementInitializer
             xsi:type="gmfgen:GenFeatureSeqInitializer">
           <initializers
@@ -280,7 +280,7 @@
         <childMetaFeature
             href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/Region/subvertex"/>
         <modelElementSelector
-            body="self.oclIsTypeOf(uml::State) and self.isComposite"/>
+            body="self.oclIsTypeOf(uml::State) and self.isComposite and (not self.isSubmachineState)"/>
         <modelElementInitializer
             xsi:type="gmfgen:GenFeatureSeqInitializer">
           <initializers
