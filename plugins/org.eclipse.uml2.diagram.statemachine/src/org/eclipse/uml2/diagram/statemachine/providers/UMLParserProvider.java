@@ -23,6 +23,7 @@ import org.eclipse.uml2.diagram.statemachine.edit.parts.StateName2EditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.StateName3EditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.StateNameEditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.TransitionNameEditPart;
+import org.eclipse.uml2.diagram.statemachine.parser.SubmachineStateParser;
 import org.eclipse.uml2.diagram.statemachine.parser.TransitionParser;
 import org.eclipse.uml2.diagram.statemachine.parsers.MessageFormatParser;
 import org.eclipse.uml2.diagram.statemachine.part.UMLVisualIDRegistry;
@@ -202,12 +203,10 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 	}
 
 	/**
-	 * @generated
+	 * @generated NOT
 	 */
 	protected IParser createStateName_5008Parser() {
-		EAttribute[] features = new EAttribute[] { UMLPackage.eINSTANCE.getNamedElement_Name(), };
-		MessageFormatParser parser = new MessageFormatParser(features);
-		return parser;
+		return new SubmachineStateParser();
 	}
 
 	/**
