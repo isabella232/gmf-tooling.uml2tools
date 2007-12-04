@@ -24,7 +24,7 @@ public class DiagramGeneralPreferencePage extends DiagramsPreferencePage {
 	 * @NOT-generated
 	 */
 	public static void initNavigationArrowsOptions(IPreferenceStore preferenceStore) {
-		preferenceStore.setDefault(UMLPreferencesConstants.NAVIGATION_ARROWS_OPTION, UMLPreferencesConstants.SHOW_ALL_ARROWS);
+		preferenceStore.setDefault(UMLPreferencesConstants.NAVIGATION_ARROWS_OPTION, UMLPreferencesConstants.SHOW_ONE_WAY_NAVIGABILITY);
 	}
 
 	/**

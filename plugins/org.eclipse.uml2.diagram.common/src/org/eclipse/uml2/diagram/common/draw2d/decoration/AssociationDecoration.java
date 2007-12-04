@@ -40,12 +40,28 @@ public class AssociationDecoration extends CompositeDecoration {
 					0, 0, // 
 					-1, 1, //
 			});
+	
+	
+		private static final PointList CROSS = new PointList(new int[] { //
+				//
+						-1, 0, // 
+						-2, -1, // 
+						-1, 0, //
+						-2, 1, //
+						-1, 0, // 
+						0, 1, //
+						-1, 0, // 
+						0, -1, //
+						-1, 0, // 
+	 			});
 
 	private ComposablePolygonDecoration myCompositeAggrecationDecoration;
 
 	private ComposablePolygonDecoration mySharedAggrecationDecoration;
 
 	private ComposablePolygonDecoration myNavigableDecoration;
+
+	private ComposablePolygonDecoration myNonNavigableDecoration;
 
 	private DotDecoration myOwnedEndDecoration;
 
@@ -74,6 +90,12 @@ public class AssociationDecoration extends CompositeDecoration {
 		myNavigableDecoration = new ComposablePolygonDecoration();
 		myNavigableDecoration.setTemplate(ARROW.getCopy());
 		myNavigableDecoration.setBoundPoint(new Point(-1, 0));
+		
+		
+		myNonNavigableDecoration = new ComposablePolygonDecoration();
+		myNonNavigableDecoration.setScale(4, 3);
+		myNonNavigableDecoration.setTemplate(CROSS.getCopy());		
+		myNonNavigableDecoration.setBoundPoint(new Point(-2, 0));
 	}
 
 	private void initOwnedEndDecorations() {
@@ -96,22 +118,35 @@ public class AssociationDecoration extends CompositeDecoration {
 	}
 
 	public void updateNavigability(Property associationEnd, Property otherEnd, IPreferenceStore store) {
-		if (!associationEnd.isNavigable()) {
+		String navigability = store.getString(UMLPreferencesConstants.NAVIGATION_ARROWS_OPTION);
+		if (UMLPreferencesConstants.SHOW_ALL_ARROWS.equals(navigability)) {
+			if (!associationEnd.isNavigable()) {
+				removeDecoration(myNavigableDecoration);
+				addDecoration(myNonNavigableDecoration);
+			} else {
+				removeDecoration(myNonNavigableDecoration);
+				addDecoration(myNavigableDecoration);
+			}
+			return;
+		}
+		if (UMLPreferencesConstants.SUPRESS_ALL_ARROWS.equals(navigability)) {
+			removeDecoration(myNavigableDecoration);
+			removeDecoration(myNonNavigableDecoration);
+			return;
+		}
+		// show one way navigability only
+		if (associationEnd.isNavigable() && !otherEnd.isNavigable()) {
+			addDecoration(myNavigableDecoration);
+			removeDecoration(myNonNavigableDecoration);
+			return;
+		}
+		if (!associationEnd.isNavigable() && otherEnd.isNavigable()) {
+			addDecoration(myNonNavigableDecoration);
 			removeDecoration(myNavigableDecoration);
 			return;
 		}
-		String navigability = store.getString(UMLPreferencesConstants.NAVIGATION_ARROWS_OPTION);
-		if (UMLPreferencesConstants.SHOW_ALL_ARROWS.equals(navigability)) {
-			addDecoration(myNavigableDecoration);
-		} else if (UMLPreferencesConstants.SUPRESS_ALL_ARROWS.equals(navigability)) {
-			removeDecoration(myNavigableDecoration);
-		} else  {// show one way navigability only
-			if (otherEnd.isNavigable()) {
-				removeDecoration(myNavigableDecoration);
-			} else {
-				addDecoration(myNavigableDecoration);
-			}
-		}
+		removeDecoration(myNavigableDecoration);
+		removeDecoration(myNonNavigableDecoration);
 	}
 
 	public void updateOwnedEnd(Association association, Property end) {
