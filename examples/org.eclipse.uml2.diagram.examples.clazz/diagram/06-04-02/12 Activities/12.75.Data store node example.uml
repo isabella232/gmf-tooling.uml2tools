@@ -13,7 +13,9 @@
     <edge xmi:type="uml:ObjectFlow" xmi:id="_FEiKgAk0EdyF_oRbgI8ypA" source="_2_vaEAkzEdyF_oRbgI8ypA" target="_7FjY4AkzEdyF_oRbgI8ypA"/>
     <edge xmi:type="uml:ControlFlow" xmi:id="_UXjooAk0EdyF_oRbgI8ypA" source="_OBMjgAk0EdyF_oRbgI8ypA" target="_TZQ0YAk0EdyF_oRbgI8ypA"/>
     <edge xmi:type="uml:ControlFlow" xmi:id="_VR0RcAk0EdyF_oRbgI8ypA" source="_Ja5GwAk0EdyF_oRbgI8ypA" target="_OBMjgAk0EdyF_oRbgI8ypA"/>
-    <edge xmi:type="uml:ObjectFlow" xmi:id="_Xx3MUAk0EdyF_oRbgI8ypA" source="_2_vaEAkzEdyF_oRbgI8ypA" target="_OBMjgAk0EdyF_oRbgI8ypA"/>
+    <edge xmi:type="uml:ObjectFlow" xmi:id="_Xx3MUAk0EdyF_oRbgI8ypA" source="_2_vaEAkzEdyF_oRbgI8ypA" target="_OBMjgAk0EdyF_oRbgI8ypA">
+      <weight xmi:type="uml:LiteralString" xmi:id="_9eDvIKJDEdyGqNfYOUez1Q" value="all"/>
+    </edge>
   </packagedElement>
   <packagedElement xmi:type="uml:TimeEvent" xmi:id="_Jbx3kAk0EdyF_oRbgI8ypA"/>
 </uml:Package>
