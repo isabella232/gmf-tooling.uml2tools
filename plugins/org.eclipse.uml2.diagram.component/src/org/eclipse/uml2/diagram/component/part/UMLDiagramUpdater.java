@@ -1030,8 +1030,8 @@ public class UMLDiagramUpdater {
 	 */
 	private static Collection getContainedTypeModelFacetLinks_Connector_4008(StructuredClassifier container) {
 		Collection result = new LinkedList();
-		Component component = (Component) container;
-		for (Iterator links = component.getOwnedConnectors().iterator(); links.hasNext();) {
+		StructuredClassifier sc = (StructuredClassifier) container;
+		for (Iterator links = sc.getOwnedConnectors().iterator(); links.hasNext();) {
 			Object linkObject = links.next();
 			if (false == linkObject instanceof Connector) {
 				continue;
