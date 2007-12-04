@@ -325,7 +325,8 @@
       </labelMappings>
       <diagramNode
           href="classDiagram_auxiliary.gmfgraph#SecondaryPackageNode"/>
-      <children>
+      <children
+          compartment="//@nodes.2/@ownedChild/@compartments.0">
         <containmentFeature
             href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//Namespace/elementImport"/>
         <ownedChild>
@@ -345,7 +346,8 @@
               href="classDiagram_auxiliary.gmfgraph#AuxiliaryPureLabel"/>
         </ownedChild>
       </children>
-      <compartments>
+      <compartments
+          children="//@nodes.2/@ownedChild/@children.0">
         <compartment
             href="classDiagram_packages.gmfgraph#imports"/>
       </compartments>

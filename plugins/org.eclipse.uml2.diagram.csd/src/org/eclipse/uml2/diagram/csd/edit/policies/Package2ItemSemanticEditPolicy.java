@@ -37,19 +37,6 @@ public class Package2ItemSemanticEditPolicy extends UMLBaseItemSemanticEditPolic
 	/**
 	 * @generated
 	 */
-	protected Command getCreateCommand(CreateElementRequest req) {
-		if (UMLElementTypes.ElementImport_3004 == req.getElementType()) {
-			if (req.getContainmentFeature() == null) {
-				req.setContainmentFeature(UMLPackage.eINSTANCE.getNamespace_ElementImport());
-			}
-			return getGEFWrapper(new ElementImportCreateCommand(req));
-		}
-		return super.getCreateCommand(req);
-	}
-
-	/**
-	 * @generated
-	 */
 	protected Command getDestroyElementCommand(DestroyElementRequest req) {
 		CompoundCommand cc = getDestroyEdgesCommand();
 		addDestroyChildNodesCommand(cc);
@@ -74,13 +61,13 @@ public class Package2ItemSemanticEditPolicy extends UMLBaseItemSemanticEditPolic
 		for (Iterator it = view.getChildren().iterator(); it.hasNext();) {
 			Node node = (Node) it.next();
 			switch (UMLVisualIDRegistry.getVisualID(node)) {
-			case ElementImportEditPart.VISUAL_ID:
-				cmd.add(getDestroyElementCommand(node));
-				break;
 			case PackageImportsEditPart.VISUAL_ID:
 				for (Iterator cit = node.getChildren().iterator(); cit.hasNext();) {
 					Node cnode = (Node) cit.next();
 					switch (UMLVisualIDRegistry.getVisualID(cnode)) {
+					case ElementImportEditPart.VISUAL_ID:
+						cmd.add(getDestroyElementCommand(cnode));
+						break;
 					}
 				}
 				break;

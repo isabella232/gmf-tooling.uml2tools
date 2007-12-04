@@ -18,7 +18,7 @@ import org.eclipse.uml2.uml.UMLPackage;
 /**
  * @generated
  */
-public class Package2CanonicalEditPolicy extends CanonicalEditPolicy {
+public class PackageImportsCanonicalEditPolicy extends CanonicalEditPolicy {
 
 	/**
 	 * @generated
@@ -31,7 +31,7 @@ public class Package2CanonicalEditPolicy extends CanonicalEditPolicy {
 	protected List getSemanticChildrenList() {
 		View viewObject = (View) getHost().getModel();
 		List result = new LinkedList();
-		for (Iterator it = UMLDiagramUpdater.getPackage_2003SemanticChildren(viewObject).iterator(); it.hasNext();) {
+		for (Iterator it = UMLDiagramUpdater.getPackageImports_7002SemanticChildren(viewObject).iterator(); it.hasNext();) {
 			result.add(((UMLNodeDescriptor) it.next()).getModelElement());
 		}
 		return result;

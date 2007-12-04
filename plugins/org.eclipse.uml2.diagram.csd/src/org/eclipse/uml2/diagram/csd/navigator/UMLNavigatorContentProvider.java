@@ -43,6 +43,7 @@ import org.eclipse.uml2.diagram.csd.edit.parts.InterfaceRealizationEditPart;
 import org.eclipse.uml2.diagram.csd.edit.parts.OperationEditPart;
 import org.eclipse.uml2.diagram.csd.edit.parts.Package2EditPart;
 import org.eclipse.uml2.diagram.csd.edit.parts.PackageEditPart;
+import org.eclipse.uml2.diagram.csd.edit.parts.PackageImportsEditPart;
 import org.eclipse.uml2.diagram.csd.edit.parts.ParameterEditPart;
 import org.eclipse.uml2.diagram.csd.edit.parts.PortEditPart;
 import org.eclipse.uml2.diagram.csd.edit.parts.PortProvidedEditPart;
@@ -347,7 +348,8 @@ public class UMLNavigatorContentProvider implements ICommonContentProvider {
 			Collection result = new ArrayList();
 			UMLNavigatorGroup incominglinks = new UMLNavigatorGroup(Messages.NavigatorGroupName_Package_2003_incominglinks, "icons/incomingLinksNavigatorGroup.gif", parentElement); //$NON-NLS-1$
 			UMLNavigatorGroup outgoinglinks = new UMLNavigatorGroup(Messages.NavigatorGroupName_Package_2003_outgoinglinks, "icons/outgoingLinksNavigatorGroup.gif", parentElement); //$NON-NLS-1$
-			Collection connectedViews = getChildrenByType(Collections.singleton(view), ElementImportEditPart.VISUAL_ID);
+			Collection connectedViews = getChildrenByType(Collections.singleton(view), PackageImportsEditPart.VISUAL_ID);
+			connectedViews = getChildrenByType(connectedViews, ElementImportEditPart.VISUAL_ID);
 			result.addAll(createNavigatorItems(connectedViews, parentElement, false));
 			connectedViews = getIncomingLinksByType(Collections.singleton(view), DependencyEditPart.VISUAL_ID);
 			incominglinks.addChildren(createNavigatorItems(connectedViews, incominglinks, true));

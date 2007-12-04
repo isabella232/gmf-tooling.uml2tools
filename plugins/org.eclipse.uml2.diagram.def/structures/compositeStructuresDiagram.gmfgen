@@ -405,7 +405,7 @@
         canonicalEditPolicyClassName="ElementImportCanonicalEditPolicy"
         graphicalNodeEditPolicyClassName="ElementImportGraphicalNodeEditPolicy"
         createCommandClassName="ElementImportCreateCommand"
-        containers="//@diagram/@topLevelNodes.2">
+        containers="//@diagram/@compartments.4">
       <diagramRunTimeClass
           href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
       <elementType
@@ -683,7 +683,6 @@
         itemSemanticEditPolicyClassName="Package2ItemSemanticEditPolicy"
         notationViewFactoryClassName="Package2ViewFactory"
         canonicalEditPolicyClassName="Package2CanonicalEditPolicy"
-        childNodes="//@diagram/@childNodes.7"
         compartments="//@diagram/@compartments.4"
         graphicalNodeEditPolicyClassName="PackageGraphicalNodeEditPolicy"
         createCommandClassName="PackageCreateCommand">
@@ -1651,6 +1650,7 @@
         itemSemanticEditPolicyClassName="PackageImportsItemSemanticEditPolicy"
         notationViewFactoryClassName="PackageImportsViewFactory"
         canonicalEditPolicyClassName="PackageImportsCanonicalEditPolicy"
+        childNodes="//@diagram/@childNodes.7"
         title="imports"
         needsTitle="false"
         node="//@diagram/@topLevelNodes.2">

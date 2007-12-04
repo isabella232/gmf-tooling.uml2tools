@@ -222,11 +222,6 @@ public class UMLVisualIDRegistry {
 				return PortEditPart.VISUAL_ID;
 			}
 			break;
-		case Package2EditPart.VISUAL_ID:
-			if (UMLPackage.eINSTANCE.getElementImport().isSuperTypeOf(domainElement.eClass())) {
-				return ElementImportEditPart.VISUAL_ID;
-			}
-			break;
 		case CollaborationContentsEditPart.VISUAL_ID:
 			if (UMLPackage.eINSTANCE.getCollaborationUse().isSuperTypeOf(domainElement.eClass())) {
 				return CollaborationUse2EditPart.VISUAL_ID;
@@ -248,6 +243,11 @@ public class UMLVisualIDRegistry {
 		case ClassClassesEditPart.VISUAL_ID:
 			if (UMLPackage.eINSTANCE.getClass_().isSuperTypeOf(domainElement.eClass())) {
 				return Class2EditPart.VISUAL_ID;
+			}
+			break;
+		case PackageImportsEditPart.VISUAL_ID:
+			if (UMLPackage.eINSTANCE.getElementImport().isSuperTypeOf(domainElement.eClass())) {
+				return ElementImportEditPart.VISUAL_ID;
 			}
 			break;
 		case ClassClass_contentsEditPart.VISUAL_ID:
@@ -350,9 +350,6 @@ public class UMLVisualIDRegistry {
 			if (PackageImportsEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
-			if (ElementImportEditPart.VISUAL_ID == nodeVisualID) {
-				return true;
-			}
 			break;
 		case Class3EditPart.VISUAL_ID:
 			if (ClassName2EditPart.VISUAL_ID == nodeVisualID) {
@@ -425,6 +422,11 @@ public class UMLVisualIDRegistry {
 			break;
 		case ClassClassesEditPart.VISUAL_ID:
 			if (Class2EditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			break;
+		case PackageImportsEditPart.VISUAL_ID:
+			if (ElementImportEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
 			break;

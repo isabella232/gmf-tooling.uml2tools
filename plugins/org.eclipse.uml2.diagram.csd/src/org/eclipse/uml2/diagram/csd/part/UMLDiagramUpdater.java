@@ -35,6 +35,7 @@ import org.eclipse.uml2.diagram.csd.edit.parts.InterfaceRealizationEditPart;
 import org.eclipse.uml2.diagram.csd.edit.parts.OperationEditPart;
 import org.eclipse.uml2.diagram.csd.edit.parts.Package2EditPart;
 import org.eclipse.uml2.diagram.csd.edit.parts.PackageEditPart;
+import org.eclipse.uml2.diagram.csd.edit.parts.PackageImportsEditPart;
 import org.eclipse.uml2.diagram.csd.edit.parts.ParameterEditPart;
 import org.eclipse.uml2.diagram.csd.edit.parts.PortEditPart;
 import org.eclipse.uml2.diagram.csd.edit.parts.PortProvidedEditPart;
@@ -86,8 +87,6 @@ public class UMLDiagramUpdater {
 			return getCollaboration_2005SemanticChildren(view);
 		case ClassEditPart.VISUAL_ID:
 			return getClass_2006SemanticChildren(view);
-		case Package2EditPart.VISUAL_ID:
-			return getPackage_2003SemanticChildren(view);
 		case CollaborationContentsEditPart.VISUAL_ID:
 			return getCollaborationContents_7003SemanticChildren(view);
 		case ClassAttributesEditPart.VISUAL_ID:
@@ -96,6 +95,8 @@ public class UMLDiagramUpdater {
 			return getClassOperations_7005SemanticChildren(view);
 		case ClassClassesEditPart.VISUAL_ID:
 			return getClassClasses_7006SemanticChildren(view);
+		case PackageImportsEditPart.VISUAL_ID:
+			return getPackageImports_7002SemanticChildren(view);
 		case ClassClass_contentsEditPart.VISUAL_ID:
 			return getClassClass_contents_7007SemanticChildren(view);
 		case InstanceSpecificationSlotsEditPart.VISUAL_ID:
@@ -150,26 +151,6 @@ public class UMLDiagramUpdater {
 			Property childElement = (Property) it.next();
 			int visualID = UMLVisualIDRegistry.getNodeVisualID(view, childElement);
 			if (visualID == PortEditPart.VISUAL_ID) {
-				result.add(new UMLNodeDescriptor(childElement, visualID));
-				continue;
-			}
-		}
-		return result;
-	}
-
-	/**
-	 * @generated
-	 */
-	public static List getPackage_2003SemanticChildren(View view) {
-		if (!view.isSetElement()) {
-			return Collections.EMPTY_LIST;
-		}
-		Package modelElement = (Package) view.getElement();
-		List result = new LinkedList();
-		for (Iterator it = modelElement.getElementImports().iterator(); it.hasNext();) {
-			ElementImport childElement = (ElementImport) it.next();
-			int visualID = UMLVisualIDRegistry.getNodeVisualID(view, childElement);
-			if (visualID == ElementImportEditPart.VISUAL_ID) {
 				result.add(new UMLNodeDescriptor(childElement, visualID));
 				continue;
 			}
@@ -274,6 +255,30 @@ public class UMLDiagramUpdater {
 			Classifier childElement = (Classifier) it.next();
 			int visualID = UMLVisualIDRegistry.getNodeVisualID(view, childElement);
 			if (visualID == Class2EditPart.VISUAL_ID) {
+				result.add(new UMLNodeDescriptor(childElement, visualID));
+				continue;
+			}
+		}
+		return result;
+	}
+
+	/**
+	 * @generated
+	 */
+	public static List getPackageImports_7002SemanticChildren(View view) {
+		if (false == view.eContainer() instanceof View) {
+			return Collections.EMPTY_LIST;
+		}
+		View containerView = (View) view.eContainer();
+		if (!containerView.isSetElement()) {
+			return Collections.EMPTY_LIST;
+		}
+		Package modelElement = (Package) containerView.getElement();
+		List result = new LinkedList();
+		for (Iterator it = modelElement.getElementImports().iterator(); it.hasNext();) {
+			ElementImport childElement = (ElementImport) it.next();
+			int visualID = UMLVisualIDRegistry.getNodeVisualID(view, childElement);
+			if (visualID == ElementImportEditPart.VISUAL_ID) {
 				result.add(new UMLNodeDescriptor(childElement, visualID));
 				continue;
 			}
