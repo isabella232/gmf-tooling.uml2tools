@@ -8,7 +8,7 @@
           <children xmi:type="notation:Node" xmi:id="_dSRFYwkqEdyF_oRbgI8ypA" type="5001"/>
           <styles xmi:type="notation:ShapeStyle" xmi:id="_dSRFYQkqEdyF_oRbgI8ypA"/>
           <element xmi:type="uml:State" href="15.25.Fork and Join.uml#_dQx3oAkqEdyF_oRbgI8ypA"/>
-          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_dSRFYgkqEdyF_oRbgI8ypA" x="66" y="175"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_dSRFYgkqEdyF_oRbgI8ypA" x="31" y="93"/>
         </children>
         <children xmi:type="notation:Node" xmi:id="_gMhQAAkqEdyF_oRbgI8ypA" type="3012">
           <children xmi:type="notation:Node" xmi:id="_gMhQAwkqEdyF_oRbgI8ypA" type="5004"/>
@@ -56,23 +56,23 @@
           </children>
           <styles xmi:type="notation:ShapeStyle" xmi:id="_gMhQAQkqEdyF_oRbgI8ypA"/>
           <element xmi:type="uml:State" href="15.25.Fork and Join.uml#_gLofMAkqEdyF_oRbgI8ypA"/>
-          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_gMhQAgkqEdyF_oRbgI8ypA" x="222" y="115" width="236" height="141"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_gMhQAgkqEdyF_oRbgI8ypA" x="175" y="33" width="236" height="141"/>
         </children>
         <children xmi:type="notation:Node" xmi:id="_rfpKEAkqEdyF_oRbgI8ypA" type="3001">
           <children xmi:type="notation:Node" xmi:id="_rfpKEwkqEdyF_oRbgI8ypA" type="5001"/>
           <styles xmi:type="notation:ShapeStyle" xmi:id="_rfpKEQkqEdyF_oRbgI8ypA"/>
           <element xmi:type="uml:State" href="15.25.Fork and Join.uml#_rfWPIAkqEdyF_oRbgI8ypA"/>
-          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_rfpKEgkqEdyF_oRbgI8ypA" x="534" y="175"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_rfpKEgkqEdyF_oRbgI8ypA" x="499" y="93"/>
         </children>
         <children xmi:type="notation:Node" xmi:id="_s0SBwQkqEdyF_oRbgI8ypA" type="3007">
           <styles xmi:type="notation:ShapeStyle" xmi:id="_s0SBwgkqEdyF_oRbgI8ypA"/>
           <element xmi:type="uml:Pseudostate" href="15.25.Fork and Join.uml#_s0SBwAkqEdyF_oRbgI8ypA"/>
-          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_s0SBwwkqEdyF_oRbgI8ypA" x="186" y="163"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_s0SBwwkqEdyF_oRbgI8ypA" x="127" y="88"/>
         </children>
         <children xmi:type="notation:Node" xmi:id="_tR7nEAkqEdyF_oRbgI8ypA" type="3008">
           <styles xmi:type="notation:ShapeStyle" xmi:id="_tR7nEQkqEdyF_oRbgI8ypA"/>
           <element xmi:type="uml:Pseudostate" href="15.25.Fork and Join.uml#_tRx2EAkqEdyF_oRbgI8ypA"/>
-          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_tR7nEgkqEdyF_oRbgI8ypA" x="486" y="163"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_tR7nEgkqEdyF_oRbgI8ypA" x="463" y="88"/>
         </children>
         <styles xmi:type="notation:SortingStyle" xmi:id="_cWqYwQkqEdyF_oRbgI8ypA"/>
         <styles xmi:type="notation:FilteringStyle" xmi:id="_cWqYwgkqEdyF_oRbgI8ypA"/>
@@ -82,8 +82,8 @@
       <layoutConstraint xmi:type="notation:Bounds" xmi:id="_cWhO0gkqEdyF_oRbgI8ypA"/>
     </children>
     <styles xmi:type="notation:ShapeStyle" xmi:id="_MV0yYQkqEdyF_oRbgI8ypA"/>
-    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_MV0yYgkqEdyF_oRbgI8ypA"/>
     <element xmi:type="uml:StateMachine" href="15.25.Fork and Join.uml#_MTl9wAkqEdyF_oRbgI8ypA"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_MV0yYgkqEdyF_oRbgI8ypA"/>
   </children>
   <styles xmi:type="notation:DiagramStyle" xmi:id="_MT44sQkqEdyF_oRbgI8ypA"/>
   <element xmi:type="uml:StateMachine" href="15.25.Fork and Join.uml#_MTl9wAkqEdyF_oRbgI8ypA"/>
@@ -128,7 +128,7 @@
     <element xmi:type="uml:Transition" href="15.25.Fork and Join.uml#_6KOIIAkqEdyF_oRbgI8ypA"/>
     <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_6KOIJAkqEdyF_oRbgI8ypA" points="[4, -3, -57, 0]$[48, 0, -13, 3]"/>
     <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_6KX5IAkqEdyF_oRbgI8ypA" id="(0.0,0.68)"/>
-    <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_6KX5IQkqEdyF_oRbgI8ypA" id="(0.21666667,0.6333333)"/>
+    <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_6KX5IQkqEdyF_oRbgI8ypA" id="(0.019607844,0.5)"/>
   </edges>
   <edges xmi:type="notation:Edge" xmi:id="_F0JYoQkrEdyF_oRbgI8ypA" type="4001" source="_s0SBwQkqEdyF_oRbgI8ypA" target="_kLdx0AkqEdyF_oRbgI8ypA">
     <styles xmi:type="notation:ConnectorStyle" xmi:id="_F0JYogkrEdyF_oRbgI8ypA"/>
@@ -142,6 +142,7 @@
     <styles xmi:type="notation:FontStyle" xmi:id="_GhJokgkrEdyF_oRbgI8ypA"/>
     <element xmi:type="uml:Transition" href="15.25.Fork and Join.uml#_Gg_3kAkrEdyF_oRbgI8ypA"/>
     <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_GhJokwkrEdyF_oRbgI8ypA" points="[2, 1, -65, -32]$[58, 33, -9, 0]"/>
+    <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_gCYy8KJREdytfuupSpLWRw" id="(0.25,0.76)"/>
     <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_GhJolAkrEdyF_oRbgI8ypA" id="(0.15,0.53333336)"/>
   </edges>
 </notation:Diagram>

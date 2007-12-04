@@ -8,36 +8,36 @@
           <children xmi:type="notation:Node" xmi:id="_65yd0BZlEdyzvZTv-3508A" type="5001"/>
           <styles xmi:type="notation:ShapeStyle" xmi:id="_65C28RZlEdyzvZTv-3508A"/>
           <element xmi:type="uml:State" href="15.22.Junction.uml#_6zFY4BZlEdyzvZTv-3508A"/>
-          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_65C28hZlEdyzvZTv-3508A" x="177" y="73"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_65C28hZlEdyzvZTv-3508A" x="103" y="21"/>
         </children>
         <children xmi:type="notation:Node" xmi:id="_8X0iEBZlEdyzvZTv-3508A" type="3001">
           <children xmi:type="notation:Node" xmi:id="_8X0iExZlEdyzvZTv-3508A" type="5001"/>
           <styles xmi:type="notation:ShapeStyle" xmi:id="_8X0iERZlEdyzvZTv-3508A"/>
           <element xmi:type="uml:State" href="15.22.Junction.uml#_8XE7MBZlEdyzvZTv-3508A"/>
-          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_8X0iEhZlEdyzvZTv-3508A" x="453" y="73"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_8X0iEhZlEdyzvZTv-3508A" x="379" y="21"/>
         </children>
         <children xmi:type="notation:Node" xmi:id="_9w8RIBZlEdyzvZTv-3508A" type="3001">
           <children xmi:type="notation:Node" xmi:id="_9w8RIxZlEdyzvZTv-3508A" type="5001"/>
           <styles xmi:type="notation:ShapeStyle" xmi:id="_9w8RIRZlEdyzvZTv-3508A"/>
           <element xmi:type="uml:State" href="15.22.Junction.uml#_9wWbQBZlEdyzvZTv-3508A"/>
-          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_9w8RIhZlEdyzvZTv-3508A" x="107" y="335"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_9w8RIhZlEdyzvZTv-3508A" x="33" y="283"/>
         </children>
         <children xmi:type="notation:Node" xmi:id="_-uVtgBZlEdyzvZTv-3508A" type="3001">
           <children xmi:type="notation:Node" xmi:id="_-uVtgxZlEdyzvZTv-3508A" type="5001"/>
           <styles xmi:type="notation:ShapeStyle" xmi:id="_-uVtgRZlEdyzvZTv-3508A"/>
           <element xmi:type="uml:State" href="15.22.Junction.uml#_-uCykBZlEdyzvZTv-3508A"/>
-          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_-uVtghZlEdyzvZTv-3508A" x="308" y="335"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_-uVtghZlEdyzvZTv-3508A" x="241" y="283"/>
         </children>
         <children xmi:type="notation:Node" xmi:id="__j1yIBZlEdyzvZTv-3508A" type="3001">
           <children xmi:type="notation:Node" xmi:id="__j1yIxZlEdyzvZTv-3508A" type="5001"/>
           <styles xmi:type="notation:ShapeStyle" xmi:id="__j1yIRZlEdyzvZTv-3508A"/>
           <element xmi:type="uml:State" href="15.22.Junction.uml#__jZGMBZlEdyzvZTv-3508A"/>
-          <layoutConstraint xmi:type="notation:Bounds" xmi:id="__j1yIhZlEdyzvZTv-3508A" x="544" y="335"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="__j1yIhZlEdyzvZTv-3508A" x="470" y="283"/>
         </children>
         <children xmi:type="notation:Node" xmi:id="_FG0SgRZmEdyzvZTv-3508A" type="3009">
           <styles xmi:type="notation:ShapeStyle" xmi:id="_FG0SghZmEdyzvZTv-3508A"/>
           <element xmi:type="uml:Pseudostate" href="15.22.Junction.uml#_FG0SgBZmEdyzvZTv-3508A"/>
-          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_FG0SgxZmEdyzvZTv-3508A" x="330" y="187"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_FG0SgxZmEdyzvZTv-3508A" x="256" y="135"/>
         </children>
         <styles xmi:type="notation:SortingStyle" xmi:id="_5496ARZlEdyzvZTv-3508A"/>
         <styles xmi:type="notation:FilteringStyle" xmi:id="_5496AhZlEdyzvZTv-3508A"/>
@@ -47,8 +47,8 @@
       <layoutConstraint xmi:type="notation:Bounds" xmi:id="_54hOEhZlEdyzvZTv-3508A"/>
     </children>
     <styles xmi:type="notation:ShapeStyle" xmi:id="_2nI84RZlEdyzvZTv-3508A"/>
-    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_2nI84hZlEdyzvZTv-3508A"/>
     <element xmi:type="uml:StateMachine" href="15.22.Junction.uml#_2lNDMBZlEdyzvZTv-3508A"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_2nI84hZlEdyzvZTv-3508A"/>
   </children>
   <styles xmi:type="notation:DiagramStyle" xmi:id="_2lf-IRZlEdyzvZTv-3508A"/>
   <element xmi:type="uml:StateMachine" href="15.22.Junction.uml#_2lNDMBZlEdyzvZTv-3508A"/>
