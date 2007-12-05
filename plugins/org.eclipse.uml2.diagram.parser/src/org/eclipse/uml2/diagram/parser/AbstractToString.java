@@ -69,12 +69,16 @@ public abstract class AbstractToString implements ExternalToString {
 	}
 
 	protected void appendMultiplicity(StringBuffer result, MultiplicityElement element) {
+		appendMultiplicity(result, element, true);
+	}
+	
+	protected void appendMultiplicity(StringBuffer result, MultiplicityElement element, boolean skipIfExactlyOne) {
 		if (element == null){
 			return;
 		}
 		int lower = element.getLower();
 		int upper = element.getUpper();
-		if (upper == 1 && lower == 1){
+		if (upper == 1 && lower == 1 && skipIfExactlyOne){
 			return;
 		}
 		result.append(" [");
@@ -89,7 +93,7 @@ public abstract class AbstractToString implements ExternalToString {
 		}
 		result.append(']');
 	}
-	
+
 	protected static class ModifiersBuilder {
 		private final StringBuffer myBuffer;
 		
