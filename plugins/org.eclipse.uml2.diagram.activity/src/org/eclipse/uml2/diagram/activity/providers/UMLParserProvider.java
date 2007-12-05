@@ -98,6 +98,7 @@ import org.eclipse.uml2.diagram.activity.edit.parts.SendSignalActionNameEditPart
 import org.eclipse.uml2.diagram.activity.parser.ActivityEdgeWeightParser;
 import org.eclipse.uml2.diagram.activity.parser.ObjectNodeAttributesParser;
 import org.eclipse.uml2.diagram.activity.parser.ObjectNodeInStateParser;
+import org.eclipse.uml2.diagram.activity.parser.ObjectNodeTypeAndInStateParser;
 import org.eclipse.uml2.diagram.activity.parser.ObjectNodeTypeParser;
 import org.eclipse.uml2.diagram.activity.parsers.MessageFormatParser;
 import org.eclipse.uml2.diagram.activity.part.UMLVisualIDRegistry;
@@ -355,7 +356,7 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 	 * @generated NOT
 	 */
 	protected IParser createOutputPinName_5003Parser() {
-		return new ObjectNodeTypeParser();
+		return new ObjectNodeTypeAndInStateParser();
 	}
 
 	/**
@@ -489,7 +490,7 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 	 * @generated NOT
 	 */
 	protected IParser createOutputPinName_5004Parser() {
-		return new ObjectNodeTypeParser();
+		return new ObjectNodeTypeAndInStateParser();
 	}
 
 	/**
@@ -557,7 +558,7 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 	 * @generated NOT
 	 */
 	protected IParser createInputPinName_5006Parser() {
-		return new ObjectNodeTypeParser();
+		return new ObjectNodeTypeAndInStateParser();
 	}
 
 	/**
@@ -601,7 +602,7 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 	 * @generated NOT
 	 */
 	protected IParser createInputPinName_5007Parser() {
-		return new ObjectNodeTypeParser();
+		return new ObjectNodeTypeAndInStateParser();
 	}
 
 	/**
@@ -645,7 +646,7 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 	 * @generated NOT
 	 */
 	protected IParser createInputPinName_5008Parser() {
-		return new ObjectNodeTypeParser();
+		return new ObjectNodeTypeAndInStateParser();
 	}
 
 	/**
@@ -713,7 +714,7 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 	 * @generated NOT
 	 */
 	protected IParser createOutputPinName_5010Parser() {
-		return new ObjectNodeTypeParser();
+		return new ObjectNodeTypeAndInStateParser();
 	}
 
 	/**
@@ -757,7 +758,7 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 	 * @generated NOT
 	 */
 	protected IParser createInputPinName_5011Parser() {
-		return new ObjectNodeTypeParser();
+		return new ObjectNodeTypeAndInStateParser();
 	}
 
 	/**
@@ -825,7 +826,7 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 	 * @generated NOT
 	 */
 	protected IParser createInputPinName_5013Parser() {
-		return new ObjectNodeTypeParser();
+		return new ObjectNodeTypeAndInStateParser();
 	}
 
 	/**
