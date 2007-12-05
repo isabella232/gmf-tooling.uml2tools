@@ -23,10 +23,13 @@ import org.eclipse.uml2.diagram.clazz.edit.parts.AssociationNameEditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.Class3EditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.Class4EditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.ClassEditPart;
+import org.eclipse.uml2.diagram.clazz.edit.parts.ClassName2EditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.ClassNameEditPart;
+import org.eclipse.uml2.diagram.clazz.edit.parts.ClassQualifiedNameEditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.ClassStereotypeEditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.ConstraintNameEditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.DataTypeEditPart;
+import org.eclipse.uml2.diagram.clazz.edit.parts.DataTypeName2EditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.DataTypeNameEditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.DependencyName2EditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.DependencyName3EditPart;
@@ -34,10 +37,12 @@ import org.eclipse.uml2.diagram.clazz.edit.parts.DependencyNameEditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.ElementImportEditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.EnumerationEditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.EnumerationLiteralEditPart;
+import org.eclipse.uml2.diagram.clazz.edit.parts.EnumerationName2EditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.EnumerationNameEditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.GeneralizationSetIsCoveringIsDisjointEditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.GeneralizationSetNameEditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.InstanceSpecificationEditPart;
+import org.eclipse.uml2.diagram.clazz.edit.parts.InstanceSpecificationName2EditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.InstanceSpecificationNameEditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.InterfaceName2EditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.InterfaceNameEditPart;
@@ -49,9 +54,12 @@ import org.eclipse.uml2.diagram.clazz.edit.parts.Operation6EditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.OperationEditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.Package3EditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.PackageName2EditPart;
+import org.eclipse.uml2.diagram.clazz.edit.parts.PackageName3EditPart;
+import org.eclipse.uml2.diagram.clazz.edit.parts.PackageName4EditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.PackageNameEditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.PortNameEditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.PrimitiveTypeEditPart;
+import org.eclipse.uml2.diagram.clazz.edit.parts.PrimitiveTypeName2EditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.PrimitiveTypeNameEditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.Property2EditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.Property3EditPart;
@@ -432,6 +440,30 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 	 * @generated
 	 */
 	protected IParser createPackageName_5020Parser() {
+		EAttribute[] features = new EAttribute[] { UMLPackage.eINSTANCE.getNamedElement_Name(), };
+		MessageFormatParser parser = new MessageFormatParser(features);
+		return parser;
+	}
+
+	/**
+	 * @generated
+	 */
+	private IParser packageName_5026Parser;
+
+	/**
+	 * @generated
+	 */
+	private IParser getPackageName_5026Parser() {
+		if (packageName_5026Parser == null) {
+			packageName_5026Parser = createPackageName_5026Parser();
+		}
+		return packageName_5026Parser;
+	}
+
+	/**
+	 * @generated
+	 */
+	protected IParser createPackageName_5026Parser() {
 		EAttribute[] features = new EAttribute[] { UMLPackage.eINSTANCE.getNamedElement_Name(), };
 		MessageFormatParser parser = new MessageFormatParser(features);
 		return parser;
@@ -898,6 +930,174 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 	 */
 	protected IParser createElementImport_3031Parser() {
 		return new ElementImportParser();
+	}
+
+	/**
+	 * @generated
+	 */
+	private IParser packageName_5025Parser;
+
+	/**
+	 * @generated
+	 */
+	private IParser getPackageName_5025Parser() {
+		if (packageName_5025Parser == null) {
+			packageName_5025Parser = createPackageName_5025Parser();
+		}
+		return packageName_5025Parser;
+	}
+
+	/**
+	 * @generated
+	 */
+	protected IParser createPackageName_5025Parser() {
+		EAttribute[] features = new EAttribute[] { UMLPackage.eINSTANCE.getNamedElement_Name(), };
+		MessageFormatParser parser = new MessageFormatParser(features);
+		return parser;
+	}
+
+	/**
+	 * @generated
+	 */
+	private IParser className_5021Parser;
+
+	/**
+	 * @generated
+	 */
+	private IParser getClassName_5021Parser() {
+		if (className_5021Parser == null) {
+			className_5021Parser = createClassName_5021Parser();
+		}
+		return className_5021Parser;
+	}
+
+	/**
+	 * @generated
+	 */
+	protected IParser createClassName_5021Parser() {
+		EAttribute[] features = new EAttribute[] { UMLPackage.eINSTANCE.getNamedElement_Name(), };
+		MessageFormatParser parser = new MessageFormatParser(features);
+		return parser;
+	}
+
+	/**
+	 * @generated
+	 */
+	private IParser classQualifiedName_5022Parser;
+
+	/**
+	 * @generated
+	 */
+	private IParser getClassQualifiedName_5022Parser() {
+		if (classQualifiedName_5022Parser == null) {
+			classQualifiedName_5022Parser = createClassQualifiedName_5022Parser();
+		}
+		return classQualifiedName_5022Parser;
+	}
+
+	/**
+	 * @generated
+	 */
+	protected IParser createClassQualifiedName_5022Parser() {
+		EAttribute[] features = new EAttribute[] { UMLPackage.eINSTANCE.getNamedElement_QualifiedName(), };
+		MessageFormatParser parser = new MessageFormatParser(features);
+		return parser;
+	}
+
+	/**
+	 * @generated
+	 */
+	private IParser enumerationName_5023Parser;
+
+	/**
+	 * @generated
+	 */
+	private IParser getEnumerationName_5023Parser() {
+		if (enumerationName_5023Parser == null) {
+			enumerationName_5023Parser = createEnumerationName_5023Parser();
+		}
+		return enumerationName_5023Parser;
+	}
+
+	/**
+	 * @generated
+	 */
+	protected IParser createEnumerationName_5023Parser() {
+		EAttribute[] features = new EAttribute[] { UMLPackage.eINSTANCE.getNamedElement_Name(), };
+		MessageFormatParser parser = new MessageFormatParser(features);
+		return parser;
+	}
+
+	/**
+	 * @generated
+	 */
+	private IParser instanceSpecificationName_5024Parser;
+
+	/**
+	 * @generated
+	 */
+	private IParser getInstanceSpecificationName_5024Parser() {
+		if (instanceSpecificationName_5024Parser == null) {
+			instanceSpecificationName_5024Parser = createInstanceSpecificationName_5024Parser();
+		}
+		return instanceSpecificationName_5024Parser;
+	}
+
+	/**
+	 * @generated
+	 */
+	protected IParser createInstanceSpecificationName_5024Parser() {
+		EAttribute[] features = new EAttribute[] { UMLPackage.eINSTANCE.getNamedElement_Name(), };
+		MessageFormatParser parser = new MessageFormatParser(features);
+		return parser;
+	}
+
+	/**
+	 * @generated
+	 */
+	private IParser dataTypeName_5027Parser;
+
+	/**
+	 * @generated
+	 */
+	private IParser getDataTypeName_5027Parser() {
+		if (dataTypeName_5027Parser == null) {
+			dataTypeName_5027Parser = createDataTypeName_5027Parser();
+		}
+		return dataTypeName_5027Parser;
+	}
+
+	/**
+	 * @generated
+	 */
+	protected IParser createDataTypeName_5027Parser() {
+		EAttribute[] features = new EAttribute[] { UMLPackage.eINSTANCE.getNamedElement_Name(), };
+		MessageFormatParser parser = new MessageFormatParser(features);
+		return parser;
+	}
+
+	/**
+	 * @generated
+	 */
+	private IParser primitiveTypeName_5028Parser;
+
+	/**
+	 * @generated
+	 */
+	private IParser getPrimitiveTypeName_5028Parser() {
+		if (primitiveTypeName_5028Parser == null) {
+			primitiveTypeName_5028Parser = createPrimitiveTypeName_5028Parser();
+		}
+		return primitiveTypeName_5028Parser;
+	}
+
+	/**
+	 * @generated
+	 */
+	protected IParser createPrimitiveTypeName_5028Parser() {
+		EAttribute[] features = new EAttribute[] { UMLPackage.eINSTANCE.getNamedElement_Name(), };
+		MessageFormatParser parser = new MessageFormatParser(features);
+		return parser;
 	}
 
 	/**
@@ -1419,6 +1619,8 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 			return getInterfaceName_5018Parser();
 		case PackageName2EditPart.VISUAL_ID:
 			return getPackageName_5020Parser();
+		case PackageName3EditPart.VISUAL_ID:
+			return getPackageName_5026Parser();
 		case Package3EditPart.VISUAL_ID:
 			return getPackage_3006Parser();
 		case ClassEditPart.VISUAL_ID:
@@ -1469,6 +1671,20 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 			return getClass_3030Parser();
 		case ElementImportEditPart.VISUAL_ID:
 			return getElementImport_3031Parser();
+		case PackageName4EditPart.VISUAL_ID:
+			return getPackageName_5025Parser();
+		case ClassName2EditPart.VISUAL_ID:
+			return getClassName_5021Parser();
+		case ClassQualifiedNameEditPart.VISUAL_ID:
+			return getClassQualifiedName_5022Parser();
+		case EnumerationName2EditPart.VISUAL_ID:
+			return getEnumerationName_5023Parser();
+		case InstanceSpecificationName2EditPart.VISUAL_ID:
+			return getInstanceSpecificationName_5024Parser();
+		case DataTypeName2EditPart.VISUAL_ID:
+			return getDataTypeName_5027Parser();
+		case PrimitiveTypeName2EditPart.VISUAL_ID:
+			return getPrimitiveTypeName_5028Parser();
 		case DependencyName2EditPart.VISUAL_ID:
 			return getDependencyName_6001Parser();
 		case DependencyName3EditPart.VISUAL_ID:

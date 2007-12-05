@@ -122,6 +122,11 @@ public class UMLElementTypes extends ElementInitializers {
 	/**
 	 * @generated
 	 */
+	public static final IElementType Package_2016 = getElementType("org.eclipse.uml2.diagram.clazz.Package_2016"); //$NON-NLS-1$
+
+	/**
+	 * @generated
+	 */
 	public static final IElementType Package_3006 = getElementType("org.eclipse.uml2.diagram.clazz.Package_3006"); //$NON-NLS-1$
 
 	/**
@@ -248,6 +253,36 @@ public class UMLElementTypes extends ElementInitializers {
 	 * @generated
 	 */
 	public static final IElementType ElementImport_3031 = getElementType("org.eclipse.uml2.diagram.clazz.ElementImport_3031"); //$NON-NLS-1$
+
+	/**
+	 * @generated
+	 */
+	public static final IElementType Package_3032 = getElementType("org.eclipse.uml2.diagram.clazz.Package_3032"); //$NON-NLS-1$
+
+	/**
+	 * @generated
+	 */
+	public static final IElementType Class_3033 = getElementType("org.eclipse.uml2.diagram.clazz.Class_3033"); //$NON-NLS-1$
+
+	/**
+	 * @generated
+	 */
+	public static final IElementType Enumeration_3034 = getElementType("org.eclipse.uml2.diagram.clazz.Enumeration_3034"); //$NON-NLS-1$
+
+	/**
+	 * @generated
+	 */
+	public static final IElementType InstanceSpecification_3035 = getElementType("org.eclipse.uml2.diagram.clazz.InstanceSpecification_3035"); //$NON-NLS-1$
+
+	/**
+	 * @generated
+	 */
+	public static final IElementType DataType_3036 = getElementType("org.eclipse.uml2.diagram.clazz.DataType_3036"); //$NON-NLS-1$
+
+	/**
+	 * @generated
+	 */
+	public static final IElementType PrimitiveType_3037 = getElementType("org.eclipse.uml2.diagram.clazz.PrimitiveType_3037"); //$NON-NLS-1$
 
 	/**
 	 * @generated
@@ -450,6 +485,8 @@ public class UMLElementTypes extends ElementInitializers {
 
 			elements.put(AssociationClass_2015, UMLPackage.eINSTANCE.getAssociationClass());
 
+			elements.put(Package_2016, UMLPackage.eINSTANCE.getPackage());
+
 			elements.put(Package_3006, UMLPackage.eINSTANCE.getPackage());
 
 			elements.put(Class_3007, UMLPackage.eINSTANCE.getClass_());
@@ -501,6 +538,18 @@ public class UMLElementTypes extends ElementInitializers {
 			elements.put(Class_3030, UMLPackage.eINSTANCE.getClass_());
 
 			elements.put(ElementImport_3031, UMLPackage.eINSTANCE.getElementImport());
+
+			elements.put(Package_3032, UMLPackage.eINSTANCE.getPackage());
+
+			elements.put(Class_3033, UMLPackage.eINSTANCE.getClass_());
+
+			elements.put(Enumeration_3034, UMLPackage.eINSTANCE.getEnumeration());
+
+			elements.put(InstanceSpecification_3035, UMLPackage.eINSTANCE.getInstanceSpecification());
+
+			elements.put(DataType_3036, UMLPackage.eINSTANCE.getDataType());
+
+			elements.put(PrimitiveType_3037, UMLPackage.eINSTANCE.getPrimitiveType());
 
 			elements.put(Generalization_4001, UMLPackage.eINSTANCE.getGeneralization());
 
@@ -559,6 +608,7 @@ public class UMLElementTypes extends ElementInitializers {
 			KNOWN_ELEMENT_TYPES.add(Interface_2013);
 			KNOWN_ELEMENT_TYPES.add(Package_2014);
 			KNOWN_ELEMENT_TYPES.add(AssociationClass_2015);
+			KNOWN_ELEMENT_TYPES.add(Package_2016);
 			KNOWN_ELEMENT_TYPES.add(Package_3006);
 			KNOWN_ELEMENT_TYPES.add(Class_3007);
 			KNOWN_ELEMENT_TYPES.add(DataType_3008);
@@ -585,6 +635,12 @@ public class UMLElementTypes extends ElementInitializers {
 			KNOWN_ELEMENT_TYPES.add(Operation_3029);
 			KNOWN_ELEMENT_TYPES.add(Class_3030);
 			KNOWN_ELEMENT_TYPES.add(ElementImport_3031);
+			KNOWN_ELEMENT_TYPES.add(Package_3032);
+			KNOWN_ELEMENT_TYPES.add(Class_3033);
+			KNOWN_ELEMENT_TYPES.add(Enumeration_3034);
+			KNOWN_ELEMENT_TYPES.add(InstanceSpecification_3035);
+			KNOWN_ELEMENT_TYPES.add(DataType_3036);
+			KNOWN_ELEMENT_TYPES.add(PrimitiveType_3037);
 			KNOWN_ELEMENT_TYPES.add(Generalization_4001);
 			KNOWN_ELEMENT_TYPES.add(Dependency_4002);
 			KNOWN_ELEMENT_TYPES.add(Property_4003);

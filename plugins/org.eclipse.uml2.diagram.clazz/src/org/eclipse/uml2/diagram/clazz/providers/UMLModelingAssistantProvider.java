@@ -22,19 +22,26 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.edit.ui.provider.AdapterFactoryLabelProvider;
 import org.eclipse.uml2.diagram.clazz.edit.parts.AssociationClass2EditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.Class2EditPart;
+import org.eclipse.uml2.diagram.clazz.edit.parts.Class5EditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.ConstraintEditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.DataType2EditPart;
+import org.eclipse.uml2.diagram.clazz.edit.parts.DataType3EditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.DependencyEditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.Enumeration2EditPart;
+import org.eclipse.uml2.diagram.clazz.edit.parts.Enumeration3EditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.GeneralizationSetEditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.InstanceSpecification2EditPart;
+import org.eclipse.uml2.diagram.clazz.edit.parts.InstanceSpecification3EditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.Interface2EditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.InterfaceEditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.Package2EditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.Package4EditPart;
+import org.eclipse.uml2.diagram.clazz.edit.parts.PackageAsFrameContents2EditPart;
+import org.eclipse.uml2.diagram.clazz.edit.parts.PackageAsFrameContentsEditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.PackageEditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.PrimitiveType2EditPart;
 
+import org.eclipse.uml2.diagram.clazz.edit.parts.PrimitiveType3EditPart;
 import org.eclipse.uml2.diagram.clazz.part.Messages;
 import org.eclipse.uml2.diagram.clazz.part.UMLDiagramEditorPlugin;
 
@@ -115,6 +122,62 @@ public class UMLModelingAssistantProvider extends ModelingAssistantProvider {
 			types.add(UMLElementTypes.ElementImport_3031);
 			return types;
 		}
+		if (editPart instanceof Class5EditPart) {
+			List types = new ArrayList();
+			types.add(UMLElementTypes.Port_3025);
+			types.add(UMLElementTypes.RedefinableTemplateSignature_3027);
+			types.add(UMLElementTypes.Property_3001);
+			types.add(UMLElementTypes.Operation_3002);
+			types.add(UMLElementTypes.Class_3003);
+			return types;
+		}
+		if (editPart instanceof Enumeration3EditPart) {
+			List types = new ArrayList();
+			types.add(UMLElementTypes.RedefinableTemplateSignature_3027);
+			types.add(UMLElementTypes.EnumerationLiteral_3016);
+			types.add(UMLElementTypes.Property_3023);
+			types.add(UMLElementTypes.Operation_3024);
+			return types;
+		}
+		if (editPart instanceof InstanceSpecification3EditPart) {
+			List types = new ArrayList();
+			types.add(UMLElementTypes.Slot_3017);
+			return types;
+		}
+		if (editPart instanceof DataType3EditPart) {
+			List types = new ArrayList();
+			types.add(UMLElementTypes.RedefinableTemplateSignature_3027);
+			types.add(UMLElementTypes.Property_3014);
+			types.add(UMLElementTypes.Operation_3015);
+			return types;
+		}
+		if (editPart instanceof PrimitiveType3EditPart) {
+			List types = new ArrayList();
+			types.add(UMLElementTypes.RedefinableTemplateSignature_3027);
+			types.add(UMLElementTypes.Property_3021);
+			types.add(UMLElementTypes.Operation_3022);
+			return types;
+		}
+		if (editPart instanceof PackageAsFrameContentsEditPart) {
+			List types = new ArrayList();
+			types.add(UMLElementTypes.Package_3032);
+			types.add(UMLElementTypes.Class_3033);
+			types.add(UMLElementTypes.Enumeration_3034);
+			types.add(UMLElementTypes.InstanceSpecification_3035);
+			types.add(UMLElementTypes.DataType_3036);
+			types.add(UMLElementTypes.PrimitiveType_3037);
+			return types;
+		}
+		if (editPart instanceof PackageAsFrameContents2EditPart) {
+			List types = new ArrayList();
+			types.add(UMLElementTypes.Package_3032);
+			types.add(UMLElementTypes.Class_3033);
+			types.add(UMLElementTypes.Enumeration_3034);
+			types.add(UMLElementTypes.InstanceSpecification_3035);
+			types.add(UMLElementTypes.DataType_3036);
+			types.add(UMLElementTypes.PrimitiveType_3037);
+			return types;
+		}
 		if (editPart instanceof PackageEditPart) {
 			List types = new ArrayList();
 			types.add(UMLElementTypes.Package_2002);
@@ -131,6 +194,7 @@ public class UMLModelingAssistantProvider extends ModelingAssistantProvider {
 			types.add(UMLElementTypes.Interface_2013);
 			types.add(UMLElementTypes.Package_2014);
 			types.add(UMLElementTypes.AssociationClass_2015);
+			types.add(UMLElementTypes.Package_2016);
 			return types;
 		}
 		return Collections.EMPTY_LIST;

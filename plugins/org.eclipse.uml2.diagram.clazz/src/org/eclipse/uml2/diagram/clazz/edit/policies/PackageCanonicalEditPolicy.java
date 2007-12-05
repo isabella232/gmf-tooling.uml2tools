@@ -34,20 +34,24 @@ import org.eclipse.uml2.diagram.clazz.edit.parts.AssociationEditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.Class2EditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.Class3EditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.Class4EditPart;
+import org.eclipse.uml2.diagram.clazz.edit.parts.Class5EditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.ClassEditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.ConstraintEditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.DataType2EditPart;
+import org.eclipse.uml2.diagram.clazz.edit.parts.DataType3EditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.DataTypeEditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.Dependency2EditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.DependencyEditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.ElementImportEditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.Enumeration2EditPart;
+import org.eclipse.uml2.diagram.clazz.edit.parts.Enumeration3EditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.EnumerationEditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.EnumerationLiteralEditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.Generalization2EditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.GeneralizationEditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.GeneralizationSetEditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.InstanceSpecification2EditPart;
+import org.eclipse.uml2.diagram.clazz.edit.parts.InstanceSpecification3EditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.InstanceSpecificationEditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.Interface2EditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.InterfaceEditPart;
@@ -61,9 +65,12 @@ import org.eclipse.uml2.diagram.clazz.edit.parts.OperationEditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.Package2EditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.Package3EditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.Package4EditPart;
+import org.eclipse.uml2.diagram.clazz.edit.parts.Package6EditPart;
+import org.eclipse.uml2.diagram.clazz.edit.parts.PackageAsFrameEditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.PackageEditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.PortEditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.PrimitiveType2EditPart;
+import org.eclipse.uml2.diagram.clazz.edit.parts.PrimitiveType3EditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.PrimitiveTypeEditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.Property2EditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.Property3EditPart;
@@ -138,7 +145,6 @@ public class PackageCanonicalEditPolicy extends CanonicalConnectionEditPolicy {
 		int actualID = UMLVisualIDRegistry.getVisualID(view);
 		int suggestedID = UMLVisualIDRegistry.getNodeVisualID((View) getHost().getModel(), view.getElement());
 		switch (actualID) {
-		case Package2EditPart.VISUAL_ID:
 		case Class2EditPart.VISUAL_ID:
 		case DataType2EditPart.VISUAL_ID:
 		case PrimitiveType2EditPart.VISUAL_ID:
@@ -149,6 +155,11 @@ public class PackageCanonicalEditPolicy extends CanonicalConnectionEditPolicy {
 		case GeneralizationSetEditPart.VISUAL_ID:
 		case Package4EditPart.VISUAL_ID:
 			return !semanticChildren.contains(view.getElement()) || actualID != suggestedID;
+		case Package2EditPart.VISUAL_ID:
+			if (!semanticChildren.contains(view.getElement())) {
+				return true;
+			}
+			return (actualID != suggestedID) && (suggestedID != PackageAsFrameEditPart.VISUAL_ID) && true;
 		case AssociationClass2EditPart.VISUAL_ID:
 			if (!semanticChildren.contains(view.getElement())) {
 				return true;
@@ -169,6 +180,11 @@ public class PackageCanonicalEditPolicy extends CanonicalConnectionEditPolicy {
 				return true;
 			}
 			return (actualID != suggestedID) && (suggestedID != AssociationClass2EditPart.VISUAL_ID) && true;
+		case PackageAsFrameEditPart.VISUAL_ID:
+			if (!semanticChildren.contains(view.getElement())) {
+				return true;
+			}
+			return (actualID != suggestedID) && (suggestedID != Package2EditPart.VISUAL_ID) && true;
 		}
 		return false;
 	}
@@ -386,6 +402,13 @@ public class PackageCanonicalEditPolicy extends CanonicalConnectionEditPolicy {
 			domain2NotationMap.put(view.getElement(), view);
 			break;
 		}
+		case PackageAsFrameEditPart.VISUAL_ID: {
+			if (!domain2NotationMap.containsKey(view.getElement())) {
+				result.addAll(UMLDiagramUpdater.getPackage_2016ContainedLinks(view));
+			}
+			domain2NotationMap.put(view.getElement(), view);
+			break;
+		}
 		case Package3EditPart.VISUAL_ID: {
 			if (!domain2NotationMap.containsKey(view.getElement())) {
 				result.addAll(UMLDiagramUpdater.getPackage_3006ContainedLinks(view));
@@ -564,6 +587,48 @@ public class PackageCanonicalEditPolicy extends CanonicalConnectionEditPolicy {
 		case ElementImportEditPart.VISUAL_ID: {
 			if (!domain2NotationMap.containsKey(view.getElement())) {
 				result.addAll(UMLDiagramUpdater.getElementImport_3031ContainedLinks(view));
+			}
+			domain2NotationMap.put(view.getElement(), view);
+			break;
+		}
+		case Package6EditPart.VISUAL_ID: {
+			if (!domain2NotationMap.containsKey(view.getElement())) {
+				result.addAll(UMLDiagramUpdater.getPackage_3032ContainedLinks(view));
+			}
+			domain2NotationMap.put(view.getElement(), view);
+			break;
+		}
+		case Class5EditPart.VISUAL_ID: {
+			if (!domain2NotationMap.containsKey(view.getElement())) {
+				result.addAll(UMLDiagramUpdater.getClass_3033ContainedLinks(view));
+			}
+			domain2NotationMap.put(view.getElement(), view);
+			break;
+		}
+		case Enumeration3EditPart.VISUAL_ID: {
+			if (!domain2NotationMap.containsKey(view.getElement())) {
+				result.addAll(UMLDiagramUpdater.getEnumeration_3034ContainedLinks(view));
+			}
+			domain2NotationMap.put(view.getElement(), view);
+			break;
+		}
+		case InstanceSpecification3EditPart.VISUAL_ID: {
+			if (!domain2NotationMap.containsKey(view.getElement())) {
+				result.addAll(UMLDiagramUpdater.getInstanceSpecification_3035ContainedLinks(view));
+			}
+			domain2NotationMap.put(view.getElement(), view);
+			break;
+		}
+		case DataType3EditPart.VISUAL_ID: {
+			if (!domain2NotationMap.containsKey(view.getElement())) {
+				result.addAll(UMLDiagramUpdater.getDataType_3036ContainedLinks(view));
+			}
+			domain2NotationMap.put(view.getElement(), view);
+			break;
+		}
+		case PrimitiveType3EditPart.VISUAL_ID: {
+			if (!domain2NotationMap.containsKey(view.getElement())) {
+				result.addAll(UMLDiagramUpdater.getPrimitiveType_3037ContainedLinks(view));
 			}
 			domain2NotationMap.put(view.getElement(), view);
 			break;

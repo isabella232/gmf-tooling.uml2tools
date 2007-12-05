@@ -728,6 +728,71 @@ public class Messages extends NLS {
 	/**
 	 * @generated
 	 */
+	public static String PackageAsFrameContentsEditPart_title;
+
+	/**
+	 * @generated
+	 */
+	public static String PackageAsFrameContents2EditPart_title;
+
+	/**
+	 * @generated
+	 */
+	public static String ClassAttributes2EditPart_title;
+
+	/**
+	 * @generated
+	 */
+	public static String ClassOperations2EditPart_title;
+
+	/**
+	 * @generated
+	 */
+	public static String ClassClasses2EditPart_title;
+
+	/**
+	 * @generated
+	 */
+	public static String EnumerationLiterals2EditPart_title;
+
+	/**
+	 * @generated
+	 */
+	public static String EnumerationAttributes2EditPart_title;
+
+	/**
+	 * @generated
+	 */
+	public static String EnumerationOperations2EditPart_title;
+
+	/**
+	 * @generated
+	 */
+	public static String InstanceSpecificationSlots2EditPart_title;
+
+	/**
+	 * @generated
+	 */
+	public static String DataTypeAttributes2EditPart_title;
+
+	/**
+	 * @generated
+	 */
+	public static String DataTypeOperations2EditPart_title;
+
+	/**
+	 * @generated
+	 */
+	public static String PrimitiveTypeAttributes2EditPart_title;
+
+	/**
+	 * @generated
+	 */
+	public static String PrimitiveTypeOperations2EditPart_title;
+
+	/**
+	 * @generated
+	 */
 	public static String CommandName_OpenDiagram;
 
 	/**
@@ -874,6 +939,16 @@ public class Messages extends NLS {
 	 * @generated
 	 */
 	public static String NavigatorGroupName_AssociationClass_2015_outgoinglinks;
+
+	/**
+	 * @generated
+	 */
+	public static String NavigatorGroupName_Package_2016_incominglinks;
+
+	/**
+	 * @generated
+	 */
+	public static String NavigatorGroupName_Package_2016_outgoinglinks;
 
 	/**
 	 * @generated
@@ -1128,6 +1203,66 @@ public class Messages extends NLS {
 	/**
 	 * @generated
 	 */
+	public static String NavigatorGroupName_Package_3032_incominglinks;
+
+	/**
+	 * @generated
+	 */
+	public static String NavigatorGroupName_Package_3032_outgoinglinks;
+
+	/**
+	 * @generated
+	 */
+	public static String NavigatorGroupName_Class_3033_incominglinks;
+
+	/**
+	 * @generated
+	 */
+	public static String NavigatorGroupName_Class_3033_outgoinglinks;
+
+	/**
+	 * @generated
+	 */
+	public static String NavigatorGroupName_Enumeration_3034_incominglinks;
+
+	/**
+	 * @generated
+	 */
+	public static String NavigatorGroupName_Enumeration_3034_outgoinglinks;
+
+	/**
+	 * @generated
+	 */
+	public static String NavigatorGroupName_InstanceSpecification_3035_incominglinks;
+
+	/**
+	 * @generated
+	 */
+	public static String NavigatorGroupName_InstanceSpecification_3035_outgoinglinks;
+
+	/**
+	 * @generated
+	 */
+	public static String NavigatorGroupName_DataType_3036_incominglinks;
+
+	/**
+	 * @generated
+	 */
+	public static String NavigatorGroupName_DataType_3036_outgoinglinks;
+
+	/**
+	 * @generated
+	 */
+	public static String NavigatorGroupName_PrimitiveType_3037_incominglinks;
+
+	/**
+	 * @generated
+	 */
+	public static String NavigatorGroupName_PrimitiveType_3037_outgoinglinks;
+
+	/**
+	 * @generated
+	 */
 	public static String NavigatorGroupName_Generalization_4001_target;
 
 	/**
@@ -1278,6 +1413,16 @@ public class Messages extends NLS {
 	/**
 	 * @generated
 	 */
+	public static String Set2016Notation_text;
+
+	/**
+	 * @generated
+	 */
+	public static String Set2016Notation_tooltiptext;
+
+	/**
+	 * @generated
+	 */
 	public static String Set2013Notation_text;
 
 	/**
@@ -1298,6 +1443,26 @@ public class Messages extends NLS {
 	/**
 	 * @generated
 	 */
+	public static String Set2002Notation_text;
+
+	/**
+	 * @generated
+	 */
+	public static String Set2002Notation_tooltiptext;
+
+	/**
+	 * @generated
+	 */
+	public static String Package2ContributionItemProvider_menu;
+
+	/**
+	 * @generated
+	 */
+	public static String Package2ContributionItemProvider_group;
+
+	/**
+	 * @generated
+	 */
 	public static String InterfaceContributionItemProvider_menu;
 
 	/**
@@ -1314,6 +1479,16 @@ public class Messages extends NLS {
 	 * @generated
 	 */
 	public static String Interface2ContributionItemProvider_group;
+
+	/**
+	 * @generated
+	 */
+	public static String PackageAsFrameContributionItemProvider_menu;
+
+	/**
+	 * @generated
+	 */
+	public static String PackageAsFrameContributionItemProvider_group;
 
 	//TODO: put accessor fields manually	
 }

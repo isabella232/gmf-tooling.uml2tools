@@ -118,6 +118,12 @@ public class UMLEditPartFactory implements EditPartFactory {
 			case AssociationClassRhombEditPart.VISUAL_ID:
 				return new AssociationClassRhombEditPart(view);
 
+			case PackageAsFrameEditPart.VISUAL_ID:
+				return new PackageAsFrameEditPart(view);
+
+			case PackageName3EditPart.VISUAL_ID:
+				return new PackageName3EditPart(view);
+
 			case Package3EditPart.VISUAL_ID:
 				return new Package3EditPart(view);
 
@@ -202,6 +208,45 @@ public class UMLEditPartFactory implements EditPartFactory {
 			case ElementImportEditPart.VISUAL_ID:
 				return new ElementImportEditPart(view);
 
+			case Package6EditPart.VISUAL_ID:
+				return new Package6EditPart(view);
+
+			case PackageName4EditPart.VISUAL_ID:
+				return new PackageName4EditPart(view);
+
+			case Class5EditPart.VISUAL_ID:
+				return new Class5EditPart(view);
+
+			case ClassName2EditPart.VISUAL_ID:
+				return new ClassName2EditPart(view);
+
+			case ClassQualifiedNameEditPart.VISUAL_ID:
+				return new ClassQualifiedNameEditPart(view);
+
+			case Enumeration3EditPart.VISUAL_ID:
+				return new Enumeration3EditPart(view);
+
+			case EnumerationName2EditPart.VISUAL_ID:
+				return new EnumerationName2EditPart(view);
+
+			case InstanceSpecification3EditPart.VISUAL_ID:
+				return new InstanceSpecification3EditPart(view);
+
+			case InstanceSpecificationName2EditPart.VISUAL_ID:
+				return new InstanceSpecificationName2EditPart(view);
+
+			case DataType3EditPart.VISUAL_ID:
+				return new DataType3EditPart(view);
+
+			case DataTypeName2EditPart.VISUAL_ID:
+				return new DataTypeName2EditPart(view);
+
+			case PrimitiveType3EditPart.VISUAL_ID:
+				return new PrimitiveType3EditPart(view);
+
+			case PrimitiveTypeName2EditPart.VISUAL_ID:
+				return new PrimitiveTypeName2EditPart(view);
+
 			case PackagePackagesEditPart.VISUAL_ID:
 				return new PackagePackagesEditPart(view);
 
@@ -264,6 +309,45 @@ public class UMLEditPartFactory implements EditPartFactory {
 
 			case PackageImportsEditPart.VISUAL_ID:
 				return new PackageImportsEditPart(view);
+
+			case PackageAsFrameContentsEditPart.VISUAL_ID:
+				return new PackageAsFrameContentsEditPart(view);
+
+			case PackageAsFrameContents2EditPart.VISUAL_ID:
+				return new PackageAsFrameContents2EditPart(view);
+
+			case ClassAttributes2EditPart.VISUAL_ID:
+				return new ClassAttributes2EditPart(view);
+
+			case ClassOperations2EditPart.VISUAL_ID:
+				return new ClassOperations2EditPart(view);
+
+			case ClassClasses2EditPart.VISUAL_ID:
+				return new ClassClasses2EditPart(view);
+
+			case EnumerationLiterals2EditPart.VISUAL_ID:
+				return new EnumerationLiterals2EditPart(view);
+
+			case EnumerationAttributes2EditPart.VISUAL_ID:
+				return new EnumerationAttributes2EditPart(view);
+
+			case EnumerationOperations2EditPart.VISUAL_ID:
+				return new EnumerationOperations2EditPart(view);
+
+			case InstanceSpecificationSlots2EditPart.VISUAL_ID:
+				return new InstanceSpecificationSlots2EditPart(view);
+
+			case DataTypeAttributes2EditPart.VISUAL_ID:
+				return new DataTypeAttributes2EditPart(view);
+
+			case DataTypeOperations2EditPart.VISUAL_ID:
+				return new DataTypeOperations2EditPart(view);
+
+			case PrimitiveTypeAttributes2EditPart.VISUAL_ID:
+				return new PrimitiveTypeAttributes2EditPart(view);
+
+			case PrimitiveTypeOperations2EditPart.VISUAL_ID:
+				return new PrimitiveTypeOperations2EditPart(view);
 
 			case GeneralizationEditPart.VISUAL_ID:
 				return new GeneralizationEditPart(view);

@@ -682,6 +682,15 @@
       </metamodel>
       <metamodel nsURI="http://www.eclipse.org/uml2/2.1.0/UML">
          <specializationType
+               id="org.eclipse.uml2.diagram.clazz.Package_2016"
+               name="%metatype.name.Package_2016"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType">
+            <specializes id="org.eclipse.uml2.diagram.clazz.Package_1000"/>
+            <param name="semanticHint" value="2016"/>
+         </specializationType>
+      </metamodel>
+      <metamodel nsURI="http://www.eclipse.org/uml2/2.1.0/UML">
+         <specializationType
                id="org.eclipse.uml2.diagram.clazz.Package_3006"
                name="%metatype.name.Package_3006"
                kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
@@ -941,6 +950,60 @@
          </metamodelType>
       </metamodel>
       <metamodel nsURI="http://www.eclipse.org/uml2/2.1.0/UML">
+         <specializationType
+               id="org.eclipse.uml2.diagram.clazz.Package_3032"
+               name="%metatype.name.Package_3032"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType">
+            <specializes id="org.eclipse.uml2.diagram.clazz.Package_1000"/>
+            <param name="semanticHint" value="3032"/>
+         </specializationType>
+      </metamodel>
+      <metamodel nsURI="http://www.eclipse.org/uml2/2.1.0/UML">
+         <specializationType
+               id="org.eclipse.uml2.diagram.clazz.Class_3033"
+               name="%metatype.name.Class_3033"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType">
+            <specializes id="org.eclipse.uml2.diagram.clazz.Class_3007"/>
+            <param name="semanticHint" value="3033"/>
+         </specializationType>
+      </metamodel>
+      <metamodel nsURI="http://www.eclipse.org/uml2/2.1.0/UML">
+         <specializationType
+               id="org.eclipse.uml2.diagram.clazz.Enumeration_3034"
+               name="%metatype.name.Enumeration_3034"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType">
+            <specializes id="org.eclipse.uml2.diagram.clazz.Enumeration_3011"/>
+            <param name="semanticHint" value="3034"/>
+         </specializationType>
+      </metamodel>
+      <metamodel nsURI="http://www.eclipse.org/uml2/2.1.0/UML">
+         <specializationType
+               id="org.eclipse.uml2.diagram.clazz.InstanceSpecification_3035"
+               name="%metatype.name.InstanceSpecification_3035"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType">
+            <specializes id="org.eclipse.uml2.diagram.clazz.InstanceSpecification_3013"/>
+            <param name="semanticHint" value="3035"/>
+         </specializationType>
+      </metamodel>
+      <metamodel nsURI="http://www.eclipse.org/uml2/2.1.0/UML">
+         <specializationType
+               id="org.eclipse.uml2.diagram.clazz.DataType_3036"
+               name="%metatype.name.DataType_3036"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType">
+            <specializes id="org.eclipse.uml2.diagram.clazz.DataType_3008"/>
+            <param name="semanticHint" value="3036"/>
+         </specializationType>
+      </metamodel>
+      <metamodel nsURI="http://www.eclipse.org/uml2/2.1.0/UML">
+         <specializationType
+               id="org.eclipse.uml2.diagram.clazz.PrimitiveType_3037"
+               name="%metatype.name.PrimitiveType_3037"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType">
+            <specializes id="org.eclipse.uml2.diagram.clazz.PrimitiveType_3009"/>
+            <param name="semanticHint" value="3037"/>
+         </specializationType>
+      </metamodel>
+      <metamodel nsURI="http://www.eclipse.org/uml2/2.1.0/UML">
          <metamodelType
                id="org.eclipse.uml2.diagram.clazz.Generalization_4001"
                name="%metatype.name.Generalization_4001"
@@ -1096,6 +1159,7 @@
          <elementType ref="org.eclipse.uml2.diagram.clazz.Interface_2013"/>
          <elementType ref="org.eclipse.uml2.diagram.clazz.Package_2014"/>
          <elementType ref="org.eclipse.uml2.diagram.clazz.AssociationClass_2015"/>
+         <elementType ref="org.eclipse.uml2.diagram.clazz.Package_2016"/>
          <elementType ref="org.eclipse.uml2.diagram.clazz.Package_3006"/>
          <elementType ref="org.eclipse.uml2.diagram.clazz.Class_3007"/>
          <elementType ref="org.eclipse.uml2.diagram.clazz.DataType_3008"/>
@@ -1122,6 +1186,12 @@
          <elementType ref="org.eclipse.uml2.diagram.clazz.Operation_3029"/>
          <elementType ref="org.eclipse.uml2.diagram.clazz.Class_3030"/>
          <elementType ref="org.eclipse.uml2.diagram.clazz.ElementImport_3031"/>
+         <elementType ref="org.eclipse.uml2.diagram.clazz.Package_3032"/>
+         <elementType ref="org.eclipse.uml2.diagram.clazz.Class_3033"/>
+         <elementType ref="org.eclipse.uml2.diagram.clazz.Enumeration_3034"/>
+         <elementType ref="org.eclipse.uml2.diagram.clazz.InstanceSpecification_3035"/>
+         <elementType ref="org.eclipse.uml2.diagram.clazz.DataType_3036"/>
+         <elementType ref="org.eclipse.uml2.diagram.clazz.PrimitiveType_3037"/>
          <elementType ref="org.eclipse.uml2.diagram.clazz.Generalization_4001"/>
          <elementType ref="org.eclipse.uml2.diagram.clazz.Dependency_4002"/>
          <elementType ref="org.eclipse.uml2.diagram.clazz.Property_4003"/>
@@ -1374,6 +1444,38 @@
       <?gmfgen generated="true"?>
       <contributionItemProvider
             checkPluginLoaded="true"
+            class="org.eclipse.uml2.diagram.clazz.action.Package2ContributionItemProvider">
+         <Priority name="Medium"/>
+		 <popupContribution
+               class="org.eclipse.gmf.runtime.diagram.ui.providers.DiagramContextMenuProvider">
+			 <popupMenuGroup
+                  id="ChangeNotation"
+                  path="/propertiesGroup">
+             </popupMenuGroup>
+             <popupMenu
+                   id="ChangeNotationMenu"
+                   path="/ChangeNotation">
+             </popupMenu>                        
+             <popupMenuGroup
+                   id="ChangeNotationGroup"
+                   path="/ChangeNotationMenu/">
+             </popupMenuGroup>
+							
+			<popupAction
+				path="/ChangeNotationMenu/ChangeNotationGroup"
+				id="set_2016_notation">
+			</popupAction>            
+				<popupStructuredContributionCriteria
+                   objectClass="org.eclipse.uml2.diagram.clazz.edit.parts.Package2EditPart"
+                   objectCount="1">
+             </popupStructuredContributionCriteria>
+		 </popupContribution>
+      </contributionItemProvider>
+   </extension>
+<extension point="org.eclipse.gmf.runtime.common.ui.services.action.contributionItemProviders">
+      <?gmfgen generated="true"?>
+      <contributionItemProvider
+            checkPluginLoaded="true"
             class="org.eclipse.uml2.diagram.clazz.action.InterfaceContributionItemProvider">
          <Priority name="Medium"/>
 		 <popupContribution
@@ -1401,8 +1503,7 @@
              </popupStructuredContributionCriteria>
 		 </popupContribution>
       </contributionItemProvider>
-   </extension>
-<extension point="org.eclipse.gmf.runtime.common.ui.services.action.contributionItemProviders">
+   </extension><extension point="org.eclipse.gmf.runtime.common.ui.services.action.contributionItemProviders">
       <?gmfgen generated="true"?>
       <contributionItemProvider
             checkPluginLoaded="true"
@@ -1434,6 +1535,39 @@
 		 </popupContribution>
       </contributionItemProvider>
    </extension>
+<extension point="org.eclipse.gmf.runtime.common.ui.services.action.contributionItemProviders">
+      <?gmfgen generated="true"?>
+      <contributionItemProvider
+            checkPluginLoaded="true"
+            class="org.eclipse.uml2.diagram.clazz.action.PackageAsFrameContributionItemProvider">
+         <Priority name="Medium"/>
+		 <popupContribution
+               class="org.eclipse.gmf.runtime.diagram.ui.providers.DiagramContextMenuProvider">
+			 <popupMenuGroup
+                  id="ChangeNotation"
+                  path="/propertiesGroup">
+             </popupMenuGroup>
+             <popupMenu
+                   id="ChangeNotationMenu"
+                   path="/ChangeNotation">
+             </popupMenu>                        
+             <popupMenuGroup
+                   id="ChangeNotationGroup"
+                   path="/ChangeNotationMenu/">
+             </popupMenuGroup>
+							
+			<popupAction
+				path="/ChangeNotationMenu/ChangeNotationGroup"
+				id="set_2002_notation">
+			</popupAction>            
+				<popupStructuredContributionCriteria
+                   objectClass="org.eclipse.uml2.diagram.clazz.edit.parts.PackageAsFrameEditPart"
+                   objectCount="1">
+             </popupStructuredContributionCriteria>
+		 </popupContribution>
+      </contributionItemProvider>
+   </extension>
+
 
 
 

@@ -19,6 +19,7 @@ import org.eclipse.uml2.diagram.clazz.edit.commands.InstanceSpecification2Create
 import org.eclipse.uml2.diagram.clazz.edit.commands.Interface2CreateCommand;
 import org.eclipse.uml2.diagram.clazz.edit.commands.InterfaceCreateCommand;
 import org.eclipse.uml2.diagram.clazz.edit.commands.Package3CreateCommand;
+import org.eclipse.uml2.diagram.clazz.edit.commands.PackageAsFrameCreateCommand;
 import org.eclipse.uml2.diagram.clazz.edit.commands.PackageCreateCommand;
 import org.eclipse.uml2.diagram.clazz.edit.commands.PrimitiveType2CreateCommand;
 
@@ -118,6 +119,12 @@ public class PackageItemSemanticEditPolicy extends UMLBaseItemSemanticEditPolicy
 				req.setContainmentFeature(UMLPackage.eINSTANCE.getPackage_PackagedElement());
 			}
 			return getGEFWrapper(new AssociationClassRhombCreateCommand(req));
+		}
+		if (UMLElementTypes.Package_2016 == req.getElementType()) {
+			if (req.getContainmentFeature() == null) {
+				req.setContainmentFeature(UMLPackage.eINSTANCE.getPackage_PackagedElement());
+			}
+			return getGEFWrapper(new PackageAsFrameCreateCommand(req));
 		}
 		return super.getCreateCommand(req);
 	}

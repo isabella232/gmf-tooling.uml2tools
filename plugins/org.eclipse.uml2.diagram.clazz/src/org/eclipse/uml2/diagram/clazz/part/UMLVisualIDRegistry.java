@@ -153,6 +153,18 @@ public class UMLVisualIDRegistry {
 	/**
 	 * @generated
 	 */
+	private static final UMLAbstractExpression Class_3033_Constraint = UMLOCLFactory.getExpression("not oclIsKindOf(uml::AssociationClass) and not oclIsKindOf(uml::StateMachine)",
+			UMLPackage.eINSTANCE.getClass_());
+
+	/**
+	 * @generated
+	 */
+	private static final UMLAbstractExpression DataType_3036_Constraint = UMLOCLFactory.getExpression("not oclIsKindOf(uml::PrimitiveType) and not oclIsKindOf(uml::Enumeration)", UMLPackage.eINSTANCE
+			.getDataType());
+
+	/**
+	 * @generated
+	 */
 	private static final UMLAbstractExpression Generalization_4001_Constraint = UMLOCLFactory.getExpression("self.generalizationSet ->size() = 0", UMLPackage.eINSTANCE.getGeneralization());
 
 	/**
@@ -302,6 +314,29 @@ public class UMLVisualIDRegistry {
 				return RedefinableTemplateSignatureEditPart.VISUAL_ID;
 			}
 			break;
+		case Class5EditPart.VISUAL_ID:
+			if (UMLPackage.eINSTANCE.getPort().isSuperTypeOf(domainElement.eClass())) {
+				return PortEditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getRedefinableTemplateSignature().isSuperTypeOf(domainElement.eClass())) {
+				return RedefinableTemplateSignatureEditPart.VISUAL_ID;
+			}
+			break;
+		case Enumeration3EditPart.VISUAL_ID:
+			if (UMLPackage.eINSTANCE.getRedefinableTemplateSignature().isSuperTypeOf(domainElement.eClass())) {
+				return RedefinableTemplateSignatureEditPart.VISUAL_ID;
+			}
+			break;
+		case DataType3EditPart.VISUAL_ID:
+			if (UMLPackage.eINSTANCE.getRedefinableTemplateSignature().isSuperTypeOf(domainElement.eClass())) {
+				return RedefinableTemplateSignatureEditPart.VISUAL_ID;
+			}
+			break;
+		case PrimitiveType3EditPart.VISUAL_ID:
+			if (UMLPackage.eINSTANCE.getRedefinableTemplateSignature().isSuperTypeOf(domainElement.eClass())) {
+				return RedefinableTemplateSignatureEditPart.VISUAL_ID;
+			}
+			break;
 		case PackagePackagesEditPart.VISUAL_ID:
 			if (UMLPackage.eINSTANCE.getPackage().isSuperTypeOf(domainElement.eClass())) {
 				return Package3EditPart.VISUAL_ID;
@@ -419,6 +454,101 @@ public class UMLVisualIDRegistry {
 				return ElementImportEditPart.VISUAL_ID;
 			}
 			break;
+		case PackageAsFrameContentsEditPart.VISUAL_ID:
+			if (UMLPackage.eINSTANCE.getPackage().isSuperTypeOf(domainElement.eClass())) {
+				return Package6EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getClass_().isSuperTypeOf(domainElement.eClass()) && evaluate(Class_3033_Constraint, domainElement)) {
+				return Class5EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getEnumeration().isSuperTypeOf(domainElement.eClass())) {
+				return Enumeration3EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getInstanceSpecification().isSuperTypeOf(domainElement.eClass())) {
+				return InstanceSpecification3EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getDataType().isSuperTypeOf(domainElement.eClass()) && evaluate(DataType_3036_Constraint, domainElement)) {
+				return DataType3EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getPrimitiveType().isSuperTypeOf(domainElement.eClass())) {
+				return PrimitiveType3EditPart.VISUAL_ID;
+			}
+			break;
+		case PackageAsFrameContents2EditPart.VISUAL_ID:
+			if (UMLPackage.eINSTANCE.getPackage().isSuperTypeOf(domainElement.eClass())) {
+				return Package6EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getClass_().isSuperTypeOf(domainElement.eClass()) && evaluate(Class_3033_Constraint, domainElement)) {
+				return Class5EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getEnumeration().isSuperTypeOf(domainElement.eClass())) {
+				return Enumeration3EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getInstanceSpecification().isSuperTypeOf(domainElement.eClass())) {
+				return InstanceSpecification3EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getDataType().isSuperTypeOf(domainElement.eClass()) && evaluate(DataType_3036_Constraint, domainElement)) {
+				return DataType3EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getPrimitiveType().isSuperTypeOf(domainElement.eClass())) {
+				return PrimitiveType3EditPart.VISUAL_ID;
+			}
+			break;
+		case ClassAttributes2EditPart.VISUAL_ID:
+			if (UMLPackage.eINSTANCE.getProperty().isSuperTypeOf(domainElement.eClass()) && evaluate(Property_3001_Constraint, domainElement)) {
+				return PropertyEditPart.VISUAL_ID;
+			}
+			break;
+		case ClassOperations2EditPart.VISUAL_ID:
+			if (UMLPackage.eINSTANCE.getOperation().isSuperTypeOf(domainElement.eClass())) {
+				return OperationEditPart.VISUAL_ID;
+			}
+			break;
+		case ClassClasses2EditPart.VISUAL_ID:
+			if (UMLPackage.eINSTANCE.getClass_().isSuperTypeOf(domainElement.eClass())) {
+				return Class3EditPart.VISUAL_ID;
+			}
+			break;
+		case EnumerationLiterals2EditPart.VISUAL_ID:
+			if (UMLPackage.eINSTANCE.getEnumerationLiteral().isSuperTypeOf(domainElement.eClass())) {
+				return EnumerationLiteralEditPart.VISUAL_ID;
+			}
+			break;
+		case EnumerationAttributes2EditPart.VISUAL_ID:
+			if (UMLPackage.eINSTANCE.getProperty().isSuperTypeOf(domainElement.eClass())) {
+				return Property5EditPart.VISUAL_ID;
+			}
+			break;
+		case EnumerationOperations2EditPart.VISUAL_ID:
+			if (UMLPackage.eINSTANCE.getOperation().isSuperTypeOf(domainElement.eClass())) {
+				return Operation5EditPart.VISUAL_ID;
+			}
+			break;
+		case InstanceSpecificationSlots2EditPart.VISUAL_ID:
+			if (UMLPackage.eINSTANCE.getSlot().isSuperTypeOf(domainElement.eClass())) {
+				return SlotEditPart.VISUAL_ID;
+			}
+			break;
+		case DataTypeAttributes2EditPart.VISUAL_ID:
+			if (UMLPackage.eINSTANCE.getProperty().isSuperTypeOf(domainElement.eClass())) {
+				return Property3EditPart.VISUAL_ID;
+			}
+			break;
+		case DataTypeOperations2EditPart.VISUAL_ID:
+			if (UMLPackage.eINSTANCE.getOperation().isSuperTypeOf(domainElement.eClass())) {
+				return Operation3EditPart.VISUAL_ID;
+			}
+			break;
+		case PrimitiveTypeAttributes2EditPart.VISUAL_ID:
+			if (UMLPackage.eINSTANCE.getProperty().isSuperTypeOf(domainElement.eClass())) {
+				return Property4EditPart.VISUAL_ID;
+			}
+			break;
+		case PrimitiveTypeOperations2EditPart.VISUAL_ID:
+			if (UMLPackage.eINSTANCE.getOperation().isSuperTypeOf(domainElement.eClass())) {
+				return Operation4EditPart.VISUAL_ID;
+			}
+			break;
 		case PackageEditPart.VISUAL_ID:
 			// We want to additionally show the Canvas Semantical Element in the auxiliary 
 			// org.eclipse.uml2.diagram.clazz.edit.parts.Package4EditPart (that serves as a pure visual container for children). 
@@ -479,6 +609,9 @@ public class UMLVisualIDRegistry {
 			// we need to give other parts a chance to create their views
 			if (UMLPackage.eINSTANCE.getAssociationClass().isSuperTypeOf(domainElement.eClass()) && !hasViewChild(containerView, domainElement, AssociationClassRhombEditPart.VISUAL_ID)) {
 				return AssociationClassRhombEditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getPackage().isSuperTypeOf(domainElement.eClass())) {
+				return PackageAsFrameEditPart.VISUAL_ID;
 			}
 			// "escape" for multi-views part : org.eclipse.uml2.diagram.clazz.edit.parts.PackageEditPart.VISUAL_ID -- prevents from removing the whole group from diagram
 			if (UMLPackage.eINSTANCE.getAssociationClass().isSuperTypeOf(domainElement.eClass())) {
@@ -664,6 +797,14 @@ public class UMLVisualIDRegistry {
 				return true;
 			}
 			break;
+		case PackageAsFrameEditPart.VISUAL_ID:
+			if (PackageName3EditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			if (PackageAsFrameContentsEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			break;
 		case PortEditPart.VISUAL_ID:
 			if (PortNameEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
@@ -671,6 +812,90 @@ public class UMLVisualIDRegistry {
 			break;
 		case RedefinableTemplateSignatureEditPart.VISUAL_ID:
 			if (TemplateSignatureNode_signatureEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			break;
+		case Package6EditPart.VISUAL_ID:
+			if (PackageName4EditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			if (PackageAsFrameContents2EditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			break;
+		case Class5EditPart.VISUAL_ID:
+			if (ClassName2EditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			if (ClassQualifiedNameEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			if (ClassAttributes2EditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			if (ClassOperations2EditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			if (ClassClasses2EditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			if (PortEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			if (RedefinableTemplateSignatureEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			break;
+		case Enumeration3EditPart.VISUAL_ID:
+			if (EnumerationName2EditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			if (EnumerationLiterals2EditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			if (EnumerationAttributes2EditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			if (EnumerationOperations2EditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			if (RedefinableTemplateSignatureEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			break;
+		case InstanceSpecification3EditPart.VISUAL_ID:
+			if (InstanceSpecificationName2EditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			if (InstanceSpecificationSlots2EditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			break;
+		case DataType3EditPart.VISUAL_ID:
+			if (DataTypeName2EditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			if (DataTypeAttributes2EditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			if (DataTypeOperations2EditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			if (RedefinableTemplateSignatureEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			break;
+		case PrimitiveType3EditPart.VISUAL_ID:
+			if (PrimitiveTypeName2EditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			if (PrimitiveTypeAttributes2EditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			if (PrimitiveTypeOperations2EditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			if (RedefinableTemplateSignatureEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
 			break;
@@ -791,6 +1016,101 @@ public class UMLVisualIDRegistry {
 				return true;
 			}
 			break;
+		case PackageAsFrameContentsEditPart.VISUAL_ID:
+			if (Package6EditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			if (Class5EditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			if (Enumeration3EditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			if (InstanceSpecification3EditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			if (DataType3EditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			if (PrimitiveType3EditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			break;
+		case PackageAsFrameContents2EditPart.VISUAL_ID:
+			if (Package6EditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			if (Class5EditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			if (Enumeration3EditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			if (InstanceSpecification3EditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			if (DataType3EditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			if (PrimitiveType3EditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			break;
+		case ClassAttributes2EditPart.VISUAL_ID:
+			if (PropertyEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			break;
+		case ClassOperations2EditPart.VISUAL_ID:
+			if (OperationEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			break;
+		case ClassClasses2EditPart.VISUAL_ID:
+			if (Class3EditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			break;
+		case EnumerationLiterals2EditPart.VISUAL_ID:
+			if (EnumerationLiteralEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			break;
+		case EnumerationAttributes2EditPart.VISUAL_ID:
+			if (Property5EditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			break;
+		case EnumerationOperations2EditPart.VISUAL_ID:
+			if (Operation5EditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			break;
+		case InstanceSpecificationSlots2EditPart.VISUAL_ID:
+			if (SlotEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			break;
+		case DataTypeAttributes2EditPart.VISUAL_ID:
+			if (Property3EditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			break;
+		case DataTypeOperations2EditPart.VISUAL_ID:
+			if (Operation3EditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			break;
+		case PrimitiveTypeAttributes2EditPart.VISUAL_ID:
+			if (Property4EditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			break;
+		case PrimitiveTypeOperations2EditPart.VISUAL_ID:
+			if (Operation4EditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			break;
 		case PackageEditPart.VISUAL_ID:
 			if (Package2EditPart.VISUAL_ID == nodeVisualID) {
 				return true;
@@ -832,6 +1152,9 @@ public class UMLVisualIDRegistry {
 				return true;
 			}
 			if (AssociationClassRhombEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			if (PackageAsFrameEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
 			break;

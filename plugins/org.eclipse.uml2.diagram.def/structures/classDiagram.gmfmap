@@ -1364,6 +1364,88 @@
           href="classDiagram_classifiers.gmfgraph#AssociationClassRhombNode"/>
     </ownedChild>
   </nodes>
+  <nodes>
+    <containmentFeature
+        href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//Package/packagedElement"/>
+    <childrenFeature
+        href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//Package/nestedPackage"/>
+    <ownedChild
+        relatedDiagrams="//@diagram">
+      <domainMetaElement
+          href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//Package"/>
+      <domainInitializer
+          xsi:type="gmfmap:FeatureSeqInitializer">
+        <initializers
+            xsi:type="gmfmap:FeatureValueSpec"
+            body=" let base : String = 'package' in  let suffixes : Sequence(String) = Sequence {'', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10'} in  let space : Namespace = self.namespace in  let allMissed : Sequence(String) = suffixes-> &#x9;select(s : String | not space.member->exists(e : NamedElement | e.name = base.concat(s)) ) in  let firstMissed : String = allMissed->first() in  let noMisses : Boolean = firstMissed.oclIsUndefined() in  let allNames : Set(String) =  &#x9;if noMisses &#x9;&#x9;then &#x9;&#x9;space.member->collect(e : NamedElement | &#x9;&#x9;&#x9;if e = self or e.name.oclIsUndefined() or e.name.substring(1, e.name.size().min(base.size())) &lt;> base &#x9;&#x9;&#x9;then '' else e.name &#x9;&#x9;&#x9;endif &#x9;&#x9;)->asSet()->excluding('') &#x9;&#x9;else Set{'not in use'} &#x9;&#x9;endif in  let longestName : String = &#x9;&#x9;if noMisses &#x9;&#x9;then allNames->select(n : String | not allNames->exists(nn : String | nn.size() > n.size()))->asSequence()->first()&#x9;&#x9;else 'not in use' &#x9;&#x9;endif &#x9;in  if noMisses then &#x9;&#x9;if longestName.oclIsUndefined() &#x9;&#x9;then base &#x9;&#x9;else longestName.concat('1') &#x9;&#x9;endif  else base.concat(firstMissed)  endif ">
+          <feature
+              xsi:type="ecore:EAttribute"
+              href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//NamedElement/name"/>
+        </initializers>
+      </domainInitializer>
+      <labelMappings
+          xsi:type="gmfmap:FeatureLabelMapping"
+          editPattern="">
+        <diagramLabel
+            href="classDiagram_auxiliary.gmfgraph#PackageAsFrameNode_name"/>
+        <features
+            href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//NamedElement/name"/>
+      </labelMappings>
+      <diagramNode
+          href="classDiagram_auxiliary.gmfgraph#PackageAsFrameNode"/>
+      <children
+          compartment="//@nodes.14/@ownedChild/@compartments.0"
+          referencedChild="//@nodes.14/@ownedChild">
+        <containmentFeature
+            href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//Package/packagedElement"/>
+        <childrenFeature
+            href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//Package/nestedPackage"/>
+      </children>
+      <children
+          compartment="//@nodes.14/@ownedChild/@compartments.0"
+          referencedChild="//@nodes.1/@ownedChild">
+        <containmentFeature
+            href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//Package/packagedElement"/>
+        <childrenFeature
+            href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//Package/ownedType"/>
+      </children>
+      <children
+          compartment="//@nodes.14/@ownedChild/@compartments.0"
+          referencedChild="//@nodes.5/@ownedChild">
+        <containmentFeature
+            href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//Package/packagedElement"/>
+        <childrenFeature
+            href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//Package/ownedType"/>
+      </children>
+      <children
+          compartment="//@nodes.14/@ownedChild/@compartments.0"
+          referencedChild="//@nodes.8/@ownedChild">
+        <containmentFeature
+            href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//Package/packagedElement"/>
+      </children>
+      <children
+          compartment="//@nodes.14/@ownedChild/@compartments.0"
+          referencedChild="//@nodes.3/@ownedChild">
+        <containmentFeature
+            href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//Package/packagedElement"/>
+        <childrenFeature
+            href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//Package/ownedType"/>
+      </children>
+      <children
+          compartment="//@nodes.14/@ownedChild/@compartments.0"
+          referencedChild="//@nodes.4/@ownedChild">
+        <containmentFeature
+            href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//Package/packagedElement"/>
+        <childrenFeature
+            href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//Package/ownedType"/>
+      </children>
+      <compartments
+          children="//@nodes.14/@ownedChild/@children.3 //@nodes.14/@ownedChild/@children.0 //@nodes.14/@ownedChild/@children.1 //@nodes.14/@ownedChild/@children.2 //@nodes.14/@ownedChild/@children.4 //@nodes.14/@ownedChild/@children.5">
+        <compartment
+            href="classDiagram_auxiliary.gmfgraph#frame contents"/>
+      </compartments>
+    </ownedChild>
+  </nodes>
   <links>
     <domainMetaElement
         href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//Generalization"/>

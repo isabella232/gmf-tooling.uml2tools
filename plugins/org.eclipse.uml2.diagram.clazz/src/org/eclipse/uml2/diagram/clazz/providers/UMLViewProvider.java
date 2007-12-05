@@ -70,6 +70,17 @@ public class UMLViewProvider extends AbstractViewProvider {
 					return null; // foreign diagram
 				}
 				switch (visualID) {
+				case Package2EditPart.VISUAL_ID: {
+					if (domainElement == null) {
+						return null;
+					}
+
+					int suggestedID = UMLVisualIDRegistry.getNodeVisualID(containerView, domainElement);
+					if (visualID != suggestedID && PackageAsFrameEditPart.VISUAL_ID != suggestedID && true) {
+						return null;
+					}
+					break;
+				}
 				case AssociationClass2EditPart.VISUAL_ID: {
 					if (domainElement == null) {
 						return null;
@@ -114,7 +125,17 @@ public class UMLViewProvider extends AbstractViewProvider {
 					}
 					break;
 				}
-				case Package2EditPart.VISUAL_ID:
+				case PackageAsFrameEditPart.VISUAL_ID: {
+					if (domainElement == null) {
+						return null;
+					}
+
+					int suggestedID = UMLVisualIDRegistry.getNodeVisualID(containerView, domainElement);
+					if (visualID != suggestedID && Package2EditPart.VISUAL_ID != suggestedID && true) {
+						return null;
+					}
+					break;
+				}
 				case Class2EditPart.VISUAL_ID:
 				case DataType2EditPart.VISUAL_ID:
 				case PrimitiveType2EditPart.VISUAL_ID:
@@ -150,6 +171,12 @@ public class UMLViewProvider extends AbstractViewProvider {
 				case Operation6EditPart.VISUAL_ID:
 				case Class4EditPart.VISUAL_ID:
 				case ElementImportEditPart.VISUAL_ID:
+				case Package6EditPart.VISUAL_ID:
+				case Class5EditPart.VISUAL_ID:
+				case Enumeration3EditPart.VISUAL_ID:
+				case InstanceSpecification3EditPart.VISUAL_ID:
+				case DataType3EditPart.VISUAL_ID:
+				case PrimitiveType3EditPart.VISUAL_ID:
 					if (domainElement == null || visualID != UMLVisualIDRegistry.getNodeVisualID(containerView, domainElement)) {
 						return null; // visual id in semantic hint should match visual id for domain element
 					}
@@ -242,6 +269,12 @@ public class UMLViewProvider extends AbstractViewProvider {
 						return null; // wrong container
 					}
 					break;
+				case PackageName3EditPart.VISUAL_ID:
+				case PackageAsFrameContentsEditPart.VISUAL_ID:
+					if (PackageAsFrameEditPart.VISUAL_ID != UMLVisualIDRegistry.getVisualID(containerView) || containerView.getElement() != domainElement) {
+						return null; // wrong container
+					}
+					break;
 				case PortNameEditPart.VISUAL_ID:
 					if (PortEditPart.VISUAL_ID != UMLVisualIDRegistry.getVisualID(containerView) || containerView.getElement() != domainElement) {
 						return null; // wrong container
@@ -249,6 +282,49 @@ public class UMLViewProvider extends AbstractViewProvider {
 					break;
 				case TemplateSignatureNode_signatureEditPart.VISUAL_ID:
 					if (RedefinableTemplateSignatureEditPart.VISUAL_ID != UMLVisualIDRegistry.getVisualID(containerView) || containerView.getElement() != domainElement) {
+						return null; // wrong container
+					}
+					break;
+				case PackageName4EditPart.VISUAL_ID:
+				case PackageAsFrameContents2EditPart.VISUAL_ID:
+					if (Package6EditPart.VISUAL_ID != UMLVisualIDRegistry.getVisualID(containerView) || containerView.getElement() != domainElement) {
+						return null; // wrong container
+					}
+					break;
+				case ClassName2EditPart.VISUAL_ID:
+				case ClassQualifiedNameEditPart.VISUAL_ID:
+				case ClassAttributes2EditPart.VISUAL_ID:
+				case ClassOperations2EditPart.VISUAL_ID:
+				case ClassClasses2EditPart.VISUAL_ID:
+					if (Class5EditPart.VISUAL_ID != UMLVisualIDRegistry.getVisualID(containerView) || containerView.getElement() != domainElement) {
+						return null; // wrong container
+					}
+					break;
+				case EnumerationName2EditPart.VISUAL_ID:
+				case EnumerationLiterals2EditPart.VISUAL_ID:
+				case EnumerationAttributes2EditPart.VISUAL_ID:
+				case EnumerationOperations2EditPart.VISUAL_ID:
+					if (Enumeration3EditPart.VISUAL_ID != UMLVisualIDRegistry.getVisualID(containerView) || containerView.getElement() != domainElement) {
+						return null; // wrong container
+					}
+					break;
+				case InstanceSpecificationName2EditPart.VISUAL_ID:
+				case InstanceSpecificationSlots2EditPart.VISUAL_ID:
+					if (InstanceSpecification3EditPart.VISUAL_ID != UMLVisualIDRegistry.getVisualID(containerView) || containerView.getElement() != domainElement) {
+						return null; // wrong container
+					}
+					break;
+				case DataTypeName2EditPart.VISUAL_ID:
+				case DataTypeAttributes2EditPart.VISUAL_ID:
+				case DataTypeOperations2EditPart.VISUAL_ID:
+					if (DataType3EditPart.VISUAL_ID != UMLVisualIDRegistry.getVisualID(containerView) || containerView.getElement() != domainElement) {
+						return null; // wrong container
+					}
+					break;
+				case PrimitiveTypeName2EditPart.VISUAL_ID:
+				case PrimitiveTypeAttributes2EditPart.VISUAL_ID:
+				case PrimitiveTypeOperations2EditPart.VISUAL_ID:
+					if (PrimitiveType3EditPart.VISUAL_ID != UMLVisualIDRegistry.getVisualID(containerView) || containerView.getElement() != domainElement) {
 						return null; // wrong container
 					}
 					break;
@@ -354,6 +430,10 @@ public class UMLViewProvider extends AbstractViewProvider {
 			return PackageName2ViewFactory.class;
 		case AssociationClassRhombEditPart.VISUAL_ID:
 			return AssociationClassRhombViewFactory.class;
+		case PackageAsFrameEditPart.VISUAL_ID:
+			return PackageAsFrameViewFactory.class;
+		case PackageName3EditPart.VISUAL_ID:
+			return PackageName3ViewFactory.class;
 		case Package3EditPart.VISUAL_ID:
 			return Package3ViewFactory.class;
 		case ClassEditPart.VISUAL_ID:
@@ -410,6 +490,32 @@ public class UMLViewProvider extends AbstractViewProvider {
 			return Class4ViewFactory.class;
 		case ElementImportEditPart.VISUAL_ID:
 			return ElementImportViewFactory.class;
+		case Package6EditPart.VISUAL_ID:
+			return Package6ViewFactory.class;
+		case PackageName4EditPart.VISUAL_ID:
+			return PackageName4ViewFactory.class;
+		case Class5EditPart.VISUAL_ID:
+			return Class5ViewFactory.class;
+		case ClassName2EditPart.VISUAL_ID:
+			return ClassName2ViewFactory.class;
+		case ClassQualifiedNameEditPart.VISUAL_ID:
+			return ClassQualifiedNameViewFactory.class;
+		case Enumeration3EditPart.VISUAL_ID:
+			return Enumeration3ViewFactory.class;
+		case EnumerationName2EditPart.VISUAL_ID:
+			return EnumerationName2ViewFactory.class;
+		case InstanceSpecification3EditPart.VISUAL_ID:
+			return InstanceSpecification3ViewFactory.class;
+		case InstanceSpecificationName2EditPart.VISUAL_ID:
+			return InstanceSpecificationName2ViewFactory.class;
+		case DataType3EditPart.VISUAL_ID:
+			return DataType3ViewFactory.class;
+		case DataTypeName2EditPart.VISUAL_ID:
+			return DataTypeName2ViewFactory.class;
+		case PrimitiveType3EditPart.VISUAL_ID:
+			return PrimitiveType3ViewFactory.class;
+		case PrimitiveTypeName2EditPart.VISUAL_ID:
+			return PrimitiveTypeName2ViewFactory.class;
 		case PackagePackagesEditPart.VISUAL_ID:
 			return PackagePackagesViewFactory.class;
 		case PackageClassifiersEditPart.VISUAL_ID:
@@ -452,6 +558,32 @@ public class UMLViewProvider extends AbstractViewProvider {
 			return InterfaceClassesViewFactory.class;
 		case PackageImportsEditPart.VISUAL_ID:
 			return PackageImportsViewFactory.class;
+		case PackageAsFrameContentsEditPart.VISUAL_ID:
+			return PackageAsFrameContentsViewFactory.class;
+		case PackageAsFrameContents2EditPart.VISUAL_ID:
+			return PackageAsFrameContents2ViewFactory.class;
+		case ClassAttributes2EditPart.VISUAL_ID:
+			return ClassAttributes2ViewFactory.class;
+		case ClassOperations2EditPart.VISUAL_ID:
+			return ClassOperations2ViewFactory.class;
+		case ClassClasses2EditPart.VISUAL_ID:
+			return ClassClasses2ViewFactory.class;
+		case EnumerationLiterals2EditPart.VISUAL_ID:
+			return EnumerationLiterals2ViewFactory.class;
+		case EnumerationAttributes2EditPart.VISUAL_ID:
+			return EnumerationAttributes2ViewFactory.class;
+		case EnumerationOperations2EditPart.VISUAL_ID:
+			return EnumerationOperations2ViewFactory.class;
+		case InstanceSpecificationSlots2EditPart.VISUAL_ID:
+			return InstanceSpecificationSlots2ViewFactory.class;
+		case DataTypeAttributes2EditPart.VISUAL_ID:
+			return DataTypeAttributes2ViewFactory.class;
+		case DataTypeOperations2EditPart.VISUAL_ID:
+			return DataTypeOperations2ViewFactory.class;
+		case PrimitiveTypeAttributes2EditPart.VISUAL_ID:
+			return PrimitiveTypeAttributes2ViewFactory.class;
+		case PrimitiveTypeOperations2EditPart.VISUAL_ID:
+			return PrimitiveTypeOperations2ViewFactory.class;
 		case DependencyName2EditPart.VISUAL_ID:
 			return DependencyName2ViewFactory.class;
 		case DependencyName3EditPart.VISUAL_ID:
