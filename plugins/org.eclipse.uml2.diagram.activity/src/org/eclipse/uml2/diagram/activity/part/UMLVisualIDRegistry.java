@@ -1351,6 +1351,9 @@ public class UMLVisualIDRegistry {
 			if (PinNameEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
+			if (PinName4EditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
 			if (PinOrderingEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
@@ -1488,6 +1491,9 @@ public class UMLVisualIDRegistry {
 			break;
 		case Pin2EditPart.VISUAL_ID:
 			if (PinName2EditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			if (PinName5EditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
 			if (PinOrdering2EditPart.VISUAL_ID == nodeVisualID) {

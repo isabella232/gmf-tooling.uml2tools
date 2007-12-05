@@ -109,9 +109,14 @@
               left="5"
               right="5"/>
         </children>
+        <children
+            xsi:type="gmfgraph:Label"
+            name="StandalonePinFigure_states"/>
       </actualFigure>
       <accessors
           figure="//@figures.0/@descriptors.2/@actualFigure/@children.0"/>
+      <accessors
+          figure="//@figures.0/@descriptors.2/@actualFigure/@children.1"/>
     </descriptors>
     <descriptors
         name="SmallSquareFigure">
@@ -202,6 +207,11 @@
       figure="StandalonePinFigure"
       elementIcon="false"
       accessor="//@figures.0/@descriptors.2/@accessors.0"/>
+  <labels
+      name="StandalonePinNode_states"
+      figure="StandalonePinFigure"
+      elementIcon="false"
+      accessor="//@figures.0/@descriptors.2/@accessors.1"/>
   <labels
       name="AttachedPinNode_external_name"
       figure="AttachedPin_external_name"

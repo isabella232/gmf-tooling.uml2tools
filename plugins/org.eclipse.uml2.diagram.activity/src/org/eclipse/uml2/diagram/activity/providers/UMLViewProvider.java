@@ -223,6 +223,7 @@ public class UMLViewProvider extends AbstractViewProvider {
 					}
 					break;
 				case PinNameEditPart.VISUAL_ID:
+				case PinName4EditPart.VISUAL_ID:
 				case PinOrderingEditPart.VISUAL_ID:
 					if (PinEditPart.VISUAL_ID != UMLVisualIDRegistry.getVisualID(containerView) || containerView.getElement() != domainElement) {
 						return null; // wrong container
@@ -316,6 +317,7 @@ public class UMLViewProvider extends AbstractViewProvider {
 					}
 					break;
 				case PinName2EditPart.VISUAL_ID:
+				case PinName5EditPart.VISUAL_ID:
 				case PinOrdering2EditPart.VISUAL_ID:
 					if (Pin2EditPart.VISUAL_ID != UMLVisualIDRegistry.getVisualID(containerView) || containerView.getElement() != domainElement) {
 						return null; // wrong container
@@ -577,6 +579,8 @@ public class UMLViewProvider extends AbstractViewProvider {
 			return PinViewFactory.class;
 		case PinNameEditPart.VISUAL_ID:
 			return PinNameViewFactory.class;
+		case PinName4EditPart.VISUAL_ID:
+			return PinName4ViewFactory.class;
 		case PinOrderingEditPart.VISUAL_ID:
 			return PinOrderingViewFactory.class;
 		case CreateObjectActionEditPart.VISUAL_ID:
@@ -663,6 +667,8 @@ public class UMLViewProvider extends AbstractViewProvider {
 			return Pin2ViewFactory.class;
 		case PinName2EditPart.VISUAL_ID:
 			return PinName2ViewFactory.class;
+		case PinName5EditPart.VISUAL_ID:
+			return PinName5ViewFactory.class;
 		case PinOrdering2EditPart.VISUAL_ID:
 			return PinOrdering2ViewFactory.class;
 		case CreateObjectAction2EditPart.VISUAL_ID:

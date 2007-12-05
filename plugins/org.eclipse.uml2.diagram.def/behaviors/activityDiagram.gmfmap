@@ -389,6 +389,13 @@
                 href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//NamedElement/name"/>
           </labelMappings>
           <labelMappings
+              xsi:type="gmfmap:FeatureLabelMapping">
+            <diagramLabel
+                href="activityDiagram_objects.gmfgraph#StandalonePinNode_states"/>
+            <features
+                href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//NamedElement/name"/>
+          </labelMappings>
+          <labelMappings
               xsi:type="gmfmap:FeatureLabelMapping"
               readOnly="true">
             <diagramLabel

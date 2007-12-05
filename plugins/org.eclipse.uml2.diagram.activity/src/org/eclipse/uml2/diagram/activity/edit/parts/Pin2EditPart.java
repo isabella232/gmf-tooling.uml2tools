@@ -120,6 +120,10 @@ public class Pin2EditPart extends AbstractBorderedShapeEditPart {
 			((PinName2EditPart) childEditPart).setLabel(getPrimaryShape().getFigureStandalonePinFigure_name());
 			return true;
 		}
+		if (childEditPart instanceof PinName5EditPart) {
+			((PinName5EditPart) childEditPart).setLabel(getPrimaryShape().getFigureStandalonePinFigure_states());
+			return true;
+		}
 		return false;
 	}
 
@@ -242,6 +246,11 @@ public class Pin2EditPart extends AbstractBorderedShapeEditPart {
 		/**
 		 * @generated
 		 */
+		private Label fFigureStandalonePinFigure_states;
+
+		/**
+		 * @generated
+		 */
 		public StandalonePinFigure() {
 			createContents();
 		}
@@ -257,6 +266,11 @@ public class Pin2EditPart extends AbstractBorderedShapeEditPart {
 			fFigureStandalonePinFigure_name.setBorder(new MarginBorder(getMapMode().DPtoLP(0), getMapMode().DPtoLP(5), getMapMode().DPtoLP(0), getMapMode().DPtoLP(5)));
 
 			this.add(fFigureStandalonePinFigure_name);
+
+			fFigureStandalonePinFigure_states = new Label();
+			fFigureStandalonePinFigure_states.setText("");
+
+			this.add(fFigureStandalonePinFigure_states);
 
 		}
 
@@ -284,6 +298,13 @@ public class Pin2EditPart extends AbstractBorderedShapeEditPart {
 		 */
 		public Label getFigureStandalonePinFigure_name() {
 			return fFigureStandalonePinFigure_name;
+		}
+
+		/**
+		 * @generated
+		 */
+		public Label getFigureStandalonePinFigure_states() {
+			return fFigureStandalonePinFigure_states;
 		}
 
 	}

@@ -87,6 +87,8 @@ import org.eclipse.uml2.diagram.activity.edit.parts.OutputPinOrdering5EditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.OutputPinOrderingEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.PinName2EditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.PinName3EditPart;
+import org.eclipse.uml2.diagram.activity.edit.parts.PinName4EditPart;
+import org.eclipse.uml2.diagram.activity.edit.parts.PinName5EditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.PinNameEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.PinOrdering2EditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.PinOrdering3EditPart;
@@ -403,22 +405,44 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 	/**
 	 * @generated
 	 */
-	private IParser pinOrdering_5052Parser;
+	private IParser pinName_5052Parser;
 
 	/**
 	 * @generated
 	 */
-	private IParser getPinOrdering_5052Parser() {
-		if (pinOrdering_5052Parser == null) {
-			pinOrdering_5052Parser = createPinOrdering_5052Parser();
+	private IParser getPinName_5052Parser() {
+		if (pinName_5052Parser == null) {
+			pinName_5052Parser = createPinName_5052Parser();
 		}
-		return pinOrdering_5052Parser;
+		return pinName_5052Parser;
 	}
 
 	/**
 	 * @generated NOT
 	 */
-	protected IParser createPinOrdering_5052Parser() {
+	protected IParser createPinName_5052Parser() {
+		return new ObjectNodeInStateParser();
+	}
+
+	/**
+	 * @generated
+	 */
+	private IParser pinOrdering_5085Parser;
+
+	/**
+	 * @generated
+	 */
+	private IParser getPinOrdering_5085Parser() {
+		if (pinOrdering_5085Parser == null) {
+			pinOrdering_5085Parser = createPinOrdering_5085Parser();
+		}
+		return pinOrdering_5085Parser;
+	}
+
+	/**
+	 * @generated NOT
+	 */
+	protected IParser createPinOrdering_5085Parser() {
 		return new ObjectNodeAttributesParser();
 	}
 
@@ -923,22 +947,44 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 	/**
 	 * @generated
 	 */
-	private IParser pinOrdering_5053Parser;
+	private IParser pinName_5053Parser;
 
 	/**
 	 * @generated
 	 */
-	private IParser getPinOrdering_5053Parser() {
-		if (pinOrdering_5053Parser == null) {
-			pinOrdering_5053Parser = createPinOrdering_5053Parser();
+	private IParser getPinName_5053Parser() {
+		if (pinName_5053Parser == null) {
+			pinName_5053Parser = createPinName_5053Parser();
 		}
-		return pinOrdering_5053Parser;
+		return pinName_5053Parser;
 	}
 
 	/**
 	 * @generated NOT
 	 */
-	protected IParser createPinOrdering_5053Parser() {
+	protected IParser createPinName_5053Parser() {
+		return new ObjectNodeInStateParser();
+	}
+
+	/**
+	 * @generated
+	 */
+	private IParser pinOrdering_5086Parser;
+
+	/**
+	 * @generated
+	 */
+	private IParser getPinOrdering_5086Parser() {
+		if (pinOrdering_5086Parser == null) {
+			pinOrdering_5086Parser = createPinOrdering_5086Parser();
+		}
+		return pinOrdering_5086Parser;
+	}
+
+	/**
+	 * @generated NOT
+	 */
+	protected IParser createPinOrdering_5086Parser() {
 		return new ObjectNodeAttributesParser();
 	}
 
@@ -2017,8 +2063,10 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 			return getOutputPinOrdering_5055Parser();
 		case PinNameEditPart.VISUAL_ID:
 			return getPinName_5024Parser();
+		case PinName4EditPart.VISUAL_ID:
+			return getPinName_5052Parser();
 		case PinOrderingEditPart.VISUAL_ID:
-			return getPinOrdering_5052Parser();
+			return getPinOrdering_5085Parser();
 		case CreateObjectActionNameEditPart.VISUAL_ID:
 			return getCreateObjectActionName_5025Parser();
 		case OutputPinName2EditPart.VISUAL_ID:
@@ -2063,8 +2111,10 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 			return getAcceptEventActionName_5043Parser();
 		case PinName2EditPart.VISUAL_ID:
 			return getPinName_5016Parser();
+		case PinName5EditPart.VISUAL_ID:
+			return getPinName_5053Parser();
 		case PinOrdering2EditPart.VISUAL_ID:
-			return getPinOrdering_5053Parser();
+			return getPinOrdering_5086Parser();
 		case CreateObjectActionName2EditPart.VISUAL_ID:
 			return getCreateObjectActionName_5017Parser();
 		case CallBehaviorActionName2EditPart.VISUAL_ID:

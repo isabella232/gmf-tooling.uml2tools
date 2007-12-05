@@ -121,6 +121,9 @@ public class UMLEditPartFactory implements EditPartFactory {
 			case PinNameEditPart.VISUAL_ID:
 				return new PinNameEditPart(view);
 
+			case PinName4EditPart.VISUAL_ID:
+				return new PinName4EditPart(view);
+
 			case PinOrderingEditPart.VISUAL_ID:
 				return new PinOrderingEditPart(view);
 
@@ -249,6 +252,9 @@ public class UMLEditPartFactory implements EditPartFactory {
 
 			case PinName2EditPart.VISUAL_ID:
 				return new PinName2EditPart(view);
+
+			case PinName5EditPart.VISUAL_ID:
+				return new PinName5EditPart(view);
 
 			case PinOrdering2EditPart.VISUAL_ID:
 				return new PinOrdering2EditPart(view);

@@ -56,7 +56,7 @@ public class PinOrdering2EditPart extends LabelEditPart implements ITextAwareEdi
 	/**
 	 * @generated
 	 */
-	public static final int VISUAL_ID = 5053;
+	public static final int VISUAL_ID = 5086;
 
 	/**
 	 * @generated
