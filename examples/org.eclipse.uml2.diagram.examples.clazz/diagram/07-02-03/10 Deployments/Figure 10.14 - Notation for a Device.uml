@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<uml:Package xmi:version="2.1" xmlns:xmi="http://schema.omg.org/spec/XMI/2.1" xmlns:uml="http://www.eclipse.org/uml2/2.1.0/UML" xmi:id="_4De5wKMoEdyC7dOJ7ALdqw" name="F 10-14">
+  <elementImport xmi:id="_4EUAMKMoEdyC7dOJ7ALdqw">
+    <importedElement xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Boolean"/>
+  </elementImport>
+  <elementImport xmi:id="_4EUAMaMoEdyC7dOJ7ALdqw">
+    <importedElement xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+  </elementImport>
+  <elementImport xmi:id="_4EUAMqMoEdyC7dOJ7ALdqw">
+    <importedElement xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#UnlimitedNatural"/>
+  </elementImport>
+  <elementImport xmi:id="_4EUAM6MoEdyC7dOJ7ALdqw">
+    <importedElement xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
+  </elementImport>
+  <packagedElement xmi:type="uml:Device" xmi:id="_5gY8oKMoEdyC7dOJ7ALdqw" name="AppServer">
+    <ownedAttribute xmi:id="_bB49YaMpEdyC7dOJ7ALdqw" name="dst" type="_N7quAKMpEdyC7dOJ7ALdqw" association="_bBxBkKMpEdyC7dOJ7ALdqw">
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_bB5kcaMpEdyC7dOJ7ALdqw" value="1"/>
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_bB5kcKMpEdyC7dOJ7ALdqw" value="1"/>
+    </ownedAttribute>
+    <nestedNode xmi:type="uml:ExecutionEnvironment" xmi:id="_7wORQKMoEdyC7dOJ7ALdqw" name="J2EE Server">
+      <nestedClassifier xmi:type="uml:Artifact" xmi:id="_9HtBkKMoEdyC7dOJ7ALdqw" fileName="Order.jar"/>
+      <nestedClassifier xmi:type="uml:Artifact" xmi:id="__EmMEKMoEdyC7dOJ7ALdqw" fileName="ShoppingCart.jar"/>
+      <nestedClassifier xmi:type="uml:Artifact" xmi:id="_Bm2tcKMpEdyC7dOJ7ALdqw" fileName="Service.jar"/>
+    </nestedNode>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Device" xmi:id="_N7quAKMpEdyC7dOJ7ALdqw" name="DBServer">
+    <nestedClassifier xmi:type="uml:Artifact" xmi:id="_QI0iEKMpEdyC7dOJ7ALdqw" fileName="itemShema.ddl"/>
+    <nestedClassifier xmi:type="uml:Artifact" xmi:id="_T-LqEKMpEdyC7dOJ7ALdqw" fileName="OrderSchema.ddl"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:CommunicationPath" xmi:id="_bBxBkKMpEdyC7dOJ7ALdqw" name="ssh" memberEnd="_bB4WUKMpEdyC7dOJ7ALdqw _bB49YaMpEdyC7dOJ7ALdqw">
+    <ownedEnd xmi:id="_bB4WUKMpEdyC7dOJ7ALdqw" name="src" type="_5gY8oKMoEdyC7dOJ7ALdqw" association="_bBxBkKMpEdyC7dOJ7ALdqw">
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_bB49YKMpEdyC7dOJ7ALdqw" value="1"/>
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_bB4WUaMpEdyC7dOJ7ALdqw" value="1"/>
+    </ownedEnd>
+  </packagedElement>
+</uml:Package>
