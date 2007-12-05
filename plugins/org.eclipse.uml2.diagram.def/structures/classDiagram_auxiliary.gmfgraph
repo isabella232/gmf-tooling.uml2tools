@@ -61,6 +61,91 @@
           accessor="getFigureSecondaryPackage_Imports"
           figure="//@figures.0/@descriptors.1/@actualFigure/@children.2"/>
     </descriptors>
+    <descriptors
+        name="PackageAsFrameFigure">
+      <actualFigure
+          xsi:type="gmfgraph:Rectangle"
+          name="PackageAsFrameFigure">
+        <layout
+            xsi:type="gmfgraph:BorderLayout"/>
+        <insets
+            top="1"
+            left="1"
+            bottom="1"
+            right="1"/>
+        <children
+            xsi:type="gmfgraph:Rectangle"
+            name="PackageAsFrameFigure_TopRow"
+            outline="false">
+          <layoutData
+              xsi:type="gmfgraph:BorderLayoutData"
+              alignment="BEGINNING"
+              vertical="true"/>
+          <layout
+              xsi:type="gmfgraph:FlowLayout"
+              matchMinorSize="true"
+              forceSingleLine="true"
+              minorAlignment="FILL"
+              majorSpacing="0"
+              minorSpacing="0"/>
+          <children
+              xsi:type="gmfgraph:ScalablePolygon"
+              name="PackageAsFrameFigure_header">
+            <layout
+                xsi:type="gmfgraph:FlowLayout"
+                matchMinorSize="true"
+                forceSingleLine="true"
+                minorAlignment="FILL"
+                majorSpacing="10"
+                minorSpacing="0"/>
+            <insets
+                top="10"
+                left="10"
+                bottom="13"
+                right="13"/>
+            <children
+                xsi:type="gmfgraph:Label"
+                name="PackageAsFrameFigure_fixed_package"
+                text="package"/>
+            <children
+                xsi:type="gmfgraph:Label"
+                name="PackageAsFrameFigure_name"
+                text=""/>
+            <template/>
+            <template
+                y="40"/>
+            <template
+                x="35"
+                y="40"/>
+            <template
+                x="40"
+                y="35"/>
+            <template
+                x="40"/>
+          </children>
+        </children>
+        <children
+            xsi:type="gmfgraph:Rectangle"
+            name="PackageAsFrameFigure_contents"
+            outline="false">
+          <layoutData
+              xsi:type="gmfgraph:BorderLayoutData"
+              alignment="FILL"
+              vertical="true"/>
+          <foregroundColor
+              xsi:type="gmfgraph:ConstantColor"/>
+        </children>
+      </actualFigure>
+      <accessors
+          accessor="getPackageAsFrameFigure_name"
+          figure="//@figures.0/@descriptors.2/@actualFigure/@children.0/@children.0/@children.1"/>
+      <accessors
+          accessor="getPackageAsFrameFigure_fixed_package"
+          figure="//@figures.0/@descriptors.2/@actualFigure/@children.0/@children.0/@children.0"/>
+      <accessors
+          accessor="getPackageAsFrameFigure_contents"
+          figure="//@figures.0/@descriptors.2/@actualFigure/@children.1"/>
+    </descriptors>
   </figures>
   <nodes
       name="SecondaryPackageNode"
@@ -72,11 +157,26 @@
           dy="60"/>
     </facets>
   </nodes>
+  <nodes
+      name="PackageAsFrameNode"
+      figure="PackageAsFrameFigure">
+    <facets
+        xsi:type="gmfgraph:DefaultSizeFacet">
+      <defaultSize
+          dx="300"
+          dy="100"/>
+    </facets>
+  </nodes>
   <compartments
       name="imports"
       figure="SecondaryPackageFigure"
       collapsible="true"
       accessor="//@figures.0/@descriptors.1/@accessors.2"/>
+  <compartments
+      name="frame contents"
+      figure="PackageAsFrameFigure"
+      collapsible="true"
+      accessor="//@figures.0/@descriptors.2/@accessors.2"/>
   <labels
       name="AuxiliaryPureLabel"
       figure="SharedPureGraphLabel"
@@ -94,4 +194,13 @@
       name="SecondaryPackage_name"
       figure="SecondaryPackageFigure"
       accessor="//@figures.0/@descriptors.1/@accessors.1"/>
+  <labels
+      name="PackageAsFrameNode_name"
+      figure="PackageAsFrameFigure"
+      elementIcon="false"
+      accessor="//@figures.0/@descriptors.2/@accessors.0"/>
+  <labels
+      name="PackageAsFrameNode_fixed_package"
+      figure="PackageAsFrameFigure"
+      accessor="//@figures.0/@descriptors.2/@accessors.1"/>
 </gmfgraph:Canvas>
