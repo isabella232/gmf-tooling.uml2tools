@@ -1825,31 +1825,31 @@
     </palette>
     <preferencePages
         xsi:type="gmfgen:GenStandardPreferencePage"
-        iD="org.eclipse.uml2.uml.diagram.general"
+        iD="org.eclipse.uml2.uml.csd.general"
         name="UML Diagram">
       <children
           xsi:type="gmfgen:GenStandardPreferencePage"
-          iD="org.eclipse.uml2.uml.diagram.appearance"
+          iD="org.eclipse.uml2.uml.csd.appearance"
           name="Appearance"
           kind="Appearance"/>
       <children
           xsi:type="gmfgen:GenStandardPreferencePage"
-          iD="org.eclipse.uml2.uml.diagram.connections"
+          iD="org.eclipse.uml2.uml.csd.connections"
           name="Connections"
           kind="Connections"/>
       <children
           xsi:type="gmfgen:GenStandardPreferencePage"
-          iD="org.eclipse.uml2.uml.diagram.printing"
+          iD="org.eclipse.uml2.uml.csd.printing"
           name="Printing"
           kind="Printing"/>
       <children
           xsi:type="gmfgen:GenStandardPreferencePage"
-          iD="org.eclipse.uml2.uml.diagram.rulersAndGrid"
+          iD="org.eclipse.uml2.uml.csd.rulersAndGrid"
           name="Rulers And Grid"
           kind="RulersAndGrid"/>
       <children
           xsi:type="gmfgen:GenStandardPreferencePage"
-          iD="org.eclipse.uml2.uml.diagram.pathmaps"
+          iD="org.eclipse.uml2.uml.csd.pathmaps"
           name="Pathmaps"
           kind="Pathmaps"/>
     </preferencePages>
