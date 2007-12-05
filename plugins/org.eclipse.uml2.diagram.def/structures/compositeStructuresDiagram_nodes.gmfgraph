@@ -32,7 +32,7 @@
               alignment="FILL"/>
           <border
               xsi:type="gmfgraph:CustomBorder"
-              qualifiedClassName="org.eclipse.uml2.diagram.csd.figures.OneLineDashedBorder"/>
+              qualifiedClassName="org.eclipse.uml2.diagram.common.draw2d.OneLineDashedBorder"/>
         </children>
       </actualFigure>
       <accessors
