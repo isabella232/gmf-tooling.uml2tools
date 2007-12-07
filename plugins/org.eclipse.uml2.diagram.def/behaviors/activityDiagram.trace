@@ -560,6 +560,9 @@
     <linkLabelTraces
         visualID="6005"
         queryText="true"/>
+    <linkLabelTraces
+        visualID="6007"
+        queryText="true"/>
   </linkTraces>
   <linkTraces
       visualID="4002"
@@ -569,6 +572,9 @@
         queryText="true"/>
     <linkLabelTraces
         visualID="6006"
+        queryText="true"/>
+    <linkLabelTraces
+        visualID="6008"
         queryText="true"/>
   </linkTraces>
   <linkTraces

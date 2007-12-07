@@ -63,6 +63,12 @@
           xsi:type="gmfgraph:Label"
           name="WeightLabel"/>
     </descriptors>
+    <descriptors
+        name="GuardLabel">
+      <actualFigure
+          xsi:type="gmfgraph:Label"
+          name="GuardLabel"/>
+    </descriptors>
   </figures>
   <connections
       name="ActivityEdgeLink"
@@ -83,6 +89,13 @@
   <labels
       name="ActivityEdge_weight"
       figure="WeightLabel"
+      elementIcon="false">
+    <facets
+        xsi:type="gmfgraph:AlignmentFacet"
+        alignment="CENTER"/>
+  </labels>
+  <labels
+      name="ActivityEdge_guard"
       elementIcon="false">
     <facets
         xsi:type="gmfgraph:AlignmentFacet"

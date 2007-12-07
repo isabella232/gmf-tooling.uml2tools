@@ -2236,12 +2236,18 @@ public class UMLVisualIDRegistry {
 			if (ControlFlowName2EditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
+			if (ControlFlowName3EditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
 			break;
 		case ObjectFlowEditPart.VISUAL_ID:
 			if (ObjectFlowNameEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
 			if (ObjectFlowName2EditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			if (ObjectFlowName3EditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
 			break;

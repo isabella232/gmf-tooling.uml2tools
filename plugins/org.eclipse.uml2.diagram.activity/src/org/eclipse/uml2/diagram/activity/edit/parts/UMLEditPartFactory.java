@@ -532,6 +532,9 @@ public class UMLEditPartFactory implements EditPartFactory {
 			case ControlFlowName2EditPart.VISUAL_ID:
 				return new ControlFlowName2EditPart(view);
 
+			case ControlFlowName3EditPart.VISUAL_ID:
+				return new ControlFlowName3EditPart(view);
+
 			case ObjectFlowEditPart.VISUAL_ID:
 				return new ObjectFlowEditPart(view);
 
@@ -540,6 +543,9 @@ public class UMLEditPartFactory implements EditPartFactory {
 
 			case ObjectFlowName2EditPart.VISUAL_ID:
 				return new ObjectFlowName2EditPart(view);
+
+			case ObjectFlowName3EditPart.VISUAL_ID:
+				return new ObjectFlowName3EditPart(view);
 
 			case ActionLocalPreconditionEditPart.VISUAL_ID:
 				return new ActionLocalPreconditionEditPart(view);

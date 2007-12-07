@@ -4850,6 +4850,28 @@
               href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/NamedElement/name"/>
         </modelFacet>
       </labels>
+      <labels
+          visualID="6007"
+          editPartClassName="ControlFlowName3EditPart"
+          itemSemanticEditPolicyClassName="ControlFlowName3ItemSemanticEditPolicy"
+          notationViewFactoryClassName="ControlFlowName3ViewFactory"
+          readOnly="true">
+        <diagramRunTimeClass
+            href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
+        <viewmap
+            xsi:type="gmfgen:FigureViewmap"
+            figureQualifiedClassName="org.eclipse.draw2d.Label">
+          <attributes
+              xsi:type="gmfgen:LabelOffsetAttributes"
+              y="80"/>
+        </viewmap>
+        <modelFacet
+            xsi:type="gmfgen:FeatureLabelModelFacet"
+            viewPattern="">
+          <metaFeatures
+              href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/NamedElement/name"/>
+        </modelFacet>
+      </labels>
       <creationConstraints>
         <sourceEnd
             body="self.oclIsKindOf(uml::ObjectNode) implies self.oclAsType(uml::ObjectNode).isControlType"/>
@@ -4935,6 +4957,28 @@
         </viewmap>
         <modelFacet
             xsi:type="gmfgen:FeatureLabelModelFacet">
+          <metaFeatures
+              href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/NamedElement/name"/>
+        </modelFacet>
+      </labels>
+      <labels
+          visualID="6008"
+          editPartClassName="ObjectFlowName3EditPart"
+          itemSemanticEditPolicyClassName="ObjectFlowName3ItemSemanticEditPolicy"
+          notationViewFactoryClassName="ObjectFlowName3ViewFactory"
+          readOnly="true">
+        <diagramRunTimeClass
+            href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
+        <viewmap
+            xsi:type="gmfgen:FigureViewmap"
+            figureQualifiedClassName="org.eclipse.draw2d.Label">
+          <attributes
+              xsi:type="gmfgen:LabelOffsetAttributes"
+              y="80"/>
+        </viewmap>
+        <modelFacet
+            xsi:type="gmfgen:FeatureLabelModelFacet"
+            viewPattern="">
           <metaFeatures
               href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/NamedElement/name"/>
         </modelFacet>

@@ -12,6 +12,7 @@ import org.eclipse.gmf.runtime.notation.NotationFactory;
 import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.uml2.diagram.activity.edit.parts.ObjectFlowEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.ObjectFlowName2EditPart;
+import org.eclipse.uml2.diagram.activity.edit.parts.ObjectFlowName3EditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.ObjectFlowNameEditPart;
 import org.eclipse.uml2.diagram.activity.part.UMLVisualIDRegistry;
 
@@ -46,5 +47,6 @@ public class ObjectFlowViewFactory extends ConnectionViewFactory {
 		}
 		getViewService().createNode(eObjectAdapter, view, UMLVisualIDRegistry.getType(ObjectFlowNameEditPart.VISUAL_ID), ViewUtil.APPEND, true, getPreferencesHint());
 		getViewService().createNode(eObjectAdapter, view, UMLVisualIDRegistry.getType(ObjectFlowName2EditPart.VISUAL_ID), ViewUtil.APPEND, true, getPreferencesHint());
+		getViewService().createNode(eObjectAdapter, view, UMLVisualIDRegistry.getType(ObjectFlowName3EditPart.VISUAL_ID), ViewUtil.APPEND, true, getPreferencesHint());
 	}
 }

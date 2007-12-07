@@ -40,6 +40,7 @@ import org.eclipse.uml2.diagram.activity.edit.parts.CentralBufferNodeOrdering2Ed
 import org.eclipse.uml2.diagram.activity.edit.parts.CentralBufferNodeOrdering3EditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.CentralBufferNodeOrderingEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.ControlFlowName2EditPart;
+import org.eclipse.uml2.diagram.activity.edit.parts.ControlFlowName3EditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.ControlFlowNameEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.CreateObjectActionName2EditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.CreateObjectActionName3EditPart;
@@ -70,6 +71,7 @@ import org.eclipse.uml2.diagram.activity.edit.parts.InputPinOrderingEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.LiteralString2EditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.LiteralStringEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.ObjectFlowName2EditPart;
+import org.eclipse.uml2.diagram.activity.edit.parts.ObjectFlowName3EditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.ObjectFlowNameEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.OpaqueActionName2EditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.OpaqueActionName3EditPart;
@@ -95,6 +97,7 @@ import org.eclipse.uml2.diagram.activity.edit.parts.PinOrdering3EditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.PinOrderingEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.SendSignalActionName2EditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.SendSignalActionNameEditPart;
+import org.eclipse.uml2.diagram.activity.parser.ActivityEdgeGuardParser;
 import org.eclipse.uml2.diagram.activity.parser.ActivityEdgeWeightParser;
 import org.eclipse.uml2.diagram.activity.parser.ObjectNodeAttributesParser;
 import org.eclipse.uml2.diagram.activity.parser.ObjectNodeInStateParser;
@@ -1990,6 +1993,28 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 	/**
 	 * @generated
 	 */
+	private IParser controlFlowName_6007Parser;
+
+	/**
+	 * @generated
+	 */
+	private IParser getControlFlowName_6007Parser() {
+		if (controlFlowName_6007Parser == null) {
+			controlFlowName_6007Parser = createControlFlowName_6007Parser();
+		}
+		return controlFlowName_6007Parser;
+	}
+
+	/**
+	 * @generated NOT
+	 */
+	protected IParser createControlFlowName_6007Parser() {
+		return new ActivityEdgeGuardParser();
+	}
+
+	/**
+	 * @generated
+	 */
 	private IParser objectFlowName_6004Parser;
 
 	/**
@@ -2031,6 +2056,28 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 	 */
 	protected IParser createObjectFlowName_6006Parser() {
 		return new ActivityEdgeWeightParser();
+	}
+
+	/**
+	 * @generated
+	 */
+	private IParser objectFlowName_6008Parser;
+
+	/**
+	 * @generated
+	 */
+	private IParser getObjectFlowName_6008Parser() {
+		if (objectFlowName_6008Parser == null) {
+			objectFlowName_6008Parser = createObjectFlowName_6008Parser();
+		}
+		return objectFlowName_6008Parser;
+	}
+
+	/**
+	 * @generated NOT
+	 */
+	protected IParser createObjectFlowName_6008Parser() {
+		return new ActivityEdgeGuardParser();
 	}
 
 	/**
@@ -2202,10 +2249,14 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 			return getControlFlowName_6003Parser();
 		case ControlFlowName2EditPart.VISUAL_ID:
 			return getControlFlowName_6005Parser();
+		case ControlFlowName3EditPart.VISUAL_ID:
+			return getControlFlowName_6007Parser();
 		case ObjectFlowNameEditPart.VISUAL_ID:
 			return getObjectFlowName_6004Parser();
 		case ObjectFlowName2EditPart.VISUAL_ID:
 			return getObjectFlowName_6006Parser();
+		case ObjectFlowName3EditPart.VISUAL_ID:
+			return getObjectFlowName_6008Parser();
 		}
 		return null;
 	}

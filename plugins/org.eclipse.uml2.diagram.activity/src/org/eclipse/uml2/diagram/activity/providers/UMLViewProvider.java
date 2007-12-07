@@ -488,12 +488,14 @@ public class UMLViewProvider extends AbstractViewProvider {
 					break;
 				case ControlFlowNameEditPart.VISUAL_ID:
 				case ControlFlowName2EditPart.VISUAL_ID:
+				case ControlFlowName3EditPart.VISUAL_ID:
 					if (ControlFlowEditPart.VISUAL_ID != UMLVisualIDRegistry.getVisualID(containerView) || containerView.getElement() != domainElement) {
 						return null; // wrong container
 					}
 					break;
 				case ObjectFlowNameEditPart.VISUAL_ID:
 				case ObjectFlowName2EditPart.VISUAL_ID:
+				case ObjectFlowName3EditPart.VISUAL_ID:
 					if (ObjectFlowEditPart.VISUAL_ID != UMLVisualIDRegistry.getVisualID(containerView) || containerView.getElement() != domainElement) {
 						return null; // wrong container
 					}
@@ -851,10 +853,14 @@ public class UMLViewProvider extends AbstractViewProvider {
 			return ControlFlowNameViewFactory.class;
 		case ControlFlowName2EditPart.VISUAL_ID:
 			return ControlFlowName2ViewFactory.class;
+		case ControlFlowName3EditPart.VISUAL_ID:
+			return ControlFlowName3ViewFactory.class;
 		case ObjectFlowNameEditPart.VISUAL_ID:
 			return ObjectFlowNameViewFactory.class;
 		case ObjectFlowName2EditPart.VISUAL_ID:
 			return ObjectFlowName2ViewFactory.class;
+		case ObjectFlowName3EditPart.VISUAL_ID:
+			return ObjectFlowName3ViewFactory.class;
 		case ExceptionHandlerLink_fixed_iconEditPart.VISUAL_ID:
 			return ExceptionHandlerLink_fixed_iconViewFactory.class;
 		}
