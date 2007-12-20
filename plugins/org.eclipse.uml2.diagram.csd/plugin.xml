@@ -829,7 +829,7 @@
 							
 			<popupAction
 				path="/ChangeNotationMenu/ChangeNotationGroup"
-				id="set_2007_notation">
+				id="set_Class3_notation">
 			</popupAction>            
 				<popupStructuredContributionCriteria
                    objectClass="org.eclipse.uml2.diagram.csd.edit.parts.ClassEditPart"
@@ -861,7 +861,7 @@
 							
 			<popupAction
 				path="/ChangeNotationMenu/ChangeNotationGroup"
-				id="set_2006_notation">
+				id="set_Class_notation">
 			</popupAction>            
 				<popupStructuredContributionCriteria
                    objectClass="org.eclipse.uml2.diagram.csd.edit.parts.Class3EditPart"

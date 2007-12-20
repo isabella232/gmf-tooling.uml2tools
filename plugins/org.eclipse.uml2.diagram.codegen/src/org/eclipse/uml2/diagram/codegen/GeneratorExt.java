@@ -1,10 +1,7 @@
 package org.eclipse.uml2.diagram.codegen;
 
-import org.eclipse.emf.common.util.EList;
-import org.eclipse.emf.ecore.EObject;
 import org.eclipse.gmf.codegen.gmfgen.GenDiagram;
 import org.eclipse.gmf.codegen.gmfgen.GenEditorGenerator;
-import org.eclipse.gmf.codegen.gmfgen.GenNode;
 import org.eclipse.gmf.codegen.gmfgen.GenTopLevelNode;
 import org.eclipse.gmf.codegen.util.Generator;
 import org.eclipse.gmf.common.UnexpectedBehaviourException;
@@ -69,8 +66,8 @@ public class GeneratorExt extends Generator {
 				return;
 			}
 			doGenerateJavaClass(myEmitters.getChangeNotationContributionItemProviderEmitter(), myEmitters.getChangeNotationContributionItemProviderName(new Object[] { node }), node);
-			for (Object id : sba.getSubstitutableByIDs()) {
-				doGenerateJavaClass(myEmitters.getChangeNotationActionEmitter(), myEmitters.getChangeNotationActionName(new Object[] { node, id }), node, id);
+			for (Object substitutableByNode : sba.getSubstitutableByNodes()) {
+				doGenerateJavaClass(myEmitters.getChangeNotationActionEmitter(), myEmitters.getChangeNotationActionName(new Object[] { node, substitutableByNode }), node, substitutableByNode);
 			}
 			// we process only the first attribute
 			return;

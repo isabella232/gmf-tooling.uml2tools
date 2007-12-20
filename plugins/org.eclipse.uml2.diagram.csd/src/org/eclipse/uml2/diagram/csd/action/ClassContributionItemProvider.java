@@ -21,8 +21,8 @@ public class ClassContributionItemProvider extends AbstractContributionItemProvi
 	protected IAction createAction(String actionId, IWorkbenchPartDescriptor partDescriptor) {
 		IWorkbenchPage workbenchPage = partDescriptor.getPartPage();
 
-		if (Set2007Notation.ACTION_ID.equals(actionId)) {
-			return new Set2007Notation(workbenchPage, actionId);
+		if (TurnIntoClass3Action.ACTION_ID.equals(actionId)) {
+			return new TurnIntoClass3Action(workbenchPage, actionId);
 		}
 
 		return super.createAction(actionId, partDescriptor);

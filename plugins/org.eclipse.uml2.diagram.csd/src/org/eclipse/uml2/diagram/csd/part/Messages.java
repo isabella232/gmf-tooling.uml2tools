@@ -803,22 +803,22 @@ public class Messages extends NLS {
 	/**
 	 * @generated
 	 */
-	public static String Set2007Notation_text;
+	public static String TurnIntoClass3Action_text;
 
 	/**
 	 * @generated
 	 */
-	public static String Set2007Notation_tooltiptext;
+	public static String TurnIntoClass3Action_tooltiptext;
 
 	/**
 	 * @generated
 	 */
-	public static String Set2006Notation_text;
+	public static String TurnIntoClassAction_text;
 
 	/**
 	 * @generated
 	 */
-	public static String Set2006Notation_tooltiptext;
+	public static String TurnIntoClassAction_tooltiptext;
 
 	/**
 	 * @generated

@@ -60,13 +60,13 @@ public class «EXPAND className» extends org.eclipse.gmf.runtime.common.ui.servic
 
 «DEFINE addActions(gmfgenext::SubstitutableByAttributes subChild) FOR gmfgen::GenTopLevelNode-»
 «IF subChild != null && !subChild.requiresAll-»
-«FOREACH subChild.substitutableByIDs AS id»«EXPAND addAction(id)»«ENDFOREACH-»
+«FOREACH subChild.getSubstitutableByNodes() AS newNode»«EXPAND addAction(newNode)»«ENDFOREACH-»
 «ENDIF»
 «ENDDEFINE»
 
-«DEFINE addAction(int vid) FOR gmfgen::GenTopLevelNode»
-	if («EXPAND xpt::actions::ChangeNotationAction::qualifiedClassName(vid)».ACTION_ID.equals(actionId)) {
-		return new «EXPAND xpt::actions::ChangeNotationAction::qualifiedClassName(vid)»(workbenchPage, actionId);
+«DEFINE addAction(GenNode newNode) FOR gmfgen::GenTopLevelNode»
+	if («EXPAND xpt::actions::ChangeNotationAction::qualifiedClassName(newNode)».ACTION_ID.equals(actionId)) {
+		return new «EXPAND xpt::actions::ChangeNotationAction::qualifiedClassName(newNode)»(workbenchPage, actionId);
 	}
 «ENDDEFINE»
 
@@ -88,8 +88,8 @@ public class «EXPAND className» extends org.eclipse.gmf.runtime.common.ui.servic
 «DEFINE i18nValues FOR gmfgen::GenDiagram-»
 «FOREACH editorGen.diagram.topLevelNodes AS node-»
 «IF hasAlternativeNotation(node)-»
-«EXPAND xpt::Externalizer::messageEntry(i18nKeyForChangeNotationMenu(changeNotationContributionItemProviderClassName(node)), "Change Notation Menu")-»
-«EXPAND xpt::Externalizer::messageEntry(i18nKeyForChangeNotationGroup(changeNotationContributionItemProviderClassName(node)), "Change Notation Group")-»
+«EXPAND xpt::Externalizer::messageEntry(i18nKeyForChangeNotationMenu(changeNotationContributionItemProviderClassName(node)), "Show as")-»
+«EXPAND xpt::Externalizer::messageEntry(i18nKeyForChangeNotationGroup(changeNotationContributionItemProviderClassName(node)), "Show as")-»
 «ENDIF-»
 «ENDFOREACH-»
 «ENDDEFINE»

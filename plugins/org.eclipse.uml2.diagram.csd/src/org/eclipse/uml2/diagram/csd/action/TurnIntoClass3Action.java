@@ -3,22 +3,23 @@ package org.eclipse.uml2.diagram.csd.action;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.GraphicalEditPart;
 import org.eclipse.ui.IWorkbenchPage;
 import org.eclipse.uml2.diagram.common.actions.ChangeNotationAction;
+import org.eclipse.uml2.diagram.csd.edit.parts.Class3EditPart;
 import org.eclipse.uml2.diagram.csd.part.Messages;
 import org.eclipse.uml2.diagram.csd.part.UMLVisualIDRegistry;
 
 /**
  * @generated
  */
-public class Set2007Notation extends ChangeNotationAction {
+public class TurnIntoClass3Action extends ChangeNotationAction {
 
-	public static final String ACTION_ID = "set_2007_notation"; //$NON-NLS-1$
+	public static final String ACTION_ID = "set_Class3_notation"; //$NON-NLS-1$
 
-	private static final int NEW_VID = 2007;
+	private static final int NEW_VID = Class3EditPart.VISUAL_ID;
 
 	/**
 	 * @generated
 	 */
-	public Set2007Notation(IWorkbenchPage workbenchPage, String actionId) {
+	public TurnIntoClass3Action(IWorkbenchPage workbenchPage, String actionId) {
 		super(workbenchPage, actionId);
 	}
 
@@ -53,8 +54,8 @@ public class Set2007Notation extends ChangeNotationAction {
 	 */
 	@Override
 	protected void updateText() {
-		setText(Messages.Set2007Notation_text);
-		setText(Messages.Set2007Notation_tooltiptext);
+		setText(Messages.TurnIntoClass3Action_text);
+		setText(Messages.TurnIntoClass3Action_tooltiptext);
 	}
 
 	/**

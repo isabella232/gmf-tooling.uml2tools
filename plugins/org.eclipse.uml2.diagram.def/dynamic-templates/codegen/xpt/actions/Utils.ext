@@ -14,18 +14,24 @@ import "http://www.eclipse.org/gmf/2006/GenModel";
 import "http://www.eclipse.org/emf/2002/Ecore";
 import "http://www.eclipse.org/uml2/diagram/gmfgenext/DiagramFigure/1.0";
 
-String changeNotationActionClassName(GenTopLevelNode node, int vid) :
-'Set'+vid+'Notation'
+String changeNotationActionClassName(GenTopLevelNode node, GenNode substitutableByNode) :
+'TurnInto'+getNodeName(substitutableByNode)+'Action'
 ;
 
 String changeNotationContributionItemProviderClassName(GenTopLevelNode node) :
-node.editPartClassName.subString(0, node.editPartClassName.length()-'EditPart'.length())+'ContributionItemProvider'
+getNodeName(node)+'ContributionItemProvider'
 ;
 
 Boolean hasAlternativeNotation(GenTopLevelNode node) :
 hasAlternationNotation(node.viewmap.attributes.typeSelect(gmfgenext::SubstitutableByAttributes).first())
 ;
 
+String getNodeName(GenNode node) :
+node.editPartClassName.subString(0, node.editPartClassName.length()-'EditPart'.length())
+;
+
 private Boolean hasAlternationNotation(gmfgenext::SubstitutableByAttributes substitutable) :
 substitutable != null && !substitutable.requiresAll
 ;
+
+

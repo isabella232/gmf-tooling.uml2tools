@@ -45,7 +45,7 @@
              </popupMenuGroup>
 		«LET viewmap.attributes.typeSelect(gmfgenext::SubstitutableByAttributes).first() AS subChild-»
 		«IF subChild != null && !subChild.requiresAll-»
-			«FOREACH subChild.substitutableByIDs AS id»«EXPAND popupAction(id)»«ENDFOREACH-»
+			«FOREACH subChild.getSubstitutableByNodes() AS newNode»«EXPAND popupAction(newNode)»«ENDFOREACH-»
 		«ENDIF-»
 		«ENDLET-»
 <popupStructuredContributionCriteria
@@ -58,9 +58,9 @@
 «ENDIF-»
 «ENDDEFINE»
 
-«DEFINE popupAction(int vid) FOR gmfgen::GenTopLevelNode»
+«DEFINE popupAction(GenNode node) FOR gmfgen::GenTopLevelNode»
 			<popupAction
 				path="/ChangeNotationMenu/ChangeNotationGroup"
-				id="«EXPAND xpt::actions::ChangeNotationAction::actionId(vid)»">
+				id="«EXPAND xpt::actions::ChangeNotationAction::actionId(node)»">
 			</popupAction>            
 «ENDDEFINE»
