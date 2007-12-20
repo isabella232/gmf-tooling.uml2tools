@@ -7,6 +7,8 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Set;
 
+import org.eclipse.gmf.runtime.diagram.ui.commands.DeferredLayoutCommand;
+import org.eclipse.gmf.runtime.diagram.ui.commands.ICommandProxy;
 import org.eclipse.gmf.runtime.diagram.ui.editpolicies.CanonicalEditPolicy;
 import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.uml2.diagram.clazz.edit.parts.Class5EditPart;
@@ -75,6 +77,20 @@ public class PackageAsFrameContentsCanonicalEditPolicy extends CanonicalEditPoli
 			myFeaturesToSynchronize.add(UMLPackage.eINSTANCE.getPackage_PackagedElement());
 		}
 		return myFeaturesToSynchronize;
+	}
+
+	/**
+	 * @generated
+	 */
+	protected void refreshSemantic() {
+		List createdViews = new LinkedList();
+		createdViews.addAll(refreshSemanticChildren());
+		if (createdViews.size() > 1) {
+			// perform a layout of the container
+			DeferredLayoutCommand layoutCmd = new DeferredLayoutCommand(host().getEditingDomain(), createdViews, host());
+			executeCommand(new ICommandProxy(layoutCmd));
+		}
+		makeViewsImmutable(createdViews);
 	}
 
 }

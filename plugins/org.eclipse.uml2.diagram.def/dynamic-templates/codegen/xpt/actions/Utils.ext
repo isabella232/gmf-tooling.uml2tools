@@ -26,6 +26,10 @@ Boolean hasAlternativeNotation(GenTopLevelNode node) :
 hasAlternationNotation(node.viewmap.attributes.typeSelect(gmfgenext::SubstitutableByAttributes).first())
 ;
 
+Boolean hasAlternativeNotation(GenNode node) :
+false
+;
+
 String getNodeName(GenNode node) :
 node.editPartClassName.subString(0, node.editPartClassName.length()-'EditPart'.length())
 ;
