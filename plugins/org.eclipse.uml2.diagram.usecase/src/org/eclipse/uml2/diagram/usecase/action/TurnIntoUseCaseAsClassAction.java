@@ -3,22 +3,23 @@ package org.eclipse.uml2.diagram.usecase.action;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.GraphicalEditPart;
 import org.eclipse.ui.IWorkbenchPage;
 import org.eclipse.uml2.diagram.common.actions.ChangeNotationAction;
+import org.eclipse.uml2.diagram.usecase.edit.parts.UseCaseAsClassEditPart;
 import org.eclipse.uml2.diagram.usecase.part.Messages;
 import org.eclipse.uml2.diagram.usecase.part.UMLVisualIDRegistry;
 
 /**
  * @generated
  */
-public class Set2002Notation extends ChangeNotationAction {
+public class TurnIntoUseCaseAsClassAction extends ChangeNotationAction {
 
-	public static final String ACTION_ID = "set_2002_notation"; //$NON-NLS-1$
+	public static final String ACTION_ID = "set_UseCaseAsClass_notation"; //$NON-NLS-1$
 
-	private static final int NEW_VID = 2002;
+	private static final int NEW_VID = UseCaseAsClassEditPart.VISUAL_ID;
 
 	/**
 	 * @generated
 	 */
-	public Set2002Notation(IWorkbenchPage workbenchPage, String actionId) {
+	public TurnIntoUseCaseAsClassAction(IWorkbenchPage workbenchPage, String actionId) {
 		super(workbenchPage, actionId);
 	}
 
@@ -53,8 +54,8 @@ public class Set2002Notation extends ChangeNotationAction {
 	 */
 	@Override
 	protected void updateText() {
-		setText(Messages.Set2002Notation_text);
-		setText(Messages.Set2002Notation_tooltiptext);
+		setText(Messages.TurnIntoUseCaseAsClassAction_text);
+		setText(Messages.TurnIntoUseCaseAsClassAction_tooltiptext);
 	}
 
 	/**

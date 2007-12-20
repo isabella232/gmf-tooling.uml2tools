@@ -21,8 +21,8 @@ public class Constraint2ContributionItemProvider extends AbstractContributionIte
 	protected IAction createAction(String actionId, IWorkbenchPartDescriptor partDescriptor) {
 		IWorkbenchPage workbenchPage = partDescriptor.getPartPage();
 
-		if (Set2027Notation.ACTION_ID.equals(actionId)) {
-			return new Set2027Notation(workbenchPage, actionId);
+		if (TurnIntoConstraintAction.ACTION_ID.equals(actionId)) {
+			return new TurnIntoConstraintAction(workbenchPage, actionId);
 		}
 
 		return super.createAction(actionId, partDescriptor);

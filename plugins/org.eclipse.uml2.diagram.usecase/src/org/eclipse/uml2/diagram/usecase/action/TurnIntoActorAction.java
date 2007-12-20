@@ -3,22 +3,23 @@ package org.eclipse.uml2.diagram.usecase.action;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.GraphicalEditPart;
 import org.eclipse.ui.IWorkbenchPage;
 import org.eclipse.uml2.diagram.common.actions.ChangeNotationAction;
+import org.eclipse.uml2.diagram.usecase.edit.parts.ActorEditPart;
 import org.eclipse.uml2.diagram.usecase.part.Messages;
 import org.eclipse.uml2.diagram.usecase.part.UMLVisualIDRegistry;
 
 /**
  * @generated
  */
-public class Set2004Notation extends ChangeNotationAction {
+public class TurnIntoActorAction extends ChangeNotationAction {
 
-	public static final String ACTION_ID = "set_2004_notation"; //$NON-NLS-1$
+	public static final String ACTION_ID = "set_Actor_notation"; //$NON-NLS-1$
 
-	private static final int NEW_VID = 2004;
+	private static final int NEW_VID = ActorEditPart.VISUAL_ID;
 
 	/**
 	 * @generated
 	 */
-	public Set2004Notation(IWorkbenchPage workbenchPage, String actionId) {
+	public TurnIntoActorAction(IWorkbenchPage workbenchPage, String actionId) {
 		super(workbenchPage, actionId);
 	}
 
@@ -53,8 +54,8 @@ public class Set2004Notation extends ChangeNotationAction {
 	 */
 	@Override
 	protected void updateText() {
-		setText(Messages.Set2004Notation_text);
-		setText(Messages.Set2004Notation_tooltiptext);
+		setText(Messages.TurnIntoActorAction_text);
+		setText(Messages.TurnIntoActorAction_tooltiptext);
 	}
 
 	/**

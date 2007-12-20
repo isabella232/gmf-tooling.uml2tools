@@ -1,24 +1,25 @@
-package org.eclipse.uml2.diagram.activity.action;
+package org.eclipse.uml2.diagram.usecase.action;
 
 import org.eclipse.gmf.runtime.diagram.ui.editparts.GraphicalEditPart;
 import org.eclipse.ui.IWorkbenchPage;
-import org.eclipse.uml2.diagram.activity.part.Messages;
-import org.eclipse.uml2.diagram.activity.part.UMLVisualIDRegistry;
 import org.eclipse.uml2.diagram.common.actions.ChangeNotationAction;
+import org.eclipse.uml2.diagram.usecase.edit.parts.UseCaseEditPart;
+import org.eclipse.uml2.diagram.usecase.part.Messages;
+import org.eclipse.uml2.diagram.usecase.part.UMLVisualIDRegistry;
 
 /**
  * @generated
  */
-public class Set2028Notation extends ChangeNotationAction {
+public class TurnIntoUseCaseAction extends ChangeNotationAction {
 
-	public static final String ACTION_ID = "set_2028_notation"; //$NON-NLS-1$
+	public static final String ACTION_ID = "set_UseCase_notation"; //$NON-NLS-1$
 
-	private static final int NEW_VID = 2028;
+	private static final int NEW_VID = UseCaseEditPart.VISUAL_ID;
 
 	/**
 	 * @generated
 	 */
-	public Set2028Notation(IWorkbenchPage workbenchPage, String actionId) {
+	public TurnIntoUseCaseAction(IWorkbenchPage workbenchPage, String actionId) {
 		super(workbenchPage, actionId);
 	}
 
@@ -53,8 +54,8 @@ public class Set2028Notation extends ChangeNotationAction {
 	 */
 	@Override
 	protected void updateText() {
-		setText(Messages.Set2028Notation_text);
-		setText(Messages.Set2028Notation_tooltiptext);
+		setText(Messages.TurnIntoUseCaseAction_text);
+		setText(Messages.TurnIntoUseCaseAction_tooltiptext);
 	}
 
 	/**

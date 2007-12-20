@@ -1503,22 +1503,22 @@ public class Messages extends NLS {
 	/**
 	 * @generated
 	 */
-	public static String Set2028Notation_text;
+	public static String TurnIntoConstraint2Action_text;
 
 	/**
 	 * @generated
 	 */
-	public static String Set2028Notation_tooltiptext;
+	public static String TurnIntoConstraint2Action_tooltiptext;
 
 	/**
 	 * @generated
 	 */
-	public static String Set2027Notation_text;
+	public static String TurnIntoConstraintAction_text;
 
 	/**
 	 * @generated
 	 */
-	public static String Set2027Notation_tooltiptext;
+	public static String TurnIntoConstraintAction_tooltiptext;
 
 	/**
 	 * @generated

@@ -686,7 +686,7 @@
 							
 			<popupAction
 				path="/ChangeNotationMenu/ChangeNotationGroup"
-				id="set_2005_notation">
+				id="set_ActorAsRectangle_notation">
 			</popupAction>            
 				<popupStructuredContributionCriteria
                    objectClass="org.eclipse.uml2.diagram.usecase.edit.parts.ActorEditPart"
@@ -718,7 +718,7 @@
 							
 			<popupAction
 				path="/ChangeNotationMenu/ChangeNotationGroup"
-				id="set_2002_notation">
+				id="set_Actor_notation">
 			</popupAction>            
 				<popupStructuredContributionCriteria
                    objectClass="org.eclipse.uml2.diagram.usecase.edit.parts.ActorAsRectangleEditPart"
@@ -749,7 +749,7 @@
 							
 			<popupAction
 				path="/ChangeNotationMenu/ChangeNotationGroup"
-				id="set_2004_notation">
+				id="set_UseCaseAsClass_notation">
 			</popupAction>            
 				<popupStructuredContributionCriteria
                    objectClass="org.eclipse.uml2.diagram.usecase.edit.parts.UseCaseEditPart"
@@ -781,7 +781,7 @@
 							
 			<popupAction
 				path="/ChangeNotationMenu/ChangeNotationGroup"
-				id="set_2003_notation">
+				id="set_UseCase_notation">
 			</popupAction>            
 				<popupStructuredContributionCriteria
                    objectClass="org.eclipse.uml2.diagram.usecase.edit.parts.UseCaseAsClassEditPart"

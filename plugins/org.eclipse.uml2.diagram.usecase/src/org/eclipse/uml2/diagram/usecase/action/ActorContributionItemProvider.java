@@ -21,8 +21,8 @@ public class ActorContributionItemProvider extends AbstractContributionItemProvi
 	protected IAction createAction(String actionId, IWorkbenchPartDescriptor partDescriptor) {
 		IWorkbenchPage workbenchPage = partDescriptor.getPartPage();
 
-		if (Set2005Notation.ACTION_ID.equals(actionId)) {
-			return new Set2005Notation(workbenchPage, actionId);
+		if (TurnIntoActorAsRectangleAction.ACTION_ID.equals(actionId)) {
+			return new TurnIntoActorAsRectangleAction(workbenchPage, actionId);
 		}
 
 		return super.createAction(actionId, partDescriptor);

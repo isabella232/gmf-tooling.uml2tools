@@ -21,8 +21,8 @@ public class UseCaseContributionItemProvider extends AbstractContributionItemPro
 	protected IAction createAction(String actionId, IWorkbenchPartDescriptor partDescriptor) {
 		IWorkbenchPage workbenchPage = partDescriptor.getPartPage();
 
-		if (Set2004Notation.ACTION_ID.equals(actionId)) {
-			return new Set2004Notation(workbenchPage, actionId);
+		if (TurnIntoUseCaseAsClassAction.ACTION_ID.equals(actionId)) {
+			return new TurnIntoUseCaseAsClassAction(workbenchPage, actionId);
 		}
 
 		return super.createAction(actionId, partDescriptor);

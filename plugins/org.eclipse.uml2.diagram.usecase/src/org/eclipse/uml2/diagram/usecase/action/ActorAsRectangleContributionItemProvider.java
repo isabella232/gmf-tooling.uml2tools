@@ -21,8 +21,8 @@ public class ActorAsRectangleContributionItemProvider extends AbstractContributi
 	protected IAction createAction(String actionId, IWorkbenchPartDescriptor partDescriptor) {
 		IWorkbenchPage workbenchPage = partDescriptor.getPartPage();
 
-		if (Set2002Notation.ACTION_ID.equals(actionId)) {
-			return new Set2002Notation(workbenchPage, actionId);
+		if (TurnIntoActorAction.ACTION_ID.equals(actionId)) {
+			return new TurnIntoActorAction(workbenchPage, actionId);
 		}
 
 		return super.createAction(actionId, partDescriptor);

@@ -1657,7 +1657,7 @@
 							
 			<popupAction
 				path="/ChangeNotationMenu/ChangeNotationGroup"
-				id="set_2028_notation">
+				id="set_Constraint2_notation">
 			</popupAction>            
 				<popupStructuredContributionCriteria
                    objectClass="org.eclipse.uml2.diagram.activity.edit.parts.ConstraintEditPart"
@@ -1689,7 +1689,7 @@
 							
 			<popupAction
 				path="/ChangeNotationMenu/ChangeNotationGroup"
-				id="set_2027_notation">
+				id="set_Constraint_notation">
 			</popupAction>            
 				<popupStructuredContributionCriteria
                    objectClass="org.eclipse.uml2.diagram.activity.edit.parts.Constraint2EditPart"

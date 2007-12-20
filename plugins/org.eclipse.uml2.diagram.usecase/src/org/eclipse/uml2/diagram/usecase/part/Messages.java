@@ -585,42 +585,42 @@ public class Messages extends NLS {
 	/**
 	 * @generated
 	 */
-	public static String Set2005Notation_text;
+	public static String TurnIntoActorAsRectangleAction_text;
 
 	/**
 	 * @generated
 	 */
-	public static String Set2005Notation_tooltiptext;
+	public static String TurnIntoActorAsRectangleAction_tooltiptext;
 
 	/**
 	 * @generated
 	 */
-	public static String Set2002Notation_text;
+	public static String TurnIntoActorAction_text;
 
 	/**
 	 * @generated
 	 */
-	public static String Set2002Notation_tooltiptext;
+	public static String TurnIntoActorAction_tooltiptext;
 
 	/**
 	 * @generated
 	 */
-	public static String Set2004Notation_text;
+	public static String TurnIntoUseCaseAsClassAction_text;
 
 	/**
 	 * @generated
 	 */
-	public static String Set2004Notation_tooltiptext;
+	public static String TurnIntoUseCaseAsClassAction_tooltiptext;
 
 	/**
 	 * @generated
 	 */
-	public static String Set2003Notation_text;
+	public static String TurnIntoUseCaseAction_text;
 
 	/**
 	 * @generated
 	 */
-	public static String Set2003Notation_tooltiptext;
+	public static String TurnIntoUseCaseAction_tooltiptext;
 
 	/**
 	 * @generated

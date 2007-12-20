@@ -1,24 +1,25 @@
-package org.eclipse.uml2.diagram.usecase.action;
+package org.eclipse.uml2.diagram.activity.action;
 
 import org.eclipse.gmf.runtime.diagram.ui.editparts.GraphicalEditPart;
 import org.eclipse.ui.IWorkbenchPage;
+import org.eclipse.uml2.diagram.activity.edit.parts.ConstraintEditPart;
+import org.eclipse.uml2.diagram.activity.part.Messages;
+import org.eclipse.uml2.diagram.activity.part.UMLVisualIDRegistry;
 import org.eclipse.uml2.diagram.common.actions.ChangeNotationAction;
-import org.eclipse.uml2.diagram.usecase.part.Messages;
-import org.eclipse.uml2.diagram.usecase.part.UMLVisualIDRegistry;
 
 /**
  * @generated
  */
-public class Set2003Notation extends ChangeNotationAction {
+public class TurnIntoConstraintAction extends ChangeNotationAction {
 
-	public static final String ACTION_ID = "set_2003_notation"; //$NON-NLS-1$
+	public static final String ACTION_ID = "set_Constraint_notation"; //$NON-NLS-1$
 
-	private static final int NEW_VID = 2003;
+	private static final int NEW_VID = ConstraintEditPart.VISUAL_ID;
 
 	/**
 	 * @generated
 	 */
-	public Set2003Notation(IWorkbenchPage workbenchPage, String actionId) {
+	public TurnIntoConstraintAction(IWorkbenchPage workbenchPage, String actionId) {
 		super(workbenchPage, actionId);
 	}
 
@@ -53,8 +54,8 @@ public class Set2003Notation extends ChangeNotationAction {
 	 */
 	@Override
 	protected void updateText() {
-		setText(Messages.Set2003Notation_text);
-		setText(Messages.Set2003Notation_tooltiptext);
+		setText(Messages.TurnIntoConstraintAction_text);
+		setText(Messages.TurnIntoConstraintAction_tooltiptext);
 	}
 
 	/**

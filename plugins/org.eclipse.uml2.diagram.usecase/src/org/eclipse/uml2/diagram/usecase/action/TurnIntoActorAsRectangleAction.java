@@ -3,22 +3,23 @@ package org.eclipse.uml2.diagram.usecase.action;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.GraphicalEditPart;
 import org.eclipse.ui.IWorkbenchPage;
 import org.eclipse.uml2.diagram.common.actions.ChangeNotationAction;
+import org.eclipse.uml2.diagram.usecase.edit.parts.ActorAsRectangleEditPart;
 import org.eclipse.uml2.diagram.usecase.part.Messages;
 import org.eclipse.uml2.diagram.usecase.part.UMLVisualIDRegistry;
 
 /**
  * @generated
  */
-public class Set2005Notation extends ChangeNotationAction {
+public class TurnIntoActorAsRectangleAction extends ChangeNotationAction {
 
-	public static final String ACTION_ID = "set_2005_notation"; //$NON-NLS-1$
+	public static final String ACTION_ID = "set_ActorAsRectangle_notation"; //$NON-NLS-1$
 
-	private static final int NEW_VID = 2005;
+	private static final int NEW_VID = ActorAsRectangleEditPart.VISUAL_ID;
 
 	/**
 	 * @generated
 	 */
-	public Set2005Notation(IWorkbenchPage workbenchPage, String actionId) {
+	public TurnIntoActorAsRectangleAction(IWorkbenchPage workbenchPage, String actionId) {
 		super(workbenchPage, actionId);
 	}
 
@@ -53,8 +54,8 @@ public class Set2005Notation extends ChangeNotationAction {
 	 */
 	@Override
 	protected void updateText() {
-		setText(Messages.Set2005Notation_text);
-		setText(Messages.Set2005Notation_tooltiptext);
+		setText(Messages.TurnIntoActorAsRectangleAction_text);
+		setText(Messages.TurnIntoActorAsRectangleAction_tooltiptext);
 	}
 
 	/**
