@@ -21,8 +21,8 @@ public class Interface2ContributionItemProvider extends AbstractContributionItem
 	protected IAction createAction(String actionId, IWorkbenchPartDescriptor partDescriptor) {
 		IWorkbenchPage workbenchPage = partDescriptor.getPartPage();
 
-		if (Set2010Notation.ACTION_ID.equals(actionId)) {
-			return new Set2010Notation(workbenchPage, actionId);
+		if (TurnIntoInterfaceAction.ACTION_ID.equals(actionId)) {
+			return new TurnIntoInterfaceAction(workbenchPage, actionId);
 		}
 
 		return super.createAction(actionId, partDescriptor);

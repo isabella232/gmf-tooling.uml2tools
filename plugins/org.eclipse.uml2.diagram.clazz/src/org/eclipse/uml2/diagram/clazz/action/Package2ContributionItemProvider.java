@@ -21,8 +21,8 @@ public class Package2ContributionItemProvider extends AbstractContributionItemPr
 	protected IAction createAction(String actionId, IWorkbenchPartDescriptor partDescriptor) {
 		IWorkbenchPage workbenchPage = partDescriptor.getPartPage();
 
-		if (Set2016Notation.ACTION_ID.equals(actionId)) {
-			return new Set2016Notation(workbenchPage, actionId);
+		if (TurnIntoPackageAsFrameAction.ACTION_ID.equals(actionId)) {
+			return new TurnIntoPackageAsFrameAction(workbenchPage, actionId);
 		}
 
 		return super.createAction(actionId, partDescriptor);

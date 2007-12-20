@@ -2,6 +2,7 @@ package org.eclipse.uml2.diagram.clazz.action;
 
 import org.eclipse.gmf.runtime.diagram.ui.editparts.GraphicalEditPart;
 import org.eclipse.ui.IWorkbenchPage;
+import org.eclipse.uml2.diagram.clazz.edit.parts.PackageAsFrameEditPart;
 import org.eclipse.uml2.diagram.clazz.part.Messages;
 import org.eclipse.uml2.diagram.clazz.part.UMLVisualIDRegistry;
 import org.eclipse.uml2.diagram.common.actions.ChangeNotationAction;
@@ -9,16 +10,16 @@ import org.eclipse.uml2.diagram.common.actions.ChangeNotationAction;
 /**
  * @generated
  */
-public class Set2002Notation extends ChangeNotationAction {
+public class TurnIntoPackageAsFrameAction extends ChangeNotationAction {
 
-	public static final String ACTION_ID = "set_2002_notation"; //$NON-NLS-1$
+	public static final String ACTION_ID = "set_PackageAsFrame_notation"; //$NON-NLS-1$
 
-	private static final int NEW_VID = 2002;
+	private static final int NEW_VID = PackageAsFrameEditPart.VISUAL_ID;
 
 	/**
 	 * @generated
 	 */
-	public Set2002Notation(IWorkbenchPage workbenchPage, String actionId) {
+	public TurnIntoPackageAsFrameAction(IWorkbenchPage workbenchPage, String actionId) {
 		super(workbenchPage, actionId);
 	}
 
@@ -53,8 +54,8 @@ public class Set2002Notation extends ChangeNotationAction {
 	 */
 	@Override
 	protected void updateText() {
-		setText(Messages.Set2002Notation_text);
-		setText(Messages.Set2002Notation_tooltiptext);
+		setText(Messages.TurnIntoPackageAsFrameAction_text);
+		setText(Messages.TurnIntoPackageAsFrameAction_tooltiptext);
 	}
 
 	/**

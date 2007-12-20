@@ -1463,7 +1463,7 @@
 							
 			<popupAction
 				path="/ChangeNotationMenu/ChangeNotationGroup"
-				id="set_2016_notation">
+				id="set_PackageAsFrame_notation">
 			</popupAction>            
 				<popupStructuredContributionCriteria
                    objectClass="org.eclipse.uml2.diagram.clazz.edit.parts.Package2EditPart"
@@ -1495,7 +1495,7 @@
 							
 			<popupAction
 				path="/ChangeNotationMenu/ChangeNotationGroup"
-				id="set_2013_notation">
+				id="set_Interface2_notation">
 			</popupAction>            
 				<popupStructuredContributionCriteria
                    objectClass="org.eclipse.uml2.diagram.clazz.edit.parts.InterfaceEditPart"
@@ -1526,7 +1526,7 @@
 							
 			<popupAction
 				path="/ChangeNotationMenu/ChangeNotationGroup"
-				id="set_2010_notation">
+				id="set_Interface_notation">
 			</popupAction>            
 				<popupStructuredContributionCriteria
                    objectClass="org.eclipse.uml2.diagram.clazz.edit.parts.Interface2EditPart"
@@ -1558,7 +1558,7 @@
 							
 			<popupAction
 				path="/ChangeNotationMenu/ChangeNotationGroup"
-				id="set_2002_notation">
+				id="set_Package2_notation">
 			</popupAction>            
 				<popupStructuredContributionCriteria
                    objectClass="org.eclipse.uml2.diagram.clazz.edit.parts.PackageAsFrameEditPart"

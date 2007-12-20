@@ -2,6 +2,7 @@ package org.eclipse.uml2.diagram.clazz.action;
 
 import org.eclipse.gmf.runtime.diagram.ui.editparts.GraphicalEditPart;
 import org.eclipse.ui.IWorkbenchPage;
+import org.eclipse.uml2.diagram.clazz.edit.parts.Interface2EditPart;
 import org.eclipse.uml2.diagram.clazz.part.Messages;
 import org.eclipse.uml2.diagram.clazz.part.UMLVisualIDRegistry;
 import org.eclipse.uml2.diagram.common.actions.ChangeNotationAction;
@@ -9,16 +10,16 @@ import org.eclipse.uml2.diagram.common.actions.ChangeNotationAction;
 /**
  * @generated
  */
-public class Set2010Notation extends ChangeNotationAction {
+public class TurnIntoInterface2Action extends ChangeNotationAction {
 
-	public static final String ACTION_ID = "set_2010_notation"; //$NON-NLS-1$
+	public static final String ACTION_ID = "set_Interface2_notation"; //$NON-NLS-1$
 
-	private static final int NEW_VID = 2010;
+	private static final int NEW_VID = Interface2EditPart.VISUAL_ID;
 
 	/**
 	 * @generated
 	 */
-	public Set2010Notation(IWorkbenchPage workbenchPage, String actionId) {
+	public TurnIntoInterface2Action(IWorkbenchPage workbenchPage, String actionId) {
 		super(workbenchPage, actionId);
 	}
 
@@ -53,8 +54,8 @@ public class Set2010Notation extends ChangeNotationAction {
 	 */
 	@Override
 	protected void updateText() {
-		setText(Messages.Set2010Notation_text);
-		setText(Messages.Set2010Notation_tooltiptext);
+		setText(Messages.TurnIntoInterface2Action_text);
+		setText(Messages.TurnIntoInterface2Action_tooltiptext);
 	}
 
 	/**

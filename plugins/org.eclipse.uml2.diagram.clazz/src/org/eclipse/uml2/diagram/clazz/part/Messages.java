@@ -1413,42 +1413,42 @@ public class Messages extends NLS {
 	/**
 	 * @generated
 	 */
-	public static String Set2016Notation_text;
+	public static String TurnIntoPackageAsFrameAction_text;
 
 	/**
 	 * @generated
 	 */
-	public static String Set2016Notation_tooltiptext;
+	public static String TurnIntoPackageAsFrameAction_tooltiptext;
 
 	/**
 	 * @generated
 	 */
-	public static String Set2013Notation_text;
+	public static String TurnIntoInterface2Action_text;
 
 	/**
 	 * @generated
 	 */
-	public static String Set2013Notation_tooltiptext;
+	public static String TurnIntoInterface2Action_tooltiptext;
 
 	/**
 	 * @generated
 	 */
-	public static String Set2010Notation_text;
+	public static String TurnIntoInterfaceAction_text;
 
 	/**
 	 * @generated
 	 */
-	public static String Set2010Notation_tooltiptext;
+	public static String TurnIntoInterfaceAction_tooltiptext;
 
 	/**
 	 * @generated
 	 */
-	public static String Set2002Notation_text;
+	public static String TurnIntoPackage2Action_text;
 
 	/**
 	 * @generated
 	 */
-	public static String Set2002Notation_tooltiptext;
+	public static String TurnIntoPackage2Action_tooltiptext;
 
 	/**
 	 * @generated
