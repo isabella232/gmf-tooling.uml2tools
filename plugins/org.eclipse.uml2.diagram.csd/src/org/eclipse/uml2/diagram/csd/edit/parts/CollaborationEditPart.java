@@ -31,6 +31,7 @@ import org.eclipse.gmf.runtime.gef.ui.figures.DefaultSizeNodeFigure;
 import org.eclipse.gmf.runtime.gef.ui.figures.NodeFigure;
 import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.uml2.diagram.common.draw2d.OneLineDashedBorder;
+import org.eclipse.uml2.diagram.common.draw2d.SplitEllipseLayout;
 import org.eclipse.uml2.diagram.csd.edit.policies.CollaborationCanonicalEditPolicy;
 import org.eclipse.uml2.diagram.csd.edit.policies.CollaborationItemSemanticEditPolicy;
 import org.eclipse.uml2.diagram.csd.edit.policies.OpenDiagramEditPolicy;
@@ -247,28 +248,6 @@ public class CollaborationEditPart extends ShapeNodeEditPart {
 		private int myYMargin;
 
 		/**
-		 * @NOT-generated
-		 */
-		@Override
-		public void paintFigure(Graphics graphics) {
-			Rectangle r = getBounds().getCopy();
-			double a = r.width / 2;
-			double b = r.height / 2;
-			double sin45 = Math.sqrt(2) / 2;
-			double cos45 = sin45;
-			double diagx = a * sin45;
-			double diagy = b * cos45;
-			int newxmargin = (int) (a - diagx);
-			int newymargin = (int) (b - diagy);
-			if (newxmargin != myXMargin || newymargin != myYMargin) {
-				myXMargin = newxmargin;
-				myYMargin = newymargin;
-				setBorder(new MarginBorder(myYMargin, myXMargin, myYMargin, myXMargin));
-			}
-			super.paintFigure(graphics);
-		}
-
-		/**
 		 * @generated
 		 */
 		private Label fFigureCollaborationFigure_name;
@@ -283,7 +262,8 @@ public class CollaborationEditPart extends ShapeNodeEditPart {
 		 */
 		public CollaborationFigure() {
 
-			BorderLayout layoutThis = new BorderLayout();
+			SplitEllipseLayout layoutThis = new SplitEllipseLayout();
+
 			this.setLayoutManager(layoutThis);
 
 			this.setLineStyle(Graphics.LINE_DASH);

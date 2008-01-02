@@ -13,7 +13,8 @@
           name="CollaborationFigure"
           lineKind="LINE_DASH">
         <layout
-            xsi:type="gmfgraph:BorderLayout"/>
+            xsi:type="gmfgraph:CustomLayout"
+            qualifiedClassName="org.eclipse.uml2.diagram.common.draw2d.SplitEllipseLayout"/>
         <children
             xsi:type="gmfgraph:Label"
             name="CollaborationFigure_name">
