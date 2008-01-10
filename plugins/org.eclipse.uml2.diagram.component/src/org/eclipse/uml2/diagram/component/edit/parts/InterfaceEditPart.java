@@ -1,7 +1,6 @@
 package org.eclipse.uml2.diagram.component.edit.parts;
 
 import org.eclipse.draw2d.Ellipse;
-import org.eclipse.draw2d.Graphics;
 import org.eclipse.draw2d.IFigure;
 import org.eclipse.draw2d.PositionConstants;
 import org.eclipse.draw2d.StackLayout;
