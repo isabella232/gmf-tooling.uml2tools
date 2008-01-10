@@ -16,7 +16,6 @@ import org.eclipse.gmf.runtime.emf.core.util.EObjectAdapter;
 import org.eclipse.gmf.runtime.notation.Node;
 import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.ui.IWorkbenchPage;
-import org.eclipse.uml2.uml.Interface;
 
 
 public abstract class ChangeNotationAction extends DiagramAction {
