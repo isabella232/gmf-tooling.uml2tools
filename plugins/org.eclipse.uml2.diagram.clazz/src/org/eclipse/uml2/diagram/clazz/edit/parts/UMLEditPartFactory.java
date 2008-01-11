@@ -425,6 +425,8 @@ public class UMLEditPartFactory implements EditPartFactory {
 			case AssociationClassConnectorEditPart.VISUAL_ID:
 				return new AssociationClassConnectorEditPart(view);
 
+			case AssociationInstanceEditPart.VISUAL_ID:
+				return new AssociationInstanceEditPart(view);
 			}
 		}
 		return createUnrecognizedEditPart(context, model);

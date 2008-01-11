@@ -31,6 +31,7 @@ import org.eclipse.uml2.diagram.clazz.edit.parts.AssociationClassConnectorEditPa
 import org.eclipse.uml2.diagram.clazz.edit.parts.AssociationClassEditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.AssociationClassRhombEditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.AssociationEditPart;
+import org.eclipse.uml2.diagram.clazz.edit.parts.AssociationInstanceEditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.Class2EditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.Class3EditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.Class4EditPart;
@@ -692,6 +693,13 @@ public class PackageCanonicalEditPolicy extends CanonicalConnectionEditPolicy {
 		case AssociationClassConnectorEditPart.VISUAL_ID: {
 			if (!domain2NotationMap.containsKey(view.getElement())) {
 				result.addAll(UMLDiagramUpdater.getAssociationClass_4014ContainedLinks(view));
+			}
+			domain2NotationMap.put(view.getElement(), view);
+			break;
+		}
+		case AssociationInstanceEditPart.VISUAL_ID: {
+			if (!domain2NotationMap.containsKey(view.getElement())) {
+				result.addAll(UMLDiagramUpdater.getSlot_4015ContainedLinks(view));
 			}
 			domain2NotationMap.put(view.getElement(), view);
 			break;

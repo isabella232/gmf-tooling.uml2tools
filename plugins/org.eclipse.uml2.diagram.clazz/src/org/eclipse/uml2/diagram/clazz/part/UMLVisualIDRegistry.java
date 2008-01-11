@@ -148,6 +148,13 @@ public class UMLVisualIDRegistry {
 	/**
 	 * @generated
 	 */
+	private static final UMLAbstractExpression Slot_3017_Constraint = UMLOCLFactory.getExpression(
+			"self.value->size() = 0 or not self.value->exists(v : ValueSpecification | v.oclIsKindOf(InstanceValue) and not v.oclAsType(InstanceValue).oclIsUndefined())", UMLPackage.eINSTANCE
+					.getSlot());
+
+	/**
+	 * @generated
+	 */
 	private static final UMLAbstractExpression Property_3028_Constraint = UMLOCLFactory.getExpression("not oclIsKindOf(uml::Port)", UMLPackage.eINSTANCE.getProperty());
 
 	/**
@@ -200,6 +207,12 @@ public class UMLVisualIDRegistry {
 	 * @generated
 	 */
 	private static final UMLAbstractExpression Usage_4013_Constraint = UMLOCLFactory.getExpression("self.supplier->forAll(e|e.oclIsKindOf(uml::Interface))", UMLPackage.eINSTANCE.getUsage());
+
+	/**
+	 * @generated
+	 */
+	private static final UMLAbstractExpression Slot_4015_Constraint = UMLOCLFactory.getExpression(
+			"self.value->exists(v : ValueSpecification | v.oclIsKindOf(InstanceValue) and not v.oclAsType(InstanceValue).oclIsUndefined())", UMLPackage.eINSTANCE.getSlot());
 
 	/**
 	 * @generated
@@ -430,7 +443,7 @@ public class UMLVisualIDRegistry {
 			}
 			break;
 		case InstanceSpecificationSlotsEditPart.VISUAL_ID:
-			if (UMLPackage.eINSTANCE.getSlot().isSuperTypeOf(domainElement.eClass())) {
+			if (UMLPackage.eINSTANCE.getSlot().isSuperTypeOf(domainElement.eClass()) && evaluate(Slot_3017_Constraint, domainElement)) {
 				return SlotEditPart.VISUAL_ID;
 			}
 			break;
@@ -525,7 +538,7 @@ public class UMLVisualIDRegistry {
 			}
 			break;
 		case InstanceSpecificationSlots2EditPart.VISUAL_ID:
-			if (UMLPackage.eINSTANCE.getSlot().isSuperTypeOf(domainElement.eClass())) {
+			if (UMLPackage.eINSTANCE.getSlot().isSuperTypeOf(domainElement.eClass()) && evaluate(Slot_3017_Constraint, domainElement)) {
 				return SlotEditPart.VISUAL_ID;
 			}
 			break;
@@ -1239,6 +1252,9 @@ public class UMLVisualIDRegistry {
 		}
 		if (UMLPackage.eINSTANCE.getAssociationClass().isSuperTypeOf(domainElement.eClass())) {
 			return AssociationClassConnectorEditPart.VISUAL_ID;
+		}
+		if (UMLPackage.eINSTANCE.getSlot().isSuperTypeOf(domainElement.eClass()) && evaluate(Slot_4015_Constraint, domainElement)) {
+			return AssociationInstanceEditPart.VISUAL_ID;
 		}
 		return -1;
 	}

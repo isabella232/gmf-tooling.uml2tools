@@ -32,6 +32,7 @@ import org.eclipse.uml2.diagram.clazz.edit.parts.Enumeration3EditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.GeneralizationSetEditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.InstanceSpecification2EditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.InstanceSpecification3EditPart;
+import org.eclipse.uml2.diagram.clazz.edit.parts.InstanceSpecificationEditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.Interface2EditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.InterfaceEditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.Package2EditPart;
@@ -210,10 +211,25 @@ public class UMLModelingAssistantProvider extends ModelingAssistantProvider {
 			types.add(UMLElementTypes.ConstraintConstrainedElement_4004);
 			return types;
 		}
+		if (sourceEditPart instanceof InstanceSpecification2EditPart) {
+			List types = new ArrayList();
+			types.add(UMLElementTypes.Slot_4015);
+			return types;
+		}
 		if (sourceEditPart instanceof DependencyEditPart) {
 			List types = new ArrayList();
 			types.add(UMLElementTypes.DependencySupplier_4006);
 			types.add(UMLElementTypes.DependencyClient_4007);
+			return types;
+		}
+		if (sourceEditPart instanceof InstanceSpecificationEditPart) {
+			List types = new ArrayList();
+			types.add(UMLElementTypes.Slot_4015);
+			return types;
+		}
+		if (sourceEditPart instanceof InstanceSpecification3EditPart) {
+			List types = new ArrayList();
+			types.add(UMLElementTypes.Slot_4015);
 			return types;
 		}
 		return Collections.EMPTY_LIST;
@@ -229,6 +245,11 @@ public class UMLModelingAssistantProvider extends ModelingAssistantProvider {
 			types.add(UMLElementTypes.InterfaceRealization_4008);
 			return types;
 		}
+		if (targetEditPart instanceof InstanceSpecification2EditPart) {
+			List types = new ArrayList();
+			types.add(UMLElementTypes.Slot_4015);
+			return types;
+		}
 		if (targetEditPart instanceof GeneralizationSetEditPart) {
 			List types = new ArrayList();
 			types.add(UMLElementTypes.Generalization_4011);
@@ -237,6 +258,16 @@ public class UMLModelingAssistantProvider extends ModelingAssistantProvider {
 		if (targetEditPart instanceof Interface2EditPart) {
 			List types = new ArrayList();
 			types.add(UMLElementTypes.InterfaceRealization_4008);
+			return types;
+		}
+		if (targetEditPart instanceof InstanceSpecificationEditPart) {
+			List types = new ArrayList();
+			types.add(UMLElementTypes.Slot_4015);
+			return types;
+		}
+		if (targetEditPart instanceof InstanceSpecification3EditPart) {
+			List types = new ArrayList();
+			types.add(UMLElementTypes.Slot_4015);
 			return types;
 		}
 		return Collections.EMPTY_LIST;
@@ -252,8 +283,47 @@ public class UMLModelingAssistantProvider extends ModelingAssistantProvider {
 			List types = new ArrayList();
 			return types;
 		}
+		if (sourceEditPart instanceof InstanceSpecification2EditPart) {
+			List types = new ArrayList();
+			if (targetEditPart instanceof InstanceSpecification2EditPart) {
+				types.add(UMLElementTypes.Slot_4015);
+			}
+			if (targetEditPart instanceof InstanceSpecificationEditPart) {
+				types.add(UMLElementTypes.Slot_4015);
+			}
+			if (targetEditPart instanceof InstanceSpecification3EditPart) {
+				types.add(UMLElementTypes.Slot_4015);
+			}
+			return types;
+		}
 		if (sourceEditPart instanceof DependencyEditPart) {
 			List types = new ArrayList();
+			return types;
+		}
+		if (sourceEditPart instanceof InstanceSpecificationEditPart) {
+			List types = new ArrayList();
+			if (targetEditPart instanceof InstanceSpecification2EditPart) {
+				types.add(UMLElementTypes.Slot_4015);
+			}
+			if (targetEditPart instanceof InstanceSpecificationEditPart) {
+				types.add(UMLElementTypes.Slot_4015);
+			}
+			if (targetEditPart instanceof InstanceSpecification3EditPart) {
+				types.add(UMLElementTypes.Slot_4015);
+			}
+			return types;
+		}
+		if (sourceEditPart instanceof InstanceSpecification3EditPart) {
+			List types = new ArrayList();
+			if (targetEditPart instanceof InstanceSpecification2EditPart) {
+				types.add(UMLElementTypes.Slot_4015);
+			}
+			if (targetEditPart instanceof InstanceSpecificationEditPart) {
+				types.add(UMLElementTypes.Slot_4015);
+			}
+			if (targetEditPart instanceof InstanceSpecification3EditPart) {
+				types.add(UMLElementTypes.Slot_4015);
+			}
 			return types;
 		}
 		return Collections.EMPTY_LIST;
@@ -268,12 +338,51 @@ public class UMLModelingAssistantProvider extends ModelingAssistantProvider {
 			List types = new ArrayList();
 			return types;
 		}
+		if (targetEditPart instanceof InstanceSpecification2EditPart) {
+			List types = new ArrayList();
+			if (relationshipType == UMLElementTypes.Slot_4015) {
+				types.add(UMLElementTypes.InstanceSpecification_2008);
+			}
+			if (relationshipType == UMLElementTypes.Slot_4015) {
+				types.add(UMLElementTypes.InstanceSpecification_3013);
+			}
+			if (relationshipType == UMLElementTypes.Slot_4015) {
+				types.add(UMLElementTypes.InstanceSpecification_3035);
+			}
+			return types;
+		}
 		if (targetEditPart instanceof GeneralizationSetEditPart) {
 			List types = new ArrayList();
 			return types;
 		}
 		if (targetEditPart instanceof Interface2EditPart) {
 			List types = new ArrayList();
+			return types;
+		}
+		if (targetEditPart instanceof InstanceSpecificationEditPart) {
+			List types = new ArrayList();
+			if (relationshipType == UMLElementTypes.Slot_4015) {
+				types.add(UMLElementTypes.InstanceSpecification_2008);
+			}
+			if (relationshipType == UMLElementTypes.Slot_4015) {
+				types.add(UMLElementTypes.InstanceSpecification_3013);
+			}
+			if (relationshipType == UMLElementTypes.Slot_4015) {
+				types.add(UMLElementTypes.InstanceSpecification_3035);
+			}
+			return types;
+		}
+		if (targetEditPart instanceof InstanceSpecification3EditPart) {
+			List types = new ArrayList();
+			if (relationshipType == UMLElementTypes.Slot_4015) {
+				types.add(UMLElementTypes.InstanceSpecification_2008);
+			}
+			if (relationshipType == UMLElementTypes.Slot_4015) {
+				types.add(UMLElementTypes.InstanceSpecification_3013);
+			}
+			if (relationshipType == UMLElementTypes.Slot_4015) {
+				types.add(UMLElementTypes.InstanceSpecification_3035);
+			}
 			return types;
 		}
 		return Collections.EMPTY_LIST;
@@ -288,8 +397,47 @@ public class UMLModelingAssistantProvider extends ModelingAssistantProvider {
 			List types = new ArrayList();
 			return types;
 		}
+		if (sourceEditPart instanceof InstanceSpecification2EditPart) {
+			List types = new ArrayList();
+			if (relationshipType == UMLElementTypes.Slot_4015) {
+				types.add(UMLElementTypes.InstanceSpecification_2008);
+			}
+			if (relationshipType == UMLElementTypes.Slot_4015) {
+				types.add(UMLElementTypes.InstanceSpecification_3013);
+			}
+			if (relationshipType == UMLElementTypes.Slot_4015) {
+				types.add(UMLElementTypes.InstanceSpecification_3035);
+			}
+			return types;
+		}
 		if (sourceEditPart instanceof DependencyEditPart) {
 			List types = new ArrayList();
+			return types;
+		}
+		if (sourceEditPart instanceof InstanceSpecificationEditPart) {
+			List types = new ArrayList();
+			if (relationshipType == UMLElementTypes.Slot_4015) {
+				types.add(UMLElementTypes.InstanceSpecification_2008);
+			}
+			if (relationshipType == UMLElementTypes.Slot_4015) {
+				types.add(UMLElementTypes.InstanceSpecification_3013);
+			}
+			if (relationshipType == UMLElementTypes.Slot_4015) {
+				types.add(UMLElementTypes.InstanceSpecification_3035);
+			}
+			return types;
+		}
+		if (sourceEditPart instanceof InstanceSpecification3EditPart) {
+			List types = new ArrayList();
+			if (relationshipType == UMLElementTypes.Slot_4015) {
+				types.add(UMLElementTypes.InstanceSpecification_2008);
+			}
+			if (relationshipType == UMLElementTypes.Slot_4015) {
+				types.add(UMLElementTypes.InstanceSpecification_3013);
+			}
+			if (relationshipType == UMLElementTypes.Slot_4015) {
+				types.add(UMLElementTypes.InstanceSpecification_3035);
+			}
 			return types;
 		}
 		return Collections.EMPTY_LIST;

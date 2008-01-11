@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<notation:Diagram xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.1/notation" xmlns:uml="http://www.eclipse.org/uml2/2.1.0/UML" xmi:id="_4imPwMBVEdyvmKYs9cdOzw" type="UMLClass" name="7.54.Instance specifications representing two objects connected by a link.umlclass_diagram" measurementUnit="Pixel">
+  <children xmi:type="notation:Node" xmi:id="_5CLuwMBVEdyvmKYs9cdOzw" type="2014">
+    <children xmi:type="notation:Node" xmi:id="_5CM84MBVEdyvmKYs9cdOzw" type="5020"/>
+    <children xmi:type="notation:Node" xmi:id="_5CROUMBVEdyvmKYs9cdOzw" type="7032">
+      <styles xmi:type="notation:DrawerStyle" xmi:id="_5CROUcBVEdyvmKYs9cdOzw"/>
+      <styles xmi:type="notation:SortingStyle" xmi:id="_5CROUsBVEdyvmKYs9cdOzw"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_5CROU8BVEdyvmKYs9cdOzw"/>
+    </children>
+    <styles xmi:type="notation:ShapeStyle" xmi:id="_5CLuwcBVEdyvmKYs9cdOzw" fontName="Segoe UI"/>
+    <element xmi:type="uml:Package" href="7.54.Instance specifications representing two objects connected by a link.uml#_4e0jAMBVEdyvmKYs9cdOzw"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_5CLuwsBVEdyvmKYs9cdOzw"/>
+  </children>
+  <children xmi:type="notation:Node" xmi:id="_8flpwMBVEdyvmKYs9cdOzw" type="2001">
+    <children xmi:type="notation:Node" xmi:id="_8fmQ0MBVEdyvmKYs9cdOzw" type="5003">
+      <styles xmi:type="notation:FontStyle" xmi:id="_8kG9YMBVEdyvmKYs9cdOzw"/>
+    </children>
+    <children xmi:type="notation:Node" xmi:id="_8fm34MBVEdyvmKYs9cdOzw" type="5019"/>
+    <children xmi:type="notation:Node" xmi:id="_8fp7MMBVEdyvmKYs9cdOzw" type="7001">
+      <styles xmi:type="notation:DrawerStyle" xmi:id="_8fp7McBVEdyvmKYs9cdOzw"/>
+      <styles xmi:type="notation:TitleStyle" xmi:id="_8fp7MsBVEdyvmKYs9cdOzw" showTitle="true"/>
+      <styles xmi:type="notation:SortingStyle" xmi:id="_8fp7M8BVEdyvmKYs9cdOzw"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_8fp7NMBVEdyvmKYs9cdOzw"/>
+    </children>
+    <children xmi:type="notation:Node" xmi:id="_8f82IMBVEdyvmKYs9cdOzw" type="7002">
+      <styles xmi:type="notation:DrawerStyle" xmi:id="_8f82IcBVEdyvmKYs9cdOzw"/>
+      <styles xmi:type="notation:TitleStyle" xmi:id="_8f82IsBVEdyvmKYs9cdOzw" showTitle="true"/>
+      <styles xmi:type="notation:SortingStyle" xmi:id="_8f82I8BVEdyvmKYs9cdOzw"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_8f82JMBVEdyvmKYs9cdOzw"/>
+    </children>
+    <children xmi:type="notation:Node" xmi:id="_8f82JcBVEdyvmKYs9cdOzw" type="7003">
+      <styles xmi:type="notation:DrawerStyle" xmi:id="_8f82JsBVEdyvmKYs9cdOzw"/>
+      <styles xmi:type="notation:TitleStyle" xmi:id="_8f82J8BVEdyvmKYs9cdOzw" showTitle="true"/>
+      <styles xmi:type="notation:SortingStyle" xmi:id="_8f82KMBVEdyvmKYs9cdOzw"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_8f82KcBVEdyvmKYs9cdOzw"/>
+    </children>
+    <styles xmi:type="notation:ShapeStyle" xmi:id="_8flpwcBVEdyvmKYs9cdOzw" fontName="Segoe UI"/>
+    <element xmi:type="uml:Class" href="7.54.Instance specifications representing two objects connected by a link.uml#_8a2TsMBVEdyvmKYs9cdOzw"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_8flpwsBVEdyvmKYs9cdOzw" x="372" y="72"/>
+  </children>
+  <children xmi:type="notation:Node" xmi:id="_-JMr4MBVEdyvmKYs9cdOzw" type="2008">
+    <children xmi:type="notation:Node" xmi:id="_-JNS8MBVEdyvmKYs9cdOzw" type="5010"/>
+    <children xmi:type="notation:Node" xmi:id="_-JOhEMBVEdyvmKYs9cdOzw" type="7028">
+      <styles xmi:type="notation:TitleStyle" xmi:id="_-JOhEcBVEdyvmKYs9cdOzw" showTitle="true"/>
+      <styles xmi:type="notation:SortingStyle" xmi:id="_-JOhEsBVEdyvmKYs9cdOzw"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_-JOhE8BVEdyvmKYs9cdOzw"/>
+    </children>
+    <styles xmi:type="notation:ShapeStyle" xmi:id="_-JMr4cBVEdyvmKYs9cdOzw" fontName="Segoe UI"/>
+    <element xmi:type="uml:InstanceSpecification" href="7.54.Instance specifications representing two objects connected by a link.uml#_-JDh8MBVEdyvmKYs9cdOzw"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_-JMr4sBVEdyvmKYs9cdOzw" x="191" y="262"/>
+  </children>
+  <children xmi:type="notation:Node" xmi:id="_AapxIMBWEdyvmKYs9cdOzw" type="2008">
+    <children xmi:type="notation:Node" xmi:id="_AaqYMMBWEdyvmKYs9cdOzw" type="5010"/>
+    <children xmi:type="notation:Node" xmi:id="_AaqYMcBWEdyvmKYs9cdOzw" type="7028">
+      <styles xmi:type="notation:TitleStyle" xmi:id="_AaqYMsBWEdyvmKYs9cdOzw" showTitle="true"/>
+      <styles xmi:type="notation:SortingStyle" xmi:id="_AaqYM8BWEdyvmKYs9cdOzw"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_AaqYNMBWEdyvmKYs9cdOzw"/>
+    </children>
+    <styles xmi:type="notation:ShapeStyle" xmi:id="_AapxIcBWEdyvmKYs9cdOzw" fontName="Segoe UI"/>
+    <element xmi:type="uml:InstanceSpecification" href="7.54.Instance specifications representing two objects connected by a link.uml#_AaQIgMBWEdyvmKYs9cdOzw"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_AapxIsBWEdyvmKYs9cdOzw" x="499" y="261"/>
+  </children>
+  <styles xmi:type="notation:DiagramStyle" xmi:id="_4imPwcBVEdyvmKYs9cdOzw"/>
+  <styles xmi:type="notation:FilteringStyle" xmi:id="_4imPwsBVEdyvmKYs9cdOzw"/>
+  <element xmi:type="uml:Package" href="7.54.Instance specifications representing two objects connected by a link.uml#_4e0jAMBVEdyvmKYs9cdOzw"/>
+  <edges xmi:type="notation:Edge" xmi:id="_CYQtUMBWEdyvmKYs9cdOzw" type="4015" source="_-JMr4MBVEdyvmKYs9cdOzw" target="_AapxIMBWEdyvmKYs9cdOzw">
+    <styles xmi:type="notation:RoutingStyle" xmi:id="_CYQtUcBWEdyvmKYs9cdOzw"/>
+    <styles xmi:type="notation:FontStyle" xmi:id="_CYQtUsBWEdyvmKYs9cdOzw" fontName="Segoe UI"/>
+    <element xmi:type="uml:Slot" href="7.54.Instance specifications representing two objects connected by a link.uml#_CX0BYMBWEdyvmKYs9cdOzw"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_CYQtU8BWEdyvmKYs9cdOzw" points="[18, 0, -239, 0]$[238, -5, -19, -5]"/>
+    <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_CY4YYMBWEdyvmKYs9cdOzw" id="(0.79545456,0.3469388)"/>
+    <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_CY4YYcBWEdyvmKYs9cdOzw" id="(0.21348314,0.36734694)"/>
+  </edges>
+</notation:Diagram>

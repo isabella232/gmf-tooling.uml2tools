@@ -421,4 +421,7 @@
   <linkTraces
       visualID="4014"
       queryText="modelFacet.oclIsKindOf(gmfgen::TypeLinkModelFacet) and (let _eClass_:ecore::EClass = modelFacet.oclAsType(gmfgen::TypeLinkModelFacet).metaClass.ecoreClass in _eClass_.ePackage.nsURI = 'http://www.eclipse.org/uml2/2.1.0/UML' and _eClass_.name = 'AssociationClass')"/>
+  <linkTraces
+      visualID="4015"
+      queryText="modelFacet.oclIsKindOf(gmfgen::TypeLinkModelFacet) and (let _eClass_:ecore::EClass = modelFacet.oclAsType(gmfgen::TypeLinkModelFacet).metaClass.ecoreClass in _eClass_.ePackage.nsURI = 'http://www.eclipse.org/uml2/2.1.0/UML' and _eClass_.name = 'Slot')"/>
 </trace:TraceModel>

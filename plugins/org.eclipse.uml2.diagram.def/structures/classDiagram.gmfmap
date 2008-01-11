@@ -1104,6 +1104,8 @@
         <ownedChild>
           <domainMetaElement
               href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//Slot"/>
+          <domainSpecialization
+              body="self.value->size() = 0 or not self.value->exists(v : ValueSpecification | v.oclIsKindOf(InstanceValue) and not v.oclAsType(InstanceValue).oclIsUndefined())"/>
           <labelMappings
               xsi:type="gmfmap:FeatureLabelMapping"
               editPattern="">
@@ -1736,6 +1738,25 @@
     <linkMetaFeature
         xsi:type="ecore:EReference"
         href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//Classifier/collaborationUse"/>
+  </links>
+  <links>
+    <domainMetaElement
+        href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//Slot"/>
+    <domainSpecialization
+        body="self.value->exists(v : ValueSpecification | v.oclIsKindOf(InstanceValue) and not v.oclAsType(InstanceValue).oclIsUndefined())"/>
+    <containmentFeature
+        href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//InstanceSpecification/slot"/>
+    <tool
+        xsi:type="gmftool:GenericTool"
+        href="classDiagram.gmftool#//@palette/@tools.2/@tools.0/@tools.0"/>
+    <diagramLink
+        href="classDiagram_associations.gmfgraph#AssociationLink"/>
+    <sourceMetaFeature
+        xsi:type="ecore:EReference"
+        href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//Slot/owningInstance"/>
+    <linkMetaFeature
+        xsi:type="ecore:EReference"
+        href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//Slot/owningInstance"/>
   </links>
   <diagram>
     <diagramCanvas

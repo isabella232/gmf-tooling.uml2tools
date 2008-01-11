@@ -666,6 +666,8 @@ public class UMLViewProvider extends AbstractViewProvider {
 			return UsageViewFactory.class;
 		case AssociationClassConnectorEditPart.VISUAL_ID:
 			return AssociationClassConnectorViewFactory.class;
+		case AssociationInstanceEditPart.VISUAL_ID:
+			return AssociationInstanceViewFactory.class;
 		}
 		return null;
 	}

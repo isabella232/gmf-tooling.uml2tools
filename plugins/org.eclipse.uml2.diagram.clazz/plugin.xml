@@ -1132,6 +1132,15 @@
             <param name="semanticHint" value="4014"/>
          </specializationType>
       </metamodel>
+      <metamodel nsURI="http://www.eclipse.org/uml2/2.1.0/UML">
+         <specializationType
+               id="org.eclipse.uml2.diagram.clazz.Slot_4015"
+               name="%metatype.name.Slot_4015"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType">
+            <specializes id="org.eclipse.uml2.diagram.clazz.Slot_3017"/>
+            <param name="semanticHint" value="4015"/>
+         </specializationType>
+      </metamodel>
    </extension>
 
    <extension point="org.eclipse.gmf.runtime.emf.type.core.elementTypeBindings">
@@ -1205,6 +1214,7 @@
          <elementType ref="org.eclipse.uml2.diagram.clazz.GeneralizationGeneral_4012"/>
          <elementType ref="org.eclipse.uml2.diagram.clazz.Usage_4013"/>
          <elementType ref="org.eclipse.uml2.diagram.clazz.AssociationClass_4014"/>
+         <elementType ref="org.eclipse.uml2.diagram.clazz.Slot_4015"/>
          <advice ref="org.eclipse.gmf.runtime.diagram.core.advice.notationDepdendents"/>
       </binding>
    </extension>

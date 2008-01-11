@@ -59,6 +59,7 @@ import org.eclipse.uml2.uml.Dependency;
 import org.eclipse.uml2.uml.Element;
 import org.eclipse.uml2.uml.Generalization;
 import org.eclipse.uml2.uml.GeneralizationSet;
+import org.eclipse.uml2.uml.InstanceSpecification;
 import org.eclipse.uml2.uml.Interface;
 import org.eclipse.uml2.uml.NamedElement;
 import org.eclipse.uml2.uml.Package;
@@ -516,6 +517,13 @@ public class UMLBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 		/**
 		 * @generated
 		 */
+		public static boolean canCreateSlot_4015(InstanceSpecification container, InstanceSpecification source, InstanceSpecification target) {
+			return canExistSlot_4015(container, source, target);
+		}
+
+		/**
+		 * @generated
+		 */
 		public static boolean canExistGeneralization_4001(Classifier source, Classifier target) {
 			return true;
 		}
@@ -613,6 +621,13 @@ public class UMLBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 		 * @generated
 		 */
 		public static boolean canExistAssociationClass_4014(Package container, CollaborationUse source, CollaborationUse target) {
+			return true;
+		}
+
+		/**
+		 * @generated
+		 */
+		public static boolean canExistSlot_4015(InstanceSpecification container, InstanceSpecification source, InstanceSpecification target) {
 			return true;
 		}
 
