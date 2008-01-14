@@ -194,11 +194,50 @@ public class PackageCanonicalEditPolicy extends CanonicalConnectionEditPolicy {
 	private Diagram getDiagram() {
 		return ((View) getHost().getModel()).getDiagram();
 	}
-
+	
+ 	/**
+ 	 * @generated NOT
+ 	 * [215245]Refresh connector when PartWithPort changes
+ 	 */
+ 	private Collection refreshConnections() {
+ 		return refreshConnectionsGen();
+//		Domain2Notation domain2NotationMap = new Domain2Notation();
+//		Collection linkDescriptors = collectAllLinks(getDiagram(), domain2NotationMap);
+//		Collection existingLinks = new LinkedList(getDiagram().getEdges());
+//		for (Iterator linksIterator = existingLinks.iterator(); linksIterator.hasNext();) {
+//			Edge nextDiagramLink = (Edge) linksIterator.next();
+//			int diagramLinkVisualID = UMLVisualIDRegistry.getVisualID(nextDiagramLink);
+//			if (diagramLinkVisualID == -1) {
+//				if (nextDiagramLink.getSource() != null && nextDiagramLink.getTarget() != null) {
+//					linksIterator.remove();
+//				}
+//				continue;
+//			}
+//			EObject diagramLinkObject = nextDiagramLink.getElement();
+//			EObject diagramLinkSrc = nextDiagramLink.getSource().getElement();
+//			EObject diagramLinkDst = nextDiagramLink.getTarget().getElement();
+//			for (Iterator LinkDescriptorsIterator = linkDescriptors.iterator(); LinkDescriptorsIterator.hasNext();) {
+//				UMLLinkDescriptor nextLinkDescriptor = (UMLLinkDescriptor) LinkDescriptorsIterator.next();
+//				if (diagramLinkObject == nextLinkDescriptor.getModelElement() && diagramLinkSrc == nextLinkDescriptor.getSource() && diagramLinkDst == nextLinkDescriptor.getDestination()
+//						&& diagramLinkVisualID == nextLinkDescriptor.getVisualID()) {
+//					// START [215245]Refresh connector when PartWithPort changes
+//					if (!nextDiagramLink.getSource().equals(((IGraphicalEditPart) getSourceEditPart(nextLinkDescriptor, domain2NotationMap)).getNotationView())
+//							|| !nextDiagramLink.getTarget().equals(((IGraphicalEditPart) getTargetEditPart(nextLinkDescriptor, domain2NotationMap)).getNotationView())) {
+//						continue;
+//					}
+//					// END [215245]
+//					linksIterator.remove();
+//					LinkDescriptorsIterator.remove();
+//				}
+//			}
+//		}
+//		deleteViews(existingLinks.iterator());
+//		return createConnections(linkDescriptors, domain2NotationMap);
+ 	 }
 	/**
 	 * @generated
 	 */
-	private Collection refreshConnections() {
+	private Collection refreshConnectionsGen() {
 		Domain2Notation domain2NotationMap = new Domain2Notation();
 		Collection linkDescriptors = collectAllLinks(getDiagram(), domain2NotationMap);
 		Collection existingLinks = new LinkedList(getDiagram().getEdges());
