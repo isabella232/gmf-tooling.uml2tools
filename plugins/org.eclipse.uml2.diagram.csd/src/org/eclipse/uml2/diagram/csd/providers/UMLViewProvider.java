@@ -56,7 +56,9 @@ import org.eclipse.uml2.diagram.csd.edit.parts.PackageImportsEditPart;
 import org.eclipse.uml2.diagram.csd.edit.parts.PackageNameEditPart;
 import org.eclipse.uml2.diagram.csd.edit.parts.ParameterEditPart;
 import org.eclipse.uml2.diagram.csd.edit.parts.ParameterNameEditPart;
+import org.eclipse.uml2.diagram.csd.edit.parts.Port2EditPart;
 import org.eclipse.uml2.diagram.csd.edit.parts.PortEditPart;
+import org.eclipse.uml2.diagram.csd.edit.parts.PortName2EditPart;
 import org.eclipse.uml2.diagram.csd.edit.parts.PortNameEditPart;
 import org.eclipse.uml2.diagram.csd.edit.parts.PortProvidedEditPart;
 import org.eclipse.uml2.diagram.csd.edit.parts.Property2EditPart;
@@ -118,6 +120,8 @@ import org.eclipse.uml2.diagram.csd.view.factories.PackageNameViewFactory;
 import org.eclipse.uml2.diagram.csd.view.factories.PackageViewFactory;
 import org.eclipse.uml2.diagram.csd.view.factories.ParameterNameViewFactory;
 import org.eclipse.uml2.diagram.csd.view.factories.ParameterViewFactory;
+import org.eclipse.uml2.diagram.csd.view.factories.Port2ViewFactory;
+import org.eclipse.uml2.diagram.csd.view.factories.PortName2ViewFactory;
 import org.eclipse.uml2.diagram.csd.view.factories.PortNameViewFactory;
 import org.eclipse.uml2.diagram.csd.view.factories.PortProvidedViewFactory;
 import org.eclipse.uml2.diagram.csd.view.factories.PortViewFactory;
@@ -226,6 +230,7 @@ public class UMLViewProvider extends AbstractViewProvider {
 				case PortEditPart.VISUAL_ID:
 				case ElementImportEditPart.VISUAL_ID:
 				case Property3EditPart.VISUAL_ID:
+				case Port2EditPart.VISUAL_ID:
 				case SlotEditPart.VISUAL_ID:
 					if (domainElement == null || visualID != UMLVisualIDRegistry.getNodeVisualID(containerView, domainElement)) {
 						return null; // visual id in semantic hint should match visual id for domain element
@@ -296,6 +301,11 @@ public class UMLViewProvider extends AbstractViewProvider {
 					break;
 				case PropertyName2EditPart.VISUAL_ID:
 					if (Property3EditPart.VISUAL_ID != UMLVisualIDRegistry.getVisualID(containerView) || containerView.getElement() != domainElement) {
+						return null; // wrong container
+					}
+					break;
+				case PortName2EditPart.VISUAL_ID:
+					if (Port2EditPart.VISUAL_ID != UMLVisualIDRegistry.getVisualID(containerView) || containerView.getElement() != domainElement) {
 						return null; // wrong container
 					}
 					break;
@@ -400,6 +410,10 @@ public class UMLViewProvider extends AbstractViewProvider {
 			return Property3ViewFactory.class;
 		case PropertyName2EditPart.VISUAL_ID:
 			return PropertyName2ViewFactory.class;
+		case Port2EditPart.VISUAL_ID:
+			return Port2ViewFactory.class;
+		case PortName2EditPart.VISUAL_ID:
+			return PortName2ViewFactory.class;
 		case SlotEditPart.VISUAL_ID:
 			return SlotViewFactory.class;
 		case CollaborationContentsEditPart.VISUAL_ID:

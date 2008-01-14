@@ -50,6 +50,7 @@ import org.eclipse.uml2.diagram.csd.edit.parts.InterfaceNameEditPart;
 import org.eclipse.uml2.diagram.csd.edit.parts.OperationEditPart;
 import org.eclipse.uml2.diagram.csd.edit.parts.PackageNameEditPart;
 import org.eclipse.uml2.diagram.csd.edit.parts.ParameterNameEditPart;
+import org.eclipse.uml2.diagram.csd.edit.parts.PortName2EditPart;
 import org.eclipse.uml2.diagram.csd.edit.parts.PortNameEditPart;
 import org.eclipse.uml2.diagram.csd.edit.parts.Property2EditPart;
 import org.eclipse.uml2.diagram.csd.edit.parts.PropertyName2EditPart;
@@ -465,6 +466,30 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 	 */
 	protected IParser createPropertyName_5017Parser() {
 		return createPropertyParser();
+	}
+
+	/**
+	 * @generated
+	 */
+	private IParser portName_5025Parser;
+
+	/**
+	 * @generated
+	 */
+	private IParser getPortName_5025Parser() {
+		if (portName_5025Parser == null) {
+			portName_5025Parser = createPortName_5025Parser();
+		}
+		return portName_5025Parser;
+	}
+
+	/**
+	 * @generated
+	 */
+	protected IParser createPortName_5025Parser() {
+		EAttribute[] features = new EAttribute[] { UMLPackage.eINSTANCE.getNamedElement_Name(), };
+		MessageFormatParser parser = new MessageFormatParser(features);
+		return parser;
 	}
 
 	/**
@@ -915,6 +940,8 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 			return getElementImport_3004Parser();
 		case PropertyName2EditPart.VISUAL_ID:
 			return getPropertyName_5017Parser();
+		case PortName2EditPart.VISUAL_ID:
+			return getPortName_5025Parser();
 		case SlotEditPart.VISUAL_ID:
 			return getSlot_3015Parser();
 		case ConnectorNameEditPart.VISUAL_ID:

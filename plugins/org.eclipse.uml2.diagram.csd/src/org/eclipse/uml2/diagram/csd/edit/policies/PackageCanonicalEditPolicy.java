@@ -7,10 +7,10 @@ import java.util.HashSet;
 import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.List;
-import java.util.Map;
 import java.util.Set;
 
 import org.eclipse.core.runtime.IAdaptable;
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.gef.EditPart;
 import org.eclipse.gef.commands.Command;
@@ -25,6 +25,7 @@ import org.eclipse.gmf.runtime.notation.Diagram;
 import org.eclipse.gmf.runtime.notation.Edge;
 import org.eclipse.gmf.runtime.notation.NotationPackage;
 import org.eclipse.gmf.runtime.notation.View;
+import org.eclipse.uml2.diagram.common.conventions.ConnectorEndConvention;
 import org.eclipse.uml2.diagram.csd.edit.parts.AssociationEditPart;
 import org.eclipse.uml2.diagram.csd.edit.parts.Class2EditPart;
 import org.eclipse.uml2.diagram.csd.edit.parts.Class3EditPart;
@@ -42,6 +43,7 @@ import org.eclipse.uml2.diagram.csd.edit.parts.OperationEditPart;
 import org.eclipse.uml2.diagram.csd.edit.parts.Package2EditPart;
 import org.eclipse.uml2.diagram.csd.edit.parts.PackageEditPart;
 import org.eclipse.uml2.diagram.csd.edit.parts.ParameterEditPart;
+import org.eclipse.uml2.diagram.csd.edit.parts.Port2EditPart;
 import org.eclipse.uml2.diagram.csd.edit.parts.PortEditPart;
 import org.eclipse.uml2.diagram.csd.edit.parts.Property2EditPart;
 import org.eclipse.uml2.diagram.csd.edit.parts.Property3EditPart;
@@ -52,6 +54,7 @@ import org.eclipse.uml2.diagram.csd.part.UMLDiagramUpdater;
 import org.eclipse.uml2.diagram.csd.part.UMLLinkDescriptor;
 import org.eclipse.uml2.diagram.csd.part.UMLNodeDescriptor;
 import org.eclipse.uml2.diagram.csd.part.UMLVisualIDRegistry;
+import org.eclipse.uml2.uml.Connector;
 import org.eclipse.uml2.uml.UMLPackage;
 
 /**
@@ -352,6 +355,13 @@ public class PackageCanonicalEditPolicy extends CanonicalConnectionEditPolicy {
 			domain2NotationMap.put(view.getElement(), view);
 			break;
 		}
+		case Port2EditPart.VISUAL_ID: {
+			if (!domain2NotationMap.containsKey(view.getElement())) {
+				result.addAll(UMLDiagramUpdater.getPort_3016ContainedLinks(view));
+			}
+			domain2NotationMap.put(view.getElement(), view);
+			break;
+		}
 		case SlotEditPart.VISUAL_ID: {
 			if (!domain2NotationMap.containsKey(view.getElement())) {
 				result.addAll(UMLDiagramUpdater.getSlot_3015ContainedLinks(view));
@@ -450,15 +460,37 @@ public class PackageCanonicalEditPolicy extends CanonicalConnectionEditPolicy {
 	/**
 	 * @generated
 	 */
-	private EditPart getSourceEditPart(UMLLinkDescriptor descriptor, Domain2Notation domain2NotationMap) {
+	private EditPart getSourceEditPartGen(UMLLinkDescriptor descriptor, Domain2Notation domain2NotationMap) {
 		return getEditPart(descriptor.getSource(), domain2NotationMap);
+	}
+
+	/**
+	 * @generated NOT
+	 */
+	private EditPart getSourceEditPart(UMLLinkDescriptor descriptor, Domain2Notation domain2NotationMap) {
+		if (ConnectorEditPart.VISUAL_ID == descriptor.getVisualID() && ConnectorEndConvention.getSourceEnd((Connector) descriptor.getModelElement()).getPartWithPort() != null) {
+			// [209651] Connector link goes to duplicate Port on the boundary of a Part
+			return getHintedChildEditPart(ConnectorEndConvention.getSourceEnd((Connector) descriptor.getModelElement()).getPartWithPort(), descriptor.getSource(), domain2NotationMap, Port2EditPart.VISUAL_ID);
+		}
+		return getSourceEditPartGen(descriptor, domain2NotationMap);
 	}
 
 	/**
 	 * @generated
 	 */
-	private EditPart getTargetEditPart(UMLLinkDescriptor descriptor, Domain2Notation domain2NotationMap) {
+	private EditPart getTargetEditPartGen(UMLLinkDescriptor descriptor, Domain2Notation domain2NotationMap) {
 		return getEditPart(descriptor.getDestination(), domain2NotationMap);
+	}
+
+	/**
+	 * @generated NOT
+	 */
+	private EditPart getTargetEditPart(UMLLinkDescriptor descriptor, Domain2Notation domain2NotationMap) {
+		if (ConnectorEditPart.VISUAL_ID == descriptor.getVisualID() && ConnectorEndConvention.getTargetEnd((Connector) descriptor.getModelElement()).getPartWithPort() != null) {
+			// [209651] Connector link goes to duplicate Port on the boundary of a Part
+			return getHintedChildEditPart(ConnectorEndConvention.getTargetEnd((Connector) descriptor.getModelElement()).getPartWithPort(), descriptor.getDestination(), domain2NotationMap, Port2EditPart.VISUAL_ID);
+		}
+		return getTargetEditPartGen(descriptor, domain2NotationMap);
 	}
 
 	/**
@@ -466,6 +498,17 @@ public class PackageCanonicalEditPolicy extends CanonicalConnectionEditPolicy {
 	 */
 	protected final EditPart getHintedEditPart(EObject domainModelElement, Domain2Notation domain2NotationMap, int hintVisualId) {
 		View view = (View) domain2NotationMap.getHinted(domainModelElement, UMLVisualIDRegistry.getType(hintVisualId));
+		if (view != null) {
+			return (EditPart) getHost().getViewer().getEditPartRegistry().get(view);
+		}
+		return null;
+	}
+
+	/**
+	 * @NOT-generated
+	 */
+	protected final EditPart getHintedChildEditPart(EObject parent, EObject domainModelElement, Domain2Notation domain2NotationMap, int hintVisualId) {
+		View view = (View) domain2NotationMap.getHintedChild(parent, domainModelElement, UMLVisualIDRegistry.getType(hintVisualId));
 		if (view != null) {
 			return (EditPart) getHost().getViewer().getEditPartRegistry().get(view);
 		}
@@ -556,6 +599,30 @@ public class PackageCanonicalEditPolicy extends CanonicalConnectionEditPolicy {
 			}
 			//hint not found -- return what we have
 			return (View) ((List) viewOrList).get(0);
+		}
+
+		/**
+		 * @NOT-generated
+		 */
+		public View getHintedChild(EObject parent, EObject domainEObject, String hint) {
+			if (domainEObject == null) {
+				return null;
+			}
+			if (hint == null) {
+				return get(domainEObject);
+			}
+			View parentView = get(parent);
+			if (parentView == null) {
+				return null;
+			}
+			EList children = parentView.getChildren();
+			for (Object child : children) {
+				View nextView = (View) child;
+				if (domainEObject.equals(nextView.getElement()) && hint.equals(nextView.getType())) {
+					return nextView;
+				}
+			}
+			return null;
 		}
 
 	}

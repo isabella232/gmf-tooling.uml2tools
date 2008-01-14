@@ -1,81 +1,43 @@
 package org.eclipse.uml2.diagram.csd.edit.policies;
 
-import java.util.Iterator;
-import org.eclipse.emf.ecore.EAnnotation;
 import org.eclipse.gef.commands.Command;
 import org.eclipse.gef.commands.CompoundCommand;
+import org.eclipse.gef.commands.UnexecutableCommand;
 import org.eclipse.gmf.runtime.emf.type.core.commands.DestroyElementCommand;
-import org.eclipse.gmf.runtime.emf.type.core.requests.CreateElementRequest;
 import org.eclipse.gmf.runtime.emf.type.core.requests.CreateRelationshipRequest;
 import org.eclipse.gmf.runtime.emf.type.core.requests.DestroyElementRequest;
 import org.eclipse.gmf.runtime.emf.type.core.requests.ReorientReferenceRelationshipRequest;
 import org.eclipse.gmf.runtime.emf.type.core.requests.ReorientRelationshipRequest;
-import org.eclipse.gmf.runtime.notation.Node;
-import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.uml2.diagram.csd.edit.commands.ConnectorCreateCommand;
 import org.eclipse.uml2.diagram.csd.edit.commands.ConnectorReorientCommand;
 import org.eclipse.uml2.diagram.csd.edit.commands.ConstraintConstrainedElementCreateCommand;
 import org.eclipse.uml2.diagram.csd.edit.commands.ConstraintConstrainedElementReorientCommand;
 import org.eclipse.uml2.diagram.csd.edit.commands.DependencyCreateCommand;
 import org.eclipse.uml2.diagram.csd.edit.commands.DependencyReorientCommand;
-import org.eclipse.uml2.diagram.csd.edit.commands.Port2CreateCommand;
+import org.eclipse.uml2.diagram.csd.edit.commands.PortProvidedCreateCommand;
+import org.eclipse.uml2.diagram.csd.edit.commands.PortProvidedReorientCommand;
 import org.eclipse.uml2.diagram.csd.edit.commands.UsageCreateCommand;
 import org.eclipse.uml2.diagram.csd.edit.commands.UsageReorientCommand;
 import org.eclipse.uml2.diagram.csd.edit.parts.ConnectorEditPart;
 import org.eclipse.uml2.diagram.csd.edit.parts.ConstraintConstrainedElementEditPart;
 import org.eclipse.uml2.diagram.csd.edit.parts.DependencyEditPart;
-import org.eclipse.uml2.diagram.csd.edit.parts.Port2EditPart;
+import org.eclipse.uml2.diagram.csd.edit.parts.PortProvidedEditPart;
 import org.eclipse.uml2.diagram.csd.edit.parts.UsageEditPart;
-import org.eclipse.uml2.diagram.csd.part.UMLVisualIDRegistry;
 import org.eclipse.uml2.diagram.csd.providers.UMLElementTypes;
-import org.eclipse.uml2.uml.UMLPackage;
 
 /**
  * @generated
  */
-public class Property3ItemSemanticEditPolicy extends UMLBaseItemSemanticEditPolicy {
-
-	/**
-	 * @generated
-	 */
-	protected Command getCreateCommand(CreateElementRequest req) {
-		if (UMLElementTypes.Port_3016 == req.getElementType()) {
-			if (req.getContainmentFeature() == null) {
-				req.setContainmentFeature(UMLPackage.eINSTANCE.getConnectorEnd_Role());
-			}
-			return getGEFWrapper(new Port2CreateCommand(req));
-		}
-		return super.getCreateCommand(req);
-	}
+public class Port2ItemSemanticEditPolicy extends UMLBaseItemSemanticEditPolicy {
 
 	/**
 	 * @generated
 	 */
 	protected Command getDestroyElementCommand(DestroyElementRequest req) {
 		CompoundCommand cc = getDestroyEdgesCommand();
-		addDestroyChildNodesCommand(cc);
 		addDestroyShortcutsCommand(cc);
 		cc.add(getGEFWrapper(new DestroyElementCommand(req)));
 		return cc.unwrap();
-	}
-
-	/**
-	 * @generated
-	 */
-	protected void addDestroyChildNodesCommand(CompoundCommand cmd) {
-		View view = (View) getHost().getModel();
-		EAnnotation annotation = view.getEAnnotation("Shortcut"); //$NON-NLS-1$
-		if (annotation != null) {
-			return;
-		}
-		for (Iterator it = view.getChildren().iterator(); it.hasNext();) {
-			Node node = (Node) it.next();
-			switch (UMLVisualIDRegistry.getVisualID(node)) {
-			case Port2EditPart.VISUAL_ID:
-				cmd.add(getDestroyElementCommand(node));
-				break;
-			}
-		}
 	}
 
 	/**
@@ -99,6 +61,9 @@ public class Property3ItemSemanticEditPolicy extends UMLBaseItemSemanticEditPoli
 		if (UMLElementTypes.Usage_4008 == req.getElementType()) {
 			return getGEFWrapper(new UsageCreateCommand(req, req.getSource(), req.getTarget()));
 		}
+		if (UMLElementTypes.PortProvided_4010 == req.getElementType()) {
+			return getGEFWrapper(new PortProvidedCreateCommand(req, req.getSource(), req.getTarget()));
+		}
 		if (UMLElementTypes.ConstraintConstrainedElement_4012 == req.getElementType()) {
 			return null;
 		}
@@ -118,6 +83,9 @@ public class Property3ItemSemanticEditPolicy extends UMLBaseItemSemanticEditPoli
 		if (UMLElementTypes.Usage_4008 == req.getElementType()) {
 			return getGEFWrapper(new UsageCreateCommand(req, req.getSource(), req.getTarget()));
 		}
+		if (UMLElementTypes.PortProvided_4010 == req.getElementType()) {
+			return null;
+		}
 		if (UMLElementTypes.ConstraintConstrainedElement_4012 == req.getElementType()) {
 			return getGEFWrapper(new ConstraintConstrainedElementCreateCommand(req, req.getSource(), req.getTarget()));
 		}
@@ -125,12 +93,25 @@ public class Property3ItemSemanticEditPolicy extends UMLBaseItemSemanticEditPoli
 	}
 
 	/**
+	 * [209651] prohibit link redirection to 'duplicate' port for now
+	 * 
+	 * @generated NOT
+	 */
+	protected Command getReorientRelationshipCommand(ReorientRelationshipRequest req) {
+		switch (getVisualID(req)) {
+		case ConnectorEditPart.VISUAL_ID:
+			return UnexecutableCommand.INSTANCE;
+		}
+		return getReorientRelationshipCommandGen(req);
+	}
+	
+	/**
 	 * Returns command to reorient EClass based link. New link target or source
 	 * should be the domain model element associated with this node.
 	 * 
 	 * @generated
 	 */
-	protected Command getReorientRelationshipCommand(ReorientRelationshipRequest req) {
+	protected Command getReorientRelationshipCommandGen(ReorientRelationshipRequest req) {
 		switch (getVisualID(req)) {
 		case ConnectorEditPart.VISUAL_ID:
 			return getGEFWrapper(new ConnectorReorientCommand(req));
@@ -150,6 +131,8 @@ public class Property3ItemSemanticEditPolicy extends UMLBaseItemSemanticEditPoli
 	 */
 	protected Command getReorientReferenceRelationshipCommand(ReorientReferenceRelationshipRequest req) {
 		switch (getVisualID(req)) {
+		case PortProvidedEditPart.VISUAL_ID:
+			return getGEFWrapper(new PortProvidedReorientCommand(req));
 		case ConstraintConstrainedElementEditPart.VISUAL_ID:
 			return getGEFWrapper(new ConstraintConstrainedElementReorientCommand(req));
 		}

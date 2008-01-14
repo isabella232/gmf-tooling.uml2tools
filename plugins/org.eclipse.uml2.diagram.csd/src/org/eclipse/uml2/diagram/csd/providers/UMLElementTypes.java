@@ -132,6 +132,11 @@ public class UMLElementTypes extends ElementInitializers {
 	/**
 	 * @generated
 	 */
+	public static final IElementType Port_3016 = getElementType("org.eclipse.uml2.diagram.csd.Port_3016"); //$NON-NLS-1$
+
+	/**
+	 * @generated
+	 */
 	public static final IElementType Slot_3015 = getElementType("org.eclipse.uml2.diagram.csd.Slot_3015"); //$NON-NLS-1$
 
 	/**
@@ -309,6 +314,8 @@ public class UMLElementTypes extends ElementInitializers {
 
 			elements.put(Property_3014, UMLPackage.eINSTANCE.getProperty());
 
+			elements.put(Port_3016, UMLPackage.eINSTANCE.getPort());
+
 			elements.put(Slot_3015, UMLPackage.eINSTANCE.getSlot());
 
 			elements.put(Connector_4005, UMLPackage.eINSTANCE.getConnector());
@@ -358,6 +365,7 @@ public class UMLElementTypes extends ElementInitializers {
 			KNOWN_ELEMENT_TYPES.add(Port_3011);
 			KNOWN_ELEMENT_TYPES.add(ElementImport_3004);
 			KNOWN_ELEMENT_TYPES.add(Property_3014);
+			KNOWN_ELEMENT_TYPES.add(Port_3016);
 			KNOWN_ELEMENT_TYPES.add(Slot_3015);
 			KNOWN_ELEMENT_TYPES.add(Connector_4005);
 			KNOWN_ELEMENT_TYPES.add(Dependency_4006);

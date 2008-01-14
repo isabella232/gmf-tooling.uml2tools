@@ -406,6 +406,25 @@
               href="compositeStructuresDiagram.gmftool#//@palette/@tools.1/@tools.1"/>
           <diagramNode
               href="componentDiagram_classifiers.gmfgraph#PartNode"/>
+          <children>
+            <containmentFeature
+                href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//ConnectorEnd/role"/>
+            <ownedChild>
+              <domainMetaElement
+                  href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//Port"/>
+              <labelMappings
+                  xsi:type="gmfmap:FeatureLabelMapping"
+                  readOnly="true"
+                  editPattern="">
+                <diagramLabel
+                    href="classDiagram_ports.gmfgraph#PortNode_name"/>
+                <features
+                    href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//NamedElement/name"/>
+              </labelMappings>
+              <diagramNode
+                  href="classDiagram_ports.gmfgraph#PortNode"/>
+            </ownedChild>
+          </children>
         </ownedChild>
       </children>
       <compartments

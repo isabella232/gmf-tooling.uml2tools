@@ -7,9 +7,11 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.gmf.runtime.common.core.command.CommandResult;
 import org.eclipse.gmf.runtime.emf.type.core.commands.EditElementCommand;
 import org.eclipse.gmf.runtime.emf.type.core.requests.ReorientRelationshipRequest;
+import org.eclipse.uml2.diagram.common.conventions.ConnectorEndConvention;
 import org.eclipse.uml2.diagram.csd.edit.policies.UMLBaseItemSemanticEditPolicy;
 import org.eclipse.uml2.uml.ConnectableElement;
 import org.eclipse.uml2.uml.Connector;
+import org.eclipse.uml2.uml.ConnectorEnd;
 import org.eclipse.uml2.uml.StructuredClassifier;
 
 /**
@@ -65,7 +67,7 @@ public class ConnectorReorientCommand extends EditElementCommand {
 		if (!(oldEnd instanceof ConnectableElement && newEnd instanceof ConnectableElement)) {
 			return false;
 		}
-		ConnectableElement target = getLink().getEnds().get(0).getRole();
+		ConnectableElement target = ConnectorEndConvention.getSourceEnd(getLink()).getRole();
 		if (!(getLink().eContainer() instanceof StructuredClassifier)) {
 			return false;
 		}
@@ -80,7 +82,7 @@ public class ConnectorReorientCommand extends EditElementCommand {
 		if (!(oldEnd instanceof ConnectableElement && newEnd instanceof ConnectableElement)) {
 			return false;
 		}
-		ConnectableElement source = getLink().getEnds().get(1).getRole();
+		ConnectableElement source = ConnectorEndConvention.getTargetEnd(getLink()).getRole();
 		if (!(getLink().eContainer() instanceof StructuredClassifier)) {
 			return false;
 		}
@@ -105,18 +107,30 @@ public class ConnectorReorientCommand extends EditElementCommand {
 	}
 
 	/**
+	 * [209651] clear partWithPort
+	 * 
 	 * @generated NOT
 	 */
 	protected CommandResult reorientSource() throws ExecutionException {
-		getLink().getEnds().get(0).setRole(getNewSource());
+		ConnectorEnd ce = ConnectorEndConvention.getSourceEnd(getLink());
+		ce.setRole(getNewSource());
+		if (ce.getPartWithPort() != null) {
+			ce.setPartWithPort(null);
+		}
 		return CommandResult.newOKCommandResult(getLink());
 	}
 
 	/**
-	 * @generated NOT 
+	 * [209651] clear partWithPort
+	 * 
+	 * @generated NOT
 	 */
 	protected CommandResult reorientTarget() throws ExecutionException {
-		getLink().getEnds().get(1).setRole(getNewTarget());
+		ConnectorEnd ce = ConnectorEndConvention.getTargetEnd(getLink());
+		ce.setRole(getNewTarget());
+		if (ce.getPartWithPort() != null) {
+			ce.setPartWithPort(null);
+		}
 		return CommandResult.newOKCommandResult(getLink());
 	}
 

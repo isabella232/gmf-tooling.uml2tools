@@ -118,6 +118,12 @@ public class UMLEditPartFactory implements EditPartFactory {
 			case PropertyName2EditPart.VISUAL_ID:
 				return new PropertyName2EditPart(view);
 
+			case Port2EditPart.VISUAL_ID:
+				return new Port2EditPart(view);
+
+			case PortName2EditPart.VISUAL_ID:
+				return new PortName2EditPart(view);
+
 			case SlotEditPart.VISUAL_ID:
 				return new SlotEditPart(view);
 

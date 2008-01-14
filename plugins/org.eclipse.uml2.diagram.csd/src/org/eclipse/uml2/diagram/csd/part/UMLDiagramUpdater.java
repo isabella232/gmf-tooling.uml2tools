@@ -12,6 +12,7 @@ import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.uml2.diagram.common.conventions.AssociationEndConvention;
+import org.eclipse.uml2.diagram.common.conventions.ConnectorEndConvention;
 import org.eclipse.uml2.diagram.csd.edit.parts.AssociationEditPart;
 import org.eclipse.uml2.diagram.csd.edit.parts.Class2EditPart;
 import org.eclipse.uml2.diagram.csd.edit.parts.Class3EditPart;
@@ -37,6 +38,7 @@ import org.eclipse.uml2.diagram.csd.edit.parts.Package2EditPart;
 import org.eclipse.uml2.diagram.csd.edit.parts.PackageEditPart;
 import org.eclipse.uml2.diagram.csd.edit.parts.PackageImportsEditPart;
 import org.eclipse.uml2.diagram.csd.edit.parts.ParameterEditPart;
+import org.eclipse.uml2.diagram.csd.edit.parts.Port2EditPart;
 import org.eclipse.uml2.diagram.csd.edit.parts.PortEditPart;
 import org.eclipse.uml2.diagram.csd.edit.parts.PortProvidedEditPart;
 import org.eclipse.uml2.diagram.csd.edit.parts.Property2EditPart;
@@ -53,6 +55,7 @@ import org.eclipse.uml2.uml.Collaboration;
 import org.eclipse.uml2.uml.CollaborationUse;
 import org.eclipse.uml2.uml.ConnectableElement;
 import org.eclipse.uml2.uml.Connector;
+import org.eclipse.uml2.uml.ConnectorEnd;
 import org.eclipse.uml2.uml.Constraint;
 import org.eclipse.uml2.uml.Dependency;
 import org.eclipse.uml2.uml.Element;
@@ -87,6 +90,8 @@ public class UMLDiagramUpdater {
 			return getCollaboration_2005SemanticChildren(view);
 		case ClassEditPart.VISUAL_ID:
 			return getClass_2006SemanticChildren(view);
+		case Property3EditPart.VISUAL_ID:
+			return getProperty_3014SemanticChildren(view);
 		case CollaborationContentsEditPart.VISUAL_ID:
 			return getCollaborationContents_7003SemanticChildren(view);
 		case ClassAttributesEditPart.VISUAL_ID:
@@ -153,6 +158,40 @@ public class UMLDiagramUpdater {
 			if (visualID == PortEditPart.VISUAL_ID) {
 				result.add(new UMLNodeDescriptor(childElement, visualID));
 				continue;
+			}
+		}
+		return result;
+	}
+
+	/**
+	 * @generated NOT
+	 */
+	public static List getProperty_3014SemanticChildren(View view) {
+		if (!view.isSetElement()) {
+			return Collections.EMPTY_LIST;
+		}
+		Property p = (Property) view.getElement();
+		if (p.getType() == null) {
+			return Collections.EMPTY_LIST;
+		}
+		Type t = p.getType();
+		if (false == t instanceof StructuredClassifier) {
+			return Collections.EMPTY_LIST;
+		}
+		List result = new LinkedList();
+		// [209651] collect duplicate ports
+		for (Iterator it = ((StructuredClassifier) t).getOwnedAttributes().iterator(); it.hasNext();) {
+			Property attr = (Property) it.next();
+			if (false == attr instanceof Port) {
+				continue;
+			}
+			for (ConnectorEnd end : ((Port) attr).getEnds()) {
+				if (p.equals(end.getPartWithPort())) {
+					int visualID = UMLVisualIDRegistry.getNodeVisualID(view, attr);
+					if (visualID == Port2EditPart.VISUAL_ID) {
+						result.add(new UMLNodeDescriptor(attr, visualID));
+					}
+				}
 			}
 		}
 		return result;
@@ -417,6 +456,8 @@ public class UMLDiagramUpdater {
 			return getElementImport_3004ContainedLinks(view);
 		case Property3EditPart.VISUAL_ID:
 			return getProperty_3014ContainedLinks(view);
+		case Port2EditPart.VISUAL_ID:
+			return getPort_3016ContainedLinks(view);
 		case SlotEditPart.VISUAL_ID:
 			return getSlot_3015ContainedLinks(view);
 		case ConnectorEditPart.VISUAL_ID:
@@ -470,6 +511,8 @@ public class UMLDiagramUpdater {
 			return getElementImport_3004IncomingLinks(view);
 		case Property3EditPart.VISUAL_ID:
 			return getProperty_3014IncomingLinks(view);
+		case Port2EditPart.VISUAL_ID:
+			return getPort_3016IncomingLinks(view);
 		case SlotEditPart.VISUAL_ID:
 			return getSlot_3015IncomingLinks(view);
 		case ConnectorEditPart.VISUAL_ID:
@@ -523,6 +566,8 @@ public class UMLDiagramUpdater {
 			return getElementImport_3004OutgoingLinks(view);
 		case Property3EditPart.VISUAL_ID:
 			return getProperty_3014OutgoingLinks(view);
+		case Port2EditPart.VISUAL_ID:
+			return getPort_3016OutgoingLinks(view);
 		case SlotEditPart.VISUAL_ID:
 			return getSlot_3015OutgoingLinks(view);
 		case ConnectorEditPart.VISUAL_ID:
@@ -686,6 +731,16 @@ public class UMLDiagramUpdater {
 	 */
 	public static List getProperty_3014ContainedLinks(View view) {
 		return Collections.EMPTY_LIST;
+	}
+
+	/**
+	 * @generated
+	 */
+	public static List getPort_3016ContainedLinks(View view) {
+		Port modelElement = (Port) view.getElement();
+		List result = new LinkedList();
+		result.addAll(getOutgoingFeatureModelFacetLinks_Port_Provided_4010(modelElement));
+		return result;
 	}
 
 	/**
@@ -934,6 +989,20 @@ public class UMLDiagramUpdater {
 	 */
 	public static List getProperty_3014IncomingLinks(View view) {
 		Property modelElement = (Property) view.getElement();
+		Map crossReferences = EcoreUtil.CrossReferencer.find(view.eResource().getResourceSet().getResources());
+		List result = new LinkedList();
+		result.addAll(getIncomingTypeModelFacetLinks_Connector_4005(modelElement, crossReferences));
+		result.addAll(getIncomingTypeModelFacetLinks_Dependency_4006(modelElement, crossReferences));
+		result.addAll(getIncomingTypeModelFacetLinks_Usage_4008(modelElement, crossReferences));
+		result.addAll(getIncomingFeatureModelFacetLinks_Constraint_ConstrainedElement_4012(modelElement, crossReferences));
+		return result;
+	}
+
+	/**
+	 * @generated
+	 */
+	public static List getPort_3016IncomingLinks(View view) {
+		Port modelElement = (Port) view.getElement();
 		Map crossReferences = EcoreUtil.CrossReferencer.find(view.eResource().getResourceSet().getResources());
 		List result = new LinkedList();
 		result.addAll(getIncomingTypeModelFacetLinks_Connector_4005(modelElement, crossReferences));
@@ -1208,6 +1277,19 @@ public class UMLDiagramUpdater {
 	/**
 	 * @generated
 	 */
+	public static List getPort_3016OutgoingLinks(View view) {
+		Port modelElement = (Port) view.getElement();
+		List result = new LinkedList();
+		result.addAll(getOutgoingTypeModelFacetLinks_Connector_4005(modelElement));
+		result.addAll(getOutgoingTypeModelFacetLinks_Dependency_4006(modelElement));
+		result.addAll(getOutgoingTypeModelFacetLinks_Usage_4008(modelElement));
+		result.addAll(getOutgoingFeatureModelFacetLinks_Port_Provided_4010(modelElement));
+		return result;
+	}
+
+	/**
+	 * @generated
+	 */
 	public static List getSlot_3015OutgoingLinks(View view) {
 		return Collections.EMPTY_LIST;
 	}
@@ -1282,8 +1364,8 @@ public class UMLDiagramUpdater {
 			if (ConnectorEditPart.VISUAL_ID != UMLVisualIDRegistry.getLinkWithClassVisualID(link)) {
 				continue;
 			}
-			ConnectableElement dst = link.getEnds().get(0).getRole();
-			ConnectableElement src = link.getEnds().get(1).getRole();
+			ConnectableElement src = ConnectorEndConvention.getSourceEnd(link).getRole();
+			ConnectableElement dst = ConnectorEndConvention.getTargetEnd(link).getRole();
 			result.add(new UMLLinkDescriptor(src, dst, link, UMLElementTypes.Connector_4005, ConnectorEditPart.VISUAL_ID));
 		}
 		return result;
@@ -1412,7 +1494,7 @@ public class UMLDiagramUpdater {
 			if (ConnectorEditPart.VISUAL_ID != UMLVisualIDRegistry.getLinkWithClassVisualID(link)) {
 				continue;
 			}
-			ConnectableElement src = link.getEnds().get(0).getRole();
+			ConnectableElement src = ConnectorEndConvention.getSourceEnd(link).getRole();
 			result.add(new UMLLinkDescriptor(src, target, link, UMLElementTypes.Connector_4005, ConnectorEditPart.VISUAL_ID));
 		}
 		return result;
@@ -1554,8 +1636,8 @@ public class UMLDiagramUpdater {
 			if (ConnectorEditPart.VISUAL_ID != UMLVisualIDRegistry.getLinkWithClassVisualID(link)) {
 				continue;
 			}
-			ConnectableElement dst = link.getEnds().get(0).getRole();
-			ConnectableElement src = link.getEnds().get(1).getRole();
+			ConnectableElement src = ConnectorEndConvention.getSourceEnd(link).getRole();
+			ConnectableElement dst = ConnectorEndConvention.getTargetEnd(link).getRole();
 			if (src != source) {
 				continue;
 			}
