@@ -121,15 +121,15 @@ public class Interface2EditPart extends ShapeNodeEditPart {
 	 * @generated
 	 */
 	protected IFigure createNodeShape() {
-		ClassFigure figure = new ClassFigure();
+		RectangleInterfaceFigure figure = new RectangleInterfaceFigure();
 		return primaryShape = figure;
 	}
 
 	/**
 	 * @generated
 	 */
-	public ClassFigure getPrimaryShape() {
-		return (ClassFigure) primaryShape;
+	public RectangleInterfaceFigure getPrimaryShape() {
+		return (RectangleInterfaceFigure) primaryShape;
 	}
 
 	/**
@@ -137,23 +137,23 @@ public class Interface2EditPart extends ShapeNodeEditPart {
 	 */
 	protected boolean addFixedChild(EditPart childEditPart) {
 		if (childEditPart instanceof InterfaceName2EditPart) {
-			((InterfaceName2EditPart) childEditPart).setLabel(getPrimaryShape().getFigureClassFigure_name());
+			((InterfaceName2EditPart) childEditPart).setLabel(getPrimaryShape().getFigureRectangleInterfaceFigure_name());
 			return true;
 		}
 		if (childEditPart instanceof InterfaceAttributesEditPart) {
-			IFigure pane = getPrimaryShape().getFigureClassFigure_PropertiesCompartment();
+			IFigure pane = getPrimaryShape().getFigureRectangleInterfaceFigure_propertiesCompartment();
 			setupContentPane(pane); // FIXME each comparment should handle his content pane in his own way 
 			pane.add(((InterfaceAttributesEditPart) childEditPart).getFigure());
 			return true;
 		}
 		if (childEditPart instanceof InterfaceOperationsEditPart) {
-			IFigure pane = getPrimaryShape().getFigureClassFigure_OperationsCompartment();
+			IFigure pane = getPrimaryShape().getFigureRectangleInterfaceFigure_operationsCompartment();
 			setupContentPane(pane); // FIXME each comparment should handle his content pane in his own way 
 			pane.add(((InterfaceOperationsEditPart) childEditPart).getFigure());
 			return true;
 		}
 		if (childEditPart instanceof InterfaceClassesEditPart) {
-			IFigure pane = getPrimaryShape().getFigureClassFigure_ClassesCompartment();
+			IFigure pane = getPrimaryShape().getFigureRectangleInterfaceFigure_classesCompartment();
 			setupContentPane(pane); // FIXME each comparment should handle his content pane in his own way 
 			pane.add(((InterfaceClassesEditPart) childEditPart).getFigure());
 			return true;
@@ -167,17 +167,17 @@ public class Interface2EditPart extends ShapeNodeEditPart {
 	protected boolean removeFixedChild(EditPart childEditPart) {
 
 		if (childEditPart instanceof InterfaceAttributesEditPart) {
-			IFigure pane = getPrimaryShape().getFigureClassFigure_PropertiesCompartment();
+			IFigure pane = getPrimaryShape().getFigureRectangleInterfaceFigure_propertiesCompartment();
 			pane.remove(((InterfaceAttributesEditPart) childEditPart).getFigure());
 			return true;
 		}
 		if (childEditPart instanceof InterfaceOperationsEditPart) {
-			IFigure pane = getPrimaryShape().getFigureClassFigure_OperationsCompartment();
+			IFigure pane = getPrimaryShape().getFigureRectangleInterfaceFigure_operationsCompartment();
 			pane.remove(((InterfaceOperationsEditPart) childEditPart).getFigure());
 			return true;
 		}
 		if (childEditPart instanceof InterfaceClassesEditPart) {
-			IFigure pane = getPrimaryShape().getFigureClassFigure_ClassesCompartment();
+			IFigure pane = getPrimaryShape().getFigureRectangleInterfaceFigure_classesCompartment();
 			pane.remove(((InterfaceClassesEditPart) childEditPart).getFigure());
 			return true;
 		}
@@ -210,13 +210,13 @@ public class Interface2EditPart extends ShapeNodeEditPart {
 	protected IFigure getContentPaneFor(IGraphicalEditPart editPart) {
 
 		if (editPart instanceof InterfaceAttributesEditPart) {
-			return getPrimaryShape().getFigureClassFigure_PropertiesCompartment();
+			return getPrimaryShape().getFigureRectangleInterfaceFigure_propertiesCompartment();
 		}
 		if (editPart instanceof InterfaceOperationsEditPart) {
-			return getPrimaryShape().getFigureClassFigure_OperationsCompartment();
+			return getPrimaryShape().getFigureRectangleInterfaceFigure_operationsCompartment();
 		}
 		if (editPart instanceof InterfaceClassesEditPart) {
-			return getPrimaryShape().getFigureClassFigure_ClassesCompartment();
+			return getPrimaryShape().getFigureRectangleInterfaceFigure_classesCompartment();
 		}
 		return super.getContentPaneFor(editPart);
 	}
@@ -281,47 +281,32 @@ public class Interface2EditPart extends ShapeNodeEditPart {
 	/**
 	 * @generated
 	 */
-	public class ClassFigure extends RectangleFigure {
+	public class RectangleInterfaceFigure extends RectangleFigure {
 
 		/**
 		 * @generated
 		 */
-		private Label fFigureClassFigure_stereo;
+		private RectangleFigure fFigureRectangleInterfaceFigure_propertiesCompartment;
 
 		/**
 		 * @generated
 		 */
-		private Label fFigureClassFigure_name;
+		private RectangleFigure fFigureRectangleInterfaceFigure_operationsCompartment;
 
 		/**
 		 * @generated
 		 */
-		private RectangleFigure fFigureClassFigure_PropertiesCompartment;
+		private RectangleFigure fFigureRectangleInterfaceFigure_classesCompartment;
 
 		/**
 		 * @generated
 		 */
-		private RectangleFigure fFigureClassFigure_OperationsCompartment;
+		private Label fFigureRectangleInterfaceFigure_name;
 
 		/**
 		 * @generated
 		 */
-		private RectangleFigure fFigureClassFigure_ClassesCompartment;
-
-		/**
-		 * @generated
-		 */
-		private RectangleFigure fFigureClassFigure_LiteralsCompartment;
-
-		/**
-		 * @generated
-		 */
-		private RectangleFigure fFigureClassFigure_OthersCompartment;
-
-		/**
-		 * @generated
-		 */
-		public ClassFigure() {
+		public RectangleInterfaceFigure() {
 
 			ToolbarLayout layoutThis = new ToolbarLayout();
 			layoutThis.setStretchMinorAxis(true);
@@ -340,135 +325,74 @@ public class Interface2EditPart extends ShapeNodeEditPart {
 		 */
 		private void createContents() {
 
-			RectangleFigure classFigure_Header0 = new RectangleFigure();
-			classFigure_Header0.setBorder(new LineBorder(null, getMapMode().DPtoLP(1)));
+			RectangleFigure rectangleInterfaceFigure_header0 = new RectangleFigure();
+			rectangleInterfaceFigure_header0.setBorder(new LineBorder(null, getMapMode().DPtoLP(1)));
 
-			this.add(classFigure_Header0);
+			this.add(rectangleInterfaceFigure_header0);
 
-			ToolbarLayout layoutClassFigure_Header0 = new ToolbarLayout();
-			layoutClassFigure_Header0.setStretchMinorAxis(true);
-			layoutClassFigure_Header0.setMinorAlignment(ToolbarLayout.ALIGN_TOPLEFT);
+			ToolbarLayout layoutRectangleInterfaceFigure_header0 = new ToolbarLayout();
+			layoutRectangleInterfaceFigure_header0.setStretchMinorAxis(true);
+			layoutRectangleInterfaceFigure_header0.setMinorAlignment(ToolbarLayout.ALIGN_TOPLEFT);
 
-			layoutClassFigure_Header0.setSpacing(0);
-			layoutClassFigure_Header0.setVertical(true);
+			layoutRectangleInterfaceFigure_header0.setSpacing(0);
+			layoutRectangleInterfaceFigure_header0.setVertical(true);
 
-			classFigure_Header0.setLayoutManager(layoutClassFigure_Header0);
+			rectangleInterfaceFigure_header0.setLayoutManager(layoutRectangleInterfaceFigure_header0);
 
-			RectangleFigure classFigure_StereoContainer1 = new RectangleFigure();
-			classFigure_StereoContainer1.setOutline(false);
+			RectangleFigure rectangleInterfaceFigure_InterfaceContainer1 = new RectangleFigure();
+			rectangleInterfaceFigure_InterfaceContainer1.setOutline(false);
 
-			classFigure_Header0.add(classFigure_StereoContainer1);
+			rectangleInterfaceFigure_header0.add(rectangleInterfaceFigure_InterfaceContainer1);
 
-			CenterLayout layoutClassFigure_StereoContainer1 = new CenterLayout();
+			CenterLayout layoutRectangleInterfaceFigure_InterfaceContainer1 = new CenterLayout();
 
-			classFigure_StereoContainer1.setLayoutManager(layoutClassFigure_StereoContainer1);
+			rectangleInterfaceFigure_InterfaceContainer1.setLayoutManager(layoutRectangleInterfaceFigure_InterfaceContainer1);
 
-			fFigureClassFigure_stereo = new Label();
-			fFigureClassFigure_stereo.setText("");
+			Label rectangleInterfaceFigure_interface2 = new Label();
+			rectangleInterfaceFigure_interface2.setText("\u00ABinterface\u00BB");
 
-			fFigureClassFigure_stereo.setFont(FFIGURECLASSFIGURE_STEREO_FONT);
+			rectangleInterfaceFigure_interface2.setFont(RECTANGLEINTERFACEFIGURE_INTERFACE2_FONT);
 
-			fFigureClassFigure_stereo.setBorder(new MarginBorder(getMapMode().DPtoLP(5), getMapMode().DPtoLP(5), getMapMode().DPtoLP(0), getMapMode().DPtoLP(5)));
+			rectangleInterfaceFigure_interface2.setBorder(new MarginBorder(getMapMode().DPtoLP(5), getMapMode().DPtoLP(5), getMapMode().DPtoLP(0), getMapMode().DPtoLP(5)));
 
-			classFigure_StereoContainer1.add(fFigureClassFigure_stereo);
+			rectangleInterfaceFigure_InterfaceContainer1.add(rectangleInterfaceFigure_interface2);
 
-			RectangleFigure classFigure_NameContainer1 = new RectangleFigure();
-			classFigure_NameContainer1.setOutline(false);
+			RectangleFigure rectangleInterfaceFigure_NameContainer1 = new RectangleFigure();
+			rectangleInterfaceFigure_NameContainer1.setOutline(false);
 
-			classFigure_Header0.add(classFigure_NameContainer1);
+			rectangleInterfaceFigure_header0.add(rectangleInterfaceFigure_NameContainer1);
 
-			CenterLayout layoutClassFigure_NameContainer1 = new CenterLayout();
+			CenterLayout layoutRectangleInterfaceFigure_NameContainer1 = new CenterLayout();
 
-			classFigure_NameContainer1.setLayoutManager(layoutClassFigure_NameContainer1);
+			rectangleInterfaceFigure_NameContainer1.setLayoutManager(layoutRectangleInterfaceFigure_NameContainer1);
 
-			fFigureClassFigure_name = new Label();
-			fFigureClassFigure_name.setText("");
+			fFigureRectangleInterfaceFigure_name = new Label();
+			fFigureRectangleInterfaceFigure_name.setText("");
 
-			fFigureClassFigure_name.setFont(FFIGURECLASSFIGURE_NAME_FONT);
+			fFigureRectangleInterfaceFigure_name.setFont(FFIGURERECTANGLEINTERFACEFIGURE_NAME_FONT);
 
-			fFigureClassFigure_name.setBorder(new MarginBorder(getMapMode().DPtoLP(0), getMapMode().DPtoLP(5), getMapMode().DPtoLP(5), getMapMode().DPtoLP(5)));
+			fFigureRectangleInterfaceFigure_name.setBorder(new MarginBorder(getMapMode().DPtoLP(0), getMapMode().DPtoLP(5), getMapMode().DPtoLP(5), getMapMode().DPtoLP(5)));
 
-			classFigure_NameContainer1.add(fFigureClassFigure_name);
+			rectangleInterfaceFigure_NameContainer1.add(fFigureRectangleInterfaceFigure_name);
 
-			fFigureClassFigure_PropertiesCompartment = new RectangleFigure();
+			fFigureRectangleInterfaceFigure_propertiesCompartment = new RectangleFigure();
 
-			this.add(fFigureClassFigure_PropertiesCompartment);
+			this.add(fFigureRectangleInterfaceFigure_propertiesCompartment);
 
-			fFigureClassFigure_PropertiesCompartment.setLayoutManager(new StackLayout());
+			fFigureRectangleInterfaceFigure_propertiesCompartment.setLayoutManager(new StackLayout());
 
-			fFigureClassFigure_OperationsCompartment = new RectangleFigure();
+			fFigureRectangleInterfaceFigure_operationsCompartment = new RectangleFigure();
 
-			this.add(fFigureClassFigure_OperationsCompartment);
+			this.add(fFigureRectangleInterfaceFigure_operationsCompartment);
 
-			fFigureClassFigure_OperationsCompartment.setLayoutManager(new StackLayout());
+			fFigureRectangleInterfaceFigure_operationsCompartment.setLayoutManager(new StackLayout());
 
-			fFigureClassFigure_ClassesCompartment = new RectangleFigure();
+			fFigureRectangleInterfaceFigure_classesCompartment = new RectangleFigure();
 
-			this.add(fFigureClassFigure_ClassesCompartment);
+			this.add(fFigureRectangleInterfaceFigure_classesCompartment);
 
-			fFigureClassFigure_ClassesCompartment.setLayoutManager(new StackLayout());
+			fFigureRectangleInterfaceFigure_classesCompartment.setLayoutManager(new StackLayout());
 
-			fFigureClassFigure_LiteralsCompartment = new RectangleFigure();
-
-			this.add(fFigureClassFigure_LiteralsCompartment);
-
-			fFigureClassFigure_LiteralsCompartment.setLayoutManager(new StackLayout());
-
-			fFigureClassFigure_OthersCompartment = new RectangleFigure();
-
-			this.add(fFigureClassFigure_OthersCompartment);
-
-			fFigureClassFigure_OthersCompartment.setLayoutManager(new StackLayout());
-
-		}
-
-		/**
-		 * @generated
-		 */
-		public Label getFigureClassFigure_stereo() {
-			return fFigureClassFigure_stereo;
-		}
-
-		/**
-		 * @generated
-		 */
-		public Label getFigureClassFigure_name() {
-			return fFigureClassFigure_name;
-		}
-
-		/**
-		 * @generated
-		 */
-		public RectangleFigure getFigureClassFigure_PropertiesCompartment() {
-			return fFigureClassFigure_PropertiesCompartment;
-		}
-
-		/**
-		 * @generated
-		 */
-		public RectangleFigure getFigureClassFigure_OperationsCompartment() {
-			return fFigureClassFigure_OperationsCompartment;
-		}
-
-		/**
-		 * @generated
-		 */
-		public RectangleFigure getFigureClassFigure_ClassesCompartment() {
-			return fFigureClassFigure_ClassesCompartment;
-		}
-
-		/**
-		 * @generated
-		 */
-		public RectangleFigure getFigureClassFigure_LiteralsCompartment() {
-			return fFigureClassFigure_LiteralsCompartment;
-		}
-
-		/**
-		 * @generated
-		 */
-		public RectangleFigure getFigureClassFigure_OthersCompartment() {
-			return fFigureClassFigure_OthersCompartment;
 		}
 
 		/**
@@ -490,16 +414,44 @@ public class Interface2EditPart extends ShapeNodeEditPart {
 			myUseLocalCoordinates = useLocalCoordinates;
 		}
 
+		/**
+		 * @generated
+		 */
+		public RectangleFigure getFigureRectangleInterfaceFigure_propertiesCompartment() {
+			return fFigureRectangleInterfaceFigure_propertiesCompartment;
+		}
+
+		/**
+		 * @generated
+		 */
+		public RectangleFigure getFigureRectangleInterfaceFigure_operationsCompartment() {
+			return fFigureRectangleInterfaceFigure_operationsCompartment;
+		}
+
+		/**
+		 * @generated
+		 */
+		public RectangleFigure getFigureRectangleInterfaceFigure_classesCompartment() {
+			return fFigureRectangleInterfaceFigure_classesCompartment;
+		}
+
+		/**
+		 * @generated
+		 */
+		public Label getFigureRectangleInterfaceFigure_name() {
+			return fFigureRectangleInterfaceFigure_name;
+		}
+
 	}
 
 	/**
 	 * @generated
 	 */
-	static final Font FFIGURECLASSFIGURE_STEREO_FONT = new Font(Display.getCurrent(), Display.getDefault().getSystemFont().getFontData()[0].getName(), 9, SWT.NORMAL);
+	static final Font RECTANGLEINTERFACEFIGURE_INTERFACE2_FONT = new Font(Display.getCurrent(), Display.getDefault().getSystemFont().getFontData()[0].getName(), 9, SWT.NORMAL);
 
 	/**
 	 * @generated
 	 */
-	static final Font FFIGURECLASSFIGURE_NAME_FONT = new Font(Display.getCurrent(), Display.getDefault().getSystemFont().getFontData()[0].getName(), 9, SWT.NORMAL);
+	static final Font FFIGURERECTANGLEINTERFACEFIGURE_NAME_FONT = new Font(Display.getCurrent(), Display.getDefault().getSystemFont().getFontData()[0].getName(), 9, SWT.NORMAL);
 
 }

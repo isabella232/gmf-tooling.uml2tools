@@ -1209,12 +1209,12 @@
           xsi:type="gmfmap:FeatureLabelMapping"
           editPattern="">
         <diagramLabel
-            href="classDiagram_classifiers.gmfgraph#ClassNode_name"/>
+            href="classDiagram_interfaces.gmfgraph#RectangleInterface_name"/>
         <features
             href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//NamedElement/name"/>
       </labelMappings>
       <diagramNode
-          href="classDiagram_classifiers.gmfgraph#ClassNode"/>
+          href="classDiagram_interfaces.gmfgraph#RectangleInterfaceNode"/>
       <children
           compartment="//@nodes.11/@ownedChild/@compartments.0">
         <containmentFeature
@@ -1297,17 +1297,17 @@
       <compartments
           children="//@nodes.11/@ownedChild/@children.0">
         <compartment
-            href="classDiagram_classifiers.gmfgraph#attributes"/>
+            href="classDiagram_interfaces.gmfgraph#attributes"/>
       </compartments>
       <compartments
           children="//@nodes.11/@ownedChild/@children.1">
         <compartment
-            href="classDiagram_classifiers.gmfgraph#operations"/>
+            href="classDiagram_interfaces.gmfgraph#operations"/>
       </compartments>
       <compartments
           children="//@nodes.11/@ownedChild/@children.2">
         <compartment
-            href="classDiagram_classifiers.gmfgraph#classes"/>
+            href="classDiagram_interfaces.gmfgraph#classes"/>
       </compartments>
     </ownedChild>
   </nodes>
