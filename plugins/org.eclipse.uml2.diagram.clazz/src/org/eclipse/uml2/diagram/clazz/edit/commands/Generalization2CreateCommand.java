@@ -1,5 +1,7 @@
 package org.eclipse.uml2.diagram.clazz.edit.commands;
 
+import java.util.List;
+
 import org.eclipse.core.commands.ExecutionException;
 import org.eclipse.core.runtime.IAdaptable;
 import org.eclipse.core.runtime.IProgressMonitor;
@@ -68,12 +70,30 @@ public class Generalization2CreateCommand extends CreateElementCommand {
 	/**
 	 * @generated
 	 */
-	protected EObject doDefaultElementCreation() {
+	protected EObject doDefaultElementCreationGen() {
 		// org.eclipse.uml2.uml.Generalization newElement = (org.eclipse.uml2.uml.Generalization) super.doDefaultElementCreation();
 		Generalization newElement = UMLFactory.eINSTANCE.createGeneralization();
 		getSource().getGeneralizations().add(newElement);
 		newElement.getGeneralizationSets().add(getTarget());
 		return newElement;
+	}
+
+	/**
+	 * @generated NOT
+	 */
+	protected EObject doDefaultElementCreation() {
+		Generalization newElement = (Generalization)doDefaultElementCreationGen();
+		newElement.setGeneral(getGeneralClassifier());
+		return newElement;
+	}
+	
+	/**
+	 * @NOT-generated
+	 */
+	private Classifier getGeneralClassifier() {
+		List<Generalization> generalisations = getTarget().getGeneralizations();
+		return generalisations.isEmpty() ? null : generalisations.get(0).getGeneral();
+
 	}
 
 	/**
