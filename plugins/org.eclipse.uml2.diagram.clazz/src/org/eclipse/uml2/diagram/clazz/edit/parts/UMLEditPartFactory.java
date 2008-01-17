@@ -427,6 +427,15 @@ public class UMLEditPartFactory implements EditPartFactory {
 
 			case AssociationInstanceEditPart.VISUAL_ID:
 				return new AssociationInstanceEditPart(view);
+
+			case TemplateBindingEditPart.VISUAL_ID:
+				return new TemplateBindingEditPart(view);
+
+			case TemplateBinding_BindLabelEditPart.VISUAL_ID:
+				return new TemplateBinding_BindLabelEditPart(view);
+
+			case LabelEditPart.VISUAL_ID:
+				return new LabelEditPart(view);
 			}
 		}
 		return createUnrecognizedEditPart(context, model);

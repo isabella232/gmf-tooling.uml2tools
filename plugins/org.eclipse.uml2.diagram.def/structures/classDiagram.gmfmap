@@ -1758,6 +1758,37 @@
         xsi:type="ecore:EReference"
         href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//Slot/owningInstance"/>
   </links>
+  <links>
+    <domainMetaElement
+        href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//TemplateBinding"/>
+    <labelMappings
+        xsi:type="gmfmap:DesignLabelMapping"
+        readOnly="true">
+      <diagramLabel
+          href="classDiagram_dependencies.gmfgraph#TemplateBinding_binding"/>
+    </labelMappings>
+    <labelMappings>
+      <diagramLabel
+          href="classDiagram_dependencies.gmfgraph#TemplateBinding_templateParameterSubstitution"/>
+    </labelMappings>
+    <containmentFeature
+        href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//TemplateableElement/templateBinding"/>
+    <tool
+        xsi:type="gmftool:CreationTool"
+        href="classDiagram.gmftool#//@palette/@tools.2/@tools.10"/>
+    <diagramLink
+        href="classDiagram_dependencies.gmfgraph#TemplateBindingLink"/>
+    <sourceMetaFeature
+        xsi:type="ecore:EReference"
+        href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//TemplateBinding/boundElement"/>
+    <linkMetaFeature
+        xsi:type="ecore:EReference"
+        href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//TemplateSignature/template"/>
+    <creationConstraints>
+      <targetEnd
+          body="self.ownedTemplateSignature &lt;> null"/>
+    </creationConstraints>
+  </links>
   <diagram>
     <diagramCanvas
         href="../../../plugin/org.eclipse.gmf.graphdef/models/basic.gmfgraph#Surface"/>

@@ -523,6 +523,16 @@ public class Messages extends NLS {
 	/**
 	 * @generated
 	 */
+	public static String TemplateBinding11CreationTool_title;
+
+	/**
+	 * @generated
+	 */
+	public static String TemplateBinding11CreationTool_desc;
+
+	/**
+	 * @generated
+	 */
 	public static String InstanceSpecification1CreationTool_title;
 
 	/**
@@ -1384,6 +1394,16 @@ public class Messages extends NLS {
 	 * @generated
 	 */
 	public static String NavigatorGroupName_Slot_4015_source;
+
+	/**
+	 * @generated
+	 */
+	public static String NavigatorGroupName_TemplateBinding_4016_target;
+
+	/**
+	 * @generated
+	 */
+	public static String NavigatorGroupName_TemplateBinding_4016_source;
 
 	/**
 	 * @generated

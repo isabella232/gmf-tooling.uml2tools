@@ -94,20 +94,62 @@
         </children>
       </actualFigure>
     </descriptors>
+    <descriptors
+        name="TemplateBinding_Polyline">
+      <actualFigure
+          xsi:type="gmfgraph:PolylineConnection"
+          name="Realization_Polyline"
+          lineKind="LINE_DASH"
+          targetDecoration="//@figures.0/@descriptors.6/@actualFigure/@children.0">
+        <foregroundColor
+            xsi:type="gmfgraph:ConstantColor"
+            value="lightGray"/>
+        <children
+            xsi:type="gmfgraph:PolylineDecoration"
+            name="TemplateBinding_ArrowDecoration">
+          <template
+              x="-1"
+              y="1"/>
+          <template/>
+          <template
+              x="-1"
+              y="-1"/>
+          <template
+              x="-1"
+              y="1"/>
+        </children>
+      </actualFigure>
+    </descriptors>
+    <descriptors
+        name="TemplateBinding_BindLabel">
+      <actualFigure
+          xsi:type="gmfgraph:Label"
+          name="TemplateBinding_BindLabel"
+          text="&lt;&lt;bind>>"/>
+    </descriptors>
+    <descriptors
+        name="TemplateBinding_templateParameterSubstitution">
+      <actualFigure
+          xsi:type="gmfgraph:Label"
+          name="TemplateBinding_templateParameterSubstitution"
+          text="&lt;>"/>
+    </descriptors>
   </figures>
   <nodes
       name="NAryDependencyNode"
       figure="DependencyNode"
       resizeConstraint="NONE"/>
   <connections
-      name="BinaryDependencyLink"
-      figure="Dependency_WithArrow_Polyline"/>
+      name="BinaryDependencyLink"/>
   <connections
       name="NAryDependencyBeginningLink"
       figure="Dependency_NoArrow_Polyline"/>
   <connections
       name="RealizationDependencyLink"
       figure="Realization_Polyline"/>
+  <connections
+      name="TemplateBindingLink"
+      figure="TemplateBinding_Polyline"/>
   <labels
       name="Dependency_name"
       figure="Dependency_ExternalLabel"/>
@@ -125,5 +167,12 @@
   <labels
       name="Dependency_label"
       figure="Dependency_ExternalLabel"
+      elementIcon="false"/>
+  <labels
+      name="TemplateBinding_binding"
+      figure="TemplateBinding_BindLabel"
+      elementIcon="false"/>
+  <labels
+      name="TemplateBinding_templateParameterSubstitution"
       elementIcon="false"/>
 </gmfgraph:Canvas>

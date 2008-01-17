@@ -63,6 +63,7 @@ import org.eclipse.uml2.uml.InstanceSpecification;
 import org.eclipse.uml2.uml.Interface;
 import org.eclipse.uml2.uml.NamedElement;
 import org.eclipse.uml2.uml.Package;
+import org.eclipse.uml2.uml.TemplateableElement;
 import org.eclipse.uml2.uml.Type;
 import org.eclipse.uml2.uml.UMLPackage;
 
@@ -404,6 +405,20 @@ public class UMLBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 		}
 
 		/**
+		 * @generated
+		 */
+		private static final UMLAbstractExpression TemplateBinding_4016_TargetExpression;
+
+		/**
+		 * @generated
+		 */
+		static {
+			Map env = new HashMap(3);
+			env.put(OPPOSITE_END_VAR, UMLPackage.eINSTANCE.getTemplateableElement());
+			TemplateBinding_4016_TargetExpression = UMLOCLFactory.getExpression("self.ownedTemplateSignature <> null", UMLPackage.eINSTANCE.getTemplateableElement(), env); //$NON-NLS-1$
+		}
+
+		/**
 		 * @generated 
 		 */
 		public static boolean canCreateGeneralization_4001(Classifier source, Classifier target) {
@@ -524,6 +539,13 @@ public class UMLBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 		/**
 		 * @generated
 		 */
+		public static boolean canCreateTemplateBinding_4016(TemplateableElement container, TemplateableElement source, TemplateableElement target) {
+			return canExistTemplateBinding_4016(container, source, target);
+		}
+
+		/**
+		 * @generated
+		 */
 		public static boolean canExistGeneralization_4001(Classifier source, Classifier target) {
 			return true;
 		}
@@ -628,6 +650,16 @@ public class UMLBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 		 * @generated
 		 */
 		public static boolean canExistSlot_4015(InstanceSpecification container, InstanceSpecification source, InstanceSpecification target) {
+			return true;
+		}
+
+		/**
+		 * @generated
+		 */
+		public static boolean canExistTemplateBinding_4016(TemplateableElement container, TemplateableElement source, TemplateableElement target) {
+			if (!evaluate(TemplateBinding_4016_TargetExpression, target, source, true)) {
+				return false;
+			}
 			return true;
 		}
 

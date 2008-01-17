@@ -1215,6 +1215,14 @@ public class UMLVisualIDRegistry {
 				return true;
 			}
 			break;
+		case TemplateBindingEditPart.VISUAL_ID:
+			if (TemplateBinding_BindLabelEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			if (LabelEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			break;
 		}
 		return false;
 	}
@@ -1255,6 +1263,9 @@ public class UMLVisualIDRegistry {
 		}
 		if (UMLPackage.eINSTANCE.getSlot().isSuperTypeOf(domainElement.eClass()) && evaluate(Slot_4015_Constraint, domainElement)) {
 			return AssociationInstanceEditPart.VISUAL_ID;
+		}
+		if (UMLPackage.eINSTANCE.getTemplateBinding().isSuperTypeOf(domainElement.eClass())) {
+			return TemplateBindingEditPart.VISUAL_ID;
 		}
 		return -1;
 	}

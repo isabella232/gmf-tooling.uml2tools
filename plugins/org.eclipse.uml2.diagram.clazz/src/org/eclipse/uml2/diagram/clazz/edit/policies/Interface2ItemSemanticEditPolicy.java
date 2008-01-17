@@ -34,6 +34,8 @@ import org.eclipse.uml2.diagram.clazz.edit.commands.PropertyLinkCreateCommand;
 import org.eclipse.uml2.diagram.clazz.edit.commands.PropertyLinkReorientCommand;
 import org.eclipse.uml2.diagram.clazz.edit.commands.RealizationCreateCommand;
 import org.eclipse.uml2.diagram.clazz.edit.commands.RealizationReorientCommand;
+import org.eclipse.uml2.diagram.clazz.edit.commands.TemplateBindingCreateCommand;
+import org.eclipse.uml2.diagram.clazz.edit.commands.TemplateBindingReorientCommand;
 import org.eclipse.uml2.diagram.clazz.edit.commands.UsageCreateCommand;
 import org.eclipse.uml2.diagram.clazz.edit.commands.UsageReorientCommand;
 import org.eclipse.uml2.diagram.clazz.edit.parts.AssociationEditPart;
@@ -53,6 +55,7 @@ import org.eclipse.uml2.diagram.clazz.edit.parts.Operation6EditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.Property6EditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.Property7EditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.RealizationEditPart;
+import org.eclipse.uml2.diagram.clazz.edit.parts.TemplateBindingEditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.UsageEditPart;
 import org.eclipse.uml2.diagram.clazz.part.UMLVisualIDRegistry;
 import org.eclipse.uml2.diagram.clazz.providers.UMLElementTypes;
@@ -171,6 +174,9 @@ public class Interface2ItemSemanticEditPolicy extends UMLBaseItemSemanticEditPol
 		if (UMLElementTypes.Usage_4013 == req.getElementType()) {
 			return getGEFWrapper(new UsageCreateCommand(req, req.getSource(), req.getTarget()));
 		}
+		if (UMLElementTypes.TemplateBinding_4016 == req.getElementType()) {
+			return getGEFWrapper(new TemplateBindingCreateCommand(req, req.getSource(), req.getTarget()));
+		}
 		return null;
 	}
 
@@ -214,6 +220,9 @@ public class Interface2ItemSemanticEditPolicy extends UMLBaseItemSemanticEditPol
 		if (UMLElementTypes.Usage_4013 == req.getElementType()) {
 			return getGEFWrapper(new UsageCreateCommand(req, req.getSource(), req.getTarget()));
 		}
+		if (UMLElementTypes.TemplateBinding_4016 == req.getElementType()) {
+			return getGEFWrapper(new TemplateBindingCreateCommand(req, req.getSource(), req.getTarget()));
+		}
 		return null;
 	}
 
@@ -241,6 +250,8 @@ public class Interface2ItemSemanticEditPolicy extends UMLBaseItemSemanticEditPol
 			return getGEFWrapper(new Generalization2ReorientCommand(req));
 		case UsageEditPart.VISUAL_ID:
 			return getGEFWrapper(new UsageReorientCommand(req));
+		case TemplateBindingEditPart.VISUAL_ID:
+			return getGEFWrapper(new TemplateBindingReorientCommand(req));
 		}
 		return super.getReorientRelationshipCommand(req);
 	}

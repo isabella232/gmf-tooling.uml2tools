@@ -357,6 +357,11 @@ public class UMLElementTypes extends ElementInitializers {
 	/**
 	 * @generated
 	 */
+	public static final IElementType TemplateBinding_4016 = getElementType("org.eclipse.uml2.diagram.clazz.TemplateBinding_4016"); //$NON-NLS-1$
+
+	/**
+	 * @generated
+	 */
 	private static ImageRegistry getImageRegistry() {
 		if (imageRegistry == null) {
 			imageRegistry = new ImageRegistry();
@@ -583,6 +588,8 @@ public class UMLElementTypes extends ElementInitializers {
 			elements.put(AssociationClass_4014, UMLPackage.eINSTANCE.getAssociationClass());
 
 			elements.put(Slot_4015, UMLPackage.eINSTANCE.getSlot());
+
+			elements.put(TemplateBinding_4016, UMLPackage.eINSTANCE.getTemplateBinding());
 		}
 		return (ENamedElement) elements.get(type);
 	}
@@ -662,6 +669,7 @@ public class UMLElementTypes extends ElementInitializers {
 			KNOWN_ELEMENT_TYPES.add(Usage_4013);
 			KNOWN_ELEMENT_TYPES.add(AssociationClass_4014);
 			KNOWN_ELEMENT_TYPES.add(Slot_4015);
+			KNOWN_ELEMENT_TYPES.add(TemplateBinding_4016);
 		}
 		return KNOWN_ELEMENT_TYPES.contains(elementType);
 	}

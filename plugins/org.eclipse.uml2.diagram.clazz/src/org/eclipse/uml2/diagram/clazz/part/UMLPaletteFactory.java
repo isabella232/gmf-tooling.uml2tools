@@ -79,6 +79,7 @@ public class UMLPaletteFactory {
 		paletteContainer.add(createNAryDependencySource8CreationTool());
 		paletteContainer.add(createAssociationEnd9CreationTool());
 		paletteContainer.add(createRealization10CreationTool());
+		paletteContainer.add(createTemplateBinding11CreationTool());
 		return paletteContainer;
 	}
 
@@ -404,6 +405,18 @@ public class UMLPaletteFactory {
 		types.add(UMLElementTypes.Realization_4010);
 		LinkToolEntry entry = new LinkToolEntry(Messages.Realization10CreationTool_title, Messages.Realization10CreationTool_desc, types);
 		entry.setSmallIcon(UMLElementTypes.getImageDescriptor(UMLElementTypes.Realization_4010));
+		entry.setLargeIcon(entry.getSmallIcon());
+		return entry;
+	}
+
+	/**
+	 * @generated
+	 */
+	private ToolEntry createTemplateBinding11CreationTool() {
+		List/*<IElementType>*/types = new ArrayList/*<IElementType>*/(1);
+		types.add(UMLElementTypes.TemplateBinding_4016);
+		LinkToolEntry entry = new LinkToolEntry(Messages.TemplateBinding11CreationTool_title, Messages.TemplateBinding11CreationTool_desc, types);
+		entry.setSmallIcon(UMLElementTypes.getImageDescriptor(UMLElementTypes.TemplateBinding_4016));
 		entry.setLargeIcon(entry.getSmallIcon());
 		return entry;
 	}

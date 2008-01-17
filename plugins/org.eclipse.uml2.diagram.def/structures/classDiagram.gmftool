@@ -161,6 +161,10 @@
           xsi:type="gmftool:CreationTool"
           title="Realization"
           description="Create Realization Link"/>
+      <tools
+          xsi:type="gmftool:CreationTool"
+          title="Template Binding"
+          description="Create Template Binding"/>
     </tools>
     <tools
         xsi:type="gmftool:ToolGroup"

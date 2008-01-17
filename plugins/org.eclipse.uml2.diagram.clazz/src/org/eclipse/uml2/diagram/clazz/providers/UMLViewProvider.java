@@ -356,6 +356,12 @@ public class UMLViewProvider extends AbstractViewProvider {
 						return null; // wrong container
 					}
 					break;
+				case TemplateBinding_BindLabelEditPart.VISUAL_ID:
+				case LabelEditPart.VISUAL_ID:
+					if (TemplateBindingEditPart.VISUAL_ID != UMLVisualIDRegistry.getVisualID(containerView) || containerView.getElement() != domainElement) {
+						return null; // wrong container
+					}
+					break;
 				default:
 					return null;
 				}
@@ -608,6 +614,10 @@ public class UMLViewProvider extends AbstractViewProvider {
 			return AssociationName7ViewFactory.class;
 		case RealizationNameEditPart.VISUAL_ID:
 			return RealizationNameViewFactory.class;
+		case TemplateBinding_BindLabelEditPart.VISUAL_ID:
+			return TemplateBinding_BindLabelViewFactory.class;
+		case LabelEditPart.VISUAL_ID:
+			return LabelViewFactory.class;
 		}
 		return null;
 	}
@@ -668,6 +678,8 @@ public class UMLViewProvider extends AbstractViewProvider {
 			return AssociationClassConnectorViewFactory.class;
 		case AssociationInstanceEditPart.VISUAL_ID:
 			return AssociationInstanceViewFactory.class;
+		case TemplateBindingEditPart.VISUAL_ID:
+			return TemplateBindingViewFactory.class;
 		}
 		return null;
 	}
