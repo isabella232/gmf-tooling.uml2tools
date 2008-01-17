@@ -16,6 +16,7 @@ import org.eclipse.uml2.diagram.clazz.edit.parts.PackageEditPart;
 
 import org.eclipse.uml2.diagram.clazz.part.UMLDiagramEditorPlugin;
 import org.eclipse.uml2.diagram.clazz.part.UMLVisualIDRegistry;
+import org.eclipse.uml2.diagram.common.draw2d.ManuallyDrawnShortcutDecorator;
 
 /**
  * @generated
@@ -47,7 +48,8 @@ public class UMLShortcutsDecoratorProvider extends AbstractProvider implements I
 		if (view != null) {
 			EAnnotation annotation = view.getEAnnotation("Shortcut"); //$NON-NLS-1$
 			if (annotation != null) {
-				decoratorTarget.installDecorator(SHORTCUTS_DECORATOR_ID, new ShortcutsDecorator(decoratorTarget));
+				//decoratorTarget.installDecorator(SHORTCUTS_DECORATOR_ID, new ShortcutsDecorator(decoratorTarget)); //this does not work due to #209802
+				decoratorTarget.installDecorator(SHORTCUTS_DECORATOR_ID, new ManuallyDrawnShortcutDecorator(decoratorTarget));
 			}
 		}
 	}

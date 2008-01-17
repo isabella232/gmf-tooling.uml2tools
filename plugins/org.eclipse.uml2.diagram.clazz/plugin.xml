@@ -1359,6 +1359,17 @@
    <extension point="org.eclipse.core.expressions.propertyTesters">
       <?gmfgen generated="true"?>
        <propertyTester
+           id="org.eclipse.uml2.diagram.clazz.ShortcutPropertyTester"
+           type="org.eclipse.gmf.runtime.notation.View"
+           namespace="org.eclipse.uml2.diagram.clazz"
+           properties="isShortcut"
+           class="org.eclipse.uml2.diagram.clazz.part.UMLShortcutPropertyTester">
+       </propertyTester>
+   </extension>
+
+   <extension point="org.eclipse.core.expressions.propertyTesters">
+      <?gmfgen generated="true"?>
+       <propertyTester
            id="org.eclipse.uml2.diagram.clazz.DomainModelElementPropertyTester"
            type="org.eclipse.emf.ecore.EObject"
            namespace="org.eclipse.uml2.diagram.clazz"
@@ -1400,11 +1411,17 @@
         	      <test property="org.eclipse.core.resources.extension" value="umlclass_diagram"/>
                </and>
                <instanceof value="org.eclipse.uml2.diagram.clazz.navigator.UMLAbstractNavigatorItem"/>
+           	   <adapt type="org.eclipse.gmf.runtime.notation.View">
+           	      <test property="org.eclipse.uml2.diagram.clazz.isShortcut"/>
+           	   </adapt>
             </or>
          </triggerPoints>
          <possibleChildren>
             <or>
          	   <instanceof value="org.eclipse.uml2.diagram.clazz.navigator.UMLAbstractNavigatorItem"/>
+           	   <adapt type="org.eclipse.gmf.runtime.notation.View">
+           	      <test property="org.eclipse.uml2.diagram.clazz.isShortcut"/>
+           	   </adapt>
             </or>
          </possibleChildren>
          <commonSorter 
@@ -1454,6 +1471,9 @@
          <enablement>
             <or>
                <instanceof value="org.eclipse.uml2.diagram.clazz.navigator.UMLAbstractNavigatorItem"/>
+           	   <adapt type="org.eclipse.gmf.runtime.notation.View">
+           	      <test property="org.eclipse.uml2.diagram.clazz.isShortcut"/>
+           	   </adapt>
             </or>
          </enablement>
       </actionProvider>
@@ -1626,5 +1646,12 @@
 		 </popupContribution>
       </contributionItemProvider>
    </extension>
+   <extension point="org.eclipse.gmf.runtime.diagram.ui.decoratorProviders">
+      <?gmfgen generated="true"?>
+      <decoratorProvider class="org.eclipse.uml2.diagram.clazz.providers.UMLShortcutsDecoratorProvider">
+         <Priority name="Lowest"/>
+      </decoratorProvider>
+   </extension>
+
 
 </plugin>
