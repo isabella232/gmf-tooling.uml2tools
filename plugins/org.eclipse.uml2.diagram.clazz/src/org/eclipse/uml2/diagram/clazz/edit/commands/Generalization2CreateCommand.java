@@ -82,11 +82,11 @@ public class Generalization2CreateCommand extends CreateElementCommand {
 	 * @generated NOT
 	 */
 	protected EObject doDefaultElementCreation() {
-		Generalization newElement = (Generalization)doDefaultElementCreationGen();
+		Generalization newElement = (Generalization) doDefaultElementCreationGen();
 		newElement.setGeneral(getGeneralClassifier());
 		return newElement;
 	}
-	
+
 	/**
 	 * @NOT-generated
 	 */
