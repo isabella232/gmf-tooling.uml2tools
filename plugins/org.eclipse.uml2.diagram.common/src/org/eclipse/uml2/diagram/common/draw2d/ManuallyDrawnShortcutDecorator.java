@@ -25,7 +25,7 @@ public class ManuallyDrawnShortcutDecorator extends AbstractDecorator {
 		removeDecoration();
 		EditPart editPart = (EditPart) getDecoratorTarget().getAdapter(EditPart.class);
 		if (editPart instanceof ShapeEditPart) {
-			setDecoration(getDecoratorTarget().addShapeDecoration(new ManuallyDrawnShortcutDecorationFigure(), IDecoratorTarget.Direction.SOUTH_WEST, 10, false));
+			setDecoration(getDecoratorTarget().addShapeDecoration(new ManuallyDrawnShortcutDecorationFigure(), IDecoratorTarget.Direction.SOUTH_WEST, 0, false));
 		} else if (editPart instanceof ConnectionEditPart) {
 			setDecoration(getDecoratorTarget().addConnectionDecoration(new ManuallyDrawnShortcutDecorationFigure(), 50, false));
 		}
