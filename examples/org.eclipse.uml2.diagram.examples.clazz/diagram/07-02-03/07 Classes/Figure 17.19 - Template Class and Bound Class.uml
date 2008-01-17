@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<uml:Model xmi:version="2.1" xmlns:xmi="http://schema.omg.org/spec/XMI/2.1" xmlns:uml="http://www.eclipse.org/uml2/2.1.0/UML" xmi:id="_wiZegKZfEduiaPhd14EppA">
+  <packagedElement xmi:type="uml:Class" xmi:id="_6shwMKZfEduiaPhd14EppA" name="FArray">
+    <ownedTemplateSignature xmi:type="uml:RedefinableTemplateSignature" xmi:id="_QERw4KZgEduiaPhd14EppA" parameter="_zbSTAKZmEduiaPhd14EppA _udla8KcLEduxNLQ2wgKfJA">
+      <ownedComment xmi:id="_ihcLkKZnEduiaPhd14EppA">
+        <body>The formal template parameter list may be shown as a comma-separated list, or it may be one formal template parameter&#xD;
+per line, p.651</body>
+      </ownedComment>
+      <ownedParameter xmi:type="uml:ClassifierTemplateParameter" xmi:id="_zbSTAKZmEduiaPhd14EppA" parameteredElement="_xv5ksKZlEduiaPhd14EppA">
+        <ownedComment xmi:id="_5ToxAKZnEduiaPhd14EppA">
+          <body>A classifier template parameter extends the notation for a template &#xD;
+parameter to include an optional type constraint:&#xD;
+&lt;classifier-template-parameter> ::= &lt;parameter-name> [ ‘:‘ &lt;parameter-kind> ] [‘>’ &lt;constraint>] [‘=’ &lt;default>]&#xD;
+&lt;constraint> ::= [‘{contract }’] &lt;classifier-name>&#xD;
+&lt;default> ::= &lt;classifier-name>&#xD;
+The parameter-kind indicates the metaclass of the parametered element. &#xD;
+It may be suppressed if it is ‘class’., p663</body>
+        </ownedComment>
+        <ownedComment xmi:id="_su8E4KZoEduiaPhd14EppA">
+          <body>Within these notations, the parameterable element is typically shown &#xD;
+as the name of the parametered element (if that element is a named &#xD;
+element)., p 649</body>
+        </ownedComment>
+        <ownedParameteredElement xmi:type="uml:Class" xmi:id="_xv5ksKZlEduiaPhd14EppA" name="T" templateParameter="_zbSTAKZmEduiaPhd14EppA"/>
+      </ownedParameter>
+      <ownedParameter xmi:id="_udla8KcLEduxNLQ2wgKfJA" parameteredElement="_0JdYoKcLEduxNLQ2wgKfJA">
+        <ownedParameteredElement xmi:type="uml:LiteralInteger" xmi:id="_0JdYoKcLEduxNLQ2wgKfJA" name="k" templateParameter="_udla8KcLEduxNLQ2wgKfJA"/>
+      </ownedParameter>
+    </ownedTemplateSignature>
+    <ownedAttribute xmi:id="_UU2UUKcHEduxNLQ2wgKfJA" name="contents" type="_xv5ksKZlEduiaPhd14EppA">
+      <upperValue xmi:type="uml:OpaqueExpression" xmi:id="_JsPkoKcMEduxNLQ2wgKfJA">
+        <body>k</body>
+      </upperValue>
+    </ownedAttribute>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="_7JupkKZfEduiaPhd14EppA" name="AddressList">
+    <templateBinding xmi:id="_AScP0KZgEduiaPhd14EppA" signature="_QERw4KZgEduiaPhd14EppA">
+      <ownedComment xmi:id="_VuiO4KZpEduiaPhd14EppA">
+        <body>A TemplateBinding is shown as a dashed arrow with the tail on the bound element and the arrowhead on the template and&#xD;
+the keyword «bind». The binding information is generally displayed as a comma-separated list of template parameter&#xD;
+substitutions:&#xD;
+&lt;template-param-substitition> ::= &lt;template-param-name> ‘->’ &lt;actual-template-parameter>&#xD;
+where the syntax of &lt;template-param-name> depends on the kind of ParameteredElement for this template parameter&#xD;
+substitution and the kind of &lt;actual-template-parameter> depends upon the kind of element. See “ParameterableElement&#xD;
+(from Templates)” on page 647 (and its subclasses).</body>
+      </ownedComment>
+      <ownedComment xmi:id="_aLlpAKZpEduiaPhd14EppA">
+        <body>Within these notations, the parameterable element is typically shown &#xD;
+as the name of the parametered element (if that element is a named &#xD;
+element)., p 649</body>
+      </ownedComment>
+      <parameterSubstitution xmi:id="_TDJ80KZgEduiaPhd14EppA" formal="_zbSTAKZmEduiaPhd14EppA" actual="_05UP4KZpEduiaPhd14EppA"/>
+      <parameterSubstitution xmi:id="_jtdgQKcLEduxNLQ2wgKfJA" actual="_oAro8KcLEduxNLQ2wgKfJA">
+        <ownedActual xmi:type="uml:LiteralInteger" xmi:id="_oAro8KcLEduxNLQ2wgKfJA" name="" value="3"/>
+      </parameterSubstitution>
+    </templateBinding>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="_05UP4KZpEduiaPhd14EppA" name="Address"/>
+</uml:Model>
