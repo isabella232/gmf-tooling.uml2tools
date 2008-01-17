@@ -262,11 +262,6 @@
 
 <!-- gmf generator persistent region end -->
 
-   <extension point="org.eclipse.core.runtime.preferences">
-      <?gmfgen generated="true"?>
-      <initializer class="org.eclipse.uml2.diagram.clazz.preferences.DiagramPreferenceInitializer"/>
-   </extension>
-
    <extension point="org.eclipse.team.core.fileTypes">
       <?gmfgen generated="true"?>
       <fileTypes
@@ -297,6 +292,16 @@
       </editor>
    </extension>
 
+	<extension point="org.eclipse.ui.contexts">
+      <?gmfgen generated="true"?>
+      <context
+         description="%context.description"
+         id="org.eclipse.uml2.diagram.clazz.ui.diagramContext"
+         name="%context.name"
+         parentId="org.eclipse.gmf.runtime.diagram.ui.diagramContext">
+      </context>
+   </extension>
+   
    <extension point="org.eclipse.ui.newWizards">
       <?gmfgen generated="true"?>
   	  <wizard
@@ -335,6 +340,61 @@
                menubarPath="additions">
          </action>
       </objectContribution>           
+   </extension>
+
+   <extension point="org.eclipse.ui.popupMenus">
+      <?gmfgen generated="true"?>
+      <objectContribution
+            id="org.eclipse.uml2.diagram.clazz.InitDiagram"
+            nameFilter="*.uml"
+            objectClass="org.eclipse.core.resources.IFile">
+         <action
+               label="%initDiagramActionLabel"
+               class="org.eclipse.uml2.diagram.clazz.part.UMLInitDiagramFileAction"
+               menubarPath="additions"
+               enablesFor="1"
+               id="org.eclipse.uml2.diagram.clazz.InitDiagramAction">
+         </action>
+      </objectContribution>
+   </extension>
+	
+   <extension point="org.eclipse.gmf.runtime.common.ui.services.action.globalActionHandlerProviders">
+      <?gmfgen generated="true"?>
+      <GlobalActionHandlerProvider
+         class="org.eclipse.gmf.runtime.diagram.ui.providers.DiagramGlobalActionHandlerProvider"
+         id="UMLClassPresentation">
+         <Priority name="Lowest"/>
+         <ViewId id="org.eclipse.uml2.diagram.clazz.part.UMLDiagramEditorID">
+            <ElementType class="org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart">
+               <GlobalActionId actionId="delete"/>
+            </ElementType>
+            <ElementType class="org.eclipse.gmf.runtime.diagram.ui.editparts.DiagramEditPart">
+               <GlobalActionId actionId="save"/>
+            </ElementType>
+         </ViewId>
+      </GlobalActionHandlerProvider>
+      <GlobalActionHandlerProvider
+         class="org.eclipse.gmf.runtime.diagram.ui.providers.ide.providers.DiagramIDEGlobalActionHandlerProvider"
+         id="UMLClassPresentationIDE">
+         <Priority name="Lowest"/>
+         <ViewId id="org.eclipse.uml2.diagram.clazz.part.UMLDiagramEditorID">
+            <ElementType class="org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart">
+               <GlobalActionId actionId="bookmark"/>
+            </ElementType>
+         </ViewId>
+      </GlobalActionHandlerProvider>
+      <GlobalActionHandlerProvider
+            class="org.eclipse.gmf.runtime.diagram.ui.render.providers.DiagramUIRenderGlobalActionHandlerProvider"
+            id="UMLClassRender">
+         <Priority name="Lowest"/>
+         <ViewId id="org.eclipse.uml2.diagram.clazz.part.UMLDiagramEditorID">
+            <ElementType class="org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart">
+               <GlobalActionId actionId="cut"/>
+               <GlobalActionId actionId="copy"/>
+               <GlobalActionId actionId="paste"/>
+            </ElementType>
+         </ViewId>
+      </GlobalActionHandlerProvider>
    </extension>
 
    <extension point="org.eclipse.gmf.runtime.common.ui.services.action.contributionItemProviders">
@@ -451,43 +511,111 @@
       </contributionItemProvider>
    </extension>
 
-   <extension point="org.eclipse.gmf.runtime.common.ui.services.action.globalActionHandlerProviders">
+   <extension point="org.eclipse.core.runtime.preferences">
       <?gmfgen generated="true"?>
-      <GlobalActionHandlerProvider
-         class="org.eclipse.gmf.runtime.diagram.ui.providers.DiagramGlobalActionHandlerProvider"
-         id="UMLClassPresentation">
-         <Priority name="Lowest"/>
-         <ViewId id="org.eclipse.uml2.diagram.clazz.part.UMLDiagramEditorID">
-            <ElementType class="org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart">
-               <GlobalActionId actionId="delete"/>
-            </ElementType>
-            <ElementType class="org.eclipse.gmf.runtime.diagram.ui.editparts.DiagramEditPart">
-               <GlobalActionId actionId="save"/>
-            </ElementType>
-         </ViewId>
-      </GlobalActionHandlerProvider>
-      <GlobalActionHandlerProvider
-         class="org.eclipse.gmf.runtime.diagram.ui.providers.ide.providers.DiagramIDEGlobalActionHandlerProvider"
-         id="UMLClassPresentationIDE">
-         <Priority name="Lowest"/>
-         <ViewId id="org.eclipse.uml2.diagram.clazz.part.UMLDiagramEditorID">
-            <ElementType class="org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart">
-               <GlobalActionId actionId="bookmark"/>
-            </ElementType>
-         </ViewId>
-      </GlobalActionHandlerProvider>
-      <GlobalActionHandlerProvider
-            class="org.eclipse.gmf.runtime.diagram.ui.render.providers.DiagramUIRenderGlobalActionHandlerProvider"
-            id="UMLClassRender">
-         <Priority name="Lowest"/>
-         <ViewId id="org.eclipse.uml2.diagram.clazz.part.UMLDiagramEditorID">
-            <ElementType class="org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart">
-               <GlobalActionId actionId="cut"/>
-               <GlobalActionId actionId="copy"/>
-               <GlobalActionId actionId="paste"/>
-            </ElementType>
-         </ViewId>
-      </GlobalActionHandlerProvider>
+      <initializer class="org.eclipse.uml2.diagram.clazz.preferences.DiagramPreferenceInitializer"/>
+   </extension>
+
+   <extension point="org.eclipse.ui.preferencePages">
+      <?gmfgen generated="true"?>
+      <page
+            id="org.eclipse.uml2.uml.diagram.clazz.general"
+            name="%preference.page.title.org.eclipse.uml2.uml.diagram.clazz.general"
+            class="org.eclipse.uml2.diagram.clazz.preferences.DiagramGeneralPreferencePage">
+      </page>
+      <page
+            id="org.eclipse.uml2.uml.diagram.clazz.appearance"
+            name="%preference.page.title.org.eclipse.uml2.uml.diagram.clazz.appearance"
+            category="org.eclipse.uml2.uml.diagram.clazz.general"
+            class="org.eclipse.uml2.diagram.clazz.preferences.DiagramAppearancePreferencePage">
+      </page>
+      <page
+            id="org.eclipse.uml2.uml.diagram.clazz.connections"
+            name="%preference.page.title.org.eclipse.uml2.uml.diagram.clazz.connections"
+            category="org.eclipse.uml2.uml.diagram.clazz.general"
+            class="org.eclipse.uml2.diagram.clazz.preferences.DiagramConnectionsPreferencePage">
+      </page>
+      <page
+            id="org.eclipse.uml2.uml.diagram.clazz.printing"
+            name="%preference.page.title.org.eclipse.uml2.uml.diagram.clazz.printing"
+            category="org.eclipse.uml2.uml.diagram.clazz.general"
+            class="org.eclipse.uml2.diagram.clazz.preferences.DiagramPrintingPreferencePage">
+      </page>
+      <page
+            id="org.eclipse.uml2.uml.diagram.clazz.rulersAndGrid"
+            name="%preference.page.title.org.eclipse.uml2.uml.diagram.clazz.rulersAndGrid"
+            category="org.eclipse.uml2.uml.diagram.clazz.general"
+            class="org.eclipse.uml2.diagram.clazz.preferences.DiagramRulersAndGridPreferencePage">
+      </page>
+      <page
+            id="org.eclipse.uml2.uml.diagram.clazz.pathmaps"
+            name="%preference.page.title.org.eclipse.uml2.uml.diagram.clazz.pathmaps"
+            category="org.eclipse.uml2.uml.diagram.clazz.general"
+            class="org.eclipse.gmf.runtime.emf.ui.preferences.PathmapsPreferencePage">
+      </page>
+   </extension>
+
+   <extension point="org.eclipse.ui.views.properties.tabbed.propertyContributor">
+      <?gmfgen generated="true"?>
+      <propertyContributor
+            contributorId="org.eclipse.uml2.diagram.clazz"
+            labelProvider="org.eclipse.uml2.diagram.clazz.sheet.UMLSheetLabelProvider">
+         <propertyCategory category="domain"/>
+         <propertyCategory category="visual"/>
+         <propertyCategory category="extra"/>
+      </propertyContributor>
+   </extension>
+
+   <extension point="org.eclipse.ui.views.properties.tabbed.propertyTabs">
+      <?gmfgen generated="true"?>   
+      <propertyTabs contributorId="org.eclipse.uml2.diagram.clazz">
+         <propertyTab
+             category="visual"
+             id="property.tab.AppearancePropertySection"
+             label="%tab.appearance"/>
+          <propertyTab
+             category="visual"
+             id="property.tab.DiagramPropertySection"
+             label="%tab.diagram"/>
+          <propertyTab
+             category="domain"
+             id="property.tab.domain"
+             label="%tab.domain"/>
+      </propertyTabs>
+   </extension>
+
+   <extension point="org.eclipse.ui.views.properties.tabbed.propertySections">
+      <?gmfgen generated="true"?>   
+      <propertySections contributorId="org.eclipse.uml2.diagram.clazz">
+         <propertySection id="property.section.ConnectorAppearancePropertySection" 
+            filter="org.eclipse.gmf.runtime.diagram.ui.properties.filters.ConnectionEditPartPropertySectionFilter" 
+            class="org.eclipse.gmf.runtime.diagram.ui.properties.sections.appearance.ConnectionAppearancePropertySection" 
+            tab="property.tab.AppearancePropertySection">
+         </propertySection>
+         <propertySection id="property.section.ShapeColorAndFontPropertySection" 
+            filter="org.eclipse.gmf.runtime.diagram.ui.properties.filters.ShapeEditPartPropertySectionFilter" 
+            class="org.eclipse.gmf.runtime.diagram.ui.properties.sections.appearance.ShapeColorsAndFontsPropertySection" 
+            tab="property.tab.AppearancePropertySection">
+         </propertySection> 
+         <propertySection id="property.section.DiagramColorsAndFontsPropertySection" 
+            filter="org.eclipse.gmf.runtime.diagram.ui.properties.filters.DiagramEditPartPropertySectionFilter" 
+            class="org.eclipse.gmf.runtime.diagram.ui.properties.sections.appearance.DiagramColorsAndFontsPropertySection" 
+            tab="property.tab.AppearancePropertySection">
+         </propertySection>     
+         <propertySection id="property.section.RulerGridPropertySection" 
+            filter="org.eclipse.gmf.runtime.diagram.ui.properties.filters.DiagramEditPartPropertySectionFilter" 
+            class="org.eclipse.gmf.runtime.diagram.ui.properties.sections.grid.RulerGridPropertySection" 
+            tab="property.tab.DiagramPropertySection">
+         </propertySection>     
+         <propertySection
+            id="property.section.domain" 
+            tab="property.tab.domain"
+            class="org.eclipse.uml2.diagram.clazz.sheet.UMLPropertySection">
+            <input type="org.eclipse.gmf.runtime.notation.View"/>
+            <input type="org.eclipse.gef.EditPart"/>
+            <input type="org.eclipse.uml2.diagram.clazz.navigator.UMLAbstractNavigatorItem"/>
+         </propertySection>
+      </propertySections>
    </extension>
 
    <extension point="org.eclipse.gmf.runtime.diagram.core.viewProviders">
@@ -506,8 +634,6 @@
          <Priority name="Lowest"/>
       </editpartProvider>
    </extension>
-
-   
 
    <extension point="org.eclipse.gmf.runtime.emf.ui.modelingAssistantProviders">
       <?gmfgen generated="true"?>
@@ -1219,11 +1345,34 @@
       </binding>
    </extension>
 
+   <extension point="org.eclipse.core.expressions.propertyTesters">
+      <?gmfgen generated="true"?>
+       <propertyTester
+           id="org.eclipse.uml2.diagram.clazz.URIEditorInputPropertyTester"
+           type="org.eclipse.emf.common.ui.URIEditorInput"
+           namespace="org.eclipse.uml2.diagram.clazz"
+           properties="isURIEditorInput"
+           class="org.eclipse.uml2.diagram.clazz.part.UMLUriEditorInputTester">
+       </propertyTester>
+   </extension>
+   
+   <extension point="org.eclipse.core.expressions.propertyTesters">
+      <?gmfgen generated="true"?>
+       <propertyTester
+           id="org.eclipse.uml2.diagram.clazz.DomainModelElementPropertyTester"
+           type="org.eclipse.emf.ecore.EObject"
+           namespace="org.eclipse.uml2.diagram.clazz"
+           properties="isDomainModelElement"
+           class="org.eclipse.uml2.diagram.clazz.part.UMLDomainModelElementTester">
+       </propertyTester>
+   </extension>
 
    <extension point="org.eclipse.ui.navigator.viewer">
+      <?gmfgen generated="true"?>
       <viewerContentBinding viewerId="org.eclipse.ui.navigator.ProjectExplorer">
          <includes>
             <contentExtension pattern="org.eclipse.uml2.diagram.clazz.resourceContent"/>
+			<contentExtension pattern="org.eclipse.uml2.diagram.clazz.domainResourceContent"/>
             <contentExtension pattern="org.eclipse.uml2.diagram.clazz.navigatorLinkHelper"/>
          </includes>
       </viewerContentBinding>
@@ -1235,7 +1384,8 @@
    </extension>
 
    <extension point="org.eclipse.ui.navigator.navigatorContent">
-      <navigatorContent 
+      <?gmfgen generated="true"?>
+      <navigatorContent
             id="org.eclipse.uml2.diagram.clazz.resourceContent" 
             name="%navigatorContentName" 
             priority="normal" 
@@ -1271,6 +1421,33 @@
             </parentExpression>
          </commonSorter>
       </navigatorContent>
+      <navigatorContent
+            id="org.eclipse.uml2.diagram.clazz.domainResourceContent" 
+            name="%domainNavigatorContentName" 
+            priority="normal" 
+            contentProvider="org.eclipse.uml2.diagram.clazz.navigator.UMLDomainNavigatorContentProvider" 
+            labelProvider="org.eclipse.uml2.diagram.clazz.navigator.UMLDomainNavigatorLabelProvider"
+            icon="icons/obj16/UMLDiagramFile.gif"
+            activeByDefault="true">
+         <triggerPoints>
+            <or>
+	           <and>
+    	          <instanceof value="org.eclipse.core.resources.IFile"/>
+        	      <test property="org.eclipse.core.resources.extension" value="uml"/>
+               </and>
+               <and>
+                  <instanceof value="org.eclipse.emf.ecore.EObject"/>
+                  <test property="org.eclipse.uml2.diagram.clazz.isDomainModelElement"/>
+               </and>
+            </or>
+         </triggerPoints>
+         <possibleChildren>
+            <and>
+       	       <instanceof value="org.eclipse.emf.ecore.EObject"/>
+       	       <test property="org.eclipse.uml2.diagram.clazz.isDomainModelElement"/>
+       	    </and>
+         </possibleChildren>
+      </navigatorContent>
       <actionProvider
             id="org.eclipse.uml2.diagram.clazz.navigatorActionProvider"
             class="org.eclipse.uml2.diagram.clazz.navigator.UMLNavigatorActionProvider">
@@ -1283,11 +1460,15 @@
    </extension>
    
    <extension point="org.eclipse.ui.navigator.linkHelper">
+      <?gmfgen generated="true"?>
       <linkHelper
             id="org.eclipse.uml2.diagram.clazz.navigatorLinkHelper"
             class="org.eclipse.uml2.diagram.clazz.navigator.UMLNavigatorLinkHelper">
          <editorInputEnablement>
-            <instanceof value="org.eclipse.gmf.runtime.diagram.ui.resources.editor.ide.document.FileEditorInputProxy"/>
+            <and>
+               <instanceof value="org.eclipse.emf.common.ui.URIEditorInput"/>
+               <test property="org.eclipse.uml2.diagram.clazz.isURIEditorInput"/>
+            </and>
          </editorInputEnablement>
          <selectionEnablement>
             <instanceof value="org.eclipse.uml2.diagram.clazz.navigator.UMLAbstractNavigatorItem"/>
@@ -1295,146 +1476,7 @@
       </linkHelper>
    </extension>
 
-   <extension point="org.eclipse.ui.views.properties.tabbed.propertyContributor">
-      <propertyContributor contributorId="org.eclipse.uml2.diagram.clazz"
-            labelProvider="org.eclipse.uml2.diagram.clazz.sheet.UMLSheetLabelProvider">
-         <propertyCategory category="domain"/>
-         <propertyCategory category="visual"/>
-         <propertyCategory category="extra"/>
-      </propertyContributor>
-   </extension>
-
-   <extension point="org.eclipse.ui.views.properties.tabbed.propertyTabs">
-      <propertyTabs contributorId="org.eclipse.uml2.diagram.clazz">
-         <propertyTab
-             category="visual"
-             id="property.tab.AppearancePropertySection"
-             label="%tab.appearance"/>
-          <propertyTab
-             category="visual"
-             id="property.tab.DiagramPropertySection"
-             label="%tab.diagram"/>
-          <propertyTab
-             category="domain"
-             id="property.tab.domain"
-             label="%tab.domain"/>
-      </propertyTabs>
-   </extension>
-
-   <extension point="org.eclipse.ui.views.properties.tabbed.propertySections">
-      <propertySections contributorId="org.eclipse.uml2.diagram.clazz">
-
-         <propertySection id="property.section.ConnectorAppearancePropertySection" 
-            filter="org.eclipse.gmf.runtime.diagram.ui.properties.filters.ConnectionEditPartPropertySectionFilter" 
-            class="org.eclipse.gmf.runtime.diagram.ui.properties.sections.appearance.ConnectionAppearancePropertySection" 
-            tab="property.tab.AppearancePropertySection">
-         </propertySection>
-         <propertySection id="property.section.ShapeColorAndFontPropertySection" 
-            filter="org.eclipse.gmf.runtime.diagram.ui.properties.filters.ShapeEditPartPropertySectionFilter" 
-            class="org.eclipse.gmf.runtime.diagram.ui.properties.sections.appearance.ShapeColorsAndFontsPropertySection" 
-            tab="property.tab.AppearancePropertySection">
-         </propertySection> 
-         <propertySection id="property.section.DiagramColorsAndFontsPropertySection" 
-            filter="org.eclipse.gmf.runtime.diagram.ui.properties.filters.DiagramEditPartPropertySectionFilter" 
-            class="org.eclipse.gmf.runtime.diagram.ui.properties.sections.appearance.DiagramColorsAndFontsPropertySection" 
-            tab="property.tab.AppearancePropertySection">
-         </propertySection>              
-
-          <propertySection id="property.section.RulerGridPropertySection" 
-             filter="org.eclipse.gmf.runtime.diagram.ui.properties.filters.DiagramEditPartPropertySectionFilter" 
-             class="org.eclipse.gmf.runtime.diagram.ui.properties.sections.grid.RulerGridPropertySection" 
-             tab="property.tab.DiagramPropertySection">
-          </propertySection>              
-         <propertySection
-            id="property.section.domain" 
-            tab="property.tab.domain"
-            class="org.eclipse.uml2.diagram.clazz.sheet.UMLPropertySection">
-            <input type="org.eclipse.gmf.runtime.notation.View"/>
-            <input type="org.eclipse.gef.EditPart"/>
-            <input type="org.eclipse.uml2.diagram.clazz.navigator.UMLAbstractNavigatorItem"/>
-         </propertySection>
-      </propertySections>
-   </extension><extension point="org.eclipse.ui.preferencePages">
-      <?gmfgen generated="true"?>
-      <page
-            id="org.eclipse.uml2.uml.diagram.clazz.general"
-            name="%preference.page.title.org.eclipse.uml2.uml.diagram.clazz.general"
-            class="org.eclipse.uml2.diagram.clazz.preferences.DiagramGeneralPreferencePage">
-      </page>
-      <page
-            id="org.eclipse.uml2.uml.diagram.clazz.appearance"
-            name="%preference.page.title.org.eclipse.uml2.uml.diagram.clazz.appearance"
-            category="org.eclipse.uml2.uml.diagram.clazz.general"
-            class="org.eclipse.uml2.diagram.clazz.preferences.DiagramAppearancePreferencePage">
-      </page>
-      <page
-            id="org.eclipse.uml2.uml.diagram.clazz.connections"
-            name="%preference.page.title.org.eclipse.uml2.uml.diagram.clazz.connections"
-            category="org.eclipse.uml2.uml.diagram.clazz.general"
-            class="org.eclipse.uml2.diagram.clazz.preferences.DiagramConnectionsPreferencePage">
-      </page>
-      <page
-            id="org.eclipse.uml2.uml.diagram.clazz.printing"
-            name="%preference.page.title.org.eclipse.uml2.uml.diagram.clazz.printing"
-            category="org.eclipse.uml2.uml.diagram.clazz.general"
-            class="org.eclipse.uml2.diagram.clazz.preferences.DiagramPrintingPreferencePage">
-      </page>
-      <page
-            id="org.eclipse.uml2.uml.diagram.clazz.rulersAndGrid"
-            name="%preference.page.title.org.eclipse.uml2.uml.diagram.clazz.rulersAndGrid"
-            category="org.eclipse.uml2.uml.diagram.clazz.general"
-            class="org.eclipse.uml2.diagram.clazz.preferences.DiagramRulersAndGridPreferencePage">
-      </page>
-      <page
-            id="org.eclipse.uml2.uml.diagram.clazz.pathmaps"
-            name="%preference.page.title.org.eclipse.uml2.uml.diagram.clazz.pathmaps"
-            category="org.eclipse.uml2.uml.diagram.clazz.general"
-            class="org.eclipse.gmf.runtime.emf.ui.preferences.PathmapsPreferencePage">
-      </page>
-   </extension><extension point="org.eclipse.ui.popupMenus">
-      <?gmfgen generated="true"?>
-      <objectContribution
-            id="org.eclipse.uml2.diagram.clazz.InitDiagram"
-            nameFilter="*.uml"
-            objectClass="org.eclipse.core.resources.IFile">
-         <action
-               label="%initDiagramActionLabel"
-               class="org.eclipse.uml2.diagram.clazz.part.UMLInitDiagramFileAction"
-               menubarPath="additions"
-               enablesFor="1"
-               id="org.eclipse.uml2.diagram.clazz.InitDiagramAction">
-         </action>
-      </objectContribution>
-   </extension>
-<extension point="org.eclipse.core.expressions.propertyTesters">
-      <?gmfgen generated="true"?>
-       <propertyTester
-           id="org.eclipse.uml2.diagram.clazz.URIEditorInputPropertyTester"
-           type="org.eclipse.emf.common.ui.URIEditorInput"
-           namespace="org.eclipse.uml2.diagram.clazz"
-           properties="isURIEditorInput"
-           class="org.eclipse.uml2.diagram.clazz.part.UMLUriEditorInputTester">
-       </propertyTester>
-   </extension>
-<extension point="org.eclipse.core.expressions.propertyTesters">
-      <?gmfgen generated="true"?>
-       <propertyTester
-           id="org.eclipse.uml2.diagram.clazz.DomainModelElementPropertyTester"
-           type="org.eclipse.emf.ecore.EObject"
-           namespace="org.eclipse.uml2.diagram.clazz"
-           properties="isDomainModelElement"
-           class="org.eclipse.uml2.diagram.clazz.part.UMLDomainModelElementTester">
-       </propertyTester>
-   </extension><extension point="org.eclipse.ui.contexts">
-      <?gmfgen generated="true"?>
-      <context
-         description="%context.description"
-         id="org.eclipse.uml2.diagram.clazz.ui.diagramContext"
-         name="%context.name"
-         parentId="org.eclipse.gmf.runtime.diagram.ui.diagramContext">
-      </context>
-   </extension>
-<extension point="org.eclipse.ui.commands">
+   <extension point="org.eclipse.ui.commands">
       <?gmfgen generated="true"?>
       <command
          categoryId="org.eclipse.ui.category.edit"
@@ -1443,14 +1485,17 @@
          id="org.eclipse.uml2.diagram.clazz.updateDiagram"
          name="%update.diagram.name"/>
    </extension>
-<extension point="org.eclipse.ui.bindings">
+
+   <extension point="org.eclipse.ui.bindings">
       <?gmfgen generated="true"?>
       <key 
          commandId="org.eclipse.uml2.diagram.clazz.updateDiagram"
          contextId="org.eclipse.uml2.diagram.clazz.ui.diagramContext"
          schemeId="org.eclipse.ui.defaultAcceleratorConfiguration"
          sequence="F5"/>
-   </extension><extension point="org.eclipse.gmf.runtime.common.ui.services.action.contributionItemProviders">
+   </extension>
+   
+   <extension point="org.eclipse.gmf.runtime.common.ui.services.action.contributionItemProviders">
       <?gmfgen generated="true"?>
       <contributionItemProvider
             checkPluginLoaded="true"
@@ -1482,7 +1527,8 @@
 		 </popupContribution>
       </contributionItemProvider>
    </extension>
-<extension point="org.eclipse.gmf.runtime.common.ui.services.action.contributionItemProviders">
+   
+   <extension point="org.eclipse.gmf.runtime.common.ui.services.action.contributionItemProviders">
       <?gmfgen generated="true"?>
       <contributionItemProvider
             checkPluginLoaded="true"
@@ -1513,7 +1559,9 @@
              </popupStructuredContributionCriteria>
 		 </popupContribution>
       </contributionItemProvider>
-   </extension><extension point="org.eclipse.gmf.runtime.common.ui.services.action.contributionItemProviders">
+   </extension>
+   
+   <extension point="org.eclipse.gmf.runtime.common.ui.services.action.contributionItemProviders">
       <?gmfgen generated="true"?>
       <contributionItemProvider
             checkPluginLoaded="true"
@@ -1545,7 +1593,8 @@
 		 </popupContribution>
       </contributionItemProvider>
    </extension>
-<extension point="org.eclipse.gmf.runtime.common.ui.services.action.contributionItemProviders">
+	
+   <extension point="org.eclipse.gmf.runtime.common.ui.services.action.contributionItemProviders">
       <?gmfgen generated="true"?>
       <contributionItemProvider
             checkPluginLoaded="true"
@@ -1577,11 +1626,5 @@
 		 </popupContribution>
       </contributionItemProvider>
    </extension>
-
-
-
-
-
-
 
 </plugin>
