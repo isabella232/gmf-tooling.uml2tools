@@ -46,12 +46,5 @@ public class CustomMessages extends NLS {
 	public static String DiagramGeneralPreferencePage_show_oneway_navigability_option;
 	public static String DiagramGeneralPreferencePage_suppress_all_arrows_and_xs_option;
 	public static String ImplementationLevel_implementation_label;
-	public static String SetRectangleInterfaceNotation_collapse_to_circle_text;
-	public static String SetRectangleInterfaceNotation_collapse_to_circle_tooltip;
-	public static String SetRectangleInterfaceNotation_disabled_text;
-	public static String SetRectangleInterfaceNotation_disabled_tooltip;
-	public static String SetRectangleInterfaceNotation_show_as_class_text;
-	public static String SetRectangleInterfaceNotation_show_as_class_tooltip;
 	public static String UMLDetailLevel_none_detail_level;
-	public static String UMLDiagramEditorUtil_OpenModelResourceErrorDialogTitle;
 }
