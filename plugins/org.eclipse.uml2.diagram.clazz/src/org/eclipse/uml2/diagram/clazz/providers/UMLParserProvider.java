@@ -1474,7 +1474,16 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 	 * @generated NOT
 	 */
 	protected IParser createSlot_3017Parser() {
-		return new SemanticParserAdapter(new SlotParser(), new BasicApplyStrategy(), new SlotToString.VIEW(), new SlotToString.EDIT());
+		return new SemanticParserAdapter(new SlotParser(), new BasicApplyStrategy(), new SlotToString.VIEW(), new SlotToString.EDIT()) {
+			@Override
+			public String getPrintString(IAdaptable element, int flags) {
+				String result = super.getPrintString(element, flags);
+				if ("".equals(result)) {
+					result = "<enter>";
+				}
+				return result;
+			}
+		};
 	}
 
 	/**
