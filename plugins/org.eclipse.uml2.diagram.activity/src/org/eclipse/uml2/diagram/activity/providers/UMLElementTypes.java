@@ -427,7 +427,17 @@ public class UMLElementTypes extends ElementInitializers {
 	/**
 	 * @generated
 	 */
+	public static final IElementType ConditionalNode_3083 = getElementType("org.eclipse.uml2.diagram.activity.ConditionalNode_3083"); //$NON-NLS-1$
+
+	/**
+	 * @generated
+	 */
 	public static final IElementType LoopNode_3058 = getElementType("org.eclipse.uml2.diagram.activity.LoopNode_3058"); //$NON-NLS-1$
+
+	/**
+	 * @generated
+	 */
+	public static final IElementType ConditionalNode_3082 = getElementType("org.eclipse.uml2.diagram.activity.ConditionalNode_3082"); //$NON-NLS-1$
 
 	/**
 	 * @generated
@@ -727,7 +737,11 @@ public class UMLElementTypes extends ElementInitializers {
 
 			elements.put(LoopNode_3078, UMLPackage.eINSTANCE.getLoopNode());
 
+			elements.put(ConditionalNode_3083, UMLPackage.eINSTANCE.getConditionalNode());
+
 			elements.put(LoopNode_3058, UMLPackage.eINSTANCE.getLoopNode());
+
+			elements.put(ConditionalNode_3082, UMLPackage.eINSTANCE.getConditionalNode());
 
 			elements.put(LiteralString_3049, UMLPackage.eINSTANCE.getLiteralString());
 
@@ -837,7 +851,9 @@ public class UMLElementTypes extends ElementInitializers {
 			KNOWN_ELEMENT_TYPES.add(OutputPin_3081);
 			KNOWN_ELEMENT_TYPES.add(SendSignalAction_3077);
 			KNOWN_ELEMENT_TYPES.add(LoopNode_3078);
+			KNOWN_ELEMENT_TYPES.add(ConditionalNode_3083);
 			KNOWN_ELEMENT_TYPES.add(LoopNode_3058);
+			KNOWN_ELEMENT_TYPES.add(ConditionalNode_3082);
 			KNOWN_ELEMENT_TYPES.add(LiteralString_3049);
 			KNOWN_ELEMENT_TYPES.add(LiteralString_3051);
 			KNOWN_ELEMENT_TYPES.add(ControlFlow_4001);

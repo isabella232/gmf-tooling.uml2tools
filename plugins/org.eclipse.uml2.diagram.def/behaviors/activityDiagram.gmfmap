@@ -599,10 +599,10 @@
           <domainMetaElement
               href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//StructuredActivityNode"/>
           <domainSpecialization
-              body="not self.oclIsTypeOf(uml::LoopNode) and self.inPartition->isEmpty()"/>
+              body="not self.oclIsTypeOf(uml::LoopNode) and not self.oclIsTypeOf(uml::ConditionalNode) and self.inPartition->isEmpty()"/>
           <tool
               xsi:type="gmftool:CreationTool"
-              href="activityDiagram.gmftool#//@palette/@tools.3/@tools.1"/>
+              href="activityDiagram.gmftool#//@palette/@tools.3/@tools.2"/>
           <diagramNode
               href="activityDiagram_structured.gmfgraph#StructuredActivityNode"/>
           <children
@@ -1498,10 +1498,10 @@
               <domainMetaElement
                   href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//StructuredActivityNode"/>
               <domainSpecialization
-                  body="not self.oclIsTypeOf(uml::LoopNode) and self.inPartition->notEmpty()"/>
+                  body="not self.oclIsTypeOf(uml::LoopNode) and not self.oclIsTypeOf(uml::ConditionalNode) and self.inPartition->notEmpty()"/>
               <tool
                   xsi:type="gmftool:CreationTool"
-                  href="activityDiagram.gmftool#//@palette/@tools.3/@tools.1"/>
+                  href="activityDiagram.gmftool#//@palette/@tools.3/@tools.2"/>
               <diagramNode
                   href="activityDiagram_structured.gmfgraph#StructuredActivityNode"/>
               <children
@@ -1731,7 +1731,7 @@
                   body="self.inPartition->notEmpty()"/>
               <tool
                   xsi:type="gmftool:CreationTool"
-                  href="activityDiagram.gmftool#//@palette/@tools.3/@tools.0"/>
+                  href="activityDiagram.gmftool#//@palette/@tools.3/@tools.1"/>
               <diagramNode
                   href="activityDiagram_structured.gmfgraph#LoopNode"/>
               <children
@@ -1849,6 +1849,136 @@
               </compartments>
             </ownedChild>
           </children>
+          <children>
+            <containmentFeature
+                href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//Activity/node"/>
+            <childrenFeature
+                href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//ActivityPartition/node"/>
+            <ownedChild>
+              <domainMetaElement
+                  href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//ConditionalNode"/>
+              <domainSpecialization
+                  body="self.inPartition->notEmpty()"/>
+              <tool
+                  xsi:type="gmftool:CreationTool"
+                  href="activityDiagram.gmftool#//@palette/@tools.3/@tools.0"/>
+              <diagramNode
+                  href="activityDiagram_structured.gmfgraph#Conditional Node"/>
+              <children
+                  compartment="//@nodes.0/@ownedChild/@children.21/@ownedChild/@children.21/@ownedChild/@compartments.0"
+                  referencedChild="//@nodes.0/@ownedChild/@children.17/@ownedChild">
+                <containmentFeature
+                    href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//StructuredActivityNode/node"/>
+              </children>
+              <children
+                  compartment="//@nodes.0/@ownedChild/@children.21/@ownedChild/@children.21/@ownedChild/@compartments.0"
+                  referencedChild="//@nodes.0/@ownedChild/@children.8/@ownedChild">
+                <containmentFeature
+                    href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//StructuredActivityNode/node"/>
+              </children>
+              <children
+                  compartment="//@nodes.0/@ownedChild/@children.21/@ownedChild/@children.21/@ownedChild/@compartments.0"
+                  referencedChild="//@nodes.0/@ownedChild/@children.0/@ownedChild">
+                <containmentFeature
+                    href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//StructuredActivityNode/node"/>
+              </children>
+              <children
+                  compartment="//@nodes.0/@ownedChild/@children.21/@ownedChild/@children.21/@ownedChild/@compartments.0"
+                  referencedChild="//@nodes.0/@ownedChild/@children.1/@ownedChild">
+                <containmentFeature
+                    href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//StructuredActivityNode/node"/>
+              </children>
+              <children
+                  compartment="//@nodes.0/@ownedChild/@children.21/@ownedChild/@children.21/@ownedChild/@compartments.0"
+                  referencedChild="//@nodes.0/@ownedChild/@children.2/@ownedChild">
+                <containmentFeature
+                    href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//StructuredActivityNode/node"/>
+              </children>
+              <children
+                  compartment="//@nodes.0/@ownedChild/@children.21/@ownedChild/@children.21/@ownedChild/@compartments.0"
+                  referencedChild="//@nodes.0/@ownedChild/@children.3/@ownedChild">
+                <containmentFeature
+                    href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//StructuredActivityNode/node"/>
+              </children>
+              <children
+                  compartment="//@nodes.0/@ownedChild/@children.21/@ownedChild/@children.21/@ownedChild/@compartments.0"
+                  referencedChild="//@nodes.0/@ownedChild/@children.9/@ownedChild">
+                <containmentFeature
+                    href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//StructuredActivityNode/node"/>
+              </children>
+              <children
+                  compartment="//@nodes.0/@ownedChild/@children.21/@ownedChild/@children.21/@ownedChild/@compartments.0"
+                  referencedChild="//@nodes.0/@ownedChild/@children.12/@ownedChild">
+                <containmentFeature
+                    href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//StructuredActivityNode/node"/>
+              </children>
+              <children
+                  compartment="//@nodes.0/@ownedChild/@children.21/@ownedChild/@children.21/@ownedChild/@compartments.0"
+                  referencedChild="//@nodes.0/@ownedChild/@children.13/@ownedChild">
+                <containmentFeature
+                    href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//StructuredActivityNode/node"/>
+              </children>
+              <children
+                  compartment="//@nodes.0/@ownedChild/@children.21/@ownedChild/@children.21/@ownedChild/@compartments.0"
+                  referencedChild="//@nodes.0/@ownedChild/@children.15/@ownedChild">
+                <containmentFeature
+                    href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//StructuredActivityNode/node"/>
+              </children>
+              <children
+                  compartment="//@nodes.0/@ownedChild/@children.21/@ownedChild/@children.21/@ownedChild/@compartments.0"
+                  referencedChild="//@nodes.0/@ownedChild/@children.16/@ownedChild">
+                <containmentFeature
+                    href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//StructuredActivityNode/node"/>
+              </children>
+              <children
+                  compartment="//@nodes.0/@ownedChild/@children.21/@ownedChild/@children.21/@ownedChild/@compartments.0"
+                  referencedChild="//@nodes.0/@ownedChild/@children.10/@ownedChild">
+                <containmentFeature
+                    href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//StructuredActivityNode/node"/>
+              </children>
+              <children
+                  compartment="//@nodes.0/@ownedChild/@children.21/@ownedChild/@children.21/@ownedChild/@compartments.0"
+                  referencedChild="//@nodes.0/@ownedChild/@children.11/@ownedChild">
+                <containmentFeature
+                    href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//StructuredActivityNode/node"/>
+              </children>
+              <children
+                  compartment="//@nodes.0/@ownedChild/@children.21/@ownedChild/@children.21/@ownedChild/@compartments.0"
+                  referencedChild="//@nodes.0/@ownedChild/@children.14/@ownedChild">
+                <containmentFeature
+                    href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//StructuredActivityNode/node"/>
+              </children>
+              <children
+                  compartment="//@nodes.0/@ownedChild/@children.21/@ownedChild/@children.21/@ownedChild/@compartments.0"
+                  referencedChild="//@nodes.0/@ownedChild/@children.6/@ownedChild">
+                <containmentFeature
+                    href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//StructuredActivityNode/node"/>
+              </children>
+              <children
+                  compartment="//@nodes.0/@ownedChild/@children.21/@ownedChild/@children.21/@ownedChild/@compartments.0"
+                  referencedChild="//@nodes.0/@ownedChild/@children.7/@ownedChild">
+                <containmentFeature
+                    href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//StructuredActivityNode/node"/>
+              </children>
+              <children
+                  compartment="//@nodes.0/@ownedChild/@children.21/@ownedChild/@children.21/@ownedChild/@compartments.0"
+                  referencedChild="//@nodes.0/@ownedChild/@children.17/@ownedChild/@children.16/@ownedChild">
+                <containmentFeature
+                    href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//StructuredActivityNode/node"/>
+              </children>
+              <children
+                  compartment="//@nodes.0/@ownedChild/@children.21/@ownedChild/@children.21/@ownedChild/@compartments.0"
+                  referencedChild="//@nodes.0/@ownedChild/@children.17/@ownedChild/@children.17/@ownedChild">
+                <containmentFeature
+                    href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//StructuredActivityNode/node"/>
+              </children>
+              <compartments
+                  children="//@nodes.0/@ownedChild/@children.21/@ownedChild/@children.21/@ownedChild/@children.0 //@nodes.0/@ownedChild/@children.21/@ownedChild/@children.21/@ownedChild/@children.1 //@nodes.0/@ownedChild/@children.21/@ownedChild/@children.21/@ownedChild/@children.2 //@nodes.0/@ownedChild/@children.21/@ownedChild/@children.21/@ownedChild/@children.3 //@nodes.0/@ownedChild/@children.21/@ownedChild/@children.21/@ownedChild/@children.4 //@nodes.0/@ownedChild/@children.21/@ownedChild/@children.21/@ownedChild/@children.5 //@nodes.0/@ownedChild/@children.21/@ownedChild/@children.21/@ownedChild/@children.6 //@nodes.0/@ownedChild/@children.21/@ownedChild/@children.21/@ownedChild/@children.7 //@nodes.0/@ownedChild/@children.21/@ownedChild/@children.21/@ownedChild/@children.8 //@nodes.0/@ownedChild/@children.21/@ownedChild/@children.21/@ownedChild/@children.9 //@nodes.0/@ownedChild/@children.21/@ownedChild/@children.21/@ownedChild/@children.10 //@nodes.0/@ownedChild/@children.21/@ownedChild/@children.21/@ownedChild/@children.11 //@nodes.0/@ownedChild/@children.21/@ownedChild/@children.21/@ownedChild/@children.12 //@nodes.0/@ownedChild/@children.21/@ownedChild/@children.21/@ownedChild/@children.13 //@nodes.0/@ownedChild/@children.21/@ownedChild/@children.21/@ownedChild/@children.14 //@nodes.0/@ownedChild/@children.21/@ownedChild/@children.21/@ownedChild/@children.15 //@nodes.0/@ownedChild/@children.21/@ownedChild/@children.21/@ownedChild/@children.16 //@nodes.0/@ownedChild/@children.21/@ownedChild/@children.21/@ownedChild/@children.17">
+                <compartment
+                    href="activityDiagram_structured.gmfgraph#ConditionalNodeCompartment"/>
+              </compartments>
+            </ownedChild>
+          </children>
         </ownedChild>
       </children>
       <children>
@@ -1861,7 +1991,7 @@
               body="self.inPartition->isEmpty()"/>
           <tool
               xsi:type="gmftool:CreationTool"
-              href="activityDiagram.gmftool#//@palette/@tools.3/@tools.0"/>
+              href="activityDiagram.gmftool#//@palette/@tools.3/@tools.1"/>
           <diagramNode
               href="activityDiagram_structured.gmfgraph#LoopNode"/>
           <children
@@ -1976,6 +2106,134 @@
               children="//@nodes.0/@ownedChild/@children.22/@ownedChild/@children.0 //@nodes.0/@ownedChild/@children.22/@ownedChild/@children.1 //@nodes.0/@ownedChild/@children.22/@ownedChild/@children.2 //@nodes.0/@ownedChild/@children.22/@ownedChild/@children.3 //@nodes.0/@ownedChild/@children.22/@ownedChild/@children.4 //@nodes.0/@ownedChild/@children.22/@ownedChild/@children.5 //@nodes.0/@ownedChild/@children.22/@ownedChild/@children.6 //@nodes.0/@ownedChild/@children.22/@ownedChild/@children.7 //@nodes.0/@ownedChild/@children.22/@ownedChild/@children.8 //@nodes.0/@ownedChild/@children.22/@ownedChild/@children.9 //@nodes.0/@ownedChild/@children.22/@ownedChild/@children.10 //@nodes.0/@ownedChild/@children.22/@ownedChild/@children.11 //@nodes.0/@ownedChild/@children.22/@ownedChild/@children.12 //@nodes.0/@ownedChild/@children.22/@ownedChild/@children.13 //@nodes.0/@ownedChild/@children.22/@ownedChild/@children.14 //@nodes.0/@ownedChild/@children.22/@ownedChild/@children.15 //@nodes.0/@ownedChild/@children.22/@ownedChild/@children.16 //@nodes.0/@ownedChild/@children.22/@ownedChild/@children.17">
             <compartment
                 href="activityDiagram_structured.gmfgraph#LoopNodeContentPaneCompartment"/>
+          </compartments>
+        </ownedChild>
+      </children>
+      <children>
+        <containmentFeature
+            href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//Activity/group"/>
+        <ownedChild>
+          <domainMetaElement
+              href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//ConditionalNode"/>
+          <domainSpecialization
+              body="self.inPartition->isEmpty()"/>
+          <tool
+              xsi:type="gmftool:CreationTool"
+              href="activityDiagram.gmftool#//@palette/@tools.3/@tools.0"/>
+          <diagramNode
+              href="activityDiagram_structured.gmfgraph#Conditional Node"/>
+          <children
+              compartment="//@nodes.0/@ownedChild/@children.23/@ownedChild/@compartments.0"
+              referencedChild="//@nodes.0/@ownedChild/@children.17/@ownedChild">
+            <containmentFeature
+                href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//StructuredActivityNode/node"/>
+          </children>
+          <children
+              compartment="//@nodes.0/@ownedChild/@children.23/@ownedChild/@compartments.0"
+              referencedChild="//@nodes.0/@ownedChild/@children.8/@ownedChild">
+            <containmentFeature
+                href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//StructuredActivityNode/node"/>
+          </children>
+          <children
+              compartment="//@nodes.0/@ownedChild/@children.23/@ownedChild/@compartments.0"
+              referencedChild="//@nodes.0/@ownedChild/@children.0/@ownedChild">
+            <containmentFeature
+                href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//StructuredActivityNode/node"/>
+          </children>
+          <children
+              compartment="//@nodes.0/@ownedChild/@children.23/@ownedChild/@compartments.0"
+              referencedChild="//@nodes.0/@ownedChild/@children.1/@ownedChild">
+            <containmentFeature
+                href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//StructuredActivityNode/node"/>
+          </children>
+          <children
+              compartment="//@nodes.0/@ownedChild/@children.23/@ownedChild/@compartments.0"
+              referencedChild="//@nodes.0/@ownedChild/@children.2/@ownedChild">
+            <containmentFeature
+                href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//StructuredActivityNode/node"/>
+          </children>
+          <children
+              compartment="//@nodes.0/@ownedChild/@children.23/@ownedChild/@compartments.0"
+              referencedChild="//@nodes.0/@ownedChild/@children.3/@ownedChild">
+            <containmentFeature
+                href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//StructuredActivityNode/node"/>
+          </children>
+          <children
+              compartment="//@nodes.0/@ownedChild/@children.23/@ownedChild/@compartments.0"
+              referencedChild="//@nodes.0/@ownedChild/@children.9/@ownedChild">
+            <containmentFeature
+                href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//StructuredActivityNode/node"/>
+          </children>
+          <children
+              compartment="//@nodes.0/@ownedChild/@children.23/@ownedChild/@compartments.0"
+              referencedChild="//@nodes.0/@ownedChild/@children.12/@ownedChild">
+            <containmentFeature
+                href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//StructuredActivityNode/node"/>
+          </children>
+          <children
+              compartment="//@nodes.0/@ownedChild/@children.23/@ownedChild/@compartments.0"
+              referencedChild="//@nodes.0/@ownedChild/@children.13/@ownedChild">
+            <containmentFeature
+                href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//StructuredActivityNode/node"/>
+          </children>
+          <children
+              compartment="//@nodes.0/@ownedChild/@children.23/@ownedChild/@compartments.0"
+              referencedChild="//@nodes.0/@ownedChild/@children.15/@ownedChild">
+            <containmentFeature
+                href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//StructuredActivityNode/node"/>
+          </children>
+          <children
+              compartment="//@nodes.0/@ownedChild/@children.23/@ownedChild/@compartments.0"
+              referencedChild="//@nodes.0/@ownedChild/@children.16/@ownedChild">
+            <containmentFeature
+                href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//StructuredActivityNode/node"/>
+          </children>
+          <children
+              compartment="//@nodes.0/@ownedChild/@children.23/@ownedChild/@compartments.0"
+              referencedChild="//@nodes.0/@ownedChild/@children.10/@ownedChild">
+            <containmentFeature
+                href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//StructuredActivityNode/node"/>
+          </children>
+          <children
+              compartment="//@nodes.0/@ownedChild/@children.23/@ownedChild/@compartments.0"
+              referencedChild="//@nodes.0/@ownedChild/@children.11/@ownedChild">
+            <containmentFeature
+                href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//StructuredActivityNode/node"/>
+          </children>
+          <children
+              compartment="//@nodes.0/@ownedChild/@children.23/@ownedChild/@compartments.0"
+              referencedChild="//@nodes.0/@ownedChild/@children.14/@ownedChild">
+            <containmentFeature
+                href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//StructuredActivityNode/node"/>
+          </children>
+          <children
+              compartment="//@nodes.0/@ownedChild/@children.23/@ownedChild/@compartments.0"
+              referencedChild="//@nodes.0/@ownedChild/@children.6/@ownedChild">
+            <containmentFeature
+                href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//StructuredActivityNode/node"/>
+          </children>
+          <children
+              compartment="//@nodes.0/@ownedChild/@children.23/@ownedChild/@compartments.0"
+              referencedChild="//@nodes.0/@ownedChild/@children.7/@ownedChild">
+            <containmentFeature
+                href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//StructuredActivityNode/node"/>
+          </children>
+          <children
+              compartment="//@nodes.0/@ownedChild/@children.23/@ownedChild/@compartments.0"
+              referencedChild="//@nodes.0/@ownedChild/@children.17/@ownedChild/@children.16/@ownedChild">
+            <containmentFeature
+                href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//StructuredActivityNode/node"/>
+          </children>
+          <children
+              compartment="//@nodes.0/@ownedChild/@children.23/@ownedChild/@compartments.0"
+              referencedChild="//@nodes.0/@ownedChild/@children.17/@ownedChild/@children.17/@ownedChild">
+            <containmentFeature
+                href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//StructuredActivityNode/node"/>
+          </children>
+          <compartments
+              children="//@nodes.0/@ownedChild/@children.23/@ownedChild/@children.0 //@nodes.0/@ownedChild/@children.23/@ownedChild/@children.1 //@nodes.0/@ownedChild/@children.23/@ownedChild/@children.2 //@nodes.0/@ownedChild/@children.23/@ownedChild/@children.3 //@nodes.0/@ownedChild/@children.23/@ownedChild/@children.4 //@nodes.0/@ownedChild/@children.23/@ownedChild/@children.5 //@nodes.0/@ownedChild/@children.23/@ownedChild/@children.6 //@nodes.0/@ownedChild/@children.23/@ownedChild/@children.7 //@nodes.0/@ownedChild/@children.23/@ownedChild/@children.8 //@nodes.0/@ownedChild/@children.23/@ownedChild/@children.9 //@nodes.0/@ownedChild/@children.23/@ownedChild/@children.10 //@nodes.0/@ownedChild/@children.23/@ownedChild/@children.11 //@nodes.0/@ownedChild/@children.23/@ownedChild/@children.12 //@nodes.0/@ownedChild/@children.23/@ownedChild/@children.13 //@nodes.0/@ownedChild/@children.23/@ownedChild/@children.14 //@nodes.0/@ownedChild/@children.23/@ownedChild/@children.15 //@nodes.0/@ownedChild/@children.23/@ownedChild/@children.16 //@nodes.0/@ownedChild/@children.23/@ownedChild/@children.17">
+            <compartment
+                href="activityDiagram_structured.gmfgraph#ConditionalNodeCompartment"/>
           </compartments>
         </ownedChild>
       </children>

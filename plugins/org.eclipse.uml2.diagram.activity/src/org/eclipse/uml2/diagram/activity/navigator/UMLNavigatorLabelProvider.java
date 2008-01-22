@@ -121,6 +121,7 @@ import org.eclipse.uml2.diagram.activity.part.UMLVisualIDRegistry;
 import org.eclipse.uml2.diagram.activity.providers.UMLElementTypes;
 import org.eclipse.uml2.diagram.activity.providers.UMLParserProvider;
 import org.eclipse.uml2.uml.ActivityFinalNode;
+import org.eclipse.uml2.uml.ConditionalNode;
 import org.eclipse.uml2.uml.Constraint;
 import org.eclipse.uml2.uml.DecisionNode;
 import org.eclipse.uml2.uml.FlowFinalNode;
@@ -336,8 +337,12 @@ public class UMLNavigatorLabelProvider extends LabelProvider implements ICommonL
 			return getImage("Navigator?Node?http://www.eclipse.org/uml2/2.1.0/UML?SendSignalAction", UMLElementTypes.SendSignalAction_3077); //$NON-NLS-1$
 		case LoopNode2EditPart.VISUAL_ID:
 			return getImage("Navigator?Node?http://www.eclipse.org/uml2/2.1.0/UML?LoopNode", UMLElementTypes.LoopNode_3078); //$NON-NLS-1$
+		case ConditionalNode2EditPart.VISUAL_ID:
+			return getImage("Navigator?Node?http://www.eclipse.org/uml2/2.1.0/UML?ConditionalNode", UMLElementTypes.ConditionalNode_3083); //$NON-NLS-1$
 		case LoopNodeEditPart.VISUAL_ID:
 			return getImage("Navigator?Node?http://www.eclipse.org/uml2/2.1.0/UML?LoopNode", UMLElementTypes.LoopNode_3058); //$NON-NLS-1$
+		case ConditionalNodeEditPart.VISUAL_ID:
+			return getImage("Navigator?Node?http://www.eclipse.org/uml2/2.1.0/UML?ConditionalNode", UMLElementTypes.ConditionalNode_3082); //$NON-NLS-1$
 		case LiteralStringEditPart.VISUAL_ID:
 			return getImage("Navigator?Node?http://www.eclipse.org/uml2/2.1.0/UML?LiteralString", UMLElementTypes.LiteralString_3049); //$NON-NLS-1$
 		case LiteralString2EditPart.VISUAL_ID:
@@ -556,8 +561,12 @@ public class UMLNavigatorLabelProvider extends LabelProvider implements ICommonL
 			return getSendSignalAction_3077Text(view);
 		case LoopNode2EditPart.VISUAL_ID:
 			return getLoopNode_3078Text(view);
+		case ConditionalNode2EditPart.VISUAL_ID:
+			return getConditionalNode_3083Text(view);
 		case LoopNodeEditPart.VISUAL_ID:
 			return getLoopNode_3058Text(view);
+		case ConditionalNodeEditPart.VISUAL_ID:
+			return getConditionalNode_3082Text(view);
 		case LiteralStringEditPart.VISUAL_ID:
 			return getLiteralString_3049Text(view);
 		case LiteralString2EditPart.VISUAL_ID:
@@ -1765,12 +1774,38 @@ public class UMLNavigatorLabelProvider extends LabelProvider implements ICommonL
 	/**
 	 * @generated
 	 */
+	private String getConditionalNode_3083Text(View view) {
+		ConditionalNode domainModelElement = (ConditionalNode) view.getElement();
+		if (domainModelElement != null) {
+			return String.valueOf(domainModelElement.getName());
+		} else {
+			UMLDiagramEditorPlugin.getInstance().logError("No domain element for view with visualID = " + 3083); //$NON-NLS-1$
+			return ""; //$NON-NLS-1$
+		}
+	}
+
+	/**
+	 * @generated
+	 */
 	private String getLoopNode_3058Text(View view) {
 		LoopNode domainModelElement = (LoopNode) view.getElement();
 		if (domainModelElement != null) {
 			return String.valueOf(domainModelElement.getName());
 		} else {
 			UMLDiagramEditorPlugin.getInstance().logError("No domain element for view with visualID = " + 3058); //$NON-NLS-1$
+			return ""; //$NON-NLS-1$
+		}
+	}
+
+	/**
+	 * @generated
+	 */
+	private String getConditionalNode_3082Text(View view) {
+		ConditionalNode domainModelElement = (ConditionalNode) view.getElement();
+		if (domainModelElement != null) {
+			return String.valueOf(domainModelElement.getName());
+		} else {
+			UMLDiagramEditorPlugin.getInstance().logError("No domain element for view with visualID = " + 3082); //$NON-NLS-1$
 			return ""; //$NON-NLS-1$
 		}
 	}

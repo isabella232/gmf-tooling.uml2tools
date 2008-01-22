@@ -55,12 +55,19 @@
   <nodes
       name="LoopNode"
       figure="StructuredActivityFigure"/>
+  <nodes
+      name="Conditional Node"
+      figure="StructuredActivityFigure"/>
   <compartments
       name="StructuredActivityContentPaneCompartment"
       figure="StructuredActivityFigure"
       accessor="//@figures.0/@descriptors.0/@accessors.0"/>
   <compartments
       name="LoopNodeContentPaneCompartment"
+      figure="StructuredActivityFigure"
+      accessor="//@figures.0/@descriptors.0/@accessors.0"/>
+  <compartments
+      name="ConditionalNodeCompartment"
       figure="StructuredActivityFigure"
       accessor="//@figures.0/@descriptors.0/@accessors.0"/>
 </gmfgraph:Canvas>

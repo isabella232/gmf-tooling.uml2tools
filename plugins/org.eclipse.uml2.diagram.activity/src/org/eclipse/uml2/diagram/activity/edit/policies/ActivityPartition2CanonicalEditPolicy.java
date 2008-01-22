@@ -17,6 +17,7 @@ import org.eclipse.uml2.diagram.activity.edit.parts.AddStructuralFeatureValueAct
 import org.eclipse.uml2.diagram.activity.edit.parts.CallBehaviorAction3EditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.CallOperationAction3EditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.CentralBufferNode3EditPart;
+import org.eclipse.uml2.diagram.activity.edit.parts.ConditionalNode2EditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.CreateObjectAction3EditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.DataStoreNode3EditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.DecisionNode3EditPart;
@@ -84,6 +85,7 @@ public class ActivityPartition2CanonicalEditPolicy extends CanonicalEditPolicy {
 		case StructuredActivityNode3EditPart.VISUAL_ID:
 		case SendSignalAction2EditPart.VISUAL_ID:
 		case LoopNode2EditPart.VISUAL_ID:
+		case ConditionalNode2EditPart.VISUAL_ID:
 			return !semanticChildren.contains(view.getElement()) || visualID != UMLVisualIDRegistry.getNodeVisualID((View) getHost().getModel(), view.getElement());
 		}
 		return false;

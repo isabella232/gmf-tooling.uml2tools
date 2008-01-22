@@ -473,22 +473,32 @@ public class Messages extends NLS {
 	/**
 	 * @generated
 	 */
-	public static String LoopNode1CreationTool_title;
+	public static String ConditionalNode1CreationTool_title;
 
 	/**
 	 * @generated
 	 */
-	public static String LoopNode1CreationTool_desc;
+	public static String ConditionalNode1CreationTool_desc;
 
 	/**
 	 * @generated
 	 */
-	public static String StructuredActivityNode2CreationTool_title;
+	public static String LoopNode2CreationTool_title;
 
 	/**
 	 * @generated
 	 */
-	public static String StructuredActivityNode2CreationTool_desc;
+	public static String LoopNode2CreationTool_desc;
+
+	/**
+	 * @generated
+	 */
+	public static String StructuredActivityNode3CreationTool_title;
+
+	/**
+	 * @generated
+	 */
+	public static String StructuredActivityNode3CreationTool_desc;
 
 	/**
 	 * @generated
@@ -663,7 +673,17 @@ public class Messages extends NLS {
 	/**
 	 * @generated
 	 */
+	public static String ConditionalNodeConditionalNodeCompartment2EditPart_title;
+
+	/**
+	 * @generated
+	 */
 	public static String LoopNodeLoopNodeContentPaneCompartmentEditPart_title;
+
+	/**
+	 * @generated
+	 */
+	public static String ConditionalNodeConditionalNodeCompartmentEditPart_title;
 
 	/**
 	 * @generated
@@ -1398,12 +1418,32 @@ public class Messages extends NLS {
 	/**
 	 * @generated
 	 */
+	public static String NavigatorGroupName_ConditionalNode_3083_incominglinks;
+
+	/**
+	 * @generated
+	 */
+	public static String NavigatorGroupName_ConditionalNode_3083_outgoinglinks;
+
+	/**
+	 * @generated
+	 */
 	public static String NavigatorGroupName_LoopNode_3058_incominglinks;
 
 	/**
 	 * @generated
 	 */
 	public static String NavigatorGroupName_LoopNode_3058_outgoinglinks;
+
+	/**
+	 * @generated
+	 */
+	public static String NavigatorGroupName_ConditionalNode_3082_incominglinks;
+
+	/**
+	 * @generated
+	 */
+	public static String NavigatorGroupName_ConditionalNode_3082_outgoinglinks;
 
 	/**
 	 * @generated

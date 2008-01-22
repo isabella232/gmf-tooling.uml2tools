@@ -32,6 +32,8 @@ import org.eclipse.uml2.diagram.activity.edit.parts.CallBehaviorActionEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.CallOperationAction2EditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.CallOperationAction3EditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.CallOperationActionEditPart;
+import org.eclipse.uml2.diagram.activity.edit.parts.ConditionalNodeConditionalNodeCompartment2EditPart;
+import org.eclipse.uml2.diagram.activity.edit.parts.ConditionalNodeConditionalNodeCompartmentEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.Constraint2EditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.ConstraintEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.CreateObjectAction2EditPart;
@@ -85,6 +87,7 @@ public class UMLModelingAssistantProvider extends ModelingAssistantProvider {
 			types.add(UMLElementTypes.SendSignalAction_3053);
 			types.add(UMLElementTypes.ActivityPartition_3056);
 			types.add(UMLElementTypes.LoopNode_3058);
+			types.add(UMLElementTypes.ConditionalNode_3082);
 			return types;
 		}
 		if (editPart instanceof ConstraintEditPart) {
@@ -180,6 +183,7 @@ public class UMLModelingAssistantProvider extends ModelingAssistantProvider {
 			types.add(UMLElementTypes.StructuredActivityNode_3076);
 			types.add(UMLElementTypes.SendSignalAction_3077);
 			types.add(UMLElementTypes.LoopNode_3078);
+			types.add(UMLElementTypes.ConditionalNode_3083);
 			return types;
 		}
 		if (editPart instanceof ActivityPartition2EditPart) {
@@ -205,6 +209,7 @@ public class UMLModelingAssistantProvider extends ModelingAssistantProvider {
 			types.add(UMLElementTypes.StructuredActivityNode_3076);
 			types.add(UMLElementTypes.SendSignalAction_3077);
 			types.add(UMLElementTypes.LoopNode_3078);
+			types.add(UMLElementTypes.ConditionalNode_3083);
 			return types;
 		}
 		if (editPart instanceof OpaqueAction3EditPart) {
@@ -347,7 +352,51 @@ public class UMLModelingAssistantProvider extends ModelingAssistantProvider {
 			types.add(UMLElementTypes.OutputPin_3055);
 			return types;
 		}
+		if (editPart instanceof ConditionalNodeConditionalNodeCompartment2EditPart) {
+			List types = new ArrayList();
+			types.add(UMLElementTypes.StructuredActivityNode_3009);
+			types.add(UMLElementTypes.OpaqueAction_3011);
+			types.add(UMLElementTypes.AcceptEventAction_3012);
+			types.add(UMLElementTypes.AcceptEventAction_3013);
+			types.add(UMLElementTypes.ActivityFinalNode_3014);
+			types.add(UMLElementTypes.DecisionNode_3015);
+			types.add(UMLElementTypes.FlowFinalNode_3016);
+			types.add(UMLElementTypes.Pin_3017);
+			types.add(UMLElementTypes.CreateObjectAction_3018);
+			types.add(UMLElementTypes.CallBehaviorAction_3019);
+			types.add(UMLElementTypes.CallOperationAction_3020);
+			types.add(UMLElementTypes.ForkNode_3021);
+			types.add(UMLElementTypes.JoinNode_3022);
+			types.add(UMLElementTypes.AddStructuralFeatureValueAction_3023);
+			types.add(UMLElementTypes.DataStoreNode_3024);
+			types.add(UMLElementTypes.CentralBufferNode_3025);
+			types.add(UMLElementTypes.InputPin_3054);
+			types.add(UMLElementTypes.OutputPin_3055);
+			return types;
+		}
 		if (editPart instanceof LoopNodeLoopNodeContentPaneCompartmentEditPart) {
+			List types = new ArrayList();
+			types.add(UMLElementTypes.StructuredActivityNode_3009);
+			types.add(UMLElementTypes.OpaqueAction_3011);
+			types.add(UMLElementTypes.AcceptEventAction_3012);
+			types.add(UMLElementTypes.AcceptEventAction_3013);
+			types.add(UMLElementTypes.ActivityFinalNode_3014);
+			types.add(UMLElementTypes.DecisionNode_3015);
+			types.add(UMLElementTypes.FlowFinalNode_3016);
+			types.add(UMLElementTypes.Pin_3017);
+			types.add(UMLElementTypes.CreateObjectAction_3018);
+			types.add(UMLElementTypes.CallBehaviorAction_3019);
+			types.add(UMLElementTypes.CallOperationAction_3020);
+			types.add(UMLElementTypes.ForkNode_3021);
+			types.add(UMLElementTypes.JoinNode_3022);
+			types.add(UMLElementTypes.AddStructuralFeatureValueAction_3023);
+			types.add(UMLElementTypes.DataStoreNode_3024);
+			types.add(UMLElementTypes.CentralBufferNode_3025);
+			types.add(UMLElementTypes.InputPin_3054);
+			types.add(UMLElementTypes.OutputPin_3055);
+			return types;
+		}
+		if (editPart instanceof ConditionalNodeConditionalNodeCompartmentEditPart) {
 			List types = new ArrayList();
 			types.add(UMLElementTypes.StructuredActivityNode_3009);
 			types.add(UMLElementTypes.OpaqueAction_3011);

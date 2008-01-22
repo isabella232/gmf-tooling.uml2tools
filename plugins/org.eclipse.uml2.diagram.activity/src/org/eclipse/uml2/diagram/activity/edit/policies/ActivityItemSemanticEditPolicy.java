@@ -21,6 +21,7 @@ import org.eclipse.uml2.diagram.activity.edit.commands.AddStructuralFeatureValue
 import org.eclipse.uml2.diagram.activity.edit.commands.CallBehaviorActionCreateCommand;
 import org.eclipse.uml2.diagram.activity.edit.commands.CallOperationActionCreateCommand;
 import org.eclipse.uml2.diagram.activity.edit.commands.CentralBufferNodeCreateCommand;
+import org.eclipse.uml2.diagram.activity.edit.commands.ConditionalNodeCreateCommand;
 import org.eclipse.uml2.diagram.activity.edit.commands.CreateObjectActionCreateCommand;
 import org.eclipse.uml2.diagram.activity.edit.commands.DataStoreNodeCreateCommand;
 import org.eclipse.uml2.diagram.activity.edit.commands.DecisionNodeCreateCommand;
@@ -46,6 +47,7 @@ import org.eclipse.uml2.diagram.activity.edit.parts.AddStructuralFeatureValueAct
 import org.eclipse.uml2.diagram.activity.edit.parts.CallBehaviorActionEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.CallOperationActionEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.CentralBufferNodeEditPart;
+import org.eclipse.uml2.diagram.activity.edit.parts.ConditionalNodeEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.CreateObjectActionEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.DataStoreNodeEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.DecisionNodeEditPart;
@@ -212,6 +214,12 @@ public class ActivityItemSemanticEditPolicy extends UMLBaseItemSemanticEditPolic
 			}
 			return getGEFWrapper(new LoopNodeCreateCommand(req));
 		}
+		if (UMLElementTypes.ConditionalNode_3082 == req.getElementType()) {
+			if (req.getContainmentFeature() == null) {
+				req.setContainmentFeature(UMLPackage.eINSTANCE.getActivity_Group());
+			}
+			return getGEFWrapper(new ConditionalNodeCreateCommand(req));
+		}
 		return super.getCreateCommand(req);
 	}
 
@@ -309,6 +317,9 @@ public class ActivityItemSemanticEditPolicy extends UMLBaseItemSemanticEditPolic
 				cmd.add(getDestroyElementCommand(node));
 				break;
 			case LoopNodeEditPart.VISUAL_ID:
+				cmd.add(getDestroyElementCommand(node));
+				break;
+			case ConditionalNodeEditPart.VISUAL_ID:
 				cmd.add(getDestroyElementCommand(node));
 				break;
 			}
