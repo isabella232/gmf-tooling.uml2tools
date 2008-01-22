@@ -35,8 +35,7 @@
             vertical="true"
             matchMinorSize="true"
             forceSingleLine="true"
-            majorAlignment="FILL"
-            minorAlignment="FILL"
+            minorAlignment="CENTER"
             majorSpacing="0"
             minorSpacing="0"/>
         <border
@@ -44,6 +43,7 @@
           <insets
               top="1"
               left="1"
+              bottom="1"
               right="1"/>
         </border>
         <children
@@ -51,7 +51,12 @@
             name="InstanceNode_NameContainerFigure"
             outline="false">
           <layout
-              xsi:type="gmfgraph:StackLayout"/>
+              xsi:type="gmfgraph:FlowLayout"
+              vertical="true"
+              matchMinorSize="true"
+              forceSingleLine="true"
+              majorSpacing="0"
+              minorSpacing="0"/>
           <border
               xsi:type="gmfgraph:CustomBorder"
               qualifiedClassName="org.eclipse.gmf.runtime.draw2d.ui.figures.OneLineBorder">
@@ -69,26 +74,13 @@
         </children>
         <children
             xsi:type="gmfgraph:Rectangle"
-            name="InstanceSpecification_SpecificationContainerFigure"
-            outline="false">
-          <layout
-              xsi:type="gmfgraph:CustomLayout"
-              qualifiedClassName="org.eclipse.uml2.diagram.common.draw2d.CenterLayout"/>
-          <children
-              xsi:type="gmfgraph:Label"
-              name="InstanceNode_SpecificationLabel"/>
-        </children>
-        <children
-            xsi:type="gmfgraph:Rectangle"
             name="InstanceNode_SlotsCompartmentFigure"
             outline="false"/>
       </actualFigure>
       <accessors
           figure="//@figures.0/@descriptors.0/@actualFigure/@children.0/@children.0"/>
       <accessors
-          figure="//@figures.0/@descriptors.0/@actualFigure/@children.1/@children.0"/>
-      <accessors
-          figure="//@figures.0/@descriptors.0/@actualFigure/@children.2"/>
+          figure="//@figures.0/@descriptors.0/@actualFigure/@children.1"/>
     </descriptors>
     <descriptors
         name="Slot_InplaceLabel">
@@ -101,20 +93,16 @@
       name="InstanceNode"
       figure="InstanceNodeFigure"/>
   <compartments
-      name="Slots"
+      name="slots"
       figure="InstanceNodeFigure"
       needsTitle="true"
-      accessor="//@figures.0/@descriptors.0/@accessors.2"/>
+      accessor="//@figures.0/@descriptors.0/@accessors.1"/>
   <labels
       name="InstanceNode_name"
       figure="InstanceNodeFigure"
       accessor="//@figures.0/@descriptors.0/@accessors.0"/>
   <labels
       name="Slot_inplace"
-      figure="Slot_InplaceLabel"/>
-  <labels
-      name="InstanceNode_specification"
-      figure="InstanceNodeFigure"
-      elementIcon="false"
-      accessor="//@figures.0/@descriptors.0/@accessors.1"/>
+      figure="Slot_InplaceLabel"
+      elementIcon="false"/>
 </gmfgraph:Canvas>

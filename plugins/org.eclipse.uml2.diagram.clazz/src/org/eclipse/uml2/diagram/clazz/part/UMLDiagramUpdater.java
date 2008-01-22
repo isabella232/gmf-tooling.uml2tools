@@ -2077,14 +2077,20 @@ public class UMLDiagramUpdater {
 	 * @generated
 	 */
 	public static List getProperty_3001ContainedLinks(View view) {
-		return Collections.EMPTY_LIST;
+		Property modelElement = (Property) view.getElement();
+		List result = new LinkedList();
+		result.addAll(getContainedTypeModelFacetLinks_TemplateBinding_4016(modelElement));
+		return result;
 	}
 
 	/**
 	 * @generated
 	 */
 	public static List getOperation_3002ContainedLinks(View view) {
-		return Collections.EMPTY_LIST;
+		Operation modelElement = (Operation) view.getElement();
+		List result = new LinkedList();
+		result.addAll(getContainedTypeModelFacetLinks_TemplateBinding_4016(modelElement));
+		return result;
 	}
 
 	/**
@@ -2104,7 +2110,10 @@ public class UMLDiagramUpdater {
 	 * @generated
 	 */
 	public static List getPort_3025ContainedLinks(View view) {
-		return Collections.EMPTY_LIST;
+		Port modelElement = (Port) view.getElement();
+		List result = new LinkedList();
+		result.addAll(getContainedTypeModelFacetLinks_TemplateBinding_4016(modelElement));
+		return result;
 	}
 
 	/**
@@ -2118,7 +2127,10 @@ public class UMLDiagramUpdater {
 	 * @generated
 	 */
 	public static List getProperty_3019ContainedLinks(View view) {
-		return Collections.EMPTY_LIST;
+		Property modelElement = (Property) view.getElement();
+		List result = new LinkedList();
+		result.addAll(getContainedTypeModelFacetLinks_TemplateBinding_4016(modelElement));
+		return result;
 	}
 
 	/**
