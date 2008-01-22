@@ -92,6 +92,7 @@ public class UMLPaletteFactory {
 		paletteContainer.setDescription(Messages.Instances4Group_desc);
 		paletteContainer.add(createInstanceSpecification1CreationTool());
 		paletteContainer.add(createSlot2CreationTool());
+		paletteContainer.add(createValueSpecification3Group());
 		return paletteContainer;
 	}
 
@@ -120,6 +121,19 @@ public class UMLPaletteFactory {
 		paletteContainer.add(createAbstraction2CreationTool());
 		paletteContainer.add(createUsage3CreationTool());
 		paletteContainer.add(createSubstitution4CreationTool());
+		return paletteContainer;
+	}
+
+	/**
+	 * Creates "Value Specification" palette tool group
+	 * @generated
+	 */
+	private PaletteContainer createValueSpecification3Group() {
+		PaletteStack paletteContainer = new PaletteStack(Messages.ValueSpecification3Group_title, null, null);
+		paletteContainer.setDescription(Messages.ValueSpecification3Group_desc);
+		paletteContainer.add(createLiteralString1CreationTool());
+		paletteContainer.add(createLiteralInteger2CreationTool());
+		paletteContainer.add(createExpression3CreationTool());
 		return paletteContainer;
 	}
 
@@ -590,6 +604,42 @@ public class UMLPaletteFactory {
 	private ToolEntry createSubstitution4CreationTool() {
 		ToolEntry entry = createSubstitution4CreationToolGen();
 		entry.setSmallIcon(UMLElementTypes.getImageDescriptor(UMLElementTypes.Dependency_4002));
+		entry.setLargeIcon(entry.getSmallIcon());
+		return entry;
+	}
+
+	/**
+	 * @generated
+	 */
+	private ToolEntry createLiteralString1CreationTool() {
+		List/*<IElementType>*/types = new ArrayList/*<IElementType>*/(1);
+		types.add(UMLElementTypes.LiteralString_3038);
+		NodeToolEntry entry = new NodeToolEntry(Messages.LiteralString1CreationTool_title, Messages.LiteralString1CreationTool_desc, types);
+		entry.setSmallIcon(UMLElementTypes.getImageDescriptor(UMLElementTypes.LiteralString_3038));
+		entry.setLargeIcon(entry.getSmallIcon());
+		return entry;
+	}
+
+	/**
+	 * @generated
+	 */
+	private ToolEntry createLiteralInteger2CreationTool() {
+		List/*<IElementType>*/types = new ArrayList/*<IElementType>*/(1);
+		types.add(UMLElementTypes.LiteralInteger_3039);
+		NodeToolEntry entry = new NodeToolEntry(Messages.LiteralInteger2CreationTool_title, Messages.LiteralInteger2CreationTool_desc, types);
+		entry.setSmallIcon(UMLElementTypes.getImageDescriptor(UMLElementTypes.LiteralInteger_3039));
+		entry.setLargeIcon(entry.getSmallIcon());
+		return entry;
+	}
+
+	/**
+	 * @generated
+	 */
+	private ToolEntry createExpression3CreationTool() {
+		List/*<IElementType>*/types = new ArrayList/*<IElementType>*/(1);
+		types.add(UMLElementTypes.Expression_3040);
+		NodeToolEntry entry = new NodeToolEntry(Messages.Expression3CreationTool_title, Messages.Expression3CreationTool_desc, types);
+		entry.setSmallIcon(UMLElementTypes.getImageDescriptor(UMLElementTypes.Expression_3040));
 		entry.setLargeIcon(entry.getSmallIcon());
 		return entry;
 	}

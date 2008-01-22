@@ -178,6 +178,24 @@
           xsi:type="gmftool:CreationTool"
           title="Slot"
           description="Create Slot"/>
+      <tools
+          xsi:type="gmftool:ToolGroup"
+          title="Value Specification"
+          description="Create Value Specification"
+          stack="true">
+        <tools
+            xsi:type="gmftool:CreationTool"
+            title="Literal String"
+            description="Create Literal String"/>
+        <tools
+            xsi:type="gmftool:CreationTool"
+            title="Literal Integer"
+            description="Create Literal Integer"/>
+        <tools
+            xsi:type="gmftool:CreationTool"
+            title="Expression"
+            description="Create Expression"/>
+      </tools>
     </tools>
   </palette>
 </gmftool:ToolRegistry>

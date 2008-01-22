@@ -562,6 +562,17 @@ public class UMLVisualIDRegistry {
 				return Operation4EditPart.VISUAL_ID;
 			}
 			break;
+		case InstanceSpecificationValueEditPart.VISUAL_ID:
+			if (UMLPackage.eINSTANCE.getLiteralString().isSuperTypeOf(domainElement.eClass())) {
+				return LiteralStringEditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getLiteralInteger().isSuperTypeOf(domainElement.eClass())) {
+				return LiteralIntegerEditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getExpression().isSuperTypeOf(domainElement.eClass())) {
+				return ExpressionEditPart.VISUAL_ID;
+			}
+			break;
 		case PackageEditPart.VISUAL_ID:
 			// We want to additionally show the Canvas Semantical Element in the auxiliary 
 			// org.eclipse.uml2.diagram.clazz.edit.parts.Package4EditPart (that serves as a pure visual container for children). 
@@ -825,7 +836,7 @@ public class UMLVisualIDRegistry {
 			if (InstanceSpecificationName3EditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
-			if (InstanceSpecificationQualifiedNameEditPart.VISUAL_ID == nodeVisualID) {
+			if (InstanceSpecificationValueEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
 			break;
@@ -1132,6 +1143,17 @@ public class UMLVisualIDRegistry {
 			break;
 		case PrimitiveTypeOperations2EditPart.VISUAL_ID:
 			if (Operation4EditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			break;
+		case InstanceSpecificationValueEditPart.VISUAL_ID:
+			if (LiteralStringEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			if (LiteralIntegerEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			if (ExpressionEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
 			break;

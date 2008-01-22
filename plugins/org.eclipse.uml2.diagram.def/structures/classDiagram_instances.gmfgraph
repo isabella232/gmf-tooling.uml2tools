@@ -116,17 +116,20 @@
               qualifiedClassName="org.eclipse.uml2.diagram.common.draw2d.CenterLayout"/>
         </children>
         <children
-            xsi:type="gmfgraph:Label"
-            name="RectangleInstanceNode_ValueLabel">
-          <layout
-              xsi:type="gmfgraph:CustomLayout"
-              qualifiedClassName="org.eclipse.uml2.diagram.common.draw2d.CenterLayout"/>
-        </children>
+            xsi:type="gmfgraph:Rectangle"
+            name="RectangleInstanceNodeFigure_ValueCompartmentFigure"
+            outline="false"/>
       </actualFigure>
       <accessors
           figure="//@figures.0/@descriptors.2/@actualFigure/@children.0"/>
       <accessors
           figure="//@figures.0/@descriptors.2/@actualFigure/@children.1"/>
+    </descriptors>
+    <descriptors
+        name="ValueSpecificationFigure_label">
+      <actualFigure
+          xsi:type="gmfgraph:Label"
+          name="ValueSpecificationFigure_label"/>
     </descriptors>
   </figures>
   <nodes
@@ -140,6 +143,10 @@
       figure="InstanceNodeFigure"
       needsTitle="true"
       accessor="//@figures.0/@descriptors.0/@accessors.1"/>
+  <compartments
+      name="value"
+      figure="RectangleInstanceNodeFigure"
+      accessor="//@figures.0/@descriptors.2/@accessors.1"/>
   <labels
       name="InstanceNode_name"
       figure="InstanceNodeFigure"
@@ -153,8 +160,6 @@
       figure="RectangleInstanceNodeFigure"
       accessor="//@figures.0/@descriptors.2/@accessors.0"/>
   <labels
-      name="RectangleInstance_value"
-      figure="RectangleInstanceNodeFigure"
-      elementIcon="false"
-      accessor="//@figures.0/@descriptors.2/@accessors.1"/>
+      name="ValueSpecification_inplace"
+      figure="ValueSpecificationFigure_label"/>
 </gmfgraph:Canvas>

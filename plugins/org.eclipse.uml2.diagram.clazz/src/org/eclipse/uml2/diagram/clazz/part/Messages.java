@@ -303,6 +303,16 @@ public class Messages extends NLS {
 	/**
 	 * @generated
 	 */
+	public static String ValueSpecification3Group_title;
+
+	/**
+	 * @generated
+	 */
+	public static String ValueSpecification3Group_desc;
+
+	/**
+	 * @generated
+	 */
 	public static String Class1CreationTool_title;
 
 	/**
@@ -633,6 +643,36 @@ public class Messages extends NLS {
 	/**
 	 * @generated
 	 */
+	public static String LiteralString1CreationTool_title;
+
+	/**
+	 * @generated
+	 */
+	public static String LiteralString1CreationTool_desc;
+
+	/**
+	 * @generated
+	 */
+	public static String LiteralInteger2CreationTool_title;
+
+	/**
+	 * @generated
+	 */
+	public static String LiteralInteger2CreationTool_desc;
+
+	/**
+	 * @generated
+	 */
+	public static String Expression3CreationTool_title;
+
+	/**
+	 * @generated
+	 */
+	public static String Expression3CreationTool_desc;
+
+	/**
+	 * @generated
+	 */
 	public static String PackagePackagesEditPart_title;
 
 	/**
@@ -799,6 +839,11 @@ public class Messages extends NLS {
 	 * @generated
 	 */
 	public static String PrimitiveTypeOperations2EditPart_title;
+
+	/**
+	 * @generated
+	 */
+	public static String InstanceSpecificationValueEditPart_title;
 
 	/**
 	 * @generated
@@ -1279,6 +1324,36 @@ public class Messages extends NLS {
 	 * @generated
 	 */
 	public static String NavigatorGroupName_PrimitiveType_3037_outgoinglinks;
+
+	/**
+	 * @generated
+	 */
+	public static String NavigatorGroupName_LiteralString_3038_incominglinks;
+
+	/**
+	 * @generated
+	 */
+	public static String NavigatorGroupName_LiteralString_3038_outgoinglinks;
+
+	/**
+	 * @generated
+	 */
+	public static String NavigatorGroupName_LiteralInteger_3039_incominglinks;
+
+	/**
+	 * @generated
+	 */
+	public static String NavigatorGroupName_LiteralInteger_3039_outgoinglinks;
+
+	/**
+	 * @generated
+	 */
+	public static String NavigatorGroupName_Expression_3040_incominglinks;
+
+	/**
+	 * @generated
+	 */
+	public static String NavigatorGroupName_Expression_3040_outgoinglinks;
 
 	/**
 	 * @generated
