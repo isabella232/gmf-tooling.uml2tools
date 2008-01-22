@@ -20,6 +20,7 @@ import org.eclipse.jface.window.Window;
 import org.eclipse.swt.widgets.Display;
 import org.eclipse.swt.widgets.Shell;
 import org.eclipse.ui.dialogs.ElementListSelectionDialog;
+import org.eclipse.uml2.diagram.usecase.edit.parts.ConstraintEditPart;
 import org.eclipse.uml2.diagram.usecase.edit.parts.DiagramHeaderEditPart;
 import org.eclipse.uml2.diagram.usecase.edit.parts.InnerUseCaseEditPart;
 import org.eclipse.uml2.diagram.usecase.edit.parts.PackageEditPart;
@@ -86,6 +87,7 @@ public class UMLModelingAssistantProvider extends ModelingAssistantProvider {
 			types.add(UMLElementTypes.UseCase_2004);
 			types.add(UMLElementTypes.Component_2006);
 			types.add(UMLElementTypes.Package_2007);
+			types.add(UMLElementTypes.Constraint_2008);
 			return types;
 		}
 		return Collections.EMPTY_LIST;
@@ -106,6 +108,11 @@ public class UMLModelingAssistantProvider extends ModelingAssistantProvider {
 			List types = new ArrayList();
 			types.add(UMLElementTypes.Include_4001);
 			types.add(UMLElementTypes.Extend_4002);
+			return types;
+		}
+		if (sourceEditPart instanceof ConstraintEditPart) {
+			List types = new ArrayList();
+			types.add(UMLElementTypes.ConstraintConstrainedElement_4005);
 			return types;
 		}
 		if (sourceEditPart instanceof InnerUseCaseEditPart) {
@@ -215,6 +222,10 @@ public class UMLModelingAssistantProvider extends ModelingAssistantProvider {
 			if (targetEditPart instanceof UseCaseinPackageEditPart) {
 				types.add(UMLElementTypes.Extend_4002);
 			}
+			return types;
+		}
+		if (sourceEditPart instanceof ConstraintEditPart) {
+			List types = new ArrayList();
 			return types;
 		}
 		if (sourceEditPart instanceof InnerUseCaseEditPart) {
@@ -455,6 +466,10 @@ public class UMLModelingAssistantProvider extends ModelingAssistantProvider {
 			if (relationshipType == UMLElementTypes.Extend_4002) {
 				types.add(UMLElementTypes.UseCase_3006);
 			}
+			return types;
+		}
+		if (sourceEditPart instanceof ConstraintEditPart) {
+			List types = new ArrayList();
 			return types;
 		}
 		if (sourceEditPart instanceof InnerUseCaseEditPart) {

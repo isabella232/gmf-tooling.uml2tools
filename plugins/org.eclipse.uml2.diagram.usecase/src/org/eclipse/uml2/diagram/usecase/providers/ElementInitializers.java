@@ -116,6 +116,26 @@ public class ElementInitializers {
 		/**
 		 * @generated
 		 */
+		public static final IObjectInitializer Constraint_2008 = new ObjectInitializer(UMLPackage.eINSTANCE.getConstraint()) {
+
+			protected void init() {
+				add(createNewElementFeatureInitializer(UMLPackage.eINSTANCE.getConstraint_Specification(), new ObjectInitializer[] { specification(), }));
+			}
+
+			ObjectInitializer specification() {
+				return new ObjectInitializer(UMLPackage.eINSTANCE.getLiteralString()) {
+
+					protected void init() {
+						add(createExpressionFeatureInitializer(UMLPackage.eINSTANCE.getLiteralString_Value(), UMLOCLFactory.getExpression("\'ValueSpecification\'", //$NON-NLS-1$
+								UMLPackage.eINSTANCE.getLiteralString())));
+					}
+				};
+			}
+		};
+
+		/**
+		 * @generated
+		 */
 		public static final IObjectInitializer ExtensionPoint_3002 = new ObjectInitializer(UMLPackage.eINSTANCE.getExtensionPoint()) {
 
 			protected void init() {

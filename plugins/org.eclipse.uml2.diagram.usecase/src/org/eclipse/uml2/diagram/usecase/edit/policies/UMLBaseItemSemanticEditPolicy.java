@@ -46,6 +46,8 @@ import org.eclipse.uml2.diagram.usecase.expressions.UMLOCLFactory;
 import org.eclipse.uml2.diagram.usecase.part.UMLDiagramEditorPlugin;
 import org.eclipse.uml2.diagram.usecase.part.UMLVisualIDRegistry;
 import org.eclipse.uml2.uml.Classifier;
+import org.eclipse.uml2.uml.Constraint;
+import org.eclipse.uml2.uml.Element;
 import org.eclipse.uml2.uml.Package;
 import org.eclipse.uml2.uml.Type;
 import org.eclipse.uml2.uml.UMLPackage;
@@ -421,6 +423,18 @@ public class UMLBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 		/**
 		 * @generated
 		 */
+		public static boolean canCreateConstraintConstrainedElement_4005(Constraint source, Element target) {
+			if (source != null) {
+				if (source.getConstrainedElements().contains(target)) {
+					return false;
+				}
+			}
+			return canExistConstraintConstrainedElement_4005(source, target);
+		}
+
+		/**
+		 * @generated
+		 */
 		public static boolean canExistInclude_4001(UseCase container, UseCase source, UseCase target) {
 			return true;
 		}
@@ -455,6 +469,13 @@ public class UMLBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 			if (!evaluate(Association_4004_TargetExpression, target, source, true)) {
 				return false;
 			}
+			return true;
+		}
+
+		/**
+		 * @generated
+		 */
+		public static boolean canExistConstraintConstrainedElement_4005(Constraint source, Element target) {
 			return true;
 		}
 

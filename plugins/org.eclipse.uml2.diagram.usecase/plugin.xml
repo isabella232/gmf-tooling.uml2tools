@@ -161,6 +161,11 @@
             <popupPredefinedItem id="deleteFromDiagramAction" remove="true"/>
             <popupPredefinedItem id="deleteFromModelAction" remove="true"/>
          </popupContribution>
+         <popupContribution class="org.eclipse.gmf.runtime.diagram.ui.providers.DiagramContextMenuProvider">
+            <popupStructuredContributionCriteria objectClass="org.eclipse.uml2.diagram.usecase.edit.parts.ConstraintConstrainedElementEditPart"/>
+            <popupAction path="/editGroup" id="deleteFromModelAction"/>
+            <popupPredefinedItem id="deleteFromDiagramAction" remove="true"/>
+         </popupContribution>
       </contributionItemProvider>
    </extension>
 
@@ -389,6 +394,16 @@
       </metamodel>
       <metamodel nsURI="http://www.eclipse.org/uml2/2.1.0/UML">
          <metamodelType
+               id="org.eclipse.uml2.diagram.usecase.Constraint_2008"
+               name="%metatype.name.Constraint_2008"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
+               eclass="Constraint"
+               edithelper="org.eclipse.uml2.diagram.usecase.edit.helpers.ConstraintEditHelper">
+            <param name="semanticHint" value="2008"/>
+         </metamodelType>
+      </metamodel>
+      <metamodel nsURI="http://www.eclipse.org/uml2/2.1.0/UML">
+         <metamodelType
                id="org.eclipse.uml2.diagram.usecase.ElementImport_3001"
                name="%metatype.name.ElementImport_3001"
                kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
@@ -483,6 +498,15 @@
             <param name="semanticHint" value="4004"/>
          </metamodelType>
       </metamodel>
+      <metamodel nsURI="http://www.eclipse.org/uml2/2.1.0/UML">
+         <specializationType
+               id="org.eclipse.uml2.diagram.usecase.ConstraintConstrainedElement_4005"
+               name="%metatype.name.ConstraintConstrainedElement_4005"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType">
+            <specializes id="org.eclipse.gmf.runtime.emf.type.core.null"/>
+            <param name="semanticHint" value="4005"/>
+         </specializationType>
+      </metamodel>
    </extension>
 
    <extension point="org.eclipse.gmf.runtime.emf.type.core.elementTypeBindings">
@@ -503,6 +527,7 @@
          <elementType ref="org.eclipse.uml2.diagram.usecase.UseCase_2004"/>
          <elementType ref="org.eclipse.uml2.diagram.usecase.Component_2006"/>
          <elementType ref="org.eclipse.uml2.diagram.usecase.Package_2007"/>
+         <elementType ref="org.eclipse.uml2.diagram.usecase.Constraint_2008"/>
          <elementType ref="org.eclipse.uml2.diagram.usecase.ElementImport_3001"/>
          <elementType ref="org.eclipse.uml2.diagram.usecase.ExtensionPoint_3002"/>
          <elementType ref="org.eclipse.uml2.diagram.usecase.ExtensionPoint_3003"/>
@@ -513,6 +538,7 @@
          <elementType ref="org.eclipse.uml2.diagram.usecase.Extend_4002"/>
          <elementType ref="org.eclipse.uml2.diagram.usecase.Generalization_4003"/>
          <elementType ref="org.eclipse.uml2.diagram.usecase.Association_4004"/>
+         <elementType ref="org.eclipse.uml2.diagram.usecase.ConstraintConstrainedElement_4005"/>
          <advice ref="org.eclipse.gmf.runtime.diagram.core.advice.notationDepdendents"/>
       </binding>
    </extension>
@@ -726,7 +752,8 @@
              </popupStructuredContributionCriteria>
 		 </popupContribution>
       </contributionItemProvider>
-   </extension><extension point="org.eclipse.gmf.runtime.common.ui.services.action.contributionItemProviders">
+   </extension>
+<extension point="org.eclipse.gmf.runtime.common.ui.services.action.contributionItemProviders">
       <?gmfgen generated="true"?>
       <contributionItemProvider
             checkPluginLoaded="true"
@@ -790,6 +817,9 @@
 		 </popupContribution>
       </contributionItemProvider>
    </extension>
+
+
+
 
 
 

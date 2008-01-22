@@ -64,6 +64,10 @@
           xsi:type="gmftool:CreationTool"
           title="Generalization"
           description="Create Generalization Link"/>
+      <tools
+          xsi:type="gmftool:CreationTool"
+          title="Constrained Element"
+          description="Create Constrained Element"/>
     </tools>
   </palette>
 </gmftool:ToolRegistry>

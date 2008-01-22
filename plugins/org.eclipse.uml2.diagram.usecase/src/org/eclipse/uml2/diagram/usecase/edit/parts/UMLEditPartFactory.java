@@ -73,6 +73,12 @@ public class UMLEditPartFactory implements EditPartFactory {
 			case NestedPackageNameEditPart.VISUAL_ID:
 				return new NestedPackageNameEditPart(view);
 
+			case ConstraintEditPart.VISUAL_ID:
+				return new ConstraintEditPart(view);
+
+			case ConstraintNameEditPart.VISUAL_ID:
+				return new ConstraintNameEditPart(view);
+
 			case ElementImportEditPart.VISUAL_ID:
 				return new ElementImportEditPart(view);
 
@@ -144,6 +150,9 @@ public class UMLEditPartFactory implements EditPartFactory {
 
 			case AssociationSourceMultiplicityEditPart.VISUAL_ID:
 				return new AssociationSourceMultiplicityEditPart(view);
+
+			case ConstraintConstrainedElementEditPart.VISUAL_ID:
+				return new ConstraintConstrainedElementEditPart(view);
 			}
 		}
 		return createUnrecognizedEditPart(context, model);

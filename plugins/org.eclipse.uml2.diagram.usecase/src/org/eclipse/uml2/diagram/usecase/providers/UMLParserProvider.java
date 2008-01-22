@@ -22,6 +22,7 @@ import org.eclipse.uml2.diagram.usecase.edit.parts.ActorName3EditPart;
 import org.eclipse.uml2.diagram.usecase.edit.parts.ActorNameEditPart;
 import org.eclipse.uml2.diagram.usecase.edit.parts.AssociationSourceMultiplicityEditPart;
 import org.eclipse.uml2.diagram.usecase.edit.parts.AssociationTargetMultiplicityEditPart;
+import org.eclipse.uml2.diagram.usecase.edit.parts.ConstraintNameEditPart;
 import org.eclipse.uml2.diagram.usecase.edit.parts.ElementImportEditPart;
 import org.eclipse.uml2.diagram.usecase.edit.parts.ExtensionPoint2EditPart;
 import org.eclipse.uml2.diagram.usecase.edit.parts.ExtensionPointEditPart;
@@ -205,6 +206,30 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 	 * @generated
 	 */
 	protected IParser createPackageName_5008Parser() {
+		EAttribute[] features = new EAttribute[] { UMLPackage.eINSTANCE.getNamedElement_Name(), };
+		MessageFormatParser parser = new MessageFormatParser(features);
+		return parser;
+	}
+
+	/**
+	 * @generated
+	 */
+	private IParser constraintName_5011Parser;
+
+	/**
+	 * @generated
+	 */
+	private IParser getConstraintName_5011Parser() {
+		if (constraintName_5011Parser == null) {
+			constraintName_5011Parser = createConstraintName_5011Parser();
+		}
+		return constraintName_5011Parser;
+	}
+
+	/**
+	 * @generated
+	 */
+	protected IParser createConstraintName_5011Parser() {
 		EAttribute[] features = new EAttribute[] { UMLPackage.eINSTANCE.getNamedElement_Name(), };
 		MessageFormatParser parser = new MessageFormatParser(features);
 		return parser;
@@ -445,6 +470,8 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 			return getComponentName_5007Parser();
 		case NestedPackageNameEditPart.VISUAL_ID:
 			return getPackageName_5008Parser();
+		case ConstraintNameEditPart.VISUAL_ID:
+			return getConstraintName_5011Parser();
 		case ElementImportEditPart.VISUAL_ID:
 			return getElementImport_3001Parser();
 		case ExtensionPointEditPart.VISUAL_ID:

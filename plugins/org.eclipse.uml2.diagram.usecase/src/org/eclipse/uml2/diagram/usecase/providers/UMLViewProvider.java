@@ -15,6 +15,9 @@ import org.eclipse.uml2.diagram.usecase.edit.parts.ActorNameEditPart;
 import org.eclipse.uml2.diagram.usecase.edit.parts.AssociationEditPart;
 import org.eclipse.uml2.diagram.usecase.edit.parts.AssociationSourceMultiplicityEditPart;
 import org.eclipse.uml2.diagram.usecase.edit.parts.AssociationTargetMultiplicityEditPart;
+import org.eclipse.uml2.diagram.usecase.edit.parts.ConstraintConstrainedElementEditPart;
+import org.eclipse.uml2.diagram.usecase.edit.parts.ConstraintEditPart;
+import org.eclipse.uml2.diagram.usecase.edit.parts.ConstraintNameEditPart;
 import org.eclipse.uml2.diagram.usecase.edit.parts.DiagramHeaderEditPart;
 import org.eclipse.uml2.diagram.usecase.edit.parts.ElementImportEditPart;
 import org.eclipse.uml2.diagram.usecase.edit.parts.ExtendEditPart;
@@ -55,6 +58,9 @@ import org.eclipse.uml2.diagram.usecase.view.factories.ActorViewFactory;
 import org.eclipse.uml2.diagram.usecase.view.factories.AssociationSourceMultiplicityViewFactory;
 import org.eclipse.uml2.diagram.usecase.view.factories.AssociationTargetMultiplicityViewFactory;
 import org.eclipse.uml2.diagram.usecase.view.factories.AssociationViewFactory;
+import org.eclipse.uml2.diagram.usecase.view.factories.ConstraintConstrainedElementViewFactory;
+import org.eclipse.uml2.diagram.usecase.view.factories.ConstraintNameViewFactory;
+import org.eclipse.uml2.diagram.usecase.view.factories.ConstraintViewFactory;
 import org.eclipse.uml2.diagram.usecase.view.factories.DiagramHeaderViewFactory;
 import org.eclipse.uml2.diagram.usecase.view.factories.ElementImportViewFactory;
 import org.eclipse.uml2.diagram.usecase.view.factories.ExtendViewFactory;
@@ -193,6 +199,7 @@ public class UMLViewProvider extends AbstractViewProvider {
 				case DiagramHeaderEditPart.VISUAL_ID:
 				case SubjectEditPart.VISUAL_ID:
 				case NestedPackageEditPart.VISUAL_ID:
+				case ConstraintEditPart.VISUAL_ID:
 				case ElementImportEditPart.VISUAL_ID:
 				case ExtensionPointEditPart.VISUAL_ID:
 				case ExtensionPoint2EditPart.VISUAL_ID:
@@ -240,6 +247,11 @@ public class UMLViewProvider extends AbstractViewProvider {
 				case NestedPackageNameEditPart.VISUAL_ID:
 				case PackageFramecontentsEditPart.VISUAL_ID:
 					if (NestedPackageEditPart.VISUAL_ID != UMLVisualIDRegistry.getVisualID(containerView) || containerView.getElement() != domainElement) {
+						return null; // wrong container
+					}
+					break;
+				case ConstraintNameEditPart.VISUAL_ID:
+					if (ConstraintEditPart.VISUAL_ID != UMLVisualIDRegistry.getVisualID(containerView) || containerView.getElement() != domainElement) {
 						return null; // wrong container
 					}
 					break;
@@ -320,6 +332,10 @@ public class UMLViewProvider extends AbstractViewProvider {
 			return NestedPackageViewFactory.class;
 		case NestedPackageNameEditPart.VISUAL_ID:
 			return NestedPackageNameViewFactory.class;
+		case ConstraintEditPart.VISUAL_ID:
+			return ConstraintViewFactory.class;
+		case ConstraintNameEditPart.VISUAL_ID:
+			return ConstraintNameViewFactory.class;
 		case ElementImportEditPart.VISUAL_ID:
 			return ElementImportViewFactory.class;
 		case ExtensionPointEditPart.VISUAL_ID:
@@ -400,6 +416,8 @@ public class UMLViewProvider extends AbstractViewProvider {
 			return GeneralizationViewFactory.class;
 		case AssociationEditPart.VISUAL_ID:
 			return AssociationViewFactory.class;
+		case ConstraintConstrainedElementEditPart.VISUAL_ID:
+			return ConstraintConstrainedElementViewFactory.class;
 		}
 		return null;
 	}

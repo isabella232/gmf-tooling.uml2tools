@@ -87,6 +87,11 @@ public class UMLElementTypes extends ElementInitializers {
 	/**
 	 * @generated
 	 */
+	public static final IElementType Constraint_2008 = getElementType("org.eclipse.uml2.diagram.usecase.Constraint_2008"); //$NON-NLS-1$
+
+	/**
+	 * @generated
+	 */
 	public static final IElementType ElementImport_3001 = getElementType("org.eclipse.uml2.diagram.usecase.ElementImport_3001"); //$NON-NLS-1$
 
 	/**
@@ -133,6 +138,11 @@ public class UMLElementTypes extends ElementInitializers {
 	 * @generated
 	 */
 	public static final IElementType Association_4004 = getElementType("org.eclipse.uml2.diagram.usecase.Association_4004"); //$NON-NLS-1$
+
+	/**
+	 * @generated
+	 */
+	public static final IElementType ConstraintConstrainedElement_4005 = getElementType("org.eclipse.uml2.diagram.usecase.ConstraintConstrainedElement_4005"); //$NON-NLS-1$
 
 	/**
 	 * @generated
@@ -256,6 +266,8 @@ public class UMLElementTypes extends ElementInitializers {
 
 			elements.put(Package_2007, UMLPackage.eINSTANCE.getPackage());
 
+			elements.put(Constraint_2008, UMLPackage.eINSTANCE.getConstraint());
+
 			elements.put(ElementImport_3001, UMLPackage.eINSTANCE.getElementImport());
 
 			elements.put(ExtensionPoint_3002, UMLPackage.eINSTANCE.getExtensionPoint());
@@ -275,6 +287,8 @@ public class UMLElementTypes extends ElementInitializers {
 			elements.put(Generalization_4003, UMLPackage.eINSTANCE.getGeneralization());
 
 			elements.put(Association_4004, UMLPackage.eINSTANCE.getAssociation());
+
+			elements.put(ConstraintConstrainedElement_4005, UMLPackage.eINSTANCE.getConstraint_ConstrainedElement());
 		}
 		return (ENamedElement) elements.get(type);
 	}
@@ -300,6 +314,7 @@ public class UMLElementTypes extends ElementInitializers {
 			KNOWN_ELEMENT_TYPES.add(UseCase_2004);
 			KNOWN_ELEMENT_TYPES.add(Component_2006);
 			KNOWN_ELEMENT_TYPES.add(Package_2007);
+			KNOWN_ELEMENT_TYPES.add(Constraint_2008);
 			KNOWN_ELEMENT_TYPES.add(ElementImport_3001);
 			KNOWN_ELEMENT_TYPES.add(ExtensionPoint_3002);
 			KNOWN_ELEMENT_TYPES.add(ExtensionPoint_3003);
@@ -310,6 +325,7 @@ public class UMLElementTypes extends ElementInitializers {
 			KNOWN_ELEMENT_TYPES.add(Extend_4002);
 			KNOWN_ELEMENT_TYPES.add(Generalization_4003);
 			KNOWN_ELEMENT_TYPES.add(Association_4004);
+			KNOWN_ELEMENT_TYPES.add(ConstraintConstrainedElement_4005);
 		}
 		return KNOWN_ELEMENT_TYPES.contains(elementType);
 	}

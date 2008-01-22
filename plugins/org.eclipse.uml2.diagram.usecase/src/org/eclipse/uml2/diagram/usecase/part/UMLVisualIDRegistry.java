@@ -14,6 +14,8 @@ import org.eclipse.uml2.diagram.usecase.edit.parts.ActorNameEditPart;
 import org.eclipse.uml2.diagram.usecase.edit.parts.AssociationEditPart;
 import org.eclipse.uml2.diagram.usecase.edit.parts.AssociationSourceMultiplicityEditPart;
 import org.eclipse.uml2.diagram.usecase.edit.parts.AssociationTargetMultiplicityEditPart;
+import org.eclipse.uml2.diagram.usecase.edit.parts.ConstraintEditPart;
+import org.eclipse.uml2.diagram.usecase.edit.parts.ConstraintNameEditPart;
 import org.eclipse.uml2.diagram.usecase.edit.parts.DiagramHeaderEditPart;
 import org.eclipse.uml2.diagram.usecase.edit.parts.ElementImportEditPart;
 import org.eclipse.uml2.diagram.usecase.edit.parts.ExtendEditPart;
@@ -219,6 +221,9 @@ public class UMLVisualIDRegistry {
 			if (UMLPackage.eINSTANCE.getPackage().isSuperTypeOf(domainElement.eClass())) {
 				return NestedPackageEditPart.VISUAL_ID;
 			}
+			if (UMLPackage.eINSTANCE.getConstraint().isSuperTypeOf(domainElement.eClass())) {
+				return ConstraintEditPart.VISUAL_ID;
+			}
 			break;
 		}
 		return -1;
@@ -290,6 +295,11 @@ public class UMLVisualIDRegistry {
 				return true;
 			}
 			if (PackageFramecontentsEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			break;
+		case ConstraintEditPart.VISUAL_ID:
+			if (ConstraintNameEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
 			break;
@@ -372,6 +382,9 @@ public class UMLVisualIDRegistry {
 				return true;
 			}
 			if (NestedPackageEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			if (ConstraintEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
 			break;
