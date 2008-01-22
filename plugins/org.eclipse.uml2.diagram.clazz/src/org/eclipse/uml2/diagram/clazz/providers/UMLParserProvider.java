@@ -43,7 +43,9 @@ import org.eclipse.uml2.diagram.clazz.edit.parts.GeneralizationSetIsCoveringIsDi
 import org.eclipse.uml2.diagram.clazz.edit.parts.GeneralizationSetNameEditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.InstanceSpecificationEditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.InstanceSpecificationName2EditPart;
+import org.eclipse.uml2.diagram.clazz.edit.parts.InstanceSpecificationName3EditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.InstanceSpecificationNameEditPart;
+import org.eclipse.uml2.diagram.clazz.edit.parts.InstanceSpecificationQualifiedNameEditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.InterfaceName2EditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.InterfaceNameEditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.Operation2EditPart;
@@ -465,6 +467,54 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 	 */
 	protected IParser createPackageName_5026Parser() {
 		EAttribute[] features = new EAttribute[] { UMLPackage.eINSTANCE.getNamedElement_Name(), };
+		MessageFormatParser parser = new MessageFormatParser(features);
+		return parser;
+	}
+
+	/**
+	 * @generated
+	 */
+	private IParser instanceSpecificationName_5029Parser;
+
+	/**
+	 * @generated
+	 */
+	private IParser getInstanceSpecificationName_5029Parser() {
+		if (instanceSpecificationName_5029Parser == null) {
+			instanceSpecificationName_5029Parser = createInstanceSpecificationName_5029Parser();
+		}
+		return instanceSpecificationName_5029Parser;
+	}
+
+	/**
+	 * @generated
+	 */
+	protected IParser createInstanceSpecificationName_5029Parser() {
+		EAttribute[] features = new EAttribute[] { UMLPackage.eINSTANCE.getNamedElement_Name(), };
+		MessageFormatParser parser = new MessageFormatParser(features);
+		return parser;
+	}
+
+	/**
+	 * @generated
+	 */
+	private IParser instanceSpecificationQualifiedName_5030Parser;
+
+	/**
+	 * @generated
+	 */
+	private IParser getInstanceSpecificationQualifiedName_5030Parser() {
+		if (instanceSpecificationQualifiedName_5030Parser == null) {
+			instanceSpecificationQualifiedName_5030Parser = createInstanceSpecificationQualifiedName_5030Parser();
+		}
+		return instanceSpecificationQualifiedName_5030Parser;
+	}
+
+	/**
+	 * @generated
+	 */
+	protected IParser createInstanceSpecificationQualifiedName_5030Parser() {
+		EAttribute[] features = new EAttribute[] { UMLPackage.eINSTANCE.getNamedElement_QualifiedName(), };
 		MessageFormatParser parser = new MessageFormatParser(features);
 		return parser;
 	}
@@ -1475,6 +1525,7 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 	 */
 	protected IParser createSlot_3017Parser() {
 		return new SemanticParserAdapter(new SlotParser(), new BasicApplyStrategy(), new SlotToString.VIEW(), new SlotToString.EDIT()) {
+
 			@Override
 			public String getPrintString(IAdaptable element, int flags) {
 				String result = super.getPrintString(element, flags);
@@ -1630,6 +1681,10 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 			return getPackageName_5020Parser();
 		case PackageName3EditPart.VISUAL_ID:
 			return getPackageName_5026Parser();
+		case InstanceSpecificationName3EditPart.VISUAL_ID:
+			return getInstanceSpecificationName_5029Parser();
+		case InstanceSpecificationQualifiedNameEditPart.VISUAL_ID:
+			return getInstanceSpecificationQualifiedName_5030Parser();
 		case Package3EditPart.VISUAL_ID:
 			return getPackage_3006Parser();
 		case ClassEditPart.VISUAL_ID:

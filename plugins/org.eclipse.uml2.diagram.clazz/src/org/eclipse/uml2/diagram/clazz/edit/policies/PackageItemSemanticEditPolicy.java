@@ -16,6 +16,7 @@ import org.eclipse.uml2.diagram.clazz.edit.commands.DependencyNodeCreateCommand;
 import org.eclipse.uml2.diagram.clazz.edit.commands.Enumeration2CreateCommand;
 import org.eclipse.uml2.diagram.clazz.edit.commands.GeneralizationSetCreateCommand;
 import org.eclipse.uml2.diagram.clazz.edit.commands.InstanceSpecification2CreateCommand;
+import org.eclipse.uml2.diagram.clazz.edit.commands.InstanceSpecification4CreateCommand;
 import org.eclipse.uml2.diagram.clazz.edit.commands.Interface2CreateCommand;
 import org.eclipse.uml2.diagram.clazz.edit.commands.InterfaceCreateCommand;
 import org.eclipse.uml2.diagram.clazz.edit.commands.Package3CreateCommand;
@@ -125,6 +126,12 @@ public class PackageItemSemanticEditPolicy extends UMLBaseItemSemanticEditPolicy
 				req.setContainmentFeature(UMLPackage.eINSTANCE.getPackage_PackagedElement());
 			}
 			return getGEFWrapper(new PackageAsFrameCreateCommand(req));
+		}
+		if (UMLElementTypes.InstanceSpecification_2017 == req.getElementType()) {
+			if (req.getContainmentFeature() == null) {
+				req.setContainmentFeature(UMLPackage.eINSTANCE.getPackage_PackagedElement());
+			}
+			return getGEFWrapper(new InstanceSpecification4CreateCommand(req));
 		}
 		return super.getCreateCommand(req);
 	}

@@ -53,6 +53,7 @@ import org.eclipse.uml2.diagram.clazz.edit.parts.GeneralizationEditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.GeneralizationSetEditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.InstanceSpecification2EditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.InstanceSpecification3EditPart;
+import org.eclipse.uml2.diagram.clazz.edit.parts.InstanceSpecification4EditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.InstanceSpecificationEditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.Interface2EditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.InterfaceEditPart;
@@ -152,7 +153,6 @@ public class PackageCanonicalEditPolicy extends CanonicalConnectionEditPolicy {
 		case PrimitiveType2EditPart.VISUAL_ID:
 		case Enumeration2EditPart.VISUAL_ID:
 		case ConstraintEditPart.VISUAL_ID:
-		case InstanceSpecification2EditPart.VISUAL_ID:
 		case DependencyEditPart.VISUAL_ID:
 		case GeneralizationSetEditPart.VISUAL_ID:
 		case Package4EditPart.VISUAL_ID:
@@ -172,6 +172,11 @@ public class PackageCanonicalEditPolicy extends CanonicalConnectionEditPolicy {
 				return true;
 			}
 			return (actualID != suggestedID) && (suggestedID != Interface2EditPart.VISUAL_ID) && true;
+		case InstanceSpecification2EditPart.VISUAL_ID:
+			if (!semanticChildren.contains(view.getElement())) {
+				return true;
+			}
+			return (actualID != suggestedID) && (suggestedID != InstanceSpecification4EditPart.VISUAL_ID) && true;
 		case Interface2EditPart.VISUAL_ID:
 			if (!semanticChildren.contains(view.getElement())) {
 				return true;
@@ -187,6 +192,11 @@ public class PackageCanonicalEditPolicy extends CanonicalConnectionEditPolicy {
 				return true;
 			}
 			return (actualID != suggestedID) && (suggestedID != Package2EditPart.VISUAL_ID) && true;
+		case InstanceSpecification4EditPart.VISUAL_ID:
+			if (!semanticChildren.contains(view.getElement())) {
+				return true;
+			}
+			return (actualID != suggestedID) && (suggestedID != InstanceSpecification2EditPart.VISUAL_ID) && true;
 		}
 		return false;
 	}
@@ -407,6 +417,13 @@ public class PackageCanonicalEditPolicy extends CanonicalConnectionEditPolicy {
 		case PackageAsFrameEditPart.VISUAL_ID: {
 			if (!domain2NotationMap.containsKey(view.getElement())) {
 				result.addAll(UMLDiagramUpdater.getPackage_2016ContainedLinks(view));
+			}
+			domain2NotationMap.put(view.getElement(), view);
+			break;
+		}
+		case InstanceSpecification4EditPart.VISUAL_ID: {
+			if (!domain2NotationMap.containsKey(view.getElement())) {
+				result.addAll(UMLDiagramUpdater.getInstanceSpecification_2017ContainedLinks(view));
 			}
 			domain2NotationMap.put(view.getElement(), view);
 			break;

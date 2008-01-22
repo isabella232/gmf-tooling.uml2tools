@@ -626,6 +626,9 @@ public class UMLVisualIDRegistry {
 			if (UMLPackage.eINSTANCE.getPackage().isSuperTypeOf(domainElement.eClass())) {
 				return PackageAsFrameEditPart.VISUAL_ID;
 			}
+			if (UMLPackage.eINSTANCE.getInstanceSpecification().isSuperTypeOf(domainElement.eClass())) {
+				return InstanceSpecification4EditPart.VISUAL_ID;
+			}
 			// "escape" for multi-views part : org.eclipse.uml2.diagram.clazz.edit.parts.PackageEditPart.VISUAL_ID -- prevents from removing the whole group from diagram
 			if (UMLPackage.eINSTANCE.getAssociationClass().isSuperTypeOf(domainElement.eClass())) {
 				return AssociationClass2EditPart.VISUAL_ID;
@@ -815,6 +818,14 @@ public class UMLVisualIDRegistry {
 				return true;
 			}
 			if (PackageAsFrameContentsEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			break;
+		case InstanceSpecification4EditPart.VISUAL_ID:
+			if (InstanceSpecificationName3EditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			if (InstanceSpecificationQualifiedNameEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
 			break;
@@ -1168,6 +1179,9 @@ public class UMLVisualIDRegistry {
 				return true;
 			}
 			if (PackageAsFrameEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			if (InstanceSpecification4EditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
 			break;

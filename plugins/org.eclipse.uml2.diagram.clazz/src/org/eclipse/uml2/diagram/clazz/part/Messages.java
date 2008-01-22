@@ -963,6 +963,16 @@ public class Messages extends NLS {
 	/**
 	 * @generated
 	 */
+	public static String NavigatorGroupName_InstanceSpecification_2017_incominglinks;
+
+	/**
+	 * @generated
+	 */
+	public static String NavigatorGroupName_InstanceSpecification_2017_outgoinglinks;
+
+	/**
+	 * @generated
+	 */
 	public static String NavigatorGroupName_Package_3006_incominglinks;
 
 	/**
@@ -1463,6 +1473,16 @@ public class Messages extends NLS {
 	/**
 	 * @generated
 	 */
+	public static String TurnIntoInstanceSpecification4Action_text;
+
+	/**
+	 * @generated
+	 */
+	public static String TurnIntoInstanceSpecification4Action_tooltiptext;
+
+	/**
+	 * @generated
+	 */
 	public static String TurnIntoInterfaceAction_text;
 
 	/**
@@ -1479,6 +1499,16 @@ public class Messages extends NLS {
 	 * @generated
 	 */
 	public static String TurnIntoPackage2Action_tooltiptext;
+
+	/**
+	 * @generated
+	 */
+	public static String TurnIntoInstanceSpecification2Action_text;
+
+	/**
+	 * @generated
+	 */
+	public static String TurnIntoInstanceSpecification2Action_tooltiptext;
 
 	/**
 	 * @generated
@@ -1503,6 +1533,16 @@ public class Messages extends NLS {
 	/**
 	 * @generated
 	 */
+	public static String InstanceSpecification2ContributionItemProvider_menu;
+
+	/**
+	 * @generated
+	 */
+	public static String InstanceSpecification2ContributionItemProvider_group;
+
+	/**
+	 * @generated
+	 */
 	public static String Interface2ContributionItemProvider_menu;
 
 	/**
@@ -1519,6 +1559,16 @@ public class Messages extends NLS {
 	 * @generated
 	 */
 	public static String PackageAsFrameContributionItemProvider_group;
+
+	/**
+	 * @generated
+	 */
+	public static String InstanceSpecification4ContributionItemProvider_menu;
+
+	/**
+	 * @generated
+	 */
+	public static String InstanceSpecification4ContributionItemProvider_group;
 
 	//TODO: put accessor fields manually	
 }

@@ -88,10 +88,53 @@
           xsi:type="gmfgraph:Label"
           name="Slot_InplaceLabel"/>
     </descriptors>
+    <descriptors
+        name="RectangleInstanceNodeFigure">
+      <actualFigure
+          xsi:type="gmfgraph:Rectangle"
+          name="RectangleInstanceNodeFigure">
+        <layout
+            xsi:type="gmfgraph:FlowLayout"
+            vertical="true"
+            matchMinorSize="true"
+            forceSingleLine="true"
+            majorAlignment="CENTER"
+            minorSpacing="0"/>
+        <border
+            xsi:type="gmfgraph:MarginBorder">
+          <insets
+              top="1"
+              left="1"
+              bottom="1"
+              right="1"/>
+        </border>
+        <children
+            xsi:type="gmfgraph:Label"
+            name="RectangleInstanceNode_NameLabel">
+          <layout
+              xsi:type="gmfgraph:CustomLayout"
+              qualifiedClassName="org.eclipse.uml2.diagram.common.draw2d.CenterLayout"/>
+        </children>
+        <children
+            xsi:type="gmfgraph:Label"
+            name="RectangleInstanceNode_ValueLabel">
+          <layout
+              xsi:type="gmfgraph:CustomLayout"
+              qualifiedClassName="org.eclipse.uml2.diagram.common.draw2d.CenterLayout"/>
+        </children>
+      </actualFigure>
+      <accessors
+          figure="//@figures.0/@descriptors.2/@actualFigure/@children.0"/>
+      <accessors
+          figure="//@figures.0/@descriptors.2/@actualFigure/@children.1"/>
+    </descriptors>
   </figures>
   <nodes
       name="InstanceNode"
       figure="InstanceNodeFigure"/>
+  <nodes
+      name="RectangleInstanceNode"
+      figure="RectangleInstanceNodeFigure"/>
   <compartments
       name="slots"
       figure="InstanceNodeFigure"
@@ -105,4 +148,13 @@
       name="Slot_inplace"
       figure="Slot_InplaceLabel"
       elementIcon="false"/>
+  <labels
+      name="RectangleInstance_name"
+      figure="RectangleInstanceNodeFigure"
+      accessor="//@figures.0/@descriptors.2/@accessors.0"/>
+  <labels
+      name="RectangleInstance_value"
+      figure="RectangleInstanceNodeFigure"
+      elementIcon="false"
+      accessor="//@figures.0/@descriptors.2/@accessors.1"/>
 </gmfgraph:Canvas>

@@ -827,6 +827,15 @@
       </metamodel>
       <metamodel nsURI="http://www.eclipse.org/uml2/2.1.0/UML">
          <specializationType
+               id="org.eclipse.uml2.diagram.clazz.InstanceSpecification_2017"
+               name="%metatype.name.InstanceSpecification_2017"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType">
+            <specializes id="org.eclipse.uml2.diagram.clazz.InstanceSpecification_3013"/>
+            <param name="semanticHint" value="2017"/>
+         </specializationType>
+      </metamodel>
+      <metamodel nsURI="http://www.eclipse.org/uml2/2.1.0/UML">
+         <specializationType
                id="org.eclipse.uml2.diagram.clazz.Package_3006"
                name="%metatype.name.Package_3006"
                kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
@@ -1315,6 +1324,7 @@
          <elementType ref="org.eclipse.uml2.diagram.clazz.Package_2014"/>
          <elementType ref="org.eclipse.uml2.diagram.clazz.AssociationClass_2015"/>
          <elementType ref="org.eclipse.uml2.diagram.clazz.Package_2016"/>
+         <elementType ref="org.eclipse.uml2.diagram.clazz.InstanceSpecification_2017"/>
          <elementType ref="org.eclipse.uml2.diagram.clazz.Package_3006"/>
          <elementType ref="org.eclipse.uml2.diagram.clazz.Class_3007"/>
          <elementType ref="org.eclipse.uml2.diagram.clazz.DataType_3008"/>
@@ -1606,6 +1616,39 @@
       <?gmfgen generated="true"?>
       <contributionItemProvider
             checkPluginLoaded="true"
+            class="org.eclipse.uml2.diagram.clazz.action.InstanceSpecification2ContributionItemProvider">
+         <Priority name="Medium"/>
+		 <popupContribution
+               class="org.eclipse.gmf.runtime.diagram.ui.providers.DiagramContextMenuProvider">
+			 <popupMenuGroup
+                  id="ChangeNotation"
+                  path="/propertiesGroup">
+             </popupMenuGroup>
+             <popupMenu
+                   id="ChangeNotationMenu"
+                   path="/ChangeNotation">
+             </popupMenu>                        
+             <popupMenuGroup
+                   id="ChangeNotationGroup"
+                   path="/ChangeNotationMenu/">
+             </popupMenuGroup>
+							
+			<popupAction
+				path="/ChangeNotationMenu/ChangeNotationGroup"
+				id="set_InstanceSpecification4_notation">
+			</popupAction>            
+				<popupStructuredContributionCriteria
+                   objectClass="org.eclipse.uml2.diagram.clazz.edit.parts.InstanceSpecification2EditPart"
+                   objectCount="1">
+             </popupStructuredContributionCriteria>
+		 </popupContribution>
+      </contributionItemProvider>
+   </extension>
+	
+   <extension point="org.eclipse.gmf.runtime.common.ui.services.action.contributionItemProviders">
+      <?gmfgen generated="true"?>
+      <contributionItemProvider
+            checkPluginLoaded="true"
             class="org.eclipse.uml2.diagram.clazz.action.Interface2ContributionItemProvider">
          <Priority name="Medium"/>
 		 <popupContribution
@@ -1634,8 +1677,12 @@
 		 </popupContribution>
       </contributionItemProvider>
    </extension>
-	
-   <extension point="org.eclipse.gmf.runtime.common.ui.services.action.contributionItemProviders">
+   <extension point="org.eclipse.gmf.runtime.diagram.ui.decoratorProviders">
+      <?gmfgen generated="true"?>
+      <decoratorProvider class="org.eclipse.uml2.diagram.clazz.providers.UMLShortcutsDecoratorProvider">
+         <Priority name="Lowest"/>
+      </decoratorProvider>
+   </extension><extension point="org.eclipse.gmf.runtime.common.ui.services.action.contributionItemProviders">
       <?gmfgen generated="true"?>
       <contributionItemProvider
             checkPluginLoaded="true"
@@ -1667,12 +1714,39 @@
 		 </popupContribution>
       </contributionItemProvider>
    </extension>
-   <extension point="org.eclipse.gmf.runtime.diagram.ui.decoratorProviders">
+<extension point="org.eclipse.gmf.runtime.common.ui.services.action.contributionItemProviders">
       <?gmfgen generated="true"?>
-      <decoratorProvider class="org.eclipse.uml2.diagram.clazz.providers.UMLShortcutsDecoratorProvider">
-         <Priority name="Lowest"/>
-      </decoratorProvider>
+      <contributionItemProvider
+            checkPluginLoaded="true"
+            class="org.eclipse.uml2.diagram.clazz.action.InstanceSpecification4ContributionItemProvider">
+         <Priority name="Medium"/>
+		 <popupContribution
+               class="org.eclipse.gmf.runtime.diagram.ui.providers.DiagramContextMenuProvider">
+			 <popupMenuGroup
+                  id="ChangeNotation"
+                  path="/propertiesGroup">
+             </popupMenuGroup>
+             <popupMenu
+                   id="ChangeNotationMenu"
+                   path="/ChangeNotation">
+             </popupMenu>                        
+             <popupMenuGroup
+                   id="ChangeNotationGroup"
+                   path="/ChangeNotationMenu/">
+             </popupMenuGroup>
+							
+			<popupAction
+				path="/ChangeNotationMenu/ChangeNotationGroup"
+				id="set_InstanceSpecification2_notation">
+			</popupAction>            
+				<popupStructuredContributionCriteria
+                   objectClass="org.eclipse.uml2.diagram.clazz.edit.parts.InstanceSpecification4EditPart"
+                   objectCount="1">
+             </popupStructuredContributionCriteria>
+		 </popupContribution>
+      </contributionItemProvider>
    </extension>
+
 
 
 </plugin>

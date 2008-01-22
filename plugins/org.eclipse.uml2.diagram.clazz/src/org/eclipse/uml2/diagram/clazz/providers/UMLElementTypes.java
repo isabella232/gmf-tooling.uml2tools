@@ -127,6 +127,11 @@ public class UMLElementTypes extends ElementInitializers {
 	/**
 	 * @generated
 	 */
+	public static final IElementType InstanceSpecification_2017 = getElementType("org.eclipse.uml2.diagram.clazz.InstanceSpecification_2017"); //$NON-NLS-1$
+
+	/**
+	 * @generated
+	 */
 	public static final IElementType Package_3006 = getElementType("org.eclipse.uml2.diagram.clazz.Package_3006"); //$NON-NLS-1$
 
 	/**
@@ -497,6 +502,8 @@ public class UMLElementTypes extends ElementInitializers {
 
 			elements.put(Package_2016, UMLPackage.eINSTANCE.getPackage());
 
+			elements.put(InstanceSpecification_2017, UMLPackage.eINSTANCE.getInstanceSpecification());
+
 			elements.put(Package_3006, UMLPackage.eINSTANCE.getPackage());
 
 			elements.put(Class_3007, UMLPackage.eINSTANCE.getClass_());
@@ -623,6 +630,7 @@ public class UMLElementTypes extends ElementInitializers {
 			KNOWN_ELEMENT_TYPES.add(Package_2014);
 			KNOWN_ELEMENT_TYPES.add(AssociationClass_2015);
 			KNOWN_ELEMENT_TYPES.add(Package_2016);
+			KNOWN_ELEMENT_TYPES.add(InstanceSpecification_2017);
 			KNOWN_ELEMENT_TYPES.add(Package_3006);
 			KNOWN_ELEMENT_TYPES.add(Class_3007);
 			KNOWN_ELEMENT_TYPES.add(DataType_3008);

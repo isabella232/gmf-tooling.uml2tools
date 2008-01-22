@@ -103,6 +103,17 @@ public class UMLViewProvider extends AbstractViewProvider {
 					}
 					break;
 				}
+				case InstanceSpecification2EditPart.VISUAL_ID: {
+					if (domainElement == null) {
+						return null;
+					}
+
+					int suggestedID = UMLVisualIDRegistry.getNodeVisualID(containerView, domainElement);
+					if (visualID != suggestedID && InstanceSpecification4EditPart.VISUAL_ID != suggestedID && true) {
+						return null;
+					}
+					break;
+				}
 				case Interface2EditPart.VISUAL_ID: {
 					if (domainElement == null) {
 						return null;
@@ -136,12 +147,22 @@ public class UMLViewProvider extends AbstractViewProvider {
 					}
 					break;
 				}
+				case InstanceSpecification4EditPart.VISUAL_ID: {
+					if (domainElement == null) {
+						return null;
+					}
+
+					int suggestedID = UMLVisualIDRegistry.getNodeVisualID(containerView, domainElement);
+					if (visualID != suggestedID && InstanceSpecification2EditPart.VISUAL_ID != suggestedID && true) {
+						return null;
+					}
+					break;
+				}
 				case Class2EditPart.VISUAL_ID:
 				case DataType2EditPart.VISUAL_ID:
 				case PrimitiveType2EditPart.VISUAL_ID:
 				case Enumeration2EditPart.VISUAL_ID:
 				case ConstraintEditPart.VISUAL_ID:
-				case InstanceSpecification2EditPart.VISUAL_ID:
 				case DependencyEditPart.VISUAL_ID:
 				case GeneralizationSetEditPart.VISUAL_ID:
 				case Package4EditPart.VISUAL_ID:
@@ -272,6 +293,12 @@ public class UMLViewProvider extends AbstractViewProvider {
 				case PackageName3EditPart.VISUAL_ID:
 				case PackageAsFrameContentsEditPart.VISUAL_ID:
 					if (PackageAsFrameEditPart.VISUAL_ID != UMLVisualIDRegistry.getVisualID(containerView) || containerView.getElement() != domainElement) {
+						return null; // wrong container
+					}
+					break;
+				case InstanceSpecificationName3EditPart.VISUAL_ID:
+				case InstanceSpecificationQualifiedNameEditPart.VISUAL_ID:
+					if (InstanceSpecification4EditPart.VISUAL_ID != UMLVisualIDRegistry.getVisualID(containerView) || containerView.getElement() != domainElement) {
 						return null; // wrong container
 					}
 					break;
@@ -440,6 +467,12 @@ public class UMLViewProvider extends AbstractViewProvider {
 			return PackageAsFrameViewFactory.class;
 		case PackageName3EditPart.VISUAL_ID:
 			return PackageName3ViewFactory.class;
+		case InstanceSpecification4EditPart.VISUAL_ID:
+			return InstanceSpecification4ViewFactory.class;
+		case InstanceSpecificationName3EditPart.VISUAL_ID:
+			return InstanceSpecificationName3ViewFactory.class;
+		case InstanceSpecificationQualifiedNameEditPart.VISUAL_ID:
+			return InstanceSpecificationQualifiedNameViewFactory.class;
 		case Package3EditPart.VISUAL_ID:
 			return Package3ViewFactory.class;
 		case ClassEditPart.VISUAL_ID:

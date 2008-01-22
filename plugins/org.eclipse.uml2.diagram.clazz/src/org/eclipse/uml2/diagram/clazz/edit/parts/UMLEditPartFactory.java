@@ -125,6 +125,15 @@ public class UMLEditPartFactory implements EditPartFactory {
 			case PackageName3EditPart.VISUAL_ID:
 				return new PackageName3EditPart(view);
 
+			case InstanceSpecification4EditPart.VISUAL_ID:
+				return new InstanceSpecification4EditPart(view);
+
+			case InstanceSpecificationName3EditPart.VISUAL_ID:
+				return new InstanceSpecificationName3EditPart(view);
+
+			case InstanceSpecificationQualifiedNameEditPart.VISUAL_ID:
+				return new InstanceSpecificationQualifiedNameEditPart(view);
+
 			case Package3EditPart.VISUAL_ID:
 				return new Package3EditPart(view);
 
