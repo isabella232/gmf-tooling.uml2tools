@@ -1,5 +1,6 @@
 package org.eclipse.uml2.diagram.clazz.edit.parts;
 
+import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
@@ -11,11 +12,13 @@ import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.transaction.RunnableWithResult;
 import org.eclipse.gef.AccessibleEditPart;
-import org.eclipse.gef.DragTracker;
 import org.eclipse.gef.EditPolicy;
+import org.eclipse.gef.GraphicalEditPart;
 import org.eclipse.gef.Request;
+import org.eclipse.gef.commands.Command;
+import org.eclipse.gef.editpolicies.NonResizableEditPolicy;
+import org.eclipse.gef.handles.NonResizableHandleKit;
 import org.eclipse.gef.requests.DirectEditRequest;
-import org.eclipse.gef.requests.SelectionRequest;
 import org.eclipse.gef.tools.DirectEditManager;
 import org.eclipse.gmf.runtime.common.ui.services.parser.IParser;
 import org.eclipse.gmf.runtime.common.ui.services.parser.IParserEditStatus;
@@ -25,12 +28,9 @@ import org.eclipse.gmf.runtime.common.ui.services.parser.ParserService;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.CompartmentEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.ITextAwareEditPart;
-import org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles;
 import org.eclipse.gmf.runtime.diagram.ui.editpolicies.LabelDirectEditPolicy;
-import org.eclipse.gmf.runtime.diagram.ui.editpolicies.ListItemComponentEditPolicy;
 import org.eclipse.gmf.runtime.diagram.ui.l10n.DiagramColorRegistry;
 import org.eclipse.gmf.runtime.diagram.ui.requests.RequestConstants;
-import org.eclipse.gmf.runtime.diagram.ui.tools.DragEditPartsTrackerEx;
 import org.eclipse.gmf.runtime.diagram.ui.tools.TextDirectEditManager;
 import org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel;
 import org.eclipse.gmf.runtime.emf.core.util.EObjectAdapter;
@@ -45,8 +45,6 @@ import org.eclipse.swt.accessibility.AccessibleEvent;
 import org.eclipse.swt.graphics.Color;
 import org.eclipse.swt.graphics.FontData;
 import org.eclipse.swt.graphics.Image;
-import org.eclipse.uml2.diagram.clazz.edit.policies.LiteralIntegerItemSemanticEditPolicy;
-import org.eclipse.uml2.diagram.clazz.edit.policies.UMLTextNonResizableEditPolicy;
 import org.eclipse.uml2.diagram.clazz.edit.policies.UMLTextSelectionEditPolicy;
 import org.eclipse.uml2.diagram.clazz.providers.UMLElementTypes;
 import org.eclipse.uml2.diagram.clazz.providers.UMLParserProvider;
@@ -54,12 +52,12 @@ import org.eclipse.uml2.diagram.clazz.providers.UMLParserProvider;
 /**
  * @generated
  */
-public class LiteralIntegerEditPart extends CompartmentEditPart implements ITextAwareEditPart {
+public class Label2EditPart extends CompartmentEditPart implements ITextAwareEditPart {
 
 	/**
 	 * @generated
 	 */
-	public static final int VISUAL_ID = 3039;
+	public static final int VISUAL_ID = 5030;
 
 	/**
 	 * @generated
@@ -84,18 +82,8 @@ public class LiteralIntegerEditPart extends CompartmentEditPart implements IText
 	/**
 	 * @generated
 	 */
-	public LiteralIntegerEditPart(View view) {
+	public Label2EditPart(View view) {
 		super(view);
-	}
-
-	/**
-	 * @generated
-	 */
-	public DragTracker getDragTracker(Request request) {
-		if (request instanceof SelectionRequest && ((SelectionRequest) request).getLastButtonPressed() == 3) {
-			return null;
-		}
-		return new DragEditPartsTrackerEx(this);
 	}
 
 	/**
@@ -103,10 +91,23 @@ public class LiteralIntegerEditPart extends CompartmentEditPart implements IText
 	 */
 	protected void createDefaultEditPolicies() {
 		super.createDefaultEditPolicies();
-		installEditPolicy(EditPolicyRoles.SEMANTIC_ROLE, new LiteralIntegerItemSemanticEditPolicy());
-		installEditPolicy(EditPolicy.PRIMARY_DRAG_ROLE, new UMLTextNonResizableEditPolicy());
-		installEditPolicy(EditPolicy.COMPONENT_ROLE, new ListItemComponentEditPolicy());
 		installEditPolicy(EditPolicy.DIRECT_EDIT_ROLE, new LabelDirectEditPolicy());
+		installEditPolicy(EditPolicy.PRIMARY_DRAG_ROLE, new NonResizableEditPolicy() {
+
+			protected List createSelectionHandles() {
+				List handles = new ArrayList();
+				NonResizableHandleKit.addMoveHandle((GraphicalEditPart) getHost(), handles);
+				return handles;
+			}
+
+			public Command getCommand(Request request) {
+				return null;
+			}
+
+			public boolean understandsRequest(Request request) {
+				return false;
+			}
+		});
 	}
 
 	/**
@@ -156,7 +157,7 @@ public class LiteralIntegerEditPart extends CompartmentEditPart implements IText
 	/**
 	 * @generated
 	 */
-	public void setLabel(IFigure figure) {
+	public void setLabel(Label figure) {
 		unregisterVisuals();
 		setFigure(figure);
 		defaultText = getLabelTextHelper(figure);
@@ -189,11 +190,7 @@ public class LiteralIntegerEditPart extends CompartmentEditPart implements IText
 	 * @generated
 	 */
 	protected Image getLabelIcon() {
-		EObject parserElement = getParserElement();
-		if (parserElement == null) {
-			return null;
-		}
-		return UMLElementTypes.getImage(parserElement.eClass());
+		return null;
 	}
 
 	/**
@@ -291,7 +288,7 @@ public class LiteralIntegerEditPart extends CompartmentEditPart implements IText
 	public IParser getParser() {
 		if (parser == null) {
 			String parserHint = ((View) getModel()).getType();
-			IAdaptable hintAdapter = new UMLParserProvider.HintAdapter(UMLElementTypes.LiteralInteger_3039, getParserElement(), parserHint);
+			IAdaptable hintAdapter = new UMLParserProvider.HintAdapter(UMLElementTypes.InstanceSpecification_2017, getParserElement(), parserHint);
 			parser = ParserService.getInstance().getParser(hintAdapter);
 		}
 		return parser;
@@ -533,16 +530,8 @@ public class LiteralIntegerEditPart extends CompartmentEditPart implements IText
 	 * @generated
 	 */
 	protected IFigure createFigure() {
-		IFigure label = createFigurePrim();
-		defaultText = getLabelTextHelper(label);
-		return label;
-	}
-
-	/**
-	 * @generated
-	 */
-	protected IFigure createFigurePrim() {
-		return new Label();
+		// Parent should assign one using setLabel() method
+		return null;
 	}
 
 }

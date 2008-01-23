@@ -255,8 +255,6 @@ public class UMLDiagramUpdater {
 			return getPrimitiveTypeAttributes_7044SemanticChildren(view);
 		case PrimitiveTypeOperations2EditPart.VISUAL_ID:
 			return getPrimitiveTypeOperations_7045SemanticChildren(view);
-		case InstanceSpecificationValueEditPart.VISUAL_ID:
-			return getInstanceSpecificationValue_7046SemanticChildren(view);
 		case PackageEditPart.VISUAL_ID: {
 			//We have "dummy" TopLevelNode (with vid = org.eclipse.uml2.diagram.clazz.edit.parts.Package4EditPart.VISUAL_ID). 
 			//The only purpose for this node is to be a container for children (imports, etc)
@@ -1352,35 +1350,6 @@ public class UMLDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List getInstanceSpecificationValue_7046SemanticChildren(View view) {
-		if (false == view.eContainer() instanceof View) {
-			return Collections.EMPTY_LIST;
-		}
-		View containerView = (View) view.eContainer();
-		if (!containerView.isSetElement()) {
-			return Collections.EMPTY_LIST;
-		}
-		InstanceSpecification modelElement = (InstanceSpecification) containerView.getElement();
-		List result = new LinkedList();
-		{
-			ValueSpecification childElement = modelElement.getSpecification();
-			int visualID = UMLVisualIDRegistry.getNodeVisualID(view, childElement);
-			if (visualID == LiteralStringEditPart.VISUAL_ID) {
-				result.add(new UMLNodeDescriptor(childElement, visualID));
-			}
-			if (visualID == LiteralIntegerEditPart.VISUAL_ID) {
-				result.add(new UMLNodeDescriptor(childElement, visualID));
-			}
-			if (visualID == ExpressionEditPart.VISUAL_ID) {
-				result.add(new UMLNodeDescriptor(childElement, visualID));
-			}
-		}
-		return result;
-	}
-
-	/**
-	 * @generated
-	 */
 	public static List getPackage_1000SemanticChildren(View view) {
 		if (!view.isSetElement()) {
 			return Collections.EMPTY_LIST;
@@ -1571,12 +1540,6 @@ public class UMLDiagramUpdater {
 			return getDataType_3036ContainedLinks(view);
 		case PrimitiveType3EditPart.VISUAL_ID:
 			return getPrimitiveType_3037ContainedLinks(view);
-		case LiteralStringEditPart.VISUAL_ID:
-			return getLiteralString_3038ContainedLinks(view);
-		case LiteralIntegerEditPart.VISUAL_ID:
-			return getLiteralInteger_3039ContainedLinks(view);
-		case ExpressionEditPart.VISUAL_ID:
-			return getExpression_3040ContainedLinks(view);
 		case GeneralizationEditPart.VISUAL_ID:
 			return getGeneralization_4001ContainedLinks(view);
 		case Dependency2EditPart.VISUAL_ID:
@@ -1704,12 +1667,6 @@ public class UMLDiagramUpdater {
 			return getDataType_3036IncomingLinks(view);
 		case PrimitiveType3EditPart.VISUAL_ID:
 			return getPrimitiveType_3037IncomingLinks(view);
-		case LiteralStringEditPart.VISUAL_ID:
-			return getLiteralString_3038IncomingLinks(view);
-		case LiteralIntegerEditPart.VISUAL_ID:
-			return getLiteralInteger_3039IncomingLinks(view);
-		case ExpressionEditPart.VISUAL_ID:
-			return getExpression_3040IncomingLinks(view);
 		case GeneralizationEditPart.VISUAL_ID:
 			return getGeneralization_4001IncomingLinks(view);
 		case Dependency2EditPart.VISUAL_ID:
@@ -1837,12 +1794,6 @@ public class UMLDiagramUpdater {
 			return getDataType_3036OutgoingLinks(view);
 		case PrimitiveType3EditPart.VISUAL_ID:
 			return getPrimitiveType_3037OutgoingLinks(view);
-		case LiteralStringEditPart.VISUAL_ID:
-			return getLiteralString_3038OutgoingLinks(view);
-		case LiteralIntegerEditPart.VISUAL_ID:
-			return getLiteralInteger_3039OutgoingLinks(view);
-		case ExpressionEditPart.VISUAL_ID:
-			return getExpression_3040OutgoingLinks(view);
 		case GeneralizationEditPart.VISUAL_ID:
 			return getGeneralization_4001OutgoingLinks(view);
 		case Dependency2EditPart.VISUAL_ID:
@@ -2406,27 +2357,6 @@ public class UMLDiagramUpdater {
 		result.addAll(getContainedTypeModelFacetLinks_Generalization_4011(modelElement));
 		result.addAll(getContainedTypeModelFacetLinks_TemplateBinding_4016(modelElement));
 		return result;
-	}
-
-	/**
-	 * @generated
-	 */
-	public static List getLiteralString_3038ContainedLinks(View view) {
-		return Collections.EMPTY_LIST;
-	}
-
-	/**
-	 * @generated
-	 */
-	public static List getLiteralInteger_3039ContainedLinks(View view) {
-		return Collections.EMPTY_LIST;
-	}
-
-	/**
-	 * @generated
-	 */
-	public static List getExpression_3040ContainedLinks(View view) {
-		return Collections.EMPTY_LIST;
 	}
 
 	/**
@@ -3379,54 +3309,6 @@ public class UMLDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List getLiteralString_3038IncomingLinks(View view) {
-		LiteralString modelElement = (LiteralString) view.getElement();
-		Map crossReferences = EcoreUtil.CrossReferencer.find(view.eResource().getResourceSet().getResources());
-		List result = new LinkedList();
-		result.addAll(getIncomingTypeModelFacetLinks_Dependency_4002(modelElement, crossReferences));
-		result.addAll(getIncomingFeatureModelFacetLinks_Constraint_ConstrainedElement_4004(modelElement, crossReferences));
-		result.addAll(getIncomingFeatureModelFacetLinks_Dependency_Supplier_4006(modelElement, crossReferences));
-		result.addAll(getIncomingFeatureModelFacetLinks_Dependency_Client_4007(modelElement, crossReferences));
-		result.addAll(getIncomingTypeModelFacetLinks_Realization_4010(modelElement, crossReferences));
-		result.addAll(getIncomingTypeModelFacetLinks_Usage_4013(modelElement, crossReferences));
-		return result;
-	}
-
-	/**
-	 * @generated
-	 */
-	public static List getLiteralInteger_3039IncomingLinks(View view) {
-		LiteralInteger modelElement = (LiteralInteger) view.getElement();
-		Map crossReferences = EcoreUtil.CrossReferencer.find(view.eResource().getResourceSet().getResources());
-		List result = new LinkedList();
-		result.addAll(getIncomingTypeModelFacetLinks_Dependency_4002(modelElement, crossReferences));
-		result.addAll(getIncomingFeatureModelFacetLinks_Constraint_ConstrainedElement_4004(modelElement, crossReferences));
-		result.addAll(getIncomingFeatureModelFacetLinks_Dependency_Supplier_4006(modelElement, crossReferences));
-		result.addAll(getIncomingFeatureModelFacetLinks_Dependency_Client_4007(modelElement, crossReferences));
-		result.addAll(getIncomingTypeModelFacetLinks_Realization_4010(modelElement, crossReferences));
-		result.addAll(getIncomingTypeModelFacetLinks_Usage_4013(modelElement, crossReferences));
-		return result;
-	}
-
-	/**
-	 * @generated
-	 */
-	public static List getExpression_3040IncomingLinks(View view) {
-		Expression modelElement = (Expression) view.getElement();
-		Map crossReferences = EcoreUtil.CrossReferencer.find(view.eResource().getResourceSet().getResources());
-		List result = new LinkedList();
-		result.addAll(getIncomingTypeModelFacetLinks_Dependency_4002(modelElement, crossReferences));
-		result.addAll(getIncomingFeatureModelFacetLinks_Constraint_ConstrainedElement_4004(modelElement, crossReferences));
-		result.addAll(getIncomingFeatureModelFacetLinks_Dependency_Supplier_4006(modelElement, crossReferences));
-		result.addAll(getIncomingFeatureModelFacetLinks_Dependency_Client_4007(modelElement, crossReferences));
-		result.addAll(getIncomingTypeModelFacetLinks_Realization_4010(modelElement, crossReferences));
-		result.addAll(getIncomingTypeModelFacetLinks_Usage_4013(modelElement, crossReferences));
-		return result;
-	}
-
-	/**
-	 * @generated
-	 */
 	public static List getGeneralization_4001IncomingLinks(View view) {
 		Generalization modelElement = (Generalization) view.getElement();
 		Map crossReferences = EcoreUtil.CrossReferencer.find(view.eResource().getResourceSet().getResources());
@@ -4273,42 +4155,6 @@ public class UMLDiagramUpdater {
 		result.addAll(getContainedTypeModelFacetLinks_Generalization_4011(modelElement));
 		result.addAll(getOutgoingTypeModelFacetLinks_Usage_4013(modelElement));
 		result.addAll(getOutgoingTypeModelFacetLinks_TemplateBinding_4016(modelElement));
-		return result;
-	}
-
-	/**
-	 * @generated
-	 */
-	public static List getLiteralString_3038OutgoingLinks(View view) {
-		LiteralString modelElement = (LiteralString) view.getElement();
-		List result = new LinkedList();
-		result.addAll(getOutgoingTypeModelFacetLinks_Dependency_4002(modelElement));
-		result.addAll(getOutgoingTypeModelFacetLinks_Realization_4010(modelElement));
-		result.addAll(getOutgoingTypeModelFacetLinks_Usage_4013(modelElement));
-		return result;
-	}
-
-	/**
-	 * @generated
-	 */
-	public static List getLiteralInteger_3039OutgoingLinks(View view) {
-		LiteralInteger modelElement = (LiteralInteger) view.getElement();
-		List result = new LinkedList();
-		result.addAll(getOutgoingTypeModelFacetLinks_Dependency_4002(modelElement));
-		result.addAll(getOutgoingTypeModelFacetLinks_Realization_4010(modelElement));
-		result.addAll(getOutgoingTypeModelFacetLinks_Usage_4013(modelElement));
-		return result;
-	}
-
-	/**
-	 * @generated
-	 */
-	public static List getExpression_3040OutgoingLinks(View view) {
-		Expression modelElement = (Expression) view.getElement();
-		List result = new LinkedList();
-		result.addAll(getOutgoingTypeModelFacetLinks_Dependency_4002(modelElement));
-		result.addAll(getOutgoingTypeModelFacetLinks_Realization_4010(modelElement));
-		result.addAll(getOutgoingTypeModelFacetLinks_Usage_4013(modelElement));
 		return result;
 	}
 

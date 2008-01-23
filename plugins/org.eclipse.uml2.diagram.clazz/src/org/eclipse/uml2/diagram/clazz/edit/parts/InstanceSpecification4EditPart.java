@@ -13,6 +13,8 @@ import org.eclipse.gef.EditPolicy;
 import org.eclipse.gef.Request;
 import org.eclipse.gef.commands.Command;
 import org.eclipse.gef.editpolicies.LayoutEditPolicy;
+import org.eclipse.gef.editpolicies.NonResizableEditPolicy;
+import org.eclipse.gef.requests.CreateRequest;
 import org.eclipse.gmf.runtime.diagram.core.edithelpers.CreateElementRequestAdapter;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.ITextAwareEditPart;
@@ -63,31 +65,6 @@ public class InstanceSpecification4EditPart extends ShapeNodeEditPart {
 	 * @generated
 	 */
 	protected void createDefaultEditPolicies() {
-		installEditPolicy(EditPolicyRoles.CREATION_ROLE, new CreationEditPolicy() {
-
-			public Command getCommand(Request request) {
-				if (understandsRequest(request)) {
-					if (request instanceof CreateViewAndElementRequest) {
-						CreateElementRequestAdapter adapter = ((CreateViewAndElementRequest) request).getViewAndElementDescriptor().getCreateElementRequestAdapter();
-						IElementType type = (IElementType) adapter.getAdapter(IElementType.class);
-						if (type == UMLElementTypes.LiteralString_3038) {
-							EditPart compartmentEditPart = getChildBySemanticHint(UMLVisualIDRegistry.getType(InstanceSpecificationValueEditPart.VISUAL_ID));
-							return compartmentEditPart == null ? null : compartmentEditPart.getCommand(request);
-						}
-						if (type == UMLElementTypes.LiteralInteger_3039) {
-							EditPart compartmentEditPart = getChildBySemanticHint(UMLVisualIDRegistry.getType(InstanceSpecificationValueEditPart.VISUAL_ID));
-							return compartmentEditPart == null ? null : compartmentEditPart.getCommand(request);
-						}
-						if (type == UMLElementTypes.Expression_3040) {
-							EditPart compartmentEditPart = getChildBySemanticHint(UMLVisualIDRegistry.getType(InstanceSpecificationValueEditPart.VISUAL_ID));
-							return compartmentEditPart == null ? null : compartmentEditPart.getCommand(request);
-						}
-					}
-					return super.getCommand(request);
-				}
-				return null;
-			}
-		});
 		super.createDefaultEditPolicies();
 		installEditPolicy(EditPolicyRoles.SEMANTIC_ROLE, new InstanceSpecification4ItemSemanticEditPolicy());
 		installEditPolicy(EditPolicy.LAYOUT_ROLE, createLayoutEditPolicy());
@@ -99,16 +76,22 @@ public class InstanceSpecification4EditPart extends ShapeNodeEditPart {
 	 * @generated
 	 */
 	protected LayoutEditPolicy createLayoutEditPolicy() {
-
-		ConstrainedToolbarLayoutEditPolicy lep = new ConstrainedToolbarLayoutEditPolicy() {
+		LayoutEditPolicy lep = new LayoutEditPolicy() {
 
 			protected EditPolicy createChildEditPolicy(EditPart child) {
-				if (child.getEditPolicy(EditPolicy.PRIMARY_DRAG_ROLE) == null) {
-					if (child instanceof ITextAwareEditPart) {
-						return new UMLTextSelectionEditPolicy();
-					}
+				EditPolicy result = child.getEditPolicy(EditPolicy.PRIMARY_DRAG_ROLE);
+				if (result == null) {
+					result = new NonResizableEditPolicy();
 				}
-				return super.createChildEditPolicy(child);
+				return result;
+			}
+
+			protected Command getMoveChildrenCommand(Request request) {
+				return null;
+			}
+
+			protected Command getCreateCommand(CreateRequest request) {
+				return null;
 			}
 		};
 		return lep;
@@ -137,10 +120,8 @@ public class InstanceSpecification4EditPart extends ShapeNodeEditPart {
 			((InstanceSpecificationName3EditPart) childEditPart).setLabel(getPrimaryShape().getFigureRectangleInstanceNode_NameLabel());
 			return true;
 		}
-		if (childEditPart instanceof InstanceSpecificationValueEditPart) {
-			IFigure pane = getPrimaryShape().getFigureRectangleInstanceNodeFigure_ValueCompartmentFigure();
-			setupContentPane(pane); // FIXME each comparment should handle his content pane in his own way 
-			pane.add(((InstanceSpecificationValueEditPart) childEditPart).getFigure());
+		if (childEditPart instanceof Label2EditPart) {
+			((Label2EditPart) childEditPart).setLabel(getPrimaryShape().getFigureRectangleInstanceNode_ValueLabel());
 			return true;
 		}
 		return false;
@@ -151,11 +132,6 @@ public class InstanceSpecification4EditPart extends ShapeNodeEditPart {
 	 */
 	protected boolean removeFixedChild(EditPart childEditPart) {
 
-		if (childEditPart instanceof InstanceSpecificationValueEditPart) {
-			IFigure pane = getPrimaryShape().getFigureRectangleInstanceNodeFigure_ValueCompartmentFigure();
-			pane.remove(((InstanceSpecificationValueEditPart) childEditPart).getFigure());
-			return true;
-		}
 		return false;
 	}
 
@@ -184,9 +160,6 @@ public class InstanceSpecification4EditPart extends ShapeNodeEditPart {
 	 */
 	protected IFigure getContentPaneFor(IGraphicalEditPart editPart) {
 
-		if (editPart instanceof InstanceSpecificationValueEditPart) {
-			return getPrimaryShape().getFigureRectangleInstanceNodeFigure_ValueCompartmentFigure();
-		}
 		return super.getContentPaneFor(editPart);
 	}
 
@@ -271,19 +244,14 @@ public class InstanceSpecification4EditPart extends ShapeNodeEditPart {
 		/**
 		 * @generated
 		 */
-		private RectangleFigure fFigureRectangleInstanceNodeFigure_ValueCompartmentFigure;
+		private Label fFigureRectangleInstanceNode_ValueLabel;
 
 		/**
 		 * @generated
 		 */
 		public RectangleInstanceNodeFigure() {
 
-			ToolbarLayout layoutThis = new ToolbarLayout();
-			layoutThis.setStretchMinorAxis(true);
-			layoutThis.setMinorAlignment(ToolbarLayout.ALIGN_TOPLEFT);
-
-			layoutThis.setSpacing(5);
-			layoutThis.setVertical(true);
+			CenterLayout layoutThis = new CenterLayout();
 
 			this.setLayoutManager(layoutThis);
 
@@ -296,19 +264,29 @@ public class InstanceSpecification4EditPart extends ShapeNodeEditPart {
 		 */
 		private void createContents() {
 
+			RectangleFigure rectangleInstanceLabelContainer0 = new RectangleFigure();
+			rectangleInstanceLabelContainer0.setOutline(false);
+
+			this.add(rectangleInstanceLabelContainer0);
+
+			ToolbarLayout layoutRectangleInstanceLabelContainer0 = new ToolbarLayout();
+			layoutRectangleInstanceLabelContainer0.setStretchMinorAxis(true);
+			layoutRectangleInstanceLabelContainer0.setMinorAlignment(ToolbarLayout.ALIGN_CENTER);
+
+			layoutRectangleInstanceLabelContainer0.setSpacing(0);
+			layoutRectangleInstanceLabelContainer0.setVertical(true);
+
+			rectangleInstanceLabelContainer0.setLayoutManager(layoutRectangleInstanceLabelContainer0);
+
 			fFigureRectangleInstanceNode_NameLabel = new Label();
 			fFigureRectangleInstanceNode_NameLabel.setText("");
 
-			this.add(fFigureRectangleInstanceNode_NameLabel);
+			rectangleInstanceLabelContainer0.add(fFigureRectangleInstanceNode_NameLabel);
 
-			CenterLayout layoutFFigureRectangleInstanceNode_NameLabel = new CenterLayout();
+			fFigureRectangleInstanceNode_ValueLabel = new Label();
+			fFigureRectangleInstanceNode_ValueLabel.setText("");
 
-			fFigureRectangleInstanceNode_NameLabel.setLayoutManager(layoutFFigureRectangleInstanceNode_NameLabel);
-
-			fFigureRectangleInstanceNodeFigure_ValueCompartmentFigure = new RectangleFigure();
-			fFigureRectangleInstanceNodeFigure_ValueCompartmentFigure.setOutline(false);
-
-			this.add(fFigureRectangleInstanceNodeFigure_ValueCompartmentFigure);
+			rectangleInstanceLabelContainer0.add(fFigureRectangleInstanceNode_ValueLabel);
 
 		}
 
@@ -341,8 +319,8 @@ public class InstanceSpecification4EditPart extends ShapeNodeEditPart {
 		/**
 		 * @generated
 		 */
-		public RectangleFigure getFigureRectangleInstanceNodeFigure_ValueCompartmentFigure() {
-			return fFigureRectangleInstanceNodeFigure_ValueCompartmentFigure;
+		public Label getFigureRectangleInstanceNode_ValueLabel() {
+			return fFigureRectangleInstanceNode_ValueLabel;
 		}
 
 	}

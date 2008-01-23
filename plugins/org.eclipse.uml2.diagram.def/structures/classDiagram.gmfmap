@@ -1462,76 +1462,13 @@
         <features
             href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//NamedElement/name"/>
       </labelMappings>
+      <labelMappings
+          xsi:type="gmfmap:FeatureLabelMapping">
+        <diagramLabel
+            href="classDiagram_instances.gmfgraph#RectangleInstance_value"/>
+      </labelMappings>
       <diagramNode
           href="classDiagram_instances.gmfgraph#RectangleInstanceNode"/>
-      <children
-          compartment="//@nodes.15/@ownedChild/@compartments.0">
-        <containmentFeature
-            href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//InstanceSpecification/specification"/>
-        <ownedChild>
-          <domainMetaElement
-              href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//LiteralString"/>
-          <labelMappings
-              xsi:type="gmfmap:FeatureLabelMapping">
-            <diagramLabel
-                href="classDiagram_instances.gmfgraph#ValueSpecification_inplace"/>
-            <features
-                href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//LiteralString/value"/>
-          </labelMappings>
-          <tool
-              xsi:type="gmftool:CreationTool"
-              href="classDiagram.gmftool#//@palette/@tools.3/@tools.2/@tools.0"/>
-          <diagramNode
-              href="classDiagram_instances.gmfgraph#ValueSpecification_inplace"/>
-        </ownedChild>
-      </children>
-      <children
-          compartment="//@nodes.15/@ownedChild/@compartments.0">
-        <containmentFeature
-            href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//InstanceSpecification/specification"/>
-        <ownedChild>
-          <domainMetaElement
-              href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//LiteralInteger"/>
-          <labelMappings
-              xsi:type="gmfmap:FeatureLabelMapping">
-            <diagramLabel
-                href="classDiagram_instances.gmfgraph#ValueSpecification_inplace"/>
-            <features
-                href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//LiteralInteger/value"/>
-          </labelMappings>
-          <tool
-              xsi:type="gmftool:CreationTool"
-              href="classDiagram.gmftool#//@palette/@tools.3/@tools.2/@tools.1"/>
-          <diagramNode
-              href="classDiagram_instances.gmfgraph#ValueSpecification_inplace"/>
-        </ownedChild>
-      </children>
-      <children
-          compartment="//@nodes.15/@ownedChild/@compartments.0">
-        <containmentFeature
-            href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//InstanceSpecification/specification"/>
-        <ownedChild>
-          <domainMetaElement
-              href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//Expression"/>
-          <labelMappings
-              xsi:type="gmfmap:FeatureLabelMapping">
-            <diagramLabel
-                href="classDiagram_instances.gmfgraph#ValueSpecification_inplace"/>
-            <features
-                href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//Expression/symbol"/>
-          </labelMappings>
-          <tool
-              xsi:type="gmftool:CreationTool"
-              href="classDiagram.gmftool#//@palette/@tools.3/@tools.2/@tools.2"/>
-          <diagramNode
-              href="classDiagram_instances.gmfgraph#ValueSpecification_inplace"/>
-        </ownedChild>
-      </children>
-      <compartments
-          children="//@nodes.15/@ownedChild/@children.0 //@nodes.15/@ownedChild/@children.2 //@nodes.15/@ownedChild/@children.1">
-        <compartment
-            href="classDiagram_instances.gmfgraph#value"/>
-      </compartments>
     </ownedChild>
   </nodes>
   <links>
