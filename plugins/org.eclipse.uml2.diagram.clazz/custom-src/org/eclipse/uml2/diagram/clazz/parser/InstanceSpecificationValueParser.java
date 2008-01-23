@@ -6,17 +6,18 @@ import java.util.List;
 import org.eclipse.core.runtime.IAdaptable;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.gmf.runtime.common.core.command.ICommand;
 import org.eclipse.gmf.runtime.common.core.command.UnexecutableCommand;
 import org.eclipse.gmf.runtime.common.ui.services.parser.IParserEditStatus;
 import org.eclipse.gmf.runtime.common.ui.services.parser.ParserEditStatus;
+import org.eclipse.gmf.runtime.emf.type.core.commands.SetValueCommand;
+import org.eclipse.gmf.runtime.emf.type.core.requests.SetRequest;
 import org.eclipse.gmf.runtime.emf.ui.services.parser.ISemanticParser;
 import org.eclipse.jface.text.contentassist.IContentAssistProcessor;
-import org.eclipse.uml2.uml.Connector;
 import org.eclipse.uml2.uml.Expression;
 import org.eclipse.uml2.uml.InstanceSpecification;
 import org.eclipse.uml2.uml.LiteralInteger;
-import org.eclipse.uml2.uml.LiteralSpecification;
 import org.eclipse.uml2.uml.LiteralString;
 import org.eclipse.uml2.uml.UMLPackage;
 import org.eclipse.uml2.uml.ValueSpecification;
@@ -37,7 +38,7 @@ public class InstanceSpecificationValueParser implements ISemanticParser {
 		return false;
 	}
 
-	public List getSemanticElementsBeingParsed(EObject element) {
+	public List<?> getSemanticElementsBeingParsed(EObject element) {
 		if (false == element instanceof InstanceSpecification) {
 			return Collections.emptyList();
 		}
@@ -50,32 +51,77 @@ public class InstanceSpecificationValueParser implements ISemanticParser {
 	}
 
 	public String getEditString(IAdaptable element, int flags) {
-		ValueSpecification value = doAdapt(element).getSpecification();
-		if (value == null) {
+		ValueSpecification specification = doAdapt(element).getSpecification();
+		if (specification == null) {
 			return "";
 		}
 		UMLSwitch<String> valueSwitch = new UMLSwitch<String>() {
+
 			@Override
 			public String caseLiteralString(LiteralString object) {
 				return object.getValue();
 			}
-			
+
 			@Override
 			public String caseLiteralInteger(LiteralInteger object) {
 				return Integer.toString(object.getValue());
 			}
-			
+
 			@Override
 			public String caseExpression(Expression object) {
 				return object.getSymbol();
 			}
-			
+			@Override
+			public String defaultCase(EObject object) {
+				return "";
+			}
+
 		};
-		return valueSwitch.doSwitch(value);
+		return valueSwitch.doSwitch(specification);
 	}
 
-	public ICommand getParseCommand(IAdaptable element, String newString, int flags) {
-		return UnexecutableCommand.INSTANCE;
+	public ICommand getParseCommand(IAdaptable element, final String newString, int flags) {
+		InstanceSpecification is = doAdapt(element);
+		if (is.getSpecification() == null) {
+			return UnexecutableCommand.INSTANCE;
+		}
+		if (newString == null) {
+			return UnexecutableCommand.INSTANCE;
+		}
+		final ValueSpecification specification = is.getSpecification();
+		UMLSwitch<ICommand> valueSwitch = new UMLSwitch<ICommand>() {
+
+			@Override
+			public ICommand caseLiteralString(LiteralString object) {
+				EStructuralFeature feature = UMLPackage.eINSTANCE.getLiteralString_Value();
+				return new SetValueCommand(new SetRequest(specification, feature, newString));
+			}
+
+			@Override
+			public ICommand caseLiteralInteger(LiteralInteger object) {
+				try {
+					Integer intValue = Integer.parseInt(newString);
+					EStructuralFeature feature = UMLPackage.eINSTANCE.getLiteralInteger_Value();
+					return new SetValueCommand(new SetRequest(specification, feature, intValue));
+				} catch (NumberFormatException e) {
+					return UnexecutableCommand.INSTANCE;
+				}
+			}
+
+			@Override
+			public ICommand caseExpression(Expression object) {
+				EStructuralFeature feature = UMLPackage.eINSTANCE.getExpression_Symbol();
+				return new SetValueCommand(new SetRequest(specification, feature, newString));
+			}
+
+			@Override
+			public ICommand defaultCase(EObject object) {
+				return UnexecutableCommand.INSTANCE;
+			}
+
+		};
+
+		return valueSwitch.doSwitch(specification);
 	}
 
 	public String getPrintString(IAdaptable element, int flags) {
