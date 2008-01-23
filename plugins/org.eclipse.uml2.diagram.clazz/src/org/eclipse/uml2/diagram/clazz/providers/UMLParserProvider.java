@@ -48,6 +48,8 @@ import org.eclipse.uml2.diagram.clazz.edit.parts.InstanceSpecificationNameEditPa
 import org.eclipse.uml2.diagram.clazz.edit.parts.InterfaceName2EditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.InterfaceNameEditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.Label2EditPart;
+import org.eclipse.uml2.diagram.clazz.edit.parts.Label3EditPart;
+import org.eclipse.uml2.diagram.clazz.edit.parts.Label4EditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.Operation2EditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.Operation3EditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.Operation4EditPart;
@@ -74,6 +76,7 @@ import org.eclipse.uml2.diagram.clazz.edit.parts.PropertyNameEditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.RealizationNameEditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.SlotEditPart;
 import org.eclipse.uml2.diagram.clazz.expressions.UMLOCLFactory;
+import org.eclipse.uml2.diagram.clazz.parser.AssociationInstanceParser;
 import org.eclipse.uml2.diagram.clazz.parser.GeneralizationSetParser;
 import org.eclipse.uml2.diagram.clazz.parser.InstanceSpecificationValueParser;
 import org.eclipse.uml2.diagram.clazz.parser.dependency.DependencyTypeParser;
@@ -1371,6 +1374,50 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 		return parser;
 	}
 
+	/**
+	 * @generated
+	 */
+	private IParser slotLabel_6015Parser;
+
+	/**
+	 * @generated
+	 */
+	private IParser getSlotLabel_6015Parser() {
+		if (slotLabel_6015Parser == null) {
+			slotLabel_6015Parser = createSlotLabel_6015Parser();
+		}
+		return slotLabel_6015Parser;
+	}
+
+	/**
+	 * @generated NOT
+	 */
+	protected IParser createSlotLabel_6015Parser() {
+		return createAssocationInstanceRoleParser(true);
+	}
+
+	/**
+	 * @generated
+	 */
+	private IParser slotLabel_6016Parser;
+
+	/**
+	 * @generated
+	 */
+	private IParser getSlotLabel_6016Parser() {
+		if (slotLabel_6016Parser == null) {
+			slotLabel_6016Parser = createSlotLabel_6016Parser();
+		}
+		return slotLabel_6016Parser;
+	}
+
+	/**
+	 * @generated NOT
+	 */
+	protected IParser createSlotLabel_6016Parser() {
+		return createAssocationInstanceRoleParser(false);
+	}
+
 	public static final OCLLookup<Type> TYPE_LOOKUP = new OCLLookup<Type>(//
 			UMLOCLFactory.getOCLLookupExpression(DefaultOclLookups.DEFAULT_TYPE_LOOKUP, UMLPackage.eINSTANCE.getNamedElement()), // 
 			new IElementType[] { //
@@ -1550,6 +1597,12 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 		return new DependencyTypeParser();
 	}
 
+	/**
+	 * @NOT-GENERATED
+	 */
+	private IParser createAssocationInstanceRoleParser(boolean sourceNotTarget) {
+		return new AssociationInstanceParser.ROLE_PARSER(sourceNotTarget);
+	}
 	/**
 	 * @NOT-GENERATED
 	 * Different view's but shared common edit.
@@ -1772,6 +1825,10 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 			return getAssociationName_6009Parser();
 		case RealizationNameEditPart.VISUAL_ID:
 			return getRealizationName_6011Parser();
+		case Label3EditPart.VISUAL_ID:
+			return getSlotLabel_6015Parser();
+		case Label4EditPart.VISUAL_ID:
+			return getSlotLabel_6016Parser();
 		}
 		return null;
 	}

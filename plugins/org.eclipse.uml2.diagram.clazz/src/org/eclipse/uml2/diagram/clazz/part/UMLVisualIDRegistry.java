@@ -1229,6 +1229,14 @@ public class UMLVisualIDRegistry {
 				return true;
 			}
 			break;
+		case AssociationInstanceEditPart.VISUAL_ID:
+			if (Label3EditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			if (Label4EditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			break;
 		case TemplateBindingEditPart.VISUAL_ID:
 			if (TemplateBinding_BindLabelEditPart.VISUAL_ID == nodeVisualID) {
 				return true;

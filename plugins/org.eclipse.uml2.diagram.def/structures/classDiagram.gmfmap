@@ -1767,6 +1767,16 @@
         href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//Slot"/>
     <domainSpecialization
         body="self.value->exists(v : ValueSpecification | v.oclIsKindOf(InstanceValue) and not v.oclAsType(InstanceValue).oclIsUndefined())"/>
+    <labelMappings
+        xsi:type="gmfmap:FeatureLabelMapping">
+      <diagramLabel
+          href="classDiagram_associations.gmfgraph#AssociationLink_name"/>
+    </labelMappings>
+    <labelMappings
+        xsi:type="gmfmap:FeatureLabelMapping">
+      <diagramLabel
+          href="classDiagram_associations.gmfgraph#AssociationLink_sourceRole"/>
+    </labelMappings>
     <containmentFeature
         href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//InstanceSpecification/slot"/>
     <tool
