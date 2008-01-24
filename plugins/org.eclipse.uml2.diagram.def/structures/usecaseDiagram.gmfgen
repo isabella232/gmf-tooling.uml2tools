@@ -1343,31 +1343,31 @@
     </palette>
     <preferencePages
         xsi:type="gmfgen:GenStandardPreferencePage"
-        iD="org.eclipse.uml2.uml.diagram.general"
+        iD="org.eclipse.uml2.uml.diagram.usecase.general"
         name="UML Diagram">
       <children
           xsi:type="gmfgen:GenStandardPreferencePage"
-          iD="org.eclipse.uml2.uml.diagram.appearance"
+          iD="org.eclipse.uml2.uml.diagram.usecase.appearance"
           name="Appearance"
           kind="Appearance"/>
       <children
           xsi:type="gmfgen:GenStandardPreferencePage"
-          iD="org.eclipse.uml2.uml.diagram.connections"
+          iD="org.eclipse.uml2.uml.diagram.usecase.connections"
           name="Connections"
           kind="Connections"/>
       <children
           xsi:type="gmfgen:GenStandardPreferencePage"
-          iD="org.eclipse.uml2.uml.diagram.printing"
+          iD="org.eclipse.uml2.uml.diagram.usecase.printing"
           name="Printing"
           kind="Printing"/>
       <children
           xsi:type="gmfgen:GenStandardPreferencePage"
-          iD="org.eclipse.uml2.uml.diagram.rulersAndGrid"
+          iD="org.eclipse.uml2.uml.diagram.usecase.rulersAndGrid"
           name="Rulers And Grid"
           kind="RulersAndGrid"/>
       <children
           xsi:type="gmfgen:GenStandardPreferencePage"
-          iD="org.eclipse.uml2.uml.diagram.pathmaps"
+          iD="org.eclipse.uml2.uml.diagram.usecase.pathmaps"
           name="Pathmaps"
           kind="Pathmaps"/>
     </preferencePages>
