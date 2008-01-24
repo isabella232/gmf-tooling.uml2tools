@@ -222,7 +222,7 @@ public class State3EditPart extends AbstractBorderedShapeEditPart {
 	/**
 	 * @generated
 	 */
-	protected IFigure getContentPaneFor(IGraphicalEditPart editPart) {
+	protected IFigure getContentPaneForGen(IGraphicalEditPart editPart) {
 
 		if (editPart instanceof StateCompositeState_InternalActivities2EditPart) {
 			return getPrimaryShape().getFigureCompositeStateFigure_InternalActivitiesCompartment();
@@ -234,6 +234,19 @@ public class State3EditPart extends AbstractBorderedShapeEditPart {
 			return getBorderedFigure().getBorderItemContainer();
 		}
 		return super.getContentPaneFor(editPart);
+	}
+
+	/**
+	 * @generated NOT
+	 */
+	protected IFigure getContentPaneFor(IGraphicalEditPart editPart) {
+
+		if (editPart instanceof StateCompositeState_InternalActivities2EditPart ||
+				editPart instanceof ConnectionPointReferenceEditPart ||
+				editPart instanceof ConnectionPointReference2EditPart) {
+			return getContentPaneForGen(editPart);
+		}
+		return contentPane;
 	}
 
 	/**
