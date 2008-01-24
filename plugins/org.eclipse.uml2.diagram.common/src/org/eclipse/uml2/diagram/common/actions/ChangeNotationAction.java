@@ -1,9 +1,19 @@
 package org.eclipse.uml2.diagram.common.actions;
 
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Iterator;
+import java.util.List;
+import java.util.Map;
+
+import org.eclipse.core.runtime.IAdaptable;
+import org.eclipse.core.runtime.IProgressMonitor;
 import org.eclipse.draw2d.geometry.Point;
 import org.eclipse.draw2d.geometry.Rectangle;
 import org.eclipse.emf.ecore.EObject;
+import org.eclipse.gef.EditPart;
 import org.eclipse.gef.Request;
+import org.eclipse.gef.RequestConstants;
 import org.eclipse.gef.commands.Command;
 import org.eclipse.gef.commands.CompoundCommand;
 import org.eclipse.gef.commands.UnexecutableCommand;
@@ -11,15 +21,20 @@ import org.eclipse.gmf.runtime.diagram.core.commands.DeleteCommand;
 import org.eclipse.gmf.runtime.diagram.ui.actions.DiagramAction;
 import org.eclipse.gmf.runtime.diagram.ui.commands.ICommandProxy;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.GraphicalEditPart;
+import org.eclipse.gmf.runtime.diagram.ui.parts.IDiagramGraphicalViewer;
 import org.eclipse.gmf.runtime.diagram.ui.requests.CreateViewRequest;
 import org.eclipse.gmf.runtime.diagram.ui.requests.CreateViewRequest.ViewDescriptor;
 import org.eclipse.gmf.runtime.emf.core.util.EObjectAdapter;
 import org.eclipse.gmf.runtime.notation.Node;
 import org.eclipse.gmf.runtime.notation.View;
+import org.eclipse.jface.viewers.StructuredSelection;
+import org.eclipse.swt.widgets.Display;
 import org.eclipse.ui.IWorkbenchPage;
 
-
 public abstract class ChangeNotationAction extends DiagramAction {
+	
+	private CreateViewRequest myCreateViewRequest; 
+	
 	public ChangeNotationAction(IWorkbenchPage workbenchPage, String actionId) {
 		super(workbenchPage);
 		setId(actionId);
@@ -80,11 +95,11 @@ public abstract class ChangeNotationAction extends DiagramAction {
 	}
 	
 	protected final Command getCreateViewCommand(GraphicalEditPart editPart) {
-		CreateViewRequest createViewRequest = getCreateViewRequest(editPart);
-		if (createViewRequest == null) {
+		myCreateViewRequest = getCreateViewRequest(editPart);
+		if (myCreateViewRequest == null) {
 			return null;
 		}
-		return editPart.getParent().getCommand(createViewRequest);
+		return editPart.getParent().getCommand(myCreateViewRequest);
 	}
 	
 	protected final CreateViewRequest getCreateViewRequest(GraphicalEditPart editPart) {
@@ -118,4 +133,56 @@ public abstract class ChangeNotationAction extends DiagramAction {
 		return b.getLocation();		
 	}
 	
+	@Override
+	protected void doRun(IProgressMonitor progressMonitor) {
+		super.doRun(progressMonitor);
+		selectAddedObject();
+		myCreateViewRequest = null;
+	}
+	
+	/**
+     * Almost copy of standard GMF implementation from org.eclipse.gmf.runtime.diagram.ui.actions.internal.CreateViewAction etc
+     */
+    private void selectAddedObject() {
+    	// we use myCreateViewRequest field instead of getRequest() 
+    	if (myCreateViewRequest == null) {
+    		return;
+    	}
+        Object result = myCreateViewRequest.getNewObject();
+        if (!(result instanceof Collection)) {
+            return;
+        }
+        final List editparts = new ArrayList(1);
+
+        IDiagramGraphicalViewer viewer = getDiagramGraphicalViewer();
+        if (viewer == null) {
+            return;
+        }
+
+        Map editpartRegistry = viewer.getEditPartRegistry();
+        for (Iterator iter = ((Collection) result).iterator(); iter.hasNext();) {
+            Object viewAdaptable = iter.next();
+            if (viewAdaptable instanceof IAdaptable) {
+                Object editPart = editpartRegistry
+                    .get(((IAdaptable) viewAdaptable).getAdapter(View.class));
+                if (editPart != null)
+                    editparts.add(editPart);
+            }
+        }
+
+        if (!editparts.isEmpty()) {
+            viewer.setSelection(new StructuredSelection(editparts));
+
+            // automatically put the first shape into edit-mode
+            Display.getCurrent().asyncExec(new Runnable() {
+
+                public void run() {
+                    EditPart editPart = (EditPart) editparts.get(0);
+                    editPart.performRequest(new Request(
+                        RequestConstants.REQ_DIRECT_EDIT));
+                }
+            });
+        }
+    }
+
 }
