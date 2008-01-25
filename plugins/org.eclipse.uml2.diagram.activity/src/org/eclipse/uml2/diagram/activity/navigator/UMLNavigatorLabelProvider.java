@@ -343,6 +343,8 @@ public class UMLNavigatorLabelProvider extends LabelProvider implements ICommonL
 			return getImage("Navigator?Node?http://www.eclipse.org/uml2/2.1.0/UML?LoopNode", UMLElementTypes.LoopNode_3058); //$NON-NLS-1$
 		case ConditionalNodeEditPart.VISUAL_ID:
 			return getImage("Navigator?Node?http://www.eclipse.org/uml2/2.1.0/UML?ConditionalNode", UMLElementTypes.ConditionalNode_3082); //$NON-NLS-1$
+		case ExpansionRegionEditPart.VISUAL_ID:
+			return getImage("Navigator?Node?http://www.eclipse.org/uml2/2.1.0/UML?ExpansionRegion", UMLElementTypes.ExpansionRegion_3084); //$NON-NLS-1$
 		case LiteralStringEditPart.VISUAL_ID:
 			return getImage("Navigator?Node?http://www.eclipse.org/uml2/2.1.0/UML?LiteralString", UMLElementTypes.LiteralString_3049); //$NON-NLS-1$
 		case LiteralString2EditPart.VISUAL_ID:
@@ -567,6 +569,8 @@ public class UMLNavigatorLabelProvider extends LabelProvider implements ICommonL
 			return getLoopNode_3058Text(view);
 		case ConditionalNodeEditPart.VISUAL_ID:
 			return getConditionalNode_3082Text(view);
+		case ExpansionRegionEditPart.VISUAL_ID:
+			return getExpansionRegion_3084Text(view);
 		case LiteralStringEditPart.VISUAL_ID:
 			return getLiteralString_3049Text(view);
 		case LiteralString2EditPart.VISUAL_ID:
@@ -1808,6 +1812,23 @@ public class UMLNavigatorLabelProvider extends LabelProvider implements ICommonL
 			UMLDiagramEditorPlugin.getInstance().logError("No domain element for view with visualID = " + 3082); //$NON-NLS-1$
 			return ""; //$NON-NLS-1$
 		}
+	}
+
+	/**
+	 * @generated
+	 */
+	private String getExpansionRegion_3084Text(View view) {
+		IAdaptable hintAdapter = new UMLParserProvider.HintAdapter(UMLElementTypes.ExpansionRegion_3084, (view.getElement() != null ? view.getElement() : view), UMLVisualIDRegistry
+				.getType(ExpansionRegionModeEditPart.VISUAL_ID));
+		IParser parser = ParserService.getInstance().getParser(hintAdapter);
+
+		if (parser != null) {
+			return parser.getPrintString(hintAdapter, ParserOptions.NONE.intValue());
+		} else {
+			UMLDiagramEditorPlugin.getInstance().logError("Parser was not found for label " + 5087); //$NON-NLS-1$
+			return ""; //$NON-NLS-1$
+		}
+
 	}
 
 	/**

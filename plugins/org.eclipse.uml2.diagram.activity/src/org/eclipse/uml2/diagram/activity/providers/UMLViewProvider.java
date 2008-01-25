@@ -168,6 +168,7 @@ public class UMLViewProvider extends AbstractViewProvider {
 				case ConditionalNode2EditPart.VISUAL_ID:
 				case LoopNodeEditPart.VISUAL_ID:
 				case ConditionalNodeEditPart.VISUAL_ID:
+				case ExpansionRegionEditPart.VISUAL_ID:
 				case LiteralStringEditPart.VISUAL_ID:
 				case LiteralString2EditPart.VISUAL_ID:
 					if (domainElement == null || visualID != UMLVisualIDRegistry.getNodeVisualID(containerView, domainElement)) {
@@ -495,6 +496,11 @@ public class UMLViewProvider extends AbstractViewProvider {
 					break;
 				case ConditionalNodeConditionalNodeCompartmentEditPart.VISUAL_ID:
 					if (ConditionalNodeEditPart.VISUAL_ID != UMLVisualIDRegistry.getVisualID(containerView) || containerView.getElement() != domainElement) {
+						return null; // wrong container
+					}
+					break;
+				case ExpansionRegionModeEditPart.VISUAL_ID:
+					if (ExpansionRegionEditPart.VISUAL_ID != UMLVisualIDRegistry.getVisualID(containerView) || containerView.getElement() != domainElement) {
 						return null; // wrong container
 					}
 					break;
@@ -845,6 +851,10 @@ public class UMLViewProvider extends AbstractViewProvider {
 			return LoopNodeViewFactory.class;
 		case ConditionalNodeEditPart.VISUAL_ID:
 			return ConditionalNodeViewFactory.class;
+		case ExpansionRegionEditPart.VISUAL_ID:
+			return ExpansionRegionViewFactory.class;
+		case ExpansionRegionModeEditPart.VISUAL_ID:
+			return ExpansionRegionModeViewFactory.class;
 		case LiteralStringEditPart.VISUAL_ID:
 			return LiteralStringViewFactory.class;
 		case LiteralString2EditPart.VISUAL_ID:

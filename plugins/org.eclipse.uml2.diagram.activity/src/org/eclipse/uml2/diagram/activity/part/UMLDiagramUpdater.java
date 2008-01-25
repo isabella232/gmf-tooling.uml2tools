@@ -58,6 +58,7 @@ import org.eclipse.uml2.diagram.activity.edit.parts.DecisionNode2EditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.DecisionNode3EditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.DecisionNodeEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.ExceptionHandlerEditPart;
+import org.eclipse.uml2.diagram.activity.edit.parts.ExpansionRegionEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.FlowFinalNode2EditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.FlowFinalNode3EditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.FlowFinalNodeEditPart;
@@ -131,6 +132,7 @@ import org.eclipse.uml2.uml.DataStoreNode;
 import org.eclipse.uml2.uml.DecisionNode;
 import org.eclipse.uml2.uml.ExceptionHandler;
 import org.eclipse.uml2.uml.ExecutableNode;
+import org.eclipse.uml2.uml.ExpansionRegion;
 import org.eclipse.uml2.uml.FlowFinalNode;
 import org.eclipse.uml2.uml.ForkNode;
 import org.eclipse.uml2.uml.InitialNode;
@@ -328,6 +330,10 @@ public class UMLDiagramUpdater {
 				continue;
 			}
 			if (visualID == ConditionalNodeEditPart.VISUAL_ID) {
+				result.add(new UMLNodeDescriptor(childElement, visualID));
+				continue;
+			}
+			if (visualID == ExpansionRegionEditPart.VISUAL_ID) {
 				result.add(new UMLNodeDescriptor(childElement, visualID));
 				continue;
 			}
@@ -1951,6 +1957,8 @@ public class UMLDiagramUpdater {
 			return getLoopNode_3058ContainedLinks(view);
 		case ConditionalNodeEditPart.VISUAL_ID:
 			return getConditionalNode_3082ContainedLinks(view);
+		case ExpansionRegionEditPart.VISUAL_ID:
+			return getExpansionRegion_3084ContainedLinks(view);
 		case LiteralStringEditPart.VISUAL_ID:
 			return getLiteralString_3049ContainedLinks(view);
 		case LiteralString2EditPart.VISUAL_ID:
@@ -2126,6 +2134,8 @@ public class UMLDiagramUpdater {
 			return getLoopNode_3058IncomingLinks(view);
 		case ConditionalNodeEditPart.VISUAL_ID:
 			return getConditionalNode_3082IncomingLinks(view);
+		case ExpansionRegionEditPart.VISUAL_ID:
+			return getExpansionRegion_3084IncomingLinks(view);
 		case LiteralStringEditPart.VISUAL_ID:
 			return getLiteralString_3049IncomingLinks(view);
 		case LiteralString2EditPart.VISUAL_ID:
@@ -2301,6 +2311,8 @@ public class UMLDiagramUpdater {
 			return getLoopNode_3058OutgoingLinks(view);
 		case ConditionalNodeEditPart.VISUAL_ID:
 			return getConditionalNode_3082OutgoingLinks(view);
+		case ExpansionRegionEditPart.VISUAL_ID:
+			return getExpansionRegion_3084OutgoingLinks(view);
 		case LiteralStringEditPart.VISUAL_ID:
 			return getLiteralString_3049OutgoingLinks(view);
 		case LiteralString2EditPart.VISUAL_ID:
@@ -3086,6 +3098,18 @@ public class UMLDiagramUpdater {
 	 */
 	public static List getConditionalNode_3082ContainedLinks(View view) {
 		ConditionalNode modelElement = (ConditionalNode) view.getElement();
+		List result = new LinkedList();
+		result.addAll(getOutgoingFeatureModelFacetLinks_Action_LocalPrecondition_4003(modelElement));
+		result.addAll(getOutgoingFeatureModelFacetLinks_Action_LocalPostcondition_4006(modelElement));
+		result.addAll(getContainedTypeModelFacetLinks_ExceptionHandler_4005(modelElement));
+		return result;
+	}
+
+	/**
+	 * @generated
+	 */
+	public static List getExpansionRegion_3084ContainedLinks(View view) {
+		ExpansionRegion modelElement = (ExpansionRegion) view.getElement();
 		List result = new LinkedList();
 		result.addAll(getOutgoingFeatureModelFacetLinks_Action_LocalPrecondition_4003(modelElement));
 		result.addAll(getOutgoingFeatureModelFacetLinks_Action_LocalPostcondition_4006(modelElement));
@@ -4086,6 +4110,19 @@ public class UMLDiagramUpdater {
 	/**
 	 * @generated
 	 */
+	public static List getExpansionRegion_3084IncomingLinks(View view) {
+		ExpansionRegion modelElement = (ExpansionRegion) view.getElement();
+		Map crossReferences = EcoreUtil.CrossReferencer.find(view.eResource().getResourceSet().getResources());
+		List result = new LinkedList();
+		result.addAll(getIncomingTypeModelFacetLinks_ControlFlow_4001(modelElement, crossReferences));
+		result.addAll(getIncomingTypeModelFacetLinks_ObjectFlow_4002(modelElement, crossReferences));
+		result.addAll(getIncomingTypeModelFacetLinks_ExceptionHandler_4005(modelElement, crossReferences));
+		return result;
+	}
+
+	/**
+	 * @generated
+	 */
 	public static List getLiteralString_3049IncomingLinks(View view) {
 		return Collections.EMPTY_LIST;
 	}
@@ -5058,6 +5095,20 @@ public class UMLDiagramUpdater {
 	 */
 	public static List getConditionalNode_3082OutgoingLinks(View view) {
 		ConditionalNode modelElement = (ConditionalNode) view.getElement();
+		List result = new LinkedList();
+		result.addAll(getOutgoingTypeModelFacetLinks_ControlFlow_4001(modelElement));
+		result.addAll(getOutgoingTypeModelFacetLinks_ObjectFlow_4002(modelElement));
+		result.addAll(getOutgoingFeatureModelFacetLinks_Action_LocalPrecondition_4003(modelElement));
+		result.addAll(getOutgoingFeatureModelFacetLinks_Action_LocalPostcondition_4006(modelElement));
+		result.addAll(getOutgoingTypeModelFacetLinks_ExceptionHandler_4005(modelElement));
+		return result;
+	}
+
+	/**
+	 * @generated
+	 */
+	public static List getExpansionRegion_3084OutgoingLinks(View view) {
+		ExpansionRegion modelElement = (ExpansionRegion) view.getElement();
 		List result = new LinkedList();
 		result.addAll(getOutgoingTypeModelFacetLinks_ControlFlow_4001(modelElement));
 		result.addAll(getOutgoingTypeModelFacetLinks_ObjectFlow_4002(modelElement));

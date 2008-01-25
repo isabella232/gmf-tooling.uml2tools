@@ -1245,6 +1245,16 @@
       </metamodel>
       <metamodel nsURI="http://www.eclipse.org/uml2/2.1.0/UML">
          <metamodelType
+               id="org.eclipse.uml2.diagram.activity.ExpansionRegion_3084"
+               name="%metatype.name.ExpansionRegion_3084"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
+               eclass="ExpansionRegion"
+               edithelper="org.eclipse.uml2.diagram.activity.edit.helpers.ExpansionRegionEditHelper">
+            <param name="semanticHint" value="3084"/>
+         </metamodelType>
+      </metamodel>
+      <metamodel nsURI="http://www.eclipse.org/uml2/2.1.0/UML">
+         <metamodelType
                id="org.eclipse.uml2.diagram.activity.LiteralString_3049"
                name="%metatype.name.LiteralString_3049"
                kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
@@ -1413,6 +1423,7 @@
          <elementType ref="org.eclipse.uml2.diagram.activity.ConditionalNode_3083"/>
          <elementType ref="org.eclipse.uml2.diagram.activity.LoopNode_3058"/>
          <elementType ref="org.eclipse.uml2.diagram.activity.ConditionalNode_3082"/>
+         <elementType ref="org.eclipse.uml2.diagram.activity.ExpansionRegion_3084"/>
          <elementType ref="org.eclipse.uml2.diagram.activity.LiteralString_3049"/>
          <elementType ref="org.eclipse.uml2.diagram.activity.LiteralString_3051"/>
          <elementType ref="org.eclipse.uml2.diagram.activity.ControlFlow_4001"/>

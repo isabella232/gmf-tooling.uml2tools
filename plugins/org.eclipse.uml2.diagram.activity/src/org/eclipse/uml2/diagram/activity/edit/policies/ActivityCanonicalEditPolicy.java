@@ -22,6 +22,7 @@ import org.eclipse.uml2.diagram.activity.edit.parts.ConditionalNodeEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.CreateObjectActionEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.DataStoreNodeEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.DecisionNodeEditPart;
+import org.eclipse.uml2.diagram.activity.edit.parts.ExpansionRegionEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.FlowFinalNodeEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.ForkNodeEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.InitialNodeEditPart;
@@ -90,6 +91,7 @@ public class ActivityCanonicalEditPolicy extends CanonicalEditPolicy {
 		case ActivityPartitionEditPart.VISUAL_ID:
 		case LoopNodeEditPart.VISUAL_ID:
 		case ConditionalNodeEditPart.VISUAL_ID:
+		case ExpansionRegionEditPart.VISUAL_ID:
 			return !semanticChildren.contains(view.getElement()) || visualID != UMLVisualIDRegistry.getNodeVisualID((View) getHost().getModel(), view.getElement());
 		}
 		return false;

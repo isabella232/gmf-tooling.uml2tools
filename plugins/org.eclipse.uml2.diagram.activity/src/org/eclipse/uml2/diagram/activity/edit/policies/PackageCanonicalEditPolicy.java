@@ -64,6 +64,7 @@ import org.eclipse.uml2.diagram.activity.edit.parts.DecisionNode2EditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.DecisionNode3EditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.DecisionNodeEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.ExceptionHandlerEditPart;
+import org.eclipse.uml2.diagram.activity.edit.parts.ExpansionRegionEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.FlowFinalNode2EditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.FlowFinalNode3EditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.FlowFinalNodeEditPart;
@@ -829,6 +830,13 @@ public class PackageCanonicalEditPolicy extends CanonicalConnectionEditPolicy {
 		case ConditionalNodeEditPart.VISUAL_ID: {
 			if (!domain2NotationMap.containsKey(view.getElement())) {
 				result.addAll(UMLDiagramUpdater.getConditionalNode_3082ContainedLinks(view));
+			}
+			domain2NotationMap.put(view.getElement(), view);
+			break;
+		}
+		case ExpansionRegionEditPart.VISUAL_ID: {
+			if (!domain2NotationMap.containsKey(view.getElement())) {
+				result.addAll(UMLDiagramUpdater.getExpansionRegion_3084ContainedLinks(view));
 			}
 			domain2NotationMap.put(view.getElement(), view);
 			break;

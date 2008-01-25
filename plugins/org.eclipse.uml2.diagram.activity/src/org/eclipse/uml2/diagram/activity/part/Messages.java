@@ -483,22 +483,32 @@ public class Messages extends NLS {
 	/**
 	 * @generated
 	 */
-	public static String LoopNode2CreationTool_title;
+	public static String ExpansionRegion2CreationTool_title;
 
 	/**
 	 * @generated
 	 */
-	public static String LoopNode2CreationTool_desc;
+	public static String ExpansionRegion2CreationTool_desc;
 
 	/**
 	 * @generated
 	 */
-	public static String StructuredActivityNode3CreationTool_title;
+	public static String LoopNode3CreationTool_title;
 
 	/**
 	 * @generated
 	 */
-	public static String StructuredActivityNode3CreationTool_desc;
+	public static String LoopNode3CreationTool_desc;
+
+	/**
+	 * @generated
+	 */
+	public static String StructuredActivityNode4CreationTool_title;
+
+	/**
+	 * @generated
+	 */
+	public static String StructuredActivityNode4CreationTool_desc;
 
 	/**
 	 * @generated
@@ -1444,6 +1454,16 @@ public class Messages extends NLS {
 	 * @generated
 	 */
 	public static String NavigatorGroupName_ConditionalNode_3082_outgoinglinks;
+
+	/**
+	 * @generated
+	 */
+	public static String NavigatorGroupName_ExpansionRegion_3084_incominglinks;
+
+	/**
+	 * @generated
+	 */
+	public static String NavigatorGroupName_ExpansionRegion_3084_outgoinglinks;
 
 	/**
 	 * @generated

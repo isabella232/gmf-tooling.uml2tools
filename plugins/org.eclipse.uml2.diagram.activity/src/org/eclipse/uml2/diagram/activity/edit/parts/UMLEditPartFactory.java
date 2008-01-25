@@ -500,6 +500,12 @@ public class UMLEditPartFactory implements EditPartFactory {
 			case ConditionalNodeEditPart.VISUAL_ID:
 				return new ConditionalNodeEditPart(view);
 
+			case ExpansionRegionEditPart.VISUAL_ID:
+				return new ExpansionRegionEditPart(view);
+
+			case ExpansionRegionModeEditPart.VISUAL_ID:
+				return new ExpansionRegionModeEditPart(view);
+
 			case LiteralStringEditPart.VISUAL_ID:
 				return new LiteralStringEditPart(view);
 

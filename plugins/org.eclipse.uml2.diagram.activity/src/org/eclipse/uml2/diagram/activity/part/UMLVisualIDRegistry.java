@@ -221,13 +221,15 @@ public class UMLVisualIDRegistry {
 	 * @generated
 	 */
 	private static final UMLAbstractExpression StructuredActivityNode_3046_Constraint = UMLOCLFactory.getExpression(
-			"not self.oclIsTypeOf(uml::LoopNode) and not self.oclIsTypeOf(uml::ConditionalNode) and self.inPartition->isEmpty()", UMLPackage.eINSTANCE.getStructuredActivityNode());
+			"not self.oclIsTypeOf(uml::LoopNode) and not self.oclIsTypeOf(uml::ConditionalNode) and not self.oclIsTypeOf(uml::ExpansionRegion) and self.inPartition->isEmpty()", UMLPackage.eINSTANCE
+					.getStructuredActivityNode());
 
 	/**
 	 * @generated
 	 */
 	private static final UMLAbstractExpression StructuredActivityNode_3009_Constraint = UMLOCLFactory.getExpression(
-			"not self.oclIsTypeOf(uml::LoopNode) and not self.oclIsTypeOf(uml::ConditionalNode) and self.inPartition->isEmpty()", UMLPackage.eINSTANCE.getStructuredActivityNode());
+			"not self.oclIsTypeOf(uml::LoopNode) and not self.oclIsTypeOf(uml::ConditionalNode) and not self.oclIsTypeOf(uml::ExpansionRegion) and self.inPartition->isEmpty()", UMLPackage.eINSTANCE
+					.getStructuredActivityNode());
 
 	/**
 	 * @generated
@@ -596,6 +598,9 @@ public class UMLVisualIDRegistry {
 			}
 			if (UMLPackage.eINSTANCE.getConditionalNode().isSuperTypeOf(domainElement.eClass()) && evaluate(ConditionalNode_3082_Constraint, domainElement)) {
 				return ConditionalNodeEditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getExpansionRegion().isSuperTypeOf(domainElement.eClass())) {
+				return ExpansionRegionEditPart.VISUAL_ID;
 			}
 			break;
 		case OpaqueActionEditPart.VISUAL_ID:
@@ -1422,6 +1427,9 @@ public class UMLVisualIDRegistry {
 			if (ConditionalNodeEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
+			if (ExpansionRegionEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
 			break;
 		case ConstraintEditPart.VISUAL_ID:
 			if (ConstraintPreconditionEditPart.VISUAL_ID == nodeVisualID) {
@@ -2019,6 +2027,11 @@ public class UMLVisualIDRegistry {
 			break;
 		case ConditionalNodeEditPart.VISUAL_ID:
 			if (ConditionalNodeConditionalNodeCompartmentEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			break;
+		case ExpansionRegionEditPart.VISUAL_ID:
+			if (ExpansionRegionModeEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
 			break;

@@ -125,6 +125,10 @@
           description="Create Conditional Node"/>
       <tools
           xsi:type="gmftool:CreationTool"
+          title="Expansion Region"
+          description="Create Expansion Region"/>
+      <tools
+          xsi:type="gmftool:CreationTool"
           title="Loop Node"
           description="Create Loop Node"/>
       <tools

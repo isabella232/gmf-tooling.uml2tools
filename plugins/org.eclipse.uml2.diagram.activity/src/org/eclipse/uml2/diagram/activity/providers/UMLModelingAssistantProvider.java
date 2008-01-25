@@ -88,6 +88,7 @@ public class UMLModelingAssistantProvider extends ModelingAssistantProvider {
 			types.add(UMLElementTypes.ActivityPartition_3056);
 			types.add(UMLElementTypes.LoopNode_3058);
 			types.add(UMLElementTypes.ConditionalNode_3082);
+			types.add(UMLElementTypes.ExpansionRegion_3084);
 			return types;
 		}
 		if (editPart instanceof ConstraintEditPart) {

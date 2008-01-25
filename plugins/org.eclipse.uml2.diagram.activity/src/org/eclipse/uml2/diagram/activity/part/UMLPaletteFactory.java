@@ -86,8 +86,9 @@ public class UMLPaletteFactory {
 		PaletteGroup paletteContainer = new PaletteGroup(Messages.StructuredActivities4Group_title);
 		paletteContainer.setDescription(Messages.StructuredActivities4Group_desc);
 		paletteContainer.add(createConditionalNode1CreationTool());
-		paletteContainer.add(createLoopNode2CreationTool());
-		paletteContainer.add(createStructuredActivityNode3CreationTool());
+		paletteContainer.add(createExpansionRegion2CreationTool());
+		paletteContainer.add(createLoopNode3CreationTool());
+		paletteContainer.add(createStructuredActivityNode4CreationTool());
 		return paletteContainer;
 	}
 
@@ -487,11 +488,23 @@ public class UMLPaletteFactory {
 	/**
 	 * @generated
 	 */
-	private ToolEntry createLoopNode2CreationTool() {
+	private ToolEntry createExpansionRegion2CreationTool() {
+		List/*<IElementType>*/types = new ArrayList/*<IElementType>*/(1);
+		types.add(UMLElementTypes.ExpansionRegion_3084);
+		NodeToolEntry entry = new NodeToolEntry(Messages.ExpansionRegion2CreationTool_title, Messages.ExpansionRegion2CreationTool_desc, types);
+		entry.setSmallIcon(UMLElementTypes.getImageDescriptor(UMLElementTypes.ExpansionRegion_3084));
+		entry.setLargeIcon(entry.getSmallIcon());
+		return entry;
+	}
+
+	/**
+	 * @generated
+	 */
+	private ToolEntry createLoopNode3CreationTool() {
 		List/*<IElementType>*/types = new ArrayList/*<IElementType>*/(2);
 		types.add(UMLElementTypes.LoopNode_3078);
 		types.add(UMLElementTypes.LoopNode_3058);
-		NodeToolEntry entry = new NodeToolEntry(Messages.LoopNode2CreationTool_title, Messages.LoopNode2CreationTool_desc, types);
+		NodeToolEntry entry = new NodeToolEntry(Messages.LoopNode3CreationTool_title, Messages.LoopNode3CreationTool_desc, types);
 		entry.setSmallIcon(UMLElementTypes.getImageDescriptor(UMLElementTypes.LoopNode_3078));
 		entry.setLargeIcon(entry.getSmallIcon());
 		return entry;
@@ -500,13 +513,13 @@ public class UMLPaletteFactory {
 	/**
 	 * @generated
 	 */
-	private ToolEntry createStructuredActivityNode3CreationTool() {
+	private ToolEntry createStructuredActivityNode4CreationTool() {
 		List/*<IElementType>*/types = new ArrayList/*<IElementType>*/(4);
 		types.add(UMLElementTypes.StructuredActivityNode_3046);
 		types.add(UMLElementTypes.StructuredActivityNode_3009);
 		types.add(UMLElementTypes.StructuredActivityNode_3076);
 		types.add(UMLElementTypes.StructuredActivityNode_3079);
-		NodeToolEntry entry = new NodeToolEntry(Messages.StructuredActivityNode3CreationTool_title, Messages.StructuredActivityNode3CreationTool_desc, types);
+		NodeToolEntry entry = new NodeToolEntry(Messages.StructuredActivityNode4CreationTool_title, Messages.StructuredActivityNode4CreationTool_desc, types);
 		entry.setSmallIcon(UMLElementTypes.getImageDescriptor(UMLElementTypes.StructuredActivityNode_3046));
 		entry.setLargeIcon(entry.getSmallIcon());
 		return entry;

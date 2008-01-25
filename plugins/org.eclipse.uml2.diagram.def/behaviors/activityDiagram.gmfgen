@@ -1776,7 +1776,7 @@
         <childMetaFeature
             href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/Activity/group"/>
         <modelElementSelector
-            body="not self.oclIsTypeOf(uml::LoopNode) and not self.oclIsTypeOf(uml::ConditionalNode) and self.inPartition->isEmpty()"/>
+            body="not self.oclIsTypeOf(uml::LoopNode) and not self.oclIsTypeOf(uml::ConditionalNode) and not self.oclIsTypeOf(uml::ExpansionRegion) and self.inPartition->isEmpty()"/>
       </modelFacet>
     </childNodes>
     <childNodes
@@ -1810,7 +1810,7 @@
         <childMetaFeature
             href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/StructuredActivityNode/node"/>
         <modelElementSelector
-            body="not self.oclIsTypeOf(uml::LoopNode) and not self.oclIsTypeOf(uml::ConditionalNode) and self.inPartition->isEmpty()"/>
+            body="not self.oclIsTypeOf(uml::LoopNode) and not self.oclIsTypeOf(uml::ConditionalNode) and not self.oclIsTypeOf(uml::ExpansionRegion) and self.inPartition->isEmpty()"/>
       </modelFacet>
     </childNodes>
     <childNodes
@@ -4612,6 +4612,61 @@
       </modelFacet>
     </childNodes>
     <childNodes
+        visualID="3084"
+        editPartClassName="ExpansionRegionEditPart"
+        itemSemanticEditPolicyClassName="ExpansionRegionItemSemanticEditPolicy"
+        notationViewFactoryClassName="ExpansionRegionViewFactory"
+        canonicalEditPolicyClassName="ExpansionRegionCanonicalEditPolicy"
+        graphicalNodeEditPolicyClassName="ExpansionRegionGraphicalNodeEditPolicy"
+        createCommandClassName="ExpansionRegionCreateCommand"
+        containers="//@diagram/@topLevelNodes.0">
+      <diagramRunTimeClass
+          href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
+      <elementType
+          xsi:type="gmfgen:MetamodelType"
+          editHelperClassName="ExpansionRegionEditHelper"/>
+      <viewmap
+          xsi:type="gmfgen:InnerClassViewmap"
+          className="ExpansionRegionFigure"
+          classBody="&#xD;&#xA;/**&#xD;&#xA; * @generated&#xD;&#xA; */&#xD;&#xA;public class ExpansionRegionFigure extends org.eclipse.draw2d.RoundedRectangle {&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;private org.eclipse.draw2d.Label fFigureExpansionRegionFigure_keyword; &#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;private org.eclipse.draw2d.RectangleFigure fFigureExpansionRegionFigure_ContentPane; &#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;public ExpansionRegionFigure() {&#xD;&#xA;&#x9;&#x9;&#xD;&#xA;&#xD;&#xA;&#x9;org.eclipse.draw2d.BorderLayout layoutThis = new org.eclipse.draw2d.BorderLayout();&#xD;&#xA;&#x9;this.setLayoutManager(layoutThis);&#xD;&#xA;&#xD;&#xA;&#x9;&#x9;this.setCornerDimensions(new org.eclipse.draw2d.geometry.Dimension(getMapMode().DPtoLP(8)&#xD;&#xA;, getMapMode().DPtoLP(8)&#xD;&#xA;));&#xD;&#xA;this.setLineStyle(org.eclipse.draw2d.Graphics.LINE_DASH);&#xD;&#xA;&#x9;&#x9;createContents();&#xD;&#xA;&#x9;}&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;private void createContents(){&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;fFigureExpansionRegionFigure_ContentPane = new org.eclipse.draw2d.RectangleFigure();&#xD;&#xA;fFigureExpansionRegionFigure_ContentPane.setFill(false);&#xD;&#xA;fFigureExpansionRegionFigure_ContentPane.setOutline(false);&#xD;&#xA;&#xD;&#xA;this.add(fFigureExpansionRegionFigure_ContentPane, org.eclipse.draw2d.BorderLayout.CENTER);&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;org.eclipse.draw2d.RectangleFigure expansionRegionFigure_LabelContainer0 = new org.eclipse.draw2d.RectangleFigure();&#xD;&#xA;expansionRegionFigure_LabelContainer0.setFill(false);&#xD;&#xA;expansionRegionFigure_LabelContainer0.setOutline(false);&#xD;&#xA;&#xD;&#xA;expansionRegionFigure_LabelContainer0.setBorder(new org.eclipse.draw2d.MarginBorder(getMapMode().DPtoLP(0)&#xD;&#xA;, getMapMode().DPtoLP(5)&#xD;&#xA;, getMapMode().DPtoLP(5)&#xD;&#xA;, getMapMode().DPtoLP(0)&#xD;&#xA;));&#xD;&#xA;&#xD;&#xA;this.add(expansionRegionFigure_LabelContainer0, org.eclipse.draw2d.BorderLayout.TOP);&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#x9;org.eclipse.draw2d.BorderLayout layoutExpansionRegionFigure_LabelContainer0 = new org.eclipse.draw2d.BorderLayout();&#xD;&#xA;&#x9;expansionRegionFigure_LabelContainer0.setLayoutManager(layoutExpansionRegionFigure_LabelContainer0);&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;fFigureExpansionRegionFigure_keyword = new org.eclipse.draw2d.Label();&#xD;&#xA;fFigureExpansionRegionFigure_keyword.setText(&quot;&quot;);&#xD;&#xA;&#xD;&#xA;expansionRegionFigure_LabelContainer0.add(fFigureExpansionRegionFigure_keyword, org.eclipse.draw2d.BorderLayout.LEFT);&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#x9;}&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;private boolean myUseLocalCoordinates = false;&#xD;&#xA;&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;protected boolean useLocalCoordinates() {&#xD;&#xA;&#x9;&#x9;return myUseLocalCoordinates;&#xD;&#xA;&#x9;}&#xD;&#xA;&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;protected void setUseLocalCoordinates(boolean useLocalCoordinates) {&#xD;&#xA;&#x9;&#x9;myUseLocalCoordinates = useLocalCoordinates;&#xD;&#xA;&#x9;}&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;public org.eclipse.draw2d.Label getFigureExpansionRegionFigure_keyword() {&#xD;&#xA;&#x9;&#x9;return fFigureExpansionRegionFigure_keyword;&#xD;&#xA;&#x9;}&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;public org.eclipse.draw2d.RectangleFigure getFigureExpansionRegionFigure_ContentPane() {&#xD;&#xA;&#x9;&#x9;return fFigureExpansionRegionFigure_ContentPane;&#xD;&#xA;&#x9;}&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;}&#xD;&#xA;&#xD;&#xA;">
+        <requiredPluginIDs>org.eclipse.gmf.runtime.draw2d.ui</requiredPluginIDs>
+      </viewmap>
+      <modelFacet>
+        <metaClass
+            href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/ExpansionRegion"/>
+        <containmentMetaFeature
+            href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/Activity/group"/>
+        <childMetaFeature
+            href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/Activity/group"/>
+        <modelElementInitializer
+            xsi:type="gmfgen:GenFeatureSeqInitializer">
+          <initializers
+              xsi:type="gmfgen:GenFeatureValueSpec"
+              body=" let base : String = 'Expansion Region' in  let suffixes : Sequence(String) = Sequence {'', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10'} in  let space : Namespace = self.namespace in  let allMissed : Sequence(String) = suffixes-> &#x9;select(s : String | not space.member->exists(e : NamedElement | e.name = base.concat(s)) ) in  let firstMissed : String = allMissed->first() in  let noMisses : Boolean = firstMissed.oclIsUndefined() in  let allNames : Set(String) =  &#x9;if noMisses &#x9;&#x9;then &#x9;&#x9;space.member->collect(e : NamedElement | &#x9;&#x9;&#x9;if e = self or e.name.oclIsUndefined() or e.name.substring(1, e.name.size().min(base.size())) &lt;> base &#x9;&#x9;&#x9;then '' else e.name &#x9;&#x9;&#x9;endif &#x9;&#x9;)->asSet()->excluding('') &#x9;&#x9;else Set{'not in use'} &#x9;&#x9;endif in  let longestName : String = &#x9;&#x9;if noMisses &#x9;&#x9;then allNames->select(n : String | not allNames->exists(nn : String | nn.size() > n.size()))->asSequence()->first()&#x9;&#x9;else 'not in use' &#x9;&#x9;endif &#x9;in  if noMisses then &#x9;&#x9;if longestName.oclIsUndefined() &#x9;&#x9;then base &#x9;&#x9;else longestName.concat('1') &#x9;&#x9;endif  else base.concat(firstMissed)  endif ">
+            <feature
+                href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/NamedElement/name"/>
+          </initializers>
+        </modelElementInitializer>
+      </modelFacet>
+      <labels
+          visualID="5087"
+          editPartClassName="ExpansionRegionModeEditPart"
+          itemSemanticEditPolicyClassName="ExpansionRegionModeItemSemanticEditPolicy"
+          notationViewFactoryClassName="ExpansionRegionModeViewFactory">
+        <diagramRunTimeClass
+            href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
+        <viewmap
+            xsi:type="gmfgen:ParentAssignedViewmap"
+            getterName="getFigureExpansionRegionFigure_keyword"
+            figureQualifiedClassName="org.eclipse.draw2d.Label"/>
+        <modelFacet
+            xsi:type="gmfgen:FeatureLabelModelFacet">
+          <metaFeatures
+              href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/ExpansionRegion/mode"/>
+        </modelFacet>
+      </labels>
+    </childNodes>
+    <childNodes
         xsi:type="gmfgen:GenChildLabelNode"
         visualID="3049"
         editPartClassName="LiteralStringEditPart"
@@ -4672,7 +4727,7 @@
       <elementType
           xsi:type="gmfgen:SpecializationType"
           displayName="Literal String"
-          metamodelType="//@diagram/@childNodes.75/@elementType"
+          metamodelType="//@diagram/@childNodes.76/@elementType"
           editHelperAdviceClassName="LiteralStringEditHelperAdvice"/>
       <viewmap
           xsi:type="gmfgen:FigureViewmap"
@@ -4710,7 +4765,7 @@
         itemSemanticEditPolicyClassName="ActivityItemSemanticEditPolicy"
         notationViewFactoryClassName="ActivityViewFactory"
         canonicalEditPolicyClassName="ActivityCanonicalEditPolicy"
-        childNodes="//@diagram/@childNodes.0 //@diagram/@childNodes.1 //@diagram/@childNodes.2 //@diagram/@childNodes.3 //@diagram/@childNodes.4 //@diagram/@childNodes.5 //@diagram/@childNodes.6 //@diagram/@childNodes.7 //@diagram/@childNodes.8 //@diagram/@childNodes.10 //@diagram/@childNodes.11 //@diagram/@childNodes.12 //@diagram/@childNodes.13 //@diagram/@childNodes.14 //@diagram/@childNodes.16 //@diagram/@childNodes.20 //@diagram/@childNodes.23 //@diagram/@childNodes.25 //@diagram/@childNodes.44 //@diagram/@childNodes.45 //@diagram/@childNodes.46 //@diagram/@childNodes.47 //@diagram/@childNodes.73 //@diagram/@childNodes.74"
+        childNodes="//@diagram/@childNodes.0 //@diagram/@childNodes.1 //@diagram/@childNodes.2 //@diagram/@childNodes.3 //@diagram/@childNodes.4 //@diagram/@childNodes.5 //@diagram/@childNodes.6 //@diagram/@childNodes.7 //@diagram/@childNodes.8 //@diagram/@childNodes.10 //@diagram/@childNodes.11 //@diagram/@childNodes.12 //@diagram/@childNodes.13 //@diagram/@childNodes.14 //@diagram/@childNodes.16 //@diagram/@childNodes.20 //@diagram/@childNodes.23 //@diagram/@childNodes.25 //@diagram/@childNodes.44 //@diagram/@childNodes.45 //@diagram/@childNodes.46 //@diagram/@childNodes.47 //@diagram/@childNodes.73 //@diagram/@childNodes.74 //@diagram/@childNodes.75"
         graphicalNodeEditPolicyClassName="ActivityGraphicalNodeEditPolicy"
         createCommandClassName="ActivityCreateCommand">
       <diagramRunTimeClass
@@ -5337,7 +5392,7 @@
         itemSemanticEditPolicyClassName="ConstraintPreconditionItemSemanticEditPolicy"
         notationViewFactoryClassName="ConstraintPreconditionViewFactory"
         canonicalEditPolicyClassName="ConstraintPreconditionCanonicalEditPolicy"
-        childNodes="//@diagram/@childNodes.75"
+        childNodes="//@diagram/@childNodes.76"
         title="precondition"
         canCollapse="false"
         needsTitle="false"
@@ -5355,7 +5410,7 @@
         itemSemanticEditPolicyClassName="ConstraintPostconditionItemSemanticEditPolicy"
         notationViewFactoryClassName="ConstraintPostconditionViewFactory"
         canonicalEditPolicyClassName="ConstraintPostconditionCanonicalEditPolicy"
-        childNodes="//@diagram/@childNodes.76"
+        childNodes="//@diagram/@childNodes.77"
         title="postcondition"
         canCollapse="false"
         needsTitle="false"
@@ -5501,6 +5556,11 @@
             title="Conditional Node"
             description="Create Conditional Node"
             genNodes="//@diagram/@childNodes.72 //@diagram/@childNodes.74"/>
+        <entries
+            xsi:type="gmfgen:ToolEntry"
+            title="Expansion Region"
+            description="Create Expansion Region"
+            genNodes="//@diagram/@childNodes.75"/>
         <entries
             xsi:type="gmfgen:ToolEntry"
             title="Loop Node"
@@ -6338,17 +6398,20 @@
         parent="//@diagram/@topLevelNodes.0"
         child="//@diagram/@childNodes.74"/>
     <childReferences
+        parent="//@diagram/@topLevelNodes.0"
+        child="//@diagram/@childNodes.75"/>
+    <childReferences
         parent="//@diagram"
         child="//@diagram/@topLevelNodes.0"/>
     <childReferences
         parent="//@diagram/@topLevelNodes.1"
-        child="//@diagram/@childNodes.75"/>
+        child="//@diagram/@childNodes.76"/>
     <childReferences
         parent="//@diagram"
         child="//@diagram/@topLevelNodes.1"/>
     <childReferences
         parent="//@diagram/@topLevelNodes.2"
-        child="//@diagram/@childNodes.76"/>
+        child="//@diagram/@childNodes.77"/>
     <childReferences
         parent="//@diagram"
         child="//@diagram/@topLevelNodes.2"/>
@@ -7223,6 +7286,18 @@
         groupIcon="icons/incomingLinksNavigatorGroup.gif"/>
     <childReferences
         parent="//@diagram/@links.0"
+        child="//@diagram/@childNodes.75"
+        referenceType="out_target"
+        groupName="target"
+        groupIcon="icons/linkTargetNavigatorGroup.gif"/>
+    <childReferences
+        parent="//@diagram/@childNodes.75"
+        child="//@diagram/@links.0"
+        referenceType="in_source"
+        groupName="incoming links"
+        groupIcon="icons/incomingLinksNavigatorGroup.gif"/>
+    <childReferences
+        parent="//@diagram/@links.0"
         child="//@diagram/@childNodes.0"
         referenceType="in_source"
         groupName="source"
@@ -8081,6 +8156,18 @@
         groupIcon="icons/linkSourceNavigatorGroup.gif"/>
     <childReferences
         parent="//@diagram/@childNodes.74"
+        child="//@diagram/@links.0"
+        referenceType="out_target"
+        groupName="outgoing links"
+        groupIcon="icons/outgoingLinksNavigatorGroup.gif"/>
+    <childReferences
+        parent="//@diagram/@links.0"
+        child="//@diagram/@childNodes.75"
+        referenceType="in_source"
+        groupName="source"
+        groupIcon="icons/linkSourceNavigatorGroup.gif"/>
+    <childReferences
+        parent="//@diagram/@childNodes.75"
         child="//@diagram/@links.0"
         referenceType="out_target"
         groupName="outgoing links"
@@ -8956,6 +9043,18 @@
         groupIcon="icons/incomingLinksNavigatorGroup.gif"/>
     <childReferences
         parent="//@diagram/@links.1"
+        child="//@diagram/@childNodes.75"
+        referenceType="out_target"
+        groupName="target"
+        groupIcon="icons/linkTargetNavigatorGroup.gif"/>
+    <childReferences
+        parent="//@diagram/@childNodes.75"
+        child="//@diagram/@links.1"
+        referenceType="in_source"
+        groupName="incoming links"
+        groupIcon="icons/incomingLinksNavigatorGroup.gif"/>
+    <childReferences
+        parent="//@diagram/@links.1"
         child="//@diagram/@childNodes.0"
         referenceType="in_source"
         groupName="source"
@@ -9814,6 +9913,18 @@
         groupIcon="icons/linkSourceNavigatorGroup.gif"/>
     <childReferences
         parent="//@diagram/@childNodes.74"
+        child="//@diagram/@links.1"
+        referenceType="out_target"
+        groupName="outgoing links"
+        groupIcon="icons/outgoingLinksNavigatorGroup.gif"/>
+    <childReferences
+        parent="//@diagram/@links.1"
+        child="//@diagram/@childNodes.75"
+        referenceType="in_source"
+        groupName="source"
+        groupIcon="icons/linkSourceNavigatorGroup.gif"/>
+    <childReferences
+        parent="//@diagram/@childNodes.75"
         child="//@diagram/@links.1"
         referenceType="out_target"
         groupName="outgoing links"
@@ -10220,6 +10331,18 @@
         groupName="outgoing links"
         groupIcon="icons/outgoingLinksNavigatorGroup.gif"/>
     <childReferences
+        parent="//@diagram/@links.2"
+        child="//@diagram/@childNodes.75"
+        referenceType="in_source"
+        groupName="source"
+        groupIcon="icons/linkSourceNavigatorGroup.gif"/>
+    <childReferences
+        parent="//@diagram/@childNodes.75"
+        child="//@diagram/@links.2"
+        referenceType="out_target"
+        groupName="outgoing links"
+        groupIcon="icons/outgoingLinksNavigatorGroup.gif"/>
+    <childReferences
         parent="//@diagram"
         child="//@diagram/@links.3"
         groupName="links"
@@ -10616,6 +10739,18 @@
         groupIcon="icons/linkSourceNavigatorGroup.gif"/>
     <childReferences
         parent="//@diagram/@childNodes.74"
+        child="//@diagram/@links.3"
+        referenceType="out_target"
+        groupName="outgoing links"
+        groupIcon="icons/outgoingLinksNavigatorGroup.gif"/>
+    <childReferences
+        parent="//@diagram/@links.3"
+        child="//@diagram/@childNodes.75"
+        referenceType="in_source"
+        groupName="source"
+        groupIcon="icons/linkSourceNavigatorGroup.gif"/>
+    <childReferences
+        parent="//@diagram/@childNodes.75"
         child="//@diagram/@links.3"
         referenceType="out_target"
         groupName="outgoing links"
@@ -11292,6 +11427,18 @@
         groupIcon="icons/incomingLinksNavigatorGroup.gif"/>
     <childReferences
         parent="//@diagram/@links.5"
+        child="//@diagram/@childNodes.75"
+        referenceType="out_target"
+        groupName="target"
+        groupIcon="icons/linkTargetNavigatorGroup.gif"/>
+    <childReferences
+        parent="//@diagram/@childNodes.75"
+        child="//@diagram/@links.5"
+        referenceType="in_source"
+        groupName="incoming links"
+        groupIcon="icons/incomingLinksNavigatorGroup.gif"/>
+    <childReferences
+        parent="//@diagram/@links.5"
         child="//@diagram/@childNodes.0"
         referenceType="in_source"
         groupName="source"
@@ -11662,6 +11809,18 @@
         referenceType="out_target"
         groupName="outgoing links"
         groupIcon="icons/outgoingLinksNavigatorGroup.gif"/>
+    <childReferences
+        parent="//@diagram/@links.5"
+        child="//@diagram/@childNodes.75"
+        referenceType="in_source"
+        groupName="source"
+        groupIcon="icons/linkSourceNavigatorGroup.gif"/>
+    <childReferences
+        parent="//@diagram/@childNodes.75"
+        child="//@diagram/@links.5"
+        referenceType="out_target"
+        groupName="outgoing links"
+        groupIcon="icons/outgoingLinksNavigatorGroup.gif"/>
   </navigator>
   <diagramUpdater/>
   <propertySheet>
@@ -11689,7 +11848,7 @@
   <expressionProviders>
     <providers
         xsi:type="gmfgen:GenExpressionInterpreter"
-        expressions="//@diagram/@topLevelNodes.0/@modelFacet/@modelElementInitializer/@initializers.0 //@diagram/@childNodes.0/@modelFacet/@modelElementSelector //@diagram/@childNodes.0/@modelFacet/@modelElementInitializer/@initializers.0 //@diagram/@childNodes.1/@modelFacet/@modelElementSelector //@diagram/@childNodes.1/@modelFacet/@modelElementInitializer/@initializers.1 //@diagram/@childNodes.2/@modelFacet/@modelElementSelector //@diagram/@childNodes.3/@modelFacet/@modelElementSelector //@diagram/@childNodes.3/@modelFacet/@modelElementInitializer/@initializers.0 //@diagram/@childNodes.4/@modelFacet/@modelElementSelector //@diagram/@childNodes.4/@modelFacet/@modelElementInitializer/@initializers.0 //@diagram/@childNodes.5/@modelFacet/@modelElementSelector //@diagram/@childNodes.6/@modelFacet/@modelElementSelector //@diagram/@childNodes.6/@modelFacet/@modelElementInitializer/@initializers.0 //@diagram/@childNodes.7/@modelFacet/@modelElementSelector //@diagram/@childNodes.7/@modelFacet/@modelElementInitializer/@initializers.0 //@diagram/@childNodes.8/@modelFacet/@modelElementSelector //@diagram/@childNodes.8/@modelFacet/@modelElementInitializer/@initializers.0 //@diagram/@childNodes.9/@modelFacet/@modelElementInitializer/@initializers.0 //@diagram/@childNodes.10/@modelFacet/@modelElementSelector //@diagram/@childNodes.11/@modelFacet/@modelElementSelector //@diagram/@childNodes.12/@modelFacet/@modelElementSelector //@diagram/@childNodes.13/@modelFacet/@modelElementSelector //@diagram/@childNodes.13/@modelFacet/@modelElementInitializer/@initializers.0 //@diagram/@childNodes.14/@modelFacet/@modelElementSelector //@diagram/@childNodes.14/@modelFacet/@modelElementInitializer/@initializers.0 //@diagram/@childNodes.16/@modelFacet/@modelElementSelector //@diagram/@childNodes.16/@modelFacet/@modelElementInitializer/@initializers.0 //@diagram/@childNodes.17/@modelFacet/@modelElementInitializer/@initializers.0 //@diagram/@childNodes.20/@modelFacet/@modelElementSelector //@diagram/@childNodes.20/@modelFacet/@modelElementInitializer/@initializers.0 //@diagram/@childNodes.23/@modelFacet/@modelElementSelector //@diagram/@childNodes.23/@modelFacet/@modelElementInitializer/@initializers.0 //@diagram/@childNodes.25/@modelFacet/@modelElementSelector //@diagram/@childNodes.42/@modelFacet/@modelElementInitializer/@initializers.0 //@diagram/@childNodes.43/@modelFacet/@modelElementInitializer/@initializers.0 //@diagram/@childNodes.45/@modelFacet/@modelElementInitializer/@initializers.0 //@diagram/@childNodes.46/@modelFacet/@modelElementSelector //@diagram/@childNodes.46/@modelFacet/@modelElementInitializer/@initializers.0 //@diagram/@childNodes.47/@modelFacet/@modelElementInitializer/@initializers.0 //@diagram/@childNodes.49/@modelFacet/@modelElementSelector //@diagram/@childNodes.49/@modelFacet/@modelElementInitializer/@initializers.0 //@diagram/@childNodes.50/@modelFacet/@modelElementSelector //@diagram/@childNodes.50/@modelFacet/@modelElementInitializer/@initializers.1 //@diagram/@childNodes.51/@modelFacet/@modelElementSelector //@diagram/@childNodes.52/@modelFacet/@modelElementSelector //@diagram/@childNodes.52/@modelFacet/@modelElementInitializer/@initializers.0 //@diagram/@childNodes.53/@modelFacet/@modelElementSelector //@diagram/@childNodes.53/@modelFacet/@modelElementInitializer/@initializers.0 //@diagram/@childNodes.54/@modelFacet/@modelElementSelector //@diagram/@childNodes.55/@modelFacet/@modelElementSelector //@diagram/@childNodes.55/@modelFacet/@modelElementInitializer/@initializers.0 //@diagram/@childNodes.56/@modelFacet/@modelElementSelector //@diagram/@childNodes.56/@modelFacet/@modelElementInitializer/@initializers.0 //@diagram/@childNodes.57/@modelFacet/@modelElementSelector //@diagram/@childNodes.57/@modelFacet/@modelElementInitializer/@initializers.0 //@diagram/@childNodes.58/@modelFacet/@modelElementSelector //@diagram/@childNodes.59/@modelFacet/@modelElementSelector //@diagram/@childNodes.60/@modelFacet/@modelElementSelector //@diagram/@childNodes.61/@modelFacet/@modelElementSelector //@diagram/@childNodes.61/@modelFacet/@modelElementInitializer/@initializers.0 //@diagram/@childNodes.62/@modelFacet/@modelElementSelector //@diagram/@childNodes.62/@modelFacet/@modelElementInitializer/@initializers.0 //@diagram/@childNodes.63/@modelFacet/@modelElementSelector //@diagram/@childNodes.63/@modelFacet/@modelElementInitializer/@initializers.0 //@diagram/@childNodes.64/@modelFacet/@modelElementSelector //@diagram/@childNodes.64/@modelFacet/@modelElementInitializer/@initializers.0 //@diagram/@childNodes.65/@modelFacet/@modelElementSelector //@diagram/@childNodes.65/@modelFacet/@modelElementInitializer/@initializers.0 //@diagram/@childNodes.66/@modelFacet/@modelElementSelector //@diagram/@childNodes.68/@modelFacet/@modelElementInitializer/@initializers.0 //@diagram/@childNodes.69/@modelFacet/@modelElementInitializer/@initializers.0 //@diagram/@childNodes.70/@modelFacet/@modelElementSelector //@diagram/@childNodes.70/@modelFacet/@modelElementInitializer/@initializers.0 //@diagram/@childNodes.71/@modelFacet/@modelElementSelector //@diagram/@childNodes.72/@modelFacet/@modelElementSelector //@diagram/@childNodes.73/@modelFacet/@modelElementSelector //@diagram/@childNodes.74/@modelFacet/@modelElementSelector //@diagram/@childNodes.75/@modelFacet/@modelElementInitializer/@initializers.0 //@diagram/@childNodes.76/@modelFacet/@modelElementInitializer/@initializers.0 //@diagram/@links.0/@creationConstraints/@sourceEnd //@diagram/@links.0/@creationConstraints/@targetEnd"/>
+        expressions="//@diagram/@topLevelNodes.0/@modelFacet/@modelElementInitializer/@initializers.0 //@diagram/@childNodes.0/@modelFacet/@modelElementSelector //@diagram/@childNodes.0/@modelFacet/@modelElementInitializer/@initializers.0 //@diagram/@childNodes.1/@modelFacet/@modelElementSelector //@diagram/@childNodes.1/@modelFacet/@modelElementInitializer/@initializers.1 //@diagram/@childNodes.2/@modelFacet/@modelElementSelector //@diagram/@childNodes.3/@modelFacet/@modelElementSelector //@diagram/@childNodes.3/@modelFacet/@modelElementInitializer/@initializers.0 //@diagram/@childNodes.4/@modelFacet/@modelElementSelector //@diagram/@childNodes.4/@modelFacet/@modelElementInitializer/@initializers.0 //@diagram/@childNodes.5/@modelFacet/@modelElementSelector //@diagram/@childNodes.6/@modelFacet/@modelElementSelector //@diagram/@childNodes.6/@modelFacet/@modelElementInitializer/@initializers.0 //@diagram/@childNodes.7/@modelFacet/@modelElementSelector //@diagram/@childNodes.7/@modelFacet/@modelElementInitializer/@initializers.0 //@diagram/@childNodes.8/@modelFacet/@modelElementSelector //@diagram/@childNodes.8/@modelFacet/@modelElementInitializer/@initializers.0 //@diagram/@childNodes.9/@modelFacet/@modelElementInitializer/@initializers.0 //@diagram/@childNodes.10/@modelFacet/@modelElementSelector //@diagram/@childNodes.11/@modelFacet/@modelElementSelector //@diagram/@childNodes.12/@modelFacet/@modelElementSelector //@diagram/@childNodes.13/@modelFacet/@modelElementSelector //@diagram/@childNodes.13/@modelFacet/@modelElementInitializer/@initializers.0 //@diagram/@childNodes.14/@modelFacet/@modelElementSelector //@diagram/@childNodes.14/@modelFacet/@modelElementInitializer/@initializers.0 //@diagram/@childNodes.16/@modelFacet/@modelElementSelector //@diagram/@childNodes.16/@modelFacet/@modelElementInitializer/@initializers.0 //@diagram/@childNodes.17/@modelFacet/@modelElementInitializer/@initializers.0 //@diagram/@childNodes.20/@modelFacet/@modelElementSelector //@diagram/@childNodes.20/@modelFacet/@modelElementInitializer/@initializers.0 //@diagram/@childNodes.23/@modelFacet/@modelElementSelector //@diagram/@childNodes.23/@modelFacet/@modelElementInitializer/@initializers.0 //@diagram/@childNodes.25/@modelFacet/@modelElementSelector //@diagram/@childNodes.42/@modelFacet/@modelElementInitializer/@initializers.0 //@diagram/@childNodes.43/@modelFacet/@modelElementInitializer/@initializers.0 //@diagram/@childNodes.45/@modelFacet/@modelElementInitializer/@initializers.0 //@diagram/@childNodes.46/@modelFacet/@modelElementSelector //@diagram/@childNodes.46/@modelFacet/@modelElementInitializer/@initializers.0 //@diagram/@childNodes.47/@modelFacet/@modelElementInitializer/@initializers.0 //@diagram/@childNodes.49/@modelFacet/@modelElementSelector //@diagram/@childNodes.49/@modelFacet/@modelElementInitializer/@initializers.0 //@diagram/@childNodes.50/@modelFacet/@modelElementSelector //@diagram/@childNodes.50/@modelFacet/@modelElementInitializer/@initializers.1 //@diagram/@childNodes.51/@modelFacet/@modelElementSelector //@diagram/@childNodes.52/@modelFacet/@modelElementSelector //@diagram/@childNodes.52/@modelFacet/@modelElementInitializer/@initializers.0 //@diagram/@childNodes.53/@modelFacet/@modelElementSelector //@diagram/@childNodes.53/@modelFacet/@modelElementInitializer/@initializers.0 //@diagram/@childNodes.54/@modelFacet/@modelElementSelector //@diagram/@childNodes.55/@modelFacet/@modelElementSelector //@diagram/@childNodes.55/@modelFacet/@modelElementInitializer/@initializers.0 //@diagram/@childNodes.56/@modelFacet/@modelElementSelector //@diagram/@childNodes.56/@modelFacet/@modelElementInitializer/@initializers.0 //@diagram/@childNodes.57/@modelFacet/@modelElementSelector //@diagram/@childNodes.57/@modelFacet/@modelElementInitializer/@initializers.0 //@diagram/@childNodes.58/@modelFacet/@modelElementSelector //@diagram/@childNodes.59/@modelFacet/@modelElementSelector //@diagram/@childNodes.60/@modelFacet/@modelElementSelector //@diagram/@childNodes.61/@modelFacet/@modelElementSelector //@diagram/@childNodes.61/@modelFacet/@modelElementInitializer/@initializers.0 //@diagram/@childNodes.62/@modelFacet/@modelElementSelector //@diagram/@childNodes.62/@modelFacet/@modelElementInitializer/@initializers.0 //@diagram/@childNodes.63/@modelFacet/@modelElementSelector //@diagram/@childNodes.63/@modelFacet/@modelElementInitializer/@initializers.0 //@diagram/@childNodes.64/@modelFacet/@modelElementSelector //@diagram/@childNodes.64/@modelFacet/@modelElementInitializer/@initializers.0 //@diagram/@childNodes.65/@modelFacet/@modelElementSelector //@diagram/@childNodes.65/@modelFacet/@modelElementInitializer/@initializers.0 //@diagram/@childNodes.66/@modelFacet/@modelElementSelector //@diagram/@childNodes.68/@modelFacet/@modelElementInitializer/@initializers.0 //@diagram/@childNodes.69/@modelFacet/@modelElementInitializer/@initializers.0 //@diagram/@childNodes.70/@modelFacet/@modelElementSelector //@diagram/@childNodes.70/@modelFacet/@modelElementInitializer/@initializers.0 //@diagram/@childNodes.71/@modelFacet/@modelElementSelector //@diagram/@childNodes.72/@modelFacet/@modelElementSelector //@diagram/@childNodes.73/@modelFacet/@modelElementSelector //@diagram/@childNodes.74/@modelFacet/@modelElementSelector //@diagram/@childNodes.75/@modelFacet/@modelElementInitializer/@initializers.0 //@diagram/@childNodes.76/@modelFacet/@modelElementInitializer/@initializers.0 //@diagram/@childNodes.77/@modelFacet/@modelElementInitializer/@initializers.0 //@diagram/@links.0/@creationConstraints/@sourceEnd //@diagram/@links.0/@creationConstraints/@targetEnd"/>
     <providers
         xsi:type="gmfgen:GenJavaExpressionProvider"
         expressions="//@diagram/@childNodes.1/@modelFacet/@modelElementInitializer/@initializers.0 //@diagram/@childNodes.50/@modelFacet/@modelElementInitializer/@initializers.0 //@diagram/@topLevelNodes.1/@modelFacet/@modelElementSelector //@diagram/@topLevelNodes.2/@modelFacet/@modelElementSelector"/>

@@ -54,6 +54,7 @@ import org.eclipse.uml2.diagram.activity.edit.parts.DataStoreNodeNameEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.DataStoreNodeOrdering2EditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.DataStoreNodeOrdering3EditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.DataStoreNodeOrderingEditPart;
+import org.eclipse.uml2.diagram.activity.edit.parts.ExpansionRegionModeEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.InputPinName2EditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.InputPinName3EditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.InputPinName4EditPart;
@@ -99,6 +100,7 @@ import org.eclipse.uml2.diagram.activity.edit.parts.SendSignalActionName2EditPar
 import org.eclipse.uml2.diagram.activity.edit.parts.SendSignalActionNameEditPart;
 import org.eclipse.uml2.diagram.activity.parser.ActivityEdgeGuardParser;
 import org.eclipse.uml2.diagram.activity.parser.ActivityEdgeWeightParser;
+import org.eclipse.uml2.diagram.activity.parser.ExpansionRegionParser;
 import org.eclipse.uml2.diagram.activity.parser.ObjectNodeAttributesParser;
 import org.eclipse.uml2.diagram.activity.parser.ObjectNodeInStateParser;
 import org.eclipse.uml2.diagram.activity.parser.ObjectNodeTypeAndInStateParser;
@@ -1899,6 +1901,28 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 	/**
 	 * @generated
 	 */
+	private IParser expansionRegionMode_5087Parser;
+
+	/**
+	 * @generated
+	 */
+	private IParser getExpansionRegionMode_5087Parser() {
+		if (expansionRegionMode_5087Parser == null) {
+			expansionRegionMode_5087Parser = createExpansionRegionMode_5087Parser();
+		}
+		return expansionRegionMode_5087Parser;
+	}
+
+	/**
+	 * @generated NOT
+	 */
+	protected IParser createExpansionRegionMode_5087Parser() {
+		return new ExpansionRegionParser();
+	}
+
+	/**
+	 * @generated
+	 */
 	private IParser literalString_3049Parser;
 
 	/**
@@ -2241,6 +2265,8 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 			return getOutputPinOrdering_5084Parser();
 		case SendSignalActionName2EditPart.VISUAL_ID:
 			return getSendSignalActionName_5080Parser();
+		case ExpansionRegionModeEditPart.VISUAL_ID:
+			return getExpansionRegionMode_5087Parser();
 		case LiteralStringEditPart.VISUAL_ID:
 			return getLiteralString_3049Parser();
 		case LiteralString2EditPart.VISUAL_ID:
