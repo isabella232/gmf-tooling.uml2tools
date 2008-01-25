@@ -52,12 +52,12 @@ import org.eclipse.uml2.diagram.activity.providers.UMLParserProvider;
 /**
  * @generated
  */
-public class ExpansionRegionModeEditPart extends CompartmentEditPart implements ITextAwareEditPart {
+public class ExpansionRegionMode2EditPart extends CompartmentEditPart implements ITextAwareEditPart {
 
 	/**
 	 * @generated
 	 */
-	public static final int VISUAL_ID = 5087;
+	public static final int VISUAL_ID = 5088;
 
 	/**
 	 * @generated
@@ -82,7 +82,7 @@ public class ExpansionRegionModeEditPart extends CompartmentEditPart implements 
 	/**
 	 * @generated
 	 */
-	public ExpansionRegionModeEditPart(View view) {
+	public ExpansionRegionMode2EditPart(View view) {
 		super(view);
 	}
 
@@ -288,7 +288,7 @@ public class ExpansionRegionModeEditPart extends CompartmentEditPart implements 
 	public IParser getParser() {
 		if (parser == null) {
 			String parserHint = ((View) getModel()).getType();
-			IAdaptable hintAdapter = new UMLParserProvider.HintAdapter(UMLElementTypes.ExpansionRegion_3084, getParserElement(), parserHint);
+			IAdaptable hintAdapter = new UMLParserProvider.HintAdapter(UMLElementTypes.ExpansionRegion_3085, getParserElement(), parserHint);
 			parser = ParserService.getInstance().getParser(hintAdapter);
 		}
 		return parser;

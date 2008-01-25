@@ -489,10 +489,11 @@ public class UMLPaletteFactory {
 	 * @generated
 	 */
 	private ToolEntry createExpansionRegion2CreationTool() {
-		List/*<IElementType>*/types = new ArrayList/*<IElementType>*/(1);
+		List/*<IElementType>*/types = new ArrayList/*<IElementType>*/(2);
+		types.add(UMLElementTypes.ExpansionRegion_3085);
 		types.add(UMLElementTypes.ExpansionRegion_3084);
 		NodeToolEntry entry = new NodeToolEntry(Messages.ExpansionRegion2CreationTool_title, Messages.ExpansionRegion2CreationTool_desc, types);
-		entry.setSmallIcon(UMLElementTypes.getImageDescriptor(UMLElementTypes.ExpansionRegion_3084));
+		entry.setSmallIcon(UMLElementTypes.getImageDescriptor(UMLElementTypes.ExpansionRegion_3085));
 		entry.setLargeIcon(entry.getSmallIcon());
 		return entry;
 	}

@@ -22,6 +22,7 @@ import org.eclipse.uml2.diagram.activity.edit.commands.ConditionalNode2CreateCom
 import org.eclipse.uml2.diagram.activity.edit.commands.CreateObjectAction3CreateCommand;
 import org.eclipse.uml2.diagram.activity.edit.commands.DataStoreNode3CreateCommand;
 import org.eclipse.uml2.diagram.activity.edit.commands.DecisionNode3CreateCommand;
+import org.eclipse.uml2.diagram.activity.edit.commands.ExpansionRegion2CreateCommand;
 import org.eclipse.uml2.diagram.activity.edit.commands.FlowFinalNode3CreateCommand;
 import org.eclipse.uml2.diagram.activity.edit.commands.ForkNode3CreateCommand;
 import org.eclipse.uml2.diagram.activity.edit.commands.InitialNode2CreateCommand;
@@ -44,6 +45,7 @@ import org.eclipse.uml2.diagram.activity.edit.parts.ConditionalNode2EditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.CreateObjectAction3EditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.DataStoreNode3EditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.DecisionNode3EditPart;
+import org.eclipse.uml2.diagram.activity.edit.parts.ExpansionRegion2EditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.FlowFinalNode3EditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.ForkNode3EditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.InitialNode2EditPart;
@@ -199,6 +201,12 @@ public class ActivityPartitionItemSemanticEditPolicy extends UMLBaseItemSemantic
 			}
 			return getGEFWrapper(new ConditionalNode2CreateCommand(req));
 		}
+		if (UMLElementTypes.ExpansionRegion_3085 == req.getElementType()) {
+			if (req.getContainmentFeature() == null) {
+				req.setContainmentFeature(UMLPackage.eINSTANCE.getActivity_Node());
+			}
+			return getGEFWrapper(new ExpansionRegion2CreateCommand(req));
+		}
 		return super.getCreateCommand(req);
 	}
 
@@ -289,6 +297,9 @@ public class ActivityPartitionItemSemanticEditPolicy extends UMLBaseItemSemantic
 				cmd.add(getDestroyElementCommand(node));
 				break;
 			case ConditionalNode2EditPart.VISUAL_ID:
+				cmd.add(getDestroyElementCommand(node));
+				break;
+			case ExpansionRegion2EditPart.VISUAL_ID:
 				cmd.add(getDestroyElementCommand(node));
 				break;
 			}

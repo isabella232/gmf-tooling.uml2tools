@@ -1226,6 +1226,16 @@
          </metamodelType>
       </metamodel>
       <metamodel nsURI="http://www.eclipse.org/uml2/2.1.0/UML">
+         <metamodelType
+               id="org.eclipse.uml2.diagram.activity.ExpansionRegion_3085"
+               name="%metatype.name.ExpansionRegion_3085"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
+               eclass="ExpansionRegion"
+               edithelper="org.eclipse.uml2.diagram.activity.edit.helpers.ExpansionRegionEditHelper">
+            <param name="semanticHint" value="3085"/>
+         </metamodelType>
+      </metamodel>
+      <metamodel nsURI="http://www.eclipse.org/uml2/2.1.0/UML">
          <specializationType
                id="org.eclipse.uml2.diagram.activity.LoopNode_3058"
                name="%metatype.name.LoopNode_3058"
@@ -1244,14 +1254,13 @@
          </specializationType>
       </metamodel>
       <metamodel nsURI="http://www.eclipse.org/uml2/2.1.0/UML">
-         <metamodelType
+         <specializationType
                id="org.eclipse.uml2.diagram.activity.ExpansionRegion_3084"
                name="%metatype.name.ExpansionRegion_3084"
-               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
-               eclass="ExpansionRegion"
-               edithelper="org.eclipse.uml2.diagram.activity.edit.helpers.ExpansionRegionEditHelper">
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType">
+            <specializes id="org.eclipse.uml2.diagram.activity.ExpansionRegion_3085"/>
             <param name="semanticHint" value="3084"/>
-         </metamodelType>
+         </specializationType>
       </metamodel>
       <metamodel nsURI="http://www.eclipse.org/uml2/2.1.0/UML">
          <metamodelType
@@ -1421,6 +1430,7 @@
          <elementType ref="org.eclipse.uml2.diagram.activity.SendSignalAction_3077"/>
          <elementType ref="org.eclipse.uml2.diagram.activity.LoopNode_3078"/>
          <elementType ref="org.eclipse.uml2.diagram.activity.ConditionalNode_3083"/>
+         <elementType ref="org.eclipse.uml2.diagram.activity.ExpansionRegion_3085"/>
          <elementType ref="org.eclipse.uml2.diagram.activity.LoopNode_3058"/>
          <elementType ref="org.eclipse.uml2.diagram.activity.ConditionalNode_3082"/>
          <elementType ref="org.eclipse.uml2.diagram.activity.ExpansionRegion_3084"/>

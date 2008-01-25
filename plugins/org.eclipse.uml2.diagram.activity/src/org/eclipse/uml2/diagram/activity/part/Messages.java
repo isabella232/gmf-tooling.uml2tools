@@ -688,12 +688,22 @@ public class Messages extends NLS {
 	/**
 	 * @generated
 	 */
+	public static String ExpansionRegionExpansionRegionNodeCompartment2EditPart_title;
+
+	/**
+	 * @generated
+	 */
 	public static String LoopNodeLoopNodeContentPaneCompartmentEditPart_title;
 
 	/**
 	 * @generated
 	 */
 	public static String ConditionalNodeConditionalNodeCompartmentEditPart_title;
+
+	/**
+	 * @generated
+	 */
+	public static String ExpansionRegionExpansionRegionNodeCompartmentEditPart_title;
 
 	/**
 	 * @generated
@@ -1434,6 +1444,16 @@ public class Messages extends NLS {
 	 * @generated
 	 */
 	public static String NavigatorGroupName_ConditionalNode_3083_outgoinglinks;
+
+	/**
+	 * @generated
+	 */
+	public static String NavigatorGroupName_ExpansionRegion_3085_incominglinks;
+
+	/**
+	 * @generated
+	 */
+	public static String NavigatorGroupName_ExpansionRegion_3085_outgoinglinks;
 
 	/**
 	 * @generated

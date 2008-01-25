@@ -23,19 +23,19 @@ import org.eclipse.gmf.runtime.draw2d.ui.figures.ConstrainedToolbarLayout;
 import org.eclipse.gmf.runtime.gef.ui.figures.DefaultSizeNodeFigure;
 import org.eclipse.gmf.runtime.gef.ui.figures.NodeFigure;
 import org.eclipse.gmf.runtime.notation.View;
-import org.eclipse.uml2.diagram.activity.edit.policies.ExpansionRegionCanonicalEditPolicy;
-import org.eclipse.uml2.diagram.activity.edit.policies.ExpansionRegionItemSemanticEditPolicy;
+import org.eclipse.uml2.diagram.activity.edit.policies.ExpansionRegion2CanonicalEditPolicy;
+import org.eclipse.uml2.diagram.activity.edit.policies.ExpansionRegion2ItemSemanticEditPolicy;
 import org.eclipse.uml2.diagram.activity.part.UMLVisualIDRegistry;
 
 /**
  * @generated
  */
-public class ExpansionRegionEditPart extends ShapeNodeEditPart {
+public class ExpansionRegion2EditPart extends ShapeNodeEditPart {
 
 	/**
 	 * @generated
 	 */
-	public static final int VISUAL_ID = 3084;
+	public static final int VISUAL_ID = 3085;
 
 	/**
 	 * @generated
@@ -50,7 +50,7 @@ public class ExpansionRegionEditPart extends ShapeNodeEditPart {
 	/**
 	 * @generated
 	 */
-	public ExpansionRegionEditPart(View view) {
+	public ExpansionRegion2EditPart(View view) {
 		super(view);
 	}
 
@@ -59,8 +59,8 @@ public class ExpansionRegionEditPart extends ShapeNodeEditPart {
 	 */
 	protected void createDefaultEditPolicies() {
 		super.createDefaultEditPolicies();
-		installEditPolicy(EditPolicyRoles.SEMANTIC_ROLE, new ExpansionRegionItemSemanticEditPolicy());
-		installEditPolicy(EditPolicyRoles.CANONICAL_ROLE, new ExpansionRegionCanonicalEditPolicy());
+		installEditPolicy(EditPolicyRoles.SEMANTIC_ROLE, new ExpansionRegion2ItemSemanticEditPolicy());
+		installEditPolicy(EditPolicyRoles.CANONICAL_ROLE, new ExpansionRegion2CanonicalEditPolicy());
 		installEditPolicy(EditPolicy.LAYOUT_ROLE, createLayoutEditPolicy());
 		// XXX need an SCR to runtime to have another abstract superclass that would let children add reasonable editpolicies
 		// removeEditPolicy(org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles.CONNECTION_HANDLES_ROLE);
@@ -110,14 +110,14 @@ public class ExpansionRegionEditPart extends ShapeNodeEditPart {
 	 * @generated
 	 */
 	protected boolean addFixedChild(EditPart childEditPart) {
-		if (childEditPart instanceof ExpansionRegionModeEditPart) {
-			((ExpansionRegionModeEditPart) childEditPart).setLabel(getPrimaryShape().getFigureExpansionRegionFigure_keyword());
+		if (childEditPart instanceof ExpansionRegionMode2EditPart) {
+			((ExpansionRegionMode2EditPart) childEditPart).setLabel(getPrimaryShape().getFigureExpansionRegionFigure_keyword());
 			return true;
 		}
-		if (childEditPart instanceof ExpansionRegionExpansionRegionNodeCompartmentEditPart) {
+		if (childEditPart instanceof ExpansionRegionExpansionRegionNodeCompartment2EditPart) {
 			IFigure pane = getPrimaryShape().getFigureExpansionRegionFigure_ContentPane();
 			setupContentPane(pane); // FIXME each comparment should handle his content pane in his own way 
-			pane.add(((ExpansionRegionExpansionRegionNodeCompartmentEditPart) childEditPart).getFigure());
+			pane.add(((ExpansionRegionExpansionRegionNodeCompartment2EditPart) childEditPart).getFigure());
 			return true;
 		}
 		return false;
@@ -128,9 +128,9 @@ public class ExpansionRegionEditPart extends ShapeNodeEditPart {
 	 */
 	protected boolean removeFixedChild(EditPart childEditPart) {
 
-		if (childEditPart instanceof ExpansionRegionExpansionRegionNodeCompartmentEditPart) {
+		if (childEditPart instanceof ExpansionRegionExpansionRegionNodeCompartment2EditPart) {
 			IFigure pane = getPrimaryShape().getFigureExpansionRegionFigure_ContentPane();
-			pane.remove(((ExpansionRegionExpansionRegionNodeCompartmentEditPart) childEditPart).getFigure());
+			pane.remove(((ExpansionRegionExpansionRegionNodeCompartment2EditPart) childEditPart).getFigure());
 			return true;
 		}
 		return false;
@@ -161,7 +161,7 @@ public class ExpansionRegionEditPart extends ShapeNodeEditPart {
 	 */
 	protected IFigure getContentPaneFor(IGraphicalEditPart editPart) {
 
-		if (editPart instanceof ExpansionRegionExpansionRegionNodeCompartmentEditPart) {
+		if (editPart instanceof ExpansionRegionExpansionRegionNodeCompartment2EditPart) {
 			return getPrimaryShape().getFigureExpansionRegionFigure_ContentPane();
 		}
 		return super.getContentPaneFor(editPart);
@@ -221,7 +221,7 @@ public class ExpansionRegionEditPart extends ShapeNodeEditPart {
 	 * @generated
 	 */
 	public EditPart getPrimaryChildEditPart() {
-		return getChildBySemanticHint(UMLVisualIDRegistry.getType(ExpansionRegionModeEditPart.VISUAL_ID));
+		return getChildBySemanticHint(UMLVisualIDRegistry.getType(ExpansionRegionMode2EditPart.VISUAL_ID));
 	}
 
 	/**

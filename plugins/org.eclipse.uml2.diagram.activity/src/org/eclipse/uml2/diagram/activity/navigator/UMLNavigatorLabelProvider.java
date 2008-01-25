@@ -339,6 +339,8 @@ public class UMLNavigatorLabelProvider extends LabelProvider implements ICommonL
 			return getImage("Navigator?Node?http://www.eclipse.org/uml2/2.1.0/UML?LoopNode", UMLElementTypes.LoopNode_3078); //$NON-NLS-1$
 		case ConditionalNode2EditPart.VISUAL_ID:
 			return getImage("Navigator?Node?http://www.eclipse.org/uml2/2.1.0/UML?ConditionalNode", UMLElementTypes.ConditionalNode_3083); //$NON-NLS-1$
+		case ExpansionRegion2EditPart.VISUAL_ID:
+			return getImage("Navigator?Node?http://www.eclipse.org/uml2/2.1.0/UML?ExpansionRegion", UMLElementTypes.ExpansionRegion_3085); //$NON-NLS-1$
 		case LoopNodeEditPart.VISUAL_ID:
 			return getImage("Navigator?Node?http://www.eclipse.org/uml2/2.1.0/UML?LoopNode", UMLElementTypes.LoopNode_3058); //$NON-NLS-1$
 		case ConditionalNodeEditPart.VISUAL_ID:
@@ -565,6 +567,8 @@ public class UMLNavigatorLabelProvider extends LabelProvider implements ICommonL
 			return getLoopNode_3078Text(view);
 		case ConditionalNode2EditPart.VISUAL_ID:
 			return getConditionalNode_3083Text(view);
+		case ExpansionRegion2EditPart.VISUAL_ID:
+			return getExpansionRegion_3085Text(view);
 		case LoopNodeEditPart.VISUAL_ID:
 			return getLoopNode_3058Text(view);
 		case ConditionalNodeEditPart.VISUAL_ID:
@@ -1786,6 +1790,23 @@ public class UMLNavigatorLabelProvider extends LabelProvider implements ICommonL
 			UMLDiagramEditorPlugin.getInstance().logError("No domain element for view with visualID = " + 3083); //$NON-NLS-1$
 			return ""; //$NON-NLS-1$
 		}
+	}
+
+	/**
+	 * @generated
+	 */
+	private String getExpansionRegion_3085Text(View view) {
+		IAdaptable hintAdapter = new UMLParserProvider.HintAdapter(UMLElementTypes.ExpansionRegion_3085, (view.getElement() != null ? view.getElement() : view), UMLVisualIDRegistry
+				.getType(ExpansionRegionMode2EditPart.VISUAL_ID));
+		IParser parser = ParserService.getInstance().getParser(hintAdapter);
+
+		if (parser != null) {
+			return parser.getPrintString(hintAdapter, ParserOptions.NONE.intValue());
+		} else {
+			UMLDiagramEditorPlugin.getInstance().logError("Parser was not found for label " + 5088); //$NON-NLS-1$
+			return ""; //$NON-NLS-1$
+		}
+
 	}
 
 	/**

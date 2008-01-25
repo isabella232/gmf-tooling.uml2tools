@@ -54,6 +54,7 @@ import org.eclipse.uml2.diagram.activity.edit.parts.DataStoreNodeNameEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.DataStoreNodeOrdering2EditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.DataStoreNodeOrdering3EditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.DataStoreNodeOrderingEditPart;
+import org.eclipse.uml2.diagram.activity.edit.parts.ExpansionRegionMode2EditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.ExpansionRegionModeEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.InputPinName2EditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.InputPinName3EditPart;
@@ -1901,6 +1902,28 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 	/**
 	 * @generated
 	 */
+	private IParser expansionRegionMode_5088Parser;
+
+	/**
+	 * @generated
+	 */
+	private IParser getExpansionRegionMode_5088Parser() {
+		if (expansionRegionMode_5088Parser == null) {
+			expansionRegionMode_5088Parser = createExpansionRegionMode_5088Parser();
+		}
+		return expansionRegionMode_5088Parser;
+	}
+
+	/**
+	 * @generated NOT
+	 */
+	protected IParser createExpansionRegionMode_5088Parser() {
+		return new ExpansionRegionParser();
+	}
+
+	/**
+	 * @generated
+	 */
 	private IParser expansionRegionMode_5087Parser;
 
 	/**
@@ -2265,6 +2288,8 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 			return getOutputPinOrdering_5084Parser();
 		case SendSignalActionName2EditPart.VISUAL_ID:
 			return getSendSignalActionName_5080Parser();
+		case ExpansionRegionMode2EditPart.VISUAL_ID:
+			return getExpansionRegionMode_5088Parser();
 		case ExpansionRegionModeEditPart.VISUAL_ID:
 			return getExpansionRegionMode_5087Parser();
 		case LiteralStringEditPart.VISUAL_ID:

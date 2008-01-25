@@ -166,6 +166,7 @@ public class UMLViewProvider extends AbstractViewProvider {
 				case SendSignalAction2EditPart.VISUAL_ID:
 				case LoopNode2EditPart.VISUAL_ID:
 				case ConditionalNode2EditPart.VISUAL_ID:
+				case ExpansionRegion2EditPart.VISUAL_ID:
 				case LoopNodeEditPart.VISUAL_ID:
 				case ConditionalNodeEditPart.VISUAL_ID:
 				case ExpansionRegionEditPart.VISUAL_ID:
@@ -489,6 +490,12 @@ public class UMLViewProvider extends AbstractViewProvider {
 						return null; // wrong container
 					}
 					break;
+				case ExpansionRegionMode2EditPart.VISUAL_ID:
+				case ExpansionRegionExpansionRegionNodeCompartment2EditPart.VISUAL_ID:
+					if (ExpansionRegion2EditPart.VISUAL_ID != UMLVisualIDRegistry.getVisualID(containerView) || containerView.getElement() != domainElement) {
+						return null; // wrong container
+					}
+					break;
 				case LoopNodeLoopNodeContentPaneCompartmentEditPart.VISUAL_ID:
 					if (LoopNodeEditPart.VISUAL_ID != UMLVisualIDRegistry.getVisualID(containerView) || containerView.getElement() != domainElement) {
 						return null; // wrong container
@@ -500,6 +507,7 @@ public class UMLViewProvider extends AbstractViewProvider {
 					}
 					break;
 				case ExpansionRegionModeEditPart.VISUAL_ID:
+				case ExpansionRegionExpansionRegionNodeCompartmentEditPart.VISUAL_ID:
 					if (ExpansionRegionEditPart.VISUAL_ID != UMLVisualIDRegistry.getVisualID(containerView) || containerView.getElement() != domainElement) {
 						return null; // wrong container
 					}
@@ -847,6 +855,10 @@ public class UMLViewProvider extends AbstractViewProvider {
 			return LoopNode2ViewFactory.class;
 		case ConditionalNode2EditPart.VISUAL_ID:
 			return ConditionalNode2ViewFactory.class;
+		case ExpansionRegion2EditPart.VISUAL_ID:
+			return ExpansionRegion2ViewFactory.class;
+		case ExpansionRegionMode2EditPart.VISUAL_ID:
+			return ExpansionRegionMode2ViewFactory.class;
 		case LoopNodeEditPart.VISUAL_ID:
 			return LoopNodeViewFactory.class;
 		case ConditionalNodeEditPart.VISUAL_ID:
@@ -871,10 +883,14 @@ public class UMLViewProvider extends AbstractViewProvider {
 			return LoopNodeLoopNodeContentPaneCompartment2ViewFactory.class;
 		case ConditionalNodeConditionalNodeCompartment2EditPart.VISUAL_ID:
 			return ConditionalNodeConditionalNodeCompartment2ViewFactory.class;
+		case ExpansionRegionExpansionRegionNodeCompartment2EditPart.VISUAL_ID:
+			return ExpansionRegionExpansionRegionNodeCompartment2ViewFactory.class;
 		case LoopNodeLoopNodeContentPaneCompartmentEditPart.VISUAL_ID:
 			return LoopNodeLoopNodeContentPaneCompartmentViewFactory.class;
 		case ConditionalNodeConditionalNodeCompartmentEditPart.VISUAL_ID:
 			return ConditionalNodeConditionalNodeCompartmentViewFactory.class;
+		case ExpansionRegionExpansionRegionNodeCompartmentEditPart.VISUAL_ID:
+			return ExpansionRegionExpansionRegionNodeCompartmentViewFactory.class;
 		case ConstraintPreconditionEditPart.VISUAL_ID:
 			return ConstraintPreconditionViewFactory.class;
 		case ConstraintPostconditionEditPart.VISUAL_ID:

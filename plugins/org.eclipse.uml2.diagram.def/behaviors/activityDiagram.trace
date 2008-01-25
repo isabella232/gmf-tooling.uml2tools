@@ -571,6 +571,19 @@
     <nodeLabelTraces
         visualID="5087"
         queryText="true"/>
+    <compartmentTraces
+        visualID="7021"
+        queryText="true"/>
+  </childNodeTraces>
+  <childNodeTraces
+      visualID="3085"
+      queryText="(let _eClass_:ecore::EClass = modelFacet.metaClass.ecoreClass in _eClass_.ePackage.nsURI = 'http://www.eclipse.org/uml2/2.1.0/UML' and _eClass_.name = 'ExpansionRegion') and (let _containmentMF_:ecore::EStructuralFeature = modelFacet.containmentMetaFeature.ecoreFeature in (let _eClass_:ecore::EClass = _containmentMF_.eContainingClass in _eClass_.ePackage.nsURI = 'http://www.eclipse.org/uml2/2.1.0/UML' and _eClass_.name = 'Activity') and _containmentMF_.name = 'node') and ( let _childMF_:ecore::EStructuralFeature = modelFacet.childMetaFeature.ecoreFeature in (let _eClass_:ecore::EClass = _childMF_.eContainingClass in _eClass_.ePackage.nsURI = 'http://www.eclipse.org/uml2/2.1.0/UML' and _eClass_.name = 'ActivityPartition') and _childMF_.name = 'node')">
+    <nodeLabelTraces
+        visualID="5088"
+        queryText="true"/>
+    <compartmentTraces
+        visualID="7022"
+        queryText="true"/>
   </childNodeTraces>
   <linkTraces
       visualID="4001"

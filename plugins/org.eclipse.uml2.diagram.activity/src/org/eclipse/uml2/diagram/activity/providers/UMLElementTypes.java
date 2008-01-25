@@ -432,6 +432,11 @@ public class UMLElementTypes extends ElementInitializers {
 	/**
 	 * @generated
 	 */
+	public static final IElementType ExpansionRegion_3085 = getElementType("org.eclipse.uml2.diagram.activity.ExpansionRegion_3085"); //$NON-NLS-1$
+
+	/**
+	 * @generated
+	 */
 	public static final IElementType LoopNode_3058 = getElementType("org.eclipse.uml2.diagram.activity.LoopNode_3058"); //$NON-NLS-1$
 
 	/**
@@ -744,6 +749,8 @@ public class UMLElementTypes extends ElementInitializers {
 
 			elements.put(ConditionalNode_3083, UMLPackage.eINSTANCE.getConditionalNode());
 
+			elements.put(ExpansionRegion_3085, UMLPackage.eINSTANCE.getExpansionRegion());
+
 			elements.put(LoopNode_3058, UMLPackage.eINSTANCE.getLoopNode());
 
 			elements.put(ConditionalNode_3082, UMLPackage.eINSTANCE.getConditionalNode());
@@ -859,6 +866,7 @@ public class UMLElementTypes extends ElementInitializers {
 			KNOWN_ELEMENT_TYPES.add(SendSignalAction_3077);
 			KNOWN_ELEMENT_TYPES.add(LoopNode_3078);
 			KNOWN_ELEMENT_TYPES.add(ConditionalNode_3083);
+			KNOWN_ELEMENT_TYPES.add(ExpansionRegion_3085);
 			KNOWN_ELEMENT_TYPES.add(LoopNode_3058);
 			KNOWN_ELEMENT_TYPES.add(ConditionalNode_3082);
 			KNOWN_ELEMENT_TYPES.add(ExpansionRegion_3084);

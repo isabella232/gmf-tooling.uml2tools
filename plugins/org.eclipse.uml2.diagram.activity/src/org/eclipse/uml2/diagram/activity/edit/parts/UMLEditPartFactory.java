@@ -494,6 +494,12 @@ public class UMLEditPartFactory implements EditPartFactory {
 			case ConditionalNode2EditPart.VISUAL_ID:
 				return new ConditionalNode2EditPart(view);
 
+			case ExpansionRegion2EditPart.VISUAL_ID:
+				return new ExpansionRegion2EditPart(view);
+
+			case ExpansionRegionMode2EditPart.VISUAL_ID:
+				return new ExpansionRegionMode2EditPart(view);
+
 			case LoopNodeEditPart.VISUAL_ID:
 				return new LoopNodeEditPart(view);
 
@@ -530,11 +536,17 @@ public class UMLEditPartFactory implements EditPartFactory {
 			case ConditionalNodeConditionalNodeCompartment2EditPart.VISUAL_ID:
 				return new ConditionalNodeConditionalNodeCompartment2EditPart(view);
 
+			case ExpansionRegionExpansionRegionNodeCompartment2EditPart.VISUAL_ID:
+				return new ExpansionRegionExpansionRegionNodeCompartment2EditPart(view);
+
 			case LoopNodeLoopNodeContentPaneCompartmentEditPart.VISUAL_ID:
 				return new LoopNodeLoopNodeContentPaneCompartmentEditPart(view);
 
 			case ConditionalNodeConditionalNodeCompartmentEditPart.VISUAL_ID:
 				return new ConditionalNodeConditionalNodeCompartmentEditPart(view);
+
+			case ExpansionRegionExpansionRegionNodeCompartmentEditPart.VISUAL_ID:
+				return new ExpansionRegionExpansionRegionNodeCompartmentEditPart(view);
 
 			case ConstraintPreconditionEditPart.VISUAL_ID:
 				return new ConstraintPreconditionEditPart(view);
