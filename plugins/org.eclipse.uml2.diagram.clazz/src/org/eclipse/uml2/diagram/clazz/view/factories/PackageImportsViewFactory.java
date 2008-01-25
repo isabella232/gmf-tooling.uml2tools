@@ -53,12 +53,13 @@ public class PackageImportsViewFactory extends BasicNodeViewFactory {
 	}
 
 	/**
-	 * @generated
+	 * @generated NOT
 	 */
 	protected void setupCompartmentCollapsed(View view) {
 		DrawerStyle drawerStyle = (DrawerStyle) view.getStyle(NotationPackage.eINSTANCE.getDrawerStyle());
 		if (drawerStyle != null) {
-			drawerStyle.setCollapsed(false);
+			//#216573 [SecondaryDiagramElement] Collapse imports compartment after creation
+			drawerStyle.setCollapsed(true);
 		}
 	}
 }
