@@ -52,7 +52,7 @@ import org.eclipse.uml2.diagram.clazz.providers.UMLParserProvider;
 /**
  * @generated
  */
-public class Label2EditPart extends CompartmentEditPart implements ITextAwareEditPart {
+public class InstanceSpecificationValueEditPart extends CompartmentEditPart implements ITextAwareEditPart {
 
 	/**
 	 * @generated
@@ -82,7 +82,7 @@ public class Label2EditPart extends CompartmentEditPart implements ITextAwareEdi
 	/**
 	 * @generated
 	 */
-	public Label2EditPart(View view) {
+	public InstanceSpecificationValueEditPart(View view) {
 		super(view);
 	}
 

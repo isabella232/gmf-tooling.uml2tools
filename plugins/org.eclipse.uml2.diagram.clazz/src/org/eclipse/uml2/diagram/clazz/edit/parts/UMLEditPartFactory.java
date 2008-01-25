@@ -131,8 +131,8 @@ public class UMLEditPartFactory implements EditPartFactory {
 			case InstanceSpecificationName3EditPart.VISUAL_ID:
 				return new InstanceSpecificationName3EditPart(view);
 
-			case Label2EditPart.VISUAL_ID:
-				return new Label2EditPart(view);
+			case InstanceSpecificationValueEditPart.VISUAL_ID:
+				return new InstanceSpecificationValueEditPart(view);
 
 			case Package3EditPart.VISUAL_ID:
 				return new Package3EditPart(view);
@@ -437,11 +437,11 @@ public class UMLEditPartFactory implements EditPartFactory {
 			case AssociationInstanceEditPart.VISUAL_ID:
 				return new AssociationInstanceEditPart(view);
 
-			case Label3EditPart.VISUAL_ID:
-				return new Label3EditPart(view);
+			case AssociationInstanceSourceEditPart.VISUAL_ID:
+				return new AssociationInstanceSourceEditPart(view);
 
-			case Label4EditPart.VISUAL_ID:
-				return new Label4EditPart(view);
+			case AssociationInstanceTargetEditPart.VISUAL_ID:
+				return new AssociationInstanceTargetEditPart(view);
 
 			case TemplateBindingEditPart.VISUAL_ID:
 				return new TemplateBindingEditPart(view);
@@ -449,8 +449,8 @@ public class UMLEditPartFactory implements EditPartFactory {
 			case TemplateBinding_BindLabelEditPart.VISUAL_ID:
 				return new TemplateBinding_BindLabelEditPart(view);
 
-			case LabelEditPart.VISUAL_ID:
-				return new LabelEditPart(view);
+			case TemplateParameterSubstitutionEditPart.VISUAL_ID:
+				return new TemplateParameterSubstitutionEditPart(view);
 			}
 		}
 		return createUnrecognizedEditPart(context, model);

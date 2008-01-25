@@ -297,7 +297,7 @@ public class UMLViewProvider extends AbstractViewProvider {
 					}
 					break;
 				case InstanceSpecificationName3EditPart.VISUAL_ID:
-				case Label2EditPart.VISUAL_ID:
+				case InstanceSpecificationValueEditPart.VISUAL_ID:
 					if (InstanceSpecification4EditPart.VISUAL_ID != UMLVisualIDRegistry.getVisualID(containerView) || containerView.getElement() != domainElement) {
 						return null; // wrong container
 					}
@@ -383,14 +383,14 @@ public class UMLViewProvider extends AbstractViewProvider {
 						return null; // wrong container
 					}
 					break;
-				case Label3EditPart.VISUAL_ID:
-				case Label4EditPart.VISUAL_ID:
+				case AssociationInstanceSourceEditPart.VISUAL_ID:
+				case AssociationInstanceTargetEditPart.VISUAL_ID:
 					if (AssociationInstanceEditPart.VISUAL_ID != UMLVisualIDRegistry.getVisualID(containerView) || containerView.getElement() != domainElement) {
 						return null; // wrong container
 					}
 					break;
 				case TemplateBinding_BindLabelEditPart.VISUAL_ID:
-				case LabelEditPart.VISUAL_ID:
+				case TemplateParameterSubstitutionEditPart.VISUAL_ID:
 					if (TemplateBindingEditPart.VISUAL_ID != UMLVisualIDRegistry.getVisualID(containerView) || containerView.getElement() != domainElement) {
 						return null; // wrong container
 					}
@@ -477,8 +477,8 @@ public class UMLViewProvider extends AbstractViewProvider {
 			return InstanceSpecification4ViewFactory.class;
 		case InstanceSpecificationName3EditPart.VISUAL_ID:
 			return InstanceSpecificationName3ViewFactory.class;
-		case Label2EditPart.VISUAL_ID:
-			return Label2ViewFactory.class;
+		case InstanceSpecificationValueEditPart.VISUAL_ID:
+			return InstanceSpecificationValueViewFactory.class;
 		case Package3EditPart.VISUAL_ID:
 			return Package3ViewFactory.class;
 		case ClassEditPart.VISUAL_ID:
@@ -653,14 +653,14 @@ public class UMLViewProvider extends AbstractViewProvider {
 			return AssociationName7ViewFactory.class;
 		case RealizationNameEditPart.VISUAL_ID:
 			return RealizationNameViewFactory.class;
-		case Label3EditPart.VISUAL_ID:
-			return Label3ViewFactory.class;
-		case Label4EditPart.VISUAL_ID:
-			return Label4ViewFactory.class;
+		case AssociationInstanceSourceEditPart.VISUAL_ID:
+			return AssociationInstanceSourceViewFactory.class;
+		case AssociationInstanceTargetEditPart.VISUAL_ID:
+			return AssociationInstanceTargetViewFactory.class;
 		case TemplateBinding_BindLabelEditPart.VISUAL_ID:
 			return TemplateBinding_BindLabelViewFactory.class;
-		case LabelEditPart.VISUAL_ID:
-			return LabelViewFactory.class;
+		case TemplateParameterSubstitutionEditPart.VISUAL_ID:
+			return TemplateParameterSubstitutionViewFactory.class;
 		}
 		return null;
 	}

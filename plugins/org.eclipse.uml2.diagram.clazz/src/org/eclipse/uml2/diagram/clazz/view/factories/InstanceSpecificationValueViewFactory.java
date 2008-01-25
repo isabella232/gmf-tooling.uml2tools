@@ -9,7 +9,7 @@ import org.eclipse.gmf.runtime.notation.View;
 /**
  * @generated
  */
-public class Label2ViewFactory extends BasicNodeViewFactory {
+public class InstanceSpecificationValueViewFactory extends BasicNodeViewFactory {
 
 	/**
 	 * @generated

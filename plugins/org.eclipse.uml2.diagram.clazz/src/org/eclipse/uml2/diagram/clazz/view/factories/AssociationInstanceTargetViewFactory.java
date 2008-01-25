@@ -15,7 +15,7 @@ import org.eclipse.gmf.runtime.notation.View;
 /**
  * @generated
  */
-public class Label4ViewFactory extends AbstractLabelViewFactory {
+public class AssociationInstanceTargetViewFactory extends AbstractLabelViewFactory {
 
 	/**
 	 * @generated

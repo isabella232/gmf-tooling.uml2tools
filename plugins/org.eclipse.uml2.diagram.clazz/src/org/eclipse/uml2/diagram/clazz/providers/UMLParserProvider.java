@@ -13,6 +13,8 @@ import org.eclipse.gmf.runtime.emf.ui.services.parser.ParserHintAdapter;
 import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.uml2.diagram.clazz.edit.parts.AssociationClassEditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.AssociationClassNameEditPart;
+import org.eclipse.uml2.diagram.clazz.edit.parts.AssociationInstanceSourceEditPart;
+import org.eclipse.uml2.diagram.clazz.edit.parts.AssociationInstanceTargetEditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.AssociationName2EditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.AssociationName3EditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.AssociationName4EditPart;
@@ -45,11 +47,9 @@ import org.eclipse.uml2.diagram.clazz.edit.parts.InstanceSpecificationEditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.InstanceSpecificationName2EditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.InstanceSpecificationName3EditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.InstanceSpecificationNameEditPart;
+import org.eclipse.uml2.diagram.clazz.edit.parts.InstanceSpecificationValueEditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.InterfaceName2EditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.InterfaceNameEditPart;
-import org.eclipse.uml2.diagram.clazz.edit.parts.Label2EditPart;
-import org.eclipse.uml2.diagram.clazz.edit.parts.Label3EditPart;
-import org.eclipse.uml2.diagram.clazz.edit.parts.Label4EditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.Operation2EditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.Operation3EditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.Operation4EditPart;
@@ -1603,6 +1603,7 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 	private IParser createAssocationInstanceRoleParser(boolean sourceNotTarget) {
 		return new AssociationInstanceParser.ROLE_PARSER(sourceNotTarget);
 	}
+
 	/**
 	 * @NOT-GENERATED
 	 * Different view's but shared common edit.
@@ -1735,7 +1736,7 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 			return getPackageName_5026Parser();
 		case InstanceSpecificationName3EditPart.VISUAL_ID:
 			return getInstanceSpecificationName_5029Parser();
-		case Label2EditPart.VISUAL_ID:
+		case InstanceSpecificationValueEditPart.VISUAL_ID:
 			return getInstanceSpecificationLabel_5030Parser();
 		case Package3EditPart.VISUAL_ID:
 			return getPackage_3006Parser();
@@ -1825,9 +1826,9 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 			return getAssociationName_6009Parser();
 		case RealizationNameEditPart.VISUAL_ID:
 			return getRealizationName_6011Parser();
-		case Label3EditPart.VISUAL_ID:
+		case AssociationInstanceSourceEditPart.VISUAL_ID:
 			return getSlotLabel_6015Parser();
-		case Label4EditPart.VISUAL_ID:
+		case AssociationInstanceTargetEditPart.VISUAL_ID:
 			return getSlotLabel_6016Parser();
 		}
 		return null;

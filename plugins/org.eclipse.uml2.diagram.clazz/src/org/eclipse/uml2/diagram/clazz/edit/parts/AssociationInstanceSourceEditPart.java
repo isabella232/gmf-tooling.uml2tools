@@ -23,6 +23,7 @@ import org.eclipse.gmf.runtime.common.ui.services.parser.ParserOptions;
 import org.eclipse.gmf.runtime.common.ui.services.parser.ParserService;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.ITextAwareEditPart;
+import org.eclipse.gmf.runtime.diagram.ui.editparts.LabelEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editpolicies.LabelDirectEditPolicy;
 import org.eclipse.gmf.runtime.diagram.ui.l10n.DiagramColorRegistry;
 import org.eclipse.gmf.runtime.diagram.ui.requests.RequestConstants;
@@ -44,16 +45,19 @@ import org.eclipse.uml2.diagram.clazz.edit.policies.UMLTextSelectionEditPolicy;
 import org.eclipse.uml2.diagram.clazz.part.UMLVisualIDRegistry;
 import org.eclipse.uml2.diagram.clazz.providers.UMLElementTypes;
 import org.eclipse.uml2.diagram.clazz.providers.UMLParserProvider;
+import org.eclipse.uml2.uml.Property;
+import org.eclipse.uml2.uml.Slot;
+import org.eclipse.uml2.uml.StructuralFeature;
 
 /**
  * @generated
  */
-public class LabelEditPart extends org.eclipse.gmf.runtime.diagram.ui.editparts.LabelEditPart implements ITextAwareEditPart {
+public class AssociationInstanceSourceEditPart extends LabelEditPart implements ITextAwareEditPart {
 
 	/**
 	 * @generated
 	 */
-	public static final int VISUAL_ID = 6014;
+	public static final int VISUAL_ID = 6015;
 
 	/**
 	 * @generated
@@ -79,13 +83,13 @@ public class LabelEditPart extends org.eclipse.gmf.runtime.diagram.ui.editparts.
 	 * @generated
 	 */
 	static {
-		registerSnapBackPosition(UMLVisualIDRegistry.getType(org.eclipse.uml2.diagram.clazz.edit.parts.LabelEditPart.VISUAL_ID), new Point(0, 60));
+		registerSnapBackPosition(UMLVisualIDRegistry.getType(org.eclipse.uml2.diagram.clazz.edit.parts.AssociationInstanceSourceEditPart.VISUAL_ID), new Point(0, 20));
 	}
 
 	/**
 	 * @generated
 	 */
-	public LabelEditPart(View view) {
+	public AssociationInstanceSourceEditPart(View view) {
 		super(view);
 	}
 
@@ -174,12 +178,15 @@ public class LabelEditPart extends org.eclipse.gmf.runtime.diagram.ui.editparts.
 	}
 
 	/**
-	 * @generated
+	 * @generated NOT
 	 */
 	protected EObject getParserElement() {
-
-		EObject element = resolveSemanticElement();
-		return element != null ? element : (View) getModel();
+		Slot element = (Slot) resolveSemanticElement();
+		StructuralFeature definingFeature = ((Slot) element).getDefiningFeature();
+		if (definingFeature == null || false == definingFeature instanceof Property) {
+			return null;
+		}
+		return ((Property) definingFeature).getAssociation();
 	}
 
 	/**
@@ -284,7 +291,7 @@ public class LabelEditPart extends org.eclipse.gmf.runtime.diagram.ui.editparts.
 	public IParser getParser() {
 		if (parser == null) {
 			String parserHint = ((View) getModel()).getType();
-			IAdaptable hintAdapter = new UMLParserProvider.HintAdapter(UMLElementTypes.TemplateBinding_4016, getParserElement(), parserHint);
+			IAdaptable hintAdapter = new UMLParserProvider.HintAdapter(UMLElementTypes.Slot_4015, getParserElement(), parserHint);
 			parser = ParserService.getInstance().getParser(hintAdapter);
 		}
 		return parser;

@@ -15,7 +15,7 @@ import org.eclipse.gmf.runtime.notation.View;
 /**
  * @generated
  */
-public class LabelViewFactory extends AbstractLabelViewFactory {
+public class TemplateParameterSubstitutionViewFactory extends AbstractLabelViewFactory {
 
 	/**
 	 * @generated

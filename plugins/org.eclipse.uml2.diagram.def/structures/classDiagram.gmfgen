@@ -2808,9 +2808,9 @@
       </labels>
       <labels
           visualID="5030"
-          editPartClassName="Label2EditPart"
-          itemSemanticEditPolicyClassName="Label2ItemSemanticEditPolicy"
-          notationViewFactoryClassName="Label2ViewFactory">
+          editPartClassName="InstanceSpecificationValueEditPart"
+          itemSemanticEditPolicyClassName="InstanceSpecificationValueItemSemanticEditPolicy"
+          notationViewFactoryClassName="InstanceSpecificationValueViewFactory">
         <diagramRunTimeClass
             href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
         <viewmap
@@ -3561,9 +3561,9 @@
       </modelFacet>
       <labels
           visualID="6015"
-          editPartClassName="Label3EditPart"
-          itemSemanticEditPolicyClassName="Label3ItemSemanticEditPolicy"
-          notationViewFactoryClassName="Label3ViewFactory">
+          editPartClassName="AssociationInstanceSourceEditPart"
+          itemSemanticEditPolicyClassName="AssociationInstanceSourceItemSemanticEditPolicy"
+          notationViewFactoryClassName="AssociationInstanceSourceViewFactory">
         <diagramRunTimeClass
             href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
         <viewmap
@@ -3581,9 +3581,9 @@
       </labels>
       <labels
           visualID="6016"
-          editPartClassName="Label4EditPart"
-          itemSemanticEditPolicyClassName="Label4ItemSemanticEditPolicy"
-          notationViewFactoryClassName="Label4ViewFactory"
+          editPartClassName="AssociationInstanceTargetEditPart"
+          itemSemanticEditPolicyClassName="AssociationInstanceTargetItemSemanticEditPolicy"
+          notationViewFactoryClassName="AssociationInstanceTargetViewFactory"
           alignment="TARGET">
         <diagramRunTimeClass
             href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
@@ -3657,9 +3657,9 @@
       </labels>
       <labels
           visualID="6014"
-          editPartClassName="LabelEditPart"
-          itemSemanticEditPolicyClassName="LabelItemSemanticEditPolicy"
-          notationViewFactoryClassName="LabelViewFactory">
+          editPartClassName="TemplateParameterSubstitutionEditPart"
+          itemSemanticEditPolicyClassName="TemplateParameterSubstitutionItemSemanticEditPolicy"
+          notationViewFactoryClassName="TemplateParameterSubstitutionViewFactory">
         <diagramRunTimeClass
             href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
         <viewmap

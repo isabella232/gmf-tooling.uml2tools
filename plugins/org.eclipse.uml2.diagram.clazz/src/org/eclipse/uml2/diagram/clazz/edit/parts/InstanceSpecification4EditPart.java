@@ -120,8 +120,8 @@ public class InstanceSpecification4EditPart extends ShapeNodeEditPart {
 			((InstanceSpecificationName3EditPart) childEditPart).setLabel(getPrimaryShape().getFigureRectangleInstanceNode_NameLabel());
 			return true;
 		}
-		if (childEditPart instanceof Label2EditPart) {
-			((Label2EditPart) childEditPart).setLabel(getPrimaryShape().getFigureRectangleInstanceNode_ValueLabel());
+		if (childEditPart instanceof InstanceSpecificationValueEditPart) {
+			((InstanceSpecificationValueEditPart) childEditPart).setLabel(getPrimaryShape().getFigureRectangleInstanceNode_ValueLabel());
 			return true;
 		}
 		return false;

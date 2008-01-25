@@ -825,7 +825,7 @@ public class UMLVisualIDRegistry {
 			if (InstanceSpecificationName3EditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
-			if (Label2EditPart.VISUAL_ID == nodeVisualID) {
+			if (InstanceSpecificationValueEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
 			break;
@@ -1230,10 +1230,10 @@ public class UMLVisualIDRegistry {
 			}
 			break;
 		case AssociationInstanceEditPart.VISUAL_ID:
-			if (Label3EditPart.VISUAL_ID == nodeVisualID) {
+			if (AssociationInstanceSourceEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
-			if (Label4EditPart.VISUAL_ID == nodeVisualID) {
+			if (AssociationInstanceTargetEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
 			break;
@@ -1241,7 +1241,7 @@ public class UMLVisualIDRegistry {
 			if (TemplateBinding_BindLabelEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
-			if (LabelEditPart.VISUAL_ID == nodeVisualID) {
+			if (TemplateParameterSubstitutionEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
 			break;

@@ -52,7 +52,7 @@ import org.eclipse.uml2.uml.StructuralFeature;
 /**
  * @generated
  */
-public class Label4EditPart extends LabelEditPart implements ITextAwareEditPart {
+public class AssociationInstanceTargetEditPart extends LabelEditPart implements ITextAwareEditPart {
 
 	/**
 	 * @generated
@@ -83,13 +83,13 @@ public class Label4EditPart extends LabelEditPart implements ITextAwareEditPart 
 	 * @generated
 	 */
 	static {
-		registerSnapBackPosition(UMLVisualIDRegistry.getType(org.eclipse.uml2.diagram.clazz.edit.parts.Label4EditPart.VISUAL_ID), new Point(0, -15));
+		registerSnapBackPosition(UMLVisualIDRegistry.getType(org.eclipse.uml2.diagram.clazz.edit.parts.AssociationInstanceTargetEditPart.VISUAL_ID), new Point(0, -15));
 	}
 
 	/**
 	 * @generated
 	 */
-	public Label4EditPart(View view) {
+	public AssociationInstanceTargetEditPart(View view) {
 		super(view);
 	}
 

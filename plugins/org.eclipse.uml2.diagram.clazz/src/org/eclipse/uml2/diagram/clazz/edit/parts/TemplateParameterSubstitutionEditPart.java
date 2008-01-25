@@ -45,20 +45,16 @@ import org.eclipse.uml2.diagram.clazz.edit.policies.UMLTextSelectionEditPolicy;
 import org.eclipse.uml2.diagram.clazz.part.UMLVisualIDRegistry;
 import org.eclipse.uml2.diagram.clazz.providers.UMLElementTypes;
 import org.eclipse.uml2.diagram.clazz.providers.UMLParserProvider;
-import org.eclipse.uml2.uml.Association;
-import org.eclipse.uml2.uml.Property;
-import org.eclipse.uml2.uml.Slot;
-import org.eclipse.uml2.uml.StructuralFeature;
 
 /**
  * @generated
  */
-public class Label3EditPart extends LabelEditPart implements ITextAwareEditPart {
+public class TemplateParameterSubstitutionEditPart extends LabelEditPart implements ITextAwareEditPart {
 
 	/**
 	 * @generated
 	 */
-	public static final int VISUAL_ID = 6015;
+	public static final int VISUAL_ID = 6014;
 
 	/**
 	 * @generated
@@ -84,13 +80,13 @@ public class Label3EditPart extends LabelEditPart implements ITextAwareEditPart 
 	 * @generated
 	 */
 	static {
-		registerSnapBackPosition(UMLVisualIDRegistry.getType(org.eclipse.uml2.diagram.clazz.edit.parts.Label3EditPart.VISUAL_ID), new Point(0, 20));
+		registerSnapBackPosition(UMLVisualIDRegistry.getType(org.eclipse.uml2.diagram.clazz.edit.parts.TemplateParameterSubstitutionEditPart.VISUAL_ID), new Point(0, 60));
 	}
 
 	/**
 	 * @generated
 	 */
-	public Label3EditPart(View view) {
+	public TemplateParameterSubstitutionEditPart(View view) {
 		super(view);
 	}
 
@@ -179,17 +175,13 @@ public class Label3EditPart extends LabelEditPart implements ITextAwareEditPart 
 	}
 
 	/**
-	 * @generated NOT
+	 * @generated
 	 */
 	protected EObject getParserElement() {
-		Slot element = (Slot) resolveSemanticElement();
-		StructuralFeature definingFeature = ((Slot) element).getDefiningFeature();
-		if (definingFeature == null || false == definingFeature instanceof Property) {
-			return null;
-		}
-		return ((Property) definingFeature).getAssociation();
-	}
 
+		EObject element = resolveSemanticElement();
+		return element != null ? element : (View) getModel();
+	}
 
 	/**
 	 * @generated
@@ -293,7 +285,7 @@ public class Label3EditPart extends LabelEditPart implements ITextAwareEditPart 
 	public IParser getParser() {
 		if (parser == null) {
 			String parserHint = ((View) getModel()).getType();
-			IAdaptable hintAdapter = new UMLParserProvider.HintAdapter(UMLElementTypes.Slot_4015, getParserElement(), parserHint);
+			IAdaptable hintAdapter = new UMLParserProvider.HintAdapter(UMLElementTypes.TemplateBinding_4016, getParserElement(), parserHint);
 			parser = ParserService.getInstance().getParser(hintAdapter);
 		}
 		return parser;
