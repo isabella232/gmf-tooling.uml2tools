@@ -1543,20 +1543,13 @@
       <features
           href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//NamedElement/name"/>
     </labelMappings>
-    <labelMappings
-        xsi:type="gmfmap:FeatureLabelMapping">
-      <diagramLabel
-          href="classDiagram_associations.gmfgraph#AssociationLink_targetOptions"/>
-      <features
-          href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//NamedElement/name"/>
-    </labelMappings>
     <containmentFeature
         href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//Association/ownedEnd"/>
     <tool
         xsi:type="gmftool:CreationTool"
         href="classDiagram.gmftool#//@palette/@tools.2/@tools.8"/>
     <diagramLink
-        href="classDiagram_associations.gmfgraph#AssociationLink"/>
+        href="../../../plugin/org.eclipse.gmf.graphdef/models/basic.gmfgraph#Link"/>
     <linkMetaFeature
         xsi:type="ecore:EReference"
         href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//TypedElement/type"/>
