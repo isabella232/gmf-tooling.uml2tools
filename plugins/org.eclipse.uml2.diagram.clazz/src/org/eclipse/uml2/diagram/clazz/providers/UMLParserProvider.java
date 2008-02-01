@@ -109,10 +109,16 @@ import org.eclipse.uml2.diagram.parser.BasicApplyStrategy;
 import org.eclipse.uml2.diagram.parser.ParserAdapter;
 import org.eclipse.uml2.diagram.parser.SemanticParserAdapter;
 import org.eclipse.uml2.diagram.parser.lookup.DefaultOclLookups;
+import org.eclipse.uml2.diagram.parser.lookup.Lookup;
 import org.eclipse.uml2.diagram.parser.lookup.LookupSuite;
 import org.eclipse.uml2.diagram.parser.lookup.LookupSuiteImpl;
 import org.eclipse.uml2.diagram.parser.lookup.OCLLookup;
+import org.eclipse.uml2.uml.Classifier;
 import org.eclipse.uml2.uml.Constraint;
+import org.eclipse.uml2.uml.InstanceSpecification;
+import org.eclipse.uml2.uml.Property;
+import org.eclipse.uml2.uml.Slot;
+import org.eclipse.uml2.uml.StructuralFeature;
 import org.eclipse.uml2.uml.Type;
 import org.eclipse.uml2.uml.UMLPackage;
 import org.eclipse.uml2.uml.ValueSpecification;
@@ -1598,7 +1604,30 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 	 * @generated NOT
 	 */
 	protected IParser createSlot_3017Parser() {
-		return new SemanticParserAdapter(new SlotParser(), new BasicApplyStrategy(), new SlotToString.VIEW(), new SlotToString.EDIT()) {
+		LookupSuiteImpl structuralFeatureSuite = new LookupSuiteImpl();
+		structuralFeatureSuite.addLookup(StructuralFeature.class, new Lookup<StructuralFeature>() {
+
+			public List<IElementType> getResolutionElementTypes() {
+				return Collections.<IElementType>emptyList();
+			}
+
+			public StructuralFeature lookup(String name, EObject context) {
+				if (name == null || "".equals(name)) {
+					return null;
+				}
+				InstanceSpecification is = ((Slot)context).getOwningInstance();
+				for (Classifier c: is.getClassifiers()) {
+					for (Property attr: c.getAllAttributes()) {
+						if (name.equals(attr.getName())) {
+							return attr;
+						}
+					}
+				}
+				return null;
+			}
+			
+		});
+		return new SemanticParserAdapter(new SlotParser(structuralFeatureSuite), new BasicApplyStrategy(), new SlotToString.VIEW(), new SlotToString.EDIT()) {
 
 			@Override
 			public String getPrintString(IAdaptable element, int flags) {
