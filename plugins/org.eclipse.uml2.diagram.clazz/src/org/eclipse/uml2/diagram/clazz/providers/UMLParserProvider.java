@@ -76,6 +76,7 @@ import org.eclipse.uml2.diagram.clazz.edit.parts.Property5EditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.Property6EditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.PropertyEditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.PropertyName2EditPart;
+import org.eclipse.uml2.diagram.clazz.edit.parts.PropertyName3EditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.PropertyNameEditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.RealizationNameEditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.SlotEditPart;
@@ -332,26 +333,26 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 	protected IParser createConstraintName_5008Parser() {
 		return new ValueSpecificationParser() {
 
-				public boolean isAffectingEvent(Object notification, int flags) {
-					if (notification instanceof Notification) {
-						Object feature = ((Notification) notification).getFeature();
-						return UMLPackage.eINSTANCE.getConstraint_Specification().equals(feature) || super.isAffectingEvent(notification, flags);
-					}
-					return false;
+			public boolean isAffectingEvent(Object notification, int flags) {
+				if (notification instanceof Notification) {
+					Object feature = ((Notification) notification).getFeature();
+					return UMLPackage.eINSTANCE.getConstraint_Specification().equals(feature) || super.isAffectingEvent(notification, flags);
 				}
+				return false;
+			}
 
-				public List<?> getSemanticElementsBeingParsed(EObject element) {
-					if (false == element instanceof Constraint) {
-						return Collections.emptyList();
-					}
-					ValueSpecification spec = ((Constraint) element).getSpecification();
-					return spec == null ? Collections.emptyList() : Collections.singletonList(spec);
+			public List<?> getSemanticElementsBeingParsed(EObject element) {
+				if (false == element instanceof Constraint) {
+					return Collections.emptyList();
 				}
+				ValueSpecification spec = ((Constraint) element).getSpecification();
+				return spec == null ? Collections.emptyList() : Collections.singletonList(spec);
+			}
 
-				protected ValueSpecification getValueSpecification(IAdaptable adaptable) {
-					Constraint is = (Constraint) adaptable.getAdapter(EObject.class); 
-					return is.getSpecification();
-				}
+			protected ValueSpecification getValueSpecification(IAdaptable adaptable) {
+				Constraint is = (Constraint) adaptable.getAdapter(EObject.class);
+				return is.getSpecification();
+			}
 
 		};
 	}
@@ -1282,6 +1283,33 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 	/**
 	 * @generated
 	 */
+	private IParser propertyName_6017Parser;
+
+	/**
+	 * @generated
+	 */
+	private IParser getPropertyName_6017Parser() {
+		if (propertyName_6017Parser == null) {
+			propertyName_6017Parser = createPropertyName_6017Parser();
+		}
+		return propertyName_6017Parser;
+	}
+
+	/**
+	 * @generated NOT
+	 */
+	protected IParser createPropertyName_6017Parser() {
+		LookupSuite lookupSuite = getAssociationLookupSuite();
+		return new SemanticParserAdapter(//
+				new AssociationEndParser(lookupSuite, UMLPackage.eINSTANCE.getProperty()), //
+				new BasicApplyStrategy(), //
+				new AssociationEndToString.MODIFIERS_VIEW(false), //
+				new AssociationEndToString.EDIT(false));
+	}
+
+	/**
+	 * @generated
+	 */
 	private IParser associationName_6003Parser;
 
 	/**
@@ -1608,16 +1636,16 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 		structuralFeatureSuite.addLookup(StructuralFeature.class, new Lookup<StructuralFeature>() {
 
 			public List<IElementType> getResolutionElementTypes() {
-				return Collections.<IElementType>emptyList();
+				return Collections.<IElementType> emptyList();
 			}
 
 			public StructuralFeature lookup(String name, EObject context) {
 				if (name == null || "".equals(name)) {
 					return null;
 				}
-				InstanceSpecification is = ((Slot)context).getOwningInstance();
-				for (Classifier c: is.getClassifiers()) {
-					for (Property attr: c.getAllAttributes()) {
+				InstanceSpecification is = ((Slot) context).getOwningInstance();
+				for (Classifier c : is.getClassifiers()) {
+					for (Property attr : c.getAllAttributes()) {
 						if (name.equals(attr.getName())) {
 							return attr;
 						}
@@ -1625,7 +1653,7 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 				}
 				return null;
 			}
-			
+
 		});
 		return new SemanticParserAdapter(new SlotParser(structuralFeatureSuite), new BasicApplyStrategy(), new SlotToString.VIEW(), new SlotToString.EDIT()) {
 
@@ -1867,6 +1895,8 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 			return getPropertyName_6002Parser();
 		case PropertyName2EditPart.VISUAL_ID:
 			return getPropertyName_6012Parser();
+		case PropertyName3EditPart.VISUAL_ID:
+			return getPropertyName_6017Parser();
 		case AssociationNameEditPart.VISUAL_ID:
 			return getAssociationName_6003Parser();
 		case AssociationName2EditPart.VISUAL_ID:

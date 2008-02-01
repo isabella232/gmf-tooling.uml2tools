@@ -374,6 +374,9 @@
     <linkLabelTraces
         visualID="6012"
         queryText="true"/>
+    <linkLabelTraces
+        visualID="6017"
+        queryText="true"/>
   </linkTraces>
   <linkTraces
       visualID="4004"

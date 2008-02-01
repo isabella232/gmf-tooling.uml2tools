@@ -2,8 +2,14 @@
 <uml:Model xmi:version="2.1" xmlns:xmi="http://schema.omg.org/spec/XMI/2.1" xmlns:uml="http://www.eclipse.org/uml2/2.1.0/UML" xmi:id="_ruheUL2hEduWjOs2RiriMw">
   <packagedElement xmi:type="uml:Class" xmi:id="_vj-F4L2hEduWjOs2RiriMw" name="Person"/>
   <packagedElement xmi:type="uml:Class" xmi:id="_wdV94L2hEduWjOs2RiriMw" name="Company"/>
-  <packagedElement xmi:type="uml:AssociationClass" xmi:id="_1CwNwMm2EdyThJMjabxxGg" name="AssociationClass" memberEnd="_3UltgMm2EdyThJMjabxxGg _44kBsMm2EdyThJMjabxxGg">
-    <ownedEnd xmi:id="_3UltgMm2EdyThJMjabxxGg" name="comp" type="_wdV94L2hEduWjOs2RiriMw" association="_1CwNwMm2EdyThJMjabxxGg"/>
-    <ownedEnd xmi:id="_44kBsMm2EdyThJMjabxxGg" name="person" type="_vj-F4L2hEduWjOs2RiriMw" association="_1CwNwMm2EdyThJMjabxxGg"/>
+  <packagedElement xmi:type="uml:AssociationClass" xmi:id="_1CwNwMm2EdyThJMjabxxGg" name="Job" memberEnd="_3UltgMm2EdyThJMjabxxGg _44kBsMm2EdyThJMjabxxGg">
+    <ownedAttribute xmi:id="_b5sl0NDhEdy4popcT00fWQ" name="salary" aggregation="composite"/>
+    <ownedEnd xmi:id="_3UltgMm2EdyThJMjabxxGg" name="comp" type="_wdV94L2hEduWjOs2RiriMw" association="_1CwNwMm2EdyThJMjabxxGg">
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_dZztsNDhEdy4popcT00fWQ" value="*"/>
+    </ownedEnd>
+    <ownedEnd xmi:id="_44kBsMm2EdyThJMjabxxGg" name="person" type="_vj-F4L2hEduWjOs2RiriMw" association="_1CwNwMm2EdyThJMjabxxGg">
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_eXDZENDhEdy4popcT00fWQ" value="*"/>
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_e4lY0NDhEdy4popcT00fWQ" value="-1"/>
+    </ownedEnd>
   </packagedElement>
 </uml:Model>
