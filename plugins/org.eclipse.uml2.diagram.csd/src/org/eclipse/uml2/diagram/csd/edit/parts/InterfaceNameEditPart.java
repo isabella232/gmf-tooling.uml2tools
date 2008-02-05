@@ -536,6 +536,6 @@ public class InterfaceNameEditPart extends LabelEditPart implements ITextAwareEd
 	 * @generated
 	 */
 	protected IFigure createFigurePrim() {
-		return new Label();
+		return new WrapLabel();
 	}
 }

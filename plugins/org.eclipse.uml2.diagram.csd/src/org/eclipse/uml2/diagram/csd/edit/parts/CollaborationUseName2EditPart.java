@@ -157,7 +157,7 @@ public class CollaborationUseName2EditPart extends CompartmentEditPart implement
 	/**
 	 * @generated
 	 */
-	public void setLabel(Label figure) {
+	public void setLabel(WrapLabel figure) {
 		unregisterVisuals();
 		setFigure(figure);
 		defaultText = getLabelTextHelper(figure);

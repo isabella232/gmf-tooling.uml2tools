@@ -157,7 +157,7 @@ public class PropertyNameEditPart extends CompartmentEditPart implements ITextAw
 	/**
 	 * @generated
 	 */
-	public void setLabel(Label figure) {
+	public void setLabel(WrapLabel figure) {
 		unregisterVisuals();
 		setFigure(figure);
 		defaultText = getLabelTextHelper(figure);

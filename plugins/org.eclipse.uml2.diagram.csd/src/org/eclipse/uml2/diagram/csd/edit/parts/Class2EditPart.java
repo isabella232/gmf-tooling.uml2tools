@@ -85,14 +85,14 @@ public class Class2EditPart extends ShapeNodeEditPart {
 	 * @generated
 	 */
 	protected IFigure createNodeShape() {
-		return primaryShape = new Label();
+		return primaryShape = new WrapLabel();
 	}
 
 	/**
 	 * @generated
 	 */
-	public Label getPrimaryShape() {
-		return (Label) primaryShape;
+	public WrapLabel getPrimaryShape() {
+		return (WrapLabel) primaryShape;
 	}
 
 	/**

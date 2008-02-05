@@ -232,7 +232,7 @@ public class Class3EditPart extends ShapeNodeEditPart {
 		/**
 		 * @generated
 		 */
-		private Label fFigureExpandedClassFigure_name;
+		private WrapLabel fFigureExpandedClassFigure_name;
 
 		/**
 		 * @generated
@@ -256,7 +256,7 @@ public class Class3EditPart extends ShapeNodeEditPart {
 		 */
 		private void createContents() {
 
-			fFigureExpandedClassFigure_name = new Label();
+			fFigureExpandedClassFigure_name = new WrapLabel();
 			fFigureExpandedClassFigure_name.setText("");
 
 			this.add(fFigureExpandedClassFigure_name, BorderLayout.TOP);
@@ -290,7 +290,7 @@ public class Class3EditPart extends ShapeNodeEditPart {
 		/**
 		 * @generated
 		 */
-		public Label getFigureExpandedClassFigure_name() {
+		public WrapLabel getFigureExpandedClassFigure_name() {
 			return fFigureExpandedClassFigure_name;
 		}
 

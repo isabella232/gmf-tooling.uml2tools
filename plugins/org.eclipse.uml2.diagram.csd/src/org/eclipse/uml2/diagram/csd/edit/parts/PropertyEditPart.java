@@ -261,7 +261,7 @@ public class PropertyEditPart extends ShapeNodeEditPart {
 		/**
 		 * @generated
 		 */
-		private Label fFigure_PartFigure_name;
+		private WrapLabel fFigure_PartFigure_name;
 
 		/**
 		 * @generated
@@ -280,7 +280,7 @@ public class PropertyEditPart extends ShapeNodeEditPart {
 		 */
 		private void createContents() {
 
-			fFigure_PartFigure_name = new Label();
+			fFigure_PartFigure_name = new WrapLabel();
 			fFigure_PartFigure_name.setText("");
 
 			this.add(fFigure_PartFigure_name);
@@ -309,7 +309,7 @@ public class PropertyEditPart extends ShapeNodeEditPart {
 		/**
 		 * @generated
 		 */
-		public Label getFigure_PartFigure_name() {
+		public WrapLabel getFigure_PartFigure_name() {
 			return fFigure_PartFigure_name;
 		}
 

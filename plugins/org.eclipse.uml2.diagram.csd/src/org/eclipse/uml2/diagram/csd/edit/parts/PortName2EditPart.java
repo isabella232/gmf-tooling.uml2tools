@@ -536,7 +536,7 @@ public class PortName2EditPart extends LabelEditPart implements ITextAwareEditPa
 	 * @generated
 	 */
 	protected IFigure createFigurePrim() {
-		return new Label();
+		return new WrapLabel();
 	}
 
 }

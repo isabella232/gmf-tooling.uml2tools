@@ -251,7 +251,7 @@ public class CollaborationEditPart extends ShapeNodeEditPart {
 		/**
 		 * @generated
 		 */
-		private Label fFigureCollaborationFigure_name;
+		private WrapLabel fFigureCollaborationFigure_name;
 
 		/**
 		 * @generated
@@ -276,7 +276,7 @@ public class CollaborationEditPart extends ShapeNodeEditPart {
 		 */
 		private void createContents() {
 
-			fFigureCollaborationFigure_name = new Label();
+			fFigureCollaborationFigure_name = new WrapLabel();
 			fFigureCollaborationFigure_name.setText("");
 
 			this.add(fFigureCollaborationFigure_name, BorderLayout.TOP);
@@ -318,7 +318,7 @@ public class CollaborationEditPart extends ShapeNodeEditPart {
 		/**
 		 * @generated
 		 */
-		public Label getFigureCollaborationFigure_name() {
+		public WrapLabel getFigureCollaborationFigure_name() {
 			return fFigureCollaborationFigure_name;
 		}
 

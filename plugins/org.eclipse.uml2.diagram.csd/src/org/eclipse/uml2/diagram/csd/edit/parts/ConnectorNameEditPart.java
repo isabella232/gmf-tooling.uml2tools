@@ -518,7 +518,7 @@ public class ConnectorNameEditPart extends LabelEditPart implements ITextAwareEd
 	 * @generated
 	 */
 	protected IFigure createFigurePrim() {
-		return new Label();
+		return new WrapLabel();
 	}
 
 }

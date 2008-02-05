@@ -242,7 +242,7 @@ public class CollaborationUse2EditPart extends ShapeNodeEditPart {
 		/**
 		 * @generated
 		 */
-		private Label fFigureCollaborationUseFigure_name;
+		private WrapLabel fFigureCollaborationUseFigure_name;
 
 		/**
 		 * @generated
@@ -257,7 +257,7 @@ public class CollaborationUse2EditPart extends ShapeNodeEditPart {
 		 */
 		private void createContents() {
 
-			fFigureCollaborationUseFigure_name = new Label();
+			fFigureCollaborationUseFigure_name = new WrapLabel();
 			fFigureCollaborationUseFigure_name.setText("");
 
 			this.add(fFigureCollaborationUseFigure_name);
@@ -286,7 +286,7 @@ public class CollaborationUse2EditPart extends ShapeNodeEditPart {
 		/**
 		 * @generated
 		 */
-		public Label getFigureCollaborationUseFigure_name() {
+		public WrapLabel getFigureCollaborationUseFigure_name() {
 			return fFigureCollaborationUseFigure_name;
 		}
 

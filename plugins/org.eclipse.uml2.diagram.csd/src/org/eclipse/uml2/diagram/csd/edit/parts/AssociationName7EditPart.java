@@ -518,6 +518,6 @@ public class AssociationName7EditPart extends LabelEditPart implements ITextAwar
 	 * @generated
 	 */
 	protected IFigure createFigurePrim() {
-		return new Label();
+		return new WrapLabel();
 	}
 }

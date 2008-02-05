@@ -189,11 +189,7 @@ public class SlotEditPart extends CompartmentEditPart implements ITextAwareEditP
 	 * @generated
 	 */
 	protected Image getLabelIcon() {
-		EObject parserElement = getParserElement();
-		if (parserElement == null) {
-			return null;
-		}
-		return UMLElementTypes.getImage(parserElement.eClass());
+		return null;
 	}
 
 	/**
@@ -542,7 +538,7 @@ public class SlotEditPart extends CompartmentEditPart implements ITextAwareEditP
 	 * @generated
 	 */
 	protected IFigure createFigurePrim() {
-		return new Label();
+		return new WrapLabel();
 	}
 
 }
