@@ -249,7 +249,7 @@ public class ArtifactEditPart extends ShapeNodeEditPart {
 		/**
 		 * @generated
 		 */
-		private Label fFigureArtifactFigure_name;
+		private WrapLabel fFigureArtifactFigure_name;
 
 		/**
 		 * @generated
@@ -273,7 +273,7 @@ public class ArtifactEditPart extends ShapeNodeEditPart {
 		 */
 		private void createContents() {
 
-			Label artifactFigure_fixed_artifact0 = new Label();
+			WrapLabel artifactFigure_fixed_artifact0 = new WrapLabel();
 			artifactFigure_fixed_artifact0.setText("\u00ABartifact\u00BB");
 
 			this.add(artifactFigure_fixed_artifact0);
@@ -288,7 +288,7 @@ public class ArtifactEditPart extends ShapeNodeEditPart {
 
 			artifactFigure_NameContainer0.setLayoutManager(layoutArtifactFigure_NameContainer0);
 
-			fFigureArtifactFigure_name = new Label();
+			fFigureArtifactFigure_name = new WrapLabel();
 			fFigureArtifactFigure_name.setText("");
 
 			artifactFigure_NameContainer0.add(fFigureArtifactFigure_name);
@@ -317,7 +317,7 @@ public class ArtifactEditPart extends ShapeNodeEditPart {
 		/**
 		 * @generated
 		 */
-		public Label getFigureArtifactFigure_name() {
+		public WrapLabel getFigureArtifactFigure_name() {
 			return fFigureArtifactFigure_name;
 		}
 

@@ -157,7 +157,7 @@ public class ArtifactFileNameEditPart extends CompartmentEditPart implements ITe
 	/**
 	 * @generated
 	 */
-	public void setLabel(Label figure) {
+	public void setLabel(WrapLabel figure) {
 		unregisterVisuals();
 		setFigure(figure);
 		defaultText = getLabelTextHelper(figure);

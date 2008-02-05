@@ -157,7 +157,7 @@ public class ExecutionEnvironmentNameEditPart extends CompartmentEditPart implem
 	/**
 	 * @generated
 	 */
-	public void setLabel(Label figure) {
+	public void setLabel(WrapLabel figure) {
 		unregisterVisuals();
 		setFigure(figure);
 		defaultText = getLabelTextHelper(figure);

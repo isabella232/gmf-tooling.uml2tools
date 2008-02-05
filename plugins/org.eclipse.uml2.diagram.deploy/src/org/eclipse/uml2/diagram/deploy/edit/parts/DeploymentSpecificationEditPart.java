@@ -255,12 +255,12 @@ public class DeploymentSpecificationEditPart extends ShapeNodeEditPart {
 		/**
 		 * @generated
 		 */
-		private Label fFigureDeploymentSpecificationFigure_stereo;
+		private WrapLabel fFigureDeploymentSpecificationFigure_stereo;
 
 		/**
 		 * @generated
 		 */
-		private Label fFigureDeploymentSpecificationFigure_name;
+		private WrapLabel fFigureDeploymentSpecificationFigure_name;
 
 		/**
 		 * @generated
@@ -312,7 +312,7 @@ public class DeploymentSpecificationEditPart extends ShapeNodeEditPart {
 
 			deploymentSpecificationFigure_StereoContainer1.setLayoutManager(layoutDeploymentSpecificationFigure_StereoContainer1);
 
-			fFigureDeploymentSpecificationFigure_stereo = new Label();
+			fFigureDeploymentSpecificationFigure_stereo = new WrapLabel();
 			fFigureDeploymentSpecificationFigure_stereo.setText("\u00ABdeployment spec\u00BB");
 
 			fFigureDeploymentSpecificationFigure_stereo.setFont(FFIGUREDEPLOYMENTSPECIFICATIONFIGURE_STEREO_FONT);
@@ -330,7 +330,7 @@ public class DeploymentSpecificationEditPart extends ShapeNodeEditPart {
 
 			deploymentSpecificationFigure_NameContainer1.setLayoutManager(layoutDeploymentSpecificationFigure_NameContainer1);
 
-			fFigureDeploymentSpecificationFigure_name = new Label();
+			fFigureDeploymentSpecificationFigure_name = new WrapLabel();
 			fFigureDeploymentSpecificationFigure_name.setText("");
 
 			fFigureDeploymentSpecificationFigure_name.setFont(FFIGUREDEPLOYMENTSPECIFICATIONFIGURE_NAME_FONT);
@@ -369,14 +369,14 @@ public class DeploymentSpecificationEditPart extends ShapeNodeEditPart {
 		/**
 		 * @generated
 		 */
-		public Label getFigureDeploymentSpecificationFigure_stereo() {
+		public WrapLabel getFigureDeploymentSpecificationFigure_stereo() {
 			return fFigureDeploymentSpecificationFigure_stereo;
 		}
 
 		/**
 		 * @generated
 		 */
-		public Label getFigureDeploymentSpecificationFigure_name() {
+		public WrapLabel getFigureDeploymentSpecificationFigure_name() {
 			return fFigureDeploymentSpecificationFigure_name;
 		}
 

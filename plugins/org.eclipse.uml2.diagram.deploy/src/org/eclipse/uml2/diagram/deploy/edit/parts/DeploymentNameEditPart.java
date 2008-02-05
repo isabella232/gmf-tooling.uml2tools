@@ -518,6 +518,6 @@ public class DeploymentNameEditPart extends LabelEditPart implements ITextAwareE
 	 * @generated
 	 */
 	protected IFigure createFigurePrim() {
-		return new Label();
+		return new WrapLabel();
 	}
 }
