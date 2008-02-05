@@ -25,7 +25,7 @@ public class AllTests {
 	public static Test suite() {
 		TestSuite suite = new TestSuite("Test for org.eclipse.uml2.diagram.clazz");
 		//$JUnit-BEGIN$
-		suite.addTestSuite(TypeLookupTest.class);
+		//suite.addTestSuite(TypeLookupTest.class);
 		suite.addTestSuite(OperationParserTest.class);
 		suite.addTestSuite(OperationInplaceApplierTest.class);
 		suite.addTestSuite(PropertyParserTest.class);
