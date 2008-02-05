@@ -241,9 +241,7 @@ public class State3EditPart extends AbstractBorderedShapeEditPart {
 	 */
 	protected IFigure getContentPaneFor(IGraphicalEditPart editPart) {
 
-		if (editPart instanceof StateCompositeState_InternalActivities2EditPart ||
-				editPart instanceof ConnectionPointReferenceEditPart ||
-				editPart instanceof ConnectionPointReference2EditPart) {
+		if (editPart instanceof StateCompositeState_InternalActivities2EditPart || editPart instanceof ConnectionPointReferenceEditPart || editPart instanceof ConnectionPointReference2EditPart) {
 			return getContentPaneForGen(editPart);
 		}
 		return contentPane;
@@ -307,7 +305,7 @@ public class State3EditPart extends AbstractBorderedShapeEditPart {
 		/**
 		 * @generated
 		 */
-		private Label fFigureCompositeStateFigure_name;
+		private WrapLabel fFigureCompositeStateFigure_name;
 
 		/**
 		 * @generated
@@ -366,7 +364,7 @@ public class State3EditPart extends AbstractBorderedShapeEditPart {
 			layoutCompositeStateFigure_NameContainer0.marginHeight = 3;
 			compositeStateFigure_NameContainer0.setLayoutManager(layoutCompositeStateFigure_NameContainer0);
 
-			fFigureCompositeStateFigure_name = new Label();
+			fFigureCompositeStateFigure_name = new WrapLabel();
 			fFigureCompositeStateFigure_name.setText("");
 
 			GridData constraintFFigureCompositeStateFigure_name = new GridData();
@@ -416,7 +414,7 @@ public class State3EditPart extends AbstractBorderedShapeEditPart {
 		/**
 		 * @generated
 		 */
-		public Label getFigureCompositeStateFigure_name() {
+		public WrapLabel getFigureCompositeStateFigure_name() {
 			return fFigureCompositeStateFigure_name;
 		}
 

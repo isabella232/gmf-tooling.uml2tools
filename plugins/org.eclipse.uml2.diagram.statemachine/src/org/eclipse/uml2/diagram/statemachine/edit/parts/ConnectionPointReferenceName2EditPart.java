@@ -536,6 +536,6 @@ public class ConnectionPointReferenceName2EditPart extends LabelEditPart impleme
 	 * @generated
 	 */
 	protected IFigure createFigurePrim() {
-		return new Label();
+		return new WrapLabel();
 	}
 }

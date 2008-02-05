@@ -260,7 +260,7 @@ public class StateMachine2EditPart extends AbstractBorderedShapeEditPart {
 		/**
 		 * @generated
 		 */
-		private Label fFigureCompositeStateFigure_name;
+		private WrapLabel fFigureCompositeStateFigure_name;
 
 		/**
 		 * @generated
@@ -319,7 +319,7 @@ public class StateMachine2EditPart extends AbstractBorderedShapeEditPart {
 			layoutCompositeStateFigure_NameContainer0.marginHeight = 3;
 			compositeStateFigure_NameContainer0.setLayoutManager(layoutCompositeStateFigure_NameContainer0);
 
-			fFigureCompositeStateFigure_name = new Label();
+			fFigureCompositeStateFigure_name = new WrapLabel();
 			fFigureCompositeStateFigure_name.setText("");
 
 			GridData constraintFFigureCompositeStateFigure_name = new GridData();
@@ -369,7 +369,7 @@ public class StateMachine2EditPart extends AbstractBorderedShapeEditPart {
 		/**
 		 * @generated
 		 */
-		public Label getFigureCompositeStateFigure_name() {
+		public WrapLabel getFigureCompositeStateFigure_name() {
 			return fFigureCompositeStateFigure_name;
 		}
 

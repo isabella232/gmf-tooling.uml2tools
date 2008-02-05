@@ -157,7 +157,7 @@ public class StateName2EditPart extends CompartmentEditPart implements ITextAwar
 	/**
 	 * @generated
 	 */
-	public void setLabel(Label figure) {
+	public void setLabel(WrapLabel figure) {
 		unregisterVisuals();
 		setFigure(figure);
 		defaultText = getLabelTextHelper(figure);

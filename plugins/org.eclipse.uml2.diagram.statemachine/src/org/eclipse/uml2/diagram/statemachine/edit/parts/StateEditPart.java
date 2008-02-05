@@ -257,7 +257,7 @@ public class StateEditPart extends ShapeNodeEditPart {
 		/**
 		 * @generated
 		 */
-		private Label fFigureSimpleStateFigure_name;
+		private WrapLabel fFigureSimpleStateFigure_name;
 
 		/**
 		 * @generated
@@ -288,7 +288,7 @@ public class StateEditPart extends ShapeNodeEditPart {
 		 */
 		private void createContents() {
 
-			fFigureSimpleStateFigure_name = new Label();
+			fFigureSimpleStateFigure_name = new WrapLabel();
 			fFigureSimpleStateFigure_name.setText("");
 
 			this.add(fFigureSimpleStateFigure_name);
@@ -324,7 +324,7 @@ public class StateEditPart extends ShapeNodeEditPart {
 		/**
 		 * @generated
 		 */
-		public Label getFigureSimpleStateFigure_name() {
+		public WrapLabel getFigureSimpleStateFigure_name() {
 			return fFigureSimpleStateFigure_name;
 		}
 
