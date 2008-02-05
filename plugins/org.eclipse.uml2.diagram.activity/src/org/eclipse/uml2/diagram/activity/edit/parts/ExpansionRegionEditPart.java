@@ -3,7 +3,6 @@ package org.eclipse.uml2.diagram.activity.edit.parts;
 import org.eclipse.draw2d.BorderLayout;
 import org.eclipse.draw2d.Graphics;
 import org.eclipse.draw2d.IFigure;
-import org.eclipse.draw2d.Label;
 import org.eclipse.draw2d.MarginBorder;
 import org.eclipse.draw2d.RectangleFigure;
 import org.eclipse.draw2d.RoundedRectangle;
@@ -20,6 +19,7 @@ import org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.ShapeNodeEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles;
 import org.eclipse.gmf.runtime.draw2d.ui.figures.ConstrainedToolbarLayout;
+import org.eclipse.gmf.runtime.draw2d.ui.figures.WrapLabel;
 import org.eclipse.gmf.runtime.gef.ui.figures.DefaultSizeNodeFigure;
 import org.eclipse.gmf.runtime.gef.ui.figures.NodeFigure;
 import org.eclipse.gmf.runtime.notation.View;
@@ -232,7 +232,7 @@ public class ExpansionRegionEditPart extends ShapeNodeEditPart {
 		/**
 		 * @generated
 		 */
-		private Label fFigureExpansionRegionFigure_keyword;
+		private WrapLabel fFigureExpansionRegionFigure_keyword;
 
 		/**
 		 * @generated
@@ -274,7 +274,7 @@ public class ExpansionRegionEditPart extends ShapeNodeEditPart {
 			BorderLayout layoutExpansionRegionFigure_LabelContainer0 = new BorderLayout();
 			expansionRegionFigure_LabelContainer0.setLayoutManager(layoutExpansionRegionFigure_LabelContainer0);
 
-			fFigureExpansionRegionFigure_keyword = new Label();
+			fFigureExpansionRegionFigure_keyword = new WrapLabel();
 			fFigureExpansionRegionFigure_keyword.setText("");
 
 			expansionRegionFigure_LabelContainer0.add(fFigureExpansionRegionFigure_keyword, BorderLayout.LEFT);
@@ -303,7 +303,7 @@ public class ExpansionRegionEditPart extends ShapeNodeEditPart {
 		/**
 		 * @generated
 		 */
-		public Label getFigureExpansionRegionFigure_keyword() {
+		public WrapLabel getFigureExpansionRegionFigure_keyword() {
 			return fFigureExpansionRegionFigure_keyword;
 		}
 

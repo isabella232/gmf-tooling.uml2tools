@@ -2,7 +2,6 @@ package org.eclipse.uml2.diagram.component.edit.parts;
 
 import org.eclipse.draw2d.BorderLayout;
 import org.eclipse.draw2d.IFigure;
-import org.eclipse.draw2d.Label;
 import org.eclipse.draw2d.MarginBorder;
 import org.eclipse.draw2d.RectangleFigure;
 import org.eclipse.draw2d.StackLayout;
@@ -22,6 +21,7 @@ import org.eclipse.gmf.runtime.diagram.ui.editpolicies.CreationEditPolicy;
 import org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles;
 import org.eclipse.gmf.runtime.diagram.ui.requests.CreateViewAndElementRequest;
 import org.eclipse.gmf.runtime.draw2d.ui.figures.ConstrainedToolbarLayout;
+import org.eclipse.gmf.runtime.draw2d.ui.figures.WrapLabel;
 import org.eclipse.gmf.runtime.emf.type.core.IElementType;
 import org.eclipse.gmf.runtime.gef.ui.figures.DefaultSizeNodeFigure;
 import org.eclipse.gmf.runtime.gef.ui.figures.NodeFigure;
@@ -276,7 +276,7 @@ public class Package3EditPart extends ShapeNodeEditPart {
 		/**
 		 * @generated
 		 */
-		private Label fFigurePackageFigure_name;
+		private WrapLabel fFigurePackageFigure_name;
 
 		/**
 		 * @generated
@@ -359,7 +359,7 @@ public class Package3EditPart extends ShapeNodeEditPart {
 
 			packageFigure_NameContainer1.setLayoutManager(layoutPackageFigure_NameContainer1);
 
-			fFigurePackageFigure_name = new Label();
+			fFigurePackageFigure_name = new WrapLabel();
 			fFigurePackageFigure_name.setText("");
 
 			fFigurePackageFigure_name.setBorder(new MarginBorder(getMapMode().DPtoLP(5), getMapMode().DPtoLP(5), getMapMode().DPtoLP(5), getMapMode().DPtoLP(5)));
@@ -402,7 +402,7 @@ public class Package3EditPart extends ShapeNodeEditPart {
 		/**
 		 * @generated
 		 */
-		public Label getFigurePackageFigure_name() {
+		public WrapLabel getFigurePackageFigure_name() {
 			return fFigurePackageFigure_name;
 		}
 

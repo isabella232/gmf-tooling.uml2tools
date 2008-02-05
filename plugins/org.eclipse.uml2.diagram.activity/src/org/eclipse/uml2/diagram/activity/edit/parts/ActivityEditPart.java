@@ -3,12 +3,10 @@ package org.eclipse.uml2.diagram.activity.edit.parts;
 import org.eclipse.draw2d.Border;
 import org.eclipse.draw2d.BorderLayout;
 import org.eclipse.draw2d.IFigure;
-import org.eclipse.draw2d.Label;
 import org.eclipse.draw2d.PositionConstants;
 import org.eclipse.draw2d.RectangleFigure;
 import org.eclipse.draw2d.RoundedRectangle;
 import org.eclipse.draw2d.StackLayout;
-import org.eclipse.draw2d.XYLayout;
 import org.eclipse.draw2d.geometry.Dimension;
 import org.eclipse.gef.EditPart;
 import org.eclipse.gef.EditPolicy;
@@ -25,9 +23,8 @@ import org.eclipse.gmf.runtime.diagram.ui.editpolicies.CreationEditPolicy;
 import org.eclipse.gmf.runtime.diagram.ui.editpolicies.DragDropEditPolicy;
 import org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles;
 import org.eclipse.gmf.runtime.diagram.ui.editpolicies.XYLayoutEditPolicy;
-import org.eclipse.gmf.runtime.diagram.ui.figures.BorderItemLocator;
-import org.eclipse.gmf.runtime.diagram.ui.figures.IBorderItemLocator;
 import org.eclipse.gmf.runtime.draw2d.ui.figures.ConstrainedToolbarLayout;
+import org.eclipse.gmf.runtime.draw2d.ui.figures.IBorderItemLocator;
 import org.eclipse.gmf.runtime.draw2d.ui.figures.OneLineBorder;
 import org.eclipse.gmf.runtime.draw2d.ui.figures.WrapLabel;
 import org.eclipse.gmf.runtime.gef.ui.figures.DefaultSizeNodeFigure;
@@ -134,7 +131,7 @@ public class ActivityEditPart extends AbstractBorderedShapeEditPart {
 			return true;
 		}
 		if (childEditPart instanceof ActivityParameterNodeEditPart) {
-			org.eclipse.gmf.runtime.draw2d.ui.figures.IBorderItemLocator locator = new BisectionBorderItemLocator(getMainFigure());
+			IBorderItemLocator locator = new BisectionBorderItemLocator(getMainFigure());
 			getBorderedFigure().getBorderItemContainer().add(((ActivityParameterNodeEditPart) childEditPart).getFigure(), locator);
 			return true;
 		}
@@ -242,7 +239,7 @@ public class ActivityEditPart extends AbstractBorderedShapeEditPart {
 		/**
 		 * @generated
 		 */
-		private Label fFigureActivityFigure_name;
+		private WrapLabel fFigureActivityFigure_name;
 
 		/**
 		 * @generated
@@ -275,7 +272,7 @@ public class ActivityEditPart extends AbstractBorderedShapeEditPart {
 
 			activityFigureRectangle_name0.setLayoutManager(new StackLayout());
 
-			fFigureActivityFigure_name = new Label();
+			fFigureActivityFigure_name = new WrapLabel();
 			fFigureActivityFigure_name.setText("");
 
 			activityFigureRectangle_name0.add(fFigureActivityFigure_name);
@@ -328,7 +325,7 @@ public class ActivityEditPart extends AbstractBorderedShapeEditPart {
 		/**
 		 * @generated
 		 */
-		public Label getFigureActivityFigure_name() {
+		public WrapLabel getFigureActivityFigure_name() {
 			return fFigureActivityFigure_name;
 		}
 

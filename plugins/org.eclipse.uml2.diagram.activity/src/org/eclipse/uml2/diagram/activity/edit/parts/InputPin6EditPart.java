@@ -1,7 +1,6 @@
 package org.eclipse.uml2.diagram.activity.edit.parts;
 
 import org.eclipse.draw2d.IFigure;
-import org.eclipse.draw2d.Label;
 import org.eclipse.draw2d.MarginBorder;
 import org.eclipse.draw2d.PositionConstants;
 import org.eclipse.draw2d.RectangleFigure;
@@ -17,7 +16,6 @@ import org.eclipse.gef.requests.CreateRequest;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.AbstractBorderedShapeEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.IBorderItemEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart;
-import org.eclipse.gmf.runtime.diagram.ui.editparts.ShapeNodeEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editpolicies.BorderItemSelectionEditPolicy;
 import org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles;
 import org.eclipse.gmf.runtime.diagram.ui.figures.BorderItemLocator;
@@ -237,12 +235,12 @@ public class InputPin6EditPart extends AbstractBorderedShapeEditPart {
 		/**
 		 * @generated
 		 */
-		private Label fFigureStandalonePinFigure_name;
+		private WrapLabel fFigureStandalonePinFigure_name;
 
 		/**
 		 * @generated
 		 */
-		private Label fFigureStandalonePinFigure_states;
+		private WrapLabel fFigureStandalonePinFigure_states;
 
 		/**
 		 * @generated
@@ -256,14 +254,14 @@ public class InputPin6EditPart extends AbstractBorderedShapeEditPart {
 		 */
 		private void createContents() {
 
-			fFigureStandalonePinFigure_name = new Label();
+			fFigureStandalonePinFigure_name = new WrapLabel();
 			fFigureStandalonePinFigure_name.setText("");
 
 			fFigureStandalonePinFigure_name.setBorder(new MarginBorder(getMapMode().DPtoLP(0), getMapMode().DPtoLP(5), getMapMode().DPtoLP(0), getMapMode().DPtoLP(5)));
 
 			this.add(fFigureStandalonePinFigure_name);
 
-			fFigureStandalonePinFigure_states = new Label();
+			fFigureStandalonePinFigure_states = new WrapLabel();
 			fFigureStandalonePinFigure_states.setText("");
 
 			this.add(fFigureStandalonePinFigure_states);
@@ -292,14 +290,14 @@ public class InputPin6EditPart extends AbstractBorderedShapeEditPart {
 		/**
 		 * @generated
 		 */
-		public Label getFigureStandalonePinFigure_name() {
+		public WrapLabel getFigureStandalonePinFigure_name() {
 			return fFigureStandalonePinFigure_name;
 		}
 
 		/**
 		 * @generated
 		 */
-		public Label getFigureStandalonePinFigure_states() {
+		public WrapLabel getFigureStandalonePinFigure_states() {
 			return fFigureStandalonePinFigure_states;
 		}
 

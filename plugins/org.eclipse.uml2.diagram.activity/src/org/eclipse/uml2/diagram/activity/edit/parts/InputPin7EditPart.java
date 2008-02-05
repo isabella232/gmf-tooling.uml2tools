@@ -1,7 +1,6 @@
 package org.eclipse.uml2.diagram.activity.edit.parts;
 
 import org.eclipse.draw2d.IFigure;
-import org.eclipse.draw2d.Label;
 import org.eclipse.draw2d.MarginBorder;
 import org.eclipse.draw2d.PositionConstants;
 import org.eclipse.draw2d.RectangleFigure;
@@ -21,6 +20,7 @@ import org.eclipse.gmf.runtime.diagram.ui.editpolicies.BorderItemSelectionEditPo
 import org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles;
 import org.eclipse.gmf.runtime.diagram.ui.figures.BorderItemLocator;
 import org.eclipse.gmf.runtime.draw2d.ui.figures.ConstrainedToolbarLayout;
+import org.eclipse.gmf.runtime.draw2d.ui.figures.WrapLabel;
 import org.eclipse.gmf.runtime.gef.ui.figures.DefaultSizeNodeFigure;
 import org.eclipse.gmf.runtime.gef.ui.figures.NodeFigure;
 import org.eclipse.gmf.runtime.notation.View;
@@ -235,12 +235,12 @@ public class InputPin7EditPart extends AbstractBorderedShapeEditPart {
 		/**
 		 * @generated
 		 */
-		private Label fFigureStandalonePinFigure_name;
+		private WrapLabel fFigureStandalonePinFigure_name;
 
 		/**
 		 * @generated
 		 */
-		private Label fFigureStandalonePinFigure_states;
+		private WrapLabel fFigureStandalonePinFigure_states;
 
 		/**
 		 * @generated
@@ -254,14 +254,14 @@ public class InputPin7EditPart extends AbstractBorderedShapeEditPart {
 		 */
 		private void createContents() {
 
-			fFigureStandalonePinFigure_name = new Label();
+			fFigureStandalonePinFigure_name = new WrapLabel();
 			fFigureStandalonePinFigure_name.setText("");
 
 			fFigureStandalonePinFigure_name.setBorder(new MarginBorder(getMapMode().DPtoLP(0), getMapMode().DPtoLP(5), getMapMode().DPtoLP(0), getMapMode().DPtoLP(5)));
 
 			this.add(fFigureStandalonePinFigure_name);
 
-			fFigureStandalonePinFigure_states = new Label();
+			fFigureStandalonePinFigure_states = new WrapLabel();
 			fFigureStandalonePinFigure_states.setText("");
 
 			this.add(fFigureStandalonePinFigure_states);
@@ -290,14 +290,14 @@ public class InputPin7EditPart extends AbstractBorderedShapeEditPart {
 		/**
 		 * @generated
 		 */
-		public Label getFigureStandalonePinFigure_name() {
+		public WrapLabel getFigureStandalonePinFigure_name() {
 			return fFigureStandalonePinFigure_name;
 		}
 
 		/**
 		 * @generated
 		 */
-		public Label getFigureStandalonePinFigure_states() {
+		public WrapLabel getFigureStandalonePinFigure_states() {
 			return fFigureStandalonePinFigure_states;
 		}
 

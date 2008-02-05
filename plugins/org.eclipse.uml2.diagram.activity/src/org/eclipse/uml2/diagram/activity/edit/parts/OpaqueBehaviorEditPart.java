@@ -1,7 +1,6 @@
 package org.eclipse.uml2.diagram.activity.edit.parts;
 
 import org.eclipse.draw2d.IFigure;
-import org.eclipse.draw2d.Label;
 import org.eclipse.draw2d.MarginBorder;
 import org.eclipse.draw2d.StackLayout;
 import org.eclipse.draw2d.ToolbarLayout;
@@ -209,7 +208,7 @@ public class OpaqueBehaviorEditPart extends ShapeNodeEditPart {
 		/**
 		 * @generated
 		 */
-		private Label fFigureSelectionFigure_name;
+		private WrapLabel fFigureSelectionFigure_name;
 
 		/**
 		 * @generated
@@ -234,12 +233,12 @@ public class OpaqueBehaviorEditPart extends ShapeNodeEditPart {
 		 */
 		private void createContents() {
 
-			Label selectionFigure_fixed_top0 = new Label();
+			WrapLabel selectionFigure_fixed_top0 = new WrapLabel();
 			selectionFigure_fixed_top0.setText("\u00ABselection\u00BB");
 
 			this.add(selectionFigure_fixed_top0);
 
-			fFigureSelectionFigure_name = new Label();
+			fFigureSelectionFigure_name = new WrapLabel();
 			fFigureSelectionFigure_name.setText("");
 
 			this.add(fFigureSelectionFigure_name);
@@ -268,7 +267,7 @@ public class OpaqueBehaviorEditPart extends ShapeNodeEditPart {
 		/**
 		 * @generated
 		 */
-		public Label getFigureSelectionFigure_name() {
+		public WrapLabel getFigureSelectionFigure_name() {
 			return fFigureSelectionFigure_name;
 		}
 

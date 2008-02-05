@@ -3,7 +3,6 @@ package org.eclipse.uml2.diagram.activity.edit.parts;
 import org.eclipse.draw2d.BorderLayout;
 import org.eclipse.draw2d.Graphics;
 import org.eclipse.draw2d.IFigure;
-import org.eclipse.draw2d.Label;
 import org.eclipse.draw2d.MarginBorder;
 import org.eclipse.draw2d.Shape;
 import org.eclipse.draw2d.StackLayout;
@@ -220,7 +219,7 @@ public class SendSignalActionEditPart extends ShapeNodeEditPart {
 		/**
 		 * @generated
 		 */
-		private Label fFigureSendSignalActionFigure_name;
+		private WrapLabel fFigureSendSignalActionFigure_name;
 
 		/**
 		 * @generated
@@ -244,7 +243,7 @@ public class SendSignalActionEditPart extends ShapeNodeEditPart {
 		 */
 		private void createContents() {
 
-			fFigureSendSignalActionFigure_name = new Label();
+			fFigureSendSignalActionFigure_name = new WrapLabel();
 			fFigureSendSignalActionFigure_name.setText("");
 
 			this.add(fFigureSendSignalActionFigure_name, BorderLayout.CENTER);
@@ -332,7 +331,7 @@ public class SendSignalActionEditPart extends ShapeNodeEditPart {
 		/**
 		 * @generated
 		 */
-		public Label getFigureSendSignalActionFigure_name() {
+		public WrapLabel getFigureSendSignalActionFigure_name() {
 			return fFigureSendSignalActionFigure_name;
 		}
 

@@ -1,7 +1,6 @@
 package org.eclipse.uml2.diagram.activity.edit.parts;
 
 import org.eclipse.draw2d.IFigure;
-import org.eclipse.draw2d.Label;
 import org.eclipse.draw2d.MarginBorder;
 import org.eclipse.draw2d.PositionConstants;
 import org.eclipse.draw2d.RectangleFigure;
@@ -233,7 +232,7 @@ public class ActivityParameterNodeEditPart extends AbstractBorderItemEditPart {
 		/**
 		 * @generated
 		 */
-		private Label fFigureActivityParameterFigure_name;
+		private WrapLabel fFigureActivityParameterFigure_name;
 
 		/**
 		 * @generated
@@ -247,7 +246,7 @@ public class ActivityParameterNodeEditPart extends AbstractBorderItemEditPart {
 		 */
 		private void createContents() {
 
-			fFigureActivityParameterFigure_name = new Label();
+			fFigureActivityParameterFigure_name = new WrapLabel();
 			fFigureActivityParameterFigure_name.setText("");
 			fFigureActivityParameterFigure_name.setBorder(new MarginBorder(getMapMode().DPtoLP(3), getMapMode().DPtoLP(5), getMapMode().DPtoLP(3), getMapMode().DPtoLP(5)));
 
@@ -277,7 +276,7 @@ public class ActivityParameterNodeEditPart extends AbstractBorderItemEditPart {
 		/**
 		 * @generated
 		 */
-		public Label getFigureActivityParameterFigure_name() {
+		public WrapLabel getFigureActivityParameterFigure_name() {
 			return fFigureActivityParameterFigure_name;
 		}
 

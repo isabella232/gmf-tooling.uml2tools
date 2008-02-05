@@ -1,7 +1,6 @@
 package org.eclipse.uml2.diagram.activity.edit.parts;
 
 import org.eclipse.draw2d.IFigure;
-import org.eclipse.draw2d.Label;
 import org.eclipse.draw2d.MarginBorder;
 import org.eclipse.draw2d.PositionConstants;
 import org.eclipse.draw2d.RectangleFigure;
@@ -22,6 +21,7 @@ import org.eclipse.gmf.runtime.diagram.ui.editpolicies.BorderItemSelectionEditPo
 import org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles;
 import org.eclipse.gmf.runtime.diagram.ui.figures.BorderItemLocator;
 import org.eclipse.gmf.runtime.draw2d.ui.figures.ConstrainedToolbarLayout;
+import org.eclipse.gmf.runtime.draw2d.ui.figures.WrapLabel;
 import org.eclipse.gmf.runtime.gef.ui.figures.DefaultSizeNodeFigure;
 import org.eclipse.gmf.runtime.gef.ui.figures.NodeFigure;
 import org.eclipse.gmf.runtime.notation.View;
@@ -240,12 +240,12 @@ public class DataStoreNode3EditPart extends AbstractBorderedShapeEditPart {
 		/**
 		 * @generated
 		 */
-		private Label fFigureDataStoreFigure_name;
+		private WrapLabel fFigureDataStoreFigure_name;
 
 		/**
 		 * @generated
 		 */
-		private Label fFigureDataStoreFigure_states;
+		private WrapLabel fFigureDataStoreFigure_states;
 
 		/**
 		 * @generated
@@ -277,17 +277,17 @@ public class DataStoreNode3EditPart extends AbstractBorderedShapeEditPart {
 
 			dataStoreFigure_NameContainer0.setLayoutManager(layoutDataStoreFigure_NameContainer0);
 
-			Label dataStore_fixed_datastore1 = new Label();
+			WrapLabel dataStore_fixed_datastore1 = new WrapLabel();
 			dataStore_fixed_datastore1.setText("\u00ABdatastore\u00BB");
 
 			dataStoreFigure_NameContainer0.add(dataStore_fixed_datastore1);
 
-			fFigureDataStoreFigure_name = new Label();
+			fFigureDataStoreFigure_name = new WrapLabel();
 			fFigureDataStoreFigure_name.setText("");
 
 			dataStoreFigure_NameContainer0.add(fFigureDataStoreFigure_name);
 
-			fFigureDataStoreFigure_states = new Label();
+			fFigureDataStoreFigure_states = new WrapLabel();
 			fFigureDataStoreFigure_states.setText("");
 
 			dataStoreFigure_NameContainer0.add(fFigureDataStoreFigure_states);
@@ -316,14 +316,14 @@ public class DataStoreNode3EditPart extends AbstractBorderedShapeEditPart {
 		/**
 		 * @generated
 		 */
-		public Label getFigureDataStoreFigure_name() {
+		public WrapLabel getFigureDataStoreFigure_name() {
 			return fFigureDataStoreFigure_name;
 		}
 
 		/**
 		 * @generated
 		 */
-		public Label getFigureDataStoreFigure_states() {
+		public WrapLabel getFigureDataStoreFigure_states() {
 			return fFigureDataStoreFigure_states;
 		}
 

@@ -2,7 +2,6 @@ package org.eclipse.uml2.diagram.component.edit.parts;
 
 import org.eclipse.draw2d.BorderLayout;
 import org.eclipse.draw2d.IFigure;
-import org.eclipse.draw2d.Label;
 import org.eclipse.draw2d.PositionConstants;
 import org.eclipse.draw2d.RectangleFigure;
 import org.eclipse.draw2d.StackLayout;
@@ -24,6 +23,7 @@ import org.eclipse.gmf.runtime.diagram.ui.editpolicies.DragDropEditPolicy;
 import org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles;
 import org.eclipse.gmf.runtime.diagram.ui.figures.BorderItemLocator;
 import org.eclipse.gmf.runtime.draw2d.ui.figures.ConstrainedToolbarLayout;
+import org.eclipse.gmf.runtime.draw2d.ui.figures.WrapLabel;
 import org.eclipse.gmf.runtime.gef.ui.figures.DefaultSizeNodeFigure;
 import org.eclipse.gmf.runtime.gef.ui.figures.NodeFigure;
 import org.eclipse.gmf.runtime.notation.View;
@@ -253,7 +253,7 @@ public class ComponentEditPart extends AbstractBorderedShapeEditPart {
 		/**
 		 * @generated
 		 */
-		private Label fFigureComponentFigure_name;
+		private WrapLabel fFigureComponentFigure_name;
 
 		/**
 		 * @generated
@@ -292,12 +292,12 @@ public class ComponentEditPart extends AbstractBorderedShapeEditPart {
 
 			componentFigure_LabelsContainer0.setLayoutManager(layoutComponentFigure_LabelsContainer0);
 
-			Label componentFigure_fixed_component1 = new Label();
+			WrapLabel componentFigure_fixed_component1 = new WrapLabel();
 			componentFigure_fixed_component1.setText("\u00ABcomponent\u00BB");
 
 			componentFigure_LabelsContainer0.add(componentFigure_fixed_component1);
 
-			fFigureComponentFigure_name = new Label();
+			fFigureComponentFigure_name = new WrapLabel();
 			fFigureComponentFigure_name.setText("");
 
 			componentFigure_LabelsContainer0.add(fFigureComponentFigure_name);
@@ -312,7 +312,7 @@ public class ComponentEditPart extends AbstractBorderedShapeEditPart {
 		/**
 		 * @generated
 		 */
-		public Label getFigureComponentFigure_name() {
+		public WrapLabel getFigureComponentFigure_name() {
 			return fFigureComponentFigure_name;
 		}
 

@@ -1,7 +1,6 @@
 package org.eclipse.uml2.diagram.activity.edit.parts;
 
 import org.eclipse.draw2d.IFigure;
-import org.eclipse.draw2d.Label;
 import org.eclipse.draw2d.MarginBorder;
 import org.eclipse.draw2d.PositionConstants;
 import org.eclipse.draw2d.RectangleFigure;
@@ -22,6 +21,7 @@ import org.eclipse.gmf.runtime.diagram.ui.editpolicies.BorderItemSelectionEditPo
 import org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles;
 import org.eclipse.gmf.runtime.diagram.ui.figures.BorderItemLocator;
 import org.eclipse.gmf.runtime.draw2d.ui.figures.ConstrainedToolbarLayout;
+import org.eclipse.gmf.runtime.draw2d.ui.figures.WrapLabel;
 import org.eclipse.gmf.runtime.gef.ui.figures.DefaultSizeNodeFigure;
 import org.eclipse.gmf.runtime.gef.ui.figures.NodeFigure;
 import org.eclipse.gmf.runtime.notation.View;
@@ -240,12 +240,12 @@ public class CentralBufferNode3EditPart extends AbstractBorderedShapeEditPart {
 		/**
 		 * @generated
 		 */
-		private Label fFigureCentralBufferFigure_name;
+		private WrapLabel fFigureCentralBufferFigure_name;
 
 		/**
 		 * @generated
 		 */
-		private Label fFigureCentralBufferFigure_states;
+		private WrapLabel fFigureCentralBufferFigure_states;
 
 		/**
 		 * @generated
@@ -277,17 +277,17 @@ public class CentralBufferNode3EditPart extends AbstractBorderedShapeEditPart {
 
 			centralBufferFigure_NameContainer0.setLayoutManager(layoutCentralBufferFigure_NameContainer0);
 
-			Label centralBufferFigure_fixed_central1 = new Label();
+			WrapLabel centralBufferFigure_fixed_central1 = new WrapLabel();
 			centralBufferFigure_fixed_central1.setText("\u00ABcentralBuffer\u00BB");
 
 			centralBufferFigure_NameContainer0.add(centralBufferFigure_fixed_central1);
 
-			fFigureCentralBufferFigure_name = new Label();
+			fFigureCentralBufferFigure_name = new WrapLabel();
 			fFigureCentralBufferFigure_name.setText("");
 
 			centralBufferFigure_NameContainer0.add(fFigureCentralBufferFigure_name);
 
-			fFigureCentralBufferFigure_states = new Label();
+			fFigureCentralBufferFigure_states = new WrapLabel();
 			fFigureCentralBufferFigure_states.setText("");
 
 			centralBufferFigure_NameContainer0.add(fFigureCentralBufferFigure_states);
@@ -316,14 +316,14 @@ public class CentralBufferNode3EditPart extends AbstractBorderedShapeEditPart {
 		/**
 		 * @generated
 		 */
-		public Label getFigureCentralBufferFigure_name() {
+		public WrapLabel getFigureCentralBufferFigure_name() {
 			return fFigureCentralBufferFigure_name;
 		}
 
 		/**
 		 * @generated
 		 */
-		public Label getFigureCentralBufferFigure_states() {
+		public WrapLabel getFigureCentralBufferFigure_states() {
 			return fFigureCentralBufferFigure_states;
 		}
 

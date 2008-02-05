@@ -3,7 +3,6 @@ package org.eclipse.uml2.diagram.activity.edit.parts;
 import org.eclipse.draw2d.BorderLayout;
 import org.eclipse.draw2d.ColorConstants;
 import org.eclipse.draw2d.IFigure;
-import org.eclipse.draw2d.Label;
 import org.eclipse.draw2d.MarginBorder;
 import org.eclipse.draw2d.Polyline;
 import org.eclipse.draw2d.PositionConstants;
@@ -28,6 +27,7 @@ import org.eclipse.gmf.runtime.diagram.ui.editpolicies.DragDropEditPolicy;
 import org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles;
 import org.eclipse.gmf.runtime.diagram.ui.figures.BorderItemLocator;
 import org.eclipse.gmf.runtime.draw2d.ui.figures.ConstrainedToolbarLayout;
+import org.eclipse.gmf.runtime.draw2d.ui.figures.WrapLabel;
 import org.eclipse.gmf.runtime.gef.ui.figures.DefaultSizeNodeFigure;
 import org.eclipse.gmf.runtime.gef.ui.figures.NodeFigure;
 import org.eclipse.gmf.runtime.notation.View;
@@ -257,7 +257,7 @@ public class CallBehaviorAction3EditPart extends AbstractBorderedShapeEditPart {
 		/**
 		 * @generated
 		 */
-		private Label fFigureActionCallBehaviorFigure_name;
+		private WrapLabel fFigureActionCallBehaviorFigure_name;
 
 		/**
 		 * @generated
@@ -335,7 +335,7 @@ public class CallBehaviorAction3EditPart extends AbstractBorderedShapeEditPart {
 
 			actionCallBehaviorFigure_AuxCenter0.setLayoutManager(layoutActionCallBehaviorFigure_AuxCenter0);
 
-			fFigureActionCallBehaviorFigure_name = new Label();
+			fFigureActionCallBehaviorFigure_name = new WrapLabel();
 			fFigureActionCallBehaviorFigure_name.setText("");
 
 			fFigureActionCallBehaviorFigure_name.setBorder(new MarginBorder(getMapMode().DPtoLP(0), getMapMode().DPtoLP(5), getMapMode().DPtoLP(0), getMapMode().DPtoLP(5)));
@@ -366,7 +366,7 @@ public class CallBehaviorAction3EditPart extends AbstractBorderedShapeEditPart {
 		/**
 		 * @generated
 		 */
-		public Label getFigureActionCallBehaviorFigure_name() {
+		public WrapLabel getFigureActionCallBehaviorFigure_name() {
 			return fFigureActionCallBehaviorFigure_name;
 		}
 

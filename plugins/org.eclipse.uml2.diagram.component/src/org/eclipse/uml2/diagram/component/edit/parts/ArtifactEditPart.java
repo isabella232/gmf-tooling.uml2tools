@@ -1,7 +1,6 @@
 package org.eclipse.uml2.diagram.component.edit.parts;
 
 import org.eclipse.draw2d.IFigure;
-import org.eclipse.draw2d.Label;
 import org.eclipse.draw2d.RectangleFigure;
 import org.eclipse.draw2d.StackLayout;
 import org.eclipse.draw2d.ToolbarLayout;
@@ -14,6 +13,7 @@ import org.eclipse.gmf.runtime.diagram.ui.editparts.ShapeNodeEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editpolicies.ConstrainedToolbarLayoutEditPolicy;
 import org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles;
 import org.eclipse.gmf.runtime.draw2d.ui.figures.ConstrainedToolbarLayout;
+import org.eclipse.gmf.runtime.draw2d.ui.figures.WrapLabel;
 import org.eclipse.gmf.runtime.gef.ui.figures.DefaultSizeNodeFigure;
 import org.eclipse.gmf.runtime.gef.ui.figures.NodeFigure;
 import org.eclipse.gmf.runtime.notation.View;
@@ -206,7 +206,7 @@ public class ArtifactEditPart extends ShapeNodeEditPart {
 		/**
 		 * @generated
 		 */
-		private Label fFigureArtifactFigure_name;
+		private WrapLabel fFigureArtifactFigure_name;
 
 		/**
 		 * @generated
@@ -230,7 +230,7 @@ public class ArtifactEditPart extends ShapeNodeEditPart {
 		 */
 		private void createContents() {
 
-			Label artifactFigure_fixed_artifact0 = new Label();
+			WrapLabel artifactFigure_fixed_artifact0 = new WrapLabel();
 			artifactFigure_fixed_artifact0.setText("\u00ABartifact\u00BB");
 
 			this.add(artifactFigure_fixed_artifact0);
@@ -245,7 +245,7 @@ public class ArtifactEditPart extends ShapeNodeEditPart {
 
 			artifactFigure_NameContainer0.setLayoutManager(layoutArtifactFigure_NameContainer0);
 
-			fFigureArtifactFigure_name = new Label();
+			fFigureArtifactFigure_name = new WrapLabel();
 			fFigureArtifactFigure_name.setText("");
 
 			artifactFigure_NameContainer0.add(fFigureArtifactFigure_name);
@@ -255,7 +255,7 @@ public class ArtifactEditPart extends ShapeNodeEditPart {
 		/**
 		 * @generated
 		 */
-		public Label getFigureArtifactFigure_name() {
+		public WrapLabel getFigureArtifactFigure_name() {
 			return fFigureArtifactFigure_name;
 		}
 

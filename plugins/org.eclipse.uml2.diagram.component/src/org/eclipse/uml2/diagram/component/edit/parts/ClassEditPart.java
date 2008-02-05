@@ -1,7 +1,6 @@
 package org.eclipse.uml2.diagram.component.edit.parts;
 
 import org.eclipse.draw2d.IFigure;
-import org.eclipse.draw2d.Label;
 import org.eclipse.draw2d.PositionConstants;
 import org.eclipse.draw2d.RectangleFigure;
 import org.eclipse.draw2d.StackLayout;
@@ -21,6 +20,7 @@ import org.eclipse.gmf.runtime.diagram.ui.editpolicies.DragDropEditPolicy;
 import org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles;
 import org.eclipse.gmf.runtime.diagram.ui.figures.BorderItemLocator;
 import org.eclipse.gmf.runtime.draw2d.ui.figures.ConstrainedToolbarLayout;
+import org.eclipse.gmf.runtime.draw2d.ui.figures.WrapLabel;
 import org.eclipse.gmf.runtime.gef.ui.figures.DefaultSizeNodeFigure;
 import org.eclipse.gmf.runtime.gef.ui.figures.NodeFigure;
 import org.eclipse.gmf.runtime.notation.View;
@@ -237,7 +237,7 @@ public class ClassEditPart extends AbstractBorderedShapeEditPart {
 		/**
 		 * @generated
 		 */
-		private Label fFigureComponentClassFigure_name;
+		private WrapLabel fFigureComponentClassFigure_name;
 
 		/**
 		 * @generated
@@ -256,7 +256,7 @@ public class ClassEditPart extends AbstractBorderedShapeEditPart {
 		 */
 		private void createContents() {
 
-			fFigureComponentClassFigure_name = new Label();
+			fFigureComponentClassFigure_name = new WrapLabel();
 			fFigureComponentClassFigure_name.setText("");
 
 			this.add(fFigureComponentClassFigure_name);
@@ -266,7 +266,7 @@ public class ClassEditPart extends AbstractBorderedShapeEditPart {
 		/**
 		 * @generated
 		 */
-		public Label getFigureComponentClassFigure_name() {
+		public WrapLabel getFigureComponentClassFigure_name() {
 			return fFigureComponentClassFigure_name;
 		}
 

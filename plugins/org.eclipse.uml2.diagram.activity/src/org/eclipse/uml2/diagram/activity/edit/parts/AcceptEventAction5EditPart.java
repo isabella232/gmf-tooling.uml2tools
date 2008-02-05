@@ -3,7 +3,6 @@ package org.eclipse.uml2.diagram.activity.edit.parts;
 import org.eclipse.draw2d.BorderLayout;
 import org.eclipse.draw2d.Graphics;
 import org.eclipse.draw2d.IFigure;
-import org.eclipse.draw2d.Label;
 import org.eclipse.draw2d.MarginBorder;
 import org.eclipse.draw2d.Shape;
 import org.eclipse.draw2d.StackLayout;
@@ -21,6 +20,7 @@ import org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.ShapeNodeEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles;
 import org.eclipse.gmf.runtime.draw2d.ui.figures.ConstrainedToolbarLayout;
+import org.eclipse.gmf.runtime.draw2d.ui.figures.WrapLabel;
 import org.eclipse.gmf.runtime.gef.ui.figures.DefaultSizeNodeFigure;
 import org.eclipse.gmf.runtime.gef.ui.figures.NodeFigure;
 import org.eclipse.gmf.runtime.notation.View;
@@ -219,7 +219,7 @@ public class AcceptEventAction5EditPart extends ShapeNodeEditPart {
 		/**
 		 * @generated
 		 */
-		private Label fFigureAcceptEventActionFigure_name;
+		private WrapLabel fFigureAcceptEventActionFigure_name;
 
 		/**
 		 * @generated
@@ -243,7 +243,7 @@ public class AcceptEventAction5EditPart extends ShapeNodeEditPart {
 		 */
 		private void createContents() {
 
-			fFigureAcceptEventActionFigure_name = new Label();
+			fFigureAcceptEventActionFigure_name = new WrapLabel();
 			fFigureAcceptEventActionFigure_name.setText("");
 
 			this.add(fFigureAcceptEventActionFigure_name, BorderLayout.CENTER);
@@ -331,7 +331,7 @@ public class AcceptEventAction5EditPart extends ShapeNodeEditPart {
 		/**
 		 * @generated
 		 */
-		public Label getFigureAcceptEventActionFigure_name() {
+		public WrapLabel getFigureAcceptEventActionFigure_name() {
 			return fFigureAcceptEventActionFigure_name;
 		}
 

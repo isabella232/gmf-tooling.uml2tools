@@ -1,7 +1,6 @@
 package org.eclipse.uml2.diagram.component.edit.parts;
 
 import org.eclipse.draw2d.IFigure;
-import org.eclipse.draw2d.Label;
 import org.eclipse.draw2d.RectangleFigure;
 import org.eclipse.draw2d.StackLayout;
 import org.eclipse.gef.EditPart;
@@ -15,6 +14,7 @@ import org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.ShapeNodeEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles;
 import org.eclipse.gmf.runtime.draw2d.ui.figures.ConstrainedToolbarLayout;
+import org.eclipse.gmf.runtime.draw2d.ui.figures.WrapLabel;
 import org.eclipse.gmf.runtime.gef.ui.figures.DefaultSizeNodeFigure;
 import org.eclipse.gmf.runtime.gef.ui.figures.NodeFigure;
 import org.eclipse.gmf.runtime.notation.View;
@@ -212,7 +212,7 @@ public class PropertyEditPart extends ShapeNodeEditPart {
 		/**
 		 * @generated
 		 */
-		private Label fFigure_PartFigure_name;
+		private WrapLabel fFigure_PartFigure_name;
 
 		/**
 		 * @generated
@@ -231,7 +231,7 @@ public class PropertyEditPart extends ShapeNodeEditPart {
 		 */
 		private void createContents() {
 
-			fFigure_PartFigure_name = new Label();
+			fFigure_PartFigure_name = new WrapLabel();
 			fFigure_PartFigure_name.setText("");
 
 			this.add(fFigure_PartFigure_name);
@@ -260,7 +260,7 @@ public class PropertyEditPart extends ShapeNodeEditPart {
 		/**
 		 * @generated
 		 */
-		public Label getFigure_PartFigure_name() {
+		public WrapLabel getFigure_PartFigure_name() {
 			return fFigure_PartFigure_name;
 		}
 
