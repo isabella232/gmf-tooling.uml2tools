@@ -22,10 +22,6 @@ public class ConnectorName2ViewFactory extends AbstractLabelViewFactory {
 	 */
 	public View createView(IAdaptable semanticAdapter, View containerView, String semanticHint, int index, boolean persisted, PreferencesHint preferencesHint) {
 		Node view = (Node) super.createView(semanticAdapter, containerView, semanticHint, index, persisted, preferencesHint);
-		Location location = (Location) view.getLayoutConstraint();
-		IMapMode mapMode = MeasurementUnitHelper.getMapMode(containerView.getDiagram().getMeasurementUnit());
-		location.setX(mapMode.DPtoLP(0));
-		location.setY(mapMode.DPtoLP(-15));
 		return view;
 	}
 
