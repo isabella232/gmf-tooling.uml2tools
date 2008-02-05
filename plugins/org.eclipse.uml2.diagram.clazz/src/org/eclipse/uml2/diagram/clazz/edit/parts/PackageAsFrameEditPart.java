@@ -4,7 +4,6 @@ import org.eclipse.draw2d.BorderLayout;
 import org.eclipse.draw2d.ColorConstants;
 import org.eclipse.draw2d.Graphics;
 import org.eclipse.draw2d.IFigure;
-import org.eclipse.draw2d.Label;
 import org.eclipse.draw2d.MarginBorder;
 import org.eclipse.draw2d.RectangleFigure;
 import org.eclipse.draw2d.Shape;
@@ -26,6 +25,7 @@ import org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.ShapeNodeEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles;
 import org.eclipse.gmf.runtime.draw2d.ui.figures.ConstrainedToolbarLayout;
+import org.eclipse.gmf.runtime.draw2d.ui.figures.WrapLabel;
 import org.eclipse.gmf.runtime.gef.ui.figures.DefaultSizeNodeFigure;
 import org.eclipse.gmf.runtime.gef.ui.figures.NodeFigure;
 import org.eclipse.gmf.runtime.notation.View;
@@ -249,12 +249,12 @@ public class PackageAsFrameEditPart extends ShapeNodeEditPart {
 		/**
 		 * @generated
 		 */
-		private Label fPackageAsFrameFigure_name;
+		private WrapLabel fPackageAsFrameFigure_name;
 
 		/**
 		 * @generated
 		 */
-		private Label fPackageAsFrameFigure_fixed_package;
+		private WrapLabel fPackageAsFrameFigure_fixed_package;
 
 		/**
 		 * @generated
@@ -394,12 +394,12 @@ public class PackageAsFrameEditPart extends ShapeNodeEditPart {
 
 			packageAsFrameFigure_header1.setLayoutManager(layoutPackageAsFrameFigure_header1);
 
-			fPackageAsFrameFigure_fixed_package = new Label();
+			fPackageAsFrameFigure_fixed_package = new WrapLabel();
 			fPackageAsFrameFigure_fixed_package.setText("package");
 
 			packageAsFrameFigure_header1.add(fPackageAsFrameFigure_fixed_package);
 
-			fPackageAsFrameFigure_name = new Label();
+			fPackageAsFrameFigure_name = new WrapLabel();
 			fPackageAsFrameFigure_name.setText("");
 
 			packageAsFrameFigure_header1.add(fPackageAsFrameFigure_name);
@@ -434,14 +434,14 @@ public class PackageAsFrameEditPart extends ShapeNodeEditPart {
 		/**
 		 * @generated
 		 */
-		public Label getPackageAsFrameFigure_name() {
+		public WrapLabel getPackageAsFrameFigure_name() {
 			return fPackageAsFrameFigure_name;
 		}
 
 		/**
 		 * @generated
 		 */
-		public Label getPackageAsFrameFigure_fixed_package() {
+		public WrapLabel getPackageAsFrameFigure_fixed_package() {
 			return fPackageAsFrameFigure_fixed_package;
 		}
 

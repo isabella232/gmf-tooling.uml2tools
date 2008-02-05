@@ -1,7 +1,6 @@
 package org.eclipse.uml2.diagram.clazz.edit.parts;
 
 import org.eclipse.draw2d.IFigure;
-import org.eclipse.draw2d.Label;
 import org.eclipse.draw2d.LineBorder;
 import org.eclipse.draw2d.MarginBorder;
 import org.eclipse.draw2d.RectangleFigure;
@@ -25,6 +24,7 @@ import org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles;
 import org.eclipse.gmf.runtime.diagram.ui.requests.CreateViewAndElementRequest;
 import org.eclipse.gmf.runtime.draw2d.ui.figures.ConstrainedToolbarLayout;
 import org.eclipse.gmf.runtime.draw2d.ui.figures.IBorderItemLocator;
+import org.eclipse.gmf.runtime.draw2d.ui.figures.WrapLabel;
 import org.eclipse.gmf.runtime.emf.type.core.IElementType;
 import org.eclipse.gmf.runtime.gef.ui.figures.DefaultSizeNodeFigure;
 import org.eclipse.gmf.runtime.gef.ui.figures.NodeFigure;
@@ -289,12 +289,12 @@ public class DataType3EditPart extends AbstractBorderedShapeEditPart {
 		/**
 		 * @generated
 		 */
-		private Label fFigureClassFigure_stereo;
+		private WrapLabel fFigureClassFigure_stereo;
 
 		/**
 		 * @generated
 		 */
-		private Label fFigureClassFigure_name;
+		private WrapLabel fFigureClassFigure_name;
 
 		/**
 		 * @generated
@@ -366,7 +366,7 @@ public class DataType3EditPart extends AbstractBorderedShapeEditPart {
 
 			classFigure_StereoContainer1.setLayoutManager(layoutClassFigure_StereoContainer1);
 
-			fFigureClassFigure_stereo = new Label();
+			fFigureClassFigure_stereo = new WrapLabel();
 			fFigureClassFigure_stereo.setText("");
 
 			fFigureClassFigure_stereo.setFont(FFIGURECLASSFIGURE_STEREO_FONT);
@@ -384,7 +384,7 @@ public class DataType3EditPart extends AbstractBorderedShapeEditPart {
 
 			classFigure_NameContainer1.setLayoutManager(layoutClassFigure_NameContainer1);
 
-			fFigureClassFigure_name = new Label();
+			fFigureClassFigure_name = new WrapLabel();
 			fFigureClassFigure_name.setText("");
 
 			fFigureClassFigure_name.setFont(FFIGURECLASSFIGURE_NAME_FONT);
@@ -447,14 +447,14 @@ public class DataType3EditPart extends AbstractBorderedShapeEditPart {
 		/**
 		 * @generated
 		 */
-		public Label getFigureClassFigure_stereo() {
+		public WrapLabel getFigureClassFigure_stereo() {
 			return fFigureClassFigure_stereo;
 		}
 
 		/**
 		 * @generated
 		 */
-		public Label getFigureClassFigure_name() {
+		public WrapLabel getFigureClassFigure_name() {
 			return fFigureClassFigure_name;
 		}
 

@@ -2,7 +2,6 @@ package org.eclipse.uml2.diagram.clazz.edit.parts;
 
 import org.eclipse.draw2d.Graphics;
 import org.eclipse.draw2d.IFigure;
-import org.eclipse.draw2d.Label;
 import org.eclipse.draw2d.MarginBorder;
 import org.eclipse.draw2d.RectangleFigure;
 import org.eclipse.draw2d.StackLayout;
@@ -218,7 +217,7 @@ public class RedefinableTemplateSignatureEditPart extends AbstractBorderItemEdit
 		/**
 		 * @generated
 		 */
-		private Label fFigureTemplateSignatureFigure_signature;
+		private WrapLabel fFigureTemplateSignatureFigure_signature;
 
 		/**
 		 * @generated
@@ -233,7 +232,7 @@ public class RedefinableTemplateSignatureEditPart extends AbstractBorderItemEdit
 		 */
 		private void createContents() {
 
-			fFigureTemplateSignatureFigure_signature = new Label();
+			fFigureTemplateSignatureFigure_signature = new WrapLabel();
 			fFigureTemplateSignatureFigure_signature.setText("<signature>");
 
 			fFigureTemplateSignatureFigure_signature.setBorder(new MarginBorder(getMapMode().DPtoLP(5), getMapMode().DPtoLP(5), getMapMode().DPtoLP(5), getMapMode().DPtoLP(5)));
@@ -245,7 +244,7 @@ public class RedefinableTemplateSignatureEditPart extends AbstractBorderItemEdit
 		/**
 		 * @generated
 		 */
-		public Label getFigureTemplateSignatureFigure_signature() {
+		public WrapLabel getFigureTemplateSignatureFigure_signature() {
 			return fFigureTemplateSignatureFigure_signature;
 		}
 

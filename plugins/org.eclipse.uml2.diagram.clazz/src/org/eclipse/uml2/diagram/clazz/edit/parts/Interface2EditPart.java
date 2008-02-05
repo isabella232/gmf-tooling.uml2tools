@@ -1,7 +1,6 @@
 package org.eclipse.uml2.diagram.clazz.edit.parts;
 
 import org.eclipse.draw2d.IFigure;
-import org.eclipse.draw2d.Label;
 import org.eclipse.draw2d.LineBorder;
 import org.eclipse.draw2d.MarginBorder;
 import org.eclipse.draw2d.RectangleFigure;
@@ -314,7 +313,7 @@ public class Interface2EditPart extends ShapeNodeEditPart {
 		/**
 		 * @generated
 		 */
-		private Label fFigureRectangleInterfaceFigure_name;
+		private WrapLabel fFigureRectangleInterfaceFigure_name;
 
 		/**
 		 * @generated
@@ -361,7 +360,7 @@ public class Interface2EditPart extends ShapeNodeEditPart {
 
 			rectangleInterfaceFigure_InterfaceContainer1.setLayoutManager(layoutRectangleInterfaceFigure_InterfaceContainer1);
 
-			Label rectangleInterfaceFigure_interface2 = new Label();
+			WrapLabel rectangleInterfaceFigure_interface2 = new WrapLabel();
 			rectangleInterfaceFigure_interface2.setText("\u00ABinterface\u00BB");
 
 			rectangleInterfaceFigure_interface2.setFont(RECTANGLEINTERFACEFIGURE_INTERFACE2_FONT);
@@ -379,7 +378,7 @@ public class Interface2EditPart extends ShapeNodeEditPart {
 
 			rectangleInterfaceFigure_NameContainer1.setLayoutManager(layoutRectangleInterfaceFigure_NameContainer1);
 
-			fFigureRectangleInterfaceFigure_name = new Label();
+			fFigureRectangleInterfaceFigure_name = new WrapLabel();
 			fFigureRectangleInterfaceFigure_name.setText("");
 
 			fFigureRectangleInterfaceFigure_name.setFont(FFIGURERECTANGLEINTERFACEFIGURE_NAME_FONT);
@@ -451,7 +450,7 @@ public class Interface2EditPart extends ShapeNodeEditPart {
 		/**
 		 * @generated
 		 */
-		public Label getFigureRectangleInterfaceFigure_name() {
+		public WrapLabel getFigureRectangleInterfaceFigure_name() {
 			return fFigureRectangleInterfaceFigure_name;
 		}
 

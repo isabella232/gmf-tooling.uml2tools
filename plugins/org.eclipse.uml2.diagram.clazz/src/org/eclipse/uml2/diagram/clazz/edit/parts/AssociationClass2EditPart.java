@@ -1,7 +1,6 @@
 package org.eclipse.uml2.diagram.clazz.edit.parts;
 
 import org.eclipse.draw2d.IFigure;
-import org.eclipse.draw2d.Label;
 import org.eclipse.draw2d.LineBorder;
 import org.eclipse.draw2d.MarginBorder;
 import org.eclipse.draw2d.RectangleFigure;
@@ -321,12 +320,12 @@ public class AssociationClass2EditPart extends AbstractBorderedShapeEditPart {
 		/**
 		 * @generated
 		 */
-		private Label fFigureClassFigure_stereo;
+		private WrapLabel fFigureClassFigure_stereo;
 
 		/**
 		 * @generated
 		 */
-		private Label fFigureClassFigure_name;
+		private WrapLabel fFigureClassFigure_name;
 
 		/**
 		 * @generated
@@ -398,7 +397,7 @@ public class AssociationClass2EditPart extends AbstractBorderedShapeEditPart {
 
 			classFigure_StereoContainer1.setLayoutManager(layoutClassFigure_StereoContainer1);
 
-			fFigureClassFigure_stereo = new Label();
+			fFigureClassFigure_stereo = new WrapLabel();
 			fFigureClassFigure_stereo.setText("");
 
 			fFigureClassFigure_stereo.setFont(FFIGURECLASSFIGURE_STEREO_FONT);
@@ -416,7 +415,7 @@ public class AssociationClass2EditPart extends AbstractBorderedShapeEditPart {
 
 			classFigure_NameContainer1.setLayoutManager(layoutClassFigure_NameContainer1);
 
-			fFigureClassFigure_name = new Label();
+			fFigureClassFigure_name = new WrapLabel();
 			fFigureClassFigure_name.setText("");
 
 			fFigureClassFigure_name.setFont(FFIGURECLASSFIGURE_NAME_FONT);
@@ -479,14 +478,14 @@ public class AssociationClass2EditPart extends AbstractBorderedShapeEditPart {
 		/**
 		 * @generated
 		 */
-		public Label getFigureClassFigure_stereo() {
+		public WrapLabel getFigureClassFigure_stereo() {
 			return fFigureClassFigure_stereo;
 		}
 
 		/**
 		 * @generated
 		 */
-		public Label getFigureClassFigure_name() {
+		public WrapLabel getFigureClassFigure_name() {
 			return fFigureClassFigure_name;
 		}
 

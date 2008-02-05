@@ -9,7 +9,6 @@ import org.eclipse.gef.EditPartFactory;
 import org.eclipse.gef.tools.CellEditorLocator;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.ITextAwareEditPart;
 import org.eclipse.gmf.runtime.draw2d.ui.figures.WrapLabel;
-import org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel;
 import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.jface.viewers.CellEditor;
 import org.eclipse.swt.SWT;
@@ -380,9 +379,6 @@ public class UMLEditPartFactory implements EditPartFactory {
 			case PropertyName2EditPart.VISUAL_ID:
 				return new PropertyName2EditPart(view);
 
-			case PropertyName3EditPart.VISUAL_ID:
-				return new PropertyName3EditPart(view);
-
 			case ConstraintConstrainedElementEditPart.VISUAL_ID:
 				return new ConstraintConstrainedElementEditPart(view);
 
@@ -471,8 +467,8 @@ public class UMLEditPartFactory implements EditPartFactory {
 	 * @generated
 	 */
 	public static CellEditorLocator getTextCellEditorLocator(ITextAwareEditPart source) {
-		if (source.getFigure() instanceof WrappingLabel)
-			return new TextCellEditorLocator((WrappingLabel) source.getFigure());
+		if (source.getFigure() instanceof WrapLabel)
+			return new TextCellEditorLocator((WrapLabel) source.getFigure());
 		else {
 			return new LabelCellEditorLocator((Label) source.getFigure());
 		}
@@ -486,19 +482,19 @@ public class UMLEditPartFactory implements EditPartFactory {
 		/**
 		 * @generated
 		 */
-		private WrappingLabel wrapLabel;
+		private WrapLabel wrapLabel;
 
 		/**
 		 * @generated
 		 */
-		public TextCellEditorLocator(WrappingLabel wrapLabel) {
+		public TextCellEditorLocator(WrapLabel wrapLabel) {
 			this.wrapLabel = wrapLabel;
 		}
 
 		/**
 		 * @generated
 		 */
-		public WrappingLabel getWrapLabel() {
+		public WrapLabel getWrapLabel() {
 			return wrapLabel;
 		}
 
@@ -509,7 +505,7 @@ public class UMLEditPartFactory implements EditPartFactory {
 			Text text = (Text) celleditor.getControl();
 			Rectangle rect = getWrapLabel().getTextBounds().getCopy();
 			getWrapLabel().translateToAbsolute(rect);
-			if (getWrapLabel().isTextWrapOn() && getWrapLabel().getText().length() > 0) {
+			if (getWrapLabel().isTextWrapped() && getWrapLabel().getText().length() > 0) {
 				rect.setSize(new Dimension(text.computeSize(rect.width, SWT.DEFAULT)));
 			} else {
 				int avr = FigureUtilities.getFontMetrics(text.getFont()).getAverageCharWidth();

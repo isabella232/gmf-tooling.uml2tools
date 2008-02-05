@@ -2,7 +2,6 @@ package org.eclipse.uml2.diagram.clazz.edit.parts;
 
 import org.eclipse.draw2d.Border;
 import org.eclipse.draw2d.IFigure;
-import org.eclipse.draw2d.Label;
 import org.eclipse.draw2d.MarginBorder;
 import org.eclipse.draw2d.PositionConstants;
 import org.eclipse.draw2d.RectangleFigure;
@@ -262,7 +261,7 @@ public class InstanceSpecification2EditPart extends ShapeNodeEditPart {
 		/**
 		 * @generated
 		 */
-		private Label fFigureInstanceNode_NameLabel;
+		private WrapLabel fFigureInstanceNode_NameLabel;
 
 		/**
 		 * @generated
@@ -307,7 +306,7 @@ public class InstanceSpecification2EditPart extends ShapeNodeEditPart {
 
 			instanceNode_NameContainerFigure0.setLayoutManager(layoutInstanceNode_NameContainerFigure0);
 
-			fFigureInstanceNode_NameLabel = new Label();
+			fFigureInstanceNode_NameLabel = new WrapLabel();
 			fFigureInstanceNode_NameLabel.setText("");
 
 			instanceNode_NameContainerFigure0.add(fFigureInstanceNode_NameLabel);
@@ -334,7 +333,7 @@ public class InstanceSpecification2EditPart extends ShapeNodeEditPart {
 		/**
 		 * @generated
 		 */
-		public Label getFigureInstanceNode_NameLabel() {
+		public WrapLabel getFigureInstanceNode_NameLabel() {
 			return fFigureInstanceNode_NameLabel;
 		}
 

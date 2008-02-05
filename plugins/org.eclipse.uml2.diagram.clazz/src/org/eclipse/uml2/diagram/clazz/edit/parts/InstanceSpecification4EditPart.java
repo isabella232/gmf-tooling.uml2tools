@@ -1,7 +1,6 @@
 package org.eclipse.uml2.diagram.clazz.edit.parts;
 
 import org.eclipse.draw2d.IFigure;
-import org.eclipse.draw2d.Label;
 import org.eclipse.draw2d.MarginBorder;
 import org.eclipse.draw2d.RectangleFigure;
 import org.eclipse.draw2d.StackLayout;
@@ -15,23 +14,16 @@ import org.eclipse.gef.commands.Command;
 import org.eclipse.gef.editpolicies.LayoutEditPolicy;
 import org.eclipse.gef.editpolicies.NonResizableEditPolicy;
 import org.eclipse.gef.requests.CreateRequest;
-import org.eclipse.gmf.runtime.diagram.core.edithelpers.CreateElementRequestAdapter;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart;
-import org.eclipse.gmf.runtime.diagram.ui.editparts.ITextAwareEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.ShapeNodeEditPart;
-import org.eclipse.gmf.runtime.diagram.ui.editpolicies.ConstrainedToolbarLayoutEditPolicy;
-import org.eclipse.gmf.runtime.diagram.ui.editpolicies.CreationEditPolicy;
 import org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles;
-import org.eclipse.gmf.runtime.diagram.ui.requests.CreateViewAndElementRequest;
 import org.eclipse.gmf.runtime.draw2d.ui.figures.ConstrainedToolbarLayout;
-import org.eclipse.gmf.runtime.emf.type.core.IElementType;
+import org.eclipse.gmf.runtime.draw2d.ui.figures.WrapLabel;
 import org.eclipse.gmf.runtime.gef.ui.figures.DefaultSizeNodeFigure;
 import org.eclipse.gmf.runtime.gef.ui.figures.NodeFigure;
 import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.uml2.diagram.clazz.edit.policies.InstanceSpecification4ItemSemanticEditPolicy;
-import org.eclipse.uml2.diagram.clazz.edit.policies.UMLTextSelectionEditPolicy;
 import org.eclipse.uml2.diagram.clazz.part.UMLVisualIDRegistry;
-import org.eclipse.uml2.diagram.clazz.providers.UMLElementTypes;
 import org.eclipse.uml2.diagram.common.draw2d.CenterLayout;
 
 /**
@@ -239,12 +231,12 @@ public class InstanceSpecification4EditPart extends ShapeNodeEditPart {
 		/**
 		 * @generated
 		 */
-		private Label fFigureRectangleInstanceNode_NameLabel;
+		private WrapLabel fFigureRectangleInstanceNode_NameLabel;
 
 		/**
 		 * @generated
 		 */
-		private Label fFigureRectangleInstanceNode_ValueLabel;
+		private WrapLabel fFigureRectangleInstanceNode_ValueLabel;
 
 		/**
 		 * @generated
@@ -278,12 +270,12 @@ public class InstanceSpecification4EditPart extends ShapeNodeEditPart {
 
 			rectangleInstanceLabelContainer0.setLayoutManager(layoutRectangleInstanceLabelContainer0);
 
-			fFigureRectangleInstanceNode_NameLabel = new Label();
+			fFigureRectangleInstanceNode_NameLabel = new WrapLabel();
 			fFigureRectangleInstanceNode_NameLabel.setText("");
 
 			rectangleInstanceLabelContainer0.add(fFigureRectangleInstanceNode_NameLabel);
 
-			fFigureRectangleInstanceNode_ValueLabel = new Label();
+			fFigureRectangleInstanceNode_ValueLabel = new WrapLabel();
 			fFigureRectangleInstanceNode_ValueLabel.setText("");
 
 			rectangleInstanceLabelContainer0.add(fFigureRectangleInstanceNode_ValueLabel);
@@ -312,14 +304,14 @@ public class InstanceSpecification4EditPart extends ShapeNodeEditPart {
 		/**
 		 * @generated
 		 */
-		public Label getFigureRectangleInstanceNode_NameLabel() {
+		public WrapLabel getFigureRectangleInstanceNode_NameLabel() {
 			return fFigureRectangleInstanceNode_NameLabel;
 		}
 
 		/**
 		 * @generated
 		 */
-		public Label getFigureRectangleInstanceNode_ValueLabel() {
+		public WrapLabel getFigureRectangleInstanceNode_ValueLabel() {
 			return fFigureRectangleInstanceNode_ValueLabel;
 		}
 
