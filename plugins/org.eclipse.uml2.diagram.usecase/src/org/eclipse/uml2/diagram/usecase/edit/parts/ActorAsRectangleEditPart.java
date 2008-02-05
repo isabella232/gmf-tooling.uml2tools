@@ -1,7 +1,6 @@
 package org.eclipse.uml2.diagram.usecase.edit.parts;
 
 import org.eclipse.draw2d.IFigure;
-import org.eclipse.draw2d.Label;
 import org.eclipse.draw2d.RectangleFigure;
 import org.eclipse.draw2d.StackLayout;
 import org.eclipse.draw2d.ToolbarLayout;
@@ -14,6 +13,7 @@ import org.eclipse.gmf.runtime.diagram.ui.editparts.ShapeNodeEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editpolicies.ConstrainedToolbarLayoutEditPolicy;
 import org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles;
 import org.eclipse.gmf.runtime.draw2d.ui.figures.ConstrainedToolbarLayout;
+import org.eclipse.gmf.runtime.draw2d.ui.figures.WrapLabel;
 import org.eclipse.gmf.runtime.gef.ui.figures.DefaultSizeNodeFigure;
 import org.eclipse.gmf.runtime.gef.ui.figures.NodeFigure;
 import org.eclipse.gmf.runtime.notation.View;
@@ -206,7 +206,7 @@ public class ActorAsRectangleEditPart extends ShapeNodeEditPart {
 		/**
 		 * @generated
 		 */
-		private Label fActorAsRectangleFigure_name;
+		private WrapLabel fActorAsRectangleFigure_name;
 
 		/**
 		 * @generated
@@ -230,7 +230,7 @@ public class ActorAsRectangleEditPart extends ShapeNodeEditPart {
 		 */
 		private void createContents() {
 
-			Label actorAsRectangleFigure_fixed_actor0 = new Label();
+			WrapLabel actorAsRectangleFigure_fixed_actor0 = new WrapLabel();
 			actorAsRectangleFigure_fixed_actor0.setText("\u00ABactor\u00BB");
 
 			this.add(actorAsRectangleFigure_fixed_actor0);
@@ -245,7 +245,7 @@ public class ActorAsRectangleEditPart extends ShapeNodeEditPart {
 
 			actorAsRectangleFigure_NameContainer0.setLayoutManager(layoutActorAsRectangleFigure_NameContainer0);
 
-			fActorAsRectangleFigure_name = new Label();
+			fActorAsRectangleFigure_name = new WrapLabel();
 			fActorAsRectangleFigure_name.setText("");
 
 			actorAsRectangleFigure_NameContainer0.add(fActorAsRectangleFigure_name);
@@ -274,7 +274,7 @@ public class ActorAsRectangleEditPart extends ShapeNodeEditPart {
 		/**
 		 * @generated
 		 */
-		public Label getActorAsRectangleFigure_name() {
+		public WrapLabel getActorAsRectangleFigure_name() {
 			return fActorAsRectangleFigure_name;
 		}
 

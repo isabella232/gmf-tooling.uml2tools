@@ -2,7 +2,6 @@ package org.eclipse.uml2.diagram.usecase.edit.parts;
 
 import org.eclipse.draw2d.Graphics;
 import org.eclipse.draw2d.IFigure;
-import org.eclipse.draw2d.Label;
 import org.eclipse.draw2d.MarginBorder;
 import org.eclipse.draw2d.RectangleFigure;
 import org.eclipse.draw2d.Shape;
@@ -25,6 +24,7 @@ import org.eclipse.gmf.runtime.diagram.ui.editpolicies.CreationEditPolicy;
 import org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles;
 import org.eclipse.gmf.runtime.diagram.ui.requests.CreateViewAndElementRequest;
 import org.eclipse.gmf.runtime.draw2d.ui.figures.ConstrainedToolbarLayout;
+import org.eclipse.gmf.runtime.draw2d.ui.figures.WrapLabel;
 import org.eclipse.gmf.runtime.emf.type.core.IElementType;
 import org.eclipse.gmf.runtime.gef.ui.figures.DefaultSizeNodeFigure;
 import org.eclipse.gmf.runtime.gef.ui.figures.NodeFigure;
@@ -259,12 +259,12 @@ public class DiagramHeaderEditPart extends ShapeNodeEditPart {
 		/**
 		 * @generated
 		 */
-		private Label fFigureSecondaryPackage_PackageLabel;
+		private WrapLabel fFigureSecondaryPackage_PackageLabel;
 
 		/**
 		 * @generated
 		 */
-		private Label fFigureSecondaryPackage_NameLabel;
+		private WrapLabel fFigureSecondaryPackage_NameLabel;
 
 		/**
 		 * @generated
@@ -300,12 +300,12 @@ public class DiagramHeaderEditPart extends ShapeNodeEditPart {
 		 */
 		private void createContents() {
 
-			fFigureSecondaryPackage_PackageLabel = new Label();
+			fFigureSecondaryPackage_PackageLabel = new WrapLabel();
 			fFigureSecondaryPackage_PackageLabel.setText("Package");
 
 			this.add(fFigureSecondaryPackage_PackageLabel);
 
-			fFigureSecondaryPackage_NameLabel = new Label();
+			fFigureSecondaryPackage_NameLabel = new WrapLabel();
 			fFigureSecondaryPackage_NameLabel.setText("");
 
 			this.add(fFigureSecondaryPackage_NameLabel);
@@ -398,14 +398,14 @@ public class DiagramHeaderEditPart extends ShapeNodeEditPart {
 		/**
 		 * @generated
 		 */
-		public Label getFigureSecondaryPackage_PackageLabel() {
+		public WrapLabel getFigureSecondaryPackage_PackageLabel() {
 			return fFigureSecondaryPackage_PackageLabel;
 		}
 
 		/**
 		 * @generated
 		 */
-		public Label getFigureSecondaryPackage_NameLabel() {
+		public WrapLabel getFigureSecondaryPackage_NameLabel() {
 			return fFigureSecondaryPackage_NameLabel;
 		}
 

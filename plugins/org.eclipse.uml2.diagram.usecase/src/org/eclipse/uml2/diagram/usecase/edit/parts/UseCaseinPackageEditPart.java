@@ -4,7 +4,6 @@ import org.eclipse.draw2d.Border;
 import org.eclipse.draw2d.BorderLayout;
 import org.eclipse.draw2d.Ellipse;
 import org.eclipse.draw2d.IFigure;
-import org.eclipse.draw2d.Label;
 import org.eclipse.draw2d.RectangleFigure;
 import org.eclipse.draw2d.StackLayout;
 import org.eclipse.gef.EditPart;
@@ -21,6 +20,7 @@ import org.eclipse.gmf.runtime.diagram.ui.editpolicies.CreationEditPolicy;
 import org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles;
 import org.eclipse.gmf.runtime.diagram.ui.requests.CreateViewAndElementRequest;
 import org.eclipse.gmf.runtime.draw2d.ui.figures.ConstrainedToolbarLayout;
+import org.eclipse.gmf.runtime.draw2d.ui.figures.WrapLabel;
 import org.eclipse.gmf.runtime.emf.type.core.IElementType;
 import org.eclipse.gmf.runtime.gef.ui.figures.DefaultSizeNodeFigure;
 import org.eclipse.gmf.runtime.gef.ui.figures.NodeFigure;
@@ -252,7 +252,7 @@ public class UseCaseinPackageEditPart extends ShapeNodeEditPart {
 		/**
 		 * @generated
 		 */
-		private Label fUseCaseFigure_name;
+		private WrapLabel fUseCaseFigure_name;
 
 		/**
 		 * @generated
@@ -276,7 +276,7 @@ public class UseCaseinPackageEditPart extends ShapeNodeEditPart {
 		 */
 		private void createContents() {
 
-			fUseCaseFigure_name = new Label();
+			fUseCaseFigure_name = new WrapLabel();
 			fUseCaseFigure_name.setText("");
 
 			this.add(fUseCaseFigure_name, BorderLayout.TOP);
@@ -321,7 +321,7 @@ public class UseCaseinPackageEditPart extends ShapeNodeEditPart {
 		/**
 		 * @generated
 		 */
-		public Label getUseCaseFigure_name() {
+		public WrapLabel getUseCaseFigure_name() {
 			return fUseCaseFigure_name;
 		}
 

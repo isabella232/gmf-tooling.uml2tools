@@ -2,7 +2,6 @@ package org.eclipse.uml2.diagram.usecase.edit.parts;
 
 import org.eclipse.draw2d.ColorConstants;
 import org.eclipse.draw2d.IFigure;
-import org.eclipse.draw2d.Label;
 import org.eclipse.draw2d.MarginBorder;
 import org.eclipse.draw2d.RectangleFigure;
 import org.eclipse.draw2d.StackLayout;
@@ -16,6 +15,7 @@ import org.eclipse.gmf.runtime.diagram.ui.editparts.ShapeNodeEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editpolicies.ConstrainedToolbarLayoutEditPolicy;
 import org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles;
 import org.eclipse.gmf.runtime.draw2d.ui.figures.ConstrainedToolbarLayout;
+import org.eclipse.gmf.runtime.draw2d.ui.figures.WrapLabel;
 import org.eclipse.gmf.runtime.gef.ui.figures.DefaultSizeNodeFigure;
 import org.eclipse.gmf.runtime.gef.ui.figures.NodeFigure;
 import org.eclipse.gmf.runtime.notation.View;
@@ -230,7 +230,7 @@ public class SubjectEditPart extends ShapeNodeEditPart {
 		/**
 		 * @generated
 		 */
-		private Label fUseCaseSubjectFigure_name;
+		private WrapLabel fUseCaseSubjectFigure_name;
 
 		/**
 		 * @generated
@@ -263,7 +263,7 @@ public class SubjectEditPart extends ShapeNodeEditPart {
 
 			useCaseSubjectFigure_header0.setLayoutManager(layoutUseCaseSubjectFigure_header0);
 
-			fUseCaseSubjectFigure_name = new Label();
+			fUseCaseSubjectFigure_name = new WrapLabel();
 			fUseCaseSubjectFigure_name.setText("");
 
 			fUseCaseSubjectFigure_name.setFont(FUSECASESUBJECTFIGURE_NAME_FONT);
@@ -309,7 +309,7 @@ public class SubjectEditPart extends ShapeNodeEditPart {
 		/**
 		 * @generated
 		 */
-		public Label getUseCaseSubjectFigure_name() {
+		public WrapLabel getUseCaseSubjectFigure_name() {
 			return fUseCaseSubjectFigure_name;
 		}
 

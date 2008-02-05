@@ -1,7 +1,6 @@
 package org.eclipse.uml2.diagram.usecase.edit.parts;
 
 import org.eclipse.draw2d.IFigure;
-import org.eclipse.draw2d.Label;
 import org.eclipse.draw2d.LineBorder;
 import org.eclipse.draw2d.MarginBorder;
 import org.eclipse.draw2d.RectangleFigure;
@@ -21,6 +20,7 @@ import org.eclipse.gmf.runtime.diagram.ui.editpolicies.CreationEditPolicy;
 import org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles;
 import org.eclipse.gmf.runtime.diagram.ui.requests.CreateViewAndElementRequest;
 import org.eclipse.gmf.runtime.draw2d.ui.figures.ConstrainedToolbarLayout;
+import org.eclipse.gmf.runtime.draw2d.ui.figures.WrapLabel;
 import org.eclipse.gmf.runtime.emf.type.core.IElementType;
 import org.eclipse.gmf.runtime.gef.ui.figures.DefaultSizeNodeFigure;
 import org.eclipse.gmf.runtime.gef.ui.figures.NodeFigure;
@@ -249,12 +249,12 @@ public class InnerUseCaseEditPart extends ShapeNodeEditPart {
 		/**
 		 * @generated
 		 */
-		private Label fUseCaseAsClassFigure_stereo;
+		private WrapLabel fUseCaseAsClassFigure_stereo;
 
 		/**
 		 * @generated
 		 */
-		private Label fUseCaseAsClassFigure_name;
+		private WrapLabel fUseCaseAsClassFigure_name;
 
 		/**
 		 * @generated
@@ -306,7 +306,7 @@ public class InnerUseCaseEditPart extends ShapeNodeEditPart {
 
 			useCaseAsClassFigure_StereoContainer1.setLayoutManager(layoutUseCaseAsClassFigure_StereoContainer1);
 
-			fUseCaseAsClassFigure_stereo = new Label();
+			fUseCaseAsClassFigure_stereo = new WrapLabel();
 			fUseCaseAsClassFigure_stereo.setText("");
 
 			fUseCaseAsClassFigure_stereo.setFont(FUSECASEASCLASSFIGURE_STEREO_FONT);
@@ -324,7 +324,7 @@ public class InnerUseCaseEditPart extends ShapeNodeEditPart {
 
 			useCaseAsClassFigure_NameContainer1.setLayoutManager(layoutUseCaseAsClassFigure_NameContainer1);
 
-			fUseCaseAsClassFigure_name = new Label();
+			fUseCaseAsClassFigure_name = new WrapLabel();
 			fUseCaseAsClassFigure_name.setText("");
 
 			fUseCaseAsClassFigure_name.setFont(FUSECASEASCLASSFIGURE_NAME_FONT);
@@ -363,14 +363,14 @@ public class InnerUseCaseEditPart extends ShapeNodeEditPart {
 		/**
 		 * @generated
 		 */
-		public Label getUseCaseAsClassFigure_stereo() {
+		public WrapLabel getUseCaseAsClassFigure_stereo() {
 			return fUseCaseAsClassFigure_stereo;
 		}
 
 		/**
 		 * @generated
 		 */
-		public Label getUseCaseAsClassFigure_name() {
+		public WrapLabel getUseCaseAsClassFigure_name() {
 			return fUseCaseAsClassFigure_name;
 		}
 

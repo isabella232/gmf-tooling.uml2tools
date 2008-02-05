@@ -1,7 +1,6 @@
 package org.eclipse.uml2.diagram.usecase.edit.parts;
 
 import org.eclipse.draw2d.IFigure;
-import org.eclipse.draw2d.Label;
 import org.eclipse.draw2d.MarginBorder;
 import org.eclipse.draw2d.StackLayout;
 import org.eclipse.gef.EditPart;
@@ -15,6 +14,7 @@ import org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.ShapeNodeEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles;
 import org.eclipse.gmf.runtime.draw2d.ui.figures.ConstrainedToolbarLayout;
+import org.eclipse.gmf.runtime.draw2d.ui.figures.WrapLabel;
 import org.eclipse.gmf.runtime.gef.ui.figures.DefaultSizeNodeFigure;
 import org.eclipse.gmf.runtime.gef.ui.figures.NodeFigure;
 import org.eclipse.gmf.runtime.notation.View;
@@ -212,7 +212,7 @@ public class ConstraintEditPart extends ShapeNodeEditPart {
 		/**
 		 * @generated
 		 */
-		private Label fFigureConstraintFigure_Value;
+		private WrapLabel fFigureConstraintFigure_Value;
 
 		/**
 		 * @generated
@@ -227,7 +227,7 @@ public class ConstraintEditPart extends ShapeNodeEditPart {
 		 */
 		private void createContents() {
 
-			fFigureConstraintFigure_Value = new Label();
+			fFigureConstraintFigure_Value = new WrapLabel();
 			fFigureConstraintFigure_Value.setText("");
 
 			fFigureConstraintFigure_Value.setBorder(new MarginBorder(getMapMode().DPtoLP(5), getMapMode().DPtoLP(5), getMapMode().DPtoLP(5), getMapMode().DPtoLP(5)));
@@ -258,7 +258,7 @@ public class ConstraintEditPart extends ShapeNodeEditPart {
 		/**
 		 * @generated
 		 */
-		public Label getFigureConstraintFigure_Value() {
+		public WrapLabel getFigureConstraintFigure_Value() {
 			return fFigureConstraintFigure_Value;
 		}
 
