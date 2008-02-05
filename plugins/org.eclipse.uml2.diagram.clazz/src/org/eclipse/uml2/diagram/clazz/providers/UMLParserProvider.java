@@ -76,7 +76,6 @@ import org.eclipse.uml2.diagram.clazz.edit.parts.Property5EditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.Property6EditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.PropertyEditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.PropertyName2EditPart;
-import org.eclipse.uml2.diagram.clazz.edit.parts.PropertyName3EditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.PropertyNameEditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.RealizationNameEditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.SlotEditPart;
@@ -1281,21 +1280,6 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 	}
 
 	/**
-	 * @generated
-	 */
-	private IParser propertyName_6017Parser;
-
-	/**
-	 * @generated
-	 */
-	private IParser getPropertyName_6017Parser() {
-		if (propertyName_6017Parser == null) {
-			propertyName_6017Parser = createPropertyName_6017Parser();
-		}
-		return propertyName_6017Parser;
-	}
-
-	/**
 	 * @generated NOT
 	 */
 	protected IParser createPropertyName_6017Parser() {
@@ -1895,8 +1879,6 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 			return getPropertyName_6002Parser();
 		case PropertyName2EditPart.VISUAL_ID:
 			return getPropertyName_6012Parser();
-		case PropertyName3EditPart.VISUAL_ID:
-			return getPropertyName_6017Parser();
 		case AssociationNameEditPart.VISUAL_ID:
 			return getAssociationName_6003Parser();
 		case AssociationName2EditPart.VISUAL_ID:

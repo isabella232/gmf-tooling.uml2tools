@@ -363,7 +363,6 @@ public class UMLViewProvider extends AbstractViewProvider {
 					break;
 				case PropertyNameEditPart.VISUAL_ID:
 				case PropertyName2EditPart.VISUAL_ID:
-				case PropertyName3EditPart.VISUAL_ID:
 					if (Property7EditPart.VISUAL_ID != UMLVisualIDRegistry.getVisualID(containerView) || containerView.getElement() != domainElement) {
 						return null; // wrong container
 					}
@@ -638,8 +637,6 @@ public class UMLViewProvider extends AbstractViewProvider {
 			return PropertyNameViewFactory.class;
 		case PropertyName2EditPart.VISUAL_ID:
 			return PropertyName2ViewFactory.class;
-		case PropertyName3EditPart.VISUAL_ID:
-			return PropertyName3ViewFactory.class;
 		case AssociationNameEditPart.VISUAL_ID:
 			return AssociationNameViewFactory.class;
 		case AssociationName2EditPart.VISUAL_ID:
