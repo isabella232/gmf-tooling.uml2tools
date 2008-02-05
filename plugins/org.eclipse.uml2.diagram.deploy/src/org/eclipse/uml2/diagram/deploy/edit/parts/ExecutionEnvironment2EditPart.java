@@ -251,28 +251,6 @@ public class ExecutionEnvironment2EditPart extends ShapeNodeEditPart {
 	public class EnvironmentFigure extends Cube3DFigure {
 
 		/**
-		 * XXX: Lack of getters support for Custom Figures in the GMFGraph.
-		 * This field is accidentally generated and hides the actual implementation.
-		 * Marked as final = null; because we can't force jet to avoid generation.
-		 * 
-		 * @see getNameLabel
-		 * @generated NOT
-		 */
-		@SuppressWarnings("unused")
-		private final WrapLabel fNameLabel = null;
-
-		/**
-		 * XXX: Lack of getters support for Custom Figures in the GMFGraph.
-		 * This field is accidentally generated and hides the actual implementation.
-		 * Marked as final = null; because we can't force jet to avoid generation.
-		 * 
-		 * @see getContentPane
-		 * @generated NOT
-		 */
-		@SuppressWarnings("unused")
-		private final RectangleFigure fContentPane = null;
-
-		/**
 		 * @generated
 		 */
 		public EnvironmentFigure() {
@@ -303,20 +281,21 @@ public class ExecutionEnvironment2EditPart extends ShapeNodeEditPart {
 		}
 
 		/**
-		 * XXX
-		 * @generated NOT
+		 * @generated
 		 */
-		public Label getNameLabel() {
+		public WrapLabel getNameLabel() {
 			return super.getNameLabel();
+
 		}
 
 		/**
-		 * XXX
-		 * @generated NOT
+		 * @generated
 		 */
 		public RectangleFigure getContentPane() {
 			return super.getContentPane();
+
 		}
+
 	}
 
 }
