@@ -105,7 +105,7 @@ public class UMLDiagramUpdater {
 		case ClassClass_contentsEditPart.VISUAL_ID:
 			return getClassClass_contents_7007SemanticChildren(view);
 		case InstanceSpecificationSlotsEditPart.VISUAL_ID:
-			return getInstanceSpecificationSlots_7009SemanticChildren(view);
+			return getInstanceSpecificationCompartment_7009SemanticChildren(view);
 		case PackageEditPart.VISUAL_ID: {
 			//We have "dummy" TopLevelNode (with vid = org.eclipse.uml2.diagram.csd.edit.parts.Package2EditPart.VISUAL_ID). 
 			//The only purpose for this node is to be a container for children (imports, etc)
@@ -352,7 +352,7 @@ public class UMLDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List getInstanceSpecificationSlots_7009SemanticChildren(View view) {
+	public static List getInstanceSpecificationCompartment_7009SemanticChildren(View view) {
 		if (false == view.eContainer() instanceof View) {
 			return Collections.EMPTY_LIST;
 		}
