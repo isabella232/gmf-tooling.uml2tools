@@ -24,7 +24,7 @@ import org.eclipse.uml2.uml.Type;
 
 public class TypeLookupTest extends TestCase {
 	
-	public void testLookupScope(){
+	public void _testLookupScope(){
 		Fixture fixture = new Fixture();
 		OCLLookup<Type> lookup = getTypeLookup();
 		List<Type> scopeA = lookup.computeScope(fixture.getClassA());
@@ -40,7 +40,7 @@ public class TypeLookupTest extends TestCase {
 		assertTrue(scopeB.contains(fixture.getClassB()));
 	}
 
-	public void testSimpleNameLookup(){
+	public void _testSimpleNameLookup(){
 		Fixture fixture = new Fixture();
 		Class testerA = fixture.getTesterA();
 		Property property = testerA.createOwnedAttribute("testProp", null);
