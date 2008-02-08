@@ -56,10 +56,6 @@ public class CodegenEmittersExt extends CodegenEmitters {
 		return getQualifiedClassName("xpt::actions::ChangeNotationContributionItemProvider::qualifiedClassName", input); //$NON-NLS-1$
 	}
 	
-	@Override
-	public TextEmitter getMessagesEmitter() {
-        return newXpandEmitter("xpt::Externalizer::Values"); //$NON-NLS-1$
-	}
 	/**
 	 * Returns qualified class name defined in template.
 	 */
