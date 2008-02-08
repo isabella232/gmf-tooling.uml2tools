@@ -229,23 +229,6 @@ public class DeviceEditPart extends ShapeNodeEditPart {
 	public class DeviceFigure extends Cube3DFigure {
 
 		/**
-		 * XXX: Lack of getters support for Custom Figures in the GMFGraph.
-		 * This field is accidentally generated and hides the actual implementation.
-		 * Marked as final = null; because we can't force jet to avoid generation.
-		 * 
-		 * @see getNameLabel
-		 * @generated NOT
-		 */
-		@SuppressWarnings("unused")
-		private final WrapLabel fNameLabel = null;
-
-		/**
-		 * @generated NOT
-		 */
-		@SuppressWarnings("unused")
-		private final RectangleFigure fContentPane = null;
-
-		/**
 		 * @generated
 		 */
 		public DeviceFigure() {
@@ -276,16 +259,14 @@ public class DeviceEditPart extends ShapeNodeEditPart {
 		}
 
 		/**
-		 * XXX: 
-		 * @see fNameLabel
-		 * @generated NOT
+		 * @generated
 		 */
 		public Label getNameLabel() {
 			return super.getNameLabel();
 		}
 
 		/**
-		 * @generated NOT
+		 * @generated
 		 */
 		public RectangleFigure getContentPane() {
 			return super.getContentPane();

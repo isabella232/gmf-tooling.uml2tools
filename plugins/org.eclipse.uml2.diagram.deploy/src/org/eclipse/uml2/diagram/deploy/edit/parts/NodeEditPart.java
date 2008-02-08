@@ -213,17 +213,6 @@ public class NodeEditPart extends ShapeNodeEditPart {
 	public class NodeFigure extends Cube3DFigure {
 
 		/**
-		 * XXX: Lack of getters support for Custom Figures in the GMFGraph.
-		 * This field is accidentally generated and hides the actual implementation.
-		 * Marked as final = null; because we can't force jet to avoid generation.
-		 * 
-		 * @see getNameLabel
-		 * @generated NOT
-		 */
-		@SuppressWarnings("unused")
-		private final WrapLabel fNameLabel = null;
-
-		/**
 		 * @generated
 		 */
 		public NodeFigure() {
@@ -252,9 +241,7 @@ public class NodeEditPart extends ShapeNodeEditPart {
 		}
 
 		/**
-		 * XXX
-		 * @see fNameLabel
-		 * @generated NOT
+		 * @generated
 		 */
 		public Label getNameLabel() {
 			return super.getNameLabel();
