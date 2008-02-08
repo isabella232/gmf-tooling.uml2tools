@@ -43,13 +43,22 @@ public class CodegenEmittersExt extends CodegenEmitters {
 		return newXpandEmitter("xpt::actions::ChangeNotationContributionItemProvider::ChangeNotationContributionItemProvider"); //$NON-NLS-1$
 	}
 
+//	public TextEmitter getDynamicCanonicalEditPolicyEmitter() throws UnexpectedBehaviourException {
+//		return newXpandEmitter("xpt::diagram::canonical::DynamicCanonicalEditPolicy::DynamicCanonicalEditPolicy"); //$NON-NLS-1$
+//	}
+//
+//	public TextEmitter getDynamicCanonicalEditPolicyFQNEmitter() throws UnexpectedBehaviourException {
+//		return newXpandEmitter("xpt::diagram::canonical::DynamicCanonicalEditPolicy::DynamicCanonicalEditPolicyFQN"); //$NON-NLS-1$
+//	}
+//
+
 	public String getChangeNotationContributionItemProviderName(Object... input) throws UnexpectedBehaviourException {
 		return getQualifiedClassName("xpt::actions::ChangeNotationContributionItemProvider::qualifiedClassName", input); //$NON-NLS-1$
 	}
 	
 	@Override
 	public TextEmitter getMessagesEmitter() {
-        return newXpandEmitter("xpt::Externalizer::Values_Ex"); //$NON-NLS-1$
+        return newXpandEmitter("xpt::Externalizer::Values"); //$NON-NLS-1$
 	}
 	/**
 	 * Returns qualified class name defined in template.
