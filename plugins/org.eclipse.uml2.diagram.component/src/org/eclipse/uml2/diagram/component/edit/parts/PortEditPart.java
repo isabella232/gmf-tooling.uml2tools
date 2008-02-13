@@ -6,6 +6,7 @@ import org.eclipse.draw2d.PositionConstants;
 import org.eclipse.draw2d.RectangleFigure;
 import org.eclipse.draw2d.StackLayout;
 import org.eclipse.draw2d.geometry.Dimension;
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.gef.EditPart;
 import org.eclipse.gef.EditPolicy;
 import org.eclipse.gef.Request;
@@ -18,11 +19,22 @@ import org.eclipse.gmf.runtime.diagram.ui.editparts.IBorderItemEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editpolicies.BorderItemSelectionEditPolicy;
 import org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles;
 import org.eclipse.gmf.runtime.diagram.ui.figures.BorderItemLocator;
+import org.eclipse.gmf.runtime.diagram.ui.l10n.DiagramColorRegistry;
 import org.eclipse.gmf.runtime.gef.ui.figures.DefaultSizeNodeFigure;
 import org.eclipse.gmf.runtime.gef.ui.figures.NodeFigure;
+import org.eclipse.gmf.runtime.notation.LineStyle;
+import org.eclipse.gmf.runtime.notation.NotationPackage;
 import org.eclipse.gmf.runtime.notation.View;
+import org.eclipse.jface.preference.IPreferenceStore;
+import org.eclipse.jface.preference.PreferenceConverter;
+import org.eclipse.swt.graphics.Color;
+import org.eclipse.swt.graphics.RGB;
+import org.eclipse.uml2.diagram.common.preferences.UMLPreferencesConstants;
 import org.eclipse.uml2.diagram.component.edit.policies.PortItemSemanticEditPolicy;
+import org.eclipse.uml2.diagram.component.part.UMLDiagramEditorPlugin;
 import org.eclipse.uml2.diagram.component.part.UMLVisualIDRegistry;
+import org.eclipse.uml2.uml.Port;
+import org.eclipse.uml2.uml.UMLPackage;
 
 /**
  * @generated
@@ -175,6 +187,49 @@ public class PortEditPart extends BorderedBorderItemEditPart {
 	}
 
 	/**
+	 * @NOT-generated
+	 */
+	@Override
+	protected void handleNotificationEvent(Notification notification) {
+		super.handleNotificationEvent(notification);
+		if (UMLPackage.eINSTANCE.getTypedElement_Type().equals(notification.getFeature())) {
+			refreshHasType();
+		}
+	}
+	
+	/**
+	 * @NOT-generated
+	 */
+	@Override
+	protected void refreshVisuals() {
+		super.refreshVisuals();
+		refreshHasType();
+	}
+
+	/**
+	 * @NOT-generated
+	 */
+	private void refreshHasType() {
+		boolean hasType = ((Port)resolveSemanticElement()).getType() != null;
+		if (!hasType) {
+			getPrimaryShape().setForegroundColor(getHighlightColor());
+		} else {// has type
+	        LineStyle style = (LineStyle)  getPrimaryView().getStyle(NotationPackage.Literals.LINE_STYLE);
+	        if ( style != null ) {
+	        	getPrimaryShape().setForegroundColor(DiagramColorRegistry.getInstance().getColor(new Integer(style.getLineColor())));
+	        }
+		}
+	}
+		
+	/**
+	 * @NOT-generated
+	 */
+	private Color getHighlightColor() {
+		RGB rgb = PreferenceConverter.getColor(myStore, UMLPreferencesConstants.HIGHLIGHT_COLOR);
+		return DiagramColorRegistry.getInstance().getColor(rgb);
+	}
+	
+	/**
 	 * @generated
 	 */
 	public class PortFigure extends RectangleFigure {
@@ -209,5 +264,7 @@ public class PortEditPart extends BorderedBorderItemEditPart {
 		}
 
 	}
+
+	private final IPreferenceStore myStore = UMLDiagramEditorPlugin.getInstance().getPreferenceStore();
 
 }
