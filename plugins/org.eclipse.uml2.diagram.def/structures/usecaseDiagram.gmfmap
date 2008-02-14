@@ -281,7 +281,7 @@
           href="usecaseDiagram.gmfgraph#SubjectNode"/>
       <children
           compartment="//@nodes.5/@ownedChild/@compartments.0"
-          referencedChild="//@nodes.4/@ownedChild">
+          referencedChild="//@nodes.3/@ownedChild">
         <containmentFeature
             href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//Classifier/ownedUseCase"/>
         <childrenFeature

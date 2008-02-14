@@ -177,7 +177,7 @@ public class UMLVisualIDRegistry {
 			break;
 		case InnerUseCaseExtensionPointsEditPart.VISUAL_ID:
 			if (UMLPackage.eINSTANCE.getExtensionPoint().isSuperTypeOf(domainElement.eClass())) {
-				return ExtensionPoint2EditPart.VISUAL_ID;
+				return ExtensionPointEditPart.VISUAL_ID;
 			}
 			break;
 		case PackageFramecontentsEditPart.VISUAL_ID:
@@ -345,7 +345,7 @@ public class UMLVisualIDRegistry {
 			}
 			break;
 		case InnerUseCaseExtensionPointsEditPart.VISUAL_ID:
-			if (ExtensionPoint2EditPart.VISUAL_ID == nodeVisualID) {
+			if (ExtensionPointEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
 			break;

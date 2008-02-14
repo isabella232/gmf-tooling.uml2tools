@@ -72,8 +72,9 @@ public class UMLPaletteFactory {
 	 * @generated
 	 */
 	private ToolEntry createUseCase1CreationTool() {
-		List/*<IElementType>*/types = new ArrayList/*<IElementType>*/(2);
+		List/*<IElementType>*/types = new ArrayList/*<IElementType>*/(3);
 		types.add(UMLElementTypes.UseCase_2003);
+		types.add(UMLElementTypes.UseCase_3004);
 		types.add(UMLElementTypes.UseCase_3006);
 		NodeToolEntry entry = new NodeToolEntry(Messages.UseCase1CreationTool_title, Messages.UseCase1CreationTool_desc, types);
 		entry.setSmallIcon(UMLElementTypes.getImageDescriptor(UMLElementTypes.UseCase_2003));

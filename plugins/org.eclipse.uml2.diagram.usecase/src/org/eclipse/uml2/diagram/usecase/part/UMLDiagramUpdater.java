@@ -77,7 +77,7 @@ public class UMLDiagramUpdater {
 		case SubjectUsecasesEditPart.VISUAL_ID:
 			return getComponentUsecases_7004SemanticChildren(view);
 		case InnerUseCaseExtensionPointsEditPart.VISUAL_ID:
-			return getUseCaseExtensionpoints_7005SemanticChildren(view);
+			return getUseCasePoints_7005SemanticChildren(view);
 		case PackageFramecontentsEditPart.VISUAL_ID:
 			return getPackageFramecontents_7006SemanticChildren(view);
 		case UseCasePointsEditPart.VISUAL_ID:
@@ -198,7 +198,7 @@ public class UMLDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List getUseCaseExtensionpoints_7005SemanticChildren(View view) {
+	public static List getUseCasePoints_7005SemanticChildren(View view) {
 		if (false == view.eContainer() instanceof View) {
 			return Collections.EMPTY_LIST;
 		}
@@ -211,7 +211,7 @@ public class UMLDiagramUpdater {
 		for (Iterator it = modelElement.getExtensionPoints().iterator(); it.hasNext();) {
 			ExtensionPoint childElement = (ExtensionPoint) it.next();
 			int visualID = UMLVisualIDRegistry.getNodeVisualID(view, childElement);
-			if (visualID == ExtensionPoint2EditPart.VISUAL_ID) {
+			if (visualID == ExtensionPointEditPart.VISUAL_ID) {
 				result.add(new UMLNodeDescriptor(childElement, visualID));
 				continue;
 			}

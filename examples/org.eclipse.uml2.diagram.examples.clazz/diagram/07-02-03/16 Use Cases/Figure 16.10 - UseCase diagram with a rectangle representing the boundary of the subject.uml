@@ -12,11 +12,12 @@
   <elementImport xmi:id="_sb8TEaMhEdyv8ePVS08H-g">
     <importedElement xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
   </elementImport>
-  <packagedElement xmi:type="uml:Component" xmi:id="_vSC9gKMhEdyv8ePVS08H-g" name="Telephon Catalog"/>
-  <packagedElement xmi:type="uml:UseCase" xmi:id="_x_I14KMhEdyv8ePVS08H-g" name="Check Status"/>
-  <packagedElement xmi:type="uml:UseCase" xmi:id="_zYmjMKMhEdyv8ePVS08H-g" name="Place Orders"/>
-  <packagedElement xmi:type="uml:UseCase" xmi:id="_0kw0UKMhEdyv8ePVS08H-g" name="Fill Orders"/>
-  <packagedElement xmi:type="uml:UseCase" xmi:id="_2zsxEKMhEdyv8ePVS08H-g" name="Establish Credit"/>
+  <packagedElement xmi:type="uml:Component" xmi:id="_vSC9gKMhEdyv8ePVS08H-g" name="Telephon Catalog">
+    <ownedUseCase xmi:id="_x_I14KMhEdyv8ePVS08H-g" name="Check Status"/>
+    <ownedUseCase xmi:id="_zYmjMKMhEdyv8ePVS08H-g" name="Place Orders"/>
+    <ownedUseCase xmi:id="_0kw0UKMhEdyv8ePVS08H-g" name="Fill Orders"/>
+    <ownedUseCase xmi:id="_2zsxEKMhEdyv8ePVS08H-g" name="Establish Credit"/>
+  </packagedElement>
   <packagedElement xmi:type="uml:Actor" xmi:id="_4tK0IKMhEdyv8ePVS08H-g" name="Sales Person"/>
   <packagedElement xmi:type="uml:Actor" xmi:id="_-h7oEKMhEdyv8ePVS08H-g" name="Shipping Clerk"/>
   <packagedElement xmi:type="uml:Actor" xmi:id="_Dq5F8KMiEdyv8ePVS08H-g" name="Customer"/>

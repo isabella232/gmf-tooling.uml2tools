@@ -1,5 +1,8 @@
 package org.eclipse.uml2.diagram.usecase.edit.parts;
 
+import org.eclipse.draw2d.Border;
+import org.eclipse.draw2d.BorderLayout;
+import org.eclipse.draw2d.Ellipse;
 import org.eclipse.draw2d.IFigure;
 import org.eclipse.draw2d.Label;
 import org.eclipse.draw2d.LineBorder;
@@ -12,6 +15,8 @@ import org.eclipse.gef.EditPolicy;
 import org.eclipse.gef.Request;
 import org.eclipse.gef.commands.Command;
 import org.eclipse.gef.editpolicies.LayoutEditPolicy;
+import org.eclipse.gef.editpolicies.NonResizableEditPolicy;
+import org.eclipse.gef.requests.CreateRequest;
 import org.eclipse.gmf.runtime.diagram.core.edithelpers.CreateElementRequestAdapter;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.ITextAwareEditPart;
@@ -29,6 +34,8 @@ import org.eclipse.swt.SWT;
 import org.eclipse.swt.graphics.Font;
 import org.eclipse.swt.widgets.Display;
 import org.eclipse.uml2.diagram.common.draw2d.CenterLayout;
+import org.eclipse.uml2.diagram.common.draw2d.OneLineDashedBorder;
+import org.eclipse.uml2.diagram.common.draw2d.SplitEllipseLayout;
 import org.eclipse.uml2.diagram.usecase.edit.policies.InnerUseCaseItemSemanticEditPolicy;
 import org.eclipse.uml2.diagram.usecase.edit.policies.UMLTextSelectionEditPolicy;
 import org.eclipse.uml2.diagram.usecase.part.UMLVisualIDRegistry;
@@ -72,7 +79,7 @@ public class InnerUseCaseEditPart extends ShapeNodeEditPart {
 					if (request instanceof CreateViewAndElementRequest) {
 						CreateElementRequestAdapter adapter = ((CreateViewAndElementRequest) request).getViewAndElementDescriptor().getCreateElementRequestAdapter();
 						IElementType type = (IElementType) adapter.getAdapter(IElementType.class);
-						if (type == UMLElementTypes.ExtensionPoint_3003) {
+						if (type == UMLElementTypes.ExtensionPoint_3002) {
 							EditPart compartmentEditPart = getChildBySemanticHint(UMLVisualIDRegistry.getType(InnerUseCaseExtensionPointsEditPart.VISUAL_ID));
 							return compartmentEditPart == null ? null : compartmentEditPart.getCommand(request);
 						}
@@ -93,16 +100,22 @@ public class InnerUseCaseEditPart extends ShapeNodeEditPart {
 	 * @generated
 	 */
 	protected LayoutEditPolicy createLayoutEditPolicy() {
-
-		ConstrainedToolbarLayoutEditPolicy lep = new ConstrainedToolbarLayoutEditPolicy() {
+		LayoutEditPolicy lep = new LayoutEditPolicy() {
 
 			protected EditPolicy createChildEditPolicy(EditPart child) {
-				if (child.getEditPolicy(EditPolicy.PRIMARY_DRAG_ROLE) == null) {
-					if (child instanceof ITextAwareEditPart) {
-						return new UMLTextSelectionEditPolicy();
-					}
+				EditPolicy result = child.getEditPolicy(EditPolicy.PRIMARY_DRAG_ROLE);
+				if (result == null) {
+					result = new NonResizableEditPolicy();
 				}
-				return super.createChildEditPolicy(child);
+				return result;
+			}
+
+			protected Command getMoveChildrenCommand(Request request) {
+				return null;
+			}
+
+			protected Command getCreateCommand(CreateRequest request) {
+				return null;
 			}
 		};
 		return lep;
@@ -112,15 +125,15 @@ public class InnerUseCaseEditPart extends ShapeNodeEditPart {
 	 * @generated
 	 */
 	protected IFigure createNodeShape() {
-		UseCaseAsClassFigure figure = new UseCaseAsClassFigure();
+		UseCaseFigure figure = new UseCaseFigure();
 		return primaryShape = figure;
 	}
 
 	/**
 	 * @generated
 	 */
-	public UseCaseAsClassFigure getPrimaryShape() {
-		return (UseCaseAsClassFigure) primaryShape;
+	public UseCaseFigure getPrimaryShape() {
+		return (UseCaseFigure) primaryShape;
 	}
 
 	/**
@@ -128,11 +141,11 @@ public class InnerUseCaseEditPart extends ShapeNodeEditPart {
 	 */
 	protected boolean addFixedChild(EditPart childEditPart) {
 		if (childEditPart instanceof UseCaseName3EditPart) {
-			((UseCaseName3EditPart) childEditPart).setLabel(getPrimaryShape().getUseCaseAsClassFigure_name());
+			((UseCaseName3EditPart) childEditPart).setLabel(getPrimaryShape().getUseCaseFigure_name());
 			return true;
 		}
 		if (childEditPart instanceof InnerUseCaseExtensionPointsEditPart) {
-			IFigure pane = getPrimaryShape().getUseCaseAsClass_points();
+			IFigure pane = getPrimaryShape().getUseCaseFigure_contents();
 			setupContentPane(pane); // FIXME each comparment should handle his content pane in his own way 
 			pane.add(((InnerUseCaseExtensionPointsEditPart) childEditPart).getFigure());
 			return true;
@@ -146,7 +159,7 @@ public class InnerUseCaseEditPart extends ShapeNodeEditPart {
 	protected boolean removeFixedChild(EditPart childEditPart) {
 
 		if (childEditPart instanceof InnerUseCaseExtensionPointsEditPart) {
-			IFigure pane = getPrimaryShape().getUseCaseAsClass_points();
+			IFigure pane = getPrimaryShape().getUseCaseFigure_contents();
 			pane.remove(((InnerUseCaseExtensionPointsEditPart) childEditPart).getFigure());
 			return true;
 		}
@@ -179,7 +192,7 @@ public class InnerUseCaseEditPart extends ShapeNodeEditPart {
 	protected IFigure getContentPaneFor(IGraphicalEditPart editPart) {
 
 		if (editPart instanceof InnerUseCaseExtensionPointsEditPart) {
-			return getPrimaryShape().getUseCaseAsClass_points();
+			return getPrimaryShape().getUseCaseFigure_contents();
 		}
 		return super.getContentPaneFor(editPart);
 	}
@@ -188,7 +201,7 @@ public class InnerUseCaseEditPart extends ShapeNodeEditPart {
 	 * @generated
 	 */
 	protected NodeFigure createNodePlate() {
-		DefaultSizeNodeFigure result = new DefaultSizeNodeFigure(getMapMode().DPtoLP(100), getMapMode().DPtoLP(60));
+		DefaultSizeNodeFigure result = new DefaultSizeNodeFigure(getMapMode().DPtoLP(140), getMapMode().DPtoLP(60));
 		return result;
 	}
 
@@ -244,34 +257,24 @@ public class InnerUseCaseEditPart extends ShapeNodeEditPart {
 	/**
 	 * @generated
 	 */
-	public class UseCaseAsClassFigure extends RectangleFigure {
+	public class UseCaseFigure extends Ellipse {
 
 		/**
 		 * @generated
 		 */
-		private Label fUseCaseAsClassFigure_stereo;
+		private Label fUseCaseFigure_name;
 
 		/**
 		 * @generated
 		 */
-		private Label fUseCaseAsClassFigure_name;
+		private RectangleFigure fUseCaseFigure_contents;
 
 		/**
 		 * @generated
 		 */
-		private RectangleFigure fUseCaseAsClass_points;
+		public UseCaseFigure() {
 
-		/**
-		 * @generated
-		 */
-		public UseCaseAsClassFigure() {
-
-			ToolbarLayout layoutThis = new ToolbarLayout();
-			layoutThis.setStretchMinorAxis(true);
-			layoutThis.setMinorAlignment(ToolbarLayout.ALIGN_CENTER);
-
-			layoutThis.setSpacing(0);
-			layoutThis.setVertical(true);
+			SplitEllipseLayout layoutThis = new SplitEllipseLayout();
 
 			this.setLayoutManager(layoutThis);
 
@@ -283,62 +286,27 @@ public class InnerUseCaseEditPart extends ShapeNodeEditPart {
 		 */
 		private void createContents() {
 
-			RectangleFigure useCaseAsClassFigure_Header0 = new RectangleFigure();
-			useCaseAsClassFigure_Header0.setBorder(new LineBorder(null, getMapMode().DPtoLP(1)));
+			fUseCaseFigure_name = new Label();
+			fUseCaseFigure_name.setText("");
 
-			this.add(useCaseAsClassFigure_Header0);
+			this.add(fUseCaseFigure_name, BorderLayout.TOP);
 
-			ToolbarLayout layoutUseCaseAsClassFigure_Header0 = new ToolbarLayout();
-			layoutUseCaseAsClassFigure_Header0.setStretchMinorAxis(true);
-			layoutUseCaseAsClassFigure_Header0.setMinorAlignment(ToolbarLayout.ALIGN_TOPLEFT);
+			fUseCaseFigure_contents = new RectangleFigure();
+			fUseCaseFigure_contents.setFill(false);
+			fUseCaseFigure_contents.setOutline(false);
+			fUseCaseFigure_contents.setBorder(createBorder0());
 
-			layoutUseCaseAsClassFigure_Header0.setSpacing(0);
-			layoutUseCaseAsClassFigure_Header0.setVertical(true);
+			this.add(fUseCaseFigure_contents, BorderLayout.CENTER);
 
-			useCaseAsClassFigure_Header0.setLayoutManager(layoutUseCaseAsClassFigure_Header0);
+		}
 
-			RectangleFigure useCaseAsClassFigure_StereoContainer1 = new RectangleFigure();
-			useCaseAsClassFigure_StereoContainer1.setOutline(false);
+		/**
+		 * @generated
+		 */
+		private Border createBorder0() {
+			OneLineDashedBorder result = new OneLineDashedBorder();
 
-			useCaseAsClassFigure_Header0.add(useCaseAsClassFigure_StereoContainer1);
-
-			CenterLayout layoutUseCaseAsClassFigure_StereoContainer1 = new CenterLayout();
-
-			useCaseAsClassFigure_StereoContainer1.setLayoutManager(layoutUseCaseAsClassFigure_StereoContainer1);
-
-			fUseCaseAsClassFigure_stereo = new Label();
-			fUseCaseAsClassFigure_stereo.setText("");
-
-			fUseCaseAsClassFigure_stereo.setFont(FUSECASEASCLASSFIGURE_STEREO_FONT);
-
-			fUseCaseAsClassFigure_stereo.setBorder(new MarginBorder(getMapMode().DPtoLP(5), getMapMode().DPtoLP(5), getMapMode().DPtoLP(0), getMapMode().DPtoLP(5)));
-
-			useCaseAsClassFigure_StereoContainer1.add(fUseCaseAsClassFigure_stereo);
-
-			RectangleFigure useCaseAsClassFigure_NameContainer1 = new RectangleFigure();
-			useCaseAsClassFigure_NameContainer1.setOutline(false);
-
-			useCaseAsClassFigure_Header0.add(useCaseAsClassFigure_NameContainer1);
-
-			CenterLayout layoutUseCaseAsClassFigure_NameContainer1 = new CenterLayout();
-
-			useCaseAsClassFigure_NameContainer1.setLayoutManager(layoutUseCaseAsClassFigure_NameContainer1);
-
-			fUseCaseAsClassFigure_name = new Label();
-			fUseCaseAsClassFigure_name.setText("");
-
-			fUseCaseAsClassFigure_name.setFont(FUSECASEASCLASSFIGURE_NAME_FONT);
-
-			fUseCaseAsClassFigure_name.setBorder(new MarginBorder(getMapMode().DPtoLP(0), getMapMode().DPtoLP(5), getMapMode().DPtoLP(5), getMapMode().DPtoLP(5)));
-
-			useCaseAsClassFigure_NameContainer1.add(fUseCaseAsClassFigure_name);
-
-			fUseCaseAsClass_points = new RectangleFigure();
-
-			this.add(fUseCaseAsClass_points);
-
-			fUseCaseAsClass_points.setLayoutManager(new StackLayout());
-
+			return result;
 		}
 
 		/**
@@ -363,34 +331,17 @@ public class InnerUseCaseEditPart extends ShapeNodeEditPart {
 		/**
 		 * @generated
 		 */
-		public Label getUseCaseAsClassFigure_stereo() {
-			return fUseCaseAsClassFigure_stereo;
+		public Label getUseCaseFigure_name() {
+			return fUseCaseFigure_name;
 		}
 
 		/**
 		 * @generated
 		 */
-		public Label getUseCaseAsClassFigure_name() {
-			return fUseCaseAsClassFigure_name;
-		}
-
-		/**
-		 * @generated
-		 */
-		public RectangleFigure getUseCaseAsClass_points() {
-			return fUseCaseAsClass_points;
+		public RectangleFigure getUseCaseFigure_contents() {
+			return fUseCaseFigure_contents;
 		}
 
 	}
-
-	/**
-	 * @generated
-	 */
-	static final Font FUSECASEASCLASSFIGURE_STEREO_FONT = new Font(Display.getCurrent(), Display.getDefault().getSystemFont().getFontData()[0].getName(), 9, SWT.NORMAL);
-
-	/**
-	 * @generated
-	 */
-	static final Font FUSECASEASCLASSFIGURE_NAME_FONT = new Font(Display.getCurrent(), Display.getDefault().getSystemFont().getFontData()[0].getName(), 9, SWT.NORMAL);
 
 }

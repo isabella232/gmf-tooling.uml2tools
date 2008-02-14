@@ -10,6 +10,7 @@ import java.util.Set;
 import org.eclipse.gmf.runtime.diagram.ui.editpolicies.CanonicalEditPolicy;
 import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.uml2.diagram.usecase.edit.parts.ExtensionPoint2EditPart;
+import org.eclipse.uml2.diagram.usecase.edit.parts.ExtensionPointEditPart;
 import org.eclipse.uml2.diagram.usecase.part.UMLDiagramUpdater;
 import org.eclipse.uml2.diagram.usecase.part.UMLNodeDescriptor;
 import org.eclipse.uml2.diagram.usecase.part.UMLVisualIDRegistry;
@@ -31,7 +32,7 @@ public class InnerUseCaseExtensionPointsCanonicalEditPolicy extends CanonicalEdi
 	protected List getSemanticChildrenList() {
 		View viewObject = (View) getHost().getModel();
 		List result = new LinkedList();
-		for (Iterator it = UMLDiagramUpdater.getUseCaseExtensionpoints_7005SemanticChildren(viewObject).iterator(); it.hasNext();) {
+		for (Iterator it = UMLDiagramUpdater.getUseCasePoints_7005SemanticChildren(viewObject).iterator(); it.hasNext();) {
 			result.add(((UMLNodeDescriptor) it.next()).getModelElement());
 		}
 		return result;
@@ -43,7 +44,7 @@ public class InnerUseCaseExtensionPointsCanonicalEditPolicy extends CanonicalEdi
 	protected boolean isOrphaned(Collection semanticChildren, final View view) {
 		int visualID = UMLVisualIDRegistry.getVisualID(view);
 		switch (visualID) {
-		case ExtensionPoint2EditPart.VISUAL_ID:
+		case ExtensionPointEditPart.VISUAL_ID:
 			return !semanticChildren.contains(view.getElement()) || visualID != UMLVisualIDRegistry.getNodeVisualID((View) getHost().getModel(), view.getElement());
 		}
 		return false;

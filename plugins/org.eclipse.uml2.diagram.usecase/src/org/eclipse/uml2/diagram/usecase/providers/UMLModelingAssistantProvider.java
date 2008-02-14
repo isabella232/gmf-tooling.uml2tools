@@ -59,7 +59,7 @@ public class UMLModelingAssistantProvider extends ModelingAssistantProvider {
 		}
 		if (editPart instanceof InnerUseCaseEditPart) {
 			List types = new ArrayList();
-			types.add(UMLElementTypes.ExtensionPoint_3003);
+			types.add(UMLElementTypes.ExtensionPoint_3002);
 			return types;
 		}
 		if (editPart instanceof UseCaseinPackageEditPart) {
