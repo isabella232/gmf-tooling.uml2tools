@@ -4,6 +4,7 @@ import org.eclipse.draw2d.BorderLayout;
 import org.eclipse.draw2d.ColorConstants;
 import org.eclipse.draw2d.IFigure;
 import org.eclipse.draw2d.Label;
+import org.eclipse.draw2d.LayoutManager;
 import org.eclipse.draw2d.MarginBorder;
 import org.eclipse.draw2d.Polyline;
 import org.eclipse.draw2d.PositionConstants;
@@ -14,6 +15,7 @@ import org.eclipse.draw2d.geometry.Dimension;
 import org.eclipse.draw2d.geometry.Point;
 import org.eclipse.gef.EditPart;
 import org.eclipse.gef.EditPolicy;
+import org.eclipse.gef.GraphicalEditPart;
 import org.eclipse.gef.Request;
 import org.eclipse.gef.commands.Command;
 import org.eclipse.gef.editpolicies.LayoutEditPolicy;
@@ -372,6 +374,22 @@ public class CallBehaviorAction2EditPart extends AbstractBorderedShapeEditPart {
 			return fFigureActionCallBehaviorFigure_name;
 		}
 
+	}
+
+	/**
+	 * @generated
+	 */
+	protected void reorderChild(EditPart child, int index) {
+		// Save the constraint of the child so that it does not
+		// get lost during the remove and re-add.
+		IFigure childFigure = ((GraphicalEditPart) child).getFigure();
+		LayoutManager layout = getContentPaneFor((IGraphicalEditPart) child).getLayoutManager();
+		Object constraint = null;
+		if (layout != null) {
+			constraint = layout.getConstraint(childFigure);
+		}
+		super.reorderChild(child, index);
+		setLayoutConstraint(child, childFigure, constraint);
 	}
 
 }
