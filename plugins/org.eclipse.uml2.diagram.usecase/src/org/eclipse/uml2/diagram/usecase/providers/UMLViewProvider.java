@@ -18,6 +18,8 @@ import org.eclipse.uml2.diagram.usecase.edit.parts.AssociationTargetMultiplicity
 import org.eclipse.uml2.diagram.usecase.edit.parts.ConstraintConstrainedElementEditPart;
 import org.eclipse.uml2.diagram.usecase.edit.parts.ConstraintEditPart;
 import org.eclipse.uml2.diagram.usecase.edit.parts.ConstraintNameEditPart;
+import org.eclipse.uml2.diagram.usecase.edit.parts.DependencyEditPart;
+import org.eclipse.uml2.diagram.usecase.edit.parts.DependencyNameEditPart;
 import org.eclipse.uml2.diagram.usecase.edit.parts.DiagramHeaderEditPart;
 import org.eclipse.uml2.diagram.usecase.edit.parts.ElementImportEditPart;
 import org.eclipse.uml2.diagram.usecase.edit.parts.ExtendEditPart;
@@ -61,6 +63,8 @@ import org.eclipse.uml2.diagram.usecase.view.factories.AssociationViewFactory;
 import org.eclipse.uml2.diagram.usecase.view.factories.ConstraintConstrainedElementViewFactory;
 import org.eclipse.uml2.diagram.usecase.view.factories.ConstraintNameViewFactory;
 import org.eclipse.uml2.diagram.usecase.view.factories.ConstraintViewFactory;
+import org.eclipse.uml2.diagram.usecase.view.factories.DependencyNameViewFactory;
+import org.eclipse.uml2.diagram.usecase.view.factories.DependencyViewFactory;
 import org.eclipse.uml2.diagram.usecase.view.factories.DiagramHeaderViewFactory;
 import org.eclipse.uml2.diagram.usecase.view.factories.ElementImportViewFactory;
 import org.eclipse.uml2.diagram.usecase.view.factories.ExtendViewFactory;
@@ -288,6 +292,11 @@ public class UMLViewProvider extends AbstractViewProvider {
 						return null; // wrong container
 					}
 					break;
+				case DependencyNameEditPart.VISUAL_ID:
+					if (DependencyEditPart.VISUAL_ID != UMLVisualIDRegistry.getVisualID(containerView) || containerView.getElement() != domainElement) {
+						return null; // wrong container
+					}
+					break;
 				default:
 					return null;
 				}
@@ -376,6 +385,8 @@ public class UMLViewProvider extends AbstractViewProvider {
 			return AssociationTargetMultiplicityViewFactory.class;
 		case AssociationSourceMultiplicityEditPart.VISUAL_ID:
 			return AssociationSourceMultiplicityViewFactory.class;
+		case DependencyNameEditPart.VISUAL_ID:
+			return DependencyNameViewFactory.class;
 		}
 		return null;
 	}
@@ -418,6 +429,8 @@ public class UMLViewProvider extends AbstractViewProvider {
 			return AssociationViewFactory.class;
 		case ConstraintConstrainedElementEditPart.VISUAL_ID:
 			return ConstraintConstrainedElementViewFactory.class;
+		case DependencyEditPart.VISUAL_ID:
+			return DependencyViewFactory.class;
 		}
 		return null;
 	}

@@ -68,6 +68,10 @@
           xsi:type="gmftool:CreationTool"
           title="Constrained Element"
           description="Create Constrained Element"/>
+      <tools
+          xsi:type="gmftool:CreationTool"
+          title="Dependency"
+          description="Create Dependency Link"/>
     </tools>
   </palette>
 </gmftool:ToolRegistry>

@@ -48,6 +48,7 @@ import org.eclipse.uml2.diagram.usecase.part.UMLVisualIDRegistry;
 import org.eclipse.uml2.uml.Classifier;
 import org.eclipse.uml2.uml.Constraint;
 import org.eclipse.uml2.uml.Element;
+import org.eclipse.uml2.uml.NamedElement;
 import org.eclipse.uml2.uml.Package;
 import org.eclipse.uml2.uml.Type;
 import org.eclipse.uml2.uml.UMLPackage;
@@ -395,6 +396,20 @@ public class UMLBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 		/**
 		 * @generated
 		 */
+		private static final UMLAbstractExpression Dependency_4006_TargetExpression;
+
+		/**
+		 * @generated
+		 */
+		static {
+			Map env = new HashMap(3);
+			env.put(OPPOSITE_END_VAR, UMLPackage.eINSTANCE.getNamedElement());
+			Dependency_4006_TargetExpression = UMLOCLFactory.getExpression("not self.oclIsKindOf(uml::Interface)\r\n", UMLPackage.eINSTANCE.getNamedElement(), env); //$NON-NLS-1$
+		}
+
+		/**
+		 * @generated
+		 */
 		public static boolean canCreateInclude_4001(UseCase container, UseCase source, UseCase target) {
 			return canExistInclude_4001(container, source, target);
 		}
@@ -430,6 +445,13 @@ public class UMLBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 				}
 			}
 			return canExistConstraintConstrainedElement_4005(source, target);
+		}
+
+		/**
+		 * @generated
+		 */
+		public static boolean canCreateDependency_4006(Package container, NamedElement source, NamedElement target) {
+			return canExistDependency_4006(container, source, target);
 		}
 
 		/**
@@ -476,6 +498,16 @@ public class UMLBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 		 * @generated
 		 */
 		public static boolean canExistConstraintConstrainedElement_4005(Constraint source, Element target) {
+			return true;
+		}
+
+		/**
+		 * @generated
+		 */
+		public static boolean canExistDependency_4006(Package container, NamedElement source, NamedElement target) {
+			if (!evaluate(Dependency_4006_TargetExpression, target, source, true)) {
+				return false;
+			}
 			return true;
 		}
 

@@ -23,6 +23,7 @@ import org.eclipse.uml2.diagram.usecase.edit.parts.ActorNameEditPart;
 import org.eclipse.uml2.diagram.usecase.edit.parts.AssociationSourceMultiplicityEditPart;
 import org.eclipse.uml2.diagram.usecase.edit.parts.AssociationTargetMultiplicityEditPart;
 import org.eclipse.uml2.diagram.usecase.edit.parts.ConstraintNameEditPart;
+import org.eclipse.uml2.diagram.usecase.edit.parts.DependencyNameEditPart;
 import org.eclipse.uml2.diagram.usecase.edit.parts.ElementImportEditPart;
 import org.eclipse.uml2.diagram.usecase.edit.parts.ExtensionPoint2EditPart;
 import org.eclipse.uml2.diagram.usecase.edit.parts.ExtensionPointEditPart;
@@ -454,6 +455,30 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 	/**
 	 * @generated
 	 */
+	private IParser dependencyName_6005Parser;
+
+	/**
+	 * @generated
+	 */
+	private IParser getDependencyName_6005Parser() {
+		if (dependencyName_6005Parser == null) {
+			dependencyName_6005Parser = createDependencyName_6005Parser();
+		}
+		return dependencyName_6005Parser;
+	}
+
+	/**
+	 * @generated
+	 */
+	protected IParser createDependencyName_6005Parser() {
+		EAttribute[] features = new EAttribute[] { UMLPackage.eINSTANCE.getNamedElement_Name(), };
+		MessageFormatParser parser = new MessageFormatParser(features);
+		return parser;
+	}
+
+	/**
+	 * @generated
+	 */
 	protected IParser getParser(int visualID) {
 		switch (visualID) {
 		case PackageNameEditPart.VISUAL_ID:
@@ -488,6 +513,8 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 			return getAssociationName_6003Parser();
 		case AssociationSourceMultiplicityEditPart.VISUAL_ID:
 			return getAssociationName_6004Parser();
+		case DependencyNameEditPart.VISUAL_ID:
+			return getDependencyName_6005Parser();
 		}
 		return null;
 	}

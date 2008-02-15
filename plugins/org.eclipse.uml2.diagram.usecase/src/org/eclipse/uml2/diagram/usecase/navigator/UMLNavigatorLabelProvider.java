@@ -27,6 +27,8 @@ import org.eclipse.uml2.diagram.usecase.edit.parts.AssociationTargetMultiplicity
 import org.eclipse.uml2.diagram.usecase.edit.parts.ConstraintConstrainedElementEditPart;
 import org.eclipse.uml2.diagram.usecase.edit.parts.ConstraintEditPart;
 import org.eclipse.uml2.diagram.usecase.edit.parts.ConstraintNameEditPart;
+import org.eclipse.uml2.diagram.usecase.edit.parts.DependencyEditPart;
+import org.eclipse.uml2.diagram.usecase.edit.parts.DependencyNameEditPart;
 import org.eclipse.uml2.diagram.usecase.edit.parts.DiagramHeaderEditPart;
 import org.eclipse.uml2.diagram.usecase.edit.parts.ElementImportEditPart;
 import org.eclipse.uml2.diagram.usecase.edit.parts.ExtendEditPart;
@@ -145,6 +147,8 @@ public class UMLNavigatorLabelProvider extends LabelProvider implements ICommonL
 			return getImage("Navigator?Link?http://www.eclipse.org/uml2/2.1.0/UML?Association", UMLElementTypes.Association_4004); //$NON-NLS-1$
 		case ConstraintConstrainedElementEditPart.VISUAL_ID:
 			return getImage("Navigator?Link?http://www.eclipse.org/uml2/2.1.0/UML?Constraint?constrainedElement", UMLElementTypes.ConstraintConstrainedElement_4005); //$NON-NLS-1$
+		case DependencyEditPart.VISUAL_ID:
+			return getImage("Navigator?Link?http://www.eclipse.org/uml2/2.1.0/UML?Dependency", UMLElementTypes.Dependency_4006); //$NON-NLS-1$
 		}
 		return getImage("Navigator?UnknownElement", null); //$NON-NLS-1$
 	}
@@ -235,6 +239,8 @@ public class UMLNavigatorLabelProvider extends LabelProvider implements ICommonL
 			return getAssociation_4004Text(view);
 		case ConstraintConstrainedElementEditPart.VISUAL_ID:
 			return getConstraintConstrainedElement_4005Text(view);
+		case DependencyEditPart.VISUAL_ID:
+			return getDependency_4006Text(view);
 		}
 		return getUnknownElementText(view);
 	}
@@ -536,6 +542,23 @@ public class UMLNavigatorLabelProvider extends LabelProvider implements ICommonL
 	 */
 	private String getConstraintConstrainedElement_4005Text(View view) {
 		return ""; //$NON-NLS-1$
+	}
+
+	/**
+	 * @generated
+	 */
+	private String getDependency_4006Text(View view) {
+		IAdaptable hintAdapter = new UMLParserProvider.HintAdapter(UMLElementTypes.Dependency_4006, (view.getElement() != null ? view.getElement() : view), UMLVisualIDRegistry
+				.getType(DependencyNameEditPart.VISUAL_ID));
+		IParser parser = ParserService.getInstance().getParser(hintAdapter);
+
+		if (parser != null) {
+			return parser.getPrintString(hintAdapter, ParserOptions.NONE.intValue());
+		} else {
+			UMLDiagramEditorPlugin.getInstance().logError("Parser was not found for label " + 6005); //$NON-NLS-1$
+			return ""; //$NON-NLS-1$
+		}
+
 	}
 
 	/**

@@ -28,6 +28,7 @@ import org.eclipse.uml2.diagram.usecase.edit.parts.ActorEditPart;
 import org.eclipse.uml2.diagram.usecase.edit.parts.ActorInPackageEditPart;
 import org.eclipse.uml2.diagram.usecase.edit.parts.AssociationEditPart;
 import org.eclipse.uml2.diagram.usecase.edit.parts.ConstraintEditPart;
+import org.eclipse.uml2.diagram.usecase.edit.parts.DependencyEditPart;
 import org.eclipse.uml2.diagram.usecase.edit.parts.DiagramHeaderEditPart;
 import org.eclipse.uml2.diagram.usecase.edit.parts.ElementImportEditPart;
 import org.eclipse.uml2.diagram.usecase.edit.parts.ExtendEditPart;
@@ -357,6 +358,13 @@ public class PackageCanonicalEditPolicy extends CanonicalConnectionEditPolicy {
 		case AssociationEditPart.VISUAL_ID: {
 			if (!domain2NotationMap.containsKey(view.getElement())) {
 				result.addAll(UMLDiagramUpdater.getAssociation_4004ContainedLinks(view));
+			}
+			domain2NotationMap.put(view.getElement(), view);
+			break;
+		}
+		case DependencyEditPart.VISUAL_ID: {
+			if (!domain2NotationMap.containsKey(view.getElement())) {
+				result.addAll(UMLDiagramUpdater.getDependency_4006ContainedLinks(view));
 			}
 			domain2NotationMap.put(view.getElement(), view);
 			break;

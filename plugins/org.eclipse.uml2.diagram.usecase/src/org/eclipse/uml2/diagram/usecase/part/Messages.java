@@ -393,6 +393,16 @@ public class Messages extends NLS {
 	/**
 	 * @generated
 	 */
+	public static String Dependency6CreationTool_title;
+
+	/**
+	 * @generated
+	 */
+	public static String Dependency6CreationTool_desc;
+
+	/**
+	 * @generated
+	 */
 	public static String PackageImportsEditPart_title;
 
 	/**
@@ -439,6 +449,11 @@ public class Messages extends NLS {
 	 * @generated
 	 */
 	public static String NavigatorGroupName_Package_2001_incominglinks;
+
+	/**
+	 * @generated
+	 */
+	public static String NavigatorGroupName_Package_2001_outgoinglinks;
 
 	/**
 	 * @generated
@@ -498,6 +513,11 @@ public class Messages extends NLS {
 	/**
 	 * @generated
 	 */
+	public static String NavigatorGroupName_Package_2007_outgoinglinks;
+
+	/**
+	 * @generated
+	 */
 	public static String NavigatorGroupName_Constraint_2008_incominglinks;
 
 	/**
@@ -518,7 +538,17 @@ public class Messages extends NLS {
 	/**
 	 * @generated
 	 */
+	public static String NavigatorGroupName_ExtensionPoint_3002_outgoinglinks;
+
+	/**
+	 * @generated
+	 */
 	public static String NavigatorGroupName_ExtensionPoint_3003_incominglinks;
+
+	/**
+	 * @generated
+	 */
+	public static String NavigatorGroupName_ExtensionPoint_3003_outgoinglinks;
 
 	/**
 	 * @generated
@@ -599,6 +629,16 @@ public class Messages extends NLS {
 	 * @generated
 	 */
 	public static String NavigatorGroupName_ConstraintConstrainedElement_4005_source;
+
+	/**
+	 * @generated
+	 */
+	public static String NavigatorGroupName_Dependency_4006_target;
+
+	/**
+	 * @generated
+	 */
+	public static String NavigatorGroupName_Dependency_4006_source;
 
 	/**
 	 * @generated

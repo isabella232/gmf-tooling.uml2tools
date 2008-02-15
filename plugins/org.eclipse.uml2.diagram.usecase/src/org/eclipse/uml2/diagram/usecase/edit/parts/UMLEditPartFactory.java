@@ -153,6 +153,12 @@ public class UMLEditPartFactory implements EditPartFactory {
 
 			case ConstraintConstrainedElementEditPart.VISUAL_ID:
 				return new ConstraintConstrainedElementEditPart(view);
+
+			case DependencyEditPart.VISUAL_ID:
+				return new DependencyEditPart(view);
+
+			case DependencyNameEditPart.VISUAL_ID:
+				return new DependencyNameEditPart(view);
 			}
 		}
 		return createUnrecognizedEditPart(context, model);

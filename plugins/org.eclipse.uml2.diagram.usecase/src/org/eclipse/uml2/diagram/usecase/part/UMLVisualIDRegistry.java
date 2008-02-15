@@ -16,6 +16,8 @@ import org.eclipse.uml2.diagram.usecase.edit.parts.AssociationSourceMultiplicity
 import org.eclipse.uml2.diagram.usecase.edit.parts.AssociationTargetMultiplicityEditPart;
 import org.eclipse.uml2.diagram.usecase.edit.parts.ConstraintEditPart;
 import org.eclipse.uml2.diagram.usecase.edit.parts.ConstraintNameEditPart;
+import org.eclipse.uml2.diagram.usecase.edit.parts.DependencyEditPart;
+import org.eclipse.uml2.diagram.usecase.edit.parts.DependencyNameEditPart;
 import org.eclipse.uml2.diagram.usecase.edit.parts.DiagramHeaderEditPart;
 import org.eclipse.uml2.diagram.usecase.edit.parts.ElementImportEditPart;
 import org.eclipse.uml2.diagram.usecase.edit.parts.ExtendEditPart;
@@ -69,6 +71,14 @@ public class UMLVisualIDRegistry {
 	 * @generated
 	 */
 	private static final UMLAbstractExpression Association_4004_Constraint = UMLOCLFactory.getExpression("not self.oclIsTypeOf(uml::AssociationClass)", UMLPackage.eINSTANCE.getAssociation());
+
+	/**
+	 * @generated
+	 */
+	private static final UMLAbstractExpression Dependency_4006_Constraint = UMLOCLFactory
+			.getExpression(
+					"(self.oclIsTypeOf(uml::Dependency) or self.oclIsTypeOf(uml::Abstraction) or self.oclIsTypeOf(uml::Substitution) or self.oclIsTypeOf(uml::Usage)) and self.supplier->size() = 1 and self.client->size() = 1 and self.supplier->forAll(e|not e.oclIsKindOf(uml::Interface))",
+					UMLPackage.eINSTANCE.getDependency());
 
 	/**
 	 * @generated
@@ -406,6 +416,11 @@ public class UMLVisualIDRegistry {
 				return true;
 			}
 			break;
+		case DependencyEditPart.VISUAL_ID:
+			if (DependencyNameEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			break;
 		}
 		return false;
 	}
@@ -428,6 +443,9 @@ public class UMLVisualIDRegistry {
 		}
 		if (UMLPackage.eINSTANCE.getAssociation().isSuperTypeOf(domainElement.eClass()) && evaluate(Association_4004_Constraint, domainElement)) {
 			return AssociationEditPart.VISUAL_ID;
+		}
+		if (UMLPackage.eINSTANCE.getDependency().isSuperTypeOf(domainElement.eClass()) && evaluate(Dependency_4006_Constraint, domainElement)) {
+			return DependencyEditPart.VISUAL_ID;
 		}
 		return -1;
 	}

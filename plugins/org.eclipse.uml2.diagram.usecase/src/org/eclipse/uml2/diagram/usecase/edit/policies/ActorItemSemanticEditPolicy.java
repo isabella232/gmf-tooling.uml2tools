@@ -12,10 +12,13 @@ import org.eclipse.uml2.diagram.usecase.edit.commands.AssociationCreateCommand;
 import org.eclipse.uml2.diagram.usecase.edit.commands.AssociationReorientCommand;
 import org.eclipse.uml2.diagram.usecase.edit.commands.ConstraintConstrainedElementCreateCommand;
 import org.eclipse.uml2.diagram.usecase.edit.commands.ConstraintConstrainedElementReorientCommand;
+import org.eclipse.uml2.diagram.usecase.edit.commands.DependencyCreateCommand;
+import org.eclipse.uml2.diagram.usecase.edit.commands.DependencyReorientCommand;
 import org.eclipse.uml2.diagram.usecase.edit.commands.GeneralizationCreateCommand;
 import org.eclipse.uml2.diagram.usecase.edit.commands.GeneralizationReorientCommand;
 import org.eclipse.uml2.diagram.usecase.edit.parts.AssociationEditPart;
 import org.eclipse.uml2.diagram.usecase.edit.parts.ConstraintConstrainedElementEditPart;
+import org.eclipse.uml2.diagram.usecase.edit.parts.DependencyEditPart;
 import org.eclipse.uml2.diagram.usecase.edit.parts.GeneralizationEditPart;
 import org.eclipse.uml2.diagram.usecase.providers.UMLElementTypes;
 
@@ -59,6 +62,9 @@ public class ActorItemSemanticEditPolicy extends UMLBaseItemSemanticEditPolicy {
 		if (UMLElementTypes.ConstraintConstrainedElement_4005 == req.getElementType()) {
 			return null;
 		}
+		if (UMLElementTypes.Dependency_4006 == req.getElementType()) {
+			return getGEFWrapper(new DependencyCreateCommand(req, req.getSource(), req.getTarget()));
+		}
 		return null;
 	}
 
@@ -75,6 +81,9 @@ public class ActorItemSemanticEditPolicy extends UMLBaseItemSemanticEditPolicy {
 		if (UMLElementTypes.ConstraintConstrainedElement_4005 == req.getElementType()) {
 			return getGEFWrapper(new ConstraintConstrainedElementCreateCommand(req, req.getSource(), req.getTarget()));
 		}
+		if (UMLElementTypes.Dependency_4006 == req.getElementType()) {
+			return getGEFWrapper(new DependencyCreateCommand(req, req.getSource(), req.getTarget()));
+		}
 		return null;
 	}
 
@@ -90,6 +99,8 @@ public class ActorItemSemanticEditPolicy extends UMLBaseItemSemanticEditPolicy {
 			return getGEFWrapper(new GeneralizationReorientCommand(req));
 		case AssociationEditPart.VISUAL_ID:
 			return getGEFWrapper(new AssociationReorientCommand(req));
+		case DependencyEditPart.VISUAL_ID:
+			return getGEFWrapper(new DependencyReorientCommand(req));
 		}
 		return super.getReorientRelationshipCommand(req);
 	}

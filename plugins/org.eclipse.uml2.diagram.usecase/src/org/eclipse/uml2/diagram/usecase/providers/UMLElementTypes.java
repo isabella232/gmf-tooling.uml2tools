@@ -147,6 +147,11 @@ public class UMLElementTypes extends ElementInitializers {
 	/**
 	 * @generated
 	 */
+	public static final IElementType Dependency_4006 = getElementType("org.eclipse.uml2.diagram.usecase.Dependency_4006"); //$NON-NLS-1$
+
+	/**
+	 * @generated
+	 */
 	private static ImageRegistry getImageRegistry() {
 		if (imageRegistry == null) {
 			imageRegistry = new ImageRegistry();
@@ -289,6 +294,8 @@ public class UMLElementTypes extends ElementInitializers {
 			elements.put(Association_4004, UMLPackage.eINSTANCE.getAssociation());
 
 			elements.put(ConstraintConstrainedElement_4005, UMLPackage.eINSTANCE.getConstraint_ConstrainedElement());
+
+			elements.put(Dependency_4006, UMLPackage.eINSTANCE.getDependency());
 		}
 		return (ENamedElement) elements.get(type);
 	}
@@ -326,6 +333,7 @@ public class UMLElementTypes extends ElementInitializers {
 			KNOWN_ELEMENT_TYPES.add(Generalization_4003);
 			KNOWN_ELEMENT_TYPES.add(Association_4004);
 			KNOWN_ELEMENT_TYPES.add(ConstraintConstrainedElement_4005);
+			KNOWN_ELEMENT_TYPES.add(Dependency_4006);
 		}
 		return KNOWN_ELEMENT_TYPES.contains(elementType);
 	}

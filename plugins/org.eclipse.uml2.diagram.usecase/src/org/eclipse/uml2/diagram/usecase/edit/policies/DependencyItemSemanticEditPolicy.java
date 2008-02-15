@@ -6,24 +6,18 @@ import org.eclipse.gmf.runtime.emf.type.core.requests.CreateRelationshipRequest;
 import org.eclipse.gmf.runtime.emf.type.core.requests.DestroyElementRequest;
 import org.eclipse.gmf.runtime.emf.type.core.requests.ReorientReferenceRelationshipRequest;
 import org.eclipse.gmf.runtime.emf.type.core.requests.ReorientRelationshipRequest;
-import org.eclipse.uml2.diagram.usecase.edit.commands.AssociationCreateCommand;
-import org.eclipse.uml2.diagram.usecase.edit.commands.AssociationReorientCommand;
 import org.eclipse.uml2.diagram.usecase.edit.commands.ConstraintConstrainedElementCreateCommand;
 import org.eclipse.uml2.diagram.usecase.edit.commands.ConstraintConstrainedElementReorientCommand;
 import org.eclipse.uml2.diagram.usecase.edit.commands.DependencyCreateCommand;
 import org.eclipse.uml2.diagram.usecase.edit.commands.DependencyReorientCommand;
-import org.eclipse.uml2.diagram.usecase.edit.commands.GeneralizationCreateCommand;
-import org.eclipse.uml2.diagram.usecase.edit.commands.GeneralizationReorientCommand;
-import org.eclipse.uml2.diagram.usecase.edit.parts.AssociationEditPart;
 import org.eclipse.uml2.diagram.usecase.edit.parts.ConstraintConstrainedElementEditPart;
 import org.eclipse.uml2.diagram.usecase.edit.parts.DependencyEditPart;
-import org.eclipse.uml2.diagram.usecase.edit.parts.GeneralizationEditPart;
 import org.eclipse.uml2.diagram.usecase.providers.UMLElementTypes;
 
 /**
  * @generated
  */
-public class AssociationItemSemanticEditPolicy extends UMLBaseItemSemanticEditPolicy {
+public class DependencyItemSemanticEditPolicy extends UMLBaseItemSemanticEditPolicy {
 
 	/**
 	 * @generated
@@ -44,12 +38,6 @@ public class AssociationItemSemanticEditPolicy extends UMLBaseItemSemanticEditPo
 	 * @generated
 	 */
 	protected Command getStartCreateRelationshipCommand(CreateRelationshipRequest req) {
-		if (UMLElementTypes.Generalization_4003 == req.getElementType()) {
-			return getGEFWrapper(new GeneralizationCreateCommand(req, req.getSource(), req.getTarget()));
-		}
-		if (UMLElementTypes.Association_4004 == req.getElementType()) {
-			return getGEFWrapper(new AssociationCreateCommand(req, req.getSource(), req.getTarget()));
-		}
 		if (UMLElementTypes.ConstraintConstrainedElement_4005 == req.getElementType()) {
 			return null;
 		}
@@ -63,12 +51,6 @@ public class AssociationItemSemanticEditPolicy extends UMLBaseItemSemanticEditPo
 	 * @generated
 	 */
 	protected Command getCompleteCreateRelationshipCommand(CreateRelationshipRequest req) {
-		if (UMLElementTypes.Generalization_4003 == req.getElementType()) {
-			return getGEFWrapper(new GeneralizationCreateCommand(req, req.getSource(), req.getTarget()));
-		}
-		if (UMLElementTypes.Association_4004 == req.getElementType()) {
-			return getGEFWrapper(new AssociationCreateCommand(req, req.getSource(), req.getTarget()));
-		}
 		if (UMLElementTypes.ConstraintConstrainedElement_4005 == req.getElementType()) {
 			return getGEFWrapper(new ConstraintConstrainedElementCreateCommand(req, req.getSource(), req.getTarget()));
 		}
@@ -86,10 +68,6 @@ public class AssociationItemSemanticEditPolicy extends UMLBaseItemSemanticEditPo
 	 */
 	protected Command getReorientRelationshipCommand(ReorientRelationshipRequest req) {
 		switch (getVisualID(req)) {
-		case GeneralizationEditPart.VISUAL_ID:
-			return getGEFWrapper(new GeneralizationReorientCommand(req));
-		case AssociationEditPart.VISUAL_ID:
-			return getGEFWrapper(new AssociationReorientCommand(req));
 		case DependencyEditPart.VISUAL_ID:
 			return getGEFWrapper(new DependencyReorientCommand(req));
 		}
