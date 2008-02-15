@@ -24,6 +24,8 @@ import org.eclipse.uml2.diagram.component.edit.parts.ComponentName2EditPart;
 import org.eclipse.uml2.diagram.component.edit.parts.ComponentNameEditPart;
 import org.eclipse.uml2.diagram.component.edit.parts.ComponentRequiredEditPart;
 import org.eclipse.uml2.diagram.component.edit.parts.ConnectorEditPart;
+import org.eclipse.uml2.diagram.component.edit.parts.DependencyEditPart;
+import org.eclipse.uml2.diagram.component.edit.parts.DependencyNameEditPart;
 import org.eclipse.uml2.diagram.component.edit.parts.ElementImportEditPart;
 import org.eclipse.uml2.diagram.component.edit.parts.Interface2EditPart;
 import org.eclipse.uml2.diagram.component.edit.parts.InterfaceEditPart;
@@ -64,6 +66,8 @@ import org.eclipse.uml2.diagram.component.view.factories.ComponentNameViewFactor
 import org.eclipse.uml2.diagram.component.view.factories.ComponentRequiredViewFactory;
 import org.eclipse.uml2.diagram.component.view.factories.ComponentViewFactory;
 import org.eclipse.uml2.diagram.component.view.factories.ConnectorViewFactory;
+import org.eclipse.uml2.diagram.component.view.factories.DependencyNameViewFactory;
+import org.eclipse.uml2.diagram.component.view.factories.DependencyViewFactory;
 import org.eclipse.uml2.diagram.component.view.factories.ElementImportViewFactory;
 import org.eclipse.uml2.diagram.component.view.factories.Interface2ViewFactory;
 import org.eclipse.uml2.diagram.component.view.factories.InterfaceName2ViewFactory;
@@ -231,6 +235,11 @@ public class UMLViewProvider extends AbstractViewProvider {
 						return null; // wrong container
 					}
 					break;
+				case DependencyNameEditPart.VISUAL_ID:
+					if (DependencyEditPart.VISUAL_ID != UMLVisualIDRegistry.getVisualID(containerView) || containerView.getElement() != domainElement) {
+						return null; // wrong container
+					}
+					break;
 				default:
 					return null;
 				}
@@ -313,6 +322,8 @@ public class UMLViewProvider extends AbstractViewProvider {
 			return PackagePackagesViewFactory.class;
 		case PackageClassifiersEditPart.VISUAL_ID:
 			return PackageClassifiersViewFactory.class;
+		case DependencyNameEditPart.VISUAL_ID:
+			return DependencyNameViewFactory.class;
 		}
 		return null;
 	}
@@ -355,6 +366,8 @@ public class UMLViewProvider extends AbstractViewProvider {
 			return ComponentRequiredViewFactory.class;
 		case ConnectorEditPart.VISUAL_ID:
 			return ConnectorViewFactory.class;
+		case DependencyEditPart.VISUAL_ID:
+			return DependencyViewFactory.class;
 		}
 		return null;
 	}

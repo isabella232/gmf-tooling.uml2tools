@@ -55,6 +55,10 @@
           xsi:type="gmftool:CreationTool"
           title="Delegation Connector"
           description="Create Delegation Connector"/>
+      <tools
+          xsi:type="gmftool:CreationTool"
+          title="Dependency"
+          description="Create Dependency link"/>
     </tools>
     <tools
         xsi:type="gmftool:ToolGroup"

@@ -19,7 +19,7 @@ public class DiagramAppearancePreferencePage extends AppearancePreferencePage {
 	 * @NOT-generated
 	 */
 	private static final String HIGHLIGHT_COLOR_LABEL = "Highlight Color";
-	
+
 	/**
 	 * @NOT-generated
 	 */

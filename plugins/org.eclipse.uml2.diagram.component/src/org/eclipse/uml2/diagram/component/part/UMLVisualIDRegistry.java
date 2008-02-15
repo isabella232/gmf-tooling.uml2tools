@@ -22,6 +22,8 @@ import org.eclipse.uml2.diagram.component.edit.parts.ComponentEditPart;
 import org.eclipse.uml2.diagram.component.edit.parts.ComponentName2EditPart;
 import org.eclipse.uml2.diagram.component.edit.parts.ComponentNameEditPart;
 import org.eclipse.uml2.diagram.component.edit.parts.ConnectorEditPart;
+import org.eclipse.uml2.diagram.component.edit.parts.DependencyEditPart;
+import org.eclipse.uml2.diagram.component.edit.parts.DependencyNameEditPart;
 import org.eclipse.uml2.diagram.component.edit.parts.ElementImportEditPart;
 import org.eclipse.uml2.diagram.component.edit.parts.Interface2EditPart;
 import org.eclipse.uml2.diagram.component.edit.parts.InterfaceEditPart;
@@ -85,6 +87,14 @@ public class UMLVisualIDRegistry {
 	 */
 	private static final UMLAbstractExpression InterfaceRealization_4001_Constraint = UMLOCLFactory.getExpression("self.implementingClassifier.oclIsKindOf(uml::Component)", UMLPackage.eINSTANCE
 			.getInterfaceRealization());
+
+	/**
+	 * @generated
+	 */
+	private static final UMLAbstractExpression Dependency_4009_Constraint = UMLOCLFactory
+			.getExpression(
+					"(self.oclIsTypeOf(uml::Dependency) or self.oclIsTypeOf(uml::Abstraction) or self.oclIsTypeOf(uml::Substitution) or self.oclIsTypeOf(uml::Usage)) and self.supplier->size() = 1 and self.client->size() = 1 and self.supplier->forAll(e|not e.oclIsKindOf(uml::Interface))",
+					UMLPackage.eINSTANCE.getDependency());
 
 	/**
 	 * @generated
@@ -451,6 +461,11 @@ public class UMLVisualIDRegistry {
 				return true;
 			}
 			break;
+		case DependencyEditPart.VISUAL_ID:
+			if (DependencyNameEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			break;
 		}
 		return false;
 	}
@@ -467,6 +482,9 @@ public class UMLVisualIDRegistry {
 		}
 		if (UMLPackage.eINSTANCE.getConnector().isSuperTypeOf(domainElement.eClass())) {
 			return ConnectorEditPart.VISUAL_ID;
+		}
+		if (UMLPackage.eINSTANCE.getDependency().isSuperTypeOf(domainElement.eClass()) && evaluate(Dependency_4009_Constraint, domainElement)) {
+			return DependencyEditPart.VISUAL_ID;
 		}
 		return -1;
 	}

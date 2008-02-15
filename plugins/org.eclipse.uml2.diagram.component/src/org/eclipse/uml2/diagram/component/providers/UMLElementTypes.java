@@ -157,6 +157,11 @@ public class UMLElementTypes extends ElementInitializers {
 	/**
 	 * @generated
 	 */
+	public static final IElementType Dependency_4009 = getElementType("org.eclipse.uml2.diagram.component.Dependency_4009"); //$NON-NLS-1$
+
+	/**
+	 * @generated
+	 */
 	private static ImageRegistry getImageRegistry() {
 		if (imageRegistry == null) {
 			imageRegistry = new ImageRegistry();
@@ -303,6 +308,8 @@ public class UMLElementTypes extends ElementInitializers {
 			elements.put(ComponentRequired_4007, UMLPackage.eINSTANCE.getComponent_Required());
 
 			elements.put(Connector_4008, UMLPackage.eINSTANCE.getConnector());
+
+			elements.put(Dependency_4009, UMLPackage.eINSTANCE.getDependency());
 		}
 		return (ENamedElement) elements.get(type);
 	}
@@ -342,6 +349,7 @@ public class UMLElementTypes extends ElementInitializers {
 			KNOWN_ELEMENT_TYPES.add(PortRequired_4004);
 			KNOWN_ELEMENT_TYPES.add(ComponentRequired_4007);
 			KNOWN_ELEMENT_TYPES.add(Connector_4008);
+			KNOWN_ELEMENT_TYPES.add(Dependency_4009);
 		}
 		return KNOWN_ELEMENT_TYPES.contains(elementType);
 	}

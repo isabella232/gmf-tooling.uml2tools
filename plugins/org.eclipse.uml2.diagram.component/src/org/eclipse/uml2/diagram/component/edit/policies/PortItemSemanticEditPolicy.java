@@ -9,11 +9,14 @@ import org.eclipse.gmf.runtime.emf.type.core.requests.ReorientReferenceRelations
 import org.eclipse.gmf.runtime.emf.type.core.requests.ReorientRelationshipRequest;
 import org.eclipse.uml2.diagram.component.edit.commands.ConnectorCreateCommand;
 import org.eclipse.uml2.diagram.component.edit.commands.ConnectorReorientCommand;
+import org.eclipse.uml2.diagram.component.edit.commands.DependencyCreateCommand;
+import org.eclipse.uml2.diagram.component.edit.commands.DependencyReorientCommand;
 import org.eclipse.uml2.diagram.component.edit.commands.PortProvidedCreateCommand;
 import org.eclipse.uml2.diagram.component.edit.commands.PortProvidedReorientCommand;
 import org.eclipse.uml2.diagram.component.edit.commands.PortRequiredCreateCommand;
 import org.eclipse.uml2.diagram.component.edit.commands.PortRequiredReorientCommand;
 import org.eclipse.uml2.diagram.component.edit.parts.ConnectorEditPart;
+import org.eclipse.uml2.diagram.component.edit.parts.DependencyEditPart;
 import org.eclipse.uml2.diagram.component.edit.parts.PortProvidedEditPart;
 import org.eclipse.uml2.diagram.component.edit.parts.PortRequiredEditPart;
 import org.eclipse.uml2.diagram.component.providers.UMLElementTypes;
@@ -54,6 +57,9 @@ public class PortItemSemanticEditPolicy extends UMLBaseItemSemanticEditPolicy {
 		if (UMLElementTypes.Connector_4008 == req.getElementType()) {
 			return getGEFWrapper(new ConnectorCreateCommand(req, req.getSource(), req.getTarget()));
 		}
+		if (UMLElementTypes.Dependency_4009 == req.getElementType()) {
+			return getGEFWrapper(new DependencyCreateCommand(req, req.getSource(), req.getTarget()));
+		}
 		return null;
 	}
 
@@ -70,6 +76,9 @@ public class PortItemSemanticEditPolicy extends UMLBaseItemSemanticEditPolicy {
 		if (UMLElementTypes.Connector_4008 == req.getElementType()) {
 			return getGEFWrapper(new ConnectorCreateCommand(req, req.getSource(), req.getTarget()));
 		}
+		if (UMLElementTypes.Dependency_4009 == req.getElementType()) {
+			return getGEFWrapper(new DependencyCreateCommand(req, req.getSource(), req.getTarget()));
+		}
 		return null;
 	}
 
@@ -83,6 +92,8 @@ public class PortItemSemanticEditPolicy extends UMLBaseItemSemanticEditPolicy {
 		switch (getVisualID(req)) {
 		case ConnectorEditPart.VISUAL_ID:
 			return getGEFWrapper(new ConnectorReorientCommand(req));
+		case DependencyEditPart.VISUAL_ID:
+			return getGEFWrapper(new DependencyReorientCommand(req));
 		}
 		return super.getReorientRelationshipCommand(req);
 	}

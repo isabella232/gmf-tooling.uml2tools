@@ -117,6 +117,11 @@
             <popupAction path="/editGroup" id="deleteFromModelAction"/>
             <popupPredefinedItem id="deleteFromDiagramAction" remove="true"/>
          </popupContribution>
+         <popupContribution class="org.eclipse.gmf.runtime.diagram.ui.providers.DiagramContextMenuProvider">
+            <popupStructuredContributionCriteria objectClass="org.eclipse.uml2.diagram.component.edit.parts.DependencyNameEditPart"/>
+            <popupPredefinedItem id="deleteFromDiagramAction" remove="true"/>
+            <popupPredefinedItem id="deleteFromModelAction" remove="true"/>
+         </popupContribution>
       </contributionItemProvider>
    </extension>
 
@@ -415,6 +420,16 @@
             <param name="semanticHint" value="4008"/>
          </metamodelType>
       </metamodel>
+      <metamodel nsURI="http://www.eclipse.org/uml2/2.1.0/UML">
+         <metamodelType
+               id="org.eclipse.uml2.diagram.component.Dependency_4009"
+               name="%metatype.name.Dependency_4009"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
+               eclass="Dependency"
+               edithelper="org.eclipse.uml2.diagram.component.edit.helpers.DependencyEditHelper">
+            <param name="semanticHint" value="4009"/>
+         </metamodelType>
+      </metamodel>
    </extension>
 
    <extension point="org.eclipse.gmf.runtime.emf.type.core.elementTypeBindings">
@@ -449,6 +464,7 @@
          <elementType ref="org.eclipse.uml2.diagram.component.PortRequired_4004"/>
          <elementType ref="org.eclipse.uml2.diagram.component.ComponentRequired_4007"/>
          <elementType ref="org.eclipse.uml2.diagram.component.Connector_4008"/>
+         <elementType ref="org.eclipse.uml2.diagram.component.Dependency_4009"/>
          <advice ref="org.eclipse.gmf.runtime.diagram.core.advice.notationDepdendents"/>
       </binding>
    </extension>

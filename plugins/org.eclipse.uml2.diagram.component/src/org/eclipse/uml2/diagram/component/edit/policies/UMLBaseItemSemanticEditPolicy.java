@@ -49,6 +49,8 @@ import org.eclipse.uml2.uml.BehavioredClassifier;
 import org.eclipse.uml2.uml.Component;
 import org.eclipse.uml2.uml.ConnectableElement;
 import org.eclipse.uml2.uml.Interface;
+import org.eclipse.uml2.uml.NamedElement;
+import org.eclipse.uml2.uml.Package;
 import org.eclipse.uml2.uml.Port;
 import org.eclipse.uml2.uml.StructuredClassifier;
 import org.eclipse.uml2.uml.UMLPackage;
@@ -379,6 +381,20 @@ public class UMLBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 		}
 
 		/**
+		 * @generated
+		 */
+		private static final UMLAbstractExpression Dependency_4009_TargetExpression;
+
+		/**
+		 * @generated
+		 */
+		static {
+			Map env = new HashMap(3);
+			env.put(OPPOSITE_END_VAR, UMLPackage.eINSTANCE.getNamedElement());
+			Dependency_4009_TargetExpression = UMLOCLFactory.getExpression("not self.oclIsKindOf(uml::Interface)\r\n", UMLPackage.eINSTANCE.getNamedElement(), env); //$NON-NLS-1$
+		}
+
+		/**
 		 * @generated 
 		 */
 		public static boolean canCreateInterfaceRealization_4001(BehavioredClassifier container, BehavioredClassifier source, Interface target) {
@@ -431,6 +447,13 @@ public class UMLBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 		/**
 		 * @generated
 		 */
+		public static boolean canCreateDependency_4009(Package container, NamedElement source, NamedElement target) {
+			return canExistDependency_4009(container, source, target);
+		}
+
+		/**
+		 * @generated
+		 */
 		public static boolean canExistInterfaceRealization_4001(BehavioredClassifier container, BehavioredClassifier source, Interface target) {
 			if (!evaluate(InterfaceRealization_4001_SourceExpression, source, target, false)) {
 				return false;
@@ -469,6 +492,16 @@ public class UMLBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 		 * @generated
 		 */
 		public static boolean canExistConnector_4008(StructuredClassifier container, ConnectableElement source, ConnectableElement target) {
+			return true;
+		}
+
+		/**
+		 * @generated
+		 */
+		public static boolean canExistDependency_4009(Package container, NamedElement source, NamedElement target) {
+			if (!evaluate(Dependency_4009_TargetExpression, target, source, true)) {
+				return false;
+			}
 			return true;
 		}
 

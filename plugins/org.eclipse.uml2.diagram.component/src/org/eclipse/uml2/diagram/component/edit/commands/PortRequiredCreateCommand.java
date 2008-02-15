@@ -75,14 +75,14 @@ public class PortRequiredCreateCommand extends EditElementCommand {
 		boolean isReadOnly = ((AdapterFactoryEditingDomain) getEditingDomain()).isReadOnly(type.eResource());
 		return !isReadOnly;
 	}
-	
+
 	/**
 	 * @generated NOT
 	 */
 	protected CommandResult doExecuteWithResult(IProgressMonitor monitor, IAdaptable info) throws ExecutionException {
 		if (!canExecute()) {
 			throw new ExecutionException("Invalid arguments in create link command"); //$NON-NLS-1$
-		}		
+		}
 		if (getSource() != null && getTarget() != null && getSource().getType() != null) {
 			Type type = getSource().getType();
 			if (type instanceof Classifier && !(type instanceof Interface)) {
@@ -92,7 +92,6 @@ public class PortRequiredCreateCommand extends EditElementCommand {
 		}
 		return CommandResult.newOKCommandResult();
 	}
-	
 
 	/**
 	 * @generated

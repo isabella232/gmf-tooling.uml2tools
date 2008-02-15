@@ -8,7 +8,10 @@ import org.eclipse.gmf.runtime.emf.type.core.requests.DestroyElementRequest;
 import org.eclipse.gmf.runtime.emf.type.core.requests.ReorientRelationshipRequest;
 import org.eclipse.uml2.diagram.component.edit.commands.ConnectorCreateCommand;
 import org.eclipse.uml2.diagram.component.edit.commands.ConnectorReorientCommand;
+import org.eclipse.uml2.diagram.component.edit.commands.DependencyCreateCommand;
+import org.eclipse.uml2.diagram.component.edit.commands.DependencyReorientCommand;
 import org.eclipse.uml2.diagram.component.edit.parts.ConnectorEditPart;
+import org.eclipse.uml2.diagram.component.edit.parts.DependencyEditPart;
 import org.eclipse.uml2.diagram.component.providers.UMLElementTypes;
 
 /**
@@ -41,6 +44,9 @@ public class PropertyItemSemanticEditPolicy extends UMLBaseItemSemanticEditPolic
 		if (UMLElementTypes.Connector_4008 == req.getElementType()) {
 			return getGEFWrapper(new ConnectorCreateCommand(req, req.getSource(), req.getTarget()));
 		}
+		if (UMLElementTypes.Dependency_4009 == req.getElementType()) {
+			return getGEFWrapper(new DependencyCreateCommand(req, req.getSource(), req.getTarget()));
+		}
 		return null;
 	}
 
@@ -50,6 +56,9 @@ public class PropertyItemSemanticEditPolicy extends UMLBaseItemSemanticEditPolic
 	protected Command getCompleteCreateRelationshipCommand(CreateRelationshipRequest req) {
 		if (UMLElementTypes.Connector_4008 == req.getElementType()) {
 			return getGEFWrapper(new ConnectorCreateCommand(req, req.getSource(), req.getTarget()));
+		}
+		if (UMLElementTypes.Dependency_4009 == req.getElementType()) {
+			return getGEFWrapper(new DependencyCreateCommand(req, req.getSource(), req.getTarget()));
 		}
 		return null;
 	}
@@ -64,6 +73,8 @@ public class PropertyItemSemanticEditPolicy extends UMLBaseItemSemanticEditPolic
 		switch (getVisualID(req)) {
 		case ConnectorEditPart.VISUAL_ID:
 			return getGEFWrapper(new ConnectorReorientCommand(req));
+		case DependencyEditPart.VISUAL_ID:
+			return getGEFWrapper(new DependencyReorientCommand(req));
 		}
 		return super.getReorientRelationshipCommand(req);
 	}

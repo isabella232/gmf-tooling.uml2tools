@@ -53,6 +53,7 @@ public class UMLPaletteFactory {
 		paletteContainer.add(createProvidedInterface1CreationTool());
 		paletteContainer.add(createRequiredInterface2CreationTool());
 		paletteContainer.add(createDelegationConnector3CreationTool());
+		paletteContainer.add(createDependency4CreationTool());
 		return paletteContainer;
 	}
 
@@ -192,6 +193,18 @@ public class UMLPaletteFactory {
 		types.add(UMLElementTypes.Connector_4008);
 		LinkToolEntry entry = new LinkToolEntry(Messages.DelegationConnector3CreationTool_title, Messages.DelegationConnector3CreationTool_desc, types);
 		entry.setSmallIcon(UMLElementTypes.getImageDescriptor(UMLElementTypes.Connector_4008));
+		entry.setLargeIcon(entry.getSmallIcon());
+		return entry;
+	}
+
+	/**
+	 * @generated
+	 */
+	private ToolEntry createDependency4CreationTool() {
+		List/*<IElementType>*/types = new ArrayList/*<IElementType>*/(1);
+		types.add(UMLElementTypes.Dependency_4009);
+		LinkToolEntry entry = new LinkToolEntry(Messages.Dependency4CreationTool_title, Messages.Dependency4CreationTool_desc, types);
+		entry.setSmallIcon(UMLElementTypes.getImageDescriptor(UMLElementTypes.Dependency_4009));
 		entry.setLargeIcon(entry.getSmallIcon());
 		return entry;
 	}

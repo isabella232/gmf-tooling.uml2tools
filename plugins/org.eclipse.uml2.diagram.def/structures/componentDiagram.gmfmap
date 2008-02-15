@@ -495,6 +495,36 @@
         xsi:type="ecore:EReference"
         href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//ConnectorEnd/role"/>
   </links>
+  <links>
+    <domainMetaElement
+        href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//Dependency"/>
+    <domainSpecialization
+        body="(self.oclIsTypeOf(uml::Dependency) or self.oclIsTypeOf(uml::Abstraction) or self.oclIsTypeOf(uml::Substitution) or self.oclIsTypeOf(uml::Usage)) and self.supplier->size() = 1 and self.client->size() = 1 and self.supplier->forAll(e|not e.oclIsKindOf(uml::Interface))"/>
+    <labelMappings
+        xsi:type="gmfmap:FeatureLabelMapping">
+      <diagramLabel
+          href="common_dependencies.gmfgraph#Dependency_name"/>
+      <features
+          href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//NamedElement/name"/>
+    </labelMappings>
+    <containmentFeature
+        href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//Package/packagedElement"/>
+    <tool
+        xsi:type="gmftool:CreationTool"
+        href="componentDiagram.gmftool#//@palette/@tools.1/@tools.3"/>
+    <diagramLink
+        href="common_dependencies.gmfgraph#BinaryDependencyLink"/>
+    <sourceMetaFeature
+        xsi:type="ecore:EReference"
+        href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//Dependency/client"/>
+    <linkMetaFeature
+        xsi:type="ecore:EReference"
+        href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//Dependency/supplier"/>
+    <creationConstraints>
+      <targetEnd
+          body="not self.oclIsKindOf(uml::Interface)&#xD;&#xA;"/>
+    </creationConstraints>
+  </links>
   <diagram>
     <diagramCanvas
         href="classDiagram_auxiliary.gmfgraph#cnvAuxiliary"/>
