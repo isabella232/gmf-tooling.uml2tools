@@ -9,7 +9,7 @@
  * Contributors:
  *    Michael Golubev (Borland) - initial API and implementation
  */
-package org.eclipse.uml2.diagram.clazz.parser.stereotype;
+package org.eclipse.uml2.diagram.common.parser.stereotype;
 
 import java.text.MessageFormat;
 import java.util.LinkedList;
