@@ -412,7 +412,7 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 
 					@Override
 					protected void appendMultiplicity(StringBuffer result, MultiplicityElement element) {
-						appendMultiplicity(result, element, false);
+						appendMultiplicity(result, element, true);
 					}
 				}, new AssociationEndToString.EDIT(sourceNotTarget) {
 
