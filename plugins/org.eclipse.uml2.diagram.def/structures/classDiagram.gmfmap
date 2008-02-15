@@ -1805,11 +1805,11 @@
         xsi:type="gmfmap:DesignLabelMapping"
         readOnly="true">
       <diagramLabel
-          href="classDiagram_dependencies.gmfgraph#TemplateBinding_binding"/>
+          href="classDiagram_templates.gmfgraph#TemplateBinding_binding"/>
     </labelMappings>
     <labelMappings>
       <diagramLabel
-          href="classDiagram_dependencies.gmfgraph#TemplateBinding_templateParameterSubstitution"/>
+          href="classDiagram_templates.gmfgraph#TemplateBinding_templateParameterSubstitution"/>
     </labelMappings>
     <containmentFeature
         href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//TemplateableElement/templateBinding"/>
@@ -1817,7 +1817,7 @@
         xsi:type="gmftool:CreationTool"
         href="classDiagram.gmftool#//@palette/@tools.2/@tools.10"/>
     <diagramLink
-        href="classDiagram_dependencies.gmfgraph#TemplateBindingLink"/>
+        href="classDiagram_templates.gmfgraph#TemplateBindingLink"/>
     <sourceMetaFeature
         xsi:type="ecore:EReference"
         href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//TemplateBinding/boundElement"/>

@@ -26,6 +26,46 @@
       <accessors
           figure="//@figures.0/@descriptors.0/@actualFigure/@children.0"/>
     </descriptors>
+    <descriptors
+        name="TemplateBinding_Polyline">
+      <actualFigure
+          xsi:type="gmfgraph:PolylineConnection"
+          name="Realization_Polyline"
+          lineKind="LINE_DASH"
+          targetDecoration="//@figures.0/@descriptors.1/@actualFigure/@children.0">
+        <foregroundColor
+            xsi:type="gmfgraph:ConstantColor"
+            value="lightGray"/>
+        <children
+            xsi:type="gmfgraph:PolylineDecoration"
+            name="TemplateBinding_ArrowDecoration">
+          <template
+              x="-1"
+              y="1"/>
+          <template/>
+          <template
+              x="-1"
+              y="-1"/>
+          <template
+              x="-1"
+              y="1"/>
+        </children>
+      </actualFigure>
+    </descriptors>
+    <descriptors
+        name="TemplateBinding_BindLabel">
+      <actualFigure
+          xsi:type="gmfgraph:Label"
+          name="TemplateBinding_BindLabel"
+          text="&lt;&lt;bind>>"/>
+    </descriptors>
+    <descriptors
+        name="TemplateBinding_templateParameterSubstitutionLabel">
+      <actualFigure
+          xsi:type="gmfgraph:Label"
+          name="TemplateBinding_templateParameterSubstitutionLabel"
+          text="&lt;>"/>
+    </descriptors>
   </figures>
   <nodes
       name="TemplateSignatureNode"
@@ -38,9 +78,20 @@
           dy="20"/>
     </facets>
   </nodes>
+  <connections
+      name="TemplateBindingLink"
+      figure="TemplateBinding_Polyline"/>
   <labels
       name="TemplateSignatureNode_signature"
       figure="TemplateSignatureFigure"
       elementIcon="false"
       accessor="//@figures.0/@descriptors.0/@accessors.0"/>
+  <labels
+      name="TemplateBinding_binding"
+      figure="TemplateBinding_BindLabel"
+      elementIcon="false"/>
+  <labels
+      name="TemplateBinding_templateParameterSubstitution"
+      figure="TemplateBinding_templateParameterSubstitutionLabel"
+      elementIcon="false"/>
 </gmfgraph:Canvas>
