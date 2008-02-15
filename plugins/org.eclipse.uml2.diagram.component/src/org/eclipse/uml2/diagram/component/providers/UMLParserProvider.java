@@ -12,9 +12,22 @@ import org.eclipse.gmf.runtime.emf.type.core.IElementType;
 import org.eclipse.gmf.runtime.emf.ui.services.parser.ParserHintAdapter;
 import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.uml2.diagram.common.parser.imports.ElementImportParser;
+import org.eclipse.uml2.diagram.common.parser.operation.OperationInplaceApplier;
+import org.eclipse.uml2.diagram.common.parser.operation.OperationParser;
+import org.eclipse.uml2.diagram.common.parser.operation.OperationToString;
+import org.eclipse.uml2.diagram.common.parser.port.PortParser;
+import org.eclipse.uml2.diagram.common.parser.port.PortToString;
+import org.eclipse.uml2.diagram.common.parser.property.PropertyParser;
+import org.eclipse.uml2.diagram.common.parser.property.PropertyToString;
+import org.eclipse.uml2.diagram.common.parser.stereotype.AppliedStereotypeParser;
 import org.eclipse.uml2.diagram.component.edit.parts.ArtifactName2EditPart;
 import org.eclipse.uml2.diagram.component.edit.parts.ArtifactNameEditPart;
 import org.eclipse.uml2.diagram.component.edit.parts.Class3EditPart;
+import org.eclipse.uml2.diagram.component.edit.parts.ClassDiagramNotationClassNameEditPart;
+import org.eclipse.uml2.diagram.component.edit.parts.ClassDiagramNotationClassStereotypeEditPart;
+import org.eclipse.uml2.diagram.component.edit.parts.ClassDiagramNotationInnerClassEditPart;
+import org.eclipse.uml2.diagram.component.edit.parts.ClassDiagramNotationOperationEditPart;
+import org.eclipse.uml2.diagram.component.edit.parts.ClassDiagramNotationPropertyEditPart;
 import org.eclipse.uml2.diagram.component.edit.parts.ClassName2EditPart;
 import org.eclipse.uml2.diagram.component.edit.parts.ClassNameEditPart;
 import org.eclipse.uml2.diagram.component.edit.parts.Component3EditPart;
@@ -27,12 +40,16 @@ import org.eclipse.uml2.diagram.component.edit.parts.InterfaceNameEditPart;
 import org.eclipse.uml2.diagram.component.edit.parts.Package4EditPart;
 import org.eclipse.uml2.diagram.component.edit.parts.PackageName2EditPart;
 import org.eclipse.uml2.diagram.component.edit.parts.PackageNameEditPart;
+import org.eclipse.uml2.diagram.component.edit.parts.PortName2EditPart;
 import org.eclipse.uml2.diagram.component.edit.parts.PortNameEditPart;
 import org.eclipse.uml2.diagram.component.edit.parts.PropertyNameEditPart;
 import org.eclipse.uml2.diagram.component.expressions.UMLOCLFactory;
 import org.eclipse.uml2.diagram.component.parsers.MessageFormatParser;
 import org.eclipse.uml2.diagram.component.part.UMLVisualIDRegistry;
+import org.eclipse.uml2.diagram.parser.BasicApplyStrategy;
+import org.eclipse.uml2.diagram.parser.SemanticParserAdapter;
 import org.eclipse.uml2.diagram.parser.lookup.DefaultOclLookups;
+import org.eclipse.uml2.diagram.parser.lookup.LookupSuiteImpl;
 import org.eclipse.uml2.diagram.parser.lookup.OCLLookup;
 import org.eclipse.uml2.uml.Type;
 import org.eclipse.uml2.uml.UMLPackage;
@@ -189,6 +206,53 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 	/**
 	 * @generated
 	 */
+	private IParser className_5014Parser;
+
+	/**
+	 * @generated
+	 */
+	private IParser getClassName_5014Parser() {
+		if (className_5014Parser == null) {
+			className_5014Parser = createClassName_5014Parser();
+		}
+		return className_5014Parser;
+	}
+
+	/**
+	 * @generated
+	 */
+	protected IParser createClassName_5014Parser() {
+		EAttribute[] features = new EAttribute[] { UMLPackage.eINSTANCE.getNamedElement_Name(), };
+		MessageFormatParser parser = new MessageFormatParser(features);
+		return parser;
+	}
+
+	/**
+	 * @generated
+	 */
+	private IParser classQualifiedName_5015Parser;
+
+	/**
+	 * @generated
+	 */
+	private IParser getClassQualifiedName_5015Parser() {
+		if (classQualifiedName_5015Parser == null) {
+			classQualifiedName_5015Parser = createClassQualifiedName_5015Parser();
+		}
+		return classQualifiedName_5015Parser;
+	}
+
+	/**
+	 * XXX: Misleading name of the method. The only way to fix it is custom template 
+	 * @generated NOT
+	 */
+	protected IParser createClassQualifiedName_5015Parser() {
+		return new AppliedStereotypeParser();
+	}
+
+	/**
+	 * @generated
+	 */
 	private IParser componentName_5002Parser;
 
 	/**
@@ -226,12 +290,10 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 	}
 
 	/**
-	 * @generated
+	 * @generated NOT
 	 */
 	protected IParser createPortName_5003Parser() {
-		EAttribute[] features = new EAttribute[] { UMLPackage.eINSTANCE.getNamedElement_Name(), };
-		MessageFormatParser parser = new MessageFormatParser(features);
-		return parser;
+		return createPortParser();
 	}
 
 	/**
@@ -427,6 +489,106 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 	/**
 	 * @generated
 	 */
+	private IParser property_3011Parser;
+
+	/**
+	 * @generated
+	 */
+	private IParser getProperty_3011Parser() {
+		if (property_3011Parser == null) {
+			property_3011Parser = createProperty_3011Parser();
+		}
+		return property_3011Parser;
+	}
+
+	/**
+	 * @generated NOT
+	 */
+	protected IParser createProperty_3011Parser() {
+		LookupSuiteImpl lookupSuite = new LookupSuiteImpl();
+		lookupSuite.addLookup(Type.class, TYPE_LOOKUP);
+		return new SemanticParserAdapter(new PropertyParser(lookupSuite), new BasicApplyStrategy(), new PropertyToString.VIEW(), new PropertyToString.EDIT());
+	}
+	
+	/**
+	 * @generated
+	 */
+	private IParser operation_3012Parser;
+
+	/**
+	 * @generated
+	 */
+	private IParser getOperation_3012Parser() {
+		if (operation_3012Parser == null) {
+			operation_3012Parser = createOperation_3012Parser();
+		}
+		return operation_3012Parser;
+	}
+
+	/**
+	 * @generated NOT
+	 */
+	protected IParser createOperation_3012Parser() {
+		LookupSuiteImpl lookupSuite = new LookupSuiteImpl();
+		lookupSuite.addLookup(Type.class, TYPE_LOOKUP);
+		return new SemanticParserAdapter(new OperationParser(lookupSuite), new OperationInplaceApplier(), new OperationToString.VIEW(), new OperationToString.EDIT());
+	}
+
+	/**
+	 * @generated
+	 */
+	private IParser class_3013Parser;
+
+	/**
+	 * @generated
+	 */
+	private IParser getClass_3013Parser() {
+		if (class_3013Parser == null) {
+			class_3013Parser = createClass_3013Parser();
+		}
+		return class_3013Parser;
+	}
+
+	/**
+	 * @generated
+	 */
+	protected IParser createClass_3013Parser() {
+		EAttribute[] features = new EAttribute[] { UMLPackage.eINSTANCE.getNamedElement_Name(), };
+		MessageFormatParser parser = new MessageFormatParser(features);
+		return parser;
+	}
+
+	/**
+	 * @generated
+	 */
+	private IParser portName_5013Parser;
+
+	/**
+	 * @generated
+	 */
+	private IParser getPortName_5013Parser() {
+		if (portName_5013Parser == null) {
+			portName_5013Parser = createPortName_5013Parser();
+		}
+		return portName_5013Parser;
+	}
+
+	/**
+	 * @generated NOT
+	 */
+	protected IParser createPortName_5013Parser() {
+		return createPortParser();
+	}
+
+	private IParser createPortParser() {
+		LookupSuiteImpl lookupSuite = new LookupSuiteImpl();
+		lookupSuite.addLookup(Type.class, TYPE_LOOKUP);
+		return new SemanticParserAdapter(new PortParser(lookupSuite), new BasicApplyStrategy(), new PortToString());
+	}
+
+	/**
+	 * @generated
+	 */
 	private IParser dependencyName_6001Parser;
 
 	/**
@@ -473,6 +635,10 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 			return getPackageName_5011Parser();
 		case PackageName2EditPart.VISUAL_ID:
 			return getPackageName_5012Parser();
+		case ClassDiagramNotationClassNameEditPart.VISUAL_ID:
+			return getClassName_5014Parser();
+		case ClassDiagramNotationClassStereotypeEditPart.VISUAL_ID:
+			return getClassQualifiedName_5015Parser();
 		case ComponentNameEditPart.VISUAL_ID:
 			return getComponentName_5002Parser();
 		case PortNameEditPart.VISUAL_ID:
@@ -493,6 +659,14 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 			return getClass_3009Parser();
 		case Component3EditPart.VISUAL_ID:
 			return getComponent_3010Parser();
+		case ClassDiagramNotationPropertyEditPart.VISUAL_ID:
+			return getProperty_3011Parser();
+		case ClassDiagramNotationOperationEditPart.VISUAL_ID:
+			return getOperation_3012Parser();
+		case ClassDiagramNotationInnerClassEditPart.VISUAL_ID:
+			return getClass_3013Parser();
+		case PortName2EditPart.VISUAL_ID:
+			return getPortName_5013Parser();
 		case DependencyNameEditPart.VISUAL_ID:
 			return getDependencyName_6001Parser();
 		}

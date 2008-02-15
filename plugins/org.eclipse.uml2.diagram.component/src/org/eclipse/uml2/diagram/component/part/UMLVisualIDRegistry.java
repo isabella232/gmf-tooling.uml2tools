@@ -11,9 +11,18 @@ import org.eclipse.uml2.diagram.component.edit.parts.ArtifactName2EditPart;
 import org.eclipse.uml2.diagram.component.edit.parts.ArtifactNameEditPart;
 import org.eclipse.uml2.diagram.component.edit.parts.Class2EditPart;
 import org.eclipse.uml2.diagram.component.edit.parts.Class3EditPart;
+import org.eclipse.uml2.diagram.component.edit.parts.ClassAttributesEditPart;
+import org.eclipse.uml2.diagram.component.edit.parts.ClassClassesEditPart;
+import org.eclipse.uml2.diagram.component.edit.parts.ClassDiagramNotationClassEditPart;
+import org.eclipse.uml2.diagram.component.edit.parts.ClassDiagramNotationClassNameEditPart;
+import org.eclipse.uml2.diagram.component.edit.parts.ClassDiagramNotationClassStereotypeEditPart;
+import org.eclipse.uml2.diagram.component.edit.parts.ClassDiagramNotationInnerClassEditPart;
+import org.eclipse.uml2.diagram.component.edit.parts.ClassDiagramNotationOperationEditPart;
+import org.eclipse.uml2.diagram.component.edit.parts.ClassDiagramNotationPropertyEditPart;
 import org.eclipse.uml2.diagram.component.edit.parts.ClassEditPart;
 import org.eclipse.uml2.diagram.component.edit.parts.ClassName2EditPart;
 import org.eclipse.uml2.diagram.component.edit.parts.ClassNameEditPart;
+import org.eclipse.uml2.diagram.component.edit.parts.ClassOperationsEditPart;
 import org.eclipse.uml2.diagram.component.edit.parts.Component2EditPart;
 import org.eclipse.uml2.diagram.component.edit.parts.Component3EditPart;
 import org.eclipse.uml2.diagram.component.edit.parts.ComponentContents2EditPart;
@@ -40,7 +49,9 @@ import org.eclipse.uml2.diagram.component.edit.parts.PackageName2EditPart;
 import org.eclipse.uml2.diagram.component.edit.parts.PackageNameEditPart;
 import org.eclipse.uml2.diagram.component.edit.parts.PackagePackagesEditPart;
 import org.eclipse.uml2.diagram.component.edit.parts.PortEditPart;
+import org.eclipse.uml2.diagram.component.edit.parts.PortName2EditPart;
 import org.eclipse.uml2.diagram.component.edit.parts.PortNameEditPart;
+import org.eclipse.uml2.diagram.component.edit.parts.PortOnClassEditPart;
 import org.eclipse.uml2.diagram.component.edit.parts.PropertyEditPart;
 import org.eclipse.uml2.diagram.component.edit.parts.PropertyNameEditPart;
 import org.eclipse.uml2.diagram.component.expressions.UMLAbstractExpression;
@@ -70,6 +81,12 @@ public class UMLVisualIDRegistry {
 	/**
 	 * @generated
 	 */
+	private static final UMLAbstractExpression Class_2007_Constraint = UMLOCLFactory.getExpression("not oclIsKindOf(uml::AssociationClass) and not oclIsKindOf(uml::StateMachine)",
+			UMLPackage.eINSTANCE.getClass_());
+
+	/**
+	 * @generated
+	 */
 	private static final UMLAbstractExpression Class_3004_Constraint = UMLOCLFactory.getExpression("self.oclIsKindOf(uml::Class)", UMLPackage.eINSTANCE.getClass_());
 
 	/**
@@ -81,6 +98,11 @@ public class UMLVisualIDRegistry {
 	 * @generated
 	 */
 	private static final UMLAbstractExpression Class_3009_Constraint = UMLOCLFactory.getExpression("not oclIsTypeOf(uml::Component)", UMLPackage.eINSTANCE.getClass_());
+
+	/**
+	 * @generated
+	 */
+	private static final UMLAbstractExpression Property_3011_Constraint = UMLOCLFactory.getExpression("not oclIsKindOf(uml::Port)", UMLPackage.eINSTANCE.getProperty());
 
 	/**
 	 * @generated
@@ -191,6 +213,11 @@ public class UMLVisualIDRegistry {
 				return PortEditPart.VISUAL_ID;
 			}
 			break;
+		case ClassDiagramNotationClassEditPart.VISUAL_ID:
+			if (UMLPackage.eINSTANCE.getPort().isSuperTypeOf(domainElement.eClass())) {
+				return PortOnClassEditPart.VISUAL_ID;
+			}
+			break;
 		case Component2EditPart.VISUAL_ID:
 			if (UMLPackage.eINSTANCE.getPort().isSuperTypeOf(domainElement.eClass())) {
 				return PortEditPart.VISUAL_ID;
@@ -253,6 +280,21 @@ public class UMLVisualIDRegistry {
 				return Component3EditPart.VISUAL_ID;
 			}
 			break;
+		case ClassAttributesEditPart.VISUAL_ID:
+			if (UMLPackage.eINSTANCE.getProperty().isSuperTypeOf(domainElement.eClass()) && evaluate(Property_3011_Constraint, domainElement)) {
+				return ClassDiagramNotationPropertyEditPart.VISUAL_ID;
+			}
+			break;
+		case ClassOperationsEditPart.VISUAL_ID:
+			if (UMLPackage.eINSTANCE.getOperation().isSuperTypeOf(domainElement.eClass())) {
+				return ClassDiagramNotationOperationEditPart.VISUAL_ID;
+			}
+			break;
+		case ClassClassesEditPart.VISUAL_ID:
+			if (UMLPackage.eINSTANCE.getClass_().isSuperTypeOf(domainElement.eClass())) {
+				return ClassDiagramNotationInnerClassEditPart.VISUAL_ID;
+			}
+			break;
 		case PackageEditPart.VISUAL_ID:
 			// We want to additionally show the Canvas Semantical Element in the auxiliary 
 			// org.eclipse.uml2.diagram.component.edit.parts.Package2EditPart (that serves as a pure visual container for children). 
@@ -277,6 +319,9 @@ public class UMLVisualIDRegistry {
 			// Diagram header is already processed above
 			if (UMLPackage.eINSTANCE.getPackage().isSuperTypeOf(domainElement.eClass())) {
 				return Package3EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getClass_().isSuperTypeOf(domainElement.eClass()) && evaluate(Class_2007_Constraint, domainElement)) {
+				return ClassDiagramNotationClassEditPart.VISUAL_ID;
 			}
 			break;
 		}
@@ -350,6 +395,26 @@ public class UMLVisualIDRegistry {
 				return true;
 			}
 			break;
+		case ClassDiagramNotationClassEditPart.VISUAL_ID:
+			if (ClassDiagramNotationClassNameEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			if (ClassDiagramNotationClassStereotypeEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			if (ClassAttributesEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			if (ClassOperationsEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			if (ClassClassesEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			if (PortOnClassEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			break;
 		case Component2EditPart.VISUAL_ID:
 			if (ComponentNameEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
@@ -386,6 +451,11 @@ public class UMLVisualIDRegistry {
 			break;
 		case PropertyEditPart.VISUAL_ID:
 			if (PropertyNameEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			break;
+		case PortOnClassEditPart.VISUAL_ID:
+			if (PortName2EditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
 			break;
@@ -441,6 +511,21 @@ public class UMLVisualIDRegistry {
 				return true;
 			}
 			break;
+		case ClassAttributesEditPart.VISUAL_ID:
+			if (ClassDiagramNotationPropertyEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			break;
+		case ClassOperationsEditPart.VISUAL_ID:
+			if (ClassDiagramNotationOperationEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			break;
+		case ClassClassesEditPart.VISUAL_ID:
+			if (ClassDiagramNotationInnerClassEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			break;
 		case PackageEditPart.VISUAL_ID:
 			if (ComponentEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
@@ -458,6 +543,9 @@ public class UMLVisualIDRegistry {
 				return true;
 			}
 			if (Package3EditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			if (ClassDiagramNotationClassEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
 			break;

@@ -393,6 +393,36 @@ public class Messages extends NLS {
 	/**
 	 * @generated
 	 */
+	public static String Attribute2CreationTool_title;
+
+	/**
+	 * @generated
+	 */
+	public static String Attribute2CreationTool_desc;
+
+	/**
+	 * @generated
+	 */
+	public static String Operation3CreationTool_title;
+
+	/**
+	 * @generated
+	 */
+	public static String Operation3CreationTool_desc;
+
+	/**
+	 * @generated
+	 */
+	public static String Port4CreationTool_title;
+
+	/**
+	 * @generated
+	 */
+	public static String Port4CreationTool_desc;
+
+	/**
+	 * @generated
+	 */
 	public static String ComponentContentsEditPart_title;
 
 	/**
@@ -414,6 +444,21 @@ public class Messages extends NLS {
 	 * @generated
 	 */
 	public static String PackageClassifiersEditPart_title;
+
+	/**
+	 * @generated
+	 */
+	public static String ClassAttributesEditPart_title;
+
+	/**
+	 * @generated
+	 */
+	public static String ClassOperationsEditPart_title;
+
+	/**
+	 * @generated
+	 */
+	public static String ClassClassesEditPart_title;
 
 	/**
 	 * @generated
@@ -484,6 +529,16 @@ public class Messages extends NLS {
 	 * @generated
 	 */
 	public static String NavigatorGroupName_Package_2006_outgoinglinks;
+
+	/**
+	 * @generated
+	 */
+	public static String NavigatorGroupName_Class_2007_outgoinglinks;
+
+	/**
+	 * @generated
+	 */
+	public static String NavigatorGroupName_Class_2007_incominglinks;
 
 	/**
 	 * @generated
@@ -574,6 +629,46 @@ public class Messages extends NLS {
 	 * @generated
 	 */
 	public static String NavigatorGroupName_Component_3010_incominglinks;
+
+	/**
+	 * @generated
+	 */
+	public static String NavigatorGroupName_Property_3011_incominglinks;
+
+	/**
+	 * @generated
+	 */
+	public static String NavigatorGroupName_Property_3011_outgoinglinks;
+
+	/**
+	 * @generated
+	 */
+	public static String NavigatorGroupName_Operation_3012_incominglinks;
+
+	/**
+	 * @generated
+	 */
+	public static String NavigatorGroupName_Operation_3012_outgoinglinks;
+
+	/**
+	 * @generated
+	 */
+	public static String NavigatorGroupName_Class_3013_outgoinglinks;
+
+	/**
+	 * @generated
+	 */
+	public static String NavigatorGroupName_Class_3013_incominglinks;
+
+	/**
+	 * @generated
+	 */
+	public static String NavigatorGroupName_Port_3014_outgoinglinks;
+
+	/**
+	 * @generated
+	 */
+	public static String NavigatorGroupName_Port_3014_incominglinks;
 
 	/**
 	 * @generated
@@ -669,6 +764,46 @@ public class Messages extends NLS {
 	 * @generated
 	 */
 	public static String UMLModelingAssistantProviderMessage;
+
+	/**
+	 * @generated
+	 */
+	public static String TurnIntoClassDiagramNotationClassAction_text;
+
+	/**
+	 * @generated
+	 */
+	public static String TurnIntoClassDiagramNotationClassAction_tooltiptext;
+
+	/**
+	 * @generated
+	 */
+	public static String TurnIntoClass2Action_text;
+
+	/**
+	 * @generated
+	 */
+	public static String TurnIntoClass2Action_tooltiptext;
+
+	/**
+	 * @generated
+	 */
+	public static String Class2ContributionItemProvider_menu;
+
+	/**
+	 * @generated
+	 */
+	public static String Class2ContributionItemProvider_group;
+
+	/**
+	 * @generated
+	 */
+	public static String ClassDiagramNotationClassContributionItemProvider_menu;
+
+	/**
+	 * @generated
+	 */
+	public static String ClassDiagramNotationClassContributionItemProvider_group;
 
 	//TODO: put accessor fields manually	
 }

@@ -103,6 +103,11 @@
             <popupPredefinedItem id="deleteFromModelAction" remove="true"/>
          </popupContribution>
          <popupContribution class="org.eclipse.gmf.runtime.diagram.ui.providers.DiagramContextMenuProvider">
+            <popupStructuredContributionCriteria objectClass="org.eclipse.uml2.diagram.component.edit.parts.PortName2EditPart"/>
+            <popupPredefinedItem id="deleteFromDiagramAction" remove="true"/>
+            <popupPredefinedItem id="deleteFromModelAction" remove="true"/>
+         </popupContribution>
+         <popupContribution class="org.eclipse.gmf.runtime.diagram.ui.providers.DiagramContextMenuProvider">
             <popupStructuredContributionCriteria objectClass="org.eclipse.uml2.diagram.component.edit.parts.PortProvidedEditPart"/>
             <popupAction path="/editGroup" id="deleteFromModelAction"/>
             <popupPredefinedItem id="deleteFromDiagramAction" remove="true"/>
@@ -276,6 +281,15 @@
       </metamodel>
       <metamodel nsURI="http://www.eclipse.org/uml2/2.1.0/UML">
          <specializationType
+               id="org.eclipse.uml2.diagram.component.Class_2007"
+               name="%metatype.name.Class_2007"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType">
+            <specializes id="org.eclipse.uml2.diagram.component.Class_3004"/>
+            <param name="semanticHint" value="2007"/>
+         </specializationType>
+      </metamodel>
+      <metamodel nsURI="http://www.eclipse.org/uml2/2.1.0/UML">
+         <specializationType
                id="org.eclipse.uml2.diagram.component.Component_3001"
                name="%metatype.name.Component_3001"
                kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
@@ -372,6 +386,43 @@
          </specializationType>
       </metamodel>
       <metamodel nsURI="http://www.eclipse.org/uml2/2.1.0/UML">
+         <specializationType
+               id="org.eclipse.uml2.diagram.component.Property_3011"
+               name="%metatype.name.Property_3011"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType">
+            <specializes id="org.eclipse.uml2.diagram.component.Property_3006"/>
+            <param name="semanticHint" value="3011"/>
+         </specializationType>
+      </metamodel>
+      <metamodel nsURI="http://www.eclipse.org/uml2/2.1.0/UML">
+         <metamodelType
+               id="org.eclipse.uml2.diagram.component.Operation_3012"
+               name="%metatype.name.Operation_3012"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
+               eclass="Operation"
+               edithelper="org.eclipse.uml2.diagram.component.edit.helpers.OperationEditHelper">
+            <param name="semanticHint" value="3012"/>
+         </metamodelType>
+      </metamodel>
+      <metamodel nsURI="http://www.eclipse.org/uml2/2.1.0/UML">
+         <specializationType
+               id="org.eclipse.uml2.diagram.component.Class_3013"
+               name="%metatype.name.Class_3013"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType">
+            <specializes id="org.eclipse.uml2.diagram.component.Class_3004"/>
+            <param name="semanticHint" value="3013"/>
+         </specializationType>
+      </metamodel>
+      <metamodel nsURI="http://www.eclipse.org/uml2/2.1.0/UML">
+         <specializationType
+               id="org.eclipse.uml2.diagram.component.Port_3014"
+               name="%metatype.name.Port_3014"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType">
+            <specializes id="org.eclipse.uml2.diagram.component.Port_3002"/>
+            <param name="semanticHint" value="3014"/>
+         </specializationType>
+      </metamodel>
+      <metamodel nsURI="http://www.eclipse.org/uml2/2.1.0/UML">
          <metamodelType
                id="org.eclipse.uml2.diagram.component.InterfaceRealization_4001"
                name="%metatype.name.InterfaceRealization_4001"
@@ -449,6 +500,7 @@
          <elementType ref="org.eclipse.uml2.diagram.component.Class_2004"/>
          <elementType ref="org.eclipse.uml2.diagram.component.Package_2005"/>
          <elementType ref="org.eclipse.uml2.diagram.component.Package_2006"/>
+         <elementType ref="org.eclipse.uml2.diagram.component.Class_2007"/>
          <elementType ref="org.eclipse.uml2.diagram.component.Component_3001"/>
          <elementType ref="org.eclipse.uml2.diagram.component.Port_3002"/>
          <elementType ref="org.eclipse.uml2.diagram.component.Artifact_3003"/>
@@ -459,6 +511,10 @@
          <elementType ref="org.eclipse.uml2.diagram.component.Package_3008"/>
          <elementType ref="org.eclipse.uml2.diagram.component.Class_3009"/>
          <elementType ref="org.eclipse.uml2.diagram.component.Component_3010"/>
+         <elementType ref="org.eclipse.uml2.diagram.component.Property_3011"/>
+         <elementType ref="org.eclipse.uml2.diagram.component.Operation_3012"/>
+         <elementType ref="org.eclipse.uml2.diagram.component.Class_3013"/>
+         <elementType ref="org.eclipse.uml2.diagram.component.Port_3014"/>
          <elementType ref="org.eclipse.uml2.diagram.component.InterfaceRealization_4001"/>
          <elementType ref="org.eclipse.uml2.diagram.component.PortProvided_4006"/>
          <elementType ref="org.eclipse.uml2.diagram.component.PortRequired_4004"/>
@@ -700,7 +756,71 @@
          contextId="org.eclipse.uml2.diagram.component.ui.diagramContext"
          schemeId="org.eclipse.ui.defaultAcceleratorConfiguration"
          sequence="F5"/>
+   </extension><extension point="org.eclipse.gmf.runtime.common.ui.services.action.contributionItemProviders">
+      <?gmfgen generated="true"?>
+      <contributionItemProvider
+            checkPluginLoaded="true"
+            class="org.eclipse.uml2.diagram.component.action.Class2ContributionItemProvider">
+         <Priority name="Medium"/>
+		 <popupContribution
+               class="org.eclipse.gmf.runtime.diagram.ui.providers.DiagramContextMenuProvider">
+			 <popupMenuGroup
+                  id="ChangeNotation"
+                  path="/propertiesGroup">
+             </popupMenuGroup>
+             <popupMenu
+                   id="ChangeNotationMenu"
+                   path="/ChangeNotation">
+             </popupMenu>                        
+             <popupMenuGroup
+                   id="ChangeNotationGroup"
+                   path="/ChangeNotationMenu/">
+             </popupMenuGroup>
+							
+			<popupAction
+				path="/ChangeNotationMenu/ChangeNotationGroup"
+				id="set_ClassDiagramNotationClass_notation">
+			</popupAction>            
+				<popupStructuredContributionCriteria
+                   objectClass="org.eclipse.uml2.diagram.component.edit.parts.Class2EditPart"
+                   objectCount="1">
+             </popupStructuredContributionCriteria>
+		 </popupContribution>
+      </contributionItemProvider>
    </extension>
+<extension point="org.eclipse.gmf.runtime.common.ui.services.action.contributionItemProviders">
+      <?gmfgen generated="true"?>
+      <contributionItemProvider
+            checkPluginLoaded="true"
+            class="org.eclipse.uml2.diagram.component.action.ClassDiagramNotationClassContributionItemProvider">
+         <Priority name="Medium"/>
+		 <popupContribution
+               class="org.eclipse.gmf.runtime.diagram.ui.providers.DiagramContextMenuProvider">
+			 <popupMenuGroup
+                  id="ChangeNotation"
+                  path="/propertiesGroup">
+             </popupMenuGroup>
+             <popupMenu
+                   id="ChangeNotationMenu"
+                   path="/ChangeNotation">
+             </popupMenu>                        
+             <popupMenuGroup
+                   id="ChangeNotationGroup"
+                   path="/ChangeNotationMenu/">
+             </popupMenuGroup>
+							
+			<popupAction
+				path="/ChangeNotationMenu/ChangeNotationGroup"
+				id="set_Class2_notation">
+			</popupAction>            
+				<popupStructuredContributionCriteria
+                   objectClass="org.eclipse.uml2.diagram.component.edit.parts.ClassDiagramNotationClassEditPart"
+                   objectCount="1">
+             </popupStructuredContributionCriteria>
+		 </popupContribution>
+      </contributionItemProvider>
+   </extension>
+
 
 
 

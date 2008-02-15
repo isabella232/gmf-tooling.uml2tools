@@ -67,6 +67,15 @@ public class UMLEditPartFactory implements EditPartFactory {
 			case PackageName2EditPart.VISUAL_ID:
 				return new PackageName2EditPart(view);
 
+			case ClassDiagramNotationClassEditPart.VISUAL_ID:
+				return new ClassDiagramNotationClassEditPart(view);
+
+			case ClassDiagramNotationClassNameEditPart.VISUAL_ID:
+				return new ClassDiagramNotationClassNameEditPart(view);
+
+			case ClassDiagramNotationClassStereotypeEditPart.VISUAL_ID:
+				return new ClassDiagramNotationClassStereotypeEditPart(view);
+
 			case Component2EditPart.VISUAL_ID:
 				return new Component2EditPart(view);
 
@@ -115,6 +124,21 @@ public class UMLEditPartFactory implements EditPartFactory {
 			case Component3EditPart.VISUAL_ID:
 				return new Component3EditPart(view);
 
+			case ClassDiagramNotationPropertyEditPart.VISUAL_ID:
+				return new ClassDiagramNotationPropertyEditPart(view);
+
+			case ClassDiagramNotationOperationEditPart.VISUAL_ID:
+				return new ClassDiagramNotationOperationEditPart(view);
+
+			case ClassDiagramNotationInnerClassEditPart.VISUAL_ID:
+				return new ClassDiagramNotationInnerClassEditPart(view);
+
+			case PortOnClassEditPart.VISUAL_ID:
+				return new PortOnClassEditPart(view);
+
+			case PortName2EditPart.VISUAL_ID:
+				return new PortName2EditPart(view);
+
 			case ComponentContentsEditPart.VISUAL_ID:
 				return new ComponentContentsEditPart(view);
 
@@ -129,6 +153,15 @@ public class UMLEditPartFactory implements EditPartFactory {
 
 			case PackageClassifiersEditPart.VISUAL_ID:
 				return new PackageClassifiersEditPart(view);
+
+			case ClassAttributesEditPart.VISUAL_ID:
+				return new ClassAttributesEditPart(view);
+
+			case ClassOperationsEditPart.VISUAL_ID:
+				return new ClassOperationsEditPart(view);
+
+			case ClassClassesEditPart.VISUAL_ID:
+				return new ClassClassesEditPart(view);
 
 			case InterfaceRealizationEditPart.VISUAL_ID:
 				return new InterfaceRealizationEditPart(view);

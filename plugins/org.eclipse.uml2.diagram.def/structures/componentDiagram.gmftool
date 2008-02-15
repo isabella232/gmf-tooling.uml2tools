@@ -68,6 +68,18 @@
           xsi:type="gmftool:CreationTool"
           title="Element Import"
           description="Create Element Import"/>
+      <tools
+          xsi:type="gmftool:CreationTool"
+          title="Attribute"
+          description="Create Attribute"/>
+      <tools
+          xsi:type="gmftool:CreationTool"
+          title="Operation"
+          description="Create Operation"/>
+      <tools
+          xsi:type="gmftool:CreationTool"
+          title="Port"
+          description="Create Port"/>
     </tools>
   </palette>
 </gmftool:ToolRegistry>

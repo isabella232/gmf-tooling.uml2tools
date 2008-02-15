@@ -65,6 +65,9 @@ public class UMLPaletteFactory {
 		PaletteGroup paletteContainer = new PaletteGroup(Messages.Children3Group_title);
 		paletteContainer.setDescription(Messages.Children3Group_desc);
 		paletteContainer.add(createElementImport1CreationTool());
+		paletteContainer.add(createAttribute2CreationTool());
+		paletteContainer.add(createOperation3CreationTool());
+		paletteContainer.add(createPort4CreationTool());
 		return paletteContainer;
 	}
 
@@ -112,10 +115,11 @@ public class UMLPaletteFactory {
 	 * @generated
 	 */
 	private ToolEntry createClass4CreationTool() {
-		List/*<IElementType>*/types = new ArrayList/*<IElementType>*/(3);
+		List/*<IElementType>*/types = new ArrayList/*<IElementType>*/(4);
 		types.add(UMLElementTypes.Class_3004);
 		types.add(UMLElementTypes.Class_2004);
 		types.add(UMLElementTypes.Class_3009);
+		types.add(UMLElementTypes.Class_3013);
 		NodeToolEntry entry = new NodeToolEntry(Messages.Class4CreationTool_title, Messages.Class4CreationTool_desc, types);
 		entry.setSmallIcon(UMLElementTypes.getImageDescriptor(UMLElementTypes.Class_3004));
 		entry.setLargeIcon(entry.getSmallIcon());
@@ -217,6 +221,42 @@ public class UMLPaletteFactory {
 		types.add(UMLElementTypes.ElementImport_3007);
 		NodeToolEntry entry = new NodeToolEntry(Messages.ElementImport1CreationTool_title, Messages.ElementImport1CreationTool_desc, types);
 		entry.setSmallIcon(UMLElementTypes.getImageDescriptor(UMLElementTypes.ElementImport_3007));
+		entry.setLargeIcon(entry.getSmallIcon());
+		return entry;
+	}
+
+	/**
+	 * @generated
+	 */
+	private ToolEntry createAttribute2CreationTool() {
+		List/*<IElementType>*/types = new ArrayList/*<IElementType>*/(1);
+		types.add(UMLElementTypes.Property_3011);
+		NodeToolEntry entry = new NodeToolEntry(Messages.Attribute2CreationTool_title, Messages.Attribute2CreationTool_desc, types);
+		entry.setSmallIcon(UMLElementTypes.getImageDescriptor(UMLElementTypes.Property_3011));
+		entry.setLargeIcon(entry.getSmallIcon());
+		return entry;
+	}
+
+	/**
+	 * @generated
+	 */
+	private ToolEntry createOperation3CreationTool() {
+		List/*<IElementType>*/types = new ArrayList/*<IElementType>*/(1);
+		types.add(UMLElementTypes.Operation_3012);
+		NodeToolEntry entry = new NodeToolEntry(Messages.Operation3CreationTool_title, Messages.Operation3CreationTool_desc, types);
+		entry.setSmallIcon(UMLElementTypes.getImageDescriptor(UMLElementTypes.Operation_3012));
+		entry.setLargeIcon(entry.getSmallIcon());
+		return entry;
+	}
+
+	/**
+	 * @generated
+	 */
+	private ToolEntry createPort4CreationTool() {
+		List/*<IElementType>*/types = new ArrayList/*<IElementType>*/(1);
+		types.add(UMLElementTypes.Port_3014);
+		NodeToolEntry entry = new NodeToolEntry(Messages.Port4CreationTool_title, Messages.Port4CreationTool_desc, types);
+		entry.setSmallIcon(UMLElementTypes.getImageDescriptor(UMLElementTypes.Port_3014));
 		entry.setLargeIcon(entry.getSmallIcon());
 		return entry;
 	}
