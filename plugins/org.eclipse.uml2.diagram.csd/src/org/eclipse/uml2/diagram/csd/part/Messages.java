@@ -523,6 +523,11 @@ public class Messages extends NLS {
 	/**
 	 * @generated
 	 */
+	public static String InstanceSpecificationSlotsEditPart_title;
+
+	/**
+	 * @generated
+	 */
 	public static String CommandName_OpenDiagram;
 
 	/**
