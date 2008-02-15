@@ -104,7 +104,7 @@ public class Port2ItemSemanticEditPolicy extends UMLBaseItemSemanticEditPolicy {
 		}
 		return getReorientRelationshipCommandGen(req);
 	}
-	
+
 	/**
 	 * Returns command to reorient EClass based link. New link target or source
 	 * should be the domain model element associated with this node.

@@ -5,6 +5,7 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.gmf.runtime.emf.type.core.commands.CreateElementCommand;
 import org.eclipse.gmf.runtime.emf.type.core.requests.CreateElementRequest;
 import org.eclipse.gmf.runtime.notation.View;
+import org.eclipse.uml2.uml.ConnectorEnd;
 import org.eclipse.uml2.uml.UMLPackage;
 
 /**
