@@ -131,12 +131,6 @@ public class InstanceSpecificationEditPart extends ShapeNodeEditPart {
 			((InstanceSpecificationNameEditPart) childEditPart).setLabel(getPrimaryShape().getFigureInstanceNode_NameLabel());
 			return true;
 		}
-		if (childEditPart instanceof InstanceSpecificationSlotsEditPart) {
-			IFigure pane = getPrimaryShape().getFigureInstanceNode_SlotsCompartmentFigure();
-			setupContentPane(pane); // FIXME each comparment should handle his content pane in his own way 
-			pane.add(((InstanceSpecificationSlotsEditPart) childEditPart).getFigure());
-			return true;
-		}
 		return false;
 	}
 
@@ -145,11 +139,6 @@ public class InstanceSpecificationEditPart extends ShapeNodeEditPart {
 	 */
 	protected boolean removeFixedChild(EditPart childEditPart) {
 
-		if (childEditPart instanceof InstanceSpecificationSlotsEditPart) {
-			IFigure pane = getPrimaryShape().getFigureInstanceNode_SlotsCompartmentFigure();
-			pane.remove(((InstanceSpecificationSlotsEditPart) childEditPart).getFigure());
-			return true;
-		}
 		return false;
 	}
 
@@ -178,9 +167,6 @@ public class InstanceSpecificationEditPart extends ShapeNodeEditPart {
 	 */
 	protected IFigure getContentPaneFor(IGraphicalEditPart editPart) {
 
-		if (editPart instanceof InstanceSpecificationSlotsEditPart) {
-			return getPrimaryShape().getFigureInstanceNode_SlotsCompartmentFigure();
-		}
 		return super.getContentPaneFor(editPart);
 	}
 
@@ -254,11 +240,6 @@ public class InstanceSpecificationEditPart extends ShapeNodeEditPart {
 		/**
 		 * @generated
 		 */
-		private Label fFigureInstanceNode_SpecificationLabel;
-
-		/**
-		 * @generated
-		 */
 		private RectangleFigure fFigureInstanceNode_SlotsCompartmentFigure;
 
 		/**
@@ -275,7 +256,7 @@ public class InstanceSpecificationEditPart extends ShapeNodeEditPart {
 
 			this.setLayoutManager(layoutThis);
 
-			this.setBorder(new MarginBorder(getMapMode().DPtoLP(1), getMapMode().DPtoLP(1), getMapMode().DPtoLP(0), getMapMode().DPtoLP(1)));
+			this.setBorder(new MarginBorder(getMapMode().DPtoLP(1), getMapMode().DPtoLP(1), getMapMode().DPtoLP(1), getMapMode().DPtoLP(1)));
 			createContents();
 		}
 
@@ -290,7 +271,14 @@ public class InstanceSpecificationEditPart extends ShapeNodeEditPart {
 
 			this.add(instanceNode_NameContainerFigure0);
 
-			instanceNode_NameContainerFigure0.setLayoutManager(new StackLayout());
+			ToolbarLayout layoutInstanceNode_NameContainerFigure0 = new ToolbarLayout();
+			layoutInstanceNode_NameContainerFigure0.setStretchMinorAxis(true);
+			layoutInstanceNode_NameContainerFigure0.setMinorAlignment(ToolbarLayout.ALIGN_TOPLEFT);
+
+			layoutInstanceNode_NameContainerFigure0.setSpacing(0);
+			layoutInstanceNode_NameContainerFigure0.setVertical(true);
+
+			instanceNode_NameContainerFigure0.setLayoutManager(layoutInstanceNode_NameContainerFigure0);
 
 			fFigureInstanceNode_NameLabel = new Label();
 			fFigureInstanceNode_NameLabel.setText("");
@@ -300,20 +288,6 @@ public class InstanceSpecificationEditPart extends ShapeNodeEditPart {
 			CenterLayout layoutFFigureInstanceNode_NameLabel = new CenterLayout();
 
 			fFigureInstanceNode_NameLabel.setLayoutManager(layoutFFigureInstanceNode_NameLabel);
-
-			RectangleFigure instanceSpecification_SpecificationContainerFigure0 = new RectangleFigure();
-			instanceSpecification_SpecificationContainerFigure0.setOutline(false);
-
-			this.add(instanceSpecification_SpecificationContainerFigure0);
-
-			CenterLayout layoutInstanceSpecification_SpecificationContainerFigure0 = new CenterLayout();
-
-			instanceSpecification_SpecificationContainerFigure0.setLayoutManager(layoutInstanceSpecification_SpecificationContainerFigure0);
-
-			fFigureInstanceNode_SpecificationLabel = new Label();
-			fFigureInstanceNode_SpecificationLabel.setText("");
-
-			instanceSpecification_SpecificationContainerFigure0.add(fFigureInstanceNode_SpecificationLabel);
 
 			fFigureInstanceNode_SlotsCompartmentFigure = new RectangleFigure();
 			fFigureInstanceNode_SlotsCompartmentFigure.setOutline(false);
@@ -354,13 +328,6 @@ public class InstanceSpecificationEditPart extends ShapeNodeEditPart {
 		 */
 		public Label getFigureInstanceNode_NameLabel() {
 			return fFigureInstanceNode_NameLabel;
-		}
-
-		/**
-		 * @generated
-		 */
-		public Label getFigureInstanceNode_SpecificationLabel() {
-			return fFigureInstanceNode_SpecificationLabel;
 		}
 
 		/**
