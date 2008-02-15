@@ -13,12 +13,15 @@ import org.eclipse.gmf.runtime.notation.Node;
 import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.uml2.diagram.deploy.edit.commands.CommunicationPathCreateCommand;
 import org.eclipse.uml2.diagram.deploy.edit.commands.CommunicationPathReorientCommand;
+import org.eclipse.uml2.diagram.deploy.edit.commands.DependencyCreateCommand;
+import org.eclipse.uml2.diagram.deploy.edit.commands.DependencyReorientCommand;
 import org.eclipse.uml2.diagram.deploy.edit.commands.DeploymentCreateCommand;
 import org.eclipse.uml2.diagram.deploy.edit.commands.DeploymentReorientCommand;
 import org.eclipse.uml2.diagram.deploy.edit.commands.ManifestationCreateCommand;
 import org.eclipse.uml2.diagram.deploy.edit.commands.ManifestationReorientCommand;
 import org.eclipse.uml2.diagram.deploy.edit.parts.ArtifactEditPart;
 import org.eclipse.uml2.diagram.deploy.edit.parts.CommunicationPathEditPart;
+import org.eclipse.uml2.diagram.deploy.edit.parts.DependencyEditPart;
 import org.eclipse.uml2.diagram.deploy.edit.parts.DeploymentEditPart;
 import org.eclipse.uml2.diagram.deploy.edit.parts.Device2EditPart;
 import org.eclipse.uml2.diagram.deploy.edit.parts.DeviceDevicecontents2EditPart;
@@ -100,6 +103,9 @@ public class Device2ItemSemanticEditPolicy extends UMLBaseItemSemanticEditPolicy
 		if (UMLElementTypes.CommunicationPath_4004 == req.getElementType()) {
 			return getGEFWrapper(new CommunicationPathCreateCommand(req, req.getSource(), req.getTarget()));
 		}
+		if (UMLElementTypes.Dependency_4005 == req.getElementType()) {
+			return getGEFWrapper(new DependencyCreateCommand(req, req.getSource(), req.getTarget()));
+		}
 		return null;
 	}
 
@@ -115,6 +121,9 @@ public class Device2ItemSemanticEditPolicy extends UMLBaseItemSemanticEditPolicy
 		}
 		if (UMLElementTypes.CommunicationPath_4004 == req.getElementType()) {
 			return getGEFWrapper(new CommunicationPathCreateCommand(req, req.getSource(), req.getTarget()));
+		}
+		if (UMLElementTypes.Dependency_4005 == req.getElementType()) {
+			return getGEFWrapper(new DependencyCreateCommand(req, req.getSource(), req.getTarget()));
 		}
 		return null;
 	}
@@ -133,6 +142,8 @@ public class Device2ItemSemanticEditPolicy extends UMLBaseItemSemanticEditPolicy
 			return getGEFWrapper(new ManifestationReorientCommand(req));
 		case CommunicationPathEditPart.VISUAL_ID:
 			return getGEFWrapper(new CommunicationPathReorientCommand(req));
+		case DependencyEditPart.VISUAL_ID:
+			return getGEFWrapper(new DependencyReorientCommand(req));
 		}
 		return super.getReorientRelationshipCommand(req);
 	}

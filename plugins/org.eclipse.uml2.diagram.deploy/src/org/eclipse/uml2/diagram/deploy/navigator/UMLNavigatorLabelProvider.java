@@ -23,6 +23,8 @@ import org.eclipse.uml2.diagram.deploy.edit.parts.ArtifactFileName2EditPart;
 import org.eclipse.uml2.diagram.deploy.edit.parts.ArtifactFileNameEditPart;
 import org.eclipse.uml2.diagram.deploy.edit.parts.CommunicationPathEditPart;
 import org.eclipse.uml2.diagram.deploy.edit.parts.CommunicationPathNameEditPart;
+import org.eclipse.uml2.diagram.deploy.edit.parts.DependencyEditPart;
+import org.eclipse.uml2.diagram.deploy.edit.parts.DependencyNameEditPart;
 import org.eclipse.uml2.diagram.deploy.edit.parts.DeploymentConfigurationEditPart;
 import org.eclipse.uml2.diagram.deploy.edit.parts.DeploymentEditPart;
 import org.eclipse.uml2.diagram.deploy.edit.parts.DeploymentNameEditPart;
@@ -142,6 +144,8 @@ public class UMLNavigatorLabelProvider extends LabelProvider implements ICommonL
 			return getImage("Navigator?Link?http://www.eclipse.org/uml2/2.1.0/UML?Deployment?configuration", UMLElementTypes.DeploymentConfiguration_4003); //$NON-NLS-1$
 		case CommunicationPathEditPart.VISUAL_ID:
 			return getImage("Navigator?Link?http://www.eclipse.org/uml2/2.1.0/UML?CommunicationPath", UMLElementTypes.CommunicationPath_4004); //$NON-NLS-1$
+		case DependencyEditPart.VISUAL_ID:
+			return getImage("Navigator?Link?http://www.eclipse.org/uml2/2.1.0/UML?Dependency", UMLElementTypes.Dependency_4005); //$NON-NLS-1$
 		}
 		return getImage("Navigator?UnknownElement", null); //$NON-NLS-1$
 	}
@@ -228,6 +232,8 @@ public class UMLNavigatorLabelProvider extends LabelProvider implements ICommonL
 			return getDeploymentConfiguration_4003Text(view);
 		case CommunicationPathEditPart.VISUAL_ID:
 			return getCommunicationPath_4004Text(view);
+		case DependencyEditPart.VISUAL_ID:
+			return getDependency_4005Text(view);
 		}
 		return getUnknownElementText(view);
 	}
@@ -516,6 +522,23 @@ public class UMLNavigatorLabelProvider extends LabelProvider implements ICommonL
 			return parser.getPrintString(hintAdapter, ParserOptions.NONE.intValue());
 		} else {
 			UMLDiagramEditorPlugin.getInstance().logError("Parser was not found for label " + 6003); //$NON-NLS-1$
+			return ""; //$NON-NLS-1$
+		}
+
+	}
+
+	/**
+	 * @generated
+	 */
+	private String getDependency_4005Text(View view) {
+		IAdaptable hintAdapter = new UMLParserProvider.HintAdapter(UMLElementTypes.Dependency_4005, (view.getElement() != null ? view.getElement() : view), UMLVisualIDRegistry
+				.getType(DependencyNameEditPart.VISUAL_ID));
+		IParser parser = ParserService.getInstance().getParser(hintAdapter);
+
+		if (parser != null) {
+			return parser.getPrintString(hintAdapter, ParserOptions.NONE.intValue());
+		} else {
+			UMLDiagramEditorPlugin.getInstance().logError("Parser was not found for label " + 6004); //$NON-NLS-1$
 			return ""; //$NON-NLS-1$
 		}
 

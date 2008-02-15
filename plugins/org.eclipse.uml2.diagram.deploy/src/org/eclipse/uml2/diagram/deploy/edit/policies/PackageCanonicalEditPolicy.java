@@ -28,6 +28,7 @@ import org.eclipse.uml2.diagram.deploy.edit.parts.Artifact2EditPart;
 import org.eclipse.uml2.diagram.deploy.edit.parts.Artifact3EditPart;
 import org.eclipse.uml2.diagram.deploy.edit.parts.ArtifactEditPart;
 import org.eclipse.uml2.diagram.deploy.edit.parts.CommunicationPathEditPart;
+import org.eclipse.uml2.diagram.deploy.edit.parts.DependencyEditPart;
 import org.eclipse.uml2.diagram.deploy.edit.parts.DeploymentEditPart;
 import org.eclipse.uml2.diagram.deploy.edit.parts.DeploymentSpecificationEditPart;
 import org.eclipse.uml2.diagram.deploy.edit.parts.Device2EditPart;
@@ -322,6 +323,13 @@ public class PackageCanonicalEditPolicy extends CanonicalConnectionEditPolicy {
 		case CommunicationPathEditPart.VISUAL_ID: {
 			if (!domain2NotationMap.containsKey(view.getElement())) {
 				result.addAll(UMLDiagramUpdater.getCommunicationPath_4004ContainedLinks(view));
+			}
+			domain2NotationMap.put(view.getElement(), view);
+			break;
+		}
+		case DependencyEditPart.VISUAL_ID: {
+			if (!domain2NotationMap.containsKey(view.getElement())) {
+				result.addAll(UMLDiagramUpdater.getDependency_4005ContainedLinks(view));
 			}
 			domain2NotationMap.put(view.getElement(), view);
 			break;

@@ -12,6 +12,8 @@ import org.eclipse.uml2.diagram.deploy.edit.parts.ArtifactFileName2EditPart;
 import org.eclipse.uml2.diagram.deploy.edit.parts.ArtifactFileNameEditPart;
 import org.eclipse.uml2.diagram.deploy.edit.parts.CommunicationPathEditPart;
 import org.eclipse.uml2.diagram.deploy.edit.parts.CommunicationPathNameEditPart;
+import org.eclipse.uml2.diagram.deploy.edit.parts.DependencyEditPart;
+import org.eclipse.uml2.diagram.deploy.edit.parts.DependencyNameEditPart;
 import org.eclipse.uml2.diagram.deploy.edit.parts.DeploymentEditPart;
 import org.eclipse.uml2.diagram.deploy.edit.parts.DeploymentNameEditPart;
 import org.eclipse.uml2.diagram.deploy.edit.parts.DeploymentSpecificationEditPart;
@@ -81,6 +83,14 @@ public class UMLVisualIDRegistry {
 	 */
 	private static final UMLAbstractExpression Node_3007_Constraint = UMLOCLFactory.getExpression("not oclIsKindOf(uml::Device) and not oclIsKindOf(uml::ExecutionEnvironment)", UMLPackage.eINSTANCE
 			.getNode());
+
+	/**
+	 * @generated
+	 */
+	private static final UMLAbstractExpression Dependency_4005_Constraint = UMLOCLFactory
+			.getExpression(
+					"(self.oclIsTypeOf(uml::Dependency) or self.oclIsTypeOf(uml::Abstraction) or self.oclIsTypeOf(uml::Substitution) or self.oclIsTypeOf(uml::Usage)) and self.supplier->size() = 1 and self.client->size() = 1 and self.supplier->forAll(e|not e.oclIsKindOf(uml::Interface))",
+					UMLPackage.eINSTANCE.getDependency());
 
 	/**
 	 * @generated
@@ -415,6 +425,11 @@ public class UMLVisualIDRegistry {
 				return true;
 			}
 			break;
+		case DependencyEditPart.VISUAL_ID:
+			if (DependencyNameEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			break;
 		}
 		return false;
 	}
@@ -434,6 +449,9 @@ public class UMLVisualIDRegistry {
 		}
 		if (UMLPackage.eINSTANCE.getCommunicationPath().isSuperTypeOf(domainElement.eClass())) {
 			return CommunicationPathEditPart.VISUAL_ID;
+		}
+		if (UMLPackage.eINSTANCE.getDependency().isSuperTypeOf(domainElement.eClass()) && evaluate(Dependency_4005_Constraint, domainElement)) {
+			return DependencyEditPart.VISUAL_ID;
 		}
 		return -1;
 	}

@@ -11,8 +11,11 @@ import org.eclipse.gmf.runtime.emf.type.core.requests.DestroyElementRequest;
 import org.eclipse.gmf.runtime.emf.type.core.requests.ReorientRelationshipRequest;
 import org.eclipse.gmf.runtime.notation.Node;
 import org.eclipse.gmf.runtime.notation.View;
+import org.eclipse.uml2.diagram.deploy.edit.commands.DependencyCreateCommand;
+import org.eclipse.uml2.diagram.deploy.edit.commands.DependencyReorientCommand;
 import org.eclipse.uml2.diagram.deploy.edit.commands.ManifestationCreateCommand;
 import org.eclipse.uml2.diagram.deploy.edit.commands.ManifestationReorientCommand;
+import org.eclipse.uml2.diagram.deploy.edit.parts.DependencyEditPart;
 import org.eclipse.uml2.diagram.deploy.edit.parts.ElementImportEditPart;
 import org.eclipse.uml2.diagram.deploy.edit.parts.ManifestationEditPart;
 import org.eclipse.uml2.diagram.deploy.edit.parts.PackageImportsEditPart;
@@ -80,6 +83,9 @@ public class Package2ItemSemanticEditPolicy extends UMLBaseItemSemanticEditPolic
 		if (UMLElementTypes.Manifestation_4002 == req.getElementType()) {
 			return null;
 		}
+		if (UMLElementTypes.Dependency_4005 == req.getElementType()) {
+			return getGEFWrapper(new DependencyCreateCommand(req, req.getSource(), req.getTarget()));
+		}
 		return null;
 	}
 
@@ -89,6 +95,9 @@ public class Package2ItemSemanticEditPolicy extends UMLBaseItemSemanticEditPolic
 	protected Command getCompleteCreateRelationshipCommand(CreateRelationshipRequest req) {
 		if (UMLElementTypes.Manifestation_4002 == req.getElementType()) {
 			return getGEFWrapper(new ManifestationCreateCommand(req, req.getSource(), req.getTarget()));
+		}
+		if (UMLElementTypes.Dependency_4005 == req.getElementType()) {
+			return getGEFWrapper(new DependencyCreateCommand(req, req.getSource(), req.getTarget()));
 		}
 		return null;
 	}
@@ -103,6 +112,8 @@ public class Package2ItemSemanticEditPolicy extends UMLBaseItemSemanticEditPolic
 		switch (getVisualID(req)) {
 		case ManifestationEditPart.VISUAL_ID:
 			return getGEFWrapper(new ManifestationReorientCommand(req));
+		case DependencyEditPart.VISUAL_ID:
+			return getGEFWrapper(new DependencyReorientCommand(req));
 		}
 		return super.getReorientRelationshipCommand(req);
 	}

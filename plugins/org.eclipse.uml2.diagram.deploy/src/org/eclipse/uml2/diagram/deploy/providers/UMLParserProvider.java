@@ -18,6 +18,7 @@ import org.eclipse.uml2.diagram.deploy.edit.parts.Artifact3EditPart;
 import org.eclipse.uml2.diagram.deploy.edit.parts.ArtifactFileName2EditPart;
 import org.eclipse.uml2.diagram.deploy.edit.parts.ArtifactFileNameEditPart;
 import org.eclipse.uml2.diagram.deploy.edit.parts.CommunicationPathNameEditPart;
+import org.eclipse.uml2.diagram.deploy.edit.parts.DependencyNameEditPart;
 import org.eclipse.uml2.diagram.deploy.edit.parts.DeploymentNameEditPart;
 import org.eclipse.uml2.diagram.deploy.edit.parts.DeploymentSpecificationNameEditPart;
 import org.eclipse.uml2.diagram.deploy.edit.parts.DeviceName2EditPart;
@@ -453,6 +454,30 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 	/**
 	 * @generated
 	 */
+	private IParser dependencyName_6004Parser;
+
+	/**
+	 * @generated
+	 */
+	private IParser getDependencyName_6004Parser() {
+		if (dependencyName_6004Parser == null) {
+			dependencyName_6004Parser = createDependencyName_6004Parser();
+		}
+		return dependencyName_6004Parser;
+	}
+
+	/**
+	 * @generated
+	 */
+	protected IParser createDependencyName_6004Parser() {
+		EAttribute[] features = new EAttribute[] { UMLPackage.eINSTANCE.getNamedElement_Name(), };
+		MessageFormatParser parser = new MessageFormatParser(features);
+		return parser;
+	}
+
+	/**
+	 * @generated
+	 */
 	protected IParser getParser(int visualID) {
 		switch (visualID) {
 		case PackageNameEditPart.VISUAL_ID:
@@ -487,6 +512,8 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 			return getManifestationName_6002Parser();
 		case CommunicationPathNameEditPart.VISUAL_ID:
 			return getCommunicationPathName_6003Parser();
+		case DependencyNameEditPart.VISUAL_ID:
+			return getDependencyName_6004Parser();
 		}
 		return null;
 	}

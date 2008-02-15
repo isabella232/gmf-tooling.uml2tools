@@ -13,6 +13,8 @@ import org.eclipse.uml2.diagram.deploy.edit.parts.ArtifactFileName2EditPart;
 import org.eclipse.uml2.diagram.deploy.edit.parts.ArtifactFileNameEditPart;
 import org.eclipse.uml2.diagram.deploy.edit.parts.CommunicationPathEditPart;
 import org.eclipse.uml2.diagram.deploy.edit.parts.CommunicationPathNameEditPart;
+import org.eclipse.uml2.diagram.deploy.edit.parts.DependencyEditPart;
+import org.eclipse.uml2.diagram.deploy.edit.parts.DependencyNameEditPart;
 import org.eclipse.uml2.diagram.deploy.edit.parts.DeploymentConfigurationEditPart;
 import org.eclipse.uml2.diagram.deploy.edit.parts.DeploymentEditPart;
 import org.eclipse.uml2.diagram.deploy.edit.parts.DeploymentNameEditPart;
@@ -51,6 +53,8 @@ import org.eclipse.uml2.diagram.deploy.view.factories.ArtifactFileNameViewFactor
 import org.eclipse.uml2.diagram.deploy.view.factories.ArtifactViewFactory;
 import org.eclipse.uml2.diagram.deploy.view.factories.CommunicationPathNameViewFactory;
 import org.eclipse.uml2.diagram.deploy.view.factories.CommunicationPathViewFactory;
+import org.eclipse.uml2.diagram.deploy.view.factories.DependencyNameViewFactory;
+import org.eclipse.uml2.diagram.deploy.view.factories.DependencyViewFactory;
 import org.eclipse.uml2.diagram.deploy.view.factories.DeploymentConfigurationViewFactory;
 import org.eclipse.uml2.diagram.deploy.view.factories.DeploymentNameViewFactory;
 import org.eclipse.uml2.diagram.deploy.view.factories.DeploymentSpecificationNameViewFactory;
@@ -230,6 +234,11 @@ public class UMLViewProvider extends AbstractViewProvider {
 						return null; // wrong container
 					}
 					break;
+				case DependencyNameEditPart.VISUAL_ID:
+					if (DependencyEditPart.VISUAL_ID != UMLVisualIDRegistry.getVisualID(containerView) || containerView.getElement() != domainElement) {
+						return null; // wrong container
+					}
+					break;
 				default:
 					return null;
 				}
@@ -310,6 +319,8 @@ public class UMLViewProvider extends AbstractViewProvider {
 			return ManifestationNameViewFactory.class;
 		case CommunicationPathNameEditPart.VISUAL_ID:
 			return CommunicationPathNameViewFactory.class;
+		case DependencyNameEditPart.VISUAL_ID:
+			return DependencyNameViewFactory.class;
 		}
 		return null;
 	}
@@ -350,6 +361,8 @@ public class UMLViewProvider extends AbstractViewProvider {
 			return DeploymentConfigurationViewFactory.class;
 		case CommunicationPathEditPart.VISUAL_ID:
 			return CommunicationPathViewFactory.class;
+		case DependencyEditPart.VISUAL_ID:
+			return DependencyViewFactory.class;
 		}
 		return null;
 	}

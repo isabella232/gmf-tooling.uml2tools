@@ -51,6 +51,10 @@
           xsi:type="gmftool:CreationTool"
           title="Communication Path"
           description="Create Communication Path"/>
+      <tools
+          xsi:type="gmftool:CreationTool"
+          title="Dependency"
+          description="Create Dependency Link"/>
     </tools>
     <tools
         xsi:type="gmftool:ToolGroup"

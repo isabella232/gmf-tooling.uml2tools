@@ -51,6 +51,7 @@ import org.eclipse.uml2.uml.Deployment;
 import org.eclipse.uml2.uml.DeploymentSpecification;
 import org.eclipse.uml2.uml.DeploymentTarget;
 import org.eclipse.uml2.uml.Element;
+import org.eclipse.uml2.uml.NamedElement;
 import org.eclipse.uml2.uml.Package;
 import org.eclipse.uml2.uml.PackageableElement;
 import org.eclipse.uml2.uml.Type;
@@ -370,6 +371,20 @@ public class UMLBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 		/**
 		 * @generated
 		 */
+		private static final UMLAbstractExpression Dependency_4005_TargetExpression;
+
+		/**
+		 * @generated
+		 */
+		static {
+			Map env = new HashMap(3);
+			env.put(OPPOSITE_END_VAR, UMLPackage.eINSTANCE.getNamedElement());
+			Dependency_4005_TargetExpression = UMLOCLFactory.getExpression("not self.oclIsKindOf(uml::Interface)\r\n", UMLPackage.eINSTANCE.getNamedElement(), env); //$NON-NLS-1$
+		}
+
+		/**
+		 * @generated
+		 */
 		public static boolean canCreateDeployment_4001(DeploymentTarget container, DeploymentTarget source, DeployedArtifact target) {
 			return canExistDeployment_4001(container, source, target);
 		}
@@ -406,6 +421,13 @@ public class UMLBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 		/**
 		 * @generated
 		 */
+		public static boolean canCreateDependency_4005(Package container, NamedElement source, NamedElement target) {
+			return canExistDependency_4005(container, source, target);
+		}
+
+		/**
+		 * @generated
+		 */
 		public static boolean canExistDeployment_4001(DeploymentTarget container, DeploymentTarget source, DeployedArtifact target) {
 			return true;
 		}
@@ -432,6 +454,16 @@ public class UMLBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 				return false;
 			}
 			if (!evaluate(CommunicationPath_4004_TargetExpression, target, source, true)) {
+				return false;
+			}
+			return true;
+		}
+
+		/**
+		 * @generated
+		 */
+		public static boolean canExistDependency_4005(Package container, NamedElement source, NamedElement target) {
+			if (!evaluate(Dependency_4005_TargetExpression, target, source, true)) {
 				return false;
 			}
 			return true;
