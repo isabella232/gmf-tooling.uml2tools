@@ -2,6 +2,7 @@ package org.eclipse.uml2.diagram.clazz.edit.parts;
 
 import org.eclipse.draw2d.IFigure;
 import org.eclipse.draw2d.Label;
+import org.eclipse.draw2d.LayoutManager;
 import org.eclipse.draw2d.LineBorder;
 import org.eclipse.draw2d.MarginBorder;
 import org.eclipse.draw2d.RectangleFigure;
@@ -11,6 +12,7 @@ import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EcorePackage;
 import org.eclipse.gef.EditPart;
 import org.eclipse.gef.EditPolicy;
+import org.eclipse.gef.GraphicalEditPart;
 import org.eclipse.gef.Request;
 import org.eclipse.gef.commands.Command;
 import org.eclipse.gef.editpolicies.LayoutEditPolicy;
@@ -536,5 +538,21 @@ public class AssociationClass2EditPart extends AbstractBorderedShapeEditPart {
 	 * @generated
 	 */
 	static final Font FFIGURECLASSFIGURE_NAME_FONT = new Font(Display.getCurrent(), Display.getDefault().getSystemFont().getFontData()[0].getName(), 9, SWT.NORMAL);
+
+	/**
+	 * @generated
+	 */
+	protected void reorderChild(EditPart child, int index) {
+		// Save the constraint of the child so that it does not
+		// get lost during the remove and re-add.
+		IFigure childFigure = ((GraphicalEditPart) child).getFigure();
+		LayoutManager layout = getContentPaneFor((IGraphicalEditPart) child).getLayoutManager();
+		Object constraint = null;
+		if (layout != null) {
+			constraint = layout.getConstraint(childFigure);
+		}
+		super.reorderChild(child, index);
+		setLayoutConstraint(child, childFigure, constraint);
+	}
 
 }
