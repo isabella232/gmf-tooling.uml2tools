@@ -1149,12 +1149,12 @@
       <labelMappings
           xsi:type="gmfmap:FeatureLabelMapping">
         <diagramLabel
-            href="classDiagram_dependencies.gmfgraph#Dependency_name"/>
+            href="common_dependencies.gmfgraph#Dependency_name"/>
         <features
             href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//NamedElement/name"/>
       </labelMappings>
       <diagramNode
-          href="classDiagram_dependencies.gmfgraph#NAryDependencyNode"/>
+          href="common_dependencies.gmfgraph#NAryDependencyNode"/>
     </ownedChild>
   </nodes>
   <nodes>
@@ -1495,14 +1495,14 @@
     <labelMappings
         xsi:type="gmfmap:FeatureLabelMapping">
       <diagramLabel
-          href="classDiagram_dependencies.gmfgraph#Dependency_name"/>
+          href="common_dependencies.gmfgraph#Dependency_name"/>
       <features
           href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//NamedElement/name"/>
     </labelMappings>
     <labelMappings
         xsi:type="gmfmap:FeatureLabelMapping">
       <diagramLabel
-          href="classDiagram_dependencies.gmfgraph#Dependency_type"/>
+          href="common_dependencies.gmfgraph#Dependency_type"/>
       <features
           href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//NamedElement/name"/>
     </labelMappings>
@@ -1512,7 +1512,7 @@
         xsi:type="gmftool:GenericTool"
         href="classDiagram.gmftool#//@palette/@tools.2/@tools.1/@tools.0"/>
     <diagramLink
-        href="classDiagram_dependencies.gmfgraph#BinaryDependencyLink"/>
+        href="common_dependencies.gmfgraph#BinaryDependencyLink"/>
     <sourceMetaFeature
         xsi:type="ecore:EReference"
         href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//Dependency/client"/>
@@ -1645,7 +1645,7 @@
         xsi:type="gmftool:CreationTool"
         href="classDiagram.gmftool#//@palette/@tools.2/@tools.6"/>
     <diagramLink
-        href="classDiagram_dependencies.gmfgraph#BinaryDependencyLink"/>
+        href="common_dependencies.gmfgraph#BinaryDependencyLink"/>
     <linkMetaFeature
         xsi:type="ecore:EReference"
         href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//Dependency/supplier"/>
@@ -1655,7 +1655,7 @@
         xsi:type="gmftool:CreationTool"
         href="classDiagram.gmftool#//@palette/@tools.2/@tools.7"/>
     <diagramLink
-        href="classDiagram_dependencies.gmfgraph#NAryDependencyBeginningLink"/>
+        href="common_dependencies.gmfgraph#NAryDependencyBeginningLink"/>
     <linkMetaFeature
         xsi:type="ecore:EReference"
         href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//Dependency/client"/>
@@ -1691,7 +1691,7 @@
     <labelMappings
         xsi:type="gmfmap:FeatureLabelMapping">
       <diagramLabel
-          href="classDiagram_dependencies.gmfgraph#Dependency_name"/>
+          href="common_dependencies.gmfgraph#Dependency_name"/>
       <features
           href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//NamedElement/name"/>
     </labelMappings>
@@ -1701,7 +1701,7 @@
         xsi:type="gmftool:CreationTool"
         href="classDiagram.gmftool#//@palette/@tools.2/@tools.9"/>
     <diagramLink
-        href="classDiagram_dependencies.gmfgraph#RealizationDependencyLink"/>
+        href="common_dependencies.gmfgraph#RealizationDependencyLink"/>
     <sourceMetaFeature
         xsi:type="ecore:EReference"
         href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//Dependency/client"/>
