@@ -185,7 +185,7 @@ public class PortEditPart extends BorderedBorderItemEditPart {
 	public EditPart getPrimaryChildEditPart() {
 		return getChildBySemanticHint(UMLVisualIDRegistry.getType(PortNameEditPart.VISUAL_ID));
 	}
-	
+
 	/**
 	 * @NOT-generated
 	 */
@@ -196,7 +196,7 @@ public class PortEditPart extends BorderedBorderItemEditPart {
 			refreshHasType();
 		}
 	}
-	
+
 	/**
 	 * @NOT-generated
 	 */
@@ -210,17 +210,17 @@ public class PortEditPart extends BorderedBorderItemEditPart {
 	 * @NOT-generated
 	 */
 	private void refreshHasType() {
-		boolean hasType = ((Port)resolveSemanticElement()).getType() != null;
+		boolean hasType = ((Port) resolveSemanticElement()).getType() != null;
 		if (!hasType) {
 			getPrimaryShape().setForegroundColor(getHighlightColor());
 		} else {// has type
-	        LineStyle style = (LineStyle)  getPrimaryView().getStyle(NotationPackage.Literals.LINE_STYLE);
-	        if ( style != null ) {
-	        	getPrimaryShape().setForegroundColor(DiagramColorRegistry.getInstance().getColor(new Integer(style.getLineColor())));
-	        }
+			LineStyle style = (LineStyle) getPrimaryView().getStyle(NotationPackage.Literals.LINE_STYLE);
+			if (style != null) {
+				getPrimaryShape().setForegroundColor(DiagramColorRegistry.getInstance().getColor(new Integer(style.getLineColor())));
+			}
 		}
 	}
-		
+
 	/**
 	 * @NOT-generated
 	 */
@@ -228,7 +228,7 @@ public class PortEditPart extends BorderedBorderItemEditPart {
 		RGB rgb = PreferenceConverter.getColor(myStore, UMLPreferencesConstants.HIGHLIGHT_COLOR);
 		return DiagramColorRegistry.getInstance().getColor(rgb);
 	}
-	
+
 	/**
 	 * @generated
 	 */
@@ -266,5 +266,5 @@ public class PortEditPart extends BorderedBorderItemEditPart {
 	}
 
 	private final IPreferenceStore myStore = UMLDiagramEditorPlugin.getInstance().getPreferenceStore();
-	
+
 }
