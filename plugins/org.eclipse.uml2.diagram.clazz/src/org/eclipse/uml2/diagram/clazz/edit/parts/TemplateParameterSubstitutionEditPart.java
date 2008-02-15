@@ -520,7 +520,21 @@ public class TemplateParameterSubstitutionEditPart extends LabelEditPart impleme
 	 * @generated
 	 */
 	protected IFigure createFigurePrim() {
-		return new Label();
+		return new TemplateBinding_templateParameterSubstitutionLabel();
+	}
+
+	/**
+	 * @generated
+	 */
+	public class TemplateBinding_templateParameterSubstitutionLabel extends Label {
+
+		/**
+		 * @generated
+		 */
+		public TemplateBinding_templateParameterSubstitutionLabel() {
+			this.setText("<>");
+		}
+
 	}
 
 }

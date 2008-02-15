@@ -128,10 +128,10 @@
           text="&lt;&lt;bind>>"/>
     </descriptors>
     <descriptors
-        name="TemplateBinding_templateParameterSubstitution">
+        name="TemplateBinding_templateParameterSubstitutionLabel">
       <actualFigure
           xsi:type="gmfgraph:Label"
-          name="TemplateBinding_templateParameterSubstitution"
+          name="TemplateBinding_templateParameterSubstitutionLabel"
           text="&lt;>"/>
     </descriptors>
   </figures>
@@ -140,7 +140,8 @@
       figure="DependencyNode"
       resizeConstraint="NONE"/>
   <connections
-      name="BinaryDependencyLink"/>
+      name="BinaryDependencyLink"
+      figure="Dependency_WithArrow_Polyline"/>
   <connections
       name="NAryDependencyBeginningLink"
       figure="Dependency_NoArrow_Polyline"/>
@@ -174,5 +175,6 @@
       elementIcon="false"/>
   <labels
       name="TemplateBinding_templateParameterSubstitution"
+      figure="TemplateBinding_templateParameterSubstitutionLabel"
       elementIcon="false"/>
 </gmfgraph:Canvas>
