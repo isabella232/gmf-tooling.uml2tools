@@ -367,6 +367,16 @@ public class UMLElementTypes extends ElementInitializers {
 	/**
 	 * @generated
 	 */
+	public static final IElementType PortProvided_4017 = getElementType("org.eclipse.uml2.diagram.clazz.PortProvided_4017"); //$NON-NLS-1$
+
+	/**
+	 * @generated
+	 */
+	public static final IElementType PortRequired_4018 = getElementType("org.eclipse.uml2.diagram.clazz.PortRequired_4018"); //$NON-NLS-1$
+
+	/**
+	 * @generated
+	 */
 	private static ImageRegistry getImageRegistry() {
 		if (imageRegistry == null) {
 			imageRegistry = new ImageRegistry();
@@ -597,6 +607,10 @@ public class UMLElementTypes extends ElementInitializers {
 			elements.put(Slot_4015, UMLPackage.eINSTANCE.getSlot());
 
 			elements.put(TemplateBinding_4016, UMLPackage.eINSTANCE.getTemplateBinding());
+
+			elements.put(PortProvided_4017, UMLPackage.eINSTANCE.getPort_Provided());
+
+			elements.put(PortRequired_4018, UMLPackage.eINSTANCE.getPort_Required());
 		}
 		return (ENamedElement) elements.get(type);
 	}
@@ -678,6 +692,8 @@ public class UMLElementTypes extends ElementInitializers {
 			KNOWN_ELEMENT_TYPES.add(AssociationClass_4014);
 			KNOWN_ELEMENT_TYPES.add(Slot_4015);
 			KNOWN_ELEMENT_TYPES.add(TemplateBinding_4016);
+			KNOWN_ELEMENT_TYPES.add(PortProvided_4017);
+			KNOWN_ELEMENT_TYPES.add(PortRequired_4018);
 		}
 		return KNOWN_ELEMENT_TYPES.contains(elementType);
 	}

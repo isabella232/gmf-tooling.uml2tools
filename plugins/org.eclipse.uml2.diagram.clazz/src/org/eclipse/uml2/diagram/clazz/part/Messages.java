@@ -1458,6 +1458,26 @@ public class Messages extends NLS {
 	/**
 	 * @generated
 	 */
+	public static String NavigatorGroupName_PortProvided_4017_target;
+
+	/**
+	 * @generated
+	 */
+	public static String NavigatorGroupName_PortProvided_4017_source;
+
+	/**
+	 * @generated
+	 */
+	public static String NavigatorGroupName_PortRequired_4018_target;
+
+	/**
+	 * @generated
+	 */
+	public static String NavigatorGroupName_PortRequired_4018_source;
+
+	/**
+	 * @generated
+	 */
 	public static String NavigatorActionProvider_OpenDiagramActionName;
 
 	/**

@@ -113,7 +113,7 @@ public class Property7EditPart extends ConnectionNodeEditPart {
 	 * @NOT-GENERATED
 	 */
 	private void refreshDecorations(AssociationLinkFigure linkFigure) {
-		Property currentEnd = (Property)resolveSemanticElement();		
+		Property currentEnd = (Property) resolveSemanticElement();
 		Association association = currentEnd.getAssociation();
 		Property otherEnd = getOtherEnd(currentEnd);
 		if (otherEnd == null) {
@@ -122,7 +122,7 @@ public class Property7EditPart extends ConnectionNodeEditPart {
 		IPreferenceStore store = (IPreferenceStore) getDiagramPreferencesHint().getPreferenceStore();
 		linkFigure.getTargetDecorationImpl().update(association, currentEnd, otherEnd, store);
 	}
-	
+
 	/**
 	 * @NOT-GENERATED
 	 */
@@ -146,6 +146,7 @@ public class Property7EditPart extends ConnectionNodeEditPart {
 		public AssociationLinkFigure() {
 			this.setForegroundColor(ColorConstants.blue);
 
+			setSourceDecoration(createSourceDecoration());
 			setTargetDecoration(createTargetDecoration());
 		}
 

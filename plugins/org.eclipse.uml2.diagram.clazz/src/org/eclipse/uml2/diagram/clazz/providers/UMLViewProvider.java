@@ -726,6 +726,10 @@ public class UMLViewProvider extends AbstractViewProvider {
 			return AssociationInstanceViewFactory.class;
 		case TemplateBindingEditPart.VISUAL_ID:
 			return TemplateBindingViewFactory.class;
+		case PortProvidedEditPart.VISUAL_ID:
+			return PortProvidedViewFactory.class;
+		case PortRequiredEditPart.VISUAL_ID:
+			return PortRequiredViewFactory.class;
 		}
 		return null;
 	}

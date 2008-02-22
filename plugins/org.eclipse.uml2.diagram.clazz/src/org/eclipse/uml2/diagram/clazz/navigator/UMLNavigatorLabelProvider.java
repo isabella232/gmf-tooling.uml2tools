@@ -89,6 +89,8 @@ import org.eclipse.uml2.diagram.clazz.edit.parts.PackageName4EditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.PackageNameEditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.PortEditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.PortNameEditPart;
+import org.eclipse.uml2.diagram.clazz.edit.parts.PortProvidedEditPart;
+import org.eclipse.uml2.diagram.clazz.edit.parts.PortRequiredEditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.PrimitiveType2EditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.PrimitiveType3EditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.PrimitiveTypeEditPart;
@@ -304,6 +306,10 @@ public class UMLNavigatorLabelProvider extends LabelProvider implements ICommonL
 			return getImage("Navigator?Link?http://www.eclipse.org/uml2/2.1.0/UML?Slot", UMLElementTypes.Slot_4015); //$NON-NLS-1$
 		case TemplateBindingEditPart.VISUAL_ID:
 			return getImage("Navigator?Link?http://www.eclipse.org/uml2/2.1.0/UML?TemplateBinding", UMLElementTypes.TemplateBinding_4016); //$NON-NLS-1$
+		case PortProvidedEditPart.VISUAL_ID:
+			return getImage("Navigator?Link?http://www.eclipse.org/uml2/2.1.0/UML?Port?provided", UMLElementTypes.PortProvided_4017); //$NON-NLS-1$
+		case PortRequiredEditPart.VISUAL_ID:
+			return getImage("Navigator?Link?http://www.eclipse.org/uml2/2.1.0/UML?Port?required", UMLElementTypes.PortRequired_4018); //$NON-NLS-1$
 		}
 		return getImage("Navigator?UnknownElement", null); //$NON-NLS-1$
 	}
@@ -490,6 +496,10 @@ public class UMLNavigatorLabelProvider extends LabelProvider implements ICommonL
 			return getSlot_4015Text(view);
 		case TemplateBindingEditPart.VISUAL_ID:
 			return getTemplateBinding_4016Text(view);
+		case PortProvidedEditPart.VISUAL_ID:
+			return getPortProvided_4017Text(view);
+		case PortRequiredEditPart.VISUAL_ID:
+			return getPortRequired_4018Text(view);
 		}
 		return getUnknownElementText(view);
 	}
@@ -1477,6 +1487,20 @@ public class UMLNavigatorLabelProvider extends LabelProvider implements ICommonL
 			return ""; //$NON-NLS-1$
 		}
 
+	}
+
+	/**
+	 * @generated
+	 */
+	private String getPortProvided_4017Text(View view) {
+		return ""; //$NON-NLS-1$
+	}
+
+	/**
+	 * @generated
+	 */
+	private String getPortRequired_4018Text(View view) {
+		return ""; //$NON-NLS-1$
 	}
 
 	/**

@@ -1829,6 +1829,34 @@
           body="self.ownedTemplateSignature &lt;> null"/>
     </creationConstraints>
   </links>
+  <links>
+    <tool
+        xsi:type="gmftool:CreationTool"
+        href="classDiagram.gmftool#//@palette/@tools.2/@tools.3"/>
+    <diagramLink
+        href="classDiagram_interfaces.gmfgraph#ProvidedInterfaceLink"/>
+    <linkMetaFeature
+        xsi:type="ecore:EReference"
+        href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//Port/provided"/>
+    <creationConstraints>
+      <sourceEnd
+          body="self.oclIsKindOf(uml::Port) and (self.oclAsType(uml::Port).type.oclIsUndefined() or self.oclAsType(uml::Port).type.oclIsKindOf(uml::Classifier))"/>
+    </creationConstraints>
+  </links>
+  <links>
+    <tool
+        xsi:type="gmftool:CreationTool"
+        href="classDiagram.gmftool#//@palette/@tools.2/@tools.4"/>
+    <diagramLink
+        href="classDiagram_interfaces.gmfgraph#RequiredInterfaceLink"/>
+    <linkMetaFeature
+        xsi:type="ecore:EReference"
+        href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//Port/required"/>
+    <creationConstraints>
+      <sourceEnd
+          body="self.oclIsKindOf(uml::Port)"/>
+    </creationConstraints>
+  </links>
   <diagram>
     <diagramCanvas
         href="../../../plugin/org.eclipse.gmf.graphdef/models/basic.gmfgraph#Surface"/>

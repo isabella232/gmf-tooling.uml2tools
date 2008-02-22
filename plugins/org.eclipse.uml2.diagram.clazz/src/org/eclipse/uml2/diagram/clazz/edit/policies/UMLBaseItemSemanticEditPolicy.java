@@ -63,6 +63,7 @@ import org.eclipse.uml2.uml.InstanceSpecification;
 import org.eclipse.uml2.uml.Interface;
 import org.eclipse.uml2.uml.NamedElement;
 import org.eclipse.uml2.uml.Package;
+import org.eclipse.uml2.uml.Port;
 import org.eclipse.uml2.uml.TemplateableElement;
 import org.eclipse.uml2.uml.Type;
 import org.eclipse.uml2.uml.UMLPackage;
@@ -419,6 +420,36 @@ public class UMLBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 		}
 
 		/**
+		 * @generated
+		 */
+		private static final UMLAbstractExpression PortProvided_4017_SourceExpression;
+
+		/**
+		 * @generated
+		 */
+		static {
+			Map env = new HashMap(3);
+			env.put(OPPOSITE_END_VAR, UMLPackage.eINSTANCE.getInterface());
+			PortProvided_4017_SourceExpression = UMLOCLFactory
+					.getExpression(
+							"self.oclIsKindOf(uml::Port) and (self.oclAsType(uml::Port).type.oclIsUndefined() or self.oclAsType(uml::Port).type.oclIsKindOf(uml::Classifier))", UMLPackage.eINSTANCE.getPort(), env); //$NON-NLS-1$
+		}
+
+		/**
+		 * @generated
+		 */
+		private static final UMLAbstractExpression PortRequired_4018_SourceExpression;
+
+		/**
+		 * @generated
+		 */
+		static {
+			Map env = new HashMap(3);
+			env.put(OPPOSITE_END_VAR, UMLPackage.eINSTANCE.getInterface());
+			PortRequired_4018_SourceExpression = UMLOCLFactory.getExpression("self.oclIsKindOf(uml::Port)", UMLPackage.eINSTANCE.getPort(), env); //$NON-NLS-1$
+		}
+
+		/**
 		 * @generated 
 		 */
 		public static boolean canCreateGeneralization_4001(Classifier source, Classifier target) {
@@ -546,6 +577,30 @@ public class UMLBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 		/**
 		 * @generated
 		 */
+		public static boolean canCreatePortProvided_4017(Port source, Interface target) {
+			if (source != null) {
+				if (source.getProvideds().contains(target)) {
+					return false;
+				}
+			}
+			return canExistPortProvided_4017(source, target);
+		}
+
+		/**
+		 * @generated
+		 */
+		public static boolean canCreatePortRequired_4018(Port source, Interface target) {
+			if (source != null) {
+				if (source.getRequireds().contains(target)) {
+					return false;
+				}
+			}
+			return canExistPortRequired_4018(source, target);
+		}
+
+		/**
+		 * @generated
+		 */
 		public static boolean canExistGeneralization_4001(Classifier source, Classifier target) {
 			return true;
 		}
@@ -658,6 +713,26 @@ public class UMLBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 		 */
 		public static boolean canExistTemplateBinding_4016(TemplateableElement container, TemplateableElement source, TemplateableElement target) {
 			if (!evaluate(TemplateBinding_4016_TargetExpression, target, source, true)) {
+				return false;
+			}
+			return true;
+		}
+
+		/**
+		 * @generated
+		 */
+		public static boolean canExistPortProvided_4017(Port source, Interface target) {
+			if (!evaluate(PortProvided_4017_SourceExpression, source, target, false)) {
+				return false;
+			}
+			return true;
+		}
+
+		/**
+		 * @generated
+		 */
+		public static boolean canExistPortRequired_4018(Port source, Interface target) {
+			if (!evaluate(PortRequired_4018_SourceExpression, source, target, false)) {
 				return false;
 			}
 			return true;

@@ -343,8 +343,9 @@ public class UMLPaletteFactory {
 	 * @generated
 	 */
 	private ToolEntry createProvidedInterface4CreationTool() {
-		List/*<IElementType>*/types = new ArrayList/*<IElementType>*/(1);
+		List/*<IElementType>*/types = new ArrayList/*<IElementType>*/(2);
 		types.add(UMLElementTypes.InterfaceRealization_4008);
+		types.add(UMLElementTypes.PortProvided_4017);
 		LinkToolEntry entry = new LinkToolEntry(Messages.ProvidedInterface4CreationTool_title, Messages.ProvidedInterface4CreationTool_desc, types);
 		entry.setSmallIcon(UMLElementTypes.getImageDescriptor(UMLElementTypes.InterfaceRealization_4008));
 		entry.setLargeIcon(entry.getSmallIcon());
@@ -355,8 +356,9 @@ public class UMLPaletteFactory {
 	 * @generated
 	 */
 	private ToolEntry createRequiredInterface5CreationTool() {
-		List/*<IElementType>*/types = new ArrayList/*<IElementType>*/(1);
+		List/*<IElementType>*/types = new ArrayList/*<IElementType>*/(2);
 		types.add(UMLElementTypes.Usage_4013);
+		types.add(UMLElementTypes.PortRequired_4018);
 		LinkToolEntry entry = new LinkToolEntry(Messages.RequiredInterface5CreationTool_title, Messages.RequiredInterface5CreationTool_desc, types);
 		entry.setSmallIcon(UMLElementTypes.getImageDescriptor(UMLElementTypes.Usage_4013));
 		entry.setLargeIcon(entry.getSmallIcon());

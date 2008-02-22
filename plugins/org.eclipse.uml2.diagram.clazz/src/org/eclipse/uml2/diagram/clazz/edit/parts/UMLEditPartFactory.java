@@ -454,6 +454,12 @@ public class UMLEditPartFactory implements EditPartFactory {
 
 			case TemplateParameterSubstitutionEditPart.VISUAL_ID:
 				return new TemplateParameterSubstitutionEditPart(view);
+
+			case PortProvidedEditPart.VISUAL_ID:
+				return new PortProvidedEditPart(view);
+
+			case PortRequiredEditPart.VISUAL_ID:
+				return new PortRequiredEditPart(view);
 			}
 		}
 		return createUnrecognizedEditPart(context, model);

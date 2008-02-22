@@ -26,6 +26,10 @@ import org.eclipse.uml2.diagram.clazz.edit.commands.GeneralizationGeneralReorien
 import org.eclipse.uml2.diagram.clazz.edit.commands.GeneralizationReorientCommand;
 import org.eclipse.uml2.diagram.clazz.edit.commands.InterfaceRealizationCreateCommand;
 import org.eclipse.uml2.diagram.clazz.edit.commands.InterfaceRealizationReorientCommand;
+import org.eclipse.uml2.diagram.clazz.edit.commands.PortProvidedCreateCommand;
+import org.eclipse.uml2.diagram.clazz.edit.commands.PortProvidedReorientCommand;
+import org.eclipse.uml2.diagram.clazz.edit.commands.PortRequiredCreateCommand;
+import org.eclipse.uml2.diagram.clazz.edit.commands.PortRequiredReorientCommand;
 import org.eclipse.uml2.diagram.clazz.edit.commands.PropertyLinkCreateCommand;
 import org.eclipse.uml2.diagram.clazz.edit.commands.PropertyLinkReorientCommand;
 import org.eclipse.uml2.diagram.clazz.edit.commands.RealizationCreateCommand;
@@ -43,6 +47,8 @@ import org.eclipse.uml2.diagram.clazz.edit.parts.Generalization2EditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.GeneralizationEditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.GeneralizationGeneralEditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.InterfaceRealizationEditPart;
+import org.eclipse.uml2.diagram.clazz.edit.parts.PortProvidedEditPart;
+import org.eclipse.uml2.diagram.clazz.edit.parts.PortRequiredEditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.Property7EditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.RealizationEditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.TemplateBindingEditPart;
@@ -119,6 +125,12 @@ public class InterfaceItemSemanticEditPolicy extends UMLBaseItemSemanticEditPoli
 		if (UMLElementTypes.TemplateBinding_4016 == req.getElementType()) {
 			return getGEFWrapper(new TemplateBindingCreateCommand(req, req.getSource(), req.getTarget()));
 		}
+		if (UMLElementTypes.PortProvided_4017 == req.getElementType()) {
+			return null;
+		}
+		if (UMLElementTypes.PortRequired_4018 == req.getElementType()) {
+			return null;
+		}
 		return null;
 	}
 
@@ -164,6 +176,12 @@ public class InterfaceItemSemanticEditPolicy extends UMLBaseItemSemanticEditPoli
 		}
 		if (UMLElementTypes.TemplateBinding_4016 == req.getElementType()) {
 			return getGEFWrapper(new TemplateBindingCreateCommand(req, req.getSource(), req.getTarget()));
+		}
+		if (UMLElementTypes.PortProvided_4017 == req.getElementType()) {
+			return getGEFWrapper(new PortProvidedCreateCommand(req, req.getSource(), req.getTarget()));
+		}
+		if (UMLElementTypes.PortRequired_4018 == req.getElementType()) {
+			return getGEFWrapper(new PortRequiredCreateCommand(req, req.getSource(), req.getTarget()));
 		}
 		return null;
 	}
@@ -214,6 +232,10 @@ public class InterfaceItemSemanticEditPolicy extends UMLBaseItemSemanticEditPoli
 			return getGEFWrapper(new DependencyClientReorientCommand(req));
 		case GeneralizationGeneralEditPart.VISUAL_ID:
 			return getGEFWrapper(new GeneralizationGeneralReorientCommand(req));
+		case PortProvidedEditPart.VISUAL_ID:
+			return getGEFWrapper(new PortProvidedReorientCommand(req));
+		case PortRequiredEditPart.VISUAL_ID:
+			return getGEFWrapper(new PortRequiredReorientCommand(req));
 		}
 		return super.getReorientReferenceRelationshipCommand(req);
 	}
