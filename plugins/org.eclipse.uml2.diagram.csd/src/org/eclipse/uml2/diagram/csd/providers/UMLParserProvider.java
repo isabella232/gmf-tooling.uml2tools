@@ -19,6 +19,8 @@ import org.eclipse.uml2.diagram.common.parser.association.name.AssociationNameTo
 import org.eclipse.uml2.diagram.common.parser.imports.ElementImportParser;
 import org.eclipse.uml2.diagram.common.parser.instance.InstanceSpecificationParser;
 import org.eclipse.uml2.diagram.common.parser.instance.InstanceSpecificationToString;
+import org.eclipse.uml2.diagram.common.parser.port.PortParser;
+import org.eclipse.uml2.diagram.common.parser.port.PortToString;
 import org.eclipse.uml2.diagram.common.parser.property.PropertyParser;
 import org.eclipse.uml2.diagram.common.parser.property.PropertyToString;
 import org.eclipse.uml2.diagram.common.parser.slot.SlotParser;
@@ -416,12 +418,19 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 	}
 
 	/**
-	 * @generated
+	 * @generated NOT
 	 */
 	protected IParser createPortName_5012Parser() {
-		EAttribute[] features = new EAttribute[] { UMLPackage.eINSTANCE.getNamedElement_Name(), };
-		MessageFormatParser parser = new MessageFormatParser(features);
-		return parser;
+		return createPortNameParser();
+	}
+
+	/**
+	 * @NOT-generated
+	 */
+	private IParser createPortNameParser() {
+		LookupSuiteImpl lookupSuite = new LookupSuiteImpl();
+		lookupSuite.addLookup(Type.class, TYPE_LOOKUP);
+		return new SemanticParserAdapter(new PortParser(lookupSuite), new BasicApplyStrategy(), new PortToString());
 	}
 
 	/**
@@ -484,12 +493,10 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 	}
 
 	/**
-	 * @generated
+	 * @generated NOT
 	 */
 	protected IParser createPortName_5025Parser() {
-		EAttribute[] features = new EAttribute[] { UMLPackage.eINSTANCE.getNamedElement_Name(), };
-		MessageFormatParser parser = new MessageFormatParser(features);
-		return parser;
+		return createPortNameParser();
 	}
 
 	/**
