@@ -103,6 +103,7 @@ import org.eclipse.uml2.diagram.common.parser.port.PortParser;
 import org.eclipse.uml2.diagram.common.parser.port.PortToString;
 import org.eclipse.uml2.diagram.common.parser.property.PropertyParser;
 import org.eclipse.uml2.diagram.common.parser.property.PropertyToString;
+import org.eclipse.uml2.diagram.common.parser.slot.SlotLookupSuite;
 import org.eclipse.uml2.diagram.common.parser.slot.SlotParser;
 import org.eclipse.uml2.diagram.common.parser.slot.SlotToString;
 import org.eclipse.uml2.diagram.common.parser.stereotype.AppliedStereotypeParser;
@@ -1632,30 +1633,7 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 	 * @generated NOT
 	 */
 	protected IParser createSlot_3017Parser() {
-		LookupSuiteImpl structuralFeatureSuite = new LookupSuiteImpl();
-		structuralFeatureSuite.addLookup(StructuralFeature.class, new Lookup<StructuralFeature>() {
-
-			public List<IElementType> getResolutionElementTypes() {
-				return Collections.<IElementType> emptyList();
-			}
-
-			public StructuralFeature lookup(String name, EObject context) {
-				if (name == null || "".equals(name)) {
-					return null;
-				}
-				InstanceSpecification is = ((Slot) context).getOwningInstance();
-				for (Classifier c : is.getClassifiers()) {
-					for (Property attr : c.getAllAttributes()) {
-						if (name.equals(attr.getName())) {
-							return attr;
-						}
-					}
-				}
-				return null;
-			}
-
-		});
-		return new SemanticParserAdapter(new SlotParser(structuralFeatureSuite), new BasicApplyStrategy(), new SlotToString.VIEW(), new SlotToString.EDIT()) {
+		return new SemanticParserAdapter(new SlotParser(new SlotLookupSuite()), new BasicApplyStrategy(), new SlotToString.VIEW(), new SlotToString.EDIT()) {
 
 			@Override
 			public String getPrintString(IAdaptable element, int flags) {

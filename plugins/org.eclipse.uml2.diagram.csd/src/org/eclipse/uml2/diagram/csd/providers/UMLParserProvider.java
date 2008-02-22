@@ -23,6 +23,7 @@ import org.eclipse.uml2.diagram.common.parser.port.PortParser;
 import org.eclipse.uml2.diagram.common.parser.port.PortToString;
 import org.eclipse.uml2.diagram.common.parser.property.PropertyParser;
 import org.eclipse.uml2.diagram.common.parser.property.PropertyToString;
+import org.eclipse.uml2.diagram.common.parser.slot.SlotLookupSuite;
 import org.eclipse.uml2.diagram.common.parser.slot.SlotParser;
 import org.eclipse.uml2.diagram.common.parser.slot.SlotToString;
 import org.eclipse.uml2.diagram.csd.edit.parts.AssociationName2EditPart;
@@ -518,7 +519,16 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 	 * @generated NOT
 	 */
 	protected IParser createSlot_3015Parser() {
-		return new SemanticParserAdapter(new SlotParser(), new BasicApplyStrategy(), new SlotToString.VIEW(), new SlotToString.EDIT());
+		return new SemanticParserAdapter(new SlotParser(new SlotLookupSuite()), new BasicApplyStrategy(), new SlotToString.VIEW(), new SlotToString.EDIT()) {
+			@Override
+			public String getPrintString(IAdaptable element, int flags) {
+				String result = super.getPrintString(element, flags);
+				if ("".equals(result)) {
+					result = "<enter>";
+				}
+				return result;
+			}
+		};
 	}
 
 	/**
