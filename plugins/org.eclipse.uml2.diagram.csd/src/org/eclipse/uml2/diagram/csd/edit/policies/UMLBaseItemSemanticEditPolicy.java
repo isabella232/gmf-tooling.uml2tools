@@ -358,6 +358,11 @@ public class UMLBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 		/**
 		 * @generated
 		 */
+		private static final UMLAbstractExpression Usage_4008_SourceExpression;
+
+		/**
+		 * @generated
+		 */
 		private static final UMLAbstractExpression Usage_4008_TargetExpression;
 
 		/**
@@ -366,7 +371,7 @@ public class UMLBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 		static {
 			Map env = new HashMap(3);
 			env.put(OPPOSITE_END_VAR, UMLPackage.eINSTANCE.getNamedElement());
-			Usage_4008_TargetExpression = UMLOCLFactory.getExpression("self.oclIsKindOf(uml::Interface)", UMLPackage.eINSTANCE.getNamedElement(), env); //$NON-NLS-1$
+			Usage_4008_SourceExpression = UMLOCLFactory.getExpression("not self.oclIsKindOf(uml::Port)", UMLPackage.eINSTANCE.getNamedElement(), env); //$NON-NLS-1$
 		}
 
 		/**
@@ -379,8 +384,8 @@ public class UMLBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 		 */
 		static {
 			Map env = new HashMap(3);
-			env.put(OPPOSITE_END_VAR, UMLPackage.eINSTANCE.getInterface());
-			PortProvided_4010_SourceExpression = UMLOCLFactory.getExpression("self.oclIsKindOf(uml::Port)", UMLPackage.eINSTANCE.getPort(), env); //$NON-NLS-1$
+			env.put(OPPOSITE_END_VAR, UMLPackage.eINSTANCE.getNamedElement());
+			Usage_4008_TargetExpression = UMLOCLFactory.getExpression("self.oclIsKindOf(uml::Interface)", UMLPackage.eINSTANCE.getNamedElement(), env); //$NON-NLS-1$
 		}
 
 		/**
@@ -395,6 +400,15 @@ public class UMLBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 			Map env = new HashMap(3);
 			env.put(OPPOSITE_END_VAR, UMLPackage.eINSTANCE.getInterface());
 			PortRequired_4014_SourceExpression = UMLOCLFactory.getExpression("self.oclIsKindOf(uml::Port)", UMLPackage.eINSTANCE.getPort(), env); //$NON-NLS-1$
+		}
+
+		/**
+		 * @generated
+		 */
+		static {
+			Map env = new HashMap(3);
+			env.put(OPPOSITE_END_VAR, UMLPackage.eINSTANCE.getInterface());
+			PortProvided_4010_SourceExpression = UMLOCLFactory.getExpression("self.oclIsKindOf(uml::Port)", UMLPackage.eINSTANCE.getPort(), env); //$NON-NLS-1$
 		}
 
 		/**
@@ -496,6 +510,9 @@ public class UMLBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 		 * @generated
 		 */
 		public static boolean canExistUsage_4008(Package container, NamedElement source, NamedElement target) {
+			if (!evaluate(Usage_4008_SourceExpression, source, target, false)) {
+				return false;
+			}
 			if (!evaluate(Usage_4008_TargetExpression, target, source, true)) {
 				return false;
 			}

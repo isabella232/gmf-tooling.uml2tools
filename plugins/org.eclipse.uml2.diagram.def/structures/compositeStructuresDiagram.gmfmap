@@ -688,7 +688,7 @@
     <domainMetaElement
         href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//Usage"/>
     <domainSpecialization
-        body="self.supplier->forAll(e|e.oclIsKindOf(uml::Interface))"/>
+        body="self.supplier->forAll(e|e.oclIsKindOf(uml::Interface)) and self.client->forAll(e|not e.oclIsKindOf(uml::Port))"/>
     <containmentFeature
         href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//Package/packagedElement"/>
     <tool
@@ -703,6 +703,8 @@
         xsi:type="ecore:EReference"
         href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//Dependency/supplier"/>
     <creationConstraints>
+      <sourceEnd
+          body="not self.oclIsKindOf(uml::Port)"/>
       <targetEnd
           body="self.oclIsKindOf(uml::Interface)"/>
     </creationConstraints>

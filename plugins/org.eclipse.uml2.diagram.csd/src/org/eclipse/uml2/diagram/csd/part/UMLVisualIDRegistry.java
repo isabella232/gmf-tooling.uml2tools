@@ -127,7 +127,8 @@ public class UMLVisualIDRegistry {
 	/**
 	 * @generated
 	 */
-	private static final UMLAbstractExpression Usage_4008_Constraint = UMLOCLFactory.getExpression("self.supplier->forAll(e|e.oclIsKindOf(uml::Interface))", UMLPackage.eINSTANCE.getUsage());
+	private static final UMLAbstractExpression Usage_4008_Constraint = UMLOCLFactory.getExpression(
+			"self.supplier->forAll(e|e.oclIsKindOf(uml::Interface)) and self.client->forAll(e|not e.oclIsKindOf(uml::Port))", UMLPackage.eINSTANCE.getUsage());
 
 	/**
 	 * @generated
