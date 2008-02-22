@@ -15,6 +15,14 @@ import org.eclipse.uml2.diagram.common.preferences.UMLPreferencesConstants;
  */
 public class DiagramAppearancePreferencePage extends AppearancePreferencePage {
 
+	/**
+	 * @NOT-generated
+	 */
+	private static final String HIGHLIGHT_COLOR_LABEL = "Highlight Color";
+	
+	/**
+	 * @NOT-generated
+	 */
 	private ColorFieldEditor myHighlightColorEditor;
 
 	/**
@@ -43,8 +51,4 @@ public class DiagramAppearancePreferencePage extends AppearancePreferencePage {
 		PreferenceConverter.setDefault(store, UMLPreferencesConstants.HIGHLIGHT_COLOR, highlightColor.getRGB());
 	}
 
-	/**
-	 * @NOT-generated
-	 */
-	private static final String HIGHLIGHT_COLOR_LABEL = "Highlight Color";
 }
