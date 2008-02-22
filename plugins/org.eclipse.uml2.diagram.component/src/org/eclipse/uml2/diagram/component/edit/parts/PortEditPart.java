@@ -265,6 +265,9 @@ public class PortEditPart extends BorderedBorderItemEditPart {
 
 	}
 
+	/**
+	 * @NOT-generated
+	 */
 	private final IPreferenceStore myStore = UMLDiagramEditorPlugin.getInstance().getPreferenceStore();
 
 }
