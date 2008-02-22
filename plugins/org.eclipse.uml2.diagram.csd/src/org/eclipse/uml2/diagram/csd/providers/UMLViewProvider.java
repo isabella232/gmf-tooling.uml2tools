@@ -61,6 +61,7 @@ import org.eclipse.uml2.diagram.csd.edit.parts.PortEditPart;
 import org.eclipse.uml2.diagram.csd.edit.parts.PortName2EditPart;
 import org.eclipse.uml2.diagram.csd.edit.parts.PortNameEditPart;
 import org.eclipse.uml2.diagram.csd.edit.parts.PortProvidedEditPart;
+import org.eclipse.uml2.diagram.csd.edit.parts.PortRequiredEditPart;
 import org.eclipse.uml2.diagram.csd.edit.parts.Property2EditPart;
 import org.eclipse.uml2.diagram.csd.edit.parts.Property3EditPart;
 import org.eclipse.uml2.diagram.csd.edit.parts.PropertyEditPart;
@@ -124,6 +125,7 @@ import org.eclipse.uml2.diagram.csd.view.factories.Port2ViewFactory;
 import org.eclipse.uml2.diagram.csd.view.factories.PortName2ViewFactory;
 import org.eclipse.uml2.diagram.csd.view.factories.PortNameViewFactory;
 import org.eclipse.uml2.diagram.csd.view.factories.PortProvidedViewFactory;
+import org.eclipse.uml2.diagram.csd.view.factories.PortRequiredViewFactory;
 import org.eclipse.uml2.diagram.csd.view.factories.PortViewFactory;
 import org.eclipse.uml2.diagram.csd.view.factories.Property2ViewFactory;
 import org.eclipse.uml2.diagram.csd.view.factories.Property3ViewFactory;
@@ -506,6 +508,8 @@ public class UMLViewProvider extends AbstractViewProvider {
 			return AssociationViewFactory.class;
 		case ConstraintConstrainedElementEditPart.VISUAL_ID:
 			return ConstraintConstrainedElementViewFactory.class;
+		case PortRequiredEditPart.VISUAL_ID:
+			return PortRequiredViewFactory.class;
 		}
 		return null;
 	}

@@ -41,6 +41,7 @@ import org.eclipse.uml2.diagram.csd.edit.parts.ParameterEditPart;
 import org.eclipse.uml2.diagram.csd.edit.parts.Port2EditPart;
 import org.eclipse.uml2.diagram.csd.edit.parts.PortEditPart;
 import org.eclipse.uml2.diagram.csd.edit.parts.PortProvidedEditPart;
+import org.eclipse.uml2.diagram.csd.edit.parts.PortRequiredEditPart;
 import org.eclipse.uml2.diagram.csd.edit.parts.Property2EditPart;
 import org.eclipse.uml2.diagram.csd.edit.parts.Property3EditPart;
 import org.eclipse.uml2.diagram.csd.edit.parts.PropertyEditPart;
@@ -716,6 +717,7 @@ public class UMLDiagramUpdater {
 		Port modelElement = (Port) view.getElement();
 		List result = new LinkedList();
 		result.addAll(getOutgoingFeatureModelFacetLinks_Port_Provided_4010(modelElement));
+		result.addAll(getOutgoingFeatureModelFacetLinks_Port_Required_4014(modelElement));
 		return result;
 	}
 
@@ -740,6 +742,7 @@ public class UMLDiagramUpdater {
 		Port modelElement = (Port) view.getElement();
 		List result = new LinkedList();
 		result.addAll(getOutgoingFeatureModelFacetLinks_Port_Provided_4010(modelElement));
+		result.addAll(getOutgoingFeatureModelFacetLinks_Port_Required_4014(modelElement));
 		return result;
 	}
 
@@ -848,6 +851,7 @@ public class UMLDiagramUpdater {
 		result.addAll(getIncomingFeatureModelFacetLinks_Port_Provided_4010(modelElement, crossReferences));
 		result.addAll(getIncomingTypeModelFacetLinks_Association_4011(modelElement, crossReferences));
 		result.addAll(getIncomingFeatureModelFacetLinks_Constraint_ConstrainedElement_4012(modelElement, crossReferences));
+		result.addAll(getIncomingFeatureModelFacetLinks_Port_Required_4014(modelElement, crossReferences));
 		return result;
 	}
 
@@ -1252,6 +1256,7 @@ public class UMLDiagramUpdater {
 		result.addAll(getOutgoingTypeModelFacetLinks_Dependency_4006(modelElement));
 		result.addAll(getOutgoingTypeModelFacetLinks_Usage_4008(modelElement));
 		result.addAll(getOutgoingFeatureModelFacetLinks_Port_Provided_4010(modelElement));
+		result.addAll(getOutgoingFeatureModelFacetLinks_Port_Required_4014(modelElement));
 		return result;
 	}
 
@@ -1284,6 +1289,7 @@ public class UMLDiagramUpdater {
 		result.addAll(getOutgoingTypeModelFacetLinks_Dependency_4006(modelElement));
 		result.addAll(getOutgoingTypeModelFacetLinks_Usage_4008(modelElement));
 		result.addAll(getOutgoingFeatureModelFacetLinks_Port_Provided_4010(modelElement));
+		result.addAll(getOutgoingFeatureModelFacetLinks_Port_Required_4014(modelElement));
 		return result;
 	}
 
@@ -1611,6 +1617,21 @@ public class UMLDiagramUpdater {
 	}
 
 	/**
+	 * @generated
+	 */
+	private static Collection getIncomingFeatureModelFacetLinks_Port_Required_4014(Interface target, Map crossReferences) {
+		Collection result = new LinkedList();
+		Collection settings = (Collection) crossReferences.get(target);
+		for (Iterator it = settings.iterator(); it.hasNext();) {
+			EStructuralFeature.Setting setting = (EStructuralFeature.Setting) it.next();
+			if (setting.getEStructuralFeature() == UMLPackage.eINSTANCE.getPort_Required()) {
+				result.add(new UMLLinkDescriptor(setting.getEObject(), target, UMLElementTypes.PortRequired_4014, PortRequiredEditPart.VISUAL_ID));
+			}
+		}
+		return result;
+	}
+
+	/**
 	 * @generated NOT
 	 */
 	private static Collection getOutgoingTypeModelFacetLinks_Connector_4005(ConnectableElement source) {
@@ -1801,6 +1822,18 @@ public class UMLDiagramUpdater {
 		for (Iterator destinations = source.getConstrainedElements().iterator(); destinations.hasNext();) {
 			Element destination = (Element) destinations.next();
 			result.add(new UMLLinkDescriptor(source, destination, UMLElementTypes.ConstraintConstrainedElement_4012, ConstraintConstrainedElementEditPart.VISUAL_ID));
+		}
+		return result;
+	}
+
+	/**
+	 * @generated
+	 */
+	private static Collection getOutgoingFeatureModelFacetLinks_Port_Required_4014(Port source) {
+		Collection result = new LinkedList();
+		for (Iterator destinations = source.getRequireds().iterator(); destinations.hasNext();) {
+			Interface destination = (Interface) destinations.next();
+			result.add(new UMLLinkDescriptor(source, destination, UMLElementTypes.PortRequired_4014, PortRequiredEditPart.VISUAL_ID));
 		}
 		return result;
 	}

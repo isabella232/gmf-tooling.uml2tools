@@ -231,6 +231,11 @@
             <popupAction path="/editGroup" id="deleteFromModelAction"/>
             <popupPredefinedItem id="deleteFromDiagramAction" remove="true"/>
          </popupContribution>
+         <popupContribution class="org.eclipse.gmf.runtime.diagram.ui.providers.DiagramContextMenuProvider">
+            <popupStructuredContributionCriteria objectClass="org.eclipse.uml2.diagram.csd.edit.parts.PortRequiredEditPart"/>
+            <popupAction path="/editGroup" id="deleteFromModelAction"/>
+            <popupPredefinedItem id="deleteFromDiagramAction" remove="true"/>
+         </popupContribution>
       </contributionItemProvider>
    </extension>
 
@@ -633,6 +638,15 @@
             <param name="semanticHint" value="4012"/>
          </specializationType>
       </metamodel>
+      <metamodel nsURI="http://www.eclipse.org/uml2/2.1.0/UML">
+         <specializationType
+               id="org.eclipse.uml2.diagram.csd.PortRequired_4014"
+               name="%metatype.name.PortRequired_4014"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType">
+            <specializes id="org.eclipse.gmf.runtime.emf.type.core.null"/>
+            <param name="semanticHint" value="4014"/>
+         </specializationType>
+      </metamodel>
    </extension>
 
    <extension point="org.eclipse.gmf.runtime.emf.type.core.elementTypeBindings">
@@ -671,6 +685,7 @@
          <elementType ref="org.eclipse.uml2.diagram.csd.PortProvided_4010"/>
          <elementType ref="org.eclipse.uml2.diagram.csd.Association_4011"/>
          <elementType ref="org.eclipse.uml2.diagram.csd.ConstraintConstrainedElement_4012"/>
+         <elementType ref="org.eclipse.uml2.diagram.csd.PortRequired_4014"/>
          <advice ref="org.eclipse.gmf.runtime.diagram.core.advice.notationDepdendents"/>
       </binding>
    </extension>

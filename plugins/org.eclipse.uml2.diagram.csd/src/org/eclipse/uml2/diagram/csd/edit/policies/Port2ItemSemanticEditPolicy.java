@@ -16,12 +16,15 @@ import org.eclipse.uml2.diagram.csd.edit.commands.DependencyCreateCommand;
 import org.eclipse.uml2.diagram.csd.edit.commands.DependencyReorientCommand;
 import org.eclipse.uml2.diagram.csd.edit.commands.PortProvidedCreateCommand;
 import org.eclipse.uml2.diagram.csd.edit.commands.PortProvidedReorientCommand;
+import org.eclipse.uml2.diagram.csd.edit.commands.PortRequiredCreateCommand;
+import org.eclipse.uml2.diagram.csd.edit.commands.PortRequiredReorientCommand;
 import org.eclipse.uml2.diagram.csd.edit.commands.UsageCreateCommand;
 import org.eclipse.uml2.diagram.csd.edit.commands.UsageReorientCommand;
 import org.eclipse.uml2.diagram.csd.edit.parts.ConnectorEditPart;
 import org.eclipse.uml2.diagram.csd.edit.parts.ConstraintConstrainedElementEditPart;
 import org.eclipse.uml2.diagram.csd.edit.parts.DependencyEditPart;
 import org.eclipse.uml2.diagram.csd.edit.parts.PortProvidedEditPart;
+import org.eclipse.uml2.diagram.csd.edit.parts.PortRequiredEditPart;
 import org.eclipse.uml2.diagram.csd.edit.parts.UsageEditPart;
 import org.eclipse.uml2.diagram.csd.providers.UMLElementTypes;
 
@@ -67,6 +70,9 @@ public class Port2ItemSemanticEditPolicy extends UMLBaseItemSemanticEditPolicy {
 		if (UMLElementTypes.ConstraintConstrainedElement_4012 == req.getElementType()) {
 			return null;
 		}
+		if (UMLElementTypes.PortRequired_4014 == req.getElementType()) {
+			return getGEFWrapper(new PortRequiredCreateCommand(req, req.getSource(), req.getTarget()));
+		}
 		return null;
 	}
 
@@ -88,6 +94,9 @@ public class Port2ItemSemanticEditPolicy extends UMLBaseItemSemanticEditPolicy {
 		}
 		if (UMLElementTypes.ConstraintConstrainedElement_4012 == req.getElementType()) {
 			return getGEFWrapper(new ConstraintConstrainedElementCreateCommand(req, req.getSource(), req.getTarget()));
+		}
+		if (UMLElementTypes.PortRequired_4014 == req.getElementType()) {
+			return null;
 		}
 		return null;
 	}
@@ -135,6 +144,8 @@ public class Port2ItemSemanticEditPolicy extends UMLBaseItemSemanticEditPolicy {
 			return getGEFWrapper(new PortProvidedReorientCommand(req));
 		case ConstraintConstrainedElementEditPart.VISUAL_ID:
 			return getGEFWrapper(new ConstraintConstrainedElementReorientCommand(req));
+		case PortRequiredEditPart.VISUAL_ID:
+			return getGEFWrapper(new PortRequiredReorientCommand(req));
 		}
 		return super.getReorientReferenceRelationshipCommand(req);
 	}

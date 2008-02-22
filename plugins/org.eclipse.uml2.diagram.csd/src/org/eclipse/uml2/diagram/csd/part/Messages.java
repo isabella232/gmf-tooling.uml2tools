@@ -778,6 +778,16 @@ public class Messages extends NLS {
 	/**
 	 * @generated
 	 */
+	public static String NavigatorGroupName_PortRequired_4014_target;
+
+	/**
+	 * @generated
+	 */
+	public static String NavigatorGroupName_PortRequired_4014_source;
+
+	/**
+	 * @generated
+	 */
 	public static String NavigatorActionProvider_OpenDiagramActionName;
 
 	/**

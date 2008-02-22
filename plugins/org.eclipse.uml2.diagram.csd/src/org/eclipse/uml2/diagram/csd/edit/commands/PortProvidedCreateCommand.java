@@ -4,9 +4,11 @@ import org.eclipse.core.commands.ExecutionException;
 import org.eclipse.core.runtime.IAdaptable;
 import org.eclipse.core.runtime.IProgressMonitor;
 import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.edit.domain.AdapterFactoryEditingDomain;
 import org.eclipse.gmf.runtime.common.core.command.CommandResult;
 import org.eclipse.gmf.runtime.emf.type.core.commands.EditElementCommand;
 import org.eclipse.gmf.runtime.emf.type.core.requests.CreateRelationshipRequest;
+import org.eclipse.uml2.diagram.common.commands.ProvidedPortLinkHelper;
 import org.eclipse.uml2.diagram.csd.edit.policies.UMLBaseItemSemanticEditPolicy;
 import org.eclipse.uml2.uml.Classifier;
 import org.eclipse.uml2.uml.Interface;
@@ -32,18 +34,24 @@ public class PortProvidedCreateCommand extends EditElementCommand {
 	private final EObject target;
 
 	/**
-	 * @generated
+	 * @NOT-generated
+	 */
+	private final ProvidedPortLinkHelper myCreateLinkHelper;
+
+	/**
+	 * @generated NOT
 	 */
 	public PortProvidedCreateCommand(CreateRelationshipRequest request, EObject source, EObject target) {
 		super(request.getLabel(), null, request);
 		this.source = source;
 		this.target = target;
+		myCreateLinkHelper = new ProvidedPortLinkHelper((AdapterFactoryEditingDomain) getEditingDomain(), getSource(), getTarget());
 	}
 
 	/**
 	 * @generated
 	 */
-	public boolean canExecute() {
+	public boolean canExecuteGen() {
 		if (source == null && target == null) {
 			return false;
 		}
@@ -63,45 +71,19 @@ public class PortProvidedCreateCommand extends EditElementCommand {
 	/**
 	 * @generated NOT
 	 */
+	public boolean canExecute() {
+		return canExecuteGen() && myCreateLinkHelper.canCreate();
+	}
+
+	/**
+	 * @generated NOT
+	 */
 	protected CommandResult doExecuteWithResult(IProgressMonitor monitor, IAdaptable info) throws ExecutionException {
 		if (!canExecute()) {
 			throw new ExecutionException("Invalid arguments in create link command"); //$NON-NLS-1$
 		}
-
-		Port port = getSource();
-		Interface targetInterface = getTarget();
-		if (port != null && targetInterface != null) {
-			//we can not modify derived Port#getProvideds() directly,
-			//so we will mimic the logic from the PortOperations#getProvideds()
-			Type portType = port.getType();
-			if (portType == null) {
-				port.setType(targetInterface);
-			} else if (portType instanceof Classifier) {
-				//then it is new Realization for this classifier
-				createRealization(port, targetInterface, (Classifier) portType);
-			}
-		}
+		myCreateLinkHelper.create();
 		return CommandResult.newOKCommandResult();
-	}
-
-	/**
-	 * @NOT-generated
-	 */
-	private void createRealization(Port port, Interface targetInterface, Classifier portType) {
-		Package realizationContainer = null;
-		for (EObject element = source; element != null; element = element.eContainer()) {
-			if (element instanceof Package) {
-				realizationContainer = (Package) element;
-				break;
-			}
-		}
-		if (realizationContainer == null) {
-			return;
-		}
-		Realization realization = UMLFactory.eINSTANCE.createRealization();
-		realizationContainer.getPackagedElements().add(realization);
-		realization.getClients().add(portType);
-		realization.getSuppliers().add(targetInterface);
 	}
 
 	/**

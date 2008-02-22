@@ -214,6 +214,9 @@ public class UMLEditPartFactory implements EditPartFactory {
 
 			case ConstraintConstrainedElementEditPart.VISUAL_ID:
 				return new ConstraintConstrainedElementEditPart(view);
+
+			case PortRequiredEditPart.VISUAL_ID:
+				return new PortRequiredEditPart(view);
 			}
 		}
 		return createUnrecognizedEditPart(context, model);

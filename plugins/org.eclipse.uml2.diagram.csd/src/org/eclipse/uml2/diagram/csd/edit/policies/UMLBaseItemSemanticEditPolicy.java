@@ -386,6 +386,20 @@ public class UMLBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 		/**
 		 * @generated
 		 */
+		private static final UMLAbstractExpression PortRequired_4014_SourceExpression;
+
+		/**
+		 * @generated
+		 */
+		static {
+			Map env = new HashMap(3);
+			env.put(OPPOSITE_END_VAR, UMLPackage.eINSTANCE.getInterface());
+			PortRequired_4014_SourceExpression = UMLOCLFactory.getExpression("self.oclIsKindOf(uml::Port)", UMLPackage.eINSTANCE.getPort(), env); //$NON-NLS-1$
+		}
+
+		/**
+		 * @generated
+		 */
 		public static boolean canCreateConnector_4005(StructuredClassifier container, ConnectableElement source, ConnectableElement target) {
 			return canExistConnector_4005(container, source, target);
 		}
@@ -445,6 +459,18 @@ public class UMLBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 		/**
 		 * @generated
 		 */
+		public static boolean canCreatePortRequired_4014(Port source, Interface target) {
+			if (source != null) {
+				if (source.getRequireds().contains(target)) {
+					return false;
+				}
+			}
+			return canExistPortRequired_4014(source, target);
+		}
+
+		/**
+		 * @generated
+		 */
 		public static boolean canExistConnector_4005(StructuredClassifier container, ConnectableElement source, ConnectableElement target) {
 			return true;
 		}
@@ -497,6 +523,16 @@ public class UMLBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 		 * @generated
 		 */
 		public static boolean canExistConstraintConstrainedElement_4012(Constraint source, Element target) {
+			return true;
+		}
+
+		/**
+		 * @generated
+		 */
+		public static boolean canExistPortRequired_4014(Port source, Interface target) {
+			if (!evaluate(PortRequired_4014_SourceExpression, source, target, false)) {
+				return false;
+			}
 			return true;
 		}
 

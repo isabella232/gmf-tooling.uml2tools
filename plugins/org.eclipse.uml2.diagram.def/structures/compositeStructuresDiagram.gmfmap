@@ -798,6 +798,20 @@
         xsi:type="ecore:EReference"
         href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//Constraint/constrainedElement"/>
   </links>
+  <links>
+    <tool
+        xsi:type="gmftool:CreationTool"
+        href="compositeStructuresDiagram.gmftool#//@palette/@tools.2/@tools.3"/>
+    <diagramLink
+        href="classDiagram_interfaces.gmfgraph#RequiredInterfaceLink"/>
+    <linkMetaFeature
+        xsi:type="ecore:EReference"
+        href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//Port/required"/>
+    <creationConstraints>
+      <sourceEnd
+          body="self.oclIsKindOf(uml::Port)"/>
+    </creationConstraints>
+  </links>
   <diagram>
     <diagramCanvas
         href="classDiagram_auxiliary.gmfgraph#cnvAuxiliary"/>
