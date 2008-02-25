@@ -67,7 +67,7 @@ public class Property7EditPart extends ConnectionNodeEditPart {
 	 * @generated
 	 */
 	protected Connection createConnectionFigureGen() {
-		return new AssociationLinkFigure();
+		return new PolylineConnectionEx();
 	}
 
 	/**
@@ -82,8 +82,8 @@ public class Property7EditPart extends ConnectionNodeEditPart {
 	/**
 	 * @generated
 	 */
-	public AssociationLinkFigure getPrimaryShape() {
-		return (AssociationLinkFigure) getFigure();
+	public PolylineConnectionEx getPrimaryShape() {
+		return (PolylineConnectionEx) getFigure();
 	}
 
 	/**
@@ -113,7 +113,7 @@ public class Property7EditPart extends ConnectionNodeEditPart {
 	 * @NOT-GENERATED
 	 */
 	private void refreshDecorations(AssociationLinkFigure linkFigure) {
-		Property currentEnd = (Property)resolveSemanticElement();		
+		Property currentEnd = (Property) resolveSemanticElement();
 		Association association = currentEnd.getAssociation();
 		Property otherEnd = getOtherEnd(currentEnd);
 		if (otherEnd == null) {
@@ -122,7 +122,7 @@ public class Property7EditPart extends ConnectionNodeEditPart {
 		IPreferenceStore store = (IPreferenceStore) getDiagramPreferencesHint().getPreferenceStore();
 		linkFigure.getTargetDecorationImpl().update(association, currentEnd, otherEnd, store);
 	}
-	
+
 	/**
 	 * @NOT-GENERATED
 	 */
@@ -133,47 +133,6 @@ public class Property7EditPart extends ConnectionNodeEditPart {
 		}
 		Property sourceEnd = AssociationEndConvention.getSourceEnd(association);
 		return (end.equals(sourceEnd)) ? AssociationEndConvention.getTargetEnd(association) : sourceEnd;
-	}
-
-	/**
-	 * @generated
-	 */
-	public class AssociationLinkFigure extends PolylineConnectionEx {
-
-		/**
-		 * @generated
-		 */
-		public AssociationLinkFigure() {
-			this.setForegroundColor(ColorConstants.blue);
-
-			setTargetDecoration(createTargetDecoration());
-		}
-
-		/**
-		 * @generated
-		 */
-		private RotatableDecoration createSourceDecoration() {
-			AssociationDecoration df = new AssociationDecoration();
-
-			return df;
-		}
-
-		/**
-		 * @generated
-		 */
-		private RotatableDecoration createTargetDecoration() {
-			AssociationDecoration df = new AssociationDecoration();
-
-			return df;
-		}
-
-		/**
-		 * @generated NOT
-		 */
-		private AssociationDecoration getTargetDecorationImpl() {
-			return (AssociationDecoration) getTargetDecoration();
-		}
-
 	}
 
 }
