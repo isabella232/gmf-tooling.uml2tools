@@ -217,13 +217,12 @@
           xsi:type="gmfgraph:Rectangle"
           name="UseCaseSubjectFigure">
         <layout
-            xsi:type="gmfgraph:FlowLayout"
-            vertical="true"
-            matchMinorSize="true"
-            forceSingleLine="true"
-            minorAlignment="CENTER"
-            majorSpacing="0"
-            minorSpacing="0"/>
+            xsi:type="gmfgraph:CustomLayout"
+            qualifiedClassName="org.eclipse.uml2.diagram.common.draw2d.PileLayout">
+          <attributes
+              name="stretchBottom"
+              value="true"/>
+        </layout>
         <backgroundColor
             xsi:type="gmfgraph:ConstantColor"
             value="lightGray"/>

@@ -26,6 +26,7 @@ import org.eclipse.uml2.diagram.usecase.edit.parts.AssociationEditPart;
 import org.eclipse.uml2.diagram.usecase.edit.parts.ConstraintConstrainedElementEditPart;
 import org.eclipse.uml2.diagram.usecase.edit.parts.ExtendEditPart;
 import org.eclipse.uml2.diagram.usecase.edit.parts.ExtensionPoint2EditPart;
+import org.eclipse.uml2.diagram.usecase.edit.parts.ExtensionPointEditPart;
 import org.eclipse.uml2.diagram.usecase.edit.parts.GeneralizationEditPart;
 import org.eclipse.uml2.diagram.usecase.edit.parts.IncludeEditPart;
 import org.eclipse.uml2.diagram.usecase.edit.parts.InnerUseCaseExtensionPointsEditPart;
@@ -64,7 +65,7 @@ public class InnerUseCaseItemSemanticEditPolicy extends UMLBaseItemSemanticEditP
 				for (Iterator cit = node.getChildren().iterator(); cit.hasNext();) {
 					Node cnode = (Node) cit.next();
 					switch (UMLVisualIDRegistry.getVisualID(cnode)) {
-					case ExtensionPoint2EditPart.VISUAL_ID:
+					case ExtensionPointEditPart.VISUAL_ID:
 						cmd.add(getDestroyElementCommand(cnode));
 						break;
 					}

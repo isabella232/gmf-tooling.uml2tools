@@ -1,5 +1,6 @@
 package org.eclipse.uml2.diagram.usecase.edit.parts;
 
+import org.eclipse.draw2d.IFigure;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.gef.EditPolicy;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.ListCompartmentEditPart;
@@ -7,6 +8,8 @@ import org.eclipse.gmf.runtime.diagram.ui.editpolicies.CreationEditPolicy;
 import org.eclipse.gmf.runtime.diagram.ui.editpolicies.DragDropEditPolicy;
 import org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles;
 import org.eclipse.gmf.runtime.diagram.ui.editpolicies.ResizableCompartmentEditPolicy;
+import org.eclipse.gmf.runtime.diagram.ui.figures.ResizableCompartmentFigure;
+import org.eclipse.gmf.runtime.draw2d.ui.figures.ConstrainedToolbarLayout;
 import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.uml2.diagram.usecase.edit.policies.InnerUseCaseExtensionPointsCanonicalEditPolicy;
 import org.eclipse.uml2.diagram.usecase.edit.policies.InnerUseCaseExtensionPointsItemSemanticEditPolicy;
@@ -46,9 +49,17 @@ public class InnerUseCaseExtensionPointsEditPart extends ListCompartmentEditPart
 	/**
 	 * @generated
 	 */
+	public IFigure createFigure() {
+		ResizableCompartmentFigure result = (ResizableCompartmentFigure) super.createFigure();
+		result.setTitleVisibility(false);
+		return result;
+	}
+
+	/**
+	 * @generated
+	 */
 	protected void createDefaultEditPolicies() {
 		super.createDefaultEditPolicies();
-		installEditPolicy(EditPolicy.PRIMARY_DRAG_ROLE, new ResizableCompartmentEditPolicy());
 		installEditPolicy(EditPolicyRoles.SEMANTIC_ROLE, new InnerUseCaseExtensionPointsItemSemanticEditPolicy());
 		installEditPolicy(EditPolicyRoles.CREATION_ROLE, new CreationEditPolicy());
 		installEditPolicy(EditPolicyRoles.DRAG_DROP_ROLE, new DragDropEditPolicy());
@@ -59,8 +70,9 @@ public class InnerUseCaseExtensionPointsEditPart extends ListCompartmentEditPart
 	 * @generated
 	 */
 	protected void setRatio(Double ratio) {
-		// nothing to do -- parent layout does not accept Double constraints as ratio
-		// super.setRatio(ratio); 
+		if (getFigure().getParent().getLayoutManager() instanceof ConstrainedToolbarLayout) {
+			super.setRatio(ratio);
+		}
 	}
 
 }

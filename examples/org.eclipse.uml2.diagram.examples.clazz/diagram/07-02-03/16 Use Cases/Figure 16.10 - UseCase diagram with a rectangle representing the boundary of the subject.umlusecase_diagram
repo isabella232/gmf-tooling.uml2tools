@@ -14,52 +14,52 @@
   <children xmi:type="notation:Node" xmi:id="_vSK5UKMhEdyv8ePVS08H-g" type="2006">
     <children xmi:type="notation:Node" xmi:id="_vSLgYKMhEdyv8ePVS08H-g" type="5007"/>
     <children xmi:type="notation:Node" xmi:id="_vSLgYaMhEdyv8ePVS08H-g" type="7004">
+      <children xmi:type="notation:Node" xmi:id="_x_XfYKMhEdyv8ePVS08H-g" type="2003">
+        <children xmi:type="notation:Node" xmi:id="_x_YGcKMhEdyv8ePVS08H-g" type="5003"/>
+        <children xmi:type="notation:Node" xmi:id="_x_ZUkKMhEdyv8ePVS08H-g" type="7002">
+          <styles xmi:type="notation:SortingStyle" xmi:id="_x_ZUkaMhEdyv8ePVS08H-g"/>
+          <styles xmi:type="notation:FilteringStyle" xmi:id="_x_ZUkqMhEdyv8ePVS08H-g"/>
+        </children>
+        <styles xmi:type="notation:ShapeStyle" xmi:id="_x_XfYaMhEdyv8ePVS08H-g" fontName="Segoe UI"/>
+        <element xmi:type="uml:UseCase" href="Figure 16.10 - UseCase diagram with a rectangle representing the boundary of the subject.uml#_x_I14KMhEdyv8ePVS08H-g"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_x_XfYqMhEdyv8ePVS08H-g" x="55" y="34"/>
+      </children>
+      <children xmi:type="notation:Node" xmi:id="_zY-WoKMhEdyv8ePVS08H-g" type="2003">
+        <children xmi:type="notation:Node" xmi:id="_zY-9sKMhEdyv8ePVS08H-g" type="5003"/>
+        <children xmi:type="notation:Node" xmi:id="_zY-9saMhEdyv8ePVS08H-g" type="7002">
+          <styles xmi:type="notation:SortingStyle" xmi:id="_zY-9sqMhEdyv8ePVS08H-g"/>
+          <styles xmi:type="notation:FilteringStyle" xmi:id="_zY-9s6MhEdyv8ePVS08H-g"/>
+        </children>
+        <styles xmi:type="notation:ShapeStyle" xmi:id="_zY-WoaMhEdyv8ePVS08H-g" fontName="Segoe UI"/>
+        <element xmi:type="uml:UseCase" href="Figure 16.10 - UseCase diagram with a rectangle representing the boundary of the subject.uml#_zYmjMKMhEdyv8ePVS08H-g"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_zY-WoqMhEdyv8ePVS08H-g" x="319" y="106"/>
+      </children>
+      <children xmi:type="notation:Node" xmi:id="_0k4JEKMhEdyv8ePVS08H-g" type="2003">
+        <children xmi:type="notation:Node" xmi:id="_0k4JE6MhEdyv8ePVS08H-g" type="5003"/>
+        <children xmi:type="notation:Node" xmi:id="_0k4JFKMhEdyv8ePVS08H-g" type="7002">
+          <styles xmi:type="notation:SortingStyle" xmi:id="_0k4JFaMhEdyv8ePVS08H-g"/>
+          <styles xmi:type="notation:FilteringStyle" xmi:id="_0k4JFqMhEdyv8ePVS08H-g"/>
+        </children>
+        <styles xmi:type="notation:ShapeStyle" xmi:id="_0k4JEaMhEdyv8ePVS08H-g" fontName="Segoe UI"/>
+        <element xmi:type="uml:UseCase" href="Figure 16.10 - UseCase diagram with a rectangle representing the boundary of the subject.uml#_0kw0UKMhEdyv8ePVS08H-g"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_0k4JEqMhEdyv8ePVS08H-g" x="343" y="274"/>
+      </children>
+      <children xmi:type="notation:Node" xmi:id="_2z5lYKMhEdyv8ePVS08H-g" type="2003">
+        <children xmi:type="notation:Node" xmi:id="_2z5lY6MhEdyv8ePVS08H-g" type="5003"/>
+        <children xmi:type="notation:Node" xmi:id="_2z5lZKMhEdyv8ePVS08H-g" type="7002">
+          <styles xmi:type="notation:SortingStyle" xmi:id="_2z5lZaMhEdyv8ePVS08H-g"/>
+          <styles xmi:type="notation:FilteringStyle" xmi:id="_2z5lZqMhEdyv8ePVS08H-g"/>
+        </children>
+        <styles xmi:type="notation:ShapeStyle" xmi:id="_2z5lYaMhEdyv8ePVS08H-g" fontName="Segoe UI"/>
+        <element xmi:type="uml:UseCase" href="Figure 16.10 - UseCase diagram with a rectangle representing the boundary of the subject.uml#_2zsxEKMhEdyv8ePVS08H-g"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_2z5lYqMhEdyv8ePVS08H-g" x="91" y="286"/>
+      </children>
       <styles xmi:type="notation:SortingStyle" xmi:id="_vSLgYqMhEdyv8ePVS08H-g"/>
       <styles xmi:type="notation:FilteringStyle" xmi:id="_vSLgY6MhEdyv8ePVS08H-g"/>
     </children>
     <styles xmi:type="notation:ShapeStyle" xmi:id="_vSK5UaMhEdyv8ePVS08H-g" fontName="Segoe UI"/>
     <element xmi:type="uml:Component" href="Figure 16.10 - UseCase diagram with a rectangle representing the boundary of the subject.uml#_vSC9gKMhEdyv8ePVS08H-g"/>
-    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_vSK5UqMhEdyv8ePVS08H-g" x="324" y="96" width="529" height="457"/>
-  </children>
-  <children xmi:type="notation:Node" xmi:id="_x_XfYKMhEdyv8ePVS08H-g" type="2003">
-    <children xmi:type="notation:Node" xmi:id="_x_YGcKMhEdyv8ePVS08H-g" type="5003"/>
-    <children xmi:type="notation:Node" xmi:id="_x_ZUkKMhEdyv8ePVS08H-g" type="7002">
-      <styles xmi:type="notation:SortingStyle" xmi:id="_x_ZUkaMhEdyv8ePVS08H-g"/>
-      <styles xmi:type="notation:FilteringStyle" xmi:id="_x_ZUkqMhEdyv8ePVS08H-g"/>
-    </children>
-    <styles xmi:type="notation:ShapeStyle" xmi:id="_x_XfYaMhEdyv8ePVS08H-g" fontName="Segoe UI"/>
-    <element xmi:type="uml:UseCase" href="Figure 16.10 - UseCase diagram with a rectangle representing the boundary of the subject.uml#_x_I14KMhEdyv8ePVS08H-g"/>
-    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_x_XfYqMhEdyv8ePVS08H-g" x="396" y="144"/>
-  </children>
-  <children xmi:type="notation:Node" xmi:id="_zY-WoKMhEdyv8ePVS08H-g" type="2003">
-    <children xmi:type="notation:Node" xmi:id="_zY-9sKMhEdyv8ePVS08H-g" type="5003"/>
-    <children xmi:type="notation:Node" xmi:id="_zY-9saMhEdyv8ePVS08H-g" type="7002">
-      <styles xmi:type="notation:SortingStyle" xmi:id="_zY-9sqMhEdyv8ePVS08H-g"/>
-      <styles xmi:type="notation:FilteringStyle" xmi:id="_zY-9s6MhEdyv8ePVS08H-g"/>
-    </children>
-    <styles xmi:type="notation:ShapeStyle" xmi:id="_zY-WoaMhEdyv8ePVS08H-g" fontName="Segoe UI"/>
-    <element xmi:type="uml:UseCase" href="Figure 16.10 - UseCase diagram with a rectangle representing the boundary of the subject.uml#_zYmjMKMhEdyv8ePVS08H-g"/>
-    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_zY-WoqMhEdyv8ePVS08H-g" x="636" y="240"/>
-  </children>
-  <children xmi:type="notation:Node" xmi:id="_0k4JEKMhEdyv8ePVS08H-g" type="2003">
-    <children xmi:type="notation:Node" xmi:id="_0k4JE6MhEdyv8ePVS08H-g" type="5003"/>
-    <children xmi:type="notation:Node" xmi:id="_0k4JFKMhEdyv8ePVS08H-g" type="7002">
-      <styles xmi:type="notation:SortingStyle" xmi:id="_0k4JFaMhEdyv8ePVS08H-g"/>
-      <styles xmi:type="notation:FilteringStyle" xmi:id="_0k4JFqMhEdyv8ePVS08H-g"/>
-    </children>
-    <styles xmi:type="notation:ShapeStyle" xmi:id="_0k4JEaMhEdyv8ePVS08H-g" fontName="Segoe UI"/>
-    <element xmi:type="uml:UseCase" href="Figure 16.10 - UseCase diagram with a rectangle representing the boundary of the subject.uml#_0kw0UKMhEdyv8ePVS08H-g"/>
-    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_0k4JEqMhEdyv8ePVS08H-g" x="624" y="372"/>
-  </children>
-  <children xmi:type="notation:Node" xmi:id="_2z5lYKMhEdyv8ePVS08H-g" type="2003">
-    <children xmi:type="notation:Node" xmi:id="_2z5lY6MhEdyv8ePVS08H-g" type="5003"/>
-    <children xmi:type="notation:Node" xmi:id="_2z5lZKMhEdyv8ePVS08H-g" type="7002">
-      <styles xmi:type="notation:SortingStyle" xmi:id="_2z5lZaMhEdyv8ePVS08H-g"/>
-      <styles xmi:type="notation:FilteringStyle" xmi:id="_2z5lZqMhEdyv8ePVS08H-g"/>
-    </children>
-    <styles xmi:type="notation:ShapeStyle" xmi:id="_2z5lYaMhEdyv8ePVS08H-g" fontName="Segoe UI"/>
-    <element xmi:type="uml:UseCase" href="Figure 16.10 - UseCase diagram with a rectangle representing the boundary of the subject.uml#_2zsxEKMhEdyv8ePVS08H-g"/>
-    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_2z5lYqMhEdyv8ePVS08H-g" x="408" y="408"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_vSK5UqMhEdyv8ePVS08H-g" x="264" y="96" width="529" height="457"/>
   </children>
   <children xmi:type="notation:Node" xmi:id="_4tgyYKMhEdyv8ePVS08H-g" type="2002">
     <children xmi:type="notation:Node" xmi:id="_4tiAgKMhEdyv8ePVS08H-g" type="5002">
