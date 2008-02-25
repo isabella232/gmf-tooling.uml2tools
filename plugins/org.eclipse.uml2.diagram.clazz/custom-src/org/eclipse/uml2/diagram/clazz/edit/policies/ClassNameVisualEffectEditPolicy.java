@@ -13,29 +13,42 @@ import org.eclipse.uml2.diagram.common.editpolicies.AbstractVisualEffectEditPoli
 import org.eclipse.uml2.uml.Classifier;
 import org.eclipse.uml2.uml.UMLPackage;
 
-
 public class ClassNameVisualEffectEditPolicy extends AbstractVisualEffectEditPolicy {
+
 	@Override
 	protected boolean shouldHandleNotificationEvent(Notification event) {
-		return UMLPackage.eINSTANCE.getClassifier_IsAbstract() == event.getFeature(); 
+		return UMLPackage.eINSTANCE.getClassifier_IsAbstract() == event.getFeature();
 	}
-	
-	protected void refreshVisualEffect(){
+
+	@Override
+	protected void refreshVisualEffect() {
 		EObject semanticHost = getSemanticHost();
-		if (false == semanticHost instanceof Classifier){
+		if (false == semanticHost instanceof Classifier) {
 			return;
 		}
-		Classifier classifier = (Classifier)semanticHost;
+		Classifier classifier = (Classifier) semanticHost;
 		IGraphicalEditPart editPart = getHostImpl();
 		View view = editPart.getNotationView();
 		FontStyle fontStyle = (FontStyle) view.getStyle(NotationPackage.eINSTANCE.getFontStyle());
-		if (fontStyle != null && fontStyle.isItalic() != classifier.isAbstract()){
+		if (fontStyle != null && fontStyle.isItalic() != classifier.isAbstract()) {
 			SetRequest request = new SetRequest(editPart.getEditingDomain(), fontStyle, NotationPackage.eINSTANCE.getFontStyle_Italic(), classifier.isAbstract());
 			executeCommand(new ICommandProxy(new SetValueCommand(request)));
 		}
 	}
-	
-	protected void installVisualEffect(){
+
+	@Override
+	protected void installVisualEffect() {
 		ensureHasStyle(NotationPackage.eINSTANCE.getFontStyle());
+		ensureHasBoldType();
+	}
+
+	private void ensureHasBoldType() {
+		IGraphicalEditPart editPart = getHostImpl();
+		View view = editPart.getNotationView();
+		FontStyle fontStyle = (FontStyle) view.getStyle(NotationPackage.eINSTANCE.getFontStyle());
+		if (false == fontStyle.isBold()){
+			SetRequest request = new SetRequest(editPart.getEditingDomain(), fontStyle, NotationPackage.eINSTANCE.getFontStyle_Bold(), true);
+			executeCommand(new ICommandProxy(new SetValueCommand(request)));
+		}
 	}
 }
