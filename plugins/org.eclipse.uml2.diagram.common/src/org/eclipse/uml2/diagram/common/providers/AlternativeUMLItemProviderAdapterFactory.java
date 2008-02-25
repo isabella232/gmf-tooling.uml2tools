@@ -5,7 +5,7 @@ import org.eclipse.core.runtime.Path;
 import org.eclipse.core.runtime.Platform;
 import org.eclipse.emf.common.notify.Adapter;
 import org.eclipse.jface.preference.IPreferenceStore;
-import org.eclipse.uml2.diagram.common.preferences.UmlPreferenceConstants;
+import org.eclipse.uml2.diagram.common.preferences.UMLPreferencesConstants;
 import org.eclipse.uml2.uml.edit.providers.*;
 import org.osgi.framework.Bundle;
 
@@ -3184,7 +3184,7 @@ public class AlternativeUMLItemProviderAdapterFactory extends UMLItemProviderAda
 	}
 
 	private boolean useAlternativeIcons(Object object) {
-		return UmlPreferenceConstants.PREF_ICON_STYLE_CHEERFUL.equals(myPreferenceStore.getString(UmlPreferenceConstants.PREF_ICON_STYLE));
+		return UMLPreferencesConstants.PREF_ICON_STYLE_CHEERFUL.equals(myPreferenceStore.getString(UMLPreferencesConstants.PREF_ICON_STYLE));
 	}
 
 	private static final Bundle UML_BUNDLE = Platform.getBundle("org.eclipse.uml2.diagram.common"); //$NON-NLS-1$
