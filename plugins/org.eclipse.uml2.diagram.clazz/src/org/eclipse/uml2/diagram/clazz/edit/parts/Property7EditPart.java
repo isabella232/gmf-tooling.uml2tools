@@ -67,7 +67,7 @@ public class Property7EditPart extends ConnectionNodeEditPart {
 	 * @generated
 	 */
 	protected Connection createConnectionFigureGen() {
-		return new PolylineConnectionEx();
+		return new AssociationLinkFigure();
 	}
 
 	/**
@@ -82,8 +82,8 @@ public class Property7EditPart extends ConnectionNodeEditPart {
 	/**
 	 * @generated
 	 */
-	public PolylineConnectionEx getPrimaryShape() {
-		return (PolylineConnectionEx) getFigure();
+	public AssociationLinkFigure getPrimaryShape() {
+		return (AssociationLinkFigure) getFigure();
 	}
 
 	/**
@@ -133,6 +133,48 @@ public class Property7EditPart extends ConnectionNodeEditPart {
 		}
 		Property sourceEnd = AssociationEndConvention.getSourceEnd(association);
 		return (end.equals(sourceEnd)) ? AssociationEndConvention.getTargetEnd(association) : sourceEnd;
+	}
+
+	/**
+	 * @generated
+	 */
+	public class AssociationLinkFigure extends PolylineConnectionEx {
+
+		/**
+		 * @generated
+		 */
+		public AssociationLinkFigure() {
+			this.setForegroundColor(ColorConstants.blue);
+
+			setSourceDecoration(createSourceDecoration());
+			setTargetDecoration(createTargetDecoration());
+		}
+
+		/**
+		 * @generated
+		 */
+		private RotatableDecoration createSourceDecoration() {
+			AssociationDecoration df = new AssociationDecoration();
+
+			return df;
+		}
+
+		/**
+		 * @generated
+		 */
+		private RotatableDecoration createTargetDecoration() {
+			AssociationDecoration df = new AssociationDecoration();
+
+			return df;
+		}
+
+		/**
+		 * @generated NOT
+		 */
+		private AssociationDecoration getTargetDecorationImpl() {
+			return (AssociationDecoration) getTargetDecoration();
+		}
+
 	}
 
 }
