@@ -313,32 +313,22 @@ public class Messages extends NLS {
 	/**
 	 * @generated
 	 */
-	public static String Port5CreationTool_title;
+	public static String Part5CreationTool_title;
 
 	/**
 	 * @generated
 	 */
-	public static String Port5CreationTool_desc;
+	public static String Part5CreationTool_desc;
 
 	/**
 	 * @generated
 	 */
-	public static String Part6CreationTool_title;
+	public static String Package6CreationTool_title;
 
 	/**
 	 * @generated
 	 */
-	public static String Part6CreationTool_desc;
-
-	/**
-	 * @generated
-	 */
-	public static String Package7CreationTool_title;
-
-	/**
-	 * @generated
-	 */
-	public static String Package7CreationTool_desc;
+	public static String Package6CreationTool_desc;
 
 	/**
 	 * @generated

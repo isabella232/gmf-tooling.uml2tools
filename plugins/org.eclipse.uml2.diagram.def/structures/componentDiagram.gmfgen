@@ -1645,11 +1645,6 @@
             genNodes="//@diagram/@childNodes.3 //@diagram/@topLevelNodes.3 //@diagram/@childNodes.8 //@diagram/@childNodes.12"/>
         <entries
             xsi:type="gmfgen:ToolEntry"
-            title="Port"
-            description="Create Port"
-            genNodes="//@diagram/@childNodes.1"/>
-        <entries
-            xsi:type="gmfgen:ToolEntry"
             title="Part"
             description="Create Part"
             genNodes="//@diagram/@childNodes.5"/>
@@ -1705,7 +1700,7 @@
             xsi:type="gmfgen:ToolEntry"
             title="Port"
             description="Create Port"
-            genNodes="//@diagram/@childNodes.13"/>
+            genNodes="//@diagram/@childNodes.1 //@diagram/@childNodes.13"/>
       </groups>
     </palette>
     <preferencePages

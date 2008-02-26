@@ -74,7 +74,7 @@
           </labelMappings>
           <tool
               xsi:type="gmftool:CreationTool"
-              href="componentDiagram.gmftool#//@palette/@tools.0/@tools.4"/>
+              href="componentDiagram.gmftool#//@palette/@tools.2/@tools.3"/>
           <diagramNode
               href="classDiagram_ports.gmfgraph#PortNode"/>
         </ownedChild>
@@ -115,7 +115,7 @@
           </labelMappings>
           <tool
               xsi:type="gmftool:CreationTool"
-              href="componentDiagram.gmftool#//@palette/@tools.0/@tools.5"/>
+              href="componentDiagram.gmftool#//@palette/@tools.0/@tools.4"/>
           <diagramNode
               href="componentDiagram_classifiers.gmfgraph#PartNode"/>
         </ownedChild>
@@ -301,7 +301,7 @@
       </labelMappings>
       <tool
           xsi:type="gmftool:CreationTool"
-          href="componentDiagram.gmftool#//@palette/@tools.0/@tools.6"/>
+          href="componentDiagram.gmftool#//@palette/@tools.0/@tools.5"/>
       <diagramNode
           href="classDiagram_packages.gmfgraph#PackageNode"/>
       <children
@@ -332,7 +332,7 @@
           </labelMappings>
           <tool
               xsi:type="gmftool:CreationTool"
-              href="componentDiagram.gmftool#//@palette/@tools.0/@tools.6"/>
+              href="componentDiagram.gmftool#//@palette/@tools.0/@tools.5"/>
           <diagramNode
               href="classDiagram_auxiliary.gmfgraph#AuxiliaryPureLabel"/>
         </ownedChild>

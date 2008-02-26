@@ -37,9 +37,8 @@ public class UMLPaletteFactory {
 		paletteContainer.add(createArtifact2CreationTool());
 		paletteContainer.add(createInterface3CreationTool());
 		paletteContainer.add(createClass4CreationTool());
-		paletteContainer.add(createPort5CreationTool());
-		paletteContainer.add(createPart6CreationTool());
-		paletteContainer.add(createPackage7CreationTool());
+		paletteContainer.add(createPart5CreationTool());
+		paletteContainer.add(createPackage6CreationTool());
 		return paletteContainer;
 	}
 
@@ -129,22 +128,10 @@ public class UMLPaletteFactory {
 	/**
 	 * @generated
 	 */
-	private ToolEntry createPort5CreationTool() {
-		List/*<IElementType>*/types = new ArrayList/*<IElementType>*/(1);
-		types.add(UMLElementTypes.Port_3002);
-		NodeToolEntry entry = new NodeToolEntry(Messages.Port5CreationTool_title, Messages.Port5CreationTool_desc, types);
-		entry.setSmallIcon(UMLElementTypes.getImageDescriptor(UMLElementTypes.Port_3002));
-		entry.setLargeIcon(entry.getSmallIcon());
-		return entry;
-	}
-
-	/**
-	 * @generated
-	 */
-	private ToolEntry createPart6CreationTool() {
+	private ToolEntry createPart5CreationTool() {
 		List/*<IElementType>*/types = new ArrayList/*<IElementType>*/(1);
 		types.add(UMLElementTypes.Property_3006);
-		NodeToolEntry entry = new NodeToolEntry(Messages.Part6CreationTool_title, Messages.Part6CreationTool_desc, types);
+		NodeToolEntry entry = new NodeToolEntry(Messages.Part5CreationTool_title, Messages.Part5CreationTool_desc, types);
 		entry.setSmallIcon(UMLElementTypes.getImageDescriptor(UMLElementTypes.Property_3006));
 		entry.setLargeIcon(entry.getSmallIcon());
 		return entry;
@@ -153,11 +140,11 @@ public class UMLPaletteFactory {
 	/**
 	 * @generated
 	 */
-	private ToolEntry createPackage7CreationTool() {
+	private ToolEntry createPackage6CreationTool() {
 		List/*<IElementType>*/types = new ArrayList/*<IElementType>*/(2);
 		types.add(UMLElementTypes.Package_2006);
 		types.add(UMLElementTypes.Package_3008);
-		NodeToolEntry entry = new NodeToolEntry(Messages.Package7CreationTool_title, Messages.Package7CreationTool_desc, types);
+		NodeToolEntry entry = new NodeToolEntry(Messages.Package6CreationTool_title, Messages.Package6CreationTool_desc, types);
 		entry.setSmallIcon(UMLElementTypes.getImageDescriptor(UMLElementTypes.Package_2006));
 		entry.setLargeIcon(entry.getSmallIcon());
 		return entry;
@@ -253,10 +240,11 @@ public class UMLPaletteFactory {
 	 * @generated
 	 */
 	private ToolEntry createPort4CreationTool() {
-		List/*<IElementType>*/types = new ArrayList/*<IElementType>*/(1);
+		List/*<IElementType>*/types = new ArrayList/*<IElementType>*/(2);
+		types.add(UMLElementTypes.Port_3002);
 		types.add(UMLElementTypes.Port_3014);
 		NodeToolEntry entry = new NodeToolEntry(Messages.Port4CreationTool_title, Messages.Port4CreationTool_desc, types);
-		entry.setSmallIcon(UMLElementTypes.getImageDescriptor(UMLElementTypes.Port_3014));
+		entry.setSmallIcon(UMLElementTypes.getImageDescriptor(UMLElementTypes.Port_3002));
 		entry.setLargeIcon(entry.getSmallIcon());
 		return entry;
 	}
