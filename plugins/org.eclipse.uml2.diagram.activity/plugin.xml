@@ -1740,7 +1740,13 @@
 		 </popupContribution>
       </contributionItemProvider>
    </extension>
-
-
-
+   <extension point="org.eclipse.ui.preferencePages">
+      <?gmfgen generated="true"?>
+      <page
+            name="%preferences.icons"
+            class="org.eclipse.uml2.diagram.activity.preferences.DiagramIconStylePreferencePage"
+            category="org.eclipse.uml2.uml.diagram.activity.general"
+            id="org.eclipse.uml2.diagram.activity.icons">
+      </page>
+   </extension>
 </plugin>
