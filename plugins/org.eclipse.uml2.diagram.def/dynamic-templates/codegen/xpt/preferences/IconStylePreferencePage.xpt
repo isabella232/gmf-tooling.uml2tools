@@ -1,0 +1,73 @@
+/*
+ * Copyright (c) 2008 Borland Software Corporation
+ * 
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
+ *
+ * Contributors:
+ *    Michael Golubev (Borland) - initial API and implementation
+ */
+
+«IMPORT "http://www.eclipse.org/gmf/2006/GenModel"»
+«IMPORT "http://www.eclipse.org/emf/2002/Ecore"»
+«IMPORT "http://www.eclipse.org/emf/2002/GenModel"»
+«IMPORT "http://www.eclipse.org/uml2/diagram/gmfgenext/DiagramFigure/1.0"»
+
+«DEFINE qualifiedClassName FOR gmfgen::GenDiagram»«EXPAND packageName».«EXPAND className»«ENDDEFINE»
+«DEFINE className FOR gmfgen::GenDiagram»DiagramIconStylePreferencePage«ENDDEFINE»
+«DEFINE packageName FOR gmfgen::GenDiagram»«this.preferencesPackageName»«ENDDEFINE»
+
+«DEFINE IconStylePreferencePage FOR gmfgen::GenDiagram»
+package «EXPAND packageName»;
+
+«EXPAND xpt::Common::generatedClassComment»
+public class «EXPAND className» extends org.eclipse.uml2.diagram.common.preferences.IconStylePreferencePage {
+	«EXPAND xpt::Common::generatedMemberComment»
+	private org.eclipse.ui.IWorkbench myWorkbench;
+	
+	«EXPAND xpt::Common::generatedMemberComment»
+	public DiagramIconStylePreferencePage() {
+		setPreferenceStore(«editorGen.editor.packageName».«editorGen.plugin.activatorClassName».getInstance().getPreferenceStore());
+	}
+
+	«EXPAND xpt::Common::generatedMemberComment»
+	@Override
+	public void init(org.eclipse.ui.IWorkbench workbench) {
+		super.init(workbench);
+		myWorkbench = workbench;
+	}
+	
+	«EXPAND xpt::Common::generatedMemberComment»
+    public boolean performOk() {
+    	super.performOk();
+    	«providersPackageName».«elementTypesClassName».refreshImageRegistry();
+		refreshDiagramEditors();
+    	return true;
+    }
+
+	«EXPAND xpt::Common::generatedMemberComment»
+	private void refreshDiagramEditors() {
+		org.eclipse.ui.IEditorReference[] editors = myWorkbench.getActiveWorkbenchWindow().getActivePage().getEditorReferences();
+		for (int i = 0; i < editors.length; i++) {
+			org.eclipse.ui.IEditorPart editor = editors[i].getEditor(false);
+			if (editor != null && editor instanceof «editorGen.editor.getQualifiedClassName()») {
+		    	((«editorGen.editor.getQualifiedClassName()»)editor).refresh();
+			}
+		}
+	}
+    
+    «EXPAND xpt::Common::generatedMemberComment»
+	@Override
+	protected void initHelp() {
+		// TODO Auto-generated method stub
+		
+	};
+	
+	«EXPAND xpt::preferences::IconStylePreferencePage::additions»
+}
+«ENDDEFINE»
+
+«DEFINE additions FOR gmfgen::GenDiagram-»
+«ENDDEFINE»

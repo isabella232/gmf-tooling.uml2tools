@@ -54,6 +54,8 @@ public class GeneratorExt extends Generator {
 		for (GenTopLevelNode node : myDiagram.getTopLevelNodes()) {
 			generateChangeNotationAction(node);
 		}
+		
+		generateIconStylePreferencesPage(myDiagram);
 	}
 
 	private void generateChangeNotationAction(GenTopLevelNode node) throws InterruptedException, UnexpectedBehaviourException {
@@ -73,4 +75,12 @@ public class GeneratorExt extends Generator {
 			return;
 		}
 	}
+	
+	private void generateIconStylePreferencesPage(GenDiagram diagram) throws InterruptedException, UnexpectedBehaviourException {
+		doGenerateJavaClass(//
+				myEmitters.getIconStylePreferencePageEmitter(), //
+				myEmitters.getIconStylePreferencePageFQN(new Object[] { diagram }), //
+				diagram);
+	}
+	
 }
