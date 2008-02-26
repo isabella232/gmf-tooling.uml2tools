@@ -818,13 +818,14 @@
       </contributionItemProvider>
    </extension>
 
-
-
-
-
-
-
-
-
+   <extension point="org.eclipse.ui.preferencePages">
+      <?gmfgen generated="true"?>
+      <page
+            name="%preferences.icons"
+            class="org.eclipse.uml2.diagram.usecase.preferences.DiagramIconStylePreferencePage"
+            category="org.eclipse.uml2.uml.diagram.usecase.general"
+            id="org.eclipse.uml2.diagram.usecase.icons">
+      </page>
+   </extension>
 
 </plugin>

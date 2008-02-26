@@ -655,4 +655,14 @@
          schemeId="org.eclipse.ui.defaultAcceleratorConfiguration"
          sequence="F5"/>
    </extension>
+   <extension point="org.eclipse.ui.preferencePages">
+      <?gmfgen generated="true"?>
+      <page
+            name="%preferences.icons"
+            class="org.eclipse.uml2.diagram.deploy.preferences.DiagramIconStylePreferencePage"
+            category="org.eclipse.uml2.uml.diagram.deploy.general"
+            id="org.eclipse.uml2.diagram.deploy.icons">
+      </page>
+   </extension>
+
 </plugin>
