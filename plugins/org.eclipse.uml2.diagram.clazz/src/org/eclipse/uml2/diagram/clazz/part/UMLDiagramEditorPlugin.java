@@ -98,21 +98,14 @@ public class UMLDiagramEditorPlugin extends AbstractUIPlugin {
 	/**
 	 * @generated
 	 */
-	protected void fillItemProviderFactoriesGen(List factories) {
+	protected void fillItemProviderFactories(List factories) {
+		//custom icons for diagram elements
+		factories.add(new AlternativeUMLItemProviderAdapterFactory(getPreferenceStore()));
+
 		factories.add(new UMLItemProviderAdapterFactory());
 		factories.add(new EcoreItemProviderAdapterFactory());
 		factories.add(new ResourceItemProviderAdapterFactory());
 		factories.add(new ReflectiveItemProviderAdapterFactory());
-	}
-
-	/**
-	 * Use alternative UMLItemProviderAdapterFactory insteadof UMLItemProviderAdapterFactory
-	 * @see org.eclipse.emf.edit.provider.ComposedAdapterFactory#getFactoryForTypes(java.util.Collection)
-	 * @generated NOT
-	 */
-	protected void fillItemProviderFactories(List factories) {
-		factories.add(new AlternativeUMLItemProviderAdapterFactory(getPreferenceStore()));
-		fillItemProviderFactoriesGen(factories);
 	}
 
 	/**

@@ -295,46 +295,6 @@ public class UMLDiagramEditor extends DiagramDocumentEditor implements IGotoMark
 	}
 
 	/**
-	 * @NOT-generated
-	 */
-	public void refresh() {
-		refreshPalette();
-		refreshDiagram();
-	}
-
-	/**
-	 * @NOT-generated
-	 */
-	private void refreshDiagram() {
-		getDiagramGraphicalViewer().setContents(getDiagram());
-	}
-
-	/**
-	 * @NOT-generated
-	 */
-	private void refreshPalette() {
-		PaletteRoot paletteRoot = getEditDomain().getPaletteViewer().getPaletteRoot();
-		cleanPaletteRoot(paletteRoot);
-		createPaletteRoot(paletteRoot);
-	}
-
-	/**
-	 * @NOT-generated
-	 */
-	private void cleanPaletteRoot(PaletteRoot paletteRoot) {
-		List entries = new ArrayList();
-		entries.addAll(paletteRoot.getChildren());
-		for (Object entry : entries) {
-			PaletteEntry paletteEntry = (PaletteEntry) entry;
-			// we don't repaint standard palette group
-			if (PaletteService.GROUP_STANDARD.equals(paletteEntry.getId())) {
-				continue;
-			}
-			paletteRoot.remove(paletteEntry);
-		}
-	}
-
-	/**
 	 * @generated
 	 */
 	private abstract class DropTargetListener extends DiagramDropTargetListener {
@@ -388,6 +348,46 @@ public class UMLDiagramEditor extends DiagramDocumentEditor implements IGotoMark
 		 */
 		protected abstract Object getJavaObject(TransferData data);
 
+	}
+
+	/**
+	 * @generated
+	 */
+	public void refresh() {
+		refreshPalette();
+		refreshDiagram();
+	}
+
+	/**
+	 * @generated
+	 */
+	private void refreshDiagram() {
+		getDiagramGraphicalViewer().setContents(getDiagram());
+	}
+
+	/**
+	 * @generated
+	 */
+	private void refreshPalette() {
+		PaletteRoot paletteRoot = getEditDomain().getPaletteViewer().getPaletteRoot();
+		cleanPaletteRoot(paletteRoot);
+		createPaletteRoot(paletteRoot);
+	}
+
+	/**
+	 * @generated
+	 */
+	private void cleanPaletteRoot(PaletteRoot paletteRoot) {
+		List<Object> entries = new ArrayList<Object>();
+		entries.addAll(paletteRoot.getChildren());
+		for (Object entry : entries) {
+			PaletteEntry paletteEntry = (PaletteEntry) entry;
+			// we don't repaint standard palette group
+			if (PaletteService.GROUP_STANDARD.equals(paletteEntry.getId())) {
+				continue;
+			}
+			paletteRoot.remove(paletteEntry);
+		}
 	}
 
 }
