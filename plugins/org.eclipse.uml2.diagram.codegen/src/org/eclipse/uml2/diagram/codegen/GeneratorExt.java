@@ -8,6 +8,7 @@ import org.eclipse.gmf.common.UnexpectedBehaviourException;
 import org.eclipse.gmf.internal.common.codegen.TextMerger;
 import org.eclipse.uml2.diagram.codegen.gmfgenext.SubstitutableByAttributes;
 
+@SuppressWarnings("restriction")
 public class GeneratorExt extends Generator {
 
 	private final GenDiagram myDiagram;

@@ -8,7 +8,7 @@ import org.eclipse.gmf.common.UnexpectedBehaviourException;
 import org.eclipse.gmf.internal.codegen.dispatch.StaticTemplateRegistry;
 import org.eclipse.gmf.internal.common.codegen.TextEmitter;
 
-
+@SuppressWarnings("restriction")
 public class CodegenEmittersExt extends CodegenEmitters {
 	
 	public CodegenEmittersExt(boolean usePrecompiled, String templateDirectory) {
