@@ -683,9 +683,13 @@ public class UMLElementTypes extends ElementInitializers {
 	}
 
 	/**
-	 * @NOT-generated
+	 * @generated
 	 */
 	public static void refreshImageRegistry() {
+		if (imageRegistry != null) {
+			imageRegistry.dispose();
+			imageRegistry = null;
+		}
 		imageRegistry = new ImageRegistry();
 	}
 

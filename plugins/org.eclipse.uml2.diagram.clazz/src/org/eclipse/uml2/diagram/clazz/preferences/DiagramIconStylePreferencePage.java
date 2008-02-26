@@ -8,41 +8,62 @@ import org.eclipse.uml2.diagram.clazz.part.UMLDiagramEditorPlugin;
 import org.eclipse.uml2.diagram.clazz.providers.UMLElementTypes;
 import org.eclipse.uml2.diagram.common.preferences.IconStylePreferencePage;
 
+/**
+ * @generated
+ */
+public class DiagramIconStylePreferencePage extends IconStylePreferencePage {
 
-public class DiagramIconStylePreferencePage extends IconStylePreferencePage{
-	
+	/**
+	 * @generated
+	 */
+	private IWorkbench myWorkbench;
+
+	/**
+	 * @generated
+	 */
 	public DiagramIconStylePreferencePage() {
 		setPreferenceStore(UMLDiagramEditorPlugin.getInstance().getPreferenceStore());
 	}
 
+	/**
+	 * @generated
+	 */
 	@Override
 	public void init(IWorkbench workbench) {
 		super.init(workbench);
 		myWorkbench = workbench;
 	}
-	
-    public boolean performOk() {
-    	super.performOk();
-    	UMLElementTypes.refreshImageRegistry();
-		refreshClassDiagramEditors();
-    	return true;
-    }
 
-	private void refreshClassDiagramEditors() {
+	/**
+	 * @generated
+	 */
+	public boolean performOk() {
+		super.performOk();
+		UMLElementTypes.refreshImageRegistry();
+		refreshDiagramEditors();
+		return true;
+	}
+
+	/**
+	 * @generated
+	 */
+	private void refreshDiagramEditors() {
 		IEditorReference[] editors = myWorkbench.getActiveWorkbenchWindow().getActivePage().getEditorReferences();
 		for (int i = 0; i < editors.length; i++) {
 			IEditorPart editor = editors[i].getEditor(false);
 			if (editor != null && editor instanceof UMLDiagramEditor) {
-		    	((UMLDiagramEditor)editor).refresh();
+				((UMLDiagramEditor) editor).refresh();
 			}
 		}
 	}
-    
+
+	/**
+	 * @generated
+	 */
 	@Override
 	protected void initHelp() {
 		// TODO Auto-generated method stub
-		
+
 	};
 
-	private IWorkbench myWorkbench;
 }
