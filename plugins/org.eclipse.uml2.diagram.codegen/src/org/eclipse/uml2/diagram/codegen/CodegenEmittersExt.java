@@ -55,7 +55,15 @@ public class CodegenEmittersExt extends CodegenEmitters {
 	public String getChangeNotationContributionItemProviderName(Object... input) throws UnexpectedBehaviourException {
 		return getQualifiedClassName("xpt::actions::ChangeNotationContributionItemProvider::qualifiedClassName", input); //$NON-NLS-1$
 	}
-	
+
+	public TextEmitter getIconStylePreferencePageEmitter() throws UnexpectedBehaviourException {
+		return newXpandEmitter("xpt::preferences::IconStylePreferencePage::IconStylePreferencePage"); //$NON-NLS-1$
+	}
+
+	public String getIconStylePreferencePageFQN(Object... input) throws UnexpectedBehaviourException {
+		return getQualifiedClassName("xpt::preferences::IconStylePreferencePage::qualifiedClassName", input); //$NON-NLS-1$
+	}
+
 	/**
 	 * Returns qualified class name defined in template.
 	 */
