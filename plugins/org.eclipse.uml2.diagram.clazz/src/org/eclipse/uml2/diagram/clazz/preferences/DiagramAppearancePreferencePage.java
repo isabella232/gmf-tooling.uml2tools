@@ -26,6 +26,10 @@ public class DiagramAppearancePreferencePage extends AppearancePreferencePage {
 	private ColorFieldEditor myHighlightColorEditor;
 
 	/**
+	 * @NOT-generated
+	 */
+	private static final Color HIGHLIGHT_COLOR = ColorConstants.red;
+	/**
 	 * @generated
 	 */
 	public DiagramAppearancePreferencePage() {
@@ -47,8 +51,7 @@ public class DiagramAppearancePreferencePage extends AppearancePreferencePage {
 	 */
 	public static void initDefaults(IPreferenceStore store) {
 		AppearancePreferencePage.initDefaults(store);
-		Color highlightColor = ColorConstants.red;
-		PreferenceConverter.setDefault(store, UMLPreferencesConstants.HIGHLIGHT_COLOR, highlightColor.getRGB());
+		PreferenceConverter.setDefault(store, UMLPreferencesConstants.HIGHLIGHT_COLOR, HIGHLIGHT_COLOR.getRGB());
 	}
 
 }
