@@ -85,6 +85,7 @@ import org.eclipse.uml2.diagram.clazz.edit.parts.RedefinableTemplateSignatureEdi
 import org.eclipse.uml2.diagram.clazz.edit.parts.SlotEditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.TemplateBindingEditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.UsageEditPart;
+import org.eclipse.uml2.diagram.clazz.links.InterfaceLinkManager;
 import org.eclipse.uml2.diagram.clazz.part.UMLDiagramUpdater;
 import org.eclipse.uml2.diagram.clazz.part.UMLLinkDescriptor;
 import org.eclipse.uml2.diagram.clazz.part.UMLNodeDescriptor;
@@ -299,10 +300,20 @@ public class PackageCanonicalEditPolicy extends CanonicalConnectionEditPolicy {
 		return createConnections(linkDescriptors, domain2NotationMap);
 	}
 
+
+	/**
+	 * @generated NOT
+	 */
+	private Collection collectAllLinks(View view, Domain2Notation domain2NotationMap) {
+		if (view instanceof Diagram) {
+			return new InterfaceLinkManager(collectAllLinksGen(view, domain2NotationMap)).getFilteredLinkDescriptors();
+		}
+		return collectAllLinksGen(view, domain2NotationMap);
+	}
 	/**
 	 * @generated
 	 */
-	private Collection collectAllLinks(View view, Domain2Notation domain2NotationMap) {
+	private Collection collectAllLinksGen(View view, Domain2Notation domain2NotationMap) {
 		if (!PackageEditPart.MODEL_ID.equals(UMLVisualIDRegistry.getModelID(view))) {
 			return Collections.EMPTY_LIST;
 		}

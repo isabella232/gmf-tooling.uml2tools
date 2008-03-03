@@ -55,7 +55,7 @@ public class ProvidedPortLinkHelper {
 		if (realizationContainer == null) {
 			return null;
 		}
-		Realization realization = UMLFactory.eINSTANCE.createRealization();
+		Realization realization = UMLFactory.eINSTANCE.createInterfaceRealization();
 		realizationContainer.getPackagedElements().add(realization);
 		realization.getClients().add(portType);
 		realization.getSuppliers().add(targetInterface);
