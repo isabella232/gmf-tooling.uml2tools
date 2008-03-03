@@ -819,7 +819,16 @@
              </popupStructuredContributionCriteria>
 		 </popupContribution>
       </contributionItemProvider>
+   </extension><extension point="org.eclipse.ui.preferencePages">
+      <?gmfgen generated="true"?>
+      <page
+            name="%preferences.icons"
+            class="org.eclipse.uml2.diagram.component.preferences.DiagramIconStylePreferencePage"
+            category="org.eclipse.uml2.uml.diagram.component.general"
+            id="org.eclipse.uml2.diagram.component.icons">
+      </page>
    </extension>
+
 
 
 
