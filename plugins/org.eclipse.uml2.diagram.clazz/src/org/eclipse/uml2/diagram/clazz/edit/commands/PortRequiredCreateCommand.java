@@ -40,7 +40,7 @@ public class PortRequiredCreateCommand extends EditElementCommand {
 		super(request.getLabel(), null, request);
 		this.source = source;
 		this.target = target;
-		myCreateLinkHelper = new RequiredPortLinkHelper((AdapterFactoryEditingDomain)getEditingDomain(), getSource(), getTarget());
+		myCreateLinkHelper = new RequiredPortLinkHelper((AdapterFactoryEditingDomain)getEditingDomain(), source, target);
 	}
 
 	/**
