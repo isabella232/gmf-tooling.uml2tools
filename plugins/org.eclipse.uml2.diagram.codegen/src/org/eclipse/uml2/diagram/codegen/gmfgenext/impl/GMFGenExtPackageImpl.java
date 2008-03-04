@@ -2,7 +2,7 @@
  * <copyright>
  * </copyright>
  *
- * $Id: GMFGenExtPackageImpl.java,v 1.4 2007/11/22 16:59:33 mgolubev Exp $
+ * $Id: GMFGenExtPackageImpl.java,v 1.5 2008/03/04 13:03:29 tfesenko Exp $
  */
 package org.eclipse.uml2.diagram.codegen.gmfgenext.impl;
 
@@ -118,8 +118,6 @@ public class GMFGenExtPackageImpl extends EPackageImpl implements GMFGenExtPacka
 		isInited = true;
 
 		// Initialize simple dependencies
-		EcorePackage.eINSTANCE.eClass();
-		GenModelPackage.eINSTANCE.eClass();
 		GMFGenPackage.eINSTANCE.eClass();
 
 		// Create package meta-data objects

@@ -2,7 +2,7 @@
  * <copyright>
  * </copyright>
  *
- * $Id: GMFGenExtAdapterFactory.java,v 1.3 2007/11/22 16:59:34 mgolubev Exp $
+ * $Id: GMFGenExtAdapterFactory.java,v 1.4 2008/03/04 13:03:29 tfesenko Exp $
  */
 package org.eclipse.uml2.diagram.codegen.gmfgenext.util;
 
@@ -65,7 +65,7 @@ public class GMFGenExtAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * The switch the delegates to the <code>createXXX</code> methods.
+	 * The switch that delegates to the <code>createXXX</code> methods.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated

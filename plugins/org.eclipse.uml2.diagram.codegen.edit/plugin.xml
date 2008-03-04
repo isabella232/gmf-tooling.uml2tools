@@ -5,7 +5,7 @@
  <copyright>
  </copyright>
 
- $Id: plugin.xml,v 1.1 2007/04/05 17:08:18 mgolubev Exp $
+ $Id: plugin.xml,v 1.2 2008/03/04 13:03:28 tfesenko Exp $
 -->
 
 <plugin>
@@ -20,6 +20,12 @@
           org.eclipse.emf.edit.provider.ITreeItemContentProvider
           org.eclipse.emf.edit.provider.IItemLabelProvider
           org.eclipse.emf.edit.provider.IItemPropertySource" />
+  </extension>
+
+  <extension point="org.eclipse.emf.edit.childCreationExtenders">
+    <extender 
+       uri = "http://www.eclipse.org/gmf/2006/GenModel" 
+       class = "org.eclipse.uml2.diagram.codegen.gmfgenext.provider.GMFGenExtItemProviderAdapterFactory$GMFGenChildCreationExtender" />
   </extension>
 
 </plugin>

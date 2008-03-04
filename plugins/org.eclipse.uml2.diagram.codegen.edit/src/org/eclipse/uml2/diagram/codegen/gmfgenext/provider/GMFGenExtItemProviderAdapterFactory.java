@@ -2,21 +2,27 @@
  * <copyright>
  * </copyright>
  *
- * $Id: GMFGenExtItemProviderAdapterFactory.java,v 1.3 2007/11/22 16:59:35 mgolubev Exp $
+ * $Id: GMFGenExtItemProviderAdapterFactory.java,v 1.4 2008/03/04 13:03:28 tfesenko Exp $
  */
 package org.eclipse.uml2.diagram.codegen.gmfgenext.provider;
 
 import java.util.ArrayList;
 import java.util.Collection;
 
+import java.util.List;
 import org.eclipse.emf.common.notify.Adapter;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.Notifier;
 
+import org.eclipse.emf.common.util.ResourceLocator;
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.edit.command.CommandParameter;
+import org.eclipse.emf.edit.domain.EditingDomain;
 import org.eclipse.emf.edit.provider.ChangeNotifier;
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.ComposedAdapterFactory;
 import org.eclipse.emf.edit.provider.IChangeNotifier;
+import org.eclipse.emf.edit.provider.IChildCreationExtender;
 import org.eclipse.emf.edit.provider.IDisposable;
 import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
 import org.eclipse.emf.edit.provider.IItemLabelProvider;
@@ -25,6 +31,10 @@ import org.eclipse.emf.edit.provider.INotifyChangedListener;
 import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
 import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
 
+import org.eclipse.gmf.codegen.gmfgen.GMFGenPackage;
+import org.eclipse.gmf.codegen.gmfgen.Viewmap;
+import org.eclipse.gmf.codegen.gmfgen.util.GMFGenSwitch;
+import org.eclipse.uml2.diagram.codegen.gmfgenext.GMFGenExtFactory;
 import org.eclipse.uml2.diagram.codegen.gmfgenext.util.GMFGenExtAdapterFactory;
 
 /**
@@ -263,6 +273,107 @@ public class GMFGenExtItemProviderAdapterFactory extends GMFGenExtAdapterFactory
 		if (customLocatorAttributesItemProvider != null) customLocatorAttributesItemProvider.dispose();
 		if (detailsLevelAttributesItemProvider != null) detailsLevelAttributesItemProvider.dispose();
 		if (substitutableByAttributesItemProvider != null) substitutableByAttributesItemProvider.dispose();
+	}
+
+	/**
+	 * A child creation extender for the {@link GMFGenPackage}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public static class GMFGenChildCreationExtender implements IChildCreationExtender {
+		/**
+		 * The switch for creating child descriptors specific to each extended class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		protected static class CreationSwitch extends GMFGenSwitch {
+			/**
+			 * The child descriptors being populated.
+			 * <!-- begin-user-doc -->
+			 * <!-- end-user-doc -->
+			 * @generated
+			 */
+			protected List newChildDescriptors;
+
+			/**
+			 * The domain in which to create the children.
+			 * <!-- begin-user-doc -->
+			 * <!-- end-user-doc -->
+			 * @generated
+			 */
+			protected EditingDomain editingDomain;
+
+			/**
+			 * Creates the a switch for populating child descriptors in the given domain.
+			 * <!-- begin-user-doc -->
+			 * <!-- end-user-doc -->
+			 * @generated
+			 */
+			CreationSwitch(List newChildDescriptors, EditingDomain editingDomain) {
+				this.newChildDescriptors = newChildDescriptors;
+				this.editingDomain = editingDomain;
+			}
+			/**
+			 * <!-- begin-user-doc -->
+			 * <!-- end-user-doc -->
+			 * @generated
+			 */
+			public Object caseViewmap(Viewmap object) {
+				newChildDescriptors.add
+					(createChildParameter
+						(GMFGenPackage.eINSTANCE.getViewmap_Attributes(),
+						 GMFGenExtFactory.eINSTANCE.createAuxSecondaryDiagramNodeAttribute()));
+
+				newChildDescriptors.add
+					(createChildParameter
+						(GMFGenPackage.eINSTANCE.getViewmap_Attributes(),
+						 GMFGenExtFactory.eINSTANCE.createCustomLocatorAttributes()));
+
+				newChildDescriptors.add
+					(createChildParameter
+						(GMFGenPackage.eINSTANCE.getViewmap_Attributes(),
+						 GMFGenExtFactory.eINSTANCE.createDetailsLevelAttributes()));
+
+				newChildDescriptors.add
+					(createChildParameter
+						(GMFGenPackage.eINSTANCE.getViewmap_Attributes(),
+						 GMFGenExtFactory.eINSTANCE.createSubstitutableByAttributes()));
+
+				return null;
+			}
+ 
+			/**
+			 * <!-- begin-user-doc -->
+			 * <!-- end-user-doc -->
+			 * @generated
+			 */
+			protected CommandParameter createChildParameter(Object feature, Object child) {
+				return new CommandParameter(null, feature, child);
+			}
+
+		}
+
+		/**
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		public Collection getNewChildDescriptors(Object object, EditingDomain editingDomain) {
+			ArrayList result = new ArrayList();
+		   new CreationSwitch(result, editingDomain).doSwitch((EObject)object);
+		   return result;
+		}
+
+		/**
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		public ResourceLocator getResourceLocator() {
+			return GMFGenExtEditPlugin.INSTANCE;
+		}
 	}
 
 }

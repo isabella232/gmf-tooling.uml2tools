@@ -6,7 +6,7 @@
     modelName="GMFGenExt" importerID="org.eclipse.emf.importer.ecore" usedGenPackages="platform:/plugin/org.eclipse.emf.ecore/model/Ecore.genmodel#//ecore platform:/plugin/org.eclipse.emf.codegen.ecore/model/GenModel.genmodel#//genmodel platform:/plugin/org.eclipse.gmf.codegen/models/gmfgen.genmodel#//gmfgen">
   <foreignModel>gmfgenext.ecore</foreignModel>
   <genPackages prefix="GMFGenExt" basePackage="org.eclipse.uml2.diagram.codegen" disposableProviderFactory="true"
-      ecorePackage="gmfgenext.ecore#/">
+      childCreationExtenders="true" ecorePackage="gmfgenext.ecore#/">
     <genClasses ecoreClass="gmfgenext.ecore#//AuxSecondaryDiagramNodeAttribute">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute gmfgenext.ecore#//AuxSecondaryDiagramNodeAttribute/substituteWithCanvasElement"/>
     </genClasses>
