@@ -30,9 +30,38 @@ package «EXPAND packageName»;
 
 «EXPAND xpt::Common::generatedClassComment»
 public class «EXPAND className» extends org.eclipse.uml2.diagram.common.preferences.ViewFiltersPreferencePage {
+
+	«EXPAND xpt::Common::generatedMemberComment»
+	private org.eclipse.ui.IWorkbench myWorkbench;	
+	
 	«EXPAND xpt::Common::generatedMemberComment»
 	public «EXPAND className»() {
 		setPreferenceStore(«getDiagram().editorGen.plugin.getActivatorQualifiedClassName()».getInstance().getPreferenceStore());
+	}
+
+	«EXPAND xpt::Common::generatedMemberComment»
+	@Override
+	public void init(org.eclipse.ui.IWorkbench workbench) {
+		super.init(workbench);
+		myWorkbench = workbench;
+	}
+	
+	«EXPAND xpt::Common::generatedMemberComment»
+    public boolean performOk() {
+    	super.performOk();
+		refreshDiagramEditors();
+    	return true;
+    }
+
+	«EXPAND xpt::Common::generatedMemberComment»
+	private void refreshDiagramEditors() {
+		org.eclipse.ui.IEditorReference[] editors = myWorkbench.getActiveWorkbenchWindow().getActivePage().getEditorReferences();
+		for (int i = 0; i < editors.length; i++) {
+			org.eclipse.ui.IEditorPart editor = editors[i].getEditor(false);
+			if (editor != null && editor instanceof «getDiagram().editorGen.editor.getQualifiedClassName()») {
+		    	((«getDiagram().editorGen.editor.getQualifiedClassName()»)editor).refresh();
+			}
+		}
 	}
 }
 «ENDDEFINE»
