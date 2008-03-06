@@ -281,6 +281,12 @@
             category="org.eclipse.uml2.uml.csd.general"
             class="org.eclipse.gmf.runtime.emf.ui.preferences.PathmapsPreferencePage">
       </page>
+      <page
+            id="org.eclipse.uml2.uml.diagram.csd.viewfilter"
+            name="%preference.page.title.org.eclipse.uml2.uml.diagram.csd.viewfilter"
+            category="org.eclipse.uml2.uml.csd.general"
+            class="org.eclipse.uml2.diagram.csd.preferences.DiagramViewFiltersPreferencePage">
+      </page>
    </extension>
 
    <extension point="org.eclipse.ui.views.properties.tabbed.propertyContributor">

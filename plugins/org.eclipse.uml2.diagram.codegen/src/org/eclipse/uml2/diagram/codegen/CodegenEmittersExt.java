@@ -64,6 +64,20 @@ public class CodegenEmittersExt extends CodegenEmitters {
 		return getQualifiedClassName("xpt::preferences::IconStylePreferencePage::qualifiedClassName", input); //$NON-NLS-1$
 	}
 
+	public TextEmitter getViewFiltersPreferencePageEmitter() throws UnexpectedBehaviourException {
+		return newXpandEmitter("xpt::preferences::ViewFiltersPreferencePage::ViewFiltersPreferencePage"); //$NON-NLS-1$
+	}
+
+	public String getViewFiltersPreferencePageFQN(Object... input) throws UnexpectedBehaviourException {
+		return getQualifiedClassName("xpt::preferences::ViewFiltersPreferencePage::qualifiedClassName", input); //$NON-NLS-1$
+	}
+	
+	public boolean isViewFiltersPreferencePage(Object... input) throws UnexpectedBehaviourException {
+		TextEmitter emitter = newXpandEmitter("xpt::preferences::ViewFiltersPreferencePage::isViewFiltersPreferencePage");//$NON-NLS-1$
+		String result = getText(emitter, input);
+		return Boolean.valueOf(result); 
+	}	
+
 	/**
 	 * Returns qualified class name defined in template.
 	 */

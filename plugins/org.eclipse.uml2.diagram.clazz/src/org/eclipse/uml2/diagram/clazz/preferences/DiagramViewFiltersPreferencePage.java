@@ -1,18 +1,17 @@
 package org.eclipse.uml2.diagram.clazz.preferences;
 
-import org.eclipse.gmf.runtime.diagram.ui.preferences.ConnectionsPreferencePage;
 import org.eclipse.uml2.diagram.clazz.part.UMLDiagramEditorPlugin;
+import org.eclipse.uml2.diagram.common.preferences.ViewFiltersPreferencePage;
 
 /**
  * @generated
  */
-public class DiagramConnectionsPreferencePage extends ConnectionsPreferencePage {
+public class DiagramViewFiltersPreferencePage extends ViewFiltersPreferencePage {
 
 	/**
 	 * @generated
 	 */
-	public DiagramConnectionsPreferencePage() {
+	public DiagramViewFiltersPreferencePage() {
 		setPreferenceStore(UMLDiagramEditorPlugin.getInstance().getPreferenceStore());
 	}
-
 }

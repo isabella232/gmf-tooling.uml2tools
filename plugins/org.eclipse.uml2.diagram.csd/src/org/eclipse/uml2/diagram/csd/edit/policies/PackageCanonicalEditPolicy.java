@@ -50,6 +50,7 @@ import org.eclipse.uml2.diagram.csd.edit.parts.Property3EditPart;
 import org.eclipse.uml2.diagram.csd.edit.parts.PropertyEditPart;
 import org.eclipse.uml2.diagram.csd.edit.parts.SlotEditPart;
 import org.eclipse.uml2.diagram.csd.edit.parts.UsageEditPart;
+import org.eclipse.uml2.diagram.csd.links.UMLInterfaceLinkManager;
 import org.eclipse.uml2.diagram.csd.part.UMLDiagramUpdater;
 import org.eclipse.uml2.diagram.csd.part.UMLLinkDescriptor;
 import org.eclipse.uml2.diagram.csd.part.UMLNodeDescriptor;
@@ -268,9 +269,19 @@ public class PackageCanonicalEditPolicy extends CanonicalConnectionEditPolicy {
 	}
 
 	/**
-	 * @generated
+	 * @generated NOT
 	 */
 	private Collection collectAllLinks(View view, Domain2Notation domain2NotationMap) {
+		if (view instanceof Diagram) {
+			return new UMLInterfaceLinkManager(collectAllLinksGen(view, domain2NotationMap)).getFilteredLinkDescriptors();
+		}
+		return collectAllLinksGen(view, domain2NotationMap);
+	}
+
+	/**
+	 * @generated
+	 */
+	private Collection collectAllLinksGen(View view, Domain2Notation domain2NotationMap) {
 		if (!PackageEditPart.MODEL_ID.equals(UMLVisualIDRegistry.getModelID(view))) {
 			return Collections.EMPTY_LIST;
 		}

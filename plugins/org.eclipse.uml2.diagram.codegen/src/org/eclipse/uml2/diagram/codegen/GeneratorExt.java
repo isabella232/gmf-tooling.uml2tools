@@ -1,7 +1,9 @@
 package org.eclipse.uml2.diagram.codegen;
 
+import org.eclipse.gmf.codegen.gmfgen.GenCustomPreferencePage;
 import org.eclipse.gmf.codegen.gmfgen.GenDiagram;
 import org.eclipse.gmf.codegen.gmfgen.GenEditorGenerator;
+import org.eclipse.gmf.codegen.gmfgen.GenPreferencePage;
 import org.eclipse.gmf.codegen.gmfgen.GenTopLevelNode;
 import org.eclipse.gmf.codegen.util.Generator;
 import org.eclipse.gmf.common.UnexpectedBehaviourException;
@@ -54,8 +56,8 @@ public class GeneratorExt extends Generator {
 		for (GenTopLevelNode node : myDiagram.getTopLevelNodes()) {
 			generateChangeNotationAction(node);
 		}
-		
 		generateIconStylePreferencesPage(myDiagram);
+		generateViewFiltersPreferencesPage(myDiagram);
 	}
 
 	private void generateChangeNotationAction(GenTopLevelNode node) throws InterruptedException, UnexpectedBehaviourException {
@@ -82,5 +84,22 @@ public class GeneratorExt extends Generator {
 				myEmitters.getIconStylePreferencePageFQN(new Object[] { diagram }), //
 				diagram);
 	}
-	
+
+	private void generateViewFiltersPreferencesPage(GenDiagram diagram) throws InterruptedException, UnexpectedBehaviourException {
+		for (GenPreferencePage page : diagram.getPreferencePages()) {
+			generateViewFiltersPreferencesPage(page);
+		}
+	}
+	private void generateViewFiltersPreferencesPage(GenPreferencePage page) throws InterruptedException, UnexpectedBehaviourException {
+		if (page instanceof GenCustomPreferencePage && myEmitters.isViewFiltersPreferencePage(new Object[] { page })) {
+				doGenerateJavaClass(//
+						myEmitters.getViewFiltersPreferencePageEmitter(), //
+						myEmitters.getViewFiltersPreferencePageFQN(new Object[] { page }), //
+						page);
+		}			
+		for (GenPreferencePage child : page.getChildren()) {
+			generateViewFiltersPreferencesPage(child);
+		}
+	}
+
 }
