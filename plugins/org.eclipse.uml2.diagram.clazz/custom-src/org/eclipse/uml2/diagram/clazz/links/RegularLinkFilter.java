@@ -3,13 +3,15 @@ package org.eclipse.uml2.diagram.clazz.links;
 import java.util.Collection;
 import java.util.LinkedList;
 
+import org.eclipse.emf.ecore.EObject;
 import org.eclipse.uml2.diagram.clazz.edit.parts.InterfaceRealizationEditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.PortProvidedEditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.PortRequiredEditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.UsageEditPart;
 import org.eclipse.uml2.diagram.clazz.part.UMLLinkDescriptor;
+import org.eclipse.uml2.diagram.common.links.InterfaceLinkFilter;
 
-public class RegularLinkFilter extends InterfaceLinkFilter {
+public class RegularLinkFilter extends InterfaceLinkFilter<UMLLinkDescriptor> {
 
 	private final Collection<UMLLinkDescriptor> myRegularLinks = new LinkedList<UMLLinkDescriptor>();
 
@@ -34,4 +36,8 @@ public class RegularLinkFilter extends InterfaceLinkFilter {
 		return myRegularLinks;
 	}
 
+	@Override
+	protected EObject getSource(UMLLinkDescriptor link) {
+		return link.getSource();
+	}
 }

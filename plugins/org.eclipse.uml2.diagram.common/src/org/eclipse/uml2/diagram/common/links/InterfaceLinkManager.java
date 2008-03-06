@@ -1,12 +1,10 @@
-package org.eclipse.uml2.diagram.clazz.links;
+package org.eclipse.uml2.diagram.common.links;
 
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
 
 import org.eclipse.jface.preference.IPreferenceStore;
-import org.eclipse.uml2.diagram.clazz.part.UMLDiagramEditorPlugin;
-import org.eclipse.uml2.diagram.clazz.part.UMLLinkDescriptor;
 import org.eclipse.uml2.diagram.common.preferences.UMLPreferencesConstants;
 
 /*
@@ -16,17 +14,31 @@ import org.eclipse.uml2.diagram.common.preferences.UMLPreferencesConstants;
  * This class allows user to manage such links. Either genuine, or derived, or both genuine and derived links can be hidden. 
  * Genuine links are hidden only if its derived exists on the diagram.    
  */
-public class InterfaceLinkManager {
+public class InterfaceLinkManager<T> {
 
-	private static boolean ourHideReferencedGenuine;
+	protected static boolean ourHideReferencedGenuine;
 
-	private static boolean ourHideDerived;
+	protected static boolean ourHideDerived;
 	
-	private final List<InterfaceLinkFilter> myLinkManagers = new ArrayList<InterfaceLinkFilter>(3);
+	protected final List<InterfaceLinkFilter<T>> myLinkManagers = new ArrayList<InterfaceLinkFilter<T>>(3);
 
-	public InterfaceLinkManager(Collection<?> linkDescriptors) {
-		refreshOptions(UMLDiagramEditorPlugin.getInstance().getPreferenceStore());
+	public InterfaceLinkManager(Collection<?> linkDescriptors, IPreferenceStore store) {
+		refreshOptions(store);
 		buildTable(linkDescriptors);		
+	}
+
+	public Collection<T> getFilteredLinkDescriptors() {
+		Collection<T> result = new ArrayList<T>();
+		for (InterfaceLinkFilter<T> manager: myLinkManagers) {
+			result.addAll(manager.getFilteredLinks());
+		}
+		return result;
+	}
+	
+	protected void initFilters() {
+//		myLinkManagers.add(new RequiredInterfaceLinkFilter(ourHideDerived, ourHideReferencedGenuine));
+//		myLinkManagers.add(new ProvidedInterfaceLinkFilter(ourHideDerived, ourHideReferencedGenuine));
+//		myLinkManagers.add(new RegularLinkFilter(ourHideDerived, ourHideReferencedGenuine));
 	}
 
 	private static void refreshOptions(IPreferenceStore store) {
@@ -35,23 +47,13 @@ public class InterfaceLinkManager {
 	}
 
 	private void buildTable(Collection<?> linkDescriptors) {
-		myLinkManagers.add(new RequiredInterfaceLinkFilter(ourHideDerived, ourHideReferencedGenuine));
-		myLinkManagers.add(new ProvidedInterfaceLinkFilter(ourHideDerived, ourHideReferencedGenuine));
-		myLinkManagers.add(new RegularLinkFilter(ourHideDerived, ourHideReferencedGenuine));
+		initFilters();
 		for (Object next : linkDescriptors) {
-			UMLLinkDescriptor linkDescriptor = (UMLLinkDescriptor) next;
-			for (InterfaceLinkFilter manager: myLinkManagers) {
+			T linkDescriptor = (T) next;
+			for (InterfaceLinkFilter<T> manager: myLinkManagers) {
 				manager.visit(linkDescriptor);
 			}
 		}
-	}
-
-	public Collection<UMLLinkDescriptor> getFilteredLinkDescriptors() {
-		Collection<UMLLinkDescriptor> result = new ArrayList<UMLLinkDescriptor>();
-		for (InterfaceLinkFilter manager: myLinkManagers) {
-			result.addAll(manager.getFilteredLinks());
-		}
-		return result;
 	}
 
 }
