@@ -12,10 +12,9 @@ import org.eclipse.uml2.diagram.common.Messages;
 
 
 public abstract class IconStylePreferencePage extends AbstractPreferencePage {
-    /**
-	 * @NOT-generated
-     */
-    protected void addFields(Composite parent) {	  	
+
+	@Override
+	protected void addFields(Composite parent) {	  	
 		Composite main = new Composite(parent, SWT.NULL);
 		main.setLayout(new GridLayout());
 		main.setLayoutData(
@@ -24,18 +23,12 @@ public abstract class IconStylePreferencePage extends AbstractPreferencePage {
 		createIconStyleGroup(main);
     }
     
-    /**
-	 * @NOT-generated
-     */
     protected void createIconStyleGroup(Composite parent) {
     	String[][] choices= new String[][]{{ALTERNATIVE_STYLE_ICON_LABEL, UMLPreferencesConstants.PREF_ICON_STYLE_CHEERFUL},{ECLIPSE_STYLE_ICON_LABEL, UMLPreferencesConstants.PREF_ICON_STYLE_STANDARD}};
     	myIconStyleFieldEditor = new RadioGroupFieldEditor(UMLPreferencesConstants.PREF_ICON_STYLE, ICONSTYLE_GROUPBOX_LABEL, 1, choices, parent, true);
     	addField(myIconStyleFieldEditor);
     }
     
-    /**
-	 * @NOT-generated
-     */
     public static void initDefaults(IPreferenceStore store) {
     	AppearancePreferencePage.initDefaults(store);
     	store.setDefault(UMLPreferencesConstants.PREF_ICON_STYLE, UMLPreferencesConstants.PREF_ICON_STYLE_STANDARD);
