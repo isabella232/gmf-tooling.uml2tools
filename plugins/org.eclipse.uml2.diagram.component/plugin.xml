@@ -697,6 +697,12 @@
             category="org.eclipse.uml2.uml.diagram.component.general"
             class="org.eclipse.gmf.runtime.emf.ui.preferences.PathmapsPreferencePage">
       </page>
+      <page
+            id="org.eclipse.uml2.uml.diagram.component.viewfilter"
+            name="%preference.page.title.org.eclipse.uml2.uml.diagram.component.viewfilter"
+            category="org.eclipse.uml2.uml.diagram.component.general"
+            class="org.eclipse.uml2.diagram.component.preferences.DiagramViewFiltersPreferencePage">
+      </page>
    </extension><extension point="org.eclipse.ui.popupMenus">
       <?gmfgen generated="true"?>
       <objectContribution

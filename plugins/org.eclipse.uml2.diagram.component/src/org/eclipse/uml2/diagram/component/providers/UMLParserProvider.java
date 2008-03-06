@@ -509,7 +509,7 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 		lookupSuite.addLookup(Type.class, TYPE_LOOKUP);
 		return new SemanticParserAdapter(new PropertyParser(lookupSuite), new BasicApplyStrategy(), new PropertyToString.VIEW(), new PropertyToString.EDIT());
 	}
-	
+
 	/**
 	 * @generated
 	 */

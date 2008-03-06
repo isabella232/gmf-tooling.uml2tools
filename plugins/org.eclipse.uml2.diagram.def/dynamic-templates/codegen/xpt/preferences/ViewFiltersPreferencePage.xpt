@@ -1,0 +1,38 @@
+/*
+ * Copyright (c) 2008 Borland Software Corporation
+ * 
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
+ *
+ * Contributors:
+ *    Tatiana Fesenko (Borland) - initial API and implementation
+ */
+
+«IMPORT "http://www.eclipse.org/gmf/2006/GenModel"»
+«IMPORT "http://www.eclipse.org/emf/2002/Ecore"»
+«IMPORT "http://www.eclipse.org/emf/2002/GenModel"»
+«IMPORT "http://www.eclipse.org/uml2/diagram/gmfgenext/DiagramFigure/1.0"»
+
+«EXTENSION xpt::preferences::Utils»
+
+«DEFINE isViewFiltersPreferencePage FOR gmfgen::GenCustomPreferencePage»«isViewFiltersPage(iD)»«ENDDEFINE»
+
+«DEFINE className FOR gmfgen::GenCustomPreferencePage»«getSimpleClassName(qualifiedClassName)»«ENDDEFINE»
+
+«DEFINE qualifiedClassName FOR gmfgen::GenCustomPreferencePage»«qualifiedClassName»«ENDDEFINE»
+
+«DEFINE packageName FOR gmfgen::GenCustomPreferencePage»«getPackageName(qualifiedClassName)»«ENDDEFINE»
+
+«DEFINE ViewFiltersPreferencePage FOR gmfgen::GenCustomPreferencePage»
+package «EXPAND packageName»;
+
+«EXPAND xpt::Common::generatedClassComment»
+public class «EXPAND className» extends org.eclipse.uml2.diagram.common.preferences.ViewFiltersPreferencePage {
+	«EXPAND xpt::Common::generatedMemberComment»
+	public «EXPAND className»() {
+		setPreferenceStore(«getDiagram().editorGen.plugin.getActivatorQualifiedClassName()».getInstance().getPreferenceStore());
+	}
+}
+«ENDDEFINE»

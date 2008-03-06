@@ -1,0 +1,25 @@
+/*
+ * Copyright (c) 2008 Borland Software Corporation
+ * 
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
+ *
+ */
+
+import "http://www.eclipse.org/emf/2002/Ecore";
+import "http://www.eclipse.org/gmf/2006/GenModel";
+
+Boolean isViewFiltersPage(String id) :
+"viewfilter" == getSimpleClassName(id)
+;
+
+String getSimpleClassName(String fqn) :
+JAVA org.eclipse.emf.codegen.util.CodeGenUtil.getSimpleClassName(java.lang.String)
+;
+
+String getPackageName(String fqn) :
+JAVA org.eclipse.emf.codegen.util.CodeGenUtil.getPackageName(java.lang.String)
+;
+

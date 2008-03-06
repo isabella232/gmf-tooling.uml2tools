@@ -1740,6 +1740,11 @@
           iD="org.eclipse.uml2.uml.diagram.component.pathmaps"
           name="Pathmaps"
           kind="Pathmaps"/>
+      <children
+          xsi:type="gmfgen:GenCustomPreferencePage"
+          iD="org.eclipse.uml2.uml.diagram.component.viewfilter"
+          name="View Filters"
+          qualifiedClassName="org.eclipse.uml2.diagram.component.preferences.DiagramViewFiltersPreferencePage"/>
     </preferencePages>
   </diagram>
   <plugin
