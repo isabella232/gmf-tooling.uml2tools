@@ -403,7 +403,7 @@
           </labelMappings>
           <tool
               xsi:type="gmftool:CreationTool"
-              href="compositeStructuresDiagram.gmftool#//@palette/@tools.1/@tools.1"/>
+              href="compositeStructuresDiagram.gmftool#//@palette/@tools.0/@tools.1"/>
           <diagramNode
               href="componentDiagram_classifiers.gmfgraph#PartNode"/>
           <children>
