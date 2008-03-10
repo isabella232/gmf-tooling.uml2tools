@@ -40,7 +40,7 @@ public class PortRequiredCreateCommand extends EditElementCommand {
 		super(request.getLabel(), null, request);
 		this.source = source;
 		this.target = target;
-		myCreateLinkHelper = new RequiredPortLinkHelper((AdapterFactoryEditingDomain)getEditingDomain(), source, target);
+		myCreateLinkHelper = new RequiredPortLinkHelper((AdapterFactoryEditingDomain) getEditingDomain(), source, target);
 	}
 
 	/**
@@ -62,7 +62,7 @@ public class PortRequiredCreateCommand extends EditElementCommand {
 		// target may be null here but it's possible to check constraint
 		return UMLBaseItemSemanticEditPolicy.LinkConstraints.canCreatePortRequired_4018(getSource(), getTarget());
 	}
-	
+
 	/**
 	 * @generated NOT
 	 */

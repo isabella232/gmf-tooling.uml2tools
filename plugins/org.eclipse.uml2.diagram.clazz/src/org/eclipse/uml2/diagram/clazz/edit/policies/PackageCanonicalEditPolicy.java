@@ -894,10 +894,8 @@ public class PackageCanonicalEditPolicy extends CanonicalConnectionEditPolicy {
 				return (View) viewOrList;
 			}
 			if (viewOrList instanceof List) {
-				// preferring not-shortcut to shortcut -- important for cases
-				// when links arr to/from
-				// the element that is additionally shortcutted to the same
-				// diagram
+				// preferring not-shortcut to shortcut -- important for cases when links arr to/from 
+				// the element that is additionally shortcutted to the same diagram
 				for (Object next : (List) viewOrList) {
 					View nextView = (View) next;
 					if (nextView.getEAnnotation("Shortcut") == null) { //$NON-NLS-1$
@@ -918,7 +916,7 @@ public class PackageCanonicalEditPolicy extends CanonicalConnectionEditPolicy {
 			}
 			Object viewOrList = myMap.get(domainEObject);
 			if (viewOrList instanceof View) {
-				// no choice, will return what we have
+				//no choice, will return what we have
 				return (View) viewOrList;
 			}
 			for (Object next : (List) viewOrList) {
@@ -927,7 +925,7 @@ public class PackageCanonicalEditPolicy extends CanonicalConnectionEditPolicy {
 					return nextView;
 				}
 			}
-			// hint not found -- return what we have
+			//hint not found -- return what we have
 			return (View) ((List) viewOrList).get(0);
 		}
 
