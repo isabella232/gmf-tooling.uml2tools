@@ -19,6 +19,9 @@ public class DiagramPreferenceInitializer extends AbstractPreferenceInitializer 
 		DiagramAppearancePreferencePage.initDefaults(store);
 		DiagramConnectionsPreferencePage.initDefaults(store);
 		DiagramRulersAndGridPreferencePage.initDefaults(store);
+
+		DiagramIconStylePreferencePage.initDefaults(store);
+
 	}
 
 	/**
