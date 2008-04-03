@@ -53,6 +53,7 @@ import org.eclipse.uml2.diagram.csd.edit.parts.InterfaceNameEditPart;
 import org.eclipse.uml2.diagram.csd.edit.parts.OperationEditPart;
 import org.eclipse.uml2.diagram.csd.edit.parts.PackageNameEditPart;
 import org.eclipse.uml2.diagram.csd.edit.parts.ParameterNameEditPart;
+import org.eclipse.uml2.diagram.csd.edit.parts.PortIsBehaviorEditPart;
 import org.eclipse.uml2.diagram.csd.edit.parts.PortName2EditPart;
 import org.eclipse.uml2.diagram.csd.edit.parts.PortNameEditPart;
 import org.eclipse.uml2.diagram.csd.edit.parts.Property2EditPart;
@@ -426,6 +427,33 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 	}
 
 	/**
+	 * @generated
+	 */
+	private IParser portIsBehavior_5026Parser;
+
+	/**
+	 * @generated
+	 */
+	private IParser getPortIsBehavior_5026Parser() {
+		if (portIsBehavior_5026Parser == null) {
+			portIsBehavior_5026Parser = createPortIsBehavior_5026Parser();
+		}
+		return portIsBehavior_5026Parser;
+	}
+
+	/**
+	 * @generated
+	 */
+	protected IParser createPortIsBehavior_5026Parser() {
+		EAttribute[] features = new EAttribute[] { UMLPackage.eINSTANCE.getPort_IsBehavior(), };
+		MessageFormatParser parser = new MessageFormatParser(features);
+		parser.setViewPattern(" ");
+		parser.setEditorPattern(" ");
+		parser.setEditPattern(" ");
+		return parser;
+	}
+
+	/**
 	 * @NOT-generated
 	 */
 	private IParser createPortNameParser() {
@@ -437,6 +465,7 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 	/**
 	 * @generated
 	 */
+
 	private IParser elementImport_3004Parser;
 
 	/**
@@ -520,6 +549,7 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 	 */
 	protected IParser createSlot_3015Parser() {
 		return new SemanticParserAdapter(new SlotParser(new SlotLookupSuite()), new BasicApplyStrategy(), new SlotToString.VIEW(), new SlotToString.EDIT()) {
+
 			@Override
 			public String getPrintString(IAdaptable element, int flags) {
 				String result = super.getPrintString(element, flags);
@@ -953,6 +983,8 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 			return getOperation_3009Parser();
 		case PortNameEditPart.VISUAL_ID:
 			return getPortName_5012Parser();
+		case PortIsBehaviorEditPart.VISUAL_ID:
+			return getPortIsBehavior_5026Parser();
 		case ElementImportEditPart.VISUAL_ID:
 			return getElementImport_3004Parser();
 		case PropertyName2EditPart.VISUAL_ID:

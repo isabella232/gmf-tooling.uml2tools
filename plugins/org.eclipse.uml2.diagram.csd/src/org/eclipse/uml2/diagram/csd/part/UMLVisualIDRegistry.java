@@ -56,6 +56,7 @@ import org.eclipse.uml2.diagram.csd.edit.parts.ParameterEditPart;
 import org.eclipse.uml2.diagram.csd.edit.parts.ParameterNameEditPart;
 import org.eclipse.uml2.diagram.csd.edit.parts.Port2EditPart;
 import org.eclipse.uml2.diagram.csd.edit.parts.PortEditPart;
+import org.eclipse.uml2.diagram.csd.edit.parts.PortIsBehaviorEditPart;
 import org.eclipse.uml2.diagram.csd.edit.parts.PortName2EditPart;
 import org.eclipse.uml2.diagram.csd.edit.parts.PortNameEditPart;
 import org.eclipse.uml2.diagram.csd.edit.parts.Property2EditPart;
@@ -402,6 +403,9 @@ public class UMLVisualIDRegistry {
 			break;
 		case PortEditPart.VISUAL_ID:
 			if (PortNameEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			if (PortIsBehaviorEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
 			break;

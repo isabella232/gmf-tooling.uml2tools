@@ -91,6 +91,13 @@
       <accessors
           figure="//@figures.0/@descriptors.2/@actualFigure/@children.1"/>
     </descriptors>
+    <descriptors
+        name="BehaviorPort_state">
+      <actualFigure
+          xsi:type="gmfgraph:Label"
+          name="BehaviorPort_state"
+          text=""/>
+    </descriptors>
   </figures>
   <nodes
       name="CollaborationNode"
@@ -142,4 +149,7 @@
       name="ExpandedClassNode_name"
       figure="ExpandedClassFigure"
       accessor="//@figures.0/@descriptors.2/@accessors.0"/>
+  <labels
+      name="BehaviorPortNode_state"
+      figure="BehaviorPort_state"/>
 </gmfgraph:Canvas>

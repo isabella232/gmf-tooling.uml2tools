@@ -110,6 +110,9 @@ public class UMLEditPartFactory implements EditPartFactory {
 			case PortNameEditPart.VISUAL_ID:
 				return new PortNameEditPart(view);
 
+			case PortIsBehaviorEditPart.VISUAL_ID:
+				return new PortIsBehaviorEditPart(view);
+
 			case ElementImportEditPart.VISUAL_ID:
 				return new ElementImportEditPart(view);
 

@@ -58,6 +58,7 @@ import org.eclipse.uml2.diagram.csd.edit.parts.ParameterEditPart;
 import org.eclipse.uml2.diagram.csd.edit.parts.ParameterNameEditPart;
 import org.eclipse.uml2.diagram.csd.edit.parts.Port2EditPart;
 import org.eclipse.uml2.diagram.csd.edit.parts.PortEditPart;
+import org.eclipse.uml2.diagram.csd.edit.parts.PortIsBehaviorEditPart;
 import org.eclipse.uml2.diagram.csd.edit.parts.PortName2EditPart;
 import org.eclipse.uml2.diagram.csd.edit.parts.PortNameEditPart;
 import org.eclipse.uml2.diagram.csd.edit.parts.PortProvidedEditPart;
@@ -122,6 +123,7 @@ import org.eclipse.uml2.diagram.csd.view.factories.PackageViewFactory;
 import org.eclipse.uml2.diagram.csd.view.factories.ParameterNameViewFactory;
 import org.eclipse.uml2.diagram.csd.view.factories.ParameterViewFactory;
 import org.eclipse.uml2.diagram.csd.view.factories.Port2ViewFactory;
+import org.eclipse.uml2.diagram.csd.view.factories.PortIsBehaviorViewFactory;
 import org.eclipse.uml2.diagram.csd.view.factories.PortName2ViewFactory;
 import org.eclipse.uml2.diagram.csd.view.factories.PortNameViewFactory;
 import org.eclipse.uml2.diagram.csd.view.factories.PortProvidedViewFactory;
@@ -297,6 +299,7 @@ public class UMLViewProvider extends AbstractViewProvider {
 					}
 					break;
 				case PortNameEditPart.VISUAL_ID:
+				case PortIsBehaviorEditPart.VISUAL_ID:
 					if (PortEditPart.VISUAL_ID != UMLVisualIDRegistry.getVisualID(containerView) || containerView.getElement() != domainElement) {
 						return null; // wrong container
 					}
@@ -406,6 +409,8 @@ public class UMLViewProvider extends AbstractViewProvider {
 			return PortViewFactory.class;
 		case PortNameEditPart.VISUAL_ID:
 			return PortNameViewFactory.class;
+		case PortIsBehaviorEditPart.VISUAL_ID:
+			return PortIsBehaviorViewFactory.class;
 		case ElementImportEditPart.VISUAL_ID:
 			return ElementImportViewFactory.class;
 		case Property3EditPart.VISUAL_ID:

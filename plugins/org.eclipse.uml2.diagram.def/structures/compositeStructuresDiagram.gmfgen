@@ -355,6 +355,10 @@
           xsi:type="gmfgen:CustomBehaviour"
           key="&quot;VisualEffect.Port&quot;"
           editPolicyQualifiedClassName="org.eclipse.uml2.diagram.common.editpolicies.PortVisualEffectEditPolicy"/>
+      <behaviour
+          xsi:type="gmfgen:CustomBehaviour"
+          key="&quot;VisualEffect.BehaviorPort&quot;"
+          editPolicyQualifiedClassName="org.eclipse.uml2.diagram.csd.edit.policies.PortIsBehaviorVisualEffectEditPolicy"/>
       <modelFacet>
         <metaClass
             href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/Port"/>
@@ -397,6 +401,32 @@
             editPattern="">
           <metaFeatures
               href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/NamedElement/name"/>
+        </modelFacet>
+      </labels>
+      <labels
+          xsi:type="gmfgen:GenExternalNodeLabel"
+          visualID="5026"
+          editPartClassName="PortIsBehaviorEditPart"
+          itemSemanticEditPolicyClassName="PortIsBehaviorItemSemanticEditPolicy"
+          notationViewFactoryClassName="PortIsBehaviorViewFactory"
+          readOnly="true"
+          elementIcon="true">
+        <diagramRunTimeClass
+            href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
+        <viewmap
+            xsi:type="gmfgen:InnerClassViewmap"
+            className="BehaviorPort_state"
+            classBody="&#xD;&#xA;/**&#xD;&#xA; * @generated&#xD;&#xA; */&#xD;&#xA;public class BehaviorPort_state extends org.eclipse.draw2d.Label {&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;public BehaviorPort_state() {&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;this.setText(&quot;&quot;);&#xD;&#xA;&#x9;}&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;}&#xD;&#xA;&#xD;&#xA;">
+          <requiredPluginIDs>org.eclipse.uml2.diagram.common</requiredPluginIDs>
+          <requiredPluginIDs>org.eclipse.gmf.runtime.draw2d.ui</requiredPluginIDs>
+        </viewmap>
+        <modelFacet
+            xsi:type="gmfgen:FeatureLabelModelFacet"
+            viewPattern=" "
+            editorPattern=""
+            editPattern="">
+          <metaFeatures
+              href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/Port/isBehavior"/>
         </modelFacet>
       </labels>
     </childNodes>

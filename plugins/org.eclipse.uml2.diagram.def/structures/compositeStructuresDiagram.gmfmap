@@ -286,6 +286,17 @@
             <features
                 href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//NamedElement/name"/>
           </labelMappings>
+          <labelMappings
+              xsi:type="gmfmap:FeatureLabelMapping"
+              readOnly="true"
+              viewPattern=" "
+              editorPattern=""
+              editPattern="">
+            <diagramLabel
+                href="compositeStructuresDiagram_nodes.gmfgraph#BehaviorPortNode_state"/>
+            <features
+                href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//Port/isBehavior"/>
+          </labelMappings>
           <tool
               xsi:type="gmftool:CreationTool"
               href="compositeStructuresDiagram.gmftool#//@palette/@tools.0/@tools.3"/>
