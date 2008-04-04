@@ -60,7 +60,7 @@
           </labelMappings>
           <tool
               xsi:type="gmftool:CreationTool"
-              href="compositeStructuresDiagram.gmftool#//@palette/@tools.0/@tools.5"/>
+              href="compositeStructuresDiagram.gmftool#//@palette/@tools.0/@tools.4"/>
           <diagramNode
               href="compositeStructuresDiagram_nodes.gmfgraph#CollaborationUseNode"/>
         </ownedChild>
@@ -85,7 +85,7 @@
           </labelMappings>
           <tool
               xsi:type="gmftool:CreationTool"
-              href="compositeStructuresDiagram.gmftool#//@palette/@tools.0/@tools.4"/>
+              href="compositeStructuresDiagram.gmftool#//@palette/@tools.0/@tools.1"/>
           <diagramNode
               href="componentDiagram_classifiers.gmfgraph#PartNode"/>
         </ownedChild>
@@ -570,7 +570,7 @@
           </labelMappings>
           <tool
               xsi:type="gmftool:CreationTool"
-              href="compositeStructuresDiagram.gmftool#//@palette/@tools.0/@tools.6"/>
+              href="compositeStructuresDiagram.gmftool#//@palette/@tools.0/@tools.5"/>
           <diagramNode
               href="classDiagram_instances.gmfgraph#Slot_inplace"/>
         </ownedChild>

@@ -28,10 +28,6 @@
           description="Create Port"/>
       <tools
           xsi:type="gmftool:CreationTool"
-          title="Role"
-          description="Create Role"/>
-      <tools
-          xsi:type="gmftool:CreationTool"
           title="Collaboration Use"
           description="Create Collaboration Use"/>
       <tools

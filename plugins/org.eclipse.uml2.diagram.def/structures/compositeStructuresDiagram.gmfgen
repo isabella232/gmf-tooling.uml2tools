@@ -1946,7 +1946,7 @@
             xsi:type="gmfgen:ToolEntry"
             title="Attribute"
             description="Create Attribute"
-            genNodes="//@diagram/@childNodes.3 //@diagram/@childNodes.8"/>
+            genNodes="//@diagram/@childNodes.1 //@diagram/@childNodes.3 //@diagram/@childNodes.8"/>
         <entries
             xsi:type="gmfgen:ToolEntry"
             title="Operation"
@@ -1957,11 +1957,6 @@
             title="Port"
             description="Create Port"
             genNodes="//@diagram/@childNodes.6 //@diagram/@childNodes.10"/>
-        <entries
-            xsi:type="gmfgen:ToolEntry"
-            title="Role"
-            description="Create Role"
-            genNodes="//@diagram/@childNodes.1"/>
         <entries
             xsi:type="gmfgen:ToolEntry"
             title="Collaboration Use"

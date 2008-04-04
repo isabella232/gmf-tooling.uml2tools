@@ -323,32 +323,22 @@ public class Messages extends NLS {
 	/**
 	 * @generated
 	 */
-	public static String Role5CreationTool_title;
+	public static String CollaborationUse5CreationTool_title;
 
 	/**
 	 * @generated
 	 */
-	public static String Role5CreationTool_desc;
+	public static String CollaborationUse5CreationTool_desc;
 
 	/**
 	 * @generated
 	 */
-	public static String CollaborationUse6CreationTool_title;
+	public static String Slot6CreationTool_title;
 
 	/**
 	 * @generated
 	 */
-	public static String CollaborationUse6CreationTool_desc;
-
-	/**
-	 * @generated
-	 */
-	public static String Slot7CreationTool_title;
-
-	/**
-	 * @generated
-	 */
-	public static String Slot7CreationTool_desc;
+	public static String Slot6CreationTool_desc;
 
 	/**
 	 * @generated
