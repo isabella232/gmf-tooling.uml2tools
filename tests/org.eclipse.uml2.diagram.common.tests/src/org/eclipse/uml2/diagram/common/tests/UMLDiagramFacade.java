@@ -25,7 +25,6 @@ import org.eclipse.gmf.runtime.diagram.ui.parts.IDiagramWorkbenchPart;
 import org.eclipse.gmf.runtime.emf.commands.core.command.AbstractTransactionalCommand;
 import org.eclipse.gmf.runtime.emf.core.GMFEditingDomainFactory;
 import org.eclipse.gmf.runtime.notation.Diagram;
-import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.ui.IEditorPart;
 import org.eclipse.ui.IWorkbench;
 import org.eclipse.ui.IWorkbenchPage;
@@ -33,7 +32,7 @@ import org.eclipse.ui.PartInitException;
 import org.eclipse.ui.PlatformUI;
 import org.eclipse.ui.part.FileEditorInput;
 
-public abstract class UMLTestDiagram {
+public abstract class UMLDiagramFacade {
 
 	protected abstract String getDiagramFileExtension();
 
@@ -49,11 +48,11 @@ public abstract class UMLTestDiagram {
 
 	private IDiagramWorkbenchPart myDiagramWorkbenchPart;
 
-	public UMLTestDiagram(String projectPath) {
+	public UMLDiagramFacade(String projectPath) {
 		myDiagramResource = createDiagram(projectPath);
 	}
 
-	public UMLTestDiagram(IFile modelFile, IFile diagramFile) throws ExecutionException, IOException, CoreException {
+	public UMLDiagramFacade(IFile modelFile, IFile diagramFile) throws ExecutionException, IOException, CoreException {
 		myDiagramResource = createRestoredDiagram(modelFile, diagramFile);
 	}
 

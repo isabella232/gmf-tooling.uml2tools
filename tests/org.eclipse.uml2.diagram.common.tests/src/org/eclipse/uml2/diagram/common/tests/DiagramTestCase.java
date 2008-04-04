@@ -22,7 +22,7 @@ import org.eclipse.swt.widgets.Display;
 
 public abstract class DiagramTestCase extends TestCase {
 	private UMLTestProject project;
-	private UMLTestDiagram diagram;
+	private UMLDiagramFacade diagram;
 
 	public DiagramTestCase(String name) {
 		super(name);
@@ -32,7 +32,7 @@ public abstract class DiagramTestCase extends TestCase {
 		return project;
 	}
 	
-	protected UMLTestDiagram getTestDiagram() {
+	protected UMLDiagramFacade getTestDiagram() {
 		return diagram;
 	}
 
@@ -75,6 +75,6 @@ public abstract class DiagramTestCase extends TestCase {
 	protected UMLTestProject createProject() throws CoreException {
 		return new UMLTestProject();
 	}
-	protected abstract UMLTestDiagram createDiagram();
+	protected abstract UMLDiagramFacade createDiagram();
 
 }

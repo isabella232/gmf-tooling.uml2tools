@@ -23,7 +23,7 @@ import org.eclipse.uml2.uml.NamedElement;
 
 public abstract class DiagramSampleTest extends TestCase {
 
-	protected abstract UMLTestDiagram restoreDiagram(IFile modelFile, IFile diagramFile) throws ExecutionException, IOException, CoreException;
+	protected abstract UMLDiagramFacade restoreDiagram(IFile modelFile, IFile diagramFile) throws ExecutionException, IOException, CoreException;
 
 	protected abstract URL getURL(String fileName);
 
@@ -31,7 +31,7 @@ public abstract class DiagramSampleTest extends TestCase {
 
 	private String myDiagramFileName;
 
-	private UMLTestDiagram myRestoredDiagram;
+	private UMLDiagramFacade myRestoredDiagram;
 
 	public DiagramSampleTest(String modelFileName, String diagramFileName) {
 		myModelFileName = modelFileName;
