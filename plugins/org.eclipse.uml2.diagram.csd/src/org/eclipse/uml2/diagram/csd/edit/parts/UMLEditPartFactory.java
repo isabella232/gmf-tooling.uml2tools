@@ -128,6 +128,15 @@ public class UMLEditPartFactory implements EditPartFactory {
 			case PortName2EditPart.VISUAL_ID:
 				return new PortName2EditPart(view);
 
+			case Port3EditPart.VISUAL_ID:
+				return new Port3EditPart(view);
+
+			case PortName3EditPart.VISUAL_ID:
+				return new PortName3EditPart(view);
+
+			case PortIsBehavior2EditPart.VISUAL_ID:
+				return new PortIsBehavior2EditPart(view);
+
 			case SlotEditPart.VISUAL_ID:
 				return new SlotEditPart(view);
 

@@ -10,11 +10,11 @@ import org.eclipse.gmf.runtime.emf.type.core.requests.SetRequest;
 import org.eclipse.gmf.runtime.notation.NotationPackage;
 import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.uml2.diagram.common.editpolicies.AbstractVisualEffectEditPolicy;
+import org.eclipse.uml2.diagram.csd.edit.parts.PortIsBehavior2EditPart;
 import org.eclipse.uml2.diagram.csd.edit.parts.PortIsBehaviorEditPart;
 import org.eclipse.uml2.diagram.csd.part.UMLVisualIDRegistry;
 import org.eclipse.uml2.uml.Port;
 import org.eclipse.uml2.uml.UMLPackage;
-
 
 public class PortIsBehaviorVisualEffectEditPolicy extends AbstractVisualEffectEditPolicy {
 
@@ -28,14 +28,14 @@ public class PortIsBehaviorVisualEffectEditPolicy extends AbstractVisualEffectEd
 		if (false == semanticHost instanceof Port) {
 			return;
 		}
-		Port port = (Port)semanticHost;
+		Port port = (Port) semanticHost;
 		IGraphicalEditPart editPart = getHostImpl();
 		View view = editPart.getNotationView();
 		EList children = view.getChildren();
-		System.out.println(port.isBehavior());
-		for (Object obj: children) {
-			View child = (View)obj;
-			if (false == UMLVisualIDRegistry.getType(PortIsBehaviorEditPart.VISUAL_ID).equals(child.getType())) {
+		for (Object obj : children) {
+			View child = (View) obj;
+			if (false == UMLVisualIDRegistry.getType(PortIsBehaviorEditPart.VISUAL_ID).equals(child.getType())
+					&& false == UMLVisualIDRegistry.getType(PortIsBehavior2EditPart.VISUAL_ID).equals(child.getType())) {
 				continue;
 			}
 			if (child.isVisible() != port.isBehavior()) {

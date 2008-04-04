@@ -130,8 +130,9 @@ public class UMLPaletteFactory {
 	 * @generated
 	 */
 	private ToolEntry createPort4CreationTool() {
-		List/*<IElementType>*/types = new ArrayList/*<IElementType>*/(1);
+		List/*<IElementType>*/types = new ArrayList/*<IElementType>*/(2);
 		types.add(UMLElementTypes.Port_3011);
+		types.add(UMLElementTypes.Port_3017);
 		NodeToolEntry entry = new NodeToolEntry(Messages.Port4CreationTool_title, Messages.Port4CreationTool_desc, types);
 		entry.setSmallIcon(UMLElementTypes.getImageDescriptor(UMLElementTypes.Port_3011));
 		entry.setLargeIcon(entry.getSmallIcon());

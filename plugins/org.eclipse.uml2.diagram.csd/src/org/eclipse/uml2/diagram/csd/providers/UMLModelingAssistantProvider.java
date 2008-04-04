@@ -32,6 +32,7 @@ import org.eclipse.uml2.diagram.csd.edit.parts.InterfaceEditPart;
 import org.eclipse.uml2.diagram.csd.edit.parts.Package2EditPart;
 import org.eclipse.uml2.diagram.csd.edit.parts.PackageEditPart;
 import org.eclipse.uml2.diagram.csd.edit.parts.Port2EditPart;
+import org.eclipse.uml2.diagram.csd.edit.parts.Port3EditPart;
 import org.eclipse.uml2.diagram.csd.edit.parts.PortEditPart;
 import org.eclipse.uml2.diagram.csd.edit.parts.Property3EditPart;
 import org.eclipse.uml2.diagram.csd.part.Messages;
@@ -63,6 +64,11 @@ public class UMLModelingAssistantProvider extends ModelingAssistantProvider {
 		if (editPart instanceof Package2EditPart) {
 			List types = new ArrayList();
 			types.add(UMLElementTypes.ElementImport_3004);
+			return types;
+		}
+		if (editPart instanceof Class3EditPart) {
+			List types = new ArrayList();
+			types.add(UMLElementTypes.Port_3017);
 			return types;
 		}
 		if (editPart instanceof InstanceSpecificationEditPart) {
@@ -122,6 +128,12 @@ public class UMLModelingAssistantProvider extends ModelingAssistantProvider {
 			types.add(UMLElementTypes.PortRequired_4014);
 			return types;
 		}
+		if (sourceEditPart instanceof Port3EditPart) {
+			List types = new ArrayList();
+			types.add(UMLElementTypes.PortProvided_4010);
+			types.add(UMLElementTypes.PortRequired_4014);
+			return types;
+		}
 		return Collections.EMPTY_LIST;
 	}
 
@@ -170,6 +182,16 @@ public class UMLModelingAssistantProvider extends ModelingAssistantProvider {
 			}
 			return types;
 		}
+		if (sourceEditPart instanceof Port3EditPart) {
+			List types = new ArrayList();
+			if (targetEditPart instanceof InterfaceEditPart) {
+				types.add(UMLElementTypes.PortProvided_4010);
+			}
+			if (targetEditPart instanceof InterfaceEditPart) {
+				types.add(UMLElementTypes.PortRequired_4014);
+			}
+			return types;
+		}
 		return Collections.EMPTY_LIST;
 	}
 
@@ -186,11 +208,17 @@ public class UMLModelingAssistantProvider extends ModelingAssistantProvider {
 			if (relationshipType == UMLElementTypes.PortProvided_4010) {
 				types.add(UMLElementTypes.Port_3016);
 			}
+			if (relationshipType == UMLElementTypes.PortProvided_4010) {
+				types.add(UMLElementTypes.Port_3017);
+			}
 			if (relationshipType == UMLElementTypes.PortRequired_4014) {
 				types.add(UMLElementTypes.Port_3011);
 			}
 			if (relationshipType == UMLElementTypes.PortRequired_4014) {
 				types.add(UMLElementTypes.Port_3016);
+			}
+			if (relationshipType == UMLElementTypes.PortRequired_4014) {
+				types.add(UMLElementTypes.Port_3017);
 			}
 			return types;
 		}
@@ -217,6 +245,16 @@ public class UMLModelingAssistantProvider extends ModelingAssistantProvider {
 			return types;
 		}
 		if (sourceEditPart instanceof Port2EditPart) {
+			List types = new ArrayList();
+			if (relationshipType == UMLElementTypes.PortProvided_4010) {
+				types.add(UMLElementTypes.Interface_2009);
+			}
+			if (relationshipType == UMLElementTypes.PortRequired_4014) {
+				types.add(UMLElementTypes.Interface_2009);
+			}
+			return types;
+		}
+		if (sourceEditPart instanceof Port3EditPart) {
 			List types = new ArrayList();
 			if (relationshipType == UMLElementTypes.PortProvided_4010) {
 				types.add(UMLElementTypes.Interface_2009);

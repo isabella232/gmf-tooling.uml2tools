@@ -55,9 +55,12 @@ import org.eclipse.uml2.diagram.csd.edit.parts.PackageNameEditPart;
 import org.eclipse.uml2.diagram.csd.edit.parts.ParameterEditPart;
 import org.eclipse.uml2.diagram.csd.edit.parts.ParameterNameEditPart;
 import org.eclipse.uml2.diagram.csd.edit.parts.Port2EditPart;
+import org.eclipse.uml2.diagram.csd.edit.parts.Port3EditPart;
 import org.eclipse.uml2.diagram.csd.edit.parts.PortEditPart;
+import org.eclipse.uml2.diagram.csd.edit.parts.PortIsBehavior2EditPart;
 import org.eclipse.uml2.diagram.csd.edit.parts.PortIsBehaviorEditPart;
 import org.eclipse.uml2.diagram.csd.edit.parts.PortName2EditPart;
+import org.eclipse.uml2.diagram.csd.edit.parts.PortName3EditPart;
 import org.eclipse.uml2.diagram.csd.edit.parts.PortNameEditPart;
 import org.eclipse.uml2.diagram.csd.edit.parts.Property2EditPart;
 import org.eclipse.uml2.diagram.csd.edit.parts.Property3EditPart;
@@ -226,6 +229,11 @@ public class UMLVisualIDRegistry {
 				return PortEditPart.VISUAL_ID;
 			}
 			break;
+		case Class3EditPart.VISUAL_ID:
+			if (UMLPackage.eINSTANCE.getPort().isSuperTypeOf(domainElement.eClass())) {
+				return Port3EditPart.VISUAL_ID;
+			}
+			break;
 		case Property3EditPart.VISUAL_ID:
 			if (UMLPackage.eINSTANCE.getPort().isSuperTypeOf(domainElement.eClass())) {
 				return Port2EditPart.VISUAL_ID;
@@ -367,6 +375,9 @@ public class UMLVisualIDRegistry {
 			if (ClassClass_contentsEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
+			if (Port3EditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
 			break;
 		case InterfaceEditPart.VISUAL_ID:
 			if (InterfaceNameEditPart.VISUAL_ID == nodeVisualID) {
@@ -419,6 +430,14 @@ public class UMLVisualIDRegistry {
 			break;
 		case Port2EditPart.VISUAL_ID:
 			if (PortName2EditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			break;
+		case Port3EditPart.VISUAL_ID:
+			if (PortName3EditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			if (PortIsBehavior2EditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
 			break;

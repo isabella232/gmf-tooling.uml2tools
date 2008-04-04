@@ -152,6 +152,16 @@
             <popupPredefinedItem id="deleteFromModelAction" remove="true"/>
          </popupContribution>
          <popupContribution class="org.eclipse.gmf.runtime.diagram.ui.providers.DiagramContextMenuProvider">
+            <popupStructuredContributionCriteria objectClass="org.eclipse.uml2.diagram.csd.edit.parts.PortName3EditPart"/>
+            <popupPredefinedItem id="deleteFromDiagramAction" remove="true"/>
+            <popupPredefinedItem id="deleteFromModelAction" remove="true"/>
+         </popupContribution>
+         <popupContribution class="org.eclipse.gmf.runtime.diagram.ui.providers.DiagramContextMenuProvider">
+            <popupStructuredContributionCriteria objectClass="org.eclipse.uml2.diagram.csd.edit.parts.PortIsBehavior2EditPart"/>
+            <popupPredefinedItem id="deleteFromDiagramAction" remove="true"/>
+            <popupPredefinedItem id="deleteFromModelAction" remove="true"/>
+         </popupContribution>
+         <popupContribution class="org.eclipse.gmf.runtime.diagram.ui.providers.DiagramContextMenuProvider">
             <popupStructuredContributionCriteria objectClass="org.eclipse.uml2.diagram.csd.edit.parts.ConnectorNameEditPart"/>
             <popupPredefinedItem id="deleteFromDiagramAction" remove="true"/>
             <popupPredefinedItem id="deleteFromModelAction" remove="true"/>
@@ -572,6 +582,15 @@
          </specializationType>
       </metamodel>
       <metamodel nsURI="http://www.eclipse.org/uml2/2.1.0/UML">
+         <specializationType
+               id="org.eclipse.uml2.diagram.csd.Port_3017"
+               name="%metatype.name.Port_3017"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType">
+            <specializes id="org.eclipse.uml2.diagram.csd.Port_3011"/>
+            <param name="semanticHint" value="3017"/>
+         </specializationType>
+      </metamodel>
+      <metamodel nsURI="http://www.eclipse.org/uml2/2.1.0/UML">
          <metamodelType
                id="org.eclipse.uml2.diagram.csd.Slot_3015"
                name="%metatype.name.Slot_3015"
@@ -688,6 +707,7 @@
          <elementType ref="org.eclipse.uml2.diagram.csd.ElementImport_3004"/>
          <elementType ref="org.eclipse.uml2.diagram.csd.Property_3014"/>
          <elementType ref="org.eclipse.uml2.diagram.csd.Port_3016"/>
+         <elementType ref="org.eclipse.uml2.diagram.csd.Port_3017"/>
          <elementType ref="org.eclipse.uml2.diagram.csd.Slot_3015"/>
          <elementType ref="org.eclipse.uml2.diagram.csd.Connector_4005"/>
          <elementType ref="org.eclipse.uml2.diagram.csd.Dependency_4006"/>

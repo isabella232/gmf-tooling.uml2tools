@@ -399,7 +399,7 @@ public class UMLBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 		static {
 			Map env = new HashMap(3);
 			env.put(OPPOSITE_END_VAR, UMLPackage.eINSTANCE.getInterface());
-			PortRequired_4014_SourceExpression = UMLOCLFactory.getExpression("self.oclIsKindOf(uml::Port)", UMLPackage.eINSTANCE.getPort(), env); //$NON-NLS-1$
+			PortProvided_4010_SourceExpression = UMLOCLFactory.getExpression("self.oclIsKindOf(uml::Port)", UMLPackage.eINSTANCE.getPort(), env); //$NON-NLS-1$
 		}
 
 		/**
@@ -408,7 +408,7 @@ public class UMLBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 		static {
 			Map env = new HashMap(3);
 			env.put(OPPOSITE_END_VAR, UMLPackage.eINSTANCE.getInterface());
-			PortProvided_4010_SourceExpression = UMLOCLFactory.getExpression("self.oclIsKindOf(uml::Port)", UMLPackage.eINSTANCE.getPort(), env); //$NON-NLS-1$
+			PortRequired_4014_SourceExpression = UMLOCLFactory.getExpression("self.oclIsKindOf(uml::Port)", UMLPackage.eINSTANCE.getPort(), env); //$NON-NLS-1$
 		}
 
 		/**

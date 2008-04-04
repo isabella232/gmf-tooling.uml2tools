@@ -3,27 +3,37 @@ package org.eclipse.uml2.diagram.csd.edit.parts;
 import org.eclipse.draw2d.BorderLayout;
 import org.eclipse.draw2d.IFigure;
 import org.eclipse.draw2d.Label;
+import org.eclipse.draw2d.LayoutManager;
 import org.eclipse.draw2d.MarginBorder;
+import org.eclipse.draw2d.PositionConstants;
 import org.eclipse.draw2d.RectangleFigure;
 import org.eclipse.draw2d.StackLayout;
 import org.eclipse.draw2d.ToolbarLayout;
 import org.eclipse.gef.EditPart;
 import org.eclipse.gef.EditPolicy;
+import org.eclipse.gef.GraphicalEditPart;
 import org.eclipse.gef.Request;
 import org.eclipse.gef.commands.Command;
 import org.eclipse.gef.editpolicies.LayoutEditPolicy;
 import org.eclipse.gef.editpolicies.NonResizableEditPolicy;
 import org.eclipse.gef.requests.CreateRequest;
+import org.eclipse.gmf.runtime.diagram.ui.editparts.AbstractBorderedShapeEditPart;
+import org.eclipse.gmf.runtime.diagram.ui.editparts.IBorderItemEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.ITextAwareEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.ShapeNodeEditPart;
+import org.eclipse.gmf.runtime.diagram.ui.editpolicies.BorderItemSelectionEditPolicy;
 import org.eclipse.gmf.runtime.diagram.ui.editpolicies.ConstrainedToolbarLayoutEditPolicy;
+import org.eclipse.gmf.runtime.diagram.ui.editpolicies.CreationEditPolicy;
+import org.eclipse.gmf.runtime.diagram.ui.editpolicies.DragDropEditPolicy;
 import org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles;
+import org.eclipse.gmf.runtime.diagram.ui.figures.BorderItemLocator;
 import org.eclipse.gmf.runtime.draw2d.ui.figures.ConstrainedToolbarLayout;
 import org.eclipse.gmf.runtime.draw2d.ui.figures.WrapLabel;
 import org.eclipse.gmf.runtime.gef.ui.figures.DefaultSizeNodeFigure;
 import org.eclipse.gmf.runtime.gef.ui.figures.NodeFigure;
 import org.eclipse.gmf.runtime.notation.View;
+import org.eclipse.uml2.diagram.csd.edit.policies.Class3CanonicalEditPolicy;
 import org.eclipse.uml2.diagram.csd.edit.policies.Class3ItemSemanticEditPolicy;
 import org.eclipse.uml2.diagram.csd.edit.policies.UMLTextSelectionEditPolicy;
 import org.eclipse.uml2.diagram.csd.part.UMLVisualIDRegistry;
@@ -31,7 +41,7 @@ import org.eclipse.uml2.diagram.csd.part.UMLVisualIDRegistry;
 /**
  * @generated
  */
-public class Class3EditPart extends ShapeNodeEditPart {
+public class Class3EditPart extends AbstractBorderedShapeEditPart {
 
 	/**
 	 * @generated
@@ -59,8 +69,11 @@ public class Class3EditPart extends ShapeNodeEditPart {
 	 * @generated
 	 */
 	protected void createDefaultEditPolicies() {
+		installEditPolicy(EditPolicyRoles.CREATION_ROLE, new CreationEditPolicy());
 		super.createDefaultEditPolicies();
 		installEditPolicy(EditPolicyRoles.SEMANTIC_ROLE, new Class3ItemSemanticEditPolicy());
+		installEditPolicy(EditPolicyRoles.DRAG_DROP_ROLE, new DragDropEditPolicy());
+		installEditPolicy(EditPolicyRoles.CANONICAL_ROLE, new Class3CanonicalEditPolicy());
 		installEditPolicy(EditPolicy.LAYOUT_ROLE, createLayoutEditPolicy());
 		// XXX need an SCR to runtime to have another abstract superclass that would let children add reasonable editpolicies
 		// removeEditPolicy(org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles.CONNECTION_HANDLES_ROLE);
@@ -73,6 +86,9 @@ public class Class3EditPart extends ShapeNodeEditPart {
 		LayoutEditPolicy lep = new LayoutEditPolicy() {
 
 			protected EditPolicy createChildEditPolicy(EditPart child) {
+				if (child instanceof IBorderItemEditPart) {
+					return new BorderItemSelectionEditPolicy();
+				}
 				EditPolicy result = child.getEditPolicy(EditPolicy.PRIMARY_DRAG_ROLE);
 				if (result == null) {
 					result = new NonResizableEditPolicy();
@@ -120,6 +136,11 @@ public class Class3EditPart extends ShapeNodeEditPart {
 			pane.add(((ClassClass_contentsEditPart) childEditPart).getFigure());
 			return true;
 		}
+		if (childEditPart instanceof Port3EditPart) {
+			BorderItemLocator locator = new BorderItemLocator(getMainFigure(), PositionConstants.NONE);
+			getBorderedFigure().getBorderItemContainer().add(((Port3EditPart) childEditPart).getFigure(), locator);
+			return true;
+		}
 		return false;
 	}
 
@@ -131,6 +152,10 @@ public class Class3EditPart extends ShapeNodeEditPart {
 		if (childEditPart instanceof ClassClass_contentsEditPart) {
 			IFigure pane = getPrimaryShape().getFigureExpandedClassFigure_contents();
 			pane.remove(((ClassClass_contentsEditPart) childEditPart).getFigure());
+			return true;
+		}
+		if (childEditPart instanceof Port3EditPart) {
+			getBorderedFigure().getBorderItemContainer().remove(((Port3EditPart) childEditPart).getFigure());
 			return true;
 		}
 		return false;
@@ -164,6 +189,9 @@ public class Class3EditPart extends ShapeNodeEditPart {
 		if (editPart instanceof ClassClass_contentsEditPart) {
 			return getPrimaryShape().getFigureExpandedClassFigure_contents();
 		}
+		if (editPart instanceof Port3EditPart) {
+			return getBorderedFigure().getBorderItemContainer();
+		}
 		return super.getContentPaneFor(editPart);
 	}
 
@@ -183,7 +211,7 @@ public class Class3EditPart extends ShapeNodeEditPart {
 	 * 
 	 * @generated
 	 */
-	protected NodeFigure createNodeFigure() {
+	protected NodeFigure createMainFigure() {
 		NodeFigure figure = createNodePlate();
 		figure.setLayoutManager(new StackLayout());
 		IFigure shape = createNodeShape();
@@ -301,6 +329,22 @@ public class Class3EditPart extends ShapeNodeEditPart {
 			return fFigureExpandedClassFigure_contents;
 		}
 
+	}
+
+	/**
+	 * @generated
+	 */
+	protected void reorderChild(EditPart child, int index) {
+		// Save the constraint of the child so that it does not
+		// get lost during the remove and re-add.
+		IFigure childFigure = ((GraphicalEditPart) child).getFigure();
+		LayoutManager layout = getContentPaneFor((IGraphicalEditPart) child).getLayoutManager();
+		Object constraint = null;
+		if (layout != null) {
+			constraint = layout.getConstraint(childFigure);
+		}
+		super.reorderChild(child, index);
+		setLayoutConstraint(child, childFigure, constraint);
 	}
 
 }

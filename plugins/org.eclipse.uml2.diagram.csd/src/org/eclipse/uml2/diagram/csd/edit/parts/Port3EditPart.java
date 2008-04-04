@@ -22,18 +22,19 @@ import org.eclipse.gmf.runtime.gef.ui.figures.DefaultSizeNodeFigure;
 import org.eclipse.gmf.runtime.gef.ui.figures.NodeFigure;
 import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.uml2.diagram.common.editpolicies.PortVisualEffectEditPolicy;
-import org.eclipse.uml2.diagram.csd.edit.policies.Port2ItemSemanticEditPolicy;
+import org.eclipse.uml2.diagram.csd.edit.policies.Port3ItemSemanticEditPolicy;
+import org.eclipse.uml2.diagram.csd.edit.policies.PortIsBehaviorVisualEffectEditPolicy;
 import org.eclipse.uml2.diagram.csd.part.UMLVisualIDRegistry;
 
 /**
  * @generated
  */
-public class Port2EditPart extends BorderedBorderItemEditPart {
+public class Port3EditPart extends BorderedBorderItemEditPart {
 
 	/**
 	 * @generated
 	 */
-	public static final int VISUAL_ID = 3016;
+	public static final int VISUAL_ID = 3017;
 
 	/**
 	 * @generated
@@ -48,7 +49,7 @@ public class Port2EditPart extends BorderedBorderItemEditPart {
 	/**
 	 * @generated
 	 */
-	public Port2EditPart(View view) {
+	public Port3EditPart(View view) {
 		super(view);
 	}
 
@@ -58,9 +59,10 @@ public class Port2EditPart extends BorderedBorderItemEditPart {
 	protected void createDefaultEditPolicies() {
 		super.createDefaultEditPolicies();
 		installEditPolicy(EditPolicy.PRIMARY_DRAG_ROLE, getPrimaryDragEditPolicy());
-		installEditPolicy(EditPolicyRoles.SEMANTIC_ROLE, new Port2ItemSemanticEditPolicy());
+		installEditPolicy(EditPolicyRoles.SEMANTIC_ROLE, new Port3ItemSemanticEditPolicy());
 		installEditPolicy(EditPolicy.LAYOUT_ROLE, createLayoutEditPolicy());
 		installEditPolicy("VisualEffect.Port", new PortVisualEffectEditPolicy()); //$NON-NLS-1$
+		installEditPolicy("VisualEffect.BehaviorPort", new PortIsBehaviorVisualEffectEditPolicy()); //$NON-NLS-1$
 		// XXX need an SCR to runtime to have another abstract superclass that would let children add reasonable editpolicies
 		// removeEditPolicy(org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles.CONNECTION_HANDLES_ROLE);
 	}
@@ -112,7 +114,7 @@ public class Port2EditPart extends BorderedBorderItemEditPart {
 	 * @generated
 	 */
 	protected void addBorderItem(IFigure borderItemContainer, IBorderItemEditPart borderItemEditPart) {
-		if (borderItemEditPart instanceof PortName2EditPart) {
+		if (borderItemEditPart instanceof PortName3EditPart || borderItemEditPart instanceof PortIsBehavior2EditPart) {
 			BorderItemLocator locator = new BorderItemLocator(getMainFigure(), PositionConstants.SOUTH);
 			locator.setBorderItemOffset(new Dimension(-20, -20));
 			borderItemContainer.add(borderItemEditPart.getFigure(), locator);
@@ -173,7 +175,7 @@ public class Port2EditPart extends BorderedBorderItemEditPart {
 	 * @generated
 	 */
 	public EditPart getPrimaryChildEditPart() {
-		return getChildBySemanticHint(UMLVisualIDRegistry.getType(PortName2EditPart.VISUAL_ID));
+		return getChildBySemanticHint(UMLVisualIDRegistry.getType(PortName3EditPart.VISUAL_ID));
 	}
 
 	/**

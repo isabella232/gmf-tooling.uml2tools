@@ -53,8 +53,10 @@ import org.eclipse.uml2.diagram.csd.edit.parts.InterfaceNameEditPart;
 import org.eclipse.uml2.diagram.csd.edit.parts.OperationEditPart;
 import org.eclipse.uml2.diagram.csd.edit.parts.PackageNameEditPart;
 import org.eclipse.uml2.diagram.csd.edit.parts.ParameterNameEditPart;
+import org.eclipse.uml2.diagram.csd.edit.parts.PortIsBehavior2EditPart;
 import org.eclipse.uml2.diagram.csd.edit.parts.PortIsBehaviorEditPart;
 import org.eclipse.uml2.diagram.csd.edit.parts.PortName2EditPart;
+import org.eclipse.uml2.diagram.csd.edit.parts.PortName3EditPart;
 import org.eclipse.uml2.diagram.csd.edit.parts.PortNameEditPart;
 import org.eclipse.uml2.diagram.csd.edit.parts.Property2EditPart;
 import org.eclipse.uml2.diagram.csd.edit.parts.PropertyName2EditPart;
@@ -532,6 +534,57 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 	/**
 	 * @generated
 	 */
+	private IParser portName_5027Parser;
+
+	/**
+	 * @generated
+	 */
+	private IParser getPortName_5027Parser() {
+		if (portName_5027Parser == null) {
+			portName_5027Parser = createPortName_5027Parser();
+		}
+		return portName_5027Parser;
+	}
+
+	/**
+	 * @generated
+	 */
+	protected IParser createPortName_5027Parser() {
+		EAttribute[] features = new EAttribute[] { UMLPackage.eINSTANCE.getNamedElement_Name(), };
+		MessageFormatParser parser = new MessageFormatParser(features);
+		return parser;
+	}
+
+	/**
+	 * @generated
+	 */
+	private IParser portIsBehavior_5028Parser;
+
+	/**
+	 * @generated
+	 */
+	private IParser getPortIsBehavior_5028Parser() {
+		if (portIsBehavior_5028Parser == null) {
+			portIsBehavior_5028Parser = createPortIsBehavior_5028Parser();
+		}
+		return portIsBehavior_5028Parser;
+	}
+
+	/**
+	 * @generated
+	 */
+	protected IParser createPortIsBehavior_5028Parser() {
+		EAttribute[] features = new EAttribute[] { UMLPackage.eINSTANCE.getPort_IsBehavior(), };
+		MessageFormatParser parser = new MessageFormatParser(features);
+		parser.setViewPattern(" ");
+		parser.setEditorPattern(" ");
+		parser.setEditPattern(" ");
+		return parser;
+	}
+
+	/**
+	 * @generated
+	 */
 	private IParser slot_3015Parser;
 
 	/**
@@ -991,6 +1044,10 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 			return getPropertyName_5017Parser();
 		case PortName2EditPart.VISUAL_ID:
 			return getPortName_5025Parser();
+		case PortName3EditPart.VISUAL_ID:
+			return getPortName_5027Parser();
+		case PortIsBehavior2EditPart.VISUAL_ID:
+			return getPortIsBehavior_5028Parser();
 		case SlotEditPart.VISUAL_ID:
 			return getSlot_3015Parser();
 		case ConnectorNameEditPart.VISUAL_ID:
