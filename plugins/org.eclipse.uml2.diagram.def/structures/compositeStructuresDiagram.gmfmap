@@ -31,7 +31,7 @@
       </labelMappings>
       <tool
           xsi:type="gmftool:CreationTool"
-          href="compositeStructuresDiagram.gmftool#//@palette/@tools.1/@tools.0"/>
+          href="compositeStructuresDiagram.gmftool#//@palette/@tools.0/@tools.0"/>
       <diagramNode
           href="compositeStructuresDiagram_nodes.gmfgraph#CollaborationNode"/>
       <children
@@ -60,7 +60,7 @@
           </labelMappings>
           <tool
               xsi:type="gmftool:CreationTool"
-              href="compositeStructuresDiagram.gmftool#//@palette/@tools.0/@tools.4"/>
+              href="compositeStructuresDiagram.gmftool#//@palette/@tools.1/@tools.4"/>
           <diagramNode
               href="compositeStructuresDiagram_nodes.gmfgraph#CollaborationUseNode"/>
         </ownedChild>
@@ -85,7 +85,7 @@
           </labelMappings>
           <tool
               xsi:type="gmftool:CreationTool"
-              href="compositeStructuresDiagram.gmftool#//@palette/@tools.0/@tools.1"/>
+              href="compositeStructuresDiagram.gmftool#//@palette/@tools.1/@tools.1"/>
           <diagramNode
               href="componentDiagram_classifiers.gmfgraph#PartNode"/>
         </ownedChild>
@@ -154,7 +154,7 @@
       </labelMappings>
       <tool
           xsi:type="gmftool:CreationTool"
-          href="compositeStructuresDiagram.gmftool#//@palette/@tools.1/@tools.1"/>
+          href="compositeStructuresDiagram.gmftool#//@palette/@tools.0/@tools.1"/>
       <diagramNode
           href="classDiagram_classifiers.gmfgraph#ClassNode"/>
       <children
@@ -193,7 +193,7 @@
           </labelMappings>
           <tool
               xsi:type="gmftool:CreationTool"
-              href="compositeStructuresDiagram.gmftool#//@palette/@tools.0/@tools.1"/>
+              href="compositeStructuresDiagram.gmftool#//@palette/@tools.1/@tools.1"/>
           <diagramNode
               href="classDiagram_auxiliary.gmfgraph#AuxiliaryPureLabel"/>
         </ownedChild>
@@ -225,7 +225,7 @@
           </labelMappings>
           <tool
               xsi:type="gmftool:CreationTool"
-              href="compositeStructuresDiagram.gmftool#//@palette/@tools.0/@tools.2"/>
+              href="compositeStructuresDiagram.gmftool#//@palette/@tools.1/@tools.2"/>
           <diagramNode
               href="classDiagram_auxiliary.gmfgraph#AuxiliaryPureLabel"/>
         </ownedChild>
@@ -250,7 +250,7 @@
           </domainInitializer>
           <tool
               xsi:type="gmftool:CreationTool"
-              href="compositeStructuresDiagram.gmftool#//@palette/@tools.1/@tools.1"/>
+              href="compositeStructuresDiagram.gmftool#//@palette/@tools.0/@tools.1"/>
           <diagramNode
               href="classDiagram_auxiliary.gmfgraph#AuxiliaryPureLabel"/>
         </ownedChild>
@@ -299,7 +299,7 @@
           </labelMappings>
           <tool
               xsi:type="gmftool:CreationTool"
-              href="compositeStructuresDiagram.gmftool#//@palette/@tools.0/@tools.3"/>
+              href="compositeStructuresDiagram.gmftool#//@palette/@tools.1/@tools.3"/>
           <diagramNode
               href="classDiagram_ports.gmfgraph#PortNode"/>
         </ownedChild>
@@ -352,7 +352,7 @@
           </labelMappings>
           <tool
               xsi:type="gmftool:CreationTool"
-              href="compositeStructuresDiagram.gmftool#//@palette/@tools.0/@tools.0"/>
+              href="compositeStructuresDiagram.gmftool#//@palette/@tools.1/@tools.0"/>
           <diagramNode
               href="classDiagram_auxiliary.gmfgraph#AuxiliaryPureLabel"/>
         </ownedChild>
@@ -414,7 +414,7 @@
           </labelMappings>
           <tool
               xsi:type="gmftool:CreationTool"
-              href="compositeStructuresDiagram.gmftool#//@palette/@tools.0/@tools.1"/>
+              href="compositeStructuresDiagram.gmftool#//@palette/@tools.1/@tools.1"/>
           <diagramNode
               href="componentDiagram_classifiers.gmfgraph#PartNode"/>
           <children>
@@ -482,7 +482,7 @@
           </labelMappings>
           <tool
               xsi:type="gmftool:CreationTool"
-              href="compositeStructuresDiagram.gmftool#//@palette/@tools.0/@tools.3"/>
+              href="compositeStructuresDiagram.gmftool#//@palette/@tools.1/@tools.3"/>
           <diagramNode
               href="classDiagram_ports.gmfgraph#PortNode"/>
         </ownedChild>
@@ -521,7 +521,7 @@
       </labelMappings>
       <tool
           xsi:type="gmftool:CreationTool"
-          href="compositeStructuresDiagram.gmftool#//@palette/@tools.1/@tools.2"/>
+          href="compositeStructuresDiagram.gmftool#//@palette/@tools.0/@tools.2"/>
       <diagramNode
           href="classDiagram_interfaces.gmfgraph#ProvidedInterfaceCircleNode"/>
     </ownedChild>
@@ -551,7 +551,7 @@
       </labelMappings>
       <tool
           xsi:type="gmftool:CreationTool"
-          href="compositeStructuresDiagram.gmftool#//@palette/@tools.1/@tools.3"/>
+          href="compositeStructuresDiagram.gmftool#//@palette/@tools.0/@tools.3"/>
       <diagramNode
           href="classDiagram_instances.gmfgraph#InstanceNode"/>
       <children
@@ -570,7 +570,7 @@
           </labelMappings>
           <tool
               xsi:type="gmftool:CreationTool"
-              href="compositeStructuresDiagram.gmftool#//@palette/@tools.0/@tools.5"/>
+              href="compositeStructuresDiagram.gmftool#//@palette/@tools.1/@tools.5"/>
           <diagramNode
               href="classDiagram_instances.gmfgraph#Slot_inplace"/>
         </ownedChild>
@@ -618,7 +618,7 @@
       </labelMappings>
       <tool
           xsi:type="gmftool:CreationTool"
-          href="compositeStructuresDiagram.gmftool#//@palette/@tools.1/@tools.4"/>
+          href="compositeStructuresDiagram.gmftool#//@palette/@tools.0/@tools.4"/>
       <diagramNode
           href="classDiagram_constraints.gmfgraph#ConstraintNode"/>
     </ownedChild>

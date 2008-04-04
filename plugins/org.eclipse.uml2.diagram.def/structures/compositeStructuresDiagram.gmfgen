@@ -1935,6 +1935,35 @@
     </compartments>
     <palette>
       <groups
+          title="Nodes"
+          description="Diagram Nodes">
+        <entries
+            xsi:type="gmfgen:ToolEntry"
+            title="Collaboration"
+            description="Create Collaboration"
+            genNodes="//@diagram/@topLevelNodes.0"/>
+        <entries
+            xsi:type="gmfgen:ToolEntry"
+            title="Class"
+            description="Create Class"
+            genNodes="//@diagram/@topLevelNodes.1 //@diagram/@childNodes.5"/>
+        <entries
+            xsi:type="gmfgen:ToolEntry"
+            title="Interface"
+            description="Create Interface"
+            genNodes="//@diagram/@topLevelNodes.4"/>
+        <entries
+            xsi:type="gmfgen:ToolEntry"
+            title="Instance Specification"
+            description="Create Instance Specification"
+            genNodes="//@diagram/@topLevelNodes.5"/>
+        <entries
+            xsi:type="gmfgen:ToolEntry"
+            title="Constraint"
+            description="Create Constraint"
+            genNodes="//@diagram/@topLevelNodes.6"/>
+      </groups>
+      <groups
           title="Children"
           description="Child Elements of the Diagram Nodes">
         <entries
@@ -1967,35 +1996,6 @@
             title="Slot"
             description="Create Slot"
             genNodes="//@diagram/@childNodes.11"/>
-      </groups>
-      <groups
-          title="Nodes"
-          description="Diagram Nodes">
-        <entries
-            xsi:type="gmfgen:ToolEntry"
-            title="Collaboration"
-            description="Create Collaboration"
-            genNodes="//@diagram/@topLevelNodes.0"/>
-        <entries
-            xsi:type="gmfgen:ToolEntry"
-            title="Class"
-            description="Create Class"
-            genNodes="//@diagram/@topLevelNodes.1 //@diagram/@childNodes.5"/>
-        <entries
-            xsi:type="gmfgen:ToolEntry"
-            title="Interface"
-            description="Create Interface"
-            genNodes="//@diagram/@topLevelNodes.4"/>
-        <entries
-            xsi:type="gmfgen:ToolEntry"
-            title="Instance Specification"
-            description="Create Instance Specification"
-            genNodes="//@diagram/@topLevelNodes.5"/>
-        <entries
-            xsi:type="gmfgen:ToolEntry"
-            title="Constraint"
-            description="Create Constraint"
-            genNodes="//@diagram/@topLevelNodes.6"/>
       </groups>
       <groups
           title="Links"

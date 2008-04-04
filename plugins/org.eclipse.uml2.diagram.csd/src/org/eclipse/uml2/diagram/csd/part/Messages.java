@@ -243,22 +243,22 @@ public class Messages extends NLS {
 	/**
 	 * @generated
 	 */
-	public static String Children1Group_title;
+	public static String Nodes1Group_title;
 
 	/**
 	 * @generated
 	 */
-	public static String Children1Group_desc;
+	public static String Nodes1Group_desc;
 
 	/**
 	 * @generated
 	 */
-	public static String Nodes2Group_title;
+	public static String Children2Group_title;
 
 	/**
 	 * @generated
 	 */
-	public static String Nodes2Group_desc;
+	public static String Children2Group_desc;
 
 	/**
 	 * @generated

@@ -22,39 +22,39 @@ public class UMLPaletteFactory {
 	 * @generated
 	 */
 	public void fillPalette(PaletteRoot paletteRoot) {
-		paletteRoot.add(createChildren1Group());
-		paletteRoot.add(createNodes2Group());
+		paletteRoot.add(createNodes1Group());
+		paletteRoot.add(createChildren2Group());
 		paletteRoot.add(createLinks3Group());
-	}
-
-	/**
-	 * Creates "Children" palette tool group
-	 * @generated
-	 */
-	private PaletteContainer createChildren1Group() {
-		PaletteGroup paletteContainer = new PaletteGroup(Messages.Children1Group_title);
-		paletteContainer.setDescription(Messages.Children1Group_desc);
-		paletteContainer.add(createElementImport1CreationTool());
-		paletteContainer.add(createAttribute2CreationTool());
-		paletteContainer.add(createOperation3CreationTool());
-		paletteContainer.add(createPort4CreationTool());
-		paletteContainer.add(createCollaborationUse5CreationTool());
-		paletteContainer.add(createSlot6CreationTool());
-		return paletteContainer;
 	}
 
 	/**
 	 * Creates "Nodes" palette tool group
 	 * @generated
 	 */
-	private PaletteContainer createNodes2Group() {
-		PaletteGroup paletteContainer = new PaletteGroup(Messages.Nodes2Group_title);
-		paletteContainer.setDescription(Messages.Nodes2Group_desc);
+	private PaletteContainer createNodes1Group() {
+		PaletteGroup paletteContainer = new PaletteGroup(Messages.Nodes1Group_title);
+		paletteContainer.setDescription(Messages.Nodes1Group_desc);
 		paletteContainer.add(createCollaboration1CreationTool());
 		paletteContainer.add(createClass2CreationTool());
 		paletteContainer.add(createInterface3CreationTool());
 		paletteContainer.add(createInstanceSpecification4CreationTool());
 		paletteContainer.add(createConstraint5CreationTool());
+		return paletteContainer;
+	}
+
+	/**
+	 * Creates "Children" palette tool group
+	 * @generated
+	 */
+	private PaletteContainer createChildren2Group() {
+		PaletteGroup paletteContainer = new PaletteGroup(Messages.Children2Group_title);
+		paletteContainer.setDescription(Messages.Children2Group_desc);
+		paletteContainer.add(createElementImport1CreationTool());
+		paletteContainer.add(createAttribute2CreationTool());
+		paletteContainer.add(createOperation3CreationTool());
+		paletteContainer.add(createPort4CreationTool());
+		paletteContainer.add(createCollaborationUse5CreationTool());
+		paletteContainer.add(createSlot6CreationTool());
 		return paletteContainer;
 	}
 

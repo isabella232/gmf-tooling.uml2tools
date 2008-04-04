@@ -8,6 +8,31 @@
       description="Composite Structures Diagram Palette">
     <tools
         xsi:type="gmftool:ToolGroup"
+        title="Nodes"
+        description="Diagram Nodes">
+      <tools
+          xsi:type="gmftool:CreationTool"
+          title="Collaboration"
+          description="Create Collaboration"/>
+      <tools
+          xsi:type="gmftool:CreationTool"
+          title="Class"
+          description="Create Class"/>
+      <tools
+          xsi:type="gmftool:CreationTool"
+          title="Interface"
+          description="Create Interface"/>
+      <tools
+          xsi:type="gmftool:CreationTool"
+          title="Instance Specification"
+          description="Create Instance Specification"/>
+      <tools
+          xsi:type="gmftool:CreationTool"
+          title="Constraint"
+          description="Create Constraint"/>
+    </tools>
+    <tools
+        xsi:type="gmftool:ToolGroup"
         title="Children"
         description="Child Elements of the Diagram Nodes">
       <tools
@@ -34,31 +59,6 @@
           xsi:type="gmftool:CreationTool"
           title="Slot"
           description="Create Slot"/>
-    </tools>
-    <tools
-        xsi:type="gmftool:ToolGroup"
-        title="Nodes"
-        description="Diagram Nodes">
-      <tools
-          xsi:type="gmftool:CreationTool"
-          title="Collaboration"
-          description="Create Collaboration"/>
-      <tools
-          xsi:type="gmftool:CreationTool"
-          title="Class"
-          description="Create Class"/>
-      <tools
-          xsi:type="gmftool:CreationTool"
-          title="Interface"
-          description="Create Interface"/>
-      <tools
-          xsi:type="gmftool:CreationTool"
-          title="Instance Specification"
-          description="Create Instance Specification"/>
-      <tools
-          xsi:type="gmftool:CreationTool"
-          title="Constraint"
-          description="Create Constraint"/>
     </tools>
     <tools
         xsi:type="gmftool:ToolGroup"
