@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<uml:Model xmi:version="2.1" xmlns:xmi="http://schema.omg.org/spec/XMI/2.1" xmlns:uml="http://www.eclipse.org/uml2/2.1.0/UML" xmi:id="_ruheUL2hEduWjOs2RiriMw">
+  <packagedElement xmi:type="uml:Class" xmi:id="_vj-F4L2hEduWjOs2RiriMw" name="Person"/>
+  <packagedElement xmi:type="uml:Class" xmi:id="_wdV94L2hEduWjOs2RiriMw" name="Company"/>
+  <packagedElement xmi:type="uml:Association" xmi:id="_ze7fkL2hEduWjOs2RiriMw" memberEnd="_ze7fkb2hEduWjOs2RiriMw _ze7flL2hEduWjOs2RiriMw">
+    <ownedEnd xmi:id="_ze7fkb2hEduWjOs2RiriMw" name="src" type="_vj-F4L2hEduWjOs2RiriMw" association="_ze7fkL2hEduWjOs2RiriMw">
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_ze7fk72hEduWjOs2RiriMw" value="1"/>
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_ze7fkr2hEduWjOs2RiriMw" value="1"/>
+    </ownedEnd>
+    <ownedEnd xmi:id="_ze7flL2hEduWjOs2RiriMw" name="dst" type="_wdV94L2hEduWjOs2RiriMw" association="_ze7fkL2hEduWjOs2RiriMw">
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_zfEpgL2hEduWjOs2RiriMw" value="1"/>
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_ze7flb2hEduWjOs2RiriMw" value="1"/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement xmi:type="uml:AssociationClass" xmi:id="_4Oyg8L2hEduWjOs2RiriMw" name="AssociationClass"/>
+</uml:Model>
