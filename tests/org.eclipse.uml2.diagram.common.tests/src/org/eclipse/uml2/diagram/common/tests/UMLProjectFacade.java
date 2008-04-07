@@ -11,27 +11,15 @@ import org.eclipse.core.resources.IWorkspaceRoot;
 import org.eclipse.core.resources.ResourcesPlugin;
 import org.eclipse.core.runtime.CoreException;
 
+public class UMLProjectFacade {
 
-public class UMLTestProject {
 	private IProject myProject;
-	
-	public UMLTestProject() throws CoreException {
+
+	public UMLProjectFacade() throws CoreException {
 		this("TestProject");
 	}
-	public IFile getFile(String name) {
-		return myProject.getFile(name);
-	}
-	public IFile createEmptyFile(String name) throws CoreException {
-		IFile file = getFile(name);
-		file.create(new InputStream() {
-			@Override
-			public int read() throws IOException {
-				return -1;
-			}
-		}, true, null);
-		return file;
-	}
-	public UMLTestProject(String name) throws CoreException {
+
+	public UMLProjectFacade(String name) throws CoreException {
 		IWorkspace workspace = ResourcesPlugin.getWorkspace();
 		IWorkspaceRoot wsroot = workspace.getRoot();
 
@@ -47,7 +35,23 @@ public class UMLTestProject {
 			myProject.open(null);
 		}
 	}
-	
+
+	public IFile getFile(String name) {
+		return myProject.getFile(name);
+	}
+
+	public IFile createEmptyFile(String name) throws CoreException {
+		IFile file = getFile(name);
+		file.create(new InputStream() {
+
+			@Override
+			public int read() throws IOException {
+				return -1;
+			}
+		}, true, null);
+		return file;
+	}
+
 	public void close() throws CoreException {
 		try {
 			myProject.delete(true, true, null);
@@ -55,9 +59,10 @@ public class UMLTestProject {
 			myProject = null;
 		}
 	}
+
 	public String getFullPath() {
 		return myProject.getFullPath().toString();
-		
+
 	}
-	
+
 }

@@ -12,7 +12,6 @@ import org.eclipse.core.runtime.Path;
 import org.eclipse.core.runtime.Platform;
 import org.eclipse.uml2.diagram.common.wholediagram.TestWholeDiagram;
 import org.eclipse.uml2.diagram.common.wholediagram.UMLInitDiagramFacade;
-import org.eclipse.uml2.diagram.profile.tests.InitProfileDiagramFacade;
 import org.osgi.framework.Bundle;
 
 public class ProfileSampleTest extends TestWholeDiagram {

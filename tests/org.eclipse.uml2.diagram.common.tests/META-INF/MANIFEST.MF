@@ -6,7 +6,9 @@ Bundle-Version: 0.7.1.qualifier
 Bundle-Vendor: %providerName
 Bundle-Localization: plugin
 Export-Package: org.eclipse.uml2.diagram.common.tests,
- org.eclipse.uml2.diagram.common.tests.palette
+ org.eclipse.uml2.diagram.common.tests.palette,
+ org.eclipse.uml2.diagram.common.tool,
+ org.eclipse.uml2.diagram.common.wholediagram
 Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.ui,
  org.eclipse.ui.ide,

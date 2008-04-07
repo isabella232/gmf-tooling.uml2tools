@@ -1,4 +1,4 @@
-package org.eclipse.uml2.diagram.common.tests;
+package org.eclipse.uml2.diagram.common.wholediagram;
 
 import java.io.IOException;
 import java.net.URL;
@@ -19,11 +19,12 @@ import org.eclipse.gmf.runtime.emf.core.GMFEditingDomainFactory;
 import org.eclipse.gmf.runtime.notation.Diagram;
 import org.eclipse.gmf.runtime.notation.Edge;
 import org.eclipse.gmf.runtime.notation.View;
+import org.eclipse.uml2.diagram.common.tests.UMLProjectFacade;
 import org.eclipse.uml2.uml.NamedElement;
 
-public abstract class DiagramSampleTest extends TestCase {
+public abstract class TestWholeDiagram extends TestCase {
 
-	protected abstract UMLDiagramFacade restoreDiagram(IFile modelFile, IFile diagramFile) throws ExecutionException, IOException, CoreException;
+	protected abstract UMLInitDiagramFacade restoreDiagram(IFile modelFile, IFile diagramFile) throws ExecutionException, IOException, CoreException;
 
 	protected abstract URL getURL(String fileName);
 
@@ -31,9 +32,9 @@ public abstract class DiagramSampleTest extends TestCase {
 
 	private String myDiagramFileName;
 
-	private UMLDiagramFacade myRestoredDiagram;
+	private UMLInitDiagramFacade myRestoredDiagram;
 
-	public DiagramSampleTest(String modelFileName, String diagramFileName) {
+	public TestWholeDiagram(String modelFileName, String diagramFileName) {
 		myModelFileName = modelFileName;
 		myDiagramFileName = diagramFileName;
 	}
@@ -65,9 +66,9 @@ public abstract class DiagramSampleTest extends TestCase {
 		assertNotNull("Cannot find diagram file " + myDiagramFileName + ".", diagramURL);
 		assertNotNull("Cannot find model file " + myModelFileName + ".", modelURL);
 
-		UMLTestProject project = null;
+		UMLProjectFacade project = null;
 		try {
-			project = new UMLTestProject();
+			project = new UMLProjectFacade();
 		} catch (CoreException e1) {
 			fail("Cannot create project.");
 		}

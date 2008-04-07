@@ -1,13 +1,9 @@
 package org.eclipse.uml2.diagram.clazz.tests.tool;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import org.eclipse.draw2d.geometry.Point;
-import org.eclipse.emf.common.util.EList;
-import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
-import org.eclipse.emf.ecore.EReference;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.ConnectionEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.DiagramEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart;
@@ -21,10 +17,9 @@ import org.eclipse.uml2.diagram.clazz.edit.parts.PrimitiveType2EditPart;
 import org.eclipse.uml2.diagram.clazz.part.CreateGeneralizationLinkTool;
 import org.eclipse.uml2.diagram.clazz.part.UMLVisualIDRegistry;
 import org.eclipse.uml2.diagram.clazz.providers.UMLElementTypes;
+import org.eclipse.uml2.diagram.common.tests.UMLDiagramFacade;
 import org.eclipse.uml2.uml.Generalization;
 import org.eclipse.uml2.uml.GeneralizationSet;
-import org.eclipse.uml2.uml.Model;
-import org.eclipse.uml2.uml.PackageableElement;
 import org.eclipse.uml2.uml.UMLPackage;
 
 
@@ -58,7 +53,7 @@ public class GeneralizationSetCreationToolTest extends ClassDiagramCreationToolT
 		myTargetEP = diagram.getChildBySemanticHint(UMLVisualIDRegistry.getType(AssociationClass2EditPart.VISUAL_ID));
 		assertNotNull("ClassEditPart was not created.", myTargetEP);
 
-		flushEventQueue();
+		UMLDiagramFacade.flushEventQueue();
 		createConnectionByTool(new CreateGeneralizationLinkTool(), mySource2EP, myTargetEP);
 		myGeneralizationEP = findConnection(diagram, GeneralizationEditPart.VISUAL_ID);
 		assertNotNull("GeneralizationEditPart was not created.", myGeneralizationEP);
@@ -67,13 +62,13 @@ public class GeneralizationSetCreationToolTest extends ClassDiagramCreationToolT
 	}
 
 	protected IGraphicalEditPart createGeneralizationSet(IGraphicalEditPart sourceEP, ConnectionEditPart targetEP) {
-		flushEventQueue();
+		UMLDiagramFacade.flushEventQueue();
 		Point source = sourceEP.getFigure().getBounds().getTopLeft();
 		Point target1 = targetEP.getConnectionFigure().getPoints().getFirstPoint();
 		Point target2 = targetEP.getConnectionFigure().getPoints().getLastPoint();
 		Point target = new Point((target1.x + target2.x)/2, (target1.y + target2.y)/2);
 		createConnectionByTool(new CreateGeneralizationLinkTool(), source.x, source.y, target.x, target.y);
-		flushEventQueue();
+		UMLDiagramFacade.flushEventQueue();
 		return getDiagramEditPart().getChildBySemanticHint(UMLVisualIDRegistry.getType(GeneralizationSetEditPart.VISUAL_ID));
 	}
 	

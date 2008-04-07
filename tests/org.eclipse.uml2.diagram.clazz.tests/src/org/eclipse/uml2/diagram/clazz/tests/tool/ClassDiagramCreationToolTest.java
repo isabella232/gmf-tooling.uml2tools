@@ -8,15 +8,13 @@ import org.eclipse.gmf.runtime.diagram.ui.editparts.ConnectionEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.DiagramEditPart;
 import org.eclipse.uml2.diagram.clazz.part.UMLVisualIDRegistry;
 import org.eclipse.uml2.diagram.clazz.tests.diagram.ClassDiagramFacade;
-import org.eclipse.uml2.diagram.common.tests.CreationToolTest;
 import org.eclipse.uml2.diagram.common.tests.UMLDiagramFacade;
+import org.eclipse.uml2.diagram.common.tool.CreationToolTestBase;
 
-
-public class ClassDiagramCreationToolTest extends CreationToolTest {
+public class ClassDiagramCreationToolTest extends CreationToolTestBase {
 
 	public ClassDiagramCreationToolTest(String name) {
 		super(name);
-		// TODO Auto-generated constructor stub
 	}
 	
 	protected ConnectionEditPart findConnection(DiagramEditPart diagram, int VID) {
@@ -43,8 +41,8 @@ public class ClassDiagramCreationToolTest extends CreationToolTest {
 	}
 
 	@Override
-	protected UMLDiagramFacade createDiagram() {
-		return new ClassDiagramFacade(getTestProject().getFullPath());
+	protected UMLDiagramFacade getDiagram(String projectPath){
+		return new ClassDiagramFacade(projectPath);
 	}
-	
+
 }

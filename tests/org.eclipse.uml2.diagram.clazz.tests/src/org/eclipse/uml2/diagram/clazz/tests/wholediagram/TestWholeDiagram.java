@@ -10,20 +10,19 @@ import org.eclipse.core.runtime.CoreException;
 import org.eclipse.core.runtime.FileLocator;
 import org.eclipse.core.runtime.Path;
 import org.eclipse.core.runtime.Platform;
-import org.eclipse.uml2.diagram.clazz.tests.diagram.ClassDiagramFacade;
-import org.eclipse.uml2.diagram.common.tests.DiagramSampleTest;
-import org.eclipse.uml2.diagram.common.tests.UMLDiagramFacade;
+import org.eclipse.uml2.diagram.clazz.tests.diagram.InitClassDiagramFacade;
+import org.eclipse.uml2.diagram.common.wholediagram.UMLInitDiagramFacade;
 import org.osgi.framework.Bundle;
 
-public class TestWholeDiagram extends DiagramSampleTest {
+public class TestWholeDiagram extends org.eclipse.uml2.diagram.common.wholediagram.TestWholeDiagram {
 
 	public TestWholeDiagram(String modelFileName, String diagramFileName) {
 		super(modelFileName, diagramFileName);
 	}
 
 	@Override
-	protected UMLDiagramFacade restoreDiagram(IFile modelFile, IFile diagramFile) throws ExecutionException, IOException, CoreException {
-		return new ClassDiagramFacade(modelFile, diagramFile);
+	protected UMLInitDiagramFacade restoreDiagram(IFile modelFile, IFile diagramFile) throws ExecutionException, IOException, CoreException {
+		return new InitClassDiagramFacade(modelFile, diagramFile);
 	}
 
 	@Override

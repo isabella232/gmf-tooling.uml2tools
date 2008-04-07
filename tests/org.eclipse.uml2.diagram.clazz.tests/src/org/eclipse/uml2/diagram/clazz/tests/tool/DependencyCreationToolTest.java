@@ -12,6 +12,7 @@ import org.eclipse.uml2.diagram.clazz.edit.parts.Dependency2EditPart;
 import org.eclipse.uml2.diagram.clazz.part.CreateDependencyLinkTool;
 import org.eclipse.uml2.diagram.clazz.part.UMLVisualIDRegistry;
 import org.eclipse.uml2.diagram.clazz.providers.UMLElementTypes;
+import org.eclipse.uml2.diagram.common.tests.UMLDiagramFacade;
 import org.eclipse.uml2.uml.UMLPackage;
 
 
@@ -40,7 +41,7 @@ public class DependencyCreationToolTest extends ClassDiagramCreationToolTest {
 	}
 
 	public void testABSTRACTIONDependency() {
-		flushEventQueue();
+		UMLDiagramFacade.flushEventQueue();
 		CreateDependencyLinkTool tool = new CreateDependencyLinkTool.ABSTRACTION();
 		createConnectionByTool(tool, mySourceEP, myTargetEP);
 		EClass type = UMLPackage.eINSTANCE.getAbstraction();
@@ -48,7 +49,7 @@ public class DependencyCreationToolTest extends ClassDiagramCreationToolTest {
 	}
 
 	public void testDEPENDENCYependency() {
-		flushEventQueue();
+		UMLDiagramFacade.flushEventQueue();
 		CreateDependencyLinkTool tool = new CreateDependencyLinkTool.DEPENDENCY();
 		createConnectionByTool(tool, mySourceEP, myTargetEP);
 		EClass type = UMLPackage.eINSTANCE.getDependency();
@@ -56,7 +57,7 @@ public class DependencyCreationToolTest extends ClassDiagramCreationToolTest {
 	}
 
 	public void testUSAGEDependency() {
-		flushEventQueue();
+		UMLDiagramFacade.flushEventQueue();
 		CreateDependencyLinkTool tool = new CreateDependencyLinkTool.USAGE();
 		createConnectionByTool(tool, mySourceEP, myTargetEP);
 		EClass type = UMLPackage.eINSTANCE.getUsage();
@@ -64,7 +65,7 @@ public class DependencyCreationToolTest extends ClassDiagramCreationToolTest {
 	}
 
 	public void testSUBSTITUTIONDependency() {
-		flushEventQueue();
+		UMLDiagramFacade.flushEventQueue();
 		CreateDependencyLinkTool tool = new CreateDependencyLinkTool.SUBSTITUTION();
 		createConnectionByTool(tool, mySourceEP, myTargetEP);
 		EClass type = UMLPackage.eINSTANCE.getSubstitution();

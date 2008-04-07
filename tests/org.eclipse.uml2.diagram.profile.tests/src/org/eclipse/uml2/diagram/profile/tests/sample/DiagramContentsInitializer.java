@@ -1,4 +1,4 @@
-package org.eclipse.uml2.diagram.profile.tests;
+package org.eclipse.uml2.diagram.profile.tests.sample;
 
 import java.util.Collection;
 import java.util.HashMap;
