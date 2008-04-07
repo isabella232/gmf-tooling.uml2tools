@@ -10,22 +10,23 @@ import org.eclipse.core.runtime.CoreException;
 import org.eclipse.core.runtime.FileLocator;
 import org.eclipse.core.runtime.Path;
 import org.eclipse.core.runtime.Platform;
-import org.eclipse.uml2.diagram.common.tests.DiagramSampleTest;
-import org.eclipse.uml2.diagram.common.tests.UMLTestDiagram;
-import org.eclipse.uml2.diagram.profile.tests.ProfileTestDiagram;
+import org.eclipse.uml2.diagram.common.wholediagram.TestWholeDiagram;
+import org.eclipse.uml2.diagram.common.wholediagram.UMLInitDiagramFacade;
+import org.eclipse.uml2.diagram.profile.tests.InitProfileDiagramFacade;
 import org.osgi.framework.Bundle;
 
-public class ProfileSampleTest extends DiagramSampleTest {
+public class ProfileSampleTest extends TestWholeDiagram {
 
 	public ProfileSampleTest(String modelFileName, String diagramFileName) {
 		super(modelFileName, diagramFileName);
 	}
 
 	@Override
-	protected UMLTestDiagram restoreDiagram(IFile modelFile, IFile diagramFile) throws ExecutionException, IOException, CoreException {
-		return new ProfileTestDiagram(modelFile, diagramFile);
+	protected UMLInitDiagramFacade restoreDiagram(IFile modelFile, IFile diagramFile) throws ExecutionException, IOException, CoreException {
+		return new InitProfileDiagramFacade(modelFile, diagramFile);
 	}
 
+	@Override
 	protected URL getURL(String fileName) {
 		return FileLocator.find(UML_TEST_BUNDLE, new Path(EXAMPLE_FOLDER + fileName), Collections.EMPTY_MAP);
 	}
