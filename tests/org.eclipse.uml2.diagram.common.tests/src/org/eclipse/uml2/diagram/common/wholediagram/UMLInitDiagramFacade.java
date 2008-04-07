@@ -5,6 +5,8 @@ import java.util.Collections;
 import java.util.LinkedList;
 import java.util.List;
 
+import junit.framework.Assert;
+
 import org.eclipse.core.commands.ExecutionException;
 import org.eclipse.core.commands.operations.OperationHistoryFactory;
 import org.eclipse.core.resources.IFile;
@@ -40,26 +42,26 @@ public abstract class UMLInitDiagramFacade {
 	
 	protected abstract void initDiagramContents(Diagram diagram, EObject modelRoot);
 
-	private Resource myDiagramResource;
+	private Resource myRestoredDiagramResource;
 
 	private Resource myModelResource;
 
 	private IDiagramWorkbenchPart myDiagramWorkbenchPart;
 
 	public UMLInitDiagramFacade(IFile modelFile, IFile diagramFile) throws ExecutionException, IOException, CoreException {
-		myDiagramResource = createRestoredDiagram(modelFile, diagramFile);
+		myRestoredDiagramResource = initializeDiagramFromDomainModel(modelFile, diagramFile);
 	}
 
 	public void open() throws PartInitException {
-		String path = myDiagramResource.getURI().toPlatformString(true);
+		String path = myRestoredDiagramResource.getURI().toPlatformString(true);
 		IResource workspaceResource = ResourcesPlugin.getWorkspace().getRoot().findMember(new Path(path));
-		if (workspaceResource instanceof IFile) {
-			IWorkbench workbench = PlatformUI.getWorkbench();
-			IWorkbenchPage page = workbench.getActiveWorkbenchWindow().getActivePage();
-			IEditorPart editorPart = page
-					.openEditor(new FileEditorInput((IFile) workspaceResource), workbench.getEditorRegistry().getDefaultEditor(workspaceResource.getFullPath().toString()).getId());
-			myDiagramWorkbenchPart = (IDiagramWorkbenchPart) editorPart;
+		if (false == workspaceResource instanceof IFile) {
+			Assert.fail("workspace resource should be a file: " + workspaceResource);
 		}
+		IWorkbench workbench = PlatformUI.getWorkbench();
+		IWorkbenchPage page = workbench.getActiveWorkbenchWindow().getActivePage();
+		IEditorPart editorPart = page.openEditor(new FileEditorInput((IFile) workspaceResource), workbench.getEditorRegistry().getDefaultEditor(workspaceResource.getFullPath().toString()).getId());
+		myDiagramWorkbenchPart = (IDiagramWorkbenchPart) editorPart;
 	}
 
 	public void close() {
@@ -68,23 +70,19 @@ public abstract class UMLInitDiagramFacade {
 			page.closeEditor((IEditorPart) myDiagramWorkbenchPart, false);
 		}
 		myDiagramWorkbenchPart = null;
-		myDiagramResource.unload();
-		myDiagramResource = null;
+		myRestoredDiagramResource.unload();
+		myRestoredDiagramResource = null;
 		if (myModelResource != null) {
 			myModelResource.unload();
 			myModelResource = null;
 		}
 	}
 
-	public IDiagramWorkbenchPart getDiagramWorkbenchPart() {
-		return myDiagramWorkbenchPart;
+	public Diagram getRestoredDiagramView() {
+		return (Diagram) myRestoredDiagramResource.getContents().get(0);
 	}
 
-	public Diagram getView() {
-		return (Diagram) myDiagramResource.getContents().get(0);
-	}
-
-	private Resource createRestoredDiagram(IFile modelFile, IFile diagramFile) throws ExecutionException, IOException, CoreException {
+	private Resource initializeDiagramFromDomainModel(IFile modelFile, IFile diagramFile) throws ExecutionException, IOException, CoreException {
 		diagramFile.setCharset("UTF-8", new NullProgressMonitor()); //$NON-NLS-1$
 		TransactionalEditingDomain editingDomain = GMFEditingDomainFactory.INSTANCE.createEditingDomain();
 		ResourceSet resourceSet = editingDomain.getResourceSet();
@@ -94,12 +92,12 @@ public abstract class UMLInitDiagramFacade {
 		initDiagramContents(diagram, modelRoot);
 
 		Resource result = createEmptyResource(resourceSet, diagramFile);
-		addDiagram(result, diagram, editingDomain, diagramFile);
+		addDiagramToResource(result, diagram, editingDomain, diagramFile);
 		result.save(Collections.EMPTY_MAP);
 		return result;
 	}
 
-	private void addDiagram(final Resource diagramResource, final Diagram diagram, TransactionalEditingDomain editingDomain, IFile diagramFile) throws ExecutionException {
+	private void addDiagramToResource(final Resource diagramResource, final Diagram diagram, TransactionalEditingDomain editingDomain, IFile diagramFile) throws ExecutionException {
 		List affectedFiles = new LinkedList();
 		affectedFiles.add(diagramFile);
 		AbstractTransactionalCommand command = new AbstractTransactionalCommand(editingDomain, "Initializing diagram contents", affectedFiles) { //$NON-NLS-1$

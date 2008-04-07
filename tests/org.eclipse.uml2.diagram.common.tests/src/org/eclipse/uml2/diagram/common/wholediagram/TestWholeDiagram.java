@@ -60,7 +60,7 @@ public abstract class TestWholeDiagram extends TestCase {
 		return "test_" + myModelFileName;
 	}
 
-	public void testSample() {
+	public void testSample() throws Exception {
 		URL diagramURL = getURL(myDiagramFileName);
 		URL modelURL = getURL(myModelFileName);
 		assertNotNull("Cannot find diagram file " + myDiagramFileName + ".", diagramURL);
@@ -74,29 +74,15 @@ public abstract class TestWholeDiagram extends TestCase {
 		}
 		IFile templateFile = project.getFile(myDiagramFileName);
 		IFile modelFile = project.getFile(myModelFileName);
-		try {
-			templateFile.create(diagramURL.openStream(), true, null);
-			modelFile.create(modelURL.openStream(), true, null);
-		} catch (CoreException e) {
-			fail("Unable to copy diagram or model file.");
-		} catch (IOException e) {
-			fail("Unable to copy diagram or model file.");
-		}
-		try {
-			myRestoredDiagram = restoreDiagram(modelFile, project.createEmptyFile("restored" + myDiagramFileName));
-		} catch (ExecutionException e) {
-			fail("Cannot to restore diagram.");
-		} catch (IOException e) {
-			fail("Cannot to restore diagram.");
-		} catch (CoreException e) {
-			fail("Cannot to restore diagram.");
-		}
+		templateFile.create(diagramURL.openStream(), true, null);
+		modelFile.create(modelURL.openStream(), true, null);
+		myRestoredDiagram = restoreDiagram(modelFile, project.createEmptyFile("restored" + myDiagramFileName));
 		Diagram view1 = getRoot(templateFile);
-		Diagram view2 = myRestoredDiagram.getView();
+		Diagram view2 = myRestoredDiagram.getRestoredDiagramView();
 		compareDiagrams(view1, view2);
 	}
 
-	protected Diagram getRoot(IFile file) {
+	private Diagram getRoot(IFile file) {
 		TransactionalEditingDomain editingDomain = GMFEditingDomainFactory.INSTANCE.createEditingDomain();
 		ResourceSet resourceSet = editingDomain.getResourceSet();
 		org.eclipse.emf.common.util.URI diagramModelURI = org.eclipse.emf.common.util.URI.createPlatformResourceURI(file.getFullPath().toString(), true);
@@ -111,9 +97,9 @@ public abstract class TestWholeDiagram extends TestCase {
 	}
 
 	private void compareViews(View view1, View view2) {
-		assertEquals("Incorrect View type " + getParentStack(view2), view1.getType(), view2.getType());
-		assertEquals("Incorrect Element eClass " + getParentStack(view2), view1.getElement().eClass(), view2.getElement().eClass());
-		assertEquals("Incorrect View eClass " + getParentStack(view2), view1.eClass(), view2.eClass());
+		assertEquals("Incorrect View type " + getStackTrace(view2) + " for element " + view2.getElement(), view1.getType(), view2.getType());
+		assertEquals("Incorrect Element eClass " + getStackTrace(view2), view1.getElement().eClass(), view2.getElement().eClass());
+		assertEquals("Incorrect View eClass " + getStackTrace(view2), view1.eClass(), view2.eClass());
 	}
 
 	private void compareEdges(Diagram diagram1, Diagram diagram2) {
@@ -133,52 +119,76 @@ public abstract class TestWholeDiagram extends TestCase {
 	private void compareChildren(View view1, View view2) {
 		compareViews(view1, view2);
 
-		List children1 = getSemanticViewsList(view1);
-		List children2 = getSemanticViewsList(view2);
-		String name = (view2.getElement() == null || false == view2.getElement() instanceof NamedElement) ? null : ((NamedElement) view2.getElement()).getName();
-		assertEquals("View " + getParentStack(view2) + " " + name + " has incorrent children size. ", children1.size(), children2.size());
-		for (int i = 0; i < children1.size(); i++) {
+		List<View> children1 = getFilteredChildren(view1);
+		List<View> children2 = getFilteredChildren(view2);
+		for (int i = 0; i < Math.min(children1.size(), children2.size()); i++) {
 			View child1 = (View) children1.get(i);
 			View child2 = (View) children2.get(i);
 			compareChildren(child1, child2);
 		}
+		assertEquals("View " + getStackTrace(view2) + " has a different set of children: " + getPringString(children2) + ". Expected: " + getPringString(children1), children1.size(), children2.size());
 	}
 
-	private StringBuffer getParentStack(View node) {
+	private StringBuffer getStackTrace(View node) {
+		if (node == null) {
+			return EMPTY;
+		}
 		StringBuffer result = new StringBuffer();
-		if (node != null) {
-			result.append(" [");
-			if (node instanceof NamedElement) {
-				result.append(((NamedElement) node.getElement()).getName());
-			}
-			result.append("(id = ");
-			result.append(node.getType());
-			result.append(")");
-			result.append(getParentStack((View) node.eContainer()));
-			result.append("]");
+		if (node.getElement() instanceof NamedElement) {
+			result.append("'").append(((NamedElement) node.getElement()).getName()).append("'").append(", ");
+		}
+		result.append("vid = ").append(node.getType());
+		StringBuffer parentStack = getStackTrace((View) node.eContainer());
+		if (parentStack.length() > 0) {
+			result.append(" from ").append(parentStack);
 		}
 		return result;
 	}
 
-	private List getSemanticViewsList(View view) {
-		List result = new ArrayList();
+	private static StringBuffer getPringString(List<View> children) {
+		StringBuffer result = new StringBuffer();		
+		for (View child: children ) {
+			result.append(getPringString(child)).append("; ");
+		}
+		return result;
+	}
+	
+	private static StringBuffer getPringString(View node) {
+		StringBuffer result = new StringBuffer();
+		if (node != null) {
+			if (node.getElement() instanceof NamedElement) {
+				result.append(((NamedElement) node.getElement()).getName()).append(", ");
+			}
+			result.append("vid = ").append(node.getType());
+		}
+		return result;
+	}
+
+	private List<View> getFilteredChildren(View view) {
+		List<View> result = new ArrayList<View>();
 		Iterator iter = view.getChildren().iterator();
 		while (iter.hasNext()) {
 			View next = (View) iter.next();
-			int VID;
+			int visualId;
 			try {
-				VID = Integer.parseInt(next.getType());
+				visualId = Integer.parseInt(next.getType());
 			} catch (NumberFormatException e) {
 				continue;
 			}
 
-			// we do not pay attention to labels
-			if (3000 < VID && VID < 4000) {
+			if (ignoreView(visualId)) {
 				continue;
 			}
 			result.add(next);
 		}
 		return result;
 	}
+	
+	protected boolean ignoreView(int visualId) {
+		// we do not pay attention to labels
+		return 3000 < visualId && visualId < 4000;
+	}
+	
+	private static StringBuffer EMPTY = new StringBuffer(0); 
 
 }
