@@ -26,7 +26,7 @@ public abstract class TestWholeDiagram extends TestCase {
 
 	protected abstract UMLInitDiagramFacade restoreDiagram(IFile modelFile, IFile diagramFile) throws ExecutionException, IOException, CoreException;
 
-	protected abstract URL getURL(String fileName);
+	protected abstract URL findFileInTestPlugin(String fileName);
 
 	private String myModelFileName;
 
@@ -48,6 +48,9 @@ public abstract class TestWholeDiagram extends TestCase {
 	protected void tearDown() throws Exception {
 		super.tearDown();
 		myRestoredDiagram.close();
+		myRestoredDiagram = null;
+		myModelFileName = null;
+		myDiagramFileName = null;
 	}
 
 	@Override
@@ -55,14 +58,17 @@ public abstract class TestWholeDiagram extends TestCase {
 		testSample();
 	}
 
+	/*
+	 * A name of test. It used, e.g. by JUnit perspective, to display test result.
+	 */
 	@Override
 	public String getName() {
 		return "test_" + myModelFileName;
 	}
 
 	public void testSample() throws Exception {
-		URL diagramURL = getURL(myDiagramFileName);
-		URL modelURL = getURL(myModelFileName);
+		URL diagramURL = findFileInTestPlugin(myDiagramFileName);
+		URL modelURL = findFileInTestPlugin(myModelFileName);
 		assertNotNull("Cannot find diagram file " + myDiagramFileName + ".", diagramURL);
 		assertNotNull("Cannot find model file " + myModelFileName + ".", modelURL);
 

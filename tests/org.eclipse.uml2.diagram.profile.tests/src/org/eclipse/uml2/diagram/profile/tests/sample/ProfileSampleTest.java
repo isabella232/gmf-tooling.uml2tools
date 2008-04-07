@@ -26,7 +26,7 @@ public class ProfileSampleTest extends TestWholeDiagram {
 	}
 
 	@Override
-	protected URL getURL(String fileName) {
+	protected URL findFileInTestPlugin(String fileName) {
 		return FileLocator.find(UML_TEST_BUNDLE, new Path(EXAMPLE_FOLDER + fileName), Collections.EMPTY_MAP);
 	}
 

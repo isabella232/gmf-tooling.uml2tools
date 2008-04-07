@@ -9,7 +9,7 @@ public class TestWholeDiagramSuite extends TestSuite {
 
 	public TestWholeDiagramSuite() {
 		for (String name : oursDiagramFiles) {
-			addTest(new TestWholeDiagram(name + ".uml", name + ".umlclass_diagram"));
+			addTest(new TestWholeClassDiagram(name + ".uml", name + ".umlclass_diagram"));
 		}
 
 	}

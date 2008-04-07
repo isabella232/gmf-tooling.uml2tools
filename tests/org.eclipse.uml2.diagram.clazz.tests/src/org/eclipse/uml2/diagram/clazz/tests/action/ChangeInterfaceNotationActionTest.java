@@ -14,7 +14,6 @@ public class ChangeInterfaceNotationActionTest extends ClassDiagramCreationToolT
 
 	public ChangeInterfaceNotationActionTest(String name) {
 		super(name);
-		// TODO Auto-generated constructor stub
 	}	
 	
 	private void createRoundInterface() {
@@ -26,13 +25,13 @@ public class ChangeInterfaceNotationActionTest extends ClassDiagramCreationToolT
 	private void createRectangleInterface() {
 		createNodeByTool(UMLElementTypes.Interface_2013);
 		IGraphicalEditPart interfaze = getDiagramEditPart().getChildBySemanticHint(UMLVisualIDRegistry.getType(Interface2EditPart.VISUAL_ID));
-		assertNotNull("Rectangle Interface should be created after tool invocation.", interfaze);
+		assertNotNull("Rectangle Interface was not created by appropriate tool.", interfaze);
 	}
 	private void runTurnIntoRectangleAction() {
 		assertFalse("Selection should not be empty to run action correctly.", getDiagramEditPart().getViewer().getSelection().isEmpty());
 		DiagramAction action = new TurnIntoInterface2Action(getWorkbenchPage(), "testID");
 		action.init();
-		assertTrue("Action should be enabled in correct cases.", action.isEnabled());
+		assertTrue("TurnIntoCircle Action should be enabled for the Rectangle Interface.", action.isEnabled());
 		action.run();
 	}
 	

@@ -38,10 +38,14 @@ public abstract class UMLDiagramFacade {
 		myDiagramFileExtension = diagramFileExtension;
 	}
 
-	public void create() {
-		URI diagramModelURI = URI.createPlatformResourceURI(myProjectPath + "/test." + myDiagramFileExtension, false); //$NON-NLS-1$
-		URI domainModelURI = URI.createPlatformResourceURI(myProjectPath + "/test.uml", false); //$NON-NLS-1$
+	public void create(String diagramName) {
+		URI diagramModelURI = URI.createPlatformResourceURI(new Path(myProjectPath).append(diagramName + "." + myDiagramFileExtension).toOSString(), false); //$NON-NLS-1$
+		URI domainModelURI = URI.createPlatformResourceURI(new Path(myProjectPath).append(diagramName + ".uml").toOSString(), false); //$NON-NLS-1$
 		myDiagramResource = createDiagram(diagramModelURI, domainModelURI);
+	}
+
+	public void create() {
+		create("test");
 	}
 
 	public void open() throws PartInitException {
