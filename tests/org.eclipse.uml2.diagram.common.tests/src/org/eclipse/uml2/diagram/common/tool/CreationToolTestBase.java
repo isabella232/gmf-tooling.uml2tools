@@ -11,6 +11,7 @@ import org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.tools.ConnectionCreationTool;
 import org.eclipse.gmf.runtime.diagram.ui.tools.UnspecifiedTypeCreationTool;
 import org.eclipse.gmf.runtime.emf.type.core.IElementType;
+import org.eclipse.jface.viewers.ISelection;
 import org.eclipse.swt.events.MouseEvent;
 import org.eclipse.swt.widgets.Event;
 import org.eclipse.ui.IWorkbenchPage;
@@ -38,7 +39,7 @@ public abstract class CreationToolTestBase extends TestCase {
 		super.setUp();
 		myProject = new UMLProjectFacade();
 		myDiagramFacade = getDiagram(myProject.getFullPath());
-		myDiagramFacade.create();
+		myDiagramFacade.create(getName());
 		myDiagramFacade.open();
 		UMLDiagramFacade.flushEventQueue();
 		myEditDomain = (EditDomain) myDiagramFacade.getDiagramEditDomain();
@@ -50,8 +51,13 @@ public abstract class CreationToolTestBase extends TestCase {
 	protected void tearDown() throws Exception {
 		UMLDiagramFacade.flushEventQueue();
 		myDiagramFacade.close();
-		myProject.close();
+		try {
+			myProject.close();
+		} catch (Exception e) {
+			e.printStackTrace();			
+		}
 		super.tearDown();
+		UMLDiagramFacade.flushEventQueue();
 	}
 	
 	protected DiagramEditPart getDiagramEditPart() {
@@ -60,6 +66,10 @@ public abstract class CreationToolTestBase extends TestCase {
 	
 	protected IWorkbenchPage getWorkbenchPage() {
 		return myDiagramFacade.getDiagramWorkbenchPart().getSite().getPage();
+	}
+	
+	protected ISelection getSelection() {
+		return getDiagramEditPart().getViewer().getSelection();
 	}
 
 	protected abstract UMLDiagramFacade getDiagram(String projectPath);
