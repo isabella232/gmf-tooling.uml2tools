@@ -55,7 +55,7 @@ public class ChangeInterfaceNotationActionTest extends ClassDiagramCreationToolT
 		createRoundInterface();
 		runTurnIntoRectangleAction();
 		IGraphicalEditPart interfaze2 = getDiagramEditPart().getChildBySemanticHint(UMLVisualIDRegistry.getType(Interface2EditPart.VISUAL_ID));
-		assertNotNull("Rectangle interface should be deleted. ", interfaze2);
+		assertNotNull("Rectangle interface should be created. ", interfaze2);
 	}
 
 	public void testChangeToCircleNotationAction1() {
