@@ -1,6 +1,5 @@
 package org.eclipse.uml2.diagram.common.wholediagram;
 
-import java.io.IOException;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.Iterator;
@@ -8,7 +7,6 @@ import java.util.List;
 
 import junit.framework.TestCase;
 
-import org.eclipse.core.commands.ExecutionException;
 import org.eclipse.core.resources.IFile;
 import org.eclipse.core.runtime.CoreException;
 import org.eclipse.emf.common.util.EList;
@@ -24,7 +22,7 @@ import org.eclipse.uml2.uml.NamedElement;
 
 public abstract class TestWholeDiagram extends TestCase {
 
-	protected abstract UMLInitDiagramFacade restoreDiagram(IFile modelFile, IFile diagramFile) throws ExecutionException, IOException, CoreException;
+	protected abstract UMLInitDiagramFacade getInitDiagramFacade(IFile modelFile, IFile diagramFile);
 
 	protected abstract URL findFileInTestPlugin(String fileName);
 
@@ -32,7 +30,7 @@ public abstract class TestWholeDiagram extends TestCase {
 
 	private String myDiagramFileName;
 
-	private UMLInitDiagramFacade myRestoredDiagram;
+	private UMLInitDiagramFacade myInitDiagramFacade;
 
 	public TestWholeDiagram(String modelFileName, String diagramFileName) {
 		myModelFileName = modelFileName;
@@ -47,8 +45,8 @@ public abstract class TestWholeDiagram extends TestCase {
 	@Override
 	protected void tearDown() throws Exception {
 		super.tearDown();
-		myRestoredDiagram.close();
-		myRestoredDiagram = null;
+		myInitDiagramFacade.close();
+		myInitDiagramFacade = null;
 		myModelFileName = null;
 		myDiagramFileName = null;
 	}
@@ -82,13 +80,13 @@ public abstract class TestWholeDiagram extends TestCase {
 		IFile modelFile = project.getFile(myModelFileName);
 		templateFile.create(diagramURL.openStream(), true, null);
 		modelFile.create(modelURL.openStream(), true, null);
-		myRestoredDiagram = restoreDiagram(modelFile, project.createEmptyFile("restored" + myDiagramFileName));
-		Diagram view1 = getRoot(templateFile);
-		Diagram view2 = myRestoredDiagram.getRestoredDiagramView();
+		Diagram view1 = getDiagramRoot(templateFile);
+		myInitDiagramFacade = getInitDiagramFacade(modelFile, project.createEmptyFile("restored" + myDiagramFileName));
+		Diagram view2 = myInitDiagramFacade.getDiagramView();
 		compareDiagrams(view1, view2);
 	}
 
-	private Diagram getRoot(IFile file) {
+	private Diagram getDiagramRoot(IFile file) {
 		TransactionalEditingDomain editingDomain = GMFEditingDomainFactory.INSTANCE.createEditingDomain();
 		ResourceSet resourceSet = editingDomain.getResourceSet();
 		org.eclipse.emf.common.util.URI diagramModelURI = org.eclipse.emf.common.util.URI.createPlatformResourceURI(file.getFullPath().toString(), true);

@@ -4,11 +4,11 @@
   <packagedElement xmi:type="uml:Class" xmi:id="_Zh9RcLxHEduWjOs2RiriMw" name="Team"/>
   <packagedElement xmi:type="uml:Class" xmi:id="_aWaNMLxHEduWjOs2RiriMw" name="Player"/>
   <packagedElement xmi:type="uml:AssociationClass" xmi:id="_boYLYLxHEduWjOs2RiriMw" name="AssociationClass" memberEnd="_loj24LxHEduWjOs2RiriMw _mQ8FgLxHEduWjOs2RiriMw _mx3oULxHEduWjOs2RiriMw">
-    <ownedEnd xmi:id="_loj24LxHEduWjOs2RiriMw" name="season" type="_Y1ZtcLxHEduWjOs2RiriMw" association="_boYLYLxHEduWjOs2RiriMw">
-      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_6DJrwLxHEduWjOs2RiriMw" value="*"/>
-    </ownedEnd>
     <ownedEnd xmi:id="_mQ8FgLxHEduWjOs2RiriMw" name="team" type="_Zh9RcLxHEduWjOs2RiriMw" association="_boYLYLxHEduWjOs2RiriMw">
       <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_zwgB8LxHEduWjOs2RiriMw" value="*"/>
+    </ownedEnd>
+    <ownedEnd xmi:id="_loj24LxHEduWjOs2RiriMw" name="season" type="_Y1ZtcLxHEduWjOs2RiriMw" association="_boYLYLxHEduWjOs2RiriMw">
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_6DJrwLxHEduWjOs2RiriMw" value="*"/>
     </ownedEnd>
     <ownedEnd xmi:id="_mx3oULxHEduWjOs2RiriMw" name="goalie" type="_aWaNMLxHEduWjOs2RiriMw" association="_boYLYLxHEduWjOs2RiriMw">
       <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_waqHgLxHEduWjOs2RiriMw" value="*"/>

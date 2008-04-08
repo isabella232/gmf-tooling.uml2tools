@@ -5,8 +5,6 @@ import java.util.Collections;
 import java.util.LinkedList;
 import java.util.List;
 
-import junit.framework.Assert;
-
 import org.eclipse.core.commands.ExecutionException;
 import org.eclipse.core.commands.operations.OperationHistoryFactory;
 import org.eclipse.core.resources.IFile;
@@ -24,11 +22,11 @@ import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emf.transaction.TransactionalEditingDomain;
 import org.eclipse.gmf.runtime.common.core.command.CommandResult;
 import org.eclipse.gmf.runtime.diagram.ui.parts.IDiagramWorkbenchPart;
+import org.eclipse.gmf.runtime.diagram.ui.resources.editor.parts.DiagramDocumentEditor;
 import org.eclipse.gmf.runtime.emf.commands.core.command.AbstractTransactionalCommand;
 import org.eclipse.gmf.runtime.emf.core.GMFEditingDomainFactory;
 import org.eclipse.gmf.runtime.notation.Diagram;
 import org.eclipse.ui.IEditorPart;
-import org.eclipse.ui.IWorkbench;
 import org.eclipse.ui.IWorkbenchPage;
 import org.eclipse.ui.PartInitException;
 import org.eclipse.ui.PlatformUI;
@@ -36,11 +34,7 @@ import org.eclipse.ui.part.FileEditorInput;
 
 public abstract class UMLInitDiagramFacade {
 
-	protected abstract Resource createDiagram(URI diagramModelURI, URI domainModelURI);
-	
 	protected abstract Diagram createDiagramView(EObject modelRoot);
-	
-	protected abstract void initDiagramContents(Diagram diagram, EObject modelRoot);
 
 	private Resource myRestoredDiagramResource;
 
@@ -48,20 +42,16 @@ public abstract class UMLInitDiagramFacade {
 
 	private IDiagramWorkbenchPart myDiagramWorkbenchPart;
 
-	public UMLInitDiagramFacade(IFile modelFile, IFile diagramFile) throws ExecutionException, IOException, CoreException {
-		myRestoredDiagramResource = initializeDiagramFromDomainModel(modelFile, diagramFile);
-	}
+	private IFile myModelFile;
 
-	public void open() throws PartInitException {
-		String path = myRestoredDiagramResource.getURI().toPlatformString(true);
-		IResource workspaceResource = ResourcesPlugin.getWorkspace().getRoot().findMember(new Path(path));
-		if (false == workspaceResource instanceof IFile) {
-			Assert.fail("workspace resource should be a file: " + workspaceResource);
-		}
-		IWorkbench workbench = PlatformUI.getWorkbench();
-		IWorkbenchPage page = workbench.getActiveWorkbenchWindow().getActivePage();
-		IEditorPart editorPart = page.openEditor(new FileEditorInput((IFile) workspaceResource), workbench.getEditorRegistry().getDefaultEditor(workspaceResource.getFullPath().toString()).getId());
-		myDiagramWorkbenchPart = (IDiagramWorkbenchPart) editorPart;
+	private IFile myDagramFile;
+	
+	private final String diagram_editor_id;
+
+	public UMLInitDiagramFacade(IFile modelFile, IFile diagramFile, String deID) {
+		myModelFile = modelFile;
+		myDagramFile = diagramFile;
+		diagram_editor_id = deID;
 	}
 
 	public void close() {
@@ -78,23 +68,33 @@ public abstract class UMLInitDiagramFacade {
 		}
 	}
 
-	public Diagram getRestoredDiagramView() {
-		return (Diagram) myRestoredDiagramResource.getContents().get(0);
+	public Diagram getDiagramView() throws ExecutionException, IOException, CoreException {
+		return initializeDiagramFromDomainModel(myModelFile, myDagramFile);
+	}
+	
+	private Diagram openDiagram(Resource diagram) throws PartInitException {
+		String path = diagram.getURI().toPlatformString(true);
+		IResource workspaceResource = ResourcesPlugin.getWorkspace().getRoot().findMember(new Path(path));
+		if (workspaceResource instanceof IFile) {
+			IWorkbenchPage page = PlatformUI.getWorkbench().getActiveWorkbenchWindow().getActivePage();
+			IEditorPart editor = page.openEditor(new FileEditorInput((IFile) workspaceResource), diagram_editor_id);
+			return ((DiagramDocumentEditor)editor).getDiagram();
+		}
+		return null;
 	}
 
-	private Resource initializeDiagramFromDomainModel(IFile modelFile, IFile diagramFile) throws ExecutionException, IOException, CoreException {
+	private Diagram initializeDiagramFromDomainModel(IFile modelFile, IFile diagramFile) throws ExecutionException, IOException, CoreException {
 		diagramFile.setCharset("UTF-8", new NullProgressMonitor()); //$NON-NLS-1$
 		TransactionalEditingDomain editingDomain = GMFEditingDomainFactory.INSTANCE.createEditingDomain();
 		ResourceSet resourceSet = editingDomain.getResourceSet();
 		final EObject modelRoot = getModelRoot(modelFile, resourceSet);
 
 		Diagram diagram = createDiagramView(modelRoot);
-		initDiagramContents(diagram, modelRoot);
 
-		Resource result = createEmptyResource(resourceSet, diagramFile);
-		addDiagramToResource(result, diagram, editingDomain, diagramFile);
-		result.save(Collections.EMPTY_MAP);
-		return result;
+		myRestoredDiagramResource = createEmptyResource(resourceSet, diagramFile);
+		addDiagramToResource(myRestoredDiagramResource, diagram, editingDomain, diagramFile);
+		myRestoredDiagramResource.save(Collections.emptyMap());
+		return openDiagram(myRestoredDiagramResource);
 	}
 
 	private void addDiagramToResource(final Resource diagramResource, final Diagram diagram, TransactionalEditingDomain editingDomain, IFile diagramFile) throws ExecutionException {

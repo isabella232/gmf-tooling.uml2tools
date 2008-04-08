@@ -114,7 +114,7 @@
     <styles xmi:type="notation:FillStyle" xmi:id="_bohVU7xHEduWjOs2RiriMw"/>
     <styles xmi:type="notation:LineStyle" xmi:id="_bohVVLxHEduWjOs2RiriMw"/>
     <element xmi:type="uml:AssociationClass" href="7.21.Binary%20and%20ternary%20associations.uml#_boYLYLxHEduWjOs2RiriMw"/>
-    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_bohVVbxHEduWjOs2RiriMw" x="197" y="192"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_bohVVbxHEduWjOs2RiriMw" x="204" y="324"/>
   </children>
   <children xmi:type="notation:Node" xmi:id="_54QYcLxJEduWjOs2RiriMw" type="Text">
     <children xmi:type="notation:Node" xmi:id="_54QYc7xJEduWjOs2RiriMw" type="DiagramName">
@@ -126,17 +126,6 @@
     <styles xmi:type="notation:ShapeStyle" xmi:id="_54QYcbxJEduWjOs2RiriMw" description="Figure 7.21 - Binary and ternary associations"/>
     <element xsi:nil="true"/>
     <layoutConstraint xmi:type="notation:Bounds" xmi:id="_54QYcrxJEduWjOs2RiriMw" x="144" y="297"/>
-  </children>
-  <children xmi:type="notation:Node" xmi:id="_7hdK4LxJEduWjOs2RiriMw" type="Note">
-    <children xmi:type="notation:Node" xmi:id="_7hdK47xJEduWjOs2RiriMw" type="DiagramName">
-      <element xsi:nil="true"/>
-    </children>
-    <children xmi:type="notation:Node" xmi:id="_7hdK5LxJEduWjOs2RiriMw" type="Description">
-      <element xsi:nil="true"/>
-    </children>
-    <styles xmi:type="notation:ShapeStyle" xmi:id="_7hdK4bxJEduWjOs2RiriMw" description="Association class support is very basic now, to be improved" fillColor="4227327" lineColor="4227327"/>
-    <element xsi:nil="true"/>
-    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_7hdK4rxJEduWjOs2RiriMw" x="71" y="365" height="32"/>
   </children>
   <children xmi:type="notation:Node" xmi:id="_Pep0ogJpEd2u-ZCR6SejNA" type="2014">
     <children xmi:type="notation:Node" xmi:id="_Pep0pQJpEd2u-ZCR6SejNA" type="5020"/>
@@ -152,13 +141,13 @@
   <children xmi:type="notation:Node" xmi:id="_PezloAJpEd2u-ZCR6SejNA" type="2015">
     <styles xmi:type="notation:ShapeStyle" xmi:id="_PezloQJpEd2u-ZCR6SejNA" lineColor="0"/>
     <element xmi:type="uml:AssociationClass" href="7.21.Binary%20and%20ternary%20associations.uml#_boYLYLxHEduWjOs2RiriMw"/>
-    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_PezlogJpEd2u-ZCR6SejNA" x="396" y="504"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_PezlogJpEd2u-ZCR6SejNA" x="252" y="204"/>
   </children>
   <styles xmi:type="notation:PageStyle" xmi:id="_XY3eAbxHEduWjOs2RiriMw"/>
   <styles xmi:type="notation:GuideStyle" xmi:id="_XY3eArxHEduWjOs2RiriMw"/>
   <styles xmi:type="notation:DescriptionStyle" xmi:id="_XY3eA7xHEduWjOs2RiriMw"/>
   <element xmi:type="uml:Model" href="7.21.Binary%20and%20ternary%20associations.uml#_VX0MQLxHEduWjOs2RiriMw"/>
-  <edges xmi:type="notation:Edge" xmi:id="_loj24bxHEduWjOs2RiriMw" type="4003" source="_bohVULxHEduWjOs2RiriMw" target="_Y1soYLxHEduWjOs2RiriMw">
+  <edges xmi:type="notation:Edge" xmi:id="_loj24bxHEduWjOs2RiriMw" type="4003" source="_PezloAJpEd2u-ZCR6SejNA" target="_Y1soYLxHEduWjOs2RiriMw">
     <children xmi:type="notation:Node" xmi:id="_loj25rxHEduWjOs2RiriMw" type="6002">
       <layoutConstraint xmi:type="notation:Location" xmi:id="_loj257xHEduWjOs2RiriMw" y="40"/>
     </children>
@@ -167,10 +156,9 @@
     <styles xmi:type="notation:LineStyle" xmi:id="_loj25LxHEduWjOs2RiriMw"/>
     <element xmi:type="uml:Property" href="7.21.Binary%20and%20ternary%20associations.uml#_loj24LxHEduWjOs2RiriMw"/>
     <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_loj25bxHEduWjOs2RiriMw" points="[-4, -7, 0, 134]$[-2, -143, 2, -2]"/>
-    <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_lo_7wLxHEduWjOs2RiriMw" id="(0.48076922,0.109375)"/>
     <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_lo_7wbxHEduWjOs2RiriMw" id="(0.73,0.03125)"/>
   </edges>
-  <edges xmi:type="notation:Edge" xmi:id="_mQ8FgbxHEduWjOs2RiriMw" type="4003" source="_bohVULxHEduWjOs2RiriMw" target="_ZiHCcLxHEduWjOs2RiriMw">
+  <edges xmi:type="notation:Edge" xmi:id="_mQ8FgbxHEduWjOs2RiriMw" type="4003" source="_PezloAJpEd2u-ZCR6SejNA" target="_ZiHCcLxHEduWjOs2RiriMw">
     <children xmi:type="notation:Node" xmi:id="_mQ8FhrxHEduWjOs2RiriMw" type="6002">
       <layoutConstraint xmi:type="notation:Location" xmi:id="_mQ8Fh7xHEduWjOs2RiriMw" y="40"/>
     </children>
@@ -179,10 +167,9 @@
     <styles xmi:type="notation:LineStyle" xmi:id="_mQ8FhLxHEduWjOs2RiriMw"/>
     <element xmi:type="uml:Property" href="7.21.Binary%20and%20ternary%20associations.uml#_mQ8FgLxHEduWjOs2RiriMw"/>
     <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_mQ8FhbxHEduWjOs2RiriMw" points="[-34, 0, 105, 0]$[-139, -9, 0, -9]"/>
-    <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_mQ8FiLxHEduWjOs2RiriMw" id="(0.32692307,0.140625)"/>
     <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_mQ8FibxHEduWjOs2RiriMw" id="(0.51,0.140625)"/>
   </edges>
-  <edges xmi:type="notation:Edge" xmi:id="_myBZULxHEduWjOs2RiriMw" type="4003" source="_bohVULxHEduWjOs2RiriMw" target="_aWj-MLxHEduWjOs2RiriMw">
+  <edges xmi:type="notation:Edge" xmi:id="_myBZULxHEduWjOs2RiriMw" type="4003" source="_PezloAJpEd2u-ZCR6SejNA" target="_aWj-MLxHEduWjOs2RiriMw">
     <children xmi:type="notation:Node" xmi:id="_myBZVbxHEduWjOs2RiriMw" type="6002">
       <layoutConstraint xmi:type="notation:Location" xmi:id="_myBZVrxHEduWjOs2RiriMw" y="40"/>
     </children>
@@ -191,7 +178,6 @@
     <styles xmi:type="notation:LineStyle" xmi:id="_myBZU7xHEduWjOs2RiriMw"/>
     <element xmi:type="uml:Property" href="7.21.Binary%20and%20ternary%20associations.uml#_mx3oULxHEduWjOs2RiriMw"/>
     <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_myBZVLxHEduWjOs2RiriMw" points="[16, 4, -137, 0]$[148, -2, -5, -6]"/>
-    <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_myBZV7xHEduWjOs2RiriMw" id="(0.84615386,0.03125)"/>
     <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_myBZWLxHEduWjOs2RiriMw" id="(0.28,0.09375)"/>
   </edges>
   <edges xmi:type="notation:Edge" xmi:id="_noaOwLxHEduWjOs2RiriMw" type="4005" source="_aWj-MLxHEduWjOs2RiriMw" target="_Y1soYLxHEduWjOs2RiriMw">
