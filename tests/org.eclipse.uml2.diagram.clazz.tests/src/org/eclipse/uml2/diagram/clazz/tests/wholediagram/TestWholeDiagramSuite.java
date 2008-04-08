@@ -27,7 +27,6 @@ public class TestWholeDiagramSuite extends TestSuite {
 		oursDiagramFiles.add("7.27.An AssociationClass is depicted by an association symbol (a line) and a class symbol (a box)");
 		oursDiagramFiles.add("7.28.Class notation - details suppressed, analysis-level details, implementation-level details");
 		oursDiagramFiles.add("7.30.Examples of attributes");
-		oursDiagramFiles.add("7.32.Comment notation");
 		oursDiagramFiles.add("7.33.Constraint attached to an attribute");
 	}
 
