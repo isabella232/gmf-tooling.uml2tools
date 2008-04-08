@@ -14,32 +14,33 @@ public class ChangeInterfaceNotationActionTest extends ClassDiagramCreationToolT
 
 	public ChangeInterfaceNotationActionTest(String name) {
 		super(name);
-	}	
-	
+	}
+
 	private void createRoundInterface() {
 		createNodeByTool(UMLElementTypes.Interface_2010);
 		IGraphicalEditPart interfaze = getDiagramEditPart().getChildBySemanticHint(UMLVisualIDRegistry.getType(InterfaceEditPart.VISUAL_ID));
-		assertNotNull("Round Interface should be created after tool invocation.", interfaze);
+		assertNotNull("#225976. Round Interface was not created by an appropriate tool.", interfaze);
 	}
 
 	private void createRectangleInterface() {
 		createNodeByTool(UMLElementTypes.Interface_2013);
 		IGraphicalEditPart interfaze = getDiagramEditPart().getChildBySemanticHint(UMLVisualIDRegistry.getType(Interface2EditPart.VISUAL_ID));
-		assertNotNull("Rectangle Interface was not created by appropriate tool.", interfaze);
+		assertNotNull("#225976. Rectangle Interface was not created by an appropriate tool.", interfaze);
 	}
+
 	private void runTurnIntoRectangleAction() {
-		assertFalse("Selection should not be empty to run action correctly.", getDiagramEditPart().getViewer().getSelection().isEmpty());
+		assertFalse("Full selection selection is a precondition to successfully run action.", getSelection().isEmpty());
 		DiagramAction action = new TurnIntoInterface2Action(getWorkbenchPage(), "testID");
 		action.init();
-		assertTrue("TurnIntoCircle Action should be enabled for the Rectangle Interface.", action.isEnabled());
+		assertTrue("TurnIntoRectangle Action should be enabled for the Rectangle Interface.", action.isEnabled());
 		action.run();
 	}
-	
+
 	private void runTurnIntoCircleAction() {
-		assertFalse("Selection should not be empty to run action correctly.", getDiagramEditPart().getViewer().getSelection().isEmpty());
+		assertFalse("Full selection selection is a precondition to successfully run action.", getSelection().isEmpty());
 		DiagramAction action = new TurnIntoInterfaceAction(getWorkbenchPage(), "testID");
 		action.init();
-		assertTrue("Action should be enabled in correct cases.", action.isEnabled());
+		assertTrue("TurnIntoCircle Action should be enabled for the Rectangle Interface.", action.isEnabled());
 		action.run();
 	}
 
@@ -47,35 +48,44 @@ public class ChangeInterfaceNotationActionTest extends ClassDiagramCreationToolT
 		createRoundInterface();
 		runTurnIntoRectangleAction();
 		IGraphicalEditPart interfaze = getDiagramEditPart().getChildBySemanticHint(UMLVisualIDRegistry.getType(InterfaceEditPart.VISUAL_ID));
-		assertNull(interfaze);
+		assertNull("Circle interface should be deleted. ", interfaze);
 	}
 
 	public void testChangeToRectangleNotationAction2() {
 		createRoundInterface();
 		runTurnIntoRectangleAction();
 		IGraphicalEditPart interfaze2 = getDiagramEditPart().getChildBySemanticHint(UMLVisualIDRegistry.getType(Interface2EditPart.VISUAL_ID));
-		assertNotNull(interfaze2);
+		assertNotNull("Rectangle interface should be deleted. ", interfaze2);
 	}
+
 	public void testChangeToCircleNotationAction1() {
 		createRectangleInterface();
 		runTurnIntoCircleAction();
 		IGraphicalEditPart interfaze = getDiagramEditPart().getChildBySemanticHint(UMLVisualIDRegistry.getType(InterfaceEditPart.VISUAL_ID));
-		assertNotNull(interfaze);
+		assertNotNull("Circle interface should be created. ", interfaze);
 	}
 
 	public void testChangeToCircleNotationAction2() {
 		createRectangleInterface();
 		runTurnIntoCircleAction();
 		IGraphicalEditPart interfaze2 = getDiagramEditPart().getChildBySemanticHint(UMLVisualIDRegistry.getType(Interface2EditPart.VISUAL_ID));
-		assertNull(interfaze2);
+		assertNull("Rectangle interface should be deleted. ", interfaze2);
 	}
 
-	public void testChangeToRectangleNotationAction3() {
-		createNodeByTool(UMLElementTypes.Class_2001);
+	public void testChangeInterfaceNotationIsChecked() {
+		createRoundInterface();
+		DiagramAction action = new TurnIntoInterfaceAction(getWorkbenchPage(), "testID");
+		action.init();
+		action.refresh();
+		assertTrue("Turn into round interface Action should be checked for round interface.", action.isChecked());
+	}
+
+	public void testChangeInterfaceNotationIsUnChecked() {
+		createRoundInterface();
 		DiagramAction action = new TurnIntoInterface2Action(getWorkbenchPage(), "testID");
 		action.init();
 		action.refresh();
-		assertFalse("Action should be disabled on non-Interface elements.", action.isEnabled());
+		assertFalse("Turn into rectangle interface Action should be un-checked for round interface elements.", action.isChecked());
 	}
 
 }
