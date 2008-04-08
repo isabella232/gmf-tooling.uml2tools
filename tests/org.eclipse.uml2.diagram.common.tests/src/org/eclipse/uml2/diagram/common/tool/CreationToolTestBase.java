@@ -14,7 +14,12 @@ import org.eclipse.gmf.runtime.emf.type.core.IElementType;
 import org.eclipse.jface.viewers.ISelection;
 import org.eclipse.swt.events.MouseEvent;
 import org.eclipse.swt.widgets.Event;
+import org.eclipse.ui.IViewReference;
+import org.eclipse.ui.IWorkbench;
 import org.eclipse.ui.IWorkbenchPage;
+import org.eclipse.ui.IWorkbenchWindow;
+import org.eclipse.ui.PlatformUI;
+import org.eclipse.ui.internal.intro.IIntroConstants;
 import org.eclipse.uml2.diagram.common.tests.UMLDiagramFacade;
 import org.eclipse.uml2.diagram.common.tests.UMLProjectFacade;
 
@@ -37,11 +42,11 @@ public abstract class CreationToolTestBase extends TestCase {
 	@Override
 	protected void setUp() throws Exception {
 		super.setUp();
+		skipIntro();
 		myProject = new UMLProjectFacade();
 		myDiagramFacade = getDiagram(myProject.getFullPath());
 		myDiagramFacade.create(getName());
 		myDiagramFacade.open();
-		UMLDiagramFacade.flushEventQueue();
 		myEditDomain = (EditDomain) myDiagramFacade.getDiagramEditDomain();
 		myDiagramEditPart = myDiagramFacade.getDiagramEditPart();
 		myDiagramViewer = myDiagramEditPart.getViewer();
@@ -49,7 +54,6 @@ public abstract class CreationToolTestBase extends TestCase {
 
 	@Override
 	protected void tearDown() throws Exception {
-		UMLDiagramFacade.flushEventQueue();
 		myDiagramFacade.close();
 		try {
 			myProject.close();
@@ -57,7 +61,6 @@ public abstract class CreationToolTestBase extends TestCase {
 			e.printStackTrace();			
 		}
 		super.tearDown();
-		UMLDiagramFacade.flushEventQueue();
 	}
 	
 	protected DiagramEditPart getDiagramEditPart() {
@@ -122,10 +125,15 @@ public abstract class CreationToolTestBase extends TestCase {
 
 		return new MouseEvent(e);
 	}
-
-	protected UMLDiagramFacade getDiagram() {
-		// TODO Auto-generated method stub
-		return null;
+	
+	private static void skipIntro() {
+		IWorkbench workbench = PlatformUI.getWorkbench();
+		IWorkbenchWindow workbenchWindow = workbench.getActiveWorkbenchWindow();
+		IWorkbenchPage page = workbenchWindow.getActivePage();
+		IViewReference reference = page.findViewReference(IIntroConstants.INTRO_VIEW_ID);
+		if (reference != null) {
+			page.hideView(reference.getView(false));
+		}
 	}
-
+	
 }
