@@ -48,7 +48,7 @@
 
 «AROUND attachModelMethod FOR gmfgen::GenDiagram»
 	«EXPAND xpt::Common::generatedMemberComment("Store model element in the resource.\n<!-- begin-user-doc -->\n<!-- end-user-doc -->")»
-	private static void attachModelToResource(«domainDiagramElement.getQualifiedInterfaceName()» model, org.eclipse.emf.ecore.resource.Resource resource) {
+	private static void attachModelToResource(«EXPAND MetaModel::QualifiedClassName FOR domainDiagramElement» model, org.eclipse.emf.ecore.resource.Resource resource) {
 		resource.getContents().add(«IF hasDocumentRoot()»createDocumentRoot(model)«ELSE»«IF domainDiagramElement.isExternalInterface()»(org.eclipse.emf.ecore.EObject) «ENDIF»model«ENDIF»);
 		«EXPAND loadDefaultImportsCall»
 	}
@@ -79,7 +79,7 @@
 «DEFINE loadDefaultImports FOR gmfgen::GenDiagram» 
 	«IF needDefaultImports(this)-»
 	«EXPAND xpt::Common::generatedMemberComment»
-	private static void loadDefaultImports(«domainDiagramElement.getQualifiedInterfaceName()» model) {
+	private static void loadDefaultImports(«EXPAND MetaModel::QualifiedClassName FOR domainDiagramElement» model) {
 		org.eclipse.emf.ecore.resource.ResourceSet resourceSet = model.eResource().getResourceSet();
 		org.eclipse.uml2.uml.Model umlLibrary = (org.eclipse.uml2.uml.Model) resourceSet.getResource(«-»
 			org.eclipse.emf.common.util.URI.createURI(org.eclipse.uml2.uml.resource.UMLResource.UML_PRIMITIVE_TYPES_LIBRARY_URI), true).getContents().get(0);

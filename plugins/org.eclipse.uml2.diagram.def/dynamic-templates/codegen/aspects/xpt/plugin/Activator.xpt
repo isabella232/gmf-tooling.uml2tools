@@ -82,9 +82,7 @@ public class «activatorClassName» extends org.eclipse.ui.plugin.AbstractUIPlugin
 		factories.add(new org.eclipse.uml2.diagram.common.providers.AlternativeUMLItemProviderAdapterFactory(getPreferenceStore()));
 		«REM»THE ONLY CHANGE IS ABOVE«ENDREM»«-»
 		
-		«FOREACH editorGen.getAllDomainGenPackages(true) AS genPackage-»
-		factories.add(new «genPackage.getQualifiedItemProviderAdapterFactoryClassName()»());
-		«ENDFOREACH-»
+		«EXPAND MetaModel::PopulateItemProviderFactories("factories") FOR editorGen-»
 		factories.add(new org.eclipse.emf.edit.provider.resource.ResourceItemProviderAdapterFactory());
 		factories.add(new org.eclipse.emf.edit.provider.ReflectiveItemProviderAdapterFactory());
 	}

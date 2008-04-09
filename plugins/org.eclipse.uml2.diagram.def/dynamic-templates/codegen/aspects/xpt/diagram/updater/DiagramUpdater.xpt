@@ -27,13 +27,13 @@
 	«IF !isDiagramHeader(this) -»
 if (visualID == «EXPAND xpt::editor::VisualIDRegistry::visualID») {
 	result.add(new «getDiagram().editorGen.diagramUpdater.getNodeDescriptorQualifiedClassName()»(«-»
-		«IF null != modelFacet.childMetaFeature»«EXPAND xpt::Common::castToEObject FOR getTypeGenClassX(modelFacet.childMetaFeature)»«ENDIF»childElement, visualID));
+		«IF null != modelFacet.childMetaFeature»«EXPAND MetaModel::DowncastToEObject("childElement") FOR getTypeGenClassX(modelFacet.childMetaFeature)»«ELSE»childElement«ENDIF», visualID));
 		«REM» Addition here -- if node is multi-view, add node descriptors for each of the parts«ENDREM»«-»
 		«LET ((gmfgenext::SubstitutableByAttributes)viewmap.attributes.typeSelect(gmfgenext::SubstitutableByAttributes).first()) AS group -»
 				«IF null != group && group.requiresAll -»
 						«FOREACH group.getSubstitutableByNodes() AS nextPart-»
 	result.add(new «getDiagram().editorGen.diagramUpdater.getNodeDescriptorQualifiedClassName()»(«-»
-		«IF null != modelFacet.childMetaFeature»«EXPAND xpt::Common::castToEObject FOR getTypeGenClassX(modelFacet.childMetaFeature)»«ENDIF»childElement, «EXPAND xpt::editor::VisualIDRegistry::visualID FOR nextPart»));
+		«IF null != modelFacet.childMetaFeature»«EXPAND MetaModel::DowncastToEObject("childElement") FOR getTypeGenClassX(modelFacet.childMetaFeature)»«ELSE»childElement«ENDIF», «EXPAND xpt::editor::VisualIDRegistry::visualID FOR nextPart»));
 						«ENDFOREACH-»		
 				«ENDIF-»
 		«ENDLET-»
