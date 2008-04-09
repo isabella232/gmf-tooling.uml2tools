@@ -7,7 +7,9 @@ import org.eclipse.gmf.runtime.emf.type.core.requests.CreateElementRequest;
 import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.uml2.diagram.usecase.providers.UMLElementTypes;
 import org.eclipse.uml2.uml.ExtensionPoint;
+import org.eclipse.uml2.uml.UMLFactory;
 import org.eclipse.uml2.uml.UMLPackage;
+import org.eclipse.uml2.uml.UseCase;
 
 /**
  * @generated
@@ -43,10 +45,12 @@ public class ExtensionPoint2CreateCommand extends CreateElementCommand {
 	 * @generated
 	 */
 	protected EObject doDefaultElementCreation() {
-		ExtensionPoint newElement = (ExtensionPoint) super.doDefaultElementCreation();
-		if (newElement != null) {
-			UMLElementTypes.Initializers.ExtensionPoint_3003.init(newElement);
-		}
+		ExtensionPoint newElement = UMLFactory.eINSTANCE.createExtensionPoint();
+
+		UseCase owner = (UseCase) getElementToEdit();
+		owner.getExtensionPoints().add(newElement);
+
+		UMLElementTypes.init_ExtensionPoint_3003(newElement);
 		return newElement;
 	}
 

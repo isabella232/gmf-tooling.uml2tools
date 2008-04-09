@@ -7,6 +7,7 @@ import org.eclipse.gmf.runtime.emf.type.core.requests.CreateElementRequest;
 import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.uml2.diagram.usecase.providers.UMLElementTypes;
 import org.eclipse.uml2.uml.Classifier;
+import org.eclipse.uml2.uml.UMLFactory;
 import org.eclipse.uml2.uml.UMLPackage;
 import org.eclipse.uml2.uml.UseCase;
 
@@ -44,14 +45,15 @@ public class InnerUseCaseCreateCommand extends CreateElementCommand {
 	 * @generated
 	 */
 	protected EObject doDefaultElementCreation() {
-		UseCase newElement = (UseCase) super.doDefaultElementCreation();
-		if (newElement != null) {
-			Classifier container = (Classifier) getElementToEdit();
-			if (container != null) {
-				container.getUseCases().add(newElement);
-			}
-			UMLElementTypes.Initializers.UseCase_3004.init(newElement);
-		}
+		UseCase newElement = UMLFactory.eINSTANCE.createUseCase();
+
+		Classifier owner = (Classifier) getElementToEdit();
+		owner.getOwnedUseCases().add(newElement);
+
+		Classifier childHolder = (Classifier) getElementToEdit();
+		childHolder.getUseCases().add(newElement);
+
+		UMLElementTypes.init_UseCase_3004(newElement);
 		return newElement;
 	}
 

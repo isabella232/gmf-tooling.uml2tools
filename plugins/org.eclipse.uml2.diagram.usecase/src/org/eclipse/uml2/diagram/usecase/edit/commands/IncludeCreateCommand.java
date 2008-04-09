@@ -65,10 +65,10 @@ public class IncludeCreateCommand extends CreateElementCommand {
 		if (source == null && target == null) {
 			return false;
 		}
-		if (source != null && !(source instanceof UseCase)) {
+		if (source != null && false == source instanceof UseCase) {
 			return false;
 		}
-		if (target != null && !(target instanceof UseCase)) {
+		if (target != null && false == target instanceof UseCase) {
 			return false;
 		}
 		if (getSource() == null) {
@@ -85,11 +85,11 @@ public class IncludeCreateCommand extends CreateElementCommand {
 	 * @generated
 	 */
 	protected EObject doDefaultElementCreation() {
-		// org.eclipse.uml2.uml.Include newElement = (org.eclipse.uml2.uml.Include) super.doDefaultElementCreation();
 		Include newElement = UMLFactory.eINSTANCE.createInclude();
 		getContainer().getIncludes().add(newElement);
 		newElement.setIncludingCase(getSource());
 		newElement.setAddition(getTarget());
+
 		return newElement;
 	}
 

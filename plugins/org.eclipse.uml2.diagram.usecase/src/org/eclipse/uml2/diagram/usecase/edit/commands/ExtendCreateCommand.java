@@ -65,10 +65,10 @@ public class ExtendCreateCommand extends CreateElementCommand {
 		if (source == null && target == null) {
 			return false;
 		}
-		if (source != null && !(source instanceof UseCase)) {
+		if (source != null && false == source instanceof UseCase) {
 			return false;
 		}
-		if (target != null && !(target instanceof UseCase)) {
+		if (target != null && false == target instanceof UseCase) {
 			return false;
 		}
 		if (getSource() == null) {
@@ -85,11 +85,11 @@ public class ExtendCreateCommand extends CreateElementCommand {
 	 * @generated
 	 */
 	protected EObject doDefaultElementCreation() {
-		// org.eclipse.uml2.uml.Extend newElement = (org.eclipse.uml2.uml.Extend) super.doDefaultElementCreation();
 		Extend newElement = UMLFactory.eINSTANCE.createExtend();
 		getContainer().getExtends().add(newElement);
 		newElement.setExtension(getSource());
 		newElement.setExtendedCase(getTarget());
+
 		return newElement;
 	}
 

@@ -6,6 +6,8 @@ import org.eclipse.gmf.runtime.emf.type.core.commands.CreateElementCommand;
 import org.eclipse.gmf.runtime.emf.type.core.requests.CreateElementRequest;
 import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.uml2.diagram.usecase.providers.UMLElementTypes;
+import org.eclipse.uml2.uml.Package;
+import org.eclipse.uml2.uml.UMLFactory;
 import org.eclipse.uml2.uml.UMLPackage;
 import org.eclipse.uml2.uml.UseCase;
 
@@ -43,10 +45,12 @@ public class UseCaseCreateCommand extends CreateElementCommand {
 	 * @generated
 	 */
 	protected EObject doDefaultElementCreation() {
-		UseCase newElement = (UseCase) super.doDefaultElementCreation();
-		if (newElement != null) {
-			UMLElementTypes.Initializers.UseCase_2003.init(newElement);
-		}
+		UseCase newElement = UMLFactory.eINSTANCE.createUseCase();
+
+		Package owner = (Package) getElementToEdit();
+		owner.getPackagedElements().add(newElement);
+
+		UMLElementTypes.init_UseCase_2003(newElement);
 		return newElement;
 	}
 

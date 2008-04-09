@@ -42,10 +42,10 @@ public class ConstraintConstrainedElementCreateCommand extends EditElementComman
 		if (source == null && target == null) {
 			return false;
 		}
-		if (source != null && !(source instanceof Constraint)) {
+		if (source != null && false == source instanceof Constraint) {
 			return false;
 		}
-		if (target != null && !(target instanceof Element)) {
+		if (target != null && false == target instanceof Element) {
 			return false;
 		}
 		if (getSource() == null) {
