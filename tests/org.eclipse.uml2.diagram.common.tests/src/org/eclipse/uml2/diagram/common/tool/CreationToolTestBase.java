@@ -6,6 +6,7 @@ import junit.framework.TestCase;
 
 import org.eclipse.draw2d.geometry.Point;
 import org.eclipse.gef.EditDomain;
+import org.eclipse.gef.Tool;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.DiagramEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.tools.ConnectionCreationTool;
@@ -55,11 +56,16 @@ public abstract class CreationToolTestBase extends TestCase {
 	@Override
 	protected void tearDown() throws Exception {
 		myDiagramFacade.close();
+		myDiagramFacade = null;
+		myDiagramEditPart = null;
+		myEditDomain = null;
+		myDiagramViewer = null;
 		try {
 			myProject.close();
 		} catch (Exception e) {
 			e.printStackTrace();			
 		}
+		myProject = null;
 		super.tearDown();
 	}
 	
@@ -104,14 +110,26 @@ public abstract class CreationToolTestBase extends TestCase {
 		createNodeByTool(elementType, 70, 70);
 	}
 
-	protected void createNodeByTool(IElementType elementType, int x, int y) {
-		UnspecifiedTypeCreationTool tool = new UnspecifiedTypeCreationTool(Collections.singletonList(elementType));
+	protected void createNodeByTool(Tool tool, int x, int y) {
 		tool.setEditDomain(myEditDomain);
 		tool.activate();
 		tool.mouseMove(createMouseEvent(x, y), myDiagramViewer);
 		tool.mouseDown(createMouseEvent(x, y), myDiagramViewer);
 		tool.mouseUp(createMouseEvent(x, y), myDiagramViewer);
 		tool.deactivate();
+	}
+
+	protected void createNodeByTool(IElementType elementType, int x, int y) {
+		UnspecifiedTypeCreationTool tool = new UnspecifiedTypeCreationTool(Collections.singletonList(elementType));
+		createNodeByTool(tool, x, y);
+	}
+
+	protected void createNodeByTool(IElementType elementType, Point p) {
+		createNodeByTool(elementType, p.x, p.y);
+	}
+
+	protected void createNodeByTool(Tool tool, Point p) {
+		createNodeByTool(tool, p.x, p.y);
 	}
 
 	private MouseEvent createMouseEvent(int x, int y) {
