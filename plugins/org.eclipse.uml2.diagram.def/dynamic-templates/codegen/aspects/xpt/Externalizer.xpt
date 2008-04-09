@@ -15,27 +15,27 @@
 
 «EXTENSION xpt::ExternalizerUtils»
 
-«AROUND Access FOR gmfgen::GenEditorGenerator-»
+«DEFINE Access FOR gmfgen::GenEditorGenerator-»
 «EXPAND xpt::Common::copyright-»
-package «getAccessorQualifier()»;
+package «getExternalizerPackageName()»;
 
 «EXPAND xpt::Common::generatedClassComment»
-public class «getAccessorName()» extends org.eclipse.osgi.util.NLS {
+public class «getExternalizerClassName()» extends org.eclipse.osgi.util.NLS {
 
 	«EXPAND xpt::Common::generatedMemberComment»
 	static {
-		org.eclipse.osgi.util.NLS.initializeMessages("«getAccessorName().toLowerCase()»", «getAccessorName()».class); «EXPAND xpt::Common::nonNLS»
+		org.eclipse.osgi.util.NLS.initializeMessages("«getExternalizerClassName().toLowerCase()»", «getExternalizerClassName()».class); «EXPAND xpt::Common::nonNLS»
 	}
 
 	«EXPAND xpt::Common::generatedMemberComment»
-	private «getAccessorName()»() {
+	private «getExternalizerClassName()»() {
 	}
 
 	«EXPAND xpt::Externalizer::Fields»
-    //TODO: put accessor fields manually	
-«EXPAND additions»
+    //TODO: put accessor fields manually
+    «EXPAND additions»
 }
-«ENDAROUND»
+«ENDDEFINE»
 
 «AROUND Values FOR gmfgen::GenEditorGenerator»
 «targetDef.proceed()»
