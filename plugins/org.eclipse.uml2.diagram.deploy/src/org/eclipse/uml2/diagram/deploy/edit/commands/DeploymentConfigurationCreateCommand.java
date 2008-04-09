@@ -42,10 +42,10 @@ public class DeploymentConfigurationCreateCommand extends EditElementCommand {
 		if (source == null && target == null) {
 			return false;
 		}
-		if (source != null && !(source instanceof Deployment)) {
+		if (source != null && false == source instanceof Deployment) {
 			return false;
 		}
-		if (target != null && !(target instanceof DeploymentSpecification)) {
+		if (target != null && false == target instanceof DeploymentSpecification) {
 			return false;
 		}
 		if (getSource() == null) {

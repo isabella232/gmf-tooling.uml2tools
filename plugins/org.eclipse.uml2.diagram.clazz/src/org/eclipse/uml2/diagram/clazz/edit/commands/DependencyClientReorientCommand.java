@@ -52,7 +52,7 @@ public class DependencyClientReorientCommand extends EditElementCommand {
 	 * @generated
 	 */
 	public boolean canExecute() {
-		if (!(referenceOwner instanceof Dependency)) {
+		if (false == referenceOwner instanceof Dependency) {
 			return false;
 		}
 		if (reorientDirection == ReorientRelationshipRequest.REORIENT_SOURCE) {

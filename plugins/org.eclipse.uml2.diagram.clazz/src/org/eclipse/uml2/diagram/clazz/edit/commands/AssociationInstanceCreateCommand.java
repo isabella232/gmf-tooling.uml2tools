@@ -66,10 +66,10 @@ public class AssociationInstanceCreateCommand extends CreateElementCommand {
 		if (source == null && target == null) {
 			return false;
 		}
-		if (source != null && !(source instanceof InstanceSpecification)) {
+		if (source != null && false == source instanceof InstanceSpecification) {
 			return false;
 		}
-		if (target != null && !(target instanceof InstanceSpecification)) {
+		if (target != null && false == target instanceof InstanceSpecification) {
 			return false;
 		}
 		if (getSource() == null) {

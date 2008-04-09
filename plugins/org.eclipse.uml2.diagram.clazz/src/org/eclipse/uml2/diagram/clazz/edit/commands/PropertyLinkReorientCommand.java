@@ -46,7 +46,7 @@ public class PropertyLinkReorientCommand extends EditElementCommand {
 	 * @generated
 	 */
 	public boolean canExecute() {
-		if (!(getElementToEdit() instanceof Property)) {
+		if (false == getElementToEdit() instanceof Property) {
 			return false;
 		}
 		if (reorientDirection == ReorientRelationshipRequest.REORIENT_SOURCE) {

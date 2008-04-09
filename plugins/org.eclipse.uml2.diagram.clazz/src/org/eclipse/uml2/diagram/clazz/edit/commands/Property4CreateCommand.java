@@ -11,7 +11,9 @@ import org.eclipse.gmf.runtime.notation.View;
 
 import org.eclipse.uml2.diagram.clazz.providers.UMLElementTypes;
 
+import org.eclipse.uml2.uml.DataType;
 import org.eclipse.uml2.uml.Property;
+import org.eclipse.uml2.uml.UMLFactory;
 import org.eclipse.uml2.uml.UMLPackage;
 
 /**
@@ -48,10 +50,12 @@ public class Property4CreateCommand extends CreateElementCommand {
 	 * @generated
 	 */
 	protected EObject doDefaultElementCreation() {
-		Property newElement = (Property) super.doDefaultElementCreation();
-		if (newElement != null) {
-			UMLElementTypes.Initializers.Property_3021.init(newElement);
-		}
+		Property newElement = UMLFactory.eINSTANCE.createProperty();
+
+		DataType owner = (DataType) getElementToEdit();
+		owner.getOwnedAttributes().add(newElement);
+
+		UMLElementTypes.init_Property_3021(newElement);
 		return newElement;
 	}
 

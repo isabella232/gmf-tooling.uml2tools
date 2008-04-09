@@ -52,7 +52,7 @@ public class DeploymentConfigurationReorientCommand extends EditElementCommand {
 	 * @generated
 	 */
 	public boolean canExecute() {
-		if (!(referenceOwner instanceof Deployment)) {
+		if (false == referenceOwner instanceof Deployment) {
 			return false;
 		}
 		if (reorientDirection == ReorientRelationshipRequest.REORIENT_SOURCE) {

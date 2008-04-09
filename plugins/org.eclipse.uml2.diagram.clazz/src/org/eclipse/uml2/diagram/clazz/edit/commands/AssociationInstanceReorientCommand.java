@@ -48,7 +48,7 @@ public class AssociationInstanceReorientCommand extends EditElementCommand {
 	 * @generated
 	 */
 	public boolean canExecute() {
-		if (!(getElementToEdit() instanceof Slot)) {
+		if (false == getElementToEdit() instanceof Slot) {
 			return false;
 		}
 		if (reorientDirection == ReorientRelationshipRequest.REORIENT_SOURCE) {

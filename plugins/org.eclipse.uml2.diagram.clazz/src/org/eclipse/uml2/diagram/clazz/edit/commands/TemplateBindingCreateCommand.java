@@ -65,10 +65,10 @@ public class TemplateBindingCreateCommand extends CreateElementCommand {
 		if (source == null && target == null) {
 			return false;
 		}
-		if (source != null && !(source instanceof TemplateableElement)) {
+		if (source != null && false == source instanceof TemplateableElement) {
 			return false;
 		}
-		if (target != null && !(target instanceof TemplateableElement)) {
+		if (target != null && false == target instanceof TemplateableElement) {
 			return false;
 		}
 		if (getSource() == null) {

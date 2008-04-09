@@ -45,7 +45,7 @@ public class TemplateBindingReorientCommand extends EditElementCommand {
 	 * @generated
 	 */
 	public boolean canExecute() {
-		if (!(getElementToEdit() instanceof TemplateBinding)) {
+		if (false == getElementToEdit() instanceof TemplateBinding) {
 			return false;
 		}
 		if (reorientDirection == ReorientRelationshipRequest.REORIENT_SOURCE) {

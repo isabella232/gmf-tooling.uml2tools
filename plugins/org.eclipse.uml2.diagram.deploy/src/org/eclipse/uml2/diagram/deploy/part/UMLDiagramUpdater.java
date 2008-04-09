@@ -1031,7 +1031,7 @@ public class UMLDiagramUpdater {
 	private static Collection getContainedTypeModelFacetLinks_Deployment_4001(DeploymentTarget container) {
 		Collection result = new LinkedList();
 		for (Iterator links = container.getDeployments().iterator(); links.hasNext();) {
-			Object linkObject = links.next();
+			EObject linkObject = (EObject) links.next();
 			if (false == linkObject instanceof Deployment) {
 				continue;
 			}
@@ -1057,7 +1057,7 @@ public class UMLDiagramUpdater {
 	private static Collection getContainedTypeModelFacetLinks_Manifestation_4002(Artifact container) {
 		Collection result = new LinkedList();
 		for (Iterator links = container.getManifestations().iterator(); links.hasNext();) {
-			Object linkObject = links.next();
+			EObject linkObject = (EObject) links.next();
 			if (false == linkObject instanceof Manifestation) {
 				continue;
 			}
@@ -1101,7 +1101,7 @@ public class UMLDiagramUpdater {
 	private static Collection getContainedTypeModelFacetLinks_Dependency_4005(Package container) {
 		Collection result = new LinkedList();
 		for (Iterator links = container.getPackagedElements().iterator(); links.hasNext();) {
-			Object linkObject = links.next();
+			EObject linkObject = (EObject) links.next();
 			if (false == linkObject instanceof Dependency) {
 				continue;
 			}
@@ -1238,7 +1238,7 @@ public class UMLDiagramUpdater {
 		}
 		Collection result = new LinkedList();
 		for (Iterator links = container.getDeployments().iterator(); links.hasNext();) {
-			Object linkObject = links.next();
+			EObject linkObject = (EObject) links.next();
 			if (false == linkObject instanceof Deployment) {
 				continue;
 			}
@@ -1298,7 +1298,7 @@ public class UMLDiagramUpdater {
 		}
 		Collection result = new LinkedList();
 		for (Iterator links = container.getPackagedElements().iterator(); links.hasNext();) {
-			Object linkObject = links.next();
+			EObject linkObject = (EObject) links.next();
 			if (false == linkObject instanceof Dependency) {
 				continue;
 			}

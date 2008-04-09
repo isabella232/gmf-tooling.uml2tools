@@ -50,10 +50,10 @@ public class PortProvidedCreateCommand extends EditElementCommand {
 		if (source == null && target == null) {
 			return false;
 		}
-		if (source != null && !(source instanceof Port)) {
+		if (source != null && false == source instanceof Port) {
 			return false;
 		}
-		if (target != null && !(target instanceof Interface)) {
+		if (target != null && false == target instanceof Interface) {
 			return false;
 		}
 		if (getSource() == null) {

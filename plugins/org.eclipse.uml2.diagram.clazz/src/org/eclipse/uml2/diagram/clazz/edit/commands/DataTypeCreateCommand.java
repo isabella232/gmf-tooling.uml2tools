@@ -12,6 +12,8 @@ import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.uml2.diagram.clazz.providers.UMLElementTypes;
 
 import org.eclipse.uml2.uml.DataType;
+import org.eclipse.uml2.uml.Package;
+import org.eclipse.uml2.uml.UMLFactory;
 import org.eclipse.uml2.uml.UMLPackage;
 
 /**
@@ -48,10 +50,12 @@ public class DataTypeCreateCommand extends CreateElementCommand {
 	 * @generated
 	 */
 	protected EObject doDefaultElementCreation() {
-		DataType newElement = (DataType) super.doDefaultElementCreation();
-		if (newElement != null) {
-			UMLElementTypes.Initializers.DataType_3008.init(newElement);
-		}
+		DataType newElement = UMLFactory.eINSTANCE.createDataType();
+
+		Package owner = (Package) getElementToEdit();
+		owner.getPackagedElements().add(newElement);
+
+		UMLElementTypes.init_DataType_3008(newElement);
 		return newElement;
 	}
 

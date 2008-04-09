@@ -66,10 +66,10 @@ public class AssociationClassConnectorCreateCommand extends CreateElementCommand
 		if (source == null && target == null) {
 			return false;
 		}
-		if (source != null && !(source instanceof CollaborationUse)) {
+		if (source != null && false == source instanceof CollaborationUse) {
 			return false;
 		}
-		if (target != null && !(target instanceof CollaborationUse)) {
+		if (target != null && false == target instanceof CollaborationUse) {
 			return false;
 		}
 		if (getSource() == null) {
@@ -86,11 +86,11 @@ public class AssociationClassConnectorCreateCommand extends CreateElementCommand
 	 * @generated
 	 */
 	protected EObject doDefaultElementCreation() {
-		// org.eclipse.uml2.uml.AssociationClass newElement = (org.eclipse.uml2.uml.AssociationClass) super.doDefaultElementCreation();
 		AssociationClass newElement = UMLFactory.eINSTANCE.createAssociationClass();
 		getContainer().getPackagedElements().add(newElement);
 		newElement.getCollaborationUses().add(getSource());
 		newElement.getCollaborationUses().add(getTarget());
+
 		return newElement;
 	}
 

@@ -52,10 +52,10 @@ public class PropertyLinkCreateCommand extends CreateElementCommand {
 		if (source == null && target == null) {
 			return false;
 		}
-		if (source != null && !(source instanceof Association)) {
+		if (source != null && false == source instanceof Association) {
 			return false;
 		}
-		if (target != null && !(target instanceof Type)) {
+		if (target != null && false == target instanceof Type) {
 			return false;
 		}
 		if (getSource() == null) {
@@ -69,10 +69,10 @@ public class PropertyLinkCreateCommand extends CreateElementCommand {
 	 * @generated
 	 */
 	protected EObject doDefaultElementCreation() {
-		// org.eclipse.uml2.uml.Property newElement = (org.eclipse.uml2.uml.Property) super.doDefaultElementCreation();
 		Property newElement = UMLFactory.eINSTANCE.createProperty();
 		getSource().getOwnedEnds().add(newElement);
 		newElement.setType(getTarget());
+
 		return newElement;
 	}
 

@@ -52,7 +52,7 @@ public class ConstraintConstrainedElementReorientCommand extends EditElementComm
 	 * @generated
 	 */
 	public boolean canExecute() {
-		if (!(referenceOwner instanceof Constraint)) {
+		if (false == referenceOwner instanceof Constraint) {
 			return false;
 		}
 		if (reorientDirection == ReorientRelationshipRequest.REORIENT_SOURCE) {

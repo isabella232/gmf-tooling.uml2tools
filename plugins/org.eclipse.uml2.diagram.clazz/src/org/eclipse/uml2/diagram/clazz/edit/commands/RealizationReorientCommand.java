@@ -46,7 +46,7 @@ public class RealizationReorientCommand extends EditElementCommand {
 	 * @generated
 	 */
 	public boolean canExecute() {
-		if (!(getElementToEdit() instanceof Realization)) {
+		if (false == getElementToEdit() instanceof Realization) {
 			return false;
 		}
 		if (reorientDirection == ReorientRelationshipRequest.REORIENT_SOURCE) {

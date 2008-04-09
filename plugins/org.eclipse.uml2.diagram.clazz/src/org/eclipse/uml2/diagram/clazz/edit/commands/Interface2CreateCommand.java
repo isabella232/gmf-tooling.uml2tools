@@ -12,6 +12,8 @@ import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.uml2.diagram.clazz.providers.UMLElementTypes;
 
 import org.eclipse.uml2.uml.Interface;
+import org.eclipse.uml2.uml.Package;
+import org.eclipse.uml2.uml.UMLFactory;
 import org.eclipse.uml2.uml.UMLPackage;
 
 /**
@@ -48,10 +50,12 @@ public class Interface2CreateCommand extends CreateElementCommand {
 	 * @generated
 	 */
 	protected EObject doDefaultElementCreation() {
-		Interface newElement = (Interface) super.doDefaultElementCreation();
-		if (newElement != null) {
-			UMLElementTypes.Initializers.Interface_2013.init(newElement);
-		}
+		Interface newElement = UMLFactory.eINSTANCE.createInterface();
+
+		Package owner = (Package) getElementToEdit();
+		owner.getPackagedElements().add(newElement);
+
+		UMLElementTypes.init_Interface_2013(newElement);
 		return newElement;
 	}
 

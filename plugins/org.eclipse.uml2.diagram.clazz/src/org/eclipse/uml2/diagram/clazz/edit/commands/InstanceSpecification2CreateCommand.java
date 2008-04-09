@@ -12,6 +12,8 @@ import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.uml2.diagram.clazz.providers.UMLElementTypes;
 
 import org.eclipse.uml2.uml.InstanceSpecification;
+import org.eclipse.uml2.uml.Package;
+import org.eclipse.uml2.uml.UMLFactory;
 import org.eclipse.uml2.uml.UMLPackage;
 
 /**
@@ -48,10 +50,12 @@ public class InstanceSpecification2CreateCommand extends CreateElementCommand {
 	 * @generated
 	 */
 	protected EObject doDefaultElementCreation() {
-		InstanceSpecification newElement = (InstanceSpecification) super.doDefaultElementCreation();
-		if (newElement != null) {
-			UMLElementTypes.Initializers.InstanceSpecification_2008.init(newElement);
-		}
+		InstanceSpecification newElement = UMLFactory.eINSTANCE.createInstanceSpecification();
+
+		Package owner = (Package) getElementToEdit();
+		owner.getPackagedElements().add(newElement);
+
+		UMLElementTypes.init_InstanceSpecification_2008(newElement);
 		return newElement;
 	}
 

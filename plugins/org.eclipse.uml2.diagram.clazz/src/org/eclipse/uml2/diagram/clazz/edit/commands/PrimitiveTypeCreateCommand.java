@@ -11,7 +11,9 @@ import org.eclipse.gmf.runtime.notation.View;
 
 import org.eclipse.uml2.diagram.clazz.providers.UMLElementTypes;
 
+import org.eclipse.uml2.uml.Package;
 import org.eclipse.uml2.uml.PrimitiveType;
+import org.eclipse.uml2.uml.UMLFactory;
 import org.eclipse.uml2.uml.UMLPackage;
 
 /**
@@ -48,10 +50,12 @@ public class PrimitiveTypeCreateCommand extends CreateElementCommand {
 	 * @generated
 	 */
 	protected EObject doDefaultElementCreation() {
-		PrimitiveType newElement = (PrimitiveType) super.doDefaultElementCreation();
-		if (newElement != null) {
-			UMLElementTypes.Initializers.PrimitiveType_3009.init(newElement);
-		}
+		PrimitiveType newElement = UMLFactory.eINSTANCE.createPrimitiveType();
+
+		Package owner = (Package) getElementToEdit();
+		owner.getPackagedElements().add(newElement);
+
+		UMLElementTypes.init_PrimitiveType_3009(newElement);
 		return newElement;
 	}
 

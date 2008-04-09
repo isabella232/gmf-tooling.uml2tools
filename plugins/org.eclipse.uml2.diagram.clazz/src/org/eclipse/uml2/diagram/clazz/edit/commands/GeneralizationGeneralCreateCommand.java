@@ -42,10 +42,10 @@ public class GeneralizationGeneralCreateCommand extends EditElementCommand {
 		if (source == null && target == null) {
 			return false;
 		}
-		if (source != null && !(source instanceof Generalization)) {
+		if (source != null && false == source instanceof Generalization) {
 			return false;
 		}
-		if (target != null && !(target instanceof Classifier)) {
+		if (target != null && false == target instanceof Classifier) {
 			return false;
 		}
 		if (getSource() == null) {

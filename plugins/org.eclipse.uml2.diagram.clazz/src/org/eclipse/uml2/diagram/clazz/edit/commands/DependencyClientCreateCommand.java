@@ -42,10 +42,10 @@ public class DependencyClientCreateCommand extends EditElementCommand {
 		if (source == null && target == null) {
 			return false;
 		}
-		if (source != null && !(source instanceof Dependency)) {
+		if (source != null && false == source instanceof Dependency) {
 			return false;
 		}
-		if (target != null && !(target instanceof NamedElement)) {
+		if (target != null && false == target instanceof NamedElement) {
 			return false;
 		}
 		if (getSource() == null) {

@@ -45,7 +45,7 @@ public class GeneralizationReorientCommand extends EditElementCommand {
 	 * @generated
 	 */
 	public boolean canExecute() {
-		if (!(getElementToEdit() instanceof Generalization)) {
+		if (false == getElementToEdit() instanceof Generalization) {
 			return false;
 		}
 		if (reorientDirection == ReorientRelationshipRequest.REORIENT_SOURCE) {

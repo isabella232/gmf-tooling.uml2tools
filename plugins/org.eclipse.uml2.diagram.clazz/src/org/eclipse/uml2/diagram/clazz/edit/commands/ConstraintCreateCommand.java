@@ -12,6 +12,8 @@ import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.uml2.diagram.clazz.providers.UMLElementTypes;
 
 import org.eclipse.uml2.uml.Constraint;
+import org.eclipse.uml2.uml.Package;
+import org.eclipse.uml2.uml.UMLFactory;
 import org.eclipse.uml2.uml.UMLPackage;
 
 /**
@@ -48,10 +50,12 @@ public class ConstraintCreateCommand extends CreateElementCommand {
 	 * @generated
 	 */
 	protected EObject doDefaultElementCreation() {
-		Constraint newElement = (Constraint) super.doDefaultElementCreation();
-		if (newElement != null) {
-			UMLElementTypes.Initializers.Constraint_2006.init(newElement);
-		}
+		Constraint newElement = UMLFactory.eINSTANCE.createConstraint();
+
+		Package owner = (Package) getElementToEdit();
+		owner.getPackagedElements().add(newElement);
+
+		UMLElementTypes.init_Constraint_2006(newElement);
 		return newElement;
 	}
 

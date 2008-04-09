@@ -69,10 +69,10 @@ public class DependencyLinkCreateCommand extends CreateElementCommand {
 		if (source == null && target == null) {
 			return false;
 		}
-		if (source != null && !(source instanceof NamedElement)) {
+		if (source != null && false == source instanceof NamedElement) {
 			return false;
 		}
-		if (target != null && !(target instanceof NamedElement)) {
+		if (target != null && false == target instanceof NamedElement) {
 			return false;
 		}
 		if (getSource() == null) {
@@ -89,11 +89,11 @@ public class DependencyLinkCreateCommand extends CreateElementCommand {
 	 * @generated
 	 */
 	protected EObject doDefaultElementCreationGen() {
-		// org.eclipse.uml2.uml.Dependency newElement = (org.eclipse.uml2.uml.Dependency) super.doDefaultElementCreation();
 		Dependency newElement = UMLFactory.eINSTANCE.createDependency();
 		getContainer().getPackagedElements().add(newElement);
 		newElement.getClients().add(getSource());
 		newElement.getSuppliers().add(getTarget());
+
 		return newElement;
 	}
 

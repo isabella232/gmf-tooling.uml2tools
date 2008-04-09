@@ -49,7 +49,7 @@ public class CommunicationPathReorientCommand extends EditElementCommand {
 	 * @generated
 	 */
 	public boolean canExecute() {
-		if (!(getElementToEdit() instanceof CommunicationPath)) {
+		if (false == getElementToEdit() instanceof CommunicationPath) {
 			return false;
 		}
 		if (reorientDirection == ReorientRelationshipRequest.REORIENT_SOURCE) {

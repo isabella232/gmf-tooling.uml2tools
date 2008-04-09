@@ -46,7 +46,7 @@ public class DeploymentReorientCommand extends EditElementCommand {
 	 * @generated
 	 */
 	public boolean canExecute() {
-		if (!(getElementToEdit() instanceof Deployment)) {
+		if (false == getElementToEdit() instanceof Deployment) {
 			return false;
 		}
 		if (reorientDirection == ReorientRelationshipRequest.REORIENT_SOURCE) {

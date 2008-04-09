@@ -11,7 +11,9 @@ import org.eclipse.gmf.runtime.notation.View;
 
 import org.eclipse.uml2.diagram.clazz.providers.UMLElementTypes;
 
+import org.eclipse.uml2.uml.DataType;
 import org.eclipse.uml2.uml.Operation;
+import org.eclipse.uml2.uml.UMLFactory;
 import org.eclipse.uml2.uml.UMLPackage;
 
 /**
@@ -48,10 +50,12 @@ public class Operation3CreateCommand extends CreateElementCommand {
 	 * @generated
 	 */
 	protected EObject doDefaultElementCreation() {
-		Operation newElement = (Operation) super.doDefaultElementCreation();
-		if (newElement != null) {
-			UMLElementTypes.Initializers.Operation_3015.init(newElement);
-		}
+		Operation newElement = UMLFactory.eINSTANCE.createOperation();
+
+		DataType owner = (DataType) getElementToEdit();
+		owner.getOwnedOperations().add(newElement);
+
+		UMLElementTypes.init_Operation_3015(newElement);
 		return newElement;
 	}
 

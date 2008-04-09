@@ -66,10 +66,10 @@ public class RealizationCreateCommand extends CreateElementCommand {
 		if (source == null && target == null) {
 			return false;
 		}
-		if (source != null && !(source instanceof NamedElement)) {
+		if (source != null && false == source instanceof NamedElement) {
 			return false;
 		}
-		if (target != null && !(target instanceof NamedElement)) {
+		if (target != null && false == target instanceof NamedElement) {
 			return false;
 		}
 		if (getSource() == null) {
@@ -86,11 +86,11 @@ public class RealizationCreateCommand extends CreateElementCommand {
 	 * @generated
 	 */
 	protected EObject doDefaultElementCreation() {
-		// org.eclipse.uml2.uml.Realization newElement = (org.eclipse.uml2.uml.Realization) super.doDefaultElementCreation();
 		Realization newElement = UMLFactory.eINSTANCE.createRealization();
 		getContainer().getPackagedElements().add(newElement);
 		newElement.getClients().add(getSource());
 		newElement.getSuppliers().add(getTarget());
+
 		return newElement;
 	}
 

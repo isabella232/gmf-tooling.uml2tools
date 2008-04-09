@@ -11,7 +11,6 @@ import org.eclipse.gmf.runtime.emf.type.core.requests.ConfigureRequest;
 import org.eclipse.gmf.runtime.emf.type.core.requests.CreateRelationshipRequest;
 import org.eclipse.uml2.diagram.deploy.edit.policies.UMLBaseItemSemanticEditPolicy;
 import org.eclipse.uml2.uml.Artifact;
-import org.eclipse.uml2.uml.Element;
 import org.eclipse.uml2.uml.Manifestation;
 import org.eclipse.uml2.uml.PackageableElement;
 import org.eclipse.uml2.uml.UMLFactory;
@@ -53,10 +52,10 @@ public class ManifestationCreateCommand extends CreateElementCommand {
 		if (source == null && target == null) {
 			return false;
 		}
-		if (source != null && !(source instanceof Artifact)) {
+		if (source != null && false == source instanceof Artifact) {
 			return false;
 		}
-		if (target != null && !(target instanceof PackageableElement)) {
+		if (target != null && false == target instanceof PackageableElement) {
 			return false;
 		}
 		if (getSource() == null) {
@@ -70,10 +69,10 @@ public class ManifestationCreateCommand extends CreateElementCommand {
 	 * @generated
 	 */
 	protected EObject doDefaultElementCreation() {
-		// org.eclipse.uml2.uml.Manifestation newElement = (org.eclipse.uml2.uml.Manifestation) super.doDefaultElementCreation();
 		Manifestation newElement = UMLFactory.eINSTANCE.createManifestation();
 		getSource().getManifestations().add(newElement);
 		newElement.setUtilizedElement(getTarget());
+
 		return newElement;
 	}
 

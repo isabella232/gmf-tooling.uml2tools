@@ -12,6 +12,8 @@ import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.uml2.diagram.clazz.providers.UMLElementTypes;
 
 import org.eclipse.uml2.uml.AssociationClass;
+import org.eclipse.uml2.uml.Package;
+import org.eclipse.uml2.uml.UMLFactory;
 import org.eclipse.uml2.uml.UMLPackage;
 
 /**
@@ -48,10 +50,12 @@ public class AssociationClassCreateCommand extends CreateElementCommand {
 	 * @generated
 	 */
 	protected EObject doDefaultElementCreation() {
-		AssociationClass newElement = (AssociationClass) super.doDefaultElementCreation();
-		if (newElement != null) {
-			UMLElementTypes.Initializers.AssociationClass_3012.init(newElement);
-		}
+		AssociationClass newElement = UMLFactory.eINSTANCE.createAssociationClass();
+
+		Package owner = (Package) getElementToEdit();
+		owner.getPackagedElements().add(newElement);
+
+		UMLElementTypes.init_AssociationClass_3012(newElement);
 		return newElement;
 	}
 

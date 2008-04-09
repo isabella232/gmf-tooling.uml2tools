@@ -4310,7 +4310,7 @@ public class UMLDiagramUpdater {
 	private static Collection getContainedTypeModelFacetLinks_Generalization_4001(Classifier container) {
 		Collection result = new LinkedList();
 		for (Iterator links = container.getGeneralizations().iterator(); links.hasNext();) {
-			Object linkObject = links.next();
+			EObject linkObject = (EObject) links.next();
 			if (false == linkObject instanceof Generalization) {
 				continue;
 			}
@@ -4330,7 +4330,7 @@ public class UMLDiagramUpdater {
 	private static Collection getContainedTypeModelFacetLinks_Dependency_4002(Package container) {
 		Collection result = new LinkedList();
 		for (Iterator links = container.getPackagedElements().iterator(); links.hasNext();) {
-			Object linkObject = links.next();
+			EObject linkObject = (EObject) links.next();
 			if (false == linkObject instanceof Dependency) {
 				continue;
 			}
@@ -4459,7 +4459,7 @@ public class UMLDiagramUpdater {
 	private static Collection getContainedTypeModelFacetLinks_InterfaceRealization_4008(BehavioredClassifier container) {
 		Collection result = new LinkedList();
 		for (Iterator links = container.getInterfaceRealizations().iterator(); links.hasNext();) {
-			Object linkObject = links.next();
+			EObject linkObject = (EObject) links.next();
 			if (false == linkObject instanceof InterfaceRealization) {
 				continue;
 			}
@@ -4480,7 +4480,7 @@ public class UMLDiagramUpdater {
 	private static Collection getContainedTypeModelFacetLinks_Realization_4010(Package container) {
 		Collection result = new LinkedList();
 		for (Iterator links = container.getPackagedElements().iterator(); links.hasNext();) {
-			Object linkObject = links.next();
+			EObject linkObject = (EObject) links.next();
 			if (false == linkObject instanceof Realization) {
 				continue;
 			}
@@ -4511,7 +4511,7 @@ public class UMLDiagramUpdater {
 	private static Collection getContainedTypeModelFacetLinks_Generalization_4011(Classifier container) {
 		Collection result = new LinkedList();
 		for (Iterator links = container.getGeneralizations().iterator(); links.hasNext();) {
-			Object linkObject = links.next();
+			EObject linkObject = (EObject) links.next();
 			if (false == linkObject instanceof Generalization) {
 				continue;
 			}
@@ -4536,7 +4536,7 @@ public class UMLDiagramUpdater {
 	private static Collection getContainedTypeModelFacetLinks_Usage_4013(Package container) {
 		Collection result = new LinkedList();
 		for (Iterator links = container.getPackagedElements().iterator(); links.hasNext();) {
-			Object linkObject = links.next();
+			EObject linkObject = (EObject) links.next();
 			if (false == linkObject instanceof Usage) {
 				continue;
 			}
@@ -4953,7 +4953,7 @@ public class UMLDiagramUpdater {
 		}
 		Collection result = new LinkedList();
 		for (Iterator links = container.getPackagedElements().iterator(); links.hasNext();) {
-			Object linkObject = links.next();
+			EObject linkObject = (EObject) links.next();
 			if (false == linkObject instanceof Dependency) {
 				continue;
 			}
@@ -5035,7 +5035,7 @@ public class UMLDiagramUpdater {
 		}
 		Collection result = new LinkedList();
 		for (Iterator links = container.getInterfaceRealizations().iterator(); links.hasNext();) {
-			Object linkObject = links.next();
+			EObject linkObject = (EObject) links.next();
 			if (false == linkObject instanceof InterfaceRealization) {
 				continue;
 			}
@@ -5071,7 +5071,7 @@ public class UMLDiagramUpdater {
 		}
 		Collection result = new LinkedList();
 		for (Iterator links = container.getPackagedElements().iterator(); links.hasNext();) {
-			Object linkObject = links.next();
+			EObject linkObject = (EObject) links.next();
 			if (false == linkObject instanceof Realization) {
 				continue;
 			}
@@ -5130,7 +5130,7 @@ public class UMLDiagramUpdater {
 		}
 		Collection result = new LinkedList();
 		for (Iterator links = container.getPackagedElements().iterator(); links.hasNext();) {
-			Object linkObject = links.next();
+			EObject linkObject = (EObject) links.next();
 			if (false == linkObject instanceof Usage) {
 				continue;
 			}

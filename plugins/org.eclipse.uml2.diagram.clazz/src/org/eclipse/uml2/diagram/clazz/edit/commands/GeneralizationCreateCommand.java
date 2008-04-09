@@ -51,10 +51,10 @@ public class GeneralizationCreateCommand extends CreateElementCommand {
 		if (source == null && target == null) {
 			return false;
 		}
-		if (source != null && !(source instanceof Classifier)) {
+		if (source != null && false == source instanceof Classifier) {
 			return false;
 		}
-		if (target != null && !(target instanceof Classifier)) {
+		if (target != null && false == target instanceof Classifier) {
 			return false;
 		}
 		if (getSource() == null) {
@@ -68,10 +68,10 @@ public class GeneralizationCreateCommand extends CreateElementCommand {
 	 * @generated
 	 */
 	protected EObject doDefaultElementCreation() {
-		// org.eclipse.uml2.uml.Generalization newElement = (org.eclipse.uml2.uml.Generalization) super.doDefaultElementCreation();
 		Generalization newElement = UMLFactory.eINSTANCE.createGeneralization();
 		getSource().getGeneralizations().add(newElement);
 		newElement.setGeneral(getTarget());
+
 		return newElement;
 	}
 

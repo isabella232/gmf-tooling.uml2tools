@@ -46,7 +46,7 @@ public class AssociationClassConnectorReorientCommand extends EditElementCommand
 	 * @generated
 	 */
 	public boolean canExecute() {
-		if (!(getElementToEdit() instanceof AssociationClass)) {
+		if (false == getElementToEdit() instanceof AssociationClass) {
 			return false;
 		}
 		if (reorientDirection == ReorientRelationshipRequest.REORIENT_SOURCE) {

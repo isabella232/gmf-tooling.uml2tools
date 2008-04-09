@@ -66,10 +66,10 @@ public class DeploymentCreateCommand extends CreateElementCommand {
 		if (source == null && target == null) {
 			return false;
 		}
-		if (source != null && !(source instanceof DeploymentTarget)) {
+		if (source != null && false == source instanceof DeploymentTarget) {
 			return false;
 		}
-		if (target != null && !(target instanceof DeployedArtifact)) {
+		if (target != null && false == target instanceof DeployedArtifact) {
 			return false;
 		}
 		if (getSource() == null) {
@@ -86,11 +86,11 @@ public class DeploymentCreateCommand extends CreateElementCommand {
 	 * @generated
 	 */
 	protected EObject doDefaultElementCreation() {
-		// org.eclipse.uml2.uml.Deployment newElement = (org.eclipse.uml2.uml.Deployment) super.doDefaultElementCreation();
 		Deployment newElement = UMLFactory.eINSTANCE.createDeployment();
 		getContainer().getDeployments().add(newElement);
 		newElement.setLocation(getSource());
 		newElement.getDeployedArtifacts().add(getTarget());
+
 		return newElement;
 	}
 

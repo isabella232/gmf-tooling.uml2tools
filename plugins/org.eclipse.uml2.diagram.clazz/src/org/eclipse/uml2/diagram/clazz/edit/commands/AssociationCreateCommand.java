@@ -69,10 +69,10 @@ public class AssociationCreateCommand extends CreateElementCommand {
 		if (source == null && target == null) {
 			return false;
 		}
-		if (source != null && !(source instanceof Type)) {
+		if (source != null && false == source instanceof Type) {
 			return false;
 		}
-		if (target != null && !(target instanceof Type)) {
+		if (target != null && false == target instanceof Type) {
 			return false;
 		}
 		if (getSource() == null) {
