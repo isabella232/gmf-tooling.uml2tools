@@ -2,9 +2,12 @@ package org.eclipse.uml2.diagram.common.wholediagram;
 
 import java.net.URL;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
+import java.util.Map;
 
+import junit.framework.Assert;
 import junit.framework.TestCase;
 
 import org.eclipse.core.resources.IFile;
@@ -97,7 +100,6 @@ public abstract class TestWholeDiagram extends TestCase {
 	protected void compareDiagrams(Diagram diagram1, Diagram diagram2) {
 		compareChildren(diagram1, diagram2);
 		compareEdges(diagram1, diagram2);
-
 	}
 
 	private void compareViews(View view1, View view2) {
@@ -109,7 +111,7 @@ public abstract class TestWholeDiagram extends TestCase {
 	private void compareEdges(Diagram diagram1, Diagram diagram2) {
 		EList edges1 = diagram1.getEdges();
 		EList edges2 = diagram2.getEdges();
-		assertEquals("Diagram has incorrect edges size", edges1.size(), edges2.size());
+		assertEquals("Diagram has incorrect edges size. Expected: " + getPringString(edges1) + ", was: " + getPringString(edges2), edges1.size(), edges2.size());
 		for (int i = 0; i < edges1.size(); i++) {
 			Edge edge1 = (Edge) edges1.get(i);
 			Edge edge2 = (Edge) edges2.get(i);
@@ -120,18 +122,51 @@ public abstract class TestWholeDiagram extends TestCase {
 		}
 	}
 
-	private void compareChildren(View view1, View view2) {
-		compareViews(view1, view2);
+	private void compareChildren(View expected, View actual) {
+		compareViews(expected, actual);
 
-		List<View> children1 = getFilteredChildren(view1);
-		List<View> children2 = getFilteredChildren(view2);
-		for (int i = 0; i < Math.min(children1.size(), children2.size()); i++) {
-			View child1 = (View) children1.get(i);
-			View child2 = (View) children2.get(i);
-			compareChildren(child1, child2);
+		List<View> expectedChildren = getFilteredChildren(expected);
+		List<View> actualChildren = getFilteredChildren(actual);
+		Map<String, List<View>> actualType2View = mapTypesToViews(actualChildren); 
+		for (View next: expectedChildren) {
+			List<View> alikeViews = actualType2View.get(next.getType());
+			if (alikeViews == null) {
+				Assert.fail("View for " + getPringString(next) + " was not found in the initialized diagram");
+			}
+			View twin = findTwin(next, alikeViews);
+			if (twin == null) {
+				Assert.fail("View for " + getPringString(next) + " was not found in the initialized diagram");
+			}
+			compareChildren(next, twin);
+			alikeViews.remove(twin);
 		}
-		assertEquals("View " + getStackTrace(view2) + " has a different set of children: " + getPringString(children2) + ". Expected: " + getPringString(children1), children1.size(), children2.size());
+		List<View> rest = new ArrayList<View>();
+		for (String key: actualType2View.keySet()) {
+			rest.addAll(actualType2View.get(key));			
+		}
+		if (!rest.isEmpty()) {
+			fail("The following view are not expected, but they exist: " + getPringString(rest));
+		}
 	}
+	
+/*
+ * find an element with the same name as a given element has
+ */
+	private View findTwin(View element, List<View> alikeViews) {
+		if (false == element.getElement() instanceof NamedElement) {
+			return alikeViews.isEmpty() ? null : alikeViews.get(0); 
+		}
+		String name = ((NamedElement)element.getElement()).getName(); 
+		for (View next: alikeViews) {
+			// element is directly casted to NamedElement, because I assume that view with the same VID will have elements with the similar type
+			String nextName = ((NamedElement)next.getElement()).getName();
+			if ((name == null && nextName == null) || name.equals(nextName)) {
+				return next;
+			}
+		}			
+		return null;
+	}
+	
 
 	private StringBuffer getStackTrace(View node) {
 		if (node == null) {
@@ -184,6 +219,20 @@ public abstract class TestWholeDiagram extends TestCase {
 				continue;
 			}
 			result.add(next);
+		}
+		return result;
+	}
+	
+	private Map<String, List<View>> mapTypesToViews(List<View> views) {
+		Map<String, List<View>> result = new HashMap<String, List<View>>();
+		for (View view: views) {
+			String type = view.getType();
+			List<View> list = result.get(type);
+			if (list == null) {
+				list = new ArrayList<View>();
+				result.put(type, list);
+			}
+			list.add(view);
 		}
 		return result;
 	}
