@@ -32,11 +32,13 @@
     <element xmi:type="uml:UseCase" href="Figure 16.9 - Example of the classifier based notation for a use case.uml#_bMr8UKMiEdyv8ePVS08H-g"/>
     <layoutConstraint xmi:type="notation:Bounds" xmi:id="_zNd0wqMiEdyv8ePVS08H-g" x="36" y="156"/>
   </children>
-  <children xmi:type="notation:Node" xmi:id="_R81FEKMjEdy95JpKFOppXQ" type="2005">
-    <children xmi:type="notation:Node" xmi:id="_R82TMKMjEdy95JpKFOppXQ" type="5005"/>
-    <styles xmi:type="notation:ShapeStyle" xmi:id="_R81FEaMjEdy95JpKFOppXQ" fontName="Segoe UI"/>
+  <children xmi:type="notation:Node" xmi:id="_N3Lb8AcIEd27Mejnzzqu9w" type="2002">
+    <children xmi:type="notation:Node" xmi:id="_N3Lb8wcIEd27Mejnzzqu9w" type="5002">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_N3Lb9AcIEd27Mejnzzqu9w" y="5"/>
+    </children>
+    <styles xmi:type="notation:ShapeStyle" xmi:id="_N3Lb8QcIEd27Mejnzzqu9w"/>
     <element xmi:type="uml:Actor" href="Figure 16.9 - Example of the classifier based notation for a use case.uml#_QuEy8KMjEdy95JpKFOppXQ"/>
-    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_R81FEqMjEdy95JpKFOppXQ" x="360" y="168"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_N3Lb8gcIEd27Mejnzzqu9w" x="360" y="168"/>
   </children>
   <styles xmi:type="notation:DiagramStyle" xmi:id="_YmCqNaMiEdyv8ePVS08H-g"/>
   <element xmi:type="uml:Package" href="Figure 16.9 - Example of the classifier based notation for a use case.uml#_YlLHgKMiEdyv8ePVS08H-g"/>
