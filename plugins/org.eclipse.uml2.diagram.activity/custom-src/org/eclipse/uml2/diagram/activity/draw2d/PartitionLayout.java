@@ -31,7 +31,7 @@ public class PartitionLayout extends XYLayout {
 	public static int VERTICAL = 1;
 
 	private int partitionOrientation;
-	private Map visualPartMap;
+	private Map<?,?> visualPartMap;
 
 	public PartitionLayout() {
 		this(HORIZONTAL);
@@ -51,7 +51,7 @@ public class PartitionLayout extends XYLayout {
 
 	@Override
 	public void layout(IFigure parent) {
-		Iterator children = parent.getChildren().iterator();
+		Iterator<?> children = parent.getChildren().iterator();
 		Dimension clientAreaSize = parent.getClientArea().getSize();
 		Point offset = getOrigin(parent);
 		IFigure f;
