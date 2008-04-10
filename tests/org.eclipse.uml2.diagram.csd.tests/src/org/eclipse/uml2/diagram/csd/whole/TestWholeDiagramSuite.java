@@ -3,13 +3,15 @@ package org.eclipse.uml2.diagram.csd.whole;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.eclipse.uml2.diagram.csd.tests.CSDiagramFacade;
+
 import junit.framework.TestSuite;
 
 public class TestWholeDiagramSuite extends TestSuite {
 
 	public TestWholeDiagramSuite() {
 		for (String name : oursDiagramFiles) {
-			addTest(new TestWholeCSDiagram(name + ".uml", name + ".umlcompositestructures_diagram"));
+			addTest(new TestWholeCSDiagram(name + ".uml", name + "." + CSDiagramFacade.DIAGRAM_FILE_EXTENSION));
 		}
 
 	}

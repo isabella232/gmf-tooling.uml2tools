@@ -18,7 +18,6 @@ public class CSDiagramFacade extends UMLDiagramFacade {
 		return UMLDiagramEditorUtil.createDiagram(diagramModelURI, domainModelURI, new NullProgressMonitor());
 	}
 	
-	private static final String DIAGRAM_FILE_EXTENSION = "umlclass_diagram";
-
+	public static final String DIAGRAM_FILE_EXTENSION = "umlcompositestructures_diagram";
 
 }
