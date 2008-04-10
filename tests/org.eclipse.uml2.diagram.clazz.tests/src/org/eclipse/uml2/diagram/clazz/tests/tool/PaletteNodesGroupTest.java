@@ -42,6 +42,7 @@ public class PaletteNodesGroupTest extends ClassDiagramCreationToolTest {
 
 	PaletteRoot myRoot = new PaletteRoot();
 
+	@Override
 	protected void setUp() throws Exception {
 		super.setUp();
 		new UMLPaletteFactory().fillPalette(myRoot);
