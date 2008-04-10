@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<notation:Diagram xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.1/notation" xmlns:uml="http://www.eclipse.org/uml2/2.1.0/UML" xmi:id="_YmCqNKMiEdyv8ePVS08H-g" type="UMLUseCase" name="Figure 16.9 - Example of the classifier based notation for a use case.umlusecase_diagram" measurementUnit="Pixel">
+  <children xmi:type="notation:Node" xmi:id="_Y0c5oKMiEdyv8ePVS08H-g" type="2001">
+    <children xmi:type="notation:Node" xmi:id="_Y0c5o6MiEdyv8ePVS08H-g" type="5001"/>
+    <children xmi:type="notation:Node" xmi:id="_Y0c5pKMiEdyv8ePVS08H-g" type="7001">
+      <styles xmi:type="notation:DrawerStyle" xmi:id="_Y0c5paMiEdyv8ePVS08H-g" collapsed="true"/>
+      <styles xmi:type="notation:SortingStyle" xmi:id="_Y0c5pqMiEdyv8ePVS08H-g"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_Y0c5p6MiEdyv8ePVS08H-g"/>
+    </children>
+    <styles xmi:type="notation:ShapeStyle" xmi:id="_Y0c5oaMiEdyv8ePVS08H-g" fontName="Segoe UI"/>
+    <element xmi:type="uml:Package" href="Figure 16.9 - Example of the classifier based notation for a use case.uml#_YlLHgKMiEdyv8ePVS08H-g"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_Y0c5oqMiEdyv8ePVS08H-g"/>
+  </children>
+  <children xmi:type="notation:Node" xmi:id="_rDQzcKMiEdyv8ePVS08H-g" type="Note">
+    <children xmi:type="notation:Node" xmi:id="_rDT2wKMiEdyv8ePVS08H-g" type="DiagramName">
+      <element xsi:nil="true"/>
+    </children>
+    <children xmi:type="notation:Node" xmi:id="_rDT2waMiEdyv8ePVS08H-g" type="Description">
+      <element xsi:nil="true"/>
+    </children>
+    <styles xmi:type="notation:ShapeStyle" xmi:id="_rDQzcaMiEdyv8ePVS08H-g" fontName="Segoe UI" description="Use &quot;Change Notation&quot; popup menu to show Use Case or Actor as a Classifier" fillColor="13369343" lineColor="6737151"/>
+    <element xsi:nil="true"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_rDQzcqMiEdyv8ePVS08H-g" x="204" y="24" width="277" height="49"/>
+  </children>
+  <children xmi:type="notation:Node" xmi:id="_zNd0wKMiEdyv8ePVS08H-g" type="2003">
+    <children xmi:type="notation:Node" xmi:id="_zNd0w6MiEdyv8ePVS08H-g" type="5003"/>
+    <children xmi:type="notation:Node" xmi:id="_zNd0xKMiEdyv8ePVS08H-g" type="7002">
+      <styles xmi:type="notation:SortingStyle" xmi:id="_zNd0xaMiEdyv8ePVS08H-g"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_zNd0xqMiEdyv8ePVS08H-g"/>
+    </children>
+    <styles xmi:type="notation:ShapeStyle" xmi:id="_zNd0waMiEdyv8ePVS08H-g" fontName="Segoe UI"/>
+    <element xmi:type="uml:UseCase" href="Figure 16.9 - Example of the classifier based notation for a use case.uml#_bMr8UKMiEdyv8ePVS08H-g"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_zNd0wqMiEdyv8ePVS08H-g" x="36" y="156"/>
+  </children>
+  <children xmi:type="notation:Node" xmi:id="_R81FEKMjEdy95JpKFOppXQ" type="2005">
+    <children xmi:type="notation:Node" xmi:id="_R82TMKMjEdy95JpKFOppXQ" type="5005"/>
+    <styles xmi:type="notation:ShapeStyle" xmi:id="_R81FEaMjEdy95JpKFOppXQ" fontName="Segoe UI"/>
+    <element xmi:type="uml:Actor" href="Figure 16.9 - Example of the classifier based notation for a use case.uml#_QuEy8KMjEdy95JpKFOppXQ"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_R81FEqMjEdy95JpKFOppXQ" x="360" y="168"/>
+  </children>
+  <styles xmi:type="notation:DiagramStyle" xmi:id="_YmCqNaMiEdyv8ePVS08H-g"/>
+  <element xmi:type="uml:Package" href="Figure 16.9 - Example of the classifier based notation for a use case.uml#_YlLHgKMiEdyv8ePVS08H-g"/>
+</notation:Diagram>

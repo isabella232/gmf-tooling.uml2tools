@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<uml:Package xmi:version="2.1" xmlns:xmi="http://schema.omg.org/spec/XMI/2.1" xmlns:uml="http://www.eclipse.org/uml2/2.1.0/UML" xmi:id="_E7pOEKMgEdy-S7gXKrJgrQ" name="F-16.7">
+  <elementImport xmi:id="_E9NUUKMgEdy-S7gXKrJgrQ">
+    <importedElement xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Boolean"/>
+  </elementImport>
+  <elementImport xmi:id="_E9N7YKMgEdy-S7gXKrJgrQ">
+    <importedElement xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+  </elementImport>
+  <elementImport xmi:id="_E9N7YaMgEdy-S7gXKrJgrQ">
+    <importedElement xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#UnlimitedNatural"/>
+  </elementImport>
+  <elementImport xmi:id="_E9N7YqMgEdy-S7gXKrJgrQ">
+    <importedElement xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
+  </elementImport>
+  <packagedElement xmi:type="uml:Package" xmi:id="_IiHlgKMgEdy-S7gXKrJgrQ" name="TransactionUseCases">
+    <packagedElement xmi:type="uml:UseCase" xmi:id="_LQl98KMgEdy-S7gXKrJgrQ" name="Card Identification"/>
+    <packagedElement xmi:type="uml:UseCase" xmi:id="_OQbMIKMgEdy-S7gXKrJgrQ" name="Perform ATM Transaction"/>
+    <packagedElement xmi:type="uml:UseCase" xmi:id="_S3CK4KMgEdy-S7gXKrJgrQ" name="On-Line Help">
+      <extend xmi:id="_8oa-MKMgEdyv8ePVS08H-g" extendedCase="_OQbMIKMgEdy-S7gXKrJgrQ"/>
+    </packagedElement>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Package" xmi:id="__fRPgKMgEdyv8ePVS08H-g" name="ATM Services">
+    <packagedElement xmi:type="uml:UseCase" xmi:id="_Cb9qIKMhEdyv8ePVS08H-g" name="Withdraw">
+      <generalization xmi:id="_HaA4gKMhEdyv8ePVS08H-g" general="_OQbMIKMgEdy-S7gXKrJgrQ"/>
+      <include xmi:id="_JmFugKMhEdyv8ePVS08H-g" addition="_LQl98KMgEdy-S7gXKrJgrQ"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:UseCase" xmi:id="_DzSCYKMhEdyv8ePVS08H-g" name="Transfer Funds">
+      <generalization xmi:id="_IGHwkKMhEdyv8ePVS08H-g" general="_OQbMIKMgEdy-S7gXKrJgrQ"/>
+      <include xmi:id="_LeqZsKMhEdyv8ePVS08H-g" addition="_LQl98KMgEdy-S7gXKrJgrQ"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:UseCase" xmi:id="_E54eEKMhEdyv8ePVS08H-g" name="Deposit Funds">
+      <generalization xmi:id="_IZyTcKMhEdyv8ePVS08H-g" general="_OQbMIKMgEdy-S7gXKrJgrQ"/>
+    </packagedElement>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Package" xmi:id="_XR4wIKMhEdyv8ePVS08H-g" name="Administration">
+    <packagedElement xmi:type="uml:UseCase" xmi:id="_ZidEkKMhEdyv8ePVS08H-g" name="Read Log"/>
+    <packagedElement xmi:type="uml:UseCase" xmi:id="_bq2UcKMhEdyv8ePVS08H-g" name="Register ATM in Bank"/>
+  </packagedElement>
+</uml:Package>
