@@ -1,7 +1,5 @@
 package org.eclipse.uml2.diagram.csd.edit.commands;
 
-import java.util.Collection;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.gmf.runtime.emf.type.core.commands.CreateElementCommand;
@@ -9,7 +7,6 @@ import org.eclipse.gmf.runtime.emf.type.core.requests.CreateElementRequest;
 import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.uml2.uml.Collaboration;
 import org.eclipse.uml2.uml.Parameter;
-import org.eclipse.uml2.uml.StructuredClassifier;
 import org.eclipse.uml2.uml.UMLFactory;
 import org.eclipse.uml2.uml.UMLPackage;
 
@@ -44,7 +41,11 @@ public class ParameterCreateCommand extends CreateElementCommand {
 	}
 
 	/**
-	 * @generated
+	 * We need to select the owner of that parameter somehow. 
+	 * Default generated code tries to create it inside the collaboration itself 
+	 * that is not correct.
+	 * 
+	 * @generated NOT
 	 */
 	protected EObject doDefaultElementCreation() {
 		Parameter newElement = UMLFactory.eINSTANCE.createParameter();
