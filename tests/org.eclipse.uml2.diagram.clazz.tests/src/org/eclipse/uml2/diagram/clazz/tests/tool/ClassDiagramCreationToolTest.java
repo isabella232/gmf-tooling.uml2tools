@@ -18,7 +18,7 @@ public class ClassDiagramCreationToolTest extends CreationToolTestBase {
 	}
 	
 	protected ConnectionEditPart findConnection(DiagramEditPart diagram, int VID) {
-		Iterator connections = diagram.getConnections().iterator();
+		Iterator<?> connections = diagram.getConnections().iterator();
 		while (connections.hasNext()) {
 			ConnectionEditPart next = (ConnectionEditPart) connections.next();
 			if (UMLVisualIDRegistry.getVisualID(next.getNotationView()) == VID) {
@@ -29,7 +29,7 @@ public class ClassDiagramCreationToolTest extends CreationToolTestBase {
 	}
 
 	protected List<ConnectionEditPart> findAllConnections(DiagramEditPart diagram, int VID) {
-		Iterator connections = diagram.getConnections().iterator();
+		Iterator<?> connections = diagram.getConnections().iterator();
 		List<ConnectionEditPart> result = new ArrayList<ConnectionEditPart>();
 		while (connections.hasNext()) {
 			ConnectionEditPart next = (ConnectionEditPart) connections.next();
