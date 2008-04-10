@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<uml:Package xmi:version="2.1" xmlns:xmi="http://schema.omg.org/spec/XMI/2.1" xmlns:uml="http://www.eclipse.org/uml2/2.1.0/UML" xmi:id="_UbZnAKMoEdyC7dOJ7ALdqw" name="F 10-13">
+  <elementImport xmi:id="_Ub1E0KMoEdyC7dOJ7ALdqw">
+    <importedElement xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Boolean"/>
+  </elementImport>
+  <elementImport xmi:id="_Ub1E0aMoEdyC7dOJ7ALdqw">
+    <importedElement xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+  </elementImport>
+  <elementImport xmi:id="_Ub1r4KMoEdyC7dOJ7ALdqw">
+    <importedElement xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#UnlimitedNatural"/>
+  </elementImport>
+  <elementImport xmi:id="_Ub1r4aMoEdyC7dOJ7ALdqw">
+    <importedElement xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
+  </elementImport>
+  <packagedElement xmi:type="uml:Artifact" xmi:id="_Xys6AKMoEdyC7dOJ7ALdqw" fileName="Order.jar"/>
+  <packagedElement xmi:type="uml:Node" xmi:id="_Z5PIsKMoEdyC7dOJ7ALdqw" name="AppServer" clientDependency="_bqZkUKMoEdyC7dOJ7ALdqw">
+    <deployment xmi:id="_bqZkUKMoEdyC7dOJ7ALdqw" supplier="_Xys6AKMoEdyC7dOJ7ALdqw" client="_Z5PIsKMoEdyC7dOJ7ALdqw" deployedArtifact="_Xys6AKMoEdyC7dOJ7ALdqw">
+      <configuration xmi:id="_d3oQ4KMoEdyC7dOJ7ALdqw" name="OrderDesc.xml">
+        <ownedAttribute xmi:id="_gstnoKMoEdyC7dOJ7ALdqw" name="property1">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_METAMODELS/UML.metamodel.uml#Boolean"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="_qSM7MKMoEdyC7dOJ7ALdqw" name="property2">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EString"/>
+        </ownedAttribute>
+      </configuration>
+    </deployment>
+  </packagedElement>
+</uml:Package>

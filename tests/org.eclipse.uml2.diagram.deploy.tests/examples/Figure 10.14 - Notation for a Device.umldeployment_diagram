@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<notation:Diagram xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.1/notation" xmlns:uml="http://www.eclipse.org/uml2/2.1.0/UML" xmi:id="_4EUANKMoEdyC7dOJ7ALdqw" type="UMLDeployment" name="Figure 10.14 - Notation for a Device.umldeployment_diagram" measurementUnit="Pixel">
+  <children xmi:type="notation:Node" xmi:id="_4RwmUKMoEdyC7dOJ7ALdqw" type="2001">
+    <children xmi:type="notation:Node" xmi:id="_4RwmU6MoEdyC7dOJ7ALdqw" type="5001"/>
+    <children xmi:type="notation:Node" xmi:id="_4RwmVKMoEdyC7dOJ7ALdqw" type="7001">
+      <styles xmi:type="notation:DrawerStyle" xmi:id="_4RwmVaMoEdyC7dOJ7ALdqw" collapsed="true"/>
+      <styles xmi:type="notation:SortingStyle" xmi:id="_4RwmVqMoEdyC7dOJ7ALdqw"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_4RwmV6MoEdyC7dOJ7ALdqw"/>
+    </children>
+    <styles xmi:type="notation:ShapeStyle" xmi:id="_4RwmUaMoEdyC7dOJ7ALdqw" fontName="Segoe UI"/>
+    <element xmi:type="uml:Package" href="Figure 10.14 - Notation for a Device.uml#_4De5wKMoEdyC7dOJ7ALdqw"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_4RwmUqMoEdyC7dOJ7ALdqw"/>
+  </children>
+  <children xmi:type="notation:Node" xmi:id="_5gaKwKMoEdyC7dOJ7ALdqw" type="2003">
+    <children xmi:type="notation:Node" xmi:id="_5gaKw6MoEdyC7dOJ7ALdqw" type="5002"/>
+    <children xmi:type="notation:Node" xmi:id="_5gaKxKMoEdyC7dOJ7ALdqw" type="7004">
+      <children xmi:type="notation:Node" xmi:id="_7wRUkKMoEdyC7dOJ7ALdqw" type="3005">
+        <children xmi:type="notation:Node" xmi:id="_7wR7oKMoEdyC7dOJ7ALdqw" type="5008"/>
+        <children xmi:type="notation:Node" xmi:id="_7wSisKMoEdyC7dOJ7ALdqw" type="7006">
+          <children xmi:type="notation:Node" xmi:id="_9Hu2wKMoEdyC7dOJ7ALdqw" type="3006">
+            <element xmi:type="uml:Artifact" href="Figure 10.14 - Notation for a Device.uml#_9HtBkKMoEdyC7dOJ7ALdqw"/>
+            <layoutConstraint xmi:type="notation:Location" xmi:id="_9Hu2waMoEdyC7dOJ7ALdqw"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="__EmzIKMoEdyC7dOJ7ALdqw" type="3006">
+            <element xmi:type="uml:Artifact" href="Figure 10.14 - Notation for a Device.uml#__EmMEKMoEdyC7dOJ7ALdqw"/>
+            <layoutConstraint xmi:type="notation:Location" xmi:id="__EmzIaMoEdyC7dOJ7ALdqw"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_Bm5JsKMpEdyC7dOJ7ALdqw" type="3006">
+            <element xmi:type="uml:Artifact" href="Figure 10.14 - Notation for a Device.uml#_Bm2tcKMpEdyC7dOJ7ALdqw"/>
+            <layoutConstraint xmi:type="notation:Location" xmi:id="_Bm5JsaMpEdyC7dOJ7ALdqw"/>
+          </children>
+          <styles xmi:type="notation:TitleStyle" xmi:id="_7wSisaMoEdyC7dOJ7ALdqw" showTitle="true"/>
+          <styles xmi:type="notation:SortingStyle" xmi:id="_7wSisqMoEdyC7dOJ7ALdqw"/>
+          <styles xmi:type="notation:FilteringStyle" xmi:id="_7wSis6MoEdyC7dOJ7ALdqw"/>
+        </children>
+        <styles xmi:type="notation:ShapeStyle" xmi:id="_7wRUkaMoEdyC7dOJ7ALdqw" fontName="Segoe UI"/>
+        <element xmi:type="uml:ExecutionEnvironment" href="Figure 10.14 - Notation for a Device.uml#_7wORQKMoEdyC7dOJ7ALdqw"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_7wRUkqMoEdyC7dOJ7ALdqw" x="54" y="31" width="181" height="157"/>
+      </children>
+      <styles xmi:type="notation:SortingStyle" xmi:id="_5gaKxaMoEdyC7dOJ7ALdqw"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_5gaKxqMoEdyC7dOJ7ALdqw"/>
+    </children>
+    <styles xmi:type="notation:ShapeStyle" xmi:id="_5gaKwaMoEdyC7dOJ7ALdqw" fontName="Segoe UI"/>
+    <element xmi:type="uml:Device" href="Figure 10.14 - Notation for a Device.uml#_5gY8oKMoEdyC7dOJ7ALdqw"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_5gaKwqMoEdyC7dOJ7ALdqw" x="84" y="84" width="301" height="397"/>
+  </children>
+  <children xmi:type="notation:Node" xmi:id="_N7r8IKMpEdyC7dOJ7ALdqw" type="2003">
+    <children xmi:type="notation:Node" xmi:id="_N7r8I6MpEdyC7dOJ7ALdqw" type="5002"/>
+    <children xmi:type="notation:Node" xmi:id="_N7r8JKMpEdyC7dOJ7ALdqw" type="7004">
+      <children xmi:type="notation:Node" xmi:id="_QI1wMKMpEdyC7dOJ7ALdqw" type="3002">
+        <children xmi:type="notation:Node" xmi:id="_QI1wM6MpEdyC7dOJ7ALdqw" type="5007"/>
+        <styles xmi:type="notation:ShapeStyle" xmi:id="_QI1wMaMpEdyC7dOJ7ALdqw" fontName="Segoe UI"/>
+        <element xmi:type="uml:Artifact" href="Figure 10.14 - Notation for a Device.uml#_QI0iEKMpEdyC7dOJ7ALdqw"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_QI1wMqMpEdyC7dOJ7ALdqw" x="18" y="31" width="109"/>
+      </children>
+      <children xmi:type="notation:Node" xmi:id="_T-MRIKMpEdyC7dOJ7ALdqw" type="3002">
+        <children xmi:type="notation:Node" xmi:id="_T-MRI6MpEdyC7dOJ7ALdqw" type="5007"/>
+        <styles xmi:type="notation:ShapeStyle" xmi:id="_T-MRIaMpEdyC7dOJ7ALdqw" fontName="Segoe UI"/>
+        <element xmi:type="uml:Artifact" href="Figure 10.14 - Notation for a Device.uml#_T-LqEKMpEdyC7dOJ7ALdqw"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_T-MRIqMpEdyC7dOJ7ALdqw" x="150" y="100" width="115"/>
+      </children>
+      <styles xmi:type="notation:SortingStyle" xmi:id="_N7r8JaMpEdyC7dOJ7ALdqw"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_N7r8JqMpEdyC7dOJ7ALdqw"/>
+    </children>
+    <styles xmi:type="notation:ShapeStyle" xmi:id="_N7r8IaMpEdyC7dOJ7ALdqw" fontName="Segoe UI"/>
+    <element xmi:type="uml:Device" href="Figure 10.14 - Notation for a Device.uml#_N7quAKMpEdyC7dOJ7ALdqw"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_N7r8IqMpEdyC7dOJ7ALdqw" x="540" y="168" width="301" height="253"/>
+  </children>
+  <styles xmi:type="notation:DiagramStyle" xmi:id="_4EUANaMoEdyC7dOJ7ALdqw"/>
+  <element xmi:type="uml:Package" href="Figure 10.14 - Notation for a Device.uml#_4De5wKMoEdyC7dOJ7ALdqw"/>
+  <edges xmi:type="notation:Edge" xmi:id="_bB9O0KMpEdyC7dOJ7ALdqw" type="4004" source="_5gaKwKMoEdyC7dOJ7ALdqw" target="_N7r8IKMpEdyC7dOJ7ALdqw">
+    <children xmi:type="notation:Node" xmi:id="_bB_EAKMpEdyC7dOJ7ALdqw" type="6003">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_bB_EAaMpEdyC7dOJ7ALdqw" x="19" y="-35"/>
+    </children>
+    <styles xmi:type="notation:RoutingStyle" xmi:id="_bB914KMpEdyC7dOJ7ALdqw"/>
+    <styles xmi:type="notation:FontStyle" xmi:id="_bB914aMpEdyC7dOJ7ALdqw" fontName="Segoe UI"/>
+    <element xmi:type="uml:CommunicationPath" href="Figure 10.14 - Notation for a Device.uml#_bBxBkKMpEdyC7dOJ7ALdqw"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_bB914qMpEdyC7dOJ7ALdqw" points="[23, 7, -211, -69]$[214, 61, -20, -15]"/>
+    <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_bCPisKMpEdyC7dOJ7ALdqw" id="(0.9667774,0.28463477)"/>
+    <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_bCPisaMpEdyC7dOJ7ALdqw" id="(0.06644518,0.10671937)"/>
+  </edges>
+</notation:Diagram>
