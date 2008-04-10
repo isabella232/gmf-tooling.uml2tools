@@ -66,10 +66,10 @@ public class ConnectorCreateCommand extends CreateElementCommand {
 		if (source == null && target == null) {
 			return false;
 		}
-		if (source != null && !(source instanceof ConnectableElement)) {
+		if (source != null && false == source instanceof ConnectableElement) {
 			return false;
 		}
-		if (target != null && !(target instanceof ConnectableElement)) {
+		if (target != null && false == target instanceof ConnectableElement) {
 			return false;
 		}
 		if (getSource() == null) {

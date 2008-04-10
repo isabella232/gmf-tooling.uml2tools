@@ -46,7 +46,7 @@ public class DependencyReorientCommand extends EditElementCommand {
 	 * @generated
 	 */
 	public boolean canExecute() {
-		if (!(getElementToEdit() instanceof Dependency)) {
+		if (false == getElementToEdit() instanceof Dependency) {
 			return false;
 		}
 		if (reorientDirection == ReorientRelationshipRequest.REORIENT_SOURCE) {

@@ -46,7 +46,7 @@ public class UsageReorientCommand extends EditElementCommand {
 	 * @generated
 	 */
 	public boolean canExecute() {
-		if (!(getElementToEdit() instanceof Usage)) {
+		if (false == getElementToEdit() instanceof Usage) {
 			return false;
 		}
 		if (reorientDirection == ReorientRelationshipRequest.REORIENT_SOURCE) {

@@ -1451,7 +1451,7 @@ public class UMLDiagramUpdater {
 	private static Collection getContainedTypeModelFacetLinks_Dependency_4006(CollaborationUse container) {
 		Collection result = new LinkedList();
 		for (Iterator links = container.getRoleBindings().iterator(); links.hasNext();) {
-			Object linkObject = links.next();
+			EObject linkObject = (EObject) links.next();
 			if (false == linkObject instanceof Dependency) {
 				continue;
 			}
@@ -1482,7 +1482,7 @@ public class UMLDiagramUpdater {
 	private static Collection getContainedTypeModelFacetLinks_InterfaceRealization_4007(BehavioredClassifier container) {
 		Collection result = new LinkedList();
 		for (Iterator links = container.getInterfaceRealizations().iterator(); links.hasNext();) {
-			Object linkObject = links.next();
+			EObject linkObject = (EObject) links.next();
 			if (false == linkObject instanceof InterfaceRealization) {
 				continue;
 			}
@@ -1503,7 +1503,7 @@ public class UMLDiagramUpdater {
 	private static Collection getContainedTypeModelFacetLinks_Usage_4008(Package container) {
 		Collection result = new LinkedList();
 		for (Iterator links = container.getPackagedElements().iterator(); links.hasNext();) {
-			Object linkObject = links.next();
+			EObject linkObject = (EObject) links.next();
 			if (false == linkObject instanceof Usage) {
 				continue;
 			}
@@ -1753,7 +1753,7 @@ public class UMLDiagramUpdater {
 		}
 		Collection result = new LinkedList();
 		for (Iterator links = container.getRoleBindings().iterator(); links.hasNext();) {
-			Object linkObject = links.next();
+			EObject linkObject = (EObject) links.next();
 			if (false == linkObject instanceof Dependency) {
 				continue;
 			}
@@ -1799,7 +1799,7 @@ public class UMLDiagramUpdater {
 		}
 		Collection result = new LinkedList();
 		for (Iterator links = container.getInterfaceRealizations().iterator(); links.hasNext();) {
-			Object linkObject = links.next();
+			EObject linkObject = (EObject) links.next();
 			if (false == linkObject instanceof InterfaceRealization) {
 				continue;
 			}
@@ -1835,7 +1835,7 @@ public class UMLDiagramUpdater {
 		}
 		Collection result = new LinkedList();
 		for (Iterator links = container.getPackagedElements().iterator(); links.hasNext();) {
-			Object linkObject = links.next();
+			EObject linkObject = (EObject) links.next();
 			if (false == linkObject instanceof Usage) {
 				continue;
 			}

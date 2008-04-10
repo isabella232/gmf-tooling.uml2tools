@@ -7,6 +7,8 @@ import org.eclipse.gmf.runtime.emf.type.core.requests.CreateElementRequest;
 import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.uml2.diagram.csd.providers.UMLElementTypes;
 import org.eclipse.uml2.uml.InstanceSpecification;
+import org.eclipse.uml2.uml.Package;
+import org.eclipse.uml2.uml.UMLFactory;
 import org.eclipse.uml2.uml.UMLPackage;
 
 /**
@@ -43,10 +45,12 @@ public class InstanceSpecificationCreateCommand extends CreateElementCommand {
 	 * @generated
 	 */
 	protected EObject doDefaultElementCreation() {
-		InstanceSpecification newElement = (InstanceSpecification) super.doDefaultElementCreation();
-		if (newElement != null) {
-			UMLElementTypes.Initializers.InstanceSpecification_2011.init(newElement);
-		}
+		InstanceSpecification newElement = UMLFactory.eINSTANCE.createInstanceSpecification();
+
+		Package owner = (Package) getElementToEdit();
+		owner.getPackagedElements().add(newElement);
+
+		UMLElementTypes.init_InstanceSpecification_2011(newElement);
 		return newElement;
 	}
 }

@@ -7,6 +7,8 @@ import org.eclipse.gmf.runtime.emf.type.core.requests.CreateElementRequest;
 import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.uml2.diagram.csd.providers.UMLElementTypes;
 import org.eclipse.uml2.uml.Collaboration;
+import org.eclipse.uml2.uml.Package;
+import org.eclipse.uml2.uml.UMLFactory;
 import org.eclipse.uml2.uml.UMLPackage;
 
 /**
@@ -43,10 +45,12 @@ public class CollaborationCreateCommand extends CreateElementCommand {
 	 * @generated
 	 */
 	protected EObject doDefaultElementCreation() {
-		Collaboration newElement = (Collaboration) super.doDefaultElementCreation();
-		if (newElement != null) {
-			UMLElementTypes.Initializers.Collaboration_2005.init(newElement);
-		}
+		Collaboration newElement = UMLFactory.eINSTANCE.createCollaboration();
+
+		Package owner = (Package) getElementToEdit();
+		owner.getPackagedElements().add(newElement);
+
+		UMLElementTypes.init_Collaboration_2005(newElement);
 		return newElement;
 	}
 }

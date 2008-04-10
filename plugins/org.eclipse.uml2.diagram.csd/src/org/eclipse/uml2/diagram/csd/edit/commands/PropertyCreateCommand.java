@@ -9,6 +9,8 @@ import org.eclipse.gmf.runtime.emf.type.core.requests.CreateElementRequest;
 import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.uml2.uml.Collaboration;
 import org.eclipse.uml2.uml.Property;
+import org.eclipse.uml2.uml.StructuredClassifier;
+import org.eclipse.uml2.uml.UMLFactory;
 import org.eclipse.uml2.uml.UMLPackage;
 
 /**
@@ -45,13 +47,14 @@ public class PropertyCreateCommand extends CreateElementCommand {
 	 * @generated
 	 */
 	protected EObject doDefaultElementCreation() {
-		Property newElement = (Property) super.doDefaultElementCreation();
-		if (newElement != null) {
-			Collaboration container = (Collaboration) getElementToEdit();
-			if (container != null) {
-				container.getCollaborationRoles().add(newElement);
-			}
-		}
+		Property newElement = UMLFactory.eINSTANCE.createProperty();
+
+		StructuredClassifier owner = (StructuredClassifier) getElementToEdit();
+		owner.getOwnedAttributes().add(newElement);
+
+		Collaboration childHolder = (Collaboration) getElementToEdit();
+		childHolder.getCollaborationRoles().add(newElement);
+
 		return newElement;
 	}
 }

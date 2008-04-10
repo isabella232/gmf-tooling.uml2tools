@@ -48,7 +48,7 @@ public class ConnectorReorientCommand extends EditElementCommand {
 	 * @generated
 	 */
 	public boolean canExecute() {
-		if (!(getElementToEdit() instanceof Connector)) {
+		if (false == getElementToEdit() instanceof Connector) {
 			return false;
 		}
 		if (reorientDirection == ReorientRelationshipRequest.REORIENT_SOURCE) {

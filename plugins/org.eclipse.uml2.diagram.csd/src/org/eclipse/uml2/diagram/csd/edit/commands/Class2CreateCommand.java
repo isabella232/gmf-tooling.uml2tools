@@ -7,6 +7,7 @@ import org.eclipse.gmf.runtime.emf.type.core.requests.CreateElementRequest;
 import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.uml2.diagram.csd.providers.UMLElementTypes;
 import org.eclipse.uml2.uml.Class;
+import org.eclipse.uml2.uml.UMLFactory;
 import org.eclipse.uml2.uml.UMLPackage;
 
 /**
@@ -43,10 +44,12 @@ public class Class2CreateCommand extends CreateElementCommand {
 	 * @generated
 	 */
 	protected EObject doDefaultElementCreation() {
-		Class newElement = (Class) super.doDefaultElementCreation();
-		if (newElement != null) {
-			UMLElementTypes.Initializers.Class_3010.init(newElement);
-		}
+		Class newElement = UMLFactory.eINSTANCE.createClass();
+
+		Class owner = (Class) getElementToEdit();
+		owner.getNestedClassifiers().add(newElement);
+
+		UMLElementTypes.init_Class_3010(newElement);
 		return newElement;
 	}
 }
