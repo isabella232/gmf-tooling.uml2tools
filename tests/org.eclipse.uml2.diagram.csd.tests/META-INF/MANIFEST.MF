@@ -1,9 +1,9 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
-Bundle-Name: Composite Structure Diagram Tests Plug-in
+Bundle-Name: %pluginName
 Bundle-SymbolicName: org.eclipse.uml2.diagram.csd.tests;singleton:=true
 Bundle-Version: 0.7.1.qualifier
-Bundle-Vendor: Borland Software Corporation
+Bundle-Vendor: %providerName
 Bundle-RequiredExecutionEnvironment: J2SE-1.5
 Require-Bundle: org.junit;bundle-version="3.8.2",
  org.eclipse.core.resources,
