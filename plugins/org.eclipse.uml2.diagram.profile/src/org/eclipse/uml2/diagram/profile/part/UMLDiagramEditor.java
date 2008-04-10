@@ -1,10 +1,14 @@
 package org.eclipse.uml2.diagram.profile.part;
 
+import java.util.ArrayList;
+import java.util.List;
 import org.eclipse.gef.palette.PaletteRoot;
 import org.eclipse.gmf.runtime.diagram.ui.resources.editor.parts.DiagramDocumentEditor;
+import org.eclipse.gmf.runtime.diagram.ui.services.palette.PaletteService;
 import org.eclipse.gmf.runtime.notation.Diagram;
 import org.eclipse.emf.transaction.TransactionalEditingDomain;
 import org.eclipse.emf.workspace.util.WorkspaceSynchronizer;
+import org.eclipse.gef.palette.PaletteEntry;
 import org.eclipse.core.resources.IFile;
 import org.eclipse.core.resources.IMarker;
 import org.eclipse.core.resources.IWorkspaceRoot;
@@ -264,6 +268,46 @@ public class UMLDiagramEditor extends DiagramDocumentEditor implements IGotoMark
 			return new StructuredSelection(item);
 		}
 		return StructuredSelection.EMPTY;
+	}
+
+	/**
+	 * @generated
+	 */
+	public void refresh() {
+		refreshPalette();
+		refreshDiagram();
+	}
+
+	/**
+	 * @generated
+	 */
+	private void refreshDiagram() {
+		getDiagramGraphicalViewer().setContents(getDiagram());
+	}
+
+	/**
+	 * @generated
+	 */
+	private void refreshPalette() {
+		PaletteRoot paletteRoot = getEditDomain().getPaletteViewer().getPaletteRoot();
+		cleanPaletteRoot(paletteRoot);
+		createPaletteRoot(paletteRoot);
+	}
+
+	/**
+	 * @generated
+	 */
+	private void cleanPaletteRoot(PaletteRoot paletteRoot) {
+		List<Object> entries = new ArrayList<Object>();
+		entries.addAll(paletteRoot.getChildren());
+		for (Object entry : entries) {
+			PaletteEntry paletteEntry = (PaletteEntry) entry;
+			// we don't repaint standard palette group
+			if (PaletteService.GROUP_STANDARD.equals(paletteEntry.getId())) {
+				continue;
+			}
+			paletteRoot.remove(paletteEntry);
+		}
 	}
 
 }

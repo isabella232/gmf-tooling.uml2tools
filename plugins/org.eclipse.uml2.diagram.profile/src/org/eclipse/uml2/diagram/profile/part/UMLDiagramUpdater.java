@@ -658,7 +658,7 @@ public class UMLDiagramUpdater {
 	private static Collection getContainedTypeModelFacetLinks_Generalization_4001(Classifier container) {
 		Collection result = new LinkedList();
 		for (Iterator links = container.getGeneralizations().iterator(); links.hasNext();) {
-			Object linkObject = links.next();
+			EObject linkObject = (EObject) links.next();
 			if (false == linkObject instanceof Generalization) {
 				continue;
 			}

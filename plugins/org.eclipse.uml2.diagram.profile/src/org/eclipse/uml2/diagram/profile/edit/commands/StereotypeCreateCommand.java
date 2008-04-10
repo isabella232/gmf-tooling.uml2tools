@@ -6,7 +6,9 @@ import org.eclipse.gmf.runtime.emf.type.core.commands.CreateElementCommand;
 import org.eclipse.gmf.runtime.emf.type.core.requests.CreateElementRequest;
 import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.uml2.diagram.profile.providers.UMLElementTypes;
+import org.eclipse.uml2.uml.Package;
 import org.eclipse.uml2.uml.Stereotype;
+import org.eclipse.uml2.uml.UMLFactory;
 import org.eclipse.uml2.uml.UMLPackage;
 
 /**
@@ -43,10 +45,12 @@ public class StereotypeCreateCommand extends CreateElementCommand {
 	 * @generated
 	 */
 	protected EObject doDefaultElementCreation() {
-		Stereotype newElement = (Stereotype) super.doDefaultElementCreation();
-		if (newElement != null) {
-			UMLElementTypes.Initializers.Stereotype_2001.init(newElement);
-		}
+		Stereotype newElement = UMLFactory.eINSTANCE.createStereotype();
+
+		Package owner = (Package) getElementToEdit();
+		owner.getPackagedElements().add(newElement);
+
+		UMLElementTypes.init_Stereotype_2001(newElement);
 		return newElement;
 	}
 }

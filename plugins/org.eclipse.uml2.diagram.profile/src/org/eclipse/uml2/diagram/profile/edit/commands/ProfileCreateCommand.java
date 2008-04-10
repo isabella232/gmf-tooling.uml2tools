@@ -6,7 +6,9 @@ import org.eclipse.gmf.runtime.emf.type.core.commands.CreateElementCommand;
 import org.eclipse.gmf.runtime.emf.type.core.requests.CreateElementRequest;
 import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.uml2.diagram.profile.providers.UMLElementTypes;
+import org.eclipse.uml2.uml.Package;
 import org.eclipse.uml2.uml.Profile;
+import org.eclipse.uml2.uml.UMLFactory;
 import org.eclipse.uml2.uml.UMLPackage;
 
 /**
@@ -43,10 +45,12 @@ public class ProfileCreateCommand extends CreateElementCommand {
 	 * @generated
 	 */
 	protected EObject doDefaultElementCreation() {
-		Profile newElement = (Profile) super.doDefaultElementCreation();
-		if (newElement != null) {
-			UMLElementTypes.Initializers.Profile_2002.init(newElement);
-		}
+		Profile newElement = UMLFactory.eINSTANCE.createProfile();
+
+		Package owner = (Package) getElementToEdit();
+		owner.getPackagedElements().add(newElement);
+
+		UMLElementTypes.init_Profile_2002(newElement);
 		return newElement;
 	}
 }

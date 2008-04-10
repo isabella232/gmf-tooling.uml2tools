@@ -8,7 +8,9 @@ import org.eclipse.gmf.runtime.emf.type.core.commands.CreateElementCommand;
 import org.eclipse.gmf.runtime.emf.type.core.requests.CreateElementRequest;
 import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.uml2.uml.ElementImport;
+import org.eclipse.uml2.uml.Namespace;
 import org.eclipse.uml2.uml.Profile;
+import org.eclipse.uml2.uml.UMLFactory;
 import org.eclipse.uml2.uml.UMLPackage;
 
 /**
@@ -45,13 +47,14 @@ public class ElementImportCreateCommand extends CreateElementCommand {
 	 * @generated
 	 */
 	protected EObject doDefaultElementCreation() {
-		ElementImport newElement = (ElementImport) super.doDefaultElementCreation();
-		if (newElement != null) {
-			Profile container = (Profile) getElementToEdit();
-			if (container != null) {
-				container.getMetaclassReferences().add(newElement);
-			}
-		}
+		ElementImport newElement = UMLFactory.eINSTANCE.createElementImport();
+
+		Namespace owner = (Namespace) getElementToEdit();
+		owner.getElementImports().add(newElement);
+
+		Profile childHolder = (Profile) getElementToEdit();
+		childHolder.getMetaclassReferences().add(newElement);
+
 		return newElement;
 	}
 }

@@ -19,6 +19,7 @@ import org.eclipse.gmf.runtime.diagram.core.preferences.PreferencesHint;
 import org.eclipse.jface.resource.ImageDescriptor;
 import org.eclipse.swt.graphics.Image;
 import org.eclipse.ui.plugin.AbstractUIPlugin;
+import org.eclipse.uml2.diagram.common.providers.AlternativeUMLItemProviderAdapterFactory;
 import org.osgi.framework.BundleContext;
 import org.eclipse.emf.ecore.provider.EcoreItemProviderAdapterFactory;
 
@@ -100,6 +101,9 @@ public class UMLDiagramEditorPlugin extends AbstractUIPlugin {
 	 * @generated
 	 */
 	protected void fillItemProviderFactories(List factories) {
+		//custom icons for diagram elements
+		factories.add(new AlternativeUMLItemProviderAdapterFactory(getPreferenceStore()));
+
 		factories.add(new UMLItemProviderAdapterFactory());
 		factories.add(new EcoreItemProviderAdapterFactory());
 		factories.add(new ResourceItemProviderAdapterFactory());

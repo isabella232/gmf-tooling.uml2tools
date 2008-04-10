@@ -68,10 +68,10 @@ public class ExtensionCreateCommand extends CreateElementCommand {
 		if (source == null && target == null) {
 			return false;
 		}
-		if (source != null && !(source instanceof Stereotype)) {
+		if (source != null && false == source instanceof Stereotype) {
 			return false;
 		}
-		if (target != null && !(target instanceof ElementImport)) {
+		if (target != null && false == target instanceof ElementImport) {
 			return false;
 		}
 		if (getSource() == null) {

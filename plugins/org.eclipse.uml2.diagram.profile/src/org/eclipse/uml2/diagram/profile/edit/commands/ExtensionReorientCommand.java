@@ -53,7 +53,7 @@ public class ExtensionReorientCommand extends EditElementCommand {
 	 * @generated
 	 */
 	public boolean canExecute() {
-		if (!(getElementToEdit() instanceof Extension)) {
+		if (false == getElementToEdit() instanceof Extension) {
 			return false;
 		}
 		if (reorientDirection == ReorientRelationshipRequest.REORIENT_SOURCE) {

@@ -6,7 +6,9 @@ import org.eclipse.gmf.runtime.emf.type.core.commands.CreateElementCommand;
 import org.eclipse.gmf.runtime.emf.type.core.requests.CreateElementRequest;
 import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.uml2.diagram.profile.providers.UMLElementTypes;
+import org.eclipse.uml2.uml.Enumeration;
 import org.eclipse.uml2.uml.EnumerationLiteral;
+import org.eclipse.uml2.uml.UMLFactory;
 import org.eclipse.uml2.uml.UMLPackage;
 
 /**
@@ -43,10 +45,12 @@ public class EnumerationLiteralCreateCommand extends CreateElementCommand {
 	 * @generated
 	 */
 	protected EObject doDefaultElementCreation() {
-		EnumerationLiteral newElement = (EnumerationLiteral) super.doDefaultElementCreation();
-		if (newElement != null) {
-			UMLElementTypes.Initializers.EnumerationLiteral_3005.init(newElement);
-		}
+		EnumerationLiteral newElement = UMLFactory.eINSTANCE.createEnumerationLiteral();
+
+		Enumeration owner = (Enumeration) getElementToEdit();
+		owner.getOwnedLiterals().add(newElement);
+
+		UMLElementTypes.init_EnumerationLiteral_3005(newElement);
 		return newElement;
 	}
 }
