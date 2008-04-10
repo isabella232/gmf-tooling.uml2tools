@@ -7,6 +7,8 @@ import org.eclipse.gmf.runtime.emf.type.core.requests.CreateElementRequest;
 import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.uml2.diagram.component.providers.UMLElementTypes;
 import org.eclipse.uml2.uml.Port;
+import org.eclipse.uml2.uml.StructuredClassifier;
+import org.eclipse.uml2.uml.UMLFactory;
 import org.eclipse.uml2.uml.UMLPackage;
 
 /**
@@ -43,10 +45,12 @@ public class PortOnClassCreateCommand extends CreateElementCommand {
 	 * @generated
 	 */
 	protected EObject doDefaultElementCreation() {
-		Port newElement = (Port) super.doDefaultElementCreation();
-		if (newElement != null) {
-			UMLElementTypes.Initializers.Port_3014.init(newElement);
-		}
+		Port newElement = UMLFactory.eINSTANCE.createPort();
+
+		StructuredClassifier owner = (StructuredClassifier) getElementToEdit();
+		owner.getOwnedAttributes().add(newElement);
+
+		UMLElementTypes.init_Port_3014(newElement);
 		return newElement;
 	}
 

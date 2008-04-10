@@ -42,10 +42,10 @@ public class ComponentRequiredCreateCommand extends EditElementCommand {
 		if (source == null && target == null) {
 			return false;
 		}
-		if (source != null && !(source instanceof Component)) {
+		if (source != null && false == source instanceof Component) {
 			return false;
 		}
-		if (target != null && !(target instanceof Interface)) {
+		if (target != null && false == target instanceof Interface) {
 			return false;
 		}
 		if (getSource() == null) {

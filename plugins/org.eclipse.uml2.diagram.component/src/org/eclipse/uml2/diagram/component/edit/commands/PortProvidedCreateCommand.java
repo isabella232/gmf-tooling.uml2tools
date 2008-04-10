@@ -27,12 +27,12 @@ public class PortProvidedCreateCommand extends EditElementCommand {
 	 * @generated
 	 */
 	private final EObject target;
-	
+
 	/**
 	 * @NOT-generated
 	 */
 	private final ProvidedPortLinkHelper myCreateLinkHelper;
-	
+
 	/**
 	 * @generated NOT
 	 */
@@ -40,7 +40,7 @@ public class PortProvidedCreateCommand extends EditElementCommand {
 		super(request.getLabel(), null, request);
 		this.source = source;
 		this.target = target;
-		myCreateLinkHelper = new ProvidedPortLinkHelper((AdapterFactoryEditingDomain)getEditingDomain(), source, target);
+		myCreateLinkHelper = new ProvidedPortLinkHelper((AdapterFactoryEditingDomain) getEditingDomain(), source, target);
 	}
 
 	/**
@@ -50,10 +50,10 @@ public class PortProvidedCreateCommand extends EditElementCommand {
 		if (source == null && target == null) {
 			return false;
 		}
-		if (source != null && !(source instanceof Port)) {
+		if (source != null && false == source instanceof Port) {
 			return false;
 		}
-		if (target != null && !(target instanceof Interface)) {
+		if (target != null && false == target instanceof Interface) {
 			return false;
 		}
 		if (getSource() == null) {
@@ -69,6 +69,7 @@ public class PortProvidedCreateCommand extends EditElementCommand {
 	public boolean canExecute() {
 		return canExecuteGen() && myCreateLinkHelper.canCreate();
 	}
+
 	/**
 	 * @generated NOT
 	 */

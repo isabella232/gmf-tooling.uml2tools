@@ -6,7 +6,9 @@ import org.eclipse.gmf.runtime.emf.type.core.commands.CreateElementCommand;
 import org.eclipse.gmf.runtime.emf.type.core.requests.CreateElementRequest;
 import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.uml2.diagram.component.providers.UMLElementTypes;
+import org.eclipse.uml2.uml.Class;
 import org.eclipse.uml2.uml.Operation;
+import org.eclipse.uml2.uml.UMLFactory;
 import org.eclipse.uml2.uml.UMLPackage;
 
 /**
@@ -43,10 +45,12 @@ public class ClassDiagramNotationOperationCreateCommand extends CreateElementCom
 	 * @generated
 	 */
 	protected EObject doDefaultElementCreation() {
-		Operation newElement = (Operation) super.doDefaultElementCreation();
-		if (newElement != null) {
-			UMLElementTypes.Initializers.Operation_3012.init(newElement);
-		}
+		Operation newElement = UMLFactory.eINSTANCE.createOperation();
+
+		Class owner = (Class) getElementToEdit();
+		owner.getOwnedOperations().add(newElement);
+
+		UMLElementTypes.init_Operation_3012(newElement);
 		return newElement;
 	}
 

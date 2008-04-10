@@ -55,7 +55,7 @@ public class PortProvidedReorientCommand extends EditElementCommand {
 	 * @generated
 	 */
 	public boolean canExecute() {
-		if (!(referenceOwner instanceof Port)) {
+		if (false == referenceOwner instanceof Port) {
 			return false;
 		}
 		if (reorientDirection == ReorientRelationshipRequest.REORIENT_SOURCE) {

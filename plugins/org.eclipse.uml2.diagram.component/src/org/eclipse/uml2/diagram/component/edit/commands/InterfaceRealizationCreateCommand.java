@@ -66,10 +66,10 @@ public class InterfaceRealizationCreateCommand extends CreateElementCommand {
 		if (source == null && target == null) {
 			return false;
 		}
-		if (source != null && !(source instanceof BehavioredClassifier)) {
+		if (source != null && false == source instanceof BehavioredClassifier) {
 			return false;
 		}
-		if (target != null && !(target instanceof Interface)) {
+		if (target != null && false == target instanceof Interface) {
 			return false;
 		}
 		if (getSource() == null) {
@@ -86,11 +86,11 @@ public class InterfaceRealizationCreateCommand extends CreateElementCommand {
 	 * @generated
 	 */
 	protected EObject doDefaultElementCreation() {
-		// org.eclipse.uml2.uml.InterfaceRealization newElement = (org.eclipse.uml2.uml.InterfaceRealization) super.doDefaultElementCreation();
 		InterfaceRealization newElement = UMLFactory.eINSTANCE.createInterfaceRealization();
 		getContainer().getInterfaceRealizations().add(newElement);
 		newElement.setImplementingClassifier(getSource());
 		newElement.setContract(getTarget());
+
 		return newElement;
 	}
 

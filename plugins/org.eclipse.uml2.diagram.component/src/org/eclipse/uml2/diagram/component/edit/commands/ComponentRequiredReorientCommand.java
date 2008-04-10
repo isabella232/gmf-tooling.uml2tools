@@ -54,7 +54,7 @@ public class ComponentRequiredReorientCommand extends EditElementCommand {
 	 * @generated
 	 */
 	public boolean canExecute() {
-		if (!(referenceOwner instanceof Component)) {
+		if (false == referenceOwner instanceof Component) {
 			return false;
 		}
 		if (reorientDirection == ReorientRelationshipRequest.REORIENT_SOURCE) {
