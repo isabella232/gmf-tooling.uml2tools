@@ -19,6 +19,7 @@ public class TestWholeDiagramSuite extends TestSuite {
 	private static List<String> oursDiagramFiles = new ArrayList<String>();
 	static {
 		oursDiagramFiles.add("Figure 16.10 - UseCase diagram with a rectangle representing the boundary of the subject");
+		// test fails because it contains link to link, hence, diagram refresh is needed. see UMLInitDiagramFacade#refreshDiagram()
 		oursDiagramFiles.add("Figure 16.3 - Example of an extend relationship between use cases");
 		oursDiagramFiles.add("Figure 16.7 - Example of use cases owned by various packages");
 		oursDiagramFiles.add("Figure 16.9 - Example of the classifier based notation for a use case");
