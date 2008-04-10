@@ -7,6 +7,8 @@ import org.eclipse.gmf.runtime.emf.type.core.requests.CreateElementRequest;
 import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.uml2.diagram.activity.providers.UMLElementTypes;
 import org.eclipse.uml2.uml.AcceptEventAction;
+import org.eclipse.uml2.uml.StructuredActivityNode;
+import org.eclipse.uml2.uml.UMLFactory;
 import org.eclipse.uml2.uml.UMLPackage;
 
 /**
@@ -43,10 +45,12 @@ public class AcceptEventAction4CreateCommand extends CreateElementCommand {
 	 * @generated
 	 */
 	protected EObject doDefaultElementCreation() {
-		AcceptEventAction newElement = (AcceptEventAction) super.doDefaultElementCreation();
-		if (newElement != null) {
-			UMLElementTypes.Initializers.AcceptEventAction_3013.init(newElement);
-		}
+		AcceptEventAction newElement = UMLFactory.eINSTANCE.createAcceptEventAction();
+
+		StructuredActivityNode owner = (StructuredActivityNode) getElementToEdit();
+		owner.getNodes().add(newElement);
+
+		UMLElementTypes.init_AcceptEventAction_3013(newElement);
 		return newElement;
 	}
 }

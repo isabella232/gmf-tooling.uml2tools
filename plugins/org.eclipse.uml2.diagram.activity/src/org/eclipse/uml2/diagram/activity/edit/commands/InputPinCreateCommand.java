@@ -8,6 +8,7 @@ import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.uml2.diagram.activity.providers.UMLElementTypes;
 import org.eclipse.uml2.uml.AddStructuralFeatureValueAction;
 import org.eclipse.uml2.uml.InputPin;
+import org.eclipse.uml2.uml.UMLFactory;
 import org.eclipse.uml2.uml.UMLPackage;
 
 /**
@@ -44,10 +45,12 @@ public class InputPinCreateCommand extends CreateElementCommand {
 	 * @generated
 	 */
 	protected EObject doDefaultElementCreation() {
-		InputPin newElement = (InputPin) super.doDefaultElementCreation();
-		if (newElement != null) {
-			UMLElementTypes.Initializers.InputPin_3003.init(newElement);
-		}
+		InputPin newElement = UMLFactory.eINSTANCE.createInputPin();
+
+		AddStructuralFeatureValueAction owner = (AddStructuralFeatureValueAction) getElementToEdit();
+		owner.setInsertAt(newElement);
+
+		UMLElementTypes.init_InputPin_3003(newElement);
 		return newElement;
 	}
 

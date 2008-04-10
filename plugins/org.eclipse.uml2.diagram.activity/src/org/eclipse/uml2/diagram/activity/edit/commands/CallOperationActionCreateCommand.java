@@ -6,7 +6,9 @@ import org.eclipse.gmf.runtime.emf.type.core.commands.CreateElementCommand;
 import org.eclipse.gmf.runtime.emf.type.core.requests.CreateElementRequest;
 import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.uml2.diagram.activity.providers.UMLElementTypes;
+import org.eclipse.uml2.uml.Activity;
 import org.eclipse.uml2.uml.CallOperationAction;
+import org.eclipse.uml2.uml.UMLFactory;
 import org.eclipse.uml2.uml.UMLPackage;
 
 /**
@@ -43,10 +45,12 @@ public class CallOperationActionCreateCommand extends CreateElementCommand {
 	 * @generated
 	 */
 	protected EObject doDefaultElementCreation() {
-		CallOperationAction newElement = (CallOperationAction) super.doDefaultElementCreation();
-		if (newElement != null) {
-			UMLElementTypes.Initializers.CallOperationAction_3045.init(newElement);
-		}
+		CallOperationAction newElement = UMLFactory.eINSTANCE.createCallOperationAction();
+
+		Activity owner = (Activity) getElementToEdit();
+		owner.getNodes().add(newElement);
+
+		UMLElementTypes.init_CallOperationAction_3045(newElement);
 		return newElement;
 	}
 }

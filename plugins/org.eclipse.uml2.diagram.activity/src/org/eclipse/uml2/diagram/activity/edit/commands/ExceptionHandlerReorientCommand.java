@@ -45,7 +45,7 @@ public class ExceptionHandlerReorientCommand extends EditElementCommand {
 	 * @generated
 	 */
 	public boolean canExecute() {
-		if (!(getElementToEdit() instanceof ExceptionHandler)) {
+		if (false == getElementToEdit() instanceof ExceptionHandler) {
 			return false;
 		}
 		if (reorientDirection == ReorientRelationshipRequest.REORIENT_SOURCE) {

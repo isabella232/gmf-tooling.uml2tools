@@ -8,6 +8,7 @@ import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.uml2.diagram.activity.providers.UMLElementTypes;
 import org.eclipse.uml2.uml.Constraint;
 import org.eclipse.uml2.uml.LiteralString;
+import org.eclipse.uml2.uml.UMLFactory;
 import org.eclipse.uml2.uml.UMLPackage;
 
 /**
@@ -44,10 +45,12 @@ public class LiteralString2CreateCommand extends CreateElementCommand {
 	 * @generated
 	 */
 	protected EObject doDefaultElementCreation() {
-		LiteralString newElement = (LiteralString) super.doDefaultElementCreation();
-		if (newElement != null) {
-			UMLElementTypes.Initializers.LiteralString_3051.init(newElement);
-		}
+		LiteralString newElement = UMLFactory.eINSTANCE.createLiteralString();
+
+		Constraint owner = (Constraint) getElementToEdit();
+		owner.setSpecification(newElement);
+
+		UMLElementTypes.init_LiteralString_3051(newElement);
 		return newElement;
 	}
 

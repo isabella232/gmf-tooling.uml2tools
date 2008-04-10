@@ -8,6 +8,7 @@ import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.uml2.uml.Activity;
 import org.eclipse.uml2.uml.ActivityFinalNode;
 import org.eclipse.uml2.uml.ActivityPartition;
+import org.eclipse.uml2.uml.UMLFactory;
 import org.eclipse.uml2.uml.UMLPackage;
 
 /**
@@ -51,13 +52,14 @@ public class ActivityFinalNode3CreateCommand extends CreateElementCommand {
 	 * @generated
 	 */
 	protected EObject doDefaultElementCreationGen() {
-		ActivityFinalNode newElement = (ActivityFinalNode) super.doDefaultElementCreation();
-		if (newElement != null) {
-			ActivityPartition container = (ActivityPartition) getElementToEdit();
-			if (container != null) {
-				container.getNodes().add(newElement);
-			}
-		}
+		ActivityFinalNode newElement = UMLFactory.eINSTANCE.createActivityFinalNode();
+
+		Activity owner = (Activity) getElementToEdit();
+		owner.getNodes().add(newElement);
+
+		ActivityPartition childHolder = (ActivityPartition) getElementToEdit();
+		childHolder.getNodes().add(newElement);
+
 		return newElement;
 	}
 

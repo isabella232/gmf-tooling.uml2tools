@@ -5,10 +5,12 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.gmf.runtime.emf.type.core.commands.CreateElementCommand;
 import org.eclipse.gmf.runtime.emf.type.core.requests.CreateElementRequest;
 import org.eclipse.gmf.runtime.notation.View;
+import org.eclipse.uml2.diagram.activity.providers.ElementInitializers;
 import org.eclipse.uml2.diagram.activity.providers.UMLElementTypes;
 import org.eclipse.uml2.uml.Activity;
 import org.eclipse.uml2.uml.ActivityPartition;
 import org.eclipse.uml2.uml.OpaqueAction;
+import org.eclipse.uml2.uml.UMLFactory;
 import org.eclipse.uml2.uml.UMLPackage;
 
 /**
@@ -52,14 +54,15 @@ public class OpaqueAction3CreateCommand extends CreateElementCommand {
 	 * @generated
 	 */
 	protected EObject doDefaultElementCreationGen() {
-		OpaqueAction newElement = (OpaqueAction) super.doDefaultElementCreation();
-		if (newElement != null) {
-			ActivityPartition container = (ActivityPartition) getElementToEdit();
-			if (container != null) {
-				container.getNodes().add(newElement);
-			}
-			UMLElementTypes.Initializers.OpaqueAction_3067.init(newElement);
-		}
+		OpaqueAction newElement = UMLFactory.eINSTANCE.createOpaqueAction();
+
+		Activity owner = (Activity) getElementToEdit();
+		owner.getNodes().add(newElement);
+
+		ActivityPartition childHolder = (ActivityPartition) getElementToEdit();
+		childHolder.getNodes().add(newElement);
+
+		UMLElementTypes.init_OpaqueAction_3067(newElement);
 		return newElement;
 	}
 
@@ -77,7 +80,7 @@ public class OpaqueAction3CreateCommand extends CreateElementCommand {
 			ActivityPartition partition = (ActivityPartition) getElementToEditGen();
 			newElement.getInPartitions().add(partition);
 
-			UMLElementTypes.Initializers.OpaqueAction_3067.init(newElement);
+			ElementInitializers.init_OpaqueAction_3067(newElement);
 		}
 		return newElement;
 	}

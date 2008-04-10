@@ -6,7 +6,9 @@ import org.eclipse.gmf.runtime.emf.type.core.commands.CreateElementCommand;
 import org.eclipse.gmf.runtime.emf.type.core.requests.CreateElementRequest;
 import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.uml2.diagram.activity.providers.UMLElementTypes;
+import org.eclipse.uml2.uml.Activity;
 import org.eclipse.uml2.uml.DataStoreNode;
+import org.eclipse.uml2.uml.UMLFactory;
 import org.eclipse.uml2.uml.UMLPackage;
 
 /**
@@ -43,10 +45,12 @@ public class DataStoreNodeCreateCommand extends CreateElementCommand {
 	 * @generated
 	 */
 	protected EObject doDefaultElementCreation() {
-		DataStoreNode newElement = (DataStoreNode) super.doDefaultElementCreation();
-		if (newElement != null) {
-			UMLElementTypes.Initializers.DataStoreNode_3036.init(newElement);
-		}
+		DataStoreNode newElement = UMLFactory.eINSTANCE.createDataStoreNode();
+
+		Activity owner = (Activity) getElementToEdit();
+		owner.getNodes().add(newElement);
+
+		UMLElementTypes.init_DataStoreNode_3036(newElement);
 		return newElement;
 	}
 }

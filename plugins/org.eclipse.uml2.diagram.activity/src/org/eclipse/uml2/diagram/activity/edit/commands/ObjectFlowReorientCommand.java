@@ -46,7 +46,7 @@ public class ObjectFlowReorientCommand extends EditElementCommand {
 	 * @generated
 	 */
 	public boolean canExecute() {
-		if (!(getElementToEdit() instanceof ObjectFlow)) {
+		if (false == getElementToEdit() instanceof ObjectFlow) {
 			return false;
 		}
 		if (reorientDirection == ReorientRelationshipRequest.REORIENT_SOURCE) {

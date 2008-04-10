@@ -8,6 +8,7 @@ import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.uml2.diagram.activity.providers.UMLElementTypes;
 import org.eclipse.uml2.uml.CallOperationAction;
 import org.eclipse.uml2.uml.InputPin;
+import org.eclipse.uml2.uml.UMLFactory;
 import org.eclipse.uml2.uml.UMLPackage;
 
 /**
@@ -44,10 +45,12 @@ public class InputPin5CreateCommand extends CreateElementCommand {
 	 * @generated
 	 */
 	protected EObject doDefaultElementCreation() {
-		InputPin newElement = (InputPin) super.doDefaultElementCreation();
-		if (newElement != null) {
-			UMLElementTypes.Initializers.InputPin_3008.init(newElement);
-		}
+		InputPin newElement = UMLFactory.eINSTANCE.createInputPin();
+
+		CallOperationAction owner = (CallOperationAction) getElementToEdit();
+		owner.setTarget(newElement);
+
+		UMLElementTypes.init_InputPin_3008(newElement);
 		return newElement;
 	}
 

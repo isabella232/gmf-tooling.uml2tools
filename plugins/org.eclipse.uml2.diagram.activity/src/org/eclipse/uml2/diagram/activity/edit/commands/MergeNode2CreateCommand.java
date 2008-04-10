@@ -9,6 +9,7 @@ import org.eclipse.uml2.diagram.activity.providers.UMLElementTypes;
 import org.eclipse.uml2.uml.Activity;
 import org.eclipse.uml2.uml.ActivityPartition;
 import org.eclipse.uml2.uml.MergeNode;
+import org.eclipse.uml2.uml.UMLFactory;
 import org.eclipse.uml2.uml.UMLPackage;
 
 /**
@@ -52,14 +53,15 @@ public class MergeNode2CreateCommand extends CreateElementCommand {
 	 * @generated
 	 */
 	protected EObject doDefaultElementCreationGen() {
-		MergeNode newElement = (MergeNode) super.doDefaultElementCreation();
-		if (newElement != null) {
-			ActivityPartition container = (ActivityPartition) getElementToEdit();
-			if (container != null) {
-				container.getNodes().add(newElement);
-			}
-			UMLElementTypes.Initializers.MergeNode_3063.init(newElement);
-		}
+		MergeNode newElement = UMLFactory.eINSTANCE.createMergeNode();
+
+		Activity owner = (Activity) getElementToEdit();
+		owner.getNodes().add(newElement);
+
+		ActivityPartition childHolder = (ActivityPartition) getElementToEdit();
+		childHolder.getNodes().add(newElement);
+
+		UMLElementTypes.init_MergeNode_3063(newElement);
 		return newElement;
 	}
 

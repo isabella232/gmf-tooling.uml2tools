@@ -8,6 +8,7 @@ import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.uml2.diagram.activity.providers.UMLElementTypes;
 import org.eclipse.uml2.uml.CreateObjectAction;
 import org.eclipse.uml2.uml.OutputPin;
+import org.eclipse.uml2.uml.UMLFactory;
 import org.eclipse.uml2.uml.UMLPackage;
 
 /**
@@ -44,10 +45,12 @@ public class OutputPin2CreateCommand extends CreateElementCommand {
 	 * @generated
 	 */
 	protected EObject doDefaultElementCreation() {
-		OutputPin newElement = (OutputPin) super.doDefaultElementCreation();
-		if (newElement != null) {
-			UMLElementTypes.Initializers.OutputPin_3002.init(newElement);
-		}
+		OutputPin newElement = UMLFactory.eINSTANCE.createOutputPin();
+
+		CreateObjectAction owner = (CreateObjectAction) getElementToEdit();
+		owner.setResult(newElement);
+
+		UMLElementTypes.init_OutputPin_3002(newElement);
 		return newElement;
 	}
 

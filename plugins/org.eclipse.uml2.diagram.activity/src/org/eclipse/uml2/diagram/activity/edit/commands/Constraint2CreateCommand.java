@@ -1,12 +1,13 @@
 package org.eclipse.uml2.diagram.activity.edit.commands;
 
-import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EReference;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.gmf.runtime.emf.type.core.commands.CreateElementCommand;
 import org.eclipse.gmf.runtime.emf.type.core.requests.CreateElementRequest;
 import org.eclipse.gmf.runtime.notation.View;
+import org.eclipse.uml2.uml.Constraint;
+import org.eclipse.uml2.uml.UMLFactory;
 
 /**
  * @generated
@@ -59,8 +60,8 @@ public class Constraint2CreateCommand extends CreateElementCommand {
 		// 	return null;
 		// }
 		Resource resource = getElementToEdit().eResource();
-		EClass eClass = getElementType().getEClass();
-		EObject newElement = eClass.getEPackage().getEFactoryInstance().create(eClass);
+		Constraint newElement = UMLFactory.eINSTANCE.createConstraint();
+
 		resource.getContents().add(newElement);
 		return newElement;
 	}

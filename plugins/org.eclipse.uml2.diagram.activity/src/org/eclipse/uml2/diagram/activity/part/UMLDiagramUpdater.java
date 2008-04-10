@@ -5401,7 +5401,7 @@ public class UMLDiagramUpdater {
 	private static Collection getContainedTypeModelFacetLinks_ControlFlow_4001(Activity container) {
 		Collection result = new LinkedList();
 		for (Iterator links = container.getEdges().iterator(); links.hasNext();) {
-			Object linkObject = links.next();
+			EObject linkObject = (EObject) links.next();
 			if (false == linkObject instanceof ControlFlow) {
 				continue;
 			}
@@ -5422,7 +5422,7 @@ public class UMLDiagramUpdater {
 	private static Collection getContainedTypeModelFacetLinks_ObjectFlow_4002(Activity container) {
 		Collection result = new LinkedList();
 		for (Iterator links = container.getEdges().iterator(); links.hasNext();) {
-			Object linkObject = links.next();
+			EObject linkObject = (EObject) links.next();
 			if (false == linkObject instanceof ObjectFlow) {
 				continue;
 			}
@@ -5443,7 +5443,7 @@ public class UMLDiagramUpdater {
 	private static Collection getContainedTypeModelFacetLinks_ExceptionHandler_4005(ExecutableNode container) {
 		Collection result = new LinkedList();
 		for (Iterator links = container.getHandlers().iterator(); links.hasNext();) {
-			Object linkObject = links.next();
+			EObject linkObject = (EObject) links.next();
 			if (false == linkObject instanceof ExceptionHandler) {
 				continue;
 			}
@@ -5584,7 +5584,7 @@ public class UMLDiagramUpdater {
 		}
 		Collection result = new LinkedList();
 		for (Iterator links = container.getEdges().iterator(); links.hasNext();) {
-			Object linkObject = links.next();
+			EObject linkObject = (EObject) links.next();
 			if (false == linkObject instanceof ControlFlow) {
 				continue;
 			}
@@ -5620,7 +5620,7 @@ public class UMLDiagramUpdater {
 		}
 		Collection result = new LinkedList();
 		for (Iterator links = container.getEdges().iterator(); links.hasNext();) {
-			Object linkObject = links.next();
+			EObject linkObject = (EObject) links.next();
 			if (false == linkObject instanceof ObjectFlow) {
 				continue;
 			}
@@ -5693,7 +5693,7 @@ public class UMLDiagramUpdater {
 		}
 		Collection result = new LinkedList();
 		for (Iterator links = container.getHandlers().iterator(); links.hasNext();) {
-			Object linkObject = links.next();
+			EObject linkObject = (EObject) links.next();
 			if (false == linkObject instanceof ExceptionHandler) {
 				continue;
 			}

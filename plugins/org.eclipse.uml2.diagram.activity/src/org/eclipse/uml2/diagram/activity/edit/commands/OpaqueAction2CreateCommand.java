@@ -7,6 +7,8 @@ import org.eclipse.gmf.runtime.emf.type.core.requests.CreateElementRequest;
 import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.uml2.diagram.activity.providers.UMLElementTypes;
 import org.eclipse.uml2.uml.OpaqueAction;
+import org.eclipse.uml2.uml.StructuredActivityNode;
+import org.eclipse.uml2.uml.UMLFactory;
 import org.eclipse.uml2.uml.UMLPackage;
 
 /**
@@ -43,10 +45,12 @@ public class OpaqueAction2CreateCommand extends CreateElementCommand {
 	 * @generated
 	 */
 	protected EObject doDefaultElementCreation() {
-		OpaqueAction newElement = (OpaqueAction) super.doDefaultElementCreation();
-		if (newElement != null) {
-			UMLElementTypes.Initializers.OpaqueAction_3011.init(newElement);
-		}
+		OpaqueAction newElement = UMLFactory.eINSTANCE.createOpaqueAction();
+
+		StructuredActivityNode owner = (StructuredActivityNode) getElementToEdit();
+		owner.getNodes().add(newElement);
+
+		UMLElementTypes.init_OpaqueAction_3011(newElement);
 		return newElement;
 	}
 }

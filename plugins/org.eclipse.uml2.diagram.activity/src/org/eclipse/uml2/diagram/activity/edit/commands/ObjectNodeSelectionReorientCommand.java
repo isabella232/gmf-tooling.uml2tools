@@ -52,7 +52,7 @@ public class ObjectNodeSelectionReorientCommand extends EditElementCommand {
 	 * @generated
 	 */
 	public boolean canExecute() {
-		if (!(referenceOwner instanceof ObjectNode)) {
+		if (false == referenceOwner instanceof ObjectNode) {
 			return false;
 		}
 		if (reorientDirection == ReorientRelationshipRequest.REORIENT_SOURCE) {

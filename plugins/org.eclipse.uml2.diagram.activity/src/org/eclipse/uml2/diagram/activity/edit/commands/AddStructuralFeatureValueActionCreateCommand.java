@@ -6,7 +6,9 @@ import org.eclipse.gmf.runtime.emf.type.core.commands.CreateElementCommand;
 import org.eclipse.gmf.runtime.emf.type.core.requests.CreateElementRequest;
 import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.uml2.diagram.activity.providers.UMLElementTypes;
+import org.eclipse.uml2.uml.Activity;
 import org.eclipse.uml2.uml.AddStructuralFeatureValueAction;
+import org.eclipse.uml2.uml.UMLFactory;
 import org.eclipse.uml2.uml.UMLPackage;
 
 /**
@@ -43,10 +45,12 @@ public class AddStructuralFeatureValueActionCreateCommand extends CreateElementC
 	 * @generated
 	 */
 	protected EObject doDefaultElementCreation() {
-		AddStructuralFeatureValueAction newElement = (AddStructuralFeatureValueAction) super.doDefaultElementCreation();
-		if (newElement != null) {
-			UMLElementTypes.Initializers.AddStructuralFeatureValueAction_3043.init(newElement);
-		}
+		AddStructuralFeatureValueAction newElement = UMLFactory.eINSTANCE.createAddStructuralFeatureValueAction();
+
+		Activity owner = (Activity) getElementToEdit();
+		owner.getNodes().add(newElement);
+
+		UMLElementTypes.init_AddStructuralFeatureValueAction_3043(newElement);
 		return newElement;
 	}
 }

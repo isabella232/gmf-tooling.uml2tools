@@ -42,10 +42,10 @@ public class ActionLocalPreconditionCreateCommand extends EditElementCommand {
 		if (source == null && target == null) {
 			return false;
 		}
-		if (source != null && !(source instanceof Action)) {
+		if (source != null && false == source instanceof Action) {
 			return false;
 		}
-		if (target != null && !(target instanceof Constraint)) {
+		if (target != null && false == target instanceof Constraint) {
 			return false;
 		}
 		if (getSource() == null) {

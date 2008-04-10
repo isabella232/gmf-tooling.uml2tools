@@ -65,10 +65,10 @@ public class ExceptionHandlerCreateCommand extends CreateElementCommand {
 		if (source == null && target == null) {
 			return false;
 		}
-		if (source != null && !(source instanceof ExecutableNode)) {
+		if (source != null && false == source instanceof ExecutableNode) {
 			return false;
 		}
-		if (target != null && !(target instanceof ExecutableNode)) {
+		if (target != null && false == target instanceof ExecutableNode) {
 			return false;
 		}
 		if (getSource() == null) {
@@ -85,11 +85,11 @@ public class ExceptionHandlerCreateCommand extends CreateElementCommand {
 	 * @generated
 	 */
 	protected EObject doDefaultElementCreation() {
-		// org.eclipse.uml2.uml.ExceptionHandler newElement = (org.eclipse.uml2.uml.ExceptionHandler) super.doDefaultElementCreation();
 		ExceptionHandler newElement = UMLFactory.eINSTANCE.createExceptionHandler();
 		getContainer().getHandlers().add(newElement);
 		newElement.setProtectedNode(getSource());
 		newElement.setHandlerBody(getTarget());
+
 		return newElement;
 	}
 

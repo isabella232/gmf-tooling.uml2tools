@@ -66,10 +66,10 @@ public class ObjectFlowCreateCommand extends CreateElementCommand {
 		if (source == null && target == null) {
 			return false;
 		}
-		if (source != null && !(source instanceof ActivityNode)) {
+		if (source != null && false == source instanceof ActivityNode) {
 			return false;
 		}
-		if (target != null && !(target instanceof ActivityNode)) {
+		if (target != null && false == target instanceof ActivityNode) {
 			return false;
 		}
 		if (getSource() == null) {
@@ -86,11 +86,11 @@ public class ObjectFlowCreateCommand extends CreateElementCommand {
 	 * @generated
 	 */
 	protected EObject doDefaultElementCreation() {
-		// org.eclipse.uml2.uml.ObjectFlow newElement = (org.eclipse.uml2.uml.ObjectFlow) super.doDefaultElementCreation();
 		ObjectFlow newElement = UMLFactory.eINSTANCE.createObjectFlow();
 		getContainer().getEdges().add(newElement);
 		newElement.setSource(getSource());
 		newElement.setTarget(getTarget());
+
 		return newElement;
 	}
 

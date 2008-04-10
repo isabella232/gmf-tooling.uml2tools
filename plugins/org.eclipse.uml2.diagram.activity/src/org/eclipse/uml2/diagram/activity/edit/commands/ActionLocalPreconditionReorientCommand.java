@@ -52,7 +52,7 @@ public class ActionLocalPreconditionReorientCommand extends EditElementCommand {
 	 * @generated
 	 */
 	public boolean canExecute() {
-		if (!(referenceOwner instanceof Action)) {
+		if (false == referenceOwner instanceof Action) {
 			return false;
 		}
 		if (reorientDirection == ReorientRelationshipRequest.REORIENT_SOURCE) {

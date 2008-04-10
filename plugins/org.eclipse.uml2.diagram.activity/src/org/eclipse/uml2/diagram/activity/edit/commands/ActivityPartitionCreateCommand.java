@@ -6,7 +6,9 @@ import org.eclipse.gmf.runtime.emf.type.core.commands.CreateElementCommand;
 import org.eclipse.gmf.runtime.emf.type.core.requests.CreateElementRequest;
 import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.uml2.diagram.activity.providers.UMLElementTypes;
+import org.eclipse.uml2.uml.Activity;
 import org.eclipse.uml2.uml.ActivityPartition;
+import org.eclipse.uml2.uml.UMLFactory;
 import org.eclipse.uml2.uml.UMLPackage;
 
 /**
@@ -43,10 +45,12 @@ public class ActivityPartitionCreateCommand extends CreateElementCommand {
 	 * @generated
 	 */
 	protected EObject doDefaultElementCreation() {
-		ActivityPartition newElement = (ActivityPartition) super.doDefaultElementCreation();
-		if (newElement != null) {
-			UMLElementTypes.Initializers.ActivityPartition_3056.init(newElement);
-		}
+		ActivityPartition newElement = UMLFactory.eINSTANCE.createActivityPartition();
+
+		Activity owner = (Activity) getElementToEdit();
+		owner.getGroups().add(newElement);
+
+		UMLElementTypes.init_ActivityPartition_3056(newElement);
 		return newElement;
 	}
 }

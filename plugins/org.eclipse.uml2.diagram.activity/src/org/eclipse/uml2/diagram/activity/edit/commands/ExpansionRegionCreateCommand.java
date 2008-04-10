@@ -6,7 +6,9 @@ import org.eclipse.gmf.runtime.emf.type.core.commands.CreateElementCommand;
 import org.eclipse.gmf.runtime.emf.type.core.requests.CreateElementRequest;
 import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.uml2.diagram.activity.providers.UMLElementTypes;
+import org.eclipse.uml2.uml.Activity;
 import org.eclipse.uml2.uml.ExpansionRegion;
+import org.eclipse.uml2.uml.UMLFactory;
 import org.eclipse.uml2.uml.UMLPackage;
 
 /**
@@ -43,10 +45,12 @@ public class ExpansionRegionCreateCommand extends CreateElementCommand {
 	 * @generated
 	 */
 	protected EObject doDefaultElementCreation() {
-		ExpansionRegion newElement = (ExpansionRegion) super.doDefaultElementCreation();
-		if (newElement != null) {
-			UMLElementTypes.Initializers.ExpansionRegion_3084.init(newElement);
-		}
+		ExpansionRegion newElement = UMLFactory.eINSTANCE.createExpansionRegion();
+
+		Activity owner = (Activity) getElementToEdit();
+		owner.getGroups().add(newElement);
+
+		UMLElementTypes.init_ExpansionRegion_3084(newElement);
 		return newElement;
 	}
 

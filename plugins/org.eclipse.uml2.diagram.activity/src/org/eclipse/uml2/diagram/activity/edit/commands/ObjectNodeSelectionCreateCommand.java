@@ -42,10 +42,10 @@ public class ObjectNodeSelectionCreateCommand extends EditElementCommand {
 		if (source == null && target == null) {
 			return false;
 		}
-		if (source != null && !(source instanceof ObjectNode)) {
+		if (source != null && false == source instanceof ObjectNode) {
 			return false;
 		}
-		if (target != null && !(target instanceof Behavior)) {
+		if (target != null && false == target instanceof Behavior) {
 			return false;
 		}
 		if (getSource() == null) {

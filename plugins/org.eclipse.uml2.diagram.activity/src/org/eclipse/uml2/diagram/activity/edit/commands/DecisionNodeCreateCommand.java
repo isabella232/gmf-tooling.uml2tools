@@ -6,7 +6,9 @@ import org.eclipse.gmf.runtime.emf.type.core.commands.CreateElementCommand;
 import org.eclipse.gmf.runtime.emf.type.core.requests.CreateElementRequest;
 import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.uml2.diagram.activity.providers.UMLElementTypes;
+import org.eclipse.uml2.uml.Activity;
 import org.eclipse.uml2.uml.DecisionNode;
+import org.eclipse.uml2.uml.UMLFactory;
 import org.eclipse.uml2.uml.UMLPackage;
 
 /**
@@ -43,10 +45,12 @@ public class DecisionNodeCreateCommand extends CreateElementCommand {
 	 * @generated
 	 */
 	protected EObject doDefaultElementCreation() {
-		DecisionNode newElement = (DecisionNode) super.doDefaultElementCreation();
-		if (newElement != null) {
-			UMLElementTypes.Initializers.DecisionNode_3033.init(newElement);
-		}
+		DecisionNode newElement = UMLFactory.eINSTANCE.createDecisionNode();
+
+		Activity owner = (Activity) getElementToEdit();
+		owner.getNodes().add(newElement);
+
+		UMLElementTypes.init_DecisionNode_3033(newElement);
 		return newElement;
 	}
 }
