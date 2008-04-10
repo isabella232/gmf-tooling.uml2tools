@@ -7,6 +7,8 @@ import org.eclipse.gmf.runtime.emf.type.core.requests.CreateElementRequest;
 import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.uml2.diagram.statemachine.providers.UMLElementTypes;
 import org.eclipse.uml2.uml.Pseudostate;
+import org.eclipse.uml2.uml.Region;
+import org.eclipse.uml2.uml.UMLFactory;
 import org.eclipse.uml2.uml.UMLPackage;
 
 /**
@@ -43,10 +45,12 @@ public class Pseudostate5CreateCommand extends CreateElementCommand {
 	 * @generated
 	 */
 	protected EObject doDefaultElementCreation() {
-		Pseudostate newElement = (Pseudostate) super.doDefaultElementCreation();
-		if (newElement != null) {
-			UMLElementTypes.Initializers.Pseudostate_3008.init(newElement);
-		}
+		Pseudostate newElement = UMLFactory.eINSTANCE.createPseudostate();
+
+		Region owner = (Region) getElementToEdit();
+		owner.getSubvertices().add(newElement);
+
+		UMLElementTypes.init_Pseudostate_3008(newElement);
 		return newElement;
 	}
 }

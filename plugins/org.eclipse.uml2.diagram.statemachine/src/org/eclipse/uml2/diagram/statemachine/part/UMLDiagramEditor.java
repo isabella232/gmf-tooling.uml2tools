@@ -1,5 +1,7 @@
 package org.eclipse.uml2.diagram.statemachine.part;
 
+import java.util.ArrayList;
+import java.util.List;
 import org.eclipse.core.resources.IFile;
 import org.eclipse.core.resources.IMarker;
 import org.eclipse.core.resources.IWorkspaceRoot;
@@ -12,6 +14,7 @@ import org.eclipse.core.runtime.NullProgressMonitor;
 import org.eclipse.emf.common.ui.URIEditorInput;
 import org.eclipse.emf.transaction.TransactionalEditingDomain;
 import org.eclipse.emf.workspace.util.WorkspaceSynchronizer;
+import org.eclipse.gef.palette.PaletteEntry;
 import org.eclipse.gef.palette.PaletteRoot;
 import org.eclipse.gmf.runtime.common.ui.services.marker.MarkerNavigationService;
 import org.eclipse.gmf.runtime.diagram.core.preferences.PreferencesHint;
@@ -19,6 +22,7 @@ import org.eclipse.gmf.runtime.diagram.ui.resources.editor.document.IDiagramDocu
 import org.eclipse.gmf.runtime.diagram.ui.resources.editor.document.IDocument;
 import org.eclipse.gmf.runtime.diagram.ui.resources.editor.document.IDocumentProvider;
 import org.eclipse.gmf.runtime.diagram.ui.resources.editor.parts.DiagramDocumentEditor;
+import org.eclipse.gmf.runtime.diagram.ui.services.palette.PaletteService;
 import org.eclipse.gmf.runtime.notation.Diagram;
 import org.eclipse.jface.dialogs.ErrorDialog;
 import org.eclipse.jface.dialogs.IMessageProvider;
@@ -251,6 +255,46 @@ public class UMLDiagramEditor extends DiagramDocumentEditor implements IGotoMark
 			return new StructuredSelection(item);
 		}
 		return StructuredSelection.EMPTY;
+	}
+
+	/**
+	 * @generated
+	 */
+	public void refresh() {
+		refreshPalette();
+		refreshDiagram();
+	}
+
+	/**
+	 * @generated
+	 */
+	private void refreshDiagram() {
+		getDiagramGraphicalViewer().setContents(getDiagram());
+	}
+
+	/**
+	 * @generated
+	 */
+	private void refreshPalette() {
+		PaletteRoot paletteRoot = getEditDomain().getPaletteViewer().getPaletteRoot();
+		cleanPaletteRoot(paletteRoot);
+		createPaletteRoot(paletteRoot);
+	}
+
+	/**
+	 * @generated
+	 */
+	private void cleanPaletteRoot(PaletteRoot paletteRoot) {
+		List<Object> entries = new ArrayList<Object>();
+		entries.addAll(paletteRoot.getChildren());
+		for (Object entry : entries) {
+			PaletteEntry paletteEntry = (PaletteEntry) entry;
+			// we don't repaint standard palette group
+			if (PaletteService.GROUP_STANDARD.equals(paletteEntry.getId())) {
+				continue;
+			}
+			paletteRoot.remove(paletteEntry);
+		}
 	}
 
 }

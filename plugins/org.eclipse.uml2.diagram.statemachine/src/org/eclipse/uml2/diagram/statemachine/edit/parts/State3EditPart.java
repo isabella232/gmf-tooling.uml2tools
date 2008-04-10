@@ -4,6 +4,7 @@ import org.eclipse.draw2d.GridData;
 import org.eclipse.draw2d.GridLayout;
 import org.eclipse.draw2d.IFigure;
 import org.eclipse.draw2d.Label;
+import org.eclipse.draw2d.LayoutManager;
 import org.eclipse.draw2d.MarginBorder;
 import org.eclipse.draw2d.RectangleFigure;
 import org.eclipse.draw2d.RoundedRectangle;
@@ -11,6 +12,7 @@ import org.eclipse.draw2d.StackLayout;
 import org.eclipse.draw2d.geometry.Dimension;
 import org.eclipse.gef.EditPart;
 import org.eclipse.gef.EditPolicy;
+import org.eclipse.gef.GraphicalEditPart;
 import org.eclipse.gef.Request;
 import org.eclipse.gef.commands.Command;
 import org.eclipse.gef.editpolicies.LayoutEditPolicy;
@@ -241,9 +243,7 @@ public class State3EditPart extends AbstractBorderedShapeEditPart {
 	 */
 	protected IFigure getContentPaneFor(IGraphicalEditPart editPart) {
 
-		if (editPart instanceof StateCompositeState_InternalActivities2EditPart ||
-				editPart instanceof ConnectionPointReferenceEditPart ||
-				editPart instanceof ConnectionPointReference2EditPart) {
+		if (editPart instanceof StateCompositeState_InternalActivities2EditPart || editPart instanceof ConnectionPointReferenceEditPart || editPart instanceof ConnectionPointReference2EditPart) {
 			return getContentPaneForGen(editPart);
 		}
 		return contentPane;
@@ -453,6 +453,22 @@ public class State3EditPart extends AbstractBorderedShapeEditPart {
 			myUseLocalCoordinates = useLocalCoordinates;
 		}
 
+	}
+
+	/**
+	 * @generated
+	 */
+	protected void reorderChild(EditPart child, int index) {
+		// Save the constraint of the child so that it does not
+		// get lost during the remove and re-add.
+		IFigure childFigure = ((GraphicalEditPart) child).getFigure();
+		LayoutManager layout = getContentPaneFor((IGraphicalEditPart) child).getLayoutManager();
+		Object constraint = null;
+		if (layout != null) {
+			constraint = layout.getConstraint(childFigure);
+		}
+		super.reorderChild(child, index);
+		setLayoutConstraint(child, childFigure, constraint);
 	}
 
 }

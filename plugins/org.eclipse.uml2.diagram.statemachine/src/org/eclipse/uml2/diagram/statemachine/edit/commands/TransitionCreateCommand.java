@@ -66,10 +66,10 @@ public class TransitionCreateCommand extends CreateElementCommand {
 		if (source == null && target == null) {
 			return false;
 		}
-		if (source != null && !(source instanceof Vertex)) {
+		if (source != null && false == source instanceof Vertex) {
 			return false;
 		}
-		if (target != null && !(target instanceof Vertex)) {
+		if (target != null && false == target instanceof Vertex) {
 			return false;
 		}
 		if (getSource() == null) {
@@ -86,11 +86,11 @@ public class TransitionCreateCommand extends CreateElementCommand {
 	 * @generated
 	 */
 	protected EObject doDefaultElementCreation() {
-		// org.eclipse.uml2.uml.Transition newElement = (org.eclipse.uml2.uml.Transition) super.doDefaultElementCreation();
 		Transition newElement = UMLFactory.eINSTANCE.createTransition();
 		getContainer().getTransitions().add(newElement);
 		newElement.setSource(getSource());
 		newElement.setTarget(getTarget());
+
 		return newElement;
 	}
 

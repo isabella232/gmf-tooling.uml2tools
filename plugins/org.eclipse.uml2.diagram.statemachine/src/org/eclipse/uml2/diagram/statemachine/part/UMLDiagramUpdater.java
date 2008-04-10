@@ -1227,7 +1227,7 @@ public class UMLDiagramUpdater {
 	private static Collection getContainedTypeModelFacetLinks_Transition_4001(Region container) {
 		Collection result = new LinkedList();
 		for (Iterator links = container.getTransitions().iterator(); links.hasNext();) {
-			Object linkObject = links.next();
+			EObject linkObject = (EObject) links.next();
 			if (false == linkObject instanceof Transition) {
 				continue;
 			}
@@ -1281,7 +1281,7 @@ public class UMLDiagramUpdater {
 		}
 		Collection result = new LinkedList();
 		for (Iterator links = container.getTransitions().iterator(); links.hasNext();) {
-			Object linkObject = links.next();
+			EObject linkObject = (EObject) links.next();
 			if (false == linkObject instanceof Transition) {
 				continue;
 			}
