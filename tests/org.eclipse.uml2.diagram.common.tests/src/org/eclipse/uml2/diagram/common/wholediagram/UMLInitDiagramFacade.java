@@ -85,7 +85,7 @@ public abstract class UMLInitDiagramFacade {
 		return null;
 	}
 	
-	private static void refreshDiagram(Diagram diagram) {
+	public static void refreshDiagram(Diagram diagram) {
 		EObject modelElement = diagram.getElement();
 		List<?> editPolicies = CanonicalEditPolicy.getRegisteredEditPolicies(modelElement);
 		for (Iterator<?> it = editPolicies.iterator(); it.hasNext();) {
@@ -106,10 +106,7 @@ public abstract class UMLInitDiagramFacade {
 		myRestoredDiagramResource = createEmptyResource(resourceSet, diagramFile);
 		addDiagramToResource(myRestoredDiagramResource, diagram, editingDomain, diagramFile);
 		myRestoredDiagramResource.save(Collections.emptyMap());
-		Diagram result = openDiagram(myRestoredDiagramResource);
-//		diagram should be refresh when link to link exists. 
-//		refreshDiagram(result);
-		return result;
+		return openDiagram(myRestoredDiagramResource);
 	}
 
 	private void addDiagramToResource(final Resource diagramResource, final Diagram diagram, TransactionalEditingDomain editingDomain, IFile diagramFile) throws ExecutionException {

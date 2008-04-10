@@ -1,9 +1,12 @@
 package org.eclipse.uml2.diagram.deploy.tests.whole;
 
+import java.io.IOException;
 import java.net.URL;
 import java.util.Collections;
 
+import org.eclipse.core.commands.ExecutionException;
 import org.eclipse.core.resources.IFile;
+import org.eclipse.core.runtime.CoreException;
 import org.eclipse.core.runtime.FileLocator;
 import org.eclipse.core.runtime.Path;
 import org.eclipse.core.runtime.Platform;
@@ -31,6 +34,15 @@ public class TestWholeDeployDiagram extends TestWholeDiagram {
 			protected Diagram createDiagramView(EObject modelRoot) {
 				return ViewService.createDiagram(modelRoot, PackageEditPart.MODEL_ID, UMLDiagramEditorPlugin.DIAGRAM_PREFERENCES_HINT);
 			}
+			
+			@Override
+			public Diagram getDiagramView() throws ExecutionException, IOException, CoreException {
+				Diagram result = super.getDiagramView();
+//				diagram should be refresh when link to link exists. 
+				UMLInitDiagramFacade.refreshDiagram(result);
+				return result;
+			}
+			
 		};
 	}
 
