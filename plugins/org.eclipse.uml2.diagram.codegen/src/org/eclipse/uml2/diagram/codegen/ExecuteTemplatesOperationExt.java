@@ -9,6 +9,6 @@ public class ExecuteTemplatesOperationExt extends ExecuteTemplatesOperation {
 	@Override
 	protected Generator createGenerator() {
 		GenEditorGenerator genModel = getGenModel();
-		return new GeneratorExt(genModel, new CodegenEmittersExt(!genModel.isDynamicTemplates(), genModel.getTemplateDirectory()));
+		return new GeneratorExt(genModel, new CodegenEmittersExt(!genModel.isDynamicTemplates(), genModel.getTemplateDirectory(), genModel.getModelAccess() != null));
 	}
 }

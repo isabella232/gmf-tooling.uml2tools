@@ -5,32 +5,15 @@ import java.lang.reflect.InvocationTargetException;
 import org.eclipse.core.runtime.NullProgressMonitor;
 import org.eclipse.gmf.codegen.util.CodegenEmitters;
 import org.eclipse.gmf.common.UnexpectedBehaviourException;
-import org.eclipse.gmf.internal.codegen.dispatch.StaticTemplateRegistry;
 import org.eclipse.gmf.internal.common.codegen.TextEmitter;
 
 
 public class CodegenEmittersExt extends CodegenEmitters {
 	
-	public CodegenEmittersExt(boolean usePrecompiled, String templateDirectory) {
-		super(usePrecompiled, templateDirectory, extendVariables(), extendRegistry());
+	public CodegenEmittersExt(boolean useBaseTemplatesOnly, String templateDirectory, boolean includeDynamicModelTemplates) {
+		super(useBaseTemplatesOnly, templateDirectory, includeDynamicModelTemplates);
 	}
 	
-	private static String[] extendVariables(){
-		String[] defaultVariables = getDefaultVariables();
-		String[] extended = new String[] {
-			"org.eclipse.uml2.diagram.codegen", 
-		};
-		
-		String[] result = new String[defaultVariables.length + extended.length];
-		System.arraycopy(defaultVariables, 0, result, 0, defaultVariables.length);
-		System.arraycopy(extended, 0, result, defaultVariables.length, extended.length);
-		return result;
-	}
-	
-	private static StaticTemplateRegistry extendRegistry(){
-		return new StaticTemplateRegistry(CodegenEmittersExt.class.getClassLoader());
-	}
-
 	public TextEmitter getChangeNotationActionEmitter() throws UnexpectedBehaviourException {
 		return newXpandEmitter("xpt::actions::ChangeNotationAction::ChangeNotationAction"); //$NON-NLS-1$
 	}
