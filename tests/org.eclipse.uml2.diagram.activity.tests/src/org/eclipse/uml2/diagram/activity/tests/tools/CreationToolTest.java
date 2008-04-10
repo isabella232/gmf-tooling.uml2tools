@@ -34,11 +34,12 @@ import org.eclipse.uml2.diagram.activity.edit.parts.OpaqueActionEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.SendSignalActionEditPart;
 import org.eclipse.uml2.diagram.activity.part.UMLVisualIDRegistry;
 import org.eclipse.uml2.diagram.activity.providers.UMLElementTypes;
-import org.eclipse.uml2.diagram.activity.tests.ActivityTestDiagram;
-import org.eclipse.uml2.diagram.common.tests.UMLTestDiagram;
+import org.eclipse.uml2.diagram.activity.tests.ActivityDiagramFacade;
+import org.eclipse.uml2.diagram.common.tests.UMLDiagramFacade;
+import org.eclipse.uml2.diagram.common.tool.CreationToolTestBase;
 
 
-public class CreationToolTest extends org.eclipse.uml2.diagram.common.tests.CreationToolTest {
+public class CreationToolTest extends CreationToolTestBase {
 
 	public CreationToolTest() {
 		super("Testing element creation by tools"); //$NON-NLS-1$
@@ -54,6 +55,8 @@ public class CreationToolTest extends org.eclipse.uml2.diagram.common.tests.Crea
 		IGraphicalEditPart activityEditPart = 
 			getDiagramEditPart().getChildBySemanticHint(UMLVisualIDRegistry.getType(ActivityEditPart.VISUAL_ID));
 		assertNotNull("Activity edit part was not found.", activityEditPart); //$NON-NLS-1$
+		
+		UMLDiagramFacade.flushEventQueue();
 	}
 
 	public void test_activityParameterNodeCreation() {
@@ -63,7 +66,7 @@ public class CreationToolTest extends org.eclipse.uml2.diagram.common.tests.Crea
 			getDiagramEditPart().getChildBySemanticHint(UMLVisualIDRegistry.getType(ActivityEditPart.VISUAL_ID));
 		assertNotNull("Activity edit part was not found.", activityEditPart); //$NON-NLS-1$
 		
-		flushEventQueue();
+		UMLDiagramFacade.flushEventQueue();
 		Rectangle activityBounds = activityEditPart.getFigure().getBounds();
 
 		createNodeByTool(UMLElementTypes.ActivityParameterNode_3052, activityBounds.x + 20, activityBounds.y + 5);
@@ -79,7 +82,7 @@ public class CreationToolTest extends org.eclipse.uml2.diagram.common.tests.Crea
 			getDiagramEditPart().getChildBySemanticHint(UMLVisualIDRegistry.getType(ActivityEditPart.VISUAL_ID));
 		assertNotNull("Activity edit part was not found.", activityEditPart); //$NON-NLS-1$
 		
-		flushEventQueue();
+		UMLDiagramFacade.flushEventQueue();
 		Rectangle activityBounds = activityEditPart.getFigure().getBounds();
 		
 		createNodeByTool(UMLElementTypes.CentralBufferNode_3037, activityBounds.x + 50, activityBounds.y + 50);
@@ -100,7 +103,7 @@ public class CreationToolTest extends org.eclipse.uml2.diagram.common.tests.Crea
 			getDiagramEditPart().getChildBySemanticHint(UMLVisualIDRegistry.getType(ActivityEditPart.VISUAL_ID));
 		assertNotNull("Activity edit part was not found.", activityEditPart); //$NON-NLS-1$
 		
-		flushEventQueue();
+		UMLDiagramFacade.flushEventQueue();
 		Rectangle activityBounds = activityEditPart.getFigure().getBounds();
 
 		createNodeByTool(UMLElementTypes.InitialNode_3035, activityBounds.x + 50, activityBounds.y + 50);
@@ -146,7 +149,7 @@ public class CreationToolTest extends org.eclipse.uml2.diagram.common.tests.Crea
 			getDiagramEditPart().getChildBySemanticHint(UMLVisualIDRegistry.getType(ActivityEditPart.VISUAL_ID));
 		assertNotNull("Activity edit part was not found.", activityEditPart); //$NON-NLS-1$
 		
-		flushEventQueue();
+		UMLDiagramFacade.flushEventQueue();
 		Rectangle activityBounds = activityEditPart.getFigure().getBounds();
 
 		createNodeByTool(UMLElementTypes.AcceptEventAction_3030, activityBounds.x + 50, activityBounds.y + 50);
@@ -184,10 +187,10 @@ public class CreationToolTest extends org.eclipse.uml2.diagram.common.tests.Crea
 			activityEditPart.getChildBySemanticHint(UMLVisualIDRegistry.getType(SendSignalActionEditPart.VISUAL_ID));
 		assertNotNull("Send Signal action edit part was not found.", sendSignalActionEditPart); //$NON-NLS-1$
 	}
-
-	@Override
-	protected UMLTestDiagram createDiagram() {
-		return new ActivityTestDiagram(getTestProject().getFullPath());
-	}
 	
+	@Override
+	protected UMLDiagramFacade getDiagram(String projectPath) {
+		return new ActivityDiagramFacade(projectPath);
+	}
+
 }

@@ -12,19 +12,19 @@
 
 package org.eclipse.uml2.diagram.activity.tests;
 
-import org.eclipse.uml2.diagram.activity.tests.sync.SynchronizedDiagramContentTest;
-import org.eclipse.uml2.diagram.activity.tests.tools.CreationToolTest;
-
 import junit.framework.Test;
 import junit.framework.TestSuite;
+
+import org.eclipse.uml2.diagram.activity.tests.tools.CreationToolTest;
+import org.eclipse.uml2.diagram.activity.tests.wholediagram.TestWholeDiagramSuite;
 
 public class AllTests {
 
 	public static Test suite() {
-		TestSuite suite = new TestSuite("Test for org.eclipse.uml2.diagram.statemachine"); //$NON-NLS-1$
+		TestSuite suite = new TestSuite("Test for org.eclipse.uml2.diagram.activity"); //$NON-NLS-1$
 		//$JUnit-BEGIN$
 		suite.addTestSuite(CreationToolTest.class);
-		suite.addTestSuite(SynchronizedDiagramContentTest.class);
+		suite.addTest(new TestWholeDiagramSuite());
 		//$JUnit-END$
 		return suite;
 	}
