@@ -2,6 +2,7 @@ package org.eclipse.uml2.diagram.common.wholediagram;
 
 import java.io.IOException;
 import java.util.Collections;
+import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.List;
 
@@ -21,6 +22,7 @@ import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emf.transaction.TransactionalEditingDomain;
 import org.eclipse.gmf.runtime.common.core.command.CommandResult;
+import org.eclipse.gmf.runtime.diagram.ui.editpolicies.CanonicalEditPolicy;
 import org.eclipse.gmf.runtime.diagram.ui.parts.IDiagramWorkbenchPart;
 import org.eclipse.gmf.runtime.diagram.ui.resources.editor.parts.DiagramDocumentEditor;
 import org.eclipse.gmf.runtime.emf.commands.core.command.AbstractTransactionalCommand;
@@ -82,6 +84,16 @@ public abstract class UMLInitDiagramFacade {
 		}
 		return null;
 	}
+	
+	private static void refreshDiagram(Diagram diagram) {
+		EObject modelElement = diagram.getElement();
+		List<?> editPolicies = CanonicalEditPolicy.getRegisteredEditPolicies(modelElement);
+		for (Iterator<?> it = editPolicies.iterator(); it.hasNext();) {
+			CanonicalEditPolicy nextEditPolicy = (CanonicalEditPolicy) it.next();
+			nextEditPolicy.refresh();
+		}
+		
+	}
 
 	private Diagram initializeDiagramFromDomainModel(IFile modelFile, IFile diagramFile) throws ExecutionException, IOException, CoreException {
 		diagramFile.setCharset("UTF-8", new NullProgressMonitor()); //$NON-NLS-1$
@@ -94,7 +106,10 @@ public abstract class UMLInitDiagramFacade {
 		myRestoredDiagramResource = createEmptyResource(resourceSet, diagramFile);
 		addDiagramToResource(myRestoredDiagramResource, diagram, editingDomain, diagramFile);
 		myRestoredDiagramResource.save(Collections.emptyMap());
-		return openDiagram(myRestoredDiagramResource);
+		Diagram result = openDiagram(myRestoredDiagramResource);
+//		diagram should be refresh when link to link exists. 
+//		refreshDiagram(result);
+		return result;
 	}
 
 	private void addDiagramToResource(final Resource diagramResource, final Diagram diagram, TransactionalEditingDomain editingDomain, IFile diagramFile) throws ExecutionException {
