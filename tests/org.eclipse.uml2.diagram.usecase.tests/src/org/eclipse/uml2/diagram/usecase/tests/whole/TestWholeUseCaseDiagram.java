@@ -12,6 +12,7 @@ import org.eclipse.gmf.runtime.diagram.core.services.ViewService;
 import org.eclipse.gmf.runtime.notation.Diagram;
 import org.eclipse.uml2.diagram.common.wholediagram.TestWholeDiagram;
 import org.eclipse.uml2.diagram.common.wholediagram.UMLInitDiagramFacade;
+import org.eclipse.uml2.diagram.usecase.edit.parts.DiagramHeaderEditPart;
 import org.eclipse.uml2.diagram.usecase.edit.parts.PackageEditPart;
 import org.eclipse.uml2.diagram.usecase.part.UMLDiagramEditor;
 import org.eclipse.uml2.diagram.usecase.part.UMLDiagramEditorPlugin;
@@ -41,7 +42,7 @@ public class TestWholeUseCaseDiagram extends TestWholeDiagram {
 
 	@Override
 	protected boolean ignoreView(int visualId) {
-		return super.ignoreView(visualId);
+		return super.ignoreView(visualId) || DiagramHeaderEditPart.VISUAL_ID == visualId;
 	}
 
 	private final static Bundle UML_TEST_BUNDLE = Platform.getBundle("org.eclipse.uml2.diagram.usecase.tests");
