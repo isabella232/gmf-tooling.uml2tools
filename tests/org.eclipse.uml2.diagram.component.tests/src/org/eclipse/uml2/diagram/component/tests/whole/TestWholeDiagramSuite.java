@@ -11,18 +11,16 @@ public class TestWholeDiagramSuite extends TestSuite {
 
 	public TestWholeDiagramSuite() {
 		for (String name : oursDiagramFiles) {
-			addTest(new TestWholeCSDiagram(name + ".uml", name + "." + ComponentDiagramFacade.DIAGRAM_FILE_EXTENSION));
+			addTest(new TestWholeComponentDiagram(name + ".uml", name + "." + ComponentDiagramFacade.DIAGRAM_FILE_EXTENSION));
 		}
 
 	}
 
 	private static List<String> oursDiagramFiles = new ArrayList<String>();
 	static {
-		oursDiagramFiles.add("Figure 9.11 - The internal structure of the Observer collaboration shown inside the collaboration icon");
-		oursDiagramFiles.add("Figure 9.14 - The BrokeredSale collaboration");
-		oursDiagramFiles.add("Figure 9.16 - Port notation");
-		oursDiagramFiles.add("Figure 9.19 - Port examples");
-		oursDiagramFiles.add("Figure 9.20 - Properties");
+		oursDiagramFiles.add("8.14.Example of wiring through dependencies");
+		oursDiagramFiles.add("8.16.Delegation connectors");
+		oursDiagramFiles.add("8.6.Component with provided and required interfaces");
 	}
 
 }

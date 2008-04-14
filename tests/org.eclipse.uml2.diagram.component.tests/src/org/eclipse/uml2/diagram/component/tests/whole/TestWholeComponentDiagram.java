@@ -21,9 +21,9 @@ import org.eclipse.uml2.diagram.component.part.UMLDiagramEditor;
 import org.eclipse.uml2.diagram.component.part.UMLDiagramEditorPlugin;
 import org.osgi.framework.Bundle;
 
-public class TestWholeCSDiagram extends TestWholeDiagram {
+public class TestWholeComponentDiagram extends TestWholeDiagram {
 
-	public TestWholeCSDiagram(String modelFileName, String diagramFileName) {
+	public TestWholeComponentDiagram(String modelFileName, String diagramFileName) {
 		super(modelFileName, diagramFileName);
 	}
 
@@ -57,7 +57,7 @@ public class TestWholeCSDiagram extends TestWholeDiagram {
 		return super.ignoreView(visualId) || Package2EditPart.VISUAL_ID == visualId;
 	}
 
-	private final static Bundle UML_TEST_BUNDLE = Platform.getBundle("org.eclipse.uml2.diagram.csd.tests");
+	private final static Bundle UML_TEST_BUNDLE = Platform.getBundle("org.eclipse.uml2.diagram.component.tests");
 
 	private final static String EXAMPLE_FOLDER = "examples/";
 
