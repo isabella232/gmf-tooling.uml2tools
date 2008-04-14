@@ -18,8 +18,8 @@ import org.eclipse.uml2.diagram.csd.edit.parts.CollaborationContentsEditPart;
 import org.eclipse.uml2.diagram.csd.edit.parts.CollaborationEditPart;
 import org.eclipse.uml2.diagram.csd.edit.parts.CollaborationUse2EditPart;
 import org.eclipse.uml2.diagram.csd.edit.parts.ElementImportEditPart;
-import org.eclipse.uml2.diagram.csd.edit.parts.InstanceSpecificationSlotsEditPart;
 import org.eclipse.uml2.diagram.csd.edit.parts.InstanceSpecificationEditPart;
+import org.eclipse.uml2.diagram.csd.edit.parts.InstanceSpecificationSlotsEditPart;
 import org.eclipse.uml2.diagram.csd.edit.parts.OperationEditPart;
 import org.eclipse.uml2.diagram.csd.edit.parts.Package2EditPart;
 import org.eclipse.uml2.diagram.csd.edit.parts.PackageImportsEditPart;
@@ -36,18 +36,40 @@ public class ChildrenGroupTest extends CSDCreationToolTestBase {
 
 	PaletteRoot myRoot = new PaletteRoot();
 
+	/**
+	 * @generated
+	 */
 	Tool myElementImportTool;
 
+	/**
+	 * @generated
+	 */
 	Tool myAttributeTool;
 
+	/**
+	 * @generated
+	 */
 	Tool myOperationTool;
 
+	/**
+	 * @generated
+	 */
 	Tool myPortTool;
 
+	/**
+	 * @generated
+	 */
 	Tool myCollaborationUseTool;
 
+	/**
+	 * @generated
+	 */
 	Tool mySlotTool;
 
+	/**
+	 * @generated
+	 */
+	@Override
 	protected void setUp() throws Exception {
 		super.setUp();
 		new UMLPaletteFactory().fillPalette(myRoot);
@@ -59,6 +81,9 @@ public class ChildrenGroupTest extends CSDCreationToolTestBase {
 		mySlotTool = ((ToolEntry) ((PaletteContainer) myRoot.getChildren().get(1)).getChildren().get(5)).createTool();
 	}
 
+	/**
+	 * @generated
+	 */
 	public ChildrenGroupTest(String name) {
 		super(name);
 	}
@@ -91,8 +116,11 @@ public class ChildrenGroupTest extends CSDCreationToolTestBase {
 	 */
 	public void testPropertyInCollaboration() {
 		IGraphicalEditPart diagramEditPart = getDiagramEditPart();
+		/**
+		 * @generated
+		 */
 		Tool tool1;
-		tool1 = new UnspecifiedTypeCreationTool(Collections.singletonList(ElementTypeRegistry.getInstance().getType("org.eclipse.uml2.diagram.csd.Collaboration_2005")));
+		tool1 = new UnspecifiedTypeCreationTool(Collections.singletonList(ElementTypeRegistry.getInstance().getType("org.eclipse.uml2.diagram.usecase.Collaboration_2005")));
 
 		createNodeByTool(tool1, 200, 100);
 
@@ -104,7 +132,7 @@ public class ChildrenGroupTest extends CSDCreationToolTestBase {
 		IGraphicalEditPart compartment2 = editPart3.getChildBySemanticHint(UMLVisualIDRegistry.getType(CollaborationContentsEditPart.VISUAL_ID));
 		assertNotNull(compartment2);
 
-		createNodeByTool(myAttributeTool,  275, 130);
+		createNodeByTool(myAttributeTool, 275, 130);
 
 		IGraphicalEditPart editPart4 = compartment2.getChildBySemanticHint(UMLVisualIDRegistry.getType(PropertyEditPart.VISUAL_ID));
 		assertNotNull(editPart4);
@@ -118,8 +146,11 @@ public class ChildrenGroupTest extends CSDCreationToolTestBase {
 	 */
 	public void testPropertyInClass() {
 		IGraphicalEditPart diagramEditPart = getDiagramEditPart();
+		/**
+		 * @generated
+		 */
 		Tool tool2;
-		tool2 = new UnspecifiedTypeCreationTool(Collections.singletonList(ElementTypeRegistry.getInstance().getType("org.eclipse.uml2.diagram.csd.Class_2006")));
+		tool2 = new UnspecifiedTypeCreationTool(Collections.singletonList(ElementTypeRegistry.getInstance().getType("org.eclipse.uml2.diagram.usecase.Class_2006")));
 
 		createNodeByTool(tool2, 200, 100);
 
@@ -145,8 +176,11 @@ public class ChildrenGroupTest extends CSDCreationToolTestBase {
 	 */
 	public void testPropertyInExpandedClass() {
 		IGraphicalEditPart diagramEditPart = getDiagramEditPart();
+		/**
+		 * @generated
+		 */
 		Tool tool3;
-		tool3 = new UnspecifiedTypeCreationTool(Collections.singletonList(ElementTypeRegistry.getInstance().getType("org.eclipse.uml2.diagram.csd.Class_2007")));
+		tool3 = new UnspecifiedTypeCreationTool(Collections.singletonList(ElementTypeRegistry.getInstance().getType("org.eclipse.uml2.diagram.usecase.Class_2007")));
 
 		createNodeByTool(tool3, 200, 100);
 
@@ -172,8 +206,11 @@ public class ChildrenGroupTest extends CSDCreationToolTestBase {
 	 */
 	public void testOperationInClass() {
 		IGraphicalEditPart diagramEditPart = getDiagramEditPart();
+		/**
+		 * @generated
+		 */
 		Tool tool4;
-		tool4 = new UnspecifiedTypeCreationTool(Collections.singletonList(ElementTypeRegistry.getInstance().getType("org.eclipse.uml2.diagram.csd.Class_2006")));
+		tool4 = new UnspecifiedTypeCreationTool(Collections.singletonList(ElementTypeRegistry.getInstance().getType("org.eclipse.uml2.diagram.usecase.Class_2006")));
 
 		createNodeByTool(tool4, 200, 100);
 
@@ -199,8 +236,11 @@ public class ChildrenGroupTest extends CSDCreationToolTestBase {
 	 */
 	public void testPortOnClass() {
 		IGraphicalEditPart diagramEditPart = getDiagramEditPart();
+		/**
+		 * @generated
+		 */
 		Tool tool5;
-		tool5 = new UnspecifiedTypeCreationTool(Collections.singletonList(ElementTypeRegistry.getInstance().getType("org.eclipse.uml2.diagram.csd.Class_2006")));
+		tool5 = new UnspecifiedTypeCreationTool(Collections.singletonList(ElementTypeRegistry.getInstance().getType("org.eclipse.uml2.diagram.usecase.Class_2006")));
 
 		createNodeByTool(tool5, 200, 100);
 
@@ -223,8 +263,11 @@ public class ChildrenGroupTest extends CSDCreationToolTestBase {
 	 */
 	public void testPortOnExpandedClass() {
 		IGraphicalEditPart diagramEditPart = getDiagramEditPart();
+		/**
+		 * @generated
+		 */
 		Tool tool6;
-		tool6 = new UnspecifiedTypeCreationTool(Collections.singletonList(ElementTypeRegistry.getInstance().getType("org.eclipse.uml2.diagram.csd.Class_2007")));
+		tool6 = new UnspecifiedTypeCreationTool(Collections.singletonList(ElementTypeRegistry.getInstance().getType("org.eclipse.uml2.diagram.usecase.Class_2007")));
 
 		createNodeByTool(tool6, 200, 100);
 
@@ -247,8 +290,11 @@ public class ChildrenGroupTest extends CSDCreationToolTestBase {
 	 */
 	public void testCollaborationUseInCollaboration() {
 		IGraphicalEditPart diagramEditPart = getDiagramEditPart();
+		/**
+		 * @generated
+		 */
 		Tool tool7;
-		tool7 = new UnspecifiedTypeCreationTool(Collections.singletonList(ElementTypeRegistry.getInstance().getType("org.eclipse.uml2.diagram.csd.Collaboration_2005")));
+		tool7 = new UnspecifiedTypeCreationTool(Collections.singletonList(ElementTypeRegistry.getInstance().getType("org.eclipse.uml2.diagram.usecase.Collaboration_2005")));
 
 		createNodeByTool(tool7, 200, 100);
 
@@ -274,8 +320,11 @@ public class ChildrenGroupTest extends CSDCreationToolTestBase {
 	 */
 	public void testSlotInInstanceSpecification() {
 		IGraphicalEditPart diagramEditPart = getDiagramEditPart();
+		/**
+		 * @generated
+		 */
 		Tool tool8;
-		tool8 = new UnspecifiedTypeCreationTool(Collections.singletonList(ElementTypeRegistry.getInstance().getType("org.eclipse.uml2.diagram.csd.InstanceSpecification_2011")));
+		tool8 = new UnspecifiedTypeCreationTool(Collections.singletonList(ElementTypeRegistry.getInstance().getType("org.eclipse.uml2.diagram.usecase.InstanceSpecification_2011")));
 
 		createNodeByTool(tool8, 200, 100);
 
@@ -295,6 +344,10 @@ public class ChildrenGroupTest extends CSDCreationToolTestBase {
 		getDiagramEditPart().getViewer().flush();
 
 	}
+
+	/**
+	 * @generated
+	 */
 
 	private static java.lang.String getMetaclassName(IGraphicalEditPart editPart) {
 		return editPart.getNotationView().getElement().eClass().getName();
