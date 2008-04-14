@@ -53,6 +53,7 @@ public class NodesGroupTest extends UseCaseCreationToolTestBase {
 	/**
 	 * @generated
 	 */
+	@Override
 	protected void setUp() throws Exception {
 		super.setUp();
 		myRoot = new PaletteRoot();
@@ -67,6 +68,7 @@ public class NodesGroupTest extends UseCaseCreationToolTestBase {
 	/**
 	 * @generated
 	 */
+	@Override
 	protected void tearDown() throws Exception {
 		myRoot = null;
 		myUseCaseTool = null;
