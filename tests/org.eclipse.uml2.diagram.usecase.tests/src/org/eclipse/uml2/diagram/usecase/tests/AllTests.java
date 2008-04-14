@@ -1,5 +1,6 @@
 package org.eclipse.uml2.diagram.usecase.tests;
 
+import org.eclipse.uml2.diagram.usecase.tests.tool.NodesGroupTest;
 import org.eclipse.uml2.diagram.usecase.tests.whole.TestWholeDiagramSuite;
 
 import junit.framework.Test;
@@ -10,6 +11,7 @@ public class AllTests {
 		TestSuite suite = new TestSuite("Test for org.eclipse.uml2.diagram.usecase");
 		//$JUnit-BEGIN$
 		suite.addTest(new TestWholeDiagramSuite());
+		suite.addTestSuite(NodesGroupTest.class);
 		//$JUnit-END$
 		return suite;
 	}
