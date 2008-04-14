@@ -97,9 +97,6 @@ public class ChildrenGroupTest extends UseCaseCreationToolTestBase {
 	 */
 	public void testExtPointInUseCase() {
 		IGraphicalEditPart diagramEditPart = getDiagramEditPart();
-		/**
-		 * @generated
-		 */
 		Tool tool1;
 		tool1 = new UnspecifiedTypeCreationTool(Collections.singletonList(ElementTypeRegistry.getInstance().getType("org.eclipse.uml2.diagram.usecase.UseCase_2003")));
 
@@ -127,9 +124,6 @@ public class ChildrenGroupTest extends UseCaseCreationToolTestBase {
 	 */
 	public void testExtPointInUseCaseAsClass() {
 		IGraphicalEditPart diagramEditPart = getDiagramEditPart();
-		/**
-		 * @generated
-		 */
 		Tool tool2;
 		tool2 = new UnspecifiedTypeCreationTool(Collections.singletonList(ElementTypeRegistry.getInstance().getType("org.eclipse.uml2.diagram.usecase.UseCase_2004")));
 
