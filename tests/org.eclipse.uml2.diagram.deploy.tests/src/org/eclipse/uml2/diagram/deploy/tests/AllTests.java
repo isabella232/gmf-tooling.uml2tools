@@ -1,5 +1,6 @@
 package org.eclipse.uml2.diagram.deploy.tests;
 
+import org.eclipse.uml2.diagram.deploy.tests.tool.ChildrenTestPalette;
 import org.eclipse.uml2.diagram.deploy.tests.tool.NodeTestPalette;
 import org.eclipse.uml2.diagram.deploy.tests.whole.TestWholeDiagramSuite;
 
@@ -12,6 +13,7 @@ public class AllTests {
 		//$JUnit-BEGIN$
 		suite.addTest(new TestWholeDiagramSuite());
 		suite.addTestSuite(NodeTestPalette.class);
+		suite.addTestSuite(ChildrenTestPalette.class);
 		//$JUnit-END$
 		return suite;
 	}
