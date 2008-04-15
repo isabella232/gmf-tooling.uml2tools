@@ -40,5 +40,5 @@ public class TestWholeActivityDiagram extends org.eclipse.uml2.diagram.common.wh
 
 	private final static Bundle UML_TEST_BUNDLE = Platform.getBundle("org.eclipse.uml2.diagram.activity.tests");
 
-	private final static String EXAMPLE_FOLDER = "testDiagrams/";
+	private final static String EXAMPLE_FOLDER = "examples/";
 }

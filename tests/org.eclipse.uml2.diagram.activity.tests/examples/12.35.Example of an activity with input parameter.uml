@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<uml:Package xmi:version="2.1" xmlns:xmi="http://schema.omg.org/spec/XMI/2.1" xmlns:uml="http://www.eclipse.org/uml2/2.1.0/UML" xmi:id="_ydKOcAktEdyF_oRbgI8ypA">
+  <packagedElement xmi:type="uml:Activity" xmi:id="_zkjUUAktEdyF_oRbgI8ypA" name="Process Order">
+    <node xmi:type="uml:ActivityParameterNode" xmi:id="_5-t7YAktEdyF_oRbgI8ypA" name="Requested Order" outgoing="_M5RrcAkvEdyF_oRbgI8ypA"/>
+    <node xmi:type="uml:OpaqueAction" xmi:id="_rAsAYAkuEdyF_oRbgI8ypA" name="Receive Order" outgoing="_NfIKgAkvEdyF_oRbgI8ypA" incoming="_M5RrcAkvEdyF_oRbgI8ypA _P8pV0AkvEdyF_oRbgI8ypA"/>
+    <node xmi:type="uml:OpaqueAction" xmi:id="_4o7-wAkuEdyF_oRbgI8ypA" name="Fill Order" outgoing="_WaxP0AkvEdyF_oRbgI8ypA" incoming="_9bL-UKTVEdy7eaLHH7_7yw"/>
+    <node xmi:type="uml:OpaqueAction" xmi:id="_6InBwAkuEdyF_oRbgI8ypA" name="Ship Order" outgoing="_g5f4gAkvEdyF_oRbgI8ypA" incoming="_f_YZoAkvEdyF_oRbgI8ypA"/>
+    <node xmi:type="uml:OpaqueAction" xmi:id="_8M8RAAkuEdyF_oRbgI8ypA" name="Close Order" outgoing="_kYRsgAkvEdyF_oRbgI8ypA" incoming="_ifuPcAkvEdyF_oRbgI8ypA"/>
+    <node xmi:type="uml:InitialNode" xmi:id="_FSuw0AkvEdyF_oRbgI8ypA" outgoing="_P8pV0AkvEdyF_oRbgI8ypA"/>
+    <node xmi:type="uml:MergeNode" xmi:id="_IDUpIAkvEdyF_oRbgI8ypA" outgoing="_9bL-UKTVEdy7eaLHH7_7yw _HKEecKTWEdy7eaLHH7_7yw" incoming="_NfIKgAkvEdyF_oRbgI8ypA"/>
+    <node xmi:type="uml:ForkNode" xmi:id="_UwEokAkvEdyF_oRbgI8ypA" outgoing="_f_YZoAkvEdyF_oRbgI8ypA _3_dHcAkvEdyF_oRbgI8ypA" incoming="_WaxP0AkvEdyF_oRbgI8ypA"/>
+    <node xmi:type="uml:JoinNode" xmi:id="_ZBhPoAkvEdyF_oRbgI8ypA" outgoing="_h1ZgEAkvEdyF_oRbgI8ypA" incoming="_g5f4gAkvEdyF_oRbgI8ypA _8kagYAkvEdyF_oRbgI8ypA"/>
+    <node xmi:type="uml:DecisionNode" xmi:id="_aHQvsAkvEdyF_oRbgI8ypA" outgoing="_ifuPcAkvEdyF_oRbgI8ypA" incoming="_h1ZgEAkvEdyF_oRbgI8ypA _HKEecKTWEdy7eaLHH7_7yw"/>
+    <node xmi:type="uml:ActivityFinalNode" xmi:id="_jboeEAkvEdyF_oRbgI8ypA" incoming="_kYRsgAkvEdyF_oRbgI8ypA"/>
+    <node xmi:type="uml:OpaqueAction" xmi:id="_oNj8AAkvEdyF_oRbgI8ypA" name="Send Invoise" outgoing="_6emqcAkvEdyF_oRbgI8ypA" incoming="_3_dHcAkvEdyF_oRbgI8ypA"/>
+    <node xmi:type="uml:OpaqueAction" xmi:id="_p3z3UAkvEdyF_oRbgI8ypA" name="Make Payment" outgoing="_7p28oAkvEdyF_oRbgI8ypA" incoming="_6_FhUAkvEdyF_oRbgI8ypA"/>
+    <node xmi:type="uml:Pin" xmi:id="_toU7kAkvEdyF_oRbgI8ypA" name="Invoice" outgoing="_6_FhUAkvEdyF_oRbgI8ypA" incoming="_6emqcAkvEdyF_oRbgI8ypA"/>
+    <node xmi:type="uml:OpaqueAction" xmi:id="_yGJKsAkvEdyF_oRbgI8ypA" name="Accept Payment" outgoing="_8kagYAkvEdyF_oRbgI8ypA" incoming="_7p28oAkvEdyF_oRbgI8ypA"/>
+    <edge xmi:type="uml:ObjectFlow" xmi:id="_M5RrcAkvEdyF_oRbgI8ypA" source="_5-t7YAktEdyF_oRbgI8ypA" target="_rAsAYAkuEdyF_oRbgI8ypA"/>
+    <edge xmi:type="uml:ControlFlow" xmi:id="_NfIKgAkvEdyF_oRbgI8ypA" source="_rAsAYAkuEdyF_oRbgI8ypA" target="_IDUpIAkvEdyF_oRbgI8ypA"/>
+    <edge xmi:type="uml:ControlFlow" xmi:id="_P8pV0AkvEdyF_oRbgI8ypA" source="_FSuw0AkvEdyF_oRbgI8ypA" target="_rAsAYAkuEdyF_oRbgI8ypA"/>
+    <edge xmi:type="uml:ControlFlow" xmi:id="_WaxP0AkvEdyF_oRbgI8ypA" source="_4o7-wAkuEdyF_oRbgI8ypA" target="_UwEokAkvEdyF_oRbgI8ypA"/>
+    <edge xmi:type="uml:ControlFlow" xmi:id="_f_YZoAkvEdyF_oRbgI8ypA" source="_UwEokAkvEdyF_oRbgI8ypA" target="_6InBwAkuEdyF_oRbgI8ypA"/>
+    <edge xmi:type="uml:ControlFlow" xmi:id="_g5f4gAkvEdyF_oRbgI8ypA" source="_6InBwAkuEdyF_oRbgI8ypA" target="_ZBhPoAkvEdyF_oRbgI8ypA"/>
+    <edge xmi:type="uml:ControlFlow" xmi:id="_h1ZgEAkvEdyF_oRbgI8ypA" source="_ZBhPoAkvEdyF_oRbgI8ypA" target="_aHQvsAkvEdyF_oRbgI8ypA"/>
+    <edge xmi:type="uml:ControlFlow" xmi:id="_ifuPcAkvEdyF_oRbgI8ypA" source="_aHQvsAkvEdyF_oRbgI8ypA" target="_8M8RAAkuEdyF_oRbgI8ypA"/>
+    <edge xmi:type="uml:ControlFlow" xmi:id="_kYRsgAkvEdyF_oRbgI8ypA" source="_8M8RAAkuEdyF_oRbgI8ypA" target="_jboeEAkvEdyF_oRbgI8ypA"/>
+    <edge xmi:type="uml:ControlFlow" xmi:id="_3_dHcAkvEdyF_oRbgI8ypA" source="_UwEokAkvEdyF_oRbgI8ypA" target="_oNj8AAkvEdyF_oRbgI8ypA"/>
+    <edge xmi:type="uml:ObjectFlow" xmi:id="_6emqcAkvEdyF_oRbgI8ypA" source="_oNj8AAkvEdyF_oRbgI8ypA" target="_toU7kAkvEdyF_oRbgI8ypA"/>
+    <edge xmi:type="uml:ObjectFlow" xmi:id="_6_FhUAkvEdyF_oRbgI8ypA" source="_toU7kAkvEdyF_oRbgI8ypA" target="_p3z3UAkvEdyF_oRbgI8ypA"/>
+    <edge xmi:type="uml:ControlFlow" xmi:id="_7p28oAkvEdyF_oRbgI8ypA" source="_p3z3UAkvEdyF_oRbgI8ypA" target="_yGJKsAkvEdyF_oRbgI8ypA"/>
+    <edge xmi:type="uml:ControlFlow" xmi:id="_8kagYAkvEdyF_oRbgI8ypA" source="_yGJKsAkvEdyF_oRbgI8ypA" target="_ZBhPoAkvEdyF_oRbgI8ypA"/>
+    <edge xmi:type="uml:ControlFlow" xmi:id="_9bL-UKTVEdy7eaLHH7_7yw" source="_IDUpIAkvEdyF_oRbgI8ypA" target="_4o7-wAkuEdyF_oRbgI8ypA">
+      <guard xmi:type="uml:LiteralString" xmi:id="_AS7AcKTWEdy7eaLHH7_7yw" value="order accepted"/>
+    </edge>
+    <edge xmi:type="uml:ControlFlow" xmi:id="_HKEecKTWEdy7eaLHH7_7yw" source="_IDUpIAkvEdyF_oRbgI8ypA" target="_aHQvsAkvEdyF_oRbgI8ypA">
+      <guard xmi:type="uml:LiteralString" xmi:id="_NVZ_UKTWEdy7eaLHH7_7yw" value="order rejected"/>
+    </edge>
+  </packagedElement>
+</uml:Package>

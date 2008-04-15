@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<uml:Package xmi:version="2.1" xmlns:xmi="http://schema.omg.org/spec/XMI/2.1" xmlns:uml="http://www.eclipse.org/uml2/2.1.0/UML" xmi:id="_W4YRgAkyEdyF_oRbgI8ypA">
+  <packagedElement xmi:type="uml:Activity" xmi:id="_l-AM0AkyEdyF_oRbgI8ypA" name="Pin examples">
+    <node xmi:type="uml:OpaqueAction" xmi:id="_wumooAkyEdyF_oRbgI8ypA" name="Accept Order">
+      <outputValue xmi:id="_4jAZEAkyEdyF_oRbgI8ypA" name="Order" outgoing="_ZTzVoAkzEdyF_oRbgI8ypA"/>
+    </node>
+    <node xmi:type="uml:OpaqueAction" xmi:id="_xuYqoAkyEdyF_oRbgI8ypA" name="Pick Materials for Order">
+      <outputValue xmi:id="_6e1zoAkyEdyF_oRbgI8ypA" name="Materials" outgoing="_Z8yBMAkzEdyF_oRbgI8ypA" inState="_qHrC4KI7EdyGqNfYOUez1Q"/>
+    </node>
+    <node xmi:type="uml:OpaqueAction" xmi:id="_zBPZoAkyEdyF_oRbgI8ypA" name="Produce Designs">
+      <outputValue xmi:id="_UdjYYAkzEdyF_oRbgI8ypA" name="PC designs" outgoing="_akao8AkzEdyF_oRbgI8ypA"/>
+    </node>
+    <node xmi:type="uml:CallOperationAction" xmi:id="_Ng5IQAkzEdyF_oRbgI8ypA" name="Assemble Order">
+      <argument xmi:id="_PsYIYAkzEdyF_oRbgI8ypA" name="Order" incoming="_ZTzVoAkzEdyF_oRbgI8ypA" inState="_vrqP4KI7EdyGqNfYOUez1Q"/>
+      <argument xmi:id="_QzTUMAkzEdyF_oRbgI8ypA" name="Materials" incoming="_Z8yBMAkzEdyF_oRbgI8ypA" inState="_qHrC4KI7EdyGqNfYOUez1Q"/>
+      <argument xmi:id="_VLv7IAkzEdyF_oRbgI8ypA" name="PC designs" incoming="_akao8AkzEdyF_oRbgI8ypA"/>
+      <result xmi:id="_do01IAkzEdyF_oRbgI8ypA" name="Order" inState="_tZVA4KI7EdyGqNfYOUez1Q"/>
+    </node>
+    <edge xmi:type="uml:ObjectFlow" xmi:id="_ZTzVoAkzEdyF_oRbgI8ypA" source="_4jAZEAkyEdyF_oRbgI8ypA" target="_PsYIYAkzEdyF_oRbgI8ypA"/>
+    <edge xmi:type="uml:ObjectFlow" xmi:id="_Z8yBMAkzEdyF_oRbgI8ypA" source="_6e1zoAkyEdyF_oRbgI8ypA" target="_QzTUMAkzEdyF_oRbgI8ypA"/>
+    <edge xmi:type="uml:ObjectFlow" xmi:id="_akao8AkzEdyF_oRbgI8ypA" source="_UdjYYAkzEdyF_oRbgI8ypA" target="_VLv7IAkzEdyF_oRbgI8ypA"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:StateMachine" xmi:id="_kMuucKI7EdyGqNfYOUez1Q" name="StateMachine">
+    <region xmi:id="_pCYOwKI7EdyGqNfYOUez1Q">
+      <subvertex xmi:type="uml:State" xmi:id="_qHrC4KI7EdyGqNfYOUez1Q" name="picked"/>
+      <subvertex xmi:type="uml:State" xmi:id="_tZVA4KI7EdyGqNfYOUez1Q" name="assembled"/>
+      <subvertex xmi:type="uml:State" xmi:id="_vrqP4KI7EdyGqNfYOUez1Q" name="accepted"/>
+    </region>
+  </packagedElement>
+</uml:Package>

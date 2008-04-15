@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<uml:Package xmi:version="2.1" xmlns:xmi="http://schema.omg.org/spec/XMI/2.1" xmlns:uml="http://www.eclipse.org/uml2/2.1.0/UML" xmi:id="_ugR6cAkzEdyF_oRbgI8ypA">
+  <packagedElement xmi:type="uml:Activity" xmi:id="_vDANAAkzEdyF_oRbgI8ypA" name="Data store node example">
+    <node xmi:type="uml:OpaqueAction" xmi:id="_1YnrQAkzEdyF_oRbgI8ypA" name="Hire Employee" outgoing="_D3CcoAk0EdyF_oRbgI8ypA"/>
+    <node xmi:type="uml:DataStoreNode" xmi:id="_2_vaEAkzEdyF_oRbgI8ypA" name="Personnel database" outgoing="_FEiKgAk0EdyF_oRbgI8ypA _Xx3MUAk0EdyF_oRbgI8ypA" incoming="_D3CcoAk0EdyF_oRbgI8ypA"/>
+    <node xmi:type="uml:OpaqueAction" xmi:id="_7FjY4AkzEdyF_oRbgI8ypA" name="Assign Employee" incoming="_FEiKgAk0EdyF_oRbgI8ypA"/>
+    <node xmi:type="uml:AcceptEventAction" xmi:id="_Ja5GwAk0EdyF_oRbgI8ypA" name="Once a year" outgoing="_VR0RcAk0EdyF_oRbgI8ypA">
+      <trigger xmi:id="_JbotoAk0EdyF_oRbgI8ypA" event="_Jbx3kAk0EdyF_oRbgI8ypA"/>
+    </node>
+    <node xmi:type="uml:JoinNode" xmi:id="_OBMjgAk0EdyF_oRbgI8ypA" outgoing="_UXjooAk0EdyF_oRbgI8ypA" incoming="_VR0RcAk0EdyF_oRbgI8ypA _Xx3MUAk0EdyF_oRbgI8ypA"/>
+    <node xmi:type="uml:OpaqueAction" xmi:id="_TZQ0YAk0EdyF_oRbgI8ypA" name="Review Employee" incoming="_UXjooAk0EdyF_oRbgI8ypA"/>
+    <edge xmi:type="uml:ObjectFlow" xmi:id="_D3CcoAk0EdyF_oRbgI8ypA" source="_1YnrQAkzEdyF_oRbgI8ypA" target="_2_vaEAkzEdyF_oRbgI8ypA"/>
+    <edge xmi:type="uml:ObjectFlow" xmi:id="_FEiKgAk0EdyF_oRbgI8ypA" source="_2_vaEAkzEdyF_oRbgI8ypA" target="_7FjY4AkzEdyF_oRbgI8ypA"/>
+    <edge xmi:type="uml:ControlFlow" xmi:id="_UXjooAk0EdyF_oRbgI8ypA" source="_OBMjgAk0EdyF_oRbgI8ypA" target="_TZQ0YAk0EdyF_oRbgI8ypA"/>
+    <edge xmi:type="uml:ControlFlow" xmi:id="_VR0RcAk0EdyF_oRbgI8ypA" source="_Ja5GwAk0EdyF_oRbgI8ypA" target="_OBMjgAk0EdyF_oRbgI8ypA"/>
+    <edge xmi:type="uml:ObjectFlow" xmi:id="_Xx3MUAk0EdyF_oRbgI8ypA" source="_2_vaEAkzEdyF_oRbgI8ypA" target="_OBMjgAk0EdyF_oRbgI8ypA">
+      <weight xmi:type="uml:LiteralString" xmi:id="_9eDvIKJDEdyGqNfYOUez1Q" value="all"/>
+    </edge>
+  </packagedElement>
+  <packagedElement xmi:type="uml:TimeEvent" xmi:id="_Jbx3kAk0EdyF_oRbgI8ypA"/>
+</uml:Package>
