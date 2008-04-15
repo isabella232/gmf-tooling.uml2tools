@@ -143,7 +143,7 @@ public class UMLVisualIDRegistry {
 	/**
 	 * @generated
 	 */
-	private static final UMLAbstractExpression Property_3001_Constraint = UMLOCLFactory.getExpression("not oclIsKindOf(uml::Port)", UMLPackage.eINSTANCE.getProperty());
+	private static final UMLAbstractExpression Property_3001_Constraint = UMLOCLFactory.getExpression("not oclIsKindOf(uml::Port) and self.association = null", UMLPackage.eINSTANCE.getProperty());
 
 	/**
 	 * @generated

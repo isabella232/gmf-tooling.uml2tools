@@ -367,7 +367,7 @@
         <childMetaFeature
             href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/StructuredClassifier/ownedAttribute"/>
         <modelElementSelector
-            body="not oclIsKindOf(uml::Port)"/>
+            body="not oclIsKindOf(uml::Port) and self.association = null"/>
         <modelElementInitializer
             xsi:type="gmfgen:GenFeatureSeqInitializer">
           <initializers
