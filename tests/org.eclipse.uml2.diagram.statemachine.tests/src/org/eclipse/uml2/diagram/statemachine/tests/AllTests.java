@@ -14,6 +14,7 @@ package org.eclipse.uml2.diagram.statemachine.tests;
 
 import org.eclipse.uml2.diagram.statemachine.tests.sync.SynchronizedDiagramContentTest;
 import org.eclipse.uml2.diagram.statemachine.tests.tools.CreationToolTest;
+import org.eclipse.uml2.diagram.statemachine.tests.whole.TestWholeDiagramSuite;
 
 import junit.framework.Test;
 import junit.framework.TestSuite;
@@ -26,6 +27,7 @@ public class AllTests {
 		//$JUnit-BEGIN$
 		suite.addTestSuite(CreationToolTest.class);
 		suite.addTestSuite(SynchronizedDiagramContentTest.class);
+		suite.addTest(new TestWholeDiagramSuite());
 		//$JUnit-END$
 		return suite;
 	}

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<uml:StateMachine xmi:version="2.1" xmlns:xmi="http://schema.omg.org/spec/XMI/2.1" xmlns:uml="http://www.eclipse.org/uml2/2.1.0/UML" xmi:id="_2lNDMBZlEdyzvZTv-3508A" name="StateMachine">
+  <region xmi:id="_54XdEBZlEdyzvZTv-3508A">
+    <subvertex xmi:type="uml:State" xmi:id="_6zFY4BZlEdyzvZTv-3508A" name="State0"/>
+    <subvertex xmi:type="uml:State" xmi:id="_8XE7MBZlEdyzvZTv-3508A" name="State1"/>
+    <subvertex xmi:type="uml:State" xmi:id="_9wWbQBZlEdyzvZTv-3508A" name="State2"/>
+    <subvertex xmi:type="uml:State" xmi:id="_-uCykBZlEdyzvZTv-3508A" name="State3"/>
+    <subvertex xmi:type="uml:State" xmi:id="__jZGMBZlEdyzvZTv-3508A" name="State4"/>
+    <subvertex xmi:type="uml:Pseudostate" xmi:id="_FG0SgBZmEdyzvZTv-3508A" kind="junction"/>
+    <transition xmi:id="_GktM0BZmEdyzvZTv-3508A" guard="_TttN8BZnEdyHc83xjr4kXQ" target="_FG0SgBZmEdyzvZTv-3508A" source="_6zFY4BZlEdyzvZTv-3508A">
+      <ownedRule xmi:id="_TttN8BZnEdyHc83xjr4kXQ" name="guard">
+        <specification xmi:type="uml:LiteralString" xmi:id="_VbYQsBZnEdyHc83xjr4kXQ" name="specification" value="b &lt; 0"/>
+      </ownedRule>
+      <trigger xmi:id="_MzV5UBZmEdyzvZTv-3508A" name="trigger">
+        <event xmi:type="uml:AnyReceiveEvent" href="events.uml#_YuTE4BZlEdyzvZTv-3508A"/>
+      </trigger>
+    </transition>
+    <transition xmi:id="_HH4LUBZmEdyzvZTv-3508A" guard="_ZoNdgBZnEdyHc83xjr4kXQ" target="_FG0SgBZmEdyzvZTv-3508A" source="_8XE7MBZlEdyzvZTv-3508A">
+      <ownedRule xmi:id="_ZoNdgBZnEdyHc83xjr4kXQ" name="guard">
+        <specification xmi:type="uml:LiteralString" xmi:id="_bs1nsBZnEdyHc83xjr4kXQ" name="specification" value="b &lt; 0"/>
+      </ownedRule>
+      <trigger xmi:id="_5nhIMBZmEdyhHZ9nvoKReg" name="trigger">
+        <event xmi:type="uml:AnyReceiveEvent" href="events.uml#_X2t8oBZlEdyzvZTv-3508A"/>
+      </trigger>
+    </transition>
+    <transition xmi:id="_IPQqIBZmEdyzvZTv-3508A" guard="_phjUwBZnEdyHc83xjr4kXQ" target="_-uCykBZlEdyzvZTv-3508A" source="_FG0SgBZmEdyzvZTv-3508A">
+      <ownedRule xmi:id="_phjUwBZnEdyHc83xjr4kXQ" name="guard">
+        <specification xmi:type="uml:LiteralString" xmi:id="_tYUyABZnEdyHc83xjr4kXQ" name="specification" value="a = 5"/>
+      </ownedRule>
+    </transition>
+    <transition xmi:id="_JC9_ABZmEdyzvZTv-3508A" guard="_xYe0wBZnEdyHc83xjr4kXQ" target="__jZGMBZlEdyzvZTv-3508A" source="_FG0SgBZmEdyzvZTv-3508A">
+      <ownedRule xmi:id="_xYe0wBZnEdyHc83xjr4kXQ" name="guard">
+        <specification xmi:type="uml:LiteralString" xmi:id="_y5MZkBZnEdyHc83xjr4kXQ" name="specification" value="a > 7"/>
+      </ownedRule>
+    </transition>
+    <transition xmi:id="_Jz2CUBZmEdyzvZTv-3508A" guard="_j0UFIBZnEdyHc83xjr4kXQ" target="_9wWbQBZlEdyzvZTv-3508A" source="_FG0SgBZmEdyzvZTv-3508A">
+      <ownedRule xmi:id="_j0UFIBZnEdyHc83xjr4kXQ" name="guard">
+        <specification xmi:type="uml:LiteralString" xmi:id="_lV6awBZnEdyHc83xjr4kXQ" name="specification" value="a &lt; 0"/>
+      </ownedRule>
+    </transition>
+  </region>
+</uml:StateMachine>

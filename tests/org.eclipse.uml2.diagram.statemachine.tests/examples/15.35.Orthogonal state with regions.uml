@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<uml:StateMachine xmi:version="2.1" xmlns:xmi="http://schema.omg.org/spec/XMI/2.1" xmlns:uml="http://www.eclipse.org/uml2/2.1.0/UML" xmi:id="_gAxdkAkrEdyF_oRbgI8ypA" name="CourseAttempt">
+  <region xmi:id="_iFiKoAkrEdyF_oRbgI8ypA">
+    <subvertex xmi:type="uml:State" xmi:id="_kfdPYAkrEdyF_oRbgI8ypA" name="Studying">
+      <region xmi:id="_kfnAYAkrEdyF_oRbgI8ypA" name="Region">
+        <subvertex xmi:type="uml:Pseudostate" xmi:id="_uZVekAkrEdyF_oRbgI8ypA"/>
+        <subvertex xmi:type="uml:FinalState" xmi:id="_wd9BsAkrEdyF_oRbgI8ypA"/>
+        <subvertex xmi:type="uml:State" xmi:id="_zvKTwAkrEdyF_oRbgI8ypA" name="Lab1"/>
+        <subvertex xmi:type="uml:State" xmi:id="_08C9oAkrEdyF_oRbgI8ypA" name="Lab2"/>
+        <transition xmi:id="_3ZGO4AkrEdyF_oRbgI8ypA" target="_zvKTwAkrEdyF_oRbgI8ypA" source="_uZVekAkrEdyF_oRbgI8ypA"/>
+        <transition xmi:id="_Yy5UMBZpEdyhrYeRBHu7AQ" target="_08C9oAkrEdyF_oRbgI8ypA" source="_zvKTwAkrEdyF_oRbgI8ypA">
+          <trigger xmi:id="_dUkvoBZpEdyhrYeRBHu7AQ" name="trigger">
+            <event xmi:type="uml:SignalEvent" href="events.uml#_M0ZXUBZoEdyHc83xjr4kXQ"/>
+          </trigger>
+        </transition>
+        <transition xmi:id="_n6uO8BZpEdyhrYeRBHu7AQ" target="_wd9BsAkrEdyF_oRbgI8ypA" source="_08C9oAkrEdyF_oRbgI8ypA">
+          <trigger xmi:id="_tLe98BZpEdyhrYeRBHu7AQ" name="trigger">
+            <event xmi:type="uml:SignalEvent" href="events.uml#_M0ZXUBZoEdyHc83xjr4kXQ"/>
+          </trigger>
+        </transition>
+      </region>
+      <region xmi:id="_lUW3EAkrEdyF_oRbgI8ypA">
+        <subvertex xmi:type="uml:Pseudostate" xmi:id="_u88h8AkrEdyF_oRbgI8ypA"/>
+        <subvertex xmi:type="uml:FinalState" xmi:id="_xEPloAkrEdyF_oRbgI8ypA"/>
+        <subvertex xmi:type="uml:State" xmi:id="_-SBOgAkrEdyF_oRbgI8ypA" name="Term Project"/>
+        <transition xmi:id="_BD7VcAksEdyF_oRbgI8ypA" target="_-SBOgAkrEdyF_oRbgI8ypA" source="_u88h8AkrEdyF_oRbgI8ypA"/>
+        <transition xmi:id="_1w4GcBZpEdyhrYeRBHu7AQ" target="_xEPloAkrEdyF_oRbgI8ypA" source="_-SBOgAkrEdyF_oRbgI8ypA">
+          <trigger xmi:id="_DqKxgBZqEdyhrYeRBHu7AQ" name="trigger">
+            <event xmi:type="uml:SignalEvent" href="events.uml#_RBoz0BZoEdyHc83xjr4kXQ"/>
+          </trigger>
+        </transition>
+      </region>
+      <region xmi:id="_loeF4AkrEdyF_oRbgI8ypA">
+        <subvertex xmi:type="uml:Pseudostate" xmi:id="_vZjlcAkrEdyF_oRbgI8ypA"/>
+        <subvertex xmi:type="uml:FinalState" xmi:id="_xdRwsAkrEdyF_oRbgI8ypA"/>
+        <subvertex xmi:type="uml:State" xmi:id="_G3QmAAksEdyF_oRbgI8ypA" name="Final Test"/>
+        <transition xmi:id="_Ire8sAksEdyF_oRbgI8ypA" target="_G3QmAAksEdyF_oRbgI8ypA" source="_vZjlcAkrEdyF_oRbgI8ypA"/>
+        <transition xmi:id="_4duuQBZpEdyhrYeRBHu7AQ" target="_xdRwsAkrEdyF_oRbgI8ypA" source="_G3QmAAksEdyF_oRbgI8ypA">
+          <trigger xmi:id="_L3IL4BZqEdyhrYeRBHu7AQ" name="trigger">
+            <event xmi:type="uml:SignalEvent" href="events.uml#_Uk3qABZoEdyHc83xjr4kXQ"/>
+          </trigger>
+        </transition>
+        <transition xmi:id="_6FvN4BZpEdyhrYeRBHu7AQ" target="_oj7KYAkrEdyF_oRbgI8ypA" source="_G3QmAAksEdyF_oRbgI8ypA">
+          <trigger xmi:id="_Pbj78BZqEdyhrYeRBHu7AQ" name="trigger">
+            <event xmi:type="uml:SendSignalEvent" href="events.uml#_aSXYUBZoEdyHc83xjr4kXQ"/>
+          </trigger>
+        </transition>
+      </region>
+    </subvertex>
+    <subvertex xmi:type="uml:State" xmi:id="_oj7KYAkrEdyF_oRbgI8ypA" name="Failed"/>
+    <subvertex xmi:type="uml:State" xmi:id="_pMAeEAkrEdyF_oRbgI8ypA" name="Passed"/>
+    <subvertex xmi:type="uml:Pseudostate" xmi:id="_swIsIAkrEdyF_oRbgI8ypA"/>
+    <transition xmi:id="_FWjBMAksEdyF_oRbgI8ypA" target="_kfdPYAkrEdyF_oRbgI8ypA" source="_swIsIAkrEdyF_oRbgI8ypA"/>
+    <transition xmi:id="_LdP5sAksEdyF_oRbgI8ypA" target="_pMAeEAkrEdyF_oRbgI8ypA" source="_kfdPYAkrEdyF_oRbgI8ypA"/>
+  </region>
+</uml:StateMachine>
