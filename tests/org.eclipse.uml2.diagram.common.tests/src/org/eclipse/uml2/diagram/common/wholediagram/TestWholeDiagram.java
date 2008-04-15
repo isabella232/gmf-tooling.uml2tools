@@ -13,6 +13,7 @@ import junit.framework.TestCase;
 import org.eclipse.core.resources.IFile;
 import org.eclipse.core.runtime.CoreException;
 import org.eclipse.emf.common.util.EList;
+import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emf.transaction.TransactionalEditingDomain;
@@ -20,8 +21,10 @@ import org.eclipse.gmf.runtime.emf.core.GMFEditingDomainFactory;
 import org.eclipse.gmf.runtime.notation.Diagram;
 import org.eclipse.gmf.runtime.notation.Edge;
 import org.eclipse.gmf.runtime.notation.View;
+import org.eclipse.uml2.common.util.UML2Util.EStructuralFeatureMatcher;
 import org.eclipse.uml2.diagram.common.tests.UMLProjectFacade;
 import org.eclipse.uml2.uml.NamedElement;
+import org.eclipse.uml2.uml.UMLPackage;
 
 public abstract class TestWholeDiagram extends TestCase {
 
@@ -103,6 +106,8 @@ public abstract class TestWholeDiagram extends TestCase {
 	}
 
 	private void compareViews(View view1, View view2) {
+		System.out.println("TestWholeDiagram.compareViews(); View1 " + view1);
+		System.out.println("TestWholeDiagram.compareViews(); View2 " + view2);
 		assertEquals("Incorrect View type " + getStackTrace(view2) + " for element " + view2.getElement(), view1.getType(), view2.getType());
 		assertEquals("Incorrect Element eClass " + getStackTrace(view2), view1.getElement().eClass(), view2.getElement().eClass());
 		assertEquals("Incorrect View eClass " + getStackTrace(view2), view1.eClass(), view2.eClass());
@@ -114,7 +119,11 @@ public abstract class TestWholeDiagram extends TestCase {
 		assertEquals("Diagram has incorrect edges size. Expected: " + getPringString(edges1) + ", was: " + getPringString(edges2), edges1.size(), edges2.size());
 		for (int i = 0; i < edges1.size(); i++) {
 			Edge edge1 = (Edge) edges1.get(i);
-			Edge edge2 = (Edge) edges2.get(i);
+			Edge edge2 = (Edge) findTwinForEdge(edge1, edges2);
+			if (edge2 == null) {
+				Assert.fail("View for " + getPringString(edge1) + " was not found in the initialized diagram");
+			}
+			assertEquals("Incorrect Edge type: ", edge1.getType(), edge2.getType());
 			assertEquals("Incorrect Edge source type: edge = " + edge2.getElement(), edge1.getSource().getType(), edge2.getSource().getType());
 			assertEquals("Incorrect Edge source element eClass: edge = " + edge2.getElement(), edge1.getSource().getElement().eClass(), edge2.getSource().getElement().eClass());
 			assertEquals("Incorrect Edge target type: edge = " + edge2.getElement(), edge1.getTarget().getType(), edge2.getTarget().getType());
@@ -156,17 +165,52 @@ public abstract class TestWholeDiagram extends TestCase {
 		if (false == element.getElement() instanceof NamedElement) {
 			return alikeViews.isEmpty() ? null : alikeViews.get(0); 
 		}
-		String name = ((NamedElement)element.getElement()).getName(); 
 		for (View next: alikeViews) {
-			// element is directly casted to NamedElement, because I assume that view with the same VID will have elements with the similar type
-			String nextName = ((NamedElement)next.getElement()).getName();
-			if ((name == null && nextName == null) || name.equals(nextName)) {
+			if (new ViewMatcher(element).matches(next)) {
+				return next;
+			}
+		}			
+		return null;
+	}
+
+	private View findTwinForEdge(Edge element, List<View> alikeViews) {
+		if (false == element.getElement() instanceof NamedElement) {
+			return alikeViews.isEmpty() ? null : alikeViews.get(0); 
+		}
+		for (View next: alikeViews) {
+			if (new EdgeMatcher(element).matches(next)) {
 				return next;
 			}
 		}			
 		return null;
 	}
 	
+	private static class ViewMatcher extends EStructuralFeatureMatcher {
+		public ViewMatcher(View view) {
+			super(view.getElement(), UMLPackage.Literals.NAMED_ELEMENT__NAME);
+		}
+		@Override
+		public boolean matches(EObject otherEObject) {
+			return super.matches(((View)otherEObject).getElement());
+		}
+	}
+	
+	private static class EdgeMatcher extends ViewMatcher {
+		private Edge myEdge;
+		public EdgeMatcher(Edge edge) {
+			super(edge);
+			myEdge = edge;
+		}
+		
+		@Override
+		public boolean matches(EObject otherEObject) {
+			if (!super.matches((Edge)otherEObject)) {
+				return false;
+			}
+			Edge otherEdge = (Edge)otherEObject;
+			return new ViewMatcher(myEdge.getSource()).matches(otherEdge.getSource()) && new ViewMatcher(myEdge.getTarget()).matches(otherEdge.getTarget());
+		}
+	}
 
 	private StringBuffer getStackTrace(View node) {
 		if (node == null) {
@@ -238,8 +282,7 @@ public abstract class TestWholeDiagram extends TestCase {
 	}
 	
 	protected boolean ignoreView(int visualId) {
-		// we do not pay attention to labels
-		return 3000 < visualId && visualId < 4000;
+		return 5000< visualId && visualId < 6000;
 	}
 	
 	private static StringBuffer EMPTY = new StringBuffer(0); 
