@@ -58,6 +58,7 @@ import org.eclipse.uml2.uml.ConnectableElement;
 import org.eclipse.uml2.uml.Connector;
 import org.eclipse.uml2.uml.ConnectorEnd;
 import org.eclipse.uml2.uml.Dependency;
+import org.eclipse.uml2.uml.Element;
 import org.eclipse.uml2.uml.ElementImport;
 import org.eclipse.uml2.uml.Interface;
 import org.eclipse.uml2.uml.InterfaceRealization;
@@ -1694,13 +1695,29 @@ public class UMLDiagramUpdater {
 	}
 
 	/**
-	 * XXX: this method is not called by GMF yet (as for 2.0 release). The
-	 * default generated version is not compiliable.
-	 * 
 	 * @generated NOT
 	 */
 	private static Collection getOutgoingTypeModelFacetLinks_Connector_4008(ConnectableElement source) {
-		throw new UnsupportedOperationException("Not yet implemented");
+		StructuredClassifier container = null;
+		Element current = source.getOwner();
+		while(current != null && container == null){
+			if (current instanceof StructuredClassifier){
+				container = (StructuredClassifier)current;
+			}
+			current = current.getOwner();
+		}
+		if (container == null){
+			return Collections.emptyList();
+		}
+		Collection<UMLLinkDescriptor> allConnectors = getContainedTypeModelFacetLinks_Connector_4008(container);
+		List<UMLLinkDescriptor> outgoing = new LinkedList<UMLLinkDescriptor>();
+		for (Iterator<?> it = allConnectors.iterator(); it.hasNext();){
+			UMLLinkDescriptor next = (UMLLinkDescriptor)it.next();
+			if (source.equals(next.getSource())){
+				outgoing.add(next);
+			}
+		}
+		return outgoing;
 	}
 
 	/**
