@@ -1,11 +1,11 @@
 package org.eclipse.uml2.diagram.common.sheet;
 
 import org.eclipse.emf.common.notify.AdapterFactory;
+import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.IItemPropertySource;
 import org.eclipse.gmf.runtime.emf.ui.properties.descriptors.EMFCompositePropertySource;
 import org.eclipse.ui.views.properties.IPropertyDescriptor;
-import org.eclipse.uml2.uml.UMLPackage;
 
 public class PropertySourceExtension extends EMFCompositePropertySource {
 
@@ -23,8 +23,8 @@ public class PropertySourceExtension extends EMFCompositePropertySource {
 
 	@Override
 	protected IPropertyDescriptor newPropertyDescriptor(IItemPropertyDescriptor itemPropertyDescriptor) {
-		if (UMLPackage.Literals.TYPED_ELEMENT__TYPE.equals(itemPropertyDescriptor.getFeature(object))) {
-			return new TypeSourcePropertyDescriptor(object, itemPropertyDescriptor, getCategory(), myItemProvidersAdapterFactory);
+        if (itemPropertyDescriptor.getFeature(object) instanceof EStructuralFeature) {
+			return new ReferencePropertyDescriptor(object, itemPropertyDescriptor, getCategory(), myItemProvidersAdapterFactory);
 		}
 		return super.newPropertyDescriptor(itemPropertyDescriptor);
 	}
