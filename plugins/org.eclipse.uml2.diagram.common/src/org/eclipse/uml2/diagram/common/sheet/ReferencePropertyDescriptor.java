@@ -3,7 +3,6 @@ package org.eclipse.uml2.diagram.common.sheet;
 import java.util.ArrayList;
 
 import org.eclipse.emf.common.notify.AdapterFactory;
-import org.eclipse.emf.ecore.EClassifier;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
@@ -24,15 +23,14 @@ public class ReferencePropertyDescriptor extends EMFCompositeSourcePropertyDescr
 	@Override
 	protected CellEditor doCreateEditor(Composite composite) {
 		final EStructuralFeature feature = (EStructuralFeature) getFeature();
-		return new ReferenceComboAndDialogCellEditor(composite, new ArrayList(getChoiceOfValues()), getLabelProvider(), true, new UMLElementChooserDialog(composite.getShell(),
-				myItemProvidersAdapterFactory, (EObject) object) {
+		UMLElementChooserDialog dialog = new UMLElementChooserDialog(composite.getShell(), myItemProvidersAdapterFactory, (EObject) object, feature) {
 
 			@Override
-			protected boolean isCorrectElement(EObject selectedElement) {
-				final EClassifier eType = feature.getEType();
-				return eType.isInstance(selectedElement);
+			protected boolean isValid(EObject selectedElement) {
+				return feature.getEType().isInstance(selectedElement);
 			}
-		}, TransactionUtil.getEditingDomain(object));
+		};
+		return new ReferenceComboAndDialogCellEditor(composite, new ArrayList(getChoiceOfValues()), getLabelProvider(), true, dialog, TransactionUtil.getEditingDomain(object));
 
 	}
 

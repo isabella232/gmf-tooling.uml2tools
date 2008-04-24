@@ -8,6 +8,7 @@ import org.eclipse.core.runtime.Path;
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.emf.ecore.util.FeatureMap;
@@ -39,26 +40,32 @@ public class UMLElementChooserDialog extends Dialog {
 	private final AdapterFactory myItemProvidersAdapterFactory;
 
 	private final EObject mySourceObject;
+	
+	private final EStructuralFeature myFeature;
 
-	protected TreeViewer myTreeViewer;
+	private TreeViewer myTreeViewer;
 
 	private URI mySelectedModelElementURI;
 
 	private TransactionalEditingDomain myEditingDomain = GMFEditingDomainFactory.INSTANCE.createEditingDomain();
 
-	public UMLElementChooserDialog(Shell parentShell, AdapterFactory itemProvidersAdapterFactory, EObject sourceObject) {
+	public UMLElementChooserDialog(Shell parentShell, AdapterFactory itemProvidersAdapterFactory, EObject sourceObject, EStructuralFeature feature) {
 		super(parentShell);
 		setShellStyle(getShellStyle() | SWT.RESIZE);
 		myItemProvidersAdapterFactory = itemProvidersAdapterFactory;
 		mySourceObject = sourceObject;
+		myFeature = feature;
 	}
 	
 	@Override
 	protected Control createContents(Composite parent) {
 		Control control = super.createContents(parent);
 		// select already referenced elements
-		myTreeViewer.expandToLevel(3);
-		myTreeViewer.setSelection(new StructuredSelection(mySourceObject), true);
+		Object featureValue = mySourceObject.eGet(myFeature);
+		if (featureValue != null) {
+			myTreeViewer.expandToLevel(3);
+			myTreeViewer.setSelection(new StructuredSelection(featureValue), true);
+		}
 		return control;
 	}
 
@@ -108,7 +115,7 @@ public class UMLElementChooserDialog extends Dialog {
 		return result;
 	}
 	
-	protected boolean isCorrectElement(EObject selectedElement) {
+	protected boolean isValid(EObject selectedElement) {
 		return false;
 	}
 
@@ -199,7 +206,7 @@ public class UMLElementChooserDialog extends Dialog {
 					}
 					if (selectedElement instanceof EObject) {
 						EObject selectedModelElement = (EObject) selectedElement;
-						setOkButtonEnabled(isCorrectElement(selectedModelElement));
+						setOkButtonEnabled(isValid(selectedModelElement));
 						mySelectedModelElementURI = EcoreUtil.getURI(selectedModelElement);
 						return;
 					}
