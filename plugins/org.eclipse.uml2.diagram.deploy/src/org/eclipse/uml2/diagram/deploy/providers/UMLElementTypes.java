@@ -12,6 +12,7 @@ import org.eclipse.emf.ecore.ENamedElement;
 import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.gmf.runtime.emf.type.core.ElementTypeRegistry;
 import org.eclipse.gmf.runtime.emf.type.core.IElementType;
+import org.eclipse.gmf.runtime.emf.type.core.IHintedType;
 import org.eclipse.jface.resource.ImageDescriptor;
 import org.eclipse.jface.resource.ImageRegistry;
 import org.eclipse.swt.graphics.Image;
@@ -47,97 +48,97 @@ public class UMLElementTypes extends ElementInitializers {
 	/**
 	 * @generated
 	 */
-	public static final IElementType Package_1000 = getElementType("org.eclipse.uml2.diagram.deploy.Package_1000"); //$NON-NLS-1$
+	public static final IHintedType Package_1000 = (IHintedType) getElementType("org.eclipse.uml2.diagram.deploy.Package_1000"); //$NON-NLS-1$
 
 	/**
 	 * @generated
 	 */
-	public static final IElementType Package_2001 = getElementType("org.eclipse.uml2.diagram.deploy.Package_2001"); //$NON-NLS-1$
+	public static final IHintedType Package_2001 = (IHintedType) getElementType("org.eclipse.uml2.diagram.deploy.Package_2001"); //$NON-NLS-1$
 
 	/**
 	 * @generated
 	 */
-	public static final IElementType Device_2003 = getElementType("org.eclipse.uml2.diagram.deploy.Device_2003"); //$NON-NLS-1$
+	public static final IHintedType Device_2003 = (IHintedType) getElementType("org.eclipse.uml2.diagram.deploy.Device_2003"); //$NON-NLS-1$
 
 	/**
 	 * @generated
 	 */
-	public static final IElementType Node_2004 = getElementType("org.eclipse.uml2.diagram.deploy.Node_2004"); //$NON-NLS-1$
+	public static final IHintedType Node_2004 = (IHintedType) getElementType("org.eclipse.uml2.diagram.deploy.Node_2004"); //$NON-NLS-1$
 
 	/**
 	 * @generated
 	 */
-	public static final IElementType ExecutionEnvironment_2005 = getElementType("org.eclipse.uml2.diagram.deploy.ExecutionEnvironment_2005"); //$NON-NLS-1$
+	public static final IHintedType ExecutionEnvironment_2005 = (IHintedType) getElementType("org.eclipse.uml2.diagram.deploy.ExecutionEnvironment_2005"); //$NON-NLS-1$
 
 	/**
 	 * @generated
 	 */
-	public static final IElementType Artifact_2006 = getElementType("org.eclipse.uml2.diagram.deploy.Artifact_2006"); //$NON-NLS-1$
+	public static final IHintedType Artifact_2006 = (IHintedType) getElementType("org.eclipse.uml2.diagram.deploy.Artifact_2006"); //$NON-NLS-1$
 
 	/**
 	 * @generated
 	 */
-	public static final IElementType DeploymentSpecification_2007 = getElementType("org.eclipse.uml2.diagram.deploy.DeploymentSpecification_2007"); //$NON-NLS-1$
+	public static final IHintedType DeploymentSpecification_2007 = (IHintedType) getElementType("org.eclipse.uml2.diagram.deploy.DeploymentSpecification_2007"); //$NON-NLS-1$
 
 	/**
 	 * @generated
 	 */
-	public static final IElementType ElementImport_3001 = getElementType("org.eclipse.uml2.diagram.deploy.ElementImport_3001"); //$NON-NLS-1$
+	public static final IHintedType ElementImport_3001 = (IHintedType) getElementType("org.eclipse.uml2.diagram.deploy.ElementImport_3001"); //$NON-NLS-1$
 
 	/**
 	 * @generated
 	 */
-	public static final IElementType Device_3004 = getElementType("org.eclipse.uml2.diagram.deploy.Device_3004"); //$NON-NLS-1$
+	public static final IHintedType Device_3004 = (IHintedType) getElementType("org.eclipse.uml2.diagram.deploy.Device_3004"); //$NON-NLS-1$
 
 	/**
 	 * @generated
 	 */
-	public static final IElementType Artifact_3002 = getElementType("org.eclipse.uml2.diagram.deploy.Artifact_3002"); //$NON-NLS-1$
+	public static final IHintedType Artifact_3002 = (IHintedType) getElementType("org.eclipse.uml2.diagram.deploy.Artifact_3002"); //$NON-NLS-1$
 
 	/**
 	 * @generated
 	 */
-	public static final IElementType ExecutionEnvironment_3005 = getElementType("org.eclipse.uml2.diagram.deploy.ExecutionEnvironment_3005"); //$NON-NLS-1$
+	public static final IHintedType ExecutionEnvironment_3005 = (IHintedType) getElementType("org.eclipse.uml2.diagram.deploy.ExecutionEnvironment_3005"); //$NON-NLS-1$
 
 	/**
 	 * @generated
 	 */
-	public static final IElementType Artifact_3006 = getElementType("org.eclipse.uml2.diagram.deploy.Artifact_3006"); //$NON-NLS-1$
+	public static final IHintedType Artifact_3006 = (IHintedType) getElementType("org.eclipse.uml2.diagram.deploy.Artifact_3006"); //$NON-NLS-1$
 
 	/**
 	 * @generated
 	 */
-	public static final IElementType Node_3007 = getElementType("org.eclipse.uml2.diagram.deploy.Node_3007"); //$NON-NLS-1$
+	public static final IHintedType Node_3007 = (IHintedType) getElementType("org.eclipse.uml2.diagram.deploy.Node_3007"); //$NON-NLS-1$
 
 	/**
 	 * @generated
 	 */
-	public static final IElementType Property_3003 = getElementType("org.eclipse.uml2.diagram.deploy.Property_3003"); //$NON-NLS-1$
+	public static final IHintedType Property_3003 = (IHintedType) getElementType("org.eclipse.uml2.diagram.deploy.Property_3003"); //$NON-NLS-1$
 
 	/**
 	 * @generated
 	 */
-	public static final IElementType Deployment_4001 = getElementType("org.eclipse.uml2.diagram.deploy.Deployment_4001"); //$NON-NLS-1$
+	public static final IHintedType Deployment_4001 = (IHintedType) getElementType("org.eclipse.uml2.diagram.deploy.Deployment_4001"); //$NON-NLS-1$
 
 	/**
 	 * @generated
 	 */
-	public static final IElementType Manifestation_4002 = getElementType("org.eclipse.uml2.diagram.deploy.Manifestation_4002"); //$NON-NLS-1$
+	public static final IHintedType Manifestation_4002 = (IHintedType) getElementType("org.eclipse.uml2.diagram.deploy.Manifestation_4002"); //$NON-NLS-1$
 
 	/**
 	 * @generated
 	 */
-	public static final IElementType DeploymentConfiguration_4003 = getElementType("org.eclipse.uml2.diagram.deploy.DeploymentConfiguration_4003"); //$NON-NLS-1$
+	public static final IHintedType DeploymentConfiguration_4003 = (IHintedType) getElementType("org.eclipse.uml2.diagram.deploy.DeploymentConfiguration_4003"); //$NON-NLS-1$
 
 	/**
 	 * @generated
 	 */
-	public static final IElementType CommunicationPath_4004 = getElementType("org.eclipse.uml2.diagram.deploy.CommunicationPath_4004"); //$NON-NLS-1$
+	public static final IHintedType CommunicationPath_4004 = (IHintedType) getElementType("org.eclipse.uml2.diagram.deploy.CommunicationPath_4004"); //$NON-NLS-1$
 
 	/**
 	 * @generated
 	 */
-	public static final IElementType Dependency_4005 = getElementType("org.eclipse.uml2.diagram.deploy.Dependency_4005"); //$NON-NLS-1$
+	public static final IHintedType Dependency_4005 = (IHintedType) getElementType("org.eclipse.uml2.diagram.deploy.Dependency_4005"); //$NON-NLS-1$
 
 	/**
 	 * @generated
