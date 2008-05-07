@@ -23,13 +23,14 @@ import org.eclipse.gmf.runtime.gef.ui.figures.DefaultSizeNodeFigure;
 import org.eclipse.gmf.runtime.gef.ui.figures.NodeFigure;
 import org.eclipse.gmf.runtime.gef.ui.internal.figures.OvalFigure;
 import org.eclipse.gmf.runtime.notation.View;
+import org.eclipse.uml2.diagram.common.editparts.PrimaryShapeEditPart;
 import org.eclipse.uml2.diagram.csd.edit.policies.CollaborationUse2ItemSemanticEditPolicy;
 import org.eclipse.uml2.diagram.csd.part.UMLVisualIDRegistry;
 
 /**
  * @generated
  */
-public class CollaborationUse2EditPart extends ShapeNodeEditPart {
+public class CollaborationUse2EditPart extends ShapeNodeEditPart implements PrimaryShapeEditPart {
 
 	/**
 	 * @generated

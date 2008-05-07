@@ -23,12 +23,13 @@ import org.eclipse.gmf.runtime.gef.ui.figures.NodeFigure;
 import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.uml2.diagram.clazz.edit.policies.PortItemSemanticEditPolicy;
 import org.eclipse.uml2.diagram.clazz.part.UMLVisualIDRegistry;
+import org.eclipse.uml2.diagram.common.editparts.PrimaryShapeEditPart;
 import org.eclipse.uml2.diagram.common.editpolicies.PortVisualEffectEditPolicy;
 
 /**
  * @generated
  */
-public class PortEditPart extends BorderedBorderItemEditPart {
+public class PortEditPart extends BorderedBorderItemEditPart implements PrimaryShapeEditPart {
 
 	/**
 	 * @generated

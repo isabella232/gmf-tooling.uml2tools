@@ -21,6 +21,7 @@ import org.eclipse.gmf.runtime.diagram.ui.figures.BorderItemLocator;
 import org.eclipse.gmf.runtime.gef.ui.figures.DefaultSizeNodeFigure;
 import org.eclipse.gmf.runtime.gef.ui.figures.NodeFigure;
 import org.eclipse.gmf.runtime.notation.View;
+import org.eclipse.uml2.diagram.common.editparts.PrimaryShapeEditPart;
 import org.eclipse.uml2.diagram.common.editpolicies.PortVisualEffectEditPolicy;
 import org.eclipse.uml2.diagram.csd.edit.policies.Port2ItemSemanticEditPolicy;
 import org.eclipse.uml2.diagram.csd.part.UMLVisualIDRegistry;
@@ -28,7 +29,7 @@ import org.eclipse.uml2.diagram.csd.part.UMLVisualIDRegistry;
 /**
  * @generated
  */
-public class Port2EditPart extends BorderedBorderItemEditPart {
+public class Port2EditPart extends BorderedBorderItemEditPart implements PrimaryShapeEditPart {
 
 	/**
 	 * @generated

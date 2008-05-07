@@ -27,6 +27,7 @@ import org.eclipse.gmf.runtime.gef.ui.figures.NodeFigure;
 import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.uml2.diagram.common.draw2d.OneLineDashedBorder;
 import org.eclipse.uml2.diagram.common.draw2d.SplitEllipseLayout;
+import org.eclipse.uml2.diagram.common.editparts.PrimaryShapeEditPart;
 import org.eclipse.uml2.diagram.usecase.edit.policies.UseCaseItemSemanticEditPolicy;
 import org.eclipse.uml2.diagram.usecase.part.UMLVisualIDRegistry;
 import org.eclipse.uml2.diagram.usecase.providers.UMLElementTypes;
@@ -34,7 +35,7 @@ import org.eclipse.uml2.diagram.usecase.providers.UMLElementTypes;
 /**
  * @generated
  */
-public class UseCaseEditPart extends ShapeNodeEditPart {
+public class UseCaseEditPart extends ShapeNodeEditPart implements PrimaryShapeEditPart {
 
 	/**
 	 * @generated

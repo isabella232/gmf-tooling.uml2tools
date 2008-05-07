@@ -38,6 +38,7 @@ import org.eclipse.swt.SWT;
 import org.eclipse.swt.graphics.Font;
 import org.eclipse.swt.widgets.Display;
 import org.eclipse.uml2.diagram.common.draw2d.CenterLayout;
+import org.eclipse.uml2.diagram.common.editparts.PrimaryShapeEditPart;
 import org.eclipse.uml2.diagram.csd.edit.policies.ClassCanonicalEditPolicy;
 import org.eclipse.uml2.diagram.csd.edit.policies.ClassItemSemanticEditPolicy;
 import org.eclipse.uml2.diagram.csd.edit.policies.UMLTextSelectionEditPolicy;
@@ -47,7 +48,7 @@ import org.eclipse.uml2.diagram.csd.providers.UMLElementTypes;
 /**
  * @generated
  */
-public class ClassEditPart extends AbstractBorderedShapeEditPart {
+public class ClassEditPart extends AbstractBorderedShapeEditPart implements PrimaryShapeEditPart {
 
 	/**
 	 * @generated

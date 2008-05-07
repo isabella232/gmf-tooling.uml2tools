@@ -30,6 +30,7 @@ import org.eclipse.gmf.runtime.emf.type.core.IElementType;
 import org.eclipse.gmf.runtime.gef.ui.figures.DefaultSizeNodeFigure;
 import org.eclipse.gmf.runtime.gef.ui.figures.NodeFigure;
 import org.eclipse.gmf.runtime.notation.View;
+import org.eclipse.uml2.diagram.common.editparts.PrimaryShapeEditPart;
 import org.eclipse.uml2.diagram.common.editpolicies.DoNothingEditPolicy;
 import org.eclipse.uml2.diagram.common.editpolicies.UnmovableUnselectableShapeEditPolicy;
 import org.eclipse.uml2.diagram.profile.edit.policies.Profile3ItemSemanticEditPolicy;
@@ -40,7 +41,7 @@ import org.eclipse.uml2.diagram.profile.providers.UMLElementTypes;
 /**
  * @generated
  */
-public class Profile3EditPart extends ShapeNodeEditPart {
+public class Profile3EditPart extends ShapeNodeEditPart implements PrimaryShapeEditPart {
 
 	/**
 	 * @generated

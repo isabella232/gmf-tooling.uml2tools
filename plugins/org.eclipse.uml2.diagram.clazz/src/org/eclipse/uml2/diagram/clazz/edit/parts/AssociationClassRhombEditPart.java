@@ -24,11 +24,12 @@ import org.eclipse.gmf.runtime.gef.ui.figures.DefaultSizeNodeFigure;
 import org.eclipse.gmf.runtime.gef.ui.figures.NodeFigure;
 import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.uml2.diagram.clazz.edit.policies.AssociationClassRhombItemSemanticEditPolicy;
+import org.eclipse.uml2.diagram.common.editparts.PrimaryShapeEditPart;
 
 /**
  * @generated
  */
-public class AssociationClassRhombEditPart extends ShapeNodeEditPart {
+public class AssociationClassRhombEditPart extends ShapeNodeEditPart implements PrimaryShapeEditPart {
 
 	/**
 	 * @generated

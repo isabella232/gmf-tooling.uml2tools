@@ -33,6 +33,7 @@ import org.eclipse.gmf.runtime.gef.ui.internal.figures.OvalFigure;
 import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.uml2.diagram.common.draw2d.OneLineDashedBorder;
 import org.eclipse.uml2.diagram.common.draw2d.SplitEllipseLayout;
+import org.eclipse.uml2.diagram.common.editparts.PrimaryShapeEditPart;
 import org.eclipse.uml2.diagram.csd.edit.policies.CollaborationCanonicalEditPolicy;
 import org.eclipse.uml2.diagram.csd.edit.policies.CollaborationItemSemanticEditPolicy;
 import org.eclipse.uml2.diagram.csd.edit.policies.OpenDiagramEditPolicy;
@@ -42,7 +43,7 @@ import org.eclipse.uml2.diagram.csd.part.UMLVisualIDRegistry;
 /**
  * @generated
  */
-public class CollaborationEditPart extends ShapeNodeEditPart {
+public class CollaborationEditPart extends ShapeNodeEditPart implements PrimaryShapeEditPart {
 
 	/**
 	 * @generated

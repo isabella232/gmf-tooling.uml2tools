@@ -35,11 +35,12 @@ import org.eclipse.uml2.diagram.clazz.edit.policies.UMLTextSelectionEditPolicy;
 import org.eclipse.uml2.diagram.clazz.part.UMLVisualIDRegistry;
 import org.eclipse.uml2.diagram.clazz.providers.UMLElementTypes;
 import org.eclipse.uml2.diagram.common.draw2d.CenterLayout;
+import org.eclipse.uml2.diagram.common.editparts.PrimaryShapeEditPart;
 
 /**
  * @generated
  */
-public class InstanceSpecification2EditPart extends ShapeNodeEditPart {
+public class InstanceSpecification2EditPart extends ShapeNodeEditPart implements PrimaryShapeEditPart {
 
 	/**
 	 * @generated

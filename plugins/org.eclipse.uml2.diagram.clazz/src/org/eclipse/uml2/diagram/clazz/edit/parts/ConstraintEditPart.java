@@ -24,11 +24,12 @@ import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.uml2.diagram.clazz.edit.policies.ConstraintItemSemanticEditPolicy;
 import org.eclipse.uml2.diagram.clazz.part.UMLVisualIDRegistry;
 import org.eclipse.uml2.diagram.common.draw2d.MultilineConstraintFigure;
+import org.eclipse.uml2.diagram.common.editparts.PrimaryShapeEditPart;
 
 /**
  * @generated
  */
-public class ConstraintEditPart extends ShapeNodeEditPart {
+public class ConstraintEditPart extends ShapeNodeEditPart implements PrimaryShapeEditPart {
 
 	/**
 	 * @generated

@@ -28,6 +28,7 @@ import org.eclipse.swt.graphics.Font;
 import org.eclipse.swt.widgets.Display;
 import org.eclipse.uml2.diagram.common.draw2d.CenterLayout;
 import org.eclipse.uml2.diagram.common.draw2d.PileLayout;
+import org.eclipse.uml2.diagram.common.editparts.PrimaryShapeEditPart;
 import org.eclipse.uml2.diagram.usecase.edit.policies.SubjectItemSemanticEditPolicy;
 import org.eclipse.uml2.diagram.usecase.edit.policies.UMLTextSelectionEditPolicy;
 import org.eclipse.uml2.diagram.usecase.part.UMLVisualIDRegistry;
@@ -35,7 +36,7 @@ import org.eclipse.uml2.diagram.usecase.part.UMLVisualIDRegistry;
 /**
  * @generated
  */
-public class SubjectEditPart extends ShapeNodeEditPart {
+public class SubjectEditPart extends ShapeNodeEditPart implements PrimaryShapeEditPart {
 
 	/**
 	 * @generated

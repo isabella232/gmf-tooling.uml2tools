@@ -36,13 +36,14 @@ import org.eclipse.uml2.diagram.clazz.edit.policies.Package4ItemSemanticEditPoli
 import org.eclipse.uml2.diagram.clazz.edit.policies.UMLTextSelectionEditPolicy;
 import org.eclipse.uml2.diagram.clazz.part.UMLVisualIDRegistry;
 import org.eclipse.uml2.diagram.clazz.providers.UMLElementTypes;
+import org.eclipse.uml2.diagram.common.editparts.PrimaryShapeEditPart;
 import org.eclipse.uml2.diagram.common.editpolicies.DoNothingEditPolicy;
 import org.eclipse.uml2.diagram.common.editpolicies.UnmovableUnselectableShapeEditPolicy;
 
 /**
  * @generated
  */
-public class Package4EditPart extends ShapeNodeEditPart {
+public class Package4EditPart extends ShapeNodeEditPart implements PrimaryShapeEditPart {
 
 	/**
 	 * @generated

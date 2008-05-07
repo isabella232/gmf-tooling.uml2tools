@@ -36,6 +36,7 @@ import org.eclipse.swt.widgets.Display;
 import org.eclipse.uml2.diagram.common.draw2d.CenterLayout;
 import org.eclipse.uml2.diagram.common.draw2d.OneLineDashedBorder;
 import org.eclipse.uml2.diagram.common.draw2d.SplitEllipseLayout;
+import org.eclipse.uml2.diagram.common.editparts.PrimaryShapeEditPart;
 import org.eclipse.uml2.diagram.usecase.edit.policies.InnerUseCaseItemSemanticEditPolicy;
 import org.eclipse.uml2.diagram.usecase.edit.policies.UMLTextSelectionEditPolicy;
 import org.eclipse.uml2.diagram.usecase.part.UMLVisualIDRegistry;
@@ -44,7 +45,7 @@ import org.eclipse.uml2.diagram.usecase.providers.UMLElementTypes;
 /**
  * @generated
  */
-public class InnerUseCaseEditPart extends ShapeNodeEditPart {
+public class InnerUseCaseEditPart extends ShapeNodeEditPart implements PrimaryShapeEditPart {
 
 	/**
 	 * @generated

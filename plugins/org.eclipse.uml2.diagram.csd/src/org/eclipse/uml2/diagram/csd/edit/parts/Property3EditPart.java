@@ -31,6 +31,7 @@ import org.eclipse.gmf.runtime.gef.ui.figures.NodeFigure;
 import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.swt.SWT;
 import org.eclipse.uml2.diagram.common.draw2d.CenterLayout;
+import org.eclipse.uml2.diagram.common.editparts.PrimaryShapeEditPart;
 import org.eclipse.uml2.diagram.csd.edit.policies.Property3CanonicalEditPolicy;
 import org.eclipse.uml2.diagram.csd.edit.policies.Property3ItemSemanticEditPolicy;
 import org.eclipse.uml2.diagram.csd.part.UMLVisualIDRegistry;
@@ -41,7 +42,7 @@ import org.eclipse.uml2.uml.UMLPackage;
 /**
  * @generated
  */
-public class Property3EditPart extends AbstractBorderedShapeEditPart {
+public class Property3EditPart extends AbstractBorderedShapeEditPart implements PrimaryShapeEditPart {
 
 	/**
 	 * @generated

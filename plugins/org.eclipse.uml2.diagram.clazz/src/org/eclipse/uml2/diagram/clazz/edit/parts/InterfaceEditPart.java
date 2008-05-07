@@ -25,11 +25,12 @@ import org.eclipse.gmf.runtime.gef.ui.figures.NodeFigure;
 import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.uml2.diagram.clazz.edit.policies.InterfaceItemSemanticEditPolicy;
 import org.eclipse.uml2.diagram.clazz.part.UMLVisualIDRegistry;
+import org.eclipse.uml2.diagram.common.editparts.PrimaryShapeEditPart;
 
 /**
  * @generated
  */
-public class InterfaceEditPart extends AbstractBorderedShapeEditPart {
+public class InterfaceEditPart extends AbstractBorderedShapeEditPart implements PrimaryShapeEditPart {
 
 	/**
 	 * @generated

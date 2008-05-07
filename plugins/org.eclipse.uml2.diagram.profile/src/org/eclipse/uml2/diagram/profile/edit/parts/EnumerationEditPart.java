@@ -31,6 +31,7 @@ import org.eclipse.swt.SWT;
 import org.eclipse.swt.graphics.Font;
 import org.eclipse.swt.widgets.Display;
 import org.eclipse.uml2.diagram.common.draw2d.CenterLayout;
+import org.eclipse.uml2.diagram.common.editparts.PrimaryShapeEditPart;
 import org.eclipse.uml2.diagram.profile.edit.policies.EnumerationItemSemanticEditPolicy;
 import org.eclipse.uml2.diagram.profile.edit.policies.UMLTextSelectionEditPolicy;
 import org.eclipse.uml2.diagram.profile.part.UMLVisualIDRegistry;
@@ -39,7 +40,7 @@ import org.eclipse.uml2.diagram.profile.providers.UMLElementTypes;
 /**
  * @generated
  */
-public class EnumerationEditPart extends ShapeNodeEditPart {
+public class EnumerationEditPart extends ShapeNodeEditPart implements PrimaryShapeEditPart {
 
 	/**
 	 * @generated

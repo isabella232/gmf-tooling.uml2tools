@@ -20,13 +20,14 @@ import org.eclipse.gmf.runtime.gef.ui.figures.DefaultSizeNodeFigure;
 import org.eclipse.gmf.runtime.gef.ui.figures.NodeFigure;
 import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.uml2.diagram.common.draw2d.CenterLayout;
+import org.eclipse.uml2.diagram.common.editparts.PrimaryShapeEditPart;
 import org.eclipse.uml2.diagram.csd.edit.policies.ParameterItemSemanticEditPolicy;
 import org.eclipse.uml2.diagram.csd.part.UMLVisualIDRegistry;
 
 /**
  * @generated
  */
-public class ParameterEditPart extends ShapeNodeEditPart {
+public class ParameterEditPart extends ShapeNodeEditPart implements PrimaryShapeEditPart {
 
 	/**
 	 * @generated

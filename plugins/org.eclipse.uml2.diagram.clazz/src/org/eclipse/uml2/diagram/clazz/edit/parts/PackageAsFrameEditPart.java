@@ -32,11 +32,12 @@ import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.uml2.diagram.clazz.edit.policies.OpenDiagramEditPolicy;
 import org.eclipse.uml2.diagram.clazz.edit.policies.PackageAsFrameItemSemanticEditPolicy;
 import org.eclipse.uml2.diagram.clazz.part.UMLVisualIDRegistry;
+import org.eclipse.uml2.diagram.common.editparts.PrimaryShapeEditPart;
 
 /**
  * @generated
  */
-public class PackageAsFrameEditPart extends ShapeNodeEditPart {
+public class PackageAsFrameEditPart extends ShapeNodeEditPart implements PrimaryShapeEditPart {
 
 	/**
 	 * @generated
