@@ -2,31 +2,24 @@
  * <copyright>
  * </copyright>
  *
- * $Id: SubstitutableByAttributesImpl.java,v 1.3 2007/11/22 16:59:33 mgolubev Exp $
+ * $Id: SubstitutableByAttributesImpl.java,v 1.4 2008/05/07 17:38:05 mgolubev Exp $
  */
 package org.eclipse.uml2.diagram.codegen.gmfgenext.impl;
 
 import java.util.Collection;
-import org.eclipse.emf.common.notify.Notification;
 import java.util.HashMap;
 
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.util.BasicEList;
 import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.EObject;
-
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.EObjectImpl;
-
-import org.eclipse.emf.ecore.util.EObjectResolvingEList;
-import org.eclipse.emf.ecore.util.EcoreUtil;
+import org.eclipse.emf.ecore.util.EDataTypeUniqueEList;
 import org.eclipse.gmf.codegen.gmfgen.GenCommonBase;
 import org.eclipse.gmf.codegen.gmfgen.GenDiagram;
 import org.eclipse.gmf.codegen.gmfgen.GenNode;
-import org.eclipse.gmf.codegen.gmfgen.Viewmap;
-import org.eclipse.emf.ecore.util.EDataTypeUniqueEList;
-
 import org.eclipse.uml2.diagram.codegen.gmfgenext.GMFGenExtPackage;
 import org.eclipse.uml2.diagram.codegen.gmfgenext.SubstitutableByAttributes;
 
