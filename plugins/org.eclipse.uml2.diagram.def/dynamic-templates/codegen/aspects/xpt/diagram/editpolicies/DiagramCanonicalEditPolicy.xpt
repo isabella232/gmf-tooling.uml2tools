@@ -147,6 +147,11 @@ private java.util.Collection refreshConnections() {
 			}
 			continue;
 		}
+		//don't remove notation-only links 
+		if (isNotationOnlyEdge(nextDiagramLink)){
+			linksIterator.remove();
+			continue;
+		}
 		org.eclipse.emf.ecore.EObject diagramLinkObject = nextDiagramLink.getElement();
 		org.eclipse.emf.ecore.EObject diagramLinkSrc = nextDiagramLink.getSource().getElement();
 		org.eclipse.emf.ecore.EObject diagramLinkDst = nextDiagramLink.getTarget().getElement();
@@ -163,7 +168,12 @@ private java.util.Collection refreshConnections() {
 }
 «ENDAROUND»
 
-«AROUND additions FOR gmfgen::GenDiagram»
+«AROUND xpt::diagram::editpolicies::DiagramCanonicalEditPolicy::additions FOR gmfgen::GenDiagram»
+    «EXPAND xpt::Common::generatedMemberComment»
+    private boolean isNotationOnlyEdge(org.eclipse.gmf.runtime.notation.Edge edge){
+    	return false;
+    }
+
     «EXPAND xpt::Common::generatedMemberComment»
 	private static class Domain2Notation {
 	    «EXPAND xpt::Common::generatedMemberComment»
