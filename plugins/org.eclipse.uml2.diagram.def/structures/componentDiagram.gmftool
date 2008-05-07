@@ -55,6 +55,10 @@
           xsi:type="gmftool:CreationTool"
           title="Dependency"
           description="Create Dependency link"/>
+      <tools
+          xsi:type="gmftool:CreationTool"
+          title="Assembly Connector"
+          description="Create Assembly Connector"/>
     </tools>
     <tools
         xsi:type="gmftool:ToolGroup"

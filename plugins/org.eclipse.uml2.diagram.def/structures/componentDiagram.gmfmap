@@ -120,8 +120,21 @@
               href="componentDiagram_classifiers.gmfgraph#PartNode"/>
         </ownedChild>
       </children>
+      <children
+          compartment="//@nodes.0/@ownedChild/@compartments.0">
+        <containmentFeature
+            href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//StructuredClassifier/ownedConnector"/>
+        <ownedChild>
+          <domainMetaElement
+              href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//Connector"/>
+          <domainSpecialization
+              body="kind =ConnectorKind::assembly"/>
+          <diagramNode
+              href="componentDiagram_connectors.gmfgraph#AssemblyConnectorCircle"/>
+        </ownedChild>
+      </children>
       <compartments
-          children="//@nodes.0/@ownedChild/@children.0 //@nodes.0/@ownedChild/@children.2 //@nodes.0/@ownedChild/@children.3 //@nodes.0/@ownedChild/@children.4 //@nodes.0/@ownedChild/@children.5">
+          children="//@nodes.0/@ownedChild/@children.0 //@nodes.0/@ownedChild/@children.2 //@nodes.0/@ownedChild/@children.3 //@nodes.0/@ownedChild/@children.4 //@nodes.0/@ownedChild/@children.5 //@nodes.0/@ownedChild/@children.6">
         <compartment
             href="componentDiagram_classifiers.gmfgraph#contents"/>
       </compartments>
@@ -678,6 +691,18 @@
   <links>
     <domainMetaElement
         href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//Connector"/>
+    <domainSpecialization
+        body="kind =ConnectorKind::delegation"/>
+    <domainInitializer
+        xsi:type="gmfmap:FeatureSeqInitializer">
+      <initializers
+          xsi:type="gmfmap:FeatureValueSpec"
+          body="ConnectorKind::delegation">
+        <feature
+            xsi:type="ecore:EAttribute"
+            href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//Connector/kind"/>
+      </initializers>
+    </domainInitializer>
     <containmentFeature
         href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//StructuredClassifier/ownedConnector"/>
     <tool
@@ -720,6 +745,20 @@
     <creationConstraints>
       <targetEnd
           body="not self.oclIsKindOf(uml::Interface)&#xD;&#xA;"/>
+    </creationConstraints>
+  </links>
+  <links>
+    <tool
+        xsi:type="gmftool:CreationTool"
+        href="componentDiagram.gmftool#//@palette/@tools.1/@tools.4"/>
+    <diagramLink
+        href="componentDiagram_connectors.gmfgraph#AssemblyConnectorLink"/>
+    <linkMetaFeature
+        xsi:type="ecore:EReference"
+        href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//ConnectorEnd/role"/>
+    <creationConstraints>
+      <sourceEnd
+          body="self.oclIsKindOf(uml::Connector) and (self.oclAsType(uml::Connector).kind = ConnectorKind::assembly)"/>
     </creationConstraints>
   </links>
   <diagram>
