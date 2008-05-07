@@ -42,7 +42,7 @@ public class AssemblyConnectorEndRoleCreateCommand extends EditElementCommand {
 		if (source == null && target == null) {
 			return false;
 		}
-		if (source != null && false == source instanceof ConnectableElement) {
+		if (source != null && false == source instanceof ConnectorEnd) {
 			return false;
 		}
 		if (target != null && false == target instanceof ConnectableElement) {
