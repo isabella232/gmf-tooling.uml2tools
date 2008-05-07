@@ -63,6 +63,7 @@ import org.eclipse.uml2.uml.UMLPackage;
 /**
  * @generated
  */
+@SuppressWarnings("unchecked")
 public class UMLDiagramUpdater {
 
 	/**

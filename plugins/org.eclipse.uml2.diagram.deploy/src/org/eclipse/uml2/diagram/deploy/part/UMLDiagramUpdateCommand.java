@@ -18,6 +18,7 @@ import org.eclipse.ui.PlatformUI;
 /**
  * @generated
  */
+@SuppressWarnings("unchecked")
 public class UMLDiagramUpdateCommand implements IHandler {
 
 	/**
