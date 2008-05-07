@@ -14,10 +14,38 @@
  * The only actual change is in the fillItemProviderFactories method 
  * (we are adding custom AdapterFactory that knows about custom icons). 
  * Search for "THE ONLY CHANGE" in this template code.
+ * 
+ * NOTE: despite the above, there is some <i>additional</i> code that is contributed via AROUND additions 
  */
 
 «IMPORT "http://www.eclipse.org/gmf/2006/GenModel"»
 «EXTENSION xpt::GenModelUtils»
+
+«AROUND xpt::plugin::Activator::additions FOR gmfgen::GenPlugin-»
+	«EXPAND xpt::Common::generatedMemberComment»
+	public org.eclipse.jface.resource.FontRegistry getFontRegistry(){
+		if (myFontRegistry == null){
+			myFontRegistry = new org.eclipse.jface.resource.FontRegistry(org.eclipse.swt.widgets.Display.getCurrent());
+			myFontRegistry.put(
+				org.eclipse.gmf.runtime.diagram.ui.preferences.IPreferenceConstants.PREF_DEFAULT_FONT, 
+				org.eclipse.jface.preference.PreferenceConverter.getDefaultFontDataArray(getPreferenceStore(), org.eclipse.gmf.runtime.diagram.ui.preferences.IPreferenceConstants.PREF_DEFAULT_FONT));
+		}
+		return myFontRegistry;
+	}
+	
+	«EXPAND xpt::Common::generatedMemberComment»
+	public org.eclipse.swt.graphics.Font getDefaultFont(){
+		return getFontRegistry().get(org.eclipse.gmf.runtime.diagram.ui.preferences.IPreferenceConstants.PREF_DEFAULT_FONT);
+	}
+	
+	«EXPAND xpt::Common::generatedMemberComment»
+	public org.eclipse.swt.graphics.Font getDefaultBoldFont(){
+		return getFontRegistry().getBold(org.eclipse.gmf.runtime.diagram.ui.preferences.IPreferenceConstants.PREF_DEFAULT_FONT);
+	}
+
+	«EXPAND xpt::Common::generatedMemberComment»
+	private org.eclipse.jface.resource.FontRegistry myFontRegistry;
+«ENDAROUND»
 
 «AROUND Activator FOR gmfgen::GenPlugin-»
 «EXPAND xpt::Common::copyright FOR editorGen-»
