@@ -16,8 +16,13 @@ import org.eclipse.emf.edit.provider.ReflectiveItemProviderAdapterFactory;
 import org.eclipse.emf.edit.provider.resource.ResourceItemProviderAdapterFactory;
 import org.eclipse.emf.edit.ui.provider.ExtendedImageRegistry;
 import org.eclipse.gmf.runtime.diagram.core.preferences.PreferencesHint;
+import org.eclipse.gmf.runtime.diagram.ui.preferences.IPreferenceConstants;
+import org.eclipse.jface.preference.PreferenceConverter;
+import org.eclipse.jface.resource.FontRegistry;
 import org.eclipse.jface.resource.ImageDescriptor;
+import org.eclipse.swt.graphics.Font;
 import org.eclipse.swt.graphics.Image;
+import org.eclipse.swt.widgets.Display;
 import org.eclipse.ui.plugin.AbstractUIPlugin;
 import org.eclipse.uml2.diagram.common.providers.AlternativeUMLItemProviderAdapterFactory;
 import org.eclipse.uml2.uml.edit.providers.UMLItemProviderAdapterFactory;
@@ -243,5 +248,35 @@ public class UMLDiagramEditorPlugin extends AbstractUIPlugin {
 			throwable.printStackTrace();
 		}
 	}
+
+	/**
+	 * @generated
+	 */
+	public FontRegistry getFontRegistry() {
+		if (myFontRegistry == null) {
+			myFontRegistry = new FontRegistry(Display.getCurrent());
+			myFontRegistry.put(IPreferenceConstants.PREF_DEFAULT_FONT, PreferenceConverter.getDefaultFontDataArray(getPreferenceStore(), IPreferenceConstants.PREF_DEFAULT_FONT));
+		}
+		return myFontRegistry;
+	}
+
+	/**
+	 * @generated
+	 */
+	public Font getDefaultFont() {
+		return getFontRegistry().get(IPreferenceConstants.PREF_DEFAULT_FONT);
+	}
+
+	/**
+	 * @generated
+	 */
+	public Font getDefaultBoldFont() {
+		return getFontRegistry().getBold(IPreferenceConstants.PREF_DEFAULT_FONT);
+	}
+
+	/**
+	 * @generated
+	 */
+	private FontRegistry myFontRegistry;
 
 }
