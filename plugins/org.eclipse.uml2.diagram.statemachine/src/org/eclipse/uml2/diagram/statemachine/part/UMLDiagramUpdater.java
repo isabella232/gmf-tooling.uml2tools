@@ -56,6 +56,7 @@ import org.eclipse.uml2.uml.Vertex;
 /**
  * @generated
  */
+@SuppressWarnings("unchecked")
 public class UMLDiagramUpdater {
 
 	/**
