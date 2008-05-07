@@ -12,6 +12,7 @@ import org.eclipse.emf.ecore.ENamedElement;
 import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.gmf.runtime.emf.type.core.ElementTypeRegistry;
 import org.eclipse.gmf.runtime.emf.type.core.IElementType;
+import org.eclipse.gmf.runtime.emf.type.core.IHintedType;
 import org.eclipse.jface.resource.ImageDescriptor;
 import org.eclipse.jface.resource.ImageRegistry;
 import org.eclipse.swt.graphics.Image;
@@ -47,152 +48,152 @@ public class UMLElementTypes extends ElementInitializers {
 	/**
 	 * @generated
 	 */
-	public static final IElementType Package_1000 = getElementType("org.eclipse.uml2.diagram.component.Package_1000"); //$NON-NLS-1$
+	public static final IHintedType Package_1000 = (IHintedType) getElementType("org.eclipse.uml2.diagram.component.Package_1000"); //$NON-NLS-1$
 
 	/**
 	 * @generated
 	 */
-	public static final IElementType Component_2001 = getElementType("org.eclipse.uml2.diagram.component.Component_2001"); //$NON-NLS-1$
+	public static final IHintedType Component_2001 = (IHintedType) getElementType("org.eclipse.uml2.diagram.component.Component_2001"); //$NON-NLS-1$
 
 	/**
 	 * @generated
 	 */
-	public static final IElementType Artifact_2002 = getElementType("org.eclipse.uml2.diagram.component.Artifact_2002"); //$NON-NLS-1$
+	public static final IHintedType Artifact_2002 = (IHintedType) getElementType("org.eclipse.uml2.diagram.component.Artifact_2002"); //$NON-NLS-1$
 
 	/**
 	 * @generated
 	 */
-	public static final IElementType Interface_2003 = getElementType("org.eclipse.uml2.diagram.component.Interface_2003"); //$NON-NLS-1$
+	public static final IHintedType Interface_2003 = (IHintedType) getElementType("org.eclipse.uml2.diagram.component.Interface_2003"); //$NON-NLS-1$
 
 	/**
 	 * @generated
 	 */
-	public static final IElementType Class_2004 = getElementType("org.eclipse.uml2.diagram.component.Class_2004"); //$NON-NLS-1$
+	public static final IHintedType Class_2004 = (IHintedType) getElementType("org.eclipse.uml2.diagram.component.Class_2004"); //$NON-NLS-1$
 
 	/**
 	 * @generated
 	 */
-	public static final IElementType Package_2005 = getElementType("org.eclipse.uml2.diagram.component.Package_2005"); //$NON-NLS-1$
+	public static final IHintedType Package_2005 = (IHintedType) getElementType("org.eclipse.uml2.diagram.component.Package_2005"); //$NON-NLS-1$
 
 	/**
 	 * @generated
 	 */
-	public static final IElementType Package_2006 = getElementType("org.eclipse.uml2.diagram.component.Package_2006"); //$NON-NLS-1$
+	public static final IHintedType Package_2006 = (IHintedType) getElementType("org.eclipse.uml2.diagram.component.Package_2006"); //$NON-NLS-1$
 
 	/**
 	 * @generated
 	 */
-	public static final IElementType Class_2007 = getElementType("org.eclipse.uml2.diagram.component.Class_2007"); //$NON-NLS-1$
+	public static final IHintedType Class_2007 = (IHintedType) getElementType("org.eclipse.uml2.diagram.component.Class_2007"); //$NON-NLS-1$
 
 	/**
 	 * @generated
 	 */
-	public static final IElementType Component_3001 = getElementType("org.eclipse.uml2.diagram.component.Component_3001"); //$NON-NLS-1$
+	public static final IHintedType Component_3001 = (IHintedType) getElementType("org.eclipse.uml2.diagram.component.Component_3001"); //$NON-NLS-1$
 
 	/**
 	 * @generated
 	 */
-	public static final IElementType Port_3002 = getElementType("org.eclipse.uml2.diagram.component.Port_3002"); //$NON-NLS-1$
+	public static final IHintedType Port_3002 = (IHintedType) getElementType("org.eclipse.uml2.diagram.component.Port_3002"); //$NON-NLS-1$
 
 	/**
 	 * @generated
 	 */
-	public static final IElementType Artifact_3003 = getElementType("org.eclipse.uml2.diagram.component.Artifact_3003"); //$NON-NLS-1$
+	public static final IHintedType Artifact_3003 = (IHintedType) getElementType("org.eclipse.uml2.diagram.component.Artifact_3003"); //$NON-NLS-1$
 
 	/**
 	 * @generated
 	 */
-	public static final IElementType Class_3004 = getElementType("org.eclipse.uml2.diagram.component.Class_3004"); //$NON-NLS-1$
+	public static final IHintedType Class_3004 = (IHintedType) getElementType("org.eclipse.uml2.diagram.component.Class_3004"); //$NON-NLS-1$
 
 	/**
 	 * @generated
 	 */
-	public static final IElementType Interface_3005 = getElementType("org.eclipse.uml2.diagram.component.Interface_3005"); //$NON-NLS-1$
+	public static final IHintedType Interface_3005 = (IHintedType) getElementType("org.eclipse.uml2.diagram.component.Interface_3005"); //$NON-NLS-1$
 
 	/**
 	 * @generated
 	 */
-	public static final IElementType Property_3006 = getElementType("org.eclipse.uml2.diagram.component.Property_3006"); //$NON-NLS-1$
+	public static final IHintedType Property_3006 = (IHintedType) getElementType("org.eclipse.uml2.diagram.component.Property_3006"); //$NON-NLS-1$
 
 	/**
 	 * @generated
 	 */
-	public static final IElementType Connector_3015 = getElementType("org.eclipse.uml2.diagram.component.Connector_3015"); //$NON-NLS-1$
+	public static final IHintedType Connector_3015 = (IHintedType) getElementType("org.eclipse.uml2.diagram.component.Connector_3015"); //$NON-NLS-1$
 
 	/**
 	 * @generated
 	 */
-	public static final IElementType ElementImport_3007 = getElementType("org.eclipse.uml2.diagram.component.ElementImport_3007"); //$NON-NLS-1$
+	public static final IHintedType ElementImport_3007 = (IHintedType) getElementType("org.eclipse.uml2.diagram.component.ElementImport_3007"); //$NON-NLS-1$
 
 	/**
 	 * @generated
 	 */
-	public static final IElementType Package_3008 = getElementType("org.eclipse.uml2.diagram.component.Package_3008"); //$NON-NLS-1$
+	public static final IHintedType Package_3008 = (IHintedType) getElementType("org.eclipse.uml2.diagram.component.Package_3008"); //$NON-NLS-1$
 
 	/**
 	 * @generated
 	 */
-	public static final IElementType Class_3009 = getElementType("org.eclipse.uml2.diagram.component.Class_3009"); //$NON-NLS-1$
+	public static final IHintedType Class_3009 = (IHintedType) getElementType("org.eclipse.uml2.diagram.component.Class_3009"); //$NON-NLS-1$
 
 	/**
 	 * @generated
 	 */
-	public static final IElementType Component_3010 = getElementType("org.eclipse.uml2.diagram.component.Component_3010"); //$NON-NLS-1$
+	public static final IHintedType Component_3010 = (IHintedType) getElementType("org.eclipse.uml2.diagram.component.Component_3010"); //$NON-NLS-1$
 
 	/**
 	 * @generated
 	 */
-	public static final IElementType Property_3011 = getElementType("org.eclipse.uml2.diagram.component.Property_3011"); //$NON-NLS-1$
+	public static final IHintedType Property_3011 = (IHintedType) getElementType("org.eclipse.uml2.diagram.component.Property_3011"); //$NON-NLS-1$
 
 	/**
 	 * @generated
 	 */
-	public static final IElementType Operation_3012 = getElementType("org.eclipse.uml2.diagram.component.Operation_3012"); //$NON-NLS-1$
+	public static final IHintedType Operation_3012 = (IHintedType) getElementType("org.eclipse.uml2.diagram.component.Operation_3012"); //$NON-NLS-1$
 
 	/**
 	 * @generated
 	 */
-	public static final IElementType Class_3013 = getElementType("org.eclipse.uml2.diagram.component.Class_3013"); //$NON-NLS-1$
+	public static final IHintedType Class_3013 = (IHintedType) getElementType("org.eclipse.uml2.diagram.component.Class_3013"); //$NON-NLS-1$
 
 	/**
 	 * @generated
 	 */
-	public static final IElementType Port_3014 = getElementType("org.eclipse.uml2.diagram.component.Port_3014"); //$NON-NLS-1$
+	public static final IHintedType Port_3014 = (IHintedType) getElementType("org.eclipse.uml2.diagram.component.Port_3014"); //$NON-NLS-1$
 
 	/**
 	 * @generated
 	 */
-	public static final IElementType InterfaceRealization_4001 = getElementType("org.eclipse.uml2.diagram.component.InterfaceRealization_4001"); //$NON-NLS-1$
+	public static final IHintedType InterfaceRealization_4001 = (IHintedType) getElementType("org.eclipse.uml2.diagram.component.InterfaceRealization_4001"); //$NON-NLS-1$
 
 	/**
 	 * @generated
 	 */
-	public static final IElementType PortProvided_4006 = getElementType("org.eclipse.uml2.diagram.component.PortProvided_4006"); //$NON-NLS-1$
+	public static final IHintedType PortProvided_4006 = (IHintedType) getElementType("org.eclipse.uml2.diagram.component.PortProvided_4006"); //$NON-NLS-1$
 
 	/**
 	 * @generated
 	 */
-	public static final IElementType PortRequired_4004 = getElementType("org.eclipse.uml2.diagram.component.PortRequired_4004"); //$NON-NLS-1$
+	public static final IHintedType PortRequired_4004 = (IHintedType) getElementType("org.eclipse.uml2.diagram.component.PortRequired_4004"); //$NON-NLS-1$
 
 	/**
 	 * @generated
 	 */
-	public static final IElementType ComponentRequired_4007 = getElementType("org.eclipse.uml2.diagram.component.ComponentRequired_4007"); //$NON-NLS-1$
+	public static final IHintedType ComponentRequired_4007 = (IHintedType) getElementType("org.eclipse.uml2.diagram.component.ComponentRequired_4007"); //$NON-NLS-1$
 
 	/**
 	 * @generated
 	 */
-	public static final IElementType Connector_4008 = getElementType("org.eclipse.uml2.diagram.component.Connector_4008"); //$NON-NLS-1$
+	public static final IHintedType Connector_4008 = (IHintedType) getElementType("org.eclipse.uml2.diagram.component.Connector_4008"); //$NON-NLS-1$
 
 	/**
 	 * @generated
 	 */
-	public static final IElementType Dependency_4009 = getElementType("org.eclipse.uml2.diagram.component.Dependency_4009"); //$NON-NLS-1$
+	public static final IHintedType Dependency_4009 = (IHintedType) getElementType("org.eclipse.uml2.diagram.component.Dependency_4009"); //$NON-NLS-1$
 
 	/**
 	 * @generated
 	 */
-	public static final IElementType ConnectorEndRole_4010 = getElementType("org.eclipse.uml2.diagram.component.ConnectorEndRole_4010"); //$NON-NLS-1$
+	public static final IHintedType ConnectorEndRole_4010 = (IHintedType) getElementType("org.eclipse.uml2.diagram.component.ConnectorEndRole_4010"); //$NON-NLS-1$
 
 	/**
 	 * @generated
