@@ -33,3 +33,8 @@
 	}	
 	«ENDIF-»
 «ENDAROUND»
+
+«AROUND implementsList FOR gmfgen::GenNode»«EXPAND implementsPrimaryShapeEditPart FOR viewmap»«ENDAROUND»
+
+«DEFINE implementsPrimaryShapeEditPart FOR gmfgen::Viewmap»«ENDDEFINE»
+«DEFINE implementsPrimaryShapeEditPart FOR gmfgen::InnerClassViewmap»implements org.eclipse.uml2.diagram.common.editparts.PrimaryShapeEditPart«ENDDEFINE»
