@@ -18,6 +18,7 @@ import org.eclipse.gmf.runtime.draw2d.ui.figures.WrapLabel;
 import org.eclipse.gmf.runtime.gef.ui.figures.DefaultSizeNodeFigure;
 import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.uml2.diagram.common.draw2d.Cube3DFigure;
+import org.eclipse.uml2.diagram.common.editparts.PrimaryShapeEditPart;
 import org.eclipse.uml2.diagram.deploy.edit.policies.NodeCanonicalEditPolicy;
 import org.eclipse.uml2.diagram.deploy.edit.policies.NodeGraphicalNodeEditPolicy;
 import org.eclipse.uml2.diagram.deploy.edit.policies.NodeItemSemanticEditPolicy;
@@ -26,7 +27,7 @@ import org.eclipse.uml2.diagram.deploy.part.UMLVisualIDRegistry;
 /**
  * @generated
  */
-public class NodeEditPart extends ShapeNodeEditPart {
+public class NodeEditPart extends ShapeNodeEditPart implements PrimaryShapeEditPart {
 
 	/**
 	 * @generated

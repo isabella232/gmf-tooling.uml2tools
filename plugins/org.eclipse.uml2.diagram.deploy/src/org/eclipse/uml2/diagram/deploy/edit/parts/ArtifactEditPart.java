@@ -56,6 +56,7 @@ import org.eclipse.swt.graphics.Color;
 import org.eclipse.swt.graphics.FontData;
 import org.eclipse.swt.graphics.Image;
 import org.eclipse.uml2.diagram.common.draw2d.CenterLayout;
+import org.eclipse.uml2.diagram.common.editparts.PrimaryShapeEditPart;
 import org.eclipse.uml2.diagram.deploy.edit.policies.ArtifactCanonicalEditPolicy;
 import org.eclipse.uml2.diagram.deploy.edit.policies.ArtifactItemSemanticEditPolicy;
 import org.eclipse.uml2.diagram.deploy.edit.policies.UMLTextNonResizableEditPolicy;
@@ -67,7 +68,7 @@ import org.eclipse.uml2.diagram.deploy.providers.UMLParserProvider;
 /**
  * @generated
  */
-public class ArtifactEditPart extends ShapeNodeEditPart {
+public class ArtifactEditPart extends ShapeNodeEditPart implements PrimaryShapeEditPart {
 
 	/**
 	 * @generated

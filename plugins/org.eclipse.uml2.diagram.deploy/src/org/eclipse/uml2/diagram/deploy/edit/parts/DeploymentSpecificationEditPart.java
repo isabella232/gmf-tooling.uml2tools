@@ -33,6 +33,7 @@ import org.eclipse.swt.SWT;
 import org.eclipse.swt.graphics.Font;
 import org.eclipse.swt.widgets.Display;
 import org.eclipse.uml2.diagram.common.draw2d.CenterLayout;
+import org.eclipse.uml2.diagram.common.editparts.PrimaryShapeEditPart;
 import org.eclipse.uml2.diagram.deploy.edit.policies.DeploymentSpecificationCanonicalEditPolicy;
 import org.eclipse.uml2.diagram.deploy.edit.policies.DeploymentSpecificationItemSemanticEditPolicy;
 import org.eclipse.uml2.diagram.deploy.edit.policies.UMLTextSelectionEditPolicy;
@@ -42,7 +43,7 @@ import org.eclipse.uml2.diagram.deploy.providers.UMLElementTypes;
 /**
  * @generated
  */
-public class DeploymentSpecificationEditPart extends ShapeNodeEditPart {
+public class DeploymentSpecificationEditPart extends ShapeNodeEditPart implements PrimaryShapeEditPart {
 
 	/**
 	 * @generated
