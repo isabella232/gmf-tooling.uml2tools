@@ -155,6 +155,7 @@ import org.eclipse.uml2.uml.ValueSpecification;
 /**
  * @generated
  */
+@SuppressWarnings("unchecked")
 public class UMLDiagramUpdater {
 
 	/**
