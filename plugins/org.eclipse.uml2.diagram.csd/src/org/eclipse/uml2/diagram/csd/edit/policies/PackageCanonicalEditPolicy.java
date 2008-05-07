@@ -253,6 +253,11 @@ public class PackageCanonicalEditPolicy extends CanonicalConnectionEditPolicy {
 				}
 				continue;
 			}
+			//don't remove notation-only links 
+			if (isNotationOnlyEdge(nextDiagramLink)) {
+				linksIterator.remove();
+				continue;
+			}
 			EObject diagramLinkObject = nextDiagramLink.getElement();
 			EObject diagramLinkSrc = nextDiagramLink.getSource().getElement();
 			EObject diagramLinkDst = nextDiagramLink.getTarget().getElement();
@@ -563,6 +568,13 @@ public class PackageCanonicalEditPolicy extends CanonicalConnectionEditPolicy {
 			return (EditPart) getHost().getViewer().getEditPartRegistry().get(view);
 		}
 		return null;
+	}
+
+	/**
+	 * @generated
+	 */
+	private boolean isNotationOnlyEdge(Edge edge) {
+		return false;
 	}
 
 	/**
