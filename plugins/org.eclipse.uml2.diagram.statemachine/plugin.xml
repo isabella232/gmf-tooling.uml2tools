@@ -642,6 +642,7 @@
       <page
             id="org.eclipse.uml2.uml.diagram.statemachine.general"
             name="%preference.page.title.org.eclipse.uml2.uml.diagram.statemachine.general"
+            category="org.eclipse.uml2.uml.diagram"
             class="org.eclipse.uml2.diagram.statemachine.preferences.DiagramGeneralPreferencePage">
       </page>
       <page

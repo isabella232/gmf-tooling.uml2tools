@@ -90,6 +90,7 @@
       <page
             id="org.eclipse.uml2.uml.diagram.activity.general"
             name="%preference.page.title.org.eclipse.uml2.uml.diagram.activity.general"
+            category="org.eclipse.uml2.uml.diagram"
             class="org.eclipse.uml2.diagram.activity.preferences.DiagramGeneralPreferencePage">
       </page>
       <page

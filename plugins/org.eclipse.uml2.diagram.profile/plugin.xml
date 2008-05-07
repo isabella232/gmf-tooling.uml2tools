@@ -536,6 +536,7 @@
       <page
             id="org.eclipse.uml2.uml.diagram.profile.general"
             name="%preference.page.title.org.eclipse.uml2.uml.diagram.profile.general"
+            category="org.eclipse.uml2.uml.diagram"
             class="org.eclipse.uml2.diagram.profile.preferences.DiagramGeneralPreferencePage">
       </page>
       <page

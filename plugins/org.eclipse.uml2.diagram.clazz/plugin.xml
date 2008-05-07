@@ -547,6 +547,7 @@
       <page
             id="org.eclipse.uml2.uml.diagram.clazz.general"
             name="%preference.page.title.org.eclipse.uml2.uml.diagram.clazz.general"
+            category="org.eclipse.uml2.uml.diagram"
             class="org.eclipse.uml2.diagram.clazz.preferences.DiagramGeneralPreferencePage">
       </page>
       <page

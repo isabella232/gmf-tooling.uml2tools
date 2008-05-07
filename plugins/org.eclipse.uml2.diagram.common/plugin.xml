@@ -20,4 +20,12 @@
   	     id="org.eclipse.uml2.diagram.New">
       </category>
    </extension>
+   
+   <extension point="org.eclipse.ui.preferencePages">
+      <page
+            id="org.eclipse.uml2.uml.diagram"
+            name="UML2 Diagrams"
+            class="org.eclipse.uml2.diagram.common.preferences.MainPreferencePage">
+      </page>
+   </extension>
 </plugin>

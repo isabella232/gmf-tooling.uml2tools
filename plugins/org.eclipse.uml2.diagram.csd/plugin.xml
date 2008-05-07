@@ -264,6 +264,7 @@
       <page
             id="org.eclipse.uml2.uml.csd.general"
             name="%preference.page.title.org.eclipse.uml2.uml.csd.general"
+            category="org.eclipse.uml2.uml.diagram"
             class="org.eclipse.uml2.diagram.csd.preferences.DiagramGeneralPreferencePage">
       </page>
       <page
@@ -935,7 +936,7 @@
       <page
             name="%preferences.icons"
             class="org.eclipse.uml2.diagram.csd.preferences.DiagramIconStylePreferencePage"
-            category="org.eclipse.uml2.uml.diagram.csd.general"
+            category="org.eclipse.uml2.uml.csd.general"
             id="org.eclipse.uml2.diagram.csd.icons">
       </page>
    </extension>

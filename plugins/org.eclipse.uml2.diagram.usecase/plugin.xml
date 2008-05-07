@@ -184,6 +184,7 @@
       <page
             id="org.eclipse.uml2.uml.diagram.usecase.general"
             name="%preference.page.title.org.eclipse.uml2.uml.diagram.usecase.general"
+            category="org.eclipse.uml2.uml.diagram"
             class="org.eclipse.uml2.diagram.usecase.preferences.DiagramGeneralPreferencePage">
       </page>
       <page

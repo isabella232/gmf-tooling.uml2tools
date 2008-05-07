@@ -4561,7 +4561,7 @@
     <preferencePages
         xsi:type="gmfgen:GenStandardPreferencePage"
         iD="org.eclipse.uml2.uml.diagram.clazz.general"
-        name="UML Diagram">
+        name="UML Class Diagram">
       <children
           xsi:type="gmfgen:GenStandardPreferencePage"
           iD="org.eclipse.uml2.uml.diagram.clazz.appearance"

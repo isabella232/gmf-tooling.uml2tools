@@ -690,6 +690,7 @@
       <page
             id="org.eclipse.uml2.uml.diagram.component.general"
             name="%preference.page.title.org.eclipse.uml2.uml.diagram.component.general"
+            category="org.eclipse.uml2.uml.diagram"
             class="org.eclipse.uml2.diagram.component.preferences.DiagramGeneralPreferencePage">
       </page>
       <page
