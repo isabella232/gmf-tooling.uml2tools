@@ -13,8 +13,10 @@ import org.eclipse.uml2.diagram.deploy.communication.CommunicationPathOperations
 import org.eclipse.uml2.diagram.deploy.edit.policies.UMLBaseItemSemanticEditPolicy;
 import org.eclipse.uml2.uml.AggregationKind;
 import org.eclipse.uml2.uml.Association;
+import org.eclipse.uml2.uml.CommunicationPath;
 import org.eclipse.uml2.uml.Package;
 import org.eclipse.uml2.uml.Type;
+import org.eclipse.uml2.uml.UMLFactory;
 import org.eclipse.uml2.uml.UMLPackage;
 
 /**

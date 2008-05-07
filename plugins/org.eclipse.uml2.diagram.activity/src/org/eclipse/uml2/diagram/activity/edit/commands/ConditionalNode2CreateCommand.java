@@ -8,6 +8,7 @@ import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.uml2.uml.Activity;
 import org.eclipse.uml2.uml.ActivityPartition;
 import org.eclipse.uml2.uml.ConditionalNode;
+import org.eclipse.uml2.uml.UMLFactory;
 import org.eclipse.uml2.uml.UMLPackage;
 
 /**

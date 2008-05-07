@@ -7,6 +7,7 @@ import org.eclipse.gmf.runtime.emf.type.core.requests.CreateElementRequest;
 import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.uml2.uml.Collaboration;
 import org.eclipse.uml2.uml.Parameter;
+import org.eclipse.uml2.uml.StructuredClassifier;
 import org.eclipse.uml2.uml.UMLFactory;
 import org.eclipse.uml2.uml.UMLPackage;
 
@@ -50,8 +51,8 @@ public class ParameterCreateCommand extends CreateElementCommand {
 	protected EObject doDefaultElementCreation() {
 		Parameter newElement = UMLFactory.eINSTANCE.createParameter();
 
-//		StructuredClassifier owner = (StructuredClassifier) getElementToEdit();
-//		owner.getOwnedAttributes().add(newElement);
+		//		StructuredClassifier owner = (StructuredClassifier) getElementToEdit();
+		//		owner.getOwnedAttributes().add(newElement);
 
 		Collaboration childHolder = (Collaboration) getElementToEdit();
 		childHolder.getCollaborationRoles().add(newElement);
