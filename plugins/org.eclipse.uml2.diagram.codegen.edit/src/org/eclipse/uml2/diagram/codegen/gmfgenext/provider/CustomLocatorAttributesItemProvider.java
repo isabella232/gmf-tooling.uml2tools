@@ -2,7 +2,7 @@
  * <copyright>
  * </copyright>
  *
- * $Id: CustomLocatorAttributesItemProvider.java,v 1.2 2007/11/22 16:59:35 mgolubev Exp $
+ * $Id: CustomLocatorAttributesItemProvider.java,v 1.3 2008/05/07 17:42:49 mgolubev Exp $
  */
 package org.eclipse.uml2.diagram.codegen.gmfgenext.provider;
 
@@ -36,11 +36,11 @@ import org.eclipse.uml2.diagram.codegen.gmfgenext.GMFGenExtPackage;
  */
 public class CustomLocatorAttributesItemProvider
 	extends ItemProviderAdapter
-	implements	
-		IEditingDomainItemProvider,	
-		IStructuredItemContentProvider,	
-		ITreeItemContentProvider,	
-		IItemLabelProvider,	
+	implements
+		IEditingDomainItemProvider,
+		IStructuredItemContentProvider,
+		ITreeItemContentProvider,
+		IItemLabelProvider,
 		IItemPropertySource {
 	/**
 	 * This constructs an instance from a factory and a notifier.

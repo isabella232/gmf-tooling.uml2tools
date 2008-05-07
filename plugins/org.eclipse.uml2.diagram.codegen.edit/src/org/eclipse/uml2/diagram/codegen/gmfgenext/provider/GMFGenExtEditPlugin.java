@@ -2,14 +2,18 @@
  * <copyright>
  * </copyright>
  *
- * $Id: GMFGenExtEditPlugin.java,v 1.2 2007/11/22 16:59:35 mgolubev Exp $
+ * $Id: GMFGenExtEditPlugin.java,v 1.3 2008/05/07 17:42:49 mgolubev Exp $
  */
 package org.eclipse.uml2.diagram.codegen.gmfgenext.provider;
 
 import org.eclipse.emf.codegen.ecore.genmodel.provider.GenModelEditPlugin;
+
 import org.eclipse.emf.common.EMFPlugin;
+
 import org.eclipse.emf.common.util.ResourceLocator;
+
 import org.eclipse.emf.ecore.provider.EcoreEditPlugin;
+
 import org.eclipse.gmf.codegen.gmfgen.presentation.EditorPlugin;
 
 /**
