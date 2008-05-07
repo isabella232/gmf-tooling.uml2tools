@@ -22,5 +22,14 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute gmfgenext.ecore#//SubstitutableByAttributes/requiresAll"/>
       <genOperations ecoreOperation="gmfgenext.ecore#//SubstitutableByAttributes/getSubstitutableByNodes"/>
     </genClasses>
+    <genClasses image="false" ecoreClass="gmfgenext.ecore#//AbstractDynamicCanonicalContainer">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute gmfgenext.ecore#//AbstractDynamicCanonicalContainer/alwaysCanonicalIDs"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute gmfgenext.ecore#//AbstractDynamicCanonicalContainer/initiallyCanonical"/>
+      <genOperations ecoreOperation="gmfgenext.ecore#//AbstractDynamicCanonicalContainer/getAlwaysCanonicalChildren"/>
+    </genClasses>
+    <genClasses ecoreClass="gmfgenext.ecore#//DynamicCanonicalCompartment"/>
+    <genClasses ecoreClass="gmfgenext.ecore#//InteractionDiagramAttributes">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute gmfgenext.ecore#//InteractionDiagramAttributes/multiLayered"/>
+    </genClasses>
   </genPackages>
 </genmodel:GenModel>

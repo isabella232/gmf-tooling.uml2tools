@@ -2,19 +2,23 @@
  * <copyright>
  * </copyright>
  *
- * $Id: GMFGenExtFactoryImpl.java,v 1.3 2007/11/22 16:59:33 mgolubev Exp $
+ * $Id: GMFGenExtFactoryImpl.java,v 1.4 2008/05/07 17:37:33 mgolubev Exp $
  */
 package org.eclipse.uml2.diagram.codegen.gmfgenext.impl;
 
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
-
 import org.eclipse.emf.ecore.impl.EFactoryImpl;
-
 import org.eclipse.emf.ecore.plugin.EcorePlugin;
-
-import org.eclipse.uml2.diagram.codegen.gmfgenext.*;
+import org.eclipse.uml2.diagram.codegen.gmfgenext.AuxSecondaryDiagramNodeAttribute;
+import org.eclipse.uml2.diagram.codegen.gmfgenext.CustomLocatorAttributes;
+import org.eclipse.uml2.diagram.codegen.gmfgenext.DetailsLevelAttributes;
+import org.eclipse.uml2.diagram.codegen.gmfgenext.DynamicCanonicalCompartment;
+import org.eclipse.uml2.diagram.codegen.gmfgenext.GMFGenExtFactory;
+import org.eclipse.uml2.diagram.codegen.gmfgenext.GMFGenExtPackage;
+import org.eclipse.uml2.diagram.codegen.gmfgenext.InteractionDiagramAttributes;
+import org.eclipse.uml2.diagram.codegen.gmfgenext.SubstitutableByAttributes;
 
 /**
  * <!-- begin-user-doc -->
@@ -63,6 +67,8 @@ public class GMFGenExtFactoryImpl extends EFactoryImpl implements GMFGenExtFacto
 			case GMFGenExtPackage.CUSTOM_LOCATOR_ATTRIBUTES: return createCustomLocatorAttributes();
 			case GMFGenExtPackage.DETAILS_LEVEL_ATTRIBUTES: return createDetailsLevelAttributes();
 			case GMFGenExtPackage.SUBSTITUTABLE_BY_ATTRIBUTES: return createSubstitutableByAttributes();
+			case GMFGenExtPackage.DYNAMIC_CANONICAL_COMPARTMENT: return createDynamicCanonicalCompartment();
+			case GMFGenExtPackage.INTERACTION_DIAGRAM_ATTRIBUTES: return createInteractionDiagramAttributes();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -106,6 +112,26 @@ public class GMFGenExtFactoryImpl extends EFactoryImpl implements GMFGenExtFacto
 	public SubstitutableByAttributes createSubstitutableByAttributes() {
 		SubstitutableByAttributesImpl substitutableByAttributes = new SubstitutableByAttributesImpl();
 		return substitutableByAttributes;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public DynamicCanonicalCompartment createDynamicCanonicalCompartment() {
+		DynamicCanonicalCompartmentImpl dynamicCanonicalCompartment = new DynamicCanonicalCompartmentImpl();
+		return dynamicCanonicalCompartment;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public InteractionDiagramAttributes createInteractionDiagramAttributes() {
+		InteractionDiagramAttributesImpl interactionDiagramAttributes = new InteractionDiagramAttributesImpl();
+		return interactionDiagramAttributes;
 	}
 
 	/**

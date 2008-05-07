@@ -2,28 +2,23 @@
  * <copyright>
  * </copyright>
  *
- * $Id: GMFGenExtPackageImpl.java,v 1.5 2008/03/04 13:03:29 tfesenko Exp $
+ * $Id: GMFGenExtPackageImpl.java,v 1.6 2008/05/07 17:37:33 mgolubev Exp $
  */
 package org.eclipse.uml2.diagram.codegen.gmfgenext.impl;
 
-import org.eclipse.emf.codegen.ecore.genmodel.GenModelPackage;
-
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.EOperation;
 import org.eclipse.emf.ecore.EPackage;
-import org.eclipse.emf.ecore.EReference;
-import org.eclipse.emf.ecore.EcorePackage;
-
 import org.eclipse.emf.ecore.impl.EPackageImpl;
-
 import org.eclipse.gmf.codegen.gmfgen.GMFGenPackage;
-
+import org.eclipse.uml2.diagram.codegen.gmfgenext.AbstractDynamicCanonicalContainer;
 import org.eclipse.uml2.diagram.codegen.gmfgenext.AuxSecondaryDiagramNodeAttribute;
 import org.eclipse.uml2.diagram.codegen.gmfgenext.CustomLocatorAttributes;
 import org.eclipse.uml2.diagram.codegen.gmfgenext.DetailsLevelAttributes;
+import org.eclipse.uml2.diagram.codegen.gmfgenext.DynamicCanonicalCompartment;
 import org.eclipse.uml2.diagram.codegen.gmfgenext.GMFGenExtFactory;
 import org.eclipse.uml2.diagram.codegen.gmfgenext.GMFGenExtPackage;
+import org.eclipse.uml2.diagram.codegen.gmfgenext.InteractionDiagramAttributes;
 import org.eclipse.uml2.diagram.codegen.gmfgenext.SubstitutableByAttributes;
 
 /**
@@ -60,6 +55,27 @@ public class GMFGenExtPackageImpl extends EPackageImpl implements GMFGenExtPacka
 	 * @generated
 	 */
 	private EClass substitutableByAttributesEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass abstractDynamicCanonicalContainerEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass dynamicCanonicalCompartmentEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass interactionDiagramAttributesEClass = null;
 
 	/**
 	 * Creates an instance of the model <b>Package</b>, registered with
@@ -227,6 +243,60 @@ public class GMFGenExtPackageImpl extends EPackageImpl implements GMFGenExtPacka
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EClass getAbstractDynamicCanonicalContainer() {
+		return abstractDynamicCanonicalContainerEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getAbstractDynamicCanonicalContainer_AlwaysCanonicalIDs() {
+		return (EAttribute)abstractDynamicCanonicalContainerEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getAbstractDynamicCanonicalContainer_InitiallyCanonical() {
+		return (EAttribute)abstractDynamicCanonicalContainerEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getDynamicCanonicalCompartment() {
+		return dynamicCanonicalCompartmentEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getInteractionDiagramAttributes() {
+		return interactionDiagramAttributesEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getInteractionDiagramAttributes_MultiLayered() {
+		return (EAttribute)interactionDiagramAttributesEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public GMFGenExtFactory getGMFGenExtFactory() {
 		return (GMFGenExtFactory)getEFactoryInstance();
 	}
@@ -263,6 +333,15 @@ public class GMFGenExtPackageImpl extends EPackageImpl implements GMFGenExtPacka
 		substitutableByAttributesEClass = createEClass(SUBSTITUTABLE_BY_ATTRIBUTES);
 		createEAttribute(substitutableByAttributesEClass, SUBSTITUTABLE_BY_ATTRIBUTES__SUBSTITUTABLE_BY_IDS);
 		createEAttribute(substitutableByAttributesEClass, SUBSTITUTABLE_BY_ATTRIBUTES__REQUIRES_ALL);
+
+		abstractDynamicCanonicalContainerEClass = createEClass(ABSTRACT_DYNAMIC_CANONICAL_CONTAINER);
+		createEAttribute(abstractDynamicCanonicalContainerEClass, ABSTRACT_DYNAMIC_CANONICAL_CONTAINER__ALWAYS_CANONICAL_IDS);
+		createEAttribute(abstractDynamicCanonicalContainerEClass, ABSTRACT_DYNAMIC_CANONICAL_CONTAINER__INITIALLY_CANONICAL);
+
+		dynamicCanonicalCompartmentEClass = createEClass(DYNAMIC_CANONICAL_COMPARTMENT);
+
+		interactionDiagramAttributesEClass = createEClass(INTERACTION_DIAGRAM_ATTRIBUTES);
+		createEAttribute(interactionDiagramAttributesEClass, INTERACTION_DIAGRAM_ATTRIBUTES__MULTI_LAYERED);
 	}
 
 	/**
@@ -296,6 +375,9 @@ public class GMFGenExtPackageImpl extends EPackageImpl implements GMFGenExtPacka
 		customLocatorAttributesEClass.getESuperTypes().add(theGMFGenPackage.getAttributes());
 		detailsLevelAttributesEClass.getESuperTypes().add(theGMFGenPackage.getAttributes());
 		substitutableByAttributesEClass.getESuperTypes().add(theGMFGenPackage.getAttributes());
+		abstractDynamicCanonicalContainerEClass.getESuperTypes().add(theGMFGenPackage.getAttributes());
+		dynamicCanonicalCompartmentEClass.getESuperTypes().add(this.getAbstractDynamicCanonicalContainer());
+		interactionDiagramAttributesEClass.getESuperTypes().add(theGMFGenPackage.getAttributes());
 
 		// Initialize classes and features; add operations and parameters
 		initEClass(auxSecondaryDiagramNodeAttributeEClass, AuxSecondaryDiagramNodeAttribute.class, "AuxSecondaryDiagramNodeAttribute", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -313,6 +395,17 @@ public class GMFGenExtPackageImpl extends EPackageImpl implements GMFGenExtPacka
 		initEAttribute(getSubstitutableByAttributes_RequiresAll(), ecorePackage.getEBoolean(), "requiresAll", null, 0, 1, SubstitutableByAttributes.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		addEOperation(substitutableByAttributesEClass, theGMFGenPackage.getGenCommonBase(), "getSubstitutableByNodes", 0, -1);
+
+		initEClass(abstractDynamicCanonicalContainerEClass, AbstractDynamicCanonicalContainer.class, "AbstractDynamicCanonicalContainer", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getAbstractDynamicCanonicalContainer_AlwaysCanonicalIDs(), ecorePackage.getEInt(), "alwaysCanonicalIDs", null, 0, -1, AbstractDynamicCanonicalContainer.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getAbstractDynamicCanonicalContainer_InitiallyCanonical(), ecorePackage.getEBoolean(), "initiallyCanonical", "false", 0, 1, AbstractDynamicCanonicalContainer.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		addEOperation(abstractDynamicCanonicalContainerEClass, theGMFGenPackage.getGenCommonBase(), "getAlwaysCanonicalChildren", 0, -1);
+
+		initEClass(dynamicCanonicalCompartmentEClass, DynamicCanonicalCompartment.class, "DynamicCanonicalCompartment", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+		initEClass(interactionDiagramAttributesEClass, InteractionDiagramAttributes.class, "InteractionDiagramAttributes", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getInteractionDiagramAttributes_MultiLayered(), ecorePackage.getEBoolean(), "multiLayered", "true", 0, 1, InteractionDiagramAttributes.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		// Create resource
 		createResource(eNS_URI);

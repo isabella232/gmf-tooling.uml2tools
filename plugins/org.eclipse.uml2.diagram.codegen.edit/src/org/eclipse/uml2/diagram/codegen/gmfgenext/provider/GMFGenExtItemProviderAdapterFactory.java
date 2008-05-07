@@ -2,7 +2,7 @@
  * <copyright>
  * </copyright>
  *
- * $Id: GMFGenExtItemProviderAdapterFactory.java,v 1.4 2008/03/04 13:03:28 tfesenko Exp $
+ * $Id: GMFGenExtItemProviderAdapterFactory.java,v 1.5 2008/05/07 17:37:31 mgolubev Exp $
  */
 package org.eclipse.uml2.diagram.codegen.gmfgenext.provider;
 
@@ -174,6 +174,50 @@ public class GMFGenExtItemProviderAdapterFactory extends GMFGenExtAdapterFactory
 	}
 
 	/**
+	 * This keeps track of the one adapter used for all {@link org.eclipse.uml2.diagram.codegen.gmfgenext.DynamicCanonicalCompartment} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected DynamicCanonicalCompartmentItemProvider dynamicCanonicalCompartmentItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link org.eclipse.uml2.diagram.codegen.gmfgenext.DynamicCanonicalCompartment}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Adapter createDynamicCanonicalCompartmentAdapter() {
+		if (dynamicCanonicalCompartmentItemProvider == null) {
+			dynamicCanonicalCompartmentItemProvider = new DynamicCanonicalCompartmentItemProvider(this);
+		}
+
+		return dynamicCanonicalCompartmentItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link org.eclipse.uml2.diagram.codegen.gmfgenext.InteractionDiagramAttributes} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected InteractionDiagramAttributesItemProvider interactionDiagramAttributesItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link org.eclipse.uml2.diagram.codegen.gmfgenext.InteractionDiagramAttributes}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Adapter createInteractionDiagramAttributesAdapter() {
+		if (interactionDiagramAttributesItemProvider == null) {
+			interactionDiagramAttributesItemProvider = new InteractionDiagramAttributesItemProvider(this);
+		}
+
+		return interactionDiagramAttributesItemProvider;
+	}
+
+	/**
 	 * This returns the root adapter factory that contains this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -273,6 +317,8 @@ public class GMFGenExtItemProviderAdapterFactory extends GMFGenExtAdapterFactory
 		if (customLocatorAttributesItemProvider != null) customLocatorAttributesItemProvider.dispose();
 		if (detailsLevelAttributesItemProvider != null) detailsLevelAttributesItemProvider.dispose();
 		if (substitutableByAttributesItemProvider != null) substitutableByAttributesItemProvider.dispose();
+		if (dynamicCanonicalCompartmentItemProvider != null) dynamicCanonicalCompartmentItemProvider.dispose();
+		if (interactionDiagramAttributesItemProvider != null) interactionDiagramAttributesItemProvider.dispose();
 	}
 
 	/**
@@ -340,6 +386,16 @@ public class GMFGenExtItemProviderAdapterFactory extends GMFGenExtAdapterFactory
 					(createChildParameter
 						(GMFGenPackage.eINSTANCE.getViewmap_Attributes(),
 						 GMFGenExtFactory.eINSTANCE.createSubstitutableByAttributes()));
+
+				newChildDescriptors.add
+					(createChildParameter
+						(GMFGenPackage.eINSTANCE.getViewmap_Attributes(),
+						 GMFGenExtFactory.eINSTANCE.createDynamicCanonicalCompartment()));
+
+				newChildDescriptors.add
+					(createChildParameter
+						(GMFGenPackage.eINSTANCE.getViewmap_Attributes(),
+						 GMFGenExtFactory.eINSTANCE.createInteractionDiagramAttributes()));
 
 				return null;
 			}

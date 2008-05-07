@@ -2,20 +2,23 @@
  * <copyright>
  * </copyright>
  *
- * $Id: GMFGenExtAdapterFactory.java,v 1.4 2008/03/04 13:03:29 tfesenko Exp $
+ * $Id: GMFGenExtAdapterFactory.java,v 1.5 2008/05/07 17:37:33 mgolubev Exp $
  */
 package org.eclipse.uml2.diagram.codegen.gmfgenext.util;
 
 import org.eclipse.emf.common.notify.Adapter;
 import org.eclipse.emf.common.notify.Notifier;
-
 import org.eclipse.emf.common.notify.impl.AdapterFactoryImpl;
-
 import org.eclipse.emf.ecore.EObject;
-
 import org.eclipse.gmf.codegen.gmfgen.Attributes;
-
-import org.eclipse.uml2.diagram.codegen.gmfgenext.*;
+import org.eclipse.uml2.diagram.codegen.gmfgenext.AbstractDynamicCanonicalContainer;
+import org.eclipse.uml2.diagram.codegen.gmfgenext.AuxSecondaryDiagramNodeAttribute;
+import org.eclipse.uml2.diagram.codegen.gmfgenext.CustomLocatorAttributes;
+import org.eclipse.uml2.diagram.codegen.gmfgenext.DetailsLevelAttributes;
+import org.eclipse.uml2.diagram.codegen.gmfgenext.DynamicCanonicalCompartment;
+import org.eclipse.uml2.diagram.codegen.gmfgenext.GMFGenExtPackage;
+import org.eclipse.uml2.diagram.codegen.gmfgenext.InteractionDiagramAttributes;
+import org.eclipse.uml2.diagram.codegen.gmfgenext.SubstitutableByAttributes;
 
 /**
  * <!-- begin-user-doc -->
@@ -83,6 +86,15 @@ public class GMFGenExtAdapterFactory extends AdapterFactoryImpl {
 			}
 			public Object caseSubstitutableByAttributes(SubstitutableByAttributes object) {
 				return createSubstitutableByAttributesAdapter();
+			}
+			public Object caseAbstractDynamicCanonicalContainer(AbstractDynamicCanonicalContainer object) {
+				return createAbstractDynamicCanonicalContainerAdapter();
+			}
+			public Object caseDynamicCanonicalCompartment(DynamicCanonicalCompartment object) {
+				return createDynamicCanonicalCompartmentAdapter();
+			}
+			public Object caseInteractionDiagramAttributes(InteractionDiagramAttributes object) {
+				return createInteractionDiagramAttributesAdapter();
 			}
 			public Object caseAttributes(Attributes object) {
 				return createAttributesAdapter();
@@ -158,6 +170,48 @@ public class GMFGenExtAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createSubstitutableByAttributesAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.eclipse.uml2.diagram.codegen.gmfgenext.AbstractDynamicCanonicalContainer <em>Abstract Dynamic Canonical Container</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.eclipse.uml2.diagram.codegen.gmfgenext.AbstractDynamicCanonicalContainer
+	 * @generated
+	 */
+	public Adapter createAbstractDynamicCanonicalContainerAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.eclipse.uml2.diagram.codegen.gmfgenext.DynamicCanonicalCompartment <em>Dynamic Canonical Compartment</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.eclipse.uml2.diagram.codegen.gmfgenext.DynamicCanonicalCompartment
+	 * @generated
+	 */
+	public Adapter createDynamicCanonicalCompartmentAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.eclipse.uml2.diagram.codegen.gmfgenext.InteractionDiagramAttributes <em>Interaction Diagram Attributes</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.eclipse.uml2.diagram.codegen.gmfgenext.InteractionDiagramAttributes
+	 * @generated
+	 */
+	public Adapter createInteractionDiagramAttributesAdapter() {
 		return null;
 	}
 

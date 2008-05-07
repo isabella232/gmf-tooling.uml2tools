@@ -2,7 +2,7 @@
  * <copyright>
  * </copyright>
  *
- * $Id: GMFGenExtFactory.java,v 1.3 2007/11/22 16:59:33 mgolubev Exp $
+ * $Id: GMFGenExtFactory.java,v 1.4 2008/05/07 17:37:33 mgolubev Exp $
  */
 package org.eclipse.uml2.diagram.codegen.gmfgenext;
 
@@ -60,6 +60,24 @@ public interface GMFGenExtFactory extends EFactory {
 	 * @generated
 	 */
 	SubstitutableByAttributes createSubstitutableByAttributes();
+
+	/**
+	 * Returns a new object of class '<em>Dynamic Canonical Compartment</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Dynamic Canonical Compartment</em>'.
+	 * @generated
+	 */
+	DynamicCanonicalCompartment createDynamicCanonicalCompartment();
+
+	/**
+	 * Returns a new object of class '<em>Interaction Diagram Attributes</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Interaction Diagram Attributes</em>'.
+	 * @generated
+	 */
+	InteractionDiagramAttributes createInteractionDiagramAttributes();
 
 	/**
 	 * Returns the package supported by this factory.

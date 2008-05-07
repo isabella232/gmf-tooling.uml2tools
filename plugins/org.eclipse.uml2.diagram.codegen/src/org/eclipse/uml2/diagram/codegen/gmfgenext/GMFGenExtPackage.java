@@ -2,15 +2,13 @@
  * <copyright>
  * </copyright>
  *
- * $Id: GMFGenExtPackage.java,v 1.4 2007/11/22 16:59:33 mgolubev Exp $
+ * $Id: GMFGenExtPackage.java,v 1.5 2008/05/07 17:37:33 mgolubev Exp $
  */
 package org.eclipse.uml2.diagram.codegen.gmfgenext;
 
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EPackage;
-
-import org.eclipse.emf.ecore.EReference;
 import org.eclipse.gmf.codegen.gmfgen.GMFGenPackage;
 
 /**
@@ -195,6 +193,108 @@ public interface GMFGenExtPackage extends EPackage {
 
 
 	/**
+	 * The meta object id for the '{@link org.eclipse.uml2.diagram.codegen.gmfgenext.impl.AbstractDynamicCanonicalContainerImpl <em>Abstract Dynamic Canonical Container</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.eclipse.uml2.diagram.codegen.gmfgenext.impl.AbstractDynamicCanonicalContainerImpl
+	 * @see org.eclipse.uml2.diagram.codegen.gmfgenext.impl.GMFGenExtPackageImpl#getAbstractDynamicCanonicalContainer()
+	 * @generated
+	 */
+	int ABSTRACT_DYNAMIC_CANONICAL_CONTAINER = 4;
+
+	/**
+	 * The feature id for the '<em><b>Always Canonical IDs</b></em>' attribute list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ABSTRACT_DYNAMIC_CANONICAL_CONTAINER__ALWAYS_CANONICAL_IDS = GMFGenPackage.ATTRIBUTES_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Initially Canonical</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ABSTRACT_DYNAMIC_CANONICAL_CONTAINER__INITIALLY_CANONICAL = GMFGenPackage.ATTRIBUTES_FEATURE_COUNT + 1;
+
+	/**
+	 * The number of structural features of the '<em>Abstract Dynamic Canonical Container</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ABSTRACT_DYNAMIC_CANONICAL_CONTAINER_FEATURE_COUNT = GMFGenPackage.ATTRIBUTES_FEATURE_COUNT + 2;
+
+	/**
+	 * The meta object id for the '{@link org.eclipse.uml2.diagram.codegen.gmfgenext.impl.DynamicCanonicalCompartmentImpl <em>Dynamic Canonical Compartment</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.eclipse.uml2.diagram.codegen.gmfgenext.impl.DynamicCanonicalCompartmentImpl
+	 * @see org.eclipse.uml2.diagram.codegen.gmfgenext.impl.GMFGenExtPackageImpl#getDynamicCanonicalCompartment()
+	 * @generated
+	 */
+	int DYNAMIC_CANONICAL_COMPARTMENT = 5;
+
+	/**
+	 * The feature id for the '<em><b>Always Canonical IDs</b></em>' attribute list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DYNAMIC_CANONICAL_COMPARTMENT__ALWAYS_CANONICAL_IDS = ABSTRACT_DYNAMIC_CANONICAL_CONTAINER__ALWAYS_CANONICAL_IDS;
+
+	/**
+	 * The feature id for the '<em><b>Initially Canonical</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DYNAMIC_CANONICAL_COMPARTMENT__INITIALLY_CANONICAL = ABSTRACT_DYNAMIC_CANONICAL_CONTAINER__INITIALLY_CANONICAL;
+
+	/**
+	 * The number of structural features of the '<em>Dynamic Canonical Compartment</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DYNAMIC_CANONICAL_COMPARTMENT_FEATURE_COUNT = ABSTRACT_DYNAMIC_CANONICAL_CONTAINER_FEATURE_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link org.eclipse.uml2.diagram.codegen.gmfgenext.impl.InteractionDiagramAttributesImpl <em>Interaction Diagram Attributes</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.eclipse.uml2.diagram.codegen.gmfgenext.impl.InteractionDiagramAttributesImpl
+	 * @see org.eclipse.uml2.diagram.codegen.gmfgenext.impl.GMFGenExtPackageImpl#getInteractionDiagramAttributes()
+	 * @generated
+	 */
+	int INTERACTION_DIAGRAM_ATTRIBUTES = 6;
+
+	/**
+	 * The feature id for the '<em><b>Multi Layered</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INTERACTION_DIAGRAM_ATTRIBUTES__MULTI_LAYERED = GMFGenPackage.ATTRIBUTES_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of structural features of the '<em>Interaction Diagram Attributes</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INTERACTION_DIAGRAM_ATTRIBUTES_FEATURE_COUNT = GMFGenPackage.ATTRIBUTES_FEATURE_COUNT + 1;
+
+	/**
 	 * Returns the meta object for class '{@link org.eclipse.uml2.diagram.codegen.gmfgenext.AuxSecondaryDiagramNodeAttribute <em>Aux Secondary Diagram Node Attribute</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -299,6 +399,69 @@ public interface GMFGenExtPackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getSubstitutableByAttributes_RequiresAll();
+
+	/**
+	 * Returns the meta object for class '{@link org.eclipse.uml2.diagram.codegen.gmfgenext.AbstractDynamicCanonicalContainer <em>Abstract Dynamic Canonical Container</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Abstract Dynamic Canonical Container</em>'.
+	 * @see org.eclipse.uml2.diagram.codegen.gmfgenext.AbstractDynamicCanonicalContainer
+	 * @generated
+	 */
+	EClass getAbstractDynamicCanonicalContainer();
+
+	/**
+	 * Returns the meta object for the attribute list '{@link org.eclipse.uml2.diagram.codegen.gmfgenext.AbstractDynamicCanonicalContainer#getAlwaysCanonicalIDs <em>Always Canonical IDs</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute list '<em>Always Canonical IDs</em>'.
+	 * @see org.eclipse.uml2.diagram.codegen.gmfgenext.AbstractDynamicCanonicalContainer#getAlwaysCanonicalIDs()
+	 * @see #getAbstractDynamicCanonicalContainer()
+	 * @generated
+	 */
+	EAttribute getAbstractDynamicCanonicalContainer_AlwaysCanonicalIDs();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.eclipse.uml2.diagram.codegen.gmfgenext.AbstractDynamicCanonicalContainer#isInitiallyCanonical <em>Initially Canonical</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Initially Canonical</em>'.
+	 * @see org.eclipse.uml2.diagram.codegen.gmfgenext.AbstractDynamicCanonicalContainer#isInitiallyCanonical()
+	 * @see #getAbstractDynamicCanonicalContainer()
+	 * @generated
+	 */
+	EAttribute getAbstractDynamicCanonicalContainer_InitiallyCanonical();
+
+	/**
+	 * Returns the meta object for class '{@link org.eclipse.uml2.diagram.codegen.gmfgenext.DynamicCanonicalCompartment <em>Dynamic Canonical Compartment</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Dynamic Canonical Compartment</em>'.
+	 * @see org.eclipse.uml2.diagram.codegen.gmfgenext.DynamicCanonicalCompartment
+	 * @generated
+	 */
+	EClass getDynamicCanonicalCompartment();
+
+	/**
+	 * Returns the meta object for class '{@link org.eclipse.uml2.diagram.codegen.gmfgenext.InteractionDiagramAttributes <em>Interaction Diagram Attributes</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Interaction Diagram Attributes</em>'.
+	 * @see org.eclipse.uml2.diagram.codegen.gmfgenext.InteractionDiagramAttributes
+	 * @generated
+	 */
+	EClass getInteractionDiagramAttributes();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.eclipse.uml2.diagram.codegen.gmfgenext.InteractionDiagramAttributes#isMultiLayered <em>Multi Layered</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Multi Layered</em>'.
+	 * @see org.eclipse.uml2.diagram.codegen.gmfgenext.InteractionDiagramAttributes#isMultiLayered()
+	 * @see #getInteractionDiagramAttributes()
+	 * @generated
+	 */
+	EAttribute getInteractionDiagramAttributes_MultiLayered();
 
 	/**
 	 * Returns the factory that creates the instances of the model.
@@ -409,6 +572,60 @@ public interface GMFGenExtPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute SUBSTITUTABLE_BY_ATTRIBUTES__REQUIRES_ALL = eINSTANCE.getSubstitutableByAttributes_RequiresAll();
+
+		/**
+		 * The meta object literal for the '{@link org.eclipse.uml2.diagram.codegen.gmfgenext.impl.AbstractDynamicCanonicalContainerImpl <em>Abstract Dynamic Canonical Container</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.eclipse.uml2.diagram.codegen.gmfgenext.impl.AbstractDynamicCanonicalContainerImpl
+		 * @see org.eclipse.uml2.diagram.codegen.gmfgenext.impl.GMFGenExtPackageImpl#getAbstractDynamicCanonicalContainer()
+		 * @generated
+		 */
+		EClass ABSTRACT_DYNAMIC_CANONICAL_CONTAINER = eINSTANCE.getAbstractDynamicCanonicalContainer();
+
+		/**
+		 * The meta object literal for the '<em><b>Always Canonical IDs</b></em>' attribute list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute ABSTRACT_DYNAMIC_CANONICAL_CONTAINER__ALWAYS_CANONICAL_IDS = eINSTANCE.getAbstractDynamicCanonicalContainer_AlwaysCanonicalIDs();
+
+		/**
+		 * The meta object literal for the '<em><b>Initially Canonical</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute ABSTRACT_DYNAMIC_CANONICAL_CONTAINER__INITIALLY_CANONICAL = eINSTANCE.getAbstractDynamicCanonicalContainer_InitiallyCanonical();
+
+		/**
+		 * The meta object literal for the '{@link org.eclipse.uml2.diagram.codegen.gmfgenext.impl.DynamicCanonicalCompartmentImpl <em>Dynamic Canonical Compartment</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.eclipse.uml2.diagram.codegen.gmfgenext.impl.DynamicCanonicalCompartmentImpl
+		 * @see org.eclipse.uml2.diagram.codegen.gmfgenext.impl.GMFGenExtPackageImpl#getDynamicCanonicalCompartment()
+		 * @generated
+		 */
+		EClass DYNAMIC_CANONICAL_COMPARTMENT = eINSTANCE.getDynamicCanonicalCompartment();
+
+		/**
+		 * The meta object literal for the '{@link org.eclipse.uml2.diagram.codegen.gmfgenext.impl.InteractionDiagramAttributesImpl <em>Interaction Diagram Attributes</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.eclipse.uml2.diagram.codegen.gmfgenext.impl.InteractionDiagramAttributesImpl
+		 * @see org.eclipse.uml2.diagram.codegen.gmfgenext.impl.GMFGenExtPackageImpl#getInteractionDiagramAttributes()
+		 * @generated
+		 */
+		EClass INTERACTION_DIAGRAM_ATTRIBUTES = eINSTANCE.getInteractionDiagramAttributes();
+
+		/**
+		 * The meta object literal for the '<em><b>Multi Layered</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute INTERACTION_DIAGRAM_ATTRIBUTES__MULTI_LAYERED = eINSTANCE.getInteractionDiagramAttributes_MultiLayered();
 
 	}
 

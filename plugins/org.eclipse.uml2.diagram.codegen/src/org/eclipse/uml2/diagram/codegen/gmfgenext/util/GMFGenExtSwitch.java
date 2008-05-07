@@ -2,7 +2,7 @@
  * <copyright>
  * </copyright>
  *
- * $Id: GMFGenExtSwitch.java,v 1.3 2007/11/22 16:59:34 mgolubev Exp $
+ * $Id: GMFGenExtSwitch.java,v 1.4 2008/05/07 17:37:33 mgolubev Exp $
  */
 package org.eclipse.uml2.diagram.codegen.gmfgenext.util;
 
@@ -10,10 +10,15 @@ import java.util.List;
 
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
-
 import org.eclipse.gmf.codegen.gmfgen.Attributes;
-
-import org.eclipse.uml2.diagram.codegen.gmfgenext.*;
+import org.eclipse.uml2.diagram.codegen.gmfgenext.AbstractDynamicCanonicalContainer;
+import org.eclipse.uml2.diagram.codegen.gmfgenext.AuxSecondaryDiagramNodeAttribute;
+import org.eclipse.uml2.diagram.codegen.gmfgenext.CustomLocatorAttributes;
+import org.eclipse.uml2.diagram.codegen.gmfgenext.DetailsLevelAttributes;
+import org.eclipse.uml2.diagram.codegen.gmfgenext.DynamicCanonicalCompartment;
+import org.eclipse.uml2.diagram.codegen.gmfgenext.GMFGenExtPackage;
+import org.eclipse.uml2.diagram.codegen.gmfgenext.InteractionDiagramAttributes;
+import org.eclipse.uml2.diagram.codegen.gmfgenext.SubstitutableByAttributes;
 
 /**
  * <!-- begin-user-doc -->
@@ -117,6 +122,28 @@ public class GMFGenExtSwitch {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
+			case GMFGenExtPackage.ABSTRACT_DYNAMIC_CANONICAL_CONTAINER: {
+				AbstractDynamicCanonicalContainer abstractDynamicCanonicalContainer = (AbstractDynamicCanonicalContainer)theEObject;
+				Object result = caseAbstractDynamicCanonicalContainer(abstractDynamicCanonicalContainer);
+				if (result == null) result = caseAttributes(abstractDynamicCanonicalContainer);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case GMFGenExtPackage.DYNAMIC_CANONICAL_COMPARTMENT: {
+				DynamicCanonicalCompartment dynamicCanonicalCompartment = (DynamicCanonicalCompartment)theEObject;
+				Object result = caseDynamicCanonicalCompartment(dynamicCanonicalCompartment);
+				if (result == null) result = caseAbstractDynamicCanonicalContainer(dynamicCanonicalCompartment);
+				if (result == null) result = caseAttributes(dynamicCanonicalCompartment);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case GMFGenExtPackage.INTERACTION_DIAGRAM_ATTRIBUTES: {
+				InteractionDiagramAttributes interactionDiagramAttributes = (InteractionDiagramAttributes)theEObject;
+				Object result = caseInteractionDiagramAttributes(interactionDiagramAttributes);
+				if (result == null) result = caseAttributes(interactionDiagramAttributes);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
 			default: return defaultCase(theEObject);
 		}
 	}
@@ -178,6 +205,51 @@ public class GMFGenExtSwitch {
 	 * @generated
 	 */
 	public Object caseSubstitutableByAttributes(SubstitutableByAttributes object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Abstract Dynamic Canonical Container</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Abstract Dynamic Canonical Container</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public Object caseAbstractDynamicCanonicalContainer(AbstractDynamicCanonicalContainer object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Dynamic Canonical Compartment</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Dynamic Canonical Compartment</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public Object caseDynamicCanonicalCompartment(DynamicCanonicalCompartment object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Interaction Diagram Attributes</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Interaction Diagram Attributes</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public Object caseInteractionDiagramAttributes(InteractionDiagramAttributes object) {
 		return null;
 	}
 
