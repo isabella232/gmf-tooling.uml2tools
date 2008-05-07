@@ -5,6 +5,7 @@ import org.eclipse.emf.ecore.EObject;
 /**
  * @generated
  */
+@SuppressWarnings("unchecked")
 public class UMLNodeDescriptor {
 
 	/**

@@ -64,6 +64,7 @@ import org.eclipse.uml2.uml.UseCase;
 /**
  * @generated
  */
+@SuppressWarnings("unchecked")
 public class UMLDiagramUpdater {
 
 	/**

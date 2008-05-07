@@ -8,6 +8,7 @@ import org.eclipse.gmf.runtime.emf.type.core.IElementType;
 /**
  * @generated
  */
+@SuppressWarnings("unchecked")
 public class UMLLinkDescriptor extends UMLNodeDescriptor {
 
 	/**

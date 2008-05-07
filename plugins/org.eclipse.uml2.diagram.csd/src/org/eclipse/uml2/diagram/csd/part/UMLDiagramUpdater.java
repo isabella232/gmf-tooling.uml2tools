@@ -81,6 +81,7 @@ import org.eclipse.uml2.uml.Usage;
 /**
  * @generated
  */
+@SuppressWarnings("unchecked")
 public class UMLDiagramUpdater {
 
 	/**
