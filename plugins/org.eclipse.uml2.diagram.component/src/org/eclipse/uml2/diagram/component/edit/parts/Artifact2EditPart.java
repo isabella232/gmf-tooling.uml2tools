@@ -18,6 +18,7 @@ import org.eclipse.gmf.runtime.gef.ui.figures.DefaultSizeNodeFigure;
 import org.eclipse.gmf.runtime.gef.ui.figures.NodeFigure;
 import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.uml2.diagram.common.draw2d.CenterLayout;
+import org.eclipse.uml2.diagram.common.editparts.PrimaryShapeEditPart;
 import org.eclipse.uml2.diagram.component.edit.policies.Artifact2ItemSemanticEditPolicy;
 import org.eclipse.uml2.diagram.component.edit.policies.UMLTextSelectionEditPolicy;
 import org.eclipse.uml2.diagram.component.part.UMLVisualIDRegistry;
@@ -25,7 +26,7 @@ import org.eclipse.uml2.diagram.component.part.UMLVisualIDRegistry;
 /**
  * @generated
  */
-public class Artifact2EditPart extends ShapeNodeEditPart {
+public class Artifact2EditPart extends ShapeNodeEditPart implements PrimaryShapeEditPart {
 
 	/**
 	 * @generated

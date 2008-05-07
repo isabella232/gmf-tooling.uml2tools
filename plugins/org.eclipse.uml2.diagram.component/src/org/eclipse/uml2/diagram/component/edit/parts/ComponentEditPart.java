@@ -29,6 +29,7 @@ import org.eclipse.gmf.runtime.draw2d.ui.figures.ConstrainedToolbarLayout;
 import org.eclipse.gmf.runtime.gef.ui.figures.DefaultSizeNodeFigure;
 import org.eclipse.gmf.runtime.gef.ui.figures.NodeFigure;
 import org.eclipse.gmf.runtime.notation.View;
+import org.eclipse.uml2.diagram.common.editparts.PrimaryShapeEditPart;
 import org.eclipse.uml2.diagram.component.edit.policies.ComponentCanonicalEditPolicy;
 import org.eclipse.uml2.diagram.component.edit.policies.ComponentItemSemanticEditPolicy;
 import org.eclipse.uml2.diagram.component.part.UMLVisualIDRegistry;
@@ -36,7 +37,7 @@ import org.eclipse.uml2.diagram.component.part.UMLVisualIDRegistry;
 /**
  * @generated
  */
-public class ComponentEditPart extends AbstractBorderedShapeEditPart {
+public class ComponentEditPart extends AbstractBorderedShapeEditPart implements PrimaryShapeEditPart {
 
 	/**
 	 * @generated
