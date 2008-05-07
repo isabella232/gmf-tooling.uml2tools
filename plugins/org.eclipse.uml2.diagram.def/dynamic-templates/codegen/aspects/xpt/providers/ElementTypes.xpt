@@ -8,6 +8,7 @@
  *
  * Contributors:
  *    Michael Golubev (Borland) - custom icons for diagram elements
+ *                              - more specific fileds for IHintedType's 
  */
 
 «IMPORT "http://www.eclipse.org/gmf/2006/GenModel"»
@@ -25,3 +26,18 @@
 	}
 	
 «ENDAROUND»
+
+«AROUND xpt::providers::ElementTypes::elementTypeField FOR gmfgen::GenCommonBase-»
+	«IF null != elementType-»
+		«EXPAND xpt::Common::generatedMemberComment»
+public static final «EXPAND elementTypeClass FOR elementType» «getUniqueIdentifier()» = «EXPAND castToElementTypeClass FOR elementType»getElementType("«elementType.uniqueIdentifier»"); «EXPAND xpt::Common::nonNLS»
+	«ENDIF-»
+«ENDAROUND»
+
+«DEFINE elementTypeClass FOR gmfgen::MetamodelType»org.eclipse.gmf.runtime.emf.type.core.IHintedType«ENDDEFINE»
+«DEFINE elementTypeClass FOR gmfgen::SpecializationType»org.eclipse.gmf.runtime.emf.type.core.IHintedType«ENDDEFINE»
+«DEFINE elementTypeClass FOR gmfgen::NotationType»org.eclipse.gmf.runtime.emf.type.core.IElementType«ENDDEFINE»
+
+«DEFINE castToElementTypeClass FOR gmfgen::MetamodelType»(«EXPAND elementTypeClass»)«ENDDEFINE»
+«DEFINE castToElementTypeClass FOR gmfgen::SpecializationType»(«EXPAND elementTypeClass»)«ENDDEFINE»
+«DEFINE castToElementTypeClass FOR gmfgen::NotationType»«ENDDEFINE»
