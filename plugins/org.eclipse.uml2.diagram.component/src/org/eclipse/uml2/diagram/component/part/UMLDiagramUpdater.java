@@ -14,6 +14,8 @@ import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.uml2.diagram.common.conventions.ConnectorEndConvention;
 import org.eclipse.uml2.diagram.component.edit.parts.Artifact2EditPart;
 import org.eclipse.uml2.diagram.component.edit.parts.ArtifactEditPart;
+import org.eclipse.uml2.diagram.component.edit.parts.AssemblyConnectorCircleEditPart;
+import org.eclipse.uml2.diagram.component.edit.parts.AssemblyConnectorEndRoleEditPart;
 import org.eclipse.uml2.diagram.component.edit.parts.Class2EditPart;
 import org.eclipse.uml2.diagram.component.edit.parts.Class3EditPart;
 import org.eclipse.uml2.diagram.component.edit.parts.ClassAttributesEditPart;
@@ -273,6 +275,14 @@ public class UMLDiagramUpdater {
 				continue;
 			}
 		}
+		for (Iterator it = modelElement.getOwnedConnectors().iterator(); it.hasNext();) {
+			Connector childElement = (Connector) it.next();
+			int visualID = UMLVisualIDRegistry.getNodeVisualID(view, childElement);
+			if (visualID == AssemblyConnectorCircleEditPart.VISUAL_ID) {
+				result.add(new UMLNodeDescriptor(childElement, visualID));
+				continue;
+			}
+		}
 		return result;
 	}
 
@@ -313,6 +323,14 @@ public class UMLDiagramUpdater {
 			Property childElement = (Property) it.next();
 			int visualID = UMLVisualIDRegistry.getNodeVisualID(view, childElement);
 			if (visualID == PropertyEditPart.VISUAL_ID) {
+				result.add(new UMLNodeDescriptor(childElement, visualID));
+				continue;
+			}
+		}
+		for (Iterator it = modelElement.getOwnedConnectors().iterator(); it.hasNext();) {
+			Connector childElement = (Connector) it.next();
+			int visualID = UMLVisualIDRegistry.getNodeVisualID(view, childElement);
+			if (visualID == AssemblyConnectorCircleEditPart.VISUAL_ID) {
 				result.add(new UMLNodeDescriptor(childElement, visualID));
 				continue;
 			}
@@ -549,6 +567,8 @@ public class UMLDiagramUpdater {
 			return getInterface_3005ContainedLinks(view);
 		case PropertyEditPart.VISUAL_ID:
 			return getProperty_3006ContainedLinks(view);
+		case AssemblyConnectorCircleEditPart.VISUAL_ID:
+			return getConnector_3015ContainedLinks(view);
 		case ElementImportEditPart.VISUAL_ID:
 			return getElementImport_3007ContainedLinks(view);
 		case Package4EditPart.VISUAL_ID:
@@ -606,6 +626,8 @@ public class UMLDiagramUpdater {
 			return getInterface_3005IncomingLinks(view);
 		case PropertyEditPart.VISUAL_ID:
 			return getProperty_3006IncomingLinks(view);
+		case AssemblyConnectorCircleEditPart.VISUAL_ID:
+			return getConnector_3015IncomingLinks(view);
 		case ElementImportEditPart.VISUAL_ID:
 			return getElementImport_3007IncomingLinks(view);
 		case Package4EditPart.VISUAL_ID:
@@ -663,6 +685,8 @@ public class UMLDiagramUpdater {
 			return getInterface_3005OutgoingLinks(view);
 		case PropertyEditPart.VISUAL_ID:
 			return getProperty_3006OutgoingLinks(view);
+		case AssemblyConnectorCircleEditPart.VISUAL_ID:
+			return getConnector_3015OutgoingLinks(view);
 		case ElementImportEditPart.VISUAL_ID:
 			return getElementImport_3007OutgoingLinks(view);
 		case Package4EditPart.VISUAL_ID:
@@ -818,6 +842,28 @@ public class UMLDiagramUpdater {
 	 */
 	public static List getProperty_3006ContainedLinks(View view) {
 		return Collections.EMPTY_LIST;
+	}
+
+	/**
+	 * @generated
+	 */
+	public static List getConnector_3015ContainedLinksGen(View view) {
+		return Collections.EMPTY_LIST;
+	}
+
+	/**
+	 * @generated NOT
+	 */
+	public static List getConnector_3015ContainedLinks(View view) {
+		LinkedList result = new LinkedList();
+		result.addAll(getConnector_3015ContainedLinksGen(view));
+
+		Connector connector = (Connector) view.getElement();
+		for (ConnectorEnd nextEnd : connector.getEnds()) {
+			ConnectableElement diagramLinkEnd = nextEnd.getRole();
+			result.add(new UMLLinkDescriptor(connector, diagramLinkEnd, UMLElementTypes.ConnectorEndRole_4010, AssemblyConnectorEndRoleEditPart.VISUAL_ID));
+		}
+		return result;
 	}
 
 	/**
@@ -1015,6 +1061,7 @@ public class UMLDiagramUpdater {
 		List result = new LinkedList();
 		result.addAll(getIncomingTypeModelFacetLinks_Connector_4008(modelElement, crossReferences));
 		result.addAll(getIncomingTypeModelFacetLinks_Dependency_4009(modelElement, crossReferences));
+		result.addAll(getIncomingFeatureModelFacetLinks_ConnectorEnd_Role_4010(modelElement, crossReferences));
 		return result;
 	}
 
@@ -1063,6 +1110,18 @@ public class UMLDiagramUpdater {
 		Map crossReferences = EcoreUtil.CrossReferencer.find(view.eResource().getResourceSet().getResources());
 		List result = new LinkedList();
 		result.addAll(getIncomingTypeModelFacetLinks_Connector_4008(modelElement, crossReferences));
+		result.addAll(getIncomingTypeModelFacetLinks_Dependency_4009(modelElement, crossReferences));
+		result.addAll(getIncomingFeatureModelFacetLinks_ConnectorEnd_Role_4010(modelElement, crossReferences));
+		return result;
+	}
+
+	/**
+	 * @generated
+	 */
+	public static List getConnector_3015IncomingLinks(View view) {
+		Connector modelElement = (Connector) view.getElement();
+		Map crossReferences = EcoreUtil.CrossReferencer.find(view.eResource().getResourceSet().getResources());
+		List result = new LinkedList();
 		result.addAll(getIncomingTypeModelFacetLinks_Dependency_4009(modelElement, crossReferences));
 		return result;
 	}
@@ -1116,6 +1175,7 @@ public class UMLDiagramUpdater {
 		List result = new LinkedList();
 		result.addAll(getIncomingTypeModelFacetLinks_Connector_4008(modelElement, crossReferences));
 		result.addAll(getIncomingTypeModelFacetLinks_Dependency_4009(modelElement, crossReferences));
+		result.addAll(getIncomingFeatureModelFacetLinks_ConnectorEnd_Role_4010(modelElement, crossReferences));
 		return result;
 	}
 
@@ -1150,6 +1210,7 @@ public class UMLDiagramUpdater {
 		List result = new LinkedList();
 		result.addAll(getIncomingTypeModelFacetLinks_Connector_4008(modelElement, crossReferences));
 		result.addAll(getIncomingTypeModelFacetLinks_Dependency_4009(modelElement, crossReferences));
+		result.addAll(getIncomingFeatureModelFacetLinks_ConnectorEnd_Role_4010(modelElement, crossReferences));
 		return result;
 	}
 
@@ -1321,6 +1382,16 @@ public class UMLDiagramUpdater {
 		Property modelElement = (Property) view.getElement();
 		List result = new LinkedList();
 		result.addAll(getOutgoingTypeModelFacetLinks_Connector_4008(modelElement));
+		result.addAll(getOutgoingTypeModelFacetLinks_Dependency_4009(modelElement));
+		return result;
+	}
+
+	/**
+	 * @generated
+	 */
+	public static List getConnector_3015OutgoingLinks(View view) {
+		Connector modelElement = (Connector) view.getElement();
+		List result = new LinkedList();
 		result.addAll(getOutgoingTypeModelFacetLinks_Dependency_4009(modelElement));
 		return result;
 	}
@@ -1618,6 +1689,21 @@ public class UMLDiagramUpdater {
 			}
 			NamedElement src = (NamedElement) theSource;
 			result.add(new UMLLinkDescriptor(src, target, link, UMLElementTypes.Dependency_4009, DependencyEditPart.VISUAL_ID));
+		}
+		return result;
+	}
+
+	/**
+	 * @generated
+	 */
+	private static Collection getIncomingFeatureModelFacetLinks_ConnectorEnd_Role_4010(ConnectableElement target, Map crossReferences) {
+		Collection result = new LinkedList();
+		Collection settings = (Collection) crossReferences.get(target);
+		for (Iterator it = settings.iterator(); it.hasNext();) {
+			EStructuralFeature.Setting setting = (EStructuralFeature.Setting) it.next();
+			if (setting.getEStructuralFeature() == UMLPackage.eINSTANCE.getConnectorEnd_Role()) {
+				result.add(new UMLLinkDescriptor(setting.getEObject(), target, UMLElementTypes.ConnectorEndRole_4010, AssemblyConnectorEndRoleEditPart.VISUAL_ID));
+			}
 		}
 		return result;
 	}

@@ -9,6 +9,7 @@ import org.eclipse.uml2.diagram.component.edit.parts.Artifact2EditPart;
 import org.eclipse.uml2.diagram.component.edit.parts.ArtifactEditPart;
 import org.eclipse.uml2.diagram.component.edit.parts.ArtifactName2EditPart;
 import org.eclipse.uml2.diagram.component.edit.parts.ArtifactNameEditPart;
+import org.eclipse.uml2.diagram.component.edit.parts.AssemblyConnectorCircleEditPart;
 import org.eclipse.uml2.diagram.component.edit.parts.Class2EditPart;
 import org.eclipse.uml2.diagram.component.edit.parts.Class3EditPart;
 import org.eclipse.uml2.diagram.component.edit.parts.ClassAttributesEditPart;
@@ -97,6 +98,11 @@ public class UMLVisualIDRegistry {
 	/**
 	 * @generated
 	 */
+	private static final UMLAbstractExpression Connector_3015_Constraint = UMLOCLFactory.getExpression("kind =ConnectorKind::assembly", UMLPackage.eINSTANCE.getConnector());
+
+	/**
+	 * @generated
+	 */
 	private static final UMLAbstractExpression Class_3009_Constraint = UMLOCLFactory.getExpression("not oclIsTypeOf(uml::Component)", UMLPackage.eINSTANCE.getClass_());
 
 	/**
@@ -109,6 +115,11 @@ public class UMLVisualIDRegistry {
 	 */
 	private static final UMLAbstractExpression InterfaceRealization_4001_Constraint = UMLOCLFactory.getExpression("self.implementingClassifier.oclIsKindOf(uml::Component)", UMLPackage.eINSTANCE
 			.getInterfaceRealization());
+
+	/**
+	 * @generated
+	 */
+	private static final UMLAbstractExpression Connector_4008_Constraint = UMLOCLFactory.getExpression("kind =ConnectorKind::delegation", UMLPackage.eINSTANCE.getConnector());
 
 	/**
 	 * @generated
@@ -244,6 +255,9 @@ public class UMLVisualIDRegistry {
 			if (UMLPackage.eINSTANCE.getProperty().isSuperTypeOf(domainElement.eClass()) && evaluate(Property_3006_Constraint, domainElement)) {
 				return PropertyEditPart.VISUAL_ID;
 			}
+			if (UMLPackage.eINSTANCE.getConnector().isSuperTypeOf(domainElement.eClass()) && evaluate(Connector_3015_Constraint, domainElement)) {
+				return AssemblyConnectorCircleEditPart.VISUAL_ID;
+			}
 			break;
 		case ComponentContents2EditPart.VISUAL_ID:
 			if (UMLPackage.eINSTANCE.getComponent().isSuperTypeOf(domainElement.eClass())) {
@@ -260,6 +274,9 @@ public class UMLVisualIDRegistry {
 			}
 			if (UMLPackage.eINSTANCE.getProperty().isSuperTypeOf(domainElement.eClass()) && evaluate(Property_3006_Constraint, domainElement)) {
 				return PropertyEditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getConnector().isSuperTypeOf(domainElement.eClass()) && evaluate(Connector_3015_Constraint, domainElement)) {
+				return AssemblyConnectorCircleEditPart.VISUAL_ID;
 			}
 			break;
 		case PackageImportsEditPart.VISUAL_ID:
@@ -475,6 +492,9 @@ public class UMLVisualIDRegistry {
 			if (PropertyEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
+			if (AssemblyConnectorCircleEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
 			break;
 		case ComponentContents2EditPart.VISUAL_ID:
 			if (Component2EditPart.VISUAL_ID == nodeVisualID) {
@@ -490,6 +510,9 @@ public class UMLVisualIDRegistry {
 				return true;
 			}
 			if (PropertyEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			if (AssemblyConnectorCircleEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
 			break;
@@ -568,7 +591,7 @@ public class UMLVisualIDRegistry {
 		if (UMLPackage.eINSTANCE.getInterfaceRealization().isSuperTypeOf(domainElement.eClass()) && evaluate(InterfaceRealization_4001_Constraint, domainElement)) {
 			return InterfaceRealizationEditPart.VISUAL_ID;
 		}
-		if (UMLPackage.eINSTANCE.getConnector().isSuperTypeOf(domainElement.eClass())) {
+		if (UMLPackage.eINSTANCE.getConnector().isSuperTypeOf(domainElement.eClass()) && evaluate(Connector_4008_Constraint, domainElement)) {
 			return ConnectorEditPart.VISUAL_ID;
 		}
 		if (UMLPackage.eINSTANCE.getDependency().isSuperTypeOf(domainElement.eClass()) && evaluate(Dependency_4009_Constraint, domainElement)) {

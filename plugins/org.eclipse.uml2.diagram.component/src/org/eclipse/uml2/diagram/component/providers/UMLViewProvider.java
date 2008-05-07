@@ -10,6 +10,8 @@ import org.eclipse.uml2.diagram.component.edit.parts.Artifact2EditPart;
 import org.eclipse.uml2.diagram.component.edit.parts.ArtifactEditPart;
 import org.eclipse.uml2.diagram.component.edit.parts.ArtifactName2EditPart;
 import org.eclipse.uml2.diagram.component.edit.parts.ArtifactNameEditPart;
+import org.eclipse.uml2.diagram.component.edit.parts.AssemblyConnectorCircleEditPart;
+import org.eclipse.uml2.diagram.component.edit.parts.AssemblyConnectorEndRoleEditPart;
 import org.eclipse.uml2.diagram.component.edit.parts.Class2EditPart;
 import org.eclipse.uml2.diagram.component.edit.parts.Class3EditPart;
 import org.eclipse.uml2.diagram.component.edit.parts.ClassAttributesEditPart;
@@ -63,6 +65,8 @@ import org.eclipse.uml2.diagram.component.view.factories.Artifact2ViewFactory;
 import org.eclipse.uml2.diagram.component.view.factories.ArtifactName2ViewFactory;
 import org.eclipse.uml2.diagram.component.view.factories.ArtifactNameViewFactory;
 import org.eclipse.uml2.diagram.component.view.factories.ArtifactViewFactory;
+import org.eclipse.uml2.diagram.component.view.factories.AssemblyConnectorCircleViewFactory;
+import org.eclipse.uml2.diagram.component.view.factories.AssemblyConnectorEndRoleViewFactory;
 import org.eclipse.uml2.diagram.component.view.factories.Class2ViewFactory;
 import org.eclipse.uml2.diagram.component.view.factories.Class3ViewFactory;
 import org.eclipse.uml2.diagram.component.view.factories.ClassAttributesViewFactory;
@@ -205,6 +209,7 @@ public class UMLViewProvider extends AbstractViewProvider {
 				case ClassEditPart.VISUAL_ID:
 				case InterfaceEditPart.VISUAL_ID:
 				case PropertyEditPart.VISUAL_ID:
+				case AssemblyConnectorCircleEditPart.VISUAL_ID:
 				case ElementImportEditPart.VISUAL_ID:
 				case Package4EditPart.VISUAL_ID:
 				case Class3EditPart.VISUAL_ID:
@@ -371,6 +376,8 @@ public class UMLViewProvider extends AbstractViewProvider {
 			return PropertyViewFactory.class;
 		case PropertyNameEditPart.VISUAL_ID:
 			return PropertyNameViewFactory.class;
+		case AssemblyConnectorCircleEditPart.VISUAL_ID:
+			return AssemblyConnectorCircleViewFactory.class;
 		case ElementImportEditPart.VISUAL_ID:
 			return ElementImportViewFactory.class;
 		case Package4EditPart.VISUAL_ID:
@@ -451,6 +458,8 @@ public class UMLViewProvider extends AbstractViewProvider {
 			return ConnectorViewFactory.class;
 		case DependencyEditPart.VISUAL_ID:
 			return DependencyViewFactory.class;
+		case AssemblyConnectorEndRoleEditPart.VISUAL_ID:
+			return AssemblyConnectorEndRoleViewFactory.class;
 		}
 		return null;
 	}

@@ -7,6 +7,8 @@ import org.eclipse.gmf.runtime.emf.type.core.requests.CreateRelationshipRequest;
 import org.eclipse.gmf.runtime.emf.type.core.requests.DestroyElementRequest;
 import org.eclipse.gmf.runtime.emf.type.core.requests.ReorientReferenceRelationshipRequest;
 import org.eclipse.gmf.runtime.emf.type.core.requests.ReorientRelationshipRequest;
+import org.eclipse.uml2.diagram.component.edit.commands.AssemblyConnectorEndRoleCreateCommand;
+import org.eclipse.uml2.diagram.component.edit.commands.AssemblyConnectorEndRoleReorientCommand;
 import org.eclipse.uml2.diagram.component.edit.commands.ConnectorCreateCommand;
 import org.eclipse.uml2.diagram.component.edit.commands.ConnectorReorientCommand;
 import org.eclipse.uml2.diagram.component.edit.commands.DependencyCreateCommand;
@@ -15,6 +17,7 @@ import org.eclipse.uml2.diagram.component.edit.commands.PortProvidedCreateComman
 import org.eclipse.uml2.diagram.component.edit.commands.PortProvidedReorientCommand;
 import org.eclipse.uml2.diagram.component.edit.commands.PortRequiredCreateCommand;
 import org.eclipse.uml2.diagram.component.edit.commands.PortRequiredReorientCommand;
+import org.eclipse.uml2.diagram.component.edit.parts.AssemblyConnectorEndRoleEditPart;
 import org.eclipse.uml2.diagram.component.edit.parts.ConnectorEditPart;
 import org.eclipse.uml2.diagram.component.edit.parts.DependencyEditPart;
 import org.eclipse.uml2.diagram.component.edit.parts.PortProvidedEditPart;
@@ -60,6 +63,9 @@ public class PortItemSemanticEditPolicy extends UMLBaseItemSemanticEditPolicy {
 		if (UMLElementTypes.Dependency_4009 == req.getElementType()) {
 			return getGEFWrapper(new DependencyCreateCommand(req, req.getSource(), req.getTarget()));
 		}
+		if (UMLElementTypes.ConnectorEndRole_4010 == req.getElementType()) {
+			return getGEFWrapper(new AssemblyConnectorEndRoleCreateCommand(req, req.getTarget(), req.getSource()));
+		}
 		return null;
 	}
 
@@ -78,6 +84,9 @@ public class PortItemSemanticEditPolicy extends UMLBaseItemSemanticEditPolicy {
 		}
 		if (UMLElementTypes.Dependency_4009 == req.getElementType()) {
 			return getGEFWrapper(new DependencyCreateCommand(req, req.getSource(), req.getTarget()));
+		}
+		if (UMLElementTypes.ConnectorEndRole_4010 == req.getElementType()) {
+			return getGEFWrapper(new AssemblyConnectorEndRoleCreateCommand(req, req.getSource(), req.getTarget()));
 		}
 		return null;
 	}
@@ -110,6 +119,8 @@ public class PortItemSemanticEditPolicy extends UMLBaseItemSemanticEditPolicy {
 			return getGEFWrapper(new PortProvidedReorientCommand(req));
 		case PortRequiredEditPart.VISUAL_ID:
 			return getGEFWrapper(new PortRequiredReorientCommand(req));
+		case AssemblyConnectorEndRoleEditPart.VISUAL_ID:
+			return getGEFWrapper(new AssemblyConnectorEndRoleReorientCommand(req));
 		}
 		return super.getReorientReferenceRelationshipCommand(req);
 	}

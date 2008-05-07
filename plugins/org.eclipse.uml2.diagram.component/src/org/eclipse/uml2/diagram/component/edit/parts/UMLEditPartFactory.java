@@ -112,6 +112,9 @@ public class UMLEditPartFactory implements EditPartFactory {
 			case PropertyNameEditPart.VISUAL_ID:
 				return new PropertyNameEditPart(view);
 
+			case AssemblyConnectorCircleEditPart.VISUAL_ID:
+				return new AssemblyConnectorCircleEditPart(view);
+
 			case ElementImportEditPart.VISUAL_ID:
 				return new ElementImportEditPart(view);
 
@@ -183,6 +186,9 @@ public class UMLEditPartFactory implements EditPartFactory {
 
 			case DependencyNameEditPart.VISUAL_ID:
 				return new DependencyNameEditPart(view);
+
+			case AssemblyConnectorEndRoleEditPart.VISUAL_ID:
+				return new AssemblyConnectorEndRoleEditPart(view);
 			}
 		}
 		return createUnrecognizedEditPart(context, model);

@@ -20,6 +20,8 @@ import org.eclipse.uml2.diagram.component.edit.parts.Artifact2EditPart;
 import org.eclipse.uml2.diagram.component.edit.parts.ArtifactEditPart;
 import org.eclipse.uml2.diagram.component.edit.parts.ArtifactName2EditPart;
 import org.eclipse.uml2.diagram.component.edit.parts.ArtifactNameEditPart;
+import org.eclipse.uml2.diagram.component.edit.parts.AssemblyConnectorCircleEditPart;
+import org.eclipse.uml2.diagram.component.edit.parts.AssemblyConnectorEndRoleEditPart;
 import org.eclipse.uml2.diagram.component.edit.parts.Class2EditPart;
 import org.eclipse.uml2.diagram.component.edit.parts.Class3EditPart;
 import org.eclipse.uml2.diagram.component.edit.parts.ClassDiagramNotationClassEditPart;
@@ -145,6 +147,8 @@ public class UMLNavigatorLabelProvider extends LabelProvider implements ICommonL
 			return getImage("Navigator?Node?http://www.eclipse.org/uml2/2.1.0/UML?Interface", UMLElementTypes.Interface_3005); //$NON-NLS-1$
 		case PropertyEditPart.VISUAL_ID:
 			return getImage("Navigator?Node?http://www.eclipse.org/uml2/2.1.0/UML?Property", UMLElementTypes.Property_3006); //$NON-NLS-1$
+		case AssemblyConnectorCircleEditPart.VISUAL_ID:
+			return getImage("Navigator?Node?http://www.eclipse.org/uml2/2.1.0/UML?Connector", UMLElementTypes.Connector_3015); //$NON-NLS-1$
 		case ElementImportEditPart.VISUAL_ID:
 			return getImage("Navigator?Node?http://www.eclipse.org/uml2/2.1.0/UML?ElementImport", UMLElementTypes.ElementImport_3007); //$NON-NLS-1$
 		case Package4EditPart.VISUAL_ID:
@@ -173,6 +177,8 @@ public class UMLNavigatorLabelProvider extends LabelProvider implements ICommonL
 			return getImage("Navigator?Link?http://www.eclipse.org/uml2/2.1.0/UML?Connector", UMLElementTypes.Connector_4008); //$NON-NLS-1$
 		case DependencyEditPart.VISUAL_ID:
 			return getImage("Navigator?Link?http://www.eclipse.org/uml2/2.1.0/UML?Dependency", UMLElementTypes.Dependency_4009); //$NON-NLS-1$
+		case AssemblyConnectorEndRoleEditPart.VISUAL_ID:
+			return getImage("Navigator?Link?http://www.eclipse.org/uml2/2.1.0/UML?ConnectorEnd?role", UMLElementTypes.ConnectorEndRole_4010); //$NON-NLS-1$
 		}
 		return getImage("Navigator?UnknownElement", null); //$NON-NLS-1$
 	}
@@ -251,6 +257,8 @@ public class UMLNavigatorLabelProvider extends LabelProvider implements ICommonL
 			return getInterface_3005Text(view);
 		case PropertyEditPart.VISUAL_ID:
 			return getProperty_3006Text(view);
+		case AssemblyConnectorCircleEditPart.VISUAL_ID:
+			return getConnector_3015Text(view);
 		case ElementImportEditPart.VISUAL_ID:
 			return getElementImport_3007Text(view);
 		case Package4EditPart.VISUAL_ID:
@@ -279,6 +287,8 @@ public class UMLNavigatorLabelProvider extends LabelProvider implements ICommonL
 			return getConnector_4008Text(view);
 		case DependencyEditPart.VISUAL_ID:
 			return getDependency_4009Text(view);
+		case AssemblyConnectorEndRoleEditPart.VISUAL_ID:
+			return getConnectorEndRole_4010Text(view);
 		}
 		return getUnknownElementText(view);
 	}
@@ -520,6 +530,19 @@ public class UMLNavigatorLabelProvider extends LabelProvider implements ICommonL
 	/**
 	 * @generated
 	 */
+	private String getConnector_3015Text(View view) {
+		Connector domainModelElement = (Connector) view.getElement();
+		if (domainModelElement != null) {
+			return String.valueOf(domainModelElement.getName());
+		} else {
+			UMLDiagramEditorPlugin.getInstance().logError("No domain element for view with visualID = " + 3015); //$NON-NLS-1$
+			return ""; //$NON-NLS-1$
+		}
+	}
+
+	/**
+	 * @generated
+	 */
 	private String getElementImport_3007Text(View view) {
 		IAdaptable hintAdapter = new UMLParserProvider.HintAdapter(UMLElementTypes.ElementImport_3007, (view.getElement() != null ? view.getElement() : view), UMLVisualIDRegistry
 				.getType(ElementImportEditPart.VISUAL_ID));
@@ -708,6 +731,13 @@ public class UMLNavigatorLabelProvider extends LabelProvider implements ICommonL
 			return ""; //$NON-NLS-1$
 		}
 
+	}
+
+	/**
+	 * @generated
+	 */
+	private String getConnectorEndRole_4010Text(View view) {
+		return ""; //$NON-NLS-1$
 	}
 
 	/**

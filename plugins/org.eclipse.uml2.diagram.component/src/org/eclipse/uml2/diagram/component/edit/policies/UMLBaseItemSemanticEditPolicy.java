@@ -48,6 +48,7 @@ import org.eclipse.uml2.diagram.component.part.UMLVisualIDRegistry;
 import org.eclipse.uml2.uml.BehavioredClassifier;
 import org.eclipse.uml2.uml.Component;
 import org.eclipse.uml2.uml.ConnectableElement;
+import org.eclipse.uml2.uml.ConnectorEnd;
 import org.eclipse.uml2.uml.Interface;
 import org.eclipse.uml2.uml.NamedElement;
 import org.eclipse.uml2.uml.Package;
@@ -395,6 +396,21 @@ public class UMLBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 		}
 
 		/**
+		 * @generated
+		 */
+		private static final UMLAbstractExpression ConnectorEndRole_4010_SourceExpression;
+
+		/**
+		 * @generated
+		 */
+		static {
+			Map env = new HashMap(3);
+			env.put(OPPOSITE_END_VAR, UMLPackage.eINSTANCE.getConnectableElement());
+			ConnectorEndRole_4010_SourceExpression = UMLOCLFactory.getExpression(
+					"self.oclIsKindOf(uml::Connector) and (self.oclAsType(uml::Connector).kind = ConnectorKind::assembly)", UMLPackage.eINSTANCE.getConnectorEnd(), env); //$NON-NLS-1$
+		}
+
+		/**
 		 * @generated 
 		 */
 		public static boolean canCreateInterfaceRealization_4001(BehavioredClassifier container, BehavioredClassifier source, Interface target) {
@@ -452,6 +468,19 @@ public class UMLBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 		}
 
 		/**
+		 * 
+		 * @generated
+		 */
+		public static boolean canCreateConnectorEndRole_4010(ConnectorEnd source, ConnectableElement target) {
+			if (source != null) {
+				if (source.getRole() != null) {
+					return false;
+				}
+			}
+			return canExistConnectorEndRole_4010(source, target);
+		}
+
+		/**
 		 * @generated
 		 */
 		public static boolean canExistInterfaceRealization_4001(BehavioredClassifier container, BehavioredClassifier source, Interface target) {
@@ -500,6 +529,16 @@ public class UMLBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 		 */
 		public static boolean canExistDependency_4009(Package container, NamedElement source, NamedElement target) {
 			if (!evaluate(Dependency_4009_TargetExpression, target, source, true)) {
+				return false;
+			}
+			return true;
+		}
+
+		/**
+		 * @generated
+		 */
+		public static boolean canExistConnectorEndRole_4010(ConnectorEnd source, ConnectableElement target) {
+			if (!evaluate(ConnectorEndRole_4010_SourceExpression, source, target, false)) {
 				return false;
 			}
 			return true;

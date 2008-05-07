@@ -21,6 +21,7 @@ import org.eclipse.uml2.diagram.component.edit.commands.InterfaceRealizationCrea
 import org.eclipse.uml2.diagram.component.edit.commands.InterfaceRealizationReorientCommand;
 import org.eclipse.uml2.diagram.component.edit.commands.PortCreateCommand;
 import org.eclipse.uml2.diagram.component.edit.parts.ArtifactEditPart;
+import org.eclipse.uml2.diagram.component.edit.parts.AssemblyConnectorCircleEditPart;
 import org.eclipse.uml2.diagram.component.edit.parts.ClassEditPart;
 import org.eclipse.uml2.diagram.component.edit.parts.Component2EditPart;
 import org.eclipse.uml2.diagram.component.edit.parts.ComponentContentsEditPart;
@@ -99,6 +100,9 @@ public class ComponentItemSemanticEditPolicy extends UMLBaseItemSemanticEditPoli
 						cmd.add(getDestroyElementCommand(cnode));
 						break;
 					case PropertyEditPart.VISUAL_ID:
+						cmd.add(getDestroyElementCommand(cnode));
+						break;
+					case AssemblyConnectorCircleEditPart.VISUAL_ID:
 						cmd.add(getDestroyElementCommand(cnode));
 						break;
 					}

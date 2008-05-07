@@ -117,6 +117,11 @@ public class UMLElementTypes extends ElementInitializers {
 	/**
 	 * @generated
 	 */
+	public static final IElementType Connector_3015 = getElementType("org.eclipse.uml2.diagram.component.Connector_3015"); //$NON-NLS-1$
+
+	/**
+	 * @generated
+	 */
 	public static final IElementType ElementImport_3007 = getElementType("org.eclipse.uml2.diagram.component.ElementImport_3007"); //$NON-NLS-1$
 
 	/**
@@ -183,6 +188,11 @@ public class UMLElementTypes extends ElementInitializers {
 	 * @generated
 	 */
 	public static final IElementType Dependency_4009 = getElementType("org.eclipse.uml2.diagram.component.Dependency_4009"); //$NON-NLS-1$
+
+	/**
+	 * @generated
+	 */
+	public static final IElementType ConnectorEndRole_4010 = getElementType("org.eclipse.uml2.diagram.component.ConnectorEndRole_4010"); //$NON-NLS-1$
 
 	/**
 	 * @generated
@@ -318,6 +328,8 @@ public class UMLElementTypes extends ElementInitializers {
 
 			elements.put(Property_3006, UMLPackage.eINSTANCE.getProperty());
 
+			elements.put(Connector_3015, UMLPackage.eINSTANCE.getConnector());
+
 			elements.put(ElementImport_3007, UMLPackage.eINSTANCE.getElementImport());
 
 			elements.put(Package_3008, UMLPackage.eINSTANCE.getPackage());
@@ -345,6 +357,8 @@ public class UMLElementTypes extends ElementInitializers {
 			elements.put(Connector_4008, UMLPackage.eINSTANCE.getConnector());
 
 			elements.put(Dependency_4009, UMLPackage.eINSTANCE.getDependency());
+
+			elements.put(ConnectorEndRole_4010, UMLPackage.eINSTANCE.getConnectorEnd_Role());
 		}
 		return (ENamedElement) elements.get(type);
 	}
@@ -376,6 +390,7 @@ public class UMLElementTypes extends ElementInitializers {
 			KNOWN_ELEMENT_TYPES.add(Class_3004);
 			KNOWN_ELEMENT_TYPES.add(Interface_3005);
 			KNOWN_ELEMENT_TYPES.add(Property_3006);
+			KNOWN_ELEMENT_TYPES.add(Connector_3015);
 			KNOWN_ELEMENT_TYPES.add(ElementImport_3007);
 			KNOWN_ELEMENT_TYPES.add(Package_3008);
 			KNOWN_ELEMENT_TYPES.add(Class_3009);
@@ -390,6 +405,7 @@ public class UMLElementTypes extends ElementInitializers {
 			KNOWN_ELEMENT_TYPES.add(ComponentRequired_4007);
 			KNOWN_ELEMENT_TYPES.add(Connector_4008);
 			KNOWN_ELEMENT_TYPES.add(Dependency_4009);
+			KNOWN_ELEMENT_TYPES.add(ConnectorEndRole_4010);
 		}
 		return KNOWN_ELEMENT_TYPES.contains(elementType);
 	}
