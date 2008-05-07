@@ -12,6 +12,7 @@ import org.eclipse.emf.ecore.ENamedElement;
 import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.gmf.runtime.emf.type.core.ElementTypeRegistry;
 import org.eclipse.gmf.runtime.emf.type.core.IElementType;
+import org.eclipse.gmf.runtime.emf.type.core.IHintedType;
 import org.eclipse.jface.resource.ImageDescriptor;
 import org.eclipse.jface.resource.ImageRegistry;
 import org.eclipse.swt.graphics.Image;
@@ -47,107 +48,107 @@ public class UMLElementTypes extends ElementInitializers {
 	/**
 	 * @generated
 	 */
-	public static final IElementType Package_1000 = getElementType("org.eclipse.uml2.diagram.usecase.Package_1000"); //$NON-NLS-1$
+	public static final IHintedType Package_1000 = (IHintedType) getElementType("org.eclipse.uml2.diagram.usecase.Package_1000"); //$NON-NLS-1$
 
 	/**
 	 * @generated
 	 */
-	public static final IElementType Package_2001 = getElementType("org.eclipse.uml2.diagram.usecase.Package_2001"); //$NON-NLS-1$
+	public static final IHintedType Package_2001 = (IHintedType) getElementType("org.eclipse.uml2.diagram.usecase.Package_2001"); //$NON-NLS-1$
 
 	/**
 	 * @generated
 	 */
-	public static final IElementType Actor_2002 = getElementType("org.eclipse.uml2.diagram.usecase.Actor_2002"); //$NON-NLS-1$
+	public static final IHintedType Actor_2002 = (IHintedType) getElementType("org.eclipse.uml2.diagram.usecase.Actor_2002"); //$NON-NLS-1$
 
 	/**
 	 * @generated
 	 */
-	public static final IElementType Actor_2005 = getElementType("org.eclipse.uml2.diagram.usecase.Actor_2005"); //$NON-NLS-1$
+	public static final IHintedType Actor_2005 = (IHintedType) getElementType("org.eclipse.uml2.diagram.usecase.Actor_2005"); //$NON-NLS-1$
 
 	/**
 	 * @generated
 	 */
-	public static final IElementType UseCase_2003 = getElementType("org.eclipse.uml2.diagram.usecase.UseCase_2003"); //$NON-NLS-1$
+	public static final IHintedType UseCase_2003 = (IHintedType) getElementType("org.eclipse.uml2.diagram.usecase.UseCase_2003"); //$NON-NLS-1$
 
 	/**
 	 * @generated
 	 */
-	public static final IElementType UseCase_2004 = getElementType("org.eclipse.uml2.diagram.usecase.UseCase_2004"); //$NON-NLS-1$
+	public static final IHintedType UseCase_2004 = (IHintedType) getElementType("org.eclipse.uml2.diagram.usecase.UseCase_2004"); //$NON-NLS-1$
 
 	/**
 	 * @generated
 	 */
-	public static final IElementType Component_2006 = getElementType("org.eclipse.uml2.diagram.usecase.Component_2006"); //$NON-NLS-1$
+	public static final IHintedType Component_2006 = (IHintedType) getElementType("org.eclipse.uml2.diagram.usecase.Component_2006"); //$NON-NLS-1$
 
 	/**
 	 * @generated
 	 */
-	public static final IElementType Package_2007 = getElementType("org.eclipse.uml2.diagram.usecase.Package_2007"); //$NON-NLS-1$
+	public static final IHintedType Package_2007 = (IHintedType) getElementType("org.eclipse.uml2.diagram.usecase.Package_2007"); //$NON-NLS-1$
 
 	/**
 	 * @generated
 	 */
-	public static final IElementType Constraint_2008 = getElementType("org.eclipse.uml2.diagram.usecase.Constraint_2008"); //$NON-NLS-1$
+	public static final IHintedType Constraint_2008 = (IHintedType) getElementType("org.eclipse.uml2.diagram.usecase.Constraint_2008"); //$NON-NLS-1$
 
 	/**
 	 * @generated
 	 */
-	public static final IElementType ElementImport_3001 = getElementType("org.eclipse.uml2.diagram.usecase.ElementImport_3001"); //$NON-NLS-1$
+	public static final IHintedType ElementImport_3001 = (IHintedType) getElementType("org.eclipse.uml2.diagram.usecase.ElementImport_3001"); //$NON-NLS-1$
 
 	/**
 	 * @generated
 	 */
-	public static final IElementType ExtensionPoint_3002 = getElementType("org.eclipse.uml2.diagram.usecase.ExtensionPoint_3002"); //$NON-NLS-1$
+	public static final IHintedType ExtensionPoint_3002 = (IHintedType) getElementType("org.eclipse.uml2.diagram.usecase.ExtensionPoint_3002"); //$NON-NLS-1$
 
 	/**
 	 * @generated
 	 */
-	public static final IElementType ExtensionPoint_3003 = getElementType("org.eclipse.uml2.diagram.usecase.ExtensionPoint_3003"); //$NON-NLS-1$
+	public static final IHintedType ExtensionPoint_3003 = (IHintedType) getElementType("org.eclipse.uml2.diagram.usecase.ExtensionPoint_3003"); //$NON-NLS-1$
 
 	/**
 	 * @generated
 	 */
-	public static final IElementType UseCase_3004 = getElementType("org.eclipse.uml2.diagram.usecase.UseCase_3004"); //$NON-NLS-1$
+	public static final IHintedType UseCase_3004 = (IHintedType) getElementType("org.eclipse.uml2.diagram.usecase.UseCase_3004"); //$NON-NLS-1$
 
 	/**
 	 * @generated
 	 */
-	public static final IElementType Actor_3005 = getElementType("org.eclipse.uml2.diagram.usecase.Actor_3005"); //$NON-NLS-1$
+	public static final IHintedType Actor_3005 = (IHintedType) getElementType("org.eclipse.uml2.diagram.usecase.Actor_3005"); //$NON-NLS-1$
 
 	/**
 	 * @generated
 	 */
-	public static final IElementType UseCase_3006 = getElementType("org.eclipse.uml2.diagram.usecase.UseCase_3006"); //$NON-NLS-1$
+	public static final IHintedType UseCase_3006 = (IHintedType) getElementType("org.eclipse.uml2.diagram.usecase.UseCase_3006"); //$NON-NLS-1$
 
 	/**
 	 * @generated
 	 */
-	public static final IElementType Include_4001 = getElementType("org.eclipse.uml2.diagram.usecase.Include_4001"); //$NON-NLS-1$
+	public static final IHintedType Include_4001 = (IHintedType) getElementType("org.eclipse.uml2.diagram.usecase.Include_4001"); //$NON-NLS-1$
 
 	/**
 	 * @generated
 	 */
-	public static final IElementType Extend_4002 = getElementType("org.eclipse.uml2.diagram.usecase.Extend_4002"); //$NON-NLS-1$
+	public static final IHintedType Extend_4002 = (IHintedType) getElementType("org.eclipse.uml2.diagram.usecase.Extend_4002"); //$NON-NLS-1$
 
 	/**
 	 * @generated
 	 */
-	public static final IElementType Generalization_4003 = getElementType("org.eclipse.uml2.diagram.usecase.Generalization_4003"); //$NON-NLS-1$
+	public static final IHintedType Generalization_4003 = (IHintedType) getElementType("org.eclipse.uml2.diagram.usecase.Generalization_4003"); //$NON-NLS-1$
 
 	/**
 	 * @generated
 	 */
-	public static final IElementType Association_4004 = getElementType("org.eclipse.uml2.diagram.usecase.Association_4004"); //$NON-NLS-1$
+	public static final IHintedType Association_4004 = (IHintedType) getElementType("org.eclipse.uml2.diagram.usecase.Association_4004"); //$NON-NLS-1$
 
 	/**
 	 * @generated
 	 */
-	public static final IElementType ConstraintConstrainedElement_4005 = getElementType("org.eclipse.uml2.diagram.usecase.ConstraintConstrainedElement_4005"); //$NON-NLS-1$
+	public static final IHintedType ConstraintConstrainedElement_4005 = (IHintedType) getElementType("org.eclipse.uml2.diagram.usecase.ConstraintConstrainedElement_4005"); //$NON-NLS-1$
 
 	/**
 	 * @generated
 	 */
-	public static final IElementType Dependency_4006 = getElementType("org.eclipse.uml2.diagram.usecase.Dependency_4006"); //$NON-NLS-1$
+	public static final IHintedType Dependency_4006 = (IHintedType) getElementType("org.eclipse.uml2.diagram.usecase.Dependency_4006"); //$NON-NLS-1$
 
 	/**
 	 * @generated

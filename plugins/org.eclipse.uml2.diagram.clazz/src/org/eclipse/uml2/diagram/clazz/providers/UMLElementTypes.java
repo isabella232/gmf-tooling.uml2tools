@@ -12,6 +12,7 @@ import org.eclipse.emf.ecore.ENamedElement;
 import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.gmf.runtime.emf.type.core.ElementTypeRegistry;
 import org.eclipse.gmf.runtime.emf.type.core.IElementType;
+import org.eclipse.gmf.runtime.emf.type.core.IHintedType;
 import org.eclipse.jface.resource.ImageDescriptor;
 import org.eclipse.jface.resource.ImageRegistry;
 import org.eclipse.swt.graphics.Image;
@@ -47,332 +48,332 @@ public class UMLElementTypes extends ElementInitializers {
 	/**
 	 * @generated
 	 */
-	public static final IElementType Package_1000 = getElementType("org.eclipse.uml2.diagram.clazz.Package_1000"); //$NON-NLS-1$
+	public static final IHintedType Package_1000 = (IHintedType) getElementType("org.eclipse.uml2.diagram.clazz.Package_1000"); //$NON-NLS-1$
 
 	/**
 	 * @generated
 	 */
-	public static final IElementType Package_2002 = getElementType("org.eclipse.uml2.diagram.clazz.Package_2002"); //$NON-NLS-1$
+	public static final IHintedType Package_2002 = (IHintedType) getElementType("org.eclipse.uml2.diagram.clazz.Package_2002"); //$NON-NLS-1$
 
 	/**
 	 * @generated
 	 */
-	public static final IElementType Class_2001 = getElementType("org.eclipse.uml2.diagram.clazz.Class_2001"); //$NON-NLS-1$
+	public static final IHintedType Class_2001 = (IHintedType) getElementType("org.eclipse.uml2.diagram.clazz.Class_2001"); //$NON-NLS-1$
 
 	/**
 	 * @generated
 	 */
-	public static final IElementType AssociationClass_2007 = getElementType("org.eclipse.uml2.diagram.clazz.AssociationClass_2007"); //$NON-NLS-1$
+	public static final IHintedType AssociationClass_2007 = (IHintedType) getElementType("org.eclipse.uml2.diagram.clazz.AssociationClass_2007"); //$NON-NLS-1$
 
 	/**
 	 * @generated
 	 */
-	public static final IElementType DataType_2004 = getElementType("org.eclipse.uml2.diagram.clazz.DataType_2004"); //$NON-NLS-1$
+	public static final IHintedType DataType_2004 = (IHintedType) getElementType("org.eclipse.uml2.diagram.clazz.DataType_2004"); //$NON-NLS-1$
 
 	/**
 	 * @generated
 	 */
-	public static final IElementType PrimitiveType_2005 = getElementType("org.eclipse.uml2.diagram.clazz.PrimitiveType_2005"); //$NON-NLS-1$
+	public static final IHintedType PrimitiveType_2005 = (IHintedType) getElementType("org.eclipse.uml2.diagram.clazz.PrimitiveType_2005"); //$NON-NLS-1$
 
 	/**
 	 * @generated
 	 */
-	public static final IElementType Enumeration_2003 = getElementType("org.eclipse.uml2.diagram.clazz.Enumeration_2003"); //$NON-NLS-1$
+	public static final IHintedType Enumeration_2003 = (IHintedType) getElementType("org.eclipse.uml2.diagram.clazz.Enumeration_2003"); //$NON-NLS-1$
 
 	/**
 	 * @generated
 	 */
-	public static final IElementType Interface_2010 = getElementType("org.eclipse.uml2.diagram.clazz.Interface_2010"); //$NON-NLS-1$
+	public static final IHintedType Interface_2010 = (IHintedType) getElementType("org.eclipse.uml2.diagram.clazz.Interface_2010"); //$NON-NLS-1$
 
 	/**
 	 * @generated
 	 */
-	public static final IElementType Constraint_2006 = getElementType("org.eclipse.uml2.diagram.clazz.Constraint_2006"); //$NON-NLS-1$
+	public static final IHintedType Constraint_2006 = (IHintedType) getElementType("org.eclipse.uml2.diagram.clazz.Constraint_2006"); //$NON-NLS-1$
 
 	/**
 	 * @generated
 	 */
-	public static final IElementType InstanceSpecification_2008 = getElementType("org.eclipse.uml2.diagram.clazz.InstanceSpecification_2008"); //$NON-NLS-1$
+	public static final IHintedType InstanceSpecification_2008 = (IHintedType) getElementType("org.eclipse.uml2.diagram.clazz.InstanceSpecification_2008"); //$NON-NLS-1$
 
 	/**
 	 * @generated
 	 */
-	public static final IElementType Dependency_2009 = getElementType("org.eclipse.uml2.diagram.clazz.Dependency_2009"); //$NON-NLS-1$
+	public static final IHintedType Dependency_2009 = (IHintedType) getElementType("org.eclipse.uml2.diagram.clazz.Dependency_2009"); //$NON-NLS-1$
 
 	/**
 	 * @generated
 	 */
-	public static final IElementType GeneralizationSet_2012 = getElementType("org.eclipse.uml2.diagram.clazz.GeneralizationSet_2012"); //$NON-NLS-1$
+	public static final IHintedType GeneralizationSet_2012 = (IHintedType) getElementType("org.eclipse.uml2.diagram.clazz.GeneralizationSet_2012"); //$NON-NLS-1$
 
 	/**
 	 * @generated
 	 */
-	public static final IElementType Interface_2013 = getElementType("org.eclipse.uml2.diagram.clazz.Interface_2013"); //$NON-NLS-1$
+	public static final IHintedType Interface_2013 = (IHintedType) getElementType("org.eclipse.uml2.diagram.clazz.Interface_2013"); //$NON-NLS-1$
 
 	/**
 	 * @generated
 	 */
-	public static final IElementType Package_2014 = getElementType("org.eclipse.uml2.diagram.clazz.Package_2014"); //$NON-NLS-1$
+	public static final IHintedType Package_2014 = (IHintedType) getElementType("org.eclipse.uml2.diagram.clazz.Package_2014"); //$NON-NLS-1$
 
 	/**
 	 * @generated
 	 */
-	public static final IElementType AssociationClass_2015 = getElementType("org.eclipse.uml2.diagram.clazz.AssociationClass_2015"); //$NON-NLS-1$
+	public static final IHintedType AssociationClass_2015 = (IHintedType) getElementType("org.eclipse.uml2.diagram.clazz.AssociationClass_2015"); //$NON-NLS-1$
 
 	/**
 	 * @generated
 	 */
-	public static final IElementType Package_2016 = getElementType("org.eclipse.uml2.diagram.clazz.Package_2016"); //$NON-NLS-1$
+	public static final IHintedType Package_2016 = (IHintedType) getElementType("org.eclipse.uml2.diagram.clazz.Package_2016"); //$NON-NLS-1$
 
 	/**
 	 * @generated
 	 */
-	public static final IElementType InstanceSpecification_2017 = getElementType("org.eclipse.uml2.diagram.clazz.InstanceSpecification_2017"); //$NON-NLS-1$
+	public static final IHintedType InstanceSpecification_2017 = (IHintedType) getElementType("org.eclipse.uml2.diagram.clazz.InstanceSpecification_2017"); //$NON-NLS-1$
 
 	/**
 	 * @generated
 	 */
-	public static final IElementType Package_3006 = getElementType("org.eclipse.uml2.diagram.clazz.Package_3006"); //$NON-NLS-1$
+	public static final IHintedType Package_3006 = (IHintedType) getElementType("org.eclipse.uml2.diagram.clazz.Package_3006"); //$NON-NLS-1$
 
 	/**
 	 * @generated
 	 */
-	public static final IElementType Class_3007 = getElementType("org.eclipse.uml2.diagram.clazz.Class_3007"); //$NON-NLS-1$
+	public static final IHintedType Class_3007 = (IHintedType) getElementType("org.eclipse.uml2.diagram.clazz.Class_3007"); //$NON-NLS-1$
 
 	/**
 	 * @generated
 	 */
-	public static final IElementType DataType_3008 = getElementType("org.eclipse.uml2.diagram.clazz.DataType_3008"); //$NON-NLS-1$
+	public static final IHintedType DataType_3008 = (IHintedType) getElementType("org.eclipse.uml2.diagram.clazz.DataType_3008"); //$NON-NLS-1$
 
 	/**
 	 * @generated
 	 */
-	public static final IElementType PrimitiveType_3009 = getElementType("org.eclipse.uml2.diagram.clazz.PrimitiveType_3009"); //$NON-NLS-1$
+	public static final IHintedType PrimitiveType_3009 = (IHintedType) getElementType("org.eclipse.uml2.diagram.clazz.PrimitiveType_3009"); //$NON-NLS-1$
 
 	/**
 	 * @generated
 	 */
-	public static final IElementType Enumeration_3011 = getElementType("org.eclipse.uml2.diagram.clazz.Enumeration_3011"); //$NON-NLS-1$
+	public static final IHintedType Enumeration_3011 = (IHintedType) getElementType("org.eclipse.uml2.diagram.clazz.Enumeration_3011"); //$NON-NLS-1$
 
 	/**
 	 * @generated
 	 */
-	public static final IElementType AssociationClass_3012 = getElementType("org.eclipse.uml2.diagram.clazz.AssociationClass_3012"); //$NON-NLS-1$
+	public static final IHintedType AssociationClass_3012 = (IHintedType) getElementType("org.eclipse.uml2.diagram.clazz.AssociationClass_3012"); //$NON-NLS-1$
 
 	/**
 	 * @generated
 	 */
-	public static final IElementType InstanceSpecification_3013 = getElementType("org.eclipse.uml2.diagram.clazz.InstanceSpecification_3013"); //$NON-NLS-1$
+	public static final IHintedType InstanceSpecification_3013 = (IHintedType) getElementType("org.eclipse.uml2.diagram.clazz.InstanceSpecification_3013"); //$NON-NLS-1$
 
 	/**
 	 * @generated
 	 */
-	public static final IElementType Property_3001 = getElementType("org.eclipse.uml2.diagram.clazz.Property_3001"); //$NON-NLS-1$
+	public static final IHintedType Property_3001 = (IHintedType) getElementType("org.eclipse.uml2.diagram.clazz.Property_3001"); //$NON-NLS-1$
 
 	/**
 	 * @generated
 	 */
-	public static final IElementType Operation_3002 = getElementType("org.eclipse.uml2.diagram.clazz.Operation_3002"); //$NON-NLS-1$
+	public static final IHintedType Operation_3002 = (IHintedType) getElementType("org.eclipse.uml2.diagram.clazz.Operation_3002"); //$NON-NLS-1$
 
 	/**
 	 * @generated
 	 */
-	public static final IElementType Class_3003 = getElementType("org.eclipse.uml2.diagram.clazz.Class_3003"); //$NON-NLS-1$
+	public static final IHintedType Class_3003 = (IHintedType) getElementType("org.eclipse.uml2.diagram.clazz.Class_3003"); //$NON-NLS-1$
 
 	/**
 	 * @generated
 	 */
-	public static final IElementType Port_3025 = getElementType("org.eclipse.uml2.diagram.clazz.Port_3025"); //$NON-NLS-1$
+	public static final IHintedType Port_3025 = (IHintedType) getElementType("org.eclipse.uml2.diagram.clazz.Port_3025"); //$NON-NLS-1$
 
 	/**
 	 * @generated
 	 */
-	public static final IElementType RedefinableTemplateSignature_3027 = getElementType("org.eclipse.uml2.diagram.clazz.RedefinableTemplateSignature_3027"); //$NON-NLS-1$
+	public static final IHintedType RedefinableTemplateSignature_3027 = (IHintedType) getElementType("org.eclipse.uml2.diagram.clazz.RedefinableTemplateSignature_3027"); //$NON-NLS-1$
 
 	/**
 	 * @generated
 	 */
-	public static final IElementType Property_3019 = getElementType("org.eclipse.uml2.diagram.clazz.Property_3019"); //$NON-NLS-1$
+	public static final IHintedType Property_3019 = (IHintedType) getElementType("org.eclipse.uml2.diagram.clazz.Property_3019"); //$NON-NLS-1$
 
 	/**
 	 * @generated
 	 */
-	public static final IElementType Operation_3020 = getElementType("org.eclipse.uml2.diagram.clazz.Operation_3020"); //$NON-NLS-1$
+	public static final IHintedType Operation_3020 = (IHintedType) getElementType("org.eclipse.uml2.diagram.clazz.Operation_3020"); //$NON-NLS-1$
 
 	/**
 	 * @generated
 	 */
-	public static final IElementType Property_3014 = getElementType("org.eclipse.uml2.diagram.clazz.Property_3014"); //$NON-NLS-1$
+	public static final IHintedType Property_3014 = (IHintedType) getElementType("org.eclipse.uml2.diagram.clazz.Property_3014"); //$NON-NLS-1$
 
 	/**
 	 * @generated
 	 */
-	public static final IElementType Operation_3015 = getElementType("org.eclipse.uml2.diagram.clazz.Operation_3015"); //$NON-NLS-1$
+	public static final IHintedType Operation_3015 = (IHintedType) getElementType("org.eclipse.uml2.diagram.clazz.Operation_3015"); //$NON-NLS-1$
 
 	/**
 	 * @generated
 	 */
-	public static final IElementType Property_3021 = getElementType("org.eclipse.uml2.diagram.clazz.Property_3021"); //$NON-NLS-1$
+	public static final IHintedType Property_3021 = (IHintedType) getElementType("org.eclipse.uml2.diagram.clazz.Property_3021"); //$NON-NLS-1$
 
 	/**
 	 * @generated
 	 */
-	public static final IElementType Operation_3022 = getElementType("org.eclipse.uml2.diagram.clazz.Operation_3022"); //$NON-NLS-1$
+	public static final IHintedType Operation_3022 = (IHintedType) getElementType("org.eclipse.uml2.diagram.clazz.Operation_3022"); //$NON-NLS-1$
 
 	/**
 	 * @generated
 	 */
-	public static final IElementType EnumerationLiteral_3016 = getElementType("org.eclipse.uml2.diagram.clazz.EnumerationLiteral_3016"); //$NON-NLS-1$
+	public static final IHintedType EnumerationLiteral_3016 = (IHintedType) getElementType("org.eclipse.uml2.diagram.clazz.EnumerationLiteral_3016"); //$NON-NLS-1$
 
 	/**
 	 * @generated
 	 */
-	public static final IElementType Property_3023 = getElementType("org.eclipse.uml2.diagram.clazz.Property_3023"); //$NON-NLS-1$
+	public static final IHintedType Property_3023 = (IHintedType) getElementType("org.eclipse.uml2.diagram.clazz.Property_3023"); //$NON-NLS-1$
 
 	/**
 	 * @generated
 	 */
-	public static final IElementType Operation_3024 = getElementType("org.eclipse.uml2.diagram.clazz.Operation_3024"); //$NON-NLS-1$
+	public static final IHintedType Operation_3024 = (IHintedType) getElementType("org.eclipse.uml2.diagram.clazz.Operation_3024"); //$NON-NLS-1$
 
 	/**
 	 * @generated
 	 */
-	public static final IElementType Slot_3017 = getElementType("org.eclipse.uml2.diagram.clazz.Slot_3017"); //$NON-NLS-1$
+	public static final IHintedType Slot_3017 = (IHintedType) getElementType("org.eclipse.uml2.diagram.clazz.Slot_3017"); //$NON-NLS-1$
 
 	/**
 	 * @generated
 	 */
-	public static final IElementType Property_3028 = getElementType("org.eclipse.uml2.diagram.clazz.Property_3028"); //$NON-NLS-1$
+	public static final IHintedType Property_3028 = (IHintedType) getElementType("org.eclipse.uml2.diagram.clazz.Property_3028"); //$NON-NLS-1$
 
 	/**
 	 * @generated
 	 */
-	public static final IElementType Operation_3029 = getElementType("org.eclipse.uml2.diagram.clazz.Operation_3029"); //$NON-NLS-1$
+	public static final IHintedType Operation_3029 = (IHintedType) getElementType("org.eclipse.uml2.diagram.clazz.Operation_3029"); //$NON-NLS-1$
 
 	/**
 	 * @generated
 	 */
-	public static final IElementType Class_3030 = getElementType("org.eclipse.uml2.diagram.clazz.Class_3030"); //$NON-NLS-1$
+	public static final IHintedType Class_3030 = (IHintedType) getElementType("org.eclipse.uml2.diagram.clazz.Class_3030"); //$NON-NLS-1$
 
 	/**
 	 * @generated
 	 */
-	public static final IElementType ElementImport_3031 = getElementType("org.eclipse.uml2.diagram.clazz.ElementImport_3031"); //$NON-NLS-1$
+	public static final IHintedType ElementImport_3031 = (IHintedType) getElementType("org.eclipse.uml2.diagram.clazz.ElementImport_3031"); //$NON-NLS-1$
 
 	/**
 	 * @generated
 	 */
-	public static final IElementType Package_3032 = getElementType("org.eclipse.uml2.diagram.clazz.Package_3032"); //$NON-NLS-1$
+	public static final IHintedType Package_3032 = (IHintedType) getElementType("org.eclipse.uml2.diagram.clazz.Package_3032"); //$NON-NLS-1$
 
 	/**
 	 * @generated
 	 */
-	public static final IElementType Class_3033 = getElementType("org.eclipse.uml2.diagram.clazz.Class_3033"); //$NON-NLS-1$
+	public static final IHintedType Class_3033 = (IHintedType) getElementType("org.eclipse.uml2.diagram.clazz.Class_3033"); //$NON-NLS-1$
 
 	/**
 	 * @generated
 	 */
-	public static final IElementType Enumeration_3034 = getElementType("org.eclipse.uml2.diagram.clazz.Enumeration_3034"); //$NON-NLS-1$
+	public static final IHintedType Enumeration_3034 = (IHintedType) getElementType("org.eclipse.uml2.diagram.clazz.Enumeration_3034"); //$NON-NLS-1$
 
 	/**
 	 * @generated
 	 */
-	public static final IElementType InstanceSpecification_3035 = getElementType("org.eclipse.uml2.diagram.clazz.InstanceSpecification_3035"); //$NON-NLS-1$
+	public static final IHintedType InstanceSpecification_3035 = (IHintedType) getElementType("org.eclipse.uml2.diagram.clazz.InstanceSpecification_3035"); //$NON-NLS-1$
 
 	/**
 	 * @generated
 	 */
-	public static final IElementType DataType_3036 = getElementType("org.eclipse.uml2.diagram.clazz.DataType_3036"); //$NON-NLS-1$
+	public static final IHintedType DataType_3036 = (IHintedType) getElementType("org.eclipse.uml2.diagram.clazz.DataType_3036"); //$NON-NLS-1$
 
 	/**
 	 * @generated
 	 */
-	public static final IElementType PrimitiveType_3037 = getElementType("org.eclipse.uml2.diagram.clazz.PrimitiveType_3037"); //$NON-NLS-1$
+	public static final IHintedType PrimitiveType_3037 = (IHintedType) getElementType("org.eclipse.uml2.diagram.clazz.PrimitiveType_3037"); //$NON-NLS-1$
 
 	/**
 	 * @generated
 	 */
-	public static final IElementType Generalization_4001 = getElementType("org.eclipse.uml2.diagram.clazz.Generalization_4001"); //$NON-NLS-1$
+	public static final IHintedType Generalization_4001 = (IHintedType) getElementType("org.eclipse.uml2.diagram.clazz.Generalization_4001"); //$NON-NLS-1$
 
 	/**
 	 * @generated
 	 */
-	public static final IElementType Dependency_4002 = getElementType("org.eclipse.uml2.diagram.clazz.Dependency_4002"); //$NON-NLS-1$
+	public static final IHintedType Dependency_4002 = (IHintedType) getElementType("org.eclipse.uml2.diagram.clazz.Dependency_4002"); //$NON-NLS-1$
 
 	/**
 	 * @generated
 	 */
-	public static final IElementType Property_4003 = getElementType("org.eclipse.uml2.diagram.clazz.Property_4003"); //$NON-NLS-1$
+	public static final IHintedType Property_4003 = (IHintedType) getElementType("org.eclipse.uml2.diagram.clazz.Property_4003"); //$NON-NLS-1$
 
 	/**
 	 * @generated
 	 */
-	public static final IElementType ConstraintConstrainedElement_4004 = getElementType("org.eclipse.uml2.diagram.clazz.ConstraintConstrainedElement_4004"); //$NON-NLS-1$
+	public static final IHintedType ConstraintConstrainedElement_4004 = (IHintedType) getElementType("org.eclipse.uml2.diagram.clazz.ConstraintConstrainedElement_4004"); //$NON-NLS-1$
 
 	/**
 	 * @generated
 	 */
-	public static final IElementType Association_4005 = getElementType("org.eclipse.uml2.diagram.clazz.Association_4005"); //$NON-NLS-1$
+	public static final IHintedType Association_4005 = (IHintedType) getElementType("org.eclipse.uml2.diagram.clazz.Association_4005"); //$NON-NLS-1$
 
 	/**
 	 * @generated
 	 */
-	public static final IElementType DependencySupplier_4006 = getElementType("org.eclipse.uml2.diagram.clazz.DependencySupplier_4006"); //$NON-NLS-1$
+	public static final IHintedType DependencySupplier_4006 = (IHintedType) getElementType("org.eclipse.uml2.diagram.clazz.DependencySupplier_4006"); //$NON-NLS-1$
 
 	/**
 	 * @generated
 	 */
-	public static final IElementType DependencyClient_4007 = getElementType("org.eclipse.uml2.diagram.clazz.DependencyClient_4007"); //$NON-NLS-1$
+	public static final IHintedType DependencyClient_4007 = (IHintedType) getElementType("org.eclipse.uml2.diagram.clazz.DependencyClient_4007"); //$NON-NLS-1$
 
 	/**
 	 * @generated
 	 */
-	public static final IElementType InterfaceRealization_4008 = getElementType("org.eclipse.uml2.diagram.clazz.InterfaceRealization_4008"); //$NON-NLS-1$
+	public static final IHintedType InterfaceRealization_4008 = (IHintedType) getElementType("org.eclipse.uml2.diagram.clazz.InterfaceRealization_4008"); //$NON-NLS-1$
 
 	/**
 	 * @generated
 	 */
-	public static final IElementType Realization_4010 = getElementType("org.eclipse.uml2.diagram.clazz.Realization_4010"); //$NON-NLS-1$
+	public static final IHintedType Realization_4010 = (IHintedType) getElementType("org.eclipse.uml2.diagram.clazz.Realization_4010"); //$NON-NLS-1$
 
 	/**
 	 * @generated
 	 */
-	public static final IElementType Generalization_4011 = getElementType("org.eclipse.uml2.diagram.clazz.Generalization_4011"); //$NON-NLS-1$
+	public static final IHintedType Generalization_4011 = (IHintedType) getElementType("org.eclipse.uml2.diagram.clazz.Generalization_4011"); //$NON-NLS-1$
 
 	/**
 	 * @generated
 	 */
-	public static final IElementType GeneralizationGeneral_4012 = getElementType("org.eclipse.uml2.diagram.clazz.GeneralizationGeneral_4012"); //$NON-NLS-1$
+	public static final IHintedType GeneralizationGeneral_4012 = (IHintedType) getElementType("org.eclipse.uml2.diagram.clazz.GeneralizationGeneral_4012"); //$NON-NLS-1$
 
 	/**
 	 * @generated
 	 */
-	public static final IElementType Usage_4013 = getElementType("org.eclipse.uml2.diagram.clazz.Usage_4013"); //$NON-NLS-1$
+	public static final IHintedType Usage_4013 = (IHintedType) getElementType("org.eclipse.uml2.diagram.clazz.Usage_4013"); //$NON-NLS-1$
 
 	/**
 	 * @generated
 	 */
-	public static final IElementType AssociationClass_4014 = getElementType("org.eclipse.uml2.diagram.clazz.AssociationClass_4014"); //$NON-NLS-1$
+	public static final IHintedType AssociationClass_4014 = (IHintedType) getElementType("org.eclipse.uml2.diagram.clazz.AssociationClass_4014"); //$NON-NLS-1$
 
 	/**
 	 * @generated
 	 */
-	public static final IElementType Slot_4015 = getElementType("org.eclipse.uml2.diagram.clazz.Slot_4015"); //$NON-NLS-1$
+	public static final IHintedType Slot_4015 = (IHintedType) getElementType("org.eclipse.uml2.diagram.clazz.Slot_4015"); //$NON-NLS-1$
 
 	/**
 	 * @generated
 	 */
-	public static final IElementType TemplateBinding_4016 = getElementType("org.eclipse.uml2.diagram.clazz.TemplateBinding_4016"); //$NON-NLS-1$
+	public static final IHintedType TemplateBinding_4016 = (IHintedType) getElementType("org.eclipse.uml2.diagram.clazz.TemplateBinding_4016"); //$NON-NLS-1$
 
 	/**
 	 * @generated
 	 */
-	public static final IElementType PortProvided_4017 = getElementType("org.eclipse.uml2.diagram.clazz.PortProvided_4017"); //$NON-NLS-1$
+	public static final IHintedType PortProvided_4017 = (IHintedType) getElementType("org.eclipse.uml2.diagram.clazz.PortProvided_4017"); //$NON-NLS-1$
 
 	/**
 	 * @generated
 	 */
-	public static final IElementType PortRequired_4018 = getElementType("org.eclipse.uml2.diagram.clazz.PortRequired_4018"); //$NON-NLS-1$
+	public static final IHintedType PortRequired_4018 = (IHintedType) getElementType("org.eclipse.uml2.diagram.clazz.PortRequired_4018"); //$NON-NLS-1$
 
 	/**
 	 * @generated

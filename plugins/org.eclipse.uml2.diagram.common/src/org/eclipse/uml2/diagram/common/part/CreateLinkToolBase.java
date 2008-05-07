@@ -23,10 +23,11 @@ import org.eclipse.gmf.runtime.diagram.ui.tools.UnspecifiedTypeConnectionTool;
 import org.eclipse.gmf.runtime.emf.type.core.IElementType;
 
 public abstract class CreateLinkToolBase extends UnspecifiedTypeConnectionTool {
-	public CreateLinkToolBase(List<IElementType> types) {
+	public CreateLinkToolBase(List<? extends IElementType> types) {
 		super(types);
 	}
 	
+	@SuppressWarnings("unchecked")
 	protected Request createTargetRequest() {
 		CreateUnspecifiedTypeConnectionRequest request = (CreateUnspecifiedTypeConnectionRequest)super.createTargetRequest();
 		
