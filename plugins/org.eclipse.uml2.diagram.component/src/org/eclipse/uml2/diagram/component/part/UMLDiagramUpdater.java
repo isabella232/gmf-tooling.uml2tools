@@ -77,6 +77,7 @@ import org.eclipse.uml2.uml.UMLPackage;
 /**
  * @generated
  */
+@SuppressWarnings("unchecked")
 public class UMLDiagramUpdater {
 
 	/**
@@ -1786,20 +1787,20 @@ public class UMLDiagramUpdater {
 	private static Collection getOutgoingTypeModelFacetLinks_Connector_4008(ConnectableElement source) {
 		StructuredClassifier container = null;
 		Element current = source.getOwner();
-		while(current != null && container == null){
-			if (current instanceof StructuredClassifier){
-				container = (StructuredClassifier)current;
+		while (current != null && container == null) {
+			if (current instanceof StructuredClassifier) {
+				container = (StructuredClassifier) current;
 			}
 			current = current.getOwner();
 		}
-		if (container == null){
+		if (container == null) {
 			return Collections.emptyList();
 		}
 		Collection<UMLLinkDescriptor> allConnectors = getContainedTypeModelFacetLinks_Connector_4008(container);
 		List<UMLLinkDescriptor> outgoing = new LinkedList<UMLLinkDescriptor>();
-		for (Iterator<?> it = allConnectors.iterator(); it.hasNext();){
-			UMLLinkDescriptor next = (UMLLinkDescriptor)it.next();
-			if (source.equals(next.getSource())){
+		for (Iterator<?> it = allConnectors.iterator(); it.hasNext();) {
+			UMLLinkDescriptor next = (UMLLinkDescriptor) it.next();
+			if (source.equals(next.getSource())) {
 				outgoing.add(next);
 			}
 		}
