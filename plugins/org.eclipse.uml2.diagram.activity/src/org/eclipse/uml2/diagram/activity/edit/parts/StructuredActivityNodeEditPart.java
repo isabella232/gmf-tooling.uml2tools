@@ -26,11 +26,12 @@ import org.eclipse.gmf.runtime.gef.ui.figures.NodeFigure;
 import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.uml2.diagram.activity.edit.policies.StructuredActivityNodeCanonicalEditPolicy;
 import org.eclipse.uml2.diagram.activity.edit.policies.StructuredActivityNodeItemSemanticEditPolicy;
+import org.eclipse.uml2.diagram.common.editparts.PrimaryShapeEditPart;
 
 /**
  * @generated
  */
-public class StructuredActivityNodeEditPart extends ShapeNodeEditPart {
+public class StructuredActivityNodeEditPart extends ShapeNodeEditPart implements PrimaryShapeEditPart {
 
 	/**
 	 * @generated

@@ -32,11 +32,12 @@ import org.eclipse.uml2.diagram.activity.edit.policies.AddStructuralFeatureValue
 import org.eclipse.uml2.diagram.activity.edit.policies.AddStructuralFeatureValueAction3ItemSemanticEditPolicy;
 import org.eclipse.uml2.diagram.activity.part.UMLVisualIDRegistry;
 import org.eclipse.uml2.diagram.common.draw2d.CenterLayout;
+import org.eclipse.uml2.diagram.common.editparts.PrimaryShapeEditPart;
 
 /**
  * @generated
  */
-public class AddStructuralFeatureValueAction3EditPart extends AbstractBorderedShapeEditPart {
+public class AddStructuralFeatureValueAction3EditPart extends AbstractBorderedShapeEditPart implements PrimaryShapeEditPart {
 
 	/**
 	 * @generated

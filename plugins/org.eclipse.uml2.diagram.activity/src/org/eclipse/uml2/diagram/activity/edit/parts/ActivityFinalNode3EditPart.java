@@ -22,11 +22,12 @@ import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.uml2.diagram.activity.edit.policies.ActivityFinalNode3CanonicalEditPolicy;
 import org.eclipse.uml2.diagram.activity.edit.policies.ActivityFinalNode3ItemSemanticEditPolicy;
 import org.eclipse.uml2.diagram.common.draw2d.CenterLayout;
+import org.eclipse.uml2.diagram.common.editparts.PrimaryShapeEditPart;
 
 /**
  * @generated
  */
-public class ActivityFinalNode3EditPart extends ShapeNodeEditPart {
+public class ActivityFinalNode3EditPart extends ShapeNodeEditPart implements PrimaryShapeEditPart {
 
 	/**
 	 * @generated

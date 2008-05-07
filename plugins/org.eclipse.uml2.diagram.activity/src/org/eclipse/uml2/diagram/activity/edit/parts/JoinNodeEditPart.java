@@ -19,12 +19,13 @@ import org.eclipse.gmf.runtime.gef.ui.figures.NodeFigure;
 import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.uml2.diagram.activity.edit.policies.JoinNodeCanonicalEditPolicy;
 import org.eclipse.uml2.diagram.activity.edit.policies.JoinNodeItemSemanticEditPolicy;
+import org.eclipse.uml2.diagram.common.editparts.PrimaryShapeEditPart;
 import org.eclipse.uml2.diagram.common.editpolicies.DynamicResizeDirectionsEditPolicy;
 
 /**
  * @generated
  */
-public class JoinNodeEditPart extends ShapeNodeEditPart {
+public class JoinNodeEditPart extends ShapeNodeEditPart implements PrimaryShapeEditPart {
 
 	/**
 	 * @generated

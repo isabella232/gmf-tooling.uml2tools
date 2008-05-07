@@ -19,12 +19,13 @@ import org.eclipse.gmf.runtime.gef.ui.figures.NodeFigure;
 import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.uml2.diagram.activity.edit.policies.ForkNode2CanonicalEditPolicy;
 import org.eclipse.uml2.diagram.activity.edit.policies.ForkNode2ItemSemanticEditPolicy;
+import org.eclipse.uml2.diagram.common.editparts.PrimaryShapeEditPart;
 import org.eclipse.uml2.diagram.common.editpolicies.DynamicResizeDirectionsEditPolicy;
 
 /**
  * @generated
  */
-public class ForkNode2EditPart extends ShapeNodeEditPart {
+public class ForkNode2EditPart extends ShapeNodeEditPart implements PrimaryShapeEditPart {
 
 	/**
 	 * @generated

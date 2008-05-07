@@ -34,11 +34,12 @@ import org.eclipse.uml2.diagram.activity.edit.policies.OpaqueActionCanonicalEdit
 import org.eclipse.uml2.diagram.activity.edit.policies.OpaqueActionItemSemanticEditPolicy;
 import org.eclipse.uml2.diagram.activity.part.UMLVisualIDRegistry;
 import org.eclipse.uml2.diagram.common.draw2d.CenterLayout;
+import org.eclipse.uml2.diagram.common.editparts.PrimaryShapeEditPart;
 
 /**
  * @generated
  */
-public class OpaqueActionEditPart extends AbstractBorderedShapeEditPart {
+public class OpaqueActionEditPart extends AbstractBorderedShapeEditPart implements PrimaryShapeEditPart {
 
 	/**
 	 * @generated

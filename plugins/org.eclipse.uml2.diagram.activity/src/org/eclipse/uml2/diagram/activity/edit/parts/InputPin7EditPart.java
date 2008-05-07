@@ -27,11 +27,12 @@ import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.uml2.diagram.activity.edit.policies.InputPin7CanonicalEditPolicy;
 import org.eclipse.uml2.diagram.activity.edit.policies.InputPin7ItemSemanticEditPolicy;
 import org.eclipse.uml2.diagram.activity.part.UMLVisualIDRegistry;
+import org.eclipse.uml2.diagram.common.editparts.PrimaryShapeEditPart;
 
 /**
  * @generated
  */
-public class InputPin7EditPart extends AbstractBorderedShapeEditPart {
+public class InputPin7EditPart extends AbstractBorderedShapeEditPart implements PrimaryShapeEditPart {
 
 	/**
 	 * @generated

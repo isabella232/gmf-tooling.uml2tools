@@ -26,11 +26,12 @@ import org.eclipse.uml2.diagram.activity.edit.policies.ConstraintItemSemanticEdi
 import org.eclipse.uml2.diagram.activity.part.UMLVisualIDRegistry;
 import org.eclipse.uml2.diagram.activity.providers.UMLElementTypes;
 import org.eclipse.uml2.diagram.common.draw2d.ConstraintFigure;
+import org.eclipse.uml2.diagram.common.editparts.PrimaryShapeEditPart;
 
 /**
  * @generated
  */
-public class ConstraintEditPart extends ShapeNodeEditPart {
+public class ConstraintEditPart extends ShapeNodeEditPart implements PrimaryShapeEditPart {
 
 	/**
 	 * @generated

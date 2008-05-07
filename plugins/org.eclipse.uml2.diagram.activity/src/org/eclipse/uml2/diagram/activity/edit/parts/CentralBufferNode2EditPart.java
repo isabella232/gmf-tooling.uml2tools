@@ -30,11 +30,12 @@ import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.uml2.diagram.activity.edit.policies.CentralBufferNode2CanonicalEditPolicy;
 import org.eclipse.uml2.diagram.activity.edit.policies.CentralBufferNode2ItemSemanticEditPolicy;
 import org.eclipse.uml2.diagram.activity.part.UMLVisualIDRegistry;
+import org.eclipse.uml2.diagram.common.editparts.PrimaryShapeEditPart;
 
 /**
  * @generated
  */
-public class CentralBufferNode2EditPart extends AbstractBorderedShapeEditPart {
+public class CentralBufferNode2EditPart extends AbstractBorderedShapeEditPart implements PrimaryShapeEditPart {
 
 	/**
 	 * @generated

@@ -25,11 +25,12 @@ import org.eclipse.gmf.runtime.gef.ui.figures.NodeFigure;
 import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.uml2.diagram.activity.edit.policies.ConditionalNodeCanonicalEditPolicy;
 import org.eclipse.uml2.diagram.activity.edit.policies.ConditionalNodeItemSemanticEditPolicy;
+import org.eclipse.uml2.diagram.common.editparts.PrimaryShapeEditPart;
 
 /**
  * @generated
  */
-public class ConditionalNodeEditPart extends ShapeNodeEditPart {
+public class ConditionalNodeEditPart extends ShapeNodeEditPart implements PrimaryShapeEditPart {
 
 	/**
 	 * @generated

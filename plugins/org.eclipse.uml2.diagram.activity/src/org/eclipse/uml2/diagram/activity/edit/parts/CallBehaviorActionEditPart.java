@@ -40,11 +40,12 @@ import org.eclipse.uml2.diagram.activity.edit.policies.CallBehaviorActionItemSem
 import org.eclipse.uml2.diagram.activity.part.UMLVisualIDRegistry;
 import org.eclipse.uml2.diagram.common.draw2d.CenterLayout;
 import org.eclipse.uml2.diagram.common.draw2d.PolylineContainer;
+import org.eclipse.uml2.diagram.common.editparts.PrimaryShapeEditPart;
 
 /**
  * @generated
  */
-public class CallBehaviorActionEditPart extends AbstractBorderedShapeEditPart {
+public class CallBehaviorActionEditPart extends AbstractBorderedShapeEditPart implements PrimaryShapeEditPart {
 
 	/**
 	 * @generated

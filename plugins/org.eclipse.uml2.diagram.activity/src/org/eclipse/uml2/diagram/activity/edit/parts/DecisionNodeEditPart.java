@@ -21,11 +21,12 @@ import org.eclipse.gmf.runtime.gef.ui.figures.NodeFigure;
 import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.uml2.diagram.activity.edit.policies.DecisionNodeCanonicalEditPolicy;
 import org.eclipse.uml2.diagram.activity.edit.policies.DecisionNodeItemSemanticEditPolicy;
+import org.eclipse.uml2.diagram.common.editparts.PrimaryShapeEditPart;
 
 /**
  * @generated
  */
-public class DecisionNodeEditPart extends ShapeNodeEditPart {
+public class DecisionNodeEditPart extends ShapeNodeEditPart implements PrimaryShapeEditPart {
 
 	/**
 	 * @generated

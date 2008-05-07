@@ -28,11 +28,12 @@ import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.uml2.diagram.activity.edit.policies.SendSignalActionCanonicalEditPolicy;
 import org.eclipse.uml2.diagram.activity.edit.policies.SendSignalActionItemSemanticEditPolicy;
 import org.eclipse.uml2.diagram.activity.part.UMLVisualIDRegistry;
+import org.eclipse.uml2.diagram.common.editparts.PrimaryShapeEditPart;
 
 /**
  * @generated
  */
-public class SendSignalActionEditPart extends ShapeNodeEditPart {
+public class SendSignalActionEditPart extends ShapeNodeEditPart implements PrimaryShapeEditPart {
 
 	/**
 	 * @generated

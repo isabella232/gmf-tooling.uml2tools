@@ -34,11 +34,12 @@ import org.eclipse.uml2.diagram.activity.edit.policies.CallOperationAction2Canon
 import org.eclipse.uml2.diagram.activity.edit.policies.CallOperationAction2ItemSemanticEditPolicy;
 import org.eclipse.uml2.diagram.activity.part.UMLVisualIDRegistry;
 import org.eclipse.uml2.diagram.common.draw2d.CenterLayout;
+import org.eclipse.uml2.diagram.common.editparts.PrimaryShapeEditPart;
 
 /**
  * @generated
  */
-public class CallOperationAction2EditPart extends AbstractBorderedShapeEditPart {
+public class CallOperationAction2EditPart extends AbstractBorderedShapeEditPart implements PrimaryShapeEditPart {
 
 	/**
 	 * @generated

@@ -23,11 +23,12 @@ import org.eclipse.uml2.diagram.activity.edit.policies.OpaqueBehaviorItemSemanti
 import org.eclipse.uml2.diagram.activity.edit.policies.UMLTextSelectionEditPolicy;
 import org.eclipse.uml2.diagram.activity.part.UMLVisualIDRegistry;
 import org.eclipse.uml2.diagram.common.draw2d.ConstraintFigureBase;
+import org.eclipse.uml2.diagram.common.editparts.PrimaryShapeEditPart;
 
 /**
  * @generated
  */
-public class OpaqueBehaviorEditPart extends ShapeNodeEditPart {
+public class OpaqueBehaviorEditPart extends ShapeNodeEditPart implements PrimaryShapeEditPart {
 
 	/**
 	 * @generated

@@ -29,11 +29,12 @@ import org.eclipse.uml2.diagram.activity.edit.policies.ActivityPartitionCanonica
 import org.eclipse.uml2.diagram.activity.edit.policies.ActivityPartitionItemSemanticEditPolicy;
 import org.eclipse.uml2.diagram.activity.part.UMLVisualIDRegistry;
 import org.eclipse.uml2.diagram.common.draw2d.RotatedImageOfString;
+import org.eclipse.uml2.diagram.common.editparts.PrimaryShapeEditPart;
 
 /**
  * @generated
  */
-public class ActivityPartitionEditPart extends ShapeNodeEditPart {
+public class ActivityPartitionEditPart extends ShapeNodeEditPart implements PrimaryShapeEditPart {
 
 	/**
 	 * @generated
