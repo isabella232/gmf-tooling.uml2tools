@@ -13,6 +13,7 @@ import org.eclipse.emf.ecore.ENamedElement;
 import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.gmf.runtime.emf.type.core.ElementTypeRegistry;
 import org.eclipse.gmf.runtime.emf.type.core.IElementType;
+import org.eclipse.gmf.runtime.emf.type.core.IHintedType;
 import org.eclipse.jface.resource.ImageDescriptor;
 import org.eclipse.jface.resource.ImageRegistry;
 import org.eclipse.swt.graphics.Image;
@@ -267,122 +268,122 @@ public class UMLElementTypes extends ElementInitializers {
 	/**
 	 * @generated
 	 */
-	public static final IElementType StateMachine_1000 = getElementType("org.eclipse.uml2.diagram.statemachine.StateMachine_1000"); //$NON-NLS-1$
+	public static final IHintedType StateMachine_1000 = (IHintedType) getElementType("org.eclipse.uml2.diagram.statemachine.StateMachine_1000"); //$NON-NLS-1$
 
 	/**
 	 * @generated
 	 */
-	public static final IElementType StateMachine_2004 = getElementType("org.eclipse.uml2.diagram.statemachine.StateMachine_2004"); //$NON-NLS-1$
+	public static final IHintedType StateMachine_2004 = (IHintedType) getElementType("org.eclipse.uml2.diagram.statemachine.StateMachine_2004"); //$NON-NLS-1$
 
 	/**
 	 * @generated
 	 */
-	public static final IElementType Region_3013 = getElementType("org.eclipse.uml2.diagram.statemachine.Region_3013"); //$NON-NLS-1$
+	public static final IHintedType Region_3013 = (IHintedType) getElementType("org.eclipse.uml2.diagram.statemachine.Region_3013"); //$NON-NLS-1$
 
 	/**
 	 * @generated
 	 */
-	public static final IElementType State_3001 = getElementType("org.eclipse.uml2.diagram.statemachine.State_3001"); //$NON-NLS-1$
+	public static final IHintedType State_3001 = (IHintedType) getElementType("org.eclipse.uml2.diagram.statemachine.State_3001"); //$NON-NLS-1$
 
 	/**
 	 * @generated
 	 */
-	public static final IElementType Behavior_3019 = getElementType("org.eclipse.uml2.diagram.statemachine.Behavior_3019"); //$NON-NLS-1$
+	public static final IHintedType Behavior_3019 = (IHintedType) getElementType("org.eclipse.uml2.diagram.statemachine.Behavior_3019"); //$NON-NLS-1$
 
 	/**
 	 * @generated
 	 */
-	public static final IElementType Behavior_3020 = getElementType("org.eclipse.uml2.diagram.statemachine.Behavior_3020"); //$NON-NLS-1$
+	public static final IHintedType Behavior_3020 = (IHintedType) getElementType("org.eclipse.uml2.diagram.statemachine.Behavior_3020"); //$NON-NLS-1$
 
 	/**
 	 * @generated
 	 */
-	public static final IElementType Behavior_3021 = getElementType("org.eclipse.uml2.diagram.statemachine.Behavior_3021"); //$NON-NLS-1$
+	public static final IHintedType Behavior_3021 = (IHintedType) getElementType("org.eclipse.uml2.diagram.statemachine.Behavior_3021"); //$NON-NLS-1$
 
 	/**
 	 * @generated
 	 */
-	public static final IElementType State_3012 = getElementType("org.eclipse.uml2.diagram.statemachine.State_3012"); //$NON-NLS-1$
+	public static final IHintedType State_3012 = (IHintedType) getElementType("org.eclipse.uml2.diagram.statemachine.State_3012"); //$NON-NLS-1$
 
 	/**
 	 * @generated
 	 */
-	public static final IElementType Region_3002 = getElementType("org.eclipse.uml2.diagram.statemachine.Region_3002"); //$NON-NLS-1$
+	public static final IHintedType Region_3002 = (IHintedType) getElementType("org.eclipse.uml2.diagram.statemachine.Region_3002"); //$NON-NLS-1$
 
 	/**
 	 * @generated
 	 */
-	public static final IElementType State_3016 = getElementType("org.eclipse.uml2.diagram.statemachine.State_3016"); //$NON-NLS-1$
+	public static final IHintedType State_3016 = (IHintedType) getElementType("org.eclipse.uml2.diagram.statemachine.State_3016"); //$NON-NLS-1$
 
 	/**
 	 * @generated
 	 */
-	public static final IElementType ConnectionPointReference_3017 = getElementType("org.eclipse.uml2.diagram.statemachine.ConnectionPointReference_3017"); //$NON-NLS-1$
+	public static final IHintedType ConnectionPointReference_3017 = (IHintedType) getElementType("org.eclipse.uml2.diagram.statemachine.ConnectionPointReference_3017"); //$NON-NLS-1$
 
 	/**
 	 * @generated
 	 */
-	public static final IElementType ConnectionPointReference_3018 = getElementType("org.eclipse.uml2.diagram.statemachine.ConnectionPointReference_3018"); //$NON-NLS-1$
+	public static final IHintedType ConnectionPointReference_3018 = (IHintedType) getElementType("org.eclipse.uml2.diagram.statemachine.ConnectionPointReference_3018"); //$NON-NLS-1$
 
 	/**
 	 * @generated
 	 */
-	public static final IElementType FinalState_3003 = getElementType("org.eclipse.uml2.diagram.statemachine.FinalState_3003"); //$NON-NLS-1$
+	public static final IHintedType FinalState_3003 = (IHintedType) getElementType("org.eclipse.uml2.diagram.statemachine.FinalState_3003"); //$NON-NLS-1$
 
 	/**
 	 * @generated
 	 */
-	public static final IElementType Pseudostate_3004 = getElementType("org.eclipse.uml2.diagram.statemachine.Pseudostate_3004"); //$NON-NLS-1$
+	public static final IHintedType Pseudostate_3004 = (IHintedType) getElementType("org.eclipse.uml2.diagram.statemachine.Pseudostate_3004"); //$NON-NLS-1$
 
 	/**
 	 * @generated
 	 */
-	public static final IElementType Pseudostate_3005 = getElementType("org.eclipse.uml2.diagram.statemachine.Pseudostate_3005"); //$NON-NLS-1$
+	public static final IHintedType Pseudostate_3005 = (IHintedType) getElementType("org.eclipse.uml2.diagram.statemachine.Pseudostate_3005"); //$NON-NLS-1$
 
 	/**
 	 * @generated
 	 */
-	public static final IElementType Pseudostate_3006 = getElementType("org.eclipse.uml2.diagram.statemachine.Pseudostate_3006"); //$NON-NLS-1$
+	public static final IHintedType Pseudostate_3006 = (IHintedType) getElementType("org.eclipse.uml2.diagram.statemachine.Pseudostate_3006"); //$NON-NLS-1$
 
 	/**
 	 * @generated
 	 */
-	public static final IElementType Pseudostate_3007 = getElementType("org.eclipse.uml2.diagram.statemachine.Pseudostate_3007"); //$NON-NLS-1$
+	public static final IHintedType Pseudostate_3007 = (IHintedType) getElementType("org.eclipse.uml2.diagram.statemachine.Pseudostate_3007"); //$NON-NLS-1$
 
 	/**
 	 * @generated
 	 */
-	public static final IElementType Pseudostate_3008 = getElementType("org.eclipse.uml2.diagram.statemachine.Pseudostate_3008"); //$NON-NLS-1$
+	public static final IHintedType Pseudostate_3008 = (IHintedType) getElementType("org.eclipse.uml2.diagram.statemachine.Pseudostate_3008"); //$NON-NLS-1$
 
 	/**
 	 * @generated
 	 */
-	public static final IElementType Pseudostate_3009 = getElementType("org.eclipse.uml2.diagram.statemachine.Pseudostate_3009"); //$NON-NLS-1$
+	public static final IHintedType Pseudostate_3009 = (IHintedType) getElementType("org.eclipse.uml2.diagram.statemachine.Pseudostate_3009"); //$NON-NLS-1$
 
 	/**
 	 * @generated
 	 */
-	public static final IElementType Pseudostate_3010 = getElementType("org.eclipse.uml2.diagram.statemachine.Pseudostate_3010"); //$NON-NLS-1$
+	public static final IHintedType Pseudostate_3010 = (IHintedType) getElementType("org.eclipse.uml2.diagram.statemachine.Pseudostate_3010"); //$NON-NLS-1$
 
 	/**
 	 * @generated
 	 */
-	public static final IElementType Pseudostate_3011 = getElementType("org.eclipse.uml2.diagram.statemachine.Pseudostate_3011"); //$NON-NLS-1$
+	public static final IHintedType Pseudostate_3011 = (IHintedType) getElementType("org.eclipse.uml2.diagram.statemachine.Pseudostate_3011"); //$NON-NLS-1$
 
 	/**
 	 * @generated
 	 */
-	public static final IElementType Pseudostate_3014 = getElementType("org.eclipse.uml2.diagram.statemachine.Pseudostate_3014"); //$NON-NLS-1$
+	public static final IHintedType Pseudostate_3014 = (IHintedType) getElementType("org.eclipse.uml2.diagram.statemachine.Pseudostate_3014"); //$NON-NLS-1$
 
 	/**
 	 * @generated
 	 */
-	public static final IElementType Pseudostate_3015 = getElementType("org.eclipse.uml2.diagram.statemachine.Pseudostate_3015"); //$NON-NLS-1$
+	public static final IHintedType Pseudostate_3015 = (IHintedType) getElementType("org.eclipse.uml2.diagram.statemachine.Pseudostate_3015"); //$NON-NLS-1$
 
 	/**
 	 * @generated
 	 */
-	public static final IElementType Transition_4001 = getElementType("org.eclipse.uml2.diagram.statemachine.Transition_4001"); //$NON-NLS-1$
+	public static final IHintedType Transition_4001 = (IHintedType) getElementType("org.eclipse.uml2.diagram.statemachine.Transition_4001"); //$NON-NLS-1$
 
 	/**
 	 * @generated
