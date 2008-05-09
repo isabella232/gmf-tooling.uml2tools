@@ -1,3 +1,14 @@
+/*
+ * Copyright (c) 2006 Borland Software Corporation
+ * 
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
+ *
+ * Contributors:
+ *    Tatiana Fesenko (Borland) - initial API and implementation
+ */
 package org.eclipse.uml2.diagram.common.sheet;
 
 import java.util.ArrayList;
@@ -10,6 +21,7 @@ import org.eclipse.emf.transaction.util.TransactionUtil;
 import org.eclipse.gmf.runtime.emf.ui.properties.descriptors.EMFCompositeSourcePropertyDescriptor;
 import org.eclipse.jface.viewers.CellEditor;
 import org.eclipse.swt.widgets.Composite;
+import org.eclipse.uml2.diagram.common.part.UMLElementChooserDialog;
 
 public class ReferencePropertyDescriptor extends EMFCompositeSourcePropertyDescriptor {
 
@@ -23,7 +35,7 @@ public class ReferencePropertyDescriptor extends EMFCompositeSourcePropertyDescr
 	@Override
 	protected CellEditor doCreateEditor(Composite composite) {
 		final EStructuralFeature feature = (EStructuralFeature) getFeature();
-		UMLElementChooserDialog dialog = new UMLElementChooserDialog(composite.getShell(), myItemProvidersAdapterFactory, (EObject) object, feature) {
+		UMLElementChooserDialog dialog = new ReferenceElementChooserDialog(composite.getShell(), myItemProvidersAdapterFactory, (EObject) object, feature) {
 
 			@Override
 			protected boolean isValid(EObject selectedElement) {

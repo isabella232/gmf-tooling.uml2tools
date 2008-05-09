@@ -1,15 +1,29 @@
-package org.eclipse.uml2.diagram.common.sheet;
+/*
+ * Copyright (c) 2006 Borland Software Corporation
+ * 
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
+ *
+ * Contributors:
+ *    Tatiana Fesenko (Borland) - initial API and implementation
+ */
+package org.eclipse.uml2.diagram.common.part;
 
 import java.util.Collections;
 import java.util.Iterator;
 
+import org.eclipse.core.resources.IFile;
 import org.eclipse.core.resources.ResourcesPlugin;
+import org.eclipse.core.runtime.IPath;
 import org.eclipse.core.runtime.Path;
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.util.URI;
+import org.eclipse.emf.common.util.WrappedException;
 import org.eclipse.emf.ecore.EObject;
-import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.ecore.resource.Resource;
+import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.emf.ecore.util.FeatureMap;
 import org.eclipse.emf.edit.provider.IWrapperItemProvider;
@@ -25,7 +39,6 @@ import org.eclipse.jface.viewers.ISelectionChangedListener;
 import org.eclipse.jface.viewers.IStructuredSelection;
 import org.eclipse.jface.viewers.ITreeContentProvider;
 import org.eclipse.jface.viewers.SelectionChangedEvent;
-import org.eclipse.jface.viewers.StructuredSelection;
 import org.eclipse.jface.viewers.TreeViewer;
 import org.eclipse.jface.viewers.Viewer;
 import org.eclipse.swt.SWT;
@@ -34,14 +47,12 @@ import org.eclipse.swt.layout.GridData;
 import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.Control;
 import org.eclipse.swt.widgets.Shell;
+import org.eclipse.ui.model.WorkbenchContentProvider;
+import org.eclipse.ui.model.WorkbenchLabelProvider;
 
 public class UMLElementChooserDialog extends Dialog {
 
 	private final AdapterFactory myItemProvidersAdapterFactory;
-
-	private final EObject mySourceObject;
-	
-	private final EStructuralFeature myFeature;
 
 	private TreeViewer myTreeViewer;
 
@@ -49,24 +60,21 @@ public class UMLElementChooserDialog extends Dialog {
 
 	private TransactionalEditingDomain myEditingDomain = GMFEditingDomainFactory.INSTANCE.createEditingDomain();
 
-	public UMLElementChooserDialog(Shell parentShell, AdapterFactory itemProvidersAdapterFactory, EObject sourceObject, EStructuralFeature feature) {
+	public UMLElementChooserDialog(Shell parentShell, AdapterFactory itemProvidersAdapterFactory) {
 		super(parentShell);
 		setShellStyle(getShellStyle() | SWT.RESIZE);
 		myItemProvidersAdapterFactory = itemProvidersAdapterFactory;
-		mySourceObject = sourceObject;
-		myFeature = feature;
 	}
 	
 	@Override
 	protected Control createContents(Composite parent) {
 		Control control = super.createContents(parent);
-		// select already referenced elements
-		Object featureValue = mySourceObject.eGet(myFeature);
-		if (featureValue != null) {
-			myTreeViewer.expandToLevel(3);
-			myTreeViewer.setSelection(new StructuredSelection(featureValue), true);
-		}
+		setSelection(myTreeViewer);
 		return control;
+	}
+	
+	protected void setSelection(TreeViewer treeViewer) {
+		
 	}
 
 	@Override
@@ -74,6 +82,7 @@ public class UMLElementChooserDialog extends Dialog {
 		Composite composite = (Composite) super.createDialogArea(parent);
 		getShell().setText("Select model element");
 		createModelBrowser(composite);
+		setInput(myTreeViewer);
 		return composite;
 	}
 
@@ -93,7 +102,9 @@ public class UMLElementChooserDialog extends Dialog {
 		myTreeViewer.setContentProvider(new ModelElementsTreeContentProvider());
 		myTreeViewer.setLabelProvider(new ModelElementsTreeLabelProvider());
 		myTreeViewer.addSelectionChangedListener(new OkButtonEnabler());
-		myTreeViewer.setInput(mySourceObject.eResource());
+	}
+	protected void setInput(TreeViewer treeViewer) {
+		
 	}
 
 	private void setOkButtonEnabled(boolean enabled) {
@@ -120,14 +131,37 @@ public class UMLElementChooserDialog extends Dialog {
 	}
 
 	private class ModelElementsTreeContentProvider implements ITreeContentProvider {
+		
+		private ITreeContentProvider myWorkbenchContentProvider = new WorkbenchContentProvider();
 
-		protected AdapterFactoryContentProvider myAdapterFctoryContentProvier = new AdapterFactoryContentProvider(myItemProvidersAdapterFactory);
+		private AdapterFactoryContentProvider myAdapterFctoryContentProvier = new AdapterFactoryContentProvider(myItemProvidersAdapterFactory);
 
 		public Object[] getChildren(Object parentElement) {
+			Object[] result = myWorkbenchContentProvider.getChildren(parentElement);
+			if (result != null && result.length > 0) {
+				return result;
+			}
+			if (parentElement instanceof IFile) {
+				IFile modelFile = (IFile) parentElement;
+				IPath resourcePath = modelFile.getFullPath();
+				ResourceSet resourceSet = myEditingDomain.getResourceSet();
+				try {
+					Resource modelResource = resourceSet.getResource(URI.createPlatformResourceURI(resourcePath.toString(), true), true);
+					return myAdapterFctoryContentProvier.getChildren(modelResource);
+				} catch (WrappedException e) {
+					e.printStackTrace();
+					//
+				}
+				return Collections.EMPTY_LIST.toArray();
+			}
 			return myAdapterFctoryContentProvier.getChildren(parentElement);
 		}
 
 		public Object getParent(Object element) {
+			Object parent = myWorkbenchContentProvider.getParent(element);
+			if (parent != null) {
+				return parent;
+			}
 			if (false == element instanceof EObject) {
 				return null;
 			}
@@ -140,10 +174,22 @@ public class UMLElementChooserDialog extends Dialog {
 		}
 
 		public boolean hasChildren(Object element) {
-			return myAdapterFctoryContentProvier.hasChildren(element);
+			if (element instanceof IFile) {
+				return isValidModelFile((IFile) element);
+			}
+			return myWorkbenchContentProvider.hasChildren(element) || myAdapterFctoryContentProvier.hasChildren(element);
+		}
+
+		private boolean isValidModelFile(IFile file) {
+			String fileExtension = file.getFullPath().getFileExtension();
+			return "uml".equals(fileExtension); //$NON-NLS-1$
 		}
 
 		public Object[] getElements(Object inputElement) {
+			Object[] elements = myWorkbenchContentProvider.getElements(inputElement);
+			if (elements != null && elements.length > 0) {
+				return elements;
+			}
 			if (false == inputElement instanceof Resource) {
 				return Collections.EMPTY_LIST.toArray();
 			}
@@ -153,9 +199,11 @@ public class UMLElementChooserDialog extends Dialog {
 
 		public void dispose() {
 			myAdapterFctoryContentProvier.dispose();
+			myWorkbenchContentProvider.dispose();
 		}
 
 		public void inputChanged(Viewer viewer, Object oldInput, Object newInput) {
+			myWorkbenchContentProvider.inputChanged(viewer, oldInput, newInput);
 			myAdapterFctoryContentProvier.inputChanged(viewer, oldInput, newInput);
 		}
 
@@ -163,29 +211,36 @@ public class UMLElementChooserDialog extends Dialog {
 
 	private class ModelElementsTreeLabelProvider implements ILabelProvider {
 
+		private WorkbenchLabelProvider myWorkbenchLabelProvider = new WorkbenchLabelProvider();
+
 		private AdapterFactoryLabelProvider myAdapterFactoryLabelProvider = new AdapterFactoryLabelProvider(myItemProvidersAdapterFactory);
 
 		public Image getImage(Object element) {
-			return myAdapterFactoryLabelProvider.getImage(element);
+			Image result = myWorkbenchLabelProvider.getImage(element);
+			return result != null ? result : myAdapterFactoryLabelProvider.getImage(element);
 		}
 
 		public String getText(Object element) {
-			return myAdapterFactoryLabelProvider.getText(element);
+			String result = myWorkbenchLabelProvider.getText(element);
+			return result != null && result.length() > 0 ? result : myAdapterFactoryLabelProvider.getText(element);
 		}
 
 		public void addListener(ILabelProviderListener listener) {
+			myWorkbenchLabelProvider.addListener(listener);
 			myAdapterFactoryLabelProvider.addListener(listener);
 		}
 
 		public void dispose() {
+			myWorkbenchLabelProvider.dispose();
 			myAdapterFactoryLabelProvider.dispose();
 		}
 
 		public boolean isLabelProperty(Object element, String property) {
-			return myAdapterFactoryLabelProvider.isLabelProperty(element, property);
+			return myWorkbenchLabelProvider.isLabelProperty(element, property) || myAdapterFactoryLabelProvider.isLabelProperty(element, property);
 		}
 
 		public void removeListener(ILabelProviderListener listener) {
+			myWorkbenchLabelProvider.removeListener(listener);
 			myAdapterFactoryLabelProvider.removeListener(listener);
 		}
 
