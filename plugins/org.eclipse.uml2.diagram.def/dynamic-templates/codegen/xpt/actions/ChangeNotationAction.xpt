@@ -24,8 +24,10 @@ package «EXPAND packageName»;
 «EXPAND xpt::Common::generatedClassComment»
 public class «EXPAND className(substitutableByNode)» extends org.eclipse.uml2.diagram.common.actions.ChangeNotationAction {
 
+	«EXPAND xpt::Common::generatedMemberComment»
 	public static final String ACTION_ID = "«EXPAND actionId(substitutableByNode)»"; //$NON-NLS-1$
 
+	«EXPAND xpt::Common::generatedMemberComment»
 	private static final int NEW_VID = «substitutableByNode.getEditPartQualifiedClassName()».VISUAL_ID;
 
 	«EXPAND xpt::Common::generatedMemberComment»
