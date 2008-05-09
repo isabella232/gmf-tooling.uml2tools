@@ -90,7 +90,6 @@ public class ControlFlowCreateCommand extends CreateElementCommand {
 		getContainer().getEdges().add(newElement);
 		newElement.setSource(getSource());
 		newElement.setTarget(getTarget());
-
 		return newElement;
 	}
 

@@ -90,7 +90,6 @@ public class ObjectFlowCreateCommand extends CreateElementCommand {
 		getContainer().getEdges().add(newElement);
 		newElement.setSource(getSource());
 		newElement.setTarget(getTarget());
-
 		return newElement;
 	}
 

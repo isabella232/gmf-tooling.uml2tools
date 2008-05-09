@@ -89,7 +89,6 @@ public class ExceptionHandlerCreateCommand extends CreateElementCommand {
 		getContainer().getHandlers().add(newElement);
 		newElement.setProtectedNode(getSource());
 		newElement.setHandlerBody(getTarget());
-
 		return newElement;
 	}
 
