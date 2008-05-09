@@ -2,7 +2,7 @@
 <gmfgen:GenEditorGenerator xmi:version="2.0"
     xmlns:xmi="http://www.omg.org/XMI"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xmlns:gmfgen="http://www.eclipse.org/gmf/2006/GenModel"
+    xmlns:gmfgen="http://www.eclipse.org/gmf/2008/GenModel"
     xmlns:uml2.gmfgenext="http://www.eclipse.org/uml2/diagram/gmfgenext/DiagramFigure/1.0" packageNamePrefix="org.eclipse.uml2.diagram.deploy"
     modelID="UMLDeployment"
     diagramFileExtension="umldeployment_diagram"
@@ -140,15 +140,14 @@
         <requiredPluginIDs>org.eclipse.uml2.diagram.common</requiredPluginIDs>
         <requiredPluginIDs>org.eclipse.gmf.runtime.draw2d.ui</requiredPluginIDs>
       </viewmap>
-      <modelFacet>
+      <modelFacet
+          modelElementSelector="//@expressionProviders/@providers.0/@expressions.0">
         <metaClass
             href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/Artifact"/>
         <containmentMetaFeature
             href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/Class/nestedClassifier"/>
         <childMetaFeature
             href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/Class/nestedClassifier"/>
-        <modelElementSelector
-            body="not oclIsKindOf(uml::DeploymentSpecification)"/>
       </modelFacet>
       <labels
           visualID="5007"
@@ -280,15 +279,14 @@
             height="60"/>
         <requiredPluginIDs>org.eclipse.gmf.runtime.draw2d.ui</requiredPluginIDs>
       </viewmap>
-      <modelFacet>
+      <modelFacet
+          modelElementSelector="//@expressionProviders/@providers.0/@expressions.1">
         <metaClass
             href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/Node"/>
         <containmentMetaFeature
             href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/Node/nestedNode"/>
         <childMetaFeature
             href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/Node/nestedNode"/>
-        <modelElementSelector
-            body="not oclIsKindOf(uml::Device) and not oclIsKindOf(uml::ExecutionEnvironment)"/>
       </modelFacet>
       <labels
           visualID="5009"
@@ -479,15 +477,14 @@
             height="60"/>
         <requiredPluginIDs>org.eclipse.gmf.runtime.draw2d.ui</requiredPluginIDs>
       </viewmap>
-      <modelFacet>
+      <modelFacet
+          modelElementSelector="//@expressionProviders/@providers.0/@expressions.1">
         <metaClass
             href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/Node"/>
         <containmentMetaFeature
             href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/Package/packagedElement"/>
         <childMetaFeature
             href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/Package/ownedType"/>
-        <modelElementSelector
-            body="not oclIsKindOf(uml::Device) and not oclIsKindOf(uml::ExecutionEnvironment)"/>
       </modelFacet>
       <labels
           visualID="5003"
@@ -584,15 +581,14 @@
         <requiredPluginIDs>org.eclipse.uml2.diagram.common</requiredPluginIDs>
         <requiredPluginIDs>org.eclipse.gmf.runtime.draw2d.ui</requiredPluginIDs>
       </viewmap>
-      <modelFacet>
+      <modelFacet
+          modelElementSelector="//@expressionProviders/@providers.0/@expressions.0">
         <metaClass
             href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/Artifact"/>
         <containmentMetaFeature
             href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/Package/packagedElement"/>
         <childMetaFeature
             href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/Package/ownedType"/>
-        <modelElementSelector
-            body="not oclIsKindOf(uml::DeploymentSpecification)"/>
       </modelFacet>
       <labels
           visualID="5005"
@@ -873,12 +869,9 @@
               href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/NamedElement/name"/>
         </modelFacet>
       </labels>
-      <creationConstraints>
-        <sourceEnd
-            body="self.oclIsKindOf(uml::DeploymentTarget)"/>
-        <targetEnd
-            body="self.oclIsKindOf(uml::DeploymentTarget)"/>
-      </creationConstraints>
+      <creationConstraints
+          sourceEnd="//@expressionProviders/@providers.0/@expressions.2"
+          targetEnd="//@expressionProviders/@providers.0/@expressions.3"/>
     </links>
     <links
         visualID="4005"
@@ -902,15 +895,14 @@
         <requiredPluginIDs>org.eclipse.gmf.runtime.draw2d.ui</requiredPluginIDs>
       </viewmap>
       <modelFacet
-          xsi:type="gmfgen:TypeLinkModelFacet">
+          xsi:type="gmfgen:TypeLinkModelFacet"
+          modelElementSelector="//@expressionProviders/@providers.0/@expressions.4">
         <metaClass
             href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/Dependency"/>
         <containmentMetaFeature
             href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/Package/packagedElement"/>
         <childMetaFeature
             href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/Package/packagedElement"/>
-        <modelElementSelector
-            body="(self.oclIsTypeOf(uml::Dependency) or self.oclIsTypeOf(uml::Abstraction) or self.oclIsTypeOf(uml::Substitution) or self.oclIsTypeOf(uml::Usage)) and self.supplier->size() = 1 and self.client->size() = 1 and self.supplier->forAll(e|not e.oclIsKindOf(uml::Interface))"/>
         <sourceMetaFeature
             href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/Dependency/client"/>
         <targetMetaFeature
@@ -938,10 +930,8 @@
               href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/NamedElement/name"/>
         </modelFacet>
       </labels>
-      <creationConstraints>
-        <targetEnd
-            body="not self.oclIsKindOf(uml::Interface)&#xD;&#xA;"/>
-      </creationConstraints>
+      <creationConstraints
+          targetEnd="//@expressionProviders/@providers.0/@expressions.5"/>
     </links>
     <compartments
         visualID="7001"
@@ -2120,7 +2110,25 @@
       href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#/"/>
   <expressionProviders>
     <providers
-        xsi:type="gmfgen:GenExpressionInterpreter"
-        expressions="//@diagram/@childNodes.2/@modelFacet/@modelElementSelector //@diagram/@childNodes.5/@modelFacet/@modelElementSelector //@diagram/@links.3/@creationConstraints/@sourceEnd //@diagram/@links.3/@creationConstraints/@targetEnd //@diagram/@links.4/@modelFacet/@modelElementSelector //@diagram/@links.4/@creationConstraints/@targetEnd"/>
+        xsi:type="gmfgen:GenExpressionInterpreter">
+      <expressions
+          xsi:type="gmfgen:GenConstraint"
+          body="not oclIsKindOf(uml::DeploymentSpecification)"/>
+      <expressions
+          xsi:type="gmfgen:GenConstraint"
+          body="not oclIsKindOf(uml::Device) and not oclIsKindOf(uml::ExecutionEnvironment)"/>
+      <expressions
+          xsi:type="gmfgen:GenConstraint"
+          body="self.oclIsKindOf(uml::DeploymentTarget)"/>
+      <expressions
+          xsi:type="gmfgen:GenConstraint"
+          body="self.oclIsKindOf(uml::DeploymentTarget)"/>
+      <expressions
+          xsi:type="gmfgen:GenConstraint"
+          body="(self.oclIsTypeOf(uml::Dependency) or self.oclIsTypeOf(uml::Abstraction) or self.oclIsTypeOf(uml::Substitution) or self.oclIsTypeOf(uml::Usage)) and self.supplier->size() = 1 and self.client->size() = 1 and self.supplier->forAll(e|not e.oclIsKindOf(uml::Interface))"/>
+      <expressions
+          xsi:type="gmfgen:GenConstraint"
+          body="not self.oclIsKindOf(uml::Interface)&#xD;&#xA;"/>
+    </providers>
   </expressionProviders>
 </gmfgen:GenEditorGenerator>
