@@ -13,9 +13,8 @@ package org.eclipse.uml2.diagram.clazz.parameter;
 
 import org.eclipse.jface.viewers.ICellModifier;
 import org.eclipse.swt.widgets.TableItem;
-import org.eclipse.uml2.uml.Expression;
-import org.eclipse.uml2.uml.LiteralInteger;
-import org.eclipse.uml2.uml.LiteralString;
+import org.eclipse.uml2.diagram.clazz.parameter.EditPropertyParametersDialog.SetValueToSpecification;
+import org.eclipse.uml2.diagram.clazz.parameter.EditPropertyParametersDialog.ValueSpecificationToStringConverter;
 import org.eclipse.uml2.uml.Parameter;
 import org.eclipse.uml2.uml.ParameterDirectionKind;
 import org.eclipse.uml2.uml.Type;
@@ -44,17 +43,10 @@ class ParametersCellModifier implements ICellModifier {
 		}
 		if (EditParametersTableConstants.DEFAULT_VALUE.equals(property)) {
 			ValueSpecification defValue = parameter.getDefaultValue();
-			String value = null;
-			if (defValue instanceof LiteralString) {
-				value = ((LiteralString) defValue).getValue();
-			} 
-			if (defValue instanceof LiteralInteger) {
-				value = String.valueOf(((LiteralInteger) defValue).getValue());
+			if (defValue == null) {
+				return "";
 			}
-			if (defValue instanceof Expression) {
-				value = ((Expression) defValue).getSymbol();
-			}
-			return (value == null) ? "" : value;
+			return new ValueSpecificationToStringConverter().doSwitch(defValue); 
 		}
 		if (EditParametersTableConstants.IS_ORDERED.equals(property)) {
 			return parameter.isOrdered();
@@ -97,15 +89,7 @@ class ParametersCellModifier implements ICellModifier {
 		if (defValue == null) {
 			parameter.createDefaultValue(null, null, UMLPackage.eINSTANCE.getLiteralString());
 		}
-		String stringValue = (String) value;
-		if (defValue instanceof LiteralString) {
-			((LiteralString) defValue).setValue(stringValue);
-		} else if (defValue instanceof LiteralInteger) {
-			Integer intValue = Integer.parseInt(stringValue);
-			((LiteralInteger) defValue).setValue(intValue);
-		} else if (defValue instanceof Expression) {
-			((Expression) defValue).setSymbol(stringValue);
-		}
+		new SetValueToSpecification((String) value).doSwitch(defValue);
 	}
 
 	private void setType(Parameter parameter, Object value) {

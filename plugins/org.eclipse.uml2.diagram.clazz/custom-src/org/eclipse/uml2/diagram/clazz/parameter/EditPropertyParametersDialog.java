@@ -13,6 +13,7 @@ package org.eclipse.uml2.diagram.clazz.parameter;
 
 import org.eclipse.core.commands.ExecutionException;
 import org.eclipse.core.runtime.NullProgressMonitor;
+import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.emf.transaction.util.TransactionUtil;
 import org.eclipse.jface.dialogs.IDialogConstants;
@@ -256,6 +257,7 @@ public class EditPropertyParametersDialog extends TrayDialog {
 
 		addCellEditors(table, viewer);
 		viewer.setCellModifier(new ParametersCellModifier() {
+
 			@Override
 			public void updateViewer(Parameter parameter, String property) {
 				viewer.update(parameter, new String[] { property });
@@ -311,17 +313,10 @@ public class EditPropertyParametersDialog extends TrayDialog {
 				return p.getDirection().toString();
 			case EditParametersTableConstants.DEFAULT_VALUE_POS:
 				ValueSpecification defValue = p.getDefaultValue();
-				String value = null;
-				if (defValue instanceof LiteralString) {
-					value = ((LiteralString) defValue).getValue();
-				} 
-				if (defValue instanceof LiteralInteger) {
-					value = String.valueOf(((LiteralInteger) defValue).getValue());
+				if (defValue == null) {
+					return "";
 				}
-				if (defValue instanceof Expression) {
-					value = ((Expression) defValue).getSymbol();
-				}
-				return (value == null) ? "" : value;
+				return new ValueSpecificationToStringConverter().doSwitch(defValue);
 			case EditParametersTableConstants.IS_ORDERED_POS:
 				return Boolean.toString(p.isOrdered());
 			case EditParametersTableConstants.IS_UNIQUE_POS:
@@ -331,5 +326,68 @@ public class EditPropertyParametersDialog extends TrayDialog {
 			}
 		}
 	}
-	
+
+	public static class ValueSpecificationToStringConverter extends org.eclipse.uml2.uml.util.UMLSwitch<String> {
+		
+		private static final String EMPTY_VALUE = "";
+
+		@Override
+		public String caseLiteralString(LiteralString object) {
+			String value = object.getValue();
+			return value != null ? value : EMPTY_VALUE;
+		}
+
+		@Override
+		public String caseLiteralInteger(LiteralInteger object) {
+			String value = Integer.toString(object.getValue());
+			return value != null ? value : EMPTY_VALUE;
+		}
+
+		@Override
+		public String caseExpression(Expression object) {
+			String value = object.getSymbol();
+			return value != null ? value : EMPTY_VALUE;
+		}
+
+		@Override
+		public String defaultCase(EObject object) {
+			return EMPTY_VALUE;
+		}
+
+	};
+
+	public static class SetValueToSpecification extends org.eclipse.uml2.uml.util.UMLSwitch<ValueSpecification> {
+
+		private final String myNewValue;
+
+		public SetValueToSpecification(String value) {
+			myNewValue = value;
+		}
+
+		@Override
+		public ValueSpecification caseLiteralString(LiteralString object) {
+			object.setValue(myNewValue);
+			return object;
+		}
+
+		@Override
+		public ValueSpecification caseLiteralInteger(LiteralInteger object) {
+			Integer intValue = Integer.parseInt(myNewValue);
+			object.setValue(intValue);
+			return object;
+		};
+
+		@Override
+		public ValueSpecification caseExpression(Expression object) {
+			object.setSymbol(myNewValue);
+			return object;
+		}
+
+		@Override
+		public ValueSpecification defaultCase(EObject object) {
+			return null;
+		}
+
+	}
+
 }
