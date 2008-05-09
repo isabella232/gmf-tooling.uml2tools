@@ -74,7 +74,6 @@ public class Generalization2CreateCommand extends CreateElementCommand {
 		Generalization newElement = UMLFactory.eINSTANCE.createGeneralization();
 		getSource().getGeneralizations().add(newElement);
 		newElement.getGeneralizationSets().add(getTarget());
-
 		return newElement;
 	}
 

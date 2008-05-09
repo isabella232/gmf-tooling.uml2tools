@@ -90,7 +90,6 @@ public class AssociationClassConnectorCreateCommand extends CreateElementCommand
 		getContainer().getPackagedElements().add(newElement);
 		newElement.getCollaborationUses().add(getSource());
 		newElement.getCollaborationUses().add(getTarget());
-
 		return newElement;
 	}
 

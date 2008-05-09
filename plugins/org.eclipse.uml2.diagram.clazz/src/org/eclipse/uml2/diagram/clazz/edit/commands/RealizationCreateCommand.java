@@ -90,7 +90,6 @@ public class RealizationCreateCommand extends CreateElementCommand {
 		getContainer().getPackagedElements().add(newElement);
 		newElement.getClients().add(getSource());
 		newElement.getSuppliers().add(getTarget());
-
 		return newElement;
 	}
 

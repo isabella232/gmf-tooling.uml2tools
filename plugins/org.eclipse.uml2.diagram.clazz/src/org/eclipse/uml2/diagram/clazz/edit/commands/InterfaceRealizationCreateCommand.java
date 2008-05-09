@@ -90,7 +90,6 @@ public class InterfaceRealizationCreateCommand extends CreateElementCommand {
 		getContainer().getInterfaceRealizations().add(newElement);
 		newElement.setImplementingClassifier(getSource());
 		newElement.setContract(getTarget());
-
 		return newElement;
 	}
 

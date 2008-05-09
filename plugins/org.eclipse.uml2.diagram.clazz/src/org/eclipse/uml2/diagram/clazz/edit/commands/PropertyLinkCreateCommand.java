@@ -72,7 +72,6 @@ public class PropertyLinkCreateCommand extends CreateElementCommand {
 		Property newElement = UMLFactory.eINSTANCE.createProperty();
 		getSource().getOwnedEnds().add(newElement);
 		newElement.setType(getTarget());
-
 		return newElement;
 	}
 
