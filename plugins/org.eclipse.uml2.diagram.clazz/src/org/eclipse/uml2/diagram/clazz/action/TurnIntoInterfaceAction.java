@@ -12,8 +12,14 @@ import org.eclipse.uml2.diagram.common.actions.ChangeNotationAction;
  */
 public class TurnIntoInterfaceAction extends ChangeNotationAction {
 
+	/**
+	 * @generated
+	 */
 	public static final String ACTION_ID = "set_Interface_notation"; //$NON-NLS-1$
 
+	/**
+	 * @generated
+	 */
 	private static final int NEW_VID = InterfaceEditPart.VISUAL_ID;
 
 	/**

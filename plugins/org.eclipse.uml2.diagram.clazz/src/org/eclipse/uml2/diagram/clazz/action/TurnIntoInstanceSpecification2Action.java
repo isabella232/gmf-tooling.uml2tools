@@ -12,8 +12,14 @@ import org.eclipse.uml2.diagram.common.actions.ChangeNotationAction;
  */
 public class TurnIntoInstanceSpecification2Action extends ChangeNotationAction {
 
+	/**
+	 * @generated
+	 */
 	public static final String ACTION_ID = "set_InstanceSpecification2_notation"; //$NON-NLS-1$
 
+	/**
+	 * @generated
+	 */
 	private static final int NEW_VID = InstanceSpecification2EditPart.VISUAL_ID;
 
 	/**
