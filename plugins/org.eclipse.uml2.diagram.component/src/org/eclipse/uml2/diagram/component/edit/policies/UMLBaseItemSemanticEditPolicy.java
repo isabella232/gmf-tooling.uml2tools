@@ -340,75 +340,27 @@ public class UMLBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 		/**
 		 * @generated 
 		 */
-		private static final UMLAbstractExpression InterfaceRealization_4001_SourceExpression;
+		private static UMLAbstractExpression InterfaceRealization_4001_SourceExpression;
 
 		/**
 		 * @generated 
 		 */
-		static {
-			Map env = new HashMap(3);
-			env.put(OPPOSITE_END_VAR, UMLPackage.eINSTANCE.getInterface());
-			InterfaceRealization_4001_SourceExpression = UMLOCLFactory.getExpression("self.oclIsKindOf(uml::Component)", UMLPackage.eINSTANCE.getBehavioredClassifier(), env); //$NON-NLS-1$
-		}
+		private static UMLAbstractExpression PortProvided_4006_SourceExpression;
 
 		/**
 		 * @generated 
 		 */
-		private static final UMLAbstractExpression PortProvided_4006_SourceExpression;
-
-		/**
-		 * @generated 
-		 */
-		static {
-			Map env = new HashMap(3);
-			env.put(OPPOSITE_END_VAR, UMLPackage.eINSTANCE.getInterface());
-			PortProvided_4006_SourceExpression = UMLOCLFactory
-					.getExpression(
-							"self.oclIsKindOf(uml::Port) and (self.oclAsType(uml::Port).type.oclIsUndefined() or self.oclAsType(uml::Port).type.oclIsKindOf(uml::Classifier))", UMLPackage.eINSTANCE.getPort(), env); //$NON-NLS-1$
-		}
-
-		/**
-		 * @generated 
-		 */
-		private static final UMLAbstractExpression PortRequired_4004_SourceExpression;
-
-		/**
-		 * @generated 
-		 */
-		static {
-			Map env = new HashMap(3);
-			env.put(OPPOSITE_END_VAR, UMLPackage.eINSTANCE.getInterface());
-			PortRequired_4004_SourceExpression = UMLOCLFactory.getExpression("self.oclIsKindOf(uml::Port)", UMLPackage.eINSTANCE.getPort(), env); //$NON-NLS-1$
-		}
+		private static UMLAbstractExpression PortRequired_4004_SourceExpression;
 
 		/**
 		 * @generated
 		 */
-		private static final UMLAbstractExpression Dependency_4009_TargetExpression;
+		private static UMLAbstractExpression Dependency_4009_TargetExpression;
 
 		/**
 		 * @generated
 		 */
-		static {
-			Map env = new HashMap(3);
-			env.put(OPPOSITE_END_VAR, UMLPackage.eINSTANCE.getNamedElement());
-			Dependency_4009_TargetExpression = UMLOCLFactory.getExpression("not self.oclIsKindOf(uml::Interface)\r\n", UMLPackage.eINSTANCE.getNamedElement(), env); //$NON-NLS-1$
-		}
-
-		/**
-		 * @generated
-		 */
-		private static final UMLAbstractExpression ConnectorEndRole_4010_SourceExpression;
-
-		/**
-		 * @generated
-		 */
-		static {
-			Map env = new HashMap(3);
-			env.put(OPPOSITE_END_VAR, UMLPackage.eINSTANCE.getConnectableElement());
-			ConnectorEndRole_4010_SourceExpression = UMLOCLFactory.getExpression(
-					"self.oclIsKindOf(uml::Connector) and (self.oclAsType(uml::Connector).kind = ConnectorKind::assembly)", UMLPackage.eINSTANCE.getConnectorEnd(), env); //$NON-NLS-1$
-		}
+		private static UMLAbstractExpression ConnectorEndRole_4010_SourceExpression;
 
 		/**
 		 * @generated 
@@ -484,36 +436,78 @@ public class UMLBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 		 * @generated
 		 */
 		public static boolean canExistInterfaceRealization_4001(BehavioredClassifier container, BehavioredClassifier source, Interface target) {
-			if (!evaluate(InterfaceRealization_4001_SourceExpression, source, target, false)) {
+			try {
+				if (source == null) {
+					return true;
+				}
+				if (InterfaceRealization_4001_SourceExpression == null) {
+					Map env = Collections.singletonMap(OPPOSITE_END_VAR, UMLPackage.eINSTANCE.getInterface());
+					InterfaceRealization_4001_SourceExpression = UMLOCLFactory.getExpression("self.oclIsKindOf(uml::Component)", UMLPackage.eINSTANCE.getBehavioredClassifier(), env); //$NON-NLS-1$
+				}
+				Object sourceVal = InterfaceRealization_4001_SourceExpression.evaluate(source, Collections.singletonMap(OPPOSITE_END_VAR, target));
+				if (false == sourceVal instanceof Boolean || !((Boolean) sourceVal).booleanValue()) {
+					return false;
+				} // else fall-through
+				return true;
+			} catch (Exception e) {
+				UMLDiagramEditorPlugin.getInstance().logError("Link constraint evaluation error", e); //$NON-NLS-1$
 				return false;
 			}
-			return true;
 		}
 
 		/**
 		 * @generated
 		 */
 		public static boolean canExistPortProvided_4006(Port source, Interface target) {
-			if (!evaluate(PortProvided_4006_SourceExpression, source, target, false)) {
+			try {
+				if (source == null) {
+					return true;
+				}
+				if (PortProvided_4006_SourceExpression == null) {
+					Map env = Collections.singletonMap(OPPOSITE_END_VAR, UMLPackage.eINSTANCE.getInterface());
+					PortProvided_4006_SourceExpression = UMLOCLFactory
+							.getExpression(
+									"self.oclIsKindOf(uml::Port) and (self.oclAsType(uml::Port).type.oclIsUndefined() or self.oclAsType(uml::Port).type.oclIsKindOf(uml::Classifier))", UMLPackage.eINSTANCE.getPort(), env); //$NON-NLS-1$
+				}
+				Object sourceVal = PortProvided_4006_SourceExpression.evaluate(source, Collections.singletonMap(OPPOSITE_END_VAR, target));
+				if (false == sourceVal instanceof Boolean || !((Boolean) sourceVal).booleanValue()) {
+					return false;
+				} // else fall-through
+				return true;
+			} catch (Exception e) {
+				UMLDiagramEditorPlugin.getInstance().logError("Link constraint evaluation error", e); //$NON-NLS-1$
 				return false;
 			}
-			return true;
 		}
 
 		/**
 		 * @generated
 		 */
 		public static boolean canExistPortRequired_4004(Port source, Interface target) {
-			if (!evaluate(PortRequired_4004_SourceExpression, source, target, false)) {
+			try {
+				if (source == null) {
+					return true;
+				}
+				if (PortRequired_4004_SourceExpression == null) {
+					Map env = Collections.singletonMap(OPPOSITE_END_VAR, UMLPackage.eINSTANCE.getInterface());
+					PortRequired_4004_SourceExpression = UMLOCLFactory.getExpression("self.oclIsKindOf(uml::Port)", UMLPackage.eINSTANCE.getPort(), env); //$NON-NLS-1$
+				}
+				Object sourceVal = PortRequired_4004_SourceExpression.evaluate(source, Collections.singletonMap(OPPOSITE_END_VAR, target));
+				if (false == sourceVal instanceof Boolean || !((Boolean) sourceVal).booleanValue()) {
+					return false;
+				} // else fall-through
+				return true;
+			} catch (Exception e) {
+				UMLDiagramEditorPlugin.getInstance().logError("Link constraint evaluation error", e); //$NON-NLS-1$
 				return false;
 			}
-			return true;
 		}
 
 		/**
 		 * @generated
 		 */
 		public static boolean canExistComponentRequired_4007(Component source, Interface target) {
+
 			return true;
 		}
 
@@ -521,6 +515,7 @@ public class UMLBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 		 * @generated
 		 */
 		public static boolean canExistConnector_4008(StructuredClassifier container, ConnectableElement source, ConnectableElement target) {
+
 			return true;
 		}
 
@@ -528,33 +523,43 @@ public class UMLBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 		 * @generated
 		 */
 		public static boolean canExistDependency_4009(Package container, NamedElement source, NamedElement target) {
-			if (!evaluate(Dependency_4009_TargetExpression, target, source, true)) {
+			try {
+				if (target == null) {
+					return true;
+				}
+				if (Dependency_4009_TargetExpression == null) {
+					Map env = Collections.singletonMap(OPPOSITE_END_VAR, UMLPackage.eINSTANCE.getNamedElement());
+					Dependency_4009_TargetExpression = UMLOCLFactory.getExpression("not self.oclIsKindOf(uml::Interface)\r\n", UMLPackage.eINSTANCE.getNamedElement(), env); //$NON-NLS-1$
+				}
+				Object targetVal = Dependency_4009_TargetExpression.evaluate(target, Collections.singletonMap(OPPOSITE_END_VAR, source));
+				if (false == targetVal instanceof Boolean || !((Boolean) targetVal).booleanValue()) {
+					return false;
+				} // else fall-through
+				return true;
+			} catch (Exception e) {
+				UMLDiagramEditorPlugin.getInstance().logError("Link constraint evaluation error", e); //$NON-NLS-1$
 				return false;
 			}
-			return true;
 		}
 
 		/**
 		 * @generated
 		 */
 		public static boolean canExistConnectorEndRole_4010(ConnectorEnd source, ConnectableElement target) {
-			if (!evaluate(ConnectorEndRole_4010_SourceExpression, source, target, false)) {
-				return false;
-			}
-			return true;
-		}
-
-		/**
-		 * @generated 
-		 */
-		private static boolean evaluate(UMLAbstractExpression constraint, Object sourceEnd, Object oppositeEnd, boolean clearEnv) {
-			if (sourceEnd == null) {
-				return true;
-			}
-			Map evalEnv = Collections.singletonMap(OPPOSITE_END_VAR, oppositeEnd);
 			try {
-				Object val = constraint.evaluate(sourceEnd, evalEnv);
-				return (val instanceof Boolean) ? ((Boolean) val).booleanValue() : false;
+				if (source == null) {
+					return true;
+				}
+				if (ConnectorEndRole_4010_SourceExpression == null) {
+					Map env = Collections.singletonMap(OPPOSITE_END_VAR, UMLPackage.eINSTANCE.getConnectableElement());
+					ConnectorEndRole_4010_SourceExpression = UMLOCLFactory.getExpression(
+							"self.oclIsKindOf(uml::Connector) and (self.oclAsType(uml::Connector).kind = ConnectorKind::assembly)", UMLPackage.eINSTANCE.getConnectorEnd(), env); //$NON-NLS-1$
+				}
+				Object sourceVal = ConnectorEndRole_4010_SourceExpression.evaluate(source, Collections.singletonMap(OPPOSITE_END_VAR, target));
+				if (false == sourceVal instanceof Boolean || !((Boolean) sourceVal).booleanValue()) {
+					return false;
+				} // else fall-through
+				return true;
 			} catch (Exception e) {
 				UMLDiagramEditorPlugin.getInstance().logError("Link constraint evaluation error", e); //$NON-NLS-1$
 				return false;

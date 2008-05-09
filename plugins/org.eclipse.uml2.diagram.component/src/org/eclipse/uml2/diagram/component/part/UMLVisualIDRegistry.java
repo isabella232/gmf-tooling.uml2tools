@@ -57,7 +57,12 @@ import org.eclipse.uml2.diagram.component.edit.parts.PropertyEditPart;
 import org.eclipse.uml2.diagram.component.edit.parts.PropertyNameEditPart;
 import org.eclipse.uml2.diagram.component.expressions.UMLAbstractExpression;
 import org.eclipse.uml2.diagram.component.expressions.UMLOCLFactory;
+import org.eclipse.uml2.uml.Class;
+import org.eclipse.uml2.uml.Connector;
+import org.eclipse.uml2.uml.Dependency;
+import org.eclipse.uml2.uml.InterfaceRealization;
 import org.eclipse.uml2.uml.Package;
+import org.eclipse.uml2.uml.Property;
 import org.eclipse.uml2.uml.UMLPackage;
 
 /**
@@ -72,62 +77,57 @@ public class UMLVisualIDRegistry {
 	/**
 	 * @generated
 	 */
-	private static final String DEBUG_KEY = UMLDiagramEditorPlugin.getInstance().getBundle().getSymbolicName() + "/debug/visualID"; //$NON-NLS-1$
+	private static final String DEBUG_KEY = "org.eclipse.uml2.diagram.component/debug/visualID"; //$NON-NLS-1$
 
 	/**
 	 * @generated
 	 */
-	private static final UMLAbstractExpression Class_2004_Constraint = UMLOCLFactory.getExpression("self.oclIsKindOf(uml::Class)", UMLPackage.eINSTANCE.getClass_());
+	private static UMLAbstractExpression Class_2004_Constraint;
 
 	/**
 	 * @generated
 	 */
-	private static final UMLAbstractExpression Class_2007_Constraint = UMLOCLFactory.getExpression("not oclIsKindOf(uml::AssociationClass) and not oclIsKindOf(uml::StateMachine)",
-			UMLPackage.eINSTANCE.getClass_());
+	private static UMLAbstractExpression Class_2007_Constraint;
 
 	/**
 	 * @generated
 	 */
-	private static final UMLAbstractExpression Class_3004_Constraint = UMLOCLFactory.getExpression("self.oclIsKindOf(uml::Class)", UMLPackage.eINSTANCE.getClass_());
+	private static UMLAbstractExpression Class_3004_Constraint;
 
 	/**
 	 * @generated
 	 */
-	private static final UMLAbstractExpression Property_3006_Constraint = UMLOCLFactory.getExpression("not self.oclIsKindOf(uml::Port)", UMLPackage.eINSTANCE.getProperty());
+	private static UMLAbstractExpression Property_3006_Constraint;
 
 	/**
 	 * @generated
 	 */
-	private static final UMLAbstractExpression Connector_3015_Constraint = UMLOCLFactory.getExpression("kind =ConnectorKind::assembly", UMLPackage.eINSTANCE.getConnector());
+	private static UMLAbstractExpression Connector_3015_Constraint;
 
 	/**
 	 * @generated
 	 */
-	private static final UMLAbstractExpression Class_3009_Constraint = UMLOCLFactory.getExpression("not oclIsTypeOf(uml::Component)", UMLPackage.eINSTANCE.getClass_());
+	private static UMLAbstractExpression Class_3009_Constraint;
 
 	/**
 	 * @generated
 	 */
-	private static final UMLAbstractExpression Property_3011_Constraint = UMLOCLFactory.getExpression("not oclIsKindOf(uml::Port)", UMLPackage.eINSTANCE.getProperty());
+	private static UMLAbstractExpression Property_3011_Constraint;
 
 	/**
 	 * @generated
 	 */
-	private static final UMLAbstractExpression InterfaceRealization_4001_Constraint = UMLOCLFactory.getExpression("self.implementingClassifier.oclIsKindOf(uml::Component)", UMLPackage.eINSTANCE
-			.getInterfaceRealization());
+	private static UMLAbstractExpression InterfaceRealization_4001_Constraint;
 
 	/**
 	 * @generated
 	 */
-	private static final UMLAbstractExpression Connector_4008_Constraint = UMLOCLFactory.getExpression("kind =ConnectorKind::delegation", UMLPackage.eINSTANCE.getConnector());
+	private static UMLAbstractExpression Connector_4008_Constraint;
 
 	/**
 	 * @generated
 	 */
-	private static final UMLAbstractExpression Dependency_4009_Constraint = UMLOCLFactory
-			.getExpression(
-					"(self.oclIsTypeOf(uml::Dependency) or self.oclIsTypeOf(uml::Abstraction) or self.oclIsTypeOf(uml::Substitution) or self.oclIsTypeOf(uml::Usage)) and self.supplier->size() = 1 and self.client->size() = 1 and self.supplier->forAll(e|not e.oclIsKindOf(uml::Interface))",
-					UMLPackage.eINSTANCE.getDependency());
+	private static UMLAbstractExpression Dependency_4009_Constraint;
 
 	/**
 	 * @generated
@@ -246,16 +246,16 @@ public class UMLVisualIDRegistry {
 			if (UMLPackage.eINSTANCE.getArtifact().isSuperTypeOf(domainElement.eClass())) {
 				return ArtifactEditPart.VISUAL_ID;
 			}
-			if (UMLPackage.eINSTANCE.getClass_().isSuperTypeOf(domainElement.eClass()) && evaluate(Class_3004_Constraint, domainElement)) {
+			if (UMLPackage.eINSTANCE.getClass_().isSuperTypeOf(domainElement.eClass()) && isClass_3004((Class) domainElement)) {
 				return ClassEditPart.VISUAL_ID;
 			}
 			if (UMLPackage.eINSTANCE.getInterface().isSuperTypeOf(domainElement.eClass())) {
 				return InterfaceEditPart.VISUAL_ID;
 			}
-			if (UMLPackage.eINSTANCE.getProperty().isSuperTypeOf(domainElement.eClass()) && evaluate(Property_3006_Constraint, domainElement)) {
+			if (UMLPackage.eINSTANCE.getProperty().isSuperTypeOf(domainElement.eClass()) && isProperty_3006((Property) domainElement)) {
 				return PropertyEditPart.VISUAL_ID;
 			}
-			if (UMLPackage.eINSTANCE.getConnector().isSuperTypeOf(domainElement.eClass()) && evaluate(Connector_3015_Constraint, domainElement)) {
+			if (UMLPackage.eINSTANCE.getConnector().isSuperTypeOf(domainElement.eClass()) && isConnector_3015((Connector) domainElement)) {
 				return AssemblyConnectorCircleEditPart.VISUAL_ID;
 			}
 			break;
@@ -266,16 +266,16 @@ public class UMLVisualIDRegistry {
 			if (UMLPackage.eINSTANCE.getArtifact().isSuperTypeOf(domainElement.eClass())) {
 				return ArtifactEditPart.VISUAL_ID;
 			}
-			if (UMLPackage.eINSTANCE.getClass_().isSuperTypeOf(domainElement.eClass()) && evaluate(Class_3004_Constraint, domainElement)) {
+			if (UMLPackage.eINSTANCE.getClass_().isSuperTypeOf(domainElement.eClass()) && isClass_3004((Class) domainElement)) {
 				return ClassEditPart.VISUAL_ID;
 			}
 			if (UMLPackage.eINSTANCE.getInterface().isSuperTypeOf(domainElement.eClass())) {
 				return InterfaceEditPart.VISUAL_ID;
 			}
-			if (UMLPackage.eINSTANCE.getProperty().isSuperTypeOf(domainElement.eClass()) && evaluate(Property_3006_Constraint, domainElement)) {
+			if (UMLPackage.eINSTANCE.getProperty().isSuperTypeOf(domainElement.eClass()) && isProperty_3006((Property) domainElement)) {
 				return PropertyEditPart.VISUAL_ID;
 			}
-			if (UMLPackage.eINSTANCE.getConnector().isSuperTypeOf(domainElement.eClass()) && evaluate(Connector_3015_Constraint, domainElement)) {
+			if (UMLPackage.eINSTANCE.getConnector().isSuperTypeOf(domainElement.eClass()) && isConnector_3015((Connector) domainElement)) {
 				return AssemblyConnectorCircleEditPart.VISUAL_ID;
 			}
 			break;
@@ -290,7 +290,7 @@ public class UMLVisualIDRegistry {
 			}
 			break;
 		case PackageClassifiersEditPart.VISUAL_ID:
-			if (UMLPackage.eINSTANCE.getClass_().isSuperTypeOf(domainElement.eClass()) && evaluate(Class_3009_Constraint, domainElement)) {
+			if (UMLPackage.eINSTANCE.getClass_().isSuperTypeOf(domainElement.eClass()) && isClass_3009((Class) domainElement)) {
 				return Class3EditPart.VISUAL_ID;
 			}
 			if (UMLPackage.eINSTANCE.getComponent().isSuperTypeOf(domainElement.eClass())) {
@@ -298,7 +298,7 @@ public class UMLVisualIDRegistry {
 			}
 			break;
 		case ClassAttributesEditPart.VISUAL_ID:
-			if (UMLPackage.eINSTANCE.getProperty().isSuperTypeOf(domainElement.eClass()) && evaluate(Property_3011_Constraint, domainElement)) {
+			if (UMLPackage.eINSTANCE.getProperty().isSuperTypeOf(domainElement.eClass()) && isProperty_3011((Property) domainElement)) {
 				return ClassDiagramNotationPropertyEditPart.VISUAL_ID;
 			}
 			break;
@@ -330,14 +330,14 @@ public class UMLVisualIDRegistry {
 			if (UMLPackage.eINSTANCE.getInterface().isSuperTypeOf(domainElement.eClass())) {
 				return Interface2EditPart.VISUAL_ID;
 			}
-			if (UMLPackage.eINSTANCE.getClass_().isSuperTypeOf(domainElement.eClass()) && evaluate(Class_2004_Constraint, domainElement)) {
+			if (UMLPackage.eINSTANCE.getClass_().isSuperTypeOf(domainElement.eClass()) && isClass_2004((Class) domainElement)) {
 				return Class2EditPart.VISUAL_ID;
 			}
 			// Diagram header is already processed above
 			if (UMLPackage.eINSTANCE.getPackage().isSuperTypeOf(domainElement.eClass())) {
 				return Package3EditPart.VISUAL_ID;
 			}
-			if (UMLPackage.eINSTANCE.getClass_().isSuperTypeOf(domainElement.eClass()) && evaluate(Class_2007_Constraint, domainElement)) {
+			if (UMLPackage.eINSTANCE.getClass_().isSuperTypeOf(domainElement.eClass()) && isClass_2007((Class) domainElement)) {
 				return ClassDiagramNotationClassEditPart.VISUAL_ID;
 			}
 			break;
@@ -588,13 +588,13 @@ public class UMLVisualIDRegistry {
 		if (domainElement == null) {
 			return -1;
 		}
-		if (UMLPackage.eINSTANCE.getInterfaceRealization().isSuperTypeOf(domainElement.eClass()) && evaluate(InterfaceRealization_4001_Constraint, domainElement)) {
+		if (UMLPackage.eINSTANCE.getInterfaceRealization().isSuperTypeOf(domainElement.eClass()) && isInterfaceRealization_4001((InterfaceRealization) domainElement)) {
 			return InterfaceRealizationEditPart.VISUAL_ID;
 		}
-		if (UMLPackage.eINSTANCE.getConnector().isSuperTypeOf(domainElement.eClass()) && evaluate(Connector_4008_Constraint, domainElement)) {
+		if (UMLPackage.eINSTANCE.getConnector().isSuperTypeOf(domainElement.eClass()) && isConnector_4008((Connector) domainElement)) {
 			return ConnectorEditPart.VISUAL_ID;
 		}
-		if (UMLPackage.eINSTANCE.getDependency().isSuperTypeOf(domainElement.eClass()) && evaluate(Dependency_4009_Constraint, domainElement)) {
+		if (UMLPackage.eINSTANCE.getDependency().isSuperTypeOf(domainElement.eClass()) && isDependency_4009((Dependency) domainElement)) {
 			return DependencyEditPart.VISUAL_ID;
 		}
 		return -1;
@@ -613,8 +613,112 @@ public class UMLVisualIDRegistry {
 	/**
 	 * @generated
 	 */
-	private static boolean evaluate(UMLAbstractExpression expression, Object element) {
-		Object result = expression.evaluate(element);
+	private static boolean isClass_2004(Class domainElement) {
+		if (Class_2004_Constraint == null) { // lazy initialization
+			Class_2004_Constraint = UMLOCLFactory.getExpression("self.oclIsKindOf(uml::Class)", UMLPackage.eINSTANCE.getClass_()); //$NON-NLS-1$
+		}
+		Object result = Class_2004_Constraint.evaluate(domainElement);
+		return result instanceof Boolean && ((Boolean) result).booleanValue();
+	}
+
+	/**
+	 * @generated
+	 */
+	private static boolean isClass_2007(Class domainElement) {
+		if (Class_2007_Constraint == null) { // lazy initialization
+			Class_2007_Constraint = UMLOCLFactory.getExpression("not oclIsKindOf(uml::AssociationClass) and not oclIsKindOf(uml::StateMachine)", UMLPackage.eINSTANCE.getClass_()); //$NON-NLS-1$
+		}
+		Object result = Class_2007_Constraint.evaluate(domainElement);
+		return result instanceof Boolean && ((Boolean) result).booleanValue();
+	}
+
+	/**
+	 * @generated
+	 */
+	private static boolean isClass_3004(Class domainElement) {
+		if (Class_3004_Constraint == null) { // lazy initialization
+			Class_3004_Constraint = UMLOCLFactory.getExpression("self.oclIsKindOf(uml::Class)", UMLPackage.eINSTANCE.getClass_()); //$NON-NLS-1$
+		}
+		Object result = Class_3004_Constraint.evaluate(domainElement);
+		return result instanceof Boolean && ((Boolean) result).booleanValue();
+	}
+
+	/**
+	 * @generated
+	 */
+	private static boolean isProperty_3006(Property domainElement) {
+		if (Property_3006_Constraint == null) { // lazy initialization
+			Property_3006_Constraint = UMLOCLFactory.getExpression("not self.oclIsKindOf(uml::Port)", UMLPackage.eINSTANCE.getProperty()); //$NON-NLS-1$
+		}
+		Object result = Property_3006_Constraint.evaluate(domainElement);
+		return result instanceof Boolean && ((Boolean) result).booleanValue();
+	}
+
+	/**
+	 * @generated
+	 */
+	private static boolean isConnector_3015(Connector domainElement) {
+		if (Connector_3015_Constraint == null) { // lazy initialization
+			Connector_3015_Constraint = UMLOCLFactory.getExpression("kind =ConnectorKind::assembly", UMLPackage.eINSTANCE.getConnector()); //$NON-NLS-1$
+		}
+		Object result = Connector_3015_Constraint.evaluate(domainElement);
+		return result instanceof Boolean && ((Boolean) result).booleanValue();
+	}
+
+	/**
+	 * @generated
+	 */
+	private static boolean isClass_3009(Class domainElement) {
+		if (Class_3009_Constraint == null) { // lazy initialization
+			Class_3009_Constraint = UMLOCLFactory.getExpression("not oclIsTypeOf(uml::Component)", UMLPackage.eINSTANCE.getClass_()); //$NON-NLS-1$
+		}
+		Object result = Class_3009_Constraint.evaluate(domainElement);
+		return result instanceof Boolean && ((Boolean) result).booleanValue();
+	}
+
+	/**
+	 * @generated
+	 */
+	private static boolean isProperty_3011(Property domainElement) {
+		if (Property_3011_Constraint == null) { // lazy initialization
+			Property_3011_Constraint = UMLOCLFactory.getExpression("not oclIsKindOf(uml::Port)", UMLPackage.eINSTANCE.getProperty()); //$NON-NLS-1$
+		}
+		Object result = Property_3011_Constraint.evaluate(domainElement);
+		return result instanceof Boolean && ((Boolean) result).booleanValue();
+	}
+
+	/**
+	 * @generated
+	 */
+	private static boolean isInterfaceRealization_4001(InterfaceRealization domainElement) {
+		if (InterfaceRealization_4001_Constraint == null) { // lazy initialization
+			InterfaceRealization_4001_Constraint = UMLOCLFactory.getExpression("self.implementingClassifier.oclIsKindOf(uml::Component)", UMLPackage.eINSTANCE.getInterfaceRealization()); //$NON-NLS-1$
+		}
+		Object result = InterfaceRealization_4001_Constraint.evaluate(domainElement);
+		return result instanceof Boolean && ((Boolean) result).booleanValue();
+	}
+
+	/**
+	 * @generated
+	 */
+	private static boolean isConnector_4008(Connector domainElement) {
+		if (Connector_4008_Constraint == null) { // lazy initialization
+			Connector_4008_Constraint = UMLOCLFactory.getExpression("kind =ConnectorKind::delegation", UMLPackage.eINSTANCE.getConnector()); //$NON-NLS-1$
+		}
+		Object result = Connector_4008_Constraint.evaluate(domainElement);
+		return result instanceof Boolean && ((Boolean) result).booleanValue();
+	}
+
+	/**
+	 * @generated
+	 */
+	private static boolean isDependency_4009(Dependency domainElement) {
+		if (Dependency_4009_Constraint == null) { // lazy initialization
+			Dependency_4009_Constraint = UMLOCLFactory
+					.getExpression(
+							"(self.oclIsTypeOf(uml::Dependency) or self.oclIsTypeOf(uml::Abstraction) or self.oclIsTypeOf(uml::Substitution) or self.oclIsTypeOf(uml::Usage)) and self.supplier->size() = 1 and self.client->size() = 1 and self.supplier->forAll(e|not e.oclIsKindOf(uml::Interface))", UMLPackage.eINSTANCE.getDependency()); //$NON-NLS-1$
+		}
+		Object result = Dependency_4009_Constraint.evaluate(domainElement);
 		return result instanceof Boolean && ((Boolean) result).booleanValue();
 	}
 
