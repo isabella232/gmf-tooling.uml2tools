@@ -12,8 +12,14 @@ import org.eclipse.uml2.diagram.common.actions.ChangeNotationAction;
  */
 public class TurnIntoConstraintAction extends ChangeNotationAction {
 
+	/**
+	 * @generated
+	 */
 	public static final String ACTION_ID = "set_Constraint_notation"; //$NON-NLS-1$
 
+	/**
+	 * @generated
+	 */
 	private static final int NEW_VID = ConstraintEditPart.VISUAL_ID;
 
 	/**
