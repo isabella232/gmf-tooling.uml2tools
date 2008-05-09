@@ -12,7 +12,7 @@
  * Generates code for labels without labelModelFacet's, assuming they have the default parser provider implementation 
  */
  
-«IMPORT "http://www.eclipse.org/gmf/2006/GenModel"»
+«IMPORT "http://www.eclipse.org/gmf/2008/GenModel"»
 «IMPORT "http://www.eclipse.org/emf/2002/GenModel"»
 «IMPORT "http://www.eclipse.org/emf/2002/Ecore"»
 «EXTENSION xpt::GenModelUtils»

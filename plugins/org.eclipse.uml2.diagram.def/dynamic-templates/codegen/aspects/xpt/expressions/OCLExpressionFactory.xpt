@@ -10,7 +10,7 @@
  *    Michael Golubev -- additions to use OCL expressions in the inplace lookups
  */
 
-«IMPORT "http://www.eclipse.org/gmf/2006/GenModel"»
+«IMPORT "http://www.eclipse.org/gmf/2008/GenModel"»
 
 «AROUND additions FOR gmfgen::GenExpressionInterpreter»
 	/**

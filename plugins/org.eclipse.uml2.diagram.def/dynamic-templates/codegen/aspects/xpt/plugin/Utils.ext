@@ -9,7 +9,7 @@
  */
 
 import "http://www.eclipse.org/emf/2002/Ecore";
-import "http://www.eclipse.org/gmf/2006/GenModel";
+import "http://www.eclipse.org/gmf/2008/GenModel";
 
 String unqualify(String fqn) :
 JAVA org.eclipse.emf.codegen.util.CodeGenUtil.getSimpleClassName(java.lang.String)

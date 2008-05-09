@@ -11,7 +11,7 @@
  *    Michael Golubev (Borland) - GMF 2.0 migration
  */
 
-«IMPORT "http://www.eclipse.org/gmf/2006/GenModel"»
+«IMPORT "http://www.eclipse.org/gmf/2008/GenModel"»
 «IMPORT "http://www.eclipse.org/emf/2002/Ecore"»
 «IMPORT "http://www.eclipse.org/emf/2002/GenModel"»
 «IMPORT "http://www.eclipse.org/uml2/diagram/gmfgenext/DiagramFigure/1.0"»
@@ -100,7 +100,7 @@ protected Class getNodeViewClass(org.eclipse.core.runtime.IAdaptable semanticAda
 					return null; // visual id in semantic hint should match visual id for domain element
 				}
 				break;
-			«EXPAND checkChildrenVisualIDs FOREACH getElements(this).select(e | e.elementType != null)-»
+			«EXPAND xpt::providers::ViewProvider::checkChildrenVisualIDs FOREACH getElements(this).select(e | e.elementType != null)-»
 			default:
 				return null;
 			}
@@ -143,32 +143,6 @@ protected Class getDiagramViewClass(org.eclipse.core.runtime.IAdaptable semantic
 	return null;
 }
 «ENDAROUND»
-
-«DEFINE checkChildrenVisualIDs FOR gmfgen::GenCommonBase-»
-«ENDDEFINE»
-
-«DEFINE checkChildrenVisualIDs FOR gmfgen::GenNode-»
-	«EXPAND xpt::Common::caseVisualID FOREACH labels-»
-	«EXPAND xpt::Common::caseVisualID FOREACH compartments-»
-	«IF !labels.isEmpty() || !compartments.isEmpty()-»
-if («EXPAND xpt::editor::VisualIDRegistry::visualID» != «EXPAND xpt::editor::VisualIDRegistry::getVisualIDMethodCall FOR getDiagram()»(containerView)
-		|| containerView.getElement() != domainElement) {
-	return null; // wrong container
-}
-break;
-	«ENDIF-»
-«ENDDEFINE»
-
-«DEFINE checkChildrenVisualIDs FOR gmfgen::GenLink-»
-	«EXPAND xpt::Common::caseVisualID FOREACH labels-»
-	«IF !labels.isEmpty()-»
-if («EXPAND xpt::editor::VisualIDRegistry::visualID» != «EXPAND xpt::editor::VisualIDRegistry::getVisualIDMethodCall FOR getDiagram()»(containerView)
-		|| containerView.getElement() != domainElement) {
-	return null; // wrong container
-}
-break;
-	«ENDIF-»
-«ENDDEFINE»
 
 «AROUND caseEntry FOR gmfgen::GenCommonBase-»
 	«EXPAND xpt::Common::caseVisualID» return «getNotationViewFactoryQualifiedClassName()».class;

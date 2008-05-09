@@ -12,7 +12,7 @@
  *    @see #193353 
  */
 
-«IMPORT "http://www.eclipse.org/gmf/2006/GenModel"»
+«IMPORT "http://www.eclipse.org/gmf/2008/GenModel"»
 «IMPORT "http://www.eclipse.org/emf/2002/Ecore"»
 «EXTENSION xpt::diagram::ViewmapAttributesUtils»
 «EXTENSION aspects::xpt::diagram::updater::DiagramHeader»

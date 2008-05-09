@@ -10,12 +10,12 @@
  *    Tatiana Fesenko (Borland) - initial API and implementation
  */
 
-«IMPORT "http://www.eclipse.org/gmf/2006/GenModel"»
+«IMPORT "http://www.eclipse.org/gmf/2008/GenModel"»
 «IMPORT "http://www.eclipse.org/emf/2002/Ecore"»
 
 «EXTENSION xpt::ExternalizerUtils»
 
-«DEFINE Access FOR gmfgen::GenEditorGenerator-»
+«AROUND Access FOR gmfgen::GenEditorGenerator-»
 «EXPAND xpt::Common::copyright-»
 package «getExternalizerPackageName()»;
 
@@ -35,7 +35,7 @@ public class «getExternalizerClassName()» extends org.eclipse.osgi.util.NLS {
     //TODO: put accessor fields manually
     «EXPAND additions»
 }
-«ENDDEFINE»
+«ENDAROUND»
 
 «AROUND Values FOR gmfgen::GenEditorGenerator»
 «targetDef.proceed()»

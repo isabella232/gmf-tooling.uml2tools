@@ -13,7 +13,7 @@
  * (assuming that diagram semantic element is always NamedElement) 
  * we trying to set special name to editor input for new diagram.
  */
-«IMPORT "http://www.eclipse.org/gmf/2006/GenModel"»
+«IMPORT "http://www.eclipse.org/gmf/2008/GenModel"»
 «EXTENSION xpt::diagram::editpolicies::Utils»
 
 «AROUND openCommandClass FOR OpenDiagramBehaviour»
