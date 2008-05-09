@@ -11,7 +11,6 @@ import org.eclipse.ui.IWorkbenchPage;
 public class ShowPropertyParametersItemProvider extends AbstractContributionItemProvider implements IProvider {
 	
 	public ShowPropertyParametersItemProvider() {
-		System.out.println("TANYA");
 	}
 
 	@Override
