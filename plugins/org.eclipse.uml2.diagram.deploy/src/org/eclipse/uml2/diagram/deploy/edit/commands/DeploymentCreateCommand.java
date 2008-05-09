@@ -90,7 +90,6 @@ public class DeploymentCreateCommand extends CreateElementCommand {
 		getContainer().getDeployments().add(newElement);
 		newElement.setLocation(getSource());
 		newElement.getDeployedArtifacts().add(getTarget());
-
 		return newElement;
 	}
 

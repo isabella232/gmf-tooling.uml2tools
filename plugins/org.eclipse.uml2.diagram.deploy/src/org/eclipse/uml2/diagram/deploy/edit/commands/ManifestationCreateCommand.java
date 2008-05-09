@@ -72,7 +72,6 @@ public class ManifestationCreateCommand extends CreateElementCommand {
 		Manifestation newElement = UMLFactory.eINSTANCE.createManifestation();
 		getSource().getManifestations().add(newElement);
 		newElement.setUtilizedElement(getTarget());
-
 		return newElement;
 	}
 
