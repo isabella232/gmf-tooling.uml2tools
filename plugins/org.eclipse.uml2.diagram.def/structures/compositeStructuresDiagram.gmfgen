@@ -2,7 +2,7 @@
 <gmfgen:GenEditorGenerator xmi:version="2.0"
     xmlns:xmi="http://www.omg.org/XMI"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xmlns:gmfgen="http://www.eclipse.org/gmf/2006/GenModel"
+    xmlns:gmfgen="http://www.eclipse.org/gmf/2008/GenModel"
     xmlns:uml2.gmfgenext="http://www.eclipse.org/uml2/diagram/gmfgenext/DiagramFigure/1.0" packageNamePrefix="org.eclipse.uml2.diagram.csd"
     modelID="UMLCompositeStructures"
     diagramFileExtension="umlcompositestructures_diagram"
@@ -63,7 +63,7 @@
             xsi:type="gmfgen:GenFeatureSeqInitializer">
           <initializers
               xsi:type="gmfgen:GenFeatureValueSpec"
-              body=" let base : String = 'CollaborationUse' in  let suffixes : Sequence(String) = Sequence {'', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10'} in  let space : Namespace = self.namespace in  let allMissed : Sequence(String) = suffixes-> &#x9;select(s : String | not space.member->exists(e : NamedElement | e.name = base.concat(s)) ) in  let firstMissed : String = allMissed->first() in  let noMisses : Boolean = firstMissed.oclIsUndefined() in  let allNames : Set(String) =  &#x9;if noMisses &#x9;&#x9;then &#x9;&#x9;space.member->collect(e : NamedElement | &#x9;&#x9;&#x9;if e = self or e.name.oclIsUndefined() or e.name.substring(1, e.name.size().min(base.size())) &lt;> base &#x9;&#x9;&#x9;then '' else e.name &#x9;&#x9;&#x9;endif &#x9;&#x9;)->asSet()->excluding('') &#x9;&#x9;else Set{'not in use'} &#x9;&#x9;endif in  let longestName : String = &#x9;&#x9;if noMisses &#x9;&#x9;then allNames->select(n : String | not allNames->exists(nn : String | nn.size() > n.size()))->asSequence()->first()&#x9;&#x9;else 'not in use' &#x9;&#x9;endif &#x9;in  if noMisses then &#x9;&#x9;if longestName.oclIsUndefined() &#x9;&#x9;then base &#x9;&#x9;else longestName.concat('1') &#x9;&#x9;endif  else base.concat(firstMissed)  endif ">
+              value="//@expressionProviders/@providers.0/@expressions.1">
             <feature
                 href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/NamedElement/name"/>
           </initializers>
@@ -109,15 +109,14 @@
         <requiredPluginIDs>org.eclipse.uml2.diagram.common</requiredPluginIDs>
         <requiredPluginIDs>org.eclipse.gmf.runtime.draw2d.ui</requiredPluginIDs>
       </viewmap>
-      <modelFacet>
+      <modelFacet
+          modelElementSelector="//@expressionProviders/@providers.0/@expressions.2">
         <metaClass
             href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/Property"/>
         <containmentMetaFeature
             href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/StructuredClassifier/ownedAttribute"/>
         <childMetaFeature
             href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/Collaboration/collaborationRole"/>
-        <modelElementSelector
-            body="not self.oclIsKindOf(uml::Port)"/>
       </modelFacet>
       <labels
           visualID="5011"
@@ -207,26 +206,25 @@
         <requiredPluginIDs>org.eclipse.uml2.diagram.common</requiredPluginIDs>
         <requiredPluginIDs>org.eclipse.gmf.runtime.draw2d.ui</requiredPluginIDs>
       </viewmap>
-      <modelFacet>
+      <modelFacet
+          modelElementSelector="//@expressionProviders/@providers.0/@expressions.5">
         <metaClass
             href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/Property"/>
         <containmentMetaFeature
             href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/StructuredClassifier/ownedAttribute"/>
         <childMetaFeature
             href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/StructuredClassifier/ownedAttribute"/>
-        <modelElementSelector
-            body="not oclIsKindOf(uml::Port)"/>
         <modelElementInitializer
             xsi:type="gmfgen:GenFeatureSeqInitializer">
           <initializers
               xsi:type="gmfgen:GenFeatureValueSpec"
-              body="AggregationKind::composite">
+              value="//@expressionProviders/@providers.0/@expressions.6">
             <feature
                 href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/Property/aggregation"/>
           </initializers>
           <initializers
               xsi:type="gmfgen:GenFeatureValueSpec"
-              body=" let base : String = 'property' in  let suffixes : Sequence(String) = Sequence {'', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10'} in  let space : Namespace = self.namespace in  let allMissed : Sequence(String) = suffixes-> &#x9;select(s : String | not space.member->exists(e : NamedElement | e.name = base.concat(s)) ) in  let firstMissed : String = allMissed->first() in  let noMisses : Boolean = firstMissed.oclIsUndefined() in  let allNames : Set(String) =  &#x9;if noMisses &#x9;&#x9;then &#x9;&#x9;space.member->collect(e : NamedElement | &#x9;&#x9;&#x9;if e = self or e.name.oclIsUndefined() or e.name.substring(1, e.name.size().min(base.size())) &lt;> base &#x9;&#x9;&#x9;then '' else e.name &#x9;&#x9;&#x9;endif &#x9;&#x9;)->asSet()->excluding('') &#x9;&#x9;else Set{'not in use'} &#x9;&#x9;endif in  let longestName : String = &#x9;&#x9;if noMisses &#x9;&#x9;then allNames->select(n : String | not allNames->exists(nn : String | nn.size() > n.size()))->asSequence()->first()&#x9;&#x9;else 'not in use' &#x9;&#x9;endif &#x9;in  if noMisses then &#x9;&#x9;if longestName.oclIsUndefined() &#x9;&#x9;then base &#x9;&#x9;else longestName.concat('1') &#x9;&#x9;endif  else base.concat(firstMissed)  endif ">
+              value="//@expressionProviders/@providers.0/@expressions.7">
             <feature
                 href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/NamedElement/name"/>
           </initializers>
@@ -271,7 +269,7 @@
             xsi:type="gmfgen:GenFeatureSeqInitializer">
           <initializers
               xsi:type="gmfgen:GenFeatureValueSpec"
-              body=" let base : String = 'operation' in  let suffixes : Sequence(String) = Sequence {'', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10'} in  let space : Namespace = self.namespace in  let allMissed : Sequence(String) = suffixes-> &#x9;select(s : String | not space.member->exists(e : NamedElement | e.name = base.concat(s)) ) in  let firstMissed : String = allMissed->first() in  let noMisses : Boolean = firstMissed.oclIsUndefined() in  let allNames : Set(String) =  &#x9;if noMisses &#x9;&#x9;then &#x9;&#x9;space.member->collect(e : NamedElement | &#x9;&#x9;&#x9;if e = self or e.name.oclIsUndefined() or e.name.substring(1, e.name.size().min(base.size())) &lt;> base &#x9;&#x9;&#x9;then '' else e.name &#x9;&#x9;&#x9;endif &#x9;&#x9;)->asSet()->excluding('') &#x9;&#x9;else Set{'not in use'} &#x9;&#x9;endif in  let longestName : String = &#x9;&#x9;if noMisses &#x9;&#x9;then allNames->select(n : String | not allNames->exists(nn : String | nn.size() > n.size()))->asSequence()->first()&#x9;&#x9;else 'not in use' &#x9;&#x9;endif &#x9;in  if noMisses then &#x9;&#x9;if longestName.oclIsUndefined() &#x9;&#x9;then base &#x9;&#x9;else longestName.concat('1') &#x9;&#x9;endif  else base.concat(firstMissed)  endif ">
+              value="//@expressionProviders/@providers.0/@expressions.8">
             <feature
                 href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/NamedElement/name"/>
           </initializers>
@@ -315,7 +313,7 @@
             xsi:type="gmfgen:GenFeatureSeqInitializer">
           <initializers
               xsi:type="gmfgen:GenFeatureValueSpec"
-              body="let base : String = 'Class' in&#xD;&#xA;let suffixes : Sequence(String) = Sequence {'', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10'} in &#xD;&#xA;let space : Namespace = self.namespace in&#xD;&#xA;let allMissed : Sequence(String) = suffixes->&#xD;&#xA;    select(s : String | not space.member->exists(e : NamedElement | e.name = base.concat(s))&#xD;&#xA;    ) in&#xD;&#xA;let firstMissed : String = allMissed->first() in &#xD;&#xA;let noMisses : Boolean = firstMissed.oclIsUndefined() in&#xD;&#xA;let allNames : Set(String) = &#xD;&#xA;    if noMisses &#xD;&#xA;    then &#xD;&#xA;    space.member->collect(e : NamedElement | &#xD;&#xA;         if e = self or e.name.oclIsUndefined() or e.name.substring(1, e.name.size().min(base.size())) &lt;> base&#xD;&#xA;         then '' &#xD;&#xA;         else e.name &#xD;&#xA;         endif)->asSet()->excluding('') else Set{'not in use'} &#xD;&#xA;    endif in &#xD;&#xA;let longestName : String = &#xD;&#xA;    if noMisses&#xD;&#xA;    then allNames->select(n : String | not allNames->exists(nn : String | nn.size() > n.size()))->asSequence()->first() &#xD;&#xA;    else 'not in use' &#xD;&#xA;    endif in &#xD;&#xA;if noMisses then &#xD;&#xA;    if longestName.oclIsUndefined() &#xD;&#xA;    then base &#xD;&#xA;    else longestName.concat('1') &#xD;&#xA;    endif &#xD;&#xA;else &#xD;&#xA;    base.concat(firstMissed) &#xD;&#xA;endif ">
+              value="//@expressionProviders/@providers.0/@expressions.9">
             <feature
                 href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/NamedElement/name"/>
           </initializers>
@@ -370,13 +368,13 @@
             xsi:type="gmfgen:GenFeatureSeqInitializer">
           <initializers
               xsi:type="gmfgen:GenFeatureValueSpec"
-              body="AggregationKind::composite">
+              value="//@expressionProviders/@providers.0/@expressions.10">
             <feature
                 href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/Property/aggregation"/>
           </initializers>
           <initializers
               xsi:type="gmfgen:GenFeatureValueSpec"
-              body=" let base : String = 'port' in  let suffixes : Sequence(String) = Sequence {'', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10'} in  let space : Namespace = self.namespace in  let allMissed : Sequence(String) = suffixes-> &#x9;select(s : String | not space.member->exists(e : NamedElement | e.name = base.concat(s)) ) in  let firstMissed : String = allMissed->first() in  let noMisses : Boolean = firstMissed.oclIsUndefined() in  let allNames : Set(String) =  &#x9;if noMisses &#x9;&#x9;then &#x9;&#x9;space.member->collect(e : NamedElement | &#x9;&#x9;&#x9;if e = self or e.name.oclIsUndefined() or e.name.substring(1, e.name.size().min(base.size())) &lt;> base &#x9;&#x9;&#x9;then '' else e.name &#x9;&#x9;&#x9;endif &#x9;&#x9;)->asSet()->excluding('') &#x9;&#x9;else Set{'not in use'} &#x9;&#x9;endif in  let longestName : String = &#x9;&#x9;if noMisses &#x9;&#x9;then allNames->select(n : String | not allNames->exists(nn : String | nn.size() > n.size()))->asSequence()->first()&#x9;&#x9;else 'not in use' &#x9;&#x9;endif &#x9;in  if noMisses then &#x9;&#x9;if longestName.oclIsUndefined() &#x9;&#x9;then base &#x9;&#x9;else longestName.concat('1') &#x9;&#x9;endif  else base.concat(firstMissed)  endif ">
+              value="//@expressionProviders/@providers.0/@expressions.11">
             <feature
                 href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/NamedElement/name"/>
           </initializers>
@@ -487,15 +485,14 @@
         <requiredPluginIDs>org.eclipse.uml2.diagram.common</requiredPluginIDs>
         <requiredPluginIDs>org.eclipse.gmf.runtime.draw2d.ui</requiredPluginIDs>
       </viewmap>
-      <modelFacet>
+      <modelFacet
+          modelElementSelector="//@expressionProviders/@providers.0/@expressions.14">
         <metaClass
             href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/Property"/>
         <containmentMetaFeature
             href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/StructuredClassifier/ownedAttribute"/>
         <childMetaFeature
             href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/StructuredClassifier/ownedAttribute"/>
-        <modelElementSelector
-            body="not self.oclIsKindOf(uml::Port)"/>
       </modelFacet>
       <labels
           visualID="5017"
@@ -628,13 +625,13 @@
             xsi:type="gmfgen:GenFeatureSeqInitializer">
           <initializers
               xsi:type="gmfgen:GenFeatureValueSpec"
-              body="AggregationKind::composite">
+              value="//@expressionProviders/@providers.0/@expressions.15">
             <feature
                 href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/Property/aggregation"/>
           </initializers>
           <initializers
               xsi:type="gmfgen:GenFeatureValueSpec"
-              body=" let base : String = 'port' in  let suffixes : Sequence(String) = Sequence {'', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10'} in  let space : Namespace = self.namespace in  let allMissed : Sequence(String) = suffixes-> &#x9;select(s : String | not space.member->exists(e : NamedElement | e.name = base.concat(s)) ) in  let firstMissed : String = allMissed->first() in  let noMisses : Boolean = firstMissed.oclIsUndefined() in  let allNames : Set(String) =  &#x9;if noMisses &#x9;&#x9;then &#x9;&#x9;space.member->collect(e : NamedElement | &#x9;&#x9;&#x9;if e = self or e.name.oclIsUndefined() or e.name.substring(1, e.name.size().min(base.size())) &lt;> base &#x9;&#x9;&#x9;then '' else e.name &#x9;&#x9;&#x9;endif &#x9;&#x9;)->asSet()->excluding('') &#x9;&#x9;else Set{'not in use'} &#x9;&#x9;endif in  let longestName : String = &#x9;&#x9;if noMisses &#x9;&#x9;then allNames->select(n : String | not allNames->exists(nn : String | nn.size() > n.size()))->asSequence()->first()&#x9;&#x9;else 'not in use' &#x9;&#x9;endif &#x9;in  if noMisses then &#x9;&#x9;if longestName.oclIsUndefined() &#x9;&#x9;then base &#x9;&#x9;else longestName.concat('1') &#x9;&#x9;endif  else base.concat(firstMissed)  endif ">
+              value="//@expressionProviders/@providers.0/@expressions.16">
             <feature
                 href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/NamedElement/name"/>
           </initializers>
@@ -762,7 +759,7 @@
             xsi:type="gmfgen:GenFeatureSeqInitializer">
           <initializers
               xsi:type="gmfgen:GenFeatureValueSpec"
-              body=" let base : String = 'Collaboration' in  let suffixes : Sequence(String) = Sequence {'', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10'} in  let space : Namespace = self.namespace in  let allMissed : Sequence(String) = suffixes-> &#x9;select(s : String | not space.member->exists(e : NamedElement | e.name = base.concat(s)) ) in  let firstMissed : String = allMissed->first() in  let noMisses : Boolean = firstMissed.oclIsUndefined() in  let allNames : Set(String) =  &#x9;if noMisses &#x9;&#x9;then &#x9;&#x9;space.member->collect(e : NamedElement | &#x9;&#x9;&#x9;if e = self or e.name.oclIsUndefined() or e.name.substring(1, e.name.size().min(base.size())) &lt;> base &#x9;&#x9;&#x9;then '' else e.name &#x9;&#x9;&#x9;endif &#x9;&#x9;)->asSet()->excluding('') &#x9;&#x9;else Set{'not in use'} &#x9;&#x9;endif in  let longestName : String = &#x9;&#x9;if noMisses &#x9;&#x9;then allNames->select(n : String | not allNames->exists(nn : String | nn.size() > n.size()))->asSequence()->first()&#x9;&#x9;else 'not in use' &#x9;&#x9;endif &#x9;in  if noMisses then &#x9;&#x9;if longestName.oclIsUndefined() &#x9;&#x9;then base &#x9;&#x9;else longestName.concat('1') &#x9;&#x9;endif  else base.concat(firstMissed)  endif ">
+              value="//@expressionProviders/@providers.0/@expressions.0">
             <feature
                 href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/NamedElement/name"/>
           </initializers>
@@ -818,20 +815,19 @@
         <requiredPluginIDs>org.eclipse.uml2.diagram.common</requiredPluginIDs>
         <requiredPluginIDs>org.eclipse.gmf.runtime.draw2d.ui</requiredPluginIDs>
       </viewmap>
-      <modelFacet>
+      <modelFacet
+          modelElementSelector="//@expressionProviders/@providers.0/@expressions.3">
         <metaClass
             href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/Class"/>
         <containmentMetaFeature
             href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/Package/packagedElement"/>
         <childMetaFeature
             href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/Package/ownedType"/>
-        <modelElementSelector
-            body="not oclIsKindOf(uml::AssociationClass) and not oclIsKindOf(uml::StateMachine)"/>
         <modelElementInitializer
             xsi:type="gmfgen:GenFeatureSeqInitializer">
           <initializers
               xsi:type="gmfgen:GenFeatureValueSpec"
-              body="let base : String = 'Class' in&#xD;&#xA;let suffixes : Sequence(String) = Sequence {'', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10'} in &#xD;&#xA;let space : Namespace = self.namespace in&#xD;&#xA;let allMissed : Sequence(String) = suffixes->&#xD;&#xA;    select(s : String | not space.member->exists(e : NamedElement | e.name = base.concat(s))&#xD;&#xA;    ) in&#xD;&#xA;let firstMissed : String = allMissed->first() in &#xD;&#xA;let noMisses : Boolean = firstMissed.oclIsUndefined() in&#xD;&#xA;let allNames : Set(String) = &#xD;&#xA;    if noMisses &#xD;&#xA;    then &#xD;&#xA;    space.member->collect(e : NamedElement | &#xD;&#xA;         if e = self or e.name.oclIsUndefined() or e.name.substring(1, e.name.size().min(base.size())) &lt;> base&#xD;&#xA;         then '' &#xD;&#xA;         else e.name &#xD;&#xA;         endif)->asSet()->excluding('') else Set{'not in use'} &#xD;&#xA;    endif in &#xD;&#xA;let longestName : String = &#xD;&#xA;    if noMisses&#xD;&#xA;    then allNames->select(n : String | not allNames->exists(nn : String | nn.size() > n.size()))->asSequence()->first() &#xD;&#xA;    else 'not in use' &#xD;&#xA;    endif in &#xD;&#xA;if noMisses then &#xD;&#xA;    if longestName.oclIsUndefined() &#xD;&#xA;    then base &#xD;&#xA;    else longestName.concat('1') &#xD;&#xA;    endif &#xD;&#xA;else &#xD;&#xA;    base.concat(firstMissed) &#xD;&#xA;endif ">
+              value="//@expressionProviders/@providers.0/@expressions.4">
             <feature
                 href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/NamedElement/name"/>
           </initializers>
@@ -969,20 +965,19 @@
         <requiredPluginIDs>org.eclipse.uml2.diagram.common</requiredPluginIDs>
         <requiredPluginIDs>org.eclipse.gmf.runtime.draw2d.ui</requiredPluginIDs>
       </viewmap>
-      <modelFacet>
+      <modelFacet
+          modelElementSelector="//@expressionProviders/@providers.0/@expressions.12">
         <metaClass
             href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/Class"/>
         <containmentMetaFeature
             href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/Package/packagedElement"/>
         <childMetaFeature
             href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/Package/ownedType"/>
-        <modelElementSelector
-            body="not oclIsKindOf(uml::AssociationClass) and not oclIsKindOf(uml::StateMachine)"/>
         <modelElementInitializer
             xsi:type="gmfgen:GenFeatureSeqInitializer">
           <initializers
               xsi:type="gmfgen:GenFeatureValueSpec"
-              body="let base : String = 'Class' in&#xD;&#xA;let suffixes : Sequence(String) = Sequence {'', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10'} in &#xD;&#xA;let space : Namespace = self.namespace in&#xD;&#xA;let allMissed : Sequence(String) = suffixes->&#xD;&#xA;    select(s : String | not space.member->exists(e : NamedElement | e.name = base.concat(s))&#xD;&#xA;    ) in&#xD;&#xA;let firstMissed : String = allMissed->first() in &#xD;&#xA;let noMisses : Boolean = firstMissed.oclIsUndefined() in&#xD;&#xA;let allNames : Set(String) = &#xD;&#xA;    if noMisses &#xD;&#xA;    then &#xD;&#xA;    space.member->collect(e : NamedElement | &#xD;&#xA;         if e = self or e.name.oclIsUndefined() or e.name.substring(1, e.name.size().min(base.size())) &lt;> base&#xD;&#xA;         then '' &#xD;&#xA;         else e.name &#xD;&#xA;         endif)->asSet()->excluding('') else Set{'not in use'} &#xD;&#xA;    endif in &#xD;&#xA;let longestName : String = &#xD;&#xA;    if noMisses&#xD;&#xA;    then allNames->select(n : String | not allNames->exists(nn : String | nn.size() > n.size()))->asSequence()->first() &#xD;&#xA;    else 'not in use' &#xD;&#xA;    endif in &#xD;&#xA;if noMisses then &#xD;&#xA;    if longestName.oclIsUndefined() &#xD;&#xA;    then base &#xD;&#xA;    else longestName.concat('1') &#xD;&#xA;    endif &#xD;&#xA;else &#xD;&#xA;    base.concat(firstMissed) &#xD;&#xA;endif ">
+              value="//@expressionProviders/@providers.0/@expressions.13">
             <feature
                 href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/NamedElement/name"/>
           </initializers>
@@ -1045,7 +1040,7 @@
             xsi:type="gmfgen:GenFeatureSeqInitializer">
           <initializers
               xsi:type="gmfgen:GenFeatureValueSpec"
-              body=" let base : String = 'Interface' in  let suffixes : Sequence(String) = Sequence {'', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10'} in  let space : Namespace = self.namespace in  let allMissed : Sequence(String) = suffixes-> &#x9;select(s : String | not space.member->exists(e : NamedElement | e.name = base.concat(s)) ) in  let firstMissed : String = allMissed->first() in  let noMisses : Boolean = firstMissed.oclIsUndefined() in  let allNames : Set(String) =  &#x9;if noMisses &#x9;&#x9;then &#x9;&#x9;space.member->collect(e : NamedElement | &#x9;&#x9;&#x9;if e = self or e.name.oclIsUndefined() or e.name.substring(1, e.name.size().min(base.size())) &lt;> base &#x9;&#x9;&#x9;then '' else e.name &#x9;&#x9;&#x9;endif &#x9;&#x9;)->asSet()->excluding('') &#x9;&#x9;else Set{'not in use'} &#x9;&#x9;endif in  let longestName : String = &#x9;&#x9;if noMisses &#x9;&#x9;then allNames->select(n : String | not allNames->exists(nn : String | nn.size() > n.size()))->asSequence()->first()&#x9;&#x9;else 'not in use' &#x9;&#x9;endif &#x9;in  if noMisses then &#x9;&#x9;if longestName.oclIsUndefined() &#x9;&#x9;then base &#x9;&#x9;else longestName.concat('1') &#x9;&#x9;endif  else base.concat(firstMissed)  endif ">
+              value="//@expressionProviders/@providers.0/@expressions.17">
             <feature
                 href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/NamedElement/name"/>
           </initializers>
@@ -1105,7 +1100,7 @@
             xsi:type="gmfgen:GenFeatureSeqInitializer">
           <initializers
               xsi:type="gmfgen:GenFeatureValueSpec"
-              body=" let base : String = 'InstanceSpecification' in  let suffixes : Sequence(String) = Sequence {'', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10'} in  let space : Namespace = self.namespace in  let allMissed : Sequence(String) = suffixes-> &#x9;select(s : String | not space.member->exists(e : NamedElement | e.name = base.concat(s)) ) in  let firstMissed : String = allMissed->first() in  let noMisses : Boolean = firstMissed.oclIsUndefined() in  let allNames : Set(String) =  &#x9;if noMisses &#x9;&#x9;then &#x9;&#x9;space.member->collect(e : NamedElement | &#x9;&#x9;&#x9;if e = self or e.name.oclIsUndefined() or e.name.substring(1, e.name.size().min(base.size())) &lt;> base &#x9;&#x9;&#x9;then '' else e.name &#x9;&#x9;&#x9;endif &#x9;&#x9;)->asSet()->excluding('') &#x9;&#x9;else Set{'not in use'} &#x9;&#x9;endif in  let longestName : String = &#x9;&#x9;if noMisses &#x9;&#x9;then allNames->select(n : String | not allNames->exists(nn : String | nn.size() > n.size()))->asSequence()->first()&#x9;&#x9;else 'not in use' &#x9;&#x9;endif &#x9;in  if noMisses then &#x9;&#x9;if longestName.oclIsUndefined() &#x9;&#x9;then base &#x9;&#x9;else longestName.concat('1') &#x9;&#x9;endif  else base.concat(firstMissed)  endif ">
+              value="//@expressionProviders/@providers.0/@expressions.18">
             <feature
                 href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/NamedElement/name"/>
           </initializers>
@@ -1165,7 +1160,7 @@
             <newElementInitializers>
               <initializers
                   xsi:type="gmfgen:GenFeatureValueSpec"
-                  body="'ValueSpecification'">
+                  value="//@expressionProviders/@providers.0/@expressions.19">
                 <feature
                     href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/LiteralString/value"/>
               </initializers>
@@ -1412,15 +1407,14 @@
         <requiredPluginIDs>org.eclipse.gmf.runtime.draw2d.ui</requiredPluginIDs>
       </viewmap>
       <modelFacet
-          xsi:type="gmfgen:TypeLinkModelFacet">
+          xsi:type="gmfgen:TypeLinkModelFacet"
+          modelElementSelector="//@expressionProviders/@providers.0/@expressions.20">
         <metaClass
             href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/Dependency"/>
         <containmentMetaFeature
             href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/CollaborationUse/roleBinding"/>
         <childMetaFeature
             href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/CollaborationUse/roleBinding"/>
-        <modelElementSelector
-            body="not self.oclIsKindOf(uml::Usage) and not self.oclIsKindOf(uml::InterfaceRealization)"/>
         <sourceMetaFeature
             href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/Dependency/client"/>
         <targetMetaFeature
@@ -1470,24 +1464,21 @@
         <requiredPluginIDs>org.eclipse.gmf.runtime.draw2d.ui</requiredPluginIDs>
       </viewmap>
       <modelFacet
-          xsi:type="gmfgen:TypeLinkModelFacet">
+          xsi:type="gmfgen:TypeLinkModelFacet"
+          modelElementSelector="//@expressionProviders/@providers.0/@expressions.21">
         <metaClass
             href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/InterfaceRealization"/>
         <containmentMetaFeature
             href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/BehavioredClassifier/interfaceRealization"/>
         <childMetaFeature
             href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/BehavioredClassifier/interfaceRealization"/>
-        <modelElementSelector
-            body="self.supplier->forAll(e|e.oclIsKindOf(uml::Interface))"/>
         <sourceMetaFeature
             href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/InterfaceRealization/implementingClassifier"/>
         <targetMetaFeature
             href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/InterfaceRealization/contract"/>
       </modelFacet>
-      <creationConstraints>
-        <targetEnd
-            body="self.oclIsKindOf(uml::Interface)"/>
-      </creationConstraints>
+      <creationConstraints
+          targetEnd="//@expressionProviders/@providers.0/@expressions.22"/>
     </links>
     <links
         visualID="4008"
@@ -1509,26 +1500,22 @@
         <requiredPluginIDs>org.eclipse.gmf.runtime.draw2d.ui</requiredPluginIDs>
       </viewmap>
       <modelFacet
-          xsi:type="gmfgen:TypeLinkModelFacet">
+          xsi:type="gmfgen:TypeLinkModelFacet"
+          modelElementSelector="//@expressionProviders/@providers.0/@expressions.23">
         <metaClass
             href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/Usage"/>
         <containmentMetaFeature
             href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/Package/packagedElement"/>
         <childMetaFeature
             href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/Package/packagedElement"/>
-        <modelElementSelector
-            body="self.supplier->forAll(e|e.oclIsKindOf(uml::Interface)) and self.client->forAll(e|not e.oclIsKindOf(uml::Port))"/>
         <sourceMetaFeature
             href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/Dependency/client"/>
         <targetMetaFeature
             href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/Dependency/supplier"/>
       </modelFacet>
-      <creationConstraints>
-        <sourceEnd
-            body="not self.oclIsKindOf(uml::Port)"/>
-        <targetEnd
-            body="self.oclIsKindOf(uml::Interface)"/>
-      </creationConstraints>
+      <creationConstraints
+          sourceEnd="//@expressionProviders/@providers.0/@expressions.24"
+          targetEnd="//@expressionProviders/@providers.0/@expressions.25"/>
     </links>
     <links
         visualID="4010"
@@ -1552,10 +1539,8 @@
         <metaFeature
             href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/Port/provided"/>
       </modelFacet>
-      <creationConstraints>
-        <sourceEnd
-            body="self.oclIsKindOf(uml::Port)"/>
-      </creationConstraints>
+      <creationConstraints
+          sourceEnd="//@expressionProviders/@providers.0/@expressions.26"/>
     </links>
     <links
         visualID="4011"
@@ -1809,10 +1794,8 @@
         <metaFeature
             href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/Port/required"/>
       </modelFacet>
-      <creationConstraints>
-        <sourceEnd
-            body="self.oclIsKindOf(uml::Port)"/>
-      </creationConstraints>
+      <creationConstraints
+          sourceEnd="//@expressionProviders/@providers.0/@expressions.27"/>
     </links>
     <compartments
         visualID="7003"
@@ -2056,31 +2039,31 @@
     </palette>
     <preferencePages
         xsi:type="gmfgen:GenStandardPreferencePage"
-        iD="org.eclipse.uml2.uml.csd.general"
+        iD="org.eclipse.uml2.uml.diagram.csd.general"
         name="UML Diagram">
       <children
           xsi:type="gmfgen:GenStandardPreferencePage"
-          iD="org.eclipse.uml2.uml.csd.appearance"
+          iD="org.eclipse.uml2.uml.diagram.csd.appearance"
           name="Appearance"
           kind="Appearance"/>
       <children
           xsi:type="gmfgen:GenStandardPreferencePage"
-          iD="org.eclipse.uml2.uml.csd.connections"
+          iD="org.eclipse.uml2.uml.diagram.csd.connections"
           name="Connections"
           kind="Connections"/>
       <children
           xsi:type="gmfgen:GenStandardPreferencePage"
-          iD="org.eclipse.uml2.uml.csd.printing"
+          iD="org.eclipse.uml2.uml.diagram.csd.printing"
           name="Printing"
           kind="Printing"/>
       <children
           xsi:type="gmfgen:GenStandardPreferencePage"
-          iD="org.eclipse.uml2.uml.csd.rulersAndGrid"
+          iD="org.eclipse.uml2.uml.diagram.csd.rulersAndGrid"
           name="Rulers And Grid"
           kind="RulersAndGrid"/>
       <children
           xsi:type="gmfgen:GenStandardPreferencePage"
-          iD="org.eclipse.uml2.uml.csd.pathmaps"
+          iD="org.eclipse.uml2.uml.diagram.csd.pathmaps"
           name="Pathmaps"
           kind="Pathmaps"/>
       <children
@@ -3721,7 +3704,76 @@
       href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#/"/>
   <expressionProviders>
     <providers
-        xsi:type="gmfgen:GenExpressionInterpreter"
-        expressions="//@diagram/@topLevelNodes.0/@modelFacet/@modelElementInitializer/@initializers.0 //@diagram/@childNodes.0/@modelFacet/@modelElementInitializer/@initializers.0 //@diagram/@childNodes.1/@modelFacet/@modelElementSelector //@diagram/@topLevelNodes.1/@modelFacet/@modelElementSelector //@diagram/@topLevelNodes.1/@modelFacet/@modelElementInitializer/@initializers.0 //@diagram/@childNodes.3/@modelFacet/@modelElementSelector //@diagram/@childNodes.3/@modelFacet/@modelElementInitializer/@initializers.0 //@diagram/@childNodes.3/@modelFacet/@modelElementInitializer/@initializers.1 //@diagram/@childNodes.4/@modelFacet/@modelElementInitializer/@initializers.0 //@diagram/@childNodes.5/@modelFacet/@modelElementInitializer/@initializers.0 //@diagram/@childNodes.6/@modelFacet/@modelElementInitializer/@initializers.0 //@diagram/@childNodes.6/@modelFacet/@modelElementInitializer/@initializers.1 //@diagram/@topLevelNodes.3/@modelFacet/@modelElementSelector //@diagram/@topLevelNodes.3/@modelFacet/@modelElementInitializer/@initializers.0 //@diagram/@childNodes.8/@modelFacet/@modelElementSelector //@diagram/@childNodes.10/@modelFacet/@modelElementInitializer/@initializers.0 //@diagram/@childNodes.10/@modelFacet/@modelElementInitializer/@initializers.1 //@diagram/@topLevelNodes.4/@modelFacet/@modelElementInitializer/@initializers.0 //@diagram/@topLevelNodes.5/@modelFacet/@modelElementInitializer/@initializers.0 //@diagram/@topLevelNodes.6/@modelFacet/@modelElementInitializer/@initializers.0/@newElementInitializers.0/@initializers.0 //@diagram/@links.1/@modelFacet/@modelElementSelector //@diagram/@links.2/@modelFacet/@modelElementSelector //@diagram/@links.2/@creationConstraints/@targetEnd //@diagram/@links.3/@modelFacet/@modelElementSelector //@diagram/@links.3/@creationConstraints/@sourceEnd //@diagram/@links.3/@creationConstraints/@targetEnd //@diagram/@links.4/@creationConstraints/@sourceEnd //@diagram/@links.7/@creationConstraints/@sourceEnd"/>
+        xsi:type="gmfgen:GenExpressionInterpreter">
+      <expressions
+          body=" let base : String = 'Collaboration' in  let suffixes : Sequence(String) = Sequence {'', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10'} in  let space : Namespace = self.namespace in  let allMissed : Sequence(String) = suffixes-> &#x9;select(s : String | not space.member->exists(e : NamedElement | e.name = base.concat(s)) ) in  let firstMissed : String = allMissed->first() in  let noMisses : Boolean = firstMissed.oclIsUndefined() in  let allNames : Set(String) =  &#x9;if noMisses &#x9;&#x9;then &#x9;&#x9;space.member->collect(e : NamedElement | &#x9;&#x9;&#x9;if e = self or e.name.oclIsUndefined() or e.name.substring(1, e.name.size().min(base.size())) &lt;> base &#x9;&#x9;&#x9;then '' else e.name &#x9;&#x9;&#x9;endif &#x9;&#x9;)->asSet()->excluding('') &#x9;&#x9;else Set{'not in use'} &#x9;&#x9;endif in  let longestName : String = &#x9;&#x9;if noMisses &#x9;&#x9;then allNames->select(n : String | not allNames->exists(nn : String | nn.size() > n.size()))->asSequence()->first()&#x9;&#x9;else 'not in use' &#x9;&#x9;endif &#x9;in  if noMisses then &#x9;&#x9;if longestName.oclIsUndefined() &#x9;&#x9;then base &#x9;&#x9;else longestName.concat('1') &#x9;&#x9;endif  else base.concat(firstMissed)  endif "/>
+      <expressions
+          body=" let base : String = 'CollaborationUse' in  let suffixes : Sequence(String) = Sequence {'', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10'} in  let space : Namespace = self.namespace in  let allMissed : Sequence(String) = suffixes-> &#x9;select(s : String | not space.member->exists(e : NamedElement | e.name = base.concat(s)) ) in  let firstMissed : String = allMissed->first() in  let noMisses : Boolean = firstMissed.oclIsUndefined() in  let allNames : Set(String) =  &#x9;if noMisses &#x9;&#x9;then &#x9;&#x9;space.member->collect(e : NamedElement | &#x9;&#x9;&#x9;if e = self or e.name.oclIsUndefined() or e.name.substring(1, e.name.size().min(base.size())) &lt;> base &#x9;&#x9;&#x9;then '' else e.name &#x9;&#x9;&#x9;endif &#x9;&#x9;)->asSet()->excluding('') &#x9;&#x9;else Set{'not in use'} &#x9;&#x9;endif in  let longestName : String = &#x9;&#x9;if noMisses &#x9;&#x9;then allNames->select(n : String | not allNames->exists(nn : String | nn.size() > n.size()))->asSequence()->first()&#x9;&#x9;else 'not in use' &#x9;&#x9;endif &#x9;in  if noMisses then &#x9;&#x9;if longestName.oclIsUndefined() &#x9;&#x9;then base &#x9;&#x9;else longestName.concat('1') &#x9;&#x9;endif  else base.concat(firstMissed)  endif "/>
+      <expressions
+          xsi:type="gmfgen:GenConstraint"
+          body="not self.oclIsKindOf(uml::Port)"/>
+      <expressions
+          xsi:type="gmfgen:GenConstraint"
+          body="not oclIsKindOf(uml::AssociationClass) and not oclIsKindOf(uml::StateMachine)"/>
+      <expressions
+          body="let base : String = 'Class' in&#xD;&#xA;let suffixes : Sequence(String) = Sequence {'', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10'} in &#xD;&#xA;let space : Namespace = self.namespace in&#xD;&#xA;let allMissed : Sequence(String) = suffixes->&#xD;&#xA;    select(s : String | not space.member->exists(e : NamedElement | e.name = base.concat(s))&#xD;&#xA;    ) in&#xD;&#xA;let firstMissed : String = allMissed->first() in &#xD;&#xA;let noMisses : Boolean = firstMissed.oclIsUndefined() in&#xD;&#xA;let allNames : Set(String) = &#xD;&#xA;    if noMisses &#xD;&#xA;    then &#xD;&#xA;    space.member->collect(e : NamedElement | &#xD;&#xA;         if e = self or e.name.oclIsUndefined() or e.name.substring(1, e.name.size().min(base.size())) &lt;> base&#xD;&#xA;         then '' &#xD;&#xA;         else e.name &#xD;&#xA;         endif)->asSet()->excluding('') else Set{'not in use'} &#xD;&#xA;    endif in &#xD;&#xA;let longestName : String = &#xD;&#xA;    if noMisses&#xD;&#xA;    then allNames->select(n : String | not allNames->exists(nn : String | nn.size() > n.size()))->asSequence()->first() &#xD;&#xA;    else 'not in use' &#xD;&#xA;    endif in &#xD;&#xA;if noMisses then &#xD;&#xA;    if longestName.oclIsUndefined() &#xD;&#xA;    then base &#xD;&#xA;    else longestName.concat('1') &#xD;&#xA;    endif &#xD;&#xA;else &#xD;&#xA;    base.concat(firstMissed) &#xD;&#xA;endif "/>
+      <expressions
+          xsi:type="gmfgen:GenConstraint"
+          body="not oclIsKindOf(uml::Port)"/>
+      <expressions
+          body="AggregationKind::composite"/>
+      <expressions
+          body=" let base : String = 'property' in  let suffixes : Sequence(String) = Sequence {'', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10'} in  let space : Namespace = self.namespace in  let allMissed : Sequence(String) = suffixes-> &#x9;select(s : String | not space.member->exists(e : NamedElement | e.name = base.concat(s)) ) in  let firstMissed : String = allMissed->first() in  let noMisses : Boolean = firstMissed.oclIsUndefined() in  let allNames : Set(String) =  &#x9;if noMisses &#x9;&#x9;then &#x9;&#x9;space.member->collect(e : NamedElement | &#x9;&#x9;&#x9;if e = self or e.name.oclIsUndefined() or e.name.substring(1, e.name.size().min(base.size())) &lt;> base &#x9;&#x9;&#x9;then '' else e.name &#x9;&#x9;&#x9;endif &#x9;&#x9;)->asSet()->excluding('') &#x9;&#x9;else Set{'not in use'} &#x9;&#x9;endif in  let longestName : String = &#x9;&#x9;if noMisses &#x9;&#x9;then allNames->select(n : String | not allNames->exists(nn : String | nn.size() > n.size()))->asSequence()->first()&#x9;&#x9;else 'not in use' &#x9;&#x9;endif &#x9;in  if noMisses then &#x9;&#x9;if longestName.oclIsUndefined() &#x9;&#x9;then base &#x9;&#x9;else longestName.concat('1') &#x9;&#x9;endif  else base.concat(firstMissed)  endif "/>
+      <expressions
+          body=" let base : String = 'operation' in  let suffixes : Sequence(String) = Sequence {'', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10'} in  let space : Namespace = self.namespace in  let allMissed : Sequence(String) = suffixes-> &#x9;select(s : String | not space.member->exists(e : NamedElement | e.name = base.concat(s)) ) in  let firstMissed : String = allMissed->first() in  let noMisses : Boolean = firstMissed.oclIsUndefined() in  let allNames : Set(String) =  &#x9;if noMisses &#x9;&#x9;then &#x9;&#x9;space.member->collect(e : NamedElement | &#x9;&#x9;&#x9;if e = self or e.name.oclIsUndefined() or e.name.substring(1, e.name.size().min(base.size())) &lt;> base &#x9;&#x9;&#x9;then '' else e.name &#x9;&#x9;&#x9;endif &#x9;&#x9;)->asSet()->excluding('') &#x9;&#x9;else Set{'not in use'} &#x9;&#x9;endif in  let longestName : String = &#x9;&#x9;if noMisses &#x9;&#x9;then allNames->select(n : String | not allNames->exists(nn : String | nn.size() > n.size()))->asSequence()->first()&#x9;&#x9;else 'not in use' &#x9;&#x9;endif &#x9;in  if noMisses then &#x9;&#x9;if longestName.oclIsUndefined() &#x9;&#x9;then base &#x9;&#x9;else longestName.concat('1') &#x9;&#x9;endif  else base.concat(firstMissed)  endif "/>
+      <expressions
+          body="let base : String = 'Class' in&#xD;&#xA;let suffixes : Sequence(String) = Sequence {'', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10'} in &#xD;&#xA;let space : Namespace = self.namespace in&#xD;&#xA;let allMissed : Sequence(String) = suffixes->&#xD;&#xA;    select(s : String | not space.member->exists(e : NamedElement | e.name = base.concat(s))&#xD;&#xA;    ) in&#xD;&#xA;let firstMissed : String = allMissed->first() in &#xD;&#xA;let noMisses : Boolean = firstMissed.oclIsUndefined() in&#xD;&#xA;let allNames : Set(String) = &#xD;&#xA;    if noMisses &#xD;&#xA;    then &#xD;&#xA;    space.member->collect(e : NamedElement | &#xD;&#xA;         if e = self or e.name.oclIsUndefined() or e.name.substring(1, e.name.size().min(base.size())) &lt;> base&#xD;&#xA;         then '' &#xD;&#xA;         else e.name &#xD;&#xA;         endif)->asSet()->excluding('') else Set{'not in use'} &#xD;&#xA;    endif in &#xD;&#xA;let longestName : String = &#xD;&#xA;    if noMisses&#xD;&#xA;    then allNames->select(n : String | not allNames->exists(nn : String | nn.size() > n.size()))->asSequence()->first() &#xD;&#xA;    else 'not in use' &#xD;&#xA;    endif in &#xD;&#xA;if noMisses then &#xD;&#xA;    if longestName.oclIsUndefined() &#xD;&#xA;    then base &#xD;&#xA;    else longestName.concat('1') &#xD;&#xA;    endif &#xD;&#xA;else &#xD;&#xA;    base.concat(firstMissed) &#xD;&#xA;endif "/>
+      <expressions
+          body="AggregationKind::composite"/>
+      <expressions
+          body=" let base : String = 'port' in  let suffixes : Sequence(String) = Sequence {'', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10'} in  let space : Namespace = self.namespace in  let allMissed : Sequence(String) = suffixes-> &#x9;select(s : String | not space.member->exists(e : NamedElement | e.name = base.concat(s)) ) in  let firstMissed : String = allMissed->first() in  let noMisses : Boolean = firstMissed.oclIsUndefined() in  let allNames : Set(String) =  &#x9;if noMisses &#x9;&#x9;then &#x9;&#x9;space.member->collect(e : NamedElement | &#x9;&#x9;&#x9;if e = self or e.name.oclIsUndefined() or e.name.substring(1, e.name.size().min(base.size())) &lt;> base &#x9;&#x9;&#x9;then '' else e.name &#x9;&#x9;&#x9;endif &#x9;&#x9;)->asSet()->excluding('') &#x9;&#x9;else Set{'not in use'} &#x9;&#x9;endif in  let longestName : String = &#x9;&#x9;if noMisses &#x9;&#x9;then allNames->select(n : String | not allNames->exists(nn : String | nn.size() > n.size()))->asSequence()->first()&#x9;&#x9;else 'not in use' &#x9;&#x9;endif &#x9;in  if noMisses then &#x9;&#x9;if longestName.oclIsUndefined() &#x9;&#x9;then base &#x9;&#x9;else longestName.concat('1') &#x9;&#x9;endif  else base.concat(firstMissed)  endif "/>
+      <expressions
+          xsi:type="gmfgen:GenConstraint"
+          body="not oclIsKindOf(uml::AssociationClass) and not oclIsKindOf(uml::StateMachine)"/>
+      <expressions
+          body="let base : String = 'Class' in&#xD;&#xA;let suffixes : Sequence(String) = Sequence {'', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10'} in &#xD;&#xA;let space : Namespace = self.namespace in&#xD;&#xA;let allMissed : Sequence(String) = suffixes->&#xD;&#xA;    select(s : String | not space.member->exists(e : NamedElement | e.name = base.concat(s))&#xD;&#xA;    ) in&#xD;&#xA;let firstMissed : String = allMissed->first() in &#xD;&#xA;let noMisses : Boolean = firstMissed.oclIsUndefined() in&#xD;&#xA;let allNames : Set(String) = &#xD;&#xA;    if noMisses &#xD;&#xA;    then &#xD;&#xA;    space.member->collect(e : NamedElement | &#xD;&#xA;         if e = self or e.name.oclIsUndefined() or e.name.substring(1, e.name.size().min(base.size())) &lt;> base&#xD;&#xA;         then '' &#xD;&#xA;         else e.name &#xD;&#xA;         endif)->asSet()->excluding('') else Set{'not in use'} &#xD;&#xA;    endif in &#xD;&#xA;let longestName : String = &#xD;&#xA;    if noMisses&#xD;&#xA;    then allNames->select(n : String | not allNames->exists(nn : String | nn.size() > n.size()))->asSequence()->first() &#xD;&#xA;    else 'not in use' &#xD;&#xA;    endif in &#xD;&#xA;if noMisses then &#xD;&#xA;    if longestName.oclIsUndefined() &#xD;&#xA;    then base &#xD;&#xA;    else longestName.concat('1') &#xD;&#xA;    endif &#xD;&#xA;else &#xD;&#xA;    base.concat(firstMissed) &#xD;&#xA;endif "/>
+      <expressions
+          xsi:type="gmfgen:GenConstraint"
+          body="not self.oclIsKindOf(uml::Port)"/>
+      <expressions
+          body="AggregationKind::composite"/>
+      <expressions
+          body=" let base : String = 'port' in  let suffixes : Sequence(String) = Sequence {'', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10'} in  let space : Namespace = self.namespace in  let allMissed : Sequence(String) = suffixes-> &#x9;select(s : String | not space.member->exists(e : NamedElement | e.name = base.concat(s)) ) in  let firstMissed : String = allMissed->first() in  let noMisses : Boolean = firstMissed.oclIsUndefined() in  let allNames : Set(String) =  &#x9;if noMisses &#x9;&#x9;then &#x9;&#x9;space.member->collect(e : NamedElement | &#x9;&#x9;&#x9;if e = self or e.name.oclIsUndefined() or e.name.substring(1, e.name.size().min(base.size())) &lt;> base &#x9;&#x9;&#x9;then '' else e.name &#x9;&#x9;&#x9;endif &#x9;&#x9;)->asSet()->excluding('') &#x9;&#x9;else Set{'not in use'} &#x9;&#x9;endif in  let longestName : String = &#x9;&#x9;if noMisses &#x9;&#x9;then allNames->select(n : String | not allNames->exists(nn : String | nn.size() > n.size()))->asSequence()->first()&#x9;&#x9;else 'not in use' &#x9;&#x9;endif &#x9;in  if noMisses then &#x9;&#x9;if longestName.oclIsUndefined() &#x9;&#x9;then base &#x9;&#x9;else longestName.concat('1') &#x9;&#x9;endif  else base.concat(firstMissed)  endif "/>
+      <expressions
+          body=" let base : String = 'Interface' in  let suffixes : Sequence(String) = Sequence {'', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10'} in  let space : Namespace = self.namespace in  let allMissed : Sequence(String) = suffixes-> &#x9;select(s : String | not space.member->exists(e : NamedElement | e.name = base.concat(s)) ) in  let firstMissed : String = allMissed->first() in  let noMisses : Boolean = firstMissed.oclIsUndefined() in  let allNames : Set(String) =  &#x9;if noMisses &#x9;&#x9;then &#x9;&#x9;space.member->collect(e : NamedElement | &#x9;&#x9;&#x9;if e = self or e.name.oclIsUndefined() or e.name.substring(1, e.name.size().min(base.size())) &lt;> base &#x9;&#x9;&#x9;then '' else e.name &#x9;&#x9;&#x9;endif &#x9;&#x9;)->asSet()->excluding('') &#x9;&#x9;else Set{'not in use'} &#x9;&#x9;endif in  let longestName : String = &#x9;&#x9;if noMisses &#x9;&#x9;then allNames->select(n : String | not allNames->exists(nn : String | nn.size() > n.size()))->asSequence()->first()&#x9;&#x9;else 'not in use' &#x9;&#x9;endif &#x9;in  if noMisses then &#x9;&#x9;if longestName.oclIsUndefined() &#x9;&#x9;then base &#x9;&#x9;else longestName.concat('1') &#x9;&#x9;endif  else base.concat(firstMissed)  endif "/>
+      <expressions
+          body=" let base : String = 'InstanceSpecification' in  let suffixes : Sequence(String) = Sequence {'', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10'} in  let space : Namespace = self.namespace in  let allMissed : Sequence(String) = suffixes-> &#x9;select(s : String | not space.member->exists(e : NamedElement | e.name = base.concat(s)) ) in  let firstMissed : String = allMissed->first() in  let noMisses : Boolean = firstMissed.oclIsUndefined() in  let allNames : Set(String) =  &#x9;if noMisses &#x9;&#x9;then &#x9;&#x9;space.member->collect(e : NamedElement | &#x9;&#x9;&#x9;if e = self or e.name.oclIsUndefined() or e.name.substring(1, e.name.size().min(base.size())) &lt;> base &#x9;&#x9;&#x9;then '' else e.name &#x9;&#x9;&#x9;endif &#x9;&#x9;)->asSet()->excluding('') &#x9;&#x9;else Set{'not in use'} &#x9;&#x9;endif in  let longestName : String = &#x9;&#x9;if noMisses &#x9;&#x9;then allNames->select(n : String | not allNames->exists(nn : String | nn.size() > n.size()))->asSequence()->first()&#x9;&#x9;else 'not in use' &#x9;&#x9;endif &#x9;in  if noMisses then &#x9;&#x9;if longestName.oclIsUndefined() &#x9;&#x9;then base &#x9;&#x9;else longestName.concat('1') &#x9;&#x9;endif  else base.concat(firstMissed)  endif "/>
+      <expressions
+          body="'ValueSpecification'"/>
+      <expressions
+          xsi:type="gmfgen:GenConstraint"
+          body="not self.oclIsKindOf(uml::Usage) and not self.oclIsKindOf(uml::InterfaceRealization)"/>
+      <expressions
+          xsi:type="gmfgen:GenConstraint"
+          body="self.supplier->forAll(e|e.oclIsKindOf(uml::Interface))"/>
+      <expressions
+          xsi:type="gmfgen:GenConstraint"
+          body="self.oclIsKindOf(uml::Interface)"/>
+      <expressions
+          xsi:type="gmfgen:GenConstraint"
+          body="self.supplier->forAll(e|e.oclIsKindOf(uml::Interface)) and self.client->forAll(e|not e.oclIsKindOf(uml::Port))"/>
+      <expressions
+          xsi:type="gmfgen:GenConstraint"
+          body="not self.oclIsKindOf(uml::Port)"/>
+      <expressions
+          xsi:type="gmfgen:GenConstraint"
+          body="self.oclIsKindOf(uml::Interface)"/>
+      <expressions
+          xsi:type="gmfgen:GenConstraint"
+          body="self.oclIsKindOf(uml::Port)"/>
+      <expressions
+          xsi:type="gmfgen:GenConstraint"
+          body="self.oclIsKindOf(uml::Port)"/>
+    </providers>
   </expressionProviders>
 </gmfgen:GenEditorGenerator>
