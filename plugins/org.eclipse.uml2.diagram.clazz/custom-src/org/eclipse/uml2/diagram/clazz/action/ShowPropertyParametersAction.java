@@ -19,7 +19,7 @@ import org.eclipse.uml2.uml.Operation;
 
 public class ShowPropertyParametersAction extends DiagramAction {
 
-	public static final String ACTION_ID = "show_property_parameters_action";
+	public static final String ACTION_ID = "show_property_parameters_action";//$NON-NLS-1$
 
 	private IWorkbenchPage myWorkbechPage;
 
@@ -30,12 +30,21 @@ public class ShowPropertyParametersAction extends DiagramAction {
 	}
 
 	@Override
+	protected void doRun(IProgressMonitor progressMonitor) {
+		EditPropertyParametersDialog dialog = new EditPropertyParametersDialog(getShell(), getOperationToEdit());
+		dialog.create();
+		dialog.open();
+		execute(new RefreshEditPartCommand(getSelectedEditPart()), new NullProgressMonitor());
+	}
+
+	@Override
 	protected Request createTargetRequest() {
 		return null;
 	}
-	
+
 	@Override
 	protected Command getCommand() {
+		// return nothing because all functionality is implemented in #doRun(IProgressMonitor) method
 		return new Command("Fake Manage Property Parameters"){};
 	}
 
@@ -57,19 +66,11 @@ public class ShowPropertyParametersAction extends DiagramAction {
 		return (Operation) selected.getNotationView().getElement();
 	}
 
-	@Override
-	protected void doRun(IProgressMonitor progressMonitor) {
-		EditPropertyParametersDialog dialog = new EditPropertyParametersDialog(getShell(), getOperationToEdit());
-		dialog.create();
-		dialog.open();
-		execute(new RefreshPropertyCommand(getSelectedEditPart()), new NullProgressMonitor());
-	}
-
-	private static class RefreshPropertyCommand extends Command {
+	private static class RefreshEditPartCommand extends Command {
 
 		private GraphicalEditPart myEditPart;
 
-		public RefreshPropertyCommand(GraphicalEditPart editPart) {
+		public RefreshEditPartCommand(GraphicalEditPart editPart) {
 			super("Refresh Property Label");
 			myEditPart = editPart;
 		}
@@ -78,7 +79,7 @@ public class ShowPropertyParametersAction extends DiagramAction {
 		public void execute() {
 			// refresh PropertyEditPArt
 			myEditPart.refresh();
-			// refresh its Compartment
+			// refresh parent Compartment
 			myEditPart.getParent().refresh();
 		}
 	}
