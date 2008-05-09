@@ -84,7 +84,6 @@ public class EditPropertyParametersDialog extends TrayDialog {
 	protected Control createButtonBar(Composite parent) {
 		Control buttonSection = super.createButtonBar(parent);
 		((GridData) buttonSection.getLayoutData()).grabExcessVerticalSpace = false;
-		((GridData) buttonSection.getLayoutData()).verticalAlignment = SWT.FILL;
 		return buttonSection;
 	}
 	
@@ -103,14 +102,10 @@ public class EditPropertyParametersDialog extends TrayDialog {
 	protected Control createDialogArea(Composite parent) {
 		getShell().setText("Select Parameters for Operation");
 		Composite parentComposite = (Composite) super.createDialogArea(parent);
-		Composite contents = new Composite(parentComposite, SWT.NONE);
-		contents.setLayoutData(new GridData(SWT.FILL, SWT.FILL, true, true));
-		GridLayout layout = new GridLayout();
-		contents.setLayout(layout);
 
-		createAddRemoveButtonBar(contents);
+		createAddRemoveButtonBar(parentComposite);
 		
-		Table table = buildTable(contents);
+		Table table = buildTable(parentComposite);
 		GridData tableLayoutData = new GridData(SWT.FILL, SWT.FILL, true, true);
 		tableLayoutData.heightHint = TABLE_HEIGHT;
 		table.setLayoutData(tableLayoutData);
@@ -157,9 +152,10 @@ public class EditPropertyParametersDialog extends TrayDialog {
 	private Control createAddRemoveButtonBar(Composite parent) {
 		Composite composite = new Composite(parent, SWT.NONE);
 		GridLayout layout = new GridLayout();
+    	layout.marginWidth = 0;
+    	layout.marginHeight = 0;
+    	layout.horizontalSpacing = 0;
 		layout.numColumns = 0; // this is incremented by createButton
-		layout.horizontalSpacing = convertHorizontalDLUsToPixels(IDialogConstants.HORIZONTAL_SPACING);
-		layout.verticalSpacing = convertVerticalDLUsToPixels(IDialogConstants.VERTICAL_SPACING);
 		composite.setLayout(layout);
 		final GridData data = new GridData(SWT.END, SWT.BEGINNING, false, false);
 		composite.setLayoutData(data);
@@ -194,7 +190,7 @@ public class EditPropertyParametersDialog extends TrayDialog {
 			public void widgetSelected(SelectionEvent e) {
 				Parameter newParameter = UMLFactory.eINSTANCE.createParameter();
 				newParameter.setName("Parameter");
-				LiteralString defValue = (LiteralString)newParameter.createDefaultValue(null, null, UMLPackage.eINSTANCE.getLiteralString());
+				newParameter.createDefaultValue(null, null, UMLPackage.eINSTANCE.getLiteralString());
 				myOperation.getOwnedParameters().add(newParameter);
 				myTableViewer.refresh();
 				myTableViewer.getControl().setFocus();

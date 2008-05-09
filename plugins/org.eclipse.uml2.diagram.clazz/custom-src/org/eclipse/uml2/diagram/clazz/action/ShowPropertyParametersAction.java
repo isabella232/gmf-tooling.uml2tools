@@ -14,7 +14,6 @@ import org.eclipse.uml2.uml.Operation;
 /*
  * TODO :
  * - old to new property parameters merge(probably in accordance with the name)
- * - dialog layout (align buttons and the table to the right) 
  * - make action totally undoable (now only label refresh can be undone)
  */
 
