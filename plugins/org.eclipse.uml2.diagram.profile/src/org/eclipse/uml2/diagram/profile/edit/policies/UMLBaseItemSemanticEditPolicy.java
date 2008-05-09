@@ -337,18 +337,7 @@ public class UMLBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 		/**
 		 * @generated
 		 */
-		private static final UMLAbstractExpression Extension_4002_TargetExpression;
-
-		/**
-		 * @generated
-		 */
-		static {
-			Map env = new HashMap(3);
-			env.put(OPPOSITE_END_VAR, UMLPackage.eINSTANCE.getStereotype());
-			Extension_4002_TargetExpression = UMLOCLFactory
-					.getExpression(
-							"let metaclass : Class = self.importedElement.oclAsType(Class) in\r\nmetaclass.isMetaclass() and \r\nnot oppositeEnd.getAllExtendedMetaclasses()->includes(metaclass)\r\n", UMLPackage.eINSTANCE.getElementImport(), env); //$NON-NLS-1$
-		}
+		private static UMLAbstractExpression Extension_4002_TargetExpression;
 
 		/**
 		 * @generated
@@ -368,6 +357,7 @@ public class UMLBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 		 * @generated
 		 */
 		public static boolean canExistGeneralization_4001(Classifier source, Classifier target) {
+
 			return true;
 		}
 
@@ -375,23 +365,21 @@ public class UMLBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 		 * @generated
 		 */
 		public static boolean canExistExtension_4002(Package container, Stereotype source, ElementImport target) {
-			if (!evaluate(Extension_4002_TargetExpression, target, source, true)) {
-				return false;
-			}
-			return true;
-		}
-
-		/**
-		 * @generated
-		 */
-		private static boolean evaluate(UMLAbstractExpression constraint, Object sourceEnd, Object oppositeEnd, boolean clearEnv) {
-			if (sourceEnd == null) {
-				return true;
-			}
-			Map evalEnv = Collections.singletonMap(OPPOSITE_END_VAR, oppositeEnd);
 			try {
-				Object val = constraint.evaluate(sourceEnd, evalEnv);
-				return (val instanceof Boolean) ? ((Boolean) val).booleanValue() : false;
+				if (target == null) {
+					return true;
+				}
+				if (Extension_4002_TargetExpression == null) {
+					Map env = Collections.singletonMap(OPPOSITE_END_VAR, UMLPackage.eINSTANCE.getStereotype());
+					Extension_4002_TargetExpression = UMLOCLFactory
+							.getExpression(
+									"let metaclass : Class = self.importedElement.oclAsType(Class) in\r\nmetaclass.isMetaclass() and \r\nnot oppositeEnd.getAllExtendedMetaclasses()->includes(metaclass)\r\n", UMLPackage.eINSTANCE.getElementImport(), env); //$NON-NLS-1$
+				}
+				Object targetVal = Extension_4002_TargetExpression.evaluate(target, Collections.singletonMap(OPPOSITE_END_VAR, source));
+				if (false == targetVal instanceof Boolean || !((Boolean) targetVal).booleanValue()) {
+					return false;
+				} // else fall-through
+				return true;
 			} catch (Exception e) {
 				UMLDiagramEditorPlugin.getInstance().logError("Link constraint evaluation error", e); //$NON-NLS-1$
 				return false;

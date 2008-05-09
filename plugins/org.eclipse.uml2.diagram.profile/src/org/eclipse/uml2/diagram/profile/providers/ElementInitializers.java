@@ -32,11 +32,11 @@ public class ElementInitializers {
 	 */
 	public static void init_Stereotype_2001(Stereotype instance) {
 		try {
-			UMLOCLFactory
+			Object value0 = UMLOCLFactory
 					.getExpression(
 							"let base : String = \'Stereotype\' in \r\nlet suffixes : Sequence(String) = Sequence {\'\', \'1\', \'2\', \'3\', \'4\', \'5\', \'6\', \'7\', \'8\', \'9\', \'10\'} in  \r\nlet space : Namespace = self.namespace in  \r\nlet allMissed : Sequence(String) = suffixes-> \t\r\n     select(s : String | not space.member->\r\n          exists(e : NamedElement | e.name = base.concat(s)) \r\n     ) in  \r\nlet firstMissed : String = allMissed->first() in  \r\nlet noMisses : Boolean = firstMissed.oclIsUndefined() in  \r\nlet allNames : Set(String) =  \t\r\nif noMisses \r\nthen\r\n    space.member->collect(e : NamedElement | \t\t\t\r\n         if e = self or e.name.oclIsUndefined() or e.name.substring(1, e.name.size().min(base.size())) <> base \t\t\t\r\n         then \'\' \r\n         else e.name \t\t\t\r\n         endif\r\n    )->asSet()->excluding(\'\') \t\t\r\nelse Set{\'not in use\'} \t\t\r\nendif in  \r\nlet longestName : String = \t\t\r\n   if noMisses \t\t\r\n   then allNames->select(n : String | not allNames->exists(nn : String | nn.size() > n.size()))->asSequence()->first()\r\n   else \'not in use\' \t\t\r\n   endif \t\r\nin  \r\nif noMisses then \t\t\r\n   if longestName.oclIsUndefined() \r\n   then base \t\t\r\n   else longestName.concat(\'1\') \r\n   endif  \r\nelse \r\nbase.concat(firstMissed)  \r\nendif ",
-							UMLPackage.eINSTANCE.getStereotype()).assignTo(UMLPackage.eINSTANCE.getNamedElement_Name(), instance);
-
+							UMLPackage.eINSTANCE.getStereotype()).evaluate(instance);
+			instance.setName((String) value0);
 		} catch (RuntimeException e) {
 			UMLDiagramEditorPlugin.getInstance().logError("Element initialization failed", e); //$NON-NLS-1$						
 		}
@@ -47,11 +47,11 @@ public class ElementInitializers {
 	 */
 	public static void init_Profile_2002(Profile instance) {
 		try {
-			UMLOCLFactory
+			Object value0 = UMLOCLFactory
 					.getExpression(
 							"let base : String = \'profile\' in  let suffixes : Sequence(String) = Sequence {\'\', \'1\', \'2\', \'3\', \'4\', \'5\', \'6\', \'7\', \'8\', \'9\', \'10\'} in  let space : Namespace = self.namespace in  let allMissed : Sequence(String) = suffixes-> \tselect(s : String | not space.member->exists(e : NamedElement | e.name = base.concat(s)) ) in  let firstMissed : String = allMissed->first() in  let noMisses : Boolean = firstMissed.oclIsUndefined() in  let allNames : Set(String) =  \tif noMisses \t\tthen \t\tspace.member->collect(e : NamedElement | \t\t\tif e = self or e.name.oclIsUndefined() or e.name.substring(1, e.name.size().min(base.size())) <> base \t\t\tthen \'\' else e.name \t\t\tendif \t\t)->asSet()->excluding(\'\') \t\telse Set{\'not in use\'} \t\tendif in  let longestName : String = \t\tif noMisses \t\tthen allNames->select(n : String | not allNames->exists(nn : String | nn.size() > n.size()))->asSequence()->first()\t\telse \'not in use\' \t\tendif \tin  if noMisses then \t\tif longestName.oclIsUndefined() \t\tthen base \t\telse longestName.concat(\'1\') \t\tendif  else base.concat(firstMissed)  endif ",
-							UMLPackage.eINSTANCE.getProfile()).assignTo(UMLPackage.eINSTANCE.getNamedElement_Name(), instance);
-
+							UMLPackage.eINSTANCE.getProfile()).evaluate(instance);
+			instance.setName((String) value0);
 		} catch (RuntimeException e) {
 			UMLDiagramEditorPlugin.getInstance().logError("Element initialization failed", e); //$NON-NLS-1$						
 		}
@@ -62,11 +62,11 @@ public class ElementInitializers {
 	 */
 	public static void init_Enumeration_2003(Enumeration instance) {
 		try {
-			UMLOCLFactory
+			Object value0 = UMLOCLFactory
 					.getExpression(
 							" let base : String = \'enumeration\' in  let suffixes : Sequence(String) = Sequence {\'\', \'1\', \'2\', \'3\', \'4\', \'5\', \'6\', \'7\', \'8\', \'9\', \'10\'} in  let space : Namespace = self.namespace in  let allMissed : Sequence(String) = suffixes-> \tselect(s : String | not space.member->exists(e : NamedElement | e.name = base.concat(s)) ) in  let firstMissed : String = allMissed->first() in  let noMisses : Boolean = firstMissed.oclIsUndefined() in  let allNames : Set(String) =  \tif noMisses \t\tthen \t\tspace.member->collect(e : NamedElement | \t\t\tif e = self or e.name.oclIsUndefined() or e.name.substring(1, e.name.size().min(base.size())) <> base \t\t\tthen \'\' else e.name \t\t\tendif \t\t)->asSet()->excluding(\'\') \t\telse Set{\'not in use\'} \t\tendif in  let longestName : String = \t\tif noMisses \t\tthen allNames->select(n : String | not allNames->exists(nn : String | nn.size() > n.size()))->asSequence()->first()\t\telse \'not in use\' \t\tendif \tin  if noMisses then \t\tif longestName.oclIsUndefined() \t\tthen base \t\telse longestName.concat(\'1\') \t\tendif  else base.concat(firstMissed)  endif ",
-							UMLPackage.eINSTANCE.getEnumeration()).assignTo(UMLPackage.eINSTANCE.getNamedElement_Name(), instance);
-
+							UMLPackage.eINSTANCE.getEnumeration()).evaluate(instance);
+			instance.setName((String) value0);
 		} catch (RuntimeException e) {
 			UMLDiagramEditorPlugin.getInstance().logError("Element initialization failed", e); //$NON-NLS-1$						
 		}
@@ -77,11 +77,11 @@ public class ElementInitializers {
 	 */
 	public static void init_Property_3001(Property instance) {
 		try {
-			UMLOCLFactory
+			Object value0 = UMLOCLFactory
 					.getExpression(
 							"let base : String = \'property\' in  let suffixes : Sequence(String) = Sequence {\'\', \'1\', \'2\', \'3\', \'4\', \'5\', \'6\', \'7\', \'8\', \'9\', \'10\'} in  let space : Namespace = self.namespace in  let allMissed : Sequence(String) = suffixes-> \tselect(s : String | not space.member->exists(e : NamedElement | e.name = base.concat(s)) ) in  let firstMissed : String = allMissed->first() in  let noMisses : Boolean = firstMissed.oclIsUndefined() in  let allNames : Set(String) =  \tif noMisses \t\tthen \t\tspace.member->collect(e : NamedElement | \t\t\tif e = self or e.name.oclIsUndefined() or e.name.substring(1, e.name.size().min(base.size())) <> base \t\t\tthen \'\' else e.name \t\t\tendif \t\t)->asSet()->excluding(\'\') \t\telse Set{\'not in use\'} \t\tendif in  let longestName : String = \t\tif noMisses \t\tthen allNames->select(n : String | not allNames->exists(nn : String | nn.size() > n.size()))->asSequence()->first()\t\telse \'not in use\' \t\tendif \tin  if noMisses then \t\tif longestName.oclIsUndefined() \t\tthen base \t\telse longestName.concat(\'1\') \t\tendif  else base.concat(firstMissed)  endif ",
-							UMLPackage.eINSTANCE.getProperty()).assignTo(UMLPackage.eINSTANCE.getNamedElement_Name(), instance);
-
+							UMLPackage.eINSTANCE.getProperty()).evaluate(instance);
+			instance.setName((String) value0);
 		} catch (RuntimeException e) {
 			UMLDiagramEditorPlugin.getInstance().logError("Element initialization failed", e); //$NON-NLS-1$						
 		}
@@ -92,11 +92,11 @@ public class ElementInitializers {
 	 */
 	public static void init_Constraint_3008(Constraint instance) {
 		try {
-			UMLOCLFactory
+			Object value0 = UMLOCLFactory
 					.getExpression(
 							"let base : String = \'constraint\' in  let suffixes : Sequence(String) = Sequence {\'\', \'1\', \'2\', \'3\', \'4\', \'5\', \'6\', \'7\', \'8\', \'9\', \'10\'} in  let space : Namespace = self.namespace in  let allMissed : Sequence(String) = suffixes-> \tselect(s : String | not space.member->exists(e : NamedElement | e.name = base.concat(s)) ) in  let firstMissed : String = allMissed->first() in  let noMisses : Boolean = firstMissed.oclIsUndefined() in  let allNames : Set(String) =  \tif noMisses \t\tthen \t\tspace.member->collect(e : NamedElement | \t\t\tif e = self or e.name.oclIsUndefined() or e.name.substring(1, e.name.size().min(base.size())) <> base \t\t\tthen \'\' else e.name \t\t\tendif \t\t)->asSet()->excluding(\'\') \t\telse Set{\'not in use\'} \t\tendif in  let longestName : String = \t\tif noMisses \t\tthen allNames->select(n : String | not allNames->exists(nn : String | nn.size() > n.size()))->asSequence()->first()\t\telse \'not in use\' \t\tendif \tin  if noMisses then \t\tif longestName.oclIsUndefined() \t\tthen base \t\telse longestName.concat(\'1\') \t\tendif  else base.concat(firstMissed)  endif ",
-							UMLPackage.eINSTANCE.getConstraint()).assignTo(UMLPackage.eINSTANCE.getNamedElement_Name(), instance);
-
+							UMLPackage.eINSTANCE.getConstraint()).evaluate(instance);
+			instance.setName((String) value0);
 		} catch (RuntimeException e) {
 			UMLDiagramEditorPlugin.getInstance().logError("Element initialization failed", e); //$NON-NLS-1$						
 		}
@@ -107,11 +107,11 @@ public class ElementInitializers {
 	 */
 	public static void init_Stereotype_3003(Stereotype instance) {
 		try {
-			UMLOCLFactory
+			Object value0 = UMLOCLFactory
 					.getExpression(
 							"let base : String = \'stereotype\' in  let suffixes : Sequence(String) = Sequence {\'\', \'1\', \'2\', \'3\', \'4\', \'5\', \'6\', \'7\', \'8\', \'9\', \'10\'} in  let space : Namespace = self.namespace in  let allMissed : Sequence(String) = suffixes-> \tselect(s : String | not space.member->exists(e : NamedElement | e.name = base.concat(s)) ) in  let firstMissed : String = allMissed->first() in  let noMisses : Boolean = firstMissed.oclIsUndefined() in  let allNames : Set(String) =  \tif noMisses \t\tthen \t\tspace.member->collect(e : NamedElement | \t\t\tif e = self or e.name.oclIsUndefined() or e.name.substring(1, e.name.size().min(base.size())) <> base \t\t\tthen \'\' else e.name \t\t\tendif \t\t)->asSet()->excluding(\'\') \t\telse Set{\'not in use\'} \t\tendif in  let longestName : String = \t\tif noMisses \t\tthen allNames->select(n : String | not allNames->exists(nn : String | nn.size() > n.size()))->asSequence()->first()\t\telse \'not in use\' \t\tendif \tin  if noMisses then \t\tif longestName.oclIsUndefined() \t\tthen base \t\telse longestName.concat(\'1\') \t\tendif  else base.concat(firstMissed)  endif ",
-							UMLPackage.eINSTANCE.getStereotype()).assignTo(UMLPackage.eINSTANCE.getNamedElement_Name(), instance);
-
+							UMLPackage.eINSTANCE.getStereotype()).evaluate(instance);
+			instance.setName((String) value0);
 		} catch (RuntimeException e) {
 			UMLDiagramEditorPlugin.getInstance().logError("Element initialization failed", e); //$NON-NLS-1$						
 		}
@@ -122,11 +122,11 @@ public class ElementInitializers {
 	 */
 	public static void init_EnumerationLiteral_3005(EnumerationLiteral instance) {
 		try {
-			UMLOCLFactory
+			Object value0 = UMLOCLFactory
 					.getExpression(
 							" let base : String = \'enumerationLiteral\' in  let suffixes : Sequence(String) = Sequence {\'\', \'1\', \'2\', \'3\', \'4\', \'5\', \'6\', \'7\', \'8\', \'9\', \'10\'} in  let space : Namespace = self.namespace in  let allMissed : Sequence(String) = suffixes-> \tselect(s : String | not space.member->exists(e : NamedElement | e.name = base.concat(s)) ) in  let firstMissed : String = allMissed->first() in  let noMisses : Boolean = firstMissed.oclIsUndefined() in  let allNames : Set(String) =  \tif noMisses \t\tthen \t\tspace.member->collect(e : NamedElement | \t\t\tif e = self or e.name.oclIsUndefined() or e.name.substring(1, e.name.size().min(base.size())) <> base \t\t\tthen \'\' else e.name \t\t\tendif \t\t)->asSet()->excluding(\'\') \t\telse Set{\'not in use\'} \t\tendif in  let longestName : String = \t\tif noMisses \t\tthen allNames->select(n : String | not allNames->exists(nn : String | nn.size() > n.size()))->asSequence()->first()\t\telse \'not in use\' \t\tendif \tin  if noMisses then \t\tif longestName.oclIsUndefined() \t\tthen base \t\telse longestName.concat(\'1\') \t\tendif  else base.concat(firstMissed)  endif ",
-							UMLPackage.eINSTANCE.getEnumerationLiteral()).assignTo(UMLPackage.eINSTANCE.getNamedElement_Name(), instance);
-
+							UMLPackage.eINSTANCE.getEnumerationLiteral()).evaluate(instance);
+			instance.setName((String) value0);
 		} catch (RuntimeException e) {
 			UMLDiagramEditorPlugin.getInstance().logError("Element initialization failed", e); //$NON-NLS-1$						
 		}

@@ -31,7 +31,10 @@ import org.eclipse.uml2.diagram.profile.edit.parts.StereotypeEditPart;
 import org.eclipse.uml2.diagram.profile.edit.parts.StereotypeNameEditPart;
 import org.eclipse.uml2.diagram.profile.expressions.UMLAbstractExpression;
 import org.eclipse.uml2.diagram.profile.expressions.UMLOCLFactory;
+import org.eclipse.uml2.uml.ElementImport;
 import org.eclipse.uml2.uml.Profile;
+import org.eclipse.uml2.uml.Property;
+import org.eclipse.uml2.uml.Stereotype;
 import org.eclipse.uml2.uml.UMLPackage;
 
 /**
@@ -46,32 +49,27 @@ public class UMLVisualIDRegistry {
 	/**
 	 * @generated
 	 */
-	private static final String DEBUG_KEY = UMLDiagramEditorPlugin.getInstance().getBundle().getSymbolicName() + "/debug/visualID"; //$NON-NLS-1$
+	private static final String DEBUG_KEY = "org.eclipse.uml2.diagram.profile/debug/visualID"; //$NON-NLS-1$
 
 	/**
 	 * @generated
 	 */
-	private static final UMLAbstractExpression Stereotype_2001_Constraint = UMLOCLFactory.getExpression(
-			"generalization.general->forAll(e | e.oclIsKindOf(uml::Stereotype)) and\r\ngeneralization.specific->forAll(e | e.oclIsKindOf(uml::Stereotype))", UMLPackage.eINSTANCE.getStereotype());
+	private static UMLAbstractExpression Stereotype_2001_Constraint;
 
 	/**
 	 * @generated
 	 */
-	private static final UMLAbstractExpression ElementImport_2006_Constraint = UMLOCLFactory.getExpression(
-			"self.importedElement.oclIsUndefined() or self.importedElement.oclAsType(uml::Class).isMetaclass()", UMLPackage.eINSTANCE.getElementImport());
+	private static UMLAbstractExpression ElementImport_2006_Constraint;
 
 	/**
 	 * @generated
 	 */
-	private static final UMLAbstractExpression Property_3001_Constraint = UMLOCLFactory.getExpression("self.association.oclIsUndefined() or not self.association.oclIsKindOf(uml::Extension)",
-			UMLPackage.eINSTANCE.getProperty());
+	private static UMLAbstractExpression Property_3001_Constraint;
 
 	/**
 	 * @generated
 	 */
-	private static final UMLAbstractExpression ElementImport_3009_Constraint = UMLOCLFactory.getExpression(
-			"let imported : NamedElement = self.importedElement in \r\nimported.oclIsUndefined() or not imported.oclIsKindOf(Class) or not imported.oclAsType(Class).isMetaclass()\r\n",
-			UMLPackage.eINSTANCE.getElementImport());
+	private static UMLAbstractExpression ElementImport_3009_Constraint;
 
 	/**
 	 * @generated
@@ -159,7 +157,7 @@ public class UMLVisualIDRegistry {
 		}
 		switch (containerVisualID) {
 		case StereotypeAttributesEditPart.VISUAL_ID:
-			if (UMLPackage.eINSTANCE.getProperty().isSuperTypeOf(domainElement.eClass()) && evaluate(Property_3001_Constraint, domainElement)) {
+			if (UMLPackage.eINSTANCE.getProperty().isSuperTypeOf(domainElement.eClass()) && isProperty_3001((Property) domainElement)) {
 				return PropertyEditPart.VISUAL_ID;
 			}
 			break;
@@ -179,7 +177,7 @@ public class UMLVisualIDRegistry {
 			}
 			break;
 		case ProfileProfileLabelsEditPart.VISUAL_ID:
-			if (UMLPackage.eINSTANCE.getElementImport().isSuperTypeOf(domainElement.eClass()) && evaluate(ElementImport_3009_Constraint, domainElement)) {
+			if (UMLPackage.eINSTANCE.getElementImport().isSuperTypeOf(domainElement.eClass()) && isElementImport_3009((ElementImport) domainElement)) {
 				return ElementImport2EditPart.VISUAL_ID;
 			}
 			break;
@@ -192,7 +190,7 @@ public class UMLVisualIDRegistry {
 			if (containerView instanceof Diagram && domainElement != null && domainElement.equals(containerView.getElement())) {
 				return Profile3EditPart.VISUAL_ID;
 			}
-			if (UMLPackage.eINSTANCE.getStereotype().isSuperTypeOf(domainElement.eClass()) && evaluate(Stereotype_2001_Constraint, domainElement)) {
+			if (UMLPackage.eINSTANCE.getStereotype().isSuperTypeOf(domainElement.eClass()) && isStereotype_2001((Stereotype) domainElement)) {
 				return StereotypeEditPart.VISUAL_ID;
 			}
 			if (UMLPackage.eINSTANCE.getProfile().isSuperTypeOf(domainElement.eClass())) {
@@ -201,7 +199,7 @@ public class UMLVisualIDRegistry {
 			if (UMLPackage.eINSTANCE.getEnumeration().isSuperTypeOf(domainElement.eClass())) {
 				return EnumerationEditPart.VISUAL_ID;
 			}
-			if (UMLPackage.eINSTANCE.getElementImport().isSuperTypeOf(domainElement.eClass()) && evaluate(ElementImport_2006_Constraint, domainElement)) {
+			if (UMLPackage.eINSTANCE.getElementImport().isSuperTypeOf(domainElement.eClass()) && isElementImport_2006((ElementImport) domainElement)) {
 				return ElementImportEditPart.VISUAL_ID;
 			}
 			// Diagram header is already processed above
@@ -349,8 +347,49 @@ public class UMLVisualIDRegistry {
 	/**
 	 * @generated
 	 */
-	private static boolean evaluate(UMLAbstractExpression expression, Object element) {
-		Object result = expression.evaluate(element);
+	private static boolean isStereotype_2001(Stereotype domainElement) {
+		if (Stereotype_2001_Constraint == null) { // lazy initialization
+			Stereotype_2001_Constraint = UMLOCLFactory
+					.getExpression(
+							"generalization.general->forAll(e | e.oclIsKindOf(uml::Stereotype)) and\r\ngeneralization.specific->forAll(e | e.oclIsKindOf(uml::Stereotype))", UMLPackage.eINSTANCE.getStereotype()); //$NON-NLS-1$
+		}
+		Object result = Stereotype_2001_Constraint.evaluate(domainElement);
+		return result instanceof Boolean && ((Boolean) result).booleanValue();
+	}
+
+	/**
+	 * @generated
+	 */
+	private static boolean isElementImport_2006(ElementImport domainElement) {
+		if (ElementImport_2006_Constraint == null) { // lazy initialization
+			ElementImport_2006_Constraint = UMLOCLFactory.getExpression(
+					"self.importedElement.oclIsUndefined() or self.importedElement.oclAsType(uml::Class).isMetaclass()", UMLPackage.eINSTANCE.getElementImport()); //$NON-NLS-1$
+		}
+		Object result = ElementImport_2006_Constraint.evaluate(domainElement);
+		return result instanceof Boolean && ((Boolean) result).booleanValue();
+	}
+
+	/**
+	 * @generated
+	 */
+	private static boolean isProperty_3001(Property domainElement) {
+		if (Property_3001_Constraint == null) { // lazy initialization
+			Property_3001_Constraint = UMLOCLFactory.getExpression("self.association.oclIsUndefined() or not self.association.oclIsKindOf(uml::Extension)", UMLPackage.eINSTANCE.getProperty()); //$NON-NLS-1$
+		}
+		Object result = Property_3001_Constraint.evaluate(domainElement);
+		return result instanceof Boolean && ((Boolean) result).booleanValue();
+	}
+
+	/**
+	 * @generated
+	 */
+	private static boolean isElementImport_3009(ElementImport domainElement) {
+		if (ElementImport_3009_Constraint == null) { // lazy initialization
+			ElementImport_3009_Constraint = UMLOCLFactory
+					.getExpression(
+							"let imported : NamedElement = self.importedElement in \r\nimported.oclIsUndefined() or not imported.oclIsKindOf(Class) or not imported.oclAsType(Class).isMetaclass()\r\n", UMLPackage.eINSTANCE.getElementImport()); //$NON-NLS-1$
+		}
+		Object result = ElementImport_3009_Constraint.evaluate(domainElement);
 		return result instanceof Boolean && ((Boolean) result).booleanValue();
 	}
 
