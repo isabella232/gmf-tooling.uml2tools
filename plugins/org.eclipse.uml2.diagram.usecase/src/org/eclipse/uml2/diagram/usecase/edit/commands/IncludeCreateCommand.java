@@ -89,7 +89,6 @@ public class IncludeCreateCommand extends CreateElementCommand {
 		getContainer().getIncludes().add(newElement);
 		newElement.setIncludingCase(getSource());
 		newElement.setAddition(getTarget());
-
 		return newElement;
 	}
 

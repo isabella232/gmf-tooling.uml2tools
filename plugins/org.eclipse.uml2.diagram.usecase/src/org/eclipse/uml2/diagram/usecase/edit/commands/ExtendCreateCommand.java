@@ -89,7 +89,6 @@ public class ExtendCreateCommand extends CreateElementCommand {
 		getContainer().getExtends().add(newElement);
 		newElement.setExtension(getSource());
 		newElement.setExtendedCase(getTarget());
-
 		return newElement;
 	}
 

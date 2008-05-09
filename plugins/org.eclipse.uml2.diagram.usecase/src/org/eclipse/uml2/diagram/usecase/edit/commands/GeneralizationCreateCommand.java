@@ -89,7 +89,6 @@ public class GeneralizationCreateCommand extends CreateElementCommand {
 		getContainer().getGeneralizations().add(newElement);
 		newElement.setSpecific(getSource());
 		newElement.setGeneral(getTarget());
-
 		return newElement;
 	}
 
