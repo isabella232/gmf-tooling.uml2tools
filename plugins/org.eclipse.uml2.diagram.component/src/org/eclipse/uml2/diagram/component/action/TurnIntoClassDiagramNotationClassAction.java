@@ -12,8 +12,14 @@ import org.eclipse.uml2.diagram.component.part.UMLVisualIDRegistry;
  */
 public class TurnIntoClassDiagramNotationClassAction extends ChangeNotationAction {
 
+	/**
+	 * @generated
+	 */
 	public static final String ACTION_ID = "set_ClassDiagramNotationClass_notation"; //$NON-NLS-1$
 
+	/**
+	 * @generated
+	 */
 	private static final int NEW_VID = ClassDiagramNotationClassEditPart.VISUAL_ID;
 
 	/**
