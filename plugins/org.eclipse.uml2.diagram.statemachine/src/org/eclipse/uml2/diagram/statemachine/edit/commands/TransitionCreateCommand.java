@@ -90,7 +90,6 @@ public class TransitionCreateCommand extends CreateElementCommand {
 		getContainer().getTransitions().add(newElement);
 		newElement.setSource(getSource());
 		newElement.setTarget(getTarget());
-
 		return newElement;
 	}
 
