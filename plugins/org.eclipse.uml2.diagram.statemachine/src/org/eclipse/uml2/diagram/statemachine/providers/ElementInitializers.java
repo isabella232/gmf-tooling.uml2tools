@@ -16,6 +16,7 @@ import org.eclipse.uml2.diagram.statemachine.part.UMLDiagramEditorPlugin;
 
 import org.eclipse.uml2.uml.ConnectionPointReference;
 import org.eclipse.uml2.uml.Pseudostate;
+import org.eclipse.uml2.uml.PseudostateKind;
 import org.eclipse.uml2.uml.Region;
 import org.eclipse.uml2.uml.State;
 import org.eclipse.uml2.uml.UMLFactory;
@@ -31,11 +32,11 @@ public class ElementInitializers {
 	 */
 	public static void init_State_3001(State instance) {
 		try {
-			UMLOCLFactory
+			Object value0 = UMLOCLFactory
 					.getExpression(
 							" let base : String = \'State\' in  let suffixes : Sequence(String) = Sequence {\'\', \'1\', \'2\', \'3\', \'4\', \'5\', \'6\', \'7\', \'8\', \'9\', \'10\'} in  let space : Namespace = self.namespace in  let allMissed : Sequence(String) = suffixes-> \tselect(s : String | not space.member->exists(e : NamedElement | e.name = base.concat(s)) ) in  let firstMissed : String = allMissed->first() in  let noMisses : Boolean = firstMissed.oclIsUndefined() in  let allNames : Set(String) =  \tif noMisses \t\tthen \t\tspace.member->collect(e : NamedElement | \t\t\tif e = self or e.name.oclIsUndefined() or e.name.substring(1, e.name.size().min(base.size())) <> base \t\t\tthen \'\' else e.name \t\t\tendif \t\t)->asSet()->excluding(\'\') \t\telse Set{\'not in use\'} \t\tendif in  let longestName : String = \t\tif noMisses \t\tthen allNames->select(n : String | not allNames->exists(nn : String | nn.size() > n.size()))->asSequence()->first()\t\telse \'not in use\' \t\tendif \tin  if noMisses then \t\tif longestName.oclIsUndefined() \t\tthen base \t\telse longestName.concat(\'1\') \t\tendif  else base.concat(firstMissed)  endif ",
-							UMLPackage.eINSTANCE.getState()).assignTo(UMLPackage.eINSTANCE.getNamedElement_Name(), instance);
-
+							UMLPackage.eINSTANCE.getState()).evaluate(instance);
+			instance.setName((String) value0);
 		} catch (RuntimeException e) {
 			UMLDiagramEditorPlugin.getInstance().logError("Element initialization failed", e); //$NON-NLS-1$						
 		}
@@ -46,19 +47,20 @@ public class ElementInitializers {
 	 */
 	public static void init_State_3012(State instance) {
 		try {
-			UMLOCLFactory
+			Object value0 = UMLOCLFactory
 					.getExpression(
 							" let base : String = \'State\' in  let suffixes : Sequence(String) = Sequence {\'\', \'1\', \'2\', \'3\', \'4\', \'5\', \'6\', \'7\', \'8\', \'9\', \'10\'} in  let space : Namespace = self.namespace in  let allMissed : Sequence(String) = suffixes-> \tselect(s : String | not space.member->exists(e : NamedElement | e.name = base.concat(s)) ) in  let firstMissed : String = allMissed->first() in  let noMisses : Boolean = firstMissed.oclIsUndefined() in  let allNames : Set(String) =  \tif noMisses \t\tthen \t\tspace.member->collect(e : NamedElement | \t\t\tif e = self or e.name.oclIsUndefined() or e.name.substring(1, e.name.size().min(base.size())) <> base \t\t\tthen \'\' else e.name \t\t\tendif \t\t)->asSet()->excluding(\'\') \t\telse Set{\'not in use\'} \t\tendif in  let longestName : String = \t\tif noMisses \t\tthen allNames->select(n : String | not allNames->exists(nn : String | nn.size() > n.size()))->asSequence()->first()\t\telse \'not in use\' \t\tendif \tin  if noMisses then \t\tif longestName.oclIsUndefined() \t\tthen base \t\telse longestName.concat(\'1\') \t\tendif  else base.concat(firstMissed)  endif ",
-							UMLPackage.eINSTANCE.getState()).assignTo(UMLPackage.eINSTANCE.getNamedElement_Name(), instance);
+							UMLPackage.eINSTANCE.getState()).evaluate(instance);
+			instance.setName((String) value0);
 
 			Region newInstance1 = UMLFactory.eINSTANCE.createRegion();
 
 			instance.getRegions().add(newInstance1);
-			UMLOCLFactory
+			Object value200 = UMLOCLFactory
 					.getExpression(
 							" let base : String = \'Region\' in  let suffixes : Sequence(String) = Sequence {\'\', \'1\', \'2\', \'3\', \'4\', \'5\', \'6\', \'7\', \'8\', \'9\', \'10\'} in  let space : Namespace = self.namespace in  let allMissed : Sequence(String) = suffixes-> \tselect(s : String | not space.member->exists(e : NamedElement | e.name = base.concat(s)) ) in  let firstMissed : String = allMissed->first() in  let noMisses : Boolean = firstMissed.oclIsUndefined() in  let allNames : Set(String) =  \tif noMisses \t\tthen \t\tspace.member->collect(e : NamedElement | \t\t\tif e = self or e.name.oclIsUndefined() or e.name.substring(1, e.name.size().min(base.size())) <> base \t\t\tthen \'\' else e.name \t\t\tendif \t\t)->asSet()->excluding(\'\') \t\telse Set{\'not in use\'} \t\tendif in  let longestName : String = \t\tif noMisses \t\tthen allNames->select(n : String | not allNames->exists(nn : String | nn.size() > n.size()))->asSequence()->first()\t\telse \'not in use\' \t\tendif \tin  if noMisses then \t\tif longestName.oclIsUndefined() \t\tthen base \t\telse longestName.concat(\'1\') \t\tendif  else base.concat(firstMissed)  endif ",
-							UMLPackage.eINSTANCE.getRegion()).assignTo(UMLPackage.eINSTANCE.getNamedElement_Name(), newInstance1);
-
+							UMLPackage.eINSTANCE.getRegion()).evaluate(newInstance1);
+			newInstance1.setName((String) value200);
 		} catch (RuntimeException e) {
 			UMLDiagramEditorPlugin.getInstance().logError("Element initialization failed", e); //$NON-NLS-1$						
 		}
@@ -69,11 +71,11 @@ public class ElementInitializers {
 	 */
 	public static void init_State_3016(State instance) {
 		try {
-			UMLOCLFactory
+			Object value0 = UMLOCLFactory
 					.getExpression(
 							" let base : String = \'SubmachineState\' in  let suffixes : Sequence(String) = Sequence {\'\', \'1\', \'2\', \'3\', \'4\', \'5\', \'6\', \'7\', \'8\', \'9\', \'10\'} in  let space : Namespace = self.namespace in  let allMissed : Sequence(String) = suffixes-> \tselect(s : String | not space.member->exists(e : NamedElement | e.name = base.concat(s)) ) in  let firstMissed : String = allMissed->first() in  let noMisses : Boolean = firstMissed.oclIsUndefined() in  let allNames : Set(String) =  \tif noMisses \t\tthen \t\tspace.member->collect(e : NamedElement | \t\t\tif e = self or e.name.oclIsUndefined() or e.name.substring(1, e.name.size().min(base.size())) <> base \t\t\tthen \'\' else e.name \t\t\tendif \t\t)->asSet()->excluding(\'\') \t\telse Set{\'not in use\'} \t\tendif in  let longestName : String = \t\tif noMisses \t\tthen allNames->select(n : String | not allNames->exists(nn : String | nn.size() > n.size()))->asSequence()->first()\t\telse \'not in use\' \t\tendif \tin  if noMisses then \t\tif longestName.oclIsUndefined() \t\tthen base \t\telse longestName.concat(\'1\') \t\tendif  else base.concat(firstMissed)  endif ",
-							UMLPackage.eINSTANCE.getState()).assignTo(UMLPackage.eINSTANCE.getNamedElement_Name(), instance);
-
+							UMLPackage.eINSTANCE.getState()).evaluate(instance);
+			instance.setName((String) value0);
 		} catch (RuntimeException e) {
 			UMLDiagramEditorPlugin.getInstance().logError("Element initialization failed", e); //$NON-NLS-1$						
 		}
@@ -84,11 +86,11 @@ public class ElementInitializers {
 	 */
 	public static void init_ConnectionPointReference_3017(ConnectionPointReference instance) {
 		try {
-			UMLOCLFactory
+			Object value0 = UMLOCLFactory
 					.getExpression(
 							" let base : String = \'EntryPointConnectionPointReference\' in  let suffixes : Sequence(String) = Sequence {\'\', \'1\', \'2\', \'3\', \'4\', \'5\', \'6\', \'7\', \'8\', \'9\', \'10\'} in  let space : Namespace = self.namespace in  let allMissed : Sequence(String) = suffixes-> \tselect(s : String | not space.member->exists(e : NamedElement | e.name = base.concat(s)) ) in  let firstMissed : String = allMissed->first() in  let noMisses : Boolean = firstMissed.oclIsUndefined() in  let allNames : Set(String) =  \tif noMisses \t\tthen \t\tspace.member->collect(e : NamedElement | \t\t\tif e = self or e.name.oclIsUndefined() or e.name.substring(1, e.name.size().min(base.size())) <> base \t\t\tthen \'\' else e.name \t\t\tendif \t\t)->asSet()->excluding(\'\') \t\telse Set{\'not in use\'} \t\tendif in  let longestName : String = \t\tif noMisses \t\tthen allNames->select(n : String | not allNames->exists(nn : String | nn.size() > n.size()))->asSequence()->first()\t\telse \'not in use\' \t\tendif \tin  if noMisses then \t\tif longestName.oclIsUndefined() \t\tthen base \t\telse longestName.concat(\'1\') \t\tendif  else base.concat(firstMissed)  endif ",
-							UMLPackage.eINSTANCE.getConnectionPointReference()).assignTo(UMLPackage.eINSTANCE.getNamedElement_Name(), instance);
-
+							UMLPackage.eINSTANCE.getConnectionPointReference()).evaluate(instance);
+			instance.setName((String) value0);
 		} catch (RuntimeException e) {
 			UMLDiagramEditorPlugin.getInstance().logError("Element initialization failed", e); //$NON-NLS-1$						
 		}
@@ -99,11 +101,11 @@ public class ElementInitializers {
 	 */
 	public static void init_ConnectionPointReference_3018(ConnectionPointReference instance) {
 		try {
-			UMLOCLFactory
+			Object value0 = UMLOCLFactory
 					.getExpression(
 							" let base : String = \'ExitPointConnectionPointReference\' in  let suffixes : Sequence(String) = Sequence {\'\', \'1\', \'2\', \'3\', \'4\', \'5\', \'6\', \'7\', \'8\', \'9\', \'10\'} in  let space : Namespace = self.namespace in  let allMissed : Sequence(String) = suffixes-> \tselect(s : String | not space.member->exists(e : NamedElement | e.name = base.concat(s)) ) in  let firstMissed : String = allMissed->first() in  let noMisses : Boolean = firstMissed.oclIsUndefined() in  let allNames : Set(String) =  \tif noMisses \t\tthen \t\tspace.member->collect(e : NamedElement | \t\t\tif e = self or e.name.oclIsUndefined() or e.name.substring(1, e.name.size().min(base.size())) <> base \t\t\tthen \'\' else e.name \t\t\tendif \t\t)->asSet()->excluding(\'\') \t\telse Set{\'not in use\'} \t\tendif in  let longestName : String = \t\tif noMisses \t\tthen allNames->select(n : String | not allNames->exists(nn : String | nn.size() > n.size()))->asSequence()->first()\t\telse \'not in use\' \t\tendif \tin  if noMisses then \t\tif longestName.oclIsUndefined() \t\tthen base \t\telse longestName.concat(\'1\') \t\tendif  else base.concat(firstMissed)  endif ",
-							UMLPackage.eINSTANCE.getConnectionPointReference()).assignTo(UMLPackage.eINSTANCE.getNamedElement_Name(), instance);
-
+							UMLPackage.eINSTANCE.getConnectionPointReference()).evaluate(instance);
+			instance.setName((String) value0);
 		} catch (RuntimeException e) {
 			UMLDiagramEditorPlugin.getInstance().logError("Element initialization failed", e); //$NON-NLS-1$						
 		}
@@ -114,8 +116,10 @@ public class ElementInitializers {
 	 */
 	public static void init_Pseudostate_3004(Pseudostate instance) {
 		try {
-			UMLOCLFactory.getExpression("PseudostateKind::initial", UMLPackage.eINSTANCE.getPseudostate()).assignTo(UMLPackage.eINSTANCE.getPseudostate_Kind(), instance);
+			Object value0 = UMLOCLFactory.getExpression("PseudostateKind::initial", UMLPackage.eINSTANCE.getPseudostate()).evaluate(instance);
 
+			value0 = UMLAbstractExpression.performCast(value0, UMLPackage.eINSTANCE.getPseudostateKind());
+			instance.setKind((PseudostateKind) value0);
 		} catch (RuntimeException e) {
 			UMLDiagramEditorPlugin.getInstance().logError("Element initialization failed", e); //$NON-NLS-1$						
 		}
@@ -126,8 +130,10 @@ public class ElementInitializers {
 	 */
 	public static void init_Pseudostate_3005(Pseudostate instance) {
 		try {
-			UMLOCLFactory.getExpression("PseudostateKind::shallowHistory", UMLPackage.eINSTANCE.getPseudostate()).assignTo(UMLPackage.eINSTANCE.getPseudostate_Kind(), instance);
+			Object value0 = UMLOCLFactory.getExpression("PseudostateKind::shallowHistory", UMLPackage.eINSTANCE.getPseudostate()).evaluate(instance);
 
+			value0 = UMLAbstractExpression.performCast(value0, UMLPackage.eINSTANCE.getPseudostateKind());
+			instance.setKind((PseudostateKind) value0);
 		} catch (RuntimeException e) {
 			UMLDiagramEditorPlugin.getInstance().logError("Element initialization failed", e); //$NON-NLS-1$						
 		}
@@ -138,8 +144,10 @@ public class ElementInitializers {
 	 */
 	public static void init_Pseudostate_3006(Pseudostate instance) {
 		try {
-			UMLOCLFactory.getExpression("PseudostateKind::deepHistory", UMLPackage.eINSTANCE.getPseudostate()).assignTo(UMLPackage.eINSTANCE.getPseudostate_Kind(), instance);
+			Object value0 = UMLOCLFactory.getExpression("PseudostateKind::deepHistory", UMLPackage.eINSTANCE.getPseudostate()).evaluate(instance);
 
+			value0 = UMLAbstractExpression.performCast(value0, UMLPackage.eINSTANCE.getPseudostateKind());
+			instance.setKind((PseudostateKind) value0);
 		} catch (RuntimeException e) {
 			UMLDiagramEditorPlugin.getInstance().logError("Element initialization failed", e); //$NON-NLS-1$						
 		}
@@ -150,8 +158,10 @@ public class ElementInitializers {
 	 */
 	public static void init_Pseudostate_3007(Pseudostate instance) {
 		try {
-			UMLOCLFactory.getExpression("PseudostateKind::fork", UMLPackage.eINSTANCE.getPseudostate()).assignTo(UMLPackage.eINSTANCE.getPseudostate_Kind(), instance);
+			Object value0 = UMLOCLFactory.getExpression("PseudostateKind::fork", UMLPackage.eINSTANCE.getPseudostate()).evaluate(instance);
 
+			value0 = UMLAbstractExpression.performCast(value0, UMLPackage.eINSTANCE.getPseudostateKind());
+			instance.setKind((PseudostateKind) value0);
 		} catch (RuntimeException e) {
 			UMLDiagramEditorPlugin.getInstance().logError("Element initialization failed", e); //$NON-NLS-1$						
 		}
@@ -162,8 +172,10 @@ public class ElementInitializers {
 	 */
 	public static void init_Pseudostate_3008(Pseudostate instance) {
 		try {
-			UMLOCLFactory.getExpression("PseudostateKind::join", UMLPackage.eINSTANCE.getPseudostate()).assignTo(UMLPackage.eINSTANCE.getPseudostate_Kind(), instance);
+			Object value0 = UMLOCLFactory.getExpression("PseudostateKind::join", UMLPackage.eINSTANCE.getPseudostate()).evaluate(instance);
 
+			value0 = UMLAbstractExpression.performCast(value0, UMLPackage.eINSTANCE.getPseudostateKind());
+			instance.setKind((PseudostateKind) value0);
 		} catch (RuntimeException e) {
 			UMLDiagramEditorPlugin.getInstance().logError("Element initialization failed", e); //$NON-NLS-1$						
 		}
@@ -174,8 +186,10 @@ public class ElementInitializers {
 	 */
 	public static void init_Pseudostate_3009(Pseudostate instance) {
 		try {
-			UMLOCLFactory.getExpression("PseudostateKind::junction", UMLPackage.eINSTANCE.getPseudostate()).assignTo(UMLPackage.eINSTANCE.getPseudostate_Kind(), instance);
+			Object value0 = UMLOCLFactory.getExpression("PseudostateKind::junction", UMLPackage.eINSTANCE.getPseudostate()).evaluate(instance);
 
+			value0 = UMLAbstractExpression.performCast(value0, UMLPackage.eINSTANCE.getPseudostateKind());
+			instance.setKind((PseudostateKind) value0);
 		} catch (RuntimeException e) {
 			UMLDiagramEditorPlugin.getInstance().logError("Element initialization failed", e); //$NON-NLS-1$						
 		}
@@ -186,8 +200,10 @@ public class ElementInitializers {
 	 */
 	public static void init_Pseudostate_3010(Pseudostate instance) {
 		try {
-			UMLOCLFactory.getExpression("PseudostateKind::choice", UMLPackage.eINSTANCE.getPseudostate()).assignTo(UMLPackage.eINSTANCE.getPseudostate_Kind(), instance);
+			Object value0 = UMLOCLFactory.getExpression("PseudostateKind::choice", UMLPackage.eINSTANCE.getPseudostate()).evaluate(instance);
 
+			value0 = UMLAbstractExpression.performCast(value0, UMLPackage.eINSTANCE.getPseudostateKind());
+			instance.setKind((PseudostateKind) value0);
 		} catch (RuntimeException e) {
 			UMLDiagramEditorPlugin.getInstance().logError("Element initialization failed", e); //$NON-NLS-1$						
 		}
@@ -198,8 +214,10 @@ public class ElementInitializers {
 	 */
 	public static void init_Pseudostate_3011(Pseudostate instance) {
 		try {
-			UMLOCLFactory.getExpression("PseudostateKind::terminate", UMLPackage.eINSTANCE.getPseudostate()).assignTo(UMLPackage.eINSTANCE.getPseudostate_Kind(), instance);
+			Object value0 = UMLOCLFactory.getExpression("PseudostateKind::terminate", UMLPackage.eINSTANCE.getPseudostate()).evaluate(instance);
 
+			value0 = UMLAbstractExpression.performCast(value0, UMLPackage.eINSTANCE.getPseudostateKind());
+			instance.setKind((PseudostateKind) value0);
 		} catch (RuntimeException e) {
 			UMLDiagramEditorPlugin.getInstance().logError("Element initialization failed", e); //$NON-NLS-1$						
 		}
@@ -210,13 +228,15 @@ public class ElementInitializers {
 	 */
 	public static void init_Pseudostate_3014(Pseudostate instance) {
 		try {
-			UMLOCLFactory.getExpression("PseudostateKind::entryPoint", UMLPackage.eINSTANCE.getPseudostate()).assignTo(UMLPackage.eINSTANCE.getPseudostate_Kind(), instance);
+			Object value0 = UMLOCLFactory.getExpression("PseudostateKind::entryPoint", UMLPackage.eINSTANCE.getPseudostate()).evaluate(instance);
 
-			UMLOCLFactory
+			value0 = UMLAbstractExpression.performCast(value0, UMLPackage.eINSTANCE.getPseudostateKind());
+			instance.setKind((PseudostateKind) value0);
+			Object value1 = UMLOCLFactory
 					.getExpression(
 							" let base : String = \'Entry Point\' in  let suffixes : Sequence(String) = Sequence {\'\', \'1\', \'2\', \'3\', \'4\', \'5\', \'6\', \'7\', \'8\', \'9\', \'10\'} in  let space : Namespace = self.namespace in  let allMissed : Sequence(String) = suffixes-> \tselect(s : String | not space.member->exists(e : NamedElement | e.name = base.concat(s)) ) in  let firstMissed : String = allMissed->first() in  let noMisses : Boolean = firstMissed.oclIsUndefined() in  let allNames : Set(String) =  \tif noMisses \t\tthen \t\tspace.member->collect(e : NamedElement | \t\t\tif e = self or e.name.oclIsUndefined() or e.name.substring(1, e.name.size().min(base.size())) <> base \t\t\tthen \'\' else e.name \t\t\tendif \t\t)->asSet()->excluding(\'\') \t\telse Set{\'not in use\'} \t\tendif in  let longestName : String = \t\tif noMisses \t\tthen allNames->select(n : String | not allNames->exists(nn : String | nn.size() > n.size()))->asSequence()->first()\t\telse \'not in use\' \t\tendif \tin  if noMisses then \t\tif longestName.oclIsUndefined() \t\tthen base \t\telse longestName.concat(\'1\') \t\tendif  else base.concat(firstMissed)  endif ",
-							UMLPackage.eINSTANCE.getPseudostate()).assignTo(UMLPackage.eINSTANCE.getNamedElement_Name(), instance);
-
+							UMLPackage.eINSTANCE.getPseudostate()).evaluate(instance);
+			instance.setName((String) value1);
 		} catch (RuntimeException e) {
 			UMLDiagramEditorPlugin.getInstance().logError("Element initialization failed", e); //$NON-NLS-1$						
 		}
@@ -227,21 +247,17 @@ public class ElementInitializers {
 	 */
 	public static void init_Pseudostate_3015(Pseudostate instance) {
 		try {
-			UMLOCLFactory.getExpression("PseudostateKind::exitPoint", UMLPackage.eINSTANCE.getPseudostate()).assignTo(UMLPackage.eINSTANCE.getPseudostate_Kind(), instance);
+			Object value0 = UMLOCLFactory.getExpression("PseudostateKind::exitPoint", UMLPackage.eINSTANCE.getPseudostate()).evaluate(instance);
 
-			UMLOCLFactory
+			value0 = UMLAbstractExpression.performCast(value0, UMLPackage.eINSTANCE.getPseudostateKind());
+			instance.setKind((PseudostateKind) value0);
+			Object value1 = UMLOCLFactory
 					.getExpression(
 							" let base : String = \'Exit Point\' in  let suffixes : Sequence(String) = Sequence {\'\', \'1\', \'2\', \'3\', \'4\', \'5\', \'6\', \'7\', \'8\', \'9\', \'10\'} in  let space : Namespace = self.namespace in  let allMissed : Sequence(String) = suffixes-> \tselect(s : String | not space.member->exists(e : NamedElement | e.name = base.concat(s)) ) in  let firstMissed : String = allMissed->first() in  let noMisses : Boolean = firstMissed.oclIsUndefined() in  let allNames : Set(String) =  \tif noMisses \t\tthen \t\tspace.member->collect(e : NamedElement | \t\t\tif e = self or e.name.oclIsUndefined() or e.name.substring(1, e.name.size().min(base.size())) <> base \t\t\tthen \'\' else e.name \t\t\tendif \t\t)->asSet()->excluding(\'\') \t\telse Set{\'not in use\'} \t\tendif in  let longestName : String = \t\tif noMisses \t\tthen allNames->select(n : String | not allNames->exists(nn : String | nn.size() > n.size()))->asSequence()->first()\t\telse \'not in use\' \t\tendif \tin  if noMisses then \t\tif longestName.oclIsUndefined() \t\tthen base \t\telse longestName.concat(\'1\') \t\tendif  else base.concat(firstMissed)  endif ",
-							UMLPackage.eINSTANCE.getPseudostate()).assignTo(UMLPackage.eINSTANCE.getNamedElement_Name(), instance);
-
+							UMLPackage.eINSTANCE.getPseudostate()).evaluate(instance);
+			instance.setName((String) value1);
 		} catch (RuntimeException e) {
 			UMLDiagramEditorPlugin.getInstance().logError("Element initialization failed", e); //$NON-NLS-1$						
 		}
-	}
-
-	/**
-	 * @generated
-	 */
-	static class Java {
 	}
 }

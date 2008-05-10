@@ -340,30 +340,8 @@ public class UMLBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 		 * @generated
 		 */
 		public static boolean canExistTransition_4001(Region container, Vertex source, Vertex target) {
+
 			return true;
-		}
-
-		/**
-		 * @generated
-		 */
-		private static boolean evaluate(UMLAbstractExpression constraint, Object sourceEnd, Object oppositeEnd, boolean clearEnv) {
-			if (sourceEnd == null) {
-				return true;
-			}
-			Map evalEnv = Collections.singletonMap(OPPOSITE_END_VAR, oppositeEnd);
-			try {
-				Object val = constraint.evaluate(sourceEnd, evalEnv);
-				return (val instanceof Boolean) ? ((Boolean) val).booleanValue() : false;
-			} catch (Exception e) {
-				UMLDiagramEditorPlugin.getInstance().logError("Link constraint evaluation error", e); //$NON-NLS-1$
-				return false;
-			}
-		}
-
-		/**
-		 * @generated
-		 */
-		private static class JavaConstraints {
 		}
 
 	}
