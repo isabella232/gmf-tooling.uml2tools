@@ -46,7 +46,9 @@ import org.eclipse.uml2.diagram.statemachine.edit.parts.TransitionNameEditPart;
 import org.eclipse.uml2.diagram.statemachine.expressions.UMLAbstractExpression;
 import org.eclipse.uml2.diagram.statemachine.expressions.UMLOCLFactory;
 import org.eclipse.uml2.uml.Behavior;
+import org.eclipse.uml2.uml.ConnectionPointReference;
 import org.eclipse.uml2.uml.Element;
+import org.eclipse.uml2.uml.Pseudostate;
 import org.eclipse.uml2.uml.State;
 import org.eclipse.uml2.uml.StateMachine;
 import org.eclipse.uml2.uml.UMLPackage;
@@ -63,86 +65,82 @@ public class UMLVisualIDRegistry {
 	/**
 	 * @generated
 	 */
-	private static final String DEBUG_KEY = UMLDiagramEditorPlugin.getInstance().getBundle().getSymbolicName() + "/debug/visualID"; //$NON-NLS-1$
+	private static final String DEBUG_KEY = "org.eclipse.uml2.diagram.statemachine/debug/visualID"; //$NON-NLS-1$
 
 	/**
 	 * @generated
 	 */
-	private static final UMLAbstractExpression State_3001_Constraint = UMLOCLFactory.getExpression("self.oclIsTypeOf(uml::State) and self.isSimple and (not self.isSubmachineState)",
-			UMLPackage.eINSTANCE.getState());
+	private static UMLAbstractExpression State_3001_Constraint;
 
 	/**
 	 * @generated
 	 */
-	private static final UMLAbstractExpression State_3012_Constraint = UMLOCLFactory.getExpression("self.oclIsTypeOf(uml::State) and self.isComposite and (not self.isSubmachineState)",
-			UMLPackage.eINSTANCE.getState());
+	private static UMLAbstractExpression State_3012_Constraint;
 
 	/**
 	 * @generated
 	 */
-	private static final UMLAbstractExpression State_3016_Constraint = UMLOCLFactory.getExpression("self.oclIsTypeOf(uml::State) and self.isSubmachineState", UMLPackage.eINSTANCE.getState());
+	private static UMLAbstractExpression State_3016_Constraint;
 
 	/**
 	 * @generated
 	 */
-	private static final UMLAbstractExpression ConnectionPointReference_3017_Constraint = UMLOCLFactory.getExpression(
-			"entry->notEmpty() implies entry->forAll(e | e.kind =  PseudostateKind::entryPoint)", UMLPackage.eINSTANCE.getConnectionPointReference());
+	private static UMLAbstractExpression ConnectionPointReference_3017_Constraint;
 
 	/**
 	 * @generated
 	 */
-	private static final UMLAbstractExpression ConnectionPointReference_3018_Constraint = UMLOCLFactory.getExpression(
-			"exit->notEmpty() implies exit->forAll(e | e.kind =  PseudostateKind::exitPoint)", UMLPackage.eINSTANCE.getConnectionPointReference());
+	private static UMLAbstractExpression ConnectionPointReference_3018_Constraint;
 
 	/**
 	 * @generated
 	 */
-	private static final UMLAbstractExpression Pseudostate_3004_Constraint = UMLOCLFactory.getExpression("self.kind = PseudostateKind::initial", UMLPackage.eINSTANCE.getPseudostate());
+	private static UMLAbstractExpression Pseudostate_3004_Constraint;
 
 	/**
 	 * @generated
 	 */
-	private static final UMLAbstractExpression Pseudostate_3005_Constraint = UMLOCLFactory.getExpression("self.kind = PseudostateKind::shallowHistory", UMLPackage.eINSTANCE.getPseudostate());
+	private static UMLAbstractExpression Pseudostate_3005_Constraint;
 
 	/**
 	 * @generated
 	 */
-	private static final UMLAbstractExpression Pseudostate_3006_Constraint = UMLOCLFactory.getExpression("self.kind = PseudostateKind::deepHistory", UMLPackage.eINSTANCE.getPseudostate());
+	private static UMLAbstractExpression Pseudostate_3006_Constraint;
 
 	/**
 	 * @generated
 	 */
-	private static final UMLAbstractExpression Pseudostate_3007_Constraint = UMLOCLFactory.getExpression("self.kind = PseudostateKind::fork", UMLPackage.eINSTANCE.getPseudostate());
+	private static UMLAbstractExpression Pseudostate_3007_Constraint;
 
 	/**
 	 * @generated
 	 */
-	private static final UMLAbstractExpression Pseudostate_3008_Constraint = UMLOCLFactory.getExpression("self.kind = PseudostateKind::join", UMLPackage.eINSTANCE.getPseudostate());
+	private static UMLAbstractExpression Pseudostate_3008_Constraint;
 
 	/**
 	 * @generated
 	 */
-	private static final UMLAbstractExpression Pseudostate_3009_Constraint = UMLOCLFactory.getExpression("self.kind = PseudostateKind::junction", UMLPackage.eINSTANCE.getPseudostate());
+	private static UMLAbstractExpression Pseudostate_3009_Constraint;
 
 	/**
 	 * @generated
 	 */
-	private static final UMLAbstractExpression Pseudostate_3010_Constraint = UMLOCLFactory.getExpression("self.kind = PseudostateKind::choice", UMLPackage.eINSTANCE.getPseudostate());
+	private static UMLAbstractExpression Pseudostate_3010_Constraint;
 
 	/**
 	 * @generated
 	 */
-	private static final UMLAbstractExpression Pseudostate_3011_Constraint = UMLOCLFactory.getExpression("self.kind = PseudostateKind::terminate", UMLPackage.eINSTANCE.getPseudostate());
+	private static UMLAbstractExpression Pseudostate_3011_Constraint;
 
 	/**
 	 * @generated
 	 */
-	private static final UMLAbstractExpression Pseudostate_3014_Constraint = UMLOCLFactory.getExpression("self.kind = PseudostateKind::entryPoint", UMLPackage.eINSTANCE.getPseudostate());
+	private static UMLAbstractExpression Pseudostate_3014_Constraint;
 
 	/**
 	 * @generated
 	 */
-	private static final UMLAbstractExpression Pseudostate_3015_Constraint = UMLOCLFactory.getExpression("self.kind = PseudostateKind::exitPoint", UMLPackage.eINSTANCE.getPseudostate());
+	private static UMLAbstractExpression Pseudostate_3015_Constraint;
 
 	/**
 	 * @generated
@@ -233,10 +231,10 @@ public class UMLVisualIDRegistry {
 			if (UMLPackage.eINSTANCE.getRegion().isSuperTypeOf(domainElement.eClass())) {
 				return RegionEditPart.VISUAL_ID;
 			}
-			if (UMLPackage.eINSTANCE.getPseudostate().isSuperTypeOf(domainElement.eClass()) && evaluate(Pseudostate_3014_Constraint, domainElement)) {
+			if (UMLPackage.eINSTANCE.getPseudostate().isSuperTypeOf(domainElement.eClass()) && isPseudostate_3014((Pseudostate) domainElement)) {
 				return Pseudostate9EditPart.VISUAL_ID;
 			}
-			if (UMLPackage.eINSTANCE.getPseudostate().isSuperTypeOf(domainElement.eClass()) && evaluate(Pseudostate_3015_Constraint, domainElement)) {
+			if (UMLPackage.eINSTANCE.getPseudostate().isSuperTypeOf(domainElement.eClass()) && isPseudostate_3015((Pseudostate) domainElement)) {
 				return Pseudostate10EditPart.VISUAL_ID;
 			}
 			break;
@@ -249,119 +247,119 @@ public class UMLVisualIDRegistry {
 			if (UMLPackage.eINSTANCE.getRegion().isSuperTypeOf(domainElement.eClass())) {
 				return Region2EditPart.VISUAL_ID;
 			}
-			if (UMLPackage.eINSTANCE.getConnectionPointReference().isSuperTypeOf(domainElement.eClass()) && evaluate(ConnectionPointReference_3017_Constraint, domainElement)) {
+			if (UMLPackage.eINSTANCE.getConnectionPointReference().isSuperTypeOf(domainElement.eClass()) && isConnectionPointReference_3017((ConnectionPointReference) domainElement)) {
 				return ConnectionPointReferenceEditPart.VISUAL_ID;
 			}
-			if (UMLPackage.eINSTANCE.getConnectionPointReference().isSuperTypeOf(domainElement.eClass()) && evaluate(ConnectionPointReference_3018_Constraint, domainElement)) {
+			if (UMLPackage.eINSTANCE.getConnectionPointReference().isSuperTypeOf(domainElement.eClass()) && isConnectionPointReference_3018((ConnectionPointReference) domainElement)) {
 				return ConnectionPointReference2EditPart.VISUAL_ID;
 			}
 			break;
 		case RegionSubverticesEditPart.VISUAL_ID:
-			if (UMLPackage.eINSTANCE.getState().isSuperTypeOf(domainElement.eClass()) && evaluate(State_3001_Constraint, domainElement)) {
+			if (UMLPackage.eINSTANCE.getState().isSuperTypeOf(domainElement.eClass()) && isState_3001((State) domainElement)) {
 				return StateEditPart.VISUAL_ID;
 			}
-			if (UMLPackage.eINSTANCE.getState().isSuperTypeOf(domainElement.eClass()) && evaluate(State_3012_Constraint, domainElement)) {
+			if (UMLPackage.eINSTANCE.getState().isSuperTypeOf(domainElement.eClass()) && isState_3012((State) domainElement)) {
 				return State2EditPart.VISUAL_ID;
 			}
-			if (UMLPackage.eINSTANCE.getState().isSuperTypeOf(domainElement.eClass()) && evaluate(State_3016_Constraint, domainElement)) {
+			if (UMLPackage.eINSTANCE.getState().isSuperTypeOf(domainElement.eClass()) && isState_3016((State) domainElement)) {
 				return State3EditPart.VISUAL_ID;
 			}
 			if (UMLPackage.eINSTANCE.getFinalState().isSuperTypeOf(domainElement.eClass())) {
 				return FinalStateEditPart.VISUAL_ID;
 			}
-			if (UMLPackage.eINSTANCE.getPseudostate().isSuperTypeOf(domainElement.eClass()) && evaluate(Pseudostate_3004_Constraint, domainElement)) {
+			if (UMLPackage.eINSTANCE.getPseudostate().isSuperTypeOf(domainElement.eClass()) && isPseudostate_3004((Pseudostate) domainElement)) {
 				return PseudostateEditPart.VISUAL_ID;
 			}
-			if (UMLPackage.eINSTANCE.getPseudostate().isSuperTypeOf(domainElement.eClass()) && evaluate(Pseudostate_3005_Constraint, domainElement)) {
+			if (UMLPackage.eINSTANCE.getPseudostate().isSuperTypeOf(domainElement.eClass()) && isPseudostate_3005((Pseudostate) domainElement)) {
 				return Pseudostate2EditPart.VISUAL_ID;
 			}
-			if (UMLPackage.eINSTANCE.getPseudostate().isSuperTypeOf(domainElement.eClass()) && evaluate(Pseudostate_3006_Constraint, domainElement)) {
+			if (UMLPackage.eINSTANCE.getPseudostate().isSuperTypeOf(domainElement.eClass()) && isPseudostate_3006((Pseudostate) domainElement)) {
 				return Pseudostate3EditPart.VISUAL_ID;
 			}
-			if (UMLPackage.eINSTANCE.getPseudostate().isSuperTypeOf(domainElement.eClass()) && evaluate(Pseudostate_3007_Constraint, domainElement)) {
+			if (UMLPackage.eINSTANCE.getPseudostate().isSuperTypeOf(domainElement.eClass()) && isPseudostate_3007((Pseudostate) domainElement)) {
 				return Pseudostate4EditPart.VISUAL_ID;
 			}
-			if (UMLPackage.eINSTANCE.getPseudostate().isSuperTypeOf(domainElement.eClass()) && evaluate(Pseudostate_3008_Constraint, domainElement)) {
+			if (UMLPackage.eINSTANCE.getPseudostate().isSuperTypeOf(domainElement.eClass()) && isPseudostate_3008((Pseudostate) domainElement)) {
 				return Pseudostate5EditPart.VISUAL_ID;
 			}
-			if (UMLPackage.eINSTANCE.getPseudostate().isSuperTypeOf(domainElement.eClass()) && evaluate(Pseudostate_3009_Constraint, domainElement)) {
+			if (UMLPackage.eINSTANCE.getPseudostate().isSuperTypeOf(domainElement.eClass()) && isPseudostate_3009((Pseudostate) domainElement)) {
 				return Pseudostate6EditPart.VISUAL_ID;
 			}
-			if (UMLPackage.eINSTANCE.getPseudostate().isSuperTypeOf(domainElement.eClass()) && evaluate(Pseudostate_3010_Constraint, domainElement)) {
+			if (UMLPackage.eINSTANCE.getPseudostate().isSuperTypeOf(domainElement.eClass()) && isPseudostate_3010((Pseudostate) domainElement)) {
 				return Pseudostate7EditPart.VISUAL_ID;
 			}
-			if (UMLPackage.eINSTANCE.getPseudostate().isSuperTypeOf(domainElement.eClass()) && evaluate(Pseudostate_3011_Constraint, domainElement)) {
+			if (UMLPackage.eINSTANCE.getPseudostate().isSuperTypeOf(domainElement.eClass()) && isPseudostate_3011((Pseudostate) domainElement)) {
 				return Pseudostate8EditPart.VISUAL_ID;
 			}
 			break;
 		case StateSimpleState_InternalActivitiesEditPart.VISUAL_ID:
-			if (UMLPackage.eINSTANCE.getBehavior().isSuperTypeOf(domainElement.eClass()) && JavaConstraints.isEntryActivity((Behavior) domainElement).booleanValue()) {
+			if (UMLPackage.eINSTANCE.getBehavior().isSuperTypeOf(domainElement.eClass()) && isBehavior_3019((Behavior) domainElement)) {
 				return BehaviorEditPart.VISUAL_ID;
 			}
-			if (UMLPackage.eINSTANCE.getBehavior().isSuperTypeOf(domainElement.eClass()) && JavaConstraints.isExitActivity((Behavior) domainElement).booleanValue()) {
+			if (UMLPackage.eINSTANCE.getBehavior().isSuperTypeOf(domainElement.eClass()) && isBehavior_3020((Behavior) domainElement)) {
 				return Behavior2EditPart.VISUAL_ID;
 			}
-			if (UMLPackage.eINSTANCE.getBehavior().isSuperTypeOf(domainElement.eClass()) && JavaConstraints.isDoActivity((Behavior) domainElement).booleanValue()) {
+			if (UMLPackage.eINSTANCE.getBehavior().isSuperTypeOf(domainElement.eClass()) && isBehavior_3021((Behavior) domainElement)) {
 				return Behavior3EditPart.VISUAL_ID;
 			}
 			break;
 		case StateCompositeState_InternalActivitiesEditPart.VISUAL_ID:
-			if (UMLPackage.eINSTANCE.getBehavior().isSuperTypeOf(domainElement.eClass()) && JavaConstraints.isEntryActivity((Behavior) domainElement).booleanValue()) {
+			if (UMLPackage.eINSTANCE.getBehavior().isSuperTypeOf(domainElement.eClass()) && isBehavior_3019((Behavior) domainElement)) {
 				return BehaviorEditPart.VISUAL_ID;
 			}
-			if (UMLPackage.eINSTANCE.getBehavior().isSuperTypeOf(domainElement.eClass()) && JavaConstraints.isExitActivity((Behavior) domainElement).booleanValue()) {
+			if (UMLPackage.eINSTANCE.getBehavior().isSuperTypeOf(domainElement.eClass()) && isBehavior_3020((Behavior) domainElement)) {
 				return Behavior2EditPart.VISUAL_ID;
 			}
-			if (UMLPackage.eINSTANCE.getBehavior().isSuperTypeOf(domainElement.eClass()) && JavaConstraints.isDoActivity((Behavior) domainElement).booleanValue()) {
+			if (UMLPackage.eINSTANCE.getBehavior().isSuperTypeOf(domainElement.eClass()) && isBehavior_3021((Behavior) domainElement)) {
 				return Behavior3EditPart.VISUAL_ID;
 			}
 			break;
 		case RegionSubvertices2EditPart.VISUAL_ID:
-			if (UMLPackage.eINSTANCE.getState().isSuperTypeOf(domainElement.eClass()) && evaluate(State_3001_Constraint, domainElement)) {
+			if (UMLPackage.eINSTANCE.getState().isSuperTypeOf(domainElement.eClass()) && isState_3001((State) domainElement)) {
 				return StateEditPart.VISUAL_ID;
 			}
-			if (UMLPackage.eINSTANCE.getState().isSuperTypeOf(domainElement.eClass()) && evaluate(State_3012_Constraint, domainElement)) {
+			if (UMLPackage.eINSTANCE.getState().isSuperTypeOf(domainElement.eClass()) && isState_3012((State) domainElement)) {
 				return State2EditPart.VISUAL_ID;
 			}
-			if (UMLPackage.eINSTANCE.getState().isSuperTypeOf(domainElement.eClass()) && evaluate(State_3016_Constraint, domainElement)) {
+			if (UMLPackage.eINSTANCE.getState().isSuperTypeOf(domainElement.eClass()) && isState_3016((State) domainElement)) {
 				return State3EditPart.VISUAL_ID;
 			}
 			if (UMLPackage.eINSTANCE.getFinalState().isSuperTypeOf(domainElement.eClass())) {
 				return FinalStateEditPart.VISUAL_ID;
 			}
-			if (UMLPackage.eINSTANCE.getPseudostate().isSuperTypeOf(domainElement.eClass()) && evaluate(Pseudostate_3004_Constraint, domainElement)) {
+			if (UMLPackage.eINSTANCE.getPseudostate().isSuperTypeOf(domainElement.eClass()) && isPseudostate_3004((Pseudostate) domainElement)) {
 				return PseudostateEditPart.VISUAL_ID;
 			}
-			if (UMLPackage.eINSTANCE.getPseudostate().isSuperTypeOf(domainElement.eClass()) && evaluate(Pseudostate_3005_Constraint, domainElement)) {
+			if (UMLPackage.eINSTANCE.getPseudostate().isSuperTypeOf(domainElement.eClass()) && isPseudostate_3005((Pseudostate) domainElement)) {
 				return Pseudostate2EditPart.VISUAL_ID;
 			}
-			if (UMLPackage.eINSTANCE.getPseudostate().isSuperTypeOf(domainElement.eClass()) && evaluate(Pseudostate_3006_Constraint, domainElement)) {
+			if (UMLPackage.eINSTANCE.getPseudostate().isSuperTypeOf(domainElement.eClass()) && isPseudostate_3006((Pseudostate) domainElement)) {
 				return Pseudostate3EditPart.VISUAL_ID;
 			}
-			if (UMLPackage.eINSTANCE.getPseudostate().isSuperTypeOf(domainElement.eClass()) && evaluate(Pseudostate_3007_Constraint, domainElement)) {
+			if (UMLPackage.eINSTANCE.getPseudostate().isSuperTypeOf(domainElement.eClass()) && isPseudostate_3007((Pseudostate) domainElement)) {
 				return Pseudostate4EditPart.VISUAL_ID;
 			}
-			if (UMLPackage.eINSTANCE.getPseudostate().isSuperTypeOf(domainElement.eClass()) && evaluate(Pseudostate_3008_Constraint, domainElement)) {
+			if (UMLPackage.eINSTANCE.getPseudostate().isSuperTypeOf(domainElement.eClass()) && isPseudostate_3008((Pseudostate) domainElement)) {
 				return Pseudostate5EditPart.VISUAL_ID;
 			}
-			if (UMLPackage.eINSTANCE.getPseudostate().isSuperTypeOf(domainElement.eClass()) && evaluate(Pseudostate_3009_Constraint, domainElement)) {
+			if (UMLPackage.eINSTANCE.getPseudostate().isSuperTypeOf(domainElement.eClass()) && isPseudostate_3009((Pseudostate) domainElement)) {
 				return Pseudostate6EditPart.VISUAL_ID;
 			}
-			if (UMLPackage.eINSTANCE.getPseudostate().isSuperTypeOf(domainElement.eClass()) && evaluate(Pseudostate_3010_Constraint, domainElement)) {
+			if (UMLPackage.eINSTANCE.getPseudostate().isSuperTypeOf(domainElement.eClass()) && isPseudostate_3010((Pseudostate) domainElement)) {
 				return Pseudostate7EditPart.VISUAL_ID;
 			}
-			if (UMLPackage.eINSTANCE.getPseudostate().isSuperTypeOf(domainElement.eClass()) && evaluate(Pseudostate_3011_Constraint, domainElement)) {
+			if (UMLPackage.eINSTANCE.getPseudostate().isSuperTypeOf(domainElement.eClass()) && isPseudostate_3011((Pseudostate) domainElement)) {
 				return Pseudostate8EditPart.VISUAL_ID;
 			}
 			break;
 		case StateCompositeState_InternalActivities2EditPart.VISUAL_ID:
-			if (UMLPackage.eINSTANCE.getBehavior().isSuperTypeOf(domainElement.eClass()) && JavaConstraints.isEntryActivity((Behavior) domainElement).booleanValue()) {
+			if (UMLPackage.eINSTANCE.getBehavior().isSuperTypeOf(domainElement.eClass()) && isBehavior_3019((Behavior) domainElement)) {
 				return BehaviorEditPart.VISUAL_ID;
 			}
-			if (UMLPackage.eINSTANCE.getBehavior().isSuperTypeOf(domainElement.eClass()) && JavaConstraints.isExitActivity((Behavior) domainElement).booleanValue()) {
+			if (UMLPackage.eINSTANCE.getBehavior().isSuperTypeOf(domainElement.eClass()) && isBehavior_3020((Behavior) domainElement)) {
 				return Behavior2EditPart.VISUAL_ID;
 			}
-			if (UMLPackage.eINSTANCE.getBehavior().isSuperTypeOf(domainElement.eClass()) && JavaConstraints.isDoActivity((Behavior) domainElement).booleanValue()) {
+			if (UMLPackage.eINSTANCE.getBehavior().isSuperTypeOf(domainElement.eClass()) && isBehavior_3021((Behavior) domainElement)) {
 				return Behavior3EditPart.VISUAL_ID;
 			}
 			break;
@@ -628,58 +626,192 @@ public class UMLVisualIDRegistry {
 	/**
 	 * @generated
 	 */
-	private static boolean evaluate(UMLAbstractExpression expression, Object element) {
-		Object result = expression.evaluate(element);
+	private static boolean isState_3001(State domainElement) {
+		if (State_3001_Constraint == null) { // lazy initialization
+			State_3001_Constraint = UMLOCLFactory.getExpression("self.oclIsTypeOf(uml::State) and self.isSimple and (not self.isSubmachineState)", UMLPackage.eINSTANCE.getState()); //$NON-NLS-1$
+		}
+		Object result = State_3001_Constraint.evaluate(domainElement);
+		return result instanceof Boolean && ((Boolean) result).booleanValue();
+	}
+
+	/**
+	 * @generated NOT
+	 */
+	private static boolean isBehavior_3019(Behavior domainElement) {
+		Element owner = domainElement.getOwner();
+		return (owner instanceof State) && domainElement.equals(((State)owner).getEntry());
+	}
+
+	/**
+	 * @generated NOT
+	 */
+	private static boolean isBehavior_3020(Behavior domainElement) {
+		Element owner = domainElement.getOwner();
+		return (owner instanceof State) && domainElement.equals(((State)owner).getExit());
+	}
+
+	/**
+	 * @generated NOT
+	 */
+	private static boolean isBehavior_3021(Behavior domainElement) {
+		Element owner = domainElement.getOwner();
+		return (owner instanceof State) && domainElement.equals(((State)owner).getDoActivity());
+	}
+
+	/**
+	 * @generated
+	 */
+	private static boolean isState_3012(State domainElement) {
+		if (State_3012_Constraint == null) { // lazy initialization
+			State_3012_Constraint = UMLOCLFactory.getExpression("self.oclIsTypeOf(uml::State) and self.isComposite and (not self.isSubmachineState)", UMLPackage.eINSTANCE.getState()); //$NON-NLS-1$
+		}
+		Object result = State_3012_Constraint.evaluate(domainElement);
 		return result instanceof Boolean && ((Boolean) result).booleanValue();
 	}
 
 	/**
 	 * @generated
 	 */
-	private static class JavaConstraints {
-
-		/**
-		 * @generated NOT
-		 */
-		private static java.lang.Boolean isEntryActivity(Behavior self) {
-			Element owner = self.getOwner();
-			if (owner instanceof State) {
-				State state = (State) owner;
-				if (state.getEntry().equals(self)) {
-					return Boolean.TRUE;
-				}
-			}
-			return Boolean.FALSE;
+	private static boolean isState_3016(State domainElement) {
+		if (State_3016_Constraint == null) { // lazy initialization
+			State_3016_Constraint = UMLOCLFactory.getExpression("self.oclIsTypeOf(uml::State) and self.isSubmachineState", UMLPackage.eINSTANCE.getState()); //$NON-NLS-1$
 		}
+		Object result = State_3016_Constraint.evaluate(domainElement);
+		return result instanceof Boolean && ((Boolean) result).booleanValue();
+	}
 
-		/**
-		 * @generated NOT
-		 */
-		private static java.lang.Boolean isExitActivity(Behavior self) {
-			Element owner = self.getOwner();
-			if (owner instanceof State) {
-				State state = (State) owner;
-				if (state.getExit().equals(self)) {
-					return Boolean.TRUE;
-				}
-			}
-			return Boolean.FALSE;
+	/**
+	 * @generated
+	 */
+	private static boolean isConnectionPointReference_3017(ConnectionPointReference domainElement) {
+		if (ConnectionPointReference_3017_Constraint == null) { // lazy initialization
+			ConnectionPointReference_3017_Constraint = UMLOCLFactory.getExpression(
+					"entry->notEmpty() implies entry->forAll(e | e.kind =  PseudostateKind::entryPoint)", UMLPackage.eINSTANCE.getConnectionPointReference()); //$NON-NLS-1$
 		}
+		Object result = ConnectionPointReference_3017_Constraint.evaluate(domainElement);
+		return result instanceof Boolean && ((Boolean) result).booleanValue();
+	}
 
-		/**
-		 * @generated NOT
-		 */
-		private static java.lang.Boolean isDoActivity(Behavior self) {
-			Element owner = self.getOwner();
-			if (owner instanceof State) {
-				State state = (State) owner;
-				if (state.getDoActivity().equals(self)) {
-					return Boolean.TRUE;
-				}
-			}
-			return Boolean.FALSE;
+	/**
+	 * @generated
+	 */
+	private static boolean isConnectionPointReference_3018(ConnectionPointReference domainElement) {
+		if (ConnectionPointReference_3018_Constraint == null) { // lazy initialization
+			ConnectionPointReference_3018_Constraint = UMLOCLFactory.getExpression(
+					"exit->notEmpty() implies exit->forAll(e | e.kind =  PseudostateKind::exitPoint)", UMLPackage.eINSTANCE.getConnectionPointReference()); //$NON-NLS-1$
 		}
+		Object result = ConnectionPointReference_3018_Constraint.evaluate(domainElement);
+		return result instanceof Boolean && ((Boolean) result).booleanValue();
+	}
 
+	/**
+	 * @generated
+	 */
+	private static boolean isPseudostate_3004(Pseudostate domainElement) {
+		if (Pseudostate_3004_Constraint == null) { // lazy initialization
+			Pseudostate_3004_Constraint = UMLOCLFactory.getExpression("self.kind = PseudostateKind::initial", UMLPackage.eINSTANCE.getPseudostate()); //$NON-NLS-1$
+		}
+		Object result = Pseudostate_3004_Constraint.evaluate(domainElement);
+		return result instanceof Boolean && ((Boolean) result).booleanValue();
+	}
+
+	/**
+	 * @generated
+	 */
+	private static boolean isPseudostate_3005(Pseudostate domainElement) {
+		if (Pseudostate_3005_Constraint == null) { // lazy initialization
+			Pseudostate_3005_Constraint = UMLOCLFactory.getExpression("self.kind = PseudostateKind::shallowHistory", UMLPackage.eINSTANCE.getPseudostate()); //$NON-NLS-1$
+		}
+		Object result = Pseudostate_3005_Constraint.evaluate(domainElement);
+		return result instanceof Boolean && ((Boolean) result).booleanValue();
+	}
+
+	/**
+	 * @generated
+	 */
+	private static boolean isPseudostate_3006(Pseudostate domainElement) {
+		if (Pseudostate_3006_Constraint == null) { // lazy initialization
+			Pseudostate_3006_Constraint = UMLOCLFactory.getExpression("self.kind = PseudostateKind::deepHistory", UMLPackage.eINSTANCE.getPseudostate()); //$NON-NLS-1$
+		}
+		Object result = Pseudostate_3006_Constraint.evaluate(domainElement);
+		return result instanceof Boolean && ((Boolean) result).booleanValue();
+	}
+
+	/**
+	 * @generated
+	 */
+	private static boolean isPseudostate_3007(Pseudostate domainElement) {
+		if (Pseudostate_3007_Constraint == null) { // lazy initialization
+			Pseudostate_3007_Constraint = UMLOCLFactory.getExpression("self.kind = PseudostateKind::fork", UMLPackage.eINSTANCE.getPseudostate()); //$NON-NLS-1$
+		}
+		Object result = Pseudostate_3007_Constraint.evaluate(domainElement);
+		return result instanceof Boolean && ((Boolean) result).booleanValue();
+	}
+
+	/**
+	 * @generated
+	 */
+	private static boolean isPseudostate_3008(Pseudostate domainElement) {
+		if (Pseudostate_3008_Constraint == null) { // lazy initialization
+			Pseudostate_3008_Constraint = UMLOCLFactory.getExpression("self.kind = PseudostateKind::join", UMLPackage.eINSTANCE.getPseudostate()); //$NON-NLS-1$
+		}
+		Object result = Pseudostate_3008_Constraint.evaluate(domainElement);
+		return result instanceof Boolean && ((Boolean) result).booleanValue();
+	}
+
+	/**
+	 * @generated
+	 */
+	private static boolean isPseudostate_3009(Pseudostate domainElement) {
+		if (Pseudostate_3009_Constraint == null) { // lazy initialization
+			Pseudostate_3009_Constraint = UMLOCLFactory.getExpression("self.kind = PseudostateKind::junction", UMLPackage.eINSTANCE.getPseudostate()); //$NON-NLS-1$
+		}
+		Object result = Pseudostate_3009_Constraint.evaluate(domainElement);
+		return result instanceof Boolean && ((Boolean) result).booleanValue();
+	}
+
+	/**
+	 * @generated
+	 */
+	private static boolean isPseudostate_3010(Pseudostate domainElement) {
+		if (Pseudostate_3010_Constraint == null) { // lazy initialization
+			Pseudostate_3010_Constraint = UMLOCLFactory.getExpression("self.kind = PseudostateKind::choice", UMLPackage.eINSTANCE.getPseudostate()); //$NON-NLS-1$
+		}
+		Object result = Pseudostate_3010_Constraint.evaluate(domainElement);
+		return result instanceof Boolean && ((Boolean) result).booleanValue();
+	}
+
+	/**
+	 * @generated
+	 */
+	private static boolean isPseudostate_3011(Pseudostate domainElement) {
+		if (Pseudostate_3011_Constraint == null) { // lazy initialization
+			Pseudostate_3011_Constraint = UMLOCLFactory.getExpression("self.kind = PseudostateKind::terminate", UMLPackage.eINSTANCE.getPseudostate()); //$NON-NLS-1$
+		}
+		Object result = Pseudostate_3011_Constraint.evaluate(domainElement);
+		return result instanceof Boolean && ((Boolean) result).booleanValue();
+	}
+
+	/**
+	 * @generated
+	 */
+	private static boolean isPseudostate_3014(Pseudostate domainElement) {
+		if (Pseudostate_3014_Constraint == null) { // lazy initialization
+			Pseudostate_3014_Constraint = UMLOCLFactory.getExpression("self.kind = PseudostateKind::entryPoint", UMLPackage.eINSTANCE.getPseudostate()); //$NON-NLS-1$
+		}
+		Object result = Pseudostate_3014_Constraint.evaluate(domainElement);
+		return result instanceof Boolean && ((Boolean) result).booleanValue();
+	}
+
+	/**
+	 * @generated
+	 */
+	private static boolean isPseudostate_3015(Pseudostate domainElement) {
+		if (Pseudostate_3015_Constraint == null) { // lazy initialization
+			Pseudostate_3015_Constraint = UMLOCLFactory.getExpression("self.kind = PseudostateKind::exitPoint", UMLPackage.eINSTANCE.getPseudostate()); //$NON-NLS-1$
+		}
+		Object result = Pseudostate_3015_Constraint.evaluate(domainElement);
+		return result instanceof Boolean && ((Boolean) result).booleanValue();
 	}
 
 	/**
