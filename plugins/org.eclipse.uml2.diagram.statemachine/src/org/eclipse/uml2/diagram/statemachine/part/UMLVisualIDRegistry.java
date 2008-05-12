@@ -639,7 +639,7 @@ public class UMLVisualIDRegistry {
 	 */
 	private static boolean isBehavior_3019(Behavior domainElement) {
 		Element owner = domainElement.getOwner();
-		return (owner instanceof State) && domainElement.equals(((State)owner).getEntry());
+		return (owner instanceof State) && domainElement.equals(((State) owner).getEntry());
 	}
 
 	/**
@@ -647,7 +647,7 @@ public class UMLVisualIDRegistry {
 	 */
 	private static boolean isBehavior_3020(Behavior domainElement) {
 		Element owner = domainElement.getOwner();
-		return (owner instanceof State) && domainElement.equals(((State)owner).getExit());
+		return (owner instanceof State) && domainElement.equals(((State) owner).getExit());
 	}
 
 	/**
@@ -655,7 +655,7 @@ public class UMLVisualIDRegistry {
 	 */
 	private static boolean isBehavior_3021(Behavior domainElement) {
 		Element owner = domainElement.getOwner();
-		return (owner instanceof State) && domainElement.equals(((State)owner).getDoActivity());
+		return (owner instanceof State) && domainElement.equals(((State) owner).getDoActivity());
 	}
 
 	/**
