@@ -18,6 +18,7 @@ import org.eclipse.jface.viewers.StructuredSelection;
 import org.eclipse.ui.IWorkbenchPart;
 import org.eclipse.ui.views.properties.IPropertySource;
 import org.eclipse.ui.views.properties.IPropertySourceProvider;
+import org.eclipse.uml2.diagram.common.sheet.PropertySourceExtension;
 
 /**
  * @generated
@@ -35,7 +36,7 @@ public class UMLPropertySection extends AdvancedPropertySection implements IProp
 		if (af != null) {
 			IItemPropertySource ips = (IItemPropertySource) af.adapt(object, IItemPropertySource.class);
 			if (ips != null) {
-				return new PropertySource(object, ips);
+				return new PropertySourceExtension(object, ips, af);
 			}
 		}
 		if (object instanceof IAdaptable) {
