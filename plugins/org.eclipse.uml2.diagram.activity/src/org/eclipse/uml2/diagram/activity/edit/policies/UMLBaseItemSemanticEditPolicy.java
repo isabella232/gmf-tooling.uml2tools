@@ -339,32 +339,12 @@ public class UMLBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 		/**
 		 * @generated 
 		 */
-		private static final UMLAbstractExpression ControlFlow_4001_SourceExpression;
+		private static UMLAbstractExpression ControlFlow_4001_SourceExpression;
 
 		/**
 		 * @generated 
 		 */
-		static {
-			Map env = new HashMap(3);
-			env.put(OPPOSITE_END_VAR, UMLPackage.eINSTANCE.getActivityNode());
-			ControlFlow_4001_SourceExpression = UMLOCLFactory.getExpression(
-					"self.oclIsKindOf(uml::ObjectNode) implies self.oclAsType(uml::ObjectNode).isControlType", UMLPackage.eINSTANCE.getActivityNode(), env); //$NON-NLS-1$
-		}
-
-		/**
-		 * @generated 
-		 */
-		private static final UMLAbstractExpression ControlFlow_4001_TargetExpression;
-
-		/**
-		 * @generated 
-		 */
-		static {
-			Map env = new HashMap(3);
-			env.put(OPPOSITE_END_VAR, UMLPackage.eINSTANCE.getActivityNode());
-			ControlFlow_4001_TargetExpression = UMLOCLFactory.getExpression(
-					"self.oclIsKindOf(uml::ObjectNode) implies self.oclAsType(uml::ObjectNode).isControlType", UMLPackage.eINSTANCE.getActivityNode(), env); //$NON-NLS-1$
-		}
+		private static UMLAbstractExpression ControlFlow_4001_TargetExpression;
 
 		/**
 		 * @generated 
@@ -433,61 +413,32 @@ public class UMLBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 		 * @generated
 		 */
 		public static boolean canExistControlFlow_4001(Activity container, ActivityNode source, ActivityNode target) {
-			if (!evaluate(ControlFlow_4001_SourceExpression, source, target, false)) {
-				return false;
-			}
-			if (!evaluate(ControlFlow_4001_TargetExpression, target, source, true)) {
-				return false;
-			}
-			return true;
-		}
-
-		/**
-		 * @generated
-		 */
-		public static boolean canExistObjectFlow_4002(Activity container, ActivityNode source, ActivityNode target) {
-			return true;
-		}
-
-		/**
-		 * @generated
-		 */
-		public static boolean canExistActionLocalPrecondition_4003(Action source, Constraint target) {
-			return true;
-		}
-
-		/**
-		 * @generated
-		 */
-		public static boolean canExistActionLocalPostcondition_4006(Action source, Constraint target) {
-			return true;
-		}
-
-		/**
-		 * @generated
-		 */
-		public static boolean canExistObjectNodeSelection_4004(ObjectNode source, Behavior target) {
-			return true;
-		}
-
-		/**
-		 * @generated
-		 */
-		public static boolean canExistExceptionHandler_4005(ExecutableNode container, ExecutableNode source, ExecutableNode target) {
-			return true;
-		}
-
-		/**
-		 * @generated 
-		 */
-		private static boolean evaluate(UMLAbstractExpression constraint, Object sourceEnd, Object oppositeEnd, boolean clearEnv) {
-			if (sourceEnd == null) {
-				return true;
-			}
-			Map evalEnv = Collections.singletonMap(OPPOSITE_END_VAR, oppositeEnd);
 			try {
-				Object val = constraint.evaluate(sourceEnd, evalEnv);
-				return (val instanceof Boolean) ? ((Boolean) val).booleanValue() : false;
+				if (source == null) {
+					return true;
+				}
+				if (ControlFlow_4001_SourceExpression == null) {
+					Map env = Collections.singletonMap(OPPOSITE_END_VAR, UMLPackage.eINSTANCE.getActivityNode());
+					ControlFlow_4001_SourceExpression = UMLOCLFactory.getExpression(
+							"self.oclIsKindOf(uml::ObjectNode) implies self.oclAsType(uml::ObjectNode).isControlType", UMLPackage.eINSTANCE.getActivityNode(), env); //$NON-NLS-1$
+				}
+				Object sourceVal = ControlFlow_4001_SourceExpression.evaluate(source, Collections.singletonMap(OPPOSITE_END_VAR, target));
+				if (false == sourceVal instanceof Boolean || !((Boolean) sourceVal).booleanValue()) {
+					return false;
+				} // else fall-through
+				if (target == null) {
+					return true;
+				}
+				if (ControlFlow_4001_TargetExpression == null) {
+					Map env = Collections.singletonMap(OPPOSITE_END_VAR, UMLPackage.eINSTANCE.getActivityNode());
+					ControlFlow_4001_TargetExpression = UMLOCLFactory.getExpression(
+							"self.oclIsKindOf(uml::ObjectNode) implies self.oclAsType(uml::ObjectNode).isControlType", UMLPackage.eINSTANCE.getActivityNode(), env); //$NON-NLS-1$
+				}
+				Object targetVal = ControlFlow_4001_TargetExpression.evaluate(target, Collections.singletonMap(OPPOSITE_END_VAR, source));
+				if (false == targetVal instanceof Boolean || !((Boolean) targetVal).booleanValue()) {
+					return false;
+				} // else fall-through
+				return true;
 			} catch (Exception e) {
 				UMLDiagramEditorPlugin.getInstance().logError("Link constraint evaluation error", e); //$NON-NLS-1$
 				return false;
@@ -497,8 +448,41 @@ public class UMLBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 		/**
 		 * @generated
 		 */
-		private static class JavaConstraints {
+		public static boolean canExistObjectFlow_4002(Activity container, ActivityNode source, ActivityNode target) {
 
+			return true;
+		}
+
+		/**
+		 * @generated
+		 */
+		public static boolean canExistActionLocalPrecondition_4003(Action source, Constraint target) {
+
+			return true;
+		}
+
+		/**
+		 * @generated
+		 */
+		public static boolean canExistActionLocalPostcondition_4006(Action source, Constraint target) {
+
+			return true;
+		}
+
+		/**
+		 * @generated
+		 */
+		public static boolean canExistObjectNodeSelection_4004(ObjectNode source, Behavior target) {
+
+			return true;
+		}
+
+		/**
+		 * @generated
+		 */
+		public static boolean canExistExceptionHandler_4005(ExecutableNode container, ExecutableNode source, ExecutableNode target) {
+
+			return true;
 		}
 	}
 
