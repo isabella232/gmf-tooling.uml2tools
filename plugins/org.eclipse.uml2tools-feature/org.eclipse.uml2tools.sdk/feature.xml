@@ -27,9 +27,9 @@
          id="org.eclipse.uml2tools"
          version="0.0.0"/>
 
-   <includes
+   <!--includes
          id="org.eclipse.uml2tools.doc"
-         version="0.0.0"/>
+         version="0.0.0"/-->
 
    <!--includes
          id="org.eclipse.uml2tools.source"
