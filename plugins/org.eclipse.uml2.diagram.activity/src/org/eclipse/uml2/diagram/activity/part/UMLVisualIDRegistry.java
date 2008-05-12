@@ -9,103 +9,6 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.gmf.runtime.notation.Diagram;
 import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.uml2.diagram.activity.edit.parts.*;
-import org.eclipse.uml2.diagram.activity.edit.parts.AcceptEventAction2EditPart;
-import org.eclipse.uml2.diagram.activity.edit.parts.AcceptEventAction3EditPart;
-import org.eclipse.uml2.diagram.activity.edit.parts.AcceptEventAction4EditPart;
-import org.eclipse.uml2.diagram.activity.edit.parts.AcceptEventActionEditPart;
-import org.eclipse.uml2.diagram.activity.edit.parts.AcceptEventActionName2EditPart;
-import org.eclipse.uml2.diagram.activity.edit.parts.AcceptEventActionName3EditPart;
-import org.eclipse.uml2.diagram.activity.edit.parts.AcceptEventActionName4EditPart;
-import org.eclipse.uml2.diagram.activity.edit.parts.AcceptEventActionNameEditPart;
-import org.eclipse.uml2.diagram.activity.edit.parts.ActivityEditPart;
-import org.eclipse.uml2.diagram.activity.edit.parts.ActivityFinalNode2EditPart;
-import org.eclipse.uml2.diagram.activity.edit.parts.ActivityFinalNodeEditPart;
-import org.eclipse.uml2.diagram.activity.edit.parts.ActivityNameEditPart;
-import org.eclipse.uml2.diagram.activity.edit.parts.ActivityParameterNodeEditPart;
-import org.eclipse.uml2.diagram.activity.edit.parts.ActivityParameterNodeNameEditPart;
-import org.eclipse.uml2.diagram.activity.edit.parts.AddStructuralFeatureValueAction2EditPart;
-import org.eclipse.uml2.diagram.activity.edit.parts.AddStructuralFeatureValueActionEditPart;
-import org.eclipse.uml2.diagram.activity.edit.parts.AddStructuralFeatureValueActionName2EditPart;
-import org.eclipse.uml2.diagram.activity.edit.parts.AddStructuralFeatureValueActionNameEditPart;
-import org.eclipse.uml2.diagram.activity.edit.parts.CallBehaviorAction2EditPart;
-import org.eclipse.uml2.diagram.activity.edit.parts.CallBehaviorActionEditPart;
-import org.eclipse.uml2.diagram.activity.edit.parts.CallBehaviorActionName2EditPart;
-import org.eclipse.uml2.diagram.activity.edit.parts.CallBehaviorActionNameEditPart;
-import org.eclipse.uml2.diagram.activity.edit.parts.CallOperationAction2EditPart;
-import org.eclipse.uml2.diagram.activity.edit.parts.CallOperationActionEditPart;
-import org.eclipse.uml2.diagram.activity.edit.parts.CallOperationActionName2EditPart;
-import org.eclipse.uml2.diagram.activity.edit.parts.CallOperationActionNameEditPart;
-import org.eclipse.uml2.diagram.activity.edit.parts.CentralBufferNode2EditPart;
-import org.eclipse.uml2.diagram.activity.edit.parts.CentralBufferNodeEditPart;
-import org.eclipse.uml2.diagram.activity.edit.parts.CentralBufferNodeName2EditPart;
-import org.eclipse.uml2.diagram.activity.edit.parts.CentralBufferNodeName3EditPart;
-import org.eclipse.uml2.diagram.activity.edit.parts.CentralBufferNodeName4EditPart;
-import org.eclipse.uml2.diagram.activity.edit.parts.CentralBufferNodeNameEditPart;
-import org.eclipse.uml2.diagram.activity.edit.parts.Constraint2EditPart;
-import org.eclipse.uml2.diagram.activity.edit.parts.ConstraintEditPart;
-import org.eclipse.uml2.diagram.activity.edit.parts.ConstraintPostconditionEditPart;
-import org.eclipse.uml2.diagram.activity.edit.parts.ConstraintPreconditionEditPart;
-import org.eclipse.uml2.diagram.activity.edit.parts.ControlFlowEditPart;
-import org.eclipse.uml2.diagram.activity.edit.parts.ControlFlowNameEditPart;
-import org.eclipse.uml2.diagram.activity.edit.parts.CreateObjectAction2EditPart;
-import org.eclipse.uml2.diagram.activity.edit.parts.CreateObjectActionEditPart;
-import org.eclipse.uml2.diagram.activity.edit.parts.CreateObjectActionName2EditPart;
-import org.eclipse.uml2.diagram.activity.edit.parts.CreateObjectActionNameEditPart;
-import org.eclipse.uml2.diagram.activity.edit.parts.DataStoreNode2EditPart;
-import org.eclipse.uml2.diagram.activity.edit.parts.DataStoreNodeEditPart;
-import org.eclipse.uml2.diagram.activity.edit.parts.DataStoreNodeName2EditPart;
-import org.eclipse.uml2.diagram.activity.edit.parts.DataStoreNodeName3EditPart;
-import org.eclipse.uml2.diagram.activity.edit.parts.DataStoreNodeName4EditPart;
-import org.eclipse.uml2.diagram.activity.edit.parts.DataStoreNodeNameEditPart;
-import org.eclipse.uml2.diagram.activity.edit.parts.DecisionNode2EditPart;
-import org.eclipse.uml2.diagram.activity.edit.parts.DecisionNodeEditPart;
-import org.eclipse.uml2.diagram.activity.edit.parts.ExceptionHandlerEditPart;
-import org.eclipse.uml2.diagram.activity.edit.parts.ExceptionHandlerLink_fixed_iconEditPart;
-import org.eclipse.uml2.diagram.activity.edit.parts.FlowFinalNode2EditPart;
-import org.eclipse.uml2.diagram.activity.edit.parts.FlowFinalNodeEditPart;
-import org.eclipse.uml2.diagram.activity.edit.parts.ForkNode2EditPart;
-import org.eclipse.uml2.diagram.activity.edit.parts.ForkNodeEditPart;
-import org.eclipse.uml2.diagram.activity.edit.parts.InitialNodeEditPart;
-import org.eclipse.uml2.diagram.activity.edit.parts.InputPin2EditPart;
-import org.eclipse.uml2.diagram.activity.edit.parts.InputPin3EditPart;
-import org.eclipse.uml2.diagram.activity.edit.parts.InputPin4EditPart;
-import org.eclipse.uml2.diagram.activity.edit.parts.InputPin5EditPart;
-import org.eclipse.uml2.diagram.activity.edit.parts.InputPinEditPart;
-import org.eclipse.uml2.diagram.activity.edit.parts.InputPinName2EditPart;
-import org.eclipse.uml2.diagram.activity.edit.parts.InputPinName3EditPart;
-import org.eclipse.uml2.diagram.activity.edit.parts.InputPinName4EditPart;
-import org.eclipse.uml2.diagram.activity.edit.parts.InputPinName5EditPart;
-import org.eclipse.uml2.diagram.activity.edit.parts.InputPinNameEditPart;
-import org.eclipse.uml2.diagram.activity.edit.parts.JoinNode2EditPart;
-import org.eclipse.uml2.diagram.activity.edit.parts.JoinNodeEditPart;
-import org.eclipse.uml2.diagram.activity.edit.parts.LiteralString2EditPart;
-import org.eclipse.uml2.diagram.activity.edit.parts.LiteralStringEditPart;
-import org.eclipse.uml2.diagram.activity.edit.parts.MergeNodeEditPart;
-import org.eclipse.uml2.diagram.activity.edit.parts.ObjectFlowEditPart;
-import org.eclipse.uml2.diagram.activity.edit.parts.ObjectFlowNameEditPart;
-import org.eclipse.uml2.diagram.activity.edit.parts.OpaqueAction2EditPart;
-import org.eclipse.uml2.diagram.activity.edit.parts.OpaqueActionEditPart;
-import org.eclipse.uml2.diagram.activity.edit.parts.OpaqueActionName2EditPart;
-import org.eclipse.uml2.diagram.activity.edit.parts.OpaqueActionNameEditPart;
-import org.eclipse.uml2.diagram.activity.edit.parts.OpaqueBehaviorEditPart;
-import org.eclipse.uml2.diagram.activity.edit.parts.OpaqueBehaviorNameEditPart;
-import org.eclipse.uml2.diagram.activity.edit.parts.OutputPin2EditPart;
-import org.eclipse.uml2.diagram.activity.edit.parts.OutputPin3EditPart;
-import org.eclipse.uml2.diagram.activity.edit.parts.OutputPinEditPart;
-import org.eclipse.uml2.diagram.activity.edit.parts.OutputPinName2EditPart;
-import org.eclipse.uml2.diagram.activity.edit.parts.OutputPinName3EditPart;
-import org.eclipse.uml2.diagram.activity.edit.parts.OutputPinNameEditPart;
-import org.eclipse.uml2.diagram.activity.edit.parts.PackageEditPart;
-import org.eclipse.uml2.diagram.activity.edit.parts.Pin2EditPart;
-import org.eclipse.uml2.diagram.activity.edit.parts.PinEditPart;
-import org.eclipse.uml2.diagram.activity.edit.parts.PinName2EditPart;
-import org.eclipse.uml2.diagram.activity.edit.parts.PinNameEditPart;
-import org.eclipse.uml2.diagram.activity.edit.parts.SendSignalActionEditPart;
-import org.eclipse.uml2.diagram.activity.edit.parts.SendSignalActionNameEditPart;
-import org.eclipse.uml2.diagram.activity.edit.parts.StructuredActivityNode2EditPart;
-import org.eclipse.uml2.diagram.activity.edit.parts.StructuredActivityNodeEditPart;
-import org.eclipse.uml2.diagram.activity.edit.parts.StructuredActivityNodeStructuredActivityContentPaneCompartment2EditPart;
-import org.eclipse.uml2.diagram.activity.edit.parts.StructuredActivityNodeStructuredActivityContentPaneCompartmentEditPart;
 import org.eclipse.uml2.diagram.activity.expressions.UMLAbstractExpression;
 import org.eclipse.uml2.diagram.activity.expressions.UMLOCLFactory;
 import org.eclipse.uml2.uml.AcceptEventAction;
@@ -2838,21 +2741,35 @@ public class UMLVisualIDRegistry {
 	}
 
 	/**
-	 * @generated
+	 * @generated NOT
 	 */
 	private static boolean isConstraint_2027(Constraint domainElement) {
-		// FIXME: implement this method 
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException("No java implementation provided in 'isConstraint_2027' operation");//$NON-NLS-1$
+		Element owner = domainElement.getOwner();
+		if (owner instanceof Action) {
+			EList<Constraint> preconditions = ((Action) owner).getLocalPreconditions();
+			for (Iterator<Constraint> pcIterator = preconditions.iterator(); pcIterator.hasNext();) {
+				if (domainElement.equals(pcIterator.next())) {
+					return true;
+				}
+			}
+		}
+		return false;
 	}
 
 	/**
-	 * @generated
+	 * @generated NOT
 	 */
 	private static boolean isConstraint_2028(Constraint domainElement) {
-		// FIXME: implement this method 
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException("No java implementation provided in 'isConstraint_2028' operation");//$NON-NLS-1$
+		Element owner = domainElement.getOwner();
+		if (owner instanceof Action) {
+			EList<Constraint> postconditions = ((Action) owner).getLocalPostconditions();
+			for (Iterator<Constraint> pcIterator = postconditions.iterator(); pcIterator.hasNext();) {
+				if (domainElement.equals(pcIterator.next())) {
+					return true;
+				}
+			}
+		}
+		return false;
 	}
 
 	/**
