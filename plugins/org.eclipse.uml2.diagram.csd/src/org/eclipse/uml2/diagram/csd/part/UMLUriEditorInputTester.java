@@ -16,7 +16,9 @@ public class UMLUriEditorInputTester extends PropertyTester {
 			return false;
 		}
 		URIEditorInput editorInput = (URIEditorInput) receiver;
-		return "umlcompositestructures_diagram".equals(editorInput.getURI().fileExtension()); //$NON-NLS-1$
+		return "umlcsd".equals(editorInput.getURI().fileExtension())//$NON-NLS-1$
+				|| "umlcompositestructures_diagram".equals(editorInput.getURI().fileExtension())//$NON-NLS-1$
+		;
 	}
 
 }

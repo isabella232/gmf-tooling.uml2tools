@@ -16,7 +16,9 @@ public class UMLUriEditorInputTester extends PropertyTester {
 			return false;
 		}
 		URIEditorInput editorInput = (URIEditorInput) receiver;
-		return "umlusecase_diagram".equals(editorInput.getURI().fileExtension()); //$NON-NLS-1$
+		return "umlusc".equals(editorInput.getURI().fileExtension())//$NON-NLS-1$
+				|| "umlusecase_diagram".equals(editorInput.getURI().fileExtension())//$NON-NLS-1$
+		;
 	}
 
 }

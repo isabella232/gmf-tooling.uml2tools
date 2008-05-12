@@ -15,12 +15,20 @@
       <?gmfgen generated="true"?>
       <fileTypes
          type="text"
+         extension="umlcomp">
+      </fileTypes>
+      <fileTypes
+         type="text"
          extension="umlcomponent_diagram">
       </fileTypes>
    </extension>
 
    <extension point="org.eclipse.emf.ecore.extension_parser">
       <?gmfgen generated="true"?>
+      <parser
+         type="umlcomp"
+         class="org.eclipse.gmf.runtime.emf.core.resources.GMFResourceFactory">
+      </parser>
       <parser
          type="umlcomponent_diagram"
          class="org.eclipse.gmf.runtime.emf.core.resources.GMFResourceFactory">
@@ -29,6 +37,18 @@
 
    <extension point="org.eclipse.ui.editors">
       <?gmfgen generated="true"?>
+
+      <editor
+         id="org.eclipse.uml2.diagram.component.part.UMLDiagramEditorID"
+         name="%editorName"
+         icon="icons/obj16/UMLDiagramFile.gif"
+         extensions="umlcomp"
+         default="true"
+         class="org.eclipse.uml2.diagram.component.part.UMLDiagramEditor"
+         matchingStrategy="org.eclipse.uml2.diagram.component.part.UMLMatchingStrategy"
+         contributorClass="org.eclipse.uml2.diagram.component.part.UMLDiagramActionBarContributor">
+      </editor>
+
       <editor
          id="org.eclipse.uml2.diagram.component.part.UMLDiagramEditorID"
          name="%editorName"
@@ -39,6 +59,7 @@
          matchingStrategy="org.eclipse.uml2.diagram.component.part.UMLMatchingStrategy"
          contributorClass="org.eclipse.uml2.diagram.component.part.UMLDiagramActionBarContributor">
       </editor>
+
    </extension>
 
    <extension point="org.eclipse.ui.newWizards">

@@ -6,12 +6,20 @@
       <?gmfgen generated="true"?>
       <fileTypes
          type="text"
+         extension="umldepl">
+      </fileTypes>
+      <fileTypes
+         type="text"
          extension="umldeployment_diagram">
       </fileTypes>
    </extension>
 
    <extension point="org.eclipse.emf.ecore.extension_parser">
       <?gmfgen generated="true"?>
+      <parser
+         type="umldepl"
+         class="org.eclipse.gmf.runtime.emf.core.resources.GMFResourceFactory">
+      </parser>
       <parser
          type="umldeployment_diagram"
          class="org.eclipse.gmf.runtime.emf.core.resources.GMFResourceFactory">
@@ -20,6 +28,18 @@
 
    <extension point="org.eclipse.ui.editors">
       <?gmfgen generated="true"?>
+
+      <editor
+         id="org.eclipse.uml2.diagram.deploy.part.UMLDiagramEditorID"
+         name="%editorName"
+         icon="icons/obj16/UMLDiagramFile.gif"
+         extensions="umldepl"
+         default="true"
+         class="org.eclipse.uml2.diagram.deploy.part.UMLDiagramEditor"
+         matchingStrategy="org.eclipse.uml2.diagram.deploy.part.UMLMatchingStrategy"
+         contributorClass="org.eclipse.uml2.diagram.deploy.part.UMLDiagramActionBarContributor">
+      </editor>
+
       <editor
          id="org.eclipse.uml2.diagram.deploy.part.UMLDiagramEditorID"
          name="%editorName"
@@ -30,6 +50,7 @@
          matchingStrategy="org.eclipse.uml2.diagram.deploy.part.UMLMatchingStrategy"
          contributorClass="org.eclipse.uml2.diagram.deploy.part.UMLDiagramActionBarContributor">
       </editor>
+
    </extension>
    
    <extension point="org.eclipse.ui.contexts">
@@ -576,6 +597,10 @@
             <or>
 	           <and>
     	          <instanceof value="org.eclipse.core.resources.IFile"/>
+        	      <test property="org.eclipse.core.resources.extension" value="umldepl"/>
+               </and>
+	           <and>
+    	          <instanceof value="org.eclipse.core.resources.IFile"/>
         	      <test property="org.eclipse.core.resources.extension" value="umldeployment_diagram"/>
                </and>
                <instanceof value="org.eclipse.uml2.diagram.deploy.navigator.UMLAbstractNavigatorItem"/>
@@ -591,6 +616,10 @@
                class="org.eclipse.uml2.diagram.deploy.navigator.UMLNavigatorSorter">
             <parentExpression>
                <or>
+	              <and>
+    	             <instanceof value="org.eclipse.core.resources.IFile"/>
+        	         <test property="org.eclipse.core.resources.extension" value="umldepl"/>
+                  </and>
 	              <and>
     	             <instanceof value="org.eclipse.core.resources.IFile"/>
         	         <test property="org.eclipse.core.resources.extension" value="umldeployment_diagram"/>

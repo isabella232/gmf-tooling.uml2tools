@@ -5,7 +5,7 @@
     xmlns:gmfgen="http://www.eclipse.org/gmf/2008/GenModel"
     xmlns:uml2.gmfgenext="http://www.eclipse.org/uml2/diagram/gmfgenext/DiagramFigure/1.0" packageNamePrefix="org.eclipse.uml2.diagram.statemachine"
     modelID="UMLStateMachine"
-    diagramFileExtension="umlstatemachine_diagram"
+    diagramFileExtension="umlstm,umlstatemachine_diagram"
     dynamicTemplates="true"
     templateDirectory="/org.eclipse.uml2.diagram.def/dynamic-templates/codegen">
   <diagram
