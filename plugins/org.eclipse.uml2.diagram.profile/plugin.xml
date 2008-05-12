@@ -73,6 +73,7 @@
 
    <extension point="org.eclipse.ui.editors">
       <?gmfgen generated="true"?>
+
       <editor
          id="org.eclipse.uml2.diagram.profile.part.UMLDiagramEditorID"
          name="%editorName"
@@ -83,6 +84,7 @@
          matchingStrategy="org.eclipse.uml2.diagram.profile.part.UMLMatchingStrategy"
          contributorClass="org.eclipse.uml2.diagram.profile.part.UMLDiagramActionBarContributor">
       </editor>
+
    </extension>
 
    <extension point="org.eclipse.ui.newWizards">
