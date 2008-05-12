@@ -198,6 +198,9 @@ public class UMLViewProvider extends AbstractViewProvider {
 				case InstanceSpecification3EditPart.VISUAL_ID:
 				case DataType3EditPart.VISUAL_ID:
 				case PrimitiveType3EditPart.VISUAL_ID:
+				case LiteralStringEditPart.VISUAL_ID:
+				case LiteralIntegerEditPart.VISUAL_ID:
+				case ExpressionEditPart.VISUAL_ID:
 					if (domainElement == null || visualID != UMLVisualIDRegistry.getNodeVisualID(containerView, domainElement)) {
 						return null; // visual id in semantic hint should match visual id for domain element
 					}
@@ -478,8 +481,6 @@ public class UMLViewProvider extends AbstractViewProvider {
 			return InstanceSpecification4ViewFactory.class;
 		case InstanceSpecificationName3EditPart.VISUAL_ID:
 			return InstanceSpecificationName3ViewFactory.class;
-		case InstanceSpecificationValueEditPart.VISUAL_ID:
-			return InstanceSpecificationValueViewFactory.class;
 		case Package3EditPart.VISUAL_ID:
 			return Package3ViewFactory.class;
 		case ClassEditPart.VISUAL_ID:
@@ -562,6 +563,12 @@ public class UMLViewProvider extends AbstractViewProvider {
 			return PrimitiveType3ViewFactory.class;
 		case PrimitiveTypeName2EditPart.VISUAL_ID:
 			return PrimitiveTypeName2ViewFactory.class;
+		case LiteralStringEditPart.VISUAL_ID:
+			return LiteralStringViewFactory.class;
+		case LiteralIntegerEditPart.VISUAL_ID:
+			return LiteralIntegerViewFactory.class;
+		case ExpressionEditPart.VISUAL_ID:
+			return ExpressionViewFactory.class;
 		case PackagePackagesEditPart.VISUAL_ID:
 			return PackagePackagesViewFactory.class;
 		case PackageClassifiersEditPart.VISUAL_ID:
@@ -630,6 +637,8 @@ public class UMLViewProvider extends AbstractViewProvider {
 			return PrimitiveTypeAttributes2ViewFactory.class;
 		case PrimitiveTypeOperations2EditPart.VISUAL_ID:
 			return PrimitiveTypeOperations2ViewFactory.class;
+		case InstanceSpecificationValueEditPart.VISUAL_ID:
+			return InstanceSpecificationValueViewFactory.class;
 		case DependencyName2EditPart.VISUAL_ID:
 			return DependencyName2ViewFactory.class;
 		case DependencyName3EditPart.VISUAL_ID:

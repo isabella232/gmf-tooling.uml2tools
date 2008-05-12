@@ -21,6 +21,7 @@ import org.eclipse.gmf.runtime.diagram.ui.editparts.ITextAwareEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.ShapeNodeEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editpolicies.ConstrainedToolbarLayoutEditPolicy;
 import org.eclipse.gmf.runtime.diagram.ui.editpolicies.CreationEditPolicy;
+import org.eclipse.gmf.runtime.diagram.ui.editpolicies.DragDropEditPolicy;
 import org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles;
 import org.eclipse.gmf.runtime.diagram.ui.requests.CreateViewAndElementRequest;
 import org.eclipse.gmf.runtime.draw2d.ui.figures.ConstrainedToolbarLayout;
@@ -28,6 +29,7 @@ import org.eclipse.gmf.runtime.emf.type.core.IElementType;
 import org.eclipse.gmf.runtime.gef.ui.figures.DefaultSizeNodeFigure;
 import org.eclipse.gmf.runtime.gef.ui.figures.NodeFigure;
 import org.eclipse.gmf.runtime.notation.View;
+import org.eclipse.uml2.diagram.clazz.edit.policies.InstanceSpecification4CanonicalEditPolicy;
 import org.eclipse.uml2.diagram.clazz.edit.policies.InstanceSpecification4ItemSemanticEditPolicy;
 import org.eclipse.uml2.diagram.clazz.edit.policies.UMLTextSelectionEditPolicy;
 import org.eclipse.uml2.diagram.clazz.part.UMLVisualIDRegistry;
@@ -66,8 +68,31 @@ public class InstanceSpecification4EditPart extends ShapeNodeEditPart implements
 	 * @generated
 	 */
 	protected void createDefaultEditPolicies() {
+		installEditPolicy(EditPolicyRoles.CREATION_ROLE, new CreationEditPolicy() {
+
+			public Command getCommand(Request request) {
+				if (understandsRequest(request)) {
+					if (request instanceof CreateViewAndElementRequest) {
+						CreateElementRequestAdapter adapter = ((CreateViewAndElementRequest) request).getViewAndElementDescriptor().getCreateElementRequestAdapter();
+						IElementType type = (IElementType) adapter.getAdapter(IElementType.class);
+						if (type == UMLElementTypes.LiteralString_3038) {
+							EditPart compartmentEditPart = getChildBySemanticHint(UMLVisualIDRegistry.getType(InstanceSpecificationValueEditPart.VISUAL_ID));
+							return compartmentEditPart == null ? null : compartmentEditPart.getCommand(request);
+						}
+						if (type == UMLElementTypes.Expression_3040) {
+							EditPart compartmentEditPart = getChildBySemanticHint(UMLVisualIDRegistry.getType(InstanceSpecificationValueEditPart.VISUAL_ID));
+							return compartmentEditPart == null ? null : compartmentEditPart.getCommand(request);
+						}
+					}
+					return super.getCommand(request);
+				}
+				return null;
+			}
+		});
 		super.createDefaultEditPolicies();
 		installEditPolicy(EditPolicyRoles.SEMANTIC_ROLE, new InstanceSpecification4ItemSemanticEditPolicy());
+		installEditPolicy(EditPolicyRoles.DRAG_DROP_ROLE, new DragDropEditPolicy());
+		installEditPolicy(EditPolicyRoles.CANONICAL_ROLE, new InstanceSpecification4CanonicalEditPolicy());
 		installEditPolicy(EditPolicy.LAYOUT_ROLE, createLayoutEditPolicy());
 		// XXX need an SCR to runtime to have another abstract superclass that would let children add reasonable editpolicies
 		// removeEditPolicy(org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles.CONNECTION_HANDLES_ROLE);
@@ -122,7 +147,9 @@ public class InstanceSpecification4EditPart extends ShapeNodeEditPart implements
 			return true;
 		}
 		if (childEditPart instanceof InstanceSpecificationValueEditPart) {
-			((InstanceSpecificationValueEditPart) childEditPart).setLabel(getPrimaryShape().getFigureRectangleInstanceNode_ValueLabel());
+			IFigure pane = getPrimaryShape().getFigureRectangleInstanceNode_ValueLabel();
+			setupContentPane(pane); // FIXME each comparment should handle his content pane in his own way 
+			pane.add(((InstanceSpecificationValueEditPart) childEditPart).getFigure());
 			return true;
 		}
 		return false;
@@ -133,6 +160,11 @@ public class InstanceSpecification4EditPart extends ShapeNodeEditPart implements
 	 */
 	protected boolean removeFixedChild(EditPart childEditPart) {
 
+		if (childEditPart instanceof InstanceSpecificationValueEditPart) {
+			IFigure pane = getPrimaryShape().getFigureRectangleInstanceNode_ValueLabel();
+			pane.remove(((InstanceSpecificationValueEditPart) childEditPart).getFigure());
+			return true;
+		}
 		return false;
 	}
 
@@ -161,6 +193,9 @@ public class InstanceSpecification4EditPart extends ShapeNodeEditPart implements
 	 */
 	protected IFigure getContentPaneFor(IGraphicalEditPart editPart) {
 
+		if (editPart instanceof InstanceSpecificationValueEditPart) {
+			return getPrimaryShape().getFigureRectangleInstanceNode_ValueLabel();
+		}
 		return super.getContentPaneFor(editPart);
 	}
 

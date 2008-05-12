@@ -125,6 +125,13 @@ public class UMLModelingAssistantProvider extends ModelingAssistantProvider {
 			types.add(UMLElementTypes.ElementImport_3031);
 			return types;
 		}
+		if (editPart instanceof InstanceSpecification4EditPart) {
+			List types = new ArrayList();
+			types.add(UMLElementTypes.LiteralInteger_3039);
+			types.add(UMLElementTypes.LiteralString_3038);
+			types.add(UMLElementTypes.Expression_3040);
+			return types;
+		}
 		if (editPart instanceof Class5EditPart) {
 			List types = new ArrayList();
 			types.add(UMLElementTypes.Port_3025);

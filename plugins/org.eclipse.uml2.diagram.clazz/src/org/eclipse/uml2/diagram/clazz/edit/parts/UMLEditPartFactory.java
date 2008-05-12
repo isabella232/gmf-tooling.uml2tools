@@ -131,9 +131,6 @@ public class UMLEditPartFactory implements EditPartFactory {
 			case InstanceSpecificationName3EditPart.VISUAL_ID:
 				return new InstanceSpecificationName3EditPart(view);
 
-			case InstanceSpecificationValueEditPart.VISUAL_ID:
-				return new InstanceSpecificationValueEditPart(view);
-
 			case Package3EditPart.VISUAL_ID:
 				return new Package3EditPart(view);
 
@@ -257,6 +254,15 @@ public class UMLEditPartFactory implements EditPartFactory {
 			case PrimitiveTypeName2EditPart.VISUAL_ID:
 				return new PrimitiveTypeName2EditPart(view);
 
+			case LiteralStringEditPart.VISUAL_ID:
+				return new LiteralStringEditPart(view);
+
+			case LiteralIntegerEditPart.VISUAL_ID:
+				return new LiteralIntegerEditPart(view);
+
+			case ExpressionEditPart.VISUAL_ID:
+				return new ExpressionEditPart(view);
+
 			case PackagePackagesEditPart.VISUAL_ID:
 				return new PackagePackagesEditPart(view);
 
@@ -358,6 +364,9 @@ public class UMLEditPartFactory implements EditPartFactory {
 
 			case PrimitiveTypeOperations2EditPart.VISUAL_ID:
 				return new PrimitiveTypeOperations2EditPart(view);
+
+			case InstanceSpecificationValueEditPart.VISUAL_ID:
+				return new InstanceSpecificationValueEditPart(view);
 
 			case GeneralizationEditPart.VISUAL_ID:
 				return new GeneralizationEditPart(view);

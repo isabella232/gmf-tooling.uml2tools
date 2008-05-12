@@ -1149,7 +1149,15 @@ public class UMLNavigatorContentProvider implements ICommonContentProvider {
 			Collection result = new ArrayList();
 			UMLNavigatorGroup incominglinks = new UMLNavigatorGroup(Messages.NavigatorGroupName_InstanceSpecification_2017_incominglinks, "icons/incomingLinksNavigatorGroup.gif", parentElement); //$NON-NLS-1$
 			UMLNavigatorGroup outgoinglinks = new UMLNavigatorGroup(Messages.NavigatorGroupName_InstanceSpecification_2017_outgoinglinks, "icons/outgoingLinksNavigatorGroup.gif", parentElement); //$NON-NLS-1$
-			Collection connectedViews = getIncomingLinksByType(Collections.singleton(view), Dependency2EditPart.VISUAL_ID);
+			Collection connectedViews = getChildrenByType(Collections.singleton(view), InstanceSpecificationValueEditPart.VISUAL_ID);
+			connectedViews = getChildrenByType(connectedViews, LiteralStringEditPart.VISUAL_ID);
+			result.addAll(createNavigatorItems(connectedViews, parentElement, false));
+			connectedViews = getChildrenByType(Collections.singleton(view), LiteralIntegerEditPart.VISUAL_ID);
+			result.addAll(createNavigatorItems(connectedViews, parentElement, false));
+			connectedViews = getChildrenByType(Collections.singleton(view), InstanceSpecificationValueEditPart.VISUAL_ID);
+			connectedViews = getChildrenByType(connectedViews, ExpressionEditPart.VISUAL_ID);
+			result.addAll(createNavigatorItems(connectedViews, parentElement, false));
+			connectedViews = getIncomingLinksByType(Collections.singleton(view), Dependency2EditPart.VISUAL_ID);
 			incominglinks.addChildren(createNavigatorItems(connectedViews, incominglinks, true));
 			connectedViews = getOutgoingLinksByType(Collections.singleton(view), Dependency2EditPart.VISUAL_ID);
 			outgoinglinks.addChildren(createNavigatorItems(connectedViews, outgoinglinks, true));
@@ -2479,6 +2487,99 @@ public class UMLNavigatorContentProvider implements ICommonContentProvider {
 			return result.toArray();
 		}
 
+		case LiteralStringEditPart.VISUAL_ID: {
+			Collection result = new ArrayList();
+			UMLNavigatorGroup incominglinks = new UMLNavigatorGroup(Messages.NavigatorGroupName_LiteralString_3038_incominglinks, "icons/incomingLinksNavigatorGroup.gif", parentElement); //$NON-NLS-1$
+			UMLNavigatorGroup outgoinglinks = new UMLNavigatorGroup(Messages.NavigatorGroupName_LiteralString_3038_outgoinglinks, "icons/outgoingLinksNavigatorGroup.gif", parentElement); //$NON-NLS-1$
+			Collection connectedViews = getIncomingLinksByType(Collections.singleton(view), Dependency2EditPart.VISUAL_ID);
+			incominglinks.addChildren(createNavigatorItems(connectedViews, incominglinks, true));
+			connectedViews = getOutgoingLinksByType(Collections.singleton(view), Dependency2EditPart.VISUAL_ID);
+			outgoinglinks.addChildren(createNavigatorItems(connectedViews, outgoinglinks, true));
+			connectedViews = getIncomingLinksByType(Collections.singleton(view), ConstraintConstrainedElementEditPart.VISUAL_ID);
+			incominglinks.addChildren(createNavigatorItems(connectedViews, incominglinks, true));
+			connectedViews = getIncomingLinksByType(Collections.singleton(view), DependencySupplierEditPart.VISUAL_ID);
+			incominglinks.addChildren(createNavigatorItems(connectedViews, incominglinks, true));
+			connectedViews = getIncomingLinksByType(Collections.singleton(view), DependencyClientEditPart.VISUAL_ID);
+			incominglinks.addChildren(createNavigatorItems(connectedViews, incominglinks, true));
+			connectedViews = getIncomingLinksByType(Collections.singleton(view), RealizationEditPart.VISUAL_ID);
+			incominglinks.addChildren(createNavigatorItems(connectedViews, incominglinks, true));
+			connectedViews = getOutgoingLinksByType(Collections.singleton(view), RealizationEditPart.VISUAL_ID);
+			outgoinglinks.addChildren(createNavigatorItems(connectedViews, outgoinglinks, true));
+			connectedViews = getIncomingLinksByType(Collections.singleton(view), UsageEditPart.VISUAL_ID);
+			incominglinks.addChildren(createNavigatorItems(connectedViews, incominglinks, true));
+			connectedViews = getOutgoingLinksByType(Collections.singleton(view), UsageEditPart.VISUAL_ID);
+			outgoinglinks.addChildren(createNavigatorItems(connectedViews, outgoinglinks, true));
+			if (!incominglinks.isEmpty()) {
+				result.add(incominglinks);
+			}
+			if (!outgoinglinks.isEmpty()) {
+				result.add(outgoinglinks);
+			}
+			return result.toArray();
+		}
+
+		case LiteralIntegerEditPart.VISUAL_ID: {
+			Collection result = new ArrayList();
+			UMLNavigatorGroup incominglinks = new UMLNavigatorGroup(Messages.NavigatorGroupName_LiteralInteger_3039_incominglinks, "icons/incomingLinksNavigatorGroup.gif", parentElement); //$NON-NLS-1$
+			UMLNavigatorGroup outgoinglinks = new UMLNavigatorGroup(Messages.NavigatorGroupName_LiteralInteger_3039_outgoinglinks, "icons/outgoingLinksNavigatorGroup.gif", parentElement); //$NON-NLS-1$
+			Collection connectedViews = getIncomingLinksByType(Collections.singleton(view), Dependency2EditPart.VISUAL_ID);
+			incominglinks.addChildren(createNavigatorItems(connectedViews, incominglinks, true));
+			connectedViews = getOutgoingLinksByType(Collections.singleton(view), Dependency2EditPart.VISUAL_ID);
+			outgoinglinks.addChildren(createNavigatorItems(connectedViews, outgoinglinks, true));
+			connectedViews = getIncomingLinksByType(Collections.singleton(view), ConstraintConstrainedElementEditPart.VISUAL_ID);
+			incominglinks.addChildren(createNavigatorItems(connectedViews, incominglinks, true));
+			connectedViews = getIncomingLinksByType(Collections.singleton(view), DependencySupplierEditPart.VISUAL_ID);
+			incominglinks.addChildren(createNavigatorItems(connectedViews, incominglinks, true));
+			connectedViews = getIncomingLinksByType(Collections.singleton(view), DependencyClientEditPart.VISUAL_ID);
+			incominglinks.addChildren(createNavigatorItems(connectedViews, incominglinks, true));
+			connectedViews = getIncomingLinksByType(Collections.singleton(view), RealizationEditPart.VISUAL_ID);
+			incominglinks.addChildren(createNavigatorItems(connectedViews, incominglinks, true));
+			connectedViews = getOutgoingLinksByType(Collections.singleton(view), RealizationEditPart.VISUAL_ID);
+			outgoinglinks.addChildren(createNavigatorItems(connectedViews, outgoinglinks, true));
+			connectedViews = getIncomingLinksByType(Collections.singleton(view), UsageEditPart.VISUAL_ID);
+			incominglinks.addChildren(createNavigatorItems(connectedViews, incominglinks, true));
+			connectedViews = getOutgoingLinksByType(Collections.singleton(view), UsageEditPart.VISUAL_ID);
+			outgoinglinks.addChildren(createNavigatorItems(connectedViews, outgoinglinks, true));
+			if (!incominglinks.isEmpty()) {
+				result.add(incominglinks);
+			}
+			if (!outgoinglinks.isEmpty()) {
+				result.add(outgoinglinks);
+			}
+			return result.toArray();
+		}
+
+		case ExpressionEditPart.VISUAL_ID: {
+			Collection result = new ArrayList();
+			UMLNavigatorGroup incominglinks = new UMLNavigatorGroup(Messages.NavigatorGroupName_Expression_3040_incominglinks, "icons/incomingLinksNavigatorGroup.gif", parentElement); //$NON-NLS-1$
+			UMLNavigatorGroup outgoinglinks = new UMLNavigatorGroup(Messages.NavigatorGroupName_Expression_3040_outgoinglinks, "icons/outgoingLinksNavigatorGroup.gif", parentElement); //$NON-NLS-1$
+			Collection connectedViews = getIncomingLinksByType(Collections.singleton(view), Dependency2EditPart.VISUAL_ID);
+			incominglinks.addChildren(createNavigatorItems(connectedViews, incominglinks, true));
+			connectedViews = getOutgoingLinksByType(Collections.singleton(view), Dependency2EditPart.VISUAL_ID);
+			outgoinglinks.addChildren(createNavigatorItems(connectedViews, outgoinglinks, true));
+			connectedViews = getIncomingLinksByType(Collections.singleton(view), ConstraintConstrainedElementEditPart.VISUAL_ID);
+			incominglinks.addChildren(createNavigatorItems(connectedViews, incominglinks, true));
+			connectedViews = getIncomingLinksByType(Collections.singleton(view), DependencySupplierEditPart.VISUAL_ID);
+			incominglinks.addChildren(createNavigatorItems(connectedViews, incominglinks, true));
+			connectedViews = getIncomingLinksByType(Collections.singleton(view), DependencyClientEditPart.VISUAL_ID);
+			incominglinks.addChildren(createNavigatorItems(connectedViews, incominglinks, true));
+			connectedViews = getIncomingLinksByType(Collections.singleton(view), RealizationEditPart.VISUAL_ID);
+			incominglinks.addChildren(createNavigatorItems(connectedViews, incominglinks, true));
+			connectedViews = getOutgoingLinksByType(Collections.singleton(view), RealizationEditPart.VISUAL_ID);
+			outgoinglinks.addChildren(createNavigatorItems(connectedViews, outgoinglinks, true));
+			connectedViews = getIncomingLinksByType(Collections.singleton(view), UsageEditPart.VISUAL_ID);
+			incominglinks.addChildren(createNavigatorItems(connectedViews, incominglinks, true));
+			connectedViews = getOutgoingLinksByType(Collections.singleton(view), UsageEditPart.VISUAL_ID);
+			outgoinglinks.addChildren(createNavigatorItems(connectedViews, outgoinglinks, true));
+			if (!incominglinks.isEmpty()) {
+				result.add(incominglinks);
+			}
+			if (!outgoinglinks.isEmpty()) {
+				result.add(outgoinglinks);
+			}
+			return result.toArray();
+		}
+
 		case GeneralizationEditPart.VISUAL_ID: {
 			Collection result = new ArrayList();
 			UMLNavigatorGroup target = new UMLNavigatorGroup(Messages.NavigatorGroupName_Generalization_4001_target, "icons/linkTargetNavigatorGroup.gif", parentElement); //$NON-NLS-1$
@@ -2664,6 +2765,12 @@ public class UMLNavigatorContentProvider implements ICommonContentProvider {
 			target.addChildren(createNavigatorItems(connectedViews, target, true));
 			connectedViews = getLinksTargetByType(Collections.singleton(view), PrimitiveType3EditPart.VISUAL_ID);
 			target.addChildren(createNavigatorItems(connectedViews, target, true));
+			connectedViews = getLinksTargetByType(Collections.singleton(view), LiteralStringEditPart.VISUAL_ID);
+			target.addChildren(createNavigatorItems(connectedViews, target, true));
+			connectedViews = getLinksTargetByType(Collections.singleton(view), LiteralIntegerEditPart.VISUAL_ID);
+			target.addChildren(createNavigatorItems(connectedViews, target, true));
+			connectedViews = getLinksTargetByType(Collections.singleton(view), ExpressionEditPart.VISUAL_ID);
+			target.addChildren(createNavigatorItems(connectedViews, target, true));
 			connectedViews = getLinksSourceByType(Collections.singleton(view), Package2EditPart.VISUAL_ID);
 			source.addChildren(createNavigatorItems(connectedViews, source, true));
 			connectedViews = getLinksSourceByType(Collections.singleton(view), Class2EditPart.VISUAL_ID);
@@ -2755,6 +2862,12 @@ public class UMLNavigatorContentProvider implements ICommonContentProvider {
 			connectedViews = getLinksSourceByType(Collections.singleton(view), DataType3EditPart.VISUAL_ID);
 			source.addChildren(createNavigatorItems(connectedViews, source, true));
 			connectedViews = getLinksSourceByType(Collections.singleton(view), PrimitiveType3EditPart.VISUAL_ID);
+			source.addChildren(createNavigatorItems(connectedViews, source, true));
+			connectedViews = getLinksSourceByType(Collections.singleton(view), LiteralStringEditPart.VISUAL_ID);
+			source.addChildren(createNavigatorItems(connectedViews, source, true));
+			connectedViews = getLinksSourceByType(Collections.singleton(view), LiteralIntegerEditPart.VISUAL_ID);
+			source.addChildren(createNavigatorItems(connectedViews, source, true));
+			connectedViews = getLinksSourceByType(Collections.singleton(view), ExpressionEditPart.VISUAL_ID);
 			source.addChildren(createNavigatorItems(connectedViews, source, true));
 			if (!target.isEmpty()) {
 				result.add(target);
@@ -2921,6 +3034,12 @@ public class UMLNavigatorContentProvider implements ICommonContentProvider {
 			connectedViews = getLinksTargetByType(Collections.singleton(view), DataType3EditPart.VISUAL_ID);
 			target.addChildren(createNavigatorItems(connectedViews, target, true));
 			connectedViews = getLinksTargetByType(Collections.singleton(view), PrimitiveType3EditPart.VISUAL_ID);
+			target.addChildren(createNavigatorItems(connectedViews, target, true));
+			connectedViews = getLinksTargetByType(Collections.singleton(view), LiteralStringEditPart.VISUAL_ID);
+			target.addChildren(createNavigatorItems(connectedViews, target, true));
+			connectedViews = getLinksTargetByType(Collections.singleton(view), LiteralIntegerEditPart.VISUAL_ID);
+			target.addChildren(createNavigatorItems(connectedViews, target, true));
+			connectedViews = getLinksTargetByType(Collections.singleton(view), ExpressionEditPart.VISUAL_ID);
 			target.addChildren(createNavigatorItems(connectedViews, target, true));
 			connectedViews = getLinksSourceByType(Collections.singleton(view), ConstraintEditPart.VISUAL_ID);
 			source.addChildren(createNavigatorItems(connectedViews, source, true));
@@ -3118,6 +3237,12 @@ public class UMLNavigatorContentProvider implements ICommonContentProvider {
 			target.addChildren(createNavigatorItems(connectedViews, target, true));
 			connectedViews = getLinksTargetByType(Collections.singleton(view), PrimitiveType3EditPart.VISUAL_ID);
 			target.addChildren(createNavigatorItems(connectedViews, target, true));
+			connectedViews = getLinksTargetByType(Collections.singleton(view), LiteralStringEditPart.VISUAL_ID);
+			target.addChildren(createNavigatorItems(connectedViews, target, true));
+			connectedViews = getLinksTargetByType(Collections.singleton(view), LiteralIntegerEditPart.VISUAL_ID);
+			target.addChildren(createNavigatorItems(connectedViews, target, true));
+			connectedViews = getLinksTargetByType(Collections.singleton(view), ExpressionEditPart.VISUAL_ID);
+			target.addChildren(createNavigatorItems(connectedViews, target, true));
 			connectedViews = getLinksSourceByType(Collections.singleton(view), DependencyEditPart.VISUAL_ID);
 			source.addChildren(createNavigatorItems(connectedViews, source, true));
 			if (!target.isEmpty()) {
@@ -3224,6 +3349,12 @@ public class UMLNavigatorContentProvider implements ICommonContentProvider {
 			connectedViews = getLinksTargetByType(Collections.singleton(view), DataType3EditPart.VISUAL_ID);
 			target.addChildren(createNavigatorItems(connectedViews, target, true));
 			connectedViews = getLinksTargetByType(Collections.singleton(view), PrimitiveType3EditPart.VISUAL_ID);
+			target.addChildren(createNavigatorItems(connectedViews, target, true));
+			connectedViews = getLinksTargetByType(Collections.singleton(view), LiteralStringEditPart.VISUAL_ID);
+			target.addChildren(createNavigatorItems(connectedViews, target, true));
+			connectedViews = getLinksTargetByType(Collections.singleton(view), LiteralIntegerEditPart.VISUAL_ID);
+			target.addChildren(createNavigatorItems(connectedViews, target, true));
+			connectedViews = getLinksTargetByType(Collections.singleton(view), ExpressionEditPart.VISUAL_ID);
 			target.addChildren(createNavigatorItems(connectedViews, target, true));
 			connectedViews = getLinksSourceByType(Collections.singleton(view), DependencyEditPart.VISUAL_ID);
 			source.addChildren(createNavigatorItems(connectedViews, source, true));
@@ -3365,6 +3496,12 @@ public class UMLNavigatorContentProvider implements ICommonContentProvider {
 			target.addChildren(createNavigatorItems(connectedViews, target, true));
 			connectedViews = getLinksTargetByType(Collections.singleton(view), PrimitiveType3EditPart.VISUAL_ID);
 			target.addChildren(createNavigatorItems(connectedViews, target, true));
+			connectedViews = getLinksTargetByType(Collections.singleton(view), LiteralStringEditPart.VISUAL_ID);
+			target.addChildren(createNavigatorItems(connectedViews, target, true));
+			connectedViews = getLinksTargetByType(Collections.singleton(view), LiteralIntegerEditPart.VISUAL_ID);
+			target.addChildren(createNavigatorItems(connectedViews, target, true));
+			connectedViews = getLinksTargetByType(Collections.singleton(view), ExpressionEditPart.VISUAL_ID);
+			target.addChildren(createNavigatorItems(connectedViews, target, true));
 			connectedViews = getLinksSourceByType(Collections.singleton(view), Package2EditPart.VISUAL_ID);
 			source.addChildren(createNavigatorItems(connectedViews, source, true));
 			connectedViews = getLinksSourceByType(Collections.singleton(view), Class2EditPart.VISUAL_ID);
@@ -3456,6 +3593,12 @@ public class UMLNavigatorContentProvider implements ICommonContentProvider {
 			connectedViews = getLinksSourceByType(Collections.singleton(view), DataType3EditPart.VISUAL_ID);
 			source.addChildren(createNavigatorItems(connectedViews, source, true));
 			connectedViews = getLinksSourceByType(Collections.singleton(view), PrimitiveType3EditPart.VISUAL_ID);
+			source.addChildren(createNavigatorItems(connectedViews, source, true));
+			connectedViews = getLinksSourceByType(Collections.singleton(view), LiteralStringEditPart.VISUAL_ID);
+			source.addChildren(createNavigatorItems(connectedViews, source, true));
+			connectedViews = getLinksSourceByType(Collections.singleton(view), LiteralIntegerEditPart.VISUAL_ID);
+			source.addChildren(createNavigatorItems(connectedViews, source, true));
+			connectedViews = getLinksSourceByType(Collections.singleton(view), ExpressionEditPart.VISUAL_ID);
 			source.addChildren(createNavigatorItems(connectedViews, source, true));
 			if (!target.isEmpty()) {
 				result.add(target);
@@ -3662,6 +3805,12 @@ public class UMLNavigatorContentProvider implements ICommonContentProvider {
 			target.addChildren(createNavigatorItems(connectedViews, target, true));
 			connectedViews = getLinksTargetByType(Collections.singleton(view), PrimitiveType3EditPart.VISUAL_ID);
 			target.addChildren(createNavigatorItems(connectedViews, target, true));
+			connectedViews = getLinksTargetByType(Collections.singleton(view), LiteralStringEditPart.VISUAL_ID);
+			target.addChildren(createNavigatorItems(connectedViews, target, true));
+			connectedViews = getLinksTargetByType(Collections.singleton(view), LiteralIntegerEditPart.VISUAL_ID);
+			target.addChildren(createNavigatorItems(connectedViews, target, true));
+			connectedViews = getLinksTargetByType(Collections.singleton(view), ExpressionEditPart.VISUAL_ID);
+			target.addChildren(createNavigatorItems(connectedViews, target, true));
 			connectedViews = getLinksSourceByType(Collections.singleton(view), Package2EditPart.VISUAL_ID);
 			source.addChildren(createNavigatorItems(connectedViews, source, true));
 			connectedViews = getLinksSourceByType(Collections.singleton(view), Class2EditPart.VISUAL_ID);
@@ -3753,6 +3902,12 @@ public class UMLNavigatorContentProvider implements ICommonContentProvider {
 			connectedViews = getLinksSourceByType(Collections.singleton(view), DataType3EditPart.VISUAL_ID);
 			source.addChildren(createNavigatorItems(connectedViews, source, true));
 			connectedViews = getLinksSourceByType(Collections.singleton(view), PrimitiveType3EditPart.VISUAL_ID);
+			source.addChildren(createNavigatorItems(connectedViews, source, true));
+			connectedViews = getLinksSourceByType(Collections.singleton(view), LiteralStringEditPart.VISUAL_ID);
+			source.addChildren(createNavigatorItems(connectedViews, source, true));
+			connectedViews = getLinksSourceByType(Collections.singleton(view), LiteralIntegerEditPart.VISUAL_ID);
+			source.addChildren(createNavigatorItems(connectedViews, source, true));
+			connectedViews = getLinksSourceByType(Collections.singleton(view), ExpressionEditPart.VISUAL_ID);
 			source.addChildren(createNavigatorItems(connectedViews, source, true));
 			if (!target.isEmpty()) {
 				result.add(target);

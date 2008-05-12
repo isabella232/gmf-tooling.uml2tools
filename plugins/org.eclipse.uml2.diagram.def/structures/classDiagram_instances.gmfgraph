@@ -147,6 +147,10 @@
       figure="InstanceNodeFigure"
       needsTitle="true"
       accessor="//@figures.0/@descriptors.0/@accessors.1"/>
+  <compartments
+      name="value"
+      figure="RectangleInstanceNodeFigure"
+      accessor="//@figures.0/@descriptors.2/@accessors.1"/>
   <labels
       name="InstanceNode_name"
       figure="InstanceNodeFigure"

@@ -293,6 +293,21 @@ public class UMLElementTypes extends ElementInitializers {
 	/**
 	 * @generated
 	 */
+	public static final IHintedType LiteralString_3038 = (IHintedType) getElementType("org.eclipse.uml2.diagram.clazz.LiteralString_3038"); //$NON-NLS-1$
+
+	/**
+	 * @generated
+	 */
+	public static final IHintedType LiteralInteger_3039 = (IHintedType) getElementType("org.eclipse.uml2.diagram.clazz.LiteralInteger_3039"); //$NON-NLS-1$
+
+	/**
+	 * @generated
+	 */
+	public static final IHintedType Expression_3040 = (IHintedType) getElementType("org.eclipse.uml2.diagram.clazz.Expression_3040"); //$NON-NLS-1$
+
+	/**
+	 * @generated
+	 */
 	public static final IHintedType Generalization_4001 = (IHintedType) getElementType("org.eclipse.uml2.diagram.clazz.Generalization_4001"); //$NON-NLS-1$
 
 	/**
@@ -579,6 +594,12 @@ public class UMLElementTypes extends ElementInitializers {
 
 			elements.put(PrimitiveType_3037, UMLPackage.eINSTANCE.getPrimitiveType());
 
+			elements.put(LiteralString_3038, UMLPackage.eINSTANCE.getLiteralString());
+
+			elements.put(LiteralInteger_3039, UMLPackage.eINSTANCE.getLiteralInteger());
+
+			elements.put(Expression_3040, UMLPackage.eINSTANCE.getExpression());
+
 			elements.put(Generalization_4001, UMLPackage.eINSTANCE.getGeneralization());
 
 			elements.put(Dependency_4002, UMLPackage.eINSTANCE.getDependency());
@@ -678,6 +699,9 @@ public class UMLElementTypes extends ElementInitializers {
 			KNOWN_ELEMENT_TYPES.add(InstanceSpecification_3035);
 			KNOWN_ELEMENT_TYPES.add(DataType_3036);
 			KNOWN_ELEMENT_TYPES.add(PrimitiveType_3037);
+			KNOWN_ELEMENT_TYPES.add(LiteralString_3038);
+			KNOWN_ELEMENT_TYPES.add(LiteralInteger_3039);
+			KNOWN_ELEMENT_TYPES.add(Expression_3040);
 			KNOWN_ELEMENT_TYPES.add(Generalization_4001);
 			KNOWN_ELEMENT_TYPES.add(Dependency_4002);
 			KNOWN_ELEMENT_TYPES.add(Property_4003);

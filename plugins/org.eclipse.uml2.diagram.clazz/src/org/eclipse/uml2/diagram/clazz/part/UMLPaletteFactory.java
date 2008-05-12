@@ -614,8 +614,11 @@ public class UMLPaletteFactory {
 	 * @generated
 	 */
 	private ToolEntry createLiteralString1CreationTool() {
-		ToolEntry entry = new ToolEntry(Messages.LiteralString1CreationTool_title, Messages.LiteralString1CreationTool_desc, null, null) {
-		};
+		List/*<IElementType>*/types = new ArrayList/*<IElementType>*/(1);
+		types.add(UMLElementTypes.LiteralString_3038);
+		NodeToolEntry entry = new NodeToolEntry(Messages.LiteralString1CreationTool_title, Messages.LiteralString1CreationTool_desc, types);
+		entry.setSmallIcon(UMLElementTypes.getImageDescriptor(UMLElementTypes.LiteralString_3038));
+		entry.setLargeIcon(entry.getSmallIcon());
 		return entry;
 	}
 
@@ -623,8 +626,11 @@ public class UMLPaletteFactory {
 	 * @generated
 	 */
 	private ToolEntry createLiteralInteger2CreationTool() {
-		ToolEntry entry = new ToolEntry(Messages.LiteralInteger2CreationTool_title, Messages.LiteralInteger2CreationTool_desc, null, null) {
-		};
+		List/*<IElementType>*/types = new ArrayList/*<IElementType>*/(1);
+		types.add(UMLElementTypes.LiteralInteger_3039);
+		NodeToolEntry entry = new NodeToolEntry(Messages.LiteralInteger2CreationTool_title, Messages.LiteralInteger2CreationTool_desc, types);
+		entry.setSmallIcon(UMLElementTypes.getImageDescriptor(UMLElementTypes.LiteralInteger_3039));
+		entry.setLargeIcon(entry.getSmallIcon());
 		return entry;
 	}
 
@@ -632,8 +638,11 @@ public class UMLPaletteFactory {
 	 * @generated
 	 */
 	private ToolEntry createExpression3CreationTool() {
-		ToolEntry entry = new ToolEntry(Messages.Expression3CreationTool_title, Messages.Expression3CreationTool_desc, null, null) {
-		};
+		List/*<IElementType>*/types = new ArrayList/*<IElementType>*/(1);
+		types.add(UMLElementTypes.Expression_3040);
+		NodeToolEntry entry = new NodeToolEntry(Messages.Expression3CreationTool_title, Messages.Expression3CreationTool_desc, types);
+		entry.setSmallIcon(UMLElementTypes.getImageDescriptor(UMLElementTypes.Expression_3040));
+		entry.setLargeIcon(entry.getSmallIcon());
 		return entry;
 	}
 

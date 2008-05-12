@@ -1242,6 +1242,36 @@
       </metamodel>
       <metamodel nsURI="http://www.eclipse.org/uml2/2.1.0/UML">
          <metamodelType
+               id="org.eclipse.uml2.diagram.clazz.LiteralString_3038"
+               name="%metatype.name.LiteralString_3038"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
+               eclass="LiteralString"
+               edithelper="org.eclipse.uml2.diagram.clazz.edit.helpers.LiteralStringEditHelper">
+            <param name="semanticHint" value="3038"/>
+         </metamodelType>
+      </metamodel>
+      <metamodel nsURI="http://www.eclipse.org/uml2/2.1.0/UML">
+         <metamodelType
+               id="org.eclipse.uml2.diagram.clazz.LiteralInteger_3039"
+               name="%metatype.name.LiteralInteger_3039"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
+               eclass="LiteralInteger"
+               edithelper="org.eclipse.uml2.diagram.clazz.edit.helpers.LiteralIntegerEditHelper">
+            <param name="semanticHint" value="3039"/>
+         </metamodelType>
+      </metamodel>
+      <metamodel nsURI="http://www.eclipse.org/uml2/2.1.0/UML">
+         <metamodelType
+               id="org.eclipse.uml2.diagram.clazz.Expression_3040"
+               name="%metatype.name.Expression_3040"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
+               eclass="Expression"
+               edithelper="org.eclipse.uml2.diagram.clazz.edit.helpers.ExpressionEditHelper">
+            <param name="semanticHint" value="3040"/>
+         </metamodelType>
+      </metamodel>
+      <metamodel nsURI="http://www.eclipse.org/uml2/2.1.0/UML">
+         <metamodelType
                id="org.eclipse.uml2.diagram.clazz.Generalization_4001"
                name="%metatype.name.Generalization_4001"
                kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
@@ -1467,6 +1497,9 @@
          <elementType ref="org.eclipse.uml2.diagram.clazz.InstanceSpecification_3035"/>
          <elementType ref="org.eclipse.uml2.diagram.clazz.DataType_3036"/>
          <elementType ref="org.eclipse.uml2.diagram.clazz.PrimitiveType_3037"/>
+         <elementType ref="org.eclipse.uml2.diagram.clazz.LiteralString_3038"/>
+         <elementType ref="org.eclipse.uml2.diagram.clazz.LiteralInteger_3039"/>
+         <elementType ref="org.eclipse.uml2.diagram.clazz.Expression_3040"/>
          <elementType ref="org.eclipse.uml2.diagram.clazz.Generalization_4001"/>
          <elementType ref="org.eclipse.uml2.diagram.clazz.Dependency_4002"/>
          <elementType ref="org.eclipse.uml2.diagram.clazz.Property_4003"/>

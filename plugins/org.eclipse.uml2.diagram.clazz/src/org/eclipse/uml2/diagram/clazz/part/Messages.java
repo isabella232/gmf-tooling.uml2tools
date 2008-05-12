@@ -843,6 +843,11 @@ public class Messages extends NLS {
 	/**
 	 * @generated
 	 */
+	public static String InstanceSpecificationValueEditPart_title;
+
+	/**
+	 * @generated
+	 */
 	public static String CommandName_OpenDiagram;
 
 	/**
@@ -1319,6 +1324,36 @@ public class Messages extends NLS {
 	 * @generated
 	 */
 	public static String NavigatorGroupName_PrimitiveType_3037_outgoinglinks;
+
+	/**
+	 * @generated
+	 */
+	public static String NavigatorGroupName_LiteralString_3038_incominglinks;
+
+	/**
+	 * @generated
+	 */
+	public static String NavigatorGroupName_LiteralString_3038_outgoinglinks;
+
+	/**
+	 * @generated
+	 */
+	public static String NavigatorGroupName_LiteralInteger_3039_incominglinks;
+
+	/**
+	 * @generated
+	 */
+	public static String NavigatorGroupName_LiteralInteger_3039_outgoinglinks;
+
+	/**
+	 * @generated
+	 */
+	public static String NavigatorGroupName_Expression_3040_incominglinks;
+
+	/**
+	 * @generated
+	 */
+	public static String NavigatorGroupName_Expression_3040_outgoinglinks;
 
 	/**
 	 * @generated

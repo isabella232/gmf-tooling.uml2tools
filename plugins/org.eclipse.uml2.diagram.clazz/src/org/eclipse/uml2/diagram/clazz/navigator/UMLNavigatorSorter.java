@@ -12,12 +12,12 @@ public class UMLNavigatorSorter extends ViewerSorter {
 	/**
 	 * @generated
 	 */
-	private static final int GROUP_CATEGORY = 7047;
+	private static final int GROUP_CATEGORY = 7048;
 
 	/**
 	 * @generated
 	 */
-	private static final int SHORTCUTS_CATEGORY = 7046;
+	private static final int SHORTCUTS_CATEGORY = 7047;
 
 	/**
 	 * @generated

@@ -45,6 +45,7 @@ import org.eclipse.uml2.diagram.clazz.edit.parts.EnumerationEditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.EnumerationLiteralEditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.EnumerationName2EditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.EnumerationNameEditPart;
+import org.eclipse.uml2.diagram.clazz.edit.parts.ExpressionEditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.GeneralizationSetIsCoveringIsDisjointEditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.GeneralizationSetNameEditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.InstanceSpecificationEditPart;
@@ -54,6 +55,8 @@ import org.eclipse.uml2.diagram.clazz.edit.parts.InstanceSpecificationNameEditPa
 import org.eclipse.uml2.diagram.clazz.edit.parts.InstanceSpecificationValueEditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.InterfaceName2EditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.InterfaceNameEditPart;
+import org.eclipse.uml2.diagram.clazz.edit.parts.LiteralIntegerEditPart;
+import org.eclipse.uml2.diagram.clazz.edit.parts.LiteralStringEditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.Operation2EditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.Operation3EditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.Operation4EditPart;
@@ -533,21 +536,6 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 		EAttribute[] features = new EAttribute[] { UMLPackage.eINSTANCE.getNamedElement_Name(), };
 		MessageFormatParser parser = new MessageFormatParser(features);
 		return parser;
-	}
-
-	/**
-	 * @generated
-	 */
-	private IParser instanceSpecificationLabel_5030Parser;
-
-	/**
-	 * @generated
-	 */
-	private IParser getInstanceSpecificationLabel_5030Parser() {
-		if (instanceSpecificationLabel_5030Parser == null) {
-			instanceSpecificationLabel_5030Parser = createInstanceSpecificationLabel_5030Parser();
-		}
-		return instanceSpecificationLabel_5030Parser;
 	}
 
 	/**
@@ -1191,6 +1179,78 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 	/**
 	 * @generated
 	 */
+	private IParser literalString_3038Parser;
+
+	/**
+	 * @generated
+	 */
+	private IParser getLiteralString_3038Parser() {
+		if (literalString_3038Parser == null) {
+			literalString_3038Parser = createLiteralString_3038Parser();
+		}
+		return literalString_3038Parser;
+	}
+
+	/**
+	 * @generated
+	 */
+	protected IParser createLiteralString_3038Parser() {
+		EAttribute[] features = new EAttribute[] { UMLPackage.eINSTANCE.getLiteralString_Value(), };
+		MessageFormatParser parser = new MessageFormatParser(features);
+		return parser;
+	}	
+
+	/**
+	 * @generated
+	 */
+	private IParser literalInteger_3039Parser;
+
+	/**
+	 * @generated
+	 */
+	private IParser getLiteralInteger_3039Parser() {
+		if (literalInteger_3039Parser == null) {
+			literalInteger_3039Parser = createLiteralInteger_3039Parser();
+		}
+		return literalInteger_3039Parser;
+	}
+
+	/**
+	 * @generated
+	 */
+	protected IParser createLiteralInteger_3039Parser() {
+		EAttribute[] features = new EAttribute[] { UMLPackage.eINSTANCE.getLiteralInteger_Value(), };
+		MessageFormatParser parser = new MessageFormatParser(features);
+		return parser;
+	}
+
+	/**
+	 * @generated
+	 */
+	private IParser expression_3040Parser;
+
+	/**
+	 * @generated
+	 */
+	private IParser getExpression_3040Parser() {
+		if (expression_3040Parser == null) {
+			expression_3040Parser = createExpression_3040Parser();
+		}
+		return expression_3040Parser;
+	}
+
+	/**
+	 * @generated
+	 */
+	protected IParser createExpression_3040Parser() {
+		EAttribute[] features = new EAttribute[] { UMLPackage.eINSTANCE.getExpression_Symbol(), };
+		MessageFormatParser parser = new MessageFormatParser(features);
+		return parser;
+	}
+
+	/**
+	 * @generated
+	 */
 	private IParser dependencyName_6001Parser;
 
 	/**
@@ -1799,8 +1859,6 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 			return getPackageName_5026Parser();
 		case InstanceSpecificationName3EditPart.VISUAL_ID:
 			return getInstanceSpecificationName_5029Parser();
-		case InstanceSpecificationValueEditPart.VISUAL_ID:
-			return getInstanceSpecificationLabel_5030Parser();
 		case Package3EditPart.VISUAL_ID:
 			return getPackage_3006Parser();
 		case ClassEditPart.VISUAL_ID:
@@ -1865,6 +1923,12 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 			return getDataTypeName_5027Parser();
 		case PrimitiveTypeName2EditPart.VISUAL_ID:
 			return getPrimitiveTypeName_5028Parser();
+		case LiteralStringEditPart.VISUAL_ID:
+			return getLiteralString_3038Parser();
+		case LiteralIntegerEditPart.VISUAL_ID:
+			return getLiteralInteger_3039Parser();
+		case ExpressionEditPart.VISUAL_ID:
+			return getExpression_3040Parser();
 		case DependencyName2EditPart.VISUAL_ID:
 			return getDependencyName_6001Parser();
 		case DependencyName3EditPart.VISUAL_ID:
