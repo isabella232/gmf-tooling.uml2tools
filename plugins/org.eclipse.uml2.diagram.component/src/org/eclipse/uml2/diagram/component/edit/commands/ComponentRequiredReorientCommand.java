@@ -69,11 +69,27 @@ public class ComponentRequiredReorientCommand extends EditElementCommand {
 	/**
 	 * @generated
 	 */
-	protected boolean canReorientSource() {
+	protected boolean canReorientSourceGen() {
 		if (!(oldEnd instanceof Interface && newEnd instanceof Component)) {
 			return false;
 		}
 		return UMLBaseItemSemanticEditPolicy.LinkConstraints.canExistComponentRequired_4007(getNewSource(), getOldTarget());
+	}
+
+	/**
+	 * @generated NOT
+	 */
+	protected boolean canReorientSource() {
+		boolean result = canReorientSourceGen();
+		if (result) {
+			// in addition to the basic checks, we can not handle the deep
+			// usages derived from realizing classifiers, but we handle the
+			// usages of the component itself.
+			// Other required's links will be shown on diagram (say, after
+			// initialization) but won't be reroutable
+			result = findUsage(getOldSource(), getOldTarget()) != null;
+		}
+		return result;
 	}
 
 	/**
@@ -119,11 +135,14 @@ public class ComponentRequiredReorientCommand extends EditElementCommand {
 	}
 
 	/**
-	 * @generated
+	 * @generated NOT
 	 */
 	protected CommandResult reorientSource() throws ExecutionException {
-		getOldSource().getRequireds().remove(getOldTarget());
-		getNewSource().getRequireds().add(getOldTarget());
+		Usage usage = findUsage(getOldSource(), getOldTarget());
+		if (usage != null) {
+			usage.getClients().remove(getOldSource());
+			usage.getClients().add(getNewSource());
+		}
 		return CommandResult.newOKCommandResult(referenceOwner);
 	}
 
