@@ -90,23 +90,33 @@ public class GeneralizationReorientCommand extends EditElementCommand {
 	 */
 	protected boolean canReorientTarget() {
 		if (newEnd instanceof GeneralizationSet) {
-			Classifier newTarget = getGeneralClassifier((GeneralizationSet)newEnd);
-			if (newTarget == null) {
-				return false;
-			}
-			if (!(oldEnd instanceof Classifier && newTarget instanceof Classifier)) {
-				return false;
-			}
-			if (!(getLink().eContainer() instanceof Classifier)) {
-				return false;
-			}
-			Classifier source = (Classifier) getLink().eContainer();
-			return UMLBaseItemSemanticEditPolicy.LinkConstraints.canExistGeneralization_4001(source, newTarget);
+			return canReorientTarget(oldEnd, getGeneralClassifier((GeneralizationSet)newEnd));
+		}
+		if (newEnd instanceof Generalization) {
+			return canReorientTarget(oldEnd, ((Generalization)newEnd).getGeneral());
 		}
 		return canReorientTargetGen();
 	}
 
 	/**
+	 * @NOT-generated
+	 * #215340 Generalization redirecting to GeneralizationSet
+	 */
+	private boolean canReorientTarget(EObject oldTarget, Classifier newTarget) {
+		if (newTarget == null) {
+			return false;
+		}
+		if (!(oldTarget instanceof Classifier)) {
+			return false;
+		}
+		if (!(getLink().eContainer() instanceof Classifier)) {
+			return false;
+		}
+		Classifier source = (Classifier) getLink().eContainer();
+		return UMLBaseItemSemanticEditPolicy.LinkConstraints.canExistGeneralization_4001(source, newTarget);
+	}
+
+		/**
 	 * @generated
 	 */
 	protected CommandResult doExecuteWithResult(IProgressMonitor monitor, IAdaptable info) throws ExecutionException {
@@ -137,6 +147,11 @@ public class GeneralizationReorientCommand extends EditElementCommand {
 	 */
 	protected CommandResult reorientTarget() throws ExecutionException {
 		getLink().setGeneral(getNewTarget());
+		if (newEnd instanceof Generalization) {
+			GeneralizationSet gs = (GeneralizationSet)getNewTarget().getNearestPackage().createPackagedElement("", org.eclipse.uml2.uml.UMLPackage.eINSTANCE.getGeneralizationSet());
+			gs.getGeneralizations().add((Generalization)newEnd);
+			gs.getGeneralizations().add(getLink());
+		}
 		if (newEnd instanceof GeneralizationSet) {
 			((GeneralizationSet)newEnd).getGeneralizations().add(getLink());
 		}
@@ -178,6 +193,9 @@ public class GeneralizationReorientCommand extends EditElementCommand {
 	protected Classifier getNewTarget() {
 		if (newEnd instanceof GeneralizationSet) {
 			return getGeneralClassifier((GeneralizationSet)newEnd);
+		}
+		if (newEnd instanceof Generalization) {
+			return ((Generalization)newEnd).getGeneral();
 		}
 		return (Classifier) newEnd;
 	}

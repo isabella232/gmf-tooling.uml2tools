@@ -7,12 +7,15 @@ import org.eclipse.gmf.runtime.emf.type.core.commands.DestroyElementCommand;
 import org.eclipse.gmf.runtime.emf.type.core.requests.CreateRelationshipRequest;
 import org.eclipse.gmf.runtime.emf.type.core.requests.DestroyElementRequest;
 import org.eclipse.gmf.runtime.emf.type.core.requests.ReorientReferenceRelationshipRequest;
+import org.eclipse.gmf.runtime.emf.type.core.requests.ReorientRelationshipRequest;
 import org.eclipse.uml2.diagram.clazz.edit.commands.ConstraintConstrainedElementCreateCommand;
 import org.eclipse.uml2.diagram.clazz.edit.commands.ConstraintConstrainedElementReorientCommand;
 import org.eclipse.uml2.diagram.clazz.edit.commands.GeneralizationCreateCommand;
 import org.eclipse.uml2.diagram.clazz.edit.commands.GeneralizationGeneralCreateCommand;
 import org.eclipse.uml2.diagram.clazz.edit.commands.GeneralizationGeneralReorientCommand;
+import org.eclipse.uml2.diagram.clazz.edit.commands.GeneralizationReorientCommand;
 import org.eclipse.uml2.diagram.clazz.edit.parts.ConstraintConstrainedElementEditPart;
+import org.eclipse.uml2.diagram.clazz.edit.parts.GeneralizationEditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.GeneralizationGeneralEditPart;
 import org.eclipse.uml2.diagram.clazz.providers.UMLElementTypes;
 import org.eclipse.uml2.uml.Classifier;
@@ -82,6 +85,18 @@ public class GeneralizationItemSemanticEditPolicy extends UMLBaseItemSemanticEdi
 			return getGEFWrapper(new GeneralizationGeneralReorientCommand(req));
 		}
 		return super.getReorientReferenceRelationshipCommand(req);
+	}
+	
+	/** 
+	 * @NOT-generated
+	 * #215340 Generalization redirecting to GeneralizationSet
+	 */
+	protected Command getReorientRelationshipCommand(ReorientRelationshipRequest req) {
+		switch (getVisualID(req)) {
+		case GeneralizationEditPart.VISUAL_ID:
+			return getGEFWrapper(new GeneralizationReorientCommand(req));
+		}
+		return getReorientRelationshipCommand(req);
 	}
 
 	/**
