@@ -18,6 +18,7 @@ import org.eclipse.uml2.diagram.clazz.edit.commands.DependencySupplierCreateComm
 import org.eclipse.uml2.diagram.clazz.edit.commands.DependencySupplierReorientCommand;
 import org.eclipse.uml2.diagram.clazz.edit.commands.Generalization2CreateCommand;
 import org.eclipse.uml2.diagram.clazz.edit.commands.Generalization2ReorientCommand;
+import org.eclipse.uml2.diagram.clazz.edit.commands.GeneralizationReorientCommand;
 import org.eclipse.uml2.diagram.clazz.edit.commands.RealizationCreateCommand;
 import org.eclipse.uml2.diagram.clazz.edit.commands.RealizationReorientCommand;
 import org.eclipse.uml2.diagram.clazz.edit.commands.UsageCreateCommand;
@@ -27,6 +28,8 @@ import org.eclipse.uml2.diagram.clazz.edit.parts.Dependency2EditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.DependencyClientEditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.DependencySupplierEditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.Generalization2EditPart;
+import org.eclipse.uml2.diagram.clazz.edit.parts.GeneralizationEditPart;
+import org.eclipse.uml2.diagram.clazz.edit.parts.GeneralizationSetEditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.RealizationEditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.UsageEditPart;
 import org.eclipse.uml2.diagram.clazz.providers.UMLElementTypes;
@@ -120,7 +123,7 @@ public class GeneralizationSetItemSemanticEditPolicy extends UMLBaseItemSemantic
 	 * 
 	 * @generated
 	 */
-	protected Command getReorientRelationshipCommand(ReorientRelationshipRequest req) {
+	protected Command getReorientRelationshipCommandGen(ReorientRelationshipRequest req) {
 		switch (getVisualID(req)) {
 		case Dependency2EditPart.VISUAL_ID:
 			return getGEFWrapper(new DependencyLinkReorientCommand(req));
@@ -134,6 +137,17 @@ public class GeneralizationSetItemSemanticEditPolicy extends UMLBaseItemSemantic
 		return super.getReorientRelationshipCommand(req);
 	}
 
+	/** 
+	 * @generated NOT
+	 * #215340 Generalization redirecting to GeneralizationSet
+	 */
+	protected Command getReorientRelationshipCommand(ReorientRelationshipRequest req) {
+		switch (getVisualID(req)) {
+		case GeneralizationEditPart.VISUAL_ID:
+			return getGEFWrapper(new GeneralizationReorientCommand(req));
+		}
+		return getReorientRelationshipCommandGen(req);
+	}
 	/**
 	 * Returns command to reorient EReference based link. New link target or source
 	 * should be the domain model element associated with this node.

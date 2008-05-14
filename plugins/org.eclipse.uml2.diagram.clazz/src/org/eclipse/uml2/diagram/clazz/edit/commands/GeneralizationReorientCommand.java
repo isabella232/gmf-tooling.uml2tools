@@ -3,6 +3,7 @@ package org.eclipse.uml2.diagram.clazz.edit.commands;
 import org.eclipse.core.commands.ExecutionException;
 import org.eclipse.core.runtime.IAdaptable;
 import org.eclipse.core.runtime.IProgressMonitor;
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.gmf.runtime.common.core.command.CommandResult;
 import org.eclipse.gmf.runtime.emf.type.core.commands.EditElementCommand;
@@ -10,6 +11,7 @@ import org.eclipse.gmf.runtime.emf.type.core.requests.ReorientRelationshipReques
 import org.eclipse.uml2.diagram.clazz.edit.policies.UMLBaseItemSemanticEditPolicy;
 import org.eclipse.uml2.uml.Classifier;
 import org.eclipse.uml2.uml.Generalization;
+import org.eclipse.uml2.uml.GeneralizationSet;
 
 /**
  * @generated
@@ -71,7 +73,7 @@ public class GeneralizationReorientCommand extends EditElementCommand {
 	/**
 	 * @generated
 	 */
-	protected boolean canReorientTarget() {
+	protected boolean canReorientTargetGen() {
 		if (!(oldEnd instanceof Classifier && newEnd instanceof Classifier)) {
 			return false;
 		}
@@ -80,6 +82,28 @@ public class GeneralizationReorientCommand extends EditElementCommand {
 		}
 		Classifier source = (Classifier) getLink().eContainer();
 		return UMLBaseItemSemanticEditPolicy.LinkConstraints.canExistGeneralization_4001(source, getNewTarget());
+	}
+
+	/**
+	 * @generated NOT
+	 * #215340 Generalization redirecting to GeneralizationSet
+	 */
+	protected boolean canReorientTarget() {
+		if (newEnd instanceof GeneralizationSet) {
+			Classifier newTarget = getGeneralClassifier((GeneralizationSet)newEnd);
+			if (newTarget == null) {
+				return false;
+			}
+			if (!(oldEnd instanceof Classifier && newTarget instanceof Classifier)) {
+				return false;
+			}
+			if (!(getLink().eContainer() instanceof Classifier)) {
+				return false;
+			}
+			Classifier source = (Classifier) getLink().eContainer();
+			return UMLBaseItemSemanticEditPolicy.LinkConstraints.canExistGeneralization_4001(source, newTarget);
+		}
+		return canReorientTargetGen();
 	}
 
 	/**
@@ -108,10 +132,14 @@ public class GeneralizationReorientCommand extends EditElementCommand {
 	}
 
 	/**
-	 * @generated
+	 * @generated NOT
+	 * #215340 Generalization redirecting to GeneralizationSet
 	 */
 	protected CommandResult reorientTarget() throws ExecutionException {
 		getLink().setGeneral(getNewTarget());
+		if (newEnd instanceof GeneralizationSet) {
+			((GeneralizationSet)newEnd).getGeneralizations().add(getLink());
+		}
 		return CommandResult.newOKCommandResult(getLink());
 	}
 
@@ -144,9 +172,25 @@ public class GeneralizationReorientCommand extends EditElementCommand {
 	}
 
 	/**
-	 * @generated
+	 * @generated NOT
+	 * #215340 Generalization redirecting to GeneralizationSet
 	 */
 	protected Classifier getNewTarget() {
+		if (newEnd instanceof GeneralizationSet) {
+			return getGeneralClassifier((GeneralizationSet)newEnd);
+		}
 		return (Classifier) newEnd;
+	}
+	
+	/**
+	 * @NOT-generated
+	 * #215340 Generalization redirecting to GeneralizationSet
+	 */
+	private Classifier getGeneralClassifier(GeneralizationSet gs) {
+		EList<Generalization> generalizations = ((GeneralizationSet)newEnd).getGeneralizations();
+		if (generalizations.isEmpty()) {
+			return null;
+		}
+		return generalizations.get(0).getGeneral();
 	}
 }
