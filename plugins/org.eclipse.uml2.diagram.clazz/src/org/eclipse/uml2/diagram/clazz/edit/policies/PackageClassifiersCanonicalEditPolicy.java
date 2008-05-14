@@ -13,6 +13,7 @@ import org.eclipse.uml2.diagram.clazz.edit.parts.AssociationClassEditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.ClassEditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.DataTypeEditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.EnumerationEditPart;
+import org.eclipse.uml2.diagram.clazz.edit.parts.Interface3EditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.PrimitiveTypeEditPart;
 import org.eclipse.uml2.diagram.clazz.part.UMLDiagramUpdater;
 import org.eclipse.uml2.diagram.clazz.part.UMLNodeDescriptor;
@@ -52,6 +53,7 @@ public class PackageClassifiersCanonicalEditPolicy extends CanonicalEditPolicy {
 		case PrimitiveTypeEditPart.VISUAL_ID:
 		case EnumerationEditPart.VISUAL_ID:
 		case AssociationClassEditPart.VISUAL_ID:
+		case Interface3EditPart.VISUAL_ID:
 			return !semanticChildren.contains(view.getElement()) || visualID != UMLVisualIDRegistry.getNodeVisualID((View) getHost().getModel(), view.getElement());
 		}
 		return false;

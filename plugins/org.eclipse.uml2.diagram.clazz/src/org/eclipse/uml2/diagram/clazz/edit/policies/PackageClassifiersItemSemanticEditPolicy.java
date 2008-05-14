@@ -8,6 +8,7 @@ import org.eclipse.uml2.diagram.clazz.edit.commands.AssociationClassCreateComman
 import org.eclipse.uml2.diagram.clazz.edit.commands.ClassCreateCommand;
 import org.eclipse.uml2.diagram.clazz.edit.commands.DataTypeCreateCommand;
 import org.eclipse.uml2.diagram.clazz.edit.commands.EnumerationCreateCommand;
+import org.eclipse.uml2.diagram.clazz.edit.commands.Interface3CreateCommand;
 import org.eclipse.uml2.diagram.clazz.edit.commands.PrimitiveTypeCreateCommand;
 
 import org.eclipse.uml2.diagram.clazz.providers.UMLElementTypes;
@@ -52,6 +53,12 @@ public class PackageClassifiersItemSemanticEditPolicy extends UMLBaseItemSemanti
 				req.setContainmentFeature(UMLPackage.eINSTANCE.getPackage_PackagedElement());
 			}
 			return getGEFWrapper(new AssociationClassCreateCommand(req));
+		}
+		if (UMLElementTypes.Interface_3041 == req.getElementType()) {
+			if (req.getContainmentFeature() == null) {
+				req.setContainmentFeature(UMLPackage.eINSTANCE.getPackage_PackagedElement());
+			}
+			return getGEFWrapper(new Interface3CreateCommand(req));
 		}
 		return super.getCreateCommand(req);
 	}

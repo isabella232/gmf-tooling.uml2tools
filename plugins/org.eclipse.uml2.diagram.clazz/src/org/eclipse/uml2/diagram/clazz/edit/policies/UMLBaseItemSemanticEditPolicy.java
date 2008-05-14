@@ -551,7 +551,7 @@ public class UMLBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 				}
 				if (Dependency_4002_TargetExpression == null) {
 					Map env = Collections.singletonMap(OPPOSITE_END_VAR, UMLPackage.eINSTANCE.getNamedElement());
-					Dependency_4002_TargetExpression = UMLOCLFactory.getExpression("not self.oclIsKindOf(uml::Interface)\r\n", UMLPackage.eINSTANCE.getNamedElement(), env); //$NON-NLS-1$
+					Dependency_4002_TargetExpression = UMLOCLFactory.getExpression("not self.oclIsKindOf(uml::Interface)\r\r\n", UMLPackage.eINSTANCE.getNamedElement(), env); //$NON-NLS-1$
 				}
 				Object targetVal = Dependency_4002_TargetExpression.evaluate(target, Collections.singletonMap(OPPOSITE_END_VAR, source));
 				if (false == targetVal instanceof Boolean || !((Boolean) targetVal).booleanValue()) {

@@ -831,14 +831,13 @@
          </specializationType>
       </metamodel>
       <metamodel nsURI="http://www.eclipse.org/uml2/2.1.0/UML">
-         <metamodelType
+         <specializationType
                id="org.eclipse.uml2.diagram.clazz.Interface_2010"
                name="%metatype.name.Interface_2010"
-               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
-               eclass="Interface"
-               edithelper="org.eclipse.uml2.diagram.clazz.edit.helpers.InterfaceEditHelper">
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType">
+            <specializes id="org.eclipse.uml2.diagram.clazz.Interface_3041"/>
             <param name="semanticHint" value="2010"/>
-         </metamodelType>
+         </specializationType>
       </metamodel>
       <metamodel nsURI="http://www.eclipse.org/uml2/2.1.0/UML">
          <metamodelType
@@ -886,7 +885,7 @@
                name="%metatype.name.Interface_2013"
                kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
                edithelperadvice="org.eclipse.uml2.diagram.clazz.edit.helpers.InterfaceEditHelperAdvice">
-            <specializes id="org.eclipse.uml2.diagram.clazz.Interface_2010"/>
+            <specializes id="org.eclipse.uml2.diagram.clazz.Interface_3041"/>
             <param name="semanticHint" value="2013"/>
          </specializationType>
       </metamodel>
@@ -984,6 +983,16 @@
                eclass="AssociationClass"
                edithelper="org.eclipse.uml2.diagram.clazz.edit.helpers.AssociationClassEditHelper">
             <param name="semanticHint" value="3012"/>
+         </metamodelType>
+      </metamodel>
+      <metamodel nsURI="http://www.eclipse.org/uml2/2.1.0/UML">
+         <metamodelType
+               id="org.eclipse.uml2.diagram.clazz.Interface_3041"
+               name="%metatype.name.Interface_3041"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
+               eclass="Interface"
+               edithelper="org.eclipse.uml2.diagram.clazz.edit.helpers.InterfaceEditHelper">
+            <param name="semanticHint" value="3041"/>
          </metamodelType>
       </metamodel>
       <metamodel nsURI="http://www.eclipse.org/uml2/2.1.0/UML">
@@ -1471,6 +1480,7 @@
          <elementType ref="org.eclipse.uml2.diagram.clazz.PrimitiveType_3009"/>
          <elementType ref="org.eclipse.uml2.diagram.clazz.Enumeration_3011"/>
          <elementType ref="org.eclipse.uml2.diagram.clazz.AssociationClass_3012"/>
+         <elementType ref="org.eclipse.uml2.diagram.clazz.Interface_3041"/>
          <elementType ref="org.eclipse.uml2.diagram.clazz.InstanceSpecification_3013"/>
          <elementType ref="org.eclipse.uml2.diagram.clazz.Property_3001"/>
          <elementType ref="org.eclipse.uml2.diagram.clazz.Operation_3002"/>

@@ -172,6 +172,7 @@ public class UMLViewProvider extends AbstractViewProvider {
 				case PrimitiveTypeEditPart.VISUAL_ID:
 				case EnumerationEditPart.VISUAL_ID:
 				case AssociationClassEditPart.VISUAL_ID:
+				case Interface3EditPart.VISUAL_ID:
 				case InstanceSpecificationEditPart.VISUAL_ID:
 				case PropertyEditPart.VISUAL_ID:
 				case OperationEditPart.VISUAL_ID:
@@ -493,6 +494,8 @@ public class UMLViewProvider extends AbstractViewProvider {
 			return EnumerationViewFactory.class;
 		case AssociationClassEditPart.VISUAL_ID:
 			return AssociationClassViewFactory.class;
+		case Interface3EditPart.VISUAL_ID:
+			return Interface3ViewFactory.class;
 		case InstanceSpecificationEditPart.VISUAL_ID:
 			return InstanceSpecificationViewFactory.class;
 		case PropertyEditPart.VISUAL_ID:

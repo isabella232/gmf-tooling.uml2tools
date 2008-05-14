@@ -53,6 +53,7 @@ import org.eclipse.uml2.diagram.clazz.edit.parts.InstanceSpecificationName2EditP
 import org.eclipse.uml2.diagram.clazz.edit.parts.InstanceSpecificationName3EditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.InstanceSpecificationNameEditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.InstanceSpecificationValueEditPart;
+import org.eclipse.uml2.diagram.clazz.edit.parts.Interface3EditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.InterfaceName2EditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.InterfaceNameEditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.LiteralIntegerEditPart;
@@ -692,6 +693,30 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 	/**
 	 * @generated
 	 */
+	private IParser interface_3041Parser;
+
+	/**
+	 * @generated
+	 */
+	private IParser getInterface_3041Parser() {
+		if (interface_3041Parser == null) {
+			interface_3041Parser = createInterface_3041Parser();
+		}
+		return interface_3041Parser;
+	}
+
+	/**
+	 * @generated
+	 */
+	protected IParser createInterface_3041Parser() {
+		EAttribute[] features = new EAttribute[] { UMLPackage.eINSTANCE.getNamedElement_Name(), };
+		MessageFormatParser parser = new MessageFormatParser(features);
+		return parser;
+	}
+
+	/**
+	 * @generated
+	 */
 	private IParser instanceSpecification_3013Parser;
 
 	/**
@@ -1195,10 +1220,10 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 	 * @generated
 	 */
 	protected IParser createLiteralString_3038Parser() {
-		EAttribute[] features = new EAttribute[] { UMLPackage.eINSTANCE.getLiteralString_Value(), };
+		EAttribute[] features = new EAttribute[] { UMLPackage.eINSTANCE.getLiteralInteger_Value(), };
 		MessageFormatParser parser = new MessageFormatParser(features);
 		return parser;
-	}	
+	}
 
 	/**
 	 * @generated
@@ -1871,6 +1896,8 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 			return getEnumeration_3011Parser();
 		case AssociationClassEditPart.VISUAL_ID:
 			return getAssociationClass_3012Parser();
+		case Interface3EditPart.VISUAL_ID:
+			return getInterface_3041Parser();
 		case InstanceSpecificationEditPart.VISUAL_ID:
 			return getInstanceSpecification_3013Parser();
 		case PropertyEditPart.VISUAL_ID:

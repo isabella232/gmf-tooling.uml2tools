@@ -163,6 +163,11 @@ public class UMLElementTypes extends ElementInitializers {
 	/**
 	 * @generated
 	 */
+	public static final IHintedType Interface_3041 = (IHintedType) getElementType("org.eclipse.uml2.diagram.clazz.Interface_3041"); //$NON-NLS-1$
+
+	/**
+	 * @generated
+	 */
 	public static final IHintedType InstanceSpecification_3013 = (IHintedType) getElementType("org.eclipse.uml2.diagram.clazz.InstanceSpecification_3013"); //$NON-NLS-1$
 
 	/**
@@ -542,6 +547,8 @@ public class UMLElementTypes extends ElementInitializers {
 
 			elements.put(AssociationClass_3012, UMLPackage.eINSTANCE.getAssociationClass());
 
+			elements.put(Interface_3041, UMLPackage.eINSTANCE.getInterface());
+
 			elements.put(InstanceSpecification_3013, UMLPackage.eINSTANCE.getInstanceSpecification());
 
 			elements.put(Property_3001, UMLPackage.eINSTANCE.getProperty());
@@ -673,6 +680,7 @@ public class UMLElementTypes extends ElementInitializers {
 			KNOWN_ELEMENT_TYPES.add(PrimitiveType_3009);
 			KNOWN_ELEMENT_TYPES.add(Enumeration_3011);
 			KNOWN_ELEMENT_TYPES.add(AssociationClass_3012);
+			KNOWN_ELEMENT_TYPES.add(Interface_3041);
 			KNOWN_ELEMENT_TYPES.add(InstanceSpecification_3013);
 			KNOWN_ELEMENT_TYPES.add(Property_3001);
 			KNOWN_ELEMENT_TYPES.add(Operation_3002);

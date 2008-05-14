@@ -243,6 +243,40 @@
         </ownedChild>
       </children>
       <children
+          compartment="//@nodes.0/@ownedChild/@compartments.1">
+        <containmentFeature
+            href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//Package/packagedElement"/>
+        <childrenFeature
+            href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//Package/ownedType"/>
+        <ownedChild>
+          <domainMetaElement
+              href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//Interface"/>
+          <domainInitializer
+              xsi:type="gmfmap:FeatureSeqInitializer">
+            <initializers
+                xsi:type="gmfmap:FeatureValueSpec">
+              <feature
+                  xsi:type="ecore:EAttribute"
+                  href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//NamedElement/name"/>
+              <value
+                  body=" let base : String = 'Interface' in  let suffixes : Sequence(String) = Sequence {'', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10'} in  let space : Namespace = self.namespace in  let allMissed : Sequence(String) = suffixes-> &#x9;select(s : String | not space.member->exists(e : NamedElement | e.name = base.concat(s)) ) in  let firstMissed : String = allMissed->first() in  let noMisses : Boolean = firstMissed.oclIsUndefined() in  let allNames : Set(String) =  &#x9;if noMisses &#x9;&#x9;then &#x9;&#x9;space.member->collect(e : NamedElement | &#x9;&#x9;&#x9;if e = self or e.name.oclIsUndefined() or e.name.substring(1, e.name.size().min(base.size())) &lt;> base &#x9;&#x9;&#x9;then '' else e.name &#x9;&#x9;&#x9;endif &#x9;&#x9;)->asSet()->excluding('') &#x9;&#x9;else Set{'not in use'} &#x9;&#x9;endif in  let longestName : String = &#x9;&#x9;if noMisses &#x9;&#x9;then allNames->select(n : String | not allNames->exists(nn : String | nn.size() > n.size()))->asSequence()->first()&#x9;&#x9;else 'not in use' &#x9;&#x9;endif &#x9;in  if noMisses then &#x9;&#x9;if longestName.oclIsUndefined() &#x9;&#x9;then base &#x9;&#x9;else longestName.concat('1') &#x9;&#x9;endif  else base.concat(firstMissed)  endif "/>
+            </initializers>
+          </domainInitializer>
+          <labelMappings
+              xsi:type="gmfmap:FeatureLabelMapping">
+            <diagramLabel
+                href="classDiagram_auxiliary.gmfgraph#AuxiliaryPureLabel"/>
+            <features
+                href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//NamedElement/name"/>
+          </labelMappings>
+          <tool
+              xsi:type="gmftool:CreationTool"
+              href="classDiagram.gmftool#//@palette/@tools.0/@tools.7"/>
+          <diagramNode
+              href="classDiagram_auxiliary.gmfgraph#AuxiliaryPureLabel"/>
+        </ownedChild>
+      </children>
+      <children
           compartment="//@nodes.0/@ownedChild/@compartments.2">
         <containmentFeature
             href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//Package/packagedElement"/>
@@ -280,12 +314,12 @@
             href="classDiagram_packages.gmfgraph#packages"/>
       </compartments>
       <compartments
-          children="//@nodes.0/@ownedChild/@children.1 //@nodes.0/@ownedChild/@children.2 //@nodes.0/@ownedChild/@children.3 //@nodes.0/@ownedChild/@children.4 //@nodes.0/@ownedChild/@children.5">
+          children="//@nodes.0/@ownedChild/@children.1 //@nodes.0/@ownedChild/@children.2 //@nodes.0/@ownedChild/@children.3 //@nodes.0/@ownedChild/@children.4 //@nodes.0/@ownedChild/@children.5 //@nodes.0/@ownedChild/@children.6">
         <compartment
             href="classDiagram_packages.gmfgraph#classifiers"/>
       </compartments>
       <compartments
-          children="//@nodes.0/@ownedChild/@children.6">
+          children="//@nodes.0/@ownedChild/@children.7">
         <compartment
             href="classDiagram_packages.gmfgraph#other"/>
       </compartments>
@@ -1156,7 +1190,7 @@
         </ownedChild>
       </children>
       <compartments
-          children="//@nodes.8/@ownedChild/@children.0">
+          children="//@nodes.8/@ownedChild/@children.0 //@nodes.15/@ownedChild/@children.1">
         <compartment
             href="classDiagram_instances.gmfgraph#slots"/>
       </compartments>

@@ -375,6 +375,9 @@ public class UMLVisualIDRegistry {
 			if (UMLPackage.eINSTANCE.getAssociationClass().isSuperTypeOf(domainElement.eClass())) {
 				return AssociationClassEditPart.VISUAL_ID;
 			}
+			if (UMLPackage.eINSTANCE.getInterface().isSuperTypeOf(domainElement.eClass())) {
+				return Interface3EditPart.VISUAL_ID;
+			}
 			break;
 		case PackageOtherEditPart.VISUAL_ID:
 			if (UMLPackage.eINSTANCE.getInstanceSpecification().isSuperTypeOf(domainElement.eClass())) {
@@ -957,6 +960,9 @@ public class UMLVisualIDRegistry {
 				return true;
 			}
 			if (AssociationClassEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			if (Interface3EditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
 			break;
