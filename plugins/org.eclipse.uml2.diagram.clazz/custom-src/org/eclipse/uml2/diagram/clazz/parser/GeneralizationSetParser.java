@@ -5,7 +5,6 @@ import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.jface.text.contentassist.IContentAssistProcessor;
 import org.eclipse.uml2.diagram.clazz.parsers.MessageFormatParser;
-import org.eclipse.uml2.diagram.clazz.part.CustomMessages;
 import org.eclipse.uml2.diagram.parser.assist.FixedSetCompletionProcessor;
 import org.eclipse.uml2.uml.UMLPackage;
 
