@@ -2,6 +2,30 @@
 <?eclipse version="3.0"?>
 <plugin>
 
+   <extension point="org.eclipse.gmf.runtime.common.ui.services.action.contributionItemProviders">
+      <?gmfgen generated="false"?>
+      <contributionItemProvider
+            checkPluginLoaded="false"
+            class="org.eclipse.uml2.diagram.csd.action.ShowPropertyParametersItemProvider">
+         <Priority name="High"/>
+		 <popupContribution
+               class="org.eclipse.gmf.runtime.diagram.ui.providers.DiagramContextMenuProvider">
+			 <popupMenuGroup
+                  id="ShowPropertyParametersGroup"
+                  path="/propertiesGroup">
+             </popupMenuGroup>
+             <popupAction
+                  path="/ShowPropertyParametersGroup"
+                  id="show_property_parameters_action">
+             </popupAction>      
+             <popupStructuredContributionCriteria
+                   objectClass="org.eclipse.uml2.diagram.csd.edit.parts.OperationEditPart"
+                   objectCount="1">
+             </popupStructuredContributionCriteria>
+		 </popupContribution>
+      </contributionItemProvider>
+   </extension>
+
    <extension point="org.eclipse.team.core.fileTypes">
       <?gmfgen generated="true"?>
       <fileTypes

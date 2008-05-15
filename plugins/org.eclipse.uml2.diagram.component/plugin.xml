@@ -4,6 +4,29 @@
 <plugin>
 
 <!-- gmf generator persistent region begin -->
+   <extension point="org.eclipse.gmf.runtime.common.ui.services.action.contributionItemProviders">
+      <?gmfgen generated="false"?>
+      <contributionItemProvider
+            checkPluginLoaded="false"
+            class="org.eclipse.uml2.diagram.component.action.ShowPropertyParametersItemProvider">
+         <Priority name="High"/>
+		 <popupContribution
+               class="org.eclipse.gmf.runtime.diagram.ui.providers.DiagramContextMenuProvider">
+			 <popupMenuGroup
+                  id="ShowPropertyParametersGroup"
+                  path="/propertiesGroup">
+             </popupMenuGroup>
+             <popupAction
+                  path="/ShowPropertyParametersGroup"
+                  id="show_property_parameters_action">
+             </popupAction>      
+             <popupStructuredContributionCriteria
+                   objectClass="org.eclipse.uml2.diagram.component.edit.parts.ClassDiagramNotationOperationEditPart"
+                   objectCount="1">
+             </popupStructuredContributionCriteria>
+		 </popupContribution>
+      </contributionItemProvider>
+   </extension>
 <!-- gmf generator persistent region end -->
 
    <extension point="org.eclipse.core.runtime.preferences">
