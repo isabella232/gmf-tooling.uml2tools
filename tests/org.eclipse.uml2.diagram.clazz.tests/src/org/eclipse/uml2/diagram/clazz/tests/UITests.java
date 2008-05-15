@@ -16,7 +16,15 @@ import junit.framework.Test;
 import junit.framework.TestSuite;
 
 import org.eclipse.uml2.diagram.clazz.tests.action.ChangeInterfaceNotationActionTest;
-import org.eclipse.uml2.diagram.clazz.tests.tool.PaletteNodesGroupTest;
+import org.eclipse.uml2.diagram.clazz.tests.tool.PaletteAssociationClassNodeTest;
+import org.eclipse.uml2.diagram.clazz.tests.tool.PaletteClassNodeTest;
+import org.eclipse.uml2.diagram.clazz.tests.tool.PaletteConstraintNodeTest;
+import org.eclipse.uml2.diagram.clazz.tests.tool.PaletteDataTypeNodeTest;
+import org.eclipse.uml2.diagram.clazz.tests.tool.PaletteEnumerationNodeTest;
+import org.eclipse.uml2.diagram.clazz.tests.tool.PaletteOperationNodeTest;
+import org.eclipse.uml2.diagram.clazz.tests.tool.PalettePackageNodeTest;
+import org.eclipse.uml2.diagram.clazz.tests.tool.PalettePrimitiveTypeNodeTest;
+import org.eclipse.uml2.diagram.clazz.tests.tool.PalettePropertyNodeTest;
 import org.eclipse.uml2.diagram.clazz.tests.wholediagram.TestWholeDiagramSuite;
 
 public class UITests {
@@ -26,7 +34,15 @@ public class UITests {
 		//$JUnit-BEGIN$
 		suite.addTest(new TestWholeDiagramSuite());
 		suite.addTestSuite(ChangeInterfaceNotationActionTest.class);
-		suite.addTestSuite(PaletteNodesGroupTest.class);
+		suite.addTestSuite(PaletteAssociationClassNodeTest.class);
+		suite.addTestSuite(PaletteClassNodeTest.class);
+ 		suite.addTestSuite(PaletteConstraintNodeTest.class);
+		suite.addTestSuite(PaletteDataTypeNodeTest.class);
+		suite.addTestSuite(PaletteEnumerationNodeTest.class);
+		suite.addTestSuite(PaletteOperationNodeTest.class);
+		suite.addTestSuite(PalettePackageNodeTest.class);
+		suite.addTestSuite(PalettePrimitiveTypeNodeTest.class);
+		suite.addTestSuite(PalettePropertyNodeTest.class);
 		//$JUnit-END$
 		return suite;
 	}
