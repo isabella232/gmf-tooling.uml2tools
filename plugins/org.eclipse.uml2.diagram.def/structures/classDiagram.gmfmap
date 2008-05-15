@@ -81,6 +81,8 @@
         <ownedChild>
           <domainMetaElement
               href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//Class"/>
+          <domainSpecialization
+              body="not oclIsKindOf(uml::AssociationClass) and not oclIsKindOf(uml::StateMachine)"/>
           <domainInitializer
               xsi:type="gmfmap:FeatureSeqInitializer">
             <initializers
@@ -115,6 +117,8 @@
         <ownedChild>
           <domainMetaElement
               href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//DataType"/>
+          <domainSpecialization
+              body="not oclIsKindOf(uml::PrimitiveType) and not oclIsKindOf(uml::Enumeration)"/>
           <domainInitializer
               xsi:type="gmfmap:FeatureSeqInitializer">
             <initializers
