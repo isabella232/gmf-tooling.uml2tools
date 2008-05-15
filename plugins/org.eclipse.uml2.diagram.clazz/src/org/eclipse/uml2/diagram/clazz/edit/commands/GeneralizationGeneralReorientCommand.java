@@ -1,5 +1,8 @@
 package org.eclipse.uml2.diagram.clazz.edit.commands;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import org.eclipse.core.commands.ExecutionException;
 import org.eclipse.core.runtime.IAdaptable;
 import org.eclipse.core.runtime.IProgressMonitor;
@@ -11,6 +14,7 @@ import org.eclipse.gmf.runtime.emf.type.core.requests.ReorientRelationshipReques
 import org.eclipse.uml2.diagram.clazz.edit.policies.UMLBaseItemSemanticEditPolicy;
 import org.eclipse.uml2.uml.Classifier;
 import org.eclipse.uml2.uml.Generalization;
+import org.eclipse.uml2.uml.GeneralizationSet;
 
 /**
  * @generated
@@ -49,10 +53,10 @@ public class GeneralizationGeneralReorientCommand extends EditElementCommand {
 	}
 
 	/**
-	 * @generated
+	 * @generated NOT
 	 */
 	public boolean canExecute() {
-		if (false == referenceOwner instanceof Generalization) {
+		if (false == referenceOwner instanceof GeneralizationSet && ((GeneralizationSet)referenceOwner).getGeneralization(getOldTarget()) != null) {
 			return false;
 		}
 		if (reorientDirection == ReorientRelationshipRequest.REORIENT_SOURCE) {
@@ -65,13 +69,14 @@ public class GeneralizationGeneralReorientCommand extends EditElementCommand {
 	}
 
 	/**
-	 * @generated
+	 * @generated NOT
 	 */
 	protected boolean canReorientSource() {
-		if (!(oldEnd instanceof Classifier && newEnd instanceof Generalization)) {
-			return false;
-		}
-		return UMLBaseItemSemanticEditPolicy.LinkConstraints.canExistGeneralizationGeneral_4012(getNewSource(), getOldTarget());
+		return false;
+//		if (!(oldEnd instanceof Classifier && newEnd instanceof Generalization)) {
+//			return false;
+//		}
+//		return UMLBaseItemSemanticEditPolicy.LinkConstraints.canExistGeneralizationGeneral_4012(getNewSource(), getOldTarget());
 	}
 
 	/**
@@ -113,15 +118,32 @@ public class GeneralizationGeneralReorientCommand extends EditElementCommand {
 	 * @generated
 	 */
 	protected CommandResult reorientTarget() throws ExecutionException {
-		getOldSource().setGeneral(getNewTarget());
+		for (Generalization g: getAllGeneralizations()) {
+			g.setGeneral(getNewTarget());
+		}
 		return CommandResult.newOKCommandResult(referenceOwner);
 	}
 
 	/**
-	 * @generated
+	 * @generated NOT
 	 */
 	protected Generalization getOldSource() {
-		return (Generalization) referenceOwner;
+		return ((GeneralizationSet) referenceOwner).getGeneralization(getOldTarget());
+	}
+
+	/**
+	 * @NOT generated
+	 * Returns list of Generalizations of GeneralizationSet, that had been connected to classifier.  
+	 * General property of all of them will be changed after reroute 
+	 */
+	protected List<Generalization> getAllGeneralizations() {
+		List<Generalization> result = new ArrayList<Generalization>();
+		for (Generalization g: ((GeneralizationSet) referenceOwner).getGeneralizations()) {
+			if (getOldTarget().equals(g.getGeneral())) {
+				result.add(g);
+			}
+		}
+		return result;
 	}
 
 	/**
