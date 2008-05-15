@@ -52,7 +52,6 @@ import org.eclipse.uml2.diagram.clazz.edit.parts.InstanceSpecificationEditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.InstanceSpecificationName2EditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.InstanceSpecificationName3EditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.InstanceSpecificationNameEditPart;
-import org.eclipse.uml2.diagram.clazz.edit.parts.InstanceSpecificationValueEditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.Interface3EditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.InterfaceName2EditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.InterfaceNameEditPart;
@@ -88,6 +87,7 @@ import org.eclipse.uml2.diagram.clazz.expressions.UMLOCLFactory;
 import org.eclipse.uml2.diagram.clazz.parser.AssociationInstanceParser;
 import org.eclipse.uml2.diagram.clazz.parser.GeneralizationSetParser;
 import org.eclipse.uml2.diagram.clazz.parser.InstanceSpecificationValueParser;
+import org.eclipse.uml2.diagram.clazz.parser.NamedElementParser;
 import org.eclipse.uml2.diagram.clazz.parser.ValueSpecificationParser;
 import org.eclipse.uml2.diagram.clazz.parser.dependency.DependencyTypeParser;
 import org.eclipse.uml2.diagram.clazz.parsers.MessageFormatParser;
@@ -115,16 +115,10 @@ import org.eclipse.uml2.diagram.parser.BasicApplyStrategy;
 import org.eclipse.uml2.diagram.parser.ParserAdapter;
 import org.eclipse.uml2.diagram.parser.SemanticParserAdapter;
 import org.eclipse.uml2.diagram.parser.lookup.DefaultOclLookups;
-import org.eclipse.uml2.diagram.parser.lookup.Lookup;
 import org.eclipse.uml2.diagram.parser.lookup.LookupSuite;
 import org.eclipse.uml2.diagram.parser.lookup.LookupSuiteImpl;
 import org.eclipse.uml2.diagram.parser.lookup.OCLLookup;
-import org.eclipse.uml2.uml.Classifier;
 import org.eclipse.uml2.uml.Constraint;
-import org.eclipse.uml2.uml.InstanceSpecification;
-import org.eclipse.uml2.uml.Property;
-import org.eclipse.uml2.uml.Slot;
-import org.eclipse.uml2.uml.StructuralFeature;
 import org.eclipse.uml2.uml.Type;
 import org.eclipse.uml2.uml.UMLPackage;
 import org.eclipse.uml2.uml.ValueSpecification;
@@ -586,12 +580,10 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 	}
 
 	/**
-	 * @generated
+	 * @generated NOT
 	 */
 	protected IParser createClass_3007Parser() {
-		EAttribute[] features = new EAttribute[] { UMLPackage.eINSTANCE.getNamedElement_Name(), };
-		MessageFormatParser parser = new MessageFormatParser(features);
-		return parser;
+		return new NamedElementParser();
 	}
 
 	/**
@@ -610,12 +602,10 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 	}
 
 	/**
-	 * @generated
+	 * @generated NOT
 	 */
 	protected IParser createDataType_3008Parser() {
-		EAttribute[] features = new EAttribute[] { UMLPackage.eINSTANCE.getNamedElement_Name(), };
-		MessageFormatParser parser = new MessageFormatParser(features);
-		return parser;
+		return new NamedElementParser();
 	}
 
 	/**
@@ -634,12 +624,10 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 	}
 
 	/**
-	 * @generated
+	 * @generated NOT
 	 */
 	protected IParser createPrimitiveType_3009Parser() {
-		EAttribute[] features = new EAttribute[] { UMLPackage.eINSTANCE.getNamedElement_Name(), };
-		MessageFormatParser parser = new MessageFormatParser(features);
-		return parser;
+		return new NamedElementParser();
 	}
 
 	/**
@@ -658,12 +646,10 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 	}
 
 	/**
-	 * @generated
+	 * @generated NOT
 	 */
 	protected IParser createEnumeration_3011Parser() {
-		EAttribute[] features = new EAttribute[] { UMLPackage.eINSTANCE.getNamedElement_Name(), };
-		MessageFormatParser parser = new MessageFormatParser(features);
-		return parser;
+		return new NamedElementParser();
 	}
 
 	/**
@@ -682,12 +668,10 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 	}
 
 	/**
-	 * @generated
+	 * @generated NOT
 	 */
 	protected IParser createAssociationClass_3012Parser() {
-		EAttribute[] features = new EAttribute[] { UMLPackage.eINSTANCE.getNamedElement_Name(), };
-		MessageFormatParser parser = new MessageFormatParser(features);
-		return parser;
+		return new NamedElementParser();
 	}
 
 	/**
@@ -706,12 +690,10 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 	}
 
 	/**
-	 * @generated
+	 * @generated NOT
 	 */
 	protected IParser createInterface_3041Parser() {
-		EAttribute[] features = new EAttribute[] { UMLPackage.eINSTANCE.getNamedElement_Name(), };
-		MessageFormatParser parser = new MessageFormatParser(features);
-		return parser;
+		return new NamedElementParser();
 	}
 
 	/**
@@ -775,12 +757,10 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 	}
 
 	/**
-	 * @generated
+	 * @generated NOT
 	 */
 	protected IParser createClass_3003Parser() {
-		EAttribute[] features = new EAttribute[] { UMLPackage.eINSTANCE.getNamedElement_Name(), };
-		MessageFormatParser parser = new MessageFormatParser(features);
-		return parser;
+		return new NamedElementParser();
 	}
 
 	/**
@@ -1003,12 +983,10 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 	}
 
 	/**
-	 * @generated
+	 * @generated NOT
 	 */
 	protected IParser createClass_3030Parser() {
-		EAttribute[] features = new EAttribute[] { UMLPackage.eINSTANCE.getNamedElement_Name(), };
-		MessageFormatParser parser = new MessageFormatParser(features);
-		return parser;
+		return new NamedElementParser();
 	}
 
 	/**
