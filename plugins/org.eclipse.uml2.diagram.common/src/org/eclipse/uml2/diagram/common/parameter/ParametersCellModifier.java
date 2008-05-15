@@ -9,12 +9,12 @@
  * Contributors:
  *    Tatiana Fesenko (Borland) - initial API and implementation
  */
-package org.eclipse.uml2.diagram.clazz.parameter;
+package org.eclipse.uml2.diagram.common.parameter;
 
 import org.eclipse.jface.viewers.ICellModifier;
 import org.eclipse.swt.widgets.TableItem;
-import org.eclipse.uml2.diagram.clazz.parameter.EditPropertyParametersDialog.SetValueToSpecification;
-import org.eclipse.uml2.diagram.clazz.parameter.EditPropertyParametersDialog.ValueSpecificationToStringConverter;
+import org.eclipse.uml2.diagram.common.parameter.EditPropertyParametersDialog.SetValueToSpecification;
+import org.eclipse.uml2.diagram.common.parameter.EditPropertyParametersDialog.ValueSpecificationToStringConverter;
 import org.eclipse.uml2.uml.Parameter;
 import org.eclipse.uml2.uml.ParameterDirectionKind;
 import org.eclipse.uml2.uml.Type;

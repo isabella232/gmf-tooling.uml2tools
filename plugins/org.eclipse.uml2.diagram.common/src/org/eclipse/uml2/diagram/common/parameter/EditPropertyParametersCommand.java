@@ -9,7 +9,7 @@
  * Contributors:
  *    Tatiana Fesenko (Borland) - initial API and implementation
  */
-package org.eclipse.uml2.diagram.clazz.parameter;
+package org.eclipse.uml2.diagram.common.parameter;
 
 import org.eclipse.core.commands.ExecutionException;
 import org.eclipse.core.runtime.IAdaptable;

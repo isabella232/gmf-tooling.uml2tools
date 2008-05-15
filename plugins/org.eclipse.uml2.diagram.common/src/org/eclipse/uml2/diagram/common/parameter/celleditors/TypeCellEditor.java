@@ -9,14 +9,14 @@
  * Contributors:
  *    Tatiana Fesenko (Borland) - initial API and implementation
  */
-package org.eclipse.uml2.diagram.clazz.parameter.celleditors;
+package org.eclipse.uml2.diagram.common.parameter.celleditors;
 
 import java.util.ArrayList;
 import java.util.Arrays;
 
 import org.eclipse.jface.viewers.ComboBoxCellEditor;
 import org.eclipse.swt.widgets.Composite;
-import org.eclipse.uml2.diagram.clazz.parameter.EditPropertyParametersDialog;
+import org.eclipse.uml2.diagram.common.parameter.EditPropertyParametersDialog;
 import org.eclipse.uml2.uml.Type;
 
 public class TypeCellEditor extends ComboBoxCellEditor {

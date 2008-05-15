@@ -9,7 +9,7 @@
  * Contributors:
  *    Tatiana Fesenko (Borland) - initial API and implementation
  */
-package org.eclipse.uml2.diagram.clazz.parameter.celleditors;
+package org.eclipse.uml2.diagram.common.parameter.celleditors;
 
 import org.eclipse.jface.viewers.ICellEditorValidator;
 import org.eclipse.jface.viewers.TextCellEditor;

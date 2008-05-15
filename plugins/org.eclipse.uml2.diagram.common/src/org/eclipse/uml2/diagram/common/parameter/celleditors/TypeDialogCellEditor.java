@@ -9,9 +9,10 @@
  * Contributors:
  *    Tatiana Fesenko (Borland) - initial API and implementation
  */
-package org.eclipse.uml2.diagram.clazz.parameter.celleditors;
+package org.eclipse.uml2.diagram.common.parameter.celleditors;
 
 import org.eclipse.core.resources.ResourcesPlugin;
+import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.common.util.WrappedException;
 import org.eclipse.emf.ecore.EObject;
@@ -23,22 +24,23 @@ import org.eclipse.swt.SWT;
 import org.eclipse.swt.widgets.Control;
 import org.eclipse.swt.widgets.Shell;
 import org.eclipse.swt.widgets.Table;
-import org.eclipse.uml2.diagram.clazz.part.UMLDiagramEditorPlugin;
 import org.eclipse.uml2.diagram.common.part.UMLElementChooserDialog;
 import org.eclipse.uml2.uml.Type;
 
 public class TypeDialogCellEditor extends DialogCellEditor {
 	
 	private final TransactionalEditingDomain myEditingDomain;
+	private final AdapterFactory myAdapterFactory;
 	
-	public TypeDialogCellEditor(Table table, TransactionalEditingDomain editingDomain) {
+	public TypeDialogCellEditor(Table table, TransactionalEditingDomain editingDomain, AdapterFactory af) {
 		super(table, SWT.SINGLE);
 		myEditingDomain = editingDomain;
+		myAdapterFactory = af;
 	}
 
 	@Override
 	protected Object openDialogBox(Control cellEditorWindow) {
-		UMLElementChooserDialog dialog = new TypeChooserDialog(cellEditorWindow.getShell());
+		UMLElementChooserDialog dialog = new TypeChooserDialog(cellEditorWindow.getShell(), myAdapterFactory);
 		if (Window.OK == dialog.open()) {
 			URI uri = dialog.getSelectedModelElementURI();
 			try {
@@ -52,8 +54,8 @@ public class TypeDialogCellEditor extends DialogCellEditor {
 	}
 	
 	private static class TypeChooserDialog extends UMLElementChooserDialog {
-		public TypeChooserDialog(Shell parentShell) {
-			super(parentShell, UMLDiagramEditorPlugin.getInstance().getItemProvidersAdapterFactory());
+		public TypeChooserDialog(Shell parentShell, AdapterFactory af) {
+			super(parentShell, af);
 		}
 		@Override
 		protected boolean isValid(EObject selectedElement) {

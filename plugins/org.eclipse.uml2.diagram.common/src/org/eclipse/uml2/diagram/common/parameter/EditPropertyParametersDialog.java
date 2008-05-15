@@ -9,10 +9,11 @@
  * Contributors:
  *    Tatiana Fesenko (Borland) - initial API and implementation
  */
-package org.eclipse.uml2.diagram.clazz.parameter;
+package org.eclipse.uml2.diagram.common.parameter;
 
 import org.eclipse.core.commands.ExecutionException;
 import org.eclipse.core.runtime.NullProgressMonitor;
+import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.emf.transaction.util.TransactionUtil;
@@ -39,10 +40,10 @@ import org.eclipse.swt.widgets.Control;
 import org.eclipse.swt.widgets.Shell;
 import org.eclipse.swt.widgets.Table;
 import org.eclipse.swt.widgets.TableColumn;
-import org.eclipse.uml2.diagram.clazz.parameter.celleditors.BooleanCellEditor;
-import org.eclipse.uml2.diagram.clazz.parameter.celleditors.DirectionCellEditor;
-import org.eclipse.uml2.diagram.clazz.parameter.celleditors.PositiveIntegerCellEditor;
-import org.eclipse.uml2.diagram.clazz.parameter.celleditors.TypeDialogCellEditor;
+import org.eclipse.uml2.diagram.common.parameter.celleditors.BooleanCellEditor;
+import org.eclipse.uml2.diagram.common.parameter.celleditors.DirectionCellEditor;
+import org.eclipse.uml2.diagram.common.parameter.celleditors.PositiveIntegerCellEditor;
+import org.eclipse.uml2.diagram.common.parameter.celleditors.TypeDialogCellEditor;
 import org.eclipse.uml2.uml.Expression;
 import org.eclipse.uml2.uml.LiteralInteger;
 import org.eclipse.uml2.uml.LiteralString;
@@ -73,9 +74,12 @@ public class EditPropertyParametersDialog extends TrayDialog {
 	
 	public static final Type NULL_TYPE = UMLFactory.eINSTANCE.createClass();
 	
-	public EditPropertyParametersDialog(Shell parentShell, Operation operation) {
+	private final AdapterFactory myAdapterFactory;
+	
+	public EditPropertyParametersDialog(Shell parentShell, Operation operation, AdapterFactory af) {
 		super(parentShell);
 		setShellStyle(getShellStyle() | SWT.RESIZE);
+		myAdapterFactory = af;
 		myOldOperation = operation;
 		myOperation = (Operation) EcoreUtil.copy(operation);
 		setHelpAvailable(false);
@@ -270,7 +274,7 @@ public class EditPropertyParametersDialog extends TrayDialog {
 	private void addCellEditors(Table table, TableViewer viewer) {
 		CellEditor name = new TextCellEditor(table);
 //		CellEditor types = new TypeCellEditor(table, getTypeProposals());
-		CellEditor types = new TypeDialogCellEditor(table, TransactionUtil.getEditingDomain(myOldOperation));
+		CellEditor types = new TypeDialogCellEditor(table, TransactionUtil.getEditingDomain(myOldOperation), myAdapterFactory);
 		CellEditor direction = new DirectionCellEditor(table);
 		CellEditor multiplicity = new PositiveIntegerCellEditor(table);
 		CellEditor defaultValue = new TextCellEditor(table);
