@@ -6,11 +6,8 @@ import org.eclipse.draw2d.Ellipse;
 import org.eclipse.draw2d.Graphics;
 import org.eclipse.draw2d.IFigure;
 import org.eclipse.draw2d.Label;
-import org.eclipse.draw2d.MarginBorder;
 import org.eclipse.draw2d.RectangleFigure;
 import org.eclipse.draw2d.StackLayout;
-import org.eclipse.draw2d.ToolbarLayout;
-import org.eclipse.draw2d.geometry.Rectangle;
 import org.eclipse.gef.EditPart;
 import org.eclipse.gef.EditPolicy;
 import org.eclipse.gef.Request;
@@ -19,25 +16,20 @@ import org.eclipse.gef.editpolicies.LayoutEditPolicy;
 import org.eclipse.gef.editpolicies.NonResizableEditPolicy;
 import org.eclipse.gef.requests.CreateRequest;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart;
-import org.eclipse.gmf.runtime.diagram.ui.editparts.ITextAwareEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.ShapeNodeEditPart;
-import org.eclipse.gmf.runtime.diagram.ui.editpolicies.ConstrainedToolbarLayoutEditPolicy;
 import org.eclipse.gmf.runtime.diagram.ui.editpolicies.CreationEditPolicy;
 import org.eclipse.gmf.runtime.diagram.ui.editpolicies.DragDropEditPolicy;
 import org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles;
 import org.eclipse.gmf.runtime.draw2d.ui.figures.ConstrainedToolbarLayout;
-import org.eclipse.gmf.runtime.draw2d.ui.figures.WrapLabel;
-import org.eclipse.gmf.runtime.gef.ui.figures.DefaultSizeNodeFigure;
 import org.eclipse.gmf.runtime.gef.ui.figures.NodeFigure;
-import org.eclipse.gmf.runtime.gef.ui.internal.figures.OvalFigure;
 import org.eclipse.gmf.runtime.notation.View;
+import org.eclipse.uml2.diagram.common.draw2d.DefaultSizeOvalAnchorableFigure;
 import org.eclipse.uml2.diagram.common.draw2d.OneLineDashedBorder;
 import org.eclipse.uml2.diagram.common.draw2d.SplitEllipseLayout;
 import org.eclipse.uml2.diagram.common.editparts.PrimaryShapeEditPart;
 import org.eclipse.uml2.diagram.csd.edit.policies.CollaborationCanonicalEditPolicy;
 import org.eclipse.uml2.diagram.csd.edit.policies.CollaborationItemSemanticEditPolicy;
 import org.eclipse.uml2.diagram.csd.edit.policies.OpenDiagramEditPolicy;
-import org.eclipse.uml2.diagram.csd.edit.policies.UMLTextSelectionEditPolicy;
 import org.eclipse.uml2.diagram.csd.part.UMLVisualIDRegistry;
 
 /**
@@ -187,7 +179,7 @@ public class CollaborationEditPart extends ShapeNodeEditPart implements PrimaryS
 	 * @generated NOT
 	 */
 	protected NodeFigure createNodePlate() {
-		OvalFigure result = new OvalFigure();
+		DefaultSizeOvalAnchorableFigure result = new DefaultSizeOvalAnchorableFigure(getMapMode().DPtoLP(200), getMapMode().DPtoLP(120));
 		return result;
 	}
 

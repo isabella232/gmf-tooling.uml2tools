@@ -18,11 +18,9 @@ import org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.ShapeNodeEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles;
 import org.eclipse.gmf.runtime.draw2d.ui.figures.ConstrainedToolbarLayout;
-import org.eclipse.gmf.runtime.draw2d.ui.figures.WrapLabel;
-import org.eclipse.gmf.runtime.gef.ui.figures.DefaultSizeNodeFigure;
 import org.eclipse.gmf.runtime.gef.ui.figures.NodeFigure;
-import org.eclipse.gmf.runtime.gef.ui.internal.figures.OvalFigure;
 import org.eclipse.gmf.runtime.notation.View;
+import org.eclipse.uml2.diagram.common.draw2d.DefaultSizeOvalAnchorableFigure;
 import org.eclipse.uml2.diagram.common.editparts.PrimaryShapeEditPart;
 import org.eclipse.uml2.diagram.csd.edit.policies.CollaborationUse2ItemSemanticEditPolicy;
 import org.eclipse.uml2.diagram.csd.part.UMLVisualIDRegistry;
@@ -156,7 +154,7 @@ public class CollaborationUse2EditPart extends ShapeNodeEditPart implements Prim
 	 * @generated NOT
 	 */
 	protected NodeFigure createNodePlate() {
-		OvalFigure result = new OvalFigure();
+		DefaultSizeOvalAnchorableFigure result = new DefaultSizeOvalAnchorableFigure(getMapMode().DPtoLP(100), getMapMode().DPtoLP(40));
 		return result;
 	}
 
