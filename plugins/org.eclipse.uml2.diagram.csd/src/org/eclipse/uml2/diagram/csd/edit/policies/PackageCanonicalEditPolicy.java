@@ -27,6 +27,7 @@ import org.eclipse.gmf.runtime.notation.NotationPackage;
 import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.uml2.diagram.common.conventions.ConnectorEndConvention;
 import org.eclipse.uml2.diagram.csd.edit.parts.AssociationEditPart;
+import org.eclipse.uml2.diagram.csd.edit.parts.AssociationInstanceEditPart;
 import org.eclipse.uml2.diagram.csd.edit.parts.Class2EditPart;
 import org.eclipse.uml2.diagram.csd.edit.parts.Class3EditPart;
 import org.eclipse.uml2.diagram.csd.edit.parts.ClassEditPart;
@@ -464,6 +465,13 @@ public class PackageCanonicalEditPolicy extends CanonicalConnectionEditPolicy {
 		case AssociationEditPart.VISUAL_ID: {
 			if (!domain2NotationMap.containsKey(view.getElement())) {
 				result.addAll(UMLDiagramUpdater.getAssociation_4011ContainedLinks(view));
+			}
+			domain2NotationMap.put(view.getElement(), view);
+			break;
+		}
+		case AssociationInstanceEditPart.VISUAL_ID: {
+			if (!domain2NotationMap.containsKey(view.getElement())) {
+				result.addAll(UMLDiagramUpdater.getSlot_4015ContainedLinks(view));
 			}
 			domain2NotationMap.put(view.getElement(), view);
 			break;

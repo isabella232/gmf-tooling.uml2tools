@@ -111,6 +111,11 @@ public class UMLModelingAssistantProvider extends ModelingAssistantProvider {
 	 */
 	public List getRelTypesOnSource(IAdaptable source) {
 		IGraphicalEditPart sourceEditPart = (IGraphicalEditPart) source.getAdapter(IGraphicalEditPart.class);
+		if (sourceEditPart instanceof InstanceSpecificationEditPart) {
+			List types = new ArrayList();
+			types.add(UMLElementTypes.Slot_4015);
+			return types;
+		}
 		if (sourceEditPart instanceof ConstraintEditPart) {
 			List types = new ArrayList();
 			types.add(UMLElementTypes.ConstraintConstrainedElement_4012);
@@ -149,6 +154,11 @@ public class UMLModelingAssistantProvider extends ModelingAssistantProvider {
 			types.add(UMLElementTypes.PortRequired_4014);
 			return types;
 		}
+		if (targetEditPart instanceof InstanceSpecificationEditPart) {
+			List types = new ArrayList();
+			types.add(UMLElementTypes.Slot_4015);
+			return types;
+		}
 		return Collections.EMPTY_LIST;
 	}
 
@@ -158,6 +168,13 @@ public class UMLModelingAssistantProvider extends ModelingAssistantProvider {
 	public List getRelTypesOnSourceAndTarget(IAdaptable source, IAdaptable target) {
 		IGraphicalEditPart sourceEditPart = (IGraphicalEditPart) source.getAdapter(IGraphicalEditPart.class);
 		IGraphicalEditPart targetEditPart = (IGraphicalEditPart) target.getAdapter(IGraphicalEditPart.class);
+		if (sourceEditPart instanceof InstanceSpecificationEditPart) {
+			List types = new ArrayList();
+			if (targetEditPart instanceof InstanceSpecificationEditPart) {
+				types.add(UMLElementTypes.Slot_4015);
+			}
+			return types;
+		}
 		if (sourceEditPart instanceof ConstraintEditPart) {
 			List types = new ArrayList();
 			return types;
@@ -222,6 +239,13 @@ public class UMLModelingAssistantProvider extends ModelingAssistantProvider {
 			}
 			return types;
 		}
+		if (targetEditPart instanceof InstanceSpecificationEditPart) {
+			List types = new ArrayList();
+			if (relationshipType == UMLElementTypes.Slot_4015) {
+				types.add(UMLElementTypes.InstanceSpecification_2011);
+			}
+			return types;
+		}
 		return Collections.EMPTY_LIST;
 	}
 
@@ -230,6 +254,13 @@ public class UMLModelingAssistantProvider extends ModelingAssistantProvider {
 	 */
 	public List getTypesForTarget(IAdaptable source, IElementType relationshipType) {
 		IGraphicalEditPart sourceEditPart = (IGraphicalEditPart) source.getAdapter(IGraphicalEditPart.class);
+		if (sourceEditPart instanceof InstanceSpecificationEditPart) {
+			List types = new ArrayList();
+			if (relationshipType == UMLElementTypes.Slot_4015) {
+				types.add(UMLElementTypes.InstanceSpecification_2011);
+			}
+			return types;
+		}
 		if (sourceEditPart instanceof ConstraintEditPart) {
 			List types = new ArrayList();
 			return types;

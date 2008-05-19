@@ -11,6 +11,7 @@ import org.eclipse.gmf.runtime.common.ui.services.parser.IParserProvider;
 import org.eclipse.gmf.runtime.emf.type.core.IElementType;
 import org.eclipse.gmf.runtime.emf.ui.services.parser.ParserHintAdapter;
 import org.eclipse.gmf.runtime.notation.View;
+import org.eclipse.uml2.diagram.common.parser.association.AssociationInstanceParser;
 import org.eclipse.uml2.diagram.common.parser.association.end.AssociationEndApplyStrategy;
 import org.eclipse.uml2.diagram.common.parser.association.end.AssociationEndParser;
 import org.eclipse.uml2.diagram.common.parser.association.end.AssociationEndToString;
@@ -26,6 +27,8 @@ import org.eclipse.uml2.diagram.common.parser.property.PropertyToString;
 import org.eclipse.uml2.diagram.common.parser.slot.SlotLookupSuite;
 import org.eclipse.uml2.diagram.common.parser.slot.SlotParser;
 import org.eclipse.uml2.diagram.common.parser.slot.SlotToString;
+import org.eclipse.uml2.diagram.csd.edit.parts.AssociationInstanceSourceEditPart;
+import org.eclipse.uml2.diagram.csd.edit.parts.AssociationInstanceTargetEditPart;
 import org.eclipse.uml2.diagram.csd.edit.parts.AssociationName2EditPart;
 import org.eclipse.uml2.diagram.csd.edit.parts.AssociationName3EditPart;
 import org.eclipse.uml2.diagram.csd.edit.parts.AssociationName4EditPart;
@@ -793,6 +796,13 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 	}
 
 	/**
+	 * @NOT-GENERATED
+	 */
+	private IParser createAssocationInstanceRoleParser(boolean sourceNotTarget) {
+		return new AssociationInstanceParser.ROLE_PARSER(sourceNotTarget);
+	}
+
+	/**
 	 * @generated
 	 */
 	private IParser associationName_6002Parser;
@@ -901,6 +911,50 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 	 */
 	protected IParser createAssociationName_6008Parser() {
 		return createAssocationMultiplicityParser(false);
+	}
+
+	/**
+	 * @generated
+	 */
+	private IParser slotLabel_6016Parser;
+
+	/**
+	 * @generated
+	 */
+	private IParser getSlotLabel_6016Parser() {
+		if (slotLabel_6016Parser == null) {
+			slotLabel_6016Parser = createSlotLabel_6016Parser();
+		}
+		return slotLabel_6016Parser;
+	}
+
+	/**
+	 * @generated NOT
+	 */
+	protected IParser createSlotLabel_6016Parser() {
+		return createAssocationInstanceRoleParser(true);
+	}
+
+	/**
+	 * @generated
+	 */
+	private IParser slotLabel_6017Parser;
+
+	/**
+	 * @generated
+	 */
+	private IParser getSlotLabel_6017Parser() {
+		if (slotLabel_6017Parser == null) {
+			slotLabel_6017Parser = createSlotLabel_6017Parser();
+		}
+		return slotLabel_6017Parser;
+	}
+
+	/**
+	 * @generated NOT
+	 */
+	protected IParser createSlotLabel_6017Parser() {
+		return createAssocationInstanceRoleParser(false);
 	}
 
 	/**
@@ -1080,6 +1134,10 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 			return getAssociationName_6007Parser();
 		case AssociationName7EditPart.VISUAL_ID:
 			return getAssociationName_6008Parser();
+		case AssociationInstanceSourceEditPart.VISUAL_ID:
+			return getSlotLabel_6016Parser();
+		case AssociationInstanceTargetEditPart.VISUAL_ID:
+			return getSlotLabel_6017Parser();
 		}
 		return null;
 	}

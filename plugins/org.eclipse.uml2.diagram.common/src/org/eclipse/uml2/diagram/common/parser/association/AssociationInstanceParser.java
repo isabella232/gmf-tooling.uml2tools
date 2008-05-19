@@ -1,4 +1,4 @@
-package org.eclipse.uml2.diagram.clazz.parser;
+package org.eclipse.uml2.diagram.common.parser.association;
 
 import java.util.Collections;
 import java.util.List;

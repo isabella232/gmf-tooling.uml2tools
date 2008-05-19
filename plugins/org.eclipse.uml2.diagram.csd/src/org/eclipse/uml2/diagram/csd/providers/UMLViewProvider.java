@@ -7,6 +7,9 @@ import org.eclipse.gmf.runtime.emf.type.core.IElementType;
 import org.eclipse.gmf.runtime.emf.type.core.IHintedType;
 import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.uml2.diagram.csd.edit.parts.AssociationEditPart;
+import org.eclipse.uml2.diagram.csd.edit.parts.AssociationInstanceEditPart;
+import org.eclipse.uml2.diagram.csd.edit.parts.AssociationInstanceSourceEditPart;
+import org.eclipse.uml2.diagram.csd.edit.parts.AssociationInstanceTargetEditPart;
 import org.eclipse.uml2.diagram.csd.edit.parts.AssociationName2EditPart;
 import org.eclipse.uml2.diagram.csd.edit.parts.AssociationName3EditPart;
 import org.eclipse.uml2.diagram.csd.edit.parts.AssociationName4EditPart;
@@ -75,6 +78,9 @@ import org.eclipse.uml2.diagram.csd.edit.parts.SlotEditPart;
 import org.eclipse.uml2.diagram.csd.edit.parts.SlotNameEditPart;
 import org.eclipse.uml2.diagram.csd.edit.parts.UsageEditPart;
 import org.eclipse.uml2.diagram.csd.part.UMLVisualIDRegistry;
+import org.eclipse.uml2.diagram.csd.view.factories.AssociationInstanceSourceViewFactory;
+import org.eclipse.uml2.diagram.csd.view.factories.AssociationInstanceTargetViewFactory;
+import org.eclipse.uml2.diagram.csd.view.factories.AssociationInstanceViewFactory;
 import org.eclipse.uml2.diagram.csd.view.factories.AssociationName2ViewFactory;
 import org.eclipse.uml2.diagram.csd.view.factories.AssociationName3ViewFactory;
 import org.eclipse.uml2.diagram.csd.view.factories.AssociationName4ViewFactory;
@@ -354,6 +360,12 @@ public class UMLViewProvider extends AbstractViewProvider {
 						return null; // wrong container
 					}
 					break;
+				case AssociationInstanceSourceEditPart.VISUAL_ID:
+				case AssociationInstanceTargetEditPart.VISUAL_ID:
+					if (AssociationInstanceEditPart.VISUAL_ID != UMLVisualIDRegistry.getVisualID(containerView) || containerView.getElement() != domainElement) {
+						return null; // wrong container
+					}
+					break;
 				default:
 					return null;
 				}
@@ -486,6 +498,10 @@ public class UMLViewProvider extends AbstractViewProvider {
 			return AssociationName6ViewFactory.class;
 		case AssociationName7EditPart.VISUAL_ID:
 			return AssociationName7ViewFactory.class;
+		case AssociationInstanceSourceEditPart.VISUAL_ID:
+			return AssociationInstanceSourceViewFactory.class;
+		case AssociationInstanceTargetEditPart.VISUAL_ID:
+			return AssociationInstanceTargetViewFactory.class;
 		}
 		return null;
 	}
@@ -534,6 +550,8 @@ public class UMLViewProvider extends AbstractViewProvider {
 			return ConstraintConstrainedElementViewFactory.class;
 		case PortRequiredEditPart.VISUAL_ID:
 			return PortRequiredViewFactory.class;
+		case AssociationInstanceEditPart.VISUAL_ID:
+			return AssociationInstanceViewFactory.class;
 		}
 		return null;
 	}

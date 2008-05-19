@@ -17,6 +17,8 @@ import org.eclipse.ui.IMemento;
 import org.eclipse.ui.navigator.ICommonContentExtensionSite;
 import org.eclipse.ui.navigator.ICommonLabelProvider;
 import org.eclipse.uml2.diagram.csd.edit.parts.AssociationEditPart;
+import org.eclipse.uml2.diagram.csd.edit.parts.AssociationInstanceEditPart;
+import org.eclipse.uml2.diagram.csd.edit.parts.AssociationInstanceSourceEditPart;
 import org.eclipse.uml2.diagram.csd.edit.parts.AssociationNameEditPart;
 import org.eclipse.uml2.diagram.csd.edit.parts.Class2EditPart;
 import org.eclipse.uml2.diagram.csd.edit.parts.Class3EditPart;
@@ -178,6 +180,8 @@ public class UMLNavigatorLabelProvider extends LabelProvider implements ICommonL
 			return getImage("Navigator?Link?http://www.eclipse.org/uml2/2.1.0/UML?Constraint?constrainedElement", UMLElementTypes.ConstraintConstrainedElement_4012); //$NON-NLS-1$
 		case PortRequiredEditPart.VISUAL_ID:
 			return getImage("Navigator?Link?http://www.eclipse.org/uml2/2.1.0/UML?Port?required", UMLElementTypes.PortRequired_4014); //$NON-NLS-1$
+		case AssociationInstanceEditPart.VISUAL_ID:
+			return getImage("Navigator?Link?http://www.eclipse.org/uml2/2.1.0/UML?Slot", UMLElementTypes.Slot_4015); //$NON-NLS-1$
 		}
 		return getImage("Navigator?UnknownElement", null); //$NON-NLS-1$
 	}
@@ -284,6 +288,8 @@ public class UMLNavigatorLabelProvider extends LabelProvider implements ICommonL
 			return getConstraintConstrainedElement_4012Text(view);
 		case PortRequiredEditPart.VISUAL_ID:
 			return getPortRequired_4014Text(view);
+		case AssociationInstanceEditPart.VISUAL_ID:
+			return getSlot_4015Text(view);
 		}
 		return getUnknownElementText(view);
 	}
@@ -712,6 +718,23 @@ public class UMLNavigatorLabelProvider extends LabelProvider implements ICommonL
 	 */
 	private String getPortRequired_4014Text(View view) {
 		return ""; //$NON-NLS-1$
+	}
+
+	/**
+	 * @generated
+	 */
+	private String getSlot_4015Text(View view) {
+		IAdaptable hintAdapter = new UMLParserProvider.HintAdapter(UMLElementTypes.Slot_4015, (view.getElement() != null ? view.getElement() : view), UMLVisualIDRegistry
+				.getType(AssociationInstanceSourceEditPart.VISUAL_ID));
+		IParser parser = ParserService.getInstance().getParser(hintAdapter);
+
+		if (parser != null) {
+			return parser.getPrintString(hintAdapter, ParserOptions.NONE.intValue());
+		} else {
+			UMLDiagramEditorPlugin.getInstance().logError("Parser was not found for label " + 6016); //$NON-NLS-1$
+			return ""; //$NON-NLS-1$
+		}
+
 	}
 
 	/**

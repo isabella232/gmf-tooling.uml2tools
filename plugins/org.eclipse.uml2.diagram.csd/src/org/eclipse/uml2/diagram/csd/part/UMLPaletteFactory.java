@@ -290,8 +290,9 @@ public class UMLPaletteFactory {
 	 * @generated
 	 */
 	private ToolEntry createAssociation1CreationTool() {
-		List/*<IElementType>*/types = new ArrayList/*<IElementType>*/(1);
+		List/*<IElementType>*/types = new ArrayList/*<IElementType>*/(2);
 		types.add(UMLElementTypes.Association_4011);
+		types.add(UMLElementTypes.Slot_4015);
 		LinkToolEntry entry = new LinkToolEntry(Messages.Association1CreationTool_title, Messages.Association1CreationTool_desc, types);
 		entry.setSmallIcon(UMLElementTypes.getImageDescriptor(UMLElementTypes.Association_4011));
 		entry.setLargeIcon(entry.getSmallIcon());

@@ -12,12 +12,15 @@ import org.eclipse.gmf.runtime.emf.type.core.requests.ReorientReferenceRelations
 import org.eclipse.gmf.runtime.emf.type.core.requests.ReorientRelationshipRequest;
 import org.eclipse.gmf.runtime.notation.Node;
 import org.eclipse.gmf.runtime.notation.View;
+import org.eclipse.uml2.diagram.csd.edit.commands.AssociationInstanceCreateCommand;
+import org.eclipse.uml2.diagram.csd.edit.commands.AssociationInstanceReorientCommand;
 import org.eclipse.uml2.diagram.csd.edit.commands.ConstraintConstrainedElementCreateCommand;
 import org.eclipse.uml2.diagram.csd.edit.commands.ConstraintConstrainedElementReorientCommand;
 import org.eclipse.uml2.diagram.csd.edit.commands.DependencyCreateCommand;
 import org.eclipse.uml2.diagram.csd.edit.commands.DependencyReorientCommand;
 import org.eclipse.uml2.diagram.csd.edit.commands.UsageCreateCommand;
 import org.eclipse.uml2.diagram.csd.edit.commands.UsageReorientCommand;
+import org.eclipse.uml2.diagram.csd.edit.parts.AssociationInstanceEditPart;
 import org.eclipse.uml2.diagram.csd.edit.parts.ConstraintConstrainedElementEditPart;
 import org.eclipse.uml2.diagram.csd.edit.parts.DependencyEditPart;
 import org.eclipse.uml2.diagram.csd.edit.parts.InstanceSpecificationSlotsEditPart;
@@ -93,6 +96,9 @@ public class InstanceSpecificationItemSemanticEditPolicy extends UMLBaseItemSema
 		if (UMLElementTypes.ConstraintConstrainedElement_4012 == req.getElementType()) {
 			return null;
 		}
+		if (UMLElementTypes.Slot_4015 == req.getElementType()) {
+			return getGEFWrapper(new AssociationInstanceCreateCommand(req, req.getSource(), req.getTarget()));
+		}
 		return null;
 	}
 
@@ -109,6 +115,9 @@ public class InstanceSpecificationItemSemanticEditPolicy extends UMLBaseItemSema
 		if (UMLElementTypes.ConstraintConstrainedElement_4012 == req.getElementType()) {
 			return getGEFWrapper(new ConstraintConstrainedElementCreateCommand(req, req.getSource(), req.getTarget()));
 		}
+		if (UMLElementTypes.Slot_4015 == req.getElementType()) {
+			return getGEFWrapper(new AssociationInstanceCreateCommand(req, req.getSource(), req.getTarget()));
+		}
 		return null;
 	}
 
@@ -124,6 +133,8 @@ public class InstanceSpecificationItemSemanticEditPolicy extends UMLBaseItemSema
 			return getGEFWrapper(new DependencyReorientCommand(req));
 		case UsageEditPart.VISUAL_ID:
 			return getGEFWrapper(new UsageReorientCommand(req));
+		case AssociationInstanceEditPart.VISUAL_ID:
+			return getGEFWrapper(new AssociationInstanceReorientCommand(req));
 		}
 		return super.getReorientRelationshipCommand(req);
 	}

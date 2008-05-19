@@ -6,6 +6,9 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.gmf.runtime.notation.Diagram;
 import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.uml2.diagram.csd.edit.parts.AssociationEditPart;
+import org.eclipse.uml2.diagram.csd.edit.parts.AssociationInstanceEditPart;
+import org.eclipse.uml2.diagram.csd.edit.parts.AssociationInstanceSourceEditPart;
+import org.eclipse.uml2.diagram.csd.edit.parts.AssociationInstanceTargetEditPart;
 import org.eclipse.uml2.diagram.csd.edit.parts.AssociationName2EditPart;
 import org.eclipse.uml2.diagram.csd.edit.parts.AssociationName3EditPart;
 import org.eclipse.uml2.diagram.csd.edit.parts.AssociationName4EditPart;
@@ -77,6 +80,7 @@ import org.eclipse.uml2.uml.Dependency;
 import org.eclipse.uml2.uml.InterfaceRealization;
 import org.eclipse.uml2.uml.Package;
 import org.eclipse.uml2.uml.Property;
+import org.eclipse.uml2.uml.Slot;
 import org.eclipse.uml2.uml.UMLPackage;
 import org.eclipse.uml2.uml.Usage;
 
@@ -133,6 +137,11 @@ public class UMLVisualIDRegistry {
 	 * @generated
 	 */
 	private static UMLAbstractExpression Usage_4008_Constraint;
+
+	/**
+	 * @generated
+	 */
+	private static UMLAbstractExpression Slot_4015_Constraint;
 
 	/**
 	 * @generated
@@ -553,6 +562,14 @@ public class UMLVisualIDRegistry {
 				return true;
 			}
 			break;
+		case AssociationInstanceEditPart.VISUAL_ID:
+			if (AssociationInstanceSourceEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			if (AssociationInstanceTargetEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			break;
 		}
 		return false;
 	}
@@ -578,6 +595,9 @@ public class UMLVisualIDRegistry {
 		}
 		if (UMLPackage.eINSTANCE.getAssociation().isSuperTypeOf(domainElement.eClass())) {
 			return AssociationEditPart.VISUAL_ID;
+		}
+		if (UMLPackage.eINSTANCE.getSlot().isSuperTypeOf(domainElement.eClass()) && isSlot_4015((Slot) domainElement)) {
+			return AssociationInstanceEditPart.VISUAL_ID;
 		}
 		return -1;
 	}
@@ -678,6 +698,18 @@ public class UMLVisualIDRegistry {
 					"self.supplier->forAll(e|e.oclIsKindOf(uml::Interface)) and self.client->forAll(e|not e.oclIsKindOf(uml::Port))", UMLPackage.eINSTANCE.getUsage()); //$NON-NLS-1$
 		}
 		Object result = Usage_4008_Constraint.evaluate(domainElement);
+		return result instanceof Boolean && ((Boolean) result).booleanValue();
+	}
+
+	/**
+	 * @generated
+	 */
+	private static boolean isSlot_4015(Slot domainElement) {
+		if (Slot_4015_Constraint == null) { // lazy initialization
+			Slot_4015_Constraint = UMLOCLFactory.getExpression(
+					"self.value->exists(v : ValueSpecification | v.oclIsKindOf(InstanceValue) and not v.oclAsType(InstanceValue).oclIsUndefined())", UMLPackage.eINSTANCE.getSlot()); //$NON-NLS-1$
+		}
+		Object result = Slot_4015_Constraint.evaluate(domainElement);
 		return result instanceof Boolean && ((Boolean) result).booleanValue();
 	}
 

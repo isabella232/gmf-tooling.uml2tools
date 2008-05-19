@@ -50,6 +50,7 @@ import org.eclipse.uml2.uml.CollaborationUse;
 import org.eclipse.uml2.uml.ConnectableElement;
 import org.eclipse.uml2.uml.Constraint;
 import org.eclipse.uml2.uml.Element;
+import org.eclipse.uml2.uml.InstanceSpecification;
 import org.eclipse.uml2.uml.Interface;
 import org.eclipse.uml2.uml.NamedElement;
 import org.eclipse.uml2.uml.Package;
@@ -440,6 +441,13 @@ public class UMLBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 		/**
 		 * @generated
 		 */
+		public static boolean canCreateSlot_4015(InstanceSpecification container, InstanceSpecification source, InstanceSpecification target) {
+			return canExistSlot_4015(container, source, target);
+		}
+
+		/**
+		 * @generated
+		 */
 		public static boolean canExistConnector_4005(StructuredClassifier container, ConnectableElement source, ConnectableElement target) {
 
 			return true;
@@ -570,6 +578,14 @@ public class UMLBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 				UMLDiagramEditorPlugin.getInstance().logError("Link constraint evaluation error", e); //$NON-NLS-1$
 				return false;
 			}
+		}
+
+		/**
+		 * @generated
+		 */
+		public static boolean canExistSlot_4015(InstanceSpecification container, InstanceSpecification source, InstanceSpecification target) {
+
+			return true;
 		}
 
 	}

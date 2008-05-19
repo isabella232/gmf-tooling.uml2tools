@@ -188,6 +188,11 @@ public class UMLElementTypes extends ElementInitializers {
 	/**
 	 * @generated
 	 */
+	public static final IHintedType Slot_4015 = (IHintedType) getElementType("org.eclipse.uml2.diagram.csd.Slot_4015"); //$NON-NLS-1$
+
+	/**
+	 * @generated
+	 */
 	private static ImageRegistry getImageRegistry() {
 		if (imageRegistry == null) {
 			imageRegistry = new ImageRegistry();
@@ -346,6 +351,8 @@ public class UMLElementTypes extends ElementInitializers {
 			elements.put(ConstraintConstrainedElement_4012, UMLPackage.eINSTANCE.getConstraint_ConstrainedElement());
 
 			elements.put(PortRequired_4014, UMLPackage.eINSTANCE.getPort_Required());
+
+			elements.put(Slot_4015, UMLPackage.eINSTANCE.getSlot());
 		}
 		return (ENamedElement) elements.get(type);
 	}
@@ -391,6 +398,7 @@ public class UMLElementTypes extends ElementInitializers {
 			KNOWN_ELEMENT_TYPES.add(Association_4011);
 			KNOWN_ELEMENT_TYPES.add(ConstraintConstrainedElement_4012);
 			KNOWN_ELEMENT_TYPES.add(PortRequired_4014);
+			KNOWN_ELEMENT_TYPES.add(Slot_4015);
 		}
 		return KNOWN_ELEMENT_TYPES.contains(elementType);
 	}
