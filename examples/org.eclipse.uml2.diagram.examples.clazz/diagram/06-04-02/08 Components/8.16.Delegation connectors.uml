@@ -5,19 +5,19 @@
     <ownedAttribute xmi:id="_rpQOYDajEdyCLZBPNn2ARw" name=": LineItem"/>
     <ownedAttribute xmi:type="uml:Port" xmi:id="_zvqU0DajEdyCLZBPNn2ARw" name="" type="_yWaC4DajEdyCLZBPNn2ARw" aggregation="composite"/>
     <ownedAttribute xmi:type="uml:Port" xmi:id="_4nsawDajEdyCLZBPNn2ARw" name="" aggregation="composite"/>
-    <ownedConnector xmi:id="_2PZtsDajEdyCLZBPNn2ARw">
+    <ownedConnector xmi:id="_2PZtsDajEdyCLZBPNn2ARw" kind="delegation">
       <end xmi:id="_2PZtsTajEdyCLZBPNn2ARw" role="_zvqU0DajEdyCLZBPNn2ARw"/>
       <end xmi:id="_2PZtsjajEdyCLZBPNn2ARw" role="_oWZWgDajEdyCLZBPNn2ARw"/>
     </ownedConnector>
-    <ownedConnector xmi:id="_21jHsDajEdyCLZBPNn2ARw">
+    <ownedConnector xmi:id="_21jHsDajEdyCLZBPNn2ARw" kind="delegation">
       <end xmi:id="_21jHsTajEdyCLZBPNn2ARw" role="_oWZWgDajEdyCLZBPNn2ARw"/>
       <end xmi:id="_21jHsjajEdyCLZBPNn2ARw" role="_rpQOYDajEdyCLZBPNn2ARw"/>
     </ownedConnector>
-    <ownedConnector xmi:id="_3VcIsDajEdyCLZBPNn2ARw">
+    <ownedConnector xmi:id="_3VcIsDajEdyCLZBPNn2ARw" kind="delegation">
       <end xmi:id="_3VcIsTajEdyCLZBPNn2ARw" role="_zvqU0DajEdyCLZBPNn2ARw"/>
       <end xmi:id="_3VcIsjajEdyCLZBPNn2ARw" role="_rpQOYDajEdyCLZBPNn2ARw"/>
     </ownedConnector>
-    <ownedConnector xmi:id="_6O9TgDajEdyCLZBPNn2ARw">
+    <ownedConnector xmi:id="_6O9TgDajEdyCLZBPNn2ARw" kind="delegation">
       <end xmi:id="_6O9TgTajEdyCLZBPNn2ARw" role="_rpQOYDajEdyCLZBPNn2ARw"/>
       <end xmi:id="_6O9TgjajEdyCLZBPNn2ARw" role="_4nsawDajEdyCLZBPNn2ARw"/>
     </ownedConnector>

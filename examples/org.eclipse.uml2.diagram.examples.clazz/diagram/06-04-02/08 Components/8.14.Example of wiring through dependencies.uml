@@ -4,7 +4,7 @@
   <packagedElement xmi:type="uml:Component" xmi:id="_vxV-wDabEdyiJs_hTQjPKg" name="Component">
     <ownedAttribute xmi:type="uml:Port" xmi:id="_qft3oDacEdyiJs_hTQjPKg" name="" type="_sN1mUDacEdyiJs_hTQjPKg" aggregation="composite"/>
     <ownedAttribute xmi:type="uml:Port" xmi:id="_6vs30DadEdyiJs_hTQjPKg" name="" type="_LPJs0DaeEdyiJs_hTQjPKg" aggregation="composite"/>
-    <ownedConnector xmi:id="_WGjwsDadEdyiJs_hTQjPKg">
+    <ownedConnector xmi:id="_WGjwsDadEdyiJs_hTQjPKg" kind="delegation">
       <end xmi:id="_WHJmkDadEdyiJs_hTQjPKg" role="_qft3oDacEdyiJs_hTQjPKg"/>
       <end xmi:id="_WHJmkTadEdyiJs_hTQjPKg" role="_VIatcDadEdyiJs_hTQjPKg"/>
     </ownedConnector>

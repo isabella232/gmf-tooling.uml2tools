@@ -15,7 +15,7 @@
   <packagedElement xmi:type="uml:Collaboration" xmi:id="_0GXm0H1_EdyWXew6izX-PQ" name="Observer" collaborationRole="_6_roAH1_EdyWXew6izX-PQ _7GEj4H1_EdyWXew6izX-PQ">
     <ownedAttribute xmi:id="_6_roAH1_EdyWXew6izX-PQ" name="Subject" type="_QKomAH2EEdyr-MCpgrIrqw"/>
     <ownedAttribute xmi:id="_7GEj4H1_EdyWXew6izX-PQ" name="Observer" type="_WYi5wH2EEdyr-MCpgrIrqw"/>
-    <ownedConnector xmi:id="_XwAmgH2FEdyTpqaR0PW8XQ">
+    <ownedConnector xmi:id="_XwAmgH2FEdyTpqaR0PW8XQ" kind="delegation">
       <end xmi:id="_XwKXgH2FEdyTpqaR0PW8XQ" role="_6_roAH1_EdyWXew6izX-PQ"/>
       <end xmi:id="_XwKXgX2FEdyTpqaR0PW8XQ" role="_7GEj4H1_EdyWXew6izX-PQ"/>
     </ownedConnector>

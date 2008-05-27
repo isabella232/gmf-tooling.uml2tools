@@ -15,7 +15,7 @@
   <packagedElement xmi:type="uml:Collaboration" xmi:id="_Q3ze8H2NEdyTpqaR0PW8XQ" name="Sale" collaborationRole="_TXTAMH2NEdyTpqaR0PW8XQ _T57MIH2NEdyTpqaR0PW8XQ">
     <ownedAttribute xmi:id="_TXTAMH2NEdyTpqaR0PW8XQ" name="buyer"/>
     <ownedAttribute xmi:id="_T57MIH2NEdyTpqaR0PW8XQ" name="seller"/>
-    <ownedConnector xmi:id="_XzyZoH2NEdyTpqaR0PW8XQ">
+    <ownedConnector xmi:id="_XzyZoH2NEdyTpqaR0PW8XQ" kind="delegation">
       <end xmi:id="_XzyZoX2NEdyTpqaR0PW8XQ" role="_TXTAMH2NEdyTpqaR0PW8XQ"/>
       <end xmi:id="_XzyZon2NEdyTpqaR0PW8XQ" role="_T57MIH2NEdyTpqaR0PW8XQ"/>
     </ownedConnector>

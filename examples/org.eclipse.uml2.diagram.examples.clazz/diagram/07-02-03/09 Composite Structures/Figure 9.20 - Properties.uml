@@ -50,7 +50,7 @@
       <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_ko7H4JH4EdyLU8hXuWDsRQ" value="2"/>
     </ownedAttribute>
     <ownedAttribute xmi:id="_v7pEMJH2Edyt7sFQzxejuQ" name="e" type="_CBQ9II7TEdyb7ozkoKU63Q"/>
-    <ownedConnector xmi:id="_MobYwJH3Edyt7sFQzxejuQ" name="a" type="_MwAXwI7TEdyb7ozkoKU63Q">
+    <ownedConnector xmi:id="_MobYwJH3Edyt7sFQzxejuQ" name="a" type="_MwAXwI7TEdyb7ozkoKU63Q" kind="delegation">
       <end xmi:id="_MobYwZH3Edyt7sFQzxejuQ" role="_vG1jIJH2Edyt7sFQzxejuQ"/>
       <end xmi:id="_MobYwpH3Edyt7sFQzxejuQ" role="_v7pEMJH2Edyt7sFQzxejuQ"/>
     </ownedConnector>

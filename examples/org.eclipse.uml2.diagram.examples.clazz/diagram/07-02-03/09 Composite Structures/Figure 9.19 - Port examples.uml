@@ -15,7 +15,7 @@
   <packagedElement xmi:type="uml:Class" xmi:id="_pifEoLrFEdyb4vWi0vlZeg" name="Car">
     <ownedAttribute xmi:id="_rJb0ULrFEdyb4vWi0vlZeg" name="rear" type="_6R1r8LrHEdyb4vWi0vlZeg"/>
     <ownedAttribute xmi:id="_sORVcLrFEdyb4vWi0vlZeg" name="e" type="_Oo8kcLrHEdyb4vWi0vlZeg"/>
-    <ownedConnector xmi:id="_NFaVILrHEdyb4vWi0vlZeg" name="axle">
+    <ownedConnector xmi:id="_NFaVILrHEdyb4vWi0vlZeg" name="axle" kind="delegation">
       <end xmi:id="_NFaVIbrHEdyb4vWi0vlZeg" role="_rJb0ULrFEdyb4vWi0vlZeg"/>
       <end xmi:id="_NFaVIrrHEdyb4vWi0vlZeg" partWithPort="_sORVcLrFEdyb4vWi0vlZeg" role="_WDiGsLrHEdyb4vWi0vlZeg"/>
     </ownedConnector>
@@ -29,7 +29,7 @@
   <packagedElement xmi:type="uml:Class" xmi:id="_j6eoYLrHEdyb4vWi0vlZeg" name="Boat">
     <ownedAttribute xmi:id="_2lPeYLrHEdyb4vWi0vlZeg" name="pp" type="_7hjAULrHEdyb4vWi0vlZeg"/>
     <ownedAttribute xmi:id="_3V9wsLrHEdyb4vWi0vlZeg" name="e" type="_Oo8kcLrHEdyb4vWi0vlZeg"/>
-    <ownedConnector xmi:id="_7fn4QLrIEdyb4vWi0vlZeg" name="shaft">
+    <ownedConnector xmi:id="_7fn4QLrIEdyb4vWi0vlZeg" name="shaft" kind="delegation">
       <end xmi:id="_7fn4QbrIEdyb4vWi0vlZeg" partWithPort="_2lPeYLrHEdyb4vWi0vlZeg" role="_JGvAYMBqEdyow_O2MbsLDQ"/>
       <end xmi:id="_7fxpQLrIEdyb4vWi0vlZeg" partWithPort="_3V9wsLrHEdyb4vWi0vlZeg" role="_WDiGsLrHEdyb4vWi0vlZeg"/>
     </ownedConnector>
