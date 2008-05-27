@@ -76,6 +76,7 @@ import org.eclipse.uml2.diagram.csd.edit.parts.UsageEditPart;
 import org.eclipse.uml2.diagram.csd.expressions.UMLAbstractExpression;
 import org.eclipse.uml2.diagram.csd.expressions.UMLOCLFactory;
 import org.eclipse.uml2.uml.Class;
+import org.eclipse.uml2.uml.Connector;
 import org.eclipse.uml2.uml.Dependency;
 import org.eclipse.uml2.uml.InterfaceRealization;
 import org.eclipse.uml2.uml.Package;
@@ -122,6 +123,11 @@ public class UMLVisualIDRegistry {
 	 * @generated
 	 */
 	private static UMLAbstractExpression Property_3014_Constraint;
+
+	/**
+	 * @generated
+	 */
+	private static UMLAbstractExpression Connector_4005_Constraint;
 
 	/**
 	 * @generated
@@ -581,7 +587,7 @@ public class UMLVisualIDRegistry {
 		if (domainElement == null) {
 			return -1;
 		}
-		if (UMLPackage.eINSTANCE.getConnector().isSuperTypeOf(domainElement.eClass())) {
+		if (UMLPackage.eINSTANCE.getConnector().isSuperTypeOf(domainElement.eClass()) && isConnector_4005((Connector) domainElement)) {
 			return ConnectorEditPart.VISUAL_ID;
 		}
 		if (UMLPackage.eINSTANCE.getDependency().isSuperTypeOf(domainElement.eClass()) && isDependency_4006((Dependency) domainElement)) {
@@ -664,6 +670,17 @@ public class UMLVisualIDRegistry {
 			Property_3014_Constraint = UMLOCLFactory.getExpression("not self.oclIsKindOf(uml::Port)", UMLPackage.eINSTANCE.getProperty()); //$NON-NLS-1$
 		}
 		Object result = Property_3014_Constraint.evaluate(domainElement);
+		return result instanceof Boolean && ((Boolean) result).booleanValue();
+	}
+
+	/**
+	 * @generated
+	 */
+	private static boolean isConnector_4005(Connector domainElement) {
+		if (Connector_4005_Constraint == null) { // lazy initialization
+			Connector_4005_Constraint = UMLOCLFactory.getExpression("kind =ConnectorKind::delegation", UMLPackage.eINSTANCE.getConnector()); //$NON-NLS-1$
+		}
+		Object result = Connector_4005_Constraint.evaluate(domainElement);
 		return result instanceof Boolean && ((Boolean) result).booleanValue();
 	}
 

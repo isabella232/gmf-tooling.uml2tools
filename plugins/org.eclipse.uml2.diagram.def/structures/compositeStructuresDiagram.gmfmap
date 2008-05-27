@@ -641,6 +641,19 @@
   <links>
     <domainMetaElement
         href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//Connector"/>
+    <domainSpecialization
+        body="kind =ConnectorKind::delegation"/>
+    <domainInitializer
+        xsi:type="gmfmap:FeatureSeqInitializer">
+      <initializers
+          xsi:type="gmfmap:FeatureValueSpec">
+        <feature
+            xsi:type="ecore:EAttribute"
+            href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//Connector/kind"/>
+        <value
+            body="ConnectorKind::delegation"/>
+      </initializers>
+    </domainInitializer>
     <labelMappings
         xsi:type="gmfmap:FeatureLabelMapping">
       <diagramLabel

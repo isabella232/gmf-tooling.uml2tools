@@ -10,6 +10,7 @@ import org.eclipse.gmf.runtime.emf.type.core.commands.CreateElementCommand;
 import org.eclipse.gmf.runtime.emf.type.core.requests.ConfigureRequest;
 import org.eclipse.gmf.runtime.emf.type.core.requests.CreateRelationshipRequest;
 import org.eclipse.uml2.diagram.csd.edit.policies.UMLBaseItemSemanticEditPolicy;
+import org.eclipse.uml2.diagram.csd.providers.UMLElementTypes;
 import org.eclipse.uml2.uml.ConnectableElement;
 import org.eclipse.uml2.uml.Connector;
 import org.eclipse.uml2.uml.StructuredClassifier;
@@ -87,11 +88,14 @@ public class ConnectorCreateCommand extends CreateElementCommand {
 	 */
 	protected EObject doDefaultElementCreation() {
 		// org.eclipse.uml2.uml.Connector newElement = (org.eclipse.uml2.uml.Connector) super.doDefaultElementCreation();
-		Connector newElement = UMLFactory.eINSTANCE.createConnector();
-		getContainer().getOwnedConnectors().add(newElement);
-		newElement.createEnd().setRole(getSource());
-		newElement.createEnd().setRole(getTarget());
-		return newElement;
+		Connector connector = UMLFactory.eINSTANCE.createConnector();
+		getContainer().getOwnedConnectors().add(connector);
+		connector.createEnd().setRole(getSource());
+		connector.createEnd().setRole(getTarget());
+		
+		UMLElementTypes.init_Connector_4005(connector);
+		
+		return connector;
 	}
 
 	/**
