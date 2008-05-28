@@ -36,9 +36,43 @@ import org.eclipse.uml2.diagram.statemachine.part.UMLDiagramEditorPlugin;
 public class UMLModelingAssistantProvider extends ModelingAssistantProvider {
 
 	/**
-	 * @generated
+	 * @generated NOT
+	 * #227133 Exception on Behavior creation
 	 */
 	public List getTypesForPopupBar(IAdaptable host) {
+		IGraphicalEditPart editPart = (IGraphicalEditPart) host.getAdapter(IGraphicalEditPart.class);
+		if (editPart instanceof StateEditPart) {
+			List types = new ArrayList();
+//			types.add(UMLElementTypes.Behavior_3019);
+//			types.add(UMLElementTypes.Behavior_3020);
+//			types.add(UMLElementTypes.Behavior_3021);
+			return types;
+		}
+		if (editPart instanceof State2EditPart) {
+			List types = new ArrayList();
+			types.add(UMLElementTypes.Region_3002);
+//			types.add(UMLElementTypes.Behavior_3019);
+//			types.add(UMLElementTypes.Behavior_3020);
+//			types.add(UMLElementTypes.Behavior_3021);
+			return types;			
+		}
+		if (editPart instanceof State3EditPart) {
+			List types = new ArrayList();
+			types.add(UMLElementTypes.Region_3002);
+			types.add(UMLElementTypes.ConnectionPointReference_3017);
+			types.add(UMLElementTypes.ConnectionPointReference_3018);
+//			types.add(UMLElementTypes.Behavior_3019);
+//			types.add(UMLElementTypes.Behavior_3020);
+//			types.add(UMLElementTypes.Behavior_3021);
+			return types;
+		}
+		return getTypesForPopupBarGen(host);
+	}
+	
+	/**
+	 * @generated
+	 */
+	public List getTypesForPopupBarGen(IAdaptable host) {
 		IGraphicalEditPart editPart = (IGraphicalEditPart) host.getAdapter(IGraphicalEditPart.class);
 		if (editPart instanceof StateMachine2EditPart) {
 			List types = new ArrayList();
