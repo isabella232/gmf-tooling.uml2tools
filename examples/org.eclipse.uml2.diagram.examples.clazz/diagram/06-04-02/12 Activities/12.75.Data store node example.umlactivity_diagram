@@ -30,18 +30,18 @@
       </children>
       <styles xmi:type="notation:ShapeStyle" xmi:id="_6V4IMKJBEdyGqNfYOUez1Q"/>
       <element xmi:type="uml:AcceptEventAction" href="12.75.Data store node example.uml#_Ja5GwAk0EdyF_oRbgI8ypA"/>
-      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_6V4IMaJBEdyGqNfYOUez1Q" x="372" y="142"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_6V4IMaJBEdyGqNfYOUez1Q" x="372" y="142" width="49" height="37"/>
     </children>
     <children xmi:type="notation:Node" xmi:id="_6V4INKJBEdyGqNfYOUez1Q" type="3040">
       <styles xmi:type="notation:ShapeStyle" xmi:id="_6V4INaJBEdyGqNfYOUez1Q"/>
       <element xmi:type="uml:JoinNode" href="12.75.Data store node example.uml#_OBMjgAk0EdyF_oRbgI8ypA"/>
-      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_6V4INqJBEdyGqNfYOUez1Q" x="492" y="58"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_6V4INqJBEdyGqNfYOUez1Q" x="492" y="46"/>
     </children>
     <children xmi:type="notation:Node" xmi:id="_6V4IN6JBEdyGqNfYOUez1Q" type="3029">
       <children xmi:type="notation:Node" xmi:id="_6V4IOqJBEdyGqNfYOUez1Q" type="5023"/>
       <styles xmi:type="notation:ShapeStyle" xmi:id="_6V4IOKJBEdyGqNfYOUez1Q"/>
       <element xmi:type="uml:OpaqueAction" href="12.75.Data store node example.uml#_TZQ0YAk0EdyF_oRbgI8ypA"/>
-      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_6V4IOaJBEdyGqNfYOUez1Q" x="552" y="58"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_6V4IOaJBEdyGqNfYOUez1Q" x="552" y="46"/>
     </children>
     <styles xmi:type="notation:ShapeStyle" xmi:id="_vDJ-AQkzEdyF_oRbgI8ypA"/>
     <element xmi:type="uml:Activity" href="12.75.Data store node example.uml#_vDANAAkzEdyF_oRbgI8ypA"/>
@@ -71,7 +71,8 @@
     <styles xmi:type="notation:RoutingStyle" xmi:id="_6WBSGaJBEdyGqNfYOUez1Q"/>
     <styles xmi:type="notation:FontStyle" xmi:id="_6WBSGqJBEdyGqNfYOUez1Q"/>
     <element xmi:type="uml:ControlFlow" href="12.75.Data store node example.uml#_VR0RcAk0EdyF_oRbgI8ypA"/>
-    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_6WBSG6JBEdyGqNfYOUez1Q" points="[0, -25, -82, 59]$[0, -77, -82, 7]$[80, -77, -2, 7]"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_6WBSG6JBEdyGqNfYOUez1Q" points="[1, -2, -97, 71]$[12, -26, -86, 47]$[96, -72, -2, 1]"/>
+    <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_7PLncDDHEd2mPcUyw5kVSg" id="(0.48979592,0.08108108)"/>
   </edges>
   <edges xmi:type="notation:Edge" xmi:id="_6WLDEKJBEdyGqNfYOUez1Q" type="4002" source="_6V4IIKJBEdyGqNfYOUez1Q" target="_6V4IJKJBEdyGqNfYOUez1Q">
     <children xmi:type="notation:Node" xmi:id="_6WLDFKJBEdyGqNfYOUez1Q" type="6004">
@@ -96,6 +97,7 @@
     <styles xmi:type="notation:FontStyle" xmi:id="_6WLDGqJBEdyGqNfYOUez1Q"/>
     <element xmi:type="uml:ObjectFlow" href="12.75.Data store node example.uml#_FEiKgAk0EdyF_oRbgI8ypA"/>
     <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_6WLDG6JBEdyGqNfYOUez1Q" points="[0, 0, 0, 0]$[0, 0, 0, 0]"/>
+    <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_2qX_gDDHEd2mPcUyw5kVSg" id="(0.42574257,0.02)"/>
   </edges>
   <edges xmi:type="notation:Edge" xmi:id="_6WLDIKJBEdyGqNfYOUez1Q" type="4002" source="_6V4IJKJBEdyGqNfYOUez1Q" target="_6V4INKJBEdyGqNfYOUez1Q">
     <children xmi:type="notation:Node" xmi:id="_6WLDJKJBEdyGqNfYOUez1Q" type="6004">

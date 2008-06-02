@@ -235,20 +235,6 @@
     <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_7UxABKJGEdyGqNfYOUez1Q" points="[9, -7, -53, -8]$[56, -19, -6, -20]"/>
     <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_7UxACaJGEdyGqNfYOUez1Q" id="(0.8965517,0.48)"/>
   </edges>
-  <edges xmi:type="notation:Edge" xmi:id="_8O330aJGEdyGqNfYOUez1Q" type="4001" source="_CUzwwKJGEdyGqNfYOUez1Q" target="_Dsk08aJGEdyGqNfYOUez1Q">
-    <children xmi:type="notation:Node" xmi:id="_8O331aJGEdyGqNfYOUez1Q" type="6003">
-      <layoutConstraint xmi:type="notation:Location" xmi:id="_8O331qJGEdyGqNfYOUez1Q" y="40"/>
-    </children>
-    <children xmi:type="notation:Node" xmi:id="_8O3316JGEdyGqNfYOUez1Q" type="6005">
-      <layoutConstraint xmi:type="notation:Location" xmi:id="_8O332KJGEdyGqNfYOUez1Q" y="60"/>
-    </children>
-    <styles xmi:type="notation:RoutingStyle" xmi:id="_8O330qJGEdyGqNfYOUez1Q"/>
-    <styles xmi:type="notation:FontStyle" xmi:id="_8O3306JGEdyGqNfYOUez1Q"/>
-    <element xmi:type="uml:ControlFlow" href="12.59.Activity partition using swimlane example.uml#_8O330KJGEdyGqNfYOUez1Q"/>
-    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_8O331KJGEdyGqNfYOUez1Q" points="[9, 3, -52, 0]$[48, 3, -13, 0]"/>
-    <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_8O332aJGEdyGqNfYOUez1Q" id="(0.775,0.4)"/>
-    <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_8O332qJGEdyGqNfYOUez1Q" id="(0.1625,0.48)"/>
-  </edges>
   <edges xmi:type="notation:Edge" xmi:id="_95HzIaJGEdyGqNfYOUez1Q" type="4001" source="_Dsk08aJGEdyGqNfYOUez1Q" target="_GRiFAKJGEdyGqNfYOUez1Q">
     <children xmi:type="notation:Node" xmi:id="_95HzJaJGEdyGqNfYOUez1Q" type="6003">
       <layoutConstraint xmi:type="notation:Location" xmi:id="_95HzJqJGEdyGqNfYOUez1Q" y="40"/>
@@ -315,5 +301,20 @@
     <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_J4YadKJHEdyGqNfYOUez1Q" points="[6, -9, -423, -7]$[6, -35, -423, -33]$[421, -35, -8, -33]$[421, -9, -8, -7]"/>
     <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_J4YaeaJHEdyGqNfYOUez1Q" id="(0.375,0.225)"/>
     <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_J4YaeqJHEdyGqNfYOUez1Q" id="(0.625,0.175)"/>
+  </edges>
+  <edges xmi:type="notation:Edge" xmi:id="_ntvBEDDHEd2KWMNscJaUhw" type="4001" source="_CUzwwKJGEdyGqNfYOUez1Q" target="_Dsk08aJGEdyGqNfYOUez1Q">
+    <children xmi:type="notation:Node" xmi:id="_ntvBFDDHEd2KWMNscJaUhw" type="6003">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_ntvBFTDHEd2KWMNscJaUhw" y="40"/>
+    </children>
+    <children xmi:type="notation:Node" xmi:id="_ntvBFjDHEd2KWMNscJaUhw" type="6005">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_ntvBFzDHEd2KWMNscJaUhw" y="60"/>
+    </children>
+    <children xmi:type="notation:Node" xmi:id="_ntvBGDDHEd2KWMNscJaUhw" type="6007">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_ntvBGTDHEd2KWMNscJaUhw" x="-1" y="30"/>
+    </children>
+    <styles xmi:type="notation:RoutingStyle" xmi:id="_ntvBETDHEd2KWMNscJaUhw"/>
+    <styles xmi:type="notation:FontStyle" xmi:id="_ntvBEjDHEd2KWMNscJaUhw"/>
+    <element xmi:type="uml:ControlFlow" href="12.59.Activity partition using swimlane example.uml#_8O330KJGEdyGqNfYOUez1Q"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_ntvBEzDHEd2KWMNscJaUhw" points="[0, 0, 0, 0]$[0, 0, 0, 0]"/>
   </edges>
 </notation:Diagram>

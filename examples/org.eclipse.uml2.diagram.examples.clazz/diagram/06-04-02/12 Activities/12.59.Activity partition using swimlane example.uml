@@ -37,7 +37,9 @@
     <edge xmi:type="uml:ControlFlow" xmi:id="_4YQyoKJGEdyGqNfYOUez1Q" source="_IbqaQKJGEdyGqNfYOUez1Q" target="_LIE9MKJGEdyGqNfYOUez1Q"/>
     <edge xmi:type="uml:ControlFlow" xmi:id="_6FfJcKJGEdyGqNfYOUez1Q" source="_3yFY4KJFEdyGqNfYOUez1Q" target="_7rO0sKJFEdyGqNfYOUez1Q"/>
     <edge xmi:type="uml:ControlFlow" xmi:id="_7UxAAKJGEdyGqNfYOUez1Q" source="_7rO0sKJFEdyGqNfYOUez1Q" target="_CUXE0KJGEdyGqNfYOUez1Q"/>
-    <edge xmi:type="uml:ControlFlow" xmi:id="_8O330KJGEdyGqNfYOUez1Q" source="_CUXE0KJGEdyGqNfYOUez1Q" target="_Dsk08KJGEdyGqNfYOUez1Q"/>
+    <edge xmi:type="uml:ControlFlow" xmi:id="_8O330KJGEdyGqNfYOUez1Q" name="" source="_CUXE0KJGEdyGqNfYOUez1Q" target="_Dsk08KJGEdyGqNfYOUez1Q">
+      <guard xmi:type="uml:LiteralString" xmi:id="_DArnIDDDEd2KWMNscJaUhw" name="" value="order accepted"/>
+    </edge>
     <edge xmi:type="uml:ControlFlow" xmi:id="_95HzIKJGEdyGqNfYOUez1Q" source="_Dsk08KJGEdyGqNfYOUez1Q" target="_GRYUAKJGEdyGqNfYOUez1Q"/>
     <edge xmi:type="uml:ControlFlow" xmi:id="_DalQkKJHEdyGqNfYOUez1Q" source="_LIE9MKJGEdyGqNfYOUez1Q" target="_MCL1AKJGEdyGqNfYOUez1Q"/>
     <edge xmi:type="uml:ControlFlow" xmi:id="_EHINgKJHEdyGqNfYOUez1Q" source="_MCL1AKJGEdyGqNfYOUez1Q" target="_MzqVQKJGEdyGqNfYOUez1Q"/>

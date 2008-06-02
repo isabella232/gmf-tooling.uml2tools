@@ -17,7 +17,7 @@
     <node xmi:type="uml:DataStoreNode" xmi:id="_UXYWoKJMEdy6lo8fyt_TJQ" name="name">
       <upperBound xmi:type="uml:LiteralInteger" xmi:id="_hPRPEKJMEdy6lo8fyt_TJQ" value="2"/>
     </node>
-    <node xmi:type="uml:Pin" xmi:id="_VZ15MKJMEdy6lo8fyt_TJQ" name="name" ordering="LIFO"/>
+    <node xmi:type="uml:Pin" xmi:id="_zV9-kDC-Ed2Dn5GmDgY-wA" name="name" ordering="LIFO"/>
   </packagedElement>
   <packagedElement xmi:type="uml:StateMachine" xmi:id="_9E0PEKJLEdy6lo8fyt_TJQ" name="StateMachine">
     <region xmi:id="_AZdPoKJMEdy6lo8fyt_TJQ">
