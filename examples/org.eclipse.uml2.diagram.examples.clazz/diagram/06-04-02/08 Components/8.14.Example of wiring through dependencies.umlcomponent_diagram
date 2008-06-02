@@ -11,41 +11,17 @@
           </children>
           <styles xmi:type="notation:ShapeStyle" xmi:id="_VItoYTadEdyiJs_hTQjPKg"/>
           <element xmi:type="uml:Port" href="8.14.Example of wiring through dependencies.uml#_VIatcDadEdyiJs_hTQjPKg"/>
-          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_VItoYjadEdyiJs_hTQjPKg"/>
-        </children>
-        <children xmi:type="notation:Node" xmi:id="_aPDQEDadEdyiJs_hTQjPKg" type="3002">
-          <children xmi:type="notation:Node" xmi:id="_aPDQEzadEdyiJs_hTQjPKg" type="5003">
-            <layoutConstraint xmi:type="notation:Location" xmi:id="_aPDQFDadEdyiJs_hTQjPKg" x="35" y="17"/>
-          </children>
-          <styles xmi:type="notation:ShapeStyle" xmi:id="_aPDQETadEdyiJs_hTQjPKg"/>
-          <element xmi:type="uml:Port" href="8.14.Example of wiring through dependencies.uml#_aOwVIDadEdyiJs_hTQjPKg"/>
-          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_aPDQEjadEdyiJs_hTQjPKg" x="120" y="150"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_VItoYjadEdyiJs_hTQjPKg" x="-14" y="36"/>
         </children>
         <styles xmi:type="notation:ShapeStyle" xmi:id="_8h9VETacEdyiJs_hTQjPKg"/>
         <element xmi:type="uml:Class" href="8.14.Example of wiring through dependencies.uml#_8hhQMDacEdyiJs_hTQjPKg"/>
-        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_8h9VEjacEdyiJs_hTQjPKg" x="55" y="18" width="151" height="76"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_8h9VEjacEdyiJs_hTQjPKg" x="61" y="33" width="133" height="61"/>
       </children>
       <children xmi:type="notation:Node" xmi:id="_dpzfsTadEdyiJs_hTQjPKg" type="3004">
         <children xmi:type="notation:Node" xmi:id="_dp8poDadEdyiJs_hTQjPKg" type="5007"/>
-        <children xmi:type="notation:Node" xmi:id="_oKl94DadEdyiJs_hTQjPKg" type="3002">
-          <children xmi:type="notation:Node" xmi:id="_oKl94zadEdyiJs_hTQjPKg" type="5003">
-            <layoutConstraint xmi:type="notation:Location" xmi:id="_oKl95DadEdyiJs_hTQjPKg" x="-36" y="-20"/>
-          </children>
-          <styles xmi:type="notation:ShapeStyle" xmi:id="_oKl94TadEdyiJs_hTQjPKg"/>
-          <element xmi:type="uml:Port" href="8.14.Example of wiring through dependencies.uml#_oKSb4DadEdyiJs_hTQjPKg"/>
-          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_oKl94jadEdyiJs_hTQjPKg" x="120" y="-14"/>
-        </children>
-        <children xmi:type="notation:Node" xmi:id="_819ZsDadEdyiJs_hTQjPKg" type="3002">
-          <children xmi:type="notation:Node" xmi:id="_819ZszadEdyiJs_hTQjPKg" type="5003">
-            <layoutConstraint xmi:type="notation:Location" xmi:id="_819ZtDadEdyiJs_hTQjPKg" y="5"/>
-          </children>
-          <styles xmi:type="notation:ShapeStyle" xmi:id="_819ZsTadEdyiJs_hTQjPKg"/>
-          <element xmi:type="uml:Port" href="8.14.Example of wiring through dependencies.uml#_810PwDadEdyiJs_hTQjPKg"/>
-          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_819ZsjadEdyiJs_hTQjPKg" x="150" y="30"/>
-        </children>
         <styles xmi:type="notation:ShapeStyle" xmi:id="_dpzfsjadEdyiJs_hTQjPKg"/>
         <element xmi:type="uml:Class" href="8.14.Example of wiring through dependencies.uml#_dpzfsDadEdyiJs_hTQjPKg"/>
-        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_dpzfszadEdyiJs_hTQjPKg" x="55" y="183" width="151" height="61"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_dpzfszadEdyiJs_hTQjPKg" x="61" y="189" width="133" height="61"/>
       </children>
       <styles xmi:type="notation:DrawerStyle" xmi:id="_wLIXwTabEdyiJs_hTQjPKg"/>
       <styles xmi:type="notation:SortingStyle" xmi:id="_wLIXwjabEdyiJs_hTQjPKg"/>
@@ -53,7 +29,7 @@
     </children>
     <children xmi:type="notation:Node" xmi:id="_qgUUkDacEdyiJs_hTQjPKg" type="3002">
       <children xmi:type="notation:Node" xmi:id="_qgUUkzacEdyiJs_hTQjPKg" type="5003">
-        <layoutConstraint xmi:type="notation:Location" xmi:id="_qgUUlDacEdyiJs_hTQjPKg" y="5"/>
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_qgUUlDacEdyiJs_hTQjPKg" x="-20" y="-34"/>
       </children>
       <styles xmi:type="notation:ShapeStyle" xmi:id="_qgUUkTacEdyiJs_hTQjPKg"/>
       <element xmi:type="uml:Port" href="8.14.Example of wiring through dependencies.uml#_qft3oDacEdyiJs_hTQjPKg"/>
@@ -61,7 +37,7 @@
     </children>
     <children xmi:type="notation:Node" xmi:id="_6v2o0DadEdyiJs_hTQjPKg" type="3002">
       <children xmi:type="notation:Node" xmi:id="_6v2o0zadEdyiJs_hTQjPKg" type="5003">
-        <layoutConstraint xmi:type="notation:Location" xmi:id="_6v2o1DadEdyiJs_hTQjPKg" y="5"/>
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_6v2o1DadEdyiJs_hTQjPKg" x="-20" y="35"/>
       </children>
       <styles xmi:type="notation:ShapeStyle" xmi:id="_6v2o0TadEdyiJs_hTQjPKg"/>
       <element xmi:type="uml:Port" href="8.14.Example of wiring through dependencies.uml#_6vs30DadEdyiJs_hTQjPKg"/>
@@ -103,7 +79,7 @@
   </children>
   <children xmi:type="notation:Node" xmi:id="_sOIhQDacEdyiJs_hTQjPKg" type="2003">
     <children xmi:type="notation:Node" xmi:id="_sOIhQzacEdyiJs_hTQjPKg" type="5005">
-      <layoutConstraint xmi:type="notation:Location" xmi:id="_sOIhRDacEdyiJs_hTQjPKg" x="-122" y="17"/>
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_sOIhRDacEdyiJs_hTQjPKg" x="-20" y="35"/>
     </children>
     <styles xmi:type="notation:ShapeStyle" xmi:id="_sOIhQTacEdyiJs_hTQjPKg"/>
     <element xmi:type="uml:Interface" href="8.14.Example of wiring through dependencies.uml#_sN1mUDacEdyiJs_hTQjPKg"/>
@@ -111,7 +87,7 @@
   </children>
   <children xmi:type="notation:Node" xmi:id="_LPcnwDaeEdyiJs_hTQjPKg" type="2003">
     <children xmi:type="notation:Node" xmi:id="_LPcnwzaeEdyiJs_hTQjPKg" type="5005">
-      <layoutConstraint xmi:type="notation:Location" xmi:id="_LPcnxDaeEdyiJs_hTQjPKg" y="5"/>
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_LPcnxDaeEdyiJs_hTQjPKg" x="35" y="21"/>
     </children>
     <styles xmi:type="notation:ShapeStyle" xmi:id="_LPcnwTaeEdyiJs_hTQjPKg"/>
     <element xmi:type="uml:Interface" href="8.14.Example of wiring through dependencies.uml#_LPJs0DaeEdyiJs_hTQjPKg"/>
@@ -143,7 +119,7 @@
         <element xmi:type="uml:ElementImport" href="8.14.Example of wiring through dependencies.uml#_tSKToDaoEdyDZYshPOuEnw"/>
         <layoutConstraint xmi:type="notation:Location" xmi:id="_tS56gTaoEdyDZYshPOuEnw"/>
       </children>
-      <styles xmi:type="notation:DrawerStyle" xmi:id="_jTWhJTaoEdyDZYshPOuEnw"/>
+      <styles xmi:type="notation:DrawerStyle" xmi:id="_jTWhJTaoEdyDZYshPOuEnw" collapsed="true"/>
       <styles xmi:type="notation:SortingStyle" xmi:id="_jTWhJjaoEdyDZYshPOuEnw"/>
       <styles xmi:type="notation:FilteringStyle" xmi:id="_jTWhJzaoEdyDZYshPOuEnw"/>
     </children>
@@ -188,17 +164,14 @@
     <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_YvH49DaeEdyiJs_hTQjPKg" points="[-8, 4, 72, -41]$[-87, 44, -7, -1]"/>
     <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_Yvkk4DaeEdyiJs_hTQjPKg" id="(0.08,0.25555557)"/>
   </edges>
-  <edges xmi:type="notation:Edge" xmi:id="_2l5UYDaeEdydN9mCFnqHbQ" type="4008" source="_aPDQEDadEdyiJs_hTQjPKg" target="_oKl94DadEdyiJs_hTQjPKg">
-    <styles xmi:type="notation:RoutingStyle" xmi:id="_2l5UYTaeEdydN9mCFnqHbQ"/>
-    <styles xmi:type="notation:FontStyle" xmi:id="_2l5UYjaeEdydN9mCFnqHbQ"/>
-    <element xmi:type="uml:Connector" href="8.14.Example of wiring through dependencies.uml#_2lJtgDaeEdydN9mCFnqHbQ"/>
-    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_2l5UYzaeEdydN9mCFnqHbQ" points="[-2, 8, -2, -68]$[-7, 76, -7, 0]"/>
-  </edges>
-  <edges xmi:type="notation:Edge" xmi:id="_4cXGwzaeEdydN9mCFnqHbQ" type="4008" source="_819ZsDadEdyiJs_hTQjPKg" target="_6v2o0DadEdyiJs_hTQjPKg">
-    <styles xmi:type="notation:RoutingStyle" xmi:id="_4cXGxDaeEdydN9mCFnqHbQ"/>
-    <styles xmi:type="notation:FontStyle" xmi:id="_4cXGxTaeEdydN9mCFnqHbQ"/>
-    <element xmi:type="uml:Connector" href="8.14.Example of wiring through dependencies.uml#_4cXGwDaeEdydN9mCFnqHbQ"/>
-    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_4cXGxjaeEdydN9mCFnqHbQ" points="[8, 6, -52, 2]$[59, 12, -1, 8]"/>
-    <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_4cg3wDaeEdydN9mCFnqHbQ" id="(0.46666667,0.2)"/>
+  <edges xmi:type="notation:Edge" xmi:id="_QPhoADC4Ed2Dn5GmDgY-wA" type="4009" source="_dpzfsTadEdyiJs_hTQjPKg" target="_6v2o0DadEdyiJs_hTQjPKg">
+    <children xmi:type="notation:Node" xmi:id="_QP0i8DC4Ed2Dn5GmDgY-wA" type="6001">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_QP0i8TC4Ed2Dn5GmDgY-wA" y="40"/>
+    </children>
+    <styles xmi:type="notation:RoutingStyle" xmi:id="_QPhoATC4Ed2Dn5GmDgY-wA"/>
+    <styles xmi:type="notation:FontStyle" xmi:id="_QPhoAjC4Ed2Dn5GmDgY-wA"/>
+    <element xmi:type="uml:Dependency" href="8.14.Example of wiring through dependencies.uml#_QPX3ADC4Ed2Dn5GmDgY-wA"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_QPhoAzC4Ed2Dn5GmDgY-wA" points="[13, 2, -66, -2]$[78, -3, -1, -7]"/>
+    <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_QRKmwDC4Ed2Dn5GmDgY-wA" id="(0.9139073,0.6393443)"/>
   </edges>
 </notation:Diagram>
