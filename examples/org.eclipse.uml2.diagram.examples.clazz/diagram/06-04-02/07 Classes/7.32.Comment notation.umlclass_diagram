@@ -2,7 +2,7 @@
 <notation:Diagram xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.1/notation" xmlns:uml="http://www.eclipse.org/uml2/2.1.0/UML" xmi:id="_xWxr0cAIEdukCPcSYjz9wg" type="UMLClass" name="7.32.Comment notation.umlclass_diagram" measurementUnit="Pixel">
   <children xmi:type="notation:Node" xmi:id="_1yMuQMAIEdukCPcSYjz9wg" type="2001">
     <children xmi:type="notation:Node" xmi:id="_1yMuRsAIEdukCPcSYjz9wg" type="5003">
-      <styles xmi:type="notation:FontStyle" xmi:id="_Bm0XECV7Edy4m_r_Ph01Ow"/>
+      <styles xmi:type="notation:FontStyle" xmi:id="_Bm0XECV7Edy4m_r_Ph01Ow" bold="true"/>
     </children>
     <children xmi:type="notation:Node" xmi:id="_1yMuR8AIEdukCPcSYjz9wg" visible="false" type="7001">
       <styles xmi:type="notation:DrawerStyle" xmi:id="_1yMuSMAIEdukCPcSYjz9wg"/>

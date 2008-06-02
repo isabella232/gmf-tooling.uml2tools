@@ -2,7 +2,7 @@
 <notation:Diagram xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.1/notation" xmlns:uml="http://www.eclipse.org/uml2/2.1.0/UML" xmi:id="_4v3J0LxFEduWjOs2RiriMw" type="UMLClass" measurementUnit="Pixel">
   <children xmi:type="notation:Node" xmi:id="_5YGOgLxFEduWjOs2RiriMw" type="2001">
     <children xmi:type="notation:Node" xmi:id="_5YP_gLxFEduWjOs2RiriMw" type="5003">
-      <styles xmi:type="notation:FontStyle" xmi:id="_9BF4YCWWEdyxgIRBW3DYbQ"/>
+      <styles xmi:type="notation:FontStyle" xmi:id="_9BF4YCWWEdyxgIRBW3DYbQ" bold="true"/>
     </children>
     <children xmi:type="notation:Node" xmi:id="_5YP_gbxFEduWjOs2RiriMw" type="7001">
       <styles xmi:type="notation:DrawerStyle" xmi:id="_5YP_grxFEduWjOs2RiriMw"/>
@@ -27,11 +27,11 @@
     <styles xmi:type="notation:FillStyle" xmi:id="_5YGOg7xFEduWjOs2RiriMw"/>
     <styles xmi:type="notation:LineStyle" xmi:id="_5YGOhLxFEduWjOs2RiriMw"/>
     <element xmi:type="uml:Class" href="7.20.Combining%20line%20path%20graphics.uml#_5X9EkLxFEduWjOs2RiriMw"/>
-    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_5YGOhbxFEduWjOs2RiriMw" x="78" y="61"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_5YGOhbxFEduWjOs2RiriMw" x="84" y="141"/>
   </children>
   <children xmi:type="notation:Node" xmi:id="_6A7wILxFEduWjOs2RiriMw" type="2001">
     <children xmi:type="notation:Node" xmi:id="_6A7wJrxFEduWjOs2RiriMw" type="5003">
-      <styles xmi:type="notation:FontStyle" xmi:id="_9BF4YSWWEdyxgIRBW3DYbQ"/>
+      <styles xmi:type="notation:FontStyle" xmi:id="_9BF4YSWWEdyxgIRBW3DYbQ" bold="true"/>
     </children>
     <children xmi:type="notation:Node" xmi:id="_6A7wJ7xFEduWjOs2RiriMw" type="7001">
       <styles xmi:type="notation:DrawerStyle" xmi:id="_6A7wKLxFEduWjOs2RiriMw"/>
@@ -56,11 +56,11 @@
     <styles xmi:type="notation:FillStyle" xmi:id="_6A7wI7xFEduWjOs2RiriMw"/>
     <styles xmi:type="notation:LineStyle" xmi:id="_6A7wJLxFEduWjOs2RiriMw"/>
     <element xmi:type="uml:Class" href="7.20.Combining%20line%20path%20graphics.uml#_6Ax_ILxFEduWjOs2RiriMw"/>
-    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_6A7wJbxFEduWjOs2RiriMw" x="373" y="61"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_6A7wJbxFEduWjOs2RiriMw" x="379" y="141"/>
   </children>
   <children xmi:type="notation:Node" xmi:id="_6oRc8LxFEduWjOs2RiriMw" type="2001">
     <children xmi:type="notation:Node" xmi:id="_6oRc9rxFEduWjOs2RiriMw" type="5003">
-      <styles xmi:type="notation:FontStyle" xmi:id="_9BF4YiWWEdyxgIRBW3DYbQ"/>
+      <styles xmi:type="notation:FontStyle" xmi:id="_9BF4YiWWEdyxgIRBW3DYbQ" bold="true"/>
     </children>
     <children xmi:type="notation:Node" xmi:id="_6oRc97xFEduWjOs2RiriMw" type="7001">
       <styles xmi:type="notation:DrawerStyle" xmi:id="_6oRc-LxFEduWjOs2RiriMw"/>
@@ -85,11 +85,11 @@
     <styles xmi:type="notation:FillStyle" xmi:id="_6oRc87xFEduWjOs2RiriMw"/>
     <styles xmi:type="notation:LineStyle" xmi:id="_6oRc9LxFEduWjOs2RiriMw"/>
     <element xmi:type="uml:Class" href="7.20.Combining%20line%20path%20graphics.uml#_6oHr8LxFEduWjOs2RiriMw"/>
-    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_6oRc9bxFEduWjOs2RiriMw" x="78" y="220"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_6oRc9bxFEduWjOs2RiriMw" x="84" y="300"/>
   </children>
   <children xmi:type="notation:Node" xmi:id="_7R1-YLxFEduWjOs2RiriMw" type="2001">
     <children xmi:type="notation:Node" xmi:id="_7R_vZbxFEduWjOs2RiriMw" type="5003">
-      <styles xmi:type="notation:FontStyle" xmi:id="_9BF4YyWWEdyxgIRBW3DYbQ"/>
+      <styles xmi:type="notation:FontStyle" xmi:id="_9BF4YyWWEdyxgIRBW3DYbQ" bold="true"/>
     </children>
     <children xmi:type="notation:Node" xmi:id="_7R_vZrxFEduWjOs2RiriMw" type="7001">
       <styles xmi:type="notation:DrawerStyle" xmi:id="_7R_vZ7xFEduWjOs2RiriMw"/>
@@ -114,7 +114,7 @@
     <styles xmi:type="notation:FillStyle" xmi:id="_7R_vYrxFEduWjOs2RiriMw"/>
     <styles xmi:type="notation:LineStyle" xmi:id="_7R_vY7xFEduWjOs2RiriMw"/>
     <element xmi:type="uml:Class" href="7.20.Combining%20line%20path%20graphics.uml#_7Rs0cLxFEduWjOs2RiriMw"/>
-    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_7R_vZLxFEduWjOs2RiriMw" x="373" y="220"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_7R_vZLxFEduWjOs2RiriMw" x="379" y="300"/>
   </children>
   <children xmi:type="notation:Node" xmi:id="_8TyHELxGEduWjOs2RiriMw" type="Text">
     <children xmi:type="notation:Node" xmi:id="_8TyHE7xGEduWjOs2RiriMw" type="DiagramName">
@@ -125,7 +125,7 @@
     </children>
     <styles xmi:type="notation:ShapeStyle" xmi:id="_8TyHEbxGEduWjOs2RiriMw" description="Figure 7.20 Combining line path graphics"/>
     <element xsi:nil="true"/>
-    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_8TyHErxGEduWjOs2RiriMw" x="72" y="336" width="373" height="14"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_8TyHErxGEduWjOs2RiriMw" x="78" y="416" width="373" height="14"/>
   </children>
   <styles xmi:type="notation:PageStyle" xmi:id="_4v3J0bxFEduWjOs2RiriMw"/>
   <styles xmi:type="notation:GuideStyle" xmi:id="_4v3J0rxFEduWjOs2RiriMw"/>
@@ -157,8 +157,8 @@
     <styles xmi:type="notation:FontStyle" xmi:id="_9DQRpLxFEduWjOs2RiriMw"/>
     <element xmi:type="uml:Association" href="7.20.Combining%20line%20path%20graphics.uml#_9C8voLxFEduWjOs2RiriMw"/>
     <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_9DQRpbxFEduWjOs2RiriMw" points="[27, 1, -188, -9]$[206, 5, -9, -5]"/>
-    <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_9DZbkLxFEduWjOs2RiriMw" id="(0.73,0.09375)"/>
-    <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_9DZbkbxFEduWjOs2RiriMw" id="(0.09,0.140625)"/>
+    <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_9DZbkLxFEduWjOs2RiriMw" id="(0.96,0.5222222)"/>
+    <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_9DZbkbxFEduWjOs2RiriMw" id="(0.08,0.4888889)"/>
   </edges>
   <edges xmi:type="notation:Edge" xmi:id="_-3oZV7xFEduWjOs2RiriMw" type="4005" source="_6oRc8LxFEduWjOs2RiriMw" target="_7R1-YLxFEduWjOs2RiriMw">
     <children xmi:type="notation:Node" xmi:id="_-3oZW7xFEduWjOs2RiriMw" type="6003">
@@ -186,7 +186,7 @@
     <styles xmi:type="notation:FontStyle" xmi:id="_-3oZWbxFEduWjOs2RiriMw"/>
     <element xmi:type="uml:Association" href="7.20.Combining%20line%20path%20graphics.uml#_-3oZULxFEduWjOs2RiriMw"/>
     <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_-3oZWrxFEduWjOs2RiriMw" points="[10, 1, -200, -18]$[205, 16, -5, -3]"/>
-    <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_-3oZabxFEduWjOs2RiriMw" id="(0.9,0.046875)"/>
-    <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_-3oZarxFEduWjOs2RiriMw" id="(0.05,0.09375)"/>
+    <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_-3oZabxFEduWjOs2RiriMw" id="(0.98,0.42222223)"/>
+    <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_-3oZarxFEduWjOs2RiriMw" id="(0.02,0.45555556)"/>
   </edges>
 </notation:Diagram>

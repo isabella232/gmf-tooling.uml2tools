@@ -38,11 +38,11 @@
     <styles xmi:type="notation:ShapeStyle" xmi:id="_mT518SVuEdy4m_r_Ph01Ow"/>
     <styles xmi:type="notation:HintedDiagramLinkStyle" xmi:id="_mT518iVuEdy4m_r_Ph01Ow"/>
     <element xmi:type="uml:Package" href="7.40.Example of element import with aliasing.uml#_mTmT8CVuEdy4m_r_Ph01Ow"/>
-    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_mT518yVuEdy4m_r_Ph01Ow" x="276" y="132"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_mT518yVuEdy4m_r_Ph01Ow" x="264" y="144"/>
   </children>
   <children xmi:type="notation:Node" xmi:id="_oBIz0CVuEdy4m_r_Ph01Ow" type="2001">
     <children xmi:type="notation:Node" xmi:id="_oBIz0yVuEdy4m_r_Ph01Ow" type="5003">
-      <styles xmi:type="notation:FontStyle" xmi:id="_oBIz5CVuEdy4m_r_Ph01Ow"/>
+      <styles xmi:type="notation:FontStyle" xmi:id="_oBIz5CVuEdy4m_r_Ph01Ow" bold="true"/>
     </children>
     <children xmi:type="notation:Node" xmi:id="_oBIz1CVuEdy4m_r_Ph01Ow" type="5019"/>
     <children xmi:type="notation:Node" xmi:id="_oBIz1SVuEdy4m_r_Ph01Ow" type="7001">

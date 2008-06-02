@@ -2,7 +2,7 @@
 <notation:Diagram xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.1/notation" xmlns:uml="http://www.eclipse.org/uml2/2.1.0/UML" xmi:id="_LQHvELw9EduWjOs2RiriMw" type="UMLClass" measurementUnit="Pixel">
   <children xmi:type="notation:Node" xmi:id="_L5_ygLw9EduWjOs2RiriMw" type="2001">
     <children xmi:type="notation:Node" xmi:id="_L5_yhrw9EduWjOs2RiriMw" type="5003">
-      <styles xmi:type="notation:FontStyle" xmi:id="_6dFqkCWWEdyxgIRBW3DYbQ"/>
+      <styles xmi:type="notation:FontStyle" xmi:id="_6dFqkCWWEdyxgIRBW3DYbQ" bold="true"/>
     </children>
     <children xmi:type="notation:Node" xmi:id="_L5_yh7w9EduWjOs2RiriMw" type="7001">
       <styles xmi:type="notation:DrawerStyle" xmi:id="_L5_yiLw9EduWjOs2RiriMw"/>
@@ -31,7 +31,7 @@
   </children>
   <children xmi:type="notation:Node" xmi:id="_MoLuMLw9EduWjOs2RiriMw" type="2001">
     <children xmi:type="notation:Node" xmi:id="_MoLuNrw9EduWjOs2RiriMw" type="5003">
-      <styles xmi:type="notation:FontStyle" xmi:id="_6d_CcCWWEdyxgIRBW3DYbQ"/>
+      <styles xmi:type="notation:FontStyle" xmi:id="_6d_CcCWWEdyxgIRBW3DYbQ" bold="true"/>
     </children>
     <children xmi:type="notation:Node" xmi:id="_MoLuN7w9EduWjOs2RiriMw" type="7001">
       <styles xmi:type="notation:DrawerStyle" xmi:id="_MoLuOLw9EduWjOs2RiriMw"/>
@@ -67,7 +67,7 @@
     </children>
     <styles xmi:type="notation:ShapeStyle" xmi:id="_FHi_kbxDEduWjOs2RiriMw" description="Figure 7.19 - Graphic notation indicating exactly one association end owned by the association"/>
     <element xsi:nil="true"/>
-    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_FHi_krxDEduWjOs2RiriMw" x="12" y="180"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_FHi_krxDEduWjOs2RiriMw" x="12" y="216"/>
   </children>
   <styles xmi:type="notation:PageStyle" xmi:id="_LQHvEbw9EduWjOs2RiriMw"/>
   <styles xmi:type="notation:GuideStyle" xmi:id="_LQHvErw9EduWjOs2RiriMw"/>
@@ -98,8 +98,8 @@
     <styles xmi:type="notation:RoutingStyle" xmi:id="_TMkoRrw9EduWjOs2RiriMw"/>
     <styles xmi:type="notation:FontStyle" xmi:id="_TMkoR7w9EduWjOs2RiriMw"/>
     <element xmi:type="uml:Association" href="7.19.Graphic%20notation%20indicating%20exactly%20one%20association%20end%20owned%20by%20the%20association.uml#_TMa3QLw9EduWjOs2RiriMw"/>
-    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_TMkoSLw9EduWjOs2RiriMw" points="[-10, 4, 164, 0]$[-164, -2, 10, -6]"/>
-    <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_TMkoV7w9EduWjOs2RiriMw" id="(0.1,0.09375)"/>
-    <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_TMkoWLw9EduWjOs2RiriMw" id="(0.9,0.140625)"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_TMkoSLw9EduWjOs2RiriMw" points="[-10, 1, 165, -4]$[-164, 5, 11, 0]"/>
+    <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_TMkoV7w9EduWjOs2RiriMw" id="(0.13,0.5222222)"/>
+    <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_TMkoWLw9EduWjOs2RiriMw" id="(0.97,0.51111114)"/>
   </edges>
 </notation:Diagram>

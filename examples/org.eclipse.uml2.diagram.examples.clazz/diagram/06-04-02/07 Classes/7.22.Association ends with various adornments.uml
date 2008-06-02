@@ -7,6 +7,7 @@
   </packagedElement>
   <packagedElement xmi:type="uml:Class" xmi:id="_SHY18LxKEduWjOs2RiriMw" name="D">
     <generalization xmi:id="_WYZ_MLxKEduWjOs2RiriMw" general="_Q5JhMLxKEduWjOs2RiriMw"/>
+    <ownedAttribute xmi:id="_oqTBwC1rEd2w4dR53OYfkA" name="property" aggregation="composite"/>
   </packagedElement>
   <packagedElement xmi:type="uml:Association" xmi:id="_VNY9kLxKEduWjOs2RiriMw" memberEnd="_VNY9kbxKEduWjOs2RiriMw _VNY9lLxKEduWjOs2RiriMw">
     <ownedEnd xmi:id="_VNY9kbxKEduWjOs2RiriMw" name="a" type="_QStMQLxKEduWjOs2RiriMw" association="_VNY9kLxKEduWjOs2RiriMw">

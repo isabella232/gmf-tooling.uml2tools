@@ -2,7 +2,7 @@
 <notation:Diagram xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.1/notation" xmlns:uml="http://www.eclipse.org/uml2/2.1.0/UML" xmi:id="_b7GfkLz2EduWjOs2RiriMw" type="UMLClass" measurementUnit="Pixel">
   <children xmi:type="notation:Node" xmi:id="_jf9_MLz2EduWjOs2RiriMw" type="2001">
     <children xmi:type="notation:Node" xmi:id="_jgHwMLz2EduWjOs2RiriMw" type="5003">
-      <styles xmi:type="notation:FontStyle" xmi:id="_GIDJwCV_EdybE_0sx8Ftag"/>
+      <styles xmi:type="notation:FontStyle" xmi:id="_GIDJwCV_EdybE_0sx8Ftag" bold="true"/>
     </children>
     <children xmi:type="notation:Node" xmi:id="_jgHwMbz2EduWjOs2RiriMw" type="7001">
       <styles xmi:type="notation:DrawerStyle" xmi:id="_jgHwMrz2EduWjOs2RiriMw"/>
@@ -31,7 +31,7 @@
   </children>
   <children xmi:type="notation:Node" xmi:id="_kHc18Lz2EduWjOs2RiriMw" type="2001">
     <children xmi:type="notation:Node" xmi:id="_kHmm8Lz2EduWjOs2RiriMw" type="5003">
-      <styles xmi:type="notation:FontStyle" xmi:id="_GIM6wCV_EdybE_0sx8Ftag"/>
+      <styles xmi:type="notation:FontStyle" xmi:id="_GIM6wCV_EdybE_0sx8Ftag" bold="true"/>
     </children>
     <children xmi:type="notation:Node" xmi:id="_kHmm8bz2EduWjOs2RiriMw" type="7001">
       <styles xmi:type="notation:DrawerStyle" xmi:id="_kHmm8rz2EduWjOs2RiriMw"/>

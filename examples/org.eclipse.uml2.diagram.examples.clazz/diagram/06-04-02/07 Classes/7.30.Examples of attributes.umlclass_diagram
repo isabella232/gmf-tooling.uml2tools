@@ -2,7 +2,7 @@
 <notation:Diagram xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.1/notation" xmlns:uml="http://www.eclipse.org/uml2/2.1.0/UML" xmi:id="_ygQ9QL20EduWjOs2RiriMw" type="UMLClass" measurementUnit="Pixel">
   <children xmi:type="notation:Node" xmi:id="_189GkL20EduWjOs2RiriMw" type="2001">
     <children xmi:type="notation:Node" xmi:id="_189Glr20EduWjOs2RiriMw" type="5003">
-      <styles xmi:type="notation:FontStyle" xmi:id="_Dgt38CV7Edy4m_r_Ph01Ow"/>
+      <styles xmi:type="notation:FontStyle" xmi:id="_Dgt38CV7Edy4m_r_Ph01Ow" bold="true"/>
     </children>
     <children xmi:type="notation:Node" xmi:id="_189Gl720EduWjOs2RiriMw" type="7001">
       <children xmi:type="notation:Node" xmi:id="_65Tr0L20EduWjOs2RiriMw" type="3001">
@@ -55,7 +55,7 @@
   </children>
   <children xmi:type="notation:Node" xmi:id="_NKg84L22EduWjOs2RiriMw" type="2001">
     <children xmi:type="notation:Node" xmi:id="_NKg85r22EduWjOs2RiriMw" type="5003">
-      <styles xmi:type="notation:FontStyle" xmi:id="_Dgt38SV7Edy4m_r_Ph01Ow"/>
+      <styles xmi:type="notation:FontStyle" xmi:id="_Dgt38SV7Edy4m_r_Ph01Ow" bold="true"/>
     </children>
     <children xmi:type="notation:Node" xmi:id="_NKg85722EduWjOs2RiriMw" visible="false" type="7001">
       <styles xmi:type="notation:DrawerStyle" xmi:id="_NKg86L22EduWjOs2RiriMw"/>
@@ -95,7 +95,7 @@
   </children>
   <children xmi:type="notation:Node" xmi:id="_IYEiYL_3EdukCPcSYjz9wg" type="2001">
     <children xmi:type="notation:Node" xmi:id="_IYXdUL_3EdukCPcSYjz9wg" type="5003">
-      <styles xmi:type="notation:FontStyle" xmi:id="_Dgt38iV7Edy4m_r_Ph01Ow"/>
+      <styles xmi:type="notation:FontStyle" xmi:id="_Dgt38iV7Edy4m_r_Ph01Ow" bold="true"/>
     </children>
     <children xmi:type="notation:Node" xmi:id="_IYXdUb_3EdukCPcSYjz9wg" type="7001">
       <children xmi:type="notation:Node" xmi:id="_K2d3cL_3EdukCPcSYjz9wg" type="3001">
@@ -148,7 +148,7 @@
   </children>
   <children xmi:type="notation:Node" xmi:id="_dlc-wL_6EdukCPcSYjz9wg" type="2005">
     <children xmi:type="notation:Node" xmi:id="_dlv5sL_6EdukCPcSYjz9wg" type="5007">
-      <styles xmi:type="notation:FontStyle" xmi:id="_Dgt38yV7Edy4m_r_Ph01Ow"/>
+      <styles xmi:type="notation:FontStyle" xmi:id="_Dgt38yV7Edy4m_r_Ph01Ow" bold="true"/>
     </children>
     <children xmi:type="notation:Node" xmi:id="_dlv5sb_6EdukCPcSYjz9wg" visible="false" type="7020">
       <styles xmi:type="notation:DrawerStyle" xmi:id="_dlv5sr_6EdukCPcSYjz9wg"/>

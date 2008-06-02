@@ -2,7 +2,7 @@
 <notation:Diagram xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.1/notation" xmlns:uml="http://www.eclipse.org/uml2/2.1.0/UML" xmi:id="_DATpIL2qEduWjOs2RiriMw" type="UMLClass" measurementUnit="Pixel">
   <children xmi:type="notation:Node" xmi:id="_DpSUsL2qEduWjOs2RiriMw" type="2001">
     <children xmi:type="notation:Node" xmi:id="_DpSUtr2qEduWjOs2RiriMw" type="5003">
-      <styles xmi:type="notation:FontStyle" xmi:id="_fbx0oCV7Edy4m_r_Ph01Ow"/>
+      <styles xmi:type="notation:FontStyle" xmi:id="_fbx0oCV7Edy4m_r_Ph01Ow" bold="true"/>
     </children>
     <children xmi:type="notation:Node" xmi:id="_DpSUt72qEduWjOs2RiriMw" type="7001">
       <children xmi:type="notation:Node" xmi:id="_F_CrIL2qEduWjOs2RiriMw" type="3001">
@@ -59,7 +59,7 @@
   </children>
   <children xmi:type="notation:Node" xmi:id="_HMO3AL2qEduWjOs2RiriMw" type="2001">
     <children xmi:type="notation:Node" xmi:id="_HMO3Br2qEduWjOs2RiriMw" type="5003">
-      <styles xmi:type="notation:FontStyle" xmi:id="_fbx0oSV7Edy4m_r_Ph01Ow"/>
+      <styles xmi:type="notation:FontStyle" xmi:id="_fbx0oSV7Edy4m_r_Ph01Ow" bold="true"/>
     </children>
     <children xmi:type="notation:Node" xmi:id="_HMO3B72qEduWjOs2RiriMw" type="7001">
       <styles xmi:type="notation:DrawerStyle" xmi:id="_HMO3CL2qEduWjOs2RiriMw"/>
@@ -88,7 +88,7 @@
   </children>
   <children xmi:type="notation:Node" xmi:id="_PwTJ0L2qEduWjOs2RiriMw" type="2001">
     <children xmi:type="notation:Node" xmi:id="_PwTJ1r2qEduWjOs2RiriMw" type="5003">
-      <styles xmi:type="notation:FontStyle" xmi:id="_fbx0oiV7Edy4m_r_Ph01Ow"/>
+      <styles xmi:type="notation:FontStyle" xmi:id="_fbx0oiV7Edy4m_r_Ph01Ow" bold="true"/>
     </children>
     <children xmi:type="notation:Node" xmi:id="_PwTJ172qEduWjOs2RiriMw" type="7001">
       <styles xmi:type="notation:DrawerStyle" xmi:id="_PwTJ2L2qEduWjOs2RiriMw"/>
@@ -117,7 +117,7 @@
   </children>
   <children xmi:type="notation:Node" xmi:id="_RhGZEL2qEduWjOs2RiriMw" type="2001">
     <children xmi:type="notation:Node" xmi:id="_RhGZFr2qEduWjOs2RiriMw" type="5003">
-      <styles xmi:type="notation:FontStyle" xmi:id="_fbx0oyV7Edy4m_r_Ph01Ow"/>
+      <styles xmi:type="notation:FontStyle" xmi:id="_fbx0oyV7Edy4m_r_Ph01Ow" bold="true"/>
     </children>
     <children xmi:type="notation:Node" xmi:id="_RhGZF72qEduWjOs2RiriMw" type="7001">
       <styles xmi:type="notation:DrawerStyle" xmi:id="_RhGZGL2qEduWjOs2RiriMw"/>

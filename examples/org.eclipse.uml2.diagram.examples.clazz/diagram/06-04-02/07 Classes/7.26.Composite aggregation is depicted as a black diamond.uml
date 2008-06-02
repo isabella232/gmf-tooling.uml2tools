@@ -10,8 +10,8 @@
       <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_JJEGMb2hEduWjOs2RiriMw" value="1"/>
     </ownedEnd>
     <ownedEnd xmi:id="_81LStL2gEduWjOs2RiriMw" name="scrollbar" type="_5sjU4L2gEduWjOs2RiriMw" aggregation="composite" association="_81LSsL2gEduWjOs2RiriMw">
-      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_9UTcMCV-EdybE_0sx8Ftag" value="2"/>
-      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_9UTcMSV-EdybE_0sx8Ftag" value="2"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_kycJ8C1sEd2w4dR53OYfkA" value="2"/>
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_kycJ8S1sEd2w4dR53OYfkA" value="2"/>
     </ownedEnd>
   </packagedElement>
   <packagedElement xmi:type="uml:Association" xmi:id="_-r91ML2gEduWjOs2RiriMw" memberEnd="_-r91Mb2gEduWjOs2RiriMw _-r91NL2gEduWjOs2RiriMw" navigableOwnedEnd="_-r91NL2gEduWjOs2RiriMw">

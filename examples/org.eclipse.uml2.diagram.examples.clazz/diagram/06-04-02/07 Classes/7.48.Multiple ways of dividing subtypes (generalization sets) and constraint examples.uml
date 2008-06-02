@@ -5,10 +5,10 @@
     <generalization xmi:id="_5qRYMCYzEdyTPL1dMW_Idw" general="_qoh3UCYzEdyTPL1dMW_Idw" generalizationSet="_6G4bsCYzEdyTPL1dMW_Idw"/>
   </packagedElement>
   <packagedElement xmi:type="uml:Class" xmi:id="_q6HWkCYzEdyTPL1dMW_Idw" name="Male Person">
-    <generalization xmi:id="_6HopoCYzEdyTPL1dMW_Idw" generalizationSet="_6G4bsCYzEdyTPL1dMW_Idw"/>
+    <generalization xmi:id="_xkIHIDC2Ed2GA8UBmjeySw" general="_qoh3UCYzEdyTPL1dMW_Idw" generalizationSet="_6G4bsCYzEdyTPL1dMW_Idw"/>
   </packagedElement>
   <packagedElement xmi:type="uml:Class" xmi:id="_rCwVMCYzEdyTPL1dMW_Idw" name="Employee">
     <generalization xmi:id="_5OZ7kCYzEdyTPL1dMW_Idw" general="_qoh3UCYzEdyTPL1dMW_Idw"/>
   </packagedElement>
-  <packagedElement xmi:type="uml:GeneralizationSet" xmi:id="_6G4bsCYzEdyTPL1dMW_Idw" isCovering="true" isDisjoint="true" generalization="_5qRYMCYzEdyTPL1dMW_Idw _6HopoCYzEdyTPL1dMW_Idw"/>
+  <packagedElement xmi:type="uml:GeneralizationSet" xmi:id="_6G4bsCYzEdyTPL1dMW_Idw" isCovering="true" isDisjoint="true" generalization="_5qRYMCYzEdyTPL1dMW_Idw _xkIHIDC2Ed2GA8UBmjeySw"/>
 </uml:Package>

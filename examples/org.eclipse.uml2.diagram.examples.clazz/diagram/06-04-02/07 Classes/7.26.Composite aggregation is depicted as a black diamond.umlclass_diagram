@@ -2,7 +2,7 @@
 <notation:Diagram xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.1/notation" xmlns:uml="http://www.eclipse.org/uml2/2.1.0/UML" xmi:id="_wh0aALz4EduWjOs2RiriMw" type="UMLClass" measurementUnit="Pixel">
   <children xmi:type="notation:Node" xmi:id="_4yRd8L2gEduWjOs2RiriMw" type="2001">
     <children xmi:type="notation:Node" xmi:id="_4yRd9r2gEduWjOs2RiriMw" type="5003">
-      <styles xmi:type="notation:FontStyle" xmi:id="_pCIY8CV9Edy4m_r_Ph01Ow"/>
+      <styles xmi:type="notation:FontStyle" xmi:id="_pCIY8CV9Edy4m_r_Ph01Ow" bold="true"/>
     </children>
     <children xmi:type="notation:Node" xmi:id="_4yan4L2gEduWjOs2RiriMw" visible="false" type="7001">
       <styles xmi:type="notation:DrawerStyle" xmi:id="_4yan4b2gEduWjOs2RiriMw" collapsed="true"/>
@@ -31,7 +31,7 @@
   </children>
   <children xmi:type="notation:Node" xmi:id="_5sse0L2gEduWjOs2RiriMw" type="2001">
     <children xmi:type="notation:Node" xmi:id="_5sse1r2gEduWjOs2RiriMw" type="5003">
-      <styles xmi:type="notation:FontStyle" xmi:id="_pCIY8SV9Edy4m_r_Ph01Ow"/>
+      <styles xmi:type="notation:FontStyle" xmi:id="_pCIY8SV9Edy4m_r_Ph01Ow" bold="true"/>
     </children>
     <children xmi:type="notation:Node" xmi:id="_5sse172gEduWjOs2RiriMw" visible="false" type="7001">
       <styles xmi:type="notation:DrawerStyle" xmi:id="_5sse2L2gEduWjOs2RiriMw"/>
@@ -60,7 +60,7 @@
   </children>
   <children xmi:type="notation:Node" xmi:id="_6iNKgL2gEduWjOs2RiriMw" type="2001">
     <children xmi:type="notation:Node" xmi:id="_6iNKhr2gEduWjOs2RiriMw" type="5003">
-      <styles xmi:type="notation:FontStyle" xmi:id="_pCIY8iV9Edy4m_r_Ph01Ow"/>
+      <styles xmi:type="notation:FontStyle" xmi:id="_pCIY8iV9Edy4m_r_Ph01Ow" bold="true"/>
     </children>
     <children xmi:type="notation:Node" xmi:id="_6iW7gL2gEduWjOs2RiriMw" visible="false" type="7001">
       <styles xmi:type="notation:DrawerStyle" xmi:id="_6iW7gb2gEduWjOs2RiriMw"/>
@@ -89,7 +89,7 @@
   </children>
   <children xmi:type="notation:Node" xmi:id="_7X3nML2gEduWjOs2RiriMw" type="2001">
     <children xmi:type="notation:Node" xmi:id="_7X3nNr2gEduWjOs2RiriMw" type="5003">
-      <styles xmi:type="notation:FontStyle" xmi:id="_pCIY8yV9Edy4m_r_Ph01Ow"/>
+      <styles xmi:type="notation:FontStyle" xmi:id="_pCIY8yV9Edy4m_r_Ph01Ow" bold="true"/>
     </children>
     <children xmi:type="notation:Node" xmi:id="_7X3nN72gEduWjOs2RiriMw" visible="false" type="7001">
       <styles xmi:type="notation:DrawerStyle" xmi:id="_7X3nOL2gEduWjOs2RiriMw"/>
@@ -145,7 +145,7 @@
     <styles xmi:type="notation:RoutingStyle" xmi:id="_81LSuL2gEduWjOs2RiriMw"/>
     <styles xmi:type="notation:FontStyle" xmi:id="_81LSub2gEduWjOs2RiriMw"/>
     <element xmi:type="uml:Association" href="7.26.Composite%20aggregation%20is%20depicted%20as%20a%20black%20diamond.uml#_81LSsL2gEduWjOs2RiriMw"/>
-    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_81LSur2gEduWjOs2RiriMw" points="[-42, 55, 162, -90]$[-43, 56, 161, -89]$[-197, 141, 7, -4]"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_81LSur2gEduWjOs2RiriMw" points="[-56, 44, 148, -101]$[-78, 61, 126, -84]$[-198, 142, 6, -3]"/>
     <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_81Ucrr2gEduWjOs2RiriMw" id="(0.56,0.078125)"/>
     <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_81Ucr72gEduWjOs2RiriMw" id="(0.49,0.0625)"/>
   </edges>
