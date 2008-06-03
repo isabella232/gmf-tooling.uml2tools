@@ -18,9 +18,9 @@
     <children xmi:type="notation:Node" xmi:id="_rDT2waMiEdyv8ePVS08H-g" type="Description">
       <element xsi:nil="true"/>
     </children>
-    <styles xmi:type="notation:ShapeStyle" xmi:id="_rDQzcaMiEdyv8ePVS08H-g" fontName="Segoe UI" description="Use &quot;Change Notation&quot; popup menu to show Use Case or Actor as a Classifier" fillColor="13369343" lineColor="6737151"/>
+    <styles xmi:type="notation:ShapeStyle" xmi:id="_rDQzcaMiEdyv8ePVS08H-g" fontName="Segoe UI" description=" Use &quot;Change Notation&quot; popup menu to show Use Case or Actor as a Classifier" fillColor="13369343" lineColor="6737151"/>
     <element xsi:nil="true"/>
-    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_rDQzcqMiEdyv8ePVS08H-g" x="204" y="24" width="277" height="49"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_rDQzcqMiEdyv8ePVS08H-g" x="96" y="72" width="277" height="61"/>
   </children>
   <children xmi:type="notation:Node" xmi:id="_zNd0wKMiEdyv8ePVS08H-g" type="2003">
     <children xmi:type="notation:Node" xmi:id="_zNd0w6MiEdyv8ePVS08H-g" type="5003"/>
@@ -38,6 +38,42 @@
     <element xmi:type="uml:Actor" href="Figure 16.9 - Example of the classifier based notation for a use case.uml#_QuEy8KMjEdy95JpKFOppXQ"/>
     <layoutConstraint xmi:type="notation:Bounds" xmi:id="_R81FEqMjEdy95JpKFOppXQ" x="360" y="168"/>
   </children>
+  <children xmi:type="notation:Node" xmi:id="_FTzTUDFSEd2jdPJEZbbrmw" type="Note">
+    <children xmi:type="notation:Node" xmi:id="_FTzTVTFSEd2jdPJEZbbrmw" type="DiagramName">
+      <element xsi:nil="true"/>
+    </children>
+    <children xmi:type="notation:Node" xmi:id="_FTzTVjFSEd2jdPJEZbbrmw" type="Description">
+      <element xsi:nil="true"/>
+    </children>
+    <styles xmi:type="notation:ShapeStyle" xmi:id="_FTzTUTFSEd2jdPJEZbbrmw" description="This is an actor shown as Classifier." fillColor="13369343" lineColor="6737151" lineWidth="1"/>
+    <styles xmi:type="notation:TextStyle" xmi:id="_FTzTUjFSEd2jdPJEZbbrmw"/>
+    <styles xmi:type="notation:LineTypeStyle" xmi:id="_FTzTUzFSEd2jdPJEZbbrmw"/>
+    <element xsi:nil="true"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_FTzTVDFSEd2jdPJEZbbrmw" x="408" y="84" width="205"/>
+  </children>
   <styles xmi:type="notation:DiagramStyle" xmi:id="_YmCqNaMiEdyv8ePVS08H-g"/>
   <element xmi:type="uml:Package" href="Figure 16.9 - Example of the classifier based notation for a use case.uml#_YlLHgKMiEdyv8ePVS08H-g"/>
+  <edges xmi:type="notation:Edge" xmi:id="_8LN-MDFREd2jdPJEZbbrmw" type="NoteAttachment" source="_rDQzcKMiEdyv8ePVS08H-g" target="_R81FEKMjEdy95JpKFOppXQ">
+    <styles xmi:type="notation:ConnectorStyle" xmi:id="_8LN-MTFREd2jdPJEZbbrmw" lineWidth="1"/>
+    <styles xmi:type="notation:ArrowStyle" xmi:id="_8LN-MjFREd2jdPJEZbbrmw"/>
+    <styles xmi:type="notation:LineTypeStyle" xmi:id="_8LN-MzFREd2jdPJEZbbrmw"/>
+    <element xsi:nil="true"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_8LN-NDFREd2jdPJEZbbrmw" points="[10, 24, -48, -126]$[56, 120, -2, -30]"/>
+  </edges>
+  <edges xmi:type="notation:Edge" xmi:id="_JnCDEDFSEd2jdPJEZbbrmw" type="NoteAttachment" source="_FTzTUDFSEd2jdPJEZbbrmw" target="_R81FEKMjEdy95JpKFOppXQ">
+    <styles xmi:type="notation:ConnectorStyle" xmi:id="_JnCDETFSEd2jdPJEZbbrmw" lineWidth="1"/>
+    <styles xmi:type="notation:ArrowStyle" xmi:id="_JnCDEjFSEd2jdPJEZbbrmw"/>
+    <styles xmi:type="notation:LineTypeStyle" xmi:id="_JnCDEzFSEd2jdPJEZbbrmw"/>
+    <element xsi:nil="true"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_JnCDFDFSEd2jdPJEZbbrmw" points="[-31, 27, 48, -43]$[-70, 65, 9, -5]"/>
+    <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_JnCDFTFSEd2jdPJEZbbrmw" id="(0.8875,0.23333333)"/>
+  </edges>
+  <edges xmi:type="notation:Edge" xmi:id="_J-37UDFSEd2jdPJEZbbrmw" type="NoteAttachment" source="_rDQzcKMiEdyv8ePVS08H-g" target="_zNd0wKMiEdyv8ePVS08H-g">
+    <styles xmi:type="notation:ConnectorStyle" xmi:id="_J-37UTFSEd2jdPJEZbbrmw" lineWidth="1"/>
+    <styles xmi:type="notation:ArrowStyle" xmi:id="_J-37UjFSEd2jdPJEZbbrmw"/>
+    <styles xmi:type="notation:LineTypeStyle" xmi:id="_J-37UzFSEd2jdPJEZbbrmw"/>
+    <element xsi:nil="true"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_J-37VDFSEd2jdPJEZbbrmw" points="[-16, 30, 24, -44]$[-29, 54, 11, -20]"/>
+    <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_J_BsUDFSEd2jdPJEZbbrmw" id="(0.63709676,0.12987013)"/>
+  </edges>
 </notation:Diagram>

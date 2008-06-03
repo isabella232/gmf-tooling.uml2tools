@@ -28,7 +28,7 @@
     <children xmi:type="notation:Node" xmi:id="_YKzFtcjfEdy8VsoPkmWhvA" type="5011"/>
     <styles xmi:type="notation:ShapeStyle" xmi:id="_YKzFs8jfEdy8VsoPkmWhvA"/>
     <element xmi:type="uml:Constraint" href="Figure 16.3 - Example of an extend relationship between use cases.uml#_YKzFsMjfEdy8VsoPkmWhvA"/>
-    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_YKzFtMjfEdy8VsoPkmWhvA" x="480" y="144" width="224"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_YKzFtMjfEdy8VsoPkmWhvA" x="324" y="144" width="380" height="60"/>
   </children>
   <styles xmi:type="notation:DiagramStyle" xmi:id="_Je_Yl8jfEdy8VsoPkmWhvA"/>
   <element xmi:type="uml:Package" href="Figure 16.3 - Example of an extend relationship between use cases.uml#_JdgK0MjfEdy8VsoPkmWhvA"/>

@@ -146,7 +146,7 @@
     <element xmi:type="uml:Generalization" href="Figure 16.7 - Example of use cases owned by various packages.uml#_HaA4gKMhEdyv8ePVS08H-g"/>
     <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_HaNs06MhEdyv8ePVS08H-g" points="[7, -10, -144, 193]$[106, -193, -45, 10]"/>
     <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_HaahIKMhEdyv8ePVS08H-g" id="(0.6357143,0.16666667)"/>
-    <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_HabIMKMhEdyv8ePVS08H-g" id="(0.20642202,0.7121212)"/>
+    <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_HabIMKMhEdyv8ePVS08H-g" id="(0.2648402,0.9848485)"/>
   </edges>
   <edges xmi:type="notation:Edge" xmi:id="_IGI-sKMhEdyv8ePVS08H-g" type="4003" source="_DzZXIKMhEdyv8ePVS08H-g" target="_OQ0NsKMgEdy-S7gXKrJgrQ">
     <styles xmi:type="notation:ConnectorStyle" xmi:id="_IGI-saMhEdyv8ePVS08H-g"/>
@@ -163,7 +163,7 @@
   </edges>
   <edges xmi:type="notation:Edge" xmi:id="_JmJ_8KMhEdyv8ePVS08H-g" type="4001" source="_CcRzMKMhEdyv8ePVS08H-g" target="_LQug0KMgEdy-S7gXKrJgrQ">
     <children xmi:type="notation:Node" xmi:id="_JmLOEKMhEdyv8ePVS08H-g" type="6001">
-      <layoutConstraint xmi:type="notation:Location" xmi:id="_JmLOEaMhEdyv8ePVS08H-g" x="31" y="-74"/>
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_JmLOEaMhEdyv8ePVS08H-g" x="45" y="-39"/>
     </children>
     <styles xmi:type="notation:RoutingStyle" xmi:id="_JmJ_8aMhEdyv8ePVS08H-g"/>
     <styles xmi:type="notation:FontStyle" xmi:id="_JmJ_8qMhEdyv8ePVS08H-g" fontName="Segoe UI"/>
@@ -173,7 +173,7 @@
   </edges>
   <edges xmi:type="notation:Edge" xmi:id="_LesO4KMhEdyv8ePVS08H-g" type="4001" source="_DzZXIKMhEdyv8ePVS08H-g" target="_LQug0KMgEdy-S7gXKrJgrQ">
     <children xmi:type="notation:Node" xmi:id="_LesO5KMhEdyv8ePVS08H-g" type="6001">
-      <layoutConstraint xmi:type="notation:Location" xmi:id="_LesO5aMhEdyv8ePVS08H-g" x="51" y="-30"/>
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_LesO5aMhEdyv8ePVS08H-g" x="51" y="34"/>
     </children>
     <styles xmi:type="notation:RoutingStyle" xmi:id="_LesO4aMhEdyv8ePVS08H-g"/>
     <styles xmi:type="notation:FontStyle" xmi:id="_LesO4qMhEdyv8ePVS08H-g" fontName="Segoe UI"/>
