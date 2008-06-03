@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<notation:Diagram xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.1/notation" xmlns:uml="http://www.eclipse.org/uml2/2.1.0/UML" xmi:id="_ulrRoL2hEduWjOs2RiriMw" type="UMLClass" measurementUnit="Pixel">
+<notation:Diagram xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.1/notation" xmlns:uml="http://www.eclipse.org/uml2/2.1.0/UML" xmi:id="_ulrRoL2hEduWjOs2RiriMw" type="UMLClass" measurementUnit="Pixel">
   <children xmi:type="notation:Node" xmi:id="_vkRA0L2hEduWjOs2RiriMw" type="2001">
     <children xmi:type="notation:Node" xmi:id="_vkRA1r2hEduWjOs2RiriMw" type="5003">
       <styles xmi:type="notation:FontStyle" xmi:id="_N6B_sCV8Edy4m_r_Ph01Ow" bold="true"/>
@@ -56,7 +56,7 @@
     <styles xmi:type="notation:FillStyle" xmi:id="_wdfu472hEduWjOs2RiriMw"/>
     <styles xmi:type="notation:LineStyle" xmi:id="_wdfu5L2hEduWjOs2RiriMw"/>
     <element xmi:type="uml:Class" href="7.27.An%20AssociationClass%20is%20depicted%20by%20an%20association%20symbol%20(a%20line)%20and%20a%20class%20symbol%20(a%20box).uml#_wdV94L2hEduWjOs2RiriMw"/>
-    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_wdfu5b2hEduWjOs2RiriMw" x="384" y="84"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_wdfu5b2hEduWjOs2RiriMw" x="384" y="72"/>
   </children>
   <children xmi:type="notation:Node" xmi:id="_rSFfUKMyEdySAc7GdBT3rQ" type="2014">
     <children xmi:type="notation:Node" xmi:id="_rSGGYqMyEdySAc7GdBT3rQ" type="5020"/>
@@ -104,6 +104,32 @@
     <element xmi:type="uml:AssociationClass" href="7.27.An%20AssociationClass%20is%20depicted%20by%20an%20association%20symbol%20(a%20line)%20and%20a%20class%20symbol%20(a%20box).uml#_1CwNwMm2EdyThJMjabxxGg"/>
     <layoutConstraint xmi:type="notation:Bounds" xmi:id="_1DDvwsm2EdyThJMjabxxGg" x="240" y="108"/>
   </children>
+  <children xmi:type="notation:Node" xmi:id="_c38doDFTEd2jdPJEZbbrmw" type="Note">
+    <children xmi:type="notation:Node" xmi:id="_c38dpTFTEd2jdPJEZbbrmw" type="DiagramName">
+      <element xsi:nil="true"/>
+    </children>
+    <children xmi:type="notation:Node" xmi:id="_c38dpjFTEd2jdPJEZbbrmw" type="Description">
+      <element xsi:nil="true"/>
+    </children>
+    <styles xmi:type="notation:ShapeStyle" xmi:id="_c38doTFTEd2jdPJEZbbrmw" description="Association Class is created by using 'Association Class' palette entry from the Nodes group.'Association End' palette entry from the Link group is used to create ends." fillColor="13369343" lineColor="6737151" lineWidth="1"/>
+    <styles xmi:type="notation:TextStyle" xmi:id="_c38dojFTEd2jdPJEZbbrmw"/>
+    <styles xmi:type="notation:LineTypeStyle" xmi:id="_c38dozFTEd2jdPJEZbbrmw"/>
+    <element xsi:nil="true"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_c38dpDFTEd2jdPJEZbbrmw" x="336" y="264" width="289" height="73"/>
+  </children>
+  <children xmi:type="notation:Node" xmi:id="_vWEl0DFTEd2jdPJEZbbrmw" type="Note">
+    <children xmi:type="notation:Node" xmi:id="_vWEl1TFTEd2jdPJEZbbrmw" type="DiagramName">
+      <element xsi:nil="true"/>
+    </children>
+    <children xmi:type="notation:Node" xmi:id="_vWEl1jFTEd2jdPJEZbbrmw" type="Description">
+      <element xsi:nil="true"/>
+    </children>
+    <styles xmi:type="notation:ShapeStyle" xmi:id="_vWEl0TFTEd2jdPJEZbbrmw" description="AssociationClass Job is shown as a classifier rectangle, rhoma and a connector between them. Job has two Association Ends - Person and Company." fillColor="13369343" lineColor="6737151" lineWidth="1"/>
+    <styles xmi:type="notation:TextStyle" xmi:id="_vWEl0jFTEd2jdPJEZbbrmw"/>
+    <styles xmi:type="notation:LineTypeStyle" xmi:id="_vWEl0zFTEd2jdPJEZbbrmw"/>
+    <element xsi:nil="true"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_vWEl1DFTEd2jdPJEZbbrmw" x="336" y="180" width="289" height="73"/>
+  </children>
   <styles xmi:type="notation:PageStyle" xmi:id="_ulrRob2hEduWjOs2RiriMw"/>
   <styles xmi:type="notation:GuideStyle" xmi:id="_ulrRor2hEduWjOs2RiriMw"/>
   <styles xmi:type="notation:DescriptionStyle" xmi:id="_ulrRo72hEduWjOs2RiriMw"/>
@@ -126,7 +152,7 @@
     <element xmi:type="uml:Property" href="7.27.An%20AssociationClass%20is%20depicted%20by%20an%20association%20symbol%20(a%20line)%20and%20a%20class%20symbol%20(a%20box).uml#_3UltgMm2EdyThJMjabxxGg"/>
     <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_3U-IA8m2EdyThJMjabxxGg" points="[5, 5, -136, 0]$[135, 3, -6, -2]"/>
     <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_6nGnIMm2EdyThJMjabxxGg" id="(0.4,0.1)"/>
-    <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_3VIgEMm2EdyThJMjabxxGg" id="(0.06,0.35164836)"/>
+    <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_3VIgEMm2EdyThJMjabxxGg" id="(0.06,0.45555556)"/>
   </edges>
   <edges xmi:type="notation:Edge" xmi:id="_44l24Mm2EdyThJMjabxxGg" type="4003" source="_1DDvwMm2EdyThJMjabxxGg" target="_vkRA0L2hEduWjOs2RiriMw">
     <children xmi:type="notation:Node" xmi:id="_44l25Mm2EdyThJMjabxxGg" type="6002">
@@ -141,5 +167,23 @@
     <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_44l248m2EdyThJMjabxxGg" points="[0, 6, 112, 0]$[-103, 3, 9, -3]"/>
     <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_44nFAMm2EdyThJMjabxxGg" id="(0.0,0.3)"/>
     <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_44nFAcm2EdyThJMjabxxGg" id="(0.91,0.32967034)"/>
+  </edges>
+  <edges xmi:type="notation:Edge" xmi:id="_xggdEDFTEd2jdPJEZbbrmw" type="NoteAttachment" source="_1C8bAMm2EdyThJMjabxxGg" target="_c38doDFTEd2jdPJEZbbrmw">
+    <styles xmi:type="notation:ConnectorStyle" xmi:id="_xggdETFTEd2jdPJEZbbrmw" lineColor="0" lineWidth="1"/>
+    <styles xmi:type="notation:ArrowStyle" xmi:id="_xggdEjFTEd2jdPJEZbbrmw"/>
+    <styles xmi:type="notation:LineTypeStyle" xmi:id="_xggdEzFTEd2jdPJEZbbrmw"/>
+    <element xsi:nil="true"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_xggdFDFTEd2jdPJEZbbrmw" points="[18, 11, -106, -63]$[62, 81, -62, 7]"/>
+    <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_xgqOEDFTEd2jdPJEZbbrmw" id="(0.83,0.30555555)"/>
+    <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_xgqOETFTEd2jdPJEZbbrmw" id="(0.21453287,0.63013697)"/>
+  </edges>
+  <edges xmi:type="notation:Edge" xmi:id="_7XvA4DFTEd2jdPJEZbbrmw" type="NoteAttachment" source="_1DFk8Mm2EdyThJMjabxxGg" target="_vWEl0DFTEd2jdPJEZbbrmw">
+    <styles xmi:type="notation:ConnectorStyle" xmi:id="_7XvA4TFTEd2jdPJEZbbrmw" lineColor="0" lineWidth="1"/>
+    <styles xmi:type="notation:ArrowStyle" xmi:id="_7XvA4jFTEd2jdPJEZbbrmw"/>
+    <styles xmi:type="notation:LineTypeStyle" xmi:id="_7XvA4zFTEd2jdPJEZbbrmw"/>
+    <element xsi:nil="true"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_7XvA5DFTEd2jdPJEZbbrmw" points="[0, -1, -142, -53]$[93, 48, -49, -4]"/>
+    <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_7XvA5TFTEd2jdPJEZbbrmw" id="(0.44444445,0.460177)"/>
+    <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_7XvA5jFTEd2jdPJEZbbrmw" id="(0.16955018,0.41095892)"/>
   </edges>
 </notation:Diagram>

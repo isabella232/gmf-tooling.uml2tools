@@ -14,7 +14,7 @@
     </children>
     <children xmi:type="notation:Node" xmi:id="_-sk-kKMxEdySAc7GdBT3rQ" type="2001">
       <children xmi:type="notation:Node" xmi:id="_-smzwKMxEdySAc7GdBT3rQ" type="5003">
-        <styles xmi:type="notation:FontStyle" xmi:id="_-tKNYKMxEdySAc7GdBT3rQ"/>
+        <styles xmi:type="notation:FontStyle" xmi:id="_-tKNYKMxEdySAc7GdBT3rQ" bold="true"/>
       </children>
       <children xmi:type="notation:Node" xmi:id="_-sna0KMxEdySAc7GdBT3rQ" type="5019"/>
       <children xmi:type="notation:Node" xmi:id="_-soB4KMxEdySAc7GdBT3rQ" type="7001">
