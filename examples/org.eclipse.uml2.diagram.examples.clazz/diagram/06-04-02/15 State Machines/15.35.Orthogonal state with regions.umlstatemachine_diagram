@@ -16,7 +16,7 @@
               <children xmi:type="notation:Node" xmi:id="_wd9BsQkrEdyF_oRbgI8ypA" type="3003">
                 <styles xmi:type="notation:ShapeStyle" xmi:id="_wd9BsgkrEdyF_oRbgI8ypA"/>
                 <element xmi:type="uml:FinalState" href="15.35.Orthogonal state with regions.uml#_wd9BsAkrEdyF_oRbgI8ypA"/>
-                <layoutConstraint xmi:type="notation:Bounds" xmi:id="_wd9BswkrEdyF_oRbgI8ypA" x="509" y="22"/>
+                <layoutConstraint xmi:type="notation:Bounds" xmi:id="_wd9BswkrEdyF_oRbgI8ypA" x="507" y="30"/>
               </children>
               <children xmi:type="notation:Node" xmi:id="_zvm_sAkrEdyF_oRbgI8ypA" type="3001">
                 <children xmi:type="notation:Node" xmi:id="_zvm_swkrEdyF_oRbgI8ypA" type="5001"/>
@@ -47,7 +47,7 @@
               <children xmi:type="notation:Node" xmi:id="_xEPloQkrEdyF_oRbgI8ypA" type="3003">
                 <styles xmi:type="notation:ShapeStyle" xmi:id="_xEPlogkrEdyF_oRbgI8ypA"/>
                 <element xmi:type="uml:FinalState" href="15.35.Orthogonal state with regions.uml#_xEPloAkrEdyF_oRbgI8ypA"/>
-                <layoutConstraint xmi:type="notation:Bounds" xmi:id="_xEPlowkrEdyF_oRbgI8ypA" x="521" y="19"/>
+                <layoutConstraint xmi:type="notation:Bounds" xmi:id="_xEPlowkrEdyF_oRbgI8ypA" x="519" y="22"/>
               </children>
               <children xmi:type="notation:Node" xmi:id="_-SUJcAkrEdyF_oRbgI8ypA" type="3001">
                 <children xmi:type="notation:Node" xmi:id="_-SUJcwkrEdyF_oRbgI8ypA" type="5001"/>
@@ -67,7 +67,7 @@
               <children xmi:type="notation:Node" xmi:id="_vZjlcQkrEdyF_oRbgI8ypA" type="3004">
                 <styles xmi:type="notation:ShapeStyle" xmi:id="_vZjlcgkrEdyF_oRbgI8ypA"/>
                 <element xmi:type="uml:Pseudostate" href="15.35.Orthogonal state with regions.uml#_vZjlcAkrEdyF_oRbgI8ypA"/>
-                <layoutConstraint xmi:type="notation:Bounds" xmi:id="_vZjlcwkrEdyF_oRbgI8ypA" x="22" y="30"/>
+                <layoutConstraint xmi:type="notation:Bounds" xmi:id="_vZjlcwkrEdyF_oRbgI8ypA" x="27" y="32"/>
               </children>
               <children xmi:type="notation:Node" xmi:id="_xdbhsAkrEdyF_oRbgI8ypA" type="3003">
                 <styles xmi:type="notation:ShapeStyle" xmi:id="_xdbhsQkrEdyF_oRbgI8ypA"/>
@@ -101,7 +101,7 @@
           <children xmi:type="notation:Node" xmi:id="_pMKPEwkrEdyF_oRbgI8ypA" type="5001"/>
           <styles xmi:type="notation:ShapeStyle" xmi:id="_pMKPEQkrEdyF_oRbgI8ypA"/>
           <element xmi:type="uml:State" href="15.35.Orthogonal state with regions.uml#_pMAeEAkrEdyF_oRbgI8ypA"/>
-          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_pMKPEgkrEdyF_oRbgI8ypA" x="535" y="309"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_pMKPEgkrEdyF_oRbgI8ypA" x="547" y="309"/>
         </children>
         <children xmi:type="notation:Node" xmi:id="_swIsIQkrEdyF_oRbgI8ypA" type="3004">
           <styles xmi:type="notation:ShapeStyle" xmi:id="_swIsIgkrEdyF_oRbgI8ypA"/>
@@ -206,7 +206,7 @@
     <styles xmi:type="notation:ConnectorStyle" xmi:id="_6FvN4hZpEdyhrYeRBHu7AQ"/>
     <styles xmi:type="notation:FontStyle" xmi:id="_6FvN4xZpEdyhrYeRBHu7AQ"/>
     <element xmi:type="uml:Transition" href="15.35.Orthogonal state with regions.uml#_6FvN4BZpEdyhrYeRBHu7AQ"/>
-    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_6F4-4BZpEdyhrYeRBHu7AQ" points="[0, 20, -99, -75]$[0, 89, -99, -6]$[97, 89, -2, -6]"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_6F4-4BZpEdyhrYeRBHu7AQ" points="[0, 20, -99, -74]$[0, 94, -99, 0]$[97, 94, -2, 0]"/>
     <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_6F4-4xZpEdyhrYeRBHu7AQ" id="(0.05,0.56666666)"/>
   </edges>
 </notation:Diagram>
