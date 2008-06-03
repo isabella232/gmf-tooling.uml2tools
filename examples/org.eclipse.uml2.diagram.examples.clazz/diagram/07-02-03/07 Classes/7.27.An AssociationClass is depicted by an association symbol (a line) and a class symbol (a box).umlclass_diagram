@@ -2,7 +2,7 @@
 <notation:Diagram xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.1/notation" xmlns:uml="http://www.eclipse.org/uml2/2.1.0/UML" xmi:id="_ulrRoL2hEduWjOs2RiriMw" type="UMLClass" measurementUnit="Pixel">
   <children xmi:type="notation:Node" xmi:id="_vkRA0L2hEduWjOs2RiriMw" type="2001">
     <children xmi:type="notation:Node" xmi:id="_vkRA1r2hEduWjOs2RiriMw" type="5003">
-      <styles xmi:type="notation:FontStyle" xmi:id="_N6B_sCV8Edy4m_r_Ph01Ow"/>
+      <styles xmi:type="notation:FontStyle" xmi:id="_N6B_sCV8Edy4m_r_Ph01Ow" bold="true"/>
     </children>
     <children xmi:type="notation:Node" xmi:id="_vkRA172hEduWjOs2RiriMw" type="7001">
       <styles xmi:type="notation:DrawerStyle" xmi:id="_vkRA2L2hEduWjOs2RiriMw"/>
@@ -31,7 +31,7 @@
   </children>
   <children xmi:type="notation:Node" xmi:id="_wdfu4L2hEduWjOs2RiriMw" type="2001">
     <children xmi:type="notation:Node" xmi:id="_wdfu5r2hEduWjOs2RiriMw" type="5003">
-      <styles xmi:type="notation:FontStyle" xmi:id="_N6LJoCV8Edy4m_r_Ph01Ow"/>
+      <styles xmi:type="notation:FontStyle" xmi:id="_N6LJoCV8Edy4m_r_Ph01Ow" bold="true"/>
     </children>
     <children xmi:type="notation:Node" xmi:id="_wdfu572hEduWjOs2RiriMw" type="7001">
       <styles xmi:type="notation:DrawerStyle" xmi:id="_wdfu6L2hEduWjOs2RiriMw"/>
@@ -71,7 +71,7 @@
   </children>
   <children xmi:type="notation:Node" xmi:id="_1C8bAMm2EdyThJMjabxxGg" type="2007">
     <children xmi:type="notation:Node" xmi:id="_1C9CEMm2EdyThJMjabxxGg" type="5009">
-      <styles xmi:type="notation:FontStyle" xmi:id="_1DAscMm2EdyThJMjabxxGg"/>
+      <styles xmi:type="notation:FontStyle" xmi:id="_1DAscMm2EdyThJMjabxxGg" bold="true"/>
     </children>
     <children xmi:type="notation:Node" xmi:id="_1C9pIMm2EdyThJMjabxxGg" type="7024">
       <children xmi:type="notation:Node" xmi:id="_b6l9sNDhEdy4popcT00fWQ" type="3019">
@@ -97,7 +97,7 @@
     </children>
     <styles xmi:type="notation:ShapeStyle" xmi:id="_1C8bAcm2EdyThJMjabxxGg" fontName="Segoe UI"/>
     <element xmi:type="uml:AssociationClass" href="7.27.An%20AssociationClass%20is%20depicted%20by%20an%20association%20symbol%20(a%20line)%20and%20a%20class%20symbol%20(a%20box).uml#_1CwNwMm2EdyThJMjabxxGg"/>
-    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_1C8bAsm2EdyThJMjabxxGg" x="204" y="204"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_1C8bAsm2EdyThJMjabxxGg" x="192" y="204"/>
   </children>
   <children xmi:type="notation:Node" xmi:id="_1DDvwMm2EdyThJMjabxxGg" type="2015">
     <styles xmi:type="notation:ShapeStyle" xmi:id="_1DDvwcm2EdyThJMjabxxGg" fontName="Segoe UI"/>
