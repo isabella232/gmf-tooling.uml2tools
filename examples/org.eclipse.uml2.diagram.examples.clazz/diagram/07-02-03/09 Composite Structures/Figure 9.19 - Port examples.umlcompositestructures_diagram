@@ -34,7 +34,7 @@
     </children>
     <children xmi:type="notation:Node" xmi:id="_WD-yoLrHEdyb4vWi0vlZeg" type="3011">
       <children xmi:type="notation:Node" xmi:id="_WERtkLrHEdyb4vWi0vlZeg" type="5012">
-        <layoutConstraint xmi:type="notation:Location" xmi:id="_WERtkbrHEdyb4vWi0vlZeg" y="5"/>
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_WERtkbrHEdyb4vWi0vlZeg" x="-20" y="35"/>
       </children>
       <styles xmi:type="notation:ShapeStyle" xmi:id="_WD-yobrHEdyb4vWi0vlZeg"/>
       <element xmi:type="uml:Port" href="Figure 9.19 - Port examples.uml#_WDiGsLrHEdyb4vWi0vlZeg"/>
@@ -79,9 +79,17 @@
       </children>
       <children xmi:type="notation:Node" xmi:id="_3WG6oLrHEdyb4vWi0vlZeg" type="3014">
         <children xmi:type="notation:Node" xmi:id="_3WG6o7rHEdyb4vWi0vlZeg" type="5017"/>
+        <children xmi:type="notation:Node" xmi:id="_XpTn0DFOEd2TyZ_1tQoZqw" type="3016">
+          <children xmi:type="notation:Node" xmi:id="_XpcxwDFOEd2TyZ_1tQoZqw" type="5025">
+            <layoutConstraint xmi:type="notation:Location" xmi:id="_XpcxwTFOEd2TyZ_1tQoZqw" x="-20" y="35"/>
+          </children>
+          <styles xmi:type="notation:ShapeStyle" xmi:id="_XpTn0TFOEd2TyZ_1tQoZqw" lineColor="0"/>
+          <element xmi:type="uml:Port" href="Figure 9.19 - Port examples.uml#_WDiGsLrHEdyb4vWi0vlZeg"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_XpTn0jFOEd2TyZ_1tQoZqw" x="-14" y="12"/>
+        </children>
         <styles xmi:type="notation:ShapeStyle" xmi:id="_3WG6obrHEdyb4vWi0vlZeg"/>
         <element xmi:type="uml:Property" href="Figure 9.19 - Port examples.uml#_3V9wsLrHEdyb4vWi0vlZeg"/>
-        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_3WG6orrHEdyb4vWi0vlZeg" x="245" y="24"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_3WG6orrHEdyb4vWi0vlZeg" x="245" y="36" width="97"/>
       </children>
       <styles xmi:type="notation:SortingStyle" xmi:id="_lVqM9brHEdyb4vWi0vlZeg"/>
       <styles xmi:type="notation:FilteringStyle" xmi:id="_lVqM9rrHEdyb4vWi0vlZeg"/>
@@ -113,7 +121,7 @@
     </children>
     <styles xmi:type="notation:ShapeStyle" xmi:id="_6SSX4brHEdyb4vWi0vlZeg"/>
     <element xmi:type="uml:Class" href="Figure 9.19 - Port examples.uml#_6R1r8LrHEdyb4vWi0vlZeg"/>
-    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_6SSX4rrHEdyb4vWi0vlZeg" x="36" y="372"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_6SSX4rrHEdyb4vWi0vlZeg" x="96" y="324"/>
   </children>
   <children xmi:type="notation:Node" xmi:id="_7hjAUbrHEdyb4vWi0vlZeg" type="2006">
     <children xmi:type="notation:Node" xmi:id="_7hjAVLrHEdyb4vWi0vlZeg" type="5013"/>
@@ -146,7 +154,7 @@
     </children>
     <styles xmi:type="notation:ShapeStyle" xmi:id="_7hjAUrrHEdyb4vWi0vlZeg"/>
     <element xmi:type="uml:Class" href="Figure 9.19 - Port examples.uml#_7hjAULrHEdyb4vWi0vlZeg"/>
-    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_7hjAU7rHEdyb4vWi0vlZeg" x="24" y="552"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_7hjAU7rHEdyb4vWi0vlZeg" x="96" y="444"/>
   </children>
   <children xmi:type="notation:Node" xmi:id="_p8ankLrFEdyb4vWi0vlZeg" type="2007">
     <children xmi:type="notation:Node" xmi:id="_p8ank7rFEdyb4vWi0vlZeg" type="5018"/>
@@ -155,21 +163,21 @@
         <children xmi:type="notation:Node" xmi:id="_rKCRQLrFEdyb4vWi0vlZeg" type="5017"/>
         <styles xmi:type="notation:ShapeStyle" xmi:id="_rJllUbrFEdyb4vWi0vlZeg"/>
         <element xmi:type="uml:Property" href="Figure 9.19 - Port examples.uml#_rJb0ULrFEdyb4vWi0vlZeg"/>
-        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_rJllUrrFEdyb4vWi0vlZeg" x="9" y="7" width="97"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_rJllUrrFEdyb4vWi0vlZeg" x="5" y="24" width="97"/>
       </children>
       <children xmi:type="notation:Node" xmi:id="_sOafYLrFEdyb4vWi0vlZeg" type="3014">
         <children xmi:type="notation:Node" xmi:id="_sOafY7rFEdyb4vWi0vlZeg" type="5017"/>
         <children xmi:type="notation:Node" xmi:id="_nwIckL-vEdy70ta68irNJQ" type="3016">
           <children xmi:type="notation:Node" xmi:id="_nwIck7-vEdy70ta68irNJQ" type="5025">
-            <layoutConstraint xmi:type="notation:Location" xmi:id="_nwIclL-vEdy70ta68irNJQ" y="5"/>
+            <layoutConstraint xmi:type="notation:Location" xmi:id="_nwIclL-vEdy70ta68irNJQ" x="-20" y="35"/>
           </children>
           <styles xmi:type="notation:ShapeStyle" xmi:id="_nwIckb-vEdy70ta68irNJQ"/>
           <element xmi:type="uml:Port" href="Figure 9.19 - Port examples.uml#_WDiGsLrHEdyb4vWi0vlZeg"/>
-          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_nwIckr-vEdy70ta68irNJQ"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_nwIckr-vEdy70ta68irNJQ" x="-14" y="12"/>
         </children>
         <styles xmi:type="notation:ShapeStyle" xmi:id="_sOafYbrFEdyb4vWi0vlZeg"/>
         <element xmi:type="uml:Property" href="Figure 9.19 - Port examples.uml#_sORVcLrFEdyb4vWi0vlZeg"/>
-        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_sOafYrrFEdyb4vWi0vlZeg" x="237" y="7" width="116"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_sOafYrrFEdyb4vWi0vlZeg" x="233" y="24" width="109"/>
       </children>
       <styles xmi:type="notation:SortingStyle" xmi:id="_p8jxgbrFEdyb4vWi0vlZeg"/>
       <styles xmi:type="notation:FilteringStyle" xmi:id="_p8jxgrrFEdyb4vWi0vlZeg"/>
@@ -178,18 +186,146 @@
     <element xmi:type="uml:Class" href="Figure 9.19 - Port examples.uml#_pifEoLrFEdyb4vWi0vlZeg"/>
     <layoutConstraint xmi:type="notation:Bounds" xmi:id="_p8ankrrFEdyb4vWi0vlZeg" x="408" y="180" width="389"/>
   </children>
+  <children xmi:type="notation:Node" xmi:id="_iEcJ8DFOEd2TyZ_1tQoZqw" type="Note">
+    <children xmi:type="notation:Node" xmi:id="_iEcJ9TFOEd2TyZ_1tQoZqw" type="DiagramName">
+      <element xsi:nil="true"/>
+    </children>
+    <children xmi:type="notation:Node" xmi:id="_iEcJ9jFOEd2TyZ_1tQoZqw" type="Description">
+      <element xsi:nil="true"/>
+    </children>
+    <styles xmi:type="notation:ShapeStyle" xmi:id="_iEcJ8TFOEd2TyZ_1tQoZqw" description="These Classes are shown in Expanded Notation. To switch notation use 'Show as->Classifier/Expanded' action from the context menu" fillColor="13369343" lineColor="6737151" lineWidth="1"/>
+    <styles xmi:type="notation:TextStyle" xmi:id="_iEcJ8jFOEd2TyZ_1tQoZqw"/>
+    <styles xmi:type="notation:LineTypeStyle" xmi:id="_iEcJ8zFOEd2TyZ_1tQoZqw"/>
+    <element xsi:nil="true"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_iEcJ9DFOEd2TyZ_1tQoZqw" x="624" y="72" width="205" height="85"/>
+  </children>
+  <children xmi:type="notation:Node" xmi:id="_yVc6UDFOEd2TyZ_1tQoZqw" type="Note">
+    <children xmi:type="notation:Node" xmi:id="_yVc6VTFOEd2TyZ_1tQoZqw" type="DiagramName">
+      <element xsi:nil="true"/>
+    </children>
+    <children xmi:type="notation:Node" xmi:id="_yVc6VjFOEd2TyZ_1tQoZqw" type="Description">
+      <element xsi:nil="true"/>
+    </children>
+    <styles xmi:type="notation:ShapeStyle" xmi:id="_yVc6UTFOEd2TyZ_1tQoZqw" description="The port has no type. That's why it is highlighted as incorrect. To manage highlight color use 'Highlight Color' field from UML2 Diagrams->Class Diagram->Apperance preferences page" fillColor="13369343" lineColor="6737151" lineWidth="1"/>
+    <styles xmi:type="notation:TextStyle" xmi:id="_yVc6UjFOEd2TyZ_1tQoZqw"/>
+    <styles xmi:type="notation:LineTypeStyle" xmi:id="_yVc6UzFOEd2TyZ_1tQoZqw"/>
+    <element xsi:nil="true"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_yVc6VDFOEd2TyZ_1tQoZqw" x="72" y="552" width="229" height="109"/>
+  </children>
+  <children xmi:type="notation:Node" xmi:id="_MAyQEDFPEd2TyZ_1tQoZqw" type="Note">
+    <children xmi:type="notation:Node" xmi:id="_MAyQFTFPEd2TyZ_1tQoZqw" type="DiagramName">
+      <element xsi:nil="true"/>
+    </children>
+    <children xmi:type="notation:Node" xmi:id="_MAyQFjFPEd2TyZ_1tQoZqw" type="Description">
+      <element xsi:nil="true"/>
+    </children>
+    <styles xmi:type="notation:ShapeStyle" xmi:id="_MAyQETFPEd2TyZ_1tQoZqw" description="This is 'derived' port. Actially this is a port 'pp' of Propeller element shown one more time. It is displayed because type of of the Part 'pp' Propeller contains it and ConnectorEnd of Connector 'shaft' has 'partWithPort' property referencing it. " fillColor="13369343" lineColor="6737151" lineWidth="1"/>
+    <styles xmi:type="notation:TextStyle" xmi:id="_MAyQEjFPEd2TyZ_1tQoZqw"/>
+    <styles xmi:type="notation:LineTypeStyle" xmi:id="_MAyQEzFPEd2TyZ_1tQoZqw"/>
+    <element xsi:nil="true"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_MAyQFDFPEd2TyZ_1tQoZqw" x="420" y="576" width="325" height="97"/>
+  </children>
   <styles xmi:type="notation:DiagramStyle" xmi:id="_fj7JwbrFEdyb4vWi0vlZeg"/>
   <element xmi:type="uml:Package" href="Figure 9.19 - Port examples.uml#_fg8uQLrFEdyb4vWi0vlZeg"/>
-  <edges xmi:type="notation:Edge" xmi:id="_n0eKAL-vEdy70ta68irNJQ" type="4008" source="_WD-yoLrHEdyb4vWi0vlZeg" target="_XqyYYLrHEdyb4vWi0vlZeg">
-    <styles xmi:type="notation:ConnectorStyle" xmi:id="_n0eKAb-vEdy70ta68irNJQ"/>
-    <styles xmi:type="notation:FontStyle" xmi:id="_n0eKAr-vEdy70ta68irNJQ"/>
-    <element xmi:type="uml:Usage" href="Figure 9.19 - Port examples.uml#_dT7yMLrHEdyb4vWi0vlZeg"/>
-    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_n0eKA7-vEdy70ta68irNJQ" points="[-7, -7, 0, 0]$[-7, -7, 0, 0]"/>
-  </edges>
   <edges xmi:type="notation:Edge" xmi:id="_n0n7AL-vEdy70ta68irNJQ" type="4010" source="_WD-yoLrHEdyb4vWi0vlZeg" target="_Xh_owLrHEdyb4vWi0vlZeg">
     <styles xmi:type="notation:ConnectorStyle" xmi:id="_n0n7Ab-vEdy70ta68irNJQ"/>
     <styles xmi:type="notation:FontStyle" xmi:id="_n0n7Ar-vEdy70ta68irNJQ"/>
     <element xsi:nil="true"/>
     <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_n0n7A7-vEdy70ta68irNJQ" points="[-7, -7, 0, 0]$[-7, -7, 0, 0]"/>
+  </edges>
+  <edges xmi:type="notation:Edge" xmi:id="_XpmiwDFOEd2TyZ_1tQoZqw" type="4005" source="_cJW8yMBqEdyow_O2MbsLDQ" target="_XpTn0DFOEd2TyZ_1tQoZqw">
+    <children xmi:type="notation:Node" xmi:id="_XpmixDFOEd2TyZ_1tQoZqw" type="6009">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_XpmixTFOEd2TyZ_1tQoZqw" y="20"/>
+    </children>
+    <children xmi:type="notation:Node" xmi:id="_XpmixjFOEd2TyZ_1tQoZqw" type="6010">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_XpmixzFOEd2TyZ_1tQoZqw" y="-15"/>
+    </children>
+    <children xmi:type="notation:Node" xmi:id="_XpmiyDFOEd2TyZ_1tQoZqw" type="6011">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_XpmiyTFOEd2TyZ_1tQoZqw" y="-15"/>
+    </children>
+    <children xmi:type="notation:Node" xmi:id="_XpmiyjFOEd2TyZ_1tQoZqw" type="6012">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_XpmiyzFOEd2TyZ_1tQoZqw" y="-30"/>
+    </children>
+    <children xmi:type="notation:Node" xmi:id="_XpmizDFOEd2TyZ_1tQoZqw" type="6013">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_XpmizTFOEd2TyZ_1tQoZqw" y="-30"/>
+    </children>
+    <children xmi:type="notation:Node" xmi:id="_XpmizjFOEd2TyZ_1tQoZqw" type="6014">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_XpmizzFOEd2TyZ_1tQoZqw" y="15"/>
+    </children>
+    <children xmi:type="notation:Node" xmi:id="_Xpmi0DFOEd2TyZ_1tQoZqw" type="6015">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_Xpmi0TFOEd2TyZ_1tQoZqw" y="15"/>
+    </children>
+    <styles xmi:type="notation:ConnectorStyle" xmi:id="_XpmiwTFOEd2TyZ_1tQoZqw" lineColor="0"/>
+    <styles xmi:type="notation:FontStyle" xmi:id="_XpmiwjFOEd2TyZ_1tQoZqw"/>
+    <element xmi:type="uml:Connector" href="Figure 9.19 - Port examples.uml#_7fn4QLrIEdyb4vWi0vlZeg"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_XpmiwzFOEd2TyZ_1tQoZqw" points="[0, 0, 0, 0]$[0, 0, 0, 0]"/>
+  </edges>
+  <edges xmi:type="notation:Edge" xmi:id="_Xpmi0jFOEd2TyZ_1tQoZqw" type="4005" source="_rJllULrFEdyb4vWi0vlZeg" target="_nwIckL-vEdy70ta68irNJQ">
+    <children xmi:type="notation:Node" xmi:id="_Xpmi1jFOEd2TyZ_1tQoZqw" type="6009">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_Xpmi1zFOEd2TyZ_1tQoZqw" y="20"/>
+    </children>
+    <children xmi:type="notation:Node" xmi:id="_Xpmi2DFOEd2TyZ_1tQoZqw" type="6010">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_Xpmi2TFOEd2TyZ_1tQoZqw" y="-15"/>
+    </children>
+    <children xmi:type="notation:Node" xmi:id="_Xpmi2jFOEd2TyZ_1tQoZqw" type="6011">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_Xpmi2zFOEd2TyZ_1tQoZqw" y="-15"/>
+    </children>
+    <children xmi:type="notation:Node" xmi:id="_Xpmi3DFOEd2TyZ_1tQoZqw" type="6012">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_Xpmi3TFOEd2TyZ_1tQoZqw" y="-30"/>
+    </children>
+    <children xmi:type="notation:Node" xmi:id="_Xpmi3jFOEd2TyZ_1tQoZqw" type="6013">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_Xpmi3zFOEd2TyZ_1tQoZqw" y="-30"/>
+    </children>
+    <children xmi:type="notation:Node" xmi:id="_Xpmi4DFOEd2TyZ_1tQoZqw" type="6014">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_Xpmi4TFOEd2TyZ_1tQoZqw" y="15"/>
+    </children>
+    <children xmi:type="notation:Node" xmi:id="_Xpmi4jFOEd2TyZ_1tQoZqw" type="6015">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_Xpmi4zFOEd2TyZ_1tQoZqw" y="15"/>
+    </children>
+    <styles xmi:type="notation:ConnectorStyle" xmi:id="_Xpmi0zFOEd2TyZ_1tQoZqw" lineColor="0"/>
+    <styles xmi:type="notation:FontStyle" xmi:id="_Xpmi1DFOEd2TyZ_1tQoZqw"/>
+    <element xmi:type="uml:Connector" href="Figure 9.19 - Port examples.uml#_NFaVILrHEdyb4vWi0vlZeg"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_Xpmi1TFOEd2TyZ_1tQoZqw" points="[0, 0, -7, -7]$[0, 0, -7, -7]"/>
+  </edges>
+  <edges xmi:type="notation:Edge" xmi:id="_rZPWIDFOEd2TyZ_1tQoZqw" type="NoteAttachment" source="_iEcJ8DFOEd2TyZ_1tQoZqw" target="_p8ankLrFEdyb4vWi0vlZeg">
+    <styles xmi:type="notation:ConnectorStyle" xmi:id="_rZPWITFOEd2TyZ_1tQoZqw" lineColor="0" lineWidth="1"/>
+    <styles xmi:type="notation:ArrowStyle" xmi:id="_rZPWIjFOEd2TyZ_1tQoZqw"/>
+    <styles xmi:type="notation:LineTypeStyle" xmi:id="_rZPWIzFOEd2TyZ_1tQoZqw"/>
+    <element xsi:nil="true"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_rZPWJDFOEd2TyZ_1tQoZqw" points="[-6, 42, 5, -39]$[27, 66, 38, -15]"/>
+    <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_rZPWJTFOEd2TyZ_1tQoZqw" id="(0.7892031,0.12820514)"/>
+  </edges>
+  <edges xmi:type="notation:Edge" xmi:id="_ulPYEDFOEd2TyZ_1tQoZqw" type="NoteAttachment" source="_iEcJ8DFOEd2TyZ_1tQoZqw" target="_lVqM8LrHEdyb4vWi0vlZeg">
+    <styles xmi:type="notation:ConnectorStyle" xmi:id="_ulPYETFOEd2TyZ_1tQoZqw" lineColor="0" lineWidth="1"/>
+    <styles xmi:type="notation:ArrowStyle" xmi:id="_ulPYEjFOEd2TyZ_1tQoZqw"/>
+    <styles xmi:type="notation:LineTypeStyle" xmi:id="_ulPYEzFOEd2TyZ_1tQoZqw"/>
+    <element xsi:nil="true"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_ulPYFDFOEd2TyZ_1tQoZqw" points="[3, 36, 13, -236]$[19, 228, 29, -44]$[-4, 264, 6, -8]"/>
+    <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_ulZJEDFOEd2TyZ_1tQoZqw" id="(0.84390247,0.5647059)"/>
+    <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_ulZJETFOEd2TyZ_1tQoZqw" id="(0.95717883,0.050955415)"/>
+  </edges>
+  <edges xmi:type="notation:Edge" xmi:id="_F1cvMDFPEd2TyZ_1tQoZqw" type="NoteAttachment" source="_JHLsUMBqEdyow_O2MbsLDQ" target="_yVc6UDFOEd2TyZ_1tQoZqw">
+    <styles xmi:type="notation:ConnectorStyle" xmi:id="_F1cvMTFPEd2TyZ_1tQoZqw" lineColor="0" lineWidth="1"/>
+    <styles xmi:type="notation:ArrowStyle" xmi:id="_F1cvMjFPEd2TyZ_1tQoZqw"/>
+    <styles xmi:type="notation:LineTypeStyle" xmi:id="_F1cvMzFPEd2TyZ_1tQoZqw"/>
+    <element xsi:nil="true"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_F1cvNDFPEd2TyZ_1tQoZqw" points="[-2, 8, 0, -128]$[14, 113, 16, -23]"/>
+    <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_F1mgMDFPEd2TyZ_1tQoZqw" id="(0.59825325,0.21100917)"/>
+  </edges>
+  <edges xmi:type="notation:Edge" xmi:id="_KVJ_QDFQEd2TyZ_1tQoZqw" type="NoteAttachment" source="_cJW8yMBqEdyow_O2MbsLDQ" target="_MAyQEDFPEd2TyZ_1tQoZqw">
+    <styles xmi:type="notation:ConnectorStyle" xmi:id="_KVJ_QTFQEd2TyZ_1tQoZqw" lineColor="0" lineWidth="1"/>
+    <styles xmi:type="notation:ArrowStyle" xmi:id="_KVJ_QjFQEd2TyZ_1tQoZqw"/>
+    <styles xmi:type="notation:LineTypeStyle" xmi:id="_KVJ_QzFQEd2TyZ_1tQoZqw"/>
+    <element xsi:nil="true"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_KVJ_RDFQEd2TyZ_1tQoZqw" points="[-1, 8, 20, -119]$[-35, 113, -14, -14]"/>
+    <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_KVTwQDFQEd2TyZ_1tQoZqw" id="(0.4,0.14432989)"/>
+  </edges>
+  <edges xmi:type="notation:Edge" xmi:id="_LXeX4DFQEd2TyZ_1tQoZqw" type="NoteAttachment" source="_XpTn0DFOEd2TyZ_1tQoZqw" target="_MAyQEDFPEd2TyZ_1tQoZqw">
+    <styles xmi:type="notation:ConnectorStyle" xmi:id="_LXeX4TFQEd2TyZ_1tQoZqw" lineColor="0" lineWidth="1"/>
+    <styles xmi:type="notation:ArrowStyle" xmi:id="_LXeX4jFQEd2TyZ_1tQoZqw"/>
+    <styles xmi:type="notation:LineTypeStyle" xmi:id="_LXeX4zFQEd2TyZ_1tQoZqw"/>
+    <element xsi:nil="true"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_LXeX5DFQEd2TyZ_1tQoZqw" points="[-1, 8, 21, -111]$[-16, 113, 6, -6]"/>
+    <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_LXnh0DFQEd2TyZ_1tQoZqw" id="(0.6492308,0.06185567)"/>
   </edges>
 </notation:Diagram>

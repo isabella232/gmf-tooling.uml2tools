@@ -21,7 +21,7 @@
     <styles xmi:type="notation:ShapeStyle" xmi:id="_0G0SwX1_EdyWXew6izX-PQ"/>
     <styles xmi:type="notation:HintedDiagramLinkStyle" xmi:id="_0G0Swn1_EdyWXew6izX-PQ"/>
     <element xmi:type="uml:Collaboration" href="Figure 9.11 - The internal structure of the Observer collaboration shown inside the collaboration icon.uml#_0GXm0H1_EdyWXew6izX-PQ"/>
-    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_0G0Sw31_EdyWXew6izX-PQ" x="96" y="84" width="639" height="287"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_0G0Sw31_EdyWXew6izX-PQ" x="96" y="84" width="601" height="265"/>
   </children>
   <children xmi:type="notation:Node" xmi:id="_QMausH2EEdyr-MCpgrIrqw" type="2006">
     <children xmi:type="notation:Node" xmi:id="_QMaus32EEdyr-MCpgrIrqw" type="5013"/>
@@ -46,7 +46,7 @@
     </children>
     <styles xmi:type="notation:ShapeStyle" xmi:id="_QMausX2EEdyr-MCpgrIrqw"/>
     <element xmi:type="uml:Class" href="Figure 9.11 - The internal structure of the Observer collaboration shown inside the collaboration icon.uml#_QKomAH2EEdyr-MCpgrIrqw"/>
-    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_QMausn2EEdyr-MCpgrIrqw" x="876" y="132"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_QMausn2EEdyr-MCpgrIrqw" x="768" y="108"/>
   </children>
   <children xmi:type="notation:Node" xmi:id="_WZIvoH2EEdyr-MCpgrIrqw" type="2006">
     <children xmi:type="notation:Node" xmi:id="_WZIvo32EEdyr-MCpgrIrqw" type="5013"/>
@@ -71,7 +71,7 @@
     </children>
     <styles xmi:type="notation:ShapeStyle" xmi:id="_WZIvoX2EEdyr-MCpgrIrqw"/>
     <element xmi:type="uml:Class" href="Figure 9.11 - The internal structure of the Observer collaboration shown inside the collaboration icon.uml#_WYi5wH2EEdyr-MCpgrIrqw"/>
-    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_WZIvon2EEdyr-MCpgrIrqw" x="876" y="276"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_WZIvon2EEdyr-MCpgrIrqw" x="780" y="276"/>
   </children>
   <children xmi:type="notation:Node" xmi:id="_dTn5EI7pEdyDstIgzrrLww" type="2003">
     <children xmi:type="notation:Node" xmi:id="_dTn5E47pEdyDstIgzrrLww" type="5006"/>

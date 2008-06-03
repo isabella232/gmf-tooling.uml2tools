@@ -34,7 +34,7 @@
     </children>
     <children xmi:type="notation:Node" xmi:id="_gNiiQIijEdyRwMgm0d0rMg" type="3011">
       <children xmi:type="notation:Node" xmi:id="_gNiiQ4ijEdyRwMgm0d0rMg" type="5012">
-        <layoutConstraint xmi:type="notation:Location" xmi:id="_gNiiRIijEdyRwMgm0d0rMg" y="5"/>
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_gNiiRIijEdyRwMgm0d0rMg" x="-20" y="35"/>
       </children>
       <styles xmi:type="notation:ShapeStyle" xmi:id="_gNiiQYijEdyRwMgm0d0rMg"/>
       <element xmi:type="uml:Port" href="Figure 9.16 - Port notation.uml#_gMy7YIijEdyRwMgm0d0rMg"/>
@@ -67,11 +67,5 @@
     <styles xmi:type="notation:FontStyle" xmi:id="_qzLkook6EdyEAaxk3rxXCA"/>
     <element xsi:nil="true"/>
     <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_qzLko4k6EdyEAaxk3rxXCA" points="[-7, -3, 160, 66]$[-167, -61, 0, 8]"/>
-  </edges>
-  <edges xmi:type="notation:Edge" xmi:id="_tXrhsIk6EdyEAaxk3rxXCA" type="4008" source="_gNiiQIijEdyRwMgm0d0rMg" target="_bpsjoIijEdyRwMgm0d0rMg">
-    <styles xmi:type="notation:ConnectorStyle" xmi:id="_tXrhsYk6EdyEAaxk3rxXCA"/>
-    <styles xmi:type="notation:FontStyle" xmi:id="_tXrhsok6EdyEAaxk3rxXCA"/>
-    <element xmi:type="uml:Usage" href="Figure 9.16 - Port notation.uml#_tXFr0Ik6EdyEAaxk3rxXCA"/>
-    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_tXrhs4k6EdyEAaxk3rxXCA" points="[-7, 2, 164, -44]$[-178, 45, -7, -1]"/>
   </edges>
 </notation:Diagram>
