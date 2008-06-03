@@ -15,13 +15,13 @@
     <children xmi:type="notation:Node" xmi:id="_Xyv9U6MoEdyC7dOJ7ALdqw" type="5005"/>
     <styles xmi:type="notation:ShapeStyle" xmi:id="_Xyv9UaMoEdyC7dOJ7ALdqw" fontName="Segoe UI"/>
     <element xmi:type="uml:Artifact" href="Figure 10.13 - A DeploymentSpecification for an artifact.uml#_Xys6AKMoEdyC7dOJ7ALdqw"/>
-    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_Xyv9UqMoEdyC7dOJ7ALdqw" x="156" y="48" width="105"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_Xyv9UqMoEdyC7dOJ7ALdqw" x="132" y="48" width="129"/>
   </children>
   <children xmi:type="notation:Node" xmi:id="_Z5Q94KMoEdyC7dOJ7ALdqw" type="2004">
     <children xmi:type="notation:Node" xmi:id="_Z5Rk8KMoEdyC7dOJ7ALdqw" type="5003"/>
     <styles xmi:type="notation:ShapeStyle" xmi:id="_Z5Q94aMoEdyC7dOJ7ALdqw" fontName="Segoe UI"/>
     <element xmi:type="uml:Node" href="Figure 10.13 - A DeploymentSpecification for an artifact.uml#_Z5PIsKMoEdyC7dOJ7ALdqw"/>
-    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_Z5Q94qMoEdyC7dOJ7ALdqw" x="144" y="192" width="120" height="68"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_Z5Q94qMoEdyC7dOJ7ALdqw" x="108" y="192" width="133" height="68"/>
   </children>
   <children xmi:type="notation:Node" xmi:id="_d3pfAKMoEdyC7dOJ7ALdqw" type="2007">
     <children xmi:type="notation:Node" xmi:id="_d3qtIKMoEdyC7dOJ7ALdqw" type="5006"/>
@@ -39,7 +39,7 @@
     </children>
     <styles xmi:type="notation:ShapeStyle" xmi:id="_d3pfAaMoEdyC7dOJ7ALdqw" fontName="Segoe UI"/>
     <element xmi:type="uml:DeploymentSpecification" href="Figure 10.13 - A DeploymentSpecification for an artifact.uml#_d3oQ4KMoEdyC7dOJ7ALdqw"/>
-    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_d3pfAqMoEdyC7dOJ7ALdqw" x="336" y="120"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_d3pfAqMoEdyC7dOJ7ALdqw" x="336" y="132"/>
   </children>
   <styles xmi:type="notation:DiagramStyle" xmi:id="_Ub1r46MoEdyC7dOJ7ALdqw"/>
   <element xmi:type="uml:Package" href="Figure 10.13 - A DeploymentSpecification for an artifact.uml#_UbZnAKMoEdyC7dOJ7ALdqw"/>

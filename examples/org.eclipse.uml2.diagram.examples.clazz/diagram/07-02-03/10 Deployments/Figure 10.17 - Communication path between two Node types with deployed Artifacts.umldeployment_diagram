@@ -15,7 +15,7 @@
     <children xmi:type="notation:Node" xmi:id="_r54OM6MpEdyC7dOJ7ALdqw" type="5003"/>
     <styles xmi:type="notation:ShapeStyle" xmi:id="_r54OMaMpEdyC7dOJ7ALdqw" fontName="Segoe UI"/>
     <element xmi:type="uml:Node" href="Figure 10.17 - Communication path between two Node types with deployed Artifacts.uml#_r52ZAKMpEdyC7dOJ7ALdqw"/>
-    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_r54OMqMpEdyC7dOJ7ALdqw" x="288" y="120"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_r54OMqMpEdyC7dOJ7ALdqw" x="288" y="120" width="109" height="73"/>
   </children>
   <children xmi:type="notation:Node" xmi:id="_s4ekcKMpEdyC7dOJ7ALdqw" type="2004">
     <children xmi:type="notation:Node" xmi:id="_s4fLgqMpEdyC7dOJ7ALdqw" type="5003"/>
