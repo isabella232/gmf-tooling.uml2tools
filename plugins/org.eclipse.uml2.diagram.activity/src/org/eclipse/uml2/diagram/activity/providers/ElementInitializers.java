@@ -910,33 +910,24 @@ public class ElementInitializers {
 	}
 
 	/**
-	 * @generated
+	 * @generated NOT
 	 */
 	private static List trigger_AcceptEventAction_3031(AcceptEventAction self) {
-		// TODO: implement this method to return value  
-		// for org.eclipse.uml2.uml.UMLPackage.eINSTANCE.getAcceptEventAction_Trigger()
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException("No user java implementation provided in 'trigger_AcceptEventAction_3031' operation");//$NON-NLS-1$
+		return value_trigger(self);
 	}
 
 	/**
-	 * @generated
+	 * @generated NOT
 	 */
 	private static List trigger_AcceptEventAction_3013(AcceptEventAction self) {
-		// TODO: implement this method to return value  
-		// for org.eclipse.uml2.uml.UMLPackage.eINSTANCE.getAcceptEventAction_Trigger()
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException("No user java implementation provided in 'trigger_AcceptEventAction_3013' operation");//$NON-NLS-1$
+		return value_trigger(self);
 	}
 
 	/**
-	 * @generated
+	 * @generated NOT
 	 */
 	private static List trigger_AcceptEventAction_3060(AcceptEventAction self) {
-		// TODO: implement this method to return value  
-		// for org.eclipse.uml2.uml.UMLPackage.eINSTANCE.getAcceptEventAction_Trigger()
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException("No user java implementation provided in 'trigger_AcceptEventAction_3060' operation");//$NON-NLS-1$
+		return value_trigger(self);
 	}
 
 	/**
