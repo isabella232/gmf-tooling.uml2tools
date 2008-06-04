@@ -118,7 +118,7 @@ public class GeneralizationGeneralReorientCommand extends EditElementCommand {
 	 * @generated NOT
 	 */
 	protected CommandResult reorientTarget() throws ExecutionException {
-		for (Generalization g: getAllGeneralizations()) {
+		for (Generalization g : getAllGeneralizations()) {
 			g.setGeneral(getNewTarget());
 		}
 		return CommandResult.newOKCommandResult(referenceOwner);
