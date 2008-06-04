@@ -2,7 +2,7 @@ Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: %pluginName
 Bundle-SymbolicName: org.eclipse.uml2.diagram.common;singleton:=true
-Bundle-Version: 0.7.1.qualifier
+Bundle-Version: 0.8.0.qualifier
 Bundle-Localization: plugin
 Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.uml2.uml;visibility:=reexport,
@@ -45,3 +45,4 @@ Export-Package: org.eclipse.uml2.diagram.common.actions,
  org.eclipse.uml2.diagram.common.sheet
 Bundle-Vendor: %providerName
 Bundle-ClassPath: .
+Bundle-ActivationPolicy: lazy
