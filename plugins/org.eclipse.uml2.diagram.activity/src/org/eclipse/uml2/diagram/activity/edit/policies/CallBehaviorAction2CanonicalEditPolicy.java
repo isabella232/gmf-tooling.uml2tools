@@ -46,7 +46,9 @@ public class CallBehaviorAction2CanonicalEditPolicy extends CanonicalEditPolicy 
 		switch (visualID) {
 		case OutputPin3EditPart.VISUAL_ID:
 		case InputPin4EditPart.VISUAL_ID:
-			return !semanticChildren.contains(view.getElement()) || visualID != UMLVisualIDRegistry.getNodeVisualID((View) getHost().getModel(), view.getElement());
+			if (!semanticChildren.contains(view.getElement())) {
+				return true;
+			}
 		}
 		return false;
 	}

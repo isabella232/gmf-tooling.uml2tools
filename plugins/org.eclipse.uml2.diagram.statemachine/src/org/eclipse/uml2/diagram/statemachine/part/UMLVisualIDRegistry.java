@@ -830,4 +830,249 @@ public class UMLVisualIDRegistry {
 		return false;
 	}
 
+	/**
+	 * @generated
+	 */
+	public static int getChildDescriptorVisualID(UMLNodeDescriptor container, EObject domainElement) {
+		if (domainElement == null) {
+			return -1;
+		}
+		switch (container.getVisualID()) {
+		case StateMachine2EditPart.VISUAL_ID:
+			if (UMLPackage.eINSTANCE.getRegion().isSuperTypeOf(domainElement.eClass())) {
+				return RegionEditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getPseudostate().isSuperTypeOf(domainElement.eClass()) && isPseudostate_3014((Pseudostate) domainElement)) {
+				return Pseudostate9EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getPseudostate().isSuperTypeOf(domainElement.eClass()) && isPseudostate_3015((Pseudostate) domainElement)) {
+				return Pseudostate10EditPart.VISUAL_ID;
+			}
+			break;
+		case RegionEditPart.VISUAL_ID:
+			if (UMLPackage.eINSTANCE.getState().isSuperTypeOf(domainElement.eClass()) && isState_3001((State) domainElement)) {
+				return StateEditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getState().isSuperTypeOf(domainElement.eClass()) && isState_3012((State) domainElement)) {
+				return State2EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getState().isSuperTypeOf(domainElement.eClass()) && isState_3016((State) domainElement)) {
+				return State3EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getFinalState().isSuperTypeOf(domainElement.eClass())) {
+				return FinalStateEditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getPseudostate().isSuperTypeOf(domainElement.eClass()) && isPseudostate_3004((Pseudostate) domainElement)) {
+				return PseudostateEditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getPseudostate().isSuperTypeOf(domainElement.eClass()) && isPseudostate_3005((Pseudostate) domainElement)) {
+				return Pseudostate2EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getPseudostate().isSuperTypeOf(domainElement.eClass()) && isPseudostate_3006((Pseudostate) domainElement)) {
+				return Pseudostate3EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getPseudostate().isSuperTypeOf(domainElement.eClass()) && isPseudostate_3007((Pseudostate) domainElement)) {
+				return Pseudostate4EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getPseudostate().isSuperTypeOf(domainElement.eClass()) && isPseudostate_3008((Pseudostate) domainElement)) {
+				return Pseudostate5EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getPseudostate().isSuperTypeOf(domainElement.eClass()) && isPseudostate_3009((Pseudostate) domainElement)) {
+				return Pseudostate6EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getPseudostate().isSuperTypeOf(domainElement.eClass()) && isPseudostate_3010((Pseudostate) domainElement)) {
+				return Pseudostate7EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getPseudostate().isSuperTypeOf(domainElement.eClass()) && isPseudostate_3011((Pseudostate) domainElement)) {
+				return Pseudostate8EditPart.VISUAL_ID;
+			}
+			break;
+		case StateEditPart.VISUAL_ID:
+			if (UMLPackage.eINSTANCE.getBehavior().isSuperTypeOf(domainElement.eClass()) && isBehavior_3019((Behavior) domainElement)) {
+				return BehaviorEditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getBehavior().isSuperTypeOf(domainElement.eClass()) && isBehavior_3020((Behavior) domainElement)) {
+				return Behavior2EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getBehavior().isSuperTypeOf(domainElement.eClass()) && isBehavior_3021((Behavior) domainElement)) {
+				return Behavior3EditPart.VISUAL_ID;
+			}
+			break;
+		case State2EditPart.VISUAL_ID:
+			if (UMLPackage.eINSTANCE.getRegion().isSuperTypeOf(domainElement.eClass())) {
+				return Region2EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getBehavior().isSuperTypeOf(domainElement.eClass()) && isBehavior_3019((Behavior) domainElement)) {
+				return BehaviorEditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getBehavior().isSuperTypeOf(domainElement.eClass()) && isBehavior_3020((Behavior) domainElement)) {
+				return Behavior2EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getBehavior().isSuperTypeOf(domainElement.eClass()) && isBehavior_3021((Behavior) domainElement)) {
+				return Behavior3EditPart.VISUAL_ID;
+			}
+			break;
+		case Region2EditPart.VISUAL_ID:
+			if (UMLPackage.eINSTANCE.getState().isSuperTypeOf(domainElement.eClass()) && isState_3001((State) domainElement)) {
+				return StateEditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getState().isSuperTypeOf(domainElement.eClass()) && isState_3012((State) domainElement)) {
+				return State2EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getState().isSuperTypeOf(domainElement.eClass()) && isState_3016((State) domainElement)) {
+				return State3EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getFinalState().isSuperTypeOf(domainElement.eClass())) {
+				return FinalStateEditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getPseudostate().isSuperTypeOf(domainElement.eClass()) && isPseudostate_3004((Pseudostate) domainElement)) {
+				return PseudostateEditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getPseudostate().isSuperTypeOf(domainElement.eClass()) && isPseudostate_3005((Pseudostate) domainElement)) {
+				return Pseudostate2EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getPseudostate().isSuperTypeOf(domainElement.eClass()) && isPseudostate_3006((Pseudostate) domainElement)) {
+				return Pseudostate3EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getPseudostate().isSuperTypeOf(domainElement.eClass()) && isPseudostate_3007((Pseudostate) domainElement)) {
+				return Pseudostate4EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getPseudostate().isSuperTypeOf(domainElement.eClass()) && isPseudostate_3008((Pseudostate) domainElement)) {
+				return Pseudostate5EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getPseudostate().isSuperTypeOf(domainElement.eClass()) && isPseudostate_3009((Pseudostate) domainElement)) {
+				return Pseudostate6EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getPseudostate().isSuperTypeOf(domainElement.eClass()) && isPseudostate_3010((Pseudostate) domainElement)) {
+				return Pseudostate7EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getPseudostate().isSuperTypeOf(domainElement.eClass()) && isPseudostate_3011((Pseudostate) domainElement)) {
+				return Pseudostate8EditPart.VISUAL_ID;
+			}
+			break;
+		case State3EditPart.VISUAL_ID:
+			if (UMLPackage.eINSTANCE.getRegion().isSuperTypeOf(domainElement.eClass())) {
+				return Region2EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getConnectionPointReference().isSuperTypeOf(domainElement.eClass()) && isConnectionPointReference_3017((ConnectionPointReference) domainElement)) {
+				return ConnectionPointReferenceEditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getConnectionPointReference().isSuperTypeOf(domainElement.eClass()) && isConnectionPointReference_3018((ConnectionPointReference) domainElement)) {
+				return ConnectionPointReference2EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getBehavior().isSuperTypeOf(domainElement.eClass()) && isBehavior_3019((Behavior) domainElement)) {
+				return BehaviorEditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getBehavior().isSuperTypeOf(domainElement.eClass()) && isBehavior_3020((Behavior) domainElement)) {
+				return Behavior2EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getBehavior().isSuperTypeOf(domainElement.eClass()) && isBehavior_3021((Behavior) domainElement)) {
+				return Behavior3EditPart.VISUAL_ID;
+			}
+			break;
+		case StateMachineEditPart.VISUAL_ID:
+			if (UMLPackage.eINSTANCE.getState().isSuperTypeOf(domainElement.eClass()) && isState_3001((State) domainElement)) {
+				return StateEditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getState().isSuperTypeOf(domainElement.eClass()) && isState_3012((State) domainElement)) {
+				return State2EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getState().isSuperTypeOf(domainElement.eClass()) && isState_3016((State) domainElement)) {
+				return State3EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getFinalState().isSuperTypeOf(domainElement.eClass())) {
+				return FinalStateEditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getPseudostate().isSuperTypeOf(domainElement.eClass()) && isPseudostate_3004((Pseudostate) domainElement)) {
+				return PseudostateEditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getPseudostate().isSuperTypeOf(domainElement.eClass()) && isPseudostate_3005((Pseudostate) domainElement)) {
+				return Pseudostate2EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getPseudostate().isSuperTypeOf(domainElement.eClass()) && isPseudostate_3006((Pseudostate) domainElement)) {
+				return Pseudostate3EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getPseudostate().isSuperTypeOf(domainElement.eClass()) && isPseudostate_3007((Pseudostate) domainElement)) {
+				return Pseudostate4EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getPseudostate().isSuperTypeOf(domainElement.eClass()) && isPseudostate_3008((Pseudostate) domainElement)) {
+				return Pseudostate5EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getPseudostate().isSuperTypeOf(domainElement.eClass()) && isPseudostate_3009((Pseudostate) domainElement)) {
+				return Pseudostate6EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getPseudostate().isSuperTypeOf(domainElement.eClass()) && isPseudostate_3010((Pseudostate) domainElement)) {
+				return Pseudostate7EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getPseudostate().isSuperTypeOf(domainElement.eClass()) && isPseudostate_3011((Pseudostate) domainElement)) {
+				return Pseudostate8EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getBehavior().isSuperTypeOf(domainElement.eClass()) && isBehavior_3019((Behavior) domainElement)) {
+				return BehaviorEditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getBehavior().isSuperTypeOf(domainElement.eClass()) && isBehavior_3020((Behavior) domainElement)) {
+				return Behavior2EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getBehavior().isSuperTypeOf(domainElement.eClass()) && isBehavior_3021((Behavior) domainElement)) {
+				return Behavior3EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getBehavior().isSuperTypeOf(domainElement.eClass()) && isBehavior_3019((Behavior) domainElement)) {
+				return BehaviorEditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getBehavior().isSuperTypeOf(domainElement.eClass()) && isBehavior_3020((Behavior) domainElement)) {
+				return Behavior2EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getBehavior().isSuperTypeOf(domainElement.eClass()) && isBehavior_3021((Behavior) domainElement)) {
+				return Behavior3EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getState().isSuperTypeOf(domainElement.eClass()) && isState_3001((State) domainElement)) {
+				return StateEditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getState().isSuperTypeOf(domainElement.eClass()) && isState_3012((State) domainElement)) {
+				return State2EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getState().isSuperTypeOf(domainElement.eClass()) && isState_3016((State) domainElement)) {
+				return State3EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getFinalState().isSuperTypeOf(domainElement.eClass())) {
+				return FinalStateEditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getPseudostate().isSuperTypeOf(domainElement.eClass()) && isPseudostate_3004((Pseudostate) domainElement)) {
+				return PseudostateEditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getPseudostate().isSuperTypeOf(domainElement.eClass()) && isPseudostate_3005((Pseudostate) domainElement)) {
+				return Pseudostate2EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getPseudostate().isSuperTypeOf(domainElement.eClass()) && isPseudostate_3006((Pseudostate) domainElement)) {
+				return Pseudostate3EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getPseudostate().isSuperTypeOf(domainElement.eClass()) && isPseudostate_3007((Pseudostate) domainElement)) {
+				return Pseudostate4EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getPseudostate().isSuperTypeOf(domainElement.eClass()) && isPseudostate_3008((Pseudostate) domainElement)) {
+				return Pseudostate5EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getPseudostate().isSuperTypeOf(domainElement.eClass()) && isPseudostate_3009((Pseudostate) domainElement)) {
+				return Pseudostate6EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getPseudostate().isSuperTypeOf(domainElement.eClass()) && isPseudostate_3010((Pseudostate) domainElement)) {
+				return Pseudostate7EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getPseudostate().isSuperTypeOf(domainElement.eClass()) && isPseudostate_3011((Pseudostate) domainElement)) {
+				return Pseudostate8EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getBehavior().isSuperTypeOf(domainElement.eClass()) && isBehavior_3019((Behavior) domainElement)) {
+				return BehaviorEditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getBehavior().isSuperTypeOf(domainElement.eClass()) && isBehavior_3020((Behavior) domainElement)) {
+				return Behavior2EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getBehavior().isSuperTypeOf(domainElement.eClass()) && isBehavior_3021((Behavior) domainElement)) {
+				return Behavior3EditPart.VISUAL_ID;
+			}
+			break;
+		}
+		return -1;
+	}
+
 }
