@@ -9,10 +9,18 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Set;
 
+import org.eclipse.core.commands.ExecutionException;
 import org.eclipse.core.runtime.IAdaptable;
+import org.eclipse.core.runtime.IProgressMonitor;
+import org.eclipse.core.runtime.IStatus;
+import org.eclipse.core.runtime.NullProgressMonitor;
+import org.eclipse.core.runtime.Status;
 import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.transaction.Transaction;
+import org.eclipse.emf.workspace.AbstractEMFOperation;
 import org.eclipse.gef.EditPart;
 import org.eclipse.gef.commands.Command;
+import org.eclipse.gmf.runtime.common.core.util.StringStatics;
 import org.eclipse.gmf.runtime.diagram.core.util.ViewUtil;
 import org.eclipse.gmf.runtime.diagram.ui.commands.DeferredLayoutCommand;
 import org.eclipse.gmf.runtime.diagram.ui.commands.ICommandProxy;
@@ -54,6 +62,7 @@ import org.eclipse.uml2.diagram.component.edit.parts.PortEditPart;
 import org.eclipse.uml2.diagram.component.edit.parts.PortOnClassEditPart;
 import org.eclipse.uml2.diagram.component.edit.parts.PropertyEditPart;
 import org.eclipse.uml2.diagram.component.links.UMLInterfaceLinkManager;
+import org.eclipse.uml2.diagram.component.part.UMLDiagramEditorPlugin;
 import org.eclipse.uml2.diagram.component.part.UMLDiagramUpdater;
 import org.eclipse.uml2.diagram.component.part.UMLLinkDescriptor;
 import org.eclipse.uml2.diagram.component.part.UMLNodeDescriptor;
@@ -96,25 +105,48 @@ public class PackageCanonicalEditPolicy extends CanonicalConnectionEditPolicy {
 		if (view.getEAnnotation("Shortcut") != null) {//$NON-NLS-1$
 			return UMLDiagramUpdater.isShortcutOrphaned(view);
 		}
-		int actualID = UMLVisualIDRegistry.getVisualID(view);
+		int visualID = UMLVisualIDRegistry.getVisualID(view);
 		int suggestedID = UMLVisualIDRegistry.getNodeVisualID((View) getHost().getModel(), view.getElement());
-		switch (actualID) {
+		switch (visualID) {
 		case ComponentEditPart.VISUAL_ID:
 		case Artifact2EditPart.VISUAL_ID:
 		case Interface2EditPart.VISUAL_ID:
 		case Package2EditPart.VISUAL_ID:
 		case Package3EditPart.VISUAL_ID:
-			return !semanticChildren.contains(view.getElement()) || actualID != suggestedID;
+			if (!semanticChildren.contains(view.getElement())) {
+				return true;
+			}
+			EObject domainModelElement = view.getElement();
+			if (visualID != UMLVisualIDRegistry.getNodeVisualID((View) getHost().getModel(), domainModelElement)) {
+				List createdViews = createViews(Collections.singletonList(domainModelElement));
+				assert createdViews.size() == 1;
+				final View createdView = (View) ((IAdaptable) createdViews.get(0)).getAdapter(View.class);
+				if (createdView != null) {
+					try {
+						new AbstractEMFOperation(host().getEditingDomain(), StringStatics.BLANK, Collections.singletonMap(Transaction.OPTION_UNPROTECTED, Boolean.TRUE)) {
+
+							protected IStatus doExecute(IProgressMonitor monitor, IAdaptable info) throws ExecutionException {
+								populateViewProperties(view, createdView);
+								return Status.OK_STATUS;
+							}
+						}.execute(new NullProgressMonitor(), null);
+					} catch (ExecutionException e) {
+						UMLDiagramEditorPlugin.getInstance().logError("Error while copyign view information to newly created view", e); //$NON-NLS-1$
+					}
+				}
+				deleteViews(Collections.singletonList(view).iterator());
+			}
+			break;
 		case Class2EditPart.VISUAL_ID:
 			if (!semanticChildren.contains(view.getElement())) {
 				return true;
 			}
-			return (actualID != suggestedID) && (suggestedID != ClassDiagramNotationClassEditPart.VISUAL_ID) && true;
+			return (visualID != suggestedID) && (suggestedID != ClassDiagramNotationClassEditPart.VISUAL_ID);
 		case ClassDiagramNotationClassEditPart.VISUAL_ID:
 			if (!semanticChildren.contains(view.getElement())) {
 				return true;
 			}
-			return (actualID != suggestedID) && (suggestedID != Class2EditPart.VISUAL_ID) && true;
+			return (visualID != suggestedID) && (suggestedID != Class2EditPart.VISUAL_ID);
 		}
 		return false;
 	}

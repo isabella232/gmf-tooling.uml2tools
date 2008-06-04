@@ -9,10 +9,18 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Set;
 
+import org.eclipse.core.commands.ExecutionException;
 import org.eclipse.core.runtime.IAdaptable;
+import org.eclipse.core.runtime.IProgressMonitor;
+import org.eclipse.core.runtime.IStatus;
+import org.eclipse.core.runtime.NullProgressMonitor;
+import org.eclipse.core.runtime.Status;
 import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.transaction.Transaction;
+import org.eclipse.emf.workspace.AbstractEMFOperation;
 import org.eclipse.gef.EditPart;
 import org.eclipse.gef.commands.Command;
+import org.eclipse.gmf.runtime.common.core.util.StringStatics;
 import org.eclipse.gmf.runtime.diagram.core.util.ViewUtil;
 import org.eclipse.gmf.runtime.diagram.ui.commands.DeferredLayoutCommand;
 import org.eclipse.gmf.runtime.diagram.ui.commands.ICommandProxy;
@@ -48,6 +56,7 @@ import org.eclipse.uml2.diagram.usecase.edit.parts.SubjectEditPart;
 import org.eclipse.uml2.diagram.usecase.edit.parts.UseCaseAsClassEditPart;
 import org.eclipse.uml2.diagram.usecase.edit.parts.UseCaseEditPart;
 import org.eclipse.uml2.diagram.usecase.edit.parts.UseCaseinPackageEditPart;
+import org.eclipse.uml2.diagram.usecase.part.UMLDiagramEditorPlugin;
 import org.eclipse.uml2.diagram.usecase.part.UMLDiagramUpdater;
 import org.eclipse.uml2.diagram.usecase.part.UMLLinkDescriptor;
 import org.eclipse.uml2.diagram.usecase.part.UMLNodeDescriptor;
@@ -96,34 +105,57 @@ public class PackageCanonicalEditPolicy extends CanonicalConnectionEditPolicy {
 	 * @generated
 	 */
 	protected boolean isOrphaned(Collection semanticChildren, final View view) {
-		int actualID = UMLVisualIDRegistry.getVisualID(view);
+		int visualID = UMLVisualIDRegistry.getVisualID(view);
 		int suggestedID = UMLVisualIDRegistry.getNodeVisualID((View) getHost().getModel(), view.getElement());
-		switch (actualID) {
+		switch (visualID) {
 		case DiagramHeaderEditPart.VISUAL_ID:
 		case SubjectEditPart.VISUAL_ID:
 		case NestedPackageEditPart.VISUAL_ID:
 		case ConstraintEditPart.VISUAL_ID:
-			return !semanticChildren.contains(view.getElement()) || actualID != suggestedID;
+			if (!semanticChildren.contains(view.getElement())) {
+				return true;
+			}
+			EObject domainModelElement = view.getElement();
+			if (visualID != UMLVisualIDRegistry.getNodeVisualID((View) getHost().getModel(), domainModelElement)) {
+				List createdViews = createViews(Collections.singletonList(domainModelElement));
+				assert createdViews.size() == 1;
+				final View createdView = (View) ((IAdaptable) createdViews.get(0)).getAdapter(View.class);
+				if (createdView != null) {
+					try {
+						new AbstractEMFOperation(host().getEditingDomain(), StringStatics.BLANK, Collections.singletonMap(Transaction.OPTION_UNPROTECTED, Boolean.TRUE)) {
+
+							protected IStatus doExecute(IProgressMonitor monitor, IAdaptable info) throws ExecutionException {
+								populateViewProperties(view, createdView);
+								return Status.OK_STATUS;
+							}
+						}.execute(new NullProgressMonitor(), null);
+					} catch (ExecutionException e) {
+						UMLDiagramEditorPlugin.getInstance().logError("Error while copyign view information to newly created view", e); //$NON-NLS-1$
+					}
+				}
+				deleteViews(Collections.singletonList(view).iterator());
+			}
+			break;
 		case ActorEditPart.VISUAL_ID:
 			if (!semanticChildren.contains(view.getElement())) {
 				return true;
 			}
-			return (actualID != suggestedID) && (suggestedID != ActorAsRectangleEditPart.VISUAL_ID) && true;
+			return (visualID != suggestedID) && (suggestedID != ActorAsRectangleEditPart.VISUAL_ID);
 		case ActorAsRectangleEditPart.VISUAL_ID:
 			if (!semanticChildren.contains(view.getElement())) {
 				return true;
 			}
-			return (actualID != suggestedID) && (suggestedID != ActorEditPart.VISUAL_ID) && true;
+			return (visualID != suggestedID) && (suggestedID != ActorEditPart.VISUAL_ID);
 		case UseCaseEditPart.VISUAL_ID:
 			if (!semanticChildren.contains(view.getElement())) {
 				return true;
 			}
-			return (actualID != suggestedID) && (suggestedID != UseCaseAsClassEditPart.VISUAL_ID) && true;
+			return (visualID != suggestedID) && (suggestedID != UseCaseAsClassEditPart.VISUAL_ID);
 		case UseCaseAsClassEditPart.VISUAL_ID:
 			if (!semanticChildren.contains(view.getElement())) {
 				return true;
 			}
-			return (actualID != suggestedID) && (suggestedID != UseCaseEditPart.VISUAL_ID) && true;
+			return (visualID != suggestedID) && (suggestedID != UseCaseEditPart.VISUAL_ID);
 		}
 		return false;
 	}

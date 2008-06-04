@@ -156,9 +156,9 @@ public class PackageCanonicalEditPolicy extends CanonicalConnectionEditPolicy {
 		if (view.getEAnnotation("Shortcut") != null) {//$NON-NLS-1$
 			return UMLDiagramUpdater.isShortcutOrphaned(view);
 		}
-		int actualID = UMLVisualIDRegistry.getVisualID(view);
+		int visualID = UMLVisualIDRegistry.getVisualID(view);
 		int suggestedID = UMLVisualIDRegistry.getNodeVisualID((View) getHost().getModel(), view.getElement());
-		switch (actualID) {
+		switch (visualID) {
 		case Class2EditPart.VISUAL_ID:
 		case DataType2EditPart.VISUAL_ID:
 		case PrimitiveType2EditPart.VISUAL_ID:
@@ -167,47 +167,50 @@ public class PackageCanonicalEditPolicy extends CanonicalConnectionEditPolicy {
 		case DependencyEditPart.VISUAL_ID:
 		case GeneralizationSetEditPart.VISUAL_ID:
 		case Package4EditPart.VISUAL_ID:
-			return !semanticChildren.contains(view.getElement()) || actualID != suggestedID;
+			if (!semanticChildren.contains(view.getElement())) {
+				return true;
+			}
+			break;
 		case Package2EditPart.VISUAL_ID:
 			if (!semanticChildren.contains(view.getElement())) {
 				return true;
 			}
-			return (actualID != suggestedID) && (suggestedID != PackageAsFrameEditPart.VISUAL_ID) && true;
+			return (visualID != suggestedID) && (suggestedID != PackageAsFrameEditPart.VISUAL_ID);
 		case AssociationClass2EditPart.VISUAL_ID:
 			if (!semanticChildren.contains(view.getElement())) {
 				return true;
 			}
-			return (actualID != suggestedID) && (suggestedID != AssociationClassRhombEditPart.VISUAL_ID) && true;
+			return (visualID != suggestedID) && (suggestedID != AssociationClassRhombEditPart.VISUAL_ID);
 		case InterfaceEditPart.VISUAL_ID:
 			if (!semanticChildren.contains(view.getElement())) {
 				return true;
 			}
-			return (actualID != suggestedID) && (suggestedID != Interface2EditPart.VISUAL_ID) && true;
+			return (visualID != suggestedID) && (suggestedID != Interface2EditPart.VISUAL_ID);
 		case InstanceSpecification2EditPart.VISUAL_ID:
 			if (!semanticChildren.contains(view.getElement())) {
 				return true;
 			}
-			return (actualID != suggestedID) && (suggestedID != InstanceSpecification4EditPart.VISUAL_ID) && true;
+			return (visualID != suggestedID) && (suggestedID != InstanceSpecification4EditPart.VISUAL_ID);
 		case Interface2EditPart.VISUAL_ID:
 			if (!semanticChildren.contains(view.getElement())) {
 				return true;
 			}
-			return (actualID != suggestedID) && (suggestedID != InterfaceEditPart.VISUAL_ID) && true;
+			return (visualID != suggestedID) && (suggestedID != InterfaceEditPart.VISUAL_ID);
 		case AssociationClassRhombEditPart.VISUAL_ID:
 			if (!semanticChildren.contains(view.getElement())) {
 				return true;
 			}
-			return (actualID != suggestedID) && (suggestedID != AssociationClass2EditPart.VISUAL_ID) && true;
+			return (visualID != suggestedID) && (suggestedID != AssociationClass2EditPart.VISUAL_ID);
 		case PackageAsFrameEditPart.VISUAL_ID:
 			if (!semanticChildren.contains(view.getElement())) {
 				return true;
 			}
-			return (actualID != suggestedID) && (suggestedID != Package2EditPart.VISUAL_ID) && true;
+			return (visualID != suggestedID) && (suggestedID != Package2EditPart.VISUAL_ID);
 		case InstanceSpecification4EditPart.VISUAL_ID:
 			if (!semanticChildren.contains(view.getElement())) {
 				return true;
 			}
-			return (actualID != suggestedID) && (suggestedID != InstanceSpecification2EditPart.VISUAL_ID) && true;
+			return (visualID != suggestedID) && (suggestedID != InstanceSpecification2EditPart.VISUAL_ID);
 		}
 		return false;
 	}
