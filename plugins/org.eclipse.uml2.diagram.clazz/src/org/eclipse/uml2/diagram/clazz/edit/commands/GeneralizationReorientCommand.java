@@ -90,10 +90,10 @@ public class GeneralizationReorientCommand extends EditElementCommand {
 	 */
 	protected boolean canReorientTarget() {
 		if (newEnd instanceof GeneralizationSet) {
-			return canReorientTarget(oldEnd, getGeneralClassifier((GeneralizationSet)newEnd));
+			return canReorientTarget(oldEnd, getGeneralClassifier((GeneralizationSet) newEnd));
 		}
 		if (newEnd instanceof Generalization) {
-			return canReorientTarget(oldEnd, ((Generalization)newEnd).getGeneral());
+			return canReorientTarget(oldEnd, ((Generalization) newEnd).getGeneral());
 		}
 		return canReorientTargetGen();
 	}
@@ -116,7 +116,7 @@ public class GeneralizationReorientCommand extends EditElementCommand {
 		return UMLBaseItemSemanticEditPolicy.LinkConstraints.canExistGeneralization_4001(source, newTarget);
 	}
 
-		/**
+	/**
 	 * @generated
 	 */
 	protected CommandResult doExecuteWithResult(IProgressMonitor monitor, IAdaptable info) throws ExecutionException {
@@ -148,12 +148,12 @@ public class GeneralizationReorientCommand extends EditElementCommand {
 	protected CommandResult reorientTarget() throws ExecutionException {
 		getLink().setGeneral(getNewTarget());
 		if (newEnd instanceof Generalization) {
-			GeneralizationSet gs = (GeneralizationSet)getNewTarget().getNearestPackage().createPackagedElement("", org.eclipse.uml2.uml.UMLPackage.eINSTANCE.getGeneralizationSet());
-			gs.getGeneralizations().add((Generalization)newEnd);
+			GeneralizationSet gs = (GeneralizationSet) getNewTarget().getNearestPackage().createPackagedElement("", org.eclipse.uml2.uml.UMLPackage.eINSTANCE.getGeneralizationSet());
+			gs.getGeneralizations().add((Generalization) newEnd);
 			gs.getGeneralizations().add(getLink());
 		}
 		if (newEnd instanceof GeneralizationSet) {
-			((GeneralizationSet)newEnd).getGeneralizations().add(getLink());
+			((GeneralizationSet) newEnd).getGeneralizations().add(getLink());
 		}
 		return CommandResult.newOKCommandResult(getLink());
 	}
@@ -192,20 +192,20 @@ public class GeneralizationReorientCommand extends EditElementCommand {
 	 */
 	protected Classifier getNewTarget() {
 		if (newEnd instanceof GeneralizationSet) {
-			return getGeneralClassifier((GeneralizationSet)newEnd);
+			return getGeneralClassifier((GeneralizationSet) newEnd);
 		}
 		if (newEnd instanceof Generalization) {
-			return ((Generalization)newEnd).getGeneral();
+			return ((Generalization) newEnd).getGeneral();
 		}
 		return (Classifier) newEnd;
 	}
-	
+
 	/**
 	 * @NOT-generated
 	 * #215340 Generalization redirecting to GeneralizationSet
 	 */
 	private Classifier getGeneralClassifier(GeneralizationSet gs) {
-		EList<Generalization> generalizations = ((GeneralizationSet)newEnd).getGeneralizations();
+		EList<Generalization> generalizations = ((GeneralizationSet) newEnd).getGeneralizations();
 		if (generalizations.isEmpty()) {
 			return null;
 		}
