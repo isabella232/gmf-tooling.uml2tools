@@ -24,11 +24,7 @@
 		«ELSE»
 	«EXPAND xpt::Common::generatedMemberComment»
 protected boolean isOrphaned(java.util.Collection semanticChildren, final org.eclipse.gmf.runtime.notation.View view) {
-	«IF !this.getDiagram().containsShortcutsTo.isEmpty()-»
-	if (view.getEAnnotation("Shortcut") != null){
-		return «editorGen.diagramUpdater.getDiagramUpdaterQualifiedClassName()».isShortcutOrphaned(view);
-	}
-	«ENDIF-»
+	«EXPAND xpt::diagram::updater::containerBaseCanonicalMethods::checkShortcutProperty-»
 	int actualID = «EXPAND xpt::editor::VisualIDRegistry::getVisualIDMethodCall FOR getDiagram()»(view);
 	int suggestedID = «EXPAND xpt::editor::VisualIDRegistry::getNodeVisualIDMethodCall FOR getDiagram()»((org.eclipse.gmf.runtime.notation.View) getHost().getModel(), view.getElement());
 	switch (actualID) {

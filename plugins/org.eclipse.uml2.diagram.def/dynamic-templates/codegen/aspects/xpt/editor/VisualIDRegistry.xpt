@@ -97,4 +97,43 @@
 		}
 		return false;
 	}
+	
+	«EXPAND getChildDescriptorVisualID»
 «ENDAROUND»
+
+«DEFINE getChildDescriptorVisualID FOR gmfgen::GenDiagram-»
+«LET getDiagram().editorGen.diagramUpdater.getNodeDescriptorQualifiedClassName() AS descriptorFQN-»
+	«EXPAND xpt::Common::generatedMemberComment»
+public static int «EXPAND getChildDescriptorVisualIDMethodName»(«descriptorFQN» container, org.eclipse.emf.ecore.EObject domainElement) {
+	if (domainElement == null) {
+		«EXPAND xpt::editor::VisualIDRegistry::unrecognizedVID-»
+	}
+	switch (container.getVisualID()) {
+		«EXPAND caseDomainDescriptorContainer FOREACH getAllContainers()-»
+	}
+	«EXPAND xpt::editor::VisualIDRegistry::unrecognizedVID-»
+}
+«ENDLET»
+«ENDDEFINE»
+
+«DEFINE caseDomainDescriptorContainer FOR gmfgen::GenCompartment-»
+«REM»Do nothing -- compartments are processed inside their nodes«ENDREM»«-»
+«ENDDEFINE»
+
+«DEFINE caseDomainDescriptorContainer FOR gmfgen::GenContainerBase-»
+	«IF getContainedSemanticNodes(this).size() > 0 || this.compartments.size() > 0-»
+«EXPAND xpt::Common::caseVisualID»
+	«FOREACH getContainedSemanticNodes(this) AS nextDirectChild-»
+		«IF !isDiagramHeader(nextDirectChild)-»
+			«EXPAND xpt::editor::VisualIDRegistry::returnVisualID FOR nextDirectChild-»
+		«ENDIF-»
+	«ENDFOREACH-»
+	«FOREACH this.compartments AS nextCompartment-»
+		«EXPAND xpt::editor::VisualIDRegistry::returnVisualID FOREACH getContainedSemanticNodes(nextCompartment)-»
+	«ENDFOREACH-»
+	break;
+	«ENDIF-»
+«ENDDEFINE»
+
+«DEFINE getChildDescriptorVisualIDMethodName FOR gmfgen::GenDiagram»getChildDescriptorVisualID«ENDDEFINE»
+
