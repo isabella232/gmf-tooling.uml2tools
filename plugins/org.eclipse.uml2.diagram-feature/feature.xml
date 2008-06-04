@@ -132,10 +132,11 @@
          version="0.0.0"
          unpack="false"/>
 
-   <!--plugin
+   <plugin
          id="org.eclipse.uml2.diagram.def"
          download-size="0"
          install-size="0"
-         version="0.0.0"/-->
+         version="0.0.0"
+         unpack="false"/>
 
 </feature>
