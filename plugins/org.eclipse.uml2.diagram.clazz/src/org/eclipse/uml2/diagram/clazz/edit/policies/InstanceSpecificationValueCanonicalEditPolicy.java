@@ -47,7 +47,9 @@ public class InstanceSpecificationValueCanonicalEditPolicy extends CanonicalEdit
 		switch (visualID) {
 		case LiteralStringEditPart.VISUAL_ID:
 		case ExpressionEditPart.VISUAL_ID:
-			return !semanticChildren.contains(view.getElement()) || visualID != UMLVisualIDRegistry.getNodeVisualID((View) getHost().getModel(), view.getElement());
+			if (!semanticChildren.contains(view.getElement())) {
+				return true;
+			}
 		}
 		return false;
 	}

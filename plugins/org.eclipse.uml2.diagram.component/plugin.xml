@@ -128,54 +128,33 @@
    <extension point="org.eclipse.gmf.runtime.common.ui.services.action.contributionItemProviders">
       <?gmfgen generated="true"?>
       <contributionItemProvider
-            class="org.eclipse.gmf.runtime.diagram.ui.providers.DiagramContributionItemProvider"
-            checkPluginLoaded="false">
-         <Priority name="Low"/>
-         <popupContribution class="org.eclipse.gmf.runtime.diagram.ui.providers.DiagramContextMenuProvider">
-            <popupStructuredContributionCriteria objectClass="org.eclipse.uml2.diagram.component.edit.parts.InterfaceName2EditPart"/>
-            <popupPredefinedItem id="deleteFromDiagramAction" remove="true"/>
-            <popupPredefinedItem id="deleteFromModelAction" remove="true"/>
-         </popupContribution>
-         <popupContribution class="org.eclipse.gmf.runtime.diagram.ui.providers.DiagramContextMenuProvider">
-            <popupStructuredContributionCriteria objectClass="org.eclipse.uml2.diagram.component.edit.parts.PortNameEditPart"/>
-            <popupPredefinedItem id="deleteFromDiagramAction" remove="true"/>
-            <popupPredefinedItem id="deleteFromModelAction" remove="true"/>
-         </popupContribution>
-         <popupContribution class="org.eclipse.gmf.runtime.diagram.ui.providers.DiagramContextMenuProvider">
-            <popupStructuredContributionCriteria objectClass="org.eclipse.uml2.diagram.component.edit.parts.InterfaceNameEditPart"/>
-            <popupPredefinedItem id="deleteFromDiagramAction" remove="true"/>
-            <popupPredefinedItem id="deleteFromModelAction" remove="true"/>
-         </popupContribution>
-         <popupContribution class="org.eclipse.gmf.runtime.diagram.ui.providers.DiagramContextMenuProvider">
-            <popupStructuredContributionCriteria objectClass="org.eclipse.uml2.diagram.component.edit.parts.PortName2EditPart"/>
-            <popupPredefinedItem id="deleteFromDiagramAction" remove="true"/>
-            <popupPredefinedItem id="deleteFromModelAction" remove="true"/>
-         </popupContribution>
-         <popupContribution class="org.eclipse.gmf.runtime.diagram.ui.providers.DiagramContextMenuProvider">
-            <popupStructuredContributionCriteria objectClass="org.eclipse.uml2.diagram.component.edit.parts.PortProvidedEditPart"/>
-            <popupAction path="/editGroup" id="deleteFromModelAction"/>
-            <popupPredefinedItem id="deleteFromDiagramAction" remove="true"/>
-         </popupContribution>
-         <popupContribution class="org.eclipse.gmf.runtime.diagram.ui.providers.DiagramContextMenuProvider">
-            <popupStructuredContributionCriteria objectClass="org.eclipse.uml2.diagram.component.edit.parts.PortRequiredEditPart"/>
-            <popupAction path="/editGroup" id="deleteFromModelAction"/>
-            <popupPredefinedItem id="deleteFromDiagramAction" remove="true"/>
-         </popupContribution>
-         <popupContribution class="org.eclipse.gmf.runtime.diagram.ui.providers.DiagramContextMenuProvider">
-            <popupStructuredContributionCriteria objectClass="org.eclipse.uml2.diagram.component.edit.parts.ComponentRequiredEditPart"/>
-            <popupAction path="/editGroup" id="deleteFromModelAction"/>
-            <popupPredefinedItem id="deleteFromDiagramAction" remove="true"/>
-         </popupContribution>
-         <popupContribution class="org.eclipse.gmf.runtime.diagram.ui.providers.DiagramContextMenuProvider">
-            <popupStructuredContributionCriteria objectClass="org.eclipse.uml2.diagram.component.edit.parts.DependencyNameEditPart"/>
-            <popupPredefinedItem id="deleteFromDiagramAction" remove="true"/>
-            <popupPredefinedItem id="deleteFromModelAction" remove="true"/>
-         </popupContribution>
-         <popupContribution class="org.eclipse.gmf.runtime.diagram.ui.providers.DiagramContextMenuProvider">
-            <popupStructuredContributionCriteria objectClass="org.eclipse.uml2.diagram.component.edit.parts.AssemblyConnectorEndRoleEditPart"/>
-            <popupAction path="/editGroup" id="deleteFromModelAction"/>
-            <popupPredefinedItem id="deleteFromDiagramAction" remove="true"/>
-         </popupContribution>
+            checkPluginLoaded="true"
+            class="org.eclipse.uml2.diagram.component.action.Class2ContributionItemProvider">
+         <Priority name="Medium"/>
+		 <popupContribution
+               class="org.eclipse.gmf.runtime.diagram.ui.providers.DiagramContextMenuProvider">
+			 <popupMenuGroup
+                  id="ChangeNotation"
+                  path="/propertiesGroup">
+             </popupMenuGroup>
+             <popupMenu
+                   id="ChangeNotationMenu"
+                   path="/ChangeNotation">
+             </popupMenu>                        
+             <popupMenuGroup
+                   id="ChangeNotationGroup"
+                   path="/ChangeNotationMenu/">
+             </popupMenuGroup>
+							
+			<popupAction
+				path="/ChangeNotationMenu/ChangeNotationGroup"
+				id="set_ClassDiagramNotationClass_notation">
+			</popupAction>            
+				<popupStructuredContributionCriteria
+                   objectClass="org.eclipse.uml2.diagram.component.edit.parts.Class2EditPart"
+                   objectCount="1">
+             </popupStructuredContributionCriteria>
+		 </popupContribution>
       </contributionItemProvider>
    </extension>
 
@@ -836,38 +815,6 @@
       <?gmfgen generated="true"?>
       <contributionItemProvider
             checkPluginLoaded="true"
-            class="org.eclipse.uml2.diagram.component.action.Class2ContributionItemProvider">
-         <Priority name="Medium"/>
-		 <popupContribution
-               class="org.eclipse.gmf.runtime.diagram.ui.providers.DiagramContextMenuProvider">
-			 <popupMenuGroup
-                  id="ChangeNotation"
-                  path="/propertiesGroup">
-             </popupMenuGroup>
-             <popupMenu
-                   id="ChangeNotationMenu"
-                   path="/ChangeNotation">
-             </popupMenu>                        
-             <popupMenuGroup
-                   id="ChangeNotationGroup"
-                   path="/ChangeNotationMenu/">
-             </popupMenuGroup>
-							
-			<popupAction
-				path="/ChangeNotationMenu/ChangeNotationGroup"
-				id="set_ClassDiagramNotationClass_notation">
-			</popupAction>            
-				<popupStructuredContributionCriteria
-                   objectClass="org.eclipse.uml2.diagram.component.edit.parts.Class2EditPart"
-                   objectCount="1">
-             </popupStructuredContributionCriteria>
-		 </popupContribution>
-      </contributionItemProvider>
-   </extension>
-<extension point="org.eclipse.gmf.runtime.common.ui.services.action.contributionItemProviders">
-      <?gmfgen generated="true"?>
-      <contributionItemProvider
-            checkPluginLoaded="true"
             class="org.eclipse.uml2.diagram.component.action.ClassDiagramNotationClassContributionItemProvider">
          <Priority name="Medium"/>
 		 <popupContribution
@@ -895,7 +842,8 @@
              </popupStructuredContributionCriteria>
 		 </popupContribution>
       </contributionItemProvider>
-   </extension><extension point="org.eclipse.ui.preferencePages">
+   </extension>
+<extension point="org.eclipse.ui.preferencePages">
       <?gmfgen generated="true"?>
       <page
             name="%preferences.icons"

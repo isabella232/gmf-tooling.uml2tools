@@ -498,4 +498,101 @@ public class UMLVisualIDRegistry {
 		}
 		return false;
 	}
+
+	/**
+	 * @generated
+	 */
+	public static int getChildDescriptorVisualID(UMLNodeDescriptor container, EObject domainElement) {
+		if (domainElement == null) {
+			return -1;
+		}
+		switch (container.getVisualID()) {
+		case DiagramHeaderEditPart.VISUAL_ID:
+			if (UMLPackage.eINSTANCE.getElementImport().isSuperTypeOf(domainElement.eClass())) {
+				return ElementImportEditPart.VISUAL_ID;
+			}
+			break;
+		case UseCaseEditPart.VISUAL_ID:
+			if (UMLPackage.eINSTANCE.getExtensionPoint().isSuperTypeOf(domainElement.eClass())) {
+				return ExtensionPointEditPart.VISUAL_ID;
+			}
+			break;
+		case UseCaseAsClassEditPart.VISUAL_ID:
+			if (UMLPackage.eINSTANCE.getExtensionPoint().isSuperTypeOf(domainElement.eClass())) {
+				return ExtensionPoint2EditPart.VISUAL_ID;
+			}
+			break;
+		case SubjectEditPart.VISUAL_ID:
+			if (UMLPackage.eINSTANCE.getUseCase().isSuperTypeOf(domainElement.eClass())) {
+				return InnerUseCaseEditPart.VISUAL_ID;
+			}
+			break;
+		case NestedPackageEditPart.VISUAL_ID:
+			if (UMLPackage.eINSTANCE.getActor().isSuperTypeOf(domainElement.eClass())) {
+				return ActorInPackageEditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getUseCase().isSuperTypeOf(domainElement.eClass())) {
+				return UseCaseinPackageEditPart.VISUAL_ID;
+			}
+			break;
+		case InnerUseCaseEditPart.VISUAL_ID:
+			if (UMLPackage.eINSTANCE.getExtensionPoint().isSuperTypeOf(domainElement.eClass())) {
+				return ExtensionPointEditPart.VISUAL_ID;
+			}
+			break;
+		case UseCaseinPackageEditPart.VISUAL_ID:
+			if (UMLPackage.eINSTANCE.getExtensionPoint().isSuperTypeOf(domainElement.eClass())) {
+				return ExtensionPointEditPart.VISUAL_ID;
+			}
+			break;
+		case PackageEditPart.VISUAL_ID:
+			if (UMLPackage.eINSTANCE.getActor().isSuperTypeOf(domainElement.eClass())) {
+				return ActorEditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getActor().isSuperTypeOf(domainElement.eClass())) {
+				return ActorAsRectangleEditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getUseCase().isSuperTypeOf(domainElement.eClass())) {
+				return UseCaseEditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getUseCase().isSuperTypeOf(domainElement.eClass())) {
+				return UseCaseAsClassEditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getComponent().isSuperTypeOf(domainElement.eClass())) {
+				return SubjectEditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getPackage().isSuperTypeOf(domainElement.eClass())) {
+				return NestedPackageEditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getConstraint().isSuperTypeOf(domainElement.eClass())) {
+				return ConstraintEditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getElementImport().isSuperTypeOf(domainElement.eClass())) {
+				return ElementImportEditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getExtensionPoint().isSuperTypeOf(domainElement.eClass())) {
+				return ExtensionPointEditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getExtensionPoint().isSuperTypeOf(domainElement.eClass())) {
+				return ExtensionPoint2EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getUseCase().isSuperTypeOf(domainElement.eClass())) {
+				return InnerUseCaseEditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getExtensionPoint().isSuperTypeOf(domainElement.eClass())) {
+				return ExtensionPointEditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getActor().isSuperTypeOf(domainElement.eClass())) {
+				return ActorInPackageEditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getUseCase().isSuperTypeOf(domainElement.eClass())) {
+				return UseCaseinPackageEditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getExtensionPoint().isSuperTypeOf(domainElement.eClass())) {
+				return ExtensionPointEditPart.VISUAL_ID;
+			}
+			break;
+		}
+		return -1;
+	}
 }

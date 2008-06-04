@@ -44,7 +44,9 @@ public class UseCasePointsCanonicalEditPolicy extends CanonicalEditPolicy {
 		int visualID = UMLVisualIDRegistry.getVisualID(view);
 		switch (visualID) {
 		case ExtensionPointEditPart.VISUAL_ID:
-			return !semanticChildren.contains(view.getElement()) || visualID != UMLVisualIDRegistry.getNodeVisualID((View) getHost().getModel(), view.getElement());
+			if (!semanticChildren.contains(view.getElement())) {
+				return true;
+			}
 		}
 		return false;
 	}

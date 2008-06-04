@@ -1595,4 +1595,451 @@ public class UMLVisualIDRegistry {
 		return false;
 	}
 
+	/**
+	 * @generated
+	 */
+	public static int getChildDescriptorVisualID(UMLNodeDescriptor container, EObject domainElement) {
+		if (domainElement == null) {
+			return -1;
+		}
+		switch (container.getVisualID()) {
+		case Package2EditPart.VISUAL_ID:
+			if (UMLPackage.eINSTANCE.getPackage().isSuperTypeOf(domainElement.eClass())) {
+				return Package3EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getClass_().isSuperTypeOf(domainElement.eClass()) && isClass_3007((Class) domainElement)) {
+				return ClassEditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getDataType().isSuperTypeOf(domainElement.eClass()) && isDataType_3008((DataType) domainElement)) {
+				return DataTypeEditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getPrimitiveType().isSuperTypeOf(domainElement.eClass())) {
+				return PrimitiveTypeEditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getEnumeration().isSuperTypeOf(domainElement.eClass())) {
+				return EnumerationEditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getAssociationClass().isSuperTypeOf(domainElement.eClass())) {
+				return AssociationClassEditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getInterface().isSuperTypeOf(domainElement.eClass())) {
+				return Interface3EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getInstanceSpecification().isSuperTypeOf(domainElement.eClass())) {
+				return InstanceSpecificationEditPart.VISUAL_ID;
+			}
+			break;
+		case Class2EditPart.VISUAL_ID:
+			if (UMLPackage.eINSTANCE.getPort().isSuperTypeOf(domainElement.eClass())) {
+				return PortEditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getRedefinableTemplateSignature().isSuperTypeOf(domainElement.eClass())) {
+				return RedefinableTemplateSignatureEditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getProperty().isSuperTypeOf(domainElement.eClass()) && isProperty_3001((Property) domainElement)) {
+				return PropertyEditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getOperation().isSuperTypeOf(domainElement.eClass())) {
+				return OperationEditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getClass_().isSuperTypeOf(domainElement.eClass()) && isClass_3003((Class) domainElement)) {
+				return Class3EditPart.VISUAL_ID;
+			}
+			break;
+		case AssociationClass2EditPart.VISUAL_ID:
+			if (UMLPackage.eINSTANCE.getRedefinableTemplateSignature().isSuperTypeOf(domainElement.eClass())) {
+				return RedefinableTemplateSignatureEditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getProperty().isSuperTypeOf(domainElement.eClass())) {
+				return Property2EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getOperation().isSuperTypeOf(domainElement.eClass())) {
+				return Operation2EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getClass_().isSuperTypeOf(domainElement.eClass()) && isClass_3003((Class) domainElement)) {
+				return Class3EditPart.VISUAL_ID;
+			}
+			break;
+		case DataType2EditPart.VISUAL_ID:
+			if (UMLPackage.eINSTANCE.getRedefinableTemplateSignature().isSuperTypeOf(domainElement.eClass())) {
+				return RedefinableTemplateSignatureEditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getProperty().isSuperTypeOf(domainElement.eClass())) {
+				return Property3EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getOperation().isSuperTypeOf(domainElement.eClass())) {
+				return Operation3EditPart.VISUAL_ID;
+			}
+			break;
+		case PrimitiveType2EditPart.VISUAL_ID:
+			if (UMLPackage.eINSTANCE.getRedefinableTemplateSignature().isSuperTypeOf(domainElement.eClass())) {
+				return RedefinableTemplateSignatureEditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getProperty().isSuperTypeOf(domainElement.eClass())) {
+				return Property4EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getOperation().isSuperTypeOf(domainElement.eClass())) {
+				return Operation4EditPart.VISUAL_ID;
+			}
+			break;
+		case Enumeration2EditPart.VISUAL_ID:
+			if (UMLPackage.eINSTANCE.getRedefinableTemplateSignature().isSuperTypeOf(domainElement.eClass())) {
+				return RedefinableTemplateSignatureEditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getEnumerationLiteral().isSuperTypeOf(domainElement.eClass())) {
+				return EnumerationLiteralEditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getProperty().isSuperTypeOf(domainElement.eClass())) {
+				return Property5EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getOperation().isSuperTypeOf(domainElement.eClass())) {
+				return Operation5EditPart.VISUAL_ID;
+			}
+			break;
+		case InstanceSpecification2EditPart.VISUAL_ID:
+			if (UMLPackage.eINSTANCE.getSlot().isSuperTypeOf(domainElement.eClass()) && isSlot_3017((Slot) domainElement)) {
+				return SlotEditPart.VISUAL_ID;
+			}
+			break;
+		case Interface2EditPart.VISUAL_ID:
+			if (UMLPackage.eINSTANCE.getProperty().isSuperTypeOf(domainElement.eClass()) && isProperty_3028((Property) domainElement)) {
+				return Property6EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getOperation().isSuperTypeOf(domainElement.eClass())) {
+				return Operation6EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getClass_().isSuperTypeOf(domainElement.eClass()) && isClass_3030((Class) domainElement)) {
+				return Class4EditPart.VISUAL_ID;
+			}
+			break;
+		case Package4EditPart.VISUAL_ID:
+			if (UMLPackage.eINSTANCE.getElementImport().isSuperTypeOf(domainElement.eClass())) {
+				return ElementImportEditPart.VISUAL_ID;
+			}
+			break;
+		case PackageAsFrameEditPart.VISUAL_ID:
+			if (UMLPackage.eINSTANCE.getPackage().isSuperTypeOf(domainElement.eClass())) {
+				return Package6EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getClass_().isSuperTypeOf(domainElement.eClass()) && isClass_3033((Class) domainElement)) {
+				return Class5EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getEnumeration().isSuperTypeOf(domainElement.eClass())) {
+				return Enumeration3EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getInstanceSpecification().isSuperTypeOf(domainElement.eClass())) {
+				return InstanceSpecification3EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getDataType().isSuperTypeOf(domainElement.eClass()) && isDataType_3036((DataType) domainElement)) {
+				return DataType3EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getPrimitiveType().isSuperTypeOf(domainElement.eClass())) {
+				return PrimitiveType3EditPart.VISUAL_ID;
+			}
+			break;
+		case InstanceSpecification4EditPart.VISUAL_ID:
+			if (UMLPackage.eINSTANCE.getLiteralInteger().isSuperTypeOf(domainElement.eClass())) {
+				return LiteralIntegerEditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getLiteralString().isSuperTypeOf(domainElement.eClass())) {
+				return LiteralStringEditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getExpression().isSuperTypeOf(domainElement.eClass())) {
+				return ExpressionEditPart.VISUAL_ID;
+			}
+			break;
+		case Package6EditPart.VISUAL_ID:
+			if (UMLPackage.eINSTANCE.getPackage().isSuperTypeOf(domainElement.eClass())) {
+				return Package6EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getClass_().isSuperTypeOf(domainElement.eClass()) && isClass_3033((Class) domainElement)) {
+				return Class5EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getEnumeration().isSuperTypeOf(domainElement.eClass())) {
+				return Enumeration3EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getInstanceSpecification().isSuperTypeOf(domainElement.eClass())) {
+				return InstanceSpecification3EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getDataType().isSuperTypeOf(domainElement.eClass()) && isDataType_3036((DataType) domainElement)) {
+				return DataType3EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getPrimitiveType().isSuperTypeOf(domainElement.eClass())) {
+				return PrimitiveType3EditPart.VISUAL_ID;
+			}
+			break;
+		case Class5EditPart.VISUAL_ID:
+			if (UMLPackage.eINSTANCE.getPort().isSuperTypeOf(domainElement.eClass())) {
+				return PortEditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getRedefinableTemplateSignature().isSuperTypeOf(domainElement.eClass())) {
+				return RedefinableTemplateSignatureEditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getProperty().isSuperTypeOf(domainElement.eClass()) && isProperty_3001((Property) domainElement)) {
+				return PropertyEditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getOperation().isSuperTypeOf(domainElement.eClass())) {
+				return OperationEditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getClass_().isSuperTypeOf(domainElement.eClass()) && isClass_3003((Class) domainElement)) {
+				return Class3EditPart.VISUAL_ID;
+			}
+			break;
+		case Enumeration3EditPart.VISUAL_ID:
+			if (UMLPackage.eINSTANCE.getRedefinableTemplateSignature().isSuperTypeOf(domainElement.eClass())) {
+				return RedefinableTemplateSignatureEditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getEnumerationLiteral().isSuperTypeOf(domainElement.eClass())) {
+				return EnumerationLiteralEditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getProperty().isSuperTypeOf(domainElement.eClass())) {
+				return Property5EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getOperation().isSuperTypeOf(domainElement.eClass())) {
+				return Operation5EditPart.VISUAL_ID;
+			}
+			break;
+		case InstanceSpecification3EditPart.VISUAL_ID:
+			if (UMLPackage.eINSTANCE.getSlot().isSuperTypeOf(domainElement.eClass()) && isSlot_3017((Slot) domainElement)) {
+				return SlotEditPart.VISUAL_ID;
+			}
+			break;
+		case DataType3EditPart.VISUAL_ID:
+			if (UMLPackage.eINSTANCE.getRedefinableTemplateSignature().isSuperTypeOf(domainElement.eClass())) {
+				return RedefinableTemplateSignatureEditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getProperty().isSuperTypeOf(domainElement.eClass())) {
+				return Property3EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getOperation().isSuperTypeOf(domainElement.eClass())) {
+				return Operation3EditPart.VISUAL_ID;
+			}
+			break;
+		case PrimitiveType3EditPart.VISUAL_ID:
+			if (UMLPackage.eINSTANCE.getRedefinableTemplateSignature().isSuperTypeOf(domainElement.eClass())) {
+				return RedefinableTemplateSignatureEditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getProperty().isSuperTypeOf(domainElement.eClass())) {
+				return Property4EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getOperation().isSuperTypeOf(domainElement.eClass())) {
+				return Operation4EditPart.VISUAL_ID;
+			}
+			break;
+		case PackageEditPart.VISUAL_ID:
+			if (UMLPackage.eINSTANCE.getPackage().isSuperTypeOf(domainElement.eClass())) {
+				return Package2EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getClass_().isSuperTypeOf(domainElement.eClass()) && isClass_2001((Class) domainElement)) {
+				return Class2EditPart.VISUAL_ID;
+			}
+			// there is a group of nodes for single semantic element
+			// the group for this element consists of 
+			// org.eclipse.uml2.diagram.clazz.edit.parts.AssociationClass2EditPart.VISUAL_ID
+			// org.eclipse.uml2.diagram.clazz.edit.parts.AssociationClassRhombEditPart.VISUAL_ID
+			// diagram updater is expected to return one node descriptor (and thus one instance of that semantic element) per node in group
+			// we need to give other parts a chance to create their views
+			if (UMLPackage.eINSTANCE.getAssociationClass().isSuperTypeOf(domainElement.eClass()) && !hasViewChild(containerView, domainElement, AssociationClass2EditPart.VISUAL_ID)) {
+				return AssociationClass2EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getDataType().isSuperTypeOf(domainElement.eClass()) && isDataType_2004((DataType) domainElement)) {
+				return DataType2EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getPrimitiveType().isSuperTypeOf(domainElement.eClass())) {
+				return PrimitiveType2EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getEnumeration().isSuperTypeOf(domainElement.eClass())) {
+				return Enumeration2EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getInterface().isSuperTypeOf(domainElement.eClass())) {
+				return InterfaceEditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getConstraint().isSuperTypeOf(domainElement.eClass())) {
+				return ConstraintEditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getInstanceSpecification().isSuperTypeOf(domainElement.eClass())) {
+				return InstanceSpecification2EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getDependency().isSuperTypeOf(domainElement.eClass()) && isDependency_2009((Dependency) domainElement)) {
+				return DependencyEditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getGeneralizationSet().isSuperTypeOf(domainElement.eClass())) {
+				return GeneralizationSetEditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getInterface().isSuperTypeOf(domainElement.eClass())) {
+				return Interface2EditPart.VISUAL_ID;
+			}
+			// there is a group of nodes for single semantic element
+			// the group for this element consists of 
+			// org.eclipse.uml2.diagram.clazz.edit.parts.AssociationClassRhombEditPart.VISUAL_ID
+			// org.eclipse.uml2.diagram.clazz.edit.parts.AssociationClass2EditPart.VISUAL_ID
+			// diagram updater is expected to return one node descriptor (and thus one instance of that semantic element) per node in group
+			// we need to give other parts a chance to create their views
+			if (UMLPackage.eINSTANCE.getAssociationClass().isSuperTypeOf(domainElement.eClass()) && !hasViewChild(containerView, domainElement, AssociationClassRhombEditPart.VISUAL_ID)) {
+				return AssociationClassRhombEditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getPackage().isSuperTypeOf(domainElement.eClass())) {
+				return PackageAsFrameEditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getInstanceSpecification().isSuperTypeOf(domainElement.eClass())) {
+				return InstanceSpecification4EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getPackage().isSuperTypeOf(domainElement.eClass())) {
+				return Package3EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getClass_().isSuperTypeOf(domainElement.eClass()) && isClass_3007((Class) domainElement)) {
+				return ClassEditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getDataType().isSuperTypeOf(domainElement.eClass()) && isDataType_3008((DataType) domainElement)) {
+				return DataTypeEditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getPrimitiveType().isSuperTypeOf(domainElement.eClass())) {
+				return PrimitiveTypeEditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getEnumeration().isSuperTypeOf(domainElement.eClass())) {
+				return EnumerationEditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getAssociationClass().isSuperTypeOf(domainElement.eClass())) {
+				return AssociationClassEditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getInterface().isSuperTypeOf(domainElement.eClass())) {
+				return Interface3EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getInstanceSpecification().isSuperTypeOf(domainElement.eClass())) {
+				return InstanceSpecificationEditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getProperty().isSuperTypeOf(domainElement.eClass()) && isProperty_3001((Property) domainElement)) {
+				return PropertyEditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getOperation().isSuperTypeOf(domainElement.eClass())) {
+				return OperationEditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getClass_().isSuperTypeOf(domainElement.eClass()) && isClass_3003((Class) domainElement)) {
+				return Class3EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getProperty().isSuperTypeOf(domainElement.eClass())) {
+				return Property2EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getOperation().isSuperTypeOf(domainElement.eClass())) {
+				return Operation2EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getClass_().isSuperTypeOf(domainElement.eClass()) && isClass_3003((Class) domainElement)) {
+				return Class3EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getProperty().isSuperTypeOf(domainElement.eClass())) {
+				return Property3EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getOperation().isSuperTypeOf(domainElement.eClass())) {
+				return Operation3EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getProperty().isSuperTypeOf(domainElement.eClass())) {
+				return Property4EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getOperation().isSuperTypeOf(domainElement.eClass())) {
+				return Operation4EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getEnumerationLiteral().isSuperTypeOf(domainElement.eClass())) {
+				return EnumerationLiteralEditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getProperty().isSuperTypeOf(domainElement.eClass())) {
+				return Property5EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getOperation().isSuperTypeOf(domainElement.eClass())) {
+				return Operation5EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getSlot().isSuperTypeOf(domainElement.eClass()) && isSlot_3017((Slot) domainElement)) {
+				return SlotEditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getProperty().isSuperTypeOf(domainElement.eClass()) && isProperty_3028((Property) domainElement)) {
+				return Property6EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getOperation().isSuperTypeOf(domainElement.eClass())) {
+				return Operation6EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getClass_().isSuperTypeOf(domainElement.eClass()) && isClass_3030((Class) domainElement)) {
+				return Class4EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getElementImport().isSuperTypeOf(domainElement.eClass())) {
+				return ElementImportEditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getPackage().isSuperTypeOf(domainElement.eClass())) {
+				return Package6EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getClass_().isSuperTypeOf(domainElement.eClass()) && isClass_3033((Class) domainElement)) {
+				return Class5EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getEnumeration().isSuperTypeOf(domainElement.eClass())) {
+				return Enumeration3EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getInstanceSpecification().isSuperTypeOf(domainElement.eClass())) {
+				return InstanceSpecification3EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getDataType().isSuperTypeOf(domainElement.eClass()) && isDataType_3036((DataType) domainElement)) {
+				return DataType3EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getPrimitiveType().isSuperTypeOf(domainElement.eClass())) {
+				return PrimitiveType3EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getPackage().isSuperTypeOf(domainElement.eClass())) {
+				return Package6EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getClass_().isSuperTypeOf(domainElement.eClass()) && isClass_3033((Class) domainElement)) {
+				return Class5EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getEnumeration().isSuperTypeOf(domainElement.eClass())) {
+				return Enumeration3EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getInstanceSpecification().isSuperTypeOf(domainElement.eClass())) {
+				return InstanceSpecification3EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getDataType().isSuperTypeOf(domainElement.eClass()) && isDataType_3036((DataType) domainElement)) {
+				return DataType3EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getPrimitiveType().isSuperTypeOf(domainElement.eClass())) {
+				return PrimitiveType3EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getProperty().isSuperTypeOf(domainElement.eClass()) && isProperty_3001((Property) domainElement)) {
+				return PropertyEditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getOperation().isSuperTypeOf(domainElement.eClass())) {
+				return OperationEditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getClass_().isSuperTypeOf(domainElement.eClass()) && isClass_3003((Class) domainElement)) {
+				return Class3EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getEnumerationLiteral().isSuperTypeOf(domainElement.eClass())) {
+				return EnumerationLiteralEditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getProperty().isSuperTypeOf(domainElement.eClass())) {
+				return Property5EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getOperation().isSuperTypeOf(domainElement.eClass())) {
+				return Operation5EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getSlot().isSuperTypeOf(domainElement.eClass()) && isSlot_3017((Slot) domainElement)) {
+				return SlotEditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getProperty().isSuperTypeOf(domainElement.eClass())) {
+				return Property3EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getOperation().isSuperTypeOf(domainElement.eClass())) {
+				return Operation3EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getProperty().isSuperTypeOf(domainElement.eClass())) {
+				return Property4EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getOperation().isSuperTypeOf(domainElement.eClass())) {
+				return Operation4EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getLiteralString().isSuperTypeOf(domainElement.eClass())) {
+				return LiteralStringEditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getExpression().isSuperTypeOf(domainElement.eClass())) {
+				return ExpressionEditPart.VISUAL_ID;
+			}
+			break;
+		}
+		return -1;
+	}
+
 }

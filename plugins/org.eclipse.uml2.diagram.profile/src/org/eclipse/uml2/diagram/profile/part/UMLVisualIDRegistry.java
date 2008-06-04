@@ -409,4 +409,68 @@ public class UMLVisualIDRegistry {
 		return false;
 	}
 
+	/**
+	 * @generated
+	 */
+	public static int getChildDescriptorVisualID(UMLNodeDescriptor container, EObject domainElement) {
+		if (domainElement == null) {
+			return -1;
+		}
+		switch (container.getVisualID()) {
+		case StereotypeEditPart.VISUAL_ID:
+			if (UMLPackage.eINSTANCE.getProperty().isSuperTypeOf(domainElement.eClass()) && isProperty_3001((Property) domainElement)) {
+				return PropertyEditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getConstraint().isSuperTypeOf(domainElement.eClass())) {
+				return ConstraintEditPart.VISUAL_ID;
+			}
+			break;
+		case Profile2EditPart.VISUAL_ID:
+			if (UMLPackage.eINSTANCE.getStereotype().isSuperTypeOf(domainElement.eClass())) {
+				return Stereotype2EditPart.VISUAL_ID;
+			}
+			break;
+		case EnumerationEditPart.VISUAL_ID:
+			if (UMLPackage.eINSTANCE.getEnumerationLiteral().isSuperTypeOf(domainElement.eClass())) {
+				return EnumerationLiteralEditPart.VISUAL_ID;
+			}
+			break;
+		case Profile3EditPart.VISUAL_ID:
+			if (UMLPackage.eINSTANCE.getElementImport().isSuperTypeOf(domainElement.eClass()) && isElementImport_3009((ElementImport) domainElement)) {
+				return ElementImport2EditPart.VISUAL_ID;
+			}
+			break;
+		case ProfileEditPart.VISUAL_ID:
+			if (UMLPackage.eINSTANCE.getStereotype().isSuperTypeOf(domainElement.eClass()) && isStereotype_2001((Stereotype) domainElement)) {
+				return StereotypeEditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getProfile().isSuperTypeOf(domainElement.eClass())) {
+				return Profile2EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getEnumeration().isSuperTypeOf(domainElement.eClass())) {
+				return EnumerationEditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getElementImport().isSuperTypeOf(domainElement.eClass()) && isElementImport_2006((ElementImport) domainElement)) {
+				return ElementImportEditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getProperty().isSuperTypeOf(domainElement.eClass()) && isProperty_3001((Property) domainElement)) {
+				return PropertyEditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getConstraint().isSuperTypeOf(domainElement.eClass())) {
+				return ConstraintEditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getStereotype().isSuperTypeOf(domainElement.eClass())) {
+				return Stereotype2EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getEnumerationLiteral().isSuperTypeOf(domainElement.eClass())) {
+				return EnumerationLiteralEditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getElementImport().isSuperTypeOf(domainElement.eClass()) && isElementImport_3009((ElementImport) domainElement)) {
+				return ElementImport2EditPart.VISUAL_ID;
+			}
+			break;
+		}
+		return -1;
+	}
+
 }

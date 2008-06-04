@@ -738,4 +738,179 @@ public class UMLVisualIDRegistry {
 		return false;
 	}
 
+	/**
+	 * @generated
+	 */
+	public static int getChildDescriptorVisualID(UMLNodeDescriptor container, EObject domainElement) {
+		if (domainElement == null) {
+			return -1;
+		}
+		switch (container.getVisualID()) {
+		case ComponentEditPart.VISUAL_ID:
+			if (UMLPackage.eINSTANCE.getPort().isSuperTypeOf(domainElement.eClass())) {
+				return PortEditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getComponent().isSuperTypeOf(domainElement.eClass())) {
+				return Component2EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getArtifact().isSuperTypeOf(domainElement.eClass())) {
+				return ArtifactEditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getClass_().isSuperTypeOf(domainElement.eClass()) && isClass_3004((Class) domainElement)) {
+				return ClassEditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getInterface().isSuperTypeOf(domainElement.eClass())) {
+				return InterfaceEditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getProperty().isSuperTypeOf(domainElement.eClass()) && isProperty_3006((Property) domainElement)) {
+				return PropertyEditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getConnector().isSuperTypeOf(domainElement.eClass()) && isConnector_3015((Connector) domainElement)) {
+				return AssemblyConnectorCircleEditPart.VISUAL_ID;
+			}
+			break;
+		case Class2EditPart.VISUAL_ID:
+			if (UMLPackage.eINSTANCE.getPort().isSuperTypeOf(domainElement.eClass())) {
+				return PortEditPart.VISUAL_ID;
+			}
+			break;
+		case Package2EditPart.VISUAL_ID:
+			if (UMLPackage.eINSTANCE.getElementImport().isSuperTypeOf(domainElement.eClass())) {
+				return ElementImportEditPart.VISUAL_ID;
+			}
+			break;
+		case Package3EditPart.VISUAL_ID:
+			if (UMLPackage.eINSTANCE.getPackage().isSuperTypeOf(domainElement.eClass())) {
+				return Package4EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getClass_().isSuperTypeOf(domainElement.eClass()) && isClass_3009((Class) domainElement)) {
+				return Class3EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getComponent().isSuperTypeOf(domainElement.eClass())) {
+				return Component3EditPart.VISUAL_ID;
+			}
+			break;
+		case ClassDiagramNotationClassEditPart.VISUAL_ID:
+			if (UMLPackage.eINSTANCE.getPort().isSuperTypeOf(domainElement.eClass())) {
+				return PortOnClassEditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getProperty().isSuperTypeOf(domainElement.eClass()) && isProperty_3011((Property) domainElement)) {
+				return ClassDiagramNotationPropertyEditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getOperation().isSuperTypeOf(domainElement.eClass())) {
+				return ClassDiagramNotationOperationEditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getClass_().isSuperTypeOf(domainElement.eClass())) {
+				return ClassDiagramNotationInnerClassEditPart.VISUAL_ID;
+			}
+			break;
+		case Component2EditPart.VISUAL_ID:
+			if (UMLPackage.eINSTANCE.getPort().isSuperTypeOf(domainElement.eClass())) {
+				return PortEditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getComponent().isSuperTypeOf(domainElement.eClass())) {
+				return Component2EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getArtifact().isSuperTypeOf(domainElement.eClass())) {
+				return ArtifactEditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getClass_().isSuperTypeOf(domainElement.eClass()) && isClass_3004((Class) domainElement)) {
+				return ClassEditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getInterface().isSuperTypeOf(domainElement.eClass())) {
+				return InterfaceEditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getProperty().isSuperTypeOf(domainElement.eClass()) && isProperty_3006((Property) domainElement)) {
+				return PropertyEditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getConnector().isSuperTypeOf(domainElement.eClass()) && isConnector_3015((Connector) domainElement)) {
+				return AssemblyConnectorCircleEditPart.VISUAL_ID;
+			}
+			break;
+		case ClassEditPart.VISUAL_ID:
+			if (UMLPackage.eINSTANCE.getPort().isSuperTypeOf(domainElement.eClass())) {
+				return PortEditPart.VISUAL_ID;
+			}
+			break;
+		case PackageEditPart.VISUAL_ID:
+			if (UMLPackage.eINSTANCE.getComponent().isSuperTypeOf(domainElement.eClass())) {
+				return ComponentEditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getArtifact().isSuperTypeOf(domainElement.eClass())) {
+				return Artifact2EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getInterface().isSuperTypeOf(domainElement.eClass())) {
+				return Interface2EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getClass_().isSuperTypeOf(domainElement.eClass()) && isClass_2004((Class) domainElement)) {
+				return Class2EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getPackage().isSuperTypeOf(domainElement.eClass())) {
+				return Package3EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getClass_().isSuperTypeOf(domainElement.eClass()) && isClass_2007((Class) domainElement)) {
+				return ClassDiagramNotationClassEditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getComponent().isSuperTypeOf(domainElement.eClass())) {
+				return Component2EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getArtifact().isSuperTypeOf(domainElement.eClass())) {
+				return ArtifactEditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getClass_().isSuperTypeOf(domainElement.eClass()) && isClass_3004((Class) domainElement)) {
+				return ClassEditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getInterface().isSuperTypeOf(domainElement.eClass())) {
+				return InterfaceEditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getProperty().isSuperTypeOf(domainElement.eClass()) && isProperty_3006((Property) domainElement)) {
+				return PropertyEditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getConnector().isSuperTypeOf(domainElement.eClass()) && isConnector_3015((Connector) domainElement)) {
+				return AssemblyConnectorCircleEditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getComponent().isSuperTypeOf(domainElement.eClass())) {
+				return Component2EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getArtifact().isSuperTypeOf(domainElement.eClass())) {
+				return ArtifactEditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getClass_().isSuperTypeOf(domainElement.eClass()) && isClass_3004((Class) domainElement)) {
+				return ClassEditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getInterface().isSuperTypeOf(domainElement.eClass())) {
+				return InterfaceEditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getProperty().isSuperTypeOf(domainElement.eClass()) && isProperty_3006((Property) domainElement)) {
+				return PropertyEditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getConnector().isSuperTypeOf(domainElement.eClass()) && isConnector_3015((Connector) domainElement)) {
+				return AssemblyConnectorCircleEditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getElementImport().isSuperTypeOf(domainElement.eClass())) {
+				return ElementImportEditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getPackage().isSuperTypeOf(domainElement.eClass())) {
+				return Package4EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getClass_().isSuperTypeOf(domainElement.eClass()) && isClass_3009((Class) domainElement)) {
+				return Class3EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getComponent().isSuperTypeOf(domainElement.eClass())) {
+				return Component3EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getProperty().isSuperTypeOf(domainElement.eClass()) && isProperty_3011((Property) domainElement)) {
+				return ClassDiagramNotationPropertyEditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getOperation().isSuperTypeOf(domainElement.eClass())) {
+				return ClassDiagramNotationOperationEditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getClass_().isSuperTypeOf(domainElement.eClass())) {
+				return ClassDiagramNotationInnerClassEditPart.VISUAL_ID;
+			}
+			break;
+		}
+		return -1;
+	}
+
 }

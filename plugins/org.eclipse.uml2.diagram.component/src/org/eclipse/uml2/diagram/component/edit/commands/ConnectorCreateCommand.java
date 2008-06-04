@@ -98,7 +98,7 @@ public class ConnectorCreateCommand extends CreateElementCommand {
 
 		sourceEnd.setRole(getSource());
 		targetEnd.setRole(getTarget());
-		
+
 		UMLElementTypes.init_Connector_4008(connector);
 
 		return connector;

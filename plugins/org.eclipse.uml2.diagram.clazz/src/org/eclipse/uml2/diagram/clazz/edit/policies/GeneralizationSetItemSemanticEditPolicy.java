@@ -148,6 +148,7 @@ public class GeneralizationSetItemSemanticEditPolicy extends UMLBaseItemSemantic
 		}
 		return getReorientRelationshipCommandGen(req);
 	}
+
 	/**
 	 * Returns command to reorient EReference based link. New link target or source
 	 * should be the domain model element associated with this node.

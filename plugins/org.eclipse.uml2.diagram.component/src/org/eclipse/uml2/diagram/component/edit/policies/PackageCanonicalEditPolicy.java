@@ -22,6 +22,10 @@ import org.eclipse.gmf.runtime.diagram.ui.requests.CreateConnectionViewRequest;
 import org.eclipse.gmf.runtime.diagram.ui.requests.RequestConstants;
 import org.eclipse.gmf.runtime.notation.Diagram;
 import org.eclipse.gmf.runtime.notation.Edge;
+import org.eclipse.gmf.runtime.notation.Location;
+import org.eclipse.gmf.runtime.notation.Node;
+import org.eclipse.gmf.runtime.notation.Ratio;
+import org.eclipse.gmf.runtime.notation.Size;
 import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.uml2.diagram.component.edit.parts.Artifact2EditPart;
 import org.eclipse.uml2.diagram.component.edit.parts.ArtifactEditPart;
@@ -89,7 +93,7 @@ public class PackageCanonicalEditPolicy extends CanonicalConnectionEditPolicy {
 	 * @generated
 	 */
 	protected boolean isOrphaned(Collection semanticChildren, final View view) {
-		if (view.getEAnnotation("Shortcut") != null) {
+		if (view.getEAnnotation("Shortcut") != null) {//$NON-NLS-1$
 			return UMLDiagramUpdater.isShortcutOrphaned(view);
 		}
 		int actualID = UMLVisualIDRegistry.getVisualID(view);
@@ -113,6 +117,28 @@ public class PackageCanonicalEditPolicy extends CanonicalConnectionEditPolicy {
 			return (actualID != suggestedID) && (suggestedID != Class2EditPart.VISUAL_ID) && true;
 		}
 		return false;
+	}
+
+	/**
+	 * @generated
+	 */
+	private void populateViewProperties(View oldView, View newView) {
+		if (oldView instanceof Node && newView instanceof Node) {
+			Node oldNode = (Node) oldView;
+			Node newNode = (Node) newView;
+			if (oldNode.getLayoutConstraint() instanceof Location && newNode.getLayoutConstraint() instanceof Location) {
+				((Location) newNode.getLayoutConstraint()).setX(((Location) oldNode.getLayoutConstraint()).getX());
+				((Location) newNode.getLayoutConstraint()).setY(((Location) oldNode.getLayoutConstraint()).getY());
+			}
+			if (oldNode.getLayoutConstraint() instanceof Size && newNode.getLayoutConstraint() instanceof Size) {
+				((Size) newNode.getLayoutConstraint()).setWidth(((Size) oldNode.getLayoutConstraint()).getWidth());
+				((Size) newNode.getLayoutConstraint()).setHeight(((Size) oldNode.getLayoutConstraint()).getHeight());
+			}
+			if (oldNode.getLayoutConstraint() instanceof Ratio && newNode.getLayoutConstraint() instanceof Ratio) {
+				((Ratio) newNode.getLayoutConstraint()).setValue(((Ratio) oldNode.getLayoutConstraint()).getValue());
+			}
+			newNode.persist();
+		}
 	}
 
 	/**

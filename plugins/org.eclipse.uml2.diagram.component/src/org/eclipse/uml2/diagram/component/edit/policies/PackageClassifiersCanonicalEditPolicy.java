@@ -46,7 +46,9 @@ public class PackageClassifiersCanonicalEditPolicy extends CanonicalEditPolicy {
 		switch (visualID) {
 		case Class3EditPart.VISUAL_ID:
 		case Component3EditPart.VISUAL_ID:
-			return !semanticChildren.contains(view.getElement()) || visualID != UMLVisualIDRegistry.getNodeVisualID((View) getHost().getModel(), view.getElement());
+			if (!semanticChildren.contains(view.getElement())) {
+				return true;
+			}
 		}
 		return false;
 	}

@@ -122,11 +122,11 @@ public class ElementInitializers {
 	public static void init_Constraint_2008(Constraint instance) {
 		try {
 
-			LiteralString newInstance0 = UMLFactory.eINSTANCE.createLiteralString();
+			LiteralString newInstance100 = UMLFactory.eINSTANCE.createLiteralString();
 
-			instance.setSpecification(newInstance0);
-			Object value100 = UMLOCLFactory.getExpression("\'ValueSpecification\'", UMLPackage.eINSTANCE.getLiteralString()).evaluate(newInstance0);
-			newInstance0.setValue((String) value100);
+			instance.setSpecification(newInstance100);
+			Object value10100 = UMLOCLFactory.getExpression("\'ValueSpecification\'", UMLPackage.eINSTANCE.getLiteralString()).evaluate(newInstance100);
+			newInstance100.setValue((String) value10100);
 		} catch (RuntimeException e) {
 			UMLDiagramEditorPlugin.getInstance().logError("Element initialization failed", e); //$NON-NLS-1$						
 		}

@@ -86,7 +86,7 @@ public class GeneralizationItemSemanticEditPolicy extends UMLBaseItemSemanticEdi
 		}
 		return super.getReorientReferenceRelationshipCommand(req);
 	}
-	
+
 	/** 
 	 * @NOT-generated
 	 * #215340 Generalization redirecting to GeneralizationSet

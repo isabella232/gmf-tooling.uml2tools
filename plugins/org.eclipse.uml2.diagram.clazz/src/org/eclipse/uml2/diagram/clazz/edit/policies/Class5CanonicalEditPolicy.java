@@ -46,7 +46,9 @@ public class Class5CanonicalEditPolicy extends CanonicalEditPolicy {
 		switch (visualID) {
 		case PortEditPart.VISUAL_ID:
 		case RedefinableTemplateSignatureEditPart.VISUAL_ID:
-			return !semanticChildren.contains(view.getElement()) || visualID != UMLVisualIDRegistry.getNodeVisualID((View) getHost().getModel(), view.getElement());
+			if (!semanticChildren.contains(view.getElement())) {
+				return true;
+			}
 		}
 		return false;
 	}

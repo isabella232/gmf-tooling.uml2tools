@@ -92,9 +92,9 @@ public class ConnectorCreateCommand extends CreateElementCommand {
 		getContainer().getOwnedConnectors().add(connector);
 		connector.createEnd().setRole(getSource());
 		connector.createEnd().setRole(getTarget());
-		
+
 		UMLElementTypes.init_Connector_4005(connector);
-		
+
 		return connector;
 	}
 

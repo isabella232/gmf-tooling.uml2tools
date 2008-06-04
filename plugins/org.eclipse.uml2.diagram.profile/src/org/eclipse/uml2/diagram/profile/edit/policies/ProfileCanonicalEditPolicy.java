@@ -10,10 +10,18 @@ import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
+import org.eclipse.core.commands.ExecutionException;
 import org.eclipse.core.runtime.IAdaptable;
+import org.eclipse.core.runtime.IProgressMonitor;
+import org.eclipse.core.runtime.IStatus;
+import org.eclipse.core.runtime.NullProgressMonitor;
+import org.eclipse.core.runtime.Status;
 import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.transaction.Transaction;
+import org.eclipse.emf.workspace.AbstractEMFOperation;
 import org.eclipse.gef.EditPart;
 import org.eclipse.gef.commands.Command;
+import org.eclipse.gmf.runtime.common.core.util.StringStatics;
 import org.eclipse.gmf.runtime.diagram.core.util.ViewUtil;
 import org.eclipse.gmf.runtime.diagram.ui.commands.DeferredLayoutCommand;
 import org.eclipse.gmf.runtime.diagram.ui.commands.ICommandProxy;
@@ -23,6 +31,10 @@ import org.eclipse.gmf.runtime.diagram.ui.requests.CreateConnectionViewRequest;
 import org.eclipse.gmf.runtime.diagram.ui.requests.RequestConstants;
 import org.eclipse.gmf.runtime.notation.Diagram;
 import org.eclipse.gmf.runtime.notation.Edge;
+import org.eclipse.gmf.runtime.notation.Location;
+import org.eclipse.gmf.runtime.notation.Node;
+import org.eclipse.gmf.runtime.notation.Ratio;
+import org.eclipse.gmf.runtime.notation.Size;
 import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.uml2.diagram.profile.edit.parts.ConstraintEditPart;
 import org.eclipse.uml2.diagram.profile.edit.parts.ElementImport2EditPart;
@@ -37,6 +49,7 @@ import org.eclipse.uml2.diagram.profile.edit.parts.ProfileEditPart;
 import org.eclipse.uml2.diagram.profile.edit.parts.PropertyEditPart;
 import org.eclipse.uml2.diagram.profile.edit.parts.Stereotype2EditPart;
 import org.eclipse.uml2.diagram.profile.edit.parts.StereotypeEditPart;
+import org.eclipse.uml2.diagram.profile.part.UMLDiagramEditorPlugin;
 import org.eclipse.uml2.diagram.profile.part.UMLDiagramUpdater;
 import org.eclipse.uml2.diagram.profile.part.UMLLinkDescriptor;
 import org.eclipse.uml2.diagram.profile.part.UMLNodeDescriptor;
@@ -83,9 +96,53 @@ public class ProfileCanonicalEditPolicy extends CanonicalConnectionEditPolicy {
 		case EnumerationEditPart.VISUAL_ID:
 		case ElementImportEditPart.VISUAL_ID:
 		case Profile3EditPart.VISUAL_ID:
-			return !semanticChildren.contains(view.getElement()) || visualID != UMLVisualIDRegistry.getNodeVisualID((View) getHost().getModel(), view.getElement());
+			if (!semanticChildren.contains(view.getElement())) {
+				return true;
+			}
+			EObject domainModelElement = view.getElement();
+			if (visualID != UMLVisualIDRegistry.getNodeVisualID((View) getHost().getModel(), domainModelElement)) {
+				List createdViews = createViews(Collections.singletonList(domainModelElement));
+				assert createdViews.size() == 1;
+				final View createdView = (View) ((IAdaptable) createdViews.get(0)).getAdapter(View.class);
+				if (createdView != null) {
+					try {
+						new AbstractEMFOperation(host().getEditingDomain(), StringStatics.BLANK, Collections.singletonMap(Transaction.OPTION_UNPROTECTED, Boolean.TRUE)) {
+
+							protected IStatus doExecute(IProgressMonitor monitor, IAdaptable info) throws ExecutionException {
+								populateViewProperties(view, createdView);
+								return Status.OK_STATUS;
+							}
+						}.execute(new NullProgressMonitor(), null);
+					} catch (ExecutionException e) {
+						UMLDiagramEditorPlugin.getInstance().logError("Error while copyign view information to newly created view", e); //$NON-NLS-1$
+					}
+				}
+				deleteViews(Collections.singletonList(view).iterator());
+			}
 		}
 		return false;
+	}
+
+	/**
+	 * @generated
+	 */
+	private void populateViewProperties(View oldView, View newView) {
+		if (oldView instanceof Node && newView instanceof Node) {
+			Node oldNode = (Node) oldView;
+			Node newNode = (Node) newView;
+			if (oldNode.getLayoutConstraint() instanceof Location && newNode.getLayoutConstraint() instanceof Location) {
+				((Location) newNode.getLayoutConstraint()).setX(((Location) oldNode.getLayoutConstraint()).getX());
+				((Location) newNode.getLayoutConstraint()).setY(((Location) oldNode.getLayoutConstraint()).getY());
+			}
+			if (oldNode.getLayoutConstraint() instanceof Size && newNode.getLayoutConstraint() instanceof Size) {
+				((Size) newNode.getLayoutConstraint()).setWidth(((Size) oldNode.getLayoutConstraint()).getWidth());
+				((Size) newNode.getLayoutConstraint()).setHeight(((Size) oldNode.getLayoutConstraint()).getHeight());
+			}
+			if (oldNode.getLayoutConstraint() instanceof Ratio && newNode.getLayoutConstraint() instanceof Ratio) {
+				((Ratio) newNode.getLayoutConstraint()).setValue(((Ratio) oldNode.getLayoutConstraint()).getValue());
+			}
+			newNode.persist();
+		}
 	}
 
 	/**
