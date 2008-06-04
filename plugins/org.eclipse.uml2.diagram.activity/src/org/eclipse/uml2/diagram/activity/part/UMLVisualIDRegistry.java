@@ -3477,4 +3477,1505 @@ public class UMLVisualIDRegistry {
 		return false;
 	}
 
+	/**
+	 * @generated
+	 */
+	public static int getChildDescriptorVisualID(UMLNodeDescriptor container, EObject domainElement) {
+		if (domainElement == null) {
+			return -1;
+		}
+		switch (container.getVisualID()) {
+		case ActivityEditPart.VISUAL_ID:
+			if (UMLPackage.eINSTANCE.getAcceptEventAction().isSuperTypeOf(domainElement.eClass()) && isAcceptEventAction_3030((AcceptEventAction) domainElement)) {
+				return AcceptEventActionEditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getAcceptEventAction().isSuperTypeOf(domainElement.eClass()) && isAcceptEventAction_3031((AcceptEventAction) domainElement)) {
+				return AcceptEventAction2EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getActivityFinalNode().isSuperTypeOf(domainElement.eClass()) && isActivityFinalNode_3032((ActivityFinalNode) domainElement)) {
+				return ActivityFinalNodeEditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getDecisionNode().isSuperTypeOf(domainElement.eClass()) && isDecisionNode_3033((DecisionNode) domainElement)) {
+				return DecisionNodeEditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getMergeNode().isSuperTypeOf(domainElement.eClass()) && isMergeNode_3034((MergeNode) domainElement)) {
+				return MergeNodeEditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getInitialNode().isSuperTypeOf(domainElement.eClass()) && isInitialNode_3035((InitialNode) domainElement)) {
+				return InitialNodeEditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getDataStoreNode().isSuperTypeOf(domainElement.eClass()) && isDataStoreNode_3036((DataStoreNode) domainElement)) {
+				return DataStoreNodeEditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getCentralBufferNode().isSuperTypeOf(domainElement.eClass()) && isCentralBufferNode_3037((CentralBufferNode) domainElement)) {
+				return CentralBufferNodeEditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getOpaqueAction().isSuperTypeOf(domainElement.eClass()) && isOpaqueAction_3029((OpaqueAction) domainElement)) {
+				return OpaqueActionEditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getFlowFinalNode().isSuperTypeOf(domainElement.eClass()) && isFlowFinalNode_3038((FlowFinalNode) domainElement)) {
+				return FlowFinalNodeEditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getForkNode().isSuperTypeOf(domainElement.eClass()) && isForkNode_3039((ForkNode) domainElement)) {
+				return ForkNodeEditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getJoinNode().isSuperTypeOf(domainElement.eClass()) && isJoinNode_3040((JoinNode) domainElement)) {
+				return JoinNodeEditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getPin().isSuperTypeOf(domainElement.eClass()) && isPin_3041((Pin) domainElement)) {
+				return PinEditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getCreateObjectAction().isSuperTypeOf(domainElement.eClass()) && isCreateObjectAction_3042((CreateObjectAction) domainElement)) {
+				return CreateObjectActionEditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getAddStructuralFeatureValueAction().isSuperTypeOf(domainElement.eClass())
+					&& isAddStructuralFeatureValueAction_3043((AddStructuralFeatureValueAction) domainElement)) {
+				return AddStructuralFeatureValueActionEditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getCallBehaviorAction().isSuperTypeOf(domainElement.eClass()) && isCallBehaviorAction_3044((CallBehaviorAction) domainElement)) {
+				return CallBehaviorActionEditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getCallOperationAction().isSuperTypeOf(domainElement.eClass()) && isCallOperationAction_3045((CallOperationAction) domainElement)) {
+				return CallOperationActionEditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getStructuredActivityNode().isSuperTypeOf(domainElement.eClass()) && isStructuredActivityNode_3046((StructuredActivityNode) domainElement)) {
+				return StructuredActivityNodeEditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getOpaqueBehavior().isSuperTypeOf(domainElement.eClass())) {
+				return OpaqueBehaviorEditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getActivityParameterNode().isSuperTypeOf(domainElement.eClass())) {
+				return ActivityParameterNodeEditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getSendSignalAction().isSuperTypeOf(domainElement.eClass()) && isSendSignalAction_3053((SendSignalAction) domainElement)) {
+				return SendSignalActionEditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getActivityPartition().isSuperTypeOf(domainElement.eClass())) {
+				return ActivityPartitionEditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getLoopNode().isSuperTypeOf(domainElement.eClass()) && isLoopNode_3058((LoopNode) domainElement)) {
+				return LoopNodeEditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getConditionalNode().isSuperTypeOf(domainElement.eClass()) && isConditionalNode_3082((ConditionalNode) domainElement)) {
+				return ConditionalNodeEditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getExpansionRegion().isSuperTypeOf(domainElement.eClass()) && isExpansionRegion_3084((ExpansionRegion) domainElement)) {
+				return ExpansionRegionEditPart.VISUAL_ID;
+			}
+			break;
+		case ConstraintEditPart.VISUAL_ID:
+			if (UMLPackage.eINSTANCE.getLiteralString().isSuperTypeOf(domainElement.eClass())) {
+				return LiteralStringEditPart.VISUAL_ID;
+			}
+			break;
+		case Constraint2EditPart.VISUAL_ID:
+			if (UMLPackage.eINSTANCE.getLiteralString().isSuperTypeOf(domainElement.eClass())) {
+				return LiteralString2EditPart.VISUAL_ID;
+			}
+			break;
+		case OpaqueActionEditPart.VISUAL_ID:
+			if (UMLPackage.eINSTANCE.getOutputPin().isSuperTypeOf(domainElement.eClass())) {
+				return OutputPinEditPart.VISUAL_ID;
+			}
+			break;
+		case CreateObjectActionEditPart.VISUAL_ID:
+			if (UMLPackage.eINSTANCE.getOutputPin().isSuperTypeOf(domainElement.eClass())) {
+				return OutputPin2EditPart.VISUAL_ID;
+			}
+			break;
+		case AddStructuralFeatureValueActionEditPart.VISUAL_ID:
+			if (UMLPackage.eINSTANCE.getInputPin().isSuperTypeOf(domainElement.eClass())) {
+				return InputPinEditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getInputPin().isSuperTypeOf(domainElement.eClass())) {
+				return InputPin2EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getInputPin().isSuperTypeOf(domainElement.eClass())) {
+				return InputPin3EditPart.VISUAL_ID;
+			}
+			break;
+		case CallBehaviorActionEditPart.VISUAL_ID:
+			if (UMLPackage.eINSTANCE.getOutputPin().isSuperTypeOf(domainElement.eClass())) {
+				return OutputPin3EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getInputPin().isSuperTypeOf(domainElement.eClass())) {
+				return InputPin4EditPart.VISUAL_ID;
+			}
+			break;
+		case CallOperationActionEditPart.VISUAL_ID:
+			if (UMLPackage.eINSTANCE.getOutputPin().isSuperTypeOf(domainElement.eClass())) {
+				return OutputPin3EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getInputPin().isSuperTypeOf(domainElement.eClass())) {
+				return InputPin4EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getInputPin().isSuperTypeOf(domainElement.eClass())) {
+				return InputPin5EditPart.VISUAL_ID;
+			}
+			break;
+		case StructuredActivityNodeEditPart.VISUAL_ID:
+			if (UMLPackage.eINSTANCE.getStructuredActivityNode().isSuperTypeOf(domainElement.eClass()) && isStructuredActivityNode_3009((StructuredActivityNode) domainElement)) {
+				return StructuredActivityNode2EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getOpaqueAction().isSuperTypeOf(domainElement.eClass()) && isOpaqueAction_3011((OpaqueAction) domainElement)) {
+				return OpaqueAction2EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getAcceptEventAction().isSuperTypeOf(domainElement.eClass()) && isAcceptEventAction_3012((AcceptEventAction) domainElement)) {
+				return AcceptEventAction3EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getAcceptEventAction().isSuperTypeOf(domainElement.eClass()) && isAcceptEventAction_3013((AcceptEventAction) domainElement)) {
+				return AcceptEventAction4EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getActivityFinalNode().isSuperTypeOf(domainElement.eClass()) && isActivityFinalNode_3014((ActivityFinalNode) domainElement)) {
+				return ActivityFinalNode2EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getDecisionNode().isSuperTypeOf(domainElement.eClass()) && isDecisionNode_3015((DecisionNode) domainElement)) {
+				return DecisionNode2EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getFlowFinalNode().isSuperTypeOf(domainElement.eClass()) && isFlowFinalNode_3016((FlowFinalNode) domainElement)) {
+				return FlowFinalNode2EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getPin().isSuperTypeOf(domainElement.eClass()) && isPin_3017((Pin) domainElement)) {
+				return Pin2EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getCreateObjectAction().isSuperTypeOf(domainElement.eClass()) && isCreateObjectAction_3018((CreateObjectAction) domainElement)) {
+				return CreateObjectAction2EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getCallBehaviorAction().isSuperTypeOf(domainElement.eClass()) && isCallBehaviorAction_3019((CallBehaviorAction) domainElement)) {
+				return CallBehaviorAction2EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getCallOperationAction().isSuperTypeOf(domainElement.eClass()) && isCallOperationAction_3020((CallOperationAction) domainElement)) {
+				return CallOperationAction2EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getForkNode().isSuperTypeOf(domainElement.eClass()) && isForkNode_3021((ForkNode) domainElement)) {
+				return ForkNode2EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getJoinNode().isSuperTypeOf(domainElement.eClass()) && isJoinNode_3022((JoinNode) domainElement)) {
+				return JoinNode2EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getAddStructuralFeatureValueAction().isSuperTypeOf(domainElement.eClass())
+					&& isAddStructuralFeatureValueAction_3023((AddStructuralFeatureValueAction) domainElement)) {
+				return AddStructuralFeatureValueAction2EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getDataStoreNode().isSuperTypeOf(domainElement.eClass()) && isDataStoreNode_3024((DataStoreNode) domainElement)) {
+				return DataStoreNode2EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getCentralBufferNode().isSuperTypeOf(domainElement.eClass()) && isCentralBufferNode_3025((CentralBufferNode) domainElement)) {
+				return CentralBufferNode2EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getInputPin().isSuperTypeOf(domainElement.eClass())) {
+				return InputPin6EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getOutputPin().isSuperTypeOf(domainElement.eClass())) {
+				return OutputPin4EditPart.VISUAL_ID;
+			}
+			break;
+		case StructuredActivityNode2EditPart.VISUAL_ID:
+			if (UMLPackage.eINSTANCE.getStructuredActivityNode().isSuperTypeOf(domainElement.eClass()) && isStructuredActivityNode_3009((StructuredActivityNode) domainElement)) {
+				return StructuredActivityNode2EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getOpaqueAction().isSuperTypeOf(domainElement.eClass()) && isOpaqueAction_3011((OpaqueAction) domainElement)) {
+				return OpaqueAction2EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getAcceptEventAction().isSuperTypeOf(domainElement.eClass()) && isAcceptEventAction_3012((AcceptEventAction) domainElement)) {
+				return AcceptEventAction3EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getAcceptEventAction().isSuperTypeOf(domainElement.eClass()) && isAcceptEventAction_3013((AcceptEventAction) domainElement)) {
+				return AcceptEventAction4EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getActivityFinalNode().isSuperTypeOf(domainElement.eClass()) && isActivityFinalNode_3014((ActivityFinalNode) domainElement)) {
+				return ActivityFinalNode2EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getDecisionNode().isSuperTypeOf(domainElement.eClass()) && isDecisionNode_3015((DecisionNode) domainElement)) {
+				return DecisionNode2EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getFlowFinalNode().isSuperTypeOf(domainElement.eClass()) && isFlowFinalNode_3016((FlowFinalNode) domainElement)) {
+				return FlowFinalNode2EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getPin().isSuperTypeOf(domainElement.eClass()) && isPin_3017((Pin) domainElement)) {
+				return Pin2EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getCreateObjectAction().isSuperTypeOf(domainElement.eClass()) && isCreateObjectAction_3018((CreateObjectAction) domainElement)) {
+				return CreateObjectAction2EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getCallBehaviorAction().isSuperTypeOf(domainElement.eClass()) && isCallBehaviorAction_3019((CallBehaviorAction) domainElement)) {
+				return CallBehaviorAction2EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getCallOperationAction().isSuperTypeOf(domainElement.eClass()) && isCallOperationAction_3020((CallOperationAction) domainElement)) {
+				return CallOperationAction2EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getForkNode().isSuperTypeOf(domainElement.eClass()) && isForkNode_3021((ForkNode) domainElement)) {
+				return ForkNode2EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getJoinNode().isSuperTypeOf(domainElement.eClass()) && isJoinNode_3022((JoinNode) domainElement)) {
+				return JoinNode2EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getAddStructuralFeatureValueAction().isSuperTypeOf(domainElement.eClass())
+					&& isAddStructuralFeatureValueAction_3023((AddStructuralFeatureValueAction) domainElement)) {
+				return AddStructuralFeatureValueAction2EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getDataStoreNode().isSuperTypeOf(domainElement.eClass()) && isDataStoreNode_3024((DataStoreNode) domainElement)) {
+				return DataStoreNode2EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getCentralBufferNode().isSuperTypeOf(domainElement.eClass()) && isCentralBufferNode_3025((CentralBufferNode) domainElement)) {
+				return CentralBufferNode2EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getInputPin().isSuperTypeOf(domainElement.eClass())) {
+				return InputPin6EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getOutputPin().isSuperTypeOf(domainElement.eClass())) {
+				return OutputPin4EditPart.VISUAL_ID;
+			}
+			break;
+		case OpaqueAction2EditPart.VISUAL_ID:
+			if (UMLPackage.eINSTANCE.getOutputPin().isSuperTypeOf(domainElement.eClass())) {
+				return OutputPinEditPart.VISUAL_ID;
+			}
+			break;
+		case CreateObjectAction2EditPart.VISUAL_ID:
+			if (UMLPackage.eINSTANCE.getOutputPin().isSuperTypeOf(domainElement.eClass())) {
+				return OutputPin2EditPart.VISUAL_ID;
+			}
+			break;
+		case CallBehaviorAction2EditPart.VISUAL_ID:
+			if (UMLPackage.eINSTANCE.getOutputPin().isSuperTypeOf(domainElement.eClass())) {
+				return OutputPin3EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getInputPin().isSuperTypeOf(domainElement.eClass())) {
+				return InputPin4EditPart.VISUAL_ID;
+			}
+			break;
+		case CallOperationAction2EditPart.VISUAL_ID:
+			if (UMLPackage.eINSTANCE.getOutputPin().isSuperTypeOf(domainElement.eClass())) {
+				return OutputPin3EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getInputPin().isSuperTypeOf(domainElement.eClass())) {
+				return InputPin4EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getInputPin().isSuperTypeOf(domainElement.eClass())) {
+				return InputPin5EditPart.VISUAL_ID;
+			}
+			break;
+		case AddStructuralFeatureValueAction2EditPart.VISUAL_ID:
+			if (UMLPackage.eINSTANCE.getInputPin().isSuperTypeOf(domainElement.eClass())) {
+				return InputPinEditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getInputPin().isSuperTypeOf(domainElement.eClass())) {
+				return InputPin2EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getInputPin().isSuperTypeOf(domainElement.eClass())) {
+				return InputPin3EditPart.VISUAL_ID;
+			}
+			break;
+		case ActivityPartitionEditPart.VISUAL_ID:
+			if (UMLPackage.eINSTANCE.getActivityPartition().isSuperTypeOf(domainElement.eClass())) {
+				return ActivityPartition2EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getAcceptEventAction().isSuperTypeOf(domainElement.eClass()) && isAcceptEventAction_3059((AcceptEventAction) domainElement)) {
+				return AcceptEventAction5EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getAcceptEventAction().isSuperTypeOf(domainElement.eClass()) && isAcceptEventAction_3060((AcceptEventAction) domainElement)) {
+				return AcceptEventAction6EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getActivityFinalNode().isSuperTypeOf(domainElement.eClass()) && isActivityFinalNode_3061((ActivityFinalNode) domainElement)) {
+				return ActivityFinalNode3EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getDecisionNode().isSuperTypeOf(domainElement.eClass()) && isDecisionNode_3062((DecisionNode) domainElement)) {
+				return DecisionNode3EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getMergeNode().isSuperTypeOf(domainElement.eClass()) && isMergeNode_3063((MergeNode) domainElement)) {
+				return MergeNode2EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getInitialNode().isSuperTypeOf(domainElement.eClass()) && isInitialNode_3064((InitialNode) domainElement)) {
+				return InitialNode2EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getDataStoreNode().isSuperTypeOf(domainElement.eClass()) && isDataStoreNode_3065((DataStoreNode) domainElement)) {
+				return DataStoreNode3EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getCentralBufferNode().isSuperTypeOf(domainElement.eClass()) && isCentralBufferNode_3066((CentralBufferNode) domainElement)) {
+				return CentralBufferNode3EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getOpaqueAction().isSuperTypeOf(domainElement.eClass()) && isOpaqueAction_3067((OpaqueAction) domainElement)) {
+				return OpaqueAction3EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getFlowFinalNode().isSuperTypeOf(domainElement.eClass()) && isFlowFinalNode_3068((FlowFinalNode) domainElement)) {
+				return FlowFinalNode3EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getForkNode().isSuperTypeOf(domainElement.eClass()) && isForkNode_3069((ForkNode) domainElement)) {
+				return ForkNode3EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getJoinNode().isSuperTypeOf(domainElement.eClass()) && isJoinNode_3070((JoinNode) domainElement)) {
+				return JoinNode3EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getPin().isSuperTypeOf(domainElement.eClass()) && isPin_3071((Pin) domainElement)) {
+				return Pin3EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getCreateObjectAction().isSuperTypeOf(domainElement.eClass()) && isCreateObjectAction_3072((CreateObjectAction) domainElement)) {
+				return CreateObjectAction3EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getAddStructuralFeatureValueAction().isSuperTypeOf(domainElement.eClass())
+					&& isAddStructuralFeatureValueAction_3073((AddStructuralFeatureValueAction) domainElement)) {
+				return AddStructuralFeatureValueAction3EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getCallBehaviorAction().isSuperTypeOf(domainElement.eClass()) && isCallBehaviorAction_3074((CallBehaviorAction) domainElement)) {
+				return CallBehaviorAction3EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getCallOperationAction().isSuperTypeOf(domainElement.eClass()) && isCallOperationAction_3075((CallOperationAction) domainElement)) {
+				return CallOperationAction3EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getStructuredActivityNode().isSuperTypeOf(domainElement.eClass()) && isStructuredActivityNode_3076((StructuredActivityNode) domainElement)) {
+				return StructuredActivityNode3EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getSendSignalAction().isSuperTypeOf(domainElement.eClass()) && isSendSignalAction_3077((SendSignalAction) domainElement)) {
+				return SendSignalAction2EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getLoopNode().isSuperTypeOf(domainElement.eClass()) && isLoopNode_3078((LoopNode) domainElement)) {
+				return LoopNode2EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getConditionalNode().isSuperTypeOf(domainElement.eClass()) && isConditionalNode_3083((ConditionalNode) domainElement)) {
+				return ConditionalNode2EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getExpansionRegion().isSuperTypeOf(domainElement.eClass()) && isExpansionRegion_3085((ExpansionRegion) domainElement)) {
+				return ExpansionRegion2EditPart.VISUAL_ID;
+			}
+			break;
+		case ActivityPartition2EditPart.VISUAL_ID:
+			if (UMLPackage.eINSTANCE.getActivityPartition().isSuperTypeOf(domainElement.eClass())) {
+				return ActivityPartition2EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getAcceptEventAction().isSuperTypeOf(domainElement.eClass()) && isAcceptEventAction_3059((AcceptEventAction) domainElement)) {
+				return AcceptEventAction5EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getAcceptEventAction().isSuperTypeOf(domainElement.eClass()) && isAcceptEventAction_3060((AcceptEventAction) domainElement)) {
+				return AcceptEventAction6EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getActivityFinalNode().isSuperTypeOf(domainElement.eClass()) && isActivityFinalNode_3061((ActivityFinalNode) domainElement)) {
+				return ActivityFinalNode3EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getDecisionNode().isSuperTypeOf(domainElement.eClass()) && isDecisionNode_3062((DecisionNode) domainElement)) {
+				return DecisionNode3EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getMergeNode().isSuperTypeOf(domainElement.eClass()) && isMergeNode_3063((MergeNode) domainElement)) {
+				return MergeNode2EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getInitialNode().isSuperTypeOf(domainElement.eClass()) && isInitialNode_3064((InitialNode) domainElement)) {
+				return InitialNode2EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getDataStoreNode().isSuperTypeOf(domainElement.eClass()) && isDataStoreNode_3065((DataStoreNode) domainElement)) {
+				return DataStoreNode3EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getCentralBufferNode().isSuperTypeOf(domainElement.eClass()) && isCentralBufferNode_3066((CentralBufferNode) domainElement)) {
+				return CentralBufferNode3EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getOpaqueAction().isSuperTypeOf(domainElement.eClass()) && isOpaqueAction_3067((OpaqueAction) domainElement)) {
+				return OpaqueAction3EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getFlowFinalNode().isSuperTypeOf(domainElement.eClass()) && isFlowFinalNode_3068((FlowFinalNode) domainElement)) {
+				return FlowFinalNode3EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getForkNode().isSuperTypeOf(domainElement.eClass()) && isForkNode_3069((ForkNode) domainElement)) {
+				return ForkNode3EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getJoinNode().isSuperTypeOf(domainElement.eClass()) && isJoinNode_3070((JoinNode) domainElement)) {
+				return JoinNode3EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getPin().isSuperTypeOf(domainElement.eClass()) && isPin_3071((Pin) domainElement)) {
+				return Pin3EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getCreateObjectAction().isSuperTypeOf(domainElement.eClass()) && isCreateObjectAction_3072((CreateObjectAction) domainElement)) {
+				return CreateObjectAction3EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getAddStructuralFeatureValueAction().isSuperTypeOf(domainElement.eClass())
+					&& isAddStructuralFeatureValueAction_3073((AddStructuralFeatureValueAction) domainElement)) {
+				return AddStructuralFeatureValueAction3EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getCallBehaviorAction().isSuperTypeOf(domainElement.eClass()) && isCallBehaviorAction_3074((CallBehaviorAction) domainElement)) {
+				return CallBehaviorAction3EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getCallOperationAction().isSuperTypeOf(domainElement.eClass()) && isCallOperationAction_3075((CallOperationAction) domainElement)) {
+				return CallOperationAction3EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getStructuredActivityNode().isSuperTypeOf(domainElement.eClass()) && isStructuredActivityNode_3076((StructuredActivityNode) domainElement)) {
+				return StructuredActivityNode3EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getSendSignalAction().isSuperTypeOf(domainElement.eClass()) && isSendSignalAction_3077((SendSignalAction) domainElement)) {
+				return SendSignalAction2EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getLoopNode().isSuperTypeOf(domainElement.eClass()) && isLoopNode_3078((LoopNode) domainElement)) {
+				return LoopNode2EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getConditionalNode().isSuperTypeOf(domainElement.eClass()) && isConditionalNode_3083((ConditionalNode) domainElement)) {
+				return ConditionalNode2EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getExpansionRegion().isSuperTypeOf(domainElement.eClass()) && isExpansionRegion_3085((ExpansionRegion) domainElement)) {
+				return ExpansionRegion2EditPart.VISUAL_ID;
+			}
+			break;
+		case OpaqueAction3EditPart.VISUAL_ID:
+			if (UMLPackage.eINSTANCE.getOutputPin().isSuperTypeOf(domainElement.eClass())) {
+				return OutputPinEditPart.VISUAL_ID;
+			}
+			break;
+		case CreateObjectAction3EditPart.VISUAL_ID:
+			if (UMLPackage.eINSTANCE.getOutputPin().isSuperTypeOf(domainElement.eClass())) {
+				return OutputPin2EditPart.VISUAL_ID;
+			}
+			break;
+		case AddStructuralFeatureValueAction3EditPart.VISUAL_ID:
+			if (UMLPackage.eINSTANCE.getInputPin().isSuperTypeOf(domainElement.eClass())) {
+				return InputPinEditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getInputPin().isSuperTypeOf(domainElement.eClass())) {
+				return InputPin2EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getInputPin().isSuperTypeOf(domainElement.eClass())) {
+				return InputPin3EditPart.VISUAL_ID;
+			}
+			break;
+		case CallBehaviorAction3EditPart.VISUAL_ID:
+			if (UMLPackage.eINSTANCE.getOutputPin().isSuperTypeOf(domainElement.eClass())) {
+				return OutputPin3EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getInputPin().isSuperTypeOf(domainElement.eClass())) {
+				return InputPin4EditPart.VISUAL_ID;
+			}
+			break;
+		case CallOperationAction3EditPart.VISUAL_ID:
+			if (UMLPackage.eINSTANCE.getOutputPin().isSuperTypeOf(domainElement.eClass())) {
+				return OutputPin3EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getInputPin().isSuperTypeOf(domainElement.eClass())) {
+				return InputPin4EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getInputPin().isSuperTypeOf(domainElement.eClass())) {
+				return InputPin5EditPart.VISUAL_ID;
+			}
+			break;
+		case StructuredActivityNode3EditPart.VISUAL_ID:
+			if (UMLPackage.eINSTANCE.getStructuredActivityNode().isSuperTypeOf(domainElement.eClass()) && isStructuredActivityNode_3079((StructuredActivityNode) domainElement)) {
+				return StructuredActivityNode4EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getOpaqueAction().isSuperTypeOf(domainElement.eClass()) && isOpaqueAction_3011((OpaqueAction) domainElement)) {
+				return OpaqueAction2EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getAcceptEventAction().isSuperTypeOf(domainElement.eClass()) && isAcceptEventAction_3012((AcceptEventAction) domainElement)) {
+				return AcceptEventAction3EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getAcceptEventAction().isSuperTypeOf(domainElement.eClass()) && isAcceptEventAction_3013((AcceptEventAction) domainElement)) {
+				return AcceptEventAction4EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getActivityFinalNode().isSuperTypeOf(domainElement.eClass()) && isActivityFinalNode_3014((ActivityFinalNode) domainElement)) {
+				return ActivityFinalNode2EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getDecisionNode().isSuperTypeOf(domainElement.eClass()) && isDecisionNode_3015((DecisionNode) domainElement)) {
+				return DecisionNode2EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getFlowFinalNode().isSuperTypeOf(domainElement.eClass()) && isFlowFinalNode_3016((FlowFinalNode) domainElement)) {
+				return FlowFinalNode2EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getPin().isSuperTypeOf(domainElement.eClass()) && isPin_3017((Pin) domainElement)) {
+				return Pin2EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getCreateObjectAction().isSuperTypeOf(domainElement.eClass()) && isCreateObjectAction_3018((CreateObjectAction) domainElement)) {
+				return CreateObjectAction2EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getCallBehaviorAction().isSuperTypeOf(domainElement.eClass()) && isCallBehaviorAction_3019((CallBehaviorAction) domainElement)) {
+				return CallBehaviorAction2EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getCallOperationAction().isSuperTypeOf(domainElement.eClass()) && isCallOperationAction_3020((CallOperationAction) domainElement)) {
+				return CallOperationAction2EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getForkNode().isSuperTypeOf(domainElement.eClass()) && isForkNode_3021((ForkNode) domainElement)) {
+				return ForkNode2EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getJoinNode().isSuperTypeOf(domainElement.eClass()) && isJoinNode_3022((JoinNode) domainElement)) {
+				return JoinNode2EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getAddStructuralFeatureValueAction().isSuperTypeOf(domainElement.eClass())
+					&& isAddStructuralFeatureValueAction_3023((AddStructuralFeatureValueAction) domainElement)) {
+				return AddStructuralFeatureValueAction2EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getDataStoreNode().isSuperTypeOf(domainElement.eClass()) && isDataStoreNode_3024((DataStoreNode) domainElement)) {
+				return DataStoreNode2EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getCentralBufferNode().isSuperTypeOf(domainElement.eClass()) && isCentralBufferNode_3025((CentralBufferNode) domainElement)) {
+				return CentralBufferNode2EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getInputPin().isSuperTypeOf(domainElement.eClass())) {
+				return InputPin7EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getOutputPin().isSuperTypeOf(domainElement.eClass())) {
+				return OutputPin5EditPart.VISUAL_ID;
+			}
+			break;
+		case StructuredActivityNode4EditPart.VISUAL_ID:
+			if (UMLPackage.eINSTANCE.getStructuredActivityNode().isSuperTypeOf(domainElement.eClass()) && isStructuredActivityNode_3079((StructuredActivityNode) domainElement)) {
+				return StructuredActivityNode4EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getOpaqueAction().isSuperTypeOf(domainElement.eClass()) && isOpaqueAction_3011((OpaqueAction) domainElement)) {
+				return OpaqueAction2EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getAcceptEventAction().isSuperTypeOf(domainElement.eClass()) && isAcceptEventAction_3012((AcceptEventAction) domainElement)) {
+				return AcceptEventAction3EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getAcceptEventAction().isSuperTypeOf(domainElement.eClass()) && isAcceptEventAction_3013((AcceptEventAction) domainElement)) {
+				return AcceptEventAction4EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getActivityFinalNode().isSuperTypeOf(domainElement.eClass()) && isActivityFinalNode_3014((ActivityFinalNode) domainElement)) {
+				return ActivityFinalNode2EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getDecisionNode().isSuperTypeOf(domainElement.eClass()) && isDecisionNode_3015((DecisionNode) domainElement)) {
+				return DecisionNode2EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getFlowFinalNode().isSuperTypeOf(domainElement.eClass()) && isFlowFinalNode_3016((FlowFinalNode) domainElement)) {
+				return FlowFinalNode2EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getPin().isSuperTypeOf(domainElement.eClass()) && isPin_3017((Pin) domainElement)) {
+				return Pin2EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getCreateObjectAction().isSuperTypeOf(domainElement.eClass()) && isCreateObjectAction_3018((CreateObjectAction) domainElement)) {
+				return CreateObjectAction2EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getCallBehaviorAction().isSuperTypeOf(domainElement.eClass()) && isCallBehaviorAction_3019((CallBehaviorAction) domainElement)) {
+				return CallBehaviorAction2EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getCallOperationAction().isSuperTypeOf(domainElement.eClass()) && isCallOperationAction_3020((CallOperationAction) domainElement)) {
+				return CallOperationAction2EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getForkNode().isSuperTypeOf(domainElement.eClass()) && isForkNode_3021((ForkNode) domainElement)) {
+				return ForkNode2EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getJoinNode().isSuperTypeOf(domainElement.eClass()) && isJoinNode_3022((JoinNode) domainElement)) {
+				return JoinNode2EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getAddStructuralFeatureValueAction().isSuperTypeOf(domainElement.eClass())
+					&& isAddStructuralFeatureValueAction_3023((AddStructuralFeatureValueAction) domainElement)) {
+				return AddStructuralFeatureValueAction2EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getDataStoreNode().isSuperTypeOf(domainElement.eClass()) && isDataStoreNode_3024((DataStoreNode) domainElement)) {
+				return DataStoreNode2EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getCentralBufferNode().isSuperTypeOf(domainElement.eClass()) && isCentralBufferNode_3025((CentralBufferNode) domainElement)) {
+				return CentralBufferNode2EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getInputPin().isSuperTypeOf(domainElement.eClass())) {
+				return InputPin7EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getOutputPin().isSuperTypeOf(domainElement.eClass())) {
+				return OutputPin5EditPart.VISUAL_ID;
+			}
+			break;
+		case LoopNode2EditPart.VISUAL_ID:
+			if (UMLPackage.eINSTANCE.getStructuredActivityNode().isSuperTypeOf(domainElement.eClass()) && isStructuredActivityNode_3009((StructuredActivityNode) domainElement)) {
+				return StructuredActivityNode2EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getOpaqueAction().isSuperTypeOf(domainElement.eClass()) && isOpaqueAction_3011((OpaqueAction) domainElement)) {
+				return OpaqueAction2EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getAcceptEventAction().isSuperTypeOf(domainElement.eClass()) && isAcceptEventAction_3012((AcceptEventAction) domainElement)) {
+				return AcceptEventAction3EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getAcceptEventAction().isSuperTypeOf(domainElement.eClass()) && isAcceptEventAction_3013((AcceptEventAction) domainElement)) {
+				return AcceptEventAction4EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getActivityFinalNode().isSuperTypeOf(domainElement.eClass()) && isActivityFinalNode_3014((ActivityFinalNode) domainElement)) {
+				return ActivityFinalNode2EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getDecisionNode().isSuperTypeOf(domainElement.eClass()) && isDecisionNode_3015((DecisionNode) domainElement)) {
+				return DecisionNode2EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getFlowFinalNode().isSuperTypeOf(domainElement.eClass()) && isFlowFinalNode_3016((FlowFinalNode) domainElement)) {
+				return FlowFinalNode2EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getPin().isSuperTypeOf(domainElement.eClass()) && isPin_3017((Pin) domainElement)) {
+				return Pin2EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getCreateObjectAction().isSuperTypeOf(domainElement.eClass()) && isCreateObjectAction_3018((CreateObjectAction) domainElement)) {
+				return CreateObjectAction2EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getCallBehaviorAction().isSuperTypeOf(domainElement.eClass()) && isCallBehaviorAction_3019((CallBehaviorAction) domainElement)) {
+				return CallBehaviorAction2EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getCallOperationAction().isSuperTypeOf(domainElement.eClass()) && isCallOperationAction_3020((CallOperationAction) domainElement)) {
+				return CallOperationAction2EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getForkNode().isSuperTypeOf(domainElement.eClass()) && isForkNode_3021((ForkNode) domainElement)) {
+				return ForkNode2EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getJoinNode().isSuperTypeOf(domainElement.eClass()) && isJoinNode_3022((JoinNode) domainElement)) {
+				return JoinNode2EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getAddStructuralFeatureValueAction().isSuperTypeOf(domainElement.eClass())
+					&& isAddStructuralFeatureValueAction_3023((AddStructuralFeatureValueAction) domainElement)) {
+				return AddStructuralFeatureValueAction2EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getDataStoreNode().isSuperTypeOf(domainElement.eClass()) && isDataStoreNode_3024((DataStoreNode) domainElement)) {
+				return DataStoreNode2EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getCentralBufferNode().isSuperTypeOf(domainElement.eClass()) && isCentralBufferNode_3025((CentralBufferNode) domainElement)) {
+				return CentralBufferNode2EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getInputPin().isSuperTypeOf(domainElement.eClass())) {
+				return InputPin6EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getOutputPin().isSuperTypeOf(domainElement.eClass())) {
+				return OutputPin4EditPart.VISUAL_ID;
+			}
+			break;
+		case ConditionalNode2EditPart.VISUAL_ID:
+			if (UMLPackage.eINSTANCE.getStructuredActivityNode().isSuperTypeOf(domainElement.eClass()) && isStructuredActivityNode_3009((StructuredActivityNode) domainElement)) {
+				return StructuredActivityNode2EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getOpaqueAction().isSuperTypeOf(domainElement.eClass()) && isOpaqueAction_3011((OpaqueAction) domainElement)) {
+				return OpaqueAction2EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getAcceptEventAction().isSuperTypeOf(domainElement.eClass()) && isAcceptEventAction_3012((AcceptEventAction) domainElement)) {
+				return AcceptEventAction3EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getAcceptEventAction().isSuperTypeOf(domainElement.eClass()) && isAcceptEventAction_3013((AcceptEventAction) domainElement)) {
+				return AcceptEventAction4EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getActivityFinalNode().isSuperTypeOf(domainElement.eClass()) && isActivityFinalNode_3014((ActivityFinalNode) domainElement)) {
+				return ActivityFinalNode2EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getDecisionNode().isSuperTypeOf(domainElement.eClass()) && isDecisionNode_3015((DecisionNode) domainElement)) {
+				return DecisionNode2EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getFlowFinalNode().isSuperTypeOf(domainElement.eClass()) && isFlowFinalNode_3016((FlowFinalNode) domainElement)) {
+				return FlowFinalNode2EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getPin().isSuperTypeOf(domainElement.eClass()) && isPin_3017((Pin) domainElement)) {
+				return Pin2EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getCreateObjectAction().isSuperTypeOf(domainElement.eClass()) && isCreateObjectAction_3018((CreateObjectAction) domainElement)) {
+				return CreateObjectAction2EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getCallBehaviorAction().isSuperTypeOf(domainElement.eClass()) && isCallBehaviorAction_3019((CallBehaviorAction) domainElement)) {
+				return CallBehaviorAction2EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getCallOperationAction().isSuperTypeOf(domainElement.eClass()) && isCallOperationAction_3020((CallOperationAction) domainElement)) {
+				return CallOperationAction2EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getForkNode().isSuperTypeOf(domainElement.eClass()) && isForkNode_3021((ForkNode) domainElement)) {
+				return ForkNode2EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getJoinNode().isSuperTypeOf(domainElement.eClass()) && isJoinNode_3022((JoinNode) domainElement)) {
+				return JoinNode2EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getAddStructuralFeatureValueAction().isSuperTypeOf(domainElement.eClass())
+					&& isAddStructuralFeatureValueAction_3023((AddStructuralFeatureValueAction) domainElement)) {
+				return AddStructuralFeatureValueAction2EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getDataStoreNode().isSuperTypeOf(domainElement.eClass()) && isDataStoreNode_3024((DataStoreNode) domainElement)) {
+				return DataStoreNode2EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getCentralBufferNode().isSuperTypeOf(domainElement.eClass()) && isCentralBufferNode_3025((CentralBufferNode) domainElement)) {
+				return CentralBufferNode2EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getInputPin().isSuperTypeOf(domainElement.eClass())) {
+				return InputPin6EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getOutputPin().isSuperTypeOf(domainElement.eClass())) {
+				return OutputPin4EditPart.VISUAL_ID;
+			}
+			break;
+		case ExpansionRegion2EditPart.VISUAL_ID:
+			if (UMLPackage.eINSTANCE.getStructuredActivityNode().isSuperTypeOf(domainElement.eClass()) && isStructuredActivityNode_3009((StructuredActivityNode) domainElement)) {
+				return StructuredActivityNode2EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getOpaqueAction().isSuperTypeOf(domainElement.eClass()) && isOpaqueAction_3011((OpaqueAction) domainElement)) {
+				return OpaqueAction2EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getAcceptEventAction().isSuperTypeOf(domainElement.eClass()) && isAcceptEventAction_3012((AcceptEventAction) domainElement)) {
+				return AcceptEventAction3EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getAcceptEventAction().isSuperTypeOf(domainElement.eClass()) && isAcceptEventAction_3013((AcceptEventAction) domainElement)) {
+				return AcceptEventAction4EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getActivityFinalNode().isSuperTypeOf(domainElement.eClass()) && isActivityFinalNode_3014((ActivityFinalNode) domainElement)) {
+				return ActivityFinalNode2EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getDecisionNode().isSuperTypeOf(domainElement.eClass()) && isDecisionNode_3015((DecisionNode) domainElement)) {
+				return DecisionNode2EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getFlowFinalNode().isSuperTypeOf(domainElement.eClass()) && isFlowFinalNode_3016((FlowFinalNode) domainElement)) {
+				return FlowFinalNode2EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getPin().isSuperTypeOf(domainElement.eClass()) && isPin_3017((Pin) domainElement)) {
+				return Pin2EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getCreateObjectAction().isSuperTypeOf(domainElement.eClass()) && isCreateObjectAction_3018((CreateObjectAction) domainElement)) {
+				return CreateObjectAction2EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getCallBehaviorAction().isSuperTypeOf(domainElement.eClass()) && isCallBehaviorAction_3019((CallBehaviorAction) domainElement)) {
+				return CallBehaviorAction2EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getCallOperationAction().isSuperTypeOf(domainElement.eClass()) && isCallOperationAction_3020((CallOperationAction) domainElement)) {
+				return CallOperationAction2EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getForkNode().isSuperTypeOf(domainElement.eClass()) && isForkNode_3021((ForkNode) domainElement)) {
+				return ForkNode2EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getJoinNode().isSuperTypeOf(domainElement.eClass()) && isJoinNode_3022((JoinNode) domainElement)) {
+				return JoinNode2EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getAddStructuralFeatureValueAction().isSuperTypeOf(domainElement.eClass())
+					&& isAddStructuralFeatureValueAction_3023((AddStructuralFeatureValueAction) domainElement)) {
+				return AddStructuralFeatureValueAction2EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getDataStoreNode().isSuperTypeOf(domainElement.eClass()) && isDataStoreNode_3024((DataStoreNode) domainElement)) {
+				return DataStoreNode2EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getCentralBufferNode().isSuperTypeOf(domainElement.eClass()) && isCentralBufferNode_3025((CentralBufferNode) domainElement)) {
+				return CentralBufferNode2EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getInputPin().isSuperTypeOf(domainElement.eClass())) {
+				return InputPin6EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getOutputPin().isSuperTypeOf(domainElement.eClass())) {
+				return OutputPin4EditPart.VISUAL_ID;
+			}
+			break;
+		case LoopNodeEditPart.VISUAL_ID:
+			if (UMLPackage.eINSTANCE.getStructuredActivityNode().isSuperTypeOf(domainElement.eClass()) && isStructuredActivityNode_3009((StructuredActivityNode) domainElement)) {
+				return StructuredActivityNode2EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getOpaqueAction().isSuperTypeOf(domainElement.eClass()) && isOpaqueAction_3011((OpaqueAction) domainElement)) {
+				return OpaqueAction2EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getAcceptEventAction().isSuperTypeOf(domainElement.eClass()) && isAcceptEventAction_3012((AcceptEventAction) domainElement)) {
+				return AcceptEventAction3EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getAcceptEventAction().isSuperTypeOf(domainElement.eClass()) && isAcceptEventAction_3013((AcceptEventAction) domainElement)) {
+				return AcceptEventAction4EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getActivityFinalNode().isSuperTypeOf(domainElement.eClass()) && isActivityFinalNode_3014((ActivityFinalNode) domainElement)) {
+				return ActivityFinalNode2EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getDecisionNode().isSuperTypeOf(domainElement.eClass()) && isDecisionNode_3015((DecisionNode) domainElement)) {
+				return DecisionNode2EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getFlowFinalNode().isSuperTypeOf(domainElement.eClass()) && isFlowFinalNode_3016((FlowFinalNode) domainElement)) {
+				return FlowFinalNode2EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getPin().isSuperTypeOf(domainElement.eClass()) && isPin_3017((Pin) domainElement)) {
+				return Pin2EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getCreateObjectAction().isSuperTypeOf(domainElement.eClass()) && isCreateObjectAction_3018((CreateObjectAction) domainElement)) {
+				return CreateObjectAction2EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getCallBehaviorAction().isSuperTypeOf(domainElement.eClass()) && isCallBehaviorAction_3019((CallBehaviorAction) domainElement)) {
+				return CallBehaviorAction2EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getCallOperationAction().isSuperTypeOf(domainElement.eClass()) && isCallOperationAction_3020((CallOperationAction) domainElement)) {
+				return CallOperationAction2EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getForkNode().isSuperTypeOf(domainElement.eClass()) && isForkNode_3021((ForkNode) domainElement)) {
+				return ForkNode2EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getJoinNode().isSuperTypeOf(domainElement.eClass()) && isJoinNode_3022((JoinNode) domainElement)) {
+				return JoinNode2EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getAddStructuralFeatureValueAction().isSuperTypeOf(domainElement.eClass())
+					&& isAddStructuralFeatureValueAction_3023((AddStructuralFeatureValueAction) domainElement)) {
+				return AddStructuralFeatureValueAction2EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getDataStoreNode().isSuperTypeOf(domainElement.eClass()) && isDataStoreNode_3024((DataStoreNode) domainElement)) {
+				return DataStoreNode2EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getCentralBufferNode().isSuperTypeOf(domainElement.eClass()) && isCentralBufferNode_3025((CentralBufferNode) domainElement)) {
+				return CentralBufferNode2EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getInputPin().isSuperTypeOf(domainElement.eClass())) {
+				return InputPin6EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getOutputPin().isSuperTypeOf(domainElement.eClass())) {
+				return OutputPin4EditPart.VISUAL_ID;
+			}
+			break;
+		case ConditionalNodeEditPart.VISUAL_ID:
+			if (UMLPackage.eINSTANCE.getStructuredActivityNode().isSuperTypeOf(domainElement.eClass()) && isStructuredActivityNode_3009((StructuredActivityNode) domainElement)) {
+				return StructuredActivityNode2EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getOpaqueAction().isSuperTypeOf(domainElement.eClass()) && isOpaqueAction_3011((OpaqueAction) domainElement)) {
+				return OpaqueAction2EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getAcceptEventAction().isSuperTypeOf(domainElement.eClass()) && isAcceptEventAction_3012((AcceptEventAction) domainElement)) {
+				return AcceptEventAction3EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getAcceptEventAction().isSuperTypeOf(domainElement.eClass()) && isAcceptEventAction_3013((AcceptEventAction) domainElement)) {
+				return AcceptEventAction4EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getActivityFinalNode().isSuperTypeOf(domainElement.eClass()) && isActivityFinalNode_3014((ActivityFinalNode) domainElement)) {
+				return ActivityFinalNode2EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getDecisionNode().isSuperTypeOf(domainElement.eClass()) && isDecisionNode_3015((DecisionNode) domainElement)) {
+				return DecisionNode2EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getFlowFinalNode().isSuperTypeOf(domainElement.eClass()) && isFlowFinalNode_3016((FlowFinalNode) domainElement)) {
+				return FlowFinalNode2EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getPin().isSuperTypeOf(domainElement.eClass()) && isPin_3017((Pin) domainElement)) {
+				return Pin2EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getCreateObjectAction().isSuperTypeOf(domainElement.eClass()) && isCreateObjectAction_3018((CreateObjectAction) domainElement)) {
+				return CreateObjectAction2EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getCallBehaviorAction().isSuperTypeOf(domainElement.eClass()) && isCallBehaviorAction_3019((CallBehaviorAction) domainElement)) {
+				return CallBehaviorAction2EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getCallOperationAction().isSuperTypeOf(domainElement.eClass()) && isCallOperationAction_3020((CallOperationAction) domainElement)) {
+				return CallOperationAction2EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getForkNode().isSuperTypeOf(domainElement.eClass()) && isForkNode_3021((ForkNode) domainElement)) {
+				return ForkNode2EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getJoinNode().isSuperTypeOf(domainElement.eClass()) && isJoinNode_3022((JoinNode) domainElement)) {
+				return JoinNode2EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getAddStructuralFeatureValueAction().isSuperTypeOf(domainElement.eClass())
+					&& isAddStructuralFeatureValueAction_3023((AddStructuralFeatureValueAction) domainElement)) {
+				return AddStructuralFeatureValueAction2EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getDataStoreNode().isSuperTypeOf(domainElement.eClass()) && isDataStoreNode_3024((DataStoreNode) domainElement)) {
+				return DataStoreNode2EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getCentralBufferNode().isSuperTypeOf(domainElement.eClass()) && isCentralBufferNode_3025((CentralBufferNode) domainElement)) {
+				return CentralBufferNode2EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getInputPin().isSuperTypeOf(domainElement.eClass())) {
+				return InputPin6EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getOutputPin().isSuperTypeOf(domainElement.eClass())) {
+				return OutputPin4EditPart.VISUAL_ID;
+			}
+			break;
+		case ExpansionRegionEditPart.VISUAL_ID:
+			if (UMLPackage.eINSTANCE.getStructuredActivityNode().isSuperTypeOf(domainElement.eClass()) && isStructuredActivityNode_3009((StructuredActivityNode) domainElement)) {
+				return StructuredActivityNode2EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getOpaqueAction().isSuperTypeOf(domainElement.eClass()) && isOpaqueAction_3011((OpaqueAction) domainElement)) {
+				return OpaqueAction2EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getAcceptEventAction().isSuperTypeOf(domainElement.eClass()) && isAcceptEventAction_3012((AcceptEventAction) domainElement)) {
+				return AcceptEventAction3EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getAcceptEventAction().isSuperTypeOf(domainElement.eClass()) && isAcceptEventAction_3013((AcceptEventAction) domainElement)) {
+				return AcceptEventAction4EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getActivityFinalNode().isSuperTypeOf(domainElement.eClass()) && isActivityFinalNode_3014((ActivityFinalNode) domainElement)) {
+				return ActivityFinalNode2EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getDecisionNode().isSuperTypeOf(domainElement.eClass()) && isDecisionNode_3015((DecisionNode) domainElement)) {
+				return DecisionNode2EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getFlowFinalNode().isSuperTypeOf(domainElement.eClass()) && isFlowFinalNode_3016((FlowFinalNode) domainElement)) {
+				return FlowFinalNode2EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getPin().isSuperTypeOf(domainElement.eClass()) && isPin_3017((Pin) domainElement)) {
+				return Pin2EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getCreateObjectAction().isSuperTypeOf(domainElement.eClass()) && isCreateObjectAction_3018((CreateObjectAction) domainElement)) {
+				return CreateObjectAction2EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getCallBehaviorAction().isSuperTypeOf(domainElement.eClass()) && isCallBehaviorAction_3019((CallBehaviorAction) domainElement)) {
+				return CallBehaviorAction2EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getCallOperationAction().isSuperTypeOf(domainElement.eClass()) && isCallOperationAction_3020((CallOperationAction) domainElement)) {
+				return CallOperationAction2EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getForkNode().isSuperTypeOf(domainElement.eClass()) && isForkNode_3021((ForkNode) domainElement)) {
+				return ForkNode2EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getJoinNode().isSuperTypeOf(domainElement.eClass()) && isJoinNode_3022((JoinNode) domainElement)) {
+				return JoinNode2EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getAddStructuralFeatureValueAction().isSuperTypeOf(domainElement.eClass())
+					&& isAddStructuralFeatureValueAction_3023((AddStructuralFeatureValueAction) domainElement)) {
+				return AddStructuralFeatureValueAction2EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getDataStoreNode().isSuperTypeOf(domainElement.eClass()) && isDataStoreNode_3024((DataStoreNode) domainElement)) {
+				return DataStoreNode2EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getCentralBufferNode().isSuperTypeOf(domainElement.eClass()) && isCentralBufferNode_3025((CentralBufferNode) domainElement)) {
+				return CentralBufferNode2EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getInputPin().isSuperTypeOf(domainElement.eClass())) {
+				return InputPin6EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getOutputPin().isSuperTypeOf(domainElement.eClass())) {
+				return OutputPin4EditPart.VISUAL_ID;
+			}
+			break;
+		case PackageEditPart.VISUAL_ID:
+			if (UMLPackage.eINSTANCE.getActivity().isSuperTypeOf(domainElement.eClass())) {
+				return ActivityEditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getConstraint().isSuperTypeOf(domainElement.eClass()) && isConstraint_2027((Constraint) domainElement)) {
+				return ConstraintEditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getConstraint().isSuperTypeOf(domainElement.eClass()) && isConstraint_2028((Constraint) domainElement)) {
+				return Constraint2EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getStructuredActivityNode().isSuperTypeOf(domainElement.eClass()) && isStructuredActivityNode_3009((StructuredActivityNode) domainElement)) {
+				return StructuredActivityNode2EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getOpaqueAction().isSuperTypeOf(domainElement.eClass()) && isOpaqueAction_3011((OpaqueAction) domainElement)) {
+				return OpaqueAction2EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getAcceptEventAction().isSuperTypeOf(domainElement.eClass()) && isAcceptEventAction_3012((AcceptEventAction) domainElement)) {
+				return AcceptEventAction3EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getAcceptEventAction().isSuperTypeOf(domainElement.eClass()) && isAcceptEventAction_3013((AcceptEventAction) domainElement)) {
+				return AcceptEventAction4EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getActivityFinalNode().isSuperTypeOf(domainElement.eClass()) && isActivityFinalNode_3014((ActivityFinalNode) domainElement)) {
+				return ActivityFinalNode2EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getDecisionNode().isSuperTypeOf(domainElement.eClass()) && isDecisionNode_3015((DecisionNode) domainElement)) {
+				return DecisionNode2EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getFlowFinalNode().isSuperTypeOf(domainElement.eClass()) && isFlowFinalNode_3016((FlowFinalNode) domainElement)) {
+				return FlowFinalNode2EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getPin().isSuperTypeOf(domainElement.eClass()) && isPin_3017((Pin) domainElement)) {
+				return Pin2EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getCreateObjectAction().isSuperTypeOf(domainElement.eClass()) && isCreateObjectAction_3018((CreateObjectAction) domainElement)) {
+				return CreateObjectAction2EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getCallBehaviorAction().isSuperTypeOf(domainElement.eClass()) && isCallBehaviorAction_3019((CallBehaviorAction) domainElement)) {
+				return CallBehaviorAction2EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getCallOperationAction().isSuperTypeOf(domainElement.eClass()) && isCallOperationAction_3020((CallOperationAction) domainElement)) {
+				return CallOperationAction2EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getForkNode().isSuperTypeOf(domainElement.eClass()) && isForkNode_3021((ForkNode) domainElement)) {
+				return ForkNode2EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getJoinNode().isSuperTypeOf(domainElement.eClass()) && isJoinNode_3022((JoinNode) domainElement)) {
+				return JoinNode2EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getAddStructuralFeatureValueAction().isSuperTypeOf(domainElement.eClass())
+					&& isAddStructuralFeatureValueAction_3023((AddStructuralFeatureValueAction) domainElement)) {
+				return AddStructuralFeatureValueAction2EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getDataStoreNode().isSuperTypeOf(domainElement.eClass()) && isDataStoreNode_3024((DataStoreNode) domainElement)) {
+				return DataStoreNode2EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getCentralBufferNode().isSuperTypeOf(domainElement.eClass()) && isCentralBufferNode_3025((CentralBufferNode) domainElement)) {
+				return CentralBufferNode2EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getInputPin().isSuperTypeOf(domainElement.eClass())) {
+				return InputPin6EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getOutputPin().isSuperTypeOf(domainElement.eClass())) {
+				return OutputPin4EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getStructuredActivityNode().isSuperTypeOf(domainElement.eClass()) && isStructuredActivityNode_3009((StructuredActivityNode) domainElement)) {
+				return StructuredActivityNode2EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getOpaqueAction().isSuperTypeOf(domainElement.eClass()) && isOpaqueAction_3011((OpaqueAction) domainElement)) {
+				return OpaqueAction2EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getAcceptEventAction().isSuperTypeOf(domainElement.eClass()) && isAcceptEventAction_3012((AcceptEventAction) domainElement)) {
+				return AcceptEventAction3EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getAcceptEventAction().isSuperTypeOf(domainElement.eClass()) && isAcceptEventAction_3013((AcceptEventAction) domainElement)) {
+				return AcceptEventAction4EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getActivityFinalNode().isSuperTypeOf(domainElement.eClass()) && isActivityFinalNode_3014((ActivityFinalNode) domainElement)) {
+				return ActivityFinalNode2EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getDecisionNode().isSuperTypeOf(domainElement.eClass()) && isDecisionNode_3015((DecisionNode) domainElement)) {
+				return DecisionNode2EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getFlowFinalNode().isSuperTypeOf(domainElement.eClass()) && isFlowFinalNode_3016((FlowFinalNode) domainElement)) {
+				return FlowFinalNode2EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getPin().isSuperTypeOf(domainElement.eClass()) && isPin_3017((Pin) domainElement)) {
+				return Pin2EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getCreateObjectAction().isSuperTypeOf(domainElement.eClass()) && isCreateObjectAction_3018((CreateObjectAction) domainElement)) {
+				return CreateObjectAction2EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getCallBehaviorAction().isSuperTypeOf(domainElement.eClass()) && isCallBehaviorAction_3019((CallBehaviorAction) domainElement)) {
+				return CallBehaviorAction2EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getCallOperationAction().isSuperTypeOf(domainElement.eClass()) && isCallOperationAction_3020((CallOperationAction) domainElement)) {
+				return CallOperationAction2EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getForkNode().isSuperTypeOf(domainElement.eClass()) && isForkNode_3021((ForkNode) domainElement)) {
+				return ForkNode2EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getJoinNode().isSuperTypeOf(domainElement.eClass()) && isJoinNode_3022((JoinNode) domainElement)) {
+				return JoinNode2EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getAddStructuralFeatureValueAction().isSuperTypeOf(domainElement.eClass())
+					&& isAddStructuralFeatureValueAction_3023((AddStructuralFeatureValueAction) domainElement)) {
+				return AddStructuralFeatureValueAction2EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getDataStoreNode().isSuperTypeOf(domainElement.eClass()) && isDataStoreNode_3024((DataStoreNode) domainElement)) {
+				return DataStoreNode2EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getCentralBufferNode().isSuperTypeOf(domainElement.eClass()) && isCentralBufferNode_3025((CentralBufferNode) domainElement)) {
+				return CentralBufferNode2EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getInputPin().isSuperTypeOf(domainElement.eClass())) {
+				return InputPin6EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getOutputPin().isSuperTypeOf(domainElement.eClass())) {
+				return OutputPin4EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getStructuredActivityNode().isSuperTypeOf(domainElement.eClass()) && isStructuredActivityNode_3079((StructuredActivityNode) domainElement)) {
+				return StructuredActivityNode4EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getOpaqueAction().isSuperTypeOf(domainElement.eClass()) && isOpaqueAction_3011((OpaqueAction) domainElement)) {
+				return OpaqueAction2EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getAcceptEventAction().isSuperTypeOf(domainElement.eClass()) && isAcceptEventAction_3012((AcceptEventAction) domainElement)) {
+				return AcceptEventAction3EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getAcceptEventAction().isSuperTypeOf(domainElement.eClass()) && isAcceptEventAction_3013((AcceptEventAction) domainElement)) {
+				return AcceptEventAction4EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getActivityFinalNode().isSuperTypeOf(domainElement.eClass()) && isActivityFinalNode_3014((ActivityFinalNode) domainElement)) {
+				return ActivityFinalNode2EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getDecisionNode().isSuperTypeOf(domainElement.eClass()) && isDecisionNode_3015((DecisionNode) domainElement)) {
+				return DecisionNode2EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getFlowFinalNode().isSuperTypeOf(domainElement.eClass()) && isFlowFinalNode_3016((FlowFinalNode) domainElement)) {
+				return FlowFinalNode2EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getPin().isSuperTypeOf(domainElement.eClass()) && isPin_3017((Pin) domainElement)) {
+				return Pin2EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getCreateObjectAction().isSuperTypeOf(domainElement.eClass()) && isCreateObjectAction_3018((CreateObjectAction) domainElement)) {
+				return CreateObjectAction2EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getCallBehaviorAction().isSuperTypeOf(domainElement.eClass()) && isCallBehaviorAction_3019((CallBehaviorAction) domainElement)) {
+				return CallBehaviorAction2EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getCallOperationAction().isSuperTypeOf(domainElement.eClass()) && isCallOperationAction_3020((CallOperationAction) domainElement)) {
+				return CallOperationAction2EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getForkNode().isSuperTypeOf(domainElement.eClass()) && isForkNode_3021((ForkNode) domainElement)) {
+				return ForkNode2EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getJoinNode().isSuperTypeOf(domainElement.eClass()) && isJoinNode_3022((JoinNode) domainElement)) {
+				return JoinNode2EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getAddStructuralFeatureValueAction().isSuperTypeOf(domainElement.eClass())
+					&& isAddStructuralFeatureValueAction_3023((AddStructuralFeatureValueAction) domainElement)) {
+				return AddStructuralFeatureValueAction2EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getDataStoreNode().isSuperTypeOf(domainElement.eClass()) && isDataStoreNode_3024((DataStoreNode) domainElement)) {
+				return DataStoreNode2EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getCentralBufferNode().isSuperTypeOf(domainElement.eClass()) && isCentralBufferNode_3025((CentralBufferNode) domainElement)) {
+				return CentralBufferNode2EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getInputPin().isSuperTypeOf(domainElement.eClass())) {
+				return InputPin7EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getOutputPin().isSuperTypeOf(domainElement.eClass())) {
+				return OutputPin5EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getStructuredActivityNode().isSuperTypeOf(domainElement.eClass()) && isStructuredActivityNode_3079((StructuredActivityNode) domainElement)) {
+				return StructuredActivityNode4EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getOpaqueAction().isSuperTypeOf(domainElement.eClass()) && isOpaqueAction_3011((OpaqueAction) domainElement)) {
+				return OpaqueAction2EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getAcceptEventAction().isSuperTypeOf(domainElement.eClass()) && isAcceptEventAction_3012((AcceptEventAction) domainElement)) {
+				return AcceptEventAction3EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getAcceptEventAction().isSuperTypeOf(domainElement.eClass()) && isAcceptEventAction_3013((AcceptEventAction) domainElement)) {
+				return AcceptEventAction4EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getActivityFinalNode().isSuperTypeOf(domainElement.eClass()) && isActivityFinalNode_3014((ActivityFinalNode) domainElement)) {
+				return ActivityFinalNode2EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getDecisionNode().isSuperTypeOf(domainElement.eClass()) && isDecisionNode_3015((DecisionNode) domainElement)) {
+				return DecisionNode2EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getFlowFinalNode().isSuperTypeOf(domainElement.eClass()) && isFlowFinalNode_3016((FlowFinalNode) domainElement)) {
+				return FlowFinalNode2EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getPin().isSuperTypeOf(domainElement.eClass()) && isPin_3017((Pin) domainElement)) {
+				return Pin2EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getCreateObjectAction().isSuperTypeOf(domainElement.eClass()) && isCreateObjectAction_3018((CreateObjectAction) domainElement)) {
+				return CreateObjectAction2EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getCallBehaviorAction().isSuperTypeOf(domainElement.eClass()) && isCallBehaviorAction_3019((CallBehaviorAction) domainElement)) {
+				return CallBehaviorAction2EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getCallOperationAction().isSuperTypeOf(domainElement.eClass()) && isCallOperationAction_3020((CallOperationAction) domainElement)) {
+				return CallOperationAction2EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getForkNode().isSuperTypeOf(domainElement.eClass()) && isForkNode_3021((ForkNode) domainElement)) {
+				return ForkNode2EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getJoinNode().isSuperTypeOf(domainElement.eClass()) && isJoinNode_3022((JoinNode) domainElement)) {
+				return JoinNode2EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getAddStructuralFeatureValueAction().isSuperTypeOf(domainElement.eClass())
+					&& isAddStructuralFeatureValueAction_3023((AddStructuralFeatureValueAction) domainElement)) {
+				return AddStructuralFeatureValueAction2EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getDataStoreNode().isSuperTypeOf(domainElement.eClass()) && isDataStoreNode_3024((DataStoreNode) domainElement)) {
+				return DataStoreNode2EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getCentralBufferNode().isSuperTypeOf(domainElement.eClass()) && isCentralBufferNode_3025((CentralBufferNode) domainElement)) {
+				return CentralBufferNode2EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getInputPin().isSuperTypeOf(domainElement.eClass())) {
+				return InputPin7EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getOutputPin().isSuperTypeOf(domainElement.eClass())) {
+				return OutputPin5EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getStructuredActivityNode().isSuperTypeOf(domainElement.eClass()) && isStructuredActivityNode_3009((StructuredActivityNode) domainElement)) {
+				return StructuredActivityNode2EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getOpaqueAction().isSuperTypeOf(domainElement.eClass()) && isOpaqueAction_3011((OpaqueAction) domainElement)) {
+				return OpaqueAction2EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getAcceptEventAction().isSuperTypeOf(domainElement.eClass()) && isAcceptEventAction_3012((AcceptEventAction) domainElement)) {
+				return AcceptEventAction3EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getAcceptEventAction().isSuperTypeOf(domainElement.eClass()) && isAcceptEventAction_3013((AcceptEventAction) domainElement)) {
+				return AcceptEventAction4EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getActivityFinalNode().isSuperTypeOf(domainElement.eClass()) && isActivityFinalNode_3014((ActivityFinalNode) domainElement)) {
+				return ActivityFinalNode2EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getDecisionNode().isSuperTypeOf(domainElement.eClass()) && isDecisionNode_3015((DecisionNode) domainElement)) {
+				return DecisionNode2EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getFlowFinalNode().isSuperTypeOf(domainElement.eClass()) && isFlowFinalNode_3016((FlowFinalNode) domainElement)) {
+				return FlowFinalNode2EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getPin().isSuperTypeOf(domainElement.eClass()) && isPin_3017((Pin) domainElement)) {
+				return Pin2EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getCreateObjectAction().isSuperTypeOf(domainElement.eClass()) && isCreateObjectAction_3018((CreateObjectAction) domainElement)) {
+				return CreateObjectAction2EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getCallBehaviorAction().isSuperTypeOf(domainElement.eClass()) && isCallBehaviorAction_3019((CallBehaviorAction) domainElement)) {
+				return CallBehaviorAction2EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getCallOperationAction().isSuperTypeOf(domainElement.eClass()) && isCallOperationAction_3020((CallOperationAction) domainElement)) {
+				return CallOperationAction2EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getForkNode().isSuperTypeOf(domainElement.eClass()) && isForkNode_3021((ForkNode) domainElement)) {
+				return ForkNode2EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getJoinNode().isSuperTypeOf(domainElement.eClass()) && isJoinNode_3022((JoinNode) domainElement)) {
+				return JoinNode2EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getAddStructuralFeatureValueAction().isSuperTypeOf(domainElement.eClass())
+					&& isAddStructuralFeatureValueAction_3023((AddStructuralFeatureValueAction) domainElement)) {
+				return AddStructuralFeatureValueAction2EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getDataStoreNode().isSuperTypeOf(domainElement.eClass()) && isDataStoreNode_3024((DataStoreNode) domainElement)) {
+				return DataStoreNode2EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getCentralBufferNode().isSuperTypeOf(domainElement.eClass()) && isCentralBufferNode_3025((CentralBufferNode) domainElement)) {
+				return CentralBufferNode2EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getInputPin().isSuperTypeOf(domainElement.eClass())) {
+				return InputPin6EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getOutputPin().isSuperTypeOf(domainElement.eClass())) {
+				return OutputPin4EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getStructuredActivityNode().isSuperTypeOf(domainElement.eClass()) && isStructuredActivityNode_3009((StructuredActivityNode) domainElement)) {
+				return StructuredActivityNode2EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getOpaqueAction().isSuperTypeOf(domainElement.eClass()) && isOpaqueAction_3011((OpaqueAction) domainElement)) {
+				return OpaqueAction2EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getAcceptEventAction().isSuperTypeOf(domainElement.eClass()) && isAcceptEventAction_3012((AcceptEventAction) domainElement)) {
+				return AcceptEventAction3EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getAcceptEventAction().isSuperTypeOf(domainElement.eClass()) && isAcceptEventAction_3013((AcceptEventAction) domainElement)) {
+				return AcceptEventAction4EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getActivityFinalNode().isSuperTypeOf(domainElement.eClass()) && isActivityFinalNode_3014((ActivityFinalNode) domainElement)) {
+				return ActivityFinalNode2EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getDecisionNode().isSuperTypeOf(domainElement.eClass()) && isDecisionNode_3015((DecisionNode) domainElement)) {
+				return DecisionNode2EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getFlowFinalNode().isSuperTypeOf(domainElement.eClass()) && isFlowFinalNode_3016((FlowFinalNode) domainElement)) {
+				return FlowFinalNode2EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getPin().isSuperTypeOf(domainElement.eClass()) && isPin_3017((Pin) domainElement)) {
+				return Pin2EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getCreateObjectAction().isSuperTypeOf(domainElement.eClass()) && isCreateObjectAction_3018((CreateObjectAction) domainElement)) {
+				return CreateObjectAction2EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getCallBehaviorAction().isSuperTypeOf(domainElement.eClass()) && isCallBehaviorAction_3019((CallBehaviorAction) domainElement)) {
+				return CallBehaviorAction2EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getCallOperationAction().isSuperTypeOf(domainElement.eClass()) && isCallOperationAction_3020((CallOperationAction) domainElement)) {
+				return CallOperationAction2EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getForkNode().isSuperTypeOf(domainElement.eClass()) && isForkNode_3021((ForkNode) domainElement)) {
+				return ForkNode2EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getJoinNode().isSuperTypeOf(domainElement.eClass()) && isJoinNode_3022((JoinNode) domainElement)) {
+				return JoinNode2EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getAddStructuralFeatureValueAction().isSuperTypeOf(domainElement.eClass())
+					&& isAddStructuralFeatureValueAction_3023((AddStructuralFeatureValueAction) domainElement)) {
+				return AddStructuralFeatureValueAction2EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getDataStoreNode().isSuperTypeOf(domainElement.eClass()) && isDataStoreNode_3024((DataStoreNode) domainElement)) {
+				return DataStoreNode2EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getCentralBufferNode().isSuperTypeOf(domainElement.eClass()) && isCentralBufferNode_3025((CentralBufferNode) domainElement)) {
+				return CentralBufferNode2EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getInputPin().isSuperTypeOf(domainElement.eClass())) {
+				return InputPin6EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getOutputPin().isSuperTypeOf(domainElement.eClass())) {
+				return OutputPin4EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getStructuredActivityNode().isSuperTypeOf(domainElement.eClass()) && isStructuredActivityNode_3009((StructuredActivityNode) domainElement)) {
+				return StructuredActivityNode2EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getOpaqueAction().isSuperTypeOf(domainElement.eClass()) && isOpaqueAction_3011((OpaqueAction) domainElement)) {
+				return OpaqueAction2EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getAcceptEventAction().isSuperTypeOf(domainElement.eClass()) && isAcceptEventAction_3012((AcceptEventAction) domainElement)) {
+				return AcceptEventAction3EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getAcceptEventAction().isSuperTypeOf(domainElement.eClass()) && isAcceptEventAction_3013((AcceptEventAction) domainElement)) {
+				return AcceptEventAction4EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getActivityFinalNode().isSuperTypeOf(domainElement.eClass()) && isActivityFinalNode_3014((ActivityFinalNode) domainElement)) {
+				return ActivityFinalNode2EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getDecisionNode().isSuperTypeOf(domainElement.eClass()) && isDecisionNode_3015((DecisionNode) domainElement)) {
+				return DecisionNode2EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getFlowFinalNode().isSuperTypeOf(domainElement.eClass()) && isFlowFinalNode_3016((FlowFinalNode) domainElement)) {
+				return FlowFinalNode2EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getPin().isSuperTypeOf(domainElement.eClass()) && isPin_3017((Pin) domainElement)) {
+				return Pin2EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getCreateObjectAction().isSuperTypeOf(domainElement.eClass()) && isCreateObjectAction_3018((CreateObjectAction) domainElement)) {
+				return CreateObjectAction2EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getCallBehaviorAction().isSuperTypeOf(domainElement.eClass()) && isCallBehaviorAction_3019((CallBehaviorAction) domainElement)) {
+				return CallBehaviorAction2EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getCallOperationAction().isSuperTypeOf(domainElement.eClass()) && isCallOperationAction_3020((CallOperationAction) domainElement)) {
+				return CallOperationAction2EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getForkNode().isSuperTypeOf(domainElement.eClass()) && isForkNode_3021((ForkNode) domainElement)) {
+				return ForkNode2EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getJoinNode().isSuperTypeOf(domainElement.eClass()) && isJoinNode_3022((JoinNode) domainElement)) {
+				return JoinNode2EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getAddStructuralFeatureValueAction().isSuperTypeOf(domainElement.eClass())
+					&& isAddStructuralFeatureValueAction_3023((AddStructuralFeatureValueAction) domainElement)) {
+				return AddStructuralFeatureValueAction2EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getDataStoreNode().isSuperTypeOf(domainElement.eClass()) && isDataStoreNode_3024((DataStoreNode) domainElement)) {
+				return DataStoreNode2EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getCentralBufferNode().isSuperTypeOf(domainElement.eClass()) && isCentralBufferNode_3025((CentralBufferNode) domainElement)) {
+				return CentralBufferNode2EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getInputPin().isSuperTypeOf(domainElement.eClass())) {
+				return InputPin6EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getOutputPin().isSuperTypeOf(domainElement.eClass())) {
+				return OutputPin4EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getStructuredActivityNode().isSuperTypeOf(domainElement.eClass()) && isStructuredActivityNode_3009((StructuredActivityNode) domainElement)) {
+				return StructuredActivityNode2EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getOpaqueAction().isSuperTypeOf(domainElement.eClass()) && isOpaqueAction_3011((OpaqueAction) domainElement)) {
+				return OpaqueAction2EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getAcceptEventAction().isSuperTypeOf(domainElement.eClass()) && isAcceptEventAction_3012((AcceptEventAction) domainElement)) {
+				return AcceptEventAction3EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getAcceptEventAction().isSuperTypeOf(domainElement.eClass()) && isAcceptEventAction_3013((AcceptEventAction) domainElement)) {
+				return AcceptEventAction4EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getActivityFinalNode().isSuperTypeOf(domainElement.eClass()) && isActivityFinalNode_3014((ActivityFinalNode) domainElement)) {
+				return ActivityFinalNode2EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getDecisionNode().isSuperTypeOf(domainElement.eClass()) && isDecisionNode_3015((DecisionNode) domainElement)) {
+				return DecisionNode2EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getFlowFinalNode().isSuperTypeOf(domainElement.eClass()) && isFlowFinalNode_3016((FlowFinalNode) domainElement)) {
+				return FlowFinalNode2EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getPin().isSuperTypeOf(domainElement.eClass()) && isPin_3017((Pin) domainElement)) {
+				return Pin2EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getCreateObjectAction().isSuperTypeOf(domainElement.eClass()) && isCreateObjectAction_3018((CreateObjectAction) domainElement)) {
+				return CreateObjectAction2EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getCallBehaviorAction().isSuperTypeOf(domainElement.eClass()) && isCallBehaviorAction_3019((CallBehaviorAction) domainElement)) {
+				return CallBehaviorAction2EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getCallOperationAction().isSuperTypeOf(domainElement.eClass()) && isCallOperationAction_3020((CallOperationAction) domainElement)) {
+				return CallOperationAction2EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getForkNode().isSuperTypeOf(domainElement.eClass()) && isForkNode_3021((ForkNode) domainElement)) {
+				return ForkNode2EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getJoinNode().isSuperTypeOf(domainElement.eClass()) && isJoinNode_3022((JoinNode) domainElement)) {
+				return JoinNode2EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getAddStructuralFeatureValueAction().isSuperTypeOf(domainElement.eClass())
+					&& isAddStructuralFeatureValueAction_3023((AddStructuralFeatureValueAction) domainElement)) {
+				return AddStructuralFeatureValueAction2EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getDataStoreNode().isSuperTypeOf(domainElement.eClass()) && isDataStoreNode_3024((DataStoreNode) domainElement)) {
+				return DataStoreNode2EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getCentralBufferNode().isSuperTypeOf(domainElement.eClass()) && isCentralBufferNode_3025((CentralBufferNode) domainElement)) {
+				return CentralBufferNode2EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getInputPin().isSuperTypeOf(domainElement.eClass())) {
+				return InputPin6EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getOutputPin().isSuperTypeOf(domainElement.eClass())) {
+				return OutputPin4EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getStructuredActivityNode().isSuperTypeOf(domainElement.eClass()) && isStructuredActivityNode_3009((StructuredActivityNode) domainElement)) {
+				return StructuredActivityNode2EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getOpaqueAction().isSuperTypeOf(domainElement.eClass()) && isOpaqueAction_3011((OpaqueAction) domainElement)) {
+				return OpaqueAction2EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getAcceptEventAction().isSuperTypeOf(domainElement.eClass()) && isAcceptEventAction_3012((AcceptEventAction) domainElement)) {
+				return AcceptEventAction3EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getAcceptEventAction().isSuperTypeOf(domainElement.eClass()) && isAcceptEventAction_3013((AcceptEventAction) domainElement)) {
+				return AcceptEventAction4EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getActivityFinalNode().isSuperTypeOf(domainElement.eClass()) && isActivityFinalNode_3014((ActivityFinalNode) domainElement)) {
+				return ActivityFinalNode2EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getDecisionNode().isSuperTypeOf(domainElement.eClass()) && isDecisionNode_3015((DecisionNode) domainElement)) {
+				return DecisionNode2EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getFlowFinalNode().isSuperTypeOf(domainElement.eClass()) && isFlowFinalNode_3016((FlowFinalNode) domainElement)) {
+				return FlowFinalNode2EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getPin().isSuperTypeOf(domainElement.eClass()) && isPin_3017((Pin) domainElement)) {
+				return Pin2EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getCreateObjectAction().isSuperTypeOf(domainElement.eClass()) && isCreateObjectAction_3018((CreateObjectAction) domainElement)) {
+				return CreateObjectAction2EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getCallBehaviorAction().isSuperTypeOf(domainElement.eClass()) && isCallBehaviorAction_3019((CallBehaviorAction) domainElement)) {
+				return CallBehaviorAction2EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getCallOperationAction().isSuperTypeOf(domainElement.eClass()) && isCallOperationAction_3020((CallOperationAction) domainElement)) {
+				return CallOperationAction2EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getForkNode().isSuperTypeOf(domainElement.eClass()) && isForkNode_3021((ForkNode) domainElement)) {
+				return ForkNode2EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getJoinNode().isSuperTypeOf(domainElement.eClass()) && isJoinNode_3022((JoinNode) domainElement)) {
+				return JoinNode2EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getAddStructuralFeatureValueAction().isSuperTypeOf(domainElement.eClass())
+					&& isAddStructuralFeatureValueAction_3023((AddStructuralFeatureValueAction) domainElement)) {
+				return AddStructuralFeatureValueAction2EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getDataStoreNode().isSuperTypeOf(domainElement.eClass()) && isDataStoreNode_3024((DataStoreNode) domainElement)) {
+				return DataStoreNode2EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getCentralBufferNode().isSuperTypeOf(domainElement.eClass()) && isCentralBufferNode_3025((CentralBufferNode) domainElement)) {
+				return CentralBufferNode2EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getInputPin().isSuperTypeOf(domainElement.eClass())) {
+				return InputPin6EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getOutputPin().isSuperTypeOf(domainElement.eClass())) {
+				return OutputPin4EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getStructuredActivityNode().isSuperTypeOf(domainElement.eClass()) && isStructuredActivityNode_3009((StructuredActivityNode) domainElement)) {
+				return StructuredActivityNode2EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getOpaqueAction().isSuperTypeOf(domainElement.eClass()) && isOpaqueAction_3011((OpaqueAction) domainElement)) {
+				return OpaqueAction2EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getAcceptEventAction().isSuperTypeOf(domainElement.eClass()) && isAcceptEventAction_3012((AcceptEventAction) domainElement)) {
+				return AcceptEventAction3EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getAcceptEventAction().isSuperTypeOf(domainElement.eClass()) && isAcceptEventAction_3013((AcceptEventAction) domainElement)) {
+				return AcceptEventAction4EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getActivityFinalNode().isSuperTypeOf(domainElement.eClass()) && isActivityFinalNode_3014((ActivityFinalNode) domainElement)) {
+				return ActivityFinalNode2EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getDecisionNode().isSuperTypeOf(domainElement.eClass()) && isDecisionNode_3015((DecisionNode) domainElement)) {
+				return DecisionNode2EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getFlowFinalNode().isSuperTypeOf(domainElement.eClass()) && isFlowFinalNode_3016((FlowFinalNode) domainElement)) {
+				return FlowFinalNode2EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getPin().isSuperTypeOf(domainElement.eClass()) && isPin_3017((Pin) domainElement)) {
+				return Pin2EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getCreateObjectAction().isSuperTypeOf(domainElement.eClass()) && isCreateObjectAction_3018((CreateObjectAction) domainElement)) {
+				return CreateObjectAction2EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getCallBehaviorAction().isSuperTypeOf(domainElement.eClass()) && isCallBehaviorAction_3019((CallBehaviorAction) domainElement)) {
+				return CallBehaviorAction2EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getCallOperationAction().isSuperTypeOf(domainElement.eClass()) && isCallOperationAction_3020((CallOperationAction) domainElement)) {
+				return CallOperationAction2EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getForkNode().isSuperTypeOf(domainElement.eClass()) && isForkNode_3021((ForkNode) domainElement)) {
+				return ForkNode2EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getJoinNode().isSuperTypeOf(domainElement.eClass()) && isJoinNode_3022((JoinNode) domainElement)) {
+				return JoinNode2EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getAddStructuralFeatureValueAction().isSuperTypeOf(domainElement.eClass())
+					&& isAddStructuralFeatureValueAction_3023((AddStructuralFeatureValueAction) domainElement)) {
+				return AddStructuralFeatureValueAction2EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getDataStoreNode().isSuperTypeOf(domainElement.eClass()) && isDataStoreNode_3024((DataStoreNode) domainElement)) {
+				return DataStoreNode2EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getCentralBufferNode().isSuperTypeOf(domainElement.eClass()) && isCentralBufferNode_3025((CentralBufferNode) domainElement)) {
+				return CentralBufferNode2EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getInputPin().isSuperTypeOf(domainElement.eClass())) {
+				return InputPin6EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getOutputPin().isSuperTypeOf(domainElement.eClass())) {
+				return OutputPin4EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getLiteralString().isSuperTypeOf(domainElement.eClass())) {
+				return LiteralStringEditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getLiteralString().isSuperTypeOf(domainElement.eClass())) {
+				return LiteralString2EditPart.VISUAL_ID;
+			}
+			break;
+		}
+		return -1;
+	}
+
 }

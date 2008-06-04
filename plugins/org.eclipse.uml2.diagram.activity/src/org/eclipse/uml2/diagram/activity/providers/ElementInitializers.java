@@ -68,10 +68,12 @@ public class ElementInitializers {
 	 */
 	public static void init_AcceptEventAction_3031(AcceptEventAction instance) {
 		try {
-			Object value0 = value_trigger(instance);
+			Object value0 = trigger_AcceptEventAction_3031(instance);
 			if (value0 instanceof Collection) {
 				instance.getTriggers().clear();
 				instance.getTriggers().addAll(((Collection) value0));
+			} else {
+				instance.getTriggers().add((Trigger) value0);
 			}
 			Object value1 = UMLOCLFactory
 					.getExpression(
@@ -388,10 +390,12 @@ public class ElementInitializers {
 	 */
 	public static void init_AcceptEventAction_3013(AcceptEventAction instance) {
 		try {
-			Object value0 = value_trigger(instance);
+			Object value0 = trigger_AcceptEventAction_3013(instance);
 			if (value0 instanceof Collection) {
 				instance.getTriggers().clear();
 				instance.getTriggers().addAll(((Collection) value0));
+			} else {
+				instance.getTriggers().add((Trigger) value0);
 			}
 			Object value1 = UMLOCLFactory
 					.getExpression(
@@ -633,10 +637,12 @@ public class ElementInitializers {
 	 */
 	public static void init_AcceptEventAction_3060(AcceptEventAction instance) {
 		try {
-			Object value0 = value_trigger(instance);
+			Object value0 = trigger_AcceptEventAction_3060(instance);
 			if (value0 instanceof Collection) {
 				instance.getTriggers().clear();
 				instance.getTriggers().addAll(((Collection) value0));
+			} else {
+				instance.getTriggers().add((Trigger) value0);
 			}
 			Object value1 = UMLOCLFactory
 					.getExpression(
@@ -901,6 +907,36 @@ public class ElementInitializers {
 		} catch (RuntimeException e) {
 			UMLDiagramEditorPlugin.getInstance().logError("Element initialization failed", e); //$NON-NLS-1$						
 		}
+	}
+
+	/**
+	 * @generated
+	 */
+	private static List trigger_AcceptEventAction_3031(AcceptEventAction self) {
+		// TODO: implement this method to return value  
+		// for org.eclipse.uml2.uml.UMLPackage.eINSTANCE.getAcceptEventAction_Trigger()
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException("No user java implementation provided in 'trigger_AcceptEventAction_3031' operation");//$NON-NLS-1$
+	}
+
+	/**
+	 * @generated
+	 */
+	private static List trigger_AcceptEventAction_3013(AcceptEventAction self) {
+		// TODO: implement this method to return value  
+		// for org.eclipse.uml2.uml.UMLPackage.eINSTANCE.getAcceptEventAction_Trigger()
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException("No user java implementation provided in 'trigger_AcceptEventAction_3013' operation");//$NON-NLS-1$
+	}
+
+	/**
+	 * @generated
+	 */
+	private static List trigger_AcceptEventAction_3060(AcceptEventAction self) {
+		// TODO: implement this method to return value  
+		// for org.eclipse.uml2.uml.UMLPackage.eINSTANCE.getAcceptEventAction_Trigger()
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException("No user java implementation provided in 'trigger_AcceptEventAction_3060' operation");//$NON-NLS-1$
 	}
 
 	/**
