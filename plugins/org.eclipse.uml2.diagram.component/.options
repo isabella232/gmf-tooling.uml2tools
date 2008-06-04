@@ -1,7 +1,0 @@
-# Tracing options for the org.eclipse.uml2.diagram.component plug-in
-
-# Common issues
-org.eclipse.uml2.diagram.component/debug=false
-
-# Visual IDs
-org.eclipse.uml2.diagram.component/debug/visualID=false
