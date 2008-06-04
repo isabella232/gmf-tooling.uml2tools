@@ -56,7 +56,7 @@ public class GeneralizationGeneralReorientCommand extends EditElementCommand {
 	 * @generated NOT
 	 */
 	public boolean canExecute() {
-		if (false == referenceOwner instanceof GeneralizationSet && ((GeneralizationSet)referenceOwner).getGeneralization(getOldTarget()) != null) {
+		if (false == referenceOwner instanceof GeneralizationSet && ((GeneralizationSet) referenceOwner).getGeneralization(getOldTarget()) != null) {
 			return false;
 		}
 		if (reorientDirection == ReorientRelationshipRequest.REORIENT_SOURCE) {
@@ -73,10 +73,10 @@ public class GeneralizationGeneralReorientCommand extends EditElementCommand {
 	 */
 	protected boolean canReorientSource() {
 		return false;
-//		if (!(oldEnd instanceof Classifier && newEnd instanceof Generalization)) {
-//			return false;
-//		}
-//		return UMLBaseItemSemanticEditPolicy.LinkConstraints.canExistGeneralizationGeneral_4012(getNewSource(), getOldTarget());
+		//		if (!(oldEnd instanceof Classifier && newEnd instanceof Generalization)) {
+		//			return false;
+		//		}
+		//		return UMLBaseItemSemanticEditPolicy.LinkConstraints.canExistGeneralizationGeneral_4012(getNewSource(), getOldTarget());
 	}
 
 	/**
@@ -115,7 +115,7 @@ public class GeneralizationGeneralReorientCommand extends EditElementCommand {
 	}
 
 	/**
-	 * @generated
+	 * @generated NOT
 	 */
 	protected CommandResult reorientTarget() throws ExecutionException {
 		for (Generalization g: getAllGeneralizations()) {
@@ -138,7 +138,7 @@ public class GeneralizationGeneralReorientCommand extends EditElementCommand {
 	 */
 	protected List<Generalization> getAllGeneralizations() {
 		List<Generalization> result = new ArrayList<Generalization>();
-		for (Generalization g: ((GeneralizationSet) referenceOwner).getGeneralizations()) {
+		for (Generalization g : ((GeneralizationSet) referenceOwner).getGeneralizations()) {
 			if (getOldTarget().equals(g.getGeneral())) {
 				result.add(g);
 			}
