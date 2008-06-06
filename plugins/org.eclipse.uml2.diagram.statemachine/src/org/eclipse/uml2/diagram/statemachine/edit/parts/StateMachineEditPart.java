@@ -33,23 +33,12 @@ public class StateMachineEditPart extends DiagramEditPart {
 	}
 
 	/**
-	 * @NOT-GENERATED
-	 */
-	@Override
-	protected IFigure createFigure() {
-		CoveredFreeformLayer figure = new CoveredFreeformLayer();
-		figure.setMarginInsets(new Insets(45, 20, 20, 20));
-		return figure;
-	}
-
-	/**
 	 * @generated
 	 */
 	protected void createDefaultEditPolicies() {
 		super.createDefaultEditPolicies();
 		installEditPolicy(EditPolicyRoles.SEMANTIC_ROLE, new StateMachineItemSemanticEditPolicy());
 		installEditPolicy(EditPolicyRoles.CANONICAL_ROLE, new StateMachineCanonicalEditPolicy());
-		installEditPolicy("LayoutEditPolicy", new LaneLayoutEditPolicy()); //$NON-NLS-1$
 		// removeEditPolicy(org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles.POPUPBAR_ROLE);
 	}
 }
