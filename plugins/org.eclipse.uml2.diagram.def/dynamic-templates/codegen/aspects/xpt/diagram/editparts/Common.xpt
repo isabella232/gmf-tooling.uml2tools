@@ -14,7 +14,7 @@
 «IMPORT "http://www.eclipse.org/emf/2002/Ecore"»
 
 «DEFINE behaviour FOR gmfgen::SharedBehaviour-»
-	«REM»don't alllow delegate to be SharedBehaviour to avoid endless xPand sequence«ENDREM»«-»
+	«REM»don't allow delegate to be SharedBehaviour to avoid endless xPand sequence«ENDREM»«-»
 	«IF null != this.delegate && {this.delegate}.typeSelect(gmfgen::SharedBehaviour).isEmpty() -»
 	«EXPAND xpt::diagram::editparts::Common::behaviour FOR this.delegate»
 	«ENDIF-»
