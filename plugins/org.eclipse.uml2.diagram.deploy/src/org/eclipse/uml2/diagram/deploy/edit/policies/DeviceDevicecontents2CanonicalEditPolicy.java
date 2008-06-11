@@ -50,9 +50,7 @@ public class DeviceDevicecontents2CanonicalEditPolicy extends CanonicalEditPolic
 		case ArtifactEditPart.VISUAL_ID:
 		case ExecutionEnvironment2EditPart.VISUAL_ID:
 		case Node2EditPart.VISUAL_ID:
-			if (!semanticChildren.contains(view.getElement())) {
-				return true;
-			}
+			return !semanticChildren.contains(view.getElement()) || visualID != UMLVisualIDRegistry.getNodeVisualID((View) getHost().getModel(), view.getElement());
 		}
 		return false;
 	}

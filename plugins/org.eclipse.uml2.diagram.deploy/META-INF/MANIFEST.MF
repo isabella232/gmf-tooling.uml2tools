@@ -39,4 +39,4 @@ Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.gef;visibility:=reexport,
  org.eclipse.uml2.diagram.common;visibility:=reexport,
  org.eclipse.ocl.ecore;visibility:=reexport
-Bundle-ActivationPolicy: lazy
+Eclipse-LazyStart: true
