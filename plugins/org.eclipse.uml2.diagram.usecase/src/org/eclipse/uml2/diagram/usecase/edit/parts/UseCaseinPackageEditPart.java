@@ -25,9 +25,13 @@ import org.eclipse.gmf.runtime.emf.type.core.IElementType;
 import org.eclipse.gmf.runtime.gef.ui.figures.DefaultSizeNodeFigure;
 import org.eclipse.gmf.runtime.gef.ui.figures.NodeFigure;
 import org.eclipse.gmf.runtime.notation.View;
+import org.eclipse.swt.SWT;
+import org.eclipse.swt.graphics.Font;
+import org.eclipse.swt.widgets.Display;
 import org.eclipse.uml2.diagram.common.draw2d.OneLineDashedBorder;
 import org.eclipse.uml2.diagram.common.draw2d.SplitEllipseLayout;
 import org.eclipse.uml2.diagram.common.editparts.PrimaryShapeEditPart;
+import org.eclipse.uml2.diagram.common.editpolicies.ClassifierNameVisualEffectEditPolicy;
 import org.eclipse.uml2.diagram.usecase.edit.policies.UseCaseinPackageItemSemanticEditPolicy;
 import org.eclipse.uml2.diagram.usecase.part.UMLVisualIDRegistry;
 import org.eclipse.uml2.diagram.usecase.providers.UMLElementTypes;
@@ -280,6 +284,8 @@ public class UseCaseinPackageEditPart extends ShapeNodeEditPart implements Prima
 			fUseCaseFigure_name = new Label();
 			fUseCaseFigure_name.setText("");
 
+			fUseCaseFigure_name.setFont(FUSECASEFIGURE_NAME_FONT);
+
 			this.add(fUseCaseFigure_name, BorderLayout.TOP);
 
 			fUseCaseFigure_contents = new RectangleFigure();
@@ -334,5 +340,10 @@ public class UseCaseinPackageEditPart extends ShapeNodeEditPart implements Prima
 		}
 
 	}
+
+	/**
+	 * @generated
+	 */
+	static final Font FUSECASEFIGURE_NAME_FONT = new Font(Display.getCurrent(), Display.getDefault().getSystemFont().getFontData()[0].getName(), 9, SWT.NORMAL);
 
 }

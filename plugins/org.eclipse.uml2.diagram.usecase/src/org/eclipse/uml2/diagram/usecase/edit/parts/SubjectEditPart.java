@@ -284,7 +284,6 @@ public class SubjectEditPart extends ShapeNodeEditPart implements PrimaryShapeEd
 			fUseCaseSubjectFigure_contents = new RectangleFigure();
 
 			this.add(fUseCaseSubjectFigure_contents);
-
 			fUseCaseSubjectFigure_contents.setLayoutManager(new StackLayout());
 
 		}

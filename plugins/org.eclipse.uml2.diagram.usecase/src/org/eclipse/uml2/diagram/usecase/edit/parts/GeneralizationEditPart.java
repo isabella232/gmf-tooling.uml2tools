@@ -74,6 +74,7 @@ public class GeneralizationEditPart extends ConnectionNodeEditPart {
 		 */
 		private RotatableDecoration createTargetDecoration() {
 			PolygonDecoration df = new PolygonDecoration();
+			df.setFill(true);
 			df.setBackgroundColor(ColorConstants.white);
 			PointList pl = new PointList();
 			pl.addPoint(getMapMode().DPtoLP(0), getMapMode().DPtoLP(0));

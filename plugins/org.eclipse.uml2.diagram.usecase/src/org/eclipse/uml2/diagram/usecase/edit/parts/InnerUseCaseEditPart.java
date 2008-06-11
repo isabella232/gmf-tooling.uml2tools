@@ -37,6 +37,7 @@ import org.eclipse.uml2.diagram.common.draw2d.CenterLayout;
 import org.eclipse.uml2.diagram.common.draw2d.OneLineDashedBorder;
 import org.eclipse.uml2.diagram.common.draw2d.SplitEllipseLayout;
 import org.eclipse.uml2.diagram.common.editparts.PrimaryShapeEditPart;
+import org.eclipse.uml2.diagram.common.editpolicies.ClassifierNameVisualEffectEditPolicy;
 import org.eclipse.uml2.diagram.usecase.edit.policies.InnerUseCaseItemSemanticEditPolicy;
 import org.eclipse.uml2.diagram.usecase.edit.policies.UMLTextSelectionEditPolicy;
 import org.eclipse.uml2.diagram.usecase.part.UMLVisualIDRegistry;
@@ -290,6 +291,8 @@ public class InnerUseCaseEditPart extends ShapeNodeEditPart implements PrimarySh
 			fUseCaseFigure_name = new Label();
 			fUseCaseFigure_name.setText("");
 
+			fUseCaseFigure_name.setFont(FUSECASEFIGURE_NAME_FONT);
+
 			this.add(fUseCaseFigure_name, BorderLayout.TOP);
 
 			fUseCaseFigure_contents = new RectangleFigure();
@@ -344,5 +347,10 @@ public class InnerUseCaseEditPart extends ShapeNodeEditPart implements PrimarySh
 		}
 
 	}
+
+	/**
+	 * @generated
+	 */
+	static final Font FUSECASEFIGURE_NAME_FONT = new Font(Display.getCurrent(), Display.getDefault().getSystemFont().getFontData()[0].getName(), 9, SWT.NORMAL);
 
 }
