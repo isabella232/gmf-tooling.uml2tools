@@ -102,33 +102,4 @@
     <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_6O9ThjajEdyCLZBPNn2ARw" points="[10, 1, -126, -8]$[136, 17, 0, 8]"/>
     <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_6PHEgDajEdyCLZBPNn2ARw" id="(0.9264706,0.45901638)"/>
   </edges>
-  <edges xmi:type="notation:Edge" xmi:id="_wHob1zk5Ed2LZYDF9MBmcw" type="4011" source="_gzwEcDajEdyCLZBPNn2ARw" target="_ie4wkDajEdyCLZBPNn2ARw">
-    <children xmi:type="notation:Node" xmi:id="_wHob2zk5Ed2LZYDF9MBmcw" type="6002">
-      <layoutConstraint xmi:type="notation:Location" xmi:id="_wHob3Dk5Ed2LZYDF9MBmcw" y="20"/>
-    </children>
-    <children xmi:type="notation:Node" xmi:id="_wHob3Tk5Ed2LZYDF9MBmcw" type="6003">
-      <layoutConstraint xmi:type="notation:Location" xmi:id="_wHob3jk5Ed2LZYDF9MBmcw" y="-15"/>
-    </children>
-    <children xmi:type="notation:Node" xmi:id="_wHob3zk5Ed2LZYDF9MBmcw" type="6004">
-      <layoutConstraint xmi:type="notation:Location" xmi:id="_wHob4Dk5Ed2LZYDF9MBmcw" y="-15"/>
-    </children>
-    <children xmi:type="notation:Node" xmi:id="_wHob4Tk5Ed2LZYDF9MBmcw" type="6005">
-      <layoutConstraint xmi:type="notation:Location" xmi:id="_wHob4jk5Ed2LZYDF9MBmcw" y="-30"/>
-    </children>
-    <children xmi:type="notation:Node" xmi:id="_wHob4zk5Ed2LZYDF9MBmcw" type="6006">
-      <layoutConstraint xmi:type="notation:Location" xmi:id="_wHob5Dk5Ed2LZYDF9MBmcw" y="-30"/>
-    </children>
-    <children xmi:type="notation:Node" xmi:id="_wHob5Tk5Ed2LZYDF9MBmcw" type="6007">
-      <layoutConstraint xmi:type="notation:Location" xmi:id="_wHob5jk5Ed2LZYDF9MBmcw" y="15"/>
-    </children>
-    <children xmi:type="notation:Node" xmi:id="_wHob5zk5Ed2LZYDF9MBmcw" type="6008">
-      <layoutConstraint xmi:type="notation:Location" xmi:id="_wHob6Dk5Ed2LZYDF9MBmcw" y="15"/>
-    </children>
-    <styles xmi:type="notation:ConnectorStyle" xmi:id="_wHob2Dk5Ed2LZYDF9MBmcw"/>
-    <styles xmi:type="notation:FontStyle" xmi:id="_wHob2Tk5Ed2LZYDF9MBmcw"/>
-    <element xmi:type="uml:Association" href="8.16.Delegation connectors.uml#_wHob0Dk5Ed2LZYDF9MBmcw"/>
-    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_wHob2jk5Ed2LZYDF9MBmcw" points="[17, 0, -64, 0]$[77, -1, -4, -1]"/>
-    <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_wHxlwDk5Ed2LZYDF9MBmcw" id="(0.85833335,0.48333332)"/>
-    <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_wHxlwTk5Ed2LZYDF9MBmcw" id="(0.03305785,0.46666667)"/>
-  </edges>
 </notation:Diagram>

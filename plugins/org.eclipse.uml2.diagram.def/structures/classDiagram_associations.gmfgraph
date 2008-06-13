@@ -37,7 +37,11 @@
       <actualFigure
           xsi:type="gmfgraph:CustomConnection"
           name="AssociationLinkFigure"
-          qualifiedClassName="org.eclipse.uml2.diagram.common.draw2d.AssociationLinkFigure"/>
+          qualifiedClassName="org.eclipse.uml2.diagram.common.draw2d.AssociationLinkFigureBase">
+        <foregroundColor
+            xsi:type="gmfgraph:ConstantColor"
+            value="blue"/>
+      </actualFigure>
     </descriptors>
     <descriptors
         name="Association_label_targetOptions">

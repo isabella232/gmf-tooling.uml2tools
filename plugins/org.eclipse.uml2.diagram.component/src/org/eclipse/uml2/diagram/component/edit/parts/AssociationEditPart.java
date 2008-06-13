@@ -1,12 +1,13 @@
 package org.eclipse.uml2.diagram.component.edit.parts;
 
+import org.eclipse.draw2d.ColorConstants;
 import org.eclipse.draw2d.Connection;
 import org.eclipse.gef.EditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.ConnectionNodeEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.ITreeBranchEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles;
 import org.eclipse.gmf.runtime.notation.View;
-import org.eclipse.uml2.diagram.common.draw2d.AssociationLinkFigure;
+import org.eclipse.uml2.diagram.common.draw2d.AssociationLinkFigureBase;
 import org.eclipse.uml2.diagram.common.editpolicies.AssociationEndDecorationEditPolicy;
 import org.eclipse.uml2.diagram.component.edit.policies.AssociationItemSemanticEditPolicy;
 
@@ -72,6 +73,40 @@ public class AssociationEditPart extends ConnectionNodeEditPart implements ITree
 	 */
 	public AssociationLinkFigure getPrimaryShape() {
 		return (AssociationLinkFigure) getFigure();
+	}
+
+	/**
+	 * @generated
+	 */
+	public class AssociationLinkFigure extends AssociationLinkFigureBase {
+
+		/**
+		 * @generated
+		 */
+		public AssociationLinkFigure() {
+
+			this.setForegroundColor(ColorConstants.blue);
+		}
+
+		/**
+		 * @generated
+		 */
+		private boolean myUseLocalCoordinates = false;
+
+		/**
+		 * @generated
+		 */
+		protected boolean useLocalCoordinates() {
+			return myUseLocalCoordinates;
+		}
+
+		/**
+		 * @generated
+		 */
+		protected void setUseLocalCoordinates(boolean useLocalCoordinates) {
+			myUseLocalCoordinates = useLocalCoordinates;
+		}
+
 	}
 
 }

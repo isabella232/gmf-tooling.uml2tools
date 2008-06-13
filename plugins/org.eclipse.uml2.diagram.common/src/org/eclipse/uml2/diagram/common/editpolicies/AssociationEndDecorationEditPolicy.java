@@ -5,7 +5,7 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.ConnectionNodeEditPart;
 import org.eclipse.jface.preference.IPreferenceStore;
 import org.eclipse.uml2.diagram.common.conventions.AssociationEndConvention;
-import org.eclipse.uml2.diagram.common.draw2d.AssociationLinkFigure;
+import org.eclipse.uml2.diagram.common.draw2d.AssociationLinkFigureBase;
 import org.eclipse.uml2.uml.Association;
 import org.eclipse.uml2.uml.Property;
 import org.eclipse.uml2.uml.UMLPackage;
@@ -21,14 +21,14 @@ public class AssociationEndDecorationEditPolicy extends AbstractVisualEffectEdit
 		@Override
 		protected void refreshVisualEffect() {
 			ConnectionNodeEditPart editPart = (ConnectionNodeEditPart)getHostImpl();
-			refreshDecorations((AssociationLinkFigure)editPart.getConnectionFigure(), (IPreferenceStore) editPart.getDiagramPreferencesHint().getPreferenceStore());
+			refreshDecorations((AssociationLinkFigureBase)editPart.getConnectionFigure(), (IPreferenceStore) editPart.getDiagramPreferencesHint().getPreferenceStore());
 		}
 
 		@Override
 		protected void installVisualEffect() {
 		}
 		
-		private void refreshDecorations(AssociationLinkFigure linkFigure, IPreferenceStore store) {
+		private void refreshDecorations(AssociationLinkFigureBase linkFigure, IPreferenceStore store) {
 			Association association = (Association) resolveSemanticElement();
 			if (association == null || !association.isBinary()) {
 				return;
