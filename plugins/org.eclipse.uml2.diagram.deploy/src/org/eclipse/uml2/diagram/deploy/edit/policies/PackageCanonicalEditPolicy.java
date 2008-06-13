@@ -89,7 +89,9 @@ public class PackageCanonicalEditPolicy extends CanonicalConnectionEditPolicy {
 		case ExecutionEnvironmentEditPart.VISUAL_ID:
 		case Artifact2EditPart.VISUAL_ID:
 		case DeploymentSpecificationEditPart.VISUAL_ID:
-			return !semanticChildren.contains(view.getElement()) || visualID != UMLVisualIDRegistry.getNodeVisualID((View) getHost().getModel(), view.getElement());
+			if (!semanticChildren.contains(view.getElement())) {
+				return true;
+			}
 		}
 		return false;
 	}
