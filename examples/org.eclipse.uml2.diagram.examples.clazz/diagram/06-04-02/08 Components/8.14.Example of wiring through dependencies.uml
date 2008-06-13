@@ -40,4 +40,14 @@
   <packagedElement xmi:type="uml:Component" xmi:id="_Q4D2EDaeEdyiJs_hTQjPKg" name="Product" clientDependency="_YvH48DaeEdyiJs_hTQjPKg"/>
   <packagedElement xmi:type="uml:Usage" xmi:id="_YvH48DaeEdyiJs_hTQjPKg" supplier="_LvojsDaeEdyiJs_hTQjPKg" client="_Q4D2EDaeEdyiJs_hTQjPKg"/>
   <packagedElement xmi:type="uml:Dependency" xmi:id="_QPX3ADC4Ed2Dn5GmDgY-wA" supplier="_6vs30DadEdyiJs_hTQjPKg" client="_dpzfsDadEdyiJs_hTQjPKg"/>
+  <packagedElement xmi:type="uml:Association" xmi:id="_ctBdQDk5Ed2LZYDF9MBmcw" name="concerns" memberEnd="_ctBdQTk5Ed2LZYDF9MBmcw _ctLOQTk5Ed2LZYDF9MBmcw">
+    <ownedEnd xmi:id="_ctBdQTk5Ed2LZYDF9MBmcw" name="src" type="_8hhQMDacEdyiJs_hTQjPKg" association="_ctBdQDk5Ed2LZYDF9MBmcw">
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_ctLOQDk5Ed2LZYDF9MBmcw" value="1"/>
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_ctBdQjk5Ed2LZYDF9MBmcw" value="1"/>
+    </ownedEnd>
+    <ownedEnd xmi:id="_ctLOQTk5Ed2LZYDF9MBmcw" name="dst" type="_dpzfsDadEdyiJs_hTQjPKg" aggregation="composite" association="_ctBdQDk5Ed2LZYDF9MBmcw">
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_ctLOQzk5Ed2LZYDF9MBmcw" value="*"/>
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_ctLOQjk5Ed2LZYDF9MBmcw" value="1"/>
+    </ownedEnd>
+  </packagedElement>
 </uml:Package>

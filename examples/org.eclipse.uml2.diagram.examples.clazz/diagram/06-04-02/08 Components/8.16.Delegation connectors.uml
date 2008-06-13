@@ -26,4 +26,14 @@
   <packagedElement xmi:type="uml:Class" xmi:id="_ievmoDajEdyCLZBPNn2ARw" name="LineItem"/>
   <packagedElement xmi:type="uml:Interface" xmi:id="_yWaC4DajEdyCLZBPNn2ARw" name="OrderEntry"/>
   <packagedElement xmi:type="uml:Interface" xmi:id="_8x-p4DajEdyCLZBPNn2ARw" name="Person"/>
+  <packagedElement xmi:type="uml:Association" xmi:id="_wHob0Dk5Ed2LZYDF9MBmcw" memberEnd="_wHob0Tk5Ed2LZYDF9MBmcw _wHob1Dk5Ed2LZYDF9MBmcw">
+    <ownedEnd xmi:id="_wHob0Tk5Ed2LZYDF9MBmcw" name="order" type="_gzTYgDajEdyCLZBPNn2ARw" association="_wHob0Dk5Ed2LZYDF9MBmcw">
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_wHob0zk5Ed2LZYDF9MBmcw" value="1"/>
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_wHob0jk5Ed2LZYDF9MBmcw" value="1"/>
+    </ownedEnd>
+    <ownedEnd xmi:id="_wHob1Dk5Ed2LZYDF9MBmcw" name="item" type="_ievmoDajEdyCLZBPNn2ARw" aggregation="composite" association="_wHob0Dk5Ed2LZYDF9MBmcw">
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_wHob1jk5Ed2LZYDF9MBmcw" value="1"/>
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_wHob1Tk5Ed2LZYDF9MBmcw" value="1"/>
+    </ownedEnd>
+  </packagedElement>
 </uml:Package>
