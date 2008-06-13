@@ -35,14 +35,9 @@
     <descriptors
         name="AssociationLinkFigure">
       <actualFigure
-          xsi:type="gmfgraph:PolylineConnection"
+          xsi:type="gmfgraph:CustomConnection"
           name="AssociationLinkFigure"
-          sourceDecoration="//@figures.0/@figures.0"
-          targetDecoration="//@figures.0/@figures.1">
-        <foregroundColor
-            xsi:type="gmfgraph:ConstantColor"
-            value="blue"/>
-      </actualFigure>
+          qualifiedClassName="org.eclipse.uml2.diagram.common.draw2d.AssociationLinkFigure"/>
     </descriptors>
     <descriptors
         name="Association_label_targetOptions">

@@ -108,7 +108,7 @@
           <domainMetaElement
               href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//Property"/>
           <domainSpecialization
-              body="not self.oclIsKindOf(uml::Port)"/>
+              body="not oclIsKindOf(uml::Port) and self.association = null"/>
           <labelMappings
               xsi:type="gmfmap:FeatureLabelMapping">
             <diagramLabel
@@ -487,7 +487,7 @@
           <domainMetaElement
               href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//Property"/>
           <domainSpecialization
-              body="not oclIsKindOf(uml::Port)"/>
+              body="not oclIsKindOf(uml::Port) and self.association = null"/>
           <domainInitializer
               xsi:type="gmfmap:FeatureSeqInitializer">
             <initializers
@@ -778,6 +778,73 @@
       <sourceEnd
           body="self.oclIsKindOf(uml::Connector) and (self.oclAsType(uml::Connector).kind = ConnectorKind::assembly)"/>
     </creationConstraints>
+  </links>
+  <links>
+    <domainMetaElement
+        href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//Association"/>
+    <labelMappings
+        xsi:type="gmfmap:FeatureLabelMapping">
+      <diagramLabel
+          href="classDiagram_associations.gmfgraph#AssociationLink_name"/>
+      <features
+          href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//NamedElement/name"/>
+    </labelMappings>
+    <labelMappings
+        xsi:type="gmfmap:FeatureLabelMapping">
+      <diagramLabel
+          href="classDiagram_associations.gmfgraph#AssociationLink_sourceRole"/>
+      <features
+          href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//NamedElement/name"/>
+    </labelMappings>
+    <labelMappings
+        xsi:type="gmfmap:FeatureLabelMapping">
+      <diagramLabel
+          href="classDiagram_associations.gmfgraph#AssociationLink_targetRole"/>
+      <features
+          href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//NamedElement/name"/>
+    </labelMappings>
+    <labelMappings
+        xsi:type="gmfmap:FeatureLabelMapping"
+        editPattern="">
+      <diagramLabel
+          href="classDiagram_associations.gmfgraph#AssociationLink_sourceOptions"/>
+      <features
+          href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//NamedElement/name"/>
+    </labelMappings>
+    <labelMappings
+        xsi:type="gmfmap:FeatureLabelMapping">
+      <diagramLabel
+          href="classDiagram_associations.gmfgraph#AssociationLink_targetOptions"/>
+      <features
+          href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//NamedElement/name"/>
+    </labelMappings>
+    <labelMappings
+        xsi:type="gmfmap:FeatureLabelMapping">
+      <diagramLabel
+          href="classDiagram_associations.gmfgraph#AssociationLink_sourceMultiplicity"/>
+      <features
+          href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//NamedElement/name"/>
+    </labelMappings>
+    <labelMappings
+        xsi:type="gmfmap:FeatureLabelMapping">
+      <diagramLabel
+          href="classDiagram_associations.gmfgraph#AssociationLink_targetMultiplicity"/>
+      <features
+          href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//NamedElement/name"/>
+    </labelMappings>
+    <containmentFeature
+        href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//Package/packagedElement"/>
+    <tool
+        xsi:type="gmftool:GenericTool"
+        href="componentDiagram.gmftool#//@palette/@tools.1/@tools.5/@tools.0"/>
+    <diagramLink
+        href="classDiagram_associations.gmfgraph#AssociationLink"/>
+    <sourceMetaFeature
+        xsi:type="ecore:EReference"
+        href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//TypedElement/type"/>
+    <linkMetaFeature
+        xsi:type="ecore:EReference"
+        href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//TypedElement/type"/>
   </links>
   <diagram>
     <diagramCanvas

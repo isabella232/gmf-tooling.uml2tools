@@ -11,6 +11,11 @@ import org.eclipse.gmf.runtime.common.ui.services.parser.IParserProvider;
 import org.eclipse.gmf.runtime.emf.type.core.IElementType;
 import org.eclipse.gmf.runtime.emf.ui.services.parser.ParserHintAdapter;
 import org.eclipse.gmf.runtime.notation.View;
+import org.eclipse.uml2.diagram.common.parser.association.end.AssociationEndApplyStrategy;
+import org.eclipse.uml2.diagram.common.parser.association.end.AssociationEndParser;
+import org.eclipse.uml2.diagram.common.parser.association.end.AssociationEndToString;
+import org.eclipse.uml2.diagram.common.parser.association.name.AssociationNameParser;
+import org.eclipse.uml2.diagram.common.parser.association.name.AssociationNameToString;
 import org.eclipse.uml2.diagram.common.parser.imports.ElementImportParser;
 import org.eclipse.uml2.diagram.common.parser.operation.OperationInplaceApplier;
 import org.eclipse.uml2.diagram.common.parser.operation.OperationParser;
@@ -22,6 +27,13 @@ import org.eclipse.uml2.diagram.common.parser.property.PropertyToString;
 import org.eclipse.uml2.diagram.common.parser.stereotype.AppliedStereotypeParser;
 import org.eclipse.uml2.diagram.component.edit.parts.ArtifactName2EditPart;
 import org.eclipse.uml2.diagram.component.edit.parts.ArtifactNameEditPart;
+import org.eclipse.uml2.diagram.component.edit.parts.AssociationName2EditPart;
+import org.eclipse.uml2.diagram.component.edit.parts.AssociationName3EditPart;
+import org.eclipse.uml2.diagram.component.edit.parts.AssociationName4EditPart;
+import org.eclipse.uml2.diagram.component.edit.parts.AssociationName5EditPart;
+import org.eclipse.uml2.diagram.component.edit.parts.AssociationName6EditPart;
+import org.eclipse.uml2.diagram.component.edit.parts.AssociationName7EditPart;
+import org.eclipse.uml2.diagram.component.edit.parts.AssociationNameEditPart;
 import org.eclipse.uml2.diagram.component.edit.parts.Class3EditPart;
 import org.eclipse.uml2.diagram.component.edit.parts.ClassDiagramNotationClassNameEditPart;
 import org.eclipse.uml2.diagram.component.edit.parts.ClassDiagramNotationClassStereotypeEditPart;
@@ -47,8 +59,10 @@ import org.eclipse.uml2.diagram.component.expressions.UMLOCLFactory;
 import org.eclipse.uml2.diagram.component.parsers.MessageFormatParser;
 import org.eclipse.uml2.diagram.component.part.UMLVisualIDRegistry;
 import org.eclipse.uml2.diagram.parser.BasicApplyStrategy;
+import org.eclipse.uml2.diagram.parser.ParserAdapter;
 import org.eclipse.uml2.diagram.parser.SemanticParserAdapter;
 import org.eclipse.uml2.diagram.parser.lookup.DefaultOclLookups;
+import org.eclipse.uml2.diagram.parser.lookup.LookupSuite;
 import org.eclipse.uml2.diagram.parser.lookup.LookupSuiteImpl;
 import org.eclipse.uml2.diagram.parser.lookup.OCLLookup;
 import org.eclipse.uml2.uml.Type;
@@ -592,6 +606,41 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 	private IParser dependencyName_6001Parser;
 
 	/**
+	 * @NOT-GENERATED
+	 * Different view's but shared common edit.
+	 */
+	private IParser createAssocationRoleParser(boolean sourceNotTarget) {
+		LookupSuite lookupSuite = getAssociationLookupSuite();
+		return new SemanticParserAdapter(new AssociationEndParser(lookupSuite), new AssociationEndApplyStrategy(sourceNotTarget), new AssociationEndToString.ROLE_VIEW(sourceNotTarget),
+				new AssociationEndToString.EDIT(sourceNotTarget));
+	}
+
+	/**
+	 * @NOT-GENERATED
+	 */
+	private IParser createAssocationModifiersParser(boolean sourceNotTarget) {
+		LookupSuite lookupSuite = getAssociationLookupSuite();
+		return new SemanticParserAdapter(new AssociationEndParser(lookupSuite), new AssociationEndApplyStrategy(sourceNotTarget), new AssociationEndToString.MODIFIERS_VIEW(sourceNotTarget),
+				new AssociationEndToString.EDIT(sourceNotTarget));
+	}
+
+	/**
+	 * @NOT-GENERATED
+	 */
+	protected IParser createAssocationMultiplicityParser(boolean sourceNotTarget) {
+		LookupSuite lookupSuite = getAssociationLookupSuite();
+		return new SemanticParserAdapter(new AssociationEndParser(lookupSuite), new AssociationEndApplyStrategy(sourceNotTarget), new AssociationEndToString.MULTIPLICITY_VIEW(sourceNotTarget),
+				new AssociationEndToString.EDIT(sourceNotTarget));
+	}
+
+	/**
+	 * @NOT-GENERATED
+	 */
+	private LookupSuite getAssociationLookupSuite() {
+		return LookupSuite.NULL_SUITE;
+	}
+
+	/**
 	 * @generated
 	 */
 	private IParser getDependencyName_6001Parser() {
@@ -608,6 +657,161 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 		EAttribute[] features = new EAttribute[] { UMLPackage.eINSTANCE.getNamedElement_Name(), };
 		MessageFormatParser parser = new MessageFormatParser(features);
 		return parser;
+	}
+
+	/**
+	 * @generated
+	 */
+	private IParser associationName_6002Parser;
+
+	/**
+	 * @generated
+	 */
+	private IParser getAssociationName_6002Parser() {
+		if (associationName_6002Parser == null) {
+			associationName_6002Parser = createAssociationName_6002Parser();
+		}
+		return associationName_6002Parser;
+	}
+
+	/**
+	 * @generated NOT
+	 */
+	protected IParser createAssociationName_6002Parser() {
+		LookupSuite lookupSuite = LookupSuite.NULL_SUITE;
+		return new ParserAdapter(new AssociationNameParser(lookupSuite), new BasicApplyStrategy(), new AssociationNameToString.VIEW(), new AssociationNameToString.EDIT());
+	}
+
+	/**
+	 * @generated
+	 */
+	private IParser associationName_6003Parser;
+
+	/**
+	 * @generated
+	 */
+	private IParser getAssociationName_6003Parser() {
+		if (associationName_6003Parser == null) {
+			associationName_6003Parser = createAssociationName_6003Parser();
+		}
+		return associationName_6003Parser;
+	}
+
+	/**
+	 * @generated NOT
+	 */
+	protected IParser createAssociationName_6003Parser() {
+		return createAssocationRoleParser(true);
+	}
+
+	/**
+	 * @generated
+	 */
+	private IParser associationName_6004Parser;
+
+	/**
+	 * @generated
+	 */
+	private IParser getAssociationName_6004Parser() {
+		if (associationName_6004Parser == null) {
+			associationName_6004Parser = createAssociationName_6004Parser();
+		}
+		return associationName_6004Parser;
+	}
+
+	/**
+	 * @generated NOT
+	 */
+	protected IParser createAssociationName_6004Parser() {
+		return createAssocationRoleParser(false);
+	}
+
+	/**
+	 * @generated
+	 */
+	private IParser associationName_6005Parser;
+
+	/**
+	 * @generated
+	 */
+	private IParser getAssociationName_6005Parser() {
+		if (associationName_6005Parser == null) {
+			associationName_6005Parser = createAssociationName_6005Parser();
+		}
+		return associationName_6005Parser;
+	}
+
+	/**
+	 * @generated NOT
+	 */
+	protected IParser createAssociationName_6005Parser() {
+		return createAssocationModifiersParser(true);
+	}
+
+	/**
+	 * @generated
+	 */
+	private IParser associationName_6006Parser;
+
+	/**
+	 * @generated
+	 */
+	private IParser getAssociationName_6006Parser() {
+		if (associationName_6006Parser == null) {
+			associationName_6006Parser = createAssociationName_6006Parser();
+		}
+		return associationName_6006Parser;
+	}
+
+	/**
+	 * @generated NOT
+	 */
+	protected IParser createAssociationName_6006Parser() {
+		return createAssocationModifiersParser(false);
+	}
+
+	/**
+	 * @generated
+	 */
+	private IParser associationName_6007Parser;
+
+	/**
+	 * @generated
+	 */
+	private IParser getAssociationName_6007Parser() {
+		if (associationName_6007Parser == null) {
+			associationName_6007Parser = createAssociationName_6007Parser();
+		}
+		return associationName_6007Parser;
+	}
+
+	/**
+	 * @generated NOT
+	 */
+	protected IParser createAssociationName_6007Parser() {
+		return createAssocationMultiplicityParser(true);
+	}
+
+	/**
+	 * @generated
+	 */
+	private IParser associationName_6008Parser;
+
+	/**
+	 * @generated
+	 */
+	private IParser getAssociationName_6008Parser() {
+		if (associationName_6008Parser == null) {
+			associationName_6008Parser = createAssociationName_6008Parser();
+		}
+		return associationName_6008Parser;
+	}
+
+	/**
+	 * @generated NOT
+	 */
+	protected IParser createAssociationName_6008Parser() {
+		return createAssocationMultiplicityParser(false);
 	}
 
 	public static final OCLLookup<Type> TYPE_LOOKUP = new OCLLookup<Type>(//
@@ -669,6 +873,20 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 			return getPortName_5013Parser();
 		case DependencyNameEditPart.VISUAL_ID:
 			return getDependencyName_6001Parser();
+		case AssociationNameEditPart.VISUAL_ID:
+			return getAssociationName_6002Parser();
+		case AssociationName2EditPart.VISUAL_ID:
+			return getAssociationName_6003Parser();
+		case AssociationName3EditPart.VISUAL_ID:
+			return getAssociationName_6004Parser();
+		case AssociationName4EditPart.VISUAL_ID:
+			return getAssociationName_6005Parser();
+		case AssociationName5EditPart.VISUAL_ID:
+			return getAssociationName_6006Parser();
+		case AssociationName6EditPart.VISUAL_ID:
+			return getAssociationName_6007Parser();
+		case AssociationName7EditPart.VISUAL_ID:
+			return getAssociationName_6008Parser();
 		}
 		return null;
 	}

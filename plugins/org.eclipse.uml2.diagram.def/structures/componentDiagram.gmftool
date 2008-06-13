@@ -59,6 +59,32 @@
           xsi:type="gmftool:CreationTool"
           title="Assembly Connector"
           description="Create Assembly Connector"/>
+      <tools
+          xsi:type="gmftool:ToolGroup"
+          title="Create Association Link"
+          description="Association"
+          stack="true">
+        <tools
+            xsi:type="gmftool:GenericTool"
+            title="Association"
+            description="Create Association"
+            toolClass="org.eclipse.uml2.diagram.component.part.CreateAssociationLinkTool.NONE"/>
+        <tools
+            xsi:type="gmftool:GenericTool"
+            title="Shared Aggregation"
+            description="Create Shared Aggregation"
+            toolClass="org.eclipse.uml2.diagram.component.part.CreateAssociationLinkTool.SHARED"/>
+        <tools
+            xsi:type="gmftool:GenericTool"
+            title="Composite Aggregation"
+            description="Create Composite Aggregation"
+            toolClass="org.eclipse.uml2.diagram.component.part.CreateAssociationLinkTool.COMPOSITE"/>
+        <tools
+            xsi:type="gmftool:GenericTool"
+            title="Navigable Association"
+            description="Create Navigable Association"
+            toolClass="org.eclipse.uml2.diagram.component.part.CreateAssociationLinkTool.NAVIGABLE"/>
+      </tools>
     </tools>
     <tools
         xsi:type="gmftool:ToolGroup"

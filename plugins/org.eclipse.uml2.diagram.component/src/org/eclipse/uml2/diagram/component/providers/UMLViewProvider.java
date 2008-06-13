@@ -12,6 +12,14 @@ import org.eclipse.uml2.diagram.component.edit.parts.ArtifactName2EditPart;
 import org.eclipse.uml2.diagram.component.edit.parts.ArtifactNameEditPart;
 import org.eclipse.uml2.diagram.component.edit.parts.AssemblyConnectorCircleEditPart;
 import org.eclipse.uml2.diagram.component.edit.parts.AssemblyConnectorEndRoleEditPart;
+import org.eclipse.uml2.diagram.component.edit.parts.AssociationEditPart;
+import org.eclipse.uml2.diagram.component.edit.parts.AssociationName2EditPart;
+import org.eclipse.uml2.diagram.component.edit.parts.AssociationName3EditPart;
+import org.eclipse.uml2.diagram.component.edit.parts.AssociationName4EditPart;
+import org.eclipse.uml2.diagram.component.edit.parts.AssociationName5EditPart;
+import org.eclipse.uml2.diagram.component.edit.parts.AssociationName6EditPart;
+import org.eclipse.uml2.diagram.component.edit.parts.AssociationName7EditPart;
+import org.eclipse.uml2.diagram.component.edit.parts.AssociationNameEditPart;
 import org.eclipse.uml2.diagram.component.edit.parts.Class2EditPart;
 import org.eclipse.uml2.diagram.component.edit.parts.Class3EditPart;
 import org.eclipse.uml2.diagram.component.edit.parts.ClassAttributesEditPart;
@@ -67,6 +75,14 @@ import org.eclipse.uml2.diagram.component.view.factories.ArtifactNameViewFactory
 import org.eclipse.uml2.diagram.component.view.factories.ArtifactViewFactory;
 import org.eclipse.uml2.diagram.component.view.factories.AssemblyConnectorCircleViewFactory;
 import org.eclipse.uml2.diagram.component.view.factories.AssemblyConnectorEndRoleViewFactory;
+import org.eclipse.uml2.diagram.component.view.factories.AssociationName2ViewFactory;
+import org.eclipse.uml2.diagram.component.view.factories.AssociationName3ViewFactory;
+import org.eclipse.uml2.diagram.component.view.factories.AssociationName4ViewFactory;
+import org.eclipse.uml2.diagram.component.view.factories.AssociationName5ViewFactory;
+import org.eclipse.uml2.diagram.component.view.factories.AssociationName6ViewFactory;
+import org.eclipse.uml2.diagram.component.view.factories.AssociationName7ViewFactory;
+import org.eclipse.uml2.diagram.component.view.factories.AssociationNameViewFactory;
+import org.eclipse.uml2.diagram.component.view.factories.AssociationViewFactory;
 import org.eclipse.uml2.diagram.component.view.factories.Class2ViewFactory;
 import org.eclipse.uml2.diagram.component.view.factories.Class3ViewFactory;
 import org.eclipse.uml2.diagram.component.view.factories.ClassAttributesViewFactory;
@@ -306,6 +322,17 @@ public class UMLViewProvider extends AbstractViewProvider {
 						return null; // wrong container
 					}
 					break;
+				case AssociationNameEditPart.VISUAL_ID:
+				case AssociationName2EditPart.VISUAL_ID:
+				case AssociationName3EditPart.VISUAL_ID:
+				case AssociationName4EditPart.VISUAL_ID:
+				case AssociationName5EditPart.VISUAL_ID:
+				case AssociationName6EditPart.VISUAL_ID:
+				case AssociationName7EditPart.VISUAL_ID:
+					if (AssociationEditPart.VISUAL_ID != UMLVisualIDRegistry.getVisualID(containerView) || containerView.getElement() != domainElement) {
+						return null; // wrong container
+					}
+					break;
 				default:
 					return null;
 				}
@@ -414,6 +441,20 @@ public class UMLViewProvider extends AbstractViewProvider {
 			return ClassClassesViewFactory.class;
 		case DependencyNameEditPart.VISUAL_ID:
 			return DependencyNameViewFactory.class;
+		case AssociationNameEditPart.VISUAL_ID:
+			return AssociationNameViewFactory.class;
+		case AssociationName2EditPart.VISUAL_ID:
+			return AssociationName2ViewFactory.class;
+		case AssociationName3EditPart.VISUAL_ID:
+			return AssociationName3ViewFactory.class;
+		case AssociationName4EditPart.VISUAL_ID:
+			return AssociationName4ViewFactory.class;
+		case AssociationName5EditPart.VISUAL_ID:
+			return AssociationName5ViewFactory.class;
+		case AssociationName6EditPart.VISUAL_ID:
+			return AssociationName6ViewFactory.class;
+		case AssociationName7EditPart.VISUAL_ID:
+			return AssociationName7ViewFactory.class;
 		}
 		return null;
 	}
@@ -460,6 +501,8 @@ public class UMLViewProvider extends AbstractViewProvider {
 			return DependencyViewFactory.class;
 		case AssemblyConnectorEndRoleEditPart.VISUAL_ID:
 			return AssemblyConnectorEndRoleViewFactory.class;
+		case AssociationEditPart.VISUAL_ID:
+			return AssociationViewFactory.class;
 		}
 		return null;
 	}

@@ -273,6 +273,16 @@ public class Messages extends NLS {
 	/**
 	 * @generated
 	 */
+	public static String CreateAssociationLink6Group_title;
+
+	/**
+	 * @generated
+	 */
+	public static String CreateAssociationLink6Group_desc;
+
+	/**
+	 * @generated
+	 */
 	public static String Component1CreationTool_title;
 
 	/**
@@ -419,6 +429,46 @@ public class Messages extends NLS {
 	 * @generated
 	 */
 	public static String Port4CreationTool_desc;
+
+	/**
+	 * @generated
+	 */
+	public static String Association1CreationTool_title;
+
+	/**
+	 * @generated
+	 */
+	public static String Association1CreationTool_desc;
+
+	/**
+	 * @generated
+	 */
+	public static String SharedAggregation2CreationTool_title;
+
+	/**
+	 * @generated
+	 */
+	public static String SharedAggregation2CreationTool_desc;
+
+	/**
+	 * @generated
+	 */
+	public static String CompositeAggregation3CreationTool_title;
+
+	/**
+	 * @generated
+	 */
+	public static String CompositeAggregation3CreationTool_desc;
+
+	/**
+	 * @generated
+	 */
+	public static String NavigableAssociation4CreationTool_title;
+
+	/**
+	 * @generated
+	 */
+	public static String NavigableAssociation4CreationTool_desc;
 
 	/**
 	 * @generated
@@ -744,6 +794,16 @@ public class Messages extends NLS {
 	 * @generated
 	 */
 	public static String NavigatorGroupName_ConnectorEndRole_4010_target;
+
+	/**
+	 * @generated
+	 */
+	public static String NavigatorGroupName_Association_4011_target;
+
+	/**
+	 * @generated
+	 */
+	public static String NavigatorGroupName_Association_4011_source;
 
 	/**
 	 * @generated

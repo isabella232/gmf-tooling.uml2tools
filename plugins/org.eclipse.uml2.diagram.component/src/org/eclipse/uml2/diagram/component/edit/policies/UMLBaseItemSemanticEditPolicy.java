@@ -54,6 +54,7 @@ import org.eclipse.uml2.uml.NamedElement;
 import org.eclipse.uml2.uml.Package;
 import org.eclipse.uml2.uml.Port;
 import org.eclipse.uml2.uml.StructuredClassifier;
+import org.eclipse.uml2.uml.Type;
 import org.eclipse.uml2.uml.UMLPackage;
 
 /**
@@ -435,6 +436,13 @@ public class UMLBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 		/**
 		 * @generated
 		 */
+		public static boolean canCreateAssociation_4011(Package container, Type source, Type target) {
+			return canExistAssociation_4011(container, source, target);
+		}
+
+		/**
+		 * @generated
+		 */
 		public static boolean canExistInterfaceRealization_4001(BehavioredClassifier container, BehavioredClassifier source, Interface target) {
 			try {
 				if (source == null) {
@@ -564,6 +572,14 @@ public class UMLBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 				UMLDiagramEditorPlugin.getInstance().logError("Link constraint evaluation error", e); //$NON-NLS-1$
 				return false;
 			}
+		}
+
+		/**
+		 * @generated
+		 */
+		public static boolean canExistAssociation_4011(Package container, Type source, Type target) {
+
+			return true;
 		}
 	}
 

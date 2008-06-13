@@ -22,6 +22,8 @@ import org.eclipse.uml2.diagram.component.edit.parts.ArtifactName2EditPart;
 import org.eclipse.uml2.diagram.component.edit.parts.ArtifactNameEditPart;
 import org.eclipse.uml2.diagram.component.edit.parts.AssemblyConnectorCircleEditPart;
 import org.eclipse.uml2.diagram.component.edit.parts.AssemblyConnectorEndRoleEditPart;
+import org.eclipse.uml2.diagram.component.edit.parts.AssociationEditPart;
+import org.eclipse.uml2.diagram.component.edit.parts.AssociationNameEditPart;
 import org.eclipse.uml2.diagram.component.edit.parts.Class2EditPart;
 import org.eclipse.uml2.diagram.component.edit.parts.Class3EditPart;
 import org.eclipse.uml2.diagram.component.edit.parts.ClassDiagramNotationClassEditPart;
@@ -179,6 +181,8 @@ public class UMLNavigatorLabelProvider extends LabelProvider implements ICommonL
 			return getImage("Navigator?Link?http://www.eclipse.org/uml2/2.1.0/UML?Dependency", UMLElementTypes.Dependency_4009); //$NON-NLS-1$
 		case AssemblyConnectorEndRoleEditPart.VISUAL_ID:
 			return getImage("Navigator?Link?http://www.eclipse.org/uml2/2.1.0/UML?ConnectorEnd?role", UMLElementTypes.ConnectorEndRole_4010); //$NON-NLS-1$
+		case AssociationEditPart.VISUAL_ID:
+			return getImage("Navigator?Link?http://www.eclipse.org/uml2/2.1.0/UML?Association", UMLElementTypes.Association_4011); //$NON-NLS-1$
 		}
 		return getImage("Navigator?UnknownElement", null); //$NON-NLS-1$
 	}
@@ -289,6 +293,8 @@ public class UMLNavigatorLabelProvider extends LabelProvider implements ICommonL
 			return getDependency_4009Text(view);
 		case AssemblyConnectorEndRoleEditPart.VISUAL_ID:
 			return getConnectorEndRole_4010Text(view);
+		case AssociationEditPart.VISUAL_ID:
+			return getAssociation_4011Text(view);
 		}
 		return getUnknownElementText(view);
 	}
@@ -738,6 +744,23 @@ public class UMLNavigatorLabelProvider extends LabelProvider implements ICommonL
 	 */
 	private String getConnectorEndRole_4010Text(View view) {
 		return ""; //$NON-NLS-1$
+	}
+
+	/**
+	 * @generated
+	 */
+	private String getAssociation_4011Text(View view) {
+		IAdaptable hintAdapter = new UMLParserProvider.HintAdapter(UMLElementTypes.Association_4011, (view.getElement() != null ? view.getElement() : view), UMLVisualIDRegistry
+				.getType(AssociationNameEditPart.VISUAL_ID));
+		IParser parser = ParserService.getInstance().getParser(hintAdapter);
+
+		if (parser != null) {
+			return parser.getPrintString(hintAdapter, ParserOptions.NONE.intValue());
+		} else {
+			UMLDiagramEditorPlugin.getInstance().logError("Parser was not found for label " + 6002); //$NON-NLS-1$
+			return ""; //$NON-NLS-1$
+		}
+
 	}
 
 	/**

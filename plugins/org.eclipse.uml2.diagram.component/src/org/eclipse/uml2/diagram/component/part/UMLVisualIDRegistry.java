@@ -10,6 +10,14 @@ import org.eclipse.uml2.diagram.component.edit.parts.ArtifactEditPart;
 import org.eclipse.uml2.diagram.component.edit.parts.ArtifactName2EditPart;
 import org.eclipse.uml2.diagram.component.edit.parts.ArtifactNameEditPart;
 import org.eclipse.uml2.diagram.component.edit.parts.AssemblyConnectorCircleEditPart;
+import org.eclipse.uml2.diagram.component.edit.parts.AssociationEditPart;
+import org.eclipse.uml2.diagram.component.edit.parts.AssociationName2EditPart;
+import org.eclipse.uml2.diagram.component.edit.parts.AssociationName3EditPart;
+import org.eclipse.uml2.diagram.component.edit.parts.AssociationName4EditPart;
+import org.eclipse.uml2.diagram.component.edit.parts.AssociationName5EditPart;
+import org.eclipse.uml2.diagram.component.edit.parts.AssociationName6EditPart;
+import org.eclipse.uml2.diagram.component.edit.parts.AssociationName7EditPart;
+import org.eclipse.uml2.diagram.component.edit.parts.AssociationNameEditPart;
 import org.eclipse.uml2.diagram.component.edit.parts.Class2EditPart;
 import org.eclipse.uml2.diagram.component.edit.parts.Class3EditPart;
 import org.eclipse.uml2.diagram.component.edit.parts.ClassAttributesEditPart;
@@ -577,6 +585,29 @@ public class UMLVisualIDRegistry {
 				return true;
 			}
 			break;
+		case AssociationEditPart.VISUAL_ID:
+			if (AssociationNameEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			if (AssociationName2EditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			if (AssociationName3EditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			if (AssociationName4EditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			if (AssociationName5EditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			if (AssociationName6EditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			if (AssociationName7EditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			break;
 		}
 		return false;
 	}
@@ -596,6 +627,9 @@ public class UMLVisualIDRegistry {
 		}
 		if (UMLPackage.eINSTANCE.getDependency().isSuperTypeOf(domainElement.eClass()) && isDependency_4009((Dependency) domainElement)) {
 			return DependencyEditPart.VISUAL_ID;
+		}
+		if (UMLPackage.eINSTANCE.getAssociation().isSuperTypeOf(domainElement.eClass())) {
+			return AssociationEditPart.VISUAL_ID;
 		}
 		return -1;
 	}
@@ -648,7 +682,7 @@ public class UMLVisualIDRegistry {
 	 */
 	private static boolean isProperty_3006(Property domainElement) {
 		if (Property_3006_Constraint == null) { // lazy initialization
-			Property_3006_Constraint = UMLOCLFactory.getExpression("not self.oclIsKindOf(uml::Port)", UMLPackage.eINSTANCE.getProperty()); //$NON-NLS-1$
+			Property_3006_Constraint = UMLOCLFactory.getExpression("not oclIsKindOf(uml::Port) and self.association = null", UMLPackage.eINSTANCE.getProperty()); //$NON-NLS-1$
 		}
 		Object result = Property_3006_Constraint.evaluate(domainElement);
 		return result instanceof Boolean && ((Boolean) result).booleanValue();
@@ -681,7 +715,7 @@ public class UMLVisualIDRegistry {
 	 */
 	private static boolean isProperty_3011(Property domainElement) {
 		if (Property_3011_Constraint == null) { // lazy initialization
-			Property_3011_Constraint = UMLOCLFactory.getExpression("not oclIsKindOf(uml::Port)", UMLPackage.eINSTANCE.getProperty()); //$NON-NLS-1$
+			Property_3011_Constraint = UMLOCLFactory.getExpression("not oclIsKindOf(uml::Port) and self.association = null", UMLPackage.eINSTANCE.getProperty()); //$NON-NLS-1$
 		}
 		Object result = Property_3011_Constraint.evaluate(domainElement);
 		return result instanceof Boolean && ((Boolean) result).booleanValue();

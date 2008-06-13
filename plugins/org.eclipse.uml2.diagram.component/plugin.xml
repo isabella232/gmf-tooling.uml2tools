@@ -527,6 +527,16 @@
             <param name="semanticHint" value="4010"/>
          </specializationType>
       </metamodel>
+      <metamodel nsURI="http://www.eclipse.org/uml2/2.1.0/UML">
+         <metamodelType
+               id="org.eclipse.uml2.diagram.component.Association_4011"
+               name="%metatype.name.Association_4011"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
+               eclass="Association"
+               edithelper="org.eclipse.uml2.diagram.component.edit.helpers.AssociationEditHelper">
+            <param name="semanticHint" value="4011"/>
+         </metamodelType>
+      </metamodel>
    </extension>
 
    <extension point="org.eclipse.gmf.runtime.emf.type.core.elementTypeBindings">
@@ -569,6 +579,7 @@
          <elementType ref="org.eclipse.uml2.diagram.component.Connector_4008"/>
          <elementType ref="org.eclipse.uml2.diagram.component.Dependency_4009"/>
          <elementType ref="org.eclipse.uml2.diagram.component.ConnectorEndRole_4010"/>
+         <elementType ref="org.eclipse.uml2.diagram.component.Association_4011"/>
          <advice ref="org.eclipse.gmf.runtime.diagram.core.advice.notationDepdendents"/>
       </binding>
    </extension>
