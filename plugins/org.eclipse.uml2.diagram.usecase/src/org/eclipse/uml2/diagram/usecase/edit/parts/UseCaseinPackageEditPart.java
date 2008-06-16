@@ -32,6 +32,7 @@ import org.eclipse.uml2.diagram.common.draw2d.OneLineDashedBorder;
 import org.eclipse.uml2.diagram.common.draw2d.SplitEllipseLayout;
 import org.eclipse.uml2.diagram.common.editparts.PrimaryShapeEditPart;
 import org.eclipse.uml2.diagram.common.editpolicies.ClassifierNameVisualEffectEditPolicy;
+import org.eclipse.uml2.diagram.common.editpolicies.CreationEditPolicyWithCustomReparent;
 import org.eclipse.uml2.diagram.usecase.edit.policies.UseCaseinPackageItemSemanticEditPolicy;
 import org.eclipse.uml2.diagram.usecase.part.UMLVisualIDRegistry;
 import org.eclipse.uml2.diagram.usecase.providers.UMLElementTypes;
@@ -67,7 +68,7 @@ public class UseCaseinPackageEditPart extends ShapeNodeEditPart implements Prima
 	 * @generated
 	 */
 	protected void createDefaultEditPolicies() {
-		installEditPolicy(EditPolicyRoles.CREATION_ROLE, new CreationEditPolicy() {
+		installEditPolicy(EditPolicyRoles.CREATION_ROLE, new CreationEditPolicyWithCustomReparent() {
 
 			public Command getCommand(Request request) {
 				if (understandsRequest(request)) {

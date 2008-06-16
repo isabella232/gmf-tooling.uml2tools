@@ -31,6 +31,7 @@ import org.eclipse.swt.widgets.Display;
 import org.eclipse.uml2.diagram.common.draw2d.CenterLayout;
 import org.eclipse.uml2.diagram.common.editparts.PrimaryShapeEditPart;
 import org.eclipse.uml2.diagram.common.editpolicies.ClassifierNameVisualEffectEditPolicy;
+import org.eclipse.uml2.diagram.common.editpolicies.CreationEditPolicyWithCustomReparent;
 import org.eclipse.uml2.diagram.usecase.edit.policies.UMLTextSelectionEditPolicy;
 import org.eclipse.uml2.diagram.usecase.edit.policies.UseCaseAsClassItemSemanticEditPolicy;
 import org.eclipse.uml2.diagram.usecase.part.UMLVisualIDRegistry;
@@ -67,7 +68,7 @@ public class UseCaseAsClassEditPart extends ShapeNodeEditPart implements Primary
 	 * @generated
 	 */
 	protected void createDefaultEditPolicies() {
-		installEditPolicy(EditPolicyRoles.CREATION_ROLE, new CreationEditPolicy() {
+		installEditPolicy(EditPolicyRoles.CREATION_ROLE, new CreationEditPolicyWithCustomReparent() {
 
 			public Command getCommand(Request request) {
 				if (understandsRequest(request)) {
