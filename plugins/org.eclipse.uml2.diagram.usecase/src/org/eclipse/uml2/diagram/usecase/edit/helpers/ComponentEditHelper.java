@@ -29,17 +29,18 @@ import org.eclipse.uml2.uml.UseCase;
  * @generated
  */
 public class ComponentEditHelper extends UMLBaseEditHelper {
+
 	@Override
 	protected ICommand getMoveCommand(MoveRequest req) {
 		ICommand basicMove = super.getMoveCommand(req);
 		if (basicMove == null) {
 			return null;
 		}
-		if (false == req.getTargetContainer() instanceof Classifier){
+		if (false == req.getTargetContainer() instanceof Classifier) {
 			//wow???
 			return basicMove;
-		}	
-		
+		}
+
 		Classifier subject = (Classifier) req.getTargetContainer();
 		final List<UseCase> usecases = new LinkedList<UseCase>(); //we will pass this list into request and modify it inside loop 
 		usecases.addAll(subject.getUseCases());
@@ -48,19 +49,19 @@ public class ComponentEditHelper extends UMLBaseEditHelper {
 		CompositeCommand withResubjects = new CompositeCommand(req.getLabel());
 		withResubjects.add(basicMove);
 		withResubjects.add(new SetValueCommand(addUsecase));
-		
+
 		for (Object next : req.getElementsToMove().keySet()) {
 			EObject nextMoved = (EObject) next;
 			if (nextMoved instanceof UseCase) {
 				UseCase nextUseCase = (UseCase) nextMoved;
-				if (!usecases.contains(nextUseCase)){
+				if (!usecases.contains(nextUseCase)) {
 					usecases.add(nextUseCase);
 				}
-				if (req instanceof MoveRequestWithParentInfo){
-					MoveRequestWithParentInfo reqImpl = (MoveRequestWithParentInfo)req;
+				if (req instanceof MoveRequestWithParentInfo) {
+					MoveRequestWithParentInfo reqImpl = (MoveRequestWithParentInfo) req;
 					EObject actualContainer = reqImpl.getActualContainer(nextUseCase);
-					if (actualContainer instanceof Classifier && actualContainer != subject){
-						Classifier oldSubject = (Classifier)actualContainer;
+					if (actualContainer instanceof Classifier && actualContainer != subject) {
+						Classifier oldSubject = (Classifier) actualContainer;
 						List<Classifier> newSubjects = new LinkedList<Classifier>();
 						newSubjects.addAll(nextUseCase.getSubjects());
 						newSubjects.remove(oldSubject);
