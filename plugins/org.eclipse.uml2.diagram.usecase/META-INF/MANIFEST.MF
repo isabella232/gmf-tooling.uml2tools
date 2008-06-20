@@ -10,7 +10,8 @@ Bundle-Localization: plugin
 Export-Package: org.eclipse.uml2.diagram.usecase.draw2d,
  org.eclipse.uml2.diagram.usecase.edit.parts,
  org.eclipse.uml2.diagram.usecase.part,
- org.eclipse.uml2.diagram.usecase.providers
+ org.eclipse.uml2.diagram.usecase.providers,
+ org.eclipse.uml2.diagram.usecase.navigator
 Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.core.resources,
  org.eclipse.core.expressions,
