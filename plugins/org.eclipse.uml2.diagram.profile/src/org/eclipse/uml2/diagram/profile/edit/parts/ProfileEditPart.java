@@ -3,8 +3,10 @@ package org.eclipse.uml2.diagram.profile.edit.parts;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.DiagramEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles;
 import org.eclipse.gmf.runtime.notation.View;
+import org.eclipse.uml2.diagram.common.editpolicies.CreationEditPolicyWithCustomReparent;
 import org.eclipse.uml2.diagram.profile.edit.policies.ProfileCanonicalEditPolicy;
 import org.eclipse.uml2.diagram.profile.edit.policies.ProfileItemSemanticEditPolicy;
+import org.eclipse.uml2.diagram.profile.part.UMLDiagramUpdateCommand;
 
 /**
  * @generated
@@ -36,6 +38,15 @@ public class ProfileEditPart extends DiagramEditPart {
 		installEditPolicy(EditPolicyRoles.SEMANTIC_ROLE, new ProfileItemSemanticEditPolicy());
 		installEditPolicy(EditPolicyRoles.CANONICAL_ROLE, new ProfileCanonicalEditPolicy());
 		// removeEditPolicy(org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles.POPUPBAR_ROLE);
+
+		installEditPolicy(EditPolicyRoles.CREATION_ROLE, new CreationEditPolicyWithCustomReparent());
+	}
+
+	/**
+	 * @generated
+	 */
+	public void refreshDiagram() {
+		UMLDiagramUpdateCommand.performCanonicalUpdate(getDiagramView().getElement());
 	}
 
 }
