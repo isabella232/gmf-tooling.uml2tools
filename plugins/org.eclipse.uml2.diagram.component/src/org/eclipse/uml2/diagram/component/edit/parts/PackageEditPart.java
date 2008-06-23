@@ -14,9 +14,11 @@ import org.eclipse.gmf.runtime.diagram.ui.requests.DropObjectsRequest;
 import org.eclipse.gmf.runtime.emf.core.util.EObjectAdapter;
 import org.eclipse.gmf.runtime.notation.Node;
 import org.eclipse.gmf.runtime.notation.View;
+import org.eclipse.uml2.diagram.common.editpolicies.CreationEditPolicyWithCustomReparent;
 import org.eclipse.uml2.diagram.component.edit.commands.UMLCreateShortcutDecorationsCommand;
 import org.eclipse.uml2.diagram.component.edit.policies.PackageCanonicalEditPolicy;
 import org.eclipse.uml2.diagram.component.edit.policies.PackageItemSemanticEditPolicy;
+import org.eclipse.uml2.diagram.component.part.UMLDiagramUpdateCommand;
 
 /**
  * @generated
@@ -70,6 +72,15 @@ public class PackageEditPart extends DiagramEditPart {
 			}
 		});
 		// removeEditPolicy(org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles.POPUPBAR_ROLE);
+
+		installEditPolicy(EditPolicyRoles.CREATION_ROLE, new CreationEditPolicyWithCustomReparent());
+	}
+
+	/**
+	 * @generated
+	 */
+	public void refreshDiagram() {
+		UMLDiagramUpdateCommand.performCanonicalUpdate(getDiagramView().getElement());
 	}
 
 }
