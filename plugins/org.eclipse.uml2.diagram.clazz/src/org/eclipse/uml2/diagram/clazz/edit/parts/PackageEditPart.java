@@ -18,6 +18,8 @@ import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.uml2.diagram.clazz.edit.commands.UMLCreateShortcutDecorationsCommand;
 import org.eclipse.uml2.diagram.clazz.edit.policies.PackageCanonicalEditPolicy;
 import org.eclipse.uml2.diagram.clazz.edit.policies.PackageItemSemanticEditPolicy;
+import org.eclipse.uml2.diagram.clazz.part.UMLDiagramUpdateCommand;
+import org.eclipse.uml2.diagram.common.editpolicies.CreationEditPolicyWithCustomReparent;
 
 /**
  * @generated
@@ -71,6 +73,15 @@ public class PackageEditPart extends DiagramEditPart {
 			}
 		});
 		// removeEditPolicy(org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles.POPUPBAR_ROLE);
+
+		installEditPolicy(EditPolicyRoles.CREATION_ROLE, new CreationEditPolicyWithCustomReparent());
+	}
+
+	/**
+	 * @generated
+	 */
+	public void refreshDiagram() {
+		UMLDiagramUpdateCommand.performCanonicalUpdate(getDiagramView().getElement());
 	}
 
 }
