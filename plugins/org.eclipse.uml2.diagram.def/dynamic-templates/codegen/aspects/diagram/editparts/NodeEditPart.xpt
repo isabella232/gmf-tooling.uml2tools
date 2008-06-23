@@ -19,11 +19,12 @@
 «EXTENSION xpt::GenModelUtils»
 «EXTENSION xpt::diagram::updater::Utils»
 «EXTENSION aspects::diagram::editparts::LinkUpdateUtil»
+«EXTENSION aspects::xpt::diagram::updater::DiagramHeader»
 
 «AROUND attributes FOR gmfgen::GenNode-»
 	«targetDef.proceed()-»
 	
-	«IF !getOutgoingAndContainedTypeLinks(this).isEmpty()-»
+	«IF !isDiagramHeader(this) && !getOutgoingAndContainedTypeLinks(this).isEmpty()-»
 		«EXPAND xpt::Common::generatedMemberComment»
 		private LinkTargetListener myLinkTargetListener;
 	«ENDIF-»
@@ -34,7 +35,7 @@
 	«EXPAND reorderChildFix »
 	«ENDIF-»
 	
-	«IF !getOutgoingAndContainedTypeLinks(this).isEmpty()-»
+	«IF !isDiagramHeader(this) && !getOutgoingAndContainedTypeLinks(this).isEmpty()-»
 	
 		«EXPAND getDiagramEventBroker-»
 		
@@ -49,11 +50,11 @@
 		«EXPAND handleTypeLinkModification-»
 	«ENDIF-»
 	
-	«IF !getOutgoingLinksFeatureModelFacets(this).isEmpty()-»
+	«IF !isDiagramHeader(this) && !getOutgoingLinksFeatureModelFacets(this).isEmpty()-»
 		«EXPAND handleFeatureLinkModification-»
 	«ENDIF-»
 	
-	«IF !getOutgoingAndContainedTypeLinks(this).isEmpty() || !getOutgoingLinksFeatureModelFacets(this).isEmpty()-»
+	«IF !isDiagramHeader(this) && (!getOutgoingAndContainedTypeLinks(this).isEmpty() || !getOutgoingLinksFeatureModelFacets(this).isEmpty())-»
 		«EXPAND aspects::diagram::editparts::DiagramEditPart::refreshDiagram-»
 	«ENDIF-»
 	
@@ -303,10 +304,10 @@
 	«EXPAND xpt::Common::generatedMemberComment»
 	protected void handleNotificationEvent(org.eclipse.emf.common.notify.Notification event) {
 		«EXPAND handleNotificationEventForShortcuts-»
-		«IF !getOutgoingAndContainedTypeLinks(this).isEmpty()-»
+		«IF !isDiagramHeader(this) && !getOutgoingAndContainedTypeLinks(this).isEmpty()-»
 			handleTypeLinkModification(event);
 		«ENDIF-»
-		«IF !getOutgoingLinksFeatureModelFacets(this).isEmpty()-»
+		«IF !isDiagramHeader(this) && !getOutgoingLinksFeatureModelFacets(this).isEmpty()-»
 			handleFeatureLinkModification(event);
 		«ENDIF-»
 	}	
