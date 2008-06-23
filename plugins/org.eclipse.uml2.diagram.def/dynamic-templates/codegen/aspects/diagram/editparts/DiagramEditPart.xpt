@@ -1,0 +1,21 @@
+/*
+ * Copyright (c) 2008 Borland Software Corporation
+ * 
+ * Contributors:
+ *    Michael Golubev (Borland) - #237272
+ */
+
+«IMPORT "http://www.eclipse.org/gmf/2008/GenModel"»
+
+«AROUND diagram::editparts::DiagramEditPart::additions FOR gmfgen::GenDiagram-»
+	«IF !childNodes.isEmpty()-»
+		«EXPAND refreshDiagram-»
+	«ENDIF-»
+«ENDAROUND»
+
+«DEFINE refreshDiagram FOR gmfgen::GenCommonBase-»
+	«EXPAND xpt::Common::generatedMemberComment»
+	private void refreshDiagram() {
+		«EXPAND aspects::xpt::diagram::updater::UpdateCommand::performCanonicalUpdateMethodCall»(getDiagramView().getElement());
+	}
+«ENDDEFINE»
