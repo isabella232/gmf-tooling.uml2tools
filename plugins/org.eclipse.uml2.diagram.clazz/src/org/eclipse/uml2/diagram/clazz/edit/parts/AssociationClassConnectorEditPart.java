@@ -3,6 +3,7 @@ package org.eclipse.uml2.diagram.clazz.edit.parts;
 import org.eclipse.draw2d.Connection;
 import org.eclipse.draw2d.Graphics;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.ConnectionNodeEditPart;
+import org.eclipse.gmf.runtime.diagram.ui.editparts.ITreeBranchEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles;
 import org.eclipse.gmf.runtime.draw2d.ui.figures.PolylineConnectionEx;
 import org.eclipse.gmf.runtime.notation.View;
@@ -11,7 +12,7 @@ import org.eclipse.uml2.diagram.clazz.edit.policies.AssociationClassConnectorIte
 /**
  * @generated
  */
-public class AssociationClassConnectorEditPart extends ConnectionNodeEditPart {
+public class AssociationClassConnectorEditPart extends ConnectionNodeEditPart implements ITreeBranchEditPart {
 
 	/**
 	 * @generated

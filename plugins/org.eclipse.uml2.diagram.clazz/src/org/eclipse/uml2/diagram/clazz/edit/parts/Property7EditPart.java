@@ -6,6 +6,7 @@ import org.eclipse.draw2d.RotatableDecoration;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.gef.EditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.ConnectionNodeEditPart;
+import org.eclipse.gmf.runtime.diagram.ui.editparts.ITreeBranchEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles;
 import org.eclipse.gmf.runtime.draw2d.ui.figures.PolylineConnectionEx;
 import org.eclipse.gmf.runtime.notation.View;
@@ -19,7 +20,7 @@ import org.eclipse.uml2.uml.Property;
 /**
  * @generated
  */
-public class Property7EditPart extends ConnectionNodeEditPart {
+public class Property7EditPart extends ConnectionNodeEditPart implements ITreeBranchEditPart {
 
 	/**
 	 * @generated
