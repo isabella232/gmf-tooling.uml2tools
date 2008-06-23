@@ -15,7 +15,7 @@
 
 «DEFINE refreshDiagram FOR gmfgen::GenCommonBase-»
 	«EXPAND xpt::Common::generatedMemberComment»
-	private void refreshDiagram() {
+	public void refreshDiagram() {
 		«EXPAND aspects::xpt::diagram::updater::UpdateCommand::performCanonicalUpdateMethodCall»(getDiagramView().getElement());
 	}
 «ENDDEFINE»
