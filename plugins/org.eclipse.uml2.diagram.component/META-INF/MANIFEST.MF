@@ -9,7 +9,8 @@ Bundle-Vendor: %providerName
 Bundle-Localization: plugin
 Export-Package: org.eclipse.uml2.diagram.component.edit.parts,
  org.eclipse.uml2.diagram.component.part,
- org.eclipse.uml2.diagram.component.providers
+ org.eclipse.uml2.diagram.component.providers,
+ org.eclipse.uml2.diagram.component.navigator
 Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.core.resources,
  org.eclipse.core.expressions,
