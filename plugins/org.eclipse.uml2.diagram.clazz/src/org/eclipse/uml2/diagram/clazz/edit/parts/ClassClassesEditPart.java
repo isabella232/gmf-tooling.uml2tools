@@ -15,6 +15,7 @@ import org.eclipse.uml2.diagram.clazz.details.UMLDetailLevelService;
 import org.eclipse.uml2.diagram.clazz.edit.policies.ClassClassesCanonicalEditPolicy;
 import org.eclipse.uml2.diagram.clazz.edit.policies.ClassClassesItemSemanticEditPolicy;
 import org.eclipse.uml2.diagram.clazz.part.Messages;
+import org.eclipse.uml2.diagram.common.editpolicies.CreationEditPolicyWithCustomReparent;
 
 /**
  * @generated
@@ -54,7 +55,7 @@ public class ClassClassesEditPart extends ListCompartmentEditPart {
 		super.createDefaultEditPolicies();
 		installEditPolicy(EditPolicy.PRIMARY_DRAG_ROLE, new ResizableCompartmentEditPolicy());
 		installEditPolicy(EditPolicyRoles.SEMANTIC_ROLE, new ClassClassesItemSemanticEditPolicy());
-		installEditPolicy(EditPolicyRoles.CREATION_ROLE, new CreationEditPolicy());
+		installEditPolicy(EditPolicyRoles.CREATION_ROLE, new CreationEditPolicyWithCustomReparent());
 		installEditPolicy(EditPolicyRoles.DRAG_DROP_ROLE, new DragDropEditPolicy());
 		installEditPolicy(EditPolicyRoles.CANONICAL_ROLE, new ClassClassesCanonicalEditPolicy());
 	}
