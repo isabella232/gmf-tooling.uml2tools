@@ -9,7 +9,8 @@ Bundle-Vendor: %providerName
 Bundle-Localization: plugin
 Export-Package: org.eclipse.uml2.diagram.deploy.edit.parts,
  org.eclipse.uml2.diagram.deploy.part,
- org.eclipse.uml2.diagram.deploy.providers
+ org.eclipse.uml2.diagram.deploy.providers,
+ org.eclipse.uml2.diagram.deploy.navigator
 Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.core.resources,
  org.eclipse.core.expressions,
@@ -39,4 +40,4 @@ Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.gef;visibility:=reexport,
  org.eclipse.uml2.diagram.common;visibility:=reexport,
  org.eclipse.ocl.ecore;visibility:=reexport
-Eclipse-LazyStart: true
+Bundle-ActivationPolicy: lazy
