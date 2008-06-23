@@ -1,18 +1,14 @@
 package org.eclipse.uml2.diagram.clazz.edit.policies;
 
 import org.eclipse.gef.commands.Command;
-
 import org.eclipse.gmf.runtime.emf.type.core.requests.CreateElementRequest;
-
 import org.eclipse.uml2.diagram.clazz.edit.commands.AssociationClassCreateCommand;
 import org.eclipse.uml2.diagram.clazz.edit.commands.ClassCreateCommand;
 import org.eclipse.uml2.diagram.clazz.edit.commands.DataTypeCreateCommand;
 import org.eclipse.uml2.diagram.clazz.edit.commands.EnumerationCreateCommand;
 import org.eclipse.uml2.diagram.clazz.edit.commands.Interface3CreateCommand;
 import org.eclipse.uml2.diagram.clazz.edit.commands.PrimitiveTypeCreateCommand;
-
 import org.eclipse.uml2.diagram.clazz.providers.UMLElementTypes;
-
 import org.eclipse.uml2.uml.UMLPackage;
 
 /**

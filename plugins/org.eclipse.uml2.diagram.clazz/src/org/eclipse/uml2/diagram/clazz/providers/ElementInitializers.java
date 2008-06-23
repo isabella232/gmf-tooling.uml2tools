@@ -1,19 +1,8 @@
 package org.eclipse.uml2.diagram.clazz.providers;
 
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.Iterator;
-import java.util.List;
-
-import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.EObject;
-import org.eclipse.emf.ecore.EStructuralFeature;
-
 import org.eclipse.uml2.diagram.clazz.expressions.UMLAbstractExpression;
 import org.eclipse.uml2.diagram.clazz.expressions.UMLOCLFactory;
-
 import org.eclipse.uml2.diagram.clazz.part.UMLDiagramEditorPlugin;
-
 import org.eclipse.uml2.uml.AggregationKind;
 import org.eclipse.uml2.uml.AssociationClass;
 import org.eclipse.uml2.uml.Class;

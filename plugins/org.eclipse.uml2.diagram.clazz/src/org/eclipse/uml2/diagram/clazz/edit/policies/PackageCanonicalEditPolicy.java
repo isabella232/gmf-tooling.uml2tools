@@ -28,7 +28,6 @@ import org.eclipse.gmf.runtime.notation.NotationPackage;
 import org.eclipse.gmf.runtime.notation.Ratio;
 import org.eclipse.gmf.runtime.notation.Size;
 import org.eclipse.gmf.runtime.notation.View;
-import org.eclipse.jface.preference.IPreferenceStore;
 import org.eclipse.uml2.diagram.clazz.conventions.InterfaceNotationConvention;
 import org.eclipse.uml2.diagram.clazz.edit.parts.AssociationClass2EditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.AssociationClassConnectorEditPart;
@@ -99,7 +98,6 @@ import org.eclipse.uml2.diagram.clazz.part.UMLDiagramUpdater;
 import org.eclipse.uml2.diagram.clazz.part.UMLLinkDescriptor;
 import org.eclipse.uml2.diagram.clazz.part.UMLNodeDescriptor;
 import org.eclipse.uml2.diagram.clazz.part.UMLVisualIDRegistry;
-import org.eclipse.uml2.diagram.common.links.InterfaceLinkManager;
 import org.eclipse.uml2.uml.UMLPackage;
 
 /**
