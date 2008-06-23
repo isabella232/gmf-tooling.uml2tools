@@ -45,12 +45,7 @@ public class UMLDiagramUpdateCommand implements IHandler {
 			}
 			if (structuredSelection.getFirstElement() instanceof EditPart && ((EditPart) structuredSelection.getFirstElement()).getModel() instanceof View) {
 				EObject modelElement = ((View) ((EditPart) structuredSelection.getFirstElement()).getModel()).getElement();
-				List editPolicies = CanonicalEditPolicy.getRegisteredEditPolicies(modelElement);
-				for (Iterator it = editPolicies.iterator(); it.hasNext();) {
-					CanonicalEditPolicy nextEditPolicy = (CanonicalEditPolicy) it.next();
-					nextEditPolicy.refresh();
-				}
-
+				performCanonicalUpdate(modelElement);
 			}
 		}
 		return null;
@@ -74,6 +69,20 @@ public class UMLDiagramUpdateCommand implements IHandler {
 	 * @generated
 	 */
 	public void removeHandlerListener(IHandlerListener handlerListener) {
+	}
+
+	/**
+	 * @generated
+	 */
+	public static void performCanonicalUpdate(EObject modelElement) {
+		if (modelElement == null) {
+			return;
+		}
+		List editPolicies = CanonicalEditPolicy.getRegisteredEditPolicies(modelElement);
+		for (Iterator it = editPolicies.iterator(); it.hasNext();) {
+			CanonicalEditPolicy nextEditPolicy = (CanonicalEditPolicy) it.next();
+			nextEditPolicy.refresh();
+		}
 	}
 
 }
