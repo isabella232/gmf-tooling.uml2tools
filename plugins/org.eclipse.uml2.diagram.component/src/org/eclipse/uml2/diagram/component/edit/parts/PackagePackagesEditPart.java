@@ -9,6 +9,7 @@ import org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles;
 import org.eclipse.gmf.runtime.diagram.ui.editpolicies.ResizableCompartmentEditPolicy;
 import org.eclipse.gmf.runtime.draw2d.ui.figures.ConstrainedToolbarLayout;
 import org.eclipse.gmf.runtime.notation.View;
+import org.eclipse.uml2.diagram.common.editpolicies.CreationEditPolicyWithCustomReparent;
 import org.eclipse.uml2.diagram.component.edit.policies.PackagePackagesCanonicalEditPolicy;
 import org.eclipse.uml2.diagram.component.edit.policies.PackagePackagesItemSemanticEditPolicy;
 import org.eclipse.uml2.diagram.component.part.Messages;
@@ -51,7 +52,7 @@ public class PackagePackagesEditPart extends ListCompartmentEditPart {
 		super.createDefaultEditPolicies();
 		installEditPolicy(EditPolicy.PRIMARY_DRAG_ROLE, new ResizableCompartmentEditPolicy());
 		installEditPolicy(EditPolicyRoles.SEMANTIC_ROLE, new PackagePackagesItemSemanticEditPolicy());
-		installEditPolicy(EditPolicyRoles.CREATION_ROLE, new CreationEditPolicy());
+		installEditPolicy(EditPolicyRoles.CREATION_ROLE, new CreationEditPolicyWithCustomReparent());
 		installEditPolicy(EditPolicyRoles.DRAG_DROP_ROLE, new DragDropEditPolicy());
 		installEditPolicy(EditPolicyRoles.CANONICAL_ROLE, new PackagePackagesCanonicalEditPolicy());
 	}
