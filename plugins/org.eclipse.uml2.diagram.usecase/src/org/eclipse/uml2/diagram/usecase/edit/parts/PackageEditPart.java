@@ -6,6 +6,7 @@ import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.uml2.diagram.common.editpolicies.CreationEditPolicyWithCustomReparent;
 import org.eclipse.uml2.diagram.usecase.edit.policies.PackageCanonicalEditPolicy;
 import org.eclipse.uml2.diagram.usecase.edit.policies.PackageItemSemanticEditPolicy;
+import org.eclipse.uml2.diagram.usecase.part.UMLDiagramUpdateCommand;
 
 /**
  * @generated
@@ -39,6 +40,13 @@ public class PackageEditPart extends DiagramEditPart {
 		// removeEditPolicy(org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles.POPUPBAR_ROLE);
 
 		installEditPolicy(EditPolicyRoles.CREATION_ROLE, new CreationEditPolicyWithCustomReparent());
+	}
+
+	/**
+	 * @generated
+	 */
+	public void refreshDiagram() {
+		UMLDiagramUpdateCommand.performCanonicalUpdate(getDiagramView().getElement());
 	}
 
 }
