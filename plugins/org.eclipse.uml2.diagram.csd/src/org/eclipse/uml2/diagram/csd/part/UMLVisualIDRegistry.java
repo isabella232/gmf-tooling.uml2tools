@@ -71,7 +71,6 @@ import org.eclipse.uml2.diagram.csd.edit.parts.PropertyEditPart;
 import org.eclipse.uml2.diagram.csd.edit.parts.PropertyName2EditPart;
 import org.eclipse.uml2.diagram.csd.edit.parts.PropertyNameEditPart;
 import org.eclipse.uml2.diagram.csd.edit.parts.SlotEditPart;
-import org.eclipse.uml2.diagram.csd.edit.parts.SlotNameEditPart;
 import org.eclipse.uml2.diagram.csd.edit.parts.UsageEditPart;
 import org.eclipse.uml2.diagram.csd.expressions.UMLAbstractExpression;
 import org.eclipse.uml2.diagram.csd.expressions.UMLOCLFactory;

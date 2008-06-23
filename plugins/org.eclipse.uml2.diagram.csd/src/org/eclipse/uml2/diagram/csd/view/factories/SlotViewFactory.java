@@ -4,15 +4,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.eclipse.core.runtime.IAdaptable;
-import org.eclipse.emf.ecore.EObject;
-import org.eclipse.gmf.runtime.diagram.core.util.ViewUtil;
 import org.eclipse.gmf.runtime.diagram.ui.view.factories.AbstractLabelViewFactory;
-import org.eclipse.gmf.runtime.diagram.ui.view.factories.AbstractShapeViewFactory;
-import org.eclipse.gmf.runtime.emf.core.util.EObjectAdapter;
-import org.eclipse.gmf.runtime.notation.NotationFactory;
 import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.uml2.diagram.csd.edit.parts.SlotEditPart;
-import org.eclipse.uml2.diagram.csd.edit.parts.SlotNameEditPart;
 import org.eclipse.uml2.diagram.csd.part.UMLVisualIDRegistry;
 
 /**
