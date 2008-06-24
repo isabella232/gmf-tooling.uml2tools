@@ -1485,9 +1485,9 @@
   </diagram>
   <plugin
       iD="org.eclipse.uml2.diagram.statemachine"
-      name="State Machine Diagram Plugin"
+      name="State Machine Diagram Plugin (Incubation)"
       provider="Eclipse.org"
-      version="0.7.100.qualifier"/>
+      version="0.8.0.qualifier"/>
   <editor/>
   <navigator>
     <childReferences
