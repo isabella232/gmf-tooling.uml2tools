@@ -2058,7 +2058,8 @@
       iD="org.eclipse.uml2.diagram.component"
       name="UML Component Diagram Plugin (Incubation)"
       provider="Eclipse.org"
-      version="0.8.0.qualifier"/>
+      version="0.8.0.qualifier"
+      printingEnabled="true"/>
   <editor/>
   <navigator>
     <childReferences

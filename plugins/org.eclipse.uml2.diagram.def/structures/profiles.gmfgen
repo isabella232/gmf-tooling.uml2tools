@@ -805,7 +805,8 @@
       iD="org.eclipse.uml2.diagram.profile"
       name="UML2 Profile Definition Diagram Plug-in (Incubation)"
       provider="Eclipse.org"
-      version="0.8.0.qualifier"/>
+      version="0.8.0.qualifier"
+      printingEnabled="true"/>
   <editor/>
   <navigator>
     <childReferences

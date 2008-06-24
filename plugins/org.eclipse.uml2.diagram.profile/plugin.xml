@@ -5,7 +5,6 @@
 
 <!-- gmf generator persistent region begin -->
     <extension point="org.eclipse.gmf.runtime.common.ui.services.action.contributionItemProviders">
-      <?gmfgen generated="false"?>
       <contributionItemProvider
             checkPluginLoaded="true"
             class="org.eclipse.uml2.diagram.profile.action.DefineProfileItemProvider">
@@ -129,6 +128,16 @@
             </ElementType>
             <ElementType class="org.eclipse.gmf.runtime.diagram.ui.editparts.DiagramEditPart">
                <GlobalActionId actionId="save"/>
+            </ElementType>
+         </ViewId>
+      </GlobalActionHandlerProvider>
+      <GlobalActionHandlerProvider
+         class="org.eclipse.gmf.runtime.diagram.ui.printing.render.providers.DiagramWithPrintGlobalActionHandlerProvider"
+         id="UMLProfilePresentationPrint">
+         <Priority name="Lowest"/>
+         <ViewId id="org.eclipse.uml2.diagram.profile.part.UMLDiagramEditorID">
+            <ElementType class="org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart">
+               <GlobalActionId actionId="print"/>
             </ElementType>
          </ViewId>
       </GlobalActionHandlerProvider>
@@ -627,10 +636,15 @@
             id="org.eclipse.uml2.diagram.profile.icons">
       </page>
    </extension>
-
-
-
-
-
+   
+   <extension point="org.eclipse.gmf.runtime.common.ui.services.action.contributionItemProviders">
+      <?gmfgen generated="true"?>
+      <contributionItemProvider class="org.eclipse.uml2.diagram.profile.providers.UMLContributionItemProvider">
+         <Priority name="Low"/>
+         <partContribution id="org.eclipse.uml2.diagram.profile.part.UMLDiagramEditorID">
+            <partAction menubarPath="/file/print" id="printPreviewAction"/>
+         </partContribution>
+      </contributionItemProvider>
+   </extension>
 
 </plugin>
