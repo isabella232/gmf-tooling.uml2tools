@@ -2164,7 +2164,7 @@
   </diagram>
   <plugin
       iD="org.eclipse.uml2.diagram.csd"
-      name="UML Composite Structures Diagram Plugin (Incubation)"
+      name="UML2 Composite Structures Diagram Plugin (Incubation)"
       provider="Eclipse.org"
       version="0.8.0.qualifier"
       printingEnabled="true"/>

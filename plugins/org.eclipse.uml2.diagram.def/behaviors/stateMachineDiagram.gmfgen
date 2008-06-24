@@ -1485,7 +1485,7 @@
   </diagram>
   <plugin
       iD="org.eclipse.uml2.diagram.statemachine"
-      name="State Machine Diagram Plugin (Incubation)"
+      name="UML2 State Machine Diagram Plugin (Incubation)"
       provider="Eclipse.org"
       version="0.8.0.qualifier"
       printingEnabled="true"/>
