@@ -5,6 +5,7 @@ import org.eclipse.draw2d.Ellipse;
 import org.eclipse.draw2d.IFigure;
 import org.eclipse.draw2d.StackLayout;
 import org.eclipse.draw2d.geometry.Dimension;
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.gef.EditPart;
 import org.eclipse.gef.EditPolicy;
 import org.eclipse.gef.Request;
@@ -141,6 +142,13 @@ public class Pseudostate6EditPart extends ShapeNodeEditPart implements PrimarySh
 			return contentPane;
 		}
 		return super.getContentPane();
+	}
+
+	/**
+	 * @generated
+	 */
+	protected void handleNotificationEvent(Notification event) {
+		super.handleNotificationEvent(event);
 	}
 
 	/**

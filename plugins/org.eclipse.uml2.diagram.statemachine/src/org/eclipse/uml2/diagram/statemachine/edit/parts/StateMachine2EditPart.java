@@ -10,6 +10,7 @@ import org.eclipse.draw2d.RectangleFigure;
 import org.eclipse.draw2d.RoundedRectangle;
 import org.eclipse.draw2d.StackLayout;
 import org.eclipse.draw2d.geometry.Dimension;
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.gef.EditPart;
 import org.eclipse.gef.EditPolicy;
 import org.eclipse.gef.GraphicalEditPart;
@@ -34,6 +35,7 @@ import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.uml2.diagram.common.draw2d.BisectionBorderItemLocator;
 import org.eclipse.uml2.diagram.common.draw2d.LaneLayout;
 import org.eclipse.uml2.diagram.common.editparts.PrimaryShapeEditPart;
+import org.eclipse.uml2.diagram.common.editpolicies.CreationEditPolicyWithCustomReparent;
 import org.eclipse.uml2.diagram.common.editpolicies.LaneLayoutEditPolicy;
 import org.eclipse.uml2.diagram.statemachine.edit.policies.StateMachine2CanonicalEditPolicy;
 import org.eclipse.uml2.diagram.statemachine.edit.policies.StateMachine2ItemSemanticEditPolicy;
@@ -70,7 +72,7 @@ public class StateMachine2EditPart extends AbstractBorderedShapeEditPart impleme
 	 * @generated
 	 */
 	protected void createDefaultEditPolicies() {
-		installEditPolicy(EditPolicyRoles.CREATION_ROLE, new CreationEditPolicy());
+		installEditPolicy(EditPolicyRoles.CREATION_ROLE, new CreationEditPolicyWithCustomReparent());
 		super.createDefaultEditPolicies();
 		installEditPolicy(EditPolicyRoles.SEMANTIC_ROLE, new StateMachine2ItemSemanticEditPolicy());
 		installEditPolicy(EditPolicyRoles.DRAG_DROP_ROLE, new DragDropEditPolicy());
@@ -253,6 +255,13 @@ public class StateMachine2EditPart extends AbstractBorderedShapeEditPart impleme
 	 */
 	public EditPart getPrimaryChildEditPart() {
 		return getChildBySemanticHint(UMLVisualIDRegistry.getType(StateMachineNameEditPart.VISUAL_ID));
+	}
+
+	/**
+	 * @generated
+	 */
+	protected void handleNotificationEvent(Notification event) {
+		super.handleNotificationEvent(event);
 	}
 
 	/**

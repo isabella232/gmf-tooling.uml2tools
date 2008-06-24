@@ -9,6 +9,7 @@ import org.eclipse.draw2d.RectangleFigure;
 import org.eclipse.draw2d.RoundedRectangle;
 import org.eclipse.draw2d.StackLayout;
 import org.eclipse.draw2d.geometry.Dimension;
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.gef.EditPart;
 import org.eclipse.gef.EditPolicy;
 import org.eclipse.gef.Request;
@@ -31,6 +32,7 @@ import org.eclipse.gmf.runtime.gef.ui.figures.NodeFigure;
 import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.uml2.diagram.common.draw2d.LaneLayout;
 import org.eclipse.uml2.diagram.common.editparts.PrimaryShapeEditPart;
+import org.eclipse.uml2.diagram.common.editpolicies.CreationEditPolicyWithCustomReparent;
 import org.eclipse.uml2.diagram.common.editpolicies.LaneLayoutEditPolicy;
 import org.eclipse.uml2.diagram.statemachine.edit.policies.State2CanonicalEditPolicy;
 import org.eclipse.uml2.diagram.statemachine.edit.policies.State2ItemSemanticEditPolicy;
@@ -68,7 +70,7 @@ public class State2EditPart extends ShapeNodeEditPart implements PrimaryShapeEdi
 	 * @generated
 	 */
 	protected void createDefaultEditPolicies() {
-		installEditPolicy(EditPolicyRoles.CREATION_ROLE, new CreationEditPolicy() {
+		installEditPolicy(EditPolicyRoles.CREATION_ROLE, new CreationEditPolicyWithCustomReparent() {
 
 			public Command getCommand(Request request) {
 				if (understandsRequest(request)) {
@@ -252,6 +254,13 @@ public class State2EditPart extends ShapeNodeEditPart implements PrimaryShapeEdi
 	 */
 	public EditPart getPrimaryChildEditPart() {
 		return getChildBySemanticHint(UMLVisualIDRegistry.getType(StateName3EditPart.VISUAL_ID));
+	}
+
+	/**
+	 * @generated
+	 */
+	protected void handleNotificationEvent(Notification event) {
+		super.handleNotificationEvent(event);
 	}
 
 	/**
