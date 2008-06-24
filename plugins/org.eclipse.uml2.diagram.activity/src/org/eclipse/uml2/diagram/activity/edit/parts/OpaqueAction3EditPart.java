@@ -1,5 +1,10 @@
 package org.eclipse.uml2.diagram.activity.edit.parts;
 
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Map;
+import java.util.Set;
 import org.eclipse.draw2d.IFigure;
 import org.eclipse.draw2d.Label;
 import org.eclipse.draw2d.LayoutManager;
@@ -8,6 +13,10 @@ import org.eclipse.draw2d.PositionConstants;
 import org.eclipse.draw2d.RoundedRectangle;
 import org.eclipse.draw2d.StackLayout;
 import org.eclipse.draw2d.geometry.Dimension;
+import org.eclipse.emf.common.notify.Notification;
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.EStructuralFeature;
+import org.eclipse.emf.transaction.TransactionalEditingDomain;
 import org.eclipse.gef.EditPart;
 import org.eclipse.gef.EditPolicy;
 import org.eclipse.gef.GraphicalEditPart;
@@ -16,6 +25,8 @@ import org.eclipse.gef.commands.Command;
 import org.eclipse.gef.editpolicies.LayoutEditPolicy;
 import org.eclipse.gef.editpolicies.NonResizableEditPolicy;
 import org.eclipse.gef.requests.CreateRequest;
+import org.eclipse.gmf.runtime.diagram.core.listener.DiagramEventBroker;
+import org.eclipse.gmf.runtime.diagram.core.listener.NotificationListener;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.AbstractBorderedShapeEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.IBorderItemEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart;
@@ -30,9 +41,15 @@ import org.eclipse.gmf.runtime.gef.ui.figures.NodeFigure;
 import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.uml2.diagram.activity.edit.policies.OpaqueAction3CanonicalEditPolicy;
 import org.eclipse.uml2.diagram.activity.edit.policies.OpaqueAction3ItemSemanticEditPolicy;
+import org.eclipse.uml2.diagram.activity.part.UMLDiagramUpdateCommand;
+import org.eclipse.uml2.diagram.activity.part.UMLDiagramUpdater;
+import org.eclipse.uml2.diagram.activity.part.UMLLinkDescriptor;
 import org.eclipse.uml2.diagram.activity.part.UMLVisualIDRegistry;
 import org.eclipse.uml2.diagram.common.draw2d.CenterLayout;
 import org.eclipse.uml2.diagram.common.editparts.PrimaryShapeEditPart;
+import org.eclipse.uml2.diagram.common.editpolicies.CreationEditPolicyWithCustomReparent;
+import org.eclipse.uml2.uml.ExceptionHandler;
+import org.eclipse.uml2.uml.UMLPackage;
 
 /**
  * @generated
@@ -57,6 +74,11 @@ public class OpaqueAction3EditPart extends AbstractBorderedShapeEditPart impleme
 	/**
 	 * @generated
 	 */
+	private LinkTargetListener myLinkTargetListener;
+
+	/**
+	 * @generated
+	 */
 	public OpaqueAction3EditPart(View view) {
 		super(view);
 	}
@@ -65,7 +87,7 @@ public class OpaqueAction3EditPart extends AbstractBorderedShapeEditPart impleme
 	 * @generated
 	 */
 	protected void createDefaultEditPolicies() {
-		installEditPolicy(EditPolicyRoles.CREATION_ROLE, new CreationEditPolicy());
+		installEditPolicy(EditPolicyRoles.CREATION_ROLE, new CreationEditPolicyWithCustomReparent());
 		super.createDefaultEditPolicies();
 		installEditPolicy(EditPolicyRoles.SEMANTIC_ROLE, new OpaqueAction3ItemSemanticEditPolicy());
 		installEditPolicy(EditPolicyRoles.DRAG_DROP_ROLE, new DragDropEditPolicy());
@@ -237,6 +259,15 @@ public class OpaqueAction3EditPart extends AbstractBorderedShapeEditPart impleme
 	/**
 	 * @generated
 	 */
+	protected void handleNotificationEvent(Notification event) {
+		super.handleNotificationEvent(event);
+		handleTypeLinkModification(event);
+		handleFeatureLinkModification(event);
+	}
+
+	/**
+	 * @generated
+	 */
 	public class ActionBaseFigure extends RoundedRectangle {
 
 		/**
@@ -313,6 +344,214 @@ public class OpaqueAction3EditPart extends AbstractBorderedShapeEditPart impleme
 		}
 		super.reorderChild(child, index);
 		setLayoutConstraint(child, childFigure, constraint);
+	}
+
+	/**
+	 * @generated
+	 */
+	private DiagramEventBroker getDiagramEventBroker() {
+		TransactionalEditingDomain theEditingDomain = getEditingDomain();
+		if (theEditingDomain != null) {
+			return DiagramEventBroker.getInstance(theEditingDomain);
+		}
+		return null;
+	}
+
+	/**
+	 * @generated
+	 */
+	private LinkTargetListener getLinkTargetListener() {
+		if (myLinkTargetListener == null) {
+			myLinkTargetListener = new LinkTargetListener();
+		}
+		return myLinkTargetListener;
+	}
+
+	/**
+	 * @generated
+	 */
+	private class LinkTargetListener implements NotificationListener {
+
+		/**
+		 * @generated
+		 */
+		Map<EObject, Set<EStructuralFeature>> myNotifiers = new HashMap<EObject, Set<EStructuralFeature>>();
+
+		/**
+		 * @generated
+		 */
+		private void added(EObject link, EStructuralFeature feature) {
+			if (!myNotifiers.containsKey(link)) {
+				myNotifiers.put(link, new HashSet<EStructuralFeature>());
+			}
+			myNotifiers.get(link).add(feature);
+		}
+
+		/**
+		 * @generated
+		 */
+		private void removed(EObject link, EStructuralFeature feature) {
+			if (!myNotifiers.containsKey(link)) {
+				return;
+			}
+			myNotifiers.get(link).remove(feature);
+		}
+
+		/**
+		 * @generated
+		 */
+		public void dispose() {
+			Set<Map.Entry<EObject, Set<EStructuralFeature>>> entrySet = myNotifiers.entrySet();
+			for (Map.Entry<EObject, Set<EStructuralFeature>> entry : entrySet) {
+				for (EStructuralFeature feature : entry.getValue()) {
+					getDiagramEventBroker().removeNotificationListener(entry.getKey(), feature, this);
+				}
+			}
+		}
+
+		/**
+		 * @generated
+		 */
+		private void removeReferenceListener(EObject link, EStructuralFeature feature) {
+			getDiagramEventBroker().removeNotificationListener(link, feature, this);
+			removed(link, feature);
+		}
+
+		/**
+		 * @generated
+		 */
+		private void addReferenceListener(EObject link, EStructuralFeature feature) {
+			getDiagramEventBroker().addNotificationListener(link, feature, this);
+			added(link, feature);
+		}
+
+		/**
+		 * @generated
+		 */
+		public void notifyChanged(Notification event) {
+			if (event.getFeature() == UMLPackage.eINSTANCE.getExceptionHandler_HandlerBody()) {
+				refreshDiagram();
+				return;
+			}
+		}
+	}
+
+	/**
+	 * @generated
+	 */
+	protected void addSemanticListeners() {
+		super.addSemanticListeners();
+		for (UMLLinkDescriptor next : getOpaqueAction_3067ContainedLinks()) {
+			EObject nextLink = next.getModelElement();
+			if (nextLink == null) {
+				continue;
+			}
+			switch (next.getVisualID()) {
+			case ExceptionHandlerEditPart.VISUAL_ID:
+				getLinkTargetListener().addReferenceListener(nextLink, UMLPackage.eINSTANCE.getExceptionHandler_HandlerBody());
+				break;
+
+			default:
+				break;
+			}
+		}
+	}
+
+	/**
+	 * @generated
+	 */
+	@SuppressWarnings("unchecked")
+	private List<UMLLinkDescriptor> getOpaqueAction_3067ContainedLinks() {
+		return UMLDiagramUpdater.getOpaqueAction_3067ContainedLinks(getNotationView());
+	}
+
+	/**
+	 * @generated
+	 */
+	protected void removeSemanticListeners() {
+		super.removeSemanticListeners();
+		getLinkTargetListener().dispose();
+	}
+
+	/**
+	 * @generated
+	 */
+	private void handleTypeLinkModification(Notification event) {
+		if (event.getFeature() == UMLPackage.eINSTANCE.getExecutableNode_Handler()) {
+			switch (event.getEventType()) {
+			case Notification.ADD: {
+				Object link = event.getNewValue();
+				if (link instanceof ExceptionHandler) {
+					getLinkTargetListener().addReferenceListener((EObject) link, UMLPackage.eINSTANCE.getExceptionHandler_HandlerBody());
+				}
+				if (link instanceof ExceptionHandler) {
+					refreshDiagram();
+				}
+				break;
+			}
+			case Notification.REMOVE: {
+				Object link = event.getOldValue();
+				if (link instanceof ExceptionHandler) {
+					getLinkTargetListener().removeReferenceListener((EObject) link, UMLPackage.eINSTANCE.getExceptionHandler_HandlerBody());
+				}
+				if (link instanceof ExceptionHandler) {
+					refreshDiagram();
+				}
+				break;
+			}
+			case Notification.ADD_MANY: {
+				List<?> links = (List<?>) event.getNewValue();
+				for (Object link : links) {
+					if (link instanceof ExceptionHandler) {
+						getLinkTargetListener().addReferenceListener((EObject) link, UMLPackage.eINSTANCE.getExceptionHandler_HandlerBody());
+					}
+				}
+				for (Object link : links) {
+					if (link instanceof ExceptionHandler) {
+						refreshDiagram();
+						break;
+					}
+				}
+				break;
+			}
+			case Notification.REMOVE_MANY: {
+				List<?> links = (List<?>) event.getOldValue();
+				for (Object link : links) {
+					if (link instanceof ExceptionHandler) {
+						getLinkTargetListener().removeReferenceListener((EObject) link, UMLPackage.eINSTANCE.getExceptionHandler_HandlerBody());
+					}
+				}
+				for (Object link : links) {
+					if (link instanceof ExceptionHandler) {
+						refreshDiagram();
+						break;
+					}
+				}
+				break;
+			}
+			}
+		}
+	}
+
+	/**
+	 * @generated
+	 */
+	private void handleFeatureLinkModification(Notification event) {
+		if (event.getFeature() == UMLPackage.eINSTANCE.getAction_LocalPrecondition()) {
+			refreshDiagram();
+			return;
+		}
+		if (event.getFeature() == UMLPackage.eINSTANCE.getAction_LocalPostcondition()) {
+			refreshDiagram();
+			return;
+		}
+	}
+
+	/**
+	 * @generated
+	 */
+	public void refreshDiagram() {
+		UMLDiagramUpdateCommand.performCanonicalUpdate(getDiagramView().getElement());
 	}
 
 }

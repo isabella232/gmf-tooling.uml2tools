@@ -5,6 +5,7 @@ import org.eclipse.draw2d.PositionConstants;
 import org.eclipse.draw2d.RectangleFigure;
 import org.eclipse.draw2d.StackLayout;
 import org.eclipse.draw2d.geometry.Dimension;
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.gef.EditPart;
 import org.eclipse.gef.EditPolicy;
 import org.eclipse.gef.Request;
@@ -23,8 +24,10 @@ import org.eclipse.gmf.runtime.gef.ui.figures.NodeFigure;
 import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.uml2.diagram.activity.edit.policies.OutputPin2CanonicalEditPolicy;
 import org.eclipse.uml2.diagram.activity.edit.policies.OutputPin2ItemSemanticEditPolicy;
+import org.eclipse.uml2.diagram.activity.part.UMLDiagramUpdateCommand;
 import org.eclipse.uml2.diagram.activity.part.UMLVisualIDRegistry;
 import org.eclipse.uml2.diagram.common.editparts.PrimaryShapeEditPart;
+import org.eclipse.uml2.uml.UMLPackage;
 
 /**
  * @generated
@@ -187,6 +190,31 @@ public class OutputPin2EditPart extends BorderedBorderItemEditPart implements Pr
 	 */
 	public EditPart getPrimaryChildEditPart() {
 		return getChildBySemanticHint(UMLVisualIDRegistry.getType(OutputPinName2EditPart.VISUAL_ID));
+	}
+
+	/**
+	 * @generated
+	 */
+	protected void handleNotificationEvent(Notification event) {
+		super.handleNotificationEvent(event);
+		handleFeatureLinkModification(event);
+	}
+
+	/**
+	 * @generated
+	 */
+	private void handleFeatureLinkModification(Notification event) {
+		if (event.getFeature() == UMLPackage.eINSTANCE.getObjectNode_Selection()) {
+			refreshDiagram();
+			return;
+		}
+	}
+
+	/**
+	 * @generated
+	 */
+	public void refreshDiagram() {
+		UMLDiagramUpdateCommand.performCanonicalUpdate(getDiagramView().getElement());
 	}
 
 	/**
