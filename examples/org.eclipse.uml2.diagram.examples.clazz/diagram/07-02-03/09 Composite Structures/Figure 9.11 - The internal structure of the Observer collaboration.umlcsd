@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<notation:Diagram xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.1/notation" xmlns:uml="http://www.eclipse.org/uml2/2.1.0/UML" xmi:id="_y8f0tH1_EdyWXew6izX-PQ" type="UMLCompositeStructures" name="Figure 9.11 - The internal structure of the Observer collaboration.umlcompositestructures_diagram" measurementUnit="Pixel">
+  <children xmi:type="notation:Node" xmi:id="_0G0SwH1_EdyWXew6izX-PQ" type="2005">
+    <children xmi:type="notation:Node" xmi:id="_0G0SxH1_EdyWXew6izX-PQ" type="5009"/>
+    <children xmi:type="notation:Node" xmi:id="_0G0SxX1_EdyWXew6izX-PQ" type="7003">
+      <children xmi:type="notation:Node" xmi:id="_6_roAX1_EdyWXew6izX-PQ" type="3007">
+        <children xmi:type="notation:Node" xmi:id="_6_roBH1_EdyWXew6izX-PQ" type="5011"/>
+        <styles xmi:type="notation:ShapeStyle" xmi:id="_6_roAn1_EdyWXew6izX-PQ"/>
+        <element xmi:type="uml:Property" href="Figure 9.11 - The internal structure of the Observer collaboration.uml#_6_roAH1_EdyWXew6izX-PQ"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_6_roA31_EdyWXew6izX-PQ" x="42" y="21" width="133"/>
+      </children>
+      <children xmi:type="notation:Node" xmi:id="_7GEj4X1_EdyWXew6izX-PQ" type="3007">
+        <children xmi:type="notation:Node" xmi:id="_7GEj5H1_EdyWXew6izX-PQ" type="5011"/>
+        <styles xmi:type="notation:ShapeStyle" xmi:id="_7GEj4n1_EdyWXew6izX-PQ"/>
+        <element xmi:type="uml:Property" href="Figure 9.11 - The internal structure of the Observer collaboration.uml#_7GEj4H1_EdyWXew6izX-PQ"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_7GEj431_EdyWXew6izX-PQ" x="220" y="21" width="181"/>
+      </children>
+      <styles xmi:type="notation:SortingStyle" xmi:id="_0G0Sxn1_EdyWXew6izX-PQ"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_0G0Sx31_EdyWXew6izX-PQ"/>
+    </children>
+    <styles xmi:type="notation:ShapeStyle" xmi:id="_0G0SwX1_EdyWXew6izX-PQ"/>
+    <styles xmi:type="notation:HintedDiagramLinkStyle" xmi:id="_0G0Swn1_EdyWXew6izX-PQ"/>
+    <element xmi:type="uml:Collaboration" href="Figure 9.11 - The internal structure of the Observer collaboration.uml#_0GXm0H1_EdyWXew6izX-PQ"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_0G0Sw31_EdyWXew6izX-PQ" x="96" y="84" width="601" height="265"/>
+  </children>
+  <children xmi:type="notation:Node" xmi:id="_QMausH2EEdyr-MCpgrIrqw" type="2006">
+    <children xmi:type="notation:Node" xmi:id="_QMaus32EEdyr-MCpgrIrqw" type="5013"/>
+    <children xmi:type="notation:Node" xmi:id="_QMkfsH2EEdyr-MCpgrIrqw" type="5014"/>
+    <children xmi:type="notation:Node" xmi:id="_QMkfsX2EEdyr-MCpgrIrqw" type="7004">
+      <styles xmi:type="notation:DrawerStyle" xmi:id="_QMkfsn2EEdyr-MCpgrIrqw"/>
+      <styles xmi:type="notation:TitleStyle" xmi:id="_QMkfs32EEdyr-MCpgrIrqw" showTitle="true"/>
+      <styles xmi:type="notation:SortingStyle" xmi:id="_QMkftH2EEdyr-MCpgrIrqw"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_QMkftX2EEdyr-MCpgrIrqw"/>
+    </children>
+    <children xmi:type="notation:Node" xmi:id="_QMkftn2EEdyr-MCpgrIrqw" type="7005">
+      <styles xmi:type="notation:DrawerStyle" xmi:id="_QMkft32EEdyr-MCpgrIrqw"/>
+      <styles xmi:type="notation:TitleStyle" xmi:id="_QMkfuH2EEdyr-MCpgrIrqw" showTitle="true"/>
+      <styles xmi:type="notation:SortingStyle" xmi:id="_QMkfuX2EEdyr-MCpgrIrqw"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_QMkfun2EEdyr-MCpgrIrqw"/>
+    </children>
+    <children xmi:type="notation:Node" xmi:id="_QMkfu32EEdyr-MCpgrIrqw" type="7006">
+      <styles xmi:type="notation:DrawerStyle" xmi:id="_QMkfvH2EEdyr-MCpgrIrqw"/>
+      <styles xmi:type="notation:TitleStyle" xmi:id="_QMkfvX2EEdyr-MCpgrIrqw" showTitle="true"/>
+      <styles xmi:type="notation:SortingStyle" xmi:id="_QMkfvn2EEdyr-MCpgrIrqw"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_QMkfv32EEdyr-MCpgrIrqw"/>
+    </children>
+    <styles xmi:type="notation:ShapeStyle" xmi:id="_QMausX2EEdyr-MCpgrIrqw"/>
+    <element xmi:type="uml:Class" href="Figure 9.11 - The internal structure of the Observer collaboration.uml#_QKomAH2EEdyr-MCpgrIrqw"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_QMausn2EEdyr-MCpgrIrqw" x="768" y="108"/>
+  </children>
+  <children xmi:type="notation:Node" xmi:id="_WZIvoH2EEdyr-MCpgrIrqw" type="2006">
+    <children xmi:type="notation:Node" xmi:id="_WZIvo32EEdyr-MCpgrIrqw" type="5013"/>
+    <children xmi:type="notation:Node" xmi:id="_WZIvpH2EEdyr-MCpgrIrqw" type="5014"/>
+    <children xmi:type="notation:Node" xmi:id="_WZIvpX2EEdyr-MCpgrIrqw" type="7004">
+      <styles xmi:type="notation:DrawerStyle" xmi:id="_WZIvpn2EEdyr-MCpgrIrqw"/>
+      <styles xmi:type="notation:TitleStyle" xmi:id="_WZIvp32EEdyr-MCpgrIrqw" showTitle="true"/>
+      <styles xmi:type="notation:SortingStyle" xmi:id="_WZIvqH2EEdyr-MCpgrIrqw"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_WZIvqX2EEdyr-MCpgrIrqw"/>
+    </children>
+    <children xmi:type="notation:Node" xmi:id="_WZIvqn2EEdyr-MCpgrIrqw" type="7005">
+      <styles xmi:type="notation:DrawerStyle" xmi:id="_WZIvq32EEdyr-MCpgrIrqw"/>
+      <styles xmi:type="notation:TitleStyle" xmi:id="_WZIvrH2EEdyr-MCpgrIrqw" showTitle="true"/>
+      <styles xmi:type="notation:SortingStyle" xmi:id="_WZIvrX2EEdyr-MCpgrIrqw"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_WZIvrn2EEdyr-MCpgrIrqw"/>
+    </children>
+    <children xmi:type="notation:Node" xmi:id="_WZIvr32EEdyr-MCpgrIrqw" type="7006">
+      <styles xmi:type="notation:DrawerStyle" xmi:id="_WZIvsH2EEdyr-MCpgrIrqw"/>
+      <styles xmi:type="notation:TitleStyle" xmi:id="_WZIvsX2EEdyr-MCpgrIrqw" showTitle="true"/>
+      <styles xmi:type="notation:SortingStyle" xmi:id="_WZIvsn2EEdyr-MCpgrIrqw"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_WZIvs32EEdyr-MCpgrIrqw"/>
+    </children>
+    <styles xmi:type="notation:ShapeStyle" xmi:id="_WZIvoX2EEdyr-MCpgrIrqw"/>
+    <element xmi:type="uml:Class" href="Figure 9.11 - The internal structure of the Observer collaboration.uml#_WYi5wH2EEdyr-MCpgrIrqw"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_WZIvon2EEdyr-MCpgrIrqw" x="780" y="276"/>
+  </children>
+  <children xmi:type="notation:Node" xmi:id="_dTn5EI7pEdyDstIgzrrLww" type="2003">
+    <children xmi:type="notation:Node" xmi:id="_dTn5E47pEdyDstIgzrrLww" type="5006"/>
+    <children xmi:type="notation:Node" xmi:id="_dTn5FI7pEdyDstIgzrrLww" type="7002">
+      <styles xmi:type="notation:DrawerStyle" xmi:id="_dTn5FY7pEdyDstIgzrrLww"/>
+      <styles xmi:type="notation:SortingStyle" xmi:id="_dTn5Fo7pEdyDstIgzrrLww"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_dTn5F47pEdyDstIgzrrLww"/>
+    </children>
+    <styles xmi:type="notation:ShapeStyle" xmi:id="_dTn5EY7pEdyDstIgzrrLww"/>
+    <element xmi:type="uml:Package" href="Figure 9.11 - The internal structure of the Observer collaboration.uml#_y6tsAH1_EdyWXew6izX-PQ"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_dTn5Eo7pEdyDstIgzrrLww"/>
+  </children>
+  <children xmi:type="notation:Node" xmi:id="_eV2LEI7pEdyDstIgzrrLww" type="2012">
+    <children xmi:type="notation:Node" xmi:id="_eV2LE47pEdyDstIgzrrLww" type="5024"/>
+    <styles xmi:type="notation:ShapeStyle" xmi:id="_eV2LEY7pEdyDstIgzrrLww"/>
+    <element xmi:type="uml:Constraint" href="Figure 9.11 - The internal structure of the Observer collaboration.uml#_eUpRMI7pEdyDstIgzrrLww"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_eV2LEo7pEdyDstIgzrrLww" x="48" y="408"/>
+  </children>
+  <styles xmi:type="notation:DiagramStyle" xmi:id="_y8f0tX1_EdyWXew6izX-PQ"/>
+  <element xmi:type="uml:Package" href="Figure 9.11 - The internal structure of the Observer collaboration.uml#_y6tsAH1_EdyWXew6izX-PQ"/>
+</notation:Diagram>

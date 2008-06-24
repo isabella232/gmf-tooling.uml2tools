@@ -26,7 +26,7 @@
     <styles xmi:type="notation:DescriptionStyle" xmi:id="_vkRA0r2hEduWjOs2RiriMw"/>
     <styles xmi:type="notation:FillStyle" xmi:id="_vkRA072hEduWjOs2RiriMw"/>
     <styles xmi:type="notation:LineStyle" xmi:id="_vkRA1L2hEduWjOs2RiriMw"/>
-    <element xmi:type="uml:Class" href="7.27.An%20AssociationClass%20is%20depicted%20by%20an%20association%20symbol%20(a%20line)%20and%20a%20class%20symbol%20(a%20box).uml#_vj-F4L2hEduWjOs2RiriMw"/>
+    <element xmi:type="uml:Class" href="7.27.AssociationClass is depicted by a line and a box.uml#_vj-F4L2hEduWjOs2RiriMw"/>
     <layoutConstraint xmi:type="notation:Bounds" xmi:id="_vkRA1b2hEduWjOs2RiriMw" x="24" y="84"/>
   </children>
   <children xmi:type="notation:Node" xmi:id="_wdfu4L2hEduWjOs2RiriMw" type="2001">
@@ -55,7 +55,7 @@
     <styles xmi:type="notation:DescriptionStyle" xmi:id="_wdfu4r2hEduWjOs2RiriMw"/>
     <styles xmi:type="notation:FillStyle" xmi:id="_wdfu472hEduWjOs2RiriMw"/>
     <styles xmi:type="notation:LineStyle" xmi:id="_wdfu5L2hEduWjOs2RiriMw"/>
-    <element xmi:type="uml:Class" href="7.27.An%20AssociationClass%20is%20depicted%20by%20an%20association%20symbol%20(a%20line)%20and%20a%20class%20symbol%20(a%20box).uml#_wdV94L2hEduWjOs2RiriMw"/>
+    <element xmi:type="uml:Class" href="7.27.AssociationClass is depicted by a line and a box.uml#_wdV94L2hEduWjOs2RiriMw"/>
     <layoutConstraint xmi:type="notation:Bounds" xmi:id="_wdfu5b2hEduWjOs2RiriMw" x="384" y="72"/>
   </children>
   <children xmi:type="notation:Node" xmi:id="_rSFfUKMyEdySAc7GdBT3rQ" type="2014">
@@ -66,7 +66,7 @@
       <styles xmi:type="notation:FilteringStyle" xmi:id="_rSGtc6MyEdySAc7GdBT3rQ"/>
     </children>
     <styles xmi:type="notation:ShapeStyle" xmi:id="_rSGGYKMyEdySAc7GdBT3rQ" fontName="Segoe UI"/>
-    <element xmi:type="uml:Model" href="7.27.An%20AssociationClass%20is%20depicted%20by%20an%20association%20symbol%20(a%20line)%20and%20a%20class%20symbol%20(a%20box).uml#_ruheUL2hEduWjOs2RiriMw"/>
+    <element xmi:type="uml:Model" href="7.27.AssociationClass is depicted by a line and a box.uml#_ruheUL2hEduWjOs2RiriMw"/>
     <layoutConstraint xmi:type="notation:Bounds" xmi:id="_rSGGYaMyEdySAc7GdBT3rQ"/>
   </children>
   <children xmi:type="notation:Node" xmi:id="_1C8bAMm2EdyThJMjabxxGg" type="2007">
@@ -75,7 +75,7 @@
     </children>
     <children xmi:type="notation:Node" xmi:id="_1C9pIMm2EdyThJMjabxxGg" type="7024">
       <children xmi:type="notation:Node" xmi:id="_b6l9sNDhEdy4popcT00fWQ" type="3019">
-        <element xmi:type="uml:Property" href="7.27.An%20AssociationClass%20is%20depicted%20by%20an%20association%20symbol%20(a%20line)%20and%20a%20class%20symbol%20(a%20box).uml#_b5sl0NDhEdy4popcT00fWQ"/>
+        <element xmi:type="uml:Property" href="7.27.AssociationClass is depicted by a line and a box.uml#_b5sl0NDhEdy4popcT00fWQ"/>
         <layoutConstraint xmi:type="notation:Location" xmi:id="_b6l9sdDhEdy4popcT00fWQ"/>
       </children>
       <styles xmi:type="notation:DrawerStyle" xmi:id="_1C9pIcm2EdyThJMjabxxGg"/>
@@ -96,12 +96,12 @@
       <styles xmi:type="notation:FilteringStyle" xmi:id="_1C-3RMm2EdyThJMjabxxGg"/>
     </children>
     <styles xmi:type="notation:ShapeStyle" xmi:id="_1C8bAcm2EdyThJMjabxxGg" fontName="Segoe UI"/>
-    <element xmi:type="uml:AssociationClass" href="7.27.An%20AssociationClass%20is%20depicted%20by%20an%20association%20symbol%20(a%20line)%20and%20a%20class%20symbol%20(a%20box).uml#_1CwNwMm2EdyThJMjabxxGg"/>
+    <element xmi:type="uml:AssociationClass" href="7.27.AssociationClass is depicted by a line and a box.uml#_1CwNwMm2EdyThJMjabxxGg"/>
     <layoutConstraint xmi:type="notation:Bounds" xmi:id="_1C8bAsm2EdyThJMjabxxGg" x="192" y="204"/>
   </children>
   <children xmi:type="notation:Node" xmi:id="_1DDvwMm2EdyThJMjabxxGg" type="2015">
     <styles xmi:type="notation:ShapeStyle" xmi:id="_1DDvwcm2EdyThJMjabxxGg" fontName="Segoe UI"/>
-    <element xmi:type="uml:AssociationClass" href="7.27.An%20AssociationClass%20is%20depicted%20by%20an%20association%20symbol%20(a%20line)%20and%20a%20class%20symbol%20(a%20box).uml#_1CwNwMm2EdyThJMjabxxGg"/>
+    <element xmi:type="uml:AssociationClass" href="7.27.AssociationClass is depicted by a line and a box.uml#_1CwNwMm2EdyThJMjabxxGg"/>
     <layoutConstraint xmi:type="notation:Bounds" xmi:id="_1DDvwsm2EdyThJMjabxxGg" x="240" y="108"/>
   </children>
   <children xmi:type="notation:Node" xmi:id="_c38doDFTEd2jdPJEZbbrmw" type="Note">
@@ -124,7 +124,7 @@
     <children xmi:type="notation:Node" xmi:id="_vWEl1jFTEd2jdPJEZbbrmw" type="Description">
       <element xsi:nil="true"/>
     </children>
-    <styles xmi:type="notation:ShapeStyle" xmi:id="_vWEl0TFTEd2jdPJEZbbrmw" description="AssociationClass Job is shown as a classifier rectangle, rhoma and a connector between them. Job has two Association Ends - Person and Company." fillColor="13369343" lineColor="6737151" lineWidth="1"/>
+    <styles xmi:type="notation:ShapeStyle" xmi:id="_vWEl0TFTEd2jdPJEZbbrmw" description="AssociationClass Job is shown as a classifier rectangle, rhomb and a connector between them. Job has two Association Ends - Person and Company." fillColor="13369343" lineColor="6737151" lineWidth="1"/>
     <styles xmi:type="notation:TextStyle" xmi:id="_vWEl0jFTEd2jdPJEZbbrmw"/>
     <styles xmi:type="notation:LineTypeStyle" xmi:id="_vWEl0zFTEd2jdPJEZbbrmw"/>
     <element xsi:nil="true"/>
@@ -133,11 +133,11 @@
   <styles xmi:type="notation:PageStyle" xmi:id="_ulrRob2hEduWjOs2RiriMw"/>
   <styles xmi:type="notation:GuideStyle" xmi:id="_ulrRor2hEduWjOs2RiriMw"/>
   <styles xmi:type="notation:DescriptionStyle" xmi:id="_ulrRo72hEduWjOs2RiriMw"/>
-  <element xmi:type="uml:Model" href="7.27.An%20AssociationClass%20is%20depicted%20by%20an%20association%20symbol%20(a%20line)%20and%20a%20class%20symbol%20(a%20box).uml#_ruheUL2hEduWjOs2RiriMw"/>
+  <element xmi:type="uml:Model" href="7.27.AssociationClass is depicted by a line and a box.uml#_ruheUL2hEduWjOs2RiriMw"/>
   <edges xmi:type="notation:Edge" xmi:id="_1DFk8Mm2EdyThJMjabxxGg" type="4014" source="_1C8bAMm2EdyThJMjabxxGg" target="_1DDvwMm2EdyThJMjabxxGg">
     <styles xmi:type="notation:ConnectorStyle" xmi:id="_1DFk8cm2EdyThJMjabxxGg"/>
     <styles xmi:type="notation:FontStyle" xmi:id="_1DFk8sm2EdyThJMjabxxGg" fontName="Segoe UI"/>
-    <element xmi:type="uml:AssociationClass" href="7.27.An%20AssociationClass%20is%20depicted%20by%20an%20association%20symbol%20(a%20line)%20and%20a%20class%20symbol%20(a%20box).uml#_1CwNwMm2EdyThJMjabxxGg"/>
+    <element xmi:type="uml:AssociationClass" href="7.27.AssociationClass is depicted by a line and a box.uml#_1CwNwMm2EdyThJMjabxxGg"/>
     <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_1DFk88m2EdyThJMjabxxGg" points="[0, 0, 0, 0]$[0, 0, 0, 0]"/>
   </edges>
   <edges xmi:type="notation:Edge" xmi:id="_3U-IAMm2EdyThJMjabxxGg" type="4003" source="_1DDvwMm2EdyThJMjabxxGg" target="_wdfu4L2hEduWjOs2RiriMw">
@@ -149,7 +149,7 @@
     </children>
     <styles xmi:type="notation:ConnectorStyle" xmi:id="_3U-IAcm2EdyThJMjabxxGg"/>
     <styles xmi:type="notation:FontStyle" xmi:id="_3U-IAsm2EdyThJMjabxxGg" fontName="Segoe UI"/>
-    <element xmi:type="uml:Property" href="7.27.An%20AssociationClass%20is%20depicted%20by%20an%20association%20symbol%20(a%20line)%20and%20a%20class%20symbol%20(a%20box).uml#_3UltgMm2EdyThJMjabxxGg"/>
+    <element xmi:type="uml:Property" href="7.27.AssociationClass is depicted by a line and a box.uml#_3UltgMm2EdyThJMjabxxGg"/>
     <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_3U-IA8m2EdyThJMjabxxGg" points="[5, 5, -136, 0]$[135, 3, -6, -2]"/>
     <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_6nGnIMm2EdyThJMjabxxGg" id="(0.4,0.1)"/>
     <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_3VIgEMm2EdyThJMjabxxGg" id="(0.06,0.45555556)"/>
@@ -163,7 +163,7 @@
     </children>
     <styles xmi:type="notation:ConnectorStyle" xmi:id="_44l24cm2EdyThJMjabxxGg"/>
     <styles xmi:type="notation:FontStyle" xmi:id="_44l24sm2EdyThJMjabxxGg" fontName="Segoe UI"/>
-    <element xmi:type="uml:Property" href="7.27.An%20AssociationClass%20is%20depicted%20by%20an%20association%20symbol%20(a%20line)%20and%20a%20class%20symbol%20(a%20box).uml#_44kBsMm2EdyThJMjabxxGg"/>
+    <element xmi:type="uml:Property" href="7.27.AssociationClass is depicted by a line and a box.uml#_44kBsMm2EdyThJMjabxxGg"/>
     <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_44l248m2EdyThJMjabxxGg" points="[0, 6, 112, 0]$[-103, 3, 9, -3]"/>
     <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_44nFAMm2EdyThJMjabxxGg" id="(0.0,0.3)"/>
     <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_44nFAcm2EdyThJMjabxxGg" id="(0.91,0.32967034)"/>

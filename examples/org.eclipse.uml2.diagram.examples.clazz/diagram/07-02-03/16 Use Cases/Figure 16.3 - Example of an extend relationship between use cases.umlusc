@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<notation:Diagram xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.1/notation" xmlns:uml="http://www.eclipse.org/uml2/2.1.0/UML" xmi:id="_Je_YlsjfEdy8VsoPkmWhvA" type="UMLUseCase" name="Figure 16.3 - Example of an extend relationship between use cases.umlusecase_diagram" measurementUnit="Pixel">
+  <children xmi:type="notation:Node" xmi:id="_MqY9kMjfEdy8VsoPkmWhvA" type="2003">
+    <children xmi:type="notation:Node" xmi:id="_MqY9k8jfEdy8VsoPkmWhvA" type="5003"/>
+    <children xmi:type="notation:Node" xmi:id="_MqY9lMjfEdy8VsoPkmWhvA" type="7002">
+      <children xmi:type="notation:Node" xmi:id="_N-IdYMjfEdy8VsoPkmWhvA" type="3002">
+        <element xmi:type="uml:ExtensionPoint" href="Figure 16.3 - Example of an extend relationship between use cases.uml#_N91icMjfEdy8VsoPkmWhvA"/>
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_N-IdYcjfEdy8VsoPkmWhvA"/>
+      </children>
+      <styles xmi:type="notation:SortingStyle" xmi:id="_MqY9lcjfEdy8VsoPkmWhvA"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_MqY9lsjfEdy8VsoPkmWhvA"/>
+    </children>
+    <styles xmi:type="notation:ShapeStyle" xmi:id="_MqY9kcjfEdy8VsoPkmWhvA"/>
+    <element xmi:type="uml:UseCase" href="Figure 16.3 - Example of an extend relationship between use cases.uml#_Mp8RoMjfEdy8VsoPkmWhvA"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_MqY9ksjfEdy8VsoPkmWhvA" x="120" y="288"/>
+  </children>
+  <children xmi:type="notation:Node" xmi:id="_RnfJsMjfEdy8VsoPkmWhvA" type="2003">
+    <children xmi:type="notation:Node" xmi:id="_RnfJs8jfEdy8VsoPkmWhvA" type="5003"/>
+    <children xmi:type="notation:Node" xmi:id="_RnfJtMjfEdy8VsoPkmWhvA" type="7002">
+      <styles xmi:type="notation:SortingStyle" xmi:id="_RnfJtcjfEdy8VsoPkmWhvA"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_RnfJtsjfEdy8VsoPkmWhvA"/>
+    </children>
+    <styles xmi:type="notation:ShapeStyle" xmi:id="_RnfJscjfEdy8VsoPkmWhvA"/>
+    <element xmi:type="uml:UseCase" href="Figure 16.3 - Example of an extend relationship between use cases.uml#_RnVYsMjfEdy8VsoPkmWhvA"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_RnfJssjfEdy8VsoPkmWhvA" x="540" y="276"/>
+  </children>
+  <children xmi:type="notation:Node" xmi:id="_YKzFssjfEdy8VsoPkmWhvA" type="2008">
+    <children xmi:type="notation:Node" xmi:id="_YKzFtcjfEdy8VsoPkmWhvA" type="5011"/>
+    <styles xmi:type="notation:ShapeStyle" xmi:id="_YKzFs8jfEdy8VsoPkmWhvA"/>
+    <element xmi:type="uml:Constraint" href="Figure 16.3 - Example of an extend relationship between use cases.uml#_YKzFsMjfEdy8VsoPkmWhvA"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_YKzFtMjfEdy8VsoPkmWhvA" x="324" y="144" width="380" height="60"/>
+  </children>
+  <styles xmi:type="notation:DiagramStyle" xmi:id="_Je_Yl8jfEdy8VsoPkmWhvA"/>
+  <element xmi:type="uml:Package" href="Figure 16.3 - Example of an extend relationship between use cases.uml#_JdgK0MjfEdy8VsoPkmWhvA"/>
+  <edges xmi:type="notation:Edge" xmi:id="_XJYsAcjfEdy8VsoPkmWhvA" type="4002" source="_RnfJsMjfEdy8VsoPkmWhvA" target="_MqY9kMjfEdy8VsoPkmWhvA">
+    <children xmi:type="notation:Node" xmi:id="_XJYsBcjfEdy8VsoPkmWhvA" type="6002">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_XJYsBsjfEdy8VsoPkmWhvA" y="20"/>
+    </children>
+    <styles xmi:type="notation:RoutingStyle" xmi:id="_XJYsAsjfEdy8VsoPkmWhvA"/>
+    <styles xmi:type="notation:FontStyle" xmi:id="_XJYsA8jfEdy8VsoPkmWhvA"/>
+    <element xmi:type="uml:Extend" href="Figure 16.3 - Example of an extend relationship between use cases.uml#_XJYsAMjfEdy8VsoPkmWhvA"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_XJYsBMjfEdy8VsoPkmWhvA" points="[-25, -6, 136, 0]$[-156, -6, 5, 0]"/>
+    <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_XJrm8MjfEdy8VsoPkmWhvA" id="(0.17857143,0.5)"/>
+    <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_XJrm8cjfEdy8VsoPkmWhvA" id="(0.9774775,0.33333334)"/>
+  </edges>
+  <edges xmi:type="notation:Edge" xmi:id="_Ox78EMjjEdyQHuNdoqJ68A" type="4005" source="_YKzFssjfEdy8VsoPkmWhvA" target="_XJYsAcjfEdy8VsoPkmWhvA">
+    <styles xmi:type="notation:ConnectorStyle" xmi:id="_Ox78EcjjEdyQHuNdoqJ68A"/>
+    <styles xmi:type="notation:FontStyle" xmi:id="_Ox78EsjjEdyQHuNdoqJ68A"/>
+    <element xsi:nil="true"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_Ox78E8jjEdyQHuNdoqJ68A" points="[-3, 30, 12, -103]$[-14, 132, 1, -1]"/>
+    <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_OyYoAMjjEdyQHuNdoqJ68A" id="(0.5506329,0.6551724)"/>
+  </edges>
+</notation:Diagram>
