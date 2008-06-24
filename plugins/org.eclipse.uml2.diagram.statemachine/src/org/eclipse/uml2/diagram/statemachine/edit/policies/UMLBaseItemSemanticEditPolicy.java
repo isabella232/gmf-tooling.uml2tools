@@ -2,7 +2,6 @@ package org.eclipse.uml2.diagram.statemachine.edit.policies;
 
 import java.util.Collections;
 import java.util.Iterator;
-import java.util.Map;
 
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.transaction.TransactionalEditingDomain;
@@ -40,8 +39,6 @@ import org.eclipse.gmf.runtime.emf.type.core.requests.SetRequest;
 import org.eclipse.gmf.runtime.notation.Edge;
 import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.uml2.diagram.statemachine.edit.helpers.UMLBaseEditHelper;
-import org.eclipse.uml2.diagram.statemachine.expressions.UMLAbstractExpression;
-import org.eclipse.uml2.diagram.statemachine.part.UMLDiagramEditorPlugin;
 import org.eclipse.uml2.diagram.statemachine.part.UMLVisualIDRegistry;
 import org.eclipse.uml2.uml.Region;
 import org.eclipse.uml2.uml.Vertex;

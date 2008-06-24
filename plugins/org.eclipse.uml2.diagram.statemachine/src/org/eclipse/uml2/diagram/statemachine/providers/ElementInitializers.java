@@ -1,19 +1,8 @@
 package org.eclipse.uml2.diagram.statemachine.providers;
 
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.Iterator;
-import java.util.List;
-
-import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.EObject;
-import org.eclipse.emf.ecore.EStructuralFeature;
-
 import org.eclipse.uml2.diagram.statemachine.expressions.UMLAbstractExpression;
 import org.eclipse.uml2.diagram.statemachine.expressions.UMLOCLFactory;
-
 import org.eclipse.uml2.diagram.statemachine.part.UMLDiagramEditorPlugin;
-
 import org.eclipse.uml2.uml.ConnectionPointReference;
 import org.eclipse.uml2.uml.Pseudostate;
 import org.eclipse.uml2.uml.PseudostateKind;
