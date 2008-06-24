@@ -206,6 +206,16 @@
 
    <extension point="org.eclipse.gmf.runtime.common.ui.services.action.contributionItemProviders">
       <?gmfgen generated="true"?>
+      <contributionItemProvider class="org.eclipse.uml2.diagram.activity.providers.UMLContributionItemProvider">
+         <Priority name="Low"/>
+         <partContribution id="org.eclipse.uml2.diagram.activity.part.UMLDiagramEditorID">
+            <partAction menubarPath="/file/print" id="printPreviewAction"/>
+         </partContribution>
+      </contributionItemProvider>
+   </extension>
+
+   <extension point="org.eclipse.gmf.runtime.common.ui.services.action.contributionItemProviders">
+      <?gmfgen generated="true"?>
       <contributionItemProvider
             checkPluginLoaded="true"
             class="org.eclipse.uml2.diagram.activity.action.ConstraintContributionItemProvider">
@@ -249,6 +259,16 @@
             </ElementType>
             <ElementType class="org.eclipse.gmf.runtime.diagram.ui.editparts.DiagramEditPart">
                <GlobalActionId actionId="save"/>
+            </ElementType>
+         </ViewId>
+      </GlobalActionHandlerProvider>
+      <GlobalActionHandlerProvider
+         class="org.eclipse.gmf.runtime.diagram.ui.printing.render.providers.DiagramWithPrintGlobalActionHandlerProvider"
+         id="UMLActivityPresentationPrint">
+         <Priority name="Lowest"/>
+         <ViewId id="org.eclipse.uml2.diagram.activity.part.UMLDiagramEditorID">
+            <ElementType class="org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart">
+               <GlobalActionId actionId="print"/>
             </ElementType>
          </ViewId>
       </GlobalActionHandlerProvider>
@@ -1504,7 +1524,8 @@
          parentId="org.eclipse.gmf.runtime.diagram.ui.diagramContext">
       </context>
    </extension>
-<extension point="org.eclipse.ui.commands">
+   
+   <extension point="org.eclipse.ui.commands">
       <?gmfgen generated="true"?>
       <command
          categoryId="org.eclipse.ui.category.edit"
@@ -1513,14 +1534,17 @@
          id="org.eclipse.uml2.diagram.activity.updateDiagram"
          name="%update.diagram.name"/>
    </extension>
-<extension point="org.eclipse.ui.bindings">
+
+   <extension point="org.eclipse.ui.bindings">
       <?gmfgen generated="true"?>
       <key 
          commandId="org.eclipse.uml2.diagram.activity.updateDiagram"
          contextId="org.eclipse.uml2.diagram.activity.ui.diagramContext"
          schemeId="org.eclipse.ui.defaultAcceleratorConfiguration"
          sequence="F5"/>
-   </extension><extension point="org.eclipse.gmf.runtime.common.ui.services.action.contributionItemProviders">
+   </extension>
+
+   <extension point="org.eclipse.gmf.runtime.common.ui.services.action.contributionItemProviders">
       <?gmfgen generated="true"?>
       <contributionItemProvider
             checkPluginLoaded="true"
@@ -1562,8 +1586,5 @@
             id="org.eclipse.uml2.diagram.activity.icons">
       </page>
    </extension>
-
-
-
-
+   
 </plugin>
