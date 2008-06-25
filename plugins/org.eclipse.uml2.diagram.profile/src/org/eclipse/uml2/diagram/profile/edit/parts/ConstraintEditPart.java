@@ -45,9 +45,9 @@ import org.eclipse.swt.accessibility.AccessibleEvent;
 import org.eclipse.swt.graphics.Color;
 import org.eclipse.swt.graphics.FontData;
 import org.eclipse.swt.graphics.Image;
+import org.eclipse.uml2.diagram.common.editpolicies.IRefreshableFeedbackEditPolicy;
 import org.eclipse.uml2.diagram.profile.edit.policies.ConstraintItemSemanticEditPolicy;
 import org.eclipse.uml2.diagram.profile.edit.policies.UMLTextNonResizableEditPolicy;
-import org.eclipse.uml2.diagram.profile.edit.policies.UMLTextSelectionEditPolicy;
 import org.eclipse.uml2.diagram.profile.providers.UMLElementTypes;
 import org.eclipse.uml2.diagram.profile.providers.UMLParserProvider;
 
@@ -212,10 +212,7 @@ public class ConstraintEditPart extends CompartmentEditPart implements ITextAwar
 	 */
 	public void setLabelText(String text) {
 		setLabelTextHelper(getFigure(), text);
-		Object pdEditPolicy = getEditPolicy(EditPolicy.PRIMARY_DRAG_ROLE);
-		if (pdEditPolicy instanceof UMLTextSelectionEditPolicy) {
-			((UMLTextSelectionEditPolicy) pdEditPolicy).refreshFeedback();
-		}
+		refreshFeedback();
 	}
 
 	/**
@@ -382,10 +379,7 @@ public class ConstraintEditPart extends CompartmentEditPart implements ITextAwar
 	protected void refreshLabel() {
 		setLabelTextHelper(getFigure(), getLabelText());
 		setLabelIconHelper(getFigure(), getLabelIcon());
-		Object pdEditPolicy = getEditPolicy(EditPolicy.PRIMARY_DRAG_ROLE);
-		if (pdEditPolicy instanceof UMLTextSelectionEditPolicy) {
-			((UMLTextSelectionEditPolicy) pdEditPolicy).refreshFeedback();
-		}
+		refreshFeedback();
 	}
 
 	/**
@@ -474,6 +468,16 @@ public class ConstraintEditPart extends CompartmentEditPart implements ITextAwar
 	 */
 	private View getFontStyleOwnerView() {
 		return getPrimaryView();
+	}
+
+	/**
+	 * @generated
+	 */
+	private void refreshFeedback() {
+		Object pdEditPolicy = getEditPolicy(EditPolicy.PRIMARY_DRAG_ROLE);
+		if (pdEditPolicy instanceof IRefreshableFeedbackEditPolicy) {
+			((IRefreshableFeedbackEditPolicy) pdEditPolicy).refreshFeedback();
+		}
 	}
 
 	/**

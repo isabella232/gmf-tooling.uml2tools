@@ -2,6 +2,7 @@ package org.eclipse.uml2.diagram.usecase.edit.policies;
 
 import org.eclipse.draw2d.ColorConstants;
 import org.eclipse.draw2d.Figure;
+import org.eclipse.draw2d.FigureListener;
 import org.eclipse.draw2d.Graphics;
 import org.eclipse.draw2d.IFigure;
 import org.eclipse.draw2d.Label;
@@ -9,11 +10,17 @@ import org.eclipse.draw2d.RectangleFigure;
 import org.eclipse.draw2d.geometry.Rectangle;
 import org.eclipse.gef.editpolicies.SelectionEditPolicy;
 import org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel;
+import org.eclipse.uml2.diagram.common.editpolicies.IRefreshableFeedbackEditPolicy;
 
 /**
  * @generated
  */
-public class UMLTextSelectionEditPolicy extends SelectionEditPolicy {
+public class UMLTextSelectionEditPolicy extends SelectionEditPolicy implements IRefreshableFeedbackEditPolicy {
+
+	/**
+	 * @generated
+	 */
+	private FigureListener hostLayoutListener;
 
 	/**
 	 * @generated
@@ -48,6 +55,7 @@ public class UMLTextSelectionEditPolicy extends SelectionEditPolicy {
 		} else {
 			hideSelection();
 			addFeedback(selectionFeedbackFigure = createSelectionFeedbackFigure());
+			getHostFigure().addFigureListener(getHostLayoutListener());
 			refreshSelectionFeedback();
 			hideFocus();
 		}
@@ -64,6 +72,7 @@ public class UMLTextSelectionEditPolicy extends SelectionEditPolicy {
 			if (selectionFeedbackFigure != null) {
 				removeFeedback(selectionFeedbackFigure);
 				selectionFeedbackFigure = null;
+				getHostFigure().removeFigureListener(getHostLayoutListener());
 			}
 			hideFocus();
 		}
@@ -180,5 +189,30 @@ public class UMLTextSelectionEditPolicy extends SelectionEditPolicy {
 	public void refreshFeedback() {
 		refreshSelectionFeedback();
 		refreshFocusFeedback();
+	}
+
+	/**
+	 * @generated
+	 */
+	private FigureListener getHostLayoutListener() {
+		if (hostLayoutListener == null) {
+			hostLayoutListener = new HostLayoutListener();
+		}
+		return hostLayoutListener;
+	}
+
+	/**
+	 * @generated
+	 */
+	private class HostLayoutListener implements FigureListener {
+
+		/**
+		 * @generated
+		 */
+		public void figureMoved(IFigure source) {
+			if (selectionFeedbackFigure != null) {
+				refreshFeedback();
+			}
+		}
 	}
 }

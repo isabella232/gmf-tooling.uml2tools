@@ -45,7 +45,7 @@ import org.eclipse.swt.accessibility.AccessibleEvent;
 import org.eclipse.swt.graphics.Color;
 import org.eclipse.swt.graphics.FontData;
 import org.eclipse.swt.graphics.Image;
-import org.eclipse.uml2.diagram.component.edit.policies.UMLTextSelectionEditPolicy;
+import org.eclipse.uml2.diagram.common.editpolicies.IRefreshableFeedbackEditPolicy;
 import org.eclipse.uml2.diagram.component.providers.UMLElementTypes;
 import org.eclipse.uml2.diagram.component.providers.UMLParserProvider;
 
@@ -213,10 +213,7 @@ public class ClassDiagramNotationClassStereotypeEditPart extends CompartmentEdit
 	 */
 	public void setLabelText(String text) {
 		setLabelTextHelper(getFigure(), text);
-		Object pdEditPolicy = getEditPolicy(EditPolicy.PRIMARY_DRAG_ROLE);
-		if (pdEditPolicy instanceof UMLTextSelectionEditPolicy) {
-			((UMLTextSelectionEditPolicy) pdEditPolicy).refreshFeedback();
-		}
+		refreshFeedback();
 	}
 
 	/**
@@ -383,10 +380,7 @@ public class ClassDiagramNotationClassStereotypeEditPart extends CompartmentEdit
 	protected void refreshLabel() {
 		setLabelTextHelper(getFigure(), getLabelText());
 		setLabelIconHelper(getFigure(), getLabelIcon());
-		Object pdEditPolicy = getEditPolicy(EditPolicy.PRIMARY_DRAG_ROLE);
-		if (pdEditPolicy instanceof UMLTextSelectionEditPolicy) {
-			((UMLTextSelectionEditPolicy) pdEditPolicy).refreshFeedback();
-		}
+		refreshFeedback();
 	}
 
 	/**
@@ -475,6 +469,16 @@ public class ClassDiagramNotationClassStereotypeEditPart extends CompartmentEdit
 	 */
 	private View getFontStyleOwnerView() {
 		return (View) getModel();
+	}
+
+	/**
+	 * @generated
+	 */
+	private void refreshFeedback() {
+		Object pdEditPolicy = getEditPolicy(EditPolicy.PRIMARY_DRAG_ROLE);
+		if (pdEditPolicy instanceof IRefreshableFeedbackEditPolicy) {
+			((IRefreshableFeedbackEditPolicy) pdEditPolicy).refreshFeedback();
+		}
 	}
 
 	/**

@@ -45,9 +45,9 @@ import org.eclipse.swt.accessibility.AccessibleEvent;
 import org.eclipse.swt.graphics.Color;
 import org.eclipse.swt.graphics.FontData;
 import org.eclipse.swt.graphics.Image;
+import org.eclipse.uml2.diagram.common.editpolicies.IRefreshableFeedbackEditPolicy;
 import org.eclipse.uml2.diagram.csd.edit.policies.OperationItemSemanticEditPolicy;
 import org.eclipse.uml2.diagram.csd.edit.policies.UMLTextNonResizableEditPolicy;
-import org.eclipse.uml2.diagram.csd.edit.policies.UMLTextSelectionEditPolicy;
 import org.eclipse.uml2.diagram.csd.providers.UMLElementTypes;
 import org.eclipse.uml2.diagram.csd.providers.UMLParserProvider;
 
@@ -212,10 +212,7 @@ public class OperationEditPart extends CompartmentEditPart implements ITextAware
 	 */
 	public void setLabelText(String text) {
 		setLabelTextHelper(getFigure(), text);
-		Object pdEditPolicy = getEditPolicy(EditPolicy.PRIMARY_DRAG_ROLE);
-		if (pdEditPolicy instanceof UMLTextSelectionEditPolicy) {
-			((UMLTextSelectionEditPolicy) pdEditPolicy).refreshFeedback();
-		}
+		refreshFeedback();
 	}
 
 	/**
@@ -382,10 +379,7 @@ public class OperationEditPart extends CompartmentEditPart implements ITextAware
 	protected void refreshLabel() {
 		setLabelTextHelper(getFigure(), getLabelText());
 		setLabelIconHelper(getFigure(), getLabelIcon());
-		Object pdEditPolicy = getEditPolicy(EditPolicy.PRIMARY_DRAG_ROLE);
-		if (pdEditPolicy instanceof UMLTextSelectionEditPolicy) {
-			((UMLTextSelectionEditPolicy) pdEditPolicy).refreshFeedback();
-		}
+		refreshFeedback();
 	}
 
 	/**
@@ -474,6 +468,16 @@ public class OperationEditPart extends CompartmentEditPart implements ITextAware
 	 */
 	private View getFontStyleOwnerView() {
 		return getPrimaryView();
+	}
+
+	/**
+	 * @generated
+	 */
+	private void refreshFeedback() {
+		Object pdEditPolicy = getEditPolicy(EditPolicy.PRIMARY_DRAG_ROLE);
+		if (pdEditPolicy instanceof IRefreshableFeedbackEditPolicy) {
+			((IRefreshableFeedbackEditPolicy) pdEditPolicy).refreshFeedback();
+		}
 	}
 
 	/**
