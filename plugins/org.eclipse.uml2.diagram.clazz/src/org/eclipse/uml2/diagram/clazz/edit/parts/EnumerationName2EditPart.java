@@ -48,6 +48,7 @@ import org.eclipse.swt.graphics.Image;
 import org.eclipse.uml2.diagram.clazz.edit.policies.UMLTextSelectionEditPolicy;
 import org.eclipse.uml2.diagram.clazz.providers.UMLElementTypes;
 import org.eclipse.uml2.diagram.clazz.providers.UMLParserProvider;
+import org.eclipse.uml2.diagram.common.editpolicies.IRefreshableFeedbackEditPolicy;
 
 /**
  * @generated
@@ -217,10 +218,7 @@ public class EnumerationName2EditPart extends CompartmentEditPart implements ITe
 	 */
 	public void setLabelText(String text) {
 		setLabelTextHelper(getFigure(), text);
-		Object pdEditPolicy = getEditPolicy(EditPolicy.PRIMARY_DRAG_ROLE);
-		if (pdEditPolicy instanceof UMLTextSelectionEditPolicy) {
-			((UMLTextSelectionEditPolicy) pdEditPolicy).refreshFeedback();
-		}
+		refreshFeedback();
 	}
 
 	/**
@@ -387,10 +385,7 @@ public class EnumerationName2EditPart extends CompartmentEditPart implements ITe
 	protected void refreshLabel() {
 		setLabelTextHelper(getFigure(), getLabelText());
 		setLabelIconHelper(getFigure(), getLabelIcon());
-		Object pdEditPolicy = getEditPolicy(EditPolicy.PRIMARY_DRAG_ROLE);
-		if (pdEditPolicy instanceof UMLTextSelectionEditPolicy) {
-			((UMLTextSelectionEditPolicy) pdEditPolicy).refreshFeedback();
-		}
+		refreshFeedback();
 	}
 
 	/**
@@ -479,6 +474,16 @@ public class EnumerationName2EditPart extends CompartmentEditPart implements ITe
 	 */
 	private View getFontStyleOwnerView() {
 		return (View) getModel();
+	}
+
+	/**
+	 * @generated
+	 */
+	private void refreshFeedback() {
+		Object pdEditPolicy = getEditPolicy(EditPolicy.PRIMARY_DRAG_ROLE);
+		if (pdEditPolicy instanceof IRefreshableFeedbackEditPolicy) {
+			((IRefreshableFeedbackEditPolicy) pdEditPolicy).refreshFeedback();
+		}
 	}
 
 	/**
