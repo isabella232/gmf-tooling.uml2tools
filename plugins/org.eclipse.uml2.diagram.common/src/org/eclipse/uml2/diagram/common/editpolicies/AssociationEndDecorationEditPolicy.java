@@ -1,7 +1,6 @@
 package org.eclipse.uml2.diagram.common.editpolicies;
 
 import org.eclipse.emf.common.notify.Notification;
-import org.eclipse.emf.ecore.EObject;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.ConnectionNodeEditPart;
 import org.eclipse.jface.preference.IPreferenceStore;
 import org.eclipse.uml2.diagram.common.conventions.AssociationEndConvention;

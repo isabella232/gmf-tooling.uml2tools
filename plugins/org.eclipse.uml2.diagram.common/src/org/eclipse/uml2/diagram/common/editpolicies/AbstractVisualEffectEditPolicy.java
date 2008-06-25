@@ -11,8 +11,6 @@ import org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editpolicies.CanonicalEditPolicy;
 import org.eclipse.gmf.runtime.emf.type.core.commands.SetValueCommand;
 import org.eclipse.gmf.runtime.emf.type.core.requests.SetRequest;
-import org.eclipse.gmf.runtime.notation.FontStyle;
-import org.eclipse.gmf.runtime.notation.NotationFactory;
 import org.eclipse.gmf.runtime.notation.NotationPackage;
 import org.eclipse.gmf.runtime.notation.Style;
 import org.eclipse.gmf.runtime.notation.View;
@@ -49,7 +47,7 @@ public abstract class AbstractVisualEffectEditPolicy extends CanonicalEditPolicy
 	 * install/remove any new children from view-tree.
 	 */
 	@Override
-	protected final List getSemanticChildrenList() {
+	protected final List<?> getSemanticChildrenList() {
 		return Collections.emptyList();
 	}
 	

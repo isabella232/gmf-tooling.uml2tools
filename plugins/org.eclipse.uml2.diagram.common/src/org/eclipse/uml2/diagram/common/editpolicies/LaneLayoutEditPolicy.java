@@ -22,6 +22,7 @@ import org.eclipse.emf.transaction.TransactionalEditingDomain;
 import org.eclipse.gef.EditPart;
 import org.eclipse.gef.EditPolicy;
 import org.eclipse.gef.GraphicalEditPart;
+import org.eclipse.gef.Handle;
 import org.eclipse.gef.commands.Command;
 import org.eclipse.gef.editpolicies.ConstrainedLayoutEditPolicy;
 import org.eclipse.gef.editpolicies.ResizableEditPolicy;
@@ -96,8 +97,8 @@ public class LaneLayoutEditPolicy extends ConstrainedLayoutEditPolicy {
 
 		ResizableEditPolicy editPolicy = new ResizableEditPolicy() {
 			@Override
-			protected List createSelectionHandles() {
-				List list = new ArrayList();
+			protected List<?> createSelectionHandles() {
+				List<Handle> list = new ArrayList<Handle>();
 				ResizableHandleKit.addMoveHandle((GraphicalEditPart) getHost(), list);
 
 				if (getLaneOrientation() == LaneLayout.HORIZONTAL) {

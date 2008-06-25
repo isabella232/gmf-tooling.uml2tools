@@ -20,7 +20,6 @@ import org.eclipse.gmf.runtime.emf.type.core.requests.SetRequest;
 import org.eclipse.gmf.runtime.notation.FontStyle;
 import org.eclipse.gmf.runtime.notation.NotationPackage;
 import org.eclipse.gmf.runtime.notation.View;
-import org.eclipse.uml2.diagram.common.editpolicies.AbstractVisualEffectEditPolicy;
 import org.eclipse.uml2.uml.Classifier;
 import org.eclipse.uml2.uml.UMLPackage;
 
