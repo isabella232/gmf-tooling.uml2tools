@@ -818,6 +818,9 @@ public class UMLVisualIDRegistry {
 	 * @generated
 	 */
 	protected static boolean hasViewChild(View containerView, EObject domainElement, int visualId) {
+		if (containerView == null) {
+			return false;
+		}
 		if (domainElement == null) {
 			return false;
 		}
@@ -1073,6 +1076,28 @@ public class UMLVisualIDRegistry {
 			break;
 		}
 		return -1;
+	}
+
+	/**
+	 * @generated
+	 */
+	protected static boolean canSubstitute(int visualId, int substituteCandidate) {
+		if (visualId == substituteCandidate) {
+			return true;
+		}
+		return false;
+	}
+
+	/**
+	 * @generated
+	 */
+	public static boolean checkNodeVisualID(View containerView, EObject domainElement, int candidate) {
+		if (candidate == -1) {
+			//unrecognized id is always bad
+			return false;
+		}
+		int basic = getNodeVisualID(containerView, domainElement);
+		return basic == candidate || canSubstitute(basic, candidate);
 	}
 
 }
