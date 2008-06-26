@@ -1485,6 +1485,9 @@ public class UMLVisualIDRegistry {
 	 * @generated
 	 */
 	protected static boolean hasViewChild(View containerView, EObject domainElement, int visualId) {
+		if (containerView == null) {
+			return false;
+		}
 		if (domainElement == null) {
 			return false;
 		}
@@ -1501,6 +1504,7 @@ public class UMLVisualIDRegistry {
 	 * @generated
 	 */
 	public static int getChildDescriptorVisualID(UMLNodeDescriptor container, EObject domainElement) {
+		final View containerView = null;
 		if (domainElement == null) {
 			return -1;
 		}
@@ -1741,7 +1745,7 @@ public class UMLVisualIDRegistry {
 			// org.eclipse.uml2.diagram.clazz.edit.parts.AssociationClassRhombEditPart.VISUAL_ID
 			// diagram updater is expected to return one node descriptor (and thus one instance of that semantic element) per node in group
 			// we need to give other parts a chance to create their views
-			if (UMLPackage.eINSTANCE.getAssociationClass().isSuperTypeOf(domainElement.eClass())) {
+			if (UMLPackage.eINSTANCE.getAssociationClass().isSuperTypeOf(domainElement.eClass()) && !hasViewChild(containerView, domainElement, AssociationClass2EditPart.VISUAL_ID)) {
 				return AssociationClass2EditPart.VISUAL_ID;
 			}
 			if (UMLPackage.eINSTANCE.getDataType().isSuperTypeOf(domainElement.eClass()) && isDataType_2004((DataType) domainElement)) {
@@ -1777,7 +1781,7 @@ public class UMLVisualIDRegistry {
 			// org.eclipse.uml2.diagram.clazz.edit.parts.AssociationClass2EditPart.VISUAL_ID
 			// diagram updater is expected to return one node descriptor (and thus one instance of that semantic element) per node in group
 			// we need to give other parts a chance to create their views
-			if (UMLPackage.eINSTANCE.getAssociationClass().isSuperTypeOf(domainElement.eClass())) {
+			if (UMLPackage.eINSTANCE.getAssociationClass().isSuperTypeOf(domainElement.eClass()) && !hasViewChild(containerView, domainElement, AssociationClassRhombEditPart.VISUAL_ID)) {
 				return AssociationClassRhombEditPart.VISUAL_ID;
 			}
 			if (UMLPackage.eINSTANCE.getPackage().isSuperTypeOf(domainElement.eClass())) {
@@ -1942,6 +1946,49 @@ public class UMLVisualIDRegistry {
 			break;
 		}
 		return -1;
+	}
+
+	/**
+	 * @generated
+	 */
+	protected static boolean canSubstitute(int visualId, int substituteCandidate) {
+		if (visualId == substituteCandidate) {
+			return true;
+		}
+		switch (visualId) {
+		case Package2EditPart.VISUAL_ID:
+			return (substituteCandidate == PackageAsFrameEditPart.VISUAL_ID);
+		case AssociationClass2EditPart.VISUAL_ID:
+			return (substituteCandidate == AssociationClassRhombEditPart.VISUAL_ID);
+		case InterfaceEditPart.VISUAL_ID:
+			return (substituteCandidate == Interface2EditPart.VISUAL_ID);
+		case InstanceSpecification2EditPart.VISUAL_ID:
+			return (substituteCandidate == InstanceSpecification4EditPart.VISUAL_ID);
+		case Interface2EditPart.VISUAL_ID:
+			return (substituteCandidate == InterfaceEditPart.VISUAL_ID);
+		case AssociationClassRhombEditPart.VISUAL_ID:
+			return (substituteCandidate == AssociationClass2EditPart.VISUAL_ID);
+		case PackageAsFrameEditPart.VISUAL_ID:
+			return (substituteCandidate == Package2EditPart.VISUAL_ID);
+		case InstanceSpecification4EditPart.VISUAL_ID:
+			return (substituteCandidate == InstanceSpecification2EditPart.VISUAL_ID);
+
+		default:
+			break;
+		}
+		return false;
+	}
+
+	/**
+	 * @generated
+	 */
+	public static boolean checkNodeVisualID(View containerView, EObject domainElement, int candidate) {
+		if (candidate == -1) {
+			//unrecognized id is always bad
+			return false;
+		}
+		int basic = getNodeVisualID(containerView, domainElement);
+		return basic == candidate || canSubstitute(basic, candidate);
 	}
 
 }
