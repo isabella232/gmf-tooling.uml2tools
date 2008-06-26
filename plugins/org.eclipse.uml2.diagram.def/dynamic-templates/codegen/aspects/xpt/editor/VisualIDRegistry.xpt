@@ -19,6 +19,14 @@
 «EXTENSION aspects::xpt::diagram::updater::DiagramHeader»
 «EXTENSION xpt::editor::Utils»
 
+«AROUND additions FOR gmfgen::GenDiagram»
+
+	«EXPAND hasViewChild»
+	
+	«EXPAND getChildDescriptorVisualID»
+	
+«ENDAROUND»
+
 «AROUND returnVisualID FOR gmfgen::GenCommonBase-»
 	«LET ((gmfgenext::SubstitutableByAttributes)viewmap.attributes.typeSelect(gmfgenext::SubstitutableByAttributes).first()) AS group -»
 	«IF isDiagramHeader(this) -»
@@ -83,9 +91,12 @@
 	«ENDIF-»
 «ENDDEFINE»
 
-«AROUND additions FOR gmfgen::GenDiagram»
+«DEFINE hasViewChild FOR gmfgen::GenDiagram»
 	«EXPAND xpt::Common::generatedMemberComment»
 	protected static boolean hasViewChild(org.eclipse.gmf.runtime.notation.View containerView, org.eclipse.emf.ecore.EObject domainElement, int visualId) {
+		if (containerView == null){
+			return false;
+		}
 		if (domainElement == null){
 			return false;
 		}
@@ -97,14 +108,16 @@
 		}
 		return false;
 	}
-	
-	«EXPAND getChildDescriptorVisualID»
-«ENDAROUND»
+«ENDDEFINE»
 
 «DEFINE getChildDescriptorVisualID FOR gmfgen::GenDiagram-»
 «LET getDiagram().editorGen.diagramUpdater.getNodeDescriptorQualifiedClassName() AS descriptorFQN-»
 	«EXPAND xpt::Common::generatedMemberComment»
 public static int «EXPAND getChildDescriptorVisualIDMethodName»(«descriptorFQN» container, org.eclipse.emf.ecore.EObject domainElement) {
+	«REM»the line below is generated to workaround compilation error in class diagram, where hasViewChild() method is called «ENDREM»«-»
+	«IF this.getAllNodes().collect(n|n.viewmap.attributes).flatten().typeSelect(gmfgenext::SubstitutableByAttributes).select(attr|attr.requiresAll).size() > 0-»
+	final View containerView = null;
+	«ENDIF-»
 	if (domainElement == null) {
 		«EXPAND xpt::editor::VisualIDRegistry::unrecognizedVID-»
 	}
