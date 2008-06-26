@@ -1,7 +1,5 @@
 package org.eclipse.uml2.diagram.clazz.edit.parts;
 
-import java.util.Iterator;
-
 import org.eclipse.draw2d.ColorConstants;
 import org.eclipse.draw2d.Connection;
 import org.eclipse.emf.common.notify.Notification;
@@ -93,8 +91,7 @@ public class AssociationEditPart extends ConnectionNodeEditPart implements ITree
 	protected void addSemanticListeners() {
 		super.addSemanticListeners();
 		Association association = (Association) resolveSemanticElement();
-		for (Iterator ends = association.getMemberEnds().iterator(); ends.hasNext();) {
-			Property next = (Property) ends.next();
+		for (Property next : association.getMemberEnds()) {
 			addListenerFilter("SemanticModel", this, next);
 		}
 	}
