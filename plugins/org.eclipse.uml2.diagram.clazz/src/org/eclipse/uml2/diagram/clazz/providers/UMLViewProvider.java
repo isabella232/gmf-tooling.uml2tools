@@ -58,7 +58,7 @@ public class UMLViewProvider extends AbstractViewProvider {
 				if (!semanticHint.equals(elementTypeHint)) {
 					return null; // if semantic hint is specified it should be the same as in element type
 				}
-				if (domainElement != null && UMLVisualIDRegistry.checkNodeVisualID(containerView, domainElement, visualID)) {
+				if (domainElement != null && !UMLVisualIDRegistry.checkNodeVisualID(containerView, domainElement, visualID)) {
 					return null; // visual id for node EClass should match visual id from element type, or at least be substitutable for it
 				}
 			} else {
