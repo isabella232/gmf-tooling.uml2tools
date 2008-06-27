@@ -293,6 +293,7 @@ public class Profile3EditPart extends ShapeNodeEditPart implements PrimaryShapeE
 			this.addPoint(new Point(getMapMode().DPtoLP(35), getMapMode().DPtoLP(40)));
 			this.addPoint(new Point(getMapMode().DPtoLP(40), getMapMode().DPtoLP(35)));
 			this.addPoint(new Point(getMapMode().DPtoLP(40), getMapMode().DPtoLP(0)));
+			this.setFill(true);
 			createContents();
 		}
 

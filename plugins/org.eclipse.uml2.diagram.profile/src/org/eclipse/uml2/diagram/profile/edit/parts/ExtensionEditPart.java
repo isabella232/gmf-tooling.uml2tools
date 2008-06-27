@@ -94,6 +94,7 @@ public class ExtensionEditPart extends ConnectionNodeEditPart implements ITreeBr
 		 */
 		private RotatableDecoration createTargetDecoration() {
 			PolygonDecoration df = new PolygonDecoration();
+			df.setFill(true);
 			PointList pl = new PointList();
 			pl.addPoint(getMapMode().DPtoLP(-1), getMapMode().DPtoLP(1));
 			pl.addPoint(getMapMode().DPtoLP(0), getMapMode().DPtoLP(0));

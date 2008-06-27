@@ -563,7 +563,6 @@ public class DeploymentSpecificationEditPart extends ShapeNodeEditPart implement
 			fFigureDeploymentSpecificationFigure_PropertiesCompartment = new RectangleFigure();
 
 			this.add(fFigureDeploymentSpecificationFigure_PropertiesCompartment);
-
 			fFigureDeploymentSpecificationFigure_PropertiesCompartment.setLayoutManager(new StackLayout());
 
 		}
