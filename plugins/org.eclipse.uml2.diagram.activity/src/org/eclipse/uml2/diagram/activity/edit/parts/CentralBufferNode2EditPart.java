@@ -280,7 +280,6 @@ public class CentralBufferNode2EditPart extends AbstractBorderedShapeEditPart im
 		 * @generated
 		 */
 		public CentralBufferFigure() {
-
 			this.setLayoutManager(new StackLayout());
 			this.setBorder(new MarginBorder(getMapMode().DPtoLP(5), getMapMode().DPtoLP(5), getMapMode().DPtoLP(5), getMapMode().DPtoLP(5)));
 			createContents();

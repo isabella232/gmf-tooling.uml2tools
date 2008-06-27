@@ -304,6 +304,7 @@ public class Package4EditPart extends ShapeNodeEditPart implements PrimaryShapeE
 			this.addPoint(new Point(getMapMode().DPtoLP(35), getMapMode().DPtoLP(40)));
 			this.addPoint(new Point(getMapMode().DPtoLP(40), getMapMode().DPtoLP(35)));
 			this.addPoint(new Point(getMapMode().DPtoLP(40), getMapMode().DPtoLP(0)));
+			this.setFill(true);
 
 			this.setBorder(new MarginBorder(getMapMode().DPtoLP(5), getMapMode().DPtoLP(5), getMapMode().DPtoLP(13), getMapMode().DPtoLP(10)));
 			createContents();

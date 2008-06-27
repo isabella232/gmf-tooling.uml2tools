@@ -429,6 +429,7 @@ public class AcceptEventAction4EditPart extends AbstractBorderedShapeEditPart im
 			this.addPoint(new Point(getMapMode().DPtoLP(0), getMapMode().DPtoLP(25)));
 			this.addPoint(new Point(getMapMode().DPtoLP(25), getMapMode().DPtoLP(25)));
 			this.addPoint(new Point(getMapMode().DPtoLP(0), getMapMode().DPtoLP(0)));
+			this.setFill(true);
 		}
 
 		/**

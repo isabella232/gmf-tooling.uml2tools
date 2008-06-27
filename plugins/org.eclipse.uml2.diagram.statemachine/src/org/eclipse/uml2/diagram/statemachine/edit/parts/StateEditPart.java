@@ -303,7 +303,6 @@ public class StateEditPart extends ShapeNodeEditPart implements PrimaryShapeEdit
 			fFigureSimpleStateFigure_InternalActivitiesCompartment.setOutline(false);
 
 			this.add(fFigureSimpleStateFigure_InternalActivitiesCompartment);
-
 			fFigureSimpleStateFigure_InternalActivitiesCompartment.setLayoutManager(new StackLayout());
 
 		}

@@ -467,31 +467,26 @@ public class Class5EditPart extends AbstractBorderedShapeEditPart implements Pri
 			fFigureClassFigure_PropertiesCompartment = new RectangleFigure();
 
 			this.add(fFigureClassFigure_PropertiesCompartment);
-
 			fFigureClassFigure_PropertiesCompartment.setLayoutManager(new StackLayout());
 
 			fFigureClassFigure_OperationsCompartment = new RectangleFigure();
 
 			this.add(fFigureClassFigure_OperationsCompartment);
-
 			fFigureClassFigure_OperationsCompartment.setLayoutManager(new StackLayout());
 
 			fFigureClassFigure_ClassesCompartment = new RectangleFigure();
 
 			this.add(fFigureClassFigure_ClassesCompartment);
-
 			fFigureClassFigure_ClassesCompartment.setLayoutManager(new StackLayout());
 
 			fFigureClassFigure_LiteralsCompartment = new RectangleFigure();
 
 			this.add(fFigureClassFigure_LiteralsCompartment);
-
 			fFigureClassFigure_LiteralsCompartment.setLayoutManager(new StackLayout());
 
 			fFigureClassFigure_OthersCompartment = new RectangleFigure();
 
 			this.add(fFigureClassFigure_OthersCompartment);
-
 			fFigureClassFigure_OthersCompartment.setLayoutManager(new StackLayout());
 
 		}

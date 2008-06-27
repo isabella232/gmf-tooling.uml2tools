@@ -682,19 +682,16 @@ public class Interface2EditPart extends ShapeNodeEditPart implements PrimaryShap
 			fFigureRectangleInterfaceFigure_propertiesCompartment = new RectangleFigure();
 
 			this.add(fFigureRectangleInterfaceFigure_propertiesCompartment);
-
 			fFigureRectangleInterfaceFigure_propertiesCompartment.setLayoutManager(new StackLayout());
 
 			fFigureRectangleInterfaceFigure_operationsCompartment = new RectangleFigure();
 
 			this.add(fFigureRectangleInterfaceFigure_operationsCompartment);
-
 			fFigureRectangleInterfaceFigure_operationsCompartment.setLayoutManager(new StackLayout());
 
 			fFigureRectangleInterfaceFigure_classesCompartment = new RectangleFigure();
 
 			this.add(fFigureRectangleInterfaceFigure_classesCompartment);
-
 			fFigureRectangleInterfaceFigure_classesCompartment.setLayoutManager(new StackLayout());
 
 		}

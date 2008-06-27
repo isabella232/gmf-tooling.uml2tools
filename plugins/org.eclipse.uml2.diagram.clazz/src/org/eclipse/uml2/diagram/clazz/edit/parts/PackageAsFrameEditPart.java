@@ -702,6 +702,7 @@ public class PackageAsFrameEditPart extends ShapeNodeEditPart implements Primary
 			packageAsFrameFigure_header1.addPoint(new Point(getMapMode().DPtoLP(35), getMapMode().DPtoLP(40)));
 			packageAsFrameFigure_header1.addPoint(new Point(getMapMode().DPtoLP(40), getMapMode().DPtoLP(35)));
 			packageAsFrameFigure_header1.addPoint(new Point(getMapMode().DPtoLP(40), getMapMode().DPtoLP(0)));
+			packageAsFrameFigure_header1.setFill(true);
 
 			packageAsFrameFigure_header1.setBorder(new MarginBorder(getMapMode().DPtoLP(10), getMapMode().DPtoLP(10), getMapMode().DPtoLP(13), getMapMode().DPtoLP(13)));
 

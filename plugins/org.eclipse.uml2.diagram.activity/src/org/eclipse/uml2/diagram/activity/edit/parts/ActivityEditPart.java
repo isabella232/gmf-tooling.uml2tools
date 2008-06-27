@@ -26,6 +26,7 @@ import org.eclipse.gmf.runtime.diagram.ui.editpolicies.BorderItemSelectionEditPo
 import org.eclipse.gmf.runtime.diagram.ui.editpolicies.DragDropEditPolicy;
 import org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles;
 import org.eclipse.gmf.runtime.diagram.ui.editpolicies.XYLayoutEditPolicy;
+import org.eclipse.gmf.runtime.draw2d.ui.figures.ConstrainedToolbarLayout;
 import org.eclipse.gmf.runtime.draw2d.ui.figures.IBorderItemLocator;
 import org.eclipse.gmf.runtime.draw2d.ui.figures.OneLineBorder;
 import org.eclipse.gmf.runtime.gef.ui.figures.DefaultSizeNodeFigure;
@@ -279,7 +280,6 @@ public class ActivityEditPart extends AbstractBorderedShapeEditPart implements P
 			activityFigureRectangle_name0.setBorder(createBorder0());
 
 			this.add(activityFigureRectangle_name0, BorderLayout.TOP);
-
 			activityFigureRectangle_name0.setLayoutManager(new StackLayout());
 
 			fFigureActivityFigure_name = new Label();

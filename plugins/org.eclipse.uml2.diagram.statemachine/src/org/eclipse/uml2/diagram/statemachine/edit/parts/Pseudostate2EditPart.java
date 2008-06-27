@@ -165,7 +165,6 @@ public class Pseudostate2EditPart extends ShapeNodeEditPart implements PrimarySh
 		 * @generated
 		 */
 		public ShallowHistoryFigure() {
-
 			this.setLayoutManager(new StackLayout());
 			this.setPreferredSize(new Dimension(getMapMode().DPtoLP(25), getMapMode().DPtoLP(25)));
 			this.setMaximumSize(new Dimension(getMapMode().DPtoLP(25), getMapMode().DPtoLP(25)));
@@ -270,6 +269,7 @@ public class Pseudostate2EditPart extends ShapeNodeEditPart implements PrimarySh
 			shallowHistoryFigure_Letter0.addPoint(new Point(getMapMode().DPtoLP(40), getMapMode().DPtoLP(20)));
 			shallowHistoryFigure_Letter0.addPoint(new Point(getMapMode().DPtoLP(0), getMapMode().DPtoLP(20)));
 			shallowHistoryFigure_Letter0.addPoint(new Point(getMapMode().DPtoLP(0), getMapMode().DPtoLP(0)));
+			shallowHistoryFigure_Letter0.setFill(true);
 
 			this.add(shallowHistoryFigure_Letter0);
 
