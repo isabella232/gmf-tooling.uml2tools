@@ -85,10 +85,7 @@ public class MoveViewCommand extends AbstractTransactionalCommand {
 		if (checkCanMoveView(parentView, childView, child)) {
 			justMoveActualView(parentView, childView);
 		} else {
-			View newView = createNewView(parentView, child);
-			if (newView != null) {
-				importStyles(newView, childView);
-			}
+			createNewView(parentView, childView, child);
 		}
 		return CommandResult.newOKCommandResult();
 	}
@@ -101,11 +98,40 @@ public class MoveViewCommand extends AbstractTransactionalCommand {
 		//
 	}
 
-	protected View createNewView(View parentView, EObject child) {
+	protected View basicCreateNewView(View parentView, EObject child) {
 		IAdaptable semanticAdapter = new EObjectAdapter(child);
 		View result = ViewService.getInstance().createView(//
 				Node.class, semanticAdapter, parentView, null, myIndex, true, myPreferences);
 		return result;
+	}
+	
+	@SuppressWarnings("unchecked")
+	protected View createNewView(View parentView, View oldChildView, EObject child) {
+		//unfortunately, we have to reuse childView instance in order to allow command from layout edit policy to set correct bounds
+		//in order to do this, we will create the new view using service and then copy all its meaningfull contents 
+		//into the original view instance
+		View newView = basicCreateNewView(parentView, child);
+		if (newView == null){
+			return null;
+		}
+		removeViewFromContainer(newView);
+		justMoveActualView(parentView, oldChildView);
+		
+		oldChildView.getPersistedChildren().clear();
+		oldChildView.getTransientChildren().clear();
+		oldChildView.getSourceEdges().clear();
+		oldChildView.getTargetEdges().clear();
+		oldChildView.getStyles().clear();
+		
+		oldChildView.getStyles().addAll(newView.getStyles());
+		oldChildView.getPersistedChildren().addAll(newView.getPersistedChildren());
+		oldChildView.getTransientChildren().addAll(newView.getTransientChildren());
+		oldChildView.getSourceEdges().addAll(newView.getSourceEdges());
+		oldChildView.getTargetEdges().addAll(newView.getTargetEdges());
+		
+		oldChildView.setType(newView.getType());
+		
+		return oldChildView;
 	}
 
 	private void justMoveActualView(View parentView, View childView) {
@@ -113,6 +139,12 @@ public class MoveViewCommand extends AbstractTransactionalCommand {
 			parentView.insertChild(childView);
 		} else {
 			parentView.insertChildAt(childView, myIndex);
+		}
+	}
+	
+	private void removeViewFromContainer(View view){
+		if (view.eContainer() instanceof View){
+			((View)view.eContainer()).removeChild(view);
 		}
 	}
 
