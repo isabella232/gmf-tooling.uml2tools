@@ -22,6 +22,7 @@ public class StructuredActivityNodeCanonicalEditPolicy extends CanonicalEditPoli
 	/**
 	 * @generated
 	 */
+	@SuppressWarnings("unchecked")
 	protected boolean isOrphaned(Collection semanticChildren, final View view) {
 		return false;
 	}

@@ -104,10 +104,18 @@ public class PackageCanonicalEditPolicy extends CanonicalConnectionEditPolicy {
 	/**
 	 * @generated
 	 */
+	@SuppressWarnings("unchecked")
 	protected boolean isOrphaned(Collection semanticChildren, final View view) {
 		int visualID = UMLVisualIDRegistry.getVisualID(view);
 		int suggestedID = UMLVisualIDRegistry.getNodeVisualID((View) getHost().getModel(), view.getElement());
 		switch (visualID) {
+		case ElementImportEditPart.VISUAL_ID:
+		case ExtensionPointEditPart.VISUAL_ID:
+		case ExtensionPoint2EditPart.VISUAL_ID:
+		case InnerUseCaseEditPart.VISUAL_ID:
+		case ActorInPackageEditPart.VISUAL_ID:
+		case UseCaseinPackageEditPart.VISUAL_ID:
+			return true;
 		case DiagramHeaderEditPart.VISUAL_ID:
 		case SubjectEditPart.VISUAL_ID:
 		case NestedPackageEditPart.VISUAL_ID:

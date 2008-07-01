@@ -17,6 +17,6 @@
 «AROUND generatedClassComment FOR Object-»
 	«targetDef.proceed()»
 	«IF !{this}.typeSelect(gmfgen::GenDiagramUpdater).isEmpty()-»
-		@SuppressWarnings("unchecked")
+		«EXPAND aspects::xpt::Warnings::suppressUnchecked»
 	«ENDIF-»
 «ENDAROUND»

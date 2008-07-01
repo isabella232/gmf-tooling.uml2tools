@@ -85,9 +85,32 @@ public class StateMachineCanonicalEditPolicy extends CanonicalConnectionEditPoli
 	/**
 	 * @generated
 	 */
+	@SuppressWarnings("unchecked")
 	protected boolean isOrphaned(Collection semanticChildren, final View view) {
 		int visualID = UMLVisualIDRegistry.getVisualID(view);
 		switch (visualID) {
+		case RegionEditPart.VISUAL_ID:
+		case StateEditPart.VISUAL_ID:
+		case BehaviorEditPart.VISUAL_ID:
+		case Behavior2EditPart.VISUAL_ID:
+		case Behavior3EditPart.VISUAL_ID:
+		case State2EditPart.VISUAL_ID:
+		case Region2EditPart.VISUAL_ID:
+		case State3EditPart.VISUAL_ID:
+		case ConnectionPointReferenceEditPart.VISUAL_ID:
+		case ConnectionPointReference2EditPart.VISUAL_ID:
+		case FinalStateEditPart.VISUAL_ID:
+		case PseudostateEditPart.VISUAL_ID:
+		case Pseudostate2EditPart.VISUAL_ID:
+		case Pseudostate3EditPart.VISUAL_ID:
+		case Pseudostate4EditPart.VISUAL_ID:
+		case Pseudostate5EditPart.VISUAL_ID:
+		case Pseudostate6EditPart.VISUAL_ID:
+		case Pseudostate7EditPart.VISUAL_ID:
+		case Pseudostate8EditPart.VISUAL_ID:
+		case Pseudostate9EditPart.VISUAL_ID:
+		case Pseudostate10EditPart.VISUAL_ID:
+			return true;
 		case StateMachine2EditPart.VISUAL_ID:
 			if (!semanticChildren.contains(view.getElement())) {
 				return true;

@@ -9,8 +9,28 @@ import java.util.Set;
 
 import org.eclipse.gmf.runtime.diagram.ui.editpolicies.CanonicalEditPolicy;
 import org.eclipse.gmf.runtime.notation.View;
+import org.eclipse.uml2.diagram.component.edit.parts.Artifact2EditPart;
+import org.eclipse.uml2.diagram.component.edit.parts.ArtifactEditPart;
+import org.eclipse.uml2.diagram.component.edit.parts.AssemblyConnectorCircleEditPart;
+import org.eclipse.uml2.diagram.component.edit.parts.Class2EditPart;
 import org.eclipse.uml2.diagram.component.edit.parts.Class3EditPart;
+import org.eclipse.uml2.diagram.component.edit.parts.ClassDiagramNotationClassEditPart;
+import org.eclipse.uml2.diagram.component.edit.parts.ClassDiagramNotationInnerClassEditPart;
+import org.eclipse.uml2.diagram.component.edit.parts.ClassDiagramNotationOperationEditPart;
+import org.eclipse.uml2.diagram.component.edit.parts.ClassDiagramNotationPropertyEditPart;
+import org.eclipse.uml2.diagram.component.edit.parts.ClassEditPart;
+import org.eclipse.uml2.diagram.component.edit.parts.Component2EditPart;
 import org.eclipse.uml2.diagram.component.edit.parts.Component3EditPart;
+import org.eclipse.uml2.diagram.component.edit.parts.ComponentEditPart;
+import org.eclipse.uml2.diagram.component.edit.parts.ElementImportEditPart;
+import org.eclipse.uml2.diagram.component.edit.parts.Interface2EditPart;
+import org.eclipse.uml2.diagram.component.edit.parts.InterfaceEditPart;
+import org.eclipse.uml2.diagram.component.edit.parts.Package2EditPart;
+import org.eclipse.uml2.diagram.component.edit.parts.Package3EditPart;
+import org.eclipse.uml2.diagram.component.edit.parts.Package4EditPart;
+import org.eclipse.uml2.diagram.component.edit.parts.PortEditPart;
+import org.eclipse.uml2.diagram.component.edit.parts.PortOnClassEditPart;
+import org.eclipse.uml2.diagram.component.edit.parts.PropertyEditPart;
 import org.eclipse.uml2.diagram.component.part.UMLDiagramUpdater;
 import org.eclipse.uml2.diagram.component.part.UMLNodeDescriptor;
 import org.eclipse.uml2.diagram.component.part.UMLVisualIDRegistry;
@@ -41,9 +61,31 @@ public class PackageClassifiersCanonicalEditPolicy extends CanonicalEditPolicy {
 	/**
 	 * @generated
 	 */
+	@SuppressWarnings("unchecked")
 	protected boolean isOrphaned(Collection semanticChildren, final View view) {
 		int visualID = UMLVisualIDRegistry.getVisualID(view);
 		switch (visualID) {
+		case ComponentEditPart.VISUAL_ID:
+		case Artifact2EditPart.VISUAL_ID:
+		case Interface2EditPart.VISUAL_ID:
+		case Class2EditPart.VISUAL_ID:
+		case Package2EditPart.VISUAL_ID:
+		case Package3EditPart.VISUAL_ID:
+		case ClassDiagramNotationClassEditPart.VISUAL_ID:
+		case Component2EditPart.VISUAL_ID:
+		case PortEditPart.VISUAL_ID:
+		case ArtifactEditPart.VISUAL_ID:
+		case ClassEditPart.VISUAL_ID:
+		case InterfaceEditPart.VISUAL_ID:
+		case PropertyEditPart.VISUAL_ID:
+		case AssemblyConnectorCircleEditPart.VISUAL_ID:
+		case ElementImportEditPart.VISUAL_ID:
+		case Package4EditPart.VISUAL_ID:
+		case ClassDiagramNotationPropertyEditPart.VISUAL_ID:
+		case ClassDiagramNotationOperationEditPart.VISUAL_ID:
+		case ClassDiagramNotationInnerClassEditPart.VISUAL_ID:
+		case PortOnClassEditPart.VISUAL_ID:
+			return true;
 		case Class3EditPart.VISUAL_ID:
 		case Component3EditPart.VISUAL_ID:
 			if (!semanticChildren.contains(view.getElement())) {

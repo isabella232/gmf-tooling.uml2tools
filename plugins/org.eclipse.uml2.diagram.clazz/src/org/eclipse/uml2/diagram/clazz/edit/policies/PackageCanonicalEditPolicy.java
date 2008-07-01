@@ -150,6 +150,7 @@ public class PackageCanonicalEditPolicy extends CanonicalConnectionEditPolicy {
 	/**
 	 * @generated
 	 */
+	@SuppressWarnings("unchecked")
 	protected boolean isOrphaned(Collection semanticChildren, final View view) {
 		if (view.getEAnnotation("Shortcut") != null) {//$NON-NLS-1$
 			return UMLDiagramUpdater.isShortcutOrphaned(view);
@@ -157,6 +158,43 @@ public class PackageCanonicalEditPolicy extends CanonicalConnectionEditPolicy {
 		int visualID = UMLVisualIDRegistry.getVisualID(view);
 		int suggestedID = UMLVisualIDRegistry.getNodeVisualID((View) getHost().getModel(), view.getElement());
 		switch (visualID) {
+		case Package3EditPart.VISUAL_ID:
+		case ClassEditPart.VISUAL_ID:
+		case DataTypeEditPart.VISUAL_ID:
+		case PrimitiveTypeEditPart.VISUAL_ID:
+		case EnumerationEditPart.VISUAL_ID:
+		case AssociationClassEditPart.VISUAL_ID:
+		case Interface3EditPart.VISUAL_ID:
+		case InstanceSpecificationEditPart.VISUAL_ID:
+		case PropertyEditPart.VISUAL_ID:
+		case OperationEditPart.VISUAL_ID:
+		case Class3EditPart.VISUAL_ID:
+		case PortEditPart.VISUAL_ID:
+		case RedefinableTemplateSignatureEditPart.VISUAL_ID:
+		case Property2EditPart.VISUAL_ID:
+		case Operation2EditPart.VISUAL_ID:
+		case Property3EditPart.VISUAL_ID:
+		case Operation3EditPart.VISUAL_ID:
+		case Property4EditPart.VISUAL_ID:
+		case Operation4EditPart.VISUAL_ID:
+		case EnumerationLiteralEditPart.VISUAL_ID:
+		case Property5EditPart.VISUAL_ID:
+		case Operation5EditPart.VISUAL_ID:
+		case SlotEditPart.VISUAL_ID:
+		case Property6EditPart.VISUAL_ID:
+		case Operation6EditPart.VISUAL_ID:
+		case Class4EditPart.VISUAL_ID:
+		case ElementImportEditPart.VISUAL_ID:
+		case Package6EditPart.VISUAL_ID:
+		case Class5EditPart.VISUAL_ID:
+		case Enumeration3EditPart.VISUAL_ID:
+		case InstanceSpecification3EditPart.VISUAL_ID:
+		case DataType3EditPart.VISUAL_ID:
+		case PrimitiveType3EditPart.VISUAL_ID:
+		case LiteralStringEditPart.VISUAL_ID:
+		case LiteralIntegerEditPart.VISUAL_ID:
+		case ExpressionEditPart.VISUAL_ID:
+			return true;
 		case Class2EditPart.VISUAL_ID:
 		case DataType2EditPart.VISUAL_ID:
 		case PrimitiveType2EditPart.VISUAL_ID:

@@ -22,6 +22,7 @@ public class ExecutionEnvironment2CanonicalEditPolicy extends CanonicalEditPolic
 	/**
 	 * @generated
 	 */
+	@SuppressWarnings("unchecked")
 	protected boolean isOrphaned(Collection semanticChildren, final View view) {
 		return false;
 	}

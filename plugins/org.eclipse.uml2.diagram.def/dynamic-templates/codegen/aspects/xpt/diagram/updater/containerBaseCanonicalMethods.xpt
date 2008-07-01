@@ -20,14 +20,16 @@
 «AROUND isOrphaned FOR gmfgen::GenContainerBase-»
 	«LET getSemanticChildren(this).select(n| null != n.viewmap.attributes.typeSelect(gmfgenext::SubstitutableByAttributes).first()) AS substitutableChildren-»
 		«IF substitutableChildren.isEmpty()-»
-			«targetDef.proceed()-»
+			«EXPAND isOrphanedNoSubstitutables»
 		«ELSE»
 	«EXPAND xpt::Common::generatedMemberComment»
+	«EXPAND aspects::xpt::Warnings::suppressUnchecked»
 protected boolean isOrphaned(java.util.Collection semanticChildren, final org.eclipse.gmf.runtime.notation.View view) {
 	«EXPAND xpt::diagram::updater::containerBaseCanonicalMethods::checkShortcutProperty-»
 	int visualID = «EXPAND xpt::editor::VisualIDRegistry::getVisualIDMethodCall FOR getDiagram()»(view);
 	int suggestedID = «EXPAND xpt::editor::VisualIDRegistry::getNodeVisualIDMethodCall FOR getDiagram()»((org.eclipse.gmf.runtime.notation.View) getHost().getModel(), view.getElement());
 	switch (visualID) {
+	«EXPAND caseBlockForNotAllowedNodes-»
 	«IF getSemanticChildren(this).size() > substitutableChildren.size() -»
 	«FOREACH getSemanticChildren(this) AS nextChild-»
 		«IF !substitutableChildren.contains(nextChild) -»
@@ -67,3 +69,40 @@ protected boolean isOrphaned(java.util.Collection semanticChildren, final org.ec
 		«ENDIF-»
 	«ENDLET-»
 «ENDAROUND»
+
+«DEFINE caseBlockForNotAllowedNodes FOR gmfgen::GenContainerBase-»
+	«REM»We want to explicitly mark as orphaned all generated nodes that are not allowed to be here -- see #208889«ENDREM»«-»
+	«IF this.getDiagram().getAllNodes().size() > getSemanticChildren(this).size()-»
+	«FOREACH this.getDiagram().getAllNodes() AS nextRejectedNode-»
+		«IF !getSemanticChildren(this).contains(nextRejectedNode)-»
+			«EXPAND xpt::Common::caseVisualID FOR nextRejectedNode»
+		«ENDIF-»
+	«ENDFOREACH-»
+			return true; 
+	«ENDIF-»
+	«REM»end of fix for #208889«ENDREM»«-»
+«ENDDEFINE»
+
+«DEFINE isOrphanedNoSubstitutables FOR gmfgen::GenContainerBase-»
+	«REM»below is the copy of isOrphaned::targetDef.proceed() with respect of 208889«ENDREM»«-»
+	«EXPAND xpt::Common::generatedMemberComment»
+	«EXPAND aspects::xpt::Warnings::suppressUnchecked»
+protected boolean isOrphaned(java.util.Collection semanticChildren, final org.eclipse.gmf.runtime.notation.View view) {
+	«EXPAND xpt::diagram::updater::containerBaseCanonicalMethods::checkShortcutProperty-»
+	«IF !getSemanticChildren(this).isEmpty()-»
+	int visualID = «EXPAND xpt::editor::VisualIDRegistry::getVisualIDMethodCall FOR getDiagram()»(view);
+	switch (visualID) {
+		«EXPAND caseBlockForNotAllowedNodes-»
+		«EXPAND xpt::Common::caseVisualID FOREACH getSemanticChildren(this)»
+		if (!semanticChildren.contains(view.getElement())) {
+			return true;
+		}
+		«IF hasConformableSemanticChildren(this)-»
+			«EXPAND xpt::diagram::updater::containerBaseCanonicalMethods::updateNotationModelElement-»
+		«ENDIF-»
+	}
+	«ENDIF-»
+	return false;	
+}
+«ENDDEFINE»
+

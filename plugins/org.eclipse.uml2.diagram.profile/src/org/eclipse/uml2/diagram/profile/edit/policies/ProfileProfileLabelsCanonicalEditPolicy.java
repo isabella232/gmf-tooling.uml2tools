@@ -9,7 +9,16 @@ import java.util.Set;
 
 import org.eclipse.gmf.runtime.diagram.ui.editpolicies.CanonicalEditPolicy;
 import org.eclipse.gmf.runtime.notation.View;
+import org.eclipse.uml2.diagram.profile.edit.parts.ConstraintEditPart;
 import org.eclipse.uml2.diagram.profile.edit.parts.ElementImport2EditPart;
+import org.eclipse.uml2.diagram.profile.edit.parts.ElementImportEditPart;
+import org.eclipse.uml2.diagram.profile.edit.parts.EnumerationEditPart;
+import org.eclipse.uml2.diagram.profile.edit.parts.EnumerationLiteralEditPart;
+import org.eclipse.uml2.diagram.profile.edit.parts.Profile2EditPart;
+import org.eclipse.uml2.diagram.profile.edit.parts.Profile3EditPart;
+import org.eclipse.uml2.diagram.profile.edit.parts.PropertyEditPart;
+import org.eclipse.uml2.diagram.profile.edit.parts.Stereotype2EditPart;
+import org.eclipse.uml2.diagram.profile.edit.parts.StereotypeEditPart;
 import org.eclipse.uml2.diagram.profile.part.UMLDiagramUpdater;
 import org.eclipse.uml2.diagram.profile.part.UMLNodeDescriptor;
 import org.eclipse.uml2.diagram.profile.part.UMLVisualIDRegistry;
@@ -40,9 +49,20 @@ public class ProfileProfileLabelsCanonicalEditPolicy extends CanonicalEditPolicy
 	/**
 	 * @generated
 	 */
+	@SuppressWarnings("unchecked")
 	protected boolean isOrphaned(Collection semanticChildren, final View view) {
 		int visualID = UMLVisualIDRegistry.getVisualID(view);
 		switch (visualID) {
+		case StereotypeEditPart.VISUAL_ID:
+		case Profile2EditPart.VISUAL_ID:
+		case EnumerationEditPart.VISUAL_ID:
+		case ElementImportEditPart.VISUAL_ID:
+		case Profile3EditPart.VISUAL_ID:
+		case PropertyEditPart.VISUAL_ID:
+		case ConstraintEditPart.VISUAL_ID:
+		case Stereotype2EditPart.VISUAL_ID:
+		case EnumerationLiteralEditPart.VISUAL_ID:
+			return true;
 		case ElementImport2EditPart.VISUAL_ID:
 			if (!semanticChildren.contains(view.getElement())) {
 				return true;

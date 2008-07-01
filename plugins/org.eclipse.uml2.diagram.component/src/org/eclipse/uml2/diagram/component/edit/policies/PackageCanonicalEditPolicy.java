@@ -102,6 +102,7 @@ public class PackageCanonicalEditPolicy extends CanonicalConnectionEditPolicy {
 	/**
 	 * @generated
 	 */
+	@SuppressWarnings("unchecked")
 	protected boolean isOrphaned(Collection semanticChildren, final View view) {
 		if (view.getEAnnotation("Shortcut") != null) {//$NON-NLS-1$
 			return UMLDiagramUpdater.isShortcutOrphaned(view);
@@ -109,6 +110,22 @@ public class PackageCanonicalEditPolicy extends CanonicalConnectionEditPolicy {
 		int visualID = UMLVisualIDRegistry.getVisualID(view);
 		int suggestedID = UMLVisualIDRegistry.getNodeVisualID((View) getHost().getModel(), view.getElement());
 		switch (visualID) {
+		case Component2EditPart.VISUAL_ID:
+		case PortEditPart.VISUAL_ID:
+		case ArtifactEditPart.VISUAL_ID:
+		case ClassEditPart.VISUAL_ID:
+		case InterfaceEditPart.VISUAL_ID:
+		case PropertyEditPart.VISUAL_ID:
+		case AssemblyConnectorCircleEditPart.VISUAL_ID:
+		case ElementImportEditPart.VISUAL_ID:
+		case Package4EditPart.VISUAL_ID:
+		case Class3EditPart.VISUAL_ID:
+		case Component3EditPart.VISUAL_ID:
+		case ClassDiagramNotationPropertyEditPart.VISUAL_ID:
+		case ClassDiagramNotationOperationEditPart.VISUAL_ID:
+		case ClassDiagramNotationInnerClassEditPart.VISUAL_ID:
+		case PortOnClassEditPart.VISUAL_ID:
+			return true;
 		case ComponentEditPart.VISUAL_ID:
 		case Artifact2EditPart.VISUAL_ID:
 		case Interface2EditPart.VISUAL_ID:

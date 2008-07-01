@@ -9,7 +9,25 @@ import java.util.Set;
 
 import org.eclipse.gmf.runtime.diagram.ui.editpolicies.CanonicalEditPolicy;
 import org.eclipse.gmf.runtime.notation.View;
+import org.eclipse.uml2.diagram.csd.edit.parts.Class2EditPart;
+import org.eclipse.uml2.diagram.csd.edit.parts.Class3EditPart;
+import org.eclipse.uml2.diagram.csd.edit.parts.ClassEditPart;
+import org.eclipse.uml2.diagram.csd.edit.parts.CollaborationEditPart;
+import org.eclipse.uml2.diagram.csd.edit.parts.CollaborationUse2EditPart;
+import org.eclipse.uml2.diagram.csd.edit.parts.ConstraintEditPart;
+import org.eclipse.uml2.diagram.csd.edit.parts.ElementImportEditPart;
+import org.eclipse.uml2.diagram.csd.edit.parts.InstanceSpecificationEditPart;
+import org.eclipse.uml2.diagram.csd.edit.parts.InterfaceEditPart;
+import org.eclipse.uml2.diagram.csd.edit.parts.OperationEditPart;
+import org.eclipse.uml2.diagram.csd.edit.parts.Package2EditPart;
+import org.eclipse.uml2.diagram.csd.edit.parts.ParameterEditPart;
+import org.eclipse.uml2.diagram.csd.edit.parts.Port2EditPart;
+import org.eclipse.uml2.diagram.csd.edit.parts.Port3EditPart;
 import org.eclipse.uml2.diagram.csd.edit.parts.PortEditPart;
+import org.eclipse.uml2.diagram.csd.edit.parts.Property2EditPart;
+import org.eclipse.uml2.diagram.csd.edit.parts.Property3EditPart;
+import org.eclipse.uml2.diagram.csd.edit.parts.PropertyEditPart;
+import org.eclipse.uml2.diagram.csd.edit.parts.SlotEditPart;
 import org.eclipse.uml2.diagram.csd.part.UMLDiagramUpdater;
 import org.eclipse.uml2.diagram.csd.part.UMLNodeDescriptor;
 import org.eclipse.uml2.diagram.csd.part.UMLVisualIDRegistry;
@@ -40,9 +58,29 @@ public class ClassCanonicalEditPolicy extends CanonicalEditPolicy {
 	/**
 	 * @generated
 	 */
+	@SuppressWarnings("unchecked")
 	protected boolean isOrphaned(Collection semanticChildren, final View view) {
 		int visualID = UMLVisualIDRegistry.getVisualID(view);
 		switch (visualID) {
+		case CollaborationEditPart.VISUAL_ID:
+		case ClassEditPart.VISUAL_ID:
+		case Package2EditPart.VISUAL_ID:
+		case Class3EditPart.VISUAL_ID:
+		case InterfaceEditPart.VISUAL_ID:
+		case InstanceSpecificationEditPart.VISUAL_ID:
+		case ConstraintEditPart.VISUAL_ID:
+		case CollaborationUse2EditPart.VISUAL_ID:
+		case PropertyEditPart.VISUAL_ID:
+		case ParameterEditPart.VISUAL_ID:
+		case Property2EditPart.VISUAL_ID:
+		case OperationEditPart.VISUAL_ID:
+		case Class2EditPart.VISUAL_ID:
+		case ElementImportEditPart.VISUAL_ID:
+		case Property3EditPart.VISUAL_ID:
+		case Port2EditPart.VISUAL_ID:
+		case Port3EditPart.VISUAL_ID:
+		case SlotEditPart.VISUAL_ID:
+			return true;
 		case PortEditPart.VISUAL_ID:
 			if (!semanticChildren.contains(view.getElement())) {
 				return true;

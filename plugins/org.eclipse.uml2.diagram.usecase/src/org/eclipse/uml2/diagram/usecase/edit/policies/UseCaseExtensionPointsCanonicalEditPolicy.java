@@ -9,7 +9,20 @@ import java.util.Set;
 
 import org.eclipse.gmf.runtime.diagram.ui.editpolicies.CanonicalEditPolicy;
 import org.eclipse.gmf.runtime.notation.View;
+import org.eclipse.uml2.diagram.usecase.edit.parts.ActorAsRectangleEditPart;
+import org.eclipse.uml2.diagram.usecase.edit.parts.ActorEditPart;
+import org.eclipse.uml2.diagram.usecase.edit.parts.ActorInPackageEditPart;
+import org.eclipse.uml2.diagram.usecase.edit.parts.ConstraintEditPart;
+import org.eclipse.uml2.diagram.usecase.edit.parts.DiagramHeaderEditPart;
+import org.eclipse.uml2.diagram.usecase.edit.parts.ElementImportEditPart;
+import org.eclipse.uml2.diagram.usecase.edit.parts.ExtensionPoint2EditPart;
 import org.eclipse.uml2.diagram.usecase.edit.parts.ExtensionPointEditPart;
+import org.eclipse.uml2.diagram.usecase.edit.parts.InnerUseCaseEditPart;
+import org.eclipse.uml2.diagram.usecase.edit.parts.NestedPackageEditPart;
+import org.eclipse.uml2.diagram.usecase.edit.parts.SubjectEditPart;
+import org.eclipse.uml2.diagram.usecase.edit.parts.UseCaseAsClassEditPart;
+import org.eclipse.uml2.diagram.usecase.edit.parts.UseCaseEditPart;
+import org.eclipse.uml2.diagram.usecase.edit.parts.UseCaseinPackageEditPart;
 import org.eclipse.uml2.diagram.usecase.part.UMLDiagramUpdater;
 import org.eclipse.uml2.diagram.usecase.part.UMLNodeDescriptor;
 import org.eclipse.uml2.diagram.usecase.part.UMLVisualIDRegistry;
@@ -40,9 +53,24 @@ public class UseCaseExtensionPointsCanonicalEditPolicy extends CanonicalEditPoli
 	/**
 	 * @generated
 	 */
+	@SuppressWarnings("unchecked")
 	protected boolean isOrphaned(Collection semanticChildren, final View view) {
 		int visualID = UMLVisualIDRegistry.getVisualID(view);
 		switch (visualID) {
+		case DiagramHeaderEditPart.VISUAL_ID:
+		case ActorEditPart.VISUAL_ID:
+		case ActorAsRectangleEditPart.VISUAL_ID:
+		case UseCaseEditPart.VISUAL_ID:
+		case UseCaseAsClassEditPart.VISUAL_ID:
+		case SubjectEditPart.VISUAL_ID:
+		case NestedPackageEditPart.VISUAL_ID:
+		case ConstraintEditPart.VISUAL_ID:
+		case ElementImportEditPart.VISUAL_ID:
+		case ExtensionPoint2EditPart.VISUAL_ID:
+		case InnerUseCaseEditPart.VISUAL_ID:
+		case ActorInPackageEditPart.VISUAL_ID:
+		case UseCaseinPackageEditPart.VISUAL_ID:
+			return true;
 		case ExtensionPointEditPart.VISUAL_ID:
 			if (!semanticChildren.contains(view.getElement())) {
 				return true;

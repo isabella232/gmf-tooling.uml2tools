@@ -79,9 +79,18 @@ public class PackageCanonicalEditPolicy extends CanonicalConnectionEditPolicy {
 	/**
 	 * @generated
 	 */
+	@SuppressWarnings("unchecked")
 	protected boolean isOrphaned(Collection semanticChildren, final View view) {
 		int visualID = UMLVisualIDRegistry.getVisualID(view);
 		switch (visualID) {
+		case ElementImportEditPart.VISUAL_ID:
+		case Device2EditPart.VISUAL_ID:
+		case ArtifactEditPart.VISUAL_ID:
+		case ExecutionEnvironment2EditPart.VISUAL_ID:
+		case Artifact3EditPart.VISUAL_ID:
+		case Node2EditPart.VISUAL_ID:
+		case PropertyEditPart.VISUAL_ID:
+			return true;
 		case Package2EditPart.VISUAL_ID:
 		case DeviceEditPart.VISUAL_ID:
 		case NodeEditPart.VISUAL_ID:
