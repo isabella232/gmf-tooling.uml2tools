@@ -11,6 +11,7 @@ import org.eclipse.uml2.diagram.common.editpolicies.CreationEditPolicyWithCustom
 import org.eclipse.uml2.diagram.csd.edit.policies.InstanceSpecificationSlotsCanonicalEditPolicy;
 import org.eclipse.uml2.diagram.csd.edit.policies.InstanceSpecificationSlotsItemSemanticEditPolicy;
 import org.eclipse.uml2.diagram.csd.part.Messages;
+import org.eclipse.uml2.diagram.csd.part.UMLVisualIDRegistry;
 
 /**
  * @generated
@@ -58,7 +59,7 @@ public class InstanceSpecificationSlotsEditPart extends ListCompartmentEditPart 
 	protected void createDefaultEditPolicies() {
 		super.createDefaultEditPolicies();
 		installEditPolicy(EditPolicyRoles.SEMANTIC_ROLE, new InstanceSpecificationSlotsItemSemanticEditPolicy());
-		installEditPolicy(EditPolicyRoles.CREATION_ROLE, new CreationEditPolicyWithCustomReparent());
+		installEditPolicy(EditPolicyRoles.CREATION_ROLE, new CreationEditPolicyWithCustomReparent(UMLVisualIDRegistry.TYPED_ADAPTER));
 		installEditPolicy(EditPolicyRoles.DRAG_DROP_ROLE, new DragDropEditPolicy());
 		installEditPolicy(EditPolicyRoles.CANONICAL_ROLE, new InstanceSpecificationSlotsCanonicalEditPolicy());
 	}

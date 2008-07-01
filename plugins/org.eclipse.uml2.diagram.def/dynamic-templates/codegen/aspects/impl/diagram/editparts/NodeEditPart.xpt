@@ -252,7 +252,7 @@
 	«REM»The only difference is that we are using the UML2T specific subclass of CreationEditPolicy«ENDREM»«-»
 	«IF hasChildren() || hasChildrenInListCompartments()-»
 		installEditPolicy(org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles.CREATION_ROLE,
-				new «EXPAND creationEditPolicyFQN»()«IF hasChildrenInListCompartments()» {
+				«EXPAND aspects::impl::diagram::editparts::creationEditPolicy::newInstance»«IF hasChildrenInListCompartments()» {
 			public org.eclipse.gef.commands.Command getCommand(org.eclipse.gef.Request request) {
 				if (understandsRequest(request)) {
 					if (request instanceof org.eclipse.gmf.runtime.diagram.ui.requests.CreateViewAndElementRequest) {
@@ -283,7 +283,3 @@
 		«ENDIF»);
 	«ENDIF-»
 «ENDAROUND»
-
-«DEFINE creationEditPolicyFQN FOR gmfgen::GenNode-»
-org.eclipse.uml2.diagram.common.editpolicies.CreationEditPolicyWithCustomReparent
-«ENDDEFINE»

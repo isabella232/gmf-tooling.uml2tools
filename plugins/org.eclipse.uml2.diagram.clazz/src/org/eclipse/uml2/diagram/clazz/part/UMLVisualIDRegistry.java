@@ -8,6 +8,7 @@ import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.uml2.diagram.clazz.edit.parts.*;
 import org.eclipse.uml2.diagram.clazz.expressions.UMLAbstractExpression;
 import org.eclipse.uml2.diagram.clazz.expressions.UMLOCLFactory;
+import org.eclipse.uml2.diagram.common.part.IVisualIDRegistry;
 import org.eclipse.uml2.uml.Association;
 import org.eclipse.uml2.uml.Class;
 import org.eclipse.uml2.uml.DataType;
@@ -1990,5 +1991,39 @@ public class UMLVisualIDRegistry {
 		int basic = getNodeVisualID(containerView, domainElement);
 		return basic == candidate || canSubstitute(basic, candidate);
 	}
+
+	/**
+	 * @generated
+	 */
+	public static final IVisualIDRegistry TYPED_ADAPTER = new IVisualIDRegistry() {
+
+		/**
+		 * @generated
+		 */
+		public String getModelID(View view) {
+			return org.eclipse.uml2.diagram.clazz.part.UMLVisualIDRegistry.getModelID(view);
+		}
+
+		/**
+		 * @generated
+		 */
+		public int getVisualID(View view) {
+			return org.eclipse.uml2.diagram.clazz.part.UMLVisualIDRegistry.getVisualID(view);
+		}
+
+		/**
+		 * @generated
+		 */
+		public int getNodeVisualID(View containerView, EObject domainElement) {
+			return org.eclipse.uml2.diagram.clazz.part.UMLVisualIDRegistry.getNodeVisualID(containerView, domainElement);
+		}
+
+		/**
+		 * @generated
+		 */
+		public boolean checkNodeVisualID(View containerView, EObject domainElement, int candidate) {
+			return org.eclipse.uml2.diagram.clazz.part.UMLVisualIDRegistry.checkNodeVisualID(containerView, domainElement, candidate);
+		}
+	};
 
 }

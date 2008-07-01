@@ -15,6 +15,7 @@ import java.util.Iterator;
 
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.transaction.TransactionalEditingDomain;
+import org.eclipse.gef.Request;
 import org.eclipse.gef.commands.Command;
 import org.eclipse.gef.requests.ChangeBoundsRequest;
 import org.eclipse.gmf.runtime.common.core.command.CompositeCommand;
@@ -26,12 +27,25 @@ import org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editpolicies.CreationEditPolicy;
 import org.eclipse.gmf.runtime.diagram.ui.l10n.DiagramUIMessages;
 import org.eclipse.gmf.runtime.diagram.ui.requests.EditCommandRequestWrapper;
+import org.eclipse.gmf.runtime.emf.core.util.EObjectAdapter;
 import org.eclipse.gmf.runtime.notation.View;
+import org.eclipse.uml2.diagram.common.part.IVisualIDRegistry;
 
 /**
  * @see #237059
  */
 public class CreationEditPolicyWithCustomReparent extends CreationEditPolicy {
+	private final IVisualIDRegistry myVisualIdRegistry;
+
+	public CreationEditPolicyWithCustomReparent(IVisualIDRegistry visualIdRegistry){
+		myVisualIdRegistry = visualIdRegistry;
+	}
+	
+	@Override
+	public Command getCommand(Request request) {
+		return super.getCommand(request);
+	}
+	
 	protected Command getReparentCommand(ChangeBoundsRequest request) {
 		return super.getReparentCommand(request);
 	}
@@ -120,6 +134,20 @@ public class CreationEditPolicyWithCustomReparent extends CreationEditPolicy {
 			return null;
 		}
 		return ViewUtil.resolveSemanticElement(view);
+	}
+	
+	@Override
+	protected ICommand getReparentViewCommand(IGraphicalEditPart gep) {
+		View container = (View)getHost().getModel();
+		View view = (View)gep.getModel();
+		MoveViewCommand result = new MoveViewCommand(gep.getEditingDomain(), new EObjectAdapter(container),
+							  new EObjectAdapter(view), getHostImpl().getDiagramPreferencesHint());
+		result.setVisualIDRegistry(myVisualIdRegistry);
+		return result;
+	}
+	
+	private IGraphicalEditPart getHostImpl(){
+		return (IGraphicalEditPart)getHost();
 	}
 	
 }

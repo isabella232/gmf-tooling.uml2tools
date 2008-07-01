@@ -7,6 +7,7 @@ import org.eclipse.uml2.diagram.common.editpolicies.CreationEditPolicyWithCustom
 import org.eclipse.uml2.diagram.deploy.edit.policies.PackageCanonicalEditPolicy;
 import org.eclipse.uml2.diagram.deploy.edit.policies.PackageItemSemanticEditPolicy;
 import org.eclipse.uml2.diagram.deploy.part.UMLDiagramUpdateCommand;
+import org.eclipse.uml2.diagram.deploy.part.UMLVisualIDRegistry;
 
 /**
  * @generated
@@ -39,7 +40,7 @@ public class PackageEditPart extends DiagramEditPart {
 		installEditPolicy(EditPolicyRoles.CANONICAL_ROLE, new PackageCanonicalEditPolicy());
 		// removeEditPolicy(org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles.POPUPBAR_ROLE);
 
-		installEditPolicy(EditPolicyRoles.CREATION_ROLE, new CreationEditPolicyWithCustomReparent());
+		installEditPolicy(EditPolicyRoles.CREATION_ROLE, new CreationEditPolicyWithCustomReparent(UMLVisualIDRegistry.TYPED_ADAPTER));
 	}
 
 	/**

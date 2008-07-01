@@ -12,6 +12,7 @@ import org.eclipse.uml2.diagram.common.editpolicies.CreationEditPolicyWithCustom
 import org.eclipse.uml2.diagram.statemachine.edit.policies.StateCompositeState_InternalActivities2CanonicalEditPolicy;
 import org.eclipse.uml2.diagram.statemachine.edit.policies.StateCompositeState_InternalActivities2ItemSemanticEditPolicy;
 import org.eclipse.uml2.diagram.statemachine.part.Messages;
+import org.eclipse.uml2.diagram.statemachine.part.UMLVisualIDRegistry;
 
 /**
  * @generated
@@ -59,7 +60,7 @@ public class StateCompositeState_InternalActivities2EditPart extends ListCompart
 	protected void createDefaultEditPolicies() {
 		super.createDefaultEditPolicies();
 		installEditPolicy(EditPolicyRoles.SEMANTIC_ROLE, new StateCompositeState_InternalActivities2ItemSemanticEditPolicy());
-		installEditPolicy(EditPolicyRoles.CREATION_ROLE, new CreationEditPolicyWithCustomReparent());
+		installEditPolicy(EditPolicyRoles.CREATION_ROLE, new CreationEditPolicyWithCustomReparent(UMLVisualIDRegistry.TYPED_ADAPTER));
 		installEditPolicy(EditPolicyRoles.DRAG_DROP_ROLE, new DragDropEditPolicy());
 		installEditPolicy(EditPolicyRoles.CANONICAL_ROLE, new StateCompositeState_InternalActivities2CanonicalEditPolicy());
 	}

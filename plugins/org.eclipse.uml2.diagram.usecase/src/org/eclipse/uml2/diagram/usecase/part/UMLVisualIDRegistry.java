@@ -5,6 +5,7 @@ import org.eclipse.emf.ecore.EAnnotation;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.gmf.runtime.notation.Diagram;
 import org.eclipse.gmf.runtime.notation.View;
+import org.eclipse.uml2.diagram.common.part.IVisualIDRegistry;
 import org.eclipse.uml2.diagram.usecase.edit.parts.ActorAsRectangleEditPart;
 import org.eclipse.uml2.diagram.usecase.edit.parts.ActorEditPart;
 import org.eclipse.uml2.diagram.usecase.edit.parts.ActorInPackageEditPart;
@@ -633,4 +634,38 @@ public class UMLVisualIDRegistry {
 		int basic = getNodeVisualID(containerView, domainElement);
 		return basic == candidate || canSubstitute(basic, candidate);
 	}
+
+	/**
+	 * @generated
+	 */
+	public static final IVisualIDRegistry TYPED_ADAPTER = new IVisualIDRegistry() {
+
+		/**
+		 * @generated
+		 */
+		public String getModelID(View view) {
+			return org.eclipse.uml2.diagram.usecase.part.UMLVisualIDRegistry.getModelID(view);
+		}
+
+		/**
+		 * @generated
+		 */
+		public int getVisualID(View view) {
+			return org.eclipse.uml2.diagram.usecase.part.UMLVisualIDRegistry.getVisualID(view);
+		}
+
+		/**
+		 * @generated
+		 */
+		public int getNodeVisualID(View containerView, EObject domainElement) {
+			return org.eclipse.uml2.diagram.usecase.part.UMLVisualIDRegistry.getNodeVisualID(containerView, domainElement);
+		}
+
+		/**
+		 * @generated
+		 */
+		public boolean checkNodeVisualID(View containerView, EObject domainElement, int candidate) {
+			return org.eclipse.uml2.diagram.usecase.part.UMLVisualIDRegistry.checkNodeVisualID(containerView, domainElement, candidate);
+		}
+	};
 }

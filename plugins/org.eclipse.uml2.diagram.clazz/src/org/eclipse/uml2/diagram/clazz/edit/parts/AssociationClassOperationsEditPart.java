@@ -14,6 +14,7 @@ import org.eclipse.uml2.diagram.clazz.details.UMLDetailLevelService;
 import org.eclipse.uml2.diagram.clazz.edit.policies.AssociationClassOperationsCanonicalEditPolicy;
 import org.eclipse.uml2.diagram.clazz.edit.policies.AssociationClassOperationsItemSemanticEditPolicy;
 import org.eclipse.uml2.diagram.clazz.part.Messages;
+import org.eclipse.uml2.diagram.clazz.part.UMLVisualIDRegistry;
 import org.eclipse.uml2.diagram.common.editpolicies.CreationEditPolicyWithCustomReparent;
 
 /**
@@ -54,7 +55,7 @@ public class AssociationClassOperationsEditPart extends ListCompartmentEditPart 
 		super.createDefaultEditPolicies();
 		installEditPolicy(EditPolicy.PRIMARY_DRAG_ROLE, new ResizableCompartmentEditPolicy());
 		installEditPolicy(EditPolicyRoles.SEMANTIC_ROLE, new AssociationClassOperationsItemSemanticEditPolicy());
-		installEditPolicy(EditPolicyRoles.CREATION_ROLE, new CreationEditPolicyWithCustomReparent());
+		installEditPolicy(EditPolicyRoles.CREATION_ROLE, new CreationEditPolicyWithCustomReparent(UMLVisualIDRegistry.TYPED_ADAPTER));
 		installEditPolicy(EditPolicyRoles.DRAG_DROP_ROLE, new DragDropEditPolicy());
 		installEditPolicy(EditPolicyRoles.CANONICAL_ROLE, new AssociationClassOperationsCanonicalEditPolicy());
 	}

@@ -10,6 +10,7 @@ import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.uml2.diagram.activity.edit.policies.LoopNodeLoopNodeContentPaneCompartment2CanonicalEditPolicy;
 import org.eclipse.uml2.diagram.activity.edit.policies.LoopNodeLoopNodeContentPaneCompartment2ItemSemanticEditPolicy;
 import org.eclipse.uml2.diagram.activity.part.Messages;
+import org.eclipse.uml2.diagram.activity.part.UMLVisualIDRegistry;
 import org.eclipse.uml2.diagram.common.editpolicies.CreationEditPolicyWithCustomReparent;
 
 /**
@@ -51,7 +52,7 @@ public class LoopNodeLoopNodeContentPaneCompartment2EditPart extends ShapeCompar
 	protected void createDefaultEditPolicies() {
 		super.createDefaultEditPolicies();
 		installEditPolicy(EditPolicyRoles.SEMANTIC_ROLE, new LoopNodeLoopNodeContentPaneCompartment2ItemSemanticEditPolicy());
-		installEditPolicy(EditPolicyRoles.CREATION_ROLE, new CreationEditPolicyWithCustomReparent());
+		installEditPolicy(EditPolicyRoles.CREATION_ROLE, new CreationEditPolicyWithCustomReparent(UMLVisualIDRegistry.TYPED_ADAPTER));
 		installEditPolicy(EditPolicyRoles.DRAG_DROP_ROLE, new DragDropEditPolicy());
 		installEditPolicy(EditPolicyRoles.CANONICAL_ROLE, new LoopNodeLoopNodeContentPaneCompartment2CanonicalEditPolicy());
 	}

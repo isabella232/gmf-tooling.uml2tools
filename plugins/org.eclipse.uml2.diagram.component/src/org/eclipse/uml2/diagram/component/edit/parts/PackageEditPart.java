@@ -20,6 +20,7 @@ import org.eclipse.uml2.diagram.component.edit.commands.UMLCreateShortcutDecorat
 import org.eclipse.uml2.diagram.component.edit.policies.PackageCanonicalEditPolicy;
 import org.eclipse.uml2.diagram.component.edit.policies.PackageItemSemanticEditPolicy;
 import org.eclipse.uml2.diagram.component.part.UMLDiagramUpdateCommand;
+import org.eclipse.uml2.diagram.component.part.UMLVisualIDRegistry;
 
 /**
  * @generated
@@ -74,7 +75,7 @@ public class PackageEditPart extends DiagramEditPart {
 		});
 		// removeEditPolicy(org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles.POPUPBAR_ROLE);
 
-		installEditPolicy(EditPolicyRoles.CREATION_ROLE, new CreationEditPolicyWithCustomReparent());
+		installEditPolicy(EditPolicyRoles.CREATION_ROLE, new CreationEditPolicyWithCustomReparent(UMLVisualIDRegistry.TYPED_ADAPTER));
 	}
 
 	/**

@@ -97,7 +97,7 @@ public class PrimitiveType2EditPart extends AbstractBorderedShapeEditPart implem
 	 * @generated
 	 */
 	protected void createDefaultEditPolicies() {
-		installEditPolicy(EditPolicyRoles.CREATION_ROLE, new CreationEditPolicyWithCustomReparent() {
+		installEditPolicy(EditPolicyRoles.CREATION_ROLE, new CreationEditPolicyWithCustomReparent(UMLVisualIDRegistry.TYPED_ADAPTER) {
 
 			public Command getCommand(Request request) {
 				if (understandsRequest(request)) {

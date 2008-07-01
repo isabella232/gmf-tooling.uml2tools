@@ -11,6 +11,7 @@ import org.eclipse.uml2.diagram.common.editpolicies.CreationEditPolicyWithCustom
 import org.eclipse.uml2.diagram.deploy.edit.policies.DeploymentSpecificationPropertiesCanonicalEditPolicy;
 import org.eclipse.uml2.diagram.deploy.edit.policies.DeploymentSpecificationPropertiesItemSemanticEditPolicy;
 import org.eclipse.uml2.diagram.deploy.part.Messages;
+import org.eclipse.uml2.diagram.deploy.part.UMLVisualIDRegistry;
 
 /**
  * @generated
@@ -58,7 +59,7 @@ public class DeploymentSpecificationPropertiesEditPart extends ListCompartmentEd
 	protected void createDefaultEditPolicies() {
 		super.createDefaultEditPolicies();
 		installEditPolicy(EditPolicyRoles.SEMANTIC_ROLE, new DeploymentSpecificationPropertiesItemSemanticEditPolicy());
-		installEditPolicy(EditPolicyRoles.CREATION_ROLE, new CreationEditPolicyWithCustomReparent());
+		installEditPolicy(EditPolicyRoles.CREATION_ROLE, new CreationEditPolicyWithCustomReparent(UMLVisualIDRegistry.TYPED_ADAPTER));
 		installEditPolicy(EditPolicyRoles.DRAG_DROP_ROLE, new DragDropEditPolicy());
 		installEditPolicy(EditPolicyRoles.CANONICAL_ROLE, new DeploymentSpecificationPropertiesCanonicalEditPolicy());
 	}

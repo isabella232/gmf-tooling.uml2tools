@@ -21,7 +21,7 @@
 	«EXPAND xpt::diagram::editparts::Common::installSemanticEditPolicy-»
 	«IF childNodes.size() > 0-»
 		«REM»The only change is here -- we are using U2T specific CreationEditPolicy«ENDREM»«-»
-		installEditPolicy(org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles.CREATION_ROLE, new org.eclipse.uml2.diagram.common.editpolicies.CreationEditPolicyWithCustomReparent());
+		installEditPolicy(org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles.CREATION_ROLE, «EXPAND aspects::impl::diagram::editparts::creationEditPolicy::newInstance»);
 		installEditPolicy(org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles.DRAG_DROP_ROLE, new org.eclipse.gmf.runtime.diagram.ui.editpolicies.DragDropEditPolicy());
 	«ENDIF-»
 	«EXPAND xpt::diagram::editparts::Common::installCanonicalEditPolicy-»

@@ -11,6 +11,7 @@ import org.eclipse.uml2.diagram.common.editpolicies.CreationEditPolicyWithCustom
 import org.eclipse.uml2.diagram.usecase.edit.policies.UseCaseAsClassExtensionPointsCanonicalEditPolicy;
 import org.eclipse.uml2.diagram.usecase.edit.policies.UseCaseAsClassExtensionPointsItemSemanticEditPolicy;
 import org.eclipse.uml2.diagram.usecase.part.Messages;
+import org.eclipse.uml2.diagram.usecase.part.UMLVisualIDRegistry;
 
 /**
  * @generated
@@ -50,7 +51,7 @@ public class UseCaseAsClassExtensionPointsEditPart extends ListCompartmentEditPa
 		super.createDefaultEditPolicies();
 		installEditPolicy(EditPolicy.PRIMARY_DRAG_ROLE, new ResizableCompartmentEditPolicy());
 		installEditPolicy(EditPolicyRoles.SEMANTIC_ROLE, new UseCaseAsClassExtensionPointsItemSemanticEditPolicy());
-		installEditPolicy(EditPolicyRoles.CREATION_ROLE, new CreationEditPolicyWithCustomReparent());
+		installEditPolicy(EditPolicyRoles.CREATION_ROLE, new CreationEditPolicyWithCustomReparent(UMLVisualIDRegistry.TYPED_ADAPTER));
 		installEditPolicy(EditPolicyRoles.DRAG_DROP_ROLE, new DragDropEditPolicy());
 		installEditPolicy(EditPolicyRoles.CANONICAL_ROLE, new UseCaseAsClassExtensionPointsCanonicalEditPolicy());
 	}

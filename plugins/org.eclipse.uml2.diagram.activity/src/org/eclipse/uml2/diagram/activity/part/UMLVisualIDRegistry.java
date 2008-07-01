@@ -11,6 +11,7 @@ import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.uml2.diagram.activity.edit.parts.*;
 import org.eclipse.uml2.diagram.activity.expressions.UMLAbstractExpression;
 import org.eclipse.uml2.diagram.activity.expressions.UMLOCLFactory;
+import org.eclipse.uml2.diagram.common.part.IVisualIDRegistry;
 import org.eclipse.uml2.uml.AcceptEventAction;
 import org.eclipse.uml2.uml.Action;
 import org.eclipse.uml2.uml.ActivityFinalNode;
@@ -5011,5 +5012,59 @@ public class UMLVisualIDRegistry {
 		int basic = getNodeVisualID(containerView, domainElement);
 		return basic == candidate || canSubstitute(basic, candidate);
 	}
+
+	/**
+	 * @generated
+	 */
+	public static final IVisualIDRegistry TYPED_ADAPTER = new IVisualIDRegistry() {
+
+		/**
+		 * @generated
+		 */
+		public String getModelID(View view) {
+			return org.eclipse.uml2.diagram.activity.part.UMLVisualIDRegistry.getModelID(view);
+		}
+
+		/**
+		 * @generated
+		 */
+		public int getVisualID(View view) {
+			return org.eclipse.uml2.diagram.activity.part.UMLVisualIDRegistry.getVisualID(view);
+		}
+
+		/**
+		 * @generated
+		 */
+		public int getNodeVisualID(View containerView, EObject domainElement) {
+			return org.eclipse.uml2.diagram.activity.part.UMLVisualIDRegistry.getNodeVisualID(containerView, domainElement);
+		}
+
+		/**
+		 * @generated
+		 */
+		public boolean checkNodeVisualID(View containerView, EObject domainElement, int candidate) {
+			return org.eclipse.uml2.diagram.activity.part.UMLVisualIDRegistry.checkNodeVisualID(containerView, domainElement, candidate);
+		}
+	};
+
+	public static final IVisualIDRegistry ADAPTER = new IVisualIDRegistry() {
+
+		public String getModelID(View view) {
+			return UMLVisualIDRegistry.getModelID(view);
+		}
+
+		public int getVisualID(View view) {
+			return UMLVisualIDRegistry.getVisualID(view);
+		}
+
+		public int getNodeVisualID(View containerView, EObject domainElement) {
+			return UMLVisualIDRegistry.getNodeVisualID(containerView, domainElement);
+		}
+
+		public boolean checkNodeVisualID(View containerView, EObject domainElement, int candidate) {
+			return UMLVisualIDRegistry.checkNodeVisualID(containerView, domainElement, candidate);
+		}
+
+	};
 
 }

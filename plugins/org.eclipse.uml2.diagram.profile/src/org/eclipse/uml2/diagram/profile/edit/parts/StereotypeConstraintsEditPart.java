@@ -13,6 +13,7 @@ import org.eclipse.uml2.diagram.common.editpolicies.CreationEditPolicyWithCustom
 import org.eclipse.uml2.diagram.profile.edit.policies.StereotypeConstraintsCanonicalEditPolicy;
 import org.eclipse.uml2.diagram.profile.edit.policies.StereotypeConstraintsItemSemanticEditPolicy;
 import org.eclipse.uml2.diagram.profile.part.Messages;
+import org.eclipse.uml2.diagram.profile.part.UMLVisualIDRegistry;
 
 /**
  * @generated
@@ -61,7 +62,7 @@ public class StereotypeConstraintsEditPart extends ListCompartmentEditPart {
 		super.createDefaultEditPolicies();
 		installEditPolicy(EditPolicy.PRIMARY_DRAG_ROLE, new ResizableCompartmentEditPolicy());
 		installEditPolicy(EditPolicyRoles.SEMANTIC_ROLE, new StereotypeConstraintsItemSemanticEditPolicy());
-		installEditPolicy(EditPolicyRoles.CREATION_ROLE, new CreationEditPolicyWithCustomReparent());
+		installEditPolicy(EditPolicyRoles.CREATION_ROLE, new CreationEditPolicyWithCustomReparent(UMLVisualIDRegistry.TYPED_ADAPTER));
 		installEditPolicy(EditPolicyRoles.DRAG_DROP_ROLE, new DragDropEditPolicy());
 		installEditPolicy(EditPolicyRoles.CANONICAL_ROLE, new StereotypeConstraintsCanonicalEditPolicy());
 	}

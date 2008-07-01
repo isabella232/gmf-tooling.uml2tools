@@ -13,6 +13,7 @@ import org.eclipse.uml2.diagram.common.editpolicies.CreationEditPolicyWithCustom
 import org.eclipse.uml2.diagram.component.edit.policies.ComponentContentsCanonicalEditPolicy;
 import org.eclipse.uml2.diagram.component.edit.policies.ComponentContentsItemSemanticEditPolicy;
 import org.eclipse.uml2.diagram.component.part.Messages;
+import org.eclipse.uml2.diagram.component.part.UMLVisualIDRegistry;
 
 /**
  * @generated
@@ -54,7 +55,7 @@ public class ComponentContentsEditPart extends ShapeCompartmentEditPart {
 		super.createDefaultEditPolicies();
 		installEditPolicy(EditPolicy.PRIMARY_DRAG_ROLE, new ResizableCompartmentEditPolicy());
 		installEditPolicy(EditPolicyRoles.SEMANTIC_ROLE, new ComponentContentsItemSemanticEditPolicy());
-		installEditPolicy(EditPolicyRoles.CREATION_ROLE, new CreationEditPolicyWithCustomReparent());
+		installEditPolicy(EditPolicyRoles.CREATION_ROLE, new CreationEditPolicyWithCustomReparent(UMLVisualIDRegistry.TYPED_ADAPTER));
 		installEditPolicy(EditPolicyRoles.DRAG_DROP_ROLE, new DragDropEditPolicy());
 		installEditPolicy(EditPolicyRoles.CANONICAL_ROLE, new ComponentContentsCanonicalEditPolicy());
 	}
