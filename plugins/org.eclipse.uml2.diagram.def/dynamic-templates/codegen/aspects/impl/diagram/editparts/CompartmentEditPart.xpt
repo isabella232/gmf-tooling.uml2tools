@@ -7,7 +7,7 @@
  * http://www.eclipse.org/legal/epl-v10.html
  *
  * Contributors:
- *    Michael Golubev - U2T specific creation edit policy 
+ *    Michael Golubev - U2T specific creation/layout edit policy 
  */
 
 «IMPORT "http://www.eclipse.org/gmf/2008/GenModel"»
@@ -23,6 +23,15 @@
 		«REM»The only change is here -- we are using U2T specific CreationEditPolicy«ENDREM»«-»
 		installEditPolicy(org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles.CREATION_ROLE, «EXPAND aspects::impl::diagram::editparts::creationEditPolicy::newInstance»);
 		installEditPolicy(org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles.DRAG_DROP_ROLE, new org.eclipse.gmf.runtime.diagram.ui.editpolicies.DragDropEditPolicy());
+	«ENDIF-»
+	«IF !listLayout-»
+	«REM»
+	listLayout is used to determine superclass. see CompartmentEditPart.xpt::extendsList. 
+	For ShapeCompartmentEditPart's (and only for them) we are going to replace XYLayoutEditPolicy with U2T custom version
+	«ENDREM»«-»
+	installEditPolicy(«-»
+		org.eclipse.gef.EditPolicy.LAYOUT_ROLE, «-»
+		new org.eclipse.uml2.diagram.common.editpolicies.XYLayoutEditPolicyWithMovableLabels()); //replace with U2T specific version
 	«ENDIF-»
 	«EXPAND xpt::diagram::editparts::Common::installCanonicalEditPolicy-»
 	«EXPAND xpt::diagram::editparts::Common::behaviour-»

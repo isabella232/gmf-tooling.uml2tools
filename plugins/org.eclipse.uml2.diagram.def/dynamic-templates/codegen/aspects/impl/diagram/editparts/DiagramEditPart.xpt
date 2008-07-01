@@ -7,7 +7,7 @@
  * http://www.eclipse.org/legal/epl-v10.html
  *
  * Contributors:
- *    Michael Golubev - U2T specific creation edit policy 
+ *    Michael Golubev - U2T specific creation/layout edit policy 
  */
 
 «IMPORT "http://www.eclipse.org/gmf/2008/GenModel"»
@@ -19,4 +19,7 @@
 	installEditPolicy(«-»
 		org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles.CREATION_ROLE, «-»
 		«EXPAND aspects::impl::diagram::editparts::creationEditPolicy::newInstance»);
+	installEditPolicy(«-»
+		org.eclipse.gef.EditPolicy.LAYOUT_ROLE, «-»
+		new org.eclipse.uml2.diagram.common.editpolicies.XYLayoutEditPolicyWithMovableLabels()); //replace with U2T specific version
 «ENDAROUND»

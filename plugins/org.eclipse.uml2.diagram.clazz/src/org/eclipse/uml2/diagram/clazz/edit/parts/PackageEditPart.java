@@ -5,6 +5,7 @@ import java.util.Iterator;
 import java.util.List;
 
 import org.eclipse.emf.ecore.EObject;
+import org.eclipse.gef.EditPolicy;
 import org.eclipse.gef.commands.Command;
 import org.eclipse.gmf.runtime.diagram.ui.commands.ICommandProxy;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.DiagramEditPart;
@@ -21,6 +22,7 @@ import org.eclipse.uml2.diagram.clazz.edit.policies.PackageItemSemanticEditPolic
 import org.eclipse.uml2.diagram.clazz.part.UMLDiagramUpdateCommand;
 import org.eclipse.uml2.diagram.clazz.part.UMLVisualIDRegistry;
 import org.eclipse.uml2.diagram.common.editpolicies.CreationEditPolicyWithCustomReparent;
+import org.eclipse.uml2.diagram.common.editpolicies.XYLayoutEditPolicyWithMovableLabels;
 
 /**
  * @generated
@@ -76,6 +78,7 @@ public class PackageEditPart extends DiagramEditPart {
 		// removeEditPolicy(org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles.POPUPBAR_ROLE);
 
 		installEditPolicy(EditPolicyRoles.CREATION_ROLE, new CreationEditPolicyWithCustomReparent(UMLVisualIDRegistry.TYPED_ADAPTER));
+		installEditPolicy(EditPolicy.LAYOUT_ROLE, new XYLayoutEditPolicyWithMovableLabels()); //replace with U2T specific version
 	}
 
 	/**

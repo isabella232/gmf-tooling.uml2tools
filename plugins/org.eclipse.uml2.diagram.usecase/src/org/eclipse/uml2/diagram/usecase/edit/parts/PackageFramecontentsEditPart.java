@@ -10,6 +10,7 @@ import org.eclipse.gmf.runtime.diagram.ui.figures.ResizableCompartmentFigure;
 import org.eclipse.gmf.runtime.draw2d.ui.figures.ConstrainedToolbarLayout;
 import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.uml2.diagram.common.editpolicies.CreationEditPolicyWithCustomReparent;
+import org.eclipse.uml2.diagram.common.editpolicies.XYLayoutEditPolicyWithMovableLabels;
 import org.eclipse.uml2.diagram.usecase.edit.policies.PackageFramecontentsCanonicalEditPolicy;
 import org.eclipse.uml2.diagram.usecase.edit.policies.PackageFramecontentsItemSemanticEditPolicy;
 import org.eclipse.uml2.diagram.usecase.part.Messages;
@@ -57,6 +58,7 @@ public class PackageFramecontentsEditPart extends ShapeCompartmentEditPart {
 		installEditPolicy(EditPolicyRoles.SEMANTIC_ROLE, new PackageFramecontentsItemSemanticEditPolicy());
 		installEditPolicy(EditPolicyRoles.CREATION_ROLE, new CreationEditPolicyWithCustomReparent(UMLVisualIDRegistry.TYPED_ADAPTER));
 		installEditPolicy(EditPolicyRoles.DRAG_DROP_ROLE, new DragDropEditPolicy());
+		installEditPolicy(EditPolicy.LAYOUT_ROLE, new XYLayoutEditPolicyWithMovableLabels()); //replace with U2T specific version
 		installEditPolicy(EditPolicyRoles.CANONICAL_ROLE, new PackageFramecontentsCanonicalEditPolicy());
 	}
 

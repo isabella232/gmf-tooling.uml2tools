@@ -283,3 +283,26 @@
 		«ENDIF»);
 	«ENDIF-»
 «ENDAROUND»
+
+«AROUND createLayoutEditPolicyBody FOR gmfgen::GenNode-»
+	«IF gmfgen::ViewmapLayoutType::XY_LAYOUT.value == getLayoutType().value-»
+		org.eclipse.gmf.runtime.diagram.ui.editpolicies.XYLayoutEditPolicy lep = new org.eclipse.uml2.diagram.common.editpolicies.XYLayoutEditPolicyWithMovableLabels() { //UML2Tools specific drag&drop workaround
+
+			protected org.eclipse.gef.EditPolicy createChildEditPolicy(org.eclipse.gef.EditPart child) {
+				«IF hasBorderItems()-»
+					if (child instanceof org.eclipse.gmf.runtime.diagram.ui.editparts.IBorderItemEditPart) {
+						return new org.eclipse.gmf.runtime.diagram.ui.editpolicies.BorderItemSelectionEditPolicy();
+					}
+				«ENDIF-»
+				org.eclipse.gef.EditPolicy result = super.createChildEditPolicy(child);
+				if (result == null) {
+					return new org.eclipse.gmf.runtime.diagram.ui.editpolicies.ResizableShapeEditPolicy();
+				}
+				return result;
+			}
+		};
+		return lep;
+	«ELSE-»
+		«targetDef.proceed()»«-»
+	«ENDIF-»
+«ENDAROUND»
