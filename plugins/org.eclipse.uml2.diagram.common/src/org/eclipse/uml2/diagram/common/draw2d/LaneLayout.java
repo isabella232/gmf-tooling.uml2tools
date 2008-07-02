@@ -73,40 +73,46 @@ public class LaneLayout extends AbstractHintLayout {
 	protected Dimension calculateMinimumSize(IFigure container, int wHint, int hHint) {
 		Insets insets = container.getInsets();
 		List children = container.getChildren();
-		int childWHint = getLaneOrientation() == HORIZONTAL ? Math.max(0, wHint - insets.getWidth()) : 
-			(wHint - insets.getWidth() > 0 ? wHint - insets.getWidth() / children.size() : wHint);
-		int childHHint = getLaneOrientation() == VERTICAL ? Math.max(0, hHint - insets.getHeight()) : 
-			(hHint - insets.getHeight() > 0 ? hHint - insets.getHeight() / children.size() : hHint);
-
-		int height = 0, width = 0;
-		for (int i = 0; i < children.size(); i++) {
-			IFigure child = (IFigure) children.get(i);
-			Rectangle constraint = (Rectangle) getConstraint(child);
-			Dimension childSize = myTransposer.t(myTransposer.t(constraint).height > -1 ? constraint.getSize() : child.getMinimumSize(childWHint, childHHint));
-			height += childSize.height;
-			width = Math.max(width, childSize.width);
+		if (children.size() > 0) {
+			int childWHint = getLaneOrientation() == HORIZONTAL ? Math.max(0, wHint - insets.getWidth()) : 
+				(wHint - insets.getWidth() > 0 ? wHint - insets.getWidth() / children.size() : wHint);
+			int childHHint = getLaneOrientation() == VERTICAL ? Math.max(0, hHint - insets.getHeight()) : 
+				(hHint - insets.getHeight() > 0 ? hHint - insets.getHeight() / children.size() : hHint);
+	
+			int height = 0, width = 0;
+			for (int i = 0; i < children.size(); i++) {
+				IFigure child = (IFigure) children.get(i);
+				Rectangle constraint = (Rectangle) getConstraint(child);
+				Dimension childSize = myTransposer.t(myTransposer.t(constraint).height > -1 ? constraint.getSize() : child.getMinimumSize(childWHint, childHHint));
+				height += childSize.height;
+				width = Math.max(width, childSize.width);
+			}
+			return myTransposer.t(new Dimension(width, height)).expand(insets.getWidth(), insets.getHeight()).union(getBorderPreferredSize(container));
 		}
-		return myTransposer.t(new Dimension(width, height)).expand(insets.getWidth(), insets.getHeight()).union(getBorderPreferredSize(container));
+		return myTransposer.t(new Dimension(wHint, hHint)).expand(insets.getWidth(), insets.getHeight()).union(getBorderPreferredSize(container));
 	}
 
 	@Override
 	protected Dimension calculatePreferredSize(IFigure container, int wHint, int hHint) {
 		Insets insets = container.getInsets();
 		List children = container.getChildren();
-		int childWHint = getLaneOrientation() == HORIZONTAL ? Math.max(0, wHint - insets.getWidth()) : 
-			(wHint - insets.getWidth() > 0 ? wHint - insets.getWidth() / children.size() : wHint);
-		int childHHint = getLaneOrientation() == VERTICAL ? Math.max(0, hHint - insets.getHeight()) : 
-			(hHint - insets.getHeight() > 0 ? hHint - insets.getHeight() / children.size() : hHint);
-
-		int height = 0, width = 0;
-		for (int i = 0; i < children.size(); i++) {
-			IFigure child = (IFigure) children.get(i);
-			Rectangle constraint = (Rectangle) getConstraint(child);
-			Dimension childSize = myTransposer.t(myTransposer.t(constraint).height > -1 ? constraint.getSize() : child.getPreferredSize(childWHint, childHHint));
-			height += childSize.height;
-			width = Math.max(width, childSize.width);
+		if (children.size() > 0) {
+			int childWHint = getLaneOrientation() == HORIZONTAL ? Math.max(0, wHint - insets.getWidth()) : 
+				(wHint - insets.getWidth() > 0 ? wHint - insets.getWidth() / children.size() : wHint);
+			int childHHint = getLaneOrientation() == VERTICAL ? Math.max(0, hHint - insets.getHeight()) : 
+				(hHint - insets.getHeight() > 0 ? hHint - insets.getHeight() / children.size() : hHint);
+	
+			int height = 0, width = 0;
+			for (int i = 0; i < children.size(); i++) {
+				IFigure child = (IFigure) children.get(i);
+				Rectangle constraint = (Rectangle) getConstraint(child);
+				Dimension childSize = myTransposer.t(myTransposer.t(constraint).height > -1 ? constraint.getSize() : child.getPreferredSize(childWHint, childHHint));
+				height += childSize.height;
+				width = Math.max(width, childSize.width);
+			}
+			return myTransposer.t(new Dimension(width, height)).expand(insets.getWidth(), insets.getHeight()).union(getBorderPreferredSize(container));
 		}
-		return myTransposer.t(new Dimension(width, height)).expand(insets.getWidth(), insets.getHeight()).union(getBorderPreferredSize(container));
+		return myTransposer.t(new Dimension(wHint, hHint)).expand(insets.getWidth(), insets.getHeight()).union(getBorderPreferredSize(container));
 	}
 	
 	@Override

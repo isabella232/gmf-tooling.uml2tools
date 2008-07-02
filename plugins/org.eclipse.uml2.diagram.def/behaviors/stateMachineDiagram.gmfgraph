@@ -61,10 +61,7 @@
           cornerWidth="18"
           cornerHeight="18">
         <layout
-            xsi:type="gmfgraph:GridLayout">
-          <margins/>
-          <spacing/>
-        </layout>
+            xsi:type="gmfgraph:BorderLayout"/>
         <border
             xsi:type="gmfgraph:MarginBorder">
           <insets
@@ -75,52 +72,39 @@
         </border>
         <children
             xsi:type="gmfgraph:Rectangle"
-            name="CompositeStateFigure_NameContainer"
-            outline="false"
-            fill="false">
+            name="CompositeStateFigure_UpperContainer"
+            outline="false">
           <layoutData
-              xsi:type="gmfgraph:GridLayoutData"
-              grabExcessHorizontalSpace="true"
-              verticalAlignment="FILL"
-              horizontalAlignment="FILL"/>
+              xsi:type="gmfgraph:BorderLayoutData"
+              alignment="BEGINNING"
+              vertical="true"/>
           <layout
-              xsi:type="gmfgraph:GridLayout">
-            <margins
-                dx="3"
-                dy="3"/>
-            <spacing/>
-          </layout>
+              xsi:type="gmfgraph:FlowLayout"
+              vertical="true"
+              matchMinorSize="true"
+              forceSingleLine="true"
+              majorSpacing="0"
+              minorSpacing="0"/>
           <children
               xsi:type="gmfgraph:Label"
               name="CompositeStateFigure_name"
-              text="">
-            <layoutData
-                xsi:type="gmfgraph:GridLayoutData"
-                grabExcessHorizontalSpace="true"/>
+              text=""/>
+          <children
+              xsi:type="gmfgraph:Rectangle"
+              name="CompositeStateFigure_InternalActivitiesCompartment"
+              outline="false">
+            <layout
+                xsi:type="gmfgraph:StackLayout"/>
           </children>
-        </children>
-        <children
-            xsi:type="gmfgraph:Rectangle"
-            name="CompositeStateFigure_InternalActivitiesCompartment"
-            outline="false">
-          <layoutData
-              xsi:type="gmfgraph:GridLayoutData"
-              grabExcessHorizontalSpace="true"
-              verticalAlignment="FILL"
-              horizontalAlignment="FILL"/>
-          <layout
-              xsi:type="gmfgraph:StackLayout"/>
         </children>
         <children
             xsi:type="gmfgraph:Rectangle"
             name="CompositeStateFigure_Body"
             outline="false">
           <layoutData
-              xsi:type="gmfgraph:GridLayoutData"
-              grabExcessHorizontalSpace="true"
-              grabExcessVerticalSpace="true"
-              verticalAlignment="FILL"
-              horizontalAlignment="FILL"/>
+              xsi:type="gmfgraph:BorderLayoutData"
+              alignment="FILL"
+              vertical="true"/>
           <layout
               xsi:type="gmfgraph:CustomLayout"
               qualifiedClassName="org.eclipse.uml2.diagram.common.draw2d.LaneLayout"/>
@@ -129,9 +113,9 @@
       <accessors
           figure="//@figures.0/@descriptors.1/@actualFigure/@children.0/@children.0"/>
       <accessors
-          figure="//@figures.0/@descriptors.1/@actualFigure/@children.2"/>
-      <accessors
           figure="//@figures.0/@descriptors.1/@actualFigure/@children.1"/>
+      <accessors
+          figure="//@figures.0/@descriptors.1/@actualFigure/@children.0/@children.1"/>
     </descriptors>
     <descriptors
         name="RegionFigure">

@@ -273,6 +273,7 @@ public class Pseudostate3EditPart extends ShapeNodeEditPart implements PrimarySh
 			deepHistoryFigure_Letter0.addPoint(new Point(getMapMode().DPtoLP(40), getMapMode().DPtoLP(20)));
 			deepHistoryFigure_Letter0.addPoint(new Point(getMapMode().DPtoLP(0), getMapMode().DPtoLP(20)));
 			deepHistoryFigure_Letter0.addPoint(new Point(getMapMode().DPtoLP(0), getMapMode().DPtoLP(0)));
+			deepHistoryFigure_Letter0.setFill(true);
 			deepHistoryFigure_Letter0.setPreferredSize(new Dimension(getMapMode().DPtoLP(15), getMapMode().DPtoLP(15)));
 			deepHistoryFigure_Letter0.setMaximumSize(new Dimension(getMapMode().DPtoLP(15), getMapMode().DPtoLP(15)));
 
@@ -397,6 +398,7 @@ public class Pseudostate3EditPart extends ShapeNodeEditPart implements PrimarySh
 			deepHistoryFigure_Asterisk1.addPoint(new Point(getMapMode().DPtoLP(40), getMapMode().DPtoLP(20)));
 			deepHistoryFigure_Asterisk1.addPoint(new Point(getMapMode().DPtoLP(0), getMapMode().DPtoLP(20)));
 			deepHistoryFigure_Asterisk1.addPoint(new Point(getMapMode().DPtoLP(20), getMapMode().DPtoLP(20)));
+			deepHistoryFigure_Asterisk1.setFill(true);
 
 			deepHistoryFigure_AsteriskContainer0.add(deepHistoryFigure_Asterisk1);
 

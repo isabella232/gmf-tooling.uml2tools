@@ -204,7 +204,6 @@ public class Pseudostate10EditPart extends BorderedBorderItemEditPart implements
 		 * @generated
 		 */
 		public ExitPointFigure() {
-
 			this.setLayoutManager(new StackLayout());
 			this.setPreferredSize(new Dimension(getMapMode().DPtoLP(15), getMapMode().DPtoLP(15)));
 			this.setMaximumSize(new Dimension(getMapMode().DPtoLP(15), getMapMode().DPtoLP(15)));
@@ -307,6 +306,7 @@ public class Pseudostate10EditPart extends BorderedBorderItemEditPart implements
 			exitPointFigure_Cross0.addPoint(new Point(getMapMode().DPtoLP(40), getMapMode().DPtoLP(0)));
 			exitPointFigure_Cross0.addPoint(new Point(getMapMode().DPtoLP(0), getMapMode().DPtoLP(40)));
 			exitPointFigure_Cross0.addPoint(new Point(getMapMode().DPtoLP(20), getMapMode().DPtoLP(20)));
+			exitPointFigure_Cross0.setFill(true);
 
 			this.add(exitPointFigure_Cross0);
 
