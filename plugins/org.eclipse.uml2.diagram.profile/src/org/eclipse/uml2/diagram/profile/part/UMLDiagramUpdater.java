@@ -11,6 +11,7 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.gmf.runtime.notation.View;
+import org.eclipse.uml2.diagram.common.genapi.IDiagramUpdater;
 import org.eclipse.uml2.diagram.profile.edit.parts.ConstraintEditPart;
 import org.eclipse.uml2.diagram.profile.edit.parts.ElementImport2EditPart;
 import org.eclipse.uml2.diagram.profile.edit.parts.ElementImportEditPart;
@@ -782,5 +783,39 @@ public class UMLDiagramUpdater {
 		result.addAll(getContainedTypeModelFacetLinks_Extension_4002(modelElement));
 		return result;
 	}
+
+	/**
+	 * @generated
+	 */
+	public static final IDiagramUpdater TYPED_ADAPTER = new IDiagramUpdater() {
+
+		/**
+		 * @generated
+		 */
+		public List getSemanticChildren(View view) {
+			return org.eclipse.uml2.diagram.profile.part.UMLDiagramUpdater.getSemanticChildren(view);
+		}
+
+		/**
+		 * @generated
+		 */
+		public List getContainedLinks(View view) {
+			return org.eclipse.uml2.diagram.profile.part.UMLDiagramUpdater.getContainedLinks(view);
+		}
+
+		/**
+		 * @generated
+		 */
+		public List getIncomingLinks(View view) {
+			return org.eclipse.uml2.diagram.profile.part.UMLDiagramUpdater.getIncomingLinks(view);
+		}
+
+		/**
+		 * @generated
+		 */
+		public List getOutgoingLinks(View view) {
+			return org.eclipse.uml2.diagram.profile.part.UMLDiagramUpdater.getOutgoingLinks(view);
+		}
+	};
 
 }

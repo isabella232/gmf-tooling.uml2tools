@@ -1,4 +1,4 @@
-package org.eclipse.uml2.diagram.common.part;
+package org.eclipse.uml2.diagram.common.genapi;
 
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.gmf.runtime.notation.View;
@@ -12,4 +12,6 @@ public interface IVisualIDRegistry {
 	public int getNodeVisualID(View containerView, EObject domainElement);
 
 	public boolean checkNodeVisualID(View containerView, EObject domainElement, int candidate);
+	
+	public boolean isCompartmentVisualID(int visualID);
 }

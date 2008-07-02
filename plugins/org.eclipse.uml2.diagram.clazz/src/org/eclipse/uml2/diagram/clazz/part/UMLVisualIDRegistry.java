@@ -8,7 +8,7 @@ import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.uml2.diagram.clazz.edit.parts.*;
 import org.eclipse.uml2.diagram.clazz.expressions.UMLAbstractExpression;
 import org.eclipse.uml2.diagram.clazz.expressions.UMLOCLFactory;
-import org.eclipse.uml2.diagram.common.part.IVisualIDRegistry;
+import org.eclipse.uml2.diagram.common.genapi.IVisualIDRegistry;
 import org.eclipse.uml2.uml.Association;
 import org.eclipse.uml2.uml.Class;
 import org.eclipse.uml2.uml.DataType;
@@ -1995,6 +1995,53 @@ public class UMLVisualIDRegistry {
 	/**
 	 * @generated
 	 */
+	public static boolean isCompartmentVisualID(int visualID) {
+		switch (visualID) {
+		case PackagePackagesEditPart.VISUAL_ID:
+		case PackageClassifiersEditPart.VISUAL_ID:
+		case PackageOtherEditPart.VISUAL_ID:
+		case ClassAttributesEditPart.VISUAL_ID:
+		case ClassOperationsEditPart.VISUAL_ID:
+		case ClassClassesEditPart.VISUAL_ID:
+		case AssociationClassAttributesEditPart.VISUAL_ID:
+		case AssociationClassOperationsEditPart.VISUAL_ID:
+		case AssociationClassClassesEditPart.VISUAL_ID:
+		case DataTypeAttributesEditPart.VISUAL_ID:
+		case DataTypeOperationsEditPart.VISUAL_ID:
+		case PrimitiveTypeAttributesEditPart.VISUAL_ID:
+		case PrimitiveTypeOperationsEditPart.VISUAL_ID:
+		case EnumerationLiteralsEditPart.VISUAL_ID:
+		case EnumerationAttributesEditPart.VISUAL_ID:
+		case EnumerationOperationsEditPart.VISUAL_ID:
+		case InstanceSpecificationSlotsEditPart.VISUAL_ID:
+		case InterfaceAttributesEditPart.VISUAL_ID:
+		case InterfaceOperationsEditPart.VISUAL_ID:
+		case InterfaceClassesEditPart.VISUAL_ID:
+		case PackageImportsEditPart.VISUAL_ID:
+		case PackageAsFrameContentsEditPart.VISUAL_ID:
+		case PackageAsFrameContents2EditPart.VISUAL_ID:
+		case ClassAttributes2EditPart.VISUAL_ID:
+		case ClassOperations2EditPart.VISUAL_ID:
+		case ClassClasses2EditPart.VISUAL_ID:
+		case EnumerationLiterals2EditPart.VISUAL_ID:
+		case EnumerationAttributes2EditPart.VISUAL_ID:
+		case EnumerationOperations2EditPart.VISUAL_ID:
+		case InstanceSpecificationSlots2EditPart.VISUAL_ID:
+		case DataTypeAttributes2EditPart.VISUAL_ID:
+		case DataTypeOperations2EditPart.VISUAL_ID:
+		case PrimitiveTypeAttributes2EditPart.VISUAL_ID:
+		case PrimitiveTypeOperations2EditPart.VISUAL_ID:
+		case InstanceSpecificationValueEditPart.VISUAL_ID:
+			return true;
+		default:
+			break;
+		}
+		return false;
+	}
+
+	/**
+	 * @generated
+	 */
 	public static final IVisualIDRegistry TYPED_ADAPTER = new IVisualIDRegistry() {
 
 		/**
@@ -2024,6 +2071,14 @@ public class UMLVisualIDRegistry {
 		public boolean checkNodeVisualID(View containerView, EObject domainElement, int candidate) {
 			return org.eclipse.uml2.diagram.clazz.part.UMLVisualIDRegistry.checkNodeVisualID(containerView, domainElement, candidate);
 		}
+
+		/**
+		 * @generated
+		 */
+		public boolean isCompartmentVisualID(int visualID) {
+			return org.eclipse.uml2.diagram.clazz.part.UMLVisualIDRegistry.isCompartmentVisualID(visualID);
+		}
+
 	};
 
 }

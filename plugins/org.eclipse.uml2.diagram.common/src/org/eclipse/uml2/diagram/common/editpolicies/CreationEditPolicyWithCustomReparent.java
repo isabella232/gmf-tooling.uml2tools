@@ -29,7 +29,7 @@ import org.eclipse.gmf.runtime.diagram.ui.l10n.DiagramUIMessages;
 import org.eclipse.gmf.runtime.diagram.ui.requests.EditCommandRequestWrapper;
 import org.eclipse.gmf.runtime.emf.core.util.EObjectAdapter;
 import org.eclipse.gmf.runtime.notation.View;
-import org.eclipse.uml2.diagram.common.part.IVisualIDRegistry;
+import org.eclipse.uml2.diagram.common.genapi.IVisualIDRegistry;
 
 /**
  * @see #237059

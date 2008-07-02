@@ -13,6 +13,7 @@ import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.uml2.diagram.common.conventions.AssociationEndConvention;
 import org.eclipse.uml2.diagram.common.conventions.ConnectorEndConvention;
+import org.eclipse.uml2.diagram.common.genapi.IDiagramUpdater;
 import org.eclipse.uml2.diagram.component.edit.parts.Artifact2EditPart;
 import org.eclipse.uml2.diagram.component.edit.parts.ArtifactEditPart;
 import org.eclipse.uml2.diagram.component.edit.parts.AssemblyConnectorCircleEditPart;
@@ -1994,4 +1995,38 @@ public class UMLDiagramUpdater {
 		return result;
 	}
 
+
+	/**
+	 * @generated
+	 */
+	public static final IDiagramUpdater TYPED_ADAPTER = new IDiagramUpdater() {
+
+		/**
+		 * @generated
+		 */
+		public List getSemanticChildren(View view) {
+			return org.eclipse.uml2.diagram.component.part.UMLDiagramUpdater.getSemanticChildren(view);
+		}
+
+		/**
+		 * @generated
+		 */
+		public List getContainedLinks(View view) {
+			return org.eclipse.uml2.diagram.component.part.UMLDiagramUpdater.getContainedLinks(view);
+		}
+
+		/**
+		 * @generated
+		 */
+		public List getIncomingLinks(View view) {
+			return org.eclipse.uml2.diagram.component.part.UMLDiagramUpdater.getIncomingLinks(view);
+		}
+
+		/**
+		 * @generated
+		 */
+		public List getOutgoingLinks(View view) {
+			return org.eclipse.uml2.diagram.component.part.UMLDiagramUpdater.getOutgoingLinks(view);
+		}
+	};
 }

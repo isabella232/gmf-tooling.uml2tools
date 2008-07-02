@@ -14,6 +14,7 @@ import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.uml2.diagram.activity.edit.parts.*;
 import org.eclipse.uml2.diagram.activity.providers.UMLElementTypes;
+import org.eclipse.uml2.diagram.common.genapi.IDiagramUpdater;
 import org.eclipse.uml2.uml.AcceptEventAction;
 import org.eclipse.uml2.uml.Action;
 import org.eclipse.uml2.uml.Activity;
@@ -5613,5 +5614,39 @@ public class UMLDiagramUpdater {
 		}
 		return result;
 	}
+
+	/**
+	 * @generated
+	 */
+	public static final IDiagramUpdater TYPED_ADAPTER = new IDiagramUpdater() {
+
+		/**
+		 * @generated
+		 */
+		public List getSemanticChildren(View view) {
+			return org.eclipse.uml2.diagram.activity.part.UMLDiagramUpdater.getSemanticChildren(view);
+		}
+
+		/**
+		 * @generated
+		 */
+		public List getContainedLinks(View view) {
+			return org.eclipse.uml2.diagram.activity.part.UMLDiagramUpdater.getContainedLinks(view);
+		}
+
+		/**
+		 * @generated
+		 */
+		public List getIncomingLinks(View view) {
+			return org.eclipse.uml2.diagram.activity.part.UMLDiagramUpdater.getIncomingLinks(view);
+		}
+
+		/**
+		 * @generated
+		 */
+		public List getOutgoingLinks(View view) {
+			return org.eclipse.uml2.diagram.activity.part.UMLDiagramUpdater.getOutgoingLinks(view);
+		}
+	};
 
 }

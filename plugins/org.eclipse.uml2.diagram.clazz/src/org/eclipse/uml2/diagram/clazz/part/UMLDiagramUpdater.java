@@ -14,6 +14,7 @@ import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.uml2.diagram.clazz.edit.parts.*;
 import org.eclipse.uml2.diagram.clazz.providers.UMLElementTypes;
 import org.eclipse.uml2.diagram.common.conventions.AssociationEndConvention;
+import org.eclipse.uml2.diagram.common.genapi.IDiagramUpdater;
 import org.eclipse.uml2.uml.Association;
 import org.eclipse.uml2.uml.AssociationClass;
 import org.eclipse.uml2.uml.BehavioredClassifier;
@@ -5394,6 +5395,40 @@ public class UMLDiagramUpdater {
 		}
 		return result;
 	}
+
+	/**
+	 * @generated
+	 */
+	public static final IDiagramUpdater TYPED_ADAPTER = new IDiagramUpdater() {
+
+		/**
+		 * @generated
+		 */
+		public List getSemanticChildren(View view) {
+			return org.eclipse.uml2.diagram.clazz.part.UMLDiagramUpdater.getSemanticChildren(view);
+		}
+
+		/**
+		 * @generated
+		 */
+		public List getContainedLinks(View view) {
+			return org.eclipse.uml2.diagram.clazz.part.UMLDiagramUpdater.getContainedLinks(view);
+		}
+
+		/**
+		 * @generated
+		 */
+		public List getIncomingLinks(View view) {
+			return org.eclipse.uml2.diagram.clazz.part.UMLDiagramUpdater.getIncomingLinks(view);
+		}
+
+		/**
+		 * @generated
+		 */
+		public List getOutgoingLinks(View view) {
+			return org.eclipse.uml2.diagram.clazz.part.UMLDiagramUpdater.getOutgoingLinks(view);
+		}
+	};
 
 	/**
 	 * @generated

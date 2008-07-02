@@ -5,7 +5,7 @@ import org.eclipse.emf.ecore.EAnnotation;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.gmf.runtime.notation.Diagram;
 import org.eclipse.gmf.runtime.notation.View;
-import org.eclipse.uml2.diagram.common.part.IVisualIDRegistry;
+import org.eclipse.uml2.diagram.common.genapi.IVisualIDRegistry;
 import org.eclipse.uml2.diagram.component.edit.parts.Artifact2EditPart;
 import org.eclipse.uml2.diagram.component.edit.parts.ArtifactEditPart;
 import org.eclipse.uml2.diagram.component.edit.parts.ArtifactName2EditPart;
@@ -985,6 +985,26 @@ public class UMLVisualIDRegistry {
 	/**
 	 * @generated
 	 */
+	public static boolean isCompartmentVisualID(int visualID) {
+		switch (visualID) {
+		case ComponentContentsEditPart.VISUAL_ID:
+		case ComponentContents2EditPart.VISUAL_ID:
+		case PackageImportsEditPart.VISUAL_ID:
+		case PackagePackagesEditPart.VISUAL_ID:
+		case PackageClassifiersEditPart.VISUAL_ID:
+		case ClassAttributesEditPart.VISUAL_ID:
+		case ClassOperationsEditPart.VISUAL_ID:
+		case ClassClassesEditPart.VISUAL_ID:
+			return true;
+		default:
+			break;
+		}
+		return false;
+	}
+
+	/**
+	 * @generated
+	 */
 	public static final IVisualIDRegistry TYPED_ADAPTER = new IVisualIDRegistry() {
 
 		/**
@@ -1014,6 +1034,14 @@ public class UMLVisualIDRegistry {
 		public boolean checkNodeVisualID(View containerView, EObject domainElement, int candidate) {
 			return org.eclipse.uml2.diagram.component.part.UMLVisualIDRegistry.checkNodeVisualID(containerView, domainElement, candidate);
 		}
+
+		/**
+		 * @generated
+		 */
+		public boolean isCompartmentVisualID(int visualID) {
+			return org.eclipse.uml2.diagram.component.part.UMLVisualIDRegistry.isCompartmentVisualID(visualID);
+		}
+
 	};
 
 }

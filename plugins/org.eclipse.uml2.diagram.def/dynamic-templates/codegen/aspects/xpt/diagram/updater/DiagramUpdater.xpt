@@ -108,3 +108,36 @@ public static java.util.List «EXPAND xpt::diagram::updater::DiagramUpdater::link
 		«targetDef.proceed()-»
 	«ENDIF-»
 «ENDAROUND»
+
+«AROUND xpt::diagram::updater::DiagramUpdater::additions FOR gmfgen::GenDiagramUpdater»
+	«EXPAND typedSharedInstance»	
+«ENDAROUND»
+
+«DEFINE typedSharedInstanceName FOR gmfgen::GenDiagramUpdater»TYPED_ADAPTER«ENDDEFINE»
+«DEFINE typedSharedInstanceCall FOR gmfgen::GenDiagramUpdater»«this.getDiagramUpdaterQualifiedClassName()».«EXPAND typedSharedInstanceName»«ENDDEFINE»
+
+«DEFINE typedSharedInstance FOR gmfgen::GenDiagramUpdater»
+	«EXPAND xpt::Common::generatedMemberComment»
+	public static final org.eclipse.uml2.diagram.common.genapi.IDiagramUpdater «EXPAND typedSharedInstanceName» = new org.eclipse.uml2.diagram.common.genapi.IDiagramUpdater() {
+		«EXPAND xpt::Common::generatedMemberComment»
+		public java.util.List getSemanticChildren(org.eclipse.gmf.runtime.notation.View view) {
+			return «this.getDiagramUpdaterQualifiedClassName()».getSemanticChildren(view);
+		}
+		
+		«EXPAND xpt::Common::generatedMemberComment»
+		public java.util.List get«getContainedLinksMethodNameSuffix()»Links(org.eclipse.gmf.runtime.notation.View view) {
+			return «this.getDiagramUpdaterQualifiedClassName()».get«getContainedLinksMethodNameSuffix()»Links(view);
+		}
+		
+		«EXPAND xpt::Common::generatedMemberComment»
+		public java.util.List get«getIncomingLinksMethodNameSuffix()»Links(org.eclipse.gmf.runtime.notation.View view) {
+			return «this.getDiagramUpdaterQualifiedClassName()».get«getIncomingLinksMethodNameSuffix()»Links(view);
+		}
+
+		«EXPAND xpt::Common::generatedMemberComment»
+		public java.util.List get«getOutgoingLinksMethodNameSuffix()»Links(org.eclipse.gmf.runtime.notation.View view) {
+			return «this.getDiagramUpdaterQualifiedClassName()».get«getOutgoingLinksMethodNameSuffix()»Links(view);
+		}
+	};
+
+«ENDDEFINE»

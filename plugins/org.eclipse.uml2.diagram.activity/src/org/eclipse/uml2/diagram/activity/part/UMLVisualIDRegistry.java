@@ -11,7 +11,7 @@ import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.uml2.diagram.activity.edit.parts.*;
 import org.eclipse.uml2.diagram.activity.expressions.UMLAbstractExpression;
 import org.eclipse.uml2.diagram.activity.expressions.UMLOCLFactory;
-import org.eclipse.uml2.diagram.common.part.IVisualIDRegistry;
+import org.eclipse.uml2.diagram.common.genapi.IVisualIDRegistry;
 import org.eclipse.uml2.uml.AcceptEventAction;
 import org.eclipse.uml2.uml.Action;
 import org.eclipse.uml2.uml.ActivityFinalNode;
@@ -5016,6 +5016,30 @@ public class UMLVisualIDRegistry {
 	/**
 	 * @generated
 	 */
+	public static boolean isCompartmentVisualID(int visualID) {
+		switch (visualID) {
+		case StructuredActivityNodeStructuredActivityContentPaneCompartmentEditPart.VISUAL_ID:
+		case StructuredActivityNodeStructuredActivityContentPaneCompartment2EditPart.VISUAL_ID:
+		case StructuredActivityNodeStructuredActivityContentPaneCompartment3EditPart.VISUAL_ID:
+		case StructuredActivityNodeStructuredActivityContentPaneCompartment4EditPart.VISUAL_ID:
+		case LoopNodeLoopNodeContentPaneCompartment2EditPart.VISUAL_ID:
+		case ConditionalNodeConditionalNodeCompartment2EditPart.VISUAL_ID:
+		case ExpansionRegionExpansionRegionNodeCompartment2EditPart.VISUAL_ID:
+		case LoopNodeLoopNodeContentPaneCompartmentEditPart.VISUAL_ID:
+		case ConditionalNodeConditionalNodeCompartmentEditPart.VISUAL_ID:
+		case ExpansionRegionExpansionRegionNodeCompartmentEditPart.VISUAL_ID:
+		case ConstraintPreconditionEditPart.VISUAL_ID:
+		case ConstraintPostconditionEditPart.VISUAL_ID:
+			return true;
+		default:
+			break;
+		}
+		return false;
+	}
+
+	/**
+	 * @generated
+	 */
 	public static final IVisualIDRegistry TYPED_ADAPTER = new IVisualIDRegistry() {
 
 		/**
@@ -5045,26 +5069,13 @@ public class UMLVisualIDRegistry {
 		public boolean checkNodeVisualID(View containerView, EObject domainElement, int candidate) {
 			return org.eclipse.uml2.diagram.activity.part.UMLVisualIDRegistry.checkNodeVisualID(containerView, domainElement, candidate);
 		}
-	};
 
-	public static final IVisualIDRegistry ADAPTER = new IVisualIDRegistry() {
-
-		public String getModelID(View view) {
-			return UMLVisualIDRegistry.getModelID(view);
-		}
-
-		public int getVisualID(View view) {
-			return UMLVisualIDRegistry.getVisualID(view);
-		}
-
-		public int getNodeVisualID(View containerView, EObject domainElement) {
-			return UMLVisualIDRegistry.getNodeVisualID(containerView, domainElement);
-		}
-
-		public boolean checkNodeVisualID(View containerView, EObject domainElement, int candidate) {
-			return UMLVisualIDRegistry.checkNodeVisualID(containerView, domainElement, candidate);
+		/**
+		 * @generated
+		 */
+		public boolean isCompartmentVisualID(int visualID) {
+			return org.eclipse.uml2.diagram.activity.part.UMLVisualIDRegistry.isCompartmentVisualID(visualID);
 		}
 
 	};
-
 }
