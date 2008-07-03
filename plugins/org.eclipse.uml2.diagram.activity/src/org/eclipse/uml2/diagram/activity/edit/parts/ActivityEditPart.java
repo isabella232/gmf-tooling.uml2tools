@@ -275,7 +275,6 @@ public class ActivityEditPart extends AbstractBorderedShapeEditPart implements P
 			activityFigureRectangle_name0.setBorder(createBorder0());
 
 			this.add(activityFigureRectangle_name0, BorderLayout.TOP);
-
 			activityFigureRectangle_name0.setLayoutManager(new StackLayout());
 
 			fFigureActivityFigure_name = new Label();

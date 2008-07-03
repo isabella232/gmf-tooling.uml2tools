@@ -218,8 +218,14 @@ public class UMLEditPartFactory implements EditPartFactory {
 			case StructuredActivityNodeEditPart.VISUAL_ID:
 				return new StructuredActivityNodeEditPart(view);
 
+			case StructuredActivityNodeNameEditPart.VISUAL_ID:
+				return new StructuredActivityNodeNameEditPart(view);
+
 			case StructuredActivityNode2EditPart.VISUAL_ID:
 				return new StructuredActivityNode2EditPart(view);
+
+			case StructuredActivityNodeName2EditPart.VISUAL_ID:
+				return new StructuredActivityNodeName2EditPart(view);
 
 			case OpaqueAction2EditPart.VISUAL_ID:
 				return new OpaqueAction2EditPart(view);
@@ -503,8 +509,14 @@ public class UMLEditPartFactory implements EditPartFactory {
 			case LoopNodeEditPart.VISUAL_ID:
 				return new LoopNodeEditPart(view);
 
+			case LoopNodeNameEditPart.VISUAL_ID:
+				return new LoopNodeNameEditPart(view);
+
 			case ConditionalNodeEditPart.VISUAL_ID:
 				return new ConditionalNodeEditPart(view);
+
+			case ConditionalNodeNameEditPart.VISUAL_ID:
+				return new ConditionalNodeNameEditPart(view);
 
 			case ExpansionRegionEditPart.VISUAL_ID:
 				return new ExpansionRegionEditPart(view);

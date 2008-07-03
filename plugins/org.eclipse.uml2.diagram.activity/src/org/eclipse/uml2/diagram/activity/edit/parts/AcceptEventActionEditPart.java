@@ -236,6 +236,7 @@ public class AcceptEventActionEditPart extends ShapeNodeEditPart implements Prim
 			this.addPoint(new Point(getMapMode().DPtoLP(50), getMapMode().DPtoLP(40)));
 			this.addPoint(new Point(getMapMode().DPtoLP(0), getMapMode().DPtoLP(40)));
 			this.addPoint(new Point(getMapMode().DPtoLP(10), getMapMode().DPtoLP(20)));
+			this.setFill(true);
 			this.setBorder(new MarginBorder(getMapMode().DPtoLP(0), getMapMode().DPtoLP(20), getMapMode().DPtoLP(0), getMapMode().DPtoLP(2)));
 			createContents();
 		}

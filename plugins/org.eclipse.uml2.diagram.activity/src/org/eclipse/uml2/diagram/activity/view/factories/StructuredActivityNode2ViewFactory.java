@@ -11,6 +11,7 @@ import org.eclipse.gmf.runtime.emf.core.util.EObjectAdapter;
 import org.eclipse.gmf.runtime.notation.NotationFactory;
 import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.uml2.diagram.activity.edit.parts.StructuredActivityNode2EditPart;
+import org.eclipse.uml2.diagram.activity.edit.parts.StructuredActivityNodeName2EditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.StructuredActivityNodeStructuredActivityContentPaneCompartment2EditPart;
 import org.eclipse.uml2.diagram.activity.part.UMLVisualIDRegistry;
 
@@ -42,6 +43,7 @@ public class StructuredActivityNode2ViewFactory extends AbstractShapeViewFactory
 		if (eObject != null) {
 			eObjectAdapter = new EObjectAdapter(eObject);
 		}
+		getViewService().createNode(eObjectAdapter, view, UMLVisualIDRegistry.getType(StructuredActivityNodeName2EditPart.VISUAL_ID), ViewUtil.APPEND, true, getPreferencesHint());
 		getViewService().createNode(eObjectAdapter, view, UMLVisualIDRegistry.getType(StructuredActivityNodeStructuredActivityContentPaneCompartment2EditPart.VISUAL_ID), ViewUtil.APPEND, true,
 				getPreferencesHint());
 	}

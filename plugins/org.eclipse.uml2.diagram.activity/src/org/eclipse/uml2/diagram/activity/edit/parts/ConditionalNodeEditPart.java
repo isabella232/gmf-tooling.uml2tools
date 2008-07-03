@@ -25,6 +25,7 @@ import org.eclipse.gmf.runtime.gef.ui.figures.NodeFigure;
 import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.uml2.diagram.activity.edit.policies.ConditionalNodeCanonicalEditPolicy;
 import org.eclipse.uml2.diagram.activity.edit.policies.ConditionalNodeItemSemanticEditPolicy;
+import org.eclipse.uml2.diagram.activity.part.UMLVisualIDRegistry;
 import org.eclipse.uml2.diagram.common.editparts.PrimaryShapeEditPart;
 
 /**
@@ -110,6 +111,10 @@ public class ConditionalNodeEditPart extends ShapeNodeEditPart implements Primar
 	 * @generated
 	 */
 	protected boolean addFixedChild(EditPart childEditPart) {
+		if (childEditPart instanceof ConditionalNodeNameEditPart) {
+			((ConditionalNodeNameEditPart) childEditPart).setLabel(getPrimaryShape().getFigureStructuredActivityFigure_name());
+			return true;
+		}
 		if (childEditPart instanceof ConditionalNodeConditionalNodeCompartmentEditPart) {
 			IFigure pane = getPrimaryShape().getFigureStructuredActivityFigure_ContentPane();
 			setupContentPane(pane); // FIXME each comparment should handle his content pane in his own way 
@@ -216,7 +221,19 @@ public class ConditionalNodeEditPart extends ShapeNodeEditPart implements Primar
 	/**
 	 * @generated
 	 */
+	public EditPart getPrimaryChildEditPart() {
+		return getChildBySemanticHint(UMLVisualIDRegistry.getType(ConditionalNodeNameEditPart.VISUAL_ID));
+	}
+
+	/**
+	 * @generated
+	 */
 	public class StructuredActivityFigure extends RoundedRectangle {
+
+		/**
+		 * @generated
+		 */
+		private Label fFigureStructuredActivityFigure_name;
 
 		/**
 		 * @generated
@@ -241,12 +258,6 @@ public class ConditionalNodeEditPart extends ShapeNodeEditPart implements Primar
 		 */
 		private void createContents() {
 
-			fFigureStructuredActivityFigure_ContentPane = new RectangleFigure();
-			fFigureStructuredActivityFigure_ContentPane.setFill(false);
-			fFigureStructuredActivityFigure_ContentPane.setOutline(false);
-
-			this.add(fFigureStructuredActivityFigure_ContentPane, BorderLayout.CENTER);
-
 			RectangleFigure aux_StructuredActivityFigure_LabelContainer0 = new RectangleFigure();
 			aux_StructuredActivityFigure_LabelContainer0.setFill(false);
 			aux_StructuredActivityFigure_LabelContainer0.setOutline(false);
@@ -258,10 +269,30 @@ public class ConditionalNodeEditPart extends ShapeNodeEditPart implements Primar
 			BorderLayout layoutAux_StructuredActivityFigure_LabelContainer0 = new BorderLayout();
 			aux_StructuredActivityFigure_LabelContainer0.setLayoutManager(layoutAux_StructuredActivityFigure_LabelContainer0);
 
-			Label structuredActivityFigure_fixed_structured1 = new Label();
-			structuredActivityFigure_fixed_structured1.setText("\u00ABstructured\u00BB");
+			RectangleFigure structuredActivityFigure_KeywordContainer1 = new RectangleFigure();
+			structuredActivityFigure_KeywordContainer1.setFill(false);
+			structuredActivityFigure_KeywordContainer1.setOutline(false);
 
-			aux_StructuredActivityFigure_LabelContainer0.add(structuredActivityFigure_fixed_structured1, BorderLayout.LEFT);
+			aux_StructuredActivityFigure_LabelContainer0.add(structuredActivityFigure_KeywordContainer1, BorderLayout.TOP);
+
+			BorderLayout layoutStructuredActivityFigure_KeywordContainer1 = new BorderLayout();
+			structuredActivityFigure_KeywordContainer1.setLayoutManager(layoutStructuredActivityFigure_KeywordContainer1);
+
+			Label structuredActivityFigure_keyword2 = new Label();
+			structuredActivityFigure_keyword2.setText("\u00ABstructured\u00BB");
+
+			structuredActivityFigure_KeywordContainer1.add(structuredActivityFigure_keyword2, BorderLayout.LEFT);
+
+			fFigureStructuredActivityFigure_name = new Label();
+			fFigureStructuredActivityFigure_name.setText("");
+
+			aux_StructuredActivityFigure_LabelContainer0.add(fFigureStructuredActivityFigure_name, BorderLayout.CENTER);
+
+			fFigureStructuredActivityFigure_ContentPane = new RectangleFigure();
+			fFigureStructuredActivityFigure_ContentPane.setFill(false);
+			fFigureStructuredActivityFigure_ContentPane.setOutline(false);
+
+			this.add(fFigureStructuredActivityFigure_ContentPane, BorderLayout.CENTER);
 
 		}
 
@@ -282,6 +313,13 @@ public class ConditionalNodeEditPart extends ShapeNodeEditPart implements Primar
 		 */
 		protected void setUseLocalCoordinates(boolean useLocalCoordinates) {
 			myUseLocalCoordinates = useLocalCoordinates;
+		}
+
+		/**
+		 * @generated
+		 */
+		public Label getFigureStructuredActivityFigure_name() {
+			return fFigureStructuredActivityFigure_name;
 		}
 
 		/**

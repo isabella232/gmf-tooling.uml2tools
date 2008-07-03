@@ -235,6 +235,7 @@ public class SendSignalAction2EditPart extends ShapeNodeEditPart implements Prim
 			this.addPoint(new Point(getMapMode().DPtoLP(50), getMapMode().DPtoLP(20)));
 			this.addPoint(new Point(getMapMode().DPtoLP(40), getMapMode().DPtoLP(40)));
 			this.addPoint(new Point(getMapMode().DPtoLP(0), getMapMode().DPtoLP(40)));
+			this.setFill(true);
 			this.setBorder(new MarginBorder(getMapMode().DPtoLP(0), getMapMode().DPtoLP(5), getMapMode().DPtoLP(0), getMapMode().DPtoLP(17)));
 			createContents();
 		}

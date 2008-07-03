@@ -39,6 +39,7 @@ import org.eclipse.uml2.diagram.activity.edit.parts.CentralBufferNodeNameEditPar
 import org.eclipse.uml2.diagram.activity.edit.parts.CentralBufferNodeOrdering2EditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.CentralBufferNodeOrdering3EditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.CentralBufferNodeOrderingEditPart;
+import org.eclipse.uml2.diagram.activity.edit.parts.ConditionalNodeNameEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.ControlFlowName2EditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.ControlFlowName3EditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.ControlFlowNameEditPart;
@@ -72,6 +73,7 @@ import org.eclipse.uml2.diagram.activity.edit.parts.InputPinOrdering7EditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.InputPinOrderingEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.LiteralString2EditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.LiteralStringEditPart;
+import org.eclipse.uml2.diagram.activity.edit.parts.LoopNodeNameEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.ObjectFlowName2EditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.ObjectFlowName3EditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.ObjectFlowNameEditPart;
@@ -99,6 +101,8 @@ import org.eclipse.uml2.diagram.activity.edit.parts.PinOrdering3EditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.PinOrderingEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.SendSignalActionName2EditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.SendSignalActionNameEditPart;
+import org.eclipse.uml2.diagram.activity.edit.parts.StructuredActivityNodeName2EditPart;
+import org.eclipse.uml2.diagram.activity.edit.parts.StructuredActivityNodeNameEditPart;
 import org.eclipse.uml2.diagram.activity.parser.ActivityEdgeGuardParser;
 import org.eclipse.uml2.diagram.activity.parser.ActivityEdgeWeightParser;
 import org.eclipse.uml2.diagram.activity.parser.ExpansionRegionParser;
@@ -855,6 +859,54 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 	 */
 	protected IParser createInputPinOrdering_5062Parser() {
 		return new ObjectNodeAttributesParser();
+	}
+
+	/**
+	 * @generated
+	 */
+	private IParser structuredActivityNodeName_5090Parser;
+
+	/**
+	 * @generated
+	 */
+	private IParser getStructuredActivityNodeName_5090Parser() {
+		if (structuredActivityNodeName_5090Parser == null) {
+			structuredActivityNodeName_5090Parser = createStructuredActivityNodeName_5090Parser();
+		}
+		return structuredActivityNodeName_5090Parser;
+	}
+
+	/**
+	 * @generated
+	 */
+	protected IParser createStructuredActivityNodeName_5090Parser() {
+		EAttribute[] features = new EAttribute[] { UMLPackage.eINSTANCE.getNamedElement_Name(), };
+		MessageFormatParser parser = new MessageFormatParser(features);
+		return parser;
+	}
+
+	/**
+	 * @generated
+	 */
+	private IParser structuredActivityNodeName_5089Parser;
+
+	/**
+	 * @generated
+	 */
+	private IParser getStructuredActivityNodeName_5089Parser() {
+		if (structuredActivityNodeName_5089Parser == null) {
+			structuredActivityNodeName_5089Parser = createStructuredActivityNodeName_5089Parser();
+		}
+		return structuredActivityNodeName_5089Parser;
+	}
+
+	/**
+	 * @generated
+	 */
+	protected IParser createStructuredActivityNodeName_5089Parser() {
+		EAttribute[] features = new EAttribute[] { UMLPackage.eINSTANCE.getNamedElement_Name(), };
+		MessageFormatParser parser = new MessageFormatParser(features);
+		return parser;
 	}
 
 	/**
@@ -1924,6 +1976,54 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 	/**
 	 * @generated
 	 */
+	private IParser loopNodeName_5091Parser;
+
+	/**
+	 * @generated
+	 */
+	private IParser getLoopNodeName_5091Parser() {
+		if (loopNodeName_5091Parser == null) {
+			loopNodeName_5091Parser = createLoopNodeName_5091Parser();
+		}
+		return loopNodeName_5091Parser;
+	}
+
+	/**
+	 * @generated
+	 */
+	protected IParser createLoopNodeName_5091Parser() {
+		EAttribute[] features = new EAttribute[] { UMLPackage.eINSTANCE.getNamedElement_Name(), };
+		MessageFormatParser parser = new MessageFormatParser(features);
+		return parser;
+	}
+
+	/**
+	 * @generated
+	 */
+	private IParser conditionalNodeName_5092Parser;
+
+	/**
+	 * @generated
+	 */
+	private IParser getConditionalNodeName_5092Parser() {
+		if (conditionalNodeName_5092Parser == null) {
+			conditionalNodeName_5092Parser = createConditionalNodeName_5092Parser();
+		}
+		return conditionalNodeName_5092Parser;
+	}
+
+	/**
+	 * @generated
+	 */
+	protected IParser createConditionalNodeName_5092Parser() {
+		EAttribute[] features = new EAttribute[] { UMLPackage.eINSTANCE.getNamedElement_Name(), };
+		MessageFormatParser parser = new MessageFormatParser(features);
+		return parser;
+	}
+
+	/**
+	 * @generated
+	 */
 	private IParser expansionRegionMode_5087Parser;
 
 	/**
@@ -2198,6 +2298,10 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 			return getInputPinName_5013Parser();
 		case InputPinOrdering5EditPart.VISUAL_ID:
 			return getInputPinOrdering_5062Parser();
+		case StructuredActivityNodeNameEditPart.VISUAL_ID:
+			return getStructuredActivityNodeName_5090Parser();
+		case StructuredActivityNodeName2EditPart.VISUAL_ID:
+			return getStructuredActivityNodeName_5089Parser();
 		case OpaqueActionName2EditPart.VISUAL_ID:
 			return getOpaqueActionName_5015Parser();
 		case AcceptEventActionName2EditPart.VISUAL_ID:
@@ -2290,6 +2394,10 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 			return getSendSignalActionName_5080Parser();
 		case ExpansionRegionMode2EditPart.VISUAL_ID:
 			return getExpansionRegionMode_5088Parser();
+		case LoopNodeNameEditPart.VISUAL_ID:
+			return getLoopNodeName_5091Parser();
+		case ConditionalNodeNameEditPart.VISUAL_ID:
+			return getConditionalNodeName_5092Parser();
 		case ExpansionRegionModeEditPart.VISUAL_ID:
 			return getExpansionRegionMode_5087Parser();
 		case LiteralStringEditPart.VISUAL_ID:

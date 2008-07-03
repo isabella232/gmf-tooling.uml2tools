@@ -293,7 +293,6 @@ public class CallBehaviorAction3EditPart extends AbstractBorderedShapeEditPart i
 			actionCallBehaviorFigure_AuxBottomLeft1.setOutline(false);
 
 			actionCallBehaviorFigure_AuxBottom0.add(actionCallBehaviorFigure_AuxBottomLeft1, BorderLayout.LEFT);
-
 			actionCallBehaviorFigure_AuxBottomLeft1.setLayoutManager(new StackLayout());
 
 			PolylineContainer actionCallBehaviorFigure_AuxIconOwner2 = new PolylineContainer();

@@ -254,7 +254,6 @@ public class DataStoreNodeEditPart extends AbstractBorderedShapeEditPart impleme
 		 * @generated
 		 */
 		public DataStoreFigure() {
-
 			this.setLayoutManager(new StackLayout());
 			this.setBorder(new MarginBorder(getMapMode().DPtoLP(5), getMapMode().DPtoLP(5), getMapMode().DPtoLP(5), getMapMode().DPtoLP(5)));
 			createContents();

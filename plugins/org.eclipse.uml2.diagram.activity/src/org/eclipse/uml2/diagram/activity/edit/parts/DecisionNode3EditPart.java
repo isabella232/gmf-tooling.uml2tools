@@ -160,6 +160,7 @@ public class DecisionNode3EditPart extends ShapeNodeEditPart implements PrimaryS
 			this.addPoint(new Point(getMapMode().DPtoLP(40), getMapMode().DPtoLP(20)));
 			this.addPoint(new Point(getMapMode().DPtoLP(20), getMapMode().DPtoLP(40)));
 			this.addPoint(new Point(getMapMode().DPtoLP(0), getMapMode().DPtoLP(20)));
+			this.setFill(true);
 		}
 
 		/**
