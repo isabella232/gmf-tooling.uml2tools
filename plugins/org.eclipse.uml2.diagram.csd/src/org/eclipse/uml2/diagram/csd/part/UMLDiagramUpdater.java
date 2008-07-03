@@ -2019,7 +2019,6 @@ public class UMLDiagramUpdater {
 		return result;
 	}
 
-
 	/**
 	 * @NOT-generated
 	 */

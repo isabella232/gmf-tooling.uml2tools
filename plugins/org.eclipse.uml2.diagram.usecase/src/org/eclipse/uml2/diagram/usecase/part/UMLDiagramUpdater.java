@@ -1555,7 +1555,6 @@ public class UMLDiagramUpdater {
 		return result;
 	}
 
-
 	/**
 	 * @generated
 	 */
