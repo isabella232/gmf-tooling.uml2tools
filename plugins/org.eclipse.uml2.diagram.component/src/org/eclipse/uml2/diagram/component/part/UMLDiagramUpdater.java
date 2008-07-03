@@ -1,11 +1,14 @@
 package org.eclipse.uml2.diagram.component.part;
 
+import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Collections;
+import java.util.HashSet;
 import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
+import java.util.Set;
 
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EStructuralFeature;
@@ -1868,12 +1871,29 @@ public class UMLDiagramUpdater {
 	}
 
 	/**
-	 * @generated
+	 * @generated NOT
 	 */
 	private static Collection getOutgoingFeatureModelFacetLinks_Component_Required_4007(Component source) {
 		Collection result = new LinkedList();
+//      Collect links that can be duplicated  
+		final Set<Interface> requiredInterfacesForOwnedPorts = new HashSet<Interface>();
+		for (Port p: source.getOwnedPorts()) {
+			requiredInterfacesForOwnedPorts.addAll(p.getRequireds());
+		}
 		for (Iterator destinations = source.getRequireds().iterator(); destinations.hasNext();) {
 			Interface destination = (Interface) destinations.next();
+//          'Duplicated' links from port on the boundary of a component. 
+//			When required interface link is created from a port on the bounday of a component it displayed twice - 
+//			as a link from port to interface and a link from a component to interface			
+//			Both of the links are legal required interface links, because both
+//			Component#getRequireds() and Port#getRequireds() methods return the same
+//			interface as a target. At the same time, displaying the link twice makes no
+//			sense. For this case I propose the following solution - do not show required
+//			interface links for the port if its port has the same interface as a required
+//			interface. 
+			if (requiredInterfacesForOwnedPorts.contains(destination)) {
+				continue;
+			}
 			result.add(new UMLLinkDescriptor(source, destination, UMLElementTypes.ComponentRequired_4007, ComponentRequiredEditPart.VISUAL_ID));
 		}
 		return result;
