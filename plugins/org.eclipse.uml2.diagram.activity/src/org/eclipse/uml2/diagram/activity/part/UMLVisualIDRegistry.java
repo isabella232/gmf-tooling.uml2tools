@@ -5040,6 +5040,82 @@ public class UMLVisualIDRegistry {
 	/**
 	 * @generated
 	 */
+	public static boolean isSemanticLeafVisualID(int visualID) {
+		switch (visualID) {
+		case ConstraintEditPart.VISUAL_ID:
+		case Constraint2EditPart.VISUAL_ID:
+		case AcceptEventActionEditPart.VISUAL_ID:
+		case AcceptEventAction2EditPart.VISUAL_ID:
+		case ActivityFinalNodeEditPart.VISUAL_ID:
+		case DecisionNodeEditPart.VISUAL_ID:
+		case MergeNodeEditPart.VISUAL_ID:
+		case InitialNodeEditPart.VISUAL_ID:
+		case DataStoreNodeEditPart.VISUAL_ID:
+		case CentralBufferNodeEditPart.VISUAL_ID:
+		case OutputPinEditPart.VISUAL_ID:
+		case FlowFinalNodeEditPart.VISUAL_ID:
+		case ForkNodeEditPart.VISUAL_ID:
+		case JoinNodeEditPart.VISUAL_ID:
+		case PinEditPart.VISUAL_ID:
+		case OutputPin2EditPart.VISUAL_ID:
+		case InputPinEditPart.VISUAL_ID:
+		case InputPin2EditPart.VISUAL_ID:
+		case InputPin3EditPart.VISUAL_ID:
+		case OutputPin3EditPart.VISUAL_ID:
+		case InputPin4EditPart.VISUAL_ID:
+		case InputPin5EditPart.VISUAL_ID:
+		case StructuredActivityNodeEditPart.VISUAL_ID:
+		case StructuredActivityNode2EditPart.VISUAL_ID:
+		case AcceptEventAction3EditPart.VISUAL_ID:
+		case AcceptEventAction4EditPart.VISUAL_ID:
+		case ActivityFinalNode2EditPart.VISUAL_ID:
+		case DecisionNode2EditPart.VISUAL_ID:
+		case FlowFinalNode2EditPart.VISUAL_ID:
+		case Pin2EditPart.VISUAL_ID:
+		case ForkNode2EditPart.VISUAL_ID:
+		case JoinNode2EditPart.VISUAL_ID:
+		case DataStoreNode2EditPart.VISUAL_ID:
+		case CentralBufferNode2EditPart.VISUAL_ID:
+		case InputPin6EditPart.VISUAL_ID:
+		case OutputPin4EditPart.VISUAL_ID:
+		case OpaqueBehaviorEditPart.VISUAL_ID:
+		case ActivityParameterNodeEditPart.VISUAL_ID:
+		case SendSignalActionEditPart.VISUAL_ID:
+		case AcceptEventAction5EditPart.VISUAL_ID:
+		case AcceptEventAction6EditPart.VISUAL_ID:
+		case ActivityFinalNode3EditPart.VISUAL_ID:
+		case DecisionNode3EditPart.VISUAL_ID:
+		case MergeNode2EditPart.VISUAL_ID:
+		case InitialNode2EditPart.VISUAL_ID:
+		case DataStoreNode3EditPart.VISUAL_ID:
+		case CentralBufferNode3EditPart.VISUAL_ID:
+		case FlowFinalNode3EditPart.VISUAL_ID:
+		case ForkNode3EditPart.VISUAL_ID:
+		case JoinNode3EditPart.VISUAL_ID:
+		case Pin3EditPart.VISUAL_ID:
+		case StructuredActivityNode3EditPart.VISUAL_ID:
+		case StructuredActivityNode4EditPart.VISUAL_ID:
+		case InputPin7EditPart.VISUAL_ID:
+		case OutputPin5EditPart.VISUAL_ID:
+		case SendSignalAction2EditPart.VISUAL_ID:
+		case LoopNode2EditPart.VISUAL_ID:
+		case ConditionalNode2EditPart.VISUAL_ID:
+		case ExpansionRegion2EditPart.VISUAL_ID:
+		case LoopNodeEditPart.VISUAL_ID:
+		case ConditionalNodeEditPart.VISUAL_ID:
+		case ExpansionRegionEditPart.VISUAL_ID:
+		case LiteralStringEditPart.VISUAL_ID:
+		case LiteralString2EditPart.VISUAL_ID:
+			return true;
+		default:
+			break;
+		}
+		return false;
+	}
+
+	/**
+	 * @generated
+	 */
 	public static final IVisualIDRegistry TYPED_ADAPTER = new IVisualIDRegistry() {
 
 		/**
@@ -5077,5 +5153,11 @@ public class UMLVisualIDRegistry {
 			return org.eclipse.uml2.diagram.activity.part.UMLVisualIDRegistry.isCompartmentVisualID(visualID);
 		}
 
+		/**
+		 * @generated
+		 */
+		public boolean isSemanticLeafVisualID(int visualID) {
+			return org.eclipse.uml2.diagram.activity.part.UMLVisualIDRegistry.isSemanticLeafVisualID(visualID);
+		}
 	};
 }

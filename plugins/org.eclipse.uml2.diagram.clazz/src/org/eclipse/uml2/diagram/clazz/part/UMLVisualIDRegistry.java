@@ -2042,6 +2042,60 @@ public class UMLVisualIDRegistry {
 	/**
 	 * @generated
 	 */
+	public static boolean isSemanticLeafVisualID(int visualID) {
+		switch (visualID) {
+		case Package2EditPart.VISUAL_ID:
+		case InterfaceEditPart.VISUAL_ID:
+		case ConstraintEditPart.VISUAL_ID:
+		case InstanceSpecification2EditPart.VISUAL_ID:
+		case DependencyEditPart.VISUAL_ID:
+		case GeneralizationSetEditPart.VISUAL_ID:
+		case Interface2EditPart.VISUAL_ID:
+		case Package4EditPart.VISUAL_ID:
+		case AssociationClassRhombEditPart.VISUAL_ID:
+		case PackageAsFrameEditPart.VISUAL_ID:
+		case Package3EditPart.VISUAL_ID:
+		case ClassEditPart.VISUAL_ID:
+		case DataTypeEditPart.VISUAL_ID:
+		case PrimitiveTypeEditPart.VISUAL_ID:
+		case EnumerationEditPart.VISUAL_ID:
+		case AssociationClassEditPart.VISUAL_ID:
+		case Interface3EditPart.VISUAL_ID:
+		case InstanceSpecificationEditPart.VISUAL_ID:
+		case PropertyEditPart.VISUAL_ID:
+		case OperationEditPart.VISUAL_ID:
+		case Class3EditPart.VISUAL_ID:
+		case PortEditPart.VISUAL_ID:
+		case RedefinableTemplateSignatureEditPart.VISUAL_ID:
+		case Property2EditPart.VISUAL_ID:
+		case Operation2EditPart.VISUAL_ID:
+		case Property3EditPart.VISUAL_ID:
+		case Operation3EditPart.VISUAL_ID:
+		case Property4EditPart.VISUAL_ID:
+		case Operation4EditPart.VISUAL_ID:
+		case EnumerationLiteralEditPart.VISUAL_ID:
+		case Property5EditPart.VISUAL_ID:
+		case Operation5EditPart.VISUAL_ID:
+		case SlotEditPart.VISUAL_ID:
+		case Property6EditPart.VISUAL_ID:
+		case Operation6EditPart.VISUAL_ID:
+		case Class4EditPart.VISUAL_ID:
+		case ElementImportEditPart.VISUAL_ID:
+		case Package6EditPart.VISUAL_ID:
+		case InstanceSpecification3EditPart.VISUAL_ID:
+		case LiteralStringEditPart.VISUAL_ID:
+		case LiteralIntegerEditPart.VISUAL_ID:
+		case ExpressionEditPart.VISUAL_ID:
+			return true;
+		default:
+			break;
+		}
+		return false;
+	}
+
+	/**
+	 * @generated
+	 */
 	public static final IVisualIDRegistry TYPED_ADAPTER = new IVisualIDRegistry() {
 
 		/**
@@ -2079,6 +2133,12 @@ public class UMLVisualIDRegistry {
 			return org.eclipse.uml2.diagram.clazz.part.UMLVisualIDRegistry.isCompartmentVisualID(visualID);
 		}
 
+		/**
+		 * @generated
+		 */
+		public boolean isSemanticLeafVisualID(int visualID) {
+			return org.eclipse.uml2.diagram.clazz.part.UMLVisualIDRegistry.isSemanticLeafVisualID(visualID);
+		}
 	};
 
 }

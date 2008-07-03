@@ -1121,6 +1121,37 @@ public class UMLVisualIDRegistry {
 	/**
 	 * @generated
 	 */
+	public static boolean isSemanticLeafVisualID(int visualID) {
+		switch (visualID) {
+		case RegionEditPart.VISUAL_ID:
+		case StateEditPart.VISUAL_ID:
+		case BehaviorEditPart.VISUAL_ID:
+		case Behavior2EditPart.VISUAL_ID:
+		case Behavior3EditPart.VISUAL_ID:
+		case Region2EditPart.VISUAL_ID:
+		case ConnectionPointReferenceEditPart.VISUAL_ID:
+		case ConnectionPointReference2EditPart.VISUAL_ID:
+		case FinalStateEditPart.VISUAL_ID:
+		case PseudostateEditPart.VISUAL_ID:
+		case Pseudostate2EditPart.VISUAL_ID:
+		case Pseudostate3EditPart.VISUAL_ID:
+		case Pseudostate4EditPart.VISUAL_ID:
+		case Pseudostate5EditPart.VISUAL_ID:
+		case Pseudostate6EditPart.VISUAL_ID:
+		case Pseudostate7EditPart.VISUAL_ID:
+		case Pseudostate8EditPart.VISUAL_ID:
+		case Pseudostate9EditPart.VISUAL_ID:
+		case Pseudostate10EditPart.VISUAL_ID:
+			return true;
+		default:
+			break;
+		}
+		return false;
+	}
+
+	/**
+	 * @generated
+	 */
 	public static final IVisualIDRegistry TYPED_ADAPTER = new IVisualIDRegistry() {
 
 		/**
@@ -1158,6 +1189,12 @@ public class UMLVisualIDRegistry {
 			return org.eclipse.uml2.diagram.statemachine.part.UMLVisualIDRegistry.isCompartmentVisualID(visualID);
 		}
 
+		/**
+		 * @generated
+		 */
+		public boolean isSemanticLeafVisualID(int visualID) {
+			return org.eclipse.uml2.diagram.statemachine.part.UMLVisualIDRegistry.isSemanticLeafVisualID(visualID);
+		}
 	};
 
 }

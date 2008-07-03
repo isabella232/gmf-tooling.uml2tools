@@ -14,4 +14,6 @@ public interface IVisualIDRegistry {
 	public boolean checkNodeVisualID(View containerView, EObject domainElement, int candidate);
 	
 	public boolean isCompartmentVisualID(int visualID);
+	
+	public boolean isSemanticLeafVisualID(int visualID);
 }

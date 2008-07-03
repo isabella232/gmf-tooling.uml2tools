@@ -18,6 +18,7 @@
 
 «EXTENSION aspects::xpt::diagram::updater::DiagramHeader»
 «EXTENSION xpt::editor::Utils»
+«EXTENSION xpt::diagram::updater::Utils»
 
 «AROUND additions FOR gmfgen::GenDiagram»
 
@@ -30,6 +31,8 @@
 	«EXPAND checkNodeVisualID»
 	
 	«EXPAND isCompartmentVisualID»
+	
+	«EXPAND isSemanticLeafVisualID»
 	
 	«EXPAND typedSharedInstance»
 «ENDAROUND»
@@ -204,6 +207,27 @@ public static int «EXPAND getChildDescriptorVisualIDMethodName»(«descriptorFQN» 
 
 «ENDDEFINE»
 
+«DEFINE isSemanticLeafVisualIDMethodName FOR gmfgen::GenDiagram»isSemanticLeafVisualID«ENDDEFINE»
+«DEFINE isSemanticLeafVisualIDMethodCall FOR gmfgen::GenDiagram»«getVisualIDRegistryQualifiedClassName()».«EXPAND isSemanticLeafVisualIDMethodName»«ENDDEFINE»
+
+«DEFINE isSemanticLeafVisualID FOR gmfgen::GenDiagram-»
+	«EXPAND xpt::Common::generatedMemberComment»
+	public static boolean «EXPAND isSemanticLeafVisualIDMethodName»(int visualID) {
+		switch (visualID) {
+			«FOREACH this.getAllNodes() AS nextNode-»
+			«IF getSemanticChildren(nextNode).isEmpty()-»
+			«EXPAND xpt::Common::caseVisualID FOR nextNode»
+			«ENDIF-»
+			«ENDFOREACH-»
+				return true;
+			default:
+				break;
+		}
+		return false;
+	}
+
+«ENDDEFINE»
+
 «DEFINE checkNodeVisualIDMethodName FOR gmfgen::GenDiagram»checkNodeVisualID«ENDDEFINE»
 «DEFINE checkNodeVisualIDMethodCall FOR gmfgen::GenDiagram»«getVisualIDRegistryQualifiedClassName()».«EXPAND checkNodeVisualIDMethodName»«ENDDEFINE»
 
@@ -250,6 +274,10 @@ public static int «EXPAND getChildDescriptorVisualIDMethodName»(«descriptorFQN» 
 			return «EXPAND isCompartmentVisualIDMethodCall»(visualID);
 		}
 
+		«EXPAND xpt::Common::generatedMemberComment»
+		public boolean «EXPAND isSemanticLeafVisualIDMethodName»(int visualID) {
+			return «EXPAND isSemanticLeafVisualIDMethodCall»(visualID);
+		}
 	};
 	
 «ENDDEFINE»

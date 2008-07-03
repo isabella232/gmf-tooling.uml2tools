@@ -1005,6 +1005,35 @@ public class UMLVisualIDRegistry {
 	/**
 	 * @generated
 	 */
+	public static boolean isSemanticLeafVisualID(int visualID) {
+		switch (visualID) {
+		case Artifact2EditPart.VISUAL_ID:
+		case Interface2EditPart.VISUAL_ID:
+		case Package2EditPart.VISUAL_ID:
+		case Package3EditPart.VISUAL_ID:
+		case PortEditPart.VISUAL_ID:
+		case ArtifactEditPart.VISUAL_ID:
+		case InterfaceEditPart.VISUAL_ID:
+		case PropertyEditPart.VISUAL_ID:
+		case AssemblyConnectorCircleEditPart.VISUAL_ID:
+		case ElementImportEditPart.VISUAL_ID:
+		case Package4EditPart.VISUAL_ID:
+		case Class3EditPart.VISUAL_ID:
+		case Component3EditPart.VISUAL_ID:
+		case ClassDiagramNotationPropertyEditPart.VISUAL_ID:
+		case ClassDiagramNotationOperationEditPart.VISUAL_ID:
+		case ClassDiagramNotationInnerClassEditPart.VISUAL_ID:
+		case PortOnClassEditPart.VISUAL_ID:
+			return true;
+		default:
+			break;
+		}
+		return false;
+	}
+
+	/**
+	 * @generated
+	 */
 	public static final IVisualIDRegistry TYPED_ADAPTER = new IVisualIDRegistry() {
 
 		/**
@@ -1042,6 +1071,12 @@ public class UMLVisualIDRegistry {
 			return org.eclipse.uml2.diagram.component.part.UMLVisualIDRegistry.isCompartmentVisualID(visualID);
 		}
 
+		/**
+		 * @generated
+		 */
+		public boolean isSemanticLeafVisualID(int visualID) {
+			return org.eclipse.uml2.diagram.component.part.UMLVisualIDRegistry.isSemanticLeafVisualID(visualID);
+		}
 	};
 
 }
