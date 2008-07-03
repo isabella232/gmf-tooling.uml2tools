@@ -20,6 +20,7 @@ public class InstanceSpecificationNameViewFactory extends BasicNodeViewFactory {
 	 */
 	protected List createStylesGen(View view) {
 		List styles = new ArrayList();
+
 		return styles;
 	}
 

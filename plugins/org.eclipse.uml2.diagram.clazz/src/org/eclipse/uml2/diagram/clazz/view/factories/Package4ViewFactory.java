@@ -29,6 +29,7 @@ public class Package4ViewFactory extends AbstractShapeViewFactory {
 	protected List createStyles(View view) {
 		List styles = new ArrayList();
 		styles.add(NotationFactory.eINSTANCE.createShapeStyle());
+
 		return styles;
 	}
 

@@ -16,6 +16,7 @@ public class TemplateSignatureNode_signatureViewFactory extends BasicNodeViewFac
 	 */
 	protected List createStyles(View view) {
 		List styles = new ArrayList();
+
 		return styles;
 	}
 }

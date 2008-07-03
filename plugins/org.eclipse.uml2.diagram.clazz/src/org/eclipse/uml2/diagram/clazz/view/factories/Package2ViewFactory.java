@@ -36,6 +36,7 @@ public class Package2ViewFactory extends AbstractShapeViewFactory {
 			HintedDiagramLinkStyle diagramFacet = NotationFactory.eINSTANCE.createHintedDiagramLinkStyle();
 			styles.add(diagramFacet);
 		}
+
 		return styles;
 	}
 

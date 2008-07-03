@@ -19,6 +19,7 @@ public class Class3ViewFactory extends AbstractLabelViewFactory {
 	 */
 	protected List createStyles(View view) {
 		List styles = new ArrayList();
+
 		return styles;
 	}
 

@@ -10,6 +10,7 @@ import org.eclipse.emf.ecore.EcoreFactory;
 import org.eclipse.gmf.runtime.diagram.core.util.ViewUtil;
 import org.eclipse.gmf.runtime.diagram.ui.view.factories.AbstractShapeViewFactory;
 import org.eclipse.gmf.runtime.emf.core.util.EObjectAdapter;
+import org.eclipse.gmf.runtime.notation.CanonicalStyle;
 import org.eclipse.gmf.runtime.notation.NotationFactory;
 import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.uml2.diagram.clazz.edit.parts.PackageEditPart;
@@ -30,6 +31,10 @@ public class PrimitiveType2ViewFactory extends AbstractShapeViewFactory {
 	protected List createStyles(View view) {
 		List styles = new ArrayList();
 		styles.add(NotationFactory.eINSTANCE.createShapeStyle());
+
+		CanonicalStyle canonicalStyle = NotationFactory.eINSTANCE.createCanonicalStyle();
+		canonicalStyle.setCanonical(true);
+		styles.add(canonicalStyle);
 		return styles;
 	}
 
