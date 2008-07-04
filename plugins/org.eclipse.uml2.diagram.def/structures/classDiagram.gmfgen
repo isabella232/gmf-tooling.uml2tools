@@ -2687,6 +2687,7 @@
           href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
       <elementType
           xsi:type="gmfgen:SpecializationType"
+          displayName="Interface (Class Notation)"
           metamodelType="//@diagram/@childNodes.6/@elementType"
           editHelperAdviceClassName="InterfaceEditHelperAdvice"/>
       <viewmap
@@ -2856,6 +2857,7 @@
           href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
       <elementType
           xsi:type="gmfgen:SpecializationType"
+          displayName="Package (Frame notation)"
           metamodelType="//@diagram/@elementType"/>
       <viewmap
           xsi:type="gmfgen:InnerClassViewmap"
