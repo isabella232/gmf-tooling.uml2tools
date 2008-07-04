@@ -34,7 +34,6 @@ public class AssociationName5ViewFactory extends AbstractLabelViewFactory {
 	 */
 	protected List createStyles(View view) {
 		List styles = new ArrayList();
-
 		return styles;
 	}
 }

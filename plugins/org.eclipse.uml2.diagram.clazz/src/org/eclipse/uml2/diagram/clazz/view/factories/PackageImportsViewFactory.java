@@ -27,7 +27,6 @@ public class PackageImportsViewFactory extends BasicNodeViewFactory {
 		styles.add(NotationFactory.eINSTANCE.createDrawerStyle());
 		styles.add(NotationFactory.eINSTANCE.createSortingStyle());
 		styles.add(NotationFactory.eINSTANCE.createFilteringStyle());
-
 		CanonicalStyle canonicalStyle = NotationFactory.eINSTANCE.createCanonicalStyle();
 		canonicalStyle.setCanonical(true);
 		styles.add(canonicalStyle);

@@ -20,7 +20,6 @@ public class ExpressionViewFactory extends AbstractLabelViewFactory {
 	 */
 	protected List createStyles(View view) {
 		List styles = new ArrayList();
-
 		return styles;
 	}
 

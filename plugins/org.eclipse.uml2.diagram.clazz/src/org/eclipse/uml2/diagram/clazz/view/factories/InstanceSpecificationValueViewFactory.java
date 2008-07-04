@@ -26,7 +26,6 @@ public class InstanceSpecificationValueViewFactory extends BasicNodeViewFactory 
 		List styles = new ArrayList();
 		styles.add(NotationFactory.eINSTANCE.createSortingStyle());
 		styles.add(NotationFactory.eINSTANCE.createFilteringStyle());
-
 		CanonicalStyle canonicalStyle = NotationFactory.eINSTANCE.createCanonicalStyle();
 		canonicalStyle.setCanonical(true);
 		styles.add(canonicalStyle);

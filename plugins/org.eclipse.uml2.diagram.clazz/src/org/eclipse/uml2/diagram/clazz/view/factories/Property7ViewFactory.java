@@ -28,7 +28,6 @@ public class Property7ViewFactory extends ConnectionViewFactory {
 		List styles = new ArrayList();
 		styles.add(NotationFactory.eINSTANCE.createRoutingStyle());
 		styles.add(NotationFactory.eINSTANCE.createFontStyle());
-
 		return styles;
 	}
 

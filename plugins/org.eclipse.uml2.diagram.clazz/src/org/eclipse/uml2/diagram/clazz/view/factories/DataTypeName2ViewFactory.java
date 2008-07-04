@@ -16,7 +16,6 @@ public class DataTypeName2ViewFactory extends BasicNodeViewFactory {
 	 */
 	protected List createStyles(View view) {
 		List styles = new ArrayList();
-
 		return styles;
 	}
 }

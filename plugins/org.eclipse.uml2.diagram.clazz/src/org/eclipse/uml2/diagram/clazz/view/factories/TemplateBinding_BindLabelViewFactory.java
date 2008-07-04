@@ -36,7 +36,6 @@ public class TemplateBinding_BindLabelViewFactory extends AbstractLabelViewFacto
 	protected List createStyles(View view) {
 		List styles = new ArrayList();
 		styles.add(NotationFactory.eINSTANCE.createDescriptionStyle());
-
 		return styles;
 	}
 }

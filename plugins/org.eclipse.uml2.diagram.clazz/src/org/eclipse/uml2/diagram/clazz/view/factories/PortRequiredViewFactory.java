@@ -22,7 +22,6 @@ public class PortRequiredViewFactory extends ConnectionViewFactory {
 		List styles = new ArrayList();
 		styles.add(NotationFactory.eINSTANCE.createConnectorStyle());
 		styles.add(NotationFactory.eINSTANCE.createFontStyle());
-
 		return styles;
 	}
 

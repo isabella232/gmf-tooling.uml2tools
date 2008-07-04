@@ -30,7 +30,6 @@ public class InstanceSpecification4ViewFactory extends AbstractShapeViewFactory 
 	protected List createStyles(View view) {
 		List styles = new ArrayList();
 		styles.add(NotationFactory.eINSTANCE.createShapeStyle());
-
 		CanonicalStyle canonicalStyle = NotationFactory.eINSTANCE.createCanonicalStyle();
 		canonicalStyle.setCanonical(true);
 		styles.add(canonicalStyle);

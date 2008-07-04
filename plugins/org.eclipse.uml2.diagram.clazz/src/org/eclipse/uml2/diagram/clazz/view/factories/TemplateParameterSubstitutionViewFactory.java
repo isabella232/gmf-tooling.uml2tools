@@ -34,7 +34,6 @@ public class TemplateParameterSubstitutionViewFactory extends AbstractLabelViewF
 	 */
 	protected List createStyles(View view) {
 		List styles = new ArrayList();
-
 		return styles;
 	}
 }
