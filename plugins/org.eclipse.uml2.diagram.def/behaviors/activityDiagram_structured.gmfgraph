@@ -25,7 +25,8 @@
               xsi:type="gmfgraph:BorderLayout"/>
           <insets
               left="5"
-              bottom="5"/>
+              bottom="5"
+              right="5"/>
           <children
               xsi:type="gmfgraph:Rectangle"
               name="StructuredActivityFigure_KeywordContainer"

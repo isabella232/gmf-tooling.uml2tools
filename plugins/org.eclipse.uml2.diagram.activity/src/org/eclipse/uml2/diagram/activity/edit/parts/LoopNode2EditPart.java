@@ -250,7 +250,7 @@ public class LoopNode2EditPart extends ShapeNodeEditPart implements PrimaryShape
 			aux_StructuredActivityFigure_LabelContainer0.setFill(false);
 			aux_StructuredActivityFigure_LabelContainer0.setOutline(false);
 
-			aux_StructuredActivityFigure_LabelContainer0.setBorder(new MarginBorder(getMapMode().DPtoLP(0), getMapMode().DPtoLP(5), getMapMode().DPtoLP(5), getMapMode().DPtoLP(0)));
+			aux_StructuredActivityFigure_LabelContainer0.setBorder(new MarginBorder(getMapMode().DPtoLP(0), getMapMode().DPtoLP(5), getMapMode().DPtoLP(5), getMapMode().DPtoLP(5)));
 
 			this.add(aux_StructuredActivityFigure_LabelContainer0, BorderLayout.TOP);
 
