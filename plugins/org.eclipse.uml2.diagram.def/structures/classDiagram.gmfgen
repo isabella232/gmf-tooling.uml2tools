@@ -4500,7 +4500,7 @@
             xsi:type="gmfgen:ToolEntry"
             title="Package"
             description="Create Package"
-            genNodes="//@diagram/@topLevelNodes.0 //@diagram/@childNodes.0"/>
+            genNodes="//@diagram/@topLevelNodes.0 //@diagram/@childNodes.0 //@diagram/@topLevelNodes.14 //@diagram/@childNodes.27"/>
         <entries
             xsi:type="gmfgen:ToolEntry"
             title="Enumeration"
@@ -4530,7 +4530,7 @@
             xsi:type="gmfgen:ToolEntry"
             title="Interface"
             description="Create Interface"
-            genNodes="//@diagram/@childNodes.6 //@diagram/@topLevelNodes.6"/>
+            genNodes="//@diagram/@childNodes.6 //@diagram/@topLevelNodes.6 //@diagram/@topLevelNodes.11"/>
       </groups>
       <groups
           title="Children"

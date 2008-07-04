@@ -1287,6 +1287,9 @@
         <features
             href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//NamedElement/name"/>
       </labelMappings>
+      <tool
+          xsi:type="gmftool:CreationTool"
+          href="classDiagram.gmftool#//@palette/@tools.0/@tools.7"/>
       <diagramNode
           href="classDiagram_interfaces.gmfgraph#RectangleInterfaceNode"/>
       <children
@@ -1471,6 +1474,9 @@
         <features
             href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//NamedElement/name"/>
       </labelMappings>
+      <tool
+          xsi:type="gmftool:CreationTool"
+          href="classDiagram.gmftool#//@palette/@tools.0/@tools.1"/>
       <diagramNode
           href="classDiagram_auxiliary.gmfgraph#PackageAsFrameNode"/>
       <children
