@@ -6,6 +6,7 @@ import org.eclipse.draw2d.PositionConstants;
 import org.eclipse.draw2d.RectangleFigure;
 import org.eclipse.draw2d.StackLayout;
 import org.eclipse.draw2d.geometry.Dimension;
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.gef.EditPart;
 import org.eclipse.gef.EditPolicy;
 import org.eclipse.gef.Request;
@@ -24,7 +25,9 @@ import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.uml2.diagram.common.editparts.PrimaryShapeEditPart;
 import org.eclipse.uml2.diagram.common.editpolicies.PortVisualEffectEditPolicy;
 import org.eclipse.uml2.diagram.component.edit.policies.PortOnClassItemSemanticEditPolicy;
+import org.eclipse.uml2.diagram.component.part.UMLDiagramUpdateCommand;
 import org.eclipse.uml2.diagram.component.part.UMLVisualIDRegistry;
+import org.eclipse.uml2.uml.UMLPackage;
 
 /**
  * @generated
@@ -175,6 +178,35 @@ public class PortOnClassEditPart extends BorderedBorderItemEditPart implements P
 	 */
 	public EditPart getPrimaryChildEditPart() {
 		return getChildBySemanticHint(UMLVisualIDRegistry.getType(PortName2EditPart.VISUAL_ID));
+	}
+
+	/**
+	 * @generated
+	 */
+	protected void handleNotificationEvent(Notification event) {
+		super.handleNotificationEvent(event);
+		handleFeatureLinkModification(event);
+	}
+
+	/**
+	 * @generated
+	 */
+	private void handleFeatureLinkModification(Notification event) {
+		if (event.getFeature() == UMLPackage.eINSTANCE.getPort_Provided()) {
+			refreshDiagram();
+			return;
+		}
+		if (event.getFeature() == UMLPackage.eINSTANCE.getPort_Required()) {
+			refreshDiagram();
+			return;
+		}
+	}
+
+	/**
+	 * @generated
+	 */
+	public void refreshDiagram() {
+		UMLDiagramUpdateCommand.performCanonicalUpdate(getDiagramView().getElement());
 	}
 
 	/**

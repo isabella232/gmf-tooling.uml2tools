@@ -7,7 +7,6 @@ import java.util.HashSet;
 import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.List;
-import java.util.Map;
 import java.util.Set;
 
 import org.eclipse.core.commands.ExecutionException;
@@ -88,9 +87,16 @@ public class ProfileCanonicalEditPolicy extends CanonicalConnectionEditPolicy {
 	/**
 	 * @generated
 	 */
+	@SuppressWarnings("unchecked")
 	protected boolean isOrphaned(Collection semanticChildren, final View view) {
 		int visualID = UMLVisualIDRegistry.getVisualID(view);
 		switch (visualID) {
+		case PropertyEditPart.VISUAL_ID:
+		case ConstraintEditPart.VISUAL_ID:
+		case Stereotype2EditPart.VISUAL_ID:
+		case EnumerationLiteralEditPart.VISUAL_ID:
+		case ElementImport2EditPart.VISUAL_ID:
+			return true;
 		case StereotypeEditPart.VISUAL_ID:
 		case Profile2EditPart.VISUAL_ID:
 		case EnumerationEditPart.VISUAL_ID:

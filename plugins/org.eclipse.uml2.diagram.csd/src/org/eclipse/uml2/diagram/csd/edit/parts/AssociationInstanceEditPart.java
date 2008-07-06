@@ -5,9 +5,11 @@ import org.eclipse.draw2d.Connection;
 import org.eclipse.draw2d.RotatableDecoration;
 import org.eclipse.gef.EditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.ConnectionNodeEditPart;
+import org.eclipse.gmf.runtime.diagram.ui.editparts.ITreeBranchEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles;
 import org.eclipse.gmf.runtime.draw2d.ui.figures.PolylineConnectionEx;
 import org.eclipse.gmf.runtime.notation.View;
+import org.eclipse.uml2.diagram.common.draw2d.AssociationLinkFigureBase;
 import org.eclipse.uml2.diagram.common.draw2d.decoration.AssociationDecoration;
 import org.eclipse.uml2.diagram.csd.edit.policies.AssociationInstanceItemSemanticEditPolicy;
 
@@ -15,7 +17,7 @@ import org.eclipse.uml2.diagram.csd.edit.policies.AssociationInstanceItemSemanti
  * @generated
  */
 
-public class AssociationInstanceEditPart extends ConnectionNodeEditPart {
+public class AssociationInstanceEditPart extends ConnectionNodeEditPart implements ITreeBranchEditPart {
 
 	/**
 	 * @generated
@@ -77,34 +79,33 @@ public class AssociationInstanceEditPart extends ConnectionNodeEditPart {
 	/**
 	 * @generated
 	 */
-	public class AssociationLinkFigure extends PolylineConnectionEx {
+	public class AssociationLinkFigure extends AssociationLinkFigureBase {
 
 		/**
 		 * @generated
 		 */
 		public AssociationLinkFigure() {
+
 			this.setForegroundColor(ColorConstants.blue);
-
-			setSourceDecoration(createSourceDecoration());
-			setTargetDecoration(createTargetDecoration());
 		}
 
 		/**
 		 * @generated
 		 */
-		private RotatableDecoration createSourceDecoration() {
-			AssociationDecoration df = new AssociationDecoration();
+		private boolean myUseLocalCoordinates = false;
 
-			return df;
+		/**
+		 * @generated
+		 */
+		protected boolean useLocalCoordinates() {
+			return myUseLocalCoordinates;
 		}
 
 		/**
 		 * @generated
 		 */
-		private RotatableDecoration createTargetDecoration() {
-			AssociationDecoration df = new AssociationDecoration();
-
-			return df;
+		protected void setUseLocalCoordinates(boolean useLocalCoordinates) {
+			myUseLocalCoordinates = useLocalCoordinates;
 		}
 
 	}

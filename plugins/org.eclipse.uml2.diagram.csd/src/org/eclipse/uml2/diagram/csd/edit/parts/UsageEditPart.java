@@ -3,6 +3,7 @@ package org.eclipse.uml2.diagram.csd.edit.parts;
 import org.eclipse.draw2d.Connection;
 import org.eclipse.draw2d.RotatableDecoration;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.ConnectionNodeEditPart;
+import org.eclipse.gmf.runtime.diagram.ui.editparts.ITreeBranchEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles;
 import org.eclipse.gmf.runtime.draw2d.ui.figures.PolylineConnectionEx;
 import org.eclipse.gmf.runtime.notation.View;
@@ -12,7 +13,7 @@ import org.eclipse.uml2.diagram.csd.edit.policies.UsageItemSemanticEditPolicy;
 /**
  * @generated
  */
-public class UsageEditPart extends ConnectionNodeEditPart {
+public class UsageEditPart extends ConnectionNodeEditPart implements ITreeBranchEditPart {
 
 	/**
 	 * @generated

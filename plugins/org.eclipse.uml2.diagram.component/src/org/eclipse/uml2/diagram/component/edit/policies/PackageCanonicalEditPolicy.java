@@ -38,6 +38,7 @@ import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.uml2.diagram.component.edit.parts.Artifact2EditPart;
 import org.eclipse.uml2.diagram.component.edit.parts.ArtifactEditPart;
 import org.eclipse.uml2.diagram.component.edit.parts.AssemblyConnectorCircleEditPart;
+import org.eclipse.uml2.diagram.component.edit.parts.AssociationEditPart;
 import org.eclipse.uml2.diagram.component.edit.parts.Class2EditPart;
 import org.eclipse.uml2.diagram.component.edit.parts.Class3EditPart;
 import org.eclipse.uml2.diagram.component.edit.parts.ClassDiagramNotationClassEditPart;
@@ -101,6 +102,7 @@ public class PackageCanonicalEditPolicy extends CanonicalConnectionEditPolicy {
 	/**
 	 * @generated
 	 */
+	@SuppressWarnings("unchecked")
 	protected boolean isOrphaned(Collection semanticChildren, final View view) {
 		if (view.getEAnnotation("Shortcut") != null) {//$NON-NLS-1$
 			return UMLDiagramUpdater.isShortcutOrphaned(view);
@@ -108,6 +110,22 @@ public class PackageCanonicalEditPolicy extends CanonicalConnectionEditPolicy {
 		int visualID = UMLVisualIDRegistry.getVisualID(view);
 		int suggestedID = UMLVisualIDRegistry.getNodeVisualID((View) getHost().getModel(), view.getElement());
 		switch (visualID) {
+		case Component2EditPart.VISUAL_ID:
+		case PortEditPart.VISUAL_ID:
+		case ArtifactEditPart.VISUAL_ID:
+		case ClassEditPart.VISUAL_ID:
+		case InterfaceEditPart.VISUAL_ID:
+		case PropertyEditPart.VISUAL_ID:
+		case AssemblyConnectorCircleEditPart.VISUAL_ID:
+		case ElementImportEditPart.VISUAL_ID:
+		case Package4EditPart.VISUAL_ID:
+		case Class3EditPart.VISUAL_ID:
+		case Component3EditPart.VISUAL_ID:
+		case ClassDiagramNotationPropertyEditPart.VISUAL_ID:
+		case ClassDiagramNotationOperationEditPart.VISUAL_ID:
+		case ClassDiagramNotationInnerClassEditPart.VISUAL_ID:
+		case PortOnClassEditPart.VISUAL_ID:
+			return true;
 		case ComponentEditPart.VISUAL_ID:
 		case Artifact2EditPart.VISUAL_ID:
 		case Interface2EditPart.VISUAL_ID:
@@ -480,6 +498,13 @@ public class PackageCanonicalEditPolicy extends CanonicalConnectionEditPolicy {
 		case DependencyEditPart.VISUAL_ID: {
 			if (!domain2NotationMap.containsKey(view.getElement())) {
 				result.addAll(UMLDiagramUpdater.getDependency_4009ContainedLinks(view));
+			}
+			domain2NotationMap.put(view.getElement(), view);
+			break;
+		}
+		case AssociationEditPart.VISUAL_ID: {
+			if (!domain2NotationMap.containsKey(view.getElement())) {
+				result.addAll(UMLDiagramUpdater.getAssociation_4011ContainedLinks(view));
 			}
 			domain2NotationMap.put(view.getElement(), view);
 			break;

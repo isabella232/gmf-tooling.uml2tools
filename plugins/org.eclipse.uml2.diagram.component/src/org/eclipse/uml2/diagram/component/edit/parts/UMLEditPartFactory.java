@@ -189,6 +189,30 @@ public class UMLEditPartFactory implements EditPartFactory {
 
 			case AssemblyConnectorEndRoleEditPart.VISUAL_ID:
 				return new AssemblyConnectorEndRoleEditPart(view);
+
+			case AssociationEditPart.VISUAL_ID:
+				return new AssociationEditPart(view);
+
+			case AssociationNameEditPart.VISUAL_ID:
+				return new AssociationNameEditPart(view);
+
+			case AssociationName2EditPart.VISUAL_ID:
+				return new AssociationName2EditPart(view);
+
+			case AssociationName3EditPart.VISUAL_ID:
+				return new AssociationName3EditPart(view);
+
+			case AssociationName4EditPart.VISUAL_ID:
+				return new AssociationName4EditPart(view);
+
+			case AssociationName5EditPart.VISUAL_ID:
+				return new AssociationName5EditPart(view);
+
+			case AssociationName6EditPart.VISUAL_ID:
+				return new AssociationName6EditPart(view);
+
+			case AssociationName7EditPart.VISUAL_ID:
+				return new AssociationName7EditPart(view);
 			}
 		}
 		return createUnrecognizedEditPart(context, model);

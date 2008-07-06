@@ -45,7 +45,8 @@ import org.eclipse.swt.accessibility.AccessibleEvent;
 import org.eclipse.swt.graphics.Color;
 import org.eclipse.swt.graphics.FontData;
 import org.eclipse.swt.graphics.Image;
-import org.eclipse.uml2.diagram.usecase.edit.policies.UMLTextSelectionEditPolicy;
+import org.eclipse.uml2.diagram.common.editpolicies.ClassifierNameVisualEffectEditPolicy;
+import org.eclipse.uml2.diagram.common.editpolicies.IRefreshableFeedbackEditPolicy;
 import org.eclipse.uml2.diagram.usecase.providers.UMLElementTypes;
 import org.eclipse.uml2.diagram.usecase.providers.UMLParserProvider;
 
@@ -108,6 +109,7 @@ public class UseCaseNameEditPart extends CompartmentEditPart implements ITextAwa
 				return false;
 			}
 		});
+		installEditPolicy("VisualEffect.Abstract", new ClassifierNameVisualEffectEditPolicy()); //$NON-NLS-1$
 	}
 
 	/**
@@ -217,10 +219,7 @@ public class UseCaseNameEditPart extends CompartmentEditPart implements ITextAwa
 	 */
 	public void setLabelText(String text) {
 		setLabelTextHelper(getFigure(), text);
-		Object pdEditPolicy = getEditPolicy(EditPolicy.PRIMARY_DRAG_ROLE);
-		if (pdEditPolicy instanceof UMLTextSelectionEditPolicy) {
-			((UMLTextSelectionEditPolicy) pdEditPolicy).refreshFeedback();
-		}
+		refreshFeedback();
 	}
 
 	/**
@@ -387,10 +386,7 @@ public class UseCaseNameEditPart extends CompartmentEditPart implements ITextAwa
 	protected void refreshLabel() {
 		setLabelTextHelper(getFigure(), getLabelText());
 		setLabelIconHelper(getFigure(), getLabelIcon());
-		Object pdEditPolicy = getEditPolicy(EditPolicy.PRIMARY_DRAG_ROLE);
-		if (pdEditPolicy instanceof UMLTextSelectionEditPolicy) {
-			((UMLTextSelectionEditPolicy) pdEditPolicy).refreshFeedback();
-		}
+		refreshFeedback();
 	}
 
 	/**
@@ -478,7 +474,17 @@ public class UseCaseNameEditPart extends CompartmentEditPart implements ITextAwa
 	 * @generated
 	 */
 	private View getFontStyleOwnerView() {
-		return getPrimaryView();
+		return (View) getModel();
+	}
+
+	/**
+	 * @generated
+	 */
+	private void refreshFeedback() {
+		Object pdEditPolicy = getEditPolicy(EditPolicy.PRIMARY_DRAG_ROLE);
+		if (pdEditPolicy instanceof IRefreshableFeedbackEditPolicy) {
+			((IRefreshableFeedbackEditPolicy) pdEditPolicy).refreshFeedback();
+		}
 	}
 
 	/**

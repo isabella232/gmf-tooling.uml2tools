@@ -1,27 +1,24 @@
 package org.eclipse.uml2.diagram.clazz.edit.parts;
 
-import java.util.Iterator;
-
 import org.eclipse.draw2d.ColorConstants;
 import org.eclipse.draw2d.Connection;
-import org.eclipse.draw2d.RotatableDecoration;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.gef.EditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.ConnectionNodeEditPart;
+import org.eclipse.gmf.runtime.diagram.ui.editparts.ITreeBranchEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles;
-import org.eclipse.gmf.runtime.draw2d.ui.figures.PolylineConnectionEx;
 import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.jface.preference.IPreferenceStore;
 import org.eclipse.uml2.diagram.clazz.edit.policies.AssociationItemSemanticEditPolicy;
 import org.eclipse.uml2.diagram.common.conventions.AssociationEndConvention;
-import org.eclipse.uml2.diagram.common.draw2d.decoration.AssociationDecoration;
+import org.eclipse.uml2.diagram.common.draw2d.AssociationLinkFigureBase;
 import org.eclipse.uml2.uml.Association;
 import org.eclipse.uml2.uml.Property;
 
 /**
  * @generated
  */
-public class AssociationEditPart extends ConnectionNodeEditPart {
+public class AssociationEditPart extends ConnectionNodeEditPart implements ITreeBranchEditPart {
 
 	/**
 	 * @generated
@@ -94,8 +91,7 @@ public class AssociationEditPart extends ConnectionNodeEditPart {
 	protected void addSemanticListeners() {
 		super.addSemanticListeners();
 		Association association = (Association) resolveSemanticElement();
-		for (Iterator ends = association.getMemberEnds().iterator(); ends.hasNext();) {
-			Property next = (Property) ends.next();
+		for (Property next : association.getMemberEnds()) {
 			addListenerFilter("SemanticModel", this, next);
 		}
 	}
@@ -130,48 +126,33 @@ public class AssociationEditPart extends ConnectionNodeEditPart {
 	/**
 	 * @generated
 	 */
-	public class AssociationLinkFigure extends PolylineConnectionEx {
+	public class AssociationLinkFigure extends AssociationLinkFigureBase {
 
 		/**
 		 * @generated
 		 */
 		public AssociationLinkFigure() {
+
 			this.setForegroundColor(ColorConstants.blue);
-
-			setSourceDecoration(createSourceDecoration());
-			setTargetDecoration(createTargetDecoration());
 		}
 
 		/**
 		 * @generated
 		 */
-		private RotatableDecoration createSourceDecoration() {
-			AssociationDecoration df = new AssociationDecoration();
+		private boolean myUseLocalCoordinates = false;
 
-			return df;
+		/**
+		 * @generated
+		 */
+		protected boolean useLocalCoordinates() {
+			return myUseLocalCoordinates;
 		}
 
 		/**
 		 * @generated
 		 */
-		private RotatableDecoration createTargetDecoration() {
-			AssociationDecoration df = new AssociationDecoration();
-
-			return df;
-		}
-
-		/**
-		 * @generated NOT
-		 */
-		private AssociationDecoration getTargetDecorationImpl() {
-			return (AssociationDecoration) getTargetDecoration();
-		}
-
-		/**
-		 * @generated NOT
-		 */
-		private AssociationDecoration getSourceDecorationImpl() {
-			return (AssociationDecoration) getSourceDecoration();
+		protected void setUseLocalCoordinates(boolean useLocalCoordinates) {
+			myUseLocalCoordinates = useLocalCoordinates;
 		}
 
 	}

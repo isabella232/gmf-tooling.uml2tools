@@ -198,6 +198,11 @@ public class UMLElementTypes extends ElementInitializers {
 	/**
 	 * @generated
 	 */
+	public static final IHintedType Association_4011 = (IHintedType) getElementType("org.eclipse.uml2.diagram.component.Association_4011"); //$NON-NLS-1$
+
+	/**
+	 * @generated
+	 */
 	private static ImageRegistry getImageRegistry() {
 		if (imageRegistry == null) {
 			imageRegistry = new ImageRegistry();
@@ -360,6 +365,8 @@ public class UMLElementTypes extends ElementInitializers {
 			elements.put(Dependency_4009, UMLPackage.eINSTANCE.getDependency());
 
 			elements.put(ConnectorEndRole_4010, UMLPackage.eINSTANCE.getConnectorEnd_Role());
+
+			elements.put(Association_4011, UMLPackage.eINSTANCE.getAssociation());
 		}
 		return (ENamedElement) elements.get(type);
 	}
@@ -407,6 +414,7 @@ public class UMLElementTypes extends ElementInitializers {
 			KNOWN_ELEMENT_TYPES.add(Connector_4008);
 			KNOWN_ELEMENT_TYPES.add(Dependency_4009);
 			KNOWN_ELEMENT_TYPES.add(ConnectorEndRole_4010);
+			KNOWN_ELEMENT_TYPES.add(Association_4011);
 		}
 		return KNOWN_ELEMENT_TYPES.contains(elementType);
 	}

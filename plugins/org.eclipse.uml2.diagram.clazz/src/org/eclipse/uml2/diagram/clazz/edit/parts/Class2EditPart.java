@@ -1,5 +1,11 @@
 package org.eclipse.uml2.diagram.clazz.edit.parts;
 
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Map;
+import java.util.Set;
+
 import org.eclipse.draw2d.IFigure;
 import org.eclipse.draw2d.Label;
 import org.eclipse.draw2d.LayoutManager;
@@ -10,7 +16,10 @@ import org.eclipse.draw2d.RectangleFigure;
 import org.eclipse.draw2d.StackLayout;
 import org.eclipse.draw2d.ToolbarLayout;
 import org.eclipse.emf.common.notify.Notification;
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.ecore.EcorePackage;
+import org.eclipse.emf.transaction.TransactionalEditingDomain;
 import org.eclipse.gef.EditPart;
 import org.eclipse.gef.EditPolicy;
 import org.eclipse.gef.GraphicalEditPart;
@@ -18,20 +27,20 @@ import org.eclipse.gef.Request;
 import org.eclipse.gef.commands.Command;
 import org.eclipse.gef.editpolicies.LayoutEditPolicy;
 import org.eclipse.gmf.runtime.diagram.core.edithelpers.CreateElementRequestAdapter;
+import org.eclipse.gmf.runtime.diagram.core.listener.DiagramEventBroker;
+import org.eclipse.gmf.runtime.diagram.core.listener.NotificationListener;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.AbstractBorderedShapeEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.IBorderItemEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.ITextAwareEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editpolicies.BorderItemSelectionEditPolicy;
 import org.eclipse.gmf.runtime.diagram.ui.editpolicies.ConstrainedToolbarLayoutEditPolicy;
-import org.eclipse.gmf.runtime.diagram.ui.editpolicies.CreationEditPolicy;
 import org.eclipse.gmf.runtime.diagram.ui.editpolicies.DragDropEditPolicy;
 import org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles;
 import org.eclipse.gmf.runtime.diagram.ui.figures.BorderItemLocator;
 import org.eclipse.gmf.runtime.diagram.ui.requests.CreateViewAndElementRequest;
 import org.eclipse.gmf.runtime.draw2d.ui.figures.ConstrainedToolbarLayout;
 import org.eclipse.gmf.runtime.draw2d.ui.figures.IBorderItemLocator;
-import org.eclipse.gmf.runtime.draw2d.ui.figures.WrapLabel;
 import org.eclipse.gmf.runtime.emf.type.core.IElementType;
 import org.eclipse.gmf.runtime.gef.ui.figures.DefaultSizeNodeFigure;
 import org.eclipse.gmf.runtime.gef.ui.figures.NodeFigure;
@@ -42,10 +51,18 @@ import org.eclipse.swt.widgets.Display;
 import org.eclipse.uml2.diagram.clazz.edit.policies.Class2CanonicalEditPolicy;
 import org.eclipse.uml2.diagram.clazz.edit.policies.Class2ItemSemanticEditPolicy;
 import org.eclipse.uml2.diagram.clazz.edit.policies.UMLTextSelectionEditPolicy;
+import org.eclipse.uml2.diagram.clazz.part.UMLDiagramUpdateCommand;
+import org.eclipse.uml2.diagram.clazz.part.UMLDiagramUpdater;
+import org.eclipse.uml2.diagram.clazz.part.UMLLinkDescriptor;
 import org.eclipse.uml2.diagram.clazz.part.UMLVisualIDRegistry;
 import org.eclipse.uml2.diagram.clazz.providers.UMLElementTypes;
 import org.eclipse.uml2.diagram.common.draw2d.CenterLayout;
 import org.eclipse.uml2.diagram.common.editparts.PrimaryShapeEditPart;
+import org.eclipse.uml2.diagram.common.editpolicies.CreationEditPolicyWithCustomReparent;
+import org.eclipse.uml2.uml.Generalization;
+import org.eclipse.uml2.uml.InterfaceRealization;
+import org.eclipse.uml2.uml.TemplateBinding;
+import org.eclipse.uml2.uml.UMLPackage;
 
 /**
  * @generated
@@ -70,6 +87,11 @@ public class Class2EditPart extends AbstractBorderedShapeEditPart implements Pri
 	/**
 	 * @generated
 	 */
+	private LinkTargetListener myLinkTargetListener;
+
+	/**
+	 * @generated
+	 */
 	public Class2EditPart(View view) {
 		super(view);
 	}
@@ -78,7 +100,7 @@ public class Class2EditPart extends AbstractBorderedShapeEditPart implements Pri
 	 * @generated
 	 */
 	protected void createDefaultEditPolicies() {
-		installEditPolicy(EditPolicyRoles.CREATION_ROLE, new CreationEditPolicy() {
+		installEditPolicy(EditPolicyRoles.CREATION_ROLE, new CreationEditPolicyWithCustomReparent(UMLVisualIDRegistry.TYPED_ADAPTER) {
 
 			public Command getCommand(Request request) {
 				if (understandsRequest(request)) {
@@ -332,6 +354,7 @@ public class Class2EditPart extends AbstractBorderedShapeEditPart implements Pri
 		} else {
 			super.handleNotificationEvent(event);
 		}
+		handleTypeLinkModification(event);
 	}
 
 	/**
@@ -449,31 +472,26 @@ public class Class2EditPart extends AbstractBorderedShapeEditPart implements Pri
 			fFigureClassFigure_PropertiesCompartment = new RectangleFigure();
 
 			this.add(fFigureClassFigure_PropertiesCompartment);
-
 			fFigureClassFigure_PropertiesCompartment.setLayoutManager(new StackLayout());
 
 			fFigureClassFigure_OperationsCompartment = new RectangleFigure();
 
 			this.add(fFigureClassFigure_OperationsCompartment);
-
 			fFigureClassFigure_OperationsCompartment.setLayoutManager(new StackLayout());
 
 			fFigureClassFigure_ClassesCompartment = new RectangleFigure();
 
 			this.add(fFigureClassFigure_ClassesCompartment);
-
 			fFigureClassFigure_ClassesCompartment.setLayoutManager(new StackLayout());
 
 			fFigureClassFigure_LiteralsCompartment = new RectangleFigure();
 
 			this.add(fFigureClassFigure_LiteralsCompartment);
-
 			fFigureClassFigure_LiteralsCompartment.setLayoutManager(new StackLayout());
 
 			fFigureClassFigure_OthersCompartment = new RectangleFigure();
 
 			this.add(fFigureClassFigure_OthersCompartment);
-
 			fFigureClassFigure_OthersCompartment.setLayoutManager(new StackLayout());
 
 		}
@@ -572,6 +590,336 @@ public class Class2EditPart extends AbstractBorderedShapeEditPart implements Pri
 		}
 		super.reorderChild(child, index);
 		setLayoutConstraint(child, childFigure, constraint);
+	}
+
+	/**
+	 * @generated
+	 */
+	private DiagramEventBroker getDiagramEventBroker() {
+		TransactionalEditingDomain theEditingDomain = getEditingDomain();
+		if (theEditingDomain != null) {
+			return DiagramEventBroker.getInstance(theEditingDomain);
+		}
+		return null;
+	}
+
+	/**
+	 * @generated
+	 */
+	private LinkTargetListener getLinkTargetListener() {
+		if (myLinkTargetListener == null) {
+			myLinkTargetListener = new LinkTargetListener();
+		}
+		return myLinkTargetListener;
+	}
+
+	/**
+	 * @generated
+	 */
+	private class LinkTargetListener implements NotificationListener {
+
+		/**
+		 * @generated
+		 */
+		Map<EObject, Set<EStructuralFeature>> myNotifiers = new HashMap<EObject, Set<EStructuralFeature>>();
+
+		/**
+		 * @generated
+		 */
+		private void added(EObject link, EStructuralFeature feature) {
+			if (!myNotifiers.containsKey(link)) {
+				myNotifiers.put(link, new HashSet<EStructuralFeature>());
+			}
+			myNotifiers.get(link).add(feature);
+		}
+
+		/**
+		 * @generated
+		 */
+		private void removed(EObject link, EStructuralFeature feature) {
+			if (!myNotifiers.containsKey(link)) {
+				return;
+			}
+			myNotifiers.get(link).remove(feature);
+		}
+
+		/**
+		 * @generated
+		 */
+		public void dispose() {
+			Set<Map.Entry<EObject, Set<EStructuralFeature>>> entrySet = myNotifiers.entrySet();
+			for (Map.Entry<EObject, Set<EStructuralFeature>> entry : entrySet) {
+				for (EStructuralFeature feature : entry.getValue()) {
+					getDiagramEventBroker().removeNotificationListener(entry.getKey(), feature, this);
+				}
+			}
+		}
+
+		/**
+		 * @generated
+		 */
+		private void removeReferenceListener(EObject link, EStructuralFeature feature) {
+			getDiagramEventBroker().removeNotificationListener(link, feature, this);
+			removed(link, feature);
+		}
+
+		/**
+		 * @generated
+		 */
+		private void addReferenceListener(EObject link, EStructuralFeature feature) {
+			getDiagramEventBroker().addNotificationListener(link, feature, this);
+			added(link, feature);
+		}
+
+		/**
+		 * @generated
+		 */
+		public void notifyChanged(Notification event) {
+			if (event.getFeature() == UMLPackage.eINSTANCE.getGeneralization_General()) {
+				refreshDiagram();
+				return;
+			}
+			if (event.getFeature() == UMLPackage.eINSTANCE.getInterfaceRealization_Contract()) {
+				refreshDiagram();
+				return;
+			}
+			if (event.getFeature() == UMLPackage.eINSTANCE.getGeneralization_GeneralizationSet()) {
+				refreshDiagram();
+				return;
+			}
+			if (event.getFeature() == UMLPackage.eINSTANCE.getTemplateSignature_Template()) {
+				refreshDiagram();
+				return;
+			}
+		}
+	}
+
+	/**
+	 * @generated
+	 */
+	protected void addSemanticListeners() {
+		super.addSemanticListeners();
+		for (UMLLinkDescriptor next : getClass_2001ContainedLinks()) {
+			EObject nextLink = next.getModelElement();
+			if (nextLink == null) {
+				continue;
+			}
+			switch (next.getVisualID()) {
+			case GeneralizationEditPart.VISUAL_ID:
+				getLinkTargetListener().addReferenceListener(nextLink, UMLPackage.eINSTANCE.getGeneralization_General());
+				break;
+
+			case InterfaceRealizationEditPart.VISUAL_ID:
+				getLinkTargetListener().addReferenceListener(nextLink, UMLPackage.eINSTANCE.getInterfaceRealization_Contract());
+				break;
+
+			case Generalization2EditPart.VISUAL_ID:
+				getLinkTargetListener().addReferenceListener(nextLink, UMLPackage.eINSTANCE.getGeneralization_GeneralizationSet());
+				break;
+
+			case TemplateBindingEditPart.VISUAL_ID:
+				getLinkTargetListener().addReferenceListener(nextLink, UMLPackage.eINSTANCE.getTemplateSignature_Template());
+				break;
+
+			default:
+				break;
+			}
+		}
+	}
+
+	/**
+	 * @generated
+	 */
+	@SuppressWarnings("unchecked")
+	private List<UMLLinkDescriptor> getClass_2001ContainedLinks() {
+		return UMLDiagramUpdater.getClass_2001ContainedLinks(getNotationView());
+	}
+
+	/**
+	 * @generated
+	 */
+	protected void removeSemanticListeners() {
+		super.removeSemanticListeners();
+		getLinkTargetListener().dispose();
+	}
+
+	/**
+	 * @generated
+	 */
+	private void handleTypeLinkModification(Notification event) {
+		if (event.getFeature() == UMLPackage.eINSTANCE.getClassifier_Generalization()) {
+			switch (event.getEventType()) {
+			case Notification.ADD: {
+				Object link = event.getNewValue();
+				if (link instanceof Generalization) {
+					getLinkTargetListener().addReferenceListener((EObject) link, UMLPackage.eINSTANCE.getGeneralization_General());
+					getLinkTargetListener().addReferenceListener((EObject) link, UMLPackage.eINSTANCE.getGeneralization_GeneralizationSet());
+				}
+				if (link instanceof Generalization) {
+					refreshDiagram();
+				}
+				break;
+			}
+			case Notification.REMOVE: {
+				Object link = event.getOldValue();
+				if (link instanceof Generalization) {
+					getLinkTargetListener().removeReferenceListener((EObject) link, UMLPackage.eINSTANCE.getGeneralization_General());
+					getLinkTargetListener().removeReferenceListener((EObject) link, UMLPackage.eINSTANCE.getGeneralization_GeneralizationSet());
+				}
+				if (link instanceof Generalization) {
+					refreshDiagram();
+				}
+				break;
+			}
+			case Notification.ADD_MANY: {
+				List<?> links = (List<?>) event.getNewValue();
+				for (Object link : links) {
+					if (link instanceof Generalization) {
+						getLinkTargetListener().addReferenceListener((EObject) link, UMLPackage.eINSTANCE.getGeneralization_General());
+						getLinkTargetListener().addReferenceListener((EObject) link, UMLPackage.eINSTANCE.getGeneralization_GeneralizationSet());
+					}
+				}
+				for (Object link : links) {
+					if (link instanceof Generalization) {
+						refreshDiagram();
+						break;
+					}
+				}
+				break;
+			}
+			case Notification.REMOVE_MANY: {
+				List<?> links = (List<?>) event.getOldValue();
+				for (Object link : links) {
+					if (link instanceof Generalization) {
+						getLinkTargetListener().removeReferenceListener((EObject) link, UMLPackage.eINSTANCE.getGeneralization_General());
+						getLinkTargetListener().removeReferenceListener((EObject) link, UMLPackage.eINSTANCE.getGeneralization_GeneralizationSet());
+					}
+				}
+				for (Object link : links) {
+					if (link instanceof Generalization) {
+						refreshDiagram();
+						break;
+					}
+				}
+				break;
+			}
+			}
+		}
+		if (event.getFeature() == UMLPackage.eINSTANCE.getBehavioredClassifier_InterfaceRealization()) {
+			switch (event.getEventType()) {
+			case Notification.ADD: {
+				Object link = event.getNewValue();
+				if (link instanceof InterfaceRealization) {
+					getLinkTargetListener().addReferenceListener((EObject) link, UMLPackage.eINSTANCE.getInterfaceRealization_Contract());
+				}
+				if (link instanceof InterfaceRealization) {
+					refreshDiagram();
+				}
+				break;
+			}
+			case Notification.REMOVE: {
+				Object link = event.getOldValue();
+				if (link instanceof InterfaceRealization) {
+					getLinkTargetListener().removeReferenceListener((EObject) link, UMLPackage.eINSTANCE.getInterfaceRealization_Contract());
+				}
+				if (link instanceof InterfaceRealization) {
+					refreshDiagram();
+				}
+				break;
+			}
+			case Notification.ADD_MANY: {
+				List<?> links = (List<?>) event.getNewValue();
+				for (Object link : links) {
+					if (link instanceof InterfaceRealization) {
+						getLinkTargetListener().addReferenceListener((EObject) link, UMLPackage.eINSTANCE.getInterfaceRealization_Contract());
+					}
+				}
+				for (Object link : links) {
+					if (link instanceof InterfaceRealization) {
+						refreshDiagram();
+						break;
+					}
+				}
+				break;
+			}
+			case Notification.REMOVE_MANY: {
+				List<?> links = (List<?>) event.getOldValue();
+				for (Object link : links) {
+					if (link instanceof InterfaceRealization) {
+						getLinkTargetListener().removeReferenceListener((EObject) link, UMLPackage.eINSTANCE.getInterfaceRealization_Contract());
+					}
+				}
+				for (Object link : links) {
+					if (link instanceof InterfaceRealization) {
+						refreshDiagram();
+						break;
+					}
+				}
+				break;
+			}
+			}
+		}
+		if (event.getFeature() == UMLPackage.eINSTANCE.getTemplateableElement_TemplateBinding()) {
+			switch (event.getEventType()) {
+			case Notification.ADD: {
+				Object link = event.getNewValue();
+				if (link instanceof TemplateBinding) {
+					getLinkTargetListener().addReferenceListener((EObject) link, UMLPackage.eINSTANCE.getTemplateSignature_Template());
+				}
+				if (link instanceof TemplateBinding) {
+					refreshDiagram();
+				}
+				break;
+			}
+			case Notification.REMOVE: {
+				Object link = event.getOldValue();
+				if (link instanceof TemplateBinding) {
+					getLinkTargetListener().removeReferenceListener((EObject) link, UMLPackage.eINSTANCE.getTemplateSignature_Template());
+				}
+				if (link instanceof TemplateBinding) {
+					refreshDiagram();
+				}
+				break;
+			}
+			case Notification.ADD_MANY: {
+				List<?> links = (List<?>) event.getNewValue();
+				for (Object link : links) {
+					if (link instanceof TemplateBinding) {
+						getLinkTargetListener().addReferenceListener((EObject) link, UMLPackage.eINSTANCE.getTemplateSignature_Template());
+					}
+				}
+				for (Object link : links) {
+					if (link instanceof TemplateBinding) {
+						refreshDiagram();
+						break;
+					}
+				}
+				break;
+			}
+			case Notification.REMOVE_MANY: {
+				List<?> links = (List<?>) event.getOldValue();
+				for (Object link : links) {
+					if (link instanceof TemplateBinding) {
+						getLinkTargetListener().removeReferenceListener((EObject) link, UMLPackage.eINSTANCE.getTemplateSignature_Template());
+					}
+				}
+				for (Object link : links) {
+					if (link instanceof TemplateBinding) {
+						refreshDiagram();
+						break;
+					}
+				}
+				break;
+			}
+			}
+		}
+	}
+
+	/**
+	 * @generated
+	 */
+	public void refreshDiagram() {
+		UMLDiagramUpdateCommand.performCanonicalUpdate(getDiagramView().getElement());
 	}
 
 }

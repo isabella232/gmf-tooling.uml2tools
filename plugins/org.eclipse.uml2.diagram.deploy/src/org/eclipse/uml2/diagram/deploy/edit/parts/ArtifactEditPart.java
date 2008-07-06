@@ -1,69 +1,45 @@
 package org.eclipse.uml2.diagram.deploy.edit.parts;
 
-import java.util.Collections;
+import java.util.HashMap;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Map;
+import java.util.Set;
 
-import org.eclipse.core.runtime.IAdaptable;
 import org.eclipse.draw2d.IFigure;
 import org.eclipse.draw2d.Label;
 import org.eclipse.draw2d.RectangleFigure;
 import org.eclipse.draw2d.StackLayout;
 import org.eclipse.draw2d.ToolbarLayout;
-import org.eclipse.draw2d.geometry.Point;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EObject;
-import org.eclipse.emf.transaction.RunnableWithResult;
-import org.eclipse.gef.AccessibleEditPart;
-import org.eclipse.gef.DragTracker;
+import org.eclipse.emf.ecore.EStructuralFeature;
+import org.eclipse.emf.transaction.TransactionalEditingDomain;
 import org.eclipse.gef.EditPart;
 import org.eclipse.gef.EditPolicy;
-import org.eclipse.gef.Request;
 import org.eclipse.gef.editpolicies.LayoutEditPolicy;
-import org.eclipse.gef.requests.DirectEditRequest;
-import org.eclipse.gef.requests.SelectionRequest;
-import org.eclipse.gef.tools.DirectEditManager;
-import org.eclipse.gmf.runtime.common.ui.services.parser.IParser;
-import org.eclipse.gmf.runtime.common.ui.services.parser.IParserEditStatus;
-import org.eclipse.gmf.runtime.common.ui.services.parser.ParserEditStatus;
-import org.eclipse.gmf.runtime.common.ui.services.parser.ParserOptions;
-import org.eclipse.gmf.runtime.common.ui.services.parser.ParserService;
-import org.eclipse.gmf.runtime.diagram.ui.editparts.CompartmentEditPart;
+import org.eclipse.gmf.runtime.diagram.core.listener.DiagramEventBroker;
+import org.eclipse.gmf.runtime.diagram.core.listener.NotificationListener;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.ITextAwareEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.ShapeNodeEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editpolicies.ConstrainedToolbarLayoutEditPolicy;
 import org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles;
-import org.eclipse.gmf.runtime.diagram.ui.editpolicies.LabelDirectEditPolicy;
-import org.eclipse.gmf.runtime.diagram.ui.editpolicies.ListItemComponentEditPolicy;
-import org.eclipse.gmf.runtime.diagram.ui.l10n.DiagramColorRegistry;
-import org.eclipse.gmf.runtime.diagram.ui.requests.RequestConstants;
-import org.eclipse.gmf.runtime.diagram.ui.tools.DragEditPartsTrackerEx;
-import org.eclipse.gmf.runtime.diagram.ui.tools.TextDirectEditManager;
 import org.eclipse.gmf.runtime.draw2d.ui.figures.ConstrainedToolbarLayout;
-import org.eclipse.gmf.runtime.draw2d.ui.figures.WrapLabel;
-import org.eclipse.gmf.runtime.emf.core.util.EObjectAdapter;
-import org.eclipse.gmf.runtime.emf.ui.services.parser.ISemanticParser;
 import org.eclipse.gmf.runtime.gef.ui.figures.DefaultSizeNodeFigure;
 import org.eclipse.gmf.runtime.gef.ui.figures.NodeFigure;
-import org.eclipse.gmf.runtime.notation.FontStyle;
-import org.eclipse.gmf.runtime.notation.NotationPackage;
 import org.eclipse.gmf.runtime.notation.View;
-import org.eclipse.jface.text.contentassist.IContentAssistProcessor;
-import org.eclipse.jface.viewers.ICellEditorValidator;
-import org.eclipse.swt.SWT;
-import org.eclipse.swt.accessibility.AccessibleEvent;
-import org.eclipse.swt.graphics.Color;
-import org.eclipse.swt.graphics.FontData;
-import org.eclipse.swt.graphics.Image;
 import org.eclipse.uml2.diagram.common.draw2d.CenterLayout;
 import org.eclipse.uml2.diagram.common.editparts.PrimaryShapeEditPart;
 import org.eclipse.uml2.diagram.deploy.edit.policies.ArtifactCanonicalEditPolicy;
 import org.eclipse.uml2.diagram.deploy.edit.policies.ArtifactItemSemanticEditPolicy;
-import org.eclipse.uml2.diagram.deploy.edit.policies.UMLTextNonResizableEditPolicy;
 import org.eclipse.uml2.diagram.deploy.edit.policies.UMLTextSelectionEditPolicy;
+import org.eclipse.uml2.diagram.deploy.part.UMLDiagramUpdateCommand;
+import org.eclipse.uml2.diagram.deploy.part.UMLDiagramUpdater;
+import org.eclipse.uml2.diagram.deploy.part.UMLLinkDescriptor;
 import org.eclipse.uml2.diagram.deploy.part.UMLVisualIDRegistry;
-import org.eclipse.uml2.diagram.deploy.providers.UMLElementTypes;
-import org.eclipse.uml2.diagram.deploy.providers.UMLParserProvider;
+import org.eclipse.uml2.uml.Manifestation;
+import org.eclipse.uml2.uml.UMLPackage;
 
 /**
  * @generated
@@ -84,6 +60,11 @@ public class ArtifactEditPart extends ShapeNodeEditPart implements PrimaryShapeE
 	 * @generated
 	 */
 	protected IFigure primaryShape;
+
+	/**
+	 * @generated
+	 */
+	private LinkTargetListener myLinkTargetListener;
 
 	/**
 	 * @generated
@@ -240,6 +221,208 @@ public class ArtifactEditPart extends ShapeNodeEditPart implements PrimaryShapeE
 	 */
 	public EditPart getPrimaryChildEditPart() {
 		return getChildBySemanticHint(UMLVisualIDRegistry.getType(ArtifactFileName2EditPart.VISUAL_ID));
+	}
+
+	/**
+	 * @generated
+	 */
+	protected void handleNotificationEvent(Notification event) {
+		super.handleNotificationEvent(event);
+		handleTypeLinkModification(event);
+	}
+
+	/**
+	 * @generated
+	 */
+	private DiagramEventBroker getDiagramEventBroker() {
+		TransactionalEditingDomain theEditingDomain = getEditingDomain();
+		if (theEditingDomain != null) {
+			return DiagramEventBroker.getInstance(theEditingDomain);
+		}
+		return null;
+	}
+
+	/**
+	 * @generated
+	 */
+	private LinkTargetListener getLinkTargetListener() {
+		if (myLinkTargetListener == null) {
+			myLinkTargetListener = new LinkTargetListener();
+		}
+		return myLinkTargetListener;
+	}
+
+	/**
+	 * @generated
+	 */
+	private class LinkTargetListener implements NotificationListener {
+
+		/**
+		 * @generated
+		 */
+		Map<EObject, Set<EStructuralFeature>> myNotifiers = new HashMap<EObject, Set<EStructuralFeature>>();
+
+		/**
+		 * @generated
+		 */
+		private void added(EObject link, EStructuralFeature feature) {
+			if (!myNotifiers.containsKey(link)) {
+				myNotifiers.put(link, new HashSet<EStructuralFeature>());
+			}
+			myNotifiers.get(link).add(feature);
+		}
+
+		/**
+		 * @generated
+		 */
+		private void removed(EObject link, EStructuralFeature feature) {
+			if (!myNotifiers.containsKey(link)) {
+				return;
+			}
+			myNotifiers.get(link).remove(feature);
+		}
+
+		/**
+		 * @generated
+		 */
+		public void dispose() {
+			Set<Map.Entry<EObject, Set<EStructuralFeature>>> entrySet = myNotifiers.entrySet();
+			for (Map.Entry<EObject, Set<EStructuralFeature>> entry : entrySet) {
+				for (EStructuralFeature feature : entry.getValue()) {
+					getDiagramEventBroker().removeNotificationListener(entry.getKey(), feature, this);
+				}
+			}
+		}
+
+		/**
+		 * @generated
+		 */
+		private void removeReferenceListener(EObject link, EStructuralFeature feature) {
+			getDiagramEventBroker().removeNotificationListener(link, feature, this);
+			removed(link, feature);
+		}
+
+		/**
+		 * @generated
+		 */
+		private void addReferenceListener(EObject link, EStructuralFeature feature) {
+			getDiagramEventBroker().addNotificationListener(link, feature, this);
+			added(link, feature);
+		}
+
+		/**
+		 * @generated
+		 */
+		public void notifyChanged(Notification event) {
+			if (event.getFeature() == UMLPackage.eINSTANCE.getManifestation_UtilizedElement()) {
+				refreshDiagram();
+				return;
+			}
+		}
+	}
+
+	/**
+	 * @generated
+	 */
+	protected void addSemanticListeners() {
+		super.addSemanticListeners();
+		for (UMLLinkDescriptor next : getArtifact_3002ContainedLinks()) {
+			EObject nextLink = next.getModelElement();
+			if (nextLink == null) {
+				continue;
+			}
+			switch (next.getVisualID()) {
+			case ManifestationEditPart.VISUAL_ID:
+				getLinkTargetListener().addReferenceListener(nextLink, UMLPackage.eINSTANCE.getManifestation_UtilizedElement());
+				break;
+
+			default:
+				break;
+			}
+		}
+	}
+
+	/**
+	 * @generated
+	 */
+	@SuppressWarnings("unchecked")
+	private List<UMLLinkDescriptor> getArtifact_3002ContainedLinks() {
+		return UMLDiagramUpdater.getArtifact_3002ContainedLinks(getNotationView());
+	}
+
+	/**
+	 * @generated
+	 */
+	protected void removeSemanticListeners() {
+		super.removeSemanticListeners();
+		getLinkTargetListener().dispose();
+	}
+
+	/**
+	 * @generated
+	 */
+	private void handleTypeLinkModification(Notification event) {
+		if (event.getFeature() == UMLPackage.eINSTANCE.getArtifact_Manifestation()) {
+			switch (event.getEventType()) {
+			case Notification.ADD: {
+				Object link = event.getNewValue();
+				if (link instanceof Manifestation) {
+					getLinkTargetListener().addReferenceListener((EObject) link, UMLPackage.eINSTANCE.getManifestation_UtilizedElement());
+				}
+				if (link instanceof Manifestation) {
+					refreshDiagram();
+				}
+				break;
+			}
+			case Notification.REMOVE: {
+				Object link = event.getOldValue();
+				if (link instanceof Manifestation) {
+					getLinkTargetListener().removeReferenceListener((EObject) link, UMLPackage.eINSTANCE.getManifestation_UtilizedElement());
+				}
+				if (link instanceof Manifestation) {
+					refreshDiagram();
+				}
+				break;
+			}
+			case Notification.ADD_MANY: {
+				List<?> links = (List<?>) event.getNewValue();
+				for (Object link : links) {
+					if (link instanceof Manifestation) {
+						getLinkTargetListener().addReferenceListener((EObject) link, UMLPackage.eINSTANCE.getManifestation_UtilizedElement());
+					}
+				}
+				for (Object link : links) {
+					if (link instanceof Manifestation) {
+						refreshDiagram();
+						break;
+					}
+				}
+				break;
+			}
+			case Notification.REMOVE_MANY: {
+				List<?> links = (List<?>) event.getOldValue();
+				for (Object link : links) {
+					if (link instanceof Manifestation) {
+						getLinkTargetListener().removeReferenceListener((EObject) link, UMLPackage.eINSTANCE.getManifestation_UtilizedElement());
+					}
+				}
+				for (Object link : links) {
+					if (link instanceof Manifestation) {
+						refreshDiagram();
+						break;
+					}
+				}
+				break;
+			}
+			}
+		}
+	}
+
+	/**
+	 * @generated
+	 */
+	public void refreshDiagram() {
+		UMLDiagramUpdateCommand.performCanonicalUpdate(getDiagramView().getElement());
 	}
 
 	/**

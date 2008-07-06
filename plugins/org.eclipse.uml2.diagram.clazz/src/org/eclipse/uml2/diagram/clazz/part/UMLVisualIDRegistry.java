@@ -2,110 +2,13 @@ package org.eclipse.uml2.diagram.clazz.part;
 
 import org.eclipse.core.runtime.Platform;
 import org.eclipse.emf.ecore.EAnnotation;
-import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.gmf.runtime.notation.Diagram;
 import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.uml2.diagram.clazz.edit.parts.*;
-import org.eclipse.uml2.diagram.clazz.edit.parts.AssociationClass2EditPart;
-import org.eclipse.uml2.diagram.clazz.edit.parts.AssociationClassAttributesEditPart;
-import org.eclipse.uml2.diagram.clazz.edit.parts.AssociationClassClassesEditPart;
-import org.eclipse.uml2.diagram.clazz.edit.parts.AssociationClassEditPart;
-import org.eclipse.uml2.diagram.clazz.edit.parts.AssociationClassNameEditPart;
-import org.eclipse.uml2.diagram.clazz.edit.parts.AssociationClassOperationsEditPart;
-import org.eclipse.uml2.diagram.clazz.edit.parts.AssociationEditPart;
-import org.eclipse.uml2.diagram.clazz.edit.parts.AssociationName2EditPart;
-import org.eclipse.uml2.diagram.clazz.edit.parts.AssociationName3EditPart;
-import org.eclipse.uml2.diagram.clazz.edit.parts.AssociationName4EditPart;
-import org.eclipse.uml2.diagram.clazz.edit.parts.AssociationName5EditPart;
-import org.eclipse.uml2.diagram.clazz.edit.parts.AssociationName6EditPart;
-import org.eclipse.uml2.diagram.clazz.edit.parts.AssociationName7EditPart;
-import org.eclipse.uml2.diagram.clazz.edit.parts.AssociationNameEditPart;
-import org.eclipse.uml2.diagram.clazz.edit.parts.Class2EditPart;
-import org.eclipse.uml2.diagram.clazz.edit.parts.Class3EditPart;
-import org.eclipse.uml2.diagram.clazz.edit.parts.Class4EditPart;
-import org.eclipse.uml2.diagram.clazz.edit.parts.ClassAttributesEditPart;
-import org.eclipse.uml2.diagram.clazz.edit.parts.ClassClassesEditPart;
-import org.eclipse.uml2.diagram.clazz.edit.parts.ClassEditPart;
-import org.eclipse.uml2.diagram.clazz.edit.parts.ClassNameEditPart;
-import org.eclipse.uml2.diagram.clazz.edit.parts.ClassOperationsEditPart;
-import org.eclipse.uml2.diagram.clazz.edit.parts.ClassStereotypeEditPart;
-import org.eclipse.uml2.diagram.clazz.edit.parts.ConstraintEditPart;
-import org.eclipse.uml2.diagram.clazz.edit.parts.ConstraintNameEditPart;
-import org.eclipse.uml2.diagram.clazz.edit.parts.DataType2EditPart;
-import org.eclipse.uml2.diagram.clazz.edit.parts.DataTypeAttributesEditPart;
-import org.eclipse.uml2.diagram.clazz.edit.parts.DataTypeEditPart;
-import org.eclipse.uml2.diagram.clazz.edit.parts.DataTypeNameEditPart;
-import org.eclipse.uml2.diagram.clazz.edit.parts.DataTypeOperationsEditPart;
-import org.eclipse.uml2.diagram.clazz.edit.parts.Dependency2EditPart;
-import org.eclipse.uml2.diagram.clazz.edit.parts.DependencyEditPart;
-import org.eclipse.uml2.diagram.clazz.edit.parts.DependencyName2EditPart;
-import org.eclipse.uml2.diagram.clazz.edit.parts.DependencyName3EditPart;
-import org.eclipse.uml2.diagram.clazz.edit.parts.DependencyNameEditPart;
-import org.eclipse.uml2.diagram.clazz.edit.parts.ElementImportEditPart;
-import org.eclipse.uml2.diagram.clazz.edit.parts.Enumeration2EditPart;
-import org.eclipse.uml2.diagram.clazz.edit.parts.EnumerationAttributesEditPart;
-import org.eclipse.uml2.diagram.clazz.edit.parts.EnumerationEditPart;
-import org.eclipse.uml2.diagram.clazz.edit.parts.EnumerationLiteralEditPart;
-import org.eclipse.uml2.diagram.clazz.edit.parts.EnumerationLiteralsEditPart;
-import org.eclipse.uml2.diagram.clazz.edit.parts.EnumerationNameEditPart;
-import org.eclipse.uml2.diagram.clazz.edit.parts.EnumerationOperationsEditPart;
-import org.eclipse.uml2.diagram.clazz.edit.parts.Generalization2EditPart;
-import org.eclipse.uml2.diagram.clazz.edit.parts.GeneralizationEditPart;
-import org.eclipse.uml2.diagram.clazz.edit.parts.GeneralizationSetEditPart;
-import org.eclipse.uml2.diagram.clazz.edit.parts.GeneralizationSetIsCoveringIsDisjointEditPart;
-import org.eclipse.uml2.diagram.clazz.edit.parts.GeneralizationSetNameEditPart;
-import org.eclipse.uml2.diagram.clazz.edit.parts.InstanceSpecification2EditPart;
-import org.eclipse.uml2.diagram.clazz.edit.parts.InstanceSpecificationEditPart;
-import org.eclipse.uml2.diagram.clazz.edit.parts.InstanceSpecificationNameEditPart;
-import org.eclipse.uml2.diagram.clazz.edit.parts.InstanceSpecificationSlotsEditPart;
-import org.eclipse.uml2.diagram.clazz.edit.parts.Interface2EditPart;
-import org.eclipse.uml2.diagram.clazz.edit.parts.InterfaceAttributesEditPart;
-import org.eclipse.uml2.diagram.clazz.edit.parts.InterfaceClassesEditPart;
-import org.eclipse.uml2.diagram.clazz.edit.parts.InterfaceEditPart;
-import org.eclipse.uml2.diagram.clazz.edit.parts.InterfaceName2EditPart;
-import org.eclipse.uml2.diagram.clazz.edit.parts.InterfaceNameEditPart;
-import org.eclipse.uml2.diagram.clazz.edit.parts.InterfaceOperationsEditPart;
-import org.eclipse.uml2.diagram.clazz.edit.parts.InterfaceRealizationEditPart;
-import org.eclipse.uml2.diagram.clazz.edit.parts.Operation2EditPart;
-import org.eclipse.uml2.diagram.clazz.edit.parts.Operation3EditPart;
-import org.eclipse.uml2.diagram.clazz.edit.parts.Operation4EditPart;
-import org.eclipse.uml2.diagram.clazz.edit.parts.Operation5EditPart;
-import org.eclipse.uml2.diagram.clazz.edit.parts.Operation6EditPart;
-import org.eclipse.uml2.diagram.clazz.edit.parts.OperationEditPart;
-import org.eclipse.uml2.diagram.clazz.edit.parts.Package2EditPart;
-import org.eclipse.uml2.diagram.clazz.edit.parts.Package3EditPart;
-import org.eclipse.uml2.diagram.clazz.edit.parts.Package4EditPart;
-import org.eclipse.uml2.diagram.clazz.edit.parts.PackageClassifiersEditPart;
-import org.eclipse.uml2.diagram.clazz.edit.parts.PackageEditPart;
-import org.eclipse.uml2.diagram.clazz.edit.parts.PackageImportsEditPart;
-import org.eclipse.uml2.diagram.clazz.edit.parts.PackageName2EditPart;
-import org.eclipse.uml2.diagram.clazz.edit.parts.PackageNameEditPart;
-import org.eclipse.uml2.diagram.clazz.edit.parts.PackageOtherEditPart;
-import org.eclipse.uml2.diagram.clazz.edit.parts.PackagePackagesEditPart;
-import org.eclipse.uml2.diagram.clazz.edit.parts.PortEditPart;
-import org.eclipse.uml2.diagram.clazz.edit.parts.PortNameEditPart;
-import org.eclipse.uml2.diagram.clazz.edit.parts.PrimitiveType2EditPart;
-import org.eclipse.uml2.diagram.clazz.edit.parts.PrimitiveTypeAttributesEditPart;
-import org.eclipse.uml2.diagram.clazz.edit.parts.PrimitiveTypeEditPart;
-import org.eclipse.uml2.diagram.clazz.edit.parts.PrimitiveTypeNameEditPart;
-import org.eclipse.uml2.diagram.clazz.edit.parts.PrimitiveTypeOperationsEditPart;
-import org.eclipse.uml2.diagram.clazz.edit.parts.Property2EditPart;
-import org.eclipse.uml2.diagram.clazz.edit.parts.Property3EditPart;
-import org.eclipse.uml2.diagram.clazz.edit.parts.Property4EditPart;
-import org.eclipse.uml2.diagram.clazz.edit.parts.Property5EditPart;
-import org.eclipse.uml2.diagram.clazz.edit.parts.Property6EditPart;
-import org.eclipse.uml2.diagram.clazz.edit.parts.Property7EditPart;
-import org.eclipse.uml2.diagram.clazz.edit.parts.PropertyEditPart;
-import org.eclipse.uml2.diagram.clazz.edit.parts.PropertyNameEditPart;
-import org.eclipse.uml2.diagram.clazz.edit.parts.RealizationEditPart;
-import org.eclipse.uml2.diagram.clazz.edit.parts.RealizationNameEditPart;
-import org.eclipse.uml2.diagram.clazz.edit.parts.RedefinableTemplateSignatureEditPart;
-import org.eclipse.uml2.diagram.clazz.edit.parts.SlotEditPart;
-import org.eclipse.uml2.diagram.clazz.edit.parts.TemplateSignatureNode_signatureEditPart;
-import org.eclipse.uml2.diagram.clazz.edit.parts.UsageEditPart;
 import org.eclipse.uml2.diagram.clazz.expressions.UMLAbstractExpression;
 import org.eclipse.uml2.diagram.clazz.expressions.UMLOCLFactory;
+import org.eclipse.uml2.diagram.common.genapi.IVisualIDRegistry;
 import org.eclipse.uml2.uml.Association;
 import org.eclipse.uml2.uml.Class;
 import org.eclipse.uml2.uml.DataType;
@@ -1583,6 +1486,9 @@ public class UMLVisualIDRegistry {
 	 * @generated
 	 */
 	protected static boolean hasViewChild(View containerView, EObject domainElement, int visualId) {
+		if (containerView == null) {
+			return false;
+		}
 		if (domainElement == null) {
 			return false;
 		}
@@ -1599,6 +1505,7 @@ public class UMLVisualIDRegistry {
 	 * @generated
 	 */
 	public static int getChildDescriptorVisualID(UMLNodeDescriptor container, EObject domainElement) {
+		final View containerView = null;
 		if (domainElement == null) {
 			return -1;
 		}
@@ -1839,7 +1746,7 @@ public class UMLVisualIDRegistry {
 			// org.eclipse.uml2.diagram.clazz.edit.parts.AssociationClassRhombEditPart.VISUAL_ID
 			// diagram updater is expected to return one node descriptor (and thus one instance of that semantic element) per node in group
 			// we need to give other parts a chance to create their views
-			if (UMLPackage.eINSTANCE.getAssociationClass().isSuperTypeOf(domainElement.eClass())) {
+			if (UMLPackage.eINSTANCE.getAssociationClass().isSuperTypeOf(domainElement.eClass()) && !hasViewChild(containerView, domainElement, AssociationClass2EditPart.VISUAL_ID)) {
 				return AssociationClass2EditPart.VISUAL_ID;
 			}
 			if (UMLPackage.eINSTANCE.getDataType().isSuperTypeOf(domainElement.eClass()) && isDataType_2004((DataType) domainElement)) {
@@ -1875,7 +1782,7 @@ public class UMLVisualIDRegistry {
 			// org.eclipse.uml2.diagram.clazz.edit.parts.AssociationClass2EditPart.VISUAL_ID
 			// diagram updater is expected to return one node descriptor (and thus one instance of that semantic element) per node in group
 			// we need to give other parts a chance to create their views
-			if (UMLPackage.eINSTANCE.getAssociationClass().isSuperTypeOf(domainElement.eClass())) {
+			if (UMLPackage.eINSTANCE.getAssociationClass().isSuperTypeOf(domainElement.eClass()) && !hasViewChild(containerView, domainElement, AssociationClassRhombEditPart.VISUAL_ID)) {
 				return AssociationClassRhombEditPart.VISUAL_ID;
 			}
 			if (UMLPackage.eINSTANCE.getPackage().isSuperTypeOf(domainElement.eClass())) {
@@ -2041,5 +1948,197 @@ public class UMLVisualIDRegistry {
 		}
 		return -1;
 	}
+
+	/**
+	 * @generated
+	 */
+	protected static boolean canSubstitute(int visualId, int substituteCandidate) {
+		if (visualId == substituteCandidate) {
+			return true;
+		}
+		switch (visualId) {
+		case Package2EditPart.VISUAL_ID:
+			return (substituteCandidate == PackageAsFrameEditPart.VISUAL_ID);
+		case AssociationClass2EditPart.VISUAL_ID:
+			return (substituteCandidate == AssociationClassRhombEditPart.VISUAL_ID);
+		case InterfaceEditPart.VISUAL_ID:
+			return (substituteCandidate == Interface2EditPart.VISUAL_ID);
+		case InstanceSpecification2EditPart.VISUAL_ID:
+			return (substituteCandidate == InstanceSpecification4EditPart.VISUAL_ID);
+		case Interface2EditPart.VISUAL_ID:
+			return (substituteCandidate == InterfaceEditPart.VISUAL_ID);
+		case AssociationClassRhombEditPart.VISUAL_ID:
+			return (substituteCandidate == AssociationClass2EditPart.VISUAL_ID);
+		case PackageAsFrameEditPart.VISUAL_ID:
+			return (substituteCandidate == Package2EditPart.VISUAL_ID);
+		case InstanceSpecification4EditPart.VISUAL_ID:
+			return (substituteCandidate == InstanceSpecification2EditPart.VISUAL_ID);
+
+		default:
+			break;
+		}
+		return false;
+	}
+
+	/**
+	 * @generated
+	 */
+	public static boolean checkNodeVisualID(View containerView, EObject domainElement, int candidate) {
+		if (candidate == -1) {
+			//unrecognized id is always bad
+			return false;
+		}
+		int basic = getNodeVisualID(containerView, domainElement);
+		return basic == candidate || canSubstitute(basic, candidate);
+	}
+
+	/**
+	 * @generated
+	 */
+	public static boolean isCompartmentVisualID(int visualID) {
+		switch (visualID) {
+		case PackagePackagesEditPart.VISUAL_ID:
+		case PackageClassifiersEditPart.VISUAL_ID:
+		case PackageOtherEditPart.VISUAL_ID:
+		case ClassAttributesEditPart.VISUAL_ID:
+		case ClassOperationsEditPart.VISUAL_ID:
+		case ClassClassesEditPart.VISUAL_ID:
+		case AssociationClassAttributesEditPart.VISUAL_ID:
+		case AssociationClassOperationsEditPart.VISUAL_ID:
+		case AssociationClassClassesEditPart.VISUAL_ID:
+		case DataTypeAttributesEditPart.VISUAL_ID:
+		case DataTypeOperationsEditPart.VISUAL_ID:
+		case PrimitiveTypeAttributesEditPart.VISUAL_ID:
+		case PrimitiveTypeOperationsEditPart.VISUAL_ID:
+		case EnumerationLiteralsEditPart.VISUAL_ID:
+		case EnumerationAttributesEditPart.VISUAL_ID:
+		case EnumerationOperationsEditPart.VISUAL_ID:
+		case InstanceSpecificationSlotsEditPart.VISUAL_ID:
+		case InterfaceAttributesEditPart.VISUAL_ID:
+		case InterfaceOperationsEditPart.VISUAL_ID:
+		case InterfaceClassesEditPart.VISUAL_ID:
+		case PackageImportsEditPart.VISUAL_ID:
+		case PackageAsFrameContentsEditPart.VISUAL_ID:
+		case PackageAsFrameContents2EditPart.VISUAL_ID:
+		case ClassAttributes2EditPart.VISUAL_ID:
+		case ClassOperations2EditPart.VISUAL_ID:
+		case ClassClasses2EditPart.VISUAL_ID:
+		case EnumerationLiterals2EditPart.VISUAL_ID:
+		case EnumerationAttributes2EditPart.VISUAL_ID:
+		case EnumerationOperations2EditPart.VISUAL_ID:
+		case InstanceSpecificationSlots2EditPart.VISUAL_ID:
+		case DataTypeAttributes2EditPart.VISUAL_ID:
+		case DataTypeOperations2EditPart.VISUAL_ID:
+		case PrimitiveTypeAttributes2EditPart.VISUAL_ID:
+		case PrimitiveTypeOperations2EditPart.VISUAL_ID:
+		case InstanceSpecificationValueEditPart.VISUAL_ID:
+			return true;
+		default:
+			break;
+		}
+		return false;
+	}
+
+	/**
+	 * @generated
+	 */
+	public static boolean isSemanticLeafVisualID(int visualID) {
+		switch (visualID) {
+		case Package2EditPart.VISUAL_ID:
+		case InterfaceEditPart.VISUAL_ID:
+		case ConstraintEditPart.VISUAL_ID:
+		case InstanceSpecification2EditPart.VISUAL_ID:
+		case DependencyEditPart.VISUAL_ID:
+		case GeneralizationSetEditPart.VISUAL_ID:
+		case Interface2EditPart.VISUAL_ID:
+		case Package4EditPart.VISUAL_ID:
+		case AssociationClassRhombEditPart.VISUAL_ID:
+		case PackageAsFrameEditPart.VISUAL_ID:
+		case Package3EditPart.VISUAL_ID:
+		case ClassEditPart.VISUAL_ID:
+		case DataTypeEditPart.VISUAL_ID:
+		case PrimitiveTypeEditPart.VISUAL_ID:
+		case EnumerationEditPart.VISUAL_ID:
+		case AssociationClassEditPart.VISUAL_ID:
+		case Interface3EditPart.VISUAL_ID:
+		case InstanceSpecificationEditPart.VISUAL_ID:
+		case PropertyEditPart.VISUAL_ID:
+		case OperationEditPart.VISUAL_ID:
+		case Class3EditPart.VISUAL_ID:
+		case PortEditPart.VISUAL_ID:
+		case RedefinableTemplateSignatureEditPart.VISUAL_ID:
+		case Property2EditPart.VISUAL_ID:
+		case Operation2EditPart.VISUAL_ID:
+		case Property3EditPart.VISUAL_ID:
+		case Operation3EditPart.VISUAL_ID:
+		case Property4EditPart.VISUAL_ID:
+		case Operation4EditPart.VISUAL_ID:
+		case EnumerationLiteralEditPart.VISUAL_ID:
+		case Property5EditPart.VISUAL_ID:
+		case Operation5EditPart.VISUAL_ID:
+		case SlotEditPart.VISUAL_ID:
+		case Property6EditPart.VISUAL_ID:
+		case Operation6EditPart.VISUAL_ID:
+		case Class4EditPart.VISUAL_ID:
+		case ElementImportEditPart.VISUAL_ID:
+		case Package6EditPart.VISUAL_ID:
+		case InstanceSpecification3EditPart.VISUAL_ID:
+		case LiteralStringEditPart.VISUAL_ID:
+		case LiteralIntegerEditPart.VISUAL_ID:
+		case ExpressionEditPart.VISUAL_ID:
+			return true;
+		default:
+			break;
+		}
+		return false;
+	}
+
+	/**
+	 * @generated
+	 */
+	public static final IVisualIDRegistry TYPED_ADAPTER = new IVisualIDRegistry() {
+
+		/**
+		 * @generated
+		 */
+		public String getModelID(View view) {
+			return org.eclipse.uml2.diagram.clazz.part.UMLVisualIDRegistry.getModelID(view);
+		}
+
+		/**
+		 * @generated
+		 */
+		public int getVisualID(View view) {
+			return org.eclipse.uml2.diagram.clazz.part.UMLVisualIDRegistry.getVisualID(view);
+		}
+
+		/**
+		 * @generated
+		 */
+		public int getNodeVisualID(View containerView, EObject domainElement) {
+			return org.eclipse.uml2.diagram.clazz.part.UMLVisualIDRegistry.getNodeVisualID(containerView, domainElement);
+		}
+
+		/**
+		 * @generated
+		 */
+		public boolean checkNodeVisualID(View containerView, EObject domainElement, int candidate) {
+			return org.eclipse.uml2.diagram.clazz.part.UMLVisualIDRegistry.checkNodeVisualID(containerView, domainElement, candidate);
+		}
+
+		/**
+		 * @generated
+		 */
+		public boolean isCompartmentVisualID(int visualID) {
+			return org.eclipse.uml2.diagram.clazz.part.UMLVisualIDRegistry.isCompartmentVisualID(visualID);
+		}
+
+		/**
+		 * @generated
+		 */
+		public boolean isSemanticLeafVisualID(int visualID) {
+			return org.eclipse.uml2.diagram.clazz.part.UMLVisualIDRegistry.isSemanticLeafVisualID(visualID);
+		}
+	};
 
 }

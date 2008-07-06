@@ -5,6 +5,7 @@ import org.eclipse.emf.ecore.EAnnotation;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.gmf.runtime.notation.Diagram;
 import org.eclipse.gmf.runtime.notation.View;
+import org.eclipse.uml2.diagram.common.genapi.IVisualIDRegistry;
 import org.eclipse.uml2.diagram.usecase.edit.parts.ActorAsRectangleEditPart;
 import org.eclipse.uml2.diagram.usecase.edit.parts.ActorEditPart;
 import org.eclipse.uml2.diagram.usecase.edit.parts.ActorInPackageEditPart;
@@ -487,6 +488,9 @@ public class UMLVisualIDRegistry {
 	 * @generated
 	 */
 	protected static boolean hasViewChild(View containerView, EObject domainElement, int visualId) {
+		if (containerView == null) {
+			return false;
+		}
 		if (domainElement == null) {
 			return false;
 		}
@@ -595,4 +599,132 @@ public class UMLVisualIDRegistry {
 		}
 		return -1;
 	}
+
+	/**
+	 * @generated
+	 */
+	protected static boolean canSubstitute(int visualId, int substituteCandidate) {
+		if (visualId == substituteCandidate) {
+			return true;
+		}
+		switch (visualId) {
+		case ActorEditPart.VISUAL_ID:
+			return (substituteCandidate == ActorAsRectangleEditPart.VISUAL_ID);
+		case ActorAsRectangleEditPart.VISUAL_ID:
+			return (substituteCandidate == ActorEditPart.VISUAL_ID);
+		case UseCaseEditPart.VISUAL_ID:
+			return (substituteCandidate == UseCaseAsClassEditPart.VISUAL_ID);
+		case UseCaseAsClassEditPart.VISUAL_ID:
+			return (substituteCandidate == UseCaseEditPart.VISUAL_ID);
+
+		default:
+			break;
+		}
+		return false;
+	}
+
+	/**
+	 * @generated
+	 */
+	public static boolean checkNodeVisualID(View containerView, EObject domainElement, int candidate) {
+		if (candidate == -1) {
+			//unrecognized id is always bad
+			return false;
+		}
+		int basic = getNodeVisualID(containerView, domainElement);
+		return basic == candidate || canSubstitute(basic, candidate);
+	}
+
+	/**
+	 * @generated
+	 */
+	public static boolean isCompartmentVisualID(int visualID) {
+		switch (visualID) {
+		case PackageImportsEditPart.VISUAL_ID:
+		case UseCaseExtensionPointsEditPart.VISUAL_ID:
+		case UseCaseAsClassExtensionPointsEditPart.VISUAL_ID:
+		case SubjectUsecasesEditPart.VISUAL_ID:
+		case InnerUseCaseExtensionPointsEditPart.VISUAL_ID:
+		case PackageFramecontentsEditPart.VISUAL_ID:
+		case UseCasePointsEditPart.VISUAL_ID:
+			return true;
+		default:
+			break;
+		}
+		return false;
+	}
+
+	/**
+	 * @generated
+	 */
+	public static boolean isSemanticLeafVisualID(int visualID) {
+		switch (visualID) {
+		case DiagramHeaderEditPart.VISUAL_ID:
+		case ActorEditPart.VISUAL_ID:
+		case ActorAsRectangleEditPart.VISUAL_ID:
+		case UseCaseEditPart.VISUAL_ID:
+		case UseCaseAsClassEditPart.VISUAL_ID:
+		case SubjectEditPart.VISUAL_ID:
+		case NestedPackageEditPart.VISUAL_ID:
+		case ConstraintEditPart.VISUAL_ID:
+		case ElementImportEditPart.VISUAL_ID:
+		case ExtensionPointEditPart.VISUAL_ID:
+		case ExtensionPoint2EditPart.VISUAL_ID:
+		case InnerUseCaseEditPart.VISUAL_ID:
+		case ActorInPackageEditPart.VISUAL_ID:
+		case UseCaseinPackageEditPart.VISUAL_ID:
+			return true;
+		default:
+			break;
+		}
+		return false;
+	}
+
+	/**
+	 * @generated
+	 */
+	public static final IVisualIDRegistry TYPED_ADAPTER = new IVisualIDRegistry() {
+
+		/**
+		 * @generated
+		 */
+		public String getModelID(View view) {
+			return org.eclipse.uml2.diagram.usecase.part.UMLVisualIDRegistry.getModelID(view);
+		}
+
+		/**
+		 * @generated
+		 */
+		public int getVisualID(View view) {
+			return org.eclipse.uml2.diagram.usecase.part.UMLVisualIDRegistry.getVisualID(view);
+		}
+
+		/**
+		 * @generated
+		 */
+		public int getNodeVisualID(View containerView, EObject domainElement) {
+			return org.eclipse.uml2.diagram.usecase.part.UMLVisualIDRegistry.getNodeVisualID(containerView, domainElement);
+		}
+
+		/**
+		 * @generated
+		 */
+		public boolean checkNodeVisualID(View containerView, EObject domainElement, int candidate) {
+			return org.eclipse.uml2.diagram.usecase.part.UMLVisualIDRegistry.checkNodeVisualID(containerView, domainElement, candidate);
+		}
+
+		/**
+		 * @generated
+		 */
+		public boolean isCompartmentVisualID(int visualID) {
+			return org.eclipse.uml2.diagram.usecase.part.UMLVisualIDRegistry.isCompartmentVisualID(visualID);
+		}
+
+		/**
+		 * @generated
+		 */
+		public boolean isSemanticLeafVisualID(int visualID) {
+			return org.eclipse.uml2.diagram.usecase.part.UMLVisualIDRegistry.isSemanticLeafVisualID(visualID);
+		}
+	};
 }

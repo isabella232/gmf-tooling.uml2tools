@@ -4,6 +4,33 @@
 <plugin>
 
 <!-- gmf generator persistent region begin -->
+   <extension point="org.eclipse.ui.popupMenus">
+      <objectContribution
+            id="org.eclipse.uml2.diagram.clazz.ShowInitDialog"
+            objectClass="org.eclipse.uml2.uml.Package">
+         <action
+               label="Show Init Dialog (Temp)"
+               class="org.eclipse.uml2.diagram.clazz.async.ShowInitDialogAction"
+               menubarPath="additions"
+               enablesFor="1"
+               id="org.eclipse.uml2.diagram.clazz.ShowInitDialogAction">
+         </action>
+      </objectContribution>
+   </extension>
+   <extension point="org.eclipse.ui.popupMenus">
+      <objectContribution
+            id="org.eclipse.uml2.diagram.clazz.ShowInitDialog2"
+            objectClass="org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart">
+         <action
+               label="Show Init Dialog (Temp) 2"
+               class="org.eclipse.uml2.diagram.clazz.async.ShowInitDialogAction2"
+               menubarPath="additions"
+               enablesFor="1"
+               id="org.eclipse.uml2.diagram.clazz.ShowInitDialogAction2">
+         </action>
+      </objectContribution>
+   </extension>
+
    <extension point="org.eclipse.gmf.runtime.common.ui.services.action.contributionItemProviders">
       <?gmfgen generated="false"?>
       <contributionItemProvider
@@ -434,6 +461,16 @@
          </ViewId>
       </GlobalActionHandlerProvider>
       <GlobalActionHandlerProvider
+         class="org.eclipse.gmf.runtime.diagram.ui.printing.render.providers.DiagramWithPrintGlobalActionHandlerProvider"
+         id="UMLClassPresentationPrint">
+         <Priority name="Lowest"/>
+         <ViewId id="org.eclipse.uml2.diagram.clazz.part.UMLDiagramEditorID">
+            <ElementType class="org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart">
+               <GlobalActionId actionId="print"/>
+            </ElementType>
+         </ViewId>
+      </GlobalActionHandlerProvider>
+      <GlobalActionHandlerProvider
          class="org.eclipse.gmf.runtime.diagram.ui.providers.ide.providers.DiagramIDEGlobalActionHandlerProvider"
          id="UMLClassPresentationIDE">
          <Priority name="Lowest"/>
@@ -455,6 +492,16 @@
             </ElementType>
          </ViewId>
       </GlobalActionHandlerProvider>
+   </extension>
+
+   <extension point="org.eclipse.gmf.runtime.common.ui.services.action.contributionItemProviders">
+      <?gmfgen generated="true"?>
+      <contributionItemProvider class="org.eclipse.uml2.diagram.clazz.providers.UMLContributionItemProvider">
+         <Priority name="Low"/>
+         <partContribution id="org.eclipse.uml2.diagram.clazz.part.UMLDiagramEditorID">
+            <partAction menubarPath="/file/print" id="printPreviewAction"/>
+         </partContribution>
+      </contributionItemProvider>
    </extension>
 
    <extension point="org.eclipse.gmf.runtime.common.ui.services.action.contributionItemProviders">

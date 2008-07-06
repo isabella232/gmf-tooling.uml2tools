@@ -17,14 +17,15 @@ import org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.ShapeNodeEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles;
 import org.eclipse.gmf.runtime.draw2d.ui.figures.ConstrainedToolbarLayout;
-import org.eclipse.gmf.runtime.draw2d.ui.figures.WrapLabel;
 import org.eclipse.gmf.runtime.gef.ui.figures.DefaultSizeNodeFigure;
 import org.eclipse.gmf.runtime.gef.ui.figures.NodeFigure;
 import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.uml2.diagram.clazz.edit.policies.ConstraintItemSemanticEditPolicy;
+import org.eclipse.uml2.diagram.clazz.part.UMLDiagramUpdateCommand;
 import org.eclipse.uml2.diagram.clazz.part.UMLVisualIDRegistry;
 import org.eclipse.uml2.diagram.common.draw2d.MultilineConstraintFigure;
 import org.eclipse.uml2.diagram.common.editparts.PrimaryShapeEditPart;
+import org.eclipse.uml2.uml.UMLPackage;
 
 /**
  * @generated
@@ -217,6 +218,24 @@ public class ConstraintEditPart extends ShapeNodeEditPart implements PrimaryShap
 		} else {
 			super.handleNotificationEvent(event);
 		}
+		handleFeatureLinkModification(event);
+	}
+
+	/**
+	 * @generated
+	 */
+	private void handleFeatureLinkModification(Notification event) {
+		if (event.getFeature() == UMLPackage.eINSTANCE.getConstraint_ConstrainedElement()) {
+			refreshDiagram();
+			return;
+		}
+	}
+
+	/**
+	 * @generated
+	 */
+	public void refreshDiagram() {
+		UMLDiagramUpdateCommand.performCanonicalUpdate(getDiagramView().getElement());
 	}
 
 	/**

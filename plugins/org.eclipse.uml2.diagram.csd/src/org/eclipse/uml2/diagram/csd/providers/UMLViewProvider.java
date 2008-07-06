@@ -75,7 +75,6 @@ import org.eclipse.uml2.diagram.csd.edit.parts.PropertyEditPart;
 import org.eclipse.uml2.diagram.csd.edit.parts.PropertyName2EditPart;
 import org.eclipse.uml2.diagram.csd.edit.parts.PropertyNameEditPart;
 import org.eclipse.uml2.diagram.csd.edit.parts.SlotEditPart;
-import org.eclipse.uml2.diagram.csd.edit.parts.SlotNameEditPart;
 import org.eclipse.uml2.diagram.csd.edit.parts.UsageEditPart;
 import org.eclipse.uml2.diagram.csd.part.UMLVisualIDRegistry;
 import org.eclipse.uml2.diagram.csd.view.factories.AssociationInstanceSourceViewFactory;
@@ -146,7 +145,6 @@ import org.eclipse.uml2.diagram.csd.view.factories.Property3ViewFactory;
 import org.eclipse.uml2.diagram.csd.view.factories.PropertyName2ViewFactory;
 import org.eclipse.uml2.diagram.csd.view.factories.PropertyNameViewFactory;
 import org.eclipse.uml2.diagram.csd.view.factories.PropertyViewFactory;
-import org.eclipse.uml2.diagram.csd.view.factories.SlotNameViewFactory;
 import org.eclipse.uml2.diagram.csd.view.factories.SlotViewFactory;
 import org.eclipse.uml2.diagram.csd.view.factories.UsageViewFactory;
 
@@ -198,8 +196,8 @@ public class UMLViewProvider extends AbstractViewProvider {
 				if (!semanticHint.equals(elementTypeHint)) {
 					return null; // if semantic hint is specified it should be the same as in element type
 				}
-				if (domainElement != null && visualID != UMLVisualIDRegistry.getNodeVisualID(containerView, domainElement)) {
-					return null; // visual id for node EClass should match visual id from element type
+				if (domainElement != null && !UMLVisualIDRegistry.checkNodeVisualID(containerView, domainElement, visualID)) {
+					return null; // visual id for node EClass should match visual id from element type, or at least be substitutable for it
 				}
 			} else {
 				// Element type is not specified. Domain element should be present.

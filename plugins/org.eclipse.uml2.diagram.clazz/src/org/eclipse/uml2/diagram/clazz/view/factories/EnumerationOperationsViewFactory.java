@@ -4,23 +4,15 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.eclipse.core.runtime.IAdaptable;
-
-import org.eclipse.emf.ecore.EAnnotation;
-import org.eclipse.emf.ecore.EcoreFactory;
-
 import org.eclipse.gmf.runtime.diagram.ui.view.factories.BasicNodeViewFactory;
-import org.eclipse.gmf.runtime.diagram.ui.view.factories.ListCompartmentViewFactory;
-
+import org.eclipse.gmf.runtime.notation.CanonicalStyle;
 import org.eclipse.gmf.runtime.notation.DrawerStyle;
 import org.eclipse.gmf.runtime.notation.NotationFactory;
 import org.eclipse.gmf.runtime.notation.NotationPackage;
 import org.eclipse.gmf.runtime.notation.TitleStyle;
 import org.eclipse.gmf.runtime.notation.View;
-
 import org.eclipse.uml2.diagram.clazz.details.UMLDetailLevelService;
 import org.eclipse.uml2.diagram.clazz.edit.parts.EnumerationOperationsEditPart;
-import org.eclipse.uml2.diagram.clazz.edit.parts.PackageEditPart;
-
 import org.eclipse.uml2.diagram.clazz.part.UMLVisualIDRegistry;
 
 /**
@@ -37,6 +29,9 @@ public class EnumerationOperationsViewFactory extends BasicNodeViewFactory {
 		styles.add(NotationFactory.eINSTANCE.createTitleStyle());
 		styles.add(NotationFactory.eINSTANCE.createSortingStyle());
 		styles.add(NotationFactory.eINSTANCE.createFilteringStyle());
+		CanonicalStyle canonicalStyle = NotationFactory.eINSTANCE.createCanonicalStyle();
+		canonicalStyle.setCanonical(true);
+		styles.add(canonicalStyle);
 		return styles;
 	}
 

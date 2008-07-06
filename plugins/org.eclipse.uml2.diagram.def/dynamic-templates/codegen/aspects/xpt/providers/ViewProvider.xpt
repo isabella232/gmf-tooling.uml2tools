@@ -79,8 +79,8 @@ protected Class getNodeViewClass(org.eclipse.core.runtime.IAdaptable semanticAda
 			if (!semanticHint.equals(elementTypeHint)) {
 				return null; // if semantic hint is specified it should be the same as in element type
 			}
-			if (domainElement != null && visualID != «EXPAND xpt::editor::VisualIDRegistry::getNodeVisualIDMethodCall»(containerView, domainElement)) {
-				return null; // visual id for node EClass should match visual id from element type
+			if (domainElement != null && !«EXPAND aspects::xpt::editor::VisualIDRegistry::checkNodeVisualIDMethodCall»(containerView, domainElement, visualID)) {
+				return null; // visual id for node EClass should match visual id from element type, or at least be substitutable for it
 			}
 		} else {
 			// Element type is not specified. Domain element should be present.

@@ -65,6 +65,8 @@
               xsi:type="gmfgraph:BorderLayoutData"
               alignment="BEGINNING"
               vertical="true"/>
+          <font
+              xsi:type="gmfgraph:BasicFont"/>
         </children>
         <children
             xsi:type="gmfgraph:Rectangle"

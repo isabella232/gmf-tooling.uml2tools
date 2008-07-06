@@ -10,13 +10,8 @@ import org.eclipse.gmf.runtime.emf.type.core.commands.EditElementCommand;
 import org.eclipse.gmf.runtime.emf.type.core.requests.CreateRelationshipRequest;
 import org.eclipse.uml2.diagram.common.commands.ProvidedPortLinkHelper;
 import org.eclipse.uml2.diagram.csd.edit.policies.UMLBaseItemSemanticEditPolicy;
-import org.eclipse.uml2.uml.Classifier;
 import org.eclipse.uml2.uml.Interface;
-import org.eclipse.uml2.uml.Package;
 import org.eclipse.uml2.uml.Port;
-import org.eclipse.uml2.uml.Realization;
-import org.eclipse.uml2.uml.Type;
-import org.eclipse.uml2.uml.UMLFactory;
 
 /**
  * @generated

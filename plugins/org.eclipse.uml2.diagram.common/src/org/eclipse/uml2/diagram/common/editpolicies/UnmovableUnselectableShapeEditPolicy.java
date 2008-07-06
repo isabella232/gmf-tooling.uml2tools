@@ -19,7 +19,7 @@ import org.eclipse.gmf.runtime.diagram.ui.editpolicies.UnmovableShapeEditPolicy;
 
 public class UnmovableUnselectableShapeEditPolicy extends UnmovableShapeEditPolicy {
 	
-	protected List createSelectionHandles() {
+	protected List<?> createSelectionHandles() {
 		return Collections.emptyList();
 	}
 

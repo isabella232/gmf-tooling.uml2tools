@@ -9,6 +9,18 @@ import java.util.Set;
 
 import org.eclipse.gmf.runtime.diagram.ui.editpolicies.CanonicalEditPolicy;
 import org.eclipse.gmf.runtime.notation.View;
+import org.eclipse.uml2.diagram.deploy.edit.parts.Artifact2EditPart;
+import org.eclipse.uml2.diagram.deploy.edit.parts.Artifact3EditPart;
+import org.eclipse.uml2.diagram.deploy.edit.parts.ArtifactEditPart;
+import org.eclipse.uml2.diagram.deploy.edit.parts.DeploymentSpecificationEditPart;
+import org.eclipse.uml2.diagram.deploy.edit.parts.Device2EditPart;
+import org.eclipse.uml2.diagram.deploy.edit.parts.DeviceEditPart;
+import org.eclipse.uml2.diagram.deploy.edit.parts.ElementImportEditPart;
+import org.eclipse.uml2.diagram.deploy.edit.parts.ExecutionEnvironment2EditPart;
+import org.eclipse.uml2.diagram.deploy.edit.parts.ExecutionEnvironmentEditPart;
+import org.eclipse.uml2.diagram.deploy.edit.parts.Node2EditPart;
+import org.eclipse.uml2.diagram.deploy.edit.parts.NodeEditPart;
+import org.eclipse.uml2.diagram.deploy.edit.parts.Package2EditPart;
 import org.eclipse.uml2.diagram.deploy.edit.parts.PropertyEditPart;
 import org.eclipse.uml2.diagram.deploy.part.UMLDiagramUpdater;
 import org.eclipse.uml2.diagram.deploy.part.UMLNodeDescriptor;
@@ -40,9 +52,23 @@ public class DeploymentSpecificationPropertiesCanonicalEditPolicy extends Canoni
 	/**
 	 * @generated
 	 */
+	@SuppressWarnings("unchecked")
 	protected boolean isOrphaned(Collection semanticChildren, final View view) {
 		int visualID = UMLVisualIDRegistry.getVisualID(view);
 		switch (visualID) {
+		case Package2EditPart.VISUAL_ID:
+		case DeviceEditPart.VISUAL_ID:
+		case NodeEditPart.VISUAL_ID:
+		case ExecutionEnvironmentEditPart.VISUAL_ID:
+		case Artifact2EditPart.VISUAL_ID:
+		case DeploymentSpecificationEditPart.VISUAL_ID:
+		case ElementImportEditPart.VISUAL_ID:
+		case Device2EditPart.VISUAL_ID:
+		case ArtifactEditPart.VISUAL_ID:
+		case ExecutionEnvironment2EditPart.VISUAL_ID:
+		case Artifact3EditPart.VISUAL_ID:
+		case Node2EditPart.VISUAL_ID:
+			return true;
 		case PropertyEditPart.VISUAL_ID:
 			if (!semanticChildren.contains(view.getElement())) {
 				return true;

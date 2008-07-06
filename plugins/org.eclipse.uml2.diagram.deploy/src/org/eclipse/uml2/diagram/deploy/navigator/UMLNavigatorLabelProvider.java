@@ -53,9 +53,6 @@ import org.eclipse.uml2.diagram.deploy.part.UMLDiagramEditorPlugin;
 import org.eclipse.uml2.diagram.deploy.part.UMLVisualIDRegistry;
 import org.eclipse.uml2.diagram.deploy.providers.UMLElementTypes;
 import org.eclipse.uml2.diagram.deploy.providers.UMLParserProvider;
-import org.eclipse.uml2.uml.Deployment;
-import org.eclipse.uml2.uml.DeploymentSpecification;
-import org.eclipse.uml2.uml.Device;
 import org.eclipse.uml2.uml.Package;
 
 /**

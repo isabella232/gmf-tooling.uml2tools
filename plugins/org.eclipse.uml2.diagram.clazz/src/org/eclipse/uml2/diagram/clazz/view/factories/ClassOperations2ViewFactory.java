@@ -5,6 +5,7 @@ import java.util.List;
 
 import org.eclipse.core.runtime.IAdaptable;
 import org.eclipse.gmf.runtime.diagram.ui.view.factories.BasicNodeViewFactory;
+import org.eclipse.gmf.runtime.notation.CanonicalStyle;
 import org.eclipse.gmf.runtime.notation.DrawerStyle;
 import org.eclipse.gmf.runtime.notation.NotationFactory;
 import org.eclipse.gmf.runtime.notation.NotationPackage;
@@ -27,6 +28,9 @@ public class ClassOperations2ViewFactory extends BasicNodeViewFactory {
 		styles.add(NotationFactory.eINSTANCE.createTitleStyle());
 		styles.add(NotationFactory.eINSTANCE.createSortingStyle());
 		styles.add(NotationFactory.eINSTANCE.createFilteringStyle());
+		CanonicalStyle canonicalStyle = NotationFactory.eINSTANCE.createCanonicalStyle();
+		canonicalStyle.setCanonical(true);
+		styles.add(canonicalStyle);
 		return styles;
 	}
 

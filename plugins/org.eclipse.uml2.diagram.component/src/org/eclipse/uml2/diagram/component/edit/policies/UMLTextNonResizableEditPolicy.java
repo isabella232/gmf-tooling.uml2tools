@@ -5,6 +5,7 @@ import java.util.List;
 
 import org.eclipse.draw2d.ColorConstants;
 import org.eclipse.draw2d.Figure;
+import org.eclipse.draw2d.FigureListener;
 import org.eclipse.draw2d.Graphics;
 import org.eclipse.draw2d.IFigure;
 import org.eclipse.draw2d.Label;
@@ -15,11 +16,17 @@ import org.eclipse.gef.handles.MoveHandle;
 import org.eclipse.gmf.runtime.diagram.ui.editpolicies.NonResizableEditPolicyEx;
 import org.eclipse.gmf.runtime.diagram.ui.tools.DragEditPartsTrackerEx;
 import org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel;
+import org.eclipse.uml2.diagram.common.editpolicies.IRefreshableFeedbackEditPolicy;
 
 /**
  * @generated
  */
-public class UMLTextNonResizableEditPolicy extends NonResizableEditPolicyEx {
+public class UMLTextNonResizableEditPolicy extends NonResizableEditPolicyEx implements IRefreshableFeedbackEditPolicy {
+
+	/**
+	 * @generated
+	 */
+	private FigureListener hostLayoutListener;
 
 	/**
 	 * @generated
@@ -54,6 +61,7 @@ public class UMLTextNonResizableEditPolicy extends NonResizableEditPolicyEx {
 		} else {
 			hideSelection();
 			addFeedback(selectionFeedbackFigure = createSelectionFeedbackFigure());
+			getHostFigure().addFigureListener(getHostLayoutListener());
 			refreshSelectionFeedback();
 			hideFocus();
 		}
@@ -70,6 +78,7 @@ public class UMLTextNonResizableEditPolicy extends NonResizableEditPolicyEx {
 			if (selectionFeedbackFigure != null) {
 				removeFeedback(selectionFeedbackFigure);
 				selectionFeedbackFigure = null;
+				getHostFigure().removeFigureListener(getHostLayoutListener());
 			}
 			hideFocus();
 		}
@@ -191,7 +200,32 @@ public class UMLTextNonResizableEditPolicy extends NonResizableEditPolicyEx {
 	/**
 	 * @generated
 	 */
-	protected List createSelectionHandles() {
+	private FigureListener getHostLayoutListener() {
+		if (hostLayoutListener == null) {
+			hostLayoutListener = new HostLayoutListener();
+		}
+		return hostLayoutListener;
+	}
+
+	/**
+	 * @generated
+	 */
+	private class HostLayoutListener implements FigureListener {
+
+		/**
+		 * @generated
+		 */
+		public void figureMoved(IFigure source) {
+			if (selectionFeedbackFigure != null) {
+				refreshFeedback();
+			}
+		}
+	}
+
+	/**
+	 * @generated
+	 */
+	protected List<?> createSelectionHandles() {
 		MoveHandle moveHandle = new MoveHandle((GraphicalEditPart) getHost());
 		moveHandle.setBorder(null);
 		moveHandle.setDragTracker(new DragEditPartsTrackerEx(getHost()));

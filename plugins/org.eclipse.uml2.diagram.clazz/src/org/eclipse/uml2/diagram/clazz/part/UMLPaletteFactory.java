@@ -157,9 +157,11 @@ public class UMLPaletteFactory {
 	 * @generated
 	 */
 	private ToolEntry createPackage2CreationTool() {
-		List/*<IElementType>*/types = new ArrayList/*<IElementType>*/(2);
+		List/*<IElementType>*/types = new ArrayList/*<IElementType>*/(4);
 		types.add(UMLElementTypes.Package_2002);
 		types.add(UMLElementTypes.Package_3006);
+		types.add(UMLElementTypes.Package_2016);
+		types.add(UMLElementTypes.Package_3032);
 		NodeToolEntry entry = new NodeToolEntry(Messages.Package2CreationTool_title, Messages.Package2CreationTool_desc, types);
 		entry.setSmallIcon(UMLElementTypes.getImageDescriptor(UMLElementTypes.Package_2002));
 		entry.setLargeIcon(entry.getSmallIcon());
@@ -237,9 +239,10 @@ public class UMLPaletteFactory {
 	 * @generated
 	 */
 	private ToolEntry createInterface8CreationTool() {
-		List/*<IElementType>*/types = new ArrayList/*<IElementType>*/(2);
+		List/*<IElementType>*/types = new ArrayList/*<IElementType>*/(3);
 		types.add(UMLElementTypes.Interface_3041);
 		types.add(UMLElementTypes.Interface_2010);
+		types.add(UMLElementTypes.Interface_2013);
 		NodeToolEntry entry = new NodeToolEntry(Messages.Interface8CreationTool_title, Messages.Interface8CreationTool_desc, types);
 		entry.setSmallIcon(UMLElementTypes.getImageDescriptor(UMLElementTypes.Interface_3041));
 		entry.setLargeIcon(entry.getSmallIcon());
