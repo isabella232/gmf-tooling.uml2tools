@@ -14,14 +14,11 @@ import org.eclipse.uml2.diagram.activity.edit.commands.DataStoreNode2CreateComma
 import org.eclipse.uml2.diagram.activity.edit.commands.DecisionNode2CreateCommand;
 import org.eclipse.uml2.diagram.activity.edit.commands.FlowFinalNode2CreateCommand;
 import org.eclipse.uml2.diagram.activity.edit.commands.ForkNode2CreateCommand;
-import org.eclipse.uml2.diagram.activity.edit.commands.InputPin6CreateCommand;
 import org.eclipse.uml2.diagram.activity.edit.commands.InputPin7CreateCommand;
 import org.eclipse.uml2.diagram.activity.edit.commands.JoinNode2CreateCommand;
 import org.eclipse.uml2.diagram.activity.edit.commands.OpaqueAction2CreateCommand;
-import org.eclipse.uml2.diagram.activity.edit.commands.OutputPin4CreateCommand;
 import org.eclipse.uml2.diagram.activity.edit.commands.OutputPin5CreateCommand;
 import org.eclipse.uml2.diagram.activity.edit.commands.Pin2CreateCommand;
-import org.eclipse.uml2.diagram.activity.edit.commands.StructuredActivityNode2CreateCommand;
 import org.eclipse.uml2.diagram.activity.edit.commands.StructuredActivityNode4CreateCommand;
 import org.eclipse.uml2.diagram.activity.providers.UMLElementTypes;
 import org.eclipse.uml2.uml.UMLPackage;

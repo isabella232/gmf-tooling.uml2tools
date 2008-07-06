@@ -11,6 +11,7 @@ import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.uml2.diagram.activity.edit.parts.*;
 import org.eclipse.uml2.diagram.activity.expressions.UMLAbstractExpression;
 import org.eclipse.uml2.diagram.activity.expressions.UMLOCLFactory;
+import org.eclipse.uml2.diagram.common.genapi.IVisualIDRegistry;
 import org.eclipse.uml2.uml.AcceptEventAction;
 import org.eclipse.uml2.uml.Action;
 import org.eclipse.uml2.uml.ActivityFinalNode;
@@ -3477,6 +3478,9 @@ public class UMLVisualIDRegistry {
 	 * @generated
 	 */
 	protected static boolean hasViewChild(View containerView, EObject domainElement, int visualId) {
+		if (containerView == null) {
+			return false;
+		}
 		if (domainElement == null) {
 			return false;
 		}
@@ -4989,5 +4993,184 @@ public class UMLVisualIDRegistry {
 		}
 		return -1;
 	}
+
+	/**
+	 * @generated
+	 */
+	protected static boolean canSubstitute(int visualId, int substituteCandidate) {
+		if (visualId == substituteCandidate) {
+			return true;
+		}
+		switch (visualId) {
+		case ConstraintEditPart.VISUAL_ID:
+			return (substituteCandidate == Constraint2EditPart.VISUAL_ID);
+		case Constraint2EditPart.VISUAL_ID:
+			return (substituteCandidate == ConstraintEditPart.VISUAL_ID);
+
+		default:
+			break;
+		}
+		return false;
+	}
+
+	/**
+	 * @generated
+	 */
+	public static boolean checkNodeVisualID(View containerView, EObject domainElement, int candidate) {
+		if (candidate == -1) {
+			//unrecognized id is always bad
+			return false;
+		}
+		int basic = getNodeVisualID(containerView, domainElement);
+		return basic == candidate || canSubstitute(basic, candidate);
+	}
+
+	/**
+	 * @generated
+	 */
+	public static boolean isCompartmentVisualID(int visualID) {
+		switch (visualID) {
+		case StructuredActivityNodeStructuredActivityContentPaneCompartmentEditPart.VISUAL_ID:
+		case StructuredActivityNodeStructuredActivityContentPaneCompartment2EditPart.VISUAL_ID:
+		case StructuredActivityNodeStructuredActivityContentPaneCompartment3EditPart.VISUAL_ID:
+		case StructuredActivityNodeStructuredActivityContentPaneCompartment4EditPart.VISUAL_ID:
+		case LoopNodeLoopNodeContentPaneCompartment2EditPart.VISUAL_ID:
+		case ConditionalNodeConditionalNodeCompartment2EditPart.VISUAL_ID:
+		case ExpansionRegionExpansionRegionNodeCompartment2EditPart.VISUAL_ID:
+		case LoopNodeLoopNodeContentPaneCompartmentEditPart.VISUAL_ID:
+		case ConditionalNodeConditionalNodeCompartmentEditPart.VISUAL_ID:
+		case ExpansionRegionExpansionRegionNodeCompartmentEditPart.VISUAL_ID:
+		case ConstraintPreconditionEditPart.VISUAL_ID:
+		case ConstraintPostconditionEditPart.VISUAL_ID:
+			return true;
+		default:
+			break;
+		}
+		return false;
+	}
+
+	/**
+	 * @generated
+	 */
+	public static boolean isSemanticLeafVisualID(int visualID) {
+		switch (visualID) {
+		case ConstraintEditPart.VISUAL_ID:
+		case Constraint2EditPart.VISUAL_ID:
+		case AcceptEventActionEditPart.VISUAL_ID:
+		case AcceptEventAction2EditPart.VISUAL_ID:
+		case ActivityFinalNodeEditPart.VISUAL_ID:
+		case DecisionNodeEditPart.VISUAL_ID:
+		case MergeNodeEditPart.VISUAL_ID:
+		case InitialNodeEditPart.VISUAL_ID:
+		case DataStoreNodeEditPart.VISUAL_ID:
+		case CentralBufferNodeEditPart.VISUAL_ID:
+		case OutputPinEditPart.VISUAL_ID:
+		case FlowFinalNodeEditPart.VISUAL_ID:
+		case ForkNodeEditPart.VISUAL_ID:
+		case JoinNodeEditPart.VISUAL_ID:
+		case PinEditPart.VISUAL_ID:
+		case OutputPin2EditPart.VISUAL_ID:
+		case InputPinEditPart.VISUAL_ID:
+		case InputPin2EditPart.VISUAL_ID:
+		case InputPin3EditPart.VISUAL_ID:
+		case OutputPin3EditPart.VISUAL_ID:
+		case InputPin4EditPart.VISUAL_ID:
+		case InputPin5EditPart.VISUAL_ID:
+		case StructuredActivityNodeEditPart.VISUAL_ID:
+		case StructuredActivityNode2EditPart.VISUAL_ID:
+		case AcceptEventAction3EditPart.VISUAL_ID:
+		case AcceptEventAction4EditPart.VISUAL_ID:
+		case ActivityFinalNode2EditPart.VISUAL_ID:
+		case DecisionNode2EditPart.VISUAL_ID:
+		case FlowFinalNode2EditPart.VISUAL_ID:
+		case Pin2EditPart.VISUAL_ID:
+		case ForkNode2EditPart.VISUAL_ID:
+		case JoinNode2EditPart.VISUAL_ID:
+		case DataStoreNode2EditPart.VISUAL_ID:
+		case CentralBufferNode2EditPart.VISUAL_ID:
+		case InputPin6EditPart.VISUAL_ID:
+		case OutputPin4EditPart.VISUAL_ID:
+		case OpaqueBehaviorEditPart.VISUAL_ID:
+		case ActivityParameterNodeEditPart.VISUAL_ID:
+		case SendSignalActionEditPart.VISUAL_ID:
+		case AcceptEventAction5EditPart.VISUAL_ID:
+		case AcceptEventAction6EditPart.VISUAL_ID:
+		case ActivityFinalNode3EditPart.VISUAL_ID:
+		case DecisionNode3EditPart.VISUAL_ID:
+		case MergeNode2EditPart.VISUAL_ID:
+		case InitialNode2EditPart.VISUAL_ID:
+		case DataStoreNode3EditPart.VISUAL_ID:
+		case CentralBufferNode3EditPart.VISUAL_ID:
+		case FlowFinalNode3EditPart.VISUAL_ID:
+		case ForkNode3EditPart.VISUAL_ID:
+		case JoinNode3EditPart.VISUAL_ID:
+		case Pin3EditPart.VISUAL_ID:
+		case StructuredActivityNode3EditPart.VISUAL_ID:
+		case StructuredActivityNode4EditPart.VISUAL_ID:
+		case InputPin7EditPart.VISUAL_ID:
+		case OutputPin5EditPart.VISUAL_ID:
+		case SendSignalAction2EditPart.VISUAL_ID:
+		case LoopNode2EditPart.VISUAL_ID:
+		case ConditionalNode2EditPart.VISUAL_ID:
+		case ExpansionRegion2EditPart.VISUAL_ID:
+		case LoopNodeEditPart.VISUAL_ID:
+		case ConditionalNodeEditPart.VISUAL_ID:
+		case ExpansionRegionEditPart.VISUAL_ID:
+		case LiteralStringEditPart.VISUAL_ID:
+		case LiteralString2EditPart.VISUAL_ID:
+			return true;
+		default:
+			break;
+		}
+		return false;
+	}
+
+	/**
+	 * @generated
+	 */
+	public static final IVisualIDRegistry TYPED_ADAPTER = new IVisualIDRegistry() {
+
+		/**
+		 * @generated
+		 */
+		public String getModelID(View view) {
+			return org.eclipse.uml2.diagram.activity.part.UMLVisualIDRegistry.getModelID(view);
+		}
+
+		/**
+		 * @generated
+		 */
+		public int getVisualID(View view) {
+			return org.eclipse.uml2.diagram.activity.part.UMLVisualIDRegistry.getVisualID(view);
+		}
+
+		/**
+		 * @generated
+		 */
+		public int getNodeVisualID(View containerView, EObject domainElement) {
+			return org.eclipse.uml2.diagram.activity.part.UMLVisualIDRegistry.getNodeVisualID(containerView, domainElement);
+		}
+
+		/**
+		 * @generated
+		 */
+		public boolean checkNodeVisualID(View containerView, EObject domainElement, int candidate) {
+			return org.eclipse.uml2.diagram.activity.part.UMLVisualIDRegistry.checkNodeVisualID(containerView, domainElement, candidate);
+		}
+
+		/**
+		 * @generated
+		 */
+		public boolean isCompartmentVisualID(int visualID) {
+			return org.eclipse.uml2.diagram.activity.part.UMLVisualIDRegistry.isCompartmentVisualID(visualID);
+		}
+
+		/**
+		 * @generated
+		 */
+		public boolean isSemanticLeafVisualID(int visualID) {
+			return org.eclipse.uml2.diagram.activity.part.UMLVisualIDRegistry.isSemanticLeafVisualID(visualID);
+		}
+	};
 
 }
