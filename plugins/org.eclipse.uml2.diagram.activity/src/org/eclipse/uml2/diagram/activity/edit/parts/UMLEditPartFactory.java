@@ -14,6 +14,7 @@ import org.eclipse.jface.viewers.CellEditor;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.widgets.Text;
 import org.eclipse.uml2.diagram.activity.part.UMLVisualIDRegistry;
+import org.eclipse.uml2.diagram.common.draw2d.RotatedImageOfString;
 
 /**
  * @generated
@@ -217,8 +218,14 @@ public class UMLEditPartFactory implements EditPartFactory {
 			case StructuredActivityNodeEditPart.VISUAL_ID:
 				return new StructuredActivityNodeEditPart(view);
 
+			case StructuredActivityNodeNameEditPart.VISUAL_ID:
+				return new StructuredActivityNodeNameEditPart(view);
+
 			case StructuredActivityNode2EditPart.VISUAL_ID:
 				return new StructuredActivityNode2EditPart(view);
+
+			case StructuredActivityNodeName2EditPart.VISUAL_ID:
+				return new StructuredActivityNodeName2EditPart(view);
 
 			case OpaqueAction2EditPart.VISUAL_ID:
 				return new OpaqueAction2EditPart(view);
@@ -502,8 +509,14 @@ public class UMLEditPartFactory implements EditPartFactory {
 			case LoopNodeEditPart.VISUAL_ID:
 				return new LoopNodeEditPart(view);
 
+			case LoopNodeNameEditPart.VISUAL_ID:
+				return new LoopNodeNameEditPart(view);
+
 			case ConditionalNodeEditPart.VISUAL_ID:
 				return new ConditionalNodeEditPart(view);
+
+			case ConditionalNodeNameEditPart.VISUAL_ID:
+				return new ConditionalNodeNameEditPart(view);
 
 			case ExpansionRegionEditPart.VISUAL_ID:
 				return new ExpansionRegionEditPart(view);
@@ -605,9 +618,19 @@ public class UMLEditPartFactory implements EditPartFactory {
 	}
 
 	/**
-	 * @generated
+	 * @generated NOT
 	 */
 	public static CellEditorLocator getTextCellEditorLocator(ITextAwareEditPart source) {
+		if (source.getFigure() instanceof RotatedImageOfString) {
+			return new RotatedImageCellEditorLocator((RotatedImageOfString) source.getFigure());
+		}
+		return getTextCellEditorLocatorGen(source);
+	}
+
+	/**
+	 * @generated
+	 */
+	public static CellEditorLocator getTextCellEditorLocatorGen(ITextAwareEditPart source) {
 		if (source.getFigure() instanceof WrappingLabel)
 			return new TextCellEditorLocator((WrappingLabel) source.getFigure());
 		else {
@@ -692,6 +715,32 @@ public class UMLEditPartFactory implements EditPartFactory {
 			getLabel().translateToAbsolute(rect);
 			int avr = FigureUtilities.getFontMetrics(text.getFont()).getAverageCharWidth();
 			rect.setSize(new Dimension(text.computeSize(SWT.DEFAULT, SWT.DEFAULT)).expand(avr * 2, 0));
+			if (!rect.equals(new Rectangle(text.getBounds()))) {
+				text.setBounds(rect.x, rect.y, rect.width, rect.height);
+			}
+		}
+	}
+
+	/**
+	 * @NOT generated
+	 */
+	static private class RotatedImageCellEditorLocator implements CellEditorLocator {
+
+		private RotatedImageOfString rotatedImage;
+
+		public RotatedImageCellEditorLocator(RotatedImageOfString rotatedImage) {
+			this.rotatedImage = rotatedImage;
+		}
+
+		public void relocate(CellEditor celleditor) {
+			Text text = (Text) celleditor.getControl();
+			Rectangle rect = rotatedImage.getBounds().getCopy();
+			rotatedImage.translateToAbsolute(rect);
+			int avr = FigureUtilities.getFontMetrics(text.getFont()).getAverageCharWidth();
+			Dimension textSize = new Dimension(text.computeSize(SWT.DEFAULT, SWT.DEFAULT)).expand(avr * 2, 0);
+			rect.x = rect.x + 3;
+			rect.y = rect.y + rect.height / 2 - textSize.height / 2;
+			rect.setSize(textSize);
 			if (!rect.equals(new Rectangle(text.getBounds()))) {
 				text.setBounds(rect.x, rect.y, rect.width, rect.height);
 			}

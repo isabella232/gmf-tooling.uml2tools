@@ -271,11 +271,10 @@ public class ActivityPartitionName2EditPart extends CompartmentEditPart implemen
 	}
 
 	/**
-	 * @generated NOT
+	 * @generated
 	 */
 	protected boolean isEditable() {
-		//		return getParser() != null;
-		return false;
+		return getParser() != null;
 	}
 
 	/**

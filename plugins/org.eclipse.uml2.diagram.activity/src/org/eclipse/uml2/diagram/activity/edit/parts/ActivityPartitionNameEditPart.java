@@ -271,12 +271,11 @@ public class ActivityPartitionNameEditPart extends CompartmentEditPart implement
 	}
 
 	/**
-	 * @generated NOT
+	 * @generated
 	 * TODO: Implement inplace editor.
 	 */
 	protected boolean isEditable() {
-		//		return getParser() != null;
-		return false;
+		return getParser() != null;
 	}
 
 	/**
