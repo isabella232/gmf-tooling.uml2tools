@@ -4,12 +4,13 @@ import org.eclipse.core.runtime.IAdaptable;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.gmf.runtime.emf.core.util.EObjectAdapter;
 import org.eclipse.gmf.runtime.emf.type.core.IElementType;
+import org.eclipse.uml2.diagram.common.genapi.IUpdaterLinkDescriptor;
 
 /**
  * @generated
  */
 @SuppressWarnings("unchecked")
-public class UMLLinkDescriptor extends UMLNodeDescriptor {
+public class UMLLinkDescriptor extends UMLNodeDescriptor implements IUpdaterLinkDescriptor {
 
 	/**
 	 * @generated

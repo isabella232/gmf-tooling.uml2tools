@@ -1,0 +1,37 @@
+/*
+ * Copyright (c) 2008 Borland Software Corporation
+ * 
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
+ *
+ * Contributors:
+ *    Michael Golubev (Borland) - 
+ *				#239267 - Provide typed API for common generated GMF statically accessible constructs 
+ */
+
+«IMPORT "http://www.eclipse.org/gmf/2008/GenModel"»
+
+«AROUND NodeDescriptor FOR gmfgen::GenDiagramUpdater-»
+	«EXPAND xpt::Common::copyright FOR editorGen-»
+package «editorGen.editor.packageName»;
+
+	«EXPAND xpt::Common::generatedClassComment»
+public class «nodeDescriptorClassName» implements «EXPAND aspects::xpt::diagram::updater::NodeDescriptor::implementsList» {
+
+	«EXPAND xpt::diagram::updater::NodeDescriptor::attributes-»
+	
+	«EXPAND xpt::diagram::updater::NodeDescriptor::constructor-»
+	
+	«EXPAND xpt::diagram::updater::NodeDescriptor::getModelElement-»
+	
+	«EXPAND xpt::diagram::updater::NodeDescriptor::getVisualID-»
+	
+	«EXPAND xpt::diagram::updater::NodeDescriptor::getType-»
+		
+	«EXPAND xpt::diagram::updater::NodeDescriptor::additions-»
+}
+«ENDAROUND»
+
+«DEFINE implementsList FOR gmfgen::GenDiagramUpdater»org.eclipse.uml2.diagram.common.genapi.IUpdaterNodeDescriptor «ENDDEFINE»
