@@ -1652,11 +1652,17 @@ public class UMLVisualIDRegistry {
 			}
 			break;
 		case StructuredActivityNodeEditPart.VISUAL_ID:
+			if (StructuredActivityNodeNameEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
 			if (StructuredActivityNodeStructuredActivityContentPaneCompartmentEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
 			break;
 		case StructuredActivityNode2EditPart.VISUAL_ID:
+			if (StructuredActivityNodeName2EditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
 			if (StructuredActivityNodeStructuredActivityContentPaneCompartment2EditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
@@ -2083,11 +2089,17 @@ public class UMLVisualIDRegistry {
 			}
 			break;
 		case LoopNodeEditPart.VISUAL_ID:
+			if (LoopNodeNameEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
 			if (LoopNodeLoopNodeContentPaneCompartmentEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
 			break;
 		case ConditionalNodeEditPart.VISUAL_ID:
+			if (ConditionalNodeNameEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
 			if (ConditionalNodeConditionalNodeCompartmentEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
@@ -5160,4 +5172,5 @@ public class UMLVisualIDRegistry {
 			return org.eclipse.uml2.diagram.activity.part.UMLVisualIDRegistry.isSemanticLeafVisualID(visualID);
 		}
 	};
+
 }

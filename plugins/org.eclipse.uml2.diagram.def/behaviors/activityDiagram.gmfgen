@@ -1747,7 +1747,7 @@
       <viewmap
           xsi:type="gmfgen:InnerClassViewmap"
           className="StructuredActivityFigure"
-          classBody="&#xD;&#xA;/**&#xD;&#xA; * @generated&#xD;&#xA; */&#xD;&#xA;public class StructuredActivityFigure extends org.eclipse.draw2d.RoundedRectangle {&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;private org.eclipse.draw2d.RectangleFigure fFigureStructuredActivityFigure_ContentPane; &#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;public StructuredActivityFigure() {&#xD;&#xA;&#x9;&#x9;&#xD;&#xA;&#x9;org.eclipse.draw2d.BorderLayout layoutThis = new org.eclipse.draw2d.BorderLayout();&#xD;&#xA;&#x9;this.setLayoutManager(layoutThis);&#xD;&#xA;&#xD;&#xA;&#x9;&#x9;this.setCornerDimensions(new org.eclipse.draw2d.geometry.Dimension(getMapMode().DPtoLP(8)&#xD;&#xA;, getMapMode().DPtoLP(8)&#xD;&#xA;));&#xD;&#xA;this.setLineStyle(org.eclipse.draw2d.Graphics.LINE_DASH);&#xD;&#xA;&#x9;&#x9;createContents();&#xD;&#xA;&#x9;}&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;private void createContents(){&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;fFigureStructuredActivityFigure_ContentPane = new org.eclipse.draw2d.RectangleFigure();&#xD;&#xA;fFigureStructuredActivityFigure_ContentPane.setFill(false);&#xD;&#xA;fFigureStructuredActivityFigure_ContentPane.setOutline(false);&#xD;&#xA;&#xD;&#xA;this.add(fFigureStructuredActivityFigure_ContentPane, org.eclipse.draw2d.BorderLayout.CENTER);&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;org.eclipse.draw2d.RectangleFigure aux_StructuredActivityFigure_LabelContainer0 = new org.eclipse.draw2d.RectangleFigure();&#xD;&#xA;aux_StructuredActivityFigure_LabelContainer0.setFill(false);&#xD;&#xA;aux_StructuredActivityFigure_LabelContainer0.setOutline(false);&#xD;&#xA;&#xD;&#xA;aux_StructuredActivityFigure_LabelContainer0.setBorder(new org.eclipse.draw2d.MarginBorder(getMapMode().DPtoLP(0)&#xD;&#xA;, getMapMode().DPtoLP(5)&#xD;&#xA;, getMapMode().DPtoLP(5)&#xD;&#xA;, getMapMode().DPtoLP(0)&#xD;&#xA;));&#xD;&#xA;&#xD;&#xA;this.add(aux_StructuredActivityFigure_LabelContainer0, org.eclipse.draw2d.BorderLayout.TOP);&#xD;&#xA;&#xD;&#xA;&#x9;org.eclipse.draw2d.BorderLayout layoutAux_StructuredActivityFigure_LabelContainer0 = new org.eclipse.draw2d.BorderLayout();&#xD;&#xA;&#x9;aux_StructuredActivityFigure_LabelContainer0.setLayoutManager(layoutAux_StructuredActivityFigure_LabelContainer0);&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;org.eclipse.draw2d.Label structuredActivityFigure_fixed_structured1 = new org.eclipse.draw2d.Label();&#xD;&#xA;structuredActivityFigure_fixed_structured1.setText(&quot;\u00ABstructured\u00BB&quot;);&#xD;&#xA;&#xD;&#xA;aux_StructuredActivityFigure_LabelContainer0.add(structuredActivityFigure_fixed_structured1, org.eclipse.draw2d.BorderLayout.LEFT);&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#x9;}&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;private boolean myUseLocalCoordinates = false;&#xD;&#xA;&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;protected boolean useLocalCoordinates() {&#xD;&#xA;&#x9;&#x9;return myUseLocalCoordinates;&#xD;&#xA;&#x9;}&#xD;&#xA;&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;protected void setUseLocalCoordinates(boolean useLocalCoordinates) {&#xD;&#xA;&#x9;&#x9;myUseLocalCoordinates = useLocalCoordinates;&#xD;&#xA;&#x9;}&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;public org.eclipse.draw2d.RectangleFigure getFigureStructuredActivityFigure_ContentPane() {&#xD;&#xA;&#x9;&#x9;return fFigureStructuredActivityFigure_ContentPane;&#xD;&#xA;&#x9;}&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;}&#xD;&#xA;&#xD;&#xA;">
+          classBody="&#xD;&#xA;/**&#xD;&#xA; * @generated&#xD;&#xA; */&#xD;&#xA;public class StructuredActivityFigure extends org.eclipse.draw2d.RoundedRectangle {&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;private org.eclipse.draw2d.Label fFigureStructuredActivityFigure_name; &#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;private org.eclipse.draw2d.RectangleFigure fFigureStructuredActivityFigure_ContentPane; &#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;public StructuredActivityFigure() {&#xD;&#xA;&#x9;&#x9;&#xD;&#xA;&#x9;org.eclipse.draw2d.BorderLayout layoutThis = new org.eclipse.draw2d.BorderLayout();&#xD;&#xA;&#x9;this.setLayoutManager(layoutThis);&#xD;&#xA;&#xD;&#xA;&#x9;&#x9;this.setCornerDimensions(new org.eclipse.draw2d.geometry.Dimension(getMapMode().DPtoLP(8)&#xD;&#xA;, getMapMode().DPtoLP(8)&#xD;&#xA;));&#xD;&#xA;this.setLineStyle(org.eclipse.draw2d.Graphics.LINE_DASH);&#xD;&#xA;&#x9;&#x9;createContents();&#xD;&#xA;&#x9;}&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;private void createContents(){&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;org.eclipse.draw2d.RectangleFigure aux_StructuredActivityFigure_LabelContainer0 = new org.eclipse.draw2d.RectangleFigure();&#xD;&#xA;aux_StructuredActivityFigure_LabelContainer0.setFill(false);&#xD;&#xA;aux_StructuredActivityFigure_LabelContainer0.setOutline(false);&#xD;&#xA;&#xD;&#xA;aux_StructuredActivityFigure_LabelContainer0.setBorder(new org.eclipse.draw2d.MarginBorder(getMapMode().DPtoLP(0)&#xD;&#xA;, getMapMode().DPtoLP(5)&#xD;&#xA;, getMapMode().DPtoLP(5)&#xD;&#xA;, getMapMode().DPtoLP(5)&#xD;&#xA;));&#xD;&#xA;&#xD;&#xA;this.add(aux_StructuredActivityFigure_LabelContainer0, org.eclipse.draw2d.BorderLayout.TOP);&#xD;&#xA;&#xD;&#xA;&#x9;org.eclipse.draw2d.BorderLayout layoutAux_StructuredActivityFigure_LabelContainer0 = new org.eclipse.draw2d.BorderLayout();&#xD;&#xA;&#x9;aux_StructuredActivityFigure_LabelContainer0.setLayoutManager(layoutAux_StructuredActivityFigure_LabelContainer0);&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;org.eclipse.draw2d.RectangleFigure structuredActivityFigure_KeywordContainer1 = new org.eclipse.draw2d.RectangleFigure();&#xD;&#xA;structuredActivityFigure_KeywordContainer1.setFill(false);&#xD;&#xA;structuredActivityFigure_KeywordContainer1.setOutline(false);&#xD;&#xA;&#xD;&#xA;aux_StructuredActivityFigure_LabelContainer0.add(structuredActivityFigure_KeywordContainer1, org.eclipse.draw2d.BorderLayout.TOP);&#xD;&#xA;&#xD;&#xA;&#x9;org.eclipse.draw2d.BorderLayout layoutStructuredActivityFigure_KeywordContainer1 = new org.eclipse.draw2d.BorderLayout();&#xD;&#xA;&#x9;structuredActivityFigure_KeywordContainer1.setLayoutManager(layoutStructuredActivityFigure_KeywordContainer1);&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;org.eclipse.draw2d.Label structuredActivityFigure_keyword2 = new org.eclipse.draw2d.Label();&#xD;&#xA;structuredActivityFigure_keyword2.setText(&quot;\u00ABstructured\u00BB&quot;);&#xD;&#xA;&#xD;&#xA;structuredActivityFigure_KeywordContainer1.add(structuredActivityFigure_keyword2, org.eclipse.draw2d.BorderLayout.LEFT);&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;fFigureStructuredActivityFigure_name = new org.eclipse.draw2d.Label();&#xD;&#xA;fFigureStructuredActivityFigure_name.setText(&quot;&quot;);&#xD;&#xA;&#xD;&#xA;aux_StructuredActivityFigure_LabelContainer0.add(fFigureStructuredActivityFigure_name, org.eclipse.draw2d.BorderLayout.CENTER);&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;fFigureStructuredActivityFigure_ContentPane = new org.eclipse.draw2d.RectangleFigure();&#xD;&#xA;fFigureStructuredActivityFigure_ContentPane.setFill(false);&#xD;&#xA;fFigureStructuredActivityFigure_ContentPane.setOutline(false);&#xD;&#xA;&#xD;&#xA;this.add(fFigureStructuredActivityFigure_ContentPane, org.eclipse.draw2d.BorderLayout.CENTER);&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#x9;}&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;private boolean myUseLocalCoordinates = false;&#xD;&#xA;&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;protected boolean useLocalCoordinates() {&#xD;&#xA;&#x9;&#x9;return myUseLocalCoordinates;&#xD;&#xA;&#x9;}&#xD;&#xA;&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;protected void setUseLocalCoordinates(boolean useLocalCoordinates) {&#xD;&#xA;&#x9;&#x9;myUseLocalCoordinates = useLocalCoordinates;&#xD;&#xA;&#x9;}&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;public org.eclipse.draw2d.Label getFigureStructuredActivityFigure_name() {&#xD;&#xA;&#x9;&#x9;return fFigureStructuredActivityFigure_name;&#xD;&#xA;&#x9;}&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;public org.eclipse.draw2d.RectangleFigure getFigureStructuredActivityFigure_ContentPane() {&#xD;&#xA;&#x9;&#x9;return fFigureStructuredActivityFigure_ContentPane;&#xD;&#xA;&#x9;}&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;}&#xD;&#xA;&#xD;&#xA;">
         <requiredPluginIDs>org.eclipse.gmf.runtime.draw2d.ui</requiredPluginIDs>
       </viewmap>
       <modelFacet
@@ -1758,7 +1758,33 @@
             href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/Activity/group"/>
         <childMetaFeature
             href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/Activity/group"/>
+        <modelElementInitializer
+            xsi:type="gmfgen:GenFeatureSeqInitializer">
+          <initializers
+              xsi:type="gmfgen:GenFeatureValueSpec"
+              value="//@expressionProviders/@providers.0/@expressions.33">
+            <feature
+                href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/NamedElement/name"/>
+          </initializers>
+        </modelElementInitializer>
       </modelFacet>
+      <labels
+          visualID="5090"
+          editPartClassName="StructuredActivityNodeNameEditPart"
+          itemSemanticEditPolicyClassName="StructuredActivityNodeNameItemSemanticEditPolicy"
+          notationViewFactoryClassName="StructuredActivityNodeNameViewFactory">
+        <diagramRunTimeClass
+            href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
+        <viewmap
+            xsi:type="gmfgen:ParentAssignedViewmap"
+            getterName="getFigureStructuredActivityFigure_name"
+            figureQualifiedClassName="org.eclipse.draw2d.Label"/>
+        <modelFacet
+            xsi:type="gmfgen:FeatureLabelModelFacet">
+          <metaFeatures
+              href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/NamedElement/name"/>
+        </modelFacet>
+      </labels>
     </childNodes>
     <childNodes
         visualID="3009"
@@ -1780,7 +1806,7 @@
       <viewmap
           xsi:type="gmfgen:InnerClassViewmap"
           className="StructuredActivityFigure"
-          classBody="&#xD;&#xA;/**&#xD;&#xA; * @generated&#xD;&#xA; */&#xD;&#xA;public class StructuredActivityFigure extends org.eclipse.draw2d.RoundedRectangle {&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;private org.eclipse.draw2d.RectangleFigure fFigureStructuredActivityFigure_ContentPane; &#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;public StructuredActivityFigure() {&#xD;&#xA;&#x9;&#x9;&#xD;&#xA;&#x9;org.eclipse.draw2d.BorderLayout layoutThis = new org.eclipse.draw2d.BorderLayout();&#xD;&#xA;&#x9;this.setLayoutManager(layoutThis);&#xD;&#xA;&#xD;&#xA;&#x9;&#x9;this.setCornerDimensions(new org.eclipse.draw2d.geometry.Dimension(getMapMode().DPtoLP(8)&#xD;&#xA;, getMapMode().DPtoLP(8)&#xD;&#xA;));&#xD;&#xA;this.setLineStyle(org.eclipse.draw2d.Graphics.LINE_DASH);&#xD;&#xA;&#x9;&#x9;createContents();&#xD;&#xA;&#x9;}&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;private void createContents(){&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;fFigureStructuredActivityFigure_ContentPane = new org.eclipse.draw2d.RectangleFigure();&#xD;&#xA;fFigureStructuredActivityFigure_ContentPane.setFill(false);&#xD;&#xA;fFigureStructuredActivityFigure_ContentPane.setOutline(false);&#xD;&#xA;&#xD;&#xA;this.add(fFigureStructuredActivityFigure_ContentPane, org.eclipse.draw2d.BorderLayout.CENTER);&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;org.eclipse.draw2d.RectangleFigure aux_StructuredActivityFigure_LabelContainer0 = new org.eclipse.draw2d.RectangleFigure();&#xD;&#xA;aux_StructuredActivityFigure_LabelContainer0.setFill(false);&#xD;&#xA;aux_StructuredActivityFigure_LabelContainer0.setOutline(false);&#xD;&#xA;&#xD;&#xA;aux_StructuredActivityFigure_LabelContainer0.setBorder(new org.eclipse.draw2d.MarginBorder(getMapMode().DPtoLP(0)&#xD;&#xA;, getMapMode().DPtoLP(5)&#xD;&#xA;, getMapMode().DPtoLP(5)&#xD;&#xA;, getMapMode().DPtoLP(0)&#xD;&#xA;));&#xD;&#xA;&#xD;&#xA;this.add(aux_StructuredActivityFigure_LabelContainer0, org.eclipse.draw2d.BorderLayout.TOP);&#xD;&#xA;&#xD;&#xA;&#x9;org.eclipse.draw2d.BorderLayout layoutAux_StructuredActivityFigure_LabelContainer0 = new org.eclipse.draw2d.BorderLayout();&#xD;&#xA;&#x9;aux_StructuredActivityFigure_LabelContainer0.setLayoutManager(layoutAux_StructuredActivityFigure_LabelContainer0);&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;org.eclipse.draw2d.Label structuredActivityFigure_fixed_structured1 = new org.eclipse.draw2d.Label();&#xD;&#xA;structuredActivityFigure_fixed_structured1.setText(&quot;\u00ABstructured\u00BB&quot;);&#xD;&#xA;&#xD;&#xA;aux_StructuredActivityFigure_LabelContainer0.add(structuredActivityFigure_fixed_structured1, org.eclipse.draw2d.BorderLayout.LEFT);&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#x9;}&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;private boolean myUseLocalCoordinates = false;&#xD;&#xA;&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;protected boolean useLocalCoordinates() {&#xD;&#xA;&#x9;&#x9;return myUseLocalCoordinates;&#xD;&#xA;&#x9;}&#xD;&#xA;&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;protected void setUseLocalCoordinates(boolean useLocalCoordinates) {&#xD;&#xA;&#x9;&#x9;myUseLocalCoordinates = useLocalCoordinates;&#xD;&#xA;&#x9;}&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;public org.eclipse.draw2d.RectangleFigure getFigureStructuredActivityFigure_ContentPane() {&#xD;&#xA;&#x9;&#x9;return fFigureStructuredActivityFigure_ContentPane;&#xD;&#xA;&#x9;}&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;}&#xD;&#xA;&#xD;&#xA;">
+          classBody="&#xD;&#xA;/**&#xD;&#xA; * @generated&#xD;&#xA; */&#xD;&#xA;public class StructuredActivityFigure extends org.eclipse.draw2d.RoundedRectangle {&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;private org.eclipse.draw2d.Label fFigureStructuredActivityFigure_name; &#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;private org.eclipse.draw2d.RectangleFigure fFigureStructuredActivityFigure_ContentPane; &#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;public StructuredActivityFigure() {&#xD;&#xA;&#x9;&#x9;&#xD;&#xA;&#x9;org.eclipse.draw2d.BorderLayout layoutThis = new org.eclipse.draw2d.BorderLayout();&#xD;&#xA;&#x9;this.setLayoutManager(layoutThis);&#xD;&#xA;&#xD;&#xA;&#x9;&#x9;this.setCornerDimensions(new org.eclipse.draw2d.geometry.Dimension(getMapMode().DPtoLP(8)&#xD;&#xA;, getMapMode().DPtoLP(8)&#xD;&#xA;));&#xD;&#xA;this.setLineStyle(org.eclipse.draw2d.Graphics.LINE_DASH);&#xD;&#xA;&#x9;&#x9;createContents();&#xD;&#xA;&#x9;}&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;private void createContents(){&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;org.eclipse.draw2d.RectangleFigure aux_StructuredActivityFigure_LabelContainer0 = new org.eclipse.draw2d.RectangleFigure();&#xD;&#xA;aux_StructuredActivityFigure_LabelContainer0.setFill(false);&#xD;&#xA;aux_StructuredActivityFigure_LabelContainer0.setOutline(false);&#xD;&#xA;&#xD;&#xA;aux_StructuredActivityFigure_LabelContainer0.setBorder(new org.eclipse.draw2d.MarginBorder(getMapMode().DPtoLP(0)&#xD;&#xA;, getMapMode().DPtoLP(5)&#xD;&#xA;, getMapMode().DPtoLP(5)&#xD;&#xA;, getMapMode().DPtoLP(5)&#xD;&#xA;));&#xD;&#xA;&#xD;&#xA;this.add(aux_StructuredActivityFigure_LabelContainer0, org.eclipse.draw2d.BorderLayout.TOP);&#xD;&#xA;&#xD;&#xA;&#x9;org.eclipse.draw2d.BorderLayout layoutAux_StructuredActivityFigure_LabelContainer0 = new org.eclipse.draw2d.BorderLayout();&#xD;&#xA;&#x9;aux_StructuredActivityFigure_LabelContainer0.setLayoutManager(layoutAux_StructuredActivityFigure_LabelContainer0);&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;org.eclipse.draw2d.RectangleFigure structuredActivityFigure_KeywordContainer1 = new org.eclipse.draw2d.RectangleFigure();&#xD;&#xA;structuredActivityFigure_KeywordContainer1.setFill(false);&#xD;&#xA;structuredActivityFigure_KeywordContainer1.setOutline(false);&#xD;&#xA;&#xD;&#xA;aux_StructuredActivityFigure_LabelContainer0.add(structuredActivityFigure_KeywordContainer1, org.eclipse.draw2d.BorderLayout.TOP);&#xD;&#xA;&#xD;&#xA;&#x9;org.eclipse.draw2d.BorderLayout layoutStructuredActivityFigure_KeywordContainer1 = new org.eclipse.draw2d.BorderLayout();&#xD;&#xA;&#x9;structuredActivityFigure_KeywordContainer1.setLayoutManager(layoutStructuredActivityFigure_KeywordContainer1);&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;org.eclipse.draw2d.Label structuredActivityFigure_keyword2 = new org.eclipse.draw2d.Label();&#xD;&#xA;structuredActivityFigure_keyword2.setText(&quot;\u00ABstructured\u00BB&quot;);&#xD;&#xA;&#xD;&#xA;structuredActivityFigure_KeywordContainer1.add(structuredActivityFigure_keyword2, org.eclipse.draw2d.BorderLayout.LEFT);&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;fFigureStructuredActivityFigure_name = new org.eclipse.draw2d.Label();&#xD;&#xA;fFigureStructuredActivityFigure_name.setText(&quot;&quot;);&#xD;&#xA;&#xD;&#xA;aux_StructuredActivityFigure_LabelContainer0.add(fFigureStructuredActivityFigure_name, org.eclipse.draw2d.BorderLayout.CENTER);&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;fFigureStructuredActivityFigure_ContentPane = new org.eclipse.draw2d.RectangleFigure();&#xD;&#xA;fFigureStructuredActivityFigure_ContentPane.setFill(false);&#xD;&#xA;fFigureStructuredActivityFigure_ContentPane.setOutline(false);&#xD;&#xA;&#xD;&#xA;this.add(fFigureStructuredActivityFigure_ContentPane, org.eclipse.draw2d.BorderLayout.CENTER);&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#x9;}&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;private boolean myUseLocalCoordinates = false;&#xD;&#xA;&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;protected boolean useLocalCoordinates() {&#xD;&#xA;&#x9;&#x9;return myUseLocalCoordinates;&#xD;&#xA;&#x9;}&#xD;&#xA;&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;protected void setUseLocalCoordinates(boolean useLocalCoordinates) {&#xD;&#xA;&#x9;&#x9;myUseLocalCoordinates = useLocalCoordinates;&#xD;&#xA;&#x9;}&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;public org.eclipse.draw2d.Label getFigureStructuredActivityFigure_name() {&#xD;&#xA;&#x9;&#x9;return fFigureStructuredActivityFigure_name;&#xD;&#xA;&#x9;}&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;public org.eclipse.draw2d.RectangleFigure getFigureStructuredActivityFigure_ContentPane() {&#xD;&#xA;&#x9;&#x9;return fFigureStructuredActivityFigure_ContentPane;&#xD;&#xA;&#x9;}&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;}&#xD;&#xA;&#xD;&#xA;">
         <requiredPluginIDs>org.eclipse.gmf.runtime.draw2d.ui</requiredPluginIDs>
       </viewmap>
       <modelFacet
@@ -1791,7 +1817,33 @@
             href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/StructuredActivityNode/node"/>
         <childMetaFeature
             href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/StructuredActivityNode/node"/>
+        <modelElementInitializer
+            xsi:type="gmfgen:GenFeatureSeqInitializer">
+          <initializers
+              xsi:type="gmfgen:GenFeatureValueSpec"
+              value="//@expressionProviders/@providers.0/@expressions.33">
+            <feature
+                href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/NamedElement/name"/>
+          </initializers>
+        </modelElementInitializer>
       </modelFacet>
+      <labels
+          visualID="5089"
+          editPartClassName="StructuredActivityNodeName2EditPart"
+          itemSemanticEditPolicyClassName="StructuredActivityNodeName2ItemSemanticEditPolicy"
+          notationViewFactoryClassName="StructuredActivityNodeName2ViewFactory">
+        <diagramRunTimeClass
+            href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
+        <viewmap
+            xsi:type="gmfgen:ParentAssignedViewmap"
+            getterName="getFigureStructuredActivityFigure_name"
+            figureQualifiedClassName="org.eclipse.draw2d.Label"/>
+        <modelFacet
+            xsi:type="gmfgen:FeatureLabelModelFacet">
+          <metaFeatures
+              href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/NamedElement/name"/>
+        </modelFacet>
+      </labels>
     </childNodes>
     <childNodes
         visualID="3011"
@@ -2765,7 +2817,7 @@
             xsi:type="gmfgen:GenFeatureSeqInitializer">
           <initializers
               xsi:type="gmfgen:GenFeatureValueSpec"
-              value="//@expressionProviders/@providers.0/@expressions.33">
+              value="//@expressionProviders/@providers.0/@expressions.34">
             <feature
                 href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/NamedElement/name"/>
           </initializers>
@@ -2840,7 +2892,7 @@
             xsi:type="gmfgen:GenFeatureSeqInitializer">
           <initializers
               xsi:type="gmfgen:GenFeatureValueSpec"
-              value="//@expressionProviders/@providers.0/@expressions.34">
+              value="//@expressionProviders/@providers.0/@expressions.35">
             <feature
                 href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/NamedElement/name"/>
           </initializers>
@@ -2977,7 +3029,7 @@
             xsi:type="gmfgen:GenFeatureSeqInitializer">
           <initializers
               xsi:type="gmfgen:GenFeatureValueSpec"
-              value="//@expressionProviders/@providers.0/@expressions.35">
+              value="//@expressionProviders/@providers.0/@expressions.36">
             <feature
                 href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/NamedElement/name"/>
           </initializers>
@@ -3027,7 +3079,7 @@
         <requiredPluginIDs>org.eclipse.gmf.runtime.draw2d.ui</requiredPluginIDs>
       </viewmap>
       <modelFacet
-          modelElementSelector="//@expressionProviders/@providers.0/@expressions.36">
+          modelElementSelector="//@expressionProviders/@providers.0/@expressions.37">
         <metaClass
             href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/SendSignalAction"/>
         <containmentMetaFeature
@@ -3038,7 +3090,7 @@
             xsi:type="gmfgen:GenFeatureSeqInitializer">
           <initializers
               xsi:type="gmfgen:GenFeatureValueSpec"
-              value="//@expressionProviders/@providers.0/@expressions.37">
+              value="//@expressionProviders/@providers.0/@expressions.38">
             <feature
                 href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/NamedElement/name"/>
           </initializers>
@@ -3098,7 +3150,7 @@
             xsi:type="gmfgen:GenFeatureSeqInitializer">
           <initializers
               xsi:type="gmfgen:GenFeatureValueSpec"
-              value="//@expressionProviders/@providers.0/@expressions.38">
+              value="//@expressionProviders/@providers.0/@expressions.39">
             <feature
                 href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/NamedElement/name"/>
           </initializers>
@@ -3158,7 +3210,7 @@
             xsi:type="gmfgen:GenFeatureSeqInitializer">
           <initializers
               xsi:type="gmfgen:GenFeatureValueSpec"
-              value="//@expressionProviders/@providers.0/@expressions.38">
+              value="//@expressionProviders/@providers.0/@expressions.39">
             <feature
                 href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/NamedElement/name"/>
           </initializers>
@@ -3207,7 +3259,7 @@
         <requiredPluginIDs>org.eclipse.gmf.runtime.draw2d.ui</requiredPluginIDs>
       </viewmap>
       <modelFacet
-          modelElementSelector="//@expressionProviders/@providers.0/@expressions.39">
+          modelElementSelector="//@expressionProviders/@providers.0/@expressions.40">
         <metaClass
             href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/AcceptEventAction"/>
         <containmentMetaFeature
@@ -3218,7 +3270,7 @@
             xsi:type="gmfgen:GenFeatureSeqInitializer">
           <initializers
               xsi:type="gmfgen:GenFeatureValueSpec"
-              value="//@expressionProviders/@providers.0/@expressions.40">
+              value="//@expressionProviders/@providers.0/@expressions.41">
             <feature
                 href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/NamedElement/name"/>
           </initializers>
@@ -3267,7 +3319,7 @@
         <requiredPluginIDs>org.eclipse.gmf.runtime.draw2d.ui</requiredPluginIDs>
       </viewmap>
       <modelFacet
-          modelElementSelector="//@expressionProviders/@providers.0/@expressions.41">
+          modelElementSelector="//@expressionProviders/@providers.0/@expressions.42">
         <metaClass
             href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/AcceptEventAction"/>
         <containmentMetaFeature
@@ -3284,7 +3336,7 @@
           </initializers>
           <initializers
               xsi:type="gmfgen:GenFeatureValueSpec"
-              value="//@expressionProviders/@providers.0/@expressions.42">
+              value="//@expressionProviders/@providers.0/@expressions.43">
             <feature
                 href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/NamedElement/name"/>
           </initializers>
@@ -3340,7 +3392,7 @@
         <requiredPluginIDs>org.eclipse.uml2.diagram.common</requiredPluginIDs>
       </viewmap>
       <modelFacet
-          modelElementSelector="//@expressionProviders/@providers.0/@expressions.43">
+          modelElementSelector="//@expressionProviders/@providers.0/@expressions.44">
         <metaClass
             href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/ActivityFinalNode"/>
         <containmentMetaFeature
@@ -3370,7 +3422,7 @@
         <requiredPluginIDs>org.eclipse.uml2.diagram.common</requiredPluginIDs>
       </viewmap>
       <modelFacet
-          modelElementSelector="//@expressionProviders/@providers.0/@expressions.44">
+          modelElementSelector="//@expressionProviders/@providers.0/@expressions.45">
         <metaClass
             href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/DecisionNode"/>
         <containmentMetaFeature
@@ -3381,7 +3433,7 @@
             xsi:type="gmfgen:GenFeatureSeqInitializer">
           <initializers
               xsi:type="gmfgen:GenFeatureValueSpec"
-              value="//@expressionProviders/@providers.0/@expressions.45">
+              value="//@expressionProviders/@providers.0/@expressions.46">
             <feature
                 href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/NamedElement/name"/>
           </initializers>
@@ -3409,7 +3461,7 @@
         <requiredPluginIDs>org.eclipse.uml2.diagram.common</requiredPluginIDs>
       </viewmap>
       <modelFacet
-          modelElementSelector="//@expressionProviders/@providers.0/@expressions.46">
+          modelElementSelector="//@expressionProviders/@providers.0/@expressions.47">
         <metaClass
             href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/MergeNode"/>
         <containmentMetaFeature
@@ -3420,7 +3472,7 @@
             xsi:type="gmfgen:GenFeatureSeqInitializer">
           <initializers
               xsi:type="gmfgen:GenFeatureValueSpec"
-              value="//@expressionProviders/@providers.0/@expressions.47">
+              value="//@expressionProviders/@providers.0/@expressions.48">
             <feature
                 href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/NamedElement/name"/>
           </initializers>
@@ -3457,7 +3509,7 @@
         <requiredPluginIDs>org.eclipse.uml2.diagram.common</requiredPluginIDs>
       </viewmap>
       <modelFacet
-          modelElementSelector="//@expressionProviders/@providers.0/@expressions.48">
+          modelElementSelector="//@expressionProviders/@providers.0/@expressions.49">
         <metaClass
             href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/InitialNode"/>
         <containmentMetaFeature
@@ -3487,7 +3539,7 @@
         <requiredPluginIDs>org.eclipse.gmf.runtime.draw2d.ui</requiredPluginIDs>
       </viewmap>
       <modelFacet
-          modelElementSelector="//@expressionProviders/@providers.0/@expressions.49">
+          modelElementSelector="//@expressionProviders/@providers.0/@expressions.50">
         <metaClass
             href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/DataStoreNode"/>
         <containmentMetaFeature
@@ -3498,7 +3550,7 @@
             xsi:type="gmfgen:GenFeatureSeqInitializer">
           <initializers
               xsi:type="gmfgen:GenFeatureValueSpec"
-              value="//@expressionProviders/@providers.0/@expressions.50">
+              value="//@expressionProviders/@providers.0/@expressions.51">
             <feature
                 href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/NamedElement/name"/>
           </initializers>
@@ -3581,7 +3633,7 @@
         <requiredPluginIDs>org.eclipse.gmf.runtime.draw2d.ui</requiredPluginIDs>
       </viewmap>
       <modelFacet
-          modelElementSelector="//@expressionProviders/@providers.0/@expressions.51">
+          modelElementSelector="//@expressionProviders/@providers.0/@expressions.52">
         <metaClass
             href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/CentralBufferNode"/>
         <containmentMetaFeature
@@ -3592,7 +3644,7 @@
             xsi:type="gmfgen:GenFeatureSeqInitializer">
           <initializers
               xsi:type="gmfgen:GenFeatureValueSpec"
-              value="//@expressionProviders/@providers.0/@expressions.52">
+              value="//@expressionProviders/@providers.0/@expressions.53">
             <feature
                 href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/NamedElement/name"/>
           </initializers>
@@ -3679,7 +3731,7 @@
         <requiredPluginIDs>org.eclipse.gmf.runtime.draw2d.ui</requiredPluginIDs>
       </viewmap>
       <modelFacet
-          modelElementSelector="//@expressionProviders/@providers.0/@expressions.53">
+          modelElementSelector="//@expressionProviders/@providers.0/@expressions.54">
         <metaClass
             href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/OpaqueAction"/>
         <containmentMetaFeature
@@ -3690,7 +3742,7 @@
             xsi:type="gmfgen:GenFeatureSeqInitializer">
           <initializers
               xsi:type="gmfgen:GenFeatureValueSpec"
-              value="//@expressionProviders/@providers.0/@expressions.54">
+              value="//@expressionProviders/@providers.0/@expressions.55">
             <feature
                 href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/NamedElement/name"/>
           </initializers>
@@ -3744,7 +3796,7 @@
         <requiredPluginIDs>org.eclipse.uml2.diagram.common</requiredPluginIDs>
       </viewmap>
       <modelFacet
-          modelElementSelector="//@expressionProviders/@providers.0/@expressions.55">
+          modelElementSelector="//@expressionProviders/@providers.0/@expressions.56">
         <metaClass
             href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/FlowFinalNode"/>
         <containmentMetaFeature
@@ -3784,7 +3836,7 @@
         <requiredPluginIDs>org.eclipse.uml2.diagram.common</requiredPluginIDs>
       </viewmap>
       <modelFacet
-          modelElementSelector="//@expressionProviders/@providers.0/@expressions.56">
+          modelElementSelector="//@expressionProviders/@providers.0/@expressions.57">
         <metaClass
             href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/ForkNode"/>
         <containmentMetaFeature
@@ -3824,7 +3876,7 @@
         <requiredPluginIDs>org.eclipse.uml2.diagram.common</requiredPluginIDs>
       </viewmap>
       <modelFacet
-          modelElementSelector="//@expressionProviders/@providers.0/@expressions.57">
+          modelElementSelector="//@expressionProviders/@providers.0/@expressions.58">
         <metaClass
             href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/JoinNode"/>
         <containmentMetaFeature
@@ -3854,7 +3906,7 @@
         <requiredPluginIDs>org.eclipse.gmf.runtime.draw2d.ui</requiredPluginIDs>
       </viewmap>
       <modelFacet
-          modelElementSelector="//@expressionProviders/@providers.0/@expressions.58">
+          modelElementSelector="//@expressionProviders/@providers.0/@expressions.59">
         <metaClass
             href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/Pin"/>
         <containmentMetaFeature
@@ -3865,7 +3917,7 @@
             xsi:type="gmfgen:GenFeatureSeqInitializer">
           <initializers
               xsi:type="gmfgen:GenFeatureValueSpec"
-              value="//@expressionProviders/@providers.0/@expressions.59">
+              value="//@expressionProviders/@providers.0/@expressions.60">
             <feature
                 href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/NamedElement/name"/>
           </initializers>
@@ -3935,7 +3987,7 @@
         <requiredPluginIDs>org.eclipse.gmf.runtime.draw2d.ui</requiredPluginIDs>
       </viewmap>
       <modelFacet
-          modelElementSelector="//@expressionProviders/@providers.0/@expressions.60">
+          modelElementSelector="//@expressionProviders/@providers.0/@expressions.61">
         <metaClass
             href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/CreateObjectAction"/>
         <containmentMetaFeature
@@ -3946,7 +3998,7 @@
             xsi:type="gmfgen:GenFeatureSeqInitializer">
           <initializers
               xsi:type="gmfgen:GenFeatureValueSpec"
-              value="//@expressionProviders/@providers.0/@expressions.61">
+              value="//@expressionProviders/@providers.0/@expressions.62">
             <feature
                 href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/NamedElement/name"/>
           </initializers>
@@ -3996,7 +4048,7 @@
         <requiredPluginIDs>org.eclipse.gmf.runtime.draw2d.ui</requiredPluginIDs>
       </viewmap>
       <modelFacet
-          modelElementSelector="//@expressionProviders/@providers.0/@expressions.62">
+          modelElementSelector="//@expressionProviders/@providers.0/@expressions.63">
         <metaClass
             href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/AddStructuralFeatureValueAction"/>
         <containmentMetaFeature
@@ -4007,7 +4059,7 @@
             xsi:type="gmfgen:GenFeatureSeqInitializer">
           <initializers
               xsi:type="gmfgen:GenFeatureValueSpec"
-              value="//@expressionProviders/@providers.0/@expressions.63">
+              value="//@expressionProviders/@providers.0/@expressions.64">
             <feature
                 href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/NamedElement/name"/>
           </initializers>
@@ -4057,7 +4109,7 @@
         <requiredPluginIDs>org.eclipse.gmf.runtime.draw2d.ui</requiredPluginIDs>
       </viewmap>
       <modelFacet
-          modelElementSelector="//@expressionProviders/@providers.0/@expressions.64">
+          modelElementSelector="//@expressionProviders/@providers.0/@expressions.65">
         <metaClass
             href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/CallBehaviorAction"/>
         <containmentMetaFeature
@@ -4068,7 +4120,7 @@
             xsi:type="gmfgen:GenFeatureSeqInitializer">
           <initializers
               xsi:type="gmfgen:GenFeatureValueSpec"
-              value="//@expressionProviders/@providers.0/@expressions.65">
+              value="//@expressionProviders/@providers.0/@expressions.66">
             <feature
                 href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/NamedElement/name"/>
           </initializers>
@@ -4118,7 +4170,7 @@
         <requiredPluginIDs>org.eclipse.gmf.runtime.draw2d.ui</requiredPluginIDs>
       </viewmap>
       <modelFacet
-          modelElementSelector="//@expressionProviders/@providers.0/@expressions.66">
+          modelElementSelector="//@expressionProviders/@providers.0/@expressions.67">
         <metaClass
             href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/CallOperationAction"/>
         <containmentMetaFeature
@@ -4129,7 +4181,7 @@
             xsi:type="gmfgen:GenFeatureSeqInitializer">
           <initializers
               xsi:type="gmfgen:GenFeatureValueSpec"
-              value="//@expressionProviders/@providers.0/@expressions.67">
+              value="//@expressionProviders/@providers.0/@expressions.68">
             <feature
                 href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/NamedElement/name"/>
           </initializers>
@@ -4171,11 +4223,11 @@
       <viewmap
           xsi:type="gmfgen:InnerClassViewmap"
           className="StructuredActivityFigure"
-          classBody="&#xD;&#xA;/**&#xD;&#xA; * @generated&#xD;&#xA; */&#xD;&#xA;public class StructuredActivityFigure extends org.eclipse.draw2d.RoundedRectangle {&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;private org.eclipse.draw2d.RectangleFigure fFigureStructuredActivityFigure_ContentPane; &#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;public StructuredActivityFigure() {&#xD;&#xA;&#x9;&#x9;&#xD;&#xA;&#x9;org.eclipse.draw2d.BorderLayout layoutThis = new org.eclipse.draw2d.BorderLayout();&#xD;&#xA;&#x9;this.setLayoutManager(layoutThis);&#xD;&#xA;&#xD;&#xA;&#x9;&#x9;this.setCornerDimensions(new org.eclipse.draw2d.geometry.Dimension(getMapMode().DPtoLP(8)&#xD;&#xA;, getMapMode().DPtoLP(8)&#xD;&#xA;));&#xD;&#xA;this.setLineStyle(org.eclipse.draw2d.Graphics.LINE_DASH);&#xD;&#xA;&#x9;&#x9;createContents();&#xD;&#xA;&#x9;}&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;private void createContents(){&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;fFigureStructuredActivityFigure_ContentPane = new org.eclipse.draw2d.RectangleFigure();&#xD;&#xA;fFigureStructuredActivityFigure_ContentPane.setFill(false);&#xD;&#xA;fFigureStructuredActivityFigure_ContentPane.setOutline(false);&#xD;&#xA;&#xD;&#xA;this.add(fFigureStructuredActivityFigure_ContentPane, org.eclipse.draw2d.BorderLayout.CENTER);&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;org.eclipse.draw2d.RectangleFigure aux_StructuredActivityFigure_LabelContainer0 = new org.eclipse.draw2d.RectangleFigure();&#xD;&#xA;aux_StructuredActivityFigure_LabelContainer0.setFill(false);&#xD;&#xA;aux_StructuredActivityFigure_LabelContainer0.setOutline(false);&#xD;&#xA;&#xD;&#xA;aux_StructuredActivityFigure_LabelContainer0.setBorder(new org.eclipse.draw2d.MarginBorder(getMapMode().DPtoLP(0)&#xD;&#xA;, getMapMode().DPtoLP(5)&#xD;&#xA;, getMapMode().DPtoLP(5)&#xD;&#xA;, getMapMode().DPtoLP(0)&#xD;&#xA;));&#xD;&#xA;&#xD;&#xA;this.add(aux_StructuredActivityFigure_LabelContainer0, org.eclipse.draw2d.BorderLayout.TOP);&#xD;&#xA;&#xD;&#xA;&#x9;org.eclipse.draw2d.BorderLayout layoutAux_StructuredActivityFigure_LabelContainer0 = new org.eclipse.draw2d.BorderLayout();&#xD;&#xA;&#x9;aux_StructuredActivityFigure_LabelContainer0.setLayoutManager(layoutAux_StructuredActivityFigure_LabelContainer0);&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;org.eclipse.draw2d.Label structuredActivityFigure_fixed_structured1 = new org.eclipse.draw2d.Label();&#xD;&#xA;structuredActivityFigure_fixed_structured1.setText(&quot;\u00ABstructured\u00BB&quot;);&#xD;&#xA;&#xD;&#xA;aux_StructuredActivityFigure_LabelContainer0.add(structuredActivityFigure_fixed_structured1, org.eclipse.draw2d.BorderLayout.LEFT);&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#x9;}&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;private boolean myUseLocalCoordinates = false;&#xD;&#xA;&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;protected boolean useLocalCoordinates() {&#xD;&#xA;&#x9;&#x9;return myUseLocalCoordinates;&#xD;&#xA;&#x9;}&#xD;&#xA;&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;protected void setUseLocalCoordinates(boolean useLocalCoordinates) {&#xD;&#xA;&#x9;&#x9;myUseLocalCoordinates = useLocalCoordinates;&#xD;&#xA;&#x9;}&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;public org.eclipse.draw2d.RectangleFigure getFigureStructuredActivityFigure_ContentPane() {&#xD;&#xA;&#x9;&#x9;return fFigureStructuredActivityFigure_ContentPane;&#xD;&#xA;&#x9;}&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;}&#xD;&#xA;&#xD;&#xA;">
+          classBody="&#xD;&#xA;/**&#xD;&#xA; * @generated&#xD;&#xA; */&#xD;&#xA;public class StructuredActivityFigure extends org.eclipse.draw2d.RoundedRectangle {&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;private org.eclipse.draw2d.Label fFigureStructuredActivityFigure_name; &#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;private org.eclipse.draw2d.RectangleFigure fFigureStructuredActivityFigure_ContentPane; &#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;public StructuredActivityFigure() {&#xD;&#xA;&#x9;&#x9;&#xD;&#xA;&#x9;org.eclipse.draw2d.BorderLayout layoutThis = new org.eclipse.draw2d.BorderLayout();&#xD;&#xA;&#x9;this.setLayoutManager(layoutThis);&#xD;&#xA;&#xD;&#xA;&#x9;&#x9;this.setCornerDimensions(new org.eclipse.draw2d.geometry.Dimension(getMapMode().DPtoLP(8)&#xD;&#xA;, getMapMode().DPtoLP(8)&#xD;&#xA;));&#xD;&#xA;this.setLineStyle(org.eclipse.draw2d.Graphics.LINE_DASH);&#xD;&#xA;&#x9;&#x9;createContents();&#xD;&#xA;&#x9;}&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;private void createContents(){&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;org.eclipse.draw2d.RectangleFigure aux_StructuredActivityFigure_LabelContainer0 = new org.eclipse.draw2d.RectangleFigure();&#xD;&#xA;aux_StructuredActivityFigure_LabelContainer0.setFill(false);&#xD;&#xA;aux_StructuredActivityFigure_LabelContainer0.setOutline(false);&#xD;&#xA;&#xD;&#xA;aux_StructuredActivityFigure_LabelContainer0.setBorder(new org.eclipse.draw2d.MarginBorder(getMapMode().DPtoLP(0)&#xD;&#xA;, getMapMode().DPtoLP(5)&#xD;&#xA;, getMapMode().DPtoLP(5)&#xD;&#xA;, getMapMode().DPtoLP(5)&#xD;&#xA;));&#xD;&#xA;&#xD;&#xA;this.add(aux_StructuredActivityFigure_LabelContainer0, org.eclipse.draw2d.BorderLayout.TOP);&#xD;&#xA;&#xD;&#xA;&#x9;org.eclipse.draw2d.BorderLayout layoutAux_StructuredActivityFigure_LabelContainer0 = new org.eclipse.draw2d.BorderLayout();&#xD;&#xA;&#x9;aux_StructuredActivityFigure_LabelContainer0.setLayoutManager(layoutAux_StructuredActivityFigure_LabelContainer0);&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;org.eclipse.draw2d.RectangleFigure structuredActivityFigure_KeywordContainer1 = new org.eclipse.draw2d.RectangleFigure();&#xD;&#xA;structuredActivityFigure_KeywordContainer1.setFill(false);&#xD;&#xA;structuredActivityFigure_KeywordContainer1.setOutline(false);&#xD;&#xA;&#xD;&#xA;aux_StructuredActivityFigure_LabelContainer0.add(structuredActivityFigure_KeywordContainer1, org.eclipse.draw2d.BorderLayout.TOP);&#xD;&#xA;&#xD;&#xA;&#x9;org.eclipse.draw2d.BorderLayout layoutStructuredActivityFigure_KeywordContainer1 = new org.eclipse.draw2d.BorderLayout();&#xD;&#xA;&#x9;structuredActivityFigure_KeywordContainer1.setLayoutManager(layoutStructuredActivityFigure_KeywordContainer1);&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;org.eclipse.draw2d.Label structuredActivityFigure_keyword2 = new org.eclipse.draw2d.Label();&#xD;&#xA;structuredActivityFigure_keyword2.setText(&quot;\u00ABstructured\u00BB&quot;);&#xD;&#xA;&#xD;&#xA;structuredActivityFigure_KeywordContainer1.add(structuredActivityFigure_keyword2, org.eclipse.draw2d.BorderLayout.LEFT);&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;fFigureStructuredActivityFigure_name = new org.eclipse.draw2d.Label();&#xD;&#xA;fFigureStructuredActivityFigure_name.setText(&quot;&quot;);&#xD;&#xA;&#xD;&#xA;aux_StructuredActivityFigure_LabelContainer0.add(fFigureStructuredActivityFigure_name, org.eclipse.draw2d.BorderLayout.CENTER);&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;fFigureStructuredActivityFigure_ContentPane = new org.eclipse.draw2d.RectangleFigure();&#xD;&#xA;fFigureStructuredActivityFigure_ContentPane.setFill(false);&#xD;&#xA;fFigureStructuredActivityFigure_ContentPane.setOutline(false);&#xD;&#xA;&#xD;&#xA;this.add(fFigureStructuredActivityFigure_ContentPane, org.eclipse.draw2d.BorderLayout.CENTER);&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#x9;}&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;private boolean myUseLocalCoordinates = false;&#xD;&#xA;&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;protected boolean useLocalCoordinates() {&#xD;&#xA;&#x9;&#x9;return myUseLocalCoordinates;&#xD;&#xA;&#x9;}&#xD;&#xA;&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;protected void setUseLocalCoordinates(boolean useLocalCoordinates) {&#xD;&#xA;&#x9;&#x9;myUseLocalCoordinates = useLocalCoordinates;&#xD;&#xA;&#x9;}&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;public org.eclipse.draw2d.Label getFigureStructuredActivityFigure_name() {&#xD;&#xA;&#x9;&#x9;return fFigureStructuredActivityFigure_name;&#xD;&#xA;&#x9;}&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;public org.eclipse.draw2d.RectangleFigure getFigureStructuredActivityFigure_ContentPane() {&#xD;&#xA;&#x9;&#x9;return fFigureStructuredActivityFigure_ContentPane;&#xD;&#xA;&#x9;}&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;}&#xD;&#xA;&#xD;&#xA;">
         <requiredPluginIDs>org.eclipse.gmf.runtime.draw2d.ui</requiredPluginIDs>
       </viewmap>
       <modelFacet
-          modelElementSelector="//@expressionProviders/@providers.0/@expressions.68">
+          modelElementSelector="//@expressionProviders/@providers.0/@expressions.69">
         <metaClass
             href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/StructuredActivityNode"/>
         <containmentMetaFeature
@@ -4202,11 +4254,11 @@
       <viewmap
           xsi:type="gmfgen:InnerClassViewmap"
           className="StructuredActivityFigure"
-          classBody="&#xD;&#xA;/**&#xD;&#xA; * @generated&#xD;&#xA; */&#xD;&#xA;public class StructuredActivityFigure extends org.eclipse.draw2d.RoundedRectangle {&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;private org.eclipse.draw2d.RectangleFigure fFigureStructuredActivityFigure_ContentPane; &#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;public StructuredActivityFigure() {&#xD;&#xA;&#x9;&#x9;&#xD;&#xA;&#x9;org.eclipse.draw2d.BorderLayout layoutThis = new org.eclipse.draw2d.BorderLayout();&#xD;&#xA;&#x9;this.setLayoutManager(layoutThis);&#xD;&#xA;&#xD;&#xA;&#x9;&#x9;this.setCornerDimensions(new org.eclipse.draw2d.geometry.Dimension(getMapMode().DPtoLP(8)&#xD;&#xA;, getMapMode().DPtoLP(8)&#xD;&#xA;));&#xD;&#xA;this.setLineStyle(org.eclipse.draw2d.Graphics.LINE_DASH);&#xD;&#xA;&#x9;&#x9;createContents();&#xD;&#xA;&#x9;}&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;private void createContents(){&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;fFigureStructuredActivityFigure_ContentPane = new org.eclipse.draw2d.RectangleFigure();&#xD;&#xA;fFigureStructuredActivityFigure_ContentPane.setFill(false);&#xD;&#xA;fFigureStructuredActivityFigure_ContentPane.setOutline(false);&#xD;&#xA;&#xD;&#xA;this.add(fFigureStructuredActivityFigure_ContentPane, org.eclipse.draw2d.BorderLayout.CENTER);&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;org.eclipse.draw2d.RectangleFigure aux_StructuredActivityFigure_LabelContainer0 = new org.eclipse.draw2d.RectangleFigure();&#xD;&#xA;aux_StructuredActivityFigure_LabelContainer0.setFill(false);&#xD;&#xA;aux_StructuredActivityFigure_LabelContainer0.setOutline(false);&#xD;&#xA;&#xD;&#xA;aux_StructuredActivityFigure_LabelContainer0.setBorder(new org.eclipse.draw2d.MarginBorder(getMapMode().DPtoLP(0)&#xD;&#xA;, getMapMode().DPtoLP(5)&#xD;&#xA;, getMapMode().DPtoLP(5)&#xD;&#xA;, getMapMode().DPtoLP(0)&#xD;&#xA;));&#xD;&#xA;&#xD;&#xA;this.add(aux_StructuredActivityFigure_LabelContainer0, org.eclipse.draw2d.BorderLayout.TOP);&#xD;&#xA;&#xD;&#xA;&#x9;org.eclipse.draw2d.BorderLayout layoutAux_StructuredActivityFigure_LabelContainer0 = new org.eclipse.draw2d.BorderLayout();&#xD;&#xA;&#x9;aux_StructuredActivityFigure_LabelContainer0.setLayoutManager(layoutAux_StructuredActivityFigure_LabelContainer0);&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;org.eclipse.draw2d.Label structuredActivityFigure_fixed_structured1 = new org.eclipse.draw2d.Label();&#xD;&#xA;structuredActivityFigure_fixed_structured1.setText(&quot;\u00ABstructured\u00BB&quot;);&#xD;&#xA;&#xD;&#xA;aux_StructuredActivityFigure_LabelContainer0.add(structuredActivityFigure_fixed_structured1, org.eclipse.draw2d.BorderLayout.LEFT);&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#x9;}&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;private boolean myUseLocalCoordinates = false;&#xD;&#xA;&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;protected boolean useLocalCoordinates() {&#xD;&#xA;&#x9;&#x9;return myUseLocalCoordinates;&#xD;&#xA;&#x9;}&#xD;&#xA;&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;protected void setUseLocalCoordinates(boolean useLocalCoordinates) {&#xD;&#xA;&#x9;&#x9;myUseLocalCoordinates = useLocalCoordinates;&#xD;&#xA;&#x9;}&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;public org.eclipse.draw2d.RectangleFigure getFigureStructuredActivityFigure_ContentPane() {&#xD;&#xA;&#x9;&#x9;return fFigureStructuredActivityFigure_ContentPane;&#xD;&#xA;&#x9;}&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;}&#xD;&#xA;&#xD;&#xA;">
+          classBody="&#xD;&#xA;/**&#xD;&#xA; * @generated&#xD;&#xA; */&#xD;&#xA;public class StructuredActivityFigure extends org.eclipse.draw2d.RoundedRectangle {&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;private org.eclipse.draw2d.Label fFigureStructuredActivityFigure_name; &#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;private org.eclipse.draw2d.RectangleFigure fFigureStructuredActivityFigure_ContentPane; &#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;public StructuredActivityFigure() {&#xD;&#xA;&#x9;&#x9;&#xD;&#xA;&#x9;org.eclipse.draw2d.BorderLayout layoutThis = new org.eclipse.draw2d.BorderLayout();&#xD;&#xA;&#x9;this.setLayoutManager(layoutThis);&#xD;&#xA;&#xD;&#xA;&#x9;&#x9;this.setCornerDimensions(new org.eclipse.draw2d.geometry.Dimension(getMapMode().DPtoLP(8)&#xD;&#xA;, getMapMode().DPtoLP(8)&#xD;&#xA;));&#xD;&#xA;this.setLineStyle(org.eclipse.draw2d.Graphics.LINE_DASH);&#xD;&#xA;&#x9;&#x9;createContents();&#xD;&#xA;&#x9;}&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;private void createContents(){&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;org.eclipse.draw2d.RectangleFigure aux_StructuredActivityFigure_LabelContainer0 = new org.eclipse.draw2d.RectangleFigure();&#xD;&#xA;aux_StructuredActivityFigure_LabelContainer0.setFill(false);&#xD;&#xA;aux_StructuredActivityFigure_LabelContainer0.setOutline(false);&#xD;&#xA;&#xD;&#xA;aux_StructuredActivityFigure_LabelContainer0.setBorder(new org.eclipse.draw2d.MarginBorder(getMapMode().DPtoLP(0)&#xD;&#xA;, getMapMode().DPtoLP(5)&#xD;&#xA;, getMapMode().DPtoLP(5)&#xD;&#xA;, getMapMode().DPtoLP(5)&#xD;&#xA;));&#xD;&#xA;&#xD;&#xA;this.add(aux_StructuredActivityFigure_LabelContainer0, org.eclipse.draw2d.BorderLayout.TOP);&#xD;&#xA;&#xD;&#xA;&#x9;org.eclipse.draw2d.BorderLayout layoutAux_StructuredActivityFigure_LabelContainer0 = new org.eclipse.draw2d.BorderLayout();&#xD;&#xA;&#x9;aux_StructuredActivityFigure_LabelContainer0.setLayoutManager(layoutAux_StructuredActivityFigure_LabelContainer0);&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;org.eclipse.draw2d.RectangleFigure structuredActivityFigure_KeywordContainer1 = new org.eclipse.draw2d.RectangleFigure();&#xD;&#xA;structuredActivityFigure_KeywordContainer1.setFill(false);&#xD;&#xA;structuredActivityFigure_KeywordContainer1.setOutline(false);&#xD;&#xA;&#xD;&#xA;aux_StructuredActivityFigure_LabelContainer0.add(structuredActivityFigure_KeywordContainer1, org.eclipse.draw2d.BorderLayout.TOP);&#xD;&#xA;&#xD;&#xA;&#x9;org.eclipse.draw2d.BorderLayout layoutStructuredActivityFigure_KeywordContainer1 = new org.eclipse.draw2d.BorderLayout();&#xD;&#xA;&#x9;structuredActivityFigure_KeywordContainer1.setLayoutManager(layoutStructuredActivityFigure_KeywordContainer1);&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;org.eclipse.draw2d.Label structuredActivityFigure_keyword2 = new org.eclipse.draw2d.Label();&#xD;&#xA;structuredActivityFigure_keyword2.setText(&quot;\u00ABstructured\u00BB&quot;);&#xD;&#xA;&#xD;&#xA;structuredActivityFigure_KeywordContainer1.add(structuredActivityFigure_keyword2, org.eclipse.draw2d.BorderLayout.LEFT);&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;fFigureStructuredActivityFigure_name = new org.eclipse.draw2d.Label();&#xD;&#xA;fFigureStructuredActivityFigure_name.setText(&quot;&quot;);&#xD;&#xA;&#xD;&#xA;aux_StructuredActivityFigure_LabelContainer0.add(fFigureStructuredActivityFigure_name, org.eclipse.draw2d.BorderLayout.CENTER);&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;fFigureStructuredActivityFigure_ContentPane = new org.eclipse.draw2d.RectangleFigure();&#xD;&#xA;fFigureStructuredActivityFigure_ContentPane.setFill(false);&#xD;&#xA;fFigureStructuredActivityFigure_ContentPane.setOutline(false);&#xD;&#xA;&#xD;&#xA;this.add(fFigureStructuredActivityFigure_ContentPane, org.eclipse.draw2d.BorderLayout.CENTER);&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#x9;}&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;private boolean myUseLocalCoordinates = false;&#xD;&#xA;&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;protected boolean useLocalCoordinates() {&#xD;&#xA;&#x9;&#x9;return myUseLocalCoordinates;&#xD;&#xA;&#x9;}&#xD;&#xA;&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;protected void setUseLocalCoordinates(boolean useLocalCoordinates) {&#xD;&#xA;&#x9;&#x9;myUseLocalCoordinates = useLocalCoordinates;&#xD;&#xA;&#x9;}&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;public org.eclipse.draw2d.Label getFigureStructuredActivityFigure_name() {&#xD;&#xA;&#x9;&#x9;return fFigureStructuredActivityFigure_name;&#xD;&#xA;&#x9;}&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;public org.eclipse.draw2d.RectangleFigure getFigureStructuredActivityFigure_ContentPane() {&#xD;&#xA;&#x9;&#x9;return fFigureStructuredActivityFigure_ContentPane;&#xD;&#xA;&#x9;}&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;}&#xD;&#xA;&#xD;&#xA;">
         <requiredPluginIDs>org.eclipse.gmf.runtime.draw2d.ui</requiredPluginIDs>
       </viewmap>
       <modelFacet
-          modelElementSelector="//@expressionProviders/@providers.0/@expressions.68">
+          modelElementSelector="//@expressionProviders/@providers.0/@expressions.69">
         <metaClass
             href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/StructuredActivityNode"/>
         <containmentMetaFeature
@@ -4246,7 +4298,7 @@
             xsi:type="gmfgen:GenFeatureSeqInitializer">
           <initializers
               xsi:type="gmfgen:GenFeatureValueSpec"
-              value="//@expressionProviders/@providers.0/@expressions.69">
+              value="//@expressionProviders/@providers.0/@expressions.70">
             <feature
                 href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/NamedElement/name"/>
           </initializers>
@@ -4321,7 +4373,7 @@
             xsi:type="gmfgen:GenFeatureSeqInitializer">
           <initializers
               xsi:type="gmfgen:GenFeatureValueSpec"
-              value="//@expressionProviders/@providers.0/@expressions.70">
+              value="//@expressionProviders/@providers.0/@expressions.71">
             <feature
                 href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/NamedElement/name"/>
           </initializers>
@@ -4390,7 +4442,7 @@
         <requiredPluginIDs>org.eclipse.gmf.runtime.draw2d.ui</requiredPluginIDs>
       </viewmap>
       <modelFacet
-          modelElementSelector="//@expressionProviders/@providers.0/@expressions.71">
+          modelElementSelector="//@expressionProviders/@providers.0/@expressions.72">
         <metaClass
             href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/SendSignalAction"/>
         <containmentMetaFeature
@@ -4401,7 +4453,7 @@
             xsi:type="gmfgen:GenFeatureSeqInitializer">
           <initializers
               xsi:type="gmfgen:GenFeatureValueSpec"
-              value="//@expressionProviders/@providers.0/@expressions.72">
+              value="//@expressionProviders/@providers.0/@expressions.73">
             <feature
                 href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/NamedElement/name"/>
           </initializers>
@@ -4443,11 +4495,11 @@
       <viewmap
           xsi:type="gmfgen:InnerClassViewmap"
           className="StructuredActivityFigure"
-          classBody="&#xD;&#xA;/**&#xD;&#xA; * @generated&#xD;&#xA; */&#xD;&#xA;public class StructuredActivityFigure extends org.eclipse.draw2d.RoundedRectangle {&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;private org.eclipse.draw2d.RectangleFigure fFigureStructuredActivityFigure_ContentPane; &#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;public StructuredActivityFigure() {&#xD;&#xA;&#x9;&#x9;&#xD;&#xA;&#x9;org.eclipse.draw2d.BorderLayout layoutThis = new org.eclipse.draw2d.BorderLayout();&#xD;&#xA;&#x9;this.setLayoutManager(layoutThis);&#xD;&#xA;&#xD;&#xA;&#x9;&#x9;this.setCornerDimensions(new org.eclipse.draw2d.geometry.Dimension(getMapMode().DPtoLP(8)&#xD;&#xA;, getMapMode().DPtoLP(8)&#xD;&#xA;));&#xD;&#xA;this.setLineStyle(org.eclipse.draw2d.Graphics.LINE_DASH);&#xD;&#xA;&#x9;&#x9;createContents();&#xD;&#xA;&#x9;}&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;private void createContents(){&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;fFigureStructuredActivityFigure_ContentPane = new org.eclipse.draw2d.RectangleFigure();&#xD;&#xA;fFigureStructuredActivityFigure_ContentPane.setFill(false);&#xD;&#xA;fFigureStructuredActivityFigure_ContentPane.setOutline(false);&#xD;&#xA;&#xD;&#xA;this.add(fFigureStructuredActivityFigure_ContentPane, org.eclipse.draw2d.BorderLayout.CENTER);&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;org.eclipse.draw2d.RectangleFigure aux_StructuredActivityFigure_LabelContainer0 = new org.eclipse.draw2d.RectangleFigure();&#xD;&#xA;aux_StructuredActivityFigure_LabelContainer0.setFill(false);&#xD;&#xA;aux_StructuredActivityFigure_LabelContainer0.setOutline(false);&#xD;&#xA;&#xD;&#xA;aux_StructuredActivityFigure_LabelContainer0.setBorder(new org.eclipse.draw2d.MarginBorder(getMapMode().DPtoLP(0)&#xD;&#xA;, getMapMode().DPtoLP(5)&#xD;&#xA;, getMapMode().DPtoLP(5)&#xD;&#xA;, getMapMode().DPtoLP(0)&#xD;&#xA;));&#xD;&#xA;&#xD;&#xA;this.add(aux_StructuredActivityFigure_LabelContainer0, org.eclipse.draw2d.BorderLayout.TOP);&#xD;&#xA;&#xD;&#xA;&#x9;org.eclipse.draw2d.BorderLayout layoutAux_StructuredActivityFigure_LabelContainer0 = new org.eclipse.draw2d.BorderLayout();&#xD;&#xA;&#x9;aux_StructuredActivityFigure_LabelContainer0.setLayoutManager(layoutAux_StructuredActivityFigure_LabelContainer0);&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;org.eclipse.draw2d.Label structuredActivityFigure_fixed_structured1 = new org.eclipse.draw2d.Label();&#xD;&#xA;structuredActivityFigure_fixed_structured1.setText(&quot;\u00ABstructured\u00BB&quot;);&#xD;&#xA;&#xD;&#xA;aux_StructuredActivityFigure_LabelContainer0.add(structuredActivityFigure_fixed_structured1, org.eclipse.draw2d.BorderLayout.LEFT);&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#x9;}&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;private boolean myUseLocalCoordinates = false;&#xD;&#xA;&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;protected boolean useLocalCoordinates() {&#xD;&#xA;&#x9;&#x9;return myUseLocalCoordinates;&#xD;&#xA;&#x9;}&#xD;&#xA;&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;protected void setUseLocalCoordinates(boolean useLocalCoordinates) {&#xD;&#xA;&#x9;&#x9;myUseLocalCoordinates = useLocalCoordinates;&#xD;&#xA;&#x9;}&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;public org.eclipse.draw2d.RectangleFigure getFigureStructuredActivityFigure_ContentPane() {&#xD;&#xA;&#x9;&#x9;return fFigureStructuredActivityFigure_ContentPane;&#xD;&#xA;&#x9;}&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;}&#xD;&#xA;&#xD;&#xA;">
+          classBody="&#xD;&#xA;/**&#xD;&#xA; * @generated&#xD;&#xA; */&#xD;&#xA;public class StructuredActivityFigure extends org.eclipse.draw2d.RoundedRectangle {&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;private org.eclipse.draw2d.Label fFigureStructuredActivityFigure_name; &#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;private org.eclipse.draw2d.RectangleFigure fFigureStructuredActivityFigure_ContentPane; &#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;public StructuredActivityFigure() {&#xD;&#xA;&#x9;&#x9;&#xD;&#xA;&#x9;org.eclipse.draw2d.BorderLayout layoutThis = new org.eclipse.draw2d.BorderLayout();&#xD;&#xA;&#x9;this.setLayoutManager(layoutThis);&#xD;&#xA;&#xD;&#xA;&#x9;&#x9;this.setCornerDimensions(new org.eclipse.draw2d.geometry.Dimension(getMapMode().DPtoLP(8)&#xD;&#xA;, getMapMode().DPtoLP(8)&#xD;&#xA;));&#xD;&#xA;this.setLineStyle(org.eclipse.draw2d.Graphics.LINE_DASH);&#xD;&#xA;&#x9;&#x9;createContents();&#xD;&#xA;&#x9;}&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;private void createContents(){&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;org.eclipse.draw2d.RectangleFigure aux_StructuredActivityFigure_LabelContainer0 = new org.eclipse.draw2d.RectangleFigure();&#xD;&#xA;aux_StructuredActivityFigure_LabelContainer0.setFill(false);&#xD;&#xA;aux_StructuredActivityFigure_LabelContainer0.setOutline(false);&#xD;&#xA;&#xD;&#xA;aux_StructuredActivityFigure_LabelContainer0.setBorder(new org.eclipse.draw2d.MarginBorder(getMapMode().DPtoLP(0)&#xD;&#xA;, getMapMode().DPtoLP(5)&#xD;&#xA;, getMapMode().DPtoLP(5)&#xD;&#xA;, getMapMode().DPtoLP(5)&#xD;&#xA;));&#xD;&#xA;&#xD;&#xA;this.add(aux_StructuredActivityFigure_LabelContainer0, org.eclipse.draw2d.BorderLayout.TOP);&#xD;&#xA;&#xD;&#xA;&#x9;org.eclipse.draw2d.BorderLayout layoutAux_StructuredActivityFigure_LabelContainer0 = new org.eclipse.draw2d.BorderLayout();&#xD;&#xA;&#x9;aux_StructuredActivityFigure_LabelContainer0.setLayoutManager(layoutAux_StructuredActivityFigure_LabelContainer0);&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;org.eclipse.draw2d.RectangleFigure structuredActivityFigure_KeywordContainer1 = new org.eclipse.draw2d.RectangleFigure();&#xD;&#xA;structuredActivityFigure_KeywordContainer1.setFill(false);&#xD;&#xA;structuredActivityFigure_KeywordContainer1.setOutline(false);&#xD;&#xA;&#xD;&#xA;aux_StructuredActivityFigure_LabelContainer0.add(structuredActivityFigure_KeywordContainer1, org.eclipse.draw2d.BorderLayout.TOP);&#xD;&#xA;&#xD;&#xA;&#x9;org.eclipse.draw2d.BorderLayout layoutStructuredActivityFigure_KeywordContainer1 = new org.eclipse.draw2d.BorderLayout();&#xD;&#xA;&#x9;structuredActivityFigure_KeywordContainer1.setLayoutManager(layoutStructuredActivityFigure_KeywordContainer1);&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;org.eclipse.draw2d.Label structuredActivityFigure_keyword2 = new org.eclipse.draw2d.Label();&#xD;&#xA;structuredActivityFigure_keyword2.setText(&quot;\u00ABstructured\u00BB&quot;);&#xD;&#xA;&#xD;&#xA;structuredActivityFigure_KeywordContainer1.add(structuredActivityFigure_keyword2, org.eclipse.draw2d.BorderLayout.LEFT);&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;fFigureStructuredActivityFigure_name = new org.eclipse.draw2d.Label();&#xD;&#xA;fFigureStructuredActivityFigure_name.setText(&quot;&quot;);&#xD;&#xA;&#xD;&#xA;aux_StructuredActivityFigure_LabelContainer0.add(fFigureStructuredActivityFigure_name, org.eclipse.draw2d.BorderLayout.CENTER);&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;fFigureStructuredActivityFigure_ContentPane = new org.eclipse.draw2d.RectangleFigure();&#xD;&#xA;fFigureStructuredActivityFigure_ContentPane.setFill(false);&#xD;&#xA;fFigureStructuredActivityFigure_ContentPane.setOutline(false);&#xD;&#xA;&#xD;&#xA;this.add(fFigureStructuredActivityFigure_ContentPane, org.eclipse.draw2d.BorderLayout.CENTER);&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#x9;}&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;private boolean myUseLocalCoordinates = false;&#xD;&#xA;&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;protected boolean useLocalCoordinates() {&#xD;&#xA;&#x9;&#x9;return myUseLocalCoordinates;&#xD;&#xA;&#x9;}&#xD;&#xA;&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;protected void setUseLocalCoordinates(boolean useLocalCoordinates) {&#xD;&#xA;&#x9;&#x9;myUseLocalCoordinates = useLocalCoordinates;&#xD;&#xA;&#x9;}&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;public org.eclipse.draw2d.Label getFigureStructuredActivityFigure_name() {&#xD;&#xA;&#x9;&#x9;return fFigureStructuredActivityFigure_name;&#xD;&#xA;&#x9;}&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;public org.eclipse.draw2d.RectangleFigure getFigureStructuredActivityFigure_ContentPane() {&#xD;&#xA;&#x9;&#x9;return fFigureStructuredActivityFigure_ContentPane;&#xD;&#xA;&#x9;}&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;}&#xD;&#xA;&#xD;&#xA;">
         <requiredPluginIDs>org.eclipse.gmf.runtime.draw2d.ui</requiredPluginIDs>
       </viewmap>
       <modelFacet
-          modelElementSelector="//@expressionProviders/@providers.0/@expressions.73">
+          modelElementSelector="//@expressionProviders/@providers.0/@expressions.74">
         <metaClass
             href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/LoopNode"/>
         <containmentMetaFeature
@@ -4474,11 +4526,11 @@
       <viewmap
           xsi:type="gmfgen:InnerClassViewmap"
           className="StructuredActivityFigure"
-          classBody="&#xD;&#xA;/**&#xD;&#xA; * @generated&#xD;&#xA; */&#xD;&#xA;public class StructuredActivityFigure extends org.eclipse.draw2d.RoundedRectangle {&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;private org.eclipse.draw2d.RectangleFigure fFigureStructuredActivityFigure_ContentPane; &#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;public StructuredActivityFigure() {&#xD;&#xA;&#x9;&#x9;&#xD;&#xA;&#x9;org.eclipse.draw2d.BorderLayout layoutThis = new org.eclipse.draw2d.BorderLayout();&#xD;&#xA;&#x9;this.setLayoutManager(layoutThis);&#xD;&#xA;&#xD;&#xA;&#x9;&#x9;this.setCornerDimensions(new org.eclipse.draw2d.geometry.Dimension(getMapMode().DPtoLP(8)&#xD;&#xA;, getMapMode().DPtoLP(8)&#xD;&#xA;));&#xD;&#xA;this.setLineStyle(org.eclipse.draw2d.Graphics.LINE_DASH);&#xD;&#xA;&#x9;&#x9;createContents();&#xD;&#xA;&#x9;}&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;private void createContents(){&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;fFigureStructuredActivityFigure_ContentPane = new org.eclipse.draw2d.RectangleFigure();&#xD;&#xA;fFigureStructuredActivityFigure_ContentPane.setFill(false);&#xD;&#xA;fFigureStructuredActivityFigure_ContentPane.setOutline(false);&#xD;&#xA;&#xD;&#xA;this.add(fFigureStructuredActivityFigure_ContentPane, org.eclipse.draw2d.BorderLayout.CENTER);&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;org.eclipse.draw2d.RectangleFigure aux_StructuredActivityFigure_LabelContainer0 = new org.eclipse.draw2d.RectangleFigure();&#xD;&#xA;aux_StructuredActivityFigure_LabelContainer0.setFill(false);&#xD;&#xA;aux_StructuredActivityFigure_LabelContainer0.setOutline(false);&#xD;&#xA;&#xD;&#xA;aux_StructuredActivityFigure_LabelContainer0.setBorder(new org.eclipse.draw2d.MarginBorder(getMapMode().DPtoLP(0)&#xD;&#xA;, getMapMode().DPtoLP(5)&#xD;&#xA;, getMapMode().DPtoLP(5)&#xD;&#xA;, getMapMode().DPtoLP(0)&#xD;&#xA;));&#xD;&#xA;&#xD;&#xA;this.add(aux_StructuredActivityFigure_LabelContainer0, org.eclipse.draw2d.BorderLayout.TOP);&#xD;&#xA;&#xD;&#xA;&#x9;org.eclipse.draw2d.BorderLayout layoutAux_StructuredActivityFigure_LabelContainer0 = new org.eclipse.draw2d.BorderLayout();&#xD;&#xA;&#x9;aux_StructuredActivityFigure_LabelContainer0.setLayoutManager(layoutAux_StructuredActivityFigure_LabelContainer0);&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;org.eclipse.draw2d.Label structuredActivityFigure_fixed_structured1 = new org.eclipse.draw2d.Label();&#xD;&#xA;structuredActivityFigure_fixed_structured1.setText(&quot;\u00ABstructured\u00BB&quot;);&#xD;&#xA;&#xD;&#xA;aux_StructuredActivityFigure_LabelContainer0.add(structuredActivityFigure_fixed_structured1, org.eclipse.draw2d.BorderLayout.LEFT);&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#x9;}&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;private boolean myUseLocalCoordinates = false;&#xD;&#xA;&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;protected boolean useLocalCoordinates() {&#xD;&#xA;&#x9;&#x9;return myUseLocalCoordinates;&#xD;&#xA;&#x9;}&#xD;&#xA;&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;protected void setUseLocalCoordinates(boolean useLocalCoordinates) {&#xD;&#xA;&#x9;&#x9;myUseLocalCoordinates = useLocalCoordinates;&#xD;&#xA;&#x9;}&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;public org.eclipse.draw2d.RectangleFigure getFigureStructuredActivityFigure_ContentPane() {&#xD;&#xA;&#x9;&#x9;return fFigureStructuredActivityFigure_ContentPane;&#xD;&#xA;&#x9;}&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;}&#xD;&#xA;&#xD;&#xA;">
+          classBody="&#xD;&#xA;/**&#xD;&#xA; * @generated&#xD;&#xA; */&#xD;&#xA;public class StructuredActivityFigure extends org.eclipse.draw2d.RoundedRectangle {&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;private org.eclipse.draw2d.Label fFigureStructuredActivityFigure_name; &#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;private org.eclipse.draw2d.RectangleFigure fFigureStructuredActivityFigure_ContentPane; &#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;public StructuredActivityFigure() {&#xD;&#xA;&#x9;&#x9;&#xD;&#xA;&#x9;org.eclipse.draw2d.BorderLayout layoutThis = new org.eclipse.draw2d.BorderLayout();&#xD;&#xA;&#x9;this.setLayoutManager(layoutThis);&#xD;&#xA;&#xD;&#xA;&#x9;&#x9;this.setCornerDimensions(new org.eclipse.draw2d.geometry.Dimension(getMapMode().DPtoLP(8)&#xD;&#xA;, getMapMode().DPtoLP(8)&#xD;&#xA;));&#xD;&#xA;this.setLineStyle(org.eclipse.draw2d.Graphics.LINE_DASH);&#xD;&#xA;&#x9;&#x9;createContents();&#xD;&#xA;&#x9;}&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;private void createContents(){&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;org.eclipse.draw2d.RectangleFigure aux_StructuredActivityFigure_LabelContainer0 = new org.eclipse.draw2d.RectangleFigure();&#xD;&#xA;aux_StructuredActivityFigure_LabelContainer0.setFill(false);&#xD;&#xA;aux_StructuredActivityFigure_LabelContainer0.setOutline(false);&#xD;&#xA;&#xD;&#xA;aux_StructuredActivityFigure_LabelContainer0.setBorder(new org.eclipse.draw2d.MarginBorder(getMapMode().DPtoLP(0)&#xD;&#xA;, getMapMode().DPtoLP(5)&#xD;&#xA;, getMapMode().DPtoLP(5)&#xD;&#xA;, getMapMode().DPtoLP(5)&#xD;&#xA;));&#xD;&#xA;&#xD;&#xA;this.add(aux_StructuredActivityFigure_LabelContainer0, org.eclipse.draw2d.BorderLayout.TOP);&#xD;&#xA;&#xD;&#xA;&#x9;org.eclipse.draw2d.BorderLayout layoutAux_StructuredActivityFigure_LabelContainer0 = new org.eclipse.draw2d.BorderLayout();&#xD;&#xA;&#x9;aux_StructuredActivityFigure_LabelContainer0.setLayoutManager(layoutAux_StructuredActivityFigure_LabelContainer0);&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;org.eclipse.draw2d.RectangleFigure structuredActivityFigure_KeywordContainer1 = new org.eclipse.draw2d.RectangleFigure();&#xD;&#xA;structuredActivityFigure_KeywordContainer1.setFill(false);&#xD;&#xA;structuredActivityFigure_KeywordContainer1.setOutline(false);&#xD;&#xA;&#xD;&#xA;aux_StructuredActivityFigure_LabelContainer0.add(structuredActivityFigure_KeywordContainer1, org.eclipse.draw2d.BorderLayout.TOP);&#xD;&#xA;&#xD;&#xA;&#x9;org.eclipse.draw2d.BorderLayout layoutStructuredActivityFigure_KeywordContainer1 = new org.eclipse.draw2d.BorderLayout();&#xD;&#xA;&#x9;structuredActivityFigure_KeywordContainer1.setLayoutManager(layoutStructuredActivityFigure_KeywordContainer1);&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;org.eclipse.draw2d.Label structuredActivityFigure_keyword2 = new org.eclipse.draw2d.Label();&#xD;&#xA;structuredActivityFigure_keyword2.setText(&quot;\u00ABstructured\u00BB&quot;);&#xD;&#xA;&#xD;&#xA;structuredActivityFigure_KeywordContainer1.add(structuredActivityFigure_keyword2, org.eclipse.draw2d.BorderLayout.LEFT);&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;fFigureStructuredActivityFigure_name = new org.eclipse.draw2d.Label();&#xD;&#xA;fFigureStructuredActivityFigure_name.setText(&quot;&quot;);&#xD;&#xA;&#xD;&#xA;aux_StructuredActivityFigure_LabelContainer0.add(fFigureStructuredActivityFigure_name, org.eclipse.draw2d.BorderLayout.CENTER);&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;fFigureStructuredActivityFigure_ContentPane = new org.eclipse.draw2d.RectangleFigure();&#xD;&#xA;fFigureStructuredActivityFigure_ContentPane.setFill(false);&#xD;&#xA;fFigureStructuredActivityFigure_ContentPane.setOutline(false);&#xD;&#xA;&#xD;&#xA;this.add(fFigureStructuredActivityFigure_ContentPane, org.eclipse.draw2d.BorderLayout.CENTER);&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#x9;}&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;private boolean myUseLocalCoordinates = false;&#xD;&#xA;&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;protected boolean useLocalCoordinates() {&#xD;&#xA;&#x9;&#x9;return myUseLocalCoordinates;&#xD;&#xA;&#x9;}&#xD;&#xA;&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;protected void setUseLocalCoordinates(boolean useLocalCoordinates) {&#xD;&#xA;&#x9;&#x9;myUseLocalCoordinates = useLocalCoordinates;&#xD;&#xA;&#x9;}&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;public org.eclipse.draw2d.Label getFigureStructuredActivityFigure_name() {&#xD;&#xA;&#x9;&#x9;return fFigureStructuredActivityFigure_name;&#xD;&#xA;&#x9;}&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;public org.eclipse.draw2d.RectangleFigure getFigureStructuredActivityFigure_ContentPane() {&#xD;&#xA;&#x9;&#x9;return fFigureStructuredActivityFigure_ContentPane;&#xD;&#xA;&#x9;}&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;}&#xD;&#xA;&#xD;&#xA;">
         <requiredPluginIDs>org.eclipse.gmf.runtime.draw2d.ui</requiredPluginIDs>
       </viewmap>
       <modelFacet
-          modelElementSelector="//@expressionProviders/@providers.0/@expressions.74">
+          modelElementSelector="//@expressionProviders/@providers.0/@expressions.75">
         <metaClass
             href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/ConditionalNode"/>
         <containmentMetaFeature
@@ -4509,7 +4561,7 @@
         <requiredPluginIDs>org.eclipse.gmf.runtime.draw2d.ui</requiredPluginIDs>
       </viewmap>
       <modelFacet
-          modelElementSelector="//@expressionProviders/@providers.0/@expressions.75">
+          modelElementSelector="//@expressionProviders/@providers.0/@expressions.76">
         <metaClass
             href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/ExpansionRegion"/>
         <containmentMetaFeature
@@ -4520,7 +4572,7 @@
             xsi:type="gmfgen:GenFeatureSeqInitializer">
           <initializers
               xsi:type="gmfgen:GenFeatureValueSpec"
-              value="//@expressionProviders/@providers.0/@expressions.76">
+              value="//@expressionProviders/@providers.0/@expressions.77">
             <feature
                 href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/NamedElement/name"/>
           </initializers>
@@ -4563,18 +4615,44 @@
       <viewmap
           xsi:type="gmfgen:InnerClassViewmap"
           className="StructuredActivityFigure"
-          classBody="&#xD;&#xA;/**&#xD;&#xA; * @generated&#xD;&#xA; */&#xD;&#xA;public class StructuredActivityFigure extends org.eclipse.draw2d.RoundedRectangle {&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;private org.eclipse.draw2d.RectangleFigure fFigureStructuredActivityFigure_ContentPane; &#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;public StructuredActivityFigure() {&#xD;&#xA;&#x9;&#x9;&#xD;&#xA;&#x9;org.eclipse.draw2d.BorderLayout layoutThis = new org.eclipse.draw2d.BorderLayout();&#xD;&#xA;&#x9;this.setLayoutManager(layoutThis);&#xD;&#xA;&#xD;&#xA;&#x9;&#x9;this.setCornerDimensions(new org.eclipse.draw2d.geometry.Dimension(getMapMode().DPtoLP(8)&#xD;&#xA;, getMapMode().DPtoLP(8)&#xD;&#xA;));&#xD;&#xA;this.setLineStyle(org.eclipse.draw2d.Graphics.LINE_DASH);&#xD;&#xA;&#x9;&#x9;createContents();&#xD;&#xA;&#x9;}&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;private void createContents(){&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;fFigureStructuredActivityFigure_ContentPane = new org.eclipse.draw2d.RectangleFigure();&#xD;&#xA;fFigureStructuredActivityFigure_ContentPane.setFill(false);&#xD;&#xA;fFigureStructuredActivityFigure_ContentPane.setOutline(false);&#xD;&#xA;&#xD;&#xA;this.add(fFigureStructuredActivityFigure_ContentPane, org.eclipse.draw2d.BorderLayout.CENTER);&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;org.eclipse.draw2d.RectangleFigure aux_StructuredActivityFigure_LabelContainer0 = new org.eclipse.draw2d.RectangleFigure();&#xD;&#xA;aux_StructuredActivityFigure_LabelContainer0.setFill(false);&#xD;&#xA;aux_StructuredActivityFigure_LabelContainer0.setOutline(false);&#xD;&#xA;&#xD;&#xA;aux_StructuredActivityFigure_LabelContainer0.setBorder(new org.eclipse.draw2d.MarginBorder(getMapMode().DPtoLP(0)&#xD;&#xA;, getMapMode().DPtoLP(5)&#xD;&#xA;, getMapMode().DPtoLP(5)&#xD;&#xA;, getMapMode().DPtoLP(0)&#xD;&#xA;));&#xD;&#xA;&#xD;&#xA;this.add(aux_StructuredActivityFigure_LabelContainer0, org.eclipse.draw2d.BorderLayout.TOP);&#xD;&#xA;&#xD;&#xA;&#x9;org.eclipse.draw2d.BorderLayout layoutAux_StructuredActivityFigure_LabelContainer0 = new org.eclipse.draw2d.BorderLayout();&#xD;&#xA;&#x9;aux_StructuredActivityFigure_LabelContainer0.setLayoutManager(layoutAux_StructuredActivityFigure_LabelContainer0);&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;org.eclipse.draw2d.Label structuredActivityFigure_fixed_structured1 = new org.eclipse.draw2d.Label();&#xD;&#xA;structuredActivityFigure_fixed_structured1.setText(&quot;\u00ABstructured\u00BB&quot;);&#xD;&#xA;&#xD;&#xA;aux_StructuredActivityFigure_LabelContainer0.add(structuredActivityFigure_fixed_structured1, org.eclipse.draw2d.BorderLayout.LEFT);&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#x9;}&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;private boolean myUseLocalCoordinates = false;&#xD;&#xA;&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;protected boolean useLocalCoordinates() {&#xD;&#xA;&#x9;&#x9;return myUseLocalCoordinates;&#xD;&#xA;&#x9;}&#xD;&#xA;&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;protected void setUseLocalCoordinates(boolean useLocalCoordinates) {&#xD;&#xA;&#x9;&#x9;myUseLocalCoordinates = useLocalCoordinates;&#xD;&#xA;&#x9;}&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;public org.eclipse.draw2d.RectangleFigure getFigureStructuredActivityFigure_ContentPane() {&#xD;&#xA;&#x9;&#x9;return fFigureStructuredActivityFigure_ContentPane;&#xD;&#xA;&#x9;}&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;}&#xD;&#xA;&#xD;&#xA;">
+          classBody="&#xD;&#xA;/**&#xD;&#xA; * @generated&#xD;&#xA; */&#xD;&#xA;public class StructuredActivityFigure extends org.eclipse.draw2d.RoundedRectangle {&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;private org.eclipse.draw2d.Label fFigureStructuredActivityFigure_name; &#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;private org.eclipse.draw2d.RectangleFigure fFigureStructuredActivityFigure_ContentPane; &#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;public StructuredActivityFigure() {&#xD;&#xA;&#x9;&#x9;&#xD;&#xA;&#x9;org.eclipse.draw2d.BorderLayout layoutThis = new org.eclipse.draw2d.BorderLayout();&#xD;&#xA;&#x9;this.setLayoutManager(layoutThis);&#xD;&#xA;&#xD;&#xA;&#x9;&#x9;this.setCornerDimensions(new org.eclipse.draw2d.geometry.Dimension(getMapMode().DPtoLP(8)&#xD;&#xA;, getMapMode().DPtoLP(8)&#xD;&#xA;));&#xD;&#xA;this.setLineStyle(org.eclipse.draw2d.Graphics.LINE_DASH);&#xD;&#xA;&#x9;&#x9;createContents();&#xD;&#xA;&#x9;}&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;private void createContents(){&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;org.eclipse.draw2d.RectangleFigure aux_StructuredActivityFigure_LabelContainer0 = new org.eclipse.draw2d.RectangleFigure();&#xD;&#xA;aux_StructuredActivityFigure_LabelContainer0.setFill(false);&#xD;&#xA;aux_StructuredActivityFigure_LabelContainer0.setOutline(false);&#xD;&#xA;&#xD;&#xA;aux_StructuredActivityFigure_LabelContainer0.setBorder(new org.eclipse.draw2d.MarginBorder(getMapMode().DPtoLP(0)&#xD;&#xA;, getMapMode().DPtoLP(5)&#xD;&#xA;, getMapMode().DPtoLP(5)&#xD;&#xA;, getMapMode().DPtoLP(5)&#xD;&#xA;));&#xD;&#xA;&#xD;&#xA;this.add(aux_StructuredActivityFigure_LabelContainer0, org.eclipse.draw2d.BorderLayout.TOP);&#xD;&#xA;&#xD;&#xA;&#x9;org.eclipse.draw2d.BorderLayout layoutAux_StructuredActivityFigure_LabelContainer0 = new org.eclipse.draw2d.BorderLayout();&#xD;&#xA;&#x9;aux_StructuredActivityFigure_LabelContainer0.setLayoutManager(layoutAux_StructuredActivityFigure_LabelContainer0);&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;org.eclipse.draw2d.RectangleFigure structuredActivityFigure_KeywordContainer1 = new org.eclipse.draw2d.RectangleFigure();&#xD;&#xA;structuredActivityFigure_KeywordContainer1.setFill(false);&#xD;&#xA;structuredActivityFigure_KeywordContainer1.setOutline(false);&#xD;&#xA;&#xD;&#xA;aux_StructuredActivityFigure_LabelContainer0.add(structuredActivityFigure_KeywordContainer1, org.eclipse.draw2d.BorderLayout.TOP);&#xD;&#xA;&#xD;&#xA;&#x9;org.eclipse.draw2d.BorderLayout layoutStructuredActivityFigure_KeywordContainer1 = new org.eclipse.draw2d.BorderLayout();&#xD;&#xA;&#x9;structuredActivityFigure_KeywordContainer1.setLayoutManager(layoutStructuredActivityFigure_KeywordContainer1);&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;org.eclipse.draw2d.Label structuredActivityFigure_keyword2 = new org.eclipse.draw2d.Label();&#xD;&#xA;structuredActivityFigure_keyword2.setText(&quot;\u00ABstructured\u00BB&quot;);&#xD;&#xA;&#xD;&#xA;structuredActivityFigure_KeywordContainer1.add(structuredActivityFigure_keyword2, org.eclipse.draw2d.BorderLayout.LEFT);&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;fFigureStructuredActivityFigure_name = new org.eclipse.draw2d.Label();&#xD;&#xA;fFigureStructuredActivityFigure_name.setText(&quot;&quot;);&#xD;&#xA;&#xD;&#xA;aux_StructuredActivityFigure_LabelContainer0.add(fFigureStructuredActivityFigure_name, org.eclipse.draw2d.BorderLayout.CENTER);&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;fFigureStructuredActivityFigure_ContentPane = new org.eclipse.draw2d.RectangleFigure();&#xD;&#xA;fFigureStructuredActivityFigure_ContentPane.setFill(false);&#xD;&#xA;fFigureStructuredActivityFigure_ContentPane.setOutline(false);&#xD;&#xA;&#xD;&#xA;this.add(fFigureStructuredActivityFigure_ContentPane, org.eclipse.draw2d.BorderLayout.CENTER);&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#x9;}&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;private boolean myUseLocalCoordinates = false;&#xD;&#xA;&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;protected boolean useLocalCoordinates() {&#xD;&#xA;&#x9;&#x9;return myUseLocalCoordinates;&#xD;&#xA;&#x9;}&#xD;&#xA;&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;protected void setUseLocalCoordinates(boolean useLocalCoordinates) {&#xD;&#xA;&#x9;&#x9;myUseLocalCoordinates = useLocalCoordinates;&#xD;&#xA;&#x9;}&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;public org.eclipse.draw2d.Label getFigureStructuredActivityFigure_name() {&#xD;&#xA;&#x9;&#x9;return fFigureStructuredActivityFigure_name;&#xD;&#xA;&#x9;}&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;public org.eclipse.draw2d.RectangleFigure getFigureStructuredActivityFigure_ContentPane() {&#xD;&#xA;&#x9;&#x9;return fFigureStructuredActivityFigure_ContentPane;&#xD;&#xA;&#x9;}&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;}&#xD;&#xA;&#xD;&#xA;">
         <requiredPluginIDs>org.eclipse.gmf.runtime.draw2d.ui</requiredPluginIDs>
       </viewmap>
       <modelFacet
-          modelElementSelector="//@expressionProviders/@providers.0/@expressions.77">
+          modelElementSelector="//@expressionProviders/@providers.0/@expressions.78">
         <metaClass
             href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/LoopNode"/>
         <containmentMetaFeature
             href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/Activity/group"/>
         <childMetaFeature
             href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/Activity/group"/>
+        <modelElementInitializer
+            xsi:type="gmfgen:GenFeatureSeqInitializer">
+          <initializers
+              xsi:type="gmfgen:GenFeatureValueSpec"
+              value="//@expressionProviders/@providers.0/@expressions.79">
+            <feature
+                href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/NamedElement/name"/>
+          </initializers>
+        </modelElementInitializer>
       </modelFacet>
+      <labels
+          visualID="5091"
+          editPartClassName="LoopNodeNameEditPart"
+          itemSemanticEditPolicyClassName="LoopNodeNameItemSemanticEditPolicy"
+          notationViewFactoryClassName="LoopNodeNameViewFactory">
+        <diagramRunTimeClass
+            href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
+        <viewmap
+            xsi:type="gmfgen:ParentAssignedViewmap"
+            getterName="getFigureStructuredActivityFigure_name"
+            figureQualifiedClassName="org.eclipse.draw2d.Label"/>
+        <modelFacet
+            xsi:type="gmfgen:FeatureLabelModelFacet">
+          <metaFeatures
+              href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/NamedElement/name"/>
+        </modelFacet>
+      </labels>
     </childNodes>
     <childNodes
         visualID="3082"
@@ -4594,18 +4672,44 @@
       <viewmap
           xsi:type="gmfgen:InnerClassViewmap"
           className="StructuredActivityFigure"
-          classBody="&#xD;&#xA;/**&#xD;&#xA; * @generated&#xD;&#xA; */&#xD;&#xA;public class StructuredActivityFigure extends org.eclipse.draw2d.RoundedRectangle {&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;private org.eclipse.draw2d.RectangleFigure fFigureStructuredActivityFigure_ContentPane; &#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;public StructuredActivityFigure() {&#xD;&#xA;&#x9;&#x9;&#xD;&#xA;&#x9;org.eclipse.draw2d.BorderLayout layoutThis = new org.eclipse.draw2d.BorderLayout();&#xD;&#xA;&#x9;this.setLayoutManager(layoutThis);&#xD;&#xA;&#xD;&#xA;&#x9;&#x9;this.setCornerDimensions(new org.eclipse.draw2d.geometry.Dimension(getMapMode().DPtoLP(8)&#xD;&#xA;, getMapMode().DPtoLP(8)&#xD;&#xA;));&#xD;&#xA;this.setLineStyle(org.eclipse.draw2d.Graphics.LINE_DASH);&#xD;&#xA;&#x9;&#x9;createContents();&#xD;&#xA;&#x9;}&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;private void createContents(){&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;fFigureStructuredActivityFigure_ContentPane = new org.eclipse.draw2d.RectangleFigure();&#xD;&#xA;fFigureStructuredActivityFigure_ContentPane.setFill(false);&#xD;&#xA;fFigureStructuredActivityFigure_ContentPane.setOutline(false);&#xD;&#xA;&#xD;&#xA;this.add(fFigureStructuredActivityFigure_ContentPane, org.eclipse.draw2d.BorderLayout.CENTER);&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;org.eclipse.draw2d.RectangleFigure aux_StructuredActivityFigure_LabelContainer0 = new org.eclipse.draw2d.RectangleFigure();&#xD;&#xA;aux_StructuredActivityFigure_LabelContainer0.setFill(false);&#xD;&#xA;aux_StructuredActivityFigure_LabelContainer0.setOutline(false);&#xD;&#xA;&#xD;&#xA;aux_StructuredActivityFigure_LabelContainer0.setBorder(new org.eclipse.draw2d.MarginBorder(getMapMode().DPtoLP(0)&#xD;&#xA;, getMapMode().DPtoLP(5)&#xD;&#xA;, getMapMode().DPtoLP(5)&#xD;&#xA;, getMapMode().DPtoLP(0)&#xD;&#xA;));&#xD;&#xA;&#xD;&#xA;this.add(aux_StructuredActivityFigure_LabelContainer0, org.eclipse.draw2d.BorderLayout.TOP);&#xD;&#xA;&#xD;&#xA;&#x9;org.eclipse.draw2d.BorderLayout layoutAux_StructuredActivityFigure_LabelContainer0 = new org.eclipse.draw2d.BorderLayout();&#xD;&#xA;&#x9;aux_StructuredActivityFigure_LabelContainer0.setLayoutManager(layoutAux_StructuredActivityFigure_LabelContainer0);&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;org.eclipse.draw2d.Label structuredActivityFigure_fixed_structured1 = new org.eclipse.draw2d.Label();&#xD;&#xA;structuredActivityFigure_fixed_structured1.setText(&quot;\u00ABstructured\u00BB&quot;);&#xD;&#xA;&#xD;&#xA;aux_StructuredActivityFigure_LabelContainer0.add(structuredActivityFigure_fixed_structured1, org.eclipse.draw2d.BorderLayout.LEFT);&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#x9;}&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;private boolean myUseLocalCoordinates = false;&#xD;&#xA;&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;protected boolean useLocalCoordinates() {&#xD;&#xA;&#x9;&#x9;return myUseLocalCoordinates;&#xD;&#xA;&#x9;}&#xD;&#xA;&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;protected void setUseLocalCoordinates(boolean useLocalCoordinates) {&#xD;&#xA;&#x9;&#x9;myUseLocalCoordinates = useLocalCoordinates;&#xD;&#xA;&#x9;}&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;public org.eclipse.draw2d.RectangleFigure getFigureStructuredActivityFigure_ContentPane() {&#xD;&#xA;&#x9;&#x9;return fFigureStructuredActivityFigure_ContentPane;&#xD;&#xA;&#x9;}&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;}&#xD;&#xA;&#xD;&#xA;">
+          classBody="&#xD;&#xA;/**&#xD;&#xA; * @generated&#xD;&#xA; */&#xD;&#xA;public class StructuredActivityFigure extends org.eclipse.draw2d.RoundedRectangle {&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;private org.eclipse.draw2d.Label fFigureStructuredActivityFigure_name; &#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;private org.eclipse.draw2d.RectangleFigure fFigureStructuredActivityFigure_ContentPane; &#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;public StructuredActivityFigure() {&#xD;&#xA;&#x9;&#x9;&#xD;&#xA;&#x9;org.eclipse.draw2d.BorderLayout layoutThis = new org.eclipse.draw2d.BorderLayout();&#xD;&#xA;&#x9;this.setLayoutManager(layoutThis);&#xD;&#xA;&#xD;&#xA;&#x9;&#x9;this.setCornerDimensions(new org.eclipse.draw2d.geometry.Dimension(getMapMode().DPtoLP(8)&#xD;&#xA;, getMapMode().DPtoLP(8)&#xD;&#xA;));&#xD;&#xA;this.setLineStyle(org.eclipse.draw2d.Graphics.LINE_DASH);&#xD;&#xA;&#x9;&#x9;createContents();&#xD;&#xA;&#x9;}&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;private void createContents(){&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;org.eclipse.draw2d.RectangleFigure aux_StructuredActivityFigure_LabelContainer0 = new org.eclipse.draw2d.RectangleFigure();&#xD;&#xA;aux_StructuredActivityFigure_LabelContainer0.setFill(false);&#xD;&#xA;aux_StructuredActivityFigure_LabelContainer0.setOutline(false);&#xD;&#xA;&#xD;&#xA;aux_StructuredActivityFigure_LabelContainer0.setBorder(new org.eclipse.draw2d.MarginBorder(getMapMode().DPtoLP(0)&#xD;&#xA;, getMapMode().DPtoLP(5)&#xD;&#xA;, getMapMode().DPtoLP(5)&#xD;&#xA;, getMapMode().DPtoLP(5)&#xD;&#xA;));&#xD;&#xA;&#xD;&#xA;this.add(aux_StructuredActivityFigure_LabelContainer0, org.eclipse.draw2d.BorderLayout.TOP);&#xD;&#xA;&#xD;&#xA;&#x9;org.eclipse.draw2d.BorderLayout layoutAux_StructuredActivityFigure_LabelContainer0 = new org.eclipse.draw2d.BorderLayout();&#xD;&#xA;&#x9;aux_StructuredActivityFigure_LabelContainer0.setLayoutManager(layoutAux_StructuredActivityFigure_LabelContainer0);&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;org.eclipse.draw2d.RectangleFigure structuredActivityFigure_KeywordContainer1 = new org.eclipse.draw2d.RectangleFigure();&#xD;&#xA;structuredActivityFigure_KeywordContainer1.setFill(false);&#xD;&#xA;structuredActivityFigure_KeywordContainer1.setOutline(false);&#xD;&#xA;&#xD;&#xA;aux_StructuredActivityFigure_LabelContainer0.add(structuredActivityFigure_KeywordContainer1, org.eclipse.draw2d.BorderLayout.TOP);&#xD;&#xA;&#xD;&#xA;&#x9;org.eclipse.draw2d.BorderLayout layoutStructuredActivityFigure_KeywordContainer1 = new org.eclipse.draw2d.BorderLayout();&#xD;&#xA;&#x9;structuredActivityFigure_KeywordContainer1.setLayoutManager(layoutStructuredActivityFigure_KeywordContainer1);&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;org.eclipse.draw2d.Label structuredActivityFigure_keyword2 = new org.eclipse.draw2d.Label();&#xD;&#xA;structuredActivityFigure_keyword2.setText(&quot;\u00ABstructured\u00BB&quot;);&#xD;&#xA;&#xD;&#xA;structuredActivityFigure_KeywordContainer1.add(structuredActivityFigure_keyword2, org.eclipse.draw2d.BorderLayout.LEFT);&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;fFigureStructuredActivityFigure_name = new org.eclipse.draw2d.Label();&#xD;&#xA;fFigureStructuredActivityFigure_name.setText(&quot;&quot;);&#xD;&#xA;&#xD;&#xA;aux_StructuredActivityFigure_LabelContainer0.add(fFigureStructuredActivityFigure_name, org.eclipse.draw2d.BorderLayout.CENTER);&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;fFigureStructuredActivityFigure_ContentPane = new org.eclipse.draw2d.RectangleFigure();&#xD;&#xA;fFigureStructuredActivityFigure_ContentPane.setFill(false);&#xD;&#xA;fFigureStructuredActivityFigure_ContentPane.setOutline(false);&#xD;&#xA;&#xD;&#xA;this.add(fFigureStructuredActivityFigure_ContentPane, org.eclipse.draw2d.BorderLayout.CENTER);&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#x9;}&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;private boolean myUseLocalCoordinates = false;&#xD;&#xA;&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;protected boolean useLocalCoordinates() {&#xD;&#xA;&#x9;&#x9;return myUseLocalCoordinates;&#xD;&#xA;&#x9;}&#xD;&#xA;&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;protected void setUseLocalCoordinates(boolean useLocalCoordinates) {&#xD;&#xA;&#x9;&#x9;myUseLocalCoordinates = useLocalCoordinates;&#xD;&#xA;&#x9;}&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;public org.eclipse.draw2d.Label getFigureStructuredActivityFigure_name() {&#xD;&#xA;&#x9;&#x9;return fFigureStructuredActivityFigure_name;&#xD;&#xA;&#x9;}&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;public org.eclipse.draw2d.RectangleFigure getFigureStructuredActivityFigure_ContentPane() {&#xD;&#xA;&#x9;&#x9;return fFigureStructuredActivityFigure_ContentPane;&#xD;&#xA;&#x9;}&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;}&#xD;&#xA;&#xD;&#xA;">
         <requiredPluginIDs>org.eclipse.gmf.runtime.draw2d.ui</requiredPluginIDs>
       </viewmap>
       <modelFacet
-          modelElementSelector="//@expressionProviders/@providers.0/@expressions.78">
+          modelElementSelector="//@expressionProviders/@providers.0/@expressions.80">
         <metaClass
             href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/ConditionalNode"/>
         <containmentMetaFeature
             href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/Activity/group"/>
         <childMetaFeature
             href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/Activity/group"/>
+        <modelElementInitializer
+            xsi:type="gmfgen:GenFeatureSeqInitializer">
+          <initializers
+              xsi:type="gmfgen:GenFeatureValueSpec"
+              value="//@expressionProviders/@providers.0/@expressions.81">
+            <feature
+                href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/NamedElement/name"/>
+          </initializers>
+        </modelElementInitializer>
       </modelFacet>
+      <labels
+          visualID="5092"
+          editPartClassName="ConditionalNodeNameEditPart"
+          itemSemanticEditPolicyClassName="ConditionalNodeNameItemSemanticEditPolicy"
+          notationViewFactoryClassName="ConditionalNodeNameViewFactory">
+        <diagramRunTimeClass
+            href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
+        <viewmap
+            xsi:type="gmfgen:ParentAssignedViewmap"
+            getterName="getFigureStructuredActivityFigure_name"
+            figureQualifiedClassName="org.eclipse.draw2d.Label"/>
+        <modelFacet
+            xsi:type="gmfgen:FeatureLabelModelFacet">
+          <metaFeatures
+              href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/NamedElement/name"/>
+        </modelFacet>
+      </labels>
     </childNodes>
     <childNodes
         visualID="3084"
@@ -4629,7 +4733,7 @@
         <requiredPluginIDs>org.eclipse.gmf.runtime.draw2d.ui</requiredPluginIDs>
       </viewmap>
       <modelFacet
-          modelElementSelector="//@expressionProviders/@providers.0/@expressions.79">
+          modelElementSelector="//@expressionProviders/@providers.0/@expressions.82">
         <metaClass
             href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/ExpansionRegion"/>
         <containmentMetaFeature
@@ -4640,7 +4744,7 @@
             xsi:type="gmfgen:GenFeatureSeqInitializer">
           <initializers
               xsi:type="gmfgen:GenFeatureValueSpec"
-              value="//@expressionProviders/@providers.0/@expressions.80">
+              value="//@expressionProviders/@providers.0/@expressions.83">
             <feature
                 href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/NamedElement/name"/>
           </initializers>
@@ -4698,7 +4802,7 @@
             xsi:type="gmfgen:GenFeatureSeqInitializer">
           <initializers
               xsi:type="gmfgen:GenFeatureValueSpec"
-              value="//@expressionProviders/@providers.0/@expressions.81">
+              value="//@expressionProviders/@providers.0/@expressions.84">
             <feature
                 href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/NamedElement/name"/>
           </initializers>
@@ -4745,7 +4849,7 @@
             xsi:type="gmfgen:GenFeatureSeqInitializer">
           <initializers
               xsi:type="gmfgen:GenFeatureValueSpec"
-              value="//@expressionProviders/@providers.0/@expressions.82">
+              value="//@expressionProviders/@providers.0/@expressions.85">
             <feature
                 href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/NamedElement/name"/>
           </initializers>
@@ -4987,8 +5091,8 @@
         </modelFacet>
       </labels>
       <creationConstraints
-          sourceEnd="//@expressionProviders/@providers.0/@expressions.83"
-          targetEnd="//@expressionProviders/@providers.0/@expressions.84"/>
+          sourceEnd="//@expressionProviders/@providers.0/@expressions.86"
+          targetEnd="//@expressionProviders/@providers.0/@expressions.87"/>
     </links>
     <links
         visualID="4002"
@@ -12174,6 +12278,8 @@
           xsi:type="gmfgen:GenConstraint"
           body="not self.oclIsTypeOf(uml::LoopNode) and not self.oclIsTypeOf(uml::ConditionalNode) and not self.oclIsTypeOf(uml::ExpansionRegion) and self.inPartition->isEmpty()"/>
       <expressions
+          body=" let base : String = 'Structured Activity Node' in  let suffixes : Sequence(String) = Sequence {'', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10'} in  let space : Namespace = self.namespace in  let allMissed : Sequence(String) = suffixes-> &#x9;select(s : String | not space.member->exists(e : NamedElement | e.name = base.concat(s)) ) in  let firstMissed : String = allMissed->first() in  let noMisses : Boolean = firstMissed.oclIsUndefined() in  let allNames : Set(String) =  &#x9;if noMisses &#x9;&#x9;then &#x9;&#x9;space.member->collect(e : NamedElement | &#x9;&#x9;&#x9;if e = self or e.name.oclIsUndefined() or e.name.substring(1, e.name.size().min(base.size())) &lt;> base &#x9;&#x9;&#x9;then '' else e.name &#x9;&#x9;&#x9;endif &#x9;&#x9;)->asSet()->excluding('') &#x9;&#x9;else Set{'not in use'} &#x9;&#x9;endif in  let longestName : String = &#x9;&#x9;if noMisses &#x9;&#x9;then allNames->select(n : String | not allNames->exists(nn : String | nn.size() > n.size()))->asSequence()->first()&#x9;&#x9;else 'not in use' &#x9;&#x9;endif &#x9;in  if noMisses then &#x9;&#x9;if longestName.oclIsUndefined() &#x9;&#x9;then base &#x9;&#x9;else longestName.concat('1') &#x9;&#x9;endif  else base.concat(firstMissed)  endif "/>
+      <expressions
           body=" let base : String = 'InputPin' in  let suffixes : Sequence(String) = Sequence {'', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10'} in  let space : Namespace = self.namespace in  let allMissed : Sequence(String) = suffixes-> &#x9;select(s : String | not space.member->exists(e : NamedElement | e.name = base.concat(s)) ) in  let firstMissed : String = allMissed->first() in  let noMisses : Boolean = firstMissed.oclIsUndefined() in  let allNames : Set(String) =  &#x9;if noMisses &#x9;&#x9;then &#x9;&#x9;space.member->collect(e : NamedElement | &#x9;&#x9;&#x9;if e = self or e.name.oclIsUndefined() or e.name.substring(1, e.name.size().min(base.size())) &lt;> base &#x9;&#x9;&#x9;then '' else e.name &#x9;&#x9;&#x9;endif &#x9;&#x9;)->asSet()->excluding('') &#x9;&#x9;else Set{'not in use'} &#x9;&#x9;endif in  let longestName : String = &#x9;&#x9;if noMisses &#x9;&#x9;then allNames->select(n : String | not allNames->exists(nn : String | nn.size() > n.size()))->asSequence()->first()&#x9;&#x9;else 'not in use' &#x9;&#x9;endif &#x9;in  if noMisses then &#x9;&#x9;if longestName.oclIsUndefined() &#x9;&#x9;then base &#x9;&#x9;else longestName.concat('1') &#x9;&#x9;endif  else base.concat(firstMissed)  endif "/>
       <expressions
           body=" let base : String = 'OutputPin' in  let suffixes : Sequence(String) = Sequence {'', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10'} in  let space : Namespace = self.namespace in  let allMissed : Sequence(String) = suffixes-> &#x9;select(s : String | not space.member->exists(e : NamedElement | e.name = base.concat(s)) ) in  let firstMissed : String = allMissed->first() in  let noMisses : Boolean = firstMissed.oclIsUndefined() in  let allNames : Set(String) =  &#x9;if noMisses &#x9;&#x9;then &#x9;&#x9;space.member->collect(e : NamedElement | &#x9;&#x9;&#x9;if e = self or e.name.oclIsUndefined() or e.name.substring(1, e.name.size().min(base.size())) &lt;> base &#x9;&#x9;&#x9;then '' else e.name &#x9;&#x9;&#x9;endif &#x9;&#x9;)->asSet()->excluding('') &#x9;&#x9;else Set{'not in use'} &#x9;&#x9;endif in  let longestName : String = &#x9;&#x9;if noMisses &#x9;&#x9;then allNames->select(n : String | not allNames->exists(nn : String | nn.size() > n.size()))->asSequence()->first()&#x9;&#x9;else 'not in use' &#x9;&#x9;endif &#x9;in  if noMisses then &#x9;&#x9;if longestName.oclIsUndefined() &#x9;&#x9;then base &#x9;&#x9;else longestName.concat('1') &#x9;&#x9;endif  else base.concat(firstMissed)  endif "/>
@@ -12288,8 +12394,12 @@
           xsi:type="gmfgen:GenConstraint"
           body="self.inPartition->isEmpty()"/>
       <expressions
+          body=" let base : String = 'Loop Node' in  let suffixes : Sequence(String) = Sequence {'', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10'} in  let space : Namespace = self.namespace in  let allMissed : Sequence(String) = suffixes-> &#x9;select(s : String | not space.member->exists(e : NamedElement | e.name = base.concat(s)) ) in  let firstMissed : String = allMissed->first() in  let noMisses : Boolean = firstMissed.oclIsUndefined() in  let allNames : Set(String) =  &#x9;if noMisses &#x9;&#x9;then &#x9;&#x9;space.member->collect(e : NamedElement | &#x9;&#x9;&#x9;if e = self or e.name.oclIsUndefined() or e.name.substring(1, e.name.size().min(base.size())) &lt;> base &#x9;&#x9;&#x9;then '' else e.name &#x9;&#x9;&#x9;endif &#x9;&#x9;)->asSet()->excluding('') &#x9;&#x9;else Set{'not in use'} &#x9;&#x9;endif in  let longestName : String = &#x9;&#x9;if noMisses &#x9;&#x9;then allNames->select(n : String | not allNames->exists(nn : String | nn.size() > n.size()))->asSequence()->first()&#x9;&#x9;else 'not in use' &#x9;&#x9;endif &#x9;in  if noMisses then &#x9;&#x9;if longestName.oclIsUndefined() &#x9;&#x9;then base &#x9;&#x9;else longestName.concat('1') &#x9;&#x9;endif  else base.concat(firstMissed)  endif "/>
+      <expressions
           xsi:type="gmfgen:GenConstraint"
           body="self.inPartition->isEmpty()"/>
+      <expressions
+          body=" let base : String = 'Conditional Node' in  let suffixes : Sequence(String) = Sequence {'', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10'} in  let space : Namespace = self.namespace in  let allMissed : Sequence(String) = suffixes-> &#x9;select(s : String | not space.member->exists(e : NamedElement | e.name = base.concat(s)) ) in  let firstMissed : String = allMissed->first() in  let noMisses : Boolean = firstMissed.oclIsUndefined() in  let allNames : Set(String) =  &#x9;if noMisses &#x9;&#x9;then &#x9;&#x9;space.member->collect(e : NamedElement | &#x9;&#x9;&#x9;if e = self or e.name.oclIsUndefined() or e.name.substring(1, e.name.size().min(base.size())) &lt;> base &#x9;&#x9;&#x9;then '' else e.name &#x9;&#x9;&#x9;endif &#x9;&#x9;)->asSet()->excluding('') &#x9;&#x9;else Set{'not in use'} &#x9;&#x9;endif in  let longestName : String = &#x9;&#x9;if noMisses &#x9;&#x9;then allNames->select(n : String | not allNames->exists(nn : String | nn.size() > n.size()))->asSequence()->first()&#x9;&#x9;else 'not in use' &#x9;&#x9;endif &#x9;in  if noMisses then &#x9;&#x9;if longestName.oclIsUndefined() &#x9;&#x9;then base &#x9;&#x9;else longestName.concat('1') &#x9;&#x9;endif  else base.concat(firstMissed)  endif "/>
       <expressions
           xsi:type="gmfgen:GenConstraint"
           body="self.inPartition->isEmpty()"/>

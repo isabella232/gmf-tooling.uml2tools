@@ -14,15 +14,6 @@
             xsi:type="gmfgraph:BorderLayout"/>
         <children
             xsi:type="gmfgraph:Rectangle"
-            name="StructuredActivityFigure_ContentPane"
-            outline="false"
-            fill="false">
-          <layoutData
-              xsi:type="gmfgraph:BorderLayoutData"
-              alignment="FILL"/>
-        </children>
-        <children
-            xsi:type="gmfgraph:Rectangle"
             name="Aux_StructuredActivityFigure_LabelContainer"
             outline="false"
             fill="false">
@@ -34,19 +25,50 @@
               xsi:type="gmfgraph:BorderLayout"/>
           <insets
               left="5"
-              bottom="5"/>
+              bottom="5"
+              right="5"/>
           <children
-              xsi:type="gmfgraph:Label"
-              name="StructuredActivityFigure_fixed_structured"
-              text="\u00ABstructured\u00BB">
+              xsi:type="gmfgraph:Rectangle"
+              name="StructuredActivityFigure_KeywordContainer"
+              outline="false"
+              fill="false">
             <layoutData
                 xsi:type="gmfgraph:BorderLayoutData"
-                alignment="BEGINNING"/>
+                alignment="BEGINNING"
+                vertical="true"/>
+            <layout
+                xsi:type="gmfgraph:BorderLayout"/>
+            <children
+                xsi:type="gmfgraph:Label"
+                name="StructuredActivityFigure_keyword"
+                text="\u00ABstructured\u00BB">
+              <layoutData
+                  xsi:type="gmfgraph:BorderLayoutData"
+                  alignment="BEGINNING"/>
+            </children>
           </children>
+          <children
+              xsi:type="gmfgraph:Label"
+              name="StructuredActivityFigure_name">
+            <layoutData
+                xsi:type="gmfgraph:BorderLayoutData"
+                vertical="true"/>
+          </children>
+        </children>
+        <children
+            xsi:type="gmfgraph:Rectangle"
+            name="StructuredActivityFigure_ContentPane"
+            outline="false"
+            fill="false">
+          <layoutData
+              xsi:type="gmfgraph:BorderLayoutData"
+              alignment="FILL"/>
         </children>
       </actualFigure>
       <accessors
-          figure="//@figures.0/@descriptors.0/@actualFigure/@children.0"/>
+          figure="//@figures.0/@descriptors.0/@actualFigure/@children.0/@children.1"/>
+      <accessors
+          figure="//@figures.0/@descriptors.0/@actualFigure/@children.1"/>
     </descriptors>
     <descriptors
         name="ExpansionRegionFigure">
@@ -110,15 +132,15 @@
   <compartments
       name="StructuredActivityContentPaneCompartment"
       figure="StructuredActivityFigure"
-      accessor="//@figures.0/@descriptors.0/@accessors.0"/>
+      accessor="//@figures.0/@descriptors.0/@accessors.1"/>
   <compartments
       name="LoopNodeContentPaneCompartment"
       figure="StructuredActivityFigure"
-      accessor="//@figures.0/@descriptors.0/@accessors.0"/>
+      accessor="//@figures.0/@descriptors.0/@accessors.1"/>
   <compartments
       name="ConditionalNodeCompartment"
       figure="StructuredActivityFigure"
-      accessor="//@figures.0/@descriptors.0/@accessors.0"/>
+      accessor="//@figures.0/@descriptors.0/@accessors.1"/>
   <compartments
       name="ExpansionRegionNodeCompartment"
       figure="ExpansionRegionFigure"
@@ -128,4 +150,9 @@
       figure="ExpansionRegionFigure"
       elementIcon="false"
       accessor="//@figures.0/@descriptors.1/@accessors.0"/>
+  <labels
+      name="StructuredActivityNode_name"
+      figure="StructuredActivityFigure"
+      elementIcon="false"
+      accessor="//@figures.0/@descriptors.0/@accessors.0"/>
 </gmfgraph:Canvas>
