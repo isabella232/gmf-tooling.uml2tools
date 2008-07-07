@@ -952,26 +952,34 @@ public class UMLNavigatorLabelProvider extends LabelProvider implements ICommonL
 	 * @generated
 	 */
 	private String getStructuredActivityNode_3046Text(View view) {
-		StructuredActivityNode domainModelElement = (StructuredActivityNode) view.getElement();
-		if (domainModelElement != null) {
-			return String.valueOf(domainModelElement.getName());
+		IAdaptable hintAdapter = new UMLParserProvider.HintAdapter(UMLElementTypes.StructuredActivityNode_3046, (view.getElement() != null ? view.getElement() : view), UMLVisualIDRegistry
+				.getType(StructuredActivityNodeNameEditPart.VISUAL_ID));
+		IParser parser = ParserService.getInstance().getParser(hintAdapter);
+
+		if (parser != null) {
+			return parser.getPrintString(hintAdapter, ParserOptions.NONE.intValue());
 		} else {
-			UMLDiagramEditorPlugin.getInstance().logError("No domain element for view with visualID = " + 3046); //$NON-NLS-1$
+			UMLDiagramEditorPlugin.getInstance().logError("Parser was not found for label " + 5090); //$NON-NLS-1$
 			return ""; //$NON-NLS-1$
 		}
+
 	}
 
 	/**
 	 * @generated
 	 */
 	private String getStructuredActivityNode_3009Text(View view) {
-		StructuredActivityNode domainModelElement = (StructuredActivityNode) view.getElement();
-		if (domainModelElement != null) {
-			return String.valueOf(domainModelElement.getName());
+		IAdaptable hintAdapter = new UMLParserProvider.HintAdapter(UMLElementTypes.StructuredActivityNode_3009, (view.getElement() != null ? view.getElement() : view), UMLVisualIDRegistry
+				.getType(StructuredActivityNodeName2EditPart.VISUAL_ID));
+		IParser parser = ParserService.getInstance().getParser(hintAdapter);
+
+		if (parser != null) {
+			return parser.getPrintString(hintAdapter, ParserOptions.NONE.intValue());
 		} else {
-			UMLDiagramEditorPlugin.getInstance().logError("No domain element for view with visualID = " + 3009); //$NON-NLS-1$
+			UMLDiagramEditorPlugin.getInstance().logError("Parser was not found for label " + 5089); //$NON-NLS-1$
 			return ""; //$NON-NLS-1$
 		}
+
 	}
 
 	/**
@@ -1713,26 +1721,34 @@ public class UMLNavigatorLabelProvider extends LabelProvider implements ICommonL
 	 * @generated
 	 */
 	private String getLoopNode_3058Text(View view) {
-		LoopNode domainModelElement = (LoopNode) view.getElement();
-		if (domainModelElement != null) {
-			return String.valueOf(domainModelElement.getName());
+		IAdaptable hintAdapter = new UMLParserProvider.HintAdapter(UMLElementTypes.LoopNode_3058, (view.getElement() != null ? view.getElement() : view), UMLVisualIDRegistry
+				.getType(LoopNodeNameEditPart.VISUAL_ID));
+		IParser parser = ParserService.getInstance().getParser(hintAdapter);
+
+		if (parser != null) {
+			return parser.getPrintString(hintAdapter, ParserOptions.NONE.intValue());
 		} else {
-			UMLDiagramEditorPlugin.getInstance().logError("No domain element for view with visualID = " + 3058); //$NON-NLS-1$
+			UMLDiagramEditorPlugin.getInstance().logError("Parser was not found for label " + 5091); //$NON-NLS-1$
 			return ""; //$NON-NLS-1$
 		}
+
 	}
 
 	/**
 	 * @generated
 	 */
 	private String getConditionalNode_3082Text(View view) {
-		ConditionalNode domainModelElement = (ConditionalNode) view.getElement();
-		if (domainModelElement != null) {
-			return String.valueOf(domainModelElement.getName());
+		IAdaptable hintAdapter = new UMLParserProvider.HintAdapter(UMLElementTypes.ConditionalNode_3082, (view.getElement() != null ? view.getElement() : view), UMLVisualIDRegistry
+				.getType(ConditionalNodeNameEditPart.VISUAL_ID));
+		IParser parser = ParserService.getInstance().getParser(hintAdapter);
+
+		if (parser != null) {
+			return parser.getPrintString(hintAdapter, ParserOptions.NONE.intValue());
 		} else {
-			UMLDiagramEditorPlugin.getInstance().logError("No domain element for view with visualID = " + 3082); //$NON-NLS-1$
+			UMLDiagramEditorPlugin.getInstance().logError("Parser was not found for label " + 5092); //$NON-NLS-1$
 			return ""; //$NON-NLS-1$
 		}
+
 	}
 
 	/**

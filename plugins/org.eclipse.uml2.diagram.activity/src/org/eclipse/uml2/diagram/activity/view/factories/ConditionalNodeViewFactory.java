@@ -12,6 +12,7 @@ import org.eclipse.gmf.runtime.notation.NotationFactory;
 import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.uml2.diagram.activity.edit.parts.ConditionalNodeConditionalNodeCompartmentEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.ConditionalNodeEditPart;
+import org.eclipse.uml2.diagram.activity.edit.parts.ConditionalNodeNameEditPart;
 import org.eclipse.uml2.diagram.activity.part.UMLVisualIDRegistry;
 
 /**
@@ -42,6 +43,7 @@ public class ConditionalNodeViewFactory extends AbstractShapeViewFactory {
 		if (eObject != null) {
 			eObjectAdapter = new EObjectAdapter(eObject);
 		}
+		getViewService().createNode(eObjectAdapter, view, UMLVisualIDRegistry.getType(ConditionalNodeNameEditPart.VISUAL_ID), ViewUtil.APPEND, true, getPreferencesHint());
 		getViewService().createNode(eObjectAdapter, view, UMLVisualIDRegistry.getType(ConditionalNodeConditionalNodeCompartmentEditPart.VISUAL_ID), ViewUtil.APPEND, true, getPreferencesHint());
 	}
 
