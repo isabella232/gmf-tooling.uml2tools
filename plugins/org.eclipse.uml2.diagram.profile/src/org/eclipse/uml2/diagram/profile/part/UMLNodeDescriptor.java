@@ -1,12 +1,13 @@
 package org.eclipse.uml2.diagram.profile.part;
 
 import org.eclipse.emf.ecore.EObject;
+import org.eclipse.uml2.diagram.common.genapi.IUpdaterNodeDescriptor;
 
 /**
  * @generated
  */
 @SuppressWarnings("unchecked")
-public class UMLNodeDescriptor {
+public class UMLNodeDescriptor implements IUpdaterNodeDescriptor {
 
 	/**
 	 * @generated
