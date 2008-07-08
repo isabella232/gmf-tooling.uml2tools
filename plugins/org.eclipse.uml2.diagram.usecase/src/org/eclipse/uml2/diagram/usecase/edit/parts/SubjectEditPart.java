@@ -33,6 +33,7 @@ import org.eclipse.gmf.runtime.gef.ui.figures.DefaultSizeNodeFigure;
 import org.eclipse.gmf.runtime.gef.ui.figures.NodeFigure;
 import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.swt.SWT;
+import org.eclipse.swt.graphics.Color;
 import org.eclipse.swt.graphics.Font;
 import org.eclipse.swt.widgets.Display;
 import org.eclipse.uml2.diagram.common.draw2d.CenterLayout;
@@ -475,7 +476,7 @@ public class SubjectEditPart extends ShapeNodeEditPart implements PrimaryShapeEd
 
 			this.setLayoutManager(layoutThis);
 
-			this.setBackgroundColor(ColorConstants.lightGray);
+			this.setBackgroundColor(THIS_BACK);
 			createContents();
 		}
 
@@ -542,6 +543,11 @@ public class SubjectEditPart extends ShapeNodeEditPart implements PrimaryShapeEd
 		}
 
 	}
+
+	/**
+	 * @generated
+	 */
+	static final Color THIS_BACK = new Color(null, 230, 230, 230);
 
 	/**
 	 * @generated

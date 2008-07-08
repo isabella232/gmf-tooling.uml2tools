@@ -226,8 +226,10 @@
               value="true"/>
         </layout>
         <backgroundColor
-            xsi:type="gmfgraph:ConstantColor"
-            value="lightGray"/>
+            xsi:type="gmfgraph:RGBColor"
+            red="230"
+            green="230"
+            blue="230"/>
         <children
             xsi:type="gmfgraph:Rectangle"
             name="UseCaseSubjectFigure_header">
