@@ -496,6 +496,7 @@
           href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
       <elementType
           xsi:type="gmfgen:SpecializationType"
+          displayName="Actor (Class Notation)"
           metamodelType="//@diagram/@topLevelNodes.1/@elementType"/>
       <viewmap
           xsi:type="gmfgen:InnerClassViewmap"
@@ -636,6 +637,7 @@
           href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
       <elementType
           xsi:type="gmfgen:SpecializationType"
+          displayName="UseCase (Class Notation)"
           metamodelType="//@diagram/@topLevelNodes.3/@elementType"/>
       <viewmap
           xsi:type="gmfgen:InnerClassViewmap"
