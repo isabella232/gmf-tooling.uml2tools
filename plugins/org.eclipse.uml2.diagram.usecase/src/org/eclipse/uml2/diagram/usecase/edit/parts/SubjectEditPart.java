@@ -547,7 +547,7 @@ public class SubjectEditPart extends ShapeNodeEditPart implements PrimaryShapeEd
 	/**
 	 * @generated
 	 */
-	static final Color THIS_BACK = new Color(null, 230, 230, 230);
+	static final Color THIS_BACK = new Color(null, 245, 245, 245);
 
 	/**
 	 * @generated
