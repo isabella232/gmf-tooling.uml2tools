@@ -27,6 +27,7 @@ import org.eclipse.uml2.diagram.common.parser.property.PropertyToString;
 import org.eclipse.uml2.diagram.common.parser.slot.SlotLookupSuite;
 import org.eclipse.uml2.diagram.common.parser.slot.SlotParser;
 import org.eclipse.uml2.diagram.common.parser.slot.SlotToString;
+import org.eclipse.uml2.diagram.common.parser.valuespec.ValueSpecificationParser;
 import org.eclipse.uml2.diagram.csd.edit.parts.AssociationInstanceSourceEditPart;
 import org.eclipse.uml2.diagram.csd.edit.parts.AssociationInstanceTargetEditPart;
 import org.eclipse.uml2.diagram.csd.edit.parts.AssociationName2EditPart;
@@ -278,12 +279,10 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 	}
 
 	/**
-	 * @generated
+	 * @generated NOT
 	 */
 	protected IParser createConstraintName_5024Parser() {
-		EAttribute[] features = new EAttribute[] { UMLPackage.eINSTANCE.getNamedElement_Name(), };
-		MessageFormatParser parser = new MessageFormatParser(features);
-		return parser;
+		return new ValueSpecificationParser.ConstraintParser();
 	}
 
 	/**
