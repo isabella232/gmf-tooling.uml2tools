@@ -1,5 +1,6 @@
 package org.eclipse.uml2.diagram.clazz.part;
 
+import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Collections;
 import java.util.Iterator;
@@ -1307,7 +1308,7 @@ public class UMLDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List getPackage_1000SemanticChildren(View view) {
+	public static List getPackage_1000SemanticChildrenGen(View view) {
 		if (!view.isSetElement()) {
 			return Collections.EMPTY_LIST;
 		}
@@ -1390,6 +1391,29 @@ public class UMLDiagramUpdater {
 		for (Iterator it = modelElement.getPackagedElements().iterator(); it.hasNext();) {
 			PackageableElement childElement = (PackageableElement) it.next();
 			int visualID = UMLVisualIDRegistry.getNodeVisualID(view, childElement);
+		}
+		return result;
+	}
+	
+	/**
+	 * @generated NOT
+	 */
+	public static List getPackage_1000SemanticChildren(View view) {
+		List result = new ArrayList<Object>();
+		result.addAll(getPackage_1000SemanticChildrenGen(view));
+		result.addAll(getPackage_1000SemanticChildren_ConstraintsAsOwnedRules(view));
+		return result;
+	}
+	
+	public static List getPackage_1000SemanticChildren_ConstraintsAsOwnedRules(View view){
+		Package modelElement = (Package) view.getElement();
+		List result = new LinkedList();
+		for (Constraint next : modelElement.getOwnedRules()) {
+			int visualID = UMLVisualIDRegistry.getNodeVisualID(view, next);
+			if (visualID == ConstraintEditPart.VISUAL_ID) {
+				result.add(new UMLNodeDescriptor(next, visualID));
+				continue;
+			}
 		}
 		return result;
 	}
