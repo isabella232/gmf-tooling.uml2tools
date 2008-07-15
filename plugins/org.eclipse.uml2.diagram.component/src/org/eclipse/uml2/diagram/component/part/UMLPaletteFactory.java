@@ -294,17 +294,29 @@ public class UMLPaletteFactory {
 	/**
 	 * @generated
 	 */
-	private ToolEntry createSharedAggregation2CreationTool() {
+	private ToolEntry createSharedAggregation2CreationToolGen() {
 		ToolEntry entry = new ToolEntry(Messages.SharedAggregation2CreationTool_title, Messages.SharedAggregation2CreationTool_desc, null, null) {
 		};
 		entry.setToolClass(CreateAssociationLinkTool.SHARED.class);
+		entry.setSmallIcon(UMLElementTypes.getImageDescriptor(UMLElementTypes.Association_4011));
+		entry.setLargeIcon(entry.getSmallIcon());
+		return entry;
+	}
+
+	/**
+	 * @generated NOT
+	 */
+	private ToolEntry createSharedAggregation2CreationTool() {
+		ToolEntry entry = createSharedAggregation2CreationToolGen();
+		entry.setSmallIcon(UMLElementTypes.getImageDescriptor(UMLElementTypes.Association_4011));
+		entry.setLargeIcon(entry.getSmallIcon());
 		return entry;
 	}
 
 	/**
 	 * @generated
 	 */
-	private ToolEntry createCompositeAggregation3CreationTool() {
+	private ToolEntry createCompositeAggregation3CreationToolGen() {
 		ToolEntry entry = new ToolEntry(Messages.CompositeAggregation3CreationTool_title, Messages.CompositeAggregation3CreationTool_desc, null, null) {
 		};
 		entry.setToolClass(CreateAssociationLinkTool.COMPOSITE.class);
@@ -312,12 +324,32 @@ public class UMLPaletteFactory {
 	}
 
 	/**
+	 * @generated NOT
+	 */
+	private ToolEntry createCompositeAggregation3CreationTool() {
+		ToolEntry entry = createCompositeAggregation3CreationToolGen();
+		entry.setSmallIcon(UMLElementTypes.getImageDescriptor(UMLElementTypes.Association_4011));
+		entry.setLargeIcon(entry.getSmallIcon());
+		return entry;
+	}
+
+	/**
 	 * @generated
 	 */
-	private ToolEntry createNavigableAssociation4CreationTool() {
+	private ToolEntry createNavigableAssociation4CreationToolGen() {
 		ToolEntry entry = new ToolEntry(Messages.NavigableAssociation4CreationTool_title, Messages.NavigableAssociation4CreationTool_desc, null, null) {
 		};
 		entry.setToolClass(CreateAssociationLinkTool.NAVIGABLE.class);
+		return entry;
+	}
+
+	/**
+	 * @generated NOT
+	 */
+	private ToolEntry createNavigableAssociation4CreationTool() {
+		ToolEntry entry = createNavigableAssociation4CreationToolGen();
+		entry.setSmallIcon(UMLElementTypes.getImageDescriptor(UMLElementTypes.Association_4011));
+		entry.setLargeIcon(entry.getSmallIcon());
 		return entry;
 	}
 
