@@ -18,7 +18,7 @@
 package «editorGen.editor.packageName»;
 
 	«EXPAND xpt::Common::generatedClassComment»
-public class «linkDescriptorClassName» extends «getNodeDescriptorQualifiedClassName()» implements «EXPAND aspects::xpt::diagram::updater::LinkDescriptor::implementsList» {
+/*package*/ class «linkDescriptorClassName» extends «getNodeDescriptorQualifiedClassName()» implements «EXPAND aspects::xpt::diagram::updater::LinkDescriptor::implementsList» {
 
 	«EXPAND xpt::diagram::updater::LinkDescriptor::attributes-»
 	
@@ -38,4 +38,39 @@ public class «linkDescriptorClassName» extends «getNodeDescriptorQualifiedClassN
 }
 «ENDAROUND»
 
+«AROUND xpt::diagram::updater::LinkDescriptor::additions FOR gmfgen::GenDiagramUpdater»
+	«EXPAND hashSupport»
+«ENDAROUND»
+
 «DEFINE implementsList FOR gmfgen::GenDiagramUpdater»org.eclipse.uml2.diagram.common.genapi.IUpdaterLinkDescriptor «ENDDEFINE»
+
+«DEFINE hashSupport FOR gmfgen::GenDiagramUpdater»
+	«EXPAND xpt::Common::generatedClassComment»	
+	@Override
+	public boolean equals(Object obj) {
+		if (obj == this){
+			return true;
+		}
+		if (obj instanceof org.eclipse.uml2.diagram.common.genapi.IUpdaterLinkDescriptor){
+			org.eclipse.uml2.diagram.common.genapi.IUpdaterLinkDescriptor that = (org.eclipse.uml2.diagram.common.genapi.IUpdaterLinkDescriptor)obj;
+			return this.getVisualID() == that.getVisualID() && // 
+				safeEquals(this.getModelElement(), that.getModelElement()) && // 
+				safeEquals(this.getSource(), that.getSource()) && //
+				safeEquals(this.getDestination(), that.getDestination());
+		}
+		return false;
+	}
+	
+	«EXPAND xpt::Common::generatedClassComment»	
+	@Override
+	public int hashCode() {
+		return super.hashCode() + 3 * safeHashCode(mySource) + 7 * safeHashCode(myDestination);
+	}
+	
+	
+	«EXPAND xpt::Common::generatedClassComment»	
+	private int safeHashCode(Object o) {
+		return o == null ? 0 : o.hashCode();
+	}
+
+«ENDDEFINE»

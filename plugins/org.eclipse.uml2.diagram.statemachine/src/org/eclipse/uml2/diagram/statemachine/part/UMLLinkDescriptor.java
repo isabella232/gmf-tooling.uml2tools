@@ -10,7 +10,7 @@ import org.eclipse.uml2.diagram.common.genapi.IUpdaterLinkDescriptor;
  * @generated
  */
 @SuppressWarnings("unchecked")
-public class UMLLinkDescriptor extends UMLNodeDescriptor implements IUpdaterLinkDescriptor {
+class UMLLinkDescriptor extends UMLNodeDescriptor implements IUpdaterLinkDescriptor {
 
 	/**
 	 * @generated
@@ -89,6 +89,42 @@ public class UMLLinkDescriptor extends UMLNodeDescriptor implements IUpdaterLink
 	 */
 	public IAdaptable getSemanticAdapter() {
 		return mySemanticAdapter;
+	}
+
+	/**
+	 * @generated
+	 */
+	@SuppressWarnings("unchecked")
+	@Override
+	public boolean equals(Object obj) {
+		if (obj == this) {
+			return true;
+		}
+		if (obj instanceof IUpdaterLinkDescriptor) {
+			IUpdaterLinkDescriptor that = (IUpdaterLinkDescriptor) obj;
+			return this.getVisualID() == that.getVisualID() && // 
+					safeEquals(this.getModelElement(), that.getModelElement()) && // 
+					safeEquals(this.getSource(), that.getSource()) && //
+					safeEquals(this.getDestination(), that.getDestination());
+		}
+		return false;
+	}
+
+	/**
+	 * @generated
+	 */
+	@SuppressWarnings("unchecked")
+	@Override
+	public int hashCode() {
+		return super.hashCode() + 3 * safeHashCode(mySource) + 7 * safeHashCode(myDestination);
+	}
+
+	/**
+	 * @generated
+	 */
+	@SuppressWarnings("unchecked")
+	private int safeHashCode(Object o) {
+		return o == null ? 0 : o.hashCode();
 	}
 
 }

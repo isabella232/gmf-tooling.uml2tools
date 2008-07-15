@@ -15,6 +15,8 @@ import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.uml2.diagram.common.conventions.AssociationEndConvention;
 import org.eclipse.uml2.diagram.common.conventions.ConnectorEndConvention;
 import org.eclipse.uml2.diagram.common.genapi.IDiagramUpdater;
+import org.eclipse.uml2.diagram.common.genapi.IUpdaterLinkDescriptor;
+import org.eclipse.uml2.diagram.common.genapi.IUpdaterNodeDescriptor;
 import org.eclipse.uml2.diagram.csd.edit.parts.AssociationEditPart;
 import org.eclipse.uml2.diagram.csd.edit.parts.AssociationInstanceEditPart;
 import org.eclipse.uml2.diagram.csd.edit.parts.Class2EditPart;
@@ -446,7 +448,7 @@ public class UMLDiagramUpdater {
 		}
 		return result;
 	}
-	
+
 	/**
 	 * @generated NOT
 	 */
@@ -456,8 +458,8 @@ public class UMLDiagramUpdater {
 		result.addAll(getPackage_1000SemanticChildren_ConstraintsAsOwnedRules(view));
 		return result;
 	}
-	
-	public static List getPackage_1000SemanticChildren_ConstraintsAsOwnedRules(View view){
+
+	public static List getPackage_1000SemanticChildren_ConstraintsAsOwnedRules(View view) {
 		Package modelElement = (Package) view.getElement();
 		List result = new LinkedList();
 		for (Constraint next : modelElement.getOwnedRules()) {
@@ -469,7 +471,6 @@ public class UMLDiagramUpdater {
 		}
 		return result;
 	}
-	
 
 	/**
 	 * @generated
@@ -2089,28 +2090,28 @@ public class UMLDiagramUpdater {
 		/**
 		 * @generated
 		 */
-		public List getSemanticChildren(View view) {
+		public List<IUpdaterNodeDescriptor> getSemanticChildren(View view) {
 			return org.eclipse.uml2.diagram.csd.part.UMLDiagramUpdater.getSemanticChildren(view);
 		}
 
 		/**
 		 * @generated
 		 */
-		public List getContainedLinks(View view) {
+		public List<IUpdaterLinkDescriptor> getContainedLinks(View view) {
 			return org.eclipse.uml2.diagram.csd.part.UMLDiagramUpdater.getContainedLinks(view);
 		}
 
 		/**
 		 * @generated
 		 */
-		public List getIncomingLinks(View view) {
+		public List<IUpdaterLinkDescriptor> getIncomingLinks(View view) {
 			return org.eclipse.uml2.diagram.csd.part.UMLDiagramUpdater.getIncomingLinks(view);
 		}
 
 		/**
 		 * @generated
 		 */
-		public List getOutgoingLinks(View view) {
+		public List<IUpdaterLinkDescriptor> getOutgoingLinks(View view) {
 			return org.eclipse.uml2.diagram.csd.part.UMLDiagramUpdater.getOutgoingLinks(view);
 		}
 	};

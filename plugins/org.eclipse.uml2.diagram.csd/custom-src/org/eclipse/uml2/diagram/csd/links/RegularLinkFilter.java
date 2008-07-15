@@ -4,40 +4,40 @@ import java.util.Collection;
 import java.util.LinkedList;
 
 import org.eclipse.emf.ecore.EObject;
+import org.eclipse.uml2.diagram.common.genapi.IUpdaterLinkDescriptor;
+import org.eclipse.uml2.diagram.common.links.InterfaceLinkFilter;
 import org.eclipse.uml2.diagram.csd.edit.parts.InterfaceRealizationEditPart;
 import org.eclipse.uml2.diagram.csd.edit.parts.PortProvidedEditPart;
 import org.eclipse.uml2.diagram.csd.edit.parts.PortRequiredEditPart;
 import org.eclipse.uml2.diagram.csd.edit.parts.UsageEditPart;
-import org.eclipse.uml2.diagram.csd.part.UMLLinkDescriptor;
-import org.eclipse.uml2.diagram.common.links.InterfaceLinkFilter;
 
-public class RegularLinkFilter extends InterfaceLinkFilter<UMLLinkDescriptor> {
+public class RegularLinkFilter extends InterfaceLinkFilter<IUpdaterLinkDescriptor> {
 
-	private final Collection<UMLLinkDescriptor> myRegularLinks = new LinkedList<UMLLinkDescriptor>();
+	private final Collection<IUpdaterLinkDescriptor> myRegularLinks = new LinkedList<IUpdaterLinkDescriptor>();
 
 	public RegularLinkFilter(boolean hideDerived, boolean hideReferencedGenuine) {
 		super(hideDerived, hideReferencedGenuine);
 	}
 
 	@Override
-	public void visit(UMLLinkDescriptor link) {
+	public void visit(IUpdaterLinkDescriptor link) {
 		if (isRegularLink(link)) {
 			myRegularLinks.add(link);
 		}
 	}
 
-	private boolean isRegularLink(UMLLinkDescriptor link) {
+	private boolean isRegularLink(IUpdaterLinkDescriptor link) {
 		int vid = link.getVisualID();
 		return PortProvidedEditPart.VISUAL_ID != vid && InterfaceRealizationEditPart.VISUAL_ID != vid && PortRequiredEditPart.VISUAL_ID != vid && UsageEditPart.VISUAL_ID != vid;
 	}
 
 	@Override
-	public Collection<UMLLinkDescriptor> getFilteredLinks() {
+	public Collection<IUpdaterLinkDescriptor> getFilteredLinks() {
 		return myRegularLinks;
 	}
 
 	@Override
-	protected EObject getSource(UMLLinkDescriptor link) {
+	protected EObject getSource(IUpdaterLinkDescriptor link) {
 		return link.getSource();
 	}
 }

@@ -12,6 +12,8 @@ import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.uml2.diagram.common.genapi.IDiagramUpdater;
+import org.eclipse.uml2.diagram.common.genapi.IUpdaterLinkDescriptor;
+import org.eclipse.uml2.diagram.common.genapi.IUpdaterNodeDescriptor;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.Behavior2EditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.Behavior3EditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.BehaviorEditPart;
@@ -1309,28 +1311,28 @@ public class UMLDiagramUpdater {
 		/**
 		 * @generated
 		 */
-		public List getSemanticChildren(View view) {
+		public List<IUpdaterNodeDescriptor> getSemanticChildren(View view) {
 			return org.eclipse.uml2.diagram.statemachine.part.UMLDiagramUpdater.getSemanticChildren(view);
 		}
 
 		/**
 		 * @generated
 		 */
-		public List getContainedLinks(View view) {
+		public List<IUpdaterLinkDescriptor> getContainedLinks(View view) {
 			return org.eclipse.uml2.diagram.statemachine.part.UMLDiagramUpdater.getContainedLinks(view);
 		}
 
 		/**
 		 * @generated
 		 */
-		public List getIncomingLinks(View view) {
+		public List<IUpdaterLinkDescriptor> getIncomingLinks(View view) {
 			return org.eclipse.uml2.diagram.statemachine.part.UMLDiagramUpdater.getIncomingLinks(view);
 		}
 
 		/**
 		 * @generated
 		 */
-		public List getOutgoingLinks(View view) {
+		public List<IUpdaterLinkDescriptor> getOutgoingLinks(View view) {
 			return org.eclipse.uml2.diagram.statemachine.part.UMLDiagramUpdater.getOutgoingLinks(view);
 		}
 	};

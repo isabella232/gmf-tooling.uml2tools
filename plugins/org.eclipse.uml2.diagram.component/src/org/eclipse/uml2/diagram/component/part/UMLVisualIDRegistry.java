@@ -1077,6 +1077,29 @@ public class UMLVisualIDRegistry {
 		public boolean isSemanticLeafVisualID(int visualID) {
 			return org.eclipse.uml2.diagram.component.part.UMLVisualIDRegistry.isSemanticLeafVisualID(visualID);
 		}
+
+		/**
+		 * @generated
+		 */
+		public boolean isShortcutDescendant(View view) {
+			return org.eclipse.uml2.diagram.component.part.UMLVisualIDRegistry.isShortcutDescendant(view);
+		}
+
 	};
+
+	/**
+	 * @generated
+	 */
+	public static boolean isShortcutDescendant(View view) {
+		View diagram = view.getDiagram();
+		while (view != diagram && view != null) {
+			EAnnotation annotation = view.getEAnnotation("Shortcut"); //$NON-NLS-1$
+			if (annotation != null) {
+				return true;
+			}
+			view = (View) view.eContainer();
+		}
+		return false;
+	}
 
 }

@@ -106,3 +106,27 @@ protected boolean isOrphaned(java.util.Collection semanticChildren, final org.ec
 }
 «ENDDEFINE»
 
+«AROUND getSemanticChildrenList FOR gmfgen::GenContainerBase-»
+	«REM»
+	The only difference with base template so far is marked below
+	«ENDREM»«-»
+	«EXPAND xpt::Common::generatedMemberComment»
+protected java.util.List getSemanticChildrenList() {
+	«IF hasSemanticChildren(this)-»
+	org.eclipse.gmf.runtime.notation.View viewObject = (org.eclipse.gmf.runtime.notation.View) getHost().getModel();
+	java.util.List result = new java.util.LinkedList();
+	for (java.util.Iterator it = «EXPAND xpt::diagram::updater::DiagramUpdater::getSemanticChildrenMethodCall»(viewObject).iterator(); it.hasNext();) {
+		«REM»
+		The only difference with base template so far is here: 
+		We are using interface IUpdaterNodeDescriptor instead of predefined instance from our plugin 
+		It is done in order to process descriptors from other diagram plugins 
+		that were dynamically added	by AbstractUpdateDescriptionEditPolicy from
+		«ENDREM»«-»
+		result.add(((org.eclipse.uml2.diagram.common.genapi.IUpdaterNodeDescriptor) it.next()).getModelElement());
+	}
+	return result;
+	«ELSE-»
+	return java.util.Collections.EMPTY_LIST;
+	«ENDIF-»
+}
+«ENDAROUND»

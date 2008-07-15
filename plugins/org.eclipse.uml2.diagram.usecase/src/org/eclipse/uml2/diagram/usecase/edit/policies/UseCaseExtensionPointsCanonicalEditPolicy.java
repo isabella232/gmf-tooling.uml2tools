@@ -9,6 +9,7 @@ import java.util.Set;
 
 import org.eclipse.gmf.runtime.diagram.ui.editpolicies.CanonicalEditPolicy;
 import org.eclipse.gmf.runtime.notation.View;
+import org.eclipse.uml2.diagram.common.genapi.IUpdaterNodeDescriptor;
 import org.eclipse.uml2.diagram.usecase.edit.parts.ActorAsRectangleEditPart;
 import org.eclipse.uml2.diagram.usecase.edit.parts.ActorEditPart;
 import org.eclipse.uml2.diagram.usecase.edit.parts.ActorInPackageEditPart;
@@ -24,7 +25,6 @@ import org.eclipse.uml2.diagram.usecase.edit.parts.UseCaseAsClassEditPart;
 import org.eclipse.uml2.diagram.usecase.edit.parts.UseCaseEditPart;
 import org.eclipse.uml2.diagram.usecase.edit.parts.UseCaseinPackageEditPart;
 import org.eclipse.uml2.diagram.usecase.part.UMLDiagramUpdater;
-import org.eclipse.uml2.diagram.usecase.part.UMLNodeDescriptor;
 import org.eclipse.uml2.diagram.usecase.part.UMLVisualIDRegistry;
 import org.eclipse.uml2.uml.UMLPackage;
 
@@ -45,7 +45,7 @@ public class UseCaseExtensionPointsCanonicalEditPolicy extends CanonicalEditPoli
 		View viewObject = (View) getHost().getModel();
 		List result = new LinkedList();
 		for (Iterator it = UMLDiagramUpdater.getUseCasePoints_7002SemanticChildren(viewObject).iterator(); it.hasNext();) {
-			result.add(((UMLNodeDescriptor) it.next()).getModelElement());
+			result.add(((IUpdaterNodeDescriptor) it.next()).getModelElement());
 		}
 		return result;
 	}

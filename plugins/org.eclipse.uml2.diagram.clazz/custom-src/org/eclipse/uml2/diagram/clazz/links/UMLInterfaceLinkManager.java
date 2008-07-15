@@ -3,10 +3,10 @@ package org.eclipse.uml2.diagram.clazz.links;
 import java.util.Collection;
 
 import org.eclipse.uml2.diagram.clazz.part.UMLDiagramEditorPlugin;
-import org.eclipse.uml2.diagram.clazz.part.UMLLinkDescriptor;
+import org.eclipse.uml2.diagram.common.genapi.IUpdaterLinkDescriptor;
 import org.eclipse.uml2.diagram.common.links.InterfaceLinkManager;
 
-public class UMLInterfaceLinkManager extends InterfaceLinkManager<UMLLinkDescriptor> {
+public class UMLInterfaceLinkManager extends InterfaceLinkManager<IUpdaterLinkDescriptor> {
 
 	public UMLInterfaceLinkManager(Collection<?> linkDescriptors) {
 		super(linkDescriptors, UMLDiagramEditorPlugin.getInstance().getPreferenceStore());
