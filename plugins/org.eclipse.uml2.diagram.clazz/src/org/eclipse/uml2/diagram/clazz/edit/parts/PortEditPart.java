@@ -36,10 +36,12 @@ import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.uml2.diagram.clazz.edit.policies.PortItemSemanticEditPolicy;
 import org.eclipse.uml2.diagram.clazz.part.UMLDiagramUpdateCommand;
 import org.eclipse.uml2.diagram.clazz.part.UMLDiagramUpdater;
-import org.eclipse.uml2.diagram.clazz.part.UMLLinkDescriptor;
 import org.eclipse.uml2.diagram.clazz.part.UMLVisualIDRegistry;
 import org.eclipse.uml2.diagram.common.editparts.PrimaryShapeEditPart;
 import org.eclipse.uml2.diagram.common.editpolicies.PortVisualEffectEditPolicy;
+import org.eclipse.uml2.diagram.common.editpolicies.UpdateDescriptionEditPolicy;
+import org.eclipse.uml2.diagram.common.genapi.IUpdaterLinkDescriptor;
+import org.eclipse.uml2.diagram.common.genapi.IUpdaterNodeDescriptor;
 import org.eclipse.uml2.uml.TemplateBinding;
 import org.eclipse.uml2.uml.UMLPackage;
 
@@ -79,6 +81,9 @@ public class PortEditPart extends BorderedBorderItemEditPart implements PrimaryS
 	 * @generated
 	 */
 	protected void createDefaultEditPolicies() {
+		if (UMLVisualIDRegistry.isShortcutDescendant(getNotationView())) {
+			installEditPolicy(UpdateDescriptionEditPolicy.ROLE, new UpdateDescriptionEditPolicy(UMLDiagramUpdater.TYPED_ADAPTER, true));
+		}
 		super.createDefaultEditPolicies();
 		installEditPolicy(EditPolicy.PRIMARY_DRAG_ROLE, getPrimaryDragEditPolicy());
 		installEditPolicy(EditPolicyRoles.SEMANTIC_ROLE, new PortItemSemanticEditPolicy());
@@ -86,6 +91,7 @@ public class PortEditPart extends BorderedBorderItemEditPart implements PrimaryS
 		installEditPolicy("VisualEffect.Port", new PortVisualEffectEditPolicy()); //$NON-NLS-1$
 		// XXX need an SCR to runtime to have another abstract superclass that would let children add reasonable editpolicies
 		// removeEditPolicy(org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles.CONNECTION_HANDLES_ROLE);
+
 	}
 
 	/**
@@ -303,7 +309,7 @@ public class PortEditPart extends BorderedBorderItemEditPart implements PrimaryS
 	 */
 	protected void addSemanticListeners() {
 		super.addSemanticListeners();
-		for (UMLLinkDescriptor next : getPort_3025ContainedLinks()) {
+		for (IUpdaterNodeDescriptor next : getPort_3025ContainedLinks()) {
 			EObject nextLink = next.getModelElement();
 			if (nextLink == null) {
 				continue;
@@ -323,7 +329,7 @@ public class PortEditPart extends BorderedBorderItemEditPart implements PrimaryS
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
-	private List<UMLLinkDescriptor> getPort_3025ContainedLinks() {
+	private List<IUpdaterLinkDescriptor> getPort_3025ContainedLinks() {
 		return UMLDiagramUpdater.getPort_3025ContainedLinks(getNotationView());
 	}
 

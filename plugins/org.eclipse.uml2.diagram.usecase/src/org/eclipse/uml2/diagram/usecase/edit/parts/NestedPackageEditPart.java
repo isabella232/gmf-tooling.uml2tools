@@ -40,11 +40,13 @@ import org.eclipse.gmf.runtime.gef.ui.figures.DefaultSizeNodeFigure;
 import org.eclipse.gmf.runtime.gef.ui.figures.NodeFigure;
 import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.uml2.diagram.common.editparts.PrimaryShapeEditPart;
+import org.eclipse.uml2.diagram.common.editpolicies.UpdateDescriptionEditPolicy;
+import org.eclipse.uml2.diagram.common.genapi.IUpdaterLinkDescriptor;
+import org.eclipse.uml2.diagram.common.genapi.IUpdaterNodeDescriptor;
 import org.eclipse.uml2.diagram.usecase.edit.policies.NestedPackageItemSemanticEditPolicy;
 import org.eclipse.uml2.diagram.usecase.edit.policies.OpenDiagramEditPolicy;
 import org.eclipse.uml2.diagram.usecase.part.UMLDiagramUpdateCommand;
 import org.eclipse.uml2.diagram.usecase.part.UMLDiagramUpdater;
-import org.eclipse.uml2.diagram.usecase.part.UMLLinkDescriptor;
 import org.eclipse.uml2.diagram.usecase.part.UMLVisualIDRegistry;
 import org.eclipse.uml2.uml.Dependency;
 import org.eclipse.uml2.uml.UMLPackage;
@@ -85,12 +87,16 @@ public class NestedPackageEditPart extends ShapeNodeEditPart implements PrimaryS
 	 * @generated
 	 */
 	protected void createDefaultEditPolicies() {
+		if (UMLVisualIDRegistry.isShortcutDescendant(getNotationView())) {
+			installEditPolicy(UpdateDescriptionEditPolicy.ROLE, new UpdateDescriptionEditPolicy(UMLDiagramUpdater.TYPED_ADAPTER, true));
+		}
 		super.createDefaultEditPolicies();
 		installEditPolicy(EditPolicyRoles.SEMANTIC_ROLE, new NestedPackageItemSemanticEditPolicy());
 		installEditPolicy(EditPolicy.LAYOUT_ROLE, createLayoutEditPolicy());
 		installEditPolicy(EditPolicyRoles.OPEN_ROLE, new OpenDiagramEditPolicy());
 		// XXX need an SCR to runtime to have another abstract superclass that would let children add reasonable editpolicies
 		// removeEditPolicy(org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles.CONNECTION_HANDLES_ROLE);
+
 	}
 
 	/**
@@ -354,7 +360,7 @@ public class NestedPackageEditPart extends ShapeNodeEditPart implements PrimaryS
 	 */
 	protected void addSemanticListeners() {
 		super.addSemanticListeners();
-		for (UMLLinkDescriptor next : getPackage_2007ContainedLinks()) {
+		for (IUpdaterNodeDescriptor next : getPackage_2007ContainedLinks()) {
 			EObject nextLink = next.getModelElement();
 			if (nextLink == null) {
 				continue;
@@ -374,7 +380,7 @@ public class NestedPackageEditPart extends ShapeNodeEditPart implements PrimaryS
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
-	private List<UMLLinkDescriptor> getPackage_2007ContainedLinks() {
+	private List<IUpdaterLinkDescriptor> getPackage_2007ContainedLinks() {
 		return UMLDiagramUpdater.getPackage_2007ContainedLinks(getNotationView());
 	}
 

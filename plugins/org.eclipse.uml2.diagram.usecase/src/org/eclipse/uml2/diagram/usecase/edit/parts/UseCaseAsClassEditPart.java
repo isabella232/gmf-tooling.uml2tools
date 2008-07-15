@@ -42,11 +42,13 @@ import org.eclipse.swt.widgets.Display;
 import org.eclipse.uml2.diagram.common.draw2d.CenterLayout;
 import org.eclipse.uml2.diagram.common.editparts.PrimaryShapeEditPart;
 import org.eclipse.uml2.diagram.common.editpolicies.CreationEditPolicyWithCustomReparent;
+import org.eclipse.uml2.diagram.common.editpolicies.UpdateDescriptionEditPolicy;
+import org.eclipse.uml2.diagram.common.genapi.IUpdaterLinkDescriptor;
+import org.eclipse.uml2.diagram.common.genapi.IUpdaterNodeDescriptor;
 import org.eclipse.uml2.diagram.usecase.edit.policies.UMLTextSelectionEditPolicy;
 import org.eclipse.uml2.diagram.usecase.edit.policies.UseCaseAsClassItemSemanticEditPolicy;
 import org.eclipse.uml2.diagram.usecase.part.UMLDiagramUpdateCommand;
 import org.eclipse.uml2.diagram.usecase.part.UMLDiagramUpdater;
-import org.eclipse.uml2.diagram.usecase.part.UMLLinkDescriptor;
 import org.eclipse.uml2.diagram.usecase.part.UMLVisualIDRegistry;
 import org.eclipse.uml2.diagram.usecase.providers.UMLElementTypes;
 import org.eclipse.uml2.uml.Extend;
@@ -90,6 +92,9 @@ public class UseCaseAsClassEditPart extends ShapeNodeEditPart implements Primary
 	 * @generated
 	 */
 	protected void createDefaultEditPolicies() {
+		if (UMLVisualIDRegistry.isShortcutDescendant(getNotationView())) {
+			installEditPolicy(UpdateDescriptionEditPolicy.ROLE, new UpdateDescriptionEditPolicy(UMLDiagramUpdater.TYPED_ADAPTER, true));
+		}
 		installEditPolicy(EditPolicyRoles.CREATION_ROLE, new CreationEditPolicyWithCustomReparent(UMLVisualIDRegistry.TYPED_ADAPTER) {
 
 			public Command getCommand(Request request) {
@@ -112,6 +117,7 @@ public class UseCaseAsClassEditPart extends ShapeNodeEditPart implements Primary
 		installEditPolicy(EditPolicy.LAYOUT_ROLE, createLayoutEditPolicy());
 		// XXX need an SCR to runtime to have another abstract superclass that would let children add reasonable editpolicies
 		// removeEditPolicy(org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles.CONNECTION_HANDLES_ROLE);
+
 	}
 
 	/**
@@ -377,7 +383,7 @@ public class UseCaseAsClassEditPart extends ShapeNodeEditPart implements Primary
 	 */
 	protected void addSemanticListeners() {
 		super.addSemanticListeners();
-		for (UMLLinkDescriptor next : getUseCase_2004ContainedLinks()) {
+		for (IUpdaterNodeDescriptor next : getUseCase_2004ContainedLinks()) {
 			EObject nextLink = next.getModelElement();
 			if (nextLink == null) {
 				continue;
@@ -405,7 +411,7 @@ public class UseCaseAsClassEditPart extends ShapeNodeEditPart implements Primary
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
-	private List<UMLLinkDescriptor> getUseCase_2004ContainedLinks() {
+	private List<IUpdaterLinkDescriptor> getUseCase_2004ContainedLinks() {
 		return UMLDiagramUpdater.getUseCase_2004ContainedLinks(getNotationView());
 	}
 

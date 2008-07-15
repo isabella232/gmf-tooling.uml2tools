@@ -27,10 +27,13 @@ import org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles;
 import org.eclipse.gmf.runtime.gef.ui.figures.DefaultSizeNodeFigure;
 import org.eclipse.gmf.runtime.gef.ui.figures.NodeFigure;
 import org.eclipse.gmf.runtime.notation.View;
+import org.eclipse.uml2.diagram.common.editpolicies.UpdateDescriptionEditPolicy;
+import org.eclipse.uml2.diagram.common.genapi.IUpdaterLinkDescriptor;
+import org.eclipse.uml2.diagram.common.genapi.IUpdaterNodeDescriptor;
 import org.eclipse.uml2.diagram.csd.edit.policies.Class2ItemSemanticEditPolicy;
 import org.eclipse.uml2.diagram.csd.part.UMLDiagramUpdateCommand;
 import org.eclipse.uml2.diagram.csd.part.UMLDiagramUpdater;
-import org.eclipse.uml2.diagram.csd.part.UMLLinkDescriptor;
+import org.eclipse.uml2.diagram.csd.part.UMLVisualIDRegistry;
 import org.eclipse.uml2.uml.InterfaceRealization;
 import org.eclipse.uml2.uml.UMLPackage;
 
@@ -70,11 +73,15 @@ public class Class2EditPart extends ShapeNodeEditPart {
 	 * @generated
 	 */
 	protected void createDefaultEditPolicies() {
+		if (UMLVisualIDRegistry.isShortcutDescendant(getNotationView())) {
+			installEditPolicy(UpdateDescriptionEditPolicy.ROLE, new UpdateDescriptionEditPolicy(UMLDiagramUpdater.TYPED_ADAPTER, true));
+		}
 		super.createDefaultEditPolicies();
 		installEditPolicy(EditPolicyRoles.SEMANTIC_ROLE, new Class2ItemSemanticEditPolicy());
 		installEditPolicy(EditPolicy.LAYOUT_ROLE, createLayoutEditPolicy());
 		// XXX need an SCR to runtime to have another abstract superclass that would let children add reasonable editpolicies
 		// removeEditPolicy(org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles.CONNECTION_HANDLES_ROLE);
+
 	}
 
 	/**
@@ -264,7 +271,7 @@ public class Class2EditPart extends ShapeNodeEditPart {
 	 */
 	protected void addSemanticListeners() {
 		super.addSemanticListeners();
-		for (UMLLinkDescriptor next : getClass_3010ContainedLinks()) {
+		for (IUpdaterNodeDescriptor next : getClass_3010ContainedLinks()) {
 			EObject nextLink = next.getModelElement();
 			if (nextLink == null) {
 				continue;
@@ -284,7 +291,7 @@ public class Class2EditPart extends ShapeNodeEditPart {
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
-	private List<UMLLinkDescriptor> getClass_3010ContainedLinks() {
+	private List<IUpdaterLinkDescriptor> getClass_3010ContainedLinks() {
 		return UMLDiagramUpdater.getClass_3010ContainedLinks(getNotationView());
 	}
 

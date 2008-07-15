@@ -39,9 +39,11 @@ import org.eclipse.uml2.diagram.activity.edit.policies.StructuredActivityNode2Ca
 import org.eclipse.uml2.diagram.activity.edit.policies.StructuredActivityNode2ItemSemanticEditPolicy;
 import org.eclipse.uml2.diagram.activity.part.UMLDiagramUpdateCommand;
 import org.eclipse.uml2.diagram.activity.part.UMLDiagramUpdater;
-import org.eclipse.uml2.diagram.activity.part.UMLLinkDescriptor;
 import org.eclipse.uml2.diagram.activity.part.UMLVisualIDRegistry;
 import org.eclipse.uml2.diagram.common.editparts.PrimaryShapeEditPart;
+import org.eclipse.uml2.diagram.common.editpolicies.UpdateDescriptionEditPolicy;
+import org.eclipse.uml2.diagram.common.genapi.IUpdaterLinkDescriptor;
+import org.eclipse.uml2.diagram.common.genapi.IUpdaterNodeDescriptor;
 import org.eclipse.uml2.uml.ExceptionHandler;
 import org.eclipse.uml2.uml.UMLPackage;
 
@@ -81,12 +83,16 @@ public class StructuredActivityNode2EditPart extends ShapeNodeEditPart implement
 	 * @generated
 	 */
 	protected void createDefaultEditPolicies() {
+		if (UMLVisualIDRegistry.isShortcutDescendant(getNotationView())) {
+			installEditPolicy(UpdateDescriptionEditPolicy.ROLE, new UpdateDescriptionEditPolicy(UMLDiagramUpdater.TYPED_ADAPTER, true));
+		}
 		super.createDefaultEditPolicies();
 		installEditPolicy(EditPolicyRoles.SEMANTIC_ROLE, new StructuredActivityNode2ItemSemanticEditPolicy());
 		installEditPolicy(EditPolicyRoles.CANONICAL_ROLE, new StructuredActivityNode2CanonicalEditPolicy());
 		installEditPolicy(EditPolicy.LAYOUT_ROLE, createLayoutEditPolicy());
 		// XXX need an SCR to runtime to have another abstract superclass that would let children add reasonable editpolicies
 		// removeEditPolicy(org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles.CONNECTION_HANDLES_ROLE);
+
 	}
 
 	/**
@@ -351,7 +357,7 @@ public class StructuredActivityNode2EditPart extends ShapeNodeEditPart implement
 	 */
 	protected void addSemanticListeners() {
 		super.addSemanticListeners();
-		for (UMLLinkDescriptor next : getStructuredActivityNode_3009ContainedLinks()) {
+		for (IUpdaterNodeDescriptor next : getStructuredActivityNode_3009ContainedLinks()) {
 			EObject nextLink = next.getModelElement();
 			if (nextLink == null) {
 				continue;
@@ -371,7 +377,7 @@ public class StructuredActivityNode2EditPart extends ShapeNodeEditPart implement
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
-	private List<UMLLinkDescriptor> getStructuredActivityNode_3009ContainedLinks() {
+	private List<IUpdaterLinkDescriptor> getStructuredActivityNode_3009ContainedLinks() {
 		return UMLDiagramUpdater.getStructuredActivityNode_3009ContainedLinks(getNotationView());
 	}
 

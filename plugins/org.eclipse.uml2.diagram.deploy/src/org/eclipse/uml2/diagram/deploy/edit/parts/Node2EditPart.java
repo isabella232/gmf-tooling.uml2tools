@@ -30,12 +30,14 @@ import org.eclipse.gmf.runtime.gef.ui.figures.DefaultSizeNodeFigure;
 import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.uml2.diagram.common.draw2d.Cube3DFigure;
 import org.eclipse.uml2.diagram.common.editparts.PrimaryShapeEditPart;
+import org.eclipse.uml2.diagram.common.editpolicies.UpdateDescriptionEditPolicy;
+import org.eclipse.uml2.diagram.common.genapi.IUpdaterLinkDescriptor;
+import org.eclipse.uml2.diagram.common.genapi.IUpdaterNodeDescriptor;
 import org.eclipse.uml2.diagram.deploy.edit.policies.Node2CanonicalEditPolicy;
 import org.eclipse.uml2.diagram.deploy.edit.policies.Node2GraphicalNodeEditPolicy;
 import org.eclipse.uml2.diagram.deploy.edit.policies.Node2ItemSemanticEditPolicy;
 import org.eclipse.uml2.diagram.deploy.part.UMLDiagramUpdateCommand;
 import org.eclipse.uml2.diagram.deploy.part.UMLDiagramUpdater;
-import org.eclipse.uml2.diagram.deploy.part.UMLLinkDescriptor;
 import org.eclipse.uml2.diagram.deploy.part.UMLVisualIDRegistry;
 import org.eclipse.uml2.uml.Deployment;
 import org.eclipse.uml2.uml.UMLPackage;
@@ -76,6 +78,9 @@ public class Node2EditPart extends ShapeNodeEditPart implements PrimaryShapeEdit
 	 * @generated
 	 */
 	protected void createDefaultEditPolicies() {
+		if (UMLVisualIDRegistry.isShortcutDescendant(getNotationView())) {
+			installEditPolicy(UpdateDescriptionEditPolicy.ROLE, new UpdateDescriptionEditPolicy(UMLDiagramUpdater.TYPED_ADAPTER, true));
+		}
 		super.createDefaultEditPolicies();
 		installEditPolicy(EditPolicyRoles.SEMANTIC_ROLE, new Node2ItemSemanticEditPolicy());
 		installEditPolicy(EditPolicy.GRAPHICAL_NODE_ROLE, new Node2GraphicalNodeEditPolicy());
@@ -83,6 +88,7 @@ public class Node2EditPart extends ShapeNodeEditPart implements PrimaryShapeEdit
 		installEditPolicy(EditPolicy.LAYOUT_ROLE, createLayoutEditPolicy());
 		// XXX need an SCR to runtime to have another abstract superclass that would let children add reasonable editpolicies
 		// removeEditPolicy(org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles.CONNECTION_HANDLES_ROLE);
+
 	}
 
 	/**
@@ -332,7 +338,7 @@ public class Node2EditPart extends ShapeNodeEditPart implements PrimaryShapeEdit
 	 */
 	protected void addSemanticListeners() {
 		super.addSemanticListeners();
-		for (UMLLinkDescriptor next : getNode_3007ContainedLinks()) {
+		for (IUpdaterNodeDescriptor next : getNode_3007ContainedLinks()) {
 			EObject nextLink = next.getModelElement();
 			if (nextLink == null) {
 				continue;
@@ -352,7 +358,7 @@ public class Node2EditPart extends ShapeNodeEditPart implements PrimaryShapeEdit
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
-	private List<UMLLinkDescriptor> getNode_3007ContainedLinks() {
+	private List<IUpdaterLinkDescriptor> getNode_3007ContainedLinks() {
 		return UMLDiagramUpdater.getNode_3007ContainedLinks(getNotationView());
 	}
 

@@ -40,12 +40,14 @@ import org.eclipse.uml2.diagram.common.draw2d.OneLineDashedBorder;
 import org.eclipse.uml2.diagram.common.draw2d.SplitEllipseLayout;
 import org.eclipse.uml2.diagram.common.editparts.PrimaryShapeEditPart;
 import org.eclipse.uml2.diagram.common.editpolicies.CreationEditPolicyWithCustomReparent;
+import org.eclipse.uml2.diagram.common.editpolicies.UpdateDescriptionEditPolicy;
+import org.eclipse.uml2.diagram.common.genapi.IUpdaterLinkDescriptor;
+import org.eclipse.uml2.diagram.common.genapi.IUpdaterNodeDescriptor;
 import org.eclipse.uml2.diagram.csd.edit.policies.CollaborationCanonicalEditPolicy;
 import org.eclipse.uml2.diagram.csd.edit.policies.CollaborationItemSemanticEditPolicy;
 import org.eclipse.uml2.diagram.csd.edit.policies.OpenDiagramEditPolicy;
 import org.eclipse.uml2.diagram.csd.part.UMLDiagramUpdateCommand;
 import org.eclipse.uml2.diagram.csd.part.UMLDiagramUpdater;
-import org.eclipse.uml2.diagram.csd.part.UMLLinkDescriptor;
 import org.eclipse.uml2.diagram.csd.part.UMLVisualIDRegistry;
 import org.eclipse.uml2.uml.InterfaceRealization;
 import org.eclipse.uml2.uml.UMLPackage;
@@ -86,6 +88,9 @@ public class CollaborationEditPart extends ShapeNodeEditPart implements PrimaryS
 	 * @generated
 	 */
 	protected void createDefaultEditPolicies() {
+		if (UMLVisualIDRegistry.isShortcutDescendant(getNotationView())) {
+			installEditPolicy(UpdateDescriptionEditPolicy.ROLE, new UpdateDescriptionEditPolicy(UMLDiagramUpdater.TYPED_ADAPTER, true));
+		}
 		installEditPolicy(EditPolicyRoles.CREATION_ROLE, new CreationEditPolicyWithCustomReparent(UMLVisualIDRegistry.TYPED_ADAPTER));
 		super.createDefaultEditPolicies();
 		installEditPolicy(EditPolicyRoles.SEMANTIC_ROLE, new CollaborationItemSemanticEditPolicy());
@@ -95,6 +100,7 @@ public class CollaborationEditPart extends ShapeNodeEditPart implements PrimaryS
 		installEditPolicy(EditPolicyRoles.OPEN_ROLE, new OpenDiagramEditPolicy());
 		// XXX need an SCR to runtime to have another abstract superclass that would let children add reasonable editpolicies
 		// removeEditPolicy(org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles.CONNECTION_HANDLES_ROLE);
+
 	}
 
 	/**
@@ -358,7 +364,7 @@ public class CollaborationEditPart extends ShapeNodeEditPart implements PrimaryS
 	 */
 	protected void addSemanticListeners() {
 		super.addSemanticListeners();
-		for (UMLLinkDescriptor next : getCollaboration_2005ContainedLinks()) {
+		for (IUpdaterNodeDescriptor next : getCollaboration_2005ContainedLinks()) {
 			EObject nextLink = next.getModelElement();
 			if (nextLink == null) {
 				continue;
@@ -378,7 +384,7 @@ public class CollaborationEditPart extends ShapeNodeEditPart implements PrimaryS
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
-	private List<UMLLinkDescriptor> getCollaboration_2005ContainedLinks() {
+	private List<IUpdaterLinkDescriptor> getCollaboration_2005ContainedLinks() {
 		return UMLDiagramUpdater.getCollaboration_2005ContainedLinks(getNotationView());
 	}
 

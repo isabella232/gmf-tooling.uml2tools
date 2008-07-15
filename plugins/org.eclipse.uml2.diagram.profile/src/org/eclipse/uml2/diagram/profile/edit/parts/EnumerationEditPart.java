@@ -42,11 +42,13 @@ import org.eclipse.swt.widgets.Display;
 import org.eclipse.uml2.diagram.common.draw2d.CenterLayout;
 import org.eclipse.uml2.diagram.common.editparts.PrimaryShapeEditPart;
 import org.eclipse.uml2.diagram.common.editpolicies.CreationEditPolicyWithCustomReparent;
+import org.eclipse.uml2.diagram.common.editpolicies.UpdateDescriptionEditPolicy;
+import org.eclipse.uml2.diagram.common.genapi.IUpdaterLinkDescriptor;
+import org.eclipse.uml2.diagram.common.genapi.IUpdaterNodeDescriptor;
 import org.eclipse.uml2.diagram.profile.edit.policies.EnumerationItemSemanticEditPolicy;
 import org.eclipse.uml2.diagram.profile.edit.policies.UMLTextSelectionEditPolicy;
 import org.eclipse.uml2.diagram.profile.part.UMLDiagramUpdateCommand;
 import org.eclipse.uml2.diagram.profile.part.UMLDiagramUpdater;
-import org.eclipse.uml2.diagram.profile.part.UMLLinkDescriptor;
 import org.eclipse.uml2.diagram.profile.part.UMLVisualIDRegistry;
 import org.eclipse.uml2.diagram.profile.providers.UMLElementTypes;
 import org.eclipse.uml2.uml.Generalization;
@@ -88,6 +90,9 @@ public class EnumerationEditPart extends ShapeNodeEditPart implements PrimarySha
 	 * @generated
 	 */
 	protected void createDefaultEditPolicies() {
+		if (UMLVisualIDRegistry.isShortcutDescendant(getNotationView())) {
+			installEditPolicy(UpdateDescriptionEditPolicy.ROLE, new UpdateDescriptionEditPolicy(UMLDiagramUpdater.TYPED_ADAPTER, true));
+		}
 		installEditPolicy(EditPolicyRoles.CREATION_ROLE, new CreationEditPolicyWithCustomReparent(UMLVisualIDRegistry.TYPED_ADAPTER) {
 
 			public Command getCommand(Request request) {
@@ -110,6 +115,7 @@ public class EnumerationEditPart extends ShapeNodeEditPart implements PrimarySha
 		installEditPolicy(EditPolicy.LAYOUT_ROLE, createLayoutEditPolicy());
 		// XXX need an SCR to runtime to have another abstract superclass that would let children add reasonable editpolicies
 		// removeEditPolicy(org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles.CONNECTION_HANDLES_ROLE);
+
 	}
 
 	/**
@@ -367,7 +373,7 @@ public class EnumerationEditPart extends ShapeNodeEditPart implements PrimarySha
 	 */
 	protected void addSemanticListeners() {
 		super.addSemanticListeners();
-		for (UMLLinkDescriptor next : getEnumeration_2003ContainedLinks()) {
+		for (IUpdaterNodeDescriptor next : getEnumeration_2003ContainedLinks()) {
 			EObject nextLink = next.getModelElement();
 			if (nextLink == null) {
 				continue;
@@ -387,7 +393,7 @@ public class EnumerationEditPart extends ShapeNodeEditPart implements PrimarySha
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
-	private List<UMLLinkDescriptor> getEnumeration_2003ContainedLinks() {
+	private List<IUpdaterLinkDescriptor> getEnumeration_2003ContainedLinks() {
 		return UMLDiagramUpdater.getEnumeration_2003ContainedLinks(getNotationView());
 	}
 

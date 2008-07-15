@@ -42,12 +42,14 @@ import org.eclipse.swt.widgets.Display;
 import org.eclipse.uml2.diagram.common.draw2d.CenterLayout;
 import org.eclipse.uml2.diagram.common.editparts.PrimaryShapeEditPart;
 import org.eclipse.uml2.diagram.common.editpolicies.CreationEditPolicyWithCustomReparent;
+import org.eclipse.uml2.diagram.common.editpolicies.UpdateDescriptionEditPolicy;
+import org.eclipse.uml2.diagram.common.genapi.IUpdaterLinkDescriptor;
+import org.eclipse.uml2.diagram.common.genapi.IUpdaterNodeDescriptor;
 import org.eclipse.uml2.diagram.deploy.edit.policies.DeploymentSpecificationCanonicalEditPolicy;
 import org.eclipse.uml2.diagram.deploy.edit.policies.DeploymentSpecificationItemSemanticEditPolicy;
 import org.eclipse.uml2.diagram.deploy.edit.policies.UMLTextSelectionEditPolicy;
 import org.eclipse.uml2.diagram.deploy.part.UMLDiagramUpdateCommand;
 import org.eclipse.uml2.diagram.deploy.part.UMLDiagramUpdater;
-import org.eclipse.uml2.diagram.deploy.part.UMLLinkDescriptor;
 import org.eclipse.uml2.diagram.deploy.part.UMLVisualIDRegistry;
 import org.eclipse.uml2.diagram.deploy.providers.UMLElementTypes;
 import org.eclipse.uml2.uml.Manifestation;
@@ -89,6 +91,9 @@ public class DeploymentSpecificationEditPart extends ShapeNodeEditPart implement
 	 * @generated
 	 */
 	protected void createDefaultEditPolicies() {
+		if (UMLVisualIDRegistry.isShortcutDescendant(getNotationView())) {
+			installEditPolicy(UpdateDescriptionEditPolicy.ROLE, new UpdateDescriptionEditPolicy(UMLDiagramUpdater.TYPED_ADAPTER, true));
+		}
 		installEditPolicy(EditPolicyRoles.CREATION_ROLE, new CreationEditPolicyWithCustomReparent(UMLVisualIDRegistry.TYPED_ADAPTER) {
 
 			public Command getCommand(Request request) {
@@ -112,6 +117,7 @@ public class DeploymentSpecificationEditPart extends ShapeNodeEditPart implement
 		installEditPolicy(EditPolicy.LAYOUT_ROLE, createLayoutEditPolicy());
 		// XXX need an SCR to runtime to have another abstract superclass that would let children add reasonable editpolicies
 		// removeEditPolicy(org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles.CONNECTION_HANDLES_ROLE);
+
 	}
 
 	/**
@@ -369,7 +375,7 @@ public class DeploymentSpecificationEditPart extends ShapeNodeEditPart implement
 	 */
 	protected void addSemanticListeners() {
 		super.addSemanticListeners();
-		for (UMLLinkDescriptor next : getDeploymentSpecification_2007ContainedLinks()) {
+		for (IUpdaterNodeDescriptor next : getDeploymentSpecification_2007ContainedLinks()) {
 			EObject nextLink = next.getModelElement();
 			if (nextLink == null) {
 				continue;
@@ -389,7 +395,7 @@ public class DeploymentSpecificationEditPart extends ShapeNodeEditPart implement
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
-	private List<UMLLinkDescriptor> getDeploymentSpecification_2007ContainedLinks() {
+	private List<IUpdaterLinkDescriptor> getDeploymentSpecification_2007ContainedLinks() {
 		return UMLDiagramUpdater.getDeploymentSpecification_2007ContainedLinks(getNotationView());
 	}
 

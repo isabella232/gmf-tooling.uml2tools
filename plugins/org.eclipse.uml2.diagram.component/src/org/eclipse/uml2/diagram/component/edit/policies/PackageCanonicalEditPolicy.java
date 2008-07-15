@@ -35,6 +35,9 @@ import org.eclipse.gmf.runtime.notation.Node;
 import org.eclipse.gmf.runtime.notation.Ratio;
 import org.eclipse.gmf.runtime.notation.Size;
 import org.eclipse.gmf.runtime.notation.View;
+import org.eclipse.uml2.diagram.common.editpolicies.UpdateDescriptionRequest;
+import org.eclipse.uml2.diagram.common.genapi.IUpdaterLinkDescriptor;
+import org.eclipse.uml2.diagram.common.genapi.IUpdaterNodeDescriptor;
 import org.eclipse.uml2.diagram.component.edit.parts.Artifact2EditPart;
 import org.eclipse.uml2.diagram.component.edit.parts.ArtifactEditPart;
 import org.eclipse.uml2.diagram.component.edit.parts.AssemblyConnectorCircleEditPart;
@@ -65,8 +68,6 @@ import org.eclipse.uml2.diagram.component.edit.parts.PropertyEditPart;
 import org.eclipse.uml2.diagram.component.links.UMLInterfaceLinkManager;
 import org.eclipse.uml2.diagram.component.part.UMLDiagramEditorPlugin;
 import org.eclipse.uml2.diagram.component.part.UMLDiagramUpdater;
-import org.eclipse.uml2.diagram.component.part.UMLLinkDescriptor;
-import org.eclipse.uml2.diagram.component.part.UMLNodeDescriptor;
 import org.eclipse.uml2.diagram.component.part.UMLVisualIDRegistry;
 import org.eclipse.uml2.uml.UMLPackage;
 
@@ -87,7 +88,7 @@ public class PackageCanonicalEditPolicy extends CanonicalConnectionEditPolicy {
 		View viewObject = (View) getHost().getModel();
 		List result = new LinkedList();
 		for (Iterator it = UMLDiagramUpdater.getSemanticChildren(viewObject).iterator(); it.hasNext();) {
-			result.add(((UMLNodeDescriptor) it.next()).getModelElement());
+			result.add(((IUpdaterNodeDescriptor) it.next()).getModelElement());
 		}
 		return result;
 	}
@@ -288,11 +289,15 @@ public class PackageCanonicalEditPolicy extends CanonicalConnectionEditPolicy {
 			EObject diagramLinkObject = nextDiagramLink.getElement();
 			EObject diagramLinkSrc = nextDiagramLink.getSource().getElement();
 			EObject diagramLinkDst = nextDiagramLink.getTarget().getElement();
+			boolean existingLinkRemoved = false;
 			for (Iterator LinkDescriptorsIterator = linkDescriptors.iterator(); LinkDescriptorsIterator.hasNext();) {
-				UMLLinkDescriptor nextLinkDescriptor = (UMLLinkDescriptor) LinkDescriptorsIterator.next();
+				IUpdaterLinkDescriptor nextLinkDescriptor = (IUpdaterLinkDescriptor) LinkDescriptorsIterator.next();
 				if (diagramLinkObject == nextLinkDescriptor.getModelElement() && diagramLinkSrc == nextLinkDescriptor.getSource() && diagramLinkDst == nextLinkDescriptor.getDestination()
 						&& diagramLinkVisualID == nextLinkDescriptor.getVisualID()) {
-					linksIterator.remove();
+					if (!existingLinkRemoved) {
+						linksIterator.remove();
+						existingLinkRemoved = true;
+					}
 					LinkDescriptorsIterator.remove();
 				}
 			}
@@ -315,8 +320,8 @@ public class PackageCanonicalEditPolicy extends CanonicalConnectionEditPolicy {
 	 * @generated
 	 */
 	private Collection collectAllLinksGen(View view, Domain2Notation domain2NotationMap) {
-		if (!PackageEditPart.MODEL_ID.equals(UMLVisualIDRegistry.getModelID(view))) {
-			return Collections.EMPTY_LIST;
+		if (UMLVisualIDRegistry.isShortcutDescendant(view)) {
+			return collectLinksOutgoingFromShortcut(view, domain2NotationMap);
 		}
 		Collection result = new LinkedList();
 		switch (UMLVisualIDRegistry.getVisualID(view)) {
@@ -525,7 +530,7 @@ public class PackageCanonicalEditPolicy extends CanonicalConnectionEditPolicy {
 	private Collection createConnections(Collection linkDescriptors, Domain2Notation domain2NotationMap) {
 		List adapters = new LinkedList();
 		for (Iterator linkDescriptorsIterator = linkDescriptors.iterator(); linkDescriptorsIterator.hasNext();) {
-			final UMLLinkDescriptor nextLinkDescriptor = (UMLLinkDescriptor) linkDescriptorsIterator.next();
+			final IUpdaterLinkDescriptor nextLinkDescriptor = (IUpdaterLinkDescriptor) linkDescriptorsIterator.next();
 			EditPart sourceEditPart = getSourceEditPart(nextLinkDescriptor, domain2NotationMap);
 			EditPart targetEditPart = getTargetEditPart(nextLinkDescriptor, domain2NotationMap);
 			if (sourceEditPart == null || targetEditPart == null) {
@@ -565,14 +570,14 @@ public class PackageCanonicalEditPolicy extends CanonicalConnectionEditPolicy {
 	/**
 	 * @generated
 	 */
-	private EditPart getSourceEditPart(UMLLinkDescriptor descriptor, Domain2Notation domain2NotationMap) {
+	private EditPart getSourceEditPart(IUpdaterLinkDescriptor descriptor, Domain2Notation domain2NotationMap) {
 		return getEditPart(descriptor.getSource(), domain2NotationMap);
 	}
 
 	/**
 	 * @generated
 	 */
-	private EditPart getTargetEditPart(UMLLinkDescriptor descriptor, Domain2Notation domain2NotationMap) {
+	private EditPart getTargetEditPart(IUpdaterLinkDescriptor descriptor, Domain2Notation domain2NotationMap) {
 		return getEditPart(descriptor.getDestination(), domain2NotationMap);
 	}
 
@@ -592,6 +597,34 @@ public class PackageCanonicalEditPolicy extends CanonicalConnectionEditPolicy {
 	 */
 	private boolean isNotationOnlyEdge(Edge edge) {
 		return false;
+	}
+
+	/**
+	 * @generated
+	 */
+	private Collection<IUpdaterLinkDescriptor> collectLinksOutgoingFromShortcut(View view, Domain2Notation domain2NotationMap) {
+		EditPart ep = (EditPart) getHost().getViewer().getEditPartRegistry().get(view);
+		if (false == ep instanceof IGraphicalEditPart) {
+			return Collections.emptyList();
+		}
+		IGraphicalEditPart editPart = (IGraphicalEditPart) ep;
+		UpdateDescriptionRequest request = new UpdateDescriptionRequest();
+		//we are not using the result command -- each editpart from the tree 
+		//is required to push data into the request
+		editPart.getCommand(request);
+
+		Set<IUpdaterLinkDescriptor> linksToFromShortcuts = new HashSet<IUpdaterLinkDescriptor>();
+		for (UpdateDescriptionRequest.Descriptor next : request.getDescriptions()) {
+			linksToFromShortcuts.addAll(next.getContainedLinks());
+			linksToFromShortcuts.addAll(next.getOutgoingLinks());
+
+			if (next.getSemanticElement() != null) {
+				domain2NotationMap.put(next.getSemanticElement(), next.getProvider().getNotationView());
+			}
+
+		}
+
+		return linksToFromShortcuts;
 	}
 
 	/**

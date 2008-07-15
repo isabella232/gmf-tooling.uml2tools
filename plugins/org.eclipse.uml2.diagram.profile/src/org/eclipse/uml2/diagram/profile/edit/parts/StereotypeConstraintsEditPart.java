@@ -10,9 +10,11 @@ import org.eclipse.gmf.runtime.diagram.ui.editpolicies.ResizableCompartmentEditP
 import org.eclipse.gmf.runtime.diagram.ui.figures.ResizableCompartmentFigure;
 import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.uml2.diagram.common.editpolicies.CreationEditPolicyWithCustomReparent;
+import org.eclipse.uml2.diagram.common.editpolicies.UpdateDescriptionEditPolicy;
 import org.eclipse.uml2.diagram.profile.edit.policies.StereotypeConstraintsCanonicalEditPolicy;
 import org.eclipse.uml2.diagram.profile.edit.policies.StereotypeConstraintsItemSemanticEditPolicy;
 import org.eclipse.uml2.diagram.profile.part.Messages;
+import org.eclipse.uml2.diagram.profile.part.UMLDiagramUpdater;
 import org.eclipse.uml2.diagram.profile.part.UMLVisualIDRegistry;
 
 /**
@@ -65,6 +67,10 @@ public class StereotypeConstraintsEditPart extends ListCompartmentEditPart {
 		installEditPolicy(EditPolicyRoles.CREATION_ROLE, new CreationEditPolicyWithCustomReparent(UMLVisualIDRegistry.TYPED_ADAPTER));
 		installEditPolicy(EditPolicyRoles.DRAG_DROP_ROLE, new DragDropEditPolicy());
 		installEditPolicy(EditPolicyRoles.CANONICAL_ROLE, new StereotypeConstraintsCanonicalEditPolicy());
+		if (UMLVisualIDRegistry.isShortcutDescendant(getNotationView())) {
+			installEditPolicy(UpdateDescriptionEditPolicy.ROLE, new UpdateDescriptionEditPolicy(UMLDiagramUpdater.TYPED_ADAPTER, false));
+		}
+
 	}
 
 	/**

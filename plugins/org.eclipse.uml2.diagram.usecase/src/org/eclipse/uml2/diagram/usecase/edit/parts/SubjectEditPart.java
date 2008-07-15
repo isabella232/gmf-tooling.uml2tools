@@ -6,7 +6,6 @@ import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
-import org.eclipse.draw2d.ColorConstants;
 import org.eclipse.draw2d.IFigure;
 import org.eclipse.draw2d.Label;
 import org.eclipse.draw2d.MarginBorder;
@@ -39,10 +38,12 @@ import org.eclipse.swt.widgets.Display;
 import org.eclipse.uml2.diagram.common.draw2d.CenterLayout;
 import org.eclipse.uml2.diagram.common.draw2d.PileLayout;
 import org.eclipse.uml2.diagram.common.editparts.PrimaryShapeEditPart;
+import org.eclipse.uml2.diagram.common.editpolicies.UpdateDescriptionEditPolicy;
+import org.eclipse.uml2.diagram.common.genapi.IUpdaterLinkDescriptor;
+import org.eclipse.uml2.diagram.common.genapi.IUpdaterNodeDescriptor;
 import org.eclipse.uml2.diagram.usecase.edit.policies.SubjectItemSemanticEditPolicy;
 import org.eclipse.uml2.diagram.usecase.part.UMLDiagramUpdateCommand;
 import org.eclipse.uml2.diagram.usecase.part.UMLDiagramUpdater;
-import org.eclipse.uml2.diagram.usecase.part.UMLLinkDescriptor;
 import org.eclipse.uml2.diagram.usecase.part.UMLVisualIDRegistry;
 import org.eclipse.uml2.uml.Generalization;
 import org.eclipse.uml2.uml.UMLPackage;
@@ -83,11 +84,15 @@ public class SubjectEditPart extends ShapeNodeEditPart implements PrimaryShapeEd
 	 * @generated
 	 */
 	protected void createDefaultEditPolicies() {
+		if (UMLVisualIDRegistry.isShortcutDescendant(getNotationView())) {
+			installEditPolicy(UpdateDescriptionEditPolicy.ROLE, new UpdateDescriptionEditPolicy(UMLDiagramUpdater.TYPED_ADAPTER, true));
+		}
 		super.createDefaultEditPolicies();
 		installEditPolicy(EditPolicyRoles.SEMANTIC_ROLE, new SubjectItemSemanticEditPolicy());
 		installEditPolicy(EditPolicy.LAYOUT_ROLE, createLayoutEditPolicy());
 		// XXX need an SCR to runtime to have another abstract superclass that would let children add reasonable editpolicies
 		// removeEditPolicy(org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles.CONNECTION_HANDLES_ROLE);
+
 	}
 
 	/**
@@ -351,7 +356,7 @@ public class SubjectEditPart extends ShapeNodeEditPart implements PrimaryShapeEd
 	 */
 	protected void addSemanticListeners() {
 		super.addSemanticListeners();
-		for (UMLLinkDescriptor next : getComponent_2006ContainedLinks()) {
+		for (IUpdaterNodeDescriptor next : getComponent_2006ContainedLinks()) {
 			EObject nextLink = next.getModelElement();
 			if (nextLink == null) {
 				continue;
@@ -371,7 +376,7 @@ public class SubjectEditPart extends ShapeNodeEditPart implements PrimaryShapeEd
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
-	private List<UMLLinkDescriptor> getComponent_2006ContainedLinks() {
+	private List<IUpdaterLinkDescriptor> getComponent_2006ContainedLinks() {
 		return UMLDiagramUpdater.getComponent_2006ContainedLinks(getNotationView());
 	}
 

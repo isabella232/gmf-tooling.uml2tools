@@ -306,3 +306,8 @@
 		«targetDef.proceed()»«-»
 	«ENDIF-»
 «ENDAROUND»
+
+«AROUND impl::diagram::editparts::NodeEditPart::createDefaultEditPoliciesBody FOR gmfgen::GenNode-»
+	«EXPAND aspects::impl::diagram::editparts::updateDescriptionEditPolicy::installUpdateDescriptionEditPolicy-»
+	«targetDef.proceed()»
+«ENDAROUND»

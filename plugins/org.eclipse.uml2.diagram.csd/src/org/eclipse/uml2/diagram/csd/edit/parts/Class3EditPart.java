@@ -41,11 +41,13 @@ import org.eclipse.gmf.runtime.gef.ui.figures.NodeFigure;
 import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.uml2.diagram.common.editparts.PrimaryShapeEditPart;
 import org.eclipse.uml2.diagram.common.editpolicies.CreationEditPolicyWithCustomReparent;
+import org.eclipse.uml2.diagram.common.editpolicies.UpdateDescriptionEditPolicy;
+import org.eclipse.uml2.diagram.common.genapi.IUpdaterLinkDescriptor;
+import org.eclipse.uml2.diagram.common.genapi.IUpdaterNodeDescriptor;
 import org.eclipse.uml2.diagram.csd.edit.policies.Class3CanonicalEditPolicy;
 import org.eclipse.uml2.diagram.csd.edit.policies.Class3ItemSemanticEditPolicy;
 import org.eclipse.uml2.diagram.csd.part.UMLDiagramUpdateCommand;
 import org.eclipse.uml2.diagram.csd.part.UMLDiagramUpdater;
-import org.eclipse.uml2.diagram.csd.part.UMLLinkDescriptor;
 import org.eclipse.uml2.diagram.csd.part.UMLVisualIDRegistry;
 import org.eclipse.uml2.uml.InterfaceRealization;
 import org.eclipse.uml2.uml.UMLPackage;
@@ -86,6 +88,9 @@ public class Class3EditPart extends AbstractBorderedShapeEditPart implements Pri
 	 * @generated
 	 */
 	protected void createDefaultEditPolicies() {
+		if (UMLVisualIDRegistry.isShortcutDescendant(getNotationView())) {
+			installEditPolicy(UpdateDescriptionEditPolicy.ROLE, new UpdateDescriptionEditPolicy(UMLDiagramUpdater.TYPED_ADAPTER, true));
+		}
 		installEditPolicy(EditPolicyRoles.CREATION_ROLE, new CreationEditPolicyWithCustomReparent(UMLVisualIDRegistry.TYPED_ADAPTER));
 		super.createDefaultEditPolicies();
 		installEditPolicy(EditPolicyRoles.SEMANTIC_ROLE, new Class3ItemSemanticEditPolicy());
@@ -94,6 +99,7 @@ public class Class3EditPart extends AbstractBorderedShapeEditPart implements Pri
 		installEditPolicy(EditPolicy.LAYOUT_ROLE, createLayoutEditPolicy());
 		// XXX need an SCR to runtime to have another abstract superclass that would let children add reasonable editpolicies
 		// removeEditPolicy(org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles.CONNECTION_HANDLES_ROLE);
+
 	}
 
 	/**
@@ -467,7 +473,7 @@ public class Class3EditPart extends AbstractBorderedShapeEditPart implements Pri
 	 */
 	protected void addSemanticListeners() {
 		super.addSemanticListeners();
-		for (UMLLinkDescriptor next : getClass_2007ContainedLinks()) {
+		for (IUpdaterNodeDescriptor next : getClass_2007ContainedLinks()) {
 			EObject nextLink = next.getModelElement();
 			if (nextLink == null) {
 				continue;
@@ -487,7 +493,7 @@ public class Class3EditPart extends AbstractBorderedShapeEditPart implements Pri
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
-	private List<UMLLinkDescriptor> getClass_2007ContainedLinks() {
+	private List<IUpdaterLinkDescriptor> getClass_2007ContainedLinks() {
 		return UMLDiagramUpdater.getClass_2007ContainedLinks(getNotationView());
 	}
 

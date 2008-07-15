@@ -44,12 +44,14 @@ import org.eclipse.uml2.diagram.clazz.edit.policies.Interface2ItemSemanticEditPo
 import org.eclipse.uml2.diagram.clazz.edit.policies.UMLTextSelectionEditPolicy;
 import org.eclipse.uml2.diagram.clazz.part.UMLDiagramUpdateCommand;
 import org.eclipse.uml2.diagram.clazz.part.UMLDiagramUpdater;
-import org.eclipse.uml2.diagram.clazz.part.UMLLinkDescriptor;
 import org.eclipse.uml2.diagram.clazz.part.UMLVisualIDRegistry;
 import org.eclipse.uml2.diagram.clazz.providers.UMLElementTypes;
 import org.eclipse.uml2.diagram.common.draw2d.CenterLayout;
 import org.eclipse.uml2.diagram.common.editparts.PrimaryShapeEditPart;
 import org.eclipse.uml2.diagram.common.editpolicies.CreationEditPolicyWithCustomReparent;
+import org.eclipse.uml2.diagram.common.editpolicies.UpdateDescriptionEditPolicy;
+import org.eclipse.uml2.diagram.common.genapi.IUpdaterLinkDescriptor;
+import org.eclipse.uml2.diagram.common.genapi.IUpdaterNodeDescriptor;
 import org.eclipse.uml2.uml.Generalization;
 import org.eclipse.uml2.uml.TemplateBinding;
 import org.eclipse.uml2.uml.UMLPackage;
@@ -90,6 +92,9 @@ public class Interface2EditPart extends ShapeNodeEditPart implements PrimaryShap
 	 * @generated
 	 */
 	protected void createDefaultEditPolicies() {
+		if (UMLVisualIDRegistry.isShortcutDescendant(getNotationView())) {
+			installEditPolicy(UpdateDescriptionEditPolicy.ROLE, new UpdateDescriptionEditPolicy(UMLDiagramUpdater.TYPED_ADAPTER, true));
+		}
 		installEditPolicy(EditPolicyRoles.CREATION_ROLE, new CreationEditPolicyWithCustomReparent(UMLVisualIDRegistry.TYPED_ADAPTER) {
 
 			public Command getCommand(Request request) {
@@ -120,6 +125,7 @@ public class Interface2EditPart extends ShapeNodeEditPart implements PrimaryShap
 		installEditPolicy(EditPolicy.LAYOUT_ROLE, createLayoutEditPolicy());
 		// XXX need an SCR to runtime to have another abstract superclass that would let children add reasonable editpolicies
 		// removeEditPolicy(org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles.CONNECTION_HANDLES_ROLE);
+
 	}
 
 	/**
@@ -417,7 +423,7 @@ public class Interface2EditPart extends ShapeNodeEditPart implements PrimaryShap
 	 */
 	protected void addSemanticListeners() {
 		super.addSemanticListeners();
-		for (UMLLinkDescriptor next : getInterface_2013ContainedLinks()) {
+		for (IUpdaterNodeDescriptor next : getInterface_2013ContainedLinks()) {
 			EObject nextLink = next.getModelElement();
 			if (nextLink == null) {
 				continue;
@@ -445,7 +451,7 @@ public class Interface2EditPart extends ShapeNodeEditPart implements PrimaryShap
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
-	private List<UMLLinkDescriptor> getInterface_2013ContainedLinks() {
+	private List<IUpdaterLinkDescriptor> getInterface_2013ContainedLinks() {
 		return UMLDiagramUpdater.getInterface_2013ContainedLinks(getNotationView());
 	}
 

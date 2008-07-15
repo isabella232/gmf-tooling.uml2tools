@@ -39,8 +39,11 @@ import org.eclipse.uml2.diagram.activity.edit.policies.ConditionalNode2Canonical
 import org.eclipse.uml2.diagram.activity.edit.policies.ConditionalNode2ItemSemanticEditPolicy;
 import org.eclipse.uml2.diagram.activity.part.UMLDiagramUpdateCommand;
 import org.eclipse.uml2.diagram.activity.part.UMLDiagramUpdater;
-import org.eclipse.uml2.diagram.activity.part.UMLLinkDescriptor;
+import org.eclipse.uml2.diagram.activity.part.UMLVisualIDRegistry;
 import org.eclipse.uml2.diagram.common.editparts.PrimaryShapeEditPart;
+import org.eclipse.uml2.diagram.common.editpolicies.UpdateDescriptionEditPolicy;
+import org.eclipse.uml2.diagram.common.genapi.IUpdaterLinkDescriptor;
+import org.eclipse.uml2.diagram.common.genapi.IUpdaterNodeDescriptor;
 import org.eclipse.uml2.uml.ExceptionHandler;
 import org.eclipse.uml2.uml.UMLPackage;
 
@@ -80,12 +83,16 @@ public class ConditionalNode2EditPart extends ShapeNodeEditPart implements Prima
 	 * @generated
 	 */
 	protected void createDefaultEditPolicies() {
+		if (UMLVisualIDRegistry.isShortcutDescendant(getNotationView())) {
+			installEditPolicy(UpdateDescriptionEditPolicy.ROLE, new UpdateDescriptionEditPolicy(UMLDiagramUpdater.TYPED_ADAPTER, true));
+		}
 		super.createDefaultEditPolicies();
 		installEditPolicy(EditPolicyRoles.SEMANTIC_ROLE, new ConditionalNode2ItemSemanticEditPolicy());
 		installEditPolicy(EditPolicyRoles.CANONICAL_ROLE, new ConditionalNode2CanonicalEditPolicy());
 		installEditPolicy(EditPolicy.LAYOUT_ROLE, createLayoutEditPolicy());
 		// XXX need an SCR to runtime to have another abstract superclass that would let children add reasonable editpolicies
 		// removeEditPolicy(org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles.CONNECTION_HANDLES_ROLE);
+
 	}
 
 	/**
@@ -339,7 +346,7 @@ public class ConditionalNode2EditPart extends ShapeNodeEditPart implements Prima
 	 */
 	protected void addSemanticListeners() {
 		super.addSemanticListeners();
-		for (UMLLinkDescriptor next : getConditionalNode_3083ContainedLinks()) {
+		for (IUpdaterNodeDescriptor next : getConditionalNode_3083ContainedLinks()) {
 			EObject nextLink = next.getModelElement();
 			if (nextLink == null) {
 				continue;
@@ -359,7 +366,7 @@ public class ConditionalNode2EditPart extends ShapeNodeEditPart implements Prima
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
-	private List<UMLLinkDescriptor> getConditionalNode_3083ContainedLinks() {
+	private List<IUpdaterLinkDescriptor> getConditionalNode_3083ContainedLinks() {
 		return UMLDiagramUpdater.getConditionalNode_3083ContainedLinks(getNotationView());
 	}
 
