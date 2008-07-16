@@ -7,6 +7,7 @@ import java.util.HashMap;
 import java.util.Iterator;
 
 import org.eclipse.core.resources.IFile;
+import org.eclipse.core.runtime.IAdaptable;
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.edit.domain.AdapterFactoryEditingDomain;
@@ -217,6 +218,17 @@ public class UMLNavigatorContentProvider implements ICommonContentProvider {
 			return getViewChildren(navigatorItem.getView(), parentElement);
 		}
 
+		/*
+		 * Due to plugin.xml restrictions this code will be called only for views representing
+		 * shortcuts to this diagram elements created on other diagrams. 
+		 */
+		if (parentElement instanceof IAdaptable) {
+			View view = (View) ((IAdaptable) parentElement).getAdapter(View.class);
+			if (view != null) {
+				return getViewChildren(view, parentElement);
+			}
+		}
+
 		return EMPTY_ARRAY;
 	}
 
@@ -228,6 +240,7 @@ public class UMLNavigatorContentProvider implements ICommonContentProvider {
 
 		case PackageEditPart.VISUAL_ID: {
 			Collection result = new ArrayList();
+			result.addAll(getForeignShortcuts((Diagram) view, parentElement));
 			UMLNavigatorGroup links = new UMLNavigatorGroup(Messages.NavigatorGroupName_Package_1000_links, "icons/linksNavigatorGroup.gif", parentElement); //$NON-NLS-1$
 			Collection connectedViews = getChildrenByType(Collections.singleton(view), DiagramHeaderEditPart.VISUAL_ID);
 			result.addAll(createNavigatorItems(connectedViews, parentElement, false));
@@ -1016,6 +1029,20 @@ public class UMLNavigatorContentProvider implements ICommonContentProvider {
 			result.add(new UMLNavigatorItem((View) it.next(), parent, isLeafs));
 		}
 		return result;
+	}
+
+	/**
+	 * @generated
+	 */
+	private Collection getForeignShortcuts(Diagram diagram, Object parent) {
+		Collection result = new ArrayList();
+		for (Iterator it = diagram.getChildren().iterator(); it.hasNext();) {
+			View nextView = (View) it.next();
+			if (!isOwnView(nextView) && nextView.getEAnnotation("Shortcut") != null) { //$NON-NLS-1$
+				result.add(nextView);
+			}
+		}
+		return createNavigatorItems(result, parent, false);
 	}
 
 	/**
