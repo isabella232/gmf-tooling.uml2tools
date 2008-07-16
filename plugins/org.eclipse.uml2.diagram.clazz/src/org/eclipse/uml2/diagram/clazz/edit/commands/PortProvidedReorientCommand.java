@@ -4,11 +4,13 @@ import org.eclipse.core.commands.ExecutionException;
 import org.eclipse.core.runtime.IAdaptable;
 import org.eclipse.core.runtime.IProgressMonitor;
 import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.edit.domain.AdapterFactoryEditingDomain;
 import org.eclipse.gmf.runtime.common.core.command.CommandResult;
 import org.eclipse.gmf.runtime.emf.type.core.commands.EditElementCommand;
 import org.eclipse.gmf.runtime.emf.type.core.requests.ReorientReferenceRelationshipRequest;
 import org.eclipse.gmf.runtime.emf.type.core.requests.ReorientRelationshipRequest;
 import org.eclipse.uml2.diagram.clazz.edit.policies.UMLBaseItemSemanticEditPolicy;
+import org.eclipse.uml2.diagram.common.commands.ProvidedPortLinkHelper;
 import org.eclipse.uml2.uml.Interface;
 import org.eclipse.uml2.uml.Port;
 
@@ -36,9 +38,14 @@ public class PortProvidedReorientCommand extends EditElementCommand {
 	 * @generated
 	 */
 	private final EObject newEnd;
+	
+	/**
+	 * @NOT generated
+	 */
+	private final ProvidedPortLinkHelper myLinkHelper;
 
 	/**
-	 * @generated
+	 * @generated NOT
 	 */
 	public PortProvidedReorientCommand(ReorientReferenceRelationshipRequest request) {
 		super(request.getLabel(), null, request);
@@ -46,6 +53,7 @@ public class PortProvidedReorientCommand extends EditElementCommand {
 		referenceOwner = request.getReferenceOwner();
 		oldEnd = request.getOldRelationshipEnd();
 		newEnd = request.getNewRelationshipEnd();
+		myLinkHelper = new ProvidedPortLinkHelper((AdapterFactoryEditingDomain) getEditingDomain(), referenceOwner, oldEnd);
 	}
 
 	/**
@@ -67,7 +75,7 @@ public class PortProvidedReorientCommand extends EditElementCommand {
 	/**
 	 * @generated
 	 */
-	protected boolean canReorientSource() {
+	protected boolean canReorientSourceGen() {
 		if (!(oldEnd instanceof Interface && newEnd instanceof Port)) {
 			return false;
 		}
@@ -75,13 +83,27 @@ public class PortProvidedReorientCommand extends EditElementCommand {
 	}
 
 	/**
+	 * @generated NOT
+	 */
+	protected boolean canReorientSource() {
+		return canReorientSourceGen() && myLinkHelper.canReorientSource(getNewSource());
+	}
+
+	/**
 	 * @generated
 	 */
-	protected boolean canReorientTarget() {
+	protected boolean canReorientTargetGen() {
 		if (!(oldEnd instanceof Interface && newEnd instanceof Interface)) {
 			return false;
 		}
 		return UMLBaseItemSemanticEditPolicy.LinkConstraints.canExistPortProvided_4017(getOldSource(), getNewTarget());
+	}
+
+	/**
+	 * @generated NOT
+	 */
+	protected boolean canReorientTarget() {
+		return canReorientTargetGen() && myLinkHelper.canReorientTarget(getNewTarget());
 	}
 
 	/**
@@ -101,23 +123,21 @@ public class PortProvidedReorientCommand extends EditElementCommand {
 	}
 
 	/**
-	 * @generated
+	 * @generated NOT
 	 */
 	protected CommandResult reorientSource() throws ExecutionException {
-		getOldSource().getProvideds().remove(getOldTarget());
-		getNewSource().getProvideds().add(getOldTarget());
+		myLinkHelper.reorientSource(getNewSource());
 		return CommandResult.newOKCommandResult(referenceOwner);
 	}
 
 	/**
-	 * @generated
+	 * @generated NOT
 	 */
 	protected CommandResult reorientTarget() throws ExecutionException {
-		getOldSource().getProvideds().remove(getOldTarget());
-		getOldSource().getProvideds().add(getNewTarget());
+		myLinkHelper.reorientTarget(getNewTarget());
 		return CommandResult.newOKCommandResult(referenceOwner);
 	}
-
+	
 	/**
 	 * @generated
 	 */
@@ -145,4 +165,5 @@ public class PortProvidedReorientCommand extends EditElementCommand {
 	protected Interface getNewTarget() {
 		return (Interface) newEnd;
 	}
+	
 }
