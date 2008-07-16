@@ -2,7 +2,7 @@
 <feature
       id="org.eclipse.uml2.diagram"
       label="%featureName"
-      version="0.8.0.qualifier"
+      version="0.8.1.qualifier"
       provider-name="%providerName"
       image="eclipse_update_120.jpg">
 
@@ -113,27 +113,6 @@
 
    <plugin
          id="org.eclipse.uml2.diagram.usecase"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         unpack="false"/>
-
-   <plugin
-         id="org.eclipse.uml2.diagram.codegen"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         unpack="false"/>
-
-   <plugin
-         id="org.eclipse.uml2.diagram.codegen.edit"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         unpack="false"/>
-
-   <plugin
-         id="org.eclipse.uml2.diagram.def"
          download-size="0"
          install-size="0"
          version="0.0.0"
