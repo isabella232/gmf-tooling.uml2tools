@@ -72,32 +72,36 @@ public class UMLModelingAssistantProvider extends ModelingAssistantProvider {
 	/**
 	 * @generated
 	 */
-	public List getTypesForPopupBarGen(IAdaptable host) {
+	public List<?> getTypesForPopupBarGen(IAdaptable host) {
 		IGraphicalEditPart editPart = (IGraphicalEditPart) host.getAdapter(IGraphicalEditPart.class);
+
 		if (editPart instanceof StateMachine2EditPart) {
-			List types = new ArrayList();
+			List<IElementType> types = new ArrayList<IElementType>();
 			types.add(UMLElementTypes.Region_3013);
 			types.add(UMLElementTypes.Pseudostate_3014);
 			types.add(UMLElementTypes.Pseudostate_3015);
 			return types;
 		}
+
 		if (editPart instanceof StateEditPart) {
-			List types = new ArrayList();
+			List<IElementType> types = new ArrayList<IElementType>();
 			types.add(UMLElementTypes.Behavior_3019);
 			types.add(UMLElementTypes.Behavior_3020);
 			types.add(UMLElementTypes.Behavior_3021);
 			return types;
 		}
+
 		if (editPart instanceof State2EditPart) {
-			List types = new ArrayList();
+			List<IElementType> types = new ArrayList<IElementType>();
 			types.add(UMLElementTypes.Region_3002);
 			types.add(UMLElementTypes.Behavior_3019);
 			types.add(UMLElementTypes.Behavior_3020);
 			types.add(UMLElementTypes.Behavior_3021);
 			return types;
 		}
+
 		if (editPart instanceof State3EditPart) {
-			List types = new ArrayList();
+			List<IElementType> types = new ArrayList<IElementType>();
 			types.add(UMLElementTypes.Region_3002);
 			types.add(UMLElementTypes.ConnectionPointReference_3017);
 			types.add(UMLElementTypes.ConnectionPointReference_3018);
@@ -106,8 +110,9 @@ public class UMLModelingAssistantProvider extends ModelingAssistantProvider {
 			types.add(UMLElementTypes.Behavior_3021);
 			return types;
 		}
+
 		if (editPart instanceof RegionSubverticesEditPart) {
-			List types = new ArrayList();
+			List<IElementType> types = new ArrayList<IElementType>();
 			types.add(UMLElementTypes.State_3001);
 			types.add(UMLElementTypes.State_3012);
 			types.add(UMLElementTypes.State_3016);
@@ -122,8 +127,9 @@ public class UMLModelingAssistantProvider extends ModelingAssistantProvider {
 			types.add(UMLElementTypes.Pseudostate_3011);
 			return types;
 		}
+
 		if (editPart instanceof RegionSubvertices2EditPart) {
-			List types = new ArrayList();
+			List<IElementType> types = new ArrayList<IElementType>();
 			types.add(UMLElementTypes.State_3001);
 			types.add(UMLElementTypes.State_3012);
 			types.add(UMLElementTypes.State_3016);
@@ -138,12 +144,8 @@ public class UMLModelingAssistantProvider extends ModelingAssistantProvider {
 			types.add(UMLElementTypes.Pseudostate_3011);
 			return types;
 		}
-		if (editPart instanceof StateMachineEditPart) {
-			List types = new ArrayList();
-			types.add(UMLElementTypes.StateMachine_2004);
-			return types;
-		}
-		return Collections.EMPTY_LIST;
+
+		return Collections.emptyList();
 	}
 
 	/**

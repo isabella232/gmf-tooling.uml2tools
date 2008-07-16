@@ -62,10 +62,11 @@ public class UMLModelingAssistantProvider extends ModelingAssistantProvider {
 	/**
 	 * @generated
 	 */
-	public List getTypesForPopupBar(IAdaptable host) {
+	public List<?> getTypesForPopupBar(IAdaptable host) {
 		IGraphicalEditPart editPart = (IGraphicalEditPart) host.getAdapter(IGraphicalEditPart.class);
+
 		if (editPart instanceof ActivityEditPart) {
-			List types = new ArrayList();
+			List<IElementType> types = new ArrayList<IElementType>();
 			types.add(UMLElementTypes.AcceptEventAction_3030);
 			types.add(UMLElementTypes.AcceptEventAction_3031);
 			types.add(UMLElementTypes.ActivityFinalNode_3032);
@@ -93,78 +94,91 @@ public class UMLModelingAssistantProvider extends ModelingAssistantProvider {
 			types.add(UMLElementTypes.ExpansionRegion_3084);
 			return types;
 		}
+
 		if (editPart instanceof ConstraintEditPart) {
-			List types = new ArrayList();
+			List<IElementType> types = new ArrayList<IElementType>();
 			types.add(UMLElementTypes.LiteralString_3049);
 			return types;
 		}
+
 		if (editPart instanceof Constraint2EditPart) {
-			List types = new ArrayList();
+			List<IElementType> types = new ArrayList<IElementType>();
 			types.add(UMLElementTypes.LiteralString_3051);
 			return types;
 		}
+
 		if (editPart instanceof OpaqueActionEditPart) {
-			List types = new ArrayList();
+			List<IElementType> types = new ArrayList<IElementType>();
 			types.add(UMLElementTypes.OutputPin_3001);
 			return types;
 		}
+
 		if (editPart instanceof CreateObjectActionEditPart) {
-			List types = new ArrayList();
+			List<IElementType> types = new ArrayList<IElementType>();
 			types.add(UMLElementTypes.OutputPin_3002);
 			return types;
 		}
+
 		if (editPart instanceof AddStructuralFeatureValueActionEditPart) {
-			List types = new ArrayList();
+			List<IElementType> types = new ArrayList<IElementType>();
 			types.add(UMLElementTypes.InputPin_3003);
 			types.add(UMLElementTypes.InputPin_3004);
 			types.add(UMLElementTypes.InputPin_3005);
 			return types;
 		}
+
 		if (editPart instanceof CallBehaviorActionEditPart) {
-			List types = new ArrayList();
+			List<IElementType> types = new ArrayList<IElementType>();
 			types.add(UMLElementTypes.OutputPin_3006);
 			types.add(UMLElementTypes.InputPin_3007);
 			return types;
 		}
+
 		if (editPart instanceof CallOperationActionEditPart) {
-			List types = new ArrayList();
+			List<IElementType> types = new ArrayList<IElementType>();
 			types.add(UMLElementTypes.OutputPin_3006);
 			types.add(UMLElementTypes.InputPin_3007);
 			types.add(UMLElementTypes.InputPin_3008);
 			return types;
 		}
+
 		if (editPart instanceof OpaqueAction2EditPart) {
-			List types = new ArrayList();
+			List<IElementType> types = new ArrayList<IElementType>();
 			types.add(UMLElementTypes.OutputPin_3001);
 			return types;
 		}
+
 		if (editPart instanceof CreateObjectAction2EditPart) {
-			List types = new ArrayList();
+			List<IElementType> types = new ArrayList<IElementType>();
 			types.add(UMLElementTypes.OutputPin_3002);
 			return types;
 		}
+
 		if (editPart instanceof CallBehaviorAction2EditPart) {
-			List types = new ArrayList();
+			List<IElementType> types = new ArrayList<IElementType>();
 			types.add(UMLElementTypes.OutputPin_3006);
 			types.add(UMLElementTypes.InputPin_3007);
 			return types;
 		}
+
 		if (editPart instanceof CallOperationAction2EditPart) {
-			List types = new ArrayList();
+			List<IElementType> types = new ArrayList<IElementType>();
 			types.add(UMLElementTypes.OutputPin_3006);
 			types.add(UMLElementTypes.InputPin_3007);
 			types.add(UMLElementTypes.InputPin_3008);
 			return types;
 		}
+
 		if (editPart instanceof AddStructuralFeatureValueAction2EditPart) {
-			List types = new ArrayList();
+			List<IElementType> types = new ArrayList<IElementType>();
 			types.add(UMLElementTypes.InputPin_3003);
 			types.add(UMLElementTypes.InputPin_3004);
 			types.add(UMLElementTypes.InputPin_3005);
 			return types;
 		}
+
 		if (editPart instanceof ActivityPartitionEditPart) {
-			List types = new ArrayList();
+			List<IElementType> types = new ArrayList<IElementType>();
 			types.add(UMLElementTypes.ActivityPartition_3057);
 			types.add(UMLElementTypes.AcceptEventAction_3059);
 			types.add(UMLElementTypes.AcceptEventAction_3060);
@@ -190,8 +204,9 @@ public class UMLModelingAssistantProvider extends ModelingAssistantProvider {
 			types.add(UMLElementTypes.ExpansionRegion_3085);
 			return types;
 		}
+
 		if (editPart instanceof ActivityPartition2EditPart) {
-			List types = new ArrayList();
+			List<IElementType> types = new ArrayList<IElementType>();
 			types.add(UMLElementTypes.ActivityPartition_3057);
 			types.add(UMLElementTypes.AcceptEventAction_3059);
 			types.add(UMLElementTypes.AcceptEventAction_3060);
@@ -217,38 +232,44 @@ public class UMLModelingAssistantProvider extends ModelingAssistantProvider {
 			types.add(UMLElementTypes.ExpansionRegion_3085);
 			return types;
 		}
+
 		if (editPart instanceof OpaqueAction3EditPart) {
-			List types = new ArrayList();
+			List<IElementType> types = new ArrayList<IElementType>();
 			types.add(UMLElementTypes.OutputPin_3001);
 			return types;
 		}
+
 		if (editPart instanceof CreateObjectAction3EditPart) {
-			List types = new ArrayList();
+			List<IElementType> types = new ArrayList<IElementType>();
 			types.add(UMLElementTypes.OutputPin_3002);
 			return types;
 		}
+
 		if (editPart instanceof AddStructuralFeatureValueAction3EditPart) {
-			List types = new ArrayList();
+			List<IElementType> types = new ArrayList<IElementType>();
 			types.add(UMLElementTypes.InputPin_3003);
 			types.add(UMLElementTypes.InputPin_3004);
 			types.add(UMLElementTypes.InputPin_3005);
 			return types;
 		}
+
 		if (editPart instanceof CallBehaviorAction3EditPart) {
-			List types = new ArrayList();
+			List<IElementType> types = new ArrayList<IElementType>();
 			types.add(UMLElementTypes.OutputPin_3006);
 			types.add(UMLElementTypes.InputPin_3007);
 			return types;
 		}
+
 		if (editPart instanceof CallOperationAction3EditPart) {
-			List types = new ArrayList();
+			List<IElementType> types = new ArrayList<IElementType>();
 			types.add(UMLElementTypes.OutputPin_3006);
 			types.add(UMLElementTypes.InputPin_3007);
 			types.add(UMLElementTypes.InputPin_3008);
 			return types;
 		}
+
 		if (editPart instanceof StructuredActivityNodeStructuredActivityContentPaneCompartmentEditPart) {
-			List types = new ArrayList();
+			List<IElementType> types = new ArrayList<IElementType>();
 			types.add(UMLElementTypes.StructuredActivityNode_3009);
 			types.add(UMLElementTypes.OpaqueAction_3011);
 			types.add(UMLElementTypes.AcceptEventAction_3012);
@@ -269,8 +290,9 @@ public class UMLModelingAssistantProvider extends ModelingAssistantProvider {
 			types.add(UMLElementTypes.OutputPin_3055);
 			return types;
 		}
+
 		if (editPart instanceof StructuredActivityNodeStructuredActivityContentPaneCompartment2EditPart) {
-			List types = new ArrayList();
+			List<IElementType> types = new ArrayList<IElementType>();
 			types.add(UMLElementTypes.StructuredActivityNode_3009);
 			types.add(UMLElementTypes.OpaqueAction_3011);
 			types.add(UMLElementTypes.AcceptEventAction_3012);
@@ -291,8 +313,9 @@ public class UMLModelingAssistantProvider extends ModelingAssistantProvider {
 			types.add(UMLElementTypes.OutputPin_3055);
 			return types;
 		}
+
 		if (editPart instanceof StructuredActivityNodeStructuredActivityContentPaneCompartment3EditPart) {
-			List types = new ArrayList();
+			List<IElementType> types = new ArrayList<IElementType>();
 			types.add(UMLElementTypes.StructuredActivityNode_3079);
 			types.add(UMLElementTypes.OpaqueAction_3011);
 			types.add(UMLElementTypes.AcceptEventAction_3012);
@@ -313,8 +336,9 @@ public class UMLModelingAssistantProvider extends ModelingAssistantProvider {
 			types.add(UMLElementTypes.OutputPin_3081);
 			return types;
 		}
+
 		if (editPart instanceof StructuredActivityNodeStructuredActivityContentPaneCompartment4EditPart) {
-			List types = new ArrayList();
+			List<IElementType> types = new ArrayList<IElementType>();
 			types.add(UMLElementTypes.StructuredActivityNode_3079);
 			types.add(UMLElementTypes.OpaqueAction_3011);
 			types.add(UMLElementTypes.AcceptEventAction_3012);
@@ -335,8 +359,9 @@ public class UMLModelingAssistantProvider extends ModelingAssistantProvider {
 			types.add(UMLElementTypes.OutputPin_3081);
 			return types;
 		}
+
 		if (editPart instanceof LoopNodeLoopNodeContentPaneCompartment2EditPart) {
-			List types = new ArrayList();
+			List<IElementType> types = new ArrayList<IElementType>();
 			types.add(UMLElementTypes.StructuredActivityNode_3009);
 			types.add(UMLElementTypes.OpaqueAction_3011);
 			types.add(UMLElementTypes.AcceptEventAction_3012);
@@ -357,8 +382,9 @@ public class UMLModelingAssistantProvider extends ModelingAssistantProvider {
 			types.add(UMLElementTypes.OutputPin_3055);
 			return types;
 		}
+
 		if (editPart instanceof ConditionalNodeConditionalNodeCompartment2EditPart) {
-			List types = new ArrayList();
+			List<IElementType> types = new ArrayList<IElementType>();
 			types.add(UMLElementTypes.StructuredActivityNode_3009);
 			types.add(UMLElementTypes.OpaqueAction_3011);
 			types.add(UMLElementTypes.AcceptEventAction_3012);
@@ -379,8 +405,9 @@ public class UMLModelingAssistantProvider extends ModelingAssistantProvider {
 			types.add(UMLElementTypes.OutputPin_3055);
 			return types;
 		}
+
 		if (editPart instanceof ExpansionRegionExpansionRegionNodeCompartment2EditPart) {
-			List types = new ArrayList();
+			List<IElementType> types = new ArrayList<IElementType>();
 			types.add(UMLElementTypes.StructuredActivityNode_3009);
 			types.add(UMLElementTypes.OpaqueAction_3011);
 			types.add(UMLElementTypes.AcceptEventAction_3012);
@@ -401,8 +428,9 @@ public class UMLModelingAssistantProvider extends ModelingAssistantProvider {
 			types.add(UMLElementTypes.OutputPin_3055);
 			return types;
 		}
+
 		if (editPart instanceof LoopNodeLoopNodeContentPaneCompartmentEditPart) {
-			List types = new ArrayList();
+			List<IElementType> types = new ArrayList<IElementType>();
 			types.add(UMLElementTypes.StructuredActivityNode_3009);
 			types.add(UMLElementTypes.OpaqueAction_3011);
 			types.add(UMLElementTypes.AcceptEventAction_3012);
@@ -423,8 +451,9 @@ public class UMLModelingAssistantProvider extends ModelingAssistantProvider {
 			types.add(UMLElementTypes.OutputPin_3055);
 			return types;
 		}
+
 		if (editPart instanceof ConditionalNodeConditionalNodeCompartmentEditPart) {
-			List types = new ArrayList();
+			List<IElementType> types = new ArrayList<IElementType>();
 			types.add(UMLElementTypes.StructuredActivityNode_3009);
 			types.add(UMLElementTypes.OpaqueAction_3011);
 			types.add(UMLElementTypes.AcceptEventAction_3012);
@@ -445,8 +474,9 @@ public class UMLModelingAssistantProvider extends ModelingAssistantProvider {
 			types.add(UMLElementTypes.OutputPin_3055);
 			return types;
 		}
+
 		if (editPart instanceof ExpansionRegionExpansionRegionNodeCompartmentEditPart) {
-			List types = new ArrayList();
+			List<IElementType> types = new ArrayList<IElementType>();
 			types.add(UMLElementTypes.StructuredActivityNode_3009);
 			types.add(UMLElementTypes.OpaqueAction_3011);
 			types.add(UMLElementTypes.AcceptEventAction_3012);
@@ -467,14 +497,15 @@ public class UMLModelingAssistantProvider extends ModelingAssistantProvider {
 			types.add(UMLElementTypes.OutputPin_3055);
 			return types;
 		}
+
 		if (editPart instanceof PackageEditPart) {
-			List types = new ArrayList();
+			List<IElementType> types = new ArrayList<IElementType>();
 			types.add(UMLElementTypes.Activity_2026);
 			types.add(UMLElementTypes.Constraint_2027);
 			types.add(UMLElementTypes.Constraint_2028);
 			return types;
 		}
-		return Collections.EMPTY_LIST;
+		return Collections.emptyList();
 	}
 
 	/**
