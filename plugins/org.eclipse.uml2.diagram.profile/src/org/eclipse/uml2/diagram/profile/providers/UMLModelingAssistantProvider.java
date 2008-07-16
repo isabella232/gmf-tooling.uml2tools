@@ -40,39 +40,43 @@ public class UMLModelingAssistantProvider extends ModelingAssistantProvider {
 	/**
 	 * @generated
 	 */
-	public List getTypesForPopupBar(IAdaptable host) {
+	public List<?> getTypesForPopupBar(IAdaptable host) {
 		IGraphicalEditPart editPart = (IGraphicalEditPart) host.getAdapter(IGraphicalEditPart.class);
+
 		if (editPart instanceof StereotypeEditPart) {
-			List types = new ArrayList();
+			List<IElementType> types = new ArrayList<IElementType>();
 			types.add(UMLElementTypes.Property_3001);
 			types.add(UMLElementTypes.Constraint_3008);
 			return types;
 		}
+
 		if (editPart instanceof Profile2EditPart) {
-			List types = new ArrayList();
+			List<IElementType> types = new ArrayList<IElementType>();
 			types.add(UMLElementTypes.Stereotype_3003);
 			return types;
 		}
+
 		if (editPart instanceof EnumerationEditPart) {
-			List types = new ArrayList();
+			List<IElementType> types = new ArrayList<IElementType>();
 			types.add(UMLElementTypes.EnumerationLiteral_3005);
 			return types;
 		}
+
 		if (editPart instanceof Profile3EditPart) {
-			List types = new ArrayList();
+			List<IElementType> types = new ArrayList<IElementType>();
 			types.add(UMLElementTypes.ElementImport_3009);
 			return types;
 		}
+
 		if (editPart instanceof ProfileEditPart) {
-			List types = new ArrayList();
+			List<IElementType> types = new ArrayList<IElementType>();
 			types.add(UMLElementTypes.Stereotype_2001);
 			types.add(UMLElementTypes.Profile_2002);
 			types.add(UMLElementTypes.Enumeration_2003);
 			types.add(UMLElementTypes.ElementImport_2006);
-			types.add(UMLElementTypes.Profile_2007);
 			return types;
 		}
-		return Collections.EMPTY_LIST;
+		return Collections.emptyList();
 	}
 
 	/**

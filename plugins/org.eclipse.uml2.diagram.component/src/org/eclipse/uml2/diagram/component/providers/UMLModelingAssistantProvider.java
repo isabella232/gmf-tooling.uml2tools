@@ -46,50 +46,58 @@ public class UMLModelingAssistantProvider extends ModelingAssistantProvider {
 	/**
 	 * @generated
 	 */
-	public List getTypesForPopupBar(IAdaptable host) {
+	public List<?> getTypesForPopupBar(IAdaptable host) {
 		IGraphicalEditPart editPart = (IGraphicalEditPart) host.getAdapter(IGraphicalEditPart.class);
+
 		if (editPart instanceof ComponentEditPart) {
-			List types = new ArrayList();
+			List<IElementType> types = new ArrayList<IElementType>();
 			types.add(UMLElementTypes.Port_3002);
 			return types;
 		}
+
 		if (editPart instanceof Class2EditPart) {
-			List types = new ArrayList();
+			List<IElementType> types = new ArrayList<IElementType>();
 			types.add(UMLElementTypes.Port_3002);
 			return types;
 		}
+
 		if (editPart instanceof Package2EditPart) {
-			List types = new ArrayList();
+			List<IElementType> types = new ArrayList<IElementType>();
 			types.add(UMLElementTypes.ElementImport_3007);
 			return types;
 		}
+
 		if (editPart instanceof Package3EditPart) {
-			List types = new ArrayList();
+			List<IElementType> types = new ArrayList<IElementType>();
 			types.add(UMLElementTypes.Package_3008);
 			types.add(UMLElementTypes.Class_3009);
 			types.add(UMLElementTypes.Component_3010);
 			return types;
 		}
+
 		if (editPart instanceof ClassDiagramNotationClassEditPart) {
-			List types = new ArrayList();
+			List<IElementType> types = new ArrayList<IElementType>();
 			types.add(UMLElementTypes.Port_3014);
 			types.add(UMLElementTypes.Property_3011);
 			types.add(UMLElementTypes.Operation_3012);
 			types.add(UMLElementTypes.Class_3013);
 			return types;
 		}
+
 		if (editPart instanceof Component2EditPart) {
-			List types = new ArrayList();
+			List<IElementType> types = new ArrayList<IElementType>();
 			types.add(UMLElementTypes.Port_3002);
 			return types;
 		}
+
 		if (editPart instanceof ClassEditPart) {
-			List types = new ArrayList();
+			List<IElementType> types = new ArrayList<IElementType>();
 			types.add(UMLElementTypes.Port_3002);
 			return types;
 		}
+
 		if (editPart instanceof ComponentContentsEditPart) {
-			List types = new ArrayList();
+			List<IElementType> types = new ArrayList<IElementType>();
 			types.add(UMLElementTypes.Component_3001);
 			types.add(UMLElementTypes.Artifact_3003);
 			types.add(UMLElementTypes.Class_3004);
@@ -98,8 +106,9 @@ public class UMLModelingAssistantProvider extends ModelingAssistantProvider {
 			types.add(UMLElementTypes.Connector_3015);
 			return types;
 		}
+
 		if (editPart instanceof ComponentContents2EditPart) {
-			List types = new ArrayList();
+			List<IElementType> types = new ArrayList<IElementType>();
 			types.add(UMLElementTypes.Component_3001);
 			types.add(UMLElementTypes.Artifact_3003);
 			types.add(UMLElementTypes.Class_3004);
@@ -108,18 +117,18 @@ public class UMLModelingAssistantProvider extends ModelingAssistantProvider {
 			types.add(UMLElementTypes.Connector_3015);
 			return types;
 		}
+
 		if (editPart instanceof PackageEditPart) {
-			List types = new ArrayList();
+			List<IElementType> types = new ArrayList<IElementType>();
 			types.add(UMLElementTypes.Component_2001);
 			types.add(UMLElementTypes.Artifact_2002);
 			types.add(UMLElementTypes.Interface_2003);
 			types.add(UMLElementTypes.Class_2004);
-			types.add(UMLElementTypes.Package_2005);
 			types.add(UMLElementTypes.Package_2006);
 			types.add(UMLElementTypes.Class_2007);
 			return types;
 		}
-		return Collections.EMPTY_LIST;
+		return Collections.emptyList();
 	}
 
 	/**

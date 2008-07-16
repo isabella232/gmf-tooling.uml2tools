@@ -41,47 +41,53 @@ public class UMLModelingAssistantProvider extends ModelingAssistantProvider {
 	/**
 	 * @generated
 	 */
-	public List getTypesForPopupBar(IAdaptable host) {
+	public List<?> getTypesForPopupBar(IAdaptable host) {
 		IGraphicalEditPart editPart = (IGraphicalEditPart) host.getAdapter(IGraphicalEditPart.class);
+
 		if (editPart instanceof Package2EditPart) {
-			List types = new ArrayList();
+			List<IElementType> types = new ArrayList<IElementType>();
 			types.add(UMLElementTypes.ElementImport_3001);
 			return types;
 		}
+
 		if (editPart instanceof ExecutionEnvironmentEditPart) {
-			List types = new ArrayList();
+			List<IElementType> types = new ArrayList<IElementType>();
 			types.add(UMLElementTypes.Artifact_3006);
 			return types;
 		}
+
 		if (editPart instanceof DeploymentSpecificationEditPart) {
-			List types = new ArrayList();
+			List<IElementType> types = new ArrayList<IElementType>();
 			types.add(UMLElementTypes.Property_3003);
 			return types;
 		}
+
 		if (editPart instanceof ExecutionEnvironment2EditPart) {
-			List types = new ArrayList();
+			List<IElementType> types = new ArrayList<IElementType>();
 			types.add(UMLElementTypes.Artifact_3006);
 			return types;
 		}
+
 		if (editPart instanceof DeviceDevicecontentsEditPart) {
-			List types = new ArrayList();
+			List<IElementType> types = new ArrayList<IElementType>();
 			types.add(UMLElementTypes.Device_3004);
 			types.add(UMLElementTypes.Artifact_3002);
 			types.add(UMLElementTypes.ExecutionEnvironment_3005);
 			types.add(UMLElementTypes.Node_3007);
 			return types;
 		}
+
 		if (editPart instanceof DeviceDevicecontents2EditPart) {
-			List types = new ArrayList();
+			List<IElementType> types = new ArrayList<IElementType>();
 			types.add(UMLElementTypes.Device_3004);
 			types.add(UMLElementTypes.Artifact_3002);
 			types.add(UMLElementTypes.ExecutionEnvironment_3005);
 			types.add(UMLElementTypes.Node_3007);
 			return types;
 		}
+
 		if (editPart instanceof PackageEditPart) {
-			List types = new ArrayList();
-			types.add(UMLElementTypes.Package_2001);
+			List<IElementType> types = new ArrayList<IElementType>();
 			types.add(UMLElementTypes.Device_2003);
 			types.add(UMLElementTypes.Node_2004);
 			types.add(UMLElementTypes.ExecutionEnvironment_2005);
@@ -89,7 +95,7 @@ public class UMLModelingAssistantProvider extends ModelingAssistantProvider {
 			types.add(UMLElementTypes.DeploymentSpecification_2007);
 			return types;
 		}
-		return Collections.EMPTY_LIST;
+		return Collections.emptyList();
 	}
 
 	/**
