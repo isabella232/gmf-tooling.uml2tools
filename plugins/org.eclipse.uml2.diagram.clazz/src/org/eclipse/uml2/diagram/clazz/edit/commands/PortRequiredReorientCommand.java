@@ -40,7 +40,7 @@ public class PortRequiredReorientCommand extends EditElementCommand {
 	private final EObject newEnd;
 
 	/**
-	 * @NOT generated
+	 * @NOT-generated
 	 */
 	private final RequiredPortLinkHelper myLinkHelper;
 

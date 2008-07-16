@@ -51,7 +51,7 @@ public class RequiredPortLinkHelper {
 	public void reorientSource(Port newSource) {
 		RequiredInterfaceLink link = PortOperationsExt.getRequireds(getSource(), getTarget());
 		link.getLink().getClients().remove(link.getSource());
-		link.getLink().getClients().add(newSource);
+		link.getLink().getClients().add(newSource.getType());
 	}
 
 	public boolean canReorientSource(Port newSource) {
