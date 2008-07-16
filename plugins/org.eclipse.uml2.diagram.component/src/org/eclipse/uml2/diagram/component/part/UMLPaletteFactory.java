@@ -298,8 +298,6 @@ public class UMLPaletteFactory {
 		ToolEntry entry = new ToolEntry(Messages.SharedAggregation2CreationTool_title, Messages.SharedAggregation2CreationTool_desc, null, null) {
 		};
 		entry.setToolClass(CreateAssociationLinkTool.SHARED.class);
-		entry.setSmallIcon(UMLElementTypes.getImageDescriptor(UMLElementTypes.Association_4011));
-		entry.setLargeIcon(entry.getSmallIcon());
 		return entry;
 	}
 
