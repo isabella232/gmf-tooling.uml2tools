@@ -108,6 +108,9 @@ public class PackageCanonicalEditPolicy extends CanonicalConnectionEditPolicy {
 	 */
 	@SuppressWarnings("unchecked")
 	protected boolean isOrphaned(Collection semanticChildren, final View view) {
+		if (view.getEAnnotation("Shortcut") != null) {//$NON-NLS-1$
+			return UMLDiagramUpdater.isShortcutOrphaned(view);
+		}
 		int visualID = UMLVisualIDRegistry.getVisualID(view);
 		int suggestedID = UMLVisualIDRegistry.getNodeVisualID((View) getHost().getModel(), view.getElement());
 		switch (visualID) {

@@ -17,6 +17,7 @@ import org.eclipse.draw2d.StackLayout;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EStructuralFeature;
+import org.eclipse.emf.ecore.EcorePackage;
 import org.eclipse.emf.transaction.TransactionalEditingDomain;
 import org.eclipse.gef.EditPart;
 import org.eclipse.gef.EditPolicy;
@@ -265,7 +266,11 @@ public class CollaborationEditPart extends ShapeNodeEditPart implements PrimaryS
 	 * @generated
 	 */
 	protected void handleNotificationEvent(Notification event) {
-		super.handleNotificationEvent(event);
+		if (event.getNotifier() == getModel() && EcorePackage.eINSTANCE.getEModelElement_EAnnotations().equals(event.getFeature())) {
+			handleMajorSemanticChange();
+		} else {
+			super.handleNotificationEvent(event);
+		}
 		handleTypeLinkModification(event);
 	}
 
