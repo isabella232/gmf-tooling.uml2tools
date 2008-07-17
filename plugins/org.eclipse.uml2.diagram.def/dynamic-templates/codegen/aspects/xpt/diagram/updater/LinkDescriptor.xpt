@@ -18,7 +18,7 @@
 package «editorGen.editor.packageName»;
 
 	«EXPAND xpt::Common::generatedClassComment»
-/*package*/ class «linkDescriptorClassName» extends «getNodeDescriptorQualifiedClassName()» implements «EXPAND aspects::xpt::diagram::updater::LinkDescriptor::implementsList» {
+public class «linkDescriptorClassName» extends «getNodeDescriptorQualifiedClassName()» implements «EXPAND aspects::xpt::diagram::updater::LinkDescriptor::implementsList» {
 
 	«EXPAND xpt::diagram::updater::LinkDescriptor::attributes-»
 	

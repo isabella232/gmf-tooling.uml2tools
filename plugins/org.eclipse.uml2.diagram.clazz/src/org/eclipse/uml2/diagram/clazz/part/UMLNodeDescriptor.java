@@ -7,7 +7,7 @@ import org.eclipse.uml2.diagram.common.genapi.IUpdaterNodeDescriptor;
  * @generated
  */
 @SuppressWarnings("unchecked")
-class UMLNodeDescriptor implements IUpdaterNodeDescriptor {
+public class UMLNodeDescriptor implements IUpdaterNodeDescriptor {
 
 	/**
 	 * @generated

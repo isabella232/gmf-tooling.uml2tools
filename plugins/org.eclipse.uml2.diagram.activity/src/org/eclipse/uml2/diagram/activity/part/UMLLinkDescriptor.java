@@ -10,7 +10,7 @@ import org.eclipse.uml2.diagram.common.genapi.IUpdaterLinkDescriptor;
  * @generated
  */
 @SuppressWarnings("unchecked")
-class UMLLinkDescriptor extends UMLNodeDescriptor implements IUpdaterLinkDescriptor {
+public class UMLLinkDescriptor extends UMLNodeDescriptor implements IUpdaterLinkDescriptor {
 
 	/**
 	 * @generated
