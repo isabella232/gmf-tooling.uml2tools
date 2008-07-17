@@ -38,7 +38,7 @@ public class PortProvidedReorientCommand extends EditElementCommand {
 	 * @generated
 	 */
 	private final EObject newEnd;
-	
+
 	/**
 	 * @NOT-generated
 	 */
@@ -137,7 +137,7 @@ public class PortProvidedReorientCommand extends EditElementCommand {
 		myLinkHelper.reorientTarget(getNewTarget());
 		return CommandResult.newOKCommandResult(referenceOwner);
 	}
-	
+
 	/**
 	 * @generated
 	 */
@@ -165,5 +165,5 @@ public class PortProvidedReorientCommand extends EditElementCommand {
 	protected Interface getNewTarget() {
 		return (Interface) newEnd;
 	}
-	
+
 }

@@ -84,7 +84,7 @@ public class PortProvidedReorientCommand extends EditElementCommand {
 		}
 		return UMLBaseItemSemanticEditPolicy.LinkConstraints.canExistPortProvided_4010(getNewSource(), getOldTarget());
 	}
-	
+
 	/**
 	 * @generated NOT
 	 */
@@ -101,7 +101,7 @@ public class PortProvidedReorientCommand extends EditElementCommand {
 		}
 		return UMLBaseItemSemanticEditPolicy.LinkConstraints.canExistPortProvided_4010(getOldSource(), getNewTarget());
 	}
-	
+
 	/**
 	 * @generated NOT
 	 */

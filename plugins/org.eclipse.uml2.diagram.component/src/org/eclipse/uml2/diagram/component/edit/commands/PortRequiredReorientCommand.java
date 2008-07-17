@@ -38,13 +38,12 @@ public class PortRequiredReorientCommand extends EditElementCommand {
 	 * @generated
 	 */
 	private final EObject newEnd;
-	
+
 	/**
 	 * @NOT-generated
 	 */
 	private final RequiredPortLinkHelper myLinkHelper;
 
-	
 	/**
 	 * @generated NOT
 	 */
@@ -82,7 +81,7 @@ public class PortRequiredReorientCommand extends EditElementCommand {
 		}
 		return UMLBaseItemSemanticEditPolicy.LinkConstraints.canExistPortRequired_4004(getNewSource(), getOldTarget());
 	}
-	
+
 	/**
 	 * @generated NOT
 	 */
@@ -106,7 +105,7 @@ public class PortRequiredReorientCommand extends EditElementCommand {
 	protected boolean canReorientTarget() {
 		return canReorientTargetGen() && myLinkHelper.canReorientTarget(getNewTarget());
 	}
-	
+
 	/**
 	 * @generated
 	 */

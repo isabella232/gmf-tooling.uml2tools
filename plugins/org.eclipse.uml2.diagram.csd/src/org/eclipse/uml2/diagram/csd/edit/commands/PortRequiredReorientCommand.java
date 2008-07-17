@@ -43,7 +43,7 @@ public class PortRequiredReorientCommand extends EditElementCommand {
 	 * @NOT-generated
 	 */
 	private final RequiredPortLinkHelper myLinkHelper;
-	
+
 	/**
 	 * @generated NOT
 	 */
@@ -81,7 +81,7 @@ public class PortRequiredReorientCommand extends EditElementCommand {
 		}
 		return UMLBaseItemSemanticEditPolicy.LinkConstraints.canExistPortRequired_4014(getNewSource(), getOldTarget());
 	}
-	
+
 	/**
 	 * @generated NOT
 	 */

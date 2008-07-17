@@ -101,7 +101,7 @@ public class PortProvidedReorientCommand extends EditElementCommand {
 		}
 		return UMLBaseItemSemanticEditPolicy.LinkConstraints.canExistPortProvided_4006(getOldSource(), getNewTarget());
 	}
-	
+
 	/**
 	 * @generated NOT
 	 */

@@ -2,6 +2,7 @@ package org.eclipse.uml2.diagram.clazz.edit.policies;
 
 import org.eclipse.gef.commands.Command;
 import org.eclipse.gmf.runtime.emf.type.core.commands.DestroyElementCommand;
+import org.eclipse.gmf.runtime.emf.type.core.commands.DestroyReferenceCommand;
 import org.eclipse.gmf.runtime.emf.type.core.requests.DestroyElementRequest;
 import org.eclipse.gmf.runtime.emf.type.core.requests.DestroyReferenceRequest;
 import org.eclipse.uml2.diagram.common.links.PortOperationsExt;
@@ -18,8 +19,8 @@ public class PortRequiredItemSemanticEditPolicy extends UMLBaseItemSemanticEditP
 	 * @generated NOT
 	 */
 	protected Command getDestroyReferenceCommand(DestroyReferenceRequest req) {
-		Port port = (Port)req.getContainer();
-		Interface requiredInterface = (Interface)req.getReferencedObject();
+		Port port = (Port) req.getContainer();
+		Interface requiredInterface = (Interface) req.getReferencedObject();
 		RequiredInterfaceLink link = PortOperationsExt.getRequireds(port, requiredInterface);
 		return getGEFWrapper(new DestroyElementCommand(new DestroyElementRequest(link.getLink(), req.isConfirmationRequired())));
 	}
