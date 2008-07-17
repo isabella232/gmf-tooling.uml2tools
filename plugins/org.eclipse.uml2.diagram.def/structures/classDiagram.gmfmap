@@ -1115,12 +1115,12 @@
                 xsi:type="gmfmap:FeatureValueSpec">
               <feature
                   xsi:type="ecore:EAttribute"
-                  href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//LiteralString/value"/>
+                  href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//OpaqueExpression/body"/>
               <value
-                  body="'ValueSpecification'"/>
+                  body="'OpaqueExpression'"/>
             </initializers>
             <elementClass
-                href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//LiteralString"/>
+                href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//OpaqueExpression"/>
           </newElementInitializers>
         </initializers>
       </domainInitializer>
