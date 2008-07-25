@@ -38,7 +38,6 @@ public class GeneralizationSetCreationToolTest extends ClassDiagramCreationToolT
 	@Override
 	protected void setUp() throws Exception {
 		super.setUp();
-		super.setUp();
 		DiagramEditPart diagram = getDiagramEditPart();
 		
 		createNodeByTool(UMLElementTypes.PrimitiveType_2005, 10, 200);

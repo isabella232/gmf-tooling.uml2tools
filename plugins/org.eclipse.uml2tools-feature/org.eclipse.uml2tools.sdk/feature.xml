@@ -42,4 +42,9 @@
    <includes
          id="org.eclipse.uml2.diagram.source"
          version="0.0.0"/>
+
+   <includes
+         id="org.eclipse.uml2tools.examples"
+         version="0.0.0"/>
+
 </feature>

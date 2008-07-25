@@ -25,6 +25,10 @@
     <viewmap
         xsi:type="gmfgen:FigureViewmap"
         figureQualifiedClassName="org.eclipse.draw2d.FreeformLayer"/>
+    <behaviour
+        xsi:type="gmfgen:CustomBehaviour"
+        key="&quot;LayoutEditPolicy&quot;"
+        editPolicyQualifiedClassName="org.eclipse.uml2.diagram.common.editpolicies.LaneLayoutEditPolicy"/>
     <domainDiagramElement
         href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/StateMachine"/>
     <childNodes
@@ -1163,10 +1167,6 @@
         <attributes
             xsi:type="uml2.gmfgenext:AuxSecondaryDiagramNodeAttribute"
             substituteWithCanvasElement="true"/>
-        <attributes
-            xsi:type="gmfgen:DefaultSizeAttributes"
-            width="600"
-            height="600"/>
         <requiredPluginIDs>org.eclipse.draw2d</requiredPluginIDs>
         <requiredPluginIDs>org.eclipse.gmf.runtime.draw2d.ui</requiredPluginIDs>
       </viewmap>

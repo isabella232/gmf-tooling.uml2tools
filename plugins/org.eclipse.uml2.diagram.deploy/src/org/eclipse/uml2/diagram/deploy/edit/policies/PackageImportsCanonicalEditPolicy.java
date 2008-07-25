@@ -44,9 +44,7 @@ public class PackageImportsCanonicalEditPolicy extends CanonicalEditPolicy {
 		int visualID = UMLVisualIDRegistry.getVisualID(view);
 		switch (visualID) {
 		case ElementImportEditPart.VISUAL_ID:
-			if (!semanticChildren.contains(view.getElement())) {
-				return true;
-			}
+			return !semanticChildren.contains(view.getElement()) || visualID != UMLVisualIDRegistry.getNodeVisualID((View) getHost().getModel(), view.getElement());
 		}
 		return false;
 	}
