@@ -5,14 +5,24 @@ import java.util.Collections;
 import junit.framework.TestCase;
 
 import org.eclipse.draw2d.geometry.Point;
+import org.eclipse.emf.ecore.EObject;
 import org.eclipse.gef.EditDomain;
 import org.eclipse.gef.Tool;
+import org.eclipse.gef.commands.Command;
+import org.eclipse.gmf.runtime.diagram.ui.editparts.ConnectionEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.DiagramEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart;
+import org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles;
+import org.eclipse.gmf.runtime.diagram.ui.editpolicies.SemanticEditPolicy;
+import org.eclipse.gmf.runtime.diagram.ui.requests.EditCommandRequestWrapper;
 import org.eclipse.gmf.runtime.diagram.ui.tools.ConnectionCreationTool;
 import org.eclipse.gmf.runtime.diagram.ui.tools.UnspecifiedTypeCreationTool;
 import org.eclipse.gmf.runtime.emf.type.core.IElementType;
+import org.eclipse.gmf.runtime.emf.type.core.requests.ReorientReferenceRelationshipRequest;
+import org.eclipse.gmf.runtime.emf.type.core.requests.ReorientRequest;
+import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.jface.viewers.ISelection;
+import org.eclipse.jface.viewers.IStructuredSelection;
 import org.eclipse.swt.events.MouseEvent;
 import org.eclipse.swt.widgets.Event;
 import org.eclipse.ui.IViewReference;
@@ -82,6 +92,10 @@ public abstract class CreationToolTestBase extends TestCase {
 	}
 
 	protected abstract UMLDiagramFacade getDiagram(String projectPath);
+	
+	protected IGraphicalEditPart getSelectedEP() {
+		return (IGraphicalEditPart)((IStructuredSelection)getSelection()).getFirstElement();	
+	}
 
 	protected void createConnectionByToolDoubleClick(ConnectionCreationTool tool) {
 		tool.setEditDomain(myEditDomain);
@@ -104,6 +118,40 @@ public abstract class CreationToolTestBase extends TestCase {
 		tool.mouseDrag(createMouseEvent(x2, y2), myDiagramViewer);
 		tool.mouseUp(createMouseEvent(x2, y2), myDiagramViewer);
 		tool.deactivate();
+	}
+
+	protected void reorientReferenceConnectionTarget(ConnectionEditPart connection, IGraphicalEditPart newTargetEP) {
+		EObject source = getConnectionSource(connection);
+		EObject oldTarget = getConnectionTarget(connection);
+		EObject newTarget = newTargetEP.getNotationView().getElement();
+		ReorientReferenceRelationshipRequest request = new ReorientReferenceRelationshipRequest(getDiagramEditPart().getEditingDomain(), source, newTarget, oldTarget, ReorientRequest.REORIENT_TARGET);
+		request.setParameter(VISUAL_ID_KEY, Integer.valueOf(connection.getNotationView().getType()));
+		Command cmd = ((SemanticEditPolicy)newTargetEP.getEditPolicy(EditPolicyRoles.SEMANTIC_ROLE)).getCommand(new EditCommandRequestWrapper(request));
+		if (!cmd.canExecute()) {
+			fail();
+		}
+		cmd.execute();
+	}
+	
+	protected void reorientReferenceConnectionSource(ConnectionEditPart connection, IGraphicalEditPart newSourceEP) {
+		EObject oldSource = getConnectionSource(connection);
+		EObject target = getConnectionTarget(connection);
+		EObject newSource = newSourceEP.getNotationView().getElement();
+		ReorientReferenceRelationshipRequest request = new ReorientReferenceRelationshipRequest(getDiagramEditPart().getEditingDomain(), oldSource, newSource, target, ReorientRequest.REORIENT_SOURCE);
+		request.setParameter(VISUAL_ID_KEY, Integer.valueOf(connection.getNotationView().getType()));
+		Command cmd = ((SemanticEditPolicy)newSourceEP.getEditPolicy(EditPolicyRoles.SEMANTIC_ROLE)).getCommand(new EditCommandRequestWrapper(request));
+		if (!cmd.canExecute()) {
+			fail();
+		}
+		cmd.execute();
+	}
+
+	protected static EObject getConnectionSource(ConnectionEditPart connection) {
+		return ((View)connection.getSource().getModel()).getElement();
+	}
+	
+	protected static EObject getConnectionTarget(ConnectionEditPart connection) {
+		return ((View)connection.getTarget().getModel()).getElement();
 	}
 
 	protected void createNodeByTool(IElementType elementType) {
@@ -153,5 +201,7 @@ public abstract class CreationToolTestBase extends TestCase {
 			page.hideView(reference.getView(false));
 		}
 	}
+	
+	public static final String VISUAL_ID_KEY = "visual_id";
 	
 }
