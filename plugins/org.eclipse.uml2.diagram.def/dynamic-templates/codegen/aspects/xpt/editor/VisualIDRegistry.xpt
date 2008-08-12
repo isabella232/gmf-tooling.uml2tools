@@ -257,7 +257,7 @@ public static int «EXPAND getChildDescriptorVisualIDMethodName»(«descriptorFQN» 
 			if (annotation != null) {
 				return true;
 			}
-			view = (View) view.eContainer();
+			view = (org.eclipse.gmf.runtime.notation.View) view.eContainer();
 		}
 		return false;
 	}
