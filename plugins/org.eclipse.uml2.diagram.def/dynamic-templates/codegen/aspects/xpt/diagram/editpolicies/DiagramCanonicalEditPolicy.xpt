@@ -278,7 +278,7 @@ private java.util.Collection refreshConnections() {
 		//is required to push data into the request
 		editPart.getCommand(request);
 		
-		Set<«getGenApiLinkDescriptorQualifiedClassName()»> linksToFromShortcuts = new HashSet<«getGenApiLinkDescriptorQualifiedClassName()»>();
+		java.util.Set<«getGenApiLinkDescriptorQualifiedClassName()»> linksToFromShortcuts = new java.util.HashSet<«getGenApiLinkDescriptorQualifiedClassName()»>();
 		for (org.eclipse.uml2.diagram.common.editpolicies.UpdateDescriptionRequest.Descriptor next : request.getDescriptions()){
 			linksToFromShortcuts.addAll(next.getContainedLinks());
 			linksToFromShortcuts.addAll(next.getOutgoingLinks());
