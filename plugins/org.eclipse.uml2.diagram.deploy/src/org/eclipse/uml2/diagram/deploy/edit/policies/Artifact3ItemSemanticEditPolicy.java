@@ -28,6 +28,13 @@ public class Artifact3ItemSemanticEditPolicy extends UMLBaseItemSemanticEditPoli
 	/**
 	 * @generated
 	 */
+	public Artifact3ItemSemanticEditPolicy() {
+		super(UMLElementTypes.Artifact_3006);
+	}
+
+	/**
+	 * @generated
+	 */
 	protected Command getDestroyElementCommand(DestroyElementRequest req) {
 		CompoundCommand cc = getDestroyEdgesCommand();
 		addDestroyShortcutsCommand(cc);

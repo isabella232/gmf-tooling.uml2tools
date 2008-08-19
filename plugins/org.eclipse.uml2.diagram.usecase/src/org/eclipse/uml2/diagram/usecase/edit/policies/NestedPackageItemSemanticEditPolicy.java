@@ -32,6 +32,13 @@ public class NestedPackageItemSemanticEditPolicy extends UMLBaseItemSemanticEdit
 	/**
 	 * @generated
 	 */
+	public NestedPackageItemSemanticEditPolicy() {
+		super(UMLElementTypes.Package_2007);
+	}
+
+	/**
+	 * @generated
+	 */
 	protected Command getDestroyElementCommand(DestroyElementRequest req) {
 		CompoundCommand cc = getDestroyEdgesCommand();
 		addDestroyChildNodesCommand(cc);

@@ -14,6 +14,13 @@ public class SubjectUsecasesItemSemanticEditPolicy extends UMLBaseItemSemanticEd
 	/**
 	 * @generated
 	 */
+	public SubjectUsecasesItemSemanticEditPolicy() {
+		super(UMLElementTypes.Component_2006);
+	}
+
+	/**
+	 * @generated
+	 */
 	protected Command getCreateCommand(CreateElementRequest req) {
 		if (UMLElementTypes.UseCase_3004 == req.getElementType()) {
 			if (req.getContainmentFeature() == null) {

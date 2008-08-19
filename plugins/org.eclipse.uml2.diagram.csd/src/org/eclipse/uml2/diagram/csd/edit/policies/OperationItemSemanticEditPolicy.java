@@ -26,6 +26,13 @@ public class OperationItemSemanticEditPolicy extends UMLBaseItemSemanticEditPoli
 	/**
 	 * @generated
 	 */
+	public OperationItemSemanticEditPolicy() {
+		super(UMLElementTypes.Operation_3009);
+	}
+
+	/**
+	 * @generated
+	 */
 	protected Command getDestroyElementCommand(DestroyElementRequest req) {
 		CompoundCommand cc = getDestroyEdgesCommand();
 		addDestroyShortcutsCommand(cc);

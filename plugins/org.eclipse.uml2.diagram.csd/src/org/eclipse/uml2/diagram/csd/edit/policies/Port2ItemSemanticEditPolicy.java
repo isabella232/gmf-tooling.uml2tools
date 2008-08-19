@@ -36,6 +36,13 @@ public class Port2ItemSemanticEditPolicy extends UMLBaseItemSemanticEditPolicy {
 	/**
 	 * @generated
 	 */
+	public Port2ItemSemanticEditPolicy() {
+		super(UMLElementTypes.Port_3016);
+	}
+
+	/**
+	 * @generated
+	 */
 	protected Command getDestroyElementCommand(DestroyElementRequest req) {
 		CompoundCommand cc = getDestroyEdgesCommand();
 		addDestroyShortcutsCommand(cc);

@@ -49,7 +49,6 @@ public class InnerUseCaseCreateCommand extends CreateElementCommand {
 
 		Classifier owner = (Classifier) getElementToEdit();
 		owner.getOwnedUseCases().add(newElement);
-
 		Classifier childHolder = (Classifier) getElementToEdit();
 		childHolder.getUseCases().add(newElement);
 

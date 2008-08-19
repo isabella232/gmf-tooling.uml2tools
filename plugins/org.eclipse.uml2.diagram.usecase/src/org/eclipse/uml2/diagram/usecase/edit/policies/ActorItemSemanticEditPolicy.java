@@ -30,6 +30,13 @@ public class ActorItemSemanticEditPolicy extends UMLBaseItemSemanticEditPolicy {
 	/**
 	 * @generated
 	 */
+	public ActorItemSemanticEditPolicy() {
+		super(UMLElementTypes.Actor_2002);
+	}
+
+	/**
+	 * @generated
+	 */
 	protected Command getDestroyElementCommand(DestroyElementRequest req) {
 		CompoundCommand cc = getDestroyEdgesCommand();
 		addDestroyShortcutsCommand(cc);

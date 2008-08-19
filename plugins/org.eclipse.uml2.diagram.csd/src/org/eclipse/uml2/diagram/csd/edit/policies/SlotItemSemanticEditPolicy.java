@@ -19,6 +19,13 @@ public class SlotItemSemanticEditPolicy extends UMLBaseItemSemanticEditPolicy {
 	/**
 	 * @generated
 	 */
+	public SlotItemSemanticEditPolicy() {
+		super(UMLElementTypes.Slot_3015);
+	}
+
+	/**
+	 * @generated
+	 */
 	protected Command getDestroyElementCommand(DestroyElementRequest req) {
 		CompoundCommand cc = getDestroyEdgesCommand();
 		addDestroyShortcutsCommand(cc);

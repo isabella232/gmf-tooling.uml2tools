@@ -25,6 +25,13 @@ public class InterfaceRealizationItemSemanticEditPolicy extends UMLBaseItemSeman
 	/**
 	 * @generated
 	 */
+	public InterfaceRealizationItemSemanticEditPolicy() {
+		super(UMLElementTypes.InterfaceRealization_4007);
+	}
+
+	/**
+	 * @generated
+	 */
 	protected Command getDestroyElementCommand(DestroyElementRequest req) {
 		return getGEFWrapper(new DestroyElementCommand(req));
 	}

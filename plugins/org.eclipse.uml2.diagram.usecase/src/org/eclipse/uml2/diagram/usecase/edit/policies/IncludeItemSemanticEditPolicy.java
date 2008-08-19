@@ -22,6 +22,13 @@ public class IncludeItemSemanticEditPolicy extends UMLBaseItemSemanticEditPolicy
 	/**
 	 * @generated
 	 */
+	public IncludeItemSemanticEditPolicy() {
+		super(UMLElementTypes.Include_4001);
+	}
+
+	/**
+	 * @generated
+	 */
 	protected Command getDestroyElementCommand(DestroyElementRequest req) {
 		return getGEFWrapper(new DestroyElementCommand(req));
 	}

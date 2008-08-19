@@ -39,6 +39,13 @@ public class Property3ItemSemanticEditPolicy extends UMLBaseItemSemanticEditPoli
 	/**
 	 * @generated
 	 */
+	public Property3ItemSemanticEditPolicy() {
+		super(UMLElementTypes.Property_3014);
+	}
+
+	/**
+	 * @generated
+	 */
 	protected Command getCreateCommand(CreateElementRequest req) {
 		if (UMLElementTypes.Port_3016 == req.getElementType()) {
 			if (req.getContainmentFeature() == null) {

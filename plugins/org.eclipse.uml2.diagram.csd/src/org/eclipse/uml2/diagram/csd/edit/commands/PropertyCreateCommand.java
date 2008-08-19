@@ -49,7 +49,6 @@ public class PropertyCreateCommand extends CreateElementCommand {
 
 		StructuredClassifier owner = (StructuredClassifier) getElementToEdit();
 		owner.getOwnedAttributes().add(newElement);
-
 		Collaboration childHolder = (Collaboration) getElementToEdit();
 		childHolder.getCollaborationRoles().add(newElement);
 

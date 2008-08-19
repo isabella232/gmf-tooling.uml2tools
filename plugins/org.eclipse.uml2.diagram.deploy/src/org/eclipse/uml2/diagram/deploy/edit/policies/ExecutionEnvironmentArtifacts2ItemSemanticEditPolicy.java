@@ -14,6 +14,13 @@ public class ExecutionEnvironmentArtifacts2ItemSemanticEditPolicy extends UMLBas
 	/**
 	 * @generated
 	 */
+	public ExecutionEnvironmentArtifacts2ItemSemanticEditPolicy() {
+		super(UMLElementTypes.ExecutionEnvironment_3005);
+	}
+
+	/**
+	 * @generated
+	 */
 	protected Command getCreateCommand(CreateElementRequest req) {
 		if (UMLElementTypes.Artifact_3006 == req.getElementType()) {
 			if (req.getContainmentFeature() == null) {

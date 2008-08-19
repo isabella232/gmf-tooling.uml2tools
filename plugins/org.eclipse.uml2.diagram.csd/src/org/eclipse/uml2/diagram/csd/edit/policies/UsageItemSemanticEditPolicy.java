@@ -25,6 +25,13 @@ public class UsageItemSemanticEditPolicy extends UMLBaseItemSemanticEditPolicy {
 	/**
 	 * @generated
 	 */
+	public UsageItemSemanticEditPolicy() {
+		super(UMLElementTypes.Usage_4008);
+	}
+
+	/**
+	 * @generated
+	 */
 	protected Command getDestroyElementCommand(DestroyElementRequest req) {
 		return getGEFWrapper(new DestroyElementCommand(req));
 	}

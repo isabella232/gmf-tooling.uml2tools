@@ -179,37 +179,37 @@
       <?gmfgen generated="true"?>
       <page
             id="org.eclipse.uml2.uml.diagram.deploy.general"
-            name="%preference.page.title.org.eclipse.uml2.uml.diagram.deploy.general"
+            name="%prefpage.org.eclipse.uml2.uml.diagram.deploy.general"
             category="org.eclipse.uml2.uml.diagram"
             class="org.eclipse.uml2.diagram.deploy.preferences.DiagramGeneralPreferencePage">
       </page>
       <page
             id="org.eclipse.uml2.uml.diagram.deploy.appearance"
-            name="%preference.page.title.org.eclipse.uml2.uml.diagram.deploy.appearance"
+            name="%prefpage.org.eclipse.uml2.uml.diagram.deploy.appearance"
             category="org.eclipse.uml2.uml.diagram.deploy.general"
             class="org.eclipse.uml2.diagram.deploy.preferences.DiagramAppearancePreferencePage">
       </page>
       <page
             id="org.eclipse.uml2.uml.diagram.deploy.connections"
-            name="%preference.page.title.org.eclipse.uml2.uml.diagram.deploy.connections"
+            name="%prefpage.org.eclipse.uml2.uml.diagram.deploy.connections"
             category="org.eclipse.uml2.uml.diagram.deploy.general"
             class="org.eclipse.uml2.diagram.deploy.preferences.DiagramConnectionsPreferencePage">
       </page>
       <page
             id="org.eclipse.uml2.uml.diagram.deploy.printing"
-            name="%preference.page.title.org.eclipse.uml2.uml.diagram.deploy.printing"
+            name="%prefpage.org.eclipse.uml2.uml.diagram.deploy.printing"
             category="org.eclipse.uml2.uml.diagram.deploy.general"
             class="org.eclipse.uml2.diagram.deploy.preferences.DiagramPrintingPreferencePage">
       </page>
       <page
             id="org.eclipse.uml2.uml.diagram.deploy.rulersAndGrid"
-            name="%preference.page.title.org.eclipse.uml2.uml.diagram.deploy.rulersAndGrid"
+            name="%prefpage.org.eclipse.uml2.uml.diagram.deploy.rulersAndGrid"
             category="org.eclipse.uml2.uml.diagram.deploy.general"
             class="org.eclipse.uml2.diagram.deploy.preferences.DiagramRulersAndGridPreferencePage">
       </page>
       <page
             id="org.eclipse.uml2.uml.diagram.deploy.pathmaps"
-            name="%preference.page.title.org.eclipse.uml2.uml.diagram.deploy.pathmaps"
+            name="%prefpage.org.eclipse.uml2.uml.diagram.deploy.pathmaps"
             category="org.eclipse.uml2.uml.diagram.deploy.general"
             class="org.eclipse.gmf.runtime.emf.ui.preferences.PathmapsPreferencePage">
       </page>
@@ -505,14 +505,14 @@
 
    <extension point="org.eclipse.gmf.runtime.emf.type.core.elementTypeBindings">
       <?gmfgen generated="true"?>
-      <clientContext id="UMLDeploymentClientContext">
+      <clientContext id="org.eclipse.uml2.diagram.deploy.TypeContext">
          <enablement>
             <test
                property="org.eclipse.gmf.runtime.emf.core.editingDomain"
                value="org.eclipse.uml2.diagram.deploy.EditingDomain"/>
          </enablement>
       </clientContext> 
-      <binding context="UMLDeploymentClientContext">
+      <binding context="org.eclipse.uml2.diagram.deploy.TypeContext">
          <elementType ref="org.eclipse.uml2.diagram.deploy.Package_1000"/>
          <elementType ref="org.eclipse.uml2.diagram.deploy.Package_2001"/>
          <elementType ref="org.eclipse.uml2.diagram.deploy.Device_2003"/>

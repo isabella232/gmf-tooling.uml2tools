@@ -25,6 +25,13 @@ public class ConnectorItemSemanticEditPolicy extends UMLBaseItemSemanticEditPoli
 	/**
 	 * @generated
 	 */
+	public ConnectorItemSemanticEditPolicy() {
+		super(UMLElementTypes.Connector_4005);
+	}
+
+	/**
+	 * @generated
+	 */
 	protected Command getDestroyElementCommand(DestroyElementRequest req) {
 		return getGEFWrapper(new DestroyElementCommand(req));
 	}

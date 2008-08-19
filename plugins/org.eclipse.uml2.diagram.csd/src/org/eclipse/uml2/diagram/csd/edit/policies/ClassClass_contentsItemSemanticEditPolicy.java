@@ -14,6 +14,13 @@ public class ClassClass_contentsItemSemanticEditPolicy extends UMLBaseItemSemant
 	/**
 	 * @generated
 	 */
+	public ClassClass_contentsItemSemanticEditPolicy() {
+		super(UMLElementTypes.Class_2007);
+	}
+
+	/**
+	 * @generated
+	 */
 	protected Command getCreateCommand(CreateElementRequest req) {
 		if (UMLElementTypes.Property_3014 == req.getElementType()) {
 			if (req.getContainmentFeature() == null) {

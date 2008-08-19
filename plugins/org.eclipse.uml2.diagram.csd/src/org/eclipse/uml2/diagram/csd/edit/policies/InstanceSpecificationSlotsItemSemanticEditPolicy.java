@@ -14,6 +14,13 @@ public class InstanceSpecificationSlotsItemSemanticEditPolicy extends UMLBaseIte
 	/**
 	 * @generated
 	 */
+	public InstanceSpecificationSlotsItemSemanticEditPolicy() {
+		super(UMLElementTypes.InstanceSpecification_2011);
+	}
+
+	/**
+	 * @generated
+	 */
 	protected Command getCreateCommand(CreateElementRequest req) {
 		if (UMLElementTypes.Slot_3015 == req.getElementType()) {
 			if (req.getContainmentFeature() == null) {

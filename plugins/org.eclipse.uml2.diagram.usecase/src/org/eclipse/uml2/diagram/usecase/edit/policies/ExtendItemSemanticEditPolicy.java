@@ -22,6 +22,13 @@ public class ExtendItemSemanticEditPolicy extends UMLBaseItemSemanticEditPolicy 
 	/**
 	 * @generated
 	 */
+	public ExtendItemSemanticEditPolicy() {
+		super(UMLElementTypes.Extend_4002);
+	}
+
+	/**
+	 * @generated
+	 */
 	protected Command getDestroyElementCommand(DestroyElementRequest req) {
 		return getGEFWrapper(new DestroyElementCommand(req));
 	}

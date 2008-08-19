@@ -33,7 +33,7 @@ public class GeneralizationCreateCommand extends CreateElementCommand {
 	/**
 	 * @generated
 	 */
-	private Classifier container;
+	private final Classifier container;
 
 	/**
 	 * @generated
@@ -46,15 +46,9 @@ public class GeneralizationCreateCommand extends CreateElementCommand {
 			setContainmentFeature(UMLPackage.eINSTANCE.getClassifier_Generalization());
 		}
 
-		// Find container element for the new link.
-		// Climb up by containment hierarchy starting from the source
-		// and return the first element that is instance of the container class.
-		for (EObject element = source; element != null; element = element.eContainer()) {
-			if (element instanceof Classifier) {
-				container = (Classifier) element;
-				super.setElementToEdit(container);
-				break;
-			}
+		container = deduceContainer(source, target);
+		if (container != null) {
+			super.setElementToEdit(container);
 		}
 	}
 
@@ -145,5 +139,22 @@ public class GeneralizationCreateCommand extends CreateElementCommand {
 	 */
 	public Classifier getContainer() {
 		return container;
+	}
+
+	/**
+	 * Default approach is to traverse ancestors of the source to find instance of container.
+	 * Modify with appropriate logic.
+	 * @generated
+	 */
+	private static Classifier deduceContainer(EObject source, EObject target) {
+		// Find container element for the new link.
+		// Climb up by containment hierarchy starting from the source
+		// and return the first element that is instance of the container class.
+		for (EObject element = source; element != null; element = element.eContainer()) {
+			if (element instanceof Classifier) {
+				return (Classifier) element;
+			}
+		}
+		return null;
 	}
 }

@@ -244,43 +244,43 @@
       <?gmfgen generated="true"?>
       <page
             id="org.eclipse.uml2.uml.diagram.csd.general"
-            name="%preference.page.title.org.eclipse.uml2.uml.diagram.csd.general"
+            name="%prefpage.org.eclipse.uml2.uml.diagram.csd.general"
             category="org.eclipse.uml2.uml.diagram"
             class="org.eclipse.uml2.diagram.csd.preferences.DiagramGeneralPreferencePage">
       </page>
       <page
             id="org.eclipse.uml2.uml.diagram.csd.appearance"
-            name="%preference.page.title.org.eclipse.uml2.uml.diagram.csd.appearance"
+            name="%prefpage.org.eclipse.uml2.uml.diagram.csd.appearance"
             category="org.eclipse.uml2.uml.diagram.csd.general"
             class="org.eclipse.uml2.diagram.csd.preferences.DiagramAppearancePreferencePage">
       </page>
       <page
             id="org.eclipse.uml2.uml.diagram.csd.connections"
-            name="%preference.page.title.org.eclipse.uml2.uml.diagram.csd.connections"
+            name="%prefpage.org.eclipse.uml2.uml.diagram.csd.connections"
             category="org.eclipse.uml2.uml.diagram.csd.general"
             class="org.eclipse.uml2.diagram.csd.preferences.DiagramConnectionsPreferencePage">
       </page>
       <page
             id="org.eclipse.uml2.uml.diagram.csd.printing"
-            name="%preference.page.title.org.eclipse.uml2.uml.diagram.csd.printing"
+            name="%prefpage.org.eclipse.uml2.uml.diagram.csd.printing"
             category="org.eclipse.uml2.uml.diagram.csd.general"
             class="org.eclipse.uml2.diagram.csd.preferences.DiagramPrintingPreferencePage">
       </page>
       <page
             id="org.eclipse.uml2.uml.diagram.csd.rulersAndGrid"
-            name="%preference.page.title.org.eclipse.uml2.uml.diagram.csd.rulersAndGrid"
+            name="%prefpage.org.eclipse.uml2.uml.diagram.csd.rulersAndGrid"
             category="org.eclipse.uml2.uml.diagram.csd.general"
             class="org.eclipse.uml2.diagram.csd.preferences.DiagramRulersAndGridPreferencePage">
       </page>
       <page
             id="org.eclipse.uml2.uml.diagram.csd.pathmaps"
-            name="%preference.page.title.org.eclipse.uml2.uml.diagram.csd.pathmaps"
+            name="%prefpage.org.eclipse.uml2.uml.diagram.csd.pathmaps"
             category="org.eclipse.uml2.uml.diagram.csd.general"
             class="org.eclipse.gmf.runtime.emf.ui.preferences.PathmapsPreferencePage">
       </page>
       <page
             id="org.eclipse.uml2.uml.diagram.csd.viewfilter"
-            name="%preference.page.title.org.eclipse.uml2.uml.diagram.csd.viewfilter"
+            name="%prefpage.org.eclipse.uml2.uml.diagram.csd.viewfilter"
             category="org.eclipse.uml2.uml.diagram.csd.general"
             class="org.eclipse.uml2.diagram.csd.preferences.DiagramViewFiltersPreferencePage">
       </page>
@@ -672,14 +672,14 @@
 
    <extension point="org.eclipse.gmf.runtime.emf.type.core.elementTypeBindings">
       <?gmfgen generated="true"?>
-      <clientContext id="UMLCompositeStructuresClientContext">
+      <clientContext id="org.eclipse.uml2.diagram.csd.TypeContext">
          <enablement>
             <test
                property="org.eclipse.gmf.runtime.emf.core.editingDomain"
                value="org.eclipse.uml2.diagram.csd.EditingDomain"/>
          </enablement>
       </clientContext> 
-      <binding context="UMLCompositeStructuresClientContext">
+      <binding context="org.eclipse.uml2.diagram.csd.TypeContext">
          <elementType ref="org.eclipse.uml2.diagram.csd.Package_1000"/>
          <elementType ref="org.eclipse.uml2.diagram.csd.Collaboration_2005"/>
          <elementType ref="org.eclipse.uml2.diagram.csd.Class_2006"/>

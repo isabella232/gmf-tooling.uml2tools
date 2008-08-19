@@ -44,6 +44,7 @@ import org.eclipse.uml2.diagram.csd.expressions.UMLAbstractExpression;
 import org.eclipse.uml2.diagram.csd.expressions.UMLOCLFactory;
 import org.eclipse.uml2.diagram.csd.part.UMLDiagramEditorPlugin;
 import org.eclipse.uml2.diagram.csd.part.UMLVisualIDRegistry;
+import org.eclipse.uml2.diagram.csd.providers.UMLElementTypes;
 import org.eclipse.uml2.uml.BehavioredClassifier;
 import org.eclipse.uml2.uml.CollaborationUse;
 import org.eclipse.uml2.uml.ConnectableElement;
@@ -69,6 +70,18 @@ public class UMLBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 	 * @generated
 	 */
 	public static final String VISUAL_ID_KEY = "visual_id"; //$NON-NLS-1$
+
+	/**
+	 * @generated
+	 */
+	private final IElementType myElementType;
+
+	/**
+	 * @generated
+	 */
+	protected UMLBaseItemSemanticEditPolicy(IElementType elementType) {
+		myElementType = elementType;
+	}
 
 	/**
 	 * Extended request data key to hold editpart visual id.
@@ -105,33 +118,8 @@ public class UMLBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 	 */
 	protected Command getSemanticCommand(IEditCommandRequest request) {
 		IEditCommandRequest completedRequest = completeRequest(request);
-		Object editHelperContext = completedRequest.getEditHelperContext();
-		if (editHelperContext instanceof View || (editHelperContext instanceof IEditHelperContext && ((IEditHelperContext) editHelperContext).getEObject() instanceof View)) {
-			// no semantic commands are provided for pure design elements
-			return null;
-		}
-		if (editHelperContext == null) {
-			editHelperContext = ViewUtil.resolveSemanticElement((View) getHost().getModel());
-		}
-		IElementType elementType = ElementTypeRegistry.getInstance().getElementType(editHelperContext);
-		if (elementType == ElementTypeRegistry.getInstance().getType("org.eclipse.gmf.runtime.emf.type.core.default")) { //$NON-NLS-1$ 
-			elementType = null;
-		}
 		Command semanticCommand = getSemanticCommandSwitch(completedRequest);
-		if (semanticCommand != null) {
-			ICommand command = semanticCommand instanceof ICommandProxy ? ((ICommandProxy) semanticCommand).getICommand() : new CommandProxy(semanticCommand);
-			completedRequest.setParameter(UMLBaseEditHelper.EDIT_POLICY_COMMAND, command);
-		}
-		if (elementType != null) {
-			ICommand command = elementType.getEditCommand(completedRequest);
-			if (command != null) {
-				if (!(command instanceof CompositeTransactionalCommand)) {
-					TransactionalEditingDomain editingDomain = ((IGraphicalEditPart) getHost()).getEditingDomain();
-					command = new CompositeTransactionalCommand(editingDomain, command.getLabel()).compose(command);
-				}
-				semanticCommand = new ICommandProxy(command);
-			}
-		}
+		semanticCommand = getEditHelperCommand(completedRequest, semanticCommand);
 		boolean shouldProceed = true;
 		if (completedRequest instanceof DestroyRequest) {
 			shouldProceed = shouldProceed((DestroyRequest) completedRequest);
@@ -145,6 +133,37 @@ public class UMLBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 			return semanticCommand;
 		}
 		return null;
+	}
+
+	/**
+	 * @generated
+	 */
+	private Command getEditHelperCommand(IEditCommandRequest request, Command editPolicyCommand) {
+		if (editPolicyCommand != null) {
+			ICommand command = editPolicyCommand instanceof ICommandProxy ? ((ICommandProxy) editPolicyCommand).getICommand() : new CommandProxy(editPolicyCommand);
+			request.setParameter(UMLBaseEditHelper.EDIT_POLICY_COMMAND, command);
+		}
+		IElementType requestContextElementType = getContextElementType(request);
+		request.setParameter(UMLBaseEditHelper.CONTEXT_ELEMENT_TYPE, requestContextElementType);
+		ICommand command = requestContextElementType.getEditCommand(request);
+		request.setParameter(UMLBaseEditHelper.EDIT_POLICY_COMMAND, null);
+		request.setParameter(UMLBaseEditHelper.CONTEXT_ELEMENT_TYPE, null);
+		if (command != null) {
+			if (!(command instanceof CompositeTransactionalCommand)) {
+				TransactionalEditingDomain editingDomain = ((IGraphicalEditPart) getHost()).getEditingDomain();
+				command = new CompositeTransactionalCommand(editingDomain, command.getLabel()).compose(command);
+			}
+			return new ICommandProxy(command);
+		}
+		return editPolicyCommand;
+	}
+
+	/**
+	 * @generated
+	 */
+	private IElementType getContextElementType(IEditCommandRequest request) {
+		IElementType requestContextElementType = UMLElementTypes.getElementType(getVisualID(request));
+		return requestContextElementType != null ? requestContextElementType : myElementType;
 	}
 
 	/**
@@ -403,6 +422,7 @@ public class UMLBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 					return false;
 				}
 			}
+
 			return canExistPortProvided_4010(source, target);
 		}
 
@@ -422,6 +442,7 @@ public class UMLBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 					return false;
 				}
 			}
+
 			return canExistConstraintConstrainedElement_4012(source, target);
 		}
 
@@ -434,6 +455,7 @@ public class UMLBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 					return false;
 				}
 			}
+
 			return canExistPortRequired_4014(source, target);
 		}
 
@@ -448,7 +470,6 @@ public class UMLBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 		 * @generated
 		 */
 		public static boolean canExistConnector_4005(StructuredClassifier container, ConnectableElement source, ConnectableElement target) {
-
 			return true;
 		}
 
@@ -456,7 +477,6 @@ public class UMLBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 		 * @generated
 		 */
 		public static boolean canExistDependency_4006(CollaborationUse container, NamedElement source, NamedElement target) {
-
 			return true;
 		}
 
@@ -544,7 +564,6 @@ public class UMLBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 		 * @generated
 		 */
 		public static boolean canExistAssociation_4011(Package container, Type source, Type target) {
-
 			return true;
 		}
 
@@ -552,7 +571,6 @@ public class UMLBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 		 * @generated
 		 */
 		public static boolean canExistConstraintConstrainedElement_4012(Constraint source, Element target) {
-
 			return true;
 		}
 
@@ -583,7 +601,6 @@ public class UMLBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 		 * @generated
 		 */
 		public static boolean canExistSlot_4015(InstanceSpecification container, InstanceSpecification source, InstanceSpecification target) {
-
 			return true;
 		}
 

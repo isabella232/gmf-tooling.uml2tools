@@ -16,6 +16,27 @@ import org.eclipse.gmf.runtime.emf.type.core.IHintedType;
 import org.eclipse.jface.resource.ImageDescriptor;
 import org.eclipse.jface.resource.ImageRegistry;
 import org.eclipse.swt.graphics.Image;
+import org.eclipse.uml2.diagram.usecase.edit.parts.ActorAsRectangleEditPart;
+import org.eclipse.uml2.diagram.usecase.edit.parts.ActorEditPart;
+import org.eclipse.uml2.diagram.usecase.edit.parts.ActorInPackageEditPart;
+import org.eclipse.uml2.diagram.usecase.edit.parts.AssociationEditPart;
+import org.eclipse.uml2.diagram.usecase.edit.parts.ConstraintConstrainedElementEditPart;
+import org.eclipse.uml2.diagram.usecase.edit.parts.ConstraintEditPart;
+import org.eclipse.uml2.diagram.usecase.edit.parts.DependencyEditPart;
+import org.eclipse.uml2.diagram.usecase.edit.parts.DiagramHeaderEditPart;
+import org.eclipse.uml2.diagram.usecase.edit.parts.ElementImportEditPart;
+import org.eclipse.uml2.diagram.usecase.edit.parts.ExtendEditPart;
+import org.eclipse.uml2.diagram.usecase.edit.parts.ExtensionPoint2EditPart;
+import org.eclipse.uml2.diagram.usecase.edit.parts.ExtensionPointEditPart;
+import org.eclipse.uml2.diagram.usecase.edit.parts.GeneralizationEditPart;
+import org.eclipse.uml2.diagram.usecase.edit.parts.IncludeEditPart;
+import org.eclipse.uml2.diagram.usecase.edit.parts.InnerUseCaseEditPart;
+import org.eclipse.uml2.diagram.usecase.edit.parts.NestedPackageEditPart;
+import org.eclipse.uml2.diagram.usecase.edit.parts.PackageEditPart;
+import org.eclipse.uml2.diagram.usecase.edit.parts.SubjectEditPart;
+import org.eclipse.uml2.diagram.usecase.edit.parts.UseCaseAsClassEditPart;
+import org.eclipse.uml2.diagram.usecase.edit.parts.UseCaseEditPart;
+import org.eclipse.uml2.diagram.usecase.edit.parts.UseCaseinPackageEditPart;
 import org.eclipse.uml2.diagram.usecase.part.UMLDiagramEditorPlugin;
 import org.eclipse.uml2.uml.UMLPackage;
 
@@ -337,6 +358,57 @@ public class UMLElementTypes extends ElementInitializers {
 			KNOWN_ELEMENT_TYPES.add(Dependency_4006);
 		}
 		return KNOWN_ELEMENT_TYPES.contains(elementType);
+	}
+
+	/**
+	 * @generated
+	 */
+	public static IElementType getElementType(int visualID) {
+		switch (visualID) {
+		case PackageEditPart.VISUAL_ID:
+			return Package_1000;
+		case DiagramHeaderEditPart.VISUAL_ID:
+			return Package_2001;
+		case ActorEditPart.VISUAL_ID:
+			return Actor_2002;
+		case ActorAsRectangleEditPart.VISUAL_ID:
+			return Actor_2005;
+		case UseCaseEditPart.VISUAL_ID:
+			return UseCase_2003;
+		case UseCaseAsClassEditPart.VISUAL_ID:
+			return UseCase_2004;
+		case SubjectEditPart.VISUAL_ID:
+			return Component_2006;
+		case NestedPackageEditPart.VISUAL_ID:
+			return Package_2007;
+		case ConstraintEditPart.VISUAL_ID:
+			return Constraint_2008;
+		case ElementImportEditPart.VISUAL_ID:
+			return ElementImport_3001;
+		case ExtensionPointEditPart.VISUAL_ID:
+			return ExtensionPoint_3002;
+		case ExtensionPoint2EditPart.VISUAL_ID:
+			return ExtensionPoint_3003;
+		case InnerUseCaseEditPart.VISUAL_ID:
+			return UseCase_3004;
+		case ActorInPackageEditPart.VISUAL_ID:
+			return Actor_3005;
+		case UseCaseinPackageEditPart.VISUAL_ID:
+			return UseCase_3006;
+		case IncludeEditPart.VISUAL_ID:
+			return Include_4001;
+		case ExtendEditPart.VISUAL_ID:
+			return Extend_4002;
+		case GeneralizationEditPart.VISUAL_ID:
+			return Generalization_4003;
+		case AssociationEditPart.VISUAL_ID:
+			return Association_4004;
+		case ConstraintConstrainedElementEditPart.VISUAL_ID:
+			return ConstraintConstrainedElement_4005;
+		case DependencyEditPart.VISUAL_ID:
+			return Dependency_4006;
+		}
+		return null;
 	}
 
 	/**

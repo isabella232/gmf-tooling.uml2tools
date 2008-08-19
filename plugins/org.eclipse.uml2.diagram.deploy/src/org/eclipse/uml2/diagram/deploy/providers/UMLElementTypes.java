@@ -16,6 +16,25 @@ import org.eclipse.gmf.runtime.emf.type.core.IHintedType;
 import org.eclipse.jface.resource.ImageDescriptor;
 import org.eclipse.jface.resource.ImageRegistry;
 import org.eclipse.swt.graphics.Image;
+import org.eclipse.uml2.diagram.deploy.edit.parts.Artifact2EditPart;
+import org.eclipse.uml2.diagram.deploy.edit.parts.Artifact3EditPart;
+import org.eclipse.uml2.diagram.deploy.edit.parts.ArtifactEditPart;
+import org.eclipse.uml2.diagram.deploy.edit.parts.CommunicationPathEditPart;
+import org.eclipse.uml2.diagram.deploy.edit.parts.DependencyEditPart;
+import org.eclipse.uml2.diagram.deploy.edit.parts.DeploymentConfigurationEditPart;
+import org.eclipse.uml2.diagram.deploy.edit.parts.DeploymentEditPart;
+import org.eclipse.uml2.diagram.deploy.edit.parts.DeploymentSpecificationEditPart;
+import org.eclipse.uml2.diagram.deploy.edit.parts.Device2EditPart;
+import org.eclipse.uml2.diagram.deploy.edit.parts.DeviceEditPart;
+import org.eclipse.uml2.diagram.deploy.edit.parts.ElementImportEditPart;
+import org.eclipse.uml2.diagram.deploy.edit.parts.ExecutionEnvironment2EditPart;
+import org.eclipse.uml2.diagram.deploy.edit.parts.ExecutionEnvironmentEditPart;
+import org.eclipse.uml2.diagram.deploy.edit.parts.ManifestationEditPart;
+import org.eclipse.uml2.diagram.deploy.edit.parts.Node2EditPart;
+import org.eclipse.uml2.diagram.deploy.edit.parts.NodeEditPart;
+import org.eclipse.uml2.diagram.deploy.edit.parts.Package2EditPart;
+import org.eclipse.uml2.diagram.deploy.edit.parts.PackageEditPart;
+import org.eclipse.uml2.diagram.deploy.edit.parts.PropertyEditPart;
 import org.eclipse.uml2.diagram.deploy.part.UMLDiagramEditorPlugin;
 import org.eclipse.uml2.uml.UMLPackage;
 
@@ -321,6 +340,53 @@ public class UMLElementTypes extends ElementInitializers {
 			KNOWN_ELEMENT_TYPES.add(Dependency_4005);
 		}
 		return KNOWN_ELEMENT_TYPES.contains(elementType);
+	}
+
+	/**
+	 * @generated
+	 */
+	public static IElementType getElementType(int visualID) {
+		switch (visualID) {
+		case PackageEditPart.VISUAL_ID:
+			return Package_1000;
+		case Package2EditPart.VISUAL_ID:
+			return Package_2001;
+		case DeviceEditPart.VISUAL_ID:
+			return Device_2003;
+		case NodeEditPart.VISUAL_ID:
+			return Node_2004;
+		case ExecutionEnvironmentEditPart.VISUAL_ID:
+			return ExecutionEnvironment_2005;
+		case Artifact2EditPart.VISUAL_ID:
+			return Artifact_2006;
+		case DeploymentSpecificationEditPart.VISUAL_ID:
+			return DeploymentSpecification_2007;
+		case ElementImportEditPart.VISUAL_ID:
+			return ElementImport_3001;
+		case Device2EditPart.VISUAL_ID:
+			return Device_3004;
+		case ArtifactEditPart.VISUAL_ID:
+			return Artifact_3002;
+		case ExecutionEnvironment2EditPart.VISUAL_ID:
+			return ExecutionEnvironment_3005;
+		case Artifact3EditPart.VISUAL_ID:
+			return Artifact_3006;
+		case Node2EditPart.VISUAL_ID:
+			return Node_3007;
+		case PropertyEditPart.VISUAL_ID:
+			return Property_3003;
+		case DeploymentEditPart.VISUAL_ID:
+			return Deployment_4001;
+		case ManifestationEditPart.VISUAL_ID:
+			return Manifestation_4002;
+		case DeploymentConfigurationEditPart.VISUAL_ID:
+			return DeploymentConfiguration_4003;
+		case CommunicationPathEditPart.VISUAL_ID:
+			return CommunicationPath_4004;
+		case DependencyEditPart.VISUAL_ID:
+			return Dependency_4005;
+		}
+		return null;
 	}
 
 	/**

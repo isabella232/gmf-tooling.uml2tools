@@ -14,6 +14,13 @@ public class InnerUseCaseExtensionPointsItemSemanticEditPolicy extends UMLBaseIt
 	/**
 	 * @generated
 	 */
+	public InnerUseCaseExtensionPointsItemSemanticEditPolicy() {
+		super(UMLElementTypes.UseCase_3004);
+	}
+
+	/**
+	 * @generated
+	 */
 	protected Command getCreateCommand(CreateElementRequest req) {
 		if (UMLElementTypes.ExtensionPoint_3002 == req.getElementType()) {
 			if (req.getContainmentFeature() == null) {

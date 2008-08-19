@@ -19,6 +19,13 @@ public class AssociationInstanceItemSemanticEditPolicy extends UMLBaseItemSemant
 	/**
 	 * @generated
 	 */
+	public AssociationInstanceItemSemanticEditPolicy() {
+		super(UMLElementTypes.Slot_4015);
+	}
+
+	/**
+	 * @generated
+	 */
 	protected Command getDestroyElementCommand(DestroyElementRequest req) {
 		return getGEFWrapper(new DestroyElementCommand(req));
 	}

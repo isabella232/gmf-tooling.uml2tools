@@ -36,6 +36,13 @@ public class ExecutionEnvironmentItemSemanticEditPolicy extends UMLBaseItemSeman
 	/**
 	 * @generated
 	 */
+	public ExecutionEnvironmentItemSemanticEditPolicy() {
+		super(UMLElementTypes.ExecutionEnvironment_2005);
+	}
+
+	/**
+	 * @generated
+	 */
 	protected Command getDestroyElementCommand(DestroyElementRequest req) {
 		CompoundCommand cc = getDestroyEdgesCommand();
 		addDestroyChildNodesCommand(cc);

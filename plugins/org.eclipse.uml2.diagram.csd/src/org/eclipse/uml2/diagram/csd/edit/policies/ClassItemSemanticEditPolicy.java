@@ -48,6 +48,13 @@ public class ClassItemSemanticEditPolicy extends UMLBaseItemSemanticEditPolicy {
 	/**
 	 * @generated
 	 */
+	public ClassItemSemanticEditPolicy() {
+		super(UMLElementTypes.Class_2006);
+	}
+
+	/**
+	 * @generated
+	 */
 	protected Command getCreateCommand(CreateElementRequest req) {
 		if (UMLElementTypes.Port_3011 == req.getElementType()) {
 			if (req.getContainmentFeature() == null) {

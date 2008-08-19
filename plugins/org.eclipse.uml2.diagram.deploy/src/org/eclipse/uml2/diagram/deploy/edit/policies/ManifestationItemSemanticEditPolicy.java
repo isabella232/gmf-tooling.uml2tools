@@ -21,6 +21,13 @@ public class ManifestationItemSemanticEditPolicy extends UMLBaseItemSemanticEdit
 	/**
 	 * @generated
 	 */
+	public ManifestationItemSemanticEditPolicy() {
+		super(UMLElementTypes.Manifestation_4002);
+	}
+
+	/**
+	 * @generated
+	 */
 	protected Command getDestroyElementCommand(DestroyElementRequest req) {
 		return getGEFWrapper(new DestroyElementCommand(req));
 	}

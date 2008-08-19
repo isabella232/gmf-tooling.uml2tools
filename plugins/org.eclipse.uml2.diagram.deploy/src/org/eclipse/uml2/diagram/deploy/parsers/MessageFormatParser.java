@@ -27,6 +27,11 @@ public class MessageFormatParser extends AbstractParser {
 	/**
 	 * @generated
 	 */
+	private String defaultEditablePattern;
+
+	/**
+	 * @generated
+	 */
 	private MessageFormat viewProcessor;
 
 	/**
@@ -49,6 +54,13 @@ public class MessageFormatParser extends AbstractParser {
 	/**
 	 * @generated
 	 */
+	public MessageFormatParser(EAttribute[] features, EAttribute[] editableFeatures) {
+		super(features, editableFeatures);
+	}
+
+	/**
+	 * @generated
+	 */
 	protected String getDefaultPattern() {
 		if (defaultPattern == null) {
 			StringBuffer sb = new StringBuffer();
@@ -63,6 +75,25 @@ public class MessageFormatParser extends AbstractParser {
 			defaultPattern = sb.toString();
 		}
 		return defaultPattern;
+	}
+
+	/**
+	 * @generated
+	 */
+	protected String getDefaultEditablePattern() {
+		if (defaultEditablePattern == null) {
+			StringBuffer sb = new StringBuffer();
+			for (int i = 0; i < editableFeatures.length; i++) {
+				if (i > 0) {
+					sb.append(' ');
+				}
+				sb.append('{');
+				sb.append(i);
+				sb.append('}');
+			}
+			defaultEditablePattern = sb.toString();
+		}
+		return defaultEditablePattern;
 	}
 
 	/**
@@ -103,7 +134,7 @@ public class MessageFormatParser extends AbstractParser {
 	 */
 	public String getEditorPattern() {
 		String pattern = super.getEditorPattern();
-		return pattern != null ? pattern : getDefaultPattern();
+		return pattern != null ? pattern : getDefaultEditablePattern();
 	}
 
 	/**
@@ -136,7 +167,7 @@ public class MessageFormatParser extends AbstractParser {
 	 */
 	public String getEditPattern() {
 		String pattern = super.getEditPattern();
-		return pattern != null ? pattern : getDefaultPattern();
+		return pattern != null ? pattern : getDefaultEditablePattern();
 	}
 
 	/**
@@ -177,7 +208,7 @@ public class MessageFormatParser extends AbstractParser {
 	 */
 	public String getEditString(IAdaptable adapter, int flags) {
 		EObject element = (EObject) adapter.getAdapter(EObject.class);
-		return getEditorProcessor().format(getValues(element), new StringBuffer(), new FieldPosition(0)).toString();
+		return getEditorProcessor().format(getEditableValues(element), new StringBuffer(), new FieldPosition(0)).toString();
 	}
 
 	/**

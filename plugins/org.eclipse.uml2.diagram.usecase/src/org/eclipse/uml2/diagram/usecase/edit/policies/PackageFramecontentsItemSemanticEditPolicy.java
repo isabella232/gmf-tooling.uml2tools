@@ -15,6 +15,13 @@ public class PackageFramecontentsItemSemanticEditPolicy extends UMLBaseItemSeman
 	/**
 	 * @generated
 	 */
+	public PackageFramecontentsItemSemanticEditPolicy() {
+		super(UMLElementTypes.Package_2007);
+	}
+
+	/**
+	 * @generated
+	 */
 	protected Command getCreateCommand(CreateElementRequest req) {
 		if (UMLElementTypes.Actor_3005 == req.getElementType()) {
 			if (req.getContainmentFeature() == null) {

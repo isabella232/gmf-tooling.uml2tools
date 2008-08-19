@@ -43,6 +43,13 @@ public class UseCaseAsClassItemSemanticEditPolicy extends UMLBaseItemSemanticEdi
 	/**
 	 * @generated
 	 */
+	public UseCaseAsClassItemSemanticEditPolicy() {
+		super(UMLElementTypes.UseCase_2004);
+	}
+
+	/**
+	 * @generated
+	 */
 	protected Command getDestroyElementCommand(DestroyElementRequest req) {
 		CompoundCommand cc = getDestroyEdgesCommand();
 		addDestroyChildNodesCommand(cc);

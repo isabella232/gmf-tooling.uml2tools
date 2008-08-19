@@ -34,6 +34,13 @@ public class Package2ItemSemanticEditPolicy extends UMLBaseItemSemanticEditPolic
 	/**
 	 * @generated
 	 */
+	public Package2ItemSemanticEditPolicy() {
+		super(UMLElementTypes.Package_2003);
+	}
+
+	/**
+	 * @generated
+	 */
 	protected Command getDestroyElementCommand(DestroyElementRequest req) {
 		CompoundCommand cc = getDestroyEdgesCommand();
 		addDestroyChildNodesCommand(cc);

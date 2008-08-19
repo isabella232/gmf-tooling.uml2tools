@@ -23,6 +23,13 @@ public class ExtensionPointItemSemanticEditPolicy extends UMLBaseItemSemanticEdi
 	/**
 	 * @generated
 	 */
+	public ExtensionPointItemSemanticEditPolicy() {
+		super(UMLElementTypes.ExtensionPoint_3002);
+	}
+
+	/**
+	 * @generated
+	 */
 	protected Command getDestroyElementCommand(DestroyElementRequest req) {
 		CompoundCommand cc = getDestroyEdgesCommand();
 		addDestroyShortcutsCommand(cc);

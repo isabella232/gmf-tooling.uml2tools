@@ -17,6 +17,13 @@ public class DeviceDevicecontentsItemSemanticEditPolicy extends UMLBaseItemSeman
 	/**
 	 * @generated
 	 */
+	public DeviceDevicecontentsItemSemanticEditPolicy() {
+		super(UMLElementTypes.Device_2003);
+	}
+
+	/**
+	 * @generated
+	 */
 	protected Command getCreateCommand(CreateElementRequest req) {
 		if (UMLElementTypes.Device_3004 == req.getElementType()) {
 			if (req.getContainmentFeature() == null) {

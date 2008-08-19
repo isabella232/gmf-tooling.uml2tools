@@ -24,6 +24,13 @@ public class CommunicationPathItemSemanticEditPolicy extends UMLBaseItemSemantic
 	/**
 	 * @generated
 	 */
+	public CommunicationPathItemSemanticEditPolicy() {
+		super(UMLElementTypes.CommunicationPath_4004);
+	}
+
+	/**
+	 * @generated
+	 */
 	protected Command getDestroyElementCommand(DestroyElementRequest req) {
 		return getGEFWrapper(new DestroyElementCommand(req));
 	}

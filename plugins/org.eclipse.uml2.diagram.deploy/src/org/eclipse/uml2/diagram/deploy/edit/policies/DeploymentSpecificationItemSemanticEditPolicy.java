@@ -40,6 +40,13 @@ public class DeploymentSpecificationItemSemanticEditPolicy extends UMLBaseItemSe
 	/**
 	 * @generated
 	 */
+	public DeploymentSpecificationItemSemanticEditPolicy() {
+		super(UMLElementTypes.DeploymentSpecification_2007);
+	}
+
+	/**
+	 * @generated
+	 */
 	protected Command getDestroyElementCommand(DestroyElementRequest req) {
 		CompoundCommand cc = getDestroyEdgesCommand();
 		addDestroyChildNodesCommand(cc);

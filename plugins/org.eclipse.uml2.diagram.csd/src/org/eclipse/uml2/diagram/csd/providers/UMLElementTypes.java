@@ -16,6 +16,35 @@ import org.eclipse.gmf.runtime.emf.type.core.IHintedType;
 import org.eclipse.jface.resource.ImageDescriptor;
 import org.eclipse.jface.resource.ImageRegistry;
 import org.eclipse.swt.graphics.Image;
+import org.eclipse.uml2.diagram.csd.edit.parts.AssociationEditPart;
+import org.eclipse.uml2.diagram.csd.edit.parts.AssociationInstanceEditPart;
+import org.eclipse.uml2.diagram.csd.edit.parts.Class2EditPart;
+import org.eclipse.uml2.diagram.csd.edit.parts.Class3EditPart;
+import org.eclipse.uml2.diagram.csd.edit.parts.ClassEditPart;
+import org.eclipse.uml2.diagram.csd.edit.parts.CollaborationEditPart;
+import org.eclipse.uml2.diagram.csd.edit.parts.CollaborationUse2EditPart;
+import org.eclipse.uml2.diagram.csd.edit.parts.ConnectorEditPart;
+import org.eclipse.uml2.diagram.csd.edit.parts.ConstraintConstrainedElementEditPart;
+import org.eclipse.uml2.diagram.csd.edit.parts.ConstraintEditPart;
+import org.eclipse.uml2.diagram.csd.edit.parts.DependencyEditPart;
+import org.eclipse.uml2.diagram.csd.edit.parts.ElementImportEditPart;
+import org.eclipse.uml2.diagram.csd.edit.parts.InstanceSpecificationEditPart;
+import org.eclipse.uml2.diagram.csd.edit.parts.InterfaceEditPart;
+import org.eclipse.uml2.diagram.csd.edit.parts.InterfaceRealizationEditPart;
+import org.eclipse.uml2.diagram.csd.edit.parts.OperationEditPart;
+import org.eclipse.uml2.diagram.csd.edit.parts.Package2EditPart;
+import org.eclipse.uml2.diagram.csd.edit.parts.PackageEditPart;
+import org.eclipse.uml2.diagram.csd.edit.parts.ParameterEditPart;
+import org.eclipse.uml2.diagram.csd.edit.parts.Port2EditPart;
+import org.eclipse.uml2.diagram.csd.edit.parts.Port3EditPart;
+import org.eclipse.uml2.diagram.csd.edit.parts.PortEditPart;
+import org.eclipse.uml2.diagram.csd.edit.parts.PortProvidedEditPart;
+import org.eclipse.uml2.diagram.csd.edit.parts.PortRequiredEditPart;
+import org.eclipse.uml2.diagram.csd.edit.parts.Property2EditPart;
+import org.eclipse.uml2.diagram.csd.edit.parts.Property3EditPart;
+import org.eclipse.uml2.diagram.csd.edit.parts.PropertyEditPart;
+import org.eclipse.uml2.diagram.csd.edit.parts.SlotEditPart;
+import org.eclipse.uml2.diagram.csd.edit.parts.UsageEditPart;
 import org.eclipse.uml2.diagram.csd.part.UMLDiagramEditorPlugin;
 import org.eclipse.uml2.uml.UMLPackage;
 
@@ -401,6 +430,73 @@ public class UMLElementTypes extends ElementInitializers {
 			KNOWN_ELEMENT_TYPES.add(Slot_4015);
 		}
 		return KNOWN_ELEMENT_TYPES.contains(elementType);
+	}
+
+	/**
+	 * @generated
+	 */
+	public static IElementType getElementType(int visualID) {
+		switch (visualID) {
+		case PackageEditPart.VISUAL_ID:
+			return Package_1000;
+		case CollaborationEditPart.VISUAL_ID:
+			return Collaboration_2005;
+		case ClassEditPart.VISUAL_ID:
+			return Class_2006;
+		case Package2EditPart.VISUAL_ID:
+			return Package_2003;
+		case Class3EditPart.VISUAL_ID:
+			return Class_2007;
+		case InterfaceEditPart.VISUAL_ID:
+			return Interface_2009;
+		case InstanceSpecificationEditPart.VISUAL_ID:
+			return InstanceSpecification_2011;
+		case ConstraintEditPart.VISUAL_ID:
+			return Constraint_2012;
+		case CollaborationUse2EditPart.VISUAL_ID:
+			return CollaborationUse_3002;
+		case PropertyEditPart.VISUAL_ID:
+			return Property_3007;
+		case ParameterEditPart.VISUAL_ID:
+			return Parameter_3013;
+		case Property2EditPart.VISUAL_ID:
+			return Property_3008;
+		case OperationEditPart.VISUAL_ID:
+			return Operation_3009;
+		case Class2EditPart.VISUAL_ID:
+			return Class_3010;
+		case PortEditPart.VISUAL_ID:
+			return Port_3011;
+		case ElementImportEditPart.VISUAL_ID:
+			return ElementImport_3004;
+		case Property3EditPart.VISUAL_ID:
+			return Property_3014;
+		case Port2EditPart.VISUAL_ID:
+			return Port_3016;
+		case Port3EditPart.VISUAL_ID:
+			return Port_3017;
+		case SlotEditPart.VISUAL_ID:
+			return Slot_3015;
+		case ConnectorEditPart.VISUAL_ID:
+			return Connector_4005;
+		case DependencyEditPart.VISUAL_ID:
+			return Dependency_4006;
+		case InterfaceRealizationEditPart.VISUAL_ID:
+			return InterfaceRealization_4007;
+		case UsageEditPart.VISUAL_ID:
+			return Usage_4008;
+		case PortProvidedEditPart.VISUAL_ID:
+			return PortProvided_4010;
+		case AssociationEditPart.VISUAL_ID:
+			return Association_4011;
+		case ConstraintConstrainedElementEditPart.VISUAL_ID:
+			return ConstraintConstrainedElement_4012;
+		case PortRequiredEditPart.VISUAL_ID:
+			return PortRequired_4014;
+		case AssociationInstanceEditPart.VISUAL_ID:
+			return Slot_4015;
+		}
+		return null;
 	}
 
 	/**

@@ -29,6 +29,13 @@ public class ParameterItemSemanticEditPolicy extends UMLBaseItemSemanticEditPoli
 	/**
 	 * @generated
 	 */
+	public ParameterItemSemanticEditPolicy() {
+		super(UMLElementTypes.Parameter_3013);
+	}
+
+	/**
+	 * @generated
+	 */
 	protected Command getDestroyElementCommand(DestroyElementRequest req) {
 		CompoundCommand cc = getDestroyEdgesCommand();
 		addDestroyShortcutsCommand(cc);

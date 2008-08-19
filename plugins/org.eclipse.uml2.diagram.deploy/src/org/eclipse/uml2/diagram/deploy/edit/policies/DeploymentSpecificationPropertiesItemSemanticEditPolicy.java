@@ -14,6 +14,13 @@ public class DeploymentSpecificationPropertiesItemSemanticEditPolicy extends UML
 	/**
 	 * @generated
 	 */
+	public DeploymentSpecificationPropertiesItemSemanticEditPolicy() {
+		super(UMLElementTypes.DeploymentSpecification_2007);
+	}
+
+	/**
+	 * @generated
+	 */
 	protected Command getCreateCommand(CreateElementRequest req) {
 		if (UMLElementTypes.Property_3003 == req.getElementType()) {
 			if (req.getContainmentFeature() == null) {

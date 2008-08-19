@@ -18,6 +18,13 @@ public class GeneralizationItemSemanticEditPolicy extends UMLBaseItemSemanticEdi
 	/**
 	 * @generated
 	 */
+	public GeneralizationItemSemanticEditPolicy() {
+		super(UMLElementTypes.Generalization_4003);
+	}
+
+	/**
+	 * @generated
+	 */
 	protected Command getDestroyElementCommand(DestroyElementRequest req) {
 		return getGEFWrapper(new DestroyElementCommand(req));
 	}

@@ -220,37 +220,37 @@
       <?gmfgen generated="true"?>
       <page
             id="org.eclipse.uml2.uml.diagram.usecase.general"
-            name="%preference.page.title.org.eclipse.uml2.uml.diagram.usecase.general"
+            name="%prefpage.org.eclipse.uml2.uml.diagram.usecase.general"
             category="org.eclipse.uml2.uml.diagram"
             class="org.eclipse.uml2.diagram.usecase.preferences.DiagramGeneralPreferencePage">
       </page>
       <page
             id="org.eclipse.uml2.uml.diagram.usecase.appearance"
-            name="%preference.page.title.org.eclipse.uml2.uml.diagram.usecase.appearance"
+            name="%prefpage.org.eclipse.uml2.uml.diagram.usecase.appearance"
             category="org.eclipse.uml2.uml.diagram.usecase.general"
             class="org.eclipse.uml2.diagram.usecase.preferences.DiagramAppearancePreferencePage">
       </page>
       <page
             id="org.eclipse.uml2.uml.diagram.usecase.connections"
-            name="%preference.page.title.org.eclipse.uml2.uml.diagram.usecase.connections"
+            name="%prefpage.org.eclipse.uml2.uml.diagram.usecase.connections"
             category="org.eclipse.uml2.uml.diagram.usecase.general"
             class="org.eclipse.uml2.diagram.usecase.preferences.DiagramConnectionsPreferencePage">
       </page>
       <page
             id="org.eclipse.uml2.uml.diagram.usecase.printing"
-            name="%preference.page.title.org.eclipse.uml2.uml.diagram.usecase.printing"
+            name="%prefpage.org.eclipse.uml2.uml.diagram.usecase.printing"
             category="org.eclipse.uml2.uml.diagram.usecase.general"
             class="org.eclipse.uml2.diagram.usecase.preferences.DiagramPrintingPreferencePage">
       </page>
       <page
             id="org.eclipse.uml2.uml.diagram.usecase.rulersAndGrid"
-            name="%preference.page.title.org.eclipse.uml2.uml.diagram.usecase.rulersAndGrid"
+            name="%prefpage.org.eclipse.uml2.uml.diagram.usecase.rulersAndGrid"
             category="org.eclipse.uml2.uml.diagram.usecase.general"
             class="org.eclipse.uml2.diagram.usecase.preferences.DiagramRulersAndGridPreferencePage">
       </page>
       <page
             id="org.eclipse.uml2.uml.diagram.usecase.pathmaps"
-            name="%preference.page.title.org.eclipse.uml2.uml.diagram.usecase.pathmaps"
+            name="%prefpage.org.eclipse.uml2.uml.diagram.usecase.pathmaps"
             category="org.eclipse.uml2.uml.diagram.usecase.general"
             class="org.eclipse.gmf.runtime.emf.ui.preferences.PathmapsPreferencePage">
       </page>
@@ -564,14 +564,14 @@
 
    <extension point="org.eclipse.gmf.runtime.emf.type.core.elementTypeBindings">
       <?gmfgen generated="true"?>
-      <clientContext id="UMLUseCaseClientContext">
+      <clientContext id="org.eclipse.uml2.diagram.usecase.TypeContext">
          <enablement>
             <test
                property="org.eclipse.gmf.runtime.emf.core.editingDomain"
                value="org.eclipse.uml2.diagram.usecase.EditingDomain"/>
          </enablement>
       </clientContext> 
-      <binding context="UMLUseCaseClientContext">
+      <binding context="org.eclipse.uml2.diagram.usecase.TypeContext">
          <elementType ref="org.eclipse.uml2.diagram.usecase.Package_1000"/>
          <elementType ref="org.eclipse.uml2.diagram.usecase.Package_2001"/>
          <elementType ref="org.eclipse.uml2.diagram.usecase.Actor_2002"/>

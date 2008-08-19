@@ -45,6 +45,13 @@ public class CollaborationItemSemanticEditPolicy extends UMLBaseItemSemanticEdit
 	/**
 	 * @generated
 	 */
+	public CollaborationItemSemanticEditPolicy() {
+		super(UMLElementTypes.Collaboration_2005);
+	}
+
+	/**
+	 * @generated
+	 */
 	protected Command getCreateCommand(CreateElementRequest req) {
 		if (UMLElementTypes.Parameter_3013 == req.getElementType()) {
 			if (req.getContainmentFeature() == null) {

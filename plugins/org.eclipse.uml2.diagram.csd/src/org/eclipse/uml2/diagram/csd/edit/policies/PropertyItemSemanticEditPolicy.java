@@ -29,6 +29,13 @@ public class PropertyItemSemanticEditPolicy extends UMLBaseItemSemanticEditPolic
 	/**
 	 * @generated
 	 */
+	public PropertyItemSemanticEditPolicy() {
+		super(UMLElementTypes.Property_3007);
+	}
+
+	/**
+	 * @generated
+	 */
 	protected Command getDestroyElementCommand(DestroyElementRequest req) {
 		CompoundCommand cc = getDestroyEdgesCommand();
 		addDestroyShortcutsCommand(cc);

@@ -26,6 +26,13 @@ public class CollaborationUse2ItemSemanticEditPolicy extends UMLBaseItemSemantic
 	/**
 	 * @generated
 	 */
+	public CollaborationUse2ItemSemanticEditPolicy() {
+		super(UMLElementTypes.CollaborationUse_3002);
+	}
+
+	/**
+	 * @generated
+	 */
 	protected Command getDestroyElementCommand(DestroyElementRequest req) {
 		CompoundCommand cc = getDestroyEdgesCommand();
 		addDestroyShortcutsCommand(cc);

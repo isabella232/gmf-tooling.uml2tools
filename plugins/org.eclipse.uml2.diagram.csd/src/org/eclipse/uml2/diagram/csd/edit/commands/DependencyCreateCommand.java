@@ -34,7 +34,7 @@ public class DependencyCreateCommand extends CreateElementCommand {
 	/**
 	 * @generated
 	 */
-	private CollaborationUse container;
+	private final CollaborationUse container;
 
 	/**
 	 * @generated
@@ -47,15 +47,9 @@ public class DependencyCreateCommand extends CreateElementCommand {
 			setContainmentFeature(UMLPackage.eINSTANCE.getCollaborationUse_RoleBinding());
 		}
 
-		// Find container element for the new link.
-		// Climb up by containment hierarchy starting from the source
-		// and return the first element that is instance of the container class.
-		for (EObject element = source; element != null; element = element.eContainer()) {
-			if (element instanceof CollaborationUse) {
-				container = (CollaborationUse) element;
-				super.setElementToEdit(container);
-				break;
-			}
+		container = deduceContainer(source, target);
+		if (container != null) {
+			super.setElementToEdit(container);
 		}
 	}
 
@@ -146,5 +140,22 @@ public class DependencyCreateCommand extends CreateElementCommand {
 	 */
 	public CollaborationUse getContainer() {
 		return container;
+	}
+
+	/**
+	 * Default approach is to traverse ancestors of the source to find instance of container.
+	 * Modify with appropriate logic.
+	 * @generated
+	 */
+	private static CollaborationUse deduceContainer(EObject source, EObject target) {
+		// Find container element for the new link.
+		// Climb up by containment hierarchy starting from the source
+		// and return the first element that is instance of the container class.
+		for (EObject element = source; element != null; element = element.eContainer()) {
+			if (element instanceof CollaborationUse) {
+				return (CollaborationUse) element;
+			}
+		}
+		return null;
 	}
 }

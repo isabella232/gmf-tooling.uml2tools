@@ -39,6 +39,13 @@ public class DeviceItemSemanticEditPolicy extends UMLBaseItemSemanticEditPolicy 
 	/**
 	 * @generated
 	 */
+	public DeviceItemSemanticEditPolicy() {
+		super(UMLElementTypes.Device_2003);
+	}
+
+	/**
+	 * @generated
+	 */
 	protected Command getDestroyElementCommand(DestroyElementRequest req) {
 		CompoundCommand cc = getDestroyEdgesCommand();
 		addDestroyChildNodesCommand(cc);

@@ -12,6 +12,7 @@ import org.eclipse.draw2d.Ellipse;
 import org.eclipse.draw2d.IFigure;
 import org.eclipse.draw2d.Label;
 import org.eclipse.draw2d.RectangleFigure;
+import org.eclipse.draw2d.Shape;
 import org.eclipse.draw2d.StackLayout;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EObject;
@@ -37,6 +38,7 @@ import org.eclipse.gmf.runtime.gef.ui.figures.DefaultSizeNodeFigure;
 import org.eclipse.gmf.runtime.gef.ui.figures.NodeFigure;
 import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.swt.SWT;
+import org.eclipse.swt.graphics.Color;
 import org.eclipse.swt.graphics.Font;
 import org.eclipse.swt.widgets.Display;
 import org.eclipse.uml2.diagram.common.draw2d.OneLineDashedBorder;
@@ -269,6 +271,42 @@ public class UseCaseinPackageEditPart extends ShapeNodeEditPart implements Prima
 			return contentPane;
 		}
 		return super.getContentPane();
+	}
+
+	/**
+	 * @generated
+	 */
+	protected void setForegroundColor(Color color) {
+		if (primaryShape != null) {
+			primaryShape.setForegroundColor(color);
+		}
+	}
+
+	/**
+	 * @generated
+	 */
+	protected void setBackgroundColor(Color color) {
+		if (primaryShape != null) {
+			primaryShape.setBackgroundColor(color);
+		}
+	}
+
+	/**
+	 * @generated
+	 */
+	protected void setLineWidth(int width) {
+		if (primaryShape instanceof Shape) {
+			((Shape) primaryShape).setLineWidth(getMapMode().DPtoLP(width));
+		}
+	}
+
+	/**
+	 * @generated
+	 */
+	protected void setLineType(int style) {
+		if (primaryShape instanceof Shape) {
+			((Shape) primaryShape).setLineStyle(style);
+		}
 	}
 
 	/**

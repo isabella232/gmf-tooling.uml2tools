@@ -37,6 +37,13 @@ public class SubjectItemSemanticEditPolicy extends UMLBaseItemSemanticEditPolicy
 	/**
 	 * @generated
 	 */
+	public SubjectItemSemanticEditPolicy() {
+		super(UMLElementTypes.Component_2006);
+	}
+
+	/**
+	 * @generated
+	 */
 	protected Command getDestroyElementCommand(DestroyElementRequest req) {
 		CompoundCommand cc = getDestroyEdgesCommand();
 		addDestroyChildNodesCommand(cc);

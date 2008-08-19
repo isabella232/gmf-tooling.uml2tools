@@ -34,7 +34,7 @@ public class DeploymentCreateCommand extends CreateElementCommand {
 	/**
 	 * @generated
 	 */
-	private DeploymentTarget container;
+	private final DeploymentTarget container;
 
 	/**
 	 * @generated
@@ -47,15 +47,9 @@ public class DeploymentCreateCommand extends CreateElementCommand {
 			setContainmentFeature(UMLPackage.eINSTANCE.getDeploymentTarget_Deployment());
 		}
 
-		// Find container element for the new link.
-		// Climb up by containment hierarchy starting from the source
-		// and return the first element that is instance of the container class.
-		for (EObject element = source; element != null; element = element.eContainer()) {
-			if (element instanceof DeploymentTarget) {
-				container = (DeploymentTarget) element;
-				super.setElementToEdit(container);
-				break;
-			}
+		container = deduceContainer(source, target);
+		if (container != null) {
+			super.setElementToEdit(container);
 		}
 	}
 
@@ -146,5 +140,22 @@ public class DeploymentCreateCommand extends CreateElementCommand {
 	 */
 	public DeploymentTarget getContainer() {
 		return container;
+	}
+
+	/**
+	 * Default approach is to traverse ancestors of the source to find instance of container.
+	 * Modify with appropriate logic.
+	 * @generated
+	 */
+	private static DeploymentTarget deduceContainer(EObject source, EObject target) {
+		// Find container element for the new link.
+		// Climb up by containment hierarchy starting from the source
+		// and return the first element that is instance of the container class.
+		for (EObject element = source; element != null; element = element.eContainer()) {
+			if (element instanceof DeploymentTarget) {
+				return (DeploymentTarget) element;
+			}
+		}
+		return null;
 	}
 }

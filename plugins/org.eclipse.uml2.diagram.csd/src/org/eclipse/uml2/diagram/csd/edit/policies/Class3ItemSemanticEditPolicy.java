@@ -44,6 +44,13 @@ public class Class3ItemSemanticEditPolicy extends UMLBaseItemSemanticEditPolicy 
 	/**
 	 * @generated
 	 */
+	public Class3ItemSemanticEditPolicy() {
+		super(UMLElementTypes.Class_2007);
+	}
+
+	/**
+	 * @generated
+	 */
 	protected Command getCreateCommand(CreateElementRequest req) {
 		if (UMLElementTypes.Port_3017 == req.getElementType()) {
 			if (req.getContainmentFeature() == null) {

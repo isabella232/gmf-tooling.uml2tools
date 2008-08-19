@@ -25,6 +25,13 @@ public class DeploymentItemSemanticEditPolicy extends UMLBaseItemSemanticEditPol
 	/**
 	 * @generated
 	 */
+	public DeploymentItemSemanticEditPolicy() {
+		super(UMLElementTypes.Deployment_4001);
+	}
+
+	/**
+	 * @generated
+	 */
 	protected Command getDestroyElementCommand(DestroyElementRequest req) {
 		return getGEFWrapper(new DestroyElementCommand(req));
 	}
