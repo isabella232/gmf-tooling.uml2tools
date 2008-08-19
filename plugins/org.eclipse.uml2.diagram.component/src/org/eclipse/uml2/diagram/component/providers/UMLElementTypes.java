@@ -16,6 +16,37 @@ import org.eclipse.gmf.runtime.emf.type.core.IHintedType;
 import org.eclipse.jface.resource.ImageDescriptor;
 import org.eclipse.jface.resource.ImageRegistry;
 import org.eclipse.swt.graphics.Image;
+import org.eclipse.uml2.diagram.component.edit.parts.Artifact2EditPart;
+import org.eclipse.uml2.diagram.component.edit.parts.ArtifactEditPart;
+import org.eclipse.uml2.diagram.component.edit.parts.AssemblyConnectorCircleEditPart;
+import org.eclipse.uml2.diagram.component.edit.parts.AssemblyConnectorEndRoleEditPart;
+import org.eclipse.uml2.diagram.component.edit.parts.AssociationEditPart;
+import org.eclipse.uml2.diagram.component.edit.parts.Class2EditPart;
+import org.eclipse.uml2.diagram.component.edit.parts.Class3EditPart;
+import org.eclipse.uml2.diagram.component.edit.parts.ClassDiagramNotationClassEditPart;
+import org.eclipse.uml2.diagram.component.edit.parts.ClassDiagramNotationInnerClassEditPart;
+import org.eclipse.uml2.diagram.component.edit.parts.ClassDiagramNotationOperationEditPart;
+import org.eclipse.uml2.diagram.component.edit.parts.ClassDiagramNotationPropertyEditPart;
+import org.eclipse.uml2.diagram.component.edit.parts.ClassEditPart;
+import org.eclipse.uml2.diagram.component.edit.parts.Component2EditPart;
+import org.eclipse.uml2.diagram.component.edit.parts.Component3EditPart;
+import org.eclipse.uml2.diagram.component.edit.parts.ComponentEditPart;
+import org.eclipse.uml2.diagram.component.edit.parts.ComponentRequiredEditPart;
+import org.eclipse.uml2.diagram.component.edit.parts.ConnectorEditPart;
+import org.eclipse.uml2.diagram.component.edit.parts.DependencyEditPart;
+import org.eclipse.uml2.diagram.component.edit.parts.ElementImportEditPart;
+import org.eclipse.uml2.diagram.component.edit.parts.Interface2EditPart;
+import org.eclipse.uml2.diagram.component.edit.parts.InterfaceEditPart;
+import org.eclipse.uml2.diagram.component.edit.parts.InterfaceRealizationEditPart;
+import org.eclipse.uml2.diagram.component.edit.parts.Package2EditPart;
+import org.eclipse.uml2.diagram.component.edit.parts.Package3EditPart;
+import org.eclipse.uml2.diagram.component.edit.parts.Package4EditPart;
+import org.eclipse.uml2.diagram.component.edit.parts.PackageEditPart;
+import org.eclipse.uml2.diagram.component.edit.parts.PortEditPart;
+import org.eclipse.uml2.diagram.component.edit.parts.PortOnClassEditPart;
+import org.eclipse.uml2.diagram.component.edit.parts.PortProvidedEditPart;
+import org.eclipse.uml2.diagram.component.edit.parts.PortRequiredEditPart;
+import org.eclipse.uml2.diagram.component.edit.parts.PropertyEditPart;
 import org.eclipse.uml2.diagram.component.part.UMLDiagramEditorPlugin;
 import org.eclipse.uml2.uml.UMLPackage;
 
@@ -417,6 +448,77 @@ public class UMLElementTypes extends ElementInitializers {
 			KNOWN_ELEMENT_TYPES.add(Association_4011);
 		}
 		return KNOWN_ELEMENT_TYPES.contains(elementType);
+	}
+
+	/**
+	 * @generated
+	 */
+	public static IElementType getElementType(int visualID) {
+		switch (visualID) {
+		case PackageEditPart.VISUAL_ID:
+			return Package_1000;
+		case ComponentEditPart.VISUAL_ID:
+			return Component_2001;
+		case Artifact2EditPart.VISUAL_ID:
+			return Artifact_2002;
+		case Interface2EditPart.VISUAL_ID:
+			return Interface_2003;
+		case Class2EditPart.VISUAL_ID:
+			return Class_2004;
+		case Package2EditPart.VISUAL_ID:
+			return Package_2005;
+		case Package3EditPart.VISUAL_ID:
+			return Package_2006;
+		case ClassDiagramNotationClassEditPart.VISUAL_ID:
+			return Class_2007;
+		case Component2EditPart.VISUAL_ID:
+			return Component_3001;
+		case PortEditPart.VISUAL_ID:
+			return Port_3002;
+		case ArtifactEditPart.VISUAL_ID:
+			return Artifact_3003;
+		case ClassEditPart.VISUAL_ID:
+			return Class_3004;
+		case InterfaceEditPart.VISUAL_ID:
+			return Interface_3005;
+		case PropertyEditPart.VISUAL_ID:
+			return Property_3006;
+		case AssemblyConnectorCircleEditPart.VISUAL_ID:
+			return Connector_3015;
+		case ElementImportEditPart.VISUAL_ID:
+			return ElementImport_3007;
+		case Package4EditPart.VISUAL_ID:
+			return Package_3008;
+		case Class3EditPart.VISUAL_ID:
+			return Class_3009;
+		case Component3EditPart.VISUAL_ID:
+			return Component_3010;
+		case ClassDiagramNotationPropertyEditPart.VISUAL_ID:
+			return Property_3011;
+		case ClassDiagramNotationOperationEditPart.VISUAL_ID:
+			return Operation_3012;
+		case ClassDiagramNotationInnerClassEditPart.VISUAL_ID:
+			return Class_3013;
+		case PortOnClassEditPart.VISUAL_ID:
+			return Port_3014;
+		case InterfaceRealizationEditPart.VISUAL_ID:
+			return InterfaceRealization_4001;
+		case PortProvidedEditPart.VISUAL_ID:
+			return PortProvided_4006;
+		case PortRequiredEditPart.VISUAL_ID:
+			return PortRequired_4004;
+		case ComponentRequiredEditPart.VISUAL_ID:
+			return ComponentRequired_4007;
+		case ConnectorEditPart.VISUAL_ID:
+			return Connector_4008;
+		case DependencyEditPart.VISUAL_ID:
+			return Dependency_4009;
+		case AssemblyConnectorEndRoleEditPart.VISUAL_ID:
+			return ConnectorEndRole_4010;
+		case AssociationEditPart.VISUAL_ID:
+			return Association_4011;
+		}
+		return null;
 	}
 
 	/**

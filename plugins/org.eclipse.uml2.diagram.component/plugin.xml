@@ -561,14 +561,14 @@
 
    <extension point="org.eclipse.gmf.runtime.emf.type.core.elementTypeBindings">
       <?gmfgen generated="true"?>
-      <clientContext id="UMLComponentClientContext">
+      <clientContext id="org.eclipse.uml2.diagram.component.TypeContext">
          <enablement>
             <test
                property="org.eclipse.gmf.runtime.emf.core.editingDomain"
                value="org.eclipse.uml2.diagram.component.EditingDomain"/>
          </enablement>
       </clientContext> 
-      <binding context="UMLComponentClientContext">
+      <binding context="org.eclipse.uml2.diagram.component.TypeContext">
          <elementType ref="org.eclipse.uml2.diagram.component.Package_1000"/>
          <elementType ref="org.eclipse.uml2.diagram.component.Component_2001"/>
          <elementType ref="org.eclipse.uml2.diagram.component.Artifact_2002"/>
@@ -743,43 +743,43 @@
       <?gmfgen generated="true"?>
       <page
             id="org.eclipse.uml2.uml.diagram.component.general"
-            name="%preference.page.title.org.eclipse.uml2.uml.diagram.component.general"
+            name="%prefpage.org.eclipse.uml2.uml.diagram.component.general"
             category="org.eclipse.uml2.uml.diagram"
             class="org.eclipse.uml2.diagram.component.preferences.DiagramGeneralPreferencePage">
       </page>
       <page
             id="org.eclipse.uml2.uml.diagram.component.appearance"
-            name="%preference.page.title.org.eclipse.uml2.uml.diagram.component.appearance"
+            name="%prefpage.org.eclipse.uml2.uml.diagram.component.appearance"
             category="org.eclipse.uml2.uml.diagram.component.general"
             class="org.eclipse.uml2.diagram.component.preferences.DiagramAppearancePreferencePage">
       </page>
       <page
             id="org.eclipse.uml2.uml.diagram.component.connections"
-            name="%preference.page.title.org.eclipse.uml2.uml.diagram.component.connections"
+            name="%prefpage.org.eclipse.uml2.uml.diagram.component.connections"
             category="org.eclipse.uml2.uml.diagram.component.general"
             class="org.eclipse.uml2.diagram.component.preferences.DiagramConnectionsPreferencePage">
       </page>
       <page
             id="org.eclipse.uml2.uml.diagram.component.printing"
-            name="%preference.page.title.org.eclipse.uml2.uml.diagram.component.printing"
+            name="%prefpage.org.eclipse.uml2.uml.diagram.component.printing"
             category="org.eclipse.uml2.uml.diagram.component.general"
             class="org.eclipse.uml2.diagram.component.preferences.DiagramPrintingPreferencePage">
       </page>
       <page
             id="org.eclipse.uml2.uml.diagram.component.rulersAndGrid"
-            name="%preference.page.title.org.eclipse.uml2.uml.diagram.component.rulersAndGrid"
+            name="%prefpage.org.eclipse.uml2.uml.diagram.component.rulersAndGrid"
             category="org.eclipse.uml2.uml.diagram.component.general"
             class="org.eclipse.uml2.diagram.component.preferences.DiagramRulersAndGridPreferencePage">
       </page>
       <page
             id="org.eclipse.uml2.uml.diagram.component.pathmaps"
-            name="%preference.page.title.org.eclipse.uml2.uml.diagram.component.pathmaps"
+            name="%prefpage.org.eclipse.uml2.uml.diagram.component.pathmaps"
             category="org.eclipse.uml2.uml.diagram.component.general"
             class="org.eclipse.gmf.runtime.emf.ui.preferences.PathmapsPreferencePage">
       </page>
       <page
             id="org.eclipse.uml2.uml.diagram.component.viewfilter"
-            name="%preference.page.title.org.eclipse.uml2.uml.diagram.component.viewfilter"
+            name="%prefpage.org.eclipse.uml2.uml.diagram.component.viewfilter"
             category="org.eclipse.uml2.uml.diagram.component.general"
             class="org.eclipse.uml2.diagram.component.preferences.DiagramViewFiltersPreferencePage">
       </page>

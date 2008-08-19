@@ -19,6 +19,13 @@ public class AssemblyConnectorCircleItemSemanticEditPolicy extends UMLBaseItemSe
 	/**
 	 * @generated
 	 */
+	public AssemblyConnectorCircleItemSemanticEditPolicy() {
+		super(UMLElementTypes.Connector_3015);
+	}
+
+	/**
+	 * @generated
+	 */
 	protected Command getDestroyElementCommand(DestroyElementRequest req) {
 		CompoundCommand cc = getDestroyEdgesCommand();
 		addDestroyShortcutsCommand(cc);

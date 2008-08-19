@@ -41,6 +41,13 @@ public class ClassDiagramNotationClassItemSemanticEditPolicy extends UMLBaseItem
 	/**
 	 * @generated
 	 */
+	public ClassDiagramNotationClassItemSemanticEditPolicy() {
+		super(UMLElementTypes.Class_2007);
+	}
+
+	/**
+	 * @generated
+	 */
 	protected Command getCreateCommand(CreateElementRequest req) {
 		if (UMLElementTypes.Port_3014 == req.getElementType()) {
 			if (req.getContainmentFeature() == null) {

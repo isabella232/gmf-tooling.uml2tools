@@ -25,6 +25,13 @@ public class ClassDiagramNotationInnerClassItemSemanticEditPolicy extends UMLBas
 	/**
 	 * @generated
 	 */
+	public ClassDiagramNotationInnerClassItemSemanticEditPolicy() {
+		super(UMLElementTypes.Class_3013);
+	}
+
+	/**
+	 * @generated
+	 */
 	protected Command getDestroyElementCommand(DestroyElementRequest req) {
 		CompoundCommand cc = getDestroyEdgesCommand();
 		addDestroyShortcutsCommand(cc);

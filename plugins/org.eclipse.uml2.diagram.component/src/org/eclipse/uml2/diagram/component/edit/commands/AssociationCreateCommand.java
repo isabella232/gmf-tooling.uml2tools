@@ -37,7 +37,7 @@ public class AssociationCreateCommand extends CreateElementCommand {
 	/**
 	 * @generated
 	 */
-	private Package container;
+	private final Package container;
 
 	/**
 	 * @generated
@@ -50,15 +50,9 @@ public class AssociationCreateCommand extends CreateElementCommand {
 			setContainmentFeature(UMLPackage.eINSTANCE.getPackage_PackagedElement());
 		}
 
-		// Find container element for the new link.
-		// Climb up by containment hierarchy starting from the source
-		// and return the first element that is instance of the container class.
-		for (EObject element = source; element != null; element = element.eContainer()) {
-			if (element instanceof Package) {
-				container = (Package) element;
-				super.setElementToEdit(container);
-				break;
-			}
+		container = deduceContainer(source, target);
+		if (container != null) {
+			super.setElementToEdit(container);
 		}
 	}
 
@@ -156,5 +150,22 @@ public class AssociationCreateCommand extends CreateElementCommand {
 	 */
 	public Package getContainer() {
 		return container;
+	}
+
+	/**
+	 * Default approach is to traverse ancestors of the source to find instance of container.
+	 * Modify with appropriate logic.
+	 * @generated
+	 */
+	private static Package deduceContainer(EObject source, EObject target) {
+		// Find container element for the new link.
+		// Climb up by containment hierarchy starting from the source
+		// and return the first element that is instance of the container class.
+		for (EObject element = source; element != null; element = element.eContainer()) {
+			if (element instanceof Package) {
+				return (Package) element;
+			}
+		}
+		return null;
 	}
 }

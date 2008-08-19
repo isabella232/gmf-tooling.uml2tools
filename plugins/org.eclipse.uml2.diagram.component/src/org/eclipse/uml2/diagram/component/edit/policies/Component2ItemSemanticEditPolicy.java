@@ -46,6 +46,13 @@ public class Component2ItemSemanticEditPolicy extends UMLBaseItemSemanticEditPol
 	/**
 	 * @generated
 	 */
+	public Component2ItemSemanticEditPolicy() {
+		super(UMLElementTypes.Component_3001);
+	}
+
+	/**
+	 * @generated
+	 */
 	protected Command getCreateCommand(CreateElementRequest req) {
 		if (UMLElementTypes.Port_3002 == req.getElementType()) {
 			if (req.getContainmentFeature() == null) {

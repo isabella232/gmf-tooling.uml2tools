@@ -19,6 +19,13 @@ public class ClassDiagramNotationOperationItemSemanticEditPolicy extends UMLBase
 	/**
 	 * @generated
 	 */
+	public ClassDiagramNotationOperationItemSemanticEditPolicy() {
+		super(UMLElementTypes.Operation_3012);
+	}
+
+	/**
+	 * @generated
+	 */
 	protected Command getDestroyElementCommand(DestroyElementRequest req) {
 		CompoundCommand cc = getDestroyEdgesCommand();
 		addDestroyShortcutsCommand(cc);
