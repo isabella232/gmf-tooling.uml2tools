@@ -341,14 +341,14 @@
 
    <extension point="org.eclipse.gmf.runtime.emf.type.core.elementTypeBindings">
       <?gmfgen generated="true"?>
-      <clientContext id="UMLProfileClientContext">
+      <clientContext id="org.eclipse.uml2.diagram.profile.TypeContext">
          <enablement>
             <test
                property="org.eclipse.gmf.runtime.emf.core.editingDomain"
                value="org.eclipse.uml2.diagram.profile.EditingDomain"/>
          </enablement>
       </clientContext> 
-      <binding context="UMLProfileClientContext">
+      <binding context="org.eclipse.uml2.diagram.profile.TypeContext">
          <elementType ref="org.eclipse.uml2.diagram.profile.Profile_1000"/>
          <elementType ref="org.eclipse.uml2.diagram.profile.Stereotype_2001"/>
          <elementType ref="org.eclipse.uml2.diagram.profile.Profile_2002"/>
@@ -534,37 +534,37 @@
       <?gmfgen generated="true"?>
       <page
             id="org.eclipse.uml2.uml.diagram.profile.general"
-            name="%preference.page.title.org.eclipse.uml2.uml.diagram.profile.general"
+            name="%prefpage.org.eclipse.uml2.uml.diagram.profile.general"
             category="org.eclipse.uml2.uml.diagram"
             class="org.eclipse.uml2.diagram.profile.preferences.DiagramGeneralPreferencePage">
       </page>
       <page
             id="org.eclipse.uml2.uml.diagram.profile.appearance"
-            name="%preference.page.title.org.eclipse.uml2.uml.diagram.profile.appearance"
+            name="%prefpage.org.eclipse.uml2.uml.diagram.profile.appearance"
             category="org.eclipse.uml2.uml.diagram.profile.general"
             class="org.eclipse.uml2.diagram.profile.preferences.DiagramAppearancePreferencePage">
       </page>
       <page
             id="org.eclipse.uml2.uml.diagram.profile.connections"
-            name="%preference.page.title.org.eclipse.uml2.uml.diagram.profile.connections"
+            name="%prefpage.org.eclipse.uml2.uml.diagram.profile.connections"
             category="org.eclipse.uml2.uml.diagram.profile.general"
             class="org.eclipse.uml2.diagram.profile.preferences.DiagramConnectionsPreferencePage">
       </page>
       <page
             id="org.eclipse.uml2.uml.diagram.profile.printing"
-            name="%preference.page.title.org.eclipse.uml2.uml.diagram.profile.printing"
+            name="%prefpage.org.eclipse.uml2.uml.diagram.profile.printing"
             category="org.eclipse.uml2.uml.diagram.profile.general"
             class="org.eclipse.uml2.diagram.profile.preferences.DiagramPrintingPreferencePage">
       </page>
       <page
             id="org.eclipse.uml2.uml.diagram.profile.rulersAndGrid"
-            name="%preference.page.title.org.eclipse.uml2.uml.diagram.profile.rulersAndGrid"
+            name="%prefpage.org.eclipse.uml2.uml.diagram.profile.rulersAndGrid"
             category="org.eclipse.uml2.uml.diagram.profile.general"
             class="org.eclipse.uml2.diagram.profile.preferences.DiagramRulersAndGridPreferencePage">
       </page>
       <page
             id="org.eclipse.uml2.uml.diagram.profile.pathmaps"
-            name="%preference.page.title.org.eclipse.uml2.uml.diagram.profile.pathmaps"
+            name="%prefpage.org.eclipse.uml2.uml.diagram.profile.pathmaps"
             category="org.eclipse.uml2.uml.diagram.profile.general"
             class="org.eclipse.gmf.runtime.emf.ui.preferences.PathmapsPreferencePage">
       </page>
