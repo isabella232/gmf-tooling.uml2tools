@@ -19,7 +19,7 @@
 «AROUND preferencePage FOR gmfgen::GenPreferencePage-»
       <page
             id="«iD»"
-            name="%preference.page.title.«iD»"
+            name="%prefpage.«iD»"
 «IF null != parent-»
             category="«parent.iD»"
 «ELSE-»
