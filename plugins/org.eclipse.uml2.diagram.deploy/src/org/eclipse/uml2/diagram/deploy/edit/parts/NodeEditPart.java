@@ -12,6 +12,7 @@ import org.eclipse.draw2d.StackLayout;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EStructuralFeature;
+import org.eclipse.emf.ecore.EcorePackage;
 import org.eclipse.emf.transaction.TransactionalEditingDomain;
 import org.eclipse.gef.EditPart;
 import org.eclipse.gef.EditPolicy;
@@ -30,12 +31,14 @@ import org.eclipse.gmf.runtime.gef.ui.figures.DefaultSizeNodeFigure;
 import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.uml2.diagram.common.draw2d.Cube3DFigure;
 import org.eclipse.uml2.diagram.common.editparts.PrimaryShapeEditPart;
+import org.eclipse.uml2.diagram.common.editpolicies.UpdateDescriptionEditPolicy;
+import org.eclipse.uml2.diagram.common.genapi.IUpdaterLinkDescriptor;
+import org.eclipse.uml2.diagram.common.genapi.IUpdaterNodeDescriptor;
 import org.eclipse.uml2.diagram.deploy.edit.policies.NodeCanonicalEditPolicy;
 import org.eclipse.uml2.diagram.deploy.edit.policies.NodeGraphicalNodeEditPolicy;
 import org.eclipse.uml2.diagram.deploy.edit.policies.NodeItemSemanticEditPolicy;
 import org.eclipse.uml2.diagram.deploy.part.UMLDiagramUpdateCommand;
 import org.eclipse.uml2.diagram.deploy.part.UMLDiagramUpdater;
-import org.eclipse.uml2.diagram.deploy.part.UMLLinkDescriptor;
 import org.eclipse.uml2.diagram.deploy.part.UMLVisualIDRegistry;
 import org.eclipse.uml2.uml.Deployment;
 import org.eclipse.uml2.uml.UMLPackage;
@@ -76,6 +79,9 @@ public class NodeEditPart extends ShapeNodeEditPart implements PrimaryShapeEditP
 	 * @generated
 	 */
 	protected void createDefaultEditPolicies() {
+		if (UMLVisualIDRegistry.isShortcutDescendant(getNotationView())) {
+			installEditPolicy(UpdateDescriptionEditPolicy.ROLE, new UpdateDescriptionEditPolicy(UMLDiagramUpdater.TYPED_ADAPTER, true));
+		}
 		super.createDefaultEditPolicies();
 		installEditPolicy(EditPolicyRoles.SEMANTIC_ROLE, new NodeItemSemanticEditPolicy());
 		installEditPolicy(EditPolicy.GRAPHICAL_NODE_ROLE, new NodeGraphicalNodeEditPolicy());
@@ -83,6 +89,7 @@ public class NodeEditPart extends ShapeNodeEditPart implements PrimaryShapeEditP
 		installEditPolicy(EditPolicy.LAYOUT_ROLE, createLayoutEditPolicy());
 		// XXX need an SCR to runtime to have another abstract superclass that would let children add reasonable editpolicies
 		// removeEditPolicy(org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles.CONNECTION_HANDLES_ROLE);
+
 	}
 
 	/**
@@ -233,7 +240,11 @@ public class NodeEditPart extends ShapeNodeEditPart implements PrimaryShapeEditP
 	 * @generated
 	 */
 	protected void handleNotificationEvent(Notification event) {
-		super.handleNotificationEvent(event);
+		if (event.getNotifier() == getModel() && EcorePackage.eINSTANCE.getEModelElement_EAnnotations().equals(event.getFeature())) {
+			handleMajorSemanticChange();
+		} else {
+			super.handleNotificationEvent(event);
+		}
 		handleTypeLinkModification(event);
 	}
 
@@ -332,7 +343,7 @@ public class NodeEditPart extends ShapeNodeEditPart implements PrimaryShapeEditP
 	 */
 	protected void addSemanticListeners() {
 		super.addSemanticListeners();
-		for (UMLLinkDescriptor next : getNode_2004ContainedLinks()) {
+		for (IUpdaterNodeDescriptor next : getNode_2004ContainedLinks()) {
 			EObject nextLink = next.getModelElement();
 			if (nextLink == null) {
 				continue;
@@ -352,7 +363,7 @@ public class NodeEditPart extends ShapeNodeEditPart implements PrimaryShapeEditP
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
-	private List<UMLLinkDescriptor> getNode_2004ContainedLinks() {
+	private List<IUpdaterLinkDescriptor> getNode_2004ContainedLinks() {
 		return UMLDiagramUpdater.getNode_2004ContainedLinks(getNotationView());
 	}
 

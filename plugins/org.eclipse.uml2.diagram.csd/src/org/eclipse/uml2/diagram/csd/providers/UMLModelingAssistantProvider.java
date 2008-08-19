@@ -45,64 +45,72 @@ public class UMLModelingAssistantProvider extends ModelingAssistantProvider {
 	/**
 	 * @generated
 	 */
-	public List getTypesForPopupBar(IAdaptable host) {
+	public List<?> getTypesForPopupBar(IAdaptable host) {
 		IGraphicalEditPart editPart = (IGraphicalEditPart) host.getAdapter(IGraphicalEditPart.class);
+
 		if (editPart instanceof CollaborationEditPart) {
-			List types = new ArrayList();
+			List<IElementType> types = new ArrayList<IElementType>();
 			types.add(UMLElementTypes.Parameter_3013);
 			return types;
 		}
+
 		if (editPart instanceof ClassEditPart) {
-			List types = new ArrayList();
+			List<IElementType> types = new ArrayList<IElementType>();
 			types.add(UMLElementTypes.Port_3011);
 			types.add(UMLElementTypes.Property_3008);
 			types.add(UMLElementTypes.Operation_3009);
 			types.add(UMLElementTypes.Class_3010);
 			return types;
 		}
+
 		if (editPart instanceof Package2EditPart) {
-			List types = new ArrayList();
+			List<IElementType> types = new ArrayList<IElementType>();
 			types.add(UMLElementTypes.ElementImport_3004);
 			return types;
 		}
+
 		if (editPart instanceof Class3EditPart) {
-			List types = new ArrayList();
+			List<IElementType> types = new ArrayList<IElementType>();
 			types.add(UMLElementTypes.Port_3017);
 			return types;
 		}
+
 		if (editPart instanceof InstanceSpecificationEditPart) {
-			List types = new ArrayList();
+			List<IElementType> types = new ArrayList<IElementType>();
 			types.add(UMLElementTypes.Slot_3015);
 			return types;
 		}
+
 		if (editPart instanceof Property3EditPart) {
-			List types = new ArrayList();
+			List<IElementType> types = new ArrayList<IElementType>();
 			types.add(UMLElementTypes.Port_3016);
 			return types;
 		}
+
 		if (editPart instanceof CollaborationContentsEditPart) {
-			List types = new ArrayList();
+			List<IElementType> types = new ArrayList<IElementType>();
 			types.add(UMLElementTypes.CollaborationUse_3002);
 			types.add(UMLElementTypes.Property_3007);
 			return types;
 		}
+
 		if (editPart instanceof ClassClass_contentsEditPart) {
-			List types = new ArrayList();
+			List<IElementType> types = new ArrayList<IElementType>();
 			types.add(UMLElementTypes.Property_3014);
 			return types;
 		}
+
 		if (editPart instanceof PackageEditPart) {
-			List types = new ArrayList();
+			List<IElementType> types = new ArrayList<IElementType>();
 			types.add(UMLElementTypes.Collaboration_2005);
 			types.add(UMLElementTypes.Class_2006);
-			types.add(UMLElementTypes.Package_2003);
 			types.add(UMLElementTypes.Class_2007);
 			types.add(UMLElementTypes.Interface_2009);
 			types.add(UMLElementTypes.InstanceSpecification_2011);
 			types.add(UMLElementTypes.Constraint_2012);
 			return types;
 		}
-		return Collections.EMPTY_LIST;
+		return Collections.emptyList();
 	}
 
 	/**

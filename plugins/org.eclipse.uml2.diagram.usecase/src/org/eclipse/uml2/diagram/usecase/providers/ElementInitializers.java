@@ -1,5 +1,6 @@
 package org.eclipse.uml2.diagram.usecase.providers;
 
+import java.util.Collection;
 import org.eclipse.uml2.diagram.usecase.expressions.UMLOCLFactory;
 import org.eclipse.uml2.diagram.usecase.part.UMLDiagramEditorPlugin;
 import org.eclipse.uml2.uml.Actor;
@@ -7,6 +8,7 @@ import org.eclipse.uml2.uml.Component;
 import org.eclipse.uml2.uml.Constraint;
 import org.eclipse.uml2.uml.ExtensionPoint;
 import org.eclipse.uml2.uml.LiteralString;
+import org.eclipse.uml2.uml.OpaqueExpression;
 import org.eclipse.uml2.uml.Package;
 import org.eclipse.uml2.uml.UMLFactory;
 import org.eclipse.uml2.uml.UMLPackage;
@@ -113,11 +115,16 @@ public class ElementInitializers {
 	public static void init_Constraint_2008(Constraint instance) {
 		try {
 
-			LiteralString newInstance100 = UMLFactory.eINSTANCE.createLiteralString();
+			OpaqueExpression newInstance100 = UMLFactory.eINSTANCE.createOpaqueExpression();
 
 			instance.setSpecification(newInstance100);
-			Object value10100 = UMLOCLFactory.getExpression("\'ValueSpecification\'", UMLPackage.eINSTANCE.getLiteralString()).evaluate(newInstance100);
-			newInstance100.setValue((String) value10100);
+			Object value10100 = UMLOCLFactory.getExpression("\'OpaqueExpression\'", UMLPackage.eINSTANCE.getOpaqueExpression()).evaluate(newInstance100);
+			if (value10100 instanceof Collection) {
+				newInstance100.getBodies().clear();
+				newInstance100.getBodies().addAll(((Collection) value10100));
+			} else {
+				newInstance100.getBodies().add((String) value10100);
+			}
 		} catch (RuntimeException e) {
 			UMLDiagramEditorPlugin.getInstance().logError("Element initialization failed", e); //$NON-NLS-1$						
 		}

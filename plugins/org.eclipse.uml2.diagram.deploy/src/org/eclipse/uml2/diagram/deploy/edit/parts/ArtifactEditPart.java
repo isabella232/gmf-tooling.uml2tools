@@ -31,12 +31,14 @@ import org.eclipse.gmf.runtime.gef.ui.figures.NodeFigure;
 import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.uml2.diagram.common.draw2d.CenterLayout;
 import org.eclipse.uml2.diagram.common.editparts.PrimaryShapeEditPart;
+import org.eclipse.uml2.diagram.common.editpolicies.UpdateDescriptionEditPolicy;
+import org.eclipse.uml2.diagram.common.genapi.IUpdaterLinkDescriptor;
+import org.eclipse.uml2.diagram.common.genapi.IUpdaterNodeDescriptor;
 import org.eclipse.uml2.diagram.deploy.edit.policies.ArtifactCanonicalEditPolicy;
 import org.eclipse.uml2.diagram.deploy.edit.policies.ArtifactItemSemanticEditPolicy;
 import org.eclipse.uml2.diagram.deploy.edit.policies.UMLTextSelectionEditPolicy;
 import org.eclipse.uml2.diagram.deploy.part.UMLDiagramUpdateCommand;
 import org.eclipse.uml2.diagram.deploy.part.UMLDiagramUpdater;
-import org.eclipse.uml2.diagram.deploy.part.UMLLinkDescriptor;
 import org.eclipse.uml2.diagram.deploy.part.UMLVisualIDRegistry;
 import org.eclipse.uml2.uml.Manifestation;
 import org.eclipse.uml2.uml.UMLPackage;
@@ -77,12 +79,16 @@ public class ArtifactEditPart extends ShapeNodeEditPart implements PrimaryShapeE
 	 * @generated
 	 */
 	protected void createDefaultEditPolicies() {
+		if (UMLVisualIDRegistry.isShortcutDescendant(getNotationView())) {
+			installEditPolicy(UpdateDescriptionEditPolicy.ROLE, new UpdateDescriptionEditPolicy(UMLDiagramUpdater.TYPED_ADAPTER, true));
+		}
 		super.createDefaultEditPolicies();
 		installEditPolicy(EditPolicyRoles.SEMANTIC_ROLE, new ArtifactItemSemanticEditPolicy());
 		installEditPolicy(EditPolicyRoles.CANONICAL_ROLE, new ArtifactCanonicalEditPolicy());
 		installEditPolicy(EditPolicy.LAYOUT_ROLE, createLayoutEditPolicy());
 		// XXX need an SCR to runtime to have another abstract superclass that would let children add reasonable editpolicies
 		// removeEditPolicy(org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles.CONNECTION_HANDLES_ROLE);
+
 	}
 
 	/**
@@ -326,7 +332,7 @@ public class ArtifactEditPart extends ShapeNodeEditPart implements PrimaryShapeE
 	 */
 	protected void addSemanticListeners() {
 		super.addSemanticListeners();
-		for (UMLLinkDescriptor next : getArtifact_3002ContainedLinks()) {
+		for (IUpdaterNodeDescriptor next : getArtifact_3002ContainedLinks()) {
 			EObject nextLink = next.getModelElement();
 			if (nextLink == null) {
 				continue;
@@ -346,7 +352,7 @@ public class ArtifactEditPart extends ShapeNodeEditPart implements PrimaryShapeE
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
-	private List<UMLLinkDescriptor> getArtifact_3002ContainedLinks() {
+	private List<IUpdaterLinkDescriptor> getArtifact_3002ContainedLinks() {
 		return UMLDiagramUpdater.getArtifact_3002ContainedLinks(getNotationView());
 	}
 

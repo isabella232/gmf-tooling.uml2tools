@@ -1,10 +1,6 @@
 package org.eclipse.uml2.diagram.clazz.providers;
 
-import java.util.Collections;
-import java.util.List;
-
 import org.eclipse.core.runtime.IAdaptable;
-import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.gmf.runtime.common.core.service.AbstractProvider;
@@ -87,7 +83,6 @@ import org.eclipse.uml2.diagram.clazz.expressions.UMLOCLFactory;
 import org.eclipse.uml2.diagram.clazz.parser.GeneralizationSetParser;
 import org.eclipse.uml2.diagram.clazz.parser.InstanceSpecificationValueParser;
 import org.eclipse.uml2.diagram.clazz.parser.NamedElementParser;
-import org.eclipse.uml2.diagram.clazz.parser.ValueSpecificationParser;
 import org.eclipse.uml2.diagram.clazz.parser.dependency.DependencyTypeParser;
 import org.eclipse.uml2.diagram.clazz.parsers.MessageFormatParser;
 import org.eclipse.uml2.diagram.clazz.part.UMLVisualIDRegistry;
@@ -111,6 +106,7 @@ import org.eclipse.uml2.diagram.common.parser.slot.SlotLookupSuite;
 import org.eclipse.uml2.diagram.common.parser.slot.SlotParser;
 import org.eclipse.uml2.diagram.common.parser.slot.SlotToString;
 import org.eclipse.uml2.diagram.common.parser.stereotype.AppliedStereotypeParser;
+import org.eclipse.uml2.diagram.common.parser.valuespec.ValueSpecificationParser;
 import org.eclipse.uml2.diagram.parser.BasicApplyStrategy;
 import org.eclipse.uml2.diagram.parser.ParserAdapter;
 import org.eclipse.uml2.diagram.parser.SemanticParserAdapter;
@@ -118,10 +114,8 @@ import org.eclipse.uml2.diagram.parser.lookup.DefaultOclLookups;
 import org.eclipse.uml2.diagram.parser.lookup.LookupSuite;
 import org.eclipse.uml2.diagram.parser.lookup.LookupSuiteImpl;
 import org.eclipse.uml2.diagram.parser.lookup.OCLLookup;
-import org.eclipse.uml2.uml.Constraint;
 import org.eclipse.uml2.uml.Type;
 import org.eclipse.uml2.uml.UMLPackage;
-import org.eclipse.uml2.uml.ValueSpecification;
 
 /**
  * @generated
@@ -330,30 +324,7 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 	 * @generated NOT
 	 */
 	protected IParser createConstraintName_5008Parser() {
-		return new ValueSpecificationParser() {
-
-			public boolean isAffectingEvent(Object notification, int flags) {
-				if (notification instanceof Notification) {
-					Object feature = ((Notification) notification).getFeature();
-					return UMLPackage.eINSTANCE.getConstraint_Specification().equals(feature) || super.isAffectingEvent(notification, flags);
-				}
-				return false;
-			}
-
-			public List<?> getSemanticElementsBeingParsed(EObject element) {
-				if (false == element instanceof Constraint) {
-					return Collections.emptyList();
-				}
-				ValueSpecification spec = ((Constraint) element).getSpecification();
-				return spec == null ? Collections.emptyList() : Collections.singletonList(spec);
-			}
-
-			protected ValueSpecification getValueSpecification(IAdaptable adaptable) {
-				Constraint is = (Constraint) adaptable.getAdapter(EObject.class);
-				return is.getSpecification();
-			}
-
-		};
+		return new ValueSpecificationParser.ConstraintParser();
 	}
 
 	/**

@@ -44,9 +44,11 @@ import org.eclipse.uml2.diagram.clazz.edit.policies.OpenDiagramEditPolicy;
 import org.eclipse.uml2.diagram.clazz.edit.policies.PackageAsFrameItemSemanticEditPolicy;
 import org.eclipse.uml2.diagram.clazz.part.UMLDiagramUpdateCommand;
 import org.eclipse.uml2.diagram.clazz.part.UMLDiagramUpdater;
-import org.eclipse.uml2.diagram.clazz.part.UMLLinkDescriptor;
 import org.eclipse.uml2.diagram.clazz.part.UMLVisualIDRegistry;
 import org.eclipse.uml2.diagram.common.editparts.PrimaryShapeEditPart;
+import org.eclipse.uml2.diagram.common.editpolicies.UpdateDescriptionEditPolicy;
+import org.eclipse.uml2.diagram.common.genapi.IUpdaterLinkDescriptor;
+import org.eclipse.uml2.diagram.common.genapi.IUpdaterNodeDescriptor;
 import org.eclipse.uml2.uml.Dependency;
 import org.eclipse.uml2.uml.Realization;
 import org.eclipse.uml2.uml.TemplateBinding;
@@ -89,12 +91,16 @@ public class PackageAsFrameEditPart extends ShapeNodeEditPart implements Primary
 	 * @generated
 	 */
 	protected void createDefaultEditPolicies() {
+		if (UMLVisualIDRegistry.isShortcutDescendant(getNotationView())) {
+			installEditPolicy(UpdateDescriptionEditPolicy.ROLE, new UpdateDescriptionEditPolicy(UMLDiagramUpdater.TYPED_ADAPTER, true));
+		}
 		super.createDefaultEditPolicies();
 		installEditPolicy(EditPolicyRoles.SEMANTIC_ROLE, new PackageAsFrameItemSemanticEditPolicy());
 		installEditPolicy(EditPolicy.LAYOUT_ROLE, createLayoutEditPolicy());
 		installEditPolicy(EditPolicyRoles.OPEN_ROLE, new OpenDiagramEditPolicy());
 		// XXX need an SCR to runtime to have another abstract superclass that would let children add reasonable editpolicies
 		// removeEditPolicy(org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles.CONNECTION_HANDLES_ROLE);
+
 	}
 
 	/**
@@ -374,7 +380,7 @@ public class PackageAsFrameEditPart extends ShapeNodeEditPart implements Primary
 	 */
 	protected void addSemanticListeners() {
 		super.addSemanticListeners();
-		for (UMLLinkDescriptor next : getPackage_2016ContainedLinks()) {
+		for (IUpdaterNodeDescriptor next : getPackage_2016ContainedLinks()) {
 			EObject nextLink = next.getModelElement();
 			if (nextLink == null) {
 				continue;
@@ -406,7 +412,7 @@ public class PackageAsFrameEditPart extends ShapeNodeEditPart implements Primary
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
-	private List<UMLLinkDescriptor> getPackage_2016ContainedLinks() {
+	private List<IUpdaterLinkDescriptor> getPackage_2016ContainedLinks() {
 		return UMLDiagramUpdater.getPackage_2016ContainedLinks(getNotationView());
 	}
 

@@ -40,47 +40,54 @@ public class UMLModelingAssistantProvider extends ModelingAssistantProvider {
 	/**
 	 * @generated
 	 */
-	public List getTypesForPopupBar(IAdaptable host) {
+	public List<?> getTypesForPopupBar(IAdaptable host) {
 		IGraphicalEditPart editPart = (IGraphicalEditPart) host.getAdapter(IGraphicalEditPart.class);
+
 		if (editPart instanceof DiagramHeaderEditPart) {
-			List types = new ArrayList();
+			List<IElementType> types = new ArrayList<IElementType>();
 			types.add(UMLElementTypes.ElementImport_3001);
 			return types;
 		}
+
 		if (editPart instanceof UseCaseEditPart) {
-			List types = new ArrayList();
+			List<IElementType> types = new ArrayList<IElementType>();
 			types.add(UMLElementTypes.ExtensionPoint_3002);
 			return types;
 		}
+
 		if (editPart instanceof UseCaseAsClassEditPart) {
-			List types = new ArrayList();
+			List<IElementType> types = new ArrayList<IElementType>();
 			types.add(UMLElementTypes.ExtensionPoint_3003);
 			return types;
 		}
+
 		if (editPart instanceof InnerUseCaseEditPart) {
-			List types = new ArrayList();
+			List<IElementType> types = new ArrayList<IElementType>();
 			types.add(UMLElementTypes.ExtensionPoint_3002);
 			return types;
 		}
+
 		if (editPart instanceof UseCaseinPackageEditPart) {
-			List types = new ArrayList();
+			List<IElementType> types = new ArrayList<IElementType>();
 			types.add(UMLElementTypes.ExtensionPoint_3002);
 			return types;
 		}
+
 		if (editPart instanceof SubjectUsecasesEditPart) {
-			List types = new ArrayList();
+			List<IElementType> types = new ArrayList<IElementType>();
 			types.add(UMLElementTypes.UseCase_3004);
 			return types;
 		}
+
 		if (editPart instanceof PackageFramecontentsEditPart) {
-			List types = new ArrayList();
+			List<IElementType> types = new ArrayList<IElementType>();
 			types.add(UMLElementTypes.Actor_3005);
 			types.add(UMLElementTypes.UseCase_3006);
 			return types;
 		}
+
 		if (editPart instanceof PackageEditPart) {
-			List types = new ArrayList();
-			types.add(UMLElementTypes.Package_2001);
+			List<IElementType> types = new ArrayList<IElementType>();
 			types.add(UMLElementTypes.Actor_2002);
 			types.add(UMLElementTypes.Actor_2005);
 			types.add(UMLElementTypes.UseCase_2003);
@@ -90,7 +97,7 @@ public class UMLModelingAssistantProvider extends ModelingAssistantProvider {
 			types.add(UMLElementTypes.Constraint_2008);
 			return types;
 		}
-		return Collections.EMPTY_LIST;
+		return Collections.emptyList();
 	}
 
 	/**

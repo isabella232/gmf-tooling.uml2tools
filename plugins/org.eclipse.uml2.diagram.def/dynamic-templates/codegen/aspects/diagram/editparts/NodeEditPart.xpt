@@ -20,6 +20,7 @@
 «EXTENSION xpt::diagram::updater::Utils»
 «EXTENSION aspects::diagram::editparts::LinkUpdateUtil»
 «EXTENSION aspects::xpt::diagram::updater::DiagramHeader»
+«EXTENSION aspects::xpt::diagram::updater::DescriptorsGenApi»
 
 «AROUND attributes FOR gmfgen::GenNode-»
 	«targetDef.proceed()-»
@@ -151,7 +152,7 @@
 		super.addSemanticListeners();
 		«LET getOutgoingAndContainedTypeLinks(this) AS linksToListen-»
 		«IF !linksToListen.isEmpty()-»
-		«LET getDiagram().editorGen.diagramUpdater.getLinkDescriptorQualifiedClassName() AS descriptorFQN -»
+		«LET getGenApiNodeDescriptorQualifiedClassName() AS descriptorFQN -»
 		for («descriptorFQN» next : «EXPAND getContainedLinksMethodName»()) {
 			org.eclipse.emf.ecore.EObject nextLink = next.getModelElement();
 			if (nextLink == null){
@@ -176,7 +177,7 @@
 	«IF !getOutgoingAndContainedTypeLinks(this).isEmpty()-»
 	«EXPAND xpt::Common::generatedMemberComment»
 	@SuppressWarnings("unchecked")
-	private java.util.List<«getDiagram().editorGen.diagramUpdater.getLinkDescriptorQualifiedClassName()»> «EXPAND getContainedLinksMethodName»() {
+	private java.util.List<«getGenApiLinkDescriptorQualifiedClassName()»> «EXPAND getContainedLinksMethodName»() {
 			return «EXPAND xpt::diagram::updater::DiagramUpdater::getContainedLinksMethodCall»(getNotationView());
 	}
 	«ENDIF-»

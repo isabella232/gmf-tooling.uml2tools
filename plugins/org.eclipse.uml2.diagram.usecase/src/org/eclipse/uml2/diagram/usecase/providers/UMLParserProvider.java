@@ -15,6 +15,7 @@ import org.eclipse.uml2.diagram.common.parser.association.end.AssociationEndAppl
 import org.eclipse.uml2.diagram.common.parser.association.end.AssociationEndParser;
 import org.eclipse.uml2.diagram.common.parser.association.end.AssociationEndToString;
 import org.eclipse.uml2.diagram.common.parser.imports.ElementImportParser;
+import org.eclipse.uml2.diagram.common.parser.valuespec.ValueSpecificationParser;
 import org.eclipse.uml2.diagram.parser.SemanticParserAdapter;
 import org.eclipse.uml2.diagram.parser.lookup.LookupSuite;
 import org.eclipse.uml2.diagram.usecase.edit.parts.ActorName2EditPart;
@@ -228,12 +229,10 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 	}
 
 	/**
-	 * @generated
+	 * @generated NOT
 	 */
 	protected IParser createConstraintName_5011Parser() {
-		EAttribute[] features = new EAttribute[] { UMLPackage.eINSTANCE.getNamedElement_Name(), };
-		MessageFormatParser parser = new MessageFormatParser(features);
-		return parser;
+		return new ValueSpecificationParser.ConstraintParser();
 	}
 
 	/**

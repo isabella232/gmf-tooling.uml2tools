@@ -92,6 +92,7 @@ public class UMLCreateShortcutAction implements IObjectActionDelegate {
 		command = command.compose(new UMLCreateShortcutDecorationsCommand(mySelectedElement.getEditingDomain(), view, viewDescriptor));
 		try {
 			OperationHistoryFactory.getOperationHistory().execute(command, new NullProgressMonitor(), null);
+			UMLDiagramUpdateCommand.performCanonicalUpdate(view.getDiagram().getElement());
 		} catch (ExecutionException e) {
 			UMLDiagramEditorPlugin.getInstance().logError("Unable to create shortcut", e); //$NON-NLS-1$
 		}

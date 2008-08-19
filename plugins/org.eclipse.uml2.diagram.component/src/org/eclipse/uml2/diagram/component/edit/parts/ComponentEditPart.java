@@ -42,11 +42,13 @@ import org.eclipse.gmf.runtime.gef.ui.figures.NodeFigure;
 import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.uml2.diagram.common.editparts.PrimaryShapeEditPart;
 import org.eclipse.uml2.diagram.common.editpolicies.CreationEditPolicyWithCustomReparent;
+import org.eclipse.uml2.diagram.common.editpolicies.UpdateDescriptionEditPolicy;
+import org.eclipse.uml2.diagram.common.genapi.IUpdaterLinkDescriptor;
+import org.eclipse.uml2.diagram.common.genapi.IUpdaterNodeDescriptor;
 import org.eclipse.uml2.diagram.component.edit.policies.ComponentCanonicalEditPolicy;
 import org.eclipse.uml2.diagram.component.edit.policies.ComponentItemSemanticEditPolicy;
 import org.eclipse.uml2.diagram.component.part.UMLDiagramUpdateCommand;
 import org.eclipse.uml2.diagram.component.part.UMLDiagramUpdater;
-import org.eclipse.uml2.diagram.component.part.UMLLinkDescriptor;
 import org.eclipse.uml2.diagram.component.part.UMLVisualIDRegistry;
 import org.eclipse.uml2.uml.InterfaceRealization;
 import org.eclipse.uml2.uml.UMLPackage;
@@ -87,6 +89,9 @@ public class ComponentEditPart extends AbstractBorderedShapeEditPart implements 
 	 * @generated
 	 */
 	protected void createDefaultEditPolicies() {
+		if (UMLVisualIDRegistry.isShortcutDescendant(getNotationView())) {
+			installEditPolicy(UpdateDescriptionEditPolicy.ROLE, new UpdateDescriptionEditPolicy(UMLDiagramUpdater.TYPED_ADAPTER, true));
+		}
 		installEditPolicy(EditPolicyRoles.CREATION_ROLE, new CreationEditPolicyWithCustomReparent(UMLVisualIDRegistry.TYPED_ADAPTER));
 		super.createDefaultEditPolicies();
 		installEditPolicy(EditPolicyRoles.SEMANTIC_ROLE, new ComponentItemSemanticEditPolicy());
@@ -95,6 +100,7 @@ public class ComponentEditPart extends AbstractBorderedShapeEditPart implements 
 		installEditPolicy(EditPolicy.LAYOUT_ROLE, createLayoutEditPolicy());
 		// XXX need an SCR to runtime to have another abstract superclass that would let children add reasonable editpolicies
 		// removeEditPolicy(org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles.CONNECTION_HANDLES_ROLE);
+
 	}
 
 	/**
@@ -489,7 +495,7 @@ public class ComponentEditPart extends AbstractBorderedShapeEditPart implements 
 	 */
 	protected void addSemanticListeners() {
 		super.addSemanticListeners();
-		for (UMLLinkDescriptor next : getComponent_2001ContainedLinks()) {
+		for (IUpdaterNodeDescriptor next : getComponent_2001ContainedLinks()) {
 			EObject nextLink = next.getModelElement();
 			if (nextLink == null) {
 				continue;
@@ -509,7 +515,7 @@ public class ComponentEditPart extends AbstractBorderedShapeEditPart implements 
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
-	private List<UMLLinkDescriptor> getComponent_2001ContainedLinks() {
+	private List<IUpdaterLinkDescriptor> getComponent_2001ContainedLinks() {
 		return UMLDiagramUpdater.getComponent_2001ContainedLinks(getNotationView());
 	}
 

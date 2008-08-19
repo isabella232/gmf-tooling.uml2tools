@@ -2,6 +2,8 @@ package org.eclipse.uml2.diagram.common.commands;
 
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.edit.domain.AdapterFactoryEditingDomain;
+import org.eclipse.uml2.diagram.common.links.PortOperationsExt;
+import org.eclipse.uml2.diagram.common.links.RequiredInterfaceLink;
 import org.eclipse.uml2.uml.Classifier;
 import org.eclipse.uml2.uml.Interface;
 import org.eclipse.uml2.uml.Port;
@@ -43,6 +45,27 @@ public class RequiredPortLinkHelper {
 		}
 		boolean isReadOnly = myEditingDomain.isReadOnly(type.eResource());
 		return !isReadOnly;
+	}
+	
+	public void reorientSource(Port newSource) {
+		RequiredInterfaceLink link = PortOperationsExt.getRequireds(getSource(), getTarget());
+		link.getLink().getClients().remove(link.getSource());
+		link.getLink().getClients().add(newSource.getType());
+	}
+
+	public boolean canReorientSource(Port newSource) {
+		Type type = newSource.getType();
+		return (type != null) && (type instanceof Classifier) && (false == type instanceof Interface);
+	}
+	
+	public void reorientTarget(Interface newTarget) {
+		RequiredInterfaceLink link = PortOperationsExt.getRequireds(getSource(), getTarget());
+		link.getLink().getSuppliers().remove(link.getTarget());
+		link.getLink().getSuppliers().add(newTarget);
+	}
+
+	public boolean canReorientTarget(Interface newTarget) {
+		return true;
 	}
 	
 	private Port getSource() {

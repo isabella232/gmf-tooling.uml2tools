@@ -1,5 +1,6 @@
 package org.eclipse.uml2.diagram.usecase.part;
 
+import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Collections;
 import java.util.Iterator;
@@ -13,6 +14,8 @@ import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.uml2.diagram.common.conventions.AssociationEndConvention;
 import org.eclipse.uml2.diagram.common.genapi.IDiagramUpdater;
+import org.eclipse.uml2.diagram.common.genapi.IUpdaterLinkDescriptor;
+import org.eclipse.uml2.diagram.common.genapi.IUpdaterNodeDescriptor;
 import org.eclipse.uml2.diagram.usecase.edit.parts.ActorAsRectangleEditPart;
 import org.eclipse.uml2.diagram.usecase.edit.parts.ActorEditPart;
 import org.eclipse.uml2.diagram.usecase.edit.parts.ActorInPackageEditPart;
@@ -67,6 +70,13 @@ import org.eclipse.uml2.uml.UseCase;
  */
 @SuppressWarnings("unchecked")
 public class UMLDiagramUpdater {
+
+	/**
+	 * @generated
+	 */
+	public static boolean isShortcutOrphaned(View view) {
+		return !view.isSetElement() || view.getElement() == null || view.getElement().eIsProxy();
+	}
 
 	/**
 	 * @generated
@@ -279,7 +289,7 @@ public class UMLDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List getPackage_1000SemanticChildren(View view) {
+	public static List getPackage_1000SemanticChildrenGen(View view) {
 		if (!view.isSetElement()) {
 			return Collections.EMPTY_LIST;
 		}
@@ -326,6 +336,29 @@ public class UMLDiagramUpdater {
 			int visualID = UMLVisualIDRegistry.getNodeVisualID(view, childElement);
 			if (visualID == ConstraintEditPart.VISUAL_ID) {
 				result.add(new UMLNodeDescriptor(childElement, visualID));
+				continue;
+			}
+		}
+		return result;
+	}
+
+	/**
+	 * @generated NOT
+	 */
+	public static List getPackage_1000SemanticChildren(View view) {
+		List result = new ArrayList<Object>();
+		result.addAll(getPackage_1000SemanticChildrenGen(view));
+		result.addAll(getPackage_1000SemanticChildren_ConstraintsAsOwnedRules(view));
+		return result;
+	}
+
+	public static List getPackage_1000SemanticChildren_ConstraintsAsOwnedRules(View view) {
+		Package modelElement = (Package) view.getElement();
+		List result = new LinkedList();
+		for (Constraint next : modelElement.getOwnedRules()) {
+			int visualID = UMLVisualIDRegistry.getNodeVisualID(view, next);
+			if (visualID == ConstraintEditPart.VISUAL_ID) {
+				result.add(new UMLNodeDescriptor(next, visualID));
 				continue;
 			}
 		}
@@ -1563,28 +1596,28 @@ public class UMLDiagramUpdater {
 		/**
 		 * @generated
 		 */
-		public List getSemanticChildren(View view) {
+		public List<IUpdaterNodeDescriptor> getSemanticChildren(View view) {
 			return org.eclipse.uml2.diagram.usecase.part.UMLDiagramUpdater.getSemanticChildren(view);
 		}
 
 		/**
 		 * @generated
 		 */
-		public List getContainedLinks(View view) {
+		public List<IUpdaterLinkDescriptor> getContainedLinks(View view) {
 			return org.eclipse.uml2.diagram.usecase.part.UMLDiagramUpdater.getContainedLinks(view);
 		}
 
 		/**
 		 * @generated
 		 */
-		public List getIncomingLinks(View view) {
+		public List<IUpdaterLinkDescriptor> getIncomingLinks(View view) {
 			return org.eclipse.uml2.diagram.usecase.part.UMLDiagramUpdater.getIncomingLinks(view);
 		}
 
 		/**
 		 * @generated
 		 */
-		public List getOutgoingLinks(View view) {
+		public List<IUpdaterLinkDescriptor> getOutgoingLinks(View view) {
 			return org.eclipse.uml2.diagram.usecase.part.UMLDiagramUpdater.getOutgoingLinks(view);
 		}
 	};

@@ -7,9 +7,11 @@ import org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles;
 import org.eclipse.gmf.runtime.draw2d.ui.figures.ConstrainedToolbarLayout;
 import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.uml2.diagram.common.editpolicies.CreationEditPolicyWithCustomReparent;
+import org.eclipse.uml2.diagram.common.editpolicies.UpdateDescriptionEditPolicy;
 import org.eclipse.uml2.diagram.deploy.edit.policies.ExecutionEnvironmentArtifacts2CanonicalEditPolicy;
 import org.eclipse.uml2.diagram.deploy.edit.policies.ExecutionEnvironmentArtifacts2ItemSemanticEditPolicy;
 import org.eclipse.uml2.diagram.deploy.part.Messages;
+import org.eclipse.uml2.diagram.deploy.part.UMLDiagramUpdater;
 import org.eclipse.uml2.diagram.deploy.part.UMLVisualIDRegistry;
 
 /**
@@ -52,6 +54,10 @@ public class ExecutionEnvironmentArtifacts2EditPart extends ListCompartmentEditP
 		installEditPolicy(EditPolicyRoles.CREATION_ROLE, new CreationEditPolicyWithCustomReparent(UMLVisualIDRegistry.TYPED_ADAPTER));
 		installEditPolicy(EditPolicyRoles.DRAG_DROP_ROLE, new DragDropEditPolicy());
 		installEditPolicy(EditPolicyRoles.CANONICAL_ROLE, new ExecutionEnvironmentArtifacts2CanonicalEditPolicy());
+		if (UMLVisualIDRegistry.isShortcutDescendant(getNotationView())) {
+			installEditPolicy(UpdateDescriptionEditPolicy.ROLE, new UpdateDescriptionEditPolicy(UMLDiagramUpdater.TYPED_ADAPTER, false));
+		}
+
 	}
 
 	/**

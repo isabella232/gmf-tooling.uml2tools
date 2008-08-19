@@ -35,6 +35,8 @@
 	«EXPAND isSemanticLeafVisualID»
 	
 	«EXPAND typedSharedInstance»
+	
+	«EXPAND isShortcutDescendant»
 «ENDAROUND»
 
 «AROUND returnVisualID FOR gmfgen::GenCommonBase-»
@@ -243,6 +245,24 @@ public static int «EXPAND getChildDescriptorVisualIDMethodName»(«descriptorFQN» 
 	}
 «ENDDEFINE»
 
+«DEFINE isShortcutDescendantMethodName FOR gmfgen::GenDiagram»isShortcutDescendant«ENDDEFINE»
+«DEFINE isShortcutDescendantMethodCall FOR gmfgen::GenDiagram»«getVisualIDRegistryQualifiedClassName()».«EXPAND isShortcutDescendantMethodName»«ENDDEFINE»
+
+«DEFINE isShortcutDescendant FOR gmfgen::GenDiagram»
+	«EXPAND xpt::Common::generatedMemberComment»
+	public static boolean «EXPAND isShortcutDescendantMethodName»(org.eclipse.gmf.runtime.notation.View view) {
+		org.eclipse.gmf.runtime.notation.View diagram = view.getDiagram();
+		while (view != diagram && view != null) {
+			org.eclipse.emf.ecore.EAnnotation annotation = view.getEAnnotation("Shortcut"); «EXPAND xpt::Common::nonNLS»
+			if (annotation != null) {
+				return true;
+			}
+			view = (org.eclipse.gmf.runtime.notation.View) view.eContainer();
+		}
+		return false;
+	}
+«ENDDEFINE»
+
 «DEFINE typedSharedInstanceName FOR gmfgen::GenDiagram»TYPED_ADAPTER«ENDDEFINE»
 «DEFINE typedSharedInstanceCall FOR gmfgen::GenDiagram»«getVisualIDRegistryQualifiedClassName()».«EXPAND typedSharedInstanceName»«ENDDEFINE»
 
@@ -278,6 +298,12 @@ public static int «EXPAND getChildDescriptorVisualIDMethodName»(«descriptorFQN» 
 		public boolean «EXPAND isSemanticLeafVisualIDMethodName»(int visualID) {
 			return «EXPAND isSemanticLeafVisualIDMethodCall»(visualID);
 		}
+
+		«EXPAND xpt::Common::generatedMemberComment»
+		public boolean «EXPAND isShortcutDescendantMethodName»(org.eclipse.gmf.runtime.notation.View view) {
+			return «EXPAND isShortcutDescendantMethodCall»(view);
+		}
+
 	};
 	
 «ENDDEFINE»

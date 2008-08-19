@@ -220,7 +220,7 @@ public class UMLVisualIDRegistry {
 			return -1;
 		}
 		String containerModelID = org.eclipse.uml2.diagram.csd.part.UMLVisualIDRegistry.getModelID(containerView);
-		if (!PackageEditPart.MODEL_ID.equals(containerModelID)) {
+		if (!PackageEditPart.MODEL_ID.equals(containerModelID) && !"uml".equals(containerModelID)) { //$NON-NLS-1$
 			return -1;
 		}
 		int containerVisualID;
@@ -330,7 +330,7 @@ public class UMLVisualIDRegistry {
 	 */
 	public static boolean canCreateNode(View containerView, int nodeVisualID) {
 		String containerModelID = org.eclipse.uml2.diagram.csd.part.UMLVisualIDRegistry.getModelID(containerView);
-		if (!PackageEditPart.MODEL_ID.equals(containerModelID)) {
+		if (!PackageEditPart.MODEL_ID.equals(containerModelID) && !"uml".equals(containerModelID)) { //$NON-NLS-1$
 			return false;
 		}
 		int containerVisualID;
@@ -976,6 +976,29 @@ public class UMLVisualIDRegistry {
 		public boolean isSemanticLeafVisualID(int visualID) {
 			return org.eclipse.uml2.diagram.csd.part.UMLVisualIDRegistry.isSemanticLeafVisualID(visualID);
 		}
+
+		/**
+		 * @generated
+		 */
+		public boolean isShortcutDescendant(View view) {
+			return org.eclipse.uml2.diagram.csd.part.UMLVisualIDRegistry.isShortcutDescendant(view);
+		}
+
 	};
+
+	/**
+	 * @generated
+	 */
+	public static boolean isShortcutDescendant(View view) {
+		View diagram = view.getDiagram();
+		while (view != diagram && view != null) {
+			EAnnotation annotation = view.getEAnnotation("Shortcut"); //$NON-NLS-1$
+			if (annotation != null) {
+				return true;
+			}
+			view = (View) view.eContainer();
+		}
+		return false;
+	}
 
 }

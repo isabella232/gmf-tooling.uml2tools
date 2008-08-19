@@ -21,9 +21,24 @@
 	«targetDef.proceed()-»
 	«IF {this}.typeSelect(gmfgen::GenContainerBase).size() > 0-»
 	«IF supportsNonCanonicalMode(this.getDiagram()) && !getSemanticChildren(this).isEmpty() -»
-		org.eclipse.gmf.runtime.notation.CanonicalStyle canonicalStyle = org.eclipse.gmf.runtime.notation.NotationFactory.eINSTANCE.createCanonicalStyle();
-		canonicalStyle.setCanonical(true);
-		«stylesVar».add(canonicalStyle);	
+		«EXPAND addCanonicalStyle(stylesVar) FOR this-»
 	«ENDIF-»
 	«ENDIF-»
 «ENDAROUND»
+
+«DEFINE addCanonicalStyle(String stylesVar) FOR gmfgen::GenCommonBase-»
+		org.eclipse.gmf.runtime.notation.CanonicalStyle canonicalStyle = org.eclipse.gmf.runtime.notation.NotationFactory.eINSTANCE.createCanonicalStyle();
+		canonicalStyle.setCanonical(true);
+		«stylesVar».add(canonicalStyle);	
+«ENDDEFINE»
+
+«REM»temporary disabled
+«DEFINE addCanonicalStyle(String stylesVar) FOR gmfgen::GenDiagram-»
+		org.eclipse.gmf.runtime.notation.CanonicalStyle canonicalStyle = «-»
+			org.eclipse.uml2.diagram.common.notation.u2tnotation.U2TNotationFactory.eINSTANCE.createU2TDiagramCanonicalStyle();
+		canonicalStyle.setCanonical(true);
+		«stylesVar».add(canonicalStyle);	
+«ENDDEFINE»
+«ENDREM»
+
+
