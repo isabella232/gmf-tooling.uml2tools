@@ -519,43 +519,43 @@
       <?gmfgen generated="true"?>
       <page
             id="org.eclipse.uml2.uml.diagram.clazz.general"
-            name="%preference.page.title.org.eclipse.uml2.uml.diagram.clazz.general"
+            name="%prefpage.org.eclipse.uml2.uml.diagram.clazz.general"
             category="org.eclipse.uml2.uml.diagram"
             class="org.eclipse.uml2.diagram.clazz.preferences.DiagramGeneralPreferencePage">
       </page>
       <page
             id="org.eclipse.uml2.uml.diagram.clazz.appearance"
-            name="%preference.page.title.org.eclipse.uml2.uml.diagram.clazz.appearance"
+            name="%prefpage.org.eclipse.uml2.uml.diagram.clazz.appearance"
             category="org.eclipse.uml2.uml.diagram.clazz.general"
             class="org.eclipse.uml2.diagram.clazz.preferences.DiagramAppearancePreferencePage">
       </page>
       <page
             id="org.eclipse.uml2.uml.diagram.clazz.connections"
-            name="%preference.page.title.org.eclipse.uml2.uml.diagram.clazz.connections"
+            name="%prefpage.org.eclipse.uml2.uml.diagram.clazz.connections"
             category="org.eclipse.uml2.uml.diagram.clazz.general"
             class="org.eclipse.uml2.diagram.clazz.preferences.DiagramConnectionsPreferencePage">
       </page>
       <page
             id="org.eclipse.uml2.uml.diagram.clazz.printing"
-            name="%preference.page.title.org.eclipse.uml2.uml.diagram.clazz.printing"
+            name="%prefpage.org.eclipse.uml2.uml.diagram.clazz.printing"
             category="org.eclipse.uml2.uml.diagram.clazz.general"
             class="org.eclipse.uml2.diagram.clazz.preferences.DiagramPrintingPreferencePage">
       </page>
       <page
             id="org.eclipse.uml2.uml.diagram.clazz.rulersAndGrid"
-            name="%preference.page.title.org.eclipse.uml2.uml.diagram.clazz.rulersAndGrid"
+            name="%prefpage.org.eclipse.uml2.uml.diagram.clazz.rulersAndGrid"
             category="org.eclipse.uml2.uml.diagram.clazz.general"
             class="org.eclipse.uml2.diagram.clazz.preferences.DiagramRulersAndGridPreferencePage">
       </page>
       <page
             id="org.eclipse.uml2.uml.diagram.clazz.pathmaps"
-            name="%preference.page.title.org.eclipse.uml2.uml.diagram.clazz.pathmaps"
+            name="%prefpage.org.eclipse.uml2.uml.diagram.clazz.pathmaps"
             category="org.eclipse.uml2.uml.diagram.clazz.general"
             class="org.eclipse.gmf.runtime.emf.ui.preferences.PathmapsPreferencePage">
       </page>
       <page
             id="org.eclipse.uml2.uml.diagram.clazz.viewfilter"
-            name="%preference.page.title.org.eclipse.uml2.uml.diagram.clazz.viewfilter"
+            name="%prefpage.org.eclipse.uml2.uml.diagram.clazz.viewfilter"
             category="org.eclipse.uml2.uml.diagram.clazz.general"
             class="org.eclipse.uml2.diagram.clazz.preferences.DiagramViewFiltersPreferencePage">
       </page>
@@ -1353,14 +1353,14 @@
 
    <extension point="org.eclipse.gmf.runtime.emf.type.core.elementTypeBindings">
       <?gmfgen generated="true"?>
-      <clientContext id="UMLClassClientContext">
+      <clientContext id="org.eclipse.uml2.diagram.clazz.TypeContext">
          <enablement>
             <test
                property="org.eclipse.gmf.runtime.emf.core.editingDomain"
                value="org.eclipse.uml2.diagram.clazz.EditingDomain"/>
          </enablement>
       </clientContext> 
-      <binding context="UMLClassClientContext">
+      <binding context="org.eclipse.uml2.diagram.clazz.TypeContext">
          <elementType ref="org.eclipse.uml2.diagram.clazz.Package_1000"/>
          <elementType ref="org.eclipse.uml2.diagram.clazz.Package_2002"/>
          <elementType ref="org.eclipse.uml2.diagram.clazz.Class_2001"/>
