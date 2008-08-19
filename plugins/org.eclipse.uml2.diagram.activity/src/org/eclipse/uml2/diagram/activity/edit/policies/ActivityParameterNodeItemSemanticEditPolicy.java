@@ -26,6 +26,13 @@ public class ActivityParameterNodeItemSemanticEditPolicy extends UMLBaseItemSema
 	/**
 	 * @generated
 	 */
+	public ActivityParameterNodeItemSemanticEditPolicy() {
+		super(UMLElementTypes.ActivityParameterNode_3052);
+	}
+
+	/**
+	 * @generated
+	 */
 	protected Command getDestroyElementCommand(DestroyElementRequest req) {
 		CompoundCommand cc = getDestroyEdgesCommand();
 		addDestroyShortcutsCommand(cc);

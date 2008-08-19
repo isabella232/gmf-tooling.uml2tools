@@ -51,7 +51,6 @@ public class ElementImportCreateCommand extends CreateElementCommand {
 
 		Namespace owner = (Namespace) getElementToEdit();
 		owner.getElementImports().add(newElement);
-
 		Profile childHolder = (Profile) getElementToEdit();
 		childHolder.getMetaclassReferences().add(newElement);
 

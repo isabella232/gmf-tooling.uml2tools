@@ -32,6 +32,13 @@ public class SendSignalActionItemSemanticEditPolicy extends UMLBaseItemSemanticE
 	/**
 	 * @generated
 	 */
+	public SendSignalActionItemSemanticEditPolicy() {
+		super(UMLElementTypes.SendSignalAction_3053);
+	}
+
+	/**
+	 * @generated
+	 */
 	protected Command getDestroyElementCommand(DestroyElementRequest req) {
 		CompoundCommand cc = getDestroyEdgesCommand();
 		addDestroyShortcutsCommand(cc);

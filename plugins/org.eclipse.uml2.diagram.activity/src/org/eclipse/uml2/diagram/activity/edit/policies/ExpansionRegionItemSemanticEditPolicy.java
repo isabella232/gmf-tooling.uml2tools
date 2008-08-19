@@ -57,6 +57,13 @@ public class ExpansionRegionItemSemanticEditPolicy extends UMLBaseItemSemanticEd
 	/**
 	 * @generated
 	 */
+	public ExpansionRegionItemSemanticEditPolicy() {
+		super(UMLElementTypes.ExpansionRegion_3084);
+	}
+
+	/**
+	 * @generated
+	 */
 	protected Command getDestroyElementCommand(DestroyElementRequest req) {
 		CompoundCommand cc = getDestroyEdgesCommand();
 		addDestroyChildNodesCommand(cc);

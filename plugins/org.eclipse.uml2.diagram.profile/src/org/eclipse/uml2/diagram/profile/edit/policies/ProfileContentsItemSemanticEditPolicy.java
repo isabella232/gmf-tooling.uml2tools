@@ -14,6 +14,13 @@ public class ProfileContentsItemSemanticEditPolicy extends UMLBaseItemSemanticEd
 	/**
 	 * @generated
 	 */
+	public ProfileContentsItemSemanticEditPolicy() {
+		super(UMLElementTypes.Profile_2002);
+	}
+
+	/**
+	 * @generated
+	 */
 	protected Command getCreateCommand(CreateElementRequest req) {
 		if (UMLElementTypes.Stereotype_3003 == req.getElementType()) {
 			if (req.getContainmentFeature() == null) {

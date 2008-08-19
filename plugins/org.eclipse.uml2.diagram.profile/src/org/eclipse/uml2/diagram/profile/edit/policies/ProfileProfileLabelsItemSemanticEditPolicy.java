@@ -14,6 +14,13 @@ public class ProfileProfileLabelsItemSemanticEditPolicy extends UMLBaseItemSeman
 	/**
 	 * @generated
 	 */
+	public ProfileProfileLabelsItemSemanticEditPolicy() {
+		super(UMLElementTypes.Profile_2007);
+	}
+
+	/**
+	 * @generated
+	 */
 	protected Command getCreateCommand(CreateElementRequest req) {
 		if (UMLElementTypes.ElementImport_3009 == req.getElementType()) {
 			if (req.getContainmentFeature() == null) {

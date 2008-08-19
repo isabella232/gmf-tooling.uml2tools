@@ -26,6 +26,13 @@ public class OutputPin5ItemSemanticEditPolicy extends UMLBaseItemSemanticEditPol
 	/**
 	 * @generated
 	 */
+	public OutputPin5ItemSemanticEditPolicy() {
+		super(UMLElementTypes.OutputPin_3081);
+	}
+
+	/**
+	 * @generated
+	 */
 	protected Command getDestroyElementCommand(DestroyElementRequest req) {
 		CompoundCommand cc = getDestroyEdgesCommand();
 		addDestroyShortcutsCommand(cc);

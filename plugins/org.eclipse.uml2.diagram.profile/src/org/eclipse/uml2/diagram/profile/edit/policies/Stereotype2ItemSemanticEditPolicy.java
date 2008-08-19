@@ -22,6 +22,13 @@ public class Stereotype2ItemSemanticEditPolicy extends UMLBaseItemSemanticEditPo
 	/**
 	 * @generated
 	 */
+	public Stereotype2ItemSemanticEditPolicy() {
+		super(UMLElementTypes.Stereotype_3003);
+	}
+
+	/**
+	 * @generated
+	 */
 	protected Command getDestroyElementCommand(DestroyElementRequest req) {
 		CompoundCommand cc = getDestroyEdgesCommand();
 		addDestroyShortcutsCommand(cc);

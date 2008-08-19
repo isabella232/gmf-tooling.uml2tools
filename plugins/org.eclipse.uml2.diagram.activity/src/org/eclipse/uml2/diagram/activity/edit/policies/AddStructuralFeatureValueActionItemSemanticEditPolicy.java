@@ -46,6 +46,13 @@ public class AddStructuralFeatureValueActionItemSemanticEditPolicy extends UMLBa
 	/**
 	 * @generated
 	 */
+	public AddStructuralFeatureValueActionItemSemanticEditPolicy() {
+		super(UMLElementTypes.AddStructuralFeatureValueAction_3043);
+	}
+
+	/**
+	 * @generated
+	 */
 	protected Command getCreateCommand(CreateElementRequest req) {
 		if (UMLElementTypes.InputPin_3003 == req.getElementType()) {
 			if (req.getContainmentFeature() == null) {

@@ -22,6 +22,13 @@ public class DecisionNode2ItemSemanticEditPolicy extends UMLBaseItemSemanticEdit
 	/**
 	 * @generated
 	 */
+	public DecisionNode2ItemSemanticEditPolicy() {
+		super(UMLElementTypes.DecisionNode_3015);
+	}
+
+	/**
+	 * @generated
+	 */
 	protected Command getDestroyElementCommand(DestroyElementRequest req) {
 		CompoundCommand cc = getDestroyEdgesCommand();
 		addDestroyShortcutsCommand(cc);

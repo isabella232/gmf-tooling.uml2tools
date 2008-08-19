@@ -19,6 +19,13 @@ public class Pseudostate8ItemSemanticEditPolicy extends UMLBaseItemSemanticEditP
 	/**
 	 * @generated
 	 */
+	public Pseudostate8ItemSemanticEditPolicy() {
+		super(UMLElementTypes.Pseudostate_3011);
+	}
+
+	/**
+	 * @generated
+	 */
 	protected Command getDestroyElementCommand(DestroyElementRequest req) {
 		CompoundCommand cc = getDestroyEdgesCommand();
 		addDestroyShortcutsCommand(cc);

@@ -41,6 +41,13 @@ public class Constraint2ItemSemanticEditPolicy extends UMLBaseItemSemanticEditPo
 	/**
 	 * @generated
 	 */
+	public Constraint2ItemSemanticEditPolicy() {
+		super(UMLElementTypes.Constraint_2028);
+	}
+
+	/**
+	 * @generated
+	 */
 	protected Command getDestroyElementCommand(DestroyElementRequest req) {
 		CompoundCommand cc = getDestroyEdgesCommand();
 		addDestroyChildNodesCommand(cc);

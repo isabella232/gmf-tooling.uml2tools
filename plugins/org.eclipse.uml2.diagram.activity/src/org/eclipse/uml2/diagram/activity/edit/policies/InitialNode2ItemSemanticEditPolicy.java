@@ -22,6 +22,13 @@ public class InitialNode2ItemSemanticEditPolicy extends UMLBaseItemSemanticEditP
 	/**
 	 * @generated
 	 */
+	public InitialNode2ItemSemanticEditPolicy() {
+		super(UMLElementTypes.InitialNode_3064);
+	}
+
+	/**
+	 * @generated
+	 */
 	protected Command getDestroyElementCommand(DestroyElementRequest req) {
 		CompoundCommand cc = getDestroyEdgesCommand();
 		addDestroyShortcutsCommand(cc);

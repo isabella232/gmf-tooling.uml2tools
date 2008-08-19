@@ -31,6 +31,13 @@ public class StructuredActivityNodeStructuredActivityContentPaneCompartment4Item
 	/**
 	 * @generated
 	 */
+	public StructuredActivityNodeStructuredActivityContentPaneCompartment4ItemSemanticEditPolicy() {
+		super(UMLElementTypes.StructuredActivityNode_3079);
+	}
+
+	/**
+	 * @generated
+	 */
 	protected Command getCreateCommand(CreateElementRequest req) {
 		if (UMLElementTypes.StructuredActivityNode_3079 == req.getElementType()) {
 			if (req.getContainmentFeature() == null) {

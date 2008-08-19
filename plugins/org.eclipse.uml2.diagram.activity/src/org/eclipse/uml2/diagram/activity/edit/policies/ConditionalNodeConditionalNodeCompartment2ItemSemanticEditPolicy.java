@@ -31,6 +31,13 @@ public class ConditionalNodeConditionalNodeCompartment2ItemSemanticEditPolicy ex
 	/**
 	 * @generated
 	 */
+	public ConditionalNodeConditionalNodeCompartment2ItemSemanticEditPolicy() {
+		super(UMLElementTypes.ConditionalNode_3083);
+	}
+
+	/**
+	 * @generated
+	 */
 	protected Command getCreateCommand(CreateElementRequest req) {
 		if (UMLElementTypes.StructuredActivityNode_3009 == req.getElementType()) {
 			if (req.getContainmentFeature() == null) {

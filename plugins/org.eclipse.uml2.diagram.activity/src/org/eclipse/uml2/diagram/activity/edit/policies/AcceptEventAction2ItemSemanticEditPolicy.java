@@ -32,6 +32,13 @@ public class AcceptEventAction2ItemSemanticEditPolicy extends UMLBaseItemSemanti
 	/**
 	 * @generated
 	 */
+	public AcceptEventAction2ItemSemanticEditPolicy() {
+		super(UMLElementTypes.AcceptEventAction_3031);
+	}
+
+	/**
+	 * @generated
+	 */
 	protected Command getDestroyElementCommand(DestroyElementRequest req) {
 		CompoundCommand cc = getDestroyEdgesCommand();
 		addDestroyShortcutsCommand(cc);

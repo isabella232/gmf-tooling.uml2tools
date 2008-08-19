@@ -16,6 +16,13 @@ public class StateCompositeState_InternalActivities2ItemSemanticEditPolicy exten
 	/**
 	 * @generated
 	 */
+	public StateCompositeState_InternalActivities2ItemSemanticEditPolicy() {
+		super(UMLElementTypes.State_3016);
+	}
+
+	/**
+	 * @generated
+	 */
 	protected Command getCreateCommand(CreateElementRequest req) {
 		if (UMLElementTypes.Behavior_3019 == req.getElementType()) {
 			if (req.getContainmentFeature() == null) {

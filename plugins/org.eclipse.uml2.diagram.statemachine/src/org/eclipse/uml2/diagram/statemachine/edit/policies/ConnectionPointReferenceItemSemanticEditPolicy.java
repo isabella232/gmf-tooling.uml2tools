@@ -19,6 +19,13 @@ public class ConnectionPointReferenceItemSemanticEditPolicy extends UMLBaseItemS
 	/**
 	 * @generated
 	 */
+	public ConnectionPointReferenceItemSemanticEditPolicy() {
+		super(UMLElementTypes.ConnectionPointReference_3017);
+	}
+
+	/**
+	 * @generated
+	 */
 	protected Command getDestroyElementCommand(DestroyElementRequest req) {
 		CompoundCommand cc = getDestroyEdgesCommand();
 		addDestroyShortcutsCommand(cc);

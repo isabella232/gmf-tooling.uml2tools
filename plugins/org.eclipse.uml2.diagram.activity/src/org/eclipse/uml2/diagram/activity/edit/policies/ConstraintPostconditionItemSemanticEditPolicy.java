@@ -14,6 +14,13 @@ public class ConstraintPostconditionItemSemanticEditPolicy extends UMLBaseItemSe
 	/**
 	 * @generated
 	 */
+	public ConstraintPostconditionItemSemanticEditPolicy() {
+		super(UMLElementTypes.Constraint_2028);
+	}
+
+	/**
+	 * @generated
+	 */
 	protected Command getCreateCommand(CreateElementRequest req) {
 		if (UMLElementTypes.LiteralString_3051 == req.getElementType()) {
 			if (req.getContainmentFeature() == null) {

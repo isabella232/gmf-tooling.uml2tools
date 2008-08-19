@@ -22,6 +22,13 @@ public class ForkNode2ItemSemanticEditPolicy extends UMLBaseItemSemanticEditPoli
 	/**
 	 * @generated
 	 */
+	public ForkNode2ItemSemanticEditPolicy() {
+		super(UMLElementTypes.ForkNode_3021);
+	}
+
+	/**
+	 * @generated
+	 */
 	protected Command getDestroyElementCommand(DestroyElementRequest req) {
 		CompoundCommand cc = getDestroyEdgesCommand();
 		addDestroyShortcutsCommand(cc);

@@ -44,6 +44,13 @@ public class CallBehaviorActionItemSemanticEditPolicy extends UMLBaseItemSemanti
 	/**
 	 * @generated
 	 */
+	public CallBehaviorActionItemSemanticEditPolicy() {
+		super(UMLElementTypes.CallBehaviorAction_3044);
+	}
+
+	/**
+	 * @generated
+	 */
 	protected Command getCreateCommand(CreateElementRequest req) {
 		if (UMLElementTypes.OutputPin_3006 == req.getElementType()) {
 			if (req.getContainmentFeature() == null) {

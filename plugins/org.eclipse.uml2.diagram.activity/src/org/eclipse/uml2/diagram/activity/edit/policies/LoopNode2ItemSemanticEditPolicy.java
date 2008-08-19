@@ -57,6 +57,13 @@ public class LoopNode2ItemSemanticEditPolicy extends UMLBaseItemSemanticEditPoli
 	/**
 	 * @generated
 	 */
+	public LoopNode2ItemSemanticEditPolicy() {
+		super(UMLElementTypes.LoopNode_3078);
+	}
+
+	/**
+	 * @generated
+	 */
 	protected Command getDestroyElementCommand(DestroyElementRequest req) {
 		CompoundCommand cc = getDestroyEdgesCommand();
 		addDestroyChildNodesCommand(cc);

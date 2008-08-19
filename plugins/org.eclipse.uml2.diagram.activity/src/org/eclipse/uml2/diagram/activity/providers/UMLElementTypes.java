@@ -16,6 +16,95 @@ import org.eclipse.gmf.runtime.emf.type.core.IHintedType;
 import org.eclipse.jface.resource.ImageDescriptor;
 import org.eclipse.jface.resource.ImageRegistry;
 import org.eclipse.swt.graphics.Image;
+import org.eclipse.uml2.diagram.activity.edit.parts.AcceptEventAction2EditPart;
+import org.eclipse.uml2.diagram.activity.edit.parts.AcceptEventAction3EditPart;
+import org.eclipse.uml2.diagram.activity.edit.parts.AcceptEventAction4EditPart;
+import org.eclipse.uml2.diagram.activity.edit.parts.AcceptEventAction5EditPart;
+import org.eclipse.uml2.diagram.activity.edit.parts.AcceptEventAction6EditPart;
+import org.eclipse.uml2.diagram.activity.edit.parts.AcceptEventActionEditPart;
+import org.eclipse.uml2.diagram.activity.edit.parts.ActionLocalPostconditionEditPart;
+import org.eclipse.uml2.diagram.activity.edit.parts.ActionLocalPreconditionEditPart;
+import org.eclipse.uml2.diagram.activity.edit.parts.ActivityEditPart;
+import org.eclipse.uml2.diagram.activity.edit.parts.ActivityFinalNode2EditPart;
+import org.eclipse.uml2.diagram.activity.edit.parts.ActivityFinalNode3EditPart;
+import org.eclipse.uml2.diagram.activity.edit.parts.ActivityFinalNodeEditPart;
+import org.eclipse.uml2.diagram.activity.edit.parts.ActivityParameterNodeEditPart;
+import org.eclipse.uml2.diagram.activity.edit.parts.ActivityPartition2EditPart;
+import org.eclipse.uml2.diagram.activity.edit.parts.ActivityPartitionEditPart;
+import org.eclipse.uml2.diagram.activity.edit.parts.AddStructuralFeatureValueAction2EditPart;
+import org.eclipse.uml2.diagram.activity.edit.parts.AddStructuralFeatureValueAction3EditPart;
+import org.eclipse.uml2.diagram.activity.edit.parts.AddStructuralFeatureValueActionEditPart;
+import org.eclipse.uml2.diagram.activity.edit.parts.CallBehaviorAction2EditPart;
+import org.eclipse.uml2.diagram.activity.edit.parts.CallBehaviorAction3EditPart;
+import org.eclipse.uml2.diagram.activity.edit.parts.CallBehaviorActionEditPart;
+import org.eclipse.uml2.diagram.activity.edit.parts.CallOperationAction2EditPart;
+import org.eclipse.uml2.diagram.activity.edit.parts.CallOperationAction3EditPart;
+import org.eclipse.uml2.diagram.activity.edit.parts.CallOperationActionEditPart;
+import org.eclipse.uml2.diagram.activity.edit.parts.CentralBufferNode2EditPart;
+import org.eclipse.uml2.diagram.activity.edit.parts.CentralBufferNode3EditPart;
+import org.eclipse.uml2.diagram.activity.edit.parts.CentralBufferNodeEditPart;
+import org.eclipse.uml2.diagram.activity.edit.parts.ConditionalNode2EditPart;
+import org.eclipse.uml2.diagram.activity.edit.parts.ConditionalNodeEditPart;
+import org.eclipse.uml2.diagram.activity.edit.parts.Constraint2EditPart;
+import org.eclipse.uml2.diagram.activity.edit.parts.ConstraintEditPart;
+import org.eclipse.uml2.diagram.activity.edit.parts.ControlFlowEditPart;
+import org.eclipse.uml2.diagram.activity.edit.parts.CreateObjectAction2EditPart;
+import org.eclipse.uml2.diagram.activity.edit.parts.CreateObjectAction3EditPart;
+import org.eclipse.uml2.diagram.activity.edit.parts.CreateObjectActionEditPart;
+import org.eclipse.uml2.diagram.activity.edit.parts.DataStoreNode2EditPart;
+import org.eclipse.uml2.diagram.activity.edit.parts.DataStoreNode3EditPart;
+import org.eclipse.uml2.diagram.activity.edit.parts.DataStoreNodeEditPart;
+import org.eclipse.uml2.diagram.activity.edit.parts.DecisionNode2EditPart;
+import org.eclipse.uml2.diagram.activity.edit.parts.DecisionNode3EditPart;
+import org.eclipse.uml2.diagram.activity.edit.parts.DecisionNodeEditPart;
+import org.eclipse.uml2.diagram.activity.edit.parts.ExceptionHandlerEditPart;
+import org.eclipse.uml2.diagram.activity.edit.parts.ExpansionRegion2EditPart;
+import org.eclipse.uml2.diagram.activity.edit.parts.ExpansionRegionEditPart;
+import org.eclipse.uml2.diagram.activity.edit.parts.FlowFinalNode2EditPart;
+import org.eclipse.uml2.diagram.activity.edit.parts.FlowFinalNode3EditPart;
+import org.eclipse.uml2.diagram.activity.edit.parts.FlowFinalNodeEditPart;
+import org.eclipse.uml2.diagram.activity.edit.parts.ForkNode2EditPart;
+import org.eclipse.uml2.diagram.activity.edit.parts.ForkNode3EditPart;
+import org.eclipse.uml2.diagram.activity.edit.parts.ForkNodeEditPart;
+import org.eclipse.uml2.diagram.activity.edit.parts.InitialNode2EditPart;
+import org.eclipse.uml2.diagram.activity.edit.parts.InitialNodeEditPart;
+import org.eclipse.uml2.diagram.activity.edit.parts.InputPin2EditPart;
+import org.eclipse.uml2.diagram.activity.edit.parts.InputPin3EditPart;
+import org.eclipse.uml2.diagram.activity.edit.parts.InputPin4EditPart;
+import org.eclipse.uml2.diagram.activity.edit.parts.InputPin5EditPart;
+import org.eclipse.uml2.diagram.activity.edit.parts.InputPin6EditPart;
+import org.eclipse.uml2.diagram.activity.edit.parts.InputPin7EditPart;
+import org.eclipse.uml2.diagram.activity.edit.parts.InputPinEditPart;
+import org.eclipse.uml2.diagram.activity.edit.parts.JoinNode2EditPart;
+import org.eclipse.uml2.diagram.activity.edit.parts.JoinNode3EditPart;
+import org.eclipse.uml2.diagram.activity.edit.parts.JoinNodeEditPart;
+import org.eclipse.uml2.diagram.activity.edit.parts.LiteralString2EditPart;
+import org.eclipse.uml2.diagram.activity.edit.parts.LiteralStringEditPart;
+import org.eclipse.uml2.diagram.activity.edit.parts.LoopNode2EditPart;
+import org.eclipse.uml2.diagram.activity.edit.parts.LoopNodeEditPart;
+import org.eclipse.uml2.diagram.activity.edit.parts.MergeNode2EditPart;
+import org.eclipse.uml2.diagram.activity.edit.parts.MergeNodeEditPart;
+import org.eclipse.uml2.diagram.activity.edit.parts.ObjectFlowEditPart;
+import org.eclipse.uml2.diagram.activity.edit.parts.ObjectNodeSelectionEditPart;
+import org.eclipse.uml2.diagram.activity.edit.parts.OpaqueAction2EditPart;
+import org.eclipse.uml2.diagram.activity.edit.parts.OpaqueAction3EditPart;
+import org.eclipse.uml2.diagram.activity.edit.parts.OpaqueActionEditPart;
+import org.eclipse.uml2.diagram.activity.edit.parts.OpaqueBehaviorEditPart;
+import org.eclipse.uml2.diagram.activity.edit.parts.OutputPin2EditPart;
+import org.eclipse.uml2.diagram.activity.edit.parts.OutputPin3EditPart;
+import org.eclipse.uml2.diagram.activity.edit.parts.OutputPin4EditPart;
+import org.eclipse.uml2.diagram.activity.edit.parts.OutputPin5EditPart;
+import org.eclipse.uml2.diagram.activity.edit.parts.OutputPinEditPart;
+import org.eclipse.uml2.diagram.activity.edit.parts.PackageEditPart;
+import org.eclipse.uml2.diagram.activity.edit.parts.Pin2EditPart;
+import org.eclipse.uml2.diagram.activity.edit.parts.Pin3EditPart;
+import org.eclipse.uml2.diagram.activity.edit.parts.PinEditPart;
+import org.eclipse.uml2.diagram.activity.edit.parts.SendSignalAction2EditPart;
+import org.eclipse.uml2.diagram.activity.edit.parts.SendSignalActionEditPart;
+import org.eclipse.uml2.diagram.activity.edit.parts.StructuredActivityNode2EditPart;
+import org.eclipse.uml2.diagram.activity.edit.parts.StructuredActivityNode3EditPart;
+import org.eclipse.uml2.diagram.activity.edit.parts.StructuredActivityNode4EditPart;
+import org.eclipse.uml2.diagram.activity.edit.parts.StructuredActivityNodeEditPart;
 import org.eclipse.uml2.diagram.activity.part.UMLDiagramEditorPlugin;
 import org.eclipse.uml2.uml.UMLPackage;
 
@@ -881,6 +970,193 @@ public class UMLElementTypes extends ElementInitializers {
 			KNOWN_ELEMENT_TYPES.add(ExceptionHandler_4005);
 		}
 		return KNOWN_ELEMENT_TYPES.contains(elementType);
+	}
+
+	/**
+	 * @generated
+	 */
+	public static IElementType getElementType(int visualID) {
+		switch (visualID) {
+		case PackageEditPart.VISUAL_ID:
+			return Package_1000;
+		case ActivityEditPart.VISUAL_ID:
+			return Activity_2026;
+		case ConstraintEditPart.VISUAL_ID:
+			return Constraint_2027;
+		case Constraint2EditPart.VISUAL_ID:
+			return Constraint_2028;
+		case AcceptEventActionEditPart.VISUAL_ID:
+			return AcceptEventAction_3030;
+		case AcceptEventAction2EditPart.VISUAL_ID:
+			return AcceptEventAction_3031;
+		case ActivityFinalNodeEditPart.VISUAL_ID:
+			return ActivityFinalNode_3032;
+		case DecisionNodeEditPart.VISUAL_ID:
+			return DecisionNode_3033;
+		case MergeNodeEditPart.VISUAL_ID:
+			return MergeNode_3034;
+		case InitialNodeEditPart.VISUAL_ID:
+			return InitialNode_3035;
+		case DataStoreNodeEditPart.VISUAL_ID:
+			return DataStoreNode_3036;
+		case CentralBufferNodeEditPart.VISUAL_ID:
+			return CentralBufferNode_3037;
+		case OpaqueActionEditPart.VISUAL_ID:
+			return OpaqueAction_3029;
+		case OutputPinEditPart.VISUAL_ID:
+			return OutputPin_3001;
+		case FlowFinalNodeEditPart.VISUAL_ID:
+			return FlowFinalNode_3038;
+		case ForkNodeEditPart.VISUAL_ID:
+			return ForkNode_3039;
+		case JoinNodeEditPart.VISUAL_ID:
+			return JoinNode_3040;
+		case PinEditPart.VISUAL_ID:
+			return Pin_3041;
+		case CreateObjectActionEditPart.VISUAL_ID:
+			return CreateObjectAction_3042;
+		case OutputPin2EditPart.VISUAL_ID:
+			return OutputPin_3002;
+		case AddStructuralFeatureValueActionEditPart.VISUAL_ID:
+			return AddStructuralFeatureValueAction_3043;
+		case InputPinEditPart.VISUAL_ID:
+			return InputPin_3003;
+		case InputPin2EditPart.VISUAL_ID:
+			return InputPin_3004;
+		case InputPin3EditPart.VISUAL_ID:
+			return InputPin_3005;
+		case CallBehaviorActionEditPart.VISUAL_ID:
+			return CallBehaviorAction_3044;
+		case OutputPin3EditPart.VISUAL_ID:
+			return OutputPin_3006;
+		case InputPin4EditPart.VISUAL_ID:
+			return InputPin_3007;
+		case CallOperationActionEditPart.VISUAL_ID:
+			return CallOperationAction_3045;
+		case InputPin5EditPart.VISUAL_ID:
+			return InputPin_3008;
+		case StructuredActivityNodeEditPart.VISUAL_ID:
+			return StructuredActivityNode_3046;
+		case StructuredActivityNode2EditPart.VISUAL_ID:
+			return StructuredActivityNode_3009;
+		case OpaqueAction2EditPart.VISUAL_ID:
+			return OpaqueAction_3011;
+		case AcceptEventAction3EditPart.VISUAL_ID:
+			return AcceptEventAction_3012;
+		case AcceptEventAction4EditPart.VISUAL_ID:
+			return AcceptEventAction_3013;
+		case ActivityFinalNode2EditPart.VISUAL_ID:
+			return ActivityFinalNode_3014;
+		case DecisionNode2EditPart.VISUAL_ID:
+			return DecisionNode_3015;
+		case FlowFinalNode2EditPart.VISUAL_ID:
+			return FlowFinalNode_3016;
+		case Pin2EditPart.VISUAL_ID:
+			return Pin_3017;
+		case CreateObjectAction2EditPart.VISUAL_ID:
+			return CreateObjectAction_3018;
+		case CallBehaviorAction2EditPart.VISUAL_ID:
+			return CallBehaviorAction_3019;
+		case CallOperationAction2EditPart.VISUAL_ID:
+			return CallOperationAction_3020;
+		case ForkNode2EditPart.VISUAL_ID:
+			return ForkNode_3021;
+		case JoinNode2EditPart.VISUAL_ID:
+			return JoinNode_3022;
+		case AddStructuralFeatureValueAction2EditPart.VISUAL_ID:
+			return AddStructuralFeatureValueAction_3023;
+		case DataStoreNode2EditPart.VISUAL_ID:
+			return DataStoreNode_3024;
+		case CentralBufferNode2EditPart.VISUAL_ID:
+			return CentralBufferNode_3025;
+		case InputPin6EditPart.VISUAL_ID:
+			return InputPin_3054;
+		case OutputPin4EditPart.VISUAL_ID:
+			return OutputPin_3055;
+		case OpaqueBehaviorEditPart.VISUAL_ID:
+			return OpaqueBehavior_3047;
+		case ActivityParameterNodeEditPart.VISUAL_ID:
+			return ActivityParameterNode_3052;
+		case SendSignalActionEditPart.VISUAL_ID:
+			return SendSignalAction_3053;
+		case ActivityPartitionEditPart.VISUAL_ID:
+			return ActivityPartition_3056;
+		case ActivityPartition2EditPart.VISUAL_ID:
+			return ActivityPartition_3057;
+		case AcceptEventAction5EditPart.VISUAL_ID:
+			return AcceptEventAction_3059;
+		case AcceptEventAction6EditPart.VISUAL_ID:
+			return AcceptEventAction_3060;
+		case ActivityFinalNode3EditPart.VISUAL_ID:
+			return ActivityFinalNode_3061;
+		case DecisionNode3EditPart.VISUAL_ID:
+			return DecisionNode_3062;
+		case MergeNode2EditPart.VISUAL_ID:
+			return MergeNode_3063;
+		case InitialNode2EditPart.VISUAL_ID:
+			return InitialNode_3064;
+		case DataStoreNode3EditPart.VISUAL_ID:
+			return DataStoreNode_3065;
+		case CentralBufferNode3EditPart.VISUAL_ID:
+			return CentralBufferNode_3066;
+		case OpaqueAction3EditPart.VISUAL_ID:
+			return OpaqueAction_3067;
+		case FlowFinalNode3EditPart.VISUAL_ID:
+			return FlowFinalNode_3068;
+		case ForkNode3EditPart.VISUAL_ID:
+			return ForkNode_3069;
+		case JoinNode3EditPart.VISUAL_ID:
+			return JoinNode_3070;
+		case Pin3EditPart.VISUAL_ID:
+			return Pin_3071;
+		case CreateObjectAction3EditPart.VISUAL_ID:
+			return CreateObjectAction_3072;
+		case AddStructuralFeatureValueAction3EditPart.VISUAL_ID:
+			return AddStructuralFeatureValueAction_3073;
+		case CallBehaviorAction3EditPart.VISUAL_ID:
+			return CallBehaviorAction_3074;
+		case CallOperationAction3EditPart.VISUAL_ID:
+			return CallOperationAction_3075;
+		case StructuredActivityNode3EditPart.VISUAL_ID:
+			return StructuredActivityNode_3076;
+		case StructuredActivityNode4EditPart.VISUAL_ID:
+			return StructuredActivityNode_3079;
+		case InputPin7EditPart.VISUAL_ID:
+			return InputPin_3080;
+		case OutputPin5EditPart.VISUAL_ID:
+			return OutputPin_3081;
+		case SendSignalAction2EditPart.VISUAL_ID:
+			return SendSignalAction_3077;
+		case LoopNode2EditPart.VISUAL_ID:
+			return LoopNode_3078;
+		case ConditionalNode2EditPart.VISUAL_ID:
+			return ConditionalNode_3083;
+		case ExpansionRegion2EditPart.VISUAL_ID:
+			return ExpansionRegion_3085;
+		case LoopNodeEditPart.VISUAL_ID:
+			return LoopNode_3058;
+		case ConditionalNodeEditPart.VISUAL_ID:
+			return ConditionalNode_3082;
+		case ExpansionRegionEditPart.VISUAL_ID:
+			return ExpansionRegion_3084;
+		case LiteralStringEditPart.VISUAL_ID:
+			return LiteralString_3049;
+		case LiteralString2EditPart.VISUAL_ID:
+			return LiteralString_3051;
+		case ControlFlowEditPart.VISUAL_ID:
+			return ControlFlow_4001;
+		case ObjectFlowEditPart.VISUAL_ID:
+			return ObjectFlow_4002;
+		case ActionLocalPreconditionEditPart.VISUAL_ID:
+			return ActionLocalPrecondition_4003;
+		case ActionLocalPostconditionEditPart.VISUAL_ID:
+			return ActionLocalPostcondition_4006;
+		case ObjectNodeSelectionEditPart.VISUAL_ID:
+			return ObjectNodeSelection_4004;
+		case ExceptionHandlerEditPart.VISUAL_ID:
+			return ExceptionHandler_4005;
+		}
+		return null;
 	}
 
 	/**

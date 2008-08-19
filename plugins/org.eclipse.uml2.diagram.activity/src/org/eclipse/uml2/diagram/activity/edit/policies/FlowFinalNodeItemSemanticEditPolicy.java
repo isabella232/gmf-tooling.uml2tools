@@ -22,6 +22,13 @@ public class FlowFinalNodeItemSemanticEditPolicy extends UMLBaseItemSemanticEdit
 	/**
 	 * @generated
 	 */
+	public FlowFinalNodeItemSemanticEditPolicy() {
+		super(UMLElementTypes.FlowFinalNode_3038);
+	}
+
+	/**
+	 * @generated
+	 */
 	protected Command getDestroyElementCommand(DestroyElementRequest req) {
 		CompoundCommand cc = getDestroyEdgesCommand();
 		addDestroyShortcutsCommand(cc);

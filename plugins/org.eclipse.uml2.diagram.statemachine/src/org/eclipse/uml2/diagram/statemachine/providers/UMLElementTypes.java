@@ -17,6 +17,30 @@ import org.eclipse.gmf.runtime.emf.type.core.IHintedType;
 import org.eclipse.jface.resource.ImageDescriptor;
 import org.eclipse.jface.resource.ImageRegistry;
 import org.eclipse.swt.graphics.Image;
+import org.eclipse.uml2.diagram.statemachine.edit.parts.Behavior2EditPart;
+import org.eclipse.uml2.diagram.statemachine.edit.parts.Behavior3EditPart;
+import org.eclipse.uml2.diagram.statemachine.edit.parts.BehaviorEditPart;
+import org.eclipse.uml2.diagram.statemachine.edit.parts.ConnectionPointReference2EditPart;
+import org.eclipse.uml2.diagram.statemachine.edit.parts.ConnectionPointReferenceEditPart;
+import org.eclipse.uml2.diagram.statemachine.edit.parts.FinalStateEditPart;
+import org.eclipse.uml2.diagram.statemachine.edit.parts.Pseudostate10EditPart;
+import org.eclipse.uml2.diagram.statemachine.edit.parts.Pseudostate2EditPart;
+import org.eclipse.uml2.diagram.statemachine.edit.parts.Pseudostate3EditPart;
+import org.eclipse.uml2.diagram.statemachine.edit.parts.Pseudostate4EditPart;
+import org.eclipse.uml2.diagram.statemachine.edit.parts.Pseudostate5EditPart;
+import org.eclipse.uml2.diagram.statemachine.edit.parts.Pseudostate6EditPart;
+import org.eclipse.uml2.diagram.statemachine.edit.parts.Pseudostate7EditPart;
+import org.eclipse.uml2.diagram.statemachine.edit.parts.Pseudostate8EditPart;
+import org.eclipse.uml2.diagram.statemachine.edit.parts.Pseudostate9EditPart;
+import org.eclipse.uml2.diagram.statemachine.edit.parts.PseudostateEditPart;
+import org.eclipse.uml2.diagram.statemachine.edit.parts.Region2EditPart;
+import org.eclipse.uml2.diagram.statemachine.edit.parts.RegionEditPart;
+import org.eclipse.uml2.diagram.statemachine.edit.parts.State2EditPart;
+import org.eclipse.uml2.diagram.statemachine.edit.parts.State3EditPart;
+import org.eclipse.uml2.diagram.statemachine.edit.parts.StateEditPart;
+import org.eclipse.uml2.diagram.statemachine.edit.parts.StateMachine2EditPart;
+import org.eclipse.uml2.diagram.statemachine.edit.parts.StateMachineEditPart;
+import org.eclipse.uml2.diagram.statemachine.edit.parts.TransitionEditPart;
 import org.eclipse.uml2.diagram.statemachine.part.UMLDiagramEditorPlugin;
 import org.eclipse.uml2.uml.UMLPackage;
 
@@ -429,6 +453,63 @@ public class UMLElementTypes extends ElementInitializers {
 			KNOWN_ELEMENT_TYPES.add(Transition_4001);
 		}
 		return KNOWN_ELEMENT_TYPES.contains(elementType);
+	}
+
+	/**
+	 * @generated
+	 */
+	public static IElementType getElementType(int visualID) {
+		switch (visualID) {
+		case StateMachineEditPart.VISUAL_ID:
+			return StateMachine_1000;
+		case StateMachine2EditPart.VISUAL_ID:
+			return StateMachine_2004;
+		case RegionEditPart.VISUAL_ID:
+			return Region_3013;
+		case StateEditPart.VISUAL_ID:
+			return State_3001;
+		case BehaviorEditPart.VISUAL_ID:
+			return Behavior_3019;
+		case Behavior2EditPart.VISUAL_ID:
+			return Behavior_3020;
+		case Behavior3EditPart.VISUAL_ID:
+			return Behavior_3021;
+		case State2EditPart.VISUAL_ID:
+			return State_3012;
+		case Region2EditPart.VISUAL_ID:
+			return Region_3002;
+		case State3EditPart.VISUAL_ID:
+			return State_3016;
+		case ConnectionPointReferenceEditPart.VISUAL_ID:
+			return ConnectionPointReference_3017;
+		case ConnectionPointReference2EditPart.VISUAL_ID:
+			return ConnectionPointReference_3018;
+		case FinalStateEditPart.VISUAL_ID:
+			return FinalState_3003;
+		case PseudostateEditPart.VISUAL_ID:
+			return Pseudostate_3004;
+		case Pseudostate2EditPart.VISUAL_ID:
+			return Pseudostate_3005;
+		case Pseudostate3EditPart.VISUAL_ID:
+			return Pseudostate_3006;
+		case Pseudostate4EditPart.VISUAL_ID:
+			return Pseudostate_3007;
+		case Pseudostate5EditPart.VISUAL_ID:
+			return Pseudostate_3008;
+		case Pseudostate6EditPart.VISUAL_ID:
+			return Pseudostate_3009;
+		case Pseudostate7EditPart.VISUAL_ID:
+			return Pseudostate_3010;
+		case Pseudostate8EditPart.VISUAL_ID:
+			return Pseudostate_3011;
+		case Pseudostate9EditPart.VISUAL_ID:
+			return Pseudostate_3014;
+		case Pseudostate10EditPart.VISUAL_ID:
+			return Pseudostate_3015;
+		case TransitionEditPart.VISUAL_ID:
+			return Transition_4001;
+		}
+		return null;
 	}
 
 	/**

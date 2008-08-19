@@ -42,6 +42,13 @@ public class CreateObjectAction2ItemSemanticEditPolicy extends UMLBaseItemSemant
 	/**
 	 * @generated
 	 */
+	public CreateObjectAction2ItemSemanticEditPolicy() {
+		super(UMLElementTypes.CreateObjectAction_3018);
+	}
+
+	/**
+	 * @generated
+	 */
 	protected Command getCreateCommand(CreateElementRequest req) {
 		if (UMLElementTypes.OutputPin_3002 == req.getElementType()) {
 			if (req.getContainmentFeature() == null) {

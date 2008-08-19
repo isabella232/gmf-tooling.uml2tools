@@ -57,6 +57,13 @@ public class ConditionalNode2ItemSemanticEditPolicy extends UMLBaseItemSemanticE
 	/**
 	 * @generated
 	 */
+	public ConditionalNode2ItemSemanticEditPolicy() {
+		super(UMLElementTypes.ConditionalNode_3083);
+	}
+
+	/**
+	 * @generated
+	 */
 	protected Command getDestroyElementCommand(DestroyElementRequest req) {
 		CompoundCommand cc = getDestroyEdgesCommand();
 		addDestroyChildNodesCommand(cc);

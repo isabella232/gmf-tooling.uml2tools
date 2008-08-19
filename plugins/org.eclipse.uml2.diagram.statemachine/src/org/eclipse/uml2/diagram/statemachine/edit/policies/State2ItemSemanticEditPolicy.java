@@ -33,6 +33,13 @@ public class State2ItemSemanticEditPolicy extends UMLBaseItemSemanticEditPolicy 
 	/**
 	 * @generated
 	 */
+	public State2ItemSemanticEditPolicy() {
+		super(UMLElementTypes.State_3012);
+	}
+
+	/**
+	 * @generated
+	 */
 	protected Command getCreateCommand(CreateElementRequest req) {
 		if (UMLElementTypes.Region_3002 == req.getElementType()) {
 			if (req.getContainmentFeature() == null) {

@@ -68,6 +68,13 @@ public class ActivityPartition2ItemSemanticEditPolicy extends UMLBaseItemSemanti
 	/**
 	 * @generated
 	 */
+	public ActivityPartition2ItemSemanticEditPolicy() {
+		super(UMLElementTypes.ActivityPartition_3057);
+	}
+
+	/**
+	 * @generated
+	 */
 	protected Command getCreateCommand(CreateElementRequest req) {
 		if (UMLElementTypes.ActivityPartition_3057 == req.getElementType()) {
 			if (req.getContainmentFeature() == null) {

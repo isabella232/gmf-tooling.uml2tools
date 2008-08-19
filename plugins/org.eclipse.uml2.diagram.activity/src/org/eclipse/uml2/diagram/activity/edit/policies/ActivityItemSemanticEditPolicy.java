@@ -77,6 +77,13 @@ public class ActivityItemSemanticEditPolicy extends UMLBaseItemSemanticEditPolic
 	/**
 	 * @generated
 	 */
+	public ActivityItemSemanticEditPolicy() {
+		super(UMLElementTypes.Activity_2026);
+	}
+
+	/**
+	 * @generated
+	 */
 	protected Command getCreateCommand(CreateElementRequest req) {
 		if (UMLElementTypes.AcceptEventAction_3030 == req.getElementType()) {
 			if (req.getContainmentFeature() == null) {

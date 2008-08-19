@@ -31,6 +31,13 @@ public class LoopNodeLoopNodeContentPaneCompartment2ItemSemanticEditPolicy exten
 	/**
 	 * @generated
 	 */
+	public LoopNodeLoopNodeContentPaneCompartment2ItemSemanticEditPolicy() {
+		super(UMLElementTypes.LoopNode_3078);
+	}
+
+	/**
+	 * @generated
+	 */
 	protected Command getCreateCommand(CreateElementRequest req) {
 		if (UMLElementTypes.StructuredActivityNode_3009 == req.getElementType()) {
 			if (req.getContainmentFeature() == null) {

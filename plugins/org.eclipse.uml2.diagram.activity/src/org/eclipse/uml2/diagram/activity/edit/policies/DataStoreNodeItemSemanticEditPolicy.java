@@ -26,6 +26,13 @@ public class DataStoreNodeItemSemanticEditPolicy extends UMLBaseItemSemanticEdit
 	/**
 	 * @generated
 	 */
+	public DataStoreNodeItemSemanticEditPolicy() {
+		super(UMLElementTypes.DataStoreNode_3036);
+	}
+
+	/**
+	 * @generated
+	 */
 	protected Command getDestroyElementCommand(DestroyElementRequest req) {
 		CompoundCommand cc = getDestroyEdgesCommand();
 		addDestroyShortcutsCommand(cc);

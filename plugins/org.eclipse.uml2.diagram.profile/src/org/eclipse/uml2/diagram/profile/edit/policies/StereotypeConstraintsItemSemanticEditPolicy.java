@@ -14,6 +14,13 @@ public class StereotypeConstraintsItemSemanticEditPolicy extends UMLBaseItemSema
 	/**
 	 * @generated
 	 */
+	public StereotypeConstraintsItemSemanticEditPolicy() {
+		super(UMLElementTypes.Stereotype_2001);
+	}
+
+	/**
+	 * @generated
+	 */
 	protected Command getCreateCommand(CreateElementRequest req) {
 		if (UMLElementTypes.Constraint_3008 == req.getElementType()) {
 			if (req.getContainmentFeature() == null) {

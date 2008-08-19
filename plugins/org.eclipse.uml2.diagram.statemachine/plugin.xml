@@ -465,14 +465,14 @@
 
    <extension point="org.eclipse.gmf.runtime.emf.type.core.elementTypeBindings">
       <?gmfgen generated="true"?>
-      <clientContext id="UMLStateMachineClientContext">
+      <clientContext id="org.eclipse.uml2.diagram.statemachine.TypeContext">
          <enablement>
             <test
                property="org.eclipse.gmf.runtime.emf.core.editingDomain"
                value="org.eclipse.uml2.diagram.statemachine.EditingDomain"/>
          </enablement>
       </clientContext> 
-      <binding context="UMLStateMachineClientContext">
+      <binding context="org.eclipse.uml2.diagram.statemachine.TypeContext">
          <elementType ref="org.eclipse.uml2.diagram.statemachine.StateMachine_1000"/>
          <elementType ref="org.eclipse.uml2.diagram.statemachine.StateMachine_2004"/>
          <elementType ref="org.eclipse.uml2.diagram.statemachine.Region_3013"/>
@@ -640,37 +640,37 @@
       <?gmfgen generated="true"?>
       <page
             id="org.eclipse.uml2.uml.diagram.statemachine.general"
-            name="%preference.page.title.org.eclipse.uml2.uml.diagram.statemachine.general"
+            name="%prefpage.org.eclipse.uml2.uml.diagram.statemachine.general"
             category="org.eclipse.uml2.uml.diagram"
             class="org.eclipse.uml2.diagram.statemachine.preferences.DiagramGeneralPreferencePage">
       </page>
       <page
             id="org.eclipse.uml2.uml.diagram.statemachine.appearance"
-            name="%preference.page.title.org.eclipse.uml2.uml.diagram.statemachine.appearance"
+            name="%prefpage.org.eclipse.uml2.uml.diagram.statemachine.appearance"
             category="org.eclipse.uml2.uml.diagram.statemachine.general"
             class="org.eclipse.uml2.diagram.statemachine.preferences.DiagramAppearancePreferencePage">
       </page>
       <page
             id="org.eclipse.uml2.uml.diagram.statemachine.connections"
-            name="%preference.page.title.org.eclipse.uml2.uml.diagram.statemachine.connections"
+            name="%prefpage.org.eclipse.uml2.uml.diagram.statemachine.connections"
             category="org.eclipse.uml2.uml.diagram.statemachine.general"
             class="org.eclipse.uml2.diagram.statemachine.preferences.DiagramConnectionsPreferencePage">
       </page>
       <page
             id="org.eclipse.uml2.uml.diagram.statemachine.printing"
-            name="%preference.page.title.org.eclipse.uml2.uml.diagram.statemachine.printing"
+            name="%prefpage.org.eclipse.uml2.uml.diagram.statemachine.printing"
             category="org.eclipse.uml2.uml.diagram.statemachine.general"
             class="org.eclipse.uml2.diagram.statemachine.preferences.DiagramPrintingPreferencePage">
       </page>
       <page
             id="org.eclipse.uml2.uml.diagram.statemachine.rulersAndGrid"
-            name="%preference.page.title.org.eclipse.uml2.uml.diagram.statemachine.rulersAndGrid"
+            name="%prefpage.org.eclipse.uml2.uml.diagram.statemachine.rulersAndGrid"
             category="org.eclipse.uml2.uml.diagram.statemachine.general"
             class="org.eclipse.uml2.diagram.statemachine.preferences.DiagramRulersAndGridPreferencePage">
       </page>
       <page
             id="org.eclipse.uml2.uml.diagram.statemachine.pathmaps"
-            name="%preference.page.title.org.eclipse.uml2.uml.diagram.statemachine.pathmaps"
+            name="%prefpage.org.eclipse.uml2.uml.diagram.statemachine.pathmaps"
             category="org.eclipse.uml2.uml.diagram.statemachine.general"
             class="org.eclipse.gmf.runtime.emf.ui.preferences.PathmapsPreferencePage">
       </page>

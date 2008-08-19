@@ -34,7 +34,7 @@ public class TransitionCreateCommand extends CreateElementCommand {
 	/**
 	 * @generated
 	 */
-	private Region container;
+	private final Region container;
 
 	/**
 	 * @generated
@@ -47,15 +47,9 @@ public class TransitionCreateCommand extends CreateElementCommand {
 			setContainmentFeature(UMLPackage.eINSTANCE.getRegion_Transition());
 		}
 
-		// Find container element for the new link.
-		// Climb up by containment hierarchy starting from the source
-		// and return the first element that is instance of the container class.
-		for (EObject element = source; element != null; element = element.eContainer()) {
-			if (element instanceof Region) {
-				container = (Region) element;
-				super.setElementToEdit(container);
-				break;
-			}
+		container = deduceContainer(source, target);
+		if (container != null) {
+			super.setElementToEdit(container);
 		}
 	}
 
@@ -146,5 +140,22 @@ public class TransitionCreateCommand extends CreateElementCommand {
 	 */
 	public Region getContainer() {
 		return container;
+	}
+
+	/**
+	 * Default approach is to traverse ancestors of the source to find instance of container.
+	 * Modify with appropriate logic.
+	 * @generated
+	 */
+	private static Region deduceContainer(EObject source, EObject target) {
+		// Find container element for the new link.
+		// Climb up by containment hierarchy starting from the source
+		// and return the first element that is instance of the container class.
+		for (EObject element = source; element != null; element = element.eContainer()) {
+			if (element instanceof Region) {
+				return (Region) element;
+			}
+		}
+		return null;
 	}
 }

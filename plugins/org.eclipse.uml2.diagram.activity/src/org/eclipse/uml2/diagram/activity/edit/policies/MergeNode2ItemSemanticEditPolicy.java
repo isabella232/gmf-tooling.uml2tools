@@ -22,6 +22,13 @@ public class MergeNode2ItemSemanticEditPolicy extends UMLBaseItemSemanticEditPol
 	/**
 	 * @generated
 	 */
+	public MergeNode2ItemSemanticEditPolicy() {
+		super(UMLElementTypes.MergeNode_3063);
+	}
+
+	/**
+	 * @generated
+	 */
 	protected Command getDestroyElementCommand(DestroyElementRequest req) {
 		CompoundCommand cc = getDestroyEdgesCommand();
 		addDestroyShortcutsCommand(cc);

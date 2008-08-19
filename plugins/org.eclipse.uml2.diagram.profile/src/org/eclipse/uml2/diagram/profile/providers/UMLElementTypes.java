@@ -16,6 +16,19 @@ import org.eclipse.gmf.runtime.emf.type.core.IHintedType;
 import org.eclipse.jface.resource.ImageDescriptor;
 import org.eclipse.jface.resource.ImageRegistry;
 import org.eclipse.swt.graphics.Image;
+import org.eclipse.uml2.diagram.profile.edit.parts.ConstraintEditPart;
+import org.eclipse.uml2.diagram.profile.edit.parts.ElementImport2EditPart;
+import org.eclipse.uml2.diagram.profile.edit.parts.ElementImportEditPart;
+import org.eclipse.uml2.diagram.profile.edit.parts.EnumerationEditPart;
+import org.eclipse.uml2.diagram.profile.edit.parts.EnumerationLiteralEditPart;
+import org.eclipse.uml2.diagram.profile.edit.parts.ExtensionEditPart;
+import org.eclipse.uml2.diagram.profile.edit.parts.GeneralizationEditPart;
+import org.eclipse.uml2.diagram.profile.edit.parts.Profile2EditPart;
+import org.eclipse.uml2.diagram.profile.edit.parts.Profile3EditPart;
+import org.eclipse.uml2.diagram.profile.edit.parts.ProfileEditPart;
+import org.eclipse.uml2.diagram.profile.edit.parts.PropertyEditPart;
+import org.eclipse.uml2.diagram.profile.edit.parts.Stereotype2EditPart;
+import org.eclipse.uml2.diagram.profile.edit.parts.StereotypeEditPart;
 import org.eclipse.uml2.diagram.profile.part.UMLDiagramEditorPlugin;
 import org.eclipse.uml2.uml.UMLPackage;
 
@@ -273,6 +286,41 @@ public class UMLElementTypes extends ElementInitializers {
 			KNOWN_ELEMENT_TYPES.add(Extension_4002);
 		}
 		return KNOWN_ELEMENT_TYPES.contains(elementType);
+	}
+
+	/**
+	 * @generated
+	 */
+	public static IElementType getElementType(int visualID) {
+		switch (visualID) {
+		case ProfileEditPart.VISUAL_ID:
+			return Profile_1000;
+		case StereotypeEditPart.VISUAL_ID:
+			return Stereotype_2001;
+		case Profile2EditPart.VISUAL_ID:
+			return Profile_2002;
+		case EnumerationEditPart.VISUAL_ID:
+			return Enumeration_2003;
+		case ElementImportEditPart.VISUAL_ID:
+			return ElementImport_2006;
+		case Profile3EditPart.VISUAL_ID:
+			return Profile_2007;
+		case PropertyEditPart.VISUAL_ID:
+			return Property_3001;
+		case ConstraintEditPart.VISUAL_ID:
+			return Constraint_3008;
+		case Stereotype2EditPart.VISUAL_ID:
+			return Stereotype_3003;
+		case EnumerationLiteralEditPart.VISUAL_ID:
+			return EnumerationLiteral_3005;
+		case ElementImport2EditPart.VISUAL_ID:
+			return ElementImport_3009;
+		case GeneralizationEditPart.VISUAL_ID:
+			return Generalization_4001;
+		case ExtensionEditPart.VISUAL_ID:
+			return Extension_4002;
+		}
+		return null;
 	}
 
 	/**

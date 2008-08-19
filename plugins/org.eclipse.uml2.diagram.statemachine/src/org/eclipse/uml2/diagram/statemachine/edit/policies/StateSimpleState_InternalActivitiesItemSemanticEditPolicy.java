@@ -16,6 +16,13 @@ public class StateSimpleState_InternalActivitiesItemSemanticEditPolicy extends U
 	/**
 	 * @generated
 	 */
+	public StateSimpleState_InternalActivitiesItemSemanticEditPolicy() {
+		super(UMLElementTypes.State_3001);
+	}
+
+	/**
+	 * @generated
+	 */
 	protected Command getCreateCommand(CreateElementRequest req) {
 		if (UMLElementTypes.Behavior_3019 == req.getElementType()) {
 			if (req.getContainmentFeature() == null) {

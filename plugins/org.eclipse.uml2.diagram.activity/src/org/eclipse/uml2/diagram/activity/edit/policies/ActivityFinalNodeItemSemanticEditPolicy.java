@@ -22,6 +22,13 @@ public class ActivityFinalNodeItemSemanticEditPolicy extends UMLBaseItemSemantic
 	/**
 	 * @generated
 	 */
+	public ActivityFinalNodeItemSemanticEditPolicy() {
+		super(UMLElementTypes.ActivityFinalNode_3032);
+	}
+
+	/**
+	 * @generated
+	 */
 	protected Command getDestroyElementCommand(DestroyElementRequest req) {
 		CompoundCommand cc = getDestroyEdgesCommand();
 		addDestroyShortcutsCommand(cc);

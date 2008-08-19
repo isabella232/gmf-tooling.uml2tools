@@ -42,6 +42,13 @@ public class OpaqueAction2ItemSemanticEditPolicy extends UMLBaseItemSemanticEdit
 	/**
 	 * @generated
 	 */
+	public OpaqueAction2ItemSemanticEditPolicy() {
+		super(UMLElementTypes.OpaqueAction_3011);
+	}
+
+	/**
+	 * @generated
+	 */
 	protected Command getCreateCommand(CreateElementRequest req) {
 		if (UMLElementTypes.OutputPin_3001 == req.getElementType()) {
 			if (req.getContainmentFeature() == null) {

@@ -25,6 +25,13 @@ public class RegionSubvertices2ItemSemanticEditPolicy extends UMLBaseItemSemanti
 	/**
 	 * @generated
 	 */
+	public RegionSubvertices2ItemSemanticEditPolicy() {
+		super(UMLElementTypes.Region_3002);
+	}
+
+	/**
+	 * @generated
+	 */
 	protected Command getCreateCommand(CreateElementRequest req) {
 		if (UMLElementTypes.State_3001 == req.getElementType()) {
 			if (req.getContainmentFeature() == null) {

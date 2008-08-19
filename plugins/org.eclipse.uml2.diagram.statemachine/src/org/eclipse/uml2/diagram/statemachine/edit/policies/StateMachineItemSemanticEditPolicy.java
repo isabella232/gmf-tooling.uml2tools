@@ -18,6 +18,13 @@ public class StateMachineItemSemanticEditPolicy extends UMLBaseItemSemanticEditP
 	/**
 	 * @generated
 	 */
+	public StateMachineItemSemanticEditPolicy() {
+		super(UMLElementTypes.StateMachine_1000);
+	}
+
+	/**
+	 * @generated
+	 */
 	protected Command getCreateCommand(CreateElementRequest req) {
 		if (UMLElementTypes.StateMachine_2004 == req.getElementType()) {
 			if (req.getContainmentFeature() == null) {

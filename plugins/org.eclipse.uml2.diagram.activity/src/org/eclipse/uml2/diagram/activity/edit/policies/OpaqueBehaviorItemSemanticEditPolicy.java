@@ -19,6 +19,13 @@ public class OpaqueBehaviorItemSemanticEditPolicy extends UMLBaseItemSemanticEdi
 	/**
 	 * @generated
 	 */
+	public OpaqueBehaviorItemSemanticEditPolicy() {
+		super(UMLElementTypes.OpaqueBehavior_3047);
+	}
+
+	/**
+	 * @generated
+	 */
 	protected Command getDestroyElementCommand(DestroyElementRequest req) {
 		CompoundCommand cc = getDestroyEdgesCommand();
 		addDestroyShortcutsCommand(cc);

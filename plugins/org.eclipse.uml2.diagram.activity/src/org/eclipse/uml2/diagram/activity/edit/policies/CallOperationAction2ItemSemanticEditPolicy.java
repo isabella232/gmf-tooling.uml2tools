@@ -46,6 +46,13 @@ public class CallOperationAction2ItemSemanticEditPolicy extends UMLBaseItemSeman
 	/**
 	 * @generated
 	 */
+	public CallOperationAction2ItemSemanticEditPolicy() {
+		super(UMLElementTypes.CallOperationAction_3020);
+	}
+
+	/**
+	 * @generated
+	 */
 	protected Command getCreateCommand(CreateElementRequest req) {
 		if (UMLElementTypes.OutputPin_3006 == req.getElementType()) {
 			if (req.getContainmentFeature() == null) {

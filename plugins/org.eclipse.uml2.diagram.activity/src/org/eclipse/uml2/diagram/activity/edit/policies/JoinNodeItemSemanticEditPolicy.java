@@ -22,6 +22,13 @@ public class JoinNodeItemSemanticEditPolicy extends UMLBaseItemSemanticEditPolic
 	/**
 	 * @generated
 	 */
+	public JoinNodeItemSemanticEditPolicy() {
+		super(UMLElementTypes.JoinNode_3040);
+	}
+
+	/**
+	 * @generated
+	 */
 	protected Command getDestroyElementCommand(DestroyElementRequest req) {
 		CompoundCommand cc = getDestroyEdgesCommand();
 		addDestroyShortcutsCommand(cc);

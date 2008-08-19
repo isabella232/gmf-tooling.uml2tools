@@ -26,6 +26,13 @@ public class CentralBufferNode3ItemSemanticEditPolicy extends UMLBaseItemSemanti
 	/**
 	 * @generated
 	 */
+	public CentralBufferNode3ItemSemanticEditPolicy() {
+		super(UMLElementTypes.CentralBufferNode_3066);
+	}
+
+	/**
+	 * @generated
+	 */
 	protected Command getDestroyElementCommand(DestroyElementRequest req) {
 		CompoundCommand cc = getDestroyEdgesCommand();
 		addDestroyShortcutsCommand(cc);

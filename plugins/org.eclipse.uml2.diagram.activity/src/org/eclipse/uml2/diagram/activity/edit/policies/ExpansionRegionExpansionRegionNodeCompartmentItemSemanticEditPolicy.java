@@ -31,6 +31,13 @@ public class ExpansionRegionExpansionRegionNodeCompartmentItemSemanticEditPolicy
 	/**
 	 * @generated
 	 */
+	public ExpansionRegionExpansionRegionNodeCompartmentItemSemanticEditPolicy() {
+		super(UMLElementTypes.ExpansionRegion_3084);
+	}
+
+	/**
+	 * @generated
+	 */
 	protected Command getCreateCommand(CreateElementRequest req) {
 		if (UMLElementTypes.StructuredActivityNode_3009 == req.getElementType()) {
 			if (req.getContainmentFeature() == null) {

@@ -37,6 +37,13 @@ public class State3ItemSemanticEditPolicy extends UMLBaseItemSemanticEditPolicy 
 	/**
 	 * @generated
 	 */
+	public State3ItemSemanticEditPolicy() {
+		super(UMLElementTypes.State_3016);
+	}
+
+	/**
+	 * @generated
+	 */
 	protected Command getCreateCommand(CreateElementRequest req) {
 		if (UMLElementTypes.Region_3002 == req.getElementType()) {
 			if (req.getContainmentFeature() == null) {

@@ -89,37 +89,37 @@
       <?gmfgen generated="true"?>
       <page
             id="org.eclipse.uml2.uml.diagram.activity.general"
-            name="%preference.page.title.org.eclipse.uml2.uml.diagram.activity.general"
+            name="%prefpage.org.eclipse.uml2.uml.diagram.activity.general"
             category="org.eclipse.uml2.uml.diagram"
             class="org.eclipse.uml2.diagram.activity.preferences.DiagramGeneralPreferencePage">
       </page>
       <page
             id="org.eclipse.uml2.uml.diagram.activity.appearance"
-            name="%preference.page.title.org.eclipse.uml2.uml.diagram.activity.appearance"
+            name="%prefpage.org.eclipse.uml2.uml.diagram.activity.appearance"
             category="org.eclipse.uml2.uml.diagram.activity.general"
             class="org.eclipse.uml2.diagram.activity.preferences.DiagramAppearancePreferencePage">
       </page>
       <page
             id="org.eclipse.uml2.uml.diagram.activity.connections"
-            name="%preference.page.title.org.eclipse.uml2.uml.diagram.activity.connections"
+            name="%prefpage.org.eclipse.uml2.uml.diagram.activity.connections"
             category="org.eclipse.uml2.uml.diagram.activity.general"
             class="org.eclipse.uml2.diagram.activity.preferences.DiagramConnectionsPreferencePage">
       </page>
       <page
             id="org.eclipse.uml2.uml.diagram.activity.printing"
-            name="%preference.page.title.org.eclipse.uml2.uml.diagram.activity.printing"
+            name="%prefpage.org.eclipse.uml2.uml.diagram.activity.printing"
             category="org.eclipse.uml2.uml.diagram.activity.general"
             class="org.eclipse.uml2.diagram.activity.preferences.DiagramPrintingPreferencePage">
       </page>
       <page
             id="org.eclipse.uml2.uml.diagram.activity.rulersAndGrid"
-            name="%preference.page.title.org.eclipse.uml2.uml.diagram.activity.rulersAndGrid"
+            name="%prefpage.org.eclipse.uml2.uml.diagram.activity.rulersAndGrid"
             category="org.eclipse.uml2.uml.diagram.activity.general"
             class="org.eclipse.uml2.diagram.activity.preferences.DiagramRulersAndGridPreferencePage">
       </page>
       <page
             id="org.eclipse.uml2.uml.diagram.activity.pathmaps"
-            name="%preference.page.title.org.eclipse.uml2.uml.diagram.activity.pathmaps"
+            name="%prefpage.org.eclipse.uml2.uml.diagram.activity.pathmaps"
             category="org.eclipse.uml2.uml.diagram.activity.general"
             class="org.eclipse.gmf.runtime.emf.ui.preferences.PathmapsPreferencePage">
       </page>
@@ -1201,14 +1201,14 @@
 
    <extension point="org.eclipse.gmf.runtime.emf.type.core.elementTypeBindings">
       <?gmfgen generated="true"?>
-      <clientContext id="UMLActivityClientContext">
+      <clientContext id="org.eclipse.uml2.diagram.activity.TypeContext">
          <enablement>
             <test
                property="org.eclipse.gmf.runtime.emf.core.editingDomain"
                value="org.eclipse.uml2.diagram.activity.EditingDomain"/>
          </enablement>
       </clientContext> 
-      <binding context="UMLActivityClientContext">
+      <binding context="org.eclipse.uml2.diagram.activity.TypeContext">
          <elementType ref="org.eclipse.uml2.diagram.activity.Package_1000"/>
          <elementType ref="org.eclipse.uml2.diagram.activity.Activity_2026"/>
          <elementType ref="org.eclipse.uml2.diagram.activity.Constraint_2027"/>

@@ -57,6 +57,13 @@ public class StructuredActivityNodeItemSemanticEditPolicy extends UMLBaseItemSem
 	/**
 	 * @generated
 	 */
+	public StructuredActivityNodeItemSemanticEditPolicy() {
+		super(UMLElementTypes.StructuredActivityNode_3046);
+	}
+
+	/**
+	 * @generated
+	 */
 	protected Command getDestroyElementCommand(DestroyElementRequest req) {
 		CompoundCommand cc = getDestroyEdgesCommand();
 		addDestroyChildNodesCommand(cc);
