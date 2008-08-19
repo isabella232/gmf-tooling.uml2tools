@@ -53,6 +53,13 @@ public class PrimitiveTypeItemSemanticEditPolicy extends UMLBaseItemSemanticEdit
 	/**
 	 * @generated
 	 */
+	public PrimitiveTypeItemSemanticEditPolicy() {
+		super(UMLElementTypes.PrimitiveType_3009);
+	}
+
+	/**
+	 * @generated
+	 */
 	protected Command getDestroyElementCommand(DestroyElementRequest req) {
 		CompoundCommand cc = getDestroyEdgesCommand();
 		addDestroyShortcutsCommand(cc);

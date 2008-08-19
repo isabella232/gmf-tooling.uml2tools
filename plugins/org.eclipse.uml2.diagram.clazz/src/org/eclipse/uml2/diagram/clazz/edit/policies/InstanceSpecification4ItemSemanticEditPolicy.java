@@ -51,6 +51,13 @@ public class InstanceSpecification4ItemSemanticEditPolicy extends UMLBaseItemSem
 	/**
 	 * @generated
 	 */
+	public InstanceSpecification4ItemSemanticEditPolicy() {
+		super(UMLElementTypes.InstanceSpecification_2017);
+	}
+
+	/**
+	 * @generated
+	 */
 	protected Command getCreateCommand(CreateElementRequest req) {
 		if (UMLElementTypes.LiteralInteger_3039 == req.getElementType()) {
 			if (req.getContainmentFeature() == null) {

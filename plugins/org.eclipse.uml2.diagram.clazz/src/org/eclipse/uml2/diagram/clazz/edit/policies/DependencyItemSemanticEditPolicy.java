@@ -36,6 +36,13 @@ public class DependencyItemSemanticEditPolicy extends UMLBaseItemSemanticEditPol
 	/**
 	 * @generated
 	 */
+	public DependencyItemSemanticEditPolicy() {
+		super(UMLElementTypes.Dependency_2009);
+	}
+
+	/**
+	 * @generated
+	 */
 	protected Command getDestroyElementCommand(DestroyElementRequest req) {
 		CompoundCommand cc = getDestroyEdgesCommand();
 		addDestroyShortcutsCommand(cc);

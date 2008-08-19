@@ -34,6 +34,13 @@ public class RealizationItemSemanticEditPolicy extends UMLBaseItemSemanticEditPo
 	/**
 	 * @generated
 	 */
+	public RealizationItemSemanticEditPolicy() {
+		super(UMLElementTypes.Realization_4010);
+	}
+
+	/**
+	 * @generated
+	 */
 	protected Command getDestroyElementCommand(DestroyElementRequest req) {
 		return getGEFWrapper(new DestroyElementCommand(req));
 	}

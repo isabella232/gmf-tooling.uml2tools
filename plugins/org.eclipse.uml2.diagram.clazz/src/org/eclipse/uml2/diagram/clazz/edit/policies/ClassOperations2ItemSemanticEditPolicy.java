@@ -14,6 +14,13 @@ public class ClassOperations2ItemSemanticEditPolicy extends UMLBaseItemSemanticE
 	/**
 	 * @generated
 	 */
+	public ClassOperations2ItemSemanticEditPolicy() {
+		super(UMLElementTypes.Class_3033);
+	}
+
+	/**
+	 * @generated
+	 */
 	protected Command getCreateCommand(CreateElementRequest req) {
 		if (UMLElementTypes.Operation_3002 == req.getElementType()) {
 			if (req.getContainmentFeature() == null) {

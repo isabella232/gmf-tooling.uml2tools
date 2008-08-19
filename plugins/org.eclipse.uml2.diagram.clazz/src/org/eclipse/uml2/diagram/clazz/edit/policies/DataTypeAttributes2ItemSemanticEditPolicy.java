@@ -14,6 +14,13 @@ public class DataTypeAttributes2ItemSemanticEditPolicy extends UMLBaseItemSemant
 	/**
 	 * @generated
 	 */
+	public DataTypeAttributes2ItemSemanticEditPolicy() {
+		super(UMLElementTypes.DataType_3036);
+	}
+
+	/**
+	 * @generated
+	 */
 	protected Command getCreateCommand(CreateElementRequest req) {
 		if (UMLElementTypes.Property_3014 == req.getElementType()) {
 			if (req.getContainmentFeature() == null) {

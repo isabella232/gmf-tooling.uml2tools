@@ -55,6 +55,13 @@ public class AssociationClassConnectorItemSemanticEditPolicy extends UMLBaseItem
 	/**
 	 * @generated
 	 */
+	public AssociationClassConnectorItemSemanticEditPolicy() {
+		super(UMLElementTypes.AssociationClass_4014);
+	}
+
+	/**
+	 * @generated
+	 */
 	protected Command getDestroyElementCommand(DestroyElementRequest req) {
 		return getGEFWrapper(new DestroyElementCommand(req));
 	}

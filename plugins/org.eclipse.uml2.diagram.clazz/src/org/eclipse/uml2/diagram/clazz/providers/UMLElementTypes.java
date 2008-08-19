@@ -16,6 +16,76 @@ import org.eclipse.gmf.runtime.emf.type.core.IHintedType;
 import org.eclipse.jface.resource.ImageDescriptor;
 import org.eclipse.jface.resource.ImageRegistry;
 import org.eclipse.swt.graphics.Image;
+import org.eclipse.uml2.diagram.clazz.edit.parts.AssociationClass2EditPart;
+import org.eclipse.uml2.diagram.clazz.edit.parts.AssociationClassConnectorEditPart;
+import org.eclipse.uml2.diagram.clazz.edit.parts.AssociationClassEditPart;
+import org.eclipse.uml2.diagram.clazz.edit.parts.AssociationClassRhombEditPart;
+import org.eclipse.uml2.diagram.clazz.edit.parts.AssociationEditPart;
+import org.eclipse.uml2.diagram.clazz.edit.parts.AssociationInstanceEditPart;
+import org.eclipse.uml2.diagram.clazz.edit.parts.Class2EditPart;
+import org.eclipse.uml2.diagram.clazz.edit.parts.Class3EditPart;
+import org.eclipse.uml2.diagram.clazz.edit.parts.Class4EditPart;
+import org.eclipse.uml2.diagram.clazz.edit.parts.Class5EditPart;
+import org.eclipse.uml2.diagram.clazz.edit.parts.ClassEditPart;
+import org.eclipse.uml2.diagram.clazz.edit.parts.ConstraintConstrainedElementEditPart;
+import org.eclipse.uml2.diagram.clazz.edit.parts.ConstraintEditPart;
+import org.eclipse.uml2.diagram.clazz.edit.parts.DataType2EditPart;
+import org.eclipse.uml2.diagram.clazz.edit.parts.DataType3EditPart;
+import org.eclipse.uml2.diagram.clazz.edit.parts.DataTypeEditPart;
+import org.eclipse.uml2.diagram.clazz.edit.parts.Dependency2EditPart;
+import org.eclipse.uml2.diagram.clazz.edit.parts.DependencyClientEditPart;
+import org.eclipse.uml2.diagram.clazz.edit.parts.DependencyEditPart;
+import org.eclipse.uml2.diagram.clazz.edit.parts.DependencySupplierEditPart;
+import org.eclipse.uml2.diagram.clazz.edit.parts.ElementImportEditPart;
+import org.eclipse.uml2.diagram.clazz.edit.parts.Enumeration2EditPart;
+import org.eclipse.uml2.diagram.clazz.edit.parts.Enumeration3EditPart;
+import org.eclipse.uml2.diagram.clazz.edit.parts.EnumerationEditPart;
+import org.eclipse.uml2.diagram.clazz.edit.parts.EnumerationLiteralEditPart;
+import org.eclipse.uml2.diagram.clazz.edit.parts.ExpressionEditPart;
+import org.eclipse.uml2.diagram.clazz.edit.parts.Generalization2EditPart;
+import org.eclipse.uml2.diagram.clazz.edit.parts.GeneralizationEditPart;
+import org.eclipse.uml2.diagram.clazz.edit.parts.GeneralizationGeneralEditPart;
+import org.eclipse.uml2.diagram.clazz.edit.parts.GeneralizationSetEditPart;
+import org.eclipse.uml2.diagram.clazz.edit.parts.InstanceSpecification2EditPart;
+import org.eclipse.uml2.diagram.clazz.edit.parts.InstanceSpecification3EditPart;
+import org.eclipse.uml2.diagram.clazz.edit.parts.InstanceSpecification4EditPart;
+import org.eclipse.uml2.diagram.clazz.edit.parts.InstanceSpecificationEditPart;
+import org.eclipse.uml2.diagram.clazz.edit.parts.Interface2EditPart;
+import org.eclipse.uml2.diagram.clazz.edit.parts.Interface3EditPart;
+import org.eclipse.uml2.diagram.clazz.edit.parts.InterfaceEditPart;
+import org.eclipse.uml2.diagram.clazz.edit.parts.InterfaceRealizationEditPart;
+import org.eclipse.uml2.diagram.clazz.edit.parts.LiteralIntegerEditPart;
+import org.eclipse.uml2.diagram.clazz.edit.parts.LiteralStringEditPart;
+import org.eclipse.uml2.diagram.clazz.edit.parts.Operation2EditPart;
+import org.eclipse.uml2.diagram.clazz.edit.parts.Operation3EditPart;
+import org.eclipse.uml2.diagram.clazz.edit.parts.Operation4EditPart;
+import org.eclipse.uml2.diagram.clazz.edit.parts.Operation5EditPart;
+import org.eclipse.uml2.diagram.clazz.edit.parts.Operation6EditPart;
+import org.eclipse.uml2.diagram.clazz.edit.parts.OperationEditPart;
+import org.eclipse.uml2.diagram.clazz.edit.parts.Package2EditPart;
+import org.eclipse.uml2.diagram.clazz.edit.parts.Package3EditPart;
+import org.eclipse.uml2.diagram.clazz.edit.parts.Package4EditPart;
+import org.eclipse.uml2.diagram.clazz.edit.parts.Package6EditPart;
+import org.eclipse.uml2.diagram.clazz.edit.parts.PackageAsFrameEditPart;
+import org.eclipse.uml2.diagram.clazz.edit.parts.PackageEditPart;
+import org.eclipse.uml2.diagram.clazz.edit.parts.PortEditPart;
+import org.eclipse.uml2.diagram.clazz.edit.parts.PortProvidedEditPart;
+import org.eclipse.uml2.diagram.clazz.edit.parts.PortRequiredEditPart;
+import org.eclipse.uml2.diagram.clazz.edit.parts.PrimitiveType2EditPart;
+import org.eclipse.uml2.diagram.clazz.edit.parts.PrimitiveType3EditPart;
+import org.eclipse.uml2.diagram.clazz.edit.parts.PrimitiveTypeEditPart;
+import org.eclipse.uml2.diagram.clazz.edit.parts.Property2EditPart;
+import org.eclipse.uml2.diagram.clazz.edit.parts.Property3EditPart;
+import org.eclipse.uml2.diagram.clazz.edit.parts.Property4EditPart;
+import org.eclipse.uml2.diagram.clazz.edit.parts.Property5EditPart;
+import org.eclipse.uml2.diagram.clazz.edit.parts.Property6EditPart;
+import org.eclipse.uml2.diagram.clazz.edit.parts.Property7EditPart;
+import org.eclipse.uml2.diagram.clazz.edit.parts.PropertyEditPart;
+import org.eclipse.uml2.diagram.clazz.edit.parts.RealizationEditPart;
+import org.eclipse.uml2.diagram.clazz.edit.parts.RedefinableTemplateSignatureEditPart;
+import org.eclipse.uml2.diagram.clazz.edit.parts.SlotEditPart;
+import org.eclipse.uml2.diagram.clazz.edit.parts.TemplateBindingEditPart;
+import org.eclipse.uml2.diagram.clazz.edit.parts.UsageEditPart;
 import org.eclipse.uml2.diagram.clazz.part.UMLDiagramEditorPlugin;
 import org.eclipse.uml2.uml.UMLPackage;
 
@@ -729,6 +799,155 @@ public class UMLElementTypes extends ElementInitializers {
 			KNOWN_ELEMENT_TYPES.add(PortRequired_4018);
 		}
 		return KNOWN_ELEMENT_TYPES.contains(elementType);
+	}
+
+	/**
+	 * @generated
+	 */
+	public static IElementType getElementType(int visualID) {
+		switch (visualID) {
+		case PackageEditPart.VISUAL_ID:
+			return Package_1000;
+		case Package2EditPart.VISUAL_ID:
+			return Package_2002;
+		case Class2EditPart.VISUAL_ID:
+			return Class_2001;
+		case AssociationClass2EditPart.VISUAL_ID:
+			return AssociationClass_2007;
+		case DataType2EditPart.VISUAL_ID:
+			return DataType_2004;
+		case PrimitiveType2EditPart.VISUAL_ID:
+			return PrimitiveType_2005;
+		case Enumeration2EditPart.VISUAL_ID:
+			return Enumeration_2003;
+		case InterfaceEditPart.VISUAL_ID:
+			return Interface_2010;
+		case ConstraintEditPart.VISUAL_ID:
+			return Constraint_2006;
+		case InstanceSpecification2EditPart.VISUAL_ID:
+			return InstanceSpecification_2008;
+		case DependencyEditPart.VISUAL_ID:
+			return Dependency_2009;
+		case GeneralizationSetEditPart.VISUAL_ID:
+			return GeneralizationSet_2012;
+		case Interface2EditPart.VISUAL_ID:
+			return Interface_2013;
+		case Package4EditPart.VISUAL_ID:
+			return Package_2014;
+		case AssociationClassRhombEditPart.VISUAL_ID:
+			return AssociationClass_2015;
+		case PackageAsFrameEditPart.VISUAL_ID:
+			return Package_2016;
+		case InstanceSpecification4EditPart.VISUAL_ID:
+			return InstanceSpecification_2017;
+		case Package3EditPart.VISUAL_ID:
+			return Package_3006;
+		case ClassEditPart.VISUAL_ID:
+			return Class_3007;
+		case DataTypeEditPart.VISUAL_ID:
+			return DataType_3008;
+		case PrimitiveTypeEditPart.VISUAL_ID:
+			return PrimitiveType_3009;
+		case EnumerationEditPart.VISUAL_ID:
+			return Enumeration_3011;
+		case AssociationClassEditPart.VISUAL_ID:
+			return AssociationClass_3012;
+		case Interface3EditPart.VISUAL_ID:
+			return Interface_3041;
+		case InstanceSpecificationEditPart.VISUAL_ID:
+			return InstanceSpecification_3013;
+		case PropertyEditPart.VISUAL_ID:
+			return Property_3001;
+		case OperationEditPart.VISUAL_ID:
+			return Operation_3002;
+		case Class3EditPart.VISUAL_ID:
+			return Class_3003;
+		case PortEditPart.VISUAL_ID:
+			return Port_3025;
+		case RedefinableTemplateSignatureEditPart.VISUAL_ID:
+			return RedefinableTemplateSignature_3027;
+		case Property2EditPart.VISUAL_ID:
+			return Property_3019;
+		case Operation2EditPart.VISUAL_ID:
+			return Operation_3020;
+		case Property3EditPart.VISUAL_ID:
+			return Property_3014;
+		case Operation3EditPart.VISUAL_ID:
+			return Operation_3015;
+		case Property4EditPart.VISUAL_ID:
+			return Property_3021;
+		case Operation4EditPart.VISUAL_ID:
+			return Operation_3022;
+		case EnumerationLiteralEditPart.VISUAL_ID:
+			return EnumerationLiteral_3016;
+		case Property5EditPart.VISUAL_ID:
+			return Property_3023;
+		case Operation5EditPart.VISUAL_ID:
+			return Operation_3024;
+		case SlotEditPart.VISUAL_ID:
+			return Slot_3017;
+		case Property6EditPart.VISUAL_ID:
+			return Property_3028;
+		case Operation6EditPart.VISUAL_ID:
+			return Operation_3029;
+		case Class4EditPart.VISUAL_ID:
+			return Class_3030;
+		case ElementImportEditPart.VISUAL_ID:
+			return ElementImport_3031;
+		case Package6EditPart.VISUAL_ID:
+			return Package_3032;
+		case Class5EditPart.VISUAL_ID:
+			return Class_3033;
+		case Enumeration3EditPart.VISUAL_ID:
+			return Enumeration_3034;
+		case InstanceSpecification3EditPart.VISUAL_ID:
+			return InstanceSpecification_3035;
+		case DataType3EditPart.VISUAL_ID:
+			return DataType_3036;
+		case PrimitiveType3EditPart.VISUAL_ID:
+			return PrimitiveType_3037;
+		case LiteralStringEditPart.VISUAL_ID:
+			return LiteralString_3038;
+		case LiteralIntegerEditPart.VISUAL_ID:
+			return LiteralInteger_3039;
+		case ExpressionEditPart.VISUAL_ID:
+			return Expression_3040;
+		case GeneralizationEditPart.VISUAL_ID:
+			return Generalization_4001;
+		case Dependency2EditPart.VISUAL_ID:
+			return Dependency_4002;
+		case Property7EditPart.VISUAL_ID:
+			return Property_4003;
+		case ConstraintConstrainedElementEditPart.VISUAL_ID:
+			return ConstraintConstrainedElement_4004;
+		case AssociationEditPart.VISUAL_ID:
+			return Association_4005;
+		case DependencySupplierEditPart.VISUAL_ID:
+			return DependencySupplier_4006;
+		case DependencyClientEditPart.VISUAL_ID:
+			return DependencyClient_4007;
+		case InterfaceRealizationEditPart.VISUAL_ID:
+			return InterfaceRealization_4008;
+		case RealizationEditPart.VISUAL_ID:
+			return Realization_4010;
+		case Generalization2EditPart.VISUAL_ID:
+			return Generalization_4011;
+		case GeneralizationGeneralEditPart.VISUAL_ID:
+			return GeneralizationGeneral_4012;
+		case UsageEditPart.VISUAL_ID:
+			return Usage_4013;
+		case AssociationClassConnectorEditPart.VISUAL_ID:
+			return AssociationClass_4014;
+		case AssociationInstanceEditPart.VISUAL_ID:
+			return Slot_4015;
+		case TemplateBindingEditPart.VISUAL_ID:
+			return TemplateBinding_4016;
+		case PortProvidedEditPart.VISUAL_ID:
+			return PortProvided_4017;
+		case PortRequiredEditPart.VISUAL_ID:
+			return PortRequired_4018;
+		}
+		return null;
 	}
 
 	/**

@@ -16,6 +16,13 @@ public class InstanceSpecificationValueItemSemanticEditPolicy extends UMLBaseIte
 	/**
 	 * @generated
 	 */
+	public InstanceSpecificationValueItemSemanticEditPolicy() {
+		super(UMLElementTypes.InstanceSpecification_2017);
+	}
+
+	/**
+	 * @generated
+	 */
 	protected Command getCreateCommand(CreateElementRequest req) {
 		if (UMLElementTypes.LiteralString_3038 == req.getElementType()) {
 			if (req.getContainmentFeature() == null) {

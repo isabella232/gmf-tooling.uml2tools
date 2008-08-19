@@ -18,6 +18,13 @@ public class TemplateBindingItemSemanticEditPolicy extends UMLBaseItemSemanticEd
 	/**
 	 * @generated
 	 */
+	public TemplateBindingItemSemanticEditPolicy() {
+		super(UMLElementTypes.TemplateBinding_4016);
+	}
+
+	/**
+	 * @generated
+	 */
 	protected Command getDestroyElementCommand(DestroyElementRequest req) {
 		return getGEFWrapper(new DestroyElementCommand(req));
 	}

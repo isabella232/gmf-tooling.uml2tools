@@ -38,6 +38,13 @@ public class InstanceSpecificationItemSemanticEditPolicy extends UMLBaseItemSema
 	/**
 	 * @generated
 	 */
+	public InstanceSpecificationItemSemanticEditPolicy() {
+		super(UMLElementTypes.InstanceSpecification_3013);
+	}
+
+	/**
+	 * @generated
+	 */
 	protected Command getDestroyElementCommand(DestroyElementRequest req) {
 		CompoundCommand cc = getDestroyEdgesCommand();
 		addDestroyShortcutsCommand(cc);

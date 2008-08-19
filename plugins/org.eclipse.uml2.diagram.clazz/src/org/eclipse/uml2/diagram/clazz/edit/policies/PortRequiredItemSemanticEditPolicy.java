@@ -5,6 +5,7 @@ import org.eclipse.gmf.runtime.emf.type.core.commands.DestroyElementCommand;
 import org.eclipse.gmf.runtime.emf.type.core.commands.DestroyReferenceCommand;
 import org.eclipse.gmf.runtime.emf.type.core.requests.DestroyElementRequest;
 import org.eclipse.gmf.runtime.emf.type.core.requests.DestroyReferenceRequest;
+import org.eclipse.uml2.diagram.clazz.providers.UMLElementTypes;
 import org.eclipse.uml2.diagram.common.links.PortOperationsExt;
 import org.eclipse.uml2.diagram.common.links.RequiredInterfaceLink;
 import org.eclipse.uml2.uml.Interface;
@@ -14,6 +15,13 @@ import org.eclipse.uml2.uml.Port;
  * @generated
  */
 public class PortRequiredItemSemanticEditPolicy extends UMLBaseItemSemanticEditPolicy {
+
+	/**
+	 * @generated
+	 */
+	public PortRequiredItemSemanticEditPolicy() {
+		super(UMLElementTypes.PortRequired_4018);
+	}
 
 	/**
 	 * @generated NOT

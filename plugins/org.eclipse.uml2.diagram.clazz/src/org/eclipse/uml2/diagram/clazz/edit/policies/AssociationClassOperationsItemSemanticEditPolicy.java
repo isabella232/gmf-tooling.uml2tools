@@ -14,6 +14,13 @@ public class AssociationClassOperationsItemSemanticEditPolicy extends UMLBaseIte
 	/**
 	 * @generated
 	 */
+	public AssociationClassOperationsItemSemanticEditPolicy() {
+		super(UMLElementTypes.AssociationClass_2007);
+	}
+
+	/**
+	 * @generated
+	 */
 	protected Command getCreateCommand(CreateElementRequest req) {
 		if (UMLElementTypes.Operation_3020 == req.getElementType()) {
 			if (req.getContainmentFeature() == null) {

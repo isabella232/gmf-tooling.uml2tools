@@ -35,6 +35,13 @@ public class LiteralStringItemSemanticEditPolicy extends UMLBaseItemSemanticEdit
 	/**
 	 * @generated
 	 */
+	public LiteralStringItemSemanticEditPolicy() {
+		super(UMLElementTypes.LiteralString_3038);
+	}
+
+	/**
+	 * @generated
+	 */
 	protected Command getDestroyElementCommand(DestroyElementRequest req) {
 		CompoundCommand cc = getDestroyEdgesCommand();
 		addDestroyShortcutsCommand(cc);

@@ -56,6 +56,13 @@ public class AssociationClassItemSemanticEditPolicy extends UMLBaseItemSemanticE
 	/**
 	 * @generated
 	 */
+	public AssociationClassItemSemanticEditPolicy() {
+		super(UMLElementTypes.AssociationClass_3012);
+	}
+
+	/**
+	 * @generated
+	 */
 	protected Command getDestroyElementCommand(DestroyElementRequest req) {
 		CompoundCommand cc = getDestroyEdgesCommand();
 		addDestroyShortcutsCommand(cc);

@@ -14,6 +14,13 @@ public class InterfaceAttributesItemSemanticEditPolicy extends UMLBaseItemSemant
 	/**
 	 * @generated
 	 */
+	public InterfaceAttributesItemSemanticEditPolicy() {
+		super(UMLElementTypes.Interface_2013);
+	}
+
+	/**
+	 * @generated
+	 */
 	protected Command getCreateCommand(CreateElementRequest req) {
 		if (UMLElementTypes.Property_3028 == req.getElementType()) {
 			if (req.getContainmentFeature() == null) {

@@ -19,6 +19,13 @@ public class PackageAsFrameContents2ItemSemanticEditPolicy extends UMLBaseItemSe
 	/**
 	 * @generated
 	 */
+	public PackageAsFrameContents2ItemSemanticEditPolicy() {
+		super(UMLElementTypes.Package_3032);
+	}
+
+	/**
+	 * @generated
+	 */
 	protected Command getCreateCommand(CreateElementRequest req) {
 		if (UMLElementTypes.Package_3032 == req.getElementType()) {
 			if (req.getContainmentFeature() == null) {

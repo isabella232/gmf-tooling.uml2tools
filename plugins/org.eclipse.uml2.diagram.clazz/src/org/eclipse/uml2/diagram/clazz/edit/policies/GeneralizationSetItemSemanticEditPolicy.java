@@ -41,6 +41,13 @@ public class GeneralizationSetItemSemanticEditPolicy extends UMLBaseItemSemantic
 	/**
 	 * @generated
 	 */
+	public GeneralizationSetItemSemanticEditPolicy() {
+		super(UMLElementTypes.GeneralizationSet_2012);
+	}
+
+	/**
+	 * @generated
+	 */
 	protected Command getDestroyElementCommand(DestroyElementRequest req) {
 		CompoundCommand cc = getDestroyEdgesCommand();
 		addDestroyShortcutsCommand(cc);

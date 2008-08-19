@@ -67,6 +67,13 @@ public class PrimitiveType2ItemSemanticEditPolicy extends UMLBaseItemSemanticEdi
 	/**
 	 * @generated
 	 */
+	public PrimitiveType2ItemSemanticEditPolicy() {
+		super(UMLElementTypes.PrimitiveType_2005);
+	}
+
+	/**
+	 * @generated
+	 */
 	protected Command getCreateCommand(CreateElementRequest req) {
 		if (UMLElementTypes.RedefinableTemplateSignature_3027 == req.getElementType()) {
 			if (req.getContainmentFeature() == null) {

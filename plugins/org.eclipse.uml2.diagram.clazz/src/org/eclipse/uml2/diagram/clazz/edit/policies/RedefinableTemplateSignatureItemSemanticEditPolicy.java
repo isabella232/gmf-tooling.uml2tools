@@ -35,6 +35,13 @@ public class RedefinableTemplateSignatureItemSemanticEditPolicy extends UMLBaseI
 	/**
 	 * @generated
 	 */
+	public RedefinableTemplateSignatureItemSemanticEditPolicy() {
+		super(UMLElementTypes.RedefinableTemplateSignature_3027);
+	}
+
+	/**
+	 * @generated
+	 */
 	protected Command getDestroyElementCommand(DestroyElementRequest req) {
 		CompoundCommand cc = getDestroyEdgesCommand();
 		addDestroyShortcutsCommand(cc);

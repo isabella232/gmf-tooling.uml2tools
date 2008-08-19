@@ -14,6 +14,13 @@ public class PrimitiveTypeOperations2ItemSemanticEditPolicy extends UMLBaseItemS
 	/**
 	 * @generated
 	 */
+	public PrimitiveTypeOperations2ItemSemanticEditPolicy() {
+		super(UMLElementTypes.PrimitiveType_3037);
+	}
+
+	/**
+	 * @generated
+	 */
 	protected Command getCreateCommand(CreateElementRequest req) {
 		if (UMLElementTypes.Operation_3022 == req.getElementType()) {
 			if (req.getContainmentFeature() == null) {

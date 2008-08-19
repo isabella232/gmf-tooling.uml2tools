@@ -72,6 +72,13 @@ public class AssociationClass2ItemSemanticEditPolicy extends UMLBaseItemSemantic
 	/**
 	 * @generated
 	 */
+	public AssociationClass2ItemSemanticEditPolicy() {
+		super(UMLElementTypes.AssociationClass_2007);
+	}
+
+	/**
+	 * @generated
+	 */
 	protected Command getCreateCommand(CreateElementRequest req) {
 		if (UMLElementTypes.RedefinableTemplateSignature_3027 == req.getElementType()) {
 			if (req.getContainmentFeature() == null) {

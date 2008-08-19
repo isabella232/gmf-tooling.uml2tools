@@ -34,6 +34,13 @@ public class Dependency2ItemSemanticEditPolicy extends UMLBaseItemSemanticEditPo
 	/**
 	 * @generated
 	 */
+	public Dependency2ItemSemanticEditPolicy() {
+		super(UMLElementTypes.Dependency_4002);
+	}
+
+	/**
+	 * @generated
+	 */
 	protected Command getDestroyElementCommand(DestroyElementRequest req) {
 		return getGEFWrapper(new DestroyElementCommand(req));
 	}

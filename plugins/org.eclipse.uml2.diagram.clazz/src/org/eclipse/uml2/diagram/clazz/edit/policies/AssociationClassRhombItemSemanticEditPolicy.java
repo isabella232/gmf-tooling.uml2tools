@@ -57,6 +57,13 @@ public class AssociationClassRhombItemSemanticEditPolicy extends UMLBaseItemSema
 	/**
 	 * @generated
 	 */
+	public AssociationClassRhombItemSemanticEditPolicy() {
+		super(UMLElementTypes.AssociationClass_2015);
+	}
+
+	/**
+	 * @generated
+	 */
 	protected Command getDestroyElementCommand(DestroyElementRequest req) {
 		CompoundCommand cc = getDestroyEdgesCommand();
 		addDestroyShortcutsCommand(cc);

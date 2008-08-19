@@ -69,6 +69,13 @@ public class Enumeration3ItemSemanticEditPolicy extends UMLBaseItemSemanticEditP
 	/**
 	 * @generated
 	 */
+	public Enumeration3ItemSemanticEditPolicy() {
+		super(UMLElementTypes.Enumeration_3034);
+	}
+
+	/**
+	 * @generated
+	 */
 	protected Command getCreateCommand(CreateElementRequest req) {
 		if (UMLElementTypes.RedefinableTemplateSignature_3027 == req.getElementType()) {
 			if (req.getContainmentFeature() == null) {

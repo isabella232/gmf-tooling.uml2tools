@@ -14,6 +14,13 @@ public class PackageOtherItemSemanticEditPolicy extends UMLBaseItemSemanticEditP
 	/**
 	 * @generated
 	 */
+	public PackageOtherItemSemanticEditPolicy() {
+		super(UMLElementTypes.Package_2002);
+	}
+
+	/**
+	 * @generated
+	 */
 	protected Command getCreateCommand(CreateElementRequest req) {
 		if (UMLElementTypes.InstanceSpecification_3013 == req.getElementType()) {
 			if (req.getContainmentFeature() == null) {

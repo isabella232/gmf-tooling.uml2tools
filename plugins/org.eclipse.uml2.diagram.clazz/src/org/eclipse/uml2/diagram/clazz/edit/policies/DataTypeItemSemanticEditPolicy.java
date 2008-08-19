@@ -53,6 +53,13 @@ public class DataTypeItemSemanticEditPolicy extends UMLBaseItemSemanticEditPolic
 	/**
 	 * @generated
 	 */
+	public DataTypeItemSemanticEditPolicy() {
+		super(UMLElementTypes.DataType_3008);
+	}
+
+	/**
+	 * @generated
+	 */
 	protected Command getDestroyElementCommand(DestroyElementRequest req) {
 		CompoundCommand cc = getDestroyEdgesCommand();
 		addDestroyShortcutsCommand(cc);

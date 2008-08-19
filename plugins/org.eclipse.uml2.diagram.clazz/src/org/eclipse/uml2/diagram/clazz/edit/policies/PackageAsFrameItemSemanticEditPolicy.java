@@ -51,6 +51,13 @@ public class PackageAsFrameItemSemanticEditPolicy extends UMLBaseItemSemanticEdi
 	/**
 	 * @generated
 	 */
+	public PackageAsFrameItemSemanticEditPolicy() {
+		super(UMLElementTypes.Package_2016);
+	}
+
+	/**
+	 * @generated
+	 */
 	protected Command getDestroyElementCommand(DestroyElementRequest req) {
 		CompoundCommand cc = getDestroyEdgesCommand();
 		addDestroyChildNodesCommand(cc);

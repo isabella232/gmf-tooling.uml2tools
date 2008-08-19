@@ -53,6 +53,13 @@ public class EnumerationItemSemanticEditPolicy extends UMLBaseItemSemanticEditPo
 	/**
 	 * @generated
 	 */
+	public EnumerationItemSemanticEditPolicy() {
+		super(UMLElementTypes.Enumeration_3011);
+	}
+
+	/**
+	 * @generated
+	 */
 	protected Command getDestroyElementCommand(DestroyElementRequest req) {
 		CompoundCommand cc = getDestroyEdgesCommand();
 		addDestroyShortcutsCommand(cc);

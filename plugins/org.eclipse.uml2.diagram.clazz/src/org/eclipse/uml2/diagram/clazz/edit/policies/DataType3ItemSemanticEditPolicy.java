@@ -67,6 +67,13 @@ public class DataType3ItemSemanticEditPolicy extends UMLBaseItemSemanticEditPoli
 	/**
 	 * @generated
 	 */
+	public DataType3ItemSemanticEditPolicy() {
+		super(UMLElementTypes.DataType_3036);
+	}
+
+	/**
+	 * @generated
+	 */
 	protected Command getCreateCommand(CreateElementRequest req) {
 		if (UMLElementTypes.RedefinableTemplateSignature_3027 == req.getElementType()) {
 			if (req.getContainmentFeature() == null) {

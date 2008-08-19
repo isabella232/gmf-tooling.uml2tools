@@ -14,6 +14,13 @@ public class EnumerationAttributesItemSemanticEditPolicy extends UMLBaseItemSema
 	/**
 	 * @generated
 	 */
+	public EnumerationAttributesItemSemanticEditPolicy() {
+		super(UMLElementTypes.Enumeration_2003);
+	}
+
+	/**
+	 * @generated
+	 */
 	protected Command getCreateCommand(CreateElementRequest req) {
 		if (UMLElementTypes.Property_3023 == req.getElementType()) {
 			if (req.getContainmentFeature() == null) {
