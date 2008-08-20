@@ -49,7 +49,6 @@ public class Enumeration3CreateCommand extends CreateElementCommand {
 
 		Package owner = (Package) getElementToEdit();
 		owner.getPackagedElements().add(newElement);
-
 		UMLElementTypes.init_Enumeration_3034(newElement);
 		return newElement;
 	}

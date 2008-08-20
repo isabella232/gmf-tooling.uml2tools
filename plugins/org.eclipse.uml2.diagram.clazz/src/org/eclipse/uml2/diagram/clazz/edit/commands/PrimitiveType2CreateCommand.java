@@ -49,7 +49,6 @@ public class PrimitiveType2CreateCommand extends CreateElementCommand {
 
 		Package owner = (Package) getElementToEdit();
 		owner.getPackagedElements().add(newElement);
-
 		UMLElementTypes.init_PrimitiveType_2005(newElement);
 		return newElement;
 	}

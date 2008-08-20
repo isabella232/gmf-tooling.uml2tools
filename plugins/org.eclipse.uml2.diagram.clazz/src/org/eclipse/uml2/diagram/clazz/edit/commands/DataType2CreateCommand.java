@@ -49,7 +49,6 @@ public class DataType2CreateCommand extends CreateElementCommand {
 
 		Package owner = (Package) getElementToEdit();
 		owner.getPackagedElements().add(newElement);
-
 		UMLElementTypes.init_DataType_2004(newElement);
 		return newElement;
 	}

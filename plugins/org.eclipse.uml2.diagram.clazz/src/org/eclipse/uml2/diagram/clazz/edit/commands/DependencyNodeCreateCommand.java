@@ -49,7 +49,6 @@ public class DependencyNodeCreateCommand extends CreateElementCommand {
 
 		Package owner = (Package) getElementToEdit();
 		owner.getPackagedElements().add(newElement);
-
 		UMLElementTypes.init_Dependency_2009(newElement);
 		return newElement;
 	}

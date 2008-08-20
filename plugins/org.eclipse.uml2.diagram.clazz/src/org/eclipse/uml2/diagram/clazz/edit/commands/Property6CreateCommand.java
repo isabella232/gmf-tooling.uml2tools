@@ -49,7 +49,6 @@ public class Property6CreateCommand extends CreateElementCommand {
 
 		Interface owner = (Interface) getElementToEdit();
 		owner.getOwnedAttributes().add(newElement);
-
 		UMLElementTypes.init_Property_3028(newElement);
 		return newElement;
 	}

@@ -49,7 +49,6 @@ public class Operation6CreateCommand extends CreateElementCommand {
 
 		Interface owner = (Interface) getElementToEdit();
 		owner.getOwnedOperations().add(newElement);
-
 		UMLElementTypes.init_Operation_3029(newElement);
 		return newElement;
 	}

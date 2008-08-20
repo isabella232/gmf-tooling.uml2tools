@@ -48,7 +48,6 @@ public class Package2CreateCommand extends CreateElementCommand {
 
 		Package owner = (Package) getElementToEdit();
 		owner.getPackagedElements().add(newElement);
-
 		UMLElementTypes.init_Package_3006(newElement);
 		return newElement;
 	}

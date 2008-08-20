@@ -49,7 +49,6 @@ public class Interface2CreateCommand extends CreateElementCommand {
 
 		Package owner = (Package) getElementToEdit();
 		owner.getPackagedElements().add(newElement);
-
 		UMLElementTypes.init_Interface_2013(newElement);
 		return newElement;
 	}

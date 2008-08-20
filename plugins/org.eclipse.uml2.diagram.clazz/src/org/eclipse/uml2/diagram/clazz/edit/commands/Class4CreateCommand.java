@@ -49,7 +49,6 @@ public class Class4CreateCommand extends CreateElementCommand {
 
 		Interface owner = (Interface) getElementToEdit();
 		owner.getNestedClassifiers().add(newElement);
-
 		UMLElementTypes.init_Class_3030(newElement);
 		return newElement;
 	}

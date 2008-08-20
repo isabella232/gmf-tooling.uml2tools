@@ -48,7 +48,6 @@ public class PackageAsFrameCreateCommand extends CreateElementCommand {
 
 		Package owner = (Package) getElementToEdit();
 		owner.getPackagedElements().add(newElement);
-
 		UMLElementTypes.init_Package_2016(newElement);
 		return newElement;
 	}

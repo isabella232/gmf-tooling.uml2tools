@@ -49,7 +49,6 @@ public class Operation5CreateCommand extends CreateElementCommand {
 
 		DataType owner = (DataType) getElementToEdit();
 		owner.getOwnedOperations().add(newElement);
-
 		UMLElementTypes.init_Operation_3024(newElement);
 		return newElement;
 	}

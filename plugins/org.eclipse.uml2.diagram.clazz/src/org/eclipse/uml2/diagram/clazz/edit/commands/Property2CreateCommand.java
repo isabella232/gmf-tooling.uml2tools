@@ -49,7 +49,6 @@ public class Property2CreateCommand extends CreateElementCommand {
 
 		StructuredClassifier owner = (StructuredClassifier) getElementToEdit();
 		owner.getOwnedAttributes().add(newElement);
-
 		UMLElementTypes.init_Property_3019(newElement);
 		return newElement;
 	}

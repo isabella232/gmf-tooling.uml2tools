@@ -50,7 +50,6 @@ public class Interface3CreateCommand extends CreateElementCommand {
 
 		Package owner = (Package) getElementToEdit();
 		owner.getPackagedElements().add(newElement);
-
 		UMLElementTypes.init_Interface_3041(newElement);
 		return newElement;
 	}

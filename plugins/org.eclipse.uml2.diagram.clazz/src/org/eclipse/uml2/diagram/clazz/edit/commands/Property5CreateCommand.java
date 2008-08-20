@@ -49,7 +49,6 @@ public class Property5CreateCommand extends CreateElementCommand {
 
 		DataType owner = (DataType) getElementToEdit();
 		owner.getOwnedAttributes().add(newElement);
-
 		UMLElementTypes.init_Property_3023(newElement);
 		return newElement;
 	}

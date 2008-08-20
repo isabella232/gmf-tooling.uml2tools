@@ -49,7 +49,6 @@ public class Enumeration2CreateCommand extends CreateElementCommand {
 
 		Package owner = (Package) getElementToEdit();
 		owner.getPackagedElements().add(newElement);
-
 		UMLElementTypes.init_Enumeration_2003(newElement);
 		return newElement;
 	}

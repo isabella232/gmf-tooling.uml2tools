@@ -49,7 +49,6 @@ public class AssociationClassCreateCommand extends CreateElementCommand {
 
 		Package owner = (Package) getElementToEdit();
 		owner.getPackagedElements().add(newElement);
-
 		UMLElementTypes.init_AssociationClass_3012(newElement);
 		return newElement;
 	}
