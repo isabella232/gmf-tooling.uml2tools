@@ -21,6 +21,7 @@ import org.eclipse.swt.widgets.Display;
 import org.eclipse.swt.widgets.Shell;
 import org.eclipse.ui.dialogs.ElementListSelectionDialog;
 import org.eclipse.uml2.diagram.clazz.edit.parts.AssociationClass2EditPart;
+import org.eclipse.uml2.diagram.clazz.edit.parts.AssociationClassRhombEditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.Class2EditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.Class5EditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.ConstraintEditPart;
@@ -39,12 +40,15 @@ import org.eclipse.uml2.diagram.clazz.edit.parts.Interface3EditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.InterfaceEditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.Package2EditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.Package4EditPart;
+import org.eclipse.uml2.diagram.clazz.edit.parts.Package6EditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.PackageAsFrameContents2EditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.PackageAsFrameContentsEditPart;
+import org.eclipse.uml2.diagram.clazz.edit.parts.PackageAsFrameEditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.PackageEditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.PortEditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.PrimitiveType2EditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.PrimitiveType3EditPart;
+import org.eclipse.uml2.diagram.clazz.edit.parts.RedefinableTemplateSignatureEditPart;
 import org.eclipse.uml2.diagram.clazz.part.Messages;
 import org.eclipse.uml2.diagram.clazz.part.UMLDiagramEditorPlugin;
 
@@ -234,42 +238,77 @@ public class UMLModelingAssistantProvider extends ModelingAssistantProvider {
 	 */
 	public List getRelTypesOnSource(IAdaptable source) {
 		IGraphicalEditPart sourceEditPart = (IGraphicalEditPart) source.getAdapter(IGraphicalEditPart.class);
+		if (sourceEditPart instanceof Package2EditPart) {
+			return ((Package2EditPart) sourceEditPart).getMARelTypesOnSource();
+		}
+		if (sourceEditPart instanceof Class2EditPart) {
+			return ((Class2EditPart) sourceEditPart).getMARelTypesOnSource();
+		}
+		if (sourceEditPart instanceof AssociationClass2EditPart) {
+			return ((AssociationClass2EditPart) sourceEditPart).getMARelTypesOnSource();
+		}
+		if (sourceEditPart instanceof DataType2EditPart) {
+			return ((DataType2EditPart) sourceEditPart).getMARelTypesOnSource();
+		}
+		if (sourceEditPart instanceof PrimitiveType2EditPart) {
+			return ((PrimitiveType2EditPart) sourceEditPart).getMARelTypesOnSource();
+		}
+		if (sourceEditPart instanceof Enumeration2EditPart) {
+			return ((Enumeration2EditPart) sourceEditPart).getMARelTypesOnSource();
+		}
+		if (sourceEditPart instanceof InterfaceEditPart) {
+			return ((InterfaceEditPart) sourceEditPart).getMARelTypesOnSource();
+		}
 		if (sourceEditPart instanceof ConstraintEditPart) {
-			List types = new ArrayList();
-			types.add(UMLElementTypes.ConstraintConstrainedElement_4004);
-			return types;
+			return ((ConstraintEditPart) sourceEditPart).getMARelTypesOnSource();
 		}
 		if (sourceEditPart instanceof InstanceSpecification2EditPart) {
-			List types = new ArrayList();
-			types.add(UMLElementTypes.Slot_4015);
-			return types;
+			return ((InstanceSpecification2EditPart) sourceEditPart).getMARelTypesOnSource();
 		}
 		if (sourceEditPart instanceof DependencyEditPart) {
-			List types = new ArrayList();
-			types.add(UMLElementTypes.DependencySupplier_4006);
-			types.add(UMLElementTypes.DependencyClient_4007);
-			return types;
+			return ((DependencyEditPart) sourceEditPart).getMARelTypesOnSource();
+		}
+		if (sourceEditPart instanceof GeneralizationSetEditPart) {
+			return ((GeneralizationSetEditPart) sourceEditPart).getMARelTypesOnSource();
+		}
+		if (sourceEditPart instanceof Interface2EditPart) {
+			return ((Interface2EditPart) sourceEditPart).getMARelTypesOnSource();
+		}
+		if (sourceEditPart instanceof Package4EditPart) {
+			return ((Package4EditPart) sourceEditPart).getMARelTypesOnSource();
+		}
+		if (sourceEditPart instanceof AssociationClassRhombEditPart) {
+			return ((AssociationClassRhombEditPart) sourceEditPart).getMARelTypesOnSource();
+		}
+		if (sourceEditPart instanceof PackageAsFrameEditPart) {
+			return ((PackageAsFrameEditPart) sourceEditPart).getMARelTypesOnSource();
 		}
 		if (sourceEditPart instanceof InstanceSpecification4EditPart) {
-			List types = new ArrayList();
-			types.add(UMLElementTypes.Slot_4015);
-			return types;
-		}
-		if (sourceEditPart instanceof InstanceSpecificationEditPart) {
-			List types = new ArrayList();
-			types.add(UMLElementTypes.Slot_4015);
-			return types;
+			return ((InstanceSpecification4EditPart) sourceEditPart).getMARelTypesOnSource();
 		}
 		if (sourceEditPart instanceof PortEditPart) {
-			List types = new ArrayList();
-			types.add(UMLElementTypes.PortProvided_4017);
-			types.add(UMLElementTypes.PortRequired_4018);
-			return types;
+			return ((PortEditPart) sourceEditPart).getMARelTypesOnSource();
+		}
+		if (sourceEditPart instanceof RedefinableTemplateSignatureEditPart) {
+			return ((RedefinableTemplateSignatureEditPart) sourceEditPart).getMARelTypesOnSource();
+		}
+		if (sourceEditPart instanceof Package6EditPart) {
+			return ((Package6EditPart) sourceEditPart).getMARelTypesOnSource();
+		}
+		if (sourceEditPart instanceof Class5EditPart) {
+			return ((Class5EditPart) sourceEditPart).getMARelTypesOnSource();
+		}
+		if (sourceEditPart instanceof Enumeration3EditPart) {
+			return ((Enumeration3EditPart) sourceEditPart).getMARelTypesOnSource();
 		}
 		if (sourceEditPart instanceof InstanceSpecification3EditPart) {
-			List types = new ArrayList();
-			types.add(UMLElementTypes.Slot_4015);
-			return types;
+			return ((InstanceSpecification3EditPart) sourceEditPart).getMARelTypesOnSource();
+		}
+		if (sourceEditPart instanceof DataType3EditPart) {
+			return ((DataType3EditPart) sourceEditPart).getMARelTypesOnSource();
+		}
+		if (sourceEditPart instanceof PrimitiveType3EditPart) {
+			return ((PrimitiveType3EditPart) sourceEditPart).getMARelTypesOnSource();
 		}
 		return Collections.EMPTY_LIST;
 	}
@@ -279,51 +318,77 @@ public class UMLModelingAssistantProvider extends ModelingAssistantProvider {
 	 */
 	public List getRelTypesOnTarget(IAdaptable target) {
 		IGraphicalEditPart targetEditPart = (IGraphicalEditPart) target.getAdapter(IGraphicalEditPart.class);
+		if (targetEditPart instanceof Package2EditPart) {
+			return ((Package2EditPart) targetEditPart).getMARelTypesOnTarget();
+		}
+		if (targetEditPart instanceof Class2EditPart) {
+			return ((Class2EditPart) targetEditPart).getMARelTypesOnTarget();
+		}
+		if (targetEditPart instanceof AssociationClass2EditPart) {
+			return ((AssociationClass2EditPart) targetEditPart).getMARelTypesOnTarget();
+		}
+		if (targetEditPart instanceof DataType2EditPart) {
+			return ((DataType2EditPart) targetEditPart).getMARelTypesOnTarget();
+		}
+		if (targetEditPart instanceof PrimitiveType2EditPart) {
+			return ((PrimitiveType2EditPart) targetEditPart).getMARelTypesOnTarget();
+		}
+		if (targetEditPart instanceof Enumeration2EditPart) {
+			return ((Enumeration2EditPart) targetEditPart).getMARelTypesOnTarget();
+		}
 		if (targetEditPart instanceof InterfaceEditPart) {
-			List types = new ArrayList();
-			types.add(UMLElementTypes.InterfaceRealization_4008);
-			types.add(UMLElementTypes.PortProvided_4017);
-			types.add(UMLElementTypes.PortRequired_4018);
-			return types;
+			return ((InterfaceEditPart) targetEditPart).getMARelTypesOnTarget();
+		}
+		if (targetEditPart instanceof ConstraintEditPart) {
+			return ((ConstraintEditPart) targetEditPart).getMARelTypesOnTarget();
 		}
 		if (targetEditPart instanceof InstanceSpecification2EditPart) {
-			List types = new ArrayList();
-			types.add(UMLElementTypes.Slot_4015);
-			return types;
+			return ((InstanceSpecification2EditPart) targetEditPart).getMARelTypesOnTarget();
+		}
+		if (targetEditPart instanceof DependencyEditPart) {
+			return ((DependencyEditPart) targetEditPart).getMARelTypesOnTarget();
 		}
 		if (targetEditPart instanceof GeneralizationSetEditPart) {
-			List types = new ArrayList();
-			types.add(UMLElementTypes.Generalization_4011);
-			return types;
+			return ((GeneralizationSetEditPart) targetEditPart).getMARelTypesOnTarget();
 		}
 		if (targetEditPart instanceof Interface2EditPart) {
-			List types = new ArrayList();
-			types.add(UMLElementTypes.InterfaceRealization_4008);
-			types.add(UMLElementTypes.PortProvided_4017);
-			types.add(UMLElementTypes.PortRequired_4018);
-			return types;
+			return ((Interface2EditPart) targetEditPart).getMARelTypesOnTarget();
+		}
+		if (targetEditPart instanceof Package4EditPart) {
+			return ((Package4EditPart) targetEditPart).getMARelTypesOnTarget();
+		}
+		if (targetEditPart instanceof AssociationClassRhombEditPart) {
+			return ((AssociationClassRhombEditPart) targetEditPart).getMARelTypesOnTarget();
+		}
+		if (targetEditPart instanceof PackageAsFrameEditPart) {
+			return ((PackageAsFrameEditPart) targetEditPart).getMARelTypesOnTarget();
 		}
 		if (targetEditPart instanceof InstanceSpecification4EditPart) {
-			List types = new ArrayList();
-			types.add(UMLElementTypes.Slot_4015);
-			return types;
+			return ((InstanceSpecification4EditPart) targetEditPart).getMARelTypesOnTarget();
 		}
-		if (targetEditPart instanceof Interface3EditPart) {
-			List types = new ArrayList();
-			types.add(UMLElementTypes.InterfaceRealization_4008);
-			types.add(UMLElementTypes.PortProvided_4017);
-			types.add(UMLElementTypes.PortRequired_4018);
-			return types;
+		if (targetEditPart instanceof PortEditPart) {
+			return ((PortEditPart) targetEditPart).getMARelTypesOnTarget();
 		}
-		if (targetEditPart instanceof InstanceSpecificationEditPart) {
-			List types = new ArrayList();
-			types.add(UMLElementTypes.Slot_4015);
-			return types;
+		if (targetEditPart instanceof RedefinableTemplateSignatureEditPart) {
+			return ((RedefinableTemplateSignatureEditPart) targetEditPart).getMARelTypesOnTarget();
+		}
+		if (targetEditPart instanceof Package6EditPart) {
+			return ((Package6EditPart) targetEditPart).getMARelTypesOnTarget();
+		}
+		if (targetEditPart instanceof Class5EditPart) {
+			return ((Class5EditPart) targetEditPart).getMARelTypesOnTarget();
+		}
+		if (targetEditPart instanceof Enumeration3EditPart) {
+			return ((Enumeration3EditPart) targetEditPart).getMARelTypesOnTarget();
 		}
 		if (targetEditPart instanceof InstanceSpecification3EditPart) {
-			List types = new ArrayList();
-			types.add(UMLElementTypes.Slot_4015);
-			return types;
+			return ((InstanceSpecification3EditPart) targetEditPart).getMARelTypesOnTarget();
+		}
+		if (targetEditPart instanceof DataType3EditPart) {
+			return ((DataType3EditPart) targetEditPart).getMARelTypesOnTarget();
+		}
+		if (targetEditPart instanceof PrimitiveType3EditPart) {
+			return ((PrimitiveType3EditPart) targetEditPart).getMARelTypesOnTarget();
 		}
 		return Collections.EMPTY_LIST;
 	}
@@ -334,99 +399,77 @@ public class UMLModelingAssistantProvider extends ModelingAssistantProvider {
 	public List getRelTypesOnSourceAndTarget(IAdaptable source, IAdaptable target) {
 		IGraphicalEditPart sourceEditPart = (IGraphicalEditPart) source.getAdapter(IGraphicalEditPart.class);
 		IGraphicalEditPart targetEditPart = (IGraphicalEditPart) target.getAdapter(IGraphicalEditPart.class);
+		if (sourceEditPart instanceof Package2EditPart) {
+			return ((Package2EditPart) sourceEditPart).getMARelTypesOnSourceAndTarget(targetEditPart);
+		}
+		if (sourceEditPart instanceof Class2EditPart) {
+			return ((Class2EditPart) sourceEditPart).getMARelTypesOnSourceAndTarget(targetEditPart);
+		}
+		if (sourceEditPart instanceof AssociationClass2EditPart) {
+			return ((AssociationClass2EditPart) sourceEditPart).getMARelTypesOnSourceAndTarget(targetEditPart);
+		}
+		if (sourceEditPart instanceof DataType2EditPart) {
+			return ((DataType2EditPart) sourceEditPart).getMARelTypesOnSourceAndTarget(targetEditPart);
+		}
+		if (sourceEditPart instanceof PrimitiveType2EditPart) {
+			return ((PrimitiveType2EditPart) sourceEditPart).getMARelTypesOnSourceAndTarget(targetEditPart);
+		}
+		if (sourceEditPart instanceof Enumeration2EditPart) {
+			return ((Enumeration2EditPart) sourceEditPart).getMARelTypesOnSourceAndTarget(targetEditPart);
+		}
+		if (sourceEditPart instanceof InterfaceEditPart) {
+			return ((InterfaceEditPart) sourceEditPart).getMARelTypesOnSourceAndTarget(targetEditPart);
+		}
 		if (sourceEditPart instanceof ConstraintEditPart) {
-			List types = new ArrayList();
-			return types;
+			return ((ConstraintEditPart) sourceEditPart).getMARelTypesOnSourceAndTarget(targetEditPart);
 		}
 		if (sourceEditPart instanceof InstanceSpecification2EditPart) {
-			List types = new ArrayList();
-			if (targetEditPart instanceof InstanceSpecification2EditPart) {
-				types.add(UMLElementTypes.Slot_4015);
-			}
-			if (targetEditPart instanceof InstanceSpecification4EditPart) {
-				types.add(UMLElementTypes.Slot_4015);
-			}
-			if (targetEditPart instanceof InstanceSpecificationEditPart) {
-				types.add(UMLElementTypes.Slot_4015);
-			}
-			if (targetEditPart instanceof InstanceSpecification3EditPart) {
-				types.add(UMLElementTypes.Slot_4015);
-			}
-			return types;
+			return ((InstanceSpecification2EditPart) sourceEditPart).getMARelTypesOnSourceAndTarget(targetEditPart);
 		}
 		if (sourceEditPart instanceof DependencyEditPart) {
-			List types = new ArrayList();
-			return types;
+			return ((DependencyEditPart) sourceEditPart).getMARelTypesOnSourceAndTarget(targetEditPart);
+		}
+		if (sourceEditPart instanceof GeneralizationSetEditPart) {
+			return ((GeneralizationSetEditPart) sourceEditPart).getMARelTypesOnSourceAndTarget(targetEditPart);
+		}
+		if (sourceEditPart instanceof Interface2EditPart) {
+			return ((Interface2EditPart) sourceEditPart).getMARelTypesOnSourceAndTarget(targetEditPart);
+		}
+		if (sourceEditPart instanceof Package4EditPart) {
+			return ((Package4EditPart) sourceEditPart).getMARelTypesOnSourceAndTarget(targetEditPart);
+		}
+		if (sourceEditPart instanceof AssociationClassRhombEditPart) {
+			return ((AssociationClassRhombEditPart) sourceEditPart).getMARelTypesOnSourceAndTarget(targetEditPart);
+		}
+		if (sourceEditPart instanceof PackageAsFrameEditPart) {
+			return ((PackageAsFrameEditPart) sourceEditPart).getMARelTypesOnSourceAndTarget(targetEditPart);
 		}
 		if (sourceEditPart instanceof InstanceSpecification4EditPart) {
-			List types = new ArrayList();
-			if (targetEditPart instanceof InstanceSpecification2EditPart) {
-				types.add(UMLElementTypes.Slot_4015);
-			}
-			if (targetEditPart instanceof InstanceSpecification4EditPart) {
-				types.add(UMLElementTypes.Slot_4015);
-			}
-			if (targetEditPart instanceof InstanceSpecificationEditPart) {
-				types.add(UMLElementTypes.Slot_4015);
-			}
-			if (targetEditPart instanceof InstanceSpecification3EditPart) {
-				types.add(UMLElementTypes.Slot_4015);
-			}
-			return types;
-		}
-		if (sourceEditPart instanceof InstanceSpecificationEditPart) {
-			List types = new ArrayList();
-			if (targetEditPart instanceof InstanceSpecification2EditPart) {
-				types.add(UMLElementTypes.Slot_4015);
-			}
-			if (targetEditPart instanceof InstanceSpecification4EditPart) {
-				types.add(UMLElementTypes.Slot_4015);
-			}
-			if (targetEditPart instanceof InstanceSpecificationEditPart) {
-				types.add(UMLElementTypes.Slot_4015);
-			}
-			if (targetEditPart instanceof InstanceSpecification3EditPart) {
-				types.add(UMLElementTypes.Slot_4015);
-			}
-			return types;
+			return ((InstanceSpecification4EditPart) sourceEditPart).getMARelTypesOnSourceAndTarget(targetEditPart);
 		}
 		if (sourceEditPart instanceof PortEditPart) {
-			List types = new ArrayList();
-			if (targetEditPart instanceof InterfaceEditPart) {
-				types.add(UMLElementTypes.PortProvided_4017);
-			}
-			if (targetEditPart instanceof Interface2EditPart) {
-				types.add(UMLElementTypes.PortProvided_4017);
-			}
-			if (targetEditPart instanceof Interface3EditPart) {
-				types.add(UMLElementTypes.PortProvided_4017);
-			}
-			if (targetEditPart instanceof InterfaceEditPart) {
-				types.add(UMLElementTypes.PortRequired_4018);
-			}
-			if (targetEditPart instanceof Interface2EditPart) {
-				types.add(UMLElementTypes.PortRequired_4018);
-			}
-			if (targetEditPart instanceof Interface3EditPart) {
-				types.add(UMLElementTypes.PortRequired_4018);
-			}
-			return types;
+			return ((PortEditPart) sourceEditPart).getMARelTypesOnSourceAndTarget(targetEditPart);
+		}
+		if (sourceEditPart instanceof RedefinableTemplateSignatureEditPart) {
+			return ((RedefinableTemplateSignatureEditPart) sourceEditPart).getMARelTypesOnSourceAndTarget(targetEditPart);
+		}
+		if (sourceEditPart instanceof Package6EditPart) {
+			return ((Package6EditPart) sourceEditPart).getMARelTypesOnSourceAndTarget(targetEditPart);
+		}
+		if (sourceEditPart instanceof Class5EditPart) {
+			return ((Class5EditPart) sourceEditPart).getMARelTypesOnSourceAndTarget(targetEditPart);
+		}
+		if (sourceEditPart instanceof Enumeration3EditPart) {
+			return ((Enumeration3EditPart) sourceEditPart).getMARelTypesOnSourceAndTarget(targetEditPart);
 		}
 		if (sourceEditPart instanceof InstanceSpecification3EditPart) {
-			List types = new ArrayList();
-			if (targetEditPart instanceof InstanceSpecification2EditPart) {
-				types.add(UMLElementTypes.Slot_4015);
-			}
-			if (targetEditPart instanceof InstanceSpecification4EditPart) {
-				types.add(UMLElementTypes.Slot_4015);
-			}
-			if (targetEditPart instanceof InstanceSpecificationEditPart) {
-				types.add(UMLElementTypes.Slot_4015);
-			}
-			if (targetEditPart instanceof InstanceSpecification3EditPart) {
-				types.add(UMLElementTypes.Slot_4015);
-			}
-			return types;
+			return ((InstanceSpecification3EditPart) sourceEditPart).getMARelTypesOnSourceAndTarget(targetEditPart);
+		}
+		if (sourceEditPart instanceof DataType3EditPart) {
+			return ((DataType3EditPart) sourceEditPart).getMARelTypesOnSourceAndTarget(targetEditPart);
+		}
+		if (sourceEditPart instanceof PrimitiveType3EditPart) {
+			return ((PrimitiveType3EditPart) sourceEditPart).getMARelTypesOnSourceAndTarget(targetEditPart);
 		}
 		return Collections.EMPTY_LIST;
 	}
@@ -436,103 +479,77 @@ public class UMLModelingAssistantProvider extends ModelingAssistantProvider {
 	 */
 	public List getTypesForSource(IAdaptable target, IElementType relationshipType) {
 		IGraphicalEditPart targetEditPart = (IGraphicalEditPart) target.getAdapter(IGraphicalEditPart.class);
+		if (targetEditPart instanceof Package2EditPart) {
+			return ((Package2EditPart) targetEditPart).getMATypesForSource(relationshipType);
+		}
+		if (targetEditPart instanceof Class2EditPart) {
+			return ((Class2EditPart) targetEditPart).getMATypesForSource(relationshipType);
+		}
+		if (targetEditPart instanceof AssociationClass2EditPart) {
+			return ((AssociationClass2EditPart) targetEditPart).getMATypesForSource(relationshipType);
+		}
+		if (targetEditPart instanceof DataType2EditPart) {
+			return ((DataType2EditPart) targetEditPart).getMATypesForSource(relationshipType);
+		}
+		if (targetEditPart instanceof PrimitiveType2EditPart) {
+			return ((PrimitiveType2EditPart) targetEditPart).getMATypesForSource(relationshipType);
+		}
+		if (targetEditPart instanceof Enumeration2EditPart) {
+			return ((Enumeration2EditPart) targetEditPart).getMATypesForSource(relationshipType);
+		}
 		if (targetEditPart instanceof InterfaceEditPart) {
-			List types = new ArrayList();
-			if (relationshipType == UMLElementTypes.PortProvided_4017) {
-				types.add(UMLElementTypes.Port_3025);
-			}
-			if (relationshipType == UMLElementTypes.PortRequired_4018) {
-				types.add(UMLElementTypes.Port_3025);
-			}
-			return types;
+			return ((InterfaceEditPart) targetEditPart).getMATypesForSource(relationshipType);
+		}
+		if (targetEditPart instanceof ConstraintEditPart) {
+			return ((ConstraintEditPart) targetEditPart).getMATypesForSource(relationshipType);
 		}
 		if (targetEditPart instanceof InstanceSpecification2EditPart) {
-			List types = new ArrayList();
-			if (relationshipType == UMLElementTypes.Slot_4015) {
-				types.add(UMLElementTypes.InstanceSpecification_2008);
-			}
-			if (relationshipType == UMLElementTypes.Slot_4015) {
-				types.add(UMLElementTypes.InstanceSpecification_2017);
-			}
-			if (relationshipType == UMLElementTypes.Slot_4015) {
-				types.add(UMLElementTypes.InstanceSpecification_3013);
-			}
-			if (relationshipType == UMLElementTypes.Slot_4015) {
-				types.add(UMLElementTypes.InstanceSpecification_3035);
-			}
-			return types;
+			return ((InstanceSpecification2EditPart) targetEditPart).getMATypesForSource(relationshipType);
+		}
+		if (targetEditPart instanceof DependencyEditPart) {
+			return ((DependencyEditPart) targetEditPart).getMATypesForSource(relationshipType);
 		}
 		if (targetEditPart instanceof GeneralizationSetEditPart) {
-			List types = new ArrayList();
-			return types;
+			return ((GeneralizationSetEditPart) targetEditPart).getMATypesForSource(relationshipType);
 		}
 		if (targetEditPart instanceof Interface2EditPart) {
-			List types = new ArrayList();
-			if (relationshipType == UMLElementTypes.PortProvided_4017) {
-				types.add(UMLElementTypes.Port_3025);
-			}
-			if (relationshipType == UMLElementTypes.PortRequired_4018) {
-				types.add(UMLElementTypes.Port_3025);
-			}
-			return types;
+			return ((Interface2EditPart) targetEditPart).getMATypesForSource(relationshipType);
+		}
+		if (targetEditPart instanceof Package4EditPart) {
+			return ((Package4EditPart) targetEditPart).getMATypesForSource(relationshipType);
+		}
+		if (targetEditPart instanceof AssociationClassRhombEditPart) {
+			return ((AssociationClassRhombEditPart) targetEditPart).getMATypesForSource(relationshipType);
+		}
+		if (targetEditPart instanceof PackageAsFrameEditPart) {
+			return ((PackageAsFrameEditPart) targetEditPart).getMATypesForSource(relationshipType);
 		}
 		if (targetEditPart instanceof InstanceSpecification4EditPart) {
-			List types = new ArrayList();
-			if (relationshipType == UMLElementTypes.Slot_4015) {
-				types.add(UMLElementTypes.InstanceSpecification_2008);
-			}
-			if (relationshipType == UMLElementTypes.Slot_4015) {
-				types.add(UMLElementTypes.InstanceSpecification_2017);
-			}
-			if (relationshipType == UMLElementTypes.Slot_4015) {
-				types.add(UMLElementTypes.InstanceSpecification_3013);
-			}
-			if (relationshipType == UMLElementTypes.Slot_4015) {
-				types.add(UMLElementTypes.InstanceSpecification_3035);
-			}
-			return types;
+			return ((InstanceSpecification4EditPart) targetEditPart).getMATypesForSource(relationshipType);
 		}
-		if (targetEditPart instanceof Interface3EditPart) {
-			List types = new ArrayList();
-			if (relationshipType == UMLElementTypes.PortProvided_4017) {
-				types.add(UMLElementTypes.Port_3025);
-			}
-			if (relationshipType == UMLElementTypes.PortRequired_4018) {
-				types.add(UMLElementTypes.Port_3025);
-			}
-			return types;
+		if (targetEditPart instanceof PortEditPart) {
+			return ((PortEditPart) targetEditPart).getMATypesForSource(relationshipType);
 		}
-		if (targetEditPart instanceof InstanceSpecificationEditPart) {
-			List types = new ArrayList();
-			if (relationshipType == UMLElementTypes.Slot_4015) {
-				types.add(UMLElementTypes.InstanceSpecification_2008);
-			}
-			if (relationshipType == UMLElementTypes.Slot_4015) {
-				types.add(UMLElementTypes.InstanceSpecification_2017);
-			}
-			if (relationshipType == UMLElementTypes.Slot_4015) {
-				types.add(UMLElementTypes.InstanceSpecification_3013);
-			}
-			if (relationshipType == UMLElementTypes.Slot_4015) {
-				types.add(UMLElementTypes.InstanceSpecification_3035);
-			}
-			return types;
+		if (targetEditPart instanceof RedefinableTemplateSignatureEditPart) {
+			return ((RedefinableTemplateSignatureEditPart) targetEditPart).getMATypesForSource(relationshipType);
+		}
+		if (targetEditPart instanceof Package6EditPart) {
+			return ((Package6EditPart) targetEditPart).getMATypesForSource(relationshipType);
+		}
+		if (targetEditPart instanceof Class5EditPart) {
+			return ((Class5EditPart) targetEditPart).getMATypesForSource(relationshipType);
+		}
+		if (targetEditPart instanceof Enumeration3EditPart) {
+			return ((Enumeration3EditPart) targetEditPart).getMATypesForSource(relationshipType);
 		}
 		if (targetEditPart instanceof InstanceSpecification3EditPart) {
-			List types = new ArrayList();
-			if (relationshipType == UMLElementTypes.Slot_4015) {
-				types.add(UMLElementTypes.InstanceSpecification_2008);
-			}
-			if (relationshipType == UMLElementTypes.Slot_4015) {
-				types.add(UMLElementTypes.InstanceSpecification_2017);
-			}
-			if (relationshipType == UMLElementTypes.Slot_4015) {
-				types.add(UMLElementTypes.InstanceSpecification_3013);
-			}
-			if (relationshipType == UMLElementTypes.Slot_4015) {
-				types.add(UMLElementTypes.InstanceSpecification_3035);
-			}
-			return types;
+			return ((InstanceSpecification3EditPart) targetEditPart).getMATypesForSource(relationshipType);
+		}
+		if (targetEditPart instanceof DataType3EditPart) {
+			return ((DataType3EditPart) targetEditPart).getMATypesForSource(relationshipType);
+		}
+		if (targetEditPart instanceof PrimitiveType3EditPart) {
+			return ((PrimitiveType3EditPart) targetEditPart).getMATypesForSource(relationshipType);
 		}
 		return Collections.EMPTY_LIST;
 	}
@@ -542,99 +559,77 @@ public class UMLModelingAssistantProvider extends ModelingAssistantProvider {
 	 */
 	public List getTypesForTarget(IAdaptable source, IElementType relationshipType) {
 		IGraphicalEditPart sourceEditPart = (IGraphicalEditPart) source.getAdapter(IGraphicalEditPart.class);
+		if (sourceEditPart instanceof Package2EditPart) {
+			return ((Package2EditPart) sourceEditPart).getMATypesForTarget(relationshipType);
+		}
+		if (sourceEditPart instanceof Class2EditPart) {
+			return ((Class2EditPart) sourceEditPart).getMATypesForTarget(relationshipType);
+		}
+		if (sourceEditPart instanceof AssociationClass2EditPart) {
+			return ((AssociationClass2EditPart) sourceEditPart).getMATypesForTarget(relationshipType);
+		}
+		if (sourceEditPart instanceof DataType2EditPart) {
+			return ((DataType2EditPart) sourceEditPart).getMATypesForTarget(relationshipType);
+		}
+		if (sourceEditPart instanceof PrimitiveType2EditPart) {
+			return ((PrimitiveType2EditPart) sourceEditPart).getMATypesForTarget(relationshipType);
+		}
+		if (sourceEditPart instanceof Enumeration2EditPart) {
+			return ((Enumeration2EditPart) sourceEditPart).getMATypesForTarget(relationshipType);
+		}
+		if (sourceEditPart instanceof InterfaceEditPart) {
+			return ((InterfaceEditPart) sourceEditPart).getMATypesForTarget(relationshipType);
+		}
 		if (sourceEditPart instanceof ConstraintEditPart) {
-			List types = new ArrayList();
-			return types;
+			return ((ConstraintEditPart) sourceEditPart).getMATypesForTarget(relationshipType);
 		}
 		if (sourceEditPart instanceof InstanceSpecification2EditPart) {
-			List types = new ArrayList();
-			if (relationshipType == UMLElementTypes.Slot_4015) {
-				types.add(UMLElementTypes.InstanceSpecification_2008);
-			}
-			if (relationshipType == UMLElementTypes.Slot_4015) {
-				types.add(UMLElementTypes.InstanceSpecification_2017);
-			}
-			if (relationshipType == UMLElementTypes.Slot_4015) {
-				types.add(UMLElementTypes.InstanceSpecification_3013);
-			}
-			if (relationshipType == UMLElementTypes.Slot_4015) {
-				types.add(UMLElementTypes.InstanceSpecification_3035);
-			}
-			return types;
+			return ((InstanceSpecification2EditPart) sourceEditPart).getMATypesForTarget(relationshipType);
 		}
 		if (sourceEditPart instanceof DependencyEditPart) {
-			List types = new ArrayList();
-			return types;
+			return ((DependencyEditPart) sourceEditPart).getMATypesForTarget(relationshipType);
+		}
+		if (sourceEditPart instanceof GeneralizationSetEditPart) {
+			return ((GeneralizationSetEditPart) sourceEditPart).getMATypesForTarget(relationshipType);
+		}
+		if (sourceEditPart instanceof Interface2EditPart) {
+			return ((Interface2EditPart) sourceEditPart).getMATypesForTarget(relationshipType);
+		}
+		if (sourceEditPart instanceof Package4EditPart) {
+			return ((Package4EditPart) sourceEditPart).getMATypesForTarget(relationshipType);
+		}
+		if (sourceEditPart instanceof AssociationClassRhombEditPart) {
+			return ((AssociationClassRhombEditPart) sourceEditPart).getMATypesForTarget(relationshipType);
+		}
+		if (sourceEditPart instanceof PackageAsFrameEditPart) {
+			return ((PackageAsFrameEditPart) sourceEditPart).getMATypesForTarget(relationshipType);
 		}
 		if (sourceEditPart instanceof InstanceSpecification4EditPart) {
-			List types = new ArrayList();
-			if (relationshipType == UMLElementTypes.Slot_4015) {
-				types.add(UMLElementTypes.InstanceSpecification_2008);
-			}
-			if (relationshipType == UMLElementTypes.Slot_4015) {
-				types.add(UMLElementTypes.InstanceSpecification_2017);
-			}
-			if (relationshipType == UMLElementTypes.Slot_4015) {
-				types.add(UMLElementTypes.InstanceSpecification_3013);
-			}
-			if (relationshipType == UMLElementTypes.Slot_4015) {
-				types.add(UMLElementTypes.InstanceSpecification_3035);
-			}
-			return types;
-		}
-		if (sourceEditPart instanceof InstanceSpecificationEditPart) {
-			List types = new ArrayList();
-			if (relationshipType == UMLElementTypes.Slot_4015) {
-				types.add(UMLElementTypes.InstanceSpecification_2008);
-			}
-			if (relationshipType == UMLElementTypes.Slot_4015) {
-				types.add(UMLElementTypes.InstanceSpecification_2017);
-			}
-			if (relationshipType == UMLElementTypes.Slot_4015) {
-				types.add(UMLElementTypes.InstanceSpecification_3013);
-			}
-			if (relationshipType == UMLElementTypes.Slot_4015) {
-				types.add(UMLElementTypes.InstanceSpecification_3035);
-			}
-			return types;
+			return ((InstanceSpecification4EditPart) sourceEditPart).getMATypesForTarget(relationshipType);
 		}
 		if (sourceEditPart instanceof PortEditPart) {
-			List types = new ArrayList();
-			if (relationshipType == UMLElementTypes.PortProvided_4017) {
-				types.add(UMLElementTypes.Interface_2010);
-			}
-			if (relationshipType == UMLElementTypes.PortProvided_4017) {
-				types.add(UMLElementTypes.Interface_2013);
-			}
-			if (relationshipType == UMLElementTypes.PortProvided_4017) {
-				types.add(UMLElementTypes.Interface_3041);
-			}
-			if (relationshipType == UMLElementTypes.PortRequired_4018) {
-				types.add(UMLElementTypes.Interface_2010);
-			}
-			if (relationshipType == UMLElementTypes.PortRequired_4018) {
-				types.add(UMLElementTypes.Interface_2013);
-			}
-			if (relationshipType == UMLElementTypes.PortRequired_4018) {
-				types.add(UMLElementTypes.Interface_3041);
-			}
-			return types;
+			return ((PortEditPart) sourceEditPart).getMATypesForTarget(relationshipType);
+		}
+		if (sourceEditPart instanceof RedefinableTemplateSignatureEditPart) {
+			return ((RedefinableTemplateSignatureEditPart) sourceEditPart).getMATypesForTarget(relationshipType);
+		}
+		if (sourceEditPart instanceof Package6EditPart) {
+			return ((Package6EditPart) sourceEditPart).getMATypesForTarget(relationshipType);
+		}
+		if (sourceEditPart instanceof Class5EditPart) {
+			return ((Class5EditPart) sourceEditPart).getMATypesForTarget(relationshipType);
+		}
+		if (sourceEditPart instanceof Enumeration3EditPart) {
+			return ((Enumeration3EditPart) sourceEditPart).getMATypesForTarget(relationshipType);
 		}
 		if (sourceEditPart instanceof InstanceSpecification3EditPart) {
-			List types = new ArrayList();
-			if (relationshipType == UMLElementTypes.Slot_4015) {
-				types.add(UMLElementTypes.InstanceSpecification_2008);
-			}
-			if (relationshipType == UMLElementTypes.Slot_4015) {
-				types.add(UMLElementTypes.InstanceSpecification_2017);
-			}
-			if (relationshipType == UMLElementTypes.Slot_4015) {
-				types.add(UMLElementTypes.InstanceSpecification_3013);
-			}
-			if (relationshipType == UMLElementTypes.Slot_4015) {
-				types.add(UMLElementTypes.InstanceSpecification_3035);
-			}
-			return types;
+			return ((InstanceSpecification3EditPart) sourceEditPart).getMATypesForTarget(relationshipType);
+		}
+		if (sourceEditPart instanceof DataType3EditPart) {
+			return ((DataType3EditPart) sourceEditPart).getMATypesForTarget(relationshipType);
+		}
+		if (sourceEditPart instanceof PrimitiveType3EditPart) {
+			return ((PrimitiveType3EditPart) sourceEditPart).getMATypesForTarget(relationshipType);
 		}
 		return Collections.EMPTY_LIST;
 	}
