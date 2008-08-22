@@ -2781,218 +2781,77 @@ public class UMLDiagramUpdater {
 	 * @generated
 	 */
 	public static List getPackage_3006IncomingLinks(View view) {
-		Package modelElement = (Package) view.getElement();
-		Map crossReferences = EcoreUtil.CrossReferencer.find(view.eResource().getResourceSet().getResources());
-		List result = new LinkedList();
-		result.addAll(getIncomingTypeModelFacetLinks_Dependency_4002(modelElement, crossReferences));
-		result.addAll(getIncomingFeatureModelFacetLinks_Constraint_ConstrainedElement_4004(modelElement, crossReferences));
-		result.addAll(getIncomingFeatureModelFacetLinks_Dependency_Supplier_4006(modelElement, crossReferences));
-		result.addAll(getIncomingFeatureModelFacetLinks_Dependency_Client_4007(modelElement, crossReferences));
-		result.addAll(getIncomingTypeModelFacetLinks_Realization_4010(modelElement, crossReferences));
-		result.addAll(getIncomingTypeModelFacetLinks_Usage_4013(modelElement, crossReferences));
-		result.addAll(getIncomingTypeModelFacetLinks_TemplateBinding_4016(modelElement, crossReferences));
-		return result;
+		return Collections.EMPTY_LIST;
 	}
 
 	/**
 	 * @generated
 	 */
 	public static List getClass_3007IncomingLinks(View view) {
-		Class modelElement = (Class) view.getElement();
-		Map crossReferences = EcoreUtil.CrossReferencer.find(view.eResource().getResourceSet().getResources());
-		List result = new LinkedList();
-		result.addAll(getIncomingTypeModelFacetLinks_Generalization_4001(modelElement, crossReferences));
-		result.addAll(getIncomingTypeModelFacetLinks_Dependency_4002(modelElement, crossReferences));
-		result.addAll(getIncomingTypeModelFacetLinks_Property_4003(modelElement, crossReferences));
-		result.addAll(getIncomingFeatureModelFacetLinks_Constraint_ConstrainedElement_4004(modelElement, crossReferences));
-		result.addAll(getIncomingTypeModelFacetLinks_Association_4005(modelElement, crossReferences));
-		result.addAll(getIncomingFeatureModelFacetLinks_Dependency_Supplier_4006(modelElement, crossReferences));
-		result.addAll(getIncomingFeatureModelFacetLinks_Dependency_Client_4007(modelElement, crossReferences));
-		result.addAll(getIncomingTypeModelFacetLinks_Realization_4010(modelElement, crossReferences));
-		result.addAll(getIncomingFeatureModelFacetLinks_Generalization_General_4012(modelElement, crossReferences));
-		result.addAll(getIncomingTypeModelFacetLinks_Usage_4013(modelElement, crossReferences));
-		result.addAll(getIncomingTypeModelFacetLinks_TemplateBinding_4016(modelElement, crossReferences));
-		return result;
+		return Collections.EMPTY_LIST;
 	}
 
 	/**
 	 * @generated
 	 */
 	public static List getDataType_3008IncomingLinks(View view) {
-		DataType modelElement = (DataType) view.getElement();
-		Map crossReferences = EcoreUtil.CrossReferencer.find(view.eResource().getResourceSet().getResources());
-		List result = new LinkedList();
-		result.addAll(getIncomingTypeModelFacetLinks_Generalization_4001(modelElement, crossReferences));
-		result.addAll(getIncomingTypeModelFacetLinks_Dependency_4002(modelElement, crossReferences));
-		result.addAll(getIncomingTypeModelFacetLinks_Property_4003(modelElement, crossReferences));
-		result.addAll(getIncomingFeatureModelFacetLinks_Constraint_ConstrainedElement_4004(modelElement, crossReferences));
-		result.addAll(getIncomingTypeModelFacetLinks_Association_4005(modelElement, crossReferences));
-		result.addAll(getIncomingFeatureModelFacetLinks_Dependency_Supplier_4006(modelElement, crossReferences));
-		result.addAll(getIncomingFeatureModelFacetLinks_Dependency_Client_4007(modelElement, crossReferences));
-		result.addAll(getIncomingTypeModelFacetLinks_Realization_4010(modelElement, crossReferences));
-		result.addAll(getIncomingFeatureModelFacetLinks_Generalization_General_4012(modelElement, crossReferences));
-		result.addAll(getIncomingTypeModelFacetLinks_Usage_4013(modelElement, crossReferences));
-		result.addAll(getIncomingTypeModelFacetLinks_TemplateBinding_4016(modelElement, crossReferences));
-		return result;
+		return Collections.EMPTY_LIST;
 	}
 
 	/**
 	 * @generated
 	 */
 	public static List getPrimitiveType_3009IncomingLinks(View view) {
-		PrimitiveType modelElement = (PrimitiveType) view.getElement();
-		Map crossReferences = EcoreUtil.CrossReferencer.find(view.eResource().getResourceSet().getResources());
-		List result = new LinkedList();
-		result.addAll(getIncomingTypeModelFacetLinks_Generalization_4001(modelElement, crossReferences));
-		result.addAll(getIncomingTypeModelFacetLinks_Dependency_4002(modelElement, crossReferences));
-		result.addAll(getIncomingTypeModelFacetLinks_Property_4003(modelElement, crossReferences));
-		result.addAll(getIncomingFeatureModelFacetLinks_Constraint_ConstrainedElement_4004(modelElement, crossReferences));
-		result.addAll(getIncomingTypeModelFacetLinks_Association_4005(modelElement, crossReferences));
-		result.addAll(getIncomingFeatureModelFacetLinks_Dependency_Supplier_4006(modelElement, crossReferences));
-		result.addAll(getIncomingFeatureModelFacetLinks_Dependency_Client_4007(modelElement, crossReferences));
-		result.addAll(getIncomingTypeModelFacetLinks_Realization_4010(modelElement, crossReferences));
-		result.addAll(getIncomingFeatureModelFacetLinks_Generalization_General_4012(modelElement, crossReferences));
-		result.addAll(getIncomingTypeModelFacetLinks_Usage_4013(modelElement, crossReferences));
-		result.addAll(getIncomingTypeModelFacetLinks_TemplateBinding_4016(modelElement, crossReferences));
-		return result;
+		return Collections.EMPTY_LIST;
 	}
 
 	/**
 	 * @generated
 	 */
 	public static List getEnumeration_3011IncomingLinks(View view) {
-		Enumeration modelElement = (Enumeration) view.getElement();
-		Map crossReferences = EcoreUtil.CrossReferencer.find(view.eResource().getResourceSet().getResources());
-		List result = new LinkedList();
-		result.addAll(getIncomingTypeModelFacetLinks_Generalization_4001(modelElement, crossReferences));
-		result.addAll(getIncomingTypeModelFacetLinks_Dependency_4002(modelElement, crossReferences));
-		result.addAll(getIncomingTypeModelFacetLinks_Property_4003(modelElement, crossReferences));
-		result.addAll(getIncomingFeatureModelFacetLinks_Constraint_ConstrainedElement_4004(modelElement, crossReferences));
-		result.addAll(getIncomingTypeModelFacetLinks_Association_4005(modelElement, crossReferences));
-		result.addAll(getIncomingFeatureModelFacetLinks_Dependency_Supplier_4006(modelElement, crossReferences));
-		result.addAll(getIncomingFeatureModelFacetLinks_Dependency_Client_4007(modelElement, crossReferences));
-		result.addAll(getIncomingTypeModelFacetLinks_Realization_4010(modelElement, crossReferences));
-		result.addAll(getIncomingFeatureModelFacetLinks_Generalization_General_4012(modelElement, crossReferences));
-		result.addAll(getIncomingTypeModelFacetLinks_Usage_4013(modelElement, crossReferences));
-		result.addAll(getIncomingTypeModelFacetLinks_TemplateBinding_4016(modelElement, crossReferences));
-		return result;
+		return Collections.EMPTY_LIST;
 	}
 
 	/**
 	 * @generated
 	 */
 	public static List getAssociationClass_3012IncomingLinks(View view) {
-		AssociationClass modelElement = (AssociationClass) view.getElement();
-		Map crossReferences = EcoreUtil.CrossReferencer.find(view.eResource().getResourceSet().getResources());
-		List result = new LinkedList();
-		result.addAll(getIncomingTypeModelFacetLinks_Generalization_4001(modelElement, crossReferences));
-		result.addAll(getIncomingTypeModelFacetLinks_Dependency_4002(modelElement, crossReferences));
-		result.addAll(getIncomingTypeModelFacetLinks_Property_4003(modelElement, crossReferences));
-		result.addAll(getIncomingFeatureModelFacetLinks_Constraint_ConstrainedElement_4004(modelElement, crossReferences));
-		result.addAll(getIncomingTypeModelFacetLinks_Association_4005(modelElement, crossReferences));
-		result.addAll(getIncomingFeatureModelFacetLinks_Dependency_Supplier_4006(modelElement, crossReferences));
-		result.addAll(getIncomingFeatureModelFacetLinks_Dependency_Client_4007(modelElement, crossReferences));
-		result.addAll(getIncomingTypeModelFacetLinks_Realization_4010(modelElement, crossReferences));
-		result.addAll(getIncomingFeatureModelFacetLinks_Generalization_General_4012(modelElement, crossReferences));
-		result.addAll(getIncomingTypeModelFacetLinks_Usage_4013(modelElement, crossReferences));
-		result.addAll(getIncomingTypeModelFacetLinks_TemplateBinding_4016(modelElement, crossReferences));
-		return result;
+		return Collections.EMPTY_LIST;
 	}
 
 	/**
 	 * @generated
 	 */
 	public static List getInterface_3041IncomingLinks(View view) {
-		Interface modelElement = (Interface) view.getElement();
-		Map crossReferences = EcoreUtil.CrossReferencer.find(view.eResource().getResourceSet().getResources());
-		List result = new LinkedList();
-		result.addAll(getIncomingTypeModelFacetLinks_Generalization_4001(modelElement, crossReferences));
-		result.addAll(getIncomingTypeModelFacetLinks_Dependency_4002(modelElement, crossReferences));
-		result.addAll(getIncomingTypeModelFacetLinks_Property_4003(modelElement, crossReferences));
-		result.addAll(getIncomingFeatureModelFacetLinks_Constraint_ConstrainedElement_4004(modelElement, crossReferences));
-		result.addAll(getIncomingTypeModelFacetLinks_Association_4005(modelElement, crossReferences));
-		result.addAll(getIncomingFeatureModelFacetLinks_Dependency_Supplier_4006(modelElement, crossReferences));
-		result.addAll(getIncomingFeatureModelFacetLinks_Dependency_Client_4007(modelElement, crossReferences));
-		result.addAll(getIncomingTypeModelFacetLinks_InterfaceRealization_4008(modelElement, crossReferences));
-		result.addAll(getIncomingTypeModelFacetLinks_Realization_4010(modelElement, crossReferences));
-		result.addAll(getIncomingFeatureModelFacetLinks_Generalization_General_4012(modelElement, crossReferences));
-		result.addAll(getIncomingTypeModelFacetLinks_Usage_4013(modelElement, crossReferences));
-		result.addAll(getIncomingTypeModelFacetLinks_TemplateBinding_4016(modelElement, crossReferences));
-		result.addAll(getIncomingFeatureModelFacetLinks_Port_Provided_4017(modelElement, crossReferences));
-		result.addAll(getIncomingFeatureModelFacetLinks_Port_Required_4018(modelElement, crossReferences));
-		return result;
+		return Collections.EMPTY_LIST;
 	}
 
 	/**
 	 * @generated
 	 */
 	public static List getInstanceSpecification_3013IncomingLinks(View view) {
-		InstanceSpecification modelElement = (InstanceSpecification) view.getElement();
-		Map crossReferences = EcoreUtil.CrossReferencer.find(view.eResource().getResourceSet().getResources());
-		List result = new LinkedList();
-		result.addAll(getIncomingTypeModelFacetLinks_Dependency_4002(modelElement, crossReferences));
-		result.addAll(getIncomingFeatureModelFacetLinks_Constraint_ConstrainedElement_4004(modelElement, crossReferences));
-		result.addAll(getIncomingFeatureModelFacetLinks_Dependency_Supplier_4006(modelElement, crossReferences));
-		result.addAll(getIncomingFeatureModelFacetLinks_Dependency_Client_4007(modelElement, crossReferences));
-		result.addAll(getIncomingTypeModelFacetLinks_Realization_4010(modelElement, crossReferences));
-		result.addAll(getIncomingTypeModelFacetLinks_Usage_4013(modelElement, crossReferences));
-		result.addAll(getIncomingTypeModelFacetLinks_Slot_4015(modelElement, crossReferences));
-		return result;
+		return Collections.EMPTY_LIST;
 	}
 
 	/**
 	 * @generated
 	 */
 	public static List getProperty_3001IncomingLinks(View view) {
-		Property modelElement = (Property) view.getElement();
-		Map crossReferences = EcoreUtil.CrossReferencer.find(view.eResource().getResourceSet().getResources());
-		List result = new LinkedList();
-		result.addAll(getIncomingTypeModelFacetLinks_Dependency_4002(modelElement, crossReferences));
-		result.addAll(getIncomingFeatureModelFacetLinks_Constraint_ConstrainedElement_4004(modelElement, crossReferences));
-		result.addAll(getIncomingFeatureModelFacetLinks_Dependency_Supplier_4006(modelElement, crossReferences));
-		result.addAll(getIncomingFeatureModelFacetLinks_Dependency_Client_4007(modelElement, crossReferences));
-		result.addAll(getIncomingTypeModelFacetLinks_Realization_4010(modelElement, crossReferences));
-		result.addAll(getIncomingTypeModelFacetLinks_Usage_4013(modelElement, crossReferences));
-		result.addAll(getIncomingTypeModelFacetLinks_TemplateBinding_4016(modelElement, crossReferences));
-		return result;
+		return Collections.EMPTY_LIST;
 	}
 
 	/**
 	 * @generated
 	 */
 	public static List getOperation_3002IncomingLinks(View view) {
-		Operation modelElement = (Operation) view.getElement();
-		Map crossReferences = EcoreUtil.CrossReferencer.find(view.eResource().getResourceSet().getResources());
-		List result = new LinkedList();
-		result.addAll(getIncomingTypeModelFacetLinks_Dependency_4002(modelElement, crossReferences));
-		result.addAll(getIncomingFeatureModelFacetLinks_Constraint_ConstrainedElement_4004(modelElement, crossReferences));
-		result.addAll(getIncomingFeatureModelFacetLinks_Dependency_Supplier_4006(modelElement, crossReferences));
-		result.addAll(getIncomingFeatureModelFacetLinks_Dependency_Client_4007(modelElement, crossReferences));
-		result.addAll(getIncomingTypeModelFacetLinks_Realization_4010(modelElement, crossReferences));
-		result.addAll(getIncomingTypeModelFacetLinks_Usage_4013(modelElement, crossReferences));
-		result.addAll(getIncomingTypeModelFacetLinks_TemplateBinding_4016(modelElement, crossReferences));
-		return result;
+		return Collections.EMPTY_LIST;
 	}
 
 	/**
 	 * @generated
 	 */
 	public static List getClass_3003IncomingLinks(View view) {
-		Class modelElement = (Class) view.getElement();
-		Map crossReferences = EcoreUtil.CrossReferencer.find(view.eResource().getResourceSet().getResources());
-		List result = new LinkedList();
-		result.addAll(getIncomingTypeModelFacetLinks_Generalization_4001(modelElement, crossReferences));
-		result.addAll(getIncomingTypeModelFacetLinks_Dependency_4002(modelElement, crossReferences));
-		result.addAll(getIncomingTypeModelFacetLinks_Property_4003(modelElement, crossReferences));
-		result.addAll(getIncomingFeatureModelFacetLinks_Constraint_ConstrainedElement_4004(modelElement, crossReferences));
-		result.addAll(getIncomingTypeModelFacetLinks_Association_4005(modelElement, crossReferences));
-		result.addAll(getIncomingFeatureModelFacetLinks_Dependency_Supplier_4006(modelElement, crossReferences));
-		result.addAll(getIncomingFeatureModelFacetLinks_Dependency_Client_4007(modelElement, crossReferences));
-		result.addAll(getIncomingTypeModelFacetLinks_Realization_4010(modelElement, crossReferences));
-		result.addAll(getIncomingFeatureModelFacetLinks_Generalization_General_4012(modelElement, crossReferences));
-		result.addAll(getIncomingTypeModelFacetLinks_Usage_4013(modelElement, crossReferences));
-		result.addAll(getIncomingTypeModelFacetLinks_TemplateBinding_4016(modelElement, crossReferences));
-		return result;
+		return Collections.EMPTY_LIST;
 	}
 
 	/**
@@ -3032,230 +2891,98 @@ public class UMLDiagramUpdater {
 	 * @generated
 	 */
 	public static List getProperty_3019IncomingLinks(View view) {
-		Property modelElement = (Property) view.getElement();
-		Map crossReferences = EcoreUtil.CrossReferencer.find(view.eResource().getResourceSet().getResources());
-		List result = new LinkedList();
-		result.addAll(getIncomingTypeModelFacetLinks_Dependency_4002(modelElement, crossReferences));
-		result.addAll(getIncomingFeatureModelFacetLinks_Constraint_ConstrainedElement_4004(modelElement, crossReferences));
-		result.addAll(getIncomingFeatureModelFacetLinks_Dependency_Supplier_4006(modelElement, crossReferences));
-		result.addAll(getIncomingFeatureModelFacetLinks_Dependency_Client_4007(modelElement, crossReferences));
-		result.addAll(getIncomingTypeModelFacetLinks_Realization_4010(modelElement, crossReferences));
-		result.addAll(getIncomingTypeModelFacetLinks_Usage_4013(modelElement, crossReferences));
-		result.addAll(getIncomingTypeModelFacetLinks_TemplateBinding_4016(modelElement, crossReferences));
-		return result;
+		return Collections.EMPTY_LIST;
 	}
 
 	/**
 	 * @generated
 	 */
 	public static List getOperation_3020IncomingLinks(View view) {
-		Operation modelElement = (Operation) view.getElement();
-		Map crossReferences = EcoreUtil.CrossReferencer.find(view.eResource().getResourceSet().getResources());
-		List result = new LinkedList();
-		result.addAll(getIncomingTypeModelFacetLinks_Dependency_4002(modelElement, crossReferences));
-		result.addAll(getIncomingFeatureModelFacetLinks_Constraint_ConstrainedElement_4004(modelElement, crossReferences));
-		result.addAll(getIncomingFeatureModelFacetLinks_Dependency_Supplier_4006(modelElement, crossReferences));
-		result.addAll(getIncomingFeatureModelFacetLinks_Dependency_Client_4007(modelElement, crossReferences));
-		result.addAll(getIncomingTypeModelFacetLinks_Realization_4010(modelElement, crossReferences));
-		result.addAll(getIncomingTypeModelFacetLinks_Usage_4013(modelElement, crossReferences));
-		result.addAll(getIncomingTypeModelFacetLinks_TemplateBinding_4016(modelElement, crossReferences));
-		return result;
+		return Collections.EMPTY_LIST;
 	}
 
 	/**
 	 * @generated
 	 */
 	public static List getProperty_3014IncomingLinks(View view) {
-		Property modelElement = (Property) view.getElement();
-		Map crossReferences = EcoreUtil.CrossReferencer.find(view.eResource().getResourceSet().getResources());
-		List result = new LinkedList();
-		result.addAll(getIncomingTypeModelFacetLinks_Dependency_4002(modelElement, crossReferences));
-		result.addAll(getIncomingFeatureModelFacetLinks_Constraint_ConstrainedElement_4004(modelElement, crossReferences));
-		result.addAll(getIncomingFeatureModelFacetLinks_Dependency_Supplier_4006(modelElement, crossReferences));
-		result.addAll(getIncomingFeatureModelFacetLinks_Dependency_Client_4007(modelElement, crossReferences));
-		result.addAll(getIncomingTypeModelFacetLinks_Realization_4010(modelElement, crossReferences));
-		result.addAll(getIncomingTypeModelFacetLinks_Usage_4013(modelElement, crossReferences));
-		result.addAll(getIncomingTypeModelFacetLinks_TemplateBinding_4016(modelElement, crossReferences));
-		return result;
+		return Collections.EMPTY_LIST;
 	}
 
 	/**
 	 * @generated
 	 */
 	public static List getOperation_3015IncomingLinks(View view) {
-		Operation modelElement = (Operation) view.getElement();
-		Map crossReferences = EcoreUtil.CrossReferencer.find(view.eResource().getResourceSet().getResources());
-		List result = new LinkedList();
-		result.addAll(getIncomingTypeModelFacetLinks_Dependency_4002(modelElement, crossReferences));
-		result.addAll(getIncomingFeatureModelFacetLinks_Constraint_ConstrainedElement_4004(modelElement, crossReferences));
-		result.addAll(getIncomingFeatureModelFacetLinks_Dependency_Supplier_4006(modelElement, crossReferences));
-		result.addAll(getIncomingFeatureModelFacetLinks_Dependency_Client_4007(modelElement, crossReferences));
-		result.addAll(getIncomingTypeModelFacetLinks_Realization_4010(modelElement, crossReferences));
-		result.addAll(getIncomingTypeModelFacetLinks_Usage_4013(modelElement, crossReferences));
-		result.addAll(getIncomingTypeModelFacetLinks_TemplateBinding_4016(modelElement, crossReferences));
-		return result;
+		return Collections.EMPTY_LIST;
 	}
 
 	/**
 	 * @generated
 	 */
 	public static List getProperty_3021IncomingLinks(View view) {
-		Property modelElement = (Property) view.getElement();
-		Map crossReferences = EcoreUtil.CrossReferencer.find(view.eResource().getResourceSet().getResources());
-		List result = new LinkedList();
-		result.addAll(getIncomingTypeModelFacetLinks_Dependency_4002(modelElement, crossReferences));
-		result.addAll(getIncomingFeatureModelFacetLinks_Constraint_ConstrainedElement_4004(modelElement, crossReferences));
-		result.addAll(getIncomingFeatureModelFacetLinks_Dependency_Supplier_4006(modelElement, crossReferences));
-		result.addAll(getIncomingFeatureModelFacetLinks_Dependency_Client_4007(modelElement, crossReferences));
-		result.addAll(getIncomingTypeModelFacetLinks_Realization_4010(modelElement, crossReferences));
-		result.addAll(getIncomingTypeModelFacetLinks_Usage_4013(modelElement, crossReferences));
-		result.addAll(getIncomingTypeModelFacetLinks_TemplateBinding_4016(modelElement, crossReferences));
-		return result;
+		return Collections.EMPTY_LIST;
 	}
 
 	/**
 	 * @generated
 	 */
 	public static List getOperation_3022IncomingLinks(View view) {
-		Operation modelElement = (Operation) view.getElement();
-		Map crossReferences = EcoreUtil.CrossReferencer.find(view.eResource().getResourceSet().getResources());
-		List result = new LinkedList();
-		result.addAll(getIncomingTypeModelFacetLinks_Dependency_4002(modelElement, crossReferences));
-		result.addAll(getIncomingFeatureModelFacetLinks_Constraint_ConstrainedElement_4004(modelElement, crossReferences));
-		result.addAll(getIncomingFeatureModelFacetLinks_Dependency_Supplier_4006(modelElement, crossReferences));
-		result.addAll(getIncomingFeatureModelFacetLinks_Dependency_Client_4007(modelElement, crossReferences));
-		result.addAll(getIncomingTypeModelFacetLinks_Realization_4010(modelElement, crossReferences));
-		result.addAll(getIncomingTypeModelFacetLinks_Usage_4013(modelElement, crossReferences));
-		result.addAll(getIncomingTypeModelFacetLinks_TemplateBinding_4016(modelElement, crossReferences));
-		return result;
+		return Collections.EMPTY_LIST;
 	}
 
 	/**
 	 * @generated
 	 */
 	public static List getEnumerationLiteral_3016IncomingLinks(View view) {
-		EnumerationLiteral modelElement = (EnumerationLiteral) view.getElement();
-		Map crossReferences = EcoreUtil.CrossReferencer.find(view.eResource().getResourceSet().getResources());
-		List result = new LinkedList();
-		result.addAll(getIncomingTypeModelFacetLinks_Dependency_4002(modelElement, crossReferences));
-		result.addAll(getIncomingFeatureModelFacetLinks_Constraint_ConstrainedElement_4004(modelElement, crossReferences));
-		result.addAll(getIncomingFeatureModelFacetLinks_Dependency_Supplier_4006(modelElement, crossReferences));
-		result.addAll(getIncomingFeatureModelFacetLinks_Dependency_Client_4007(modelElement, crossReferences));
-		result.addAll(getIncomingTypeModelFacetLinks_Realization_4010(modelElement, crossReferences));
-		result.addAll(getIncomingTypeModelFacetLinks_Usage_4013(modelElement, crossReferences));
-		result.addAll(getIncomingTypeModelFacetLinks_Slot_4015(modelElement, crossReferences));
-		return result;
+		return Collections.EMPTY_LIST;
 	}
 
 	/**
 	 * @generated
 	 */
 	public static List getProperty_3023IncomingLinks(View view) {
-		Property modelElement = (Property) view.getElement();
-		Map crossReferences = EcoreUtil.CrossReferencer.find(view.eResource().getResourceSet().getResources());
-		List result = new LinkedList();
-		result.addAll(getIncomingTypeModelFacetLinks_Dependency_4002(modelElement, crossReferences));
-		result.addAll(getIncomingFeatureModelFacetLinks_Constraint_ConstrainedElement_4004(modelElement, crossReferences));
-		result.addAll(getIncomingFeatureModelFacetLinks_Dependency_Supplier_4006(modelElement, crossReferences));
-		result.addAll(getIncomingFeatureModelFacetLinks_Dependency_Client_4007(modelElement, crossReferences));
-		result.addAll(getIncomingTypeModelFacetLinks_Realization_4010(modelElement, crossReferences));
-		result.addAll(getIncomingTypeModelFacetLinks_Usage_4013(modelElement, crossReferences));
-		result.addAll(getIncomingTypeModelFacetLinks_TemplateBinding_4016(modelElement, crossReferences));
-		return result;
+		return Collections.EMPTY_LIST;
 	}
 
 	/**
 	 * @generated
 	 */
 	public static List getOperation_3024IncomingLinks(View view) {
-		Operation modelElement = (Operation) view.getElement();
-		Map crossReferences = EcoreUtil.CrossReferencer.find(view.eResource().getResourceSet().getResources());
-		List result = new LinkedList();
-		result.addAll(getIncomingTypeModelFacetLinks_Dependency_4002(modelElement, crossReferences));
-		result.addAll(getIncomingFeatureModelFacetLinks_Constraint_ConstrainedElement_4004(modelElement, crossReferences));
-		result.addAll(getIncomingFeatureModelFacetLinks_Dependency_Supplier_4006(modelElement, crossReferences));
-		result.addAll(getIncomingFeatureModelFacetLinks_Dependency_Client_4007(modelElement, crossReferences));
-		result.addAll(getIncomingTypeModelFacetLinks_Realization_4010(modelElement, crossReferences));
-		result.addAll(getIncomingTypeModelFacetLinks_Usage_4013(modelElement, crossReferences));
-		result.addAll(getIncomingTypeModelFacetLinks_TemplateBinding_4016(modelElement, crossReferences));
-		return result;
+		return Collections.EMPTY_LIST;
 	}
 
 	/**
 	 * @generated
 	 */
 	public static List getSlot_3017IncomingLinks(View view) {
-		Slot modelElement = (Slot) view.getElement();
-		Map crossReferences = EcoreUtil.CrossReferencer.find(view.eResource().getResourceSet().getResources());
-		List result = new LinkedList();
-		result.addAll(getIncomingFeatureModelFacetLinks_Constraint_ConstrainedElement_4004(modelElement, crossReferences));
-		return result;
+		return Collections.EMPTY_LIST;
 	}
 
 	/**
 	 * @generated
 	 */
 	public static List getProperty_3028IncomingLinks(View view) {
-		Property modelElement = (Property) view.getElement();
-		Map crossReferences = EcoreUtil.CrossReferencer.find(view.eResource().getResourceSet().getResources());
-		List result = new LinkedList();
-		result.addAll(getIncomingTypeModelFacetLinks_Dependency_4002(modelElement, crossReferences));
-		result.addAll(getIncomingFeatureModelFacetLinks_Constraint_ConstrainedElement_4004(modelElement, crossReferences));
-		result.addAll(getIncomingFeatureModelFacetLinks_Dependency_Supplier_4006(modelElement, crossReferences));
-		result.addAll(getIncomingFeatureModelFacetLinks_Dependency_Client_4007(modelElement, crossReferences));
-		result.addAll(getIncomingTypeModelFacetLinks_Realization_4010(modelElement, crossReferences));
-		result.addAll(getIncomingTypeModelFacetLinks_Usage_4013(modelElement, crossReferences));
-		result.addAll(getIncomingTypeModelFacetLinks_TemplateBinding_4016(modelElement, crossReferences));
-		return result;
+		return Collections.EMPTY_LIST;
 	}
 
 	/**
 	 * @generated
 	 */
 	public static List getOperation_3029IncomingLinks(View view) {
-		Operation modelElement = (Operation) view.getElement();
-		Map crossReferences = EcoreUtil.CrossReferencer.find(view.eResource().getResourceSet().getResources());
-		List result = new LinkedList();
-		result.addAll(getIncomingTypeModelFacetLinks_Dependency_4002(modelElement, crossReferences));
-		result.addAll(getIncomingFeatureModelFacetLinks_Constraint_ConstrainedElement_4004(modelElement, crossReferences));
-		result.addAll(getIncomingFeatureModelFacetLinks_Dependency_Supplier_4006(modelElement, crossReferences));
-		result.addAll(getIncomingFeatureModelFacetLinks_Dependency_Client_4007(modelElement, crossReferences));
-		result.addAll(getIncomingTypeModelFacetLinks_Realization_4010(modelElement, crossReferences));
-		result.addAll(getIncomingTypeModelFacetLinks_Usage_4013(modelElement, crossReferences));
-		result.addAll(getIncomingTypeModelFacetLinks_TemplateBinding_4016(modelElement, crossReferences));
-		return result;
+		return Collections.EMPTY_LIST;
 	}
 
 	/**
 	 * @generated
 	 */
 	public static List getClass_3030IncomingLinks(View view) {
-		Class modelElement = (Class) view.getElement();
-		Map crossReferences = EcoreUtil.CrossReferencer.find(view.eResource().getResourceSet().getResources());
-		List result = new LinkedList();
-		result.addAll(getIncomingTypeModelFacetLinks_Generalization_4001(modelElement, crossReferences));
-		result.addAll(getIncomingTypeModelFacetLinks_Dependency_4002(modelElement, crossReferences));
-		result.addAll(getIncomingTypeModelFacetLinks_Property_4003(modelElement, crossReferences));
-		result.addAll(getIncomingFeatureModelFacetLinks_Constraint_ConstrainedElement_4004(modelElement, crossReferences));
-		result.addAll(getIncomingTypeModelFacetLinks_Association_4005(modelElement, crossReferences));
-		result.addAll(getIncomingFeatureModelFacetLinks_Dependency_Supplier_4006(modelElement, crossReferences));
-		result.addAll(getIncomingFeatureModelFacetLinks_Dependency_Client_4007(modelElement, crossReferences));
-		result.addAll(getIncomingTypeModelFacetLinks_Realization_4010(modelElement, crossReferences));
-		result.addAll(getIncomingFeatureModelFacetLinks_Generalization_General_4012(modelElement, crossReferences));
-		result.addAll(getIncomingTypeModelFacetLinks_Usage_4013(modelElement, crossReferences));
-		result.addAll(getIncomingTypeModelFacetLinks_TemplateBinding_4016(modelElement, crossReferences));
-		return result;
+		return Collections.EMPTY_LIST;
 	}
 
 	/**
 	 * @generated
 	 */
 	public static List getElementImport_3031IncomingLinks(View view) {
-		ElementImport modelElement = (ElementImport) view.getElement();
-		Map crossReferences = EcoreUtil.CrossReferencer.find(view.eResource().getResourceSet().getResources());
-		List result = new LinkedList();
-		result.addAll(getIncomingFeatureModelFacetLinks_Constraint_ConstrainedElement_4004(modelElement, crossReferences));
-		return result;
+		return Collections.EMPTY_LIST;
 	}
 
 	/**
@@ -3380,48 +3107,21 @@ public class UMLDiagramUpdater {
 	 * @generated
 	 */
 	public static List getLiteralString_3038IncomingLinks(View view) {
-		LiteralString modelElement = (LiteralString) view.getElement();
-		Map crossReferences = EcoreUtil.CrossReferencer.find(view.eResource().getResourceSet().getResources());
-		List result = new LinkedList();
-		result.addAll(getIncomingTypeModelFacetLinks_Dependency_4002(modelElement, crossReferences));
-		result.addAll(getIncomingFeatureModelFacetLinks_Constraint_ConstrainedElement_4004(modelElement, crossReferences));
-		result.addAll(getIncomingFeatureModelFacetLinks_Dependency_Supplier_4006(modelElement, crossReferences));
-		result.addAll(getIncomingFeatureModelFacetLinks_Dependency_Client_4007(modelElement, crossReferences));
-		result.addAll(getIncomingTypeModelFacetLinks_Realization_4010(modelElement, crossReferences));
-		result.addAll(getIncomingTypeModelFacetLinks_Usage_4013(modelElement, crossReferences));
-		return result;
+		return Collections.EMPTY_LIST;
 	}
 
 	/**
 	 * @generated
 	 */
 	public static List getLiteralInteger_3039IncomingLinks(View view) {
-		LiteralInteger modelElement = (LiteralInteger) view.getElement();
-		Map crossReferences = EcoreUtil.CrossReferencer.find(view.eResource().getResourceSet().getResources());
-		List result = new LinkedList();
-		result.addAll(getIncomingTypeModelFacetLinks_Dependency_4002(modelElement, crossReferences));
-		result.addAll(getIncomingFeatureModelFacetLinks_Constraint_ConstrainedElement_4004(modelElement, crossReferences));
-		result.addAll(getIncomingFeatureModelFacetLinks_Dependency_Supplier_4006(modelElement, crossReferences));
-		result.addAll(getIncomingFeatureModelFacetLinks_Dependency_Client_4007(modelElement, crossReferences));
-		result.addAll(getIncomingTypeModelFacetLinks_Realization_4010(modelElement, crossReferences));
-		result.addAll(getIncomingTypeModelFacetLinks_Usage_4013(modelElement, crossReferences));
-		return result;
+		return Collections.EMPTY_LIST;
 	}
 
 	/**
 	 * @generated
 	 */
 	public static List getExpression_3040IncomingLinks(View view) {
-		Expression modelElement = (Expression) view.getElement();
-		Map crossReferences = EcoreUtil.CrossReferencer.find(view.eResource().getResourceSet().getResources());
-		List result = new LinkedList();
-		result.addAll(getIncomingTypeModelFacetLinks_Dependency_4002(modelElement, crossReferences));
-		result.addAll(getIncomingFeatureModelFacetLinks_Constraint_ConstrainedElement_4004(modelElement, crossReferences));
-		result.addAll(getIncomingFeatureModelFacetLinks_Dependency_Supplier_4006(modelElement, crossReferences));
-		result.addAll(getIncomingFeatureModelFacetLinks_Dependency_Client_4007(modelElement, crossReferences));
-		result.addAll(getIncomingTypeModelFacetLinks_Realization_4010(modelElement, crossReferences));
-		result.addAll(getIncomingTypeModelFacetLinks_Usage_4013(modelElement, crossReferences));
-		return result;
+		return Collections.EMPTY_LIST;
 	}
 
 	/**
@@ -3838,168 +3538,77 @@ public class UMLDiagramUpdater {
 	 * @generated
 	 */
 	public static List getPackage_3006OutgoingLinks(View view) {
-		Package modelElement = (Package) view.getElement();
-		List result = new LinkedList();
-		result.addAll(getOutgoingTypeModelFacetLinks_Dependency_4002(modelElement));
-		result.addAll(getOutgoingTypeModelFacetLinks_Realization_4010(modelElement));
-		result.addAll(getOutgoingTypeModelFacetLinks_Usage_4013(modelElement));
-		result.addAll(getOutgoingTypeModelFacetLinks_TemplateBinding_4016(modelElement));
-		return result;
+		return Collections.EMPTY_LIST;
 	}
 
 	/**
 	 * @generated
 	 */
 	public static List getClass_3007OutgoingLinks(View view) {
-		Class modelElement = (Class) view.getElement();
-		List result = new LinkedList();
-		result.addAll(getContainedTypeModelFacetLinks_Generalization_4001(modelElement));
-		result.addAll(getOutgoingTypeModelFacetLinks_Dependency_4002(modelElement));
-		result.addAll(getOutgoingTypeModelFacetLinks_Association_4005(modelElement));
-		result.addAll(getOutgoingTypeModelFacetLinks_InterfaceRealization_4008(modelElement));
-		result.addAll(getOutgoingTypeModelFacetLinks_Realization_4010(modelElement));
-		result.addAll(getContainedTypeModelFacetLinks_Generalization_4011(modelElement));
-		result.addAll(getOutgoingTypeModelFacetLinks_Usage_4013(modelElement));
-		result.addAll(getOutgoingTypeModelFacetLinks_TemplateBinding_4016(modelElement));
-		return result;
+		return Collections.EMPTY_LIST;
 	}
 
 	/**
 	 * @generated
 	 */
 	public static List getDataType_3008OutgoingLinks(View view) {
-		DataType modelElement = (DataType) view.getElement();
-		List result = new LinkedList();
-		result.addAll(getContainedTypeModelFacetLinks_Generalization_4001(modelElement));
-		result.addAll(getOutgoingTypeModelFacetLinks_Dependency_4002(modelElement));
-		result.addAll(getOutgoingTypeModelFacetLinks_Association_4005(modelElement));
-		result.addAll(getOutgoingTypeModelFacetLinks_Realization_4010(modelElement));
-		result.addAll(getContainedTypeModelFacetLinks_Generalization_4011(modelElement));
-		result.addAll(getOutgoingTypeModelFacetLinks_Usage_4013(modelElement));
-		result.addAll(getOutgoingTypeModelFacetLinks_TemplateBinding_4016(modelElement));
-		return result;
+		return Collections.EMPTY_LIST;
 	}
 
 	/**
 	 * @generated
 	 */
 	public static List getPrimitiveType_3009OutgoingLinks(View view) {
-		PrimitiveType modelElement = (PrimitiveType) view.getElement();
-		List result = new LinkedList();
-		result.addAll(getContainedTypeModelFacetLinks_Generalization_4001(modelElement));
-		result.addAll(getOutgoingTypeModelFacetLinks_Dependency_4002(modelElement));
-		result.addAll(getOutgoingTypeModelFacetLinks_Association_4005(modelElement));
-		result.addAll(getOutgoingTypeModelFacetLinks_Realization_4010(modelElement));
-		result.addAll(getContainedTypeModelFacetLinks_Generalization_4011(modelElement));
-		result.addAll(getOutgoingTypeModelFacetLinks_Usage_4013(modelElement));
-		result.addAll(getOutgoingTypeModelFacetLinks_TemplateBinding_4016(modelElement));
-		return result;
+		return Collections.EMPTY_LIST;
 	}
 
 	/**
 	 * @generated
 	 */
 	public static List getEnumeration_3011OutgoingLinks(View view) {
-		Enumeration modelElement = (Enumeration) view.getElement();
-		List result = new LinkedList();
-		result.addAll(getContainedTypeModelFacetLinks_Generalization_4001(modelElement));
-		result.addAll(getOutgoingTypeModelFacetLinks_Dependency_4002(modelElement));
-		result.addAll(getOutgoingTypeModelFacetLinks_Association_4005(modelElement));
-		result.addAll(getOutgoingTypeModelFacetLinks_Realization_4010(modelElement));
-		result.addAll(getContainedTypeModelFacetLinks_Generalization_4011(modelElement));
-		result.addAll(getOutgoingTypeModelFacetLinks_Usage_4013(modelElement));
-		result.addAll(getOutgoingTypeModelFacetLinks_TemplateBinding_4016(modelElement));
-		return result;
+		return Collections.EMPTY_LIST;
 	}
 
 	/**
 	 * @generated
 	 */
 	public static List getAssociationClass_3012OutgoingLinks(View view) {
-		AssociationClass modelElement = (AssociationClass) view.getElement();
-		List result = new LinkedList();
-		result.addAll(getContainedTypeModelFacetLinks_Generalization_4001(modelElement));
-		result.addAll(getOutgoingTypeModelFacetLinks_Dependency_4002(modelElement));
-		result.addAll(getContainedTypeModelFacetLinks_Property_4003(modelElement));
-		result.addAll(getOutgoingTypeModelFacetLinks_Association_4005(modelElement));
-		result.addAll(getOutgoingTypeModelFacetLinks_InterfaceRealization_4008(modelElement));
-		result.addAll(getOutgoingTypeModelFacetLinks_Realization_4010(modelElement));
-		result.addAll(getContainedTypeModelFacetLinks_Generalization_4011(modelElement));
-		result.addAll(getOutgoingTypeModelFacetLinks_Usage_4013(modelElement));
-		result.addAll(getOutgoingTypeModelFacetLinks_TemplateBinding_4016(modelElement));
-		return result;
+		return Collections.EMPTY_LIST;
 	}
 
 	/**
 	 * @generated
 	 */
 	public static List getInterface_3041OutgoingLinks(View view) {
-		Interface modelElement = (Interface) view.getElement();
-		List result = new LinkedList();
-		result.addAll(getContainedTypeModelFacetLinks_Generalization_4001(modelElement));
-		result.addAll(getOutgoingTypeModelFacetLinks_Dependency_4002(modelElement));
-		result.addAll(getOutgoingTypeModelFacetLinks_Association_4005(modelElement));
-		result.addAll(getOutgoingTypeModelFacetLinks_Realization_4010(modelElement));
-		result.addAll(getContainedTypeModelFacetLinks_Generalization_4011(modelElement));
-		result.addAll(getOutgoingTypeModelFacetLinks_Usage_4013(modelElement));
-		result.addAll(getOutgoingTypeModelFacetLinks_TemplateBinding_4016(modelElement));
-		return result;
+		return Collections.EMPTY_LIST;
 	}
 
 	/**
 	 * @generated
 	 */
 	public static List getInstanceSpecification_3013OutgoingLinks(View view) {
-		InstanceSpecification modelElement = (InstanceSpecification) view.getElement();
-		List result = new LinkedList();
-		result.addAll(getOutgoingTypeModelFacetLinks_Dependency_4002(modelElement));
-		result.addAll(getOutgoingTypeModelFacetLinks_Realization_4010(modelElement));
-		result.addAll(getOutgoingTypeModelFacetLinks_Usage_4013(modelElement));
-		result.addAll(getOutgoingTypeModelFacetLinks_Slot_4015(modelElement));
-		return result;
+		return Collections.EMPTY_LIST;
 	}
 
 	/**
 	 * @generated
 	 */
 	public static List getProperty_3001OutgoingLinks(View view) {
-		Property modelElement = (Property) view.getElement();
-		List result = new LinkedList();
-		result.addAll(getOutgoingTypeModelFacetLinks_Dependency_4002(modelElement));
-		result.addAll(getOutgoingTypeModelFacetLinks_Realization_4010(modelElement));
-		result.addAll(getOutgoingTypeModelFacetLinks_Usage_4013(modelElement));
-		result.addAll(getOutgoingTypeModelFacetLinks_TemplateBinding_4016(modelElement));
-		return result;
+		return Collections.EMPTY_LIST;
 	}
 
 	/**
 	 * @generated
 	 */
 	public static List getOperation_3002OutgoingLinks(View view) {
-		Operation modelElement = (Operation) view.getElement();
-		List result = new LinkedList();
-		result.addAll(getOutgoingTypeModelFacetLinks_Dependency_4002(modelElement));
-		result.addAll(getOutgoingTypeModelFacetLinks_Realization_4010(modelElement));
-		result.addAll(getOutgoingTypeModelFacetLinks_Usage_4013(modelElement));
-		result.addAll(getOutgoingTypeModelFacetLinks_TemplateBinding_4016(modelElement));
-		return result;
+		return Collections.EMPTY_LIST;
 	}
 
 	/**
 	 * @generated
 	 */
 	public static List getClass_3003OutgoingLinks(View view) {
-		Class modelElement = (Class) view.getElement();
-		List result = new LinkedList();
-		result.addAll(getContainedTypeModelFacetLinks_Generalization_4001(modelElement));
-		result.addAll(getOutgoingTypeModelFacetLinks_Dependency_4002(modelElement));
-		result.addAll(getOutgoingTypeModelFacetLinks_Association_4005(modelElement));
-		result.addAll(getOutgoingTypeModelFacetLinks_InterfaceRealization_4008(modelElement));
-		result.addAll(getOutgoingTypeModelFacetLinks_Realization_4010(modelElement));
-		result.addAll(getContainedTypeModelFacetLinks_Generalization_4011(modelElement));
-		result.addAll(getOutgoingTypeModelFacetLinks_Usage_4013(modelElement));
-		result.addAll(getOutgoingTypeModelFacetLinks_TemplateBinding_4016(modelElement));
-		return result;
+		return Collections.EMPTY_LIST;
 	}
 
 	/**
@@ -4033,117 +3642,63 @@ public class UMLDiagramUpdater {
 	 * @generated
 	 */
 	public static List getProperty_3019OutgoingLinks(View view) {
-		Property modelElement = (Property) view.getElement();
-		List result = new LinkedList();
-		result.addAll(getOutgoingTypeModelFacetLinks_Dependency_4002(modelElement));
-		result.addAll(getOutgoingTypeModelFacetLinks_Realization_4010(modelElement));
-		result.addAll(getOutgoingTypeModelFacetLinks_Usage_4013(modelElement));
-		result.addAll(getOutgoingTypeModelFacetLinks_TemplateBinding_4016(modelElement));
-		return result;
+		return Collections.EMPTY_LIST;
 	}
 
 	/**
 	 * @generated
 	 */
 	public static List getOperation_3020OutgoingLinks(View view) {
-		Operation modelElement = (Operation) view.getElement();
-		List result = new LinkedList();
-		result.addAll(getOutgoingTypeModelFacetLinks_Dependency_4002(modelElement));
-		result.addAll(getOutgoingTypeModelFacetLinks_Realization_4010(modelElement));
-		result.addAll(getOutgoingTypeModelFacetLinks_Usage_4013(modelElement));
-		result.addAll(getOutgoingTypeModelFacetLinks_TemplateBinding_4016(modelElement));
-		return result;
+		return Collections.EMPTY_LIST;
 	}
 
 	/**
 	 * @generated
 	 */
 	public static List getProperty_3014OutgoingLinks(View view) {
-		Property modelElement = (Property) view.getElement();
-		List result = new LinkedList();
-		result.addAll(getOutgoingTypeModelFacetLinks_Dependency_4002(modelElement));
-		result.addAll(getOutgoingTypeModelFacetLinks_Realization_4010(modelElement));
-		result.addAll(getOutgoingTypeModelFacetLinks_Usage_4013(modelElement));
-		result.addAll(getOutgoingTypeModelFacetLinks_TemplateBinding_4016(modelElement));
-		return result;
+		return Collections.EMPTY_LIST;
 	}
 
 	/**
 	 * @generated
 	 */
 	public static List getOperation_3015OutgoingLinks(View view) {
-		Operation modelElement = (Operation) view.getElement();
-		List result = new LinkedList();
-		result.addAll(getOutgoingTypeModelFacetLinks_Dependency_4002(modelElement));
-		result.addAll(getOutgoingTypeModelFacetLinks_Realization_4010(modelElement));
-		result.addAll(getOutgoingTypeModelFacetLinks_Usage_4013(modelElement));
-		result.addAll(getOutgoingTypeModelFacetLinks_TemplateBinding_4016(modelElement));
-		return result;
+		return Collections.EMPTY_LIST;
 	}
 
 	/**
 	 * @generated
 	 */
 	public static List getProperty_3021OutgoingLinks(View view) {
-		Property modelElement = (Property) view.getElement();
-		List result = new LinkedList();
-		result.addAll(getOutgoingTypeModelFacetLinks_Dependency_4002(modelElement));
-		result.addAll(getOutgoingTypeModelFacetLinks_Realization_4010(modelElement));
-		result.addAll(getOutgoingTypeModelFacetLinks_Usage_4013(modelElement));
-		result.addAll(getOutgoingTypeModelFacetLinks_TemplateBinding_4016(modelElement));
-		return result;
+		return Collections.EMPTY_LIST;
 	}
 
 	/**
 	 * @generated
 	 */
 	public static List getOperation_3022OutgoingLinks(View view) {
-		Operation modelElement = (Operation) view.getElement();
-		List result = new LinkedList();
-		result.addAll(getOutgoingTypeModelFacetLinks_Dependency_4002(modelElement));
-		result.addAll(getOutgoingTypeModelFacetLinks_Realization_4010(modelElement));
-		result.addAll(getOutgoingTypeModelFacetLinks_Usage_4013(modelElement));
-		result.addAll(getOutgoingTypeModelFacetLinks_TemplateBinding_4016(modelElement));
-		return result;
+		return Collections.EMPTY_LIST;
 	}
 
 	/**
 	 * @generated
 	 */
 	public static List getEnumerationLiteral_3016OutgoingLinks(View view) {
-		EnumerationLiteral modelElement = (EnumerationLiteral) view.getElement();
-		List result = new LinkedList();
-		result.addAll(getOutgoingTypeModelFacetLinks_Dependency_4002(modelElement));
-		result.addAll(getOutgoingTypeModelFacetLinks_Realization_4010(modelElement));
-		result.addAll(getOutgoingTypeModelFacetLinks_Usage_4013(modelElement));
-		result.addAll(getOutgoingTypeModelFacetLinks_Slot_4015(modelElement));
-		return result;
+		return Collections.EMPTY_LIST;
 	}
 
 	/**
 	 * @generated
 	 */
 	public static List getProperty_3023OutgoingLinks(View view) {
-		Property modelElement = (Property) view.getElement();
-		List result = new LinkedList();
-		result.addAll(getOutgoingTypeModelFacetLinks_Dependency_4002(modelElement));
-		result.addAll(getOutgoingTypeModelFacetLinks_Realization_4010(modelElement));
-		result.addAll(getOutgoingTypeModelFacetLinks_Usage_4013(modelElement));
-		result.addAll(getOutgoingTypeModelFacetLinks_TemplateBinding_4016(modelElement));
-		return result;
+		return Collections.EMPTY_LIST;
 	}
 
 	/**
 	 * @generated
 	 */
 	public static List getOperation_3024OutgoingLinks(View view) {
-		Operation modelElement = (Operation) view.getElement();
-		List result = new LinkedList();
-		result.addAll(getOutgoingTypeModelFacetLinks_Dependency_4002(modelElement));
-		result.addAll(getOutgoingTypeModelFacetLinks_Realization_4010(modelElement));
-		result.addAll(getOutgoingTypeModelFacetLinks_Usage_4013(modelElement));
-		result.addAll(getOutgoingTypeModelFacetLinks_TemplateBinding_4016(modelElement));
-		return result;
+		return Collections.EMPTY_LIST;
 	}
 
 	/**
@@ -4157,43 +3712,21 @@ public class UMLDiagramUpdater {
 	 * @generated
 	 */
 	public static List getProperty_3028OutgoingLinks(View view) {
-		Property modelElement = (Property) view.getElement();
-		List result = new LinkedList();
-		result.addAll(getOutgoingTypeModelFacetLinks_Dependency_4002(modelElement));
-		result.addAll(getOutgoingTypeModelFacetLinks_Realization_4010(modelElement));
-		result.addAll(getOutgoingTypeModelFacetLinks_Usage_4013(modelElement));
-		result.addAll(getOutgoingTypeModelFacetLinks_TemplateBinding_4016(modelElement));
-		return result;
+		return Collections.EMPTY_LIST;
 	}
 
 	/**
 	 * @generated
 	 */
 	public static List getOperation_3029OutgoingLinks(View view) {
-		Operation modelElement = (Operation) view.getElement();
-		List result = new LinkedList();
-		result.addAll(getOutgoingTypeModelFacetLinks_Dependency_4002(modelElement));
-		result.addAll(getOutgoingTypeModelFacetLinks_Realization_4010(modelElement));
-		result.addAll(getOutgoingTypeModelFacetLinks_Usage_4013(modelElement));
-		result.addAll(getOutgoingTypeModelFacetLinks_TemplateBinding_4016(modelElement));
-		return result;
+		return Collections.EMPTY_LIST;
 	}
 
 	/**
 	 * @generated
 	 */
 	public static List getClass_3030OutgoingLinks(View view) {
-		Class modelElement = (Class) view.getElement();
-		List result = new LinkedList();
-		result.addAll(getContainedTypeModelFacetLinks_Generalization_4001(modelElement));
-		result.addAll(getOutgoingTypeModelFacetLinks_Dependency_4002(modelElement));
-		result.addAll(getOutgoingTypeModelFacetLinks_Association_4005(modelElement));
-		result.addAll(getOutgoingTypeModelFacetLinks_InterfaceRealization_4008(modelElement));
-		result.addAll(getOutgoingTypeModelFacetLinks_Realization_4010(modelElement));
-		result.addAll(getContainedTypeModelFacetLinks_Generalization_4011(modelElement));
-		result.addAll(getOutgoingTypeModelFacetLinks_Usage_4013(modelElement));
-		result.addAll(getOutgoingTypeModelFacetLinks_TemplateBinding_4016(modelElement));
-		return result;
+		return Collections.EMPTY_LIST;
 	}
 
 	/**
@@ -4298,36 +3831,21 @@ public class UMLDiagramUpdater {
 	 * @generated
 	 */
 	public static List getLiteralString_3038OutgoingLinks(View view) {
-		LiteralString modelElement = (LiteralString) view.getElement();
-		List result = new LinkedList();
-		result.addAll(getOutgoingTypeModelFacetLinks_Dependency_4002(modelElement));
-		result.addAll(getOutgoingTypeModelFacetLinks_Realization_4010(modelElement));
-		result.addAll(getOutgoingTypeModelFacetLinks_Usage_4013(modelElement));
-		return result;
+		return Collections.EMPTY_LIST;
 	}
 
 	/**
 	 * @generated
 	 */
 	public static List getLiteralInteger_3039OutgoingLinks(View view) {
-		LiteralInteger modelElement = (LiteralInteger) view.getElement();
-		List result = new LinkedList();
-		result.addAll(getOutgoingTypeModelFacetLinks_Dependency_4002(modelElement));
-		result.addAll(getOutgoingTypeModelFacetLinks_Realization_4010(modelElement));
-		result.addAll(getOutgoingTypeModelFacetLinks_Usage_4013(modelElement));
-		return result;
+		return Collections.EMPTY_LIST;
 	}
 
 	/**
 	 * @generated
 	 */
 	public static List getExpression_3040OutgoingLinks(View view) {
-		Expression modelElement = (Expression) view.getElement();
-		List result = new LinkedList();
-		result.addAll(getOutgoingTypeModelFacetLinks_Dependency_4002(modelElement));
-		result.addAll(getOutgoingTypeModelFacetLinks_Realization_4010(modelElement));
-		result.addAll(getOutgoingTypeModelFacetLinks_Usage_4013(modelElement));
-		return result;
+		return Collections.EMPTY_LIST;
 	}
 
 	/**
