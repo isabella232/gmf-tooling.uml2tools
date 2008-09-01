@@ -12,11 +12,11 @@ import "http://www.eclipse.org/emf/2002/GenModel";
 extension xpt::diagram::editpolicies::LinkUtils;
 
 List[gmfgen::TypeLinkModelFacet] getOutgoingLinksTypeModelFacets(gmfgen::GenNode node):
-	node.getDiagram().links.select(link|canBeSource(link, node.modelFacet.metaClass)).collect(link|link.modelFacet).typeSelect(gmfgen::TypeLinkModelFacet)
+	node.getDiagram().links.select(link|canBeSource(link, node)).collect(link|link.modelFacet).typeSelect(gmfgen::TypeLinkModelFacet)
 ;
 
 List[gmfgen::FeatureLinkModelFacet] getOutgoingLinksFeatureModelFacets(gmfgen::GenNode node):
-	node.getDiagram().links.select(link|canBeSource(link, node.modelFacet.metaClass)).collect(link|link.modelFacet).typeSelect(gmfgen::FeatureLinkModelFacet)
+	node.getDiagram().links.select(link|canBeSource(link, node)).collect(link|link.modelFacet).typeSelect(gmfgen::FeatureLinkModelFacet)
 ;
 
 Set[genmodel::GenClass] getOutgoingLinkMetaclasses(gmfgen::GenNode node, genmodel::GenFeature containmentFeature):
@@ -28,7 +28,7 @@ Set[genmodel::GenFeature] getOutgoingLinkTargetFeatures(gmfgen::GenNode node, ge
 ;
 
 cached List[gmfgen::GenLink] getOutgoingAndContainedTypeLinks(gmfgen::GenNode node):
-	node.getDiagram().links.select(link|canBeSource(link, node.modelFacet.metaClass))
+	node.getDiagram().links.select(link|canBeSource(link, node))
 		.select(link | {link.modelFacet}.typeSelect(gmfgen::TypeLinkModelFacet).size() > 0)
 		.select(link | {link.modelFacet}.typeSelect(gmfgen::TypeLinkModelFacet).get(0).childMetaFeature.ecoreFeature.eContainingClass.isSuperTypeOf(node.modelFacet.metaClass.ecoreClass))
 ;
