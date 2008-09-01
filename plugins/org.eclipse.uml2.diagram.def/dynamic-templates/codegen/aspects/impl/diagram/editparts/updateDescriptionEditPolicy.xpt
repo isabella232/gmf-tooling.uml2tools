@@ -13,8 +13,9 @@
 «IMPORT "http://www.eclipse.org/gmf/2008/GenModel"»
 «EXTENSION xpt::diagram::updater::Utils»
 
-«DEFINE installUpdateDescriptionEditPolicy FOR gmfgen::GenContainerBase-»
-	«LET null != getMetaClass(this) && !getOutgoingLinks(getMetaClass(this), this.getDiagram()).isEmpty() AS canHaveOutgoingLinks-»
+«DEFINE installUpdateDescriptionEditPolicy FOR gmfgen::GenCommonBase-»
+	«LET {this}.typeSelect(gmfgen::GenLinkEnd).isEmpty() ? null : {this}.typeSelect(gmfgen::GenLinkEnd).first() AS linkEnd-»
+	«LET null != linkEnd && null != getMetaClass(linkEnd) && !getOutgoingLinks(linkEnd).isEmpty() AS canHaveOutgoingLinks-»
 	«LET !getSemanticChildren(this).isEmpty() AS canHaveChildren-»
 	«IF canHaveChildren || canHaveOutgoingLinks-»
 		if («EXPAND aspects::xpt::editor::VisualIDRegistry::isShortcutDescendantMethodCall FOR getDiagram()»(getNotationView())){
@@ -26,6 +27,7 @@
 					));
 		}
 	«ENDIF-»
+	«ENDLET-»
 	«ENDLET-»
 	«ENDLET-»
 «ENDDEFINE»
