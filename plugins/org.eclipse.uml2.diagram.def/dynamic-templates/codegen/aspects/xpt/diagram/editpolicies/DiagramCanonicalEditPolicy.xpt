@@ -111,7 +111,7 @@ private org.eclipse.gef.EditPart getEditPart(org.eclipse.emf.ecore.EObject domai
 	«EXPAND xpt::Common::generatedMemberComment»
 protected final org.eclipse.gef.EditPart getHintedEditPart(org.eclipse.emf.ecore.EObject domainModelElement, Domain2Notation domain2NotationMap, int hintVisualId) { 
 	org.eclipse.gmf.runtime.notation.View view = (org.eclipse.gmf.runtime.notation.View) domain2NotationMap.getHinted(domainModelElement, «-»
-											«EXPAND xpt::editor::VisualIDRegistry::getTypeMethodCall»(hintVisualId));
+											«EXPAND xpt::editor::VisualIDRegistry::typeMethodCall("hintVisualId")»);
 	if (view != null) {
 		return (org.eclipse.gef.EditPart) getHost().getViewer().getEditPartRegistry().get(view);
 	}

@@ -28,8 +28,6 @@ public class «nodeDescriptorClassName» implements «EXPAND aspects::xpt::diagram:
 	
 	«EXPAND xpt::diagram::updater::NodeDescriptor::getVisualID-»
 	
-	«EXPAND xpt::diagram::updater::NodeDescriptor::getType-»
-		
 	«EXPAND xpt::diagram::updater::NodeDescriptor::additions-»
 }
 «ENDAROUND»
