@@ -157,7 +157,7 @@ public class Region2EditPart extends ShapeNodeEditPart implements PrimaryShapeEd
 		if (editPart instanceof RegionSubvertices2EditPart) {
 			return getPrimaryShape().getFigureRegionFigure_Compartment();
 		}
-		return super.getContentPaneFor(editPart);
+		return getContentPane();
 	}
 
 	/**

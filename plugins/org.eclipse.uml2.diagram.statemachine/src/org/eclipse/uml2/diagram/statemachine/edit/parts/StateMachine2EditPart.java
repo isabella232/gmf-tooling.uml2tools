@@ -1,5 +1,7 @@
 package org.eclipse.uml2.diagram.statemachine.edit.parts;
 
+import java.util.Collections;
+import java.util.List;
 import org.eclipse.draw2d.BorderLayout;
 import org.eclipse.draw2d.IFigure;
 import org.eclipse.draw2d.Label;
@@ -19,6 +21,7 @@ import org.eclipse.gef.Request;
 import org.eclipse.gef.commands.Command;
 import org.eclipse.gef.editpolicies.LayoutEditPolicy;
 import org.eclipse.gef.editpolicies.NonResizableEditPolicy;
+import org.eclipse.gef.handles.MoveHandle;
 import org.eclipse.gef.requests.CreateRequest;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.AbstractBorderedShapeEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.IBorderItemEditPart;
@@ -97,7 +100,14 @@ public class StateMachine2EditPart extends AbstractBorderedShapeEditPart impleme
 
 			protected EditPolicy createChildEditPolicy(EditPart child) {
 				if (child instanceof IBorderItemEditPart) {
-					return new BorderItemSelectionEditPolicy();
+					return new BorderItemSelectionEditPolicy() {
+
+						protected List createSelectionHandles() {
+							MoveHandle mh = new MoveHandle((GraphicalEditPart) getHost());
+							mh.setBorder(null);
+							return Collections.singletonList(mh);
+						}
+					};
 				}
 				EditPolicy result = child.getEditPolicy(EditPolicy.PRIMARY_DRAG_ROLE);
 				if (result == null) {
@@ -200,7 +210,7 @@ public class StateMachine2EditPart extends AbstractBorderedShapeEditPart impleme
 		if (editPart instanceof Pseudostate10EditPart) {
 			return getBorderedFigure().getBorderItemContainer();
 		}
-		return super.getContentPaneFor(editPart);
+		return getContentPane();
 	}
 
 	/**

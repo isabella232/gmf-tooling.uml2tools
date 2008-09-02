@@ -44,6 +44,7 @@ import org.eclipse.swt.graphics.Color;
 import org.eclipse.swt.graphics.FontData;
 import org.eclipse.swt.graphics.Image;
 import org.eclipse.uml2.diagram.common.editpolicies.IRefreshableFeedbackEditPolicy;
+import org.eclipse.uml2.diagram.statemachine.edit.policies.UMLTextSelectionEditPolicy;
 import org.eclipse.uml2.diagram.statemachine.part.UMLVisualIDRegistry;
 import org.eclipse.uml2.diagram.statemachine.providers.UMLElementTypes;
 import org.eclipse.uml2.diagram.statemachine.providers.UMLParserProvider;
@@ -98,6 +99,7 @@ public class PseudostateName2EditPart extends LabelEditPart implements ITextAwar
 	protected void createDefaultEditPolicies() {
 		super.createDefaultEditPolicies();
 		installEditPolicy(EditPolicy.DIRECT_EDIT_ROLE, new LabelDirectEditPolicy());
+		installEditPolicy(EditPolicy.SELECTION_FEEDBACK_ROLE, new UMLTextSelectionEditPolicy());
 	}
 
 	/**
@@ -297,9 +299,8 @@ public class PseudostateName2EditPart extends LabelEditPart implements ITextAwar
 	 */
 	public IParser getParser() {
 		if (parser == null) {
-			String parserHint = ((View) getModel()).getType();
-			IAdaptable hintAdapter = new UMLParserProvider.HintAdapter(UMLElementTypes.Pseudostate_3015, getParserElement(), parserHint);
-			parser = ParserService.getInstance().getParser(hintAdapter);
+			parser = UMLParserProvider.getParser(UMLElementTypes.Pseudostate_3015, getParserElement(), UMLVisualIDRegistry
+					.getType(org.eclipse.uml2.diagram.statemachine.edit.parts.PseudostateName2EditPart.VISUAL_ID));
 		}
 		return parser;
 	}
