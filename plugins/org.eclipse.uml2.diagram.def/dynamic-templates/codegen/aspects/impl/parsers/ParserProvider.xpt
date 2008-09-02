@@ -27,14 +27,13 @@
 		}
 		return «parserFieldName(element)»;
 	}
+	
+	«EXPAND createParserOldWay(modelFacet, element)»
 «ENDAROUND»
 
 «DEFINE createParserOldWayMethodName FOR GenCommonBase»create«this.getUniqueIdentifier().toFirstUpper()»Parser«ENDDEFINE»
 
 «DEFINE createParserOldWay(FeatureLabelModelFacet modelFacet, GenCommonBase element) FOR gmfgen::PredefinedParser»
-	«EXPAND xpt::Common::generatedMemberComment»
-	private org.eclipse.gmf.runtime.common.ui.services.parser.IParser «parserFieldName(element)»;
-
 	«EXPAND xpt::Common::generatedMemberComment»
 	protected org.eclipse.gmf.runtime.common.ui.services.parser.IParser «EXPAND createParserOldWayMethodName FOR element»() {
 		org.eclipse.emf.ecore.EAttribute[] features = new org.eclipse.emf.ecore.EAttribute[] {
