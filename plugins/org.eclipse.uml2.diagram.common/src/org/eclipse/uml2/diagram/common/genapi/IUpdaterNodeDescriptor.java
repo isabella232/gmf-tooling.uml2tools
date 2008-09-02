@@ -9,6 +9,4 @@ public interface IUpdaterNodeDescriptor {
 
 	public int getVisualID();	
 
-	public String getType();
-
 }
