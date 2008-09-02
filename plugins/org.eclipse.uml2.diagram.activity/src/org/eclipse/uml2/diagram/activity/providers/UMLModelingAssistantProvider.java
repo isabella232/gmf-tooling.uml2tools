@@ -20,7 +20,17 @@ import org.eclipse.jface.window.Window;
 import org.eclipse.swt.widgets.Display;
 import org.eclipse.swt.widgets.Shell;
 import org.eclipse.ui.dialogs.ElementListSelectionDialog;
+import org.eclipse.uml2.diagram.activity.edit.parts.AcceptEventAction2EditPart;
+import org.eclipse.uml2.diagram.activity.edit.parts.AcceptEventAction3EditPart;
+import org.eclipse.uml2.diagram.activity.edit.parts.AcceptEventAction4EditPart;
+import org.eclipse.uml2.diagram.activity.edit.parts.AcceptEventAction5EditPart;
+import org.eclipse.uml2.diagram.activity.edit.parts.AcceptEventAction6EditPart;
+import org.eclipse.uml2.diagram.activity.edit.parts.AcceptEventActionEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.ActivityEditPart;
+import org.eclipse.uml2.diagram.activity.edit.parts.ActivityFinalNode2EditPart;
+import org.eclipse.uml2.diagram.activity.edit.parts.ActivityFinalNode3EditPart;
+import org.eclipse.uml2.diagram.activity.edit.parts.ActivityFinalNodeEditPart;
+import org.eclipse.uml2.diagram.activity.edit.parts.ActivityParameterNodeEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.ActivityPartition2EditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.ActivityPartitionEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.AddStructuralFeatureValueAction2EditPart;
@@ -32,21 +42,71 @@ import org.eclipse.uml2.diagram.activity.edit.parts.CallBehaviorActionEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.CallOperationAction2EditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.CallOperationAction3EditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.CallOperationActionEditPart;
+import org.eclipse.uml2.diagram.activity.edit.parts.CentralBufferNode2EditPart;
+import org.eclipse.uml2.diagram.activity.edit.parts.CentralBufferNode3EditPart;
+import org.eclipse.uml2.diagram.activity.edit.parts.CentralBufferNodeEditPart;
+import org.eclipse.uml2.diagram.activity.edit.parts.ConditionalNode2EditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.ConditionalNodeConditionalNodeCompartment2EditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.ConditionalNodeConditionalNodeCompartmentEditPart;
+import org.eclipse.uml2.diagram.activity.edit.parts.ConditionalNodeEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.Constraint2EditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.ConstraintEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.CreateObjectAction2EditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.CreateObjectAction3EditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.CreateObjectActionEditPart;
+import org.eclipse.uml2.diagram.activity.edit.parts.DataStoreNode2EditPart;
+import org.eclipse.uml2.diagram.activity.edit.parts.DataStoreNode3EditPart;
+import org.eclipse.uml2.diagram.activity.edit.parts.DataStoreNodeEditPart;
+import org.eclipse.uml2.diagram.activity.edit.parts.DecisionNode2EditPart;
+import org.eclipse.uml2.diagram.activity.edit.parts.DecisionNode3EditPart;
+import org.eclipse.uml2.diagram.activity.edit.parts.DecisionNodeEditPart;
+import org.eclipse.uml2.diagram.activity.edit.parts.ExpansionRegion2EditPart;
+import org.eclipse.uml2.diagram.activity.edit.parts.ExpansionRegionEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.ExpansionRegionExpansionRegionNodeCompartment2EditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.ExpansionRegionExpansionRegionNodeCompartmentEditPart;
+import org.eclipse.uml2.diagram.activity.edit.parts.FlowFinalNode2EditPart;
+import org.eclipse.uml2.diagram.activity.edit.parts.FlowFinalNode3EditPart;
+import org.eclipse.uml2.diagram.activity.edit.parts.FlowFinalNodeEditPart;
+import org.eclipse.uml2.diagram.activity.edit.parts.ForkNode2EditPart;
+import org.eclipse.uml2.diagram.activity.edit.parts.ForkNode3EditPart;
+import org.eclipse.uml2.diagram.activity.edit.parts.ForkNodeEditPart;
+import org.eclipse.uml2.diagram.activity.edit.parts.InitialNode2EditPart;
+import org.eclipse.uml2.diagram.activity.edit.parts.InitialNodeEditPart;
+import org.eclipse.uml2.diagram.activity.edit.parts.InputPin2EditPart;
+import org.eclipse.uml2.diagram.activity.edit.parts.InputPin3EditPart;
+import org.eclipse.uml2.diagram.activity.edit.parts.InputPin4EditPart;
+import org.eclipse.uml2.diagram.activity.edit.parts.InputPin5EditPart;
+import org.eclipse.uml2.diagram.activity.edit.parts.InputPin6EditPart;
+import org.eclipse.uml2.diagram.activity.edit.parts.InputPin7EditPart;
+import org.eclipse.uml2.diagram.activity.edit.parts.InputPinEditPart;
+import org.eclipse.uml2.diagram.activity.edit.parts.JoinNode2EditPart;
+import org.eclipse.uml2.diagram.activity.edit.parts.JoinNode3EditPart;
+import org.eclipse.uml2.diagram.activity.edit.parts.JoinNodeEditPart;
+import org.eclipse.uml2.diagram.activity.edit.parts.LoopNode2EditPart;
+import org.eclipse.uml2.diagram.activity.edit.parts.LoopNodeEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.LoopNodeLoopNodeContentPaneCompartment2EditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.LoopNodeLoopNodeContentPaneCompartmentEditPart;
+import org.eclipse.uml2.diagram.activity.edit.parts.MergeNode2EditPart;
+import org.eclipse.uml2.diagram.activity.edit.parts.MergeNodeEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.OpaqueAction2EditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.OpaqueAction3EditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.OpaqueActionEditPart;
+import org.eclipse.uml2.diagram.activity.edit.parts.OpaqueBehaviorEditPart;
+import org.eclipse.uml2.diagram.activity.edit.parts.OutputPin2EditPart;
+import org.eclipse.uml2.diagram.activity.edit.parts.OutputPin3EditPart;
+import org.eclipse.uml2.diagram.activity.edit.parts.OutputPin4EditPart;
+import org.eclipse.uml2.diagram.activity.edit.parts.OutputPin5EditPart;
+import org.eclipse.uml2.diagram.activity.edit.parts.OutputPinEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.PackageEditPart;
+import org.eclipse.uml2.diagram.activity.edit.parts.Pin2EditPart;
+import org.eclipse.uml2.diagram.activity.edit.parts.Pin3EditPart;
+import org.eclipse.uml2.diagram.activity.edit.parts.PinEditPart;
+import org.eclipse.uml2.diagram.activity.edit.parts.SendSignalAction2EditPart;
+import org.eclipse.uml2.diagram.activity.edit.parts.SendSignalActionEditPart;
+import org.eclipse.uml2.diagram.activity.edit.parts.StructuredActivityNode2EditPart;
+import org.eclipse.uml2.diagram.activity.edit.parts.StructuredActivityNode3EditPart;
+import org.eclipse.uml2.diagram.activity.edit.parts.StructuredActivityNode4EditPart;
+import org.eclipse.uml2.diagram.activity.edit.parts.StructuredActivityNodeEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.StructuredActivityNodeStructuredActivityContentPaneCompartment2EditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.StructuredActivityNodeStructuredActivityContentPaneCompartment3EditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.StructuredActivityNodeStructuredActivityContentPaneCompartment4EditPart;
@@ -513,6 +573,228 @@ public class UMLModelingAssistantProvider extends ModelingAssistantProvider {
 	 */
 	public List getRelTypesOnSource(IAdaptable source) {
 		IGraphicalEditPart sourceEditPart = (IGraphicalEditPart) source.getAdapter(IGraphicalEditPart.class);
+		if (sourceEditPart instanceof AcceptEventActionEditPart) {
+			return ((AcceptEventActionEditPart) sourceEditPart).getMARelTypesOnSource();
+		}
+		if (sourceEditPart instanceof AcceptEventAction2EditPart) {
+			return ((AcceptEventAction2EditPart) sourceEditPart).getMARelTypesOnSource();
+		}
+		if (sourceEditPart instanceof ActivityFinalNodeEditPart) {
+			return ((ActivityFinalNodeEditPart) sourceEditPart).getMARelTypesOnSource();
+		}
+		if (sourceEditPart instanceof DecisionNodeEditPart) {
+			return ((DecisionNodeEditPart) sourceEditPart).getMARelTypesOnSource();
+		}
+		if (sourceEditPart instanceof MergeNodeEditPart) {
+			return ((MergeNodeEditPart) sourceEditPart).getMARelTypesOnSource();
+		}
+		if (sourceEditPart instanceof InitialNodeEditPart) {
+			return ((InitialNodeEditPart) sourceEditPart).getMARelTypesOnSource();
+		}
+		if (sourceEditPart instanceof DataStoreNodeEditPart) {
+			return ((DataStoreNodeEditPart) sourceEditPart).getMARelTypesOnSource();
+		}
+		if (sourceEditPart instanceof CentralBufferNodeEditPart) {
+			return ((CentralBufferNodeEditPart) sourceEditPart).getMARelTypesOnSource();
+		}
+		if (sourceEditPart instanceof OpaqueActionEditPart) {
+			return ((OpaqueActionEditPart) sourceEditPart).getMARelTypesOnSource();
+		}
+		if (sourceEditPart instanceof OutputPinEditPart) {
+			return ((OutputPinEditPart) sourceEditPart).getMARelTypesOnSource();
+		}
+		if (sourceEditPart instanceof FlowFinalNodeEditPart) {
+			return ((FlowFinalNodeEditPart) sourceEditPart).getMARelTypesOnSource();
+		}
+		if (sourceEditPart instanceof ForkNodeEditPart) {
+			return ((ForkNodeEditPart) sourceEditPart).getMARelTypesOnSource();
+		}
+		if (sourceEditPart instanceof JoinNodeEditPart) {
+			return ((JoinNodeEditPart) sourceEditPart).getMARelTypesOnSource();
+		}
+		if (sourceEditPart instanceof PinEditPart) {
+			return ((PinEditPart) sourceEditPart).getMARelTypesOnSource();
+		}
+		if (sourceEditPart instanceof CreateObjectActionEditPart) {
+			return ((CreateObjectActionEditPart) sourceEditPart).getMARelTypesOnSource();
+		}
+		if (sourceEditPart instanceof OutputPin2EditPart) {
+			return ((OutputPin2EditPart) sourceEditPart).getMARelTypesOnSource();
+		}
+		if (sourceEditPart instanceof AddStructuralFeatureValueActionEditPart) {
+			return ((AddStructuralFeatureValueActionEditPart) sourceEditPart).getMARelTypesOnSource();
+		}
+		if (sourceEditPart instanceof InputPinEditPart) {
+			return ((InputPinEditPart) sourceEditPart).getMARelTypesOnSource();
+		}
+		if (sourceEditPart instanceof InputPin2EditPart) {
+			return ((InputPin2EditPart) sourceEditPart).getMARelTypesOnSource();
+		}
+		if (sourceEditPart instanceof InputPin3EditPart) {
+			return ((InputPin3EditPart) sourceEditPart).getMARelTypesOnSource();
+		}
+		if (sourceEditPart instanceof CallBehaviorActionEditPart) {
+			return ((CallBehaviorActionEditPart) sourceEditPart).getMARelTypesOnSource();
+		}
+		if (sourceEditPart instanceof OutputPin3EditPart) {
+			return ((OutputPin3EditPart) sourceEditPart).getMARelTypesOnSource();
+		}
+		if (sourceEditPart instanceof InputPin4EditPart) {
+			return ((InputPin4EditPart) sourceEditPart).getMARelTypesOnSource();
+		}
+		if (sourceEditPart instanceof CallOperationActionEditPart) {
+			return ((CallOperationActionEditPart) sourceEditPart).getMARelTypesOnSource();
+		}
+		if (sourceEditPart instanceof InputPin5EditPart) {
+			return ((InputPin5EditPart) sourceEditPart).getMARelTypesOnSource();
+		}
+		if (sourceEditPart instanceof StructuredActivityNodeEditPart) {
+			return ((StructuredActivityNodeEditPart) sourceEditPart).getMARelTypesOnSource();
+		}
+		if (sourceEditPart instanceof StructuredActivityNode2EditPart) {
+			return ((StructuredActivityNode2EditPart) sourceEditPart).getMARelTypesOnSource();
+		}
+		if (sourceEditPart instanceof OpaqueAction2EditPart) {
+			return ((OpaqueAction2EditPart) sourceEditPart).getMARelTypesOnSource();
+		}
+		if (sourceEditPart instanceof AcceptEventAction3EditPart) {
+			return ((AcceptEventAction3EditPart) sourceEditPart).getMARelTypesOnSource();
+		}
+		if (sourceEditPart instanceof AcceptEventAction4EditPart) {
+			return ((AcceptEventAction4EditPart) sourceEditPart).getMARelTypesOnSource();
+		}
+		if (sourceEditPart instanceof ActivityFinalNode2EditPart) {
+			return ((ActivityFinalNode2EditPart) sourceEditPart).getMARelTypesOnSource();
+		}
+		if (sourceEditPart instanceof DecisionNode2EditPart) {
+			return ((DecisionNode2EditPart) sourceEditPart).getMARelTypesOnSource();
+		}
+		if (sourceEditPart instanceof FlowFinalNode2EditPart) {
+			return ((FlowFinalNode2EditPart) sourceEditPart).getMARelTypesOnSource();
+		}
+		if (sourceEditPart instanceof Pin2EditPart) {
+			return ((Pin2EditPart) sourceEditPart).getMARelTypesOnSource();
+		}
+		if (sourceEditPart instanceof CreateObjectAction2EditPart) {
+			return ((CreateObjectAction2EditPart) sourceEditPart).getMARelTypesOnSource();
+		}
+		if (sourceEditPart instanceof CallBehaviorAction2EditPart) {
+			return ((CallBehaviorAction2EditPart) sourceEditPart).getMARelTypesOnSource();
+		}
+		if (sourceEditPart instanceof CallOperationAction2EditPart) {
+			return ((CallOperationAction2EditPart) sourceEditPart).getMARelTypesOnSource();
+		}
+		if (sourceEditPart instanceof ForkNode2EditPart) {
+			return ((ForkNode2EditPart) sourceEditPart).getMARelTypesOnSource();
+		}
+		if (sourceEditPart instanceof JoinNode2EditPart) {
+			return ((JoinNode2EditPart) sourceEditPart).getMARelTypesOnSource();
+		}
+		if (sourceEditPart instanceof AddStructuralFeatureValueAction2EditPart) {
+			return ((AddStructuralFeatureValueAction2EditPart) sourceEditPart).getMARelTypesOnSource();
+		}
+		if (sourceEditPart instanceof DataStoreNode2EditPart) {
+			return ((DataStoreNode2EditPart) sourceEditPart).getMARelTypesOnSource();
+		}
+		if (sourceEditPart instanceof CentralBufferNode2EditPart) {
+			return ((CentralBufferNode2EditPart) sourceEditPart).getMARelTypesOnSource();
+		}
+		if (sourceEditPart instanceof InputPin6EditPart) {
+			return ((InputPin6EditPart) sourceEditPart).getMARelTypesOnSource();
+		}
+		if (sourceEditPart instanceof OutputPin4EditPart) {
+			return ((OutputPin4EditPart) sourceEditPart).getMARelTypesOnSource();
+		}
+		if (sourceEditPart instanceof ActivityParameterNodeEditPart) {
+			return ((ActivityParameterNodeEditPart) sourceEditPart).getMARelTypesOnSource();
+		}
+		if (sourceEditPart instanceof SendSignalActionEditPart) {
+			return ((SendSignalActionEditPart) sourceEditPart).getMARelTypesOnSource();
+		}
+		if (sourceEditPart instanceof AcceptEventAction5EditPart) {
+			return ((AcceptEventAction5EditPart) sourceEditPart).getMARelTypesOnSource();
+		}
+		if (sourceEditPart instanceof AcceptEventAction6EditPart) {
+			return ((AcceptEventAction6EditPart) sourceEditPart).getMARelTypesOnSource();
+		}
+		if (sourceEditPart instanceof ActivityFinalNode3EditPart) {
+			return ((ActivityFinalNode3EditPart) sourceEditPart).getMARelTypesOnSource();
+		}
+		if (sourceEditPart instanceof DecisionNode3EditPart) {
+			return ((DecisionNode3EditPart) sourceEditPart).getMARelTypesOnSource();
+		}
+		if (sourceEditPart instanceof MergeNode2EditPart) {
+			return ((MergeNode2EditPart) sourceEditPart).getMARelTypesOnSource();
+		}
+		if (sourceEditPart instanceof InitialNode2EditPart) {
+			return ((InitialNode2EditPart) sourceEditPart).getMARelTypesOnSource();
+		}
+		if (sourceEditPart instanceof DataStoreNode3EditPart) {
+			return ((DataStoreNode3EditPart) sourceEditPart).getMARelTypesOnSource();
+		}
+		if (sourceEditPart instanceof CentralBufferNode3EditPart) {
+			return ((CentralBufferNode3EditPart) sourceEditPart).getMARelTypesOnSource();
+		}
+		if (sourceEditPart instanceof OpaqueAction3EditPart) {
+			return ((OpaqueAction3EditPart) sourceEditPart).getMARelTypesOnSource();
+		}
+		if (sourceEditPart instanceof FlowFinalNode3EditPart) {
+			return ((FlowFinalNode3EditPart) sourceEditPart).getMARelTypesOnSource();
+		}
+		if (sourceEditPart instanceof ForkNode3EditPart) {
+			return ((ForkNode3EditPart) sourceEditPart).getMARelTypesOnSource();
+		}
+		if (sourceEditPart instanceof JoinNode3EditPart) {
+			return ((JoinNode3EditPart) sourceEditPart).getMARelTypesOnSource();
+		}
+		if (sourceEditPart instanceof Pin3EditPart) {
+			return ((Pin3EditPart) sourceEditPart).getMARelTypesOnSource();
+		}
+		if (sourceEditPart instanceof CreateObjectAction3EditPart) {
+			return ((CreateObjectAction3EditPart) sourceEditPart).getMARelTypesOnSource();
+		}
+		if (sourceEditPart instanceof AddStructuralFeatureValueAction3EditPart) {
+			return ((AddStructuralFeatureValueAction3EditPart) sourceEditPart).getMARelTypesOnSource();
+		}
+		if (sourceEditPart instanceof CallBehaviorAction3EditPart) {
+			return ((CallBehaviorAction3EditPart) sourceEditPart).getMARelTypesOnSource();
+		}
+		if (sourceEditPart instanceof CallOperationAction3EditPart) {
+			return ((CallOperationAction3EditPart) sourceEditPart).getMARelTypesOnSource();
+		}
+		if (sourceEditPart instanceof StructuredActivityNode3EditPart) {
+			return ((StructuredActivityNode3EditPart) sourceEditPart).getMARelTypesOnSource();
+		}
+		if (sourceEditPart instanceof StructuredActivityNode4EditPart) {
+			return ((StructuredActivityNode4EditPart) sourceEditPart).getMARelTypesOnSource();
+		}
+		if (sourceEditPart instanceof InputPin7EditPart) {
+			return ((InputPin7EditPart) sourceEditPart).getMARelTypesOnSource();
+		}
+		if (sourceEditPart instanceof OutputPin5EditPart) {
+			return ((OutputPin5EditPart) sourceEditPart).getMARelTypesOnSource();
+		}
+		if (sourceEditPart instanceof SendSignalAction2EditPart) {
+			return ((SendSignalAction2EditPart) sourceEditPart).getMARelTypesOnSource();
+		}
+		if (sourceEditPart instanceof LoopNode2EditPart) {
+			return ((LoopNode2EditPart) sourceEditPart).getMARelTypesOnSource();
+		}
+		if (sourceEditPart instanceof ConditionalNode2EditPart) {
+			return ((ConditionalNode2EditPart) sourceEditPart).getMARelTypesOnSource();
+		}
+		if (sourceEditPart instanceof ExpansionRegion2EditPart) {
+			return ((ExpansionRegion2EditPart) sourceEditPart).getMARelTypesOnSource();
+		}
+		if (sourceEditPart instanceof LoopNodeEditPart) {
+			return ((LoopNodeEditPart) sourceEditPart).getMARelTypesOnSource();
+		}
+		if (sourceEditPart instanceof ConditionalNodeEditPart) {
+			return ((ConditionalNodeEditPart) sourceEditPart).getMARelTypesOnSource();
+		}
+		if (sourceEditPart instanceof ExpansionRegionEditPart) {
+			return ((ExpansionRegionEditPart) sourceEditPart).getMARelTypesOnSource();
+		}
 		return Collections.EMPTY_LIST;
 	}
 
@@ -521,17 +803,239 @@ public class UMLModelingAssistantProvider extends ModelingAssistantProvider {
 	 */
 	public List getRelTypesOnTarget(IAdaptable target) {
 		IGraphicalEditPart targetEditPart = (IGraphicalEditPart) target.getAdapter(IGraphicalEditPart.class);
+		if (targetEditPart instanceof ActivityEditPart) {
+			return ((ActivityEditPart) targetEditPart).getMARelTypesOnTarget();
+		}
 		if (targetEditPart instanceof ConstraintEditPart) {
-			List types = new ArrayList();
-			types.add(UMLElementTypes.ActionLocalPrecondition_4003);
-			types.add(UMLElementTypes.ActionLocalPostcondition_4006);
-			return types;
+			return ((ConstraintEditPart) targetEditPart).getMARelTypesOnTarget();
 		}
 		if (targetEditPart instanceof Constraint2EditPart) {
-			List types = new ArrayList();
-			types.add(UMLElementTypes.ActionLocalPrecondition_4003);
-			types.add(UMLElementTypes.ActionLocalPostcondition_4006);
-			return types;
+			return ((Constraint2EditPart) targetEditPart).getMARelTypesOnTarget();
+		}
+		if (targetEditPart instanceof AcceptEventActionEditPart) {
+			return ((AcceptEventActionEditPart) targetEditPart).getMARelTypesOnTarget();
+		}
+		if (targetEditPart instanceof AcceptEventAction2EditPart) {
+			return ((AcceptEventAction2EditPart) targetEditPart).getMARelTypesOnTarget();
+		}
+		if (targetEditPart instanceof ActivityFinalNodeEditPart) {
+			return ((ActivityFinalNodeEditPart) targetEditPart).getMARelTypesOnTarget();
+		}
+		if (targetEditPart instanceof DecisionNodeEditPart) {
+			return ((DecisionNodeEditPart) targetEditPart).getMARelTypesOnTarget();
+		}
+		if (targetEditPart instanceof MergeNodeEditPart) {
+			return ((MergeNodeEditPart) targetEditPart).getMARelTypesOnTarget();
+		}
+		if (targetEditPart instanceof InitialNodeEditPart) {
+			return ((InitialNodeEditPart) targetEditPart).getMARelTypesOnTarget();
+		}
+		if (targetEditPart instanceof DataStoreNodeEditPart) {
+			return ((DataStoreNodeEditPart) targetEditPart).getMARelTypesOnTarget();
+		}
+		if (targetEditPart instanceof CentralBufferNodeEditPart) {
+			return ((CentralBufferNodeEditPart) targetEditPart).getMARelTypesOnTarget();
+		}
+		if (targetEditPart instanceof OpaqueActionEditPart) {
+			return ((OpaqueActionEditPart) targetEditPart).getMARelTypesOnTarget();
+		}
+		if (targetEditPart instanceof OutputPinEditPart) {
+			return ((OutputPinEditPart) targetEditPart).getMARelTypesOnTarget();
+		}
+		if (targetEditPart instanceof FlowFinalNodeEditPart) {
+			return ((FlowFinalNodeEditPart) targetEditPart).getMARelTypesOnTarget();
+		}
+		if (targetEditPart instanceof ForkNodeEditPart) {
+			return ((ForkNodeEditPart) targetEditPart).getMARelTypesOnTarget();
+		}
+		if (targetEditPart instanceof JoinNodeEditPart) {
+			return ((JoinNodeEditPart) targetEditPart).getMARelTypesOnTarget();
+		}
+		if (targetEditPart instanceof PinEditPart) {
+			return ((PinEditPart) targetEditPart).getMARelTypesOnTarget();
+		}
+		if (targetEditPart instanceof CreateObjectActionEditPart) {
+			return ((CreateObjectActionEditPart) targetEditPart).getMARelTypesOnTarget();
+		}
+		if (targetEditPart instanceof OutputPin2EditPart) {
+			return ((OutputPin2EditPart) targetEditPart).getMARelTypesOnTarget();
+		}
+		if (targetEditPart instanceof AddStructuralFeatureValueActionEditPart) {
+			return ((AddStructuralFeatureValueActionEditPart) targetEditPart).getMARelTypesOnTarget();
+		}
+		if (targetEditPart instanceof InputPinEditPart) {
+			return ((InputPinEditPart) targetEditPart).getMARelTypesOnTarget();
+		}
+		if (targetEditPart instanceof InputPin2EditPart) {
+			return ((InputPin2EditPart) targetEditPart).getMARelTypesOnTarget();
+		}
+		if (targetEditPart instanceof InputPin3EditPart) {
+			return ((InputPin3EditPart) targetEditPart).getMARelTypesOnTarget();
+		}
+		if (targetEditPart instanceof CallBehaviorActionEditPart) {
+			return ((CallBehaviorActionEditPart) targetEditPart).getMARelTypesOnTarget();
+		}
+		if (targetEditPart instanceof OutputPin3EditPart) {
+			return ((OutputPin3EditPart) targetEditPart).getMARelTypesOnTarget();
+		}
+		if (targetEditPart instanceof InputPin4EditPart) {
+			return ((InputPin4EditPart) targetEditPart).getMARelTypesOnTarget();
+		}
+		if (targetEditPart instanceof CallOperationActionEditPart) {
+			return ((CallOperationActionEditPart) targetEditPart).getMARelTypesOnTarget();
+		}
+		if (targetEditPart instanceof InputPin5EditPart) {
+			return ((InputPin5EditPart) targetEditPart).getMARelTypesOnTarget();
+		}
+		if (targetEditPart instanceof StructuredActivityNodeEditPart) {
+			return ((StructuredActivityNodeEditPart) targetEditPart).getMARelTypesOnTarget();
+		}
+		if (targetEditPart instanceof StructuredActivityNode2EditPart) {
+			return ((StructuredActivityNode2EditPart) targetEditPart).getMARelTypesOnTarget();
+		}
+		if (targetEditPart instanceof OpaqueAction2EditPart) {
+			return ((OpaqueAction2EditPart) targetEditPart).getMARelTypesOnTarget();
+		}
+		if (targetEditPart instanceof AcceptEventAction3EditPart) {
+			return ((AcceptEventAction3EditPart) targetEditPart).getMARelTypesOnTarget();
+		}
+		if (targetEditPart instanceof AcceptEventAction4EditPart) {
+			return ((AcceptEventAction4EditPart) targetEditPart).getMARelTypesOnTarget();
+		}
+		if (targetEditPart instanceof ActivityFinalNode2EditPart) {
+			return ((ActivityFinalNode2EditPart) targetEditPart).getMARelTypesOnTarget();
+		}
+		if (targetEditPart instanceof DecisionNode2EditPart) {
+			return ((DecisionNode2EditPart) targetEditPart).getMARelTypesOnTarget();
+		}
+		if (targetEditPart instanceof FlowFinalNode2EditPart) {
+			return ((FlowFinalNode2EditPart) targetEditPart).getMARelTypesOnTarget();
+		}
+		if (targetEditPart instanceof Pin2EditPart) {
+			return ((Pin2EditPart) targetEditPart).getMARelTypesOnTarget();
+		}
+		if (targetEditPart instanceof CreateObjectAction2EditPart) {
+			return ((CreateObjectAction2EditPart) targetEditPart).getMARelTypesOnTarget();
+		}
+		if (targetEditPart instanceof CallBehaviorAction2EditPart) {
+			return ((CallBehaviorAction2EditPart) targetEditPart).getMARelTypesOnTarget();
+		}
+		if (targetEditPart instanceof CallOperationAction2EditPart) {
+			return ((CallOperationAction2EditPart) targetEditPart).getMARelTypesOnTarget();
+		}
+		if (targetEditPart instanceof ForkNode2EditPart) {
+			return ((ForkNode2EditPart) targetEditPart).getMARelTypesOnTarget();
+		}
+		if (targetEditPart instanceof JoinNode2EditPart) {
+			return ((JoinNode2EditPart) targetEditPart).getMARelTypesOnTarget();
+		}
+		if (targetEditPart instanceof AddStructuralFeatureValueAction2EditPart) {
+			return ((AddStructuralFeatureValueAction2EditPart) targetEditPart).getMARelTypesOnTarget();
+		}
+		if (targetEditPart instanceof DataStoreNode2EditPart) {
+			return ((DataStoreNode2EditPart) targetEditPart).getMARelTypesOnTarget();
+		}
+		if (targetEditPart instanceof CentralBufferNode2EditPart) {
+			return ((CentralBufferNode2EditPart) targetEditPart).getMARelTypesOnTarget();
+		}
+		if (targetEditPart instanceof InputPin6EditPart) {
+			return ((InputPin6EditPart) targetEditPart).getMARelTypesOnTarget();
+		}
+		if (targetEditPart instanceof OutputPin4EditPart) {
+			return ((OutputPin4EditPart) targetEditPart).getMARelTypesOnTarget();
+		}
+		if (targetEditPart instanceof OpaqueBehaviorEditPart) {
+			return ((OpaqueBehaviorEditPart) targetEditPart).getMARelTypesOnTarget();
+		}
+		if (targetEditPart instanceof ActivityParameterNodeEditPart) {
+			return ((ActivityParameterNodeEditPart) targetEditPart).getMARelTypesOnTarget();
+		}
+		if (targetEditPart instanceof SendSignalActionEditPart) {
+			return ((SendSignalActionEditPart) targetEditPart).getMARelTypesOnTarget();
+		}
+		if (targetEditPart instanceof AcceptEventAction5EditPart) {
+			return ((AcceptEventAction5EditPart) targetEditPart).getMARelTypesOnTarget();
+		}
+		if (targetEditPart instanceof AcceptEventAction6EditPart) {
+			return ((AcceptEventAction6EditPart) targetEditPart).getMARelTypesOnTarget();
+		}
+		if (targetEditPart instanceof ActivityFinalNode3EditPart) {
+			return ((ActivityFinalNode3EditPart) targetEditPart).getMARelTypesOnTarget();
+		}
+		if (targetEditPart instanceof DecisionNode3EditPart) {
+			return ((DecisionNode3EditPart) targetEditPart).getMARelTypesOnTarget();
+		}
+		if (targetEditPart instanceof MergeNode2EditPart) {
+			return ((MergeNode2EditPart) targetEditPart).getMARelTypesOnTarget();
+		}
+		if (targetEditPart instanceof InitialNode2EditPart) {
+			return ((InitialNode2EditPart) targetEditPart).getMARelTypesOnTarget();
+		}
+		if (targetEditPart instanceof DataStoreNode3EditPart) {
+			return ((DataStoreNode3EditPart) targetEditPart).getMARelTypesOnTarget();
+		}
+		if (targetEditPart instanceof CentralBufferNode3EditPart) {
+			return ((CentralBufferNode3EditPart) targetEditPart).getMARelTypesOnTarget();
+		}
+		if (targetEditPart instanceof OpaqueAction3EditPart) {
+			return ((OpaqueAction3EditPart) targetEditPart).getMARelTypesOnTarget();
+		}
+		if (targetEditPart instanceof FlowFinalNode3EditPart) {
+			return ((FlowFinalNode3EditPart) targetEditPart).getMARelTypesOnTarget();
+		}
+		if (targetEditPart instanceof ForkNode3EditPart) {
+			return ((ForkNode3EditPart) targetEditPart).getMARelTypesOnTarget();
+		}
+		if (targetEditPart instanceof JoinNode3EditPart) {
+			return ((JoinNode3EditPart) targetEditPart).getMARelTypesOnTarget();
+		}
+		if (targetEditPart instanceof Pin3EditPart) {
+			return ((Pin3EditPart) targetEditPart).getMARelTypesOnTarget();
+		}
+		if (targetEditPart instanceof CreateObjectAction3EditPart) {
+			return ((CreateObjectAction3EditPart) targetEditPart).getMARelTypesOnTarget();
+		}
+		if (targetEditPart instanceof AddStructuralFeatureValueAction3EditPart) {
+			return ((AddStructuralFeatureValueAction3EditPart) targetEditPart).getMARelTypesOnTarget();
+		}
+		if (targetEditPart instanceof CallBehaviorAction3EditPart) {
+			return ((CallBehaviorAction3EditPart) targetEditPart).getMARelTypesOnTarget();
+		}
+		if (targetEditPart instanceof CallOperationAction3EditPart) {
+			return ((CallOperationAction3EditPart) targetEditPart).getMARelTypesOnTarget();
+		}
+		if (targetEditPart instanceof StructuredActivityNode3EditPart) {
+			return ((StructuredActivityNode3EditPart) targetEditPart).getMARelTypesOnTarget();
+		}
+		if (targetEditPart instanceof StructuredActivityNode4EditPart) {
+			return ((StructuredActivityNode4EditPart) targetEditPart).getMARelTypesOnTarget();
+		}
+		if (targetEditPart instanceof InputPin7EditPart) {
+			return ((InputPin7EditPart) targetEditPart).getMARelTypesOnTarget();
+		}
+		if (targetEditPart instanceof OutputPin5EditPart) {
+			return ((OutputPin5EditPart) targetEditPart).getMARelTypesOnTarget();
+		}
+		if (targetEditPart instanceof SendSignalAction2EditPart) {
+			return ((SendSignalAction2EditPart) targetEditPart).getMARelTypesOnTarget();
+		}
+		if (targetEditPart instanceof LoopNode2EditPart) {
+			return ((LoopNode2EditPart) targetEditPart).getMARelTypesOnTarget();
+		}
+		if (targetEditPart instanceof ConditionalNode2EditPart) {
+			return ((ConditionalNode2EditPart) targetEditPart).getMARelTypesOnTarget();
+		}
+		if (targetEditPart instanceof ExpansionRegion2EditPart) {
+			return ((ExpansionRegion2EditPart) targetEditPart).getMARelTypesOnTarget();
+		}
+		if (targetEditPart instanceof LoopNodeEditPart) {
+			return ((LoopNodeEditPart) targetEditPart).getMARelTypesOnTarget();
+		}
+		if (targetEditPart instanceof ConditionalNodeEditPart) {
+			return ((ConditionalNodeEditPart) targetEditPart).getMARelTypesOnTarget();
+		}
+		if (targetEditPart instanceof ExpansionRegionEditPart) {
+			return ((ExpansionRegionEditPart) targetEditPart).getMARelTypesOnTarget();
 		}
 		return Collections.EMPTY_LIST;
 	}
@@ -542,6 +1046,228 @@ public class UMLModelingAssistantProvider extends ModelingAssistantProvider {
 	public List getRelTypesOnSourceAndTarget(IAdaptable source, IAdaptable target) {
 		IGraphicalEditPart sourceEditPart = (IGraphicalEditPart) source.getAdapter(IGraphicalEditPart.class);
 		IGraphicalEditPart targetEditPart = (IGraphicalEditPart) target.getAdapter(IGraphicalEditPart.class);
+		if (sourceEditPart instanceof AcceptEventActionEditPart) {
+			return ((AcceptEventActionEditPart) sourceEditPart).getMARelTypesOnSourceAndTarget(targetEditPart);
+		}
+		if (sourceEditPart instanceof AcceptEventAction2EditPart) {
+			return ((AcceptEventAction2EditPart) sourceEditPart).getMARelTypesOnSourceAndTarget(targetEditPart);
+		}
+		if (sourceEditPart instanceof ActivityFinalNodeEditPart) {
+			return ((ActivityFinalNodeEditPart) sourceEditPart).getMARelTypesOnSourceAndTarget(targetEditPart);
+		}
+		if (sourceEditPart instanceof DecisionNodeEditPart) {
+			return ((DecisionNodeEditPart) sourceEditPart).getMARelTypesOnSourceAndTarget(targetEditPart);
+		}
+		if (sourceEditPart instanceof MergeNodeEditPart) {
+			return ((MergeNodeEditPart) sourceEditPart).getMARelTypesOnSourceAndTarget(targetEditPart);
+		}
+		if (sourceEditPart instanceof InitialNodeEditPart) {
+			return ((InitialNodeEditPart) sourceEditPart).getMARelTypesOnSourceAndTarget(targetEditPart);
+		}
+		if (sourceEditPart instanceof DataStoreNodeEditPart) {
+			return ((DataStoreNodeEditPart) sourceEditPart).getMARelTypesOnSourceAndTarget(targetEditPart);
+		}
+		if (sourceEditPart instanceof CentralBufferNodeEditPart) {
+			return ((CentralBufferNodeEditPart) sourceEditPart).getMARelTypesOnSourceAndTarget(targetEditPart);
+		}
+		if (sourceEditPart instanceof OpaqueActionEditPart) {
+			return ((OpaqueActionEditPart) sourceEditPart).getMARelTypesOnSourceAndTarget(targetEditPart);
+		}
+		if (sourceEditPart instanceof OutputPinEditPart) {
+			return ((OutputPinEditPart) sourceEditPart).getMARelTypesOnSourceAndTarget(targetEditPart);
+		}
+		if (sourceEditPart instanceof FlowFinalNodeEditPart) {
+			return ((FlowFinalNodeEditPart) sourceEditPart).getMARelTypesOnSourceAndTarget(targetEditPart);
+		}
+		if (sourceEditPart instanceof ForkNodeEditPart) {
+			return ((ForkNodeEditPart) sourceEditPart).getMARelTypesOnSourceAndTarget(targetEditPart);
+		}
+		if (sourceEditPart instanceof JoinNodeEditPart) {
+			return ((JoinNodeEditPart) sourceEditPart).getMARelTypesOnSourceAndTarget(targetEditPart);
+		}
+		if (sourceEditPart instanceof PinEditPart) {
+			return ((PinEditPart) sourceEditPart).getMARelTypesOnSourceAndTarget(targetEditPart);
+		}
+		if (sourceEditPart instanceof CreateObjectActionEditPart) {
+			return ((CreateObjectActionEditPart) sourceEditPart).getMARelTypesOnSourceAndTarget(targetEditPart);
+		}
+		if (sourceEditPart instanceof OutputPin2EditPart) {
+			return ((OutputPin2EditPart) sourceEditPart).getMARelTypesOnSourceAndTarget(targetEditPart);
+		}
+		if (sourceEditPart instanceof AddStructuralFeatureValueActionEditPart) {
+			return ((AddStructuralFeatureValueActionEditPart) sourceEditPart).getMARelTypesOnSourceAndTarget(targetEditPart);
+		}
+		if (sourceEditPart instanceof InputPinEditPart) {
+			return ((InputPinEditPart) sourceEditPart).getMARelTypesOnSourceAndTarget(targetEditPart);
+		}
+		if (sourceEditPart instanceof InputPin2EditPart) {
+			return ((InputPin2EditPart) sourceEditPart).getMARelTypesOnSourceAndTarget(targetEditPart);
+		}
+		if (sourceEditPart instanceof InputPin3EditPart) {
+			return ((InputPin3EditPart) sourceEditPart).getMARelTypesOnSourceAndTarget(targetEditPart);
+		}
+		if (sourceEditPart instanceof CallBehaviorActionEditPart) {
+			return ((CallBehaviorActionEditPart) sourceEditPart).getMARelTypesOnSourceAndTarget(targetEditPart);
+		}
+		if (sourceEditPart instanceof OutputPin3EditPart) {
+			return ((OutputPin3EditPart) sourceEditPart).getMARelTypesOnSourceAndTarget(targetEditPart);
+		}
+		if (sourceEditPart instanceof InputPin4EditPart) {
+			return ((InputPin4EditPart) sourceEditPart).getMARelTypesOnSourceAndTarget(targetEditPart);
+		}
+		if (sourceEditPart instanceof CallOperationActionEditPart) {
+			return ((CallOperationActionEditPart) sourceEditPart).getMARelTypesOnSourceAndTarget(targetEditPart);
+		}
+		if (sourceEditPart instanceof InputPin5EditPart) {
+			return ((InputPin5EditPart) sourceEditPart).getMARelTypesOnSourceAndTarget(targetEditPart);
+		}
+		if (sourceEditPart instanceof StructuredActivityNodeEditPart) {
+			return ((StructuredActivityNodeEditPart) sourceEditPart).getMARelTypesOnSourceAndTarget(targetEditPart);
+		}
+		if (sourceEditPart instanceof StructuredActivityNode2EditPart) {
+			return ((StructuredActivityNode2EditPart) sourceEditPart).getMARelTypesOnSourceAndTarget(targetEditPart);
+		}
+		if (sourceEditPart instanceof OpaqueAction2EditPart) {
+			return ((OpaqueAction2EditPart) sourceEditPart).getMARelTypesOnSourceAndTarget(targetEditPart);
+		}
+		if (sourceEditPart instanceof AcceptEventAction3EditPart) {
+			return ((AcceptEventAction3EditPart) sourceEditPart).getMARelTypesOnSourceAndTarget(targetEditPart);
+		}
+		if (sourceEditPart instanceof AcceptEventAction4EditPart) {
+			return ((AcceptEventAction4EditPart) sourceEditPart).getMARelTypesOnSourceAndTarget(targetEditPart);
+		}
+		if (sourceEditPart instanceof ActivityFinalNode2EditPart) {
+			return ((ActivityFinalNode2EditPart) sourceEditPart).getMARelTypesOnSourceAndTarget(targetEditPart);
+		}
+		if (sourceEditPart instanceof DecisionNode2EditPart) {
+			return ((DecisionNode2EditPart) sourceEditPart).getMARelTypesOnSourceAndTarget(targetEditPart);
+		}
+		if (sourceEditPart instanceof FlowFinalNode2EditPart) {
+			return ((FlowFinalNode2EditPart) sourceEditPart).getMARelTypesOnSourceAndTarget(targetEditPart);
+		}
+		if (sourceEditPart instanceof Pin2EditPart) {
+			return ((Pin2EditPart) sourceEditPart).getMARelTypesOnSourceAndTarget(targetEditPart);
+		}
+		if (sourceEditPart instanceof CreateObjectAction2EditPart) {
+			return ((CreateObjectAction2EditPart) sourceEditPart).getMARelTypesOnSourceAndTarget(targetEditPart);
+		}
+		if (sourceEditPart instanceof CallBehaviorAction2EditPart) {
+			return ((CallBehaviorAction2EditPart) sourceEditPart).getMARelTypesOnSourceAndTarget(targetEditPart);
+		}
+		if (sourceEditPart instanceof CallOperationAction2EditPart) {
+			return ((CallOperationAction2EditPart) sourceEditPart).getMARelTypesOnSourceAndTarget(targetEditPart);
+		}
+		if (sourceEditPart instanceof ForkNode2EditPart) {
+			return ((ForkNode2EditPart) sourceEditPart).getMARelTypesOnSourceAndTarget(targetEditPart);
+		}
+		if (sourceEditPart instanceof JoinNode2EditPart) {
+			return ((JoinNode2EditPart) sourceEditPart).getMARelTypesOnSourceAndTarget(targetEditPart);
+		}
+		if (sourceEditPart instanceof AddStructuralFeatureValueAction2EditPart) {
+			return ((AddStructuralFeatureValueAction2EditPart) sourceEditPart).getMARelTypesOnSourceAndTarget(targetEditPart);
+		}
+		if (sourceEditPart instanceof DataStoreNode2EditPart) {
+			return ((DataStoreNode2EditPart) sourceEditPart).getMARelTypesOnSourceAndTarget(targetEditPart);
+		}
+		if (sourceEditPart instanceof CentralBufferNode2EditPart) {
+			return ((CentralBufferNode2EditPart) sourceEditPart).getMARelTypesOnSourceAndTarget(targetEditPart);
+		}
+		if (sourceEditPart instanceof InputPin6EditPart) {
+			return ((InputPin6EditPart) sourceEditPart).getMARelTypesOnSourceAndTarget(targetEditPart);
+		}
+		if (sourceEditPart instanceof OutputPin4EditPart) {
+			return ((OutputPin4EditPart) sourceEditPart).getMARelTypesOnSourceAndTarget(targetEditPart);
+		}
+		if (sourceEditPart instanceof ActivityParameterNodeEditPart) {
+			return ((ActivityParameterNodeEditPart) sourceEditPart).getMARelTypesOnSourceAndTarget(targetEditPart);
+		}
+		if (sourceEditPart instanceof SendSignalActionEditPart) {
+			return ((SendSignalActionEditPart) sourceEditPart).getMARelTypesOnSourceAndTarget(targetEditPart);
+		}
+		if (sourceEditPart instanceof AcceptEventAction5EditPart) {
+			return ((AcceptEventAction5EditPart) sourceEditPart).getMARelTypesOnSourceAndTarget(targetEditPart);
+		}
+		if (sourceEditPart instanceof AcceptEventAction6EditPart) {
+			return ((AcceptEventAction6EditPart) sourceEditPart).getMARelTypesOnSourceAndTarget(targetEditPart);
+		}
+		if (sourceEditPart instanceof ActivityFinalNode3EditPart) {
+			return ((ActivityFinalNode3EditPart) sourceEditPart).getMARelTypesOnSourceAndTarget(targetEditPart);
+		}
+		if (sourceEditPart instanceof DecisionNode3EditPart) {
+			return ((DecisionNode3EditPart) sourceEditPart).getMARelTypesOnSourceAndTarget(targetEditPart);
+		}
+		if (sourceEditPart instanceof MergeNode2EditPart) {
+			return ((MergeNode2EditPart) sourceEditPart).getMARelTypesOnSourceAndTarget(targetEditPart);
+		}
+		if (sourceEditPart instanceof InitialNode2EditPart) {
+			return ((InitialNode2EditPart) sourceEditPart).getMARelTypesOnSourceAndTarget(targetEditPart);
+		}
+		if (sourceEditPart instanceof DataStoreNode3EditPart) {
+			return ((DataStoreNode3EditPart) sourceEditPart).getMARelTypesOnSourceAndTarget(targetEditPart);
+		}
+		if (sourceEditPart instanceof CentralBufferNode3EditPart) {
+			return ((CentralBufferNode3EditPart) sourceEditPart).getMARelTypesOnSourceAndTarget(targetEditPart);
+		}
+		if (sourceEditPart instanceof OpaqueAction3EditPart) {
+			return ((OpaqueAction3EditPart) sourceEditPart).getMARelTypesOnSourceAndTarget(targetEditPart);
+		}
+		if (sourceEditPart instanceof FlowFinalNode3EditPart) {
+			return ((FlowFinalNode3EditPart) sourceEditPart).getMARelTypesOnSourceAndTarget(targetEditPart);
+		}
+		if (sourceEditPart instanceof ForkNode3EditPart) {
+			return ((ForkNode3EditPart) sourceEditPart).getMARelTypesOnSourceAndTarget(targetEditPart);
+		}
+		if (sourceEditPart instanceof JoinNode3EditPart) {
+			return ((JoinNode3EditPart) sourceEditPart).getMARelTypesOnSourceAndTarget(targetEditPart);
+		}
+		if (sourceEditPart instanceof Pin3EditPart) {
+			return ((Pin3EditPart) sourceEditPart).getMARelTypesOnSourceAndTarget(targetEditPart);
+		}
+		if (sourceEditPart instanceof CreateObjectAction3EditPart) {
+			return ((CreateObjectAction3EditPart) sourceEditPart).getMARelTypesOnSourceAndTarget(targetEditPart);
+		}
+		if (sourceEditPart instanceof AddStructuralFeatureValueAction3EditPart) {
+			return ((AddStructuralFeatureValueAction3EditPart) sourceEditPart).getMARelTypesOnSourceAndTarget(targetEditPart);
+		}
+		if (sourceEditPart instanceof CallBehaviorAction3EditPart) {
+			return ((CallBehaviorAction3EditPart) sourceEditPart).getMARelTypesOnSourceAndTarget(targetEditPart);
+		}
+		if (sourceEditPart instanceof CallOperationAction3EditPart) {
+			return ((CallOperationAction3EditPart) sourceEditPart).getMARelTypesOnSourceAndTarget(targetEditPart);
+		}
+		if (sourceEditPart instanceof StructuredActivityNode3EditPart) {
+			return ((StructuredActivityNode3EditPart) sourceEditPart).getMARelTypesOnSourceAndTarget(targetEditPart);
+		}
+		if (sourceEditPart instanceof StructuredActivityNode4EditPart) {
+			return ((StructuredActivityNode4EditPart) sourceEditPart).getMARelTypesOnSourceAndTarget(targetEditPart);
+		}
+		if (sourceEditPart instanceof InputPin7EditPart) {
+			return ((InputPin7EditPart) sourceEditPart).getMARelTypesOnSourceAndTarget(targetEditPart);
+		}
+		if (sourceEditPart instanceof OutputPin5EditPart) {
+			return ((OutputPin5EditPart) sourceEditPart).getMARelTypesOnSourceAndTarget(targetEditPart);
+		}
+		if (sourceEditPart instanceof SendSignalAction2EditPart) {
+			return ((SendSignalAction2EditPart) sourceEditPart).getMARelTypesOnSourceAndTarget(targetEditPart);
+		}
+		if (sourceEditPart instanceof LoopNode2EditPart) {
+			return ((LoopNode2EditPart) sourceEditPart).getMARelTypesOnSourceAndTarget(targetEditPart);
+		}
+		if (sourceEditPart instanceof ConditionalNode2EditPart) {
+			return ((ConditionalNode2EditPart) sourceEditPart).getMARelTypesOnSourceAndTarget(targetEditPart);
+		}
+		if (sourceEditPart instanceof ExpansionRegion2EditPart) {
+			return ((ExpansionRegion2EditPart) sourceEditPart).getMARelTypesOnSourceAndTarget(targetEditPart);
+		}
+		if (sourceEditPart instanceof LoopNodeEditPart) {
+			return ((LoopNodeEditPart) sourceEditPart).getMARelTypesOnSourceAndTarget(targetEditPart);
+		}
+		if (sourceEditPart instanceof ConditionalNodeEditPart) {
+			return ((ConditionalNodeEditPart) sourceEditPart).getMARelTypesOnSourceAndTarget(targetEditPart);
+		}
+		if (sourceEditPart instanceof ExpansionRegionEditPart) {
+			return ((ExpansionRegionEditPart) sourceEditPart).getMARelTypesOnSourceAndTarget(targetEditPart);
+		}
 		return Collections.EMPTY_LIST;
 	}
 
@@ -550,13 +1276,239 @@ public class UMLModelingAssistantProvider extends ModelingAssistantProvider {
 	 */
 	public List getTypesForSource(IAdaptable target, IElementType relationshipType) {
 		IGraphicalEditPart targetEditPart = (IGraphicalEditPart) target.getAdapter(IGraphicalEditPart.class);
+		if (targetEditPart instanceof ActivityEditPart) {
+			return ((ActivityEditPart) targetEditPart).getMATypesForSource(relationshipType);
+		}
 		if (targetEditPart instanceof ConstraintEditPart) {
-			List types = new ArrayList();
-			return types;
+			return ((ConstraintEditPart) targetEditPart).getMATypesForSource(relationshipType);
 		}
 		if (targetEditPart instanceof Constraint2EditPart) {
-			List types = new ArrayList();
-			return types;
+			return ((Constraint2EditPart) targetEditPart).getMATypesForSource(relationshipType);
+		}
+		if (targetEditPart instanceof AcceptEventActionEditPart) {
+			return ((AcceptEventActionEditPart) targetEditPart).getMATypesForSource(relationshipType);
+		}
+		if (targetEditPart instanceof AcceptEventAction2EditPart) {
+			return ((AcceptEventAction2EditPart) targetEditPart).getMATypesForSource(relationshipType);
+		}
+		if (targetEditPart instanceof ActivityFinalNodeEditPart) {
+			return ((ActivityFinalNodeEditPart) targetEditPart).getMATypesForSource(relationshipType);
+		}
+		if (targetEditPart instanceof DecisionNodeEditPart) {
+			return ((DecisionNodeEditPart) targetEditPart).getMATypesForSource(relationshipType);
+		}
+		if (targetEditPart instanceof MergeNodeEditPart) {
+			return ((MergeNodeEditPart) targetEditPart).getMATypesForSource(relationshipType);
+		}
+		if (targetEditPart instanceof InitialNodeEditPart) {
+			return ((InitialNodeEditPart) targetEditPart).getMATypesForSource(relationshipType);
+		}
+		if (targetEditPart instanceof DataStoreNodeEditPart) {
+			return ((DataStoreNodeEditPart) targetEditPart).getMATypesForSource(relationshipType);
+		}
+		if (targetEditPart instanceof CentralBufferNodeEditPart) {
+			return ((CentralBufferNodeEditPart) targetEditPart).getMATypesForSource(relationshipType);
+		}
+		if (targetEditPart instanceof OpaqueActionEditPart) {
+			return ((OpaqueActionEditPart) targetEditPart).getMATypesForSource(relationshipType);
+		}
+		if (targetEditPart instanceof OutputPinEditPart) {
+			return ((OutputPinEditPart) targetEditPart).getMATypesForSource(relationshipType);
+		}
+		if (targetEditPart instanceof FlowFinalNodeEditPart) {
+			return ((FlowFinalNodeEditPart) targetEditPart).getMATypesForSource(relationshipType);
+		}
+		if (targetEditPart instanceof ForkNodeEditPart) {
+			return ((ForkNodeEditPart) targetEditPart).getMATypesForSource(relationshipType);
+		}
+		if (targetEditPart instanceof JoinNodeEditPart) {
+			return ((JoinNodeEditPart) targetEditPart).getMATypesForSource(relationshipType);
+		}
+		if (targetEditPart instanceof PinEditPart) {
+			return ((PinEditPart) targetEditPart).getMATypesForSource(relationshipType);
+		}
+		if (targetEditPart instanceof CreateObjectActionEditPart) {
+			return ((CreateObjectActionEditPart) targetEditPart).getMATypesForSource(relationshipType);
+		}
+		if (targetEditPart instanceof OutputPin2EditPart) {
+			return ((OutputPin2EditPart) targetEditPart).getMATypesForSource(relationshipType);
+		}
+		if (targetEditPart instanceof AddStructuralFeatureValueActionEditPart) {
+			return ((AddStructuralFeatureValueActionEditPart) targetEditPart).getMATypesForSource(relationshipType);
+		}
+		if (targetEditPart instanceof InputPinEditPart) {
+			return ((InputPinEditPart) targetEditPart).getMATypesForSource(relationshipType);
+		}
+		if (targetEditPart instanceof InputPin2EditPart) {
+			return ((InputPin2EditPart) targetEditPart).getMATypesForSource(relationshipType);
+		}
+		if (targetEditPart instanceof InputPin3EditPart) {
+			return ((InputPin3EditPart) targetEditPart).getMATypesForSource(relationshipType);
+		}
+		if (targetEditPart instanceof CallBehaviorActionEditPart) {
+			return ((CallBehaviorActionEditPart) targetEditPart).getMATypesForSource(relationshipType);
+		}
+		if (targetEditPart instanceof OutputPin3EditPart) {
+			return ((OutputPin3EditPart) targetEditPart).getMATypesForSource(relationshipType);
+		}
+		if (targetEditPart instanceof InputPin4EditPart) {
+			return ((InputPin4EditPart) targetEditPart).getMATypesForSource(relationshipType);
+		}
+		if (targetEditPart instanceof CallOperationActionEditPart) {
+			return ((CallOperationActionEditPart) targetEditPart).getMATypesForSource(relationshipType);
+		}
+		if (targetEditPart instanceof InputPin5EditPart) {
+			return ((InputPin5EditPart) targetEditPart).getMATypesForSource(relationshipType);
+		}
+		if (targetEditPart instanceof StructuredActivityNodeEditPart) {
+			return ((StructuredActivityNodeEditPart) targetEditPart).getMATypesForSource(relationshipType);
+		}
+		if (targetEditPart instanceof StructuredActivityNode2EditPart) {
+			return ((StructuredActivityNode2EditPart) targetEditPart).getMATypesForSource(relationshipType);
+		}
+		if (targetEditPart instanceof OpaqueAction2EditPart) {
+			return ((OpaqueAction2EditPart) targetEditPart).getMATypesForSource(relationshipType);
+		}
+		if (targetEditPart instanceof AcceptEventAction3EditPart) {
+			return ((AcceptEventAction3EditPart) targetEditPart).getMATypesForSource(relationshipType);
+		}
+		if (targetEditPart instanceof AcceptEventAction4EditPart) {
+			return ((AcceptEventAction4EditPart) targetEditPart).getMATypesForSource(relationshipType);
+		}
+		if (targetEditPart instanceof ActivityFinalNode2EditPart) {
+			return ((ActivityFinalNode2EditPart) targetEditPart).getMATypesForSource(relationshipType);
+		}
+		if (targetEditPart instanceof DecisionNode2EditPart) {
+			return ((DecisionNode2EditPart) targetEditPart).getMATypesForSource(relationshipType);
+		}
+		if (targetEditPart instanceof FlowFinalNode2EditPart) {
+			return ((FlowFinalNode2EditPart) targetEditPart).getMATypesForSource(relationshipType);
+		}
+		if (targetEditPart instanceof Pin2EditPart) {
+			return ((Pin2EditPart) targetEditPart).getMATypesForSource(relationshipType);
+		}
+		if (targetEditPart instanceof CreateObjectAction2EditPart) {
+			return ((CreateObjectAction2EditPart) targetEditPart).getMATypesForSource(relationshipType);
+		}
+		if (targetEditPart instanceof CallBehaviorAction2EditPart) {
+			return ((CallBehaviorAction2EditPart) targetEditPart).getMATypesForSource(relationshipType);
+		}
+		if (targetEditPart instanceof CallOperationAction2EditPart) {
+			return ((CallOperationAction2EditPart) targetEditPart).getMATypesForSource(relationshipType);
+		}
+		if (targetEditPart instanceof ForkNode2EditPart) {
+			return ((ForkNode2EditPart) targetEditPart).getMATypesForSource(relationshipType);
+		}
+		if (targetEditPart instanceof JoinNode2EditPart) {
+			return ((JoinNode2EditPart) targetEditPart).getMATypesForSource(relationshipType);
+		}
+		if (targetEditPart instanceof AddStructuralFeatureValueAction2EditPart) {
+			return ((AddStructuralFeatureValueAction2EditPart) targetEditPart).getMATypesForSource(relationshipType);
+		}
+		if (targetEditPart instanceof DataStoreNode2EditPart) {
+			return ((DataStoreNode2EditPart) targetEditPart).getMATypesForSource(relationshipType);
+		}
+		if (targetEditPart instanceof CentralBufferNode2EditPart) {
+			return ((CentralBufferNode2EditPart) targetEditPart).getMATypesForSource(relationshipType);
+		}
+		if (targetEditPart instanceof InputPin6EditPart) {
+			return ((InputPin6EditPart) targetEditPart).getMATypesForSource(relationshipType);
+		}
+		if (targetEditPart instanceof OutputPin4EditPart) {
+			return ((OutputPin4EditPart) targetEditPart).getMATypesForSource(relationshipType);
+		}
+		if (targetEditPart instanceof OpaqueBehaviorEditPart) {
+			return ((OpaqueBehaviorEditPart) targetEditPart).getMATypesForSource(relationshipType);
+		}
+		if (targetEditPart instanceof ActivityParameterNodeEditPart) {
+			return ((ActivityParameterNodeEditPart) targetEditPart).getMATypesForSource(relationshipType);
+		}
+		if (targetEditPart instanceof SendSignalActionEditPart) {
+			return ((SendSignalActionEditPart) targetEditPart).getMATypesForSource(relationshipType);
+		}
+		if (targetEditPart instanceof AcceptEventAction5EditPart) {
+			return ((AcceptEventAction5EditPart) targetEditPart).getMATypesForSource(relationshipType);
+		}
+		if (targetEditPart instanceof AcceptEventAction6EditPart) {
+			return ((AcceptEventAction6EditPart) targetEditPart).getMATypesForSource(relationshipType);
+		}
+		if (targetEditPart instanceof ActivityFinalNode3EditPart) {
+			return ((ActivityFinalNode3EditPart) targetEditPart).getMATypesForSource(relationshipType);
+		}
+		if (targetEditPart instanceof DecisionNode3EditPart) {
+			return ((DecisionNode3EditPart) targetEditPart).getMATypesForSource(relationshipType);
+		}
+		if (targetEditPart instanceof MergeNode2EditPart) {
+			return ((MergeNode2EditPart) targetEditPart).getMATypesForSource(relationshipType);
+		}
+		if (targetEditPart instanceof InitialNode2EditPart) {
+			return ((InitialNode2EditPart) targetEditPart).getMATypesForSource(relationshipType);
+		}
+		if (targetEditPart instanceof DataStoreNode3EditPart) {
+			return ((DataStoreNode3EditPart) targetEditPart).getMATypesForSource(relationshipType);
+		}
+		if (targetEditPart instanceof CentralBufferNode3EditPart) {
+			return ((CentralBufferNode3EditPart) targetEditPart).getMATypesForSource(relationshipType);
+		}
+		if (targetEditPart instanceof OpaqueAction3EditPart) {
+			return ((OpaqueAction3EditPart) targetEditPart).getMATypesForSource(relationshipType);
+		}
+		if (targetEditPart instanceof FlowFinalNode3EditPart) {
+			return ((FlowFinalNode3EditPart) targetEditPart).getMATypesForSource(relationshipType);
+		}
+		if (targetEditPart instanceof ForkNode3EditPart) {
+			return ((ForkNode3EditPart) targetEditPart).getMATypesForSource(relationshipType);
+		}
+		if (targetEditPart instanceof JoinNode3EditPart) {
+			return ((JoinNode3EditPart) targetEditPart).getMATypesForSource(relationshipType);
+		}
+		if (targetEditPart instanceof Pin3EditPart) {
+			return ((Pin3EditPart) targetEditPart).getMATypesForSource(relationshipType);
+		}
+		if (targetEditPart instanceof CreateObjectAction3EditPart) {
+			return ((CreateObjectAction3EditPart) targetEditPart).getMATypesForSource(relationshipType);
+		}
+		if (targetEditPart instanceof AddStructuralFeatureValueAction3EditPart) {
+			return ((AddStructuralFeatureValueAction3EditPart) targetEditPart).getMATypesForSource(relationshipType);
+		}
+		if (targetEditPart instanceof CallBehaviorAction3EditPart) {
+			return ((CallBehaviorAction3EditPart) targetEditPart).getMATypesForSource(relationshipType);
+		}
+		if (targetEditPart instanceof CallOperationAction3EditPart) {
+			return ((CallOperationAction3EditPart) targetEditPart).getMATypesForSource(relationshipType);
+		}
+		if (targetEditPart instanceof StructuredActivityNode3EditPart) {
+			return ((StructuredActivityNode3EditPart) targetEditPart).getMATypesForSource(relationshipType);
+		}
+		if (targetEditPart instanceof StructuredActivityNode4EditPart) {
+			return ((StructuredActivityNode4EditPart) targetEditPart).getMATypesForSource(relationshipType);
+		}
+		if (targetEditPart instanceof InputPin7EditPart) {
+			return ((InputPin7EditPart) targetEditPart).getMATypesForSource(relationshipType);
+		}
+		if (targetEditPart instanceof OutputPin5EditPart) {
+			return ((OutputPin5EditPart) targetEditPart).getMATypesForSource(relationshipType);
+		}
+		if (targetEditPart instanceof SendSignalAction2EditPart) {
+			return ((SendSignalAction2EditPart) targetEditPart).getMATypesForSource(relationshipType);
+		}
+		if (targetEditPart instanceof LoopNode2EditPart) {
+			return ((LoopNode2EditPart) targetEditPart).getMATypesForSource(relationshipType);
+		}
+		if (targetEditPart instanceof ConditionalNode2EditPart) {
+			return ((ConditionalNode2EditPart) targetEditPart).getMATypesForSource(relationshipType);
+		}
+		if (targetEditPart instanceof ExpansionRegion2EditPart) {
+			return ((ExpansionRegion2EditPart) targetEditPart).getMATypesForSource(relationshipType);
+		}
+		if (targetEditPart instanceof LoopNodeEditPart) {
+			return ((LoopNodeEditPart) targetEditPart).getMATypesForSource(relationshipType);
+		}
+		if (targetEditPart instanceof ConditionalNodeEditPart) {
+			return ((ConditionalNodeEditPart) targetEditPart).getMATypesForSource(relationshipType);
+		}
+		if (targetEditPart instanceof ExpansionRegionEditPart) {
+			return ((ExpansionRegionEditPart) targetEditPart).getMATypesForSource(relationshipType);
 		}
 		return Collections.EMPTY_LIST;
 	}
@@ -566,6 +1518,228 @@ public class UMLModelingAssistantProvider extends ModelingAssistantProvider {
 	 */
 	public List getTypesForTarget(IAdaptable source, IElementType relationshipType) {
 		IGraphicalEditPart sourceEditPart = (IGraphicalEditPart) source.getAdapter(IGraphicalEditPart.class);
+		if (sourceEditPart instanceof AcceptEventActionEditPart) {
+			return ((AcceptEventActionEditPart) sourceEditPart).getMATypesForTarget(relationshipType);
+		}
+		if (sourceEditPart instanceof AcceptEventAction2EditPart) {
+			return ((AcceptEventAction2EditPart) sourceEditPart).getMATypesForTarget(relationshipType);
+		}
+		if (sourceEditPart instanceof ActivityFinalNodeEditPart) {
+			return ((ActivityFinalNodeEditPart) sourceEditPart).getMATypesForTarget(relationshipType);
+		}
+		if (sourceEditPart instanceof DecisionNodeEditPart) {
+			return ((DecisionNodeEditPart) sourceEditPart).getMATypesForTarget(relationshipType);
+		}
+		if (sourceEditPart instanceof MergeNodeEditPart) {
+			return ((MergeNodeEditPart) sourceEditPart).getMATypesForTarget(relationshipType);
+		}
+		if (sourceEditPart instanceof InitialNodeEditPart) {
+			return ((InitialNodeEditPart) sourceEditPart).getMATypesForTarget(relationshipType);
+		}
+		if (sourceEditPart instanceof DataStoreNodeEditPart) {
+			return ((DataStoreNodeEditPart) sourceEditPart).getMATypesForTarget(relationshipType);
+		}
+		if (sourceEditPart instanceof CentralBufferNodeEditPart) {
+			return ((CentralBufferNodeEditPart) sourceEditPart).getMATypesForTarget(relationshipType);
+		}
+		if (sourceEditPart instanceof OpaqueActionEditPart) {
+			return ((OpaqueActionEditPart) sourceEditPart).getMATypesForTarget(relationshipType);
+		}
+		if (sourceEditPart instanceof OutputPinEditPart) {
+			return ((OutputPinEditPart) sourceEditPart).getMATypesForTarget(relationshipType);
+		}
+		if (sourceEditPart instanceof FlowFinalNodeEditPart) {
+			return ((FlowFinalNodeEditPart) sourceEditPart).getMATypesForTarget(relationshipType);
+		}
+		if (sourceEditPart instanceof ForkNodeEditPart) {
+			return ((ForkNodeEditPart) sourceEditPart).getMATypesForTarget(relationshipType);
+		}
+		if (sourceEditPart instanceof JoinNodeEditPart) {
+			return ((JoinNodeEditPart) sourceEditPart).getMATypesForTarget(relationshipType);
+		}
+		if (sourceEditPart instanceof PinEditPart) {
+			return ((PinEditPart) sourceEditPart).getMATypesForTarget(relationshipType);
+		}
+		if (sourceEditPart instanceof CreateObjectActionEditPart) {
+			return ((CreateObjectActionEditPart) sourceEditPart).getMATypesForTarget(relationshipType);
+		}
+		if (sourceEditPart instanceof OutputPin2EditPart) {
+			return ((OutputPin2EditPart) sourceEditPart).getMATypesForTarget(relationshipType);
+		}
+		if (sourceEditPart instanceof AddStructuralFeatureValueActionEditPart) {
+			return ((AddStructuralFeatureValueActionEditPart) sourceEditPart).getMATypesForTarget(relationshipType);
+		}
+		if (sourceEditPart instanceof InputPinEditPart) {
+			return ((InputPinEditPart) sourceEditPart).getMATypesForTarget(relationshipType);
+		}
+		if (sourceEditPart instanceof InputPin2EditPart) {
+			return ((InputPin2EditPart) sourceEditPart).getMATypesForTarget(relationshipType);
+		}
+		if (sourceEditPart instanceof InputPin3EditPart) {
+			return ((InputPin3EditPart) sourceEditPart).getMATypesForTarget(relationshipType);
+		}
+		if (sourceEditPart instanceof CallBehaviorActionEditPart) {
+			return ((CallBehaviorActionEditPart) sourceEditPart).getMATypesForTarget(relationshipType);
+		}
+		if (sourceEditPart instanceof OutputPin3EditPart) {
+			return ((OutputPin3EditPart) sourceEditPart).getMATypesForTarget(relationshipType);
+		}
+		if (sourceEditPart instanceof InputPin4EditPart) {
+			return ((InputPin4EditPart) sourceEditPart).getMATypesForTarget(relationshipType);
+		}
+		if (sourceEditPart instanceof CallOperationActionEditPart) {
+			return ((CallOperationActionEditPart) sourceEditPart).getMATypesForTarget(relationshipType);
+		}
+		if (sourceEditPart instanceof InputPin5EditPart) {
+			return ((InputPin5EditPart) sourceEditPart).getMATypesForTarget(relationshipType);
+		}
+		if (sourceEditPart instanceof StructuredActivityNodeEditPart) {
+			return ((StructuredActivityNodeEditPart) sourceEditPart).getMATypesForTarget(relationshipType);
+		}
+		if (sourceEditPart instanceof StructuredActivityNode2EditPart) {
+			return ((StructuredActivityNode2EditPart) sourceEditPart).getMATypesForTarget(relationshipType);
+		}
+		if (sourceEditPart instanceof OpaqueAction2EditPart) {
+			return ((OpaqueAction2EditPart) sourceEditPart).getMATypesForTarget(relationshipType);
+		}
+		if (sourceEditPart instanceof AcceptEventAction3EditPart) {
+			return ((AcceptEventAction3EditPart) sourceEditPart).getMATypesForTarget(relationshipType);
+		}
+		if (sourceEditPart instanceof AcceptEventAction4EditPart) {
+			return ((AcceptEventAction4EditPart) sourceEditPart).getMATypesForTarget(relationshipType);
+		}
+		if (sourceEditPart instanceof ActivityFinalNode2EditPart) {
+			return ((ActivityFinalNode2EditPart) sourceEditPart).getMATypesForTarget(relationshipType);
+		}
+		if (sourceEditPart instanceof DecisionNode2EditPart) {
+			return ((DecisionNode2EditPart) sourceEditPart).getMATypesForTarget(relationshipType);
+		}
+		if (sourceEditPart instanceof FlowFinalNode2EditPart) {
+			return ((FlowFinalNode2EditPart) sourceEditPart).getMATypesForTarget(relationshipType);
+		}
+		if (sourceEditPart instanceof Pin2EditPart) {
+			return ((Pin2EditPart) sourceEditPart).getMATypesForTarget(relationshipType);
+		}
+		if (sourceEditPart instanceof CreateObjectAction2EditPart) {
+			return ((CreateObjectAction2EditPart) sourceEditPart).getMATypesForTarget(relationshipType);
+		}
+		if (sourceEditPart instanceof CallBehaviorAction2EditPart) {
+			return ((CallBehaviorAction2EditPart) sourceEditPart).getMATypesForTarget(relationshipType);
+		}
+		if (sourceEditPart instanceof CallOperationAction2EditPart) {
+			return ((CallOperationAction2EditPart) sourceEditPart).getMATypesForTarget(relationshipType);
+		}
+		if (sourceEditPart instanceof ForkNode2EditPart) {
+			return ((ForkNode2EditPart) sourceEditPart).getMATypesForTarget(relationshipType);
+		}
+		if (sourceEditPart instanceof JoinNode2EditPart) {
+			return ((JoinNode2EditPart) sourceEditPart).getMATypesForTarget(relationshipType);
+		}
+		if (sourceEditPart instanceof AddStructuralFeatureValueAction2EditPart) {
+			return ((AddStructuralFeatureValueAction2EditPart) sourceEditPart).getMATypesForTarget(relationshipType);
+		}
+		if (sourceEditPart instanceof DataStoreNode2EditPart) {
+			return ((DataStoreNode2EditPart) sourceEditPart).getMATypesForTarget(relationshipType);
+		}
+		if (sourceEditPart instanceof CentralBufferNode2EditPart) {
+			return ((CentralBufferNode2EditPart) sourceEditPart).getMATypesForTarget(relationshipType);
+		}
+		if (sourceEditPart instanceof InputPin6EditPart) {
+			return ((InputPin6EditPart) sourceEditPart).getMATypesForTarget(relationshipType);
+		}
+		if (sourceEditPart instanceof OutputPin4EditPart) {
+			return ((OutputPin4EditPart) sourceEditPart).getMATypesForTarget(relationshipType);
+		}
+		if (sourceEditPart instanceof ActivityParameterNodeEditPart) {
+			return ((ActivityParameterNodeEditPart) sourceEditPart).getMATypesForTarget(relationshipType);
+		}
+		if (sourceEditPart instanceof SendSignalActionEditPart) {
+			return ((SendSignalActionEditPart) sourceEditPart).getMATypesForTarget(relationshipType);
+		}
+		if (sourceEditPart instanceof AcceptEventAction5EditPart) {
+			return ((AcceptEventAction5EditPart) sourceEditPart).getMATypesForTarget(relationshipType);
+		}
+		if (sourceEditPart instanceof AcceptEventAction6EditPart) {
+			return ((AcceptEventAction6EditPart) sourceEditPart).getMATypesForTarget(relationshipType);
+		}
+		if (sourceEditPart instanceof ActivityFinalNode3EditPart) {
+			return ((ActivityFinalNode3EditPart) sourceEditPart).getMATypesForTarget(relationshipType);
+		}
+		if (sourceEditPart instanceof DecisionNode3EditPart) {
+			return ((DecisionNode3EditPart) sourceEditPart).getMATypesForTarget(relationshipType);
+		}
+		if (sourceEditPart instanceof MergeNode2EditPart) {
+			return ((MergeNode2EditPart) sourceEditPart).getMATypesForTarget(relationshipType);
+		}
+		if (sourceEditPart instanceof InitialNode2EditPart) {
+			return ((InitialNode2EditPart) sourceEditPart).getMATypesForTarget(relationshipType);
+		}
+		if (sourceEditPart instanceof DataStoreNode3EditPart) {
+			return ((DataStoreNode3EditPart) sourceEditPart).getMATypesForTarget(relationshipType);
+		}
+		if (sourceEditPart instanceof CentralBufferNode3EditPart) {
+			return ((CentralBufferNode3EditPart) sourceEditPart).getMATypesForTarget(relationshipType);
+		}
+		if (sourceEditPart instanceof OpaqueAction3EditPart) {
+			return ((OpaqueAction3EditPart) sourceEditPart).getMATypesForTarget(relationshipType);
+		}
+		if (sourceEditPart instanceof FlowFinalNode3EditPart) {
+			return ((FlowFinalNode3EditPart) sourceEditPart).getMATypesForTarget(relationshipType);
+		}
+		if (sourceEditPart instanceof ForkNode3EditPart) {
+			return ((ForkNode3EditPart) sourceEditPart).getMATypesForTarget(relationshipType);
+		}
+		if (sourceEditPart instanceof JoinNode3EditPart) {
+			return ((JoinNode3EditPart) sourceEditPart).getMATypesForTarget(relationshipType);
+		}
+		if (sourceEditPart instanceof Pin3EditPart) {
+			return ((Pin3EditPart) sourceEditPart).getMATypesForTarget(relationshipType);
+		}
+		if (sourceEditPart instanceof CreateObjectAction3EditPart) {
+			return ((CreateObjectAction3EditPart) sourceEditPart).getMATypesForTarget(relationshipType);
+		}
+		if (sourceEditPart instanceof AddStructuralFeatureValueAction3EditPart) {
+			return ((AddStructuralFeatureValueAction3EditPart) sourceEditPart).getMATypesForTarget(relationshipType);
+		}
+		if (sourceEditPart instanceof CallBehaviorAction3EditPart) {
+			return ((CallBehaviorAction3EditPart) sourceEditPart).getMATypesForTarget(relationshipType);
+		}
+		if (sourceEditPart instanceof CallOperationAction3EditPart) {
+			return ((CallOperationAction3EditPart) sourceEditPart).getMATypesForTarget(relationshipType);
+		}
+		if (sourceEditPart instanceof StructuredActivityNode3EditPart) {
+			return ((StructuredActivityNode3EditPart) sourceEditPart).getMATypesForTarget(relationshipType);
+		}
+		if (sourceEditPart instanceof StructuredActivityNode4EditPart) {
+			return ((StructuredActivityNode4EditPart) sourceEditPart).getMATypesForTarget(relationshipType);
+		}
+		if (sourceEditPart instanceof InputPin7EditPart) {
+			return ((InputPin7EditPart) sourceEditPart).getMATypesForTarget(relationshipType);
+		}
+		if (sourceEditPart instanceof OutputPin5EditPart) {
+			return ((OutputPin5EditPart) sourceEditPart).getMATypesForTarget(relationshipType);
+		}
+		if (sourceEditPart instanceof SendSignalAction2EditPart) {
+			return ((SendSignalAction2EditPart) sourceEditPart).getMATypesForTarget(relationshipType);
+		}
+		if (sourceEditPart instanceof LoopNode2EditPart) {
+			return ((LoopNode2EditPart) sourceEditPart).getMATypesForTarget(relationshipType);
+		}
+		if (sourceEditPart instanceof ConditionalNode2EditPart) {
+			return ((ConditionalNode2EditPart) sourceEditPart).getMATypesForTarget(relationshipType);
+		}
+		if (sourceEditPart instanceof ExpansionRegion2EditPart) {
+			return ((ExpansionRegion2EditPart) sourceEditPart).getMATypesForTarget(relationshipType);
+		}
+		if (sourceEditPart instanceof LoopNodeEditPart) {
+			return ((LoopNodeEditPart) sourceEditPart).getMATypesForTarget(relationshipType);
+		}
+		if (sourceEditPart instanceof ConditionalNodeEditPart) {
+			return ((ConditionalNodeEditPart) sourceEditPart).getMATypesForTarget(relationshipType);
+		}
+		if (sourceEditPart instanceof ExpansionRegionEditPart) {
+			return ((ExpansionRegionEditPart) sourceEditPart).getMATypesForTarget(relationshipType);
+		}
 		return Collections.EMPTY_LIST;
 	}
 

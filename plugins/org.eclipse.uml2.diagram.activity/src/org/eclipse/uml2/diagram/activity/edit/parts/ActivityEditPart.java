@@ -1,5 +1,8 @@
 package org.eclipse.uml2.diagram.activity.edit.parts;
 
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
 import org.eclipse.draw2d.Border;
 import org.eclipse.draw2d.BorderLayout;
 import org.eclipse.draw2d.IFigure;
@@ -19,6 +22,7 @@ import org.eclipse.gef.Request;
 import org.eclipse.gef.commands.Command;
 import org.eclipse.gef.editpolicies.LayoutEditPolicy;
 import org.eclipse.gef.editpolicies.NonResizableEditPolicy;
+import org.eclipse.gef.handles.MoveHandle;
 import org.eclipse.gef.requests.CreateRequest;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.AbstractBorderedShapeEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.IBorderItemEditPart;
@@ -30,6 +34,7 @@ import org.eclipse.gmf.runtime.diagram.ui.editpolicies.XYLayoutEditPolicy;
 import org.eclipse.gmf.runtime.draw2d.ui.figures.ConstrainedToolbarLayout;
 import org.eclipse.gmf.runtime.draw2d.ui.figures.IBorderItemLocator;
 import org.eclipse.gmf.runtime.draw2d.ui.figures.OneLineBorder;
+import org.eclipse.gmf.runtime.emf.type.core.IElementType;
 import org.eclipse.gmf.runtime.gef.ui.figures.DefaultSizeNodeFigure;
 import org.eclipse.gmf.runtime.gef.ui.figures.NodeFigure;
 import org.eclipse.gmf.runtime.notation.View;
@@ -39,6 +44,7 @@ import org.eclipse.uml2.diagram.activity.edit.policies.ActivityCanonicalEditPoli
 import org.eclipse.uml2.diagram.activity.edit.policies.ActivityItemSemanticEditPolicy;
 import org.eclipse.uml2.diagram.activity.part.UMLDiagramUpdater;
 import org.eclipse.uml2.diagram.activity.part.UMLVisualIDRegistry;
+import org.eclipse.uml2.diagram.activity.providers.UMLElementTypes;
 import org.eclipse.uml2.diagram.common.draw2d.BisectionBorderItemLocator;
 import org.eclipse.uml2.diagram.common.draw2d.CenterLayout;
 import org.eclipse.uml2.diagram.common.editparts.PrimaryShapeEditPart;
@@ -99,7 +105,14 @@ public class ActivityEditPart extends AbstractBorderedShapeEditPart implements P
 
 			protected EditPolicy createChildEditPolicy(EditPart child) {
 				if (child instanceof IBorderItemEditPart) {
-					return new BorderItemSelectionEditPolicy();
+					return new BorderItemSelectionEditPolicy() {
+
+						protected List createSelectionHandles() {
+							MoveHandle mh = new MoveHandle((GraphicalEditPart) getHost());
+							mh.setBorder(null);
+							return Collections.singletonList(mh);
+						}
+					};
 				}
 				EditPolicy result = child.getEditPolicy(EditPolicy.PRIMARY_DRAG_ROLE);
 				if (result == null) {
@@ -277,6 +290,89 @@ public class ActivityEditPart extends AbstractBorderedShapeEditPart implements P
 	 */
 	public EditPart getPrimaryChildEditPart() {
 		return getChildBySemanticHint(UMLVisualIDRegistry.getType(ActivityNameEditPart.VISUAL_ID));
+	}
+
+	/**
+	 * @generated
+	 */
+	public List/*<org.eclipse.gmf.runtime.emf.type.core.IElementType>*/getMARelTypesOnTarget() {
+		List/*<org.eclipse.gmf.runtime.emf.type.core.IElementType>*/types = new ArrayList/*<org.eclipse.gmf.runtime.emf.type.core.IElementType>*/();
+		types.add(UMLElementTypes.ObjectNodeSelection_4004);
+		return types;
+	}
+
+	/**
+	 * @generated
+	 */
+	public List/*<org.eclipse.gmf.runtime.emf.type.core.IElementType>*/getMATypesForSource(IElementType relationshipType) {
+		List/*<org.eclipse.gmf.runtime.emf.type.core.IElementType>*/types = new ArrayList/*<org.eclipse.gmf.runtime.emf.type.core.IElementType>*/();
+		if (relationshipType == UMLElementTypes.ObjectNodeSelection_4004) {
+			types.add(UMLElementTypes.DataStoreNode_3036);
+		}
+		if (relationshipType == UMLElementTypes.ObjectNodeSelection_4004) {
+			types.add(UMLElementTypes.CentralBufferNode_3037);
+		}
+		if (relationshipType == UMLElementTypes.ObjectNodeSelection_4004) {
+			types.add(UMLElementTypes.OutputPin_3001);
+		}
+		if (relationshipType == UMLElementTypes.ObjectNodeSelection_4004) {
+			types.add(UMLElementTypes.Pin_3041);
+		}
+		if (relationshipType == UMLElementTypes.ObjectNodeSelection_4004) {
+			types.add(UMLElementTypes.OutputPin_3002);
+		}
+		if (relationshipType == UMLElementTypes.ObjectNodeSelection_4004) {
+			types.add(UMLElementTypes.InputPin_3003);
+		}
+		if (relationshipType == UMLElementTypes.ObjectNodeSelection_4004) {
+			types.add(UMLElementTypes.InputPin_3004);
+		}
+		if (relationshipType == UMLElementTypes.ObjectNodeSelection_4004) {
+			types.add(UMLElementTypes.InputPin_3005);
+		}
+		if (relationshipType == UMLElementTypes.ObjectNodeSelection_4004) {
+			types.add(UMLElementTypes.OutputPin_3006);
+		}
+		if (relationshipType == UMLElementTypes.ObjectNodeSelection_4004) {
+			types.add(UMLElementTypes.InputPin_3007);
+		}
+		if (relationshipType == UMLElementTypes.ObjectNodeSelection_4004) {
+			types.add(UMLElementTypes.InputPin_3008);
+		}
+		if (relationshipType == UMLElementTypes.ObjectNodeSelection_4004) {
+			types.add(UMLElementTypes.Pin_3017);
+		}
+		if (relationshipType == UMLElementTypes.ObjectNodeSelection_4004) {
+			types.add(UMLElementTypes.DataStoreNode_3024);
+		}
+		if (relationshipType == UMLElementTypes.ObjectNodeSelection_4004) {
+			types.add(UMLElementTypes.CentralBufferNode_3025);
+		}
+		if (relationshipType == UMLElementTypes.ObjectNodeSelection_4004) {
+			types.add(UMLElementTypes.InputPin_3054);
+		}
+		if (relationshipType == UMLElementTypes.ObjectNodeSelection_4004) {
+			types.add(UMLElementTypes.OutputPin_3055);
+		}
+		if (relationshipType == UMLElementTypes.ObjectNodeSelection_4004) {
+			types.add(UMLElementTypes.ActivityParameterNode_3052);
+		}
+		if (relationshipType == UMLElementTypes.ObjectNodeSelection_4004) {
+			types.add(UMLElementTypes.DataStoreNode_3065);
+		}
+		if (relationshipType == UMLElementTypes.ObjectNodeSelection_4004) {
+			types.add(UMLElementTypes.CentralBufferNode_3066);
+		}
+		if (relationshipType == UMLElementTypes.ObjectNodeSelection_4004) {
+			types.add(UMLElementTypes.Pin_3071);
+		}
+		if (relationshipType == UMLElementTypes.ObjectNodeSelection_4004) {
+			types.add(UMLElementTypes.InputPin_3080);
+		}
+		if (relationshipType == UMLElementTypes.ObjectNodeSelection_4004) {
+			types.add(UMLElementTypes.OutputPin_3081);
+		}
+		return types;
 	}
 
 	/**
