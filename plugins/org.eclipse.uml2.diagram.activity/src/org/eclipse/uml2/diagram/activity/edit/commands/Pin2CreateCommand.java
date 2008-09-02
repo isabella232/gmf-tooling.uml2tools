@@ -49,7 +49,6 @@ public class Pin2CreateCommand extends CreateElementCommand {
 
 		StructuredActivityNode owner = (StructuredActivityNode) getElementToEdit();
 		owner.getNodes().add(newElement);
-
 		UMLElementTypes.init_Pin_3017(newElement);
 		return newElement;
 	}

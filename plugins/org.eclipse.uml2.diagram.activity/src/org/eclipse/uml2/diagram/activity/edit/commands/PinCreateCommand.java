@@ -49,7 +49,6 @@ public class PinCreateCommand extends CreateElementCommand {
 
 		Activity owner = (Activity) getElementToEdit();
 		owner.getNodes().add(newElement);
-
 		UMLElementTypes.init_Pin_3041(newElement);
 		return newElement;
 	}

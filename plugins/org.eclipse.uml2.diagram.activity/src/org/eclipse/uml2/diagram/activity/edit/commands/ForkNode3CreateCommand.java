@@ -58,7 +58,6 @@ public class ForkNode3CreateCommand extends CreateElementCommand {
 		owner.getNodes().add(newElement);
 		ActivityPartition childHolder = (ActivityPartition) getElementToEdit();
 		childHolder.getNodes().add(newElement);
-
 		return newElement;
 	}
 

@@ -49,7 +49,6 @@ public class DataStoreNodeCreateCommand extends CreateElementCommand {
 
 		Activity owner = (Activity) getElementToEdit();
 		owner.getNodes().add(newElement);
-
 		UMLElementTypes.init_DataStoreNode_3036(newElement);
 		return newElement;
 	}

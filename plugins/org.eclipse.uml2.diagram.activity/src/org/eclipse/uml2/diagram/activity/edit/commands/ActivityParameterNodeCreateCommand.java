@@ -49,7 +49,6 @@ public class ActivityParameterNodeCreateCommand extends CreateElementCommand {
 
 		Activity owner = (Activity) getElementToEdit();
 		owner.getNodes().add(newElement);
-
 		UMLElementTypes.init_ActivityParameterNode_3052(newElement);
 		return newElement;
 	}

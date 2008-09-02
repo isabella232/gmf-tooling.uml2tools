@@ -49,7 +49,6 @@ public class OpaqueActionCreateCommand extends CreateElementCommand {
 
 		Activity owner = (Activity) getElementToEdit();
 		owner.getNodes().add(newElement);
-
 		UMLElementTypes.init_OpaqueAction_3029(newElement);
 		return newElement;
 	}

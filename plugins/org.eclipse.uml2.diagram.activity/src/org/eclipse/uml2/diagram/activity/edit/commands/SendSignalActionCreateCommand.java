@@ -49,7 +49,6 @@ public class SendSignalActionCreateCommand extends CreateElementCommand {
 
 		Activity owner = (Activity) getElementToEdit();
 		owner.getNodes().add(newElement);
-
 		UMLElementTypes.init_SendSignalAction_3053(newElement);
 		return newElement;
 	}

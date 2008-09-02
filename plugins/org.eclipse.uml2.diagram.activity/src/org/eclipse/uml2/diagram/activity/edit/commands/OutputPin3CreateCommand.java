@@ -49,7 +49,6 @@ public class OutputPin3CreateCommand extends CreateElementCommand {
 
 		CallAction owner = (CallAction) getElementToEdit();
 		owner.getResults().add(newElement);
-
 		UMLElementTypes.init_OutputPin_3006(newElement);
 		return newElement;
 	}

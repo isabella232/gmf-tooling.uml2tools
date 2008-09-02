@@ -60,7 +60,6 @@ public class OpaqueAction3CreateCommand extends CreateElementCommand {
 		owner.getNodes().add(newElement);
 		ActivityPartition childHolder = (ActivityPartition) getElementToEdit();
 		childHolder.getNodes().add(newElement);
-
 		UMLElementTypes.init_OpaqueAction_3067(newElement);
 		return newElement;
 	}

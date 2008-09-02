@@ -49,7 +49,6 @@ public class CallOperationActionCreateCommand extends CreateElementCommand {
 
 		Activity owner = (Activity) getElementToEdit();
 		owner.getNodes().add(newElement);
-
 		UMLElementTypes.init_CallOperationAction_3045(newElement);
 		return newElement;
 	}

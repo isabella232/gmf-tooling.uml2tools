@@ -49,7 +49,6 @@ public class StructuredActivityNodeCreateCommand extends CreateElementCommand {
 
 		Activity owner = (Activity) getElementToEdit();
 		owner.getGroups().add(newElement);
-
 		UMLElementTypes.init_StructuredActivityNode_3046(newElement);
 		return newElement;
 	}

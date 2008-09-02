@@ -49,7 +49,6 @@ public class LoopNodeCreateCommand extends CreateElementCommand {
 
 		Activity owner = (Activity) getElementToEdit();
 		owner.getGroups().add(newElement);
-
 		UMLElementTypes.init_LoopNode_3058(newElement);
 		return newElement;
 	}

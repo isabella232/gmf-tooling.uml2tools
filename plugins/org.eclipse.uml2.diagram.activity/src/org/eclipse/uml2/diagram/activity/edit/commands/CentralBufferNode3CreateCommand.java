@@ -60,7 +60,6 @@ public class CentralBufferNode3CreateCommand extends CreateElementCommand {
 		owner.getNodes().add(newElement);
 		ActivityPartition childHolder = (ActivityPartition) getElementToEdit();
 		childHolder.getNodes().add(newElement);
-
 		UMLElementTypes.init_CentralBufferNode_3066(newElement);
 		return newElement;
 	}

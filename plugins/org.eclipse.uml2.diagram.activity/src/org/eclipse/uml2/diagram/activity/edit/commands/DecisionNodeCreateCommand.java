@@ -49,7 +49,6 @@ public class DecisionNodeCreateCommand extends CreateElementCommand {
 
 		Activity owner = (Activity) getElementToEdit();
 		owner.getNodes().add(newElement);
-
 		UMLElementTypes.init_DecisionNode_3033(newElement);
 		return newElement;
 	}

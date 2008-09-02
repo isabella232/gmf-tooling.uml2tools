@@ -49,7 +49,6 @@ public class InputPinCreateCommand extends CreateElementCommand {
 
 		AddStructuralFeatureValueAction owner = (AddStructuralFeatureValueAction) getElementToEdit();
 		owner.setInsertAt(newElement);
-
 		UMLElementTypes.init_InputPin_3003(newElement);
 		return newElement;
 	}

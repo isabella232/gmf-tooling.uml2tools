@@ -49,7 +49,6 @@ public class AddStructuralFeatureValueActionCreateCommand extends CreateElementC
 
 		Activity owner = (Activity) getElementToEdit();
 		owner.getNodes().add(newElement);
-
 		UMLElementTypes.init_AddStructuralFeatureValueAction_3043(newElement);
 		return newElement;
 	}

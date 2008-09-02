@@ -48,7 +48,6 @@ public class ActivityPartition2CreateCommand extends CreateElementCommand {
 
 		ActivityPartition owner = (ActivityPartition) getElementToEdit();
 		owner.getSubpartitions().add(newElement);
-
 		UMLElementTypes.init_ActivityPartition_3057(newElement);
 		return newElement;
 	}

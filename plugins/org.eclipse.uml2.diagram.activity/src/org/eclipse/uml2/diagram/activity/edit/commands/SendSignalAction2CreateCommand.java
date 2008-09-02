@@ -60,7 +60,6 @@ public class SendSignalAction2CreateCommand extends CreateElementCommand {
 		owner.getNodes().add(newElement);
 		ActivityPartition childHolder = (ActivityPartition) getElementToEdit();
 		childHolder.getNodes().add(newElement);
-
 		UMLElementTypes.init_SendSignalAction_3077(newElement);
 		return newElement;
 	}

@@ -49,7 +49,6 @@ public class ActivityCreateCommand extends CreateElementCommand {
 
 		Package owner = (Package) getElementToEdit();
 		owner.getPackagedElements().add(newElement);
-
 		UMLElementTypes.init_Activity_2026(newElement);
 		return newElement;
 	}

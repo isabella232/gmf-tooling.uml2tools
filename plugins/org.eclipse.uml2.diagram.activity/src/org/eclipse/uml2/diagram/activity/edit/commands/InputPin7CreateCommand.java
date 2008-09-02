@@ -49,7 +49,6 @@ public class InputPin7CreateCommand extends CreateElementCommand {
 
 		StructuredActivityNode owner = (StructuredActivityNode) getElementToEdit();
 		owner.getNodes().add(newElement);
-
 		UMLElementTypes.init_InputPin_3080(newElement);
 		return newElement;
 	}

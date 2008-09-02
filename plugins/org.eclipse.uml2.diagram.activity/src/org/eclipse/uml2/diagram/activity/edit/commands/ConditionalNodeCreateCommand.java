@@ -49,7 +49,6 @@ public class ConditionalNodeCreateCommand extends CreateElementCommand {
 
 		Activity owner = (Activity) getElementToEdit();
 		owner.getGroups().add(newElement);
-
 		UMLElementTypes.init_ConditionalNode_3082(newElement);
 		return newElement;
 	}

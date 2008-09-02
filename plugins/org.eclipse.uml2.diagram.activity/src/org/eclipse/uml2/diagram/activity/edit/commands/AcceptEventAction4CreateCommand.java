@@ -49,7 +49,6 @@ public class AcceptEventAction4CreateCommand extends CreateElementCommand {
 
 		StructuredActivityNode owner = (StructuredActivityNode) getElementToEdit();
 		owner.getNodes().add(newElement);
-
 		UMLElementTypes.init_AcceptEventAction_3013(newElement);
 		return newElement;
 	}

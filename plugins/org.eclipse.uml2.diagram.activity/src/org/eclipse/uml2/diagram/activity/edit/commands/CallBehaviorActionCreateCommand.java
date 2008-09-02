@@ -49,7 +49,6 @@ public class CallBehaviorActionCreateCommand extends CreateElementCommand {
 
 		Activity owner = (Activity) getElementToEdit();
 		owner.getNodes().add(newElement);
-
 		UMLElementTypes.init_CallBehaviorAction_3044(newElement);
 		return newElement;
 	}

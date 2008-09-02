@@ -49,7 +49,6 @@ public class AcceptEventActionCreateCommand extends CreateElementCommand {
 
 		Activity owner = (Activity) getElementToEdit();
 		owner.getNodes().add(newElement);
-
 		UMLElementTypes.init_AcceptEventAction_3030(newElement);
 		return newElement;
 	}

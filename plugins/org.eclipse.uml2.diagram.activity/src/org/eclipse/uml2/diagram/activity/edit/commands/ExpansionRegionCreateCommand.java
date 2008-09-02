@@ -49,7 +49,6 @@ public class ExpansionRegionCreateCommand extends CreateElementCommand {
 
 		Activity owner = (Activity) getElementToEdit();
 		owner.getGroups().add(newElement);
-
 		UMLElementTypes.init_ExpansionRegion_3084(newElement);
 		return newElement;
 	}

@@ -49,7 +49,6 @@ public class OutputPinCreateCommand extends CreateElementCommand {
 
 		OpaqueAction owner = (OpaqueAction) getElementToEdit();
 		owner.getOutputValues().add(newElement);
-
 		UMLElementTypes.init_OutputPin_3001(newElement);
 		return newElement;
 	}

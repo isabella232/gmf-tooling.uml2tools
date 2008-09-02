@@ -49,7 +49,6 @@ public class CallOperationAction2CreateCommand extends CreateElementCommand {
 
 		StructuredActivityNode owner = (StructuredActivityNode) getElementToEdit();
 		owner.getNodes().add(newElement);
-
 		UMLElementTypes.init_CallOperationAction_3020(newElement);
 		return newElement;
 	}

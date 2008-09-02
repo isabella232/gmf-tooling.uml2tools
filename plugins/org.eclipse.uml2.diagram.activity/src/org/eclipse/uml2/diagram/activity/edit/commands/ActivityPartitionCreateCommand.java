@@ -49,7 +49,6 @@ public class ActivityPartitionCreateCommand extends CreateElementCommand {
 
 		Activity owner = (Activity) getElementToEdit();
 		owner.getGroups().add(newElement);
-
 		UMLElementTypes.init_ActivityPartition_3056(newElement);
 		return newElement;
 	}

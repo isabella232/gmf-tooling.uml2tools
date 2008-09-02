@@ -49,7 +49,6 @@ public class OutputPin5CreateCommand extends CreateElementCommand {
 
 		StructuredActivityNode owner = (StructuredActivityNode) getElementToEdit();
 		owner.getNodes().add(newElement);
-
 		UMLElementTypes.init_OutputPin_3081(newElement);
 		return newElement;
 	}

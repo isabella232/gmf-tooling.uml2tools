@@ -49,7 +49,6 @@ public class CreateObjectActionCreateCommand extends CreateElementCommand {
 
 		Activity owner = (Activity) getElementToEdit();
 		owner.getNodes().add(newElement);
-
 		UMLElementTypes.init_CreateObjectAction_3042(newElement);
 		return newElement;
 	}

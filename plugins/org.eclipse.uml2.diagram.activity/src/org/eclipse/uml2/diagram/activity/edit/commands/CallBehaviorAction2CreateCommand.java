@@ -49,7 +49,6 @@ public class CallBehaviorAction2CreateCommand extends CreateElementCommand {
 
 		StructuredActivityNode owner = (StructuredActivityNode) getElementToEdit();
 		owner.getNodes().add(newElement);
-
 		UMLElementTypes.init_CallBehaviorAction_3019(newElement);
 		return newElement;
 	}

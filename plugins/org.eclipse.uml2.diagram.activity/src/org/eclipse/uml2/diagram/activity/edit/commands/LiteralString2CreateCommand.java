@@ -49,7 +49,6 @@ public class LiteralString2CreateCommand extends CreateElementCommand {
 
 		Constraint owner = (Constraint) getElementToEdit();
 		owner.setSpecification(newElement);
-
 		UMLElementTypes.init_LiteralString_3051(newElement);
 		return newElement;
 	}

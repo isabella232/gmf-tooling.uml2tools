@@ -59,7 +59,6 @@ public class MergeNode2CreateCommand extends CreateElementCommand {
 		owner.getNodes().add(newElement);
 		ActivityPartition childHolder = (ActivityPartition) getElementToEdit();
 		childHolder.getNodes().add(newElement);
-
 		UMLElementTypes.init_MergeNode_3063(newElement);
 		return newElement;
 	}

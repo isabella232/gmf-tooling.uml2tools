@@ -60,7 +60,6 @@ public class AddStructuralFeatureValueAction3CreateCommand extends CreateElement
 		owner.getNodes().add(newElement);
 		ActivityPartition childHolder = (ActivityPartition) getElementToEdit();
 		childHolder.getNodes().add(newElement);
-
 		UMLElementTypes.init_AddStructuralFeatureValueAction_3073(newElement);
 		return newElement;
 	}

@@ -49,7 +49,6 @@ public class OpaqueAction2CreateCommand extends CreateElementCommand {
 
 		StructuredActivityNode owner = (StructuredActivityNode) getElementToEdit();
 		owner.getNodes().add(newElement);
-
 		UMLElementTypes.init_OpaqueAction_3011(newElement);
 		return newElement;
 	}

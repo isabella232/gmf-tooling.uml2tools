@@ -60,7 +60,6 @@ public class AcceptEventAction5CreateCommand extends CreateElementCommand {
 		owner.getNodes().add(newElement);
 		ActivityPartition childHolder = (ActivityPartition) getElementToEdit();
 		childHolder.getNodes().add(newElement);
-
 		UMLElementTypes.init_AcceptEventAction_3059(newElement);
 		return newElement;
 	}

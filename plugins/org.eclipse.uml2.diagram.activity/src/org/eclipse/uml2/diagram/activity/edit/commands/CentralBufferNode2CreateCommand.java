@@ -49,7 +49,6 @@ public class CentralBufferNode2CreateCommand extends CreateElementCommand {
 
 		StructuredActivityNode owner = (StructuredActivityNode) getElementToEdit();
 		owner.getNodes().add(newElement);
-
 		UMLElementTypes.init_CentralBufferNode_3025(newElement);
 		return newElement;
 	}

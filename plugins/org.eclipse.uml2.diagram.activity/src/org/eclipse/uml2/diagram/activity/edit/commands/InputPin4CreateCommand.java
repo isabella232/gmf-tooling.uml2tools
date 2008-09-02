@@ -49,7 +49,6 @@ public class InputPin4CreateCommand extends CreateElementCommand {
 
 		InvocationAction owner = (InvocationAction) getElementToEdit();
 		owner.getArguments().add(newElement);
-
 		UMLElementTypes.init_InputPin_3007(newElement);
 		return newElement;
 	}

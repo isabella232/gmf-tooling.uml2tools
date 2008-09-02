@@ -60,7 +60,6 @@ public class CallOperationAction3CreateCommand extends CreateElementCommand {
 		owner.getNodes().add(newElement);
 		ActivityPartition childHolder = (ActivityPartition) getElementToEdit();
 		childHolder.getNodes().add(newElement);
-
 		UMLElementTypes.init_CallOperationAction_3075(newElement);
 		return newElement;
 	}
