@@ -49,7 +49,6 @@ public class State2CreateCommand extends CreateElementCommand {
 
 		Region owner = (Region) getElementToEdit();
 		owner.getSubvertices().add(newElement);
-
 		UMLElementTypes.init_State_3012(newElement);
 		return newElement;
 	}

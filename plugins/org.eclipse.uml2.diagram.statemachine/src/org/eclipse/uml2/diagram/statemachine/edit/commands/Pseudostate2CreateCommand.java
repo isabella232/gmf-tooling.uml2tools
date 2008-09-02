@@ -49,7 +49,6 @@ public class Pseudostate2CreateCommand extends CreateElementCommand {
 
 		Region owner = (Region) getElementToEdit();
 		owner.getSubvertices().add(newElement);
-
 		UMLElementTypes.init_Pseudostate_3005(newElement);
 		return newElement;
 	}

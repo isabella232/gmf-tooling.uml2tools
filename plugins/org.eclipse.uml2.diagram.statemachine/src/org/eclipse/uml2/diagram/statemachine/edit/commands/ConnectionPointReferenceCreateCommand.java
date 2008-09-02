@@ -49,7 +49,6 @@ public class ConnectionPointReferenceCreateCommand extends CreateElementCommand 
 
 		State owner = (State) getElementToEdit();
 		owner.getConnections().add(newElement);
-
 		UMLElementTypes.init_ConnectionPointReference_3017(newElement);
 		return newElement;
 	}

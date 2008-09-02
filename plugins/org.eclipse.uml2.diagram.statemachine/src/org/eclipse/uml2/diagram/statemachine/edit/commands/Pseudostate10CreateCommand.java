@@ -49,7 +49,6 @@ public class Pseudostate10CreateCommand extends CreateElementCommand {
 
 		StateMachine owner = (StateMachine) getElementToEdit();
 		owner.getConnectionPoints().add(newElement);
-
 		UMLElementTypes.init_Pseudostate_3015(newElement);
 		return newElement;
 	}
