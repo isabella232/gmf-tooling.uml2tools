@@ -103,6 +103,42 @@
       <accessors
           figure="//@figures.0/@descriptors.1/@actualFigure/@children.1"/>
     </descriptors>
+    <descriptors
+        name="ParameterSetFigure">
+      <actualFigure
+          xsi:type="gmfgraph:Rectangle"
+          name="ParameterSetFigure">
+        <layout
+            xsi:type="gmfgraph:FlowLayout"
+            matchMinorSize="true"
+            forceSingleLine="true"
+            majorAlignment="CENTER"
+            minorAlignment="CENTER"
+            majorSpacing="2"
+            minorSpacing="2"/>
+        <insets
+            top="2"
+            left="2"
+            bottom="2"
+            right="2"/>
+      </actualFigure>
+    </descriptors>
+    <descriptors
+        name="ParameterFigure">
+      <actualFigure
+          xsi:type="gmfgraph:Rectangle"
+          name="ParameterFigure">
+        <maximumSize
+            dx="15"
+            dy="15"/>
+        <minimumSize
+            dx="15"
+            dy="15"/>
+        <preferredSize
+            dx="15"
+            dy="15"/>
+      </actualFigure>
+    </descriptors>
   </figures>
   <nodes
       name="ActivityNode"
@@ -123,6 +159,13 @@
   <nodes
       name="ActivityPartitionNode"
       figure="ActivityPartitionFigure"/>
+  <nodes
+      name="ParameterSetNode"
+      figure="ParameterSetFigure"
+      affixedParentSide="NORTH"/>
+  <nodes
+      name="ParameterNode"
+      figure="ParameterFigure"/>
   <labels
       name="ActivityPartitionNode_name"
       figure="ActivityPartitionFigure"

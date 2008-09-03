@@ -96,6 +96,8 @@ import org.eclipse.uml2.diagram.activity.edit.parts.OutputPin4EditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.OutputPin5EditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.OutputPinEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.PackageEditPart;
+import org.eclipse.uml2.diagram.activity.edit.parts.ParameterEditPart;
+import org.eclipse.uml2.diagram.activity.edit.parts.ParameterSetEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.Pin2EditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.Pin3EditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.PinEditPart;
@@ -542,6 +544,16 @@ public class UMLElementTypes extends ElementInitializers {
 	/**
 	 * @generated
 	 */
+	public static final IHintedType ParameterSet_3086 = (IHintedType) getElementType("org.eclipse.uml2.diagram.activity.ParameterSet_3086"); //$NON-NLS-1$
+
+	/**
+	 * @generated
+	 */
+	public static final IHintedType Parameter_3087 = (IHintedType) getElementType("org.eclipse.uml2.diagram.activity.Parameter_3087"); //$NON-NLS-1$
+
+	/**
+	 * @generated
+	 */
 	public static final IHintedType LiteralString_3049 = (IHintedType) getElementType("org.eclipse.uml2.diagram.activity.LiteralString_3049"); //$NON-NLS-1$
 
 	/**
@@ -847,6 +859,10 @@ public class UMLElementTypes extends ElementInitializers {
 
 			elements.put(ExpansionRegion_3084, UMLPackage.eINSTANCE.getExpansionRegion());
 
+			elements.put(ParameterSet_3086, UMLPackage.eINSTANCE.getParameterSet());
+
+			elements.put(Parameter_3087, UMLPackage.eINSTANCE.getParameter());
+
 			elements.put(LiteralString_3049, UMLPackage.eINSTANCE.getLiteralString());
 
 			elements.put(LiteralString_3051, UMLPackage.eINSTANCE.getLiteralString());
@@ -960,6 +976,8 @@ public class UMLElementTypes extends ElementInitializers {
 			KNOWN_ELEMENT_TYPES.add(LoopNode_3058);
 			KNOWN_ELEMENT_TYPES.add(ConditionalNode_3082);
 			KNOWN_ELEMENT_TYPES.add(ExpansionRegion_3084);
+			KNOWN_ELEMENT_TYPES.add(ParameterSet_3086);
+			KNOWN_ELEMENT_TYPES.add(Parameter_3087);
 			KNOWN_ELEMENT_TYPES.add(LiteralString_3049);
 			KNOWN_ELEMENT_TYPES.add(LiteralString_3051);
 			KNOWN_ELEMENT_TYPES.add(ControlFlow_4001);
@@ -1139,6 +1157,10 @@ public class UMLElementTypes extends ElementInitializers {
 			return ConditionalNode_3082;
 		case ExpansionRegionEditPart.VISUAL_ID:
 			return ExpansionRegion_3084;
+		case ParameterSetEditPart.VISUAL_ID:
+			return ParameterSet_3086;
+		case ParameterEditPart.VISUAL_ID:
+			return Parameter_3087;
 		case LiteralStringEditPart.VISUAL_ID:
 			return LiteralString_3049;
 		case LiteralString2EditPart.VISUAL_ID:

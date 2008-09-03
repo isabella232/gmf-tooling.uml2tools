@@ -53,6 +53,8 @@ import org.eclipse.uml2.uml.OpaqueBehavior;
 import org.eclipse.uml2.uml.OutputPin;
 import org.eclipse.uml2.uml.Package;
 import org.eclipse.uml2.uml.PackageableElement;
+import org.eclipse.uml2.uml.Parameter;
+import org.eclipse.uml2.uml.ParameterSet;
 import org.eclipse.uml2.uml.Pin;
 import org.eclipse.uml2.uml.SendSignalAction;
 import org.eclipse.uml2.uml.StructuredActivityNode;
@@ -106,6 +108,8 @@ public class UMLDiagramUpdater {
 			return getCallBehaviorAction_3074SemanticChildren(view);
 		case CallOperationAction3EditPart.VISUAL_ID:
 			return getCallOperationAction_3075SemanticChildren(view);
+		case ParameterSetEditPart.VISUAL_ID:
+			return getParameterSet_3086SemanticChildren(view);
 		case StructuredActivityNodeStructuredActivityContentPaneCompartmentEditPart.VISUAL_ID:
 			return getStructuredActivityNodeStructuredActivityContentPaneCompartment_7008SemanticChildren(view);
 		case StructuredActivityNodeStructuredActivityContentPaneCompartment2EditPart.VISUAL_ID:
@@ -253,6 +257,14 @@ public class UMLDiagramUpdater {
 			Behavior childElement = (Behavior) it.next();
 			int visualID = UMLVisualIDRegistry.getNodeVisualID(view, childElement);
 			if (visualID == OpaqueBehaviorEditPart.VISUAL_ID) {
+				result.add(new UMLNodeDescriptor(childElement, visualID));
+				continue;
+			}
+		}
+		for (Iterator it = modelElement.getOwnedParameterSets().iterator(); it.hasNext();) {
+			ParameterSet childElement = (ParameterSet) it.next();
+			int visualID = UMLVisualIDRegistry.getNodeVisualID(view, childElement);
+			if (visualID == ParameterSetEditPart.VISUAL_ID) {
 				result.add(new UMLNodeDescriptor(childElement, visualID));
 				continue;
 			}
@@ -884,6 +896,26 @@ public class UMLDiagramUpdater {
 			int visualID = UMLVisualIDRegistry.getNodeVisualID(view, childElement);
 			if (visualID == InputPin5EditPart.VISUAL_ID) {
 				result.add(new UMLNodeDescriptor(childElement, visualID));
+			}
+		}
+		return result;
+	}
+
+	/**
+	 * @generated
+	 */
+	public static List getParameterSet_3086SemanticChildren(View view) {
+		if (!view.isSetElement()) {
+			return Collections.EMPTY_LIST;
+		}
+		ParameterSet modelElement = (ParameterSet) view.getElement();
+		List result = new LinkedList();
+		for (Iterator it = modelElement.getParameters().iterator(); it.hasNext();) {
+			Parameter childElement = (Parameter) it.next();
+			int visualID = UMLVisualIDRegistry.getNodeVisualID(view, childElement);
+			if (visualID == ParameterEditPart.VISUAL_ID) {
+				result.add(new UMLNodeDescriptor(childElement, visualID));
+				continue;
 			}
 		}
 		return result;
@@ -2064,6 +2096,10 @@ public class UMLDiagramUpdater {
 			return getConditionalNode_3082ContainedLinks(view);
 		case ExpansionRegionEditPart.VISUAL_ID:
 			return getExpansionRegion_3084ContainedLinks(view);
+		case ParameterSetEditPart.VISUAL_ID:
+			return getParameterSet_3086ContainedLinks(view);
+		case ParameterEditPart.VISUAL_ID:
+			return getParameter_3087ContainedLinks(view);
 		case LiteralStringEditPart.VISUAL_ID:
 			return getLiteralString_3049ContainedLinks(view);
 		case LiteralString2EditPart.VISUAL_ID:
@@ -2243,6 +2279,10 @@ public class UMLDiagramUpdater {
 			return getConditionalNode_3082IncomingLinks(view);
 		case ExpansionRegionEditPart.VISUAL_ID:
 			return getExpansionRegion_3084IncomingLinks(view);
+		case ParameterSetEditPart.VISUAL_ID:
+			return getParameterSet_3086IncomingLinks(view);
+		case ParameterEditPart.VISUAL_ID:
+			return getParameter_3087IncomingLinks(view);
 		case LiteralStringEditPart.VISUAL_ID:
 			return getLiteralString_3049IncomingLinks(view);
 		case LiteralString2EditPart.VISUAL_ID:
@@ -2422,6 +2462,10 @@ public class UMLDiagramUpdater {
 			return getConditionalNode_3082OutgoingLinks(view);
 		case ExpansionRegionEditPart.VISUAL_ID:
 			return getExpansionRegion_3084OutgoingLinks(view);
+		case ParameterSetEditPart.VISUAL_ID:
+			return getParameterSet_3086OutgoingLinks(view);
+		case ParameterEditPart.VISUAL_ID:
+			return getParameter_3087OutgoingLinks(view);
 		case LiteralStringEditPart.VISUAL_ID:
 			return getLiteralString_3049OutgoingLinks(view);
 		case LiteralString2EditPart.VISUAL_ID:
@@ -3236,6 +3280,20 @@ public class UMLDiagramUpdater {
 		result.addAll(getOutgoingFeatureModelFacetLinks_Action_LocalPostcondition_4006(modelElement));
 		result.addAll(getContainedTypeModelFacetLinks_ExceptionHandler_4005(modelElement));
 		return result;
+	}
+
+	/**
+	 * @generated
+	 */
+	public static List getParameterSet_3086ContainedLinks(View view) {
+		return Collections.EMPTY_LIST;
+	}
+
+	/**
+	 * @generated
+	 */
+	public static List getParameter_3087ContainedLinks(View view) {
+		return Collections.EMPTY_LIST;
 	}
 
 	/**
@@ -4257,6 +4315,20 @@ public class UMLDiagramUpdater {
 	/**
 	 * @generated
 	 */
+	public static List getParameterSet_3086IncomingLinks(View view) {
+		return Collections.EMPTY_LIST;
+	}
+
+	/**
+	 * @generated
+	 */
+	public static List getParameter_3087IncomingLinks(View view) {
+		return Collections.EMPTY_LIST;
+	}
+
+	/**
+	 * @generated
+	 */
 	public static List getLiteralString_3049IncomingLinks(View view) {
 		return Collections.EMPTY_LIST;
 	}
@@ -5264,6 +5336,20 @@ public class UMLDiagramUpdater {
 		result.addAll(getOutgoingFeatureModelFacetLinks_Action_LocalPostcondition_4006(modelElement));
 		result.addAll(getOutgoingTypeModelFacetLinks_ExceptionHandler_4005(modelElement));
 		return result;
+	}
+
+	/**
+	 * @generated
+	 */
+	public static List getParameterSet_3086OutgoingLinks(View view) {
+		return Collections.EMPTY_LIST;
+	}
+
+	/**
+	 * @generated
+	 */
+	public static List getParameter_3087OutgoingLinks(View view) {
+		return Collections.EMPTY_LIST;
 	}
 
 	/**

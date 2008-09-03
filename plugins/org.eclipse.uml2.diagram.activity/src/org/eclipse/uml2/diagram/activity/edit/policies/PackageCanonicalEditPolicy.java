@@ -104,6 +104,8 @@ import org.eclipse.uml2.diagram.activity.edit.parts.OutputPin4EditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.OutputPin5EditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.OutputPinEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.PackageEditPart;
+import org.eclipse.uml2.diagram.activity.edit.parts.ParameterEditPart;
+import org.eclipse.uml2.diagram.activity.edit.parts.ParameterSetEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.Pin2EditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.Pin3EditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.PinEditPart;
@@ -234,6 +236,8 @@ public class PackageCanonicalEditPolicy extends CanonicalConnectionEditPolicy {
 		case LoopNodeEditPart.VISUAL_ID:
 		case ConditionalNodeEditPart.VISUAL_ID:
 		case ExpansionRegionEditPart.VISUAL_ID:
+		case ParameterSetEditPart.VISUAL_ID:
+		case ParameterEditPart.VISUAL_ID:
 		case LiteralStringEditPart.VISUAL_ID:
 		case LiteralString2EditPart.VISUAL_ID:
 			return true;
@@ -964,6 +968,20 @@ public class PackageCanonicalEditPolicy extends CanonicalConnectionEditPolicy {
 		case ExpansionRegionEditPart.VISUAL_ID: {
 			if (!domain2NotationMap.containsKey(view.getElement())) {
 				result.addAll(UMLDiagramUpdater.getExpansionRegion_3084ContainedLinks(view));
+			}
+			domain2NotationMap.put(view.getElement(), view);
+			break;
+		}
+		case ParameterSetEditPart.VISUAL_ID: {
+			if (!domain2NotationMap.containsKey(view.getElement())) {
+				result.addAll(UMLDiagramUpdater.getParameterSet_3086ContainedLinks(view));
+			}
+			domain2NotationMap.put(view.getElement(), view);
+			break;
+		}
+		case ParameterEditPart.VISUAL_ID: {
+			if (!domain2NotationMap.containsKey(view.getElement())) {
+				result.addAll(UMLDiagramUpdater.getParameter_3087ContainedLinks(view));
 			}
 			domain2NotationMap.put(view.getElement(), view);
 			break;

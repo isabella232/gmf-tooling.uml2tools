@@ -36,6 +36,7 @@ import org.eclipse.uml2.diagram.activity.edit.commands.ObjectNodeSelectionCreate
 import org.eclipse.uml2.diagram.activity.edit.commands.ObjectNodeSelectionReorientCommand;
 import org.eclipse.uml2.diagram.activity.edit.commands.OpaqueActionCreateCommand;
 import org.eclipse.uml2.diagram.activity.edit.commands.OpaqueBehaviorCreateCommand;
+import org.eclipse.uml2.diagram.activity.edit.commands.ParameterSetCreateCommand;
 import org.eclipse.uml2.diagram.activity.edit.commands.PinCreateCommand;
 import org.eclipse.uml2.diagram.activity.edit.commands.SendSignalActionCreateCommand;
 import org.eclipse.uml2.diagram.activity.edit.commands.StructuredActivityNodeCreateCommand;
@@ -62,6 +63,7 @@ import org.eclipse.uml2.diagram.activity.edit.parts.MergeNodeEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.ObjectNodeSelectionEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.OpaqueActionEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.OpaqueBehaviorEditPart;
+import org.eclipse.uml2.diagram.activity.edit.parts.ParameterSetEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.PinEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.SendSignalActionEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.StructuredActivityNodeEditPart;
@@ -235,6 +237,12 @@ public class ActivityItemSemanticEditPolicy extends UMLBaseItemSemanticEditPolic
 			}
 			return getGEFWrapper(new ExpansionRegionCreateCommand(req));
 		}
+		if (UMLElementTypes.ParameterSet_3086 == req.getElementType()) {
+			if (req.getContainmentFeature() == null) {
+				req.setContainmentFeature(UMLPackage.eINSTANCE.getBehavior_OwnedParameterSet());
+			}
+			return getGEFWrapper(new ParameterSetCreateCommand(req));
+		}
 		return super.getCreateCommand(req);
 	}
 
@@ -338,6 +346,9 @@ public class ActivityItemSemanticEditPolicy extends UMLBaseItemSemanticEditPolic
 				cmd.add(getDestroyElementCommand(node));
 				break;
 			case ExpansionRegionEditPart.VISUAL_ID:
+				cmd.add(getDestroyElementCommand(node));
+				break;
+			case ParameterSetEditPart.VISUAL_ID:
 				cmd.add(getDestroyElementCommand(node));
 				break;
 			}

@@ -170,6 +170,8 @@ public class UMLViewProvider extends AbstractViewProvider {
 				case LoopNodeEditPart.VISUAL_ID:
 				case ConditionalNodeEditPart.VISUAL_ID:
 				case ExpansionRegionEditPart.VISUAL_ID:
+				case ParameterSetEditPart.VISUAL_ID:
+				case ParameterEditPart.VISUAL_ID:
 				case LiteralStringEditPart.VISUAL_ID:
 				case LiteralString2EditPart.VISUAL_ID:
 					if (domainElement == null || visualID != UMLVisualIDRegistry.getNodeVisualID(containerView, domainElement)) {
@@ -879,6 +881,10 @@ public class UMLViewProvider extends AbstractViewProvider {
 			return ExpansionRegionViewFactory.class;
 		case ExpansionRegionModeEditPart.VISUAL_ID:
 			return ExpansionRegionModeViewFactory.class;
+		case ParameterSetEditPart.VISUAL_ID:
+			return ParameterSetViewFactory.class;
+		case ParameterEditPart.VISUAL_ID:
+			return ParameterViewFactory.class;
 		case LiteralStringEditPart.VISUAL_ID:
 			return LiteralStringViewFactory.class;
 		case LiteralString2EditPart.VISUAL_ID:

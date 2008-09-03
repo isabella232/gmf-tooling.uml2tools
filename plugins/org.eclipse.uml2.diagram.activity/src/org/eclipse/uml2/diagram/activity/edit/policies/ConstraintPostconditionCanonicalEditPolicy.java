@@ -82,6 +82,8 @@ import org.eclipse.uml2.diagram.activity.edit.parts.OutputPin3EditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.OutputPin4EditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.OutputPin5EditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.OutputPinEditPart;
+import org.eclipse.uml2.diagram.activity.edit.parts.ParameterEditPart;
+import org.eclipse.uml2.diagram.activity.edit.parts.ParameterSetEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.Pin2EditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.Pin3EditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.PinEditPart;
@@ -205,6 +207,8 @@ public class ConstraintPostconditionCanonicalEditPolicy extends CanonicalEditPol
 		case LoopNodeEditPart.VISUAL_ID:
 		case ConditionalNodeEditPart.VISUAL_ID:
 		case ExpansionRegionEditPart.VISUAL_ID:
+		case ParameterSetEditPart.VISUAL_ID:
+		case ParameterEditPart.VISUAL_ID:
 		case LiteralStringEditPart.VISUAL_ID:
 			return true;
 		case LiteralString2EditPart.VISUAL_ID:

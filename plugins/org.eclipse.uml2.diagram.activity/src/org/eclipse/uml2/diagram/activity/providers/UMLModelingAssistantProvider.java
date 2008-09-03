@@ -98,6 +98,7 @@ import org.eclipse.uml2.diagram.activity.edit.parts.OutputPin4EditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.OutputPin5EditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.OutputPinEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.PackageEditPart;
+import org.eclipse.uml2.diagram.activity.edit.parts.ParameterSetEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.Pin2EditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.Pin3EditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.PinEditPart;
@@ -152,6 +153,7 @@ public class UMLModelingAssistantProvider extends ModelingAssistantProvider {
 			types.add(UMLElementTypes.LoopNode_3058);
 			types.add(UMLElementTypes.ConditionalNode_3082);
 			types.add(UMLElementTypes.ExpansionRegion_3084);
+			types.add(UMLElementTypes.ParameterSet_3086);
 			return types;
 		}
 
@@ -325,6 +327,12 @@ public class UMLModelingAssistantProvider extends ModelingAssistantProvider {
 			types.add(UMLElementTypes.OutputPin_3006);
 			types.add(UMLElementTypes.InputPin_3007);
 			types.add(UMLElementTypes.InputPin_3008);
+			return types;
+		}
+
+		if (editPart instanceof ParameterSetEditPart) {
+			List<IElementType> types = new ArrayList<IElementType>();
+			types.add(UMLElementTypes.Parameter_3087);
 			return types;
 		}
 

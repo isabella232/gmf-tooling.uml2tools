@@ -1120,6 +1120,26 @@
       </metamodel>
       <metamodel nsURI="http://www.eclipse.org/uml2/2.1.0/UML">
          <metamodelType
+               id="org.eclipse.uml2.diagram.activity.ParameterSet_3086"
+               name="%metatype.name.ParameterSet_3086"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
+               eclass="ParameterSet"
+               edithelper="org.eclipse.uml2.diagram.activity.edit.helpers.ParameterSetEditHelper">
+            <param name="semanticHint" value="3086"/>
+         </metamodelType>
+      </metamodel>
+      <metamodel nsURI="http://www.eclipse.org/uml2/2.1.0/UML">
+         <metamodelType
+               id="org.eclipse.uml2.diagram.activity.Parameter_3087"
+               name="%metatype.name.Parameter_3087"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
+               eclass="Parameter"
+               edithelper="org.eclipse.uml2.diagram.activity.edit.helpers.ParameterEditHelper">
+            <param name="semanticHint" value="3087"/>
+         </metamodelType>
+      </metamodel>
+      <metamodel nsURI="http://www.eclipse.org/uml2/2.1.0/UML">
+         <metamodelType
                id="org.eclipse.uml2.diagram.activity.LiteralString_3049"
                name="%metatype.name.LiteralString_3049"
                kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
@@ -1290,6 +1310,8 @@
          <elementType ref="org.eclipse.uml2.diagram.activity.LoopNode_3058"/>
          <elementType ref="org.eclipse.uml2.diagram.activity.ConditionalNode_3082"/>
          <elementType ref="org.eclipse.uml2.diagram.activity.ExpansionRegion_3084"/>
+         <elementType ref="org.eclipse.uml2.diagram.activity.ParameterSet_3086"/>
+         <elementType ref="org.eclipse.uml2.diagram.activity.Parameter_3087"/>
          <elementType ref="org.eclipse.uml2.diagram.activity.LiteralString_3049"/>
          <elementType ref="org.eclipse.uml2.diagram.activity.LiteralString_3051"/>
          <elementType ref="org.eclipse.uml2.diagram.activity.ControlFlow_4001"/>

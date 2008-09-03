@@ -6,23 +6,9 @@ import java.util.HashSet;
 import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.List;
-import java.util.Set;
 
-import org.eclipse.core.commands.ExecutionException;
-import org.eclipse.core.runtime.IAdaptable;
-import org.eclipse.core.runtime.IProgressMonitor;
-import org.eclipse.core.runtime.IStatus;
-import org.eclipse.core.runtime.NullProgressMonitor;
-import org.eclipse.core.runtime.Status;
-import org.eclipse.emf.ecore.EObject;
-import org.eclipse.emf.transaction.Transaction;
-import org.eclipse.emf.workspace.AbstractEMFOperation;
-import org.eclipse.gmf.runtime.common.core.util.StringStatics;
+import java.util.Set;
 import org.eclipse.gmf.runtime.diagram.ui.editpolicies.CanonicalEditPolicy;
-import org.eclipse.gmf.runtime.notation.Location;
-import org.eclipse.gmf.runtime.notation.Node;
-import org.eclipse.gmf.runtime.notation.Ratio;
-import org.eclipse.gmf.runtime.notation.Size;
 import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.uml2.diagram.activity.edit.parts.AcceptEventAction2EditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.AcceptEventAction3EditPart;
@@ -108,7 +94,6 @@ import org.eclipse.uml2.diagram.activity.edit.parts.StructuredActivityNode2EditP
 import org.eclipse.uml2.diagram.activity.edit.parts.StructuredActivityNode3EditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.StructuredActivityNode4EditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.StructuredActivityNodeEditPart;
-import org.eclipse.uml2.diagram.activity.part.UMLDiagramEditorPlugin;
 import org.eclipse.uml2.diagram.activity.part.UMLDiagramUpdater;
 import org.eclipse.uml2.diagram.activity.part.UMLVisualIDRegistry;
 import org.eclipse.uml2.diagram.common.genapi.IUpdaterNodeDescriptor;
@@ -117,7 +102,8 @@ import org.eclipse.uml2.uml.UMLPackage;
 /**
  * @generated
  */
-public class CallOperationAction2CanonicalEditPolicy extends CanonicalEditPolicy {
+
+public class ParameterSetCanonicalEditPolicy extends CanonicalEditPolicy {
 
 	/**
 	 * @generated
@@ -130,7 +116,7 @@ public class CallOperationAction2CanonicalEditPolicy extends CanonicalEditPolicy
 	protected List getSemanticChildrenList() {
 		View viewObject = (View) getHost().getModel();
 		List result = new LinkedList();
-		for (Iterator it = UMLDiagramUpdater.getCallOperationAction_3020SemanticChildren(viewObject).iterator(); it.hasNext();) {
+		for (Iterator it = UMLDiagramUpdater.getParameterSet_3086SemanticChildren(viewObject).iterator(); it.hasNext();) {
 			result.add(((IUpdaterNodeDescriptor) it.next()).getModelElement());
 		}
 		return result;
@@ -167,7 +153,10 @@ public class CallOperationAction2CanonicalEditPolicy extends CanonicalEditPolicy
 		case InputPin2EditPart.VISUAL_ID:
 		case InputPin3EditPart.VISUAL_ID:
 		case CallBehaviorActionEditPart.VISUAL_ID:
+		case OutputPin3EditPart.VISUAL_ID:
+		case InputPin4EditPart.VISUAL_ID:
 		case CallOperationActionEditPart.VISUAL_ID:
+		case InputPin5EditPart.VISUAL_ID:
 		case StructuredActivityNodeEditPart.VISUAL_ID:
 		case StructuredActivityNode2EditPart.VISUAL_ID:
 		case OpaqueAction2EditPart.VISUAL_ID:
@@ -221,60 +210,15 @@ public class CallOperationAction2CanonicalEditPolicy extends CanonicalEditPolicy
 		case ConditionalNodeEditPart.VISUAL_ID:
 		case ExpansionRegionEditPart.VISUAL_ID:
 		case ParameterSetEditPart.VISUAL_ID:
-		case ParameterEditPart.VISUAL_ID:
 		case LiteralStringEditPart.VISUAL_ID:
 		case LiteralString2EditPart.VISUAL_ID:
 			return true;
-		case OutputPin3EditPart.VISUAL_ID:
-		case InputPin4EditPart.VISUAL_ID:
-		case InputPin5EditPart.VISUAL_ID:
+		case ParameterEditPart.VISUAL_ID:
 			if (!semanticChildren.contains(view.getElement())) {
 				return true;
 			}
-			EObject domainModelElement = view.getElement();
-			if (visualID != UMLVisualIDRegistry.getNodeVisualID((View) getHost().getModel(), domainModelElement)) {
-				List createdViews = createViews(Collections.singletonList(domainModelElement));
-				assert createdViews.size() == 1;
-				final View createdView = (View) ((IAdaptable) createdViews.get(0)).getAdapter(View.class);
-				if (createdView != null) {
-					try {
-						new AbstractEMFOperation(host().getEditingDomain(), StringStatics.BLANK, Collections.singletonMap(Transaction.OPTION_UNPROTECTED, Boolean.TRUE)) {
-
-							protected IStatus doExecute(IProgressMonitor monitor, IAdaptable info) throws ExecutionException {
-								populateViewProperties(view, createdView);
-								return Status.OK_STATUS;
-							}
-						}.execute(new NullProgressMonitor(), null);
-					} catch (ExecutionException e) {
-						UMLDiagramEditorPlugin.getInstance().logError("Error while copyign view information to newly created view", e); //$NON-NLS-1$
-					}
-				}
-				deleteViews(Collections.singletonList(view).iterator());
-			}
 		}
 		return false;
-	}
-
-	/**
-	 * @generated
-	 */
-	private void populateViewProperties(View oldView, View newView) {
-		if (oldView instanceof Node && newView instanceof Node) {
-			Node oldNode = (Node) oldView;
-			Node newNode = (Node) newView;
-			if (oldNode.getLayoutConstraint() instanceof Location && newNode.getLayoutConstraint() instanceof Location) {
-				((Location) newNode.getLayoutConstraint()).setX(((Location) oldNode.getLayoutConstraint()).getX());
-				((Location) newNode.getLayoutConstraint()).setY(((Location) oldNode.getLayoutConstraint()).getY());
-			}
-			if (oldNode.getLayoutConstraint() instanceof Size && newNode.getLayoutConstraint() instanceof Size) {
-				((Size) newNode.getLayoutConstraint()).setWidth(((Size) oldNode.getLayoutConstraint()).getWidth());
-				((Size) newNode.getLayoutConstraint()).setHeight(((Size) oldNode.getLayoutConstraint()).getHeight());
-			}
-			if (oldNode.getLayoutConstraint() instanceof Ratio && newNode.getLayoutConstraint() instanceof Ratio) {
-				((Ratio) newNode.getLayoutConstraint()).setValue(((Ratio) oldNode.getLayoutConstraint()).getValue());
-			}
-			newNode.persist();
-		}
 	}
 
 	/**
@@ -290,9 +234,7 @@ public class CallOperationAction2CanonicalEditPolicy extends CanonicalEditPolicy
 	protected Set getFeaturesToSynchronize() {
 		if (myFeaturesToSynchronize == null) {
 			myFeaturesToSynchronize = new HashSet();
-			myFeaturesToSynchronize.add(UMLPackage.eINSTANCE.getCallAction_Result());
-			myFeaturesToSynchronize.add(UMLPackage.eINSTANCE.getInvocationAction_Argument());
-			myFeaturesToSynchronize.add(UMLPackage.eINSTANCE.getCallOperationAction_Target());
+			myFeaturesToSynchronize.add(UMLPackage.eINSTANCE.getBehavior_OwnedParameter());
 		}
 		return myFeaturesToSynchronize;
 	}

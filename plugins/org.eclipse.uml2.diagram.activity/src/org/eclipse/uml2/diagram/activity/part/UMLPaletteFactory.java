@@ -39,8 +39,9 @@ public class UMLPaletteFactory {
 		PaletteGroup paletteContainer = new PaletteGroup(Messages.Activities1Group_title);
 		paletteContainer.setDescription(Messages.Activities1Group_desc);
 		paletteContainer.add(createActivity1CreationTool());
-		paletteContainer.add(createActivityParameter2CreationTool());
-		paletteContainer.add(createActivityPartition3CreationTool());
+		paletteContainer.add(createParameterSet2CreationTool());
+		paletteContainer.add(createActivityParameter3CreationTool());
+		paletteContainer.add(createActivityPartition4CreationTool());
 		return paletteContainer;
 	}
 
@@ -182,10 +183,22 @@ public class UMLPaletteFactory {
 	/**
 	 * @generated
 	 */
-	private ToolEntry createActivityParameter2CreationTool() {
+	private ToolEntry createParameterSet2CreationTool() {
+		List/*<IElementType>*/types = new ArrayList/*<IElementType>*/(1);
+		types.add(UMLElementTypes.ParameterSet_3086);
+		NodeToolEntry entry = new NodeToolEntry(Messages.ParameterSet2CreationTool_title, Messages.ParameterSet2CreationTool_desc, types);
+		entry.setSmallIcon(UMLElementTypes.getImageDescriptor(UMLElementTypes.ParameterSet_3086));
+		entry.setLargeIcon(entry.getSmallIcon());
+		return entry;
+	}
+
+	/**
+	 * @generated
+	 */
+	private ToolEntry createActivityParameter3CreationTool() {
 		List/*<IElementType>*/types = new ArrayList/*<IElementType>*/(1);
 		types.add(UMLElementTypes.ActivityParameterNode_3052);
-		NodeToolEntry entry = new NodeToolEntry(Messages.ActivityParameter2CreationTool_title, Messages.ActivityParameter2CreationTool_desc, types);
+		NodeToolEntry entry = new NodeToolEntry(Messages.ActivityParameter3CreationTool_title, Messages.ActivityParameter3CreationTool_desc, types);
 		entry.setSmallIcon(UMLElementTypes.getImageDescriptor(UMLElementTypes.ActivityParameterNode_3052));
 		entry.setLargeIcon(entry.getSmallIcon());
 		return entry;
@@ -194,11 +207,11 @@ public class UMLPaletteFactory {
 	/**
 	 * @generated
 	 */
-	private ToolEntry createActivityPartition3CreationTool() {
+	private ToolEntry createActivityPartition4CreationTool() {
 		List/*<IElementType>*/types = new ArrayList/*<IElementType>*/(2);
 		types.add(UMLElementTypes.ActivityPartition_3056);
 		types.add(UMLElementTypes.ActivityPartition_3057);
-		NodeToolEntry entry = new NodeToolEntry(Messages.ActivityPartition3CreationTool_title, Messages.ActivityPartition3CreationTool_desc, types);
+		NodeToolEntry entry = new NodeToolEntry(Messages.ActivityPartition4CreationTool_title, Messages.ActivityPartition4CreationTool_desc, types);
 		entry.setSmallIcon(UMLElementTypes.getImageDescriptor(UMLElementTypes.ActivityPartition_3056));
 		entry.setLargeIcon(entry.getSmallIcon());
 		return entry;

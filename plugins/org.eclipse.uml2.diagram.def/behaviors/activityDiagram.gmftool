@@ -16,6 +16,10 @@
           description="Create activity"/>
       <tools
           xsi:type="gmftool:CreationTool"
+          title="Parameter Set"
+          description="Create Parameter Set"/>
+      <tools
+          xsi:type="gmftool:CreationTool"
           title="Activity Parameter"
           description="Create Activity Parameter"/>
       <tools

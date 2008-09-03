@@ -524,6 +524,12 @@ public class UMLEditPartFactory implements EditPartFactory {
 			case ExpansionRegionModeEditPart.VISUAL_ID:
 				return new ExpansionRegionModeEditPart(view);
 
+			case ParameterSetEditPart.VISUAL_ID:
+				return new ParameterSetEditPart(view);
+
+			case ParameterEditPart.VISUAL_ID:
+				return new ParameterEditPart(view);
+
 			case LiteralStringEditPart.VISUAL_ID:
 				return new LiteralStringEditPart(view);
 

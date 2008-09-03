@@ -31,6 +31,7 @@ import org.eclipse.gmf.runtime.diagram.ui.editpolicies.BorderItemSelectionEditPo
 import org.eclipse.gmf.runtime.diagram.ui.editpolicies.DragDropEditPolicy;
 import org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles;
 import org.eclipse.gmf.runtime.diagram.ui.editpolicies.XYLayoutEditPolicy;
+import org.eclipse.gmf.runtime.diagram.ui.figures.BorderItemLocator;
 import org.eclipse.gmf.runtime.draw2d.ui.figures.ConstrainedToolbarLayout;
 import org.eclipse.gmf.runtime.draw2d.ui.figures.IBorderItemLocator;
 import org.eclipse.gmf.runtime.draw2d.ui.figures.OneLineBorder;
@@ -160,6 +161,11 @@ public class ActivityEditPart extends AbstractBorderedShapeEditPart implements P
 			getBorderedFigure().getBorderItemContainer().add(((ActivityParameterNodeEditPart) childEditPart).getFigure(), locator);
 			return true;
 		}
+		if (childEditPart instanceof ParameterSetEditPart) {
+			BorderItemLocator locator = new BorderItemLocator(getMainFigure(), PositionConstants.NORTH);
+			getBorderedFigure().getBorderItemContainer().add(((ParameterSetEditPart) childEditPart).getFigure(), locator);
+			return true;
+		}
 		return false;
 	}
 
@@ -170,6 +176,10 @@ public class ActivityEditPart extends AbstractBorderedShapeEditPart implements P
 
 		if (childEditPart instanceof ActivityParameterNodeEditPart) {
 			getBorderedFigure().getBorderItemContainer().remove(((ActivityParameterNodeEditPart) childEditPart).getFigure());
+			return true;
+		}
+		if (childEditPart instanceof ParameterSetEditPart) {
+			getBorderedFigure().getBorderItemContainer().remove(((ParameterSetEditPart) childEditPart).getFigure());
 			return true;
 		}
 		return false;
