@@ -2,7 +2,7 @@
 <feature
       id="org.eclipse.uml2.diagram"
       label="%featureName"
-      version="0.8.0.qualifier"
+      version="0.9.0.qualifier"
       provider-name="%providerName"
       image="eclipse_update_120.jpg">
 
@@ -23,22 +23,22 @@
    </url>
 
    <requires>
-      <import plugin="org.eclipse.core.runtime"/>
-      <import plugin="org.eclipse.core.resources"/>
-      <import plugin="org.eclipse.jface"/>
-      <import plugin="org.eclipse.ui.ide"/>
-      <import plugin="org.eclipse.ui.views"/>
-      <import plugin="org.eclipse.ui.workbench"/>
-      <import plugin="org.eclipse.ui.workbench.texteditor"/>
-      <import plugin="org.eclipse.ui.navigator"/>
-      <import feature="org.eclipse.emf" version="2.3.0" match="compatible"/>
-      <import feature="org.eclipse.uml2" version="2.1.0" match="compatible"/>
+      <import plugin="org.eclipse.core.runtime" version="3.4.0" match="compatible"/>
+      <import plugin="org.eclipse.core.resources" version="3.4.0" match="compatible"/>
+      <import plugin="org.eclipse.jface" version="3.5.0" match="compatible"/>
+      <import plugin="org.eclipse.ui.ide" version="3.4.0" match="compatible"/>
+      <import plugin="org.eclipse.ui.views" version="3.3.0" match="compatible"/>
+      <import plugin="org.eclipse.ui.workbench" version="3.5.0" match="compatible"/>
+      <import plugin="org.eclipse.ui.workbench.texteditor" version="3.5.0" match="compatible"/>
+      <import plugin="org.eclipse.ui.navigator" version="3.3.0" match="compatible"/>
+      <import feature="org.eclipse.emf" version="2.5.0" match="compatible"/>
+      <import feature="org.eclipse.uml2" version="2.2.0" match="compatible"/>
       <import feature="org.eclipse.emf.ocl" version="1.1.0" match="compatible"/>
-      <import feature="org.eclipse.emf.query" version="1.0.1" match="compatible"/>
-      <import feature="org.eclipse.emf.transaction" version="1.1.0" match="compatible"/>
-      <import feature="org.eclipse.emf.validation" version="1.1.0" match="compatible"/>
-      <import feature="org.eclipse.gef" version="3.3.0" match="compatible"/>
-      <import feature="org.eclipse.gmf" version="1.0.100" match="compatible"/>
+      <import feature="org.eclipse.emf.query" version="1.2.0" match="compatible"/>
+      <import feature="org.eclipse.emf.transaction" version="1.2.1" match="compatible"/>
+      <import feature="org.eclipse.emf.validation" version="1.2.0" match="compatible"/>
+      <import feature="org.eclipse.gef" version="3.5.0" match="compatible"/>
+      <import feature="org.eclipse.gmf" version="1.1.1" match="compatible"/>
    </requires>
 
    <plugin
