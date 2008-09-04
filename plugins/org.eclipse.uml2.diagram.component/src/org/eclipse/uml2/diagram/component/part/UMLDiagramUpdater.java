@@ -1172,71 +1172,42 @@ public class UMLDiagramUpdater {
 	 * @generated
 	 */
 	public static List getPackage_3008IncomingLinks(View view) {
-		Package modelElement = (Package) view.getElement();
-		Map crossReferences = EcoreUtil.CrossReferencer.find(view.eResource().getResourceSet().getResources());
-		List result = new LinkedList();
-		result.addAll(getIncomingTypeModelFacetLinks_Dependency_4009(modelElement, crossReferences));
-		return result;
+		return Collections.EMPTY_LIST;
 	}
 
 	/**
 	 * @generated
 	 */
 	public static List getClass_3009IncomingLinks(View view) {
-		Class modelElement = (Class) view.getElement();
-		Map crossReferences = EcoreUtil.CrossReferencer.find(view.eResource().getResourceSet().getResources());
-		List result = new LinkedList();
-		result.addAll(getIncomingTypeModelFacetLinks_Dependency_4009(modelElement, crossReferences));
-		result.addAll(getIncomingTypeModelFacetLinks_Association_4011(modelElement, crossReferences));
-		return result;
+		return Collections.EMPTY_LIST;
 	}
 
 	/**
 	 * @generated
 	 */
 	public static List getComponent_3010IncomingLinks(View view) {
-		Component modelElement = (Component) view.getElement();
-		Map crossReferences = EcoreUtil.CrossReferencer.find(view.eResource().getResourceSet().getResources());
-		List result = new LinkedList();
-		result.addAll(getIncomingTypeModelFacetLinks_Dependency_4009(modelElement, crossReferences));
-		result.addAll(getIncomingTypeModelFacetLinks_Association_4011(modelElement, crossReferences));
-		return result;
+		return Collections.EMPTY_LIST;
 	}
 
 	/**
 	 * @generated
 	 */
 	public static List getProperty_3011IncomingLinks(View view) {
-		Property modelElement = (Property) view.getElement();
-		Map crossReferences = EcoreUtil.CrossReferencer.find(view.eResource().getResourceSet().getResources());
-		List result = new LinkedList();
-		result.addAll(getIncomingTypeModelFacetLinks_Connector_4008(modelElement, crossReferences));
-		result.addAll(getIncomingTypeModelFacetLinks_Dependency_4009(modelElement, crossReferences));
-		result.addAll(getIncomingFeatureModelFacetLinks_ConnectorEnd_Role_4010(modelElement, crossReferences));
-		return result;
+		return Collections.EMPTY_LIST;
 	}
 
 	/**
 	 * @generated
 	 */
 	public static List getOperation_3012IncomingLinks(View view) {
-		Operation modelElement = (Operation) view.getElement();
-		Map crossReferences = EcoreUtil.CrossReferencer.find(view.eResource().getResourceSet().getResources());
-		List result = new LinkedList();
-		result.addAll(getIncomingTypeModelFacetLinks_Dependency_4009(modelElement, crossReferences));
-		return result;
+		return Collections.EMPTY_LIST;
 	}
 
 	/**
 	 * @generated
 	 */
 	public static List getClass_3013IncomingLinks(View view) {
-		Class modelElement = (Class) view.getElement();
-		Map crossReferences = EcoreUtil.CrossReferencer.find(view.eResource().getResourceSet().getResources());
-		List result = new LinkedList();
-		result.addAll(getIncomingTypeModelFacetLinks_Dependency_4009(modelElement, crossReferences));
-		result.addAll(getIncomingTypeModelFacetLinks_Association_4011(modelElement, crossReferences));
-		return result;
+		return Collections.EMPTY_LIST;
 	}
 
 	/**
@@ -1466,68 +1437,42 @@ public class UMLDiagramUpdater {
 	 * @generated
 	 */
 	public static List getPackage_3008OutgoingLinks(View view) {
-		Package modelElement = (Package) view.getElement();
-		List result = new LinkedList();
-		result.addAll(getOutgoingTypeModelFacetLinks_Dependency_4009(modelElement));
-		return result;
+		return Collections.EMPTY_LIST;
 	}
 
 	/**
 	 * @generated
 	 */
 	public static List getClass_3009OutgoingLinks(View view) {
-		Class modelElement = (Class) view.getElement();
-		List result = new LinkedList();
-		result.addAll(getOutgoingTypeModelFacetLinks_InterfaceRealization_4001(modelElement));
-		result.addAll(getOutgoingTypeModelFacetLinks_Dependency_4009(modelElement));
-		result.addAll(getOutgoingTypeModelFacetLinks_Association_4011(modelElement));
-		return result;
+		return Collections.EMPTY_LIST;
 	}
 
 	/**
 	 * @generated
 	 */
 	public static List getComponent_3010OutgoingLinks(View view) {
-		Component modelElement = (Component) view.getElement();
-		List result = new LinkedList();
-		result.addAll(getOutgoingTypeModelFacetLinks_InterfaceRealization_4001(modelElement));
-		result.addAll(getOutgoingFeatureModelFacetLinks_Component_Required_4007(modelElement));
-		result.addAll(getOutgoingTypeModelFacetLinks_Dependency_4009(modelElement));
-		result.addAll(getOutgoingTypeModelFacetLinks_Association_4011(modelElement));
-		return result;
+		return Collections.EMPTY_LIST;
 	}
 
 	/**
 	 * @generated
 	 */
 	public static List getProperty_3011OutgoingLinks(View view) {
-		Property modelElement = (Property) view.getElement();
-		List result = new LinkedList();
-		result.addAll(getOutgoingTypeModelFacetLinks_Connector_4008(modelElement));
-		result.addAll(getOutgoingTypeModelFacetLinks_Dependency_4009(modelElement));
-		return result;
+		return Collections.EMPTY_LIST;
 	}
 
 	/**
 	 * @generated
 	 */
 	public static List getOperation_3012OutgoingLinks(View view) {
-		Operation modelElement = (Operation) view.getElement();
-		List result = new LinkedList();
-		result.addAll(getOutgoingTypeModelFacetLinks_Dependency_4009(modelElement));
-		return result;
+		return Collections.EMPTY_LIST;
 	}
 
 	/**
 	 * @generated
 	 */
 	public static List getClass_3013OutgoingLinks(View view) {
-		Class modelElement = (Class) view.getElement();
-		List result = new LinkedList();
-		result.addAll(getOutgoingTypeModelFacetLinks_InterfaceRealization_4001(modelElement));
-		result.addAll(getOutgoingTypeModelFacetLinks_Dependency_4009(modelElement));
-		result.addAll(getOutgoingTypeModelFacetLinks_Association_4011(modelElement));
-		return result;
+		return Collections.EMPTY_LIST;
 	}
 
 	/**
