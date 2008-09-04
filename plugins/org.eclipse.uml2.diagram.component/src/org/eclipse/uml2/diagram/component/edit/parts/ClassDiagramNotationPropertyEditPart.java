@@ -48,6 +48,7 @@ import org.eclipse.swt.graphics.Image;
 import org.eclipse.uml2.diagram.common.editpolicies.IRefreshableFeedbackEditPolicy;
 import org.eclipse.uml2.diagram.component.edit.policies.ClassDiagramNotationPropertyItemSemanticEditPolicy;
 import org.eclipse.uml2.diagram.component.edit.policies.UMLTextNonResizableEditPolicy;
+import org.eclipse.uml2.diagram.component.part.UMLVisualIDRegistry;
 import org.eclipse.uml2.diagram.component.providers.UMLElementTypes;
 import org.eclipse.uml2.diagram.component.providers.UMLParserProvider;
 
@@ -283,9 +284,8 @@ public class ClassDiagramNotationPropertyEditPart extends CompartmentEditPart im
 	 */
 	public IParser getParser() {
 		if (parser == null) {
-			String parserHint = ((View) getModel()).getType();
-			IAdaptable hintAdapter = new UMLParserProvider.HintAdapter(UMLElementTypes.Property_3011, getParserElement(), parserHint);
-			parser = ParserService.getInstance().getParser(hintAdapter);
+			parser = UMLParserProvider.getParser(UMLElementTypes.Property_3011, getParserElement(), UMLVisualIDRegistry
+					.getType(org.eclipse.uml2.diagram.component.edit.parts.ClassDiagramNotationPropertyEditPart.VISUAL_ID));
 		}
 		return parser;
 	}

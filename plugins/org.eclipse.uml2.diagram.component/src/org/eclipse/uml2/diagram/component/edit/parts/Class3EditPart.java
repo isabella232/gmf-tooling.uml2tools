@@ -48,6 +48,7 @@ import org.eclipse.swt.graphics.Image;
 import org.eclipse.uml2.diagram.common.editpolicies.IRefreshableFeedbackEditPolicy;
 import org.eclipse.uml2.diagram.component.edit.policies.Class3ItemSemanticEditPolicy;
 import org.eclipse.uml2.diagram.component.edit.policies.UMLTextNonResizableEditPolicy;
+import org.eclipse.uml2.diagram.component.part.UMLVisualIDRegistry;
 import org.eclipse.uml2.diagram.component.providers.UMLElementTypes;
 import org.eclipse.uml2.diagram.component.providers.UMLParserProvider;
 
@@ -283,9 +284,7 @@ public class Class3EditPart extends CompartmentEditPart implements ITextAwareEdi
 	 */
 	public IParser getParser() {
 		if (parser == null) {
-			String parserHint = ((View) getModel()).getType();
-			IAdaptable hintAdapter = new UMLParserProvider.HintAdapter(UMLElementTypes.Class_3009, getParserElement(), parserHint);
-			parser = ParserService.getInstance().getParser(hintAdapter);
+			parser = UMLParserProvider.getParser(UMLElementTypes.Class_3009, getParserElement(), UMLVisualIDRegistry.getType(org.eclipse.uml2.diagram.component.edit.parts.Class3EditPart.VISUAL_ID));
 		}
 		return parser;
 	}
