@@ -5,6 +5,7 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.gmf.runtime.emf.type.core.commands.CreateElementCommand;
 import org.eclipse.gmf.runtime.emf.type.core.requests.CreateElementRequest;
 import org.eclipse.gmf.runtime.notation.View;
+import org.eclipse.uml2.uml.Activity;
 import org.eclipse.uml2.uml.Behavior;
 import org.eclipse.uml2.uml.Parameter;
 import org.eclipse.uml2.uml.ParameterSet;
@@ -27,12 +28,19 @@ public class ParameterCreateCommand extends CreateElementCommand {
 	/**
 	 * @generated
 	 */
-	protected EObject getElementToEdit() {
+	protected EObject getElementToEditGen() {
 		EObject container = ((CreateElementRequest) getRequest()).getContainer();
 		if (container instanceof View) {
 			container = ((View) container).getElement();
 		}
 		return container;
+	}
+
+	/**
+	 * @generated NOT
+	 */
+	protected EObject getElementToEdit() {
+		return getElementToEditGen().eContainer();
 	}
 
 	/**
@@ -45,12 +53,25 @@ public class ParameterCreateCommand extends CreateElementCommand {
 	/**
 	 * @generated
 	 */
-	protected EObject doDefaultElementCreation() {
+	protected EObject doDefaultElementCreationGen() {
 		Parameter newElement = UMLFactory.eINSTANCE.createParameter();
 
 		Behavior owner = (Behavior) getElementToEdit();
 		owner.getOwnedParameters().add(newElement);
 		ParameterSet childHolder = (ParameterSet) getElementToEdit();
+		childHolder.getParameters().add(newElement);
+		return newElement;
+	}
+
+	/**
+	 * @generated NOT
+	 */
+	protected EObject doDefaultElementCreation() {
+		Parameter newElement = UMLFactory.eINSTANCE.createParameter();
+
+		Behavior owner = (Behavior) getElementToEdit();
+		owner.getOwnedParameters().add(newElement);
+		ParameterSet childHolder = (ParameterSet) getElementToEditGen();
 		childHolder.getParameters().add(newElement);
 		return newElement;
 	}

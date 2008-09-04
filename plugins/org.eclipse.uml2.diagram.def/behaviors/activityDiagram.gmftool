@@ -20,8 +20,12 @@
           description="Create Parameter Set"/>
       <tools
           xsi:type="gmftool:CreationTool"
-          title="Activity Parameter"
-          description="Create Activity Parameter"/>
+          title="Parameter"
+          description="Create Parameter"/>
+      <tools
+          xsi:type="gmftool:CreationTool"
+          title="Activity Parameter Node"
+          description="Create Activity Parameter Node"/>
       <tools
           xsi:type="gmftool:CreationTool"
           title="Activity Partition"

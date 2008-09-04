@@ -114,13 +114,13 @@
             forceSingleLine="true"
             majorAlignment="CENTER"
             minorAlignment="CENTER"
-            majorSpacing="2"
-            minorSpacing="2"/>
+            majorSpacing="3"
+            minorSpacing="3"/>
         <insets
-            top="2"
-            left="2"
-            bottom="2"
-            right="2"/>
+            top="3"
+            left="3"
+            bottom="3"
+            right="3"/>
       </actualFigure>
     </descriptors>
     <descriptors

@@ -227,12 +227,12 @@ public class ParameterSetEditPart extends AbstractBorderItemEditPart implements 
 			layoutThis.setStretchMinorAxis(true);
 			layoutThis.setMinorAlignment(ToolbarLayout.ALIGN_CENTER);
 
-			layoutThis.setSpacing(2);
+			layoutThis.setSpacing(3);
 			layoutThis.setVertical(false);
 
 			this.setLayoutManager(layoutThis);
 
-			this.setBorder(new MarginBorder(getMapMode().DPtoLP(2), getMapMode().DPtoLP(2), getMapMode().DPtoLP(2), getMapMode().DPtoLP(2)));
+			this.setBorder(new MarginBorder(getMapMode().DPtoLP(3), getMapMode().DPtoLP(3), getMapMode().DPtoLP(3), getMapMode().DPtoLP(3)));
 		}
 
 		/**

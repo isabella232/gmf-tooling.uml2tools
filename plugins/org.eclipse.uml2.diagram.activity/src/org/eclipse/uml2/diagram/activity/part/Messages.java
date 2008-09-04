@@ -363,22 +363,32 @@ public class Messages extends NLS {
 	/**
 	 * @generated
 	 */
-	public static String ActivityParameter3CreationTool_title;
+	public static String Parameter3CreationTool_title;
 
 	/**
 	 * @generated
 	 */
-	public static String ActivityParameter3CreationTool_desc;
+	public static String Parameter3CreationTool_desc;
 
 	/**
 	 * @generated
 	 */
-	public static String ActivityPartition4CreationTool_title;
+	public static String ActivityParameterNode4CreationTool_title;
 
 	/**
 	 * @generated
 	 */
-	public static String ActivityPartition4CreationTool_desc;
+	public static String ActivityParameterNode4CreationTool_desc;
+
+	/**
+	 * @generated
+	 */
+	public static String ActivityPartition5CreationTool_title;
+
+	/**
+	 * @generated
+	 */
+	public static String ActivityPartition5CreationTool_desc;
 
 	/**
 	 * @generated
