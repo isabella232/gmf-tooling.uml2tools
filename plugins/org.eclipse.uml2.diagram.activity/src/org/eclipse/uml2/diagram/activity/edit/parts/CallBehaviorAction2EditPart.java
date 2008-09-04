@@ -228,10 +228,7 @@ public class CallBehaviorAction2EditPart extends AbstractBorderedShapeEditPart i
 	 */
 	protected IFigure getContentPaneFor(IGraphicalEditPart editPart) {
 
-		if (editPart instanceof OutputPin3EditPart) {
-			return getBorderedFigure().getBorderItemContainer();
-		}
-		if (editPart instanceof InputPin4EditPart) {
+		if (editPart instanceof IBorderItemEditPart) {
 			return getBorderedFigure().getBorderItemContainer();
 		}
 		return getContentPane();

@@ -249,10 +249,7 @@ public class State3EditPart extends AbstractBorderedShapeEditPart implements Pri
 		if (editPart instanceof StateCompositeState_InternalActivities2EditPart) {
 			return getPrimaryShape().getFigureCompositeStateFigure_InternalActivitiesCompartment();
 		}
-		if (editPart instanceof ConnectionPointReferenceEditPart) {
-			return getBorderedFigure().getBorderItemContainer();
-		}
-		if (editPart instanceof ConnectionPointReference2EditPart) {
+		if (editPart instanceof IBorderItemEditPart) {
 			return getBorderedFigure().getBorderItemContainer();
 		}
 		return getContentPane();

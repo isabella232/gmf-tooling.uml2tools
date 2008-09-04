@@ -213,7 +213,7 @@ public class CreateObjectAction2EditPart extends AbstractBorderedShapeEditPart i
 	 */
 	protected IFigure getContentPaneFor(IGraphicalEditPart editPart) {
 
-		if (editPart instanceof OutputPin2EditPart) {
+		if (editPart instanceof IBorderItemEditPart) {
 			return getBorderedFigure().getBorderItemContainer();
 		}
 		return getContentPane();

@@ -180,6 +180,9 @@ public class Pin3EditPart extends AbstractBorderedShapeEditPart implements Prima
 	 */
 	protected IFigure getContentPaneFor(IGraphicalEditPart editPart) {
 
+		if (editPart instanceof IBorderItemEditPart) {
+			return getBorderedFigure().getBorderItemContainer();
+		}
 		return getContentPane();
 	}
 

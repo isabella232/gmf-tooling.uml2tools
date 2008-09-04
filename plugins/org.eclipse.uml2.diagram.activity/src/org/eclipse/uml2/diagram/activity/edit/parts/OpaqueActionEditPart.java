@@ -213,7 +213,7 @@ public class OpaqueActionEditPart extends AbstractBorderedShapeEditPart implemen
 	 */
 	protected IFigure getContentPaneFor(IGraphicalEditPart editPart) {
 
-		if (editPart instanceof OutputPinEditPart) {
+		if (editPart instanceof IBorderItemEditPart) {
 			return getBorderedFigure().getBorderItemContainer();
 		}
 		return getContentPane();

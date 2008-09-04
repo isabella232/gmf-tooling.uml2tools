@@ -184,6 +184,9 @@ public class PinEditPart extends AbstractBorderedShapeEditPart implements Primar
 	 */
 	protected IFigure getContentPaneFor(IGraphicalEditPart editPart) {
 
+		if (editPart instanceof IBorderItemEditPart) {
+			return getBorderedFigure().getBorderItemContainer();
+		}
 		return getContentPane();
 	}
 

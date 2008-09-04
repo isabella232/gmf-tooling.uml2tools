@@ -185,6 +185,9 @@ public class DataStoreNodeEditPart extends AbstractBorderedShapeEditPart impleme
 	 */
 	protected IFigure getContentPaneFor(IGraphicalEditPart editPart) {
 
+		if (editPart instanceof IBorderItemEditPart) {
+			return getBorderedFigure().getBorderItemContainer();
+		}
 		return getContentPane();
 	}
 
