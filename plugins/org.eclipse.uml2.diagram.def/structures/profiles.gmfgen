@@ -67,6 +67,8 @@
           </initializers>
         </modelElementInitializer>
       </modelFacet>
+      <labelModelFacet
+          parser="//@labelParsers/@implementations.0"/>
     </childNodes>
     <childNodes
         xsi:type="gmfgen:GenChildLabelNode"
@@ -108,6 +110,7 @@
       </modelFacet>
       <labelModelFacet
           xsi:type="gmfgen:FeatureLabelModelFacet"
+          parser="//@labelParsers/@implementations.1"
           editPattern="">
         <metaFeatures
             href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/NamedElement/name"/>
@@ -153,7 +156,8 @@
         </modelElementInitializer>
       </modelFacet>
       <labelModelFacet
-          xsi:type="gmfgen:FeatureLabelModelFacet">
+          xsi:type="gmfgen:FeatureLabelModelFacet"
+          parser="//@labelParsers/@implementations.1">
         <metaFeatures
             href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/NamedElement/name"/>
       </labelModelFacet>
@@ -198,6 +202,7 @@
       </modelFacet>
       <labelModelFacet
           xsi:type="gmfgen:FeatureLabelModelFacet"
+          parser="//@labelParsers/@implementations.1"
           editPattern="">
         <metaFeatures
             href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/NamedElement/name"/>
@@ -234,7 +239,8 @@
             href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/Namespace/elementImport"/>
       </modelFacet>
       <labelModelFacet
-          xsi:type="gmfgen:FeatureLabelModelFacet"/>
+          xsi:type="gmfgen:FeatureLabelModelFacet"
+          parser="//@labelParsers/@implementations.1"/>
     </childNodes>
     <topLevelNodes
         visualID="2001"
@@ -294,6 +300,7 @@
             figureQualifiedClassName="org.eclipse.draw2d.Label"/>
         <modelFacet
             xsi:type="gmfgen:FeatureLabelModelFacet"
+            parser="//@labelParsers/@implementations.1"
             editPattern="">
           <metaFeatures
               href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/NamedElement/name"/>
@@ -361,6 +368,7 @@
             figureQualifiedClassName="org.eclipse.draw2d.Label"/>
         <modelFacet
             xsi:type="gmfgen:FeatureLabelModelFacet"
+            parser="//@labelParsers/@implementations.1"
             editPattern="">
           <metaFeatures
               href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/NamedElement/name"/>
@@ -428,6 +436,7 @@
         </viewmap>
         <modelFacet
             xsi:type="gmfgen:FeatureLabelModelFacet"
+            parser="//@labelParsers/@implementations.1"
             editPattern="">
           <metaFeatures
               href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/NamedElement/name"/>
@@ -478,6 +487,8 @@
             xsi:type="gmfgen:ParentAssignedViewmap"
             getterName="getFigureReferencedMetaclassFigure_className"
             figureQualifiedClassName="org.eclipse.draw2d.Label"/>
+        <modelFacet
+            parser="//@labelParsers/@implementations.0"/>
       </labels>
     </topLevelNodes>
     <topLevelNodes
@@ -532,6 +543,7 @@
             figureQualifiedClassName="org.eclipse.draw2d.Label"/>
         <modelFacet
             xsi:type="gmfgen:FeatureLabelModelFacet"
+            parser="//@labelParsers/@implementations.1"
             editPattern="">
           <metaFeatures
               href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/NamedElement/name"/>
@@ -623,6 +635,8 @@
           <requiredPluginIDs>org.eclipse.uml2.diagram.common</requiredPluginIDs>
           <requiredPluginIDs>org.eclipse.gmf.runtime.draw2d.ui</requiredPluginIDs>
         </viewmap>
+        <modelFacet
+            parser="//@labelParsers/@implementations.0"/>
       </labels>
       <creationConstraints
           targetEnd="//@expressionProviders/@providers.0/@expressions.11"/>
@@ -1029,4 +1043,13 @@
           body="let metaclass : Class = self.importedElement.oclAsType(Class) in&#xD;&#xA;metaclass.isMetaclass() and &#xD;&#xA;not oppositeEnd.getAllExtendedMetaclasses()->includes(metaclass)&#xD;&#xA;"/>
     </providers>
   </expressionProviders>
+  <labelParsers
+      extensibleViaService="true">
+    <implementations
+        xsi:type="gmfgen:ExternalParser"
+        uses="//@diagram/@childNodes.0/@labelModelFacet //@diagram/@topLevelNodes.3/@labels.0/@modelFacet //@diagram/@links.1/@labels.0/@modelFacet"/>
+    <implementations
+        xsi:type="gmfgen:PredefinedParser"
+        uses="//@diagram/@childNodes.1/@labelModelFacet //@diagram/@topLevelNodes.0/@labels.0/@modelFacet //@diagram/@childNodes.2/@labelModelFacet //@diagram/@topLevelNodes.1/@labels.0/@modelFacet //@diagram/@childNodes.3/@labelModelFacet //@diagram/@topLevelNodes.2/@labels.0/@modelFacet //@diagram/@childNodes.4/@labelModelFacet //@diagram/@topLevelNodes.4/@labels.0/@modelFacet"/>
+  </labelParsers>
 </gmfgen:GenEditorGenerator>
