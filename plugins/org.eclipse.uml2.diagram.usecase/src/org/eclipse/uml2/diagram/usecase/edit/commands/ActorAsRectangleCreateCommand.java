@@ -49,7 +49,6 @@ public class ActorAsRectangleCreateCommand extends CreateElementCommand {
 
 		Package owner = (Package) getElementToEdit();
 		owner.getPackagedElements().add(newElement);
-
 		UMLElementTypes.init_Actor_2005(newElement);
 		return newElement;
 	}

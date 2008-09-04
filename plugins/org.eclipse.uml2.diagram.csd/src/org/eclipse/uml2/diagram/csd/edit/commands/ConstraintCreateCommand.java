@@ -49,7 +49,6 @@ public class ConstraintCreateCommand extends CreateElementCommand {
 
 		Package owner = (Package) getElementToEdit();
 		owner.getPackagedElements().add(newElement);
-
 		UMLElementTypes.init_Constraint_2012(newElement);
 		return newElement;
 	}

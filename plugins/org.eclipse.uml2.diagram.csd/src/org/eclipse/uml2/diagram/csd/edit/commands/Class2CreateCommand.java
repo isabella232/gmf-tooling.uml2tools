@@ -48,7 +48,6 @@ public class Class2CreateCommand extends CreateElementCommand {
 
 		Class owner = (Class) getElementToEdit();
 		owner.getNestedClassifiers().add(newElement);
-
 		UMLElementTypes.init_Class_3010(newElement);
 		return newElement;
 	}

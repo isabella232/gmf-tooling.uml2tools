@@ -49,7 +49,6 @@ public class CollaborationUse2CreateCommand extends CreateElementCommand {
 
 		Classifier owner = (Classifier) getElementToEdit();
 		owner.getCollaborationUses().add(newElement);
-
 		UMLElementTypes.init_CollaborationUse_3002(newElement);
 		return newElement;
 	}

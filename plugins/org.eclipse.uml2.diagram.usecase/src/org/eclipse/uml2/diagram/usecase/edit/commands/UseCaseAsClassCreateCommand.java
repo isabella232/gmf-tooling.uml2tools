@@ -49,7 +49,6 @@ public class UseCaseAsClassCreateCommand extends CreateElementCommand {
 
 		Package owner = (Package) getElementToEdit();
 		owner.getPackagedElements().add(newElement);
-
 		UMLElementTypes.init_UseCase_2004(newElement);
 		return newElement;
 	}

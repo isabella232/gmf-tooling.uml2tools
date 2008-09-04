@@ -49,7 +49,6 @@ public class ProfileCreateCommand extends CreateElementCommand {
 
 		Package owner = (Package) getElementToEdit();
 		owner.getPackagedElements().add(newElement);
-
 		UMLElementTypes.init_Profile_2002(newElement);
 		return newElement;
 	}

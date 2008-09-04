@@ -51,7 +51,6 @@ public class PropertyCreateCommand extends CreateElementCommand {
 		owner.getOwnedAttributes().add(newElement);
 		Collaboration childHolder = (Collaboration) getElementToEdit();
 		childHolder.getCollaborationRoles().add(newElement);
-
 		return newElement;
 	}
 }

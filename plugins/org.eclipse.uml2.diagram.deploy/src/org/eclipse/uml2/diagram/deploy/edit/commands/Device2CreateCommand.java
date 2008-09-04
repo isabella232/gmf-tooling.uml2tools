@@ -49,7 +49,6 @@ public class Device2CreateCommand extends CreateElementCommand {
 
 		Node owner = (Node) getElementToEdit();
 		owner.getNestedNodes().add(newElement);
-
 		UMLElementTypes.init_Device_3004(newElement);
 		return newElement;
 	}

@@ -51,7 +51,6 @@ public class InnerUseCaseCreateCommand extends CreateElementCommand {
 		owner.getOwnedUseCases().add(newElement);
 		Classifier childHolder = (Classifier) getElementToEdit();
 		childHolder.getUseCases().add(newElement);
-
 		UMLElementTypes.init_UseCase_3004(newElement);
 		return newElement;
 	}

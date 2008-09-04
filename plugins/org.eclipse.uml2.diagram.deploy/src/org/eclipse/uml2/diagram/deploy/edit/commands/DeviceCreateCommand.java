@@ -49,7 +49,6 @@ public class DeviceCreateCommand extends CreateElementCommand {
 
 		Package owner = (Package) getElementToEdit();
 		owner.getPackagedElements().add(newElement);
-
 		UMLElementTypes.init_Device_2003(newElement);
 		return newElement;
 	}

@@ -53,7 +53,6 @@ public class ElementImportCreateCommand extends CreateElementCommand {
 		owner.getElementImports().add(newElement);
 		Profile childHolder = (Profile) getElementToEdit();
 		childHolder.getMetaclassReferences().add(newElement);
-
 		return newElement;
 	}
 }

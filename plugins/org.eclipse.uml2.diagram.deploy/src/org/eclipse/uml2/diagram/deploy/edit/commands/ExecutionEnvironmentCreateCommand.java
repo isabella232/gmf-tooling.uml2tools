@@ -49,7 +49,6 @@ public class ExecutionEnvironmentCreateCommand extends CreateElementCommand {
 
 		Package owner = (Package) getElementToEdit();
 		owner.getPackagedElements().add(newElement);
-
 		UMLElementTypes.init_ExecutionEnvironment_2005(newElement);
 		return newElement;
 	}

@@ -49,7 +49,6 @@ public class CollaborationCreateCommand extends CreateElementCommand {
 
 		Package owner = (Package) getElementToEdit();
 		owner.getPackagedElements().add(newElement);
-
 		UMLElementTypes.init_Collaboration_2005(newElement);
 		return newElement;
 	}

@@ -48,7 +48,6 @@ public class NestedPackageCreateCommand extends CreateElementCommand {
 
 		Package owner = (Package) getElementToEdit();
 		owner.getPackagedElements().add(newElement);
-
 		UMLElementTypes.init_Package_2007(newElement);
 		return newElement;
 	}

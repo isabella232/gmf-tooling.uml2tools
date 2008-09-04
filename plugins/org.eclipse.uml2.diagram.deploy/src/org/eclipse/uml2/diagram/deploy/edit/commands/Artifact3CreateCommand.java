@@ -49,7 +49,6 @@ public class Artifact3CreateCommand extends CreateElementCommand {
 
 		Class owner = (Class) getElementToEdit();
 		owner.getNestedClassifiers().add(newElement);
-
 		UMLElementTypes.init_Artifact_3006(newElement);
 		return newElement;
 	}

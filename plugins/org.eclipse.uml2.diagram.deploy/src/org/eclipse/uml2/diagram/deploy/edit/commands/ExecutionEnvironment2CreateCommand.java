@@ -49,7 +49,6 @@ public class ExecutionEnvironment2CreateCommand extends CreateElementCommand {
 
 		Node owner = (Node) getElementToEdit();
 		owner.getNestedNodes().add(newElement);
-
 		UMLElementTypes.init_ExecutionEnvironment_3005(newElement);
 		return newElement;
 	}

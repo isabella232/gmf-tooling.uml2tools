@@ -49,7 +49,6 @@ public class InstanceSpecificationCreateCommand extends CreateElementCommand {
 
 		Package owner = (Package) getElementToEdit();
 		owner.getPackagedElements().add(newElement);
-
 		UMLElementTypes.init_InstanceSpecification_2011(newElement);
 		return newElement;
 	}

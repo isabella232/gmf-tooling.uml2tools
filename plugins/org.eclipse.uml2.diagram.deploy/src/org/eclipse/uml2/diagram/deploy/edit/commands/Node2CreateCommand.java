@@ -48,7 +48,6 @@ public class Node2CreateCommand extends CreateElementCommand {
 
 		Node owner = (Node) getElementToEdit();
 		owner.getNestedNodes().add(newElement);
-
 		UMLElementTypes.init_Node_3007(newElement);
 		return newElement;
 	}

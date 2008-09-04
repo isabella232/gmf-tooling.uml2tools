@@ -49,7 +49,6 @@ public class EnumerationLiteralCreateCommand extends CreateElementCommand {
 
 		Enumeration owner = (Enumeration) getElementToEdit();
 		owner.getOwnedLiterals().add(newElement);
-
 		UMLElementTypes.init_EnumerationLiteral_3005(newElement);
 		return newElement;
 	}

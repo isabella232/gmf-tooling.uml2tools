@@ -49,7 +49,6 @@ public class NodeCreateCommand extends CreateElementCommand {
 
 		Package owner = (Package) getElementToEdit();
 		owner.getPackagedElements().add(newElement);
-
 		UMLElementTypes.init_Node_2004(newElement);
 		return newElement;
 	}

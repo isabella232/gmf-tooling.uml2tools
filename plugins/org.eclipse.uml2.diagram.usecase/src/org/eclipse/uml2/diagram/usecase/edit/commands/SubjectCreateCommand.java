@@ -49,7 +49,6 @@ public class SubjectCreateCommand extends CreateElementCommand {
 
 		Package owner = (Package) getElementToEdit();
 		owner.getPackagedElements().add(newElement);
-
 		UMLElementTypes.init_Component_2006(newElement);
 		return newElement;
 	}

@@ -49,7 +49,6 @@ public class ConstraintCreateCommand extends CreateElementCommand {
 
 		Namespace owner = (Namespace) getElementToEdit();
 		owner.getOwnedRules().add(newElement);
-
 		UMLElementTypes.init_Constraint_3008(newElement);
 		return newElement;
 	}

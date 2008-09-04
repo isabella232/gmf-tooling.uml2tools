@@ -49,7 +49,6 @@ public class StereotypeCreateCommand extends CreateElementCommand {
 
 		Package owner = (Package) getElementToEdit();
 		owner.getPackagedElements().add(newElement);
-
 		UMLElementTypes.init_Stereotype_2001(newElement);
 		return newElement;
 	}

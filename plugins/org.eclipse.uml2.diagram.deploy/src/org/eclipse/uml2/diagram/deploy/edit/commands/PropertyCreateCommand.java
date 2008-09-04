@@ -49,7 +49,6 @@ public class PropertyCreateCommand extends CreateElementCommand {
 
 		Artifact owner = (Artifact) getElementToEdit();
 		owner.getOwnedAttributes().add(newElement);
-
 		UMLElementTypes.init_Property_3003(newElement);
 		return newElement;
 	}
