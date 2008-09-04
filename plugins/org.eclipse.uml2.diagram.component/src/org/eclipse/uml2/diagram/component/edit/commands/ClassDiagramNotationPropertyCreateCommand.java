@@ -49,7 +49,6 @@ public class ClassDiagramNotationPropertyCreateCommand extends CreateElementComm
 
 		StructuredClassifier owner = (StructuredClassifier) getElementToEdit();
 		owner.getOwnedAttributes().add(newElement);
-
 		UMLElementTypes.init_Property_3011(newElement);
 		return newElement;
 	}

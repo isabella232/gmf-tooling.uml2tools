@@ -48,7 +48,6 @@ public class ClassDiagramNotationInnerClassCreateCommand extends CreateElementCo
 
 		Class owner = (Class) getElementToEdit();
 		owner.getNestedClassifiers().add(newElement);
-
 		UMLElementTypes.init_Class_3013(newElement);
 		return newElement;
 	}

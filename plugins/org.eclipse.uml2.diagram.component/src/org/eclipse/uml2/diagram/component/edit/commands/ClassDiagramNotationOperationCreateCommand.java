@@ -49,7 +49,6 @@ public class ClassDiagramNotationOperationCreateCommand extends CreateElementCom
 
 		Class owner = (Class) getElementToEdit();
 		owner.getOwnedOperations().add(newElement);
-
 		UMLElementTypes.init_Operation_3012(newElement);
 		return newElement;
 	}

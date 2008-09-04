@@ -49,7 +49,6 @@ public class PortOnClassCreateCommand extends CreateElementCommand {
 
 		StructuredClassifier owner = (StructuredClassifier) getElementToEdit();
 		owner.getOwnedAttributes().add(newElement);
-
 		UMLElementTypes.init_Port_3014(newElement);
 		return newElement;
 	}

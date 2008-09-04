@@ -49,7 +49,6 @@ public class ArtifactCreateCommand extends CreateElementCommand {
 
 		Component owner = (Component) getElementToEdit();
 		owner.getPackagedElements().add(newElement);
-
 		UMLElementTypes.init_Artifact_3003(newElement);
 		return newElement;
 	}
