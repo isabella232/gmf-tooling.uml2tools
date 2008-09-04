@@ -85,14 +85,10 @@ public class UMLModelingAssistantProvider extends ModelingAssistantProvider {
 	public List getRelTypesOnSource(IAdaptable source) {
 		IGraphicalEditPart sourceEditPart = (IGraphicalEditPart) source.getAdapter(IGraphicalEditPart.class);
 		if (sourceEditPart instanceof StereotypeEditPart) {
-			List types = new ArrayList();
-			types.add(UMLElementTypes.Extension_4002);
-			return types;
+			return ((StereotypeEditPart) sourceEditPart).getMARelTypesOnSource();
 		}
-		if (sourceEditPart instanceof Stereotype2EditPart) {
-			List types = new ArrayList();
-			types.add(UMLElementTypes.Extension_4002);
-			return types;
+		if (sourceEditPart instanceof EnumerationEditPart) {
+			return ((EnumerationEditPart) sourceEditPart).getMARelTypesOnSource();
 		}
 		return Collections.EMPTY_LIST;
 	}
@@ -102,15 +98,14 @@ public class UMLModelingAssistantProvider extends ModelingAssistantProvider {
 	 */
 	public List getRelTypesOnTarget(IAdaptable target) {
 		IGraphicalEditPart targetEditPart = (IGraphicalEditPart) target.getAdapter(IGraphicalEditPart.class);
-		if (targetEditPart instanceof ElementImportEditPart) {
-			List types = new ArrayList();
-			types.add(UMLElementTypes.Extension_4002);
-			return types;
+		if (targetEditPart instanceof StereotypeEditPart) {
+			return ((StereotypeEditPart) targetEditPart).getMARelTypesOnTarget();
 		}
-		if (targetEditPart instanceof ElementImport2EditPart) {
-			List types = new ArrayList();
-			types.add(UMLElementTypes.Extension_4002);
-			return types;
+		if (targetEditPart instanceof EnumerationEditPart) {
+			return ((EnumerationEditPart) targetEditPart).getMARelTypesOnTarget();
+		}
+		if (targetEditPart instanceof ElementImportEditPart) {
+			return ((ElementImportEditPart) targetEditPart).getMARelTypesOnTarget();
 		}
 		return Collections.EMPTY_LIST;
 	}
@@ -122,24 +117,10 @@ public class UMLModelingAssistantProvider extends ModelingAssistantProvider {
 		IGraphicalEditPart sourceEditPart = (IGraphicalEditPart) source.getAdapter(IGraphicalEditPart.class);
 		IGraphicalEditPart targetEditPart = (IGraphicalEditPart) target.getAdapter(IGraphicalEditPart.class);
 		if (sourceEditPart instanceof StereotypeEditPart) {
-			List types = new ArrayList();
-			if (targetEditPart instanceof ElementImportEditPart) {
-				types.add(UMLElementTypes.Extension_4002);
-			}
-			if (targetEditPart instanceof ElementImport2EditPart) {
-				types.add(UMLElementTypes.Extension_4002);
-			}
-			return types;
+			return ((StereotypeEditPart) sourceEditPart).getMARelTypesOnSourceAndTarget(targetEditPart);
 		}
-		if (sourceEditPart instanceof Stereotype2EditPart) {
-			List types = new ArrayList();
-			if (targetEditPart instanceof ElementImportEditPart) {
-				types.add(UMLElementTypes.Extension_4002);
-			}
-			if (targetEditPart instanceof ElementImport2EditPart) {
-				types.add(UMLElementTypes.Extension_4002);
-			}
-			return types;
+		if (sourceEditPart instanceof EnumerationEditPart) {
+			return ((EnumerationEditPart) sourceEditPart).getMARelTypesOnSourceAndTarget(targetEditPart);
 		}
 		return Collections.EMPTY_LIST;
 	}
@@ -149,25 +130,14 @@ public class UMLModelingAssistantProvider extends ModelingAssistantProvider {
 	 */
 	public List getTypesForSource(IAdaptable target, IElementType relationshipType) {
 		IGraphicalEditPart targetEditPart = (IGraphicalEditPart) target.getAdapter(IGraphicalEditPart.class);
-		if (targetEditPart instanceof ElementImportEditPart) {
-			List types = new ArrayList();
-			if (relationshipType == UMLElementTypes.Extension_4002) {
-				types.add(UMLElementTypes.Stereotype_2001);
-			}
-			if (relationshipType == UMLElementTypes.Extension_4002) {
-				types.add(UMLElementTypes.Stereotype_3003);
-			}
-			return types;
+		if (targetEditPart instanceof StereotypeEditPart) {
+			return ((StereotypeEditPart) targetEditPart).getMATypesForSource(relationshipType);
 		}
-		if (targetEditPart instanceof ElementImport2EditPart) {
-			List types = new ArrayList();
-			if (relationshipType == UMLElementTypes.Extension_4002) {
-				types.add(UMLElementTypes.Stereotype_2001);
-			}
-			if (relationshipType == UMLElementTypes.Extension_4002) {
-				types.add(UMLElementTypes.Stereotype_3003);
-			}
-			return types;
+		if (targetEditPart instanceof EnumerationEditPart) {
+			return ((EnumerationEditPart) targetEditPart).getMATypesForSource(relationshipType);
+		}
+		if (targetEditPart instanceof ElementImportEditPart) {
+			return ((ElementImportEditPart) targetEditPart).getMATypesForSource(relationshipType);
 		}
 		return Collections.EMPTY_LIST;
 	}
@@ -178,24 +148,10 @@ public class UMLModelingAssistantProvider extends ModelingAssistantProvider {
 	public List getTypesForTarget(IAdaptable source, IElementType relationshipType) {
 		IGraphicalEditPart sourceEditPart = (IGraphicalEditPart) source.getAdapter(IGraphicalEditPart.class);
 		if (sourceEditPart instanceof StereotypeEditPart) {
-			List types = new ArrayList();
-			if (relationshipType == UMLElementTypes.Extension_4002) {
-				types.add(UMLElementTypes.ElementImport_2006);
-			}
-			if (relationshipType == UMLElementTypes.Extension_4002) {
-				types.add(UMLElementTypes.ElementImport_3009);
-			}
-			return types;
+			return ((StereotypeEditPart) sourceEditPart).getMATypesForTarget(relationshipType);
 		}
-		if (sourceEditPart instanceof Stereotype2EditPart) {
-			List types = new ArrayList();
-			if (relationshipType == UMLElementTypes.Extension_4002) {
-				types.add(UMLElementTypes.ElementImport_2006);
-			}
-			if (relationshipType == UMLElementTypes.Extension_4002) {
-				types.add(UMLElementTypes.ElementImport_3009);
-			}
-			return types;
+		if (sourceEditPart instanceof EnumerationEditPart) {
+			return ((EnumerationEditPart) sourceEditPart).getMATypesForTarget(relationshipType);
 		}
 		return Collections.EMPTY_LIST;
 	}

@@ -514,11 +514,7 @@ public class UMLDiagramUpdater {
 	 * @generated
 	 */
 	public static List getStereotype_3003IncomingLinks(View view) {
-		Stereotype modelElement = (Stereotype) view.getElement();
-		Map crossReferences = EcoreUtil.CrossReferencer.find(view.eResource().getResourceSet().getResources());
-		List result = new LinkedList();
-		result.addAll(getIncomingTypeModelFacetLinks_Generalization_4001(modelElement, crossReferences));
-		return result;
+		return Collections.EMPTY_LIST;
 	}
 
 	/**
@@ -532,11 +528,7 @@ public class UMLDiagramUpdater {
 	 * @generated
 	 */
 	public static List getElementImport_3009IncomingLinks(View view) {
-		ElementImport modelElement = (ElementImport) view.getElement();
-		Map crossReferences = EcoreUtil.CrossReferencer.find(view.eResource().getResourceSet().getResources());
-		List result = new LinkedList();
-		result.addAll(getIncomingTypeModelFacetLinks_Extension_4002(modelElement, crossReferences));
-		return result;
+		return Collections.EMPTY_LIST;
 	}
 
 	/**
@@ -618,11 +610,7 @@ public class UMLDiagramUpdater {
 	 * @generated
 	 */
 	public static List getStereotype_3003OutgoingLinks(View view) {
-		Stereotype modelElement = (Stereotype) view.getElement();
-		List result = new LinkedList();
-		result.addAll(getContainedTypeModelFacetLinks_Generalization_4001(modelElement));
-		result.addAll(getOutgoingTypeModelFacetLinks_Extension_4002(modelElement));
-		return result;
+		return Collections.EMPTY_LIST;
 	}
 
 	/**

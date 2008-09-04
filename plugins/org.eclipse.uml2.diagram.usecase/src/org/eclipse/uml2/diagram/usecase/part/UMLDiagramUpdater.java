@@ -802,35 +802,21 @@ public class UMLDiagramUpdater {
 	 * @generated
 	 */
 	public static List getElementImport_3001IncomingLinks(View view) {
-		ElementImport modelElement = (ElementImport) view.getElement();
-		Map crossReferences = EcoreUtil.CrossReferencer.find(view.eResource().getResourceSet().getResources());
-		List result = new LinkedList();
-		result.addAll(getIncomingFeatureModelFacetLinks_Constraint_ConstrainedElement_4005(modelElement, crossReferences));
-		return result;
+		return Collections.EMPTY_LIST;
 	}
 
 	/**
 	 * @generated
 	 */
 	public static List getExtensionPoint_3002IncomingLinks(View view) {
-		ExtensionPoint modelElement = (ExtensionPoint) view.getElement();
-		Map crossReferences = EcoreUtil.CrossReferencer.find(view.eResource().getResourceSet().getResources());
-		List result = new LinkedList();
-		result.addAll(getIncomingFeatureModelFacetLinks_Constraint_ConstrainedElement_4005(modelElement, crossReferences));
-		result.addAll(getIncomingTypeModelFacetLinks_Dependency_4006(modelElement, crossReferences));
-		return result;
+		return Collections.EMPTY_LIST;
 	}
 
 	/**
 	 * @generated
 	 */
 	public static List getExtensionPoint_3003IncomingLinks(View view) {
-		ExtensionPoint modelElement = (ExtensionPoint) view.getElement();
-		Map crossReferences = EcoreUtil.CrossReferencer.find(view.eResource().getResourceSet().getResources());
-		List result = new LinkedList();
-		result.addAll(getIncomingFeatureModelFacetLinks_Constraint_ConstrainedElement_4005(modelElement, crossReferences));
-		result.addAll(getIncomingTypeModelFacetLinks_Dependency_4006(modelElement, crossReferences));
-		return result;
+		return Collections.EMPTY_LIST;
 	}
 
 	/**
@@ -1044,20 +1030,14 @@ public class UMLDiagramUpdater {
 	 * @generated
 	 */
 	public static List getExtensionPoint_3002OutgoingLinks(View view) {
-		ExtensionPoint modelElement = (ExtensionPoint) view.getElement();
-		List result = new LinkedList();
-		result.addAll(getOutgoingTypeModelFacetLinks_Dependency_4006(modelElement));
-		return result;
+		return Collections.EMPTY_LIST;
 	}
 
 	/**
 	 * @generated
 	 */
 	public static List getExtensionPoint_3003OutgoingLinks(View view) {
-		ExtensionPoint modelElement = (ExtensionPoint) view.getElement();
-		List result = new LinkedList();
-		result.addAll(getOutgoingTypeModelFacetLinks_Dependency_4006(modelElement));
-		return result;
+		return Collections.EMPTY_LIST;
 	}
 
 	/**

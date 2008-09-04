@@ -765,14 +765,7 @@ public class UMLDiagramUpdater {
 	 * @generated
 	 */
 	public static List getArtifact_3006IncomingLinks(View view) {
-		Artifact modelElement = (Artifact) view.getElement();
-		Map crossReferences = EcoreUtil.CrossReferencer.find(view.eResource().getResourceSet().getResources());
-		List result = new LinkedList();
-		result.addAll(getIncomingTypeModelFacetLinks_Deployment_4001(modelElement, crossReferences));
-		result.addAll(getIncomingTypeModelFacetLinks_Manifestation_4002(modelElement, crossReferences));
-		result.addAll(getIncomingTypeModelFacetLinks_CommunicationPath_4004(modelElement, crossReferences));
-		result.addAll(getIncomingTypeModelFacetLinks_Dependency_4005(modelElement, crossReferences));
-		return result;
+		return Collections.EMPTY_LIST;
 	}
 
 	/**
@@ -792,11 +785,7 @@ public class UMLDiagramUpdater {
 	 * @generated
 	 */
 	public static List getProperty_3003IncomingLinks(View view) {
-		Property modelElement = (Property) view.getElement();
-		Map crossReferences = EcoreUtil.CrossReferencer.find(view.eResource().getResourceSet().getResources());
-		List result = new LinkedList();
-		result.addAll(getIncomingTypeModelFacetLinks_Dependency_4005(modelElement, crossReferences));
-		return result;
+		return Collections.EMPTY_LIST;
 	}
 
 	/**
@@ -963,12 +952,7 @@ public class UMLDiagramUpdater {
 	 * @generated
 	 */
 	public static List getArtifact_3006OutgoingLinks(View view) {
-		Artifact modelElement = (Artifact) view.getElement();
-		List result = new LinkedList();
-		result.addAll(getContainedTypeModelFacetLinks_Manifestation_4002(modelElement));
-		result.addAll(getOutgoingTypeModelFacetLinks_CommunicationPath_4004(modelElement));
-		result.addAll(getOutgoingTypeModelFacetLinks_Dependency_4005(modelElement));
-		return result;
+		return Collections.EMPTY_LIST;
 	}
 
 	/**
@@ -987,11 +971,7 @@ public class UMLDiagramUpdater {
 	 * @generated
 	 */
 	public static List getProperty_3003OutgoingLinks(View view) {
-		Property modelElement = (Property) view.getElement();
-		List result = new LinkedList();
-		result.addAll(getOutgoingTypeModelFacetLinks_Deployment_4001(modelElement));
-		result.addAll(getOutgoingTypeModelFacetLinks_Dependency_4005(modelElement));
-		return result;
+		return Collections.EMPTY_LIST;
 	}
 
 	/**
