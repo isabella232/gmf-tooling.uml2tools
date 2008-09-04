@@ -223,7 +223,7 @@ public class InstanceSpecification4EditPart extends ShapeNodeEditPart implements
 		if (editPart instanceof InstanceSpecificationValueEditPart) {
 			return getPrimaryShape().getFigureRectangleInstanceNode_ValueLabel();
 		}
-		return super.getContentPaneFor(editPart);
+		return getContentPane();
 	}
 
 	/**
@@ -322,8 +322,8 @@ public class InstanceSpecification4EditPart extends ShapeNodeEditPart implements
 	/**
 	 * @generated
 	 */
-	public List<IElementType> getMARelTypesOnSource() {
-		List<IElementType> types = new ArrayList<IElementType>();
+	public List/*<org.eclipse.gmf.runtime.emf.type.core.IElementType>*/getMARelTypesOnSource() {
+		List/*<org.eclipse.gmf.runtime.emf.type.core.IElementType>*/types = new ArrayList/*<org.eclipse.gmf.runtime.emf.type.core.IElementType>*/();
 		types.add(UMLElementTypes.Dependency_4002);
 		types.add(UMLElementTypes.Realization_4010);
 		types.add(UMLElementTypes.Usage_4013);
@@ -334,8 +334,8 @@ public class InstanceSpecification4EditPart extends ShapeNodeEditPart implements
 	/**
 	 * @generated
 	 */
-	public List<IElementType> getMARelTypesOnTarget() {
-		List<IElementType> types = new ArrayList<IElementType>();
+	public List/*<org.eclipse.gmf.runtime.emf.type.core.IElementType>*/getMARelTypesOnTarget() {
+		List/*<org.eclipse.gmf.runtime.emf.type.core.IElementType>*/types = new ArrayList/*<org.eclipse.gmf.runtime.emf.type.core.IElementType>*/();
 		types.add(UMLElementTypes.Dependency_4002);
 		types.add(UMLElementTypes.ConstraintConstrainedElement_4004);
 		types.add(UMLElementTypes.DependencySupplier_4006);
@@ -349,8 +349,8 @@ public class InstanceSpecification4EditPart extends ShapeNodeEditPart implements
 	/**
 	 * @generated
 	 */
-	public List<IElementType> getMARelTypesOnSourceAndTarget(IGraphicalEditPart targetEditPart) {
-		List<IElementType> types = new ArrayList<IElementType>();
+	public List/*<org.eclipse.gmf.runtime.emf.type.core.IElementType>*/getMARelTypesOnSourceAndTarget(IGraphicalEditPart targetEditPart) {
+		List/*<org.eclipse.gmf.runtime.emf.type.core.IElementType>*/types = new ArrayList/*<org.eclipse.gmf.runtime.emf.type.core.IElementType>*/();
 		if (targetEditPart instanceof Package2EditPart) {
 			types.add(UMLElementTypes.Dependency_4002);
 		}
@@ -582,8 +582,8 @@ public class InstanceSpecification4EditPart extends ShapeNodeEditPart implements
 	/**
 	 * @generated
 	 */
-	public List<IElementType> getMATypesForSource(IElementType relationshipType) {
-		List<IElementType> types = new ArrayList<IElementType>();
+	public List/*<org.eclipse.gmf.runtime.emf.type.core.IElementType>*/getMATypesForSource(IElementType relationshipType) {
+		List/*<org.eclipse.gmf.runtime.emf.type.core.IElementType>*/types = new ArrayList/*<org.eclipse.gmf.runtime.emf.type.core.IElementType>*/();
 		if (relationshipType == UMLElementTypes.Dependency_4002) {
 			types.add(UMLElementTypes.Package_2002);
 		}
@@ -824,8 +824,8 @@ public class InstanceSpecification4EditPart extends ShapeNodeEditPart implements
 	/**
 	 * @generated
 	 */
-	public List<IElementType> getMATypesForTarget(IElementType relationshipType) {
-		List<IElementType> types = new ArrayList<IElementType>();
+	public List/*<org.eclipse.gmf.runtime.emf.type.core.IElementType>*/getMATypesForTarget(IElementType relationshipType) {
+		List/*<org.eclipse.gmf.runtime.emf.type.core.IElementType>*/types = new ArrayList/*<org.eclipse.gmf.runtime.emf.type.core.IElementType>*/();
 		if (relationshipType == UMLElementTypes.Dependency_4002) {
 			types.add(UMLElementTypes.Package_2002);
 		}

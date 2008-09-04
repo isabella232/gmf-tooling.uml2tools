@@ -1,6 +1,7 @@
 package org.eclipse.uml2.diagram.clazz.edit.parts;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
@@ -28,6 +29,7 @@ import org.eclipse.gef.GraphicalEditPart;
 import org.eclipse.gef.Request;
 import org.eclipse.gef.commands.Command;
 import org.eclipse.gef.editpolicies.LayoutEditPolicy;
+import org.eclipse.gef.handles.MoveHandle;
 import org.eclipse.gmf.runtime.diagram.core.edithelpers.CreateElementRequestAdapter;
 import org.eclipse.gmf.runtime.diagram.core.listener.DiagramEventBroker;
 import org.eclipse.gmf.runtime.diagram.core.listener.NotificationListener;
@@ -152,7 +154,14 @@ public class Class2EditPart extends AbstractBorderedShapeEditPart implements Pri
 
 			protected EditPolicy createChildEditPolicy(EditPart child) {
 				if (child instanceof IBorderItemEditPart) {
-					return new BorderItemSelectionEditPolicy();
+					return new BorderItemSelectionEditPolicy() {
+
+						protected List createSelectionHandles() {
+							MoveHandle mh = new MoveHandle((GraphicalEditPart) getHost());
+							mh.setBorder(null);
+							return Collections.singletonList(mh);
+						}
+					};
 				}
 				if (child.getEditPolicy(EditPolicy.PRIMARY_DRAG_ROLE) == null) {
 					if (child instanceof ITextAwareEditPart) {
@@ -288,13 +297,10 @@ public class Class2EditPart extends AbstractBorderedShapeEditPart implements Pri
 		if (editPart instanceof ClassClassesEditPart) {
 			return getPrimaryShape().getFigureClassFigure_ClassesCompartment();
 		}
-		if (editPart instanceof PortEditPart) {
+		if (editPart instanceof IBorderItemEditPart) {
 			return getBorderedFigure().getBorderItemContainer();
 		}
-		if (editPart instanceof RedefinableTemplateSignatureEditPart) {
-			return getBorderedFigure().getBorderItemContainer();
-		}
-		return super.getContentPaneFor(editPart);
+		return getContentPane();
 	}
 
 	/**
@@ -393,8 +399,8 @@ public class Class2EditPart extends AbstractBorderedShapeEditPart implements Pri
 	/**
 	 * @generated
 	 */
-	public List<IElementType> getMARelTypesOnSource() {
-		List<IElementType> types = new ArrayList<IElementType>();
+	public List/*<org.eclipse.gmf.runtime.emf.type.core.IElementType>*/getMARelTypesOnSource() {
+		List/*<org.eclipse.gmf.runtime.emf.type.core.IElementType>*/types = new ArrayList/*<org.eclipse.gmf.runtime.emf.type.core.IElementType>*/();
 		types.add(UMLElementTypes.Generalization_4001);
 		types.add(UMLElementTypes.Dependency_4002);
 		types.add(UMLElementTypes.Association_4005);
@@ -409,8 +415,8 @@ public class Class2EditPart extends AbstractBorderedShapeEditPart implements Pri
 	/**
 	 * @generated
 	 */
-	public List<IElementType> getMARelTypesOnTarget() {
-		List<IElementType> types = new ArrayList<IElementType>();
+	public List/*<org.eclipse.gmf.runtime.emf.type.core.IElementType>*/getMARelTypesOnTarget() {
+		List/*<org.eclipse.gmf.runtime.emf.type.core.IElementType>*/types = new ArrayList/*<org.eclipse.gmf.runtime.emf.type.core.IElementType>*/();
 		types.add(UMLElementTypes.Generalization_4001);
 		types.add(UMLElementTypes.Dependency_4002);
 		types.add(UMLElementTypes.Property_4003);
@@ -427,8 +433,8 @@ public class Class2EditPart extends AbstractBorderedShapeEditPart implements Pri
 	/**
 	 * @generated
 	 */
-	public List<IElementType> getMARelTypesOnSourceAndTarget(IGraphicalEditPart targetEditPart) {
-		List<IElementType> types = new ArrayList<IElementType>();
+	public List/*<org.eclipse.gmf.runtime.emf.type.core.IElementType>*/getMARelTypesOnSourceAndTarget(IGraphicalEditPart targetEditPart) {
+		List/*<org.eclipse.gmf.runtime.emf.type.core.IElementType>*/types = new ArrayList/*<org.eclipse.gmf.runtime.emf.type.core.IElementType>*/();
 		if (targetEditPart instanceof org.eclipse.uml2.diagram.clazz.edit.parts.Class2EditPart) {
 			types.add(UMLElementTypes.Generalization_4001);
 		}
@@ -783,8 +789,8 @@ public class Class2EditPart extends AbstractBorderedShapeEditPart implements Pri
 	/**
 	 * @generated
 	 */
-	public List<IElementType> getMATypesForSource(IElementType relationshipType) {
-		List<IElementType> types = new ArrayList<IElementType>();
+	public List/*<org.eclipse.gmf.runtime.emf.type.core.IElementType>*/getMATypesForSource(IElementType relationshipType) {
+		List/*<org.eclipse.gmf.runtime.emf.type.core.IElementType>*/types = new ArrayList/*<org.eclipse.gmf.runtime.emf.type.core.IElementType>*/();
 		if (relationshipType == UMLElementTypes.Generalization_4001) {
 			types.add(UMLElementTypes.Class_2001);
 		}
@@ -1145,8 +1151,8 @@ public class Class2EditPart extends AbstractBorderedShapeEditPart implements Pri
 	/**
 	 * @generated
 	 */
-	public List<IElementType> getMATypesForTarget(IElementType relationshipType) {
-		List<IElementType> types = new ArrayList<IElementType>();
+	public List/*<org.eclipse.gmf.runtime.emf.type.core.IElementType>*/getMATypesForTarget(IElementType relationshipType) {
+		List/*<org.eclipse.gmf.runtime.emf.type.core.IElementType>*/types = new ArrayList/*<org.eclipse.gmf.runtime.emf.type.core.IElementType>*/();
 		if (relationshipType == UMLElementTypes.Generalization_4001) {
 			types.add(UMLElementTypes.Class_2001);
 		}

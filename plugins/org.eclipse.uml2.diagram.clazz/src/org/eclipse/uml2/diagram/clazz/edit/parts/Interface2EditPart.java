@@ -251,7 +251,7 @@ public class Interface2EditPart extends ShapeNodeEditPart implements PrimaryShap
 		if (editPart instanceof InterfaceClassesEditPart) {
 			return getPrimaryShape().getFigureRectangleInterfaceFigure_classesCompartment();
 		}
-		return super.getContentPaneFor(editPart);
+		return getContentPane();
 	}
 
 	/**
@@ -350,8 +350,8 @@ public class Interface2EditPart extends ShapeNodeEditPart implements PrimaryShap
 	/**
 	 * @generated
 	 */
-	public List<IElementType> getMARelTypesOnSource() {
-		List<IElementType> types = new ArrayList<IElementType>();
+	public List/*<org.eclipse.gmf.runtime.emf.type.core.IElementType>*/getMARelTypesOnSource() {
+		List/*<org.eclipse.gmf.runtime.emf.type.core.IElementType>*/types = new ArrayList/*<org.eclipse.gmf.runtime.emf.type.core.IElementType>*/();
 		types.add(UMLElementTypes.Generalization_4001);
 		types.add(UMLElementTypes.Dependency_4002);
 		types.add(UMLElementTypes.Association_4005);
@@ -365,8 +365,8 @@ public class Interface2EditPart extends ShapeNodeEditPart implements PrimaryShap
 	/**
 	 * @generated
 	 */
-	public List<IElementType> getMARelTypesOnTarget() {
-		List<IElementType> types = new ArrayList<IElementType>();
+	public List/*<org.eclipse.gmf.runtime.emf.type.core.IElementType>*/getMARelTypesOnTarget() {
+		List/*<org.eclipse.gmf.runtime.emf.type.core.IElementType>*/types = new ArrayList/*<org.eclipse.gmf.runtime.emf.type.core.IElementType>*/();
 		types.add(UMLElementTypes.Generalization_4001);
 		types.add(UMLElementTypes.Dependency_4002);
 		types.add(UMLElementTypes.Property_4003);
@@ -386,8 +386,8 @@ public class Interface2EditPart extends ShapeNodeEditPart implements PrimaryShap
 	/**
 	 * @generated
 	 */
-	public List<IElementType> getMARelTypesOnSourceAndTarget(IGraphicalEditPart targetEditPart) {
-		List<IElementType> types = new ArrayList<IElementType>();
+	public List/*<org.eclipse.gmf.runtime.emf.type.core.IElementType>*/getMARelTypesOnSourceAndTarget(IGraphicalEditPart targetEditPart) {
+		List/*<org.eclipse.gmf.runtime.emf.type.core.IElementType>*/types = new ArrayList/*<org.eclipse.gmf.runtime.emf.type.core.IElementType>*/();
 		if (targetEditPart instanceof Class2EditPart) {
 			types.add(UMLElementTypes.Generalization_4001);
 		}
@@ -736,8 +736,8 @@ public class Interface2EditPart extends ShapeNodeEditPart implements PrimaryShap
 	/**
 	 * @generated
 	 */
-	public List<IElementType> getMATypesForSource(IElementType relationshipType) {
-		List<IElementType> types = new ArrayList<IElementType>();
+	public List/*<org.eclipse.gmf.runtime.emf.type.core.IElementType>*/getMATypesForSource(IElementType relationshipType) {
+		List/*<org.eclipse.gmf.runtime.emf.type.core.IElementType>*/types = new ArrayList/*<org.eclipse.gmf.runtime.emf.type.core.IElementType>*/();
 		if (relationshipType == UMLElementTypes.Generalization_4001) {
 			types.add(UMLElementTypes.Class_2001);
 		}
@@ -1116,8 +1116,8 @@ public class Interface2EditPart extends ShapeNodeEditPart implements PrimaryShap
 	/**
 	 * @generated
 	 */
-	public List<IElementType> getMATypesForTarget(IElementType relationshipType) {
-		List<IElementType> types = new ArrayList<IElementType>();
+	public List/*<org.eclipse.gmf.runtime.emf.type.core.IElementType>*/getMATypesForTarget(IElementType relationshipType) {
+		List/*<org.eclipse.gmf.runtime.emf.type.core.IElementType>*/types = new ArrayList/*<org.eclipse.gmf.runtime.emf.type.core.IElementType>*/();
 		if (relationshipType == UMLElementTypes.Generalization_4001) {
 			types.add(UMLElementTypes.Class_2001);
 		}
