@@ -48,6 +48,7 @@ import org.eclipse.swt.graphics.Image;
 import org.eclipse.uml2.diagram.common.editpolicies.IRefreshableFeedbackEditPolicy;
 import org.eclipse.uml2.diagram.profile.edit.policies.Stereotype2ItemSemanticEditPolicy;
 import org.eclipse.uml2.diagram.profile.edit.policies.UMLTextNonResizableEditPolicy;
+import org.eclipse.uml2.diagram.profile.part.UMLVisualIDRegistry;
 import org.eclipse.uml2.diagram.profile.providers.UMLElementTypes;
 import org.eclipse.uml2.diagram.profile.providers.UMLParserProvider;
 
@@ -283,9 +284,8 @@ public class Stereotype2EditPart extends CompartmentEditPart implements ITextAwa
 	 */
 	public IParser getParser() {
 		if (parser == null) {
-			String parserHint = ((View) getModel()).getType();
-			IAdaptable hintAdapter = new UMLParserProvider.HintAdapter(UMLElementTypes.Stereotype_3003, getParserElement(), parserHint);
-			parser = ParserService.getInstance().getParser(hintAdapter);
+			parser = UMLParserProvider.getParser(UMLElementTypes.Stereotype_3003, getParserElement(), UMLVisualIDRegistry
+					.getType(org.eclipse.uml2.diagram.profile.edit.parts.Stereotype2EditPart.VISUAL_ID));
 		}
 		return parser;
 	}

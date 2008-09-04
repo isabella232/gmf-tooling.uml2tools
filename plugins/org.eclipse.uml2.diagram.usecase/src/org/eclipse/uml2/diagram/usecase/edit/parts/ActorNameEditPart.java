@@ -44,6 +44,7 @@ import org.eclipse.swt.graphics.Color;
 import org.eclipse.swt.graphics.FontData;
 import org.eclipse.swt.graphics.Image;
 import org.eclipse.uml2.diagram.common.editpolicies.IRefreshableFeedbackEditPolicy;
+import org.eclipse.uml2.diagram.usecase.edit.policies.UMLTextSelectionEditPolicy;
 import org.eclipse.uml2.diagram.usecase.part.UMLVisualIDRegistry;
 import org.eclipse.uml2.diagram.usecase.providers.UMLElementTypes;
 import org.eclipse.uml2.diagram.usecase.providers.UMLParserProvider;
@@ -98,6 +99,7 @@ public class ActorNameEditPart extends LabelEditPart implements ITextAwareEditPa
 	protected void createDefaultEditPolicies() {
 		super.createDefaultEditPolicies();
 		installEditPolicy(EditPolicy.DIRECT_EDIT_ROLE, new LabelDirectEditPolicy());
+		installEditPolicy(EditPolicy.SELECTION_FEEDBACK_ROLE, new UMLTextSelectionEditPolicy());
 	}
 
 	/**
@@ -297,9 +299,7 @@ public class ActorNameEditPart extends LabelEditPart implements ITextAwareEditPa
 	 */
 	public IParser getParser() {
 		if (parser == null) {
-			String parserHint = ((View) getModel()).getType();
-			IAdaptable hintAdapter = new UMLParserProvider.HintAdapter(UMLElementTypes.Actor_2002, getParserElement(), parserHint);
-			parser = ParserService.getInstance().getParser(hintAdapter);
+			parser = UMLParserProvider.getParser(UMLElementTypes.Actor_2002, getParserElement(), UMLVisualIDRegistry.getType(org.eclipse.uml2.diagram.usecase.edit.parts.ActorNameEditPart.VISUAL_ID));
 		}
 		return parser;
 	}

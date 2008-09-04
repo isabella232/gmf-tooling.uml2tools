@@ -187,7 +187,7 @@ public class Profile3EditPart extends ShapeNodeEditPart implements PrimaryShapeE
 		if (editPart instanceof ProfileProfileLabelsEditPart) {
 			return getPrimaryShape().getFigureProfileLabelCompartmentFigure();
 		}
-		return super.getContentPaneFor(editPart);
+		return getContentPane();
 	}
 
 	/**

@@ -48,6 +48,7 @@ import org.eclipse.swt.graphics.Image;
 import org.eclipse.uml2.diagram.common.editpolicies.IRefreshableFeedbackEditPolicy;
 import org.eclipse.uml2.diagram.usecase.edit.policies.ElementImportItemSemanticEditPolicy;
 import org.eclipse.uml2.diagram.usecase.edit.policies.UMLTextNonResizableEditPolicy;
+import org.eclipse.uml2.diagram.usecase.part.UMLVisualIDRegistry;
 import org.eclipse.uml2.diagram.usecase.providers.UMLElementTypes;
 import org.eclipse.uml2.diagram.usecase.providers.UMLParserProvider;
 
@@ -283,9 +284,8 @@ public class ElementImportEditPart extends CompartmentEditPart implements ITextA
 	 */
 	public IParser getParser() {
 		if (parser == null) {
-			String parserHint = ((View) getModel()).getType();
-			IAdaptable hintAdapter = new UMLParserProvider.HintAdapter(UMLElementTypes.ElementImport_3001, getParserElement(), parserHint);
-			parser = ParserService.getInstance().getParser(hintAdapter);
+			parser = UMLParserProvider.getParser(UMLElementTypes.ElementImport_3001, getParserElement(), UMLVisualIDRegistry
+					.getType(org.eclipse.uml2.diagram.usecase.edit.parts.ElementImportEditPart.VISUAL_ID));
 		}
 		return parser;
 	}

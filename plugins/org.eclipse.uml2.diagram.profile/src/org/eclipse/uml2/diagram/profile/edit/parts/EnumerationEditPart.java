@@ -1,5 +1,6 @@
 package org.eclipse.uml2.diagram.profile.edit.parts;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
@@ -212,7 +213,7 @@ public class EnumerationEditPart extends ShapeNodeEditPart implements PrimarySha
 		if (editPart instanceof EnumerationLiteralsEditPart) {
 			return getPrimaryShape().getFigureClassFigure_LiteralsCompartment();
 		}
-		return super.getContentPaneFor(editPart);
+		return getContentPane();
 	}
 
 	/**
@@ -306,6 +307,66 @@ public class EnumerationEditPart extends ShapeNodeEditPart implements PrimarySha
 	 */
 	public EditPart getPrimaryChildEditPart() {
 		return getChildBySemanticHint(UMLVisualIDRegistry.getType(EnumerationNameEditPart.VISUAL_ID));
+	}
+
+	/**
+	 * @generated
+	 */
+	public List/*<org.eclipse.gmf.runtime.emf.type.core.IElementType>*/getMARelTypesOnSource() {
+		List/*<org.eclipse.gmf.runtime.emf.type.core.IElementType>*/types = new ArrayList/*<org.eclipse.gmf.runtime.emf.type.core.IElementType>*/();
+		types.add(UMLElementTypes.Generalization_4001);
+		return types;
+	}
+
+	/**
+	 * @generated
+	 */
+	public List/*<org.eclipse.gmf.runtime.emf.type.core.IElementType>*/getMARelTypesOnTarget() {
+		List/*<org.eclipse.gmf.runtime.emf.type.core.IElementType>*/types = new ArrayList/*<org.eclipse.gmf.runtime.emf.type.core.IElementType>*/();
+		types.add(UMLElementTypes.Generalization_4001);
+		return types;
+	}
+
+	/**
+	 * @generated
+	 */
+	public List/*<org.eclipse.gmf.runtime.emf.type.core.IElementType>*/getMARelTypesOnSourceAndTarget(IGraphicalEditPart targetEditPart) {
+		List/*<org.eclipse.gmf.runtime.emf.type.core.IElementType>*/types = new ArrayList/*<org.eclipse.gmf.runtime.emf.type.core.IElementType>*/();
+		if (targetEditPart instanceof StereotypeEditPart) {
+			types.add(UMLElementTypes.Generalization_4001);
+		}
+		if (targetEditPart instanceof org.eclipse.uml2.diagram.profile.edit.parts.EnumerationEditPart) {
+			types.add(UMLElementTypes.Generalization_4001);
+		}
+		return types;
+	}
+
+	/**
+	 * @generated
+	 */
+	public List/*<org.eclipse.gmf.runtime.emf.type.core.IElementType>*/getMATypesForSource(IElementType relationshipType) {
+		List/*<org.eclipse.gmf.runtime.emf.type.core.IElementType>*/types = new ArrayList/*<org.eclipse.gmf.runtime.emf.type.core.IElementType>*/();
+		if (relationshipType == UMLElementTypes.Generalization_4001) {
+			types.add(UMLElementTypes.Stereotype_2001);
+		}
+		if (relationshipType == UMLElementTypes.Generalization_4001) {
+			types.add(UMLElementTypes.Enumeration_2003);
+		}
+		return types;
+	}
+
+	/**
+	 * @generated
+	 */
+	public List/*<org.eclipse.gmf.runtime.emf.type.core.IElementType>*/getMATypesForTarget(IElementType relationshipType) {
+		List/*<org.eclipse.gmf.runtime.emf.type.core.IElementType>*/types = new ArrayList/*<org.eclipse.gmf.runtime.emf.type.core.IElementType>*/();
+		if (relationshipType == UMLElementTypes.Generalization_4001) {
+			types.add(UMLElementTypes.Stereotype_2001);
+		}
+		if (relationshipType == UMLElementTypes.Generalization_4001) {
+			types.add(UMLElementTypes.Enumeration_2003);
+		}
+		return types;
 	}
 
 	/**

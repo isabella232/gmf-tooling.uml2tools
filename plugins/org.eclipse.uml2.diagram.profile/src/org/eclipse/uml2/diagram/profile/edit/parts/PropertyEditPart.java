@@ -48,6 +48,7 @@ import org.eclipse.swt.graphics.Image;
 import org.eclipse.uml2.diagram.common.editpolicies.IRefreshableFeedbackEditPolicy;
 import org.eclipse.uml2.diagram.profile.edit.policies.PropertyItemSemanticEditPolicy;
 import org.eclipse.uml2.diagram.profile.edit.policies.UMLTextNonResizableEditPolicy;
+import org.eclipse.uml2.diagram.profile.part.UMLVisualIDRegistry;
 import org.eclipse.uml2.diagram.profile.providers.UMLElementTypes;
 import org.eclipse.uml2.diagram.profile.providers.UMLParserProvider;
 
@@ -182,9 +183,7 @@ public class PropertyEditPart extends CompartmentEditPart implements ITextAwareE
 	 * @generated
 	 */
 	protected EObject getParserElement() {
-
-		EObject element = resolveSemanticElement();
-		return element != null ? element : (View) getModel();
+		return resolveSemanticElement();
 	}
 
 	/**
@@ -285,9 +284,8 @@ public class PropertyEditPart extends CompartmentEditPart implements ITextAwareE
 	 */
 	public IParser getParser() {
 		if (parser == null) {
-			String parserHint = ((View) getModel()).getType();
-			IAdaptable hintAdapter = new UMLParserProvider.HintAdapter(UMLElementTypes.Property_3001, getParserElement(), parserHint);
-			parser = ParserService.getInstance().getParser(hintAdapter);
+			parser = UMLParserProvider
+					.getParser(UMLElementTypes.Property_3001, getParserElement(), UMLVisualIDRegistry.getType(org.eclipse.uml2.diagram.profile.edit.parts.PropertyEditPart.VISUAL_ID));
 		}
 		return parser;
 	}

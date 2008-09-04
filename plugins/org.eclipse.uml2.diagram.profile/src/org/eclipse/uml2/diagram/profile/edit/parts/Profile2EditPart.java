@@ -190,7 +190,7 @@ public class Profile2EditPart extends ShapeNodeEditPart implements PrimaryShapeE
 		if (editPart instanceof ProfileContentsEditPart) {
 			return getPrimaryShape().getFigureProfileFigure_ContentsCompartment();
 		}
-		return super.getContentPaneFor(editPart);
+		return getContentPane();
 	}
 
 	/**

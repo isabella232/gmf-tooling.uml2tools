@@ -48,6 +48,7 @@ import org.eclipse.swt.graphics.Image;
 import org.eclipse.uml2.diagram.common.editpolicies.IRefreshableFeedbackEditPolicy;
 import org.eclipse.uml2.diagram.usecase.edit.policies.ExtensionPoint2ItemSemanticEditPolicy;
 import org.eclipse.uml2.diagram.usecase.edit.policies.UMLTextNonResizableEditPolicy;
+import org.eclipse.uml2.diagram.usecase.part.UMLVisualIDRegistry;
 import org.eclipse.uml2.diagram.usecase.providers.UMLElementTypes;
 import org.eclipse.uml2.diagram.usecase.providers.UMLParserProvider;
 
@@ -283,9 +284,8 @@ public class ExtensionPoint2EditPart extends CompartmentEditPart implements ITex
 	 */
 	public IParser getParser() {
 		if (parser == null) {
-			String parserHint = ((View) getModel()).getType();
-			IAdaptable hintAdapter = new UMLParserProvider.HintAdapter(UMLElementTypes.ExtensionPoint_3003, getParserElement(), parserHint);
-			parser = ParserService.getInstance().getParser(hintAdapter);
+			parser = UMLParserProvider.getParser(UMLElementTypes.ExtensionPoint_3003, getParserElement(), UMLVisualIDRegistry
+					.getType(org.eclipse.uml2.diagram.usecase.edit.parts.ExtensionPoint2EditPart.VISUAL_ID));
 		}
 		return parser;
 	}

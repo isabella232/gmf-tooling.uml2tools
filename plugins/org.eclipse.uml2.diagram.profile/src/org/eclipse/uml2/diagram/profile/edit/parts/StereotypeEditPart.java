@@ -1,5 +1,6 @@
 package org.eclipse.uml2.diagram.profile.edit.parts;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
@@ -227,7 +228,7 @@ public class StereotypeEditPart extends ShapeNodeEditPart implements PrimaryShap
 		if (editPart instanceof StereotypeConstraintsEditPart) {
 			return getPrimaryShape().getFigureStereotypeFigure_ConstraintsCompartment();
 		}
-		return super.getContentPaneFor(editPart);
+		return getContentPane();
 	}
 
 	/**
@@ -321,6 +322,73 @@ public class StereotypeEditPart extends ShapeNodeEditPart implements PrimaryShap
 	 */
 	public EditPart getPrimaryChildEditPart() {
 		return getChildBySemanticHint(UMLVisualIDRegistry.getType(StereotypeNameEditPart.VISUAL_ID));
+	}
+
+	/**
+	 * @generated
+	 */
+	public List/*<org.eclipse.gmf.runtime.emf.type.core.IElementType>*/getMARelTypesOnSource() {
+		List/*<org.eclipse.gmf.runtime.emf.type.core.IElementType>*/types = new ArrayList/*<org.eclipse.gmf.runtime.emf.type.core.IElementType>*/();
+		types.add(UMLElementTypes.Generalization_4001);
+		types.add(UMLElementTypes.Extension_4002);
+		return types;
+	}
+
+	/**
+	 * @generated
+	 */
+	public List/*<org.eclipse.gmf.runtime.emf.type.core.IElementType>*/getMARelTypesOnTarget() {
+		List/*<org.eclipse.gmf.runtime.emf.type.core.IElementType>*/types = new ArrayList/*<org.eclipse.gmf.runtime.emf.type.core.IElementType>*/();
+		types.add(UMLElementTypes.Generalization_4001);
+		return types;
+	}
+
+	/**
+	 * @generated
+	 */
+	public List/*<org.eclipse.gmf.runtime.emf.type.core.IElementType>*/getMARelTypesOnSourceAndTarget(IGraphicalEditPart targetEditPart) {
+		List/*<org.eclipse.gmf.runtime.emf.type.core.IElementType>*/types = new ArrayList/*<org.eclipse.gmf.runtime.emf.type.core.IElementType>*/();
+		if (targetEditPart instanceof org.eclipse.uml2.diagram.profile.edit.parts.StereotypeEditPart) {
+			types.add(UMLElementTypes.Generalization_4001);
+		}
+		if (targetEditPart instanceof EnumerationEditPart) {
+			types.add(UMLElementTypes.Generalization_4001);
+		}
+		if (targetEditPart instanceof ElementImportEditPart) {
+			types.add(UMLElementTypes.Extension_4002);
+		}
+		return types;
+	}
+
+	/**
+	 * @generated
+	 */
+	public List/*<org.eclipse.gmf.runtime.emf.type.core.IElementType>*/getMATypesForSource(IElementType relationshipType) {
+		List/*<org.eclipse.gmf.runtime.emf.type.core.IElementType>*/types = new ArrayList/*<org.eclipse.gmf.runtime.emf.type.core.IElementType>*/();
+		if (relationshipType == UMLElementTypes.Generalization_4001) {
+			types.add(UMLElementTypes.Stereotype_2001);
+		}
+		if (relationshipType == UMLElementTypes.Generalization_4001) {
+			types.add(UMLElementTypes.Enumeration_2003);
+		}
+		return types;
+	}
+
+	/**
+	 * @generated
+	 */
+	public List/*<org.eclipse.gmf.runtime.emf.type.core.IElementType>*/getMATypesForTarget(IElementType relationshipType) {
+		List/*<org.eclipse.gmf.runtime.emf.type.core.IElementType>*/types = new ArrayList/*<org.eclipse.gmf.runtime.emf.type.core.IElementType>*/();
+		if (relationshipType == UMLElementTypes.Generalization_4001) {
+			types.add(UMLElementTypes.Stereotype_2001);
+		}
+		if (relationshipType == UMLElementTypes.Generalization_4001) {
+			types.add(UMLElementTypes.Enumeration_2003);
+		}
+		if (relationshipType == UMLElementTypes.Extension_4002) {
+			types.add(UMLElementTypes.ElementImport_2006);
+		}
+		return types;
 	}
 
 	/**

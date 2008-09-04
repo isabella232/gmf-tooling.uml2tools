@@ -48,6 +48,7 @@ import org.eclipse.swt.graphics.Image;
 import org.eclipse.uml2.diagram.common.editpolicies.IRefreshableFeedbackEditPolicy;
 import org.eclipse.uml2.diagram.csd.edit.policies.Property2ItemSemanticEditPolicy;
 import org.eclipse.uml2.diagram.csd.edit.policies.UMLTextNonResizableEditPolicy;
+import org.eclipse.uml2.diagram.csd.part.UMLVisualIDRegistry;
 import org.eclipse.uml2.diagram.csd.providers.UMLElementTypes;
 import org.eclipse.uml2.diagram.csd.providers.UMLParserProvider;
 
@@ -283,9 +284,7 @@ public class Property2EditPart extends CompartmentEditPart implements ITextAware
 	 */
 	public IParser getParser() {
 		if (parser == null) {
-			String parserHint = ((View) getModel()).getType();
-			IAdaptable hintAdapter = new UMLParserProvider.HintAdapter(UMLElementTypes.Property_3008, getParserElement(), parserHint);
-			parser = ParserService.getInstance().getParser(hintAdapter);
+			parser = UMLParserProvider.getParser(UMLElementTypes.Property_3008, getParserElement(), UMLVisualIDRegistry.getType(org.eclipse.uml2.diagram.csd.edit.parts.Property2EditPart.VISUAL_ID));
 		}
 		return parser;
 	}

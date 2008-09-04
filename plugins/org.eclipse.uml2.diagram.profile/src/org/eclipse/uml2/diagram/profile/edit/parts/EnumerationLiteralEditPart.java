@@ -48,6 +48,7 @@ import org.eclipse.swt.graphics.Image;
 import org.eclipse.uml2.diagram.common.editpolicies.IRefreshableFeedbackEditPolicy;
 import org.eclipse.uml2.diagram.profile.edit.policies.EnumerationLiteralItemSemanticEditPolicy;
 import org.eclipse.uml2.diagram.profile.edit.policies.UMLTextNonResizableEditPolicy;
+import org.eclipse.uml2.diagram.profile.part.UMLVisualIDRegistry;
 import org.eclipse.uml2.diagram.profile.providers.UMLElementTypes;
 import org.eclipse.uml2.diagram.profile.providers.UMLParserProvider;
 
@@ -283,9 +284,8 @@ public class EnumerationLiteralEditPart extends CompartmentEditPart implements I
 	 */
 	public IParser getParser() {
 		if (parser == null) {
-			String parserHint = ((View) getModel()).getType();
-			IAdaptable hintAdapter = new UMLParserProvider.HintAdapter(UMLElementTypes.EnumerationLiteral_3005, getParserElement(), parserHint);
-			parser = ParserService.getInstance().getParser(hintAdapter);
+			parser = UMLParserProvider.getParser(UMLElementTypes.EnumerationLiteral_3005, getParserElement(), UMLVisualIDRegistry
+					.getType(org.eclipse.uml2.diagram.profile.edit.parts.EnumerationLiteralEditPart.VISUAL_ID));
 		}
 		return parser;
 	}

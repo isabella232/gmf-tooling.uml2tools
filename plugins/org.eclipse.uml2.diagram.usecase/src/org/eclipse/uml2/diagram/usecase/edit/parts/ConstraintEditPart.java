@@ -1,5 +1,7 @@
 package org.eclipse.uml2.diagram.usecase.edit.parts;
 
+import java.util.ArrayList;
+import java.util.List;
 import org.eclipse.draw2d.IFigure;
 import org.eclipse.draw2d.Label;
 import org.eclipse.draw2d.MarginBorder;
@@ -18,6 +20,7 @@ import org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.ShapeNodeEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles;
 import org.eclipse.gmf.runtime.draw2d.ui.figures.ConstrainedToolbarLayout;
+import org.eclipse.gmf.runtime.emf.type.core.IElementType;
 import org.eclipse.gmf.runtime.gef.ui.figures.DefaultSizeNodeFigure;
 import org.eclipse.gmf.runtime.gef.ui.figures.NodeFigure;
 import org.eclipse.gmf.runtime.notation.View;
@@ -29,6 +32,7 @@ import org.eclipse.uml2.diagram.usecase.edit.policies.ConstraintItemSemanticEdit
 import org.eclipse.uml2.diagram.usecase.part.UMLDiagramUpdateCommand;
 import org.eclipse.uml2.diagram.usecase.part.UMLDiagramUpdater;
 import org.eclipse.uml2.diagram.usecase.part.UMLVisualIDRegistry;
+import org.eclipse.uml2.diagram.usecase.providers.UMLElementTypes;
 import org.eclipse.uml2.uml.UMLPackage;
 
 /**
@@ -157,7 +161,7 @@ public class ConstraintEditPart extends ShapeNodeEditPart implements PrimaryShap
 	 */
 	protected IFigure getContentPaneFor(IGraphicalEditPart editPart) {
 
-		return super.getContentPaneFor(editPart);
+		return getContentPane();
 	}
 
 	/**
@@ -251,6 +255,218 @@ public class ConstraintEditPart extends ShapeNodeEditPart implements PrimaryShap
 	 */
 	public EditPart getPrimaryChildEditPart() {
 		return getChildBySemanticHint(UMLVisualIDRegistry.getType(ConstraintNameEditPart.VISUAL_ID));
+	}
+
+	/**
+	 * @generated
+	 */
+	public List/*<org.eclipse.gmf.runtime.emf.type.core.IElementType>*/getMARelTypesOnSource() {
+		List/*<org.eclipse.gmf.runtime.emf.type.core.IElementType>*/types = new ArrayList/*<org.eclipse.gmf.runtime.emf.type.core.IElementType>*/();
+		types.add(UMLElementTypes.ConstraintConstrainedElement_4005);
+		types.add(UMLElementTypes.Dependency_4006);
+		return types;
+	}
+
+	/**
+	 * @generated
+	 */
+	public List/*<org.eclipse.gmf.runtime.emf.type.core.IElementType>*/getMARelTypesOnTarget() {
+		List/*<org.eclipse.gmf.runtime.emf.type.core.IElementType>*/types = new ArrayList/*<org.eclipse.gmf.runtime.emf.type.core.IElementType>*/();
+		types.add(UMLElementTypes.ConstraintConstrainedElement_4005);
+		types.add(UMLElementTypes.Dependency_4006);
+		return types;
+	}
+
+	/**
+	 * @generated
+	 */
+	public List/*<org.eclipse.gmf.runtime.emf.type.core.IElementType>*/getMARelTypesOnSourceAndTarget(IGraphicalEditPart targetEditPart) {
+		List/*<org.eclipse.gmf.runtime.emf.type.core.IElementType>*/types = new ArrayList/*<org.eclipse.gmf.runtime.emf.type.core.IElementType>*/();
+		if (targetEditPart instanceof DiagramHeaderEditPart) {
+			types.add(UMLElementTypes.ConstraintConstrainedElement_4005);
+		}
+		if (targetEditPart instanceof ActorEditPart) {
+			types.add(UMLElementTypes.ConstraintConstrainedElement_4005);
+		}
+		if (targetEditPart instanceof ActorAsRectangleEditPart) {
+			types.add(UMLElementTypes.ConstraintConstrainedElement_4005);
+		}
+		if (targetEditPart instanceof UseCaseEditPart) {
+			types.add(UMLElementTypes.ConstraintConstrainedElement_4005);
+		}
+		if (targetEditPart instanceof UseCaseAsClassEditPart) {
+			types.add(UMLElementTypes.ConstraintConstrainedElement_4005);
+		}
+		if (targetEditPart instanceof SubjectEditPart) {
+			types.add(UMLElementTypes.ConstraintConstrainedElement_4005);
+		}
+		if (targetEditPart instanceof NestedPackageEditPart) {
+			types.add(UMLElementTypes.ConstraintConstrainedElement_4005);
+		}
+		if (targetEditPart instanceof org.eclipse.uml2.diagram.usecase.edit.parts.ConstraintEditPart) {
+			types.add(UMLElementTypes.ConstraintConstrainedElement_4005);
+		}
+		if (targetEditPart instanceof InnerUseCaseEditPart) {
+			types.add(UMLElementTypes.ConstraintConstrainedElement_4005);
+		}
+		if (targetEditPart instanceof ActorInPackageEditPart) {
+			types.add(UMLElementTypes.ConstraintConstrainedElement_4005);
+		}
+		if (targetEditPart instanceof UseCaseinPackageEditPart) {
+			types.add(UMLElementTypes.ConstraintConstrainedElement_4005);
+		}
+		if (targetEditPart instanceof DiagramHeaderEditPart) {
+			types.add(UMLElementTypes.Dependency_4006);
+		}
+		if (targetEditPart instanceof ActorEditPart) {
+			types.add(UMLElementTypes.Dependency_4006);
+		}
+		if (targetEditPart instanceof ActorAsRectangleEditPart) {
+			types.add(UMLElementTypes.Dependency_4006);
+		}
+		if (targetEditPart instanceof UseCaseEditPart) {
+			types.add(UMLElementTypes.Dependency_4006);
+		}
+		if (targetEditPart instanceof UseCaseAsClassEditPart) {
+			types.add(UMLElementTypes.Dependency_4006);
+		}
+		if (targetEditPart instanceof SubjectEditPart) {
+			types.add(UMLElementTypes.Dependency_4006);
+		}
+		if (targetEditPart instanceof NestedPackageEditPart) {
+			types.add(UMLElementTypes.Dependency_4006);
+		}
+		if (targetEditPart instanceof org.eclipse.uml2.diagram.usecase.edit.parts.ConstraintEditPart) {
+			types.add(UMLElementTypes.Dependency_4006);
+		}
+		if (targetEditPart instanceof InnerUseCaseEditPart) {
+			types.add(UMLElementTypes.Dependency_4006);
+		}
+		if (targetEditPart instanceof ActorInPackageEditPart) {
+			types.add(UMLElementTypes.Dependency_4006);
+		}
+		if (targetEditPart instanceof UseCaseinPackageEditPart) {
+			types.add(UMLElementTypes.Dependency_4006);
+		}
+		return types;
+	}
+
+	/**
+	 * @generated
+	 */
+	public List/*<org.eclipse.gmf.runtime.emf.type.core.IElementType>*/getMATypesForSource(IElementType relationshipType) {
+		List/*<org.eclipse.gmf.runtime.emf.type.core.IElementType>*/types = new ArrayList/*<org.eclipse.gmf.runtime.emf.type.core.IElementType>*/();
+		if (relationshipType == UMLElementTypes.ConstraintConstrainedElement_4005) {
+			types.add(UMLElementTypes.Constraint_2008);
+		}
+		if (relationshipType == UMLElementTypes.Dependency_4006) {
+			types.add(UMLElementTypes.Package_2001);
+		}
+		if (relationshipType == UMLElementTypes.Dependency_4006) {
+			types.add(UMLElementTypes.Actor_2002);
+		}
+		if (relationshipType == UMLElementTypes.Dependency_4006) {
+			types.add(UMLElementTypes.Actor_2005);
+		}
+		if (relationshipType == UMLElementTypes.Dependency_4006) {
+			types.add(UMLElementTypes.UseCase_2003);
+		}
+		if (relationshipType == UMLElementTypes.Dependency_4006) {
+			types.add(UMLElementTypes.UseCase_2004);
+		}
+		if (relationshipType == UMLElementTypes.Dependency_4006) {
+			types.add(UMLElementTypes.Component_2006);
+		}
+		if (relationshipType == UMLElementTypes.Dependency_4006) {
+			types.add(UMLElementTypes.Package_2007);
+		}
+		if (relationshipType == UMLElementTypes.Dependency_4006) {
+			types.add(UMLElementTypes.Constraint_2008);
+		}
+		if (relationshipType == UMLElementTypes.Dependency_4006) {
+			types.add(UMLElementTypes.UseCase_3004);
+		}
+		if (relationshipType == UMLElementTypes.Dependency_4006) {
+			types.add(UMLElementTypes.Actor_3005);
+		}
+		if (relationshipType == UMLElementTypes.Dependency_4006) {
+			types.add(UMLElementTypes.UseCase_3006);
+		}
+		return types;
+	}
+
+	/**
+	 * @generated
+	 */
+	public List/*<org.eclipse.gmf.runtime.emf.type.core.IElementType>*/getMATypesForTarget(IElementType relationshipType) {
+		List/*<org.eclipse.gmf.runtime.emf.type.core.IElementType>*/types = new ArrayList/*<org.eclipse.gmf.runtime.emf.type.core.IElementType>*/();
+		if (relationshipType == UMLElementTypes.ConstraintConstrainedElement_4005) {
+			types.add(UMLElementTypes.Package_2001);
+		}
+		if (relationshipType == UMLElementTypes.ConstraintConstrainedElement_4005) {
+			types.add(UMLElementTypes.Actor_2002);
+		}
+		if (relationshipType == UMLElementTypes.ConstraintConstrainedElement_4005) {
+			types.add(UMLElementTypes.Actor_2005);
+		}
+		if (relationshipType == UMLElementTypes.ConstraintConstrainedElement_4005) {
+			types.add(UMLElementTypes.UseCase_2003);
+		}
+		if (relationshipType == UMLElementTypes.ConstraintConstrainedElement_4005) {
+			types.add(UMLElementTypes.UseCase_2004);
+		}
+		if (relationshipType == UMLElementTypes.ConstraintConstrainedElement_4005) {
+			types.add(UMLElementTypes.Component_2006);
+		}
+		if (relationshipType == UMLElementTypes.ConstraintConstrainedElement_4005) {
+			types.add(UMLElementTypes.Package_2007);
+		}
+		if (relationshipType == UMLElementTypes.ConstraintConstrainedElement_4005) {
+			types.add(UMLElementTypes.Constraint_2008);
+		}
+		if (relationshipType == UMLElementTypes.ConstraintConstrainedElement_4005) {
+			types.add(UMLElementTypes.UseCase_3004);
+		}
+		if (relationshipType == UMLElementTypes.ConstraintConstrainedElement_4005) {
+			types.add(UMLElementTypes.Actor_3005);
+		}
+		if (relationshipType == UMLElementTypes.ConstraintConstrainedElement_4005) {
+			types.add(UMLElementTypes.UseCase_3006);
+		}
+		if (relationshipType == UMLElementTypes.Dependency_4006) {
+			types.add(UMLElementTypes.Package_2001);
+		}
+		if (relationshipType == UMLElementTypes.Dependency_4006) {
+			types.add(UMLElementTypes.Actor_2002);
+		}
+		if (relationshipType == UMLElementTypes.Dependency_4006) {
+			types.add(UMLElementTypes.Actor_2005);
+		}
+		if (relationshipType == UMLElementTypes.Dependency_4006) {
+			types.add(UMLElementTypes.UseCase_2003);
+		}
+		if (relationshipType == UMLElementTypes.Dependency_4006) {
+			types.add(UMLElementTypes.UseCase_2004);
+		}
+		if (relationshipType == UMLElementTypes.Dependency_4006) {
+			types.add(UMLElementTypes.Component_2006);
+		}
+		if (relationshipType == UMLElementTypes.Dependency_4006) {
+			types.add(UMLElementTypes.Package_2007);
+		}
+		if (relationshipType == UMLElementTypes.Dependency_4006) {
+			types.add(UMLElementTypes.Constraint_2008);
+		}
+		if (relationshipType == UMLElementTypes.Dependency_4006) {
+			types.add(UMLElementTypes.UseCase_3004);
+		}
+		if (relationshipType == UMLElementTypes.Dependency_4006) {
+			types.add(UMLElementTypes.Actor_3005);
+		}
+		if (relationshipType == UMLElementTypes.Dependency_4006) {
+			types.add(UMLElementTypes.UseCase_3006);
+		}
+		return types;
 	}
 
 	/**

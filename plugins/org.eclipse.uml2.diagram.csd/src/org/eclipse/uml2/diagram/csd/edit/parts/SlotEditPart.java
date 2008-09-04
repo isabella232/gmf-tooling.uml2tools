@@ -48,6 +48,7 @@ import org.eclipse.swt.graphics.Image;
 import org.eclipse.uml2.diagram.common.editpolicies.IRefreshableFeedbackEditPolicy;
 import org.eclipse.uml2.diagram.csd.edit.policies.SlotItemSemanticEditPolicy;
 import org.eclipse.uml2.diagram.csd.edit.policies.UMLTextNonResizableEditPolicy;
+import org.eclipse.uml2.diagram.csd.part.UMLVisualIDRegistry;
 import org.eclipse.uml2.diagram.csd.providers.UMLElementTypes;
 import org.eclipse.uml2.diagram.csd.providers.UMLParserProvider;
 
@@ -283,9 +284,7 @@ public class SlotEditPart extends CompartmentEditPart implements ITextAwareEditP
 	 */
 	public IParser getParser() {
 		if (parser == null) {
-			String parserHint = ((View) getModel()).getType();
-			IAdaptable hintAdapter = new UMLParserProvider.HintAdapter(UMLElementTypes.Slot_3015, getParserElement(), parserHint);
-			parser = ParserService.getInstance().getParser(hintAdapter);
+			parser = UMLParserProvider.getParser(UMLElementTypes.Slot_3015, getParserElement(), UMLVisualIDRegistry.getType(org.eclipse.uml2.diagram.csd.edit.parts.SlotEditPart.VISUAL_ID));
 		}
 		return parser;
 	}

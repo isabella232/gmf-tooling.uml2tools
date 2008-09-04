@@ -12,17 +12,12 @@ public class UMLNodeDescriptor implements IUpdaterNodeDescriptor {
 	/**
 	 * @generated
 	 */
-	private EObject myModelElement;
+	private final EObject myModelElement;
 
 	/**
 	 * @generated
 	 */
-	private int myVisualID;
-
-	/**
-	 * @generated
-	 */
-	private String myType;
+	private final int myVisualID;
 
 	/**
 	 * @generated
@@ -44,16 +39,6 @@ public class UMLNodeDescriptor implements IUpdaterNodeDescriptor {
 	 */
 	public int getVisualID() {
 		return myVisualID;
-	}
-
-	/**
-	 * @generated
-	 */
-	public String getType() {
-		if (myType == null) {
-			myType = UMLVisualIDRegistry.getType(getVisualID());
-		}
-		return myType;
 	}
 
 	/**
