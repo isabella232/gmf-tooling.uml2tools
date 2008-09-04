@@ -1021,27 +1021,14 @@ public class UMLDiagramUpdater {
 	 * @generated
 	 */
 	public static List getProperty_3008IncomingLinks(View view) {
-		Property modelElement = (Property) view.getElement();
-		Map crossReferences = EcoreUtil.CrossReferencer.find(view.eResource().getResourceSet().getResources());
-		List result = new LinkedList();
-		result.addAll(getIncomingTypeModelFacetLinks_Connector_4005(modelElement, crossReferences));
-		result.addAll(getIncomingTypeModelFacetLinks_Dependency_4006(modelElement, crossReferences));
-		result.addAll(getIncomingTypeModelFacetLinks_Usage_4008(modelElement, crossReferences));
-		result.addAll(getIncomingFeatureModelFacetLinks_Constraint_ConstrainedElement_4012(modelElement, crossReferences));
-		return result;
+		return Collections.EMPTY_LIST;
 	}
 
 	/**
 	 * @generated
 	 */
 	public static List getOperation_3009IncomingLinks(View view) {
-		Operation modelElement = (Operation) view.getElement();
-		Map crossReferences = EcoreUtil.CrossReferencer.find(view.eResource().getResourceSet().getResources());
-		List result = new LinkedList();
-		result.addAll(getIncomingTypeModelFacetLinks_Dependency_4006(modelElement, crossReferences));
-		result.addAll(getIncomingTypeModelFacetLinks_Usage_4008(modelElement, crossReferences));
-		result.addAll(getIncomingFeatureModelFacetLinks_Constraint_ConstrainedElement_4012(modelElement, crossReferences));
-		return result;
+		return Collections.EMPTY_LIST;
 	}
 
 	/**
@@ -1076,11 +1063,7 @@ public class UMLDiagramUpdater {
 	 * @generated
 	 */
 	public static List getElementImport_3004IncomingLinks(View view) {
-		ElementImport modelElement = (ElementImport) view.getElement();
-		Map crossReferences = EcoreUtil.CrossReferencer.find(view.eResource().getResourceSet().getResources());
-		List result = new LinkedList();
-		result.addAll(getIncomingFeatureModelFacetLinks_Constraint_ConstrainedElement_4012(modelElement, crossReferences));
-		return result;
+		return Collections.EMPTY_LIST;
 	}
 
 	/**
@@ -1129,11 +1112,7 @@ public class UMLDiagramUpdater {
 	 * @generated
 	 */
 	public static List getSlot_3015IncomingLinks(View view) {
-		Slot modelElement = (Slot) view.getElement();
-		Map crossReferences = EcoreUtil.CrossReferencer.find(view.eResource().getResourceSet().getResources());
-		List result = new LinkedList();
-		result.addAll(getIncomingFeatureModelFacetLinks_Constraint_ConstrainedElement_4012(modelElement, crossReferences));
-		return result;
+		return Collections.EMPTY_LIST;
 	}
 
 	/**
@@ -1335,23 +1314,14 @@ public class UMLDiagramUpdater {
 	 * @generated
 	 */
 	public static List getProperty_3008OutgoingLinks(View view) {
-		Property modelElement = (Property) view.getElement();
-		List result = new LinkedList();
-		result.addAll(getOutgoingTypeModelFacetLinks_Connector_4005(modelElement));
-		result.addAll(getOutgoingTypeModelFacetLinks_Dependency_4006(modelElement));
-		result.addAll(getOutgoingTypeModelFacetLinks_Usage_4008(modelElement));
-		return result;
+		return Collections.EMPTY_LIST;
 	}
 
 	/**
 	 * @generated
 	 */
 	public static List getOperation_3009OutgoingLinks(View view) {
-		Operation modelElement = (Operation) view.getElement();
-		List result = new LinkedList();
-		result.addAll(getOutgoingTypeModelFacetLinks_Dependency_4006(modelElement));
-		result.addAll(getOutgoingTypeModelFacetLinks_Usage_4008(modelElement));
-		return result;
+		return Collections.EMPTY_LIST;
 	}
 
 	/**
