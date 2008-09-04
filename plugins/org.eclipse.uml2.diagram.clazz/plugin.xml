@@ -590,6 +590,16 @@
       </propertyTabs>
    </extension>
 
+   <extension point="org.eclipse.ui.views.properties.tabbed.propertyTabs">
+      <?gmfgen generated="false"?>   
+      <propertyTabs contributorId="org.eclipse.uml2.diagram.clazz">
+          <propertyTab
+             category="domain"
+             id="property.tab.domain.taggedvalues"
+             label="%tab.taggedvalues"/>
+      </propertyTabs>
+   </extension>
+
    <extension point="org.eclipse.ui.views.properties.tabbed.propertySections">
       <?gmfgen generated="true"?>   
       <propertySections contributorId="org.eclipse.uml2.diagram.clazz">
@@ -617,6 +627,20 @@
             id="property.section.domain" 
             tab="property.tab.domain"
             class="org.eclipse.uml2.diagram.clazz.sheet.UMLPropertySection">
+            <input type="org.eclipse.gmf.runtime.notation.View"/>
+            <input type="org.eclipse.gef.EditPart"/>
+            <input type="org.eclipse.uml2.diagram.clazz.navigator.UMLAbstractNavigatorItem"/>
+         </propertySection>
+      </propertySections>
+   </extension>
+
+   <extension point="org.eclipse.ui.views.properties.tabbed.propertySections">
+      <?gmfgen generated="false"?>   
+      <propertySections contributorId="org.eclipse.uml2.diagram.clazz">
+         <propertySection
+            id="property.section.domain.taggedvalues" 
+            tab="property.tab.domain.taggedvalues"
+            class="org.eclipse.uml2.diagram.clazz.sheet.UMLStereotypePropertySection">
             <input type="org.eclipse.gmf.runtime.notation.View"/>
             <input type="org.eclipse.gef.EditPart"/>
             <input type="org.eclipse.uml2.diagram.clazz.navigator.UMLAbstractNavigatorItem"/>
