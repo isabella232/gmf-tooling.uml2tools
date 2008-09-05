@@ -105,8 +105,9 @@ public class UMLPaletteFactory {
 	 * @generated
 	 */
 	private ToolEntry createArtifact2CreationTool() {
-		List/*<IElementType>*/types = new ArrayList/*<IElementType>*/(2);
+		List/*<IElementType>*/types = new ArrayList/*<IElementType>*/(3);
 		types.add(UMLElementTypes.Artifact_3003);
+		types.add(UMLElementTypes.Artifact_3016);
 		types.add(UMLElementTypes.Artifact_2002);
 		NodeToolEntry entry = new NodeToolEntry(Messages.Artifact2CreationTool_title, Messages.Artifact2CreationTool_desc, types);
 		entry.setSmallIcon(UMLElementTypes.getImageDescriptor(UMLElementTypes.Artifact_3003));

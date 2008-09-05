@@ -20,6 +20,10 @@ import org.eclipse.uml2.diagram.common.genapi.IDiagramUpdater;
 import org.eclipse.uml2.diagram.common.genapi.IUpdaterLinkDescriptor;
 import org.eclipse.uml2.diagram.common.genapi.IUpdaterNodeDescriptor;
 import org.eclipse.uml2.diagram.component.edit.parts.Artifact2EditPart;
+import org.eclipse.uml2.diagram.component.edit.parts.Artifact3EditPart;
+import org.eclipse.uml2.diagram.component.edit.parts.ArtifactContents2EditPart;
+import org.eclipse.uml2.diagram.component.edit.parts.ArtifactContents3EditPart;
+import org.eclipse.uml2.diagram.component.edit.parts.ArtifactContentsEditPart;
 import org.eclipse.uml2.diagram.component.edit.parts.ArtifactEditPart;
 import org.eclipse.uml2.diagram.component.edit.parts.AssemblyConnectorCircleEditPart;
 import org.eclipse.uml2.diagram.component.edit.parts.AssemblyConnectorEndRoleEditPart;
@@ -112,9 +116,15 @@ public class UMLDiagramUpdater {
 		case ClassEditPart.VISUAL_ID:
 			return getClass_3004SemanticChildren(view);
 		case ComponentContentsEditPart.VISUAL_ID:
-			return getComponentContents_7001SemanticChildren(view);
+			return getComponentComponentFigure_contents_7001SemanticChildren(view);
 		case ComponentContents2EditPart.VISUAL_ID:
-			return getComponentContents_7002SemanticChildren(view);
+			return getComponentComponentFigure_contents_7002SemanticChildren(view);
+		case ArtifactContentsEditPart.VISUAL_ID:
+			return getArtifactArtifactFigure_contents_7009SemanticChildren(view);
+		case ArtifactContents2EditPart.VISUAL_ID:
+			return getArtifactArtifactFigure_contents_7010SemanticChildren(view);
+		case ArtifactContents3EditPart.VISUAL_ID:
+			return getArtifactArtifactFigure_contents_7011SemanticChildren(view);
 		case PackageImportsEditPart.VISUAL_ID:
 			return getPackageImports_7003SemanticChildren(view);
 		case PackagePackagesEditPart.VISUAL_ID:
@@ -247,7 +257,7 @@ public class UMLDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List getComponentContents_7001SemanticChildren(View view) {
+	public static List getComponentComponentFigure_contents_7001SemanticChildren(View view) {
 		if (false == view.eContainer() instanceof View) {
 			return Collections.EMPTY_LIST;
 		}
@@ -299,7 +309,7 @@ public class UMLDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List getComponentContents_7002SemanticChildren(View view) {
+	public static List getComponentComponentFigure_contents_7002SemanticChildren(View view) {
 		if (false == view.eContainer() instanceof View) {
 			return Collections.EMPTY_LIST;
 		}
@@ -341,6 +351,78 @@ public class UMLDiagramUpdater {
 			Connector childElement = (Connector) it.next();
 			int visualID = UMLVisualIDRegistry.getNodeVisualID(view, childElement);
 			if (visualID == AssemblyConnectorCircleEditPart.VISUAL_ID) {
+				result.add(new UMLNodeDescriptor(childElement, visualID));
+				continue;
+			}
+		}
+		return result;
+	}
+
+	/**
+	 * @generated
+	 */
+	public static List getArtifactArtifactFigure_contents_7009SemanticChildren(View view) {
+		if (false == view.eContainer() instanceof View) {
+			return Collections.EMPTY_LIST;
+		}
+		View containerView = (View) view.eContainer();
+		if (!containerView.isSetElement()) {
+			return Collections.EMPTY_LIST;
+		}
+		Artifact modelElement = (Artifact) containerView.getElement();
+		List result = new LinkedList();
+		for (Iterator it = modelElement.getNestedArtifacts().iterator(); it.hasNext();) {
+			Artifact childElement = (Artifact) it.next();
+			int visualID = UMLVisualIDRegistry.getNodeVisualID(view, childElement);
+			if (visualID == Artifact3EditPart.VISUAL_ID) {
+				result.add(new UMLNodeDescriptor(childElement, visualID));
+				continue;
+			}
+		}
+		return result;
+	}
+
+	/**
+	 * @generated
+	 */
+	public static List getArtifactArtifactFigure_contents_7010SemanticChildren(View view) {
+		if (false == view.eContainer() instanceof View) {
+			return Collections.EMPTY_LIST;
+		}
+		View containerView = (View) view.eContainer();
+		if (!containerView.isSetElement()) {
+			return Collections.EMPTY_LIST;
+		}
+		Artifact modelElement = (Artifact) containerView.getElement();
+		List result = new LinkedList();
+		for (Iterator it = modelElement.getNestedArtifacts().iterator(); it.hasNext();) {
+			Artifact childElement = (Artifact) it.next();
+			int visualID = UMLVisualIDRegistry.getNodeVisualID(view, childElement);
+			if (visualID == Artifact3EditPart.VISUAL_ID) {
+				result.add(new UMLNodeDescriptor(childElement, visualID));
+				continue;
+			}
+		}
+		return result;
+	}
+
+	/**
+	 * @generated
+	 */
+	public static List getArtifactArtifactFigure_contents_7011SemanticChildren(View view) {
+		if (false == view.eContainer() instanceof View) {
+			return Collections.EMPTY_LIST;
+		}
+		View containerView = (View) view.eContainer();
+		if (!containerView.isSetElement()) {
+			return Collections.EMPTY_LIST;
+		}
+		Artifact modelElement = (Artifact) containerView.getElement();
+		List result = new LinkedList();
+		for (Iterator it = modelElement.getNestedArtifacts().iterator(); it.hasNext();) {
+			Artifact childElement = (Artifact) it.next();
+			int visualID = UMLVisualIDRegistry.getNodeVisualID(view, childElement);
+			if (visualID == Artifact3EditPart.VISUAL_ID) {
 				result.add(new UMLNodeDescriptor(childElement, visualID));
 				continue;
 			}
@@ -571,6 +653,8 @@ public class UMLDiagramUpdater {
 			return getPort_3002ContainedLinks(view);
 		case ArtifactEditPart.VISUAL_ID:
 			return getArtifact_3003ContainedLinks(view);
+		case Artifact3EditPart.VISUAL_ID:
+			return getArtifact_3016ContainedLinks(view);
 		case ClassEditPart.VISUAL_ID:
 			return getClass_3004ContainedLinks(view);
 		case InterfaceEditPart.VISUAL_ID:
@@ -632,6 +716,8 @@ public class UMLDiagramUpdater {
 			return getPort_3002IncomingLinks(view);
 		case ArtifactEditPart.VISUAL_ID:
 			return getArtifact_3003IncomingLinks(view);
+		case Artifact3EditPart.VISUAL_ID:
+			return getArtifact_3016IncomingLinks(view);
 		case ClassEditPart.VISUAL_ID:
 			return getClass_3004IncomingLinks(view);
 		case InterfaceEditPart.VISUAL_ID:
@@ -693,6 +779,8 @@ public class UMLDiagramUpdater {
 			return getPort_3002OutgoingLinks(view);
 		case ArtifactEditPart.VISUAL_ID:
 			return getArtifact_3003OutgoingLinks(view);
+		case Artifact3EditPart.VISUAL_ID:
+			return getArtifact_3016OutgoingLinks(view);
 		case ClassEditPart.VISUAL_ID:
 			return getClass_3004OutgoingLinks(view);
 		case InterfaceEditPart.VISUAL_ID:
@@ -834,6 +922,13 @@ public class UMLDiagramUpdater {
 	 * @generated
 	 */
 	public static List getArtifact_3003ContainedLinks(View view) {
+		return Collections.EMPTY_LIST;
+	}
+
+	/**
+	 * @generated
+	 */
+	public static List getArtifact_3016ContainedLinks(View view) {
 		return Collections.EMPTY_LIST;
 	}
 
@@ -1112,6 +1207,18 @@ public class UMLDiagramUpdater {
 	/**
 	 * @generated
 	 */
+	public static List getArtifact_3016IncomingLinks(View view) {
+		Artifact modelElement = (Artifact) view.getElement();
+		Map crossReferences = EcoreUtil.CrossReferencer.find(view.eResource().getResourceSet().getResources());
+		List result = new LinkedList();
+		result.addAll(getIncomingTypeModelFacetLinks_Dependency_4009(modelElement, crossReferences));
+		result.addAll(getIncomingTypeModelFacetLinks_Association_4011(modelElement, crossReferences));
+		return result;
+	}
+
+	/**
+	 * @generated
+	 */
 	public static List getClass_3004IncomingLinks(View view) {
 		Class modelElement = (Class) view.getElement();
 		Map crossReferences = EcoreUtil.CrossReferencer.find(view.eResource().getResourceSet().getResources());
@@ -1375,6 +1482,17 @@ public class UMLDiagramUpdater {
 	 * @generated
 	 */
 	public static List getArtifact_3003OutgoingLinks(View view) {
+		Artifact modelElement = (Artifact) view.getElement();
+		List result = new LinkedList();
+		result.addAll(getOutgoingTypeModelFacetLinks_Dependency_4009(modelElement));
+		result.addAll(getOutgoingTypeModelFacetLinks_Association_4011(modelElement));
+		return result;
+	}
+
+	/**
+	 * @generated
+	 */
+	public static List getArtifact_3016OutgoingLinks(View view) {
 		Artifact modelElement = (Artifact) view.getElement();
 		List result = new LinkedList();
 		result.addAll(getOutgoingTypeModelFacetLinks_Dependency_4009(modelElement));

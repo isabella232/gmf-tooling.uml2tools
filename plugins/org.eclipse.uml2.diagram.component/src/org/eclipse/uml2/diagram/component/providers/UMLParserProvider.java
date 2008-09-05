@@ -27,6 +27,7 @@ import org.eclipse.uml2.diagram.common.parser.property.PropertyParser;
 import org.eclipse.uml2.diagram.common.parser.property.PropertyToString;
 import org.eclipse.uml2.diagram.common.parser.stereotype.AppliedStereotypeParser;
 import org.eclipse.uml2.diagram.component.edit.parts.ArtifactName2EditPart;
+import org.eclipse.uml2.diagram.component.edit.parts.ArtifactName3EditPart;
 import org.eclipse.uml2.diagram.component.edit.parts.ArtifactNameEditPart;
 import org.eclipse.uml2.diagram.component.edit.parts.AssociationName2EditPart;
 import org.eclipse.uml2.diagram.component.edit.parts.AssociationName3EditPart;
@@ -330,6 +331,30 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 	 * @generated
 	 */
 	protected IParser createArtifactName_5006Parser() {
+		EAttribute[] features = new EAttribute[] { UMLPackage.eINSTANCE.getNamedElement_Name() };
+		Parser_0_0 parser = new Parser_0_0(features);
+		return parser;
+	}
+
+	/**
+	 * @generated
+	 */
+	private IParser artifactName_5016Parser;
+
+	/**
+	 * @generated
+	 */
+	private IParser getArtifactName_5016Parser() {
+		if (artifactName_5016Parser == null) {
+			artifactName_5016Parser = createArtifactName_5016Parser();
+		}
+		return artifactName_5016Parser;
+	}
+
+	/**
+	 * @generated
+	 */
+	protected IParser createArtifactName_5016Parser() {
 		EAttribute[] features = new EAttribute[] { UMLPackage.eINSTANCE.getNamedElement_Name() };
 		Parser_0_0 parser = new Parser_0_0(features);
 		return parser;
@@ -850,6 +875,8 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 			return getPortName_5003Parser();
 		case ArtifactNameEditPart.VISUAL_ID:
 			return getArtifactName_5006Parser();
+		case ArtifactName3EditPart.VISUAL_ID:
+			return getArtifactName_5016Parser();
 		case ClassNameEditPart.VISUAL_ID:
 			return getClassName_5007Parser();
 		case InterfaceNameEditPart.VISUAL_ID:

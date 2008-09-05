@@ -139,7 +139,7 @@
       <compartments
           children="//@nodes.0/@ownedChild/@children.0 //@nodes.0/@ownedChild/@children.2 //@nodes.0/@ownedChild/@children.3 //@nodes.0/@ownedChild/@children.4 //@nodes.0/@ownedChild/@children.5 //@nodes.0/@ownedChild/@children.6">
         <compartment
-            href="componentDiagram_classifiers.gmfgraph#contents"/>
+            href="componentDiagram_classifiers.gmfgraph#ComponentFigure_contents"/>
       </compartments>
     </ownedChild>
   </nodes>
@@ -174,6 +174,17 @@
           href="componentDiagram.gmftool#//@palette/@tools.0/@tools.1"/>
       <diagramNode
           href="componentDiagram_classifiers.gmfgraph#ArtifactNode"/>
+      <children
+          compartment="//@nodes.1/@ownedChild/@compartments.0"
+          referencedChild="//@nodes.1/@ownedChild">
+        <containmentFeature
+            href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//Artifact/nestedArtifact"/>
+      </children>
+      <compartments
+          children="//@nodes.1/@ownedChild/@children.0">
+        <compartment
+            href="componentDiagram_classifiers.gmfgraph#ArtifactFigure_contents"/>
+      </compartments>
     </ownedChild>
   </nodes>
   <nodes>

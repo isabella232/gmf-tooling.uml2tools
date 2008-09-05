@@ -21,6 +21,10 @@ import org.eclipse.swt.widgets.Display;
 import org.eclipse.swt.widgets.Shell;
 import org.eclipse.ui.dialogs.ElementListSelectionDialog;
 import org.eclipse.uml2.diagram.component.edit.parts.Artifact2EditPart;
+import org.eclipse.uml2.diagram.component.edit.parts.Artifact3EditPart;
+import org.eclipse.uml2.diagram.component.edit.parts.ArtifactContents2EditPart;
+import org.eclipse.uml2.diagram.component.edit.parts.ArtifactContents3EditPart;
+import org.eclipse.uml2.diagram.component.edit.parts.ArtifactContentsEditPart;
 import org.eclipse.uml2.diagram.component.edit.parts.ArtifactEditPart;
 import org.eclipse.uml2.diagram.component.edit.parts.AssemblyConnectorCircleEditPart;
 import org.eclipse.uml2.diagram.component.edit.parts.Class2EditPart;
@@ -122,6 +126,24 @@ public class UMLModelingAssistantProvider extends ModelingAssistantProvider {
 			return types;
 		}
 
+		if (editPart instanceof ArtifactContentsEditPart) {
+			List<IElementType> types = new ArrayList<IElementType>();
+			types.add(UMLElementTypes.Artifact_3016);
+			return types;
+		}
+
+		if (editPart instanceof ArtifactContents2EditPart) {
+			List<IElementType> types = new ArrayList<IElementType>();
+			types.add(UMLElementTypes.Artifact_3016);
+			return types;
+		}
+
+		if (editPart instanceof ArtifactContents3EditPart) {
+			List<IElementType> types = new ArrayList<IElementType>();
+			types.add(UMLElementTypes.Artifact_3016);
+			return types;
+		}
+
 		if (editPart instanceof PackageEditPart) {
 			List<IElementType> types = new ArrayList<IElementType>();
 			types.add(UMLElementTypes.Component_2001);
@@ -169,6 +191,9 @@ public class UMLModelingAssistantProvider extends ModelingAssistantProvider {
 		}
 		if (sourceEditPart instanceof ArtifactEditPart) {
 			return ((ArtifactEditPart) sourceEditPart).getMARelTypesOnSource();
+		}
+		if (sourceEditPart instanceof Artifact3EditPart) {
+			return ((Artifact3EditPart) sourceEditPart).getMARelTypesOnSource();
 		}
 		if (sourceEditPart instanceof ClassEditPart) {
 			return ((ClassEditPart) sourceEditPart).getMARelTypesOnSource();
@@ -222,6 +247,9 @@ public class UMLModelingAssistantProvider extends ModelingAssistantProvider {
 		}
 		if (targetEditPart instanceof ArtifactEditPart) {
 			return ((ArtifactEditPart) targetEditPart).getMARelTypesOnTarget();
+		}
+		if (targetEditPart instanceof Artifact3EditPart) {
+			return ((Artifact3EditPart) targetEditPart).getMARelTypesOnTarget();
 		}
 		if (targetEditPart instanceof ClassEditPart) {
 			return ((ClassEditPart) targetEditPart).getMARelTypesOnTarget();
@@ -277,6 +305,9 @@ public class UMLModelingAssistantProvider extends ModelingAssistantProvider {
 		if (sourceEditPart instanceof ArtifactEditPart) {
 			return ((ArtifactEditPart) sourceEditPart).getMARelTypesOnSourceAndTarget(targetEditPart);
 		}
+		if (sourceEditPart instanceof Artifact3EditPart) {
+			return ((Artifact3EditPart) sourceEditPart).getMARelTypesOnSourceAndTarget(targetEditPart);
+		}
 		if (sourceEditPart instanceof ClassEditPart) {
 			return ((ClassEditPart) sourceEditPart).getMARelTypesOnSourceAndTarget(targetEditPart);
 		}
@@ -330,6 +361,9 @@ public class UMLModelingAssistantProvider extends ModelingAssistantProvider {
 		if (targetEditPart instanceof ArtifactEditPart) {
 			return ((ArtifactEditPart) targetEditPart).getMATypesForSource(relationshipType);
 		}
+		if (targetEditPart instanceof Artifact3EditPart) {
+			return ((Artifact3EditPart) targetEditPart).getMATypesForSource(relationshipType);
+		}
 		if (targetEditPart instanceof ClassEditPart) {
 			return ((ClassEditPart) targetEditPart).getMATypesForSource(relationshipType);
 		}
@@ -382,6 +416,9 @@ public class UMLModelingAssistantProvider extends ModelingAssistantProvider {
 		}
 		if (sourceEditPart instanceof ArtifactEditPart) {
 			return ((ArtifactEditPart) sourceEditPart).getMATypesForTarget(relationshipType);
+		}
+		if (sourceEditPart instanceof Artifact3EditPart) {
+			return ((Artifact3EditPart) sourceEditPart).getMATypesForTarget(relationshipType);
 		}
 		if (sourceEditPart instanceof ClassEditPart) {
 			return ((ClassEditPart) sourceEditPart).getMATypesForTarget(relationshipType);

@@ -7,8 +7,13 @@ import org.eclipse.gmf.runtime.notation.Diagram;
 import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.uml2.diagram.common.genapi.IVisualIDRegistry;
 import org.eclipse.uml2.diagram.component.edit.parts.Artifact2EditPart;
+import org.eclipse.uml2.diagram.component.edit.parts.Artifact3EditPart;
+import org.eclipse.uml2.diagram.component.edit.parts.ArtifactContents2EditPart;
+import org.eclipse.uml2.diagram.component.edit.parts.ArtifactContents3EditPart;
+import org.eclipse.uml2.diagram.component.edit.parts.ArtifactContentsEditPart;
 import org.eclipse.uml2.diagram.component.edit.parts.ArtifactEditPart;
 import org.eclipse.uml2.diagram.component.edit.parts.ArtifactName2EditPart;
+import org.eclipse.uml2.diagram.component.edit.parts.ArtifactName3EditPart;
 import org.eclipse.uml2.diagram.component.edit.parts.ArtifactNameEditPart;
 import org.eclipse.uml2.diagram.component.edit.parts.AssemblyConnectorCircleEditPart;
 import org.eclipse.uml2.diagram.component.edit.parts.AssociationEditPart;
@@ -288,6 +293,21 @@ public class UMLVisualIDRegistry {
 				return AssemblyConnectorCircleEditPart.VISUAL_ID;
 			}
 			break;
+		case ArtifactContentsEditPart.VISUAL_ID:
+			if (UMLPackage.eINSTANCE.getArtifact().isSuperTypeOf(domainElement.eClass())) {
+				return Artifact3EditPart.VISUAL_ID;
+			}
+			break;
+		case ArtifactContents2EditPart.VISUAL_ID:
+			if (UMLPackage.eINSTANCE.getArtifact().isSuperTypeOf(domainElement.eClass())) {
+				return Artifact3EditPart.VISUAL_ID;
+			}
+			break;
+		case ArtifactContents3EditPart.VISUAL_ID:
+			if (UMLPackage.eINSTANCE.getArtifact().isSuperTypeOf(domainElement.eClass())) {
+				return Artifact3EditPart.VISUAL_ID;
+			}
+			break;
 		case PackageImportsEditPart.VISUAL_ID:
 			if (UMLPackage.eINSTANCE.getElementImport().isSuperTypeOf(domainElement.eClass())) {
 				return ElementImportEditPart.VISUAL_ID;
@@ -388,6 +408,9 @@ public class UMLVisualIDRegistry {
 			if (ArtifactName2EditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
+			if (ArtifactContents3EditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
 			break;
 		case Interface2EditPart.VISUAL_ID:
 			if (InterfaceName2EditPart.VISUAL_ID == nodeVisualID) {
@@ -461,6 +484,17 @@ public class UMLVisualIDRegistry {
 			if (ArtifactNameEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
+			if (ArtifactContentsEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			break;
+		case Artifact3EditPart.VISUAL_ID:
+			if (ArtifactName3EditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			if (ArtifactContents2EditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
 			break;
 		case ClassEditPart.VISUAL_ID:
 			if (ClassNameEditPart.VISUAL_ID == nodeVisualID) {
@@ -522,6 +556,21 @@ public class UMLVisualIDRegistry {
 				return true;
 			}
 			if (AssemblyConnectorCircleEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			break;
+		case ArtifactContentsEditPart.VISUAL_ID:
+			if (Artifact3EditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			break;
+		case ArtifactContents2EditPart.VISUAL_ID:
+			if (Artifact3EditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			break;
+		case ArtifactContents3EditPart.VISUAL_ID:
+			if (Artifact3EditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
 			break;
@@ -807,6 +856,11 @@ public class UMLVisualIDRegistry {
 				return AssemblyConnectorCircleEditPart.VISUAL_ID;
 			}
 			break;
+		case Artifact2EditPart.VISUAL_ID:
+			if (UMLPackage.eINSTANCE.getArtifact().isSuperTypeOf(domainElement.eClass())) {
+				return Artifact3EditPart.VISUAL_ID;
+			}
+			break;
 		case Class2EditPart.VISUAL_ID:
 			if (UMLPackage.eINSTANCE.getPort().isSuperTypeOf(domainElement.eClass())) {
 				return PortEditPart.VISUAL_ID;
@@ -863,6 +917,16 @@ public class UMLVisualIDRegistry {
 			}
 			if (UMLPackage.eINSTANCE.getConnector().isSuperTypeOf(domainElement.eClass()) && isConnector_3015((Connector) domainElement)) {
 				return AssemblyConnectorCircleEditPart.VISUAL_ID;
+			}
+			break;
+		case ArtifactEditPart.VISUAL_ID:
+			if (UMLPackage.eINSTANCE.getArtifact().isSuperTypeOf(domainElement.eClass())) {
+				return Artifact3EditPart.VISUAL_ID;
+			}
+			break;
+		case Artifact3EditPart.VISUAL_ID:
+			if (UMLPackage.eINSTANCE.getArtifact().isSuperTypeOf(domainElement.eClass())) {
+				return Artifact3EditPart.VISUAL_ID;
 			}
 			break;
 		case ClassEditPart.VISUAL_ID:
@@ -924,6 +988,15 @@ public class UMLVisualIDRegistry {
 			}
 			if (UMLPackage.eINSTANCE.getConnector().isSuperTypeOf(domainElement.eClass()) && isConnector_3015((Connector) domainElement)) {
 				return AssemblyConnectorCircleEditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getArtifact().isSuperTypeOf(domainElement.eClass())) {
+				return Artifact3EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getArtifact().isSuperTypeOf(domainElement.eClass())) {
+				return Artifact3EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getArtifact().isSuperTypeOf(domainElement.eClass())) {
+				return Artifact3EditPart.VISUAL_ID;
 			}
 			if (UMLPackage.eINSTANCE.getElementImport().isSuperTypeOf(domainElement.eClass())) {
 				return ElementImportEditPart.VISUAL_ID;
@@ -989,6 +1062,9 @@ public class UMLVisualIDRegistry {
 		switch (visualID) {
 		case ComponentContentsEditPart.VISUAL_ID:
 		case ComponentContents2EditPart.VISUAL_ID:
+		case ArtifactContentsEditPart.VISUAL_ID:
+		case ArtifactContents2EditPart.VISUAL_ID:
+		case ArtifactContents3EditPart.VISUAL_ID:
 		case PackageImportsEditPart.VISUAL_ID:
 		case PackagePackagesEditPart.VISUAL_ID:
 		case PackageClassifiersEditPart.VISUAL_ID:
@@ -1013,6 +1089,7 @@ public class UMLVisualIDRegistry {
 		case Package3EditPart.VISUAL_ID:
 		case PortEditPart.VISUAL_ID:
 		case ArtifactEditPart.VISUAL_ID:
+		case Artifact3EditPart.VISUAL_ID:
 		case InterfaceEditPart.VISUAL_ID:
 		case PropertyEditPart.VISUAL_ID:
 		case AssemblyConnectorCircleEditPart.VISUAL_ID:

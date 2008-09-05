@@ -483,6 +483,21 @@ public class Messages extends NLS {
 	/**
 	 * @generated
 	 */
+	public static String ArtifactContentsEditPart_title;
+
+	/**
+	 * @generated
+	 */
+	public static String ArtifactContents2EditPart_title;
+
+	/**
+	 * @generated
+	 */
+	public static String ArtifactContents3EditPart_title;
+
+	/**
+	 * @generated
+	 */
 	public static String PackageImportsEditPart_title;
 
 	/**
@@ -619,6 +634,16 @@ public class Messages extends NLS {
 	 * @generated
 	 */
 	public static String NavigatorGroupName_Artifact_3003_outgoinglinks;
+
+	/**
+	 * @generated
+	 */
+	public static String NavigatorGroupName_Artifact_3016_incominglinks;
+
+	/**
+	 * @generated
+	 */
+	public static String NavigatorGroupName_Artifact_3016_outgoinglinks;
 
 	/**
 	 * @generated

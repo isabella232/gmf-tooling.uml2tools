@@ -7,8 +7,13 @@ import org.eclipse.gmf.runtime.emf.type.core.IElementType;
 import org.eclipse.gmf.runtime.emf.type.core.IHintedType;
 import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.uml2.diagram.component.edit.parts.Artifact2EditPart;
+import org.eclipse.uml2.diagram.component.edit.parts.Artifact3EditPart;
+import org.eclipse.uml2.diagram.component.edit.parts.ArtifactContents2EditPart;
+import org.eclipse.uml2.diagram.component.edit.parts.ArtifactContents3EditPart;
+import org.eclipse.uml2.diagram.component.edit.parts.ArtifactContentsEditPart;
 import org.eclipse.uml2.diagram.component.edit.parts.ArtifactEditPart;
 import org.eclipse.uml2.diagram.component.edit.parts.ArtifactName2EditPart;
+import org.eclipse.uml2.diagram.component.edit.parts.ArtifactName3EditPart;
 import org.eclipse.uml2.diagram.component.edit.parts.ArtifactNameEditPart;
 import org.eclipse.uml2.diagram.component.edit.parts.AssemblyConnectorCircleEditPart;
 import org.eclipse.uml2.diagram.component.edit.parts.AssemblyConnectorEndRoleEditPart;
@@ -70,7 +75,12 @@ import org.eclipse.uml2.diagram.component.edit.parts.PropertyEditPart;
 import org.eclipse.uml2.diagram.component.edit.parts.PropertyNameEditPart;
 import org.eclipse.uml2.diagram.component.part.UMLVisualIDRegistry;
 import org.eclipse.uml2.diagram.component.view.factories.Artifact2ViewFactory;
+import org.eclipse.uml2.diagram.component.view.factories.Artifact3ViewFactory;
+import org.eclipse.uml2.diagram.component.view.factories.ArtifactContents2ViewFactory;
+import org.eclipse.uml2.diagram.component.view.factories.ArtifactContents3ViewFactory;
+import org.eclipse.uml2.diagram.component.view.factories.ArtifactContentsViewFactory;
 import org.eclipse.uml2.diagram.component.view.factories.ArtifactName2ViewFactory;
+import org.eclipse.uml2.diagram.component.view.factories.ArtifactName3ViewFactory;
 import org.eclipse.uml2.diagram.component.view.factories.ArtifactNameViewFactory;
 import org.eclipse.uml2.diagram.component.view.factories.ArtifactViewFactory;
 import org.eclipse.uml2.diagram.component.view.factories.AssemblyConnectorCircleViewFactory;
@@ -222,6 +232,7 @@ public class UMLViewProvider extends AbstractViewProvider {
 				case Component2EditPart.VISUAL_ID:
 				case PortEditPart.VISUAL_ID:
 				case ArtifactEditPart.VISUAL_ID:
+				case Artifact3EditPart.VISUAL_ID:
 				case ClassEditPart.VISUAL_ID:
 				case InterfaceEditPart.VISUAL_ID:
 				case PropertyEditPart.VISUAL_ID:
@@ -245,6 +256,7 @@ public class UMLViewProvider extends AbstractViewProvider {
 					}
 					break;
 				case ArtifactName2EditPart.VISUAL_ID:
+				case ArtifactContents3EditPart.VISUAL_ID:
 					if (Artifact2EditPart.VISUAL_ID != UMLVisualIDRegistry.getVisualID(containerView) || containerView.getElement() != domainElement) {
 						return null; // wrong container
 					}
@@ -293,7 +305,14 @@ public class UMLViewProvider extends AbstractViewProvider {
 					}
 					break;
 				case ArtifactNameEditPart.VISUAL_ID:
+				case ArtifactContentsEditPart.VISUAL_ID:
 					if (ArtifactEditPart.VISUAL_ID != UMLVisualIDRegistry.getVisualID(containerView) || containerView.getElement() != domainElement) {
+						return null; // wrong container
+					}
+					break;
+				case ArtifactName3EditPart.VISUAL_ID:
+				case ArtifactContents2EditPart.VISUAL_ID:
+					if (Artifact3EditPart.VISUAL_ID != UMLVisualIDRegistry.getVisualID(containerView) || containerView.getElement() != domainElement) {
 						return null; // wrong container
 					}
 					break;
@@ -391,6 +410,10 @@ public class UMLViewProvider extends AbstractViewProvider {
 			return ArtifactViewFactory.class;
 		case ArtifactNameEditPart.VISUAL_ID:
 			return ArtifactNameViewFactory.class;
+		case Artifact3EditPart.VISUAL_ID:
+			return Artifact3ViewFactory.class;
+		case ArtifactName3EditPart.VISUAL_ID:
+			return ArtifactName3ViewFactory.class;
 		case ClassEditPart.VISUAL_ID:
 			return ClassViewFactory.class;
 		case ClassNameEditPart.VISUAL_ID:
@@ -427,6 +450,12 @@ public class UMLViewProvider extends AbstractViewProvider {
 			return ComponentContentsViewFactory.class;
 		case ComponentContents2EditPart.VISUAL_ID:
 			return ComponentContents2ViewFactory.class;
+		case ArtifactContentsEditPart.VISUAL_ID:
+			return ArtifactContentsViewFactory.class;
+		case ArtifactContents2EditPart.VISUAL_ID:
+			return ArtifactContents2ViewFactory.class;
+		case ArtifactContents3EditPart.VISUAL_ID:
+			return ArtifactContents3ViewFactory.class;
 		case PackageImportsEditPart.VISUAL_ID:
 			return PackageImportsViewFactory.class;
 		case PackagePackagesEditPart.VISUAL_ID:

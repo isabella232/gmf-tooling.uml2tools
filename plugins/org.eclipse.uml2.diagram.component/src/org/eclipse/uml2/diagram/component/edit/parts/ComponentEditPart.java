@@ -395,6 +395,9 @@ public class ComponentEditPart extends AbstractBorderedShapeEditPart implements 
 		if (targetEditPart instanceof ArtifactEditPart) {
 			types.add(UMLElementTypes.Dependency_4009);
 		}
+		if (targetEditPart instanceof Artifact3EditPart) {
+			types.add(UMLElementTypes.Dependency_4009);
+		}
 		if (targetEditPart instanceof ClassEditPart) {
 			types.add(UMLElementTypes.Dependency_4009);
 		}
@@ -429,6 +432,9 @@ public class ComponentEditPart extends AbstractBorderedShapeEditPart implements 
 			types.add(UMLElementTypes.Association_4011);
 		}
 		if (targetEditPart instanceof ArtifactEditPart) {
+			types.add(UMLElementTypes.Association_4011);
+		}
+		if (targetEditPart instanceof Artifact3EditPart) {
 			types.add(UMLElementTypes.Association_4011);
 		}
 		if (targetEditPart instanceof ClassEditPart) {
@@ -476,6 +482,9 @@ public class ComponentEditPart extends AbstractBorderedShapeEditPart implements 
 			types.add(UMLElementTypes.Artifact_3003);
 		}
 		if (relationshipType == UMLElementTypes.Dependency_4009) {
+			types.add(UMLElementTypes.Artifact_3016);
+		}
+		if (relationshipType == UMLElementTypes.Dependency_4009) {
 			types.add(UMLElementTypes.Class_3004);
 		}
 		if (relationshipType == UMLElementTypes.Dependency_4009) {
@@ -510,6 +519,9 @@ public class ComponentEditPart extends AbstractBorderedShapeEditPart implements 
 		}
 		if (relationshipType == UMLElementTypes.Association_4011) {
 			types.add(UMLElementTypes.Artifact_3003);
+		}
+		if (relationshipType == UMLElementTypes.Association_4011) {
+			types.add(UMLElementTypes.Artifact_3016);
 		}
 		if (relationshipType == UMLElementTypes.Association_4011) {
 			types.add(UMLElementTypes.Class_3004);
@@ -568,6 +580,9 @@ public class ComponentEditPart extends AbstractBorderedShapeEditPart implements 
 			types.add(UMLElementTypes.Artifact_3003);
 		}
 		if (relationshipType == UMLElementTypes.Dependency_4009) {
+			types.add(UMLElementTypes.Artifact_3016);
+		}
+		if (relationshipType == UMLElementTypes.Dependency_4009) {
 			types.add(UMLElementTypes.Class_3004);
 		}
 		if (relationshipType == UMLElementTypes.Dependency_4009) {
@@ -602,6 +617,9 @@ public class ComponentEditPart extends AbstractBorderedShapeEditPart implements 
 		}
 		if (relationshipType == UMLElementTypes.Association_4011) {
 			types.add(UMLElementTypes.Artifact_3003);
+		}
+		if (relationshipType == UMLElementTypes.Association_4011) {
+			types.add(UMLElementTypes.Artifact_3016);
 		}
 		if (relationshipType == UMLElementTypes.Association_4011) {
 			types.add(UMLElementTypes.Class_3004);

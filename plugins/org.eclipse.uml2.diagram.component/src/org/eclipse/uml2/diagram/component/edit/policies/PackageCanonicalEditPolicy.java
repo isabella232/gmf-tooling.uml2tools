@@ -39,6 +39,7 @@ import org.eclipse.uml2.diagram.common.editpolicies.UpdateDescriptionRequest;
 import org.eclipse.uml2.diagram.common.genapi.IUpdaterLinkDescriptor;
 import org.eclipse.uml2.diagram.common.genapi.IUpdaterNodeDescriptor;
 import org.eclipse.uml2.diagram.component.edit.parts.Artifact2EditPart;
+import org.eclipse.uml2.diagram.component.edit.parts.Artifact3EditPart;
 import org.eclipse.uml2.diagram.component.edit.parts.ArtifactEditPart;
 import org.eclipse.uml2.diagram.component.edit.parts.AssemblyConnectorCircleEditPart;
 import org.eclipse.uml2.diagram.component.edit.parts.AssociationEditPart;
@@ -114,6 +115,7 @@ public class PackageCanonicalEditPolicy extends CanonicalConnectionEditPolicy {
 		case Component2EditPart.VISUAL_ID:
 		case PortEditPart.VISUAL_ID:
 		case ArtifactEditPart.VISUAL_ID:
+		case Artifact3EditPart.VISUAL_ID:
 		case ClassEditPart.VISUAL_ID:
 		case InterfaceEditPart.VISUAL_ID:
 		case PropertyEditPart.VISUAL_ID:
@@ -398,6 +400,13 @@ public class PackageCanonicalEditPolicy extends CanonicalConnectionEditPolicy {
 		case ArtifactEditPart.VISUAL_ID: {
 			if (!domain2NotationMap.containsKey(view.getElement())) {
 				result.addAll(UMLDiagramUpdater.getArtifact_3003ContainedLinks(view));
+			}
+			domain2NotationMap.put(view.getElement(), view);
+			break;
+		}
+		case Artifact3EditPart.VISUAL_ID: {
+			if (!domain2NotationMap.containsKey(view.getElement())) {
+				result.addAll(UMLDiagramUpdater.getArtifact_3016ContainedLinks(view));
 			}
 			domain2NotationMap.put(view.getElement(), view);
 			break;

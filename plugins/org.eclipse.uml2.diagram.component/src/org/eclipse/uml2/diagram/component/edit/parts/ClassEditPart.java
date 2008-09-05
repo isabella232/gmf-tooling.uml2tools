@@ -372,6 +372,9 @@ public class ClassEditPart extends AbstractBorderedShapeEditPart implements Prim
 		if (targetEditPart instanceof ArtifactEditPart) {
 			types.add(UMLElementTypes.Dependency_4009);
 		}
+		if (targetEditPart instanceof Artifact3EditPart) {
+			types.add(UMLElementTypes.Dependency_4009);
+		}
 		if (targetEditPart instanceof org.eclipse.uml2.diagram.component.edit.parts.ClassEditPart) {
 			types.add(UMLElementTypes.Dependency_4009);
 		}
@@ -406,6 +409,9 @@ public class ClassEditPart extends AbstractBorderedShapeEditPart implements Prim
 			types.add(UMLElementTypes.Association_4011);
 		}
 		if (targetEditPart instanceof ArtifactEditPart) {
+			types.add(UMLElementTypes.Association_4011);
+		}
+		if (targetEditPart instanceof Artifact3EditPart) {
 			types.add(UMLElementTypes.Association_4011);
 		}
 		if (targetEditPart instanceof org.eclipse.uml2.diagram.component.edit.parts.ClassEditPart) {
@@ -453,6 +459,9 @@ public class ClassEditPart extends AbstractBorderedShapeEditPart implements Prim
 			types.add(UMLElementTypes.Artifact_3003);
 		}
 		if (relationshipType == UMLElementTypes.Dependency_4009) {
+			types.add(UMLElementTypes.Artifact_3016);
+		}
+		if (relationshipType == UMLElementTypes.Dependency_4009) {
 			types.add(UMLElementTypes.Class_3004);
 		}
 		if (relationshipType == UMLElementTypes.Dependency_4009) {
@@ -487,6 +496,9 @@ public class ClassEditPart extends AbstractBorderedShapeEditPart implements Prim
 		}
 		if (relationshipType == UMLElementTypes.Association_4011) {
 			types.add(UMLElementTypes.Artifact_3003);
+		}
+		if (relationshipType == UMLElementTypes.Association_4011) {
+			types.add(UMLElementTypes.Artifact_3016);
 		}
 		if (relationshipType == UMLElementTypes.Association_4011) {
 			types.add(UMLElementTypes.Class_3004);
@@ -539,6 +551,9 @@ public class ClassEditPart extends AbstractBorderedShapeEditPart implements Prim
 			types.add(UMLElementTypes.Artifact_3003);
 		}
 		if (relationshipType == UMLElementTypes.Dependency_4009) {
+			types.add(UMLElementTypes.Artifact_3016);
+		}
+		if (relationshipType == UMLElementTypes.Dependency_4009) {
 			types.add(UMLElementTypes.Class_3004);
 		}
 		if (relationshipType == UMLElementTypes.Dependency_4009) {
@@ -573,6 +588,9 @@ public class ClassEditPart extends AbstractBorderedShapeEditPart implements Prim
 		}
 		if (relationshipType == UMLElementTypes.Association_4011) {
 			types.add(UMLElementTypes.Artifact_3003);
+		}
+		if (relationshipType == UMLElementTypes.Association_4011) {
+			types.add(UMLElementTypes.Artifact_3016);
 		}
 		if (relationshipType == UMLElementTypes.Association_4011) {
 			types.add(UMLElementTypes.Class_3004);

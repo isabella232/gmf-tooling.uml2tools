@@ -11,6 +11,7 @@ import org.eclipse.gmf.runtime.diagram.ui.editpolicies.CanonicalEditPolicy;
 import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.uml2.diagram.common.genapi.IUpdaterNodeDescriptor;
 import org.eclipse.uml2.diagram.component.edit.parts.Artifact2EditPart;
+import org.eclipse.uml2.diagram.component.edit.parts.Artifact3EditPart;
 import org.eclipse.uml2.diagram.component.edit.parts.ArtifactEditPart;
 import org.eclipse.uml2.diagram.component.edit.parts.AssemblyConnectorCircleEditPart;
 import org.eclipse.uml2.diagram.component.edit.parts.Class2EditPart;
@@ -52,7 +53,7 @@ public class ComponentContents2CanonicalEditPolicy extends CanonicalEditPolicy {
 	protected List getSemanticChildrenList() {
 		View viewObject = (View) getHost().getModel();
 		List result = new LinkedList();
-		for (Iterator it = UMLDiagramUpdater.getComponentContents_7002SemanticChildren(viewObject).iterator(); it.hasNext();) {
+		for (Iterator it = UMLDiagramUpdater.getComponentComponentFigure_contents_7002SemanticChildren(viewObject).iterator(); it.hasNext();) {
 			result.add(((IUpdaterNodeDescriptor) it.next()).getModelElement());
 		}
 		return result;
@@ -73,6 +74,7 @@ public class ComponentContents2CanonicalEditPolicy extends CanonicalEditPolicy {
 		case Package3EditPart.VISUAL_ID:
 		case ClassDiagramNotationClassEditPart.VISUAL_ID:
 		case PortEditPart.VISUAL_ID:
+		case Artifact3EditPart.VISUAL_ID:
 		case ElementImportEditPart.VISUAL_ID:
 		case Package4EditPart.VISUAL_ID:
 		case Class3EditPart.VISUAL_ID:

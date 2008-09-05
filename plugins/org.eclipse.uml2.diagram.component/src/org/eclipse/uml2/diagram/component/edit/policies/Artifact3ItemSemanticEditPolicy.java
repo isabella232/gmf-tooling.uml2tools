@@ -1,6 +1,7 @@
 package org.eclipse.uml2.diagram.component.edit.policies;
 
 import java.util.Iterator;
+
 import org.eclipse.emf.ecore.EAnnotation;
 import org.eclipse.gef.commands.Command;
 import org.eclipse.gef.commands.CompoundCommand;
@@ -15,7 +16,7 @@ import org.eclipse.uml2.diagram.component.edit.commands.AssociationReorientComma
 import org.eclipse.uml2.diagram.component.edit.commands.DependencyCreateCommand;
 import org.eclipse.uml2.diagram.component.edit.commands.DependencyReorientCommand;
 import org.eclipse.uml2.diagram.component.edit.parts.Artifact3EditPart;
-import org.eclipse.uml2.diagram.component.edit.parts.ArtifactContents3EditPart;
+import org.eclipse.uml2.diagram.component.edit.parts.ArtifactContents2EditPart;
 import org.eclipse.uml2.diagram.component.edit.parts.AssociationEditPart;
 import org.eclipse.uml2.diagram.component.edit.parts.DependencyEditPart;
 import org.eclipse.uml2.diagram.component.part.UMLVisualIDRegistry;
@@ -24,13 +25,14 @@ import org.eclipse.uml2.diagram.component.providers.UMLElementTypes;
 /**
  * @generated
  */
-public class Artifact2ItemSemanticEditPolicy extends UMLBaseItemSemanticEditPolicy {
+
+public class Artifact3ItemSemanticEditPolicy extends UMLBaseItemSemanticEditPolicy {
 
 	/**
 	 * @generated
 	 */
-	public Artifact2ItemSemanticEditPolicy() {
-		super(UMLElementTypes.Artifact_2002);
+	public Artifact3ItemSemanticEditPolicy() {
+		super(UMLElementTypes.Artifact_3016);
 	}
 
 	/**
@@ -40,10 +42,6 @@ public class Artifact2ItemSemanticEditPolicy extends UMLBaseItemSemanticEditPoli
 		CompoundCommand cc = getDestroyEdgesCommand();
 		addDestroyChildNodesCommand(cc);
 		addDestroyShortcutsCommand(cc);
-		View view = (View) getHost().getModel();
-		if (view.getEAnnotation("Shortcut") != null) { //$NON-NLS-1$
-			req.setElementToDestroy(view);
-		}
 		cc.add(getGEFWrapper(new DestroyElementCommand(req)));
 		return cc.unwrap();
 	}
@@ -60,7 +58,7 @@ public class Artifact2ItemSemanticEditPolicy extends UMLBaseItemSemanticEditPoli
 		for (Iterator it = view.getChildren().iterator(); it.hasNext();) {
 			Node node = (Node) it.next();
 			switch (UMLVisualIDRegistry.getVisualID(node)) {
-			case ArtifactContents3EditPart.VISUAL_ID:
+			case ArtifactContents2EditPart.VISUAL_ID:
 				for (Iterator cit = node.getChildren().iterator(); cit.hasNext();) {
 					Node cnode = (Node) cit.next();
 					switch (UMLVisualIDRegistry.getVisualID(cnode)) {

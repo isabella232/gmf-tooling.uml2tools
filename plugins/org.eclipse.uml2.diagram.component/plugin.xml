@@ -367,6 +367,15 @@
          </metamodelType>
       </metamodel>
       <metamodel nsURI="http://www.eclipse.org/uml2/2.1.0/UML">
+         <specializationType
+               id="org.eclipse.uml2.diagram.component.Artifact_3016"
+               name="%metatype.name.Artifact_3016"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType">
+            <specializes id="org.eclipse.uml2.diagram.component.Artifact_3003"/>
+            <param name="semanticHint" value="3016"/>
+         </specializationType>
+      </metamodel>
+      <metamodel nsURI="http://www.eclipse.org/uml2/2.1.0/UML">
          <metamodelType
                id="org.eclipse.uml2.diagram.component.Class_3004"
                name="%metatype.name.Class_3004"
@@ -580,6 +589,7 @@
          <elementType ref="org.eclipse.uml2.diagram.component.Component_3001"/>
          <elementType ref="org.eclipse.uml2.diagram.component.Port_3002"/>
          <elementType ref="org.eclipse.uml2.diagram.component.Artifact_3003"/>
+         <elementType ref="org.eclipse.uml2.diagram.component.Artifact_3016"/>
          <elementType ref="org.eclipse.uml2.diagram.component.Class_3004"/>
          <elementType ref="org.eclipse.uml2.diagram.component.Interface_3005"/>
          <elementType ref="org.eclipse.uml2.diagram.component.Property_3006"/>

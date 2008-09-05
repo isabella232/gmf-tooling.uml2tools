@@ -11,6 +11,7 @@ import org.eclipse.gmf.runtime.diagram.ui.editpolicies.CanonicalEditPolicy;
 import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.uml2.diagram.common.genapi.IUpdaterNodeDescriptor;
 import org.eclipse.uml2.diagram.component.edit.parts.Artifact2EditPart;
+import org.eclipse.uml2.diagram.component.edit.parts.Artifact3EditPart;
 import org.eclipse.uml2.diagram.component.edit.parts.ArtifactEditPart;
 import org.eclipse.uml2.diagram.component.edit.parts.AssemblyConnectorCircleEditPart;
 import org.eclipse.uml2.diagram.component.edit.parts.Class2EditPart;
@@ -74,6 +75,7 @@ public class Class2CanonicalEditPolicy extends CanonicalEditPolicy {
 		case ClassDiagramNotationClassEditPart.VISUAL_ID:
 		case Component2EditPart.VISUAL_ID:
 		case ArtifactEditPart.VISUAL_ID:
+		case Artifact3EditPart.VISUAL_ID:
 		case ClassEditPart.VISUAL_ID:
 		case InterfaceEditPart.VISUAL_ID:
 		case PropertyEditPart.VISUAL_ID:

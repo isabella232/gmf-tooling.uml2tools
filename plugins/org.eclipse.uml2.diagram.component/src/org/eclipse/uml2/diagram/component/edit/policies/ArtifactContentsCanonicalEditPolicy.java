@@ -40,7 +40,8 @@ import org.eclipse.uml2.uml.UMLPackage;
 /**
  * @generated
  */
-public class ComponentContentsCanonicalEditPolicy extends CanonicalEditPolicy {
+
+public class ArtifactContentsCanonicalEditPolicy extends CanonicalEditPolicy {
 
 	/**
 	 * @generated
@@ -53,7 +54,7 @@ public class ComponentContentsCanonicalEditPolicy extends CanonicalEditPolicy {
 	protected List getSemanticChildrenList() {
 		View viewObject = (View) getHost().getModel();
 		List result = new LinkedList();
-		for (Iterator it = UMLDiagramUpdater.getComponentComponentFigure_contents_7001SemanticChildren(viewObject).iterator(); it.hasNext();) {
+		for (Iterator it = UMLDiagramUpdater.getArtifactArtifactFigure_contents_7009SemanticChildren(viewObject).iterator(); it.hasNext();) {
 			result.add(((IUpdaterNodeDescriptor) it.next()).getModelElement());
 		}
 		return result;
@@ -73,8 +74,13 @@ public class ComponentContentsCanonicalEditPolicy extends CanonicalEditPolicy {
 		case Package2EditPart.VISUAL_ID:
 		case Package3EditPart.VISUAL_ID:
 		case ClassDiagramNotationClassEditPart.VISUAL_ID:
+		case Component2EditPart.VISUAL_ID:
 		case PortEditPart.VISUAL_ID:
-		case Artifact3EditPart.VISUAL_ID:
+		case ArtifactEditPart.VISUAL_ID:
+		case ClassEditPart.VISUAL_ID:
+		case InterfaceEditPart.VISUAL_ID:
+		case PropertyEditPart.VISUAL_ID:
+		case AssemblyConnectorCircleEditPart.VISUAL_ID:
 		case ElementImportEditPart.VISUAL_ID:
 		case Package4EditPart.VISUAL_ID:
 		case Class3EditPart.VISUAL_ID:
@@ -84,12 +90,7 @@ public class ComponentContentsCanonicalEditPolicy extends CanonicalEditPolicy {
 		case ClassDiagramNotationInnerClassEditPart.VISUAL_ID:
 		case PortOnClassEditPart.VISUAL_ID:
 			return true;
-		case Component2EditPart.VISUAL_ID:
-		case ArtifactEditPart.VISUAL_ID:
-		case ClassEditPart.VISUAL_ID:
-		case InterfaceEditPart.VISUAL_ID:
-		case PropertyEditPart.VISUAL_ID:
-		case AssemblyConnectorCircleEditPart.VISUAL_ID:
+		case Artifact3EditPart.VISUAL_ID:
 			if (!semanticChildren.contains(view.getElement())) {
 				return true;
 			}
@@ -110,9 +111,7 @@ public class ComponentContentsCanonicalEditPolicy extends CanonicalEditPolicy {
 	protected Set getFeaturesToSynchronize() {
 		if (myFeaturesToSynchronize == null) {
 			myFeaturesToSynchronize = new HashSet();
-			myFeaturesToSynchronize.add(UMLPackage.eINSTANCE.getComponent_PackagedElement());
-			myFeaturesToSynchronize.add(UMLPackage.eINSTANCE.getStructuredClassifier_OwnedAttribute());
-			myFeaturesToSynchronize.add(UMLPackage.eINSTANCE.getStructuredClassifier_OwnedConnector());
+			myFeaturesToSynchronize.add(UMLPackage.eINSTANCE.getArtifact_NestedArtifact());
 		}
 		return myFeaturesToSynchronize;
 	}

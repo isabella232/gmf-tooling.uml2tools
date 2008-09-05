@@ -62,33 +62,47 @@
           xsi:type="gmfgraph:Rectangle"
           name="ArtifactFigure">
         <layout
-            xsi:type="gmfgraph:FlowLayout"
-            vertical="true"
-            matchMinorSize="true"
-            forceSingleLine="true"
-            majorAlignment="FILL"
-            minorAlignment="FILL"
-            majorSpacing="0"
-            minorSpacing="0"/>
-        <children
-            xsi:type="gmfgraph:Label"
-            name="ArtifactFigure_fixed_artifact"
-            text="\u00ABartifact\u00BB"/>
+            xsi:type="gmfgraph:BorderLayout"/>
         <children
             xsi:type="gmfgraph:Rectangle"
             name="ArtifactFigure_NameContainer"
             outline="false"
             fill="false">
+          <layoutData
+              xsi:type="gmfgraph:BorderLayoutData"
+              alignment="BEGINNING"
+              vertical="true"/>
           <layout
-              xsi:type="gmfgraph:CustomLayout"
-              qualifiedClassName="org.eclipse.uml2.diagram.common.draw2d.CenterLayout"/>
+              xsi:type="gmfgraph:FlowLayout"
+              vertical="true"
+              matchMinorSize="true"
+              forceSingleLine="true"
+              majorAlignment="FILL"
+              minorAlignment="FILL"
+              majorSpacing="0"
+              minorSpacing="0"/>
           <children
               xsi:type="gmfgraph:Label"
               name="ArtifactFigure_name"/>
+          <children
+              xsi:type="gmfgraph:Label"
+              name="ArtifactFigure_fixed_artifact"
+              text="\u00ABartifact\u00BB"/>
+        </children>
+        <children
+            xsi:type="gmfgraph:Rectangle"
+            name="ArtifactFigure_Body">
+          <layoutData
+              xsi:type="gmfgraph:BorderLayoutData"
+              alignment="FILL"/>
+          <minimumSize
+              dy="55"/>
         </children>
       </actualFigure>
       <accessors
-          figure="//@figures.0/@descriptors.1/@actualFigure/@children.1/@children.0"/>
+          figure="//@figures.0/@descriptors.1/@actualFigure/@children.0/@children.0"/>
+      <accessors
+          figure="//@figures.0/@descriptors.1/@actualFigure/@children.1"/>
     </descriptors>
     <descriptors
         name="ComponentClassFigure">
@@ -156,10 +170,15 @@
       name="PartNode"
       figure="PartFigure"/>
   <compartments
-      name="contents"
+      name="ComponentFigure_contents"
       figure="ComponentFigure"
       collapsible="true"
       accessor="//@figures.0/@descriptors.0/@accessors.1"/>
+  <compartments
+      name="ArtifactFigure_contents"
+      figure="ArtifactFigure"
+      collapsible="true"
+      accessor="//@figures.0/@descriptors.1/@accessors.1"/>
   <labels
       name="ComponentNode_name"
       figure="ComponentFigure"

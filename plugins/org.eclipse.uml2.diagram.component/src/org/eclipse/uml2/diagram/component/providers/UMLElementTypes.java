@@ -17,6 +17,7 @@ import org.eclipse.jface.resource.ImageDescriptor;
 import org.eclipse.jface.resource.ImageRegistry;
 import org.eclipse.swt.graphics.Image;
 import org.eclipse.uml2.diagram.component.edit.parts.Artifact2EditPart;
+import org.eclipse.uml2.diagram.component.edit.parts.Artifact3EditPart;
 import org.eclipse.uml2.diagram.component.edit.parts.ArtifactEditPart;
 import org.eclipse.uml2.diagram.component.edit.parts.AssemblyConnectorCircleEditPart;
 import org.eclipse.uml2.diagram.component.edit.parts.AssemblyConnectorEndRoleEditPart;
@@ -130,6 +131,11 @@ public class UMLElementTypes extends ElementInitializers {
 	 * @generated
 	 */
 	public static final IHintedType Artifact_3003 = (IHintedType) getElementType("org.eclipse.uml2.diagram.component.Artifact_3003"); //$NON-NLS-1$
+
+	/**
+	 * @generated
+	 */
+	public static final IHintedType Artifact_3016 = (IHintedType) getElementType("org.eclipse.uml2.diagram.component.Artifact_3016"); //$NON-NLS-1$
 
 	/**
 	 * @generated
@@ -359,6 +365,8 @@ public class UMLElementTypes extends ElementInitializers {
 
 			elements.put(Artifact_3003, UMLPackage.eINSTANCE.getArtifact());
 
+			elements.put(Artifact_3016, UMLPackage.eINSTANCE.getArtifact());
+
 			elements.put(Class_3004, UMLPackage.eINSTANCE.getClass_());
 
 			elements.put(Interface_3005, UMLPackage.eINSTANCE.getInterface());
@@ -426,6 +434,7 @@ public class UMLElementTypes extends ElementInitializers {
 			KNOWN_ELEMENT_TYPES.add(Component_3001);
 			KNOWN_ELEMENT_TYPES.add(Port_3002);
 			KNOWN_ELEMENT_TYPES.add(Artifact_3003);
+			KNOWN_ELEMENT_TYPES.add(Artifact_3016);
 			KNOWN_ELEMENT_TYPES.add(Class_3004);
 			KNOWN_ELEMENT_TYPES.add(Interface_3005);
 			KNOWN_ELEMENT_TYPES.add(Property_3006);
@@ -477,6 +486,8 @@ public class UMLElementTypes extends ElementInitializers {
 			return Port_3002;
 		case ArtifactEditPart.VISUAL_ID:
 			return Artifact_3003;
+		case Artifact3EditPart.VISUAL_ID:
+			return Artifact_3016;
 		case ClassEditPart.VISUAL_ID:
 			return Class_3004;
 		case InterfaceEditPart.VISUAL_ID:

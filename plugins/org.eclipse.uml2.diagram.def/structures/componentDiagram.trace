@@ -18,6 +18,9 @@
     <nodeLabelTraces
         visualID="5004"
         queryText="true"/>
+    <compartmentTraces
+        visualID="7011"
+        queryText="true"/>
   </nodeTraces>
   <nodeTraces
       visualID="2003"
@@ -98,6 +101,9 @@
     <nodeLabelTraces
         visualID="5006"
         queryText="true"/>
+    <compartmentTraces
+        visualID="7009"
+        queryText="true"/>
   </childNodeTraces>
   <childNodeTraces
       visualID="3004"
@@ -151,6 +157,16 @@
   <childNodeTraces
       visualID="3015"
       queryText="(let _eClass_:ecore::EClass = modelFacet.metaClass.ecoreClass in _eClass_.ePackage.nsURI = 'http://www.eclipse.org/uml2/2.1.0/UML' and _eClass_.name = 'Connector') and (let _containmentMF_:ecore::EStructuralFeature = modelFacet.containmentMetaFeature.ecoreFeature in (let _eClass_:ecore::EClass = _containmentMF_.eContainingClass in _eClass_.ePackage.nsURI = 'http://www.eclipse.org/uml2/2.1.0/UML' and _eClass_.name = 'StructuredClassifier') and _containmentMF_.name = 'ownedConnector')"/>
+  <childNodeTraces
+      visualID="3016"
+      queryText="(let _eClass_:ecore::EClass = modelFacet.metaClass.ecoreClass in _eClass_.ePackage.nsURI = 'http://www.eclipse.org/uml2/2.1.0/UML' and _eClass_.name = 'Artifact') and (let _containmentMF_:ecore::EStructuralFeature = modelFacet.containmentMetaFeature.ecoreFeature in (let _eClass_:ecore::EClass = _containmentMF_.eContainingClass in _eClass_.ePackage.nsURI = 'http://www.eclipse.org/uml2/2.1.0/UML' and _eClass_.name = 'Artifact') and _containmentMF_.name = 'nestedArtifact')">
+    <nodeLabelTraces
+        visualID="5016"
+        queryText="true"/>
+    <compartmentTraces
+        visualID="7010"
+        queryText="true"/>
+  </childNodeTraces>
   <linkTraces
       visualID="4001"
       queryText="modelFacet.oclIsKindOf(gmfgen::TypeLinkModelFacet) and (let _eClass_:ecore::EClass = modelFacet.oclAsType(gmfgen::TypeLinkModelFacet).metaClass.ecoreClass in _eClass_.ePackage.nsURI = 'http://www.eclipse.org/uml2/2.1.0/UML' and _eClass_.name = 'InterfaceRealization')"/>

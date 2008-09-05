@@ -2,16 +2,22 @@ package org.eclipse.uml2.diagram.component.edit.parts;
 
 import java.util.ArrayList;
 import java.util.List;
+import org.eclipse.draw2d.BorderLayout;
 import org.eclipse.draw2d.IFigure;
 import org.eclipse.draw2d.Label;
 import org.eclipse.draw2d.RectangleFigure;
 import org.eclipse.draw2d.Shape;
 import org.eclipse.draw2d.StackLayout;
 import org.eclipse.draw2d.ToolbarLayout;
+import org.eclipse.draw2d.geometry.Dimension;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.gef.EditPart;
 import org.eclipse.gef.EditPolicy;
+import org.eclipse.gef.Request;
+import org.eclipse.gef.commands.Command;
 import org.eclipse.gef.editpolicies.LayoutEditPolicy;
+import org.eclipse.gef.editpolicies.NonResizableEditPolicy;
+import org.eclipse.gef.requests.CreateRequest;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.ITextAwareEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.ShapeNodeEditPart;
@@ -78,16 +84,22 @@ public class Artifact2EditPart extends ShapeNodeEditPart implements PrimaryShape
 	 * @generated
 	 */
 	protected LayoutEditPolicy createLayoutEditPolicy() {
-
-		ConstrainedToolbarLayoutEditPolicy lep = new ConstrainedToolbarLayoutEditPolicy() {
+		LayoutEditPolicy lep = new LayoutEditPolicy() {
 
 			protected EditPolicy createChildEditPolicy(EditPart child) {
-				if (child.getEditPolicy(EditPolicy.PRIMARY_DRAG_ROLE) == null) {
-					if (child instanceof ITextAwareEditPart) {
-						return new UMLTextSelectionEditPolicy();
-					}
+				EditPolicy result = child.getEditPolicy(EditPolicy.PRIMARY_DRAG_ROLE);
+				if (result == null) {
+					result = new NonResizableEditPolicy();
 				}
-				return super.createChildEditPolicy(child);
+				return result;
+			}
+
+			protected Command getMoveChildrenCommand(Request request) {
+				return null;
+			}
+
+			protected Command getCreateCommand(CreateRequest request) {
+				return null;
 			}
 		};
 		return lep;
@@ -116,6 +128,12 @@ public class Artifact2EditPart extends ShapeNodeEditPart implements PrimaryShape
 			((ArtifactName2EditPart) childEditPart).setLabel(getPrimaryShape().getFigureArtifactFigure_name());
 			return true;
 		}
+		if (childEditPart instanceof ArtifactContents3EditPart) {
+			IFigure pane = getPrimaryShape().getFigureArtifactFigure_Body();
+			setupContentPane(pane); // FIXME each comparment should handle his content pane in his own way 
+			pane.add(((ArtifactContents3EditPart) childEditPart).getFigure());
+			return true;
+		}
 		return false;
 	}
 
@@ -124,6 +142,11 @@ public class Artifact2EditPart extends ShapeNodeEditPart implements PrimaryShape
 	 */
 	protected boolean removeFixedChild(EditPart childEditPart) {
 
+		if (childEditPart instanceof ArtifactContents3EditPart) {
+			IFigure pane = getPrimaryShape().getFigureArtifactFigure_Body();
+			pane.remove(((ArtifactContents3EditPart) childEditPart).getFigure());
+			return true;
+		}
 		return false;
 	}
 
@@ -152,6 +175,9 @@ public class Artifact2EditPart extends ShapeNodeEditPart implements PrimaryShape
 	 */
 	protected IFigure getContentPaneFor(IGraphicalEditPart editPart) {
 
+		if (editPart instanceof ArtifactContents3EditPart) {
+			return getPrimaryShape().getFigureArtifactFigure_Body();
+		}
 		return getContentPane();
 	}
 
@@ -303,6 +329,9 @@ public class Artifact2EditPart extends ShapeNodeEditPart implements PrimaryShape
 		if (targetEditPart instanceof ArtifactEditPart) {
 			types.add(UMLElementTypes.Dependency_4009);
 		}
+		if (targetEditPart instanceof Artifact3EditPart) {
+			types.add(UMLElementTypes.Dependency_4009);
+		}
 		if (targetEditPart instanceof ClassEditPart) {
 			types.add(UMLElementTypes.Dependency_4009);
 		}
@@ -337,6 +366,9 @@ public class Artifact2EditPart extends ShapeNodeEditPart implements PrimaryShape
 			types.add(UMLElementTypes.Association_4011);
 		}
 		if (targetEditPart instanceof ArtifactEditPart) {
+			types.add(UMLElementTypes.Association_4011);
+		}
+		if (targetEditPart instanceof Artifact3EditPart) {
 			types.add(UMLElementTypes.Association_4011);
 		}
 		if (targetEditPart instanceof ClassEditPart) {
@@ -384,6 +416,9 @@ public class Artifact2EditPart extends ShapeNodeEditPart implements PrimaryShape
 			types.add(UMLElementTypes.Artifact_3003);
 		}
 		if (relationshipType == UMLElementTypes.Dependency_4009) {
+			types.add(UMLElementTypes.Artifact_3016);
+		}
+		if (relationshipType == UMLElementTypes.Dependency_4009) {
 			types.add(UMLElementTypes.Class_3004);
 		}
 		if (relationshipType == UMLElementTypes.Dependency_4009) {
@@ -418,6 +453,9 @@ public class Artifact2EditPart extends ShapeNodeEditPart implements PrimaryShape
 		}
 		if (relationshipType == UMLElementTypes.Association_4011) {
 			types.add(UMLElementTypes.Artifact_3003);
+		}
+		if (relationshipType == UMLElementTypes.Association_4011) {
+			types.add(UMLElementTypes.Artifact_3016);
 		}
 		if (relationshipType == UMLElementTypes.Association_4011) {
 			types.add(UMLElementTypes.Class_3004);
@@ -464,6 +502,9 @@ public class Artifact2EditPart extends ShapeNodeEditPart implements PrimaryShape
 			types.add(UMLElementTypes.Artifact_3003);
 		}
 		if (relationshipType == UMLElementTypes.Dependency_4009) {
+			types.add(UMLElementTypes.Artifact_3016);
+		}
+		if (relationshipType == UMLElementTypes.Dependency_4009) {
 			types.add(UMLElementTypes.Class_3004);
 		}
 		if (relationshipType == UMLElementTypes.Dependency_4009) {
@@ -500,6 +541,9 @@ public class Artifact2EditPart extends ShapeNodeEditPart implements PrimaryShape
 			types.add(UMLElementTypes.Artifact_3003);
 		}
 		if (relationshipType == UMLElementTypes.Association_4011) {
+			types.add(UMLElementTypes.Artifact_3016);
+		}
+		if (relationshipType == UMLElementTypes.Association_4011) {
 			types.add(UMLElementTypes.Class_3004);
 		}
 		if (relationshipType == UMLElementTypes.Association_4011) {
@@ -528,15 +572,14 @@ public class Artifact2EditPart extends ShapeNodeEditPart implements PrimaryShape
 		/**
 		 * @generated
 		 */
+		private RectangleFigure fFigureArtifactFigure_Body;
+
+		/**
+		 * @generated
+		 */
 		public ArtifactFigure() {
 
-			ToolbarLayout layoutThis = new ToolbarLayout();
-			layoutThis.setStretchMinorAxis(true);
-			layoutThis.setMinorAlignment(ToolbarLayout.ALIGN_CENTER);
-
-			layoutThis.setSpacing(0);
-			layoutThis.setVertical(true);
-
+			BorderLayout layoutThis = new BorderLayout();
 			this.setLayoutManager(layoutThis);
 
 			createContents();
@@ -547,18 +590,18 @@ public class Artifact2EditPart extends ShapeNodeEditPart implements PrimaryShape
 		 */
 		private void createContents() {
 
-			Label artifactFigure_fixed_artifact0 = new Label();
-			artifactFigure_fixed_artifact0.setText("\u00ABartifact\u00BB");
-
-			this.add(artifactFigure_fixed_artifact0);
-
 			RectangleFigure artifactFigure_NameContainer0 = new RectangleFigure();
 			artifactFigure_NameContainer0.setFill(false);
 			artifactFigure_NameContainer0.setOutline(false);
 
-			this.add(artifactFigure_NameContainer0);
+			this.add(artifactFigure_NameContainer0, BorderLayout.TOP);
 
-			CenterLayout layoutArtifactFigure_NameContainer0 = new CenterLayout();
+			ToolbarLayout layoutArtifactFigure_NameContainer0 = new ToolbarLayout();
+			layoutArtifactFigure_NameContainer0.setStretchMinorAxis(true);
+			layoutArtifactFigure_NameContainer0.setMinorAlignment(ToolbarLayout.ALIGN_CENTER);
+
+			layoutArtifactFigure_NameContainer0.setSpacing(0);
+			layoutArtifactFigure_NameContainer0.setVertical(true);
 
 			artifactFigure_NameContainer0.setLayoutManager(layoutArtifactFigure_NameContainer0);
 
@@ -567,6 +610,16 @@ public class Artifact2EditPart extends ShapeNodeEditPart implements PrimaryShape
 
 			artifactFigure_NameContainer0.add(fFigureArtifactFigure_name);
 
+			Label artifactFigure_fixed_artifact1 = new Label();
+			artifactFigure_fixed_artifact1.setText("\u00ABartifact\u00BB");
+
+			artifactFigure_NameContainer0.add(artifactFigure_fixed_artifact1);
+
+			fFigureArtifactFigure_Body = new RectangleFigure();
+			fFigureArtifactFigure_Body.setMinimumSize(new Dimension(getMapMode().DPtoLP(0), getMapMode().DPtoLP(55)));
+
+			this.add(fFigureArtifactFigure_Body, BorderLayout.CENTER);
+
 		}
 
 		/**
@@ -574,6 +627,13 @@ public class Artifact2EditPart extends ShapeNodeEditPart implements PrimaryShape
 		 */
 		public Label getFigureArtifactFigure_name() {
 			return fFigureArtifactFigure_name;
+		}
+
+		/**
+		 * @generated
+		 */
+		public RectangleFigure getFigureArtifactFigure_Body() {
+			return fFigureArtifactFigure_Body;
 		}
 
 		/**
