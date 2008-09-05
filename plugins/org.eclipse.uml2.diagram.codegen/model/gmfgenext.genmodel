@@ -31,5 +31,6 @@
     <genClasses ecoreClass="gmfgenext.ecore#//InteractionDiagramAttributes">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute gmfgenext.ecore#//InteractionDiagramAttributes/multiLayered"/>
     </genClasses>
+    <genClasses ecoreClass="gmfgenext.ecore#//RotatedLabelAttributes"/>
   </genPackages>
 </genmodel:GenModel>

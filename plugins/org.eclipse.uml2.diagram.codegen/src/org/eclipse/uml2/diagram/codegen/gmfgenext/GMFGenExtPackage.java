@@ -2,7 +2,7 @@
  * <copyright>
  * </copyright>
  *
- * $Id: GMFGenExtPackage.java,v 1.5 2008/05/07 17:37:33 mgolubev Exp $
+ * $Id: GMFGenExtPackage.java,v 1.6 2008/09/05 19:40:28 mgolubev Exp $
  */
 package org.eclipse.uml2.diagram.codegen.gmfgenext;
 
@@ -295,6 +295,25 @@ public interface GMFGenExtPackage extends EPackage {
 	int INTERACTION_DIAGRAM_ATTRIBUTES_FEATURE_COUNT = GMFGenPackage.ATTRIBUTES_FEATURE_COUNT + 1;
 
 	/**
+	 * The meta object id for the '{@link org.eclipse.uml2.diagram.codegen.gmfgenext.impl.RotatedLabelAttributesImpl <em>Rotated Label Attributes</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.eclipse.uml2.diagram.codegen.gmfgenext.impl.RotatedLabelAttributesImpl
+	 * @see org.eclipse.uml2.diagram.codegen.gmfgenext.impl.GMFGenExtPackageImpl#getRotatedLabelAttributes()
+	 * @generated
+	 */
+	int ROTATED_LABEL_ATTRIBUTES = 7;
+
+	/**
+	 * The number of structural features of the '<em>Rotated Label Attributes</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ROTATED_LABEL_ATTRIBUTES_FEATURE_COUNT = GMFGenPackage.ATTRIBUTES_FEATURE_COUNT + 0;
+
+	/**
 	 * Returns the meta object for class '{@link org.eclipse.uml2.diagram.codegen.gmfgenext.AuxSecondaryDiagramNodeAttribute <em>Aux Secondary Diagram Node Attribute</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -464,6 +483,16 @@ public interface GMFGenExtPackage extends EPackage {
 	EAttribute getInteractionDiagramAttributes_MultiLayered();
 
 	/**
+	 * Returns the meta object for class '{@link org.eclipse.uml2.diagram.codegen.gmfgenext.RotatedLabelAttributes <em>Rotated Label Attributes</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Rotated Label Attributes</em>'.
+	 * @see org.eclipse.uml2.diagram.codegen.gmfgenext.RotatedLabelAttributes
+	 * @generated
+	 */
+	EClass getRotatedLabelAttributes();
+
+	/**
 	 * Returns the factory that creates the instances of the model.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -626,6 +655,16 @@ public interface GMFGenExtPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute INTERACTION_DIAGRAM_ATTRIBUTES__MULTI_LAYERED = eINSTANCE.getInteractionDiagramAttributes_MultiLayered();
+
+		/**
+		 * The meta object literal for the '{@link org.eclipse.uml2.diagram.codegen.gmfgenext.impl.RotatedLabelAttributesImpl <em>Rotated Label Attributes</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.eclipse.uml2.diagram.codegen.gmfgenext.impl.RotatedLabelAttributesImpl
+		 * @see org.eclipse.uml2.diagram.codegen.gmfgenext.impl.GMFGenExtPackageImpl#getRotatedLabelAttributes()
+		 * @generated
+		 */
+		EClass ROTATED_LABEL_ATTRIBUTES = eINSTANCE.getRotatedLabelAttributes();
 
 	}
 

@@ -7,11 +7,13 @@
  * http://www.eclipse.org/legal/epl-v10.html
  *
  * Contributors:
-*    Michael Golubev (Borland) - #238308, #238307
+*    Michael Golubev (Borland) - #238308, #238307, #246402
  */
 
 «IMPORT "http://www.eclipse.org/gmf/2008/GenModel"»
 «IMPORT "http://www.eclipse.org/emf/2002/Ecore"»
+
+«EXTENSION xpt::rotatedlabel::RotatedLabelsSupport»
 
 «AROUND methods(Boolean needsRefreshBounds, Boolean readOnly, Boolean useElementIcon, gmfgen::Viewmap viewmap,
 		gmfgen::LabelModelFacet modelFacet, gmfgen::GenCommonBase host, gmfgen::GenDiagram diagram) FOR gmfgen::GenCommonBase-»
@@ -45,5 +47,67 @@
 		setLabelTextHelper(getFigure(), getLabelText());
 		setLabelIconHelper(getFigure(), getLabelIcon());
 		refreshFeedback();
+	}
+«ENDAROUND»
+
+«AROUND getLabelTextHelper FOR gmfgen::GenCommonBase-»
+	«EXPAND xpt::Common::generatedMemberComment»
+	protected String getLabelTextHelper(org.eclipse.draw2d.IFigure figure) {
+		if (figure instanceof org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel) {
+			return ((org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel) figure).getText();
+		} «IF isRotatedLabel(this)-»
+		else if (figure instanceof org.eclipse.uml2.diagram.common.draw2d.RotatedImageOfString) {
+			return ((org.eclipse.uml2.diagram.common.draw2d.RotatedImageOfString) figure).getText();
+		} «ENDIF-»
+		else {
+			return ((org.eclipse.draw2d.Label) figure).getText();
+		}
+	}
+«ENDAROUND»
+
+«AROUND setLabelTextHelper FOR gmfgen::GenCommonBase-»
+	«EXPAND xpt::Common::generatedMemberComment»
+	protected void setLabelTextHelper(org.eclipse.draw2d.IFigure figure, String text) {
+		if (figure instanceof org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel) {
+			((org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel) figure).setText(text);
+		} «IF isRotatedLabel(this)-»
+		else if (figure instanceof org.eclipse.uml2.diagram.common.draw2d.RotatedImageOfString) {
+			((org.eclipse.uml2.diagram.common.draw2d.RotatedImageOfString) figure).setText(text);
+		} «ENDIF-»
+		else {
+			((org.eclipse.draw2d.Label) figure).setText(text);
+		}
+	}
+«ENDAROUND»
+
+«AROUND getLabelIconHelper FOR gmfgen::GenCommonBase-»
+	«EXPAND xpt::Common::generatedMemberComment»
+	protected org.eclipse.swt.graphics.Image getLabelIconHelper(org.eclipse.draw2d.IFigure figure) {
+		if (figure instanceof org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel) {
+			return ((org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel) figure).getIcon();
+		} «IF isRotatedLabel(this)-»
+		else if (figure instanceof org.eclipse.uml2.diagram.common.draw2d.RotatedImageOfString) {
+			//rotated label icons are not supported -- do nothing
+			return null; 
+		} «ENDIF-»
+		else {
+			return ((org.eclipse.draw2d.Label) figure).getIcon();
+		}
+	}
+«ENDAROUND»
+
+«AROUND setLabelIconHelper FOR gmfgen::GenCommonBase-»
+	«EXPAND xpt::Common::generatedMemberComment»
+	protected void setLabelIconHelper(org.eclipse.draw2d.IFigure figure, org.eclipse.swt.graphics.Image icon) {
+		if (figure instanceof org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel) {
+			((org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel) figure).setIcon(icon);
+		} «IF isRotatedLabel(this)-»
+		else if (figure instanceof org.eclipse.uml2.diagram.common.draw2d.RotatedImageOfString) {
+			//rotated label icons are not supported -- do nothing
+			return; 
+		} «ENDIF-»
+		else {
+			((org.eclipse.draw2d.Label) figure).setIcon(icon);
+		}
 	}
 «ENDAROUND»

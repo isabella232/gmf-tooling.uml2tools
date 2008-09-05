@@ -2,7 +2,7 @@
  * <copyright>
  * </copyright>
  *
- * $Id: GMFGenExtItemProviderAdapterFactory.java,v 1.6 2008/05/07 17:42:49 mgolubev Exp $
+ * $Id: GMFGenExtItemProviderAdapterFactory.java,v 1.7 2008/09/05 19:40:30 mgolubev Exp $
  */
 package org.eclipse.uml2.diagram.codegen.gmfgenext.provider;
 
@@ -225,6 +225,28 @@ public class GMFGenExtItemProviderAdapterFactory extends GMFGenExtAdapterFactory
 	}
 
 	/**
+	 * This keeps track of the one adapter used for all {@link org.eclipse.uml2.diagram.codegen.gmfgenext.RotatedLabelAttributes} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected RotatedLabelAttributesItemProvider rotatedLabelAttributesItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link org.eclipse.uml2.diagram.codegen.gmfgenext.RotatedLabelAttributes}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Adapter createRotatedLabelAttributesAdapter() {
+		if (rotatedLabelAttributesItemProvider == null) {
+			rotatedLabelAttributesItemProvider = new RotatedLabelAttributesItemProvider(this);
+		}
+
+		return rotatedLabelAttributesItemProvider;
+	}
+
+	/**
 	 * This returns the root adapter factory that contains this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -326,6 +348,7 @@ public class GMFGenExtItemProviderAdapterFactory extends GMFGenExtAdapterFactory
 		if (substitutableByAttributesItemProvider != null) substitutableByAttributesItemProvider.dispose();
 		if (dynamicCanonicalCompartmentItemProvider != null) dynamicCanonicalCompartmentItemProvider.dispose();
 		if (interactionDiagramAttributesItemProvider != null) interactionDiagramAttributesItemProvider.dispose();
+		if (rotatedLabelAttributesItemProvider != null) rotatedLabelAttributesItemProvider.dispose();
 	}
 
 	/**
@@ -403,6 +426,11 @@ public class GMFGenExtItemProviderAdapterFactory extends GMFGenExtAdapterFactory
 					(createChildParameter
 						(GMFGenPackage.eINSTANCE.getViewmap_Attributes(),
 						 GMFGenExtFactory.eINSTANCE.createInteractionDiagramAttributes()));
+
+				newChildDescriptors.add
+					(createChildParameter
+						(GMFGenPackage.eINSTANCE.getViewmap_Attributes(),
+						 GMFGenExtFactory.eINSTANCE.createRotatedLabelAttributes()));
 
 				return null;
 			}

@@ -2,7 +2,7 @@
  * <copyright>
  * </copyright>
  *
- * $Id: GMFGenExtFactory.java,v 1.4 2008/05/07 17:37:33 mgolubev Exp $
+ * $Id: GMFGenExtFactory.java,v 1.5 2008/09/05 19:40:28 mgolubev Exp $
  */
 package org.eclipse.uml2.diagram.codegen.gmfgenext;
 
@@ -78,6 +78,15 @@ public interface GMFGenExtFactory extends EFactory {
 	 * @generated
 	 */
 	InteractionDiagramAttributes createInteractionDiagramAttributes();
+
+	/**
+	 * Returns a new object of class '<em>Rotated Label Attributes</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Rotated Label Attributes</em>'.
+	 * @generated
+	 */
+	RotatedLabelAttributes createRotatedLabelAttributes();
 
 	/**
 	 * Returns the package supported by this factory.

@@ -3,8 +3,6 @@ package org.eclipse.uml2.diagram.activity.edit.parts;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
-
-import org.eclipse.core.runtime.IAdaptable;
 import org.eclipse.draw2d.IFigure;
 import org.eclipse.draw2d.Label;
 import org.eclipse.draw2d.geometry.Point;
@@ -25,7 +23,6 @@ import org.eclipse.gmf.runtime.common.ui.services.parser.IParser;
 import org.eclipse.gmf.runtime.common.ui.services.parser.IParserEditStatus;
 import org.eclipse.gmf.runtime.common.ui.services.parser.ParserEditStatus;
 import org.eclipse.gmf.runtime.common.ui.services.parser.ParserOptions;
-import org.eclipse.gmf.runtime.common.ui.services.parser.ParserService;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.CompartmentEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.ITextAwareEditPart;
@@ -56,6 +53,7 @@ import org.eclipse.uml2.diagram.common.editpolicies.IRefreshableFeedbackEditPoli
 /**
  * @generated
  */
+
 public class ActivityPartitionName2EditPart extends CompartmentEditPart implements ITextAwareEditPart {
 
 	/**
@@ -119,87 +117,54 @@ public class ActivityPartitionName2EditPart extends CompartmentEditPart implemen
 	/**
 	 * @generated
 	 */
-	protected String getLabelTextHelperGen(IFigure figure) {
+	protected String getLabelTextHelper(IFigure figure) {
 		if (figure instanceof WrappingLabel) {
 			return ((WrappingLabel) figure).getText();
+		} else if (figure instanceof RotatedImageOfString) {
+			return ((RotatedImageOfString) figure).getText();
 		} else {
 			return ((Label) figure).getText();
 		}
 	}
 
 	/**
-	 * @generated NOT
-	 */
-	protected String getLabelTextHelper(IFigure figure) {
-		if (figure instanceof RotatedImageOfString) {
-			return ((RotatedImageOfString) figure).getText();
-		} else {
-			return getLabelTextHelperGen(figure);
-		}
-	}
-
-	/**
 	 * @generated
 	 */
-	protected void setLabelTextHelperGen(IFigure figure, String text) {
+	protected void setLabelTextHelper(IFigure figure, String text) {
 		if (figure instanceof WrappingLabel) {
 			((WrappingLabel) figure).setText(text);
+		} else if (figure instanceof RotatedImageOfString) {
+			((RotatedImageOfString) figure).setText(text);
 		} else {
 			((Label) figure).setText(text);
 		}
 	}
 
 	/**
-	 * @generated NOT
-	 */
-	protected void setLabelTextHelper(IFigure figure, String text) {
-		if (figure instanceof RotatedImageOfString) {
-			((RotatedImageOfString) figure).setText(text);
-		} else {
-			setLabelTextHelperGen(figure, text);
-		}
-	}
-
-	/**
 	 * @generated
 	 */
-	protected Image getLabelIconHelperGen(IFigure figure) {
+	protected Image getLabelIconHelper(IFigure figure) {
 		if (figure instanceof WrappingLabel) {
 			return ((WrappingLabel) figure).getIcon();
+		} else if (figure instanceof RotatedImageOfString) {
+			//rotated label icons are not supported -- do nothing
+			return null;
 		} else {
 			return ((Label) figure).getIcon();
 		}
 	}
 
 	/**
-	 * @generated NOT
-	 */
-	protected Image getLabelIconHelper(IFigure figure) {
-		if (figure instanceof RotatedImageOfString) {
-			return null;
-		} else {
-			return getLabelIconHelperGen(figure);
-		}
-	}
-
-	/**
 	 * @generated
 	 */
-	protected void setLabelIconHelperGen(IFigure figure, Image icon) {
+	protected void setLabelIconHelper(IFigure figure, Image icon) {
 		if (figure instanceof WrappingLabel) {
 			((WrappingLabel) figure).setIcon(icon);
+		} else if (figure instanceof RotatedImageOfString) {
+			//rotated label icons are not supported -- do nothing
+			return;
 		} else {
 			((Label) figure).setIcon(icon);
-		}
-	}
-
-	/**
-	 * @generated NOT
-	 */
-	protected void setLabelIconHelper(IFigure figure, Image icon) {
-		if (figure instanceof RotatedImageOfString) {
-		} else {
-			setLabelIconHelperGen(figure, icon);
 		}
 	}
 
@@ -585,4 +550,5 @@ public class ActivityPartitionName2EditPart extends CompartmentEditPart implemen
 		// Parent should assign one using setLabel() method
 		return null;
 	}
+
 }

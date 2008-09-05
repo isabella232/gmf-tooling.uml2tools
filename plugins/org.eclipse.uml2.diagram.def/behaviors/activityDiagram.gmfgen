@@ -3223,7 +3223,10 @@
         <viewmap
             xsi:type="gmfgen:ParentAssignedViewmap"
             getterName="getFigureActivityPartitionFigure_name"
-            figureQualifiedClassName="org.eclipse.uml2.diagram.common.draw2d.RotatedImageOfString"/>
+            figureQualifiedClassName="org.eclipse.uml2.diagram.common.draw2d.RotatedImageOfString">
+          <attributes
+              xsi:type="uml2.gmfgenext:RotatedLabelAttributes"/>
+        </viewmap>
         <modelFacet
             xsi:type="gmfgen:FeatureLabelModelFacet"
             parser="//@labelParsers/@implementations.0">
@@ -3284,7 +3287,10 @@
         <viewmap
             xsi:type="gmfgen:ParentAssignedViewmap"
             getterName="getFigureActivityPartitionFigure_name"
-            figureQualifiedClassName="org.eclipse.uml2.diagram.common.draw2d.RotatedImageOfString"/>
+            figureQualifiedClassName="org.eclipse.uml2.diagram.common.draw2d.RotatedImageOfString">
+          <attributes
+              xsi:type="uml2.gmfgenext:RotatedLabelAttributes"/>
+        </viewmap>
         <modelFacet
             xsi:type="gmfgen:FeatureLabelModelFacet"
             parser="//@labelParsers/@implementations.0">

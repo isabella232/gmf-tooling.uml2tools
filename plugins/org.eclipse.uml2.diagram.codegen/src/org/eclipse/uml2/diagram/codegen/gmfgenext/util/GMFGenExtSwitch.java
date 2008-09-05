@@ -2,7 +2,7 @@
  * <copyright>
  * </copyright>
  *
- * $Id: GMFGenExtSwitch.java,v 1.4 2008/05/07 17:37:33 mgolubev Exp $
+ * $Id: GMFGenExtSwitch.java,v 1.5 2008/09/05 19:40:29 mgolubev Exp $
  */
 package org.eclipse.uml2.diagram.codegen.gmfgenext.util;
 
@@ -11,6 +11,7 @@ import java.util.List;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.gmf.codegen.gmfgen.Attributes;
+import org.eclipse.uml2.diagram.codegen.gmfgenext.*;
 import org.eclipse.uml2.diagram.codegen.gmfgenext.AbstractDynamicCanonicalContainer;
 import org.eclipse.uml2.diagram.codegen.gmfgenext.AuxSecondaryDiagramNodeAttribute;
 import org.eclipse.uml2.diagram.codegen.gmfgenext.CustomLocatorAttributes;
@@ -144,6 +145,13 @@ public class GMFGenExtSwitch {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
+			case GMFGenExtPackage.ROTATED_LABEL_ATTRIBUTES: {
+				RotatedLabelAttributes rotatedLabelAttributes = (RotatedLabelAttributes)theEObject;
+				Object result = caseRotatedLabelAttributes(rotatedLabelAttributes);
+				if (result == null) result = caseAttributes(rotatedLabelAttributes);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
 			default: return defaultCase(theEObject);
 		}
 	}
@@ -250,6 +258,21 @@ public class GMFGenExtSwitch {
 	 * @generated
 	 */
 	public Object caseInteractionDiagramAttributes(InteractionDiagramAttributes object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Rotated Label Attributes</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Rotated Label Attributes</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public Object caseRotatedLabelAttributes(RotatedLabelAttributes object) {
 		return null;
 	}
 

@@ -41,3 +41,6 @@ class InteractionDiagramAttributes extends gmfgen.Attributes {
 	@genmodel(documentation="Applicable for gmfgen::GenNode. This node is responcible for distribution of its children's figures between different layers.")
 	attr boolean multiLayered = true;
 }
+
+class RotatedLabelAttributes extends gmfgen.Attributes {
+}

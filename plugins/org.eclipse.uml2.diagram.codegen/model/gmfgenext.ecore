@@ -57,4 +57,5 @@
       </eAnnotations>
     </eStructuralFeatures>
   </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="RotatedLabelAttributes" eSuperTypes="platform:/plugin/org.eclipse.gmf.codegen/models/gmfgen.ecore#//Attributes"/>
 </ecore:EPackage>

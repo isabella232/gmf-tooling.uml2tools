@@ -2,7 +2,7 @@
  * <copyright>
  * </copyright>
  *
- * $Id: GMFGenExtPackageImpl.java,v 1.6 2008/05/07 17:37:33 mgolubev Exp $
+ * $Id: GMFGenExtPackageImpl.java,v 1.7 2008/09/05 19:40:28 mgolubev Exp $
  */
 package org.eclipse.uml2.diagram.codegen.gmfgenext.impl;
 
@@ -19,6 +19,7 @@ import org.eclipse.uml2.diagram.codegen.gmfgenext.DynamicCanonicalCompartment;
 import org.eclipse.uml2.diagram.codegen.gmfgenext.GMFGenExtFactory;
 import org.eclipse.uml2.diagram.codegen.gmfgenext.GMFGenExtPackage;
 import org.eclipse.uml2.diagram.codegen.gmfgenext.InteractionDiagramAttributes;
+import org.eclipse.uml2.diagram.codegen.gmfgenext.RotatedLabelAttributes;
 import org.eclipse.uml2.diagram.codegen.gmfgenext.SubstitutableByAttributes;
 
 /**
@@ -76,6 +77,13 @@ public class GMFGenExtPackageImpl extends EPackageImpl implements GMFGenExtPacka
 	 * @generated
 	 */
 	private EClass interactionDiagramAttributesEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass rotatedLabelAttributesEClass = null;
 
 	/**
 	 * Creates an instance of the model <b>Package</b>, registered with
@@ -297,6 +305,15 @@ public class GMFGenExtPackageImpl extends EPackageImpl implements GMFGenExtPacka
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EClass getRotatedLabelAttributes() {
+		return rotatedLabelAttributesEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public GMFGenExtFactory getGMFGenExtFactory() {
 		return (GMFGenExtFactory)getEFactoryInstance();
 	}
@@ -342,6 +359,8 @@ public class GMFGenExtPackageImpl extends EPackageImpl implements GMFGenExtPacka
 
 		interactionDiagramAttributesEClass = createEClass(INTERACTION_DIAGRAM_ATTRIBUTES);
 		createEAttribute(interactionDiagramAttributesEClass, INTERACTION_DIAGRAM_ATTRIBUTES__MULTI_LAYERED);
+
+		rotatedLabelAttributesEClass = createEClass(ROTATED_LABEL_ATTRIBUTES);
 	}
 
 	/**
@@ -378,6 +397,7 @@ public class GMFGenExtPackageImpl extends EPackageImpl implements GMFGenExtPacka
 		abstractDynamicCanonicalContainerEClass.getESuperTypes().add(theGMFGenPackage.getAttributes());
 		dynamicCanonicalCompartmentEClass.getESuperTypes().add(this.getAbstractDynamicCanonicalContainer());
 		interactionDiagramAttributesEClass.getESuperTypes().add(theGMFGenPackage.getAttributes());
+		rotatedLabelAttributesEClass.getESuperTypes().add(theGMFGenPackage.getAttributes());
 
 		// Initialize classes and features; add operations and parameters
 		initEClass(auxSecondaryDiagramNodeAttributeEClass, AuxSecondaryDiagramNodeAttribute.class, "AuxSecondaryDiagramNodeAttribute", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -406,6 +426,8 @@ public class GMFGenExtPackageImpl extends EPackageImpl implements GMFGenExtPacka
 
 		initEClass(interactionDiagramAttributesEClass, InteractionDiagramAttributes.class, "InteractionDiagramAttributes", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getInteractionDiagramAttributes_MultiLayered(), ecorePackage.getEBoolean(), "multiLayered", "true", 0, 1, InteractionDiagramAttributes.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(rotatedLabelAttributesEClass, RotatedLabelAttributes.class, "RotatedLabelAttributes", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		// Create resource
 		createResource(eNS_URI);
