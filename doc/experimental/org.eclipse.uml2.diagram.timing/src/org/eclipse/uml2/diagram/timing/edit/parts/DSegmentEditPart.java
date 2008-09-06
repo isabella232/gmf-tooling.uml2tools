@@ -3,11 +3,13 @@ package org.eclipse.uml2.diagram.timing.edit.parts;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.eclipse.draw2d.FreeformLayout;
 import org.eclipse.draw2d.IFigure;
 import org.eclipse.draw2d.PositionConstants;
 import org.eclipse.draw2d.RectangleFigure;
 import org.eclipse.draw2d.Shape;
 import org.eclipse.draw2d.StackLayout;
+import org.eclipse.draw2d.geometry.Rectangle;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.gef.EditPart;
 import org.eclipse.gef.EditPolicy;
@@ -255,7 +257,7 @@ public class DSegmentEditPart extends ShapeNodeEditPart implements PrimaryShapeE
 		 */
 		public SegmentFigure() {
 
-			this.setOutline(true);
+			this.setViewer(getViewer());
 
 		}
 

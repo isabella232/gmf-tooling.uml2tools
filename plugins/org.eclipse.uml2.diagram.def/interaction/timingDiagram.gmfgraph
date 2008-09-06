@@ -132,8 +132,8 @@
           name="SegmentFigure"
           qualifiedClassName="org.eclipse.uml2.diagram.timing.draw2d.SegmentShape">
         <attributes
-            name="outline"
-            value="true"/>
+            name="viewer"
+            value="getViewer()"/>
         <customChildren
             accessor="getSegmentContents">
           <typedFigure

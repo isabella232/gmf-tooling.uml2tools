@@ -3,15 +3,18 @@ package org.eclipse.uml2.diagram.timing.draw2d;
 import org.eclipse.draw2d.ColorConstants;
 import org.eclipse.draw2d.Graphics;
 import org.eclipse.draw2d.RectangleFigure;
-import org.eclipse.draw2d.XYLayout;
 import org.eclipse.draw2d.geometry.Dimension;
 import org.eclipse.draw2d.geometry.Rectangle;
+import org.eclipse.gef.EditPartViewer;
+import org.eclipse.uml2.diagram.timing.draw2d.layout.SegmentLayout;
 
 
 public class SegmentShape extends RectangleFigure {
-	private static final int CIRCLE_RADIUS = 8;
-	private static final int LINE_HALF_HEIGHT = 5;
-	private static final int LEDGE = CIRCLE_RADIUS - LINE_HALF_HEIGHT;
+	public static final int CIRCLE_RADIUS = 8;
+	public static final int LINE_HALF_HEIGHT = 5;
+	public static final int LEDGE = CIRCLE_RADIUS - LINE_HALF_HEIGHT;
+	
+	private SegmentLayout mySegmentLayout;
 	
 	public SegmentShape(){
 		Dimension size = new Dimension(-1, 2 * CIRCLE_RADIUS + 2);
@@ -19,8 +22,14 @@ public class SegmentShape extends RectangleFigure {
 		setMinimumSize(size.getCopy());
 		setMaximumSize(size.getCopy());
 		
-		setLayoutManager(new XYLayout());
+		mySegmentLayout = new SegmentLayout();
+		setLayoutManager(mySegmentLayout);
+		
 		setForegroundColor(ColorConstants.red);
+	}
+	
+	public void setViewer(EditPartViewer viewer){
+		mySegmentLayout.setViewer(viewer);
 	}
 	
 	public RectangleFigure getSegmentContents() {
