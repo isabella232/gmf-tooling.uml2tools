@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gmftool:ToolRegistry xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:gmftool="http://www.eclipse.org/gmf/2005/ToolDefinition">
+  <palette
+      title="Timing Diagram"
+      description="Timing Diagram Palette">
+    <tools
+        xsi:type="gmftool:ToolGroup"
+        title="Elements"
+        description="">
+      <tools
+          xsi:type="gmftool:CreationTool"
+          title="Interaction"
+          description="Create Interaction"/>
+      <tools
+          xsi:type="gmftool:CreationTool"
+          title="Lifeline"
+          description="Create Lifeline"/>
+      <tools
+          xsi:type="gmftool:CreationTool"
+          title="State/Condition"
+          description="State/Condition "/>
+      <tools
+          xsi:type="gmftool:CreationTool"
+          title="Switch"
+          description="Switch"/>
+      <tools
+          xsi:type="gmftool:CreationTool"
+          title="Segment"
+          description="Segment"/>
+      <tools
+          xsi:type="gmftool:CreationTool"
+          title="Occurrence"
+          description="Occurrence"/>
+    </tools>
+  </palette>
+</gmftool:ToolRegistry>
