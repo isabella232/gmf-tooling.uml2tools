@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<uml:Model xmi:version="2.1" xmlns:xmi="http://schema.omg.org/spec/XMI/2.1" xmlns:uml="http://www.eclipse.org/uml2/2.1.0/UML" xmi:id="_W8DqwGfJEd2K_LNfIwgiZw" name="Fig.14.29">
+  <packagedElement xmi:type="uml:Interaction" xmi:id="_c8wo8GfJEd2K_LNfIwgiZw" name="UserAcc_User">
+    <lifeline xmi:id="_fwHhYGfJEd2K_LNfIwgiZw" name="aUser" coveredBy="_mvOBgGfJEd2K_LNfIwgiZw _09jTAGfKEd2K_LNfIwgiZw _vztrYGfKEd2K_LNfIwgiZw"/>
+    <fragment xmi:type="uml:OccurrenceSpecification" xmi:id="_DiFv8GfKEd2K_LNfIwgiZw" name="Auxiliary:Start" covered="_fwHhYGfJEd2K_LNfIwgiZw"/>
+    <fragment xmi:type="uml:StateInvariant" xmi:id="_mvOBgGfJEd2K_LNfIwgiZw" name="idle_1" covered="_fwHhYGfJEd2K_LNfIwgiZw">
+      <invariant xmi:id="_sZUdkGfJEd2K_LNfIwgiZw" name="InState_idle">
+        <specification xmi:type="uml:OpaqueExpression" xmi:id="_wCdugGfJEd2K_LNfIwgiZw" name="">
+          <body>Idle</body>
+        </specification>
+      </invariant>
+    </fragment>
+    <fragment xmi:type="uml:OccurrenceSpecification" xmi:id="_I-uXwGfKEd2K_LNfIwgiZw" name="Code" covered="_fwHhYGfJEd2K_LNfIwgiZw"/>
+    <fragment xmi:type="uml:StateInvariant" xmi:id="_XGzFsGfKEd2K_LNfIwgiZw" name="waitCard_1" covered="_fwHhYGfJEd2K_LNfIwgiZw">
+      <invariant xmi:id="_XGzFsWfKEd2K_LNfIwgiZw" name="InState_waitCard">
+        <specification xmi:type="uml:OpaqueExpression" xmi:id="_XGzFsmfKEd2K_LNfIwgiZw" name="">
+          <body>WaitCard</body>
+        </specification>
+      </invariant>
+    </fragment>
+    <fragment xmi:type="uml:OccurrenceSpecification" xmi:id="_r4DuIGfKEd2K_LNfIwgiZw" name="CardOut" covered="_fwHhYGfJEd2K_LNfIwgiZw"/>
+    <fragment xmi:type="uml:StateInvariant" xmi:id="_iFvfgGfKEd2K_LNfIwgiZw" name="waitAccess_1" covered="_fwHhYGfJEd2K_LNfIwgiZw">
+      <invariant xmi:id="_iFvfgWfKEd2K_LNfIwgiZw" name="InState_waitAccess">
+        <specification xmi:type="uml:OpaqueExpression" xmi:id="_iFvfgmfKEd2K_LNfIwgiZw" name="">
+          <body>WaitAccess</body>
+        </specification>
+      </invariant>
+    </fragment>
+    <fragment xmi:type="uml:OccurrenceSpecification" xmi:id="_vztrYGfKEd2K_LNfIwgiZw" name="OK" covered="_fwHhYGfJEd2K_LNfIwgiZw"/>
+    <fragment xmi:type="uml:StateInvariant" xmi:id="_09jTAGfKEd2K_LNfIwgiZw" name="idle_2" covered="_fwHhYGfJEd2K_LNfIwgiZw">
+      <invariant xmi:id="_09jTAWfKEd2K_LNfIwgiZw" name="InState_idle">
+        <specification xmi:type="uml:OpaqueExpression" xmi:id="_09jTAmfKEd2K_LNfIwgiZw" name="">
+          <body>Idle</body>
+        </specification>
+      </invariant>
+    </fragment>
+  </packagedElement>
+</uml:Model>

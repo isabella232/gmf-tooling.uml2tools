@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<!--
+ <copyright>
+ </copyright>
+
+ $Id: plugin.xml,v 1.1 2008/09/06 19:44:14 mgolubev Exp $
+-->
+
+<plugin>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <package
+            uri="http://www.eclipse.org/mdt/uml2tools/timing-diagram/1.0"
+            class="org.eclipse.uml2.diagram.timing.model.timingd.TimingDPackage"
+            genModel="model/timing-diagram.genmodel"/>
+   </extension>
+
+</plugin>

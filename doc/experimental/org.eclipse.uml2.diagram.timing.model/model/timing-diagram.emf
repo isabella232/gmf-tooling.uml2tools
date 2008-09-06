@@ -1,0 +1,84 @@
+@namespace(uri="http://www.eclipse.org/mdt/uml2tools/timing-diagram/1.0", prefix="uml2t.timingd")
+package timingd;
+
+class DFrameContainer {
+  ref UMLPackage pakkage;
+  val DFrame[*] frames;
+}
+
+class DFrame {
+  ref UMLInteraction[1] interaction;
+  attr String displayName;
+  val DBlock[+]#frame blocks;
+  val DInterval[*] intervals;
+}
+
+class DBlock {
+  ref UMLLifeline lifeline;
+  ref DFrame#blocks frame;
+  attr String displayName;
+  val DValueLine[*]#block states;
+  val DStateSwitch[*] switches;
+  val DPointConstraint[*] constraint;
+}
+
+class DValueLine {
+  ref DBlock#states block;
+  val UMLConstraint invariantTemplate;
+  val DSegment[*]#state segments;
+  attr String displayName;
+}
+
+class DSegment {
+  op boolean isClosedSegment();
+  ref DValueLine#segments state;
+  val DSegmentStart#segment start;
+  val DSegmentEnd#segment end;
+  val DSegmentMiddlePoint[*]#segment middlePoints;
+  ref DStateSwitch endSwitch;
+}
+
+class DSegmentElement {
+  ref UMLOccurrenceSpecification occurrence;
+}
+
+class DSegmentMiddlePoint extends DSegmentElement {
+  ref DSegment#middlePoints segment;
+}
+
+class DSegmentStart extends DSegmentElement {
+  ref UMLStateInvariant stateInvariant;
+  ref DSegment#start segment;
+}
+
+class DSegmentEnd extends DSegmentElement {
+  ref DSegment#end segment;
+  ref DStateSwitch switch;
+}
+
+class DStateSwitch extends DSegmentElement {
+  ref DSegmentEnd fromSegmentEnd;
+  ref DSegmentStart toSegmentStart;
+  ref DSegment fromSegment;
+  ref DSegment toSegment;
+  ref DValueLine fromValueLine;
+  ref DValueLine toValueLine;
+}
+
+class DInterval {
+  ref DSegmentElement fromPoint;
+  ref DSegmentElement toPoint;
+}
+
+class DPointConstraint {
+  ref UMLConstraint constraint;
+  ref DSegmentElement constraintedSegmentElement;
+}
+
+abstract interface UMLConstraint : org.eclipse.uml2.uml.Constraint {}
+abstract interface UMLStateInvariant : org.eclipse.uml2.uml.StateInvariant {}
+abstract interface UMLInteraction : org.eclipse.uml2.uml.Interaction {}
+abstract interface UMLPackage : org.eclipse.uml2.uml.Package {}
+abstract interface UMLLifeline : org.eclipse.uml2.uml.Lifeline {}
+abstract interface UMLOccurrenceSpecification : org.eclipse.uml2.uml.OccurrenceSpecification {}
+
