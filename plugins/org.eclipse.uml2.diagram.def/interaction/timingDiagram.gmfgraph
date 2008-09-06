@@ -128,36 +128,21 @@
     <descriptors
         name="SegmentFigure">
       <actualFigure
-          xsi:type="gmfgraph:Rectangle"
-          name="SegmentFigure">
-        <layout
-            xsi:type="gmfgraph:XYLayout"/>
-        <backgroundColor
-            xsi:type="gmfgraph:ConstantColor"
-            value="blue"/>
-        <maximumSize
-            dx="-1"
-            dy="5"/>
-        <preferredSize
-            dx="-1"
-            dy="5"/>
+          xsi:type="gmfgraph:CustomFigure"
+          name="SegmentFigure"
+          qualifiedClassName="org.eclipse.uml2.diagram.timing.draw2d.SegmentShape">
+        <attributes
+            name="outline"
+            value="true"/>
+        <customChildren
+            accessor="getSegmentContents">
+          <typedFigure
+              xsi:type="gmfgraph:Rectangle"
+              name="aux_segment_contents"/>
+        </customChildren>
       </actualFigure>
-    </descriptors>
-    <descriptors
-        name="_____ValueSwitchFigure">
-      <actualFigure
-          xsi:type="gmfgraph:Rectangle"
-          name="____ValueSwitchFigure">
-        <backgroundColor
-            xsi:type="gmfgraph:ConstantColor"
-            value="green"/>
-        <maximumSize
-            dx="5"
-            dy="-1"/>
-        <preferredSize
-            dx="5"
-            dy="-1"/>
-      </actualFigure>
+      <accessors
+          figure="//@figures.0/@descriptors.3/@actualFigure/@customChildren.0/@typedFigure"/>
     </descriptors>
     <descriptors
         name="MiddlePointFigure">
@@ -176,6 +161,22 @@
         <preferredSize
             dx="16"
             dy="16"/>
+      </actualFigure>
+    </descriptors>
+    <descriptors
+        name="_____ValueSwitchFigure">
+      <actualFigure
+          xsi:type="gmfgraph:Rectangle"
+          name="____ValueSwitchFigure">
+        <backgroundColor
+            xsi:type="gmfgraph:ConstantColor"
+            value="green"/>
+        <maximumSize
+            dx="5"
+            dy="-1"/>
+        <preferredSize
+            dx="5"
+            dy="-1"/>
       </actualFigure>
     </descriptors>
     <descriptors
@@ -233,6 +234,24 @@
             right="15"/>
       </actualFigure>
     </descriptors>
+    <descriptors
+        name="SegmentFigure2">
+      <actualFigure
+          xsi:type="gmfgraph:Rectangle"
+          name="SegmentFigure2">
+        <layout
+            xsi:type="gmfgraph:XYLayout"/>
+        <backgroundColor
+            xsi:type="gmfgraph:ConstantColor"
+            value="blue"/>
+        <maximumSize
+            dx="-1"
+            dy="5"/>
+        <preferredSize
+            dx="-1"
+            dy="5"/>
+      </actualFigure>
+    </descriptors>
   </figures>
   <nodes
       name="InteractionNode"
@@ -258,8 +277,8 @@
       name="LifeLineBlockNode"
       figure="LifeLineBlockFigure"/>
   <nodes
-      name="SegmentNode"
-      figure="SegmentFigure"/>
+      name="SegmentNode2"
+      figure="SegmentFigure2"/>
   <nodes
       name="MiddlePointNode"
       figure="MiddlePointFigure"
@@ -269,6 +288,17 @@
       <defaultSize
           dx="16"
           dy="16"/>
+    </facets>
+  </nodes>
+  <nodes
+      name="SegmentNode"
+      figure="SegmentFigure"
+      resizeConstraint="SOUTH_WEST">
+    <facets
+        xsi:type="gmfgraph:DefaultSizeFacet">
+      <defaultSize
+          dx="50"
+          dy="18"/>
     </facets>
   </nodes>
   <connections

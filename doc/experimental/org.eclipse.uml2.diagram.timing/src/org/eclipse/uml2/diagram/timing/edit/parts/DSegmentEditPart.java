@@ -3,19 +3,16 @@ package org.eclipse.uml2.diagram.timing.edit.parts;
 import java.util.ArrayList;
 import java.util.List;
 
-import org.eclipse.draw2d.ColorConstants;
-import org.eclipse.draw2d.FreeformLayout;
 import org.eclipse.draw2d.IFigure;
+import org.eclipse.draw2d.PositionConstants;
 import org.eclipse.draw2d.RectangleFigure;
 import org.eclipse.draw2d.Shape;
 import org.eclipse.draw2d.StackLayout;
-import org.eclipse.draw2d.XYLayout;
-import org.eclipse.draw2d.geometry.Dimension;
-import org.eclipse.draw2d.geometry.Rectangle;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.gef.EditPart;
 import org.eclipse.gef.EditPolicy;
 import org.eclipse.gef.editpolicies.LayoutEditPolicy;
+import org.eclipse.gef.editpolicies.ResizableEditPolicy;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.ShapeNodeEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editpolicies.DragDropEditPolicy;
@@ -31,6 +28,7 @@ import org.eclipse.uml2.diagram.common.editparts.PrimaryShapeEditPart;
 import org.eclipse.uml2.diagram.common.editpolicies.CreationEditPolicyWithCustomReparent;
 import org.eclipse.uml2.diagram.common.editpolicies.UpdateDescriptionEditPolicy;
 import org.eclipse.uml2.diagram.common.editpolicies.XYLayoutEditPolicyWithMovableLabels;
+import org.eclipse.uml2.diagram.timing.draw2d.SegmentShape;
 import org.eclipse.uml2.diagram.timing.edit.policies.DSegmentCanonicalEditPolicy;
 import org.eclipse.uml2.diagram.timing.edit.policies.DSegmentItemSemanticEditPolicy;
 import org.eclipse.uml2.diagram.timing.part.TimingDDiagramUpdater;
@@ -120,7 +118,19 @@ public class DSegmentEditPart extends ShapeNodeEditPart implements PrimaryShapeE
 	 * @generated
 	 */
 	protected NodeFigure createNodePlate() {
-		DefaultSizeNodeFigure result = new DefaultSizeNodeFigure(getMapMode().DPtoLP(-1), getMapMode().DPtoLP(5));
+		DefaultSizeNodeFigure result = new DefaultSizeNodeFigure(getMapMode().DPtoLP(50), getMapMode().DPtoLP(18));
+		return result;
+	}
+
+	/**
+	 * @generated
+	 */
+	public EditPolicy getPrimaryDragEditPolicy() {
+		EditPolicy result = super.getPrimaryDragEditPolicy();
+		if (result instanceof ResizableEditPolicy) {
+			ResizableEditPolicy ep = (ResizableEditPolicy) result;
+			ep.setResizeDirections(PositionConstants.SOUTH | PositionConstants.WEST);
+		}
 		return result;
 	}
 
@@ -145,22 +155,10 @@ public class DSegmentEditPart extends ShapeNodeEditPart implements PrimaryShapeE
 	 * Default implementation treats passed figure as content pane.
 	 * Respects layout one may have set for generated figure.
 	 * @param nodeShape instance of generated figure class
-	 * @generated
+	 * @generated NOT
 	 */
 	protected IFigure setupContentPane(IFigure nodeShape) {
-		if (nodeShape.getLayoutManager() == null) {
-			nodeShape.setLayoutManager(new FreeformLayout() {
-
-				public Object getConstraint(IFigure figure) {
-					Object result = constraints.get(figure);
-					if (result == null) {
-						result = new Rectangle(0, 0, -1, -1);
-					}
-					return result;
-				}
-			});
-		}
-		return nodeShape; // use nodeShape itself as contentPane
+		return getPrimaryShape().getSegmentContents();
 	}
 
 	/**
@@ -250,16 +248,15 @@ public class DSegmentEditPart extends ShapeNodeEditPart implements PrimaryShapeE
 	/**
 	 * @generated
 	 */
-	public class SegmentFigure extends RectangleFigure {
+	public class SegmentFigure extends SegmentShape {
 
 		/**
 		 * @generated
 		 */
 		public SegmentFigure() {
-			this.setLayoutManager(new XYLayout());
-			this.setBackgroundColor(ColorConstants.blue);
-			this.setPreferredSize(new Dimension(getMapMode().DPtoLP(-1), getMapMode().DPtoLP(5)));
-			this.setMaximumSize(new Dimension(getMapMode().DPtoLP(-1), getMapMode().DPtoLP(5)));
+
+			this.setOutline(true);
+
 		}
 
 		/**
@@ -279,6 +276,13 @@ public class DSegmentEditPart extends ShapeNodeEditPart implements PrimaryShapeE
 		 */
 		protected void setUseLocalCoordinates(boolean useLocalCoordinates) {
 			myUseLocalCoordinates = useLocalCoordinates;
+		}
+
+		/**
+		 * @generated
+		 */
+		public RectangleFigure getSegmentContents() {
+			return super.getSegmentContents();
 		}
 
 	}

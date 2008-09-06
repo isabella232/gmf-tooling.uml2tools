@@ -1,50 +1,58 @@
 package org.eclipse.uml2.diagram.timing.draw2d;
 
-import org.eclipse.draw2d.BorderLayout;
 import org.eclipse.draw2d.ColorConstants;
-import org.eclipse.draw2d.Ellipse;
+import org.eclipse.draw2d.Graphics;
 import org.eclipse.draw2d.RectangleFigure;
-import org.eclipse.draw2d.Shape;
 import org.eclipse.draw2d.XYLayout;
+import org.eclipse.draw2d.geometry.Dimension;
+import org.eclipse.draw2d.geometry.Rectangle;
 
 
 public class SegmentShape extends RectangleFigure {
-	private Ellipse left;
-	private Ellipse right;
-	private Shape contents;
+	private static final int CIRCLE_RADIUS = 8;
+	private static final int LINE_HALF_HEIGHT = 5;
+	private static final int LEDGE = CIRCLE_RADIUS - LINE_HALF_HEIGHT;
 	
 	public SegmentShape(){
-		setLayoutManager(new BorderLayout());
+		Dimension size = new Dimension(-1, 2 * CIRCLE_RADIUS + 2);
+		setPreferredSize(size.getCopy());
+		setMinimumSize(size.getCopy());
+		setMaximumSize(size.getCopy());
+		
+		setLayoutManager(new XYLayout());
 		setForegroundColor(ColorConstants.red);
-		
-		left = new Ellipse();
-		right = new Ellipse();
-		
-		left.setSize(14, 14);
-		right.setSize(14, 14);
-		
-		contents = new RectangleFigure();
-		contents.setPreferredSize(-1, 10);
-		contents.setLayoutManager(new XYLayout());
-		
-		add(left, BorderLayout.LEFT);
-		add(right, BorderLayout.RIGHT);
-		add(contents, BorderLayout.CENTER);
 	}
 	
-	
-	public Shape getContents() {
-		return contents;
+	public RectangleFigure getSegmentContents() {
+		return this;
 	}
 	
-	
-	public Ellipse getLeftEllipse() {
-		return left;
+	@Override
+	protected void outlineShape(Graphics graphics) {
+		Rectangle r = getBounds();
+		int x = r.x + lineWidth / 2;
+		int y = r.y + lineWidth / 2;
+		int w = r.width - Math.max(1, lineWidth);
+		int h = r.height - Math.max(1, lineWidth);
+		
+		graphics.pushState();
+		graphics.setForegroundColor(ColorConstants.red);
+		graphics.drawRectangle(x + CIRCLE_RADIUS, y + LEDGE, w - 2 * CIRCLE_RADIUS, h - 2 * LEDGE);
+		graphics.popState();
 	}
 	
-	
-	public Ellipse getRightEllipse() {
-		return right;
+	@Override
+	protected void fillShape(Graphics graphics) {
+		Rectangle r = getBounds();
+		int x = r.x + lineWidth / 2;
+		int y = r.y + lineWidth / 2;
+		int w = r.width - Math.max(1, lineWidth);
+		int h = r.height - Math.max(1, lineWidth);
+		
+		graphics.pushState();
+		graphics.setBackgroundColor(ColorConstants.yellow);
+		graphics.fillRectangle(x + CIRCLE_RADIUS, y + LEDGE, w - 2 * CIRCLE_RADIUS, h - 2 * LEDGE);
+		graphics.popState();
 	}
 	
 }
