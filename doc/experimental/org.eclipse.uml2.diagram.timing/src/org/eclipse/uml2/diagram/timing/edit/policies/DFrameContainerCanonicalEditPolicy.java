@@ -30,7 +30,9 @@ import org.eclipse.uml2.diagram.timing.edit.parts.DBlockEditPart;
 import org.eclipse.uml2.diagram.timing.edit.parts.DFrameContainerEditPart;
 import org.eclipse.uml2.diagram.timing.edit.parts.DFrameEditPart;
 import org.eclipse.uml2.diagram.timing.edit.parts.DSegmentEditPart;
+import org.eclipse.uml2.diagram.timing.edit.parts.DSegmentEndEditPart;
 import org.eclipse.uml2.diagram.timing.edit.parts.DSegmentMiddlePointEditPart;
+import org.eclipse.uml2.diagram.timing.edit.parts.DSegmentStartEditPart;
 import org.eclipse.uml2.diagram.timing.edit.parts.DStateSwitchEditPart;
 import org.eclipse.uml2.diagram.timing.edit.parts.DValueLineEditPart;
 import org.eclipse.uml2.diagram.timing.model.timingd.TimingDPackage;
@@ -78,6 +80,8 @@ public class DFrameContainerCanonicalEditPolicy extends CanonicalConnectionEditP
 		case DValueLineEditPart.VISUAL_ID:
 		case DSegmentEditPart.VISUAL_ID:
 		case DSegmentMiddlePointEditPart.VISUAL_ID:
+		case DSegmentStartEditPart.VISUAL_ID:
+		case DSegmentEndEditPart.VISUAL_ID:
 			return true;
 		case DFrameEditPart.VISUAL_ID:
 			if (!semanticChildren.contains(view.getElement())) {
@@ -248,6 +252,20 @@ public class DFrameContainerCanonicalEditPolicy extends CanonicalConnectionEditP
 		case DSegmentMiddlePointEditPart.VISUAL_ID: {
 			if (!domain2NotationMap.containsKey(view.getElement())) {
 				result.addAll(TimingDDiagramUpdater.getDSegmentMiddlePoint_3004ContainedLinks(view));
+			}
+			domain2NotationMap.put(view.getElement(), view);
+			break;
+		}
+		case DSegmentStartEditPart.VISUAL_ID: {
+			if (!domain2NotationMap.containsKey(view.getElement())) {
+				result.addAll(TimingDDiagramUpdater.getDSegmentStart_3005ContainedLinks(view));
+			}
+			domain2NotationMap.put(view.getElement(), view);
+			break;
+		}
+		case DSegmentEndEditPart.VISUAL_ID: {
+			if (!domain2NotationMap.containsKey(view.getElement())) {
+				result.addAll(TimingDDiagramUpdater.getDSegmentEnd_3006ContainedLinks(view));
 			}
 			domain2NotationMap.put(view.getElement(), view);
 			break;

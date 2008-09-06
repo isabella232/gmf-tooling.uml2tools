@@ -13,7 +13,9 @@ import org.eclipse.uml2.diagram.common.genapi.IUpdaterNodeDescriptor;
 import org.eclipse.uml2.diagram.timing.edit.parts.DBlockEditPart;
 import org.eclipse.uml2.diagram.timing.edit.parts.DFrameEditPart;
 import org.eclipse.uml2.diagram.timing.edit.parts.DSegmentEditPart;
+import org.eclipse.uml2.diagram.timing.edit.parts.DSegmentEndEditPart;
 import org.eclipse.uml2.diagram.timing.edit.parts.DSegmentMiddlePointEditPart;
+import org.eclipse.uml2.diagram.timing.edit.parts.DSegmentStartEditPart;
 import org.eclipse.uml2.diagram.timing.edit.parts.DValueLineEditPart;
 import org.eclipse.uml2.diagram.timing.model.timingd.TimingDPackage;
 import org.eclipse.uml2.diagram.timing.part.TimingDDiagramUpdater;
@@ -55,6 +57,8 @@ public class DSegmentCanonicalEditPolicy extends CanonicalEditPolicy {
 		case DSegmentEditPart.VISUAL_ID:
 			return true;
 		case DSegmentMiddlePointEditPart.VISUAL_ID:
+		case DSegmentStartEditPart.VISUAL_ID:
+		case DSegmentEndEditPart.VISUAL_ID:
 			if (!semanticChildren.contains(view.getElement())) {
 				return true;
 			}
@@ -76,6 +80,8 @@ public class DSegmentCanonicalEditPolicy extends CanonicalEditPolicy {
 		if (myFeaturesToSynchronize == null) {
 			myFeaturesToSynchronize = new HashSet();
 			myFeaturesToSynchronize.add(TimingDPackage.eINSTANCE.getDSegment_MiddlePoints());
+			myFeaturesToSynchronize.add(TimingDPackage.eINSTANCE.getDSegment_Start());
+			myFeaturesToSynchronize.add(TimingDPackage.eINSTANCE.getDSegment_End());
 		}
 		return myFeaturesToSynchronize;
 	}

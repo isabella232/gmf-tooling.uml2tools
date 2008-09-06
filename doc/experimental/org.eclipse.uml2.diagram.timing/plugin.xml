@@ -350,6 +350,26 @@
       </metamodel>
       <metamodel nsURI="http://www.eclipse.org/mdt/uml2tools/timing-diagram/1.0">
          <metamodelType
+               id="org.eclipse.uml2.diagram.timing.DSegmentStart_3005"
+               name="%metatype.name.DSegmentStart_3005"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
+               eclass="DSegmentStart"
+               edithelper="org.eclipse.uml2.diagram.timing.edit.helpers.DSegmentStartEditHelper">
+            <param name="semanticHint" value="3005"/>
+         </metamodelType>
+      </metamodel>
+      <metamodel nsURI="http://www.eclipse.org/mdt/uml2tools/timing-diagram/1.0">
+         <metamodelType
+               id="org.eclipse.uml2.diagram.timing.DSegmentEnd_3006"
+               name="%metatype.name.DSegmentEnd_3006"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
+               eclass="DSegmentEnd"
+               edithelper="org.eclipse.uml2.diagram.timing.edit.helpers.DSegmentEndEditHelper">
+            <param name="semanticHint" value="3006"/>
+         </metamodelType>
+      </metamodel>
+      <metamodel nsURI="http://www.eclipse.org/mdt/uml2tools/timing-diagram/1.0">
+         <metamodelType
                id="org.eclipse.uml2.diagram.timing.DStateSwitch_4001"
                name="%metatype.name.DStateSwitch_4001"
                kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
@@ -376,6 +396,8 @@
          <elementType ref="org.eclipse.uml2.diagram.timing.DValueLine_3002"/>
          <elementType ref="org.eclipse.uml2.diagram.timing.DSegment_3003"/>
          <elementType ref="org.eclipse.uml2.diagram.timing.DSegmentMiddlePoint_3004"/>
+         <elementType ref="org.eclipse.uml2.diagram.timing.DSegmentStart_3005"/>
+         <elementType ref="org.eclipse.uml2.diagram.timing.DSegmentEnd_3006"/>
          <elementType ref="org.eclipse.uml2.diagram.timing.DStateSwitch_4001"/>
          <advice ref="org.eclipse.gmf.runtime.diagram.core.advice.notationDepdendents"/>
       </binding>

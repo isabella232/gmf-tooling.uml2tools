@@ -11,7 +11,9 @@ import org.eclipse.uml2.diagram.timing.edit.parts.DBlockEditPart;
 import org.eclipse.uml2.diagram.timing.edit.parts.DFrameContainerEditPart;
 import org.eclipse.uml2.diagram.timing.edit.parts.DFrameEditPart;
 import org.eclipse.uml2.diagram.timing.edit.parts.DSegmentEditPart;
+import org.eclipse.uml2.diagram.timing.edit.parts.DSegmentEndEditPart;
 import org.eclipse.uml2.diagram.timing.edit.parts.DSegmentMiddlePointEditPart;
+import org.eclipse.uml2.diagram.timing.edit.parts.DSegmentStartEditPart;
 import org.eclipse.uml2.diagram.timing.edit.parts.DStateSwitchEditPart;
 import org.eclipse.uml2.diagram.timing.edit.parts.DValueLineDisplayNameEditPart;
 import org.eclipse.uml2.diagram.timing.edit.parts.DValueLineEditPart;
@@ -136,6 +138,12 @@ public class TimingDVisualIDRegistry {
 			if (TimingDPackage.eINSTANCE.getDSegmentMiddlePoint().isSuperTypeOf(domainElement.eClass())) {
 				return DSegmentMiddlePointEditPart.VISUAL_ID;
 			}
+			if (TimingDPackage.eINSTANCE.getDSegmentStart().isSuperTypeOf(domainElement.eClass())) {
+				return DSegmentStartEditPart.VISUAL_ID;
+			}
+			if (TimingDPackage.eINSTANCE.getDSegmentEnd().isSuperTypeOf(domainElement.eClass())) {
+				return DSegmentEndEditPart.VISUAL_ID;
+			}
 			break;
 		case DFrameContainerEditPart.VISUAL_ID:
 			if (TimingDPackage.eINSTANCE.getDFrame().isSuperTypeOf(domainElement.eClass())) {
@@ -188,6 +196,12 @@ public class TimingDVisualIDRegistry {
 			break;
 		case DSegmentEditPart.VISUAL_ID:
 			if (DSegmentMiddlePointEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			if (DSegmentStartEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			if (DSegmentEndEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
 			break;
@@ -269,6 +283,12 @@ public class TimingDVisualIDRegistry {
 			if (TimingDPackage.eINSTANCE.getDSegmentMiddlePoint().isSuperTypeOf(domainElement.eClass())) {
 				return DSegmentMiddlePointEditPart.VISUAL_ID;
 			}
+			if (TimingDPackage.eINSTANCE.getDSegmentStart().isSuperTypeOf(domainElement.eClass())) {
+				return DSegmentStartEditPart.VISUAL_ID;
+			}
+			if (TimingDPackage.eINSTANCE.getDSegmentEnd().isSuperTypeOf(domainElement.eClass())) {
+				return DSegmentEndEditPart.VISUAL_ID;
+			}
 			break;
 		case DFrameContainerEditPart.VISUAL_ID:
 			if (TimingDPackage.eINSTANCE.getDFrame().isSuperTypeOf(domainElement.eClass())) {
@@ -314,6 +334,8 @@ public class TimingDVisualIDRegistry {
 	public static boolean isSemanticLeafVisualID(int visualID) {
 		switch (visualID) {
 		case DSegmentMiddlePointEditPart.VISUAL_ID:
+		case DSegmentStartEditPart.VISUAL_ID:
+		case DSegmentEndEditPart.VISUAL_ID:
 			return true;
 		default:
 			break;

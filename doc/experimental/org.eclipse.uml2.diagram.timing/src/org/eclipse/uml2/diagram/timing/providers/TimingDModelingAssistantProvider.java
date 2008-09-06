@@ -61,6 +61,8 @@ public class TimingDModelingAssistantProvider extends ModelingAssistantProvider 
 		if (editPart instanceof DSegmentEditPart) {
 			List<IElementType> types = new ArrayList<IElementType>();
 			types.add(TimingDElementTypes.DSegmentMiddlePoint_3004);
+			types.add(TimingDElementTypes.DSegmentStart_3005);
+			types.add(TimingDElementTypes.DSegmentEnd_3006);
 			return types;
 		}
 

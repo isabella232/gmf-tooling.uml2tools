@@ -168,14 +168,14 @@
             xsi:type="gmfgraph:ConstantColor"
             value="red"/>
         <maximumSize
-            dx="5"
-            dy="5"/>
+            dx="16"
+            dy="16"/>
         <minimumSize
-            dx="5"
-            dy="5"/>
+            dx="16"
+            dy="16"/>
         <preferredSize
-            dx="5"
-            dy="5"/>
+            dx="16"
+            dy="16"/>
       </actualFigure>
     </descriptors>
     <descriptors
@@ -263,7 +263,14 @@
   <nodes
       name="MiddlePointNode"
       figure="MiddlePointFigure"
-      resizeConstraint="NONE"/>
+      resizeConstraint="NONE">
+    <facets
+        xsi:type="gmfgraph:DefaultSizeFacet">
+      <defaultSize
+          dx="16"
+          dy="16"/>
+    </facets>
+  </nodes>
   <connections
       name="StateSwitchLink"
       figure="StateSwitchLinkFigure"/>

@@ -11,7 +11,9 @@ import org.eclipse.uml2.diagram.timing.edit.parts.DBlockEditPart;
 import org.eclipse.uml2.diagram.timing.edit.parts.DFrameContainerEditPart;
 import org.eclipse.uml2.diagram.timing.edit.parts.DFrameEditPart;
 import org.eclipse.uml2.diagram.timing.edit.parts.DSegmentEditPart;
+import org.eclipse.uml2.diagram.timing.edit.parts.DSegmentEndEditPart;
 import org.eclipse.uml2.diagram.timing.edit.parts.DSegmentMiddlePointEditPart;
+import org.eclipse.uml2.diagram.timing.edit.parts.DSegmentStartEditPart;
 import org.eclipse.uml2.diagram.timing.edit.parts.DStateSwitchEditPart;
 import org.eclipse.uml2.diagram.timing.edit.parts.DValueLineDisplayNameEditPart;
 import org.eclipse.uml2.diagram.timing.edit.parts.DValueLineEditPart;
@@ -20,7 +22,9 @@ import org.eclipse.uml2.diagram.timing.view.factories.DBlockDisplayNameViewFacto
 import org.eclipse.uml2.diagram.timing.view.factories.DBlockViewFactory;
 import org.eclipse.uml2.diagram.timing.view.factories.DFrameContainerViewFactory;
 import org.eclipse.uml2.diagram.timing.view.factories.DFrameViewFactory;
+import org.eclipse.uml2.diagram.timing.view.factories.DSegmentEndViewFactory;
 import org.eclipse.uml2.diagram.timing.view.factories.DSegmentMiddlePointViewFactory;
+import org.eclipse.uml2.diagram.timing.view.factories.DSegmentStartViewFactory;
 import org.eclipse.uml2.diagram.timing.view.factories.DSegmentViewFactory;
 import org.eclipse.uml2.diagram.timing.view.factories.DStateSwitchViewFactory;
 import org.eclipse.uml2.diagram.timing.view.factories.DValueLineDisplayNameViewFactory;
@@ -92,6 +96,8 @@ public class TimingDViewProvider extends AbstractViewProvider {
 				case DValueLineEditPart.VISUAL_ID:
 				case DSegmentEditPart.VISUAL_ID:
 				case DSegmentMiddlePointEditPart.VISUAL_ID:
+				case DSegmentStartEditPart.VISUAL_ID:
+				case DSegmentEndEditPart.VISUAL_ID:
 					if (domainElement == null || visualID != TimingDVisualIDRegistry.getNodeVisualID(containerView, domainElement)) {
 						return null; // visual id in semantic hint should match visual id for domain element
 					}
@@ -136,6 +142,10 @@ public class TimingDViewProvider extends AbstractViewProvider {
 			return DSegmentViewFactory.class;
 		case DSegmentMiddlePointEditPart.VISUAL_ID:
 			return DSegmentMiddlePointViewFactory.class;
+		case DSegmentStartEditPart.VISUAL_ID:
+			return DSegmentStartViewFactory.class;
+		case DSegmentEndEditPart.VISUAL_ID:
+			return DSegmentEndViewFactory.class;
 		}
 		return null;
 	}

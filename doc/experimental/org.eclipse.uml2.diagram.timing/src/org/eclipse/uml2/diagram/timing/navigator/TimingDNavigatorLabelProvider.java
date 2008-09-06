@@ -20,7 +20,9 @@ import org.eclipse.uml2.diagram.timing.edit.parts.DBlockEditPart;
 import org.eclipse.uml2.diagram.timing.edit.parts.DFrameContainerEditPart;
 import org.eclipse.uml2.diagram.timing.edit.parts.DFrameEditPart;
 import org.eclipse.uml2.diagram.timing.edit.parts.DSegmentEditPart;
+import org.eclipse.uml2.diagram.timing.edit.parts.DSegmentEndEditPart;
 import org.eclipse.uml2.diagram.timing.edit.parts.DSegmentMiddlePointEditPart;
+import org.eclipse.uml2.diagram.timing.edit.parts.DSegmentStartEditPart;
 import org.eclipse.uml2.diagram.timing.edit.parts.DStateSwitchEditPart;
 import org.eclipse.uml2.diagram.timing.edit.parts.DValueLineDisplayNameEditPart;
 import org.eclipse.uml2.diagram.timing.edit.parts.DValueLineEditPart;
@@ -93,6 +95,10 @@ public class TimingDNavigatorLabelProvider extends LabelProvider implements ICom
 			return getImage("Navigator?Node?http://www.eclipse.org/mdt/uml2tools/timing-diagram/1.0?DSegment", TimingDElementTypes.DSegment_3003); //$NON-NLS-1$
 		case DSegmentMiddlePointEditPart.VISUAL_ID:
 			return getImage("Navigator?Node?http://www.eclipse.org/mdt/uml2tools/timing-diagram/1.0?DSegmentMiddlePoint", TimingDElementTypes.DSegmentMiddlePoint_3004); //$NON-NLS-1$
+		case DSegmentStartEditPart.VISUAL_ID:
+			return getImage("Navigator?Node?http://www.eclipse.org/mdt/uml2tools/timing-diagram/1.0?DSegmentStart", TimingDElementTypes.DSegmentStart_3005); //$NON-NLS-1$
+		case DSegmentEndEditPart.VISUAL_ID:
+			return getImage("Navigator?Node?http://www.eclipse.org/mdt/uml2tools/timing-diagram/1.0?DSegmentEnd", TimingDElementTypes.DSegmentEnd_3006); //$NON-NLS-1$
 		case DStateSwitchEditPart.VISUAL_ID:
 			return getImage("Navigator?Link?http://www.eclipse.org/mdt/uml2tools/timing-diagram/1.0?DStateSwitch", TimingDElementTypes.DStateSwitch_4001); //$NON-NLS-1$
 		}
@@ -157,6 +163,10 @@ public class TimingDNavigatorLabelProvider extends LabelProvider implements ICom
 			return getDSegment_3003Text(view);
 		case DSegmentMiddlePointEditPart.VISUAL_ID:
 			return getDSegmentMiddlePoint_3004Text(view);
+		case DSegmentStartEditPart.VISUAL_ID:
+			return getDSegmentStart_3005Text(view);
+		case DSegmentEndEditPart.VISUAL_ID:
+			return getDSegmentEnd_3006Text(view);
 		case DStateSwitchEditPart.VISUAL_ID:
 			return getDStateSwitch_4001Text(view);
 		}
@@ -222,6 +232,20 @@ public class TimingDNavigatorLabelProvider extends LabelProvider implements ICom
 	 * @generated
 	 */
 	private String getDSegmentMiddlePoint_3004Text(View view) {
+		return ""; //$NON-NLS-1$
+	}
+
+	/**
+	 * @generated
+	 */
+	private String getDSegmentStart_3005Text(View view) {
+		return ""; //$NON-NLS-1$
+	}
+
+	/**
+	 * @generated
+	 */
+	private String getDSegmentEnd_3006Text(View view) {
 		return ""; //$NON-NLS-1$
 	}
 

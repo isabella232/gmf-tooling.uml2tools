@@ -23,18 +23,18 @@ import org.eclipse.gmf.runtime.gef.ui.figures.NodeFigure;
 import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.swt.graphics.Color;
 import org.eclipse.uml2.diagram.common.editparts.PrimaryShapeEditPart;
-import org.eclipse.uml2.diagram.timing.edit.policies.DSegmentMiddlePointItemSemanticEditPolicy;
+import org.eclipse.uml2.diagram.timing.edit.policies.DSegmentStartItemSemanticEditPolicy;
 
 /**
  * @generated
  */
 
-public class DSegmentMiddlePointEditPart extends ShapeNodeEditPart implements PrimaryShapeEditPart {
+public class DSegmentStartEditPart extends ShapeNodeEditPart implements PrimaryShapeEditPart {
 
 	/**
 	 * @generated
 	 */
-	public static final int VISUAL_ID = 3004;
+	public static final int VISUAL_ID = 3005;
 
 	/**
 	 * @generated
@@ -49,7 +49,7 @@ public class DSegmentMiddlePointEditPart extends ShapeNodeEditPart implements Pr
 	/**
 	 * @generated
 	 */
-	public DSegmentMiddlePointEditPart(View view) {
+	public DSegmentStartEditPart(View view) {
 		super(view);
 	}
 
@@ -58,7 +58,7 @@ public class DSegmentMiddlePointEditPart extends ShapeNodeEditPart implements Pr
 	 */
 	protected void createDefaultEditPolicies() {
 		super.createDefaultEditPolicies();
-		installEditPolicy(EditPolicyRoles.SEMANTIC_ROLE, new DSegmentMiddlePointItemSemanticEditPolicy());
+		installEditPolicy(EditPolicyRoles.SEMANTIC_ROLE, new DSegmentStartItemSemanticEditPolicy());
 		installEditPolicy(EditPolicy.LAYOUT_ROLE, createLayoutEditPolicy());
 		// XXX need an SCR to runtime to have another abstract superclass that would let children add reasonable editpolicies
 		// removeEditPolicy(org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles.CONNECTION_HANDLES_ROLE);

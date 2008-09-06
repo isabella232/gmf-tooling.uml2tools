@@ -98,6 +98,32 @@
                           href="timingDiagram.gmfgraph#MiddlePointNode"/>
                     </ownedChild>
                   </children>
+                  <children>
+                    <containmentFeature
+                        href="../../../plugin/org.eclipse.uml2.diagram.timing.model/model/timing-diagram.ecore#//DSegment/start"/>
+                    <ownedChild>
+                      <domainMetaElement
+                          href="../../../plugin/org.eclipse.uml2.diagram.timing.model/model/timing-diagram.ecore#//DSegmentStart"/>
+                      <tool
+                          xsi:type="gmftool:CreationTool"
+                          href="timingDiagram.gmftool#//@palette/@tools.0/@tools.5"/>
+                      <diagramNode
+                          href="timingDiagram.gmfgraph#MiddlePointNode"/>
+                    </ownedChild>
+                  </children>
+                  <children>
+                    <containmentFeature
+                        href="../../../plugin/org.eclipse.uml2.diagram.timing.model/model/timing-diagram.ecore#//DSegment/end"/>
+                    <ownedChild>
+                      <domainMetaElement
+                          href="../../../plugin/org.eclipse.uml2.diagram.timing.model/model/timing-diagram.ecore#//DSegmentEnd"/>
+                      <tool
+                          xsi:type="gmftool:CreationTool"
+                          href="timingDiagram.gmftool#//@palette/@tools.0/@tools.5"/>
+                      <diagramNode
+                          href="timingDiagram.gmfgraph#MiddlePointNode"/>
+                    </ownedChild>
+                  </children>
                 </ownedChild>
               </children>
             </ownedChild>

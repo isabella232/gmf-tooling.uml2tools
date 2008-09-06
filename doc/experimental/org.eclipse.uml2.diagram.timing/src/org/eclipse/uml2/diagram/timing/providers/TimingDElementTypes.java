@@ -20,7 +20,9 @@ import org.eclipse.uml2.diagram.timing.edit.parts.DBlockEditPart;
 import org.eclipse.uml2.diagram.timing.edit.parts.DFrameContainerEditPart;
 import org.eclipse.uml2.diagram.timing.edit.parts.DFrameEditPart;
 import org.eclipse.uml2.diagram.timing.edit.parts.DSegmentEditPart;
+import org.eclipse.uml2.diagram.timing.edit.parts.DSegmentEndEditPart;
 import org.eclipse.uml2.diagram.timing.edit.parts.DSegmentMiddlePointEditPart;
+import org.eclipse.uml2.diagram.timing.edit.parts.DSegmentStartEditPart;
 import org.eclipse.uml2.diagram.timing.edit.parts.DStateSwitchEditPart;
 import org.eclipse.uml2.diagram.timing.edit.parts.DValueLineEditPart;
 import org.eclipse.uml2.diagram.timing.model.timingd.TimingDPackage;
@@ -82,6 +84,16 @@ public class TimingDElementTypes extends ElementInitializers {
 	 * @generated
 	 */
 	public static final IHintedType DSegmentMiddlePoint_3004 = (IHintedType) getElementType("org.eclipse.uml2.diagram.timing.DSegmentMiddlePoint_3004"); //$NON-NLS-1$
+
+	/**
+	 * @generated
+	 */
+	public static final IHintedType DSegmentStart_3005 = (IHintedType) getElementType("org.eclipse.uml2.diagram.timing.DSegmentStart_3005"); //$NON-NLS-1$
+
+	/**
+	 * @generated
+	 */
+	public static final IHintedType DSegmentEnd_3006 = (IHintedType) getElementType("org.eclipse.uml2.diagram.timing.DSegmentEnd_3006"); //$NON-NLS-1$
 
 	/**
 	 * @generated
@@ -206,6 +218,10 @@ public class TimingDElementTypes extends ElementInitializers {
 
 			elements.put(DSegmentMiddlePoint_3004, TimingDPackage.eINSTANCE.getDSegmentMiddlePoint());
 
+			elements.put(DSegmentStart_3005, TimingDPackage.eINSTANCE.getDSegmentStart());
+
+			elements.put(DSegmentEnd_3006, TimingDPackage.eINSTANCE.getDSegmentEnd());
+
 			elements.put(DStateSwitch_4001, TimingDPackage.eINSTANCE.getDStateSwitch());
 		}
 		return (ENamedElement) elements.get(type);
@@ -230,6 +246,8 @@ public class TimingDElementTypes extends ElementInitializers {
 			KNOWN_ELEMENT_TYPES.add(DValueLine_3002);
 			KNOWN_ELEMENT_TYPES.add(DSegment_3003);
 			KNOWN_ELEMENT_TYPES.add(DSegmentMiddlePoint_3004);
+			KNOWN_ELEMENT_TYPES.add(DSegmentStart_3005);
+			KNOWN_ELEMENT_TYPES.add(DSegmentEnd_3006);
 			KNOWN_ELEMENT_TYPES.add(DStateSwitch_4001);
 		}
 		return KNOWN_ELEMENT_TYPES.contains(elementType);
@@ -252,6 +270,10 @@ public class TimingDElementTypes extends ElementInitializers {
 			return DSegment_3003;
 		case DSegmentMiddlePointEditPart.VISUAL_ID:
 			return DSegmentMiddlePoint_3004;
+		case DSegmentStartEditPart.VISUAL_ID:
+			return DSegmentStart_3005;
+		case DSegmentEndEditPart.VISUAL_ID:
+			return DSegmentEnd_3006;
 		case DStateSwitchEditPart.VISUAL_ID:
 			return DStateSwitch_4001;
 		}

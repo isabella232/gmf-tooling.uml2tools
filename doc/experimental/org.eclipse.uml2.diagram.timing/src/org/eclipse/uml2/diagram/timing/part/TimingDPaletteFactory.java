@@ -115,8 +115,10 @@ public class TimingDPaletteFactory {
 	 * @generated
 	 */
 	private ToolEntry createOccurrence6CreationTool() {
-		List/*<IElementType>*/types = new ArrayList/*<IElementType>*/(1);
+		List/*<IElementType>*/types = new ArrayList/*<IElementType>*/(3);
 		types.add(TimingDElementTypes.DSegmentMiddlePoint_3004);
+		types.add(TimingDElementTypes.DSegmentStart_3005);
+		types.add(TimingDElementTypes.DSegmentEnd_3006);
 		NodeToolEntry entry = new NodeToolEntry(Messages.Occurrence6CreationTool_title, Messages.Occurrence6CreationTool_desc, types);
 		entry.setSmallIcon(TimingDElementTypes.getImageDescriptor(TimingDElementTypes.DSegmentMiddlePoint_3004));
 		entry.setLargeIcon(entry.getSmallIcon());

@@ -18,14 +18,18 @@ import org.eclipse.uml2.diagram.timing.edit.parts.DBlockEditPart;
 import org.eclipse.uml2.diagram.timing.edit.parts.DFrameContainerEditPart;
 import org.eclipse.uml2.diagram.timing.edit.parts.DFrameEditPart;
 import org.eclipse.uml2.diagram.timing.edit.parts.DSegmentEditPart;
+import org.eclipse.uml2.diagram.timing.edit.parts.DSegmentEndEditPart;
 import org.eclipse.uml2.diagram.timing.edit.parts.DSegmentMiddlePointEditPart;
+import org.eclipse.uml2.diagram.timing.edit.parts.DSegmentStartEditPart;
 import org.eclipse.uml2.diagram.timing.edit.parts.DStateSwitchEditPart;
 import org.eclipse.uml2.diagram.timing.edit.parts.DValueLineEditPart;
 import org.eclipse.uml2.diagram.timing.model.timingd.DBlock;
 import org.eclipse.uml2.diagram.timing.model.timingd.DFrame;
 import org.eclipse.uml2.diagram.timing.model.timingd.DFrameContainer;
 import org.eclipse.uml2.diagram.timing.model.timingd.DSegment;
+import org.eclipse.uml2.diagram.timing.model.timingd.DSegmentEnd;
 import org.eclipse.uml2.diagram.timing.model.timingd.DSegmentMiddlePoint;
+import org.eclipse.uml2.diagram.timing.model.timingd.DSegmentStart;
 import org.eclipse.uml2.diagram.timing.model.timingd.DStateSwitch;
 import org.eclipse.uml2.diagram.timing.model.timingd.DValueLine;
 import org.eclipse.uml2.diagram.timing.model.timingd.TimingDPackage;
@@ -133,6 +137,20 @@ public class TimingDDiagramUpdater {
 				continue;
 			}
 		}
+		{
+			DSegmentStart childElement = modelElement.getStart();
+			int visualID = TimingDVisualIDRegistry.getNodeVisualID(view, childElement);
+			if (visualID == DSegmentStartEditPart.VISUAL_ID) {
+				result.add(new TimingDNodeDescriptor(childElement, visualID));
+			}
+		}
+		{
+			DSegmentEnd childElement = modelElement.getEnd();
+			int visualID = TimingDVisualIDRegistry.getNodeVisualID(view, childElement);
+			if (visualID == DSegmentEndEditPart.VISUAL_ID) {
+				result.add(new TimingDNodeDescriptor(childElement, visualID));
+			}
+		}
 		return result;
 	}
 
@@ -173,6 +191,10 @@ public class TimingDDiagramUpdater {
 			return getDSegment_3003ContainedLinks(view);
 		case DSegmentMiddlePointEditPart.VISUAL_ID:
 			return getDSegmentMiddlePoint_3004ContainedLinks(view);
+		case DSegmentStartEditPart.VISUAL_ID:
+			return getDSegmentStart_3005ContainedLinks(view);
+		case DSegmentEndEditPart.VISUAL_ID:
+			return getDSegmentEnd_3006ContainedLinks(view);
 		case DStateSwitchEditPart.VISUAL_ID:
 			return getDStateSwitch_4001ContainedLinks(view);
 		}
@@ -194,6 +216,10 @@ public class TimingDDiagramUpdater {
 			return getDSegment_3003IncomingLinks(view);
 		case DSegmentMiddlePointEditPart.VISUAL_ID:
 			return getDSegmentMiddlePoint_3004IncomingLinks(view);
+		case DSegmentStartEditPart.VISUAL_ID:
+			return getDSegmentStart_3005IncomingLinks(view);
+		case DSegmentEndEditPart.VISUAL_ID:
+			return getDSegmentEnd_3006IncomingLinks(view);
 		case DStateSwitchEditPart.VISUAL_ID:
 			return getDStateSwitch_4001IncomingLinks(view);
 		}
@@ -215,6 +241,10 @@ public class TimingDDiagramUpdater {
 			return getDSegment_3003OutgoingLinks(view);
 		case DSegmentMiddlePointEditPart.VISUAL_ID:
 			return getDSegmentMiddlePoint_3004OutgoingLinks(view);
+		case DSegmentStartEditPart.VISUAL_ID:
+			return getDSegmentStart_3005OutgoingLinks(view);
+		case DSegmentEndEditPart.VISUAL_ID:
+			return getDSegmentEnd_3006OutgoingLinks(view);
 		case DStateSwitchEditPart.VISUAL_ID:
 			return getDStateSwitch_4001OutgoingLinks(view);
 		}
@@ -269,6 +299,20 @@ public class TimingDDiagramUpdater {
 	/**
 	 * @generated
 	 */
+	public static List getDSegmentStart_3005ContainedLinks(View view) {
+		return Collections.EMPTY_LIST;
+	}
+
+	/**
+	 * @generated
+	 */
+	public static List getDSegmentEnd_3006ContainedLinks(View view) {
+		return Collections.EMPTY_LIST;
+	}
+
+	/**
+	 * @generated
+	 */
 	public static List getDStateSwitch_4001ContainedLinks(View view) {
 		return Collections.EMPTY_LIST;
 	}
@@ -315,6 +359,20 @@ public class TimingDDiagramUpdater {
 	/**
 	 * @generated
 	 */
+	public static List getDSegmentStart_3005IncomingLinks(View view) {
+		return Collections.EMPTY_LIST;
+	}
+
+	/**
+	 * @generated
+	 */
+	public static List getDSegmentEnd_3006IncomingLinks(View view) {
+		return Collections.EMPTY_LIST;
+	}
+
+	/**
+	 * @generated
+	 */
 	public static List getDStateSwitch_4001IncomingLinks(View view) {
 		return Collections.EMPTY_LIST;
 	}
@@ -354,6 +412,20 @@ public class TimingDDiagramUpdater {
 	 * @generated
 	 */
 	public static List getDSegmentMiddlePoint_3004OutgoingLinks(View view) {
+		return Collections.EMPTY_LIST;
+	}
+
+	/**
+	 * @generated
+	 */
+	public static List getDSegmentStart_3005OutgoingLinks(View view) {
+		return Collections.EMPTY_LIST;
+	}
+
+	/**
+	 * @generated
+	 */
+	public static List getDSegmentEnd_3006OutgoingLinks(View view) {
 		return Collections.EMPTY_LIST;
 	}
 
