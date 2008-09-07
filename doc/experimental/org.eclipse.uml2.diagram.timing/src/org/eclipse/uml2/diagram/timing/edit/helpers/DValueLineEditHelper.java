@@ -13,7 +13,7 @@ public class DValueLineEditHelper extends TimingDBaseEditHelper {
 	@Override
 	protected ICommand getCreateCommand(CreateElementRequest req) {
 		Object anchor = SegmentAnchor.Util.getAnchor(req);
-		if (anchor != null){
+		if (anchor != null) {
 			System.err.println("DValueLineEditHelper.getCreateCommand()");
 			System.err.println("\t req: " + req);
 			System.err.println("\t anchor: " + anchor);
