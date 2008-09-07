@@ -1,27 +1,20 @@
 package org.eclipse.uml2.diagram.timing.edit.parts;
 
-import java.util.ArrayList;
-import java.util.List;
-
-import org.eclipse.draw2d.FreeformLayout;
 import org.eclipse.draw2d.IFigure;
 import org.eclipse.draw2d.PositionConstants;
 import org.eclipse.draw2d.RectangleFigure;
 import org.eclipse.draw2d.Shape;
 import org.eclipse.draw2d.StackLayout;
-import org.eclipse.draw2d.geometry.Rectangle;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.gef.EditPart;
 import org.eclipse.gef.EditPolicy;
 import org.eclipse.gef.editpolicies.LayoutEditPolicy;
 import org.eclipse.gef.editpolicies.ResizableEditPolicy;
-import org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.ShapeNodeEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editpolicies.DragDropEditPolicy;
 import org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles;
 import org.eclipse.gmf.runtime.diagram.ui.editpolicies.ResizableShapeEditPolicy;
 import org.eclipse.gmf.runtime.diagram.ui.editpolicies.XYLayoutEditPolicy;
-import org.eclipse.gmf.runtime.emf.type.core.IElementType;
 import org.eclipse.gmf.runtime.gef.ui.figures.DefaultSizeNodeFigure;
 import org.eclipse.gmf.runtime.gef.ui.figures.NodeFigure;
 import org.eclipse.gmf.runtime.notation.View;
@@ -33,9 +26,10 @@ import org.eclipse.uml2.diagram.common.editpolicies.XYLayoutEditPolicyWithMovabl
 import org.eclipse.uml2.diagram.timing.draw2d.SegmentShape;
 import org.eclipse.uml2.diagram.timing.edit.policies.DSegmentCanonicalEditPolicy;
 import org.eclipse.uml2.diagram.timing.edit.policies.DSegmentItemSemanticEditPolicy;
+import org.eclipse.uml2.diagram.timing.edit.policies.links.SegmentCheckValueSwitchEditPolicy;
+import org.eclipse.uml2.diagram.timing.edit.policies.links.SegmentGraphicalNodeEditPolicy;
 import org.eclipse.uml2.diagram.timing.part.TimingDDiagramUpdater;
 import org.eclipse.uml2.diagram.timing.part.TimingDVisualIDRegistry;
-import org.eclipse.uml2.diagram.timing.providers.TimingDElementTypes;
 
 /**
  * @generated
@@ -81,6 +75,8 @@ public class DSegmentEditPart extends ShapeNodeEditPart implements PrimaryShapeE
 		// XXX need an SCR to runtime to have another abstract superclass that would let children add reasonable editpolicies
 		// removeEditPolicy(org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles.CONNECTION_HANDLES_ROLE);
 
+		installEditPolicy(SegmentCheckValueSwitchEditPolicy.ROLE, new SegmentCheckValueSwitchEditPolicy());
+		installEditPolicy(EditPolicy.GRAPHICAL_NODE_ROLE, new SegmentGraphicalNodeEditPolicy());
 	}
 
 	/**

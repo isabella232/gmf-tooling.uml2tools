@@ -1,29 +1,21 @@
 package org.eclipse.uml2.diagram.timing.edit.parts;
 
-import java.util.ArrayList;
-import java.util.List;
-
-import org.eclipse.draw2d.FreeformLayout;
 import org.eclipse.draw2d.IFigure;
 import org.eclipse.draw2d.Label;
 import org.eclipse.draw2d.PositionConstants;
 import org.eclipse.draw2d.Shape;
 import org.eclipse.draw2d.StackLayout;
-import org.eclipse.draw2d.geometry.Rectangle;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.gef.EditPart;
 import org.eclipse.gef.EditPolicy;
-import org.eclipse.gef.commands.Command;
 import org.eclipse.gef.editpolicies.LayoutEditPolicy;
 import org.eclipse.gef.editpolicies.ResizableEditPolicy;
-import org.eclipse.gef.requests.CreateRequest;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.ShapeNodeEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editpolicies.DragDropEditPolicy;
 import org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles;
 import org.eclipse.gmf.runtime.diagram.ui.editpolicies.ResizableShapeEditPolicy;
 import org.eclipse.gmf.runtime.diagram.ui.editpolicies.XYLayoutEditPolicy;
-import org.eclipse.gmf.runtime.emf.type.core.IElementType;
 import org.eclipse.gmf.runtime.gef.ui.figures.DefaultSizeNodeFigure;
 import org.eclipse.gmf.runtime.gef.ui.figures.NodeFigure;
 import org.eclipse.gmf.runtime.notation.View;
@@ -33,14 +25,15 @@ import org.eclipse.uml2.diagram.common.editpolicies.CreationEditPolicyWithCustom
 import org.eclipse.uml2.diagram.common.editpolicies.UpdateDescriptionEditPolicy;
 import org.eclipse.uml2.diagram.common.editpolicies.XYLayoutEditPolicyWithMovableLabels;
 import org.eclipse.uml2.diagram.timing.draw2d.ValueLineShape;
-import org.eclipse.uml2.diagram.timing.edit.policies.DBlockAnchorHelper;
 import org.eclipse.uml2.diagram.timing.edit.policies.DValueLineCanonicalEditPolicy;
 import org.eclipse.uml2.diagram.timing.edit.policies.DValueLineItemSemanticEditPolicy;
 import org.eclipse.uml2.diagram.timing.edit.policies.SetupAnchorsEditPolicy;
 import org.eclipse.uml2.diagram.timing.edit.policies.create.PostCreateSegmentEditPolicy;
+import org.eclipse.uml2.diagram.timing.edit.policies.links.ValueLineCheckValueSwitchEditPolicy;
+import org.eclipse.uml2.diagram.timing.edit.policies.links.ValueLineCreateValueSwitchEditPolicy;
+import org.eclipse.uml2.diagram.timing.edit.policies.links.ValueLineGraphicalNodeEditPolicy;
 import org.eclipse.uml2.diagram.timing.part.TimingDDiagramUpdater;
 import org.eclipse.uml2.diagram.timing.part.TimingDVisualIDRegistry;
-import org.eclipse.uml2.diagram.timing.providers.TimingDElementTypes;
 
 /**
  * @generated
@@ -88,6 +81,9 @@ public class DValueLineEditPart extends ShapeNodeEditPart implements PrimaryShap
 		// XXX need an SCR to runtime to have another abstract superclass that would let children add reasonable editpolicies
 		// removeEditPolicy(org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles.CONNECTION_HANDLES_ROLE);
 
+		installEditPolicy(ValueLineCheckValueSwitchEditPolicy.ROLE, new ValueLineCheckValueSwitchEditPolicy());
+		installEditPolicy(EditPolicy.GRAPHICAL_NODE_ROLE, new ValueLineGraphicalNodeEditPolicy());
+		installEditPolicy(ValueLineCreateValueSwitchEditPolicy.ROLE, new ValueLineCreateValueSwitchEditPolicy());
 	}
 
 	/**
