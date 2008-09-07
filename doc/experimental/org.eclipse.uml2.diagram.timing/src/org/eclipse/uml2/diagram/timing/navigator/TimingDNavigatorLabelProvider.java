@@ -27,6 +27,10 @@ import org.eclipse.uml2.diagram.timing.edit.parts.DStateSwitchEditPart;
 import org.eclipse.uml2.diagram.timing.edit.parts.DValueLineDisplayNameEditPart;
 import org.eclipse.uml2.diagram.timing.edit.parts.DValueLineEditPart;
 import org.eclipse.uml2.diagram.timing.model.timingd.DFrame;
+import org.eclipse.uml2.diagram.timing.model.timingd.DSegmentEnd;
+import org.eclipse.uml2.diagram.timing.model.timingd.DSegmentMiddlePoint;
+import org.eclipse.uml2.diagram.timing.model.timingd.DSegmentStart;
+import org.eclipse.uml2.diagram.timing.model.timingd.DStateSwitch;
 import org.eclipse.uml2.diagram.timing.part.TimingDDiagramEditorPlugin;
 import org.eclipse.uml2.diagram.timing.part.TimingDVisualIDRegistry;
 import org.eclipse.uml2.diagram.timing.providers.TimingDElementTypes;
@@ -232,28 +236,52 @@ public class TimingDNavigatorLabelProvider extends LabelProvider implements ICom
 	 * @generated
 	 */
 	private String getDSegmentMiddlePoint_3004Text(View view) {
-		return ""; //$NON-NLS-1$
+		DSegmentMiddlePoint domainModelElement = (DSegmentMiddlePoint) view.getElement();
+		if (domainModelElement != null) {
+			return domainModelElement.getDebugId();
+		} else {
+			TimingDDiagramEditorPlugin.getInstance().logError("No domain element for view with visualID = " + 3004); //$NON-NLS-1$
+			return ""; //$NON-NLS-1$
+		}
 	}
 
 	/**
 	 * @generated
 	 */
 	private String getDSegmentStart_3005Text(View view) {
-		return ""; //$NON-NLS-1$
+		DSegmentStart domainModelElement = (DSegmentStart) view.getElement();
+		if (domainModelElement != null) {
+			return domainModelElement.getDebugId();
+		} else {
+			TimingDDiagramEditorPlugin.getInstance().logError("No domain element for view with visualID = " + 3005); //$NON-NLS-1$
+			return ""; //$NON-NLS-1$
+		}
 	}
 
 	/**
 	 * @generated
 	 */
 	private String getDSegmentEnd_3006Text(View view) {
-		return ""; //$NON-NLS-1$
+		DSegmentEnd domainModelElement = (DSegmentEnd) view.getElement();
+		if (domainModelElement != null) {
+			return domainModelElement.getDebugId();
+		} else {
+			TimingDDiagramEditorPlugin.getInstance().logError("No domain element for view with visualID = " + 3006); //$NON-NLS-1$
+			return ""; //$NON-NLS-1$
+		}
 	}
 
 	/**
 	 * @generated
 	 */
 	private String getDStateSwitch_4001Text(View view) {
-		return ""; //$NON-NLS-1$
+		DStateSwitch domainModelElement = (DStateSwitch) view.getElement();
+		if (domainModelElement != null) {
+			return domainModelElement.getDebugId();
+		} else {
+			TimingDDiagramEditorPlugin.getInstance().logError("No domain element for view with visualID = " + 4001); //$NON-NLS-1$
+			return ""; //$NON-NLS-1$
+		}
 	}
 
 	/**
