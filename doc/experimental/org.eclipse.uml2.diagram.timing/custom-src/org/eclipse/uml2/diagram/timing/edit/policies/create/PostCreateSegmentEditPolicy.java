@@ -82,10 +82,10 @@ public class PostCreateSegmentEditPolicy extends AbstractEditPolicy {
 		
 		@Override
 		protected CommandResult doExecuteWithResult(IProgressMonitor monitor, IAdaptable info) throws ExecutionException {
-			SegmentAnchor anchor = SegmentAnchor.Util.getAnchor(getCvaeReq());
+			SegmentAnchor anchor = SegmentAnchor.Util.getAnchor(getCreateRequest());
 			System.err.println("Anchor: " + anchor);
-			System.err.println("Location: " + getCvaeReq().getLocation());
-			System.err.println("Size: " + getCvaeReq().getSize());
+			System.err.println("Location: " + getRequestLocation());
+			System.err.println("Size: " + getRequestSize());
 
 			View createdView = getCreatedView();
 			DSegment createdSegment = getCreatedSegment();
@@ -146,7 +146,7 @@ public class PostCreateSegmentEditPolicy extends AbstractEditPolicy {
 				
 				//3) Shrink old segment
 				Rectangle oldBounds = anchor.getOverlappingSegmentGlobalBounds();
-				Point splitLocation = getCvaeReq().getLocation();
+				Point splitLocation = getRequestLocation();
 				Dimension diff = oldBounds.getTopRight().getDifference(splitLocation);
 				setSize(oldSegmentView, new Dimension(oldBounds.getSize().width - diff.width + 2 * SegmentGeometry.CIRCLE_RADIUS, oldBounds.height));
 				
@@ -161,7 +161,7 @@ public class PostCreateSegmentEditPolicy extends AbstractEditPolicy {
 			View segmentEndView = ViewService.getInstance().createNode(new EObjectAdapter(segmentEnd), oldSegmentView, null, ViewUtil.APPEND, getPreferencesHint());
 			
 			Rectangle oldBounds = anchor.getOverlappingSegmentGlobalBounds();
-			Point splitLocation = getCvaeReq().getLocation();
+			Point splitLocation = getRequestLocation();
 			Dimension completedSize = splitLocation.getDifference(oldBounds.getTopLeft());
 			completedSize.height = oldBounds.height;
 			completedSize.width += 2 * SegmentGeometry.CIRCLE_RADIUS;

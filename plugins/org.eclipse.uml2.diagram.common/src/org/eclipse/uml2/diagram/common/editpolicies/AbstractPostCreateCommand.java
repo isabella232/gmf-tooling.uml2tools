@@ -6,6 +6,7 @@ import org.eclipse.draw2d.geometry.Dimension;
 import org.eclipse.draw2d.geometry.Point;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.transaction.TransactionalEditingDomain;
+import org.eclipse.gef.requests.CreateRequest;
 import org.eclipse.gmf.runtime.diagram.core.edithelpers.CreateElementRequestAdapter;
 import org.eclipse.gmf.runtime.diagram.core.preferences.PreferencesHint;
 import org.eclipse.gmf.runtime.diagram.core.util.ViewUtil;
@@ -21,15 +22,18 @@ import org.eclipse.uml2.diagram.common.genapi.IVisualIDRegistry;
 
 public abstract class AbstractPostCreateCommand extends AbstractTransactionalCommand {
 
-	private final CreateViewAndElementRequest myCvaeReq;
-
+	private final CreateRequest myCreateRequest;
+	
+	private final ViewAndElementAccess myViewAndElementAccess;
+	
 	private final IVisualIDRegistry myVisualIDRegistry;
 
 	private final IGraphicalEditPart myHostEditPart;
 
 	public AbstractPostCreateCommand(TransactionalEditingDomain domain, CreateViewAndElementRequest cvaeReq, IGraphicalEditPart hostEditPart, IVisualIDRegistry visualIDRegistry) {
 		super(domain, null, getWorkspaceFiles(hostEditPart.getNotationView()));
-		myCvaeReq = cvaeReq;
+		myCreateRequest = cvaeReq;
+		myViewAndElementAccess = new CVAEAccess(cvaeReq);
 		myHostEditPart = hostEditPart;
 		myVisualIDRegistry = visualIDRegistry;
 	}
@@ -41,25 +45,29 @@ public abstract class AbstractPostCreateCommand extends AbstractTransactionalCom
 	protected IGraphicalEditPart getHostEditPart() {
 		return myHostEditPart;
 	}
-
-	protected CreateViewAndElementRequest getCvaeReq() {
-		return myCvaeReq;
+	
+	protected Point getRequestLocation(){
+		return myCreateRequest.getLocation();
 	}
-
-	protected CreateElementRequestAdapter getSemanticRequestAdapter() {
-		return myCvaeReq.getViewAndElementDescriptor().getCreateElementRequestAdapter();
+	
+	protected CreateRequest getCreateRequest() {
+		return myCreateRequest;
 	}
-
-	protected CreateElementRequest getSemanticRequest() {
-		return (CreateElementRequest) getSemanticRequestAdapter().getAdapter(CreateElementRequest.class);
+	
+	protected Dimension getRequestSize(){
+		return myCreateRequest.getSize();
 	}
 
 	protected View getCreatedView() {
-		return (View) myCvaeReq.getViewAndElementDescriptor().getAdapter(View.class);
+		return myViewAndElementAccess.getCreatedView();
 	}
 
 	protected EObject getCreatedEntity() {
-		return (EObject) getSemanticRequestAdapter().getAdapter(EObject.class);
+		return myViewAndElementAccess.getCreatedEntity();
+	}
+	
+	protected ViewAndElementAccess getViewAndElementAccess(){
+		return myViewAndElementAccess;
 	}
 
 	protected View findChildByType(View view, int visualId) {
@@ -110,5 +118,36 @@ public abstract class AbstractPostCreateCommand extends AbstractTransactionalCom
 		ViewUtil.setStructuralFeatureValue(view, NotationPackage.eINSTANCE.getSize_Width(), new Integer(size.width));
 		ViewUtil.setStructuralFeatureValue(view, NotationPackage.eINSTANCE.getSize_Height(), new Integer(size.height));
 	}
+	
+	public static interface ViewAndElementAccess {
+		public View getCreatedView();
+		public EObject getCreatedEntity();
+	}
+	
+	private static class CVAEAccess implements ViewAndElementAccess {
+		private final CreateViewAndElementRequest myCvaeReq;
+
+		public CVAEAccess(CreateViewAndElementRequest request) {
+			myCvaeReq = request;
+		}
+		
+		private CreateElementRequestAdapter getSemanticRequestAdapter() {
+			return myCvaeReq.getViewAndElementDescriptor().getCreateElementRequestAdapter();
+		}
+
+		public CreateElementRequest getSemanticRequest() {
+			return (CreateElementRequest) getSemanticRequestAdapter().getAdapter(CreateElementRequest.class);
+		}
+
+		public View getCreatedView() {
+			return (View) myCvaeReq.getViewAndElementDescriptor().getAdapter(View.class);
+		}
+
+		public EObject getCreatedEntity() {
+			return (EObject) getSemanticRequestAdapter().getAdapter(EObject.class);
+		}
+	}
+	
+	
 
 }
