@@ -1,5 +1,6 @@
 package org.eclipse.uml2.diagram.timing.edit.policies;
 
+import org.eclipse.draw2d.geometry.Rectangle;
 import org.eclipse.gef.Request;
 import org.eclipse.gmf.runtime.emf.type.core.requests.IEditCommandRequest;
 import org.eclipse.gmf.runtime.notation.View;
@@ -21,6 +22,8 @@ public interface SegmentAnchor {
 	public View getOverlappingSegmentView();
 	public View getLeftAnchorView();
 	public View getRightAnchorView();
+	
+	public Rectangle getOverlappingSegmentGlobalBounds();
 
 	public static class Util {
 		public static final String KEY_FOR_REQUEST_PARAMETERS = SegmentAnchor.Util.class.getSimpleName() + ":REQUEST_KEY";

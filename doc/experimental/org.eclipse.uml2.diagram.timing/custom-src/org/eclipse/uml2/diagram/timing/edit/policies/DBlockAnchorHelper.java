@@ -25,16 +25,14 @@ public class DBlockAnchorHelper {
 	
 	public SegmentAnchor findSegmentAnchor(Point globalPoint){
 		SegmentAnchorImpl result = new SegmentAnchorImpl();
-		DSegmentEditPart segmentEP = findSegmentForGlobalPoint(globalPoint);
-		if (segmentEP != null){
-			result.setOverlappingSegment(segmentEP);
+		if (setupOverlappingSegment(result, globalPoint)){
 			setupLeftAnchor(result, globalPoint);
 			setupRightAnchor(result, globalPoint);
 		}
 		return result;
 	}
 	
-	public DSegmentEditPart findSegmentForGlobalPoint(Point globalPoint){
+	public boolean setupOverlappingSegment(SegmentAnchorImpl anchorData, Point globalPoint){
 		List<DValueLineEditPart> lineEPs = collectChildEditParts(myBlockEP, DValueLineEditPart.class);
 		for (DValueLineEditPart next : lineEPs){
 			for (DSegmentEditPart nextSegment : collectChildEditParts(next, DSegmentEditPart.class)){
@@ -42,11 +40,13 @@ public class DBlockAnchorHelper {
 				Rectangle nextSegmentGlobalBounds = segmentF.getBounds().getCopy();
 				segmentF.getParent().translateToAbsolute(nextSegmentGlobalBounds);
 				if (nextSegmentGlobalBounds.x <= globalPoint.x && nextSegmentGlobalBounds.x + nextSegmentGlobalBounds.width >= globalPoint.x){
-					return nextSegment;
+					anchorData.setOverlappingSegment(nextSegment);
+					anchorData.setSegmentGlobalBounds(nextSegmentGlobalBounds.getCopy());
+					return true;
 				}
 			}
 		}
-		return null;
+		return false;
 	}
 	
 	public void setupLeftAnchor(SegmentAnchorImpl anchorData, Point global){

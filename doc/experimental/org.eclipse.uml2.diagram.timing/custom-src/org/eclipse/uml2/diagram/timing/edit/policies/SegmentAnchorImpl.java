@@ -1,5 +1,6 @@
 package org.eclipse.uml2.diagram.timing.edit.policies;
 
+import org.eclipse.draw2d.geometry.Rectangle;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.uml2.diagram.common.editparts.PrimaryShapeEditPart;
@@ -12,6 +13,7 @@ public class SegmentAnchorImpl implements SegmentAnchor {
 	private DSegmentEditPart myOverlappingSegment;
 	private PrimaryShapeEditPart myLeftAnchor;
 	private PrimaryShapeEditPart myRightAnchor;
+	private Rectangle mySegmentGlobalBounds;
 	
 	public DSegmentEditPart getOverlappingSegmentEditPart() {
 		return myOverlappingSegment;
@@ -45,6 +47,10 @@ public class SegmentAnchorImpl implements SegmentAnchor {
 		return (View) (myRightAnchor == null ? null : myRightAnchor.getNotationView());
 	}
 	
+	public Rectangle getOverlappingSegmentGlobalBounds() {
+		return mySegmentGlobalBounds;
+	}
+	
 	public View getLeftAnchorView() {
 		return (View) (myLeftAnchor == null ? null : myLeftAnchor.getNotationView());
 	}
@@ -59,6 +65,10 @@ public class SegmentAnchorImpl implements SegmentAnchor {
 	
 	public void setRightAnchor(PrimaryShapeEditPart rightAnchor) {
 		myRightAnchor = rightAnchor;
+	}
+	
+	public void setSegmentGlobalBounds(Rectangle segmentGlobalBounds){
+		mySegmentGlobalBounds = segmentGlobalBounds;
 	}
 	
 	@Override
