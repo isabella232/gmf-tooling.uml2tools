@@ -185,8 +185,19 @@
     <descriptors
         name="StateSwitchLinkFigure">
       <actualFigure
-          xsi:type="gmfgraph:PolylineConnection"
-          name="StateSwitchLinkFigure"/>
+          xsi:type="gmfgraph:CustomConnection"
+          name="StateSwitchLinkFigure"
+          qualifiedClassName="org.eclipse.uml2.diagram.timing.draw2d.SwitchShape">
+        <foregroundColor
+            xsi:type="gmfgraph:ConstantColor"
+            value="red"/>
+        <backgroundColor
+            xsi:type="gmfgraph:ConstantColor"
+            value="yellow"/>
+        <attributes
+            name="lineWidth"
+            value="10"/>
+      </actualFigure>
     </descriptors>
     <descriptors
         name="InteractionFigure______Copy">

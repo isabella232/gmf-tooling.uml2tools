@@ -1,11 +1,13 @@
 package org.eclipse.uml2.diagram.timing.edit.parts;
 
+import org.eclipse.draw2d.ColorConstants;
 import org.eclipse.draw2d.Connection;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.ConnectionNodeEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.ITreeBranchEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles;
-import org.eclipse.gmf.runtime.draw2d.ui.figures.PolylineConnectionEx;
 import org.eclipse.gmf.runtime.notation.View;
+import org.eclipse.swt.graphics.Color;
+import org.eclipse.uml2.diagram.timing.draw2d.SwitchShape;
 import org.eclipse.uml2.diagram.timing.edit.policies.DStateSwitchItemSemanticEditPolicy;
 
 /**
@@ -13,6 +15,11 @@ import org.eclipse.uml2.diagram.timing.edit.policies.DStateSwitchItemSemanticEdi
  */
 
 public class DStateSwitchEditPart extends ConnectionNodeEditPart implements ITreeBranchEditPart {
+	@Override
+	protected void setForegroundColor(Color color) {
+//		ignore -- we know better
+//		super.setForegroundColor(color);
+	}
 
 	/**
 	 * @generated
@@ -43,14 +50,51 @@ public class DStateSwitchEditPart extends ConnectionNodeEditPart implements ITre
 	 * @generated
 	 */
 	protected Connection createConnectionFigure() {
-		return new PolylineConnectionEx();
+		return new StateSwitchLinkFigure();
 	}
 
 	/**
 	 * @generated
 	 */
-	public PolylineConnectionEx getPrimaryShape() {
-		return (PolylineConnectionEx) getFigure();
+	public StateSwitchLinkFigure getPrimaryShape() {
+		return (StateSwitchLinkFigure) getFigure();
+	}
+
+	/**
+	 * @generated
+	 */
+	public class StateSwitchLinkFigure extends SwitchShape {
+
+		/**
+		 * @generated
+		 */
+		public StateSwitchLinkFigure() {
+
+			this.setLineWidth(10);
+
+			this.setForegroundColor(ColorConstants.red);
+			this.setBackgroundColor(ColorConstants.yellow);
+		}
+
+		/**
+		 * @generated
+		 */
+		private boolean myUseLocalCoordinates = false;
+
+		/**
+		 * @generated
+		 */
+		protected boolean useLocalCoordinates() {
+			return myUseLocalCoordinates;
+		}
+
+		/**
+		 * @generated
+		 */
+		protected void setUseLocalCoordinates(boolean useLocalCoordinates) {
+			myUseLocalCoordinates = useLocalCoordinates;
+		}
+
 	}
 
 }

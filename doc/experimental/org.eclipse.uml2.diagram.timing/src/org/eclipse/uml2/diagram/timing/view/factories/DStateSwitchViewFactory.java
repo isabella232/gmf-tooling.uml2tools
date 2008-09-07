@@ -21,7 +21,7 @@ public class DStateSwitchViewFactory extends ConnectionViewFactory {
 	 */
 	protected List createStyles(View view) {
 		List styles = new ArrayList();
-		styles.add(NotationFactory.eINSTANCE.createConnectorStyle());
+		styles.add(NotationFactory.eINSTANCE.createRoutingStyle());
 		styles.add(NotationFactory.eINSTANCE.createFontStyle());
 		return styles;
 	}
