@@ -62,15 +62,20 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="stateInvariant" eType="#//UMLStateInvariant"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="segment" eType="#//DSegment"
         eOpposite="#//DSegment/start"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="incomingSwitch" eType="#//DStateSwitch"
+        eOpposite="#//DStateSwitch/toSegmentStart"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="DSegmentEnd" eSuperTypes="#//DSegmentElement">
     <eStructuralFeatures xsi:type="ecore:EReference" name="segment" eType="#//DSegment"
         eOpposite="#//DSegment/end"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="switch" eType="#//DStateSwitch"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="switch" eType="#//DStateSwitch"
+        eOpposite="#//DStateSwitch/fromSegmentEnd"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="DStateSwitch" eSuperTypes="#//DSegmentElement">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="fromSegmentEnd" eType="#//DSegmentEnd"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="toSegmentStart" eType="#//DSegmentStart"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="fromSegmentEnd" eType="#//DSegmentEnd"
+        eOpposite="#//DSegmentEnd/switch"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="toSegmentStart" eType="#//DSegmentStart"
+        eOpposite="#//DSegmentStart/incomingSwitch"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="fromSegment" eType="#//DSegment"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="toSegment" eType="#//DSegment"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="fromValueLine" eType="#//DValueLine"/>

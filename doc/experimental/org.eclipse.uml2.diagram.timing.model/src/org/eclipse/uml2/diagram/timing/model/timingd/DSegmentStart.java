@@ -2,7 +2,7 @@
  * <copyright>
  * </copyright>
  *
- * $Id: DSegmentStart.java,v 1.1 2008/09/06 19:44:15 mgolubev Exp $
+ * $Id: DSegmentStart.java,v 1.2 2008/09/07 15:13:31 mgolubev Exp $
  */
 package org.eclipse.uml2.diagram.timing.model.timingd;
 
@@ -18,6 +18,7 @@ import org.eclipse.uml2.uml.StateInvariant;
  * <ul>
  *   <li>{@link org.eclipse.uml2.diagram.timing.model.timingd.DSegmentStart#getStateInvariant <em>State Invariant</em>}</li>
  *   <li>{@link org.eclipse.uml2.diagram.timing.model.timingd.DSegmentStart#getSegment <em>Segment</em>}</li>
+ *   <li>{@link org.eclipse.uml2.diagram.timing.model.timingd.DSegmentStart#getIncomingSwitch <em>Incoming Switch</em>}</li>
  * </ul>
  * </p>
  *
@@ -79,5 +80,33 @@ public interface DSegmentStart extends DSegmentElement {
 	 * @generated
 	 */
 	void setSegment(DSegment value);
+
+	/**
+	 * Returns the value of the '<em><b>Incoming Switch</b></em>' reference.
+	 * It is bidirectional and its opposite is '{@link org.eclipse.uml2.diagram.timing.model.timingd.DStateSwitch#getToSegmentStart <em>To Segment Start</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Incoming Switch</em>' reference isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Incoming Switch</em>' reference.
+	 * @see #setIncomingSwitch(DStateSwitch)
+	 * @see org.eclipse.uml2.diagram.timing.model.timingd.TimingDPackage#getDSegmentStart_IncomingSwitch()
+	 * @see org.eclipse.uml2.diagram.timing.model.timingd.DStateSwitch#getToSegmentStart
+	 * @model opposite="toSegmentStart"
+	 * @generated
+	 */
+	DStateSwitch getIncomingSwitch();
+
+	/**
+	 * Sets the value of the '{@link org.eclipse.uml2.diagram.timing.model.timingd.DSegmentStart#getIncomingSwitch <em>Incoming Switch</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Incoming Switch</em>' reference.
+	 * @see #getIncomingSwitch()
+	 * @generated
+	 */
+	void setIncomingSwitch(DStateSwitch value);
 
 } // DSegmentStart

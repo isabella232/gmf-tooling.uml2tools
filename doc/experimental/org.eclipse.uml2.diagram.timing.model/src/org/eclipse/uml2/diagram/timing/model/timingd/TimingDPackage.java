@@ -2,7 +2,7 @@
  * <copyright>
  * </copyright>
  *
- * $Id: TimingDPackage.java,v 1.2 2008/09/07 11:01:21 mgolubev Exp $
+ * $Id: TimingDPackage.java,v 1.3 2008/09/07 15:13:31 mgolubev Exp $
  */
 package org.eclipse.uml2.diagram.timing.model.timingd;
 
@@ -473,13 +473,22 @@ public interface TimingDPackage extends EPackage {
 	int DSEGMENT_START__SEGMENT = DSEGMENT_ELEMENT_FEATURE_COUNT + 1;
 
 	/**
+	 * The feature id for the '<em><b>Incoming Switch</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DSEGMENT_START__INCOMING_SWITCH = DSEGMENT_ELEMENT_FEATURE_COUNT + 2;
+
+	/**
 	 * The number of structural features of the '<em>DSegment Start</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int DSEGMENT_START_FEATURE_COUNT = DSEGMENT_ELEMENT_FEATURE_COUNT + 2;
+	int DSEGMENT_START_FEATURE_COUNT = DSEGMENT_ELEMENT_FEATURE_COUNT + 3;
 
 	/**
 	 * The meta object id for the '{@link org.eclipse.uml2.diagram.timing.model.timingd.impl.DSegmentEndImpl <em>DSegment End</em>}' class.
@@ -1183,6 +1192,17 @@ public interface TimingDPackage extends EPackage {
 	EReference getDSegmentStart_Segment();
 
 	/**
+	 * Returns the meta object for the reference '{@link org.eclipse.uml2.diagram.timing.model.timingd.DSegmentStart#getIncomingSwitch <em>Incoming Switch</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Incoming Switch</em>'.
+	 * @see org.eclipse.uml2.diagram.timing.model.timingd.DSegmentStart#getIncomingSwitch()
+	 * @see #getDSegmentStart()
+	 * @generated
+	 */
+	EReference getDSegmentStart_IncomingSwitch();
+
+	/**
 	 * Returns the meta object for class '{@link org.eclipse.uml2.diagram.timing.model.timingd.DSegmentEnd <em>DSegment End</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1729,6 +1749,14 @@ public interface TimingDPackage extends EPackage {
 		 * @generated
 		 */
 		EReference DSEGMENT_START__SEGMENT = eINSTANCE.getDSegmentStart_Segment();
+
+		/**
+		 * The meta object literal for the '<em><b>Incoming Switch</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference DSEGMENT_START__INCOMING_SWITCH = eINSTANCE.getDSegmentStart_IncomingSwitch();
 
 		/**
 		 * The meta object literal for the '{@link org.eclipse.uml2.diagram.timing.model.timingd.impl.DSegmentEndImpl <em>DSegment End</em>}' class.

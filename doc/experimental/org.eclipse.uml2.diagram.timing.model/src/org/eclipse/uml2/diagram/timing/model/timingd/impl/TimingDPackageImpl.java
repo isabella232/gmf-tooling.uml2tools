@@ -2,7 +2,7 @@
  * <copyright>
  * </copyright>
  *
- * $Id: TimingDPackageImpl.java,v 1.2 2008/09/07 11:01:21 mgolubev Exp $
+ * $Id: TimingDPackageImpl.java,v 1.3 2008/09/07 15:13:31 mgolubev Exp $
  */
 package org.eclipse.uml2.diagram.timing.model.timingd.impl;
 
@@ -546,6 +546,15 @@ public class TimingDPackageImpl extends EPackageImpl implements TimingDPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EReference getDSegmentStart_IncomingSwitch() {
+		return (EReference)dSegmentStartEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getDSegmentEnd() {
 		return dSegmentEndEClass;
 	}
@@ -808,6 +817,7 @@ public class TimingDPackageImpl extends EPackageImpl implements TimingDPackage {
 		dSegmentStartEClass = createEClass(DSEGMENT_START);
 		createEReference(dSegmentStartEClass, DSEGMENT_START__STATE_INVARIANT);
 		createEReference(dSegmentStartEClass, DSEGMENT_START__SEGMENT);
+		createEReference(dSegmentStartEClass, DSEGMENT_START__INCOMING_SWITCH);
 
 		dSegmentEndEClass = createEClass(DSEGMENT_END);
 		createEReference(dSegmentEndEClass, DSEGMENT_END__SEGMENT);
@@ -919,14 +929,15 @@ public class TimingDPackageImpl extends EPackageImpl implements TimingDPackage {
 		initEClass(dSegmentStartEClass, DSegmentStart.class, "DSegmentStart", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getDSegmentStart_StateInvariant(), this.getUMLStateInvariant(), null, "stateInvariant", null, 0, 1, DSegmentStart.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getDSegmentStart_Segment(), this.getDSegment(), this.getDSegment_Start(), "segment", null, 0, 1, DSegmentStart.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getDSegmentStart_IncomingSwitch(), this.getDStateSwitch(), this.getDStateSwitch_ToSegmentStart(), "incomingSwitch", null, 0, 1, DSegmentStart.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(dSegmentEndEClass, DSegmentEnd.class, "DSegmentEnd", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getDSegmentEnd_Segment(), this.getDSegment(), this.getDSegment_End(), "segment", null, 0, 1, DSegmentEnd.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getDSegmentEnd_Switch(), this.getDStateSwitch(), null, "switch", null, 0, 1, DSegmentEnd.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getDSegmentEnd_Switch(), this.getDStateSwitch(), this.getDStateSwitch_FromSegmentEnd(), "switch", null, 0, 1, DSegmentEnd.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(dStateSwitchEClass, DStateSwitch.class, "DStateSwitch", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getDStateSwitch_FromSegmentEnd(), this.getDSegmentEnd(), null, "fromSegmentEnd", null, 0, 1, DStateSwitch.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getDStateSwitch_ToSegmentStart(), this.getDSegmentStart(), null, "toSegmentStart", null, 0, 1, DStateSwitch.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getDStateSwitch_FromSegmentEnd(), this.getDSegmentEnd(), this.getDSegmentEnd_Switch(), "fromSegmentEnd", null, 0, 1, DStateSwitch.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getDStateSwitch_ToSegmentStart(), this.getDSegmentStart(), this.getDSegmentStart_IncomingSwitch(), "toSegmentStart", null, 0, 1, DStateSwitch.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getDStateSwitch_FromSegment(), this.getDSegment(), null, "fromSegment", null, 0, 1, DStateSwitch.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getDStateSwitch_ToSegment(), this.getDSegment(), null, "toSegment", null, 0, 1, DStateSwitch.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getDStateSwitch_FromValueLine(), this.getDValueLine(), null, "fromValueLine", null, 0, 1, DStateSwitch.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

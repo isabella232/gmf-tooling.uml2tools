@@ -49,6 +49,7 @@
     <genClasses ecoreClass="timing-diagram.ecore#//DSegmentStart">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference timing-diagram.ecore#//DSegmentStart/stateInvariant"/>
       <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference timing-diagram.ecore#//DSegmentStart/segment"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference timing-diagram.ecore#//DSegmentStart/incomingSwitch"/>
     </genClasses>
     <genClasses ecoreClass="timing-diagram.ecore#//DSegmentEnd">
       <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference timing-diagram.ecore#//DSegmentEnd/segment"/>

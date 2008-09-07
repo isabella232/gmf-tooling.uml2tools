@@ -2,7 +2,7 @@
  * <copyright>
  * </copyright>
  *
- * $Id: DSegmentEnd.java,v 1.1 2008/09/06 19:44:14 mgolubev Exp $
+ * $Id: DSegmentEnd.java,v 1.2 2008/09/07 15:13:30 mgolubev Exp $
  */
 package org.eclipse.uml2.diagram.timing.model.timingd;
 
@@ -55,6 +55,7 @@ public interface DSegmentEnd extends DSegmentElement {
 
 	/**
 	 * Returns the value of the '<em><b>Switch</b></em>' reference.
+	 * It is bidirectional and its opposite is '{@link org.eclipse.uml2.diagram.timing.model.timingd.DStateSwitch#getFromSegmentEnd <em>From Segment End</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Switch</em>' reference isn't clear,
@@ -64,7 +65,8 @@ public interface DSegmentEnd extends DSegmentElement {
 	 * @return the value of the '<em>Switch</em>' reference.
 	 * @see #setSwitch(DStateSwitch)
 	 * @see org.eclipse.uml2.diagram.timing.model.timingd.TimingDPackage#getDSegmentEnd_Switch()
-	 * @model
+	 * @see org.eclipse.uml2.diagram.timing.model.timingd.DStateSwitch#getFromSegmentEnd
+	 * @model opposite="fromSegmentEnd"
 	 * @generated
 	 */
 	DStateSwitch getSwitch();

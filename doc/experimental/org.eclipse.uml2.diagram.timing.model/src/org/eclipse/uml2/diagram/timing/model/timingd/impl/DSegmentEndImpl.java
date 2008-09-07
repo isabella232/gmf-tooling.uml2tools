@@ -2,7 +2,7 @@
  * <copyright>
  * </copyright>
  *
- * $Id: DSegmentEndImpl.java,v 1.1 2008/09/06 19:44:14 mgolubev Exp $
+ * $Id: DSegmentEndImpl.java,v 1.2 2008/09/07 15:13:31 mgolubev Exp $
  */
 package org.eclipse.uml2.diagram.timing.model.timingd.impl;
 
@@ -137,11 +137,33 @@ public class DSegmentEndImpl extends DSegmentElementImpl implements DSegmentEnd 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setSwitch(DStateSwitch newSwitch) {
+	public NotificationChain basicSetSwitch(DStateSwitch newSwitch, NotificationChain msgs) {
 		DStateSwitch oldSwitch = switch_;
 		switch_ = newSwitch;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, TimingDPackage.DSEGMENT_END__SWITCH, oldSwitch, switch_));
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, TimingDPackage.DSEGMENT_END__SWITCH, oldSwitch, newSwitch);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setSwitch(DStateSwitch newSwitch) {
+		if (newSwitch != switch_) {
+			NotificationChain msgs = null;
+			if (switch_ != null)
+				msgs = ((InternalEObject)switch_).eInverseRemove(this, TimingDPackage.DSTATE_SWITCH__FROM_SEGMENT_END, DStateSwitch.class, msgs);
+			if (newSwitch != null)
+				msgs = ((InternalEObject)newSwitch).eInverseAdd(this, TimingDPackage.DSTATE_SWITCH__FROM_SEGMENT_END, DStateSwitch.class, msgs);
+			msgs = basicSetSwitch(newSwitch, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, TimingDPackage.DSEGMENT_END__SWITCH, newSwitch, newSwitch));
 	}
 
 	/**
@@ -156,6 +178,10 @@ public class DSegmentEndImpl extends DSegmentElementImpl implements DSegmentEnd 
 				if (eInternalContainer() != null)
 					msgs = eBasicRemoveFromContainer(msgs);
 				return basicSetSegment((DSegment)otherEnd, msgs);
+			case TimingDPackage.DSEGMENT_END__SWITCH:
+				if (switch_ != null)
+					msgs = ((InternalEObject)switch_).eInverseRemove(this, TimingDPackage.DSTATE_SWITCH__FROM_SEGMENT_END, DStateSwitch.class, msgs);
+				return basicSetSwitch((DStateSwitch)otherEnd, msgs);
 		}
 		return super.eInverseAdd(otherEnd, featureID, msgs);
 	}
@@ -170,6 +196,8 @@ public class DSegmentEndImpl extends DSegmentElementImpl implements DSegmentEnd 
 		switch (featureID) {
 			case TimingDPackage.DSEGMENT_END__SEGMENT:
 				return basicSetSegment(null, msgs);
+			case TimingDPackage.DSEGMENT_END__SWITCH:
+				return basicSetSwitch(null, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}

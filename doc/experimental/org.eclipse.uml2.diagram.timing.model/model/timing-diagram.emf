@@ -50,16 +50,17 @@ class DSegmentMiddlePoint extends DSegmentElement {
 class DSegmentStart extends DSegmentElement {
   ref UMLStateInvariant stateInvariant;
   ref DSegment#start segment;
+  ref DStateSwitch#toSegmentStart incomingSwitch;
 }
 
 class DSegmentEnd extends DSegmentElement {
   ref DSegment#end segment;
-  ref DStateSwitch switch;
+  ref DStateSwitch#fromSegmentEnd switch;
 }
 
 class DStateSwitch extends DSegmentElement {
-  ref DSegmentEnd fromSegmentEnd;
-  ref DSegmentStart toSegmentStart;
+  ref DSegmentEnd#switch fromSegmentEnd;
+  ref DSegmentStart#incomingSwitch toSegmentStart;
   ref DSegment fromSegment;
   ref DSegment toSegment;
   ref DValueLine fromValueLine;

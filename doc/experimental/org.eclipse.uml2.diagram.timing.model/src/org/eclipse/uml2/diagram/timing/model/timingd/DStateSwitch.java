@@ -2,7 +2,7 @@
  * <copyright>
  * </copyright>
  *
- * $Id: DStateSwitch.java,v 1.1 2008/09/06 19:44:15 mgolubev Exp $
+ * $Id: DStateSwitch.java,v 1.2 2008/09/07 15:13:30 mgolubev Exp $
  */
 package org.eclipse.uml2.diagram.timing.model.timingd;
 
@@ -31,6 +31,7 @@ package org.eclipse.uml2.diagram.timing.model.timingd;
 public interface DStateSwitch extends DSegmentElement {
 	/**
 	 * Returns the value of the '<em><b>From Segment End</b></em>' reference.
+	 * It is bidirectional and its opposite is '{@link org.eclipse.uml2.diagram.timing.model.timingd.DSegmentEnd#getSwitch <em>Switch</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>From Segment End</em>' reference isn't clear,
@@ -40,7 +41,8 @@ public interface DStateSwitch extends DSegmentElement {
 	 * @return the value of the '<em>From Segment End</em>' reference.
 	 * @see #setFromSegmentEnd(DSegmentEnd)
 	 * @see org.eclipse.uml2.diagram.timing.model.timingd.TimingDPackage#getDStateSwitch_FromSegmentEnd()
-	 * @model
+	 * @see org.eclipse.uml2.diagram.timing.model.timingd.DSegmentEnd#getSwitch
+	 * @model opposite="switch"
 	 * @generated
 	 */
 	DSegmentEnd getFromSegmentEnd();
@@ -57,6 +59,7 @@ public interface DStateSwitch extends DSegmentElement {
 
 	/**
 	 * Returns the value of the '<em><b>To Segment Start</b></em>' reference.
+	 * It is bidirectional and its opposite is '{@link org.eclipse.uml2.diagram.timing.model.timingd.DSegmentStart#getIncomingSwitch <em>Incoming Switch</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>To Segment Start</em>' reference isn't clear,
@@ -66,7 +69,8 @@ public interface DStateSwitch extends DSegmentElement {
 	 * @return the value of the '<em>To Segment Start</em>' reference.
 	 * @see #setToSegmentStart(DSegmentStart)
 	 * @see org.eclipse.uml2.diagram.timing.model.timingd.TimingDPackage#getDStateSwitch_ToSegmentStart()
-	 * @model
+	 * @see org.eclipse.uml2.diagram.timing.model.timingd.DSegmentStart#getIncomingSwitch
+	 * @model opposite="incomingSwitch"
 	 * @generated
 	 */
 	DSegmentStart getToSegmentStart();

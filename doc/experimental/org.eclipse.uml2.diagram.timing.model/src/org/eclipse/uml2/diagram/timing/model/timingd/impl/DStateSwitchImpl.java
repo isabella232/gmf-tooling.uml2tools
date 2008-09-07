@@ -2,12 +2,13 @@
  * <copyright>
  * </copyright>
  *
- * $Id: DStateSwitchImpl.java,v 1.1 2008/09/06 19:44:14 mgolubev Exp $
+ * $Id: DStateSwitchImpl.java,v 1.2 2008/09/07 15:13:31 mgolubev Exp $
  */
 package org.eclipse.uml2.diagram.timing.model.timingd.impl;
 
 import org.eclipse.emf.common.notify.Notification;
 
+import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
@@ -149,11 +150,33 @@ public class DStateSwitchImpl extends DSegmentElementImpl implements DStateSwitc
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setFromSegmentEnd(DSegmentEnd newFromSegmentEnd) {
+	public NotificationChain basicSetFromSegmentEnd(DSegmentEnd newFromSegmentEnd, NotificationChain msgs) {
 		DSegmentEnd oldFromSegmentEnd = fromSegmentEnd;
 		fromSegmentEnd = newFromSegmentEnd;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, TimingDPackage.DSTATE_SWITCH__FROM_SEGMENT_END, oldFromSegmentEnd, fromSegmentEnd));
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, TimingDPackage.DSTATE_SWITCH__FROM_SEGMENT_END, oldFromSegmentEnd, newFromSegmentEnd);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setFromSegmentEnd(DSegmentEnd newFromSegmentEnd) {
+		if (newFromSegmentEnd != fromSegmentEnd) {
+			NotificationChain msgs = null;
+			if (fromSegmentEnd != null)
+				msgs = ((InternalEObject)fromSegmentEnd).eInverseRemove(this, TimingDPackage.DSEGMENT_END__SWITCH, DSegmentEnd.class, msgs);
+			if (newFromSegmentEnd != null)
+				msgs = ((InternalEObject)newFromSegmentEnd).eInverseAdd(this, TimingDPackage.DSEGMENT_END__SWITCH, DSegmentEnd.class, msgs);
+			msgs = basicSetFromSegmentEnd(newFromSegmentEnd, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, TimingDPackage.DSTATE_SWITCH__FROM_SEGMENT_END, newFromSegmentEnd, newFromSegmentEnd));
 	}
 
 	/**
@@ -187,11 +210,33 @@ public class DStateSwitchImpl extends DSegmentElementImpl implements DStateSwitc
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setToSegmentStart(DSegmentStart newToSegmentStart) {
+	public NotificationChain basicSetToSegmentStart(DSegmentStart newToSegmentStart, NotificationChain msgs) {
 		DSegmentStart oldToSegmentStart = toSegmentStart;
 		toSegmentStart = newToSegmentStart;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, TimingDPackage.DSTATE_SWITCH__TO_SEGMENT_START, oldToSegmentStart, toSegmentStart));
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, TimingDPackage.DSTATE_SWITCH__TO_SEGMENT_START, oldToSegmentStart, newToSegmentStart);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setToSegmentStart(DSegmentStart newToSegmentStart) {
+		if (newToSegmentStart != toSegmentStart) {
+			NotificationChain msgs = null;
+			if (toSegmentStart != null)
+				msgs = ((InternalEObject)toSegmentStart).eInverseRemove(this, TimingDPackage.DSEGMENT_START__INCOMING_SWITCH, DSegmentStart.class, msgs);
+			if (newToSegmentStart != null)
+				msgs = ((InternalEObject)newToSegmentStart).eInverseAdd(this, TimingDPackage.DSEGMENT_START__INCOMING_SWITCH, DSegmentStart.class, msgs);
+			msgs = basicSetToSegmentStart(newToSegmentStart, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, TimingDPackage.DSTATE_SWITCH__TO_SEGMENT_START, newToSegmentStart, newToSegmentStart));
 	}
 
 	/**
@@ -344,6 +389,42 @@ public class DStateSwitchImpl extends DSegmentElementImpl implements DStateSwitc
 		toValueLine = newToValueLine;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, TimingDPackage.DSTATE_SWITCH__TO_VALUE_LINE, oldToValueLine, toValueLine));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
+		switch (featureID) {
+			case TimingDPackage.DSTATE_SWITCH__FROM_SEGMENT_END:
+				if (fromSegmentEnd != null)
+					msgs = ((InternalEObject)fromSegmentEnd).eInverseRemove(this, TimingDPackage.DSEGMENT_END__SWITCH, DSegmentEnd.class, msgs);
+				return basicSetFromSegmentEnd((DSegmentEnd)otherEnd, msgs);
+			case TimingDPackage.DSTATE_SWITCH__TO_SEGMENT_START:
+				if (toSegmentStart != null)
+					msgs = ((InternalEObject)toSegmentStart).eInverseRemove(this, TimingDPackage.DSEGMENT_START__INCOMING_SWITCH, DSegmentStart.class, msgs);
+				return basicSetToSegmentStart((DSegmentStart)otherEnd, msgs);
+		}
+		return super.eInverseAdd(otherEnd, featureID, msgs);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
+		switch (featureID) {
+			case TimingDPackage.DSTATE_SWITCH__FROM_SEGMENT_END:
+				return basicSetFromSegmentEnd(null, msgs);
+			case TimingDPackage.DSTATE_SWITCH__TO_SEGMENT_START:
+				return basicSetToSegmentStart(null, msgs);
+		}
+		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
 
 	/**

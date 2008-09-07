@@ -2,7 +2,7 @@
  * <copyright>
  * </copyright>
  *
- * $Id: DSegmentStartItemProvider.java,v 1.2 2008/09/07 11:01:19 mgolubev Exp $
+ * $Id: DSegmentStartItemProvider.java,v 1.3 2008/09/07 15:13:27 mgolubev Exp $
  */
 package org.eclipse.uml2.diagram.timing.model.timingd.provider;
 
@@ -60,6 +60,7 @@ public class DSegmentStartItemProvider
 			super.getPropertyDescriptors(object);
 
 			addStateInvariantPropertyDescriptor(object);
+			addIncomingSwitchPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -78,6 +79,28 @@ public class DSegmentStartItemProvider
 				 getString("_UI_DSegmentStart_stateInvariant_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_DSegmentStart_stateInvariant_feature", "_UI_DSegmentStart_type"),
 				 TimingDPackage.Literals.DSEGMENT_START__STATE_INVARIANT,
+				 true,
+				 false,
+				 true,
+				 null,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Incoming Switch feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addIncomingSwitchPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_DSegmentStart_incomingSwitch_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_DSegmentStart_incomingSwitch_feature", "_UI_DSegmentStart_type"),
+				 TimingDPackage.Literals.DSEGMENT_START__INCOMING_SWITCH,
 				 true,
 				 false,
 				 true,
