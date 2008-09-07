@@ -50,7 +50,7 @@ public class DBlockAnchorHelper {
 	}
 	
 	public void setupLeftAnchor(SegmentAnchorImpl anchorData, Point global){
-		DSegmentEditPart segmentEP = anchorData.getOverlappingSegment();
+		DSegmentEditPart segmentEP = anchorData.getOverlappingSegmentEditPart();
 		if (segmentEP == null){
 			return;
 		}
@@ -70,9 +70,9 @@ public class DBlockAnchorHelper {
 			int nextCenterX = nextGlobalBounds.x + nextGlobalBounds.width / 2; 
 			if (nextCenterX <= global.x){
 				debugOut("Circle at the left found: " + nextCircle + "\n\t " + nextCenterX);
-				if (anchorData.getLeftAnchor() == null || bestCenterX < nextCenterX){
-					if (anchorData.getLeftAnchor() != null){
-						debugOut("And its better than: " + anchorData.getLeftAnchor() + "\n\t" + bestCenterX);
+				if (anchorData.getLeftAnchorEditPart() == null || bestCenterX < nextCenterX){
+					if (anchorData.getLeftAnchorEditPart() != null){
+						debugOut("And its better than: " + anchorData.getLeftAnchorEditPart() + "\n\t" + bestCenterX);
 					}
 					anchorData.setLeftAnchor(nextCircle);
 					bestCenterX = nextCenterX;
@@ -84,7 +84,7 @@ public class DBlockAnchorHelper {
 	}
 	
 	public void setupRightAnchor(SegmentAnchorImpl anchorData, Point global){
-		DSegmentEditPart segmentEP = anchorData.getOverlappingSegment();
+		DSegmentEditPart segmentEP = anchorData.getOverlappingSegmentEditPart();
 		if (segmentEP == null){
 			return;
 		}
@@ -104,9 +104,9 @@ public class DBlockAnchorHelper {
 			int nextCenterX = nextGlobalBounds.x + nextGlobalBounds.width / 2; 
 			if (nextCenterX >= global.x){
 				debugOut("Circle at the right found: " + nextCircle + "\n\t " + nextCenterX);
-				if (anchorData.getRightAnchor() == null || bestCenterX > nextCenterX){
-					if (anchorData.getRightAnchor() != null){
-						debugOut("And its better than: " + anchorData.getRightAnchor() + "\n\t" + bestCenterX);
+				if (anchorData.getRightAnchorEditPart() == null || bestCenterX > nextCenterX){
+					if (anchorData.getRightAnchorEditPart() != null){
+						debugOut("And its better than: " + anchorData.getRightAnchorEditPart() + "\n\t" + bestCenterX);
 					}
 					anchorData.setRightAnchor(nextCircle);
 					bestCenterX = nextCenterX;

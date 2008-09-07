@@ -1,7 +1,5 @@
 package org.eclipse.uml2.diagram.timing.edit.policies;
 
-import java.util.Map;
-
 import org.eclipse.draw2d.geometry.Point;
 import org.eclipse.gef.Request;
 
@@ -16,11 +14,11 @@ public class SetupAnchorsRequest extends Request {
 	public SetupAnchorsRequest(Request mainRequest){
 		super(TYPE);
 		myMainRequest = mainRequest;
+		setExtendedData(myMainRequest.getExtendedData());
 	}
 	
-	@SuppressWarnings("unchecked")
-	public Map getTargetData(){
-		return myMainRequest.getExtendedData();
+	public Request getMainRequest() {
+		return myMainRequest;
 	}
 	
 	public void setLocation(Point globalLocation){

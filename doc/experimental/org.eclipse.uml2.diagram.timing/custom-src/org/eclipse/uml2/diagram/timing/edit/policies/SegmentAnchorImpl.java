@@ -1,8 +1,10 @@
 package org.eclipse.uml2.diagram.timing.edit.policies;
 
 import org.eclipse.emf.ecore.EObject;
+import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.uml2.diagram.common.editparts.PrimaryShapeEditPart;
 import org.eclipse.uml2.diagram.timing.edit.parts.DSegmentEditPart;
+import org.eclipse.uml2.diagram.timing.model.timingd.DSegment;
 import org.eclipse.uml2.diagram.timing.model.timingd.DSegmentElement;
 
 
@@ -11,18 +13,42 @@ public class SegmentAnchorImpl implements SegmentAnchor {
 	private PrimaryShapeEditPart myLeftAnchor;
 	private PrimaryShapeEditPart myRightAnchor;
 	
-	public DSegmentEditPart getOverlappingSegment() {
+	public DSegmentEditPart getOverlappingSegmentEditPart() {
 		return myOverlappingSegment;
 	}
 	
-	public PrimaryShapeEditPart getLeftAnchor() {
+	public PrimaryShapeEditPart getLeftAnchorEditPart() {
 		return myLeftAnchor;
 	}
 	
-	public PrimaryShapeEditPart getRightAnchor() {
+	public PrimaryShapeEditPart getRightAnchorEditPart() {
 		return myRightAnchor;
 	}
 	
+	public DSegment getOverlappingSegment() {
+		return (DSegment) (myOverlappingSegment == null ? null : myOverlappingSegment.resolveSemanticElement());
+	}
+	
+	public DSegmentElement getLeftAnchor() {
+		return (DSegmentElement) (myLeftAnchor == null ? null : myLeftAnchor.resolveSemanticElement());
+	}
+	
+	public DSegmentElement getRightAnchor() {
+		return (DSegmentElement) (myRightAnchor == null ? null : myRightAnchor.resolveSemanticElement());
+	}
+	
+	public View getOverlappingSegmentView() {
+		return (View) (myOverlappingSegment == null ? null : myOverlappingSegment.getNotationView());
+	}
+	
+	public View getRightAnchorView() {
+		return (View) (myRightAnchor == null ? null : myRightAnchor.getNotationView());
+	}
+	
+	public View getLeftAnchorView() {
+		return (View) (myLeftAnchor == null ? null : myLeftAnchor.getNotationView());
+	}
+
 	public void setLeftAnchor(PrimaryShapeEditPart leftAnchor) {
 		myLeftAnchor = leftAnchor;
 	}
