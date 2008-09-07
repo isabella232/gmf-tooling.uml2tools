@@ -22,6 +22,7 @@ import org.eclipse.gmf.runtime.diagram.ui.requests.CreateViewAndElementRequest;
 import org.eclipse.gmf.runtime.emf.commands.core.command.CompositeTransactionalCommand;
 import org.eclipse.gmf.runtime.emf.core.util.EObjectAdapter;
 import org.eclipse.gmf.runtime.emf.type.core.requests.CreateElementRequest;
+import org.eclipse.gmf.runtime.notation.Edge;
 import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.uml2.diagram.common.editpolicies.AbstractPostCreateCommand;
 import org.eclipse.uml2.diagram.timing.draw2d.SegmentGeometry;
@@ -140,7 +141,7 @@ public class PostCreateSegmentEditPolicy extends AbstractEditPolicy {
 			createSwitch(segmentEndView, segmentStartView);
 		}
 		
-		protected void createSwitch(View fromView, View toView){
+		protected Edge createSwitch(View fromView, View toView){
 			if (false == fromView.getElement() instanceof DSegmentEnd){
 				throw new IllegalStateException("Switch source should be DSegmentEnd: " + fromView.getElement());
 			}
@@ -149,15 +150,11 @@ public class PostCreateSegmentEditPolicy extends AbstractEditPolicy {
 				throw new IllegalStateException("Switch destination should be DSegmentStart: " + toView.getElement());
 			}
 			
-			createSwitch(fromView, (DSegmentEnd)fromView.getElement(), toView, (DSegmentStart)toView.getElement());
+			return createSwitch(fromView, (DSegmentEnd)fromView.getElement(), toView, (DSegmentStart)toView.getElement());
 		}
 		
-		protected void createSwitch(View fromView, DSegmentEnd from, View toView, DSegmentStart to){
-			View srcSegmentView = (View) fromView.eContainer();
-			View destSegmentView = (View) toView.eContainer();
-			if (srcSegmentView == null || destSegmentView == null){
-				throw new IllegalStateException("Segment end is not inside segment");
-			}
+		protected Edge createSwitch(View fromView, DSegmentEnd from, View toView, DSegmentStart to){
+			return new CreateSwitchHelper(getPreferencesHint()).createSwitchEdge(fromView, from, toView, to);
 		}
 	}
 	
