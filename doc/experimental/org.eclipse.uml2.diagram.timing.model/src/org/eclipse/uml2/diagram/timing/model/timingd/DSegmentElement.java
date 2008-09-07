@@ -2,7 +2,7 @@
  * <copyright>
  * </copyright>
  *
- * $Id: DSegmentElement.java,v 1.1 2008/09/06 19:44:14 mgolubev Exp $
+ * $Id: DSegmentElement.java,v 1.2 2008/09/07 11:01:21 mgolubev Exp $
  */
 package org.eclipse.uml2.diagram.timing.model.timingd;
 
@@ -19,6 +19,7 @@ import org.eclipse.uml2.uml.OccurrenceSpecification;
  * The following features are supported:
  * <ul>
  *   <li>{@link org.eclipse.uml2.diagram.timing.model.timingd.DSegmentElement#getOccurrence <em>Occurrence</em>}</li>
+ *   <li>{@link org.eclipse.uml2.diagram.timing.model.timingd.DSegmentElement#getDebugId <em>Debug Id</em>}</li>
  * </ul>
  * </p>
  *
@@ -52,5 +53,31 @@ public interface DSegmentElement extends EObject {
 	 * @generated
 	 */
 	void setOccurrence(OccurrenceSpecification value);
+
+	/**
+	 * Returns the value of the '<em><b>Debug Id</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Debug Id</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Debug Id</em>' attribute.
+	 * @see #setDebugId(String)
+	 * @see org.eclipse.uml2.diagram.timing.model.timingd.TimingDPackage#getDSegmentElement_DebugId()
+	 * @model
+	 * @generated
+	 */
+	String getDebugId();
+
+	/**
+	 * Sets the value of the '{@link org.eclipse.uml2.diagram.timing.model.timingd.DSegmentElement#getDebugId <em>Debug Id</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Debug Id</em>' attribute.
+	 * @see #getDebugId()
+	 * @generated
+	 */
+	void setDebugId(String value);
 
 } // DSegmentElement

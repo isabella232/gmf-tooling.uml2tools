@@ -40,6 +40,7 @@ class DSegment {
 
 class DSegmentElement {
   ref UMLOccurrenceSpecification occurrence;
+  attr String debugId;
 }
 
 class DSegmentMiddlePoint extends DSegmentElement {

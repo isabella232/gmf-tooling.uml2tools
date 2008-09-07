@@ -41,6 +41,7 @@
     </genClasses>
     <genClasses ecoreClass="timing-diagram.ecore#//DSegmentElement">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference timing-diagram.ecore#//DSegmentElement/occurrence"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute timing-diagram.ecore#//DSegmentElement/debugId"/>
     </genClasses>
     <genClasses ecoreClass="timing-diagram.ecore#//DSegmentMiddlePoint">
       <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference timing-diagram.ecore#//DSegmentMiddlePoint/segment"/>

@@ -2,7 +2,7 @@
  * <copyright>
  * </copyright>
  *
- * $Id: DSegmentStartItemProvider.java,v 1.1 2008/09/06 19:46:49 mgolubev Exp $
+ * $Id: DSegmentStartItemProvider.java,v 1.2 2008/09/07 11:01:19 mgolubev Exp $
  */
 package org.eclipse.uml2.diagram.timing.model.timingd.provider;
 
@@ -21,6 +21,7 @@ import org.eclipse.emf.edit.provider.IItemPropertySource;
 import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
 import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
 
+import org.eclipse.uml2.diagram.timing.model.timingd.DSegmentStart;
 import org.eclipse.uml2.diagram.timing.model.timingd.TimingDPackage;
 
 /**
@@ -104,7 +105,10 @@ public class DSegmentStartItemProvider
 	 */
 	@Override
 	public String getText(Object object) {
-		return getString("_UI_DSegmentStart_type");
+		String label = ((DSegmentStart)object).getDebugId();
+		return label == null || label.length() == 0 ?
+			getString("_UI_DSegmentStart_type") :
+			getString("_UI_DSegmentStart_type") + " " + label;
 	}
 
 	/**

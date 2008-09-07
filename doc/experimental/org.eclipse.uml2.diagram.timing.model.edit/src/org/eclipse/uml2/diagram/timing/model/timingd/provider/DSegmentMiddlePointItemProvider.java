@@ -2,7 +2,7 @@
  * <copyright>
  * </copyright>
  *
- * $Id: DSegmentMiddlePointItemProvider.java,v 1.1 2008/09/06 19:46:49 mgolubev Exp $
+ * $Id: DSegmentMiddlePointItemProvider.java,v 1.2 2008/09/07 11:01:19 mgolubev Exp $
  */
 package org.eclipse.uml2.diagram.timing.model.timingd.provider;
 
@@ -19,6 +19,7 @@ import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.IItemPropertySource;
 import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
 import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
+import org.eclipse.uml2.diagram.timing.model.timingd.DSegmentMiddlePoint;
 
 /**
  * This is the item provider adapter for a {@link org.eclipse.uml2.diagram.timing.model.timingd.DSegmentMiddlePoint} object.
@@ -78,7 +79,10 @@ public class DSegmentMiddlePointItemProvider
 	 */
 	@Override
 	public String getText(Object object) {
-		return getString("_UI_DSegmentMiddlePoint_type");
+		String label = ((DSegmentMiddlePoint)object).getDebugId();
+		return label == null || label.length() == 0 ?
+			getString("_UI_DSegmentMiddlePoint_type") :
+			getString("_UI_DSegmentMiddlePoint_type") + " " + label;
 	}
 
 	/**

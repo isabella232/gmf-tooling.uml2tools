@@ -2,7 +2,7 @@
  * <copyright>
  * </copyright>
  *
- * $Id: TimingDPackage.java,v 1.1 2008/09/06 19:44:15 mgolubev Exp $
+ * $Id: TimingDPackage.java,v 1.2 2008/09/07 11:01:21 mgolubev Exp $
  */
 package org.eclipse.uml2.diagram.timing.model.timingd;
 
@@ -363,13 +363,22 @@ public interface TimingDPackage extends EPackage {
 	int DSEGMENT_ELEMENT__OCCURRENCE = 0;
 
 	/**
+	 * The feature id for the '<em><b>Debug Id</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DSEGMENT_ELEMENT__DEBUG_ID = 1;
+
+	/**
 	 * The number of structural features of the '<em>DSegment Element</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int DSEGMENT_ELEMENT_FEATURE_COUNT = 1;
+	int DSEGMENT_ELEMENT_FEATURE_COUNT = 2;
 
 	/**
 	 * The meta object id for the '{@link org.eclipse.uml2.diagram.timing.model.timingd.impl.DSegmentMiddlePointImpl <em>DSegment Middle Point</em>}' class.
@@ -389,6 +398,15 @@ public interface TimingDPackage extends EPackage {
 	 * @ordered
 	 */
 	int DSEGMENT_MIDDLE_POINT__OCCURRENCE = DSEGMENT_ELEMENT__OCCURRENCE;
+
+	/**
+	 * The feature id for the '<em><b>Debug Id</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DSEGMENT_MIDDLE_POINT__DEBUG_ID = DSEGMENT_ELEMENT__DEBUG_ID;
 
 	/**
 	 * The feature id for the '<em><b>Segment</b></em>' container reference.
@@ -426,6 +444,15 @@ public interface TimingDPackage extends EPackage {
 	 * @ordered
 	 */
 	int DSEGMENT_START__OCCURRENCE = DSEGMENT_ELEMENT__OCCURRENCE;
+
+	/**
+	 * The feature id for the '<em><b>Debug Id</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DSEGMENT_START__DEBUG_ID = DSEGMENT_ELEMENT__DEBUG_ID;
 
 	/**
 	 * The feature id for the '<em><b>State Invariant</b></em>' reference.
@@ -474,6 +501,15 @@ public interface TimingDPackage extends EPackage {
 	int DSEGMENT_END__OCCURRENCE = DSEGMENT_ELEMENT__OCCURRENCE;
 
 	/**
+	 * The feature id for the '<em><b>Debug Id</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DSEGMENT_END__DEBUG_ID = DSEGMENT_ELEMENT__DEBUG_ID;
+
+	/**
 	 * The feature id for the '<em><b>Segment</b></em>' container reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -518,6 +554,15 @@ public interface TimingDPackage extends EPackage {
 	 * @ordered
 	 */
 	int DSTATE_SWITCH__OCCURRENCE = DSEGMENT_ELEMENT__OCCURRENCE;
+
+	/**
+	 * The feature id for the '<em><b>Debug Id</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DSTATE_SWITCH__DEBUG_ID = DSEGMENT_ELEMENT__DEBUG_ID;
 
 	/**
 	 * The feature id for the '<em><b>From Segment End</b></em>' reference.
@@ -1074,6 +1119,17 @@ public interface TimingDPackage extends EPackage {
 	EReference getDSegmentElement_Occurrence();
 
 	/**
+	 * Returns the meta object for the attribute '{@link org.eclipse.uml2.diagram.timing.model.timingd.DSegmentElement#getDebugId <em>Debug Id</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Debug Id</em>'.
+	 * @see org.eclipse.uml2.diagram.timing.model.timingd.DSegmentElement#getDebugId()
+	 * @see #getDSegmentElement()
+	 * @generated
+	 */
+	EAttribute getDSegmentElement_DebugId();
+
+	/**
 	 * Returns the meta object for class '{@link org.eclipse.uml2.diagram.timing.model.timingd.DSegmentMiddlePoint <em>DSegment Middle Point</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1621,6 +1677,14 @@ public interface TimingDPackage extends EPackage {
 		 * @generated
 		 */
 		EReference DSEGMENT_ELEMENT__OCCURRENCE = eINSTANCE.getDSegmentElement_Occurrence();
+
+		/**
+		 * The meta object literal for the '<em><b>Debug Id</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute DSEGMENT_ELEMENT__DEBUG_ID = eINSTANCE.getDSegmentElement_DebugId();
 
 		/**
 		 * The meta object literal for the '{@link org.eclipse.uml2.diagram.timing.model.timingd.impl.DSegmentMiddlePointImpl <em>DSegment Middle Point</em>}' class.

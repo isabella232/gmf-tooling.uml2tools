@@ -2,7 +2,7 @@
  * <copyright>
  * </copyright>
  *
- * $Id: DSegmentElementItemProvider.java,v 1.1 2008/09/06 19:46:49 mgolubev Exp $
+ * $Id: DSegmentElementItemProvider.java,v 1.2 2008/09/07 11:01:19 mgolubev Exp $
  */
 package org.eclipse.uml2.diagram.timing.model.timingd.provider;
 
@@ -22,8 +22,11 @@ import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.IItemPropertySource;
 import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
 import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
+import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ItemProviderAdapter;
 
+import org.eclipse.emf.edit.provider.ViewerNotification;
+import org.eclipse.uml2.diagram.timing.model.timingd.DSegmentElement;
 import org.eclipse.uml2.diagram.timing.model.timingd.TimingDPackage;
 
 /**
@@ -62,6 +65,7 @@ public class DSegmentElementItemProvider
 			super.getPropertyDescriptors(object);
 
 			addOccurrencePropertyDescriptor(object);
+			addDebugIdPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -89,6 +93,28 @@ public class DSegmentElementItemProvider
 	}
 
 	/**
+	 * This adds a property descriptor for the Debug Id feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addDebugIdPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_DSegmentElement_debugId_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_DSegmentElement_debugId_feature", "_UI_DSegmentElement_type"),
+				 TimingDPackage.Literals.DSEGMENT_ELEMENT__DEBUG_ID,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
 	 * This returns DSegmentElement.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -107,7 +133,10 @@ public class DSegmentElementItemProvider
 	 */
 	@Override
 	public String getText(Object object) {
-		return getString("_UI_DSegmentElement_type");
+		String label = ((DSegmentElement)object).getDebugId();
+		return label == null || label.length() == 0 ?
+			getString("_UI_DSegmentElement_type") :
+			getString("_UI_DSegmentElement_type") + " " + label;
 	}
 
 	/**
@@ -120,6 +149,12 @@ public class DSegmentElementItemProvider
 	@Override
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
+
+		switch (notification.getFeatureID(DSegmentElement.class)) {
+			case TimingDPackage.DSEGMENT_ELEMENT__DEBUG_ID:
+				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
+				return;
+		}
 		super.notifyChanged(notification);
 	}
 
