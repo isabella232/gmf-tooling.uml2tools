@@ -11,13 +11,9 @@ import org.eclipse.gmf.runtime.notation.Diagram;
 import org.eclipse.gmf.runtime.notation.Edge;
 import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.uml2.diagram.timing.edit.parts.DStateSwitchEditPart;
-import org.eclipse.uml2.diagram.timing.model.timingd.DBlock;
-import org.eclipse.uml2.diagram.timing.model.timingd.DSegment;
 import org.eclipse.uml2.diagram.timing.model.timingd.DSegmentEnd;
 import org.eclipse.uml2.diagram.timing.model.timingd.DSegmentStart;
 import org.eclipse.uml2.diagram.timing.model.timingd.DStateSwitch;
-import org.eclipse.uml2.diagram.timing.model.timingd.DValueLine;
-import org.eclipse.uml2.diagram.timing.model.timingd.TimingDFactory;
 import org.eclipse.uml2.diagram.timing.part.TimingDVisualIDRegistry;
 import org.eclipse.uml2.diagram.timing.providers.TimingDElementTypes;
 
@@ -36,7 +32,7 @@ public class CreateSwitchHelper {
 			throw new IllegalStateException("Segment end is not inside segment");
 		}
 		
-		DStateSwitch newSwitch = createSemanticSwitch(from, to);
+		DStateSwitch newSwitch = SemanticHelper.createSemanticSwitch(from, to);
 		Edge edge = createEdgeWithService(newSwitch, fromView, toView, DStateSwitchEditPart.VISUAL_ID);
 		return edge;
 	}
@@ -55,31 +51,6 @@ public class CreateSwitchHelper {
 			edge.setTarget(to);
 		}
 		return edge;
-	}
-	
-	public DStateSwitch createSemanticSwitch(DSegmentEnd from, DSegmentStart to){
-		DSegment fromSegment = from.getSegment();
-		DSegment toSegment = to.getSegment();
-		
-		DValueLine fromState = fromSegment.getState();
-		DValueLine toState = toSegment.getState();
-		
-		DBlock block = fromState.getBlock(); 
-		if (block != toState.getBlock()){
-			throw new IllegalStateException("Switch can't cross the block boundaries: from: " + from + ", to: " + to);
-		}
-		
-		DStateSwitch newSwitch = TimingDFactory.eINSTANCE.createDStateSwitch();
-		newSwitch.setFromSegment(fromSegment);
-		newSwitch.setFromSegmentEnd(from);
-		newSwitch.setFromValueLine(fromState);
-		newSwitch.setToSegment(toSegment);
-		newSwitch.setToSegmentStart(to);
-		newSwitch.setToValueLine(toState);
-		
-		block.getSwitches().add(newSwitch);
-		
-		return newSwitch;
 	}
 	
 	private static class ElementTypeAwareAdapter extends EObjectAdapter {

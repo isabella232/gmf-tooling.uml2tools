@@ -48,7 +48,7 @@ public class SegmentAnchorImpl implements SegmentAnchor {
 	}
 	
 	public Rectangle getOverlappingSegmentGlobalBounds() {
-		return mySegmentGlobalBounds;
+		return mySegmentGlobalBounds == null ? null : mySegmentGlobalBounds.getCopy();
 	}
 	
 	public View getLeftAnchorView() {

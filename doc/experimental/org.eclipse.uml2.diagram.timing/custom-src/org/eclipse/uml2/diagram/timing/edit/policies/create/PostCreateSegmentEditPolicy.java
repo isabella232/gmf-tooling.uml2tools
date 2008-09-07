@@ -6,7 +6,6 @@ import org.eclipse.core.runtime.IProgressMonitor;
 import org.eclipse.draw2d.geometry.Dimension;
 import org.eclipse.draw2d.geometry.Point;
 import org.eclipse.draw2d.geometry.Rectangle;
-import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.transaction.TransactionalEditingDomain;
 import org.eclipse.gef.Request;
 import org.eclipse.gef.commands.Command;
@@ -23,14 +22,18 @@ import org.eclipse.gmf.runtime.emf.commands.core.command.CompositeTransactionalC
 import org.eclipse.gmf.runtime.emf.core.util.EObjectAdapter;
 import org.eclipse.gmf.runtime.emf.type.core.requests.CreateElementRequest;
 import org.eclipse.gmf.runtime.notation.Edge;
+import org.eclipse.gmf.runtime.notation.Node;
 import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.uml2.diagram.common.editpolicies.AbstractPostCreateCommand;
 import org.eclipse.uml2.diagram.timing.draw2d.SegmentGeometry;
+import org.eclipse.uml2.diagram.timing.edit.parts.DSegmentEndEditPart;
 import org.eclipse.uml2.diagram.timing.edit.parts.DSegmentStartEditPart;
+import org.eclipse.uml2.diagram.timing.edit.parts.DStateSwitchEditPart;
 import org.eclipse.uml2.diagram.timing.edit.policies.SegmentAnchor;
 import org.eclipse.uml2.diagram.timing.model.timingd.DSegment;
 import org.eclipse.uml2.diagram.timing.model.timingd.DSegmentEnd;
 import org.eclipse.uml2.diagram.timing.model.timingd.DSegmentStart;
+import org.eclipse.uml2.diagram.timing.model.timingd.DStateSwitch;
 import org.eclipse.uml2.diagram.timing.model.timingd.TimingDFactory;
 import org.eclipse.uml2.diagram.timing.part.TimingDVisualIDRegistry;
 import org.eclipse.uml2.diagram.timing.providers.TimingDElementTypes;
@@ -85,16 +88,15 @@ public class PostCreateSegmentEditPolicy extends AbstractEditPolicy {
 			System.err.println("Size: " + getCvaeReq().getSize());
 
 			View createdView = getCreatedView();
-			EObject createdEntity = getCreatedEntity();
+			DSegment createdSegment = getCreatedSegment();
 			
 			System.err.println("Created View: " + createdView);
-			System.err.println("Created Segment: " + createdEntity);
+			System.err.println("Created Segment: " + createdSegment);
 			
-			DSegment segment = (DSegment)createdEntity;
-			DSegmentStart segmentStart = segment.getStart();
+			DSegmentStart segmentStart = createdSegment.getStart();
 			if (segmentStart == null){
 				segmentStart = TimingDFactory.eINSTANCE.createDSegmentStart();
-				segment.setStart(segmentStart);
+				createdSegment.setStart(segmentStart);
 			}
 			
 			View segmentStartView = findChildByType(createdView, DSegmentStartEditPart.VISUAL_ID);
@@ -117,13 +119,40 @@ public class PostCreateSegmentEditPolicy extends AbstractEditPolicy {
 				return;
 			}
 			
-//			if (oldSegment.isClosedSegment()){
-//				DSegmentEnd oldEnd = oldSegment.getEnd();
-//				View oldEndView = findChildByType(oldSegmentView, DSegmentEndEditPart.VISUAL_ID);
-//				
-//			}
-//			
-			if (oldSegment.isClosedSegment() || anchor.getRightAnchor() != null){
+			if (oldSegment.isClosedSegment()){
+				DSegmentEnd oldEnd = oldSegment.getEnd();
+				Node oldEndView = (Node)findChildByType(oldSegmentView, DSegmentEndEditPart.VISUAL_ID);
+				DStateSwitch oldSwitch = oldEnd.getSwitch();
+				Edge oldSwitchEdge = findOutgoingEdge(oldEndView, DStateSwitchEditPart.VISUAL_ID, oldSwitch);
+				
+				//1) complete just created segment
+				DSegment newSegment = getCreatedSegment();
+				DSegmentEnd newSegmentEnd = TimingDFactory.eINSTANCE.createDSegmentEnd();
+				newSegment.setEnd(newSegmentEnd);
+				View newSegmentEndView = ViewService.getInstance().createNode(new EObjectAdapter(newSegmentEnd), getCreatedView(), null, ViewUtil.APPEND, getPreferencesHint());
+				
+				SemanticHelper.reconnectSource(oldSwitch, newSegmentEnd);
+				oldSwitchEdge.setSource(newSegmentEndView);
+				
+				//2) now old end is free -- connect it to the new start
+				if (oldEnd.getSwitch() != null){
+					throw new IllegalStateException("How could it happen?");
+				}	
+				
+				Edge newSwitch = createSwitch(oldEndView, segmentStartView);
+				if (newSwitch == null){
+					throw new IllegalStateException("Can't create switch between: " + oldEndView + ", and " + segmentStartView);
+				}
+				
+				//3) Shrink old segment
+				Rectangle oldBounds = anchor.getOverlappingSegmentGlobalBounds();
+				Point splitLocation = getCvaeReq().getLocation();
+				Dimension diff = oldBounds.getTopRight().getDifference(splitLocation);
+				setSize(oldSegmentView, new Dimension(oldBounds.getSize().width - diff.width + 2 * SegmentGeometry.CIRCLE_RADIUS, oldBounds.height));
+				
+				//4) Shrink new segment
+				setSize(getCreatedView(), new Dimension(diff.width, -1));
+				
 				return;
 			}
 			
@@ -155,6 +184,10 @@ public class PostCreateSegmentEditPolicy extends AbstractEditPolicy {
 		
 		protected Edge createSwitch(View fromView, DSegmentEnd from, View toView, DSegmentStart to){
 			return new CreateSwitchHelper(getPreferencesHint()).createSwitchEdge(fromView, from, toView, to);
+		}
+		
+		private DSegment getCreatedSegment(){
+			return (DSegment)getCreatedEntity();
 		}
 	}
 	
