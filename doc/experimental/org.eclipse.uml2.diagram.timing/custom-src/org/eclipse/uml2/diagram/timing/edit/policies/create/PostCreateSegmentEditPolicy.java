@@ -4,6 +4,8 @@ import org.eclipse.core.commands.ExecutionException;
 import org.eclipse.core.runtime.IAdaptable;
 import org.eclipse.core.runtime.IProgressMonitor;
 import org.eclipse.draw2d.geometry.Dimension;
+import org.eclipse.draw2d.geometry.Point;
+import org.eclipse.draw2d.geometry.Rectangle;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.transaction.TransactionalEditingDomain;
 import org.eclipse.gef.Request;
@@ -22,7 +24,7 @@ import org.eclipse.gmf.runtime.emf.core.util.EObjectAdapter;
 import org.eclipse.gmf.runtime.emf.type.core.requests.CreateElementRequest;
 import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.uml2.diagram.common.editpolicies.AbstractPostCreateCommand;
-import org.eclipse.uml2.diagram.timing.edit.parts.DSegmentEditPart;
+import org.eclipse.uml2.diagram.timing.draw2d.SegmentGeometry;
 import org.eclipse.uml2.diagram.timing.edit.parts.DSegmentStartEditPart;
 import org.eclipse.uml2.diagram.timing.edit.policies.SegmentAnchor;
 import org.eclipse.uml2.diagram.timing.model.timingd.DSegment;
@@ -34,6 +36,8 @@ import org.eclipse.uml2.diagram.timing.providers.TimingDElementTypes;
 
 
 public class PostCreateSegmentEditPolicy extends AbstractEditPolicy {
+	public static final String ROLE = PostCreateSegmentEditPolicy.class.getName() + ":Role";
+	
 	@Override
 	public Command getCommand(Request request) {
 		if (understandsRequest(request)){
@@ -118,9 +122,14 @@ public class PostCreateSegmentEditPolicy extends AbstractEditPolicy {
 			
 			DSegmentEnd segmentEnd = TimingDFactory.eINSTANCE.createDSegmentEnd();
 			oldSegment.setEnd(segmentEnd);
-			View segmentEndView = ViewService.getInstance().createNode(new EObjectAdapter(segmentEnd), oldSegmentView, null, ViewUtil.APPEND, getPreferencesHint());
+			ViewService.getInstance().createNode(new EObjectAdapter(segmentEnd), oldSegmentView, null, ViewUtil.APPEND, getPreferencesHint());
 			
-			setSize(oldSegmentView, new Dimension(200, -1));
+			Rectangle oldBounds = anchor.getOverlappingSegmentGlobalBounds();
+			Point splitLocation = getCvaeReq().getLocation();
+			Dimension completedSize = splitLocation.getDifference(oldBounds.getTopLeft());
+			completedSize.height = oldBounds.height;
+			completedSize.width += 2 * SegmentGeometry.CIRCLE_RADIUS;
+			setSize(oldSegmentView, completedSize);
 		}
 	}
 	
