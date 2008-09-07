@@ -11,7 +11,7 @@ import org.eclipse.uml2.diagram.timing.edit.parts.DBlockEditPart;
 
 public class SetupAnchorsEditPolicy extends AbstractEditPolicy {
 	public static final String ROLE = SetupAnchorsEditPolicy.class.getSimpleName() + ":Role";
-	private DBlockAnchorHelper myHelper;
+	private SegmentAnchorHelper myHelper;
 	
 	@Override
 	public void activate() {
@@ -39,9 +39,9 @@ public class SetupAnchorsEditPolicy extends AbstractEditPolicy {
 		return null;
 	}
 	
-	protected DBlockAnchorHelper createHelper(){
+	protected SegmentAnchorHelper createHelper(){
 		DBlockEditPart blockEP = findBlockEditPart(getHost());
-		return blockEP == null ? null : new DBlockAnchorHelper(blockEP);
+		return blockEP == null ? null : new SegmentAnchorHelper(blockEP);
 	}
 	
 	private DBlockEditPart findBlockEditPart(EditPart start){

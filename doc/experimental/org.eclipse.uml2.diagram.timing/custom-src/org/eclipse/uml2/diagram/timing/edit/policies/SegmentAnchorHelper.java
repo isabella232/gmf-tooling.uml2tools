@@ -16,10 +16,10 @@ import org.eclipse.uml2.diagram.timing.edit.parts.DSegmentStartEditPart;
 import org.eclipse.uml2.diagram.timing.edit.parts.DValueLineEditPart;
 
 
-public class DBlockAnchorHelper {
+public class SegmentAnchorHelper {
 	private final DBlockEditPart myBlockEP;
 
-	public DBlockAnchorHelper(DBlockEditPart blockEP){
+	public SegmentAnchorHelper(DBlockEditPart blockEP){
 		myBlockEP = blockEP;
 	}
 	
