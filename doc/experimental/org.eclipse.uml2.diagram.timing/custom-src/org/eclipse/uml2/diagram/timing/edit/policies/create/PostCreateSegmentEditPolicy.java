@@ -83,15 +83,15 @@ public class PostCreateSegmentEditPolicy extends AbstractEditPolicy {
 		@Override
 		protected CommandResult doExecuteWithResult(IProgressMonitor monitor, IAdaptable info) throws ExecutionException {
 			SegmentAnchor anchor = SegmentAnchor.Util.getAnchor(getCreateRequest());
-			System.err.println("Anchor: " + anchor);
-			System.err.println("Location: " + getRequestLocation());
-			System.err.println("Size: " + getRequestSize());
+			//System.err.println("Anchor: " + anchor);
+			//System.err.println("Location: " + getRequestLocation());
+			//System.err.println("Size: " + getRequestSize());
 
 			View createdView = getCreatedView();
 			DSegment createdSegment = getCreatedSegment();
 			
-			System.err.println("Created View: " + createdView);
-			System.err.println("Created Segment: " + createdSegment);
+			//System.err.println("Created View: " + createdView);
+			//System.err.println("Created Segment: " + createdSegment);
 			
 			DSegmentStart segmentStart = createdSegment.getStart();
 			if (segmentStart == null){
@@ -166,6 +166,10 @@ public class PostCreateSegmentEditPolicy extends AbstractEditPolicy {
 			completedSize.height = oldBounds.height;
 			completedSize.width += 2 * SegmentGeometry.CIRCLE_RADIUS;
 			setSize(oldSegmentView, completedSize);
+			
+			Dimension newSegmentSize = splitLocation.getDifference(oldBounds.getTopRight()).getNegated();
+			newSegmentSize.height = oldBounds.height;
+			setSize(getCreatedView(), newSegmentSize);
 			
 			createSwitch(segmentEndView, segmentStartView);
 		}
