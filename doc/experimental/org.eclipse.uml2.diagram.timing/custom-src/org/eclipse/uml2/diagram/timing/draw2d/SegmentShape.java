@@ -9,11 +9,7 @@ import org.eclipse.gef.EditPartViewer;
 import org.eclipse.uml2.diagram.timing.draw2d.layout.SegmentLayout;
 
 
-public class SegmentShape extends RectangleFigure {
-	public static final int CIRCLE_RADIUS = 8;
-	public static final int LINE_HALF_HEIGHT = 5;
-	public static final int LEDGE = CIRCLE_RADIUS - LINE_HALF_HEIGHT;
-	
+public class SegmentShape extends RectangleFigure implements SegmentGeometry {
 	private SegmentLayout mySegmentLayout;
 	
 	public SegmentShape(){
