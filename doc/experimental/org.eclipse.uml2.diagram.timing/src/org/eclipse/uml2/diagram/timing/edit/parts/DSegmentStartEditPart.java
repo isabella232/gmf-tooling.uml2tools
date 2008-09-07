@@ -70,7 +70,7 @@ public class DSegmentStartEditPart extends ShapeNodeEditPart implements PrimaryS
 		// removeEditPolicy(org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles.CONNECTION_HANDLES_ROLE);
 
 	}
-	
+
 	/**
 	 * @generated
 	 */

@@ -61,7 +61,7 @@ public class DSegmentEndEditPart extends ShapeNodeEditPart implements PrimarySha
 	public DSegmentEndEditPart(View view) {
 		super(view);
 	}
-	
+
 	/**
 	 * @generated
 	 */

@@ -15,10 +15,11 @@ import org.eclipse.uml2.diagram.timing.edit.policies.DStateSwitchItemSemanticEdi
  */
 
 public class DStateSwitchEditPart extends ConnectionNodeEditPart implements ITreeBranchEditPart {
+
 	@Override
 	protected void setForegroundColor(Color color) {
-//		ignore -- we know better
-//		super.setForegroundColor(color);
+		//		ignore -- we know better
+		//		super.setForegroundColor(color);
 	}
 
 	/**
