@@ -37,6 +37,7 @@ import org.eclipse.uml2.diagram.timing.edit.policies.DBlockAnchorHelper;
 import org.eclipse.uml2.diagram.timing.edit.policies.DValueLineCanonicalEditPolicy;
 import org.eclipse.uml2.diagram.timing.edit.policies.DValueLineItemSemanticEditPolicy;
 import org.eclipse.uml2.diagram.timing.edit.policies.SetupAnchorsEditPolicy;
+import org.eclipse.uml2.diagram.timing.edit.policies.create.PostCreateSegmentEditPolicy;
 import org.eclipse.uml2.diagram.timing.part.TimingDDiagramUpdater;
 import org.eclipse.uml2.diagram.timing.part.TimingDVisualIDRegistry;
 import org.eclipse.uml2.diagram.timing.providers.TimingDElementTypes;
@@ -83,6 +84,7 @@ public class DValueLineEditPart extends ShapeNodeEditPart implements PrimaryShap
 		installEditPolicy(EditPolicyRoles.CANONICAL_ROLE, new DValueLineCanonicalEditPolicy());
 		installEditPolicy(EditPolicy.LAYOUT_ROLE, createLayoutEditPolicy());
 		installEditPolicy(SetupAnchorsEditPolicy.ROLE, new SetupAnchorsEditPolicy());
+		installEditPolicy(PostCreateSegmentEditPolicy.ROLE, new PostCreateSegmentEditPolicy());
 		// XXX need an SCR to runtime to have another abstract superclass that would let children add reasonable editpolicies
 		// removeEditPolicy(org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles.CONNECTION_HANDLES_ROLE);
 
