@@ -3,6 +3,7 @@ package org.eclipse.uml2.diagram.timing.edit.policies.create;
 import org.eclipse.core.commands.ExecutionException;
 import org.eclipse.core.runtime.IAdaptable;
 import org.eclipse.core.runtime.IProgressMonitor;
+import org.eclipse.draw2d.geometry.Dimension;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.transaction.TransactionalEditingDomain;
 import org.eclipse.gef.Request;
@@ -21,9 +22,11 @@ import org.eclipse.gmf.runtime.emf.core.util.EObjectAdapter;
 import org.eclipse.gmf.runtime.emf.type.core.requests.CreateElementRequest;
 import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.uml2.diagram.common.editpolicies.AbstractPostCreateCommand;
+import org.eclipse.uml2.diagram.timing.edit.parts.DSegmentEditPart;
 import org.eclipse.uml2.diagram.timing.edit.parts.DSegmentStartEditPart;
 import org.eclipse.uml2.diagram.timing.edit.policies.SegmentAnchor;
 import org.eclipse.uml2.diagram.timing.model.timingd.DSegment;
+import org.eclipse.uml2.diagram.timing.model.timingd.DSegmentEnd;
 import org.eclipse.uml2.diagram.timing.model.timingd.DSegmentStart;
 import org.eclipse.uml2.diagram.timing.model.timingd.TimingDFactory;
 import org.eclipse.uml2.diagram.timing.part.TimingDVisualIDRegistry;
@@ -94,7 +97,30 @@ public class PostCreateSegmentEditPolicy extends AbstractEditPolicy {
 				segmentStartView = ViewService.getInstance().createNode(new EObjectAdapter(segmentStart), createdView, null, ViewUtil.APPEND, getPreferencesHint());
 			}
 			
+			completeOverlappingSegment(anchor);
+			
 			return CommandResult.newOKCommandResult();
+		}
+		
+		private void completeOverlappingSegment(SegmentAnchor anchor){
+			if (anchor == null){
+				return;
+			}
+			DSegment oldSegment = anchor.getOverlappingSegment();
+			View oldSegmentView = anchor.getOverlappingSegmentView();
+			if (oldSegment == null || oldSegmentView == null){
+				return;
+			}
+			
+			if (oldSegment.isClosedSegment() || anchor.getRightAnchor() != null){
+				return;
+			}
+			
+			DSegmentEnd segmentEnd = TimingDFactory.eINSTANCE.createDSegmentEnd();
+			oldSegment.setEnd(segmentEnd);
+			View segmentEndView = ViewService.getInstance().createNode(new EObjectAdapter(segmentEnd), oldSegmentView, null, ViewUtil.APPEND, getPreferencesHint());
+			
+			setSize(oldSegmentView, new Dimension(200, -1));
 		}
 	}
 	
