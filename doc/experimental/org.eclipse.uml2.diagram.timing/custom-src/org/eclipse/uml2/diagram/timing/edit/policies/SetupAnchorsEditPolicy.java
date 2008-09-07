@@ -66,10 +66,9 @@ public class SetupAnchorsEditPolicy extends AbstractEditPolicy {
 			myAnchor = anchor;
 		}
 		
-		@SuppressWarnings("unchecked")
 		@Override
 		public void execute() {
-			myRequest.getTargetData().put(SegmentAnchor.KEY_FOR_REQUEST_PARAMETERS, myAnchor);
+			SegmentAnchor.Util.putAnchor(myAnchor, myRequest);
 		}
 	}
 	
