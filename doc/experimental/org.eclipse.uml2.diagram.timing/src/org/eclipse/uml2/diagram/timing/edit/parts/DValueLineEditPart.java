@@ -311,6 +311,8 @@ public class DValueLineEditPart extends ShapeNodeEditPart implements PrimaryShap
 
 			this.setViewer(getViewer());
 
+			this.setOutline(false);
+
 		}
 
 		/**

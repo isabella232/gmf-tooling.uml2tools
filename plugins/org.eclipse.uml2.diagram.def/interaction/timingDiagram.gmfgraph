@@ -101,6 +101,9 @@
         <attributes
             name="viewer"
             value="getViewer()"/>
+        <attributes
+            name="outline"
+            value="false"/>
         <customChildren
             accessor="getNameLabel">
           <typedFigure
