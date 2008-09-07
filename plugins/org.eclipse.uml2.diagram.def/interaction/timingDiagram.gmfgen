@@ -389,9 +389,9 @@
         <childMetaFeature
             href="../../../plugin/org.eclipse.uml2.diagram.timing.model/model/timing-diagram.genmodel#//timingd/DBlock/switches"/>
         <sourceMetaFeature
-            href="../../../plugin/org.eclipse.uml2.diagram.timing.model/model/timing-diagram.genmodel#//timingd/DStateSwitch/fromSegment"/>
+            href="../../../plugin/org.eclipse.uml2.diagram.timing.model/model/timing-diagram.genmodel#//timingd/DStateSwitch/fromSegmentEnd"/>
         <targetMetaFeature
-            href="../../../plugin/org.eclipse.uml2.diagram.timing.model/model/timing-diagram.genmodel#//timingd/DStateSwitch/toValueLine"/>
+            href="../../../plugin/org.eclipse.uml2.diagram.timing.model/model/timing-diagram.genmodel#//timingd/DStateSwitch/toSegmentStart"/>
       </modelFacet>
     </links>
     <palette>
@@ -499,24 +499,24 @@
         groupIcon="icons/linksNavigatorGroup.gif"/>
     <childReferences
         parent="//@diagram/@links.0"
-        child="//@diagram/@childNodes.1"
+        child="//@diagram/@childNodes.4"
         referenceType="out_target"
         groupName="target"
         groupIcon="icons/linkTargetNavigatorGroup.gif"/>
     <childReferences
-        parent="//@diagram/@childNodes.1"
+        parent="//@diagram/@childNodes.4"
         child="//@diagram/@links.0"
         referenceType="in_source"
         groupName="incoming links"
         groupIcon="icons/incomingLinksNavigatorGroup.gif"/>
     <childReferences
         parent="//@diagram/@links.0"
-        child="//@diagram/@childNodes.2"
+        child="//@diagram/@childNodes.5"
         referenceType="in_source"
         groupName="source"
         groupIcon="icons/linkSourceNavigatorGroup.gif"/>
     <childReferences
-        parent="//@diagram/@childNodes.2"
+        parent="//@diagram/@childNodes.5"
         child="//@diagram/@links.0"
         referenceType="out_target"
         groupName="outgoing links"

@@ -335,11 +335,7 @@ public class TimingDDiagramUpdater {
 	 * @generated
 	 */
 	public static List getDValueLine_3002IncomingLinks(View view) {
-		DValueLine modelElement = (DValueLine) view.getElement();
-		Map crossReferences = EcoreUtil.CrossReferencer.find(view.eResource().getResourceSet().getResources());
-		List result = new LinkedList();
-		result.addAll(getIncomingTypeModelFacetLinks_DStateSwitch_4001(modelElement, crossReferences));
-		return result;
+		return Collections.EMPTY_LIST;
 	}
 
 	/**
@@ -360,7 +356,11 @@ public class TimingDDiagramUpdater {
 	 * @generated
 	 */
 	public static List getDSegmentStart_3005IncomingLinks(View view) {
-		return Collections.EMPTY_LIST;
+		DSegmentStart modelElement = (DSegmentStart) view.getElement();
+		Map crossReferences = EcoreUtil.CrossReferencer.find(view.eResource().getResourceSet().getResources());
+		List result = new LinkedList();
+		result.addAll(getIncomingTypeModelFacetLinks_DStateSwitch_4001(modelElement, crossReferences));
+		return result;
 	}
 
 	/**
@@ -402,10 +402,7 @@ public class TimingDDiagramUpdater {
 	 * @generated
 	 */
 	public static List getDSegment_3003OutgoingLinks(View view) {
-		DSegment modelElement = (DSegment) view.getElement();
-		List result = new LinkedList();
-		result.addAll(getOutgoingTypeModelFacetLinks_DStateSwitch_4001(modelElement));
-		return result;
+		return Collections.EMPTY_LIST;
 	}
 
 	/**
@@ -426,7 +423,10 @@ public class TimingDDiagramUpdater {
 	 * @generated
 	 */
 	public static List getDSegmentEnd_3006OutgoingLinks(View view) {
-		return Collections.EMPTY_LIST;
+		DSegmentEnd modelElement = (DSegmentEnd) view.getElement();
+		List result = new LinkedList();
+		result.addAll(getOutgoingTypeModelFacetLinks_DStateSwitch_4001(modelElement));
+		return result;
 	}
 
 	/**
@@ -450,8 +450,8 @@ public class TimingDDiagramUpdater {
 			if (DStateSwitchEditPart.VISUAL_ID != TimingDVisualIDRegistry.getLinkWithClassVisualID(link)) {
 				continue;
 			}
-			DValueLine dst = link.getToValueLine();
-			DSegment src = link.getFromSegment();
+			DSegmentStart dst = link.getToSegmentStart();
+			DSegmentEnd src = link.getFromSegmentEnd();
 			result.add(new TimingDLinkDescriptor(src, dst, link, TimingDElementTypes.DStateSwitch_4001, DStateSwitchEditPart.VISUAL_ID));
 		}
 		return result;
@@ -460,19 +460,19 @@ public class TimingDDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	private static Collection getIncomingTypeModelFacetLinks_DStateSwitch_4001(DValueLine target, Map crossReferences) {
+	private static Collection getIncomingTypeModelFacetLinks_DStateSwitch_4001(DSegmentStart target, Map crossReferences) {
 		Collection result = new LinkedList();
 		Collection settings = (Collection) crossReferences.get(target);
 		for (Iterator it = settings.iterator(); it.hasNext();) {
 			EStructuralFeature.Setting setting = (EStructuralFeature.Setting) it.next();
-			if (setting.getEStructuralFeature() != TimingDPackage.eINSTANCE.getDStateSwitch_ToValueLine() || false == setting.getEObject() instanceof DStateSwitch) {
+			if (setting.getEStructuralFeature() != TimingDPackage.eINSTANCE.getDStateSwitch_ToSegmentStart() || false == setting.getEObject() instanceof DStateSwitch) {
 				continue;
 			}
 			DStateSwitch link = (DStateSwitch) setting.getEObject();
 			if (DStateSwitchEditPart.VISUAL_ID != TimingDVisualIDRegistry.getLinkWithClassVisualID(link)) {
 				continue;
 			}
-			DSegment src = link.getFromSegment();
+			DSegmentEnd src = link.getFromSegmentEnd();
 			result.add(new TimingDLinkDescriptor(src, target, link, TimingDElementTypes.DStateSwitch_4001, DStateSwitchEditPart.VISUAL_ID));
 		}
 		return result;
@@ -481,7 +481,7 @@ public class TimingDDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	private static Collection getOutgoingTypeModelFacetLinks_DStateSwitch_4001(DSegment source) {
+	private static Collection getOutgoingTypeModelFacetLinks_DStateSwitch_4001(DSegmentEnd source) {
 		DBlock container = null;
 		// Find container element for the link.
 		// Climb up by containment hierarchy starting from the source
@@ -504,8 +504,8 @@ public class TimingDDiagramUpdater {
 			if (DStateSwitchEditPart.VISUAL_ID != TimingDVisualIDRegistry.getLinkWithClassVisualID(link)) {
 				continue;
 			}
-			DValueLine dst = link.getToValueLine();
-			DSegment src = link.getFromSegment();
+			DSegmentStart dst = link.getToSegmentStart();
+			DSegmentEnd src = link.getFromSegmentEnd();
 			if (src != source) {
 				continue;
 			}

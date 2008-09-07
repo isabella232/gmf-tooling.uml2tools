@@ -324,12 +324,12 @@ public class Messages extends NLS {
 	/**
 	 * @generated
 	 */
-	public static String NavigatorGroupName_DValueLine_3002_incominglinks;
+	public static String NavigatorGroupName_DSegmentStart_3005_incominglinks;
 
 	/**
 	 * @generated
 	 */
-	public static String NavigatorGroupName_DSegment_3003_outgoinglinks;
+	public static String NavigatorGroupName_DSegmentEnd_3006_outgoinglinks;
 
 	/**
 	 * @generated

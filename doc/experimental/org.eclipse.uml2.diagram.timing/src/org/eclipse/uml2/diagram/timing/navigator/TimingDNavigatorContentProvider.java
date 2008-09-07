@@ -237,10 +237,26 @@ public class TimingDNavigatorContentProvider implements ICommonContentProvider {
 
 		case DValueLineEditPart.VISUAL_ID: {
 			Collection result = new ArrayList();
-			TimingDNavigatorGroup incominglinks = new TimingDNavigatorGroup(Messages.NavigatorGroupName_DValueLine_3002_incominglinks, "icons/incomingLinksNavigatorGroup.gif", parentElement); //$NON-NLS-1$
 			Collection connectedViews = getChildrenByType(Collections.singleton(view), TimingDVisualIDRegistry.getType(DSegmentEditPart.VISUAL_ID));
 			result.addAll(createNavigatorItems(connectedViews, parentElement, false));
-			connectedViews = getIncomingLinksByType(Collections.singleton(view), TimingDVisualIDRegistry.getType(DStateSwitchEditPart.VISUAL_ID));
+			return result.toArray();
+		}
+
+		case DSegmentEditPart.VISUAL_ID: {
+			Collection result = new ArrayList();
+			Collection connectedViews = getChildrenByType(Collections.singleton(view), TimingDVisualIDRegistry.getType(DSegmentMiddlePointEditPart.VISUAL_ID));
+			result.addAll(createNavigatorItems(connectedViews, parentElement, false));
+			connectedViews = getChildrenByType(Collections.singleton(view), TimingDVisualIDRegistry.getType(DSegmentStartEditPart.VISUAL_ID));
+			result.addAll(createNavigatorItems(connectedViews, parentElement, false));
+			connectedViews = getChildrenByType(Collections.singleton(view), TimingDVisualIDRegistry.getType(DSegmentEndEditPart.VISUAL_ID));
+			result.addAll(createNavigatorItems(connectedViews, parentElement, false));
+			return result.toArray();
+		}
+
+		case DSegmentStartEditPart.VISUAL_ID: {
+			Collection result = new ArrayList();
+			TimingDNavigatorGroup incominglinks = new TimingDNavigatorGroup(Messages.NavigatorGroupName_DSegmentStart_3005_incominglinks, "icons/incomingLinksNavigatorGroup.gif", parentElement); //$NON-NLS-1$
+			Collection connectedViews = getIncomingLinksByType(Collections.singleton(view), TimingDVisualIDRegistry.getType(DStateSwitchEditPart.VISUAL_ID));
 			incominglinks.addChildren(createNavigatorItems(connectedViews, incominglinks, true));
 			if (!incominglinks.isEmpty()) {
 				result.add(incominglinks);
@@ -248,16 +264,10 @@ public class TimingDNavigatorContentProvider implements ICommonContentProvider {
 			return result.toArray();
 		}
 
-		case DSegmentEditPart.VISUAL_ID: {
+		case DSegmentEndEditPart.VISUAL_ID: {
 			Collection result = new ArrayList();
-			TimingDNavigatorGroup outgoinglinks = new TimingDNavigatorGroup(Messages.NavigatorGroupName_DSegment_3003_outgoinglinks, "icons/outgoingLinksNavigatorGroup.gif", parentElement); //$NON-NLS-1$
-			Collection connectedViews = getChildrenByType(Collections.singleton(view), TimingDVisualIDRegistry.getType(DSegmentMiddlePointEditPart.VISUAL_ID));
-			result.addAll(createNavigatorItems(connectedViews, parentElement, false));
-			connectedViews = getChildrenByType(Collections.singleton(view), TimingDVisualIDRegistry.getType(DSegmentStartEditPart.VISUAL_ID));
-			result.addAll(createNavigatorItems(connectedViews, parentElement, false));
-			connectedViews = getChildrenByType(Collections.singleton(view), TimingDVisualIDRegistry.getType(DSegmentEndEditPart.VISUAL_ID));
-			result.addAll(createNavigatorItems(connectedViews, parentElement, false));
-			connectedViews = getOutgoingLinksByType(Collections.singleton(view), TimingDVisualIDRegistry.getType(DStateSwitchEditPart.VISUAL_ID));
+			TimingDNavigatorGroup outgoinglinks = new TimingDNavigatorGroup(Messages.NavigatorGroupName_DSegmentEnd_3006_outgoinglinks, "icons/outgoingLinksNavigatorGroup.gif", parentElement); //$NON-NLS-1$
+			Collection connectedViews = getOutgoingLinksByType(Collections.singleton(view), TimingDVisualIDRegistry.getType(DStateSwitchEditPart.VISUAL_ID));
 			outgoinglinks.addChildren(createNavigatorItems(connectedViews, outgoinglinks, true));
 			if (!outgoinglinks.isEmpty()) {
 				result.add(outgoinglinks);
@@ -269,9 +279,9 @@ public class TimingDNavigatorContentProvider implements ICommonContentProvider {
 			Collection result = new ArrayList();
 			TimingDNavigatorGroup target = new TimingDNavigatorGroup(Messages.NavigatorGroupName_DStateSwitch_4001_target, "icons/linkTargetNavigatorGroup.gif", parentElement); //$NON-NLS-1$
 			TimingDNavigatorGroup source = new TimingDNavigatorGroup(Messages.NavigatorGroupName_DStateSwitch_4001_source, "icons/linkSourceNavigatorGroup.gif", parentElement); //$NON-NLS-1$
-			Collection connectedViews = getLinksTargetByType(Collections.singleton(view), TimingDVisualIDRegistry.getType(DValueLineEditPart.VISUAL_ID));
+			Collection connectedViews = getLinksTargetByType(Collections.singleton(view), TimingDVisualIDRegistry.getType(DSegmentStartEditPart.VISUAL_ID));
 			target.addChildren(createNavigatorItems(connectedViews, target, true));
-			connectedViews = getLinksSourceByType(Collections.singleton(view), TimingDVisualIDRegistry.getType(DSegmentEditPart.VISUAL_ID));
+			connectedViews = getLinksSourceByType(Collections.singleton(view), TimingDVisualIDRegistry.getType(DSegmentEndEditPart.VISUAL_ID));
 			source.addChildren(createNavigatorItems(connectedViews, source, true));
 			if (!target.isEmpty()) {
 				result.add(target);

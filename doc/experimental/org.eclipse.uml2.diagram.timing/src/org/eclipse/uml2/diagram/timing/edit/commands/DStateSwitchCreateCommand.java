@@ -12,6 +12,8 @@ import org.eclipse.gmf.runtime.emf.type.core.requests.CreateRelationshipRequest;
 import org.eclipse.uml2.diagram.timing.edit.policies.TimingDBaseItemSemanticEditPolicy;
 import org.eclipse.uml2.diagram.timing.model.timingd.DBlock;
 import org.eclipse.uml2.diagram.timing.model.timingd.DSegment;
+import org.eclipse.uml2.diagram.timing.model.timingd.DSegmentEnd;
+import org.eclipse.uml2.diagram.timing.model.timingd.DSegmentStart;
 import org.eclipse.uml2.diagram.timing.model.timingd.DStateSwitch;
 import org.eclipse.uml2.diagram.timing.model.timingd.DValueLine;
 import org.eclipse.uml2.diagram.timing.model.timingd.TimingDFactory;
@@ -62,10 +64,10 @@ public class DStateSwitchCreateCommand extends CreateElementCommand {
 		if (source == null && target == null) {
 			return false;
 		}
-		if (source != null && false == source instanceof DSegment) {
+		if (source != null && false == source instanceof DSegmentEnd) {
 			return false;
 		}
-		if (target != null && false == target instanceof DValueLine) {
+		if (target != null && false == target instanceof DSegmentStart) {
 			return false;
 		}
 		if (getSource() == null) {
@@ -84,8 +86,8 @@ public class DStateSwitchCreateCommand extends CreateElementCommand {
 	protected EObject doDefaultElementCreation() {
 		DStateSwitch newElement = TimingDFactory.eINSTANCE.createDStateSwitch();
 		getContainer().getSwitches().add(newElement);
-		newElement.setFromSegment(getSource());
-		newElement.setToValueLine(getTarget());
+		newElement.setFromSegmentEnd(getSource());
+		newElement.setToSegmentStart(getTarget());
 		return newElement;
 	}
 
@@ -126,15 +128,15 @@ public class DStateSwitchCreateCommand extends CreateElementCommand {
 	/**
 	 * @generated
 	 */
-	protected DSegment getSource() {
-		return (DSegment) source;
+	protected DSegmentEnd getSource() {
+		return (DSegmentEnd) source;
 	}
 
 	/**
 	 * @generated
 	 */
-	protected DValueLine getTarget() {
-		return (DValueLine) target;
+	protected DSegmentStart getTarget() {
+		return (DSegmentStart) target;
 	}
 
 	/**

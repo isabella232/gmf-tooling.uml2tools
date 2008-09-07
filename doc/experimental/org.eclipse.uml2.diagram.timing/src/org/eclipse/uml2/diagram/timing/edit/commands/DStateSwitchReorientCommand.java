@@ -10,6 +10,8 @@ import org.eclipse.gmf.runtime.emf.type.core.requests.ReorientRelationshipReques
 import org.eclipse.uml2.diagram.timing.edit.policies.TimingDBaseItemSemanticEditPolicy;
 import org.eclipse.uml2.diagram.timing.model.timingd.DBlock;
 import org.eclipse.uml2.diagram.timing.model.timingd.DSegment;
+import org.eclipse.uml2.diagram.timing.model.timingd.DSegmentEnd;
+import org.eclipse.uml2.diagram.timing.model.timingd.DSegmentStart;
 import org.eclipse.uml2.diagram.timing.model.timingd.DStateSwitch;
 import org.eclipse.uml2.diagram.timing.model.timingd.DValueLine;
 
@@ -64,10 +66,10 @@ public class DStateSwitchReorientCommand extends EditElementCommand {
 	 * @generated
 	 */
 	protected boolean canReorientSource() {
-		if (!(oldEnd instanceof DSegment && newEnd instanceof DSegment)) {
+		if (!(oldEnd instanceof DSegmentEnd && newEnd instanceof DSegmentEnd)) {
 			return false;
 		}
-		DValueLine target = getLink().getToValueLine();
+		DSegmentStart target = getLink().getToSegmentStart();
 		if (!(getLink().eContainer() instanceof DBlock)) {
 			return false;
 		}
@@ -79,10 +81,10 @@ public class DStateSwitchReorientCommand extends EditElementCommand {
 	 * @generated
 	 */
 	protected boolean canReorientTarget() {
-		if (!(oldEnd instanceof DValueLine && newEnd instanceof DValueLine)) {
+		if (!(oldEnd instanceof DSegmentStart && newEnd instanceof DSegmentStart)) {
 			return false;
 		}
-		DSegment source = getLink().getFromSegment();
+		DSegmentEnd source = getLink().getFromSegmentEnd();
 		if (!(getLink().eContainer() instanceof DBlock)) {
 			return false;
 		}
@@ -110,7 +112,7 @@ public class DStateSwitchReorientCommand extends EditElementCommand {
 	 * @generated
 	 */
 	protected CommandResult reorientSource() throws ExecutionException {
-		getLink().setFromSegment(getNewSource());
+		getLink().setFromSegmentEnd(getNewSource());
 		return CommandResult.newOKCommandResult(getLink());
 	}
 
@@ -118,7 +120,7 @@ public class DStateSwitchReorientCommand extends EditElementCommand {
 	 * @generated
 	 */
 	protected CommandResult reorientTarget() throws ExecutionException {
-		getLink().setToValueLine(getNewTarget());
+		getLink().setToSegmentStart(getNewTarget());
 		return CommandResult.newOKCommandResult(getLink());
 	}
 
@@ -132,28 +134,28 @@ public class DStateSwitchReorientCommand extends EditElementCommand {
 	/**
 	 * @generated
 	 */
-	protected DSegment getOldSource() {
-		return (DSegment) oldEnd;
+	protected DSegmentEnd getOldSource() {
+		return (DSegmentEnd) oldEnd;
 	}
 
 	/**
 	 * @generated
 	 */
-	protected DSegment getNewSource() {
-		return (DSegment) newEnd;
+	protected DSegmentEnd getNewSource() {
+		return (DSegmentEnd) newEnd;
 	}
 
 	/**
 	 * @generated
 	 */
-	protected DValueLine getOldTarget() {
-		return (DValueLine) oldEnd;
+	protected DSegmentStart getOldTarget() {
+		return (DSegmentStart) oldEnd;
 	}
 
 	/**
 	 * @generated
 	 */
-	protected DValueLine getNewTarget() {
-		return (DValueLine) newEnd;
+	protected DSegmentStart getNewTarget() {
+		return (DSegmentStart) newEnd;
 	}
 }

@@ -144,10 +144,10 @@
         href="timingDiagram.gmfgraph#StateSwitchLink"/>
     <sourceMetaFeature
         xsi:type="ecore:EReference"
-        href="../../../plugin/org.eclipse.uml2.diagram.timing.model/model/timing-diagram.ecore#//DStateSwitch/fromSegment"/>
+        href="../../../plugin/org.eclipse.uml2.diagram.timing.model/model/timing-diagram.ecore#//DStateSwitch/fromSegmentEnd"/>
     <linkMetaFeature
         xsi:type="ecore:EReference"
-        href="../../../plugin/org.eclipse.uml2.diagram.timing.model/model/timing-diagram.ecore#//DStateSwitch/toValueLine"/>
+        href="../../../plugin/org.eclipse.uml2.diagram.timing.model/model/timing-diagram.ecore#//DStateSwitch/toSegmentStart"/>
   </links>
   <diagram>
     <diagramCanvas

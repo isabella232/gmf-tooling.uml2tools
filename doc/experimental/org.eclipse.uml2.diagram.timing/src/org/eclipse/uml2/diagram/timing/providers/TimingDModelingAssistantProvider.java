@@ -24,6 +24,8 @@ import org.eclipse.uml2.diagram.timing.edit.parts.DBlockEditPart;
 import org.eclipse.uml2.diagram.timing.edit.parts.DFrameContainerEditPart;
 import org.eclipse.uml2.diagram.timing.edit.parts.DFrameEditPart;
 import org.eclipse.uml2.diagram.timing.edit.parts.DSegmentEditPart;
+import org.eclipse.uml2.diagram.timing.edit.parts.DSegmentEndEditPart;
+import org.eclipse.uml2.diagram.timing.edit.parts.DSegmentStartEditPart;
 import org.eclipse.uml2.diagram.timing.edit.parts.DValueLineEditPart;
 import org.eclipse.uml2.diagram.timing.part.Messages;
 import org.eclipse.uml2.diagram.timing.part.TimingDDiagramEditorPlugin;
@@ -79,8 +81,8 @@ public class TimingDModelingAssistantProvider extends ModelingAssistantProvider 
 	 */
 	public List getRelTypesOnSource(IAdaptable source) {
 		IGraphicalEditPart sourceEditPart = (IGraphicalEditPart) source.getAdapter(IGraphicalEditPart.class);
-		if (sourceEditPart instanceof DSegmentEditPart) {
-			return ((DSegmentEditPart) sourceEditPart).getMARelTypesOnSource();
+		if (sourceEditPart instanceof DSegmentEndEditPart) {
+			return ((DSegmentEndEditPart) sourceEditPart).getMARelTypesOnSource();
 		}
 		return Collections.EMPTY_LIST;
 	}
@@ -90,8 +92,8 @@ public class TimingDModelingAssistantProvider extends ModelingAssistantProvider 
 	 */
 	public List getRelTypesOnTarget(IAdaptable target) {
 		IGraphicalEditPart targetEditPart = (IGraphicalEditPart) target.getAdapter(IGraphicalEditPart.class);
-		if (targetEditPart instanceof DValueLineEditPart) {
-			return ((DValueLineEditPart) targetEditPart).getMARelTypesOnTarget();
+		if (targetEditPart instanceof DSegmentStartEditPart) {
+			return ((DSegmentStartEditPart) targetEditPart).getMARelTypesOnTarget();
 		}
 		return Collections.EMPTY_LIST;
 	}
@@ -102,8 +104,8 @@ public class TimingDModelingAssistantProvider extends ModelingAssistantProvider 
 	public List getRelTypesOnSourceAndTarget(IAdaptable source, IAdaptable target) {
 		IGraphicalEditPart sourceEditPart = (IGraphicalEditPart) source.getAdapter(IGraphicalEditPart.class);
 		IGraphicalEditPart targetEditPart = (IGraphicalEditPart) target.getAdapter(IGraphicalEditPart.class);
-		if (sourceEditPart instanceof DSegmentEditPart) {
-			return ((DSegmentEditPart) sourceEditPart).getMARelTypesOnSourceAndTarget(targetEditPart);
+		if (sourceEditPart instanceof DSegmentEndEditPart) {
+			return ((DSegmentEndEditPart) sourceEditPart).getMARelTypesOnSourceAndTarget(targetEditPart);
 		}
 		return Collections.EMPTY_LIST;
 	}
@@ -113,8 +115,8 @@ public class TimingDModelingAssistantProvider extends ModelingAssistantProvider 
 	 */
 	public List getTypesForSource(IAdaptable target, IElementType relationshipType) {
 		IGraphicalEditPart targetEditPart = (IGraphicalEditPart) target.getAdapter(IGraphicalEditPart.class);
-		if (targetEditPart instanceof DValueLineEditPart) {
-			return ((DValueLineEditPart) targetEditPart).getMATypesForSource(relationshipType);
+		if (targetEditPart instanceof DSegmentStartEditPart) {
+			return ((DSegmentStartEditPart) targetEditPart).getMATypesForSource(relationshipType);
 		}
 		return Collections.EMPTY_LIST;
 	}
@@ -124,8 +126,8 @@ public class TimingDModelingAssistantProvider extends ModelingAssistantProvider 
 	 */
 	public List getTypesForTarget(IAdaptable source, IElementType relationshipType) {
 		IGraphicalEditPart sourceEditPart = (IGraphicalEditPart) source.getAdapter(IGraphicalEditPart.class);
-		if (sourceEditPart instanceof DSegmentEditPart) {
-			return ((DSegmentEditPart) sourceEditPart).getMATypesForTarget(relationshipType);
+		if (sourceEditPart instanceof DSegmentEndEditPart) {
+			return ((DSegmentEndEditPart) sourceEditPart).getMATypesForTarget(relationshipType);
 		}
 		return Collections.EMPTY_LIST;
 	}

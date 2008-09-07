@@ -39,6 +39,8 @@ import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.uml2.diagram.timing.edit.helpers.TimingDBaseEditHelper;
 import org.eclipse.uml2.diagram.timing.model.timingd.DBlock;
 import org.eclipse.uml2.diagram.timing.model.timingd.DSegment;
+import org.eclipse.uml2.diagram.timing.model.timingd.DSegmentEnd;
+import org.eclipse.uml2.diagram.timing.model.timingd.DSegmentStart;
 import org.eclipse.uml2.diagram.timing.model.timingd.DValueLine;
 import org.eclipse.uml2.diagram.timing.part.TimingDVisualIDRegistry;
 import org.eclipse.uml2.diagram.timing.providers.TimingDElementTypes;
@@ -349,14 +351,14 @@ public class TimingDBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 		/**
 		 * @generated
 		 */
-		public static boolean canCreateDStateSwitch_4001(DBlock container, DSegment source, DValueLine target) {
+		public static boolean canCreateDStateSwitch_4001(DBlock container, DSegmentEnd source, DSegmentStart target) {
 			return canExistDStateSwitch_4001(container, source, target);
 		}
 
 		/**
 		 * @generated
 		 */
-		public static boolean canExistDStateSwitch_4001(DBlock container, DSegment source, DValueLine target) {
+		public static boolean canExistDStateSwitch_4001(DBlock container, DSegmentEnd source, DSegmentStart target) {
 			return true;
 		}
 	}
