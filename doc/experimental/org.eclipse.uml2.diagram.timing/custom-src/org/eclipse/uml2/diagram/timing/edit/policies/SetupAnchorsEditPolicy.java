@@ -1,19 +1,16 @@
 package org.eclipse.uml2.diagram.timing.edit.policies;
 
+import org.eclipse.draw2d.geometry.Point;
 import org.eclipse.gef.EditPart;
 import org.eclipse.gef.Request;
 import org.eclipse.gef.RootEditPart;
 import org.eclipse.gef.commands.Command;
 import org.eclipse.gef.editpolicies.AbstractEditPolicy;
 import org.eclipse.uml2.diagram.timing.edit.parts.DBlockEditPart;
-import org.eclipse.uml2.diagram.timing.edit.parts.DSegmentEditPart;
 
 
 public class SetupAnchorsEditPolicy extends AbstractEditPolicy {
-	private static final String PREFIX = SetupAnchorsEditPolicy.class.getSimpleName() + ":";
-	public static final String ROLE = PREFIX + "Role";
-	public static final String KEY_OVERLAPPING_SEGMENT_EP = PREFIX + "OverlappingSegmentEP";
-	
+	public static final String ROLE = SetupAnchorsEditPolicy.class.getSimpleName() + ":Role";
 	private DBlockAnchorHelper myHelper;
 	
 	@Override
@@ -35,8 +32,9 @@ public class SetupAnchorsEditPolicy extends AbstractEditPolicy {
 		
 		if (request instanceof SetupAnchorsRequest){
 			SetupAnchorsRequest reqImpl = (SetupAnchorsRequest)request;
-			DSegmentEditPart segmentEP = myHelper.findSegmentForGlobalPoint(reqImpl.getLocation());
-			return new PushDataCommand(reqImpl, segmentEP);
+			Point globalLocation = reqImpl.getLocation();
+			SegmentAnchor anchor = myHelper.findSegmentAnchor(globalLocation);
+			return new PushDataCommand(reqImpl, anchor);
 		}
 		return null;
 	}
@@ -61,18 +59,17 @@ public class SetupAnchorsEditPolicy extends AbstractEditPolicy {
 	
 	private static class PushDataCommand extends Command {
 		private final SetupAnchorsRequest myRequest;
-		private final DSegmentEditPart myOverlappingSegment;
+		private final SegmentAnchor myAnchor;
 
-		public PushDataCommand(SetupAnchorsRequest request, DSegmentEditPart overlappingSegment){
+		public PushDataCommand(SetupAnchorsRequest request, SegmentAnchor anchor){
 			myRequest = request;
-			myOverlappingSegment = overlappingSegment;
+			myAnchor = anchor;
 		}
 		
 		@SuppressWarnings("unchecked")
 		@Override
 		public void execute() {
-			System.out.println("PushDataCommand.execute(): " + myOverlappingSegment);
-			myRequest.getTargetData().put(KEY_OVERLAPPING_SEGMENT_EP, myOverlappingSegment);
+			myRequest.getTargetData().put(SegmentAnchor.KEY_FOR_REQUEST_PARAMETERS, myAnchor);
 		}
 	}
 	

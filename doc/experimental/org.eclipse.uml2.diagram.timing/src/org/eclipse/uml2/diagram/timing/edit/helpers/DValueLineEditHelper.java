@@ -2,7 +2,7 @@ package org.eclipse.uml2.diagram.timing.edit.helpers;
 
 import org.eclipse.gmf.runtime.common.core.command.ICommand;
 import org.eclipse.gmf.runtime.emf.type.core.requests.CreateElementRequest;
-import org.eclipse.uml2.diagram.timing.edit.policies.SetupAnchorsEditPolicy;
+import org.eclipse.uml2.diagram.timing.edit.policies.SegmentAnchor;
 
 /**
  * @generated
@@ -12,10 +12,13 @@ public class DValueLineEditHelper extends TimingDBaseEditHelper {
 
 	@Override
 	protected ICommand getCreateCommand(CreateElementRequest req) {
-		Object segment = req.getParameters().get(SetupAnchorsEditPolicy.KEY_OVERLAPPING_SEGMENT_EP);
-		if (segment != null) {
-			System.out.println("DValueLineEditHelper.getCreateCommand()" + segment);
+		Object anchor = req.getParameters().get(SegmentAnchor.KEY_FOR_REQUEST_PARAMETERS);
+		if (anchor != null){
+			System.err.println("DValueLineEditHelper.getCreateCommand()");
+			System.err.println("\t req: " + req);
+			System.err.println("\t anchor: " + anchor);
 		}
+
 		return super.getCreateCommand(req);
 	}
 }
