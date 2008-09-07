@@ -101,12 +101,12 @@ public class PostCreateSegmentEditPolicy extends AbstractEditPolicy {
 				segmentStartView = ViewService.getInstance().createNode(new EObjectAdapter(segmentStart), createdView, null, ViewUtil.APPEND, getPreferencesHint());
 			}
 			
-			completeOverlappingSegment(anchor);
+			completeOverlappingSegment(anchor, segmentStartView);
 			
 			return CommandResult.newOKCommandResult();
 		}
 		
-		private void completeOverlappingSegment(SegmentAnchor anchor){
+		private void completeOverlappingSegment(SegmentAnchor anchor, View segmentStartView){
 			if (anchor == null){
 				return;
 			}
@@ -116,13 +116,19 @@ public class PostCreateSegmentEditPolicy extends AbstractEditPolicy {
 				return;
 			}
 			
+//			if (oldSegment.isClosedSegment()){
+//				DSegmentEnd oldEnd = oldSegment.getEnd();
+//				View oldEndView = findChildByType(oldSegmentView, DSegmentEndEditPart.VISUAL_ID);
+//				
+//			}
+//			
 			if (oldSegment.isClosedSegment() || anchor.getRightAnchor() != null){
 				return;
 			}
 			
 			DSegmentEnd segmentEnd = TimingDFactory.eINSTANCE.createDSegmentEnd();
 			oldSegment.setEnd(segmentEnd);
-			ViewService.getInstance().createNode(new EObjectAdapter(segmentEnd), oldSegmentView, null, ViewUtil.APPEND, getPreferencesHint());
+			View segmentEndView = ViewService.getInstance().createNode(new EObjectAdapter(segmentEnd), oldSegmentView, null, ViewUtil.APPEND, getPreferencesHint());
 			
 			Rectangle oldBounds = anchor.getOverlappingSegmentGlobalBounds();
 			Point splitLocation = getCvaeReq().getLocation();
@@ -130,6 +136,28 @@ public class PostCreateSegmentEditPolicy extends AbstractEditPolicy {
 			completedSize.height = oldBounds.height;
 			completedSize.width += 2 * SegmentGeometry.CIRCLE_RADIUS;
 			setSize(oldSegmentView, completedSize);
+			
+			createSwitch(segmentEndView, segmentStartView);
+		}
+		
+		protected void createSwitch(View fromView, View toView){
+			if (false == fromView.getElement() instanceof DSegmentEnd){
+				throw new IllegalStateException("Switch source should be DSegmentEnd: " + fromView.getElement());
+			}
+
+			if (false == toView.getElement() instanceof DSegmentStart){
+				throw new IllegalStateException("Switch destination should be DSegmentStart: " + toView.getElement());
+			}
+			
+			createSwitch(fromView, (DSegmentEnd)fromView.getElement(), toView, (DSegmentStart)toView.getElement());
+		}
+		
+		protected void createSwitch(View fromView, DSegmentEnd from, View toView, DSegmentStart to){
+			View srcSegmentView = (View) fromView.eContainer();
+			View destSegmentView = (View) toView.eContainer();
+			if (srcSegmentView == null || destSegmentView == null){
+				throw new IllegalStateException("Segment end is not inside segment");
+			}
 		}
 	}
 	
