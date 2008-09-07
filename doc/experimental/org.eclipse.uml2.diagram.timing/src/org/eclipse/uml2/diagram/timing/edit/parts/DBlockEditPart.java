@@ -174,7 +174,7 @@ public class DBlockEditPart extends ShapeNodeEditPart implements PrimaryShapeEdi
 	 * @generated
 	 */
 	protected NodeFigure createNodePlate() {
-		DefaultSizeNodeFigure result = new DefaultSizeNodeFigure(getMapMode().DPtoLP(20), getMapMode().DPtoLP(20));
+		DefaultSizeNodeFigure result = new DefaultSizeNodeFigure(getMapMode().DPtoLP(-1), getMapMode().DPtoLP(120));
 		return result;
 	}
 

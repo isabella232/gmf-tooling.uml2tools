@@ -50,8 +50,8 @@
             resizeHandles="5"/>
         <attributes
             xsi:type="gmfgen:DefaultSizeAttributes"
-            width="20"
-            height="20"/>
+            width="-1"
+            height="120"/>
         <requiredPluginIDs>org.eclipse.uml2.diagram.common</requiredPluginIDs>
         <requiredPluginIDs>org.eclipse.gmf.runtime.draw2d.ui</requiredPluginIDs>
       </viewmap>

@@ -274,7 +274,14 @@
       name="TimeLinePartitionNode"
       figure="TimeLinePartitionFigure"
       resizeConstraint="NORTH_SOUTH"
-      contentPane="//@figures.0/@descriptors.1/@accessors.1"/>
+      contentPane="//@figures.0/@descriptors.1/@accessors.1">
+    <facets
+        xsi:type="gmfgraph:DefaultSizeFacet">
+      <defaultSize
+          dx="-1"
+          dy="120"/>
+    </facets>
+  </nodes>
   <nodes
       name="ValueLineNode"
       figure="ValueLineFigure"
