@@ -201,6 +201,10 @@
         <requiredPluginIDs>org.eclipse.uml2.diagram.common</requiredPluginIDs>
         <requiredPluginIDs>org.eclipse.gmf.runtime.draw2d.ui</requiredPluginIDs>
       </viewmap>
+      <behaviour
+          xsi:type="gmfgen:CustomBehaviour"
+          key="org.eclipse.uml2.diagram.timing.edit.policies.create.PostCreateSegmentEditPolicy.ROLE"
+          editPolicyQualifiedClassName="org.eclipse.uml2.diagram.timing.edit.policies.create.PostCreateSegmentEditPolicy"/>
       <modelFacet>
         <metaClass
             href="../../../plugin/org.eclipse.uml2.diagram.timing.model/model/timing-diagram.genmodel#//timingd/DSegment"/>
