@@ -1,7 +1,5 @@
 package org.eclipse.uml2.diagram.common.editpolicies;
 
-import java.util.List;
-
 import org.eclipse.draw2d.geometry.Dimension;
 import org.eclipse.draw2d.geometry.Point;
 import org.eclipse.emf.ecore.EObject;
@@ -26,7 +24,7 @@ public abstract class AbstractPostCreateCommand extends AbstractTransactionalCom
 	
 	private final ViewAndElementAccess myViewAndElementAccess;
 	
-	private final IVisualIDRegistry myVisualIDRegistry;
+	private final ViewHelper myViewHelper;
 
 	private final IGraphicalEditPart myHostEditPart;
 
@@ -35,7 +33,7 @@ public abstract class AbstractPostCreateCommand extends AbstractTransactionalCom
 		myCreateRequest = cvaeReq;
 		myViewAndElementAccess = new CVAEAccess(cvaeReq);
 		myHostEditPart = hostEditPart;
-		myVisualIDRegistry = visualIDRegistry;
+		myViewHelper = new ViewHelper(visualIDRegistry);
 	}
 	
 	protected PreferencesHint getPreferencesHint(){
@@ -71,38 +69,17 @@ public abstract class AbstractPostCreateCommand extends AbstractTransactionalCom
 	}
 
 	protected View findChildByType(View view, int visualId) {
-		for (Object next : view.getChildren()) {
-			View nextChildView = (View) next;
-			if (myVisualIDRegistry.getVisualID(nextChildView) == visualId) {
-				return nextChildView;
-			}
-		}
-		return null;
+		return myViewHelper.findChildByType(view, visualId);
 	}
 	
 	protected Edge findOutgoingEdge(Node source, int visualId, EObject semantic){
-		return (Edge)findByTypeAndElement(source.getSourceEdges(), visualId, semantic);
+		return myViewHelper.findOutgoingEdge(source, visualId, semantic);
 	}
 	
 	protected Edge findIncomingEdge(Node source, int visualId, EObject semantic){
-		return (Edge)findByTypeAndElement(source.getTargetEdges(), visualId, semantic);
+		return myViewHelper.findIncomingEdge(source, visualId, semantic);
 	}
 	
-	protected View findByTypeAndElement(List<?> views, int visualId, EObject semantic){
-		for (Object next : views){
-			if (next instanceof View){
-				View nextView = (View)next;
-				if (myVisualIDRegistry.getVisualID(nextView) != visualId) {
-					continue;
-				}
-				if (semantic == null || semantic.equals(nextView.getElement())){
-					return nextView;
-				}
-			}
-		}
-		return null;
-	}
-
 	protected static void setLocation(View view, Point location) {
 		if (view == null || location == null) {
 			return;
