@@ -29,6 +29,7 @@ import org.eclipse.uml2.diagram.common.editpolicies.XYLayoutEditPolicyWithMovabl
 import org.eclipse.uml2.diagram.timing.draw2d.ValueLineShape;
 import org.eclipse.uml2.diagram.timing.edit.policies.DValueLineCanonicalEditPolicy;
 import org.eclipse.uml2.diagram.timing.edit.policies.DValueLineItemSemanticEditPolicy;
+import org.eclipse.uml2.diagram.timing.edit.policies.MoveSegmentEditPolicy;
 import org.eclipse.uml2.diagram.timing.edit.policies.SetupAnchorsEditPolicy;
 import org.eclipse.uml2.diagram.timing.edit.policies.create.PostCreateSegmentEditPolicy;
 import org.eclipse.uml2.diagram.timing.edit.policies.links.ValueLineCheckValueSwitchEditPolicy;
@@ -83,6 +84,7 @@ public class DValueLineEditPart extends ShapeNodeEditPart implements PrimaryShap
 		installEditPolicy(ValueLineCheckValueSwitchEditPolicy.ROLE, new ValueLineCheckValueSwitchEditPolicy());
 		installEditPolicy(EditPolicy.GRAPHICAL_NODE_ROLE, new ValueLineGraphicalNodeEditPolicy());
 		installEditPolicy(ValueLineCreateValueSwitchEditPolicy.ROLE, new ValueLineCreateValueSwitchEditPolicy());
+		installEditPolicy(MoveSegmentEditPolicy.ROLE, new MoveSegmentEditPolicy());
 		// XXX need an SCR to runtime to have another abstract superclass that would let children add reasonable editpolicies
 		// removeEditPolicy(org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles.CONNECTION_HANDLES_ROLE);
 

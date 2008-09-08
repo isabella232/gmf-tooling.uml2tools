@@ -148,6 +148,10 @@
           xsi:type="gmfgen:CustomBehaviour"
           key="org.eclipse.uml2.diagram.timing.edit.policies.links.ValueLineCreateValueSwitchEditPolicy.ROLE"
           editPolicyQualifiedClassName="org.eclipse.uml2.diagram.timing.edit.policies.links.ValueLineCreateValueSwitchEditPolicy"/>
+      <behaviour
+          xsi:type="gmfgen:CustomBehaviour"
+          key="org.eclipse.uml2.diagram.timing.edit.policies.MoveSegmentEditPolicy.ROLE"
+          editPolicyQualifiedClassName="org.eclipse.uml2.diagram.timing.edit.policies.MoveSegmentEditPolicy"/>
       <modelFacet>
         <metaClass
             href="../../../plugin/org.eclipse.uml2.diagram.timing.model/model/timing-diagram.genmodel#//timingd/DValueLine"/>
