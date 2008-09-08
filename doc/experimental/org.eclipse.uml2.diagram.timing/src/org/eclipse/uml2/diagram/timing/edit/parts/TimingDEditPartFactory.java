@@ -37,6 +37,9 @@ public class TimingDEditPartFactory implements EditPartFactory {
 			case DFrameEditPart.VISUAL_ID:
 				return new DFrameEditPart(view);
 
+			case DFrameDisplayNameEditPart.VISUAL_ID:
+				return new DFrameDisplayNameEditPart(view);
+
 			case DBlockEditPart.VISUAL_ID:
 				return new DBlockEditPart(view);
 

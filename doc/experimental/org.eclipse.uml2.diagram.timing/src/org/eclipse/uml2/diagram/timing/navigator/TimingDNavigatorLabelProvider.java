@@ -18,6 +18,7 @@ import org.eclipse.ui.navigator.ICommonLabelProvider;
 import org.eclipse.uml2.diagram.timing.edit.parts.DBlockDisplayNameEditPart;
 import org.eclipse.uml2.diagram.timing.edit.parts.DBlockEditPart;
 import org.eclipse.uml2.diagram.timing.edit.parts.DFrameContainerEditPart;
+import org.eclipse.uml2.diagram.timing.edit.parts.DFrameDisplayNameEditPart;
 import org.eclipse.uml2.diagram.timing.edit.parts.DFrameEditPart;
 import org.eclipse.uml2.diagram.timing.edit.parts.DSegmentEditPart;
 import org.eclipse.uml2.diagram.timing.edit.parts.DSegmentEndEditPart;
@@ -188,11 +189,12 @@ public class TimingDNavigatorLabelProvider extends LabelProvider implements ICom
 	 * @generated
 	 */
 	private String getDFrame_2001Text(View view) {
-		DFrame domainModelElement = (DFrame) view.getElement();
-		if (domainModelElement != null) {
-			return domainModelElement.getDisplayName();
+		IParser parser = TimingDParserProvider.getParser(TimingDElementTypes.DFrame_2001, view.getElement() != null ? view.getElement() : view, TimingDVisualIDRegistry
+				.getType(DFrameDisplayNameEditPart.VISUAL_ID));
+		if (parser != null) {
+			return parser.getPrintString(new EObjectAdapter(view.getElement() != null ? view.getElement() : view), ParserOptions.NONE.intValue());
 		} else {
-			TimingDDiagramEditorPlugin.getInstance().logError("No domain element for view with visualID = " + 2001); //$NON-NLS-1$
+			TimingDDiagramEditorPlugin.getInstance().logError("Parser was not found for label " + 5003); //$NON-NLS-1$
 			return ""; //$NON-NLS-1$
 		}
 	}

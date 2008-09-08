@@ -9,6 +9,7 @@ import org.eclipse.uml2.diagram.common.genapi.IVisualIDRegistry;
 import org.eclipse.uml2.diagram.timing.edit.parts.DBlockDisplayNameEditPart;
 import org.eclipse.uml2.diagram.timing.edit.parts.DBlockEditPart;
 import org.eclipse.uml2.diagram.timing.edit.parts.DFrameContainerEditPart;
+import org.eclipse.uml2.diagram.timing.edit.parts.DFrameDisplayNameEditPart;
 import org.eclipse.uml2.diagram.timing.edit.parts.DFrameEditPart;
 import org.eclipse.uml2.diagram.timing.edit.parts.DSegmentEditPart;
 import org.eclipse.uml2.diagram.timing.edit.parts.DSegmentEndEditPart;
@@ -174,6 +175,9 @@ public class TimingDVisualIDRegistry {
 		}
 		switch (containerVisualID) {
 		case DFrameEditPart.VISUAL_ID:
+			if (DFrameDisplayNameEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
 			if (DBlockEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}

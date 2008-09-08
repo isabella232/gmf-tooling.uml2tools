@@ -11,6 +11,24 @@
     <ownedChild>
       <domainMetaElement
           href="../../../plugin/org.eclipse.uml2.diagram.timing.model/model/timing-diagram.ecore#//DFrame"/>
+      <domainInitializer
+          xsi:type="gmfmap:FeatureSeqInitializer">
+        <initializers
+            xsi:type="gmfmap:FeatureValueSpec">
+          <feature
+              xsi:type="ecore:EAttribute"
+              href="../../../plugin/org.eclipse.uml2.diagram.timing.model/model/timing-diagram.ecore#//DFrame/displayName"/>
+          <value
+              body="let base : String = 'Interaction' in&#xD;&#xA;let suffixes : Sequence(String) = Sequence {'', '1', '2', '3', '4', '5', '6', '7', '8', '9'} in &#xD;&#xA;let space : DFrameContainer = self.container in&#xD;&#xA;let allMissed : Sequence(String) = suffixes->&#xD;&#xA;    select(s : String | not space.frames->exists(e : DFrame | e.displayName = base.concat(s))&#xD;&#xA;    ) in&#xD;&#xA;let firstMissed : String = allMissed->first() in &#xD;&#xA;let noMisses : Boolean = firstMissed.oclIsUndefined() in&#xD;&#xA;let allNames : Set(String) = &#xD;&#xA;    if noMisses &#xD;&#xA;    then &#xD;&#xA;    space.frames->collect(e : DFrame | &#xD;&#xA;         if e = self or e.displayName.oclIsUndefined() or e.displayName.substring(1, e.displayName.size().min(base.size())) &lt;> base&#xD;&#xA;         then '' &#xD;&#xA;         else e.displayName &#xD;&#xA;         endif)->asSet()->excluding('') else Set{'not in use'} &#xD;&#xA;    endif in &#xD;&#xA;let longestName : String = &#xD;&#xA;    if noMisses&#xD;&#xA;    then allNames->select(n : String | not allNames->exists(nn : String | nn.size() > n.size()))->asSequence()->first() &#xD;&#xA;    else 'not in use' &#xD;&#xA;    endif in &#xD;&#xA;if noMisses then &#xD;&#xA;    if longestName.oclIsUndefined() &#xD;&#xA;    then base &#xD;&#xA;    else longestName.concat('1') &#xD;&#xA;    endif &#xD;&#xA;else &#xD;&#xA;    base.concat(firstMissed) &#xD;&#xA;endif "/>
+        </initializers>
+      </domainInitializer>
+      <labelMappings
+          xsi:type="gmfmap:FeatureLabelMapping">
+        <diagramLabel
+            href="timingDiagram.gmfgraph#Interaction_name"/>
+        <features
+            href="../../../plugin/org.eclipse.uml2.diagram.timing.model/model/timing-diagram.ecore#//DFrame/displayName"/>
+      </labelMappings>
       <tool
           xsi:type="gmftool:CreationTool"
           href="timingDiagram.gmftool#//@palette/@tools.0/@tools.0"/>

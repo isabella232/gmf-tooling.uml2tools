@@ -9,6 +9,7 @@ import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.uml2.diagram.timing.edit.parts.DBlockDisplayNameEditPart;
 import org.eclipse.uml2.diagram.timing.edit.parts.DBlockEditPart;
 import org.eclipse.uml2.diagram.timing.edit.parts.DFrameContainerEditPart;
+import org.eclipse.uml2.diagram.timing.edit.parts.DFrameDisplayNameEditPart;
 import org.eclipse.uml2.diagram.timing.edit.parts.DFrameEditPart;
 import org.eclipse.uml2.diagram.timing.edit.parts.DSegmentEditPart;
 import org.eclipse.uml2.diagram.timing.edit.parts.DSegmentEndEditPart;
@@ -21,6 +22,7 @@ import org.eclipse.uml2.diagram.timing.part.TimingDVisualIDRegistry;
 import org.eclipse.uml2.diagram.timing.view.factories.DBlockDisplayNameViewFactory;
 import org.eclipse.uml2.diagram.timing.view.factories.DBlockViewFactory;
 import org.eclipse.uml2.diagram.timing.view.factories.DFrameContainerViewFactory;
+import org.eclipse.uml2.diagram.timing.view.factories.DFrameDisplayNameViewFactory;
 import org.eclipse.uml2.diagram.timing.view.factories.DFrameViewFactory;
 import org.eclipse.uml2.diagram.timing.view.factories.DSegmentEndViewFactory;
 import org.eclipse.uml2.diagram.timing.view.factories.DSegmentMiddlePointViewFactory;
@@ -102,6 +104,11 @@ public class TimingDViewProvider extends AbstractViewProvider {
 						return null; // visual id in semantic hint should match visual id for domain element
 					}
 					break;
+				case DFrameDisplayNameEditPart.VISUAL_ID:
+					if (DFrameEditPart.VISUAL_ID != TimingDVisualIDRegistry.getVisualID(containerView) || containerView.getElement() != domainElement) {
+						return null; // wrong container
+					}
+					break;
 				case DBlockDisplayNameEditPart.VISUAL_ID:
 					if (DBlockEditPart.VISUAL_ID != TimingDVisualIDRegistry.getVisualID(containerView) || containerView.getElement() != domainElement) {
 						return null; // wrong container
@@ -130,6 +137,8 @@ public class TimingDViewProvider extends AbstractViewProvider {
 		switch (visualID) {
 		case DFrameEditPart.VISUAL_ID:
 			return DFrameViewFactory.class;
+		case DFrameDisplayNameEditPart.VISUAL_ID:
+			return DFrameDisplayNameViewFactory.class;
 		case DBlockEditPart.VISUAL_ID:
 			return DBlockViewFactory.class;
 		case DBlockDisplayNameEditPart.VISUAL_ID:

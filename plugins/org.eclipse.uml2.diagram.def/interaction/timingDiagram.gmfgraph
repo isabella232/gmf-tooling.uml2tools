@@ -9,36 +9,33 @@
     <descriptors
         name="InteractionFigure">
       <actualFigure
-          xsi:type="gmfgraph:Rectangle"
-          name="InteractionFigure">
-        <layout
-            xsi:type="gmfgraph:BorderLayout"/>
-        <children
-            xsi:type="gmfgraph:Label"
-            name="InteractionFigure_static_label"
-            text="sd">
-          <layoutData
-              xsi:type="gmfgraph:BorderLayoutData"
-              alignment="BEGINNING"
-              vertical="true"/>
-        </children>
-        <children
-            xsi:type="gmfgraph:Rectangle"
-            name="InteractionFigureContents">
-          <layoutData
-              xsi:type="gmfgraph:BorderLayoutData"
-              alignment="FILL"/>
-          <layout
-              xsi:type="gmfgraph:CustomLayout"
-              qualifiedClassName="org.eclipse.uml2.diagram.timing.draw2d.layout.InteractionLayout">
-            <attributes
-                name="viewer"
-                value="getViewer()"/>
-          </layout>
-        </children>
+          xsi:type="gmfgraph:CustomFigure"
+          name="InteractionFigure"
+          qualifiedClassName="org.eclipse.uml2.diagram.timing.draw2d.InteractionShape">
+        <attributes
+            name="viewer"
+            value="getViewer()"/>
+        <attributes
+            name="useLocalCoordinates"
+            value="true"/>
+        <customChildren
+            accessor="getNameLabel">
+          <typedFigure
+              xsi:type="gmfgraph:Label"
+              name="aux_interaction_label"/>
+        </customChildren>
+        <customChildren
+            accessor="getInteractionContents">
+          <typedFigure
+              xsi:type="gmfgraph:Rectangle"
+              name="aux_interaction_contents"/>
+        </customChildren>
       </actualFigure>
       <accessors
-          figure="//@figures.0/@descriptors.0/@actualFigure/@children.1"/>
+          accessor="getInteractionNameLabel"
+          figure="//@figures.0/@descriptors.0/@actualFigure/@customChildren.0/@typedFigure"/>
+      <accessors
+          figure="//@figures.0/@descriptors.0/@actualFigure/@customChildren.1/@typedFigure"/>
     </descriptors>
     <descriptors
         name="TimeLinePartitionFigure">
@@ -167,22 +164,6 @@
       </actualFigure>
     </descriptors>
     <descriptors
-        name="_____ValueSwitchFigure">
-      <actualFigure
-          xsi:type="gmfgraph:Rectangle"
-          name="____ValueSwitchFigure">
-        <backgroundColor
-            xsi:type="gmfgraph:ConstantColor"
-            value="green"/>
-        <maximumSize
-            dx="5"
-            dy="-1"/>
-        <preferredSize
-            dx="5"
-            dy="-1"/>
-      </actualFigure>
-    </descriptors>
-    <descriptors
         name="StateSwitchLinkFigure">
       <actualFigure
           xsi:type="gmfgraph:CustomConnection"
@@ -200,41 +181,6 @@
       </actualFigure>
     </descriptors>
     <descriptors
-        name="InteractionFigure______Copy">
-      <actualFigure
-          xsi:type="gmfgraph:Rectangle"
-          name="InteractionFigure____">
-        <layout
-            xsi:type="gmfgraph:BorderLayout"/>
-        <children
-            xsi:type="gmfgraph:Label"
-            name="InteractionFigure_static_label___"
-            text="sd">
-          <layoutData
-              xsi:type="gmfgraph:BorderLayoutData"
-              alignment="BEGINNING"
-              vertical="true"/>
-        </children>
-        <children
-            xsi:type="gmfgraph:Rectangle"
-            name="InteractionFigureContents___">
-          <layoutData
-              xsi:type="gmfgraph:BorderLayoutData"
-              alignment="FILL"/>
-          <layout
-              xsi:type="gmfgraph:CustomLayout"
-              qualifiedClassName="org.eclipse.uml2.diagram.timing.draw2d.PartitionLayout">
-            <attributes
-                name="viewer"
-                value="getViewer()"/>
-          </layout>
-        </children>
-      </actualFigure>
-      <accessors
-          accessor="getFigureInteractionFigureContents____"
-          figure="//@figures.0/@descriptors.7/@actualFigure/@children.1"/>
-    </descriptors>
-    <descriptors
         name="LifeLineBlockFigure">
       <actualFigure
           xsi:type="gmfgraph:Rectangle"
@@ -248,28 +194,18 @@
             right="15"/>
       </actualFigure>
     </descriptors>
-    <descriptors
-        name="SegmentFigure2">
-      <actualFigure
-          xsi:type="gmfgraph:Rectangle"
-          name="SegmentFigure2">
-        <layout
-            xsi:type="gmfgraph:XYLayout"/>
-        <backgroundColor
-            xsi:type="gmfgraph:ConstantColor"
-            value="blue"/>
-        <maximumSize
-            dx="-1"
-            dy="5"/>
-        <preferredSize
-            dx="-1"
-            dy="5"/>
-      </actualFigure>
-    </descriptors>
   </figures>
   <nodes
       name="InteractionNode"
-      figure="InteractionFigure"/>
+      figure="InteractionFigure"
+      contentPane="//@figures.0/@descriptors.0/@accessors.1">
+    <facets
+        xsi:type="gmfgraph:DefaultSizeFacet">
+      <defaultSize
+          dx="500"
+          dy="400"/>
+    </facets>
+  </nodes>
   <nodes
       name="TimeLinePartitionNode"
       figure="TimeLinePartitionFigure"
@@ -297,9 +233,6 @@
   <nodes
       name="LifeLineBlockNode"
       figure="LifeLineBlockFigure"/>
-  <nodes
-      name="SegmentNode2"
-      figure="SegmentFigure2"/>
   <nodes
       name="MiddlePointNode"
       figure="MiddlePointFigure"
@@ -339,4 +272,9 @@
       figure="ValueLineFigure"
       elementIcon="false"
       accessor="//@figures.0/@descriptors.2/@accessors.0"/>
+  <labels
+      name="Interaction_name"
+      figure="InteractionFigure"
+      elementIcon="false"
+      accessor="//@figures.0/@descriptors.0/@accessors.0"/>
 </gmfgraph:Canvas>

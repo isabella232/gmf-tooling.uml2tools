@@ -5,11 +5,15 @@ import java.util.List;
 
 import org.eclipse.core.runtime.IAdaptable;
 import org.eclipse.emf.ecore.EAnnotation;
+import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EcoreFactory;
+import org.eclipse.gmf.runtime.diagram.core.util.ViewUtil;
 import org.eclipse.gmf.runtime.diagram.ui.view.factories.AbstractShapeViewFactory;
+import org.eclipse.gmf.runtime.emf.core.util.EObjectAdapter;
 import org.eclipse.gmf.runtime.notation.NotationFactory;
 import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.uml2.diagram.timing.edit.parts.DFrameContainerEditPart;
+import org.eclipse.uml2.diagram.timing.edit.parts.DFrameDisplayNameEditPart;
 import org.eclipse.uml2.diagram.timing.edit.parts.DFrameEditPart;
 import org.eclipse.uml2.diagram.timing.part.TimingDVisualIDRegistry;
 
@@ -43,6 +47,12 @@ public class DFrameViewFactory extends AbstractShapeViewFactory {
 			shortcutAnnotation.getDetails().put("modelID", DFrameContainerEditPart.MODEL_ID); //$NON-NLS-1$
 			view.getEAnnotations().add(shortcutAnnotation);
 		}
+		IAdaptable eObjectAdapter = null;
+		EObject eObject = (EObject) semanticAdapter.getAdapter(EObject.class);
+		if (eObject != null) {
+			eObjectAdapter = new EObjectAdapter(eObject);
+		}
+		getViewService().createNode(eObjectAdapter, view, TimingDVisualIDRegistry.getType(DFrameDisplayNameEditPart.VISUAL_ID), ViewUtil.APPEND, true, getPreferencesHint());
 	}
 
 }

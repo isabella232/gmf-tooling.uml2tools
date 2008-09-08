@@ -13,6 +13,7 @@ import org.eclipse.gmf.runtime.emf.type.core.IElementType;
 import org.eclipse.gmf.runtime.emf.ui.services.parser.ParserHintAdapter;
 import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.uml2.diagram.timing.edit.parts.DBlockDisplayNameEditPart;
+import org.eclipse.uml2.diagram.timing.edit.parts.DFrameDisplayNameEditPart;
 import org.eclipse.uml2.diagram.timing.edit.parts.DValueLineDisplayNameEditPart;
 import org.eclipse.uml2.diagram.timing.model.timingd.TimingDPackage;
 import org.eclipse.uml2.diagram.timing.part.TimingDVisualIDRegistry;
@@ -22,6 +23,30 @@ import org.eclipse.uml2.diagram.timing.part.TimingDVisualIDRegistry;
  */
 
 public class TimingDParserProvider extends AbstractProvider implements IParserProvider {
+
+	/**
+	 * @generated
+	 */
+	private IParser dFrameDisplayName_5003Parser;
+
+	/**
+	 * @generated
+	 */
+	private IParser getDFrameDisplayName_5003Parser() {
+		if (dFrameDisplayName_5003Parser == null) {
+			dFrameDisplayName_5003Parser = createDFrameDisplayName_5003Parser();
+		}
+		return dFrameDisplayName_5003Parser;
+	}
+
+	/**
+	 * @generated
+	 */
+	protected IParser createDFrameDisplayName_5003Parser() {
+		EAttribute[] features = new EAttribute[] { TimingDPackage.eINSTANCE.getDFrame_DisplayName() };
+		Parser_0_0 parser = new Parser_0_0(features);
+		return parser;
+	}
 
 	/**
 	 * @generated
@@ -76,6 +101,8 @@ public class TimingDParserProvider extends AbstractProvider implements IParserPr
 	 */
 	protected IParser getParser(int visualID) {
 		switch (visualID) {
+		case DFrameDisplayNameEditPart.VISUAL_ID:
+			return getDFrameDisplayName_5003Parser();
 		case DBlockDisplayNameEditPart.VISUAL_ID:
 			return getDBlockDisplayName_5001Parser();
 		case DValueLineDisplayNameEditPart.VISUAL_ID:

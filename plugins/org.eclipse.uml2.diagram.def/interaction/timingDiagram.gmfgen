@@ -70,7 +70,7 @@
             xsi:type="gmfgen:GenFeatureSeqInitializer">
           <initializers
               xsi:type="gmfgen:GenFeatureValueSpec"
-              value="//@expressionProviders/@providers.0/@expressions.0">
+              value="//@expressionProviders/@providers.0/@expressions.1">
             <feature
                 href="../../../plugin/org.eclipse.uml2.diagram.timing.model/model/timing-diagram.genmodel#//timingd/DBlock/displayName"/>
           </initializers>
@@ -163,7 +163,7 @@
             xsi:type="gmfgen:GenFeatureSeqInitializer">
           <initializers
               xsi:type="gmfgen:GenFeatureValueSpec"
-              value="//@expressionProviders/@providers.0/@expressions.1">
+              value="//@expressionProviders/@providers.0/@expressions.2">
             <feature
                 href="../../../plugin/org.eclipse.uml2.diagram.timing.model/model/timing-diagram.genmodel#//timingd/DValueLine/displayName"/>
           </initializers>
@@ -373,7 +373,11 @@
           xsi:type="gmfgen:InnerClassViewmap"
           layoutType="XY_LAYOUT"
           className="InteractionFigure"
-          classBody="&#xD;&#xA;/**&#xD;&#xA; * @generated&#xD;&#xA; */&#xD;&#xA;public class InteractionFigure extends org.eclipse.draw2d.RectangleFigure {&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;private org.eclipse.draw2d.RectangleFigure fFigureInteractionFigureContents; &#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;public InteractionFigure() {&#xD;&#xA;&#x9;&#x9;&#xD;&#xA;&#x9;org.eclipse.draw2d.BorderLayout layoutThis = new org.eclipse.draw2d.BorderLayout();&#xD;&#xA;&#x9;this.setLayoutManager(layoutThis);&#xD;&#xA;&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;createContents();&#xD;&#xA;&#x9;}&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;private void createContents(){&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;org.eclipse.draw2d.Label interactionFigure_static_label0 = new org.eclipse.draw2d.Label();&#xD;&#xA;interactionFigure_static_label0.setText(&quot;sd&quot;);&#xD;&#xA;&#xD;&#xA;this.add(interactionFigure_static_label0, org.eclipse.draw2d.BorderLayout.TOP);&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;fFigureInteractionFigureContents = new org.eclipse.draw2d.RectangleFigure();&#xD;&#xA;&#xD;&#xA;this.add(fFigureInteractionFigureContents, org.eclipse.draw2d.BorderLayout.CENTER);&#xD;&#xA;&#xD;&#xA;&#x9;org.eclipse.uml2.diagram.timing.draw2d.layout.InteractionLayout layoutFFigureInteractionFigureContents = new org.eclipse.uml2.diagram.timing.draw2d.layout.InteractionLayout();&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;layoutFFigureInteractionFigureContents.setViewer(&#xD;&#xA;getViewer());&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#x9;fFigureInteractionFigureContents.setLayoutManager(layoutFFigureInteractionFigureContents);&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#x9;}&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;private boolean myUseLocalCoordinates = false;&#xD;&#xA;&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;protected boolean useLocalCoordinates() {&#xD;&#xA;&#x9;&#x9;return myUseLocalCoordinates;&#xD;&#xA;&#x9;}&#xD;&#xA;&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;protected void setUseLocalCoordinates(boolean useLocalCoordinates) {&#xD;&#xA;&#x9;&#x9;myUseLocalCoordinates = useLocalCoordinates;&#xD;&#xA;&#x9;}&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;public org.eclipse.draw2d.RectangleFigure getFigureInteractionFigureContents() {&#xD;&#xA;&#x9;&#x9;return fFigureInteractionFigureContents;&#xD;&#xA;&#x9;}&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;}&#xD;&#xA;&#xD;&#xA;">
+          classBody="&#xD;&#xA;/**&#xD;&#xA; * @generated&#xD;&#xA; */&#xD;&#xA;public class InteractionFigure extends org.eclipse.uml2.diagram.timing.draw2d.InteractionShape {&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;public InteractionFigure() {&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;this.setViewer(&#xD;&#xA;getViewer());&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;this.setUseLocalCoordinates(&#xD;&#xA;true);&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#x9;}&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;private boolean myUseLocalCoordinates = false;&#xD;&#xA;&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;protected boolean useLocalCoordinates() {&#xD;&#xA;&#x9;&#x9;return myUseLocalCoordinates;&#xD;&#xA;&#x9;}&#xD;&#xA;&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;protected void setUseLocalCoordinates(boolean useLocalCoordinates) {&#xD;&#xA;&#x9;&#x9;myUseLocalCoordinates = useLocalCoordinates;&#xD;&#xA;&#x9;}&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;public org.eclipse.draw2d.Label getInteractionNameLabel() {&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;return getNameLabel();&#x9;&#x9;&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;}&#xD;&#xA;&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;public org.eclipse.draw2d.RectangleFigure getInteractionContents() {&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;return super.getInteractionContents();&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;}&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;}&#xD;&#xA;&#xD;&#xA;">
+        <attributes
+            xsi:type="gmfgen:DefaultSizeAttributes"
+            width="500"
+            height="400"/>
         <requiredPluginIDs>org.eclipse.uml2.diagram.common</requiredPluginIDs>
         <requiredPluginIDs>org.eclipse.gmf.runtime.draw2d.ui</requiredPluginIDs>
       </viewmap>
@@ -384,7 +388,34 @@
             href="../../../plugin/org.eclipse.uml2.diagram.timing.model/model/timing-diagram.genmodel#//timingd/DFrameContainer/frames"/>
         <childMetaFeature
             href="../../../plugin/org.eclipse.uml2.diagram.timing.model/model/timing-diagram.genmodel#//timingd/DFrameContainer/frames"/>
+        <modelElementInitializer
+            xsi:type="gmfgen:GenFeatureSeqInitializer">
+          <initializers
+              xsi:type="gmfgen:GenFeatureValueSpec"
+              value="//@expressionProviders/@providers.0/@expressions.0">
+            <feature
+                href="../../../plugin/org.eclipse.uml2.diagram.timing.model/model/timing-diagram.genmodel#//timingd/DFrame/displayName"/>
+          </initializers>
+        </modelElementInitializer>
       </modelFacet>
+      <labels
+          visualID="5003"
+          editPartClassName="DFrameDisplayNameEditPart"
+          itemSemanticEditPolicyClassName="DFrameDisplayNameItemSemanticEditPolicy"
+          notationViewFactoryClassName="DFrameDisplayNameViewFactory">
+        <diagramRunTimeClass
+            href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
+        <viewmap
+            xsi:type="gmfgen:ParentAssignedViewmap"
+            getterName="getInteractionNameLabel"
+            figureQualifiedClassName="org.eclipse.draw2d.Label"/>
+        <modelFacet
+            xsi:type="gmfgen:FeatureLabelModelFacet"
+            parser="//@labelParsers/@implementations.0">
+          <metaFeatures
+              href="../../../plugin/org.eclipse.uml2.diagram.timing.model/model/timing-diagram.genmodel#//timingd/DFrame/displayName"/>
+        </modelFacet>
+      </labels>
     </topLevelNodes>
     <links
         visualID="4001"
@@ -577,6 +608,8 @@
     <providers
         xsi:type="gmfgen:GenExpressionInterpreter">
       <expressions
+          body="let base : String = 'Interaction' in&#xD;&#xA;let suffixes : Sequence(String) = Sequence {'', '1', '2', '3', '4', '5', '6', '7', '8', '9'} in &#xD;&#xA;let space : DFrameContainer = self.container in&#xD;&#xA;let allMissed : Sequence(String) = suffixes->&#xD;&#xA;    select(s : String | not space.frames->exists(e : DFrame | e.displayName = base.concat(s))&#xD;&#xA;    ) in&#xD;&#xA;let firstMissed : String = allMissed->first() in &#xD;&#xA;let noMisses : Boolean = firstMissed.oclIsUndefined() in&#xD;&#xA;let allNames : Set(String) = &#xD;&#xA;    if noMisses &#xD;&#xA;    then &#xD;&#xA;    space.frames->collect(e : DFrame | &#xD;&#xA;         if e = self or e.displayName.oclIsUndefined() or e.displayName.substring(1, e.displayName.size().min(base.size())) &lt;> base&#xD;&#xA;         then '' &#xD;&#xA;         else e.displayName &#xD;&#xA;         endif)->asSet()->excluding('') else Set{'not in use'} &#xD;&#xA;    endif in &#xD;&#xA;let longestName : String = &#xD;&#xA;    if noMisses&#xD;&#xA;    then allNames->select(n : String | not allNames->exists(nn : String | nn.size() > n.size()))->asSequence()->first() &#xD;&#xA;    else 'not in use' &#xD;&#xA;    endif in &#xD;&#xA;if noMisses then &#xD;&#xA;    if longestName.oclIsUndefined() &#xD;&#xA;    then base &#xD;&#xA;    else longestName.concat('1') &#xD;&#xA;    endif &#xD;&#xA;else &#xD;&#xA;    base.concat(firstMissed) &#xD;&#xA;endif "/>
+      <expressions
           body="let base : String = '' in&#xD;&#xA;let suffixes : Sequence(String) = Sequence {'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'k', 'l'} in &#xD;&#xA;let space : DFrame = self.frame in&#xD;&#xA;let allMissed : Sequence(String) = suffixes->&#xD;&#xA;    select(s : String | not space.blocks->exists(e : DBlock | e.displayName = base.concat(s))&#xD;&#xA;    ) in&#xD;&#xA;let firstMissed : String = allMissed->first() in &#xD;&#xA;let noMisses : Boolean = firstMissed.oclIsUndefined() in&#xD;&#xA;let allNames : Set(String) = &#xD;&#xA;    if noMisses &#xD;&#xA;    then &#xD;&#xA;    space.blocks->collect(e : DBlock | &#xD;&#xA;         if e = self or e.displayName.oclIsUndefined() or e.displayName.substring(1, e.displayName.size().min(base.size())) &lt;> base&#xD;&#xA;         then '' &#xD;&#xA;         else e.displayName &#xD;&#xA;         endif)->asSet()->excluding('') else Set{'not in use'} &#xD;&#xA;    endif in &#xD;&#xA;let longestName : String = &#xD;&#xA;    if noMisses&#xD;&#xA;    then allNames->select(n : String | not allNames->exists(nn : String | nn.size() > n.size()))->asSequence()->first() &#xD;&#xA;    else 'not in use' &#xD;&#xA;    endif in &#xD;&#xA;if noMisses then &#xD;&#xA;    if longestName.oclIsUndefined() &#xD;&#xA;    then base &#xD;&#xA;    else longestName.concat('1') &#xD;&#xA;    endif &#xD;&#xA;else &#xD;&#xA;    base.concat(firstMissed) &#xD;&#xA;endif "/>
       <expressions
           body="let base : String = 'State' in&#xD;&#xA;let suffixes : Sequence(String) = Sequence {'', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10'} in &#xD;&#xA;let space : DBlock = self.block in&#xD;&#xA;let allMissed : Sequence(String) = suffixes->&#xD;&#xA;    select(s : String | not space.states->exists(e : DValueLine | e.displayName = base.concat(s))&#xD;&#xA;    ) in&#xD;&#xA;let firstMissed : String = allMissed->first() in &#xD;&#xA;let noMisses : Boolean = firstMissed.oclIsUndefined() in&#xD;&#xA;let allNames : Set(String) = &#xD;&#xA;    if noMisses &#xD;&#xA;    then &#xD;&#xA;    space.states->collect(e : DValueLine | &#xD;&#xA;         if e = self or e.displayName.oclIsUndefined() or e.displayName.substring(1, e.displayName.size().min(base.size())) &lt;> base&#xD;&#xA;         then '' &#xD;&#xA;         else e.displayName &#xD;&#xA;         endif)->asSet()->excluding('') else Set{'not in use'} &#xD;&#xA;    endif in &#xD;&#xA;let longestName : String = &#xD;&#xA;    if noMisses&#xD;&#xA;    then allNames->select(n : String | not allNames->exists(nn : String | nn.size() > n.size()))->asSequence()->first() &#xD;&#xA;    else 'not in use' &#xD;&#xA;    endif in &#xD;&#xA;if noMisses then &#xD;&#xA;    if longestName.oclIsUndefined() &#xD;&#xA;    then base &#xD;&#xA;    else longestName.concat('1') &#xD;&#xA;    endif &#xD;&#xA;else &#xD;&#xA;    base.concat(firstMissed) &#xD;&#xA;endif "/>
@@ -586,6 +619,6 @@
       extensibleViaService="true">
     <implementations
         xsi:type="gmfgen:PredefinedParser"
-        uses="//@diagram/@childNodes.1/@labels.0/@modelFacet //@diagram/@childNodes.0/@labels.0/@modelFacet"/>
+        uses="//@diagram/@childNodes.1/@labels.0/@modelFacet //@diagram/@childNodes.0/@labels.0/@modelFacet //@diagram/@topLevelNodes.0/@labels.0/@modelFacet"/>
   </labelParsers>
 </gmfgen:GenEditorGenerator>

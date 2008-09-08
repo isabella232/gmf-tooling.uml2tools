@@ -1,6 +1,5 @@
 package org.eclipse.uml2.diagram.timing.edit.parts;
 
-import org.eclipse.draw2d.BorderLayout;
 import org.eclipse.draw2d.FreeformLayout;
 import org.eclipse.draw2d.IFigure;
 import org.eclipse.draw2d.Label;
@@ -11,12 +10,18 @@ import org.eclipse.draw2d.geometry.Rectangle;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.gef.EditPart;
 import org.eclipse.gef.EditPolicy;
+import org.eclipse.gef.Request;
+import org.eclipse.gef.commands.Command;
 import org.eclipse.gef.editpolicies.LayoutEditPolicy;
+import org.eclipse.gef.editpolicies.NonResizableEditPolicy;
+import org.eclipse.gef.requests.CreateRequest;
+import org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.ShapeNodeEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editpolicies.DragDropEditPolicy;
 import org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles;
 import org.eclipse.gmf.runtime.diagram.ui.editpolicies.ResizableShapeEditPolicy;
 import org.eclipse.gmf.runtime.diagram.ui.editpolicies.XYLayoutEditPolicy;
+import org.eclipse.gmf.runtime.draw2d.ui.figures.ConstrainedToolbarLayout;
 import org.eclipse.gmf.runtime.gef.ui.figures.DefaultSizeNodeFigure;
 import org.eclipse.gmf.runtime.gef.ui.figures.NodeFigure;
 import org.eclipse.gmf.runtime.notation.View;
@@ -25,7 +30,7 @@ import org.eclipse.uml2.diagram.common.editparts.PrimaryShapeEditPart;
 import org.eclipse.uml2.diagram.common.editpolicies.CreationEditPolicyWithCustomReparent;
 import org.eclipse.uml2.diagram.common.editpolicies.UpdateDescriptionEditPolicy;
 import org.eclipse.uml2.diagram.common.editpolicies.XYLayoutEditPolicyWithMovableLabels;
-import org.eclipse.uml2.diagram.timing.draw2d.layout.InteractionLayout;
+import org.eclipse.uml2.diagram.timing.draw2d.InteractionShape;
 import org.eclipse.uml2.diagram.timing.edit.policies.DFrameCanonicalEditPolicy;
 import org.eclipse.uml2.diagram.timing.edit.policies.DFrameItemSemanticEditPolicy;
 import org.eclipse.uml2.diagram.timing.part.TimingDDiagramUpdater;
@@ -113,8 +118,55 @@ public class DFrameEditPart extends ShapeNodeEditPart implements PrimaryShapeEdi
 	/**
 	 * @generated
 	 */
+	protected boolean addFixedChild(EditPart childEditPart) {
+		if (childEditPart instanceof DFrameDisplayNameEditPart) {
+			((DFrameDisplayNameEditPart) childEditPart).setLabel(getPrimaryShape().getInteractionNameLabel());
+			return true;
+		}
+		return false;
+	}
+
+	/**
+	 * @generated
+	 */
+	protected boolean removeFixedChild(EditPart childEditPart) {
+
+		return false;
+	}
+
+	/**
+	 * @generated
+	 */
+	protected void addChildVisual(EditPart childEditPart, int index) {
+		if (addFixedChild(childEditPart)) {
+			return;
+		}
+		super.addChildVisual(childEditPart, -1);
+	}
+
+	/**
+	 * @generated
+	 */
+	protected void removeChildVisual(EditPart childEditPart) {
+		if (removeFixedChild(childEditPart)) {
+			return;
+		}
+		super.removeChildVisual(childEditPart);
+	}
+
+	/**
+	 * @generated
+	 */
+	protected IFigure getContentPaneFor(IGraphicalEditPart editPart) {
+
+		return getContentPane();
+	}
+
+	/**
+	 * @generated
+	 */
 	protected NodeFigure createNodePlate() {
-		DefaultSizeNodeFigure result = new DefaultSizeNodeFigure(getMapMode().DPtoLP(40), getMapMode().DPtoLP(40));
+		DefaultSizeNodeFigure result = new DefaultSizeNodeFigure(getMapMode().DPtoLP(500), getMapMode().DPtoLP(400));
 		return result;
 	}
 
@@ -142,7 +194,7 @@ public class DFrameEditPart extends ShapeNodeEditPart implements PrimaryShapeEdi
 	 * @generated NOT
 	 */
 	protected IFigure setupContentPane(IFigure nodeShape) {
-		return getPrimaryShape().getFigureInteractionFigureContents();
+		return getPrimaryShape().getInteractionContents();
 	}
 
 	/**
@@ -194,6 +246,13 @@ public class DFrameEditPart extends ShapeNodeEditPart implements PrimaryShapeEdi
 	/**
 	 * @generated
 	 */
+	public EditPart getPrimaryChildEditPart() {
+		return getChildBySemanticHint(TimingDVisualIDRegistry.getType(DFrameDisplayNameEditPart.VISUAL_ID));
+	}
+
+	/**
+	 * @generated
+	 */
 	protected void handleNotificationEvent(Notification event) {
 		super.handleNotificationEvent(event);
 	}
@@ -201,43 +260,16 @@ public class DFrameEditPart extends ShapeNodeEditPart implements PrimaryShapeEdi
 	/**
 	 * @generated
 	 */
-	public class InteractionFigure extends RectangleFigure {
-
-		/**
-		 * @generated
-		 */
-		private RectangleFigure fFigureInteractionFigureContents;
+	public class InteractionFigure extends InteractionShape {
 
 		/**
 		 * @generated
 		 */
 		public InteractionFigure() {
 
-			BorderLayout layoutThis = new BorderLayout();
-			this.setLayoutManager(layoutThis);
+			this.setViewer(getViewer());
 
-			createContents();
-		}
-
-		/**
-		 * @generated
-		 */
-		private void createContents() {
-
-			Label interactionFigure_static_label0 = new Label();
-			interactionFigure_static_label0.setText("sd");
-
-			this.add(interactionFigure_static_label0, BorderLayout.TOP);
-
-			fFigureInteractionFigureContents = new RectangleFigure();
-
-			this.add(fFigureInteractionFigureContents, BorderLayout.CENTER);
-
-			InteractionLayout layoutFFigureInteractionFigureContents = new InteractionLayout();
-
-			layoutFFigureInteractionFigureContents.setViewer(getViewer());
-
-			fFigureInteractionFigureContents.setLayoutManager(layoutFFigureInteractionFigureContents);
+			this.setUseLocalCoordinates(true);
 
 		}
 
@@ -263,8 +295,15 @@ public class DFrameEditPart extends ShapeNodeEditPart implements PrimaryShapeEdi
 		/**
 		 * @generated
 		 */
-		public RectangleFigure getFigureInteractionFigureContents() {
-			return fFigureInteractionFigureContents;
+		public Label getInteractionNameLabel() {
+			return getNameLabel();
+		}
+
+		/**
+		 * @generated
+		 */
+		public RectangleFigure getInteractionContents() {
+			return super.getInteractionContents();
 		}
 
 	}
