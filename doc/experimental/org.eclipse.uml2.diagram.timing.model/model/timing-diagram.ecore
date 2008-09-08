@@ -6,9 +6,11 @@
   <eClassifiers xsi:type="ecore:EClass" name="DFrameContainer">
     <eStructuralFeatures xsi:type="ecore:EReference" name="pakkage" eType="#//UMLPackage"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="frames" upperBound="-1"
-        eType="#//DFrame" containment="true"/>
+        eType="#//DFrame" containment="true" eOpposite="#//DFrame/container"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="DFrame">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="container" eType="#//DFrameContainer"
+        eOpposite="#//DFrameContainer/frames"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="interaction" lowerBound="1"
         eType="#//UMLInteraction"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="displayName" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>

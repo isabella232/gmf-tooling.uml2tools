@@ -2,7 +2,7 @@
  * <copyright>
  * </copyright>
  *
- * $Id: DFrameContainerImpl.java,v 1.1 2008/09/06 19:44:14 mgolubev Exp $
+ * $Id: DFrameContainerImpl.java,v 1.2 2008/09/08 08:48:23 mgolubev Exp $
  */
 package org.eclipse.uml2.diagram.timing.model.timingd.impl;
 
@@ -20,6 +20,7 @@ import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.EObjectImpl;
 
+import org.eclipse.emf.ecore.util.EObjectContainmentWithInverseEList;
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
@@ -126,9 +127,24 @@ public class DFrameContainerImpl extends EObjectImpl implements DFrameContainer 
 	 */
 	public EList<DFrame> getFrames() {
 		if (frames == null) {
-			frames = new EObjectContainmentEList<DFrame>(DFrame.class, this, TimingDPackage.DFRAME_CONTAINER__FRAMES);
+			frames = new EObjectContainmentWithInverseEList<DFrame>(DFrame.class, this, TimingDPackage.DFRAME_CONTAINER__FRAMES, TimingDPackage.DFRAME__CONTAINER);
 		}
 		return frames;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@SuppressWarnings("unchecked")
+	@Override
+	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
+		switch (featureID) {
+			case TimingDPackage.DFRAME_CONTAINER__FRAMES:
+				return ((InternalEList<InternalEObject>)(InternalEList<?>)getFrames()).basicAdd(otherEnd, msgs);
+		}
+		return super.eInverseAdd(otherEnd, featureID, msgs);
 	}
 
 	/**

@@ -3,10 +3,11 @@ package timingd;
 
 class DFrameContainer {
   ref UMLPackage pakkage;
-  val DFrame[*] frames;
+  val DFrame[*]#container frames;
 }
 
 class DFrame {
+  ref DFrameContainer#frames container;
   ref UMLInteraction[1] interaction;
   attr String displayName;
   val DBlock[+]#frame blocks;

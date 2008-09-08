@@ -2,7 +2,7 @@
  * <copyright>
  * </copyright>
  *
- * $Id: DFrameImpl.java,v 1.1 2008/09/06 19:44:14 mgolubev Exp $
+ * $Id: DFrameImpl.java,v 1.2 2008/09/08 08:48:23 mgolubev Exp $
  */
 package org.eclipse.uml2.diagram.timing.model.timingd.impl;
 
@@ -22,10 +22,12 @@ import org.eclipse.emf.ecore.impl.EObjectImpl;
 
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.EObjectContainmentWithInverseEList;
+import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.emf.ecore.util.InternalEList;
 
 import org.eclipse.uml2.diagram.timing.model.timingd.DBlock;
 import org.eclipse.uml2.diagram.timing.model.timingd.DFrame;
+import org.eclipse.uml2.diagram.timing.model.timingd.DFrameContainer;
 import org.eclipse.uml2.diagram.timing.model.timingd.DInterval;
 import org.eclipse.uml2.diagram.timing.model.timingd.TimingDPackage;
 
@@ -38,6 +40,7 @@ import org.eclipse.uml2.uml.Interaction;
  * <p>
  * The following features are implemented:
  * <ul>
+ *   <li>{@link org.eclipse.uml2.diagram.timing.model.timingd.impl.DFrameImpl#getContainer <em>Container</em>}</li>
  *   <li>{@link org.eclipse.uml2.diagram.timing.model.timingd.impl.DFrameImpl#getInteraction <em>Interaction</em>}</li>
  *   <li>{@link org.eclipse.uml2.diagram.timing.model.timingd.impl.DFrameImpl#getDisplayName <em>Display Name</em>}</li>
  *   <li>{@link org.eclipse.uml2.diagram.timing.model.timingd.impl.DFrameImpl#getBlocks <em>Blocks</em>}</li>
@@ -115,6 +118,47 @@ public class DFrameImpl extends EObjectImpl implements DFrame {
 	@Override
 	protected EClass eStaticClass() {
 		return TimingDPackage.Literals.DFRAME;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public DFrameContainer getContainer() {
+		if (eContainerFeatureID != TimingDPackage.DFRAME__CONTAINER) return null;
+		return (DFrameContainer)eContainer();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetContainer(DFrameContainer newContainer, NotificationChain msgs) {
+		msgs = eBasicSetContainer((InternalEObject)newContainer, TimingDPackage.DFRAME__CONTAINER, msgs);
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setContainer(DFrameContainer newContainer) {
+		if (newContainer != eInternalContainer() || (eContainerFeatureID != TimingDPackage.DFRAME__CONTAINER && newContainer != null)) {
+			if (EcoreUtil.isAncestor(this, newContainer))
+				throw new IllegalArgumentException("Recursive containment not allowed for " + toString());
+			NotificationChain msgs = null;
+			if (eInternalContainer() != null)
+				msgs = eBasicRemoveFromContainer(msgs);
+			if (newContainer != null)
+				msgs = ((InternalEObject)newContainer).eInverseAdd(this, TimingDPackage.DFRAME_CONTAINER__FRAMES, DFrameContainer.class, msgs);
+			msgs = basicSetContainer(newContainer, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, TimingDPackage.DFRAME__CONTAINER, newContainer, newContainer));
 	}
 
 	/**
@@ -209,6 +253,10 @@ public class DFrameImpl extends EObjectImpl implements DFrame {
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
+			case TimingDPackage.DFRAME__CONTAINER:
+				if (eInternalContainer() != null)
+					msgs = eBasicRemoveFromContainer(msgs);
+				return basicSetContainer((DFrameContainer)otherEnd, msgs);
 			case TimingDPackage.DFRAME__BLOCKS:
 				return ((InternalEList<InternalEObject>)(InternalEList<?>)getBlocks()).basicAdd(otherEnd, msgs);
 		}
@@ -223,6 +271,8 @@ public class DFrameImpl extends EObjectImpl implements DFrame {
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
+			case TimingDPackage.DFRAME__CONTAINER:
+				return basicSetContainer(null, msgs);
 			case TimingDPackage.DFRAME__BLOCKS:
 				return ((InternalEList<?>)getBlocks()).basicRemove(otherEnd, msgs);
 			case TimingDPackage.DFRAME__INTERVALS:
@@ -237,8 +287,24 @@ public class DFrameImpl extends EObjectImpl implements DFrame {
 	 * @generated
 	 */
 	@Override
+	public NotificationChain eBasicRemoveFromContainerFeature(NotificationChain msgs) {
+		switch (eContainerFeatureID) {
+			case TimingDPackage.DFRAME__CONTAINER:
+				return eInternalContainer().eInverseRemove(this, TimingDPackage.DFRAME_CONTAINER__FRAMES, DFrameContainer.class, msgs);
+		}
+		return super.eBasicRemoveFromContainerFeature(msgs);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
+			case TimingDPackage.DFRAME__CONTAINER:
+				return getContainer();
 			case TimingDPackage.DFRAME__INTERACTION:
 				if (resolve) return getInteraction();
 				return basicGetInteraction();
@@ -261,6 +327,9 @@ public class DFrameImpl extends EObjectImpl implements DFrame {
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
+			case TimingDPackage.DFRAME__CONTAINER:
+				setContainer((DFrameContainer)newValue);
+				return;
 			case TimingDPackage.DFRAME__INTERACTION:
 				setInteraction((Interaction)newValue);
 				return;
@@ -287,6 +356,9 @@ public class DFrameImpl extends EObjectImpl implements DFrame {
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
+			case TimingDPackage.DFRAME__CONTAINER:
+				setContainer((DFrameContainer)null);
+				return;
 			case TimingDPackage.DFRAME__INTERACTION:
 				setInteraction((Interaction)null);
 				return;
@@ -311,6 +383,8 @@ public class DFrameImpl extends EObjectImpl implements DFrame {
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
+			case TimingDPackage.DFRAME__CONTAINER:
+				return getContainer() != null;
 			case TimingDPackage.DFRAME__INTERACTION:
 				return interaction != null;
 			case TimingDPackage.DFRAME__DISPLAY_NAME:

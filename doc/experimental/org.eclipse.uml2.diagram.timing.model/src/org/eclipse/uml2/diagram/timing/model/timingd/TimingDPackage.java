@@ -2,7 +2,7 @@
  * <copyright>
  * </copyright>
  *
- * $Id: TimingDPackage.java,v 1.3 2008/09/07 15:13:31 mgolubev Exp $
+ * $Id: TimingDPackage.java,v 1.4 2008/09/08 08:48:23 mgolubev Exp $
  */
 package org.eclipse.uml2.diagram.timing.model.timingd;
 
@@ -107,13 +107,22 @@ public interface TimingDPackage extends EPackage {
 	int DFRAME = 1;
 
 	/**
+	 * The feature id for the '<em><b>Container</b></em>' container reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DFRAME__CONTAINER = 0;
+
+	/**
 	 * The feature id for the '<em><b>Interaction</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int DFRAME__INTERACTION = 0;
+	int DFRAME__INTERACTION = 1;
 
 	/**
 	 * The feature id for the '<em><b>Display Name</b></em>' attribute.
@@ -122,7 +131,7 @@ public interface TimingDPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DFRAME__DISPLAY_NAME = 1;
+	int DFRAME__DISPLAY_NAME = 2;
 
 	/**
 	 * The feature id for the '<em><b>Blocks</b></em>' containment reference list.
@@ -131,7 +140,7 @@ public interface TimingDPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DFRAME__BLOCKS = 2;
+	int DFRAME__BLOCKS = 3;
 
 	/**
 	 * The feature id for the '<em><b>Intervals</b></em>' containment reference list.
@@ -140,7 +149,7 @@ public interface TimingDPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DFRAME__INTERVALS = 3;
+	int DFRAME__INTERVALS = 4;
 
 	/**
 	 * The number of structural features of the '<em>DFrame</em>' class.
@@ -149,7 +158,7 @@ public interface TimingDPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DFRAME_FEATURE_COUNT = 4;
+	int DFRAME_FEATURE_COUNT = 5;
 
 	/**
 	 * The meta object id for the '{@link org.eclipse.uml2.diagram.timing.model.timingd.impl.DBlockImpl <em>DBlock</em>}' class.
@@ -868,6 +877,17 @@ public interface TimingDPackage extends EPackage {
 	EClass getDFrame();
 
 	/**
+	 * Returns the meta object for the container reference '{@link org.eclipse.uml2.diagram.timing.model.timingd.DFrame#getContainer <em>Container</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the container reference '<em>Container</em>'.
+	 * @see org.eclipse.uml2.diagram.timing.model.timingd.DFrame#getContainer()
+	 * @see #getDFrame()
+	 * @generated
+	 */
+	EReference getDFrame_Container();
+
+	/**
 	 * Returns the meta object for the reference '{@link org.eclipse.uml2.diagram.timing.model.timingd.DFrame#getInteraction <em>Interaction</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1497,6 +1517,14 @@ public interface TimingDPackage extends EPackage {
 		 * @generated
 		 */
 		EClass DFRAME = eINSTANCE.getDFrame();
+
+		/**
+		 * The meta object literal for the '<em><b>Container</b></em>' container reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference DFRAME__CONTAINER = eINSTANCE.getDFrame_Container();
 
 		/**
 		 * The meta object literal for the '<em><b>Interaction</b></em>' reference feature.

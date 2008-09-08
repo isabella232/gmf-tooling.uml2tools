@@ -2,7 +2,7 @@
  * <copyright>
  * </copyright>
  *
- * $Id: TimingDPackageImpl.java,v 1.3 2008/09/07 15:13:31 mgolubev Exp $
+ * $Id: TimingDPackageImpl.java,v 1.4 2008/09/08 08:48:23 mgolubev Exp $
  */
 package org.eclipse.uml2.diagram.timing.model.timingd.impl;
 
@@ -276,7 +276,7 @@ public class TimingDPackageImpl extends EPackageImpl implements TimingDPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getDFrame_Interaction() {
+	public EReference getDFrame_Container() {
 		return (EReference)dFrameEClass.getEStructuralFeatures().get(0);
 	}
 
@@ -285,8 +285,17 @@ public class TimingDPackageImpl extends EPackageImpl implements TimingDPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EReference getDFrame_Interaction() {
+		return (EReference)dFrameEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EAttribute getDFrame_DisplayName() {
-		return (EAttribute)dFrameEClass.getEStructuralFeatures().get(1);
+		return (EAttribute)dFrameEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -295,7 +304,7 @@ public class TimingDPackageImpl extends EPackageImpl implements TimingDPackage {
 	 * @generated
 	 */
 	public EReference getDFrame_Blocks() {
-		return (EReference)dFrameEClass.getEStructuralFeatures().get(2);
+		return (EReference)dFrameEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
@@ -304,7 +313,7 @@ public class TimingDPackageImpl extends EPackageImpl implements TimingDPackage {
 	 * @generated
 	 */
 	public EReference getDFrame_Intervals() {
-		return (EReference)dFrameEClass.getEStructuralFeatures().get(3);
+		return (EReference)dFrameEClass.getEStructuralFeatures().get(4);
 	}
 
 	/**
@@ -781,6 +790,7 @@ public class TimingDPackageImpl extends EPackageImpl implements TimingDPackage {
 		createEReference(dFrameContainerEClass, DFRAME_CONTAINER__FRAMES);
 
 		dFrameEClass = createEClass(DFRAME);
+		createEReference(dFrameEClass, DFRAME__CONTAINER);
 		createEReference(dFrameEClass, DFRAME__INTERACTION);
 		createEAttribute(dFrameEClass, DFRAME__DISPLAY_NAME);
 		createEReference(dFrameEClass, DFRAME__BLOCKS);
@@ -888,9 +898,10 @@ public class TimingDPackageImpl extends EPackageImpl implements TimingDPackage {
 		// Initialize classes and features; add operations and parameters
 		initEClass(dFrameContainerEClass, DFrameContainer.class, "DFrameContainer", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getDFrameContainer_Pakkage(), this.getUMLPackage(), null, "pakkage", null, 0, 1, DFrameContainer.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getDFrameContainer_Frames(), this.getDFrame(), null, "frames", null, 0, -1, DFrameContainer.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getDFrameContainer_Frames(), this.getDFrame(), this.getDFrame_Container(), "frames", null, 0, -1, DFrameContainer.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(dFrameEClass, DFrame.class, "DFrame", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getDFrame_Container(), this.getDFrameContainer(), this.getDFrameContainer_Frames(), "container", null, 0, 1, DFrame.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getDFrame_Interaction(), this.getUMLInteraction(), null, "interaction", null, 1, 1, DFrame.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getDFrame_DisplayName(), ecorePackage.getEString(), "displayName", null, 0, 1, DFrame.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getDFrame_Blocks(), this.getDBlock(), this.getDBlock_Frame(), "blocks", null, 1, -1, DFrame.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

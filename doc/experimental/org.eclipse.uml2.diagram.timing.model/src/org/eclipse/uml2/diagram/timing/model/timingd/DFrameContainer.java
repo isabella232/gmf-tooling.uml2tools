@@ -2,7 +2,7 @@
  * <copyright>
  * </copyright>
  *
- * $Id: DFrameContainer.java,v 1.1 2008/09/06 19:44:14 mgolubev Exp $
+ * $Id: DFrameContainer.java,v 1.2 2008/09/08 08:48:23 mgolubev Exp $
  */
 package org.eclipse.uml2.diagram.timing.model.timingd;
 
@@ -57,6 +57,7 @@ public interface DFrameContainer extends EObject {
 	/**
 	 * Returns the value of the '<em><b>Frames</b></em>' containment reference list.
 	 * The list contents are of type {@link org.eclipse.uml2.diagram.timing.model.timingd.DFrame}.
+	 * It is bidirectional and its opposite is '{@link org.eclipse.uml2.diagram.timing.model.timingd.DFrame#getContainer <em>Container</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Frames</em>' containment reference list isn't clear,
@@ -65,7 +66,8 @@ public interface DFrameContainer extends EObject {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Frames</em>' containment reference list.
 	 * @see org.eclipse.uml2.diagram.timing.model.timingd.TimingDPackage#getDFrameContainer_Frames()
-	 * @model containment="true"
+	 * @see org.eclipse.uml2.diagram.timing.model.timingd.DFrame#getContainer
+	 * @model opposite="container" containment="true"
 	 * @generated
 	 */
 	EList<DFrame> getFrames();

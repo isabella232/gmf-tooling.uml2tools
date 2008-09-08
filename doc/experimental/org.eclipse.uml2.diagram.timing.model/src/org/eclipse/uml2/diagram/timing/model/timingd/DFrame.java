@@ -2,7 +2,7 @@
  * <copyright>
  * </copyright>
  *
- * $Id: DFrame.java,v 1.1 2008/09/06 19:44:14 mgolubev Exp $
+ * $Id: DFrame.java,v 1.2 2008/09/08 08:48:23 mgolubev Exp $
  */
 package org.eclipse.uml2.diagram.timing.model.timingd;
 
@@ -20,6 +20,7 @@ import org.eclipse.uml2.uml.Interaction;
  * <p>
  * The following features are supported:
  * <ul>
+ *   <li>{@link org.eclipse.uml2.diagram.timing.model.timingd.DFrame#getContainer <em>Container</em>}</li>
  *   <li>{@link org.eclipse.uml2.diagram.timing.model.timingd.DFrame#getInteraction <em>Interaction</em>}</li>
  *   <li>{@link org.eclipse.uml2.diagram.timing.model.timingd.DFrame#getDisplayName <em>Display Name</em>}</li>
  *   <li>{@link org.eclipse.uml2.diagram.timing.model.timingd.DFrame#getBlocks <em>Blocks</em>}</li>
@@ -32,6 +33,34 @@ import org.eclipse.uml2.uml.Interaction;
  * @generated
  */
 public interface DFrame extends EObject {
+	/**
+	 * Returns the value of the '<em><b>Container</b></em>' container reference.
+	 * It is bidirectional and its opposite is '{@link org.eclipse.uml2.diagram.timing.model.timingd.DFrameContainer#getFrames <em>Frames</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Container</em>' container reference isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Container</em>' container reference.
+	 * @see #setContainer(DFrameContainer)
+	 * @see org.eclipse.uml2.diagram.timing.model.timingd.TimingDPackage#getDFrame_Container()
+	 * @see org.eclipse.uml2.diagram.timing.model.timingd.DFrameContainer#getFrames
+	 * @model opposite="frames" transient="false"
+	 * @generated
+	 */
+	DFrameContainer getContainer();
+
+	/**
+	 * Sets the value of the '{@link org.eclipse.uml2.diagram.timing.model.timingd.DFrame#getContainer <em>Container</em>}' container reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Container</em>' container reference.
+	 * @see #getContainer()
+	 * @generated
+	 */
+	void setContainer(DFrameContainer value);
+
 	/**
 	 * Returns the value of the '<em><b>Interaction</b></em>' reference.
 	 * <!-- begin-user-doc -->
