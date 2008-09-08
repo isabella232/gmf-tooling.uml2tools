@@ -117,6 +117,10 @@ public class MoveSegmentEditPolicy extends AbstractEditPolicy {
 				}
 			}
 		}
+		
+		if (cc.size() == 0){
+			return null;
+		}
 		return new ICommandProxy(cc.reduce());
 	}
 	
