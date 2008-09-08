@@ -42,6 +42,10 @@
           xsi:type="gmftool:CreationTool"
           title="Interface"
           description="Create Interface"/>
+      <tools
+          xsi:type="gmftool:CreationTool"
+          title="Comment"
+          description="Create Comment"/>
     </tools>
     <tools
         xsi:type="gmftool:ToolGroup"
@@ -165,6 +169,10 @@
           xsi:type="gmftool:CreationTool"
           title="Template Binding"
           description="Create Template Binding"/>
+      <tools
+          xsi:type="gmftool:CreationTool"
+          title="Annotated Element"
+          description="Create Annotated Element"/>
     </tools>
     <tools
         xsi:type="gmftool:ToolGroup"
