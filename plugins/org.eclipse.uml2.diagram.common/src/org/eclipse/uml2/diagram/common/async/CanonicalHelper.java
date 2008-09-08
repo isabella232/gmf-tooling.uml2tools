@@ -27,7 +27,6 @@ public class CanonicalHelper implements ICanonicalHelper {
 		return shouldSyncNodes(view);
 	}
 	
-	@Override
 	public void setAutoSynchronized(View target, boolean isAutoSync) {
 		CanonicalStyle style = ensureHasCanonicalStyle(target);
 //		if (target instanceof Diagram && style instanceof U2TDiagramCanonicalStyle){
