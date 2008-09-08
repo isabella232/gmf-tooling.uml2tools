@@ -166,6 +166,7 @@ public class UMLViewProvider extends AbstractViewProvider {
 				case DependencyEditPart.VISUAL_ID:
 				case GeneralizationSetEditPart.VISUAL_ID:
 				case Package4EditPart.VISUAL_ID:
+				case CommentEditPart.VISUAL_ID:
 				case Package3EditPart.VISUAL_ID:
 				case ClassEditPart.VISUAL_ID:
 				case DataTypeEditPart.VISUAL_ID:
@@ -303,6 +304,11 @@ public class UMLViewProvider extends AbstractViewProvider {
 				case InstanceSpecificationName3EditPart.VISUAL_ID:
 				case InstanceSpecificationValueEditPart.VISUAL_ID:
 					if (InstanceSpecification4EditPart.VISUAL_ID != UMLVisualIDRegistry.getVisualID(containerView) || containerView.getElement() != domainElement) {
+						return null; // wrong container
+					}
+					break;
+				case CommentBodyEditPart.VISUAL_ID:
+					if (CommentEditPart.VISUAL_ID != UMLVisualIDRegistry.getVisualID(containerView) || containerView.getElement() != domainElement) {
 						return null; // wrong container
 					}
 					break;
@@ -482,6 +488,10 @@ public class UMLViewProvider extends AbstractViewProvider {
 			return InstanceSpecification4ViewFactory.class;
 		case InstanceSpecificationName3EditPart.VISUAL_ID:
 			return InstanceSpecificationName3ViewFactory.class;
+		case CommentEditPart.VISUAL_ID:
+			return CommentViewFactory.class;
+		case CommentBodyEditPart.VISUAL_ID:
+			return CommentBodyViewFactory.class;
 		case Package3EditPart.VISUAL_ID:
 			return Package3ViewFactory.class;
 		case ClassEditPart.VISUAL_ID:
@@ -742,6 +752,8 @@ public class UMLViewProvider extends AbstractViewProvider {
 			return PortProvidedViewFactory.class;
 		case PortRequiredEditPart.VISUAL_ID:
 			return PortRequiredViewFactory.class;
+		case Comment2EditPart.VISUAL_ID:
+			return Comment2ViewFactory.class;
 		}
 		return null;
 	}

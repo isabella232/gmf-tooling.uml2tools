@@ -24,6 +24,7 @@ import org.eclipse.uml2.diagram.clazz.edit.parts.AssociationClass2EditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.AssociationClassRhombEditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.Class2EditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.Class5EditPart;
+import org.eclipse.uml2.diagram.clazz.edit.parts.CommentEditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.ConstraintEditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.DataType2EditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.DataType3EditPart;
@@ -228,6 +229,7 @@ public class UMLModelingAssistantProvider extends ModelingAssistantProvider {
 			types.add(UMLElementTypes.AssociationClass_2015);
 			types.add(UMLElementTypes.Package_2016);
 			types.add(UMLElementTypes.InstanceSpecification_2017);
+			types.add(UMLElementTypes.Comment_2018);
 			return types;
 		}
 		return Collections.emptyList();
@@ -285,6 +287,9 @@ public class UMLModelingAssistantProvider extends ModelingAssistantProvider {
 		}
 		if (sourceEditPart instanceof InstanceSpecification4EditPart) {
 			return ((InstanceSpecification4EditPart) sourceEditPart).getMARelTypesOnSource();
+		}
+		if (sourceEditPart instanceof CommentEditPart) {
+			return ((CommentEditPart) sourceEditPart).getMARelTypesOnSource();
 		}
 		if (sourceEditPart instanceof PortEditPart) {
 			return ((PortEditPart) sourceEditPart).getMARelTypesOnSource();
@@ -365,6 +370,9 @@ public class UMLModelingAssistantProvider extends ModelingAssistantProvider {
 		}
 		if (targetEditPart instanceof InstanceSpecification4EditPart) {
 			return ((InstanceSpecification4EditPart) targetEditPart).getMARelTypesOnTarget();
+		}
+		if (targetEditPart instanceof CommentEditPart) {
+			return ((CommentEditPart) targetEditPart).getMARelTypesOnTarget();
 		}
 		if (targetEditPart instanceof PortEditPart) {
 			return ((PortEditPart) targetEditPart).getMARelTypesOnTarget();
@@ -447,6 +455,9 @@ public class UMLModelingAssistantProvider extends ModelingAssistantProvider {
 		if (sourceEditPart instanceof InstanceSpecification4EditPart) {
 			return ((InstanceSpecification4EditPart) sourceEditPart).getMARelTypesOnSourceAndTarget(targetEditPart);
 		}
+		if (sourceEditPart instanceof CommentEditPart) {
+			return ((CommentEditPart) sourceEditPart).getMARelTypesOnSourceAndTarget(targetEditPart);
+		}
 		if (sourceEditPart instanceof PortEditPart) {
 			return ((PortEditPart) sourceEditPart).getMARelTypesOnSourceAndTarget(targetEditPart);
 		}
@@ -527,6 +538,9 @@ public class UMLModelingAssistantProvider extends ModelingAssistantProvider {
 		if (targetEditPart instanceof InstanceSpecification4EditPart) {
 			return ((InstanceSpecification4EditPart) targetEditPart).getMATypesForSource(relationshipType);
 		}
+		if (targetEditPart instanceof CommentEditPart) {
+			return ((CommentEditPart) targetEditPart).getMATypesForSource(relationshipType);
+		}
 		if (targetEditPart instanceof PortEditPart) {
 			return ((PortEditPart) targetEditPart).getMATypesForSource(relationshipType);
 		}
@@ -606,6 +620,9 @@ public class UMLModelingAssistantProvider extends ModelingAssistantProvider {
 		}
 		if (sourceEditPart instanceof InstanceSpecification4EditPart) {
 			return ((InstanceSpecification4EditPart) sourceEditPart).getMATypesForTarget(relationshipType);
+		}
+		if (sourceEditPart instanceof CommentEditPart) {
+			return ((CommentEditPart) sourceEditPart).getMATypesForTarget(relationshipType);
 		}
 		if (sourceEditPart instanceof PortEditPart) {
 			return ((PortEditPart) sourceEditPart).getMATypesForTarget(relationshipType);

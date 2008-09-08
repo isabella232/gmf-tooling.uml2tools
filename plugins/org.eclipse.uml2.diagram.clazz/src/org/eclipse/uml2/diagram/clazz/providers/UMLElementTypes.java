@@ -27,6 +27,8 @@ import org.eclipse.uml2.diagram.clazz.edit.parts.Class3EditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.Class4EditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.Class5EditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.ClassEditPart;
+import org.eclipse.uml2.diagram.clazz.edit.parts.Comment2EditPart;
+import org.eclipse.uml2.diagram.clazz.edit.parts.CommentEditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.ConstraintConstrainedElementEditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.ConstraintEditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.DataType2EditPart;
@@ -199,6 +201,11 @@ public class UMLElementTypes extends ElementInitializers {
 	 * @generated
 	 */
 	public static final IHintedType InstanceSpecification_2017 = (IHintedType) getElementType("org.eclipse.uml2.diagram.clazz.InstanceSpecification_2017"); //$NON-NLS-1$
+
+	/**
+	 * @generated
+	 */
+	public static final IHintedType Comment_2018 = (IHintedType) getElementType("org.eclipse.uml2.diagram.clazz.Comment_2018"); //$NON-NLS-1$
 
 	/**
 	 * @generated
@@ -468,6 +475,11 @@ public class UMLElementTypes extends ElementInitializers {
 	/**
 	 * @generated
 	 */
+	public static final IHintedType Comment_4019 = (IHintedType) getElementType("org.eclipse.uml2.diagram.clazz.Comment_4019"); //$NON-NLS-1$
+
+	/**
+	 * @generated
+	 */
 	private static ImageRegistry getImageRegistry() {
 		if (imageRegistry == null) {
 			imageRegistry = new ImageRegistry();
@@ -605,6 +617,8 @@ public class UMLElementTypes extends ElementInitializers {
 
 			elements.put(InstanceSpecification_2017, UMLPackage.eINSTANCE.getInstanceSpecification());
 
+			elements.put(Comment_2018, UMLPackage.eINSTANCE.getComment());
+
 			elements.put(Package_3006, UMLPackage.eINSTANCE.getPackage());
 
 			elements.put(Class_3007, UMLPackage.eINSTANCE.getClass_());
@@ -710,6 +724,8 @@ public class UMLElementTypes extends ElementInitializers {
 			elements.put(PortProvided_4017, UMLPackage.eINSTANCE.getPort_Provided());
 
 			elements.put(PortRequired_4018, UMLPackage.eINSTANCE.getPort_Required());
+
+			elements.put(Comment_4019, UMLPackage.eINSTANCE.getComment());
 		}
 		return (ENamedElement) elements.get(type);
 	}
@@ -744,6 +760,7 @@ public class UMLElementTypes extends ElementInitializers {
 			KNOWN_ELEMENT_TYPES.add(AssociationClass_2015);
 			KNOWN_ELEMENT_TYPES.add(Package_2016);
 			KNOWN_ELEMENT_TYPES.add(InstanceSpecification_2017);
+			KNOWN_ELEMENT_TYPES.add(Comment_2018);
 			KNOWN_ELEMENT_TYPES.add(Package_3006);
 			KNOWN_ELEMENT_TYPES.add(Class_3007);
 			KNOWN_ELEMENT_TYPES.add(DataType_3008);
@@ -797,6 +814,7 @@ public class UMLElementTypes extends ElementInitializers {
 			KNOWN_ELEMENT_TYPES.add(TemplateBinding_4016);
 			KNOWN_ELEMENT_TYPES.add(PortProvided_4017);
 			KNOWN_ELEMENT_TYPES.add(PortRequired_4018);
+			KNOWN_ELEMENT_TYPES.add(Comment_4019);
 		}
 		return KNOWN_ELEMENT_TYPES.contains(elementType);
 	}
@@ -840,6 +858,8 @@ public class UMLElementTypes extends ElementInitializers {
 			return Package_2016;
 		case InstanceSpecification4EditPart.VISUAL_ID:
 			return InstanceSpecification_2017;
+		case CommentEditPart.VISUAL_ID:
+			return Comment_2018;
 		case Package3EditPart.VISUAL_ID:
 			return Package_3006;
 		case ClassEditPart.VISUAL_ID:
@@ -946,6 +966,8 @@ public class UMLElementTypes extends ElementInitializers {
 			return PortProvided_4017;
 		case PortRequiredEditPart.VISUAL_ID:
 			return PortRequired_4018;
+		case Comment2EditPart.VISUAL_ID:
+			return Comment_4019;
 		}
 		return null;
 	}

@@ -8,12 +8,15 @@ import org.eclipse.gmf.runtime.emf.type.core.requests.CreateRelationshipRequest;
 import org.eclipse.gmf.runtime.emf.type.core.requests.DestroyElementRequest;
 import org.eclipse.gmf.runtime.emf.type.core.requests.ReorientReferenceRelationshipRequest;
 import org.eclipse.gmf.runtime.emf.type.core.requests.ReorientRelationshipRequest;
+import org.eclipse.uml2.diagram.clazz.edit.commands.Comment2CreateCommand;
+import org.eclipse.uml2.diagram.clazz.edit.commands.CommentReorientCommand;
 import org.eclipse.uml2.diagram.clazz.edit.commands.ConstraintConstrainedElementCreateCommand;
 import org.eclipse.uml2.diagram.clazz.edit.commands.ConstraintConstrainedElementReorientCommand;
 import org.eclipse.uml2.diagram.clazz.edit.commands.GeneralizationCreateCommand;
 import org.eclipse.uml2.diagram.clazz.edit.commands.GeneralizationGeneralCreateCommand;
 import org.eclipse.uml2.diagram.clazz.edit.commands.GeneralizationGeneralReorientCommand;
 import org.eclipse.uml2.diagram.clazz.edit.commands.GeneralizationReorientCommand;
+import org.eclipse.uml2.diagram.clazz.edit.parts.Comment2EditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.ConstraintConstrainedElementEditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.GeneralizationEditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.GeneralizationGeneralEditPart;
@@ -62,6 +65,9 @@ public class GeneralizationItemSemanticEditPolicy extends UMLBaseItemSemanticEdi
 		if (UMLElementTypes.GeneralizationGeneral_4012 == req.getElementType()) {
 			return getGEFWrapper(new GeneralizationGeneralCreateCommand(req, req.getSource(), req.getTarget()));
 		}
+		if (UMLElementTypes.Comment_4019 == req.getElementType()) {
+			return getGEFWrapper(new Comment2CreateCommand(req, req.getSource(), req.getTarget()));
+		}
 		return null;
 	}
 
@@ -74,6 +80,9 @@ public class GeneralizationItemSemanticEditPolicy extends UMLBaseItemSemanticEdi
 		}
 		if (UMLElementTypes.GeneralizationGeneral_4012 == req.getElementType()) {
 			return null;
+		}
+		if (UMLElementTypes.Comment_4019 == req.getElementType()) {
+			return getGEFWrapper(new Comment2CreateCommand(req, req.getSource(), req.getTarget()));
 		}
 		return null;
 	}

@@ -130,6 +130,12 @@ public class UMLEditPartFactory implements EditPartFactory {
 			case InstanceSpecificationName3EditPart.VISUAL_ID:
 				return new InstanceSpecificationName3EditPart(view);
 
+			case CommentEditPart.VISUAL_ID:
+				return new CommentEditPart(view);
+
+			case CommentBodyEditPart.VISUAL_ID:
+				return new CommentBodyEditPart(view);
+
 			case Package3EditPart.VISUAL_ID:
 				return new Package3EditPart(view);
 
@@ -471,6 +477,9 @@ public class UMLEditPartFactory implements EditPartFactory {
 
 			case PortRequiredEditPart.VISUAL_ID:
 				return new PortRequiredEditPart(view);
+
+			case Comment2EditPart.VISUAL_ID:
+				return new Comment2EditPart(view);
 			}
 		}
 		return createUnrecognizedEditPart(context, model);

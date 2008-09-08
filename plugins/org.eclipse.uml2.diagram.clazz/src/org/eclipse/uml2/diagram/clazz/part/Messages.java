@@ -393,6 +393,16 @@ public class Messages extends NLS {
 	/**
 	 * @generated
 	 */
+	public static String Comment9CreationTool_title;
+
+	/**
+	 * @generated
+	 */
+	public static String Comment9CreationTool_desc;
+
+	/**
+	 * @generated
+	 */
 	public static String Attribute1CreationTool_title;
 
 	/**
@@ -539,6 +549,16 @@ public class Messages extends NLS {
 	 * @generated
 	 */
 	public static String TemplateBinding11CreationTool_desc;
+
+	/**
+	 * @generated
+	 */
+	public static String AnnotatedElement12CreationTool_title;
+
+	/**
+	 * @generated
+	 */
+	public static String AnnotatedElement12CreationTool_desc;
 
 	/**
 	 * @generated
@@ -1018,6 +1038,16 @@ public class Messages extends NLS {
 	/**
 	 * @generated
 	 */
+	public static String NavigatorGroupName_Comment_2018_incominglinks;
+
+	/**
+	 * @generated
+	 */
+	public static String NavigatorGroupName_Comment_2018_outgoinglinks;
+
+	/**
+	 * @generated
+	 */
 	public static String NavigatorGroupName_Package_3006_incominglinks;
 
 	/**
@@ -1243,6 +1273,11 @@ public class Messages extends NLS {
 	/**
 	 * @generated
 	 */
+	public static String NavigatorGroupName_Slot_3017_outgoinglinks;
+
+	/**
+	 * @generated
+	 */
 	public static String NavigatorGroupName_Property_3028_incominglinks;
 
 	/**
@@ -1274,6 +1309,11 @@ public class Messages extends NLS {
 	 * @generated
 	 */
 	public static String NavigatorGroupName_ElementImport_3031_incominglinks;
+
+	/**
+	 * @generated
+	 */
+	public static String NavigatorGroupName_ElementImport_3031_outgoinglinks;
 
 	/**
 	 * @generated
@@ -1519,6 +1559,16 @@ public class Messages extends NLS {
 	 * @generated
 	 */
 	public static String NavigatorGroupName_PortRequired_4018_source;
+
+	/**
+	 * @generated
+	 */
+	public static String NavigatorGroupName_Comment_4019_target;
+
+	/**
+	 * @generated
+	 */
+	public static String NavigatorGroupName_Comment_4019_source;
 
 	/**
 	 * @generated

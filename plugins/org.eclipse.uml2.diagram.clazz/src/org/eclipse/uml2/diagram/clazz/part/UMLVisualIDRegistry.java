@@ -567,6 +567,9 @@ public class UMLVisualIDRegistry {
 			if (UMLPackage.eINSTANCE.getInstanceSpecification().isSuperTypeOf(domainElement.eClass())) {
 				return InstanceSpecification4EditPart.VISUAL_ID;
 			}
+			if (UMLPackage.eINSTANCE.getComment().isSuperTypeOf(domainElement.eClass())) {
+				return CommentEditPart.VISUAL_ID;
+			}
 			// "escape" for multi-views part : org.eclipse.uml2.diagram.clazz.edit.parts.PackageEditPart.VISUAL_ID -- prevents from removing the whole group from diagram
 			if (UMLPackage.eINSTANCE.getAssociationClass().isSuperTypeOf(domainElement.eClass())) {
 				return AssociationClass2EditPart.VISUAL_ID;
@@ -767,6 +770,11 @@ public class UMLVisualIDRegistry {
 				return true;
 			}
 			if (LiteralIntegerEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			break;
+		case CommentEditPart.VISUAL_ID:
+			if (CommentBodyEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
 			break;
@@ -1136,6 +1144,9 @@ public class UMLVisualIDRegistry {
 			if (InstanceSpecification4EditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
+			if (CommentEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
 			break;
 		case Dependency2EditPart.VISUAL_ID:
 			if (DependencyName2EditPart.VISUAL_ID == nodeVisualID) {
@@ -1243,6 +1254,9 @@ public class UMLVisualIDRegistry {
 		}
 		if (UMLPackage.eINSTANCE.getTemplateBinding().isSuperTypeOf(domainElement.eClass())) {
 			return TemplateBindingEditPart.VISUAL_ID;
+		}
+		if (UMLPackage.eINSTANCE.getComment().isSuperTypeOf(domainElement.eClass())) {
+			return Comment2EditPart.VISUAL_ID;
 		}
 		return -1;
 	}
@@ -1791,6 +1805,9 @@ public class UMLVisualIDRegistry {
 			if (UMLPackage.eINSTANCE.getInstanceSpecification().isSuperTypeOf(domainElement.eClass())) {
 				return InstanceSpecification4EditPart.VISUAL_ID;
 			}
+			if (UMLPackage.eINSTANCE.getComment().isSuperTypeOf(domainElement.eClass())) {
+				return CommentEditPart.VISUAL_ID;
+			}
 			if (UMLPackage.eINSTANCE.getPackage().isSuperTypeOf(domainElement.eClass())) {
 				return Package3EditPart.VISUAL_ID;
 			}
@@ -2054,6 +2071,7 @@ public class UMLVisualIDRegistry {
 		case Package4EditPart.VISUAL_ID:
 		case AssociationClassRhombEditPart.VISUAL_ID:
 		case PackageAsFrameEditPart.VISUAL_ID:
+		case CommentEditPart.VISUAL_ID:
 		case Package3EditPart.VISUAL_ID:
 		case ClassEditPart.VISUAL_ID:
 		case DataTypeEditPart.VISUAL_ID:

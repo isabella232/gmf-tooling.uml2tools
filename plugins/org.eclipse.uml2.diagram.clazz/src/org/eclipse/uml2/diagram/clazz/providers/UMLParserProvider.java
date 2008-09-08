@@ -30,6 +30,7 @@ import org.eclipse.uml2.diagram.clazz.edit.parts.ClassName2EditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.ClassNameEditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.ClassQualifiedNameEditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.ClassStereotypeEditPart;
+import org.eclipse.uml2.diagram.clazz.edit.parts.CommentBodyEditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.ConstraintNameEditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.DataTypeEditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.DataTypeName2EditPart;
@@ -501,6 +502,30 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 	 */
 	protected IParser createInstanceSpecificationName_5029Parser() {
 		EAttribute[] features = new EAttribute[] { UMLPackage.eINSTANCE.getNamedElement_Name() };
+		Parser_0_0 parser = new Parser_0_0(features);
+		return parser;
+	}
+
+	/**
+	 * @generated
+	 */
+	private IParser commentBody_5030Parser;
+
+	/**
+	 * @generated
+	 */
+	private IParser getCommentBody_5030Parser() {
+		if (commentBody_5030Parser == null) {
+			commentBody_5030Parser = createCommentBody_5030Parser();
+		}
+		return commentBody_5030Parser;
+	}
+
+	/**
+	 * @generated
+	 */
+	protected IParser createCommentBody_5030Parser() {
+		EAttribute[] features = new EAttribute[] { UMLPackage.eINSTANCE.getComment_Body() };
 		Parser_0_0 parser = new Parser_0_0(features);
 		return parser;
 	}
@@ -1834,6 +1859,8 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 			return getPackageName_5026Parser();
 		case InstanceSpecificationName3EditPart.VISUAL_ID:
 			return getInstanceSpecificationName_5029Parser();
+		case CommentBodyEditPart.VISUAL_ID:
+			return getCommentBody_5030Parser();
 		case Package3EditPart.VISUAL_ID:
 			return getPackage_3006Parser();
 		case ClassEditPart.VISUAL_ID:

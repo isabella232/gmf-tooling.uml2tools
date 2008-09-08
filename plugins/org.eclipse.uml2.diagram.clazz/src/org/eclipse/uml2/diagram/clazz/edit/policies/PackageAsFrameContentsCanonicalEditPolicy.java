@@ -19,6 +19,7 @@ import org.eclipse.uml2.diagram.clazz.edit.parts.Class3EditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.Class4EditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.Class5EditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.ClassEditPart;
+import org.eclipse.uml2.diagram.clazz.edit.parts.CommentEditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.ConstraintEditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.DataType2EditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.DataType3EditPart;
@@ -113,6 +114,7 @@ public class PackageAsFrameContentsCanonicalEditPolicy extends CanonicalEditPoli
 		case AssociationClassRhombEditPart.VISUAL_ID:
 		case PackageAsFrameEditPart.VISUAL_ID:
 		case InstanceSpecification4EditPart.VISUAL_ID:
+		case CommentEditPart.VISUAL_ID:
 		case Package3EditPart.VISUAL_ID:
 		case ClassEditPart.VISUAL_ID:
 		case DataTypeEditPart.VISUAL_ID:

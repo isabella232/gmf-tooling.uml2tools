@@ -43,6 +43,7 @@ public class UMLPaletteFactory {
 		paletteContainer.add(createConstraint6CreationTool());
 		paletteContainer.add(createAssociationClass7CreationTool());
 		paletteContainer.add(createInterface8CreationTool());
+		paletteContainer.add(createComment9CreationTool());
 		return paletteContainer;
 	}
 
@@ -80,6 +81,7 @@ public class UMLPaletteFactory {
 		paletteContainer.add(createAssociationEnd9CreationTool());
 		paletteContainer.add(createRealization10CreationTool());
 		paletteContainer.add(createTemplateBinding11CreationTool());
+		paletteContainer.add(createAnnotatedElement12CreationTool());
 		return paletteContainer;
 	}
 
@@ -245,6 +247,18 @@ public class UMLPaletteFactory {
 		types.add(UMLElementTypes.Interface_2013);
 		NodeToolEntry entry = new NodeToolEntry(Messages.Interface8CreationTool_title, Messages.Interface8CreationTool_desc, types);
 		entry.setSmallIcon(UMLElementTypes.getImageDescriptor(UMLElementTypes.Interface_3041));
+		entry.setLargeIcon(entry.getSmallIcon());
+		return entry;
+	}
+
+	/**
+	 * @generated
+	 */
+	private ToolEntry createComment9CreationTool() {
+		List/*<IElementType>*/types = new ArrayList/*<IElementType>*/(1);
+		types.add(UMLElementTypes.Comment_2018);
+		NodeToolEntry entry = new NodeToolEntry(Messages.Comment9CreationTool_title, Messages.Comment9CreationTool_desc, types);
+		entry.setSmallIcon(UMLElementTypes.getImageDescriptor(UMLElementTypes.Comment_2018));
 		entry.setLargeIcon(entry.getSmallIcon());
 		return entry;
 	}
@@ -437,6 +451,18 @@ public class UMLPaletteFactory {
 		types.add(UMLElementTypes.TemplateBinding_4016);
 		LinkToolEntry entry = new LinkToolEntry(Messages.TemplateBinding11CreationTool_title, Messages.TemplateBinding11CreationTool_desc, types);
 		entry.setSmallIcon(UMLElementTypes.getImageDescriptor(UMLElementTypes.TemplateBinding_4016));
+		entry.setLargeIcon(entry.getSmallIcon());
+		return entry;
+	}
+
+	/**
+	 * @generated
+	 */
+	private ToolEntry createAnnotatedElement12CreationTool() {
+		List/*<IElementType>*/types = new ArrayList/*<IElementType>*/(1);
+		types.add(UMLElementTypes.Comment_4019);
+		LinkToolEntry entry = new LinkToolEntry(Messages.AnnotatedElement12CreationTool_title, Messages.AnnotatedElement12CreationTool_desc, types);
+		entry.setSmallIcon(UMLElementTypes.getImageDescriptor(UMLElementTypes.Comment_4019));
 		entry.setLargeIcon(entry.getSmallIcon());
 		return entry;
 	}
