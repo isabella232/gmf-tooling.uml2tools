@@ -1,10 +1,12 @@
 package org.eclipse.uml2.diagram.timing.edit.parts;
 
+import org.eclipse.draw2d.FreeformLayout;
 import org.eclipse.draw2d.IFigure;
 import org.eclipse.draw2d.Label;
 import org.eclipse.draw2d.PositionConstants;
 import org.eclipse.draw2d.Shape;
 import org.eclipse.draw2d.StackLayout;
+import org.eclipse.draw2d.geometry.Rectangle;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.gef.EditPart;
 import org.eclipse.gef.EditPolicy;
@@ -78,12 +80,12 @@ public class DValueLineEditPart extends ShapeNodeEditPart implements PrimaryShap
 		installEditPolicy(EditPolicy.LAYOUT_ROLE, createLayoutEditPolicy());
 		installEditPolicy(SetupAnchorsEditPolicy.ROLE, new SetupAnchorsEditPolicy());
 		installEditPolicy(PostCreateSegmentEditPolicy.ROLE, new PostCreateSegmentEditPolicy());
-		// XXX need an SCR to runtime to have another abstract superclass that would let children add reasonable editpolicies
-		// removeEditPolicy(org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles.CONNECTION_HANDLES_ROLE);
-
 		installEditPolicy(ValueLineCheckValueSwitchEditPolicy.ROLE, new ValueLineCheckValueSwitchEditPolicy());
 		installEditPolicy(EditPolicy.GRAPHICAL_NODE_ROLE, new ValueLineGraphicalNodeEditPolicy());
 		installEditPolicy(ValueLineCreateValueSwitchEditPolicy.ROLE, new ValueLineCreateValueSwitchEditPolicy());
+		// XXX need an SCR to runtime to have another abstract superclass that would let children add reasonable editpolicies
+		// removeEditPolicy(org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles.CONNECTION_HANDLES_ROLE);
+
 	}
 
 	/**
