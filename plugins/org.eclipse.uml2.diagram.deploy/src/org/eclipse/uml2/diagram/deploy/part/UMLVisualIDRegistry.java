@@ -8,8 +8,13 @@ import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.uml2.diagram.common.genapi.IVisualIDRegistry;
 import org.eclipse.uml2.diagram.deploy.edit.parts.Artifact2EditPart;
 import org.eclipse.uml2.diagram.deploy.edit.parts.Artifact3EditPart;
+import org.eclipse.uml2.diagram.deploy.edit.parts.Artifact4EditPart;
+import org.eclipse.uml2.diagram.deploy.edit.parts.ArtifactArtifactFigure_contents2EditPart;
+import org.eclipse.uml2.diagram.deploy.edit.parts.ArtifactArtifactFigure_contents3EditPart;
+import org.eclipse.uml2.diagram.deploy.edit.parts.ArtifactArtifactFigure_contentsEditPart;
 import org.eclipse.uml2.diagram.deploy.edit.parts.ArtifactEditPart;
 import org.eclipse.uml2.diagram.deploy.edit.parts.ArtifactFileName2EditPart;
+import org.eclipse.uml2.diagram.deploy.edit.parts.ArtifactFileName3EditPart;
 import org.eclipse.uml2.diagram.deploy.edit.parts.ArtifactFileNameEditPart;
 import org.eclipse.uml2.diagram.deploy.edit.parts.CommunicationPathEditPart;
 import org.eclipse.uml2.diagram.deploy.edit.parts.CommunicationPathNameEditPart;
@@ -17,8 +22,11 @@ import org.eclipse.uml2.diagram.deploy.edit.parts.DependencyEditPart;
 import org.eclipse.uml2.diagram.deploy.edit.parts.DependencyNameEditPart;
 import org.eclipse.uml2.diagram.deploy.edit.parts.DeploymentEditPart;
 import org.eclipse.uml2.diagram.deploy.edit.parts.DeploymentNameEditPart;
+import org.eclipse.uml2.diagram.deploy.edit.parts.DeploymentSpecification2EditPart;
 import org.eclipse.uml2.diagram.deploy.edit.parts.DeploymentSpecificationEditPart;
+import org.eclipse.uml2.diagram.deploy.edit.parts.DeploymentSpecificationName2EditPart;
 import org.eclipse.uml2.diagram.deploy.edit.parts.DeploymentSpecificationNameEditPart;
+import org.eclipse.uml2.diagram.deploy.edit.parts.DeploymentSpecificationProperties2EditPart;
 import org.eclipse.uml2.diagram.deploy.edit.parts.DeploymentSpecificationPropertiesEditPart;
 import org.eclipse.uml2.diagram.deploy.edit.parts.Device2EditPart;
 import org.eclipse.uml2.diagram.deploy.edit.parts.DeviceDevicecontents2EditPart;
@@ -80,6 +88,11 @@ public class UMLVisualIDRegistry {
 	 * @generated
 	 */
 	private static UMLAbstractExpression Artifact_3002_Constraint;
+
+	/**
+	 * @generated
+	 */
+	private static UMLAbstractExpression Artifact_3008_Constraint;
 
 	/**
 	 * @generated
@@ -209,6 +222,27 @@ public class UMLVisualIDRegistry {
 				return Node2EditPart.VISUAL_ID;
 			}
 			break;
+		case ArtifactArtifactFigure_contentsEditPart.VISUAL_ID:
+			if (UMLPackage.eINSTANCE.getArtifact().isSuperTypeOf(domainElement.eClass()) && isArtifact_3008((Artifact) domainElement)) {
+				return Artifact4EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getDeploymentSpecification().isSuperTypeOf(domainElement.eClass())) {
+				return DeploymentSpecification2EditPart.VISUAL_ID;
+			}
+			break;
+		case ArtifactArtifactFigure_contents2EditPart.VISUAL_ID:
+			if (UMLPackage.eINSTANCE.getArtifact().isSuperTypeOf(domainElement.eClass()) && isArtifact_3008((Artifact) domainElement)) {
+				return Artifact4EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getDeploymentSpecification().isSuperTypeOf(domainElement.eClass())) {
+				return DeploymentSpecification2EditPart.VISUAL_ID;
+			}
+			break;
+		case DeploymentSpecificationProperties2EditPart.VISUAL_ID:
+			if (UMLPackage.eINSTANCE.getProperty().isSuperTypeOf(domainElement.eClass())) {
+				return PropertyEditPart.VISUAL_ID;
+			}
+			break;
 		case ExecutionEnvironmentArtifacts2EditPart.VISUAL_ID:
 			if (UMLPackage.eINSTANCE.getArtifact().isSuperTypeOf(domainElement.eClass())) {
 				return Artifact3EditPart.VISUAL_ID;
@@ -217,6 +251,14 @@ public class UMLVisualIDRegistry {
 		case ExecutionEnvironmentArtifactsEditPart.VISUAL_ID:
 			if (UMLPackage.eINSTANCE.getArtifact().isSuperTypeOf(domainElement.eClass())) {
 				return Artifact3EditPart.VISUAL_ID;
+			}
+			break;
+		case ArtifactArtifactFigure_contents3EditPart.VISUAL_ID:
+			if (UMLPackage.eINSTANCE.getArtifact().isSuperTypeOf(domainElement.eClass()) && isArtifact_3008((Artifact) domainElement)) {
+				return Artifact4EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getDeploymentSpecification().isSuperTypeOf(domainElement.eClass())) {
+				return DeploymentSpecification2EditPart.VISUAL_ID;
 			}
 			break;
 		case DeploymentSpecificationPropertiesEditPart.VISUAL_ID:
@@ -306,6 +348,9 @@ public class UMLVisualIDRegistry {
 			if (ArtifactFileNameEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
+			if (ArtifactArtifactFigure_contents3EditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
 			break;
 		case DeploymentSpecificationEditPart.VISUAL_ID:
 			if (DeploymentSpecificationNameEditPart.VISUAL_ID == nodeVisualID) {
@@ -325,6 +370,25 @@ public class UMLVisualIDRegistry {
 			break;
 		case ArtifactEditPart.VISUAL_ID:
 			if (ArtifactFileName2EditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			if (ArtifactArtifactFigure_contentsEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			break;
+		case Artifact4EditPart.VISUAL_ID:
+			if (ArtifactFileName3EditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			if (ArtifactArtifactFigure_contents2EditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			break;
+		case DeploymentSpecification2EditPart.VISUAL_ID:
+			if (DeploymentSpecificationName2EditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			if (DeploymentSpecificationProperties2EditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
 			break;
@@ -374,6 +438,27 @@ public class UMLVisualIDRegistry {
 				return true;
 			}
 			break;
+		case ArtifactArtifactFigure_contentsEditPart.VISUAL_ID:
+			if (Artifact4EditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			if (DeploymentSpecification2EditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			break;
+		case ArtifactArtifactFigure_contents2EditPart.VISUAL_ID:
+			if (Artifact4EditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			if (DeploymentSpecification2EditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			break;
+		case DeploymentSpecificationProperties2EditPart.VISUAL_ID:
+			if (PropertyEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			break;
 		case ExecutionEnvironmentArtifacts2EditPart.VISUAL_ID:
 			if (Artifact3EditPart.VISUAL_ID == nodeVisualID) {
 				return true;
@@ -381,6 +466,14 @@ public class UMLVisualIDRegistry {
 			break;
 		case ExecutionEnvironmentArtifactsEditPart.VISUAL_ID:
 			if (Artifact3EditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			break;
+		case ArtifactArtifactFigure_contents3EditPart.VISUAL_ID:
+			if (Artifact4EditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			if (DeploymentSpecification2EditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
 			break;
@@ -501,6 +594,17 @@ public class UMLVisualIDRegistry {
 	/**
 	 * @generated
 	 */
+	private static boolean isArtifact_3008(Artifact domainElement) {
+		if (Artifact_3008_Constraint == null) { // lazy initialization
+			Artifact_3008_Constraint = UMLOCLFactory.getExpression("not oclIsKindOf(uml::DeploymentSpecification)", UMLPackage.eINSTANCE.getArtifact()); //$NON-NLS-1$
+		}
+		Object result = Artifact_3008_Constraint.evaluate(domainElement);
+		return result instanceof Boolean && ((Boolean) result).booleanValue();
+	}
+
+	/**
+	 * @generated
+	 */
 	private static boolean isNode_3007(Node domainElement) {
 		if (Node_3007_Constraint == null) { // lazy initialization
 			Node_3007_Constraint = UMLOCLFactory.getExpression("not oclIsKindOf(uml::Device) and not oclIsKindOf(uml::ExecutionEnvironment)", UMLPackage.eINSTANCE.getNode()); //$NON-NLS-1$
@@ -573,6 +677,14 @@ public class UMLVisualIDRegistry {
 				return Artifact3EditPart.VISUAL_ID;
 			}
 			break;
+		case Artifact2EditPart.VISUAL_ID:
+			if (UMLPackage.eINSTANCE.getArtifact().isSuperTypeOf(domainElement.eClass()) && isArtifact_3008((Artifact) domainElement)) {
+				return Artifact4EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getDeploymentSpecification().isSuperTypeOf(domainElement.eClass())) {
+				return DeploymentSpecification2EditPart.VISUAL_ID;
+			}
+			break;
 		case DeploymentSpecificationEditPart.VISUAL_ID:
 			if (UMLPackage.eINSTANCE.getProperty().isSuperTypeOf(domainElement.eClass())) {
 				return PropertyEditPart.VISUAL_ID;
@@ -590,6 +702,27 @@ public class UMLVisualIDRegistry {
 			}
 			if (UMLPackage.eINSTANCE.getNode().isSuperTypeOf(domainElement.eClass()) && isNode_3007((Node) domainElement)) {
 				return Node2EditPart.VISUAL_ID;
+			}
+			break;
+		case ArtifactEditPart.VISUAL_ID:
+			if (UMLPackage.eINSTANCE.getArtifact().isSuperTypeOf(domainElement.eClass()) && isArtifact_3008((Artifact) domainElement)) {
+				return Artifact4EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getDeploymentSpecification().isSuperTypeOf(domainElement.eClass())) {
+				return DeploymentSpecification2EditPart.VISUAL_ID;
+			}
+			break;
+		case Artifact4EditPart.VISUAL_ID:
+			if (UMLPackage.eINSTANCE.getArtifact().isSuperTypeOf(domainElement.eClass()) && isArtifact_3008((Artifact) domainElement)) {
+				return Artifact4EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getDeploymentSpecification().isSuperTypeOf(domainElement.eClass())) {
+				return DeploymentSpecification2EditPart.VISUAL_ID;
+			}
+			break;
+		case DeploymentSpecification2EditPart.VISUAL_ID:
+			if (UMLPackage.eINSTANCE.getProperty().isSuperTypeOf(domainElement.eClass())) {
+				return PropertyEditPart.VISUAL_ID;
 			}
 			break;
 		case ExecutionEnvironment2EditPart.VISUAL_ID:
@@ -640,11 +773,32 @@ public class UMLVisualIDRegistry {
 			if (UMLPackage.eINSTANCE.getNode().isSuperTypeOf(domainElement.eClass()) && isNode_3007((Node) domainElement)) {
 				return Node2EditPart.VISUAL_ID;
 			}
+			if (UMLPackage.eINSTANCE.getArtifact().isSuperTypeOf(domainElement.eClass()) && isArtifact_3008((Artifact) domainElement)) {
+				return Artifact4EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getDeploymentSpecification().isSuperTypeOf(domainElement.eClass())) {
+				return DeploymentSpecification2EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getArtifact().isSuperTypeOf(domainElement.eClass()) && isArtifact_3008((Artifact) domainElement)) {
+				return Artifact4EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getDeploymentSpecification().isSuperTypeOf(domainElement.eClass())) {
+				return DeploymentSpecification2EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getProperty().isSuperTypeOf(domainElement.eClass())) {
+				return PropertyEditPart.VISUAL_ID;
+			}
 			if (UMLPackage.eINSTANCE.getArtifact().isSuperTypeOf(domainElement.eClass())) {
 				return Artifact3EditPart.VISUAL_ID;
 			}
 			if (UMLPackage.eINSTANCE.getArtifact().isSuperTypeOf(domainElement.eClass())) {
 				return Artifact3EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getArtifact().isSuperTypeOf(domainElement.eClass()) && isArtifact_3008((Artifact) domainElement)) {
+				return Artifact4EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getDeploymentSpecification().isSuperTypeOf(domainElement.eClass())) {
+				return DeploymentSpecification2EditPart.VISUAL_ID;
 			}
 			if (UMLPackage.eINSTANCE.getProperty().isSuperTypeOf(domainElement.eClass())) {
 				return PropertyEditPart.VISUAL_ID;
@@ -684,8 +838,12 @@ public class UMLVisualIDRegistry {
 		case PackageImportsEditPart.VISUAL_ID:
 		case DeviceDevicecontentsEditPart.VISUAL_ID:
 		case DeviceDevicecontents2EditPart.VISUAL_ID:
+		case ArtifactArtifactFigure_contentsEditPart.VISUAL_ID:
+		case ArtifactArtifactFigure_contents2EditPart.VISUAL_ID:
+		case DeploymentSpecificationProperties2EditPart.VISUAL_ID:
 		case ExecutionEnvironmentArtifacts2EditPart.VISUAL_ID:
 		case ExecutionEnvironmentArtifactsEditPart.VISUAL_ID:
+		case ArtifactArtifactFigure_contents3EditPart.VISUAL_ID:
 		case DeploymentSpecificationPropertiesEditPart.VISUAL_ID:
 			return true;
 		default:
@@ -708,10 +866,12 @@ public class UMLVisualIDRegistry {
 		case ElementImportEditPart.VISUAL_ID:
 		case Device2EditPart.VISUAL_ID:
 		case ArtifactEditPart.VISUAL_ID:
+		case Artifact4EditPart.VISUAL_ID:
+		case DeploymentSpecification2EditPart.VISUAL_ID:
+		case PropertyEditPart.VISUAL_ID:
 		case ExecutionEnvironment2EditPart.VISUAL_ID:
 		case Artifact3EditPart.VISUAL_ID:
 		case Node2EditPart.VISUAL_ID:
-		case PropertyEditPart.VISUAL_ID:
 			return true;
 		default:
 			break;

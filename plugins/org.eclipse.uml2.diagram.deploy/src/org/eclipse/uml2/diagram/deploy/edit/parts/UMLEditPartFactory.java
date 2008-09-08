@@ -82,6 +82,21 @@ public class UMLEditPartFactory implements EditPartFactory {
 			case ArtifactFileName2EditPart.VISUAL_ID:
 				return new ArtifactFileName2EditPart(view);
 
+			case Artifact4EditPart.VISUAL_ID:
+				return new Artifact4EditPart(view);
+
+			case ArtifactFileName3EditPart.VISUAL_ID:
+				return new ArtifactFileName3EditPart(view);
+
+			case DeploymentSpecification2EditPart.VISUAL_ID:
+				return new DeploymentSpecification2EditPart(view);
+
+			case DeploymentSpecificationName2EditPart.VISUAL_ID:
+				return new DeploymentSpecificationName2EditPart(view);
+
+			case PropertyEditPart.VISUAL_ID:
+				return new PropertyEditPart(view);
+
 			case ExecutionEnvironment2EditPart.VISUAL_ID:
 				return new ExecutionEnvironment2EditPart(view);
 
@@ -97,9 +112,6 @@ public class UMLEditPartFactory implements EditPartFactory {
 			case NodeName2EditPart.VISUAL_ID:
 				return new NodeName2EditPart(view);
 
-			case PropertyEditPart.VISUAL_ID:
-				return new PropertyEditPart(view);
-
 			case PackageImportsEditPart.VISUAL_ID:
 				return new PackageImportsEditPart(view);
 
@@ -109,11 +121,23 @@ public class UMLEditPartFactory implements EditPartFactory {
 			case DeviceDevicecontents2EditPart.VISUAL_ID:
 				return new DeviceDevicecontents2EditPart(view);
 
+			case ArtifactArtifactFigure_contentsEditPart.VISUAL_ID:
+				return new ArtifactArtifactFigure_contentsEditPart(view);
+
+			case ArtifactArtifactFigure_contents2EditPart.VISUAL_ID:
+				return new ArtifactArtifactFigure_contents2EditPart(view);
+
+			case DeploymentSpecificationProperties2EditPart.VISUAL_ID:
+				return new DeploymentSpecificationProperties2EditPart(view);
+
 			case ExecutionEnvironmentArtifacts2EditPart.VISUAL_ID:
 				return new ExecutionEnvironmentArtifacts2EditPart(view);
 
 			case ExecutionEnvironmentArtifactsEditPart.VISUAL_ID:
 				return new ExecutionEnvironmentArtifactsEditPart(view);
+
+			case ArtifactArtifactFigure_contents3EditPart.VISUAL_ID:
+				return new ArtifactArtifactFigure_contents3EditPart(view);
 
 			case DeploymentSpecificationPropertiesEditPart.VISUAL_ID:
 				return new DeploymentSpecificationPropertiesEditPart(view);
@@ -161,9 +185,9 @@ public class UMLEditPartFactory implements EditPartFactory {
 	 * @generated
 	 */
 	public static CellEditorLocator getTextCellEditorLocator(ITextAwareEditPart source) {
-		if (source.getFigure() instanceof WrappingLabel)
+		if (source.getFigure() instanceof WrappingLabel) {
 			return new TextCellEditorLocator((WrappingLabel) source.getFigure());
-		else {
+		} else {
 			return new LabelCellEditorLocator((Label) source.getFigure());
 		}
 	}

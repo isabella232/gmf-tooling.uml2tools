@@ -12,7 +12,9 @@ import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.uml2.diagram.common.genapi.IUpdaterNodeDescriptor;
 import org.eclipse.uml2.diagram.deploy.edit.parts.Artifact2EditPart;
 import org.eclipse.uml2.diagram.deploy.edit.parts.Artifact3EditPart;
+import org.eclipse.uml2.diagram.deploy.edit.parts.Artifact4EditPart;
 import org.eclipse.uml2.diagram.deploy.edit.parts.ArtifactEditPart;
+import org.eclipse.uml2.diagram.deploy.edit.parts.DeploymentSpecification2EditPart;
 import org.eclipse.uml2.diagram.deploy.edit.parts.DeploymentSpecificationEditPart;
 import org.eclipse.uml2.diagram.deploy.edit.parts.Device2EditPart;
 import org.eclipse.uml2.diagram.deploy.edit.parts.DeviceEditPart;
@@ -63,8 +65,10 @@ public class DeviceDevicecontents2CanonicalEditPolicy extends CanonicalEditPolic
 		case Artifact2EditPart.VISUAL_ID:
 		case DeploymentSpecificationEditPart.VISUAL_ID:
 		case ElementImportEditPart.VISUAL_ID:
-		case Artifact3EditPart.VISUAL_ID:
+		case Artifact4EditPart.VISUAL_ID:
+		case DeploymentSpecification2EditPart.VISUAL_ID:
 		case PropertyEditPart.VISUAL_ID:
+		case Artifact3EditPart.VISUAL_ID:
 			return true;
 		case Device2EditPart.VISUAL_ID:
 		case ArtifactEditPart.VISUAL_ID:

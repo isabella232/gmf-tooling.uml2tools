@@ -375,14 +375,13 @@
          </specializationType>
       </metamodel>
       <metamodel nsURI="http://www.eclipse.org/uml2/2.1.0/UML">
-         <metamodelType
+         <specializationType
                id="org.eclipse.uml2.diagram.deploy.DeploymentSpecification_2007"
                name="%metatype.name.DeploymentSpecification_2007"
-               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
-               eclass="DeploymentSpecification"
-               edithelper="org.eclipse.uml2.diagram.deploy.edit.helpers.DeploymentSpecificationEditHelper">
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType">
+            <specializes id="org.eclipse.uml2.diagram.deploy.DeploymentSpecification_3009"/>
             <param name="semanticHint" value="2007"/>
-         </metamodelType>
+         </specializationType>
       </metamodel>
       <metamodel nsURI="http://www.eclipse.org/uml2/2.1.0/UML">
          <metamodelType
@@ -414,6 +413,35 @@
          </metamodelType>
       </metamodel>
       <metamodel nsURI="http://www.eclipse.org/uml2/2.1.0/UML">
+         <specializationType
+               id="org.eclipse.uml2.diagram.deploy.Artifact_3008"
+               name="%metatype.name.Artifact_3008"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType">
+            <specializes id="org.eclipse.uml2.diagram.deploy.Artifact_3002"/>
+            <param name="semanticHint" value="3008"/>
+         </specializationType>
+      </metamodel>
+      <metamodel nsURI="http://www.eclipse.org/uml2/2.1.0/UML">
+         <metamodelType
+               id="org.eclipse.uml2.diagram.deploy.DeploymentSpecification_3009"
+               name="%metatype.name.DeploymentSpecification_3009"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
+               eclass="DeploymentSpecification"
+               edithelper="org.eclipse.uml2.diagram.deploy.edit.helpers.DeploymentSpecificationEditHelper">
+            <param name="semanticHint" value="3009"/>
+         </metamodelType>
+      </metamodel>
+      <metamodel nsURI="http://www.eclipse.org/uml2/2.1.0/UML">
+         <metamodelType
+               id="org.eclipse.uml2.diagram.deploy.Property_3003"
+               name="%metatype.name.Property_3003"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
+               eclass="Property"
+               edithelper="org.eclipse.uml2.diagram.deploy.edit.helpers.PropertyEditHelper">
+            <param name="semanticHint" value="3003"/>
+         </metamodelType>
+      </metamodel>
+      <metamodel nsURI="http://www.eclipse.org/uml2/2.1.0/UML">
          <metamodelType
                id="org.eclipse.uml2.diagram.deploy.ExecutionEnvironment_3005"
                name="%metatype.name.ExecutionEnvironment_3005"
@@ -440,16 +468,6 @@
                eclass="Node"
                edithelper="org.eclipse.uml2.diagram.deploy.edit.helpers.NodeEditHelper">
             <param name="semanticHint" value="3007"/>
-         </metamodelType>
-      </metamodel>
-      <metamodel nsURI="http://www.eclipse.org/uml2/2.1.0/UML">
-         <metamodelType
-               id="org.eclipse.uml2.diagram.deploy.Property_3003"
-               name="%metatype.name.Property_3003"
-               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
-               eclass="Property"
-               edithelper="org.eclipse.uml2.diagram.deploy.edit.helpers.PropertyEditHelper">
-            <param name="semanticHint" value="3003"/>
          </metamodelType>
       </metamodel>
       <metamodel nsURI="http://www.eclipse.org/uml2/2.1.0/UML">
@@ -523,10 +541,12 @@
          <elementType ref="org.eclipse.uml2.diagram.deploy.ElementImport_3001"/>
          <elementType ref="org.eclipse.uml2.diagram.deploy.Device_3004"/>
          <elementType ref="org.eclipse.uml2.diagram.deploy.Artifact_3002"/>
+         <elementType ref="org.eclipse.uml2.diagram.deploy.Artifact_3008"/>
+         <elementType ref="org.eclipse.uml2.diagram.deploy.DeploymentSpecification_3009"/>
+         <elementType ref="org.eclipse.uml2.diagram.deploy.Property_3003"/>
          <elementType ref="org.eclipse.uml2.diagram.deploy.ExecutionEnvironment_3005"/>
          <elementType ref="org.eclipse.uml2.diagram.deploy.Artifact_3006"/>
          <elementType ref="org.eclipse.uml2.diagram.deploy.Node_3007"/>
-         <elementType ref="org.eclipse.uml2.diagram.deploy.Property_3003"/>
          <elementType ref="org.eclipse.uml2.diagram.deploy.Deployment_4001"/>
          <elementType ref="org.eclipse.uml2.diagram.deploy.Manifestation_4002"/>
          <elementType ref="org.eclipse.uml2.diagram.deploy.DeploymentConfiguration_4003"/>

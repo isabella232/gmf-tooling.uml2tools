@@ -17,10 +17,12 @@ import org.eclipse.uml2.diagram.common.parser.property.PropertyParser;
 import org.eclipse.uml2.diagram.common.parser.property.PropertyToString;
 import org.eclipse.uml2.diagram.deploy.edit.parts.Artifact3EditPart;
 import org.eclipse.uml2.diagram.deploy.edit.parts.ArtifactFileName2EditPart;
+import org.eclipse.uml2.diagram.deploy.edit.parts.ArtifactFileName3EditPart;
 import org.eclipse.uml2.diagram.deploy.edit.parts.ArtifactFileNameEditPart;
 import org.eclipse.uml2.diagram.deploy.edit.parts.CommunicationPathNameEditPart;
 import org.eclipse.uml2.diagram.deploy.edit.parts.DependencyNameEditPart;
 import org.eclipse.uml2.diagram.deploy.edit.parts.DeploymentNameEditPart;
+import org.eclipse.uml2.diagram.deploy.edit.parts.DeploymentSpecificationName2EditPart;
 import org.eclipse.uml2.diagram.deploy.edit.parts.DeploymentSpecificationNameEditPart;
 import org.eclipse.uml2.diagram.deploy.edit.parts.DeviceName2EditPart;
 import org.eclipse.uml2.diagram.deploy.edit.parts.DeviceNameEditPart;
@@ -274,6 +276,54 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 	/**
 	 * @generated
 	 */
+	private IParser artifactFileName_5011Parser;
+
+	/**
+	 * @generated
+	 */
+	private IParser getArtifactFileName_5011Parser() {
+		if (artifactFileName_5011Parser == null) {
+			artifactFileName_5011Parser = createArtifactFileName_5011Parser();
+		}
+		return artifactFileName_5011Parser;
+	}
+
+	/**
+	 * @generated
+	 */
+	protected IParser createArtifactFileName_5011Parser() {
+		EAttribute[] features = new EAttribute[] { UMLPackage.eINSTANCE.getArtifact_FileName() };
+		Parser_0_0 parser = new Parser_0_0(features);
+		return parser;
+	}
+
+	/**
+	 * @generated
+	 */
+	private IParser deploymentSpecificationName_5012Parser;
+
+	/**
+	 * @generated
+	 */
+	private IParser getDeploymentSpecificationName_5012Parser() {
+		if (deploymentSpecificationName_5012Parser == null) {
+			deploymentSpecificationName_5012Parser = createDeploymentSpecificationName_5012Parser();
+		}
+		return deploymentSpecificationName_5012Parser;
+	}
+
+	/**
+	 * @generated
+	 */
+	protected IParser createDeploymentSpecificationName_5012Parser() {
+		EAttribute[] features = new EAttribute[] { UMLPackage.eINSTANCE.getNamedElement_Name() };
+		Parser_0_0 parser = new Parser_0_0(features);
+		return parser;
+	}
+
+	/**
+	 * @generated
+	 */
 	private IParser executionEnvironmentName_5008Parser;
 
 	/**
@@ -499,14 +549,18 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 			return getDeviceName_5010Parser();
 		case ArtifactFileName2EditPart.VISUAL_ID:
 			return getArtifactFileName_5007Parser();
+		case ArtifactFileName3EditPart.VISUAL_ID:
+			return getArtifactFileName_5011Parser();
+		case DeploymentSpecificationName2EditPart.VISUAL_ID:
+			return getDeploymentSpecificationName_5012Parser();
+		case PropertyEditPart.VISUAL_ID:
+			return getProperty_3003Parser();
 		case ExecutionEnvironmentName2EditPart.VISUAL_ID:
 			return getExecutionEnvironmentName_5008Parser();
 		case Artifact3EditPart.VISUAL_ID:
 			return getArtifact_3006Parser();
 		case NodeName2EditPart.VISUAL_ID:
 			return getNodeName_5009Parser();
-		case PropertyEditPart.VISUAL_ID:
-			return getProperty_3003Parser();
 		case DeploymentNameEditPart.VISUAL_ID:
 			return getDeploymentName_6001Parser();
 		case ManifestationNameEditPart.VISUAL_ID:

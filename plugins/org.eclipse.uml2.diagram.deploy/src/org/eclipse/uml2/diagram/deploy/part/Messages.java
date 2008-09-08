@@ -408,12 +408,32 @@ public class Messages extends NLS {
 	/**
 	 * @generated
 	 */
+	public static String ArtifactArtifactFigure_contentsEditPart_title;
+
+	/**
+	 * @generated
+	 */
+	public static String ArtifactArtifactFigure_contents2EditPart_title;
+
+	/**
+	 * @generated
+	 */
+	public static String DeploymentSpecificationProperties2EditPart_title;
+
+	/**
+	 * @generated
+	 */
 	public static String ExecutionEnvironmentArtifacts2EditPart_title;
 
 	/**
 	 * @generated
 	 */
 	public static String ExecutionEnvironmentArtifactsEditPart_title;
+
+	/**
+	 * @generated
+	 */
+	public static String ArtifactArtifactFigure_contents3EditPart_title;
 
 	/**
 	 * @generated
@@ -509,6 +529,26 @@ public class Messages extends NLS {
 	 * @generated
 	 */
 	public static String NavigatorGroupName_Artifact_3002_outgoinglinks;
+
+	/**
+	 * @generated
+	 */
+	public static String NavigatorGroupName_Artifact_3008_incominglinks;
+
+	/**
+	 * @generated
+	 */
+	public static String NavigatorGroupName_Artifact_3008_outgoinglinks;
+
+	/**
+	 * @generated
+	 */
+	public static String NavigatorGroupName_DeploymentSpecification_3009_incominglinks;
+
+	/**
+	 * @generated
+	 */
+	public static String NavigatorGroupName_DeploymentSpecification_3009_outgoinglinks;
 
 	/**
 	 * @generated

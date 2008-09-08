@@ -18,11 +18,13 @@ import org.eclipse.jface.resource.ImageRegistry;
 import org.eclipse.swt.graphics.Image;
 import org.eclipse.uml2.diagram.deploy.edit.parts.Artifact2EditPart;
 import org.eclipse.uml2.diagram.deploy.edit.parts.Artifact3EditPart;
+import org.eclipse.uml2.diagram.deploy.edit.parts.Artifact4EditPart;
 import org.eclipse.uml2.diagram.deploy.edit.parts.ArtifactEditPart;
 import org.eclipse.uml2.diagram.deploy.edit.parts.CommunicationPathEditPart;
 import org.eclipse.uml2.diagram.deploy.edit.parts.DependencyEditPart;
 import org.eclipse.uml2.diagram.deploy.edit.parts.DeploymentConfigurationEditPart;
 import org.eclipse.uml2.diagram.deploy.edit.parts.DeploymentEditPart;
+import org.eclipse.uml2.diagram.deploy.edit.parts.DeploymentSpecification2EditPart;
 import org.eclipse.uml2.diagram.deploy.edit.parts.DeploymentSpecificationEditPart;
 import org.eclipse.uml2.diagram.deploy.edit.parts.Device2EditPart;
 import org.eclipse.uml2.diagram.deploy.edit.parts.DeviceEditPart;
@@ -113,6 +115,16 @@ public class UMLElementTypes extends ElementInitializers {
 	 * @generated
 	 */
 	public static final IHintedType Artifact_3002 = (IHintedType) getElementType("org.eclipse.uml2.diagram.deploy.Artifact_3002"); //$NON-NLS-1$
+
+	/**
+	 * @generated
+	 */
+	public static final IHintedType Artifact_3008 = (IHintedType) getElementType("org.eclipse.uml2.diagram.deploy.Artifact_3008"); //$NON-NLS-1$
+
+	/**
+	 * @generated
+	 */
+	public static final IHintedType DeploymentSpecification_3009 = (IHintedType) getElementType("org.eclipse.uml2.diagram.deploy.DeploymentSpecification_3009"); //$NON-NLS-1$
 
 	/**
 	 * @generated
@@ -285,13 +297,17 @@ public class UMLElementTypes extends ElementInitializers {
 
 			elements.put(Artifact_3002, UMLPackage.eINSTANCE.getArtifact());
 
+			elements.put(Artifact_3008, UMLPackage.eINSTANCE.getArtifact());
+
+			elements.put(DeploymentSpecification_3009, UMLPackage.eINSTANCE.getDeploymentSpecification());
+
+			elements.put(Property_3003, UMLPackage.eINSTANCE.getProperty());
+
 			elements.put(ExecutionEnvironment_3005, UMLPackage.eINSTANCE.getExecutionEnvironment());
 
 			elements.put(Artifact_3006, UMLPackage.eINSTANCE.getArtifact());
 
 			elements.put(Node_3007, UMLPackage.eINSTANCE.getNode());
-
-			elements.put(Property_3003, UMLPackage.eINSTANCE.getProperty());
 
 			elements.put(Deployment_4001, UMLPackage.eINSTANCE.getDeployment());
 
@@ -329,10 +345,12 @@ public class UMLElementTypes extends ElementInitializers {
 			KNOWN_ELEMENT_TYPES.add(ElementImport_3001);
 			KNOWN_ELEMENT_TYPES.add(Device_3004);
 			KNOWN_ELEMENT_TYPES.add(Artifact_3002);
+			KNOWN_ELEMENT_TYPES.add(Artifact_3008);
+			KNOWN_ELEMENT_TYPES.add(DeploymentSpecification_3009);
+			KNOWN_ELEMENT_TYPES.add(Property_3003);
 			KNOWN_ELEMENT_TYPES.add(ExecutionEnvironment_3005);
 			KNOWN_ELEMENT_TYPES.add(Artifact_3006);
 			KNOWN_ELEMENT_TYPES.add(Node_3007);
-			KNOWN_ELEMENT_TYPES.add(Property_3003);
 			KNOWN_ELEMENT_TYPES.add(Deployment_4001);
 			KNOWN_ELEMENT_TYPES.add(Manifestation_4002);
 			KNOWN_ELEMENT_TYPES.add(DeploymentConfiguration_4003);
@@ -367,14 +385,18 @@ public class UMLElementTypes extends ElementInitializers {
 			return Device_3004;
 		case ArtifactEditPart.VISUAL_ID:
 			return Artifact_3002;
+		case Artifact4EditPart.VISUAL_ID:
+			return Artifact_3008;
+		case DeploymentSpecification2EditPart.VISUAL_ID:
+			return DeploymentSpecification_3009;
+		case PropertyEditPart.VISUAL_ID:
+			return Property_3003;
 		case ExecutionEnvironment2EditPart.VISUAL_ID:
 			return ExecutionEnvironment_3005;
 		case Artifact3EditPart.VISUAL_ID:
 			return Artifact_3006;
 		case Node2EditPart.VISUAL_ID:
 			return Node_3007;
-		case PropertyEditPart.VISUAL_ID:
-			return Property_3003;
 		case DeploymentEditPart.VISUAL_ID:
 			return Deployment_4001;
 		case ManifestationEditPart.VISUAL_ID:

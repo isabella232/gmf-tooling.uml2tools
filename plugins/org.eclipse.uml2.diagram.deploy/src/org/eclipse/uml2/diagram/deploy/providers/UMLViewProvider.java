@@ -8,8 +8,13 @@ import org.eclipse.gmf.runtime.emf.type.core.IHintedType;
 import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.uml2.diagram.deploy.edit.parts.Artifact2EditPart;
 import org.eclipse.uml2.diagram.deploy.edit.parts.Artifact3EditPart;
+import org.eclipse.uml2.diagram.deploy.edit.parts.Artifact4EditPart;
+import org.eclipse.uml2.diagram.deploy.edit.parts.ArtifactArtifactFigure_contents2EditPart;
+import org.eclipse.uml2.diagram.deploy.edit.parts.ArtifactArtifactFigure_contents3EditPart;
+import org.eclipse.uml2.diagram.deploy.edit.parts.ArtifactArtifactFigure_contentsEditPart;
 import org.eclipse.uml2.diagram.deploy.edit.parts.ArtifactEditPart;
 import org.eclipse.uml2.diagram.deploy.edit.parts.ArtifactFileName2EditPart;
+import org.eclipse.uml2.diagram.deploy.edit.parts.ArtifactFileName3EditPart;
 import org.eclipse.uml2.diagram.deploy.edit.parts.ArtifactFileNameEditPart;
 import org.eclipse.uml2.diagram.deploy.edit.parts.CommunicationPathEditPart;
 import org.eclipse.uml2.diagram.deploy.edit.parts.CommunicationPathNameEditPart;
@@ -18,8 +23,11 @@ import org.eclipse.uml2.diagram.deploy.edit.parts.DependencyNameEditPart;
 import org.eclipse.uml2.diagram.deploy.edit.parts.DeploymentConfigurationEditPart;
 import org.eclipse.uml2.diagram.deploy.edit.parts.DeploymentEditPart;
 import org.eclipse.uml2.diagram.deploy.edit.parts.DeploymentNameEditPart;
+import org.eclipse.uml2.diagram.deploy.edit.parts.DeploymentSpecification2EditPart;
 import org.eclipse.uml2.diagram.deploy.edit.parts.DeploymentSpecificationEditPart;
+import org.eclipse.uml2.diagram.deploy.edit.parts.DeploymentSpecificationName2EditPart;
 import org.eclipse.uml2.diagram.deploy.edit.parts.DeploymentSpecificationNameEditPart;
+import org.eclipse.uml2.diagram.deploy.edit.parts.DeploymentSpecificationProperties2EditPart;
 import org.eclipse.uml2.diagram.deploy.edit.parts.DeploymentSpecificationPropertiesEditPart;
 import org.eclipse.uml2.diagram.deploy.edit.parts.Device2EditPart;
 import org.eclipse.uml2.diagram.deploy.edit.parts.DeviceDevicecontents2EditPart;
@@ -48,7 +56,12 @@ import org.eclipse.uml2.diagram.deploy.edit.parts.PropertyEditPart;
 import org.eclipse.uml2.diagram.deploy.part.UMLVisualIDRegistry;
 import org.eclipse.uml2.diagram.deploy.view.factories.Artifact2ViewFactory;
 import org.eclipse.uml2.diagram.deploy.view.factories.Artifact3ViewFactory;
+import org.eclipse.uml2.diagram.deploy.view.factories.Artifact4ViewFactory;
+import org.eclipse.uml2.diagram.deploy.view.factories.ArtifactArtifactFigure_contents2ViewFactory;
+import org.eclipse.uml2.diagram.deploy.view.factories.ArtifactArtifactFigure_contents3ViewFactory;
+import org.eclipse.uml2.diagram.deploy.view.factories.ArtifactArtifactFigure_contentsViewFactory;
 import org.eclipse.uml2.diagram.deploy.view.factories.ArtifactFileName2ViewFactory;
+import org.eclipse.uml2.diagram.deploy.view.factories.ArtifactFileName3ViewFactory;
 import org.eclipse.uml2.diagram.deploy.view.factories.ArtifactFileNameViewFactory;
 import org.eclipse.uml2.diagram.deploy.view.factories.ArtifactViewFactory;
 import org.eclipse.uml2.diagram.deploy.view.factories.CommunicationPathNameViewFactory;
@@ -57,7 +70,10 @@ import org.eclipse.uml2.diagram.deploy.view.factories.DependencyNameViewFactory;
 import org.eclipse.uml2.diagram.deploy.view.factories.DependencyViewFactory;
 import org.eclipse.uml2.diagram.deploy.view.factories.DeploymentConfigurationViewFactory;
 import org.eclipse.uml2.diagram.deploy.view.factories.DeploymentNameViewFactory;
+import org.eclipse.uml2.diagram.deploy.view.factories.DeploymentSpecification2ViewFactory;
+import org.eclipse.uml2.diagram.deploy.view.factories.DeploymentSpecificationName2ViewFactory;
 import org.eclipse.uml2.diagram.deploy.view.factories.DeploymentSpecificationNameViewFactory;
+import org.eclipse.uml2.diagram.deploy.view.factories.DeploymentSpecificationProperties2ViewFactory;
 import org.eclipse.uml2.diagram.deploy.view.factories.DeploymentSpecificationPropertiesViewFactory;
 import org.eclipse.uml2.diagram.deploy.view.factories.DeploymentSpecificationViewFactory;
 import org.eclipse.uml2.diagram.deploy.view.factories.DeploymentViewFactory;
@@ -155,10 +171,12 @@ public class UMLViewProvider extends AbstractViewProvider {
 				case ElementImportEditPart.VISUAL_ID:
 				case Device2EditPart.VISUAL_ID:
 				case ArtifactEditPart.VISUAL_ID:
+				case Artifact4EditPart.VISUAL_ID:
+				case DeploymentSpecification2EditPart.VISUAL_ID:
+				case PropertyEditPart.VISUAL_ID:
 				case ExecutionEnvironment2EditPart.VISUAL_ID:
 				case Artifact3EditPart.VISUAL_ID:
 				case Node2EditPart.VISUAL_ID:
-				case PropertyEditPart.VISUAL_ID:
 					if (domainElement == null || visualID != UMLVisualIDRegistry.getNodeVisualID(containerView, domainElement)) {
 						return null; // visual id in semantic hint should match visual id for domain element
 					}
@@ -187,6 +205,7 @@ public class UMLViewProvider extends AbstractViewProvider {
 					}
 					break;
 				case ArtifactFileNameEditPart.VISUAL_ID:
+				case ArtifactArtifactFigure_contents3EditPart.VISUAL_ID:
 					if (Artifact2EditPart.VISUAL_ID != UMLVisualIDRegistry.getVisualID(containerView) || containerView.getElement() != domainElement) {
 						return null; // wrong container
 					}
@@ -204,7 +223,20 @@ public class UMLViewProvider extends AbstractViewProvider {
 					}
 					break;
 				case ArtifactFileName2EditPart.VISUAL_ID:
+				case ArtifactArtifactFigure_contentsEditPart.VISUAL_ID:
 					if (ArtifactEditPart.VISUAL_ID != UMLVisualIDRegistry.getVisualID(containerView) || containerView.getElement() != domainElement) {
+						return null; // wrong container
+					}
+					break;
+				case ArtifactFileName3EditPart.VISUAL_ID:
+				case ArtifactArtifactFigure_contents2EditPart.VISUAL_ID:
+					if (Artifact4EditPart.VISUAL_ID != UMLVisualIDRegistry.getVisualID(containerView) || containerView.getElement() != domainElement) {
+						return null; // wrong container
+					}
+					break;
+				case DeploymentSpecificationName2EditPart.VISUAL_ID:
+				case DeploymentSpecificationProperties2EditPart.VISUAL_ID:
+					if (DeploymentSpecification2EditPart.VISUAL_ID != UMLVisualIDRegistry.getVisualID(containerView) || containerView.getElement() != domainElement) {
 						return null; // wrong container
 					}
 					break;
@@ -289,6 +321,16 @@ public class UMLViewProvider extends AbstractViewProvider {
 			return ArtifactViewFactory.class;
 		case ArtifactFileName2EditPart.VISUAL_ID:
 			return ArtifactFileName2ViewFactory.class;
+		case Artifact4EditPart.VISUAL_ID:
+			return Artifact4ViewFactory.class;
+		case ArtifactFileName3EditPart.VISUAL_ID:
+			return ArtifactFileName3ViewFactory.class;
+		case DeploymentSpecification2EditPart.VISUAL_ID:
+			return DeploymentSpecification2ViewFactory.class;
+		case DeploymentSpecificationName2EditPart.VISUAL_ID:
+			return DeploymentSpecificationName2ViewFactory.class;
+		case PropertyEditPart.VISUAL_ID:
+			return PropertyViewFactory.class;
 		case ExecutionEnvironment2EditPart.VISUAL_ID:
 			return ExecutionEnvironment2ViewFactory.class;
 		case ExecutionEnvironmentName2EditPart.VISUAL_ID:
@@ -299,18 +341,24 @@ public class UMLViewProvider extends AbstractViewProvider {
 			return Node2ViewFactory.class;
 		case NodeName2EditPart.VISUAL_ID:
 			return NodeName2ViewFactory.class;
-		case PropertyEditPart.VISUAL_ID:
-			return PropertyViewFactory.class;
 		case PackageImportsEditPart.VISUAL_ID:
 			return PackageImportsViewFactory.class;
 		case DeviceDevicecontentsEditPart.VISUAL_ID:
 			return DeviceDevicecontentsViewFactory.class;
 		case DeviceDevicecontents2EditPart.VISUAL_ID:
 			return DeviceDevicecontents2ViewFactory.class;
+		case ArtifactArtifactFigure_contentsEditPart.VISUAL_ID:
+			return ArtifactArtifactFigure_contentsViewFactory.class;
+		case ArtifactArtifactFigure_contents2EditPart.VISUAL_ID:
+			return ArtifactArtifactFigure_contents2ViewFactory.class;
+		case DeploymentSpecificationProperties2EditPart.VISUAL_ID:
+			return DeploymentSpecificationProperties2ViewFactory.class;
 		case ExecutionEnvironmentArtifacts2EditPart.VISUAL_ID:
 			return ExecutionEnvironmentArtifacts2ViewFactory.class;
 		case ExecutionEnvironmentArtifactsEditPart.VISUAL_ID:
 			return ExecutionEnvironmentArtifactsViewFactory.class;
+		case ArtifactArtifactFigure_contents3EditPart.VISUAL_ID:
+			return ArtifactArtifactFigure_contents3ViewFactory.class;
 		case DeploymentSpecificationPropertiesEditPart.VISUAL_ID:
 			return DeploymentSpecificationPropertiesViewFactory.class;
 		case DeploymentNameEditPart.VISUAL_ID:

@@ -329,6 +329,12 @@ public class DeviceEditPart extends ShapeNodeEditPart implements PrimaryShapeEdi
 		if (targetEditPart instanceof ArtifactEditPart) {
 			types.add(UMLElementTypes.Deployment_4001);
 		}
+		if (targetEditPart instanceof Artifact4EditPart) {
+			types.add(UMLElementTypes.Deployment_4001);
+		}
+		if (targetEditPart instanceof DeploymentSpecification2EditPart) {
+			types.add(UMLElementTypes.Deployment_4001);
+		}
 		if (targetEditPart instanceof org.eclipse.uml2.diagram.deploy.edit.parts.DeviceEditPart) {
 			types.add(UMLElementTypes.CommunicationPath_4004);
 		}
@@ -348,6 +354,12 @@ public class DeviceEditPart extends ShapeNodeEditPart implements PrimaryShapeEdi
 			types.add(UMLElementTypes.CommunicationPath_4004);
 		}
 		if (targetEditPart instanceof ArtifactEditPart) {
+			types.add(UMLElementTypes.CommunicationPath_4004);
+		}
+		if (targetEditPart instanceof Artifact4EditPart) {
+			types.add(UMLElementTypes.CommunicationPath_4004);
+		}
+		if (targetEditPart instanceof DeploymentSpecification2EditPart) {
 			types.add(UMLElementTypes.CommunicationPath_4004);
 		}
 		if (targetEditPart instanceof ExecutionEnvironment2EditPart) {
@@ -380,6 +392,12 @@ public class DeviceEditPart extends ShapeNodeEditPart implements PrimaryShapeEdi
 		if (targetEditPart instanceof ArtifactEditPart) {
 			types.add(UMLElementTypes.Dependency_4005);
 		}
+		if (targetEditPart instanceof Artifact4EditPart) {
+			types.add(UMLElementTypes.Dependency_4005);
+		}
+		if (targetEditPart instanceof DeploymentSpecification2EditPart) {
+			types.add(UMLElementTypes.Dependency_4005);
+		}
 		if (targetEditPart instanceof ExecutionEnvironment2EditPart) {
 			types.add(UMLElementTypes.Dependency_4005);
 		}
@@ -403,6 +421,12 @@ public class DeviceEditPart extends ShapeNodeEditPart implements PrimaryShapeEdi
 		if (relationshipType == UMLElementTypes.Manifestation_4002) {
 			types.add(UMLElementTypes.Artifact_3002);
 		}
+		if (relationshipType == UMLElementTypes.Manifestation_4002) {
+			types.add(UMLElementTypes.Artifact_3008);
+		}
+		if (relationshipType == UMLElementTypes.Manifestation_4002) {
+			types.add(UMLElementTypes.DeploymentSpecification_3009);
+		}
 		if (relationshipType == UMLElementTypes.CommunicationPath_4004) {
 			types.add(UMLElementTypes.Device_2003);
 		}
@@ -423,6 +447,12 @@ public class DeviceEditPart extends ShapeNodeEditPart implements PrimaryShapeEdi
 		}
 		if (relationshipType == UMLElementTypes.CommunicationPath_4004) {
 			types.add(UMLElementTypes.Artifact_3002);
+		}
+		if (relationshipType == UMLElementTypes.CommunicationPath_4004) {
+			types.add(UMLElementTypes.Artifact_3008);
+		}
+		if (relationshipType == UMLElementTypes.CommunicationPath_4004) {
+			types.add(UMLElementTypes.DeploymentSpecification_3009);
 		}
 		if (relationshipType == UMLElementTypes.CommunicationPath_4004) {
 			types.add(UMLElementTypes.ExecutionEnvironment_3005);
@@ -453,6 +483,12 @@ public class DeviceEditPart extends ShapeNodeEditPart implements PrimaryShapeEdi
 		}
 		if (relationshipType == UMLElementTypes.Dependency_4005) {
 			types.add(UMLElementTypes.Artifact_3002);
+		}
+		if (relationshipType == UMLElementTypes.Dependency_4005) {
+			types.add(UMLElementTypes.Artifact_3008);
+		}
+		if (relationshipType == UMLElementTypes.Dependency_4005) {
+			types.add(UMLElementTypes.DeploymentSpecification_3009);
 		}
 		if (relationshipType == UMLElementTypes.Dependency_4005) {
 			types.add(UMLElementTypes.ExecutionEnvironment_3005);
@@ -477,6 +513,12 @@ public class DeviceEditPart extends ShapeNodeEditPart implements PrimaryShapeEdi
 		if (relationshipType == UMLElementTypes.Deployment_4001) {
 			types.add(UMLElementTypes.Artifact_3002);
 		}
+		if (relationshipType == UMLElementTypes.Deployment_4001) {
+			types.add(UMLElementTypes.Artifact_3008);
+		}
+		if (relationshipType == UMLElementTypes.Deployment_4001) {
+			types.add(UMLElementTypes.DeploymentSpecification_3009);
+		}
 		if (relationshipType == UMLElementTypes.CommunicationPath_4004) {
 			types.add(UMLElementTypes.Device_2003);
 		}
@@ -497,6 +539,12 @@ public class DeviceEditPart extends ShapeNodeEditPart implements PrimaryShapeEdi
 		}
 		if (relationshipType == UMLElementTypes.CommunicationPath_4004) {
 			types.add(UMLElementTypes.Artifact_3002);
+		}
+		if (relationshipType == UMLElementTypes.CommunicationPath_4004) {
+			types.add(UMLElementTypes.Artifact_3008);
+		}
+		if (relationshipType == UMLElementTypes.CommunicationPath_4004) {
+			types.add(UMLElementTypes.DeploymentSpecification_3009);
 		}
 		if (relationshipType == UMLElementTypes.CommunicationPath_4004) {
 			types.add(UMLElementTypes.ExecutionEnvironment_3005);
@@ -527,6 +575,12 @@ public class DeviceEditPart extends ShapeNodeEditPart implements PrimaryShapeEdi
 		}
 		if (relationshipType == UMLElementTypes.Dependency_4005) {
 			types.add(UMLElementTypes.Artifact_3002);
+		}
+		if (relationshipType == UMLElementTypes.Dependency_4005) {
+			types.add(UMLElementTypes.Artifact_3008);
+		}
+		if (relationshipType == UMLElementTypes.Dependency_4005) {
+			types.add(UMLElementTypes.DeploymentSpecification_3009);
 		}
 		if (relationshipType == UMLElementTypes.Dependency_4005) {
 			types.add(UMLElementTypes.ExecutionEnvironment_3005);

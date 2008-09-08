@@ -28,10 +28,12 @@ import org.eclipse.uml2.diagram.common.genapi.IUpdaterLinkDescriptor;
 import org.eclipse.uml2.diagram.common.genapi.IUpdaterNodeDescriptor;
 import org.eclipse.uml2.diagram.deploy.edit.parts.Artifact2EditPart;
 import org.eclipse.uml2.diagram.deploy.edit.parts.Artifact3EditPart;
+import org.eclipse.uml2.diagram.deploy.edit.parts.Artifact4EditPart;
 import org.eclipse.uml2.diagram.deploy.edit.parts.ArtifactEditPart;
 import org.eclipse.uml2.diagram.deploy.edit.parts.CommunicationPathEditPart;
 import org.eclipse.uml2.diagram.deploy.edit.parts.DependencyEditPart;
 import org.eclipse.uml2.diagram.deploy.edit.parts.DeploymentEditPart;
+import org.eclipse.uml2.diagram.deploy.edit.parts.DeploymentSpecification2EditPart;
 import org.eclipse.uml2.diagram.deploy.edit.parts.DeploymentSpecificationEditPart;
 import org.eclipse.uml2.diagram.deploy.edit.parts.Device2EditPart;
 import org.eclipse.uml2.diagram.deploy.edit.parts.DeviceEditPart;
@@ -90,10 +92,12 @@ public class PackageCanonicalEditPolicy extends CanonicalConnectionEditPolicy {
 		case ElementImportEditPart.VISUAL_ID:
 		case Device2EditPart.VISUAL_ID:
 		case ArtifactEditPart.VISUAL_ID:
+		case Artifact4EditPart.VISUAL_ID:
+		case DeploymentSpecification2EditPart.VISUAL_ID:
+		case PropertyEditPart.VISUAL_ID:
 		case ExecutionEnvironment2EditPart.VISUAL_ID:
 		case Artifact3EditPart.VISUAL_ID:
 		case Node2EditPart.VISUAL_ID:
-		case PropertyEditPart.VISUAL_ID:
 			return true;
 		case Package2EditPart.VISUAL_ID:
 		case DeviceEditPart.VISUAL_ID:
@@ -301,6 +305,27 @@ public class PackageCanonicalEditPolicy extends CanonicalConnectionEditPolicy {
 			domain2NotationMap.put(view.getElement(), view);
 			break;
 		}
+		case Artifact4EditPart.VISUAL_ID: {
+			if (!domain2NotationMap.containsKey(view.getElement())) {
+				result.addAll(UMLDiagramUpdater.getArtifact_3008ContainedLinks(view));
+			}
+			domain2NotationMap.put(view.getElement(), view);
+			break;
+		}
+		case DeploymentSpecification2EditPart.VISUAL_ID: {
+			if (!domain2NotationMap.containsKey(view.getElement())) {
+				result.addAll(UMLDiagramUpdater.getDeploymentSpecification_3009ContainedLinks(view));
+			}
+			domain2NotationMap.put(view.getElement(), view);
+			break;
+		}
+		case PropertyEditPart.VISUAL_ID: {
+			if (!domain2NotationMap.containsKey(view.getElement())) {
+				result.addAll(UMLDiagramUpdater.getProperty_3003ContainedLinks(view));
+			}
+			domain2NotationMap.put(view.getElement(), view);
+			break;
+		}
 		case ExecutionEnvironment2EditPart.VISUAL_ID: {
 			if (!domain2NotationMap.containsKey(view.getElement())) {
 				result.addAll(UMLDiagramUpdater.getExecutionEnvironment_3005ContainedLinks(view));
@@ -318,13 +343,6 @@ public class PackageCanonicalEditPolicy extends CanonicalConnectionEditPolicy {
 		case Node2EditPart.VISUAL_ID: {
 			if (!domain2NotationMap.containsKey(view.getElement())) {
 				result.addAll(UMLDiagramUpdater.getNode_3007ContainedLinks(view));
-			}
-			domain2NotationMap.put(view.getElement(), view);
-			break;
-		}
-		case PropertyEditPart.VISUAL_ID: {
-			if (!domain2NotationMap.containsKey(view.getElement())) {
-				result.addAll(UMLDiagramUpdater.getProperty_3003ContainedLinks(view));
 			}
 			domain2NotationMap.put(view.getElement(), view);
 			break;

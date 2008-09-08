@@ -248,6 +248,23 @@
           href="deploymentDiagram.gmftool#//@palette/@tools.0/@tools.0"/>
       <diagramNode
           href="componentDiagram_classifiers.gmfgraph#ArtifactNode"/>
+      <children
+          compartment="//@nodes.4/@ownedChild/@compartments.0"
+          referencedChild="//@nodes.4/@ownedChild">
+        <containmentFeature
+            href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//Artifact/nestedArtifact"/>
+      </children>
+      <children
+          compartment="//@nodes.4/@ownedChild/@compartments.0"
+          referencedChild="//@nodes.5/@ownedChild">
+        <containmentFeature
+            href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//Artifact/nestedArtifact"/>
+      </children>
+      <compartments
+          children="//@nodes.4/@ownedChild/@children.0 //@nodes.4/@ownedChild/@children.1">
+        <compartment
+            href="componentDiagram_classifiers.gmfgraph#ArtifactFigure_contents"/>
+      </compartments>
     </ownedChild>
   </nodes>
   <nodes>

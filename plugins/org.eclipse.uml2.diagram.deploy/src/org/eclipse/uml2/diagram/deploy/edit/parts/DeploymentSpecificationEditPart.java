@@ -364,6 +364,12 @@ public class DeploymentSpecificationEditPart extends ShapeNodeEditPart implement
 		if (targetEditPart instanceof ArtifactEditPart) {
 			types.add(UMLElementTypes.Manifestation_4002);
 		}
+		if (targetEditPart instanceof Artifact4EditPart) {
+			types.add(UMLElementTypes.Manifestation_4002);
+		}
+		if (targetEditPart instanceof DeploymentSpecification2EditPart) {
+			types.add(UMLElementTypes.Manifestation_4002);
+		}
 		if (targetEditPart instanceof ExecutionEnvironment2EditPart) {
 			types.add(UMLElementTypes.Manifestation_4002);
 		}
@@ -389,6 +395,12 @@ public class DeploymentSpecificationEditPart extends ShapeNodeEditPart implement
 			types.add(UMLElementTypes.CommunicationPath_4004);
 		}
 		if (targetEditPart instanceof ArtifactEditPart) {
+			types.add(UMLElementTypes.CommunicationPath_4004);
+		}
+		if (targetEditPart instanceof Artifact4EditPart) {
+			types.add(UMLElementTypes.CommunicationPath_4004);
+		}
+		if (targetEditPart instanceof DeploymentSpecification2EditPart) {
 			types.add(UMLElementTypes.CommunicationPath_4004);
 		}
 		if (targetEditPart instanceof ExecutionEnvironment2EditPart) {
@@ -419,6 +431,12 @@ public class DeploymentSpecificationEditPart extends ShapeNodeEditPart implement
 			types.add(UMLElementTypes.Dependency_4005);
 		}
 		if (targetEditPart instanceof ArtifactEditPart) {
+			types.add(UMLElementTypes.Dependency_4005);
+		}
+		if (targetEditPart instanceof Artifact4EditPart) {
+			types.add(UMLElementTypes.Dependency_4005);
+		}
+		if (targetEditPart instanceof DeploymentSpecification2EditPart) {
 			types.add(UMLElementTypes.Dependency_4005);
 		}
 		if (targetEditPart instanceof ExecutionEnvironment2EditPart) {
@@ -462,6 +480,12 @@ public class DeploymentSpecificationEditPart extends ShapeNodeEditPart implement
 		if (relationshipType == UMLElementTypes.Manifestation_4002) {
 			types.add(UMLElementTypes.Artifact_3002);
 		}
+		if (relationshipType == UMLElementTypes.Manifestation_4002) {
+			types.add(UMLElementTypes.Artifact_3008);
+		}
+		if (relationshipType == UMLElementTypes.Manifestation_4002) {
+			types.add(UMLElementTypes.DeploymentSpecification_3009);
+		}
 		if (relationshipType == UMLElementTypes.CommunicationPath_4004) {
 			types.add(UMLElementTypes.Device_2003);
 		}
@@ -482,6 +506,12 @@ public class DeploymentSpecificationEditPart extends ShapeNodeEditPart implement
 		}
 		if (relationshipType == UMLElementTypes.CommunicationPath_4004) {
 			types.add(UMLElementTypes.Artifact_3002);
+		}
+		if (relationshipType == UMLElementTypes.CommunicationPath_4004) {
+			types.add(UMLElementTypes.Artifact_3008);
+		}
+		if (relationshipType == UMLElementTypes.CommunicationPath_4004) {
+			types.add(UMLElementTypes.DeploymentSpecification_3009);
 		}
 		if (relationshipType == UMLElementTypes.CommunicationPath_4004) {
 			types.add(UMLElementTypes.ExecutionEnvironment_3005);
@@ -512,6 +542,12 @@ public class DeploymentSpecificationEditPart extends ShapeNodeEditPart implement
 		}
 		if (relationshipType == UMLElementTypes.Dependency_4005) {
 			types.add(UMLElementTypes.Artifact_3002);
+		}
+		if (relationshipType == UMLElementTypes.Dependency_4005) {
+			types.add(UMLElementTypes.Artifact_3008);
+		}
+		if (relationshipType == UMLElementTypes.Dependency_4005) {
+			types.add(UMLElementTypes.DeploymentSpecification_3009);
 		}
 		if (relationshipType == UMLElementTypes.Dependency_4005) {
 			types.add(UMLElementTypes.ExecutionEnvironment_3005);
@@ -552,6 +588,12 @@ public class DeploymentSpecificationEditPart extends ShapeNodeEditPart implement
 			types.add(UMLElementTypes.Artifact_3002);
 		}
 		if (relationshipType == UMLElementTypes.Manifestation_4002) {
+			types.add(UMLElementTypes.Artifact_3008);
+		}
+		if (relationshipType == UMLElementTypes.Manifestation_4002) {
+			types.add(UMLElementTypes.DeploymentSpecification_3009);
+		}
+		if (relationshipType == UMLElementTypes.Manifestation_4002) {
 			types.add(UMLElementTypes.ExecutionEnvironment_3005);
 		}
 		if (relationshipType == UMLElementTypes.Manifestation_4002) {
@@ -577,6 +619,12 @@ public class DeploymentSpecificationEditPart extends ShapeNodeEditPart implement
 		}
 		if (relationshipType == UMLElementTypes.CommunicationPath_4004) {
 			types.add(UMLElementTypes.Artifact_3002);
+		}
+		if (relationshipType == UMLElementTypes.CommunicationPath_4004) {
+			types.add(UMLElementTypes.Artifact_3008);
+		}
+		if (relationshipType == UMLElementTypes.CommunicationPath_4004) {
+			types.add(UMLElementTypes.DeploymentSpecification_3009);
 		}
 		if (relationshipType == UMLElementTypes.CommunicationPath_4004) {
 			types.add(UMLElementTypes.ExecutionEnvironment_3005);
@@ -607,6 +655,12 @@ public class DeploymentSpecificationEditPart extends ShapeNodeEditPart implement
 		}
 		if (relationshipType == UMLElementTypes.Dependency_4005) {
 			types.add(UMLElementTypes.Artifact_3002);
+		}
+		if (relationshipType == UMLElementTypes.Dependency_4005) {
+			types.add(UMLElementTypes.Artifact_3008);
+		}
+		if (relationshipType == UMLElementTypes.Dependency_4005) {
+			types.add(UMLElementTypes.DeploymentSpecification_3009);
 		}
 		if (relationshipType == UMLElementTypes.Dependency_4005) {
 			types.add(UMLElementTypes.ExecutionEnvironment_3005);

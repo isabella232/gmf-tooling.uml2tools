@@ -22,7 +22,12 @@ import org.eclipse.swt.widgets.Shell;
 import org.eclipse.ui.dialogs.ElementListSelectionDialog;
 import org.eclipse.uml2.diagram.deploy.edit.parts.Artifact2EditPart;
 import org.eclipse.uml2.diagram.deploy.edit.parts.Artifact3EditPart;
+import org.eclipse.uml2.diagram.deploy.edit.parts.Artifact4EditPart;
+import org.eclipse.uml2.diagram.deploy.edit.parts.ArtifactArtifactFigure_contents2EditPart;
+import org.eclipse.uml2.diagram.deploy.edit.parts.ArtifactArtifactFigure_contents3EditPart;
+import org.eclipse.uml2.diagram.deploy.edit.parts.ArtifactArtifactFigure_contentsEditPart;
 import org.eclipse.uml2.diagram.deploy.edit.parts.ArtifactEditPart;
+import org.eclipse.uml2.diagram.deploy.edit.parts.DeploymentSpecification2EditPart;
 import org.eclipse.uml2.diagram.deploy.edit.parts.DeploymentSpecificationEditPart;
 import org.eclipse.uml2.diagram.deploy.edit.parts.Device2EditPart;
 import org.eclipse.uml2.diagram.deploy.edit.parts.DeviceDevicecontents2EditPart;
@@ -66,6 +71,12 @@ public class UMLModelingAssistantProvider extends ModelingAssistantProvider {
 			return types;
 		}
 
+		if (editPart instanceof DeploymentSpecification2EditPart) {
+			List<IElementType> types = new ArrayList<IElementType>();
+			types.add(UMLElementTypes.Property_3003);
+			return types;
+		}
+
 		if (editPart instanceof ExecutionEnvironment2EditPart) {
 			List<IElementType> types = new ArrayList<IElementType>();
 			types.add(UMLElementTypes.Artifact_3006);
@@ -87,6 +98,27 @@ public class UMLModelingAssistantProvider extends ModelingAssistantProvider {
 			types.add(UMLElementTypes.Artifact_3002);
 			types.add(UMLElementTypes.ExecutionEnvironment_3005);
 			types.add(UMLElementTypes.Node_3007);
+			return types;
+		}
+
+		if (editPart instanceof ArtifactArtifactFigure_contentsEditPart) {
+			List<IElementType> types = new ArrayList<IElementType>();
+			types.add(UMLElementTypes.Artifact_3008);
+			types.add(UMLElementTypes.DeploymentSpecification_3009);
+			return types;
+		}
+
+		if (editPart instanceof ArtifactArtifactFigure_contents2EditPart) {
+			List<IElementType> types = new ArrayList<IElementType>();
+			types.add(UMLElementTypes.Artifact_3008);
+			types.add(UMLElementTypes.DeploymentSpecification_3009);
+			return types;
+		}
+
+		if (editPart instanceof ArtifactArtifactFigure_contents3EditPart) {
+			List<IElementType> types = new ArrayList<IElementType>();
+			types.add(UMLElementTypes.Artifact_3008);
+			types.add(UMLElementTypes.DeploymentSpecification_3009);
 			return types;
 		}
 
@@ -131,6 +163,12 @@ public class UMLModelingAssistantProvider extends ModelingAssistantProvider {
 		if (sourceEditPart instanceof ArtifactEditPart) {
 			return ((ArtifactEditPart) sourceEditPart).getMARelTypesOnSource();
 		}
+		if (sourceEditPart instanceof Artifact4EditPart) {
+			return ((Artifact4EditPart) sourceEditPart).getMARelTypesOnSource();
+		}
+		if (sourceEditPart instanceof DeploymentSpecification2EditPart) {
+			return ((DeploymentSpecification2EditPart) sourceEditPart).getMARelTypesOnSource();
+		}
 		if (sourceEditPart instanceof ExecutionEnvironment2EditPart) {
 			return ((ExecutionEnvironment2EditPart) sourceEditPart).getMARelTypesOnSource();
 		}
@@ -168,6 +206,12 @@ public class UMLModelingAssistantProvider extends ModelingAssistantProvider {
 		}
 		if (targetEditPart instanceof ArtifactEditPart) {
 			return ((ArtifactEditPart) targetEditPart).getMARelTypesOnTarget();
+		}
+		if (targetEditPart instanceof Artifact4EditPart) {
+			return ((Artifact4EditPart) targetEditPart).getMARelTypesOnTarget();
+		}
+		if (targetEditPart instanceof DeploymentSpecification2EditPart) {
+			return ((DeploymentSpecification2EditPart) targetEditPart).getMARelTypesOnTarget();
 		}
 		if (targetEditPart instanceof ExecutionEnvironment2EditPart) {
 			return ((ExecutionEnvironment2EditPart) targetEditPart).getMARelTypesOnTarget();
@@ -208,6 +252,12 @@ public class UMLModelingAssistantProvider extends ModelingAssistantProvider {
 		if (sourceEditPart instanceof ArtifactEditPart) {
 			return ((ArtifactEditPart) sourceEditPart).getMARelTypesOnSourceAndTarget(targetEditPart);
 		}
+		if (sourceEditPart instanceof Artifact4EditPart) {
+			return ((Artifact4EditPart) sourceEditPart).getMARelTypesOnSourceAndTarget(targetEditPart);
+		}
+		if (sourceEditPart instanceof DeploymentSpecification2EditPart) {
+			return ((DeploymentSpecification2EditPart) sourceEditPart).getMARelTypesOnSourceAndTarget(targetEditPart);
+		}
 		if (sourceEditPart instanceof ExecutionEnvironment2EditPart) {
 			return ((ExecutionEnvironment2EditPart) sourceEditPart).getMARelTypesOnSourceAndTarget(targetEditPart);
 		}
@@ -246,6 +296,12 @@ public class UMLModelingAssistantProvider extends ModelingAssistantProvider {
 		if (targetEditPart instanceof ArtifactEditPart) {
 			return ((ArtifactEditPart) targetEditPart).getMATypesForSource(relationshipType);
 		}
+		if (targetEditPart instanceof Artifact4EditPart) {
+			return ((Artifact4EditPart) targetEditPart).getMATypesForSource(relationshipType);
+		}
+		if (targetEditPart instanceof DeploymentSpecification2EditPart) {
+			return ((DeploymentSpecification2EditPart) targetEditPart).getMATypesForSource(relationshipType);
+		}
 		if (targetEditPart instanceof ExecutionEnvironment2EditPart) {
 			return ((ExecutionEnvironment2EditPart) targetEditPart).getMATypesForSource(relationshipType);
 		}
@@ -283,6 +339,12 @@ public class UMLModelingAssistantProvider extends ModelingAssistantProvider {
 		}
 		if (sourceEditPart instanceof ArtifactEditPart) {
 			return ((ArtifactEditPart) sourceEditPart).getMATypesForTarget(relationshipType);
+		}
+		if (sourceEditPart instanceof Artifact4EditPart) {
+			return ((Artifact4EditPart) sourceEditPart).getMATypesForTarget(relationshipType);
+		}
+		if (sourceEditPart instanceof DeploymentSpecification2EditPart) {
+			return ((DeploymentSpecification2EditPart) sourceEditPart).getMATypesForTarget(relationshipType);
 		}
 		if (sourceEditPart instanceof ExecutionEnvironment2EditPart) {
 			return ((ExecutionEnvironment2EditPart) sourceEditPart).getMATypesForTarget(relationshipType);

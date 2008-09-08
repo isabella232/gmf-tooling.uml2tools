@@ -7,19 +7,25 @@ import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
+import org.eclipse.draw2d.BorderLayout;
 import org.eclipse.draw2d.IFigure;
 import org.eclipse.draw2d.Label;
 import org.eclipse.draw2d.RectangleFigure;
 import org.eclipse.draw2d.Shape;
 import org.eclipse.draw2d.StackLayout;
 import org.eclipse.draw2d.ToolbarLayout;
+import org.eclipse.draw2d.geometry.Dimension;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.transaction.TransactionalEditingDomain;
 import org.eclipse.gef.EditPart;
 import org.eclipse.gef.EditPolicy;
+import org.eclipse.gef.Request;
+import org.eclipse.gef.commands.Command;
 import org.eclipse.gef.editpolicies.LayoutEditPolicy;
+import org.eclipse.gef.editpolicies.NonResizableEditPolicy;
+import org.eclipse.gef.requests.CreateRequest;
 import org.eclipse.gmf.runtime.diagram.core.listener.DiagramEventBroker;
 import org.eclipse.gmf.runtime.diagram.core.listener.NotificationListener;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart;
@@ -100,16 +106,22 @@ public class ArtifactEditPart extends ShapeNodeEditPart implements PrimaryShapeE
 	 * @generated
 	 */
 	protected LayoutEditPolicy createLayoutEditPolicy() {
-
-		ConstrainedToolbarLayoutEditPolicy lep = new ConstrainedToolbarLayoutEditPolicy() {
+		LayoutEditPolicy lep = new LayoutEditPolicy() {
 
 			protected EditPolicy createChildEditPolicy(EditPart child) {
-				if (child.getEditPolicy(EditPolicy.PRIMARY_DRAG_ROLE) == null) {
-					if (child instanceof ITextAwareEditPart) {
-						return new UMLTextSelectionEditPolicy();
-					}
+				EditPolicy result = child.getEditPolicy(EditPolicy.PRIMARY_DRAG_ROLE);
+				if (result == null) {
+					result = new NonResizableEditPolicy();
 				}
-				return super.createChildEditPolicy(child);
+				return result;
+			}
+
+			protected Command getMoveChildrenCommand(Request request) {
+				return null;
+			}
+
+			protected Command getCreateCommand(CreateRequest request) {
+				return null;
 			}
 		};
 		return lep;
@@ -138,6 +150,12 @@ public class ArtifactEditPart extends ShapeNodeEditPart implements PrimaryShapeE
 			((ArtifactFileName2EditPart) childEditPart).setLabel(getPrimaryShape().getFigureArtifactFigure_name());
 			return true;
 		}
+		if (childEditPart instanceof ArtifactArtifactFigure_contentsEditPart) {
+			IFigure pane = getPrimaryShape().getFigureArtifactFigure_Body();
+			setupContentPane(pane); // FIXME each comparment should handle his content pane in his own way 
+			pane.add(((ArtifactArtifactFigure_contentsEditPart) childEditPart).getFigure());
+			return true;
+		}
 		return false;
 	}
 
@@ -146,6 +164,11 @@ public class ArtifactEditPart extends ShapeNodeEditPart implements PrimaryShapeE
 	 */
 	protected boolean removeFixedChild(EditPart childEditPart) {
 
+		if (childEditPart instanceof ArtifactArtifactFigure_contentsEditPart) {
+			IFigure pane = getPrimaryShape().getFigureArtifactFigure_Body();
+			pane.remove(((ArtifactArtifactFigure_contentsEditPart) childEditPart).getFigure());
+			return true;
+		}
 		return false;
 	}
 
@@ -174,6 +197,9 @@ public class ArtifactEditPart extends ShapeNodeEditPart implements PrimaryShapeE
 	 */
 	protected IFigure getContentPaneFor(IGraphicalEditPart editPart) {
 
+		if (editPart instanceof ArtifactArtifactFigure_contentsEditPart) {
+			return getPrimaryShape().getFigureArtifactFigure_Body();
+		}
 		return getContentPane();
 	}
 
@@ -322,6 +348,12 @@ public class ArtifactEditPart extends ShapeNodeEditPart implements PrimaryShapeE
 		if (targetEditPart instanceof org.eclipse.uml2.diagram.deploy.edit.parts.ArtifactEditPart) {
 			types.add(UMLElementTypes.Manifestation_4002);
 		}
+		if (targetEditPart instanceof Artifact4EditPart) {
+			types.add(UMLElementTypes.Manifestation_4002);
+		}
+		if (targetEditPart instanceof DeploymentSpecification2EditPart) {
+			types.add(UMLElementTypes.Manifestation_4002);
+		}
 		if (targetEditPart instanceof ExecutionEnvironment2EditPart) {
 			types.add(UMLElementTypes.Manifestation_4002);
 		}
@@ -347,6 +379,12 @@ public class ArtifactEditPart extends ShapeNodeEditPart implements PrimaryShapeE
 			types.add(UMLElementTypes.CommunicationPath_4004);
 		}
 		if (targetEditPart instanceof org.eclipse.uml2.diagram.deploy.edit.parts.ArtifactEditPart) {
+			types.add(UMLElementTypes.CommunicationPath_4004);
+		}
+		if (targetEditPart instanceof Artifact4EditPart) {
+			types.add(UMLElementTypes.CommunicationPath_4004);
+		}
+		if (targetEditPart instanceof DeploymentSpecification2EditPart) {
 			types.add(UMLElementTypes.CommunicationPath_4004);
 		}
 		if (targetEditPart instanceof ExecutionEnvironment2EditPart) {
@@ -377,6 +415,12 @@ public class ArtifactEditPart extends ShapeNodeEditPart implements PrimaryShapeE
 			types.add(UMLElementTypes.Dependency_4005);
 		}
 		if (targetEditPart instanceof org.eclipse.uml2.diagram.deploy.edit.parts.ArtifactEditPart) {
+			types.add(UMLElementTypes.Dependency_4005);
+		}
+		if (targetEditPart instanceof Artifact4EditPart) {
+			types.add(UMLElementTypes.Dependency_4005);
+		}
+		if (targetEditPart instanceof DeploymentSpecification2EditPart) {
 			types.add(UMLElementTypes.Dependency_4005);
 		}
 		if (targetEditPart instanceof ExecutionEnvironment2EditPart) {
@@ -420,6 +464,12 @@ public class ArtifactEditPart extends ShapeNodeEditPart implements PrimaryShapeE
 		if (relationshipType == UMLElementTypes.Manifestation_4002) {
 			types.add(UMLElementTypes.Artifact_3002);
 		}
+		if (relationshipType == UMLElementTypes.Manifestation_4002) {
+			types.add(UMLElementTypes.Artifact_3008);
+		}
+		if (relationshipType == UMLElementTypes.Manifestation_4002) {
+			types.add(UMLElementTypes.DeploymentSpecification_3009);
+		}
 		if (relationshipType == UMLElementTypes.CommunicationPath_4004) {
 			types.add(UMLElementTypes.Device_2003);
 		}
@@ -440,6 +490,12 @@ public class ArtifactEditPart extends ShapeNodeEditPart implements PrimaryShapeE
 		}
 		if (relationshipType == UMLElementTypes.CommunicationPath_4004) {
 			types.add(UMLElementTypes.Artifact_3002);
+		}
+		if (relationshipType == UMLElementTypes.CommunicationPath_4004) {
+			types.add(UMLElementTypes.Artifact_3008);
+		}
+		if (relationshipType == UMLElementTypes.CommunicationPath_4004) {
+			types.add(UMLElementTypes.DeploymentSpecification_3009);
 		}
 		if (relationshipType == UMLElementTypes.CommunicationPath_4004) {
 			types.add(UMLElementTypes.ExecutionEnvironment_3005);
@@ -470,6 +526,12 @@ public class ArtifactEditPart extends ShapeNodeEditPart implements PrimaryShapeE
 		}
 		if (relationshipType == UMLElementTypes.Dependency_4005) {
 			types.add(UMLElementTypes.Artifact_3002);
+		}
+		if (relationshipType == UMLElementTypes.Dependency_4005) {
+			types.add(UMLElementTypes.Artifact_3008);
+		}
+		if (relationshipType == UMLElementTypes.Dependency_4005) {
+			types.add(UMLElementTypes.DeploymentSpecification_3009);
 		}
 		if (relationshipType == UMLElementTypes.Dependency_4005) {
 			types.add(UMLElementTypes.ExecutionEnvironment_3005);
@@ -510,6 +572,12 @@ public class ArtifactEditPart extends ShapeNodeEditPart implements PrimaryShapeE
 			types.add(UMLElementTypes.Artifact_3002);
 		}
 		if (relationshipType == UMLElementTypes.Manifestation_4002) {
+			types.add(UMLElementTypes.Artifact_3008);
+		}
+		if (relationshipType == UMLElementTypes.Manifestation_4002) {
+			types.add(UMLElementTypes.DeploymentSpecification_3009);
+		}
+		if (relationshipType == UMLElementTypes.Manifestation_4002) {
 			types.add(UMLElementTypes.ExecutionEnvironment_3005);
 		}
 		if (relationshipType == UMLElementTypes.Manifestation_4002) {
@@ -535,6 +603,12 @@ public class ArtifactEditPart extends ShapeNodeEditPart implements PrimaryShapeE
 		}
 		if (relationshipType == UMLElementTypes.CommunicationPath_4004) {
 			types.add(UMLElementTypes.Artifact_3002);
+		}
+		if (relationshipType == UMLElementTypes.CommunicationPath_4004) {
+			types.add(UMLElementTypes.Artifact_3008);
+		}
+		if (relationshipType == UMLElementTypes.CommunicationPath_4004) {
+			types.add(UMLElementTypes.DeploymentSpecification_3009);
 		}
 		if (relationshipType == UMLElementTypes.CommunicationPath_4004) {
 			types.add(UMLElementTypes.ExecutionEnvironment_3005);
@@ -565,6 +639,12 @@ public class ArtifactEditPart extends ShapeNodeEditPart implements PrimaryShapeE
 		}
 		if (relationshipType == UMLElementTypes.Dependency_4005) {
 			types.add(UMLElementTypes.Artifact_3002);
+		}
+		if (relationshipType == UMLElementTypes.Dependency_4005) {
+			types.add(UMLElementTypes.Artifact_3008);
+		}
+		if (relationshipType == UMLElementTypes.Dependency_4005) {
+			types.add(UMLElementTypes.DeploymentSpecification_3009);
 		}
 		if (relationshipType == UMLElementTypes.Dependency_4005) {
 			types.add(UMLElementTypes.ExecutionEnvironment_3005);
@@ -790,15 +870,14 @@ public class ArtifactEditPart extends ShapeNodeEditPart implements PrimaryShapeE
 		/**
 		 * @generated
 		 */
+		private RectangleFigure fFigureArtifactFigure_Body;
+
+		/**
+		 * @generated
+		 */
 		public ArtifactFigure() {
 
-			ToolbarLayout layoutThis = new ToolbarLayout();
-			layoutThis.setStretchMinorAxis(true);
-			layoutThis.setMinorAlignment(ToolbarLayout.ALIGN_CENTER);
-
-			layoutThis.setSpacing(0);
-			layoutThis.setVertical(true);
-
+			BorderLayout layoutThis = new BorderLayout();
 			this.setLayoutManager(layoutThis);
 
 			createContents();
@@ -809,18 +888,18 @@ public class ArtifactEditPart extends ShapeNodeEditPart implements PrimaryShapeE
 		 */
 		private void createContents() {
 
-			Label artifactFigure_fixed_artifact0 = new Label();
-			artifactFigure_fixed_artifact0.setText("\u00ABartifact\u00BB");
-
-			this.add(artifactFigure_fixed_artifact0);
-
 			RectangleFigure artifactFigure_NameContainer0 = new RectangleFigure();
 			artifactFigure_NameContainer0.setFill(false);
 			artifactFigure_NameContainer0.setOutline(false);
 
-			this.add(artifactFigure_NameContainer0);
+			this.add(artifactFigure_NameContainer0, BorderLayout.TOP);
 
-			CenterLayout layoutArtifactFigure_NameContainer0 = new CenterLayout();
+			ToolbarLayout layoutArtifactFigure_NameContainer0 = new ToolbarLayout();
+			layoutArtifactFigure_NameContainer0.setStretchMinorAxis(true);
+			layoutArtifactFigure_NameContainer0.setMinorAlignment(ToolbarLayout.ALIGN_CENTER);
+
+			layoutArtifactFigure_NameContainer0.setSpacing(0);
+			layoutArtifactFigure_NameContainer0.setVertical(true);
 
 			artifactFigure_NameContainer0.setLayoutManager(layoutArtifactFigure_NameContainer0);
 
@@ -828,6 +907,16 @@ public class ArtifactEditPart extends ShapeNodeEditPart implements PrimaryShapeE
 			fFigureArtifactFigure_name.setText("");
 
 			artifactFigure_NameContainer0.add(fFigureArtifactFigure_name);
+
+			Label artifactFigure_fixed_artifact1 = new Label();
+			artifactFigure_fixed_artifact1.setText("\u00ABartifact\u00BB");
+
+			artifactFigure_NameContainer0.add(artifactFigure_fixed_artifact1);
+
+			fFigureArtifactFigure_Body = new RectangleFigure();
+			fFigureArtifactFigure_Body.setMinimumSize(new Dimension(getMapMode().DPtoLP(0), getMapMode().DPtoLP(55)));
+
+			this.add(fFigureArtifactFigure_Body, BorderLayout.CENTER);
 
 		}
 
@@ -855,6 +944,13 @@ public class ArtifactEditPart extends ShapeNodeEditPart implements PrimaryShapeE
 		 */
 		public Label getFigureArtifactFigure_name() {
 			return fFigureArtifactFigure_name;
+		}
+
+		/**
+		 * @generated
+		 */
+		public RectangleFigure getFigureArtifactFigure_Body() {
+			return fFigureArtifactFigure_Body;
 		}
 
 	}

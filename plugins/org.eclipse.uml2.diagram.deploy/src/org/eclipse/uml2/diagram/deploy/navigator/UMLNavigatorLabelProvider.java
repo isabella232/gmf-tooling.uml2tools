@@ -19,8 +19,10 @@ import org.eclipse.ui.navigator.ICommonContentExtensionSite;
 import org.eclipse.ui.navigator.ICommonLabelProvider;
 import org.eclipse.uml2.diagram.deploy.edit.parts.Artifact2EditPart;
 import org.eclipse.uml2.diagram.deploy.edit.parts.Artifact3EditPart;
+import org.eclipse.uml2.diagram.deploy.edit.parts.Artifact4EditPart;
 import org.eclipse.uml2.diagram.deploy.edit.parts.ArtifactEditPart;
 import org.eclipse.uml2.diagram.deploy.edit.parts.ArtifactFileName2EditPart;
+import org.eclipse.uml2.diagram.deploy.edit.parts.ArtifactFileName3EditPart;
 import org.eclipse.uml2.diagram.deploy.edit.parts.ArtifactFileNameEditPart;
 import org.eclipse.uml2.diagram.deploy.edit.parts.CommunicationPathEditPart;
 import org.eclipse.uml2.diagram.deploy.edit.parts.CommunicationPathNameEditPart;
@@ -29,7 +31,9 @@ import org.eclipse.uml2.diagram.deploy.edit.parts.DependencyNameEditPart;
 import org.eclipse.uml2.diagram.deploy.edit.parts.DeploymentConfigurationEditPart;
 import org.eclipse.uml2.diagram.deploy.edit.parts.DeploymentEditPart;
 import org.eclipse.uml2.diagram.deploy.edit.parts.DeploymentNameEditPart;
+import org.eclipse.uml2.diagram.deploy.edit.parts.DeploymentSpecification2EditPart;
 import org.eclipse.uml2.diagram.deploy.edit.parts.DeploymentSpecificationEditPart;
+import org.eclipse.uml2.diagram.deploy.edit.parts.DeploymentSpecificationName2EditPart;
 import org.eclipse.uml2.diagram.deploy.edit.parts.DeploymentSpecificationNameEditPart;
 import org.eclipse.uml2.diagram.deploy.edit.parts.Device2EditPart;
 import org.eclipse.uml2.diagram.deploy.edit.parts.DeviceEditPart;
@@ -134,14 +138,18 @@ public class UMLNavigatorLabelProvider extends LabelProvider implements ICommonL
 			return getImage("Navigator?Node?http://www.eclipse.org/uml2/2.1.0/UML?Device", UMLElementTypes.Device_3004); //$NON-NLS-1$
 		case ArtifactEditPart.VISUAL_ID:
 			return getImage("Navigator?Node?http://www.eclipse.org/uml2/2.1.0/UML?Artifact", UMLElementTypes.Artifact_3002); //$NON-NLS-1$
+		case Artifact4EditPart.VISUAL_ID:
+			return getImage("Navigator?Node?http://www.eclipse.org/uml2/2.1.0/UML?Artifact", UMLElementTypes.Artifact_3008); //$NON-NLS-1$
+		case DeploymentSpecification2EditPart.VISUAL_ID:
+			return getImage("Navigator?Node?http://www.eclipse.org/uml2/2.1.0/UML?DeploymentSpecification", UMLElementTypes.DeploymentSpecification_3009); //$NON-NLS-1$
+		case PropertyEditPart.VISUAL_ID:
+			return getImage("Navigator?Node?http://www.eclipse.org/uml2/2.1.0/UML?Property", UMLElementTypes.Property_3003); //$NON-NLS-1$
 		case ExecutionEnvironment2EditPart.VISUAL_ID:
 			return getImage("Navigator?Node?http://www.eclipse.org/uml2/2.1.0/UML?ExecutionEnvironment", UMLElementTypes.ExecutionEnvironment_3005); //$NON-NLS-1$
 		case Artifact3EditPart.VISUAL_ID:
 			return getImage("Navigator?Node?http://www.eclipse.org/uml2/2.1.0/UML?Artifact", UMLElementTypes.Artifact_3006); //$NON-NLS-1$
 		case Node2EditPart.VISUAL_ID:
 			return getImage("Navigator?Node?http://www.eclipse.org/uml2/2.1.0/UML?Node", UMLElementTypes.Node_3007); //$NON-NLS-1$
-		case PropertyEditPart.VISUAL_ID:
-			return getImage("Navigator?Node?http://www.eclipse.org/uml2/2.1.0/UML?Property", UMLElementTypes.Property_3003); //$NON-NLS-1$
 		case DeploymentEditPart.VISUAL_ID:
 			return getImage("Navigator?Link?http://www.eclipse.org/uml2/2.1.0/UML?Deployment", UMLElementTypes.Deployment_4001); //$NON-NLS-1$
 		case ManifestationEditPart.VISUAL_ID:
@@ -230,14 +238,18 @@ public class UMLNavigatorLabelProvider extends LabelProvider implements ICommonL
 			return getDevice_3004Text(view);
 		case ArtifactEditPart.VISUAL_ID:
 			return getArtifact_3002Text(view);
+		case Artifact4EditPart.VISUAL_ID:
+			return getArtifact_3008Text(view);
+		case DeploymentSpecification2EditPart.VISUAL_ID:
+			return getDeploymentSpecification_3009Text(view);
+		case PropertyEditPart.VISUAL_ID:
+			return getProperty_3003Text(view);
 		case ExecutionEnvironment2EditPart.VISUAL_ID:
 			return getExecutionEnvironment_3005Text(view);
 		case Artifact3EditPart.VISUAL_ID:
 			return getArtifact_3006Text(view);
 		case Node2EditPart.VISUAL_ID:
 			return getNode_3007Text(view);
-		case PropertyEditPart.VISUAL_ID:
-			return getProperty_3003Text(view);
 		case DeploymentEditPart.VISUAL_ID:
 			return getDeployment_4001Text(view);
 		case ManifestationEditPart.VISUAL_ID:
@@ -383,6 +395,34 @@ public class UMLNavigatorLabelProvider extends LabelProvider implements ICommonL
 			return parser.getPrintString(new EObjectAdapter(view.getElement() != null ? view.getElement() : view), ParserOptions.NONE.intValue());
 		} else {
 			UMLDiagramEditorPlugin.getInstance().logError("Parser was not found for label " + 5007); //$NON-NLS-1$
+			return ""; //$NON-NLS-1$
+		}
+	}
+
+	/**
+	 * @generated
+	 */
+	private String getArtifact_3008Text(View view) {
+		IParser parser = UMLParserProvider.getParser(UMLElementTypes.Artifact_3008, view.getElement() != null ? view.getElement() : view, UMLVisualIDRegistry
+				.getType(ArtifactFileName3EditPart.VISUAL_ID));
+		if (parser != null) {
+			return parser.getPrintString(new EObjectAdapter(view.getElement() != null ? view.getElement() : view), ParserOptions.NONE.intValue());
+		} else {
+			UMLDiagramEditorPlugin.getInstance().logError("Parser was not found for label " + 5011); //$NON-NLS-1$
+			return ""; //$NON-NLS-1$
+		}
+	}
+
+	/**
+	 * @generated
+	 */
+	private String getDeploymentSpecification_3009Text(View view) {
+		IParser parser = UMLParserProvider.getParser(UMLElementTypes.DeploymentSpecification_3009, view.getElement() != null ? view.getElement() : view, UMLVisualIDRegistry
+				.getType(DeploymentSpecificationName2EditPart.VISUAL_ID));
+		if (parser != null) {
+			return parser.getPrintString(new EObjectAdapter(view.getElement() != null ? view.getElement() : view), ParserOptions.NONE.intValue());
+		} else {
+			UMLDiagramEditorPlugin.getInstance().logError("Parser was not found for label " + 5012); //$NON-NLS-1$
 			return ""; //$NON-NLS-1$
 		}
 	}
