@@ -2,7 +2,7 @@
  * <copyright>
  * </copyright>
  *
- * $Id: TimingDPackage.java,v 1.5 2008/09/09 00:39:33 mgolubev Exp $
+ * $Id: TimingDPackage.java,v 1.6 2008/09/09 00:54:50 mgolubev Exp $
  */
 package org.eclipse.uml2.diagram.timing.model.timingd;
 
@@ -656,13 +656,22 @@ public interface TimingDPackage extends EPackage {
 	int DMESSAGE__UML_MESSAGE = 0;
 
 	/**
+	 * The feature id for the '<em><b>Display Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DMESSAGE__DISPLAY_NAME = 1;
+
+	/**
 	 * The feature id for the '<em><b>Frame</b></em>' container reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int DMESSAGE__FRAME = 1;
+	int DMESSAGE__FRAME = 2;
 
 	/**
 	 * The feature id for the '<em><b>Message Source</b></em>' reference.
@@ -671,7 +680,7 @@ public interface TimingDPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DMESSAGE__MESSAGE_SOURCE = 2;
+	int DMESSAGE__MESSAGE_SOURCE = 3;
 
 	/**
 	 * The feature id for the '<em><b>Message Target</b></em>' reference.
@@ -680,7 +689,7 @@ public interface TimingDPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DMESSAGE__MESSAGE_TARGET = 3;
+	int DMESSAGE__MESSAGE_TARGET = 4;
 
 	/**
 	 * The number of structural features of the '<em>DMessage</em>' class.
@@ -689,7 +698,7 @@ public interface TimingDPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DMESSAGE_FEATURE_COUNT = 4;
+	int DMESSAGE_FEATURE_COUNT = 5;
 
 	/**
 	 * The meta object id for the '{@link org.eclipse.uml2.diagram.timing.model.timingd.impl.DIntervalImpl <em>DInterval</em>}' class.
@@ -1429,6 +1438,17 @@ public interface TimingDPackage extends EPackage {
 	EReference getDMessage_UmlMessage();
 
 	/**
+	 * Returns the meta object for the attribute '{@link org.eclipse.uml2.diagram.timing.model.timingd.DMessage#getDisplayName <em>Display Name</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Display Name</em>'.
+	 * @see org.eclipse.uml2.diagram.timing.model.timingd.DMessage#getDisplayName()
+	 * @see #getDMessage()
+	 * @generated
+	 */
+	EAttribute getDMessage_DisplayName();
+
+	/**
 	 * Returns the meta object for the container reference '{@link org.eclipse.uml2.diagram.timing.model.timingd.DMessage#getFrame <em>Frame</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2037,6 +2057,14 @@ public interface TimingDPackage extends EPackage {
 		 * @generated
 		 */
 		EReference DMESSAGE__UML_MESSAGE = eINSTANCE.getDMessage_UmlMessage();
+
+		/**
+		 * The meta object literal for the '<em><b>Display Name</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute DMESSAGE__DISPLAY_NAME = eINSTANCE.getDMessage_DisplayName();
 
 		/**
 		 * The meta object literal for the '<em><b>Frame</b></em>' container reference feature.

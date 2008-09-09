@@ -170,6 +170,13 @@
   <links>
     <domainMetaElement
         href="../../../plugin/org.eclipse.uml2.diagram.timing.model/model/timing-diagram.ecore#//DMessage"/>
+    <labelMappings
+        xsi:type="gmfmap:FeatureLabelMapping">
+      <diagramLabel
+          href="timingDiagram.gmfgraph#Message_name"/>
+      <features
+          href="../../../plugin/org.eclipse.uml2.diagram.timing.model/model/timing-diagram.ecore#//DMessage/displayName"/>
+    </labelMappings>
     <containmentFeature
         href="../../../plugin/org.eclipse.uml2.diagram.timing.model/model/timing-diagram.ecore#//DFrame/messages"/>
     <tool

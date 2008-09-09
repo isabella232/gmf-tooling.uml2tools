@@ -2,7 +2,7 @@
  * <copyright>
  * </copyright>
  *
- * $Id: DMessage.java,v 1.1 2008/09/09 00:39:32 mgolubev Exp $
+ * $Id: DMessage.java,v 1.2 2008/09/09 00:54:50 mgolubev Exp $
  */
 package org.eclipse.uml2.diagram.timing.model.timingd;
 
@@ -18,6 +18,7 @@ import org.eclipse.uml2.uml.Message;
  * The following features are supported:
  * <ul>
  *   <li>{@link org.eclipse.uml2.diagram.timing.model.timingd.DMessage#getUmlMessage <em>Uml Message</em>}</li>
+ *   <li>{@link org.eclipse.uml2.diagram.timing.model.timingd.DMessage#getDisplayName <em>Display Name</em>}</li>
  *   <li>{@link org.eclipse.uml2.diagram.timing.model.timingd.DMessage#getFrame <em>Frame</em>}</li>
  *   <li>{@link org.eclipse.uml2.diagram.timing.model.timingd.DMessage#getMessageSource <em>Message Source</em>}</li>
  *   <li>{@link org.eclipse.uml2.diagram.timing.model.timingd.DMessage#getMessageTarget <em>Message Target</em>}</li>
@@ -54,6 +55,32 @@ public interface DMessage extends EObject {
 	 * @generated
 	 */
 	void setUmlMessage(Message value);
+
+	/**
+	 * Returns the value of the '<em><b>Display Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Display Name</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Display Name</em>' attribute.
+	 * @see #setDisplayName(String)
+	 * @see org.eclipse.uml2.diagram.timing.model.timingd.TimingDPackage#getDMessage_DisplayName()
+	 * @model
+	 * @generated
+	 */
+	String getDisplayName();
+
+	/**
+	 * Sets the value of the '{@link org.eclipse.uml2.diagram.timing.model.timingd.DMessage#getDisplayName <em>Display Name</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Display Name</em>' attribute.
+	 * @see #getDisplayName()
+	 * @generated
+	 */
+	void setDisplayName(String value);
 
 	/**
 	 * Returns the value of the '<em><b>Frame</b></em>' container reference.

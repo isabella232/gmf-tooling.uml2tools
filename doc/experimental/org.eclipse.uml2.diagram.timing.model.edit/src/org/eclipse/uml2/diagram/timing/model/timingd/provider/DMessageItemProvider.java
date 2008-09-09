@@ -2,7 +2,7 @@
  * <copyright>
  * </copyright>
  *
- * $Id: DMessageItemProvider.java,v 1.1 2008/09/09 00:39:26 mgolubev Exp $
+ * $Id: DMessageItemProvider.java,v 1.2 2008/09/09 00:54:46 mgolubev Exp $
  */
 package org.eclipse.uml2.diagram.timing.model.timingd.provider;
 
@@ -22,8 +22,11 @@ import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.IItemPropertySource;
 import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
 import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
+import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ItemProviderAdapter;
 
+import org.eclipse.emf.edit.provider.ViewerNotification;
+import org.eclipse.uml2.diagram.timing.model.timingd.DMessage;
 import org.eclipse.uml2.diagram.timing.model.timingd.TimingDPackage;
 
 /**
@@ -62,6 +65,7 @@ public class DMessageItemProvider
 			super.getPropertyDescriptors(object);
 
 			addUmlMessagePropertyDescriptor(object);
+			addDisplayNamePropertyDescriptor(object);
 			addMessageSourcePropertyDescriptor(object);
 			addMessageTargetPropertyDescriptor(object);
 		}
@@ -86,6 +90,28 @@ public class DMessageItemProvider
 				 false,
 				 true,
 				 null,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Display Name feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addDisplayNamePropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_DMessage_displayName_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_DMessage_displayName_feature", "_UI_DMessage_type"),
+				 TimingDPackage.Literals.DMESSAGE__DISPLAY_NAME,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
 				 null,
 				 null));
 	}
@@ -153,7 +179,10 @@ public class DMessageItemProvider
 	 */
 	@Override
 	public String getText(Object object) {
-		return getString("_UI_DMessage_type");
+		String label = ((DMessage)object).getDisplayName();
+		return label == null || label.length() == 0 ?
+			getString("_UI_DMessage_type") :
+			getString("_UI_DMessage_type") + " " + label;
 	}
 
 	/**
@@ -166,6 +195,12 @@ public class DMessageItemProvider
 	@Override
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
+
+		switch (notification.getFeatureID(DMessage.class)) {
+			case TimingDPackage.DMESSAGE__DISPLAY_NAME:
+				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
+				return;
+		}
 		super.notifyChanged(notification);
 	}
 

@@ -2,7 +2,7 @@
  * <copyright>
  * </copyright>
  *
- * $Id: DMessageImpl.java,v 1.1 2008/09/09 00:39:32 mgolubev Exp $
+ * $Id: DMessageImpl.java,v 1.2 2008/09/09 00:54:50 mgolubev Exp $
  */
 package org.eclipse.uml2.diagram.timing.model.timingd.impl;
 
@@ -28,6 +28,7 @@ import org.eclipse.uml2.uml.Message;
  * The following features are implemented:
  * <ul>
  *   <li>{@link org.eclipse.uml2.diagram.timing.model.timingd.impl.DMessageImpl#getUmlMessage <em>Uml Message</em>}</li>
+ *   <li>{@link org.eclipse.uml2.diagram.timing.model.timingd.impl.DMessageImpl#getDisplayName <em>Display Name</em>}</li>
  *   <li>{@link org.eclipse.uml2.diagram.timing.model.timingd.impl.DMessageImpl#getFrame <em>Frame</em>}</li>
  *   <li>{@link org.eclipse.uml2.diagram.timing.model.timingd.impl.DMessageImpl#getMessageSource <em>Message Source</em>}</li>
  *   <li>{@link org.eclipse.uml2.diagram.timing.model.timingd.impl.DMessageImpl#getMessageTarget <em>Message Target</em>}</li>
@@ -46,6 +47,26 @@ public class DMessageImpl extends EObjectImpl implements DMessage {
 	 * @ordered
 	 */
 	protected Message umlMessage;
+
+	/**
+	 * The default value of the '{@link #getDisplayName() <em>Display Name</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getDisplayName()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String DISPLAY_NAME_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getDisplayName() <em>Display Name</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getDisplayName()
+	 * @generated
+	 * @ordered
+	 */
+	protected String displayName = DISPLAY_NAME_EDEFAULT;
 
 	/**
 	 * The cached value of the '{@link #getMessageSource() <em>Message Source</em>}' reference.
@@ -122,6 +143,27 @@ public class DMessageImpl extends EObjectImpl implements DMessage {
 		umlMessage = newUmlMessage;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, TimingDPackage.DMESSAGE__UML_MESSAGE, oldUmlMessage, umlMessage));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String getDisplayName() {
+		return displayName;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setDisplayName(String newDisplayName) {
+		String oldDisplayName = displayName;
+		displayName = newDisplayName;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, TimingDPackage.DMESSAGE__DISPLAY_NAME, oldDisplayName, displayName));
 	}
 
 	/**
@@ -296,6 +338,8 @@ public class DMessageImpl extends EObjectImpl implements DMessage {
 			case TimingDPackage.DMESSAGE__UML_MESSAGE:
 				if (resolve) return getUmlMessage();
 				return basicGetUmlMessage();
+			case TimingDPackage.DMESSAGE__DISPLAY_NAME:
+				return getDisplayName();
 			case TimingDPackage.DMESSAGE__FRAME:
 				return getFrame();
 			case TimingDPackage.DMESSAGE__MESSAGE_SOURCE:
@@ -318,6 +362,9 @@ public class DMessageImpl extends EObjectImpl implements DMessage {
 		switch (featureID) {
 			case TimingDPackage.DMESSAGE__UML_MESSAGE:
 				setUmlMessage((Message)newValue);
+				return;
+			case TimingDPackage.DMESSAGE__DISPLAY_NAME:
+				setDisplayName((String)newValue);
 				return;
 			case TimingDPackage.DMESSAGE__FRAME:
 				setFrame((DFrame)newValue);
@@ -343,6 +390,9 @@ public class DMessageImpl extends EObjectImpl implements DMessage {
 			case TimingDPackage.DMESSAGE__UML_MESSAGE:
 				setUmlMessage((Message)null);
 				return;
+			case TimingDPackage.DMESSAGE__DISPLAY_NAME:
+				setDisplayName(DISPLAY_NAME_EDEFAULT);
+				return;
 			case TimingDPackage.DMESSAGE__FRAME:
 				setFrame((DFrame)null);
 				return;
@@ -366,6 +416,8 @@ public class DMessageImpl extends EObjectImpl implements DMessage {
 		switch (featureID) {
 			case TimingDPackage.DMESSAGE__UML_MESSAGE:
 				return umlMessage != null;
+			case TimingDPackage.DMESSAGE__DISPLAY_NAME:
+				return DISPLAY_NAME_EDEFAULT == null ? displayName != null : !DISPLAY_NAME_EDEFAULT.equals(displayName);
 			case TimingDPackage.DMESSAGE__FRAME:
 				return getFrame() != null;
 			case TimingDPackage.DMESSAGE__MESSAGE_SOURCE:
@@ -374,6 +426,22 @@ public class DMessageImpl extends EObjectImpl implements DMessage {
 				return messageTarget != null;
 		}
 		return super.eIsSet(featureID);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public String toString() {
+		if (eIsProxy()) return super.toString();
+
+		StringBuffer result = new StringBuffer(super.toString());
+		result.append(" (displayName: ");
+		result.append(displayName);
+		result.append(')');
+		return result.toString();
 	}
 
 } //DMessageImpl

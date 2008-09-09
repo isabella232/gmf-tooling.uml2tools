@@ -209,6 +209,12 @@
             value="black"/>
       </actualFigure>
     </descriptors>
+    <descriptors
+        name="MessageFigure_name">
+      <actualFigure
+          xsi:type="gmfgraph:Label"
+          name="MessageFigure_name"/>
+    </descriptors>
   </figures>
   <nodes
       name="InteractionNode"
@@ -295,4 +301,8 @@
       figure="InteractionFigure"
       elementIcon="false"
       accessor="//@figures.0/@descriptors.0/@accessors.0"/>
+  <labels
+      name="Message_name"
+      figure="MessageFigure_name"
+      elementIcon="false"/>
 </gmfgraph:Canvas>

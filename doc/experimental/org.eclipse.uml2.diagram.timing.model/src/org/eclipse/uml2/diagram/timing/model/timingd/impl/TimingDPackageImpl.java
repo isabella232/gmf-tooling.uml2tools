@@ -2,7 +2,7 @@
  * <copyright>
  * </copyright>
  *
- * $Id: TimingDPackageImpl.java,v 1.5 2008/09/09 00:39:32 mgolubev Exp $
+ * $Id: TimingDPackageImpl.java,v 1.6 2008/09/09 00:54:50 mgolubev Exp $
  */
 package org.eclipse.uml2.diagram.timing.model.timingd.impl;
 
@@ -694,8 +694,8 @@ public class TimingDPackageImpl extends EPackageImpl implements TimingDPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getDMessage_Frame() {
-		return (EReference)dMessageEClass.getEStructuralFeatures().get(1);
+	public EAttribute getDMessage_DisplayName() {
+		return (EAttribute)dMessageEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -703,7 +703,7 @@ public class TimingDPackageImpl extends EPackageImpl implements TimingDPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getDMessage_MessageSource() {
+	public EReference getDMessage_Frame() {
 		return (EReference)dMessageEClass.getEStructuralFeatures().get(2);
 	}
 
@@ -712,8 +712,17 @@ public class TimingDPackageImpl extends EPackageImpl implements TimingDPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getDMessage_MessageTarget() {
+	public EReference getDMessage_MessageSource() {
 		return (EReference)dMessageEClass.getEStructuralFeatures().get(3);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getDMessage_MessageTarget() {
+		return (EReference)dMessageEClass.getEStructuralFeatures().get(4);
 	}
 
 	/**
@@ -920,6 +929,7 @@ public class TimingDPackageImpl extends EPackageImpl implements TimingDPackage {
 
 		dMessageEClass = createEClass(DMESSAGE);
 		createEReference(dMessageEClass, DMESSAGE__UML_MESSAGE);
+		createEAttribute(dMessageEClass, DMESSAGE__DISPLAY_NAME);
 		createEReference(dMessageEClass, DMESSAGE__FRAME);
 		createEReference(dMessageEClass, DMESSAGE__MESSAGE_SOURCE);
 		createEReference(dMessageEClass, DMESSAGE__MESSAGE_TARGET);
@@ -1041,6 +1051,7 @@ public class TimingDPackageImpl extends EPackageImpl implements TimingDPackage {
 
 		initEClass(dMessageEClass, DMessage.class, "DMessage", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getDMessage_UmlMessage(), this.getUMLMessage(), null, "umlMessage", null, 0, 1, DMessage.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getDMessage_DisplayName(), ecorePackage.getEString(), "displayName", null, 0, 1, DMessage.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getDMessage_Frame(), this.getDFrame(), this.getDFrame_Messages(), "frame", null, 0, 1, DMessage.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getDMessage_MessageSource(), this.getDSegmentElement(), null, "messageSource", null, 0, 1, DMessage.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getDMessage_MessageTarget(), this.getDSegmentElement(), null, "messageTarget", null, 0, 1, DMessage.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

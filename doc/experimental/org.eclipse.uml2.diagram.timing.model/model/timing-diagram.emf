@@ -71,6 +71,8 @@ class DStateSwitch {
 
 class DMessage {
 	ref UMLMessage umlMessage;
+	
+	attr String displayName;
 
 	ref DFrame#messages frame;
 	ref DSegmentElement messageSource;

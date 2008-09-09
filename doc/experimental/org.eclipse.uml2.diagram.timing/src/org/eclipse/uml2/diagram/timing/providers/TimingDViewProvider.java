@@ -11,6 +11,7 @@ import org.eclipse.uml2.diagram.timing.edit.parts.DBlockEditPart;
 import org.eclipse.uml2.diagram.timing.edit.parts.DFrameContainerEditPart;
 import org.eclipse.uml2.diagram.timing.edit.parts.DFrameDisplayNameEditPart;
 import org.eclipse.uml2.diagram.timing.edit.parts.DFrameEditPart;
+import org.eclipse.uml2.diagram.timing.edit.parts.DMessageDisplayNameEditPart;
 import org.eclipse.uml2.diagram.timing.edit.parts.DMessageEditPart;
 import org.eclipse.uml2.diagram.timing.edit.parts.DSegmentEditPart;
 import org.eclipse.uml2.diagram.timing.edit.parts.DSegmentEndEditPart;
@@ -25,6 +26,7 @@ import org.eclipse.uml2.diagram.timing.view.factories.DBlockViewFactory;
 import org.eclipse.uml2.diagram.timing.view.factories.DFrameContainerViewFactory;
 import org.eclipse.uml2.diagram.timing.view.factories.DFrameDisplayNameViewFactory;
 import org.eclipse.uml2.diagram.timing.view.factories.DFrameViewFactory;
+import org.eclipse.uml2.diagram.timing.view.factories.DMessageDisplayNameViewFactory;
 import org.eclipse.uml2.diagram.timing.view.factories.DMessageViewFactory;
 import org.eclipse.uml2.diagram.timing.view.factories.DSegmentEndViewFactory;
 import org.eclipse.uml2.diagram.timing.view.factories.DSegmentMiddlePointViewFactory;
@@ -121,6 +123,11 @@ public class TimingDViewProvider extends AbstractViewProvider {
 						return null; // wrong container
 					}
 					break;
+				case DMessageDisplayNameEditPart.VISUAL_ID:
+					if (DMessageEditPart.VISUAL_ID != TimingDVisualIDRegistry.getVisualID(containerView) || containerView.getElement() != domainElement) {
+						return null; // wrong container
+					}
+					break;
 				default:
 					return null;
 				}
@@ -157,6 +164,8 @@ public class TimingDViewProvider extends AbstractViewProvider {
 			return DSegmentStartViewFactory.class;
 		case DSegmentEndEditPart.VISUAL_ID:
 			return DSegmentEndViewFactory.class;
+		case DMessageDisplayNameEditPart.VISUAL_ID:
+			return DMessageDisplayNameViewFactory.class;
 		}
 		return null;
 	}
