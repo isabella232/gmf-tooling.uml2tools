@@ -86,16 +86,15 @@ public class TimingDBaseEditHelper extends AbstractEditHelper {
 	protected ICommand getDestroyReferenceCommand(DestroyReferenceRequest req) {
 		return null;
 	}
-	
-	
+
 	/**
 	 * @NOT-generated
 	 */
-	protected ICommand compose(AbstractTransactionalCommand first, ICommand second){
-		if (first == null){
+	protected ICommand compose(AbstractTransactionalCommand first, ICommand second) {
+		if (first == null) {
 			return second;
 		}
-		if (second == null){
+		if (second == null) {
 			return first;
 		}
 		CompositeTransactionalCommand cc = new CompositeTransactionalCommand(first.getEditingDomain(), first.getLabel());

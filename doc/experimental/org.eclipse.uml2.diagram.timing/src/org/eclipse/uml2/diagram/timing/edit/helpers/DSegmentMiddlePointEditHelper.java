@@ -11,18 +11,19 @@ import org.eclipse.uml2.diagram.timing.model.timingd.DTick;
  */
 
 public class DSegmentMiddlePointEditHelper extends TimingDBaseEditHelper {
+
 	@Override
 	protected ICommand getDestroyElementCommand(DestroyElementRequest req) {
 		DestroyElementCommand destroyTick = null;
-		if (req.getElementToDestroy() instanceof DSegmentElement){
-			DSegmentElement withTick = (DSegmentElement)req.getElementToDestroy();
+		if (req.getElementToDestroy() instanceof DSegmentElement) {
+			DSegmentElement withTick = (DSegmentElement) req.getElementToDestroy();
 			DTick tick = withTick.getTick();
-			if (tick != null){
-				destroyTick = new DestroyElementCommand(new DestroyElementRequest(tick, req.isConfirmationRequired())); 
+			if (tick != null) {
+				destroyTick = new DestroyElementCommand(new DestroyElementRequest(tick, req.isConfirmationRequired()));
 			}
 		}
 		ICommand result = super.getDestroyElementCommand(req);
 		return compose(destroyTick, result);
 	}
-	
+
 }
