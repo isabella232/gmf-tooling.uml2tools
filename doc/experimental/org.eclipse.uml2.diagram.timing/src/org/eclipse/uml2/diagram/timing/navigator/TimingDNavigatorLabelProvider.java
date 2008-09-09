@@ -20,6 +20,7 @@ import org.eclipse.uml2.diagram.timing.edit.parts.DBlockEditPart;
 import org.eclipse.uml2.diagram.timing.edit.parts.DFrameContainerEditPart;
 import org.eclipse.uml2.diagram.timing.edit.parts.DFrameDisplayNameEditPart;
 import org.eclipse.uml2.diagram.timing.edit.parts.DFrameEditPart;
+import org.eclipse.uml2.diagram.timing.edit.parts.DMessageEditPart;
 import org.eclipse.uml2.diagram.timing.edit.parts.DSegmentEditPart;
 import org.eclipse.uml2.diagram.timing.edit.parts.DSegmentEndEditPart;
 import org.eclipse.uml2.diagram.timing.edit.parts.DSegmentMiddlePointEditPart;
@@ -106,6 +107,8 @@ public class TimingDNavigatorLabelProvider extends LabelProvider implements ICom
 			return getImage("Navigator?Node?http://www.eclipse.org/mdt/uml2tools/timing-diagram/1.0?DSegmentEnd", TimingDElementTypes.DSegmentEnd_3006); //$NON-NLS-1$
 		case DStateSwitchEditPart.VISUAL_ID:
 			return getImage("Navigator?Link?http://www.eclipse.org/mdt/uml2tools/timing-diagram/1.0?DStateSwitch", TimingDElementTypes.DStateSwitch_4001); //$NON-NLS-1$
+		case DMessageEditPart.VISUAL_ID:
+			return getImage("Navigator?Link?http://www.eclipse.org/mdt/uml2tools/timing-diagram/1.0?DMessage", TimingDElementTypes.DMessage_4002); //$NON-NLS-1$
 		}
 		return getImage("Navigator?UnknownElement", null); //$NON-NLS-1$
 	}
@@ -174,6 +177,8 @@ public class TimingDNavigatorLabelProvider extends LabelProvider implements ICom
 			return getDSegmentEnd_3006Text(view);
 		case DStateSwitchEditPart.VISUAL_ID:
 			return getDStateSwitch_4001Text(view);
+		case DMessageEditPart.VISUAL_ID:
+			return getDMessage_4002Text(view);
 		}
 		return getUnknownElementText(view);
 	}
@@ -277,13 +282,14 @@ public class TimingDNavigatorLabelProvider extends LabelProvider implements ICom
 	 * @generated
 	 */
 	private String getDStateSwitch_4001Text(View view) {
-		DStateSwitch domainModelElement = (DStateSwitch) view.getElement();
-		if (domainModelElement != null) {
-			return domainModelElement.getDebugId();
-		} else {
-			TimingDDiagramEditorPlugin.getInstance().logError("No domain element for view with visualID = " + 4001); //$NON-NLS-1$
-			return ""; //$NON-NLS-1$
-		}
+		return ""; //$NON-NLS-1$
+	}
+
+	/**
+	 * @generated
+	 */
+	private String getDMessage_4002Text(View view) {
+		return ""; //$NON-NLS-1$
 	}
 
 	/**

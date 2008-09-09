@@ -18,6 +18,8 @@
         upperBound="-1" eType="#//DBlock" containment="true" eOpposite="#//DBlock/frame"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="intervals" upperBound="-1"
         eType="#//DInterval" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="messages" upperBound="-1"
+        eType="#//DMessage" containment="true" eOpposite="#//DMessage/frame"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="DBlock">
     <eStructuralFeatures xsi:type="ecore:EReference" name="lifeline" eType="#//UMLLifeline"/>
@@ -73,7 +75,7 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="switch" eType="#//DStateSwitch"
         eOpposite="#//DStateSwitch/fromSegmentEnd"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="DStateSwitch" eSuperTypes="#//DSegmentElement">
+  <eClassifiers xsi:type="ecore:EClass" name="DStateSwitch">
     <eStructuralFeatures xsi:type="ecore:EReference" name="fromSegmentEnd" eType="#//DSegmentEnd"
         eOpposite="#//DSegmentEnd/switch"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="toSegmentStart" eType="#//DSegmentStart"
@@ -82,6 +84,13 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="toSegment" eType="#//DSegment"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="fromValueLine" eType="#//DValueLine"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="toValueLine" eType="#//DValueLine"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="DMessage">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="umlMessage" eType="#//UMLMessage"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="frame" eType="#//DFrame"
+        eOpposite="#//DFrame/messages"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="messageSource" eType="#//DSegmentElement"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="messageTarget" eType="#//DSegmentElement"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="DInterval">
     <eStructuralFeatures xsi:type="ecore:EReference" name="fromPoint" eType="#//DSegmentElement"/>
@@ -103,5 +112,7 @@
   <eClassifiers xsi:type="ecore:EClass" name="UMLLifeline" instanceClassName="org.eclipse.uml2.uml.Lifeline"
       abstract="true" interface="true"/>
   <eClassifiers xsi:type="ecore:EClass" name="UMLOccurrenceSpecification" instanceClassName="org.eclipse.uml2.uml.OccurrenceSpecification"
+      abstract="true" interface="true"/>
+  <eClassifiers xsi:type="ecore:EClass" name="UMLMessage" instanceClassName="org.eclipse.uml2.uml.Message"
       abstract="true" interface="true"/>
 </ecore:EPackage>

@@ -2,7 +2,7 @@
  * <copyright>
  * </copyright>
  *
- * $Id: DValueLineImpl.java,v 1.1 2008/09/06 19:44:14 mgolubev Exp $
+ * $Id: DValueLineImpl.java,v 1.2 2008/09/09 00:39:32 mgolubev Exp $
  */
 package org.eclipse.uml2.diagram.timing.model.timingd.impl;
 
@@ -10,24 +10,18 @@ import java.util.Collection;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
-
 import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.EObjectImpl;
-
 import org.eclipse.emf.ecore.util.EObjectContainmentWithInverseEList;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.emf.ecore.util.InternalEList;
-
 import org.eclipse.uml2.diagram.timing.model.timingd.DBlock;
 import org.eclipse.uml2.diagram.timing.model.timingd.DSegment;
 import org.eclipse.uml2.diagram.timing.model.timingd.DValueLine;
 import org.eclipse.uml2.diagram.timing.model.timingd.TimingDPackage;
-
 import org.eclipse.uml2.uml.Constraint;
 
 /**

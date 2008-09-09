@@ -2,7 +2,7 @@
  * <copyright>
  * </copyright>
  *
- * $Id: TimingDSwitch.java,v 1.1 2008/09/06 19:44:14 mgolubev Exp $
+ * $Id: TimingDSwitch.java,v 1.2 2008/09/09 00:39:32 mgolubev Exp $
  */
 package org.eclipse.uml2.diagram.timing.model.timingd.util;
 
@@ -10,12 +10,24 @@ import java.util.List;
 
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
-
-import org.eclipse.uml2.diagram.timing.model.timingd.*;
-
+import org.eclipse.uml2.diagram.timing.model.timingd.DBlock;
+import org.eclipse.uml2.diagram.timing.model.timingd.DFrame;
+import org.eclipse.uml2.diagram.timing.model.timingd.DFrameContainer;
+import org.eclipse.uml2.diagram.timing.model.timingd.DInterval;
+import org.eclipse.uml2.diagram.timing.model.timingd.DMessage;
+import org.eclipse.uml2.diagram.timing.model.timingd.DPointConstraint;
+import org.eclipse.uml2.diagram.timing.model.timingd.DSegment;
+import org.eclipse.uml2.diagram.timing.model.timingd.DSegmentElement;
+import org.eclipse.uml2.diagram.timing.model.timingd.DSegmentEnd;
+import org.eclipse.uml2.diagram.timing.model.timingd.DSegmentMiddlePoint;
+import org.eclipse.uml2.diagram.timing.model.timingd.DSegmentStart;
+import org.eclipse.uml2.diagram.timing.model.timingd.DStateSwitch;
+import org.eclipse.uml2.diagram.timing.model.timingd.DValueLine;
+import org.eclipse.uml2.diagram.timing.model.timingd.TimingDPackage;
 import org.eclipse.uml2.uml.Constraint;
 import org.eclipse.uml2.uml.Interaction;
 import org.eclipse.uml2.uml.Lifeline;
+import org.eclipse.uml2.uml.Message;
 import org.eclipse.uml2.uml.OccurrenceSpecification;
 import org.eclipse.uml2.uml.StateInvariant;
 
@@ -153,7 +165,12 @@ public class TimingDSwitch<T> {
 			case TimingDPackage.DSTATE_SWITCH: {
 				DStateSwitch dStateSwitch = (DStateSwitch)theEObject;
 				T result = caseDStateSwitch(dStateSwitch);
-				if (result == null) result = caseDSegmentElement(dStateSwitch);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case TimingDPackage.DMESSAGE: {
+				DMessage dMessage = (DMessage)theEObject;
+				T result = caseDMessage(dMessage);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -324,6 +341,21 @@ public class TimingDSwitch<T> {
 	}
 
 	/**
+	 * Returns the result of interpreting the object as an instance of '<em>DMessage</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>DMessage</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseDMessage(DMessage object) {
+		return null;
+	}
+
+	/**
 	 * Returns the result of interpreting the object as an instance of '<em>DInterval</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
@@ -440,6 +472,21 @@ public class TimingDSwitch<T> {
 	 * @generated
 	 */
 	public T caseUMLOccurrenceSpecification(OccurrenceSpecification object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>UML Message</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>UML Message</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseUMLMessage(Message object) {
 		return null;
 	}
 

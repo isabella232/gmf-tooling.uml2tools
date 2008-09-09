@@ -2,22 +2,32 @@
  * <copyright>
  * </copyright>
  *
- * $Id: TimingDAdapterFactory.java,v 1.1 2008/09/06 19:44:14 mgolubev Exp $
+ * $Id: TimingDAdapterFactory.java,v 1.2 2008/09/09 00:39:32 mgolubev Exp $
  */
 package org.eclipse.uml2.diagram.timing.model.timingd.util;
 
 import org.eclipse.emf.common.notify.Adapter;
 import org.eclipse.emf.common.notify.Notifier;
-
 import org.eclipse.emf.common.notify.impl.AdapterFactoryImpl;
-
 import org.eclipse.emf.ecore.EObject;
-
-import org.eclipse.uml2.diagram.timing.model.timingd.*;
-
+import org.eclipse.uml2.diagram.timing.model.timingd.DBlock;
+import org.eclipse.uml2.diagram.timing.model.timingd.DFrame;
+import org.eclipse.uml2.diagram.timing.model.timingd.DFrameContainer;
+import org.eclipse.uml2.diagram.timing.model.timingd.DInterval;
+import org.eclipse.uml2.diagram.timing.model.timingd.DMessage;
+import org.eclipse.uml2.diagram.timing.model.timingd.DPointConstraint;
+import org.eclipse.uml2.diagram.timing.model.timingd.DSegment;
+import org.eclipse.uml2.diagram.timing.model.timingd.DSegmentElement;
+import org.eclipse.uml2.diagram.timing.model.timingd.DSegmentEnd;
+import org.eclipse.uml2.diagram.timing.model.timingd.DSegmentMiddlePoint;
+import org.eclipse.uml2.diagram.timing.model.timingd.DSegmentStart;
+import org.eclipse.uml2.diagram.timing.model.timingd.DStateSwitch;
+import org.eclipse.uml2.diagram.timing.model.timingd.DValueLine;
+import org.eclipse.uml2.diagram.timing.model.timingd.TimingDPackage;
 import org.eclipse.uml2.uml.Constraint;
 import org.eclipse.uml2.uml.Interaction;
 import org.eclipse.uml2.uml.Lifeline;
+import org.eclipse.uml2.uml.Message;
 import org.eclipse.uml2.uml.OccurrenceSpecification;
 import org.eclipse.uml2.uml.StateInvariant;
 
@@ -118,6 +128,10 @@ public class TimingDAdapterFactory extends AdapterFactoryImpl {
 				return createDStateSwitchAdapter();
 			}
 			@Override
+			public Adapter caseDMessage(DMessage object) {
+				return createDMessageAdapter();
+			}
+			@Override
 			public Adapter caseDInterval(DInterval object) {
 				return createDIntervalAdapter();
 			}
@@ -148,6 +162,10 @@ public class TimingDAdapterFactory extends AdapterFactoryImpl {
 			@Override
 			public Adapter caseUMLOccurrenceSpecification(OccurrenceSpecification object) {
 				return createUMLOccurrenceSpecificationAdapter();
+			}
+			@Override
+			public Adapter caseUMLMessage(Message object) {
+				return createUMLMessageAdapter();
 			}
 			@Override
 			public Adapter defaultCase(EObject object) {
@@ -310,6 +328,20 @@ public class TimingDAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
+	 * Creates a new adapter for an object of class '{@link org.eclipse.uml2.diagram.timing.model.timingd.DMessage <em>DMessage</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.eclipse.uml2.diagram.timing.model.timingd.DMessage
+	 * @generated
+	 */
+	public Adapter createDMessageAdapter() {
+		return null;
+	}
+
+	/**
 	 * Creates a new adapter for an object of class '{@link org.eclipse.uml2.diagram.timing.model.timingd.DInterval <em>DInterval</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
@@ -418,6 +450,20 @@ public class TimingDAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createUMLOccurrenceSpecificationAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.eclipse.uml2.uml.Message <em>UML Message</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.eclipse.uml2.uml.Message
+	 * @generated
+	 */
+	public Adapter createUMLMessageAdapter() {
 		return null;
 	}
 

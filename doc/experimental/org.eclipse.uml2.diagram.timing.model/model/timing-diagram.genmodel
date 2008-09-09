@@ -17,6 +17,7 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute timing-diagram.ecore#//DFrame/displayName"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference timing-diagram.ecore#//DFrame/blocks"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference timing-diagram.ecore#//DFrame/intervals"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference timing-diagram.ecore#//DFrame/messages"/>
     </genClasses>
     <genClasses ecoreClass="timing-diagram.ecore#//DBlock">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference timing-diagram.ecore#//DBlock/lifeline"/>
@@ -64,6 +65,12 @@
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference timing-diagram.ecore#//DStateSwitch/fromValueLine"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference timing-diagram.ecore#//DStateSwitch/toValueLine"/>
     </genClasses>
+    <genClasses ecoreClass="timing-diagram.ecore#//DMessage">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference timing-diagram.ecore#//DMessage/umlMessage"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference timing-diagram.ecore#//DMessage/frame"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference timing-diagram.ecore#//DMessage/messageSource"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference timing-diagram.ecore#//DMessage/messageTarget"/>
+    </genClasses>
     <genClasses ecoreClass="timing-diagram.ecore#//DInterval">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference timing-diagram.ecore#//DInterval/fromPoint"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference timing-diagram.ecore#//DInterval/toPoint"/>
@@ -78,5 +85,6 @@
     <genClasses image="false" ecoreClass="timing-diagram.ecore#//UMLPackage"/>
     <genClasses image="false" ecoreClass="timing-diagram.ecore#//UMLLifeline"/>
     <genClasses image="false" ecoreClass="timing-diagram.ecore#//UMLOccurrenceSpecification"/>
+    <genClasses image="false" ecoreClass="timing-diagram.ecore#//UMLMessage"/>
   </genPackages>
 </genmodel:GenModel>

@@ -2,18 +2,15 @@
  * <copyright>
  * </copyright>
  *
- * $Id: DIntervalImpl.java,v 1.1 2008/09/06 19:44:14 mgolubev Exp $
+ * $Id: DIntervalImpl.java,v 1.2 2008/09/09 00:39:32 mgolubev Exp $
  */
 package org.eclipse.uml2.diagram.timing.model.timingd.impl;
 
 import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.EObjectImpl;
-
 import org.eclipse.uml2.diagram.timing.model.timingd.DInterval;
 import org.eclipse.uml2.diagram.timing.model.timingd.DSegmentElement;
 import org.eclipse.uml2.diagram.timing.model.timingd.TimingDPackage;

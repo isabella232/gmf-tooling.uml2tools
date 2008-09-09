@@ -35,5 +35,13 @@
           title="Occurrence"
           description="Occurrence"/>
     </tools>
+    <tools
+        xsi:type="gmftool:ToolGroup"
+        title="Links">
+      <tools
+          xsi:type="gmftool:CreationTool"
+          title="Message"
+          description="Message"/>
+    </tools>
   </palette>
 </gmftool:ToolRegistry>

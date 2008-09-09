@@ -2,7 +2,7 @@
  * <copyright>
  * </copyright>
  *
- * $Id: TimingDPackage.java,v 1.4 2008/09/08 08:48:23 mgolubev Exp $
+ * $Id: TimingDPackage.java,v 1.5 2008/09/09 00:39:33 mgolubev Exp $
  */
 package org.eclipse.uml2.diagram.timing.model.timingd;
 
@@ -152,13 +152,22 @@ public interface TimingDPackage extends EPackage {
 	int DFRAME__INTERVALS = 4;
 
 	/**
+	 * The feature id for the '<em><b>Messages</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DFRAME__MESSAGES = 5;
+
+	/**
 	 * The number of structural features of the '<em>DFrame</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int DFRAME_FEATURE_COUNT = 5;
+	int DFRAME_FEATURE_COUNT = 6;
 
 	/**
 	 * The meta object id for the '{@link org.eclipse.uml2.diagram.timing.model.timingd.impl.DBlockImpl <em>DBlock</em>}' class.
@@ -565,31 +574,13 @@ public interface TimingDPackage extends EPackage {
 	int DSTATE_SWITCH = 9;
 
 	/**
-	 * The feature id for the '<em><b>Occurrence</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DSTATE_SWITCH__OCCURRENCE = DSEGMENT_ELEMENT__OCCURRENCE;
-
-	/**
-	 * The feature id for the '<em><b>Debug Id</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DSTATE_SWITCH__DEBUG_ID = DSEGMENT_ELEMENT__DEBUG_ID;
-
-	/**
 	 * The feature id for the '<em><b>From Segment End</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int DSTATE_SWITCH__FROM_SEGMENT_END = DSEGMENT_ELEMENT_FEATURE_COUNT + 0;
+	int DSTATE_SWITCH__FROM_SEGMENT_END = 0;
 
 	/**
 	 * The feature id for the '<em><b>To Segment Start</b></em>' reference.
@@ -598,7 +589,7 @@ public interface TimingDPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DSTATE_SWITCH__TO_SEGMENT_START = DSEGMENT_ELEMENT_FEATURE_COUNT + 1;
+	int DSTATE_SWITCH__TO_SEGMENT_START = 1;
 
 	/**
 	 * The feature id for the '<em><b>From Segment</b></em>' reference.
@@ -607,7 +598,7 @@ public interface TimingDPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DSTATE_SWITCH__FROM_SEGMENT = DSEGMENT_ELEMENT_FEATURE_COUNT + 2;
+	int DSTATE_SWITCH__FROM_SEGMENT = 2;
 
 	/**
 	 * The feature id for the '<em><b>To Segment</b></em>' reference.
@@ -616,7 +607,7 @@ public interface TimingDPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DSTATE_SWITCH__TO_SEGMENT = DSEGMENT_ELEMENT_FEATURE_COUNT + 3;
+	int DSTATE_SWITCH__TO_SEGMENT = 3;
 
 	/**
 	 * The feature id for the '<em><b>From Value Line</b></em>' reference.
@@ -625,7 +616,7 @@ public interface TimingDPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DSTATE_SWITCH__FROM_VALUE_LINE = DSEGMENT_ELEMENT_FEATURE_COUNT + 4;
+	int DSTATE_SWITCH__FROM_VALUE_LINE = 4;
 
 	/**
 	 * The feature id for the '<em><b>To Value Line</b></em>' reference.
@@ -634,7 +625,7 @@ public interface TimingDPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DSTATE_SWITCH__TO_VALUE_LINE = DSEGMENT_ELEMENT_FEATURE_COUNT + 5;
+	int DSTATE_SWITCH__TO_VALUE_LINE = 5;
 
 	/**
 	 * The number of structural features of the '<em>DState Switch</em>' class.
@@ -643,7 +634,62 @@ public interface TimingDPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DSTATE_SWITCH_FEATURE_COUNT = DSEGMENT_ELEMENT_FEATURE_COUNT + 6;
+	int DSTATE_SWITCH_FEATURE_COUNT = 6;
+
+	/**
+	 * The meta object id for the '{@link org.eclipse.uml2.diagram.timing.model.timingd.impl.DMessageImpl <em>DMessage</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.eclipse.uml2.diagram.timing.model.timingd.impl.DMessageImpl
+	 * @see org.eclipse.uml2.diagram.timing.model.timingd.impl.TimingDPackageImpl#getDMessage()
+	 * @generated
+	 */
+	int DMESSAGE = 10;
+
+	/**
+	 * The feature id for the '<em><b>Uml Message</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DMESSAGE__UML_MESSAGE = 0;
+
+	/**
+	 * The feature id for the '<em><b>Frame</b></em>' container reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DMESSAGE__FRAME = 1;
+
+	/**
+	 * The feature id for the '<em><b>Message Source</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DMESSAGE__MESSAGE_SOURCE = 2;
+
+	/**
+	 * The feature id for the '<em><b>Message Target</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DMESSAGE__MESSAGE_TARGET = 3;
+
+	/**
+	 * The number of structural features of the '<em>DMessage</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DMESSAGE_FEATURE_COUNT = 4;
 
 	/**
 	 * The meta object id for the '{@link org.eclipse.uml2.diagram.timing.model.timingd.impl.DIntervalImpl <em>DInterval</em>}' class.
@@ -653,7 +699,7 @@ public interface TimingDPackage extends EPackage {
 	 * @see org.eclipse.uml2.diagram.timing.model.timingd.impl.TimingDPackageImpl#getDInterval()
 	 * @generated
 	 */
-	int DINTERVAL = 10;
+	int DINTERVAL = 11;
 
 	/**
 	 * The feature id for the '<em><b>From Point</b></em>' reference.
@@ -690,7 +736,7 @@ public interface TimingDPackage extends EPackage {
 	 * @see org.eclipse.uml2.diagram.timing.model.timingd.impl.TimingDPackageImpl#getDPointConstraint()
 	 * @generated
 	 */
-	int DPOINT_CONSTRAINT = 11;
+	int DPOINT_CONSTRAINT = 12;
 
 	/**
 	 * The feature id for the '<em><b>Constraint</b></em>' reference.
@@ -727,7 +773,7 @@ public interface TimingDPackage extends EPackage {
 	 * @see org.eclipse.uml2.diagram.timing.model.timingd.impl.TimingDPackageImpl#getUMLConstraint()
 	 * @generated
 	 */
-	int UML_CONSTRAINT = 12;
+	int UML_CONSTRAINT = 13;
 
 	/**
 	 * The number of structural features of the '<em>UML Constraint</em>' class.
@@ -746,7 +792,7 @@ public interface TimingDPackage extends EPackage {
 	 * @see org.eclipse.uml2.diagram.timing.model.timingd.impl.TimingDPackageImpl#getUMLStateInvariant()
 	 * @generated
 	 */
-	int UML_STATE_INVARIANT = 13;
+	int UML_STATE_INVARIANT = 14;
 
 	/**
 	 * The number of structural features of the '<em>UML State Invariant</em>' class.
@@ -765,7 +811,7 @@ public interface TimingDPackage extends EPackage {
 	 * @see org.eclipse.uml2.diagram.timing.model.timingd.impl.TimingDPackageImpl#getUMLInteraction()
 	 * @generated
 	 */
-	int UML_INTERACTION = 14;
+	int UML_INTERACTION = 15;
 
 	/**
 	 * The number of structural features of the '<em>UML Interaction</em>' class.
@@ -784,7 +830,7 @@ public interface TimingDPackage extends EPackage {
 	 * @see org.eclipse.uml2.diagram.timing.model.timingd.impl.TimingDPackageImpl#getUMLPackage()
 	 * @generated
 	 */
-	int UML_PACKAGE = 15;
+	int UML_PACKAGE = 16;
 
 	/**
 	 * The number of structural features of the '<em>UML Package</em>' class.
@@ -803,7 +849,7 @@ public interface TimingDPackage extends EPackage {
 	 * @see org.eclipse.uml2.diagram.timing.model.timingd.impl.TimingDPackageImpl#getUMLLifeline()
 	 * @generated
 	 */
-	int UML_LIFELINE = 16;
+	int UML_LIFELINE = 17;
 
 	/**
 	 * The number of structural features of the '<em>UML Lifeline</em>' class.
@@ -822,7 +868,7 @@ public interface TimingDPackage extends EPackage {
 	 * @see org.eclipse.uml2.diagram.timing.model.timingd.impl.TimingDPackageImpl#getUMLOccurrenceSpecification()
 	 * @generated
 	 */
-	int UML_OCCURRENCE_SPECIFICATION = 17;
+	int UML_OCCURRENCE_SPECIFICATION = 18;
 
 	/**
 	 * The number of structural features of the '<em>UML Occurrence Specification</em>' class.
@@ -832,6 +878,26 @@ public interface TimingDPackage extends EPackage {
 	 * @ordered
 	 */
 	int UML_OCCURRENCE_SPECIFICATION_FEATURE_COUNT = 0;
+
+
+	/**
+	 * The meta object id for the '{@link org.eclipse.uml2.uml.Message <em>UML Message</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.eclipse.uml2.uml.Message
+	 * @see org.eclipse.uml2.diagram.timing.model.timingd.impl.TimingDPackageImpl#getUMLMessage()
+	 * @generated
+	 */
+	int UML_MESSAGE = 19;
+
+	/**
+	 * The number of structural features of the '<em>UML Message</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int UML_MESSAGE_FEATURE_COUNT = 0;
 
 
 	/**
@@ -930,6 +996,17 @@ public interface TimingDPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getDFrame_Intervals();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link org.eclipse.uml2.diagram.timing.model.timingd.DFrame#getMessages <em>Messages</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Messages</em>'.
+	 * @see org.eclipse.uml2.diagram.timing.model.timingd.DFrame#getMessages()
+	 * @see #getDFrame()
+	 * @generated
+	 */
+	EReference getDFrame_Messages();
 
 	/**
 	 * Returns the meta object for class '{@link org.eclipse.uml2.diagram.timing.model.timingd.DBlock <em>DBlock</em>}'.
@@ -1331,6 +1408,60 @@ public interface TimingDPackage extends EPackage {
 	EReference getDStateSwitch_ToValueLine();
 
 	/**
+	 * Returns the meta object for class '{@link org.eclipse.uml2.diagram.timing.model.timingd.DMessage <em>DMessage</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>DMessage</em>'.
+	 * @see org.eclipse.uml2.diagram.timing.model.timingd.DMessage
+	 * @generated
+	 */
+	EClass getDMessage();
+
+	/**
+	 * Returns the meta object for the reference '{@link org.eclipse.uml2.diagram.timing.model.timingd.DMessage#getUmlMessage <em>Uml Message</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Uml Message</em>'.
+	 * @see org.eclipse.uml2.diagram.timing.model.timingd.DMessage#getUmlMessage()
+	 * @see #getDMessage()
+	 * @generated
+	 */
+	EReference getDMessage_UmlMessage();
+
+	/**
+	 * Returns the meta object for the container reference '{@link org.eclipse.uml2.diagram.timing.model.timingd.DMessage#getFrame <em>Frame</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the container reference '<em>Frame</em>'.
+	 * @see org.eclipse.uml2.diagram.timing.model.timingd.DMessage#getFrame()
+	 * @see #getDMessage()
+	 * @generated
+	 */
+	EReference getDMessage_Frame();
+
+	/**
+	 * Returns the meta object for the reference '{@link org.eclipse.uml2.diagram.timing.model.timingd.DMessage#getMessageSource <em>Message Source</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Message Source</em>'.
+	 * @see org.eclipse.uml2.diagram.timing.model.timingd.DMessage#getMessageSource()
+	 * @see #getDMessage()
+	 * @generated
+	 */
+	EReference getDMessage_MessageSource();
+
+	/**
+	 * Returns the meta object for the reference '{@link org.eclipse.uml2.diagram.timing.model.timingd.DMessage#getMessageTarget <em>Message Target</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Message Target</em>'.
+	 * @see org.eclipse.uml2.diagram.timing.model.timingd.DMessage#getMessageTarget()
+	 * @see #getDMessage()
+	 * @generated
+	 */
+	EReference getDMessage_MessageTarget();
+
+	/**
 	 * Returns the meta object for class '{@link org.eclipse.uml2.diagram.timing.model.timingd.DInterval <em>DInterval</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1461,6 +1592,17 @@ public interface TimingDPackage extends EPackage {
 	EClass getUMLOccurrenceSpecification();
 
 	/**
+	 * Returns the meta object for class '{@link org.eclipse.uml2.uml.Message <em>UML Message</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>UML Message</em>'.
+	 * @see org.eclipse.uml2.uml.Message
+	 * @model instanceClass="org.eclipse.uml2.uml.Message"
+	 * @generated
+	 */
+	EClass getUMLMessage();
+
+	/**
 	 * Returns the factory that creates the instances of the model.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1557,6 +1699,14 @@ public interface TimingDPackage extends EPackage {
 		 * @generated
 		 */
 		EReference DFRAME__INTERVALS = eINSTANCE.getDFrame_Intervals();
+
+		/**
+		 * The meta object literal for the '<em><b>Messages</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference DFRAME__MESSAGES = eINSTANCE.getDFrame_Messages();
 
 		/**
 		 * The meta object literal for the '{@link org.eclipse.uml2.diagram.timing.model.timingd.impl.DBlockImpl <em>DBlock</em>}' class.
@@ -1871,6 +2021,48 @@ public interface TimingDPackage extends EPackage {
 		EReference DSTATE_SWITCH__TO_VALUE_LINE = eINSTANCE.getDStateSwitch_ToValueLine();
 
 		/**
+		 * The meta object literal for the '{@link org.eclipse.uml2.diagram.timing.model.timingd.impl.DMessageImpl <em>DMessage</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.eclipse.uml2.diagram.timing.model.timingd.impl.DMessageImpl
+		 * @see org.eclipse.uml2.diagram.timing.model.timingd.impl.TimingDPackageImpl#getDMessage()
+		 * @generated
+		 */
+		EClass DMESSAGE = eINSTANCE.getDMessage();
+
+		/**
+		 * The meta object literal for the '<em><b>Uml Message</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference DMESSAGE__UML_MESSAGE = eINSTANCE.getDMessage_UmlMessage();
+
+		/**
+		 * The meta object literal for the '<em><b>Frame</b></em>' container reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference DMESSAGE__FRAME = eINSTANCE.getDMessage_Frame();
+
+		/**
+		 * The meta object literal for the '<em><b>Message Source</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference DMESSAGE__MESSAGE_SOURCE = eINSTANCE.getDMessage_MessageSource();
+
+		/**
+		 * The meta object literal for the '<em><b>Message Target</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference DMESSAGE__MESSAGE_TARGET = eINSTANCE.getDMessage_MessageTarget();
+
+		/**
 		 * The meta object literal for the '{@link org.eclipse.uml2.diagram.timing.model.timingd.impl.DIntervalImpl <em>DInterval</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -1981,6 +2173,16 @@ public interface TimingDPackage extends EPackage {
 		 * @generated
 		 */
 		EClass UML_OCCURRENCE_SPECIFICATION = eINSTANCE.getUMLOccurrenceSpecification();
+
+		/**
+		 * The meta object literal for the '{@link org.eclipse.uml2.uml.Message <em>UML Message</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.eclipse.uml2.uml.Message
+		 * @see org.eclipse.uml2.diagram.timing.model.timingd.impl.TimingDPackageImpl#getUMLMessage()
+		 * @generated
+		 */
+		EClass UML_MESSAGE = eINSTANCE.getUMLMessage();
 
 	}
 

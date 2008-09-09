@@ -12,6 +12,7 @@ class DFrame {
   attr String displayName;
   val DBlock[+]#frame blocks;
   val DInterval[*] intervals;
+  val DMessage[*]#frame messages;
 }
 
 class DBlock {
@@ -59,13 +60,21 @@ class DSegmentEnd extends DSegmentElement {
   ref DStateSwitch#fromSegmentEnd switch;
 }
 
-class DStateSwitch extends DSegmentElement {
+class DStateSwitch {
   ref DSegmentEnd#switch fromSegmentEnd;
   ref DSegmentStart#incomingSwitch toSegmentStart;
   ref DSegment fromSegment;
   ref DSegment toSegment;
   ref DValueLine fromValueLine;
   ref DValueLine toValueLine;
+}
+
+class DMessage {
+	ref UMLMessage umlMessage;
+
+	ref DFrame#messages frame;
+	ref DSegmentElement messageSource;
+	ref DSegmentElement messageTarget;
 }
 
 class DInterval {
@@ -84,4 +93,5 @@ abstract interface UMLInteraction : org.eclipse.uml2.uml.Interaction {}
 abstract interface UMLPackage : org.eclipse.uml2.uml.Package {}
 abstract interface UMLLifeline : org.eclipse.uml2.uml.Lifeline {}
 abstract interface UMLOccurrenceSpecification : org.eclipse.uml2.uml.OccurrenceSpecification {}
+abstract interface UMLMessage : org.eclipse.uml2.uml.Message {}
 

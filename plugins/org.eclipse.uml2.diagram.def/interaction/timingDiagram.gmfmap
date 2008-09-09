@@ -167,6 +167,23 @@
         xsi:type="ecore:EReference"
         href="../../../plugin/org.eclipse.uml2.diagram.timing.model/model/timing-diagram.ecore#//DStateSwitch/toSegmentStart"/>
   </links>
+  <links>
+    <domainMetaElement
+        href="../../../plugin/org.eclipse.uml2.diagram.timing.model/model/timing-diagram.ecore#//DMessage"/>
+    <containmentFeature
+        href="../../../plugin/org.eclipse.uml2.diagram.timing.model/model/timing-diagram.ecore#//DFrame/messages"/>
+    <tool
+        xsi:type="gmftool:CreationTool"
+        href="timingDiagram.gmftool#//@palette/@tools.1/@tools.0"/>
+    <diagramLink
+        href="timingDiagram.gmfgraph#MessageLink"/>
+    <sourceMetaFeature
+        xsi:type="ecore:EReference"
+        href="../../../plugin/org.eclipse.uml2.diagram.timing.model/model/timing-diagram.ecore#//DMessage/messageSource"/>
+    <linkMetaFeature
+        xsi:type="ecore:EReference"
+        href="../../../plugin/org.eclipse.uml2.diagram.timing.model/model/timing-diagram.ecore#//DMessage/messageTarget"/>
+  </links>
   <diagram>
     <diagramCanvas
         href="timingDiagram.gmfgraph#TimingDiagramSurface"/>

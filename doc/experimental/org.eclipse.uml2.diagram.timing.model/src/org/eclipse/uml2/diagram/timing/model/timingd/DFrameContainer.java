@@ -2,12 +2,11 @@
  * <copyright>
  * </copyright>
  *
- * $Id: DFrameContainer.java,v 1.2 2008/09/08 08:48:23 mgolubev Exp $
+ * $Id: DFrameContainer.java,v 1.3 2008/09/09 00:39:32 mgolubev Exp $
  */
 package org.eclipse.uml2.diagram.timing.model.timingd;
 
 import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EObject;
 
 /**

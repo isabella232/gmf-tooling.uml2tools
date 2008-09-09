@@ -2,14 +2,12 @@
  * <copyright>
  * </copyright>
  *
- * $Id: DFrame.java,v 1.2 2008/09/08 08:48:23 mgolubev Exp $
+ * $Id: DFrame.java,v 1.3 2008/09/09 00:39:32 mgolubev Exp $
  */
 package org.eclipse.uml2.diagram.timing.model.timingd;
 
 import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EObject;
-
 import org.eclipse.uml2.uml.Interaction;
 
 /**
@@ -25,6 +23,7 @@ import org.eclipse.uml2.uml.Interaction;
  *   <li>{@link org.eclipse.uml2.diagram.timing.model.timingd.DFrame#getDisplayName <em>Display Name</em>}</li>
  *   <li>{@link org.eclipse.uml2.diagram.timing.model.timingd.DFrame#getBlocks <em>Blocks</em>}</li>
  *   <li>{@link org.eclipse.uml2.diagram.timing.model.timingd.DFrame#getIntervals <em>Intervals</em>}</li>
+ *   <li>{@link org.eclipse.uml2.diagram.timing.model.timingd.DFrame#getMessages <em>Messages</em>}</li>
  * </ul>
  * </p>
  *
@@ -146,5 +145,23 @@ public interface DFrame extends EObject {
 	 * @generated
 	 */
 	EList<DInterval> getIntervals();
+
+	/**
+	 * Returns the value of the '<em><b>Messages</b></em>' containment reference list.
+	 * The list contents are of type {@link org.eclipse.uml2.diagram.timing.model.timingd.DMessage}.
+	 * It is bidirectional and its opposite is '{@link org.eclipse.uml2.diagram.timing.model.timingd.DMessage#getFrame <em>Frame</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Messages</em>' containment reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Messages</em>' containment reference list.
+	 * @see org.eclipse.uml2.diagram.timing.model.timingd.TimingDPackage#getDFrame_Messages()
+	 * @see org.eclipse.uml2.diagram.timing.model.timingd.DMessage#getFrame
+	 * @model opposite="frame" containment="true"
+	 * @generated
+	 */
+	EList<DMessage> getMessages();
 
 } // DFrame

@@ -6,6 +6,10 @@
   <figures
       name="TimingDiagramFigureGallery"
       implementationBundle="org.eclipse.uml2.diagram.common">
+    <figures
+        xsi:type="gmfgraph:CustomDecoration"
+        name="MessageDestinationDecoration"
+        qualifiedClassName="org.eclipse.uml2.diagram.timing.draw2d.MessageDestinationDecoration"/>
     <descriptors
         name="InteractionFigure">
       <actualFigure
@@ -194,6 +198,17 @@
             right="15"/>
       </actualFigure>
     </descriptors>
+    <descriptors
+        name="MessageFigure">
+      <actualFigure
+          xsi:type="gmfgraph:PolylineConnection"
+          name="MessageFigure"
+          targetDecoration="//@figures.0/@figures.0">
+        <foregroundColor
+            xsi:type="gmfgraph:ConstantColor"
+            value="black"/>
+      </actualFigure>
+    </descriptors>
   </figures>
   <nodes
       name="InteractionNode"
@@ -258,6 +273,9 @@
   <connections
       name="StateSwitchLink"
       figure="StateSwitchLinkFigure"/>
+  <connections
+      name="MessageLink"
+      figure="MessageFigure"/>
   <compartments
       name="InteractionContentsCompartment"
       figure="InteractionFigure"

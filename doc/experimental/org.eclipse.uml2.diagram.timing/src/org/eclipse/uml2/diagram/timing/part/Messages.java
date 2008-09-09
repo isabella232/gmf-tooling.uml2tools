@@ -254,6 +254,11 @@ public class Messages extends NLS {
 	/**
 	 * @generated
 	 */
+	public static String Links2Group_title;
+
+	/**
+	 * @generated
+	 */
 	public static String Interaction1CreationTool_title;
 
 	/**
@@ -314,6 +319,16 @@ public class Messages extends NLS {
 	/**
 	 * @generated
 	 */
+	public static String Message1CreationTool_title;
+
+	/**
+	 * @generated
+	 */
+	public static String Message1CreationTool_desc;
+
+	/**
+	 * @generated
+	 */
 	public static String CommandName_OpenDiagram;
 
 	/**
@@ -324,12 +339,32 @@ public class Messages extends NLS {
 	/**
 	 * @generated
 	 */
+	public static String NavigatorGroupName_DSegmentMiddlePoint_3004_incominglinks;
+
+	/**
+	 * @generated
+	 */
+	public static String NavigatorGroupName_DSegmentMiddlePoint_3004_outgoinglinks;
+
+	/**
+	 * @generated
+	 */
 	public static String NavigatorGroupName_DSegmentStart_3005_incominglinks;
 
 	/**
 	 * @generated
 	 */
+	public static String NavigatorGroupName_DSegmentStart_3005_outgoinglinks;
+
+	/**
+	 * @generated
+	 */
 	public static String NavigatorGroupName_DSegmentEnd_3006_outgoinglinks;
+
+	/**
+	 * @generated
+	 */
+	public static String NavigatorGroupName_DSegmentEnd_3006_incominglinks;
 
 	/**
 	 * @generated
@@ -340,6 +375,16 @@ public class Messages extends NLS {
 	 * @generated
 	 */
 	public static String NavigatorGroupName_DStateSwitch_4001_source;
+
+	/**
+	 * @generated
+	 */
+	public static String NavigatorGroupName_DMessage_4002_target;
+
+	/**
+	 * @generated
+	 */
+	public static String NavigatorGroupName_DMessage_4002_source;
 
 	/**
 	 * @generated

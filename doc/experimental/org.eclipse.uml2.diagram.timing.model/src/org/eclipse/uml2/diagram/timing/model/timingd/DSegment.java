@@ -2,12 +2,11 @@
  * <copyright>
  * </copyright>
  *
- * $Id: DSegment.java,v 1.1 2008/09/06 19:44:14 mgolubev Exp $
+ * $Id: DSegment.java,v 1.2 2008/09/09 00:39:32 mgolubev Exp $
  */
 package org.eclipse.uml2.diagram.timing.model.timingd;
 
 import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EObject;
 
 /**

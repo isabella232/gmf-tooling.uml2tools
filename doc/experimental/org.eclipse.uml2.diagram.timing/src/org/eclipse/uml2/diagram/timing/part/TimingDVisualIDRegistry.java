@@ -11,6 +11,7 @@ import org.eclipse.uml2.diagram.timing.edit.parts.DBlockEditPart;
 import org.eclipse.uml2.diagram.timing.edit.parts.DFrameContainerEditPart;
 import org.eclipse.uml2.diagram.timing.edit.parts.DFrameDisplayNameEditPart;
 import org.eclipse.uml2.diagram.timing.edit.parts.DFrameEditPart;
+import org.eclipse.uml2.diagram.timing.edit.parts.DMessageEditPart;
 import org.eclipse.uml2.diagram.timing.edit.parts.DSegmentEditPart;
 import org.eclipse.uml2.diagram.timing.edit.parts.DSegmentEndEditPart;
 import org.eclipse.uml2.diagram.timing.edit.parts.DSegmentMiddlePointEditPart;
@@ -227,6 +228,9 @@ public class TimingDVisualIDRegistry {
 		}
 		if (TimingDPackage.eINSTANCE.getDStateSwitch().isSuperTypeOf(domainElement.eClass())) {
 			return DStateSwitchEditPart.VISUAL_ID;
+		}
+		if (TimingDPackage.eINSTANCE.getDMessage().isSuperTypeOf(domainElement.eClass())) {
+			return DMessageEditPart.VISUAL_ID;
 		}
 		return -1;
 	}

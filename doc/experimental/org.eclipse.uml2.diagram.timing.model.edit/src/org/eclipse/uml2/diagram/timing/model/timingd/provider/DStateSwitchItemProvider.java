@@ -2,7 +2,7 @@
  * <copyright>
  * </copyright>
  *
- * $Id: DStateSwitchItemProvider.java,v 1.2 2008/09/07 11:01:19 mgolubev Exp $
+ * $Id: DStateSwitchItemProvider.java,v 1.3 2008/09/09 00:39:26 mgolubev Exp $
  */
 package org.eclipse.uml2.diagram.timing.model.timingd.provider;
 
@@ -13,6 +13,7 @@ import java.util.List;
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
 
+import org.eclipse.emf.common.util.ResourceLocator;
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
 import org.eclipse.emf.edit.provider.IItemLabelProvider;
@@ -21,6 +22,7 @@ import org.eclipse.emf.edit.provider.IItemPropertySource;
 import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
 import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
 
+import org.eclipse.emf.edit.provider.ItemProviderAdapter;
 import org.eclipse.uml2.diagram.timing.model.timingd.DStateSwitch;
 import org.eclipse.uml2.diagram.timing.model.timingd.TimingDPackage;
 
@@ -31,7 +33,7 @@ import org.eclipse.uml2.diagram.timing.model.timingd.TimingDPackage;
  * @generated
  */
 public class DStateSwitchItemProvider
-	extends DSegmentElementItemProvider
+	extends ItemProviderAdapter
 	implements
 		IEditingDomainItemProvider,
 		IStructuredItemContentProvider,
@@ -220,10 +222,7 @@ public class DStateSwitchItemProvider
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((DStateSwitch)object).getDebugId();
-		return label == null || label.length() == 0 ?
-			getString("_UI_DStateSwitch_type") :
-			getString("_UI_DStateSwitch_type") + " " + label;
+		return getString("_UI_DStateSwitch_type");
 	}
 
 	/**
@@ -249,6 +248,17 @@ public class DStateSwitchItemProvider
 	@Override
 	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
+	}
+
+	/**
+	 * Return the resource locator for this item provider's resources.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public ResourceLocator getResourceLocator() {
+		return TimingDEditPlugin.INSTANCE;
 	}
 
 }

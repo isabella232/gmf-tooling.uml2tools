@@ -2,20 +2,16 @@
  * <copyright>
  * </copyright>
  *
- * $Id: DSegmentMiddlePointImpl.java,v 1.1 2008/09/06 19:44:14 mgolubev Exp $
+ * $Id: DSegmentMiddlePointImpl.java,v 1.2 2008/09/09 00:39:32 mgolubev Exp $
  */
 package org.eclipse.uml2.diagram.timing.model.timingd.impl;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-
 import org.eclipse.emf.ecore.util.EcoreUtil;
-
 import org.eclipse.uml2.diagram.timing.model.timingd.DSegment;
 import org.eclipse.uml2.diagram.timing.model.timingd.DSegmentMiddlePoint;
 import org.eclipse.uml2.diagram.timing.model.timingd.TimingDPackage;

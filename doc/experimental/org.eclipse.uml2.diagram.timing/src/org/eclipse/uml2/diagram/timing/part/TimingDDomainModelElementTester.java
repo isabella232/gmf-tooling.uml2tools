@@ -50,6 +50,9 @@ public class TimingDDomainModelElementTester extends PropertyTester {
 		if (eClass == TimingDPackage.eINSTANCE.getDStateSwitch()) {
 			return true;
 		}
+		if (eClass == TimingDPackage.eINSTANCE.getDMessage()) {
+			return true;
+		}
 		if (eClass == TimingDPackage.eINSTANCE.getDInterval()) {
 			return true;
 		}
@@ -72,6 +75,9 @@ public class TimingDDomainModelElementTester extends PropertyTester {
 			return true;
 		}
 		if (eClass == TimingDPackage.eINSTANCE.getUMLOccurrenceSpecification()) {
+			return true;
+		}
+		if (eClass == TimingDPackage.eINSTANCE.getUMLMessage()) {
 			return true;
 		}
 		return false;

@@ -11,6 +11,7 @@ import org.eclipse.uml2.diagram.timing.edit.parts.DBlockEditPart;
 import org.eclipse.uml2.diagram.timing.edit.parts.DFrameContainerEditPart;
 import org.eclipse.uml2.diagram.timing.edit.parts.DFrameDisplayNameEditPart;
 import org.eclipse.uml2.diagram.timing.edit.parts.DFrameEditPart;
+import org.eclipse.uml2.diagram.timing.edit.parts.DMessageEditPart;
 import org.eclipse.uml2.diagram.timing.edit.parts.DSegmentEditPart;
 import org.eclipse.uml2.diagram.timing.edit.parts.DSegmentEndEditPart;
 import org.eclipse.uml2.diagram.timing.edit.parts.DSegmentMiddlePointEditPart;
@@ -24,6 +25,7 @@ import org.eclipse.uml2.diagram.timing.view.factories.DBlockViewFactory;
 import org.eclipse.uml2.diagram.timing.view.factories.DFrameContainerViewFactory;
 import org.eclipse.uml2.diagram.timing.view.factories.DFrameDisplayNameViewFactory;
 import org.eclipse.uml2.diagram.timing.view.factories.DFrameViewFactory;
+import org.eclipse.uml2.diagram.timing.view.factories.DMessageViewFactory;
 import org.eclipse.uml2.diagram.timing.view.factories.DSegmentEndViewFactory;
 import org.eclipse.uml2.diagram.timing.view.factories.DSegmentMiddlePointViewFactory;
 import org.eclipse.uml2.diagram.timing.view.factories.DSegmentStartViewFactory;
@@ -189,6 +191,8 @@ public class TimingDViewProvider extends AbstractViewProvider {
 		switch (visualID) {
 		case DStateSwitchEditPart.VISUAL_ID:
 			return DStateSwitchViewFactory.class;
+		case DMessageEditPart.VISUAL_ID:
+			return DMessageViewFactory.class;
 		}
 		return null;
 	}

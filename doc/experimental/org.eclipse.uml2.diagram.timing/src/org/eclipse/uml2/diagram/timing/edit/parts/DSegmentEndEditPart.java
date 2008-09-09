@@ -216,6 +216,16 @@ public class DSegmentEndEditPart extends ShapeNodeEditPart implements PrimarySha
 	public List/*<org.eclipse.gmf.runtime.emf.type.core.IElementType>*/getMARelTypesOnSource() {
 		List/*<org.eclipse.gmf.runtime.emf.type.core.IElementType>*/types = new ArrayList/*<org.eclipse.gmf.runtime.emf.type.core.IElementType>*/();
 		types.add(TimingDElementTypes.DStateSwitch_4001);
+		types.add(TimingDElementTypes.DMessage_4002);
+		return types;
+	}
+
+	/**
+	 * @generated
+	 */
+	public List/*<org.eclipse.gmf.runtime.emf.type.core.IElementType>*/getMARelTypesOnTarget() {
+		List/*<org.eclipse.gmf.runtime.emf.type.core.IElementType>*/types = new ArrayList/*<org.eclipse.gmf.runtime.emf.type.core.IElementType>*/();
+		types.add(TimingDElementTypes.DMessage_4002);
 		return types;
 	}
 
@@ -227,6 +237,32 @@ public class DSegmentEndEditPart extends ShapeNodeEditPart implements PrimarySha
 		if (targetEditPart instanceof DSegmentStartEditPart) {
 			types.add(TimingDElementTypes.DStateSwitch_4001);
 		}
+		if (targetEditPart instanceof DSegmentMiddlePointEditPart) {
+			types.add(TimingDElementTypes.DMessage_4002);
+		}
+		if (targetEditPart instanceof DSegmentStartEditPart) {
+			types.add(TimingDElementTypes.DMessage_4002);
+		}
+		if (targetEditPart instanceof org.eclipse.uml2.diagram.timing.edit.parts.DSegmentEndEditPart) {
+			types.add(TimingDElementTypes.DMessage_4002);
+		}
+		return types;
+	}
+
+	/**
+	 * @generated
+	 */
+	public List/*<org.eclipse.gmf.runtime.emf.type.core.IElementType>*/getMATypesForSource(IElementType relationshipType) {
+		List/*<org.eclipse.gmf.runtime.emf.type.core.IElementType>*/types = new ArrayList/*<org.eclipse.gmf.runtime.emf.type.core.IElementType>*/();
+		if (relationshipType == TimingDElementTypes.DMessage_4002) {
+			types.add(TimingDElementTypes.DSegmentMiddlePoint_3004);
+		}
+		if (relationshipType == TimingDElementTypes.DMessage_4002) {
+			types.add(TimingDElementTypes.DSegmentStart_3005);
+		}
+		if (relationshipType == TimingDElementTypes.DMessage_4002) {
+			types.add(TimingDElementTypes.DSegmentEnd_3006);
+		}
 		return types;
 	}
 
@@ -237,6 +273,15 @@ public class DSegmentEndEditPart extends ShapeNodeEditPart implements PrimarySha
 		List/*<org.eclipse.gmf.runtime.emf.type.core.IElementType>*/types = new ArrayList/*<org.eclipse.gmf.runtime.emf.type.core.IElementType>*/();
 		if (relationshipType == TimingDElementTypes.DStateSwitch_4001) {
 			types.add(TimingDElementTypes.DSegmentStart_3005);
+		}
+		if (relationshipType == TimingDElementTypes.DMessage_4002) {
+			types.add(TimingDElementTypes.DSegmentMiddlePoint_3004);
+		}
+		if (relationshipType == TimingDElementTypes.DMessage_4002) {
+			types.add(TimingDElementTypes.DSegmentStart_3005);
+		}
+		if (relationshipType == TimingDElementTypes.DMessage_4002) {
+			types.add(TimingDElementTypes.DSegmentEnd_3006);
 		}
 		return types;
 	}

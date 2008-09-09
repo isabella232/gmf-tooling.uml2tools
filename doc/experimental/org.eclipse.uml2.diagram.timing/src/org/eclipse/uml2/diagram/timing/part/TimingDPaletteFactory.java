@@ -24,6 +24,7 @@ public class TimingDPaletteFactory {
 	 */
 	public void fillPalette(PaletteRoot paletteRoot) {
 		paletteRoot.add(createElements1Group());
+		paletteRoot.add(createLinks2Group());
 	}
 
 	/**
@@ -39,6 +40,16 @@ public class TimingDPaletteFactory {
 		paletteContainer.add(createSwitch4CreationTool());
 		paletteContainer.add(createSegment5CreationTool());
 		paletteContainer.add(createOccurrence6CreationTool());
+		return paletteContainer;
+	}
+
+	/**
+	 * Creates "Links" palette tool group
+	 * @generated
+	 */
+	private PaletteContainer createLinks2Group() {
+		PaletteGroup paletteContainer = new PaletteGroup(Messages.Links2Group_title);
+		paletteContainer.add(createMessage1CreationTool());
 		return paletteContainer;
 	}
 
@@ -121,6 +132,18 @@ public class TimingDPaletteFactory {
 		types.add(TimingDElementTypes.DSegmentEnd_3006);
 		NodeToolEntry entry = new NodeToolEntry(Messages.Occurrence6CreationTool_title, Messages.Occurrence6CreationTool_desc, types);
 		entry.setSmallIcon(TimingDElementTypes.getImageDescriptor(TimingDElementTypes.DSegmentMiddlePoint_3004));
+		entry.setLargeIcon(entry.getSmallIcon());
+		return entry;
+	}
+
+	/**
+	 * @generated
+	 */
+	private ToolEntry createMessage1CreationTool() {
+		List/*<IElementType>*/types = new ArrayList/*<IElementType>*/(1);
+		types.add(TimingDElementTypes.DMessage_4002);
+		LinkToolEntry entry = new LinkToolEntry(Messages.Message1CreationTool_title, Messages.Message1CreationTool_desc, types);
+		entry.setSmallIcon(TimingDElementTypes.getImageDescriptor(TimingDElementTypes.DMessage_4002));
 		entry.setLargeIcon(entry.getSmallIcon());
 		return entry;
 	}

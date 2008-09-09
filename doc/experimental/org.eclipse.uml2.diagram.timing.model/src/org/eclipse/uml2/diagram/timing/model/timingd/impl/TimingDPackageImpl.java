@@ -2,7 +2,7 @@
  * <copyright>
  * </copyright>
  *
- * $Id: TimingDPackageImpl.java,v 1.4 2008/09/08 08:48:23 mgolubev Exp $
+ * $Id: TimingDPackageImpl.java,v 1.5 2008/09/09 00:39:32 mgolubev Exp $
  */
 package org.eclipse.uml2.diagram.timing.model.timingd.impl;
 
@@ -10,13 +10,12 @@ import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
-
 import org.eclipse.emf.ecore.impl.EPackageImpl;
-
 import org.eclipse.uml2.diagram.timing.model.timingd.DBlock;
 import org.eclipse.uml2.diagram.timing.model.timingd.DFrame;
 import org.eclipse.uml2.diagram.timing.model.timingd.DFrameContainer;
 import org.eclipse.uml2.diagram.timing.model.timingd.DInterval;
+import org.eclipse.uml2.diagram.timing.model.timingd.DMessage;
 import org.eclipse.uml2.diagram.timing.model.timingd.DPointConstraint;
 import org.eclipse.uml2.diagram.timing.model.timingd.DSegment;
 import org.eclipse.uml2.diagram.timing.model.timingd.DSegmentElement;
@@ -27,10 +26,10 @@ import org.eclipse.uml2.diagram.timing.model.timingd.DStateSwitch;
 import org.eclipse.uml2.diagram.timing.model.timingd.DValueLine;
 import org.eclipse.uml2.diagram.timing.model.timingd.TimingDFactory;
 import org.eclipse.uml2.diagram.timing.model.timingd.TimingDPackage;
-
 import org.eclipse.uml2.uml.Constraint;
 import org.eclipse.uml2.uml.Interaction;
 import org.eclipse.uml2.uml.Lifeline;
+import org.eclipse.uml2.uml.Message;
 import org.eclipse.uml2.uml.OccurrenceSpecification;
 import org.eclipse.uml2.uml.StateInvariant;
 
@@ -116,6 +115,13 @@ public class TimingDPackageImpl extends EPackageImpl implements TimingDPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	private EClass dMessageEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	private EClass dIntervalEClass = null;
 
 	/**
@@ -166,6 +172,13 @@ public class TimingDPackageImpl extends EPackageImpl implements TimingDPackage {
 	 * @generated
 	 */
 	private EClass umlOccurrenceSpecificationEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass umlMessageEClass = null;
 
 	/**
 	 * Creates an instance of the model <b>Package</b>, registered with
@@ -314,6 +327,15 @@ public class TimingDPackageImpl extends EPackageImpl implements TimingDPackage {
 	 */
 	public EReference getDFrame_Intervals() {
 		return (EReference)dFrameEClass.getEStructuralFeatures().get(4);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getDFrame_Messages() {
+		return (EReference)dFrameEClass.getEStructuralFeatures().get(5);
 	}
 
 	/**
@@ -654,6 +676,51 @@ public class TimingDPackageImpl extends EPackageImpl implements TimingDPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EClass getDMessage() {
+		return dMessageEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getDMessage_UmlMessage() {
+		return (EReference)dMessageEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getDMessage_Frame() {
+		return (EReference)dMessageEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getDMessage_MessageSource() {
+		return (EReference)dMessageEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getDMessage_MessageTarget() {
+		return (EReference)dMessageEClass.getEStructuralFeatures().get(3);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getDInterval() {
 		return dIntervalEClass;
 	}
@@ -762,6 +829,15 @@ public class TimingDPackageImpl extends EPackageImpl implements TimingDPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EClass getUMLMessage() {
+		return umlMessageEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public TimingDFactory getTimingDFactory() {
 		return (TimingDFactory)getEFactoryInstance();
 	}
@@ -795,6 +871,7 @@ public class TimingDPackageImpl extends EPackageImpl implements TimingDPackage {
 		createEAttribute(dFrameEClass, DFRAME__DISPLAY_NAME);
 		createEReference(dFrameEClass, DFRAME__BLOCKS);
 		createEReference(dFrameEClass, DFRAME__INTERVALS);
+		createEReference(dFrameEClass, DFRAME__MESSAGES);
 
 		dBlockEClass = createEClass(DBLOCK);
 		createEReference(dBlockEClass, DBLOCK__LIFELINE);
@@ -841,6 +918,12 @@ public class TimingDPackageImpl extends EPackageImpl implements TimingDPackage {
 		createEReference(dStateSwitchEClass, DSTATE_SWITCH__FROM_VALUE_LINE);
 		createEReference(dStateSwitchEClass, DSTATE_SWITCH__TO_VALUE_LINE);
 
+		dMessageEClass = createEClass(DMESSAGE);
+		createEReference(dMessageEClass, DMESSAGE__UML_MESSAGE);
+		createEReference(dMessageEClass, DMESSAGE__FRAME);
+		createEReference(dMessageEClass, DMESSAGE__MESSAGE_SOURCE);
+		createEReference(dMessageEClass, DMESSAGE__MESSAGE_TARGET);
+
 		dIntervalEClass = createEClass(DINTERVAL);
 		createEReference(dIntervalEClass, DINTERVAL__FROM_POINT);
 		createEReference(dIntervalEClass, DINTERVAL__TO_POINT);
@@ -860,6 +943,8 @@ public class TimingDPackageImpl extends EPackageImpl implements TimingDPackage {
 		umlLifelineEClass = createEClass(UML_LIFELINE);
 
 		umlOccurrenceSpecificationEClass = createEClass(UML_OCCURRENCE_SPECIFICATION);
+
+		umlMessageEClass = createEClass(UML_MESSAGE);
 	}
 
 	/**
@@ -893,7 +978,6 @@ public class TimingDPackageImpl extends EPackageImpl implements TimingDPackage {
 		dSegmentMiddlePointEClass.getESuperTypes().add(this.getDSegmentElement());
 		dSegmentStartEClass.getESuperTypes().add(this.getDSegmentElement());
 		dSegmentEndEClass.getESuperTypes().add(this.getDSegmentElement());
-		dStateSwitchEClass.getESuperTypes().add(this.getDSegmentElement());
 
 		// Initialize classes and features; add operations and parameters
 		initEClass(dFrameContainerEClass, DFrameContainer.class, "DFrameContainer", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -906,6 +990,7 @@ public class TimingDPackageImpl extends EPackageImpl implements TimingDPackage {
 		initEAttribute(getDFrame_DisplayName(), ecorePackage.getEString(), "displayName", null, 0, 1, DFrame.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getDFrame_Blocks(), this.getDBlock(), this.getDBlock_Frame(), "blocks", null, 1, -1, DFrame.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getDFrame_Intervals(), this.getDInterval(), null, "intervals", null, 0, -1, DFrame.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getDFrame_Messages(), this.getDMessage(), this.getDMessage_Frame(), "messages", null, 0, -1, DFrame.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(dBlockEClass, DBlock.class, "DBlock", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getDBlock_Lifeline(), this.getUMLLifeline(), null, "lifeline", null, 0, 1, DBlock.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -954,6 +1039,12 @@ public class TimingDPackageImpl extends EPackageImpl implements TimingDPackage {
 		initEReference(getDStateSwitch_FromValueLine(), this.getDValueLine(), null, "fromValueLine", null, 0, 1, DStateSwitch.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getDStateSwitch_ToValueLine(), this.getDValueLine(), null, "toValueLine", null, 0, 1, DStateSwitch.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
+		initEClass(dMessageEClass, DMessage.class, "DMessage", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getDMessage_UmlMessage(), this.getUMLMessage(), null, "umlMessage", null, 0, 1, DMessage.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getDMessage_Frame(), this.getDFrame(), this.getDFrame_Messages(), "frame", null, 0, 1, DMessage.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getDMessage_MessageSource(), this.getDSegmentElement(), null, "messageSource", null, 0, 1, DMessage.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getDMessage_MessageTarget(), this.getDSegmentElement(), null, "messageTarget", null, 0, 1, DMessage.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
 		initEClass(dIntervalEClass, DInterval.class, "DInterval", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getDInterval_FromPoint(), this.getDSegmentElement(), null, "fromPoint", null, 0, 1, DInterval.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getDInterval_ToPoint(), this.getDSegmentElement(), null, "toPoint", null, 0, 1, DInterval.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -973,6 +1064,8 @@ public class TimingDPackageImpl extends EPackageImpl implements TimingDPackage {
 		initEClass(umlLifelineEClass, Lifeline.class, "UMLLifeline", IS_ABSTRACT, IS_INTERFACE, !IS_GENERATED_INSTANCE_CLASS);
 
 		initEClass(umlOccurrenceSpecificationEClass, OccurrenceSpecification.class, "UMLOccurrenceSpecification", IS_ABSTRACT, IS_INTERFACE, !IS_GENERATED_INSTANCE_CLASS);
+
+		initEClass(umlMessageEClass, Message.class, "UMLMessage", IS_ABSTRACT, IS_INTERFACE, !IS_GENERATED_INSTANCE_CLASS);
 
 		// Create resource
 		createResource(eNS_URI);

@@ -2,12 +2,11 @@
  * <copyright>
  * </copyright>
  *
- * $Id: DPointConstraint.java,v 1.1 2008/09/06 19:44:15 mgolubev Exp $
+ * $Id: DPointConstraint.java,v 1.2 2008/09/09 00:39:33 mgolubev Exp $
  */
 package org.eclipse.uml2.diagram.timing.model.timingd;
 
 import org.eclipse.emf.ecore.EObject;
-
 import org.eclipse.uml2.uml.Constraint;
 
 /**

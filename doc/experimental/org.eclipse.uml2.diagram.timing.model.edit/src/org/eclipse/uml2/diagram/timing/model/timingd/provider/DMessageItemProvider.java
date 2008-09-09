@@ -2,7 +2,7 @@
  * <copyright>
  * </copyright>
  *
- * $Id: DFrameItemProvider.java,v 1.2 2008/09/09 00:39:26 mgolubev Exp $
+ * $Id: DMessageItemProvider.java,v 1.1 2008/09/09 00:39:26 mgolubev Exp $
  */
 package org.eclipse.uml2.diagram.timing.model.timingd.provider;
 
@@ -15,8 +15,6 @@ import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.common.util.ResourceLocator;
 
-import org.eclipse.emf.ecore.EStructuralFeature;
-
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
 import org.eclipse.emf.edit.provider.IItemLabelProvider;
@@ -24,21 +22,17 @@ import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.IItemPropertySource;
 import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
 import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
-import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ItemProviderAdapter;
-import org.eclipse.emf.edit.provider.ViewerNotification;
 
-import org.eclipse.uml2.diagram.timing.model.timingd.DFrame;
-import org.eclipse.uml2.diagram.timing.model.timingd.TimingDFactory;
 import org.eclipse.uml2.diagram.timing.model.timingd.TimingDPackage;
 
 /**
- * This is the item provider adapter for a {@link org.eclipse.uml2.diagram.timing.model.timingd.DFrame} object.
+ * This is the item provider adapter for a {@link org.eclipse.uml2.diagram.timing.model.timingd.DMessage} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
  * @generated
  */
-public class DFrameItemProvider
+public class DMessageItemProvider
 	extends ItemProviderAdapter
 	implements
 		IEditingDomainItemProvider,
@@ -52,7 +46,7 @@ public class DFrameItemProvider
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public DFrameItemProvider(AdapterFactory adapterFactory) {
+	public DMessageItemProvider(AdapterFactory adapterFactory) {
 		super(adapterFactory);
 	}
 
@@ -67,26 +61,27 @@ public class DFrameItemProvider
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addInteractionPropertyDescriptor(object);
-			addDisplayNamePropertyDescriptor(object);
+			addUmlMessagePropertyDescriptor(object);
+			addMessageSourcePropertyDescriptor(object);
+			addMessageTargetPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
 
 	/**
-	 * This adds a property descriptor for the Interaction feature.
+	 * This adds a property descriptor for the Uml Message feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addInteractionPropertyDescriptor(Object object) {
+	protected void addUmlMessagePropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_DFrame_interaction_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_DFrame_interaction_feature", "_UI_DFrame_type"),
-				 TimingDPackage.Literals.DFRAME__INTERACTION,
+				 getString("_UI_DMessage_umlMessage_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_DMessage_umlMessage_feature", "_UI_DMessage_type"),
+				 TimingDPackage.Literals.DMESSAGE__UML_MESSAGE,
 				 true,
 				 false,
 				 true,
@@ -96,68 +91,58 @@ public class DFrameItemProvider
 	}
 
 	/**
-	 * This adds a property descriptor for the Display Name feature.
+	 * This adds a property descriptor for the Message Source feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addDisplayNamePropertyDescriptor(Object object) {
+	protected void addMessageSourcePropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_DFrame_displayName_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_DFrame_displayName_feature", "_UI_DFrame_type"),
-				 TimingDPackage.Literals.DFRAME__DISPLAY_NAME,
+				 getString("_UI_DMessage_messageSource_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_DMessage_messageSource_feature", "_UI_DMessage_type"),
+				 TimingDPackage.Literals.DMESSAGE__MESSAGE_SOURCE,
 				 true,
 				 false,
-				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 true,
+				 null,
 				 null,
 				 null));
 	}
 
 	/**
-	 * This specifies how to implement {@link #getChildren} and is used to deduce an appropriate feature for an
-	 * {@link org.eclipse.emf.edit.command.AddCommand}, {@link org.eclipse.emf.edit.command.RemoveCommand} or
-	 * {@link org.eclipse.emf.edit.command.MoveCommand} in {@link #createCommand}.
+	 * This adds a property descriptor for the Message Target feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
-	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
-		if (childrenFeatures == null) {
-			super.getChildrenFeatures(object);
-			childrenFeatures.add(TimingDPackage.Literals.DFRAME__BLOCKS);
-			childrenFeatures.add(TimingDPackage.Literals.DFRAME__INTERVALS);
-			childrenFeatures.add(TimingDPackage.Literals.DFRAME__MESSAGES);
-		}
-		return childrenFeatures;
+	protected void addMessageTargetPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_DMessage_messageTarget_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_DMessage_messageTarget_feature", "_UI_DMessage_type"),
+				 TimingDPackage.Literals.DMESSAGE__MESSAGE_TARGET,
+				 true,
+				 false,
+				 true,
+				 null,
+				 null,
+				 null));
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	protected EStructuralFeature getChildFeature(Object object, Object child) {
-		// Check the type of the specified child object and return the proper feature to use for
-		// adding (see {@link AddCommand}) it as a child.
-
-		return super.getChildFeature(object, child);
-	}
-
-	/**
-	 * This returns DFrame.gif.
+	 * This returns DMessage.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
 	public Object getImage(Object object) {
-		return overlayImage(object, getResourceLocator().getImage("full/obj16/DFrame"));
+		return overlayImage(object, getResourceLocator().getImage("full/obj16/DMessage"));
 	}
 
 	/**
@@ -168,10 +153,7 @@ public class DFrameItemProvider
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((DFrame)object).getDisplayName();
-		return label == null || label.length() == 0 ?
-			getString("_UI_DFrame_type") :
-			getString("_UI_DFrame_type") + " " + label;
+		return getString("_UI_DMessage_type");
 	}
 
 	/**
@@ -184,17 +166,6 @@ public class DFrameItemProvider
 	@Override
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
-
-		switch (notification.getFeatureID(DFrame.class)) {
-			case TimingDPackage.DFRAME__DISPLAY_NAME:
-				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
-				return;
-			case TimingDPackage.DFRAME__BLOCKS:
-			case TimingDPackage.DFRAME__INTERVALS:
-			case TimingDPackage.DFRAME__MESSAGES:
-				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
-				return;
-		}
 		super.notifyChanged(notification);
 	}
 
@@ -208,21 +179,6 @@ public class DFrameItemProvider
 	@Override
 	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
-
-		newChildDescriptors.add
-			(createChildParameter
-				(TimingDPackage.Literals.DFRAME__BLOCKS,
-				 TimingDFactory.eINSTANCE.createDBlock()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(TimingDPackage.Literals.DFRAME__INTERVALS,
-				 TimingDFactory.eINSTANCE.createDInterval()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(TimingDPackage.Literals.DFRAME__MESSAGES,
-				 TimingDFactory.eINSTANCE.createDMessage()));
 	}
 
 	/**

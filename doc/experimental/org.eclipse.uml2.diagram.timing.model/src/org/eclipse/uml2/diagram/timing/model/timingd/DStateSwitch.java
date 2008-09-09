@@ -2,9 +2,11 @@
  * <copyright>
  * </copyright>
  *
- * $Id: DStateSwitch.java,v 1.2 2008/09/07 15:13:30 mgolubev Exp $
+ * $Id: DStateSwitch.java,v 1.3 2008/09/09 00:39:32 mgolubev Exp $
  */
 package org.eclipse.uml2.diagram.timing.model.timingd;
+
+import org.eclipse.emf.ecore.EObject;
 
 
 /**
@@ -28,7 +30,7 @@ package org.eclipse.uml2.diagram.timing.model.timingd;
  * @model
  * @generated
  */
-public interface DStateSwitch extends DSegmentElement {
+public interface DStateSwitch extends EObject {
 	/**
 	 * Returns the value of the '<em><b>From Segment End</b></em>' reference.
 	 * It is bidirectional and its opposite is '{@link org.eclipse.uml2.diagram.timing.model.timingd.DSegmentEnd#getSwitch <em>Switch</em>}'.

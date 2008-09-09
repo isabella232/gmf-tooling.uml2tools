@@ -66,6 +66,9 @@ public class TimingDEditPartFactory implements EditPartFactory {
 
 			case DStateSwitchEditPart.VISUAL_ID:
 				return new DStateSwitchEditPart(view);
+
+			case DMessageEditPart.VISUAL_ID:
+				return new DMessageEditPart(view);
 			}
 		}
 		return createUnrecognizedEditPart(context, model);

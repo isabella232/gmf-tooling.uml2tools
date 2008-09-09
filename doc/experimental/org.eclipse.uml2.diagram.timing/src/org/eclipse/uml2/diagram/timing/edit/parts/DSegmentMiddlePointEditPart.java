@@ -1,5 +1,7 @@
 package org.eclipse.uml2.diagram.timing.edit.parts;
 
+import java.util.ArrayList;
+import java.util.List;
 import org.eclipse.draw2d.ColorConstants;
 import org.eclipse.draw2d.Ellipse;
 import org.eclipse.draw2d.IFigure;
@@ -16,14 +18,20 @@ import org.eclipse.gef.editpolicies.LayoutEditPolicy;
 import org.eclipse.gef.editpolicies.NonResizableEditPolicy;
 import org.eclipse.gef.editpolicies.ResizableEditPolicy;
 import org.eclipse.gef.requests.CreateRequest;
+import org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.ShapeNodeEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles;
+import org.eclipse.gmf.runtime.emf.type.core.IElementType;
 import org.eclipse.gmf.runtime.gef.ui.figures.DefaultSizeNodeFigure;
 import org.eclipse.gmf.runtime.gef.ui.figures.NodeFigure;
 import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.swt.graphics.Color;
 import org.eclipse.uml2.diagram.common.editparts.PrimaryShapeEditPart;
+import org.eclipse.uml2.diagram.common.editpolicies.UpdateDescriptionEditPolicy;
 import org.eclipse.uml2.diagram.timing.edit.policies.DSegmentMiddlePointItemSemanticEditPolicy;
+import org.eclipse.uml2.diagram.timing.part.TimingDDiagramUpdater;
+import org.eclipse.uml2.diagram.timing.part.TimingDVisualIDRegistry;
+import org.eclipse.uml2.diagram.timing.providers.TimingDElementTypes;
 
 /**
  * @generated
@@ -57,6 +65,9 @@ public class DSegmentMiddlePointEditPart extends ShapeNodeEditPart implements Pr
 	 * @generated
 	 */
 	protected void createDefaultEditPolicies() {
+		if (TimingDVisualIDRegistry.isShortcutDescendant(getNotationView())) {
+			installEditPolicy(UpdateDescriptionEditPolicy.ROLE, new UpdateDescriptionEditPolicy(TimingDDiagramUpdater.TYPED_ADAPTER, true));
+		}
 		super.createDefaultEditPolicies();
 		installEditPolicy(EditPolicyRoles.SEMANTIC_ROLE, new DSegmentMiddlePointItemSemanticEditPolicy());
 		installEditPolicy(EditPolicy.LAYOUT_ROLE, createLayoutEditPolicy());
@@ -196,6 +207,75 @@ public class DSegmentMiddlePointEditPart extends ShapeNodeEditPart implements Pr
 		if (primaryShape instanceof Shape) {
 			((Shape) primaryShape).setLineStyle(style);
 		}
+	}
+
+	/**
+	 * @generated
+	 */
+	public List/*<org.eclipse.gmf.runtime.emf.type.core.IElementType>*/getMARelTypesOnSource() {
+		List/*<org.eclipse.gmf.runtime.emf.type.core.IElementType>*/types = new ArrayList/*<org.eclipse.gmf.runtime.emf.type.core.IElementType>*/();
+		types.add(TimingDElementTypes.DMessage_4002);
+		return types;
+	}
+
+	/**
+	 * @generated
+	 */
+	public List/*<org.eclipse.gmf.runtime.emf.type.core.IElementType>*/getMARelTypesOnTarget() {
+		List/*<org.eclipse.gmf.runtime.emf.type.core.IElementType>*/types = new ArrayList/*<org.eclipse.gmf.runtime.emf.type.core.IElementType>*/();
+		types.add(TimingDElementTypes.DMessage_4002);
+		return types;
+	}
+
+	/**
+	 * @generated
+	 */
+	public List/*<org.eclipse.gmf.runtime.emf.type.core.IElementType>*/getMARelTypesOnSourceAndTarget(IGraphicalEditPart targetEditPart) {
+		List/*<org.eclipse.gmf.runtime.emf.type.core.IElementType>*/types = new ArrayList/*<org.eclipse.gmf.runtime.emf.type.core.IElementType>*/();
+		if (targetEditPart instanceof org.eclipse.uml2.diagram.timing.edit.parts.DSegmentMiddlePointEditPart) {
+			types.add(TimingDElementTypes.DMessage_4002);
+		}
+		if (targetEditPart instanceof DSegmentStartEditPart) {
+			types.add(TimingDElementTypes.DMessage_4002);
+		}
+		if (targetEditPart instanceof DSegmentEndEditPart) {
+			types.add(TimingDElementTypes.DMessage_4002);
+		}
+		return types;
+	}
+
+	/**
+	 * @generated
+	 */
+	public List/*<org.eclipse.gmf.runtime.emf.type.core.IElementType>*/getMATypesForSource(IElementType relationshipType) {
+		List/*<org.eclipse.gmf.runtime.emf.type.core.IElementType>*/types = new ArrayList/*<org.eclipse.gmf.runtime.emf.type.core.IElementType>*/();
+		if (relationshipType == TimingDElementTypes.DMessage_4002) {
+			types.add(TimingDElementTypes.DSegmentMiddlePoint_3004);
+		}
+		if (relationshipType == TimingDElementTypes.DMessage_4002) {
+			types.add(TimingDElementTypes.DSegmentStart_3005);
+		}
+		if (relationshipType == TimingDElementTypes.DMessage_4002) {
+			types.add(TimingDElementTypes.DSegmentEnd_3006);
+		}
+		return types;
+	}
+
+	/**
+	 * @generated
+	 */
+	public List/*<org.eclipse.gmf.runtime.emf.type.core.IElementType>*/getMATypesForTarget(IElementType relationshipType) {
+		List/*<org.eclipse.gmf.runtime.emf.type.core.IElementType>*/types = new ArrayList/*<org.eclipse.gmf.runtime.emf.type.core.IElementType>*/();
+		if (relationshipType == TimingDElementTypes.DMessage_4002) {
+			types.add(TimingDElementTypes.DSegmentMiddlePoint_3004);
+		}
+		if (relationshipType == TimingDElementTypes.DMessage_4002) {
+			types.add(TimingDElementTypes.DSegmentStart_3005);
+		}
+		if (relationshipType == TimingDElementTypes.DMessage_4002) {
+			types.add(TimingDElementTypes.DSegmentEnd_3006);
+		}
+		return types;
 	}
 
 	/**
