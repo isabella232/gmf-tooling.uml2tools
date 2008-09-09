@@ -4,6 +4,7 @@
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xmlns:gmfgen="http://www.eclipse.org/gmf/2008/GenModel"
     xmlns:uml2.gmfgenext="http://www.eclipse.org/uml2/diagram/gmfgenext/DiagramFigure/1.0" packageNamePrefix="org.eclipse.uml2.diagram.timing"
+    sameFileForDiagramAndModel="true"
     diagramFileExtension="uml_time"
     dynamicTemplates="true"
     templateDirectory="/org.eclipse.uml2.diagram.def/dynamic-templates/codegen">
