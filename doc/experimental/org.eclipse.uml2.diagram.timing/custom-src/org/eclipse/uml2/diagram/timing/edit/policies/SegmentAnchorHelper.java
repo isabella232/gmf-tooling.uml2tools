@@ -7,6 +7,8 @@ import org.eclipse.draw2d.IFigure;
 import org.eclipse.draw2d.geometry.Point;
 import org.eclipse.draw2d.geometry.Rectangle;
 import org.eclipse.gef.EditPart;
+import org.eclipse.gmf.runtime.diagram.ui.editparts.DiagramEditPart;
+import org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart;
 import org.eclipse.uml2.diagram.common.editparts.PrimaryShapeEditPart;
 import org.eclipse.uml2.diagram.timing.edit.parts.DBlockEditPart;
 import org.eclipse.uml2.diagram.timing.edit.parts.DSegmentEditPart;
@@ -177,5 +179,15 @@ public class SegmentAnchorHelper {
 	private void debugOut(String s){
 		//System.err.println(s);
 	}
+	
+	public static DBlockEditPart findBlockEditPart(IGraphicalEditPart start){
+		EditPart curr = start;
+		while (curr != null && false == curr instanceof DiagramEditPart && false == curr instanceof DBlockEditPart){
+			curr = curr.getParent();
+		}
+		return curr instanceof DBlockEditPart ? (DBlockEditPart)curr : null;
+	}
+	
+
 	
 }
