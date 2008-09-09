@@ -17,7 +17,6 @@ import org.eclipse.uml2.diagram.timing.part.TimingDVisualIDRegistry;
 
 public class MoveCircleEditPolicy extends AbstractEditPolicy {
 	public static final String ROLE = MoveCircleEditPolicy.class.getName() + ":Role";
-	public static final String KEY_INITIATED_FROM_CIRCLE = MoveCircleEditPolicy.class.getName() + ":InitiatedFromCircle";
 	
 	@Override
 	public Command getCommand(Request request) {
@@ -56,15 +55,14 @@ public class MoveCircleEditPolicy extends AbstractEditPolicy {
 		}
 		
 		ChangeBoundsRequest moveTickRequest = new ChangeBoundsRequest(REQ_MOVE);
-		moveTickRequest.setEditParts(getHost());
 		moveTickRequest.setMoveDelta(request.getMoveDelta());
 		moveTickRequest.setSizeDelta(new Dimension(0, 0));
 		moveTickRequest.setLocation(request.getLocation());
 		moveTickRequest.setExtendedData(request.getExtendedData());
 		
-		moveTickRequest.getExtendedData().put(KEY_INITIATED_FROM_CIRCLE, getHostImpl());
+		moveTickRequest.getExtendedData().put(MoveTickEditPolicy.KEY_INITIATED_FROM_CIRCLE, getHostImpl());
 		Command result = tickEditPart.getCommand(moveTickRequest);
-		moveTickRequest.getExtendedData().put(KEY_INITIATED_FROM_CIRCLE, null);
+		moveTickRequest.getExtendedData().put(MoveTickEditPolicy.KEY_INITIATED_FROM_CIRCLE, null);
 		return result;
 	}
 	

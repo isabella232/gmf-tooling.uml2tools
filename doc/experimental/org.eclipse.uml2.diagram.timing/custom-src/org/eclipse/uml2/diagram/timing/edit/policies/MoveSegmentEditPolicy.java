@@ -1,6 +1,8 @@
 package org.eclipse.uml2.diagram.timing.edit.policies;
 
 import java.util.HashMap;
+import java.util.LinkedList;
+import java.util.List;
 import java.util.Map;
 
 import org.eclipse.draw2d.geometry.Dimension;
@@ -26,10 +28,14 @@ import org.eclipse.gmf.runtime.notation.Node;
 import org.eclipse.gmf.runtime.notation.Size;
 import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.uml2.diagram.timing.edit.parts.DSegmentEditPart;
+import org.eclipse.uml2.diagram.timing.edit.parts.DTickEditPart;
 import org.eclipse.uml2.diagram.timing.model.timingd.DSegment;
+import org.eclipse.uml2.diagram.timing.model.timingd.DSegmentElement;
 import org.eclipse.uml2.diagram.timing.model.timingd.DSegmentEnd;
+import org.eclipse.uml2.diagram.timing.model.timingd.DSegmentMiddlePoint;
 import org.eclipse.uml2.diagram.timing.model.timingd.DSegmentStart;
 import org.eclipse.uml2.diagram.timing.model.timingd.DStateSwitch;
+import org.eclipse.uml2.diagram.timing.model.timingd.DTick;
 
 
 public class MoveSegmentEditPolicy extends AbstractEditPolicy {
@@ -59,7 +65,8 @@ public class MoveSegmentEditPolicy extends AbstractEditPolicy {
 		
 		CompositeTransactionalCommand cc = new CompositeTransactionalCommand(getDomain(), "Adjust related segments");
 		Map<EObject, View> domain2Notation = new Domain2NotationCollector().collectAll(getHostImpl().getNotationView().getDiagram());
-
+		
+		AffectedTicksCollector ticksCollector = new AffectedTicksCollector();
 		for (Object next : req.getEditParts()){
 			if (next instanceof DSegmentEditPart){
 				DSegmentEditPart nextEP = (DSegmentEditPart)next;
@@ -67,11 +74,15 @@ public class MoveSegmentEditPolicy extends AbstractEditPolicy {
 				DSegmentStart start = nextSegment.getStart();
 				DSegmentEnd end = nextSegment.getEnd();
 				
+				ticksCollector.addAffectedSegment(nextSegment);
+
 				if (start != null){
 					DStateSwitch incomingSwitch = start.getIncomingSwitch();
 					if (incomingSwitch != null){
 						DSegment fromSegment = incomingSwitch.getFromSegment();
 						if (fromSegment != null){
+							ticksCollector.addSegmentElement(fromSegment.getEnd());
+							
 							View fromSegmentView = domain2Notation.get(fromSegment);
 							if (fromSegmentView instanceof Node){
 								LayoutConstraint constr = ((Node)fromSegmentView).getLayoutConstraint();
@@ -96,6 +107,8 @@ public class MoveSegmentEditPolicy extends AbstractEditPolicy {
 					if (outgoingSwitch != null){
 						DSegment toSegment = outgoingSwitch.getToSegment();
 						if (toSegment != null){
+							ticksCollector.addSegmentElement(toSegment.getStart());
+							
 							View toSegmentView = domain2Notation.get(toSegment);
 							if (toSegmentView instanceof Node){
 								LayoutConstraint constr = ((Node)toSegmentView).getLayoutConstraint();
@@ -118,10 +131,33 @@ public class MoveSegmentEditPolicy extends AbstractEditPolicy {
 			}
 		}
 		
-		if (cc.size() == 0){
-			return null;
+		Command result = null;
+		if (!ticksCollector.isEmpty()){
+			for (DTick nextAffectedTick : ticksCollector.getTicks()){
+				View tickView = domain2Notation.get(nextAffectedTick);
+				if (tickView == null){
+					continue;
+				}
+				DTickEditPart tickEP = (DTickEditPart) getHost().getViewer().getEditPartRegistry().get(tickView);
+				if (tickEP != null){
+					ChangeBoundsRequest moveTickRequest = new ChangeBoundsRequest(REQ_MOVE);
+					moveTickRequest.setMoveDelta(req.getMoveDelta());
+					moveTickRequest.setSizeDelta(new Dimension(0, 0));
+					moveTickRequest.setLocation(req.getLocation());
+					moveTickRequest.setExtendedData(req.getExtendedData());
+					moveTickRequest.getExtendedData().put(MoveTickEditPolicy.KEY_INITIATED_FROM_CIRCLE, getHostImpl());
+					Command moveTickCommand = tickEP.getCommand(moveTickRequest);
+					moveTickRequest.getExtendedData().put(MoveTickEditPolicy.KEY_INITIATED_FROM_CIRCLE, null);
+					
+					result = chain(result, moveTickCommand);
+				}
+			}
 		}
-		return new ICommandProxy(cc.reduce());
+		
+		if (cc.size() == 0){
+			return result;
+		}
+		return chain(result, new ICommandProxy(cc.reduce()));
 	}
 	
 	private static class Domain2NotationCollector {
@@ -161,6 +197,42 @@ public class MoveSegmentEditPolicy extends AbstractEditPolicy {
 				}
 			}
 		}
+	}
+	
+	private static class AffectedTicksCollector {
+		private final List<DTick> myTicks; 
+		public AffectedTicksCollector(){
+			myTicks = new LinkedList<DTick>();
+		}
+		
+		public Iterable<DTick> getTicks(){
+			return myTicks;
+		}
+		
+		public boolean isEmpty(){
+			return myTicks.isEmpty();
+		}	
+		
+		public void addSegmentElement(DSegmentElement circle){
+			if (circle != null && circle.getTick() != null){
+				myTicks.add(circle.getTick());
+			}
+		}
+		
+		public void addAffectedSegment(DSegment segment){
+			if (segment == null){
+				return;
+			}
+			addSegmentElement(segment.getStart());
+			addSegmentElement(segment.getEnd());
+			for (DSegmentMiddlePoint nextMiddle : segment.getMiddlePoints()){
+				addSegmentElement(nextMiddle);
+			}
+		}
+	}
+	
+	private static Command chain(Command first, Command second){
+		return first == null ? second : first.chain(second);
 	}
 
 }

@@ -10,11 +10,12 @@ import org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart;
 
 public class MoveTickEditPolicy extends AbstractEditPolicy {
 	public static final String ROLE = MoveTickEditPolicy.class.getName() + ":Role";
+	public static final String KEY_INITIATED_FROM_CIRCLE = MoveTickEditPolicy.class.getName() + ":InitiatedFromCircle";
 	
 	@Override
 	public Command getCommand(Request request) {
 		if (request instanceof ChangeBoundsRequest && REQ_MOVE.equals(request.getType())){
-			if (false == request.getExtendedData().get(MoveCircleEditPolicy.KEY_INITIATED_FROM_CIRCLE) instanceof IGraphicalEditPart){
+			if (false == request.getExtendedData().get(KEY_INITIATED_FROM_CIRCLE) instanceof IGraphicalEditPart){
 				return UnexecutableCommand.INSTANCE;
 			}
 		}
