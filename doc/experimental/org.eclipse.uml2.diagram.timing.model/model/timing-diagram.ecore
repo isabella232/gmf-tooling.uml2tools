@@ -55,6 +55,7 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="middlePoints" upperBound="-1"
         eType="#//DSegmentMiddlePoint" containment="true" eOpposite="#//DSegmentMiddlePoint/segment"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="endSwitch" eType="#//DStateSwitch"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="startOccurrence" eType="#//UMLOccurrenceSpecification"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="DSegmentElement">
     <eStructuralFeatures xsi:type="ecore:EReference" name="occurrence" eType="#//UMLOccurrenceSpecification"/>

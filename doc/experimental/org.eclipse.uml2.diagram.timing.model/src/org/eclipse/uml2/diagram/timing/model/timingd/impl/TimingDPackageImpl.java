@@ -2,7 +2,7 @@
  * <copyright>
  * </copyright>
  *
- * $Id: TimingDPackageImpl.java,v 1.8 2008/09/09 05:34:18 mgolubev Exp $
+ * $Id: TimingDPackageImpl.java,v 1.9 2008/09/09 08:30:29 mgolubev Exp $
  */
 package org.eclipse.uml2.diagram.timing.model.timingd.impl;
 
@@ -530,6 +530,15 @@ public class TimingDPackageImpl extends EPackageImpl implements TimingDPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EReference getDSegment_StartOccurrence() {
+		return (EReference)dSegmentEClass.getEStructuralFeatures().get(5);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getDSegmentElement() {
 		return dSegmentElementEClass;
 	}
@@ -1009,6 +1018,7 @@ public class TimingDPackageImpl extends EPackageImpl implements TimingDPackage {
 		createEReference(dSegmentEClass, DSEGMENT__END);
 		createEReference(dSegmentEClass, DSEGMENT__MIDDLE_POINTS);
 		createEReference(dSegmentEClass, DSEGMENT__END_SWITCH);
+		createEReference(dSegmentEClass, DSEGMENT__START_OCCURRENCE);
 
 		dSegmentElementEClass = createEClass(DSEGMENT_ELEMENT);
 		createEReference(dSegmentElementEClass, DSEGMENT_ELEMENT__OCCURRENCE);
@@ -1141,6 +1151,7 @@ public class TimingDPackageImpl extends EPackageImpl implements TimingDPackage {
 		initEReference(getDSegment_End(), this.getDSegmentEnd(), this.getDSegmentEnd_Segment(), "end", null, 0, 1, DSegment.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getDSegment_MiddlePoints(), this.getDSegmentMiddlePoint(), this.getDSegmentMiddlePoint_Segment(), "middlePoints", null, 0, -1, DSegment.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getDSegment_EndSwitch(), this.getDStateSwitch(), null, "endSwitch", null, 0, 1, DSegment.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getDSegment_StartOccurrence(), this.getUMLOccurrenceSpecification(), null, "startOccurrence", null, 0, 1, DSegment.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		addEOperation(dSegmentEClass, ecorePackage.getEBoolean(), "isClosedSegment", 0, 1, IS_UNIQUE, IS_ORDERED);
 

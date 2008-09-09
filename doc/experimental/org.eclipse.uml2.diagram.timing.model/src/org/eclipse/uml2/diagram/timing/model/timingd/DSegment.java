@@ -2,12 +2,13 @@
  * <copyright>
  * </copyright>
  *
- * $Id: DSegment.java,v 1.2 2008/09/09 00:39:32 mgolubev Exp $
+ * $Id: DSegment.java,v 1.3 2008/09/09 08:30:29 mgolubev Exp $
  */
 package org.eclipse.uml2.diagram.timing.model.timingd;
 
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EObject;
+import org.eclipse.uml2.uml.OccurrenceSpecification;
 
 /**
  * <!-- begin-user-doc -->
@@ -22,6 +23,7 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link org.eclipse.uml2.diagram.timing.model.timingd.DSegment#getEnd <em>End</em>}</li>
  *   <li>{@link org.eclipse.uml2.diagram.timing.model.timingd.DSegment#getMiddlePoints <em>Middle Points</em>}</li>
  *   <li>{@link org.eclipse.uml2.diagram.timing.model.timingd.DSegment#getEndSwitch <em>End Switch</em>}</li>
+ *   <li>{@link org.eclipse.uml2.diagram.timing.model.timingd.DSegment#getStartOccurrence <em>Start Occurrence</em>}</li>
  * </ul>
  * </p>
  *
@@ -157,6 +159,32 @@ public interface DSegment extends EObject {
 	 * @generated
 	 */
 	void setEndSwitch(DStateSwitch value);
+
+	/**
+	 * Returns the value of the '<em><b>Start Occurrence</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Start Occurrence</em>' reference isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Start Occurrence</em>' reference.
+	 * @see #setStartOccurrence(OccurrenceSpecification)
+	 * @see org.eclipse.uml2.diagram.timing.model.timingd.TimingDPackage#getDSegment_StartOccurrence()
+	 * @model type="org.eclipse.uml2.diagram.timing.model.timingd.UMLOccurrenceSpecification"
+	 * @generated
+	 */
+	OccurrenceSpecification getStartOccurrence();
+
+	/**
+	 * Sets the value of the '{@link org.eclipse.uml2.diagram.timing.model.timingd.DSegment#getStartOccurrence <em>Start Occurrence</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Start Occurrence</em>' reference.
+	 * @see #getStartOccurrence()
+	 * @generated
+	 */
+	void setStartOccurrence(OccurrenceSpecification value);
 
 	/**
 	 * <!-- begin-user-doc -->

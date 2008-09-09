@@ -2,7 +2,7 @@
  * <copyright>
  * </copyright>
  *
- * $Id: DSegmentItemProvider.java,v 1.1 2008/09/06 19:46:49 mgolubev Exp $
+ * $Id: DSegmentItemProvider.java,v 1.2 2008/09/09 08:30:26 mgolubev Exp $
  */
 package org.eclipse.uml2.diagram.timing.model.timingd.provider;
 
@@ -67,6 +67,7 @@ public class DSegmentItemProvider
 			super.getPropertyDescriptors(object);
 
 			addEndSwitchPropertyDescriptor(object);
+			addStartOccurrencePropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -85,6 +86,28 @@ public class DSegmentItemProvider
 				 getString("_UI_DSegment_endSwitch_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_DSegment_endSwitch_feature", "_UI_DSegment_type"),
 				 TimingDPackage.Literals.DSEGMENT__END_SWITCH,
+				 true,
+				 false,
+				 true,
+				 null,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Start Occurrence feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addStartOccurrencePropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_DSegment_startOccurrence_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_DSegment_startOccurrence_feature", "_UI_DSegment_type"),
+				 TimingDPackage.Literals.DSEGMENT__START_OCCURRENCE,
 				 true,
 				 false,
 				 true,

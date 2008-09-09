@@ -39,6 +39,8 @@ class DSegment {
   val DSegmentEnd#segment end;
   val DSegmentMiddlePoint[*]#segment middlePoints;
   ref DStateSwitch endSwitch;
+  
+  ref UMLOccurrenceSpecification startOccurrence;
 }
 
 class DSegmentElement {

@@ -40,6 +40,7 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference timing-diagram.ecore#//DSegment/end"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference timing-diagram.ecore#//DSegment/middlePoints"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference timing-diagram.ecore#//DSegment/endSwitch"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference timing-diagram.ecore#//DSegment/startOccurrence"/>
       <genOperations ecoreOperation="timing-diagram.ecore#//DSegment/isClosedSegment"/>
     </genClasses>
     <genClasses ecoreClass="timing-diagram.ecore#//DSegmentElement">

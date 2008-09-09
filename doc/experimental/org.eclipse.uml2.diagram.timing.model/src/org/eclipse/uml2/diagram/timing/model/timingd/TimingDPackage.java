@@ -2,7 +2,7 @@
  * <copyright>
  * </copyright>
  *
- * $Id: TimingDPackage.java,v 1.8 2008/09/09 05:34:18 mgolubev Exp $
+ * $Id: TimingDPackage.java,v 1.9 2008/09/09 08:30:29 mgolubev Exp $
  */
 package org.eclipse.uml2.diagram.timing.model.timingd;
 
@@ -362,13 +362,22 @@ public interface TimingDPackage extends EPackage {
 	int DSEGMENT__END_SWITCH = 4;
 
 	/**
+	 * The feature id for the '<em><b>Start Occurrence</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DSEGMENT__START_OCCURRENCE = 5;
+
+	/**
 	 * The number of structural features of the '<em>DSegment</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int DSEGMENT_FEATURE_COUNT = 5;
+	int DSEGMENT_FEATURE_COUNT = 6;
 
 	/**
 	 * The meta object id for the '{@link org.eclipse.uml2.diagram.timing.model.timingd.impl.DSegmentElementImpl <em>DSegment Element</em>}' class.
@@ -1362,6 +1371,17 @@ public interface TimingDPackage extends EPackage {
 	EReference getDSegment_EndSwitch();
 
 	/**
+	 * Returns the meta object for the reference '{@link org.eclipse.uml2.diagram.timing.model.timingd.DSegment#getStartOccurrence <em>Start Occurrence</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Start Occurrence</em>'.
+	 * @see org.eclipse.uml2.diagram.timing.model.timingd.DSegment#getStartOccurrence()
+	 * @see #getDSegment()
+	 * @generated
+	 */
+	EReference getDSegment_StartOccurrence();
+
+	/**
 	 * Returns the meta object for class '{@link org.eclipse.uml2.diagram.timing.model.timingd.DSegmentElement <em>DSegment Element</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2132,6 +2152,14 @@ public interface TimingDPackage extends EPackage {
 		 * @generated
 		 */
 		EReference DSEGMENT__END_SWITCH = eINSTANCE.getDSegment_EndSwitch();
+
+		/**
+		 * The meta object literal for the '<em><b>Start Occurrence</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference DSEGMENT__START_OCCURRENCE = eINSTANCE.getDSegment_StartOccurrence();
 
 		/**
 		 * The meta object literal for the '{@link org.eclipse.uml2.diagram.timing.model.timingd.impl.DSegmentElementImpl <em>DSegment Element</em>}' class.

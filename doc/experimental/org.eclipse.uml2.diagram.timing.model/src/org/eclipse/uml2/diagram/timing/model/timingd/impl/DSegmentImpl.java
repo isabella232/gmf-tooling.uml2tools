@@ -2,7 +2,7 @@
  * <copyright>
  * </copyright>
  *
- * $Id: DSegmentImpl.java,v 1.2 2008/09/09 00:39:32 mgolubev Exp $
+ * $Id: DSegmentImpl.java,v 1.3 2008/09/09 08:30:29 mgolubev Exp $
  */
 package org.eclipse.uml2.diagram.timing.model.timingd.impl;
 
@@ -12,6 +12,7 @@ import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.EObjectImpl;
@@ -25,6 +26,7 @@ import org.eclipse.uml2.diagram.timing.model.timingd.DSegmentStart;
 import org.eclipse.uml2.diagram.timing.model.timingd.DStateSwitch;
 import org.eclipse.uml2.diagram.timing.model.timingd.DValueLine;
 import org.eclipse.uml2.diagram.timing.model.timingd.TimingDPackage;
+import org.eclipse.uml2.uml.OccurrenceSpecification;
 
 /**
  * <!-- begin-user-doc -->
@@ -38,6 +40,7 @@ import org.eclipse.uml2.diagram.timing.model.timingd.TimingDPackage;
  *   <li>{@link org.eclipse.uml2.diagram.timing.model.timingd.impl.DSegmentImpl#getEnd <em>End</em>}</li>
  *   <li>{@link org.eclipse.uml2.diagram.timing.model.timingd.impl.DSegmentImpl#getMiddlePoints <em>Middle Points</em>}</li>
  *   <li>{@link org.eclipse.uml2.diagram.timing.model.timingd.impl.DSegmentImpl#getEndSwitch <em>End Switch</em>}</li>
+ *   <li>{@link org.eclipse.uml2.diagram.timing.model.timingd.impl.DSegmentImpl#getStartOccurrence <em>Start Occurrence</em>}</li>
  * </ul>
  * </p>
  *
@@ -83,6 +86,16 @@ public class DSegmentImpl extends EObjectImpl implements DSegment {
 	 * @ordered
 	 */
 	protected DStateSwitch endSwitch;
+
+	/**
+	 * The cached value of the '{@link #getStartOccurrence() <em>Start Occurrence</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getStartOccurrence()
+	 * @generated
+	 * @ordered
+	 */
+	protected OccurrenceSpecification startOccurrence;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -283,6 +296,44 @@ public class DSegmentImpl extends EObjectImpl implements DSegment {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public OccurrenceSpecification getStartOccurrence() {
+		if (startOccurrence != null && ((EObject)startOccurrence).eIsProxy()) {
+			InternalEObject oldStartOccurrence = (InternalEObject)startOccurrence;
+			startOccurrence = (OccurrenceSpecification)eResolveProxy(oldStartOccurrence);
+			if (startOccurrence != oldStartOccurrence) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, TimingDPackage.DSEGMENT__START_OCCURRENCE, oldStartOccurrence, startOccurrence));
+			}
+		}
+		return startOccurrence;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public OccurrenceSpecification basicGetStartOccurrence() {
+		return startOccurrence;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setStartOccurrence(OccurrenceSpecification newStartOccurrence) {
+		OccurrenceSpecification oldStartOccurrence = startOccurrence;
+		startOccurrence = newStartOccurrence;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, TimingDPackage.DSEGMENT__START_OCCURRENCE, oldStartOccurrence, startOccurrence));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated NOT
 	 */
 	public boolean isClosedSegment() {
@@ -369,6 +420,9 @@ public class DSegmentImpl extends EObjectImpl implements DSegment {
 			case TimingDPackage.DSEGMENT__END_SWITCH:
 				if (resolve) return getEndSwitch();
 				return basicGetEndSwitch();
+			case TimingDPackage.DSEGMENT__START_OCCURRENCE:
+				if (resolve) return getStartOccurrence();
+				return basicGetStartOccurrence();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -398,6 +452,9 @@ public class DSegmentImpl extends EObjectImpl implements DSegment {
 			case TimingDPackage.DSEGMENT__END_SWITCH:
 				setEndSwitch((DStateSwitch)newValue);
 				return;
+			case TimingDPackage.DSEGMENT__START_OCCURRENCE:
+				setStartOccurrence((OccurrenceSpecification)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -425,6 +482,9 @@ public class DSegmentImpl extends EObjectImpl implements DSegment {
 			case TimingDPackage.DSEGMENT__END_SWITCH:
 				setEndSwitch((DStateSwitch)null);
 				return;
+			case TimingDPackage.DSEGMENT__START_OCCURRENCE:
+				setStartOccurrence((OccurrenceSpecification)null);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -447,6 +507,8 @@ public class DSegmentImpl extends EObjectImpl implements DSegment {
 				return middlePoints != null && !middlePoints.isEmpty();
 			case TimingDPackage.DSEGMENT__END_SWITCH:
 				return endSwitch != null;
+			case TimingDPackage.DSEGMENT__START_OCCURRENCE:
+				return startOccurrence != null;
 		}
 		return super.eIsSet(featureID);
 	}
