@@ -16,6 +16,7 @@ import org.eclipse.uml2.diagram.timing.edit.parts.DSegmentEditPart;
 import org.eclipse.uml2.diagram.timing.edit.parts.DSegmentEndEditPart;
 import org.eclipse.uml2.diagram.timing.edit.parts.DSegmentMiddlePointEditPart;
 import org.eclipse.uml2.diagram.timing.edit.parts.DSegmentStartEditPart;
+import org.eclipse.uml2.diagram.timing.edit.parts.DTickEditPart;
 import org.eclipse.uml2.diagram.timing.edit.parts.DValueLineEditPart;
 import org.eclipse.uml2.diagram.timing.model.timingd.TimingDPackage;
 import org.eclipse.uml2.diagram.timing.part.TimingDDiagramUpdater;
@@ -59,6 +60,7 @@ public class DBlockCanonicalEditPolicy extends CanonicalEditPolicy {
 		case DSegmentEndEditPart.VISUAL_ID:
 			return true;
 		case DValueLineEditPart.VISUAL_ID:
+		case DTickEditPart.VISUAL_ID:
 			if (!semanticChildren.contains(view.getElement())) {
 				return true;
 			}
@@ -80,6 +82,7 @@ public class DBlockCanonicalEditPolicy extends CanonicalEditPolicy {
 		if (myFeaturesToSynchronize == null) {
 			myFeaturesToSynchronize = new HashSet();
 			myFeaturesToSynchronize.add(TimingDPackage.eINSTANCE.getDBlock_States());
+			myFeaturesToSynchronize.add(TimingDPackage.eINSTANCE.getDBlock_Ticks());
 		}
 		return myFeaturesToSynchronize;
 	}

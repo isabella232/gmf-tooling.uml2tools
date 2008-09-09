@@ -18,6 +18,7 @@ import org.eclipse.uml2.diagram.timing.edit.parts.DSegmentEndEditPart;
 import org.eclipse.uml2.diagram.timing.edit.parts.DSegmentMiddlePointEditPart;
 import org.eclipse.uml2.diagram.timing.edit.parts.DSegmentStartEditPart;
 import org.eclipse.uml2.diagram.timing.edit.parts.DStateSwitchEditPart;
+import org.eclipse.uml2.diagram.timing.edit.parts.DTickEditPart;
 import org.eclipse.uml2.diagram.timing.edit.parts.DValueLineDisplayNameEditPart;
 import org.eclipse.uml2.diagram.timing.edit.parts.DValueLineEditPart;
 import org.eclipse.uml2.diagram.timing.part.TimingDVisualIDRegistry;
@@ -33,6 +34,7 @@ import org.eclipse.uml2.diagram.timing.view.factories.DSegmentMiddlePointViewFac
 import org.eclipse.uml2.diagram.timing.view.factories.DSegmentStartViewFactory;
 import org.eclipse.uml2.diagram.timing.view.factories.DSegmentViewFactory;
 import org.eclipse.uml2.diagram.timing.view.factories.DStateSwitchViewFactory;
+import org.eclipse.uml2.diagram.timing.view.factories.DTickViewFactory;
 import org.eclipse.uml2.diagram.timing.view.factories.DValueLineDisplayNameViewFactory;
 import org.eclipse.uml2.diagram.timing.view.factories.DValueLineViewFactory;
 
@@ -104,6 +106,7 @@ public class TimingDViewProvider extends AbstractViewProvider {
 				case DSegmentMiddlePointEditPart.VISUAL_ID:
 				case DSegmentStartEditPart.VISUAL_ID:
 				case DSegmentEndEditPart.VISUAL_ID:
+				case DTickEditPart.VISUAL_ID:
 					if (domainElement == null || visualID != TimingDVisualIDRegistry.getNodeVisualID(containerView, domainElement)) {
 						return null; // visual id in semantic hint should match visual id for domain element
 					}
@@ -164,6 +167,8 @@ public class TimingDViewProvider extends AbstractViewProvider {
 			return DSegmentStartViewFactory.class;
 		case DSegmentEndEditPart.VISUAL_ID:
 			return DSegmentEndViewFactory.class;
+		case DTickEditPart.VISUAL_ID:
+			return DTickViewFactory.class;
 		case DMessageDisplayNameEditPart.VISUAL_ID:
 			return DMessageDisplayNameViewFactory.class;
 		}

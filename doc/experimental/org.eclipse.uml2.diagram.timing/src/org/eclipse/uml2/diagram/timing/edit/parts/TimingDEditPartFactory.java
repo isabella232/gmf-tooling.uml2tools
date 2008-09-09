@@ -64,6 +64,9 @@ public class TimingDEditPartFactory implements EditPartFactory {
 			case DSegmentEndEditPart.VISUAL_ID:
 				return new DSegmentEndEditPart(view);
 
+			case DTickEditPart.VISUAL_ID:
+				return new DTickEditPart(view);
+
 			case DStateSwitchEditPart.VISUAL_ID:
 				return new DStateSwitchEditPart(view);
 

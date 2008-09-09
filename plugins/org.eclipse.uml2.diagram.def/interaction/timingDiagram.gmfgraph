@@ -215,6 +215,28 @@
           xsi:type="gmfgraph:Label"
           name="MessageFigure_name"/>
     </descriptors>
+    <descriptors
+        name="TickFigure">
+      <actualFigure
+          xsi:type="gmfgraph:Rectangle"
+          name="TickFigure">
+        <foregroundColor
+            xsi:type="gmfgraph:ConstantColor"
+            value="black"/>
+        <backgroundColor
+            xsi:type="gmfgraph:ConstantColor"
+            value="black"/>
+        <maximumSize
+            dx="4"
+            dy="20"/>
+        <minimumSize
+            dx="4"
+            dy="20"/>
+        <preferredSize
+            dx="4"
+            dy="20"/>
+      </actualFigure>
+    </descriptors>
   </figures>
   <nodes
       name="InteractionNode"
@@ -274,6 +296,17 @@
       <defaultSize
           dx="50"
           dy="18"/>
+    </facets>
+  </nodes>
+  <nodes
+      name="TickNode"
+      figure="TickFigure"
+      affixedParentSide="NORTH">
+    <facets
+        xsi:type="gmfgraph:DefaultSizeFacet">
+      <defaultSize
+          dx="4"
+          dy="20"/>
     </facets>
   </nodes>
   <connections

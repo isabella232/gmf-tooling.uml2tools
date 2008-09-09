@@ -2,7 +2,7 @@
  * <copyright>
  * </copyright>
  *
- * $Id: TimingDFactoryImpl.java,v 1.3 2008/09/09 00:54:50 mgolubev Exp $
+ * $Id: TimingDFactoryImpl.java,v 1.4 2008/09/09 01:27:29 mgolubev Exp $
  */
 package org.eclipse.uml2.diagram.timing.model.timingd.impl;
 
@@ -85,6 +85,7 @@ public class TimingDFactoryImpl extends EFactoryImpl implements TimingDFactory {
 			case TimingDPackage.DMESSAGE: return createDMessage();
 			case TimingDPackage.DINTERVAL: return createDInterval();
 			case TimingDPackage.DPOINT_CONSTRAINT: return createDPointConstraint();
+			case TimingDPackage.DTICK: return createDTick();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -218,6 +219,16 @@ public class TimingDFactoryImpl extends EFactoryImpl implements TimingDFactory {
 	public DPointConstraint createDPointConstraint() {
 		DPointConstraintImpl dPointConstraint = new DPointConstraintImpl();
 		return dPointConstraint;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public DTick createDTick() {
+		DTickImpl dTick = new DTickImpl();
+		return dTick;
 	}
 
 	/**

@@ -2,7 +2,7 @@
  * <copyright>
  * </copyright>
  *
- * $Id: TimingDItemProviderAdapterFactory.java,v 1.2 2008/09/09 00:39:26 mgolubev Exp $
+ * $Id: TimingDItemProviderAdapterFactory.java,v 1.3 2008/09/09 01:27:25 mgolubev Exp $
  */
 package org.eclipse.uml2.diagram.timing.model.timingd.provider;
 
@@ -375,6 +375,29 @@ public class TimingDItemProviderAdapterFactory extends TimingDAdapterFactory imp
 	}
 
 	/**
+	 * This keeps track of the one adapter used for all {@link org.eclipse.uml2.diagram.timing.model.timingd.DTick} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected DTickItemProvider dTickItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link org.eclipse.uml2.diagram.timing.model.timingd.DTick}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createDTickAdapter() {
+		if (dTickItemProvider == null) {
+			dTickItemProvider = new DTickItemProvider(this);
+		}
+
+		return dTickItemProvider;
+	}
+
+	/**
 	 * This returns the root adapter factory that contains this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -486,6 +509,7 @@ public class TimingDItemProviderAdapterFactory extends TimingDAdapterFactory imp
 		if (dMessageItemProvider != null) dMessageItemProvider.dispose();
 		if (dIntervalItemProvider != null) dIntervalItemProvider.dispose();
 		if (dPointConstraintItemProvider != null) dPointConstraintItemProvider.dispose();
+		if (dTickItemProvider != null) dTickItemProvider.dispose();
 	}
 
 }

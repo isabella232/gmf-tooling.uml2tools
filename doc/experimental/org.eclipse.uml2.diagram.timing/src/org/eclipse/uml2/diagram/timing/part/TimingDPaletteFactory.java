@@ -40,6 +40,7 @@ public class TimingDPaletteFactory {
 		paletteContainer.add(createSwitch4CreationTool());
 		paletteContainer.add(createSegment5CreationTool());
 		paletteContainer.add(createOccurrence6CreationTool());
+		paletteContainer.add(createTick7CreationTool());
 		return paletteContainer;
 	}
 
@@ -132,6 +133,18 @@ public class TimingDPaletteFactory {
 		types.add(TimingDElementTypes.DSegmentEnd_3006);
 		NodeToolEntry entry = new NodeToolEntry(Messages.Occurrence6CreationTool_title, Messages.Occurrence6CreationTool_desc, types);
 		entry.setSmallIcon(TimingDElementTypes.getImageDescriptor(TimingDElementTypes.DSegmentMiddlePoint_3004));
+		entry.setLargeIcon(entry.getSmallIcon());
+		return entry;
+	}
+
+	/**
+	 * @generated
+	 */
+	private ToolEntry createTick7CreationTool() {
+		List/*<IElementType>*/types = new ArrayList/*<IElementType>*/(1);
+		types.add(TimingDElementTypes.DTick_3007);
+		NodeToolEntry entry = new NodeToolEntry(Messages.Tick7CreationTool_title, Messages.Tick7CreationTool_desc, types);
+		entry.setSmallIcon(TimingDElementTypes.getImageDescriptor(TimingDElementTypes.DTick_3007));
 		entry.setLargeIcon(entry.getSmallIcon());
 		return entry;
 	}

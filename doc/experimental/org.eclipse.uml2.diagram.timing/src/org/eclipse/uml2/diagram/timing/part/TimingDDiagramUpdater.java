@@ -23,6 +23,7 @@ import org.eclipse.uml2.diagram.timing.edit.parts.DSegmentEndEditPart;
 import org.eclipse.uml2.diagram.timing.edit.parts.DSegmentMiddlePointEditPart;
 import org.eclipse.uml2.diagram.timing.edit.parts.DSegmentStartEditPart;
 import org.eclipse.uml2.diagram.timing.edit.parts.DStateSwitchEditPart;
+import org.eclipse.uml2.diagram.timing.edit.parts.DTickEditPart;
 import org.eclipse.uml2.diagram.timing.edit.parts.DValueLineEditPart;
 import org.eclipse.uml2.diagram.timing.model.timingd.DBlock;
 import org.eclipse.uml2.diagram.timing.model.timingd.DFrame;
@@ -34,6 +35,7 @@ import org.eclipse.uml2.diagram.timing.model.timingd.DSegmentEnd;
 import org.eclipse.uml2.diagram.timing.model.timingd.DSegmentMiddlePoint;
 import org.eclipse.uml2.diagram.timing.model.timingd.DSegmentStart;
 import org.eclipse.uml2.diagram.timing.model.timingd.DStateSwitch;
+import org.eclipse.uml2.diagram.timing.model.timingd.DTick;
 import org.eclipse.uml2.diagram.timing.model.timingd.DValueLine;
 import org.eclipse.uml2.diagram.timing.model.timingd.TimingDPackage;
 import org.eclipse.uml2.diagram.timing.providers.TimingDElementTypes;
@@ -96,6 +98,14 @@ public class TimingDDiagramUpdater {
 			DValueLine childElement = (DValueLine) it.next();
 			int visualID = TimingDVisualIDRegistry.getNodeVisualID(view, childElement);
 			if (visualID == DValueLineEditPart.VISUAL_ID) {
+				result.add(new TimingDNodeDescriptor(childElement, visualID));
+				continue;
+			}
+		}
+		for (Iterator it = modelElement.getTicks().iterator(); it.hasNext();) {
+			DTick childElement = (DTick) it.next();
+			int visualID = TimingDVisualIDRegistry.getNodeVisualID(view, childElement);
+			if (visualID == DTickEditPart.VISUAL_ID) {
 				result.add(new TimingDNodeDescriptor(childElement, visualID));
 				continue;
 			}
@@ -198,6 +208,8 @@ public class TimingDDiagramUpdater {
 			return getDSegmentStart_3005ContainedLinks(view);
 		case DSegmentEndEditPart.VISUAL_ID:
 			return getDSegmentEnd_3006ContainedLinks(view);
+		case DTickEditPart.VISUAL_ID:
+			return getDTick_3007ContainedLinks(view);
 		case DStateSwitchEditPart.VISUAL_ID:
 			return getDStateSwitch_4001ContainedLinks(view);
 		case DMessageEditPart.VISUAL_ID:
@@ -225,6 +237,8 @@ public class TimingDDiagramUpdater {
 			return getDSegmentStart_3005IncomingLinks(view);
 		case DSegmentEndEditPart.VISUAL_ID:
 			return getDSegmentEnd_3006IncomingLinks(view);
+		case DTickEditPart.VISUAL_ID:
+			return getDTick_3007IncomingLinks(view);
 		case DStateSwitchEditPart.VISUAL_ID:
 			return getDStateSwitch_4001IncomingLinks(view);
 		case DMessageEditPart.VISUAL_ID:
@@ -252,6 +266,8 @@ public class TimingDDiagramUpdater {
 			return getDSegmentStart_3005OutgoingLinks(view);
 		case DSegmentEndEditPart.VISUAL_ID:
 			return getDSegmentEnd_3006OutgoingLinks(view);
+		case DTickEditPart.VISUAL_ID:
+			return getDTick_3007OutgoingLinks(view);
 		case DStateSwitchEditPart.VISUAL_ID:
 			return getDStateSwitch_4001OutgoingLinks(view);
 		case DMessageEditPart.VISUAL_ID:
@@ -319,6 +335,13 @@ public class TimingDDiagramUpdater {
 	 * @generated
 	 */
 	public static List getDSegmentEnd_3006ContainedLinks(View view) {
+		return Collections.EMPTY_LIST;
+	}
+
+	/**
+	 * @generated
+	 */
+	public static List getDTick_3007ContainedLinks(View view) {
 		return Collections.EMPTY_LIST;
 	}
 
@@ -401,6 +424,13 @@ public class TimingDDiagramUpdater {
 	/**
 	 * @generated
 	 */
+	public static List getDTick_3007IncomingLinks(View view) {
+		return Collections.EMPTY_LIST;
+	}
+
+	/**
+	 * @generated
+	 */
 	public static List getDStateSwitch_4001IncomingLinks(View view) {
 		return Collections.EMPTY_LIST;
 	}
@@ -469,6 +499,13 @@ public class TimingDDiagramUpdater {
 		result.addAll(getOutgoingTypeModelFacetLinks_DStateSwitch_4001(modelElement));
 		result.addAll(getOutgoingTypeModelFacetLinks_DMessage_4002(modelElement));
 		return result;
+	}
+
+	/**
+	 * @generated
+	 */
+	public static List getDTick_3007OutgoingLinks(View view) {
+		return Collections.EMPTY_LIST;
 	}
 
 	/**

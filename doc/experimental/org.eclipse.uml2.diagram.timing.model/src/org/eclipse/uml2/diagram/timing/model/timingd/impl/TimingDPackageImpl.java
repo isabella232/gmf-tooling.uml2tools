@@ -2,7 +2,7 @@
  * <copyright>
  * </copyright>
  *
- * $Id: TimingDPackageImpl.java,v 1.6 2008/09/09 00:54:50 mgolubev Exp $
+ * $Id: TimingDPackageImpl.java,v 1.7 2008/09/09 01:27:29 mgolubev Exp $
  */
 package org.eclipse.uml2.diagram.timing.model.timingd.impl;
 
@@ -23,6 +23,7 @@ import org.eclipse.uml2.diagram.timing.model.timingd.DSegmentEnd;
 import org.eclipse.uml2.diagram.timing.model.timingd.DSegmentMiddlePoint;
 import org.eclipse.uml2.diagram.timing.model.timingd.DSegmentStart;
 import org.eclipse.uml2.diagram.timing.model.timingd.DStateSwitch;
+import org.eclipse.uml2.diagram.timing.model.timingd.DTick;
 import org.eclipse.uml2.diagram.timing.model.timingd.DValueLine;
 import org.eclipse.uml2.diagram.timing.model.timingd.TimingDFactory;
 import org.eclipse.uml2.diagram.timing.model.timingd.TimingDPackage;
@@ -130,6 +131,13 @@ public class TimingDPackageImpl extends EPackageImpl implements TimingDPackage {
 	 * @generated
 	 */
 	private EClass dPointConstraintEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass dTickEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -406,6 +414,15 @@ public class TimingDPackageImpl extends EPackageImpl implements TimingDPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EReference getDBlock_Ticks() {
+		return (EReference)dBlockEClass.getEStructuralFeatures().get(6);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getDValueLine() {
 		return dValueLineEClass;
 	}
@@ -525,6 +542,15 @@ public class TimingDPackageImpl extends EPackageImpl implements TimingDPackage {
 	 */
 	public EAttribute getDSegmentElement_DebugId() {
 		return (EAttribute)dSegmentElementEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getDSegmentElement_Tick() {
+		return (EReference)dSegmentElementEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -784,6 +810,42 @@ public class TimingDPackageImpl extends EPackageImpl implements TimingDPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EClass getDTick() {
+		return dTickEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getDTick_Occurrence() {
+		return (EReference)dTickEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getDTick_Block() {
+		return (EReference)dTickEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getDTick_Subject() {
+		return (EReference)dTickEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getUMLConstraint() {
 		return umlConstraintEClass;
 	}
@@ -889,6 +951,7 @@ public class TimingDPackageImpl extends EPackageImpl implements TimingDPackage {
 		createEReference(dBlockEClass, DBLOCK__STATES);
 		createEReference(dBlockEClass, DBLOCK__SWITCHES);
 		createEReference(dBlockEClass, DBLOCK__CONSTRAINT);
+		createEReference(dBlockEClass, DBLOCK__TICKS);
 
 		dValueLineEClass = createEClass(DVALUE_LINE);
 		createEReference(dValueLineEClass, DVALUE_LINE__BLOCK);
@@ -906,6 +969,7 @@ public class TimingDPackageImpl extends EPackageImpl implements TimingDPackage {
 		dSegmentElementEClass = createEClass(DSEGMENT_ELEMENT);
 		createEReference(dSegmentElementEClass, DSEGMENT_ELEMENT__OCCURRENCE);
 		createEAttribute(dSegmentElementEClass, DSEGMENT_ELEMENT__DEBUG_ID);
+		createEReference(dSegmentElementEClass, DSEGMENT_ELEMENT__TICK);
 
 		dSegmentMiddlePointEClass = createEClass(DSEGMENT_MIDDLE_POINT);
 		createEReference(dSegmentMiddlePointEClass, DSEGMENT_MIDDLE_POINT__SEGMENT);
@@ -941,6 +1005,11 @@ public class TimingDPackageImpl extends EPackageImpl implements TimingDPackage {
 		dPointConstraintEClass = createEClass(DPOINT_CONSTRAINT);
 		createEReference(dPointConstraintEClass, DPOINT_CONSTRAINT__CONSTRAINT);
 		createEReference(dPointConstraintEClass, DPOINT_CONSTRAINT__CONSTRAINTED_SEGMENT_ELEMENT);
+
+		dTickEClass = createEClass(DTICK);
+		createEReference(dTickEClass, DTICK__OCCURRENCE);
+		createEReference(dTickEClass, DTICK__BLOCK);
+		createEReference(dTickEClass, DTICK__SUBJECT);
 
 		umlConstraintEClass = createEClass(UML_CONSTRAINT);
 
@@ -1009,6 +1078,7 @@ public class TimingDPackageImpl extends EPackageImpl implements TimingDPackage {
 		initEReference(getDBlock_States(), this.getDValueLine(), this.getDValueLine_Block(), "states", null, 0, -1, DBlock.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getDBlock_Switches(), this.getDStateSwitch(), null, "switches", null, 0, -1, DBlock.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getDBlock_Constraint(), this.getDPointConstraint(), null, "constraint", null, 0, -1, DBlock.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getDBlock_Ticks(), this.getDTick(), this.getDTick_Block(), "ticks", null, 0, -1, DBlock.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(dValueLineEClass, DValueLine.class, "DValueLine", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getDValueLine_Block(), this.getDBlock(), this.getDBlock_States(), "block", null, 0, 1, DValueLine.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1028,6 +1098,7 @@ public class TimingDPackageImpl extends EPackageImpl implements TimingDPackage {
 		initEClass(dSegmentElementEClass, DSegmentElement.class, "DSegmentElement", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getDSegmentElement_Occurrence(), this.getUMLOccurrenceSpecification(), null, "occurrence", null, 0, 1, DSegmentElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getDSegmentElement_DebugId(), ecorePackage.getEString(), "debugId", null, 0, 1, DSegmentElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getDSegmentElement_Tick(), this.getDTick(), this.getDTick_Subject(), "tick", null, 0, 1, DSegmentElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(dSegmentMiddlePointEClass, DSegmentMiddlePoint.class, "DSegmentMiddlePoint", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getDSegmentMiddlePoint_Segment(), this.getDSegment(), this.getDSegment_MiddlePoints(), "segment", null, 0, 1, DSegmentMiddlePoint.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1063,6 +1134,11 @@ public class TimingDPackageImpl extends EPackageImpl implements TimingDPackage {
 		initEClass(dPointConstraintEClass, DPointConstraint.class, "DPointConstraint", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getDPointConstraint_Constraint(), this.getUMLConstraint(), null, "constraint", null, 0, 1, DPointConstraint.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getDPointConstraint_ConstraintedSegmentElement(), this.getDSegmentElement(), null, "constraintedSegmentElement", null, 0, 1, DPointConstraint.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(dTickEClass, DTick.class, "DTick", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getDTick_Occurrence(), this.getUMLOccurrenceSpecification(), null, "occurrence", null, 0, 1, DTick.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getDTick_Block(), this.getDBlock(), this.getDBlock_Ticks(), "block", null, 0, 1, DTick.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getDTick_Subject(), this.getDSegmentElement(), this.getDSegmentElement_Tick(), "subject", null, 0, 1, DTick.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(umlConstraintEClass, Constraint.class, "UMLConstraint", IS_ABSTRACT, IS_INTERFACE, !IS_GENERATED_INSTANCE_CLASS);
 

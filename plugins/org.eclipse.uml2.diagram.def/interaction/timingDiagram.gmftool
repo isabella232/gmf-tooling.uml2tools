@@ -34,6 +34,10 @@
           xsi:type="gmftool:CreationTool"
           title="Occurrence"
           description="Occurrence"/>
+      <tools
+          xsi:type="gmftool:CreationTool"
+          title="Tick"
+          description="Tick"/>
     </tools>
     <tools
         xsi:type="gmftool:ToolGroup"

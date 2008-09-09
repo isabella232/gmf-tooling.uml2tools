@@ -59,6 +59,9 @@ public class TimingDDomainModelElementTester extends PropertyTester {
 		if (eClass == TimingDPackage.eINSTANCE.getDPointConstraint()) {
 			return true;
 		}
+		if (eClass == TimingDPackage.eINSTANCE.getDTick()) {
+			return true;
+		}
 		if (eClass == TimingDPackage.eINSTANCE.getUMLConstraint()) {
 			return true;
 		}

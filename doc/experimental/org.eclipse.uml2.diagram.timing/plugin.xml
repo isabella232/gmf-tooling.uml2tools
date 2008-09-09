@@ -370,6 +370,16 @@
       </metamodel>
       <metamodel nsURI="http://www.eclipse.org/mdt/uml2tools/timing-diagram/1.0">
          <metamodelType
+               id="org.eclipse.uml2.diagram.timing.DTick_3007"
+               name="%metatype.name.DTick_3007"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
+               eclass="DTick"
+               edithelper="org.eclipse.uml2.diagram.timing.edit.helpers.DTickEditHelper">
+            <param name="semanticHint" value="3007"/>
+         </metamodelType>
+      </metamodel>
+      <metamodel nsURI="http://www.eclipse.org/mdt/uml2tools/timing-diagram/1.0">
+         <metamodelType
                id="org.eclipse.uml2.diagram.timing.DStateSwitch_4001"
                name="%metatype.name.DStateSwitch_4001"
                kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
@@ -408,6 +418,7 @@
          <elementType ref="org.eclipse.uml2.diagram.timing.DSegmentMiddlePoint_3004"/>
          <elementType ref="org.eclipse.uml2.diagram.timing.DSegmentStart_3005"/>
          <elementType ref="org.eclipse.uml2.diagram.timing.DSegmentEnd_3006"/>
+         <elementType ref="org.eclipse.uml2.diagram.timing.DTick_3007"/>
          <elementType ref="org.eclipse.uml2.diagram.timing.DStateSwitch_4001"/>
          <elementType ref="org.eclipse.uml2.diagram.timing.DMessage_4002"/>
          <advice ref="org.eclipse.gmf.runtime.diagram.core.advice.notationDepdendents"/>

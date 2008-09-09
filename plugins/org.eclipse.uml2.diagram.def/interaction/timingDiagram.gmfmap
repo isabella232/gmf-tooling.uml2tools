@@ -146,6 +146,19 @@
               </children>
             </ownedChild>
           </children>
+          <children>
+            <containmentFeature
+                href="../../../plugin/org.eclipse.uml2.diagram.timing.model/model/timing-diagram.ecore#//DBlock/ticks"/>
+            <ownedChild>
+              <domainMetaElement
+                  href="../../../plugin/org.eclipse.uml2.diagram.timing.model/model/timing-diagram.ecore#//DTick"/>
+              <tool
+                  xsi:type="gmftool:CreationTool"
+                  href="timingDiagram.gmftool#//@palette/@tools.0/@tools.6"/>
+              <diagramNode
+                  href="timingDiagram.gmfgraph#TickNode"/>
+            </ownedChild>
+          </children>
         </ownedChild>
       </children>
     </ownedChild>

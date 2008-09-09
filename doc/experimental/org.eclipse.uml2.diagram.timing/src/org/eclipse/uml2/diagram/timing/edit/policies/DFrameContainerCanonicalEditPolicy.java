@@ -35,6 +35,7 @@ import org.eclipse.uml2.diagram.timing.edit.parts.DSegmentEndEditPart;
 import org.eclipse.uml2.diagram.timing.edit.parts.DSegmentMiddlePointEditPart;
 import org.eclipse.uml2.diagram.timing.edit.parts.DSegmentStartEditPart;
 import org.eclipse.uml2.diagram.timing.edit.parts.DStateSwitchEditPart;
+import org.eclipse.uml2.diagram.timing.edit.parts.DTickEditPart;
 import org.eclipse.uml2.diagram.timing.edit.parts.DValueLineEditPart;
 import org.eclipse.uml2.diagram.timing.model.timingd.TimingDPackage;
 import org.eclipse.uml2.diagram.timing.part.TimingDDiagramUpdater;
@@ -83,6 +84,7 @@ public class DFrameContainerCanonicalEditPolicy extends CanonicalConnectionEditP
 		case DSegmentMiddlePointEditPart.VISUAL_ID:
 		case DSegmentStartEditPart.VISUAL_ID:
 		case DSegmentEndEditPart.VISUAL_ID:
+		case DTickEditPart.VISUAL_ID:
 			return true;
 		case DFrameEditPart.VISUAL_ID:
 			if (!semanticChildren.contains(view.getElement())) {
@@ -267,6 +269,13 @@ public class DFrameContainerCanonicalEditPolicy extends CanonicalConnectionEditP
 		case DSegmentEndEditPart.VISUAL_ID: {
 			if (!domain2NotationMap.containsKey(view.getElement())) {
 				result.addAll(TimingDDiagramUpdater.getDSegmentEnd_3006ContainedLinks(view));
+			}
+			domain2NotationMap.put(view.getElement(), view);
+			break;
+		}
+		case DTickEditPart.VISUAL_ID: {
+			if (!domain2NotationMap.containsKey(view.getElement())) {
+				result.addAll(TimingDDiagramUpdater.getDTick_3007ContainedLinks(view));
 			}
 			domain2NotationMap.put(view.getElement(), view);
 			break;

@@ -2,7 +2,7 @@
  * <copyright>
  * </copyright>
  *
- * $Id: TimingDSwitch.java,v 1.3 2008/09/09 00:54:50 mgolubev Exp $
+ * $Id: TimingDSwitch.java,v 1.4 2008/09/09 01:27:29 mgolubev Exp $
  */
 package org.eclipse.uml2.diagram.timing.model.timingd.util;
 
@@ -184,6 +184,12 @@ public class TimingDSwitch<T> {
 			case TimingDPackage.DPOINT_CONSTRAINT: {
 				DPointConstraint dPointConstraint = (DPointConstraint)theEObject;
 				T result = caseDPointConstraint(dPointConstraint);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case TimingDPackage.DTICK: {
+				DTick dTick = (DTick)theEObject;
+				T result = caseDTick(dTick);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -383,6 +389,21 @@ public class TimingDSwitch<T> {
 	 * @generated
 	 */
 	public T caseDPointConstraint(DPointConstraint object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>DTick</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>DTick</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseDTick(DTick object) {
 		return null;
 	}
 

@@ -2,7 +2,7 @@
  * <copyright>
  * </copyright>
  *
- * $Id: DBlockImpl.java,v 1.2 2008/09/09 00:39:32 mgolubev Exp $
+ * $Id: DBlockImpl.java,v 1.3 2008/09/09 01:27:29 mgolubev Exp $
  */
 package org.eclipse.uml2.diagram.timing.model.timingd.impl;
 
@@ -24,6 +24,7 @@ import org.eclipse.uml2.diagram.timing.model.timingd.DBlock;
 import org.eclipse.uml2.diagram.timing.model.timingd.DFrame;
 import org.eclipse.uml2.diagram.timing.model.timingd.DPointConstraint;
 import org.eclipse.uml2.diagram.timing.model.timingd.DStateSwitch;
+import org.eclipse.uml2.diagram.timing.model.timingd.DTick;
 import org.eclipse.uml2.diagram.timing.model.timingd.DValueLine;
 import org.eclipse.uml2.diagram.timing.model.timingd.TimingDPackage;
 import org.eclipse.uml2.uml.Lifeline;
@@ -41,6 +42,7 @@ import org.eclipse.uml2.uml.Lifeline;
  *   <li>{@link org.eclipse.uml2.diagram.timing.model.timingd.impl.DBlockImpl#getStates <em>States</em>}</li>
  *   <li>{@link org.eclipse.uml2.diagram.timing.model.timingd.impl.DBlockImpl#getSwitches <em>Switches</em>}</li>
  *   <li>{@link org.eclipse.uml2.diagram.timing.model.timingd.impl.DBlockImpl#getConstraint <em>Constraint</em>}</li>
+ *   <li>{@link org.eclipse.uml2.diagram.timing.model.timingd.impl.DBlockImpl#getTicks <em>Ticks</em>}</li>
  * </ul>
  * </p>
  *
@@ -106,6 +108,16 @@ public class DBlockImpl extends EObjectImpl implements DBlock {
 	 * @ordered
 	 */
 	protected EList<DPointConstraint> constraint;
+
+	/**
+	 * The cached value of the '{@link #getTicks() <em>Ticks</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getTicks()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<DTick> ticks;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -267,6 +279,18 @@ public class DBlockImpl extends EObjectImpl implements DBlock {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EList<DTick> getTicks() {
+		if (ticks == null) {
+			ticks = new EObjectContainmentWithInverseEList<DTick>(DTick.class, this, TimingDPackage.DBLOCK__TICKS, TimingDPackage.DTICK__BLOCK);
+		}
+		return ticks;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@SuppressWarnings("unchecked")
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
@@ -277,6 +301,8 @@ public class DBlockImpl extends EObjectImpl implements DBlock {
 				return basicSetFrame((DFrame)otherEnd, msgs);
 			case TimingDPackage.DBLOCK__STATES:
 				return ((InternalEList<InternalEObject>)(InternalEList<?>)getStates()).basicAdd(otherEnd, msgs);
+			case TimingDPackage.DBLOCK__TICKS:
+				return ((InternalEList<InternalEObject>)(InternalEList<?>)getTicks()).basicAdd(otherEnd, msgs);
 		}
 		return super.eInverseAdd(otherEnd, featureID, msgs);
 	}
@@ -297,6 +323,8 @@ public class DBlockImpl extends EObjectImpl implements DBlock {
 				return ((InternalEList<?>)getSwitches()).basicRemove(otherEnd, msgs);
 			case TimingDPackage.DBLOCK__CONSTRAINT:
 				return ((InternalEList<?>)getConstraint()).basicRemove(otherEnd, msgs);
+			case TimingDPackage.DBLOCK__TICKS:
+				return ((InternalEList<?>)getTicks()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -336,6 +364,8 @@ public class DBlockImpl extends EObjectImpl implements DBlock {
 				return getSwitches();
 			case TimingDPackage.DBLOCK__CONSTRAINT:
 				return getConstraint();
+			case TimingDPackage.DBLOCK__TICKS:
+				return getTicks();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -370,6 +400,10 @@ public class DBlockImpl extends EObjectImpl implements DBlock {
 				getConstraint().clear();
 				getConstraint().addAll((Collection<? extends DPointConstraint>)newValue);
 				return;
+			case TimingDPackage.DBLOCK__TICKS:
+				getTicks().clear();
+				getTicks().addAll((Collection<? extends DTick>)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -400,6 +434,9 @@ public class DBlockImpl extends EObjectImpl implements DBlock {
 			case TimingDPackage.DBLOCK__CONSTRAINT:
 				getConstraint().clear();
 				return;
+			case TimingDPackage.DBLOCK__TICKS:
+				getTicks().clear();
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -424,6 +461,8 @@ public class DBlockImpl extends EObjectImpl implements DBlock {
 				return switches != null && !switches.isEmpty();
 			case TimingDPackage.DBLOCK__CONSTRAINT:
 				return constraint != null && !constraint.isEmpty();
+			case TimingDPackage.DBLOCK__TICKS:
+				return ticks != null && !ticks.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

@@ -319,6 +319,16 @@ public class Messages extends NLS {
 	/**
 	 * @generated
 	 */
+	public static String Tick7CreationTool_title;
+
+	/**
+	 * @generated
+	 */
+	public static String Tick7CreationTool_desc;
+
+	/**
+	 * @generated
+	 */
 	public static String Message1CreationTool_title;
 
 	/**

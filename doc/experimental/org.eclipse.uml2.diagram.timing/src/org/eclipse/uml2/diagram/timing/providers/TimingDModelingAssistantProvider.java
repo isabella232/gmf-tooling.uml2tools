@@ -52,6 +52,7 @@ public class TimingDModelingAssistantProvider extends ModelingAssistantProvider 
 		if (editPart instanceof DBlockEditPart) {
 			List<IElementType> types = new ArrayList<IElementType>();
 			types.add(TimingDElementTypes.DValueLine_3002);
+			types.add(TimingDElementTypes.DTick_3007);
 			return types;
 		}
 

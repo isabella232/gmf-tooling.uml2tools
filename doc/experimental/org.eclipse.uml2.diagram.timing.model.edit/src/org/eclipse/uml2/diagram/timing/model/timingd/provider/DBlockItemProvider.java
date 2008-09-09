@@ -2,7 +2,7 @@
  * <copyright>
  * </copyright>
  *
- * $Id: DBlockItemProvider.java,v 1.1 2008/09/06 19:46:49 mgolubev Exp $
+ * $Id: DBlockItemProvider.java,v 1.2 2008/09/09 01:27:25 mgolubev Exp $
  */
 package org.eclipse.uml2.diagram.timing.model.timingd.provider;
 
@@ -132,6 +132,7 @@ public class DBlockItemProvider
 			childrenFeatures.add(TimingDPackage.Literals.DBLOCK__STATES);
 			childrenFeatures.add(TimingDPackage.Literals.DBLOCK__SWITCHES);
 			childrenFeatures.add(TimingDPackage.Literals.DBLOCK__CONSTRAINT);
+			childrenFeatures.add(TimingDPackage.Literals.DBLOCK__TICKS);
 		}
 		return childrenFeatures;
 	}
@@ -192,6 +193,7 @@ public class DBlockItemProvider
 			case TimingDPackage.DBLOCK__STATES:
 			case TimingDPackage.DBLOCK__SWITCHES:
 			case TimingDPackage.DBLOCK__CONSTRAINT:
+			case TimingDPackage.DBLOCK__TICKS:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
 		}
@@ -223,6 +225,11 @@ public class DBlockItemProvider
 			(createChildParameter
 				(TimingDPackage.Literals.DBLOCK__CONSTRAINT,
 				 TimingDFactory.eINSTANCE.createDPointConstraint()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(TimingDPackage.Literals.DBLOCK__TICKS,
+				 TimingDFactory.eINSTANCE.createDTick()));
 	}
 
 	/**

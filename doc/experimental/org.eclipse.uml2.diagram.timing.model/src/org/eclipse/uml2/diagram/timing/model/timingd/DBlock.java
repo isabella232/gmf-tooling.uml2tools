@@ -2,7 +2,7 @@
  * <copyright>
  * </copyright>
  *
- * $Id: DBlock.java,v 1.2 2008/09/09 00:39:33 mgolubev Exp $
+ * $Id: DBlock.java,v 1.3 2008/09/09 01:27:29 mgolubev Exp $
  */
 package org.eclipse.uml2.diagram.timing.model.timingd;
 
@@ -24,6 +24,7 @@ import org.eclipse.uml2.uml.Lifeline;
  *   <li>{@link org.eclipse.uml2.diagram.timing.model.timingd.DBlock#getStates <em>States</em>}</li>
  *   <li>{@link org.eclipse.uml2.diagram.timing.model.timingd.DBlock#getSwitches <em>Switches</em>}</li>
  *   <li>{@link org.eclipse.uml2.diagram.timing.model.timingd.DBlock#getConstraint <em>Constraint</em>}</li>
+ *   <li>{@link org.eclipse.uml2.diagram.timing.model.timingd.DBlock#getTicks <em>Ticks</em>}</li>
  * </ul>
  * </p>
  *
@@ -161,5 +162,23 @@ public interface DBlock extends EObject {
 	 * @generated
 	 */
 	EList<DPointConstraint> getConstraint();
+
+	/**
+	 * Returns the value of the '<em><b>Ticks</b></em>' containment reference list.
+	 * The list contents are of type {@link org.eclipse.uml2.diagram.timing.model.timingd.DTick}.
+	 * It is bidirectional and its opposite is '{@link org.eclipse.uml2.diagram.timing.model.timingd.DTick#getBlock <em>Block</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Ticks</em>' containment reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Ticks</em>' containment reference list.
+	 * @see org.eclipse.uml2.diagram.timing.model.timingd.TimingDPackage#getDBlock_Ticks()
+	 * @see org.eclipse.uml2.diagram.timing.model.timingd.DTick#getBlock
+	 * @model opposite="block" containment="true"
+	 * @generated
+	 */
+	EList<DTick> getTicks();
 
 } // DBlock

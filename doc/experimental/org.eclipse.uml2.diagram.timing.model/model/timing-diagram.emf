@@ -22,6 +22,7 @@ class DBlock {
   val DValueLine[*]#block states;
   val DStateSwitch[*] switches;
   val DPointConstraint[*] constraint;
+  val DTick[*]#block ticks;
 }
 
 class DValueLine {
@@ -43,6 +44,7 @@ class DSegment {
 class DSegmentElement {
   ref UMLOccurrenceSpecification occurrence;
   attr String debugId;
+  ref DTick#subject tick;
 }
 
 class DSegmentMiddlePoint extends DSegmentElement {
@@ -87,6 +89,12 @@ class DInterval {
 class DPointConstraint {
   ref UMLConstraint constraint;
   ref DSegmentElement constraintedSegmentElement;
+}
+
+class DTick {
+	ref UMLOccurrenceSpecification occurrence;
+	ref DBlock#ticks block;
+	ref DSegmentElement#tick subject;
 }
 
 abstract interface UMLConstraint : org.eclipse.uml2.uml.Constraint {}

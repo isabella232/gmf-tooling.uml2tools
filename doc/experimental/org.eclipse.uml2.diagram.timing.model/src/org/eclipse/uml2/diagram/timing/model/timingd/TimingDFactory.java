@@ -2,7 +2,7 @@
  * <copyright>
  * </copyright>
  *
- * $Id: TimingDFactory.java,v 1.2 2008/09/09 00:39:32 mgolubev Exp $
+ * $Id: TimingDFactory.java,v 1.3 2008/09/09 01:27:29 mgolubev Exp $
  */
 package org.eclipse.uml2.diagram.timing.model.timingd;
 
@@ -141,6 +141,15 @@ public interface TimingDFactory extends EFactory {
 	 * @generated
 	 */
 	DPointConstraint createDPointConstraint();
+
+	/**
+	 * Returns a new object of class '<em>DTick</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>DTick</em>'.
+	 * @generated
+	 */
+	DTick createDTick();
 
 	/**
 	 * Returns the package supported by this factory.

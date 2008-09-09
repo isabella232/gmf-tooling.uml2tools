@@ -2,7 +2,7 @@
  * <copyright>
  * </copyright>
  *
- * $Id: TimingDAdapterFactory.java,v 1.3 2008/09/09 00:54:49 mgolubev Exp $
+ * $Id: TimingDAdapterFactory.java,v 1.4 2008/09/09 01:27:29 mgolubev Exp $
  */
 package org.eclipse.uml2.diagram.timing.model.timingd.util;
 
@@ -139,6 +139,10 @@ public class TimingDAdapterFactory extends AdapterFactoryImpl {
 			@Override
 			public Adapter caseDPointConstraint(DPointConstraint object) {
 				return createDPointConstraintAdapter();
+			}
+			@Override
+			public Adapter caseDTick(DTick object) {
+				return createDTickAdapter();
 			}
 			@Override
 			public Adapter caseUMLConstraint(Constraint object) {
@@ -367,6 +371,20 @@ public class TimingDAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createDPointConstraintAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.eclipse.uml2.diagram.timing.model.timingd.DTick <em>DTick</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.eclipse.uml2.diagram.timing.model.timingd.DTick
+	 * @generated
+	 */
+	public Adapter createDTickAdapter() {
 		return null;
 	}
 

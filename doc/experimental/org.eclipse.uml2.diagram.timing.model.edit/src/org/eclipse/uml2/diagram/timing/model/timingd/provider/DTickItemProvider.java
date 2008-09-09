@@ -2,7 +2,7 @@
  * <copyright>
  * </copyright>
  *
- * $Id: DSegmentElementItemProvider.java,v 1.3 2008/09/09 01:27:25 mgolubev Exp $
+ * $Id: DTickItemProvider.java,v 1.1 2008/09/09 01:27:25 mgolubev Exp $
  */
 package org.eclipse.uml2.diagram.timing.model.timingd.provider;
 
@@ -22,20 +22,17 @@ import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.IItemPropertySource;
 import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
 import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
-import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ItemProviderAdapter;
 
-import org.eclipse.emf.edit.provider.ViewerNotification;
-import org.eclipse.uml2.diagram.timing.model.timingd.DSegmentElement;
 import org.eclipse.uml2.diagram.timing.model.timingd.TimingDPackage;
 
 /**
- * This is the item provider adapter for a {@link org.eclipse.uml2.diagram.timing.model.timingd.DSegmentElement} object.
+ * This is the item provider adapter for a {@link org.eclipse.uml2.diagram.timing.model.timingd.DTick} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
  * @generated
  */
-public class DSegmentElementItemProvider
+public class DTickItemProvider
 	extends ItemProviderAdapter
 	implements
 		IEditingDomainItemProvider,
@@ -49,7 +46,7 @@ public class DSegmentElementItemProvider
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public DSegmentElementItemProvider(AdapterFactory adapterFactory) {
+	public DTickItemProvider(AdapterFactory adapterFactory) {
 		super(adapterFactory);
 	}
 
@@ -65,8 +62,7 @@ public class DSegmentElementItemProvider
 			super.getPropertyDescriptors(object);
 
 			addOccurrencePropertyDescriptor(object);
-			addDebugIdPropertyDescriptor(object);
-			addTickPropertyDescriptor(object);
+			addSubjectPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -82,9 +78,9 @@ public class DSegmentElementItemProvider
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_DSegmentElement_occurrence_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_DSegmentElement_occurrence_feature", "_UI_DSegmentElement_type"),
-				 TimingDPackage.Literals.DSEGMENT_ELEMENT__OCCURRENCE,
+				 getString("_UI_DTick_occurrence_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_DTick_occurrence_feature", "_UI_DTick_type"),
+				 TimingDPackage.Literals.DTICK__OCCURRENCE,
 				 true,
 				 false,
 				 true,
@@ -94,41 +90,19 @@ public class DSegmentElementItemProvider
 	}
 
 	/**
-	 * This adds a property descriptor for the Debug Id feature.
+	 * This adds a property descriptor for the Subject feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addDebugIdPropertyDescriptor(Object object) {
+	protected void addSubjectPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_DSegmentElement_debugId_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_DSegmentElement_debugId_feature", "_UI_DSegmentElement_type"),
-				 TimingDPackage.Literals.DSEGMENT_ELEMENT__DEBUG_ID,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Tick feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addTickPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_DSegmentElement_tick_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_DSegmentElement_tick_feature", "_UI_DSegmentElement_type"),
-				 TimingDPackage.Literals.DSEGMENT_ELEMENT__TICK,
+				 getString("_UI_DTick_subject_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_DTick_subject_feature", "_UI_DTick_type"),
+				 TimingDPackage.Literals.DTICK__SUBJECT,
 				 true,
 				 false,
 				 true,
@@ -138,14 +112,14 @@ public class DSegmentElementItemProvider
 	}
 
 	/**
-	 * This returns DSegmentElement.gif.
+	 * This returns DTick.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
 	public Object getImage(Object object) {
-		return overlayImage(object, getResourceLocator().getImage("full/obj16/DSegmentElement"));
+		return overlayImage(object, getResourceLocator().getImage("full/obj16/DTick"));
 	}
 
 	/**
@@ -156,10 +130,7 @@ public class DSegmentElementItemProvider
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((DSegmentElement)object).getDebugId();
-		return label == null || label.length() == 0 ?
-			getString("_UI_DSegmentElement_type") :
-			getString("_UI_DSegmentElement_type") + " " + label;
+		return getString("_UI_DTick_type");
 	}
 
 	/**
@@ -172,12 +143,6 @@ public class DSegmentElementItemProvider
 	@Override
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
-
-		switch (notification.getFeatureID(DSegmentElement.class)) {
-			case TimingDPackage.DSEGMENT_ELEMENT__DEBUG_ID:
-				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
-				return;
-		}
 		super.notifyChanged(notification);
 	}
 

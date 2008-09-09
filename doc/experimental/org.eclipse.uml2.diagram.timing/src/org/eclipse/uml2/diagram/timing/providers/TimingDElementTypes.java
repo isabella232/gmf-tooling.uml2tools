@@ -25,6 +25,7 @@ import org.eclipse.uml2.diagram.timing.edit.parts.DSegmentEndEditPart;
 import org.eclipse.uml2.diagram.timing.edit.parts.DSegmentMiddlePointEditPart;
 import org.eclipse.uml2.diagram.timing.edit.parts.DSegmentStartEditPart;
 import org.eclipse.uml2.diagram.timing.edit.parts.DStateSwitchEditPart;
+import org.eclipse.uml2.diagram.timing.edit.parts.DTickEditPart;
 import org.eclipse.uml2.diagram.timing.edit.parts.DValueLineEditPart;
 import org.eclipse.uml2.diagram.timing.model.timingd.TimingDPackage;
 import org.eclipse.uml2.diagram.timing.part.TimingDDiagramEditorPlugin;
@@ -95,6 +96,11 @@ public class TimingDElementTypes extends ElementInitializers {
 	 * @generated
 	 */
 	public static final IHintedType DSegmentEnd_3006 = (IHintedType) getElementType("org.eclipse.uml2.diagram.timing.DSegmentEnd_3006"); //$NON-NLS-1$
+
+	/**
+	 * @generated
+	 */
+	public static final IHintedType DTick_3007 = (IHintedType) getElementType("org.eclipse.uml2.diagram.timing.DTick_3007"); //$NON-NLS-1$
 
 	/**
 	 * @generated
@@ -228,6 +234,8 @@ public class TimingDElementTypes extends ElementInitializers {
 
 			elements.put(DSegmentEnd_3006, TimingDPackage.eINSTANCE.getDSegmentEnd());
 
+			elements.put(DTick_3007, TimingDPackage.eINSTANCE.getDTick());
+
 			elements.put(DStateSwitch_4001, TimingDPackage.eINSTANCE.getDStateSwitch());
 
 			elements.put(DMessage_4002, TimingDPackage.eINSTANCE.getDMessage());
@@ -256,6 +264,7 @@ public class TimingDElementTypes extends ElementInitializers {
 			KNOWN_ELEMENT_TYPES.add(DSegmentMiddlePoint_3004);
 			KNOWN_ELEMENT_TYPES.add(DSegmentStart_3005);
 			KNOWN_ELEMENT_TYPES.add(DSegmentEnd_3006);
+			KNOWN_ELEMENT_TYPES.add(DTick_3007);
 			KNOWN_ELEMENT_TYPES.add(DStateSwitch_4001);
 			KNOWN_ELEMENT_TYPES.add(DMessage_4002);
 		}
@@ -283,6 +292,8 @@ public class TimingDElementTypes extends ElementInitializers {
 			return DSegmentStart_3005;
 		case DSegmentEndEditPart.VISUAL_ID:
 			return DSegmentEnd_3006;
+		case DTickEditPart.VISUAL_ID:
+			return DTick_3007;
 		case DStateSwitchEditPart.VISUAL_ID:
 			return DStateSwitch_4001;
 		case DMessageEditPart.VISUAL_ID:

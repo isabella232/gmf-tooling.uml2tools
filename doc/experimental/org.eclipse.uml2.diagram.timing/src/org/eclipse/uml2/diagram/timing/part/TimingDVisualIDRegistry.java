@@ -18,6 +18,7 @@ import org.eclipse.uml2.diagram.timing.edit.parts.DSegmentEndEditPart;
 import org.eclipse.uml2.diagram.timing.edit.parts.DSegmentMiddlePointEditPart;
 import org.eclipse.uml2.diagram.timing.edit.parts.DSegmentStartEditPart;
 import org.eclipse.uml2.diagram.timing.edit.parts.DStateSwitchEditPart;
+import org.eclipse.uml2.diagram.timing.edit.parts.DTickEditPart;
 import org.eclipse.uml2.diagram.timing.edit.parts.DValueLineDisplayNameEditPart;
 import org.eclipse.uml2.diagram.timing.edit.parts.DValueLineEditPart;
 import org.eclipse.uml2.diagram.timing.model.timingd.DFrameContainer;
@@ -131,6 +132,9 @@ public class TimingDVisualIDRegistry {
 			if (TimingDPackage.eINSTANCE.getDValueLine().isSuperTypeOf(domainElement.eClass())) {
 				return DValueLineEditPart.VISUAL_ID;
 			}
+			if (TimingDPackage.eINSTANCE.getDTick().isSuperTypeOf(domainElement.eClass())) {
+				return DTickEditPart.VISUAL_ID;
+			}
 			break;
 		case DValueLineEditPart.VISUAL_ID:
 			if (TimingDPackage.eINSTANCE.getDSegment().isSuperTypeOf(domainElement.eClass())) {
@@ -189,6 +193,9 @@ public class TimingDVisualIDRegistry {
 				return true;
 			}
 			if (DValueLineEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			if (DTickEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
 			break;
@@ -287,6 +294,9 @@ public class TimingDVisualIDRegistry {
 			if (TimingDPackage.eINSTANCE.getDValueLine().isSuperTypeOf(domainElement.eClass())) {
 				return DValueLineEditPart.VISUAL_ID;
 			}
+			if (TimingDPackage.eINSTANCE.getDTick().isSuperTypeOf(domainElement.eClass())) {
+				return DTickEditPart.VISUAL_ID;
+			}
 			break;
 		case DValueLineEditPart.VISUAL_ID:
 			if (TimingDPackage.eINSTANCE.getDSegment().isSuperTypeOf(domainElement.eClass())) {
@@ -350,6 +360,7 @@ public class TimingDVisualIDRegistry {
 		case DSegmentMiddlePointEditPart.VISUAL_ID:
 		case DSegmentStartEditPart.VISUAL_ID:
 		case DSegmentEndEditPart.VISUAL_ID:
+		case DTickEditPart.VISUAL_ID:
 			return true;
 		default:
 			break;

@@ -2,7 +2,7 @@
  * <copyright>
  * </copyright>
  *
- * $Id: DSegmentElement.java,v 1.3 2008/09/09 00:39:32 mgolubev Exp $
+ * $Id: DSegmentElement.java,v 1.4 2008/09/09 01:27:29 mgolubev Exp $
  */
 package org.eclipse.uml2.diagram.timing.model.timingd;
 
@@ -19,6 +19,7 @@ import org.eclipse.uml2.uml.OccurrenceSpecification;
  * <ul>
  *   <li>{@link org.eclipse.uml2.diagram.timing.model.timingd.DSegmentElement#getOccurrence <em>Occurrence</em>}</li>
  *   <li>{@link org.eclipse.uml2.diagram.timing.model.timingd.DSegmentElement#getDebugId <em>Debug Id</em>}</li>
+ *   <li>{@link org.eclipse.uml2.diagram.timing.model.timingd.DSegmentElement#getTick <em>Tick</em>}</li>
  * </ul>
  * </p>
  *
@@ -78,5 +79,33 @@ public interface DSegmentElement extends EObject {
 	 * @generated
 	 */
 	void setDebugId(String value);
+
+	/**
+	 * Returns the value of the '<em><b>Tick</b></em>' reference.
+	 * It is bidirectional and its opposite is '{@link org.eclipse.uml2.diagram.timing.model.timingd.DTick#getSubject <em>Subject</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Tick</em>' reference isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Tick</em>' reference.
+	 * @see #setTick(DTick)
+	 * @see org.eclipse.uml2.diagram.timing.model.timingd.TimingDPackage#getDSegmentElement_Tick()
+	 * @see org.eclipse.uml2.diagram.timing.model.timingd.DTick#getSubject
+	 * @model opposite="subject"
+	 * @generated
+	 */
+	DTick getTick();
+
+	/**
+	 * Sets the value of the '{@link org.eclipse.uml2.diagram.timing.model.timingd.DSegmentElement#getTick <em>Tick</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Tick</em>' reference.
+	 * @see #getTick()
+	 * @generated
+	 */
+	void setTick(DTick value);
 
 } // DSegmentElement

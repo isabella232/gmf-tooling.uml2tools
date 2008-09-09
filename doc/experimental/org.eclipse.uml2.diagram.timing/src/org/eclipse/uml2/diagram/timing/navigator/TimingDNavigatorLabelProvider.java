@@ -27,6 +27,7 @@ import org.eclipse.uml2.diagram.timing.edit.parts.DSegmentEndEditPart;
 import org.eclipse.uml2.diagram.timing.edit.parts.DSegmentMiddlePointEditPart;
 import org.eclipse.uml2.diagram.timing.edit.parts.DSegmentStartEditPart;
 import org.eclipse.uml2.diagram.timing.edit.parts.DStateSwitchEditPart;
+import org.eclipse.uml2.diagram.timing.edit.parts.DTickEditPart;
 import org.eclipse.uml2.diagram.timing.edit.parts.DValueLineDisplayNameEditPart;
 import org.eclipse.uml2.diagram.timing.edit.parts.DValueLineEditPart;
 import org.eclipse.uml2.diagram.timing.model.timingd.DFrame;
@@ -106,6 +107,8 @@ public class TimingDNavigatorLabelProvider extends LabelProvider implements ICom
 			return getImage("Navigator?Node?http://www.eclipse.org/mdt/uml2tools/timing-diagram/1.0?DSegmentStart", TimingDElementTypes.DSegmentStart_3005); //$NON-NLS-1$
 		case DSegmentEndEditPart.VISUAL_ID:
 			return getImage("Navigator?Node?http://www.eclipse.org/mdt/uml2tools/timing-diagram/1.0?DSegmentEnd", TimingDElementTypes.DSegmentEnd_3006); //$NON-NLS-1$
+		case DTickEditPart.VISUAL_ID:
+			return getImage("Navigator?Node?http://www.eclipse.org/mdt/uml2tools/timing-diagram/1.0?DTick", TimingDElementTypes.DTick_3007); //$NON-NLS-1$
 		case DStateSwitchEditPart.VISUAL_ID:
 			return getImage("Navigator?Link?http://www.eclipse.org/mdt/uml2tools/timing-diagram/1.0?DStateSwitch", TimingDElementTypes.DStateSwitch_4001); //$NON-NLS-1$
 		case DMessageEditPart.VISUAL_ID:
@@ -176,6 +179,8 @@ public class TimingDNavigatorLabelProvider extends LabelProvider implements ICom
 			return getDSegmentStart_3005Text(view);
 		case DSegmentEndEditPart.VISUAL_ID:
 			return getDSegmentEnd_3006Text(view);
+		case DTickEditPart.VISUAL_ID:
+			return getDTick_3007Text(view);
 		case DStateSwitchEditPart.VISUAL_ID:
 			return getDStateSwitch_4001Text(view);
 		case DMessageEditPart.VISUAL_ID:
@@ -277,6 +282,13 @@ public class TimingDNavigatorLabelProvider extends LabelProvider implements ICom
 			TimingDDiagramEditorPlugin.getInstance().logError("No domain element for view with visualID = " + 3006); //$NON-NLS-1$
 			return ""; //$NON-NLS-1$
 		}
+	}
+
+	/**
+	 * @generated
+	 */
+	private String getDTick_3007Text(View view) {
+		return ""; //$NON-NLS-1$
 	}
 
 	/**

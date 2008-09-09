@@ -32,6 +32,8 @@
         eType="#//DStateSwitch" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="constraint" upperBound="-1"
         eType="#//DPointConstraint" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="ticks" upperBound="-1"
+        eType="#//DTick" containment="true" eOpposite="#//DTick/block"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="DValueLine">
     <eStructuralFeatures xsi:type="ecore:EReference" name="block" eType="#//DBlock"
@@ -57,6 +59,8 @@
   <eClassifiers xsi:type="ecore:EClass" name="DSegmentElement">
     <eStructuralFeatures xsi:type="ecore:EReference" name="occurrence" eType="#//UMLOccurrenceSpecification"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="debugId" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="tick" eType="#//DTick"
+        eOpposite="#//DTick/subject"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="DSegmentMiddlePoint" eSuperTypes="#//DSegmentElement">
     <eStructuralFeatures xsi:type="ecore:EReference" name="segment" eType="#//DSegment"
@@ -101,6 +105,13 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="constraint" eType="#//UMLConstraint"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="constraintedSegmentElement"
         eType="#//DSegmentElement"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="DTick">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="occurrence" eType="#//UMLOccurrenceSpecification"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="block" eType="#//DBlock"
+        eOpposite="#//DBlock/ticks"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="subject" eType="#//DSegmentElement"
+        eOpposite="#//DSegmentElement/tick"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="UMLConstraint" instanceClassName="org.eclipse.uml2.uml.Constraint"
       abstract="true" interface="true"/>

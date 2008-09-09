@@ -2,7 +2,7 @@
  * <copyright>
  * </copyright>
  *
- * $Id: TimingDPackage.java,v 1.6 2008/09/09 00:54:50 mgolubev Exp $
+ * $Id: TimingDPackage.java,v 1.7 2008/09/09 01:27:29 mgolubev Exp $
  */
 package org.eclipse.uml2.diagram.timing.model.timingd;
 
@@ -234,13 +234,22 @@ public interface TimingDPackage extends EPackage {
 	int DBLOCK__CONSTRAINT = 5;
 
 	/**
+	 * The feature id for the '<em><b>Ticks</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DBLOCK__TICKS = 6;
+
+	/**
 	 * The number of structural features of the '<em>DBlock</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int DBLOCK_FEATURE_COUNT = 6;
+	int DBLOCK_FEATURE_COUNT = 7;
 
 	/**
 	 * The meta object id for the '{@link org.eclipse.uml2.diagram.timing.model.timingd.impl.DValueLineImpl <em>DValue Line</em>}' class.
@@ -390,13 +399,22 @@ public interface TimingDPackage extends EPackage {
 	int DSEGMENT_ELEMENT__DEBUG_ID = 1;
 
 	/**
+	 * The feature id for the '<em><b>Tick</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DSEGMENT_ELEMENT__TICK = 2;
+
+	/**
 	 * The number of structural features of the '<em>DSegment Element</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int DSEGMENT_ELEMENT_FEATURE_COUNT = 2;
+	int DSEGMENT_ELEMENT_FEATURE_COUNT = 3;
 
 	/**
 	 * The meta object id for the '{@link org.eclipse.uml2.diagram.timing.model.timingd.impl.DSegmentMiddlePointImpl <em>DSegment Middle Point</em>}' class.
@@ -425,6 +443,15 @@ public interface TimingDPackage extends EPackage {
 	 * @ordered
 	 */
 	int DSEGMENT_MIDDLE_POINT__DEBUG_ID = DSEGMENT_ELEMENT__DEBUG_ID;
+
+	/**
+	 * The feature id for the '<em><b>Tick</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DSEGMENT_MIDDLE_POINT__TICK = DSEGMENT_ELEMENT__TICK;
 
 	/**
 	 * The feature id for the '<em><b>Segment</b></em>' container reference.
@@ -471,6 +498,15 @@ public interface TimingDPackage extends EPackage {
 	 * @ordered
 	 */
 	int DSEGMENT_START__DEBUG_ID = DSEGMENT_ELEMENT__DEBUG_ID;
+
+	/**
+	 * The feature id for the '<em><b>Tick</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DSEGMENT_START__TICK = DSEGMENT_ELEMENT__TICK;
 
 	/**
 	 * The feature id for the '<em><b>State Invariant</b></em>' reference.
@@ -535,6 +571,15 @@ public interface TimingDPackage extends EPackage {
 	 * @ordered
 	 */
 	int DSEGMENT_END__DEBUG_ID = DSEGMENT_ELEMENT__DEBUG_ID;
+
+	/**
+	 * The feature id for the '<em><b>Tick</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DSEGMENT_END__TICK = DSEGMENT_ELEMENT__TICK;
 
 	/**
 	 * The feature id for the '<em><b>Segment</b></em>' container reference.
@@ -775,6 +820,52 @@ public interface TimingDPackage extends EPackage {
 	int DPOINT_CONSTRAINT_FEATURE_COUNT = 2;
 
 	/**
+	 * The meta object id for the '{@link org.eclipse.uml2.diagram.timing.model.timingd.impl.DTickImpl <em>DTick</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.eclipse.uml2.diagram.timing.model.timingd.impl.DTickImpl
+	 * @see org.eclipse.uml2.diagram.timing.model.timingd.impl.TimingDPackageImpl#getDTick()
+	 * @generated
+	 */
+	int DTICK = 13;
+
+	/**
+	 * The feature id for the '<em><b>Occurrence</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DTICK__OCCURRENCE = 0;
+
+	/**
+	 * The feature id for the '<em><b>Block</b></em>' container reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DTICK__BLOCK = 1;
+
+	/**
+	 * The feature id for the '<em><b>Subject</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DTICK__SUBJECT = 2;
+
+	/**
+	 * The number of structural features of the '<em>DTick</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DTICK_FEATURE_COUNT = 3;
+
+	/**
 	 * The meta object id for the '{@link org.eclipse.uml2.uml.Constraint <em>UML Constraint</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -782,7 +873,7 @@ public interface TimingDPackage extends EPackage {
 	 * @see org.eclipse.uml2.diagram.timing.model.timingd.impl.TimingDPackageImpl#getUMLConstraint()
 	 * @generated
 	 */
-	int UML_CONSTRAINT = 13;
+	int UML_CONSTRAINT = 14;
 
 	/**
 	 * The number of structural features of the '<em>UML Constraint</em>' class.
@@ -801,7 +892,7 @@ public interface TimingDPackage extends EPackage {
 	 * @see org.eclipse.uml2.diagram.timing.model.timingd.impl.TimingDPackageImpl#getUMLStateInvariant()
 	 * @generated
 	 */
-	int UML_STATE_INVARIANT = 14;
+	int UML_STATE_INVARIANT = 15;
 
 	/**
 	 * The number of structural features of the '<em>UML State Invariant</em>' class.
@@ -820,7 +911,7 @@ public interface TimingDPackage extends EPackage {
 	 * @see org.eclipse.uml2.diagram.timing.model.timingd.impl.TimingDPackageImpl#getUMLInteraction()
 	 * @generated
 	 */
-	int UML_INTERACTION = 15;
+	int UML_INTERACTION = 16;
 
 	/**
 	 * The number of structural features of the '<em>UML Interaction</em>' class.
@@ -839,7 +930,7 @@ public interface TimingDPackage extends EPackage {
 	 * @see org.eclipse.uml2.diagram.timing.model.timingd.impl.TimingDPackageImpl#getUMLPackage()
 	 * @generated
 	 */
-	int UML_PACKAGE = 16;
+	int UML_PACKAGE = 17;
 
 	/**
 	 * The number of structural features of the '<em>UML Package</em>' class.
@@ -858,7 +949,7 @@ public interface TimingDPackage extends EPackage {
 	 * @see org.eclipse.uml2.diagram.timing.model.timingd.impl.TimingDPackageImpl#getUMLLifeline()
 	 * @generated
 	 */
-	int UML_LIFELINE = 17;
+	int UML_LIFELINE = 18;
 
 	/**
 	 * The number of structural features of the '<em>UML Lifeline</em>' class.
@@ -877,7 +968,7 @@ public interface TimingDPackage extends EPackage {
 	 * @see org.eclipse.uml2.diagram.timing.model.timingd.impl.TimingDPackageImpl#getUMLOccurrenceSpecification()
 	 * @generated
 	 */
-	int UML_OCCURRENCE_SPECIFICATION = 18;
+	int UML_OCCURRENCE_SPECIFICATION = 19;
 
 	/**
 	 * The number of structural features of the '<em>UML Occurrence Specification</em>' class.
@@ -897,7 +988,7 @@ public interface TimingDPackage extends EPackage {
 	 * @see org.eclipse.uml2.diagram.timing.model.timingd.impl.TimingDPackageImpl#getUMLMessage()
 	 * @generated
 	 */
-	int UML_MESSAGE = 19;
+	int UML_MESSAGE = 20;
 
 	/**
 	 * The number of structural features of the '<em>UML Message</em>' class.
@@ -1094,6 +1185,17 @@ public interface TimingDPackage extends EPackage {
 	EReference getDBlock_Constraint();
 
 	/**
+	 * Returns the meta object for the containment reference list '{@link org.eclipse.uml2.diagram.timing.model.timingd.DBlock#getTicks <em>Ticks</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Ticks</em>'.
+	 * @see org.eclipse.uml2.diagram.timing.model.timingd.DBlock#getTicks()
+	 * @see #getDBlock()
+	 * @generated
+	 */
+	EReference getDBlock_Ticks();
+
+	/**
 	 * Returns the meta object for class '{@link org.eclipse.uml2.diagram.timing.model.timingd.DValueLine <em>DValue Line</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1243,6 +1345,17 @@ public interface TimingDPackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getDSegmentElement_DebugId();
+
+	/**
+	 * Returns the meta object for the reference '{@link org.eclipse.uml2.diagram.timing.model.timingd.DSegmentElement#getTick <em>Tick</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Tick</em>'.
+	 * @see org.eclipse.uml2.diagram.timing.model.timingd.DSegmentElement#getTick()
+	 * @see #getDSegmentElement()
+	 * @generated
+	 */
+	EReference getDSegmentElement_Tick();
 
 	/**
 	 * Returns the meta object for class '{@link org.eclipse.uml2.diagram.timing.model.timingd.DSegmentMiddlePoint <em>DSegment Middle Point</em>}'.
@@ -1546,6 +1659,49 @@ public interface TimingDPackage extends EPackage {
 	EReference getDPointConstraint_ConstraintedSegmentElement();
 
 	/**
+	 * Returns the meta object for class '{@link org.eclipse.uml2.diagram.timing.model.timingd.DTick <em>DTick</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>DTick</em>'.
+	 * @see org.eclipse.uml2.diagram.timing.model.timingd.DTick
+	 * @generated
+	 */
+	EClass getDTick();
+
+	/**
+	 * Returns the meta object for the reference '{@link org.eclipse.uml2.diagram.timing.model.timingd.DTick#getOccurrence <em>Occurrence</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Occurrence</em>'.
+	 * @see org.eclipse.uml2.diagram.timing.model.timingd.DTick#getOccurrence()
+	 * @see #getDTick()
+	 * @generated
+	 */
+	EReference getDTick_Occurrence();
+
+	/**
+	 * Returns the meta object for the container reference '{@link org.eclipse.uml2.diagram.timing.model.timingd.DTick#getBlock <em>Block</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the container reference '<em>Block</em>'.
+	 * @see org.eclipse.uml2.diagram.timing.model.timingd.DTick#getBlock()
+	 * @see #getDTick()
+	 * @generated
+	 */
+	EReference getDTick_Block();
+
+	/**
+	 * Returns the meta object for the reference '{@link org.eclipse.uml2.diagram.timing.model.timingd.DTick#getSubject <em>Subject</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Subject</em>'.
+	 * @see org.eclipse.uml2.diagram.timing.model.timingd.DTick#getSubject()
+	 * @see #getDTick()
+	 * @generated
+	 */
+	EReference getDTick_Subject();
+
+	/**
 	 * Returns the meta object for class '{@link org.eclipse.uml2.uml.Constraint <em>UML Constraint</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1787,6 +1943,14 @@ public interface TimingDPackage extends EPackage {
 		EReference DBLOCK__CONSTRAINT = eINSTANCE.getDBlock_Constraint();
 
 		/**
+		 * The meta object literal for the '<em><b>Ticks</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference DBLOCK__TICKS = eINSTANCE.getDBlock_Ticks();
+
+		/**
 		 * The meta object literal for the '{@link org.eclipse.uml2.diagram.timing.model.timingd.impl.DValueLineImpl <em>DValue Line</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -1903,6 +2067,14 @@ public interface TimingDPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute DSEGMENT_ELEMENT__DEBUG_ID = eINSTANCE.getDSegmentElement_DebugId();
+
+		/**
+		 * The meta object literal for the '<em><b>Tick</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference DSEGMENT_ELEMENT__TICK = eINSTANCE.getDSegmentElement_Tick();
 
 		/**
 		 * The meta object literal for the '{@link org.eclipse.uml2.diagram.timing.model.timingd.impl.DSegmentMiddlePointImpl <em>DSegment Middle Point</em>}' class.
@@ -2141,6 +2313,40 @@ public interface TimingDPackage extends EPackage {
 		 * @generated
 		 */
 		EReference DPOINT_CONSTRAINT__CONSTRAINTED_SEGMENT_ELEMENT = eINSTANCE.getDPointConstraint_ConstraintedSegmentElement();
+
+		/**
+		 * The meta object literal for the '{@link org.eclipse.uml2.diagram.timing.model.timingd.impl.DTickImpl <em>DTick</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.eclipse.uml2.diagram.timing.model.timingd.impl.DTickImpl
+		 * @see org.eclipse.uml2.diagram.timing.model.timingd.impl.TimingDPackageImpl#getDTick()
+		 * @generated
+		 */
+		EClass DTICK = eINSTANCE.getDTick();
+
+		/**
+		 * The meta object literal for the '<em><b>Occurrence</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference DTICK__OCCURRENCE = eINSTANCE.getDTick_Occurrence();
+
+		/**
+		 * The meta object literal for the '<em><b>Block</b></em>' container reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference DTICK__BLOCK = eINSTANCE.getDTick_Block();
+
+		/**
+		 * The meta object literal for the '<em><b>Subject</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference DTICK__SUBJECT = eINSTANCE.getDTick_Subject();
 
 		/**
 		 * The meta object literal for the '{@link org.eclipse.uml2.uml.Constraint <em>UML Constraint</em>}' class.

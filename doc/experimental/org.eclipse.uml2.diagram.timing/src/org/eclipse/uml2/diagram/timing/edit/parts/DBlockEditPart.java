@@ -1,7 +1,10 @@
 package org.eclipse.uml2.diagram.timing.edit.parts;
 
+import java.util.Collections;
+import java.util.List;
 import org.eclipse.draw2d.BorderLayout;
 import org.eclipse.draw2d.IFigure;
+import org.eclipse.draw2d.LayoutManager;
 import org.eclipse.draw2d.MarginBorder;
 import org.eclipse.draw2d.PositionConstants;
 import org.eclipse.draw2d.RectangleFigure;
@@ -10,17 +13,23 @@ import org.eclipse.draw2d.StackLayout;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.gef.EditPart;
 import org.eclipse.gef.EditPolicy;
+import org.eclipse.gef.GraphicalEditPart;
 import org.eclipse.gef.Request;
 import org.eclipse.gef.commands.Command;
 import org.eclipse.gef.editpolicies.LayoutEditPolicy;
 import org.eclipse.gef.editpolicies.NonResizableEditPolicy;
 import org.eclipse.gef.editpolicies.ResizableEditPolicy;
+import org.eclipse.gef.handles.MoveHandle;
 import org.eclipse.gef.requests.CreateRequest;
+import org.eclipse.gmf.runtime.diagram.ui.editparts.AbstractBorderedShapeEditPart;
+import org.eclipse.gmf.runtime.diagram.ui.editparts.IBorderItemEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.ShapeNodeEditPart;
+import org.eclipse.gmf.runtime.diagram.ui.editpolicies.BorderItemSelectionEditPolicy;
 import org.eclipse.gmf.runtime.diagram.ui.editpolicies.DragDropEditPolicy;
 import org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles;
 import org.eclipse.gmf.runtime.diagram.ui.editpolicies.XYLayoutEditPolicy;
+import org.eclipse.gmf.runtime.diagram.ui.figures.BorderItemLocator;
 import org.eclipse.gmf.runtime.draw2d.ui.figures.ConstrainedToolbarLayout;
 import org.eclipse.gmf.runtime.gef.ui.figures.DefaultSizeNodeFigure;
 import org.eclipse.gmf.runtime.gef.ui.figures.NodeFigure;
@@ -40,7 +49,7 @@ import org.eclipse.uml2.diagram.timing.part.TimingDVisualIDRegistry;
  * @generated
  */
 
-public class DBlockEditPart extends ShapeNodeEditPart implements PrimaryShapeEditPart {
+public class DBlockEditPart extends AbstractBorderedShapeEditPart implements PrimaryShapeEditPart {
 
 	/**
 	 * @generated
@@ -90,6 +99,16 @@ public class DBlockEditPart extends ShapeNodeEditPart implements PrimaryShapeEdi
 		LayoutEditPolicy lep = new LayoutEditPolicy() {
 
 			protected EditPolicy createChildEditPolicy(EditPart child) {
+				if (child instanceof IBorderItemEditPart) {
+					return new BorderItemSelectionEditPolicy() {
+
+						protected List createSelectionHandles() {
+							MoveHandle mh = new MoveHandle((GraphicalEditPart) getHost());
+							mh.setBorder(null);
+							return Collections.singletonList(mh);
+						}
+					};
+				}
 				EditPolicy result = child.getEditPolicy(EditPolicy.PRIMARY_DRAG_ROLE);
 				if (result == null) {
 					result = new NonResizableEditPolicy();
@@ -131,6 +150,11 @@ public class DBlockEditPart extends ShapeNodeEditPart implements PrimaryShapeEdi
 			((DBlockDisplayNameEditPart) childEditPart).setLabel(getPrimaryShape().getFigureTimeLinePartitionFigure_name());
 			return true;
 		}
+		if (childEditPart instanceof DTickEditPart) {
+			BorderItemLocator locator = new BorderItemLocator(getMainFigure(), PositionConstants.NORTH);
+			getBorderedFigure().getBorderItemContainer().add(((DTickEditPart) childEditPart).getFigure(), locator);
+			return true;
+		}
 		return false;
 	}
 
@@ -139,6 +163,10 @@ public class DBlockEditPart extends ShapeNodeEditPart implements PrimaryShapeEdi
 	 */
 	protected boolean removeFixedChild(EditPart childEditPart) {
 
+		if (childEditPart instanceof DTickEditPart) {
+			getBorderedFigure().getBorderItemContainer().remove(((DTickEditPart) childEditPart).getFigure());
+			return true;
+		}
 		return false;
 	}
 
@@ -167,6 +195,9 @@ public class DBlockEditPart extends ShapeNodeEditPart implements PrimaryShapeEdi
 	 */
 	protected IFigure getContentPaneFor(IGraphicalEditPart editPart) {
 
+		if (editPart instanceof IBorderItemEditPart) {
+			return getBorderedFigure().getBorderItemContainer();
+		}
 		return getContentPane();
 	}
 
@@ -198,7 +229,7 @@ public class DBlockEditPart extends ShapeNodeEditPart implements PrimaryShapeEdi
 	 * 
 	 * @generated
 	 */
-	protected NodeFigure createNodeFigure() {
+	protected NodeFigure createMainFigure() {
 		NodeFigure figure = createNodePlate();
 		figure.setLayoutManager(new StackLayout());
 		IFigure shape = createNodeShape();
@@ -361,6 +392,22 @@ public class DBlockEditPart extends ShapeNodeEditPart implements PrimaryShapeEdi
 			return fFigureTimeLinePartitionFigure_body;
 		}
 
+	}
+
+	/**
+	 * @generated
+	 */
+	protected void reorderChild(EditPart child, int index) {
+		// Save the constraint of the child so that it does not
+		// get lost during the remove and re-add.
+		IFigure childFigure = ((GraphicalEditPart) child).getFigure();
+		LayoutManager layout = getContentPaneFor((IGraphicalEditPart) child).getLayoutManager();
+		Object constraint = null;
+		if (layout != null) {
+			constraint = layout.getConstraint(childFigure);
+		}
+		super.reorderChild(child, index);
+		setLayoutConstraint(child, childFigure, constraint);
 	}
 
 }

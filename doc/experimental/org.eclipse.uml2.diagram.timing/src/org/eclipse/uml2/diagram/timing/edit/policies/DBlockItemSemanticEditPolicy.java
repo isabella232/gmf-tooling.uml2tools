@@ -10,7 +10,9 @@ import org.eclipse.gmf.runtime.emf.type.core.requests.CreateElementRequest;
 import org.eclipse.gmf.runtime.emf.type.core.requests.DestroyElementRequest;
 import org.eclipse.gmf.runtime.notation.Node;
 import org.eclipse.gmf.runtime.notation.View;
+import org.eclipse.uml2.diagram.timing.edit.commands.DTickCreateCommand;
 import org.eclipse.uml2.diagram.timing.edit.commands.DValueLineCreateCommand;
+import org.eclipse.uml2.diagram.timing.edit.parts.DTickEditPart;
 import org.eclipse.uml2.diagram.timing.edit.parts.DValueLineEditPart;
 import org.eclipse.uml2.diagram.timing.model.timingd.TimingDPackage;
 import org.eclipse.uml2.diagram.timing.part.TimingDVisualIDRegistry;
@@ -39,6 +41,12 @@ public class DBlockItemSemanticEditPolicy extends TimingDBaseItemSemanticEditPol
 			}
 			return getGEFWrapper(new DValueLineCreateCommand(req));
 		}
+		if (TimingDElementTypes.DTick_3007 == req.getElementType()) {
+			if (req.getContainmentFeature() == null) {
+				req.setContainmentFeature(TimingDPackage.eINSTANCE.getDBlock_Ticks());
+			}
+			return getGEFWrapper(new DTickCreateCommand(req));
+		}
 		return super.getCreateCommand(req);
 	}
 
@@ -66,6 +74,9 @@ public class DBlockItemSemanticEditPolicy extends TimingDBaseItemSemanticEditPol
 			Node node = (Node) it.next();
 			switch (TimingDVisualIDRegistry.getVisualID(node)) {
 			case DValueLineEditPart.VISUAL_ID:
+				cmd.add(getDestroyElementCommand(node));
+				break;
+			case DTickEditPart.VISUAL_ID:
 				cmd.add(getDestroyElementCommand(node));
 				break;
 			}
