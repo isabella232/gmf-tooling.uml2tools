@@ -2,6 +2,8 @@ package org.eclipse.uml2.diagram.timing.edit.helpers;
 
 import org.eclipse.gmf.runtime.common.core.command.CompositeCommand;
 import org.eclipse.gmf.runtime.common.core.command.ICommand;
+import org.eclipse.gmf.runtime.emf.commands.core.command.AbstractTransactionalCommand;
+import org.eclipse.gmf.runtime.emf.commands.core.command.CompositeTransactionalCommand;
 import org.eclipse.gmf.runtime.emf.type.core.ElementTypeRegistry;
 import org.eclipse.gmf.runtime.emf.type.core.IElementType;
 import org.eclipse.gmf.runtime.emf.type.core.edithelper.AbstractEditHelper;
@@ -83,5 +85,22 @@ public class TimingDBaseEditHelper extends AbstractEditHelper {
 	 */
 	protected ICommand getDestroyReferenceCommand(DestroyReferenceRequest req) {
 		return null;
+	}
+	
+	
+	/**
+	 * @NOT-generated
+	 */
+	protected ICommand compose(AbstractTransactionalCommand first, ICommand second){
+		if (first == null){
+			return second;
+		}
+		if (second == null){
+			return first;
+		}
+		CompositeTransactionalCommand cc = new CompositeTransactionalCommand(first.getEditingDomain(), first.getLabel());
+		cc.compose(first);
+		cc.compose(second);
+		return cc;
 	}
 }
