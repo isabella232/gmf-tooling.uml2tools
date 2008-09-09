@@ -1,17 +1,16 @@
 package org.eclipse.uml2.diagram.timing.edit.helpers;
 
-import org.eclipse.core.commands.ExecutionException;
-import org.eclipse.core.runtime.IAdaptable;
-import org.eclipse.core.runtime.IProgressMonitor;
+import java.util.List;
+
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.transaction.TransactionalEditingDomain;
-import org.eclipse.gmf.runtime.common.core.command.CommandResult;
 import org.eclipse.gmf.runtime.common.core.command.CompositeCommand;
 import org.eclipse.gmf.runtime.common.core.command.ICommand;
 import org.eclipse.gmf.runtime.emf.commands.core.command.AbstractTransactionalCommand;
 import org.eclipse.gmf.runtime.emf.commands.core.command.CompositeTransactionalCommand;
 import org.eclipse.gmf.runtime.emf.type.core.ElementTypeRegistry;
 import org.eclipse.gmf.runtime.emf.type.core.IElementType;
+import org.eclipse.gmf.runtime.emf.type.core.commands.DestroyElementCommand;
 import org.eclipse.gmf.runtime.emf.type.core.edithelper.AbstractEditHelper;
 import org.eclipse.gmf.runtime.emf.type.core.edithelper.IEditHelperAdvice;
 import org.eclipse.gmf.runtime.emf.type.core.requests.CreateElementRequest;
@@ -19,11 +18,8 @@ import org.eclipse.gmf.runtime.emf.type.core.requests.CreateRelationshipRequest;
 import org.eclipse.gmf.runtime.emf.type.core.requests.DestroyElementRequest;
 import org.eclipse.gmf.runtime.emf.type.core.requests.DestroyReferenceRequest;
 import org.eclipse.gmf.runtime.emf.type.core.requests.IEditCommandRequest;
-import org.eclipse.uml2.diagram.timing.model.timingd.DFrame;
+import org.eclipse.uml2.diagram.timing.edit.policies.RelatedUMLElementAccessor;
 import org.eclipse.uml2.uml.Element;
-import org.eclipse.uml2.uml.Interaction;
-import org.eclipse.uml2.uml.Package;
-import org.eclipse.uml2.uml.UMLPackage;
 
 /**
  * @generated
@@ -85,9 +81,27 @@ public class TimingDBaseEditHelper extends AbstractEditHelper {
 	}
 
 	/**
-	 * @generated
+	 * @generated NOT
 	 */
 	protected ICommand getDestroyElementCommand(DestroyElementRequest req) {
+		if (req.getElementToDestroy() != null){
+			RelatedUMLElementAccessor finder = new RelatedUMLElementAccessor();
+			List<Element> umlCounterParts = finder.doSwitch(req.getElementToDestroy());
+			if (umlCounterParts != null){
+				CompositeTransactionalCommand result = new CompositeTransactionalCommand(req.getEditingDomain(), "");
+				for (Element next : umlCounterParts){
+					if (next == null){
+						continue;
+					}
+					result.add(new DestroyElementCommand(new DestroyElementRequest(next, req.isConfirmationRequired())));
+				}
+				
+				if (result.size() == 0){
+					return  null;
+				}
+				return result.reduce();
+			}
+		}
 		return null;
 	}
 
