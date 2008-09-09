@@ -36,7 +36,8 @@ public class TimingDCreationWizard extends Wizard implements INewWizard {
 	protected TimingDCreationWizardPage diagramModelFilePage;
 
 	/**
-	 * @generated
+	 * @diff-files-specific
+	 * @generated NOT
 	 */
 	protected TimingDCreationWizardPage domainModelFilePage;
 
@@ -97,7 +98,8 @@ public class TimingDCreationWizard extends Wizard implements INewWizard {
 	}
 
 	/**
-	 * @generated
+	 * @diff-files-specific
+	 * @generated NOT
 	 */
 	public void addPages() {
 		diagramModelFilePage = new TimingDCreationWizardPage("DiagramModelFile", getSelection(), "uml_time"); //$NON-NLS-1$ //$NON-NLS-2$
@@ -105,14 +107,15 @@ public class TimingDCreationWizard extends Wizard implements INewWizard {
 		diagramModelFilePage.setDescription(Messages.TimingDCreationWizard_DiagramModelFilePageDescription);
 		addPage(diagramModelFilePage);
 
-		domainModelFilePage = new TimingDCreationWizardPage("DomainModelFile", getSelection(), "timingd"); //$NON-NLS-1$ //$NON-NLS-2$
+		domainModelFilePage = new TimingDCreationWizardPage("DomainModelFile", getSelection(), "uml"); //$NON-NLS-1$ //$NON-NLS-2$
 		domainModelFilePage.setTitle(Messages.TimingDCreationWizard_DomainModelFilePageTitle);
 		domainModelFilePage.setDescription(Messages.TimingDCreationWizard_DomainModelFilePageDescription);
 		addPage(domainModelFilePage);
 	}
 
 	/**
-	 * @generated
+	 * @diff-files-specific
+	 * @generated NOT
 	 */
 	public boolean performFinish() {
 		IRunnableWithProgress op = new WorkspaceModifyOperation(null) {

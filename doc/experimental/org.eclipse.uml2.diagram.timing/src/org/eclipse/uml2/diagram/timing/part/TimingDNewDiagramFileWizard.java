@@ -110,6 +110,7 @@ public class TimingDNewDiagramFileWizard extends Wizard {
 				}
 				Diagram diagram = ViewService.createDiagram(diagramRootElementSelectionPage.getModelElement(), DFrameContainerEditPart.MODEL_ID, TimingDDiagramEditorPlugin.DIAGRAM_PREFERENCES_HINT);
 				diagramResource.getContents().add(diagram);
+				diagramResource.getContents().add(diagram.getElement());
 				return CommandResult.newOKCommandResult();
 			}
 		};

@@ -9,6 +9,7 @@ import org.eclipse.uml2.diagram.timing.model.timingd.DStateSwitch;
 import org.eclipse.uml2.diagram.timing.model.timingd.DTick;
 import org.eclipse.uml2.diagram.timing.model.timingd.DValueLine;
 import org.eclipse.uml2.diagram.timing.model.timingd.TimingDFactory;
+import org.eclipse.uml2.uml.Interaction;
 
 
 public class SemanticHelper {
@@ -57,6 +58,11 @@ public class SemanticHelper {
 	public static void attachTickToCircle(DTick tick, DSegmentElement circle){
 		tick.setSubject(circle);
 		tick.setOccurrence(circle == null ? null : circle.getOccurrence());
+	}
+	
+	public static String newStateInvariantName(Interaction interaction){
+		int size = interaction.getFragments().size();
+		return "Fragment" + String.valueOf(size + 1);
 	}
 
 }

@@ -99,6 +99,7 @@ public class PostCreateSegmentEditPolicy extends AbstractEditPolicy {
 			if (segmentStart == null){
 				segmentStart = TimingDFactory.eINSTANCE.createDSegmentStart();
 				createdSegment.setStart(segmentStart);
+				segmentStart.setOccurrence(createdSegment.getStartOccurrence());
 			}
 			
 			View segmentStartView = findChildByType(createdView, DSegmentStartEditPart.VISUAL_ID);
@@ -106,12 +107,12 @@ public class PostCreateSegmentEditPolicy extends AbstractEditPolicy {
 				segmentStartView = ViewService.getInstance().createNode(new EObjectAdapter(segmentStart), createdView, null, ViewUtil.APPEND, getPreferencesHint());
 			}
 			
-			completeOverlappingSegment(anchor, segmentStartView);
+			completeOverlappingSegment(anchor, segmentStart, segmentStartView);
 			
 			return CommandResult.newOKCommandResult();
 		}
 		
-		private void completeOverlappingSegment(SegmentAnchor anchor, View segmentStartView){
+		private void completeOverlappingSegment(SegmentAnchor anchor, DSegmentStart newSegmentStart, View segmentStartView){
 			if (anchor == null){
 				return;
 			}
@@ -135,6 +136,7 @@ public class PostCreateSegmentEditPolicy extends AbstractEditPolicy {
 				DSegment newSegment = getCreatedSegment();
 				DSegmentEnd newSegmentEnd = TimingDFactory.eINSTANCE.createDSegmentEnd();
 				newSegment.setEnd(newSegmentEnd);
+				newSegmentEnd.setOccurrence(oldEnd.getOccurrence()); //? or the new one
 				View newSegmentEndView = ViewService.getInstance().createNode(new EObjectAdapter(newSegmentEnd), getCreatedView(), null, ViewUtil.APPEND, getPreferencesHint());
 				
 				SemanticHelper.reconnectSource(oldSwitch, newSegmentEnd);
@@ -163,7 +165,9 @@ public class PostCreateSegmentEditPolicy extends AbstractEditPolicy {
 			}
 			
 			DSegmentEnd segmentEnd = TimingDFactory.eINSTANCE.createDSegmentEnd();
+			segmentEnd.setOccurrence(newSegmentStart.getOccurrence());
 			oldSegment.setEnd(segmentEnd);
+			
 			View segmentEndView = ViewService.getInstance().createNode(new EObjectAdapter(segmentEnd), oldSegmentView, null, ViewUtil.APPEND, getPreferencesHint());
 			
 			Rectangle oldBounds = oldSegmentData.getGlobalBounds();

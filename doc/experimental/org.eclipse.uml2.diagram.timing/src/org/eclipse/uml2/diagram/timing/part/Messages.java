@@ -37,12 +37,14 @@ public class Messages extends NLS {
 	public static String TimingDCreationWizard_DiagramModelFilePageDescription;
 
 	/**
-	 * @generated
+	 * @diff-files-specific
+	 * @generated NOT
 	 */
 	public static String TimingDCreationWizard_DomainModelFilePageTitle;
 
 	/**
-	 * @generated
+	 * @diff-files-specific
+	 * @generated NOT
 	 */
 	public static String TimingDCreationWizard_DomainModelFilePageDescription;
 

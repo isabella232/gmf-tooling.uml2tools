@@ -51,9 +51,11 @@ import org.eclipse.ui.part.FileEditorInput;
 import org.eclipse.uml2.diagram.timing.edit.parts.DFrameContainerEditPart;
 import org.eclipse.uml2.diagram.timing.model.timingd.DFrameContainer;
 import org.eclipse.uml2.diagram.timing.model.timingd.TimingDFactory;
+import org.eclipse.uml2.uml.Package;
+import org.eclipse.uml2.uml.UMLFactory;
 
 /**
- * @generated
+ * @generated NOT
  */
 
 public class TimingDDiagramEditorUtil {
@@ -139,7 +141,8 @@ public class TimingDDiagramEditorUtil {
 
 	/**
 	 * This method should be called within a workspace modify operation since it creates resources.
-	 * @generated
+	 * @diff-files-specific
+	 * @generated NOT
 	 */
 	public static Resource createDiagram(URI diagramURI, URI modelURI, IProgressMonitor progressMonitor) {
 		TransactionalEditingDomain editingDomain = GMFEditingDomainFactory.INSTANCE.createEditingDomain();
@@ -150,14 +153,18 @@ public class TimingDDiagramEditorUtil {
 		AbstractTransactionalCommand command = new AbstractTransactionalCommand(editingDomain, Messages.TimingDDiagramEditorUtil_CreateDiagramCommandLabel, Collections.EMPTY_LIST) {
 
 			protected CommandResult doExecuteWithResult(IProgressMonitor monitor, IAdaptable info) throws ExecutionException {
-				DFrameContainer model = createInitialModel();
-				attachModelToResource(model, modelResource);
+				Package umlModel = createInitialModel();
+				DFrameContainer timingDModel = createInitialTimingDModel();
+				timingDModel.setPakkage(umlModel);
+				
+				attachModelToResource(umlModel, modelResource);
+				attachModelToResource(timingDModel, diagramResource);
 
-				Diagram diagram = ViewService.createDiagram(model, DFrameContainerEditPart.MODEL_ID, TimingDDiagramEditorPlugin.DIAGRAM_PREFERENCES_HINT);
+				Diagram diagram = ViewService.createDiagram(timingDModel, DFrameContainerEditPart.MODEL_ID, TimingDDiagramEditorPlugin.DIAGRAM_PREFERENCES_HINT);
 				if (diagram != null) {
 					diagramResource.getContents().add(diagram);
 					diagram.setName(diagramName);
-					diagram.setElement(model);
+					diagram.setElement(timingDModel);
 				}
 
 				try {
@@ -184,9 +191,15 @@ public class TimingDDiagramEditorUtil {
 	 * Create a new instance of domain element associated with canvas.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
-	private static DFrameContainer createInitialModel() {
+	private static Package createInitialModel() {
+		Package package_ = UMLFactory.eINSTANCE.createPackage();
+		package_.setName("Package");
+		return package_;
+	}
+	
+	private static DFrameContainer createInitialTimingDModel() {
 		return TimingDFactory.eINSTANCE.createDFrameContainer();
 	}
 
@@ -194,9 +207,9 @@ public class TimingDDiagramEditorUtil {
 	 * Store model element in the resource.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
-	private static void attachModelToResource(DFrameContainer model, Resource resource) {
+	private static void attachModelToResource(EObject model, Resource resource) {
 		resource.getContents().add(model);
 
 	}
