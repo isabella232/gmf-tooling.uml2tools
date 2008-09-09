@@ -26,10 +26,12 @@ import org.eclipse.gmf.runtime.notation.Node;
 import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.uml2.diagram.common.editpolicies.AbstractPostCreateCommand;
 import org.eclipse.uml2.diagram.timing.draw2d.SegmentGeometry;
+import org.eclipse.uml2.diagram.timing.edit.parts.DSegmentEditPart;
 import org.eclipse.uml2.diagram.timing.edit.parts.DSegmentEndEditPart;
 import org.eclipse.uml2.diagram.timing.edit.parts.DSegmentStartEditPart;
 import org.eclipse.uml2.diagram.timing.edit.parts.DStateSwitchEditPart;
 import org.eclipse.uml2.diagram.timing.edit.policies.SegmentAnchor;
+import org.eclipse.uml2.diagram.timing.edit.policies.SegmentAnchor.EditPartAndGlobalBounds;
 import org.eclipse.uml2.diagram.timing.model.timingd.DSegment;
 import org.eclipse.uml2.diagram.timing.model.timingd.DSegmentEnd;
 import org.eclipse.uml2.diagram.timing.model.timingd.DSegmentStart;
@@ -113,8 +115,12 @@ public class PostCreateSegmentEditPolicy extends AbstractEditPolicy {
 			if (anchor == null){
 				return;
 			}
-			DSegment oldSegment = anchor.getOverlappingSegment();
-			View oldSegmentView = anchor.getOverlappingSegmentView();
+			EditPartAndGlobalBounds<DSegmentEditPart> oldSegmentData = anchor.getOverlappingSegmentEditPartData();
+			if (oldSegmentData == null){
+				return;
+			}
+			View oldSegmentView = oldSegmentData.getNotationView();
+			DSegment oldSegment = (DSegment) oldSegmentData.getSemanticElement();
 			if (oldSegment == null || oldSegmentView == null){
 				return;
 			}
@@ -145,7 +151,7 @@ public class PostCreateSegmentEditPolicy extends AbstractEditPolicy {
 				}
 				
 				//3) Shrink old segment
-				Rectangle oldBounds = anchor.getOverlappingSegmentGlobalBounds();
+				Rectangle oldBounds = oldSegmentData.getGlobalBounds();
 				Point splitLocation = getRequestLocation();
 				Dimension diff = oldBounds.getTopRight().getDifference(splitLocation);
 				setSize(oldSegmentView, new Dimension(oldBounds.getSize().width - diff.width + 2 * SegmentGeometry.CIRCLE_RADIUS, oldBounds.height));
@@ -160,7 +166,7 @@ public class PostCreateSegmentEditPolicy extends AbstractEditPolicy {
 			oldSegment.setEnd(segmentEnd);
 			View segmentEndView = ViewService.getInstance().createNode(new EObjectAdapter(segmentEnd), oldSegmentView, null, ViewUtil.APPEND, getPreferencesHint());
 			
-			Rectangle oldBounds = anchor.getOverlappingSegmentGlobalBounds();
+			Rectangle oldBounds = oldSegmentData.getGlobalBounds();
 			Point splitLocation = getRequestLocation();
 			Dimension completedSize = splitLocation.getDifference(oldBounds.getTopLeft());
 			completedSize.height = oldBounds.height;

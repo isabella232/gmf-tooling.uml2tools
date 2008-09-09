@@ -14,6 +14,7 @@ import org.eclipse.uml2.diagram.timing.edit.parts.DSegmentEndEditPart;
 import org.eclipse.uml2.diagram.timing.edit.parts.DSegmentMiddlePointEditPart;
 import org.eclipse.uml2.diagram.timing.edit.parts.DSegmentStartEditPart;
 import org.eclipse.uml2.diagram.timing.edit.parts.DValueLineEditPart;
+import org.eclipse.uml2.diagram.timing.edit.policies.SegmentAnchor.EditPartAndGlobalBounds;
 
 
 public class SegmentAnchorHelper {
@@ -40,8 +41,7 @@ public class SegmentAnchorHelper {
 				Rectangle nextSegmentGlobalBounds = segmentF.getBounds().getCopy();
 				segmentF.getParent().translateToAbsolute(nextSegmentGlobalBounds);
 				if (nextSegmentGlobalBounds.x <= globalPoint.x && nextSegmentGlobalBounds.x + nextSegmentGlobalBounds.width >= globalPoint.x){
-					anchorData.setOverlappingSegment(nextSegment);
-					anchorData.setSegmentGlobalBounds(nextSegmentGlobalBounds.getCopy());
+					anchorData.setOverlappingSegment(nextSegment, nextSegmentGlobalBounds.getCopy());
 					return true;
 				}
 			}
@@ -50,12 +50,17 @@ public class SegmentAnchorHelper {
 	}
 	
 	public void setupLeftAnchor(SegmentAnchorImpl anchorData, Point global){
-		DSegmentEditPart segmentEP = anchorData.getOverlappingSegmentEditPart();
+		if (anchorData.getOverlappingSegmentEditPartData() == null){
+			return;
+		}
+		DSegmentEditPart segmentEP = anchorData.getOverlappingSegmentEditPartData().getEditPart();
 		if (segmentEP == null){
 			return;
 		}
 		
 		int bestCenterX = Integer.MIN_VALUE;
+		PrimaryShapeEditPart bestCircle = null;
+		Rectangle bestBounds = null;
 		List<PrimaryShapeEditPart> circles = new LinkedList<PrimaryShapeEditPart>();
 		
 		circles.addAll(collectChildEditParts(segmentEP, DSegmentStartEditPart.class));
@@ -70,26 +75,36 @@ public class SegmentAnchorHelper {
 			int nextCenterX = nextGlobalBounds.x + nextGlobalBounds.width / 2; 
 			if (nextCenterX <= global.x){
 				debugOut("Circle at the left found: " + nextCircle + "\n\t " + nextCenterX);
-				if (anchorData.getLeftAnchorEditPart() == null || bestCenterX < nextCenterX){
-					if (anchorData.getLeftAnchorEditPart() != null){
-						debugOut("And its better than: " + anchorData.getLeftAnchorEditPart() + "\n\t" + bestCenterX);
+				if (bestCircle == null || bestCenterX < nextCenterX){
+					if (bestCircle != null){
+						debugOut("And its better than: " + bestCircle + "\n\t" + bestCenterX);
 					}
-					anchorData.setLeftAnchor(nextCircle);
+					bestCircle = nextCircle;
 					bestCenterX = nextCenterX;
+					if (bestBounds == null){
+						bestBounds = new Rectangle();
+					}
+					bestBounds.setBounds(nextGlobalBounds);
 				} else {
 					debugOut("Not that good, skipped");
 				}
 			}
 		}
+		if (bestCircle != null){
+			anchorData.setLeftAnchor(new EditPartAndGlobalBounds<PrimaryShapeEditPart>(bestCircle, bestBounds));
+		}
 	}
 	
 	public void setupRightAnchor(SegmentAnchorImpl anchorData, Point global){
-		DSegmentEditPart segmentEP = anchorData.getOverlappingSegmentEditPart();
-		if (segmentEP == null){
+		EditPartAndGlobalBounds<DSegmentEditPart> segmentData = anchorData.getOverlappingSegmentEditPartData();
+		if (segmentData == null){
 			return;
 		}
+		DSegmentEditPart segmentEP = segmentData.getEditPart();
 		
 		int bestCenterX = Integer.MAX_VALUE;
+		PrimaryShapeEditPart bestCircle = null;
+		Rectangle bestBounds = null;
 		List<PrimaryShapeEditPart> circles = new LinkedList<PrimaryShapeEditPart>();
 		
 		circles.addAll(collectChildEditParts(segmentEP, DSegmentStartEditPart.class));
@@ -104,16 +119,24 @@ public class SegmentAnchorHelper {
 			int nextCenterX = nextGlobalBounds.x + nextGlobalBounds.width / 2; 
 			if (nextCenterX >= global.x){
 				debugOut("Circle at the right found: " + nextCircle + "\n\t " + nextCenterX);
-				if (anchorData.getRightAnchorEditPart() == null || bestCenterX > nextCenterX){
-					if (anchorData.getRightAnchorEditPart() != null){
-						debugOut("And its better than: " + anchorData.getRightAnchorEditPart() + "\n\t" + bestCenterX);
+				if (bestCircle == null || bestCenterX > nextCenterX){
+					if (bestCircle != null){
+						debugOut("And its better than: " + bestCircle + "\n\t" + bestCenterX);
 					}
-					anchorData.setRightAnchor(nextCircle);
+					bestCircle = nextCircle;
 					bestCenterX = nextCenterX;
+					if (bestBounds == null){
+						bestBounds = new Rectangle();
+					}
+					bestBounds.setBounds(nextGlobalBounds);
 				} else {
 					debugOut("Not that good, skipped");
 				}
 			}
+		}
+
+		if (bestCircle != null){
+			anchorData.setRightAnchor(new EditPartAndGlobalBounds<PrimaryShapeEditPart>(bestCircle, bestBounds));
 		}
 	}
 
@@ -130,39 +153,5 @@ public class SegmentAnchorHelper {
 	private void debugOut(String s){
 		//System.err.println(s);
 	}
-	
-//	private Rectangle getSegmentBounds(DValueLineEditPart lineEP, DSegmentEditPart segmentEP){
-//		DSegmentEditPart.SegmentFigure figure = segmentEP.getPrimaryShape();
-//		Rectangle bounds = figure.getBounds();
-//		return getConstraintFor(lineEP, bounds.getLocation(), bounds.getSize());
-//	}
-//	
-//	private static Rectangle getConstraintFor(GraphicalEditPart containerEP, Point where, Dimension size) {
-//		IFigure figure = containerEP.getContentPane();
-//
-//		where = where.getCopy();
-//		figure.translateToRelative(where);
-//		figure.translateFromParent(where);
-//		where.translate(getLayoutOrigin(containerEP).getNegated());
-//
-//		if (size == null || size.isEmpty()){
-//			return new Rectangle(where, DEFAULT_SIZE);
-//		} else {
-//			size = size.getCopy();
-//			figure.translateToRelative(size);
-//			figure.translateFromParent(size);	
-//			return new Rectangle(where, size);
-//		}
-//	}
-//	
-//	private static Point getLayoutOrigin(GraphicalEditPart ep) {
-//		IFigure layoutContainer = ep.getContentPane();
-//		if (false == layoutContainer.getLayoutManager() instanceof XYLayout){
-//			throw new IllegalStateException("XYLayout expected for ep: " + ep + ", actual: " + layoutContainer.getLayoutManager());
-//		}
-//		XYLayout xyLayout = (XYLayout)layoutContainer.getLayoutManager();
-//		return xyLayout.getOrigin(layoutContainer);
-//	}
-//	private static final Dimension DEFAULT_SIZE = new Dimension(-1, -1);
 	
 }
