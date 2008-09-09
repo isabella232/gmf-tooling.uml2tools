@@ -1,5 +1,11 @@
 package org.eclipse.uml2.diagram.timing.edit.helpers;
 
+import org.eclipse.core.commands.ExecutionException;
+import org.eclipse.core.runtime.IAdaptable;
+import org.eclipse.core.runtime.IProgressMonitor;
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.transaction.TransactionalEditingDomain;
+import org.eclipse.gmf.runtime.common.core.command.CommandResult;
 import org.eclipse.gmf.runtime.common.core.command.CompositeCommand;
 import org.eclipse.gmf.runtime.common.core.command.ICommand;
 import org.eclipse.gmf.runtime.emf.commands.core.command.AbstractTransactionalCommand;
@@ -13,6 +19,11 @@ import org.eclipse.gmf.runtime.emf.type.core.requests.CreateRelationshipRequest;
 import org.eclipse.gmf.runtime.emf.type.core.requests.DestroyElementRequest;
 import org.eclipse.gmf.runtime.emf.type.core.requests.DestroyReferenceRequest;
 import org.eclipse.gmf.runtime.emf.type.core.requests.IEditCommandRequest;
+import org.eclipse.uml2.diagram.timing.model.timingd.DFrame;
+import org.eclipse.uml2.uml.Element;
+import org.eclipse.uml2.uml.Interaction;
+import org.eclipse.uml2.uml.Package;
+import org.eclipse.uml2.uml.UMLPackage;
 
 /**
  * @generated
@@ -102,4 +113,45 @@ public class TimingDBaseEditHelper extends AbstractEditHelper {
 		cc.compose(second);
 		return cc;
 	}
+	
+	/**
+	 * @NOT-generated
+	 */
+	protected ICommand compose(ICommand first, ICommand second, TransactionalEditingDomain domain) {
+		if (first == null) {
+			return second;
+		}
+		if (second == null) {
+			return first;
+		}
+		CompositeTransactionalCommand cc = new CompositeTransactionalCommand(domain, first.getLabel());
+		cc.compose(first);
+		cc.compose(second);
+		return cc;
+	}
+	
+	protected static abstract class PushToUMLCommand extends AbstractTransactionalCommand {
+		private final CreateElementRequest myReq;
+		private final Element myUmlParent;
+
+		public PushToUMLCommand(CreateElementRequest req, Element umlParent){
+			super(req.getEditingDomain(), "", getWorkspaceFiles(umlParent));
+			myReq = req;
+			myUmlParent = umlParent;
+		}
+		
+		public Element getUmlParent() {
+			return myUmlParent;
+		}
+		
+		public CreateElementRequest getCreateRequest() {
+			return myReq;
+		}
+		
+		public EObject getCreatedTimingDArtefact(){
+			return myReq.getNewElement();
+		}
+	}
+	
+	
 }
