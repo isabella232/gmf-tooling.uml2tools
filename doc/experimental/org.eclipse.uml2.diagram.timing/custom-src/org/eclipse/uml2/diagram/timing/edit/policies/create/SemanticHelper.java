@@ -2,9 +2,11 @@ package org.eclipse.uml2.diagram.timing.edit.policies.create;
 
 import org.eclipse.uml2.diagram.timing.model.timingd.DBlock;
 import org.eclipse.uml2.diagram.timing.model.timingd.DSegment;
+import org.eclipse.uml2.diagram.timing.model.timingd.DSegmentElement;
 import org.eclipse.uml2.diagram.timing.model.timingd.DSegmentEnd;
 import org.eclipse.uml2.diagram.timing.model.timingd.DSegmentStart;
 import org.eclipse.uml2.diagram.timing.model.timingd.DStateSwitch;
+import org.eclipse.uml2.diagram.timing.model.timingd.DTick;
 import org.eclipse.uml2.diagram.timing.model.timingd.DValueLine;
 import org.eclipse.uml2.diagram.timing.model.timingd.TimingDFactory;
 
@@ -50,6 +52,11 @@ public class SemanticHelper {
 		stateSwitch.setToSegmentStart(newTarget);
 		stateSwitch.setToSegment(newTarget.getSegment());
 		stateSwitch.setToValueLine(newTarget.getSegment().getState());
+	}
+	
+	public static void attachTickToCircle(DTick tick, DSegmentElement circle){
+		tick.setSubject(circle);
+		tick.setOccurrence(circle == null ? null : circle.getOccurrence());
 	}
 
 }

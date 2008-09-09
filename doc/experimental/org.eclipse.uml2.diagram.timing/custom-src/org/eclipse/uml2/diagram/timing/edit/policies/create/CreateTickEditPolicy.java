@@ -24,6 +24,8 @@ import org.eclipse.uml2.diagram.timing.draw2d.SegmentGeometry;
 import org.eclipse.uml2.diagram.timing.edit.parts.DBlockEditPart;
 import org.eclipse.uml2.diagram.timing.edit.policies.SegmentAnchorHelper;
 import org.eclipse.uml2.diagram.timing.edit.policies.SegmentAnchor.EditPartAndGlobalBounds;
+import org.eclipse.uml2.diagram.timing.model.timingd.DSegmentElement;
+import org.eclipse.uml2.diagram.timing.model.timingd.DTick;
 import org.eclipse.uml2.diagram.timing.part.TimingDVisualIDRegistry;
 import org.eclipse.uml2.diagram.timing.providers.TimingDElementTypes;
 
@@ -104,6 +106,9 @@ public class CreateTickEditPolicy extends AbstractEditPolicy {
 		
 		@Override
 		protected CommandResult doExecuteWithResult(IProgressMonitor monitor, IAdaptable info) throws ExecutionException {
+			DTick tick = (DTick) getCreatedEntity();
+			SemanticHelper.attachTickToCircle(tick, (DSegmentElement) myCircleData.getSemanticElement());
+			
 			IFigure circleF = myCircleData.getEditPart().getPrimaryShape();
 			Rectangle nextCircleBounds = circleF.getBounds().getCopy();
 			circleF.getParent().translateToAbsolute(nextCircleBounds);
