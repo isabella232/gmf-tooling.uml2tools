@@ -29,6 +29,7 @@ import org.eclipse.swt.graphics.Color;
 import org.eclipse.uml2.diagram.common.editparts.PrimaryShapeEditPart;
 import org.eclipse.uml2.diagram.common.editpolicies.UpdateDescriptionEditPolicy;
 import org.eclipse.uml2.diagram.timing.edit.policies.DSegmentMiddlePointItemSemanticEditPolicy;
+import org.eclipse.uml2.diagram.timing.edit.policies.MoveCircleEditPolicy;
 import org.eclipse.uml2.diagram.timing.part.TimingDDiagramUpdater;
 import org.eclipse.uml2.diagram.timing.part.TimingDVisualIDRegistry;
 import org.eclipse.uml2.diagram.timing.providers.TimingDElementTypes;
@@ -71,6 +72,7 @@ public class DSegmentMiddlePointEditPart extends ShapeNodeEditPart implements Pr
 		super.createDefaultEditPolicies();
 		installEditPolicy(EditPolicyRoles.SEMANTIC_ROLE, new DSegmentMiddlePointItemSemanticEditPolicy());
 		installEditPolicy(EditPolicy.LAYOUT_ROLE, createLayoutEditPolicy());
+		installEditPolicy(MoveCircleEditPolicy.ROLE, new MoveCircleEditPolicy());
 		// XXX need an SCR to runtime to have another abstract superclass that would let children add reasonable editpolicies
 		// removeEditPolicy(org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles.CONNECTION_HANDLES_ROLE);
 

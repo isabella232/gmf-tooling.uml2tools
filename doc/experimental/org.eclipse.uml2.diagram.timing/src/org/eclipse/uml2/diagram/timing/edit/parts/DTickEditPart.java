@@ -22,6 +22,7 @@ import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.swt.graphics.Color;
 import org.eclipse.uml2.diagram.common.editparts.PrimaryShapeEditPart;
 import org.eclipse.uml2.diagram.timing.edit.policies.DTickItemSemanticEditPolicy;
+import org.eclipse.uml2.diagram.timing.edit.policies.MoveTickEditPolicy;
 
 /**
  * @generated
