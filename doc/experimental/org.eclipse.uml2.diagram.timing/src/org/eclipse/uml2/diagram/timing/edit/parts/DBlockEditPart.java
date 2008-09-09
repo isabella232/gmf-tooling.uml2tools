@@ -2,6 +2,7 @@ package org.eclipse.uml2.diagram.timing.edit.parts;
 
 import java.util.Collections;
 import java.util.List;
+
 import org.eclipse.draw2d.BorderLayout;
 import org.eclipse.draw2d.IFigure;
 import org.eclipse.draw2d.LayoutManager;
@@ -24,7 +25,6 @@ import org.eclipse.gef.requests.CreateRequest;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.AbstractBorderedShapeEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.IBorderItemEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart;
-import org.eclipse.gmf.runtime.diagram.ui.editparts.ShapeNodeEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editpolicies.BorderItemSelectionEditPolicy;
 import org.eclipse.gmf.runtime.diagram.ui.editpolicies.DragDropEditPolicy;
 import org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles;
@@ -42,6 +42,7 @@ import org.eclipse.uml2.diagram.common.editpolicies.UpdateDescriptionEditPolicy;
 import org.eclipse.uml2.diagram.timing.draw2d.layout.TimeLineLayout;
 import org.eclipse.uml2.diagram.timing.edit.policies.DBlockCanonicalEditPolicy;
 import org.eclipse.uml2.diagram.timing.edit.policies.DBlockItemSemanticEditPolicy;
+import org.eclipse.uml2.diagram.timing.edit.policies.create.CreateTickEditPolicy;
 import org.eclipse.uml2.diagram.timing.part.TimingDDiagramUpdater;
 import org.eclipse.uml2.diagram.timing.part.TimingDVisualIDRegistry;
 
@@ -87,6 +88,7 @@ public class DBlockEditPart extends AbstractBorderedShapeEditPart implements Pri
 		installEditPolicy(EditPolicyRoles.CANONICAL_ROLE, new DBlockCanonicalEditPolicy());
 		installEditPolicy(EditPolicy.LAYOUT_ROLE, createLayoutEditPolicy());
 		installEditPolicy(EditPolicy.LAYOUT_ROLE, new XYLayoutEditPolicy());
+		installEditPolicy(CreateTickEditPolicy.ROLE, new CreateTickEditPolicy());
 		// XXX need an SCR to runtime to have another abstract superclass that would let children add reasonable editpolicies
 		// removeEditPolicy(org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles.CONNECTION_HANDLES_ROLE);
 

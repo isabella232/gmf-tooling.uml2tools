@@ -49,6 +49,31 @@ public class SegmentAnchorHelper {
 		return false;
 	}
 	
+	public SegmentAnchor.EditPartAndGlobalBounds<PrimaryShapeEditPart> findCloseCircle(Point globalPoint, int threshold){
+		List<DValueLineEditPart> lineEPs = collectChildEditParts(myBlockEP, DValueLineEditPart.class);
+		for (DValueLineEditPart next : lineEPs){
+			for (DSegmentEditPart nextSegment : collectChildEditParts(next, DSegmentEditPart.class)){
+				List<PrimaryShapeEditPart> circles = new LinkedList<PrimaryShapeEditPart>();
+				circles.addAll(collectChildEditParts(nextSegment, DSegmentStartEditPart.class));
+				circles.addAll(collectChildEditParts(nextSegment, DSegmentMiddlePointEditPart.class));
+				circles.addAll(collectChildEditParts(nextSegment, DSegmentEndEditPart.class));
+				
+				for (PrimaryShapeEditPart nextCircle : circles){
+					IFigure figure = nextCircle.getPrimaryShape();
+					Rectangle nextGlobalBounds = figure.getBounds().getCopy();
+					figure.getParent().translateToAbsolute(nextGlobalBounds);
+					
+					int nextCenterX = nextGlobalBounds.x + nextGlobalBounds.width / 2;
+					int diff = nextCenterX - globalPoint.x;
+					if (Math.abs(diff) <= threshold){
+						return new SegmentAnchor.EditPartAndGlobalBounds<PrimaryShapeEditPart>(nextCircle, nextGlobalBounds);
+					}
+				}
+			}
+		}
+		return null;
+	}
+	
 	public void setupLeftAnchor(SegmentAnchorImpl anchorData, Point global){
 		if (anchorData.getOverlappingSegmentEditPartData() == null){
 			return;
@@ -62,7 +87,6 @@ public class SegmentAnchorHelper {
 		PrimaryShapeEditPart bestCircle = null;
 		Rectangle bestBounds = null;
 		List<PrimaryShapeEditPart> circles = new LinkedList<PrimaryShapeEditPart>();
-		
 		circles.addAll(collectChildEditParts(segmentEP, DSegmentStartEditPart.class));
 		circles.addAll(collectChildEditParts(segmentEP, DSegmentMiddlePointEditPart.class));
 		circles.addAll(collectChildEditParts(segmentEP, DSegmentEndEditPart.class));

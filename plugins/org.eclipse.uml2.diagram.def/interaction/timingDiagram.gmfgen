@@ -60,6 +60,10 @@
           xsi:type="gmfgen:CustomBehaviour"
           key="org.eclipse.gef.EditPolicy.LAYOUT_ROLE"
           editPolicyQualifiedClassName="org.eclipse.gmf.runtime.diagram.ui.editpolicies.XYLayoutEditPolicy"/>
+      <behaviour
+          xsi:type="gmfgen:CustomBehaviour"
+          key="org.eclipse.uml2.diagram.timing.edit.policies.create.CreateTickEditPolicy.ROLE"
+          editPolicyQualifiedClassName="org.eclipse.uml2.diagram.timing.edit.policies.create.CreateTickEditPolicy"/>
       <modelFacet>
         <metaClass
             href="../../../plugin/org.eclipse.uml2.diagram.timing.model/model/timing-diagram.genmodel#//timingd/DBlock"/>
