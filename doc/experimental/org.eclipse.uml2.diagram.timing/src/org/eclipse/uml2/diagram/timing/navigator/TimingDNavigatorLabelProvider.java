@@ -20,6 +20,8 @@ import org.eclipse.uml2.diagram.timing.edit.parts.DBlockEditPart;
 import org.eclipse.uml2.diagram.timing.edit.parts.DFrameContainerEditPart;
 import org.eclipse.uml2.diagram.timing.edit.parts.DFrameDisplayNameEditPart;
 import org.eclipse.uml2.diagram.timing.edit.parts.DFrameEditPart;
+import org.eclipse.uml2.diagram.timing.edit.parts.DIntervalDurationEditPart;
+import org.eclipse.uml2.diagram.timing.edit.parts.DIntervalEditPart;
 import org.eclipse.uml2.diagram.timing.edit.parts.DMessageDisplayNameEditPart;
 import org.eclipse.uml2.diagram.timing.edit.parts.DMessageEditPart;
 import org.eclipse.uml2.diagram.timing.edit.parts.DSegmentEditPart;
@@ -31,6 +33,7 @@ import org.eclipse.uml2.diagram.timing.edit.parts.DTickEditPart;
 import org.eclipse.uml2.diagram.timing.edit.parts.DValueLineDisplayNameEditPart;
 import org.eclipse.uml2.diagram.timing.edit.parts.DValueLineEditPart;
 import org.eclipse.uml2.diagram.timing.model.timingd.DFrame;
+import org.eclipse.uml2.diagram.timing.model.timingd.DInterval;
 import org.eclipse.uml2.diagram.timing.model.timingd.DSegmentEnd;
 import org.eclipse.uml2.diagram.timing.model.timingd.DSegmentMiddlePoint;
 import org.eclipse.uml2.diagram.timing.model.timingd.DSegmentStart;
@@ -113,6 +116,8 @@ public class TimingDNavigatorLabelProvider extends LabelProvider implements ICom
 			return getImage("Navigator?Link?http://www.eclipse.org/mdt/uml2tools/timing-diagram/1.0?DStateSwitch", TimingDElementTypes.DStateSwitch_4001); //$NON-NLS-1$
 		case DMessageEditPart.VISUAL_ID:
 			return getImage("Navigator?Link?http://www.eclipse.org/mdt/uml2tools/timing-diagram/1.0?DMessage", TimingDElementTypes.DMessage_4002); //$NON-NLS-1$
+		case DIntervalEditPart.VISUAL_ID:
+			return getImage("Navigator?Link?http://www.eclipse.org/mdt/uml2tools/timing-diagram/1.0?DInterval", TimingDElementTypes.DInterval_4003); //$NON-NLS-1$
 		}
 		return getImage("Navigator?UnknownElement", null); //$NON-NLS-1$
 	}
@@ -185,6 +190,8 @@ public class TimingDNavigatorLabelProvider extends LabelProvider implements ICom
 			return getDStateSwitch_4001Text(view);
 		case DMessageEditPart.VISUAL_ID:
 			return getDMessage_4002Text(view);
+		case DIntervalEditPart.VISUAL_ID:
+			return getDInterval_4003Text(view);
 		}
 		return getUnknownElementText(view);
 	}
@@ -308,6 +315,20 @@ public class TimingDNavigatorLabelProvider extends LabelProvider implements ICom
 			return parser.getPrintString(new EObjectAdapter(view.getElement() != null ? view.getElement() : view), ParserOptions.NONE.intValue());
 		} else {
 			TimingDDiagramEditorPlugin.getInstance().logError("Parser was not found for label " + 6001); //$NON-NLS-1$
+			return ""; //$NON-NLS-1$
+		}
+	}
+
+	/**
+	 * @generated
+	 */
+	private String getDInterval_4003Text(View view) {
+		IParser parser = TimingDParserProvider.getParser(TimingDElementTypes.DInterval_4003, view.getElement() != null ? view.getElement() : view, TimingDVisualIDRegistry
+				.getType(DIntervalDurationEditPart.VISUAL_ID));
+		if (parser != null) {
+			return parser.getPrintString(new EObjectAdapter(view.getElement() != null ? view.getElement() : view), ParserOptions.NONE.intValue());
+		} else {
+			TimingDDiagramEditorPlugin.getInstance().logError("Parser was not found for label " + 6002); //$NON-NLS-1$
 			return ""; //$NON-NLS-1$
 		}
 	}

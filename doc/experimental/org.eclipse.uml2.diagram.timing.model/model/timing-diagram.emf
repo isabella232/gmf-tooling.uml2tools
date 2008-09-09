@@ -11,7 +11,7 @@ class DFrame {
   ref UMLInteraction[1] interaction;
   attr String displayName;
   val DBlock[+]#frame blocks;
-  val DInterval[*] intervals;
+  val DInterval[*]#frame intervals;
   val DMessage[*]#frame messages;
 }
 
@@ -82,8 +82,12 @@ class DMessage {
 }
 
 class DInterval {
-  ref DSegmentElement fromPoint;
-  ref DSegmentElement toPoint;
+  ref UMLDurationConstraint durationConstraint;
+  
+  attr String duration;
+  ref DFrame#intervals frame;
+  ref DTick fromTick;
+  ref DTick toTick;
 }
 
 class DPointConstraint {
@@ -104,4 +108,4 @@ abstract interface UMLPackage : org.eclipse.uml2.uml.Package {}
 abstract interface UMLLifeline : org.eclipse.uml2.uml.Lifeline {}
 abstract interface UMLOccurrenceSpecification : org.eclipse.uml2.uml.OccurrenceSpecification {}
 abstract interface UMLMessage : org.eclipse.uml2.uml.Message {}
-
+abstract interface UMLDurationConstraint : org.eclipse.uml2.uml.DurationConstraint {}

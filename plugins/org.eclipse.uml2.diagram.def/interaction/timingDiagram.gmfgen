@@ -394,6 +394,9 @@
             fixedForeground="true"
             fixedBackground="true"/>
         <attributes
+            xsi:type="gmfgen:ResizeConstraints"
+            resizeHandles="1"/>
+        <attributes
             xsi:type="gmfgen:DefaultSizeAttributes"
             width="4"
             height="20"/>
@@ -576,6 +579,64 @@
         </modelFacet>
       </labels>
     </links>
+    <links
+        visualID="4003"
+        editPartClassName="DIntervalEditPart"
+        itemSemanticEditPolicyClassName="DIntervalItemSemanticEditPolicy"
+        notationViewFactoryClassName="DIntervalViewFactory"
+        createCommandClassName="DIntervalCreateCommand"
+        reorientCommandClassName="DIntervalReorientCommand">
+      <diagramRunTimeClass
+          href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Edge"/>
+      <elementType
+          xsi:type="gmfgen:MetamodelType"
+          editHelperClassName="DIntervalEditHelper"/>
+      <viewmap
+          xsi:type="gmfgen:InnerClassViewmap"
+          className="IntervalFigure"
+          classBody="&#xD;&#xA;/**&#xD;&#xA; * @generated&#xD;&#xA; */&#xD;&#xA;public class IntervalFigure extends org.eclipse.gmf.runtime.draw2d.ui.figures.PolylineConnectionEx {&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;public IntervalFigure() {&#xD;&#xA;&#x9;&#x9;&#xD;&#xA;&#x9;&#x9;setSourceDecoration(createSourceDecoration());&#xD;&#xA;&#x9;&#x9;setTargetDecoration(createTargetDecoration());&#xD;&#xA;&#x9;}&#xD;&#xA;&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;private org.eclipse.draw2d.RotatableDecoration createSourceDecoration() {&#xD;&#xA;&#x9;&#x9;org.eclipse.draw2d.PolylineDecoration df = new org.eclipse.draw2d.PolylineDecoration();&#xD;&#xA;org.eclipse.draw2d.geometry.PointList pl = new org.eclipse.draw2d.geometry.PointList();&#xD;&#xA;pl.addPoint(getMapMode().DPtoLP(-2)&#xD;&#xA;, getMapMode().DPtoLP(2)&#xD;&#xA;);&#xD;&#xA;pl.addPoint(getMapMode().DPtoLP(0)&#xD;&#xA;, getMapMode().DPtoLP(0)&#xD;&#xA;);&#xD;&#xA;pl.addPoint(getMapMode().DPtoLP(-2)&#xD;&#xA;, getMapMode().DPtoLP(-2)&#xD;&#xA;);&#xD;&#xA;df.setTemplate(pl);&#xD;&#xA;df.setScale(getMapMode().DPtoLP(7)&#xD;&#xA;, getMapMode().DPtoLP(3)&#xD;&#xA;);&#xD;&#xA;&#x9;&#x9;return df;&#xD;&#xA;&#x9;}&#xD;&#xA;&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;private org.eclipse.draw2d.RotatableDecoration createTargetDecoration() {&#xD;&#xA;&#x9;&#x9;org.eclipse.draw2d.PolylineDecoration df = new org.eclipse.draw2d.PolylineDecoration();&#xD;&#xA;org.eclipse.draw2d.geometry.PointList pl = new org.eclipse.draw2d.geometry.PointList();&#xD;&#xA;pl.addPoint(getMapMode().DPtoLP(-2)&#xD;&#xA;, getMapMode().DPtoLP(2)&#xD;&#xA;);&#xD;&#xA;pl.addPoint(getMapMode().DPtoLP(0)&#xD;&#xA;, getMapMode().DPtoLP(0)&#xD;&#xA;);&#xD;&#xA;pl.addPoint(getMapMode().DPtoLP(-2)&#xD;&#xA;, getMapMode().DPtoLP(-2)&#xD;&#xA;);&#xD;&#xA;df.setTemplate(pl);&#xD;&#xA;df.setScale(getMapMode().DPtoLP(7)&#xD;&#xA;, getMapMode().DPtoLP(3)&#xD;&#xA;);&#xD;&#xA;&#x9;&#x9;return df;&#xD;&#xA;&#x9;}&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;}&#xD;&#xA;&#xD;&#xA;">
+        <requiredPluginIDs>org.eclipse.draw2d</requiredPluginIDs>
+        <requiredPluginIDs>org.eclipse.uml2.diagram.common</requiredPluginIDs>
+        <requiredPluginIDs>org.eclipse.gmf.runtime.draw2d.ui</requiredPluginIDs>
+      </viewmap>
+      <modelFacet
+          xsi:type="gmfgen:TypeLinkModelFacet">
+        <metaClass
+            href="../../../plugin/org.eclipse.uml2.diagram.timing.model/model/timing-diagram.genmodel#//timingd/DInterval"/>
+        <containmentMetaFeature
+            href="../../../plugin/org.eclipse.uml2.diagram.timing.model/model/timing-diagram.genmodel#//timingd/DFrame/intervals"/>
+        <childMetaFeature
+            href="../../../plugin/org.eclipse.uml2.diagram.timing.model/model/timing-diagram.genmodel#//timingd/DFrame/intervals"/>
+        <sourceMetaFeature
+            href="../../../plugin/org.eclipse.uml2.diagram.timing.model/model/timing-diagram.genmodel#//timingd/DInterval/fromTick"/>
+        <targetMetaFeature
+            href="../../../plugin/org.eclipse.uml2.diagram.timing.model/model/timing-diagram.genmodel#//timingd/DInterval/toTick"/>
+      </modelFacet>
+      <labels
+          visualID="6002"
+          editPartClassName="DIntervalDurationEditPart"
+          itemSemanticEditPolicyClassName="DIntervalDurationItemSemanticEditPolicy"
+          notationViewFactoryClassName="DIntervalDurationViewFactory">
+        <diagramRunTimeClass
+            href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
+        <viewmap
+            xsi:type="gmfgen:FigureViewmap"
+            figureQualifiedClassName="org.eclipse.draw2d.Label">
+          <attributes
+              xsi:type="gmfgen:LabelOffsetAttributes"
+              y="-10"/>
+          <requiredPluginIDs>org.eclipse.draw2d</requiredPluginIDs>
+          <requiredPluginIDs>org.eclipse.uml2.diagram.common</requiredPluginIDs>
+          <requiredPluginIDs>org.eclipse.gmf.runtime.draw2d.ui</requiredPluginIDs>
+        </viewmap>
+        <modelFacet
+            xsi:type="gmfgen:FeatureLabelModelFacet"
+            parser="//@labelParsers/@implementations.0">
+          <metaFeatures
+              href="../../../plugin/org.eclipse.uml2.diagram.timing.model/model/timing-diagram.genmodel#//timingd/DInterval/duration"/>
+        </modelFacet>
+      </labels>
+    </links>
     <palette>
       <groups
           title="Elements"
@@ -623,6 +684,11 @@
             title="Message"
             description="Message"
             genLinks="//@diagram/@links.1"/>
+        <entries
+            xsi:type="gmfgen:ToolEntry"
+            title="Duration"
+            description="Duration"
+            genLinks="//@diagram/@links.2"/>
       </groups>
     </palette>
     <preferencePages
@@ -796,6 +862,35 @@
         referenceType="out_target"
         groupName="outgoing links"
         groupIcon="icons/outgoingLinksNavigatorGroup.gif"/>
+    <childReferences
+        parent="//@diagram"
+        child="//@diagram/@links.2"
+        groupName="links"
+        groupIcon="icons/linksNavigatorGroup.gif"/>
+    <childReferences
+        parent="//@diagram/@links.2"
+        child="//@diagram/@childNodes.6"
+        referenceType="out_target"
+        groupName="target"
+        groupIcon="icons/linkTargetNavigatorGroup.gif"/>
+    <childReferences
+        parent="//@diagram/@childNodes.6"
+        child="//@diagram/@links.2"
+        referenceType="in_source"
+        groupName="incoming links"
+        groupIcon="icons/incomingLinksNavigatorGroup.gif"/>
+    <childReferences
+        parent="//@diagram/@links.2"
+        child="//@diagram/@childNodes.6"
+        referenceType="in_source"
+        groupName="source"
+        groupIcon="icons/linkSourceNavigatorGroup.gif"/>
+    <childReferences
+        parent="//@diagram/@childNodes.6"
+        child="//@diagram/@links.2"
+        referenceType="out_target"
+        groupName="outgoing links"
+        groupIcon="icons/outgoingLinksNavigatorGroup.gif"/>
   </navigator>
   <diagramUpdater/>
   <propertySheet>
@@ -834,6 +929,6 @@
       extensibleViaService="true">
     <implementations
         xsi:type="gmfgen:PredefinedParser"
-        uses="//@diagram/@childNodes.1/@labels.0/@modelFacet //@diagram/@childNodes.0/@labels.0/@modelFacet //@diagram/@topLevelNodes.0/@labels.0/@modelFacet //@diagram/@links.1/@labels.0/@modelFacet"/>
+        uses="//@diagram/@childNodes.1/@labels.0/@modelFacet //@diagram/@childNodes.0/@labels.0/@modelFacet //@diagram/@topLevelNodes.0/@labels.0/@modelFacet //@diagram/@links.1/@labels.0/@modelFacet //@diagram/@links.2/@labels.0/@modelFacet"/>
   </labelParsers>
 </gmfgen:GenEditorGenerator>

@@ -43,6 +43,7 @@ import org.eclipse.uml2.diagram.timing.model.timingd.DSegment;
 import org.eclipse.uml2.diagram.timing.model.timingd.DSegmentElement;
 import org.eclipse.uml2.diagram.timing.model.timingd.DSegmentEnd;
 import org.eclipse.uml2.diagram.timing.model.timingd.DSegmentStart;
+import org.eclipse.uml2.diagram.timing.model.timingd.DTick;
 import org.eclipse.uml2.diagram.timing.model.timingd.DValueLine;
 import org.eclipse.uml2.diagram.timing.part.TimingDVisualIDRegistry;
 import org.eclipse.uml2.diagram.timing.providers.TimingDElementTypes;
@@ -367,6 +368,13 @@ public class TimingDBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 		/**
 		 * @generated
 		 */
+		public static boolean canCreateDInterval_4003(DFrame container, DTick source, DTick target) {
+			return canExistDInterval_4003(container, source, target);
+		}
+
+		/**
+		 * @generated
+		 */
 		public static boolean canExistDStateSwitch_4001(DBlock container, DSegmentEnd source, DSegmentStart target) {
 			return true;
 		}
@@ -375,6 +383,13 @@ public class TimingDBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 		 * @generated
 		 */
 		public static boolean canExistDMessage_4002(DFrame container, DSegmentElement source, DSegmentElement target) {
+			return true;
+		}
+
+		/**
+		 * @generated
+		 */
+		public static boolean canExistDInterval_4003(DFrame container, DTick source, DTick target) {
 			return true;
 		}
 	}

@@ -46,6 +46,10 @@
           xsi:type="gmftool:CreationTool"
           title="Message"
           description="Message"/>
+      <tools
+          xsi:type="gmftool:CreationTool"
+          title="Duration"
+          description="Duration"/>
     </tools>
   </palette>
 </gmftool:ToolRegistry>

@@ -23,6 +23,7 @@ import org.eclipse.ui.navigator.ICommonContentProvider;
 import org.eclipse.uml2.diagram.timing.edit.parts.DBlockEditPart;
 import org.eclipse.uml2.diagram.timing.edit.parts.DFrameContainerEditPart;
 import org.eclipse.uml2.diagram.timing.edit.parts.DFrameEditPart;
+import org.eclipse.uml2.diagram.timing.edit.parts.DIntervalEditPart;
 import org.eclipse.uml2.diagram.timing.edit.parts.DMessageEditPart;
 import org.eclipse.uml2.diagram.timing.edit.parts.DSegmentEditPart;
 import org.eclipse.uml2.diagram.timing.edit.parts.DSegmentEndEditPart;
@@ -219,6 +220,8 @@ public class TimingDNavigatorContentProvider implements ICommonContentProvider {
 			links.addChildren(createNavigatorItems(connectedViews, links, false));
 			connectedViews = getDiagramLinksByType(Collections.singleton(view), TimingDVisualIDRegistry.getType(DMessageEditPart.VISUAL_ID));
 			links.addChildren(createNavigatorItems(connectedViews, links, false));
+			connectedViews = getDiagramLinksByType(Collections.singleton(view), TimingDVisualIDRegistry.getType(DIntervalEditPart.VISUAL_ID));
+			links.addChildren(createNavigatorItems(connectedViews, links, false));
 			if (!links.isEmpty()) {
 				result.add(links);
 			}
@@ -314,6 +317,23 @@ public class TimingDNavigatorContentProvider implements ICommonContentProvider {
 			return result.toArray();
 		}
 
+		case DTickEditPart.VISUAL_ID: {
+			Collection result = new ArrayList();
+			TimingDNavigatorGroup incominglinks = new TimingDNavigatorGroup(Messages.NavigatorGroupName_DTick_3007_incominglinks, "icons/incomingLinksNavigatorGroup.gif", parentElement); //$NON-NLS-1$
+			TimingDNavigatorGroup outgoinglinks = new TimingDNavigatorGroup(Messages.NavigatorGroupName_DTick_3007_outgoinglinks, "icons/outgoingLinksNavigatorGroup.gif", parentElement); //$NON-NLS-1$
+			Collection connectedViews = getIncomingLinksByType(Collections.singleton(view), TimingDVisualIDRegistry.getType(DIntervalEditPart.VISUAL_ID));
+			incominglinks.addChildren(createNavigatorItems(connectedViews, incominglinks, true));
+			connectedViews = getOutgoingLinksByType(Collections.singleton(view), TimingDVisualIDRegistry.getType(DIntervalEditPart.VISUAL_ID));
+			outgoinglinks.addChildren(createNavigatorItems(connectedViews, outgoinglinks, true));
+			if (!incominglinks.isEmpty()) {
+				result.add(incominglinks);
+			}
+			if (!outgoinglinks.isEmpty()) {
+				result.add(outgoinglinks);
+			}
+			return result.toArray();
+		}
+
 		case DStateSwitchEditPart.VISUAL_ID: {
 			Collection result = new ArrayList();
 			TimingDNavigatorGroup target = new TimingDNavigatorGroup(Messages.NavigatorGroupName_DStateSwitch_4001_target, "icons/linkTargetNavigatorGroup.gif", parentElement); //$NON-NLS-1$
@@ -346,6 +366,23 @@ public class TimingDNavigatorContentProvider implements ICommonContentProvider {
 			connectedViews = getLinksSourceByType(Collections.singleton(view), TimingDVisualIDRegistry.getType(DSegmentStartEditPart.VISUAL_ID));
 			source.addChildren(createNavigatorItems(connectedViews, source, true));
 			connectedViews = getLinksSourceByType(Collections.singleton(view), TimingDVisualIDRegistry.getType(DSegmentEndEditPart.VISUAL_ID));
+			source.addChildren(createNavigatorItems(connectedViews, source, true));
+			if (!target.isEmpty()) {
+				result.add(target);
+			}
+			if (!source.isEmpty()) {
+				result.add(source);
+			}
+			return result.toArray();
+		}
+
+		case DIntervalEditPart.VISUAL_ID: {
+			Collection result = new ArrayList();
+			TimingDNavigatorGroup target = new TimingDNavigatorGroup(Messages.NavigatorGroupName_DInterval_4003_target, "icons/linkTargetNavigatorGroup.gif", parentElement); //$NON-NLS-1$
+			TimingDNavigatorGroup source = new TimingDNavigatorGroup(Messages.NavigatorGroupName_DInterval_4003_source, "icons/linkSourceNavigatorGroup.gif", parentElement); //$NON-NLS-1$
+			Collection connectedViews = getLinksTargetByType(Collections.singleton(view), TimingDVisualIDRegistry.getType(DTickEditPart.VISUAL_ID));
+			target.addChildren(createNavigatorItems(connectedViews, target, true));
+			connectedViews = getLinksSourceByType(Collections.singleton(view), TimingDVisualIDRegistry.getType(DTickEditPart.VISUAL_ID));
 			source.addChildren(createNavigatorItems(connectedViews, source, true));
 			if (!target.isEmpty()) {
 				result.add(target);

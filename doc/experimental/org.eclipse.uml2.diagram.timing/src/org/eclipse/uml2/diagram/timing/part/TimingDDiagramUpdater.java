@@ -17,6 +17,7 @@ import org.eclipse.uml2.diagram.common.genapi.IUpdaterNodeDescriptor;
 import org.eclipse.uml2.diagram.timing.edit.parts.DBlockEditPart;
 import org.eclipse.uml2.diagram.timing.edit.parts.DFrameContainerEditPart;
 import org.eclipse.uml2.diagram.timing.edit.parts.DFrameEditPart;
+import org.eclipse.uml2.diagram.timing.edit.parts.DIntervalEditPart;
 import org.eclipse.uml2.diagram.timing.edit.parts.DMessageEditPart;
 import org.eclipse.uml2.diagram.timing.edit.parts.DSegmentEditPart;
 import org.eclipse.uml2.diagram.timing.edit.parts.DSegmentEndEditPart;
@@ -28,6 +29,7 @@ import org.eclipse.uml2.diagram.timing.edit.parts.DValueLineEditPart;
 import org.eclipse.uml2.diagram.timing.model.timingd.DBlock;
 import org.eclipse.uml2.diagram.timing.model.timingd.DFrame;
 import org.eclipse.uml2.diagram.timing.model.timingd.DFrameContainer;
+import org.eclipse.uml2.diagram.timing.model.timingd.DInterval;
 import org.eclipse.uml2.diagram.timing.model.timingd.DMessage;
 import org.eclipse.uml2.diagram.timing.model.timingd.DSegment;
 import org.eclipse.uml2.diagram.timing.model.timingd.DSegmentElement;
@@ -214,6 +216,8 @@ public class TimingDDiagramUpdater {
 			return getDStateSwitch_4001ContainedLinks(view);
 		case DMessageEditPart.VISUAL_ID:
 			return getDMessage_4002ContainedLinks(view);
+		case DIntervalEditPart.VISUAL_ID:
+			return getDInterval_4003ContainedLinks(view);
 		}
 		return Collections.EMPTY_LIST;
 	}
@@ -243,6 +247,8 @@ public class TimingDDiagramUpdater {
 			return getDStateSwitch_4001IncomingLinks(view);
 		case DMessageEditPart.VISUAL_ID:
 			return getDMessage_4002IncomingLinks(view);
+		case DIntervalEditPart.VISUAL_ID:
+			return getDInterval_4003IncomingLinks(view);
 		}
 		return Collections.EMPTY_LIST;
 	}
@@ -272,6 +278,8 @@ public class TimingDDiagramUpdater {
 			return getDStateSwitch_4001OutgoingLinks(view);
 		case DMessageEditPart.VISUAL_ID:
 			return getDMessage_4002OutgoingLinks(view);
+		case DIntervalEditPart.VISUAL_ID:
+			return getDInterval_4003OutgoingLinks(view);
 		}
 		return Collections.EMPTY_LIST;
 	}
@@ -290,6 +298,7 @@ public class TimingDDiagramUpdater {
 		DFrame modelElement = (DFrame) view.getElement();
 		List result = new LinkedList();
 		result.addAll(getContainedTypeModelFacetLinks_DMessage_4002(modelElement));
+		result.addAll(getContainedTypeModelFacetLinks_DInterval_4003(modelElement));
 		return result;
 	}
 
@@ -362,6 +371,13 @@ public class TimingDDiagramUpdater {
 	/**
 	 * @generated
 	 */
+	public static List getDInterval_4003ContainedLinks(View view) {
+		return Collections.EMPTY_LIST;
+	}
+
+	/**
+	 * @generated
+	 */
 	public static List getDFrame_2001IncomingLinks(View view) {
 		return Collections.EMPTY_LIST;
 	}
@@ -425,7 +441,11 @@ public class TimingDDiagramUpdater {
 	 * @generated
 	 */
 	public static List getDTick_3007IncomingLinks(View view) {
-		return Collections.EMPTY_LIST;
+		DTick modelElement = (DTick) view.getElement();
+		Map crossReferences = EcoreUtil.CrossReferencer.find(view.eResource().getResourceSet().getResources());
+		List result = new LinkedList();
+		result.addAll(getIncomingTypeModelFacetLinks_DInterval_4003(modelElement, crossReferences));
+		return result;
 	}
 
 	/**
@@ -439,6 +459,13 @@ public class TimingDDiagramUpdater {
 	 * @generated
 	 */
 	public static List getDMessage_4002IncomingLinks(View view) {
+		return Collections.EMPTY_LIST;
+	}
+
+	/**
+	 * @generated
+	 */
+	public static List getDInterval_4003IncomingLinks(View view) {
 		return Collections.EMPTY_LIST;
 	}
 
@@ -505,7 +532,10 @@ public class TimingDDiagramUpdater {
 	 * @generated
 	 */
 	public static List getDTick_3007OutgoingLinks(View view) {
-		return Collections.EMPTY_LIST;
+		DTick modelElement = (DTick) view.getElement();
+		List result = new LinkedList();
+		result.addAll(getOutgoingTypeModelFacetLinks_DInterval_4003(modelElement));
+		return result;
 	}
 
 	/**
@@ -519,6 +549,13 @@ public class TimingDDiagramUpdater {
 	 * @generated
 	 */
 	public static List getDMessage_4002OutgoingLinks(View view) {
+		return Collections.EMPTY_LIST;
+	}
+
+	/**
+	 * @generated
+	 */
+	public static List getDInterval_4003OutgoingLinks(View view) {
 		return Collections.EMPTY_LIST;
 	}
 
@@ -567,6 +604,27 @@ public class TimingDDiagramUpdater {
 	/**
 	 * @generated
 	 */
+	private static Collection getContainedTypeModelFacetLinks_DInterval_4003(DFrame container) {
+		Collection result = new LinkedList();
+		for (Iterator links = container.getIntervals().iterator(); links.hasNext();) {
+			EObject linkObject = (EObject) links.next();
+			if (false == linkObject instanceof DInterval) {
+				continue;
+			}
+			DInterval link = (DInterval) linkObject;
+			if (DIntervalEditPart.VISUAL_ID != TimingDVisualIDRegistry.getLinkWithClassVisualID(link)) {
+				continue;
+			}
+			DTick dst = link.getToTick();
+			DTick src = link.getFromTick();
+			result.add(new TimingDLinkDescriptor(src, dst, link, TimingDElementTypes.DInterval_4003, DIntervalEditPart.VISUAL_ID));
+		}
+		return result;
+	}
+
+	/**
+	 * @generated
+	 */
 	private static Collection getIncomingTypeModelFacetLinks_DStateSwitch_4001(DSegmentStart target, Map crossReferences) {
 		Collection result = new LinkedList();
 		Collection settings = (Collection) crossReferences.get(target);
@@ -602,6 +660,27 @@ public class TimingDDiagramUpdater {
 			}
 			DSegmentElement src = link.getMessageSource();
 			result.add(new TimingDLinkDescriptor(src, target, link, TimingDElementTypes.DMessage_4002, DMessageEditPart.VISUAL_ID));
+		}
+		return result;
+	}
+
+	/**
+	 * @generated
+	 */
+	private static Collection getIncomingTypeModelFacetLinks_DInterval_4003(DTick target, Map crossReferences) {
+		Collection result = new LinkedList();
+		Collection settings = (Collection) crossReferences.get(target);
+		for (Iterator it = settings.iterator(); it.hasNext();) {
+			EStructuralFeature.Setting setting = (EStructuralFeature.Setting) it.next();
+			if (setting.getEStructuralFeature() != TimingDPackage.eINSTANCE.getDInterval_ToTick() || false == setting.getEObject() instanceof DInterval) {
+				continue;
+			}
+			DInterval link = (DInterval) setting.getEObject();
+			if (DIntervalEditPart.VISUAL_ID != TimingDVisualIDRegistry.getLinkWithClassVisualID(link)) {
+				continue;
+			}
+			DTick src = link.getFromTick();
+			result.add(new TimingDLinkDescriptor(src, target, link, TimingDElementTypes.DInterval_4003, DIntervalEditPart.VISUAL_ID));
 		}
 		return result;
 	}
@@ -674,6 +753,42 @@ public class TimingDDiagramUpdater {
 				continue;
 			}
 			result.add(new TimingDLinkDescriptor(src, dst, link, TimingDElementTypes.DMessage_4002, DMessageEditPart.VISUAL_ID));
+		}
+		return result;
+	}
+
+	/**
+	 * @generated
+	 */
+	private static Collection getOutgoingTypeModelFacetLinks_DInterval_4003(DTick source) {
+		DFrame container = null;
+		// Find container element for the link.
+		// Climb up by containment hierarchy starting from the source
+		// and return the first element that is instance of the container class.
+		for (EObject element = source; element != null && container == null; element = element.eContainer()) {
+			if (element instanceof DFrame) {
+				container = (DFrame) element;
+			}
+		}
+		if (container == null) {
+			return Collections.EMPTY_LIST;
+		}
+		Collection result = new LinkedList();
+		for (Iterator links = container.getIntervals().iterator(); links.hasNext();) {
+			EObject linkObject = (EObject) links.next();
+			if (false == linkObject instanceof DInterval) {
+				continue;
+			}
+			DInterval link = (DInterval) linkObject;
+			if (DIntervalEditPart.VISUAL_ID != TimingDVisualIDRegistry.getLinkWithClassVisualID(link)) {
+				continue;
+			}
+			DTick dst = link.getToTick();
+			DTick src = link.getFromTick();
+			if (src != source) {
+				continue;
+			}
+			result.add(new TimingDLinkDescriptor(src, dst, link, TimingDElementTypes.DInterval_4003, DIntervalEditPart.VISUAL_ID));
 		}
 		return result;
 	}

@@ -2,7 +2,7 @@
  * <copyright>
  * </copyright>
  *
- * $Id: TimingDPackageImpl.java,v 1.7 2008/09/09 01:27:29 mgolubev Exp $
+ * $Id: TimingDPackageImpl.java,v 1.8 2008/09/09 05:34:18 mgolubev Exp $
  */
 package org.eclipse.uml2.diagram.timing.model.timingd.impl;
 
@@ -28,6 +28,7 @@ import org.eclipse.uml2.diagram.timing.model.timingd.DValueLine;
 import org.eclipse.uml2.diagram.timing.model.timingd.TimingDFactory;
 import org.eclipse.uml2.diagram.timing.model.timingd.TimingDPackage;
 import org.eclipse.uml2.uml.Constraint;
+import org.eclipse.uml2.uml.DurationConstraint;
 import org.eclipse.uml2.uml.Interaction;
 import org.eclipse.uml2.uml.Lifeline;
 import org.eclipse.uml2.uml.Message;
@@ -187,6 +188,13 @@ public class TimingDPackageImpl extends EPackageImpl implements TimingDPackage {
 	 * @generated
 	 */
 	private EClass umlMessageEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass umlDurationConstraintEClass = null;
 
 	/**
 	 * Creates an instance of the model <b>Package</b>, registered with
@@ -765,7 +773,7 @@ public class TimingDPackageImpl extends EPackageImpl implements TimingDPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getDInterval_FromPoint() {
+	public EReference getDInterval_DurationConstraint() {
 		return (EReference)dIntervalEClass.getEStructuralFeatures().get(0);
 	}
 
@@ -774,8 +782,35 @@ public class TimingDPackageImpl extends EPackageImpl implements TimingDPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getDInterval_ToPoint() {
-		return (EReference)dIntervalEClass.getEStructuralFeatures().get(1);
+	public EAttribute getDInterval_Duration() {
+		return (EAttribute)dIntervalEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getDInterval_Frame() {
+		return (EReference)dIntervalEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getDInterval_FromTick() {
+		return (EReference)dIntervalEClass.getEStructuralFeatures().get(3);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getDInterval_ToTick() {
+		return (EReference)dIntervalEClass.getEStructuralFeatures().get(4);
 	}
 
 	/**
@@ -909,6 +944,15 @@ public class TimingDPackageImpl extends EPackageImpl implements TimingDPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EClass getUMLDurationConstraint() {
+		return umlDurationConstraintEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public TimingDFactory getTimingDFactory() {
 		return (TimingDFactory)getEFactoryInstance();
 	}
@@ -999,8 +1043,11 @@ public class TimingDPackageImpl extends EPackageImpl implements TimingDPackage {
 		createEReference(dMessageEClass, DMESSAGE__MESSAGE_TARGET);
 
 		dIntervalEClass = createEClass(DINTERVAL);
-		createEReference(dIntervalEClass, DINTERVAL__FROM_POINT);
-		createEReference(dIntervalEClass, DINTERVAL__TO_POINT);
+		createEReference(dIntervalEClass, DINTERVAL__DURATION_CONSTRAINT);
+		createEAttribute(dIntervalEClass, DINTERVAL__DURATION);
+		createEReference(dIntervalEClass, DINTERVAL__FRAME);
+		createEReference(dIntervalEClass, DINTERVAL__FROM_TICK);
+		createEReference(dIntervalEClass, DINTERVAL__TO_TICK);
 
 		dPointConstraintEClass = createEClass(DPOINT_CONSTRAINT);
 		createEReference(dPointConstraintEClass, DPOINT_CONSTRAINT__CONSTRAINT);
@@ -1024,6 +1071,8 @@ public class TimingDPackageImpl extends EPackageImpl implements TimingDPackage {
 		umlOccurrenceSpecificationEClass = createEClass(UML_OCCURRENCE_SPECIFICATION);
 
 		umlMessageEClass = createEClass(UML_MESSAGE);
+
+		umlDurationConstraintEClass = createEClass(UML_DURATION_CONSTRAINT);
 	}
 
 	/**
@@ -1068,7 +1117,7 @@ public class TimingDPackageImpl extends EPackageImpl implements TimingDPackage {
 		initEReference(getDFrame_Interaction(), this.getUMLInteraction(), null, "interaction", null, 1, 1, DFrame.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getDFrame_DisplayName(), ecorePackage.getEString(), "displayName", null, 0, 1, DFrame.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getDFrame_Blocks(), this.getDBlock(), this.getDBlock_Frame(), "blocks", null, 1, -1, DFrame.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getDFrame_Intervals(), this.getDInterval(), null, "intervals", null, 0, -1, DFrame.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getDFrame_Intervals(), this.getDInterval(), this.getDInterval_Frame(), "intervals", null, 0, -1, DFrame.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getDFrame_Messages(), this.getDMessage(), this.getDMessage_Frame(), "messages", null, 0, -1, DFrame.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(dBlockEClass, DBlock.class, "DBlock", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -1128,8 +1177,11 @@ public class TimingDPackageImpl extends EPackageImpl implements TimingDPackage {
 		initEReference(getDMessage_MessageTarget(), this.getDSegmentElement(), null, "messageTarget", null, 0, 1, DMessage.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(dIntervalEClass, DInterval.class, "DInterval", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getDInterval_FromPoint(), this.getDSegmentElement(), null, "fromPoint", null, 0, 1, DInterval.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getDInterval_ToPoint(), this.getDSegmentElement(), null, "toPoint", null, 0, 1, DInterval.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getDInterval_DurationConstraint(), this.getUMLDurationConstraint(), null, "durationConstraint", null, 0, 1, DInterval.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getDInterval_Duration(), ecorePackage.getEString(), "duration", null, 0, 1, DInterval.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getDInterval_Frame(), this.getDFrame(), this.getDFrame_Intervals(), "frame", null, 0, 1, DInterval.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getDInterval_FromTick(), this.getDTick(), null, "fromTick", null, 0, 1, DInterval.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getDInterval_ToTick(), this.getDTick(), null, "toTick", null, 0, 1, DInterval.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(dPointConstraintEClass, DPointConstraint.class, "DPointConstraint", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getDPointConstraint_Constraint(), this.getUMLConstraint(), null, "constraint", null, 0, 1, DPointConstraint.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1153,6 +1205,8 @@ public class TimingDPackageImpl extends EPackageImpl implements TimingDPackage {
 		initEClass(umlOccurrenceSpecificationEClass, OccurrenceSpecification.class, "UMLOccurrenceSpecification", IS_ABSTRACT, IS_INTERFACE, !IS_GENERATED_INSTANCE_CLASS);
 
 		initEClass(umlMessageEClass, Message.class, "UMLMessage", IS_ABSTRACT, IS_INTERFACE, !IS_GENERATED_INSTANCE_CLASS);
+
+		initEClass(umlDurationConstraintEClass, DurationConstraint.class, "UMLDurationConstraint", IS_ABSTRACT, IS_INTERFACE, !IS_GENERATED_INSTANCE_CLASS);
 
 		// Create resource
 		createResource(eNS_URI);

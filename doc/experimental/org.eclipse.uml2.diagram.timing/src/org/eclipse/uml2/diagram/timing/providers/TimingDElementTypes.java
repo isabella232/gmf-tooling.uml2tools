@@ -19,6 +19,7 @@ import org.eclipse.swt.graphics.Image;
 import org.eclipse.uml2.diagram.timing.edit.parts.DBlockEditPart;
 import org.eclipse.uml2.diagram.timing.edit.parts.DFrameContainerEditPart;
 import org.eclipse.uml2.diagram.timing.edit.parts.DFrameEditPart;
+import org.eclipse.uml2.diagram.timing.edit.parts.DIntervalEditPart;
 import org.eclipse.uml2.diagram.timing.edit.parts.DMessageEditPart;
 import org.eclipse.uml2.diagram.timing.edit.parts.DSegmentEditPart;
 import org.eclipse.uml2.diagram.timing.edit.parts.DSegmentEndEditPart;
@@ -111,6 +112,11 @@ public class TimingDElementTypes extends ElementInitializers {
 	 * @generated
 	 */
 	public static final IHintedType DMessage_4002 = (IHintedType) getElementType("org.eclipse.uml2.diagram.timing.DMessage_4002"); //$NON-NLS-1$
+
+	/**
+	 * @generated
+	 */
+	public static final IHintedType DInterval_4003 = (IHintedType) getElementType("org.eclipse.uml2.diagram.timing.DInterval_4003"); //$NON-NLS-1$
 
 	/**
 	 * @generated
@@ -239,6 +245,8 @@ public class TimingDElementTypes extends ElementInitializers {
 			elements.put(DStateSwitch_4001, TimingDPackage.eINSTANCE.getDStateSwitch());
 
 			elements.put(DMessage_4002, TimingDPackage.eINSTANCE.getDMessage());
+
+			elements.put(DInterval_4003, TimingDPackage.eINSTANCE.getDInterval());
 		}
 		return (ENamedElement) elements.get(type);
 	}
@@ -267,6 +275,7 @@ public class TimingDElementTypes extends ElementInitializers {
 			KNOWN_ELEMENT_TYPES.add(DTick_3007);
 			KNOWN_ELEMENT_TYPES.add(DStateSwitch_4001);
 			KNOWN_ELEMENT_TYPES.add(DMessage_4002);
+			KNOWN_ELEMENT_TYPES.add(DInterval_4003);
 		}
 		return KNOWN_ELEMENT_TYPES.contains(elementType);
 	}
@@ -298,6 +307,8 @@ public class TimingDElementTypes extends ElementInitializers {
 			return DStateSwitch_4001;
 		case DMessageEditPart.VISUAL_ID:
 			return DMessage_4002;
+		case DIntervalEditPart.VISUAL_ID:
+			return DInterval_4003;
 		}
 		return null;
 	}

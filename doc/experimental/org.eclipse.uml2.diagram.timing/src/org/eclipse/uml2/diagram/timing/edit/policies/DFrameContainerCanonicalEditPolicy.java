@@ -29,6 +29,7 @@ import org.eclipse.uml2.diagram.common.genapi.IUpdaterNodeDescriptor;
 import org.eclipse.uml2.diagram.timing.edit.parts.DBlockEditPart;
 import org.eclipse.uml2.diagram.timing.edit.parts.DFrameContainerEditPart;
 import org.eclipse.uml2.diagram.timing.edit.parts.DFrameEditPart;
+import org.eclipse.uml2.diagram.timing.edit.parts.DIntervalEditPart;
 import org.eclipse.uml2.diagram.timing.edit.parts.DMessageEditPart;
 import org.eclipse.uml2.diagram.timing.edit.parts.DSegmentEditPart;
 import org.eclipse.uml2.diagram.timing.edit.parts.DSegmentEndEditPart;
@@ -290,6 +291,13 @@ public class DFrameContainerCanonicalEditPolicy extends CanonicalConnectionEditP
 		case DMessageEditPart.VISUAL_ID: {
 			if (!domain2NotationMap.containsKey(view.getElement())) {
 				result.addAll(TimingDDiagramUpdater.getDMessage_4002ContainedLinks(view));
+			}
+			domain2NotationMap.put(view.getElement(), view);
+			break;
+		}
+		case DIntervalEditPart.VISUAL_ID: {
+			if (!domain2NotationMap.containsKey(view.getElement())) {
+				result.addAll(TimingDDiagramUpdater.getDInterval_4003ContainedLinks(view));
 			}
 			domain2NotationMap.put(view.getElement(), view);
 			break;

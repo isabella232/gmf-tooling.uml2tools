@@ -2,7 +2,7 @@
  * <copyright>
  * </copyright>
  *
- * $Id: TimingDSwitch.java,v 1.4 2008/09/09 01:27:29 mgolubev Exp $
+ * $Id: TimingDSwitch.java,v 1.5 2008/09/09 05:34:18 mgolubev Exp $
  */
 package org.eclipse.uml2.diagram.timing.model.timingd.util;
 
@@ -26,6 +26,7 @@ import org.eclipse.uml2.diagram.timing.model.timingd.DStateSwitch;
 import org.eclipse.uml2.diagram.timing.model.timingd.DValueLine;
 import org.eclipse.uml2.diagram.timing.model.timingd.TimingDPackage;
 import org.eclipse.uml2.uml.Constraint;
+import org.eclipse.uml2.uml.DurationConstraint;
 import org.eclipse.uml2.uml.Interaction;
 import org.eclipse.uml2.uml.Lifeline;
 import org.eclipse.uml2.uml.Message;
@@ -509,6 +510,21 @@ public class TimingDSwitch<T> {
 	 * @generated
 	 */
 	public T caseUMLMessage(Message object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>UML Duration Constraint</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>UML Duration Constraint</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseUMLDurationConstraint(DurationConstraint object) {
 		return null;
 	}
 

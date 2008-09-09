@@ -398,6 +398,16 @@
             <param name="semanticHint" value="4002"/>
          </metamodelType>
       </metamodel>
+      <metamodel nsURI="http://www.eclipse.org/mdt/uml2tools/timing-diagram/1.0">
+         <metamodelType
+               id="org.eclipse.uml2.diagram.timing.DInterval_4003"
+               name="%metatype.name.DInterval_4003"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
+               eclass="DInterval"
+               edithelper="org.eclipse.uml2.diagram.timing.edit.helpers.DIntervalEditHelper">
+            <param name="semanticHint" value="4003"/>
+         </metamodelType>
+      </metamodel>
    </extension>
 
    <extension point="org.eclipse.gmf.runtime.emf.type.core.elementTypeBindings">
@@ -421,6 +431,7 @@
          <elementType ref="org.eclipse.uml2.diagram.timing.DTick_3007"/>
          <elementType ref="org.eclipse.uml2.diagram.timing.DStateSwitch_4001"/>
          <elementType ref="org.eclipse.uml2.diagram.timing.DMessage_4002"/>
+         <elementType ref="org.eclipse.uml2.diagram.timing.DInterval_4003"/>
          <advice ref="org.eclipse.gmf.runtime.diagram.core.advice.notationDepdendents"/>
       </binding>
    </extension>

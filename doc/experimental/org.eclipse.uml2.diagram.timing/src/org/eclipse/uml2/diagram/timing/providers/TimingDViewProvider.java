@@ -11,6 +11,8 @@ import org.eclipse.uml2.diagram.timing.edit.parts.DBlockEditPart;
 import org.eclipse.uml2.diagram.timing.edit.parts.DFrameContainerEditPart;
 import org.eclipse.uml2.diagram.timing.edit.parts.DFrameDisplayNameEditPart;
 import org.eclipse.uml2.diagram.timing.edit.parts.DFrameEditPart;
+import org.eclipse.uml2.diagram.timing.edit.parts.DIntervalDurationEditPart;
+import org.eclipse.uml2.diagram.timing.edit.parts.DIntervalEditPart;
 import org.eclipse.uml2.diagram.timing.edit.parts.DMessageDisplayNameEditPart;
 import org.eclipse.uml2.diagram.timing.edit.parts.DMessageEditPart;
 import org.eclipse.uml2.diagram.timing.edit.parts.DSegmentEditPart;
@@ -27,6 +29,8 @@ import org.eclipse.uml2.diagram.timing.view.factories.DBlockViewFactory;
 import org.eclipse.uml2.diagram.timing.view.factories.DFrameContainerViewFactory;
 import org.eclipse.uml2.diagram.timing.view.factories.DFrameDisplayNameViewFactory;
 import org.eclipse.uml2.diagram.timing.view.factories.DFrameViewFactory;
+import org.eclipse.uml2.diagram.timing.view.factories.DIntervalDurationViewFactory;
+import org.eclipse.uml2.diagram.timing.view.factories.DIntervalViewFactory;
 import org.eclipse.uml2.diagram.timing.view.factories.DMessageDisplayNameViewFactory;
 import org.eclipse.uml2.diagram.timing.view.factories.DMessageViewFactory;
 import org.eclipse.uml2.diagram.timing.view.factories.DSegmentEndViewFactory;
@@ -131,6 +135,11 @@ public class TimingDViewProvider extends AbstractViewProvider {
 						return null; // wrong container
 					}
 					break;
+				case DIntervalDurationEditPart.VISUAL_ID:
+					if (DIntervalEditPart.VISUAL_ID != TimingDVisualIDRegistry.getVisualID(containerView) || containerView.getElement() != domainElement) {
+						return null; // wrong container
+					}
+					break;
 				default:
 					return null;
 				}
@@ -171,6 +180,8 @@ public class TimingDViewProvider extends AbstractViewProvider {
 			return DTickViewFactory.class;
 		case DMessageDisplayNameEditPart.VISUAL_ID:
 			return DMessageDisplayNameViewFactory.class;
+		case DIntervalDurationEditPart.VISUAL_ID:
+			return DIntervalDurationViewFactory.class;
 		}
 		return null;
 	}
@@ -207,6 +218,8 @@ public class TimingDViewProvider extends AbstractViewProvider {
 			return DStateSwitchViewFactory.class;
 		case DMessageEditPart.VISUAL_ID:
 			return DMessageViewFactory.class;
+		case DIntervalEditPart.VISUAL_ID:
+			return DIntervalViewFactory.class;
 		}
 		return null;
 	}

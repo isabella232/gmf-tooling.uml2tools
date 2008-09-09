@@ -2,7 +2,7 @@
  * <copyright>
  * </copyright>
  *
- * $Id: TimingDPackage.java,v 1.7 2008/09/09 01:27:29 mgolubev Exp $
+ * $Id: TimingDPackage.java,v 1.8 2008/09/09 05:34:18 mgolubev Exp $
  */
 package org.eclipse.uml2.diagram.timing.model.timingd;
 
@@ -756,22 +756,49 @@ public interface TimingDPackage extends EPackage {
 	int DINTERVAL = 11;
 
 	/**
-	 * The feature id for the '<em><b>From Point</b></em>' reference.
+	 * The feature id for the '<em><b>Duration Constraint</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int DINTERVAL__FROM_POINT = 0;
+	int DINTERVAL__DURATION_CONSTRAINT = 0;
 
 	/**
-	 * The feature id for the '<em><b>To Point</b></em>' reference.
+	 * The feature id for the '<em><b>Duration</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int DINTERVAL__TO_POINT = 1;
+	int DINTERVAL__DURATION = 1;
+
+	/**
+	 * The feature id for the '<em><b>Frame</b></em>' container reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DINTERVAL__FRAME = 2;
+
+	/**
+	 * The feature id for the '<em><b>From Tick</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DINTERVAL__FROM_TICK = 3;
+
+	/**
+	 * The feature id for the '<em><b>To Tick</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DINTERVAL__TO_TICK = 4;
 
 	/**
 	 * The number of structural features of the '<em>DInterval</em>' class.
@@ -780,7 +807,7 @@ public interface TimingDPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DINTERVAL_FEATURE_COUNT = 2;
+	int DINTERVAL_FEATURE_COUNT = 5;
 
 	/**
 	 * The meta object id for the '{@link org.eclipse.uml2.diagram.timing.model.timingd.impl.DPointConstraintImpl <em>DPoint Constraint</em>}' class.
@@ -998,6 +1025,26 @@ public interface TimingDPackage extends EPackage {
 	 * @ordered
 	 */
 	int UML_MESSAGE_FEATURE_COUNT = 0;
+
+
+	/**
+	 * The meta object id for the '{@link org.eclipse.uml2.uml.DurationConstraint <em>UML Duration Constraint</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.eclipse.uml2.uml.DurationConstraint
+	 * @see org.eclipse.uml2.diagram.timing.model.timingd.impl.TimingDPackageImpl#getUMLDurationConstraint()
+	 * @generated
+	 */
+	int UML_DURATION_CONSTRAINT = 21;
+
+	/**
+	 * The number of structural features of the '<em>UML Duration Constraint</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int UML_DURATION_CONSTRAINT_FEATURE_COUNT = 0;
 
 
 	/**
@@ -1605,26 +1652,59 @@ public interface TimingDPackage extends EPackage {
 	EClass getDInterval();
 
 	/**
-	 * Returns the meta object for the reference '{@link org.eclipse.uml2.diagram.timing.model.timingd.DInterval#getFromPoint <em>From Point</em>}'.
+	 * Returns the meta object for the reference '{@link org.eclipse.uml2.diagram.timing.model.timingd.DInterval#getDurationConstraint <em>Duration Constraint</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>From Point</em>'.
-	 * @see org.eclipse.uml2.diagram.timing.model.timingd.DInterval#getFromPoint()
+	 * @return the meta object for the reference '<em>Duration Constraint</em>'.
+	 * @see org.eclipse.uml2.diagram.timing.model.timingd.DInterval#getDurationConstraint()
 	 * @see #getDInterval()
 	 * @generated
 	 */
-	EReference getDInterval_FromPoint();
+	EReference getDInterval_DurationConstraint();
 
 	/**
-	 * Returns the meta object for the reference '{@link org.eclipse.uml2.diagram.timing.model.timingd.DInterval#getToPoint <em>To Point</em>}'.
+	 * Returns the meta object for the attribute '{@link org.eclipse.uml2.diagram.timing.model.timingd.DInterval#getDuration <em>Duration</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>To Point</em>'.
-	 * @see org.eclipse.uml2.diagram.timing.model.timingd.DInterval#getToPoint()
+	 * @return the meta object for the attribute '<em>Duration</em>'.
+	 * @see org.eclipse.uml2.diagram.timing.model.timingd.DInterval#getDuration()
 	 * @see #getDInterval()
 	 * @generated
 	 */
-	EReference getDInterval_ToPoint();
+	EAttribute getDInterval_Duration();
+
+	/**
+	 * Returns the meta object for the container reference '{@link org.eclipse.uml2.diagram.timing.model.timingd.DInterval#getFrame <em>Frame</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the container reference '<em>Frame</em>'.
+	 * @see org.eclipse.uml2.diagram.timing.model.timingd.DInterval#getFrame()
+	 * @see #getDInterval()
+	 * @generated
+	 */
+	EReference getDInterval_Frame();
+
+	/**
+	 * Returns the meta object for the reference '{@link org.eclipse.uml2.diagram.timing.model.timingd.DInterval#getFromTick <em>From Tick</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>From Tick</em>'.
+	 * @see org.eclipse.uml2.diagram.timing.model.timingd.DInterval#getFromTick()
+	 * @see #getDInterval()
+	 * @generated
+	 */
+	EReference getDInterval_FromTick();
+
+	/**
+	 * Returns the meta object for the reference '{@link org.eclipse.uml2.diagram.timing.model.timingd.DInterval#getToTick <em>To Tick</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>To Tick</em>'.
+	 * @see org.eclipse.uml2.diagram.timing.model.timingd.DInterval#getToTick()
+	 * @see #getDInterval()
+	 * @generated
+	 */
+	EReference getDInterval_ToTick();
 
 	/**
 	 * Returns the meta object for class '{@link org.eclipse.uml2.diagram.timing.model.timingd.DPointConstraint <em>DPoint Constraint</em>}'.
@@ -1777,6 +1857,17 @@ public interface TimingDPackage extends EPackage {
 	 * @generated
 	 */
 	EClass getUMLMessage();
+
+	/**
+	 * Returns the meta object for class '{@link org.eclipse.uml2.uml.DurationConstraint <em>UML Duration Constraint</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>UML Duration Constraint</em>'.
+	 * @see org.eclipse.uml2.uml.DurationConstraint
+	 * @model instanceClass="org.eclipse.uml2.uml.DurationConstraint"
+	 * @generated
+	 */
+	EClass getUMLDurationConstraint();
 
 	/**
 	 * Returns the factory that creates the instances of the model.
@@ -2273,20 +2364,44 @@ public interface TimingDPackage extends EPackage {
 		EClass DINTERVAL = eINSTANCE.getDInterval();
 
 		/**
-		 * The meta object literal for the '<em><b>From Point</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>Duration Constraint</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference DINTERVAL__FROM_POINT = eINSTANCE.getDInterval_FromPoint();
+		EReference DINTERVAL__DURATION_CONSTRAINT = eINSTANCE.getDInterval_DurationConstraint();
 
 		/**
-		 * The meta object literal for the '<em><b>To Point</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>Duration</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference DINTERVAL__TO_POINT = eINSTANCE.getDInterval_ToPoint();
+		EAttribute DINTERVAL__DURATION = eINSTANCE.getDInterval_Duration();
+
+		/**
+		 * The meta object literal for the '<em><b>Frame</b></em>' container reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference DINTERVAL__FRAME = eINSTANCE.getDInterval_Frame();
+
+		/**
+		 * The meta object literal for the '<em><b>From Tick</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference DINTERVAL__FROM_TICK = eINSTANCE.getDInterval_FromTick();
+
+		/**
+		 * The meta object literal for the '<em><b>To Tick</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference DINTERVAL__TO_TICK = eINSTANCE.getDInterval_ToTick();
 
 		/**
 		 * The meta object literal for the '{@link org.eclipse.uml2.diagram.timing.model.timingd.impl.DPointConstraintImpl <em>DPoint Constraint</em>}' class.
@@ -2417,6 +2532,16 @@ public interface TimingDPackage extends EPackage {
 		 * @generated
 		 */
 		EClass UML_MESSAGE = eINSTANCE.getUMLMessage();
+
+		/**
+		 * The meta object literal for the '{@link org.eclipse.uml2.uml.DurationConstraint <em>UML Duration Constraint</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.eclipse.uml2.uml.DurationConstraint
+		 * @see org.eclipse.uml2.diagram.timing.model.timingd.impl.TimingDPackageImpl#getUMLDurationConstraint()
+		 * @generated
+		 */
+		EClass UML_DURATION_CONSTRAINT = eINSTANCE.getUMLDurationConstraint();
 
 	}
 

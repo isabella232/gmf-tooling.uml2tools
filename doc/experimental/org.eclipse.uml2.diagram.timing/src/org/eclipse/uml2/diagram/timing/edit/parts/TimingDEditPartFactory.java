@@ -75,6 +75,12 @@ public class TimingDEditPartFactory implements EditPartFactory {
 
 			case DMessageDisplayNameEditPart.VISUAL_ID:
 				return new DMessageDisplayNameEditPart(view);
+
+			case DIntervalEditPart.VISUAL_ID:
+				return new DIntervalEditPart(view);
+
+			case DIntervalDurationEditPart.VISUAL_ID:
+				return new DIntervalDurationEditPart(view);
 			}
 		}
 		return createUnrecognizedEditPart(context, model);

@@ -2,7 +2,7 @@
  * <copyright>
  * </copyright>
  *
- * $Id: DIntervalItemProvider.java,v 1.1 2008/09/06 19:46:49 mgolubev Exp $
+ * $Id: DIntervalItemProvider.java,v 1.2 2008/09/09 05:34:10 mgolubev Exp $
  */
 package org.eclipse.uml2.diagram.timing.model.timingd.provider;
 
@@ -22,8 +22,11 @@ import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.IItemPropertySource;
 import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
 import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
+import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ItemProviderAdapter;
 
+import org.eclipse.emf.edit.provider.ViewerNotification;
+import org.eclipse.uml2.diagram.timing.model.timingd.DInterval;
 import org.eclipse.uml2.diagram.timing.model.timingd.TimingDPackage;
 
 /**
@@ -61,26 +64,28 @@ public class DIntervalItemProvider
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addFromPointPropertyDescriptor(object);
-			addToPointPropertyDescriptor(object);
+			addDurationConstraintPropertyDescriptor(object);
+			addDurationPropertyDescriptor(object);
+			addFromTickPropertyDescriptor(object);
+			addToTickPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
 
 	/**
-	 * This adds a property descriptor for the From Point feature.
+	 * This adds a property descriptor for the Duration Constraint feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addFromPointPropertyDescriptor(Object object) {
+	protected void addDurationConstraintPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_DInterval_fromPoint_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_DInterval_fromPoint_feature", "_UI_DInterval_type"),
-				 TimingDPackage.Literals.DINTERVAL__FROM_POINT,
+				 getString("_UI_DInterval_durationConstraint_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_DInterval_durationConstraint_feature", "_UI_DInterval_type"),
+				 TimingDPackage.Literals.DINTERVAL__DURATION_CONSTRAINT,
 				 true,
 				 false,
 				 true,
@@ -90,19 +95,63 @@ public class DIntervalItemProvider
 	}
 
 	/**
-	 * This adds a property descriptor for the To Point feature.
+	 * This adds a property descriptor for the Duration feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addToPointPropertyDescriptor(Object object) {
+	protected void addDurationPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_DInterval_toPoint_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_DInterval_toPoint_feature", "_UI_DInterval_type"),
-				 TimingDPackage.Literals.DINTERVAL__TO_POINT,
+				 getString("_UI_DInterval_duration_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_DInterval_duration_feature", "_UI_DInterval_type"),
+				 TimingDPackage.Literals.DINTERVAL__DURATION,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the From Tick feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addFromTickPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_DInterval_fromTick_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_DInterval_fromTick_feature", "_UI_DInterval_type"),
+				 TimingDPackage.Literals.DINTERVAL__FROM_TICK,
+				 true,
+				 false,
+				 true,
+				 null,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the To Tick feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addToTickPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_DInterval_toTick_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_DInterval_toTick_feature", "_UI_DInterval_type"),
+				 TimingDPackage.Literals.DINTERVAL__TO_TICK,
 				 true,
 				 false,
 				 true,
@@ -130,7 +179,10 @@ public class DIntervalItemProvider
 	 */
 	@Override
 	public String getText(Object object) {
-		return getString("_UI_DInterval_type");
+		String label = ((DInterval)object).getDuration();
+		return label == null || label.length() == 0 ?
+			getString("_UI_DInterval_type") :
+			getString("_UI_DInterval_type") + " " + label;
 	}
 
 	/**
@@ -143,6 +195,12 @@ public class DIntervalItemProvider
 	@Override
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
+
+		switch (notification.getFeatureID(DInterval.class)) {
+			case TimingDPackage.DINTERVAL__DURATION:
+				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
+				return;
+		}
 		super.notifyChanged(notification);
 	}
 

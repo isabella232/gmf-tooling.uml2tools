@@ -2,7 +2,7 @@
  * <copyright>
  * </copyright>
  *
- * $Id: DFrameImpl.java,v 1.3 2008/09/09 00:39:32 mgolubev Exp $
+ * $Id: DFrameImpl.java,v 1.4 2008/09/09 05:34:18 mgolubev Exp $
  */
 package org.eclipse.uml2.diagram.timing.model.timingd.impl;
 
@@ -245,7 +245,7 @@ public class DFrameImpl extends EObjectImpl implements DFrame {
 	 */
 	public EList<DInterval> getIntervals() {
 		if (intervals == null) {
-			intervals = new EObjectContainmentEList<DInterval>(DInterval.class, this, TimingDPackage.DFRAME__INTERVALS);
+			intervals = new EObjectContainmentWithInverseEList<DInterval>(DInterval.class, this, TimingDPackage.DFRAME__INTERVALS, TimingDPackage.DINTERVAL__FRAME);
 		}
 		return intervals;
 	}
@@ -277,6 +277,8 @@ public class DFrameImpl extends EObjectImpl implements DFrame {
 				return basicSetContainer((DFrameContainer)otherEnd, msgs);
 			case TimingDPackage.DFRAME__BLOCKS:
 				return ((InternalEList<InternalEObject>)(InternalEList<?>)getBlocks()).basicAdd(otherEnd, msgs);
+			case TimingDPackage.DFRAME__INTERVALS:
+				return ((InternalEList<InternalEObject>)(InternalEList<?>)getIntervals()).basicAdd(otherEnd, msgs);
 			case TimingDPackage.DFRAME__MESSAGES:
 				return ((InternalEList<InternalEObject>)(InternalEList<?>)getMessages()).basicAdd(otherEnd, msgs);
 		}

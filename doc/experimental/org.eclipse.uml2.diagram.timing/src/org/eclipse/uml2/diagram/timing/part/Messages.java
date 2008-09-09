@@ -339,6 +339,16 @@ public class Messages extends NLS {
 	/**
 	 * @generated
 	 */
+	public static String Duration2CreationTool_title;
+
+	/**
+	 * @generated
+	 */
+	public static String Duration2CreationTool_desc;
+
+	/**
+	 * @generated
+	 */
 	public static String CommandName_OpenDiagram;
 
 	/**
@@ -379,6 +389,16 @@ public class Messages extends NLS {
 	/**
 	 * @generated
 	 */
+	public static String NavigatorGroupName_DTick_3007_incominglinks;
+
+	/**
+	 * @generated
+	 */
+	public static String NavigatorGroupName_DTick_3007_outgoinglinks;
+
+	/**
+	 * @generated
+	 */
 	public static String NavigatorGroupName_DStateSwitch_4001_target;
 
 	/**
@@ -395,6 +415,16 @@ public class Messages extends NLS {
 	 * @generated
 	 */
 	public static String NavigatorGroupName_DMessage_4002_source;
+
+	/**
+	 * @generated
+	 */
+	public static String NavigatorGroupName_DInterval_4003_target;
+
+	/**
+	 * @generated
+	 */
+	public static String NavigatorGroupName_DInterval_4003_source;
 
 	/**
 	 * @generated

@@ -2,7 +2,7 @@
  * <copyright>
  * </copyright>
  *
- * $Id: TimingDAdapterFactory.java,v 1.4 2008/09/09 01:27:29 mgolubev Exp $
+ * $Id: TimingDAdapterFactory.java,v 1.5 2008/09/09 05:34:18 mgolubev Exp $
  */
 package org.eclipse.uml2.diagram.timing.model.timingd.util;
 
@@ -26,6 +26,7 @@ import org.eclipse.uml2.diagram.timing.model.timingd.DStateSwitch;
 import org.eclipse.uml2.diagram.timing.model.timingd.DValueLine;
 import org.eclipse.uml2.diagram.timing.model.timingd.TimingDPackage;
 import org.eclipse.uml2.uml.Constraint;
+import org.eclipse.uml2.uml.DurationConstraint;
 import org.eclipse.uml2.uml.Interaction;
 import org.eclipse.uml2.uml.Lifeline;
 import org.eclipse.uml2.uml.Message;
@@ -171,6 +172,10 @@ public class TimingDAdapterFactory extends AdapterFactoryImpl {
 			@Override
 			public Adapter caseUMLMessage(Message object) {
 				return createUMLMessageAdapter();
+			}
+			@Override
+			public Adapter caseUMLDurationConstraint(DurationConstraint object) {
+				return createUMLDurationConstraintAdapter();
 			}
 			@Override
 			public Adapter defaultCase(EObject object) {
@@ -483,6 +488,20 @@ public class TimingDAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createUMLMessageAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.eclipse.uml2.uml.DurationConstraint <em>UML Duration Constraint</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.eclipse.uml2.uml.DurationConstraint
+	 * @generated
+	 */
+	public Adapter createUMLDurationConstraintAdapter() {
 		return null;
 	}
 

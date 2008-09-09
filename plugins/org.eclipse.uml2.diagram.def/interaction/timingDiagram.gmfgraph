@@ -10,6 +10,17 @@
         xsi:type="gmfgraph:CustomDecoration"
         name="MessageDestinationDecoration"
         qualifiedClassName="org.eclipse.uml2.diagram.timing.draw2d.MessageDestinationDecoration"/>
+    <figures
+        xsi:type="gmfgraph:PolylineDecoration"
+        name="DurationDecoration">
+      <template
+          x="-2"
+          y="2"/>
+      <template/>
+      <template
+          x="-2"
+          y="-2"/>
+    </figures>
     <descriptors
         name="InteractionFigure">
       <actualFigure
@@ -237,6 +248,20 @@
             dy="20"/>
       </actualFigure>
     </descriptors>
+    <descriptors
+        name="IntervalFigure">
+      <actualFigure
+          xsi:type="gmfgraph:PolylineConnection"
+          name="IntervalFigure"
+          sourceDecoration="//@figures.0/@figures.1"
+          targetDecoration="//@figures.0/@figures.1"/>
+    </descriptors>
+    <descriptors
+        name="IntervalFigure_duration">
+      <actualFigure
+          xsi:type="gmfgraph:Label"
+          name="IntervalFigure_duration"/>
+    </descriptors>
   </figures>
   <nodes
       name="InteractionNode"
@@ -301,6 +326,7 @@
   <nodes
       name="TickNode"
       figure="TickFigure"
+      resizeConstraint="NORTH"
       affixedParentSide="NORTH">
     <facets
         xsi:type="gmfgraph:DefaultSizeFacet">
@@ -315,6 +341,9 @@
   <connections
       name="MessageLink"
       figure="MessageFigure"/>
+  <connections
+      name="IntervalLink"
+      figure="IntervalFigure"/>
   <compartments
       name="InteractionContentsCompartment"
       figure="InteractionFigure"
@@ -338,4 +367,15 @@
       name="Message_name"
       figure="MessageFigure_name"
       elementIcon="false"/>
+  <labels
+      name="Interval_duration"
+      figure="IntervalFigure_duration"
+      elementIcon="false">
+    <facets
+        xsi:type="gmfgraph:LabelOffsetFacet"
+        y="-10"/>
+    <facets
+        xsi:type="gmfgraph:AlignmentFacet"
+        alignment="CENTER"/>
+  </labels>
 </gmfgraph:Canvas>

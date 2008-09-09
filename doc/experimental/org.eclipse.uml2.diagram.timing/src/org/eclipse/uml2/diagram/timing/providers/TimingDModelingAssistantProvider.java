@@ -27,6 +27,7 @@ import org.eclipse.uml2.diagram.timing.edit.parts.DSegmentEditPart;
 import org.eclipse.uml2.diagram.timing.edit.parts.DSegmentEndEditPart;
 import org.eclipse.uml2.diagram.timing.edit.parts.DSegmentMiddlePointEditPart;
 import org.eclipse.uml2.diagram.timing.edit.parts.DSegmentStartEditPart;
+import org.eclipse.uml2.diagram.timing.edit.parts.DTickEditPart;
 import org.eclipse.uml2.diagram.timing.edit.parts.DValueLineEditPart;
 import org.eclipse.uml2.diagram.timing.part.Messages;
 import org.eclipse.uml2.diagram.timing.part.TimingDDiagramEditorPlugin;
@@ -92,6 +93,9 @@ public class TimingDModelingAssistantProvider extends ModelingAssistantProvider 
 		if (sourceEditPart instanceof DSegmentEndEditPart) {
 			return ((DSegmentEndEditPart) sourceEditPart).getMARelTypesOnSource();
 		}
+		if (sourceEditPart instanceof DTickEditPart) {
+			return ((DTickEditPart) sourceEditPart).getMARelTypesOnSource();
+		}
 		return Collections.EMPTY_LIST;
 	}
 
@@ -108,6 +112,9 @@ public class TimingDModelingAssistantProvider extends ModelingAssistantProvider 
 		}
 		if (targetEditPart instanceof DSegmentEndEditPart) {
 			return ((DSegmentEndEditPart) targetEditPart).getMARelTypesOnTarget();
+		}
+		if (targetEditPart instanceof DTickEditPart) {
+			return ((DTickEditPart) targetEditPart).getMARelTypesOnTarget();
 		}
 		return Collections.EMPTY_LIST;
 	}
@@ -127,6 +134,9 @@ public class TimingDModelingAssistantProvider extends ModelingAssistantProvider 
 		if (sourceEditPart instanceof DSegmentEndEditPart) {
 			return ((DSegmentEndEditPart) sourceEditPart).getMARelTypesOnSourceAndTarget(targetEditPart);
 		}
+		if (sourceEditPart instanceof DTickEditPart) {
+			return ((DTickEditPart) sourceEditPart).getMARelTypesOnSourceAndTarget(targetEditPart);
+		}
 		return Collections.EMPTY_LIST;
 	}
 
@@ -144,6 +154,9 @@ public class TimingDModelingAssistantProvider extends ModelingAssistantProvider 
 		if (targetEditPart instanceof DSegmentEndEditPart) {
 			return ((DSegmentEndEditPart) targetEditPart).getMATypesForSource(relationshipType);
 		}
+		if (targetEditPart instanceof DTickEditPart) {
+			return ((DTickEditPart) targetEditPart).getMATypesForSource(relationshipType);
+		}
 		return Collections.EMPTY_LIST;
 	}
 
@@ -160,6 +173,9 @@ public class TimingDModelingAssistantProvider extends ModelingAssistantProvider 
 		}
 		if (sourceEditPart instanceof DSegmentEndEditPart) {
 			return ((DSegmentEndEditPart) sourceEditPart).getMATypesForTarget(relationshipType);
+		}
+		if (sourceEditPart instanceof DTickEditPart) {
+			return ((DTickEditPart) sourceEditPart).getMATypesForTarget(relationshipType);
 		}
 		return Collections.EMPTY_LIST;
 	}

@@ -2,7 +2,7 @@
  * <copyright>
  * </copyright>
  *
- * $Id: DFrame.java,v 1.3 2008/09/09 00:39:32 mgolubev Exp $
+ * $Id: DFrame.java,v 1.4 2008/09/09 05:34:18 mgolubev Exp $
  */
 package org.eclipse.uml2.diagram.timing.model.timingd;
 
@@ -133,6 +133,7 @@ public interface DFrame extends EObject {
 	/**
 	 * Returns the value of the '<em><b>Intervals</b></em>' containment reference list.
 	 * The list contents are of type {@link org.eclipse.uml2.diagram.timing.model.timingd.DInterval}.
+	 * It is bidirectional and its opposite is '{@link org.eclipse.uml2.diagram.timing.model.timingd.DInterval#getFrame <em>Frame</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Intervals</em>' containment reference list isn't clear,
@@ -141,7 +142,8 @@ public interface DFrame extends EObject {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Intervals</em>' containment reference list.
 	 * @see org.eclipse.uml2.diagram.timing.model.timingd.TimingDPackage#getDFrame_Intervals()
-	 * @model containment="true"
+	 * @see org.eclipse.uml2.diagram.timing.model.timingd.DInterval#getFrame
+	 * @model opposite="frame" containment="true"
 	 * @generated
 	 */
 	EList<DInterval> getIntervals();

@@ -204,6 +204,30 @@
         xsi:type="ecore:EReference"
         href="../../../plugin/org.eclipse.uml2.diagram.timing.model/model/timing-diagram.ecore#//DMessage/messageTarget"/>
   </links>
+  <links>
+    <domainMetaElement
+        href="../../../plugin/org.eclipse.uml2.diagram.timing.model/model/timing-diagram.ecore#//DInterval"/>
+    <labelMappings
+        xsi:type="gmfmap:FeatureLabelMapping">
+      <diagramLabel
+          href="timingDiagram.gmfgraph#Interval_duration"/>
+      <features
+          href="../../../plugin/org.eclipse.uml2.diagram.timing.model/model/timing-diagram.ecore#//DInterval/duration"/>
+    </labelMappings>
+    <containmentFeature
+        href="../../../plugin/org.eclipse.uml2.diagram.timing.model/model/timing-diagram.ecore#//DFrame/intervals"/>
+    <tool
+        xsi:type="gmftool:CreationTool"
+        href="timingDiagram.gmftool#//@palette/@tools.1/@tools.1"/>
+    <diagramLink
+        href="timingDiagram.gmfgraph#IntervalLink"/>
+    <sourceMetaFeature
+        xsi:type="ecore:EReference"
+        href="../../../plugin/org.eclipse.uml2.diagram.timing.model/model/timing-diagram.ecore#//DInterval/fromTick"/>
+    <linkMetaFeature
+        xsi:type="ecore:EReference"
+        href="../../../plugin/org.eclipse.uml2.diagram.timing.model/model/timing-diagram.ecore#//DInterval/toTick"/>
+  </links>
   <diagram>
     <diagramCanvas
         href="timingDiagram.gmfgraph#TimingDiagramSurface"/>
