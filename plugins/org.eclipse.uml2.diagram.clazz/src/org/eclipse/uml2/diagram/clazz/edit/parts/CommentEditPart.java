@@ -8,8 +8,6 @@ import java.util.Map;
 import java.util.Set;
 
 import org.eclipse.draw2d.IFigure;
-import org.eclipse.draw2d.Label;
-import org.eclipse.draw2d.MarginBorder;
 import org.eclipse.draw2d.Shape;
 import org.eclipse.draw2d.StackLayout;
 import org.eclipse.emf.common.notify.Notification;
@@ -31,6 +29,7 @@ import org.eclipse.gmf.runtime.diagram.ui.editparts.ShapeNodeEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editpolicies.CanonicalEditPolicy;
 import org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles;
 import org.eclipse.gmf.runtime.draw2d.ui.figures.ConstrainedToolbarLayout;
+import org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel;
 import org.eclipse.gmf.runtime.emf.type.core.IElementType;
 import org.eclipse.gmf.runtime.gef.ui.figures.DefaultSizeNodeFigure;
 import org.eclipse.gmf.runtime.gef.ui.figures.NodeFigure;
@@ -142,7 +141,7 @@ public class CommentEditPart extends ShapeNodeEditPart implements PrimaryShapeEd
 	 */
 	protected boolean addFixedChild(EditPart childEditPart) {
 		if (childEditPart instanceof CommentBodyEditPart) {
-			((CommentBodyEditPart) childEditPart).setLabel(getPrimaryShape().getFigureCommentFigure_Body());
+			((CommentBodyEditPart) childEditPart).setLabel(getPrimaryShape().getBodyLabel());
 			return true;
 		}
 		return false;
@@ -570,27 +569,9 @@ public class CommentEditPart extends ShapeNodeEditPart implements PrimaryShapeEd
 		/**
 		 * @generated
 		 */
-		private Label fFigureCommentFigure_Body;
-
-		/**
-		 * @generated
-		 */
 		public CommentFigure() {
 
-			createContents();
-		}
-
-		/**
-		 * @generated
-		 */
-		private void createContents() {
-
-			fFigureCommentFigure_Body = new Label();
-			fFigureCommentFigure_Body.setText("");
-
-			fFigureCommentFigure_Body.setBorder(new MarginBorder(getMapMode().DPtoLP(5), getMapMode().DPtoLP(5), getMapMode().DPtoLP(5), getMapMode().DPtoLP(14)));
-
-			this.add(fFigureCommentFigure_Body);
+			this.setTextLabelWrap(true);
 
 		}
 
@@ -616,8 +597,8 @@ public class CommentEditPart extends ShapeNodeEditPart implements PrimaryShapeEd
 		/**
 		 * @generated
 		 */
-		public Label getFigureCommentFigure_Body() {
-			return fFigureCommentFigure_Body;
+		public WrappingLabel getBodyLabel() {
+			return super.getBodyLabel();
 		}
 
 	}

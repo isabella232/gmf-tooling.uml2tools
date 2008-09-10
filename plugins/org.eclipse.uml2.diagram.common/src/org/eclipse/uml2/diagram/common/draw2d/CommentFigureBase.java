@@ -11,15 +11,31 @@
  */
 package org.eclipse.uml2.diagram.common.draw2d;
 
+import org.eclipse.draw2d.MarginBorder;
 import org.eclipse.draw2d.geometry.Insets;
 import org.eclipse.gmf.runtime.diagram.ui.figures.NoteFigure;
+import org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel;
 
 public class CommentFigureBase extends NoteFigure {
+	private WrappingLabel myBody;
+
 	public CommentFigureBase() {
 		this(100, 65, new Insets());
 	}
-	
-	public CommentFigureBase(int width, int height, Insets insets){
+
+	public CommentFigureBase(int width, int height, Insets insets) {
 		super(width, height, insets);
+		myBody = new WrappingLabel();
+		myBody.setBorder(new MarginBorder(5, 5, 5, 14));
+		add(myBody);
 	}
+	
+	public WrappingLabel getBodyLabel(){
+		return myBody;
+	}
+	
+	protected void setTextLabelWrap(boolean wrap){
+		getBodyLabel().setTextWrap(wrap);
+	}
+	
 }
