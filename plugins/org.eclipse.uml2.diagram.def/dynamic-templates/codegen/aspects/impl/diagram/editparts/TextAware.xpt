@@ -21,7 +21,20 @@
 		«targetDef.proceed()»
 		
 		«EXPAND refreshFeedback -»
+		
+		«EXPAND getLabelDelegate -»
+		
+		«EXPAND getAdapter -»
 «ENDAROUND»		
+
+«AROUND fields FOR gmfgen::GenCommonBase-»
+		«targetDef.proceed()»
+		
+		«EXPAND xpt::Common::generatedMemberComment»
+		org.eclipse.gmf.runtime.diagram.ui.label.ILabelDelegate labelDelegate;
+		
+	
+«ENDAROUND»
 
 «DEFINE refreshFeedback FOR gmfgen::GenCommonBase-»
 	«EXPAND xpt::Common::generatedMemberComment»
@@ -111,3 +124,46 @@
 		}
 	}
 «ENDAROUND»
+
+«AROUND getManager(gmfgen::GenDiagram diagram) FOR gmfgen::GenCommonBase-»
+	«EXPAND xpt::Common::generatedMemberComment»
+	protected org.eclipse.gef.tools.DirectEditManager getManager() {
+		if (manager == null) {
+			setManager(new org.eclipse.gmf.runtime.diagram.ui.tools.TextDirectEditManager(this,
+				«REM»see #246881
+				org.eclipse.gmf.runtime.diagram.ui.tools.TextDirectEditManager.getTextCellEditorClass(this),
+				«ENDREM»«-»
+				null, 
+				«diagram.getEditPartFactoryQualifiedClassName()».getTextCellEditorLocator(this)));
+		}
+		return manager;
+	}
+«ENDAROUND»
+
+«DEFINE getLabelDelegate FOR gmfgen::GenCommonBase-»
+	«EXPAND xpt::Common::generatedMemberComment»
+	private org.eclipse.gmf.runtime.diagram.ui.label.ILabelDelegate getLabelDelegate(){
+		if (labelDelegate == null){
+			org.eclipse.draw2d.IFigure label = getFigure();
+			if (label instanceof org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel){
+				labelDelegate = new org.eclipse.gmf.runtime.diagram.ui.label.WrappingLabelDelegate((org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel)label);
+			} else {
+				labelDelegate = new org.eclipse.uml2.diagram.common.draw2d.SimpleLabelDelegate((org.eclipse.draw2d.Label)label);
+			}
+		}
+		return labelDelegate;
+	}
+
+«ENDDEFINE»
+
+«DEFINE getAdapter FOR gmfgen::GenCommonBase-»
+	«EXPAND xpt::Common::generatedMemberComment»
+	@Override
+	public Object getAdapter(Class key) {
+		if (org.eclipse.gmf.runtime.diagram.ui.label.ILabelDelegate.class.equals(key)){
+			return getLabelDelegate();
+		}
+		return super.getAdapter(key);
+	}
+
+«ENDDEFINE»
