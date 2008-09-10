@@ -31,6 +31,8 @@ import org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.ITextAwareEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editpolicies.LabelDirectEditPolicy;
 import org.eclipse.gmf.runtime.diagram.ui.l10n.DiagramColorRegistry;
+import org.eclipse.gmf.runtime.diagram.ui.label.ILabelDelegate;
+import org.eclipse.gmf.runtime.diagram.ui.label.WrappingLabelDelegate;
 import org.eclipse.gmf.runtime.diagram.ui.requests.RequestConstants;
 import org.eclipse.gmf.runtime.diagram.ui.tools.TextDirectEditManager;
 import org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel;
@@ -50,6 +52,7 @@ import org.eclipse.uml2.diagram.activity.edit.policies.UMLTextSelectionEditPolic
 import org.eclipse.uml2.diagram.activity.part.UMLVisualIDRegistry;
 import org.eclipse.uml2.diagram.activity.providers.UMLElementTypes;
 import org.eclipse.uml2.diagram.activity.providers.UMLParserProvider;
+import org.eclipse.uml2.diagram.common.draw2d.SimpleLabelDelegate;
 import org.eclipse.uml2.diagram.common.editpolicies.IRefreshableFeedbackEditPolicy;
 
 /**
@@ -81,6 +84,11 @@ public class OpaqueBehaviorNameEditPart extends CompartmentEditPart implements I
 	 * @generated
 	 */
 	private String defaultText;
+
+	/**
+	 * @generated
+	 */
+	ILabelDelegate labelDelegate;
 
 	/**
 	 * @generated
@@ -300,7 +308,7 @@ public class OpaqueBehaviorNameEditPart extends CompartmentEditPart implements I
 	 */
 	protected DirectEditManager getManager() {
 		if (manager == null) {
-			setManager(new TextDirectEditManager(this, TextDirectEditManager.getTextCellEditorClass(this), UMLEditPartFactory.getTextCellEditorLocator(this)));
+			setManager(new TextDirectEditManager(this, null, UMLEditPartFactory.getTextCellEditorLocator(this)));
 		}
 		return manager;
 	}
@@ -483,6 +491,32 @@ public class OpaqueBehaviorNameEditPart extends CompartmentEditPart implements I
 		if (pdEditPolicy instanceof IRefreshableFeedbackEditPolicy) {
 			((IRefreshableFeedbackEditPolicy) pdEditPolicy).refreshFeedback();
 		}
+	}
+
+	/**
+	 * @generated
+	 */
+	private ILabelDelegate getLabelDelegate() {
+		if (labelDelegate == null) {
+			IFigure label = getFigure();
+			if (label instanceof WrappingLabel) {
+				labelDelegate = new WrappingLabelDelegate((WrappingLabel) label);
+			} else {
+				labelDelegate = new SimpleLabelDelegate((Label) label);
+			}
+		}
+		return labelDelegate;
+	}
+
+	/**
+	 * @generated
+	 */
+	@Override
+	public Object getAdapter(Class key) {
+		if (ILabelDelegate.class.equals(key)) {
+			return getLabelDelegate();
+		}
+		return super.getAdapter(key);
 	}
 
 	/**

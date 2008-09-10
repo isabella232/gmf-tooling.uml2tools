@@ -13,6 +13,7 @@ import org.eclipse.draw2d.StackLayout;
 import org.eclipse.draw2d.ToolbarLayout;
 import org.eclipse.draw2d.geometry.Dimension;
 import org.eclipse.emf.common.notify.Notification;
+import org.eclipse.emf.ecore.EObject;
 import org.eclipse.gef.EditPart;
 import org.eclipse.gef.EditPolicy;
 import org.eclipse.gef.GraphicalEditPart;
@@ -26,6 +27,7 @@ import org.eclipse.gmf.runtime.diagram.ui.editparts.AbstractBorderedShapeEditPar
 import org.eclipse.gmf.runtime.diagram.ui.editparts.IBorderItemEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editpolicies.BorderItemSelectionEditPolicy;
+import org.eclipse.gmf.runtime.diagram.ui.editpolicies.CanonicalEditPolicy;
 import org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles;
 import org.eclipse.gmf.runtime.diagram.ui.figures.BorderItemLocator;
 import org.eclipse.gmf.runtime.draw2d.ui.figures.ConstrainedToolbarLayout;
@@ -1691,7 +1693,9 @@ public class DataStoreNodeEditPart extends AbstractBorderedShapeEditPart impleme
 	 */
 	protected void handleNotificationEvent(Notification event) {
 		super.handleNotificationEvent(event);
-		handleFeatureLinkModification(event);
+		if (isCanonicalEnabled()) {
+			handleFeatureLinkModification(event);
+		}
 	}
 
 	/**
@@ -1702,6 +1706,27 @@ public class DataStoreNodeEditPart extends AbstractBorderedShapeEditPart impleme
 			refreshDiagram();
 			return;
 		}
+	}
+
+	/**
+	 * @generated
+	 */
+	private boolean isCanonicalEnabled() {
+		//this particular edit part may not have editpolicy at all, 
+		//but its compartments still may have it
+		EObject semantic = resolveSemanticElement();
+		if (semantic == null) {
+			return false;
+		}
+		for (Object next : CanonicalEditPolicy.getRegisteredEditPolicies(semantic)) {
+			if (next instanceof CanonicalEditPolicy) {
+				CanonicalEditPolicy nextPolicy = (CanonicalEditPolicy) next;
+				if (nextPolicy.isEnabled()) {
+					return true;
+				}
+			}
+		}
+		return false;
 	}
 
 	/**

@@ -158,9 +158,9 @@ public class UMLEditPartFactory implements EditPartFactory {
 	 * @generated
 	 */
 	public static CellEditorLocator getTextCellEditorLocator(ITextAwareEditPart source) {
-		if (source.getFigure() instanceof WrappingLabel)
+		if (source.getFigure() instanceof WrappingLabel) {
 			return new TextCellEditorLocator((WrappingLabel) source.getFigure());
-		else {
+		} else {
 			return new LabelCellEditorLocator((Label) source.getFigure());
 		}
 	}
