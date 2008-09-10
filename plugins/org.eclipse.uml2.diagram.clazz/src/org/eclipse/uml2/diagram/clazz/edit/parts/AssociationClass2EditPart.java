@@ -37,6 +37,7 @@ import org.eclipse.gmf.runtime.diagram.ui.editparts.IBorderItemEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.ITextAwareEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editpolicies.BorderItemSelectionEditPolicy;
+import org.eclipse.gmf.runtime.diagram.ui.editpolicies.CanonicalEditPolicy;
 import org.eclipse.gmf.runtime.diagram.ui.editpolicies.ConstrainedToolbarLayoutEditPolicy;
 import org.eclipse.gmf.runtime.diagram.ui.editpolicies.DragDropEditPolicy;
 import org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles;
@@ -1800,7 +1801,9 @@ public class AssociationClass2EditPart extends AbstractBorderedShapeEditPart imp
 		} else {
 			super.handleNotificationEvent(event);
 		}
-		handleTypeLinkModification(event);
+		if (isCanonicalEnabled()) {
+			handleTypeLinkModification(event);
+		}
 	}
 
 	/**
@@ -2483,6 +2486,27 @@ public class AssociationClass2EditPart extends AbstractBorderedShapeEditPart imp
 			}
 			}
 		}
+	}
+
+	/**
+	 * @generated
+	 */
+	private boolean isCanonicalEnabled() {
+		//this particular edit part may not have editpolicy at all, 
+		//but its compartments still may have it
+		EObject semantic = resolveSemanticElement();
+		if (semantic == null) {
+			return false;
+		}
+		for (Object next : CanonicalEditPolicy.getRegisteredEditPolicies(semantic)) {
+			if (next instanceof CanonicalEditPolicy) {
+				CanonicalEditPolicy nextPolicy = (CanonicalEditPolicy) next;
+				if (nextPolicy.isEnabled()) {
+					return true;
+				}
+			}
+		}
+		return false;
 	}
 
 	/**

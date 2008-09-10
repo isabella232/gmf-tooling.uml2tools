@@ -35,6 +35,7 @@ import org.eclipse.gmf.runtime.diagram.core.listener.DiagramEventBroker;
 import org.eclipse.gmf.runtime.diagram.core.listener.NotificationListener;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.ShapeNodeEditPart;
+import org.eclipse.gmf.runtime.diagram.ui.editpolicies.CanonicalEditPolicy;
 import org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles;
 import org.eclipse.gmf.runtime.draw2d.ui.figures.ConstrainedToolbarLayout;
 import org.eclipse.gmf.runtime.emf.type.core.IElementType;
@@ -1394,7 +1395,9 @@ public class Package6EditPart extends ShapeNodeEditPart implements PrimaryShapeE
 	 */
 	protected void handleNotificationEvent(Notification event) {
 		super.handleNotificationEvent(event);
-		handleTypeLinkModification(event);
+		if (isCanonicalEnabled()) {
+			handleTypeLinkModification(event);
+		}
 	}
 
 	/**
@@ -1746,6 +1749,27 @@ public class Package6EditPart extends ShapeNodeEditPart implements PrimaryShapeE
 			}
 			}
 		}
+	}
+
+	/**
+	 * @generated
+	 */
+	private boolean isCanonicalEnabled() {
+		//this particular edit part may not have editpolicy at all, 
+		//but its compartments still may have it
+		EObject semantic = resolveSemanticElement();
+		if (semantic == null) {
+			return false;
+		}
+		for (Object next : CanonicalEditPolicy.getRegisteredEditPolicies(semantic)) {
+			if (next instanceof CanonicalEditPolicy) {
+				CanonicalEditPolicy nextPolicy = (CanonicalEditPolicy) next;
+				if (nextPolicy.isEnabled()) {
+					return true;
+				}
+			}
+		}
+		return false;
 	}
 
 	/**

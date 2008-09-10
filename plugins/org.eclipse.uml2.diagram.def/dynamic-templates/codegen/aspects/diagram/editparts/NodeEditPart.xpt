@@ -56,6 +56,7 @@
 	«ENDIF-»
 	
 	«IF !isDiagramHeader(this) && (!getOutgoingAndContainedTypeLinks(this).isEmpty() || !getOutgoingLinksFeatureModelFacets(this).isEmpty())-»
+		«EXPAND isCanonicalEnabled-»
 		«EXPAND aspects::diagram::editparts::DiagramEditPart::refreshDiagram-»
 	«ENDIF-»
 	
@@ -305,11 +306,17 @@
 	«EXPAND xpt::Common::generatedMemberComment»
 	protected void handleNotificationEvent(org.eclipse.emf.common.notify.Notification event) {
 		«EXPAND handleNotificationEventForShortcuts-»
-		«IF !isDiagramHeader(this) && !getOutgoingAndContainedTypeLinks(this).isEmpty()-»
-			handleTypeLinkModification(event);
+		«IF !isDiagramHeader(this)-»
+		«IF !getOutgoingAndContainedTypeLinks(this).isEmpty() || !getOutgoingLinksFeatureModelFacets(this).isEmpty()-»
+		if (isCanonicalEnabled()){
+			«IF !getOutgoingAndContainedTypeLinks(this).isEmpty()-»
+				handleTypeLinkModification(event);
+			«ENDIF-»
+			«IF !getOutgoingLinksFeatureModelFacets(this).isEmpty()-»
+				handleFeatureLinkModification(event);
+			«ENDIF-»
+		}
 		«ENDIF-»
-		«IF !isDiagramHeader(this) && !getOutgoingLinksFeatureModelFacets(this).isEmpty()-»
-			handleFeatureLinkModification(event);
 		«ENDIF-»
 	}	
 «ENDDEFINE»
@@ -328,4 +335,26 @@
 		super.reorderChild(child, index);
 		setLayoutConstraint(child, childFigure, constraint);
 	}	
+«ENDDEFINE»
+
+«DEFINE isCanonicalEnabled FOR gmfgen::GenNode»
+	«EXPAND xpt::Common::generatedMemberComment»
+	private boolean isCanonicalEnabled(){
+		//this particular edit part may not have editpolicy at all, 
+		//but its compartments still may have it
+		org.eclipse.emf.ecore.EObject semantic = resolveSemanticElement();
+		if (semantic == null){
+			return false;
+		}
+		for (Object next : org.eclipse.gmf.runtime.diagram.ui.editpolicies.CanonicalEditPolicy.getRegisteredEditPolicies(semantic)){
+			if (next instanceof org.eclipse.gmf.runtime.diagram.ui.editpolicies.CanonicalEditPolicy){
+				org.eclipse.gmf.runtime.diagram.ui.editpolicies.CanonicalEditPolicy nextPolicy = (org.eclipse.gmf.runtime.diagram.ui.editpolicies.CanonicalEditPolicy)next;
+				if (nextPolicy.isEnabled()){
+					return true;
+				}
+			}
+		}
+		return false;
+	}
+
 «ENDDEFINE»
