@@ -8,6 +8,7 @@ import org.eclipse.draw2d.MarginBorder;
 import org.eclipse.draw2d.Shape;
 import org.eclipse.draw2d.StackLayout;
 import org.eclipse.emf.common.notify.Notification;
+import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EcorePackage;
 import org.eclipse.gef.EditPart;
 import org.eclipse.gef.EditPolicy;
@@ -18,6 +19,7 @@ import org.eclipse.gef.editpolicies.NonResizableEditPolicy;
 import org.eclipse.gef.requests.CreateRequest;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.ShapeNodeEditPart;
+import org.eclipse.gmf.runtime.diagram.ui.editpolicies.CanonicalEditPolicy;
 import org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles;
 import org.eclipse.gmf.runtime.draw2d.ui.figures.ConstrainedToolbarLayout;
 import org.eclipse.gmf.runtime.emf.type.core.IElementType;
@@ -478,7 +480,9 @@ public class ConstraintEditPart extends ShapeNodeEditPart implements PrimaryShap
 		} else {
 			super.handleNotificationEvent(event);
 		}
-		handleFeatureLinkModification(event);
+		if (isCanonicalEnabled()) {
+			handleFeatureLinkModification(event);
+		}
 	}
 
 	/**
@@ -489,6 +493,27 @@ public class ConstraintEditPart extends ShapeNodeEditPart implements PrimaryShap
 			refreshDiagram();
 			return;
 		}
+	}
+
+	/**
+	 * @generated
+	 */
+	private boolean isCanonicalEnabled() {
+		//this particular edit part may not have editpolicy at all, 
+		//but its compartments still may have it
+		EObject semantic = resolveSemanticElement();
+		if (semantic == null) {
+			return false;
+		}
+		for (Object next : CanonicalEditPolicy.getRegisteredEditPolicies(semantic)) {
+			if (next instanceof CanonicalEditPolicy) {
+				CanonicalEditPolicy nextPolicy = (CanonicalEditPolicy) next;
+				if (nextPolicy.isEnabled()) {
+					return true;
+				}
+			}
+		}
+		return false;
 	}
 
 	/**
