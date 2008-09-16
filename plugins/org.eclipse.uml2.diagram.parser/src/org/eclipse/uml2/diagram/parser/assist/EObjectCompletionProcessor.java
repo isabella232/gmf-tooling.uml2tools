@@ -56,6 +56,7 @@ public abstract class EObjectCompletionProcessor implements IContentAssistProces
 		int selectionStart = selection.x;
 		int selectionLength = selection.y;
 		String prefix = getPrefix(subjectControl, selectionStart);
+		prefix = getProposalPrefix(prefix);
 		int prefixLength = prefix.length();
 
 		List<ICompletionProposal> result = new LinkedList<ICompletionProposal>();
@@ -107,6 +108,10 @@ public abstract class EObjectCompletionProcessor implements IContentAssistProces
 		} catch (BadLocationException e) {
 			throw new IllegalStateException(e);
 		}
+	}
+	
+	protected String getProposalPrefix(String prefix) {
+		return prefix;
 	}
 
 }

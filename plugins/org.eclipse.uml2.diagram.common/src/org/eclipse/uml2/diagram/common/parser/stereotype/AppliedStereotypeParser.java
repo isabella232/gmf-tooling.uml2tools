@@ -28,10 +28,8 @@ import org.eclipse.gmf.runtime.diagram.ui.commands.CommandProxy;
 import org.eclipse.gmf.runtime.diagram.ui.commands.ICommandProxy;
 import org.eclipse.gmf.runtime.emf.ui.services.parser.ISemanticParser;
 import org.eclipse.jface.text.contentassist.IContentAssistProcessor;
-import org.eclipse.uml2.diagram.common.commands.ApplyOrUnapplyStereotypeCommand;
 import org.eclipse.uml2.diagram.common.commands.ApplyStereotypesCommand;
-import org.eclipse.uml2.diagram.common.commands.RefreshLabelsCommand;
-import org.eclipse.uml2.diagram.parser.assist.FixedSetCompletionProcessor;
+import org.eclipse.uml2.diagram.parser.assist.FixedSetCompletionProcessorWithSeparator;
 import org.eclipse.uml2.uml.Element;
 import org.eclipse.uml2.uml.Extension;
 import org.eclipse.uml2.uml.NamedElement;
@@ -70,7 +68,9 @@ public class AppliedStereotypeParser implements ISemanticParser {
 		for (Stereotype next : remaining) {
 			names.add(next.getName());
 		}
-		return new FixedSetCompletionProcessor(names);
+		FixedSetCompletionProcessorWithSeparator processor = new FixedSetCompletionProcessorWithSeparator(names, ",");
+		processor.setContext(element);
+		return processor;
 	}
 
 	public String getEditString(IAdaptable element, int flags) {
