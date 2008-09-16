@@ -19,12 +19,18 @@ import org.eclipse.core.runtime.IAdaptable;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EStructuralFeature;
+import org.eclipse.emf.transaction.util.TransactionUtil;
+import org.eclipse.gef.commands.CompoundCommand;
 import org.eclipse.gmf.runtime.common.core.command.ICommand;
-import org.eclipse.gmf.runtime.common.core.command.UnexecutableCommand;
 import org.eclipse.gmf.runtime.common.ui.services.parser.IParserEditStatus;
 import org.eclipse.gmf.runtime.common.ui.services.parser.ParserEditStatus;
+import org.eclipse.gmf.runtime.diagram.ui.commands.CommandProxy;
+import org.eclipse.gmf.runtime.diagram.ui.commands.ICommandProxy;
 import org.eclipse.gmf.runtime.emf.ui.services.parser.ISemanticParser;
 import org.eclipse.jface.text.contentassist.IContentAssistProcessor;
+import org.eclipse.uml2.diagram.common.commands.ApplyOrUnapplyStereotypeCommand;
+import org.eclipse.uml2.diagram.common.commands.ApplyStereotypesCommand;
+import org.eclipse.uml2.diagram.common.commands.RefreshLabelsCommand;
 import org.eclipse.uml2.diagram.parser.assist.FixedSetCompletionProcessor;
 import org.eclipse.uml2.uml.Element;
 import org.eclipse.uml2.uml.Extension;
@@ -49,7 +55,7 @@ public class AppliedStereotypeParser implements ISemanticParser {
 	public List<?> getSemanticElementsBeingParsed(EObject eObject) {
 		Element element = (Element) eObject;
 		List<EObject> result = new LinkedList<EObject>();
-		// result.add(element);
+		result.add(element);
 		result.addAll(element.getStereotypeApplications());
 		return result;
 	}
@@ -84,7 +90,12 @@ public class AppliedStereotypeParser implements ISemanticParser {
 	}
 
 	public ICommand getParseCommand(IAdaptable element, String newString, int flags) {
-		return UnexecutableCommand.INSTANCE;
+		NamedElement subject = doAdapt(element);
+		CompoundCommand command = new CompoundCommand();
+		ApplyStereotypesCommand.ApplyStereotypesRequest request = new ApplyStereotypesCommand.ApplyStereotypesRequest(TransactionUtil.getEditingDomain(subject), subject, newString);
+		command.add(new ICommandProxy(new ApplyStereotypesCommand(request)));
+//		command.add(new RefreshLabelsCommand(elementEditPart));
+		return new CommandProxy(command);
 	}
 
 	public String getPrintString(IAdaptable element, int flags) {
