@@ -623,9 +623,10 @@
       <?gmfgen generated="false"?>   
       <propertyTabs contributorId="org.eclipse.uml2.diagram.clazz">
           <propertyTab
-             category="domain"
-             id="property.tab.domain.taggedvalues"
-             label="%tab.taggedvalues"/>
+                afterTab="property.tab.domain"
+                category="domain"
+                id="property.tab.domain.taggedvalues"
+                label="%tab.taggedvalues"/>
       </propertyTabs>
    </extension>
 
@@ -669,7 +670,8 @@
          <propertySection
             id="property.section.domain.taggedvalues" 
             tab="property.tab.domain.taggedvalues"
-            class="org.eclipse.uml2.diagram.clazz.sheet.UMLStereotypePropertySection">
+            class="org.eclipse.uml2.diagram.clazz.sheet.UMLStereotypePropertySection"
+            filter="org.eclipse.uml2.diagram.clazz.sheet.AppliedStereotypePropertySectionFilter">
             <input type="org.eclipse.gmf.runtime.notation.View"/>
             <input type="org.eclipse.gef.EditPart"/>
             <input type="org.eclipse.uml2.diagram.clazz.navigator.UMLAbstractNavigatorItem"/>
