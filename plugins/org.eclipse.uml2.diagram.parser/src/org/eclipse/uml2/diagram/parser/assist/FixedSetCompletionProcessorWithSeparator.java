@@ -24,7 +24,7 @@ public class FixedSetCompletionProcessorWithSeparator extends FixedSetCompletion
 
 	@Override
 	protected String getProposalPrefix(String prefix) {
-		return prefix.substring(prefix.lastIndexOf(mySeparator) + 1).trim();
+		return prefix.substring(prefix.lastIndexOf(mySeparator) + mySeparator.length()).trim();
 	}
 
 }
