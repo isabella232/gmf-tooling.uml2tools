@@ -20,6 +20,9 @@ public class SemanticLabelDirectEditPolicy extends LabelDirectEditPolicy {
 	@Override
 	protected Command getDirectEditCommand(DirectEditRequest edit) {
 		Command applyChanges = super.getDirectEditCommand(edit);
+		if (applyChanges == null) {
+			return applyChanges;
+		}
 		Command postRefresh = null;
 		if (applyChanges != null && applyChanges.canExecute()){
 			postRefresh = new PostRefreshCommand();
