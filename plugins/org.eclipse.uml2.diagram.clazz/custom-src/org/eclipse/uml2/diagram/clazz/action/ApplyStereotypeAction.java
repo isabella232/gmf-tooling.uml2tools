@@ -8,7 +8,6 @@ import org.eclipse.gef.commands.UnexecutableCommand;
 import org.eclipse.gmf.runtime.diagram.ui.actions.DiagramAction;
 import org.eclipse.gmf.runtime.diagram.ui.commands.ICommandProxy;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart;
-import org.eclipse.gmf.runtime.diagram.ui.editparts.ITextAwareEditPart;
 import org.eclipse.ui.IWorkbenchPage;
 import org.eclipse.uml2.diagram.clazz.part.CustomMessages;
 import org.eclipse.uml2.diagram.common.commands.ApplyOrUnapplyStereotypeCommand;
@@ -47,7 +46,8 @@ public class ApplyStereotypeAction extends DiagramAction {
 			return UnexecutableCommand.INSTANCE;
 		}
 		TransactionalEditingDomain editingDomain = elementEditPart.getEditingDomain();
-		ApplyOrUnapplyStereotypeCommand.ApplyOrUnapplyStereotypeRequest request = new ApplyOrUnapplyStereotypeCommand.ApplyOrUnapplyStereotypeRequest(editingDomain, myElement, myStereotype);
+		boolean applyNotUnapply =!myElement.isStereotypeApplied(myStereotype);
+		ApplyOrUnapplyStereotypeCommand.ApplyOrUnapplyStereotypeRequest request = new ApplyOrUnapplyStereotypeCommand.ApplyOrUnapplyStereotypeRequest(myElement, myStereotype, applyNotUnapply);
 		CompoundCommand command = new CompoundCommand();
 		command.add(new ICommandProxy(new ApplyOrUnapplyStereotypeCommand(request)));
 		command.add(new RefreshLabelsCommand(elementEditPart));

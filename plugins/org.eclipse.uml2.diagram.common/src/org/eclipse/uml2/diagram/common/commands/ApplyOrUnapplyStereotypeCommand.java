@@ -4,6 +4,7 @@ import org.eclipse.core.commands.ExecutionException;
 import org.eclipse.core.runtime.IAdaptable;
 import org.eclipse.core.runtime.IProgressMonitor;
 import org.eclipse.emf.transaction.TransactionalEditingDomain;
+import org.eclipse.emf.transaction.util.TransactionUtil;
 import org.eclipse.gmf.runtime.common.core.command.CommandResult;
 import org.eclipse.gmf.runtime.emf.type.core.commands.EditElementCommand;
 import org.eclipse.gmf.runtime.emf.type.core.requests.AbstractEditCommandRequest;
@@ -14,7 +15,7 @@ import org.eclipse.uml2.uml.Stereotype;
 public class ApplyOrUnapplyStereotypeCommand extends EditElementCommand {
 
 	public ApplyOrUnapplyStereotypeCommand(ApplyOrUnapplyStereotypeRequest request) {
-		super(request.isApplyNotUnapply() ? "Apply" : "Anapply", request.getElement(), request);
+		super(request.isApplyNotUnapply() ? "Apply stereotype" : "Un-apply stereotype", request.getElement(), request);
 	}
 
 	@Override
@@ -33,11 +34,14 @@ public class ApplyOrUnapplyStereotypeCommand extends EditElementCommand {
 		private final Element myElement;
 
 		private final Stereotype myStereotype;
+		
+		private final boolean myApplyNotUnapply;
 
-		public ApplyOrUnapplyStereotypeRequest(TransactionalEditingDomain domain, Element element, Stereotype stereotype) {
-			super(domain);
+		public ApplyOrUnapplyStereotypeRequest(Element element, Stereotype stereotype, boolean applyNotUnapply) {
+			super(TransactionUtil.getEditingDomain(element));
 			myElement = element;
 			myStereotype = stereotype;
+			myApplyNotUnapply = applyNotUnapply;
 		}
 
 		public Stereotype getStereotype() {
@@ -49,7 +53,7 @@ public class ApplyOrUnapplyStereotypeCommand extends EditElementCommand {
 		}
 
 		public boolean isApplyNotUnapply() {
-			return false == myElement.isStereotypeApplied(myStereotype);
+			return myApplyNotUnapply;
 		}
 		
 		public Object getEditHelperContext() {

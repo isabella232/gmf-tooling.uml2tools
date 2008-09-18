@@ -32,7 +32,7 @@ import org.eclipse.gmf.runtime.diagram.ui.commands.CommandProxy;
 import org.eclipse.gmf.runtime.diagram.ui.commands.ICommandProxy;
 import org.eclipse.gmf.runtime.emf.ui.services.parser.ISemanticParser;
 import org.eclipse.jface.text.contentassist.IContentAssistProcessor;
-import org.eclipse.uml2.diagram.common.commands.ApplyStereotypesCommand;
+import org.eclipse.uml2.diagram.common.commands.ApplyStereotypeHelper;
 import org.eclipse.uml2.diagram.parser.assist.FixedSetCompletionProcessorWithSeparator;
 import org.eclipse.uml2.uml.Element;
 import org.eclipse.uml2.uml.Extension;
@@ -100,8 +100,7 @@ public class AppliedStereotypeParser implements ISemanticParser {
 	public ICommand getParseCommand(IAdaptable element, String newString, int flags) {
 		NamedElement subject = doAdapt(element);
 		List<String> toApply = getStereotypesToApply(newString);
-		ApplyStereotypesCommand.ApplyStereotypesRequest request = new ApplyStereotypesCommand.ApplyStereotypesRequest(TransactionUtil.getEditingDomain(subject), subject, toApply);
-		return new ApplyStereotypesCommand(request);
+		return ApplyStereotypeHelper.getCommand(subject, toApply);
 	}
 
 	public String getPrintString(IAdaptable element, int flags) {
