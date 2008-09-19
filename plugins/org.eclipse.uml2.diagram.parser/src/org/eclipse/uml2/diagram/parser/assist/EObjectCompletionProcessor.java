@@ -36,11 +36,11 @@ import org.eclipse.swt.graphics.Point;
  */
 public abstract class EObjectCompletionProcessor implements IContentAssistProcessor, ISubjectControlContentAssistProcessor {
 
-	private static final ICompletionProposal[] NO_PROPOSALS = new ICompletionProposal[0];
+	protected static final ICompletionProposal[] NO_PROPOSALS = new ICompletionProposal[0];
 
 	private static final IContextInformation[] NO_CONTEXTS = new IContextInformation[0];
 
-	private EObject myContext;
+	protected EObject myContext;
 
 	protected abstract Iterable<String> computeContextProposals(EObject context);
 
@@ -56,12 +56,12 @@ public abstract class EObjectCompletionProcessor implements IContentAssistProces
 		int selectionStart = selection.x;
 		int selectionLength = selection.y;
 		String prefix = getPrefix(subjectControl, selectionStart);
-		prefix = getProposalPrefix(prefix);
-		int prefixLength = prefix.length();
+		String proposalPrefix = getProposalPrefix(prefix);
+		int prefixLength = proposalPrefix.length();
 
 		List<ICompletionProposal> result = new LinkedList<ICompletionProposal>();
 		for (String next : computeContextProposals(myContext)) {
-			if (next == null || !next.startsWith(prefix)){
+			if (next == null || !next.startsWith(proposalPrefix)){
 				continue;
 			}
 			ICompletionProposal proposal = new CompletionProposal(next, selectionStart - prefixLength, selectionLength + prefixLength, next.length(), null, next, null, null);
@@ -98,7 +98,7 @@ public abstract class EObjectCompletionProcessor implements IContentAssistProces
 		return null;
 	}
 
-	private String getPrefix(IContentAssistSubjectControl subjectControl, int offset) {
+	protected final String getPrefix(IContentAssistSubjectControl subjectControl, int offset) {
 		IDocument doc = subjectControl.getDocument();
 		if (doc == null || offset > doc.getLength()) {
 			throw new IllegalStateException("Bad content assist subject control: " + doc);
