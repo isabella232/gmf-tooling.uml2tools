@@ -13,24 +13,15 @@ package org.eclipse.uml2.diagram.common.codeassist;
 
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.LinkedList;
 import java.util.List;
 
 import org.eclipse.emf.ecore.EObject;
-import org.eclipse.jface.contentassist.IContentAssistSubjectControl;
-import org.eclipse.jface.text.contentassist.CompletionProposal;
-import org.eclipse.jface.text.contentassist.ICompletionProposal;
-import org.eclipse.swt.graphics.Point;
-import org.eclipse.uml2.diagram.parser.assist.EObjectCompletionProcessor;
 import org.eclipse.uml2.diagram.parser.lookup.OCLLookup;
 import org.eclipse.uml2.uml.NamedElement;
-import org.eclipse.uml2.uml.Parameter;
 import org.eclipse.uml2.uml.ParameterDirectionKind;
 import org.eclipse.uml2.uml.Type;
-import org.eclipse.uml2.uml.UMLPackage;
 
-
-public class OperationCompletionProcessor extends EObjectCompletionProcessor  {
+public class OperationCompletionProcessor extends CompositeCompletionProcessor  {
 	
 	private final OCLLookup<Type> myTypeLookup;
 	
@@ -39,33 +30,17 @@ public class OperationCompletionProcessor extends EObjectCompletionProcessor  {
 	}	
 
 	@Override
-	public ICompletionProposal[] computeCompletionProposals(IContentAssistSubjectControl subjectControl, int offset) {
-		if (myContext == null) {
-			return NO_PROPOSALS;
-		}
-		Point selection = subjectControl.getSelectedRange();
-		int selectionStart = selection.x;
-		int selectionLength = selection.y;
-		String prefix = getPrefix(subjectControl, selectionStart);
-		List<ICompletionProposal> result = new LinkedList<ICompletionProposal>();
-		CompletionProcessor p = CompletionProcessor.NULL_PROCESSOR;
+	protected CompletionProcessor getCompletionProcessor(String prefix) {
 		if (OperationAnalizer.isInType(prefix)) {
-			p = new TypeCompletionProcessor();
-		} else if (OperationAnalizer.isInOperationProperty(prefix)) {
-			p = new PropertyCompletionProcessor(); 
-		} else if (OperationAnalizer.isInDirection(prefix)) {
-			p = new ParameterDirectionCompletionProcessor(); 
+			return new TypeCompletionProcessor();
 		}
-		String proposalPrefix = p.getProposalPrefix(prefix);
-		int prefixLength = proposalPrefix.length();
-		for (String next : p.computeProposals(myContext)) {
-			if (next == null || !next.startsWith(proposalPrefix)){
-				continue;
-			}
-			ICompletionProposal proposal = new CompletionProposal(next, selectionStart - prefixLength, selectionLength + prefixLength, next.length(), null, next, null, null);
-			result.add(proposal);
+		if (OperationAnalizer.isInOperationProperty(prefix)) {
+			return new PropertyCompletionProcessor(); 
 		}
-		return result.toArray(NO_PROPOSALS);
+		if (OperationAnalizer.isInDirection(prefix)) {
+			return new ParameterDirectionCompletionProcessor(); 
+		}
+		return CompletionProcessor.NULL_PROCESSOR;
 	}
 
 	@Override

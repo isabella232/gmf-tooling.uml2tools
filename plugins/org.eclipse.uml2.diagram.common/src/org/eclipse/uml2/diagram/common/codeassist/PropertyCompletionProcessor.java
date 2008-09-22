@@ -17,43 +17,57 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 import org.eclipse.emf.ecore.EObject;
-import org.eclipse.uml2.diagram.parser.assist.EObjectCompletionProcessor;
 import org.eclipse.uml2.diagram.parser.lookup.OCLLookup;
 import org.eclipse.uml2.uml.NamedElement;
 import org.eclipse.uml2.uml.Type;
 
-
-public class PropertyCompletionProcessor extends EObjectCompletionProcessor {
+public class PropertyCompletionProcessor extends CompositeCompletionProcessor {
 	
 	final OCLLookup<Type> myTypeLookup;
 	public PropertyCompletionProcessor(OCLLookup<Type> lookup) {
 		myTypeLookup = lookup;
 	}
 	
+	
 	@Override
-	protected Iterable<String> computeContextProposals(EObject context) {
-		List<Type> scope = myTypeLookup.computeScope(context);
-		List<String> res = new ArrayList<String>();
-		for (NamedElement el: scope) {
-			res.add(el.getName());
+	protected CompletionProcessor getCompletionProcessor(String prefix) {
+		if (PropertyAnalizer.isInType(prefix)) {
+			return new TypeCompletionProcessor();
 		}
-		return res;
-	}
-
-	@Override
-	protected String getProposalPrefix(String prefix) {
-		Matcher matcher = PROPERTY_TYPE_PATTERN.matcher(prefix);
-		if (matcher.matches() && matcher.groupCount() > 1) {
-			return matcher.group(2);
-
-		}
-		return "";
+		return CompletionProcessor.NULL_PROCESSOR;
 	}
 	
-	private static final String NEW_LINE = System.getProperty("line.separator");
+	private static class PropertyAnalizer {
+		
+		public static boolean isInType(String prefix) {
+			return PROPERTY_TYPE.matcher(prefix).find();
+		}
 
-	private static final String PROPERTY_TYPE_REGEXP = "#name group:" + NEW_LINE + "((?:\\s)*(?:\\w)+(?:\\s)*):" + NEW_LINE + "#type group:" + NEW_LINE + "(?:\\s)*(\\w)*";
+		public static String getTypePrefix(String str) {
+			Matcher m = PROPERTY_TYPE.matcher(str);
+			m.find();
+			return m.group(1);
+		}
 
-	private static final Pattern PROPERTY_TYPE_PATTERN = Pattern.compile(PROPERTY_TYPE_REGEXP, Pattern.COMMENTS);
+	}
+	
+	private class TypeCompletionProcessor implements CompletionProcessor {
+
+		public String getProposalPrefix(String prefix) {
+			return PropertyAnalizer.getTypePrefix(prefix);
+		}
+
+		public Iterable<String> computeProposals(EObject context) {
+			List<Type> scope = myTypeLookup.computeScope(context);
+			List<String> res = new ArrayList<String>();
+			for (NamedElement el: scope) {
+				res.add(el.getName());
+			}
+			return res;
+		}
+
+	}
+
+	private static final Pattern PROPERTY_TYPE = Pattern.compile("\\:\\s*(\\w*)\\z");
 
 }
