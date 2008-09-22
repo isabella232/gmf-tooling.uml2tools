@@ -24,7 +24,10 @@ import org.eclipse.swt.graphics.Point;
 import org.eclipse.uml2.diagram.parser.assist.EObjectCompletionProcessor;
 import org.eclipse.uml2.diagram.parser.lookup.OCLLookup;
 import org.eclipse.uml2.uml.NamedElement;
+import org.eclipse.uml2.uml.Parameter;
+import org.eclipse.uml2.uml.ParameterDirectionKind;
 import org.eclipse.uml2.uml.Type;
+import org.eclipse.uml2.uml.UMLPackage;
 
 
 public class OperationCompletionProcessor extends EObjectCompletionProcessor  {
@@ -50,6 +53,8 @@ public class OperationCompletionProcessor extends EObjectCompletionProcessor  {
 			p = new TypeCompletionProcessor();
 		} else if (OperationAnalizer.isInOperationProperty(prefix)) {
 			p = new PropertyCompletionProcessor(); 
+		} else if (OperationAnalizer.isInDirection(prefix)) {
+			p = new ParameterDirectionCompletionProcessor(); 
 		}
 		String proposalPrefix = p.getProposalPrefix(prefix);
 		int prefixLength = proposalPrefix.length();
@@ -79,6 +84,17 @@ public class OperationCompletionProcessor extends EObjectCompletionProcessor  {
 		}
 	}
 	
+	private class ParameterDirectionCompletionProcessor implements CompletionProcessor {
+
+		public String getProposalPrefix(String prefix) {
+			return OperationAnalizer.getParameterDirectionPrefix(prefix);
+		}
+
+		public Iterable<String> computeProposals(EObject context) {
+			return PARAMETER_DIRECTIONS;
+		}
+	}
+
 	private class TypeCompletionProcessor implements CompletionProcessor {
 
 		public String getProposalPrefix(String prefix) {
@@ -103,4 +119,7 @@ public class OperationCompletionProcessor extends EObjectCompletionProcessor  {
 			"nonunique", //$NON-NLS-1$
 			"query", });//$NON-NLS-1$
 
+	private static final List<String> PARAMETER_DIRECTIONS = Arrays.asList(new String[] { ParameterDirectionKind.IN_LITERAL.getName(), 
+			ParameterDirectionKind.OUT_LITERAL.getName(),
+			ParameterDirectionKind.INOUT_LITERAL.getName()});
 }

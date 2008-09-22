@@ -22,9 +22,9 @@ import java.util.regex.Pattern;
  */
 public class OperationAnalizer {
 	
-	private static final Pattern OPERATION_TYPE = Pattern.compile("(\\w+\\s*)\\:\\s*(\\w*)\\z");
-	private static final Pattern OPERATION_PROPERTY = Pattern.compile("\\{(?:[\\w\\s]+,)*([\\w\\s]*)\\z");
-//	private static final Pattern OPERATION_DIRECTION = Pattern.compile("\\(([^\\)]+,)*[\\w\\s]*\\z"); 
+	private static final Pattern OPERATION_TYPE = Pattern.compile("\\:\\s*(\\w*)\\z");
+	private static final Pattern OPERATION_PROPERTY = Pattern.compile("\\{(?:[\\w\\s]+,)*\\s*(\\w*)\\z");
+	private static final Pattern PARAMETER_DIRECTION = Pattern.compile("\\(([^\\)]+,)*\\s*(\\w*)\\z"); 
 	
 /*
  * Returns true if cursor is at return type or parameter type 
@@ -34,8 +34,7 @@ public class OperationAnalizer {
 	}
 
 	public static boolean isInDirection(String prefix) {
-		return false;
-//		return OPERATION_DIRECTION.matcher(prefix).find();
+		return PARAMETER_DIRECTION.matcher(prefix).find();
 	}
 
 	public static boolean isInOperationProperty(String prefix) {
@@ -45,7 +44,7 @@ public class OperationAnalizer {
 	public static String getTypePrefix(String str) {
 		Matcher m = OPERATION_TYPE.matcher(str);
 		m.find();
-		return m.group(2);
+		return m.group(1);
 	}
 
 	public static String getOperationPropertyPrefix(String str) {
@@ -54,4 +53,9 @@ public class OperationAnalizer {
 		return m.group(1);
 	}
 
+	public static String getParameterDirectionPrefix(String str) {
+		Matcher m = PARAMETER_DIRECTION.matcher(str);
+		m.find();
+		return m.group(2);
+	}
 }
