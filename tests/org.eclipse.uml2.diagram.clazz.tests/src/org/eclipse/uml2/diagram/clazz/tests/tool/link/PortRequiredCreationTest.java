@@ -1,4 +1,4 @@
-package org.eclipse.uml2.diagram.clazz.tests.tool;
+package org.eclipse.uml2.diagram.clazz.tests.tool.link;
 
 import java.util.Collections;
 
@@ -17,6 +17,7 @@ import org.eclipse.uml2.diagram.clazz.edit.parts.PortEditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.PortRequiredEditPart;
 import org.eclipse.uml2.diagram.clazz.part.UMLVisualIDRegistry;
 import org.eclipse.uml2.diagram.clazz.providers.UMLElementTypes;
+import org.eclipse.uml2.diagram.clazz.tests.tool.ClassDiagramCreationToolTest;
 import org.eclipse.uml2.diagram.common.tests.UMLDiagramFacade;
 import org.eclipse.uml2.uml.Interface;
 import org.eclipse.uml2.uml.Port;

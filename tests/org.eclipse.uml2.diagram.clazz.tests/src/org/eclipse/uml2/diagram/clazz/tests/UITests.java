@@ -25,8 +25,8 @@ import org.eclipse.uml2.diagram.clazz.tests.tool.PaletteOperationNodeTest;
 import org.eclipse.uml2.diagram.clazz.tests.tool.PalettePackageNodeTest;
 import org.eclipse.uml2.diagram.clazz.tests.tool.PalettePrimitiveTypeNodeTest;
 import org.eclipse.uml2.diagram.clazz.tests.tool.PalettePropertyNodeTest;
-import org.eclipse.uml2.diagram.clazz.tests.tool.PortProvidedCreationTest;
-import org.eclipse.uml2.diagram.clazz.tests.tool.PortRequiredCreationTest;
+import org.eclipse.uml2.diagram.clazz.tests.tool.link.PortProvidedCreationTest;
+import org.eclipse.uml2.diagram.clazz.tests.tool.link.PortRequiredCreationTest;
 import org.eclipse.uml2.diagram.clazz.tests.wholediagram.TestWholeDiagramSuite;
 
 public class UITests {
