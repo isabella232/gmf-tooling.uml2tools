@@ -99,10 +99,12 @@ import org.eclipse.uml2.diagram.common.parser.instance.InstanceSpecificationPars
 import org.eclipse.uml2.diagram.common.parser.instance.InstanceSpecificationToString;
 import org.eclipse.uml2.diagram.common.parser.operation.OperationInplaceApplier;
 import org.eclipse.uml2.diagram.common.parser.operation.OperationParser;
+import org.eclipse.uml2.diagram.common.parser.operation.OperationSemanticParser;
 import org.eclipse.uml2.diagram.common.parser.operation.OperationToString;
 import org.eclipse.uml2.diagram.common.parser.port.PortParser;
 import org.eclipse.uml2.diagram.common.parser.port.PortToString;
 import org.eclipse.uml2.diagram.common.parser.property.PropertyParser;
+import org.eclipse.uml2.diagram.common.parser.property.PropertySemanticParser;
 import org.eclipse.uml2.diagram.common.parser.property.PropertyToString;
 import org.eclipse.uml2.diagram.common.parser.slot.SlotLookupSuite;
 import org.eclipse.uml2.diagram.common.parser.slot.SlotParser;
@@ -1600,8 +1602,7 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 	private IParser createPropertyParser() {
 		LookupSuiteImpl lookupSuite = new LookupSuiteImpl();
 		lookupSuite.addLookup(Type.class, TYPE_LOOKUP);
-
-		return new SemanticParserAdapter(new PropertyParser(lookupSuite), new BasicApplyStrategy(), new PropertyToString.VIEW(), new PropertyToString.EDIT());
+		return new PropertySemanticParser(lookupSuite);
 	}
 
 	/**
@@ -1653,7 +1654,7 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 		LookupSuiteImpl lookupSuite = new LookupSuiteImpl();
 		lookupSuite.addLookup(Type.class, TYPE_LOOKUP);
 
-		return new SemanticParserAdapter(new OperationParser(lookupSuite), new OperationInplaceApplier(), new OperationToString.VIEW(), new OperationToString.EDIT());
+		return new OperationSemanticParser(lookupSuite);
 	}
 
 	/**
