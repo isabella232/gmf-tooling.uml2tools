@@ -1,34 +1,23 @@
+/*
+ * Copyright (c) 2008 Borland Software Corporation
+ * 
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
+ *
+ * Contributors:
+ *    Tatiana Fesenko (Borland) - initial API and implementation
+ */
 package org.eclipse.uml2.diagram.clazz.sheet;
 
-import org.eclipse.core.runtime.IAdaptable;
-import org.eclipse.gef.EditPart;
-import org.eclipse.gmf.runtime.notation.View;
-import org.eclipse.jface.viewers.IFilter;
 import org.eclipse.uml2.uml.Element;
 
-public class AppliedStereotypePropertySectionFilter implements IFilter {
+public class AppliedStereotypePropertySectionFilter extends UML2ToolsPropertyFilter {
 
-	public boolean select(Object toTest) {
-		Object transformed = transformSelection(toTest);
+	@Override
+	protected boolean isValid(Object transformed) {
 		return (transformed instanceof Element) && (false == ((Element)transformed).getAppliedStereotypes().isEmpty());
-	}
-
-	protected Object transformSelection(Object selected) {
-
-		if (selected instanceof EditPart) {
-			Object model = ((EditPart) selected).getModel();
-			return model instanceof View ? ((View) model).getElement() : null;
-		}
-		if (selected instanceof View) {
-			return ((View) selected).getElement();
-		}
-		if (selected instanceof IAdaptable) {
-			View view = (View) ((IAdaptable) selected).getAdapter(View.class);
-			if (view != null) {
-				return view.getElement();
-			}
-		}
-		return selected;
 	}
 
 }
