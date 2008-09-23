@@ -34,9 +34,13 @@ import org.eclipse.gmf.runtime.emf.ui.services.parser.ISemanticParser;
 import org.eclipse.jface.text.contentassist.IContentAssistProcessor;
 import org.eclipse.uml2.diagram.common.commands.ApplyStereotypeHelper;
 import org.eclipse.uml2.diagram.parser.assist.FixedSetCompletionProcessorWithSeparator;
+import org.eclipse.uml2.uml.DataType;
 import org.eclipse.uml2.uml.Element;
+import org.eclipse.uml2.uml.Enumeration;
 import org.eclipse.uml2.uml.Extension;
+import org.eclipse.uml2.uml.Interface;
 import org.eclipse.uml2.uml.NamedElement;
+import org.eclipse.uml2.uml.PrimitiveType;
 import org.eclipse.uml2.uml.Stereotype;
 
 public class AppliedStereotypeParser implements ISemanticParser {
@@ -45,6 +49,12 @@ public class AppliedStereotypeParser implements ISemanticParser {
 
 	private static final String STEREOTYPE_SEPARATOR = ","; //$NON-NLS-1$
 	
+	private static final String INTERFACE_LABEL = "interface"; //$NON-NLS-1$
+	private static final String DATATYPE_LABEL = "dataType"; //$NON-NLS-1$
+	private static final String PRIMITIVETYPE_LABEL = "primitive"; //$NON-NLS-1$
+	private static final String ENUMERATION_LABEL = "enumeration"; //$NON-NLS-1$
+
+
 	private static final String PLUGIN_ID = "org.eclipse.uml2.diagram.common"; //$NON-NLS-1$
 
 	public boolean areSemanticElementsAffected(EObject listener, Object notification) {
@@ -104,7 +114,15 @@ public class AppliedStereotypeParser implements ISemanticParser {
 	}
 
 	public String getPrintString(IAdaptable element, int flags) {
+		String classifier = getClassifierType(element);
 		String editString = getEditString(element, flags);
+		if (classifier != null) {
+			String result = classifier;
+			if (editString != null && editString.length() > 0) {
+				result+=STEREOTYPE_SEPARATOR + " " + editString;
+			}
+			return APPLIED_PROFILE.format(new Object[] { result });
+		}
 		return editString == null || editString.length() == 0 ? editString : APPLIED_PROFILE.format(new Object[] { editString });
 	}
 
@@ -134,6 +152,23 @@ public class AppliedStereotypeParser implements ISemanticParser {
 			toApply.add(t.nextToken().trim());
 		}
 		return toApply;
+	}
+	
+	private String getClassifierType(IAdaptable adaptable) {
+		NamedElement element = doAdapt(adaptable);
+		if (element instanceof Interface) {
+			return INTERFACE_LABEL;
+		}
+		if (element instanceof PrimitiveType) {
+			return PRIMITIVETYPE_LABEL;
+		}
+		if (element instanceof Enumeration) {
+			return ENUMERATION_LABEL;
+		}
+		if (element instanceof DataType) {
+			return DATATYPE_LABEL;
+		}
+		return null;
 	}
 
 	private NamedElement doAdapt(IAdaptable adaptable) {
