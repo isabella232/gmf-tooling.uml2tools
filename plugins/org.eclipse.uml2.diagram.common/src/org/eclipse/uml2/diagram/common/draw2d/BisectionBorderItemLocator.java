@@ -95,7 +95,7 @@ public class BisectionBorderItemLocator extends BorderItemLocator {
 	 *            recursion count to avoid an infinite loop
 	 * @return point
 	 */
-	private Point locateOnBorder(Point suggestedLocation,
+	protected Point locateOnBorder(Point suggestedLocation,
 			int suggestedSide, int circuitCount, IFigure borderItem) {
 		Point recommendedLocation = locateOnParent(suggestedLocation,
 			suggestedSide, borderItem);
@@ -186,7 +186,7 @@ public class BisectionBorderItemLocator extends BorderItemLocator {
 	 * @param suggestedSide
 	 * @return point
 	 */
-	private Point locateOnParent(Point suggestedLocation,
+	protected Point locateOnParent(Point suggestedLocation,
 			int suggestedSide, IFigure borderItem) {
 		Rectangle bounds = getParentBorder();
 		int parentFigureWidth = bounds.width;
