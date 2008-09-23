@@ -9,7 +9,7 @@
  * Contributors:
  *    Tatiana Fesenko (Borland) - initial API and implementation
  */
-package org.eclipse.uml2.diagram.clazz.sheet;
+package org.eclipse.uml2.diagram.common.sheet;
 
 import org.eclipse.ui.views.properties.IPropertySource;
 import org.eclipse.uml2.diagram.common.conventions.AssociationEndConvention;
@@ -20,7 +20,7 @@ public class AssociationPropertySection {
 
 		@Override
 		protected boolean isValid(Object transformed) {
-			return (transformed instanceof Association);
+			return (transformed instanceof Association) && ((Association)transformed).getMemberEnds().size() == 2;
 		}
 
 	}

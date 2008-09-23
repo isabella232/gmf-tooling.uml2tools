@@ -11,6 +11,7 @@
  */
 package org.eclipse.uml2.diagram.clazz.sheet;
 
+import org.eclipse.uml2.diagram.common.sheet.UML2ToolsPropertyFilter;
 import org.eclipse.uml2.uml.Element;
 
 public class AppliedStereotypePropertySectionFilter extends UML2ToolsPropertyFilter {

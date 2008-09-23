@@ -9,7 +9,7 @@
  * Contributors:
  *    Tatiana Fesenko (Borland) - initial API and implementation
  */
-package org.eclipse.uml2.diagram.clazz.sheet;
+package org.eclipse.uml2.diagram.common.sheet;
 
 import org.eclipse.core.runtime.IAdaptable;
 import org.eclipse.gef.EditPart;

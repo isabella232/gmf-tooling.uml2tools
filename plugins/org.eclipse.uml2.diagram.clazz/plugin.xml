@@ -689,8 +689,8 @@
          <propertySection
             id="property.section.domain.association.source" 
             tab="property.section.domain.association.source"
-            class="org.eclipse.uml2.diagram.clazz.sheet.AssociationPropertySection$SourcePropertySection"
-            filter="org.eclipse.uml2.diagram.clazz.sheet.AssociationPropertySection$AssociationPropertySectionFilter">
+            class="org.eclipse.uml2.diagram.common.sheet.AssociationPropertySection$SourcePropertySection"
+            filter="org.eclipse.uml2.diagram.common.sheet.AssociationPropertySection$AssociationPropertySectionFilter">
             <input type="org.eclipse.gmf.runtime.notation.View"/>
             <input type="org.eclipse.gef.EditPart"/>
             <input type="org.eclipse.uml2.diagram.clazz.navigator.UMLAbstractNavigatorItem"/>
@@ -698,8 +698,8 @@
          <propertySection
             id="property.section.domain.association.target" 
             tab="property.section.domain.association.target"
-            class="org.eclipse.uml2.diagram.clazz.sheet.AssociationPropertySection$TargetPropertySection"
-            filter="org.eclipse.uml2.diagram.clazz.sheet.AssociationPropertySection$AssociationPropertySectionFilter">
+            class="org.eclipse.uml2.diagram.common.sheet.AssociationPropertySection$TargetPropertySection"
+            filter="org.eclipse.uml2.diagram.common.sheet.AssociationPropertySection$AssociationPropertySectionFilter">
             <input type="org.eclipse.gmf.runtime.notation.View"/>
             <input type="org.eclipse.gef.EditPart"/>
             <input type="org.eclipse.uml2.diagram.clazz.navigator.UMLAbstractNavigatorItem"/>

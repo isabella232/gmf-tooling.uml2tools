@@ -715,6 +715,22 @@
              label="%tab.domain"/>
       </propertyTabs>
    </extension>
+   
+     <extension point="org.eclipse.ui.views.properties.tabbed.propertyTabs">
+      <?gmfgen generated="false"?>   
+      <propertyTabs contributorId="org.eclipse.uml2.diagram.component">
+          <propertyTab
+                afterTab="property.tab.domain"
+                category="domain"
+                id="property.section.domain.association.source"
+                label="%tab.association.source"/>
+          <propertyTab
+                afterTab="property.section.domain.association.source"
+                category="domain"
+                id="property.section.domain.association.target"
+                label="%tab.association.target"/>
+      </propertyTabs>
+   </extension>
 
    <extension point="org.eclipse.ui.views.properties.tabbed.propertySections">
       <propertySections contributorId="org.eclipse.uml2.diagram.component">
@@ -749,7 +765,33 @@
             <input type="org.eclipse.uml2.diagram.component.navigator.UMLAbstractNavigatorItem"/>
          </propertySection>
       </propertySections>
-   </extension><extension point="org.eclipse.ui.preferencePages">
+   </extension>
+   
+      <extension point="org.eclipse.ui.views.properties.tabbed.propertySections">
+      <?gmfgen generated="false"?>   
+      <propertySections contributorId="org.eclipse.uml2.diagram.component">
+         <propertySection
+            id="property.section.domain.association.source" 
+            tab="property.section.domain.association.source"
+            class="org.eclipse.uml2.diagram.common.sheet.AssociationPropertySection$SourcePropertySection"
+            filter="org.eclipse.uml2.diagram.common.sheet.AssociationPropertySection$AssociationPropertySectionFilter">
+            <input type="org.eclipse.gmf.runtime.notation.View"/>
+            <input type="org.eclipse.gef.EditPart"/>
+            <input type="org.eclipse.uml2.diagram.clazz.navigator.UMLAbstractNavigatorItem"/>
+         </propertySection>
+         <propertySection
+            id="property.section.domain.association.target" 
+            tab="property.section.domain.association.target"
+            class="org.eclipse.uml2.diagram.common.sheet.AssociationPropertySection$TargetPropertySection"
+            filter="org.eclipse.uml2.diagram.common.sheet.AssociationPropertySection$AssociationPropertySectionFilter">
+            <input type="org.eclipse.gmf.runtime.notation.View"/>
+            <input type="org.eclipse.gef.EditPart"/>
+            <input type="org.eclipse.uml2.diagram.clazz.navigator.UMLAbstractNavigatorItem"/>
+         </propertySection>
+      </propertySections>
+   </extension>
+   
+   <extension point="org.eclipse.ui.preferencePages">
       <?gmfgen generated="true"?>
       <page
             id="org.eclipse.uml2.uml.diagram.component.general"
