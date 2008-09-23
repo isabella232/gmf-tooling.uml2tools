@@ -192,6 +192,10 @@ public class DataType2EditPart extends AbstractBorderedShapeEditPart implements 
 			((DataTypeNameEditPart) childEditPart).setLabel(getPrimaryShape().getFigureClassFigure_name());
 			return true;
 		}
+		if (childEditPart instanceof DataTypeStereotypeEditPart) {
+			((DataTypeStereotypeEditPart) childEditPart).setLabel(getPrimaryShape().getFigureClassFigure_stereo());
+			return true;
+		}
 		if (childEditPart instanceof DataTypeAttributesEditPart) {
 			IFigure pane = getPrimaryShape().getFigureClassFigure_PropertiesCompartment();
 			setupContentPane(pane); // FIXME each comparment should handle his content pane in his own way 

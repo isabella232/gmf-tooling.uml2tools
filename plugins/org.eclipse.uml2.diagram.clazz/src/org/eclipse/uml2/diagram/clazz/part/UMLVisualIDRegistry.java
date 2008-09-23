@@ -643,6 +643,9 @@ public class UMLVisualIDRegistry {
 			if (AssociationClassNameEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
+			if (AssociationClassStereotypeEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
 			if (AssociationClassAttributesEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
@@ -660,6 +663,9 @@ public class UMLVisualIDRegistry {
 			if (DataTypeNameEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
+			if (DataTypeStereotypeEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
 			if (DataTypeAttributesEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
@@ -674,6 +680,9 @@ public class UMLVisualIDRegistry {
 			if (PrimitiveTypeNameEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
+			if (PrimitiveTypeStereotypeEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
 			if (PrimitiveTypeAttributesEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
@@ -686,6 +695,9 @@ public class UMLVisualIDRegistry {
 			break;
 		case Enumeration2EditPart.VISUAL_ID:
 			if (EnumerationNameEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			if (EnumerationStereotypeEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
 			if (EnumerationLiteralsEditPart.VISUAL_ID == nodeVisualID) {
@@ -734,6 +746,9 @@ public class UMLVisualIDRegistry {
 			break;
 		case Interface2EditPart.VISUAL_ID:
 			if (InterfaceName2EditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			if (InterfaceStereotypeEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
 			if (InterfaceAttributesEditPart.VISUAL_ID == nodeVisualID) {
@@ -800,7 +815,7 @@ public class UMLVisualIDRegistry {
 			if (ClassName2EditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
-			if (ClassQualifiedNameEditPart.VISUAL_ID == nodeVisualID) {
+			if (ClassStereotype2EditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
 			if (ClassAttributes2EditPart.VISUAL_ID == nodeVisualID) {
@@ -821,6 +836,9 @@ public class UMLVisualIDRegistry {
 			break;
 		case Enumeration3EditPart.VISUAL_ID:
 			if (EnumerationName2EditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			if (EnumerationStereotype2EditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
 			if (EnumerationLiterals2EditPart.VISUAL_ID == nodeVisualID) {
@@ -848,6 +866,9 @@ public class UMLVisualIDRegistry {
 			if (DataTypeName2EditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
+			if (DataTypeStereotype2EditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
 			if (DataTypeAttributes2EditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
@@ -860,6 +881,9 @@ public class UMLVisualIDRegistry {
 			break;
 		case PrimitiveType3EditPart.VISUAL_ID:
 			if (PrimitiveTypeName2EditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			if (PrimitiveTypeStereotype2EditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
 			if (PrimitiveTypeAttributes2EditPart.VISUAL_ID == nodeVisualID) {

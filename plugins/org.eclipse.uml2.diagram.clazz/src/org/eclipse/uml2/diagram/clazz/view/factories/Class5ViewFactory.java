@@ -17,6 +17,7 @@ import org.eclipse.uml2.diagram.clazz.edit.parts.ClassClasses2EditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.ClassName2EditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.ClassOperations2EditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.ClassQualifiedNameEditPart;
+import org.eclipse.uml2.diagram.clazz.edit.parts.ClassStereotype2EditPart;
 import org.eclipse.uml2.diagram.clazz.part.UMLVisualIDRegistry;
 
 /**
@@ -51,7 +52,7 @@ public class Class5ViewFactory extends AbstractShapeViewFactory {
 			eObjectAdapter = new EObjectAdapter(eObject);
 		}
 		getViewService().createNode(eObjectAdapter, view, UMLVisualIDRegistry.getType(ClassName2EditPart.VISUAL_ID), ViewUtil.APPEND, true, getPreferencesHint());
-		getViewService().createNode(eObjectAdapter, view, UMLVisualIDRegistry.getType(ClassQualifiedNameEditPart.VISUAL_ID), ViewUtil.APPEND, true, getPreferencesHint());
+		getViewService().createNode(eObjectAdapter, view, UMLVisualIDRegistry.getType(ClassStereotype2EditPart.VISUAL_ID), ViewUtil.APPEND, true, getPreferencesHint());
 		getViewService().createNode(eObjectAdapter, view, UMLVisualIDRegistry.getType(ClassAttributes2EditPart.VISUAL_ID), ViewUtil.APPEND, true, getPreferencesHint());
 		getViewService().createNode(eObjectAdapter, view, UMLVisualIDRegistry.getType(ClassOperations2EditPart.VISUAL_ID), ViewUtil.APPEND, true, getPreferencesHint());
 		getViewService().createNode(eObjectAdapter, view, UMLVisualIDRegistry.getType(ClassClasses2EditPart.VISUAL_ID), ViewUtil.APPEND, true, getPreferencesHint());

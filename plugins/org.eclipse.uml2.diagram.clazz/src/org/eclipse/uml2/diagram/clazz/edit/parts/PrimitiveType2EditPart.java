@@ -192,6 +192,10 @@ public class PrimitiveType2EditPart extends AbstractBorderedShapeEditPart implem
 			((PrimitiveTypeNameEditPart) childEditPart).setLabel(getPrimaryShape().getFigureClassFigure_name());
 			return true;
 		}
+		if (childEditPart instanceof PrimitiveTypeStereotypeEditPart) {
+			((PrimitiveTypeStereotypeEditPart) childEditPart).setLabel(getPrimaryShape().getFigureClassFigure_stereo());
+			return true;
+		}
 		if (childEditPart instanceof PrimitiveTypeAttributesEditPart) {
 			IFigure pane = getPrimaryShape().getFigureClassFigure_PropertiesCompartment();
 			setupContentPane(pane); // FIXME each comparment should handle his content pane in his own way 

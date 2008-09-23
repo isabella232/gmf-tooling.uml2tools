@@ -18,6 +18,7 @@ import org.eclipse.uml2.diagram.clazz.edit.parts.AssociationClassAttributesEditP
 import org.eclipse.uml2.diagram.clazz.edit.parts.AssociationClassClassesEditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.AssociationClassNameEditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.AssociationClassOperationsEditPart;
+import org.eclipse.uml2.diagram.clazz.edit.parts.AssociationClassStereotypeEditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.PackageEditPart;
 import org.eclipse.uml2.diagram.clazz.part.UMLVisualIDRegistry;
 
@@ -59,6 +60,7 @@ public class AssociationClass2ViewFactory extends AbstractShapeViewFactory {
 			eObjectAdapter = new EObjectAdapter(eObject);
 		}
 		getViewService().createNode(eObjectAdapter, view, UMLVisualIDRegistry.getType(AssociationClassNameEditPart.VISUAL_ID), ViewUtil.APPEND, true, getPreferencesHint());
+		getViewService().createNode(eObjectAdapter, view, UMLVisualIDRegistry.getType(AssociationClassStereotypeEditPart.VISUAL_ID), ViewUtil.APPEND, true, getPreferencesHint());
 		getViewService().createNode(eObjectAdapter, view, UMLVisualIDRegistry.getType(AssociationClassAttributesEditPart.VISUAL_ID), ViewUtil.APPEND, true, getPreferencesHint());
 		getViewService().createNode(eObjectAdapter, view, UMLVisualIDRegistry.getType(AssociationClassOperationsEditPart.VISUAL_ID), ViewUtil.APPEND, true, getPreferencesHint());
 		getViewService().createNode(eObjectAdapter, view, UMLVisualIDRegistry.getType(AssociationClassClassesEditPart.VISUAL_ID), ViewUtil.APPEND, true, getPreferencesHint());

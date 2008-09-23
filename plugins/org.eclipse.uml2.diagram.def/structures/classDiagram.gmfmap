@@ -543,6 +543,14 @@
         <features
             href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//NamedElement/name"/>
       </labelMappings>
+      <labelMappings
+          xsi:type="gmfmap:FeatureLabelMapping"
+          editPattern="">
+        <diagramLabel
+            href="classDiagram_classifiers.gmfgraph#ClassNode_stereo"/>
+        <features
+            href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//NamedElement/qualifiedName"/>
+      </labelMappings>
       <tool
           xsi:type="gmftool:CreationTool"
           href="classDiagram.gmftool#//@palette/@tools.0/@tools.6"/>
@@ -680,6 +688,14 @@
         <features
             href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//NamedElement/name"/>
       </labelMappings>
+      <labelMappings
+          xsi:type="gmfmap:FeatureLabelMapping"
+          editPattern="">
+        <diagramLabel
+            href="classDiagram_classifiers.gmfgraph#ClassNode_stereo"/>
+        <features
+            href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//NamedElement/qualifiedName"/>
+      </labelMappings>
       <tool
           xsi:type="gmftool:CreationTool"
           href="classDiagram.gmftool#//@palette/@tools.0/@tools.3"/>
@@ -804,6 +820,14 @@
         <features
             href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//NamedElement/name"/>
       </labelMappings>
+      <labelMappings
+          xsi:type="gmfmap:FeatureLabelMapping"
+          editPattern="">
+        <diagramLabel
+            href="classDiagram_classifiers.gmfgraph#ClassNode_stereo"/>
+        <features
+            href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//NamedElement/qualifiedName"/>
+      </labelMappings>
       <tool
           xsi:type="gmftool:CreationTool"
           href="classDiagram.gmftool#//@palette/@tools.0/@tools.4"/>
@@ -927,6 +951,14 @@
             href="classDiagram_classifiers.gmfgraph#ClassNode_name"/>
         <features
             href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//NamedElement/name"/>
+      </labelMappings>
+      <labelMappings
+          xsi:type="gmfmap:FeatureLabelMapping"
+          editPattern="">
+        <diagramLabel
+            href="classDiagram_classifiers.gmfgraph#ClassNode_stereo"/>
+        <features
+            href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//NamedElement/qualifiedName"/>
       </labelMappings>
       <tool
           xsi:type="gmftool:CreationTool"
@@ -1283,15 +1315,23 @@
           xsi:type="gmfmap:FeatureLabelMapping"
           editPattern="">
         <diagramLabel
-            href="classDiagram_interfaces.gmfgraph#RectangleInterface_name"/>
+            href="classDiagram_classifiers.gmfgraph#ClassNode_name"/>
         <features
             href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//NamedElement/name"/>
+      </labelMappings>
+      <labelMappings
+          xsi:type="gmfmap:FeatureLabelMapping"
+          editPattern="">
+        <diagramLabel
+            href="classDiagram_classifiers.gmfgraph#ClassNode_stereo"/>
+        <features
+            href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//NamedElement/qualifiedName"/>
       </labelMappings>
       <tool
           xsi:type="gmftool:CreationTool"
           href="classDiagram.gmftool#//@palette/@tools.0/@tools.7"/>
       <diagramNode
-          href="classDiagram_interfaces.gmfgraph#RectangleInterfaceNode"/>
+          href="classDiagram_classifiers.gmfgraph#ClassNode"/>
       <children
           compartment="//@nodes.11/@ownedChild/@compartments.0">
         <containmentFeature
@@ -1377,17 +1417,17 @@
       <compartments
           children="//@nodes.11/@ownedChild/@children.0">
         <compartment
-            href="classDiagram_interfaces.gmfgraph#attributes"/>
+            href="classDiagram_classifiers.gmfgraph#attributes"/>
       </compartments>
       <compartments
           children="//@nodes.11/@ownedChild/@children.1">
         <compartment
-            href="classDiagram_interfaces.gmfgraph#operations"/>
+            href="classDiagram_classifiers.gmfgraph#operations"/>
       </compartments>
       <compartments
           children="//@nodes.11/@ownedChild/@children.2">
         <compartment
-            href="classDiagram_interfaces.gmfgraph#classes"/>
+            href="classDiagram_classifiers.gmfgraph#classes"/>
       </compartments>
     </ownedChild>
   </nodes>

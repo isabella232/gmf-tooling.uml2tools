@@ -198,6 +198,10 @@ public class AssociationClass2EditPart extends AbstractBorderedShapeEditPart imp
 			((AssociationClassNameEditPart) childEditPart).setLabel(getPrimaryShape().getFigureClassFigure_name());
 			return true;
 		}
+		if (childEditPart instanceof AssociationClassStereotypeEditPart) {
+			((AssociationClassStereotypeEditPart) childEditPart).setLabel(getPrimaryShape().getFigureClassFigure_stereo());
+			return true;
+		}
 		if (childEditPart instanceof AssociationClassAttributesEditPart) {
 			IFigure pane = getPrimaryShape().getFigureClassFigure_PropertiesCompartment();
 			setupContentPane(pane); // FIXME each comparment should handle his content pane in his own way 

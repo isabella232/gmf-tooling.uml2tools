@@ -198,8 +198,8 @@ public class Class5EditPart extends AbstractBorderedShapeEditPart implements Pri
 			((ClassName2EditPart) childEditPart).setLabel(getPrimaryShape().getFigureClassFigure_name());
 			return true;
 		}
-		if (childEditPart instanceof ClassQualifiedNameEditPart) {
-			((ClassQualifiedNameEditPart) childEditPart).setLabel(getPrimaryShape().getFigureClassFigure_stereo());
+		if (childEditPart instanceof ClassStereotype2EditPart) {
+			((ClassStereotype2EditPart) childEditPart).setLabel(getPrimaryShape().getFigureClassFigure_stereo());
 			return true;
 		}
 		if (childEditPart instanceof ClassAttributes2EditPart) {

@@ -43,6 +43,9 @@
     <nodeLabelTraces
         visualID="5005"
         queryText="true"/>
+    <nodeLabelTraces
+        visualID="5034"
+        queryText="true"/>
     <compartmentTraces
         visualID="7013"
         queryText="true"/>
@@ -59,6 +62,9 @@
     <nodeLabelTraces
         visualID="5006"
         queryText="true"/>
+    <nodeLabelTraces
+        visualID="5032"
+        queryText="true"/>
     <compartmentTraces
         visualID="7017"
         queryText="true"/>
@@ -71,6 +77,9 @@
       queryText="(let _eClass_:ecore::EClass = modelFacet.metaClass.ecoreClass in _eClass_.ePackage.nsURI = 'http://www.eclipse.org/uml2/2.1.0/UML' and _eClass_.name = 'PrimitiveType') and (let _containmentMF_:ecore::EStructuralFeature = modelFacet.containmentMetaFeature.ecoreFeature in (let _eClass_:ecore::EClass = _containmentMF_.eContainingClass in _eClass_.ePackage.nsURI = 'http://www.eclipse.org/uml2/2.1.0/UML' and _eClass_.name = 'Package') and _containmentMF_.name = 'packagedElement')">
     <nodeLabelTraces
         visualID="5007"
+        queryText="true"/>
+    <nodeLabelTraces
+        visualID="5033"
         queryText="true"/>
     <compartmentTraces
         visualID="7020"
@@ -91,6 +100,9 @@
       queryText="(let _eClass_:ecore::EClass = modelFacet.metaClass.ecoreClass in _eClass_.ePackage.nsURI = 'http://www.eclipse.org/uml2/2.1.0/UML' and _eClass_.name = 'AssociationClass') and (let _containmentMF_:ecore::EStructuralFeature = modelFacet.containmentMetaFeature.ecoreFeature in (let _eClass_:ecore::EClass = _containmentMF_.eContainingClass in _eClass_.ePackage.nsURI = 'http://www.eclipse.org/uml2/2.1.0/UML' and _eClass_.name = 'Package') and _containmentMF_.name = 'packagedElement')">
     <nodeLabelTraces
         visualID="5009"
+        queryText="true"/>
+    <nodeLabelTraces
+        visualID="5031"
         queryText="true"/>
     <compartmentTraces
         visualID="7024"
@@ -141,6 +153,9 @@
       queryText="(let _eClass_:ecore::EClass = modelFacet.metaClass.ecoreClass in _eClass_.ePackage.nsURI = 'http://www.eclipse.org/uml2/2.1.0/UML' and _eClass_.name = 'Interface') and (let _containmentMF_:ecore::EStructuralFeature = modelFacet.containmentMetaFeature.ecoreFeature in (let _eClass_:ecore::EClass = _containmentMF_.eContainingClass in _eClass_.ePackage.nsURI = 'http://www.eclipse.org/uml2/2.1.0/UML' and _eClass_.name = 'Package') and _containmentMF_.name = 'packagedElement') and ( let _childMF_:ecore::EStructuralFeature = modelFacet.childMetaFeature.ecoreFeature in (let _eClass_:ecore::EClass = _childMF_.eContainingClass in _eClass_.ePackage.nsURI = 'http://www.eclipse.org/uml2/2.1.0/UML' and _eClass_.name = 'Package') and _childMF_.name = 'ownedType')">
     <nodeLabelTraces
         visualID="5018"
+        queryText="true"/>
+    <nodeLabelTraces
+        visualID="5035"
         queryText="true"/>
     <compartmentTraces
         visualID="7029"
@@ -313,6 +328,9 @@
     <nodeLabelTraces
         visualID="5023"
         queryText="true"/>
+    <nodeLabelTraces
+        visualID="5036"
+        queryText="true"/>
     <compartmentTraces
         visualID="7038"
         queryText="true"/>
@@ -339,6 +357,9 @@
     <nodeLabelTraces
         visualID="5027"
         queryText="true"/>
+    <nodeLabelTraces
+        visualID="5037"
+        queryText="true"/>
     <compartmentTraces
         visualID="7042"
         queryText="true"/>
@@ -351,6 +372,9 @@
       queryText="(let _eClass_:ecore::EClass = modelFacet.metaClass.ecoreClass in _eClass_.ePackage.nsURI = 'http://www.eclipse.org/uml2/2.1.0/UML' and _eClass_.name = 'PrimitiveType') and (let _containmentMF_:ecore::EStructuralFeature = modelFacet.containmentMetaFeature.ecoreFeature in (let _eClass_:ecore::EClass = _containmentMF_.eContainingClass in _eClass_.ePackage.nsURI = 'http://www.eclipse.org/uml2/2.1.0/UML' and _eClass_.name = 'Package') and _containmentMF_.name = 'packagedElement') and ( let _childMF_:ecore::EStructuralFeature = modelFacet.childMetaFeature.ecoreFeature in (let _eClass_:ecore::EClass = _childMF_.eContainingClass in _eClass_.ePackage.nsURI = 'http://www.eclipse.org/uml2/2.1.0/UML' and _eClass_.name = 'Package') and _childMF_.name = 'ownedType')">
     <nodeLabelTraces
         visualID="5028"
+        queryText="true"/>
+    <nodeLabelTraces
+        visualID="5038"
         queryText="true"/>
     <compartmentTraces
         visualID="7044"

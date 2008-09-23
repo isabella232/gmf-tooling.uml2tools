@@ -156,15 +156,15 @@ public class Interface2EditPart extends ShapeNodeEditPart implements PrimaryShap
 	 * @generated
 	 */
 	protected IFigure createNodeShape() {
-		RectangleInterfaceFigure figure = new RectangleInterfaceFigure();
+		ClassFigure figure = new ClassFigure();
 		return primaryShape = figure;
 	}
 
 	/**
 	 * @generated
 	 */
-	public RectangleInterfaceFigure getPrimaryShape() {
-		return (RectangleInterfaceFigure) primaryShape;
+	public ClassFigure getPrimaryShape() {
+		return (ClassFigure) primaryShape;
 	}
 
 	/**
@@ -172,23 +172,27 @@ public class Interface2EditPart extends ShapeNodeEditPart implements PrimaryShap
 	 */
 	protected boolean addFixedChild(EditPart childEditPart) {
 		if (childEditPart instanceof InterfaceName2EditPart) {
-			((InterfaceName2EditPart) childEditPart).setLabel(getPrimaryShape().getFigureRectangleInterfaceFigure_name());
+			((InterfaceName2EditPart) childEditPart).setLabel(getPrimaryShape().getFigureClassFigure_name());
+			return true;
+		}
+		if (childEditPart instanceof InterfaceStereotypeEditPart) {
+			((InterfaceStereotypeEditPart) childEditPart).setLabel(getPrimaryShape().getFigureClassFigure_stereo());
 			return true;
 		}
 		if (childEditPart instanceof InterfaceAttributesEditPart) {
-			IFigure pane = getPrimaryShape().getFigureRectangleInterfaceFigure_propertiesCompartment();
+			IFigure pane = getPrimaryShape().getFigureClassFigure_PropertiesCompartment();
 			setupContentPane(pane); // FIXME each comparment should handle his content pane in his own way 
 			pane.add(((InterfaceAttributesEditPart) childEditPart).getFigure());
 			return true;
 		}
 		if (childEditPart instanceof InterfaceOperationsEditPart) {
-			IFigure pane = getPrimaryShape().getFigureRectangleInterfaceFigure_operationsCompartment();
+			IFigure pane = getPrimaryShape().getFigureClassFigure_OperationsCompartment();
 			setupContentPane(pane); // FIXME each comparment should handle his content pane in his own way 
 			pane.add(((InterfaceOperationsEditPart) childEditPart).getFigure());
 			return true;
 		}
 		if (childEditPart instanceof InterfaceClassesEditPart) {
-			IFigure pane = getPrimaryShape().getFigureRectangleInterfaceFigure_classesCompartment();
+			IFigure pane = getPrimaryShape().getFigureClassFigure_ClassesCompartment();
 			setupContentPane(pane); // FIXME each comparment should handle his content pane in his own way 
 			pane.add(((InterfaceClassesEditPart) childEditPart).getFigure());
 			return true;
@@ -202,17 +206,17 @@ public class Interface2EditPart extends ShapeNodeEditPart implements PrimaryShap
 	protected boolean removeFixedChild(EditPart childEditPart) {
 
 		if (childEditPart instanceof InterfaceAttributesEditPart) {
-			IFigure pane = getPrimaryShape().getFigureRectangleInterfaceFigure_propertiesCompartment();
+			IFigure pane = getPrimaryShape().getFigureClassFigure_PropertiesCompartment();
 			pane.remove(((InterfaceAttributesEditPart) childEditPart).getFigure());
 			return true;
 		}
 		if (childEditPart instanceof InterfaceOperationsEditPart) {
-			IFigure pane = getPrimaryShape().getFigureRectangleInterfaceFigure_operationsCompartment();
+			IFigure pane = getPrimaryShape().getFigureClassFigure_OperationsCompartment();
 			pane.remove(((InterfaceOperationsEditPart) childEditPart).getFigure());
 			return true;
 		}
 		if (childEditPart instanceof InterfaceClassesEditPart) {
-			IFigure pane = getPrimaryShape().getFigureRectangleInterfaceFigure_classesCompartment();
+			IFigure pane = getPrimaryShape().getFigureClassFigure_ClassesCompartment();
 			pane.remove(((InterfaceClassesEditPart) childEditPart).getFigure());
 			return true;
 		}
@@ -245,13 +249,13 @@ public class Interface2EditPart extends ShapeNodeEditPart implements PrimaryShap
 	protected IFigure getContentPaneFor(IGraphicalEditPart editPart) {
 
 		if (editPart instanceof InterfaceAttributesEditPart) {
-			return getPrimaryShape().getFigureRectangleInterfaceFigure_propertiesCompartment();
+			return getPrimaryShape().getFigureClassFigure_PropertiesCompartment();
 		}
 		if (editPart instanceof InterfaceOperationsEditPart) {
-			return getPrimaryShape().getFigureRectangleInterfaceFigure_operationsCompartment();
+			return getPrimaryShape().getFigureClassFigure_OperationsCompartment();
 		}
 		if (editPart instanceof InterfaceClassesEditPart) {
-			return getPrimaryShape().getFigureRectangleInterfaceFigure_classesCompartment();
+			return getPrimaryShape().getFigureClassFigure_ClassesCompartment();
 		}
 		return getContentPane();
 	}
@@ -260,7 +264,7 @@ public class Interface2EditPart extends ShapeNodeEditPart implements PrimaryShap
 	 * @generated
 	 */
 	protected NodeFigure createNodePlate() {
-		DefaultSizeNodeFigure result = new DefaultSizeNodeFigure(getMapMode().DPtoLP(40), getMapMode().DPtoLP(40));
+		DefaultSizeNodeFigure result = new DefaultSizeNodeFigure(getMapMode().DPtoLP(100), getMapMode().DPtoLP(60));
 		return result;
 	}
 
@@ -1709,6 +1713,225 @@ public class Interface2EditPart extends ShapeNodeEditPart implements PrimaryShap
 	/**
 	 * @generated
 	 */
+	public class ClassFigure extends RectangleFigure {
+
+		/**
+		 * @generated
+		 */
+		private Label fFigureClassFigure_stereo;
+
+		/**
+		 * @generated
+		 */
+		private Label fFigureClassFigure_name;
+
+		/**
+		 * @generated
+		 */
+		private RectangleFigure fFigureClassFigure_PropertiesCompartment;
+
+		/**
+		 * @generated
+		 */
+		private RectangleFigure fFigureClassFigure_OperationsCompartment;
+
+		/**
+		 * @generated
+		 */
+		private RectangleFigure fFigureClassFigure_ClassesCompartment;
+
+		/**
+		 * @generated
+		 */
+		private RectangleFigure fFigureClassFigure_LiteralsCompartment;
+
+		/**
+		 * @generated
+		 */
+		private RectangleFigure fFigureClassFigure_OthersCompartment;
+
+		/**
+		 * @generated
+		 */
+		public ClassFigure() {
+
+			ToolbarLayout layoutThis = new ToolbarLayout();
+			layoutThis.setStretchMinorAxis(true);
+			layoutThis.setMinorAlignment(ToolbarLayout.ALIGN_CENTER);
+
+			layoutThis.setSpacing(0);
+			layoutThis.setVertical(true);
+
+			this.setLayoutManager(layoutThis);
+
+			createContents();
+		}
+
+		/**
+		 * @generated
+		 */
+		private void createContents() {
+
+			RectangleFigure classFigure_Header0 = new RectangleFigure();
+			classFigure_Header0.setBorder(new LineBorder(null, getMapMode().DPtoLP(1)));
+
+			this.add(classFigure_Header0);
+
+			ToolbarLayout layoutClassFigure_Header0 = new ToolbarLayout();
+			layoutClassFigure_Header0.setStretchMinorAxis(true);
+			layoutClassFigure_Header0.setMinorAlignment(ToolbarLayout.ALIGN_TOPLEFT);
+
+			layoutClassFigure_Header0.setSpacing(0);
+			layoutClassFigure_Header0.setVertical(true);
+
+			classFigure_Header0.setLayoutManager(layoutClassFigure_Header0);
+
+			RectangleFigure classFigure_StereoContainer1 = new RectangleFigure();
+			classFigure_StereoContainer1.setOutline(false);
+
+			classFigure_Header0.add(classFigure_StereoContainer1);
+
+			CenterLayout layoutClassFigure_StereoContainer1 = new CenterLayout();
+
+			classFigure_StereoContainer1.setLayoutManager(layoutClassFigure_StereoContainer1);
+
+			fFigureClassFigure_stereo = new Label();
+			fFigureClassFigure_stereo.setText("");
+
+			fFigureClassFigure_stereo.setFont(FFIGURECLASSFIGURE_STEREO_FONT);
+
+			fFigureClassFigure_stereo.setBorder(new MarginBorder(getMapMode().DPtoLP(5), getMapMode().DPtoLP(5), getMapMode().DPtoLP(0), getMapMode().DPtoLP(5)));
+
+			classFigure_StereoContainer1.add(fFigureClassFigure_stereo);
+
+			RectangleFigure classFigure_NameContainer1 = new RectangleFigure();
+			classFigure_NameContainer1.setOutline(false);
+
+			classFigure_Header0.add(classFigure_NameContainer1);
+
+			CenterLayout layoutClassFigure_NameContainer1 = new CenterLayout();
+
+			classFigure_NameContainer1.setLayoutManager(layoutClassFigure_NameContainer1);
+
+			fFigureClassFigure_name = new Label();
+			fFigureClassFigure_name.setText("");
+
+			fFigureClassFigure_name.setFont(FFIGURECLASSFIGURE_NAME_FONT);
+
+			fFigureClassFigure_name.setBorder(new MarginBorder(getMapMode().DPtoLP(0), getMapMode().DPtoLP(5), getMapMode().DPtoLP(5), getMapMode().DPtoLP(5)));
+
+			classFigure_NameContainer1.add(fFigureClassFigure_name);
+
+			fFigureClassFigure_PropertiesCompartment = new RectangleFigure();
+
+			this.add(fFigureClassFigure_PropertiesCompartment);
+			fFigureClassFigure_PropertiesCompartment.setLayoutManager(new StackLayout());
+
+			fFigureClassFigure_OperationsCompartment = new RectangleFigure();
+
+			this.add(fFigureClassFigure_OperationsCompartment);
+			fFigureClassFigure_OperationsCompartment.setLayoutManager(new StackLayout());
+
+			fFigureClassFigure_ClassesCompartment = new RectangleFigure();
+
+			this.add(fFigureClassFigure_ClassesCompartment);
+			fFigureClassFigure_ClassesCompartment.setLayoutManager(new StackLayout());
+
+			fFigureClassFigure_LiteralsCompartment = new RectangleFigure();
+
+			this.add(fFigureClassFigure_LiteralsCompartment);
+			fFigureClassFigure_LiteralsCompartment.setLayoutManager(new StackLayout());
+
+			fFigureClassFigure_OthersCompartment = new RectangleFigure();
+
+			this.add(fFigureClassFigure_OthersCompartment);
+			fFigureClassFigure_OthersCompartment.setLayoutManager(new StackLayout());
+
+		}
+
+		/**
+		 * @generated
+		 */
+		private boolean myUseLocalCoordinates = false;
+
+		/**
+		 * @generated
+		 */
+		protected boolean useLocalCoordinates() {
+			return myUseLocalCoordinates;
+		}
+
+		/**
+		 * @generated
+		 */
+		protected void setUseLocalCoordinates(boolean useLocalCoordinates) {
+			myUseLocalCoordinates = useLocalCoordinates;
+		}
+
+		/**
+		 * @generated
+		 */
+		public Label getFigureClassFigure_stereo() {
+			return fFigureClassFigure_stereo;
+		}
+
+		/**
+		 * @generated
+		 */
+		public Label getFigureClassFigure_name() {
+			return fFigureClassFigure_name;
+		}
+
+		/**
+		 * @generated
+		 */
+		public RectangleFigure getFigureClassFigure_PropertiesCompartment() {
+			return fFigureClassFigure_PropertiesCompartment;
+		}
+
+		/**
+		 * @generated
+		 */
+		public RectangleFigure getFigureClassFigure_OperationsCompartment() {
+			return fFigureClassFigure_OperationsCompartment;
+		}
+
+		/**
+		 * @generated
+		 */
+		public RectangleFigure getFigureClassFigure_ClassesCompartment() {
+			return fFigureClassFigure_ClassesCompartment;
+		}
+
+		/**
+		 * @generated
+		 */
+		public RectangleFigure getFigureClassFigure_LiteralsCompartment() {
+			return fFigureClassFigure_LiteralsCompartment;
+		}
+
+		/**
+		 * @generated
+		 */
+		public RectangleFigure getFigureClassFigure_OthersCompartment() {
+			return fFigureClassFigure_OthersCompartment;
+		}
+
+	}
+
+	/**
+	 * @generated
+	 */
+	static final Font FFIGURECLASSFIGURE_STEREO_FONT = new Font(Display.getCurrent(), Display.getDefault().getSystemFont().getFontData()[0].getName(), 9, SWT.NORMAL);
+
+	/**
+	 * @generated
+	 */
+	static final Font FFIGURECLASSFIGURE_NAME_FONT = new Font(Display.getCurrent(), Display.getDefault().getSystemFont().getFontData()[0].getName(), 9, SWT.NORMAL);
+
+	/**
+	 * @generated
+	 */
 	private DiagramEventBroker getDiagramEventBroker() {
 		TransactionalEditingDomain theEditingDomain = getEditingDomain();
 		if (theEditingDomain != null) {
@@ -2056,178 +2279,5 @@ public class Interface2EditPart extends ShapeNodeEditPart implements PrimaryShap
 	public void refreshDiagram() {
 		UMLDiagramUpdateCommand.performCanonicalUpdate(getDiagramView().getElement());
 	}
-
-	/**
-	 * @generated
-	 */
-	public class RectangleInterfaceFigure extends RectangleFigure {
-
-		/**
-		 * @generated
-		 */
-		private RectangleFigure fFigureRectangleInterfaceFigure_propertiesCompartment;
-
-		/**
-		 * @generated
-		 */
-		private RectangleFigure fFigureRectangleInterfaceFigure_operationsCompartment;
-
-		/**
-		 * @generated
-		 */
-		private RectangleFigure fFigureRectangleInterfaceFigure_classesCompartment;
-
-		/**
-		 * @generated
-		 */
-		private Label fFigureRectangleInterfaceFigure_name;
-
-		/**
-		 * @generated
-		 */
-		public RectangleInterfaceFigure() {
-
-			ToolbarLayout layoutThis = new ToolbarLayout();
-			layoutThis.setStretchMinorAxis(true);
-			layoutThis.setMinorAlignment(ToolbarLayout.ALIGN_CENTER);
-
-			layoutThis.setSpacing(0);
-			layoutThis.setVertical(true);
-
-			this.setLayoutManager(layoutThis);
-
-			createContents();
-		}
-
-		/**
-		 * @generated
-		 */
-		private void createContents() {
-
-			RectangleFigure rectangleInterfaceFigure_header0 = new RectangleFigure();
-			rectangleInterfaceFigure_header0.setBorder(new LineBorder(null, getMapMode().DPtoLP(1)));
-
-			this.add(rectangleInterfaceFigure_header0);
-
-			ToolbarLayout layoutRectangleInterfaceFigure_header0 = new ToolbarLayout();
-			layoutRectangleInterfaceFigure_header0.setStretchMinorAxis(true);
-			layoutRectangleInterfaceFigure_header0.setMinorAlignment(ToolbarLayout.ALIGN_TOPLEFT);
-
-			layoutRectangleInterfaceFigure_header0.setSpacing(0);
-			layoutRectangleInterfaceFigure_header0.setVertical(true);
-
-			rectangleInterfaceFigure_header0.setLayoutManager(layoutRectangleInterfaceFigure_header0);
-
-			RectangleFigure rectangleInterfaceFigure_InterfaceContainer1 = new RectangleFigure();
-			rectangleInterfaceFigure_InterfaceContainer1.setOutline(false);
-
-			rectangleInterfaceFigure_header0.add(rectangleInterfaceFigure_InterfaceContainer1);
-
-			CenterLayout layoutRectangleInterfaceFigure_InterfaceContainer1 = new CenterLayout();
-
-			rectangleInterfaceFigure_InterfaceContainer1.setLayoutManager(layoutRectangleInterfaceFigure_InterfaceContainer1);
-
-			Label rectangleInterfaceFigure_interface2 = new Label();
-			rectangleInterfaceFigure_interface2.setText("\u00ABinterface\u00BB");
-
-			rectangleInterfaceFigure_interface2.setFont(RECTANGLEINTERFACEFIGURE_INTERFACE2_FONT);
-
-			rectangleInterfaceFigure_interface2.setBorder(new MarginBorder(getMapMode().DPtoLP(5), getMapMode().DPtoLP(5), getMapMode().DPtoLP(0), getMapMode().DPtoLP(5)));
-
-			rectangleInterfaceFigure_InterfaceContainer1.add(rectangleInterfaceFigure_interface2);
-
-			RectangleFigure rectangleInterfaceFigure_NameContainer1 = new RectangleFigure();
-			rectangleInterfaceFigure_NameContainer1.setOutline(false);
-
-			rectangleInterfaceFigure_header0.add(rectangleInterfaceFigure_NameContainer1);
-
-			CenterLayout layoutRectangleInterfaceFigure_NameContainer1 = new CenterLayout();
-
-			rectangleInterfaceFigure_NameContainer1.setLayoutManager(layoutRectangleInterfaceFigure_NameContainer1);
-
-			fFigureRectangleInterfaceFigure_name = new Label();
-			fFigureRectangleInterfaceFigure_name.setText("");
-
-			fFigureRectangleInterfaceFigure_name.setFont(FFIGURERECTANGLEINTERFACEFIGURE_NAME_FONT);
-
-			fFigureRectangleInterfaceFigure_name.setBorder(new MarginBorder(getMapMode().DPtoLP(0), getMapMode().DPtoLP(5), getMapMode().DPtoLP(5), getMapMode().DPtoLP(5)));
-
-			rectangleInterfaceFigure_NameContainer1.add(fFigureRectangleInterfaceFigure_name);
-
-			fFigureRectangleInterfaceFigure_propertiesCompartment = new RectangleFigure();
-
-			this.add(fFigureRectangleInterfaceFigure_propertiesCompartment);
-			fFigureRectangleInterfaceFigure_propertiesCompartment.setLayoutManager(new StackLayout());
-
-			fFigureRectangleInterfaceFigure_operationsCompartment = new RectangleFigure();
-
-			this.add(fFigureRectangleInterfaceFigure_operationsCompartment);
-			fFigureRectangleInterfaceFigure_operationsCompartment.setLayoutManager(new StackLayout());
-
-			fFigureRectangleInterfaceFigure_classesCompartment = new RectangleFigure();
-
-			this.add(fFigureRectangleInterfaceFigure_classesCompartment);
-			fFigureRectangleInterfaceFigure_classesCompartment.setLayoutManager(new StackLayout());
-
-		}
-
-		/**
-		 * @generated
-		 */
-		private boolean myUseLocalCoordinates = false;
-
-		/**
-		 * @generated
-		 */
-		protected boolean useLocalCoordinates() {
-			return myUseLocalCoordinates;
-		}
-
-		/**
-		 * @generated
-		 */
-		protected void setUseLocalCoordinates(boolean useLocalCoordinates) {
-			myUseLocalCoordinates = useLocalCoordinates;
-		}
-
-		/**
-		 * @generated
-		 */
-		public RectangleFigure getFigureRectangleInterfaceFigure_propertiesCompartment() {
-			return fFigureRectangleInterfaceFigure_propertiesCompartment;
-		}
-
-		/**
-		 * @generated
-		 */
-		public RectangleFigure getFigureRectangleInterfaceFigure_operationsCompartment() {
-			return fFigureRectangleInterfaceFigure_operationsCompartment;
-		}
-
-		/**
-		 * @generated
-		 */
-		public RectangleFigure getFigureRectangleInterfaceFigure_classesCompartment() {
-			return fFigureRectangleInterfaceFigure_classesCompartment;
-		}
-
-		/**
-		 * @generated
-		 */
-		public Label getFigureRectangleInterfaceFigure_name() {
-			return fFigureRectangleInterfaceFigure_name;
-		}
-
-	}
-
-	/**
-	 * @generated
-	 */
-	static final Font RECTANGLEINTERFACEFIGURE_INTERFACE2_FONT = new Font(Display.getCurrent(), Display.getDefault().getSystemFont().getFontData()[0].getName(), 9, SWT.NORMAL);
-
-	/**
-	 * @generated
-	 */
-	static final Font FFIGURERECTANGLEINTERFACEFIGURE_NAME_FONT = new Font(Display.getCurrent(), Display.getDefault().getSystemFont().getFontData()[0].getName(), 9, SWT.NORMAL);
 
 }

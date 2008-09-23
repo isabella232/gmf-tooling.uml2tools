@@ -15,6 +15,7 @@ import org.eclipse.uml2.diagram.clazz.edit.parts.DataType3EditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.DataTypeAttributes2EditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.DataTypeName2EditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.DataTypeOperations2EditPart;
+import org.eclipse.uml2.diagram.clazz.edit.parts.DataTypeStereotype2EditPart;
 import org.eclipse.uml2.diagram.clazz.part.UMLVisualIDRegistry;
 
 /**
@@ -49,6 +50,7 @@ public class DataType3ViewFactory extends AbstractShapeViewFactory {
 			eObjectAdapter = new EObjectAdapter(eObject);
 		}
 		getViewService().createNode(eObjectAdapter, view, UMLVisualIDRegistry.getType(DataTypeName2EditPart.VISUAL_ID), ViewUtil.APPEND, true, getPreferencesHint());
+		getViewService().createNode(eObjectAdapter, view, UMLVisualIDRegistry.getType(DataTypeStereotype2EditPart.VISUAL_ID), ViewUtil.APPEND, true, getPreferencesHint());
 		getViewService().createNode(eObjectAdapter, view, UMLVisualIDRegistry.getType(DataTypeAttributes2EditPart.VISUAL_ID), ViewUtil.APPEND, true, getPreferencesHint());
 		getViewService().createNode(eObjectAdapter, view, UMLVisualIDRegistry.getType(DataTypeOperations2EditPart.VISUAL_ID), ViewUtil.APPEND, true, getPreferencesHint());
 	}

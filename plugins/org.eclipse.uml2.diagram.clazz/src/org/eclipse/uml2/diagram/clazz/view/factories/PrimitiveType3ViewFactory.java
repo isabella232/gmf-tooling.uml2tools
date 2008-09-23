@@ -15,6 +15,7 @@ import org.eclipse.uml2.diagram.clazz.edit.parts.PrimitiveType3EditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.PrimitiveTypeAttributes2EditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.PrimitiveTypeName2EditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.PrimitiveTypeOperations2EditPart;
+import org.eclipse.uml2.diagram.clazz.edit.parts.PrimitiveTypeStereotype2EditPart;
 import org.eclipse.uml2.diagram.clazz.part.UMLVisualIDRegistry;
 
 /**
@@ -49,6 +50,7 @@ public class PrimitiveType3ViewFactory extends AbstractShapeViewFactory {
 			eObjectAdapter = new EObjectAdapter(eObject);
 		}
 		getViewService().createNode(eObjectAdapter, view, UMLVisualIDRegistry.getType(PrimitiveTypeName2EditPart.VISUAL_ID), ViewUtil.APPEND, true, getPreferencesHint());
+		getViewService().createNode(eObjectAdapter, view, UMLVisualIDRegistry.getType(PrimitiveTypeStereotype2EditPart.VISUAL_ID), ViewUtil.APPEND, true, getPreferencesHint());
 		getViewService().createNode(eObjectAdapter, view, UMLVisualIDRegistry.getType(PrimitiveTypeAttributes2EditPart.VISUAL_ID), ViewUtil.APPEND, true, getPreferencesHint());
 		getViewService().createNode(eObjectAdapter, view, UMLVisualIDRegistry.getType(PrimitiveTypeOperations2EditPart.VISUAL_ID), ViewUtil.APPEND, true, getPreferencesHint());
 	}

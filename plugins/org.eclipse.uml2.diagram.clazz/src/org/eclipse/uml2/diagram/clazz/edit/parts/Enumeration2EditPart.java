@@ -196,6 +196,10 @@ public class Enumeration2EditPart extends AbstractBorderedShapeEditPart implemen
 			((EnumerationNameEditPart) childEditPart).setLabel(getPrimaryShape().getFigureClassFigure_name());
 			return true;
 		}
+		if (childEditPart instanceof EnumerationStereotypeEditPart) {
+			((EnumerationStereotypeEditPart) childEditPart).setLabel(getPrimaryShape().getFigureClassFigure_stereo());
+			return true;
+		}
 		if (childEditPart instanceof EnumerationLiteralsEditPart) {
 			IFigure pane = getPrimaryShape().getFigureClassFigure_LiteralsCompartment();
 			setupContentPane(pane); // FIXME each comparment should handle his content pane in his own way 

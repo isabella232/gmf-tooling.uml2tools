@@ -52,11 +52,17 @@ public class UMLEditPartFactory implements EditPartFactory {
 			case AssociationClassNameEditPart.VISUAL_ID:
 				return new AssociationClassNameEditPart(view);
 
+			case AssociationClassStereotypeEditPart.VISUAL_ID:
+				return new AssociationClassStereotypeEditPart(view);
+
 			case DataType2EditPart.VISUAL_ID:
 				return new DataType2EditPart(view);
 
 			case DataTypeNameEditPart.VISUAL_ID:
 				return new DataTypeNameEditPart(view);
+
+			case DataTypeStereotypeEditPart.VISUAL_ID:
+				return new DataTypeStereotypeEditPart(view);
 
 			case PrimitiveType2EditPart.VISUAL_ID:
 				return new PrimitiveType2EditPart(view);
@@ -64,11 +70,17 @@ public class UMLEditPartFactory implements EditPartFactory {
 			case PrimitiveTypeNameEditPart.VISUAL_ID:
 				return new PrimitiveTypeNameEditPart(view);
 
+			case PrimitiveTypeStereotypeEditPart.VISUAL_ID:
+				return new PrimitiveTypeStereotypeEditPart(view);
+
 			case Enumeration2EditPart.VISUAL_ID:
 				return new Enumeration2EditPart(view);
 
 			case EnumerationNameEditPart.VISUAL_ID:
 				return new EnumerationNameEditPart(view);
+
+			case EnumerationStereotypeEditPart.VISUAL_ID:
+				return new EnumerationStereotypeEditPart(view);
 
 			case InterfaceEditPart.VISUAL_ID:
 				return new InterfaceEditPart(view);
@@ -108,6 +120,9 @@ public class UMLEditPartFactory implements EditPartFactory {
 
 			case InterfaceName2EditPart.VISUAL_ID:
 				return new InterfaceName2EditPart(view);
+
+			case InterfaceStereotypeEditPart.VISUAL_ID:
+				return new InterfaceStereotypeEditPart(view);
 
 			case Package4EditPart.VISUAL_ID:
 				return new Package4EditPart(view);
@@ -235,14 +250,17 @@ public class UMLEditPartFactory implements EditPartFactory {
 			case ClassName2EditPart.VISUAL_ID:
 				return new ClassName2EditPart(view);
 
-			case ClassQualifiedNameEditPart.VISUAL_ID:
-				return new ClassQualifiedNameEditPart(view);
+			case ClassStereotype2EditPart.VISUAL_ID:
+				return new ClassStereotype2EditPart(view);
 
 			case Enumeration3EditPart.VISUAL_ID:
 				return new Enumeration3EditPart(view);
 
 			case EnumerationName2EditPart.VISUAL_ID:
 				return new EnumerationName2EditPart(view);
+
+			case EnumerationStereotype2EditPart.VISUAL_ID:
+				return new EnumerationStereotype2EditPart(view);
 
 			case InstanceSpecification3EditPart.VISUAL_ID:
 				return new InstanceSpecification3EditPart(view);
@@ -256,11 +274,17 @@ public class UMLEditPartFactory implements EditPartFactory {
 			case DataTypeName2EditPart.VISUAL_ID:
 				return new DataTypeName2EditPart(view);
 
+			case DataTypeStereotype2EditPart.VISUAL_ID:
+				return new DataTypeStereotype2EditPart(view);
+
 			case PrimitiveType3EditPart.VISUAL_ID:
 				return new PrimitiveType3EditPart(view);
 
 			case PrimitiveTypeName2EditPart.VISUAL_ID:
 				return new PrimitiveTypeName2EditPart(view);
+
+			case PrimitiveTypeStereotype2EditPart.VISUAL_ID:
+				return new PrimitiveTypeStereotype2EditPart(view);
 
 			case LiteralStringEditPart.VISUAL_ID:
 				return new LiteralStringEditPart(view);

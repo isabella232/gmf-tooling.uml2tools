@@ -1486,9 +1486,9 @@
       </labels>
       <labels
           visualID="5022"
-          editPartClassName="ClassQualifiedNameEditPart"
-          itemSemanticEditPolicyClassName="ClassQualifiedNameItemSemanticEditPolicy"
-          notationViewFactoryClassName="ClassQualifiedNameViewFactory">
+          editPartClassName="ClassStereotype2EditPart"
+          itemSemanticEditPolicyClassName="ClassStereotype2ItemSemanticEditPolicy"
+          notationViewFactoryClassName="ClassStereotype2ViewFactory">
         <diagramRunTimeClass
             href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
         <viewmap
@@ -1501,7 +1501,7 @@
         </viewmap>
         <modelFacet
             xsi:type="gmfgen:FeatureLabelModelFacet"
-            parser="//@labelParsers/@implementations.0"
+            parser="//@labelParsers/@implementations.3"
             editPattern="">
           <metaFeatures
               href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/NamedElement/qualifiedName"/>
@@ -1575,6 +1575,29 @@
             editPattern="">
           <metaFeatures
               href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/NamedElement/name"/>
+        </modelFacet>
+      </labels>
+      <labels
+          visualID="5036"
+          editPartClassName="EnumerationStereotype2EditPart"
+          itemSemanticEditPolicyClassName="EnumerationStereotype2ItemSemanticEditPolicy"
+          notationViewFactoryClassName="EnumerationStereotype2ViewFactory">
+        <diagramRunTimeClass
+            href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
+        <viewmap
+            xsi:type="gmfgen:ParentAssignedViewmap"
+            getterName="getFigureClassFigure_stereo"
+            figureQualifiedClassName="org.eclipse.draw2d.Label">
+          <attributes
+              xsi:type="gmfgen:StyleAttributes"
+              fixedFont="true"/>
+        </viewmap>
+        <modelFacet
+            xsi:type="gmfgen:FeatureLabelModelFacet"
+            parser="//@labelParsers/@implementations.3"
+            editPattern="">
+          <metaFeatures
+              href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/NamedElement/qualifiedName"/>
         </modelFacet>
       </labels>
     </childNodes>
@@ -1709,6 +1732,29 @@
               href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/NamedElement/name"/>
         </modelFacet>
       </labels>
+      <labels
+          visualID="5037"
+          editPartClassName="DataTypeStereotype2EditPart"
+          itemSemanticEditPolicyClassName="DataTypeStereotype2ItemSemanticEditPolicy"
+          notationViewFactoryClassName="DataTypeStereotype2ViewFactory">
+        <diagramRunTimeClass
+            href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
+        <viewmap
+            xsi:type="gmfgen:ParentAssignedViewmap"
+            getterName="getFigureClassFigure_stereo"
+            figureQualifiedClassName="org.eclipse.draw2d.Label">
+          <attributes
+              xsi:type="gmfgen:StyleAttributes"
+              fixedFont="true"/>
+        </viewmap>
+        <modelFacet
+            xsi:type="gmfgen:FeatureLabelModelFacet"
+            parser="//@labelParsers/@implementations.3"
+            editPattern="">
+          <metaFeatures
+              href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/NamedElement/qualifiedName"/>
+        </modelFacet>
+      </labels>
     </childNodes>
     <childNodes
         visualID="3037"
@@ -1777,6 +1823,29 @@
             editPattern="">
           <metaFeatures
               href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/NamedElement/name"/>
+        </modelFacet>
+      </labels>
+      <labels
+          visualID="5038"
+          editPartClassName="PrimitiveTypeStereotype2EditPart"
+          itemSemanticEditPolicyClassName="PrimitiveTypeStereotype2ItemSemanticEditPolicy"
+          notationViewFactoryClassName="PrimitiveTypeStereotype2ViewFactory">
+        <diagramRunTimeClass
+            href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
+        <viewmap
+            xsi:type="gmfgen:ParentAssignedViewmap"
+            getterName="getFigureClassFigure_stereo"
+            figureQualifiedClassName="org.eclipse.draw2d.Label">
+          <attributes
+              xsi:type="gmfgen:StyleAttributes"
+              fixedFont="true"/>
+        </viewmap>
+        <modelFacet
+            xsi:type="gmfgen:FeatureLabelModelFacet"
+            parser="//@labelParsers/@implementations.3"
+            editPattern="">
+          <metaFeatures
+              href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/NamedElement/qualifiedName"/>
         </modelFacet>
       </labels>
     </childNodes>
@@ -2055,11 +2124,11 @@
         </viewmap>
         <behaviour
             xsi:type="gmfgen:CustomBehaviour"
-            key="org.eclipse.gef.EditPolicy.EditPolicy.DIRECT_EDIT_ROLE"
-            editPolicyQualifiedClassName="org.eclipse.uml2.diagram.parser.SemanticLabelDirectEditPolicy"/>        
+            key="org.eclipse.gef.EditPolicy.DIRECT_EDIT_ROLE"
+            editPolicyQualifiedClassName="org.eclipse.uml2.diagram.parser.SemanticLabelDirectEditPolicy"/>
         <modelFacet
             xsi:type="gmfgen:FeatureLabelModelFacet"
-            parser="//@labelParsers/@implementations.0"
+            parser="//@labelParsers/@implementations.3"
             editPattern="">
           <metaFeatures
               href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/NamedElement/qualifiedName"/>
@@ -2144,6 +2213,33 @@
               href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/NamedElement/name"/>
         </modelFacet>
       </labels>
+      <labels
+          visualID="5031"
+          editPartClassName="AssociationClassStereotypeEditPart"
+          itemSemanticEditPolicyClassName="AssociationClassStereotypeItemSemanticEditPolicy"
+          notationViewFactoryClassName="AssociationClassStereotypeViewFactory">
+        <diagramRunTimeClass
+            href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
+        <viewmap
+            xsi:type="gmfgen:ParentAssignedViewmap"
+            getterName="getFigureClassFigure_stereo"
+            figureQualifiedClassName="org.eclipse.draw2d.Label">
+          <attributes
+              xsi:type="gmfgen:StyleAttributes"
+              fixedFont="true"/>
+        </viewmap>
+        <behaviour
+            xsi:type="gmfgen:CustomBehaviour"
+            key="org.eclipse.gef.EditPolicy.DIRECT_EDIT_ROLE"
+            editPolicyQualifiedClassName="org.eclipse.uml2.diagram.parser.SemanticLabelDirectEditPolicy"/>
+        <modelFacet
+            xsi:type="gmfgen:FeatureLabelModelFacet"
+            parser="//@labelParsers/@implementations.3"
+            editPattern="">
+          <metaFeatures
+              href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/NamedElement/qualifiedName"/>
+        </modelFacet>
+      </labels>
     </topLevelNodes>
     <topLevelNodes
         visualID="2004"
@@ -2217,6 +2313,33 @@
             editPattern="">
           <metaFeatures
               href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/NamedElement/name"/>
+        </modelFacet>
+      </labels>
+      <labels
+          visualID="5032"
+          editPartClassName="DataTypeStereotypeEditPart"
+          itemSemanticEditPolicyClassName="DataTypeStereotypeItemSemanticEditPolicy"
+          notationViewFactoryClassName="DataTypeStereotypeViewFactory">
+        <diagramRunTimeClass
+            href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
+        <viewmap
+            xsi:type="gmfgen:ParentAssignedViewmap"
+            getterName="getFigureClassFigure_stereo"
+            figureQualifiedClassName="org.eclipse.draw2d.Label">
+          <attributes
+              xsi:type="gmfgen:StyleAttributes"
+              fixedFont="true"/>
+        </viewmap>
+        <behaviour
+            xsi:type="gmfgen:CustomBehaviour"
+            key="org.eclipse.gef.EditPolicy.DIRECT_EDIT_ROLE"
+            editPolicyQualifiedClassName="org.eclipse.uml2.diagram.parser.SemanticLabelDirectEditPolicy"/>
+        <modelFacet
+            xsi:type="gmfgen:FeatureLabelModelFacet"
+            parser="//@labelParsers/@implementations.3"
+            editPattern="">
+          <metaFeatures
+              href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/NamedElement/qualifiedName"/>
         </modelFacet>
       </labels>
     </topLevelNodes>
@@ -2293,6 +2416,33 @@
               href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/NamedElement/name"/>
         </modelFacet>
       </labels>
+      <labels
+          visualID="5033"
+          editPartClassName="PrimitiveTypeStereotypeEditPart"
+          itemSemanticEditPolicyClassName="PrimitiveTypeStereotypeItemSemanticEditPolicy"
+          notationViewFactoryClassName="PrimitiveTypeStereotypeViewFactory">
+        <diagramRunTimeClass
+            href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
+        <viewmap
+            xsi:type="gmfgen:ParentAssignedViewmap"
+            getterName="getFigureClassFigure_stereo"
+            figureQualifiedClassName="org.eclipse.draw2d.Label">
+          <attributes
+              xsi:type="gmfgen:StyleAttributes"
+              fixedFont="true"/>
+        </viewmap>
+        <behaviour
+            xsi:type="gmfgen:CustomBehaviour"
+            key="org.eclipse.gef.EditPolicy.DIRECT_EDIT_ROLE"
+            editPolicyQualifiedClassName="org.eclipse.uml2.diagram.parser.SemanticLabelDirectEditPolicy"/>
+        <modelFacet
+            xsi:type="gmfgen:FeatureLabelModelFacet"
+            parser="//@labelParsers/@implementations.3"
+            editPattern="">
+          <metaFeatures
+              href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/NamedElement/qualifiedName"/>
+        </modelFacet>
+      </labels>
     </topLevelNodes>
     <topLevelNodes
         visualID="2003"
@@ -2365,6 +2515,33 @@
             editPattern="">
           <metaFeatures
               href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/NamedElement/name"/>
+        </modelFacet>
+      </labels>
+      <labels
+          visualID="5034"
+          editPartClassName="EnumerationStereotypeEditPart"
+          itemSemanticEditPolicyClassName="EnumerationStereotypeItemSemanticEditPolicy"
+          notationViewFactoryClassName="EnumerationStereotypeViewFactory">
+        <diagramRunTimeClass
+            href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
+        <viewmap
+            xsi:type="gmfgen:ParentAssignedViewmap"
+            getterName="getFigureClassFigure_stereo"
+            figureQualifiedClassName="org.eclipse.draw2d.Label">
+          <attributes
+              xsi:type="gmfgen:StyleAttributes"
+              fixedFont="true"/>
+        </viewmap>
+        <behaviour
+            xsi:type="gmfgen:CustomBehaviour"
+            key="org.eclipse.gef.EditPolicy.DIRECT_EDIT_ROLE"
+            editPolicyQualifiedClassName="org.eclipse.uml2.diagram.parser.SemanticLabelDirectEditPolicy"/>
+        <modelFacet
+            xsi:type="gmfgen:FeatureLabelModelFacet"
+            parser="//@labelParsers/@implementations.3"
+            editPattern="">
+          <metaFeatures
+              href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/NamedElement/qualifiedName"/>
         </modelFacet>
       </labels>
     </topLevelNodes>
@@ -2748,8 +2925,12 @@
       <viewmap
           xsi:type="gmfgen:InnerClassViewmap"
           layoutType="TOOLBAR_LAYOUT"
-          className="RectangleInterfaceFigure"
-          classBody="&#xD;&#xA;/**&#xD;&#xA; * @generated&#xD;&#xA; */&#xD;&#xA;public class RectangleInterfaceFigure extends org.eclipse.draw2d.RectangleFigure {&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;private org.eclipse.draw2d.RectangleFigure fFigureRectangleInterfaceFigure_propertiesCompartment; &#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;private org.eclipse.draw2d.RectangleFigure fFigureRectangleInterfaceFigure_operationsCompartment; &#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;private org.eclipse.draw2d.RectangleFigure fFigureRectangleInterfaceFigure_classesCompartment; &#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;private org.eclipse.draw2d.Label fFigureRectangleInterfaceFigure_name; &#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;public RectangleInterfaceFigure() {&#xD;&#xA;&#x9;&#x9;&#xD;&#xA;&#x9;org.eclipse.draw2d.ToolbarLayout layoutThis = new org.eclipse.draw2d.ToolbarLayout();&#xD;&#xA;&#x9;layoutThis.setStretchMinorAxis(true);&#xD;&#xA;&#x9;layoutThis.setMinorAlignment(org.eclipse.draw2d.ToolbarLayout.ALIGN_CENTER&#xD;&#xA;);&#xD;&#xA;&#xD;&#xA;&#x9;layoutThis.setSpacing(0);&#xD;&#xA;&#x9;layoutThis.setVertical(true);&#xD;&#xA;&#xD;&#xA;&#x9;this.setLayoutManager(layoutThis);&#xD;&#xA;&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;createContents();&#xD;&#xA;&#x9;}&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;private void createContents(){&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;org.eclipse.draw2d.RectangleFigure rectangleInterfaceFigure_header0 = new org.eclipse.draw2d.RectangleFigure();&#xD;&#xA;rectangleInterfaceFigure_header0.setBorder(new org.eclipse.draw2d.LineBorder(null, getMapMode().DPtoLP(1)&#xD;&#xA;));&#xD;&#xA;&#xD;&#xA;this.add(rectangleInterfaceFigure_header0);&#xD;&#xA;&#xD;&#xA;&#x9;org.eclipse.draw2d.ToolbarLayout layoutRectangleInterfaceFigure_header0 = new org.eclipse.draw2d.ToolbarLayout();&#xD;&#xA;&#x9;layoutRectangleInterfaceFigure_header0.setStretchMinorAxis(true);&#xD;&#xA;&#x9;layoutRectangleInterfaceFigure_header0.setMinorAlignment(org.eclipse.draw2d.ToolbarLayout.ALIGN_TOPLEFT&#xD;&#xA;);&#xD;&#xA;&#xD;&#xA;&#x9;layoutRectangleInterfaceFigure_header0.setSpacing(0);&#xD;&#xA;&#x9;layoutRectangleInterfaceFigure_header0.setVertical(true);&#xD;&#xA;&#xD;&#xA;&#x9;rectangleInterfaceFigure_header0.setLayoutManager(layoutRectangleInterfaceFigure_header0);&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;org.eclipse.draw2d.RectangleFigure rectangleInterfaceFigure_InterfaceContainer1 = new org.eclipse.draw2d.RectangleFigure();&#xD;&#xA;rectangleInterfaceFigure_InterfaceContainer1.setOutline(false);&#xD;&#xA;&#xD;&#xA;rectangleInterfaceFigure_header0.add(rectangleInterfaceFigure_InterfaceContainer1);&#xD;&#xA;&#xD;&#xA;&#x9;org.eclipse.uml2.diagram.common.draw2d.CenterLayout layoutRectangleInterfaceFigure_InterfaceContainer1 = new org.eclipse.uml2.diagram.common.draw2d.CenterLayout();&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#x9;rectangleInterfaceFigure_InterfaceContainer1.setLayoutManager(layoutRectangleInterfaceFigure_InterfaceContainer1);&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;org.eclipse.draw2d.Label rectangleInterfaceFigure_interface2 = new org.eclipse.draw2d.Label();&#xD;&#xA;rectangleInterfaceFigure_interface2.setText(&quot;\u00ABinterface\u00BB&quot;);&#xD;&#xA;&#xD;&#xA;rectangleInterfaceFigure_interface2.setFont(RECTANGLEINTERFACEFIGURE_INTERFACE2_FONT);&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;rectangleInterfaceFigure_interface2.setBorder(new org.eclipse.draw2d.MarginBorder(getMapMode().DPtoLP(5)&#xD;&#xA;, getMapMode().DPtoLP(5)&#xD;&#xA;, getMapMode().DPtoLP(0)&#xD;&#xA;, getMapMode().DPtoLP(5)&#xD;&#xA;));&#xD;&#xA;&#xD;&#xA;rectangleInterfaceFigure_InterfaceContainer1.add(rectangleInterfaceFigure_interface2);&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;org.eclipse.draw2d.RectangleFigure rectangleInterfaceFigure_NameContainer1 = new org.eclipse.draw2d.RectangleFigure();&#xD;&#xA;rectangleInterfaceFigure_NameContainer1.setOutline(false);&#xD;&#xA;&#xD;&#xA;rectangleInterfaceFigure_header0.add(rectangleInterfaceFigure_NameContainer1);&#xD;&#xA;&#xD;&#xA;&#x9;org.eclipse.uml2.diagram.common.draw2d.CenterLayout layoutRectangleInterfaceFigure_NameContainer1 = new org.eclipse.uml2.diagram.common.draw2d.CenterLayout();&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#x9;rectangleInterfaceFigure_NameContainer1.setLayoutManager(layoutRectangleInterfaceFigure_NameContainer1);&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;fFigureRectangleInterfaceFigure_name = new org.eclipse.draw2d.Label();&#xD;&#xA;fFigureRectangleInterfaceFigure_name.setText(&quot;&quot;);&#xD;&#xA;&#xD;&#xA;fFigureRectangleInterfaceFigure_name.setFont(FFIGURERECTANGLEINTERFACEFIGURE_NAME_FONT);&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;fFigureRectangleInterfaceFigure_name.setBorder(new org.eclipse.draw2d.MarginBorder(getMapMode().DPtoLP(0)&#xD;&#xA;, getMapMode().DPtoLP(5)&#xD;&#xA;, getMapMode().DPtoLP(5)&#xD;&#xA;, getMapMode().DPtoLP(5)&#xD;&#xA;));&#xD;&#xA;&#xD;&#xA;rectangleInterfaceFigure_NameContainer1.add(fFigureRectangleInterfaceFigure_name);&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;fFigureRectangleInterfaceFigure_propertiesCompartment = new org.eclipse.draw2d.RectangleFigure();&#xD;&#xA;&#xD;&#xA;this.add(fFigureRectangleInterfaceFigure_propertiesCompartment);&#xD;&#xA;fFigureRectangleInterfaceFigure_propertiesCompartment.setLayoutManager(new org.eclipse.draw2d.StackLayout());&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;fFigureRectangleInterfaceFigure_operationsCompartment = new org.eclipse.draw2d.RectangleFigure();&#xD;&#xA;&#xD;&#xA;this.add(fFigureRectangleInterfaceFigure_operationsCompartment);&#xD;&#xA;fFigureRectangleInterfaceFigure_operationsCompartment.setLayoutManager(new org.eclipse.draw2d.StackLayout());&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;fFigureRectangleInterfaceFigure_classesCompartment = new org.eclipse.draw2d.RectangleFigure();&#xD;&#xA;&#xD;&#xA;this.add(fFigureRectangleInterfaceFigure_classesCompartment);&#xD;&#xA;fFigureRectangleInterfaceFigure_classesCompartment.setLayoutManager(new org.eclipse.draw2d.StackLayout());&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#x9;}&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;private boolean myUseLocalCoordinates = false;&#xD;&#xA;&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;protected boolean useLocalCoordinates() {&#xD;&#xA;&#x9;&#x9;return myUseLocalCoordinates;&#xD;&#xA;&#x9;}&#xD;&#xA;&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;protected void setUseLocalCoordinates(boolean useLocalCoordinates) {&#xD;&#xA;&#x9;&#x9;myUseLocalCoordinates = useLocalCoordinates;&#xD;&#xA;&#x9;}&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;public org.eclipse.draw2d.RectangleFigure getFigureRectangleInterfaceFigure_propertiesCompartment() {&#xD;&#xA;&#x9;&#x9;return fFigureRectangleInterfaceFigure_propertiesCompartment;&#xD;&#xA;&#x9;}&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;public org.eclipse.draw2d.RectangleFigure getFigureRectangleInterfaceFigure_operationsCompartment() {&#xD;&#xA;&#x9;&#x9;return fFigureRectangleInterfaceFigure_operationsCompartment;&#xD;&#xA;&#x9;}&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;public org.eclipse.draw2d.RectangleFigure getFigureRectangleInterfaceFigure_classesCompartment() {&#xD;&#xA;&#x9;&#x9;return fFigureRectangleInterfaceFigure_classesCompartment;&#xD;&#xA;&#x9;}&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;public org.eclipse.draw2d.Label getFigureRectangleInterfaceFigure_name() {&#xD;&#xA;&#x9;&#x9;return fFigureRectangleInterfaceFigure_name;&#xD;&#xA;&#x9;}&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;}&#xD;&#xA;&#xD;&#xA;/**&#xD;&#xA; * @generated&#xD;&#xA; */&#xD;&#xA;static final org.eclipse.swt.graphics.Font RECTANGLEINTERFACEFIGURE_INTERFACE2_FONT = new org.eclipse.swt.graphics.Font(org.eclipse.swt.widgets.Display.getCurrent(), org.eclipse.swt.widgets.Display.getDefault().getSystemFont().getFontData()[0].getName(), 9, org.eclipse.swt.SWT.NORMAL);&#xD;&#xA;&#xD;&#xA;/**&#xD;&#xA; * @generated&#xD;&#xA; */&#xD;&#xA;static final org.eclipse.swt.graphics.Font FFIGURERECTANGLEINTERFACEFIGURE_NAME_FONT = new org.eclipse.swt.graphics.Font(org.eclipse.swt.widgets.Display.getCurrent(), org.eclipse.swt.widgets.Display.getDefault().getSystemFont().getFontData()[0].getName(), 9, org.eclipse.swt.SWT.NORMAL);&#xD;&#xA;&#xD;&#xA;">
+          className="ClassFigure"
+          classBody="&#xD;&#xA;/**&#xD;&#xA; * @generated&#xD;&#xA; */&#xD;&#xA;public class ClassFigure extends org.eclipse.draw2d.RectangleFigure {&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;private org.eclipse.draw2d.Label fFigureClassFigure_stereo; &#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;private org.eclipse.draw2d.Label fFigureClassFigure_name; &#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;private org.eclipse.draw2d.RectangleFigure fFigureClassFigure_PropertiesCompartment; &#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;private org.eclipse.draw2d.RectangleFigure fFigureClassFigure_OperationsCompartment; &#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;private org.eclipse.draw2d.RectangleFigure fFigureClassFigure_ClassesCompartment; &#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;private org.eclipse.draw2d.RectangleFigure fFigureClassFigure_LiteralsCompartment; &#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;private org.eclipse.draw2d.RectangleFigure fFigureClassFigure_OthersCompartment; &#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;public ClassFigure() {&#xD;&#xA;&#x9;&#x9;&#xD;&#xA;&#x9;org.eclipse.draw2d.ToolbarLayout layoutThis = new org.eclipse.draw2d.ToolbarLayout();&#xD;&#xA;&#x9;layoutThis.setStretchMinorAxis(true);&#xD;&#xA;&#x9;layoutThis.setMinorAlignment(org.eclipse.draw2d.ToolbarLayout.ALIGN_CENTER&#xD;&#xA;);&#xD;&#xA;&#xD;&#xA;&#x9;layoutThis.setSpacing(0);&#xD;&#xA;&#x9;layoutThis.setVertical(true);&#xD;&#xA;&#xD;&#xA;&#x9;this.setLayoutManager(layoutThis);&#xD;&#xA;&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;createContents();&#xD;&#xA;&#x9;}&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;private void createContents(){&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;org.eclipse.draw2d.RectangleFigure classFigure_Header0 = new org.eclipse.draw2d.RectangleFigure();&#xD;&#xA;classFigure_Header0.setBorder(new org.eclipse.draw2d.LineBorder(null, getMapMode().DPtoLP(1)&#xD;&#xA;));&#xD;&#xA;&#xD;&#xA;this.add(classFigure_Header0);&#xD;&#xA;&#xD;&#xA;&#x9;org.eclipse.draw2d.ToolbarLayout layoutClassFigure_Header0 = new org.eclipse.draw2d.ToolbarLayout();&#xD;&#xA;&#x9;layoutClassFigure_Header0.setStretchMinorAxis(true);&#xD;&#xA;&#x9;layoutClassFigure_Header0.setMinorAlignment(org.eclipse.draw2d.ToolbarLayout.ALIGN_TOPLEFT&#xD;&#xA;);&#xD;&#xA;&#xD;&#xA;&#x9;layoutClassFigure_Header0.setSpacing(0);&#xD;&#xA;&#x9;layoutClassFigure_Header0.setVertical(true);&#xD;&#xA;&#xD;&#xA;&#x9;classFigure_Header0.setLayoutManager(layoutClassFigure_Header0);&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;org.eclipse.draw2d.RectangleFigure classFigure_StereoContainer1 = new org.eclipse.draw2d.RectangleFigure();&#xD;&#xA;classFigure_StereoContainer1.setOutline(false);&#xD;&#xA;&#xD;&#xA;classFigure_Header0.add(classFigure_StereoContainer1);&#xD;&#xA;&#xD;&#xA;&#x9;org.eclipse.uml2.diagram.common.draw2d.CenterLayout layoutClassFigure_StereoContainer1 = new org.eclipse.uml2.diagram.common.draw2d.CenterLayout();&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#x9;classFigure_StereoContainer1.setLayoutManager(layoutClassFigure_StereoContainer1);&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;fFigureClassFigure_stereo = new org.eclipse.draw2d.Label();&#xD;&#xA;fFigureClassFigure_stereo.setText(&quot;&quot;);&#xD;&#xA;&#xD;&#xA;fFigureClassFigure_stereo.setFont(FFIGURECLASSFIGURE_STEREO_FONT);&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;fFigureClassFigure_stereo.setBorder(new org.eclipse.draw2d.MarginBorder(getMapMode().DPtoLP(5)&#xD;&#xA;, getMapMode().DPtoLP(5)&#xD;&#xA;, getMapMode().DPtoLP(0)&#xD;&#xA;, getMapMode().DPtoLP(5)&#xD;&#xA;));&#xD;&#xA;&#xD;&#xA;classFigure_StereoContainer1.add(fFigureClassFigure_stereo);&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;org.eclipse.draw2d.RectangleFigure classFigure_NameContainer1 = new org.eclipse.draw2d.RectangleFigure();&#xD;&#xA;classFigure_NameContainer1.setOutline(false);&#xD;&#xA;&#xD;&#xA;classFigure_Header0.add(classFigure_NameContainer1);&#xD;&#xA;&#xD;&#xA;&#x9;org.eclipse.uml2.diagram.common.draw2d.CenterLayout layoutClassFigure_NameContainer1 = new org.eclipse.uml2.diagram.common.draw2d.CenterLayout();&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#x9;classFigure_NameContainer1.setLayoutManager(layoutClassFigure_NameContainer1);&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;fFigureClassFigure_name = new org.eclipse.draw2d.Label();&#xD;&#xA;fFigureClassFigure_name.setText(&quot;&quot;);&#xD;&#xA;&#xD;&#xA;fFigureClassFigure_name.setFont(FFIGURECLASSFIGURE_NAME_FONT);&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;fFigureClassFigure_name.setBorder(new org.eclipse.draw2d.MarginBorder(getMapMode().DPtoLP(0)&#xD;&#xA;, getMapMode().DPtoLP(5)&#xD;&#xA;, getMapMode().DPtoLP(5)&#xD;&#xA;, getMapMode().DPtoLP(5)&#xD;&#xA;));&#xD;&#xA;&#xD;&#xA;classFigure_NameContainer1.add(fFigureClassFigure_name);&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;fFigureClassFigure_PropertiesCompartment = new org.eclipse.draw2d.RectangleFigure();&#xD;&#xA;&#xD;&#xA;this.add(fFigureClassFigure_PropertiesCompartment);&#xD;&#xA;fFigureClassFigure_PropertiesCompartment.setLayoutManager(new org.eclipse.draw2d.StackLayout());&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;fFigureClassFigure_OperationsCompartment = new org.eclipse.draw2d.RectangleFigure();&#xD;&#xA;&#xD;&#xA;this.add(fFigureClassFigure_OperationsCompartment);&#xD;&#xA;fFigureClassFigure_OperationsCompartment.setLayoutManager(new org.eclipse.draw2d.StackLayout());&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;fFigureClassFigure_ClassesCompartment = new org.eclipse.draw2d.RectangleFigure();&#xD;&#xA;&#xD;&#xA;this.add(fFigureClassFigure_ClassesCompartment);&#xD;&#xA;fFigureClassFigure_ClassesCompartment.setLayoutManager(new org.eclipse.draw2d.StackLayout());&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;fFigureClassFigure_LiteralsCompartment = new org.eclipse.draw2d.RectangleFigure();&#xD;&#xA;&#xD;&#xA;this.add(fFigureClassFigure_LiteralsCompartment);&#xD;&#xA;fFigureClassFigure_LiteralsCompartment.setLayoutManager(new org.eclipse.draw2d.StackLayout());&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;fFigureClassFigure_OthersCompartment = new org.eclipse.draw2d.RectangleFigure();&#xD;&#xA;&#xD;&#xA;this.add(fFigureClassFigure_OthersCompartment);&#xD;&#xA;fFigureClassFigure_OthersCompartment.setLayoutManager(new org.eclipse.draw2d.StackLayout());&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#x9;}&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;private boolean myUseLocalCoordinates = false;&#xD;&#xA;&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;protected boolean useLocalCoordinates() {&#xD;&#xA;&#x9;&#x9;return myUseLocalCoordinates;&#xD;&#xA;&#x9;}&#xD;&#xA;&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;protected void setUseLocalCoordinates(boolean useLocalCoordinates) {&#xD;&#xA;&#x9;&#x9;myUseLocalCoordinates = useLocalCoordinates;&#xD;&#xA;&#x9;}&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;public org.eclipse.draw2d.Label getFigureClassFigure_stereo() {&#xD;&#xA;&#x9;&#x9;return fFigureClassFigure_stereo;&#xD;&#xA;&#x9;}&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;public org.eclipse.draw2d.Label getFigureClassFigure_name() {&#xD;&#xA;&#x9;&#x9;return fFigureClassFigure_name;&#xD;&#xA;&#x9;}&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;public org.eclipse.draw2d.RectangleFigure getFigureClassFigure_PropertiesCompartment() {&#xD;&#xA;&#x9;&#x9;return fFigureClassFigure_PropertiesCompartment;&#xD;&#xA;&#x9;}&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;public org.eclipse.draw2d.RectangleFigure getFigureClassFigure_OperationsCompartment() {&#xD;&#xA;&#x9;&#x9;return fFigureClassFigure_OperationsCompartment;&#xD;&#xA;&#x9;}&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;public org.eclipse.draw2d.RectangleFigure getFigureClassFigure_ClassesCompartment() {&#xD;&#xA;&#x9;&#x9;return fFigureClassFigure_ClassesCompartment;&#xD;&#xA;&#x9;}&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;public org.eclipse.draw2d.RectangleFigure getFigureClassFigure_LiteralsCompartment() {&#xD;&#xA;&#x9;&#x9;return fFigureClassFigure_LiteralsCompartment;&#xD;&#xA;&#x9;}&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;public org.eclipse.draw2d.RectangleFigure getFigureClassFigure_OthersCompartment() {&#xD;&#xA;&#x9;&#x9;return fFigureClassFigure_OthersCompartment;&#xD;&#xA;&#x9;}&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;}&#xD;&#xA;&#xD;&#xA;/**&#xD;&#xA; * @generated&#xD;&#xA; */&#xD;&#xA;static final org.eclipse.swt.graphics.Font FFIGURECLASSFIGURE_STEREO_FONT = new org.eclipse.swt.graphics.Font(org.eclipse.swt.widgets.Display.getCurrent(), org.eclipse.swt.widgets.Display.getDefault().getSystemFont().getFontData()[0].getName(), 9, org.eclipse.swt.SWT.NORMAL);&#xD;&#xA;&#xD;&#xA;/**&#xD;&#xA; * @generated&#xD;&#xA; */&#xD;&#xA;static final org.eclipse.swt.graphics.Font FFIGURECLASSFIGURE_NAME_FONT = new org.eclipse.swt.graphics.Font(org.eclipse.swt.widgets.Display.getCurrent(), org.eclipse.swt.widgets.Display.getDefault().getSystemFont().getFontData()[0].getName(), 9, org.eclipse.swt.SWT.NORMAL);&#xD;&#xA;&#xD;&#xA;">
+        <attributes
+            xsi:type="gmfgen:DefaultSizeAttributes"
+            width="100"
+            height="60"/>
         <attributes
             xsi:type="uml2.gmfgenext:SubstitutableByAttributes">
           <substitutableByIDs>2010</substitutableByIDs>
@@ -2784,7 +2965,7 @@
             href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
         <viewmap
             xsi:type="gmfgen:ParentAssignedViewmap"
-            getterName="getFigureRectangleInterfaceFigure_name"
+            getterName="getFigureClassFigure_name"
             figureQualifiedClassName="org.eclipse.draw2d.Label">
           <attributes
               xsi:type="gmfgen:StyleAttributes"
@@ -2796,6 +2977,33 @@
             editPattern="">
           <metaFeatures
               href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/NamedElement/name"/>
+        </modelFacet>
+      </labels>
+      <labels
+          visualID="5035"
+          editPartClassName="InterfaceStereotypeEditPart"
+          itemSemanticEditPolicyClassName="InterfaceStereotypeItemSemanticEditPolicy"
+          notationViewFactoryClassName="InterfaceStereotypeViewFactory">
+        <diagramRunTimeClass
+            href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
+        <viewmap
+            xsi:type="gmfgen:ParentAssignedViewmap"
+            getterName="getFigureClassFigure_stereo"
+            figureQualifiedClassName="org.eclipse.draw2d.Label">
+          <attributes
+              xsi:type="gmfgen:StyleAttributes"
+              fixedFont="true"/>
+        </viewmap>
+        <behaviour
+            xsi:type="gmfgen:CustomBehaviour"
+            key="org.eclipse.gef.EditPolicy.DIRECT_EDIT_ROLE"
+            editPolicyQualifiedClassName="org.eclipse.uml2.diagram.parser.SemanticLabelDirectEditPolicy"/>
+        <modelFacet
+            xsi:type="gmfgen:FeatureLabelModelFacet"
+            parser="//@labelParsers/@implementations.3"
+            editPattern="">
+          <metaFeatures
+              href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/NamedElement/qualifiedName"/>
         </modelFacet>
       </labels>
     </topLevelNodes>
@@ -4349,7 +4557,7 @@
           href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
       <viewmap
           xsi:type="gmfgen:ParentAssignedViewmap"
-          getterName="getFigureRectangleInterfaceFigure_propertiesCompartment"
+          getterName="getFigureClassFigure_PropertiesCompartment"
           figureQualifiedClassName="org.eclipse.draw2d.RectangleFigure"/>
     </compartments>
     <compartments
@@ -4366,7 +4574,7 @@
           href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
       <viewmap
           xsi:type="gmfgen:ParentAssignedViewmap"
-          getterName="getFigureRectangleInterfaceFigure_operationsCompartment"
+          getterName="getFigureClassFigure_OperationsCompartment"
           figureQualifiedClassName="org.eclipse.draw2d.RectangleFigure"/>
     </compartments>
     <compartments
@@ -4383,7 +4591,7 @@
           href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
       <viewmap
           xsi:type="gmfgen:ParentAssignedViewmap"
-          getterName="getFigureRectangleInterfaceFigure_classesCompartment"
+          getterName="getFigureClassFigure_ClassesCompartment"
           figureQualifiedClassName="org.eclipse.draw2d.RectangleFigure"/>
     </compartments>
     <compartments
@@ -15165,12 +15373,16 @@
       extensibleViaService="true">
     <implementations
         xsi:type="gmfgen:PredefinedParser"
-        uses="//@diagram/@childNodes.0/@labelModelFacet //@diagram/@childNodes.1/@labelModelFacet //@diagram/@childNodes.2/@labelModelFacet //@diagram/@childNodes.3/@labelModelFacet //@diagram/@childNodes.4/@labelModelFacet //@diagram/@childNodes.5/@labelModelFacet //@diagram/@childNodes.6/@labelModelFacet //@diagram/@childNodes.7/@labelModelFacet //@diagram/@topLevelNodes.0/@labels.0/@modelFacet //@diagram/@childNodes.8/@labelModelFacet //@diagram/@childNodes.9/@labelModelFacet //@diagram/@childNodes.10/@labelModelFacet //@diagram/@childNodes.11/@labels.0/@modelFacet //@diagram/@topLevelNodes.1/@labels.0/@modelFacet //@diagram/@topLevelNodes.1/@labels.1/@modelFacet //@diagram/@childNodes.13/@labelModelFacet //@diagram/@childNodes.14/@labelModelFacet //@diagram/@topLevelNodes.2/@labels.0/@modelFacet //@diagram/@childNodes.15/@labelModelFacet //@diagram/@childNodes.16/@labelModelFacet //@diagram/@topLevelNodes.3/@labels.0/@modelFacet //@diagram/@childNodes.17/@labelModelFacet //@diagram/@childNodes.18/@labelModelFacet //@diagram/@topLevelNodes.4/@labels.0/@modelFacet //@diagram/@childNodes.19/@labelModelFacet //@diagram/@childNodes.20/@labelModelFacet //@diagram/@childNodes.21/@labelModelFacet //@diagram/@topLevelNodes.5/@labels.0/@modelFacet //@diagram/@topLevelNodes.6/@labels.0/@modelFacet //@diagram/@topLevelNodes.7/@labels.0/@modelFacet //@diagram/@childNodes.22/@labelModelFacet //@diagram/@topLevelNodes.8/@labels.0/@modelFacet //@diagram/@topLevelNodes.9/@labels.0/@modelFacet //@diagram/@topLevelNodes.10/@labels.0/@modelFacet //@diagram/@topLevelNodes.10/@labels.1/@modelFacet //@diagram/@childNodes.23/@labelModelFacet //@diagram/@childNodes.24/@labelModelFacet //@diagram/@childNodes.25/@labelModelFacet //@diagram/@topLevelNodes.11/@labels.0/@modelFacet //@diagram/@childNodes.26/@labelModelFacet //@diagram/@topLevelNodes.12/@labels.0/@modelFacet //@diagram/@childNodes.28/@labels.0/@modelFacet //@diagram/@childNodes.28/@labels.1/@modelFacet //@diagram/@childNodes.29/@labels.0/@modelFacet //@diagram/@childNodes.30/@labels.0/@modelFacet //@diagram/@childNodes.31/@labels.0/@modelFacet //@diagram/@childNodes.32/@labels.0/@modelFacet //@diagram/@childNodes.27/@labels.0/@modelFacet //@diagram/@topLevelNodes.14/@labels.0/@modelFacet //@diagram/@childNodes.33/@labelModelFacet //@diagram/@childNodes.34/@labelModelFacet //@diagram/@childNodes.35/@labelModelFacet //@diagram/@topLevelNodes.15/@labels.0/@modelFacet //@diagram/@topLevelNodes.16/@labels.0/@modelFacet //@diagram/@links.1/@labels.0/@modelFacet //@diagram/@links.1/@labels.1/@modelFacet //@diagram/@links.2/@labels.0/@modelFacet //@diagram/@links.2/@labels.1/@modelFacet //@diagram/@links.2/@labels.2/@modelFacet //@diagram/@links.4/@labels.0/@modelFacet //@diagram/@links.4/@labels.1/@modelFacet //@diagram/@links.4/@labels.2/@modelFacet //@diagram/@links.4/@labels.3/@modelFacet //@diagram/@links.4/@labels.4/@modelFacet //@diagram/@links.4/@labels.5/@modelFacet //@diagram/@links.4/@labels.6/@modelFacet //@diagram/@links.8/@labels.0/@modelFacet //@diagram/@links.13/@labels.0/@modelFacet //@diagram/@links.13/@labels.1/@modelFacet"/>
+        uses="//@diagram/@childNodes.0/@labelModelFacet //@diagram/@childNodes.1/@labelModelFacet //@diagram/@childNodes.2/@labelModelFacet //@diagram/@childNodes.3/@labelModelFacet //@diagram/@childNodes.4/@labelModelFacet //@diagram/@childNodes.5/@labelModelFacet //@diagram/@childNodes.6/@labelModelFacet //@diagram/@childNodes.7/@labelModelFacet //@diagram/@topLevelNodes.0/@labels.0/@modelFacet //@diagram/@childNodes.8/@labelModelFacet //@diagram/@childNodes.9/@labelModelFacet //@diagram/@childNodes.10/@labelModelFacet //@diagram/@childNodes.11/@labels.0/@modelFacet //@diagram/@topLevelNodes.1/@labels.0/@modelFacet //@diagram/@childNodes.13/@labelModelFacet //@diagram/@childNodes.14/@labelModelFacet //@diagram/@topLevelNodes.2/@labels.0/@modelFacet //@diagram/@childNodes.15/@labelModelFacet //@diagram/@childNodes.16/@labelModelFacet //@diagram/@topLevelNodes.3/@labels.0/@modelFacet //@diagram/@childNodes.17/@labelModelFacet //@diagram/@childNodes.18/@labelModelFacet //@diagram/@topLevelNodes.4/@labels.0/@modelFacet //@diagram/@childNodes.19/@labelModelFacet //@diagram/@childNodes.20/@labelModelFacet //@diagram/@childNodes.21/@labelModelFacet //@diagram/@topLevelNodes.5/@labels.0/@modelFacet //@diagram/@topLevelNodes.6/@labels.0/@modelFacet //@diagram/@topLevelNodes.7/@labels.0/@modelFacet //@diagram/@childNodes.22/@labelModelFacet //@diagram/@topLevelNodes.8/@labels.0/@modelFacet //@diagram/@topLevelNodes.9/@labels.0/@modelFacet //@diagram/@topLevelNodes.10/@labels.0/@modelFacet //@diagram/@topLevelNodes.10/@labels.1/@modelFacet //@diagram/@childNodes.23/@labelModelFacet //@diagram/@childNodes.24/@labelModelFacet //@diagram/@childNodes.25/@labelModelFacet //@diagram/@topLevelNodes.11/@labels.0/@modelFacet //@diagram/@childNodes.26/@labelModelFacet //@diagram/@topLevelNodes.12/@labels.0/@modelFacet //@diagram/@childNodes.28/@labels.0/@modelFacet //@diagram/@childNodes.29/@labels.0/@modelFacet //@diagram/@childNodes.30/@labels.0/@modelFacet //@diagram/@childNodes.31/@labels.0/@modelFacet //@diagram/@childNodes.32/@labels.0/@modelFacet //@diagram/@childNodes.27/@labels.0/@modelFacet //@diagram/@topLevelNodes.14/@labels.0/@modelFacet //@diagram/@childNodes.33/@labelModelFacet //@diagram/@childNodes.34/@labelModelFacet //@diagram/@childNodes.35/@labelModelFacet //@diagram/@topLevelNodes.15/@labels.0/@modelFacet //@diagram/@topLevelNodes.16/@labels.0/@modelFacet //@diagram/@links.1/@labels.0/@modelFacet //@diagram/@links.1/@labels.1/@modelFacet //@diagram/@links.2/@labels.0/@modelFacet //@diagram/@links.2/@labels.1/@modelFacet //@diagram/@links.2/@labels.2/@modelFacet //@diagram/@links.4/@labels.0/@modelFacet //@diagram/@links.4/@labels.1/@modelFacet //@diagram/@links.4/@labels.2/@modelFacet //@diagram/@links.4/@labels.3/@modelFacet //@diagram/@links.4/@labels.4/@modelFacet //@diagram/@links.4/@labels.5/@modelFacet //@diagram/@links.4/@labels.6/@modelFacet //@diagram/@links.8/@labels.0/@modelFacet //@diagram/@links.13/@labels.0/@modelFacet //@diagram/@links.13/@labels.1/@modelFacet"/>
     <implementations
         xsi:type="gmfgen:ExternalParser"
         uses="//@diagram/@childNodes.12/@labels.0/@modelFacet //@diagram/@links.14/@labels.1/@modelFacet"/>
     <implementations
         xsi:type="gmfgen:ExternalParser"
         uses="//@diagram/@links.14/@labels.0/@modelFacet"/>
+    <implementations
+        xsi:type="gmfgen:CustomParser"
+        uses="//@diagram/@topLevelNodes.2/@labels.1/@modelFacet //@diagram/@childNodes.28/@labels.1/@modelFacet //@diagram/@topLevelNodes.1/@labels.1/@modelFacet //@diagram/@childNodes.31/@labels.1/@modelFacet //@diagram/@topLevelNodes.3/@labels.1/@modelFacet //@diagram/@childNodes.29/@labels.1/@modelFacet //@diagram/@topLevelNodes.5/@labels.1/@modelFacet //@diagram/@topLevelNodes.11/@labels.1/@modelFacet //@diagram/@childNodes.32/@labels.1/@modelFacet //@diagram/@topLevelNodes.4/@labels.1/@modelFacet"
+        qualifiedName="org.eclipse.uml2.diagram.common.parser.stereotype.AppliedStereotypeParser"/>
   </labelParsers>
 </gmfgen:GenEditorGenerator>

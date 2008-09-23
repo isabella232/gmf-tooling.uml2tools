@@ -18,6 +18,7 @@ import org.eclipse.uml2.diagram.clazz.edit.parts.EnumerationAttributesEditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.EnumerationLiteralsEditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.EnumerationNameEditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.EnumerationOperationsEditPart;
+import org.eclipse.uml2.diagram.clazz.edit.parts.EnumerationStereotypeEditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.PackageEditPart;
 import org.eclipse.uml2.diagram.clazz.part.UMLVisualIDRegistry;
 
@@ -59,6 +60,7 @@ public class Enumeration2ViewFactory extends AbstractShapeViewFactory {
 			eObjectAdapter = new EObjectAdapter(eObject);
 		}
 		getViewService().createNode(eObjectAdapter, view, UMLVisualIDRegistry.getType(EnumerationNameEditPart.VISUAL_ID), ViewUtil.APPEND, true, getPreferencesHint());
+		getViewService().createNode(eObjectAdapter, view, UMLVisualIDRegistry.getType(EnumerationStereotypeEditPart.VISUAL_ID), ViewUtil.APPEND, true, getPreferencesHint());
 		getViewService().createNode(eObjectAdapter, view, UMLVisualIDRegistry.getType(EnumerationLiteralsEditPart.VISUAL_ID), ViewUtil.APPEND, true, getPreferencesHint());
 		getViewService().createNode(eObjectAdapter, view, UMLVisualIDRegistry.getType(EnumerationAttributesEditPart.VISUAL_ID), ViewUtil.APPEND, true, getPreferencesHint());
 		getViewService().createNode(eObjectAdapter, view, UMLVisualIDRegistry.getType(EnumerationOperationsEditPart.VISUAL_ID), ViewUtil.APPEND, true, getPreferencesHint());
