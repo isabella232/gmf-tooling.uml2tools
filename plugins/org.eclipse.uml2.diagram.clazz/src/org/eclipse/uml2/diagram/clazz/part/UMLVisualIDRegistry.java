@@ -1172,6 +1172,11 @@ public class UMLVisualIDRegistry {
 				return true;
 			}
 			break;
+		case GeneralizationEditPart.VISUAL_ID:
+			if (GeneralizationStereotypeEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			break;
 		case Dependency2EditPart.VISUAL_ID:
 			if (DependencyName2EditPart.VISUAL_ID == nodeVisualID) {
 				return true;
@@ -1213,9 +1218,30 @@ public class UMLVisualIDRegistry {
 			if (AssociationName7EditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
+			if (AssociationStereotypeEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			break;
+		case InterfaceRealizationEditPart.VISUAL_ID:
+			if (InterfaceRealizationStereotypeEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
 			break;
 		case RealizationEditPart.VISUAL_ID:
 			if (RealizationNameEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			if (RealizationStereotypeEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			break;
+		case Generalization2EditPart.VISUAL_ID:
+			if (GeneralizationStereotype2EditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			break;
+		case UsageEditPart.VISUAL_ID:
+			if (UsageStereotypeEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
 			break;
@@ -1232,6 +1258,9 @@ public class UMLVisualIDRegistry {
 				return true;
 			}
 			if (TemplateParameterSubstitutionEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			if (TemplateBindingStereotypeEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
 			break;

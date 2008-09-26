@@ -18,6 +18,7 @@ import org.eclipse.uml2.diagram.clazz.edit.parts.AssociationName5EditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.AssociationName6EditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.AssociationName7EditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.AssociationNameEditPart;
+import org.eclipse.uml2.diagram.clazz.edit.parts.AssociationStereotypeEditPart;
 import org.eclipse.uml2.diagram.clazz.part.UMLVisualIDRegistry;
 
 /**
@@ -56,5 +57,6 @@ public class AssociationViewFactory extends ConnectionViewFactory {
 		getViewService().createNode(eObjectAdapter, view, UMLVisualIDRegistry.getType(AssociationName5EditPart.VISUAL_ID), ViewUtil.APPEND, true, getPreferencesHint());
 		getViewService().createNode(eObjectAdapter, view, UMLVisualIDRegistry.getType(AssociationName6EditPart.VISUAL_ID), ViewUtil.APPEND, true, getPreferencesHint());
 		getViewService().createNode(eObjectAdapter, view, UMLVisualIDRegistry.getType(AssociationName7EditPart.VISUAL_ID), ViewUtil.APPEND, true, getPreferencesHint());
+		getViewService().createNode(eObjectAdapter, view, UMLVisualIDRegistry.getType(AssociationStereotypeEditPart.VISUAL_ID), ViewUtil.APPEND, true, getPreferencesHint());
 	}
 }

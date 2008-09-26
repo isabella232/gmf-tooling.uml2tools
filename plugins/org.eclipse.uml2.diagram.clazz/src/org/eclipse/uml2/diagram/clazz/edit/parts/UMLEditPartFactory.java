@@ -403,6 +403,9 @@ public class UMLEditPartFactory implements EditPartFactory {
 			case GeneralizationEditPart.VISUAL_ID:
 				return new GeneralizationEditPart(view);
 
+			case GeneralizationStereotypeEditPart.VISUAL_ID:
+				return new GeneralizationStereotypeEditPart(view);
+
 			case Dependency2EditPart.VISUAL_ID:
 				return new Dependency2EditPart(view);
 
@@ -451,6 +454,9 @@ public class UMLEditPartFactory implements EditPartFactory {
 			case AssociationName7EditPart.VISUAL_ID:
 				return new AssociationName7EditPart(view);
 
+			case AssociationStereotypeEditPart.VISUAL_ID:
+				return new AssociationStereotypeEditPart(view);
+
 			case DependencySupplierEditPart.VISUAL_ID:
 				return new DependencySupplierEditPart(view);
 
@@ -460,20 +466,32 @@ public class UMLEditPartFactory implements EditPartFactory {
 			case InterfaceRealizationEditPart.VISUAL_ID:
 				return new InterfaceRealizationEditPart(view);
 
+			case InterfaceRealizationStereotypeEditPart.VISUAL_ID:
+				return new InterfaceRealizationStereotypeEditPart(view);
+
 			case RealizationEditPart.VISUAL_ID:
 				return new RealizationEditPart(view);
 
 			case RealizationNameEditPart.VISUAL_ID:
 				return new RealizationNameEditPart(view);
 
+			case RealizationStereotypeEditPart.VISUAL_ID:
+				return new RealizationStereotypeEditPart(view);
+
 			case Generalization2EditPart.VISUAL_ID:
 				return new Generalization2EditPart(view);
+
+			case GeneralizationStereotype2EditPart.VISUAL_ID:
+				return new GeneralizationStereotype2EditPart(view);
 
 			case GeneralizationGeneralEditPart.VISUAL_ID:
 				return new GeneralizationGeneralEditPart(view);
 
 			case UsageEditPart.VISUAL_ID:
 				return new UsageEditPart(view);
+
+			case UsageStereotypeEditPart.VISUAL_ID:
+				return new UsageStereotypeEditPart(view);
 
 			case AssociationClassConnectorEditPart.VISUAL_ID:
 				return new AssociationClassConnectorEditPart(view);
@@ -495,6 +513,9 @@ public class UMLEditPartFactory implements EditPartFactory {
 
 			case TemplateParameterSubstitutionEditPart.VISUAL_ID:
 				return new TemplateParameterSubstitutionEditPart(view);
+
+			case TemplateBindingStereotypeEditPart.VISUAL_ID:
+				return new TemplateBindingStereotypeEditPart(view);
 
 			case PortProvidedEditPart.VISUAL_ID:
 				return new PortProvidedEditPart(view);

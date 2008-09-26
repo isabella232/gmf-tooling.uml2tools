@@ -24,6 +24,7 @@ import org.eclipse.uml2.diagram.clazz.edit.parts.AssociationName5EditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.AssociationName6EditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.AssociationName7EditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.AssociationNameEditPart;
+import org.eclipse.uml2.diagram.clazz.edit.parts.AssociationStereotypeEditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.Class3EditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.Class4EditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.ClassEditPart;
@@ -51,6 +52,8 @@ import org.eclipse.uml2.diagram.clazz.edit.parts.EnumerationStereotypeEditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.ExpressionEditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.GeneralizationSetIsCoveringIsDisjointEditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.GeneralizationSetNameEditPart;
+import org.eclipse.uml2.diagram.clazz.edit.parts.GeneralizationStereotype2EditPart;
+import org.eclipse.uml2.diagram.clazz.edit.parts.GeneralizationStereotypeEditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.InstanceSpecificationEditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.InstanceSpecificationName2EditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.InstanceSpecificationName3EditPart;
@@ -58,6 +61,7 @@ import org.eclipse.uml2.diagram.clazz.edit.parts.InstanceSpecificationNameEditPa
 import org.eclipse.uml2.diagram.clazz.edit.parts.Interface3EditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.InterfaceName2EditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.InterfaceNameEditPart;
+import org.eclipse.uml2.diagram.clazz.edit.parts.InterfaceRealizationStereotypeEditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.InterfaceStereotypeEditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.LiteralIntegerEditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.LiteralStringEditPart;
@@ -88,7 +92,10 @@ import org.eclipse.uml2.diagram.clazz.edit.parts.PropertyName2EditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.PropertyName3EditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.PropertyNameEditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.RealizationNameEditPart;
+import org.eclipse.uml2.diagram.clazz.edit.parts.RealizationStereotypeEditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.SlotEditPart;
+import org.eclipse.uml2.diagram.clazz.edit.parts.TemplateBindingStereotypeEditPart;
+import org.eclipse.uml2.diagram.clazz.edit.parts.UsageStereotypeEditPart;
 import org.eclipse.uml2.diagram.clazz.expressions.UMLOCLFactory;
 import org.eclipse.uml2.diagram.clazz.parser.GeneralizationSetParser;
 import org.eclipse.uml2.diagram.clazz.parser.InstanceSpecificationValueParser;
@@ -112,6 +119,8 @@ import org.eclipse.uml2.diagram.common.parser.slot.SlotLookupSuite;
 import org.eclipse.uml2.diagram.common.parser.slot.SlotParser;
 import org.eclipse.uml2.diagram.common.parser.slot.SlotToString;
 import org.eclipse.uml2.diagram.common.parser.stereotype.AppliedStereotypeParser;
+import org.eclipse.uml2.diagram.common.parser.stereotype.ClassifierAppliedStereotypeParser;
+import org.eclipse.uml2.diagram.common.parser.stereotype.DependencyAppliedStereotypeParser;
 import org.eclipse.uml2.diagram.common.parser.valuespec.ValueSpecificationParser;
 import org.eclipse.uml2.diagram.parser.BasicApplyStrategy;
 import org.eclipse.uml2.diagram.parser.ParserAdapter;
@@ -179,14 +188,14 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 	/**
 	 * @generated
 	 */
-	private AppliedStereotypeParser classQualifiedName_5019Parser;
+	private ClassifierAppliedStereotypeParser classQualifiedName_5019Parser;
 
 	/**
 	 * @generated
 	 */
 	private IParser getClassQualifiedName_5019Parser() {
 		if (classQualifiedName_5019Parser == null) {
-			classQualifiedName_5019Parser = new AppliedStereotypeParser();
+			classQualifiedName_5019Parser = new ClassifierAppliedStereotypeParser();
 		}
 		return classQualifiedName_5019Parser;
 	}
@@ -218,14 +227,14 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 	/**
 	 * @generated
 	 */
-	private AppliedStereotypeParser associationClassQualifiedName_5031Parser;
+	private ClassifierAppliedStereotypeParser associationClassQualifiedName_5031Parser;
 
 	/**
 	 * @generated
 	 */
 	private IParser getAssociationClassQualifiedName_5031Parser() {
 		if (associationClassQualifiedName_5031Parser == null) {
-			associationClassQualifiedName_5031Parser = new AppliedStereotypeParser();
+			associationClassQualifiedName_5031Parser = new ClassifierAppliedStereotypeParser();
 		}
 		return associationClassQualifiedName_5031Parser;
 	}
@@ -257,14 +266,14 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 	/**
 	 * @generated
 	 */
-	private AppliedStereotypeParser dataTypeQualifiedName_5032Parser;
+	private ClassifierAppliedStereotypeParser dataTypeQualifiedName_5032Parser;
 
 	/**
 	 * @generated
 	 */
 	private IParser getDataTypeQualifiedName_5032Parser() {
 		if (dataTypeQualifiedName_5032Parser == null) {
-			dataTypeQualifiedName_5032Parser = new AppliedStereotypeParser();
+			dataTypeQualifiedName_5032Parser = new ClassifierAppliedStereotypeParser();
 		}
 		return dataTypeQualifiedName_5032Parser;
 	}
@@ -296,14 +305,14 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 	/**
 	 * @generated
 	 */
-	private AppliedStereotypeParser primitiveTypeQualifiedName_5033Parser;
+	private ClassifierAppliedStereotypeParser primitiveTypeQualifiedName_5033Parser;
 
 	/**
 	 * @generated
 	 */
 	private IParser getPrimitiveTypeQualifiedName_5033Parser() {
 		if (primitiveTypeQualifiedName_5033Parser == null) {
-			primitiveTypeQualifiedName_5033Parser = new AppliedStereotypeParser();
+			primitiveTypeQualifiedName_5033Parser = new ClassifierAppliedStereotypeParser();
 		}
 		return primitiveTypeQualifiedName_5033Parser;
 	}
@@ -335,14 +344,14 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 	/**
 	 * @generated
 	 */
-	private AppliedStereotypeParser enumerationQualifiedName_5034Parser;
+	private ClassifierAppliedStereotypeParser enumerationQualifiedName_5034Parser;
 
 	/**
 	 * @generated
 	 */
 	private IParser getEnumerationQualifiedName_5034Parser() {
 		if (enumerationQualifiedName_5034Parser == null) {
-			enumerationQualifiedName_5034Parser = new AppliedStereotypeParser();
+			enumerationQualifiedName_5034Parser = new ClassifierAppliedStereotypeParser();
 		}
 		return enumerationQualifiedName_5034Parser;
 	}
@@ -501,14 +510,14 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 	/**
 	 * @generated
 	 */
-	private AppliedStereotypeParser interfaceQualifiedName_5035Parser;
+	private ClassifierAppliedStereotypeParser interfaceQualifiedName_5035Parser;
 
 	/**
 	 * @generated
 	 */
 	private IParser getInterfaceQualifiedName_5035Parser() {
 		if (interfaceQualifiedName_5035Parser == null) {
-			interfaceQualifiedName_5035Parser = new AppliedStereotypeParser();
+			interfaceQualifiedName_5035Parser = new ClassifierAppliedStereotypeParser();
 		}
 		return interfaceQualifiedName_5035Parser;
 	}
@@ -1138,14 +1147,14 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 	/**
 	 * @generated
 	 */
-	private AppliedStereotypeParser classQualifiedName_5022Parser;
+	private ClassifierAppliedStereotypeParser classQualifiedName_5022Parser;
 
 	/**
 	 * @generated
 	 */
 	private IParser getClassQualifiedName_5022Parser() {
 		if (classQualifiedName_5022Parser == null) {
-			classQualifiedName_5022Parser = new AppliedStereotypeParser();
+			classQualifiedName_5022Parser = new ClassifierAppliedStereotypeParser();
 		}
 		return classQualifiedName_5022Parser;
 	}
@@ -1177,14 +1186,14 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 	/**
 	 * @generated
 	 */
-	private AppliedStereotypeParser enumerationQualifiedName_5036Parser;
+	private ClassifierAppliedStereotypeParser enumerationQualifiedName_5036Parser;
 
 	/**
 	 * @generated
 	 */
 	private IParser getEnumerationQualifiedName_5036Parser() {
 		if (enumerationQualifiedName_5036Parser == null) {
-			enumerationQualifiedName_5036Parser = new AppliedStereotypeParser();
+			enumerationQualifiedName_5036Parser = new ClassifierAppliedStereotypeParser();
 		}
 		return enumerationQualifiedName_5036Parser;
 	}
@@ -1240,14 +1249,14 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 	/**
 	 * @generated
 	 */
-	private AppliedStereotypeParser dataTypeQualifiedName_5037Parser;
+	private ClassifierAppliedStereotypeParser dataTypeQualifiedName_5037Parser;
 
 	/**
 	 * @generated
 	 */
 	private IParser getDataTypeQualifiedName_5037Parser() {
 		if (dataTypeQualifiedName_5037Parser == null) {
-			dataTypeQualifiedName_5037Parser = new AppliedStereotypeParser();
+			dataTypeQualifiedName_5037Parser = new ClassifierAppliedStereotypeParser();
 		}
 		return dataTypeQualifiedName_5037Parser;
 	}
@@ -1279,14 +1288,14 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 	/**
 	 * @generated
 	 */
-	private AppliedStereotypeParser primitiveTypeQualifiedName_5038Parser;
+	private ClassifierAppliedStereotypeParser primitiveTypeQualifiedName_5038Parser;
 
 	/**
 	 * @generated
 	 */
 	private IParser getPrimitiveTypeQualifiedName_5038Parser() {
 		if (primitiveTypeQualifiedName_5038Parser == null) {
-			primitiveTypeQualifiedName_5038Parser = new AppliedStereotypeParser();
+			primitiveTypeQualifiedName_5038Parser = new ClassifierAppliedStereotypeParser();
 		}
 		return primitiveTypeQualifiedName_5038Parser;
 	}
@@ -1366,6 +1375,21 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 	/**
 	 * @generated
 	 */
+	private AppliedStereotypeParser generalizationQualifiedName_6018Parser;
+
+	/**
+	 * @generated
+	 */
+	private IParser getGeneralizationQualifiedName_6018Parser() {
+		if (generalizationQualifiedName_6018Parser == null) {
+			generalizationQualifiedName_6018Parser = new AppliedStereotypeParser();
+		}
+		return generalizationQualifiedName_6018Parser;
+	}
+
+	/**
+	 * @generated
+	 */
 	private IParser dependencyName_6001Parser;
 
 	/**
@@ -1390,14 +1414,14 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 	/**
 	 * @generated
 	 */
-	private IParser dependencyName_6010Parser;
+	private DependencyAppliedStereotypeParser dependencyName_6010Parser;
 
 	/**
 	 * @generated
 	 */
 	private IParser getDependencyName_6010Parser() {
 		if (dependencyName_6010Parser == null) {
-			dependencyName_6010Parser = createDependencyName_6010Parser();
+			dependencyName_6010Parser = new DependencyAppliedStereotypeParser();
 		}
 		return dependencyName_6010Parser;
 	}
@@ -1615,6 +1639,51 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 	/**
 	 * @generated
 	 */
+	private AppliedStereotypeParser realizationQualifiedName_6021Parser;
+
+	/**
+	 * @generated
+	 */
+	private IParser getRealizationQualifiedName_6021Parser() {
+		if (realizationQualifiedName_6021Parser == null) {
+			realizationQualifiedName_6021Parser = new AppliedStereotypeParser();
+		}
+		return realizationQualifiedName_6021Parser;
+	}
+
+	/**
+	 * @generated
+	 */
+	private AppliedStereotypeParser generalizationQualifiedName_6022Parser;
+
+	/**
+	 * @generated
+	 */
+	private IParser getGeneralizationQualifiedName_6022Parser() {
+		if (generalizationQualifiedName_6022Parser == null) {
+			generalizationQualifiedName_6022Parser = new AppliedStereotypeParser();
+		}
+		return generalizationQualifiedName_6022Parser;
+	}
+
+	/**
+	 * @generated
+	 */
+	private AppliedStereotypeParser usageQualifiedName_6023Parser;
+
+	/**
+	 * @generated
+	 */
+	private IParser getUsageQualifiedName_6023Parser() {
+		if (usageQualifiedName_6023Parser == null) {
+			usageQualifiedName_6023Parser = new AppliedStereotypeParser();
+		}
+		return usageQualifiedName_6023Parser;
+	}
+
+	/**
+	 * @generated
+	 */
 	private IParser slotLabel_6015Parser;
 
 	/**
@@ -1654,6 +1723,21 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 	 */
 	protected IParser createSlotLabel_6016Parser() {
 		return createAssocationInstanceRoleParser(false);
+	}
+
+	/**
+	 * @generated
+	 */
+	private AppliedStereotypeParser templateBindingQualifiedName_6024Parser;
+
+	/**
+	 * @generated
+	 */
+	private IParser getTemplateBindingQualifiedName_6024Parser() {
+		if (templateBindingQualifiedName_6024Parser == null) {
+			templateBindingQualifiedName_6024Parser = new AppliedStereotypeParser();
+		}
+		return templateBindingQualifiedName_6024Parser;
 	}
 
 	public static final OCLLookup<Type> TYPE_LOOKUP = new OCLLookup<Type>(//
@@ -1929,6 +2013,36 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 	/**
 	 * @generated
 	 */
+	private AppliedStereotypeParser associationQualifiedName_6019Parser;
+
+	/**
+	 * @generated
+	 */
+	private IParser getAssociationQualifiedName_6019Parser() {
+		if (associationQualifiedName_6019Parser == null) {
+			associationQualifiedName_6019Parser = new AppliedStereotypeParser();
+		}
+		return associationQualifiedName_6019Parser;
+	}
+
+	/**
+	 * @generated
+	 */
+	private AppliedStereotypeParser interfaceRealizationQualifiedName_6020Parser;
+
+	/**
+	 * @generated
+	 */
+	private IParser getInterfaceRealizationQualifiedName_6020Parser() {
+		if (interfaceRealizationQualifiedName_6020Parser == null) {
+			interfaceRealizationQualifiedName_6020Parser = new AppliedStereotypeParser();
+		}
+		return interfaceRealizationQualifiedName_6020Parser;
+	}
+
+	/**
+	 * @generated
+	 */
 	protected IParser getParser(int visualID) {
 		switch (visualID) {
 		case PackageNameEditPart.VISUAL_ID:
@@ -2055,6 +2169,8 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 			return getLiteralInteger_3039Parser();
 		case ExpressionEditPart.VISUAL_ID:
 			return getExpression_3040Parser();
+		case GeneralizationStereotypeEditPart.VISUAL_ID:
+			return getGeneralizationQualifiedName_6018Parser();
 		case DependencyName2EditPart.VISUAL_ID:
 			return getDependencyName_6001Parser();
 		case DependencyName3EditPart.VISUAL_ID:
@@ -2079,12 +2195,24 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 			return getAssociationName_6008Parser();
 		case AssociationName7EditPart.VISUAL_ID:
 			return getAssociationName_6009Parser();
+		case AssociationStereotypeEditPart.VISUAL_ID:
+			return getAssociationQualifiedName_6019Parser();
+		case InterfaceRealizationStereotypeEditPart.VISUAL_ID:
+			return getInterfaceRealizationQualifiedName_6020Parser();
 		case RealizationNameEditPart.VISUAL_ID:
 			return getRealizationName_6011Parser();
+		case RealizationStereotypeEditPart.VISUAL_ID:
+			return getRealizationQualifiedName_6021Parser();
+		case GeneralizationStereotype2EditPart.VISUAL_ID:
+			return getGeneralizationQualifiedName_6022Parser();
+		case UsageStereotypeEditPart.VISUAL_ID:
+			return getUsageQualifiedName_6023Parser();
 		case AssociationInstanceSourceEditPart.VISUAL_ID:
 			return getSlotLabel_6015Parser();
 		case AssociationInstanceTargetEditPart.VISUAL_ID:
 			return getSlotLabel_6016Parser();
+		case TemplateBindingStereotypeEditPart.VISUAL_ID:
+			return getTemplateBindingQualifiedName_6024Parser();
 		}
 		return null;
 	}

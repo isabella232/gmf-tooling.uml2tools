@@ -1697,6 +1697,14 @@
         href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//Generalization"/>
     <domainSpecialization
         body="self.generalizationSet ->size() = 0"/>
+    <labelMappings
+        xsi:type="gmfmap:FeatureLabelMapping"
+        editPattern="">
+      <diagramLabel
+          href="classDiagram_auxiliary.gmfgraph#AuxiliaryPureLabel"/>
+      <features
+          href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//NamedElement/qualifiedName"/>
+    </labelMappings>
     <containmentFeature
         href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//Classifier/generalization"/>
     <tool
@@ -1847,6 +1855,14 @@
       <features
           href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//NamedElement/name"/>
     </labelMappings>
+    <labelMappings
+        xsi:type="gmfmap:FeatureLabelMapping"
+        editPattern="">
+      <diagramLabel
+          href="classDiagram_auxiliary.gmfgraph#AuxiliaryPureLabel"/>
+      <features
+          href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//NamedElement/qualifiedName"/>
+    </labelMappings>
     <containmentFeature
         href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//Package/packagedElement"/>
     <tool
@@ -1886,6 +1902,14 @@
         href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//InterfaceRealization"/>
     <domainSpecialization
         body="self.supplier->forAll(e|e.oclIsKindOf(uml::Interface))"/>
+    <labelMappings
+        xsi:type="gmfmap:FeatureLabelMapping"
+        editPattern="">
+      <diagramLabel
+          href="classDiagram_auxiliary.gmfgraph#AuxiliaryPureLabel"/>
+      <features
+          href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//NamedElement/qualifiedName"/>
+    </labelMappings>
     <containmentFeature
         href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//BehavioredClassifier/interfaceRealization"/>
     <tool
@@ -1916,6 +1940,14 @@
       <features
           href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//NamedElement/name"/>
     </labelMappings>
+    <labelMappings
+        xsi:type="gmfmap:FeatureLabelMapping"
+        editPattern="">
+      <diagramLabel
+          href="classDiagram_auxiliary.gmfgraph#AuxiliaryPureLabel"/>
+      <features
+          href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//NamedElement/qualifiedName"/>
+    </labelMappings>
     <containmentFeature
         href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//Package/packagedElement"/>
     <tool
@@ -1933,6 +1965,14 @@
   <links>
     <domainMetaElement
         href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//Generalization"/>
+    <labelMappings
+        xsi:type="gmfmap:FeatureLabelMapping"
+        editPattern="">
+      <diagramLabel
+          href="classDiagram_auxiliary.gmfgraph#AuxiliaryPureLabel"/>
+      <features
+          href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//NamedElement/qualifiedName"/>
+    </labelMappings>
     <containmentFeature
         href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//Classifier/generalization"/>
     <tool
@@ -1956,6 +1996,14 @@
         href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//Usage"/>
     <domainSpecialization
         body="self.supplier->forAll(e|e.oclIsKindOf(uml::Interface))"/>
+    <labelMappings
+        xsi:type="gmfmap:FeatureLabelMapping"
+        editPattern="">
+      <diagramLabel
+          href="classDiagram_auxiliary.gmfgraph#AuxiliaryPureLabel"/>
+      <features
+          href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//NamedElement/qualifiedName"/>
+    </labelMappings>
     <containmentFeature
         href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//Package/packagedElement"/>
     <tool
@@ -2031,6 +2079,14 @@
     <labelMappings>
       <diagramLabel
           href="classDiagram_templates.gmfgraph#TemplateBinding_templateParameterSubstitution"/>
+    </labelMappings>
+    <labelMappings
+        xsi:type="gmfmap:FeatureLabelMapping"
+        editPattern="">
+      <diagramLabel
+          href="classDiagram_auxiliary.gmfgraph#AuxiliaryPureLabel"/>
+      <features
+          href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//NamedElement/qualifiedName"/>
     </labelMappings>
     <containmentFeature
         href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//TemplateableElement/templateBinding"/>

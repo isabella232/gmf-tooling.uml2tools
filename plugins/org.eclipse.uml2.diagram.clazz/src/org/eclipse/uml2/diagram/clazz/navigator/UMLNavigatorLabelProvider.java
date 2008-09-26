@@ -1264,11 +1264,12 @@ public class UMLNavigatorLabelProvider extends LabelProvider implements ICommonL
 	 * @generated
 	 */
 	private String getGeneralization_4001Text(View view) {
-		Generalization domainModelElement = (Generalization) view.getElement();
-		if (domainModelElement != null) {
-			return String.valueOf(domainModelElement.isSubstitutable());
+		IParser parser = UMLParserProvider.getParser(UMLElementTypes.Generalization_4001, view.getElement() != null ? view.getElement() : view, UMLVisualIDRegistry
+				.getType(GeneralizationStereotypeEditPart.VISUAL_ID));
+		if (parser != null) {
+			return parser.getPrintString(new EObjectAdapter(view.getElement() != null ? view.getElement() : view), ParserOptions.NONE.intValue());
 		} else {
-			UMLDiagramEditorPlugin.getInstance().logError("No domain element for view with visualID = " + 4001); //$NON-NLS-1$
+			UMLDiagramEditorPlugin.getInstance().logError("Parser was not found for label " + 6018); //$NON-NLS-1$
 			return ""; //$NON-NLS-1$
 		}
 	}
@@ -1339,11 +1340,12 @@ public class UMLNavigatorLabelProvider extends LabelProvider implements ICommonL
 	 * @generated
 	 */
 	private String getInterfaceRealization_4008Text(View view) {
-		InterfaceRealization domainModelElement = (InterfaceRealization) view.getElement();
-		if (domainModelElement != null) {
-			return String.valueOf(domainModelElement.getName());
+		IParser parser = UMLParserProvider.getParser(UMLElementTypes.InterfaceRealization_4008, view.getElement() != null ? view.getElement() : view, UMLVisualIDRegistry
+				.getType(InterfaceRealizationStereotypeEditPart.VISUAL_ID));
+		if (parser != null) {
+			return parser.getPrintString(new EObjectAdapter(view.getElement() != null ? view.getElement() : view), ParserOptions.NONE.intValue());
 		} else {
-			UMLDiagramEditorPlugin.getInstance().logError("No domain element for view with visualID = " + 4008); //$NON-NLS-1$
+			UMLDiagramEditorPlugin.getInstance().logError("Parser was not found for label " + 6020); //$NON-NLS-1$
 			return ""; //$NON-NLS-1$
 		}
 	}
@@ -1366,11 +1368,12 @@ public class UMLNavigatorLabelProvider extends LabelProvider implements ICommonL
 	 * @generated
 	 */
 	private String getGeneralization_4011Text(View view) {
-		Generalization domainModelElement = (Generalization) view.getElement();
-		if (domainModelElement != null) {
-			return String.valueOf(domainModelElement.isSubstitutable());
+		IParser parser = UMLParserProvider.getParser(UMLElementTypes.Generalization_4011, view.getElement() != null ? view.getElement() : view, UMLVisualIDRegistry
+				.getType(GeneralizationStereotype2EditPart.VISUAL_ID));
+		if (parser != null) {
+			return parser.getPrintString(new EObjectAdapter(view.getElement() != null ? view.getElement() : view), ParserOptions.NONE.intValue());
 		} else {
-			UMLDiagramEditorPlugin.getInstance().logError("No domain element for view with visualID = " + 4011); //$NON-NLS-1$
+			UMLDiagramEditorPlugin.getInstance().logError("Parser was not found for label " + 6022); //$NON-NLS-1$
 			return ""; //$NON-NLS-1$
 		}
 	}
@@ -1386,11 +1389,11 @@ public class UMLNavigatorLabelProvider extends LabelProvider implements ICommonL
 	 * @generated
 	 */
 	private String getUsage_4013Text(View view) {
-		Usage domainModelElement = (Usage) view.getElement();
-		if (domainModelElement != null) {
-			return String.valueOf(domainModelElement.getName());
+		IParser parser = UMLParserProvider.getParser(UMLElementTypes.Usage_4013, view.getElement() != null ? view.getElement() : view, UMLVisualIDRegistry.getType(UsageStereotypeEditPart.VISUAL_ID));
+		if (parser != null) {
+			return parser.getPrintString(new EObjectAdapter(view.getElement() != null ? view.getElement() : view), ParserOptions.NONE.intValue());
 		} else {
-			UMLDiagramEditorPlugin.getInstance().logError("No domain element for view with visualID = " + 4013); //$NON-NLS-1$
+			UMLDiagramEditorPlugin.getInstance().logError("Parser was not found for label " + 6023); //$NON-NLS-1$
 			return ""; //$NON-NLS-1$
 		}
 	}

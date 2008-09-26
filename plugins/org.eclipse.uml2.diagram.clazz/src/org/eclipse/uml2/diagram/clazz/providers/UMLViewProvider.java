@@ -373,6 +373,11 @@ public class UMLViewProvider extends AbstractViewProvider {
 						return null; // wrong container
 					}
 					break;
+				case GeneralizationStereotypeEditPart.VISUAL_ID:
+					if (GeneralizationEditPart.VISUAL_ID != UMLVisualIDRegistry.getVisualID(containerView) || containerView.getElement() != domainElement) {
+						return null; // wrong container
+					}
+					break;
 				case DependencyName2EditPart.VISUAL_ID:
 				case DependencyName3EditPart.VISUAL_ID:
 					if (Dependency2EditPart.VISUAL_ID != UMLVisualIDRegistry.getVisualID(containerView) || containerView.getElement() != domainElement) {
@@ -393,12 +398,29 @@ public class UMLViewProvider extends AbstractViewProvider {
 				case AssociationName5EditPart.VISUAL_ID:
 				case AssociationName6EditPart.VISUAL_ID:
 				case AssociationName7EditPart.VISUAL_ID:
+				case AssociationStereotypeEditPart.VISUAL_ID:
 					if (AssociationEditPart.VISUAL_ID != UMLVisualIDRegistry.getVisualID(containerView) || containerView.getElement() != domainElement) {
 						return null; // wrong container
 					}
 					break;
+				case InterfaceRealizationStereotypeEditPart.VISUAL_ID:
+					if (InterfaceRealizationEditPart.VISUAL_ID != UMLVisualIDRegistry.getVisualID(containerView) || containerView.getElement() != domainElement) {
+						return null; // wrong container
+					}
+					break;
 				case RealizationNameEditPart.VISUAL_ID:
+				case RealizationStereotypeEditPart.VISUAL_ID:
 					if (RealizationEditPart.VISUAL_ID != UMLVisualIDRegistry.getVisualID(containerView) || containerView.getElement() != domainElement) {
+						return null; // wrong container
+					}
+					break;
+				case GeneralizationStereotype2EditPart.VISUAL_ID:
+					if (Generalization2EditPart.VISUAL_ID != UMLVisualIDRegistry.getVisualID(containerView) || containerView.getElement() != domainElement) {
+						return null; // wrong container
+					}
+					break;
+				case UsageStereotypeEditPart.VISUAL_ID:
+					if (UsageEditPart.VISUAL_ID != UMLVisualIDRegistry.getVisualID(containerView) || containerView.getElement() != domainElement) {
 						return null; // wrong container
 					}
 					break;
@@ -410,6 +432,7 @@ public class UMLViewProvider extends AbstractViewProvider {
 					break;
 				case TemplateBinding_BindLabelEditPart.VISUAL_ID:
 				case TemplateParameterSubstitutionEditPart.VISUAL_ID:
+				case TemplateBindingStereotypeEditPart.VISUAL_ID:
 					if (TemplateBindingEditPart.VISUAL_ID != UMLVisualIDRegistry.getVisualID(containerView) || containerView.getElement() != domainElement) {
 						return null; // wrong container
 					}
@@ -676,6 +699,8 @@ public class UMLViewProvider extends AbstractViewProvider {
 			return PrimitiveTypeOperations2ViewFactory.class;
 		case InstanceSpecificationValueEditPart.VISUAL_ID:
 			return InstanceSpecificationValueViewFactory.class;
+		case GeneralizationStereotypeEditPart.VISUAL_ID:
+			return GeneralizationStereotypeViewFactory.class;
 		case DependencyName2EditPart.VISUAL_ID:
 			return DependencyName2ViewFactory.class;
 		case DependencyName3EditPart.VISUAL_ID:
@@ -700,8 +725,18 @@ public class UMLViewProvider extends AbstractViewProvider {
 			return AssociationName6ViewFactory.class;
 		case AssociationName7EditPart.VISUAL_ID:
 			return AssociationName7ViewFactory.class;
+		case AssociationStereotypeEditPart.VISUAL_ID:
+			return AssociationStereotypeViewFactory.class;
+		case InterfaceRealizationStereotypeEditPart.VISUAL_ID:
+			return InterfaceRealizationStereotypeViewFactory.class;
 		case RealizationNameEditPart.VISUAL_ID:
 			return RealizationNameViewFactory.class;
+		case RealizationStereotypeEditPart.VISUAL_ID:
+			return RealizationStereotypeViewFactory.class;
+		case GeneralizationStereotype2EditPart.VISUAL_ID:
+			return GeneralizationStereotype2ViewFactory.class;
+		case UsageStereotypeEditPart.VISUAL_ID:
+			return UsageStereotypeViewFactory.class;
 		case AssociationInstanceSourceEditPart.VISUAL_ID:
 			return AssociationInstanceSourceViewFactory.class;
 		case AssociationInstanceTargetEditPart.VISUAL_ID:
@@ -710,6 +745,8 @@ public class UMLViewProvider extends AbstractViewProvider {
 			return TemplateBinding_BindLabelViewFactory.class;
 		case TemplateParameterSubstitutionEditPart.VISUAL_ID:
 			return TemplateParameterSubstitutionViewFactory.class;
+		case TemplateBindingStereotypeEditPart.VISUAL_ID:
+			return TemplateBindingStereotypeViewFactory.class;
 		}
 		return null;
 	}

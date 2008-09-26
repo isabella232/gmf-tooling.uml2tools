@@ -11,6 +11,7 @@ import org.eclipse.gmf.runtime.emf.core.util.EObjectAdapter;
 import org.eclipse.gmf.runtime.notation.NotationFactory;
 import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.uml2.diagram.clazz.edit.parts.TemplateBindingEditPart;
+import org.eclipse.uml2.diagram.clazz.edit.parts.TemplateBindingStereotypeEditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.TemplateBinding_BindLabelEditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.TemplateParameterSubstitutionEditPart;
 import org.eclipse.uml2.diagram.clazz.part.UMLVisualIDRegistry;
@@ -18,6 +19,7 @@ import org.eclipse.uml2.diagram.clazz.part.UMLVisualIDRegistry;
 /**
  * @generated
  */
+
 public class TemplateBindingViewFactory extends ConnectionViewFactory {
 
 	/**
@@ -46,5 +48,6 @@ public class TemplateBindingViewFactory extends ConnectionViewFactory {
 		}
 		getViewService().createNode(eObjectAdapter, view, UMLVisualIDRegistry.getType(TemplateBinding_BindLabelEditPart.VISUAL_ID), ViewUtil.APPEND, true, getPreferencesHint());
 		getViewService().createNode(eObjectAdapter, view, UMLVisualIDRegistry.getType(TemplateParameterSubstitutionEditPart.VISUAL_ID), ViewUtil.APPEND, true, getPreferencesHint());
+		getViewService().createNode(eObjectAdapter, view, UMLVisualIDRegistry.getType(TemplateBindingStereotypeEditPart.VISUAL_ID), ViewUtil.APPEND, true, getPreferencesHint());
 	}
 }
