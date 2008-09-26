@@ -203,4 +203,15 @@
       name="PackageAsFrameNode_fixed_package"
       figure="PackageAsFrameFigure"
       accessor="//@figures.0/@descriptors.2/@accessors.1"/>
+  <labels
+      name="ConnectorStereotypeLabel"
+      figure="SharedPureGraphLabel"
+      elementIcon="false">
+    <facets
+        xsi:type="gmfgraph:AlignmentFacet"
+        alignment="CENTER"/>
+    <facets
+        xsi:type="gmfgraph:LabelOffsetFacet"
+        y="40"/>
+  </labels>
 </gmfgraph:Canvas>

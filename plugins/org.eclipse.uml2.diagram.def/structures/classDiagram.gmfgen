@@ -3793,7 +3793,7 @@
             figureQualifiedClassName="org.eclipse.draw2d.Label">
           <attributes
               xsi:type="gmfgen:LabelOffsetAttributes"
-              y="180"/>
+              y="60"/>
           <requiredPluginIDs>org.eclipse.uml2.diagram.common</requiredPluginIDs>
           <requiredPluginIDs>org.eclipse.gmf.runtime.draw2d.ui</requiredPluginIDs>
         </viewmap>
@@ -3997,7 +3997,7 @@
             figureQualifiedClassName="org.eclipse.draw2d.Label">
           <attributes
               xsi:type="gmfgen:LabelOffsetAttributes"
-              y="60"/>
+              y="40"/>
           <requiredPluginIDs>org.eclipse.uml2.diagram.common</requiredPluginIDs>
           <requiredPluginIDs>org.eclipse.gmf.runtime.draw2d.ui</requiredPluginIDs>
         </viewmap>
@@ -4367,7 +4367,7 @@
             figureQualifiedClassName="org.eclipse.draw2d.Label">
           <attributes
               xsi:type="gmfgen:LabelOffsetAttributes"
-              y="80"/>
+              y="40"/>
           <requiredPluginIDs>org.eclipse.uml2.diagram.common</requiredPluginIDs>
           <requiredPluginIDs>org.eclipse.gmf.runtime.draw2d.ui</requiredPluginIDs>
         </viewmap>

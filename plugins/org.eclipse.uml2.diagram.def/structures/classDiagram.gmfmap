@@ -1701,7 +1701,7 @@
         xsi:type="gmfmap:FeatureLabelMapping"
         editPattern="">
       <diagramLabel
-          href="classDiagram_auxiliary.gmfgraph#AuxiliaryPureLabel"/>
+          href="classDiagram_auxiliary.gmfgraph#ConnectorStereotypeLabel"/>
       <features
           href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//NamedElement/qualifiedName"/>
     </labelMappings>
@@ -1859,7 +1859,7 @@
         xsi:type="gmfmap:FeatureLabelMapping"
         editPattern="">
       <diagramLabel
-          href="classDiagram_auxiliary.gmfgraph#AuxiliaryPureLabel"/>
+          href="classDiagram_auxiliary.gmfgraph#ConnectorStereotypeLabel"/>
       <features
           href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//NamedElement/qualifiedName"/>
     </labelMappings>
@@ -1906,7 +1906,7 @@
         xsi:type="gmfmap:FeatureLabelMapping"
         editPattern="">
       <diagramLabel
-          href="classDiagram_auxiliary.gmfgraph#AuxiliaryPureLabel"/>
+          href="classDiagram_auxiliary.gmfgraph#ConnectorStereotypeLabel"/>
       <features
           href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//NamedElement/qualifiedName"/>
     </labelMappings>
@@ -1944,7 +1944,7 @@
         xsi:type="gmfmap:FeatureLabelMapping"
         editPattern="">
       <diagramLabel
-          href="classDiagram_auxiliary.gmfgraph#AuxiliaryPureLabel"/>
+          href="classDiagram_auxiliary.gmfgraph#ConnectorStereotypeLabel"/>
       <features
           href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//NamedElement/qualifiedName"/>
     </labelMappings>
@@ -1969,7 +1969,7 @@
         xsi:type="gmfmap:FeatureLabelMapping"
         editPattern="">
       <diagramLabel
-          href="classDiagram_auxiliary.gmfgraph#AuxiliaryPureLabel"/>
+          href="classDiagram_auxiliary.gmfgraph#ConnectorStereotypeLabel"/>
       <features
           href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//NamedElement/qualifiedName"/>
     </labelMappings>
@@ -2000,7 +2000,7 @@
         xsi:type="gmfmap:FeatureLabelMapping"
         editPattern="">
       <diagramLabel
-          href="classDiagram_auxiliary.gmfgraph#AuxiliaryPureLabel"/>
+          href="classDiagram_auxiliary.gmfgraph#ConnectorStereotypeLabel"/>
       <features
           href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//NamedElement/qualifiedName"/>
     </labelMappings>
@@ -2084,7 +2084,7 @@
         xsi:type="gmfmap:FeatureLabelMapping"
         editPattern="">
       <diagramLabel
-          href="classDiagram_auxiliary.gmfgraph#AuxiliaryPureLabel"/>
+          href="classDiagram_auxiliary.gmfgraph#ConnectorStereotypeLabel"/>
       <features
           href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//NamedElement/qualifiedName"/>
     </labelMappings>

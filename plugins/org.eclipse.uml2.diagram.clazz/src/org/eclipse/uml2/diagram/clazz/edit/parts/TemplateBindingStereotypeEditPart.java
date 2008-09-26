@@ -92,7 +92,7 @@ public class TemplateBindingStereotypeEditPart extends LabelEditPart implements 
 	 * @generated
 	 */
 	static {
-		registerSnapBackPosition(UMLVisualIDRegistry.getType(org.eclipse.uml2.diagram.clazz.edit.parts.TemplateBindingStereotypeEditPart.VISUAL_ID), new Point(0, 80));
+		registerSnapBackPosition(UMLVisualIDRegistry.getType(org.eclipse.uml2.diagram.clazz.edit.parts.TemplateBindingStereotypeEditPart.VISUAL_ID), new Point(0, 40));
 	}
 
 	/**
