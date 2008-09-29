@@ -1796,7 +1796,7 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 	/**
 	 * @NOT-GENERATED
 	 */
-	private IParser createPropertyParser() {
+	protected IParser createPropertyParser() {
 		LookupSuiteImpl lookupSuite = new LookupSuiteImpl();
 		lookupSuite.addLookup(Type.class, TYPE_LOOKUP);
 		return new PropertySemanticParser(lookupSuite);
