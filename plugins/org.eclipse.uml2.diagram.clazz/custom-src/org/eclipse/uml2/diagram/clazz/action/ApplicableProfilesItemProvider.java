@@ -22,7 +22,7 @@ import org.eclipse.ui.IWorkbenchPage;
 import org.eclipse.uml2.diagram.clazz.part.CustomMessages;
 import org.eclipse.uml2.diagram.common.pathmap.PathMapService;
 import org.eclipse.uml2.uml.Profile;
-import org.eclipse.uml2.uml.resource.UMLResource;
+import org.eclipse.uml2.uml.UMLPlugin;
 import org.eclipse.uml2.uml.util.UMLSwitch;
 
 public class ApplicableProfilesItemProvider extends AbstractContributionItemProvider implements IProvider {
@@ -58,13 +58,26 @@ public class ApplicableProfilesItemProvider extends AbstractContributionItemProv
 		public void buildMenu(IMenuManager manager) {
 			manager.removeAll();
 			GraphicalEditPart selected = (GraphicalEditPart) getSelectedObject(myWorkbenchPart);
+
 			org.eclipse.uml2.uml.Package package_ = (org.eclipse.uml2.uml.Package) selected.getNotationView().getElement();
+			loadProfilesFromRegistry(package_);
+
 			List<Profile> profiles = getProfiles(package_);
 			for (Profile profile : profiles) {
 				// no much sense to cache dynamic target specific actions
 				ApplyProfileAction action = new ApplyProfileAction(getWorkbenchPage(), package_, profile);
 				action.init();
 				manager.add(action);
+			}
+		}
+
+		private void loadProfilesFromRegistry(org.eclipse.uml2.uml.Package package_) {
+			ResourceSet resourceSet = package_.eResource().getResourceSet();
+			for (URI profileURI : UMLPlugin.getEPackageNsURIToProfileLocationMap().values()) {
+				try {
+					resourceSet.getResource(profileURI.trimFragment(), true);
+				} catch (Exception e) { // ignore
+				}
 			}
 		}
 
@@ -80,7 +93,6 @@ public class ApplicableProfilesItemProvider extends AbstractContributionItemProv
 
 		ResourceSet resourceSet = package_.eResource().getResourceSet();
 
-		addStandardProfileResources(resourceSet);
 		addResourcesFromPathMap(resourceSet);
 
 		for (Resource resource : resourceSet.getResources()) {
@@ -102,15 +114,6 @@ public class ApplicableProfilesItemProvider extends AbstractContributionItemProv
 		}
 		return choiceOfValues;
 
-	}
-
-	private void addStandardProfileResources(ResourceSet resourceSet) {
-		try {
-			loadResource(resourceSet, UMLResource.STANDARD_PROFILE_URI);
-			loadResource(resourceSet, UMLResource.ECORE_PROFILE_URI);
-		} catch (Exception e) {
-			// ignore
-		}
 	}
 
 	private void addResourcesFromPathMap(ResourceSet resourceSet) {
