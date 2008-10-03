@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<notation:Diagram xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.1/notation" xmlns:uml="http://www.eclipse.org/uml2/2.1.0/UML" xmi:id="_mry8ACYzEdyTPL1dMW_Idw" type="UMLClass" name="7.48.Multiple ways of dividing subtypes (generalization sets) and constraint examples.umlclass_diagram" measurementUnit="Pixel">
+  <children xmi:type="notation:Node" xmi:id="_mvOqgCYzEdyTPL1dMW_Idw" type="2014">
+    <children xmi:type="notation:Node" xmi:id="_mvX0ciYzEdyTPL1dMW_Idw" type="5020"/>
+    <children xmi:type="notation:Node" xmi:id="_mvX0cyYzEdyTPL1dMW_Idw" type="7032">
+      <styles xmi:type="notation:DrawerStyle" xmi:id="_mvX0dCYzEdyTPL1dMW_Idw"/>
+      <styles xmi:type="notation:SortingStyle" xmi:id="_mvX0dSYzEdyTPL1dMW_Idw"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_mvX0diYzEdyTPL1dMW_Idw"/>
+    </children>
+    <styles xmi:type="notation:ShapeStyle" xmi:id="_mvX0cCYzEdyTPL1dMW_Idw"/>
+    <element xmi:type="uml:Package" href="7.48.Multiple ways of dividing subtypes (generalization sets) and constraint examples.uml#_mrgBECYzEdyTPL1dMW_Idw"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_mvX0cSYzEdyTPL1dMW_Idw"/>
+  </children>
+  <children xmi:type="notation:Node" xmi:id="_n-D1ICYzEdyTPL1dMW_Idw" type="Text">
+    <children xmi:type="notation:Node" xmi:id="_n-D1IyYzEdyTPL1dMW_Idw" type="DiagramName">
+      <element xsi:nil="true"/>
+    </children>
+    <children xmi:type="notation:Node" xmi:id="_n-D1JCYzEdyTPL1dMW_Idw" type="Description">
+      <element xsi:nil="true"/>
+    </children>
+    <styles xmi:type="notation:ShapeStyle" xmi:id="_n-D1ISYzEdyTPL1dMW_Idw" description="Figure 7.48 - Multiple ways of dividing subtypes (generalization sets) and constraint examples"/>
+    <element xsi:nil="true"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_n-D1IiYzEdyTPL1dMW_Idw" x="132" y="348"/>
+  </children>
+  <children xmi:type="notation:Node" xmi:id="_qqwr8CYzEdyTPL1dMW_Idw" type="2001">
+    <children xmi:type="notation:Node" xmi:id="_qqwr8yYzEdyTPL1dMW_Idw" type="5003">
+      <styles xmi:type="notation:FontStyle" xmi:id="_qrEN8CYzEdyTPL1dMW_Idw" bold="true"/>
+    </children>
+    <children xmi:type="notation:Node" xmi:id="_qqwr9CYzEdyTPL1dMW_Idw" type="5019"/>
+    <children xmi:type="notation:Node" xmi:id="_qq6c8CYzEdyTPL1dMW_Idw" visible="false" type="7001">
+      <styles xmi:type="notation:DrawerStyle" xmi:id="_qq6c8SYzEdyTPL1dMW_Idw"/>
+      <styles xmi:type="notation:TitleStyle" xmi:id="_qq6c8iYzEdyTPL1dMW_Idw" showTitle="true"/>
+      <styles xmi:type="notation:SortingStyle" xmi:id="_qq6c8yYzEdyTPL1dMW_Idw"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_qq6c9CYzEdyTPL1dMW_Idw"/>
+    </children>
+    <children xmi:type="notation:Node" xmi:id="_qq6c9SYzEdyTPL1dMW_Idw" visible="false" type="7002">
+      <styles xmi:type="notation:DrawerStyle" xmi:id="_qq6c9iYzEdyTPL1dMW_Idw"/>
+      <styles xmi:type="notation:TitleStyle" xmi:id="_qq6c9yYzEdyTPL1dMW_Idw" showTitle="true"/>
+      <styles xmi:type="notation:SortingStyle" xmi:id="_qq6c-CYzEdyTPL1dMW_Idw"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_qq6c-SYzEdyTPL1dMW_Idw"/>
+    </children>
+    <children xmi:type="notation:Node" xmi:id="_qq6c-iYzEdyTPL1dMW_Idw" visible="false" type="7003">
+      <styles xmi:type="notation:DrawerStyle" xmi:id="_qq6c-yYzEdyTPL1dMW_Idw"/>
+      <styles xmi:type="notation:TitleStyle" xmi:id="_qq6c_CYzEdyTPL1dMW_Idw" showTitle="true"/>
+      <styles xmi:type="notation:SortingStyle" xmi:id="_qq6c_SYzEdyTPL1dMW_Idw"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_qq6c_iYzEdyTPL1dMW_Idw"/>
+    </children>
+    <styles xmi:type="notation:ShapeStyle" xmi:id="_qqwr8SYzEdyTPL1dMW_Idw"/>
+    <element xmi:type="uml:Class" href="7.48.Multiple ways of dividing subtypes (generalization sets) and constraint examples.uml#_qoh3UCYzEdyTPL1dMW_Idw"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_qqwr8iYzEdyTPL1dMW_Idw" x="336" y="48"/>
+  </children>
+  <children xmi:type="notation:Node" xmi:id="_qvh3MSYzEdyTPL1dMW_Idw" type="2001">
+    <children xmi:type="notation:Node" xmi:id="_qvh3NCYzEdyTPL1dMW_Idw" type="5003">
+      <styles xmi:type="notation:FontStyle" xmi:id="_qvroNyYzEdyTPL1dMW_Idw" bold="true"/>
+    </children>
+    <children xmi:type="notation:Node" xmi:id="_qvh3NSYzEdyTPL1dMW_Idw" type="5019"/>
+    <children xmi:type="notation:Node" xmi:id="_qvh3NiYzEdyTPL1dMW_Idw" visible="false" type="7001">
+      <styles xmi:type="notation:DrawerStyle" xmi:id="_qvh3NyYzEdyTPL1dMW_Idw"/>
+      <styles xmi:type="notation:TitleStyle" xmi:id="_qvh3OCYzEdyTPL1dMW_Idw" showTitle="true"/>
+      <styles xmi:type="notation:SortingStyle" xmi:id="_qvh3OSYzEdyTPL1dMW_Idw"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_qvh3OiYzEdyTPL1dMW_Idw"/>
+    </children>
+    <children xmi:type="notation:Node" xmi:id="_qvh3OyYzEdyTPL1dMW_Idw" visible="false" type="7002">
+      <styles xmi:type="notation:DrawerStyle" xmi:id="_qvh3PCYzEdyTPL1dMW_Idw"/>
+      <styles xmi:type="notation:TitleStyle" xmi:id="_qvh3PSYzEdyTPL1dMW_Idw" showTitle="true"/>
+      <styles xmi:type="notation:SortingStyle" xmi:id="_qvroMCYzEdyTPL1dMW_Idw"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_qvroMSYzEdyTPL1dMW_Idw"/>
+    </children>
+    <children xmi:type="notation:Node" xmi:id="_qvroMiYzEdyTPL1dMW_Idw" visible="false" type="7003">
+      <styles xmi:type="notation:DrawerStyle" xmi:id="_qvroMyYzEdyTPL1dMW_Idw"/>
+      <styles xmi:type="notation:TitleStyle" xmi:id="_qvroNCYzEdyTPL1dMW_Idw" showTitle="true"/>
+      <styles xmi:type="notation:SortingStyle" xmi:id="_qvroNSYzEdyTPL1dMW_Idw"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_qvroNiYzEdyTPL1dMW_Idw"/>
+    </children>
+    <styles xmi:type="notation:ShapeStyle" xmi:id="_qvh3MiYzEdyTPL1dMW_Idw"/>
+    <element xmi:type="uml:Class" href="7.48.Multiple ways of dividing subtypes (generalization sets) and constraint examples.uml#_qvh3MCYzEdyTPL1dMW_Idw"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_qvh3MyYzEdyTPL1dMW_Idw" x="240" y="192" width="121"/>
+  </children>
+  <children xmi:type="notation:Node" xmi:id="_q629cCYzEdyTPL1dMW_Idw" type="2001">
+    <children xmi:type="notation:Node" xmi:id="_q629cyYzEdyTPL1dMW_Idw" type="5003">
+      <styles xmi:type="notation:FontStyle" xmi:id="_q7AucCYzEdyTPL1dMW_Idw" bold="true"/>
+    </children>
+    <children xmi:type="notation:Node" xmi:id="_q629dCYzEdyTPL1dMW_Idw" type="5019"/>
+    <children xmi:type="notation:Node" xmi:id="_q629dSYzEdyTPL1dMW_Idw" visible="false" type="7001">
+      <styles xmi:type="notation:DrawerStyle" xmi:id="_q629diYzEdyTPL1dMW_Idw"/>
+      <styles xmi:type="notation:TitleStyle" xmi:id="_q629dyYzEdyTPL1dMW_Idw" showTitle="true"/>
+      <styles xmi:type="notation:SortingStyle" xmi:id="_q629eCYzEdyTPL1dMW_Idw"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_q629eSYzEdyTPL1dMW_Idw"/>
+    </children>
+    <children xmi:type="notation:Node" xmi:id="_q629eiYzEdyTPL1dMW_Idw" visible="false" type="7002">
+      <styles xmi:type="notation:DrawerStyle" xmi:id="_q629eyYzEdyTPL1dMW_Idw"/>
+      <styles xmi:type="notation:TitleStyle" xmi:id="_q629fCYzEdyTPL1dMW_Idw" showTitle="true"/>
+      <styles xmi:type="notation:SortingStyle" xmi:id="_q629fSYzEdyTPL1dMW_Idw"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_q629fiYzEdyTPL1dMW_Idw"/>
+    </children>
+    <children xmi:type="notation:Node" xmi:id="_q629fyYzEdyTPL1dMW_Idw" visible="false" type="7003">
+      <styles xmi:type="notation:DrawerStyle" xmi:id="_q629gCYzEdyTPL1dMW_Idw"/>
+      <styles xmi:type="notation:TitleStyle" xmi:id="_q629gSYzEdyTPL1dMW_Idw" showTitle="true"/>
+      <styles xmi:type="notation:SortingStyle" xmi:id="_q629giYzEdyTPL1dMW_Idw"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_q629gyYzEdyTPL1dMW_Idw"/>
+    </children>
+    <styles xmi:type="notation:ShapeStyle" xmi:id="_q629cSYzEdyTPL1dMW_Idw"/>
+    <element xmi:type="uml:Class" href="7.48.Multiple ways of dividing subtypes (generalization sets) and constraint examples.uml#_q6HWkCYzEdyTPL1dMW_Idw"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_q629ciYzEdyTPL1dMW_Idw" x="240" y="276" width="121"/>
+  </children>
+  <children xmi:type="notation:Node" xmi:id="_rC6GMCYzEdyTPL1dMW_Idw" type="2001">
+    <children xmi:type="notation:Node" xmi:id="_rC6GMyYzEdyTPL1dMW_Idw" type="5003">
+      <styles xmi:type="notation:FontStyle" xmi:id="_rC6GRCYzEdyTPL1dMW_Idw" bold="true"/>
+    </children>
+    <children xmi:type="notation:Node" xmi:id="_rC6GNCYzEdyTPL1dMW_Idw" type="5019"/>
+    <children xmi:type="notation:Node" xmi:id="_rC6GNSYzEdyTPL1dMW_Idw" visible="false" type="7001">
+      <styles xmi:type="notation:DrawerStyle" xmi:id="_rC6GNiYzEdyTPL1dMW_Idw"/>
+      <styles xmi:type="notation:TitleStyle" xmi:id="_rC6GNyYzEdyTPL1dMW_Idw" showTitle="true"/>
+      <styles xmi:type="notation:SortingStyle" xmi:id="_rC6GOCYzEdyTPL1dMW_Idw"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_rC6GOSYzEdyTPL1dMW_Idw"/>
+    </children>
+    <children xmi:type="notation:Node" xmi:id="_rC6GOiYzEdyTPL1dMW_Idw" visible="false" type="7002">
+      <styles xmi:type="notation:DrawerStyle" xmi:id="_rC6GOyYzEdyTPL1dMW_Idw"/>
+      <styles xmi:type="notation:TitleStyle" xmi:id="_rC6GPCYzEdyTPL1dMW_Idw" showTitle="true"/>
+      <styles xmi:type="notation:SortingStyle" xmi:id="_rC6GPSYzEdyTPL1dMW_Idw"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_rC6GPiYzEdyTPL1dMW_Idw"/>
+    </children>
+    <children xmi:type="notation:Node" xmi:id="_rC6GPyYzEdyTPL1dMW_Idw" visible="false" type="7003">
+      <styles xmi:type="notation:DrawerStyle" xmi:id="_rC6GQCYzEdyTPL1dMW_Idw"/>
+      <styles xmi:type="notation:TitleStyle" xmi:id="_rC6GQSYzEdyTPL1dMW_Idw" showTitle="true"/>
+      <styles xmi:type="notation:SortingStyle" xmi:id="_rC6GQiYzEdyTPL1dMW_Idw"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_rC6GQyYzEdyTPL1dMW_Idw"/>
+    </children>
+    <styles xmi:type="notation:ShapeStyle" xmi:id="_rC6GMSYzEdyTPL1dMW_Idw"/>
+    <element xmi:type="uml:Class" href="7.48.Multiple ways of dividing subtypes (generalization sets) and constraint examples.uml#_rCwVMCYzEdyTPL1dMW_Idw"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_rC6GMiYzEdyTPL1dMW_Idw" x="444" y="192"/>
+  </children>
+  <children xmi:type="notation:Node" xmi:id="_6G4bsSYzEdyTPL1dMW_Idw" type="2012">
+    <children xmi:type="notation:Node" xmi:id="_6HCMsCYzEdyTPL1dMW_Idw" type="5016">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_6HCMsSYzEdyTPL1dMW_Idw" x="-150" y="-20"/>
+    </children>
+    <children xmi:type="notation:Node" xmi:id="_6HCMsiYzEdyTPL1dMW_Idw" type="5017">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_6HCMsyYzEdyTPL1dMW_Idw" y="5"/>
+    </children>
+    <styles xmi:type="notation:ShapeStyle" xmi:id="_6G4bsiYzEdyTPL1dMW_Idw"/>
+    <element xmi:type="uml:GeneralizationSet" href="7.48.Multiple ways of dividing subtypes (generalization sets) and constraint examples.uml#_6G4bsCYzEdyTPL1dMW_Idw"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_6G4bsyYzEdyTPL1dMW_Idw" x="360" y="156"/>
+  </children>
+  <children xmi:type="notation:Node" xmi:id="_MMcS4CY0EdyTPL1dMW_Idw" type="Note">
+    <children xmi:type="notation:Node" xmi:id="_MMcS4yY0EdyTPL1dMW_Idw" type="DiagramName">
+      <element xsi:nil="true"/>
+    </children>
+    <children xmi:type="notation:Node" xmi:id="_MMcS5CY0EdyTPL1dMW_Idw" type="Description">
+      <element xsi:nil="true"/>
+    </children>
+    <styles xmi:type="notation:ShapeStyle" xmi:id="_MMcS4SY0EdyTPL1dMW_Idw" description="A complete partition&#xD;&#xA;indicating that a Person&#xD;&#xA;may be subtyped as&#xD;&#xA;either a Female Person&#xD;&#xA;or a Male Person." fillColor="13369343" lineColor="6737151"/>
+    <element xsi:nil="true"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_MMcS4iY0EdyTPL1dMW_Idw" x="24" y="180" width="193" height="97"/>
+  </children>
+  <styles xmi:type="notation:DiagramStyle" xmi:id="_mry8ASYzEdyTPL1dMW_Idw"/>
+  <styles xmi:type="notation:FilteringStyle" xmi:id="_mry8AiYzEdyTPL1dMW_Idw"/>
+  <element xmi:type="uml:Package" href="7.48.Multiple ways of dividing subtypes (generalization sets) and constraint examples.uml#_mrgBECYzEdyTPL1dMW_Idw"/>
+  <edges xmi:type="notation:Edge" xmi:id="_5OjskCYzEdyTPL1dMW_Idw" type="4001" source="_rC6GMCYzEdyTPL1dMW_Idw" target="_qqwr8CYzEdyTPL1dMW_Idw">
+    <styles xmi:type="notation:ConnectorStyle" xmi:id="_5OjskSYzEdyTPL1dMW_Idw"/>
+    <styles xmi:type="notation:FontStyle" xmi:id="_5OjskiYzEdyTPL1dMW_Idw"/>
+    <element xmi:type="uml:Generalization" href="7.48.Multiple ways of dividing subtypes (generalization sets) and constraint examples.uml#_5OZ7kCYzEdyTPL1dMW_Idw"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_5OjskyYzEdyTPL1dMW_Idw" points="[-15, 0, 19, 108]$[-34, 0, 0, 108]$[-34, -90, 0, 18]"/>
+    <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_5OtdkCYzEdyTPL1dMW_Idw" id="(0.15,0.5)"/>
+    <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_5OtdkSYzEdyTPL1dMW_Idw" id="(0.89,0.7)"/>
+  </edges>
+  <edges xmi:type="notation:Edge" xmi:id="_6HVHoCYzEdyTPL1dMW_Idw" type="4011" source="_qvh3MSYzEdyTPL1dMW_Idw" target="_6G4bsSYzEdyTPL1dMW_Idw">
+    <styles xmi:type="notation:ConnectorStyle" xmi:id="_6HVHoSYzEdyTPL1dMW_Idw"/>
+    <styles xmi:type="notation:FontStyle" xmi:id="_6HVHoiYzEdyTPL1dMW_Idw"/>
+    <element xmi:type="uml:Generalization" href="7.48.Multiple ways of dividing subtypes (generalization sets) and constraint examples.uml#_5qRYMCYzEdyTPL1dMW_Idw"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_6HVHoyYzEdyTPL1dMW_Idw" points="[0, -1, -107, 34]$[0, -35, -107, 0]$[82, -35, -25, 0]"/>
+    <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_zNLIkDC2Ed2GA8UBmjeySw" id="(0.3140496,0.016666668)"/>
+  </edges>
+  <edges xmi:type="notation:Edge" xmi:id="_6HVHpCYzEdyTPL1dMW_Idw" type="4012" source="_6G4bsSYzEdyTPL1dMW_Idw" target="_qqwr8CYzEdyTPL1dMW_Idw">
+    <styles xmi:type="notation:ConnectorStyle" xmi:id="_6HVHpSYzEdyTPL1dMW_Idw"/>
+    <styles xmi:type="notation:FontStyle" xmi:id="_6HVHpiYzEdyTPL1dMW_Idw"/>
+    <element xsi:nil="true"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_6HVHpyYzEdyTPL1dMW_Idw" points="[-1, -2, 33, 80]$[-31, -74, 3, 8]"/>
+    <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_HKcIQDC3Ed2GA8UBmjeySw" id="(0.46,0.98333335)"/>
+  </edges>
+  <edges xmi:type="notation:Edge" xmi:id="_xkIHITC2Ed2GA8UBmjeySw" type="4011" source="_q629cCYzEdyTPL1dMW_Idw" target="_6G4bsSYzEdyTPL1dMW_Idw">
+    <styles xmi:type="notation:ConnectorStyle" xmi:id="_xkIHIjC2Ed2GA8UBmjeySw" lineColor="0"/>
+    <styles xmi:type="notation:FontStyle" xmi:id="_xkIHIzC2Ed2GA8UBmjeySw"/>
+    <element xmi:type="uml:Generalization" href="7.48.Multiple ways of dividing subtypes (generalization sets) and constraint examples.uml#_xkIHIDC2Ed2GA8UBmjeySw"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_xkIHJDC2Ed2GA8UBmjeySw" points="[61, 4, -30, 154]$[91, 6, 0, 156]$[91, -146, 0, 4]"/>
+    <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_xkIHJTC2Ed2GA8UBmjeySw" id="(0.64,0.0)"/>
+  </edges>
+</notation:Diagram>

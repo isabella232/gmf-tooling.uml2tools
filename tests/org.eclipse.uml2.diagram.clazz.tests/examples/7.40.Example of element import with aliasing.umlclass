@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<notation:Diagram xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.1/notation" xmlns:uml="http://www.eclipse.org/uml2/2.1.0/UML" xmi:id="_lOwLwSVuEdy4m_r_Ph01Ow" type="UMLClass" name="7.40.Example of element import with aliasing.umlclass_diagram" measurementUnit="Pixel">
+  <children xmi:type="notation:Node" xmi:id="_lQZKgCVuEdy4m_r_Ph01Ow" type="2014">
+    <children xmi:type="notation:Node" xmi:id="_lQZKgyVuEdy4m_r_Ph01Ow" type="5020"/>
+    <children xmi:type="notation:Node" xmi:id="_lQZKhCVuEdy4m_r_Ph01Ow" type="7032">
+      <styles xmi:type="notation:DrawerStyle" xmi:id="_lQZKhSVuEdy4m_r_Ph01Ow"/>
+      <styles xmi:type="notation:SortingStyle" xmi:id="_lQZKhiVuEdy4m_r_Ph01Ow"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_lQZKhyVuEdy4m_r_Ph01Ow"/>
+    </children>
+    <styles xmi:type="notation:ShapeStyle" xmi:id="_lQZKgSVuEdy4m_r_Ph01Ow"/>
+    <element xmi:type="uml:Package" href="7.40.Example of element import with aliasing.uml#_lOwLwCVuEdy4m_r_Ph01Ow"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_lQZKgiVuEdy4m_r_Ph01Ow"/>
+  </children>
+  <children xmi:type="notation:Node" xmi:id="_mT518CVuEdy4m_r_Ph01Ow" type="2002">
+    <children xmi:type="notation:Node" xmi:id="_mT519CVuEdy4m_r_Ph01Ow" type="5004"/>
+    <children xmi:type="notation:Node" xmi:id="_mT519SVuEdy4m_r_Ph01Ow" type="7010">
+      <styles xmi:type="notation:DrawerStyle" xmi:id="_mT519iVuEdy4m_r_Ph01Ow"/>
+      <styles xmi:type="notation:TitleStyle" xmi:id="_mT519yVuEdy4m_r_Ph01Ow" showTitle="true"/>
+      <styles xmi:type="notation:SortingStyle" xmi:id="_mT51-CVuEdy4m_r_Ph01Ow"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_mT51-SVuEdy4m_r_Ph01Ow"/>
+    </children>
+    <children xmi:type="notation:Node" xmi:id="_mT51-iVuEdy4m_r_Ph01Ow" type="7011">
+      <children xmi:type="notation:Node" xmi:id="_nTPMACVuEdy4m_r_Ph01Ow" type="3008">
+        <element xmi:type="uml:DataType" href="7.40.Example of element import with aliasing.uml#_nS8RECVuEdy4m_r_Ph01Ow"/>
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_nTPMASVuEdy4m_r_Ph01Ow"/>
+      </children>
+      <styles xmi:type="notation:DrawerStyle" xmi:id="_mT51-yVuEdy4m_r_Ph01Ow"/>
+      <styles xmi:type="notation:TitleStyle" xmi:id="_mT51_CVuEdy4m_r_Ph01Ow" showTitle="true"/>
+      <styles xmi:type="notation:SortingStyle" xmi:id="_mT51_SVuEdy4m_r_Ph01Ow"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_mT51_iVuEdy4m_r_Ph01Ow"/>
+    </children>
+    <children xmi:type="notation:Node" xmi:id="_mT51_yVuEdy4m_r_Ph01Ow" type="7012">
+      <styles xmi:type="notation:DrawerStyle" xmi:id="_mT52ACVuEdy4m_r_Ph01Ow"/>
+      <styles xmi:type="notation:TitleStyle" xmi:id="_mT52ASVuEdy4m_r_Ph01Ow" showTitle="true"/>
+      <styles xmi:type="notation:SortingStyle" xmi:id="_mT52AiVuEdy4m_r_Ph01Ow"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_mT52AyVuEdy4m_r_Ph01Ow"/>
+    </children>
+    <styles xmi:type="notation:ShapeStyle" xmi:id="_mT518SVuEdy4m_r_Ph01Ow"/>
+    <styles xmi:type="notation:HintedDiagramLinkStyle" xmi:id="_mT518iVuEdy4m_r_Ph01Ow"/>
+    <element xmi:type="uml:Package" href="7.40.Example of element import with aliasing.uml#_mTmT8CVuEdy4m_r_Ph01Ow"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_mT518yVuEdy4m_r_Ph01Ow" x="264" y="144"/>
+  </children>
+  <children xmi:type="notation:Node" xmi:id="_oBIz0CVuEdy4m_r_Ph01Ow" type="2001">
+    <children xmi:type="notation:Node" xmi:id="_oBIz0yVuEdy4m_r_Ph01Ow" type="5003">
+      <styles xmi:type="notation:FontStyle" xmi:id="_oBIz5CVuEdy4m_r_Ph01Ow" bold="true"/>
+    </children>
+    <children xmi:type="notation:Node" xmi:id="_oBIz1CVuEdy4m_r_Ph01Ow" type="5019"/>
+    <children xmi:type="notation:Node" xmi:id="_oBIz1SVuEdy4m_r_Ph01Ow" type="7001">
+      <children xmi:type="notation:Node" xmi:id="_zfg7oCVuEdy4m_r_Ph01Ow" type="3001">
+        <element xmi:type="uml:Property" href="7.40.Example of element import with aliasing.uml#_zewtsCVuEdy4m_r_Ph01Ow"/>
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_zfg7oSVuEdy4m_r_Ph01Ow"/>
+      </children>
+      <styles xmi:type="notation:DrawerStyle" xmi:id="_oBIz1iVuEdy4m_r_Ph01Ow"/>
+      <styles xmi:type="notation:TitleStyle" xmi:id="_oBIz1yVuEdy4m_r_Ph01Ow" showTitle="true"/>
+      <styles xmi:type="notation:SortingStyle" xmi:id="_oBIz2CVuEdy4m_r_Ph01Ow"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_oBIz2SVuEdy4m_r_Ph01Ow"/>
+    </children>
+    <children xmi:type="notation:Node" xmi:id="_oBIz2iVuEdy4m_r_Ph01Ow" type="7002">
+      <styles xmi:type="notation:DrawerStyle" xmi:id="_oBIz2yVuEdy4m_r_Ph01Ow"/>
+      <styles xmi:type="notation:TitleStyle" xmi:id="_oBIz3CVuEdy4m_r_Ph01Ow" showTitle="true"/>
+      <styles xmi:type="notation:SortingStyle" xmi:id="_oBIz3SVuEdy4m_r_Ph01Ow"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_oBIz3iVuEdy4m_r_Ph01Ow"/>
+    </children>
+    <children xmi:type="notation:Node" xmi:id="_oBIz3yVuEdy4m_r_Ph01Ow" type="7003">
+      <styles xmi:type="notation:DrawerStyle" xmi:id="_oBIz4CVuEdy4m_r_Ph01Ow"/>
+      <styles xmi:type="notation:TitleStyle" xmi:id="_oBIz4SVuEdy4m_r_Ph01Ow" showTitle="true"/>
+      <styles xmi:type="notation:SortingStyle" xmi:id="_oBIz4iVuEdy4m_r_Ph01Ow"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_oBIz4yVuEdy4m_r_Ph01Ow"/>
+    </children>
+    <styles xmi:type="notation:ShapeStyle" xmi:id="_oBIz0SVuEdy4m_r_Ph01Ow"/>
+    <element xmi:type="uml:Class" href="7.40.Example of element import with aliasing.uml#_oAPb8CVuEdy4m_r_Ph01Ow"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_oBIz0iVuEdy4m_r_Ph01Ow" x="69" y="159"/>
+  </children>
+  <children xmi:type="notation:Node" xmi:id="_Or7NICVwEdy4m_r_Ph01Ow" type="Note">
+    <children xmi:type="notation:Node" xmi:id="_Or7NIyVwEdy4m_r_Ph01Ow" type="DiagramName">
+      <element xsi:nil="true"/>
+    </children>
+    <children xmi:type="notation:Node" xmi:id="_Or7NJCVwEdy4m_r_Ph01Ow" type="Description">
+      <element xsi:nil="true"/>
+    </children>
+    <styles xmi:type="notation:ShapeStyle" xmi:id="_Or7NISVwEdy4m_r_Ph01Ow" description="Aliased element import notation" fillColor="13369343" lineColor="6737151"/>
+    <element xsi:nil="true"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_Or7NIiVwEdy4m_r_Ph01Ow" x="216" y="12" width="253" height="49"/>
+  </children>
+  <children xmi:type="notation:Node" xmi:id="_Yx7z0CVwEdy4m_r_Ph01Ow" type="Text">
+    <children xmi:type="notation:Node" xmi:id="_Yx7z0yVwEdy4m_r_Ph01Ow" type="DiagramName">
+      <element xsi:nil="true"/>
+    </children>
+    <children xmi:type="notation:Node" xmi:id="_Yx7z1CVwEdy4m_r_Ph01Ow" type="Description">
+      <element xsi:nil="true"/>
+    </children>
+    <styles xmi:type="notation:ShapeStyle" xmi:id="_Yx7z0SVwEdy4m_r_Ph01Ow" description="Figure 7.40 - Example of element import with aliasing"/>
+    <element xsi:nil="true"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_Yx7z0iVwEdy4m_r_Ph01Ow" x="60" y="300" width="325" height="14"/>
+  </children>
+  <styles xmi:type="notation:DiagramStyle" xmi:id="_lOwLwiVuEdy4m_r_Ph01Ow"/>
+  <styles xmi:type="notation:FilteringStyle" xmi:id="_lOwLwyVuEdy4m_r_Ph01Ow"/>
+  <element xmi:type="uml:Package" href="7.40.Example of element import with aliasing.uml#_lOwLwCVuEdy4m_r_Ph01Ow"/>
+</notation:Diagram>

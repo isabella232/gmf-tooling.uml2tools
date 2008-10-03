@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<uml:Package xmi:version="2.1" xmlns:xmi="http://schema.omg.org/spec/XMI/2.1" xmlns:uml="http://www.eclipse.org/uml2/2.1.0/UML" xmi:id="_Dlmf0aMuEdyzedokL-HTmw" name="a">
+  <elementImport xmi:id="_Dnv04KMuEdyzedokL-HTmw">
+    <importedElement xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Boolean"/>
+  </elementImport>
+  <elementImport xmi:id="_Dn4XwKMuEdyzedokL-HTmw">
+    <importedElement xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+  </elementImport>
+  <elementImport xmi:id="_Dn4-0KMuEdyzedokL-HTmw">
+    <importedElement xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#UnlimitedNatural"/>
+  </elementImport>
+  <elementImport xmi:id="_Dn4-0aMuEdyzedokL-HTmw">
+    <importedElement xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
+  </elementImport>
+  <packagedElement xmi:type="uml:Package" xmi:id="_GExQ8KMuEdyzedokL-HTmw" name="b">
+    <packagedElement xmi:type="uml:Class" xmi:id="_J7pfEKMyEdySAc7GdBT3rQ" name="InnerUserClass" clientDependency="_Om5tQKMyEdySAc7GdBT3rQ _SKIjcKMyEdySAc7GdBT3rQ"/>
+    <packagedElement xmi:type="uml:Dependency" xmi:id="_Om5tQKMyEdySAc7GdBT3rQ" name="dependency" supplier="_uhyyAKMxEdySAc7GdBT3rQ" client="_J7pfEKMyEdySAc7GdBT3rQ"/>
+    <packagedElement xmi:type="uml:Usage" xmi:id="_SKIjcKMyEdySAc7GdBT3rQ" supplier="_xgTxkKMxEdySAc7GdBT3rQ" client="_J7pfEKMyEdySAc7GdBT3rQ"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Package" xmi:id="_brLYsKMuEdyzedokL-HTmw" name="c">
+    <packagedElement xmi:type="uml:PrimitiveType" xmi:id="_uhyyAKMxEdySAc7GdBT3rQ" name="MyReal"/>
+    <packagedElement xmi:type="uml:PrimitiveType" xmi:id="_xgTxkKMxEdySAc7GdBT3rQ" name="MyString"/>
+    <packagedElement xmi:type="uml:Class" xmi:id="_yYL0wKMxEdySAc7GdBT3rQ" name="MyClass"/>
+    <packagedElement xmi:type="uml:DataType" xmi:id="_zY5D0KMxEdySAc7GdBT3rQ" name="MyDataType"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="_-sISoKMxEdySAc7GdBT3rQ" name="UserClass" clientDependency="_UQP7YKMyEdySAc7GdBT3rQ"/>
+  <packagedElement xmi:type="uml:Substitution" xmi:id="_UQP7YKMyEdySAc7GdBT3rQ" supplier="_yYL0wKMxEdySAc7GdBT3rQ" client="_-sISoKMxEdySAc7GdBT3rQ"/>
+</uml:Package>

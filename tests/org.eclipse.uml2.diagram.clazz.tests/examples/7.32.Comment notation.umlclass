@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<notation:Diagram xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.1/notation" xmlns:uml="http://www.eclipse.org/uml2/2.1.0/UML" xmi:id="_xWxr0cAIEdukCPcSYjz9wg" type="UMLClass" name="7.32.Comment notation.umlclass_diagram" measurementUnit="Pixel">
+  <children xmi:type="notation:Node" xmi:id="_1yMuQMAIEdukCPcSYjz9wg" type="2001">
+    <children xmi:type="notation:Node" xmi:id="_1yMuRsAIEdukCPcSYjz9wg" type="5003">
+      <styles xmi:type="notation:FontStyle" xmi:id="_Bm0XECV7Edy4m_r_Ph01Ow" bold="true"/>
+    </children>
+    <children xmi:type="notation:Node" xmi:id="_1yMuR8AIEdukCPcSYjz9wg" visible="false" type="7001">
+      <styles xmi:type="notation:DrawerStyle" xmi:id="_1yMuSMAIEdukCPcSYjz9wg"/>
+      <styles xmi:type="notation:TitleStyle" xmi:id="_1yMuScAIEdukCPcSYjz9wg" showTitle="true"/>
+      <styles xmi:type="notation:SortingStyle" xmi:id="_1yMuSsAIEdukCPcSYjz9wg"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_1yMuS8AIEdukCPcSYjz9wg"/>
+    </children>
+    <children xmi:type="notation:Node" xmi:id="_1yMuTMAIEdukCPcSYjz9wg" visible="false" type="7002">
+      <styles xmi:type="notation:DrawerStyle" xmi:id="_1yMuTcAIEdukCPcSYjz9wg"/>
+      <styles xmi:type="notation:TitleStyle" xmi:id="_1yMuTsAIEdukCPcSYjz9wg" showTitle="true"/>
+      <styles xmi:type="notation:SortingStyle" xmi:id="_1yMuT8AIEdukCPcSYjz9wg"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_1yMuUMAIEdukCPcSYjz9wg"/>
+    </children>
+    <children xmi:type="notation:Node" xmi:id="_1yMuUcAIEdukCPcSYjz9wg" visible="false" type="7003">
+      <styles xmi:type="notation:DrawerStyle" xmi:id="_1yMuUsAIEdukCPcSYjz9wg"/>
+      <styles xmi:type="notation:TitleStyle" xmi:id="_1yMuU8AIEdukCPcSYjz9wg" showTitle="true"/>
+      <styles xmi:type="notation:SortingStyle" xmi:id="_1yMuVMAIEdukCPcSYjz9wg"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_1yMuVcAIEdukCPcSYjz9wg"/>
+    </children>
+    <styles xmi:type="notation:FontStyle" xmi:id="_1yMuQcAIEdukCPcSYjz9wg"/>
+    <styles xmi:type="notation:DescriptionStyle" xmi:id="_1yMuQsAIEdukCPcSYjz9wg"/>
+    <styles xmi:type="notation:FillStyle" xmi:id="_1yMuQ8AIEdukCPcSYjz9wg"/>
+    <styles xmi:type="notation:LineStyle" xmi:id="_1yMuRMAIEdukCPcSYjz9wg"/>
+    <element xmi:type="uml:Class" href="7.32.Comment notation.uml#_1yC9QMAIEdukCPcSYjz9wg"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_1yMuRcAIEdukCPcSYjz9wg" x="228" y="120"/>
+  </children>
+  <children xmi:type="notation:Node" xmi:id="_5RtiEMAIEdukCPcSYjz9wg" type="Note">
+    <children xmi:type="notation:Node" xmi:id="_5RtiE8AIEdukCPcSYjz9wg" type="DiagramName">
+      <element xsi:nil="true"/>
+    </children>
+    <children xmi:type="notation:Node" xmi:id="_5RtiFMAIEdukCPcSYjz9wg" type="Description">
+      <element xsi:nil="true"/>
+    </children>
+    <styles xmi:type="notation:ShapeStyle" xmi:id="_5RtiEcAIEdukCPcSYjz9wg" description="Comment for class" fillColor="13369343" lineColor="6737151"/>
+    <element xsi:nil="true"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_5RtiEsAIEdukCPcSYjz9wg" x="36" y="132"/>
+  </children>
+  <children xmi:type="notation:Node" xmi:id="_IG7C0MAJEdukCPcSYjz9wg" type="Text">
+    <children xmi:type="notation:Node" xmi:id="_IG7C08AJEdukCPcSYjz9wg" type="DiagramName">
+      <element xsi:nil="true"/>
+    </children>
+    <children xmi:type="notation:Node" xmi:id="_IG7C1MAJEdukCPcSYjz9wg" type="Description">
+      <element xsi:nil="true"/>
+    </children>
+    <styles xmi:type="notation:ShapeStyle" xmi:id="_IG7C0cAJEdukCPcSYjz9wg" description="7.32 - Comment notation"/>
+    <element xsi:nil="true"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_IG7C0sAJEdukCPcSYjz9wg" x="96" y="216"/>
+  </children>
+  <styles xmi:type="notation:PageStyle" xmi:id="_xWxr0sAIEdukCPcSYjz9wg"/>
+  <styles xmi:type="notation:GuideStyle" xmi:id="_xWxr08AIEdukCPcSYjz9wg"/>
+  <styles xmi:type="notation:DescriptionStyle" xmi:id="_xWxr1MAIEdukCPcSYjz9wg"/>
+  <element xmi:type="uml:Model" href="7.32.Comment notation.uml#_xWxr0MAIEdukCPcSYjz9wg"/>
+  <edges xmi:type="notation:Edge" xmi:id="_O0NlcCV7Edy4m_r_Ph01Ow" type="NoteAttachment" source="_5RtiEMAIEdukCPcSYjz9wg" target="_1yMuQMAIEdukCPcSYjz9wg">
+    <styles xmi:type="notation:ConnectorStyle" xmi:id="_O0NlcSV7Edy4m_r_Ph01Ow"/>
+    <element xsi:nil="true"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_O0NlciV7Edy4m_r_Ph01Ow" points="[53, -3, -132, 2]$[135, -10, -50, -5]"/>
+    <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_O0NlcyV7Edy4m_r_Ph01Ow" id="(0.5546219,0.21428572)"/>
+  </edges>
+</notation:Diagram>

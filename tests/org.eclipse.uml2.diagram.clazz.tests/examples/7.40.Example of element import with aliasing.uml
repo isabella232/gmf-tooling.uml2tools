@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<uml:Package xmi:version="2.1" xmlns:xmi="http://schema.omg.org/spec/XMI/2.1" xmlns:uml="http://www.eclipse.org/uml2/2.1.0/UML" xmi:id="_lOwLwCVuEdy4m_r_Ph01Ow" name="Shapes">
+  <elementImport xmi:id="_sxSJECVuEdy4m_r_Ph01Ow" alias="Double" importedElement="_nS8RECVuEdy4m_r_Ph01Ow"/>
+  <packagedElement xmi:type="uml:Package" xmi:id="_mTmT8CVuEdy4m_r_Ph01Ow" name="Types">
+    <packagedElement xmi:type="uml:DataType" xmi:id="_nS8RECVuEdy4m_r_Ph01Ow" name="Real"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="_oAPb8CVuEdy4m_r_Ph01Ow" name="Circle">
+    <ownedAttribute xmi:id="_zewtsCVuEdy4m_r_Ph01Ow" name="radius" type="_nS8RECVuEdy4m_r_Ph01Ow" aggregation="composite"/>
+  </packagedElement>
+</uml:Package>
