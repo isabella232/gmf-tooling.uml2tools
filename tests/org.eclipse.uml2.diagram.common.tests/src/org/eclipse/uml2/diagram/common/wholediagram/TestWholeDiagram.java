@@ -1,30 +1,25 @@
 package org.eclipse.uml2.diagram.common.wholediagram;
 
 import java.net.URL;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Iterator;
-import java.util.List;
-import java.util.Map;
+import java.util.Arrays;
+import java.util.Collection;
+import java.util.HashSet;
+import java.util.Set;
 
-import junit.framework.Assert;
 import junit.framework.TestCase;
 
 import org.eclipse.core.resources.IFile;
 import org.eclipse.core.runtime.CoreException;
-import org.eclipse.emf.common.util.EList;
-import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emf.transaction.TransactionalEditingDomain;
 import org.eclipse.gmf.runtime.emf.core.GMFEditingDomainFactory;
 import org.eclipse.gmf.runtime.notation.Diagram;
 import org.eclipse.gmf.runtime.notation.Edge;
+import org.eclipse.gmf.runtime.notation.Node;
 import org.eclipse.gmf.runtime.notation.View;
-import org.eclipse.uml2.common.util.UML2Util.EStructuralFeatureMatcher;
 import org.eclipse.uml2.diagram.common.tests.UMLProjectFacade;
 import org.eclipse.uml2.uml.NamedElement;
-import org.eclipse.uml2.uml.UMLPackage;
 
 public abstract class TestWholeDiagram extends TestCase {
 
@@ -101,137 +96,55 @@ public abstract class TestWholeDiagram extends TestCase {
 	}
 
 	protected void compareDiagrams(Diagram diagram1, Diagram diagram2) {
-		compareChildren(diagram1, diagram2);
-		compareEdges(diagram1, diagram2);
-	}
-
-	private void compareViews(View view1, View view2) {
-		System.out.println("TestWholeDiagram.compareViews(); View1 " + view1);
-		System.out.println("TestWholeDiagram.compareViews(); View2 " + view2);
-		assertEquals("Incorrect View type " + getStackTrace(view2) + " for element " + view2.getElement(), view1.getType(), view2.getType());
-		assertEquals("Incorrect Element eClass " + getStackTrace(view2), view1.getElement().eClass(), view2.getElement().eClass());
-		assertEquals("Incorrect View eClass " + getStackTrace(view2), view1.eClass(), view2.eClass());
-	}
-
-	private void compareEdges(Diagram diagram1, Diagram diagram2) {
-		EList edges1 = diagram1.getEdges();
-		EList edges2 = diagram2.getEdges();
-		assertEquals("Diagram has incorrect edges size. Expected: " + getPringString(edges1) + ", was: " + getPringString(edges2), edges1.size(), edges2.size());
-		for (int i = 0; i < edges1.size(); i++) {
-			Edge edge1 = (Edge) edges1.get(i);
-			Edge edge2 = (Edge) findTwinForEdge(edge1, edges2);
-			if (edge2 == null) {
-				Assert.fail("View for " + getPringString(edge1) + " was not found in the initialized diagram");
-			}
-			assertEquals("Incorrect Edge type: ", edge1.getType(), edge2.getType());
-			assertEquals("Incorrect Edge source type: edge = " + edge2.getElement(), edge1.getSource().getType(), edge2.getSource().getType());
-			assertEquals("Incorrect Edge source element eClass: edge = " + edge2.getElement(), edge1.getSource().getElement().eClass(), edge2.getSource().getElement().eClass());
-			assertEquals("Incorrect Edge target type: edge = " + edge2.getElement(), edge1.getTarget().getType(), edge2.getTarget().getType());
-			assertEquals("Incorrect Edge target element eClass: edge = " + edge2.getElement(), edge1.getTarget().getElement().eClass(), edge2.getTarget().getElement().eClass());
-		}
-	}
-
-	private void compareChildren(View expected, View actual) {
-		compareViews(expected, actual);
-
-		List<View> expectedChildren = getFilteredChildren(expected);
-		List<View> actualChildren = getFilteredChildren(actual);
-		Map<String, List<View>> actualType2View = mapTypesToViews(actualChildren); 
-		for (View next: expectedChildren) {
-			List<View> alikeViews = actualType2View.get(next.getType());
-			if (alikeViews == null) {
-				Assert.fail("View for " + getPringString(next) + " was not found in the initialized diagram");
-			}
-			View twin = findTwin(next, alikeViews);
-			if (twin == null) {
-				Assert.fail("View for " + getPringString(next) + " was not found in the initialized diagram");
-			}
-			compareChildren(next, twin);
-			alikeViews.remove(twin);
-		}
-		List<View> rest = new ArrayList<View>();
-		for (String key: actualType2View.keySet()) {
-			rest.addAll(actualType2View.get(key));			
-		}
-		if (!rest.isEmpty()) {
-			fail("The following view are not expected, but they exist: " + getPringString(rest));
-		}
-	}
-	
-/*
- * find an element with the same name as a given element has
- */
-	private View findTwin(View element, List<View> alikeViews) {
-		if (false == element.getElement() instanceof NamedElement) {
-			return alikeViews.isEmpty() ? null : alikeViews.get(0); 
-		}
-		for (View next: alikeViews) {
-			if (new ViewMatcher(element).matches(next)) {
-				return next;
-			}
-		}			
-		return null;
-	}
-
-	private View findTwinForEdge(Edge element, List<View> alikeViews) {
-		if (false == element.getElement() instanceof NamedElement) {
-			return alikeViews.isEmpty() ? null : alikeViews.get(0); 
-		}
-		for (View next: alikeViews) {
-			if (new EdgeMatcher(element).matches(next)) {
-				return next;
-			}
-		}			
-		return null;
-	}
-	
-	private static class ViewMatcher extends EStructuralFeatureMatcher {
-		public ViewMatcher(View view) {
-			super(view.getElement(), UMLPackage.Literals.NAMED_ELEMENT__NAME);
-		}
-		@Override
-		public boolean matches(EObject otherEObject) {
-			return super.matches(((View)otherEObject).getElement());
-		}
-	}
-	
-	private static class EdgeMatcher extends ViewMatcher {
-		private Edge myEdge;
-		public EdgeMatcher(Edge edge) {
-			super(edge);
-			myEdge = edge;
+		DiagramCompareSession session = new DiagramCompareSession();
+		session.setViewFilter(createViewFilter());
+		session.compare(diagram1, diagram2);
+		
+		DiagramCompareSession.MatchRegistry<Node> nodesRegistry = session.getNodesRegistry();
+		DiagramCompareSession.MatchRegistry<Edge> edgesRegistry = session.getEdgesRegistry();
+		
+		if (!nodesRegistry.getMissedOlds().isEmpty()){
+			fail("Some nodes were not found in the initialized diagram: " + getPringString(nodesRegistry.getMissedOlds()));
 		}
 		
-		@Override
-		public boolean matches(EObject otherEObject) {
-			if (!super.matches((Edge)otherEObject)) {
-				return false;
-			}
-			Edge otherEdge = (Edge)otherEObject;
-			return new ViewMatcher(myEdge.getSource()).matches(otherEdge.getSource()) && new ViewMatcher(myEdge.getTarget()).matches(otherEdge.getTarget());
+		if (!edgesRegistry.getMissedOlds().isEmpty()){
+			fail("Some edges were not found in the initialized diagram: " + getPringString(edgesRegistry.getMissedOlds()));
+		}
+		
+		if (!nodesRegistry.getNotMatchedNews().isEmpty()){
+			fail("The following nodes are not expected, but they exist: " + getPringString(nodesRegistry.getNotMatchedNews()));
+		}
+		
+		if (!edgesRegistry.getNotMatchedNews().isEmpty()){
+			fail("The following edges are not expected, but they exist: " + getPringString(edgesRegistry.getNotMatchedNews()));
 		}
 	}
 
-	private StringBuffer getStackTrace(View node) {
-		if (node == null) {
-			return EMPTY;
+	private final static StringBuffer getStackTrace(View view) {
+		if (view == null) {
+			return new StringBuffer();
 		}
 		StringBuffer result = new StringBuffer();
-		if (node.getElement() instanceof NamedElement) {
-			result.append("'").append(((NamedElement) node.getElement()).getName()).append("'").append(", ");
+		if (view.getElement() instanceof NamedElement) {
+			result.append("'").append(((NamedElement) view.getElement()).getName()).append("'").append(", ");
 		}
-		result.append("vid = ").append(node.getType());
-		StringBuffer parentStack = getStackTrace((View) node.eContainer());
+		result.append("vid = ").append(view.getType());
+		StringBuffer parentStack = getStackTrace((View) view.eContainer());
 		if (parentStack.length() > 0) {
 			result.append(" from ").append(parentStack);
 		}
 		return result;
 	}
 
-	private static StringBuffer getPringString(List<View> children) {
+	private static StringBuffer getPringString(Collection<? extends View> list) {
 		StringBuffer result = new StringBuffer();		
-		for (View child: children ) {
-			result.append(getPringString(child)).append("; ");
+		for (View next : list) {
+			result.append(getPringString(next )).append(";\n");
+		}
+		
+		result.append("\n Details: \n");
+		for (View next : list){
+			result.append(getStackTrace(next)).append(";\n");
 		}
 		return result;
 	}
@@ -246,45 +159,39 @@ public abstract class TestWholeDiagram extends TestCase {
 		}
 		return result;
 	}
-
-	private List<View> getFilteredChildren(View view) {
-		List<View> result = new ArrayList<View>();
-		Iterator iter = view.getChildren().iterator();
-		while (iter.hasNext()) {
-			View next = (View) iter.next();
-			int visualId;
-			try {
-				visualId = Integer.parseInt(next.getType());
-			} catch (NumberFormatException e) {
-				continue;
-			}
-
-			if (ignoreView(visualId)) {
-				continue;
-			}
-			result.add(next);
-		}
-		return result;
+	
+	protected DiagramCompareSession.ViewFilter createViewFilter(){
+		return new ByViewTypeFilter();
 	}
 	
-	private Map<String, List<View>> mapTypesToViews(List<View> views) {
-		Map<String, List<View>> result = new HashMap<String, List<View>>();
-		for (View view: views) {
+	protected void ignoreView(int visualId) {
+	}
+	
+	protected static class ByViewTypeFilter implements DiagramCompareSession.ViewFilter {
+		private final Set<String> myTextTypesToIgnore = new HashSet<String>();
+		
+		public ByViewTypeFilter(){
+			this("Text", "Note", "NoteAttachment");
+		}
+		
+		public ByViewTypeFilter(String ...textTypes){
+			myTextTypesToIgnore.addAll(Arrays.asList(textTypes));
+		}
+		
+		public boolean ignore(View view) {
 			String type = view.getType();
-			List<View> list = result.get(type);
-			if (list == null) {
-				list = new ArrayList<View>();
-				result.put(type, list);
+			if (myTextTypesToIgnore.contains(type)){
+				return true;
 			}
-			list.add(view);
+			//all others are integers (at least expected)
+			int visualId = Integer.parseInt(type);
+			
+			return ignoreVisualId(visualId);
 		}
-		return result;
+		
+		protected boolean ignoreVisualId(int visualId){
+			return 5000 < visualId && visualId < 6000;
+		}
 	}
 	
-	protected boolean ignoreView(int visualId) {
-		return 5000< visualId && visualId < 6000;
-	}
-	
-	private static StringBuffer EMPTY = new StringBuffer(0); 
-
 }

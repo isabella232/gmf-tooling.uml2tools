@@ -10,15 +10,16 @@ import org.eclipse.core.runtime.Platform;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.gmf.runtime.diagram.core.services.ViewService;
 import org.eclipse.gmf.runtime.notation.Diagram;
-import org.eclipse.uml2.diagram.clazz.edit.parts.ClassStereotypeEditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.Package4EditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.PackageEditPart;
 import org.eclipse.uml2.diagram.clazz.part.UMLDiagramEditor;
 import org.eclipse.uml2.diagram.clazz.part.UMLDiagramEditorPlugin;
+import org.eclipse.uml2.diagram.common.wholediagram.TestWholeDiagram;
 import org.eclipse.uml2.diagram.common.wholediagram.UMLInitDiagramFacade;
+import org.eclipse.uml2.diagram.common.wholediagram.DiagramCompareSession.ViewFilter;
 import org.osgi.framework.Bundle;
 
-public class TestWholeClassDiagram extends org.eclipse.uml2.diagram.common.wholediagram.TestWholeDiagram {
+public class TestWholeClassDiagram extends TestWholeDiagram {
 
 	public TestWholeClassDiagram(String modelFileName, String diagramFileName) {
 		super(modelFileName, diagramFileName);
@@ -39,13 +40,21 @@ public class TestWholeClassDiagram extends org.eclipse.uml2.diagram.common.whole
 	protected URL findFileInTestPlugin(String fileName) {
 		return FileLocator.find(UML_TEST_BUNDLE, new Path(EXAMPLE_FOLDER).append(fileName), Collections.EMPTY_MAP);
 	}
-
+	
 	@Override
-	protected boolean ignoreView(int visualId) {
-		return super.ignoreView(visualId) || ClassStereotypeEditPart.VISUAL_ID == visualId || Package4EditPart.VISUAL_ID == visualId;
+	protected ViewFilter createViewFilter() {
+		return IGNORE_NOTES_LABELS_AND_HEADER;
 	}
 
+	
 	private final static Bundle UML_TEST_BUNDLE = Platform.getBundle("org.eclipse.uml2.diagram.clazz.tests");
 
 	private final static String EXAMPLE_FOLDER = "examples/";
+	
+	private static final ByViewTypeFilter IGNORE_NOTES_LABELS_AND_HEADER = new ByViewTypeFilter(){
+		@Override
+		protected boolean ignoreVisualId(int visualId) {
+			return super.ignoreVisualId(visualId) || Package4EditPart.VISUAL_ID == visualId;
+		}
+	};
 }

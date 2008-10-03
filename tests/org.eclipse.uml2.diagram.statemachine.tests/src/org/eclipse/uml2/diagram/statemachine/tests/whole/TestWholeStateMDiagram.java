@@ -1,12 +1,9 @@
 package org.eclipse.uml2.diagram.statemachine.tests.whole;
 
-import java.io.IOException;
 import java.net.URL;
 import java.util.Collections;
 
-import org.eclipse.core.commands.ExecutionException;
 import org.eclipse.core.resources.IFile;
-import org.eclipse.core.runtime.CoreException;
 import org.eclipse.core.runtime.FileLocator;
 import org.eclipse.core.runtime.Path;
 import org.eclipse.core.runtime.Platform;
@@ -41,11 +38,6 @@ public class TestWholeStateMDiagram extends TestWholeDiagram {
 	@Override
 	protected URL findFileInTestPlugin(String fileName) {
 		return FileLocator.find(UML_TEST_BUNDLE, new Path(EXAMPLE_FOLDER).append(fileName), Collections.EMPTY_MAP);
-	}
-
-	@Override
-	protected boolean ignoreView(int visualId) {
-		return super.ignoreView(visualId);
 	}
 
 	private final static Bundle UML_TEST_BUNDLE = Platform.getBundle("org.eclipse.uml2.diagram.statemachine.tests");

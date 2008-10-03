@@ -11,7 +11,6 @@ public class TestWholeDiagramSuite extends TestSuite {
 		for (String name : oursDiagramFiles) {
 			addTest(new TestWholeStateMDiagram(name + ".uml", name + ".umlstatemachine_diagram"));
 		}
-
 	}
 
 	private static List<String> oursDiagramFiles = new ArrayList<String>();
