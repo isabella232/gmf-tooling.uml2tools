@@ -29,7 +29,8 @@ import org.eclipse.uml2.uml.UMLPackage;
 public class TypeLookupTest extends TestCase {
 	
 	public void testAAA(){
-		EditCommandRequestWrapper w = new EditCommandRequestWrapper(new SetRequest(UMLFactory.eINSTANCE.createActivity(), UMLPackage.eINSTANCE.getNamedElement_Name(), "Name")); 
+		EditCommandRequestWrapper w = new EditCommandRequestWrapper(new SetRequest(UMLFactory.eINSTANCE.createActivity(), UMLPackage.eINSTANCE.getNamedElement_Name(), "Name"));
+		assertNotNull(w);
 	}
 	
 	public void testLookupScope(){
