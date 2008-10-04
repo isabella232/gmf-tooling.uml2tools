@@ -16,13 +16,21 @@ import java.util.List;
 
 import junit.framework.TestCase;
 
+import org.eclipse.gmf.runtime.diagram.ui.requests.EditCommandRequestWrapper;
+import org.eclipse.gmf.runtime.emf.type.core.requests.SetRequest;
 import org.eclipse.uml2.diagram.clazz.providers.UMLParserProvider;
 import org.eclipse.uml2.diagram.parser.lookup.OCLLookup;
 import org.eclipse.uml2.uml.Class;
 import org.eclipse.uml2.uml.Property;
 import org.eclipse.uml2.uml.Type;
+import org.eclipse.uml2.uml.UMLFactory;
+import org.eclipse.uml2.uml.UMLPackage;
 
 public class TypeLookupTest extends TestCase {
+	
+	public void testAAA(){
+		EditCommandRequestWrapper w = new EditCommandRequestWrapper(new SetRequest(UMLFactory.eINSTANCE.createActivity(), UMLPackage.eINSTANCE.getNamedElement_Name(), "Name")); 
+	}
 	
 	public void testLookupScope(){
 		Fixture fixture = new Fixture();
