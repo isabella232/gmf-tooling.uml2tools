@@ -1,5 +1,6 @@
 package org.eclipse.uml2.diagram.clazz.tests.tool;
 
+import org.eclipse.draw2d.geometry.Rectangle;
 import org.eclipse.gef.palette.PaletteContainer;
 import org.eclipse.gef.palette.PaletteRoot;
 import org.eclipse.gef.palette.ToolEntry;
@@ -60,7 +61,9 @@ public class PaletteEnumerationNodeTest extends ClassDiagramCreationToolTest {
 		IGraphicalEditPart compartment9 = editPart23.getChildBySemanticHint(UMLVisualIDRegistry.getType(PackageAsFrameContentsEditPart.VISUAL_ID));
 		assertNotNull(compartment9);
 		ToolEntry tool18 = (ToolEntry) ((PaletteContainer) myRoot.getChildren().get(0)).getChildren().get(2);
-		createNodeByTool(tool18.createTool(), 200, 100);
+		//its impossible to create at (200, 100) -- see #249665
+		Rectangle bounds = editPart23.getFigure().getBounds();
+		createNodeByTool(tool18.createTool(), bounds.getCenter().x, bounds.getCenter().y);
 
 		IGraphicalEditPart editPart24 = compartment9.getChildBySemanticHint(UMLVisualIDRegistry.getType(Enumeration3EditPart.VISUAL_ID));
 		assertNotNull(editPart24);

@@ -26,9 +26,11 @@ public class PalettePackageNodeTest extends ClassDiagramCreationToolTest {
 	}
 
 	/**
+	 * disabled now -- in 0.9.0 this creation shows popup menu and requires explicit user action
 	 * @generated
 	 */
-	public void testPackageOnDiagram() {
+	public void _testPackageOnDiagram() {
+		
 		IGraphicalEditPart diagramEditPart = getDiagramEditPart();
 		ToolEntry tool11 = (ToolEntry) ((PaletteContainer) myRoot.getChildren().get(0)).getChildren().get(1);
 		createNodeByTool(tool11.createTool(), 200, 100);
