@@ -32,6 +32,9 @@
       <import plugin="org.junit"/>
       <import plugin="org.eclipse.gmf.runtime.emf.type.core"/>
       <import plugin="org.eclipse.uml2.diagram.clazz"/>
+      <import plugin="org.eclipse.gmf.runtime.diagram.ui"/>
+      <import feature="org.eclipse.uml2.diagram"/>
+      <import feature="org.eclipse.gmf"/>
    </requires>
 
    <plugin
