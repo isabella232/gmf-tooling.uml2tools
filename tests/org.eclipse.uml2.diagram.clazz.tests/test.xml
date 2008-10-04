@@ -29,12 +29,12 @@
       <property name="classname" value="org.eclipse.uml2.diagram.clazz.tests.AllTests"/>
       <property name="vmargs" value="-ea -Xmx512M"/>
     </ant>
-    <!--ant target="core-test" antfile="${library-file}" dir="${eclipse-home}">
+    <ant target="core-test" antfile="${library-file}" dir="${eclipse-home}">
       <property name="data-dir" value="${uml2-tools-folder}"/>
       <property name="plugin-name" value="${plugin-name}"/>
       <property name="classname" value="org.eclipse.uml2.diagram.clazz.tests.UITests"/>
-      <property name="vmargs" value="-ea -Xmx512M"/>
-    </ant-->
+      <property name="vmargs" value="-ea -Xmx512m -Xms256m -XX:MaxPermSize=128m"/>
+    </ant>
   </target>
 
   <!-- This target holds code to cleanup the testing environment after -->
