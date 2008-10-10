@@ -13,33 +13,21 @@ package org.eclipse.uml2.diagram.common.parser.operation;
 
 import org.eclipse.core.runtime.IAdaptable;
 import org.eclipse.emf.ecore.EObject;
-import org.eclipse.jface.text.contentassist.IContentAssistProcessor;
-import org.eclipse.uml2.diagram.common.codeassist.OperationCompletionProcessor;
 import org.eclipse.uml2.diagram.parser.BasicApplyStrategy;
 import org.eclipse.uml2.diagram.parser.SemanticParserAdapter;
 import org.eclipse.uml2.diagram.parser.lookup.LookupSuiteImpl;
-import org.eclipse.uml2.diagram.parser.lookup.OCLLookup;
-import org.eclipse.uml2.uml.Type;
 
 
 public class OperationSemanticParser extends SemanticParserAdapter {
 	
-	private final LookupSuiteImpl myLookupSuite;
+	protected final LookupSuiteImpl myLookupSuite;
 	
 	public OperationSemanticParser(LookupSuiteImpl lookupSuite) {
 		super(new OperationParser(lookupSuite), new BasicApplyStrategy(), new OperationToString.VIEW(), new OperationToString.EDIT());
 		myLookupSuite = lookupSuite;
 	}
 
-	@Override
-	public IContentAssistProcessor getCompletionProcessor(IAdaptable element) {		
-		EObject context = doAdapt(element);
-		OperationCompletionProcessor p = new OperationCompletionProcessor(((OCLLookup<Type>)myLookupSuite.getLookup(Type.class)));
-		p.setContext(context);
-		return p;
-	}
-	
-	private EObject doAdapt(IAdaptable adaptable) {
+	protected final EObject doAdapt(IAdaptable adaptable) {
 		EObject element = (EObject) adaptable.getAdapter(EObject.class);
 		return element;
 	}

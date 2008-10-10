@@ -29,7 +29,6 @@ import org.eclipse.gmf.runtime.common.ui.services.parser.ParserEditStatus;
 import org.eclipse.gmf.runtime.emf.ui.services.parser.ISemanticParser;
 import org.eclipse.jface.text.contentassist.IContentAssistProcessor;
 import org.eclipse.uml2.diagram.common.commands.ApplyStereotypeHelper;
-import org.eclipse.uml2.diagram.parser.assist.FixedSetCompletionProcessorWithSeparator;
 import org.eclipse.uml2.uml.Element;
 import org.eclipse.uml2.uml.Extension;
 import org.eclipse.uml2.uml.Stereotype;
@@ -38,7 +37,7 @@ public class AppliedStereotypeParser implements ISemanticParser {
 
 	private static final MessageFormat APPLIED_PROFILE = new MessageFormat("\u00AB{0}\u00BB"); //$NON-NLS-1$
 
-	private static final String STEREOTYPE_SEPARATOR = ","; //$NON-NLS-1$
+	protected static final String STEREOTYPE_SEPARATOR = ","; //$NON-NLS-1$
 	
 	private static final String PLUGIN_ID = "org.eclipse.uml2.diagram.common"; //$NON-NLS-1$
 
@@ -62,18 +61,7 @@ public class AppliedStereotypeParser implements ISemanticParser {
 	}
 
 	public IContentAssistProcessor getCompletionProcessor(IAdaptable subject) {
-		Element element = doAdapt(subject);
-		List<Stereotype> remaining = new LinkedList<Stereotype>();
-		remaining.addAll(element.getApplicableStereotypes());
-		remaining.removeAll(element.getAppliedStereotypes());
-
-		List<String> names = new LinkedList<String>();
-		for (Stereotype next : remaining) {
-			names.add(next.getName());
-		}
-		FixedSetCompletionProcessorWithSeparator processor = new FixedSetCompletionProcessorWithSeparator(names, STEREOTYPE_SEPARATOR);
-		processor.setContext(element);
-		return processor;
+		return null;
 	}
 
 	public String getEditString(IAdaptable element, int flags) {
@@ -143,7 +131,7 @@ public class AppliedStereotypeParser implements ISemanticParser {
 		return null;
 	}
 
-	private Element doAdapt(IAdaptable adaptable) {
+	protected Element doAdapt(IAdaptable adaptable) {
 		Element element = (Element) adaptable.getAdapter(EObject.class);
 		return element;
 	}

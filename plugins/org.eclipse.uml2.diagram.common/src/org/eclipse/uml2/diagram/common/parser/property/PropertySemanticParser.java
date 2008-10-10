@@ -13,31 +13,20 @@ package org.eclipse.uml2.diagram.common.parser.property;
 
 import org.eclipse.core.runtime.IAdaptable;
 import org.eclipse.emf.ecore.EObject;
-import org.eclipse.jface.text.contentassist.IContentAssistProcessor;
 import org.eclipse.uml2.diagram.parser.BasicApplyStrategy;
 import org.eclipse.uml2.diagram.parser.SemanticParserAdapter;
 import org.eclipse.uml2.diagram.parser.lookup.LookupSuiteImpl;
-import org.eclipse.uml2.diagram.parser.lookup.OCLLookup;
-import org.eclipse.uml2.uml.Type;
 
 
 public class PropertySemanticParser extends SemanticParserAdapter {
-	private final LookupSuiteImpl myLookupSuite;
+	protected final LookupSuiteImpl myLookupSuite;
 	
 	public PropertySemanticParser(LookupSuiteImpl lookupSuite) {
 		super(new PropertyParser(lookupSuite), new BasicApplyStrategy(), new PropertyToString.VIEW(), new PropertyToString.EDIT());
 		myLookupSuite = lookupSuite;
 	}
 
-	@Override
-	public IContentAssistProcessor getCompletionProcessor(IAdaptable element) {		
-		EObject context = doAdapt(element);
-		org.eclipse.uml2.diagram.common.codeassist.PropertyCompletionProcessor p = new org.eclipse.uml2.diagram.common.codeassist.PropertyCompletionProcessor(((OCLLookup<Type>)myLookupSuite.getLookup(Type.class)));
-		p.setContext(context);
-		return p;
-	}
-	
-	private EObject doAdapt(IAdaptable adaptable) {
+	protected EObject doAdapt(IAdaptable adaptable) {
 		EObject element = (EObject) adaptable.getAdapter(EObject.class);
 		return element;
 	}
