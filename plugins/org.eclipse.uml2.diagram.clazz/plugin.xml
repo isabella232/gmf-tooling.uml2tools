@@ -31,6 +31,30 @@
                id="org.eclipse.uml2.diagram.clazz.ShowInitDialogAction2">
          </action>
       </objectContribution>
+      <!--<objectContribution
+            adaptable="false"
+            id="org.eclipse.uml2.diagram.clazz.edit.parts.TurnCommentIntoNote"
+            objectClass="org.eclipse.uml2.diagram.clazz.edit.parts.CommentEditPart">
+         <action
+               class="org.eclipse.uml2.diagram.common.actions.TurnCommentIntoNoteAction"
+               enablesFor="1"
+               id="org.eclipse.uml2.diagram.clazz.edit.parts.TurnCommentIntoNoteAction"
+               label="%TurnCommentIntoNote_label"
+               menubarPath="additions">
+         </action>
+      </objectContribution>                    
+      <objectContribution
+            adaptable="false"
+            id="org.eclipse.uml2.diagram.clazz.edit.parts.TurnNoteIntoComment"
+            objectClass="org.eclipse.gmf.runtime.diagram.ui.editparts.NoteEditPart">
+         <action
+               class="org.eclipse.uml2.diagram.clazz.action.TurnNoteIntoCommentAction"
+               enablesFor="1"
+               id="org.eclipse.uml2.diagram.clazz.edit.parts.TurnNoteIntoCommentAction"
+               label="%TurnNoteIntoComment_label"
+               menubarPath="additions">
+         </action>
+      </objectContribution>-->                    
    </extension>
 
    <extension point="org.eclipse.gmf.runtime.common.ui.services.action.contributionItemProviders">
