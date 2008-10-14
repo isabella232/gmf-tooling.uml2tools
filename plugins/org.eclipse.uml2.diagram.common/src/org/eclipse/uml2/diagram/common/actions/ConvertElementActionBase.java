@@ -65,7 +65,7 @@ public abstract class ConvertElementActionBase extends UMLDiagramAction {
 		if (createViewCommand == null) {
 			return UnexecutableCommand.INSTANCE;
 		}
-		CompositeTransactionalCommand createConnectionsCommand = getCreateConnectionsCommand(editPart, createViewRequest, preferencesHint);
+		CompoundCommand createConnectionsCommand = getCreateConnectionsCommand(editPart, createViewRequest, preferencesHint);
 		
 		CompoundCommand result = new CompoundCommand();
 		// extract CreateComment/Note command in a separate CompositeTransactionalCommand in order to have Comment/Note edit part created before CreateConenctionCommand execution   
@@ -75,19 +75,30 @@ public abstract class ConvertElementActionBase extends UMLDiagramAction {
 		convertName(command, editPart, createViewRequest);
 		
 		result.add(new ICommandProxy(command));
-		result.add(new ICommandProxy(createConnectionsCommand));
+		if (createConnectionsCommand != null && !createConnectionsCommand.isEmpty()) {
+			result.add(createConnectionsCommand);
+		}
 		return result;
 	}
 
-	private CompositeTransactionalCommand getCreateConnectionsCommand(final GraphicalEditPart editPart, CreateViewRequest createNodeRequest, PreferencesHint preferencesHint) {
+	private CompoundCommand getCreateConnectionsCommand(final GraphicalEditPart editPart, CreateViewRequest createNodeRequest, PreferencesHint preferencesHint) {
 		List<ConnectionEditPart> connections = editPart.getSourceConnections();
-		CompositeTransactionalCommand createConnectionsCommand = new CompositeTransactionalCommand(editPart.getEditingDomain(), "Convert Comment links Into Note links");
+		CompoundCommand createConnectionsCommand = new CompoundCommand();
 		for (ConnectionEditPart c: connections) {
 			CreateConnectionViewRequest createConnectionRequest = CreateViewRequestFactory.getCreateConnectionRequest(myNewLinkType, preferencesHint);
 			GraphicalEditPart targetEditPart = (GraphicalEditPart) c.getTarget();
 			DelayedCreateConnectionCommand createConnetionCommand = new DelayedCreateConnectionCommand(targetEditPart, DelayedCreateConnectionCommand.getCreatedElement(createNodeRequest), createConnectionRequest);
 //			processSetBendPointsCommand(createViewRequest);
-			createConnectionsCommand.compose(createConnetionCommand);
+			createConnectionsCommand.add(new ICommandProxy(createConnetionCommand));
+		}
+		// process incoming Note Attachments
+		connections = editPart.getTargetConnections();
+		for (ConnectionEditPart c: connections) {
+			CreateConnectionViewRequest createConnectionRequest = CreateViewRequestFactory.getCreateConnectionRequest(myNewLinkType, preferencesHint);
+			GraphicalEditPart targetEditPart = (GraphicalEditPart) c.getSource();
+			DelayedCreateConnectionCommand createConnetionCommand = new DelayedCreateConnectionCommand(targetEditPart, DelayedCreateConnectionCommand.getCreatedElement(createNodeRequest), createConnectionRequest);
+//			processSetBendPointsCommand(createViewRequest);
+			createConnectionsCommand.add(new ICommandProxy(createConnetionCommand));
 		}
 		return createConnectionsCommand;
 	}
