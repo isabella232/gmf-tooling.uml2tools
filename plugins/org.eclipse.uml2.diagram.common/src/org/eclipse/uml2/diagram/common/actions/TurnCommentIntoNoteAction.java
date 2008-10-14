@@ -11,9 +11,6 @@
  */
 package org.eclipse.uml2.diagram.common.actions;
 
-import java.util.Collection;
-import java.util.Iterator;
-
 import org.eclipse.core.runtime.IAdaptable;
 import org.eclipse.gmf.runtime.diagram.core.commands.SetPropertyCommand;
 import org.eclipse.gmf.runtime.diagram.core.util.ViewType;
@@ -28,7 +25,7 @@ import org.eclipse.uml2.uml.Comment;
 public class TurnCommentIntoNoteAction extends ConvertElementActionBase {
 
 	public TurnCommentIntoNoteAction() {
-		super(DiagramNotationType.NOTE);
+		super(DiagramNotationType.NOTE, DiagramNotationType.NOTE_ATTACHMENT);
 	}
 
 	@Override
@@ -53,15 +50,9 @@ public class TurnCommentIntoNoteAction extends ConvertElementActionBase {
 			if (myRequest == null) {
 				return null;
 			}
-			Object result = myRequest.getNewObject();
-			if (!(result instanceof Collection)) {
-				return null;
-			}
-			for (Iterator iter = ((Collection) result).iterator(); iter.hasNext();) {
-				Object viewAdaptable = iter.next();
-				if (viewAdaptable instanceof IAdaptable) {
-					return ((IAdaptable) viewAdaptable).getAdapter(View.class);
-				}
+			IAdaptable adaptable = DelayedCreateConnectionCommand.getCreatedElement(myRequest);
+			if (adaptable != null) {
+				return adaptable.getAdapter(View.class);
 			}
 			return null;
 		}

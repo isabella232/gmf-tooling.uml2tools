@@ -24,7 +24,7 @@ import org.eclipse.uml2.diagram.common.actions.ConvertElementActionBase;
 public class TurnNoteIntoCommentAction extends ConvertElementActionBase {
 
 	public TurnNoteIntoCommentAction() {
-		super(UMLElementTypes.Comment_2018);
+		super(UMLElementTypes.Comment_2018, UMLElementTypes.CommentAnnotatedElement_4019);
 	}
 	
 	@Override
