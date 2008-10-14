@@ -127,8 +127,8 @@ public class InstanceSpecification2ItemSemanticEditPolicy extends UMLBaseItemSem
 		if (UMLElementTypes.Slot_4015 == req.getElementType()) {
 			return getGEFWrapper(new AssociationInstanceCreateCommand(req, req.getSource(), req.getTarget()));
 		}
-		if (UMLElementTypes.Comment_4019 == req.getElementType()) {
-			return getGEFWrapper(new Comment2CreateCommand(req, req.getSource(), req.getTarget()));
+		if (UMLElementTypes.CommentAnnotatedElement_4019 == req.getElementType()) {
+			return null;
 		}
 		return null;
 	}
@@ -158,7 +158,7 @@ public class InstanceSpecification2ItemSemanticEditPolicy extends UMLBaseItemSem
 		if (UMLElementTypes.Slot_4015 == req.getElementType()) {
 			return getGEFWrapper(new AssociationInstanceCreateCommand(req, req.getSource(), req.getTarget()));
 		}
-		if (UMLElementTypes.Comment_4019 == req.getElementType()) {
+		if (UMLElementTypes.CommentAnnotatedElement_4019 == req.getElementType()) {
 			return getGEFWrapper(new Comment2CreateCommand(req, req.getSource(), req.getTarget()));
 		}
 		return null;
@@ -180,8 +180,6 @@ public class InstanceSpecification2ItemSemanticEditPolicy extends UMLBaseItemSem
 			return getGEFWrapper(new UsageReorientCommand(req));
 		case AssociationInstanceEditPart.VISUAL_ID:
 			return getGEFWrapper(new AssociationInstanceReorientCommand(req));
-		case Comment2EditPart.VISUAL_ID:
-			return getGEFWrapper(new CommentReorientCommand(req));
 		}
 		return super.getReorientRelationshipCommand(req);
 	}
@@ -200,6 +198,8 @@ public class InstanceSpecification2ItemSemanticEditPolicy extends UMLBaseItemSem
 			return getGEFWrapper(new DependencySupplierReorientCommand(req));
 		case DependencyClientEditPart.VISUAL_ID:
 			return getGEFWrapper(new DependencyClientReorientCommand(req));
+		case Comment2EditPart.VISUAL_ID:
+			return getGEFWrapper(new CommentReorientCommand(req));
 		}
 		return super.getReorientReferenceRelationshipCommand(req);
 	}

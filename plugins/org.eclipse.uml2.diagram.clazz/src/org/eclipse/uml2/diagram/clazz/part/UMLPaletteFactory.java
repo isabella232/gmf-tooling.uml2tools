@@ -460,9 +460,9 @@ public class UMLPaletteFactory {
 	 */
 	private ToolEntry createAnnotatedElement12CreationTool() {
 		List/*<IElementType>*/types = new ArrayList/*<IElementType>*/(1);
-		types.add(UMLElementTypes.Comment_4019);
+		types.add(UMLElementTypes.CommentAnnotatedElement_4019);
 		LinkToolEntry entry = new LinkToolEntry(Messages.AnnotatedElement12CreationTool_title, Messages.AnnotatedElement12CreationTool_desc, types);
-		entry.setSmallIcon(UMLElementTypes.getImageDescriptor(UMLElementTypes.Comment_4019));
+		entry.setSmallIcon(UMLElementTypes.getImageDescriptor(UMLElementTypes.CommentAnnotatedElement_4019));
 		entry.setLargeIcon(entry.getSmallIcon());
 		return entry;
 	}

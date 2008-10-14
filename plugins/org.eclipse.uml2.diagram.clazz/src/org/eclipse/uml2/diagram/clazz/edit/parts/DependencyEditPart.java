@@ -78,11 +78,6 @@ public class DependencyEditPart extends AbstractBorderedShapeEditPart implements
 	/**
 	 * @generated
 	 */
-	private LinkTargetListener myLinkTargetListener;
-
-	/**
-	 * @generated
-	 */
 	public DependencyEditPart(View view) {
 		super(view);
 	}
@@ -275,7 +270,6 @@ public class DependencyEditPart extends AbstractBorderedShapeEditPart implements
 		types.add(UMLElementTypes.DependencyClient_4007);
 		types.add(UMLElementTypes.Realization_4010);
 		types.add(UMLElementTypes.Usage_4013);
-		types.add(UMLElementTypes.Comment_4019);
 		return types;
 	}
 
@@ -290,7 +284,7 @@ public class DependencyEditPart extends AbstractBorderedShapeEditPart implements
 		types.add(UMLElementTypes.DependencyClient_4007);
 		types.add(UMLElementTypes.Realization_4010);
 		types.add(UMLElementTypes.Usage_4013);
-		types.add(UMLElementTypes.Comment_4019);
+		types.add(UMLElementTypes.CommentAnnotatedElement_4019);
 		return types;
 	}
 
@@ -659,81 +653,6 @@ public class DependencyEditPart extends AbstractBorderedShapeEditPart implements
 		if (targetEditPart instanceof PrimitiveType3EditPart) {
 			types.add(UMLElementTypes.Usage_4013);
 		}
-		if (targetEditPart instanceof Package2EditPart) {
-			types.add(UMLElementTypes.Comment_4019);
-		}
-		if (targetEditPart instanceof Class2EditPart) {
-			types.add(UMLElementTypes.Comment_4019);
-		}
-		if (targetEditPart instanceof AssociationClass2EditPart) {
-			types.add(UMLElementTypes.Comment_4019);
-		}
-		if (targetEditPart instanceof DataType2EditPart) {
-			types.add(UMLElementTypes.Comment_4019);
-		}
-		if (targetEditPart instanceof PrimitiveType2EditPart) {
-			types.add(UMLElementTypes.Comment_4019);
-		}
-		if (targetEditPart instanceof Enumeration2EditPart) {
-			types.add(UMLElementTypes.Comment_4019);
-		}
-		if (targetEditPart instanceof InterfaceEditPart) {
-			types.add(UMLElementTypes.Comment_4019);
-		}
-		if (targetEditPart instanceof ConstraintEditPart) {
-			types.add(UMLElementTypes.Comment_4019);
-		}
-		if (targetEditPart instanceof InstanceSpecification2EditPart) {
-			types.add(UMLElementTypes.Comment_4019);
-		}
-		if (targetEditPart instanceof org.eclipse.uml2.diagram.clazz.edit.parts.DependencyEditPart) {
-			types.add(UMLElementTypes.Comment_4019);
-		}
-		if (targetEditPart instanceof GeneralizationSetEditPart) {
-			types.add(UMLElementTypes.Comment_4019);
-		}
-		if (targetEditPart instanceof Interface2EditPart) {
-			types.add(UMLElementTypes.Comment_4019);
-		}
-		if (targetEditPart instanceof Package4EditPart) {
-			types.add(UMLElementTypes.Comment_4019);
-		}
-		if (targetEditPart instanceof AssociationClassRhombEditPart) {
-			types.add(UMLElementTypes.Comment_4019);
-		}
-		if (targetEditPart instanceof PackageAsFrameEditPart) {
-			types.add(UMLElementTypes.Comment_4019);
-		}
-		if (targetEditPart instanceof InstanceSpecification4EditPart) {
-			types.add(UMLElementTypes.Comment_4019);
-		}
-		if (targetEditPart instanceof CommentEditPart) {
-			types.add(UMLElementTypes.Comment_4019);
-		}
-		if (targetEditPart instanceof PortEditPart) {
-			types.add(UMLElementTypes.Comment_4019);
-		}
-		if (targetEditPart instanceof RedefinableTemplateSignatureEditPart) {
-			types.add(UMLElementTypes.Comment_4019);
-		}
-		if (targetEditPart instanceof Package6EditPart) {
-			types.add(UMLElementTypes.Comment_4019);
-		}
-		if (targetEditPart instanceof Class5EditPart) {
-			types.add(UMLElementTypes.Comment_4019);
-		}
-		if (targetEditPart instanceof Enumeration3EditPart) {
-			types.add(UMLElementTypes.Comment_4019);
-		}
-		if (targetEditPart instanceof InstanceSpecification3EditPart) {
-			types.add(UMLElementTypes.Comment_4019);
-		}
-		if (targetEditPart instanceof DataType3EditPart) {
-			types.add(UMLElementTypes.Comment_4019);
-		}
-		if (targetEditPart instanceof PrimitiveType3EditPart) {
-			types.add(UMLElementTypes.Comment_4019);
-		}
 		return types;
 	}
 
@@ -967,80 +886,8 @@ public class DependencyEditPart extends AbstractBorderedShapeEditPart implements
 		if (relationshipType == UMLElementTypes.Usage_4013) {
 			types.add(UMLElementTypes.PrimitiveType_3037);
 		}
-		if (relationshipType == UMLElementTypes.Comment_4019) {
-			types.add(UMLElementTypes.Package_2002);
-		}
-		if (relationshipType == UMLElementTypes.Comment_4019) {
-			types.add(UMLElementTypes.Class_2001);
-		}
-		if (relationshipType == UMLElementTypes.Comment_4019) {
-			types.add(UMLElementTypes.AssociationClass_2007);
-		}
-		if (relationshipType == UMLElementTypes.Comment_4019) {
-			types.add(UMLElementTypes.DataType_2004);
-		}
-		if (relationshipType == UMLElementTypes.Comment_4019) {
-			types.add(UMLElementTypes.PrimitiveType_2005);
-		}
-		if (relationshipType == UMLElementTypes.Comment_4019) {
-			types.add(UMLElementTypes.Enumeration_2003);
-		}
-		if (relationshipType == UMLElementTypes.Comment_4019) {
-			types.add(UMLElementTypes.Interface_2010);
-		}
-		if (relationshipType == UMLElementTypes.Comment_4019) {
-			types.add(UMLElementTypes.Constraint_2006);
-		}
-		if (relationshipType == UMLElementTypes.Comment_4019) {
-			types.add(UMLElementTypes.InstanceSpecification_2008);
-		}
-		if (relationshipType == UMLElementTypes.Comment_4019) {
-			types.add(UMLElementTypes.Dependency_2009);
-		}
-		if (relationshipType == UMLElementTypes.Comment_4019) {
-			types.add(UMLElementTypes.GeneralizationSet_2012);
-		}
-		if (relationshipType == UMLElementTypes.Comment_4019) {
-			types.add(UMLElementTypes.Interface_2013);
-		}
-		if (relationshipType == UMLElementTypes.Comment_4019) {
-			types.add(UMLElementTypes.Package_2014);
-		}
-		if (relationshipType == UMLElementTypes.Comment_4019) {
-			types.add(UMLElementTypes.AssociationClass_2015);
-		}
-		if (relationshipType == UMLElementTypes.Comment_4019) {
-			types.add(UMLElementTypes.Package_2016);
-		}
-		if (relationshipType == UMLElementTypes.Comment_4019) {
-			types.add(UMLElementTypes.InstanceSpecification_2017);
-		}
-		if (relationshipType == UMLElementTypes.Comment_4019) {
+		if (relationshipType == UMLElementTypes.CommentAnnotatedElement_4019) {
 			types.add(UMLElementTypes.Comment_2018);
-		}
-		if (relationshipType == UMLElementTypes.Comment_4019) {
-			types.add(UMLElementTypes.Port_3025);
-		}
-		if (relationshipType == UMLElementTypes.Comment_4019) {
-			types.add(UMLElementTypes.RedefinableTemplateSignature_3027);
-		}
-		if (relationshipType == UMLElementTypes.Comment_4019) {
-			types.add(UMLElementTypes.Package_3032);
-		}
-		if (relationshipType == UMLElementTypes.Comment_4019) {
-			types.add(UMLElementTypes.Class_3033);
-		}
-		if (relationshipType == UMLElementTypes.Comment_4019) {
-			types.add(UMLElementTypes.Enumeration_3034);
-		}
-		if (relationshipType == UMLElementTypes.Comment_4019) {
-			types.add(UMLElementTypes.InstanceSpecification_3035);
-		}
-		if (relationshipType == UMLElementTypes.Comment_4019) {
-			types.add(UMLElementTypes.DataType_3036);
-		}
-		if (relationshipType == UMLElementTypes.Comment_4019) {
-			types.add(UMLElementTypes.PrimitiveType_3037);
 		}
 		return types;
 	}
@@ -1410,81 +1257,6 @@ public class DependencyEditPart extends AbstractBorderedShapeEditPart implements
 		if (relationshipType == UMLElementTypes.Usage_4013) {
 			types.add(UMLElementTypes.PrimitiveType_3037);
 		}
-		if (relationshipType == UMLElementTypes.Comment_4019) {
-			types.add(UMLElementTypes.Package_2002);
-		}
-		if (relationshipType == UMLElementTypes.Comment_4019) {
-			types.add(UMLElementTypes.Class_2001);
-		}
-		if (relationshipType == UMLElementTypes.Comment_4019) {
-			types.add(UMLElementTypes.AssociationClass_2007);
-		}
-		if (relationshipType == UMLElementTypes.Comment_4019) {
-			types.add(UMLElementTypes.DataType_2004);
-		}
-		if (relationshipType == UMLElementTypes.Comment_4019) {
-			types.add(UMLElementTypes.PrimitiveType_2005);
-		}
-		if (relationshipType == UMLElementTypes.Comment_4019) {
-			types.add(UMLElementTypes.Enumeration_2003);
-		}
-		if (relationshipType == UMLElementTypes.Comment_4019) {
-			types.add(UMLElementTypes.Interface_2010);
-		}
-		if (relationshipType == UMLElementTypes.Comment_4019) {
-			types.add(UMLElementTypes.Constraint_2006);
-		}
-		if (relationshipType == UMLElementTypes.Comment_4019) {
-			types.add(UMLElementTypes.InstanceSpecification_2008);
-		}
-		if (relationshipType == UMLElementTypes.Comment_4019) {
-			types.add(UMLElementTypes.Dependency_2009);
-		}
-		if (relationshipType == UMLElementTypes.Comment_4019) {
-			types.add(UMLElementTypes.GeneralizationSet_2012);
-		}
-		if (relationshipType == UMLElementTypes.Comment_4019) {
-			types.add(UMLElementTypes.Interface_2013);
-		}
-		if (relationshipType == UMLElementTypes.Comment_4019) {
-			types.add(UMLElementTypes.Package_2014);
-		}
-		if (relationshipType == UMLElementTypes.Comment_4019) {
-			types.add(UMLElementTypes.AssociationClass_2015);
-		}
-		if (relationshipType == UMLElementTypes.Comment_4019) {
-			types.add(UMLElementTypes.Package_2016);
-		}
-		if (relationshipType == UMLElementTypes.Comment_4019) {
-			types.add(UMLElementTypes.InstanceSpecification_2017);
-		}
-		if (relationshipType == UMLElementTypes.Comment_4019) {
-			types.add(UMLElementTypes.Comment_2018);
-		}
-		if (relationshipType == UMLElementTypes.Comment_4019) {
-			types.add(UMLElementTypes.Port_3025);
-		}
-		if (relationshipType == UMLElementTypes.Comment_4019) {
-			types.add(UMLElementTypes.RedefinableTemplateSignature_3027);
-		}
-		if (relationshipType == UMLElementTypes.Comment_4019) {
-			types.add(UMLElementTypes.Package_3032);
-		}
-		if (relationshipType == UMLElementTypes.Comment_4019) {
-			types.add(UMLElementTypes.Class_3033);
-		}
-		if (relationshipType == UMLElementTypes.Comment_4019) {
-			types.add(UMLElementTypes.Enumeration_3034);
-		}
-		if (relationshipType == UMLElementTypes.Comment_4019) {
-			types.add(UMLElementTypes.InstanceSpecification_3035);
-		}
-		if (relationshipType == UMLElementTypes.Comment_4019) {
-			types.add(UMLElementTypes.DataType_3036);
-		}
-		if (relationshipType == UMLElementTypes.Comment_4019) {
-			types.add(UMLElementTypes.PrimitiveType_3037);
-		}
 		return types;
 	}
 
@@ -1498,7 +1270,6 @@ public class DependencyEditPart extends AbstractBorderedShapeEditPart implements
 			super.handleNotificationEvent(event);
 		}
 		if (isCanonicalEnabled()) {
-			handleTypeLinkModification(event);
 			handleFeatureLinkModification(event);
 		}
 	}
@@ -1578,193 +1349,6 @@ public class DependencyEditPart extends AbstractBorderedShapeEditPart implements
 			myUseLocalCoordinates = useLocalCoordinates;
 		}
 
-	}
-
-	/**
-	 * @generated
-	 */
-	private DiagramEventBroker getDiagramEventBroker() {
-		TransactionalEditingDomain theEditingDomain = getEditingDomain();
-		if (theEditingDomain != null) {
-			return DiagramEventBroker.getInstance(theEditingDomain);
-		}
-		return null;
-	}
-
-	/**
-	 * @generated
-	 */
-	private LinkTargetListener getLinkTargetListener() {
-		if (myLinkTargetListener == null) {
-			myLinkTargetListener = new LinkTargetListener();
-		}
-		return myLinkTargetListener;
-	}
-
-	/**
-	 * @generated
-	 */
-	private class LinkTargetListener implements NotificationListener {
-
-		/**
-		 * @generated
-		 */
-		Map<EObject, Set<EStructuralFeature>> myNotifiers = new HashMap<EObject, Set<EStructuralFeature>>();
-
-		/**
-		 * @generated
-		 */
-		private void added(EObject link, EStructuralFeature feature) {
-			if (!myNotifiers.containsKey(link)) {
-				myNotifiers.put(link, new HashSet<EStructuralFeature>());
-			}
-			myNotifiers.get(link).add(feature);
-		}
-
-		/**
-		 * @generated
-		 */
-		private void removed(EObject link, EStructuralFeature feature) {
-			if (!myNotifiers.containsKey(link)) {
-				return;
-			}
-			myNotifiers.get(link).remove(feature);
-		}
-
-		/**
-		 * @generated
-		 */
-		public void dispose() {
-			Set<Map.Entry<EObject, Set<EStructuralFeature>>> entrySet = myNotifiers.entrySet();
-			for (Map.Entry<EObject, Set<EStructuralFeature>> entry : entrySet) {
-				for (EStructuralFeature feature : entry.getValue()) {
-					getDiagramEventBroker().removeNotificationListener(entry.getKey(), feature, this);
-				}
-			}
-		}
-
-		/**
-		 * @generated
-		 */
-		private void removeReferenceListener(EObject link, EStructuralFeature feature) {
-			getDiagramEventBroker().removeNotificationListener(link, feature, this);
-			removed(link, feature);
-		}
-
-		/**
-		 * @generated
-		 */
-		private void addReferenceListener(EObject link, EStructuralFeature feature) {
-			getDiagramEventBroker().addNotificationListener(link, feature, this);
-			added(link, feature);
-		}
-
-		/**
-		 * @generated
-		 */
-		public void notifyChanged(Notification event) {
-			if (event.getFeature() == UMLPackage.eINSTANCE.getComment_AnnotatedElement()) {
-				refreshDiagram();
-				return;
-			}
-		}
-	}
-
-	/**
-	 * @generated
-	 */
-	protected void addSemanticListeners() {
-		super.addSemanticListeners();
-		for (IUpdaterNodeDescriptor next : getDependency_2009ContainedLinks()) {
-			EObject nextLink = next.getModelElement();
-			if (nextLink == null) {
-				continue;
-			}
-			switch (next.getVisualID()) {
-			case Comment2EditPart.VISUAL_ID:
-				getLinkTargetListener().addReferenceListener(nextLink, UMLPackage.eINSTANCE.getComment_AnnotatedElement());
-				break;
-
-			default:
-				break;
-			}
-		}
-	}
-
-	/**
-	 * @generated
-	 */
-	@SuppressWarnings("unchecked")
-	private List<IUpdaterLinkDescriptor> getDependency_2009ContainedLinks() {
-		return UMLDiagramUpdater.getDependency_2009ContainedLinks(getNotationView());
-	}
-
-	/**
-	 * @generated
-	 */
-	protected void removeSemanticListeners() {
-		super.removeSemanticListeners();
-		getLinkTargetListener().dispose();
-	}
-
-	/**
-	 * @generated
-	 */
-	private void handleTypeLinkModification(Notification event) {
-		if (event.getFeature() == UMLPackage.eINSTANCE.getElement_OwnedComment()) {
-			switch (event.getEventType()) {
-			case Notification.ADD: {
-				Object link = event.getNewValue();
-				if (link instanceof Comment) {
-					getLinkTargetListener().addReferenceListener((EObject) link, UMLPackage.eINSTANCE.getComment_AnnotatedElement());
-				}
-				if (link instanceof Comment) {
-					refreshDiagram();
-				}
-				break;
-			}
-			case Notification.REMOVE: {
-				Object link = event.getOldValue();
-				if (link instanceof Comment) {
-					getLinkTargetListener().removeReferenceListener((EObject) link, UMLPackage.eINSTANCE.getComment_AnnotatedElement());
-				}
-				if (link instanceof Comment) {
-					refreshDiagram();
-				}
-				break;
-			}
-			case Notification.ADD_MANY: {
-				List<?> links = (List<?>) event.getNewValue();
-				for (Object link : links) {
-					if (link instanceof Comment) {
-						getLinkTargetListener().addReferenceListener((EObject) link, UMLPackage.eINSTANCE.getComment_AnnotatedElement());
-					}
-				}
-				for (Object link : links) {
-					if (link instanceof Comment) {
-						refreshDiagram();
-						break;
-					}
-				}
-				break;
-			}
-			case Notification.REMOVE_MANY: {
-				List<?> links = (List<?>) event.getOldValue();
-				for (Object link : links) {
-					if (link instanceof Comment) {
-						getLinkTargetListener().removeReferenceListener((EObject) link, UMLPackage.eINSTANCE.getComment_AnnotatedElement());
-					}
-				}
-				for (Object link : links) {
-					if (link instanceof Comment) {
-						refreshDiagram();
-						break;
-					}
-				}
-				break;
-			}
-			}
-		}
 	}
 
 }

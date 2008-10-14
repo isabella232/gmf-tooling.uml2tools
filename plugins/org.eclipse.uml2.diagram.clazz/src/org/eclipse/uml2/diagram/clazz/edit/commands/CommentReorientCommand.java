@@ -6,6 +6,7 @@ import org.eclipse.core.runtime.IProgressMonitor;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.gmf.runtime.common.core.command.CommandResult;
 import org.eclipse.gmf.runtime.emf.type.core.commands.EditElementCommand;
+import org.eclipse.gmf.runtime.emf.type.core.requests.ReorientReferenceRelationshipRequest;
 import org.eclipse.gmf.runtime.emf.type.core.requests.ReorientRelationshipRequest;
 import org.eclipse.uml2.diagram.clazz.edit.policies.UMLBaseItemSemanticEditPolicy;
 import org.eclipse.uml2.uml.Comment;
@@ -25,6 +26,11 @@ public class CommentReorientCommand extends EditElementCommand {
 	/**
 	 * @generated
 	 */
+	private final EObject referenceOwner;
+
+	/**
+	 * @generated
+	 */
 	private final EObject oldEnd;
 
 	/**
@@ -35,9 +41,10 @@ public class CommentReorientCommand extends EditElementCommand {
 	/**
 	 * @generated
 	 */
-	public CommentReorientCommand(ReorientRelationshipRequest request) {
-		super(request.getLabel(), request.getRelationship(), request);
+	public CommentReorientCommand(ReorientReferenceRelationshipRequest request) {
+		super(request.getLabel(), null, request);
 		reorientDirection = request.getDirection();
+		referenceOwner = request.getReferenceOwner();
 		oldEnd = request.getOldRelationshipEnd();
 		newEnd = request.getNewRelationshipEnd();
 	}
@@ -46,7 +53,7 @@ public class CommentReorientCommand extends EditElementCommand {
 	 * @generated
 	 */
 	public boolean canExecute() {
-		if (false == getElementToEdit() instanceof Comment) {
+		if (false == referenceOwner instanceof Comment) {
 			return false;
 		}
 		if (reorientDirection == ReorientRelationshipRequest.REORIENT_SOURCE) {
@@ -62,14 +69,10 @@ public class CommentReorientCommand extends EditElementCommand {
 	 * @generated
 	 */
 	protected boolean canReorientSource() {
-		if (!(oldEnd instanceof Element && newEnd instanceof Element)) {
+		if (!(oldEnd instanceof Element && newEnd instanceof Comment)) {
 			return false;
 		}
-		if (getLink().getAnnotatedElements().size() != 1) {
-			return false;
-		}
-		Element target = (Element) getLink().getAnnotatedElements().get(0);
-		return UMLBaseItemSemanticEditPolicy.LinkConstraints.canExistComment_4019(getNewSource(), target);
+		return UMLBaseItemSemanticEditPolicy.LinkConstraints.canExistCommentAnnotatedElement_4019(getNewSource(), getOldTarget());
 	}
 
 	/**
@@ -79,11 +82,7 @@ public class CommentReorientCommand extends EditElementCommand {
 		if (!(oldEnd instanceof Element && newEnd instanceof Element)) {
 			return false;
 		}
-		if (!(getLink().eContainer() instanceof Element)) {
-			return false;
-		}
-		Element source = (Element) getLink().eContainer();
-		return UMLBaseItemSemanticEditPolicy.LinkConstraints.canExistComment_4019(source, getNewTarget());
+		return UMLBaseItemSemanticEditPolicy.LinkConstraints.canExistCommentAnnotatedElement_4019(getOldSource(), getNewTarget());
 	}
 
 	/**
@@ -106,39 +105,32 @@ public class CommentReorientCommand extends EditElementCommand {
 	 * @generated
 	 */
 	protected CommandResult reorientSource() throws ExecutionException {
-		getOldSource().getOwnedComments().remove(getLink());
-		getNewSource().getOwnedComments().add(getLink());
-		return CommandResult.newOKCommandResult(getLink());
+		getOldSource().getAnnotatedElements().remove(getOldTarget());
+		getNewSource().getAnnotatedElements().add(getOldTarget());
+		return CommandResult.newOKCommandResult(referenceOwner);
 	}
 
 	/**
 	 * @generated
 	 */
 	protected CommandResult reorientTarget() throws ExecutionException {
-		getLink().getAnnotatedElements().remove(getOldTarget());
-		getLink().getAnnotatedElements().add(getNewTarget());
-		return CommandResult.newOKCommandResult(getLink());
+		getOldSource().getAnnotatedElements().remove(getOldTarget());
+		getOldSource().getAnnotatedElements().add(getNewTarget());
+		return CommandResult.newOKCommandResult(referenceOwner);
 	}
 
 	/**
 	 * @generated
 	 */
-	protected Comment getLink() {
-		return (Comment) getElementToEdit();
+	protected Comment getOldSource() {
+		return (Comment) referenceOwner;
 	}
 
 	/**
 	 * @generated
 	 */
-	protected Element getOldSource() {
-		return (Element) oldEnd;
-	}
-
-	/**
-	 * @generated
-	 */
-	protected Element getNewSource() {
-		return (Element) newEnd;
+	protected Comment getNewSource() {
+		return (Comment) newEnd;
 	}
 
 	/**

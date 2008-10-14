@@ -7,6 +7,7 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.gmf.runtime.common.core.command.CommandResult;
 import org.eclipse.gmf.runtime.emf.type.core.commands.CreateElementCommand;
+import org.eclipse.gmf.runtime.emf.type.core.commands.EditElementCommand;
 import org.eclipse.gmf.runtime.emf.type.core.requests.ConfigureRequest;
 import org.eclipse.gmf.runtime.emf.type.core.requests.CreateRelationshipRequest;
 import org.eclipse.uml2.diagram.clazz.edit.policies.UMLBaseItemSemanticEditPolicy;
@@ -19,7 +20,7 @@ import org.eclipse.uml2.uml.UMLPackage;
  * @generated
  */
 
-public class Comment2CreateCommand extends CreateElementCommand {
+public class Comment2CreateCommand extends EditElementCommand {
 
 	/**
 	 * @generated
@@ -35,14 +36,9 @@ public class Comment2CreateCommand extends CreateElementCommand {
 	 * @generated
 	 */
 	public Comment2CreateCommand(CreateRelationshipRequest request, EObject source, EObject target) {
-		super(request);
+		super(request.getLabel(), null, request);
 		this.source = source;
 		this.target = target;
-		if (request.getContainmentFeature() == null) {
-			setContainmentFeature(UMLPackage.eINSTANCE.getElement_OwnedComment());
-		}
-
-		super.setElementToEdit(source);
 	}
 
 	/**
@@ -52,7 +48,7 @@ public class Comment2CreateCommand extends CreateElementCommand {
 		if (source == null && target == null) {
 			return false;
 		}
-		if (source != null && false == source instanceof Element) {
+		if (source != null && false == source instanceof Comment) {
 			return false;
 		}
 		if (target != null && false == target instanceof Element) {
@@ -62,24 +58,7 @@ public class Comment2CreateCommand extends CreateElementCommand {
 			return true; // link creation is in progress; source is not defined yet
 		}
 		// target may be null here but it's possible to check constraint
-		return UMLBaseItemSemanticEditPolicy.LinkConstraints.canCreateComment_4019(getSource(), getTarget());
-	}
-
-	/**
-	 * @generated
-	 */
-	protected EObject doDefaultElementCreation() {
-		Comment newElement = UMLFactory.eINSTANCE.createComment();
-		getSource().getOwnedComments().add(newElement);
-		newElement.getAnnotatedElements().add(getTarget());
-		return newElement;
-	}
-
-	/**
-	 * @generated
-	 */
-	protected EClass getEClassToEdit() {
-		return UMLPackage.eINSTANCE.getElement();
+		return UMLBaseItemSemanticEditPolicy.LinkConstraints.canCreateCommentAnnotatedElement_4019(getSource(), getTarget());
 	}
 
 	/**
@@ -89,31 +68,17 @@ public class Comment2CreateCommand extends CreateElementCommand {
 		if (!canExecute()) {
 			throw new ExecutionException("Invalid arguments in create link command"); //$NON-NLS-1$
 		}
-		return super.doExecuteWithResult(monitor, info);
+		if (getSource() != null && getTarget() != null) {
+			getSource().getAnnotatedElements().add(getTarget());
+		}
+		return CommandResult.newOKCommandResult();
 	}
 
 	/**
 	 * @generated
 	 */
-	protected ConfigureRequest createConfigureRequest() {
-		ConfigureRequest request = super.createConfigureRequest();
-		request.setParameter(CreateRelationshipRequest.SOURCE, getSource());
-		request.setParameter(CreateRelationshipRequest.TARGET, getTarget());
-		return request;
-	}
-
-	/**
-	 * @generated
-	 */
-	protected void setElementToEdit(EObject element) {
-		throw new UnsupportedOperationException();
-	}
-
-	/**
-	 * @generated
-	 */
-	protected Element getSource() {
-		return (Element) source;
+	protected Comment getSource() {
+		return (Comment) source;
 	}
 
 	/**

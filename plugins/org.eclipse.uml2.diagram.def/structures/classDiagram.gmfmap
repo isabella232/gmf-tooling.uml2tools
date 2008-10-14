@@ -2135,8 +2135,6 @@
     </creationConstraints>
   </links>
   <links>
-    <domainMetaElement
-        href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//Comment"/>
     <containmentFeature
         href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//Element/ownedComment"/>
     <tool

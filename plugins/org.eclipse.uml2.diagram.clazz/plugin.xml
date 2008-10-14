@@ -1468,10 +1468,10 @@
       </metamodel>
       <metamodel nsURI="http://www.eclipse.org/uml2/2.1.0/UML">
          <specializationType
-               id="org.eclipse.uml2.diagram.clazz.Comment_4019"
-               name="%metatype.name.Comment_4019"
+               id="org.eclipse.uml2.diagram.clazz.CommentAnnotatedElement_4019"
+               name="%metatype.name.CommentAnnotatedElement_4019"
                kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType">
-            <specializes id="org.eclipse.uml2.diagram.clazz.Comment_2018"/>
+            <specializes id="org.eclipse.gmf.runtime.emf.type.core.null"/>
             <param name="semanticHint" value="4019"/>
          </specializationType>
       </metamodel>

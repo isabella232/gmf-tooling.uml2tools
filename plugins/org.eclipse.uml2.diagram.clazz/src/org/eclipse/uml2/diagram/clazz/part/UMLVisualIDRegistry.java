@@ -1308,9 +1308,6 @@ public class UMLVisualIDRegistry {
 		if (UMLPackage.eINSTANCE.getTemplateBinding().isSuperTypeOf(domainElement.eClass())) {
 			return TemplateBindingEditPart.VISUAL_ID;
 		}
-		if (UMLPackage.eINSTANCE.getComment().isSuperTypeOf(domainElement.eClass())) {
-			return Comment2EditPart.VISUAL_ID;
-		}
 		return -1;
 	}
 

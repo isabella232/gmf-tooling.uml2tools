@@ -329,7 +329,7 @@ public class UMLNavigatorLabelProvider extends LabelProvider implements ICommonL
 		case PortRequiredEditPart.VISUAL_ID:
 			return getImage("Navigator?Link?http://www.eclipse.org/uml2/2.1.0/UML?Port?required", UMLElementTypes.PortRequired_4018); //$NON-NLS-1$
 		case Comment2EditPart.VISUAL_ID:
-			return getImage("Navigator?Link?http://www.eclipse.org/uml2/2.1.0/UML?Comment", UMLElementTypes.Comment_4019); //$NON-NLS-1$
+			return getImage("Navigator?Link?http://www.eclipse.org/uml2/2.1.0/UML?Comment?annotatedElement", UMLElementTypes.CommentAnnotatedElement_4019); //$NON-NLS-1$
 		}
 		return getImage("Navigator?UnknownElement", null); //$NON-NLS-1$
 	}
@@ -531,7 +531,7 @@ public class UMLNavigatorLabelProvider extends LabelProvider implements ICommonL
 		case PortRequiredEditPart.VISUAL_ID:
 			return getPortRequired_4018Text(view);
 		case Comment2EditPart.VISUAL_ID:
-			return getComment_4019Text(view);
+			return getCommentAnnotatedElement_4019Text(view);
 		}
 		return getUnknownElementText(view);
 	}
@@ -1455,14 +1455,8 @@ public class UMLNavigatorLabelProvider extends LabelProvider implements ICommonL
 	/**
 	 * @generated
 	 */
-	private String getComment_4019Text(View view) {
-		Comment domainModelElement = (Comment) view.getElement();
-		if (domainModelElement != null) {
-			return String.valueOf(domainModelElement.getBody());
-		} else {
-			UMLDiagramEditorPlugin.getInstance().logError("No domain element for view with visualID = " + 4019); //$NON-NLS-1$
-			return ""; //$NON-NLS-1$
-		}
+	private String getCommentAnnotatedElement_4019Text(View view) {
+		return ""; //$NON-NLS-1$
 	}
 
 	/**

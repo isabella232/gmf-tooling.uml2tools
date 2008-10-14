@@ -475,7 +475,7 @@ public class UMLElementTypes extends ElementInitializers {
 	/**
 	 * @generated
 	 */
-	public static final IHintedType Comment_4019 = (IHintedType) getElementType("org.eclipse.uml2.diagram.clazz.Comment_4019"); //$NON-NLS-1$
+	public static final IHintedType CommentAnnotatedElement_4019 = (IHintedType) getElementType("org.eclipse.uml2.diagram.clazz.CommentAnnotatedElement_4019"); //$NON-NLS-1$
 
 	/**
 	 * @generated
@@ -725,7 +725,7 @@ public class UMLElementTypes extends ElementInitializers {
 
 			elements.put(PortRequired_4018, UMLPackage.eINSTANCE.getPort_Required());
 
-			elements.put(Comment_4019, UMLPackage.eINSTANCE.getComment());
+			elements.put(CommentAnnotatedElement_4019, UMLPackage.eINSTANCE.getComment_AnnotatedElement());
 		}
 		return (ENamedElement) elements.get(type);
 	}
@@ -814,7 +814,7 @@ public class UMLElementTypes extends ElementInitializers {
 			KNOWN_ELEMENT_TYPES.add(TemplateBinding_4016);
 			KNOWN_ELEMENT_TYPES.add(PortProvided_4017);
 			KNOWN_ELEMENT_TYPES.add(PortRequired_4018);
-			KNOWN_ELEMENT_TYPES.add(Comment_4019);
+			KNOWN_ELEMENT_TYPES.add(CommentAnnotatedElement_4019);
 		}
 		return KNOWN_ELEMENT_TYPES.contains(elementType);
 	}
@@ -967,7 +967,7 @@ public class UMLElementTypes extends ElementInitializers {
 		case PortRequiredEditPart.VISUAL_ID:
 			return PortRequired_4018;
 		case Comment2EditPart.VISUAL_ID:
-			return Comment_4019;
+			return CommentAnnotatedElement_4019;
 		}
 		return null;
 	}

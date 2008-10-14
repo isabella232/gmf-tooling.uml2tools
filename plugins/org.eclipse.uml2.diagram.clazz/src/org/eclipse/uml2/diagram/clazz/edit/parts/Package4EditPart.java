@@ -308,7 +308,6 @@ public class Package4EditPart extends ShapeNodeEditPart implements PrimaryShapeE
 		types.add(UMLElementTypes.Realization_4010);
 		types.add(UMLElementTypes.Usage_4013);
 		types.add(UMLElementTypes.TemplateBinding_4016);
-		types.add(UMLElementTypes.Comment_4019);
 		return types;
 	}
 
@@ -324,7 +323,7 @@ public class Package4EditPart extends ShapeNodeEditPart implements PrimaryShapeE
 		types.add(UMLElementTypes.Realization_4010);
 		types.add(UMLElementTypes.Usage_4013);
 		types.add(UMLElementTypes.TemplateBinding_4016);
-		types.add(UMLElementTypes.Comment_4019);
+		types.add(UMLElementTypes.CommentAnnotatedElement_4019);
 		return types;
 	}
 
@@ -599,81 +598,6 @@ public class Package4EditPart extends ShapeNodeEditPart implements PrimaryShapeE
 		}
 		if (targetEditPart instanceof PrimitiveType3EditPart) {
 			types.add(UMLElementTypes.TemplateBinding_4016);
-		}
-		if (targetEditPart instanceof Package2EditPart) {
-			types.add(UMLElementTypes.Comment_4019);
-		}
-		if (targetEditPart instanceof Class2EditPart) {
-			types.add(UMLElementTypes.Comment_4019);
-		}
-		if (targetEditPart instanceof AssociationClass2EditPart) {
-			types.add(UMLElementTypes.Comment_4019);
-		}
-		if (targetEditPart instanceof DataType2EditPart) {
-			types.add(UMLElementTypes.Comment_4019);
-		}
-		if (targetEditPart instanceof PrimitiveType2EditPart) {
-			types.add(UMLElementTypes.Comment_4019);
-		}
-		if (targetEditPart instanceof Enumeration2EditPart) {
-			types.add(UMLElementTypes.Comment_4019);
-		}
-		if (targetEditPart instanceof InterfaceEditPart) {
-			types.add(UMLElementTypes.Comment_4019);
-		}
-		if (targetEditPart instanceof ConstraintEditPart) {
-			types.add(UMLElementTypes.Comment_4019);
-		}
-		if (targetEditPart instanceof InstanceSpecification2EditPart) {
-			types.add(UMLElementTypes.Comment_4019);
-		}
-		if (targetEditPart instanceof DependencyEditPart) {
-			types.add(UMLElementTypes.Comment_4019);
-		}
-		if (targetEditPart instanceof GeneralizationSetEditPart) {
-			types.add(UMLElementTypes.Comment_4019);
-		}
-		if (targetEditPart instanceof Interface2EditPart) {
-			types.add(UMLElementTypes.Comment_4019);
-		}
-		if (targetEditPart instanceof org.eclipse.uml2.diagram.clazz.edit.parts.Package4EditPart) {
-			types.add(UMLElementTypes.Comment_4019);
-		}
-		if (targetEditPart instanceof AssociationClassRhombEditPart) {
-			types.add(UMLElementTypes.Comment_4019);
-		}
-		if (targetEditPart instanceof PackageAsFrameEditPart) {
-			types.add(UMLElementTypes.Comment_4019);
-		}
-		if (targetEditPart instanceof InstanceSpecification4EditPart) {
-			types.add(UMLElementTypes.Comment_4019);
-		}
-		if (targetEditPart instanceof CommentEditPart) {
-			types.add(UMLElementTypes.Comment_4019);
-		}
-		if (targetEditPart instanceof PortEditPart) {
-			types.add(UMLElementTypes.Comment_4019);
-		}
-		if (targetEditPart instanceof RedefinableTemplateSignatureEditPart) {
-			types.add(UMLElementTypes.Comment_4019);
-		}
-		if (targetEditPart instanceof Package6EditPart) {
-			types.add(UMLElementTypes.Comment_4019);
-		}
-		if (targetEditPart instanceof Class5EditPart) {
-			types.add(UMLElementTypes.Comment_4019);
-		}
-		if (targetEditPart instanceof Enumeration3EditPart) {
-			types.add(UMLElementTypes.Comment_4019);
-		}
-		if (targetEditPart instanceof InstanceSpecification3EditPart) {
-			types.add(UMLElementTypes.Comment_4019);
-		}
-		if (targetEditPart instanceof DataType3EditPart) {
-			types.add(UMLElementTypes.Comment_4019);
-		}
-		if (targetEditPart instanceof PrimitiveType3EditPart) {
-			types.add(UMLElementTypes.Comment_4019);
 		}
 		return types;
 	}
@@ -959,80 +883,8 @@ public class Package4EditPart extends ShapeNodeEditPart implements PrimaryShapeE
 		if (relationshipType == UMLElementTypes.TemplateBinding_4016) {
 			types.add(UMLElementTypes.PrimitiveType_3037);
 		}
-		if (relationshipType == UMLElementTypes.Comment_4019) {
-			types.add(UMLElementTypes.Package_2002);
-		}
-		if (relationshipType == UMLElementTypes.Comment_4019) {
-			types.add(UMLElementTypes.Class_2001);
-		}
-		if (relationshipType == UMLElementTypes.Comment_4019) {
-			types.add(UMLElementTypes.AssociationClass_2007);
-		}
-		if (relationshipType == UMLElementTypes.Comment_4019) {
-			types.add(UMLElementTypes.DataType_2004);
-		}
-		if (relationshipType == UMLElementTypes.Comment_4019) {
-			types.add(UMLElementTypes.PrimitiveType_2005);
-		}
-		if (relationshipType == UMLElementTypes.Comment_4019) {
-			types.add(UMLElementTypes.Enumeration_2003);
-		}
-		if (relationshipType == UMLElementTypes.Comment_4019) {
-			types.add(UMLElementTypes.Interface_2010);
-		}
-		if (relationshipType == UMLElementTypes.Comment_4019) {
-			types.add(UMLElementTypes.Constraint_2006);
-		}
-		if (relationshipType == UMLElementTypes.Comment_4019) {
-			types.add(UMLElementTypes.InstanceSpecification_2008);
-		}
-		if (relationshipType == UMLElementTypes.Comment_4019) {
-			types.add(UMLElementTypes.Dependency_2009);
-		}
-		if (relationshipType == UMLElementTypes.Comment_4019) {
-			types.add(UMLElementTypes.GeneralizationSet_2012);
-		}
-		if (relationshipType == UMLElementTypes.Comment_4019) {
-			types.add(UMLElementTypes.Interface_2013);
-		}
-		if (relationshipType == UMLElementTypes.Comment_4019) {
-			types.add(UMLElementTypes.Package_2014);
-		}
-		if (relationshipType == UMLElementTypes.Comment_4019) {
-			types.add(UMLElementTypes.AssociationClass_2015);
-		}
-		if (relationshipType == UMLElementTypes.Comment_4019) {
-			types.add(UMLElementTypes.Package_2016);
-		}
-		if (relationshipType == UMLElementTypes.Comment_4019) {
-			types.add(UMLElementTypes.InstanceSpecification_2017);
-		}
-		if (relationshipType == UMLElementTypes.Comment_4019) {
+		if (relationshipType == UMLElementTypes.CommentAnnotatedElement_4019) {
 			types.add(UMLElementTypes.Comment_2018);
-		}
-		if (relationshipType == UMLElementTypes.Comment_4019) {
-			types.add(UMLElementTypes.Port_3025);
-		}
-		if (relationshipType == UMLElementTypes.Comment_4019) {
-			types.add(UMLElementTypes.RedefinableTemplateSignature_3027);
-		}
-		if (relationshipType == UMLElementTypes.Comment_4019) {
-			types.add(UMLElementTypes.Package_3032);
-		}
-		if (relationshipType == UMLElementTypes.Comment_4019) {
-			types.add(UMLElementTypes.Class_3033);
-		}
-		if (relationshipType == UMLElementTypes.Comment_4019) {
-			types.add(UMLElementTypes.Enumeration_3034);
-		}
-		if (relationshipType == UMLElementTypes.Comment_4019) {
-			types.add(UMLElementTypes.InstanceSpecification_3035);
-		}
-		if (relationshipType == UMLElementTypes.Comment_4019) {
-			types.add(UMLElementTypes.DataType_3036);
-		}
-		if (relationshipType == UMLElementTypes.Comment_4019) {
-			types.add(UMLElementTypes.PrimitiveType_3037);
 		}
 		return types;
 	}
@@ -1307,81 +1159,6 @@ public class Package4EditPart extends ShapeNodeEditPart implements PrimaryShapeE
 			types.add(UMLElementTypes.DataType_3036);
 		}
 		if (relationshipType == UMLElementTypes.TemplateBinding_4016) {
-			types.add(UMLElementTypes.PrimitiveType_3037);
-		}
-		if (relationshipType == UMLElementTypes.Comment_4019) {
-			types.add(UMLElementTypes.Package_2002);
-		}
-		if (relationshipType == UMLElementTypes.Comment_4019) {
-			types.add(UMLElementTypes.Class_2001);
-		}
-		if (relationshipType == UMLElementTypes.Comment_4019) {
-			types.add(UMLElementTypes.AssociationClass_2007);
-		}
-		if (relationshipType == UMLElementTypes.Comment_4019) {
-			types.add(UMLElementTypes.DataType_2004);
-		}
-		if (relationshipType == UMLElementTypes.Comment_4019) {
-			types.add(UMLElementTypes.PrimitiveType_2005);
-		}
-		if (relationshipType == UMLElementTypes.Comment_4019) {
-			types.add(UMLElementTypes.Enumeration_2003);
-		}
-		if (relationshipType == UMLElementTypes.Comment_4019) {
-			types.add(UMLElementTypes.Interface_2010);
-		}
-		if (relationshipType == UMLElementTypes.Comment_4019) {
-			types.add(UMLElementTypes.Constraint_2006);
-		}
-		if (relationshipType == UMLElementTypes.Comment_4019) {
-			types.add(UMLElementTypes.InstanceSpecification_2008);
-		}
-		if (relationshipType == UMLElementTypes.Comment_4019) {
-			types.add(UMLElementTypes.Dependency_2009);
-		}
-		if (relationshipType == UMLElementTypes.Comment_4019) {
-			types.add(UMLElementTypes.GeneralizationSet_2012);
-		}
-		if (relationshipType == UMLElementTypes.Comment_4019) {
-			types.add(UMLElementTypes.Interface_2013);
-		}
-		if (relationshipType == UMLElementTypes.Comment_4019) {
-			types.add(UMLElementTypes.Package_2014);
-		}
-		if (relationshipType == UMLElementTypes.Comment_4019) {
-			types.add(UMLElementTypes.AssociationClass_2015);
-		}
-		if (relationshipType == UMLElementTypes.Comment_4019) {
-			types.add(UMLElementTypes.Package_2016);
-		}
-		if (relationshipType == UMLElementTypes.Comment_4019) {
-			types.add(UMLElementTypes.InstanceSpecification_2017);
-		}
-		if (relationshipType == UMLElementTypes.Comment_4019) {
-			types.add(UMLElementTypes.Comment_2018);
-		}
-		if (relationshipType == UMLElementTypes.Comment_4019) {
-			types.add(UMLElementTypes.Port_3025);
-		}
-		if (relationshipType == UMLElementTypes.Comment_4019) {
-			types.add(UMLElementTypes.RedefinableTemplateSignature_3027);
-		}
-		if (relationshipType == UMLElementTypes.Comment_4019) {
-			types.add(UMLElementTypes.Package_3032);
-		}
-		if (relationshipType == UMLElementTypes.Comment_4019) {
-			types.add(UMLElementTypes.Class_3033);
-		}
-		if (relationshipType == UMLElementTypes.Comment_4019) {
-			types.add(UMLElementTypes.Enumeration_3034);
-		}
-		if (relationshipType == UMLElementTypes.Comment_4019) {
-			types.add(UMLElementTypes.InstanceSpecification_3035);
-		}
-		if (relationshipType == UMLElementTypes.Comment_4019) {
-			types.add(UMLElementTypes.DataType_3036);
-		}
-		if (relationshipType == UMLElementTypes.Comment_4019) {
 			types.add(UMLElementTypes.PrimitiveType_3037);
 		}
 		return types;

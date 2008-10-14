@@ -48,8 +48,8 @@ public class TemplateBindingItemSemanticEditPolicy extends UMLBaseItemSemanticEd
 		if (UMLElementTypes.ConstraintConstrainedElement_4004 == req.getElementType()) {
 			return null;
 		}
-		if (UMLElementTypes.Comment_4019 == req.getElementType()) {
-			return getGEFWrapper(new Comment2CreateCommand(req, req.getSource(), req.getTarget()));
+		if (UMLElementTypes.CommentAnnotatedElement_4019 == req.getElementType()) {
+			return null;
 		}
 		return null;
 	}
@@ -61,24 +61,10 @@ public class TemplateBindingItemSemanticEditPolicy extends UMLBaseItemSemanticEd
 		if (UMLElementTypes.ConstraintConstrainedElement_4004 == req.getElementType()) {
 			return getGEFWrapper(new ConstraintConstrainedElementCreateCommand(req, req.getSource(), req.getTarget()));
 		}
-		if (UMLElementTypes.Comment_4019 == req.getElementType()) {
+		if (UMLElementTypes.CommentAnnotatedElement_4019 == req.getElementType()) {
 			return getGEFWrapper(new Comment2CreateCommand(req, req.getSource(), req.getTarget()));
 		}
 		return null;
-	}
-
-	/**
-	 * Returns command to reorient EClass based link. New link target or source
-	 * should be the domain model element associated with this node.
-	 * 
-	 * @generated
-	 */
-	protected Command getReorientRelationshipCommand(ReorientRelationshipRequest req) {
-		switch (getVisualID(req)) {
-		case Comment2EditPart.VISUAL_ID:
-			return getGEFWrapper(new CommentReorientCommand(req));
-		}
-		return super.getReorientRelationshipCommand(req);
 	}
 
 	/**
@@ -91,6 +77,8 @@ public class TemplateBindingItemSemanticEditPolicy extends UMLBaseItemSemanticEd
 		switch (getVisualID(req)) {
 		case ConstraintConstrainedElementEditPart.VISUAL_ID:
 			return getGEFWrapper(new ConstraintConstrainedElementReorientCommand(req));
+		case Comment2EditPart.VISUAL_ID:
+			return getGEFWrapper(new CommentReorientCommand(req));
 		}
 		return super.getReorientReferenceRelationshipCommand(req);
 	}

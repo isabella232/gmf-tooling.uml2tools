@@ -49,6 +49,7 @@ import org.eclipse.uml2.uml.Association;
 import org.eclipse.uml2.uml.BehavioredClassifier;
 import org.eclipse.uml2.uml.Classifier;
 import org.eclipse.uml2.uml.CollaborationUse;
+import org.eclipse.uml2.uml.Comment;
 import org.eclipse.uml2.uml.Constraint;
 import org.eclipse.uml2.uml.Dependency;
 import org.eclipse.uml2.uml.Element;
@@ -558,8 +559,14 @@ public class UMLBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 		/**
 		 * @generated
 		 */
-		public static boolean canCreateComment_4019(Element source, Element target) {
-			return canExistComment_4019(source, target);
+		public static boolean canCreateCommentAnnotatedElement_4019(Comment source, Element target) {
+			if (source != null) {
+				if (source.getAnnotatedElements().contains(target)) {
+					return false;
+				}
+			}
+
+			return canExistCommentAnnotatedElement_4019(source, target);
 		}
 
 		/**
@@ -793,7 +800,7 @@ public class UMLBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 		/**
 		 * @generated
 		 */
-		public static boolean canExistComment_4019(Element source, Element target) {
+		public static boolean canExistCommentAnnotatedElement_4019(Comment source, Element target) {
 			return true;
 		}
 	}

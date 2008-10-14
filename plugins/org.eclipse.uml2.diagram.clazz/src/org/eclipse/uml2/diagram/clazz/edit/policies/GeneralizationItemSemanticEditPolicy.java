@@ -65,8 +65,8 @@ public class GeneralizationItemSemanticEditPolicy extends UMLBaseItemSemanticEdi
 		if (UMLElementTypes.GeneralizationGeneral_4012 == req.getElementType()) {
 			return getGEFWrapper(new GeneralizationGeneralCreateCommand(req, req.getSource(), req.getTarget()));
 		}
-		if (UMLElementTypes.Comment_4019 == req.getElementType()) {
-			return getGEFWrapper(new Comment2CreateCommand(req, req.getSource(), req.getTarget()));
+		if (UMLElementTypes.CommentAnnotatedElement_4019 == req.getElementType()) {
+			return null;
 		}
 		return null;
 	}
@@ -81,7 +81,7 @@ public class GeneralizationItemSemanticEditPolicy extends UMLBaseItemSemanticEdi
 		if (UMLElementTypes.GeneralizationGeneral_4012 == req.getElementType()) {
 			return null;
 		}
-		if (UMLElementTypes.Comment_4019 == req.getElementType()) {
+		if (UMLElementTypes.CommentAnnotatedElement_4019 == req.getElementType()) {
 			return getGEFWrapper(new Comment2CreateCommand(req, req.getSource(), req.getTarget()));
 		}
 		return null;
@@ -99,6 +99,8 @@ public class GeneralizationItemSemanticEditPolicy extends UMLBaseItemSemanticEdi
 			return getGEFWrapper(new ConstraintConstrainedElementReorientCommand(req));
 		case GeneralizationGeneralEditPart.VISUAL_ID:
 			return getGEFWrapper(new GeneralizationGeneralReorientCommand(req));
+		case Comment2EditPart.VISUAL_ID:
+			return getGEFWrapper(new CommentReorientCommand(req));
 		}
 		return super.getReorientReferenceRelationshipCommand(req);
 	}

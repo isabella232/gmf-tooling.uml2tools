@@ -189,8 +189,8 @@ public class DataType2ItemSemanticEditPolicy extends UMLBaseItemSemanticEditPoli
 		if (UMLElementTypes.TemplateBinding_4016 == req.getElementType()) {
 			return getGEFWrapper(new TemplateBindingCreateCommand(req, req.getSource(), req.getTarget()));
 		}
-		if (UMLElementTypes.Comment_4019 == req.getElementType()) {
-			return getGEFWrapper(new Comment2CreateCommand(req, req.getSource(), req.getTarget()));
+		if (UMLElementTypes.CommentAnnotatedElement_4019 == req.getElementType()) {
+			return null;
 		}
 		return null;
 	}
@@ -235,7 +235,7 @@ public class DataType2ItemSemanticEditPolicy extends UMLBaseItemSemanticEditPoli
 		if (UMLElementTypes.TemplateBinding_4016 == req.getElementType()) {
 			return getGEFWrapper(new TemplateBindingCreateCommand(req, req.getSource(), req.getTarget()));
 		}
-		if (UMLElementTypes.Comment_4019 == req.getElementType()) {
+		if (UMLElementTypes.CommentAnnotatedElement_4019 == req.getElementType()) {
 			return getGEFWrapper(new Comment2CreateCommand(req, req.getSource(), req.getTarget()));
 		}
 		return null;
@@ -265,8 +265,6 @@ public class DataType2ItemSemanticEditPolicy extends UMLBaseItemSemanticEditPoli
 			return getGEFWrapper(new UsageReorientCommand(req));
 		case TemplateBindingEditPart.VISUAL_ID:
 			return getGEFWrapper(new TemplateBindingReorientCommand(req));
-		case Comment2EditPart.VISUAL_ID:
-			return getGEFWrapper(new CommentReorientCommand(req));
 		}
 		return super.getReorientRelationshipCommand(req);
 	}
@@ -287,6 +285,8 @@ public class DataType2ItemSemanticEditPolicy extends UMLBaseItemSemanticEditPoli
 			return getGEFWrapper(new DependencyClientReorientCommand(req));
 		case GeneralizationGeneralEditPart.VISUAL_ID:
 			return getGEFWrapper(new GeneralizationGeneralReorientCommand(req));
+		case Comment2EditPart.VISUAL_ID:
+			return getGEFWrapper(new CommentReorientCommand(req));
 		}
 		return super.getReorientReferenceRelationshipCommand(req);
 	}

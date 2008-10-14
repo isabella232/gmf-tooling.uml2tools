@@ -141,8 +141,8 @@ public class InterfaceItemSemanticEditPolicy extends UMLBaseItemSemanticEditPoli
 		if (UMLElementTypes.PortRequired_4018 == req.getElementType()) {
 			return null;
 		}
-		if (UMLElementTypes.Comment_4019 == req.getElementType()) {
-			return getGEFWrapper(new Comment2CreateCommand(req, req.getSource(), req.getTarget()));
+		if (UMLElementTypes.CommentAnnotatedElement_4019 == req.getElementType()) {
+			return null;
 		}
 		return null;
 	}
@@ -196,7 +196,7 @@ public class InterfaceItemSemanticEditPolicy extends UMLBaseItemSemanticEditPoli
 		if (UMLElementTypes.PortRequired_4018 == req.getElementType()) {
 			return getGEFWrapper(new PortRequiredCreateCommand(req, req.getSource(), req.getTarget()));
 		}
-		if (UMLElementTypes.Comment_4019 == req.getElementType()) {
+		if (UMLElementTypes.CommentAnnotatedElement_4019 == req.getElementType()) {
 			return getGEFWrapper(new Comment2CreateCommand(req, req.getSource(), req.getTarget()));
 		}
 		return null;
@@ -228,8 +228,6 @@ public class InterfaceItemSemanticEditPolicy extends UMLBaseItemSemanticEditPoli
 			return getGEFWrapper(new UsageReorientCommand(req));
 		case TemplateBindingEditPart.VISUAL_ID:
 			return getGEFWrapper(new TemplateBindingReorientCommand(req));
-		case Comment2EditPart.VISUAL_ID:
-			return getGEFWrapper(new CommentReorientCommand(req));
 		}
 		return super.getReorientRelationshipCommand(req);
 	}
@@ -254,6 +252,8 @@ public class InterfaceItemSemanticEditPolicy extends UMLBaseItemSemanticEditPoli
 			return getGEFWrapper(new PortProvidedReorientCommand(req));
 		case PortRequiredEditPart.VISUAL_ID:
 			return getGEFWrapper(new PortRequiredReorientCommand(req));
+		case Comment2EditPart.VISUAL_ID:
+			return getGEFWrapper(new CommentReorientCommand(req));
 		}
 		return super.getReorientReferenceRelationshipCommand(req);
 	}

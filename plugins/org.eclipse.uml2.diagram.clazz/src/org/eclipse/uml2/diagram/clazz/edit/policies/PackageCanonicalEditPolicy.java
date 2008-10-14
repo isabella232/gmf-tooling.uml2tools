@@ -860,13 +860,6 @@ public class PackageCanonicalEditPolicy extends CanonicalConnectionEditPolicy {
 			domain2NotationMap.put(view.getElement(), view);
 			break;
 		}
-		case Comment2EditPart.VISUAL_ID: {
-			if (!domain2NotationMap.containsKey(view.getElement())) {
-				result.addAll(UMLDiagramUpdater.getComment_4019ContainedLinks(view));
-			}
-			domain2NotationMap.put(view.getElement(), view);
-			break;
-		}
 		}
 		for (Iterator children = view.getChildren().iterator(); children.hasNext();) {
 			result.addAll(collectAllLinks((View) children.next(), domain2NotationMap));
