@@ -12,7 +12,7 @@
 package org.eclipse.uml2.diagram.common.actions;
 
 import org.eclipse.gef.commands.Command;
-import org.eclipse.gmf.runtime.diagram.ui.editparts.GraphicalEditPart;
+import org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart;
 import org.eclipse.jface.action.IAction;
 import org.eclipse.jface.viewers.ISelection;
 import org.eclipse.jface.viewers.IStructuredSelection;
@@ -21,7 +21,7 @@ import org.eclipse.ui.IWorkbenchPart;
 
 public abstract class UMLDiagramAction implements IObjectActionDelegate {
 
-	private GraphicalEditPart mySelectedElement;
+	private IGraphicalEditPart mySelectedElement;
 
 	public void run(IAction action) {
 		if (mySelectedElement == null) {
@@ -37,14 +37,14 @@ public abstract class UMLDiagramAction implements IObjectActionDelegate {
 		mySelectedElement = null;
 		if (selection instanceof IStructuredSelection) {
 			IStructuredSelection structuredSelection = (IStructuredSelection) selection;
-			if (structuredSelection.getFirstElement() instanceof GraphicalEditPart) {
-				mySelectedElement = (GraphicalEditPart) structuredSelection.getFirstElement();
+			if (structuredSelection.getFirstElement() instanceof IGraphicalEditPart) {
+				mySelectedElement = (IGraphicalEditPart) structuredSelection.getFirstElement();
 			}
 		}
 		action.setEnabled(mySelectedElement != null);
 	}
 	
-	protected GraphicalEditPart getSelectedEditPart() {
+	protected IGraphicalEditPart getSelectedEditPart() {
 		return mySelectedElement;
 	}
 

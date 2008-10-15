@@ -11,37 +11,41 @@
  */
 package org.eclipse.uml2.diagram.clazz.action;
 
-import org.eclipse.gmf.runtime.diagram.ui.editparts.GraphicalEditPart;
-import org.eclipse.gmf.runtime.diagram.ui.requests.CreateViewRequest;
-import org.eclipse.gmf.runtime.emf.commands.core.command.CompositeTransactionalCommand;
-import org.eclipse.gmf.runtime.notation.DescriptionStyle;
-import org.eclipse.gmf.runtime.notation.NotationPackage;
-import org.eclipse.gmf.runtime.notation.View;
-import org.eclipse.uml2.diagram.clazz.edit.helpers.CommentEditHelper;
+import org.eclipse.gmf.runtime.diagram.core.util.ViewType;
+import org.eclipse.gmf.runtime.emf.type.core.IElementType;
+import org.eclipse.uml2.diagram.clazz.edit.parts.Comment2EditPart;
+import org.eclipse.uml2.diagram.clazz.edit.parts.CommentEditPart;
 import org.eclipse.uml2.diagram.clazz.providers.UMLElementTypes;
-import org.eclipse.uml2.diagram.common.actions.ConvertElementActionBase;
+import org.eclipse.uml2.diagram.common.actions.ConvertCommentCommandBase;
+import org.eclipse.uml2.diagram.common.actions.ConvertNoteToCommentAction;
 
-public class TurnNoteIntoCommentAction extends ConvertElementActionBase {
+public class TurnNoteIntoCommentAction extends ConvertNoteToCommentAction {
 
 	public TurnNoteIntoCommentAction() {
-		super(UMLElementTypes.Comment_2018, UMLElementTypes.CommentAnnotatedElement_4019);
-	}
-	
-	@Override
-	protected void processCreateViewRequest(CreateViewRequest request, GraphicalEditPart editPart) {
-		String newString = "";
-		DescriptionStyle style = (DescriptionStyle) ((View) editPart.getModel()).getStyle(NotationPackage.eINSTANCE.getDescriptionStyle());
-		if (style != null) {
-			String descString = style.getDescription();
-			if (descString != null && descString.length() > 0) {
-				newString = descString;
-			}
-		}
-		request.getExtendedData().put(CommentEditHelper.PARAMETER_COMMENT_BODY, newString);
+		super(CLASS_D_CONFIG);
 	}
 
-	@Override
-	protected void convertName(CompositeTransactionalCommand parentCommand, GraphicalEditPart editPart, CreateViewRequest request) {
-	}
+	public static final ConvertCommentCommandBase.Config CLASS_D_CONFIG = new ConvertCommentCommandBase.Config() {
+
+		public String getNoteAttachmentVisualID() {
+			return ViewType.NOTEATTACHMENT;
+		}
+
+		public IElementType getAnnotatedElementElementType() {
+			return UMLElementTypes.CommentAnnotatedElement_4019;
+		}
+
+		public int getCommentVisualID() {
+			return CommentEditPart.VISUAL_ID;
+		}
+
+		public int getAnnotatedElementVisualID() {
+			return Comment2EditPart.VISUAL_ID;
+		}
+
+		public String getNoteVisualId() {
+			return ViewType.NOTE;
+		}
+	};
 
 }
