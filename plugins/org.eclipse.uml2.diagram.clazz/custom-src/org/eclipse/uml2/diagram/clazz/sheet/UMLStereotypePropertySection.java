@@ -42,6 +42,7 @@ public class UMLStereotypePropertySection extends AdvancedPropertySection implem
 		return null;
 	}
 
+	@Override
 	protected IPropertySourceProvider getPropertySourceProvider() {
 		return this;
 	}
@@ -64,14 +65,15 @@ public class UMLStereotypePropertySection extends AdvancedPropertySection implem
 		return selected;
 	}
 
+	@Override
 	public void setInput(IWorkbenchPart part, ISelection selection) {
 		if (selection.isEmpty() || false == selection instanceof StructuredSelection) {
 			super.setInput(part, selection);
 			return;
 		}
 		final StructuredSelection structuredSelection = ((StructuredSelection) selection);
-		ArrayList transformedSelection = new ArrayList(structuredSelection.size());
-		for (Iterator it = structuredSelection.iterator(); it.hasNext();) {
+		ArrayList<Object> transformedSelection = new ArrayList<Object>(structuredSelection.size());
+		for (Iterator<?> it = structuredSelection.iterator(); it.hasNext();) {
 			Object r = transformSelection(it.next());
 			if (r != null) {
 				transformedSelection.add(r);
