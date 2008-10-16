@@ -17,8 +17,10 @@ public class UITestsWorksOnBuildServerSuite {
 	
 	public static class SimpleUITest extends TestCase {
 		public void testWorkbenchStarted(){
+			System.out.println("SimpleUITest.testWorkbenchStarted(): started");
 			assertNotNull(PlatformUI.getWorkbench());
 			assertTrue(PlatformUI.isWorkbenchRunning());
+			System.out.println("SimpleUITest.testWorkbenchStarted(): finished");
 		}
 	}
 }
