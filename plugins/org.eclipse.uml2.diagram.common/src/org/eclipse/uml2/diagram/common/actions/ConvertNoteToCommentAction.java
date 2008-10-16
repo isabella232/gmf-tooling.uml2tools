@@ -106,7 +106,9 @@ public class ConvertNoteToCommentAction extends UMLDiagramAction {
 			Element semanticParent = (Element) myParent.getElement();
 			Comment comment = createSemanticComment(semanticParent);
 			Node commentNode = createCommentView(comment);
-			replaceAllLinks(myToConvert, commentNode);
+			for (Edge next : getNoteAttachments()) {
+				createUMLLink(next, commentNode);
+			}
 			destroyNoteAndItsLinks();
 			return CommandResult.newOKCommandResult();
 		}
@@ -139,12 +141,6 @@ public class ConvertNoteToCommentAction extends UMLDiagramAction {
 			return commentView;
 		}
 
-		private void replaceAllLinks(Node toConvert, Node commentNode) {
-			for (Edge next : getNoteAttachments()) {
-				Edge converted = createUMLLink(next, commentNode);
-			}
-		}
-
 		private Edge createUMLLink(Edge noteLink, View commentNode) {
 			View target = noteLink.getSource() == myToConvert ? noteLink.getTarget() : noteLink.getSource();
 			if (false == target.getElement() instanceof Element) {
@@ -153,6 +149,7 @@ public class ConvertNoteToCommentAction extends UMLDiagramAction {
 			String linkHint = String.valueOf(myConfig.getAnnotatedElementVisualID());
 			IAdaptable elementTypeAdapter = new IAdaptable() {
 
+				@SuppressWarnings("unchecked")
 				public Object getAdapter(Class adapter) {
 					if (IElementType.class.equals(adapter)) {
 						return myConfig.getAnnotatedElementElementType();

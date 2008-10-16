@@ -28,7 +28,7 @@ import org.eclipse.gmf.runtime.notation.Node;
 
 public abstract  class ConvertCommentCommandBase extends AbstractTransactionalCommand {
 
-	public ConvertCommentCommandBase(TransactionalEditingDomain domain, String label, List affectedFiles) {
+	public ConvertCommentCommandBase(TransactionalEditingDomain domain, String label, List<?> affectedFiles) {
 		super(domain, label, affectedFiles);
 	}
 
