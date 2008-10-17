@@ -196,7 +196,7 @@
     <styles xmi:type="notation:TextStyle" xmi:id="_993UIpuXEd2SfoQicxEfTw"/>
     <styles xmi:type="notation:LineTypeStyle" xmi:id="_993UI5uXEd2SfoQicxEfTw"/>
     <element xsi:nil="true"/>
-    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_993UJJuXEd2SfoQicxEfTw" x="96" y="36" width="146"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_993UJJuXEd2SfoQicxEfTw" x="96" y="24" width="146" height="97"/>
   </children>
   <children xmi:type="notation:Node" xmi:id="_EPAiEJuYEd2SfoQicxEfTw" type="Note">
     <children xmi:type="notation:Node" xmi:id="_EPAiFZuYEd2SfoQicxEfTw" type="DiagramName">
@@ -218,11 +218,11 @@
     <children xmi:type="notation:Node" xmi:id="_aiaSsZuYEd2SfoQicxEfTw" type="Description">
       <element xsi:nil="true"/>
     </children>
-    <styles xmi:type="notation:ShapeStyle" xmi:id="_aiQhsZuYEd2SfoQicxEfTw" description="This is a steretype. Stereotype is an extension of a given metaclass. It defines augment Properties and Constraints. Bean stereotype extends Component metaclass. It appends 'state' property to the extended Component." fillColor="13290239" lineColor="6737151" lineWidth="1"/>
+    <styles xmi:type="notation:ShapeStyle" xmi:id="_aiQhsZuYEd2SfoQicxEfTw" description="This is a steretype. Stereotype is an extension of a given metaclass. It defines supplimentary Properties and Constraints. Session stereotype extends Bean stereotype, which is, in its turn, extends Component metaclass. It appends 'state' property to the extended Component." fillColor="13290239" lineColor="6737151" lineWidth="1"/>
     <styles xmi:type="notation:TextStyle" xmi:id="_aiQhspuYEd2SfoQicxEfTw"/>
     <styles xmi:type="notation:LineTypeStyle" xmi:id="_aiQhs5uYEd2SfoQicxEfTw"/>
     <element xsi:nil="true"/>
-    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_aiQhtJuYEd2SfoQicxEfTw" x="300" y="36" width="265" height="85"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_aiQhtJuYEd2SfoQicxEfTw" x="300" y="24" width="265" height="97"/>
   </children>
   <children xmi:type="notation:Node" xmi:id="_uR-_MJuZEd2SfoQicxEfTw" type="Note">
     <children xmi:type="notation:Node" xmi:id="_uR-_NZuZEd2SfoQicxEfTw" type="DiagramName">
