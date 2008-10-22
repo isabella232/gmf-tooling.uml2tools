@@ -107,7 +107,8 @@ public class ConvertCommentIntoNoteAction extends UMLDiagramAction {
 		
 		private void replaceAllLinks(Node newNote) {
 			for (Edge next: getAnnotatedElementLinks()) {
-				ViewService.createEdge(newNote, next.getTarget(), myConfig.getNoteAttachmentVisualID(), myPreferenceHint);
+				Edge created = ViewService.createEdge(newNote, next.getTarget(), myConfig.getNoteAttachmentVisualID(), myPreferenceHint);
+				migrateLink(next, created);
 			}
 		}
 		
