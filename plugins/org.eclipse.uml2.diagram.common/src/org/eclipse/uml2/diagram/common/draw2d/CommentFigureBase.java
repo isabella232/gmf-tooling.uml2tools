@@ -11,12 +11,22 @@
  */
 package org.eclipse.uml2.diagram.common.draw2d;
 
+import org.eclipse.draw2d.Graphics;
 import org.eclipse.draw2d.MarginBorder;
+import org.eclipse.draw2d.PositionConstants;
 import org.eclipse.draw2d.geometry.Insets;
+import org.eclipse.draw2d.geometry.Point;
+import org.eclipse.draw2d.geometry.PointList;
+import org.eclipse.draw2d.geometry.Rectangle;
 import org.eclipse.gmf.runtime.diagram.ui.figures.NoteFigure;
 import org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel;
+import org.eclipse.gmf.runtime.draw2d.ui.mapmode.MapModeUtil;
+import org.eclipse.swt.graphics.Color;
 
 public class CommentFigureBase extends NoteFigure {
+
+	private static final Color CORNER_COLOR = new Color(null, 234, 234, 247);
+
 	private WrappingLabel myBody;
 
 	public CommentFigureBase() {
@@ -25,17 +35,50 @@ public class CommentFigureBase extends NoteFigure {
 
 	public CommentFigureBase(int width, int height, Insets insets) {
 		super(width, height, insets);
-		myBody = new WrappingLabel();
-		myBody.setBorder(new MarginBorder(5, 5, 5, 14));
+		myBody = new WrappingLabel() {
+
+			@Override
+			protected void setIconLocation(Point location) {
+				location.x = getInsets().left;
+				super.setIconLocation(location);
+			}
+
+		};
+		myBody.setBorder(new MarginBorder(4, 4, 4, 4));
+		myBody.setTextPlacement(PositionConstants.SOUTH);
 		add(myBody);
 	}
-	
-	public WrappingLabel getBodyLabel(){
+
+	@Override
+	protected void paintFigure(Graphics g) {
+		super.paintFigure(g);
+		g.pushState();
+		Rectangle r = getBounds();
+		// if (withDanglingCorner) {
+		PointList corner = new PointList();
+		corner.addPoint(r.x + r.width - getClipWidthCopy(), r.y);
+		corner.addPoint(r.x + r.width - getClipWidthCopy(), r.y + getClipHeightCopy());
+		corner.addPoint(r.x + r.width, r.y + getClipHeightCopy());
+		g.setBackgroundColor(CORNER_COLOR);
+		g.fillPolygon(corner);
+		// }
+		g.popState();
+	}
+
+	private int getClipHeightCopy() {
+		return MapModeUtil.getMapMode(this).DPtoLP(12);
+	}
+
+	private int getClipWidthCopy() {
+		return getClipHeightCopy() + MapModeUtil.getMapMode(this).DPtoLP(1);
+	}
+
+	public WrappingLabel getBodyLabel() {
 		return myBody;
 	}
-	
-	protected void setTextLabelWrap(boolean wrap){
+
+	protected void setTextLabelWrap(boolean wrap) {
 		getBodyLabel().setTextWrap(wrap);
 	}
-	
+
 }

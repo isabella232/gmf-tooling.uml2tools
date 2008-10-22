@@ -3273,7 +3273,8 @@
           visualID="5030"
           editPartClassName="CommentBodyEditPart"
           itemSemanticEditPolicyClassName="CommentBodyItemSemanticEditPolicy"
-          notationViewFactoryClassName="CommentBodyViewFactory">
+          notationViewFactoryClassName="CommentBodyViewFactory"
+          elementIcon="true">
         <diagramRunTimeClass
             href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
         <viewmap

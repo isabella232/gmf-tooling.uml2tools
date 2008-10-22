@@ -42,6 +42,5 @@
   <labels
       name="Comment_BodySpecification"
       figure="CommentFigure"
-      elementIcon="false"
       accessor="//@figures.0/@descriptors.0/@accessors.0"/>
 </gmfgraph:Canvas>
