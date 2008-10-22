@@ -523,8 +523,8 @@ public class UMLEditPartFactory implements EditPartFactory {
 			case PortRequiredEditPart.VISUAL_ID:
 				return new PortRequiredEditPart(view);
 
-			case Comment2EditPart.VISUAL_ID:
-				return new Comment2EditPart(view);
+			case CommentAnnotatedElementEditPart.VISUAL_ID:
+				return new CommentAnnotatedElementEditPart(view);
 			}
 		}
 		return createUnrecognizedEditPart(context, model);

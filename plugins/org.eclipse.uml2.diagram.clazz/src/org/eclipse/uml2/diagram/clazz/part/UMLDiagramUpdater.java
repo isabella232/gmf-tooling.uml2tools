@@ -4707,7 +4707,7 @@ public class UMLDiagramUpdater {
 		for (Iterator it = settings.iterator(); it.hasNext();) {
 			EStructuralFeature.Setting setting = (EStructuralFeature.Setting) it.next();
 			if (setting.getEStructuralFeature() == UMLPackage.eINSTANCE.getComment_AnnotatedElement()) {
-				result.add(new UMLLinkDescriptor(setting.getEObject(), target, UMLElementTypes.CommentAnnotatedElement_4019, Comment2EditPart.VISUAL_ID));
+				result.add(new UMLLinkDescriptor(setting.getEObject(), target, UMLElementTypes.CommentAnnotatedElement_4019, CommentAnnotatedElementEditPart.VISUAL_ID));
 			}
 		}
 		return result;
@@ -5043,7 +5043,7 @@ public class UMLDiagramUpdater {
 		Collection result = new LinkedList();
 		for (Iterator destinations = source.getAnnotatedElements().iterator(); destinations.hasNext();) {
 			Element destination = (Element) destinations.next();
-			result.add(new UMLLinkDescriptor(source, destination, UMLElementTypes.CommentAnnotatedElement_4019, Comment2EditPart.VISUAL_ID));
+			result.add(new UMLLinkDescriptor(source, destination, UMLElementTypes.CommentAnnotatedElement_4019, CommentAnnotatedElementEditPart.VISUAL_ID));
 		}
 		return result;
 	}

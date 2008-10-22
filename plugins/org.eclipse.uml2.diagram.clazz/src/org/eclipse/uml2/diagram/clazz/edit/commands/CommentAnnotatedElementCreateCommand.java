@@ -3,24 +3,19 @@ package org.eclipse.uml2.diagram.clazz.edit.commands;
 import org.eclipse.core.commands.ExecutionException;
 import org.eclipse.core.runtime.IAdaptable;
 import org.eclipse.core.runtime.IProgressMonitor;
-import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.gmf.runtime.common.core.command.CommandResult;
-import org.eclipse.gmf.runtime.emf.type.core.commands.CreateElementCommand;
 import org.eclipse.gmf.runtime.emf.type.core.commands.EditElementCommand;
-import org.eclipse.gmf.runtime.emf.type.core.requests.ConfigureRequest;
 import org.eclipse.gmf.runtime.emf.type.core.requests.CreateRelationshipRequest;
 import org.eclipse.uml2.diagram.clazz.edit.policies.UMLBaseItemSemanticEditPolicy;
 import org.eclipse.uml2.uml.Comment;
 import org.eclipse.uml2.uml.Element;
-import org.eclipse.uml2.uml.UMLFactory;
-import org.eclipse.uml2.uml.UMLPackage;
 
 /**
  * @generated
  */
 
-public class Comment2CreateCommand extends EditElementCommand {
+public class CommentAnnotatedElementCreateCommand extends EditElementCommand {
 
 	/**
 	 * @generated
@@ -35,7 +30,7 @@ public class Comment2CreateCommand extends EditElementCommand {
 	/**
 	 * @generated
 	 */
-	public Comment2CreateCommand(CreateRelationshipRequest request, EObject source, EObject target) {
+	public CommentAnnotatedElementCreateCommand(CreateRelationshipRequest request, EObject source, EObject target) {
 		super(request.getLabel(), null, request);
 		this.source = source;
 		this.target = target;
@@ -87,5 +82,4 @@ public class Comment2CreateCommand extends EditElementCommand {
 	protected Element getTarget() {
 		return (Element) target;
 	}
-
 }

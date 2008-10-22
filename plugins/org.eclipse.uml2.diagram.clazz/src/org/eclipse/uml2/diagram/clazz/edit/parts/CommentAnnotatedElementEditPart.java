@@ -7,13 +7,13 @@ import org.eclipse.gmf.runtime.diagram.ui.editparts.ITreeBranchEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles;
 import org.eclipse.gmf.runtime.draw2d.ui.figures.PolylineConnectionEx;
 import org.eclipse.gmf.runtime.notation.View;
-import org.eclipse.uml2.diagram.clazz.edit.policies.Comment2ItemSemanticEditPolicy;
+import org.eclipse.uml2.diagram.clazz.edit.policies.CommentAnnotatedElementItemSemanticEditPolicy;
 
 /**
  * @generated
  */
 
-public class Comment2EditPart extends ConnectionNodeEditPart implements ITreeBranchEditPart {
+public class CommentAnnotatedElementEditPart extends ConnectionNodeEditPart implements ITreeBranchEditPart {
 
 	/**
 	 * @generated
@@ -23,7 +23,7 @@ public class Comment2EditPart extends ConnectionNodeEditPart implements ITreeBra
 	/**
 	 * @generated
 	 */
-	public Comment2EditPart(View view) {
+	public CommentAnnotatedElementEditPart(View view) {
 		super(view);
 	}
 
@@ -32,7 +32,7 @@ public class Comment2EditPart extends ConnectionNodeEditPart implements ITreeBra
 	 */
 	protected void createDefaultEditPolicies() {
 		super.createDefaultEditPolicies();
-		installEditPolicy(EditPolicyRoles.SEMANTIC_ROLE, new Comment2ItemSemanticEditPolicy());
+		installEditPolicy(EditPolicyRoles.SEMANTIC_ROLE, new CommentAnnotatedElementItemSemanticEditPolicy());
 	}
 
 	/**

@@ -13,7 +13,7 @@ package org.eclipse.uml2.diagram.clazz.action;
 
 import org.eclipse.gmf.runtime.diagram.core.util.ViewType;
 import org.eclipse.gmf.runtime.emf.type.core.IElementType;
-import org.eclipse.uml2.diagram.clazz.edit.parts.Comment2EditPart;
+import org.eclipse.uml2.diagram.clazz.edit.parts.CommentAnnotatedElementEditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.CommentEditPart;
 import org.eclipse.uml2.diagram.clazz.providers.UMLElementTypes;
 import org.eclipse.uml2.diagram.common.actions.ConvertCommentCommandBase;
@@ -40,7 +40,7 @@ public class TurnNoteIntoCommentAction extends ConvertNoteToCommentAction {
 		}
 
 		public int getAnnotatedElementVisualID() {
-			return Comment2EditPart.VISUAL_ID;
+			return CommentAnnotatedElementEditPart.VISUAL_ID;
 		}
 
 		public String getNoteVisualId() {

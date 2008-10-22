@@ -27,7 +27,7 @@ import org.eclipse.uml2.diagram.clazz.edit.parts.Class3EditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.Class4EditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.Class5EditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.ClassEditPart;
-import org.eclipse.uml2.diagram.clazz.edit.parts.Comment2EditPart;
+import org.eclipse.uml2.diagram.clazz.edit.parts.CommentAnnotatedElementEditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.CommentEditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.ConstraintConstrainedElementEditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.ConstraintEditPart;
@@ -966,7 +966,7 @@ public class UMLElementTypes extends ElementInitializers {
 			return PortProvided_4017;
 		case PortRequiredEditPart.VISUAL_ID:
 			return PortRequired_4018;
-		case Comment2EditPart.VISUAL_ID:
+		case CommentAnnotatedElementEditPart.VISUAL_ID:
 			return CommentAnnotatedElement_4019;
 		}
 		return null;

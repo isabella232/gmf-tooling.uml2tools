@@ -813,8 +813,8 @@ public class UMLViewProvider extends AbstractViewProvider {
 			return PortProvidedViewFactory.class;
 		case PortRequiredEditPart.VISUAL_ID:
 			return PortRequiredViewFactory.class;
-		case Comment2EditPart.VISUAL_ID:
-			return Comment2ViewFactory.class;
+		case CommentAnnotatedElementEditPart.VISUAL_ID:
+			return CommentAnnotatedElementViewFactory.class;
 		}
 		return null;
 	}

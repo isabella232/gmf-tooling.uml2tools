@@ -8,8 +8,8 @@ import org.eclipse.gmf.runtime.emf.type.core.requests.DestroyElementRequest;
 import org.eclipse.gmf.runtime.emf.type.core.requests.ReorientReferenceRelationshipRequest;
 import org.eclipse.gmf.runtime.emf.type.core.requests.ReorientRelationshipRequest;
 import org.eclipse.gmf.runtime.notation.View;
-import org.eclipse.uml2.diagram.clazz.edit.commands.Comment2CreateCommand;
-import org.eclipse.uml2.diagram.clazz.edit.commands.CommentReorientCommand;
+import org.eclipse.uml2.diagram.clazz.edit.commands.CommentAnnotatedElementCreateCommand;
+import org.eclipse.uml2.diagram.clazz.edit.commands.CommentAnnotatedElementReorientCommand;
 import org.eclipse.uml2.diagram.clazz.edit.commands.ConstraintConstrainedElementCreateCommand;
 import org.eclipse.uml2.diagram.clazz.edit.commands.ConstraintConstrainedElementReorientCommand;
 import org.eclipse.uml2.diagram.clazz.edit.commands.DependencyClientCreateCommand;
@@ -25,7 +25,7 @@ import org.eclipse.uml2.diagram.clazz.edit.commands.RealizationCreateCommand;
 import org.eclipse.uml2.diagram.clazz.edit.commands.RealizationReorientCommand;
 import org.eclipse.uml2.diagram.clazz.edit.commands.UsageCreateCommand;
 import org.eclipse.uml2.diagram.clazz.edit.commands.UsageReorientCommand;
-import org.eclipse.uml2.diagram.clazz.edit.parts.Comment2EditPart;
+import org.eclipse.uml2.diagram.clazz.edit.parts.CommentAnnotatedElementEditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.ConstraintConstrainedElementEditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.Dependency2EditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.DependencyClientEditPart;
@@ -127,7 +127,7 @@ public class GeneralizationSetItemSemanticEditPolicy extends UMLBaseItemSemantic
 			return getGEFWrapper(new UsageCreateCommand(req, req.getSource(), req.getTarget()));
 		}
 		if (UMLElementTypes.CommentAnnotatedElement_4019 == req.getElementType()) {
-			return getGEFWrapper(new Comment2CreateCommand(req, req.getSource(), req.getTarget()));
+			return getGEFWrapper(new CommentAnnotatedElementCreateCommand(req, req.getSource(), req.getTarget()));
 		}
 		return null;
 	}
@@ -178,8 +178,8 @@ public class GeneralizationSetItemSemanticEditPolicy extends UMLBaseItemSemantic
 			return getGEFWrapper(new DependencySupplierReorientCommand(req));
 		case DependencyClientEditPart.VISUAL_ID:
 			return getGEFWrapper(new DependencyClientReorientCommand(req));
-		case Comment2EditPart.VISUAL_ID:
-			return getGEFWrapper(new CommentReorientCommand(req));
+		case CommentAnnotatedElementEditPart.VISUAL_ID:
+			return getGEFWrapper(new CommentAnnotatedElementReorientCommand(req));
 		}
 		return super.getReorientReferenceRelationshipCommand(req);
 	}

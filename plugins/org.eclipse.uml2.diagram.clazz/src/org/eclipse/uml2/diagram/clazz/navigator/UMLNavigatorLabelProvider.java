@@ -328,7 +328,7 @@ public class UMLNavigatorLabelProvider extends LabelProvider implements ICommonL
 			return getImage("Navigator?Link?http://www.eclipse.org/uml2/2.1.0/UML?Port?provided", UMLElementTypes.PortProvided_4017); //$NON-NLS-1$
 		case PortRequiredEditPart.VISUAL_ID:
 			return getImage("Navigator?Link?http://www.eclipse.org/uml2/2.1.0/UML?Port?required", UMLElementTypes.PortRequired_4018); //$NON-NLS-1$
-		case Comment2EditPart.VISUAL_ID:
+		case CommentAnnotatedElementEditPart.VISUAL_ID:
 			return getImage("Navigator?Link?http://www.eclipse.org/uml2/2.1.0/UML?Comment?annotatedElement", UMLElementTypes.CommentAnnotatedElement_4019); //$NON-NLS-1$
 		}
 		return getImage("Navigator?UnknownElement", null); //$NON-NLS-1$
@@ -530,7 +530,7 @@ public class UMLNavigatorLabelProvider extends LabelProvider implements ICommonL
 			return getPortProvided_4017Text(view);
 		case PortRequiredEditPart.VISUAL_ID:
 			return getPortRequired_4018Text(view);
-		case Comment2EditPart.VISUAL_ID:
+		case CommentAnnotatedElementEditPart.VISUAL_ID:
 			return getCommentAnnotatedElement_4019Text(view);
 		}
 		return getUnknownElementText(view);

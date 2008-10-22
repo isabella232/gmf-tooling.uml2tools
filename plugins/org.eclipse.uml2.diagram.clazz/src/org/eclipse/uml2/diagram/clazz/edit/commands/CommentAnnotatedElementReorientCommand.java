@@ -16,7 +16,7 @@ import org.eclipse.uml2.uml.Element;
  * @generated
  */
 
-public class CommentReorientCommand extends EditElementCommand {
+public class CommentAnnotatedElementReorientCommand extends EditElementCommand {
 
 	/**
 	 * @generated
@@ -41,7 +41,7 @@ public class CommentReorientCommand extends EditElementCommand {
 	/**
 	 * @generated
 	 */
-	public CommentReorientCommand(ReorientReferenceRelationshipRequest request) {
+	public CommentAnnotatedElementReorientCommand(ReorientReferenceRelationshipRequest request) {
 		super(request.getLabel(), null, request);
 		reorientDirection = request.getDirection();
 		referenceOwner = request.getReferenceOwner();
