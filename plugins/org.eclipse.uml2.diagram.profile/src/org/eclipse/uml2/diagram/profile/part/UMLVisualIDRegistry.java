@@ -6,7 +6,9 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.gmf.runtime.notation.Diagram;
 import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.uml2.diagram.common.genapi.IVisualIDRegistry;
+import org.eclipse.uml2.diagram.profile.edit.parts.Constraint2EditPart;
 import org.eclipse.uml2.diagram.profile.edit.parts.ConstraintEditPart;
+import org.eclipse.uml2.diagram.profile.edit.parts.ConstraintNameEditPart;
 import org.eclipse.uml2.diagram.profile.edit.parts.ElementImport2EditPart;
 import org.eclipse.uml2.diagram.profile.edit.parts.ElementImportEditPart;
 import org.eclipse.uml2.diagram.profile.edit.parts.EnumerationEditPart;
@@ -204,6 +206,9 @@ public class UMLVisualIDRegistry {
 				return ElementImportEditPart.VISUAL_ID;
 			}
 			// Diagram header is already processed above
+			if (UMLPackage.eINSTANCE.getConstraint().isSuperTypeOf(domainElement.eClass())) {
+				return Constraint2EditPart.VISUAL_ID;
+			}
 			break;
 		}
 		return -1;
@@ -268,6 +273,11 @@ public class UMLVisualIDRegistry {
 				return true;
 			}
 			break;
+		case Constraint2EditPart.VISUAL_ID:
+			if (ConstraintNameEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			break;
 		case StereotypeAttributesEditPart.VISUAL_ID:
 			if (PropertyEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
@@ -307,6 +317,9 @@ public class UMLVisualIDRegistry {
 				return true;
 			}
 			if (Profile3EditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			if (Constraint2EditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
 			break;
@@ -457,6 +470,9 @@ public class UMLVisualIDRegistry {
 			if (UMLPackage.eINSTANCE.getElementImport().isSuperTypeOf(domainElement.eClass()) && isElementImport_2006((ElementImport) domainElement)) {
 				return ElementImportEditPart.VISUAL_ID;
 			}
+			if (UMLPackage.eINSTANCE.getConstraint().isSuperTypeOf(domainElement.eClass())) {
+				return Constraint2EditPart.VISUAL_ID;
+			}
 			if (UMLPackage.eINSTANCE.getProperty().isSuperTypeOf(domainElement.eClass()) && isProperty_3001((Property) domainElement)) {
 				return PropertyEditPart.VISUAL_ID;
 			}
@@ -526,6 +542,7 @@ public class UMLVisualIDRegistry {
 		case EnumerationEditPart.VISUAL_ID:
 		case ElementImportEditPart.VISUAL_ID:
 		case Profile3EditPart.VISUAL_ID:
+		case Constraint2EditPart.VISUAL_ID:
 		case PropertyEditPart.VISUAL_ID:
 		case ConstraintEditPart.VISUAL_ID:
 		case Stereotype2EditPart.VISUAL_ID:

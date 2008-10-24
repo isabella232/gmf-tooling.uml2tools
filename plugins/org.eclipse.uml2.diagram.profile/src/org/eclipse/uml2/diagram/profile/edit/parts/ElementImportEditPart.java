@@ -261,6 +261,7 @@ public class ElementImportEditPart extends ShapeNodeEditPart implements PrimaryS
 	public List/*<org.eclipse.gmf.runtime.emf.type.core.IElementType>*/getMARelTypesOnTarget() {
 		List/*<org.eclipse.gmf.runtime.emf.type.core.IElementType>*/types = new ArrayList/*<org.eclipse.gmf.runtime.emf.type.core.IElementType>*/();
 		types.add(UMLElementTypes.Extension_4002);
+		types.add(UMLElementTypes.ConstraintConstrainedElement_4003);
 		return types;
 	}
 
@@ -271,6 +272,9 @@ public class ElementImportEditPart extends ShapeNodeEditPart implements PrimaryS
 		List/*<org.eclipse.gmf.runtime.emf.type.core.IElementType>*/types = new ArrayList/*<org.eclipse.gmf.runtime.emf.type.core.IElementType>*/();
 		if (relationshipType == UMLElementTypes.Extension_4002) {
 			types.add(UMLElementTypes.Stereotype_2001);
+		}
+		if (relationshipType == UMLElementTypes.ConstraintConstrainedElement_4003) {
+			types.add(UMLElementTypes.Constraint_2008);
 		}
 		return types;
 	}

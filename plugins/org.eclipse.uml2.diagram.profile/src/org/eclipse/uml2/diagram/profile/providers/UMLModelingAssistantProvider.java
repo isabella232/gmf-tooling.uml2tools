@@ -18,6 +18,7 @@ import org.eclipse.jface.window.Window;
 import org.eclipse.swt.widgets.Display;
 import org.eclipse.swt.widgets.Shell;
 import org.eclipse.ui.dialogs.ElementListSelectionDialog;
+import org.eclipse.uml2.diagram.profile.edit.parts.Constraint2EditPart;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.edit.ui.provider.AdapterFactoryLabelProvider;
 import org.eclipse.uml2.diagram.profile.edit.parts.ElementImport2EditPart;
@@ -74,6 +75,7 @@ public class UMLModelingAssistantProvider extends ModelingAssistantProvider {
 			types.add(UMLElementTypes.Profile_2002);
 			types.add(UMLElementTypes.Enumeration_2003);
 			types.add(UMLElementTypes.ElementImport_2006);
+			types.add(UMLElementTypes.Constraint_2008);
 			return types;
 		}
 		return Collections.emptyList();
@@ -90,6 +92,9 @@ public class UMLModelingAssistantProvider extends ModelingAssistantProvider {
 		if (sourceEditPart instanceof EnumerationEditPart) {
 			return ((EnumerationEditPart) sourceEditPart).getMARelTypesOnSource();
 		}
+		if (sourceEditPart instanceof Constraint2EditPart) {
+			return ((Constraint2EditPart) sourceEditPart).getMARelTypesOnSource();
+		}
 		return Collections.EMPTY_LIST;
 	}
 
@@ -101,11 +106,20 @@ public class UMLModelingAssistantProvider extends ModelingAssistantProvider {
 		if (targetEditPart instanceof StereotypeEditPart) {
 			return ((StereotypeEditPart) targetEditPart).getMARelTypesOnTarget();
 		}
+		if (targetEditPart instanceof Profile2EditPart) {
+			return ((Profile2EditPart) targetEditPart).getMARelTypesOnTarget();
+		}
 		if (targetEditPart instanceof EnumerationEditPart) {
 			return ((EnumerationEditPart) targetEditPart).getMARelTypesOnTarget();
 		}
 		if (targetEditPart instanceof ElementImportEditPart) {
 			return ((ElementImportEditPart) targetEditPart).getMARelTypesOnTarget();
+		}
+		if (targetEditPart instanceof Profile3EditPart) {
+			return ((Profile3EditPart) targetEditPart).getMARelTypesOnTarget();
+		}
+		if (targetEditPart instanceof Constraint2EditPart) {
+			return ((Constraint2EditPart) targetEditPart).getMARelTypesOnTarget();
 		}
 		return Collections.EMPTY_LIST;
 	}
@@ -122,6 +136,9 @@ public class UMLModelingAssistantProvider extends ModelingAssistantProvider {
 		if (sourceEditPart instanceof EnumerationEditPart) {
 			return ((EnumerationEditPart) sourceEditPart).getMARelTypesOnSourceAndTarget(targetEditPart);
 		}
+		if (sourceEditPart instanceof Constraint2EditPart) {
+			return ((Constraint2EditPart) sourceEditPart).getMARelTypesOnSourceAndTarget(targetEditPart);
+		}
 		return Collections.EMPTY_LIST;
 	}
 
@@ -133,11 +150,20 @@ public class UMLModelingAssistantProvider extends ModelingAssistantProvider {
 		if (targetEditPart instanceof StereotypeEditPart) {
 			return ((StereotypeEditPart) targetEditPart).getMATypesForSource(relationshipType);
 		}
+		if (targetEditPart instanceof Profile2EditPart) {
+			return ((Profile2EditPart) targetEditPart).getMATypesForSource(relationshipType);
+		}
 		if (targetEditPart instanceof EnumerationEditPart) {
 			return ((EnumerationEditPart) targetEditPart).getMATypesForSource(relationshipType);
 		}
 		if (targetEditPart instanceof ElementImportEditPart) {
 			return ((ElementImportEditPart) targetEditPart).getMATypesForSource(relationshipType);
+		}
+		if (targetEditPart instanceof Profile3EditPart) {
+			return ((Profile3EditPart) targetEditPart).getMATypesForSource(relationshipType);
+		}
+		if (targetEditPart instanceof Constraint2EditPart) {
+			return ((Constraint2EditPart) targetEditPart).getMATypesForSource(relationshipType);
 		}
 		return Collections.EMPTY_LIST;
 	}
@@ -152,6 +178,9 @@ public class UMLModelingAssistantProvider extends ModelingAssistantProvider {
 		}
 		if (sourceEditPart instanceof EnumerationEditPart) {
 			return ((EnumerationEditPart) sourceEditPart).getMATypesForTarget(relationshipType);
+		}
+		if (sourceEditPart instanceof Constraint2EditPart) {
+			return ((Constraint2EditPart) sourceEditPart).getMATypesForTarget(relationshipType);
 		}
 		return Collections.EMPTY_LIST;
 	}

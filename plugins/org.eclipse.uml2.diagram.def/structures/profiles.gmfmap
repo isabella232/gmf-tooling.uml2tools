@@ -323,6 +323,48 @@
       </compartments>
     </ownedChild>
   </nodes>
+  <nodes>
+    <containmentFeature
+        href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//Package/packagedElement"/>
+    <ownedChild>
+      <domainMetaElement
+          href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//Constraint"/>
+      <domainInitializer
+          xsi:type="gmfmap:FeatureSeqInitializer">
+        <initializers
+            xsi:type="gmfmap:ReferenceNewElementSpec">
+          <feature
+              xsi:type="ecore:EReference"
+              href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//Constraint/specification"/>
+          <newElementInitializers>
+            <initializers
+                xsi:type="gmfmap:FeatureValueSpec">
+              <feature
+                  xsi:type="ecore:EAttribute"
+                  href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//OpaqueExpression/body"/>
+              <value
+                  body="'OpaqueExpression'"/>
+            </initializers>
+            <elementClass
+                href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//OpaqueExpression"/>
+          </newElementInitializers>
+        </initializers>
+      </domainInitializer>
+      <labelMappings
+          xsi:type="gmfmap:FeatureLabelMapping"
+          editPattern="">
+        <diagramLabel
+            href="classDiagram_constraints.gmfgraph#Constraint_ValueSpecification"/>
+        <features
+            href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//NamedElement/name"/>
+      </labelMappings>
+      <tool
+          xsi:type="gmftool:CreationTool"
+          href="profiles.gmftool#//@palette/@tools.1/@tools.3"/>
+      <diagramNode
+          href="classDiagram_constraints.gmfgraph#ConstraintNode"/>
+    </ownedChild>
+  </nodes>
   <links>
     <domainMetaElement
         href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//Generalization"/>
@@ -361,6 +403,16 @@
       <targetEnd
           body="let metaclass : Class = self.importedElement.oclAsType(Class) in&#xD;&#xA;metaclass.isMetaclass() and &#xD;&#xA;not oppositeEnd.getAllExtendedMetaclasses()->includes(metaclass)&#xD;&#xA;"/>
     </creationConstraints>
+  </links>
+  <links>
+    <tool
+        xsi:type="gmftool:CreationTool"
+        href="profiles.gmftool#//@palette/@tools.1/@tools.6"/>
+    <diagramLink
+        href="../../../plugin/org.eclipse.gmf.graphdef/models/classDiagram.gmfgraph#DashedConnection"/>
+    <linkMetaFeature
+        xsi:type="ecore:EReference"
+        href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//Constraint/constrainedElement"/>
   </links>
   <diagram>
     <diagramCanvas

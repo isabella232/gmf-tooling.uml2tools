@@ -2,15 +2,13 @@ package org.eclipse.uml2.diagram.profile.edit.parts;
 
 import java.util.ArrayList;
 import java.util.List;
-import org.eclipse.draw2d.ColorConstants;
 import org.eclipse.draw2d.IFigure;
 import org.eclipse.draw2d.Label;
-import org.eclipse.draw2d.RectangleFigure;
+import org.eclipse.draw2d.MarginBorder;
 import org.eclipse.draw2d.Shape;
 import org.eclipse.draw2d.StackLayout;
-import org.eclipse.draw2d.ToolbarLayout;
-import org.eclipse.draw2d.geometry.Dimension;
 import org.eclipse.emf.common.notify.Notification;
+import org.eclipse.emf.ecore.EObject;
 import org.eclipse.gef.EditPart;
 import org.eclipse.gef.EditPolicy;
 import org.eclipse.gef.Request;
@@ -18,34 +16,36 @@ import org.eclipse.gef.commands.Command;
 import org.eclipse.gef.editpolicies.LayoutEditPolicy;
 import org.eclipse.gef.editpolicies.NonResizableEditPolicy;
 import org.eclipse.gef.requests.CreateRequest;
-import org.eclipse.gmf.runtime.diagram.core.edithelpers.CreateElementRequestAdapter;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.ShapeNodeEditPart;
+import org.eclipse.gmf.runtime.diagram.ui.editpolicies.CanonicalEditPolicy;
 import org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles;
-import org.eclipse.gmf.runtime.diagram.ui.requests.CreateViewAndElementRequest;
 import org.eclipse.gmf.runtime.draw2d.ui.figures.ConstrainedToolbarLayout;
 import org.eclipse.gmf.runtime.emf.type.core.IElementType;
 import org.eclipse.gmf.runtime.gef.ui.figures.DefaultSizeNodeFigure;
 import org.eclipse.gmf.runtime.gef.ui.figures.NodeFigure;
 import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.swt.graphics.Color;
-import org.eclipse.uml2.diagram.common.draw2d.CenterLayout;
+import org.eclipse.uml2.diagram.common.draw2d.MultilineConstraintFigure;
 import org.eclipse.uml2.diagram.common.editparts.PrimaryShapeEditPart;
-import org.eclipse.uml2.diagram.common.editpolicies.CreationEditPolicyWithCustomReparent;
-import org.eclipse.uml2.diagram.profile.edit.policies.OpenDiagramEditPolicy;
-import org.eclipse.uml2.diagram.profile.edit.policies.Profile2ItemSemanticEditPolicy;
+import org.eclipse.uml2.diagram.common.editpolicies.UpdateDescriptionEditPolicy;
+import org.eclipse.uml2.diagram.profile.edit.policies.Constraint2ItemSemanticEditPolicy;
+import org.eclipse.uml2.diagram.profile.part.UMLDiagramUpdateCommand;
+import org.eclipse.uml2.diagram.profile.part.UMLDiagramUpdater;
 import org.eclipse.uml2.diagram.profile.part.UMLVisualIDRegistry;
 import org.eclipse.uml2.diagram.profile.providers.UMLElementTypes;
+import org.eclipse.uml2.uml.UMLPackage;
 
 /**
  * @generated
  */
-public class Profile2EditPart extends ShapeNodeEditPart implements PrimaryShapeEditPart {
+
+public class Constraint2EditPart extends ShapeNodeEditPart implements PrimaryShapeEditPart {
 
 	/**
 	 * @generated
 	 */
-	public static final int VISUAL_ID = 2002;
+	public static final int VISUAL_ID = 2008;
 
 	/**
 	 * @generated
@@ -60,7 +60,7 @@ public class Profile2EditPart extends ShapeNodeEditPart implements PrimaryShapeE
 	/**
 	 * @generated
 	 */
-	public Profile2EditPart(View view) {
+	public Constraint2EditPart(View view) {
 		super(view);
 	}
 
@@ -68,11 +68,12 @@ public class Profile2EditPart extends ShapeNodeEditPart implements PrimaryShapeE
 	 * @generated
 	 */
 	protected void createDefaultEditPolicies() {
-		installEditPolicy(EditPolicyRoles.CREATION_ROLE, new CreationEditPolicyWithCustomReparent(UMLVisualIDRegistry.TYPED_ADAPTER));
+		if (UMLVisualIDRegistry.isShortcutDescendant(getNotationView())) {
+			installEditPolicy(UpdateDescriptionEditPolicy.ROLE, new UpdateDescriptionEditPolicy(UMLDiagramUpdater.TYPED_ADAPTER, true));
+		}
 		super.createDefaultEditPolicies();
-		installEditPolicy(EditPolicyRoles.SEMANTIC_ROLE, new Profile2ItemSemanticEditPolicy());
+		installEditPolicy(EditPolicyRoles.SEMANTIC_ROLE, new Constraint2ItemSemanticEditPolicy());
 		installEditPolicy(EditPolicy.LAYOUT_ROLE, createLayoutEditPolicy());
-		installEditPolicy(EditPolicyRoles.OPEN_ROLE, new OpenDiagramEditPolicy());
 		// XXX need an SCR to runtime to have another abstract superclass that would let children add reasonable editpolicies
 		// removeEditPolicy(org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles.CONNECTION_HANDLES_ROLE);
 
@@ -107,29 +108,23 @@ public class Profile2EditPart extends ShapeNodeEditPart implements PrimaryShapeE
 	 * @generated
 	 */
 	protected IFigure createNodeShape() {
-		ProfileFigure figure = new ProfileFigure();
+		ConstraintFigure figure = new ConstraintFigure();
 		return primaryShape = figure;
 	}
 
 	/**
 	 * @generated
 	 */
-	public ProfileFigure getPrimaryShape() {
-		return (ProfileFigure) primaryShape;
+	public ConstraintFigure getPrimaryShape() {
+		return (ConstraintFigure) primaryShape;
 	}
 
 	/**
 	 * @generated
 	 */
 	protected boolean addFixedChild(EditPart childEditPart) {
-		if (childEditPart instanceof ProfileNameEditPart) {
-			((ProfileNameEditPart) childEditPart).setLabel(getPrimaryShape().getFigureProfileFigure_NameLabel());
-			return true;
-		}
-		if (childEditPart instanceof ProfileContentsEditPart) {
-			IFigure pane = getPrimaryShape().getFigureProfileFigure_ContentsCompartment();
-			setupContentPane(pane); // FIXME each comparment should handle his content pane in his own way 
-			pane.add(((ProfileContentsEditPart) childEditPart).getFigure());
+		if (childEditPart instanceof ConstraintNameEditPart) {
+			((ConstraintNameEditPart) childEditPart).setLabel(getPrimaryShape().getFigureConstraintFigure_Value());
 			return true;
 		}
 		return false;
@@ -140,11 +135,6 @@ public class Profile2EditPart extends ShapeNodeEditPart implements PrimaryShapeE
 	 */
 	protected boolean removeFixedChild(EditPart childEditPart) {
 
-		if (childEditPart instanceof ProfileContentsEditPart) {
-			IFigure pane = getPrimaryShape().getFigureProfileFigure_ContentsCompartment();
-			pane.remove(((ProfileContentsEditPart) childEditPart).getFigure());
-			return true;
-		}
 		return false;
 	}
 
@@ -172,9 +162,6 @@ public class Profile2EditPart extends ShapeNodeEditPart implements PrimaryShapeE
 	 * @generated
 	 */
 	protected IFigure getContentPaneFor(IGraphicalEditPart editPart) {
-		if (editPart instanceof ProfileContentsEditPart) {
-			return getPrimaryShape().getFigureProfileFigure_ContentsCompartment();
-		}
 		return getContentPane();
 	}
 
@@ -182,7 +169,7 @@ public class Profile2EditPart extends ShapeNodeEditPart implements PrimaryShapeE
 	 * @generated
 	 */
 	protected NodeFigure createNodePlate() {
-		DefaultSizeNodeFigure result = new DefaultSizeNodeFigure(getMapMode().DPtoLP(100), getMapMode().DPtoLP(80));
+		DefaultSizeNodeFigure result = new DefaultSizeNodeFigure(getMapMode().DPtoLP(40), getMapMode().DPtoLP(40));
 		return result;
 	}
 
@@ -268,7 +255,68 @@ public class Profile2EditPart extends ShapeNodeEditPart implements PrimaryShapeE
 	 * @generated
 	 */
 	public EditPart getPrimaryChildEditPart() {
-		return getChildBySemanticHint(UMLVisualIDRegistry.getType(ProfileNameEditPart.VISUAL_ID));
+		return getChildBySemanticHint(UMLVisualIDRegistry.getType(ConstraintNameEditPart.VISUAL_ID));
+	}
+
+	/**
+	 * @generated
+	 */
+	public List/*<org.eclipse.gmf.runtime.emf.type.core.IElementType>*/getMARelTypesOnSource() {
+		List/*<org.eclipse.gmf.runtime.emf.type.core.IElementType>*/types = new ArrayList/*<org.eclipse.gmf.runtime.emf.type.core.IElementType>*/();
+		types.add(UMLElementTypes.ConstraintConstrainedElement_4003);
+		return types;
+	}
+
+	/**
+	 * @generated
+	 */
+	public List/*<org.eclipse.gmf.runtime.emf.type.core.IElementType>*/getMARelTypesOnSourceAndTarget(IGraphicalEditPart targetEditPart) {
+		List/*<org.eclipse.gmf.runtime.emf.type.core.IElementType>*/types = new ArrayList/*<org.eclipse.gmf.runtime.emf.type.core.IElementType>*/();
+		if (targetEditPart instanceof StereotypeEditPart) {
+			types.add(UMLElementTypes.ConstraintConstrainedElement_4003);
+		}
+		if (targetEditPart instanceof Profile2EditPart) {
+			types.add(UMLElementTypes.ConstraintConstrainedElement_4003);
+		}
+		if (targetEditPart instanceof EnumerationEditPart) {
+			types.add(UMLElementTypes.ConstraintConstrainedElement_4003);
+		}
+		if (targetEditPart instanceof ElementImportEditPart) {
+			types.add(UMLElementTypes.ConstraintConstrainedElement_4003);
+		}
+		if (targetEditPart instanceof Profile3EditPart) {
+			types.add(UMLElementTypes.ConstraintConstrainedElement_4003);
+		}
+		if (targetEditPart instanceof org.eclipse.uml2.diagram.profile.edit.parts.Constraint2EditPart) {
+			types.add(UMLElementTypes.ConstraintConstrainedElement_4003);
+		}
+		return types;
+	}
+
+	/**
+	 * @generated
+	 */
+	public List/*<org.eclipse.gmf.runtime.emf.type.core.IElementType>*/getMATypesForTarget(IElementType relationshipType) {
+		List/*<org.eclipse.gmf.runtime.emf.type.core.IElementType>*/types = new ArrayList/*<org.eclipse.gmf.runtime.emf.type.core.IElementType>*/();
+		if (relationshipType == UMLElementTypes.ConstraintConstrainedElement_4003) {
+			types.add(UMLElementTypes.Stereotype_2001);
+		}
+		if (relationshipType == UMLElementTypes.ConstraintConstrainedElement_4003) {
+			types.add(UMLElementTypes.Profile_2002);
+		}
+		if (relationshipType == UMLElementTypes.ConstraintConstrainedElement_4003) {
+			types.add(UMLElementTypes.Enumeration_2003);
+		}
+		if (relationshipType == UMLElementTypes.ConstraintConstrainedElement_4003) {
+			types.add(UMLElementTypes.ElementImport_2006);
+		}
+		if (relationshipType == UMLElementTypes.ConstraintConstrainedElement_4003) {
+			types.add(UMLElementTypes.Profile_2007);
+		}
+		if (relationshipType == UMLElementTypes.ConstraintConstrainedElement_4003) {
+			types.add(UMLElementTypes.Constraint_2008);
+		}
+		return types;
 	}
 
 	/**
@@ -294,55 +342,28 @@ public class Profile2EditPart extends ShapeNodeEditPart implements PrimaryShapeE
 	/**
 	 * @generated
 	 */
-	public EditPart getTargetEditPart(Request request) {
-		if (request instanceof CreateViewAndElementRequest) {
-			CreateElementRequestAdapter adapter = ((CreateViewAndElementRequest) request).getViewAndElementDescriptor().getCreateElementRequestAdapter();
-			IElementType type = (IElementType) adapter.getAdapter(IElementType.class);
-			if (type == UMLElementTypes.Stereotype_3003) {
-				return getChildBySemanticHint(UMLVisualIDRegistry.getType(ProfileContentsEditPart.VISUAL_ID));
-			}
-		}
-		return super.getTargetEditPart(request);
-	}
-
-	/**
-	 * @generated
-	 */
 	protected void handleNotificationEvent(Notification event) {
 		super.handleNotificationEvent(event);
+		if (isCanonicalEnabled()) {
+			handleFeatureLinkModification(event);
+		}
 	}
 
 	/**
 	 * @generated
 	 */
-	public class ProfileFigure extends RectangleFigure {
+	public class ConstraintFigure extends MultilineConstraintFigure {
 
 		/**
 		 * @generated
 		 */
-		private Label fFigureProfileFigure_NameLabel;
+		private Label fFigureConstraintFigure_Value;
 
 		/**
 		 * @generated
 		 */
-		private RectangleFigure fFigureProfileFigure_ContentsCompartment;
+		public ConstraintFigure() {
 
-		/**
-		 * @generated
-		 */
-		public ProfileFigure() {
-
-			ConstrainedToolbarLayout layoutThis = new ConstrainedToolbarLayout();
-
-			layoutThis.setStretchMajorAxis(true);
-
-			layoutThis.setMinorAlignment(ToolbarLayout.ALIGN_TOPLEFT);
-
-			this.setLayoutManager(layoutThis);
-
-			this.setFill(false);
-			this.setOutline(false);
-			this.setForegroundColor(ColorConstants.lightGray);
 			createContents();
 		}
 
@@ -351,61 +372,13 @@ public class Profile2EditPart extends ShapeNodeEditPart implements PrimaryShapeE
 		 */
 		private void createContents() {
 
-			RectangleFigure profile_leftTab0 = new RectangleFigure();
-			profile_leftTab0.setPreferredSize(new Dimension(getMapMode().DPtoLP(40), getMapMode().DPtoLP(20)));
-			profile_leftTab0.setMaximumSize(new Dimension(getMapMode().DPtoLP(40), getMapMode().DPtoLP(20)));
+			fFigureConstraintFigure_Value = new Label();
+			fFigureConstraintFigure_Value.setText("");
 
-			this.add(profile_leftTab0);
+			fFigureConstraintFigure_Value.setBorder(new MarginBorder(getMapMode().DPtoLP(5), getMapMode().DPtoLP(5), getMapMode().DPtoLP(5), getMapMode().DPtoLP(5)));
 
-			RectangleFigure profile_body0 = new RectangleFigure();
+			this.add(fFigureConstraintFigure_Value);
 
-			this.add(profile_body0);
-
-			ToolbarLayout layoutProfile_body0 = new ToolbarLayout();
-			layoutProfile_body0.setStretchMinorAxis(true);
-			layoutProfile_body0.setMinorAlignment(ToolbarLayout.ALIGN_CENTER);
-
-			layoutProfile_body0.setSpacing(0);
-			layoutProfile_body0.setVertical(true);
-
-			profile_body0.setLayoutManager(layoutProfile_body0);
-
-			Label profileFigure_ProfileLabel1 = new Label();
-			profileFigure_ProfileLabel1.setText("\u00ABprofile\u00BB");
-
-			profile_body0.add(profileFigure_ProfileLabel1);
-
-			CenterLayout layoutProfileFigure_ProfileLabel1 = new CenterLayout();
-
-			profileFigure_ProfileLabel1.setLayoutManager(layoutProfileFigure_ProfileLabel1);
-
-			fFigureProfileFigure_NameLabel = new Label();
-			fFigureProfileFigure_NameLabel.setText("");
-
-			profile_body0.add(fFigureProfileFigure_NameLabel);
-
-			CenterLayout layoutFFigureProfileFigure_NameLabel = new CenterLayout();
-
-			fFigureProfileFigure_NameLabel.setLayoutManager(layoutFFigureProfileFigure_NameLabel);
-
-			fFigureProfileFigure_ContentsCompartment = new RectangleFigure();
-
-			profile_body0.add(fFigureProfileFigure_ContentsCompartment);
-
-		}
-
-		/**
-		 * @generated
-		 */
-		public Label getFigureProfileFigure_NameLabel() {
-			return fFigureProfileFigure_NameLabel;
-		}
-
-		/**
-		 * @generated
-		 */
-		public RectangleFigure getFigureProfileFigure_ContentsCompartment() {
-			return fFigureProfileFigure_ContentsCompartment;
 		}
 
 		/**
@@ -427,6 +400,51 @@ public class Profile2EditPart extends ShapeNodeEditPart implements PrimaryShapeE
 			myUseLocalCoordinates = useLocalCoordinates;
 		}
 
+		/**
+		 * @generated
+		 */
+		public Label getFigureConstraintFigure_Value() {
+			return fFigureConstraintFigure_Value;
+		}
+
+	}
+
+	/**
+	 * @generated
+	 */
+	private void handleFeatureLinkModification(Notification event) {
+		if (event.getFeature() == UMLPackage.eINSTANCE.getConstraint_ConstrainedElement()) {
+			refreshDiagram();
+			return;
+		}
+	}
+
+	/**
+	 * @generated
+	 */
+	private boolean isCanonicalEnabled() {
+		//this particular edit part may not have editpolicy at all, 
+		//but its compartments still may have it
+		EObject semantic = resolveSemanticElement();
+		if (semantic == null) {
+			return false;
+		}
+		for (Object next : CanonicalEditPolicy.getRegisteredEditPolicies(semantic)) {
+			if (next instanceof CanonicalEditPolicy) {
+				CanonicalEditPolicy nextPolicy = (CanonicalEditPolicy) next;
+				if (nextPolicy.isEnabled()) {
+					return true;
+				}
+			}
+		}
+		return false;
+	}
+
+	/**
+	 * @generated
+	 */
+	public void refreshDiagram() {
+		UMLDiagramUpdateCommand.performCanonicalUpdate(getDiagramView().getElement());
 	}
 
 }

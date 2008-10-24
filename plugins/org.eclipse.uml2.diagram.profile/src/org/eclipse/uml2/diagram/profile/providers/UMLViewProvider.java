@@ -6,7 +6,10 @@ import org.eclipse.gmf.runtime.diagram.core.providers.AbstractViewProvider;
 import org.eclipse.gmf.runtime.emf.type.core.IElementType;
 import org.eclipse.gmf.runtime.emf.type.core.IHintedType;
 import org.eclipse.gmf.runtime.notation.View;
+import org.eclipse.uml2.diagram.profile.edit.parts.Constraint2EditPart;
+import org.eclipse.uml2.diagram.profile.edit.parts.ConstraintConstrainedElementEditPart;
 import org.eclipse.uml2.diagram.profile.edit.parts.ConstraintEditPart;
+import org.eclipse.uml2.diagram.profile.edit.parts.ConstraintNameEditPart;
 import org.eclipse.uml2.diagram.profile.edit.parts.ElementImport2EditPart;
 import org.eclipse.uml2.diagram.profile.edit.parts.ElementImportEditPart;
 import org.eclipse.uml2.diagram.profile.edit.parts.EnumerationEditPart;
@@ -31,6 +34,9 @@ import org.eclipse.uml2.diagram.profile.edit.parts.StereotypeConstraintsEditPart
 import org.eclipse.uml2.diagram.profile.edit.parts.StereotypeEditPart;
 import org.eclipse.uml2.diagram.profile.edit.parts.StereotypeNameEditPart;
 import org.eclipse.uml2.diagram.profile.part.UMLVisualIDRegistry;
+import org.eclipse.uml2.diagram.profile.view.factories.Constraint2ViewFactory;
+import org.eclipse.uml2.diagram.profile.view.factories.ConstraintConstrainedElementViewFactory;
+import org.eclipse.uml2.diagram.profile.view.factories.ConstraintNameViewFactory;
 import org.eclipse.uml2.diagram.profile.view.factories.ConstraintViewFactory;
 import org.eclipse.uml2.diagram.profile.view.factories.ElementImport2ViewFactory;
 import org.eclipse.uml2.diagram.profile.view.factories.ElementImportViewFactory;
@@ -121,6 +127,7 @@ public class UMLViewProvider extends AbstractViewProvider {
 				case EnumerationEditPart.VISUAL_ID:
 				case ElementImportEditPart.VISUAL_ID:
 				case Profile3EditPart.VISUAL_ID:
+				case Constraint2EditPart.VISUAL_ID:
 				case PropertyEditPart.VISUAL_ID:
 				case ConstraintEditPart.VISUAL_ID:
 				case Stereotype2EditPart.VISUAL_ID:
@@ -157,6 +164,11 @@ public class UMLViewProvider extends AbstractViewProvider {
 				case ProfileName2EditPart.VISUAL_ID:
 				case ProfileProfileLabelsEditPart.VISUAL_ID:
 					if (Profile3EditPart.VISUAL_ID != UMLVisualIDRegistry.getVisualID(containerView) || containerView.getElement() != domainElement) {
+						return null; // wrong container
+					}
+					break;
+				case ConstraintNameEditPart.VISUAL_ID:
+					if (Constraint2EditPart.VISUAL_ID != UMLVisualIDRegistry.getVisualID(containerView) || containerView.getElement() != domainElement) {
 						return null; // wrong container
 					}
 					break;
@@ -201,6 +213,10 @@ public class UMLViewProvider extends AbstractViewProvider {
 			return Profile3ViewFactory.class;
 		case ProfileName2EditPart.VISUAL_ID:
 			return ProfileName2ViewFactory.class;
+		case Constraint2EditPart.VISUAL_ID:
+			return Constraint2ViewFactory.class;
+		case ConstraintNameEditPart.VISUAL_ID:
+			return ConstraintNameViewFactory.class;
 		case PropertyEditPart.VISUAL_ID:
 			return PropertyViewFactory.class;
 		case ConstraintEditPart.VISUAL_ID:
@@ -259,6 +275,8 @@ public class UMLViewProvider extends AbstractViewProvider {
 			return GeneralizationViewFactory.class;
 		case ExtensionEditPart.VISUAL_ID:
 			return ExtensionViewFactory.class;
+		case ConstraintConstrainedElementEditPart.VISUAL_ID:
+			return ConstraintConstrainedElementViewFactory.class;
 		}
 		return null;
 	}

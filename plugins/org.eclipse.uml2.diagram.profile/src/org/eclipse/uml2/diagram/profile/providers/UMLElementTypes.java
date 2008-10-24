@@ -16,6 +16,8 @@ import org.eclipse.gmf.runtime.emf.type.core.IHintedType;
 import org.eclipse.jface.resource.ImageDescriptor;
 import org.eclipse.jface.resource.ImageRegistry;
 import org.eclipse.swt.graphics.Image;
+import org.eclipse.uml2.diagram.profile.edit.parts.Constraint2EditPart;
+import org.eclipse.uml2.diagram.profile.edit.parts.ConstraintConstrainedElementEditPart;
 import org.eclipse.uml2.diagram.profile.edit.parts.ConstraintEditPart;
 import org.eclipse.uml2.diagram.profile.edit.parts.ElementImport2EditPart;
 import org.eclipse.uml2.diagram.profile.edit.parts.ElementImportEditPart;
@@ -91,6 +93,11 @@ public class UMLElementTypes extends ElementInitializers {
 	/**
 	 * @generated
 	 */
+	public static final IHintedType Constraint_2008 = (IHintedType) getElementType("org.eclipse.uml2.diagram.profile.Constraint_2008"); //$NON-NLS-1$
+
+	/**
+	 * @generated
+	 */
 	public static final IHintedType Property_3001 = (IHintedType) getElementType("org.eclipse.uml2.diagram.profile.Property_3001"); //$NON-NLS-1$
 
 	/**
@@ -122,6 +129,11 @@ public class UMLElementTypes extends ElementInitializers {
 	 * @generated
 	 */
 	public static final IHintedType Extension_4002 = (IHintedType) getElementType("org.eclipse.uml2.diagram.profile.Extension_4002"); //$NON-NLS-1$
+
+	/**
+	 * @generated
+	 */
+	public static final IHintedType ConstraintConstrainedElement_4003 = (IHintedType) getElementType("org.eclipse.uml2.diagram.profile.ConstraintConstrainedElement_4003"); //$NON-NLS-1$
 
 	/**
 	 * @generated
@@ -241,6 +253,8 @@ public class UMLElementTypes extends ElementInitializers {
 
 			elements.put(Profile_2007, UMLPackage.eINSTANCE.getProfile());
 
+			elements.put(Constraint_2008, UMLPackage.eINSTANCE.getConstraint());
+
 			elements.put(Property_3001, UMLPackage.eINSTANCE.getProperty());
 
 			elements.put(Constraint_3008, UMLPackage.eINSTANCE.getConstraint());
@@ -254,6 +268,8 @@ public class UMLElementTypes extends ElementInitializers {
 			elements.put(Generalization_4001, UMLPackage.eINSTANCE.getGeneralization());
 
 			elements.put(Extension_4002, UMLPackage.eINSTANCE.getExtension());
+
+			elements.put(ConstraintConstrainedElement_4003, UMLPackage.eINSTANCE.getConstraint_ConstrainedElement());
 		}
 		return (ENamedElement) elements.get(type);
 	}
@@ -277,6 +293,7 @@ public class UMLElementTypes extends ElementInitializers {
 			KNOWN_ELEMENT_TYPES.add(Enumeration_2003);
 			KNOWN_ELEMENT_TYPES.add(ElementImport_2006);
 			KNOWN_ELEMENT_TYPES.add(Profile_2007);
+			KNOWN_ELEMENT_TYPES.add(Constraint_2008);
 			KNOWN_ELEMENT_TYPES.add(Property_3001);
 			KNOWN_ELEMENT_TYPES.add(Constraint_3008);
 			KNOWN_ELEMENT_TYPES.add(Stereotype_3003);
@@ -284,6 +301,7 @@ public class UMLElementTypes extends ElementInitializers {
 			KNOWN_ELEMENT_TYPES.add(ElementImport_3009);
 			KNOWN_ELEMENT_TYPES.add(Generalization_4001);
 			KNOWN_ELEMENT_TYPES.add(Extension_4002);
+			KNOWN_ELEMENT_TYPES.add(ConstraintConstrainedElement_4003);
 		}
 		return KNOWN_ELEMENT_TYPES.contains(elementType);
 	}
@@ -305,6 +323,8 @@ public class UMLElementTypes extends ElementInitializers {
 			return ElementImport_2006;
 		case Profile3EditPart.VISUAL_ID:
 			return Profile_2007;
+		case Constraint2EditPart.VISUAL_ID:
+			return Constraint_2008;
 		case PropertyEditPart.VISUAL_ID:
 			return Property_3001;
 		case ConstraintEditPart.VISUAL_ID:
@@ -319,6 +339,8 @@ public class UMLElementTypes extends ElementInitializers {
 			return Generalization_4001;
 		case ExtensionEditPart.VISUAL_ID:
 			return Extension_4002;
+		case ConstraintConstrainedElementEditPart.VISUAL_ID:
+			return ConstraintConstrainedElement_4003;
 		}
 		return null;
 	}

@@ -46,6 +46,8 @@ import org.eclipse.uml2.diagram.profile.part.UMLDiagramEditorPlugin;
 import org.eclipse.uml2.diagram.profile.part.UMLVisualIDRegistry;
 import org.eclipse.uml2.diagram.profile.providers.UMLElementTypes;
 import org.eclipse.uml2.uml.Classifier;
+import org.eclipse.uml2.uml.Constraint;
+import org.eclipse.uml2.uml.Element;
 import org.eclipse.uml2.uml.ElementImport;
 import org.eclipse.uml2.uml.Package;
 import org.eclipse.uml2.uml.Stereotype;
@@ -374,6 +376,19 @@ public class UMLBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 		/**
 		 * @generated
 		 */
+		public static boolean canCreateConstraintConstrainedElement_4003(Constraint source, Element target) {
+			if (source != null) {
+				if (source.getConstrainedElements().contains(target)) {
+					return false;
+				}
+			}
+
+			return canExistConstraintConstrainedElement_4003(source, target);
+		}
+
+		/**
+		 * @generated
+		 */
 		public static boolean canExistGeneralization_4001(Classifier source, Classifier target) {
 			return true;
 		}
@@ -401,6 +416,13 @@ public class UMLBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 				UMLDiagramEditorPlugin.getInstance().logError("Link constraint evaluation error", e); //$NON-NLS-1$
 				return false;
 			}
+		}
+
+		/**
+		 * @generated
+		 */
+		public static boolean canExistConstraintConstrainedElement_4003(Constraint source, Element target) {
+			return true;
 		}
 
 	}

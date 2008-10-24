@@ -14,7 +14,9 @@ import org.eclipse.gmf.runtime.emf.ui.services.parser.ParserHintAdapter;
 import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.uml2.diagram.common.parser.imports.ElementImportParser;
 import org.eclipse.uml2.diagram.common.parser.imports.ElementImportProvider;
+import org.eclipse.uml2.diagram.common.parser.valuespec.ValueSpecificationParser;
 import org.eclipse.uml2.diagram.profile.edit.parts.ConstraintEditPart;
+import org.eclipse.uml2.diagram.profile.edit.parts.ConstraintNameEditPart;
 import org.eclipse.uml2.diagram.profile.edit.parts.ElementImport2EditPart;
 import org.eclipse.uml2.diagram.profile.edit.parts.EnumerationLiteralEditPart;
 import org.eclipse.uml2.diagram.profile.edit.parts.EnumerationNameEditPart;
@@ -125,6 +127,21 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 		EAttribute[] features = new EAttribute[] { UMLPackage.eINSTANCE.getNamedElement_Name() };
 		Parser_0_0 parser = new Parser_0_0(features);
 		return parser;
+	}
+
+	/**
+	 * @generated
+	 */
+	private ValueSpecificationParser.ConstraintParser constraintName_5010Parser;
+
+	/**
+	 * @generated
+	 */
+	private IParser getConstraintName_5010Parser() {
+		if (constraintName_5010Parser == null) {
+			constraintName_5010Parser = new ValueSpecificationParser.ConstraintParser();
+		}
+		return constraintName_5010Parser;
 	}
 
 	/**
@@ -245,6 +262,8 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 			return getEnumerationName_5005Parser();
 		case ProfileName2EditPart.VISUAL_ID:
 			return getProfileName_5009Parser();
+		case ConstraintNameEditPart.VISUAL_ID:
+			return getConstraintName_5010Parser();
 		case ConstraintEditPart.VISUAL_ID:
 			return getConstraint_3008Parser();
 		case Stereotype2EditPart.VISUAL_ID:

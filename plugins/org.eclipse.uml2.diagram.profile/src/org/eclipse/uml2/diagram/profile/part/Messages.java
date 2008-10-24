@@ -353,6 +353,16 @@ public class Messages extends NLS {
 	/**
 	 * @generated
 	 */
+	public static String ConstrainedElement7CreationTool_title;
+
+	/**
+	 * @generated
+	 */
+	public static String ConstrainedElement7CreationTool_desc;
+
+	/**
+	 * @generated
+	 */
 	public static String StereotypeAttributesEditPart_title;
 
 	/**
@@ -398,6 +408,11 @@ public class Messages extends NLS {
 	/**
 	 * @generated
 	 */
+	public static String NavigatorGroupName_Profile_2002_incominglinks;
+
+	/**
+	 * @generated
+	 */
 	public static String NavigatorGroupName_Enumeration_2003_incominglinks;
 
 	/**
@@ -413,12 +428,47 @@ public class Messages extends NLS {
 	/**
 	 * @generated
 	 */
+	public static String NavigatorGroupName_Profile_2007_incominglinks;
+
+	/**
+	 * @generated
+	 */
+	public static String NavigatorGroupName_Constraint_2008_incominglinks;
+
+	/**
+	 * @generated
+	 */
+	public static String NavigatorGroupName_Constraint_2008_outgoinglinks;
+
+	/**
+	 * @generated
+	 */
+	public static String NavigatorGroupName_Property_3001_incominglinks;
+
+	/**
+	 * @generated
+	 */
+	public static String NavigatorGroupName_Constraint_3008_incominglinks;
+
+	/**
+	 * @generated
+	 */
+	public static String NavigatorGroupName_Constraint_3008_outgoinglinks;
+
+	/**
+	 * @generated
+	 */
 	public static String NavigatorGroupName_Stereotype_3003_incominglinks;
 
 	/**
 	 * @generated
 	 */
 	public static String NavigatorGroupName_Stereotype_3003_outgoinglinks;
+
+	/**
+	 * @generated
+	 */
+	public static String NavigatorGroupName_EnumerationLiteral_3005_incominglinks;
 
 	/**
 	 * @generated
@@ -444,6 +494,16 @@ public class Messages extends NLS {
 	 * @generated
 	 */
 	public static String NavigatorGroupName_Extension_4002_source;
+
+	/**
+	 * @generated
+	 */
+	public static String NavigatorGroupName_ConstraintConstrainedElement_4003_target;
+
+	/**
+	 * @generated
+	 */
+	public static String NavigatorGroupName_ConstraintConstrainedElement_4003_source;
 
 	/**
 	 * @generated

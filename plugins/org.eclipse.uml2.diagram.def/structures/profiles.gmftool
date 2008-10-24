@@ -53,6 +53,10 @@
           xsi:type="gmftool:CreationTool"
           title="Element Import"
           description="Create Element Import"/>
+      <tools
+          xsi:type="gmftool:CreationTool"
+          title="Constrained Element"
+          description="Create Constrained Element Link"/>
     </tools>
   </palette>
 </gmftool:ToolRegistry>

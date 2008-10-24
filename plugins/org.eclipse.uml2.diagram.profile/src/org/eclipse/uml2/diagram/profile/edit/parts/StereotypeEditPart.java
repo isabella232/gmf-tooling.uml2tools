@@ -320,6 +320,7 @@ public class StereotypeEditPart extends ShapeNodeEditPart implements PrimaryShap
 	public List/*<org.eclipse.gmf.runtime.emf.type.core.IElementType>*/getMARelTypesOnTarget() {
 		List/*<org.eclipse.gmf.runtime.emf.type.core.IElementType>*/types = new ArrayList/*<org.eclipse.gmf.runtime.emf.type.core.IElementType>*/();
 		types.add(UMLElementTypes.Generalization_4001);
+		types.add(UMLElementTypes.ConstraintConstrainedElement_4003);
 		return types;
 	}
 
@@ -350,6 +351,9 @@ public class StereotypeEditPart extends ShapeNodeEditPart implements PrimaryShap
 		}
 		if (relationshipType == UMLElementTypes.Generalization_4001) {
 			types.add(UMLElementTypes.Enumeration_2003);
+		}
+		if (relationshipType == UMLElementTypes.ConstraintConstrainedElement_4003) {
+			types.add(UMLElementTypes.Constraint_2008);
 		}
 		return types;
 	}
