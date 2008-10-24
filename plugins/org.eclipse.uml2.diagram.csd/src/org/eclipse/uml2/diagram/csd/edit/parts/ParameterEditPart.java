@@ -157,7 +157,6 @@ public class ParameterEditPart extends ShapeNodeEditPart implements PrimaryShape
 	 * @generated
 	 */
 	protected IFigure getContentPaneFor(IGraphicalEditPart editPart) {
-
 		return getContentPane();
 	}
 

@@ -204,7 +204,6 @@ public class CollaborationEditPart extends ShapeNodeEditPart implements PrimaryS
 	 * @generated
 	 */
 	protected IFigure getContentPaneFor(IGraphicalEditPart editPart) {
-
 		if (editPart instanceof CollaborationContentsEditPart) {
 			return getPrimaryShape().getFigureCollaborationFigure_contents();
 		}

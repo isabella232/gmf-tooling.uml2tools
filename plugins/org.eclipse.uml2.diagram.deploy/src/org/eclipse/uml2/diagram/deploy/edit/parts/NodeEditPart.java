@@ -181,7 +181,6 @@ public class NodeEditPart extends ShapeNodeEditPart implements PrimaryShapeEditP
 	 * @generated
 	 */
 	protected IFigure getContentPaneFor(IGraphicalEditPart editPart) {
-
 		return getContentPane();
 	}
 

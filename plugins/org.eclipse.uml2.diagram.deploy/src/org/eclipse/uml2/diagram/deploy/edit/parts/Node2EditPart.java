@@ -180,7 +180,6 @@ public class Node2EditPart extends ShapeNodeEditPart implements PrimaryShapeEdit
 	 * @generated
 	 */
 	protected IFigure getContentPaneFor(IGraphicalEditPart editPart) {
-
 		return getContentPane();
 	}
 

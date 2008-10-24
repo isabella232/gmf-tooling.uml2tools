@@ -197,7 +197,6 @@ public class ArtifactEditPart extends ShapeNodeEditPart implements PrimaryShapeE
 	 * @generated
 	 */
 	protected IFigure getContentPaneFor(IGraphicalEditPart editPart) {
-
 		if (editPart instanceof ArtifactArtifactFigure_contentsEditPart) {
 			return getPrimaryShape().getFigureArtifactFigure_Body();
 		}

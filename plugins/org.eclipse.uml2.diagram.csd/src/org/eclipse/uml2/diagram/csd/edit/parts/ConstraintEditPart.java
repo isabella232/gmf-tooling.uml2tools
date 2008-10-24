@@ -162,7 +162,6 @@ public class ConstraintEditPart extends ShapeNodeEditPart implements PrimaryShap
 	 * @generated
 	 */
 	protected IFigure getContentPaneFor(IGraphicalEditPart editPart) {
-
 		return getContentPane();
 	}
 

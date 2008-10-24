@@ -194,7 +194,6 @@ public class DeviceEditPart extends ShapeNodeEditPart implements PrimaryShapeEdi
 	 * @generated
 	 */
 	protected IFigure getContentPaneFor(IGraphicalEditPart editPart) {
-
 		if (editPart instanceof DeviceDevicecontentsEditPart) {
 			return getPrimaryShape().getContentPane();
 		}

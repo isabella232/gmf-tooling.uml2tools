@@ -224,7 +224,6 @@ public class Class3EditPart extends AbstractBorderedShapeEditPart implements Pri
 	 * @generated
 	 */
 	protected IFigure getContentPaneFor(IGraphicalEditPart editPart) {
-
 		if (editPart instanceof ClassClass_contentsEditPart) {
 			return getPrimaryShape().getFigureExpandedClassFigure_contents();
 		}
