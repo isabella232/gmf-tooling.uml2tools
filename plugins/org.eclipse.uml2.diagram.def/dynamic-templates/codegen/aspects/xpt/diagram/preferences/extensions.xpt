@@ -14,6 +14,7 @@
 «IMPORT "http://www.eclipse.org/emf/2002/Ecore"»
 
 «EXTENSION xpt::actions::Utils»  
+«EXTENSION xpt::diagram::Utils»
 «EXTENSION aspects::xpt::plugin::Utils»
 
 «AROUND preferencePage FOR gmfgen::GenPreferencePage-»
@@ -25,9 +26,6 @@
 «ELSE-»
             category="org.eclipse.uml2.uml.diagram"
 «ENDIF-»
-            class="«EXPAND xpt::diagram::preferences::extensions::qualifiedClassName»">
+            class="«getQualifiedClassName()»">
       </page>
-«FOREACH children AS page-»
-«EXPAND xpt::diagram::preferences::extensions::preferencePage FOR page-»
-«ENDFOREACH-»
 «ENDAROUND»

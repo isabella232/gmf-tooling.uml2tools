@@ -13,6 +13,8 @@
 «IMPORT "http://www.eclipse.org/gmf/2008/GenModel"»
 «IMPORT "http://www.eclipse.org/emf/2002/Ecore"»
 
+«EXTENSION xpt::diagram::Utils»
+
 «AROUND PreferenceInitializer FOR gmfgen::GenDiagram-»
 «EXPAND xpt::Common::copyright FOR editorGen-»
 package «preferencesPackageName»;
@@ -23,18 +25,15 @@ public class «EXPAND xpt::diagram::preferences::PreferenceInitializer::className
 	«EXPAND xpt::Common::generatedMemberComment»
 	public void initializeDefaultPreferences() {
 		org.eclipse.jface.preference.IPreferenceStore store = getPreferenceStore();
-		«EXPAND xpt::diagram::preferences::PrintingPreferencePage::qualifiedClassName».initDefaults(store);
-		«IF null == preferences-»
-			«EXPAND xpt::diagram::preferences::GeneralPreferencePage::qualifiedClassName».initDefaults(store);
-			«EXPAND xpt::diagram::preferences::AppearancePreferencePage::qualifiedClassName».initDefaults(store);
-			«EXPAND xpt::diagram::preferences::ConnectionsPreferencePage::qualifiedClassName».initDefaults(store);
-			«EXPAND xpt::diagram::preferences::RulersAndGridPreferencePage::qualifiedClassName».initDefaults(store);
-		«ELSE-»
-			«EXPAND xpt::diagram::preferences::PreferenceInitializer::initDefaults("store") FOR preferences-»
-		«ENDIF-»
-		
+«IF preferences == null-»
+		«EXPAND xpt::diagram::preferences::PreferenceInitializer::initDefaults("store") FOREACH allPreferencePages(this)»
+«ELSE»«REM»default values for predefined pages will be set manually«ENDREM»«-»
+		«EXPAND xpt::diagram::preferences::PreferenceInitializer::initDefaults("store") FOREACH allPreferencePages(this).typeSelect(GenCustomPreferencePage)»
+		«EXPAND xpt::diagram::preferences::PreferenceInitializer::initDefaults("store") FOR preferences-»
+«ENDIF-»
+
 		«REM»Additional preferences here«ENDREM»«-»
-		«EXPAND initDefaultIconStyle("store")»
+		«EXPAND xpt::diagram::preferences::PreferenceInitializer::initDefaultIconStyle("store")»
 	}
 
 	«EXPAND xpt::Common::generatedMemberComment»
