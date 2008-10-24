@@ -79,7 +79,7 @@
     </children>
     <styles xmi:type="notation:ShapeStyle" xmi:id="_j9KAwZuWEd2SfoQicxEfTw" lineColor="0"/>
     <element xmi:type="uml:Stereotype" href="18.10 Defining a simple EJB profile.profile.uml#_j82ewJuWEd2SfoQicxEfTw"/>
-    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_j9KAwpuWEd2SfoQicxEfTw" x="396" y="252"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_j9KAwpuWEd2SfoQicxEfTw" x="390" y="222"/>
   </children>
   <children xmi:type="notation:Node" xmi:id="_lS_LQJuWEd2SfoQicxEfTw" type="2001">
     <children xmi:type="notation:Node" xmi:id="_lS_LQ5uWEd2SfoQicxEfTw" type="5001"/>
@@ -99,7 +99,7 @@
     </children>
     <styles xmi:type="notation:ShapeStyle" xmi:id="_lS_LQZuWEd2SfoQicxEfTw" lineColor="0"/>
     <element xmi:type="uml:Stereotype" href="18.10 Defining a simple EJB profile.profile.uml#_lSrpQJuWEd2SfoQicxEfTw"/>
-    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_lS_LQpuWEd2SfoQicxEfTw" x="386" y="162"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_lS_LQpuWEd2SfoQicxEfTw" x="384" y="144"/>
   </children>
   <children xmi:type="notation:Node" xmi:id="_mg6-AJuWEd2SfoQicxEfTw" type="2003">
     <children xmi:type="notation:Node" xmi:id="_mhN48JuWEd2SfoQicxEfTw" type="5005"/>
@@ -118,7 +118,7 @@
     </children>
     <styles xmi:type="notation:ShapeStyle" xmi:id="_mg6-AZuWEd2SfoQicxEfTw" lineColor="0"/>
     <element xmi:type="uml:Enumeration" href="18.10 Defining a simple EJB profile.profile.uml#_mgxNAJuWEd2SfoQicxEfTw"/>
-    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_mg6-ApuWEd2SfoQicxEfTw" x="192" y="264"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_mg6-ApuWEd2SfoQicxEfTw" x="120" y="312"/>
   </children>
   <children xmi:type="notation:Node" xmi:id="_Uur2AJuXEd2SfoQicxEfTw" type="2001">
     <children xmi:type="notation:Node" xmi:id="_Uur2A5uXEd2SfoQicxEfTw" type="5001"/>
@@ -192,7 +192,7 @@
     <children xmi:type="notation:Node" xmi:id="_9-BFIZuXEd2SfoQicxEfTw" type="Description">
       <element xsi:nil="true"/>
     </children>
-    <styles xmi:type="notation:ShapeStyle" xmi:id="_993UIZuXEd2SfoQicxEfTw" description="Name of the Profile is 'EJB'. The name of profile should not be empty. Name serves as an ID of a profile." fillColor="13290239" lineColor="6737151" lineWidth="1"/>
+    <styles xmi:type="notation:ShapeStyle" xmi:id="_993UIZuXEd2SfoQicxEfTw" description="Name of the Profile is 'EJB'. The name of profile should not be empty. Name serves as an ID of a profile." fillColor="14671871" lineColor="6737151" lineWidth="1"/>
     <styles xmi:type="notation:TextStyle" xmi:id="_993UIpuXEd2SfoQicxEfTw"/>
     <styles xmi:type="notation:LineTypeStyle" xmi:id="_993UI5uXEd2SfoQicxEfTw"/>
     <element xsi:nil="true"/>
@@ -205,11 +205,11 @@
     <children xmi:type="notation:Node" xmi:id="_EPAiFpuYEd2SfoQicxEfTw" type="Description">
       <element xsi:nil="true"/>
     </children>
-    <styles xmi:type="notation:ShapeStyle" xmi:id="_EPAiEZuYEd2SfoQicxEfTw" description="These are metaclasses. They marked with &lt;&lt;metaclass>> keyword. Metaclasse defines what elements are extended" fillColor="13290239" lineColor="6737151" lineWidth="1"/>
+    <styles xmi:type="notation:ShapeStyle" xmi:id="_EPAiEZuYEd2SfoQicxEfTw" description="These are metaclasses. They marked with &lt;&lt;metaclass>> keyword. Metaclasse defines what elements are extended" fillColor="14671871" lineColor="6737151" lineWidth="1"/>
     <styles xmi:type="notation:TextStyle" xmi:id="_EPAiEpuYEd2SfoQicxEfTw"/>
     <styles xmi:type="notation:LineTypeStyle" xmi:id="_EPAiE5uYEd2SfoQicxEfTw"/>
     <element xsi:nil="true"/>
-    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_EPAiFJuYEd2SfoQicxEfTw" x="516" y="324" width="189" height="73"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_EPAiFJuYEd2SfoQicxEfTw" x="648" y="36" width="189" height="73"/>
   </children>
   <children xmi:type="notation:Node" xmi:id="_aiQhsJuYEd2SfoQicxEfTw" type="Note">
     <children xmi:type="notation:Node" xmi:id="_aiaSsJuYEd2SfoQicxEfTw" type="DiagramName">
@@ -218,7 +218,7 @@
     <children xmi:type="notation:Node" xmi:id="_aiaSsZuYEd2SfoQicxEfTw" type="Description">
       <element xsi:nil="true"/>
     </children>
-    <styles xmi:type="notation:ShapeStyle" xmi:id="_aiQhsZuYEd2SfoQicxEfTw" description="This is a steretype. Stereotype is an extension of a given metaclass. It defines supplimentary Properties and Constraints. Session stereotype extends Bean stereotype, which is, in its turn, extends Component metaclass. It appends 'state' property to the extended Component." fillColor="13290239" lineColor="6737151" lineWidth="1"/>
+    <styles xmi:type="notation:ShapeStyle" xmi:id="_aiQhsZuYEd2SfoQicxEfTw" description="This is a steretype. Stereotype is an extension of a given metaclass. It defines supplimentary Properties and Constraints. Session stereotype extends Bean stereotype, which is, in its turn, extends Component metaclass. It appends 'state' property to the extended Component." fillColor="14671871" lineColor="6737151" lineWidth="1"/>
     <styles xmi:type="notation:TextStyle" xmi:id="_aiQhspuYEd2SfoQicxEfTw"/>
     <styles xmi:type="notation:LineTypeStyle" xmi:id="_aiQhs5uYEd2SfoQicxEfTw"/>
     <element xsi:nil="true"/>
@@ -231,7 +231,7 @@
     <children xmi:type="notation:Node" xmi:id="_uR-_NpuZEd2SfoQicxEfTw" type="Description">
       <element xsi:nil="true"/>
     </children>
-    <styles xmi:type="notation:ShapeStyle" xmi:id="_uR-_MZuZEd2SfoQicxEfTw" description="Extension links" fillColor="13290239" lineColor="6737151" lineWidth="1"/>
+    <styles xmi:type="notation:ShapeStyle" xmi:id="_uR-_MZuZEd2SfoQicxEfTw" description="Extension links" fillColor="14671871" lineColor="6737151" lineWidth="1"/>
     <styles xmi:type="notation:TextStyle" xmi:id="_uR-_MpuZEd2SfoQicxEfTw"/>
     <styles xmi:type="notation:LineTypeStyle" xmi:id="_uR-_M5uZEd2SfoQicxEfTw"/>
     <element xsi:nil="true"/>
@@ -244,11 +244,30 @@
     <children xmi:type="notation:Node" xmi:id="_y5LMxpuZEd2SfoQicxEfTw" type="Description">
       <element xsi:nil="true"/>
     </children>
-    <styles xmi:type="notation:ShapeStyle" xmi:id="_y5LMwZuZEd2SfoQicxEfTw" description="Enumeration" fillColor="13290239" lineColor="6737151" lineWidth="1"/>
+    <styles xmi:type="notation:ShapeStyle" xmi:id="_y5LMwZuZEd2SfoQicxEfTw" description="Enumeration" fillColor="14671871" lineColor="6737151" lineWidth="1"/>
     <styles xmi:type="notation:TextStyle" xmi:id="_y5LMwpuZEd2SfoQicxEfTw"/>
     <styles xmi:type="notation:LineTypeStyle" xmi:id="_y5LMw5uZEd2SfoQicxEfTw"/>
     <element xsi:nil="true"/>
-    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_y5LMxJuZEd2SfoQicxEfTw" x="324" y="348" width="85" height="49"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_y5LMxJuZEd2SfoQicxEfTw" x="24" y="324" width="85" height="49"/>
+  </children>
+  <children xmi:type="notation:Node" xmi:id="_XtCG4KHAEd2sdKESbSpQFQ" type="2008">
+    <children xmi:type="notation:Node" xmi:id="_XtLQ0KHAEd2sdKESbSpQFQ" type="5010"/>
+    <styles xmi:type="notation:ShapeStyle" xmi:id="_XtCG4aHAEd2sdKESbSpQFQ" lineColor="0"/>
+    <element xmi:type="uml:Constraint" href="18.10 Defining a simple EJB profile.profile.uml#_XrsDEKHAEd2sdKESbSpQFQ"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_XtCG4qHAEd2sdKESbSpQFQ" x="264" y="324" width="301" height="61"/>
+  </children>
+  <children xmi:type="notation:Node" xmi:id="_tUWNkaHAEd2sdKESbSpQFQ" type="Note">
+    <children xmi:type="notation:Node" xmi:id="_tUWNkqHAEd2sdKESbSpQFQ" type="DiagramName">
+      <element xsi:nil="true"/>
+    </children>
+    <children xmi:type="notation:Node" xmi:id="_tUWNk6HAEd2sdKESbSpQFQ" type="Description">
+      <element xsi:nil="true"/>
+    </children>
+    <styles xmi:type="notation:ShapeStyle" xmi:id="_tUWNlKHAEd2sdKESbSpQFQ" description="Constraint" fillColor="14671871" lineColor="6737151" lineWidth="1"/>
+    <styles xmi:type="notation:TextStyle" xmi:id="_tUWNlaHAEd2sdKESbSpQFQ"/>
+    <styles xmi:type="notation:LineTypeStyle" xmi:id="_tUWNlqHAEd2sdKESbSpQFQ"/>
+    <element xsi:nil="true"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_tUWNl6HAEd2sdKESbSpQFQ" x="636" y="372" width="85" height="49"/>
   </children>
   <styles xmi:type="notation:DiagramStyle" xmi:id="_TRn3lZuWEd2SfoQicxEfTw"/>
   <element xmi:type="uml:Profile" href="18.10 Defining a simple EJB profile.profile.uml#_TRBaoJuWEd2SfoQicxEfTw"/>
@@ -365,5 +384,22 @@
     <element xsi:nil="true"/>
     <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_2ImWJJuZEd2SfoQicxEfTw" points="[-30, -12, 88, 48]$[-88, -23, 30, 37]"/>
     <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_2ImWJZuZEd2SfoQicxEfTw" id="(0.42352942,0.24489796)"/>
+  </edges>
+  <edges xmi:type="notation:Edge" xmi:id="_q21pUKHAEd2sdKESbSpQFQ" type="4003" source="_XtCG4KHAEd2sdKESbSpQFQ" target="_ifkocJuWEd2SfoQicxEfTw">
+    <styles xmi:type="notation:ConnectorStyle" xmi:id="_q21pUaHAEd2sdKESbSpQFQ" lineColor="0"/>
+    <styles xmi:type="notation:FontStyle" xmi:id="_q21pUqHAEd2sdKESbSpQFQ"/>
+    <element xsi:nil="true"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_q21pU6HAEd2sdKESbSpQFQ" points="[-5, -10, 56, 117]$[-49, -113, 12, 14]"/>
+    <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_q21pVKHAEd2sdKESbSpQFQ" id="(0.18936877,0.18032786)"/>
+    <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_q21pVaHAEd2sdKESbSpQFQ" id="(0.67,0.7846154)"/>
+  </edges>
+  <edges xmi:type="notation:Edge" xmi:id="_xKOS8KHAEd2sdKESbSpQFQ" type="NoteAttachment" source="_tUWNkaHAEd2sdKESbSpQFQ" target="_XtCG4KHAEd2sdKESbSpQFQ">
+    <styles xmi:type="notation:ConnectorStyle" xmi:id="_xKOS8aHAEd2sdKESbSpQFQ" lineColor="0" lineWidth="1"/>
+    <styles xmi:type="notation:ArrowStyle" xmi:id="_xKOS8qHAEd2sdKESbSpQFQ"/>
+    <styles xmi:type="notation:LineTypeStyle" xmi:id="_xKOS86HAEd2sdKESbSpQFQ"/>
+    <element xsi:nil="true"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_xKOS9KHAEd2sdKESbSpQFQ" points="[-19, -5, 95, 27]$[-90, -30, 24, 2]"/>
+    <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_xKOS9aHAEd2sdKESbSpQFQ" id="(0.22352941,0.5510204)"/>
+    <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_xKOS9qHAEd2sdKESbSpQFQ" id="(0.9202658,0.6885246)"/>
   </edges>
 </notation:Diagram>

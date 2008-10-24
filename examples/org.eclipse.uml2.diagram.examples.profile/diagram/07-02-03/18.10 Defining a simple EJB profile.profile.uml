@@ -151,4 +151,9 @@
   <packagedElement xmi:type="uml:Extension" xmi:id="_aADpAJuXEd2SfoQicxEfTw" name="Interface_Home" memberEnd="_aADpAZuXEd2SfoQicxEfTw _aADpApuXEd2SfoQicxEfTw">
     <ownedEnd xmi:type="uml:ExtensionEnd" xmi:id="_aADpAZuXEd2SfoQicxEfTw" name="extension_Home" type="_YEOOcJuXEd2SfoQicxEfTw" aggregation="composite" association="_aADpAJuXEd2SfoQicxEfTw"/>
   </packagedElement>
+  <packagedElement xmi:type="uml:Constraint" xmi:id="_XrsDEKHAEd2sdKESbSpQFQ" constrainedElement="_ifRtgJuWEd2SfoQicxEfTw">
+    <specification xmi:type="uml:OpaqueExpression" xmi:id="_Xr10EKHAEd2sdKESbSpQFQ">
+      <body>A Bean must realize exactly one Home interface</body>
+    </specification>
+  </packagedElement>
 </uml:Profile>
