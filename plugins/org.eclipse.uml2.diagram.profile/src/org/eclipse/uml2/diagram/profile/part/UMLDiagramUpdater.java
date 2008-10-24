@@ -71,7 +71,7 @@ public class UMLDiagramUpdater {
 		case EnumerationLiteralsEditPart.VISUAL_ID:
 			return getEnumerationLiterals_7004SemanticChildren(view);
 		case ProfileProfileLabelsEditPart.VISUAL_ID:
-			return getProfileProfileLabels_7005SemanticChildren(view);
+			return getProfileProfile_imports_7005SemanticChildren(view);
 		case ProfileEditPart.VISUAL_ID: {
 			//We have "dummy" TopLevelNode (with vid = org.eclipse.uml2.diagram.profile.edit.parts.Profile3EditPart.VISUAL_ID). 
 			//The only purpose for this node is to be a container for children (imports, etc)
@@ -188,7 +188,7 @@ public class UMLDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List getProfileProfileLabels_7005SemanticChildren(View view) {
+	public static List getProfileProfile_imports_7005SemanticChildren(View view) {
 		if (false == view.eContainer() instanceof View) {
 			return Collections.EMPTY_LIST;
 		}

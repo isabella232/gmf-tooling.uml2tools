@@ -308,12 +308,12 @@
           xsi:type="gmfmap:FeatureLabelMapping"
           editPattern="">
         <diagramLabel
-            href="profileDiagram_profile.gmfgraph#ProfileLabels_name"/>
+            href="profileDiagram_auxiliary.gmfgraph#SecondaryProfile_name"/>
         <features
             href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//NamedElement/name"/>
       </labelMappings>
       <diagramNode
-          href="profileDiagram_profile.gmfgraph#ProfileLabelContainer"/>
+          href="profileDiagram_auxiliary.gmfgraph#SecondaryProfileNode"/>
       <children
           compartment="//@nodes.4/@ownedChild/@compartments.0">
         <containmentFeature
@@ -326,19 +326,19 @@
           <labelMappings
               xsi:type="gmfmap:FeatureLabelMapping">
             <diagramLabel
-                href="profileDiagram_profile.gmfgraph#ProfileLabelFigure_ImportedElement_name"/>
+                href="classDiagram_auxiliary.gmfgraph#AuxiliaryPureLabel"/>
           </labelMappings>
           <tool
               xsi:type="gmftool:CreationTool"
               href="profiles.gmftool#//@palette/@tools.1/@tools.5"/>
           <diagramNode
-              href="profileDiagram_profile.gmfgraph#ProfileLabelFigure_ImportedElement_name"/>
+              href="classDiagram_auxiliary.gmfgraph#AuxiliaryPureLabel"/>
         </ownedChild>
       </children>
       <compartments
           children="//@nodes.4/@ownedChild/@children.0">
         <compartment
-            href="profileDiagram_profile.gmfgraph#ProfileLabels"/>
+            href="profileDiagram_auxiliary.gmfgraph#profile_imports"/>
       </compartments>
     </ownedChild>
   </nodes>

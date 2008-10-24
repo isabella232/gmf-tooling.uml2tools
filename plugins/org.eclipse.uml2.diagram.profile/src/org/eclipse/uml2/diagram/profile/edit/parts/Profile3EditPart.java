@@ -5,6 +5,7 @@ import java.util.List;
 import org.eclipse.draw2d.Graphics;
 import org.eclipse.draw2d.IFigure;
 import org.eclipse.draw2d.Label;
+import org.eclipse.draw2d.MarginBorder;
 import org.eclipse.draw2d.RectangleFigure;
 import org.eclipse.draw2d.Shape;
 import org.eclipse.draw2d.StackLayout;
@@ -104,15 +105,15 @@ public class Profile3EditPart extends ShapeNodeEditPart implements PrimaryShapeE
 	 * @generated
 	 */
 	protected IFigure createNodeShape() {
-		ProfilelabelsFigure figure = new ProfilelabelsFigure();
+		SecondaryProfileFigure figure = new SecondaryProfileFigure();
 		return primaryShape = figure;
 	}
 
 	/**
 	 * @generated
 	 */
-	public ProfilelabelsFigure getPrimaryShape() {
-		return (ProfilelabelsFigure) primaryShape;
+	public SecondaryProfileFigure getPrimaryShape() {
+		return (SecondaryProfileFigure) primaryShape;
 	}
 
 	/**
@@ -120,11 +121,11 @@ public class Profile3EditPart extends ShapeNodeEditPart implements PrimaryShapeE
 	 */
 	protected boolean addFixedChild(EditPart childEditPart) {
 		if (childEditPart instanceof ProfileName2EditPart) {
-			((ProfileName2EditPart) childEditPart).setLabel(getPrimaryShape().getFigureProfileLabelsFigure_NameFigure());
+			((ProfileName2EditPart) childEditPart).setLabel(getPrimaryShape().getFigureSecondaryProfile_NameLabel());
 			return true;
 		}
 		if (childEditPart instanceof ProfileProfileLabelsEditPart) {
-			IFigure pane = getPrimaryShape().getFigureProfileLabelCompartmentFigure();
+			IFigure pane = getPrimaryShape().getFigureSecondaryProfile_Imports();
 			setupContentPane(pane); // FIXME each comparment should handle his content pane in his own way 
 			pane.add(((ProfileProfileLabelsEditPart) childEditPart).getFigure());
 			return true;
@@ -138,7 +139,7 @@ public class Profile3EditPart extends ShapeNodeEditPart implements PrimaryShapeE
 	protected boolean removeFixedChild(EditPart childEditPart) {
 
 		if (childEditPart instanceof ProfileProfileLabelsEditPart) {
-			IFigure pane = getPrimaryShape().getFigureProfileLabelCompartmentFigure();
+			IFigure pane = getPrimaryShape().getFigureSecondaryProfile_Imports();
 			pane.remove(((ProfileProfileLabelsEditPart) childEditPart).getFigure());
 			return true;
 		}
@@ -170,7 +171,7 @@ public class Profile3EditPart extends ShapeNodeEditPart implements PrimaryShapeE
 	 */
 	protected IFigure getContentPaneFor(IGraphicalEditPart editPart) {
 		if (editPart instanceof ProfileProfileLabelsEditPart) {
-			return getPrimaryShape().getFigureProfileLabelCompartmentFigure();
+			return getPrimaryShape().getFigureSecondaryProfile_Imports();
 		}
 		return getContentPane();
 	}
@@ -179,7 +180,7 @@ public class Profile3EditPart extends ShapeNodeEditPart implements PrimaryShapeE
 	 * @generated
 	 */
 	protected NodeFigure createNodePlate() {
-		DefaultSizeNodeFigure result = new DefaultSizeNodeFigure(getMapMode().DPtoLP(40), getMapMode().DPtoLP(40));
+		DefaultSizeNodeFigure result = new DefaultSizeNodeFigure(getMapMode().DPtoLP(100), getMapMode().DPtoLP(60));
 		return result;
 	}
 
@@ -319,22 +320,27 @@ public class Profile3EditPart extends ShapeNodeEditPart implements PrimaryShapeE
 	/**
 	 * @generated
 	 */
-	public class ProfilelabelsFigure extends Shape {
+	public class SecondaryProfileFigure extends Shape {
 
 		/**
 		 * @generated
 		 */
-		private Label fFigureProfileLabelsFigure_NameFigure;
+		private Label fFigureSecondaryProfile_ProfileLabel;
 
 		/**
 		 * @generated
 		 */
-		private RectangleFigure fFigureProfileLabelCompartmentFigure;
+		private Label fFigureSecondaryProfile_NameLabel;
 
 		/**
 		 * @generated
 		 */
-		public ProfilelabelsFigure() {
+		private RectangleFigure fFigureSecondaryProfile_Imports;
+
+		/**
+		 * @generated
+		 */
+		public SecondaryProfileFigure() {
 
 			ToolbarLayout layoutThis = new ToolbarLayout();
 			layoutThis.setStretchMinorAxis(true);
@@ -351,6 +357,8 @@ public class Profile3EditPart extends ShapeNodeEditPart implements PrimaryShapeE
 			this.addPoint(new Point(getMapMode().DPtoLP(40), getMapMode().DPtoLP(35)));
 			this.addPoint(new Point(getMapMode().DPtoLP(40), getMapMode().DPtoLP(0)));
 			this.setFill(true);
+
+			this.setBorder(new MarginBorder(getMapMode().DPtoLP(5), getMapMode().DPtoLP(5), getMapMode().DPtoLP(13), getMapMode().DPtoLP(10)));
 			createContents();
 		}
 
@@ -359,36 +367,21 @@ public class Profile3EditPart extends ShapeNodeEditPart implements PrimaryShapeE
 		 */
 		private void createContents() {
 
-			Label profileLabels_profileFigure0 = new Label();
-			profileLabels_profileFigure0.setText("\u00ABprofile\u00BB");
+			fFigureSecondaryProfile_ProfileLabel = new Label();
+			fFigureSecondaryProfile_ProfileLabel.setText("Profile");
 
-			this.add(profileLabels_profileFigure0);
+			this.add(fFigureSecondaryProfile_ProfileLabel);
 
-			fFigureProfileLabelsFigure_NameFigure = new Label();
-			fFigureProfileLabelsFigure_NameFigure.setText("");
+			fFigureSecondaryProfile_NameLabel = new Label();
+			fFigureSecondaryProfile_NameLabel.setText("");
 
-			this.add(fFigureProfileLabelsFigure_NameFigure);
+			this.add(fFigureSecondaryProfile_NameLabel);
 
-			fFigureProfileLabelCompartmentFigure = new RectangleFigure();
-			fFigureProfileLabelCompartmentFigure.setFill(false);
-			fFigureProfileLabelCompartmentFigure.setOutline(false);
+			fFigureSecondaryProfile_Imports = new RectangleFigure();
+			fFigureSecondaryProfile_Imports.setOutline(false);
 
-			this.add(fFigureProfileLabelCompartmentFigure);
+			this.add(fFigureSecondaryProfile_Imports);
 
-		}
-
-		/**
-		 * @generated
-		 */
-		public Label getFigureProfileLabelsFigure_NameFigure() {
-			return fFigureProfileLabelsFigure_NameFigure;
-		}
-
-		/**
-		 * @generated
-		 */
-		public RectangleFigure getFigureProfileLabelCompartmentFigure() {
-			return fFigureProfileLabelCompartmentFigure;
 		}
 
 		/**
@@ -467,6 +460,27 @@ public class Profile3EditPart extends ShapeNodeEditPart implements PrimaryShapeE
 				scaled[i + 1] = (int) Math.floor(scaled[i + 1] * yScale);
 			}
 			return scaled;
+		}
+
+		/**
+		 * @generated
+		 */
+		public Label getFigureSecondaryProfile_ProfileLabel() {
+			return fFigureSecondaryProfile_ProfileLabel;
+		}
+
+		/**
+		 * @generated
+		 */
+		public Label getFigureSecondaryProfile_NameLabel() {
+			return fFigureSecondaryProfile_NameLabel;
+		}
+
+		/**
+		 * @generated
+		 */
+		public RectangleFigure getFigureSecondaryProfile_Imports() {
+			return fFigureSecondaryProfile_Imports;
 		}
 
 	}
