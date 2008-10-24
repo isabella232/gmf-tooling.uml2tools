@@ -174,7 +174,6 @@ public class CommentEditPart extends ShapeNodeEditPart implements PrimaryShapeEd
 	 * @generated
 	 */
 	protected IFigure getContentPaneFor(IGraphicalEditPart editPart) {
-
 		return getContentPane();
 	}
 

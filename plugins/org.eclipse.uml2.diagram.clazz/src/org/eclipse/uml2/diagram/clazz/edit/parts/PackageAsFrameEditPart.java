@@ -203,7 +203,6 @@ public class PackageAsFrameEditPart extends ShapeNodeEditPart implements Primary
 	 * @generated
 	 */
 	protected IFigure getContentPaneFor(IGraphicalEditPart editPart) {
-
 		if (editPart instanceof PackageAsFrameContentsEditPart) {
 			return getPrimaryShape().getPackageAsFrameFigure_contents();
 		}

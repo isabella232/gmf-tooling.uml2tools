@@ -174,7 +174,6 @@ public class RedefinableTemplateSignatureEditPart extends AbstractBorderItemEdit
 	 * @generated
 	 */
 	protected IFigure getContentPaneFor(IGraphicalEditPart editPart) {
-
 		return getContentPane();
 	}
 
