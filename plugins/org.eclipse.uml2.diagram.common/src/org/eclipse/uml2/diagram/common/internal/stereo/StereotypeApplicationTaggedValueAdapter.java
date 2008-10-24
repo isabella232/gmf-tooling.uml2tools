@@ -22,7 +22,23 @@ public class StereotypeApplicationTaggedValueAdapter extends AdapterImpl {
 
 	@Override
 	public void notifyChanged(Notification notification) {
+		System.out.println(notification);
 		if (Notification.SET == notification.getEventType() && notification.getFeature() instanceof EStructuralFeature) {
+			EStructuralFeature feature = (EStructuralFeature) notification.getFeature();
+			EObject stereotypeApplication = (EObject) getTarget();
+			Stereotype stereo = UMLUtil.getStereotype(stereotypeApplication);
+			Property originalProperty = findOriginalProperty(stereo, feature);
+			myListener.taggedValueChanged(UMLUtil.getBaseElement(stereotypeApplication), stereo, originalProperty, notification);
+		}
+		if ((Notification.ADD == notification.getEventType() || Notification.ADD_MANY == notification.getEventType()) && notification.getFeature() instanceof EStructuralFeature) {
+			EStructuralFeature feature = (EStructuralFeature) notification.getFeature();
+			EObject stereotypeApplication = (EObject) getTarget();
+			Stereotype stereo = UMLUtil.getStereotype(stereotypeApplication);
+			Property originalProperty = findOriginalProperty(stereo, feature);
+			myListener.taggedValueChanged(UMLUtil.getBaseElement(stereotypeApplication), stereo, originalProperty, notification);
+		}
+		if ((Notification.REMOVE == notification.getEventType()) && notification.getFeature() instanceof EStructuralFeature) {
+			// Notification.REMOVE_MANY is called on any property change
 			EStructuralFeature feature = (EStructuralFeature) notification.getFeature();
 			EObject stereotypeApplication = (EObject) getTarget();
 			Stereotype stereo = UMLUtil.getStereotype(stereotypeApplication);

@@ -46,7 +46,8 @@ Export-Package: org.eclipse.uml2.diagram.common.actions,
  org.eclipse.uml2.diagram.common.pathmap,
  org.eclipse.uml2.diagram.common.preferences,
  org.eclipse.uml2.diagram.common.providers,
- org.eclipse.uml2.diagram.common.sheet
+ org.eclipse.uml2.diagram.common.sheet,
+ org.eclipse.uml2.diagram.common.stereo
 Bundle-Vendor: %providerName
 Bundle-ClassPath: .
 Bundle-ActivationPolicy: lazy
