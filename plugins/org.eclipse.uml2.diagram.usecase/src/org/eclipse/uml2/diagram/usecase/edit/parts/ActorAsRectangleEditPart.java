@@ -173,7 +173,6 @@ public class ActorAsRectangleEditPart extends ShapeNodeEditPart implements Prima
 	 * @generated
 	 */
 	protected IFigure getContentPaneFor(IGraphicalEditPart editPart) {
-
 		return getContentPane();
 	}
 

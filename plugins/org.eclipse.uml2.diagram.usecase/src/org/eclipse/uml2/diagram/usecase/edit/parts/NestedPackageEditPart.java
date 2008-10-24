@@ -199,7 +199,6 @@ public class NestedPackageEditPart extends ShapeNodeEditPart implements PrimaryS
 	 * @generated
 	 */
 	protected IFigure getContentPaneFor(IGraphicalEditPart editPart) {
-
 		if (editPart instanceof PackageFramecontentsEditPart) {
 			return getPrimaryShape().getPackageAsFrameFigure_contents();
 		}

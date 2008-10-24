@@ -159,7 +159,6 @@ public class ElementImportEditPart extends ShapeNodeEditPart implements PrimaryS
 	 * @generated
 	 */
 	protected IFigure getContentPaneFor(IGraphicalEditPart editPart) {
-
 		return getContentPane();
 	}
 

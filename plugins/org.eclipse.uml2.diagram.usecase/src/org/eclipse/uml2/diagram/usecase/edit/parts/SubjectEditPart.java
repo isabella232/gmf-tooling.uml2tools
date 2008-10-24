@@ -195,7 +195,6 @@ public class SubjectEditPart extends ShapeNodeEditPart implements PrimaryShapeEd
 	 * @generated
 	 */
 	protected IFigure getContentPaneFor(IGraphicalEditPart editPart) {
-
 		if (editPart instanceof SubjectUsecasesEditPart) {
 			return getPrimaryShape().getUseCaseSubjectFigure_contents();
 		}
