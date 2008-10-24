@@ -26,7 +26,7 @@ public class AssociationStereotypeViewFactory extends AbstractLabelViewFactory {
 		Location location = (Location) view.getLayoutConstraint();
 		IMapMode mapMode = MeasurementUnitHelper.getMapMode(containerView.getDiagram().getMeasurementUnit());
 		location.setX(mapMode.DPtoLP(0));
-		location.setY(mapMode.DPtoLP(60));
+		location.setY(mapMode.DPtoLP(40));
 		return view;
 	}
 

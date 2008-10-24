@@ -92,7 +92,7 @@ public class AssociationStereotypeEditPart extends LabelEditPart implements ITex
 	 * @generated
 	 */
 	static {
-		registerSnapBackPosition(UMLVisualIDRegistry.getType(org.eclipse.uml2.diagram.clazz.edit.parts.AssociationStereotypeEditPart.VISUAL_ID), new Point(0, 60));
+		registerSnapBackPosition(UMLVisualIDRegistry.getType(org.eclipse.uml2.diagram.clazz.edit.parts.AssociationStereotypeEditPart.VISUAL_ID), new Point(0, 40));
 	}
 
 	/**
