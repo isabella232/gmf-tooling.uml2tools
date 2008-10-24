@@ -4440,11 +4440,11 @@
     </links>
     <links
         visualID="4019"
-        editPartClassName="Comment2EditPart"
-        itemSemanticEditPolicyClassName="Comment2ItemSemanticEditPolicy"
-        notationViewFactoryClassName="Comment2ViewFactory"
-        createCommandClassName="Comment2CreateCommand"
-        reorientCommandClassName="CommentReorientCommand">
+        editPartClassName="CommentAnnotatedElementEditPart"
+        itemSemanticEditPolicyClassName="CommentAnnotatedElementItemSemanticEditPolicy"
+        notationViewFactoryClassName="CommentAnnotatedElementViewFactory"
+        createCommandClassName="CommentAnnotatedElementCreateCommand"
+        reorientCommandClassName="CommentAnnotatedElementReorientCommand">
       <diagramRunTimeClass
           href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Edge"/>
       <elementType
