@@ -153,7 +153,6 @@ public class Region2EditPart extends ShapeNodeEditPart implements PrimaryShapeEd
 	 * @generated
 	 */
 	protected IFigure getContentPaneFor(IGraphicalEditPart editPart) {
-
 		if (editPart instanceof RegionSubvertices2EditPart) {
 			return getPrimaryShape().getFigureRegionFigure_Compartment();
 		}

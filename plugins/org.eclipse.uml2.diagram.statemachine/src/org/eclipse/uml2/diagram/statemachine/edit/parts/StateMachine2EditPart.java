@@ -203,7 +203,6 @@ public class StateMachine2EditPart extends AbstractBorderedShapeEditPart impleme
 	 * @generated
 	 */
 	protected IFigure getContentPaneForGen(IGraphicalEditPart editPart) {
-
 		if (editPart instanceof IBorderItemEditPart) {
 			return getBorderedFigure().getBorderItemContainer();
 		}
