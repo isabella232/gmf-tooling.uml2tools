@@ -668,12 +668,6 @@
             category="org.eclipse.uml2.uml.diagram.statemachine.general"
             class="org.eclipse.uml2.diagram.statemachine.preferences.DiagramRulersAndGridPreferencePage">
       </page>
-      <page
-            id="org.eclipse.uml2.uml.diagram.statemachine.pathmaps"
-            name="%prefpage.org.eclipse.uml2.uml.diagram.statemachine.pathmaps"
-            category="org.eclipse.uml2.uml.diagram.statemachine.general"
-            class="org.eclipse.gmf.runtime.emf.ui.preferences.PathmapsPreferencePage">
-      </page>
    </extension><extension point="org.eclipse.ui.popupMenus">
       <?gmfgen generated="true"?>
       <objectContribution
@@ -744,15 +738,7 @@
       </page>
    </extension>
    
-   <extension point="org.eclipse.gmf.runtime.common.ui.services.action.contributionItemProviders">
-      <?gmfgen generated="true"?>
-      <contributionItemProvider class="org.eclipse.uml2.diagram.statemachine.providers.UMLContributionItemProvider">
-         <Priority name="Low"/>
-         <partContribution id="org.eclipse.uml2.diagram.statemachine.part.UMLDiagramEditorID">
-            <partAction menubarPath="/file/print" id="printPreviewAction"/>
-         </partContribution>
-      </contributionItemProvider>
-   </extension>
+   
 
 
 
