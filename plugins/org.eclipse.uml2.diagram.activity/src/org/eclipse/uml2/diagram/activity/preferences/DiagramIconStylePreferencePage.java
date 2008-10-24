@@ -63,7 +63,6 @@ public class DiagramIconStylePreferencePage extends IconStylePreferencePage {
 	@Override
 	protected void initHelp() {
 		// TODO Auto-generated method stub
-
-	};
+	}
 
 }
