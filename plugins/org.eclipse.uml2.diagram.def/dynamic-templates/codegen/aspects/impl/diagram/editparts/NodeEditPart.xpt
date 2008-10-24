@@ -248,41 +248,6 @@
 	«ENDIF»
 «ENDAROUND»
 
-«AROUND installCreationRolePolicy FOR gmfgen::GenNode-»
-	«REM»The only difference is that we are using the UML2T specific subclass of CreationEditPolicy«ENDREM»«-»
-	«IF hasChildren() || hasChildrenInListCompartments()-»
-		installEditPolicy(org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles.CREATION_ROLE,
-				«EXPAND aspects::impl::diagram::editparts::creationEditPolicy::newInstance»«IF hasChildrenInListCompartments()» {
-			public org.eclipse.gef.commands.Command getCommand(org.eclipse.gef.Request request) {
-				if (understandsRequest(request)) {
-					if (request instanceof org.eclipse.gmf.runtime.diagram.ui.requests.CreateViewAndElementRequest) {
-						org.eclipse.gmf.runtime.diagram.core.edithelpers.CreateElementRequestAdapter adapter =
-							((org.eclipse.gmf.runtime.diagram.ui.requests.CreateViewAndElementRequest) request).
-								getViewAndElementDescriptor().getCreateElementRequestAdapter();
-						org.eclipse.gmf.runtime.emf.type.core.IElementType type =
-							(org.eclipse.gmf.runtime.emf.type.core.IElementType) adapter.getAdapter(
-								org.eclipse.gmf.runtime.emf.type.core.IElementType.class);
-						«FOREACH compartments AS compartment-»
-							«IF listCompartmentHasChildren(compartment)-»
-								«FOREACH compartment.childNodes AS childNode-»
-						if (type == «getDiagram().getElementTypesQualifiedClassName()».«childNode.getUniqueIdentifier()») {
-							org.eclipse.gef.EditPart compartmentEditPart =
-								getChildBySemanticHint(«EXPAND xpt::editor::VisualIDRegistry::typeMethodCall FOR compartment»);
-							return compartmentEditPart == null ? null : compartmentEditPart.getCommand(request);
-						}
-								«ENDFOREACH-»
-							«ENDIF-»
-						«ENDFOREACH-»
-					}
-					return super.getCommand(request);
-				}
-				return null;
-			}
-		}
-		«ENDIF»);
-	«ENDIF-»
-«ENDAROUND»
-
 «AROUND createLayoutEditPolicyBody FOR gmfgen::GenNode-»
 	«IF gmfgen::ViewmapLayoutType::XY_LAYOUT.value == getLayoutType().value-»
 		org.eclipse.gmf.runtime.diagram.ui.editpolicies.XYLayoutEditPolicy lep = new org.eclipse.uml2.diagram.common.editpolicies.XYLayoutEditPolicyWithMovableLabels() { //UML2Tools specific drag&drop workaround
@@ -310,3 +275,5 @@
 	«EXPAND aspects::impl::diagram::editparts::updateDescriptionEditPolicy::installUpdateDescriptionEditPolicy-»
 	«targetDef.proceed()»
 «ENDAROUND»
+
+«AROUND _creationEditPolicyNewInstance FOR gmfgen::GenNode»«EXPAND aspects::impl::diagram::editparts::creationEditPolicy::newInstance»«ENDAROUND»
