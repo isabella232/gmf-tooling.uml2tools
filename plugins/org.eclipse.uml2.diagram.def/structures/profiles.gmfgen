@@ -451,6 +451,30 @@
               href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/NamedElement/name"/>
         </modelFacet>
       </labels>
+      <labels
+          visualID="5011"
+          editPartClassName="EnumerationQualifiedNameEditPart"
+          itemSemanticEditPolicyClassName="EnumerationQualifiedNameItemSemanticEditPolicy"
+          notationViewFactoryClassName="EnumerationQualifiedNameViewFactory"
+          readOnly="true">
+        <diagramRunTimeClass
+            href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
+        <viewmap
+            xsi:type="gmfgen:ParentAssignedViewmap"
+            getterName="getFigureClassFigure_stereo"
+            figureQualifiedClassName="org.eclipse.draw2d.Label">
+          <attributes
+              xsi:type="gmfgen:StyleAttributes"
+              fixedFont="true"/>
+        </viewmap>
+        <modelFacet
+            xsi:type="gmfgen:FeatureLabelModelFacet"
+            parser="//@labelParsers/@implementations.3"
+            editPattern="">
+          <metaFeatures
+              href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/NamedElement/qualifiedName"/>
+        </modelFacet>
+      </labels>
     </topLevelNodes>
     <topLevelNodes
         visualID="2006"
@@ -1317,7 +1341,11 @@
         uses="//@diagram/@topLevelNodes.0/@labels.0/@modelFacet //@diagram/@childNodes.2/@labelModelFacet //@diagram/@topLevelNodes.1/@labels.0/@modelFacet //@diagram/@childNodes.3/@labelModelFacet //@diagram/@topLevelNodes.2/@labels.0/@modelFacet //@diagram/@childNodes.4/@labelModelFacet //@diagram/@topLevelNodes.4/@labels.0/@modelFacet"/>
     <implementations
         xsi:type="gmfgen:CustomParser"
-        uses="//@diagram/@topLevelNodes.5/@labels.0/@modelFacet //@diagram/@childNodes.1/@labelModelFacet"
+        uses="//@diagram/@childNodes.1/@labelModelFacet //@diagram/@topLevelNodes.5/@labels.0/@modelFacet"
         qualifiedName="org.eclipse.uml2.diagram.common.parser.valuespec.ValueSpecificationParser.ConstraintParser"/>
+    <implementations
+        xsi:type="gmfgen:CustomParser"
+        uses="//@diagram/@topLevelNodes.2/@labels.1/@modelFacet"
+        qualifiedName="org.eclipse.uml2.diagram.common.parser.stereotype.ClassifierAppliedStereotypeParser"/>
   </labelParsers>
 </gmfgen:GenEditorGenerator>

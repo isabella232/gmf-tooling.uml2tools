@@ -15,6 +15,7 @@ import org.eclipse.uml2.diagram.profile.edit.parts.EnumerationEditPart;
 import org.eclipse.uml2.diagram.profile.edit.parts.EnumerationLiteralEditPart;
 import org.eclipse.uml2.diagram.profile.edit.parts.EnumerationLiteralsEditPart;
 import org.eclipse.uml2.diagram.profile.edit.parts.EnumerationNameEditPart;
+import org.eclipse.uml2.diagram.profile.edit.parts.EnumerationQualifiedNameEditPart;
 import org.eclipse.uml2.diagram.profile.edit.parts.ExtensionEditPart;
 import org.eclipse.uml2.diagram.profile.edit.parts.ExtensionLink_requiredEditPart;
 import org.eclipse.uml2.diagram.profile.edit.parts.GeneralizationEditPart;
@@ -254,6 +255,9 @@ public class UMLVisualIDRegistry {
 			break;
 		case EnumerationEditPart.VISUAL_ID:
 			if (EnumerationNameEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			if (EnumerationQualifiedNameEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
 			if (EnumerationLiteralsEditPart.VISUAL_ID == nodeVisualID) {

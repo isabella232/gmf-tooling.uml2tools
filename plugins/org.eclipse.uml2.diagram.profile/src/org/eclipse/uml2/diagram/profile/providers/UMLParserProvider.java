@@ -14,12 +14,14 @@ import org.eclipse.gmf.runtime.emf.ui.services.parser.ParserHintAdapter;
 import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.uml2.diagram.common.parser.imports.ElementImportParser;
 import org.eclipse.uml2.diagram.common.parser.imports.ElementImportProvider;
+import org.eclipse.uml2.diagram.common.parser.stereotype.ClassifierAppliedStereotypeParser;
 import org.eclipse.uml2.diagram.common.parser.valuespec.ValueSpecificationParser;
 import org.eclipse.uml2.diagram.profile.edit.parts.ConstraintEditPart;
 import org.eclipse.uml2.diagram.profile.edit.parts.ConstraintNameEditPart;
 import org.eclipse.uml2.diagram.profile.edit.parts.ElementImport2EditPart;
 import org.eclipse.uml2.diagram.profile.edit.parts.EnumerationLiteralEditPart;
 import org.eclipse.uml2.diagram.profile.edit.parts.EnumerationNameEditPart;
+import org.eclipse.uml2.diagram.profile.edit.parts.EnumerationQualifiedNameEditPart;
 import org.eclipse.uml2.diagram.profile.edit.parts.ProfileName2EditPart;
 import org.eclipse.uml2.diagram.profile.edit.parts.ProfileNameEditPart;
 import org.eclipse.uml2.diagram.profile.edit.parts.Stereotype2EditPart;
@@ -103,6 +105,21 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 		EAttribute[] features = new EAttribute[] { UMLPackage.eINSTANCE.getNamedElement_Name() };
 		Parser_0_0 parser = new Parser_0_0(features);
 		return parser;
+	}
+
+	/**
+	 * @generated
+	 */
+	private ClassifierAppliedStereotypeParser enumerationQualifiedName_5011Parser;
+
+	/**
+	 * @generated
+	 */
+	private IParser getEnumerationQualifiedName_5011Parser() {
+		if (enumerationQualifiedName_5011Parser == null) {
+			enumerationQualifiedName_5011Parser = new ClassifierAppliedStereotypeParser();
+		}
+		return enumerationQualifiedName_5011Parser;
 	}
 
 	/**
@@ -251,6 +268,8 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 			return getProfileName_5003Parser();
 		case EnumerationNameEditPart.VISUAL_ID:
 			return getEnumerationName_5005Parser();
+		case EnumerationQualifiedNameEditPart.VISUAL_ID:
+			return getEnumerationQualifiedName_5011Parser();
 		case ProfileName2EditPart.VISUAL_ID:
 			return getProfileName_5009Parser();
 		case ConstraintNameEditPart.VISUAL_ID:

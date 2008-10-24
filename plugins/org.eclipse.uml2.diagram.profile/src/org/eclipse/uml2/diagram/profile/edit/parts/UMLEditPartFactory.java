@@ -49,6 +49,9 @@ public class UMLEditPartFactory implements EditPartFactory {
 			case EnumerationNameEditPart.VISUAL_ID:
 				return new EnumerationNameEditPart(view);
 
+			case EnumerationQualifiedNameEditPart.VISUAL_ID:
+				return new EnumerationQualifiedNameEditPart(view);
+
 			case ElementImportEditPart.VISUAL_ID:
 				return new ElementImportEditPart(view);
 

@@ -16,6 +16,7 @@ import org.eclipse.uml2.diagram.profile.edit.parts.EnumerationEditPart;
 import org.eclipse.uml2.diagram.profile.edit.parts.EnumerationLiteralEditPart;
 import org.eclipse.uml2.diagram.profile.edit.parts.EnumerationLiteralsEditPart;
 import org.eclipse.uml2.diagram.profile.edit.parts.EnumerationNameEditPart;
+import org.eclipse.uml2.diagram.profile.edit.parts.EnumerationQualifiedNameEditPart;
 import org.eclipse.uml2.diagram.profile.edit.parts.ExtensionEditPart;
 import org.eclipse.uml2.diagram.profile.edit.parts.ExtensionLink_requiredEditPart;
 import org.eclipse.uml2.diagram.profile.edit.parts.GeneralizationEditPart;
@@ -43,6 +44,7 @@ import org.eclipse.uml2.diagram.profile.view.factories.ElementImportViewFactory;
 import org.eclipse.uml2.diagram.profile.view.factories.EnumerationLiteralViewFactory;
 import org.eclipse.uml2.diagram.profile.view.factories.EnumerationLiteralsViewFactory;
 import org.eclipse.uml2.diagram.profile.view.factories.EnumerationNameViewFactory;
+import org.eclipse.uml2.diagram.profile.view.factories.EnumerationQualifiedNameViewFactory;
 import org.eclipse.uml2.diagram.profile.view.factories.EnumerationViewFactory;
 import org.eclipse.uml2.diagram.profile.view.factories.ExtensionLink_requiredViewFactory;
 import org.eclipse.uml2.diagram.profile.view.factories.ExtensionViewFactory;
@@ -151,6 +153,7 @@ public class UMLViewProvider extends AbstractViewProvider {
 					}
 					break;
 				case EnumerationNameEditPart.VISUAL_ID:
+				case EnumerationQualifiedNameEditPart.VISUAL_ID:
 				case EnumerationLiteralsEditPart.VISUAL_ID:
 					if (EnumerationEditPart.VISUAL_ID != UMLVisualIDRegistry.getVisualID(containerView) || containerView.getElement() != domainElement) {
 						return null; // wrong container
@@ -205,6 +208,8 @@ public class UMLViewProvider extends AbstractViewProvider {
 			return EnumerationViewFactory.class;
 		case EnumerationNameEditPart.VISUAL_ID:
 			return EnumerationNameViewFactory.class;
+		case EnumerationQualifiedNameEditPart.VISUAL_ID:
+			return EnumerationQualifiedNameViewFactory.class;
 		case ElementImportEditPart.VISUAL_ID:
 			return ElementImportViewFactory.class;
 		case ReferencedMetaclassNode_classNameEditPart.VISUAL_ID:

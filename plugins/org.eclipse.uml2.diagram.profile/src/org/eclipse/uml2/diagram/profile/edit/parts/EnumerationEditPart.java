@@ -148,6 +148,10 @@ public class EnumerationEditPart extends ShapeNodeEditPart implements PrimarySha
 			((EnumerationNameEditPart) childEditPart).setLabel(getPrimaryShape().getFigureClassFigure_name());
 			return true;
 		}
+		if (childEditPart instanceof EnumerationQualifiedNameEditPart) {
+			((EnumerationQualifiedNameEditPart) childEditPart).setLabel(getPrimaryShape().getFigureClassFigure_stereo());
+			return true;
+		}
 		if (childEditPart instanceof EnumerationLiteralsEditPart) {
 			IFigure pane = getPrimaryShape().getFigureClassFigure_LiteralsCompartment();
 			setupContentPane(pane); // FIXME each comparment should handle his content pane in his own way 
