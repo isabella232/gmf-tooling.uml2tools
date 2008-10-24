@@ -186,7 +186,6 @@ public class CentralBufferNodeEditPart extends AbstractBorderedShapeEditPart imp
 	 * @generated
 	 */
 	protected IFigure getContentPaneFor(IGraphicalEditPart editPart) {
-
 		if (editPart instanceof IBorderItemEditPart) {
 			return getBorderedFigure().getBorderItemContainer();
 		}

@@ -181,7 +181,6 @@ public class InputPin7EditPart extends AbstractBorderedShapeEditPart implements 
 	 * @generated
 	 */
 	protected IFigure getContentPaneFor(IGraphicalEditPart editPart) {
-
 		if (editPart instanceof IBorderItemEditPart) {
 			return getBorderedFigure().getBorderItemContainer();
 		}

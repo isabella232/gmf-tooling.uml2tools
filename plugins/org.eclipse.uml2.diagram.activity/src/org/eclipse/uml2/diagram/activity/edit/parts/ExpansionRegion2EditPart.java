@@ -195,7 +195,6 @@ public class ExpansionRegion2EditPart extends ShapeNodeEditPart implements Prima
 	 * @generated
 	 */
 	protected IFigure getContentPaneFor(IGraphicalEditPart editPart) {
-
 		if (editPart instanceof ExpansionRegionExpansionRegionNodeCompartment2EditPart) {
 			return getPrimaryShape().getFigureExpansionRegionFigure_ContentPane();
 		}

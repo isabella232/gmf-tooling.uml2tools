@@ -195,7 +195,6 @@ public class LoopNodeEditPart extends ShapeNodeEditPart implements PrimaryShapeE
 	 * @generated
 	 */
 	protected IFigure getContentPaneFor(IGraphicalEditPart editPart) {
-
 		if (editPart instanceof LoopNodeLoopNodeContentPaneCompartmentEditPart) {
 			return getPrimaryShape().getFigureStructuredActivityFigure_ContentPane();
 		}

@@ -195,7 +195,6 @@ public class ConditionalNodeEditPart extends ShapeNodeEditPart implements Primar
 	 * @generated
 	 */
 	protected IFigure getContentPaneFor(IGraphicalEditPart editPart) {
-
 		if (editPart instanceof ConditionalNodeConditionalNodeCompartmentEditPart) {
 			return getPrimaryShape().getFigureStructuredActivityFigure_ContentPane();
 		}

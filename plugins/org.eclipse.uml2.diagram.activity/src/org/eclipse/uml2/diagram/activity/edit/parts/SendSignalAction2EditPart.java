@@ -184,7 +184,6 @@ public class SendSignalAction2EditPart extends ShapeNodeEditPart implements Prim
 	 * @generated
 	 */
 	protected IFigure getContentPaneFor(IGraphicalEditPart editPart) {
-
 		return getContentPane();
 	}
 

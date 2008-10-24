@@ -184,7 +184,6 @@ public class AcceptEventAction5EditPart extends ShapeNodeEditPart implements Pri
 	 * @generated
 	 */
 	protected IFigure getContentPaneFor(IGraphicalEditPart editPart) {
-
 		return getContentPane();
 	}
 

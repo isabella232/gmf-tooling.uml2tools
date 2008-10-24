@@ -231,7 +231,6 @@ public class AddStructuralFeatureValueAction3EditPart extends AbstractBorderedSh
 	 * @generated
 	 */
 	protected IFigure getContentPaneFor(IGraphicalEditPart editPart) {
-
 		if (editPart instanceof IBorderItemEditPart) {
 			return getBorderedFigure().getBorderItemContainer();
 		}

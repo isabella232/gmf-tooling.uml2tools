@@ -184,7 +184,6 @@ public class SendSignalActionEditPart extends ShapeNodeEditPart implements Prima
 	 * @generated
 	 */
 	protected IFigure getContentPaneFor(IGraphicalEditPart editPart) {
-
 		return getContentPane();
 	}
 

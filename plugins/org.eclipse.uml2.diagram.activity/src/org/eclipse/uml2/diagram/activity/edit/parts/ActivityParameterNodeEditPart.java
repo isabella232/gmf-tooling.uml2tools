@@ -166,7 +166,6 @@ public class ActivityParameterNodeEditPart extends AbstractBorderItemEditPart im
 	 * @generated
 	 */
 	protected IFigure getContentPaneFor(IGraphicalEditPart editPart) {
-
 		return getContentPane();
 	}
 

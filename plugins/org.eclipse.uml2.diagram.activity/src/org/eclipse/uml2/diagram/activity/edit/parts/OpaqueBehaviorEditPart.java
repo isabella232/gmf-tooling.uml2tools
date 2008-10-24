@@ -148,7 +148,6 @@ public class OpaqueBehaviorEditPart extends ShapeNodeEditPart implements Primary
 	 * @generated
 	 */
 	protected IFigure getContentPaneFor(IGraphicalEditPart editPart) {
-
 		return getContentPane();
 	}
 

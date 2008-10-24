@@ -195,7 +195,6 @@ public class StructuredActivityNodeEditPart extends ShapeNodeEditPart implements
 	 * @generated
 	 */
 	protected IFigure getContentPaneFor(IGraphicalEditPart editPart) {
-
 		if (editPart instanceof StructuredActivityNodeStructuredActivityContentPaneCompartmentEditPart) {
 			return getPrimaryShape().getFigureStructuredActivityFigure_ContentPane();
 		}

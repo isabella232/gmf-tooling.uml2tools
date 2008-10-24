@@ -231,7 +231,6 @@ public class CallOperationAction2EditPart extends AbstractBorderedShapeEditPart 
 	 * @generated
 	 */
 	protected IFigure getContentPaneFor(IGraphicalEditPart editPart) {
-
 		if (editPart instanceof IBorderItemEditPart) {
 			return getBorderedFigure().getBorderItemContainer();
 		}
