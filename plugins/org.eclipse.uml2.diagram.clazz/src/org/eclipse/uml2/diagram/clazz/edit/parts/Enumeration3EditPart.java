@@ -108,31 +108,7 @@ public class Enumeration3EditPart extends AbstractBorderedShapeEditPart implemen
 		if (UMLVisualIDRegistry.isShortcutDescendant(getNotationView())) {
 			installEditPolicy(UpdateDescriptionEditPolicy.ROLE, new UpdateDescriptionEditPolicy(UMLDiagramUpdater.TYPED_ADAPTER, true));
 		}
-		installEditPolicy(EditPolicyRoles.CREATION_ROLE, new CreationEditPolicyWithCustomReparent(UMLVisualIDRegistry.TYPED_ADAPTER) {
-
-			public Command getCommand(Request request) {
-				if (understandsRequest(request)) {
-					if (request instanceof CreateViewAndElementRequest) {
-						CreateElementRequestAdapter adapter = ((CreateViewAndElementRequest) request).getViewAndElementDescriptor().getCreateElementRequestAdapter();
-						IElementType type = (IElementType) adapter.getAdapter(IElementType.class);
-						if (type == UMLElementTypes.EnumerationLiteral_3016) {
-							EditPart compartmentEditPart = getChildBySemanticHint(UMLVisualIDRegistry.getType(EnumerationLiterals2EditPart.VISUAL_ID));
-							return compartmentEditPart == null ? null : compartmentEditPart.getCommand(request);
-						}
-						if (type == UMLElementTypes.Property_3023) {
-							EditPart compartmentEditPart = getChildBySemanticHint(UMLVisualIDRegistry.getType(EnumerationAttributes2EditPart.VISUAL_ID));
-							return compartmentEditPart == null ? null : compartmentEditPart.getCommand(request);
-						}
-						if (type == UMLElementTypes.Operation_3024) {
-							EditPart compartmentEditPart = getChildBySemanticHint(UMLVisualIDRegistry.getType(EnumerationOperations2EditPart.VISUAL_ID));
-							return compartmentEditPart == null ? null : compartmentEditPart.getCommand(request);
-						}
-					}
-					return super.getCommand(request);
-				}
-				return null;
-			}
-		});
+		installEditPolicy(EditPolicyRoles.CREATION_ROLE, new CreationEditPolicyWithCustomReparent(UMLVisualIDRegistry.TYPED_ADAPTER));
 		super.createDefaultEditPolicies();
 		installEditPolicy(EditPolicyRoles.SEMANTIC_ROLE, new Enumeration3ItemSemanticEditPolicy());
 		installEditPolicy(EditPolicyRoles.DRAG_DROP_ROLE, new DragDropEditPolicy());
@@ -276,7 +252,6 @@ public class Enumeration3EditPart extends AbstractBorderedShapeEditPart implemen
 	 * @generated
 	 */
 	protected IFigure getContentPaneFor(IGraphicalEditPart editPart) {
-
 		if (editPart instanceof EnumerationLiterals2EditPart) {
 			return getPrimaryShape().getFigureClassFigure_LiteralsCompartment();
 		}
@@ -1132,6 +1107,26 @@ public class Enumeration3EditPart extends AbstractBorderedShapeEditPart implemen
 			types.add(UMLElementTypes.Comment_2018);
 		}
 		return types;
+	}
+
+	/**
+	 * @generated
+	 */
+	public EditPart getTargetEditPart(Request request) {
+		if (request instanceof CreateViewAndElementRequest) {
+			CreateElementRequestAdapter adapter = ((CreateViewAndElementRequest) request).getViewAndElementDescriptor().getCreateElementRequestAdapter();
+			IElementType type = (IElementType) adapter.getAdapter(IElementType.class);
+			if (type == UMLElementTypes.EnumerationLiteral_3016) {
+				return getChildBySemanticHint(UMLVisualIDRegistry.getType(EnumerationLiterals2EditPart.VISUAL_ID));
+			}
+			if (type == UMLElementTypes.Property_3023) {
+				return getChildBySemanticHint(UMLVisualIDRegistry.getType(EnumerationAttributes2EditPart.VISUAL_ID));
+			}
+			if (type == UMLElementTypes.Operation_3024) {
+				return getChildBySemanticHint(UMLVisualIDRegistry.getType(EnumerationOperations2EditPart.VISUAL_ID));
+			}
+		}
+		return super.getTargetEditPart(request);
 	}
 
 	/**

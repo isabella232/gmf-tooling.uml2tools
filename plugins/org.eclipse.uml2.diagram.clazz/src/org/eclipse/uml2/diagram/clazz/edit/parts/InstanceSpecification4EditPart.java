@@ -96,27 +96,7 @@ public class InstanceSpecification4EditPart extends ShapeNodeEditPart implements
 		if (UMLVisualIDRegistry.isShortcutDescendant(getNotationView())) {
 			installEditPolicy(UpdateDescriptionEditPolicy.ROLE, new UpdateDescriptionEditPolicy(UMLDiagramUpdater.TYPED_ADAPTER, true));
 		}
-		installEditPolicy(EditPolicyRoles.CREATION_ROLE, new CreationEditPolicyWithCustomReparent(UMLVisualIDRegistry.TYPED_ADAPTER) {
-
-			public Command getCommand(Request request) {
-				if (understandsRequest(request)) {
-					if (request instanceof CreateViewAndElementRequest) {
-						CreateElementRequestAdapter adapter = ((CreateViewAndElementRequest) request).getViewAndElementDescriptor().getCreateElementRequestAdapter();
-						IElementType type = (IElementType) adapter.getAdapter(IElementType.class);
-						if (type == UMLElementTypes.LiteralString_3038) {
-							EditPart compartmentEditPart = getChildBySemanticHint(UMLVisualIDRegistry.getType(InstanceSpecificationValueEditPart.VISUAL_ID));
-							return compartmentEditPart == null ? null : compartmentEditPart.getCommand(request);
-						}
-						if (type == UMLElementTypes.Expression_3040) {
-							EditPart compartmentEditPart = getChildBySemanticHint(UMLVisualIDRegistry.getType(InstanceSpecificationValueEditPart.VISUAL_ID));
-							return compartmentEditPart == null ? null : compartmentEditPart.getCommand(request);
-						}
-					}
-					return super.getCommand(request);
-				}
-				return null;
-			}
-		});
+		installEditPolicy(EditPolicyRoles.CREATION_ROLE, new CreationEditPolicyWithCustomReparent(UMLVisualIDRegistry.TYPED_ADAPTER));
 		super.createDefaultEditPolicies();
 		installEditPolicy(EditPolicyRoles.SEMANTIC_ROLE, new InstanceSpecification4ItemSemanticEditPolicy());
 		installEditPolicy(EditPolicyRoles.DRAG_DROP_ROLE, new DragDropEditPolicy());
@@ -221,7 +201,6 @@ public class InstanceSpecification4EditPart extends ShapeNodeEditPart implements
 	 * @generated
 	 */
 	protected IFigure getContentPaneFor(IGraphicalEditPart editPart) {
-
 		if (editPart instanceof InstanceSpecificationValueEditPart) {
 			return getPrimaryShape().getFigureRectangleInstanceNode_ValueLabel();
 		}
@@ -825,6 +804,23 @@ public class InstanceSpecification4EditPart extends ShapeNodeEditPart implements
 			types.add(UMLElementTypes.Comment_2018);
 		}
 		return types;
+	}
+
+	/**
+	 * @generated
+	 */
+	public EditPart getTargetEditPart(Request request) {
+		if (request instanceof CreateViewAndElementRequest) {
+			CreateElementRequestAdapter adapter = ((CreateViewAndElementRequest) request).getViewAndElementDescriptor().getCreateElementRequestAdapter();
+			IElementType type = (IElementType) adapter.getAdapter(IElementType.class);
+			if (type == UMLElementTypes.LiteralString_3038) {
+				return getChildBySemanticHint(UMLVisualIDRegistry.getType(InstanceSpecificationValueEditPart.VISUAL_ID));
+			}
+			if (type == UMLElementTypes.Expression_3040) {
+				return getChildBySemanticHint(UMLVisualIDRegistry.getType(InstanceSpecificationValueEditPart.VISUAL_ID));
+			}
+		}
+		return super.getTargetEditPart(request);
 	}
 
 	/**

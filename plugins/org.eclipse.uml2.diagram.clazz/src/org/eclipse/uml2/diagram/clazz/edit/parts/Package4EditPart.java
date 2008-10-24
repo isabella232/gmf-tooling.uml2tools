@@ -78,23 +78,7 @@ public class Package4EditPart extends ShapeNodeEditPart implements PrimaryShapeE
 		if (UMLVisualIDRegistry.isShortcutDescendant(getNotationView())) {
 			installEditPolicy(UpdateDescriptionEditPolicy.ROLE, new UpdateDescriptionEditPolicy(UMLDiagramUpdater.TYPED_ADAPTER, true));
 		}
-		installEditPolicy(EditPolicyRoles.CREATION_ROLE, new CreationEditPolicyWithCustomReparent(UMLVisualIDRegistry.TYPED_ADAPTER) {
-
-			public Command getCommand(Request request) {
-				if (understandsRequest(request)) {
-					if (request instanceof CreateViewAndElementRequest) {
-						CreateElementRequestAdapter adapter = ((CreateViewAndElementRequest) request).getViewAndElementDescriptor().getCreateElementRequestAdapter();
-						IElementType type = (IElementType) adapter.getAdapter(IElementType.class);
-						if (type == UMLElementTypes.ElementImport_3031) {
-							EditPart compartmentEditPart = getChildBySemanticHint(UMLVisualIDRegistry.getType(PackageImportsEditPart.VISUAL_ID));
-							return compartmentEditPart == null ? null : compartmentEditPart.getCommand(request);
-						}
-					}
-					return super.getCommand(request);
-				}
-				return null;
-			}
-		});
+		installEditPolicy(EditPolicyRoles.CREATION_ROLE, new CreationEditPolicyWithCustomReparent(UMLVisualIDRegistry.TYPED_ADAPTER));
 		super.createDefaultEditPolicies();
 		installEditPolicy(EditPolicyRoles.SEMANTIC_ROLE, new Package4ItemSemanticEditPolicy());
 		installEditPolicy(EditPolicy.LAYOUT_ROLE, createLayoutEditPolicy());
@@ -192,7 +176,6 @@ public class Package4EditPart extends ShapeNodeEditPart implements PrimaryShapeE
 	 * @generated
 	 */
 	protected IFigure getContentPaneFor(IGraphicalEditPart editPart) {
-
 		if (editPart instanceof PackageImportsEditPart) {
 			return getPrimaryShape().getFigureSecondaryPackage_Imports();
 		}
@@ -887,6 +870,20 @@ public class Package4EditPart extends ShapeNodeEditPart implements PrimaryShapeE
 			types.add(UMLElementTypes.Comment_2018);
 		}
 		return types;
+	}
+
+	/**
+	 * @generated
+	 */
+	public EditPart getTargetEditPart(Request request) {
+		if (request instanceof CreateViewAndElementRequest) {
+			CreateElementRequestAdapter adapter = ((CreateViewAndElementRequest) request).getViewAndElementDescriptor().getCreateElementRequestAdapter();
+			IElementType type = (IElementType) adapter.getAdapter(IElementType.class);
+			if (type == UMLElementTypes.ElementImport_3031) {
+				return getChildBySemanticHint(UMLVisualIDRegistry.getType(PackageImportsEditPart.VISUAL_ID));
+			}
+		}
+		return super.getTargetEditPart(request);
 	}
 
 	/**

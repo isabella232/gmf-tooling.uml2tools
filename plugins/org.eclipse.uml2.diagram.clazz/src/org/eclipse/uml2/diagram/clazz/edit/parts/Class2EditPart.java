@@ -112,31 +112,7 @@ public class Class2EditPart extends AbstractBorderedShapeEditPart implements Pri
 		if (UMLVisualIDRegistry.isShortcutDescendant(getNotationView())) {
 			installEditPolicy(UpdateDescriptionEditPolicy.ROLE, new UpdateDescriptionEditPolicy(UMLDiagramUpdater.TYPED_ADAPTER, true));
 		}
-		installEditPolicy(EditPolicyRoles.CREATION_ROLE, new CreationEditPolicyWithCustomReparent(UMLVisualIDRegistry.TYPED_ADAPTER) {
-
-			public Command getCommand(Request request) {
-				if (understandsRequest(request)) {
-					if (request instanceof CreateViewAndElementRequest) {
-						CreateElementRequestAdapter adapter = ((CreateViewAndElementRequest) request).getViewAndElementDescriptor().getCreateElementRequestAdapter();
-						IElementType type = (IElementType) adapter.getAdapter(IElementType.class);
-						if (type == UMLElementTypes.Property_3001) {
-							EditPart compartmentEditPart = getChildBySemanticHint(UMLVisualIDRegistry.getType(ClassAttributesEditPart.VISUAL_ID));
-							return compartmentEditPart == null ? null : compartmentEditPart.getCommand(request);
-						}
-						if (type == UMLElementTypes.Operation_3002) {
-							EditPart compartmentEditPart = getChildBySemanticHint(UMLVisualIDRegistry.getType(ClassOperationsEditPart.VISUAL_ID));
-							return compartmentEditPart == null ? null : compartmentEditPart.getCommand(request);
-						}
-						if (type == UMLElementTypes.Class_3003) {
-							EditPart compartmentEditPart = getChildBySemanticHint(UMLVisualIDRegistry.getType(ClassClassesEditPart.VISUAL_ID));
-							return compartmentEditPart == null ? null : compartmentEditPart.getCommand(request);
-						}
-					}
-					return super.getCommand(request);
-				}
-				return null;
-			}
-		});
+		installEditPolicy(EditPolicyRoles.CREATION_ROLE, new CreationEditPolicyWithCustomReparent(UMLVisualIDRegistry.TYPED_ADAPTER));
 		super.createDefaultEditPolicies();
 		installEditPolicy(EditPolicyRoles.SEMANTIC_ROLE, new Class2ItemSemanticEditPolicy());
 		installEditPolicy(EditPolicyRoles.DRAG_DROP_ROLE, new DragDropEditPolicy());
@@ -289,7 +265,6 @@ public class Class2EditPart extends AbstractBorderedShapeEditPart implements Pri
 	 * @generated
 	 */
 	protected IFigure getContentPaneFor(IGraphicalEditPart editPart) {
-
 		if (editPart instanceof ClassAttributesEditPart) {
 			return getPrimaryShape().getFigureClassFigure_PropertiesCompartment();
 		}
@@ -1152,6 +1127,26 @@ public class Class2EditPart extends AbstractBorderedShapeEditPart implements Pri
 			types.add(UMLElementTypes.Comment_2018);
 		}
 		return types;
+	}
+
+	/**
+	 * @generated
+	 */
+	public EditPart getTargetEditPart(Request request) {
+		if (request instanceof CreateViewAndElementRequest) {
+			CreateElementRequestAdapter adapter = ((CreateViewAndElementRequest) request).getViewAndElementDescriptor().getCreateElementRequestAdapter();
+			IElementType type = (IElementType) adapter.getAdapter(IElementType.class);
+			if (type == UMLElementTypes.Property_3001) {
+				return getChildBySemanticHint(UMLVisualIDRegistry.getType(ClassAttributesEditPart.VISUAL_ID));
+			}
+			if (type == UMLElementTypes.Operation_3002) {
+				return getChildBySemanticHint(UMLVisualIDRegistry.getType(ClassOperationsEditPart.VISUAL_ID));
+			}
+			if (type == UMLElementTypes.Class_3003) {
+				return getChildBySemanticHint(UMLVisualIDRegistry.getType(ClassClassesEditPart.VISUAL_ID));
+			}
+		}
+		return super.getTargetEditPart(request);
 	}
 
 	/**
