@@ -96,7 +96,7 @@ public class AssociationEditPart extends ConnectionNodeEditPart implements ITree
 	public AssociationLinkFigure getPrimaryShape() {
 		return (AssociationLinkFigure) getFigure();
 	}
-	
+
 	/**
 	 * @NOT-GENERATED
 	 */

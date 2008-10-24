@@ -224,7 +224,6 @@ public class Component2EditPart extends AbstractBorderedShapeEditPart implements
 	 * @generated
 	 */
 	protected IFigure getContentPaneFor(IGraphicalEditPart editPart) {
-
 		if (editPart instanceof ComponentContents2EditPart) {
 			return getPrimaryShape().getFigureComponentFigure_Body();
 		}

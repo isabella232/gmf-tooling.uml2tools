@@ -157,7 +157,6 @@ public class PropertyEditPart extends ShapeNodeEditPart implements PrimaryShapeE
 	 * @generated
 	 */
 	protected IFigure getContentPaneFor(IGraphicalEditPart editPart) {
-
 		return getContentPane();
 	}
 
