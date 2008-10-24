@@ -117,12 +117,6 @@
             category="org.eclipse.uml2.uml.diagram.activity.general"
             class="org.eclipse.uml2.diagram.activity.preferences.DiagramRulersAndGridPreferencePage">
       </page>
-      <page
-            id="org.eclipse.uml2.uml.diagram.activity.pathmaps"
-            name="%prefpage.org.eclipse.uml2.uml.diagram.activity.pathmaps"
-            category="org.eclipse.uml2.uml.diagram.activity.general"
-            class="org.eclipse.gmf.runtime.emf.ui.preferences.PathmapsPreferencePage">
-      </page>
    </extension>
 
    <extension point="org.eclipse.team.core.fileTypes">
