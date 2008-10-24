@@ -520,18 +520,6 @@
       </GlobalActionHandlerProvider>
    </extension>
 
-   <!--
-   <extension point="org.eclipse.gmf.runtime.common.ui.services.action.contributionItemProviders">
-      <?gmfgen generated="true"?>
-      <contributionItemProvider class="org.eclipse.uml2.diagram.clazz.providers.UMLContributionItemProvider">
-         <Priority name="Low"/>
-         <partContribution id="org.eclipse.uml2.diagram.clazz.part.UMLDiagramEditorID">
-            <partAction menubarPath="/file/print" id="printPreviewAction"/>
-         </partContribution>
-      </contributionItemProvider>
-   </extension>
-   -->
-
    <extension point="org.eclipse.gmf.runtime.common.ui.services.action.contributionItemProviders">
       <?gmfgen generated="true"?>
       <contributionItemProvider

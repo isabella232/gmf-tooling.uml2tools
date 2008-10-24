@@ -125,6 +125,7 @@
       </objectContribution>           
    </extension>
 
+   <!--
    <extension point="org.eclipse.gmf.runtime.common.ui.services.action.contributionItemProviders">
       <?gmfgen generated="true"?>
       <contributionItemProvider class="org.eclipse.uml2.diagram.component.providers.UMLContributionItemProvider">
@@ -134,6 +135,7 @@
          </partContribution>
       </contributionItemProvider>
    </extension>
+   -->
 
    <extension point="org.eclipse.gmf.runtime.common.ui.services.action.contributionItemProviders">
       <?gmfgen generated="true"?>
