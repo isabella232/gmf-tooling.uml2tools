@@ -27,7 +27,7 @@
         <children
             xsi:type="gmfgraph:Label"
             name="SecondaryProfile_ProfileLabel"
-            text="Profile"/>
+            text="\u00ABprofile\u00BB"/>
         <children
             xsi:type="gmfgraph:Label"
             name="SecondaryProfile_NameLabel"/>

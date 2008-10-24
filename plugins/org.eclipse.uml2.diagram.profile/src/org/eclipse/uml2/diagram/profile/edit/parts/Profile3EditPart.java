@@ -2,6 +2,7 @@ package org.eclipse.uml2.diagram.profile.edit.parts;
 
 import java.util.ArrayList;
 import java.util.List;
+
 import org.eclipse.draw2d.Graphics;
 import org.eclipse.draw2d.IFigure;
 import org.eclipse.draw2d.Label;
@@ -17,7 +18,6 @@ import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.gef.EditPart;
 import org.eclipse.gef.EditPolicy;
 import org.eclipse.gef.Request;
-import org.eclipse.gef.commands.Command;
 import org.eclipse.gef.editpolicies.LayoutEditPolicy;
 import org.eclipse.gmf.runtime.diagram.core.edithelpers.CreateElementRequestAdapter;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart;
@@ -368,7 +368,7 @@ public class Profile3EditPart extends ShapeNodeEditPart implements PrimaryShapeE
 		private void createContents() {
 
 			fFigureSecondaryProfile_ProfileLabel = new Label();
-			fFigureSecondaryProfile_ProfileLabel.setText("Profile");
+			fFigureSecondaryProfile_ProfileLabel.setText("\u00ABprofile\u00BB");
 
 			this.add(fFigureSecondaryProfile_ProfileLabel);
 
