@@ -147,25 +147,16 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 	/**
 	 * @generated
 	 */
-	private IParser constraint_3008Parser;
+	private ValueSpecificationParser.ConstraintParser constraint_3008Parser;
 
 	/**
 	 * @generated
 	 */
 	private IParser getConstraint_3008Parser() {
 		if (constraint_3008Parser == null) {
-			constraint_3008Parser = createConstraint_3008Parser();
+			constraint_3008Parser = new ValueSpecificationParser.ConstraintParser();
 		}
 		return constraint_3008Parser;
-	}
-
-	/**
-	 * @generated
-	 */
-	protected IParser createConstraint_3008Parser() {
-		EAttribute[] features = new EAttribute[] { UMLPackage.eINSTANCE.getNamedElement_Name() };
-		Parser_0_0 parser = new Parser_0_0(features);
-		return parser;
 	}
 
 	/**
