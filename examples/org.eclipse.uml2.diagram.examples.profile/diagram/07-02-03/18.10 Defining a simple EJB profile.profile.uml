@@ -16,7 +16,7 @@
         <eStructuralFeatures xmi:type="ecore:EAttribute" xmi:id="_u7C-y5ujEd2SfoQicxEfTw" name="state" ordered="false" lowerBound="1" eType="_u7C-zpujEd2SfoQicxEfTw"/>
       </eClassifiers>
       <eClassifiers xmi:type="ecore:EEnum" xmi:id="_u7C-zpujEd2SfoQicxEfTw" name="StateKind">
-        <eAnnotations xmi:id="_u7C-z5ujEd2SfoQicxEfTw" source="http://www.eclipse.org/uml2/2.0.0/UML" references="_mgxNAJuWEd2SfoQicxEfTw"/>
+        <eAnnotations xmi:id="_u7C-z5ujEd2SfoQicxEfTw" source="http://www.eclipse.org/uml2/2.0.0/UML"/>
         <eLiterals xmi:id="_u7C-0JujEd2SfoQicxEfTw" name="stateless"/>
         <eLiterals xmi:id="_u7C-0ZujEd2SfoQicxEfTw" name="stateful" value="1"/>
       </eClassifiers>
@@ -57,7 +57,7 @@
         <eStructuralFeatures xmi:type="ecore:EAttribute" xmi:id="_2RqZTJueEd2SfoQicxEfTw" name="state" ordered="false" lowerBound="1" eType="_2RqZT5ueEd2SfoQicxEfTw"/>
       </eClassifiers>
       <eClassifiers xmi:type="ecore:EEnum" xmi:id="_2RqZT5ueEd2SfoQicxEfTw" name="StateKind">
-        <eAnnotations xmi:id="_2RqZUJueEd2SfoQicxEfTw" source="http://www.eclipse.org/uml2/2.0.0/UML" references="_mgxNAJuWEd2SfoQicxEfTw"/>
+        <eAnnotations xmi:id="_2RqZUJueEd2SfoQicxEfTw" source="http://www.eclipse.org/uml2/2.0.0/UML"/>
         <eLiterals xmi:id="_2RqZUZueEd2SfoQicxEfTw" name="stateless"/>
         <eLiterals xmi:id="_2RqZUpueEd2SfoQicxEfTw" name="stateful" value="1"/>
       </eClassifiers>
@@ -113,11 +113,7 @@
   </packagedElement>
   <packagedElement xmi:type="uml:Stereotype" xmi:id="_lSrpQJuWEd2SfoQicxEfTw" name="Session">
     <generalization xmi:id="_G_81IJuXEd2SfoQicxEfTw" general="_ifRtgJuWEd2SfoQicxEfTw"/>
-    <ownedAttribute xmi:id="_BoMbYJuZEd2SfoQicxEfTw" name="state" type="_mgxNAJuWEd2SfoQicxEfTw"/>
-  </packagedElement>
-  <packagedElement xmi:type="uml:Enumeration" xmi:id="_mgxNAJuWEd2SfoQicxEfTw" name="StateKind">
-    <ownedLiteral xmi:id="_7PSqgJuWEd2SfoQicxEfTw" name="stateless"/>
-    <ownedLiteral xmi:id="_8QQYQJuWEd2SfoQicxEfTw" name="stateful"/>
+    <ownedAttribute xmi:id="_BoMbYJuZEd2SfoQicxEfTw" name="state"/>
   </packagedElement>
   <packagedElement xmi:type="uml:Extension" xmi:id="_-9tdAJuWEd2SfoQicxEfTw" name="Component_Bean" memberEnd="_-9tdAZuWEd2SfoQicxEfTw _-9tdApuWEd2SfoQicxEfTw">
     <ownedEnd xmi:type="uml:ExtensionEnd" xmi:id="_-9tdAZuWEd2SfoQicxEfTw" name="extension_Bean" type="_ifRtgJuWEd2SfoQicxEfTw" aggregation="composite" association="_-9tdAJuWEd2SfoQicxEfTw">
@@ -155,5 +151,9 @@
     <specification xmi:type="uml:OpaqueExpression" xmi:id="_Xr10EKHAEd2sdKESbSpQFQ">
       <body>A Bean must realize exactly one Home interface</body>
     </specification>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Enumeration" xmi:id="_HjDHYKHHEd2soN1VZoaElQ" name="StateKind">
+    <ownedLiteral xmi:id="_7PSqgJuWEd2SfoQicxEfTw" name="stateless"/>
+    <ownedLiteral xmi:id="_8QQYQJuWEd2SfoQicxEfTw" name="stateful"/>
   </packagedElement>
 </uml:Profile>
