@@ -1,14 +1,20 @@
 package org.eclipse.uml2.diagram.codegen;
 
+import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EStructuralFeature;
+import org.eclipse.gmf.codegen.gmfgen.FeatureLinkModelFacet;
 import org.eclipse.gmf.codegen.gmfgen.GenCustomPreferencePage;
 import org.eclipse.gmf.codegen.gmfgen.GenDiagram;
 import org.eclipse.gmf.codegen.gmfgen.GenEditorGenerator;
+import org.eclipse.gmf.codegen.gmfgen.GenLink;
 import org.eclipse.gmf.codegen.gmfgen.GenPreferencePage;
 import org.eclipse.gmf.codegen.gmfgen.GenTopLevelNode;
+import org.eclipse.gmf.codegen.gmfgen.TypeModelFacet;
 import org.eclipse.gmf.codegen.util.Generator;
 import org.eclipse.gmf.common.UnexpectedBehaviourException;
 import org.eclipse.gmf.internal.common.codegen.TextMerger;
 import org.eclipse.uml2.diagram.codegen.gmfgenext.SubstitutableByAttributes;
+import org.eclipse.uml2.uml.UMLPackage;
 
 public class GeneratorExt extends Generator {
 
@@ -58,8 +64,57 @@ public class GeneratorExt extends Generator {
 		}
 		generateIconStylePreferencesPage(myDiagram);
 		generateViewFiltersPreferencesPage(myDiagram);
+		generateSwitchBetweenCommentAndNodeActions();
 	}
+	
+	private void generateSwitchBetweenCommentAndNodeActions() throws InterruptedException, UnexpectedBehaviourException {
+		GenTopLevelNode commentNode = null;
+		for (GenTopLevelNode nextNode : myDiagram.getTopLevelNodes()) {
+			TypeModelFacet modelFacet = nextNode.getModelFacet();
+			if (modelFacet == null || modelFacet.getMetaClass() == null){
+				continue;
+			}
+			EClass metaclass = modelFacet.getMetaClass().getEcoreClass();
+			if (isTheSameEClass(metaclass, UMLPackage.eINSTANCE.getComment())){
+				commentNode = nextNode;
+				break;
+			}
+		}
+		if (commentNode == null){
+			return;
+		}
+		
+		GenLink commentLink = null;
+		for (GenLink nextLink : commentNode.getGenOutgoingLinks()){
+			if (false == nextLink.getModelFacet() instanceof FeatureLinkModelFacet){
+				continue;
+			}
+			FeatureLinkModelFacet facet = (FeatureLinkModelFacet)nextLink.getModelFacet();
+			if (facet.getMetaFeature() == null){
+				continue;
+			}
+			if (isTheSameEFeature(facet.getMetaFeature().getEcoreFeature(), UMLPackage.eINSTANCE.getComment_AnnotatedElement())){
+				commentLink = nextLink;
+				break;
+			}
+		}
+		
+		if (commentLink == null){
+			return;
+		}
+		
+		doGenerateJavaClass(//
+				myEmitters.getTurnCommentIntoNoteEmitter(), // 
+				myEmitters.getTurnCommentIntoNoteActionFQN(myDiagram), // 
+				myDiagram, commentNode, commentLink);
 
+		doGenerateJavaClass(//
+				myEmitters.getTurnNoteIntoCommentEmitter(), // 
+				myEmitters.getTurnNoteIntoCommentActionFQN(myDiagram), // 
+				myDiagram, commentNode, commentLink);
+	
+	}
+	
 	private void generateChangeNotationAction(GenTopLevelNode node) throws InterruptedException, UnexpectedBehaviourException {
 		for (org.eclipse.gmf.codegen.gmfgen.Attributes attr : node.getViewmap().getAttributes()) {
 			if (false == attr instanceof SubstitutableByAttributes) {
@@ -102,4 +157,24 @@ public class GeneratorExt extends Generator {
 		}
 	}
 
+	private static boolean isTheSameEClass(EClass candidate, EClass pattern){
+		if (pattern.equals(candidate)){
+			return true;
+		}
+		if (candidate == null){
+			return false;
+		}
+		//its possible that they are loaded separately and not equals
+		return pattern.getEPackage().getNsURI().equals(candidate.getEPackage().getNsURI()) && pattern.getName().equals(candidate.getName());
+	}
+	
+	private static boolean isTheSameEFeature(EStructuralFeature candidate, EStructuralFeature pattern){
+		if (candidate.equals(pattern)){
+			return true;
+		}
+		if (candidate == null){
+			return false;
+		}
+		return isTheSameEClass(candidate.getEContainingClass(), pattern.getEContainingClass()) && pattern.getName().equals(candidate.getName());
+	}
 }

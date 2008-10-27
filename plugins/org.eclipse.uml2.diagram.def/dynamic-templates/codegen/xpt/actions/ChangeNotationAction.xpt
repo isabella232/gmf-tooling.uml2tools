@@ -72,7 +72,7 @@ public class «EXPAND className(substitutableByNode)» extends org.eclipse.uml2.di
 «ENDDEFINE»
 «DEFINE className(GenNode node) FOR gmfgen::GenTopLevelNode»«changeNotationActionClassName(this, node)»«ENDDEFINE»
 
-«DEFINE packageName FOR gmfgen::GenTopLevelNode»«getDiagram().editorGen.packageNamePrefix».action«ENDDEFINE»
+«DEFINE packageName FOR gmfgen::GenTopLevelNode»«actionsPackage(this)»«ENDDEFINE»
 
 «DEFINE qualifiedClassName(GenNode node) FOR gmfgen::GenTopLevelNode»«EXPAND packageName».«EXPAND className(node)»«ENDDEFINE»
 

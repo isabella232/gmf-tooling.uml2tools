@@ -17,6 +17,7 @@ import java.util.List;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.emf.transaction.TransactionalEditingDomain;
+import org.eclipse.gmf.runtime.diagram.core.util.ViewType;
 import org.eclipse.gmf.runtime.emf.commands.core.command.AbstractTransactionalCommand;
 import org.eclipse.gmf.runtime.emf.type.core.IElementType;
 import org.eclipse.gmf.runtime.notation.Anchor;
@@ -65,6 +66,38 @@ public abstract  class ConvertCommentCommandBase extends AbstractTransactionalCo
 		public IElementType getAnnotatedElementElementType();
 		public String getNoteAttachmentVisualID();
 		public String getNoteVisualId();
+	}
+	
+	public static class ConfigImpl implements Config {
+		private final int myCommentNodeVID;
+		private final IElementType myCommentLinkElementType;
+		private final int myCommentLinkVID;
+
+		public ConfigImpl(int commentNodeVID, int commentLinkVID, IElementType commentLinkElementType){
+			myCommentNodeVID = commentNodeVID;
+			myCommentLinkVID = commentLinkVID;
+			myCommentLinkElementType = commentLinkElementType;
+		}
+		
+		public String getNoteAttachmentVisualID() {
+			return ViewType.NOTEATTACHMENT;
+		}
+
+		public String getNoteVisualId() {
+			return ViewType.NOTE;
+		}
+		
+		public IElementType getAnnotatedElementElementType() {
+			return myCommentLinkElementType;
+		}
+		
+		public int getCommentVisualID() {
+			return myCommentNodeVID;
+		}
+		
+		public int getAnnotatedElementVisualID() {
+			return myCommentLinkVID;
+		}
 	}
 
 }

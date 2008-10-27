@@ -72,7 +72,7 @@ public class «EXPAND className» extends org.eclipse.gmf.runtime.common.ui.servic
 
 «DEFINE className FOR gmfgen::GenTopLevelNode»«changeNotationContributionItemProviderClassName(this)»«ENDDEFINE»
 
-«DEFINE packageName FOR gmfgen::GenTopLevelNode»«getDiagram().editorGen.packageNamePrefix».action«ENDDEFINE»
+«DEFINE packageName FOR gmfgen::GenTopLevelNode»«actionsPackage(this)»«ENDDEFINE»
 
 «DEFINE qualifiedClassName FOR gmfgen::GenTopLevelNode»«EXPAND packageName».«EXPAND className»«ENDDEFINE»
 

@@ -22,6 +22,14 @@ String changeNotationContributionItemProviderClassName(GenTopLevelNode node) :
 getNodeName(node)+'ContributionItemProvider'
 ;
 
+String actionsPackage(GenDiagram diagram) :
+diagram.editorGen.packageNamePrefix + '.action'
+;
+
+String actionsPackage(GenCommonBase commonBase) :
+actionsPackage(commonBase.getDiagram())
+;
+
 Boolean hasAlternativeNotation(GenTopLevelNode node) :
 hasAlternationNotation(node.viewmap.attributes.typeSelect(gmfgenext::SubstitutableByAttributes).first())
 ;

@@ -25,8 +25,25 @@ public class CodegenEmittersExt extends CodegenEmitters {
 	public TextEmitter getChangeNotationContributionItemProviderEmitter() throws UnexpectedBehaviourException {
 		return newXpandEmitter("xpt::actions::ChangeNotationContributionItemProvider::ChangeNotationContributionItemProvider"); //$NON-NLS-1$
 	}
+	
+	public TextEmitter getTurnCommentIntoNoteEmitter() {
+		return newXpandEmitter("xpt::actions::TurnCommentIntoNoteAction::TurnCommentIntoNoteAction"); //$NON-NLS-1$
+	}
+	
+	public String getTurnCommentIntoNoteActionFQN(Object... input) throws UnexpectedBehaviourException {
+		return getQualifiedClassName("xpt::actions::TurnCommentIntoNoteAction::qualifiedClassName", input); //$NON-NLS-1$
+	}
+	
 
-//	public TextEmitter getDynamicCanonicalEditPolicyEmitter() throws UnexpectedBehaviourException {
+	public TextEmitter getTurnNoteIntoCommentEmitter() {
+		return newXpandEmitter("xpt::actions::TurnNoteIntoCommentAction::TurnNoteIntoCommentAction"); //$NON-NLS-1$
+	}
+	
+	public String getTurnNoteIntoCommentActionFQN(Object... input) throws UnexpectedBehaviourException {
+		return getQualifiedClassName("xpt::actions::TurnNoteIntoCommentAction::qualifiedClassName", input); //$NON-NLS-1$
+	}
+
+	//	public TextEmitter getDynamicCanonicalEditPolicyEmitter() throws UnexpectedBehaviourException {
 //		return newXpandEmitter("xpt::diagram::canonical::DynamicCanonicalEditPolicy::DynamicCanonicalEditPolicy"); //$NON-NLS-1$
 //	}
 //

@@ -13,8 +13,9 @@ Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.emf.ecore;visibility:=reexport,
  org.eclipse.emf.codegen.ecore;visibility:=reexport,
  org.eclipse.gmf.codegen;visibility:=reexport,
- org.eclipse.gmf.codegen.ui, 
- org.eclipse.ui
+ org.eclipse.gmf.codegen.ui,
+ org.eclipse.ui,
+ org.eclipse.uml2.uml
 Bundle-ActivationPolicy: lazy
 Eclipse-RegisterBuddy: org.eclipse.gmf.codegen
 DynamicImport-Package: org.eclipse.uml2.diagram.codegen.gmfgenext
