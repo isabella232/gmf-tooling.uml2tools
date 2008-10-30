@@ -420,7 +420,7 @@
         href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//Profile/metaclassReference"/>
     <creationConstraints>
       <targetEnd
-          body="let metaclass : Class = self.importedElement.oclAsType(Class) in&#xD;&#xA;metaclass.isMetaclass() and &#xD;&#xA;not oppositeEnd.getAllExtendedMetaclasses()->includes(metaclass)&#xD;&#xA;"/>
+          body="self.importedElement&lt;>null and &#xD;&#xA;let metaclass : Class = self.importedElement.oclAsType(Class) in&#xD;&#xA;metaclass.isMetaclass() and &#xD;&#xA;not oppositeEnd.getAllExtendedMetaclasses()->includes(metaclass)&#xD;&#xA;"/>
     </creationConstraints>
   </links>
   <links>

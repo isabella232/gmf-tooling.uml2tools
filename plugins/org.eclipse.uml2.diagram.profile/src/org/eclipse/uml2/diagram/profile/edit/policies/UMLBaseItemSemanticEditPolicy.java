@@ -405,7 +405,7 @@ public class UMLBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 					Map env = Collections.singletonMap(OPPOSITE_END_VAR, UMLPackage.eINSTANCE.getStereotype());
 					Extension_4002_TargetExpression = UMLOCLFactory
 							.getExpression(
-									"self.importedElement<>null and let metaclass : Class = self.importedElement.oclAsType(Class) in\r\nmetaclass.isMetaclass() and \r\nnot oppositeEnd.getAllExtendedMetaclasses()->includes(metaclass)\r\n", UMLPackage.eINSTANCE.getElementImport(), env); //$NON-NLS-1$
+									"self.importedElement<>null and \r\nlet metaclass : Class = self.importedElement.oclAsType(Class) in\r\nmetaclass.isMetaclass() and \r\nnot oppositeEnd.getAllExtendedMetaclasses()->includes(metaclass)\r\n", UMLPackage.eINSTANCE.getElementImport(), env); //$NON-NLS-1$
 				}
 				Object targetVal = Extension_4002_TargetExpression.evaluate(target, Collections.singletonMap(OPPOSITE_END_VAR, source));
 				if (false == targetVal instanceof Boolean || !((Boolean) targetVal).booleanValue()) {

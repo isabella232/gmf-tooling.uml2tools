@@ -1334,7 +1334,7 @@
           body="'OpaqueExpression'"/>
       <expressions
           xsi:type="gmfgen:GenConstraint"
-          body="let metaclass : Class = self.importedElement.oclAsType(Class) in&#xD;&#xA;metaclass.isMetaclass() and &#xD;&#xA;not oppositeEnd.getAllExtendedMetaclasses()->includes(metaclass)&#xD;&#xA;"/>
+          body="self.importedElement&lt;>null and &#xD;&#xA;let metaclass : Class = self.importedElement.oclAsType(Class) in&#xD;&#xA;metaclass.isMetaclass() and &#xD;&#xA;not oppositeEnd.getAllExtendedMetaclasses()->includes(metaclass)&#xD;&#xA;"/>
     </providers>
   </expressionProviders>
   <labelParsers
