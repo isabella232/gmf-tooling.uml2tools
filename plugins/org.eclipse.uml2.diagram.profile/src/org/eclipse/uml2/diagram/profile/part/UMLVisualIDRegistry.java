@@ -146,7 +146,7 @@ public class UMLVisualIDRegistry {
 			return -1;
 		}
 		String containerModelID = org.eclipse.uml2.diagram.profile.part.UMLVisualIDRegistry.getModelID(containerView);
-		if (!ProfileEditPart.MODEL_ID.equals(containerModelID) && !"umlprofile".equals(containerModelID) && !"umlprofile_diagram".equals(containerModelID)) { //$NON-NLS-1$  //$NON-NLS-2$
+		if (!ProfileEditPart.MODEL_ID.equals(containerModelID) && !"UMLProfile".equals(containerModelID)) { //$NON-NLS-1$
 			return -1;
 		}
 		int containerVisualID;
@@ -220,7 +220,7 @@ public class UMLVisualIDRegistry {
 	 */
 	public static boolean canCreateNode(View containerView, int nodeVisualID) {
 		String containerModelID = org.eclipse.uml2.diagram.profile.part.UMLVisualIDRegistry.getModelID(containerView);
-		if (!ProfileEditPart.MODEL_ID.equals(containerModelID) && !"umlprofile".equals(containerModelID) && !"umlprofile_diagram".equals(containerModelID)) { //$NON-NLS-1$  //$NON-NLS-2$
+		if (!ProfileEditPart.MODEL_ID.equals(containerModelID) && !"UMLProfile".equals(containerModelID)) { //$NON-NLS-1$
 			return false;
 		}
 		int containerVisualID;
