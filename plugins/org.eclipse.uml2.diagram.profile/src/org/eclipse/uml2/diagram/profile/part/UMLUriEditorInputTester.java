@@ -16,7 +16,8 @@ public class UMLUriEditorInputTester extends PropertyTester {
 			return false;
 		}
 		URIEditorInput editorInput = (URIEditorInput) receiver;
-		return "umlprofile_diagram".equals(editorInput.getURI().fileExtension()) //$NON-NLS-1$
+		return "umlprofile".equals(editorInput.getURI().fileExtension()) //$NON-NLS-1$
+				|| " umlprofile_diagram".equals(editorInput.getURI().fileExtension()) //$NON-NLS-1$
 		;
 	}
 
