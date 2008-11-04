@@ -119,30 +119,18 @@
 
    <extension point="org.eclipse.ui.popupMenus">
       <?gmfgen generated="true"?>
-      <!--<objectContribution
-            adaptable="false"
-            id="org.eclipse.uml2.diagram.profile.CreateShortcut"
-            objectClass="org.eclipse.uml2.diagram.profile.edit.parts.ProfileEditPart">
-         <action
-               class="org.eclipse.uml2.diagram.profile.part.UMLCreateShortcutAction"
-               enablesFor="1"
-               id="org.eclipse.uml2.diagram.profile.CreateShortcutAction"
-               label="%createShortcutActionLabel"
-               menubarPath="additions">
-         </action>
-      </objectContribution>-->                      
       <objectContribution
-            adaptable="false"
-            id="org.eclipse.uml2.diagram.profile.LoadResource"
-            objectClass="org.eclipse.uml2.diagram.profile.edit.parts.ProfileEditPart">
+            id="org.eclipse.uml2.diagram.profile.InitDiagram"
+            nameFilter="*.profile.uml"
+            objectClass="org.eclipse.core.resources.IFile">
          <action
-               class="org.eclipse.uml2.diagram.profile.part.UMLLoadResourceAction"
+               label="%initDiagramActionLabel"
+               class="org.eclipse.uml2.diagram.profile.part.UMLInitDiagramFileAction"
+               menubarPath="additions"
                enablesFor="1"
-               id="org.eclipse.uml2.diagram.profile.LoadResourceAction"
-               label="%loadResourceActionLabel"
-               menubarPath="additions">
+               id="org.eclipse.uml2.diagram.profile.InitDiagramAction">
          </action>
-      </objectContribution>           
+      </objectContribution>
    </extension>
 
    
@@ -630,20 +618,6 @@
             category="org.eclipse.uml2.uml.diagram.profile.general"
             class="org.eclipse.uml2.diagram.profile.preferences.DiagramRulersAndGridPreferencePage">
       </page>
-   </extension><extension point="org.eclipse.ui.popupMenus">
-      <?gmfgen generated="true"?>
-      <objectContribution
-            id="org.eclipse.uml2.diagram.profile.InitDiagram"
-            nameFilter="*.profile.uml"
-            objectClass="org.eclipse.core.resources.IFile">
-         <action
-               label="%initDiagramActionLabel"
-               class="org.eclipse.uml2.diagram.profile.part.UMLInitDiagramFileAction"
-               menubarPath="additions"
-               enablesFor="1"
-               id="org.eclipse.uml2.diagram.profile.InitDiagramAction">
-         </action>
-      </objectContribution>
    </extension>
 <extension point="org.eclipse.core.expressions.propertyTesters">
       <?gmfgen generated="true"?>
@@ -712,6 +686,59 @@
            properties="isDomainModelElement"
            class="org.eclipse.uml2.diagram.profile.part.UMLDomainModelElementTester">
        </propertyTester>
+   </extension><extension point="org.eclipse.ui.menus">
+      <?gmfgen generated="true"?>
+      <!-- menuContribution locationURI="menu:org.eclipse.ui.main.menu?after=">
+      </menuContribution>
+      <menuContribution locationURI="toolbar:org.eclipse.ui.main.toolbar?after=">
+      </menuContribution -->
+      <menuContribution locationURI="popup:org.eclipse.gmf.runtime.diagram.ui.DiagramEditorContextMenu">
+         <command commandId="org.eclipse.uml2.diagram.profile.UMLCreateShortcutAction">
+            <visibleWhen>
+               <and>
+                  <with variable="org.eclipse.core.runtime.Platform">
+                     <test property="org.eclipse.core.runtime.bundleState" args="org.eclipse.uml2.diagram.profile" value="ACTIVE"/>
+                  </with>
+                  <with variable="activePartId"><equals value="org.eclipse.uml2.diagram.profile.part.UMLDiagramEditorID"/></with>
+                  <with variable="selection">
+					<count value="+"/>
+					<iterate>
+                     <instanceof value="org.eclipse.uml2.diagram.profile.edit.parts.ProfileEditPart"/>
+                  </iterate></with>					
+               </and>
+            </visibleWhen>
+         </command>
+         <command commandId="org.eclipse.uml2.diagram.profile.UMLLoadResourceAction">
+            <visibleWhen>
+               <and>
+                  <with variable="org.eclipse.core.runtime.Platform">
+                     <test property="org.eclipse.core.runtime.bundleState" args="org.eclipse.uml2.diagram.profile" value="ACTIVE"/>
+                  </with>
+                  <with variable="activePartId"><equals value="org.eclipse.uml2.diagram.profile.part.UMLDiagramEditorID"/></with>
+                  <with variable="selection">
+					<count value="+"/>
+					<iterate>
+                     <instanceof value="org.eclipse.uml2.diagram.profile.edit.parts.ProfileEditPart"/>
+                  </iterate></with>					
+               </and>
+            </visibleWhen>
+         </command>
+      </menuContribution>
+   </extension>
+<extension point="org.eclipse.ui.commands">
+      <?gmfgen generated="true"?>
+      <category id="org.eclipse.uml2.diagram.profile.part.UMLDiagramEditorID" name="%cmdcategory.name" description="%cmdcategory.desc"/>
+      <command id="org.eclipse.uml2.diagram.profile.UMLCreateShortcutAction"
+         name="Create Shortcut..."
+         categoryId="org.eclipse.uml2.diagram.profile.part.UMLDiagramEditorID"
+         defaultHandler="org.eclipse.uml2.diagram.profile.part.UMLCreateShortcutAction"/>
+      <command id="org.eclipse.uml2.diagram.profile.UMLLoadResourceAction"
+         name="Load Resource"
+         categoryId="org.eclipse.uml2.diagram.profile.part.UMLDiagramEditorID"
+         defaultHandler="org.eclipse.uml2.diagram.profile.part.UMLLoadResourceAction"/>
+   </extension>
+<extension point="org.eclipse.ui.handlers">
+      <?gmfgen generated="true"?>
    </extension>
 
    

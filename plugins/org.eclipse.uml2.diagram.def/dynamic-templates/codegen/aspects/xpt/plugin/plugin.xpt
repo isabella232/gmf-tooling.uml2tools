@@ -60,6 +60,7 @@
 «EXPAND xpt::application::extensions::extensions FOR editorGen.application-»
 «EXPAND xpt::ConstraintProviders::extensions FOR editorGen-»
 «EXPAND xpt::diagram::updater::extensions::extensions FOR editorGen.diagramUpdater-»
+«EXPAND impl::actions::extensions::Main FOR editorGen-»
 «EXPAND xpt::plugin::plugin::additions-»
 </plugin>
 «ENDAROUND»

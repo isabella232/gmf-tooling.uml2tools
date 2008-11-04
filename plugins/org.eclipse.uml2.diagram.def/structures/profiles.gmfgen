@@ -27,8 +27,7 @@
         xsi:type="gmfgen:FigureViewmap"
         figureQualifiedClassName="org.eclipse.draw2d.FreeformLayer"/>
     <containsShortcutsTo>uml</containsShortcutsTo>
-    <shortcutsProvidedFor>umlprofile</shortcutsProvidedFor>
-    <shortcutsProvidedFor>umlprofile_diagram</shortcutsProvidedFor>
+    <shortcutsProvidedFor>UMLProfile</shortcutsProvidedFor>
     <domainDiagramElement
         href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/Profile"/>
     <childNodes
@@ -1357,4 +1356,14 @@
         uses="//@diagram/@topLevelNodes.2/@labels.1/@modelFacet"
         qualifiedName="org.eclipse.uml2.diagram.common.parser.stereotype.ClassifierAppliedStereotypeParser"/>
   </labelParsers>
+  <contextMenus
+      iD="org.eclipse.uml2.diagram.profilemenu"
+      context="//@diagram">
+    <items
+        xsi:type="gmfgen:CreateShortcutAction"
+        qualifiedClassName="org.eclipse.uml2.diagram.profile.part.UMLCreateShortcutAction"/>
+    <items
+        xsi:type="gmfgen:LoadResourceAction"
+        qualifiedClassName="org.eclipse.uml2.diagram.profile.part.UMLLoadResourceAction"/>
+  </contextMenus>
 </gmfgen:GenEditorGenerator>
