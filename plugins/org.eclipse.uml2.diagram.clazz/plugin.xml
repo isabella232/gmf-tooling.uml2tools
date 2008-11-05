@@ -109,7 +109,7 @@
       <?gmfgen generated="false"?>
       <contributionItemProvider
             checkPluginLoaded="true"
-            class="org.eclipse.uml2.diagram.clazz.action.ApplicableStereotypesItemProvider">
+            class="org.eclipse.uml2.diagram.common.stereo.ApplicableStereotypesItemProvider">
          <Priority name="Medium"/>
 		 <popupContribution
                class="org.eclipse.gmf.runtime.diagram.ui.providers.DiagramContextMenuProvider">
@@ -132,7 +132,7 @@
       <?gmfgen generated="false"?>
       <contributionItemProvider
             checkPluginLoaded="true"
-            class="org.eclipse.uml2.diagram.clazz.action.ApplicableProfilesItemProvider">
+            class="org.eclipse.uml2.diagram.common.stereo.ApplicableProfilesItemProvider">
          <Priority name="Medium"/>
 		 <popupContribution
                class="org.eclipse.gmf.runtime.diagram.ui.providers.DiagramContextMenuProvider">

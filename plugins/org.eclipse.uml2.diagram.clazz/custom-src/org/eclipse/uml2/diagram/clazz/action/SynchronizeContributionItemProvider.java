@@ -11,6 +11,7 @@ import org.eclipse.jface.action.IMenuManager;
 import org.eclipse.jface.action.MenuManager;
 import org.eclipse.ui.IWorkbenchPage;
 import org.eclipse.uml2.diagram.clazz.part.CustomMessages;
+import org.eclipse.uml2.diagram.common.stereo.ApplyStereotypeAction;
 import org.eclipse.uml2.uml.Element;
 import org.eclipse.uml2.uml.Stereotype;
 

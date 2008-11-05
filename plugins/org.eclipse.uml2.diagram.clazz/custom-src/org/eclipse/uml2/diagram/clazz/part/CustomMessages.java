@@ -12,15 +12,6 @@ public class CustomMessages extends NLS {
 	}
 
 	public static String AnalysisLevel_analysis_label;
-	public static String ApplicableProfilesItemProvider_applied_profile_menu_title;
-	public static String ApplicableProfilesItemProvider_apply_profile_menu;
-	public static String ApplicableStereotypesItemProvider_apply_stereotype_menu_label;
-	public static String ApplyProfileAction_apply_profile_command;
-	public static String ApplyProfileAction_empty_name;
-	public static String ApplyProfileAction_unapply_profile_command;
-	public static String ApplyStereotypeAction_annapply_stereotype_command;
-	public static String ApplyStereotypeAction_apply_stereotype_command;
-	public static String ApplyStereotypeAction_empty_name;
 	public static String AssociationContributionItemProvider_association_type_action;
 	public static String AssociationContributionItemProvider_association_type_group;
 	public static String AssociationCreateCommand_source_end;

@@ -1,4 +1,4 @@
-package org.eclipse.uml2.diagram.clazz.action;
+package org.eclipse.uml2.diagram.common.stereo;
 
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EObject;
@@ -10,7 +10,7 @@ import org.eclipse.jface.action.IMenuListener;
 import org.eclipse.jface.action.IMenuManager;
 import org.eclipse.jface.action.MenuManager;
 import org.eclipse.ui.IWorkbenchPage;
-import org.eclipse.uml2.diagram.clazz.part.CustomMessages;
+import org.eclipse.uml2.diagram.common.Messages;
 import org.eclipse.uml2.uml.Element;
 import org.eclipse.uml2.uml.Stereotype;
 
@@ -22,7 +22,7 @@ public class ApplicableStereotypesItemProvider  extends AbstractContributionItem
 		if (!MENU_APPLY_STEREOTYPE.equals(menuId)) {
 			return super.createMenuManager(menuId, partDescriptor);
 		}
-		MenuManager menuManager = new MenuManager(CustomMessages.ApplicableStereotypesItemProvider_apply_stereotype_menu_label);
+		MenuManager menuManager = new MenuManager(Messages.ApplicableStereotypesItemProvider_apply_stereotype_menu_label);
 		MenuBuilder builder = new MenuBuilder(partDescriptor);
 		//XXX: build initial content -- otherwise menu is never shown
 		builder.buildMenu(menuManager);

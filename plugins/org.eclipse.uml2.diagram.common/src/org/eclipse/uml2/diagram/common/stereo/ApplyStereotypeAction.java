@@ -1,4 +1,4 @@
-package org.eclipse.uml2.diagram.clazz.action;
+package org.eclipse.uml2.diagram.common.stereo;
 
 import org.eclipse.emf.transaction.TransactionalEditingDomain;
 import org.eclipse.gef.Request;
@@ -9,7 +9,7 @@ import org.eclipse.gmf.runtime.diagram.ui.actions.DiagramAction;
 import org.eclipse.gmf.runtime.diagram.ui.commands.ICommandProxy;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart;
 import org.eclipse.ui.IWorkbenchPage;
-import org.eclipse.uml2.diagram.clazz.part.CustomMessages;
+import org.eclipse.uml2.diagram.common.Messages;
 import org.eclipse.uml2.diagram.common.commands.ApplyOrUnapplyStereotypeCommand;
 import org.eclipse.uml2.diagram.common.commands.RefreshLabelsCommand;
 import org.eclipse.uml2.uml.Element;
@@ -17,7 +17,7 @@ import org.eclipse.uml2.uml.Stereotype;
 
 public class ApplyStereotypeAction extends DiagramAction {
 
-	private static final String EMPTY_NAME = CustomMessages.ApplyStereotypeAction_empty_name;
+	private static final String EMPTY_NAME = Messages.ApplyStereotypeAction_empty_name;
 
 	private Element myElement;
 

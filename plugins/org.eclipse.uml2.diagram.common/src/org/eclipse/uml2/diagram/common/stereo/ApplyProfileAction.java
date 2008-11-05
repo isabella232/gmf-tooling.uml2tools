@@ -1,4 +1,4 @@
-package org.eclipse.uml2.diagram.clazz.action;
+package org.eclipse.uml2.diagram.common.stereo;
 
 import org.eclipse.core.commands.ExecutionException;
 import org.eclipse.core.runtime.IAdaptable;
@@ -10,18 +10,18 @@ import org.eclipse.gef.commands.UnexecutableCommand;
 import org.eclipse.gmf.runtime.common.core.command.CommandResult;
 import org.eclipse.gmf.runtime.diagram.ui.actions.DiagramAction;
 import org.eclipse.gmf.runtime.diagram.ui.commands.ICommandProxy;
+import org.eclipse.gmf.runtime.diagram.ui.editparts.DiagramEditPart;
 import org.eclipse.gmf.runtime.emf.type.core.commands.EditElementCommand;
 import org.eclipse.gmf.runtime.emf.type.core.requests.AbstractEditCommandRequest;
 import org.eclipse.gmf.runtime.emf.type.core.requests.IEditCommandRequest;
 import org.eclipse.ui.IWorkbenchPage;
-import org.eclipse.uml2.diagram.clazz.edit.parts.PackageEditPart;
-import org.eclipse.uml2.diagram.clazz.part.CustomMessages;
+import org.eclipse.uml2.diagram.common.Messages;
 import org.eclipse.uml2.uml.Profile;
 import org.eclipse.uml2.uml.ProfileApplication;
 
 
 public class ApplyProfileAction extends DiagramAction {
-	private static final String EMPTY_NAME = CustomMessages.ApplyProfileAction_empty_name;
+	private static final String EMPTY_NAME = Messages.ApplyProfileAction_empty_name;
 	private  org.eclipse.uml2.uml.Package myPackage;
 	private Profile myProfile;
 
@@ -42,7 +42,7 @@ public class ApplyProfileAction extends DiagramAction {
 	}
 	@Override
 	protected Command getCommand() {
-		PackageEditPart packageEditPart = getPackageEditPart();
+		DiagramEditPart packageEditPart = getDiagramEditPart();
 		if (packageEditPart == null) {
 			return UnexecutableCommand.INSTANCE;
 		}
@@ -55,9 +55,9 @@ public class ApplyProfileAction extends DiagramAction {
 			}};
 		boolean toApply = !isProfileAppliedTo(myPackage, myProfile);
 		if (toApply) {
-			return new ICommandProxy(new ApplyProfileCommand(CustomMessages.ApplyProfileAction_apply_profile_command, myPackage, myProfile, request));
+			return new ICommandProxy(new ApplyProfileCommand(Messages.ApplyProfileAction_apply_profile_command, myPackage, myProfile, request));
 		} 
-		return new ICommandProxy(new UnapplyProfileCommand(CustomMessages.ApplyProfileAction_unapply_profile_command, myPackage, myProfile, request));
+		return new ICommandProxy(new UnapplyProfileCommand(Messages.ApplyProfileAction_unapply_profile_command, myPackage, myProfile, request));
 	}
 
 
@@ -82,10 +82,10 @@ public class ApplyProfileAction extends DiagramAction {
 		return isProfileAppliedTo(myPackage, myProfile);
 	}
 
-	private PackageEditPart getPackageEditPart() {
+	private DiagramEditPart getPackageEditPart() {
 		for (Object next : getSelectedObjects()) {
-			if (next instanceof PackageEditPart) {
-				PackageEditPart packageEditPart = (PackageEditPart)next;
+			if (next instanceof DiagramEditPart) {
+				DiagramEditPart packageEditPart = (DiagramEditPart)next;
 				return packageEditPart;
 			}
 		}

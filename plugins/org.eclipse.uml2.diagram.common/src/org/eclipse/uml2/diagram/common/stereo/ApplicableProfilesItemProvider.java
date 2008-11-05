@@ -1,4 +1,4 @@
-package org.eclipse.uml2.diagram.clazz.action;
+package org.eclipse.uml2.diagram.common.stereo;
 
 import java.util.ArrayList;
 import java.util.Collection;
@@ -19,7 +19,7 @@ import org.eclipse.jface.action.IMenuListener;
 import org.eclipse.jface.action.IMenuManager;
 import org.eclipse.jface.action.MenuManager;
 import org.eclipse.ui.IWorkbenchPage;
-import org.eclipse.uml2.diagram.clazz.part.CustomMessages;
+import org.eclipse.uml2.diagram.common.Messages;
 import org.eclipse.uml2.diagram.common.pathmap.PathMapService;
 import org.eclipse.uml2.uml.Profile;
 import org.eclipse.uml2.uml.UMLPlugin;
@@ -34,7 +34,7 @@ public class ApplicableProfilesItemProvider extends AbstractContributionItemProv
 		if (!MENU_APPLY_PROFILE.equals(menuId)) {
 			return super.createMenuManager(menuId, partDescriptor);
 		}
-		MenuManager menuManager = new MenuManager(CustomMessages.ApplicableProfilesItemProvider_apply_profile_menu);
+		MenuManager menuManager = new MenuManager(Messages.ApplicableProfilesItemProvider_apply_profile_menu);
 		MenuBuilder builder = new MenuBuilder(partDescriptor);
 		// XXX: build initial content -- otherwise menu is never shown
 		builder.buildMenu(menuManager);
