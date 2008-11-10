@@ -2190,11 +2190,6 @@
           name="Rulers And Grid"
           kind="RulersAndGrid"/>
       <children
-          xsi:type="gmfgen:GenStandardPreferencePage"
-          iD="org.eclipse.uml2.uml.diagram.component.pathmaps"
-          name="Pathmaps"
-          kind="Pathmaps"/>
-      <children
           xsi:type="gmfgen:GenCustomPreferencePage"
           iD="org.eclipse.uml2.uml.diagram.component.viewfilter"
           name="View Filters"
