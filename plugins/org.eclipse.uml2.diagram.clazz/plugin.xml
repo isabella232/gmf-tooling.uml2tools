@@ -105,53 +105,6 @@
       </contributionItemProvider>
    </extension>
    
-   <extension point="org.eclipse.gmf.runtime.common.ui.services.action.contributionItemProviders">
-      <?gmfgen generated="false"?>
-      <contributionItemProvider
-            checkPluginLoaded="true"
-            class="org.eclipse.uml2.diagram.common.stereo.ApplicableStereotypesItemProvider">
-         <Priority name="Medium"/>
-		 <popupContribution
-               class="org.eclipse.gmf.runtime.diagram.ui.providers.DiagramContextMenuProvider">
-			 <popupMenuGroup
-                  id="ApplyStereotypeGroup"
-                  path="/propertiesGroup">
-             </popupMenuGroup>
-             <popupMenu
-                  path="/ApplyStereotypeGroup"
-                  id="menu_apply_unapply_stereotype">
-             </popupMenu>      
-             <popupStructuredContributionCriteria
-                   objectClass="org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart"
-                   objectCount="1">
-             </popupStructuredContributionCriteria>
-		 </popupContribution>
-      </contributionItemProvider>
-   </extension>
-   <extension point="org.eclipse.gmf.runtime.common.ui.services.action.contributionItemProviders">
-      <?gmfgen generated="false"?>
-      <contributionItemProvider
-            checkPluginLoaded="true"
-            class="org.eclipse.uml2.diagram.common.stereo.ApplicableProfilesItemProvider">
-         <Priority name="Medium"/>
-		 <popupContribution
-               class="org.eclipse.gmf.runtime.diagram.ui.providers.DiagramContextMenuProvider">
-			 <popupMenuGroup
-                  id="ApplyProfileGroup"
-                  path="/propertiesGroup">
-             </popupMenuGroup>
-             <popupMenu
-                  path="/ApplyProfileGroup"
-                  id="menu_apply_unapply_profile">
-             </popupMenu>            
-             <popupStructuredContributionCriteria
-                   objectClass="org.eclipse.uml2.diagram.clazz.edit.parts.PackageEditPart"
-                   objectCount="1">
-             </popupStructuredContributionCriteria>
-		 </popupContribution>
-      </contributionItemProvider>
-   </extension>
-      
     <extension point="org.eclipse.gmf.runtime.common.ui.services.action.contributionItemProviders">
       <?gmfgen generated="false"?>
       <contributionItemProvider
@@ -633,11 +586,6 @@
           <propertyTab
                 afterTab="property.tab.domain"
                 category="domain"
-                id="property.tab.domain.taggedvalues"
-                label="%tab.taggedvalues"/>
-          <propertyTab
-                afterTab="property.tab.domain"
-                category="domain"
                 id="property.section.domain.association.source"
                 label="%tab.association.source"/>
           <propertyTab
@@ -685,15 +633,6 @@
    <extension point="org.eclipse.ui.views.properties.tabbed.propertySections">
       <?gmfgen generated="false"?>   
       <propertySections contributorId="org.eclipse.uml2.diagram.clazz">
-         <propertySection
-            id="property.section.domain.taggedvalues" 
-            tab="property.tab.domain.taggedvalues"
-            class="org.eclipse.uml2.diagram.clazz.sheet.UMLStereotypePropertySection"
-            filter="org.eclipse.uml2.diagram.clazz.sheet.AppliedStereotypePropertySectionFilter">
-            <input type="org.eclipse.gmf.runtime.notation.View"/>
-            <input type="org.eclipse.gef.EditPart"/>
-            <input type="org.eclipse.uml2.diagram.clazz.navigator.UMLAbstractNavigatorItem"/>
-         </propertySection>
          <propertySection
             id="property.section.domain.association.source" 
             tab="property.section.domain.association.source"
@@ -1903,6 +1842,82 @@
             id="org.eclipse.uml2.diagram.clazz.icons">
       </page>
    </extension>
+<extension point="org.eclipse.gmf.runtime.common.ui.services.action.contributionItemProviders">
+<?gmfgen generated="true"?>
+      <contributionItemProvider
+            checkPluginLoaded="true"
+            class="org.eclipse.uml2.diagram.common.stereo.ApplicableProfilesItemProvider">
+         <Priority name="Medium"/>
+		 <popupContribution
+               class="org.eclipse.uml2.diagram.clazz.part.DiagramEditorContextMenuProvider">
+             <popupMenuGroup
+                  id="ApplyProfileGroup"
+                  path="/propertiesGroup">
+             </popupMenuGroup>
+             <popupMenu
+                  path="/ApplyProfileGroup"
+                  id="menu_apply_unapply_profile">
+             </popupMenu>            
+             <popupStructuredContributionCriteria
+                   objectClass="org.eclipse.uml2.diagram.clazz.edit.parts.PackageEditPart"
+                   objectCount="1">
+             </popupStructuredContributionCriteria>
+		 </popupContribution>
+      </contributionItemProvider>
+
+      <contributionItemProvider
+            checkPluginLoaded="true"
+            class="org.eclipse.uml2.diagram.common.stereo.ApplicableStereotypesItemProvider">
+         <Priority name="Medium"/>
+		 <popupContribution
+               class="org.eclipse.uml2.diagram.clazz.part.DiagramEditorContextMenuProvider">
+			 <popupMenuGroup
+                  id="ApplyStereotypeGroup"
+                  path="/propertiesGroup">
+             </popupMenuGroup>
+             <popupMenu
+                  path="/ApplyStereotypeGroup"
+                  id="menu_apply_unapply_stereotype">
+             </popupMenu>      
+             <popupStructuredContributionCriteria
+                   objectClass="org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart"
+                   objectCount="1">
+             </popupStructuredContributionCriteria>
+		 </popupContribution>
+      </contributionItemProvider>
+</extension><extension point="org.eclipse.ui.menus">
+      <?gmfgen generated="true"?>
+      <!-- menuContribution locationURI="menu:org.eclipse.ui.main.menu?after=">
+      </menuContribution>
+      <menuContribution locationURI="toolbar:org.eclipse.ui.main.toolbar?after=">
+      </menuContribution -->
+   </extension>
+<extension point="org.eclipse.ui.views.properties.tabbed.propertyTabs">
+<?gmfgen generated="true"?>
+      <propertyTabs contributorId="org.eclipse.uml2.diagram.clazz">
+          <propertyTab
+                afterTab="property.tab.domain"
+                category="domain"
+                id="property.tab.domain.taggedvalues"
+                label="Tagged Values"/>
+      </propertyTabs>
+   </extension>
+<extension point="org.eclipse.ui.views.properties.tabbed.propertySections">
+<?gmfgen generated="true"?>
+      <propertySections contributorId="org.eclipse.uml2.diagram.clazz">
+         <propertySection
+            id="property.section.domain.taggedvalues" 
+            tab="property.tab.domain.taggedvalues"
+            class="org.eclipse.uml2.diagram.common.sheet.UMLStereotypePropertySection"
+            filter="org.eclipse.uml2.diagram.common.sheet.AppliedStereotypePropertySectionFilter">
+            <input type="org.eclipse.gmf.runtime.notation.View"/>
+            <input type="org.eclipse.gef.EditPart"/>
+            <input type="org.eclipse.uml2.diagram.clazz.navigator.UMLAbstractNavigatorItem"/>
+         </propertySection>
+      </propertySections>
+   </extension>
+
+
 
 
 
