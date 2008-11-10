@@ -15,4 +15,5 @@ import "http://www.eclipse.org/gmf/2008/GenModel";
 
 boolean supportsStereotypes(GenDiagram diagram) : 
 	"org.eclipse.uml2.diagram.profile" == diagram.editorGen.plugin.iD || "org.eclipse.uml2.diagram.clazz" == diagram.editorGen.plugin.iD
+	|| "org.eclipse.uml2.diagram.component" == diagram.editorGen.plugin.iD
 ;
