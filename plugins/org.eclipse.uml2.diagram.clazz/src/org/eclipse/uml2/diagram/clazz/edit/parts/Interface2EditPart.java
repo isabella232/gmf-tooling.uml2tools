@@ -694,9 +694,6 @@ public class Interface2EditPart extends ShapeNodeEditPart implements PrimaryShap
 		if (targetEditPart instanceof PackageAsFrameEditPart) {
 			types.add(UMLElementTypes.TemplateBinding_4016);
 		}
-		if (targetEditPart instanceof PortEditPart) {
-			types.add(UMLElementTypes.TemplateBinding_4016);
-		}
 		if (targetEditPart instanceof Package6EditPart) {
 			types.add(UMLElementTypes.TemplateBinding_4016);
 		}
@@ -1067,9 +1064,6 @@ public class Interface2EditPart extends ShapeNodeEditPart implements PrimaryShap
 		}
 		if (relationshipType == UMLElementTypes.TemplateBinding_4016) {
 			types.add(UMLElementTypes.Package_2016);
-		}
-		if (relationshipType == UMLElementTypes.TemplateBinding_4016) {
-			types.add(UMLElementTypes.Port_3025);
 		}
 		if (relationshipType == UMLElementTypes.TemplateBinding_4016) {
 			types.add(UMLElementTypes.Package_3032);
@@ -1446,9 +1440,6 @@ public class Interface2EditPart extends ShapeNodeEditPart implements PrimaryShap
 		}
 		if (relationshipType == UMLElementTypes.TemplateBinding_4016) {
 			types.add(UMLElementTypes.Package_2016);
-		}
-		if (relationshipType == UMLElementTypes.TemplateBinding_4016) {
-			types.add(UMLElementTypes.Port_3025);
 		}
 		if (relationshipType == UMLElementTypes.TemplateBinding_4016) {
 			types.add(UMLElementTypes.Package_3032);

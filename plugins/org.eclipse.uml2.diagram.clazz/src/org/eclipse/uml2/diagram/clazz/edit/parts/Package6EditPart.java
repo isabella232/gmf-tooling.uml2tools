@@ -583,9 +583,6 @@ public class Package6EditPart extends ShapeNodeEditPart implements PrimaryShapeE
 		if (targetEditPart instanceof PackageAsFrameEditPart) {
 			types.add(UMLElementTypes.TemplateBinding_4016);
 		}
-		if (targetEditPart instanceof PortEditPart) {
-			types.add(UMLElementTypes.TemplateBinding_4016);
-		}
 		if (targetEditPart instanceof org.eclipse.uml2.diagram.clazz.edit.parts.Package6EditPart) {
 			types.add(UMLElementTypes.TemplateBinding_4016);
 		}
@@ -868,9 +865,6 @@ public class Package6EditPart extends ShapeNodeEditPart implements PrimaryShapeE
 			types.add(UMLElementTypes.Package_2016);
 		}
 		if (relationshipType == UMLElementTypes.TemplateBinding_4016) {
-			types.add(UMLElementTypes.Port_3025);
-		}
-		if (relationshipType == UMLElementTypes.TemplateBinding_4016) {
 			types.add(UMLElementTypes.Package_3032);
 		}
 		if (relationshipType == UMLElementTypes.TemplateBinding_4016) {
@@ -1144,9 +1138,6 @@ public class Package6EditPart extends ShapeNodeEditPart implements PrimaryShapeE
 		}
 		if (relationshipType == UMLElementTypes.TemplateBinding_4016) {
 			types.add(UMLElementTypes.Package_2016);
-		}
-		if (relationshipType == UMLElementTypes.TemplateBinding_4016) {
-			types.add(UMLElementTypes.Port_3025);
 		}
 		if (relationshipType == UMLElementTypes.TemplateBinding_4016) {
 			types.add(UMLElementTypes.Package_3032);

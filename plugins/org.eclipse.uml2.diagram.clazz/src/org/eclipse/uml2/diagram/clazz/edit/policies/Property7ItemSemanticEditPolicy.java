@@ -81,9 +81,6 @@ public class Property7ItemSemanticEditPolicy extends UMLBaseItemSemanticEditPoli
 		if (UMLElementTypes.Usage_4013 == req.getElementType()) {
 			return getGEFWrapper(new UsageCreateCommand(req, req.getSource(), req.getTarget()));
 		}
-		if (UMLElementTypes.TemplateBinding_4016 == req.getElementType()) {
-			return getGEFWrapper(new TemplateBindingCreateCommand(req, req.getSource(), req.getTarget()));
-		}
 		if (UMLElementTypes.CommentAnnotatedElement_4019 == req.getElementType()) {
 			return null;
 		}
@@ -112,9 +109,6 @@ public class Property7ItemSemanticEditPolicy extends UMLBaseItemSemanticEditPoli
 		if (UMLElementTypes.Usage_4013 == req.getElementType()) {
 			return getGEFWrapper(new UsageCreateCommand(req, req.getSource(), req.getTarget()));
 		}
-		if (UMLElementTypes.TemplateBinding_4016 == req.getElementType()) {
-			return getGEFWrapper(new TemplateBindingCreateCommand(req, req.getSource(), req.getTarget()));
-		}
 		if (UMLElementTypes.CommentAnnotatedElement_4019 == req.getElementType()) {
 			return getGEFWrapper(new CommentAnnotatedElementCreateCommand(req, req.getSource(), req.getTarget()));
 		}
@@ -135,8 +129,6 @@ public class Property7ItemSemanticEditPolicy extends UMLBaseItemSemanticEditPoli
 			return getGEFWrapper(new RealizationReorientCommand(req));
 		case UsageEditPart.VISUAL_ID:
 			return getGEFWrapper(new UsageReorientCommand(req));
-		case TemplateBindingEditPart.VISUAL_ID:
-			return getGEFWrapper(new TemplateBindingReorientCommand(req));
 		}
 		return super.getReorientRelationshipCommand(req);
 	}

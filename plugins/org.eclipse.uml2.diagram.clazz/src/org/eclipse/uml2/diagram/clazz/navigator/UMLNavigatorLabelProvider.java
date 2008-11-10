@@ -187,149 +187,149 @@ public class UMLNavigatorLabelProvider extends LabelProvider implements ICommonL
 	public Image getImage(View view) {
 		switch (UMLVisualIDRegistry.getVisualID(view)) {
 		case PackageEditPart.VISUAL_ID:
-			return getImage("Navigator?Diagram?http://www.eclipse.org/uml2/2.1.0/UML?Package", UMLElementTypes.Package_1000); //$NON-NLS-1$
+			return getImage("Navigator?Diagram?http://www.eclipse.org/uml2/3.0.0/UML?Package", UMLElementTypes.Package_1000); //$NON-NLS-1$
 		case Package2EditPart.VISUAL_ID:
-			return getImage("Navigator?TopLevelNode?http://www.eclipse.org/uml2/2.1.0/UML?Package", UMLElementTypes.Package_2002); //$NON-NLS-1$
+			return getImage("Navigator?TopLevelNode?http://www.eclipse.org/uml2/3.0.0/UML?Package", UMLElementTypes.Package_2002); //$NON-NLS-1$
 		case Class2EditPart.VISUAL_ID:
-			return getImage("Navigator?TopLevelNode?http://www.eclipse.org/uml2/2.1.0/UML?Class", UMLElementTypes.Class_2001); //$NON-NLS-1$
+			return getImage("Navigator?TopLevelNode?http://www.eclipse.org/uml2/3.0.0/UML?Class", UMLElementTypes.Class_2001); //$NON-NLS-1$
 		case AssociationClass2EditPart.VISUAL_ID:
-			return getImage("Navigator?TopLevelNode?http://www.eclipse.org/uml2/2.1.0/UML?AssociationClass", UMLElementTypes.AssociationClass_2007); //$NON-NLS-1$
+			return getImage("Navigator?TopLevelNode?http://www.eclipse.org/uml2/3.0.0/UML?AssociationClass", UMLElementTypes.AssociationClass_2007); //$NON-NLS-1$
 		case DataType2EditPart.VISUAL_ID:
-			return getImage("Navigator?TopLevelNode?http://www.eclipse.org/uml2/2.1.0/UML?DataType", UMLElementTypes.DataType_2004); //$NON-NLS-1$
+			return getImage("Navigator?TopLevelNode?http://www.eclipse.org/uml2/3.0.0/UML?DataType", UMLElementTypes.DataType_2004); //$NON-NLS-1$
 		case PrimitiveType2EditPart.VISUAL_ID:
-			return getImage("Navigator?TopLevelNode?http://www.eclipse.org/uml2/2.1.0/UML?PrimitiveType", UMLElementTypes.PrimitiveType_2005); //$NON-NLS-1$
+			return getImage("Navigator?TopLevelNode?http://www.eclipse.org/uml2/3.0.0/UML?PrimitiveType", UMLElementTypes.PrimitiveType_2005); //$NON-NLS-1$
 		case Enumeration2EditPart.VISUAL_ID:
-			return getImage("Navigator?TopLevelNode?http://www.eclipse.org/uml2/2.1.0/UML?Enumeration", UMLElementTypes.Enumeration_2003); //$NON-NLS-1$
+			return getImage("Navigator?TopLevelNode?http://www.eclipse.org/uml2/3.0.0/UML?Enumeration", UMLElementTypes.Enumeration_2003); //$NON-NLS-1$
 		case InterfaceEditPart.VISUAL_ID:
-			return getImage("Navigator?TopLevelNode?http://www.eclipse.org/uml2/2.1.0/UML?Interface", UMLElementTypes.Interface_2010); //$NON-NLS-1$
+			return getImage("Navigator?TopLevelNode?http://www.eclipse.org/uml2/3.0.0/UML?Interface", UMLElementTypes.Interface_2010); //$NON-NLS-1$
 		case ConstraintEditPart.VISUAL_ID:
-			return getImage("Navigator?TopLevelNode?http://www.eclipse.org/uml2/2.1.0/UML?Constraint", UMLElementTypes.Constraint_2006); //$NON-NLS-1$
+			return getImage("Navigator?TopLevelNode?http://www.eclipse.org/uml2/3.0.0/UML?Constraint", UMLElementTypes.Constraint_2006); //$NON-NLS-1$
 		case InstanceSpecification2EditPart.VISUAL_ID:
-			return getImage("Navigator?TopLevelNode?http://www.eclipse.org/uml2/2.1.0/UML?InstanceSpecification", UMLElementTypes.InstanceSpecification_2008); //$NON-NLS-1$
+			return getImage("Navigator?TopLevelNode?http://www.eclipse.org/uml2/3.0.0/UML?InstanceSpecification", UMLElementTypes.InstanceSpecification_2008); //$NON-NLS-1$
 		case DependencyEditPart.VISUAL_ID:
-			return getImage("Navigator?TopLevelNode?http://www.eclipse.org/uml2/2.1.0/UML?Dependency", UMLElementTypes.Dependency_2009); //$NON-NLS-1$
+			return getImage("Navigator?TopLevelNode?http://www.eclipse.org/uml2/3.0.0/UML?Dependency", UMLElementTypes.Dependency_2009); //$NON-NLS-1$
 		case GeneralizationSetEditPart.VISUAL_ID:
-			return getImage("Navigator?TopLevelNode?http://www.eclipse.org/uml2/2.1.0/UML?GeneralizationSet", UMLElementTypes.GeneralizationSet_2012); //$NON-NLS-1$
+			return getImage("Navigator?TopLevelNode?http://www.eclipse.org/uml2/3.0.0/UML?GeneralizationSet", UMLElementTypes.GeneralizationSet_2012); //$NON-NLS-1$
 		case Interface2EditPart.VISUAL_ID:
-			return getImage("Navigator?TopLevelNode?http://www.eclipse.org/uml2/2.1.0/UML?Interface", UMLElementTypes.Interface_2013); //$NON-NLS-1$
+			return getImage("Navigator?TopLevelNode?http://www.eclipse.org/uml2/3.0.0/UML?Interface", UMLElementTypes.Interface_2013); //$NON-NLS-1$
 		case Package4EditPart.VISUAL_ID:
-			return getImage("Navigator?TopLevelNode?http://www.eclipse.org/uml2/2.1.0/UML?Package", UMLElementTypes.Package_2014); //$NON-NLS-1$
+			return getImage("Navigator?TopLevelNode?http://www.eclipse.org/uml2/3.0.0/UML?Package", UMLElementTypes.Package_2014); //$NON-NLS-1$
 		case AssociationClassRhombEditPart.VISUAL_ID:
-			return getImage("Navigator?TopLevelNode?http://www.eclipse.org/uml2/2.1.0/UML?AssociationClass", UMLElementTypes.AssociationClass_2015); //$NON-NLS-1$
+			return getImage("Navigator?TopLevelNode?http://www.eclipse.org/uml2/3.0.0/UML?AssociationClass", UMLElementTypes.AssociationClass_2015); //$NON-NLS-1$
 		case PackageAsFrameEditPart.VISUAL_ID:
-			return getImage("Navigator?TopLevelNode?http://www.eclipse.org/uml2/2.1.0/UML?Package", UMLElementTypes.Package_2016); //$NON-NLS-1$
+			return getImage("Navigator?TopLevelNode?http://www.eclipse.org/uml2/3.0.0/UML?Package", UMLElementTypes.Package_2016); //$NON-NLS-1$
 		case InstanceSpecification4EditPart.VISUAL_ID:
-			return getImage("Navigator?TopLevelNode?http://www.eclipse.org/uml2/2.1.0/UML?InstanceSpecification", UMLElementTypes.InstanceSpecification_2017); //$NON-NLS-1$
+			return getImage("Navigator?TopLevelNode?http://www.eclipse.org/uml2/3.0.0/UML?InstanceSpecification", UMLElementTypes.InstanceSpecification_2017); //$NON-NLS-1$
 		case CommentEditPart.VISUAL_ID:
-			return getImage("Navigator?TopLevelNode?http://www.eclipse.org/uml2/2.1.0/UML?Comment", UMLElementTypes.Comment_2018); //$NON-NLS-1$
+			return getImage("Navigator?TopLevelNode?http://www.eclipse.org/uml2/3.0.0/UML?Comment", UMLElementTypes.Comment_2018); //$NON-NLS-1$
 		case Package3EditPart.VISUAL_ID:
-			return getImage("Navigator?Node?http://www.eclipse.org/uml2/2.1.0/UML?Package", UMLElementTypes.Package_3006); //$NON-NLS-1$
+			return getImage("Navigator?Node?http://www.eclipse.org/uml2/3.0.0/UML?Package", UMLElementTypes.Package_3006); //$NON-NLS-1$
 		case ClassEditPart.VISUAL_ID:
-			return getImage("Navigator?Node?http://www.eclipse.org/uml2/2.1.0/UML?Class", UMLElementTypes.Class_3007); //$NON-NLS-1$
+			return getImage("Navigator?Node?http://www.eclipse.org/uml2/3.0.0/UML?Class", UMLElementTypes.Class_3007); //$NON-NLS-1$
 		case DataTypeEditPart.VISUAL_ID:
-			return getImage("Navigator?Node?http://www.eclipse.org/uml2/2.1.0/UML?DataType", UMLElementTypes.DataType_3008); //$NON-NLS-1$
+			return getImage("Navigator?Node?http://www.eclipse.org/uml2/3.0.0/UML?DataType", UMLElementTypes.DataType_3008); //$NON-NLS-1$
 		case PrimitiveTypeEditPart.VISUAL_ID:
-			return getImage("Navigator?Node?http://www.eclipse.org/uml2/2.1.0/UML?PrimitiveType", UMLElementTypes.PrimitiveType_3009); //$NON-NLS-1$
+			return getImage("Navigator?Node?http://www.eclipse.org/uml2/3.0.0/UML?PrimitiveType", UMLElementTypes.PrimitiveType_3009); //$NON-NLS-1$
 		case EnumerationEditPart.VISUAL_ID:
-			return getImage("Navigator?Node?http://www.eclipse.org/uml2/2.1.0/UML?Enumeration", UMLElementTypes.Enumeration_3011); //$NON-NLS-1$
+			return getImage("Navigator?Node?http://www.eclipse.org/uml2/3.0.0/UML?Enumeration", UMLElementTypes.Enumeration_3011); //$NON-NLS-1$
 		case AssociationClassEditPart.VISUAL_ID:
-			return getImage("Navigator?Node?http://www.eclipse.org/uml2/2.1.0/UML?AssociationClass", UMLElementTypes.AssociationClass_3012); //$NON-NLS-1$
+			return getImage("Navigator?Node?http://www.eclipse.org/uml2/3.0.0/UML?AssociationClass", UMLElementTypes.AssociationClass_3012); //$NON-NLS-1$
 		case Interface3EditPart.VISUAL_ID:
-			return getImage("Navigator?Node?http://www.eclipse.org/uml2/2.1.0/UML?Interface", UMLElementTypes.Interface_3041); //$NON-NLS-1$
+			return getImage("Navigator?Node?http://www.eclipse.org/uml2/3.0.0/UML?Interface", UMLElementTypes.Interface_3041); //$NON-NLS-1$
 		case InstanceSpecificationEditPart.VISUAL_ID:
-			return getImage("Navigator?Node?http://www.eclipse.org/uml2/2.1.0/UML?InstanceSpecification", UMLElementTypes.InstanceSpecification_3013); //$NON-NLS-1$
+			return getImage("Navigator?Node?http://www.eclipse.org/uml2/3.0.0/UML?InstanceSpecification", UMLElementTypes.InstanceSpecification_3013); //$NON-NLS-1$
 		case PropertyEditPart.VISUAL_ID:
-			return getImage("Navigator?Node?http://www.eclipse.org/uml2/2.1.0/UML?Property", UMLElementTypes.Property_3001); //$NON-NLS-1$
+			return getImage("Navigator?Node?http://www.eclipse.org/uml2/3.0.0/UML?Property", UMLElementTypes.Property_3001); //$NON-NLS-1$
 		case OperationEditPart.VISUAL_ID:
-			return getImage("Navigator?Node?http://www.eclipse.org/uml2/2.1.0/UML?Operation", UMLElementTypes.Operation_3002); //$NON-NLS-1$
+			return getImage("Navigator?Node?http://www.eclipse.org/uml2/3.0.0/UML?Operation", UMLElementTypes.Operation_3002); //$NON-NLS-1$
 		case Class3EditPart.VISUAL_ID:
-			return getImage("Navigator?Node?http://www.eclipse.org/uml2/2.1.0/UML?Class", UMLElementTypes.Class_3003); //$NON-NLS-1$
+			return getImage("Navigator?Node?http://www.eclipse.org/uml2/3.0.0/UML?Class", UMLElementTypes.Class_3003); //$NON-NLS-1$
 		case PortEditPart.VISUAL_ID:
-			return getImage("Navigator?Node?http://www.eclipse.org/uml2/2.1.0/UML?Port", UMLElementTypes.Port_3025); //$NON-NLS-1$
+			return getImage("Navigator?Node?http://www.eclipse.org/uml2/3.0.0/UML?Port", UMLElementTypes.Port_3025); //$NON-NLS-1$
 		case RedefinableTemplateSignatureEditPart.VISUAL_ID:
-			return getImage("Navigator?Node?http://www.eclipse.org/uml2/2.1.0/UML?RedefinableTemplateSignature", UMLElementTypes.RedefinableTemplateSignature_3027); //$NON-NLS-1$
+			return getImage("Navigator?Node?http://www.eclipse.org/uml2/3.0.0/UML?RedefinableTemplateSignature", UMLElementTypes.RedefinableTemplateSignature_3027); //$NON-NLS-1$
 		case Property2EditPart.VISUAL_ID:
-			return getImage("Navigator?Node?http://www.eclipse.org/uml2/2.1.0/UML?Property", UMLElementTypes.Property_3019); //$NON-NLS-1$
+			return getImage("Navigator?Node?http://www.eclipse.org/uml2/3.0.0/UML?Property", UMLElementTypes.Property_3019); //$NON-NLS-1$
 		case Operation2EditPart.VISUAL_ID:
-			return getImage("Navigator?Node?http://www.eclipse.org/uml2/2.1.0/UML?Operation", UMLElementTypes.Operation_3020); //$NON-NLS-1$
+			return getImage("Navigator?Node?http://www.eclipse.org/uml2/3.0.0/UML?Operation", UMLElementTypes.Operation_3020); //$NON-NLS-1$
 		case Property3EditPart.VISUAL_ID:
-			return getImage("Navigator?Node?http://www.eclipse.org/uml2/2.1.0/UML?Property", UMLElementTypes.Property_3014); //$NON-NLS-1$
+			return getImage("Navigator?Node?http://www.eclipse.org/uml2/3.0.0/UML?Property", UMLElementTypes.Property_3014); //$NON-NLS-1$
 		case Operation3EditPart.VISUAL_ID:
-			return getImage("Navigator?Node?http://www.eclipse.org/uml2/2.1.0/UML?Operation", UMLElementTypes.Operation_3015); //$NON-NLS-1$
+			return getImage("Navigator?Node?http://www.eclipse.org/uml2/3.0.0/UML?Operation", UMLElementTypes.Operation_3015); //$NON-NLS-1$
 		case Property4EditPart.VISUAL_ID:
-			return getImage("Navigator?Node?http://www.eclipse.org/uml2/2.1.0/UML?Property", UMLElementTypes.Property_3021); //$NON-NLS-1$
+			return getImage("Navigator?Node?http://www.eclipse.org/uml2/3.0.0/UML?Property", UMLElementTypes.Property_3021); //$NON-NLS-1$
 		case Operation4EditPart.VISUAL_ID:
-			return getImage("Navigator?Node?http://www.eclipse.org/uml2/2.1.0/UML?Operation", UMLElementTypes.Operation_3022); //$NON-NLS-1$
+			return getImage("Navigator?Node?http://www.eclipse.org/uml2/3.0.0/UML?Operation", UMLElementTypes.Operation_3022); //$NON-NLS-1$
 		case EnumerationLiteralEditPart.VISUAL_ID:
-			return getImage("Navigator?Node?http://www.eclipse.org/uml2/2.1.0/UML?EnumerationLiteral", UMLElementTypes.EnumerationLiteral_3016); //$NON-NLS-1$
+			return getImage("Navigator?Node?http://www.eclipse.org/uml2/3.0.0/UML?EnumerationLiteral", UMLElementTypes.EnumerationLiteral_3016); //$NON-NLS-1$
 		case Property5EditPart.VISUAL_ID:
-			return getImage("Navigator?Node?http://www.eclipse.org/uml2/2.1.0/UML?Property", UMLElementTypes.Property_3023); //$NON-NLS-1$
+			return getImage("Navigator?Node?http://www.eclipse.org/uml2/3.0.0/UML?Property", UMLElementTypes.Property_3023); //$NON-NLS-1$
 		case Operation5EditPart.VISUAL_ID:
-			return getImage("Navigator?Node?http://www.eclipse.org/uml2/2.1.0/UML?Operation", UMLElementTypes.Operation_3024); //$NON-NLS-1$
+			return getImage("Navigator?Node?http://www.eclipse.org/uml2/3.0.0/UML?Operation", UMLElementTypes.Operation_3024); //$NON-NLS-1$
 		case SlotEditPart.VISUAL_ID:
-			return getImage("Navigator?Node?http://www.eclipse.org/uml2/2.1.0/UML?Slot", UMLElementTypes.Slot_3017); //$NON-NLS-1$
+			return getImage("Navigator?Node?http://www.eclipse.org/uml2/3.0.0/UML?Slot", UMLElementTypes.Slot_3017); //$NON-NLS-1$
 		case Property6EditPart.VISUAL_ID:
-			return getImage("Navigator?Node?http://www.eclipse.org/uml2/2.1.0/UML?Property", UMLElementTypes.Property_3028); //$NON-NLS-1$
+			return getImage("Navigator?Node?http://www.eclipse.org/uml2/3.0.0/UML?Property", UMLElementTypes.Property_3028); //$NON-NLS-1$
 		case Operation6EditPart.VISUAL_ID:
-			return getImage("Navigator?Node?http://www.eclipse.org/uml2/2.1.0/UML?Operation", UMLElementTypes.Operation_3029); //$NON-NLS-1$
+			return getImage("Navigator?Node?http://www.eclipse.org/uml2/3.0.0/UML?Operation", UMLElementTypes.Operation_3029); //$NON-NLS-1$
 		case Class4EditPart.VISUAL_ID:
-			return getImage("Navigator?Node?http://www.eclipse.org/uml2/2.1.0/UML?Class", UMLElementTypes.Class_3030); //$NON-NLS-1$
+			return getImage("Navigator?Node?http://www.eclipse.org/uml2/3.0.0/UML?Class", UMLElementTypes.Class_3030); //$NON-NLS-1$
 		case ElementImportEditPart.VISUAL_ID:
-			return getImage("Navigator?Node?http://www.eclipse.org/uml2/2.1.0/UML?ElementImport", UMLElementTypes.ElementImport_3031); //$NON-NLS-1$
+			return getImage("Navigator?Node?http://www.eclipse.org/uml2/3.0.0/UML?ElementImport", UMLElementTypes.ElementImport_3031); //$NON-NLS-1$
 		case Package6EditPart.VISUAL_ID:
-			return getImage("Navigator?Node?http://www.eclipse.org/uml2/2.1.0/UML?Package", UMLElementTypes.Package_3032); //$NON-NLS-1$
+			return getImage("Navigator?Node?http://www.eclipse.org/uml2/3.0.0/UML?Package", UMLElementTypes.Package_3032); //$NON-NLS-1$
 		case Class5EditPart.VISUAL_ID:
-			return getImage("Navigator?Node?http://www.eclipse.org/uml2/2.1.0/UML?Class", UMLElementTypes.Class_3033); //$NON-NLS-1$
+			return getImage("Navigator?Node?http://www.eclipse.org/uml2/3.0.0/UML?Class", UMLElementTypes.Class_3033); //$NON-NLS-1$
 		case Enumeration3EditPart.VISUAL_ID:
-			return getImage("Navigator?Node?http://www.eclipse.org/uml2/2.1.0/UML?Enumeration", UMLElementTypes.Enumeration_3034); //$NON-NLS-1$
+			return getImage("Navigator?Node?http://www.eclipse.org/uml2/3.0.0/UML?Enumeration", UMLElementTypes.Enumeration_3034); //$NON-NLS-1$
 		case InstanceSpecification3EditPart.VISUAL_ID:
-			return getImage("Navigator?Node?http://www.eclipse.org/uml2/2.1.0/UML?InstanceSpecification", UMLElementTypes.InstanceSpecification_3035); //$NON-NLS-1$
+			return getImage("Navigator?Node?http://www.eclipse.org/uml2/3.0.0/UML?InstanceSpecification", UMLElementTypes.InstanceSpecification_3035); //$NON-NLS-1$
 		case DataType3EditPart.VISUAL_ID:
-			return getImage("Navigator?Node?http://www.eclipse.org/uml2/2.1.0/UML?DataType", UMLElementTypes.DataType_3036); //$NON-NLS-1$
+			return getImage("Navigator?Node?http://www.eclipse.org/uml2/3.0.0/UML?DataType", UMLElementTypes.DataType_3036); //$NON-NLS-1$
 		case PrimitiveType3EditPart.VISUAL_ID:
-			return getImage("Navigator?Node?http://www.eclipse.org/uml2/2.1.0/UML?PrimitiveType", UMLElementTypes.PrimitiveType_3037); //$NON-NLS-1$
+			return getImage("Navigator?Node?http://www.eclipse.org/uml2/3.0.0/UML?PrimitiveType", UMLElementTypes.PrimitiveType_3037); //$NON-NLS-1$
 		case LiteralStringEditPart.VISUAL_ID:
-			return getImage("Navigator?Node?http://www.eclipse.org/uml2/2.1.0/UML?LiteralString", UMLElementTypes.LiteralString_3038); //$NON-NLS-1$
+			return getImage("Navigator?Node?http://www.eclipse.org/uml2/3.0.0/UML?LiteralString", UMLElementTypes.LiteralString_3038); //$NON-NLS-1$
 		case LiteralIntegerEditPart.VISUAL_ID:
-			return getImage("Navigator?Node?http://www.eclipse.org/uml2/2.1.0/UML?LiteralInteger", UMLElementTypes.LiteralInteger_3039); //$NON-NLS-1$
+			return getImage("Navigator?Node?http://www.eclipse.org/uml2/3.0.0/UML?LiteralInteger", UMLElementTypes.LiteralInteger_3039); //$NON-NLS-1$
 		case ExpressionEditPart.VISUAL_ID:
-			return getImage("Navigator?Node?http://www.eclipse.org/uml2/2.1.0/UML?Expression", UMLElementTypes.Expression_3040); //$NON-NLS-1$
+			return getImage("Navigator?Node?http://www.eclipse.org/uml2/3.0.0/UML?Expression", UMLElementTypes.Expression_3040); //$NON-NLS-1$
 		case GeneralizationEditPart.VISUAL_ID:
-			return getImage("Navigator?Link?http://www.eclipse.org/uml2/2.1.0/UML?Generalization", UMLElementTypes.Generalization_4001); //$NON-NLS-1$
+			return getImage("Navigator?Link?http://www.eclipse.org/uml2/3.0.0/UML?Generalization", UMLElementTypes.Generalization_4001); //$NON-NLS-1$
 		case Dependency2EditPart.VISUAL_ID:
-			return getImage("Navigator?Link?http://www.eclipse.org/uml2/2.1.0/UML?Dependency", UMLElementTypes.Dependency_4002); //$NON-NLS-1$
+			return getImage("Navigator?Link?http://www.eclipse.org/uml2/3.0.0/UML?Dependency", UMLElementTypes.Dependency_4002); //$NON-NLS-1$
 		case Property7EditPart.VISUAL_ID:
-			return getImage("Navigator?Link?http://www.eclipse.org/uml2/2.1.0/UML?Property", UMLElementTypes.Property_4003); //$NON-NLS-1$
+			return getImage("Navigator?Link?http://www.eclipse.org/uml2/3.0.0/UML?Property", UMLElementTypes.Property_4003); //$NON-NLS-1$
 		case ConstraintConstrainedElementEditPart.VISUAL_ID:
-			return getImage("Navigator?Link?http://www.eclipse.org/uml2/2.1.0/UML?Constraint?constrainedElement", UMLElementTypes.ConstraintConstrainedElement_4004); //$NON-NLS-1$
+			return getImage("Navigator?Link?http://www.eclipse.org/uml2/3.0.0/UML?Constraint?constrainedElement", UMLElementTypes.ConstraintConstrainedElement_4004); //$NON-NLS-1$
 		case AssociationEditPart.VISUAL_ID:
-			return getImage("Navigator?Link?http://www.eclipse.org/uml2/2.1.0/UML?Association", UMLElementTypes.Association_4005); //$NON-NLS-1$
+			return getImage("Navigator?Link?http://www.eclipse.org/uml2/3.0.0/UML?Association", UMLElementTypes.Association_4005); //$NON-NLS-1$
 		case DependencySupplierEditPart.VISUAL_ID:
-			return getImage("Navigator?Link?http://www.eclipse.org/uml2/2.1.0/UML?Dependency?supplier", UMLElementTypes.DependencySupplier_4006); //$NON-NLS-1$
+			return getImage("Navigator?Link?http://www.eclipse.org/uml2/3.0.0/UML?Dependency?supplier", UMLElementTypes.DependencySupplier_4006); //$NON-NLS-1$
 		case DependencyClientEditPart.VISUAL_ID:
-			return getImage("Navigator?Link?http://www.eclipse.org/uml2/2.1.0/UML?Dependency?client", UMLElementTypes.DependencyClient_4007); //$NON-NLS-1$
+			return getImage("Navigator?Link?http://www.eclipse.org/uml2/3.0.0/UML?Dependency?client", UMLElementTypes.DependencyClient_4007); //$NON-NLS-1$
 		case InterfaceRealizationEditPart.VISUAL_ID:
-			return getImage("Navigator?Link?http://www.eclipse.org/uml2/2.1.0/UML?InterfaceRealization", UMLElementTypes.InterfaceRealization_4008); //$NON-NLS-1$
+			return getImage("Navigator?Link?http://www.eclipse.org/uml2/3.0.0/UML?InterfaceRealization", UMLElementTypes.InterfaceRealization_4008); //$NON-NLS-1$
 		case RealizationEditPart.VISUAL_ID:
-			return getImage("Navigator?Link?http://www.eclipse.org/uml2/2.1.0/UML?Realization", UMLElementTypes.Realization_4010); //$NON-NLS-1$
+			return getImage("Navigator?Link?http://www.eclipse.org/uml2/3.0.0/UML?Realization", UMLElementTypes.Realization_4010); //$NON-NLS-1$
 		case Generalization2EditPart.VISUAL_ID:
-			return getImage("Navigator?Link?http://www.eclipse.org/uml2/2.1.0/UML?Generalization", UMLElementTypes.Generalization_4011); //$NON-NLS-1$
+			return getImage("Navigator?Link?http://www.eclipse.org/uml2/3.0.0/UML?Generalization", UMLElementTypes.Generalization_4011); //$NON-NLS-1$
 		case GeneralizationGeneralEditPart.VISUAL_ID:
-			return getImage("Navigator?Link?http://www.eclipse.org/uml2/2.1.0/UML?Generalization?general", UMLElementTypes.GeneralizationGeneral_4012); //$NON-NLS-1$
+			return getImage("Navigator?Link?http://www.eclipse.org/uml2/3.0.0/UML?Generalization?general", UMLElementTypes.GeneralizationGeneral_4012); //$NON-NLS-1$
 		case UsageEditPart.VISUAL_ID:
-			return getImage("Navigator?Link?http://www.eclipse.org/uml2/2.1.0/UML?Usage", UMLElementTypes.Usage_4013); //$NON-NLS-1$
+			return getImage("Navigator?Link?http://www.eclipse.org/uml2/3.0.0/UML?Usage", UMLElementTypes.Usage_4013); //$NON-NLS-1$
 		case AssociationClassConnectorEditPart.VISUAL_ID:
-			return getImage("Navigator?Link?http://www.eclipse.org/uml2/2.1.0/UML?AssociationClass", UMLElementTypes.AssociationClass_4014); //$NON-NLS-1$
+			return getImage("Navigator?Link?http://www.eclipse.org/uml2/3.0.0/UML?AssociationClass", UMLElementTypes.AssociationClass_4014); //$NON-NLS-1$
 		case AssociationInstanceEditPart.VISUAL_ID:
-			return getImage("Navigator?Link?http://www.eclipse.org/uml2/2.1.0/UML?Slot", UMLElementTypes.Slot_4015); //$NON-NLS-1$
+			return getImage("Navigator?Link?http://www.eclipse.org/uml2/3.0.0/UML?Slot", UMLElementTypes.Slot_4015); //$NON-NLS-1$
 		case TemplateBindingEditPart.VISUAL_ID:
-			return getImage("Navigator?Link?http://www.eclipse.org/uml2/2.1.0/UML?TemplateBinding", UMLElementTypes.TemplateBinding_4016); //$NON-NLS-1$
+			return getImage("Navigator?Link?http://www.eclipse.org/uml2/3.0.0/UML?TemplateBinding", UMLElementTypes.TemplateBinding_4016); //$NON-NLS-1$
 		case PortProvidedEditPart.VISUAL_ID:
-			return getImage("Navigator?Link?http://www.eclipse.org/uml2/2.1.0/UML?Port?provided", UMLElementTypes.PortProvided_4017); //$NON-NLS-1$
+			return getImage("Navigator?Link?http://www.eclipse.org/uml2/3.0.0/UML?Port?provided", UMLElementTypes.PortProvided_4017); //$NON-NLS-1$
 		case PortRequiredEditPart.VISUAL_ID:
-			return getImage("Navigator?Link?http://www.eclipse.org/uml2/2.1.0/UML?Port?required", UMLElementTypes.PortRequired_4018); //$NON-NLS-1$
+			return getImage("Navigator?Link?http://www.eclipse.org/uml2/3.0.0/UML?Port?required", UMLElementTypes.PortRequired_4018); //$NON-NLS-1$
 		case CommentAnnotatedElementEditPart.VISUAL_ID:
-			return getImage("Navigator?Link?http://www.eclipse.org/uml2/2.1.0/UML?Comment?annotatedElement", UMLElementTypes.CommentAnnotatedElement_4019); //$NON-NLS-1$
+			return getImage("Navigator?Link?http://www.eclipse.org/uml2/3.0.0/UML?Comment?annotatedElement", UMLElementTypes.CommentAnnotatedElement_4019); //$NON-NLS-1$
 		}
 		return getImage("Navigator?UnknownElement", null); //$NON-NLS-1$
 	}

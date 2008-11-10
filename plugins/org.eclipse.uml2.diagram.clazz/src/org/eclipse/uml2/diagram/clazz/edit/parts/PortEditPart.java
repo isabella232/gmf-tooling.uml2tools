@@ -79,11 +79,6 @@ public class PortEditPart extends BorderedBorderItemEditPart implements PrimaryS
 	/**
 	 * @generated
 	 */
-	private LinkTargetListener myLinkTargetListener;
-
-	/**
-	 * @generated
-	 */
 	public PortEditPart(View view) {
 		super(view);
 	}
@@ -267,7 +262,6 @@ public class PortEditPart extends BorderedBorderItemEditPart implements PrimaryS
 		types.add(UMLElementTypes.Dependency_4002);
 		types.add(UMLElementTypes.Realization_4010);
 		types.add(UMLElementTypes.Usage_4013);
-		types.add(UMLElementTypes.TemplateBinding_4016);
 		types.add(UMLElementTypes.PortProvided_4017);
 		types.add(UMLElementTypes.PortRequired_4018);
 		return types;
@@ -284,7 +278,6 @@ public class PortEditPart extends BorderedBorderItemEditPart implements PrimaryS
 		types.add(UMLElementTypes.DependencyClient_4007);
 		types.add(UMLElementTypes.Realization_4010);
 		types.add(UMLElementTypes.Usage_4013);
-		types.add(UMLElementTypes.TemplateBinding_4016);
 		types.add(UMLElementTypes.CommentAnnotatedElement_4019);
 		return types;
 	}
@@ -509,57 +502,6 @@ public class PortEditPart extends BorderedBorderItemEditPart implements PrimaryS
 		}
 		if (targetEditPart instanceof PrimitiveType3EditPart) {
 			types.add(UMLElementTypes.Usage_4013);
-		}
-		if (targetEditPart instanceof Package2EditPart) {
-			types.add(UMLElementTypes.TemplateBinding_4016);
-		}
-		if (targetEditPart instanceof Class2EditPart) {
-			types.add(UMLElementTypes.TemplateBinding_4016);
-		}
-		if (targetEditPart instanceof AssociationClass2EditPart) {
-			types.add(UMLElementTypes.TemplateBinding_4016);
-		}
-		if (targetEditPart instanceof DataType2EditPart) {
-			types.add(UMLElementTypes.TemplateBinding_4016);
-		}
-		if (targetEditPart instanceof PrimitiveType2EditPart) {
-			types.add(UMLElementTypes.TemplateBinding_4016);
-		}
-		if (targetEditPart instanceof Enumeration2EditPart) {
-			types.add(UMLElementTypes.TemplateBinding_4016);
-		}
-		if (targetEditPart instanceof InterfaceEditPart) {
-			types.add(UMLElementTypes.TemplateBinding_4016);
-		}
-		if (targetEditPart instanceof Interface2EditPart) {
-			types.add(UMLElementTypes.TemplateBinding_4016);
-		}
-		if (targetEditPart instanceof Package4EditPart) {
-			types.add(UMLElementTypes.TemplateBinding_4016);
-		}
-		if (targetEditPart instanceof AssociationClassRhombEditPart) {
-			types.add(UMLElementTypes.TemplateBinding_4016);
-		}
-		if (targetEditPart instanceof PackageAsFrameEditPart) {
-			types.add(UMLElementTypes.TemplateBinding_4016);
-		}
-		if (targetEditPart instanceof org.eclipse.uml2.diagram.clazz.edit.parts.PortEditPart) {
-			types.add(UMLElementTypes.TemplateBinding_4016);
-		}
-		if (targetEditPart instanceof Package6EditPart) {
-			types.add(UMLElementTypes.TemplateBinding_4016);
-		}
-		if (targetEditPart instanceof Class5EditPart) {
-			types.add(UMLElementTypes.TemplateBinding_4016);
-		}
-		if (targetEditPart instanceof Enumeration3EditPart) {
-			types.add(UMLElementTypes.TemplateBinding_4016);
-		}
-		if (targetEditPart instanceof DataType3EditPart) {
-			types.add(UMLElementTypes.TemplateBinding_4016);
-		}
-		if (targetEditPart instanceof PrimitiveType3EditPart) {
-			types.add(UMLElementTypes.TemplateBinding_4016);
 		}
 		if (targetEditPart instanceof InterfaceEditPart) {
 			types.add(UMLElementTypes.PortProvided_4017);
@@ -806,57 +748,6 @@ public class PortEditPart extends BorderedBorderItemEditPart implements PrimaryS
 		if (relationshipType == UMLElementTypes.Usage_4013) {
 			types.add(UMLElementTypes.PrimitiveType_3037);
 		}
-		if (relationshipType == UMLElementTypes.TemplateBinding_4016) {
-			types.add(UMLElementTypes.Package_2002);
-		}
-		if (relationshipType == UMLElementTypes.TemplateBinding_4016) {
-			types.add(UMLElementTypes.Class_2001);
-		}
-		if (relationshipType == UMLElementTypes.TemplateBinding_4016) {
-			types.add(UMLElementTypes.AssociationClass_2007);
-		}
-		if (relationshipType == UMLElementTypes.TemplateBinding_4016) {
-			types.add(UMLElementTypes.DataType_2004);
-		}
-		if (relationshipType == UMLElementTypes.TemplateBinding_4016) {
-			types.add(UMLElementTypes.PrimitiveType_2005);
-		}
-		if (relationshipType == UMLElementTypes.TemplateBinding_4016) {
-			types.add(UMLElementTypes.Enumeration_2003);
-		}
-		if (relationshipType == UMLElementTypes.TemplateBinding_4016) {
-			types.add(UMLElementTypes.Interface_2010);
-		}
-		if (relationshipType == UMLElementTypes.TemplateBinding_4016) {
-			types.add(UMLElementTypes.Interface_2013);
-		}
-		if (relationshipType == UMLElementTypes.TemplateBinding_4016) {
-			types.add(UMLElementTypes.Package_2014);
-		}
-		if (relationshipType == UMLElementTypes.TemplateBinding_4016) {
-			types.add(UMLElementTypes.AssociationClass_2015);
-		}
-		if (relationshipType == UMLElementTypes.TemplateBinding_4016) {
-			types.add(UMLElementTypes.Package_2016);
-		}
-		if (relationshipType == UMLElementTypes.TemplateBinding_4016) {
-			types.add(UMLElementTypes.Port_3025);
-		}
-		if (relationshipType == UMLElementTypes.TemplateBinding_4016) {
-			types.add(UMLElementTypes.Package_3032);
-		}
-		if (relationshipType == UMLElementTypes.TemplateBinding_4016) {
-			types.add(UMLElementTypes.Class_3033);
-		}
-		if (relationshipType == UMLElementTypes.TemplateBinding_4016) {
-			types.add(UMLElementTypes.Enumeration_3034);
-		}
-		if (relationshipType == UMLElementTypes.TemplateBinding_4016) {
-			types.add(UMLElementTypes.DataType_3036);
-		}
-		if (relationshipType == UMLElementTypes.TemplateBinding_4016) {
-			types.add(UMLElementTypes.PrimitiveType_3037);
-		}
 		if (relationshipType == UMLElementTypes.CommentAnnotatedElement_4019) {
 			types.add(UMLElementTypes.Comment_2018);
 		}
@@ -1084,57 +975,6 @@ public class PortEditPart extends BorderedBorderItemEditPart implements PrimaryS
 		if (relationshipType == UMLElementTypes.Usage_4013) {
 			types.add(UMLElementTypes.PrimitiveType_3037);
 		}
-		if (relationshipType == UMLElementTypes.TemplateBinding_4016) {
-			types.add(UMLElementTypes.Package_2002);
-		}
-		if (relationshipType == UMLElementTypes.TemplateBinding_4016) {
-			types.add(UMLElementTypes.Class_2001);
-		}
-		if (relationshipType == UMLElementTypes.TemplateBinding_4016) {
-			types.add(UMLElementTypes.AssociationClass_2007);
-		}
-		if (relationshipType == UMLElementTypes.TemplateBinding_4016) {
-			types.add(UMLElementTypes.DataType_2004);
-		}
-		if (relationshipType == UMLElementTypes.TemplateBinding_4016) {
-			types.add(UMLElementTypes.PrimitiveType_2005);
-		}
-		if (relationshipType == UMLElementTypes.TemplateBinding_4016) {
-			types.add(UMLElementTypes.Enumeration_2003);
-		}
-		if (relationshipType == UMLElementTypes.TemplateBinding_4016) {
-			types.add(UMLElementTypes.Interface_2010);
-		}
-		if (relationshipType == UMLElementTypes.TemplateBinding_4016) {
-			types.add(UMLElementTypes.Interface_2013);
-		}
-		if (relationshipType == UMLElementTypes.TemplateBinding_4016) {
-			types.add(UMLElementTypes.Package_2014);
-		}
-		if (relationshipType == UMLElementTypes.TemplateBinding_4016) {
-			types.add(UMLElementTypes.AssociationClass_2015);
-		}
-		if (relationshipType == UMLElementTypes.TemplateBinding_4016) {
-			types.add(UMLElementTypes.Package_2016);
-		}
-		if (relationshipType == UMLElementTypes.TemplateBinding_4016) {
-			types.add(UMLElementTypes.Port_3025);
-		}
-		if (relationshipType == UMLElementTypes.TemplateBinding_4016) {
-			types.add(UMLElementTypes.Package_3032);
-		}
-		if (relationshipType == UMLElementTypes.TemplateBinding_4016) {
-			types.add(UMLElementTypes.Class_3033);
-		}
-		if (relationshipType == UMLElementTypes.TemplateBinding_4016) {
-			types.add(UMLElementTypes.Enumeration_3034);
-		}
-		if (relationshipType == UMLElementTypes.TemplateBinding_4016) {
-			types.add(UMLElementTypes.DataType_3036);
-		}
-		if (relationshipType == UMLElementTypes.TemplateBinding_4016) {
-			types.add(UMLElementTypes.PrimitiveType_3037);
-		}
 		if (relationshipType == UMLElementTypes.PortProvided_4017) {
 			types.add(UMLElementTypes.Interface_2010);
 		}
@@ -1156,195 +996,7 @@ public class PortEditPart extends BorderedBorderItemEditPart implements PrimaryS
 	protected void handleNotificationEvent(Notification event) {
 		super.handleNotificationEvent(event);
 		if (isCanonicalEnabled()) {
-			handleTypeLinkModification(event);
 			handleFeatureLinkModification(event);
-		}
-	}
-
-	/**
-	 * @generated
-	 */
-	private DiagramEventBroker getDiagramEventBroker() {
-		TransactionalEditingDomain theEditingDomain = getEditingDomain();
-		if (theEditingDomain != null) {
-			return DiagramEventBroker.getInstance(theEditingDomain);
-		}
-		return null;
-	}
-
-	/**
-	 * @generated
-	 */
-	private LinkTargetListener getLinkTargetListener() {
-		if (myLinkTargetListener == null) {
-			myLinkTargetListener = new LinkTargetListener();
-		}
-		return myLinkTargetListener;
-	}
-
-	/**
-	 * @generated
-	 */
-	private class LinkTargetListener implements NotificationListener {
-
-		/**
-		 * @generated
-		 */
-		Map<EObject, Set<EStructuralFeature>> myNotifiers = new HashMap<EObject, Set<EStructuralFeature>>();
-
-		/**
-		 * @generated
-		 */
-		private void added(EObject link, EStructuralFeature feature) {
-			if (!myNotifiers.containsKey(link)) {
-				myNotifiers.put(link, new HashSet<EStructuralFeature>());
-			}
-			myNotifiers.get(link).add(feature);
-		}
-
-		/**
-		 * @generated
-		 */
-		private void removed(EObject link, EStructuralFeature feature) {
-			if (!myNotifiers.containsKey(link)) {
-				return;
-			}
-			myNotifiers.get(link).remove(feature);
-		}
-
-		/**
-		 * @generated
-		 */
-		public void dispose() {
-			Set<Map.Entry<EObject, Set<EStructuralFeature>>> entrySet = myNotifiers.entrySet();
-			for (Map.Entry<EObject, Set<EStructuralFeature>> entry : entrySet) {
-				for (EStructuralFeature feature : entry.getValue()) {
-					getDiagramEventBroker().removeNotificationListener(entry.getKey(), feature, this);
-				}
-			}
-		}
-
-		/**
-		 * @generated
-		 */
-		private void removeReferenceListener(EObject link, EStructuralFeature feature) {
-			getDiagramEventBroker().removeNotificationListener(link, feature, this);
-			removed(link, feature);
-		}
-
-		/**
-		 * @generated
-		 */
-		private void addReferenceListener(EObject link, EStructuralFeature feature) {
-			getDiagramEventBroker().addNotificationListener(link, feature, this);
-			added(link, feature);
-		}
-
-		/**
-		 * @generated
-		 */
-		public void notifyChanged(Notification event) {
-			if (event.getFeature() == UMLPackage.eINSTANCE.getTemplateSignature_Template()) {
-				refreshDiagram();
-				return;
-			}
-		}
-	}
-
-	/**
-	 * @generated
-	 */
-	protected void addSemanticListeners() {
-		super.addSemanticListeners();
-		for (IUpdaterNodeDescriptor next : getPort_3025ContainedLinks()) {
-			EObject nextLink = next.getModelElement();
-			if (nextLink == null) {
-				continue;
-			}
-			switch (next.getVisualID()) {
-			case TemplateBindingEditPart.VISUAL_ID:
-				getLinkTargetListener().addReferenceListener(nextLink, UMLPackage.eINSTANCE.getTemplateSignature_Template());
-				break;
-
-			default:
-				break;
-			}
-		}
-	}
-
-	/**
-	 * @generated
-	 */
-	@SuppressWarnings("unchecked")
-	private List<IUpdaterLinkDescriptor> getPort_3025ContainedLinks() {
-		return UMLDiagramUpdater.getPort_3025ContainedLinks(getNotationView());
-	}
-
-	/**
-	 * @generated
-	 */
-	protected void removeSemanticListeners() {
-		super.removeSemanticListeners();
-		getLinkTargetListener().dispose();
-	}
-
-	/**
-	 * @generated
-	 */
-	private void handleTypeLinkModification(Notification event) {
-		if (event.getFeature() == UMLPackage.eINSTANCE.getTemplateableElement_TemplateBinding()) {
-			switch (event.getEventType()) {
-			case Notification.ADD: {
-				Object link = event.getNewValue();
-				if (link instanceof TemplateBinding) {
-					getLinkTargetListener().addReferenceListener((EObject) link, UMLPackage.eINSTANCE.getTemplateSignature_Template());
-				}
-				if (link instanceof TemplateBinding) {
-					refreshDiagram();
-				}
-				break;
-			}
-			case Notification.REMOVE: {
-				Object link = event.getOldValue();
-				if (link instanceof TemplateBinding) {
-					getLinkTargetListener().removeReferenceListener((EObject) link, UMLPackage.eINSTANCE.getTemplateSignature_Template());
-				}
-				if (link instanceof TemplateBinding) {
-					refreshDiagram();
-				}
-				break;
-			}
-			case Notification.ADD_MANY: {
-				List<?> links = (List<?>) event.getNewValue();
-				for (Object link : links) {
-					if (link instanceof TemplateBinding) {
-						getLinkTargetListener().addReferenceListener((EObject) link, UMLPackage.eINSTANCE.getTemplateSignature_Template());
-					}
-				}
-				for (Object link : links) {
-					if (link instanceof TemplateBinding) {
-						refreshDiagram();
-						break;
-					}
-				}
-				break;
-			}
-			case Notification.REMOVE_MANY: {
-				List<?> links = (List<?>) event.getOldValue();
-				for (Object link : links) {
-					if (link instanceof TemplateBinding) {
-						getLinkTargetListener().removeReferenceListener((EObject) link, UMLPackage.eINSTANCE.getTemplateSignature_Template());
-					}
-				}
-				for (Object link : links) {
-					if (link instanceof TemplateBinding) {
-						refreshDiagram();
-						break;
-					}
-				}
-				break;
-			}
-			}
 		}
 	}
 

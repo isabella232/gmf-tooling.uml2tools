@@ -91,9 +91,6 @@ public class PortItemSemanticEditPolicy extends UMLBaseItemSemanticEditPolicy {
 		if (UMLElementTypes.Usage_4013 == req.getElementType()) {
 			return getGEFWrapper(new UsageCreateCommand(req, req.getSource(), req.getTarget()));
 		}
-		if (UMLElementTypes.TemplateBinding_4016 == req.getElementType()) {
-			return getGEFWrapper(new TemplateBindingCreateCommand(req, req.getSource(), req.getTarget()));
-		}
 		if (UMLElementTypes.PortProvided_4017 == req.getElementType()) {
 			return getGEFWrapper(new PortProvidedCreateCommand(req, req.getSource(), req.getTarget()));
 		}
@@ -128,9 +125,6 @@ public class PortItemSemanticEditPolicy extends UMLBaseItemSemanticEditPolicy {
 		if (UMLElementTypes.Usage_4013 == req.getElementType()) {
 			return getGEFWrapper(new UsageCreateCommand(req, req.getSource(), req.getTarget()));
 		}
-		if (UMLElementTypes.TemplateBinding_4016 == req.getElementType()) {
-			return getGEFWrapper(new TemplateBindingCreateCommand(req, req.getSource(), req.getTarget()));
-		}
 		if (UMLElementTypes.PortProvided_4017 == req.getElementType()) {
 			return null;
 		}
@@ -157,8 +151,6 @@ public class PortItemSemanticEditPolicy extends UMLBaseItemSemanticEditPolicy {
 			return getGEFWrapper(new RealizationReorientCommand(req));
 		case UsageEditPart.VISUAL_ID:
 			return getGEFWrapper(new UsageReorientCommand(req));
-		case TemplateBindingEditPart.VISUAL_ID:
-			return getGEFWrapper(new TemplateBindingReorientCommand(req));
 		}
 		return super.getReorientRelationshipCommand(req);
 	}

@@ -20,12 +20,8 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Set;
 
-import org.eclipse.emf.common.util.ECollections;
 import org.eclipse.emf.common.util.EList;
-import org.eclipse.emf.common.util.UniqueEList;
-import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.util.InternalEList;
-import org.eclipse.uml2.common.util.UnionEObjectEList;
 import org.eclipse.uml2.uml.Classifier;
 import org.eclipse.uml2.uml.Component;
 import org.eclipse.uml2.uml.ComponentRealization;
@@ -35,7 +31,6 @@ import org.eclipse.uml2.uml.InterfaceRealization;
 import org.eclipse.uml2.uml.NamedElement;
 import org.eclipse.uml2.uml.Port;
 import org.eclipse.uml2.uml.Realization;
-import org.eclipse.uml2.uml.UMLPackage;
 import org.eclipse.uml2.uml.Usage;
 
 /**
@@ -97,11 +92,14 @@ public class ComponentOperationsExt {
 		requireds.addAll(usedInterfaces(component, component, false));
 
 		for (ComponentRealization realization : component.getRealizations()) {
-			Classifier realizingClassifier = realization.getRealizingClassifier();
-			if (realizingClassifier != null) {
-				requireds.addAll(usedInterfaces(component, realizingClassifier, false));
-				for (Classifier parent : realizingClassifier.allParents()) {
-					requireds.addAll(usedInterfaces(component, parent, false));
+
+			for (Classifier realizingClassifier : realization.getRealizingClassifiers()) {
+				if (realizingClassifier != null) {
+					requireds.addAll(usedInterfaces(component, realizingClassifier, false));
+
+					for (Classifier parent : realizingClassifier.allParents()) {
+						requireds.addAll(usedInterfaces(component, parent, false));
+					}
 				}
 			}
 		}
@@ -111,6 +109,32 @@ public class ComponentOperationsExt {
 		}
 
 		return requireds;
+	}
+
+
+	protected static EList<Interface> realizedInterfaces(Component component,
+			Classifier classifier, boolean resolve,
+			EList<Interface> realizedInterfaces) {
+
+		for (Dependency clientDependency : classifier.getClientDependencies()) {
+
+			if (clientDependency instanceof Realization) {
+				Iterator<NamedElement> suppliers = resolve
+					? clientDependency.getSuppliers().iterator()
+					: ((InternalEList<NamedElement>) clientDependency
+						.getSuppliers()).basicIterator();
+
+				while (suppliers.hasNext()) {
+					NamedElement supplier = suppliers.next();
+
+					if (supplier instanceof Interface) {
+						realizedInterfaces.add((Interface) supplier);
+					}
+				}
+			}
+		}
+
+		return realizedInterfaces;
 	}
 
 }

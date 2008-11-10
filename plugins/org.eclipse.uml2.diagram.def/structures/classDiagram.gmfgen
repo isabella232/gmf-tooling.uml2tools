@@ -13295,18 +13295,6 @@
         groupIcon="icons/incomingLinksNavigatorGroup.gif"/>
     <childReferences
         parent="//@diagram/@links.14"
-        child="//@diagram/@childNodes.8"
-        referenceType="out_target"
-        groupName="target"
-        groupIcon="icons/linkTargetNavigatorGroup.gif"/>
-    <childReferences
-        parent="//@diagram/@childNodes.8"
-        child="//@diagram/@links.14"
-        referenceType="in_source"
-        groupName="incoming links"
-        groupIcon="icons/incomingLinksNavigatorGroup.gif"/>
-    <childReferences
-        parent="//@diagram/@links.14"
         child="//@diagram/@childNodes.9"
         referenceType="out_target"
         groupName="target"
@@ -13331,48 +13319,12 @@
         groupIcon="icons/incomingLinksNavigatorGroup.gif"/>
     <childReferences
         parent="//@diagram/@links.14"
-        child="//@diagram/@childNodes.11"
-        referenceType="out_target"
-        groupName="target"
-        groupIcon="icons/linkTargetNavigatorGroup.gif"/>
-    <childReferences
-        parent="//@diagram/@childNodes.11"
-        child="//@diagram/@links.14"
-        referenceType="in_source"
-        groupName="incoming links"
-        groupIcon="icons/incomingLinksNavigatorGroup.gif"/>
-    <childReferences
-        parent="//@diagram/@links.14"
-        child="//@diagram/@childNodes.13"
-        referenceType="out_target"
-        groupName="target"
-        groupIcon="icons/linkTargetNavigatorGroup.gif"/>
-    <childReferences
-        parent="//@diagram/@childNodes.13"
-        child="//@diagram/@links.14"
-        referenceType="in_source"
-        groupName="incoming links"
-        groupIcon="icons/incomingLinksNavigatorGroup.gif"/>
-    <childReferences
-        parent="//@diagram/@links.14"
         child="//@diagram/@childNodes.14"
         referenceType="out_target"
         groupName="target"
         groupIcon="icons/linkTargetNavigatorGroup.gif"/>
     <childReferences
         parent="//@diagram/@childNodes.14"
-        child="//@diagram/@links.14"
-        referenceType="in_source"
-        groupName="incoming links"
-        groupIcon="icons/incomingLinksNavigatorGroup.gif"/>
-    <childReferences
-        parent="//@diagram/@links.14"
-        child="//@diagram/@childNodes.15"
-        referenceType="out_target"
-        groupName="target"
-        groupIcon="icons/linkTargetNavigatorGroup.gif"/>
-    <childReferences
-        parent="//@diagram/@childNodes.15"
         child="//@diagram/@links.14"
         referenceType="in_source"
         groupName="incoming links"
@@ -13391,18 +13343,6 @@
         groupIcon="icons/incomingLinksNavigatorGroup.gif"/>
     <childReferences
         parent="//@diagram/@links.14"
-        child="//@diagram/@childNodes.17"
-        referenceType="out_target"
-        groupName="target"
-        groupIcon="icons/linkTargetNavigatorGroup.gif"/>
-    <childReferences
-        parent="//@diagram/@childNodes.17"
-        child="//@diagram/@links.14"
-        referenceType="in_source"
-        groupName="incoming links"
-        groupIcon="icons/incomingLinksNavigatorGroup.gif"/>
-    <childReferences
-        parent="//@diagram/@links.14"
         child="//@diagram/@childNodes.18"
         referenceType="out_target"
         groupName="target"
@@ -13415,36 +13355,12 @@
         groupIcon="icons/incomingLinksNavigatorGroup.gif"/>
     <childReferences
         parent="//@diagram/@links.14"
-        child="//@diagram/@childNodes.20"
-        referenceType="out_target"
-        groupName="target"
-        groupIcon="icons/linkTargetNavigatorGroup.gif"/>
-    <childReferences
-        parent="//@diagram/@childNodes.20"
-        child="//@diagram/@links.14"
-        referenceType="in_source"
-        groupName="incoming links"
-        groupIcon="icons/incomingLinksNavigatorGroup.gif"/>
-    <childReferences
-        parent="//@diagram/@links.14"
         child="//@diagram/@childNodes.21"
         referenceType="out_target"
         groupName="target"
         groupIcon="icons/linkTargetNavigatorGroup.gif"/>
     <childReferences
         parent="//@diagram/@childNodes.21"
-        child="//@diagram/@links.14"
-        referenceType="in_source"
-        groupName="incoming links"
-        groupIcon="icons/incomingLinksNavigatorGroup.gif"/>
-    <childReferences
-        parent="//@diagram/@links.14"
-        child="//@diagram/@childNodes.23"
-        referenceType="out_target"
-        groupName="target"
-        groupIcon="icons/linkTargetNavigatorGroup.gif"/>
-    <childReferences
-        parent="//@diagram/@childNodes.23"
         child="//@diagram/@links.14"
         referenceType="in_source"
         groupName="incoming links"
@@ -13751,18 +13667,6 @@
         groupIcon="icons/outgoingLinksNavigatorGroup.gif"/>
     <childReferences
         parent="//@diagram/@links.14"
-        child="//@diagram/@childNodes.8"
-        referenceType="in_source"
-        groupName="source"
-        groupIcon="icons/linkSourceNavigatorGroup.gif"/>
-    <childReferences
-        parent="//@diagram/@childNodes.8"
-        child="//@diagram/@links.14"
-        referenceType="out_target"
-        groupName="outgoing links"
-        groupIcon="icons/outgoingLinksNavigatorGroup.gif"/>
-    <childReferences
-        parent="//@diagram/@links.14"
         child="//@diagram/@childNodes.9"
         referenceType="in_source"
         groupName="source"
@@ -13787,48 +13691,12 @@
         groupIcon="icons/outgoingLinksNavigatorGroup.gif"/>
     <childReferences
         parent="//@diagram/@links.14"
-        child="//@diagram/@childNodes.11"
-        referenceType="in_source"
-        groupName="source"
-        groupIcon="icons/linkSourceNavigatorGroup.gif"/>
-    <childReferences
-        parent="//@diagram/@childNodes.11"
-        child="//@diagram/@links.14"
-        referenceType="out_target"
-        groupName="outgoing links"
-        groupIcon="icons/outgoingLinksNavigatorGroup.gif"/>
-    <childReferences
-        parent="//@diagram/@links.14"
-        child="//@diagram/@childNodes.13"
-        referenceType="in_source"
-        groupName="source"
-        groupIcon="icons/linkSourceNavigatorGroup.gif"/>
-    <childReferences
-        parent="//@diagram/@childNodes.13"
-        child="//@diagram/@links.14"
-        referenceType="out_target"
-        groupName="outgoing links"
-        groupIcon="icons/outgoingLinksNavigatorGroup.gif"/>
-    <childReferences
-        parent="//@diagram/@links.14"
         child="//@diagram/@childNodes.14"
         referenceType="in_source"
         groupName="source"
         groupIcon="icons/linkSourceNavigatorGroup.gif"/>
     <childReferences
         parent="//@diagram/@childNodes.14"
-        child="//@diagram/@links.14"
-        referenceType="out_target"
-        groupName="outgoing links"
-        groupIcon="icons/outgoingLinksNavigatorGroup.gif"/>
-    <childReferences
-        parent="//@diagram/@links.14"
-        child="//@diagram/@childNodes.15"
-        referenceType="in_source"
-        groupName="source"
-        groupIcon="icons/linkSourceNavigatorGroup.gif"/>
-    <childReferences
-        parent="//@diagram/@childNodes.15"
         child="//@diagram/@links.14"
         referenceType="out_target"
         groupName="outgoing links"
@@ -13847,18 +13715,6 @@
         groupIcon="icons/outgoingLinksNavigatorGroup.gif"/>
     <childReferences
         parent="//@diagram/@links.14"
-        child="//@diagram/@childNodes.17"
-        referenceType="in_source"
-        groupName="source"
-        groupIcon="icons/linkSourceNavigatorGroup.gif"/>
-    <childReferences
-        parent="//@diagram/@childNodes.17"
-        child="//@diagram/@links.14"
-        referenceType="out_target"
-        groupName="outgoing links"
-        groupIcon="icons/outgoingLinksNavigatorGroup.gif"/>
-    <childReferences
-        parent="//@diagram/@links.14"
         child="//@diagram/@childNodes.18"
         referenceType="in_source"
         groupName="source"
@@ -13871,36 +13727,12 @@
         groupIcon="icons/outgoingLinksNavigatorGroup.gif"/>
     <childReferences
         parent="//@diagram/@links.14"
-        child="//@diagram/@childNodes.20"
-        referenceType="in_source"
-        groupName="source"
-        groupIcon="icons/linkSourceNavigatorGroup.gif"/>
-    <childReferences
-        parent="//@diagram/@childNodes.20"
-        child="//@diagram/@links.14"
-        referenceType="out_target"
-        groupName="outgoing links"
-        groupIcon="icons/outgoingLinksNavigatorGroup.gif"/>
-    <childReferences
-        parent="//@diagram/@links.14"
         child="//@diagram/@childNodes.21"
         referenceType="in_source"
         groupName="source"
         groupIcon="icons/linkSourceNavigatorGroup.gif"/>
     <childReferences
         parent="//@diagram/@childNodes.21"
-        child="//@diagram/@links.14"
-        referenceType="out_target"
-        groupName="outgoing links"
-        groupIcon="icons/outgoingLinksNavigatorGroup.gif"/>
-    <childReferences
-        parent="//@diagram/@links.14"
-        child="//@diagram/@childNodes.23"
-        referenceType="in_source"
-        groupName="source"
-        groupIcon="icons/linkSourceNavigatorGroup.gif"/>
-    <childReferences
-        parent="//@diagram/@childNodes.23"
         child="//@diagram/@links.14"
         referenceType="out_target"
         groupName="outgoing links"
@@ -14943,11 +14775,11 @@
         uses="//@diagram/@links.14/@labels.0/@modelFacet"/>
     <implementations
         xsi:type="gmfgen:CustomParser"
-        uses="//@diagram/@childNodes.28/@labels.1/@modelFacet //@diagram/@childNodes.32/@labels.1/@modelFacet //@diagram/@childNodes.29/@labels.1/@modelFacet //@diagram/@topLevelNodes.1/@labels.1/@modelFacet //@diagram/@topLevelNodes.4/@labels.1/@modelFacet //@diagram/@topLevelNodes.5/@labels.1/@modelFacet //@diagram/@childNodes.31/@labels.1/@modelFacet //@diagram/@topLevelNodes.11/@labels.1/@modelFacet //@diagram/@topLevelNodes.2/@labels.1/@modelFacet //@diagram/@topLevelNodes.3/@labels.1/@modelFacet"
+        uses="//@diagram/@topLevelNodes.4/@labels.1/@modelFacet //@diagram/@childNodes.32/@labels.1/@modelFacet //@diagram/@topLevelNodes.11/@labels.1/@modelFacet //@diagram/@childNodes.29/@labels.1/@modelFacet //@diagram/@topLevelNodes.1/@labels.1/@modelFacet //@diagram/@childNodes.28/@labels.1/@modelFacet //@diagram/@topLevelNodes.3/@labels.1/@modelFacet //@diagram/@childNodes.31/@labels.1/@modelFacet //@diagram/@topLevelNodes.2/@labels.1/@modelFacet //@diagram/@topLevelNodes.5/@labels.1/@modelFacet"
         qualifiedName="org.eclipse.uml2.diagram.common.parser.stereotype.ClassifierAppliedStereotypeParser"/>
     <implementations
         xsi:type="gmfgen:CustomParser"
-        uses="//@diagram/@links.4/@labels.7/@modelFacet //@diagram/@links.8/@labels.1/@modelFacet //@diagram/@links.0/@labels.0/@modelFacet //@diagram/@links.7/@labels.0/@modelFacet //@diagram/@links.14/@labels.2/@modelFacet //@diagram/@links.9/@labels.0/@modelFacet //@diagram/@links.11/@labels.0/@modelFacet"
+        uses="//@diagram/@links.9/@labels.0/@modelFacet //@diagram/@links.14/@labels.2/@modelFacet //@diagram/@links.0/@labels.0/@modelFacet //@diagram/@links.4/@labels.7/@modelFacet //@diagram/@links.8/@labels.1/@modelFacet //@diagram/@links.11/@labels.0/@modelFacet //@diagram/@links.7/@labels.0/@modelFacet"
         qualifiedName="org.eclipse.uml2.diagram.common.parser.stereotype.AppliedStereotypeParser"/>
     <implementations
         xsi:type="gmfgen:CustomParser"
