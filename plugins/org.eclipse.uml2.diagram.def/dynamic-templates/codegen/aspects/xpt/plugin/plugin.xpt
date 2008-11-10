@@ -34,7 +34,7 @@
          extension="«dfe»">
       </fileTypes>
 «ENDFOREACH-»
-«REM» End of #230873«ENDREM-»
+«REM» End of #230873«ENDREM»«-»
    </extension>
 
    <extension point="org.eclipse.emf.ecore.extension_parser">
@@ -46,7 +46,7 @@
          class="org.eclipse.gmf.runtime.emf.core.resources.GMFResourceFactory">
       </parser>
 «ENDFOREACH-»
-«REM» End of #230873«ENDREM-»
+«REM» End of #230873«ENDREM»«-»
    </extension>
 
 «EXPAND xpt::editor::extensions::extensions FOR editorGen-»
@@ -65,8 +65,9 @@
 </plugin>
 «ENDAROUND»
 
-«AROUND additions FOR gmfgen::GenPlugin»
+«AROUND xpt::plugin::plugin::additions FOR gmfgen::GenPlugin»
 «EXPAND xpt::actions::extensions::changeNotationContributionItemProviders FOR editorGen.diagram»
+«EXPAND xpt::stereo::extensions::stereotypeContributionItemProviders FOR editorGen.diagram»
 «EXPAND iconStylePreferencesPage FOR editorGen.diagram»
 «ENDAROUND»
 
