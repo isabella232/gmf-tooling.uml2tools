@@ -121,9 +121,6 @@ public class UMLDomainModelElementTester extends PropertyTester {
 		if (eClass == UMLPackage.eINSTANCE.getConnectableElement()) {
 			return true;
 		}
-		if (eClass == UMLPackage.eINSTANCE.getConnectableElementTemplateParameter()) {
-			return true;
-		}
 		if (eClass == UMLPackage.eINSTANCE.getConnectorEnd()) {
 			return true;
 		}
@@ -248,6 +245,9 @@ public class UMLDomainModelElementTester extends PropertyTester {
 			return true;
 		}
 		if (eClass == UMLPackage.eINSTANCE.getStructuralFeature()) {
+			return true;
+		}
+		if (eClass == UMLPackage.eINSTANCE.getConnectableElementTemplateParameter()) {
 			return true;
 		}
 		if (eClass == UMLPackage.eINSTANCE.getCollaborationUse()) {
@@ -523,6 +523,9 @@ public class UMLDomainModelElementTester extends PropertyTester {
 		if (eClass == UMLPackage.eINSTANCE.getDecisionNode()) {
 			return true;
 		}
+		if (eClass == UMLPackage.eINSTANCE.getObjectFlow()) {
+			return true;
+		}
 		if (eClass == UMLPackage.eINSTANCE.getActivityFinalNode()) {
 			return true;
 		}
@@ -727,13 +730,13 @@ public class UMLDomainModelElementTester extends PropertyTester {
 		if (eClass == UMLPackage.eINSTANCE.getReduceAction()) {
 			return true;
 		}
+		if (eClass == UMLPackage.eINSTANCE.getStartObjectBehaviorAction()) {
+			return true;
+		}
 		if (eClass == UMLPackage.eINSTANCE.getJoinNode()) {
 			return true;
 		}
 		if (eClass == UMLPackage.eINSTANCE.getDataStoreNode()) {
-			return true;
-		}
-		if (eClass == UMLPackage.eINSTANCE.getObjectFlow()) {
 			return true;
 		}
 		if (eClass == UMLPackage.eINSTANCE.getConditionalNode()) {
