@@ -19,7 +19,7 @@
 
 «DEFINE stereotypeContributionItemProviders FOR gmfgen::GenDiagram»
 «IF supportsStereotypes(this)-»
-<extension point="org.eclipse.gmf.runtime.common.ui.services.action.contributionItemProviders2">
+<extension point="org.eclipse.gmf.runtime.common.ui.services.action.contributionItemProviders">
 «EXPAND xpt::Common::xmlGeneratedTag»
 «EXPAND applyProfileContributionItemProvider-»
 «EXPAND applyStereotypeContributionItemProvider-»
