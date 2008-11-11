@@ -102,34 +102,6 @@
    <extension point="org.eclipse.ui.popupMenus">
       <?gmfgen generated="true"?>
       <objectContribution
-            adaptable="false"
-            id="org.eclipse.uml2.diagram.csd.CreateShortcut"
-            objectClass="org.eclipse.uml2.diagram.csd.edit.parts.PackageEditPart">
-         <action
-               class="org.eclipse.uml2.diagram.csd.part.UMLCreateShortcutAction"
-               enablesFor="1"
-               id="org.eclipse.uml2.diagram.csd.CreateShortcutAction"
-               label="%createShortcutActionLabel"
-               menubarPath="additions">
-         </action>
-      </objectContribution>                      
-      <objectContribution
-            adaptable="false"
-            id="org.eclipse.uml2.diagram.csd.LoadResource"
-            objectClass="org.eclipse.uml2.diagram.csd.edit.parts.PackageEditPart">
-         <action
-               class="org.eclipse.uml2.diagram.csd.part.UMLLoadResourceAction"
-               enablesFor="1"
-               id="org.eclipse.uml2.diagram.csd.LoadResourceAction"
-               label="%loadResourceActionLabel"
-               menubarPath="additions">
-         </action>
-      </objectContribution>           
-   </extension>
-
-   <extension point="org.eclipse.ui.popupMenus">
-      <?gmfgen generated="true"?>
-      <objectContribution
             id="org.eclipse.uml2.diagram.csd.InitDiagram"
             nameFilter="*.uml"
             objectClass="org.eclipse.core.resources.IFile">
@@ -142,6 +114,8 @@
          </action>
       </objectContribution>
    </extension>
+
+   
 	
    <extension point="org.eclipse.gmf.runtime.common.ui.services.action.globalActionHandlerProviders">
       <?gmfgen generated="true"?>
@@ -261,12 +235,6 @@
             name="%prefpage.org.eclipse.uml2.uml.diagram.csd.rulersAndGrid"
             category="org.eclipse.uml2.uml.diagram.csd.general"
             class="org.eclipse.uml2.diagram.csd.preferences.DiagramRulersAndGridPreferencePage">
-      </page>
-      <page
-            id="org.eclipse.uml2.uml.diagram.csd.pathmaps"
-            name="%prefpage.org.eclipse.uml2.uml.diagram.csd.pathmaps"
-            category="org.eclipse.uml2.uml.diagram.csd.general"
-            class="org.eclipse.gmf.runtime.emf.ui.preferences.PathmapsPreferencePage">
       </page>
       <page
             id="org.eclipse.uml2.uml.diagram.csd.viewfilter"
@@ -967,6 +935,28 @@
       </menuContribution>
       <menuContribution locationURI="toolbar:org.eclipse.ui.main.toolbar?after=">
       </menuContribution -->
+      <menuContribution locationURI="popup:org.eclipse.gmf.runtime.diagram.ui.DiagramEditorContextMenu">
+         <command commandId="org.eclipse.uml2.diagram.csd.UMLLoadResourceAction">
+            <visibleWhen>
+               <and>
+                  <with variable="activePartId"><equals value="org.eclipse.uml2.diagram.csd.part.UMLDiagramEditorID"/></with>
+                  <with variable="selection"><iterate ifEmpty="false">
+                     <instanceof value="org.eclipse.uml2.diagram.csd.edit.parts.PackageEditPart"/>
+                  </iterate></with>
+               </and>
+            </visibleWhen>
+         </command>
+         <command commandId="org.eclipse.uml2.diagram.csd.UMLCreateShortcutAction">
+            <visibleWhen>
+               <and>
+                  <with variable="activePartId"><equals value="org.eclipse.uml2.diagram.csd.part.UMLDiagramEditorID"/></with>
+                  <with variable="selection"><iterate ifEmpty="false">
+                     <instanceof value="org.eclipse.uml2.diagram.csd.edit.parts.PackageEditPart"/>
+                  </iterate></with>
+               </and>
+            </visibleWhen>
+         </command>
+      </menuContribution>
    </extension>
 <extension point="org.eclipse.gmf.runtime.common.ui.services.action.contributionItemProviders">
 <?gmfgen generated="true"?>
@@ -1036,6 +1026,24 @@
          </propertySection>
       </propertySections>
    </extension>
+   
+   <extension point="org.eclipse.ui.commands">
+      <?gmfgen generated="true"?>
+      <category id="org.eclipse.uml2.diagram.csd.part.UMLDiagramEditorID" name="%cmdcategory.name" description="%cmdcategory.desc"/>
+      <command id="org.eclipse.uml2.diagram.csd.UMLLoadResourceAction"
+         name="Load Resource"
+         categoryId="org.eclipse.uml2.diagram.csd.part.UMLDiagramEditorID"
+         defaultHandler="org.eclipse.uml2.diagram.csd.part.UMLLoadResourceAction"/>
+      <command id="org.eclipse.uml2.diagram.csd.UMLCreateShortcutAction"
+         name="Create Shortcut..."
+         categoryId="org.eclipse.uml2.diagram.csd.part.UMLDiagramEditorID"
+         defaultHandler="org.eclipse.uml2.diagram.csd.part.UMLCreateShortcutAction"/>
+   </extension>
+   
+   <extension point="org.eclipse.ui.handlers">
+      <?gmfgen generated="true"?>
+   </extension>
+
 
 
 
