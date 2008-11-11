@@ -383,34 +383,7 @@
    <extension point="org.eclipse.ui.popupMenus">
       <?gmfgen generated="true"?>
       <objectContribution
-            adaptable="false"
-            id="org.eclipse.uml2.diagram.clazz.CreateShortcut"
-            objectClass="org.eclipse.uml2.diagram.clazz.edit.parts.PackageEditPart">
-         <action
-               class="org.eclipse.uml2.diagram.clazz.part.UMLCreateShortcutAction"
-               enablesFor="1"
-               id="org.eclipse.uml2.diagram.clazz.CreateShortcutAction"
-               label="%createShortcutActionLabel"
-               menubarPath="additions">
-         </action>
-      </objectContribution>                      
-      <objectContribution
-            adaptable="false"
-            id="org.eclipse.uml2.diagram.clazz.LoadResource"
-            objectClass="org.eclipse.uml2.diagram.clazz.edit.parts.PackageEditPart">
-         <action
-               class="org.eclipse.uml2.diagram.clazz.part.UMLLoadResourceAction"
-               enablesFor="1"
-               id="org.eclipse.uml2.diagram.clazz.LoadResourceAction"
-               label="%loadResourceActionLabel"
-               menubarPath="additions">
-         </action>
-      </objectContribution>           
-   </extension>
 
-   <extension point="org.eclipse.ui.popupMenus">
-      <?gmfgen generated="true"?>
-      <objectContribution
             id="org.eclipse.uml2.diagram.clazz.InitDiagram"
             nameFilter="*.uml"
             objectClass="org.eclipse.core.resources.IFile">
@@ -423,6 +396,8 @@
          </action>
       </objectContribution>
    </extension>
+
+   
 	
    <extension point="org.eclipse.gmf.runtime.common.ui.services.action.globalActionHandlerProviders">
       <?gmfgen generated="true"?>
@@ -1891,6 +1866,28 @@
       </menuContribution>
       <menuContribution locationURI="toolbar:org.eclipse.ui.main.toolbar?after=">
       </menuContribution -->
+      <menuContribution locationURI="popup:org.eclipse.gmf.runtime.diagram.ui.DiagramEditorContextMenu">
+         <command commandId="org.eclipse.uml2.diagram.clazz.UMLLoadResourceAction">
+            <visibleWhen>
+               <and>
+                  <with variable="activePartId"><equals value="org.eclipse.uml2.diagram.clazz.part.UMLDiagramEditorID"/></with>
+                  <with variable="selection"><iterate ifEmpty="false">
+                     <instanceof value="org.eclipse.uml2.diagram.clazz.edit.parts.PackageEditPart"/>
+                  </iterate></with>
+               </and>
+            </visibleWhen>
+         </command>
+         <command commandId="org.eclipse.uml2.diagram.clazz.UMLCreateShortcutAction">
+            <visibleWhen>
+               <and>
+                  <with variable="activePartId"><equals value="org.eclipse.uml2.diagram.clazz.part.UMLDiagramEditorID"/></with>
+                  <with variable="selection"><iterate ifEmpty="false">
+                     <instanceof value="org.eclipse.uml2.diagram.clazz.edit.parts.PackageEditPart"/>
+                  </iterate></with>
+               </and>
+            </visibleWhen>
+         </command>
+      </menuContribution>
    </extension>
 <extension point="org.eclipse.ui.views.properties.tabbed.propertyTabs">
 <?gmfgen generated="true"?>
@@ -1916,6 +1913,24 @@
          </propertySection>
       </propertySections>
    </extension>
+   
+   <extension point="org.eclipse.ui.commands">
+      <?gmfgen generated="true"?>
+      <category id="org.eclipse.uml2.diagram.clazz.part.UMLDiagramEditorID" name="%cmdcategory.name" description="%cmdcategory.desc"/>
+      <command id="org.eclipse.uml2.diagram.clazz.UMLLoadResourceAction"
+         name="Load Resource"
+         categoryId="org.eclipse.uml2.diagram.clazz.part.UMLDiagramEditorID"
+         defaultHandler="org.eclipse.uml2.diagram.clazz.part.UMLLoadResourceAction"/>
+      <command id="org.eclipse.uml2.diagram.clazz.UMLCreateShortcutAction"
+         name="Create Shortcut..."
+         categoryId="org.eclipse.uml2.diagram.clazz.part.UMLDiagramEditorID"
+         defaultHandler="org.eclipse.uml2.diagram.clazz.part.UMLCreateShortcutAction"/>
+   </extension>
+   
+   <extension point="org.eclipse.ui.handlers">
+      <?gmfgen generated="true"?>
+   </extension>
+   
 
 
 
