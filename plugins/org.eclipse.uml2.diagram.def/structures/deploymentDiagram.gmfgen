@@ -1459,11 +1459,6 @@
           iD="org.eclipse.uml2.uml.diagram.deploy.rulersAndGrid"
           name="Rulers And Grid"
           kind="RulersAndGrid"/>
-      <children
-          xsi:type="gmfgen:GenStandardPreferencePage"
-          iD="org.eclipse.uml2.uml.diagram.deploy.pathmaps"
-          name="Pathmaps"
-          kind="Pathmaps"/>
     </preferencePages>
   </diagram>
   <plugin
@@ -2674,4 +2669,14 @@
         xsi:type="gmfgen:PredefinedParser"
         uses="//@diagram/@childNodes.0/@labelModelFacet //@diagram/@topLevelNodes.0/@labels.0/@modelFacet //@diagram/@childNodes.5/@labelModelFacet //@diagram/@childNodes.4/@labels.0/@modelFacet //@diagram/@childNodes.3/@labels.0/@modelFacet //@diagram/@childNodes.2/@labels.0/@modelFacet //@diagram/@childNodes.7/@labelModelFacet //@diagram/@childNodes.6/@labels.0/@modelFacet //@diagram/@childNodes.8/@labels.0/@modelFacet //@diagram/@childNodes.1/@labels.0/@modelFacet //@diagram/@topLevelNodes.1/@labels.0/@modelFacet //@diagram/@topLevelNodes.2/@labels.0/@modelFacet //@diagram/@topLevelNodes.3/@labels.0/@modelFacet //@diagram/@topLevelNodes.4/@labels.0/@modelFacet //@diagram/@topLevelNodes.5/@labels.0/@modelFacet //@diagram/@links.0/@labels.0/@modelFacet //@diagram/@links.1/@labels.0/@modelFacet //@diagram/@links.3/@labels.0/@modelFacet //@diagram/@links.4/@labels.0/@modelFacet"/>
   </labelParsers>
+  <contextMenus
+      iD="org.eclipse.uml2.diagram.deploy.menu"
+      context="//@diagram">
+    <items
+        xsi:type="gmfgen:LoadResourceAction"
+        qualifiedClassName="org.eclipse.uml2.diagram.deploy.part.UMLLoadResourceAction"/>
+    <items
+        xsi:type="gmfgen:CreateShortcutAction"
+        qualifiedClassName="org.eclipse.uml2.diagram.deploy.part.UMLCreateShortcutAction"/>
+  </contextMenus>
 </gmfgen:GenEditorGenerator>

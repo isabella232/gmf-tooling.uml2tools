@@ -1473,11 +1473,6 @@
           iD="org.eclipse.uml2.uml.diagram.usecase.rulersAndGrid"
           name="Rulers And Grid"
           kind="RulersAndGrid"/>
-      <children
-          xsi:type="gmfgen:GenStandardPreferencePage"
-          iD="org.eclipse.uml2.uml.diagram.usecase.pathmaps"
-          name="Pathmaps"
-          kind="Pathmaps"/>
     </preferencePages>
   </diagram>
   <plugin
@@ -2712,4 +2707,14 @@
         xsi:type="gmfgen:ExternalParser"
         uses="//@diagram/@links.0/@labels.0/@modelFacet //@diagram/@links.1/@labels.0/@modelFacet"/>
   </labelParsers>
+  <contextMenus
+      iD="org.eclipse.uml2.diagram.usecase.menu"
+      context="//@diagram">
+    <items
+        xsi:type="gmfgen:LoadResourceAction"
+        qualifiedClassName="org.eclipse.uml2.diagram.usecase.part.UMLLoadResourceAction"/>
+    <items
+        xsi:type="gmfgen:CreateShortcutAction"
+        qualifiedClassName="org.eclipse.uml2.diagram.usecase.part.UMLCreateShortcutAction"/>
+  </contextMenus>
 </gmfgen:GenEditorGenerator>
