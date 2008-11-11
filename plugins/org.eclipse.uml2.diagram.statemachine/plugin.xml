@@ -114,24 +114,6 @@
       </wizard>
    </extension>
 
-   <extension point="org.eclipse.ui.popupMenus">
-      <?gmfgen generated="true"?>
-      <objectContribution
-            adaptable="false"
-            id="org.eclipse.uml2.diagram.statemachine.LoadResource"
-            objectClass="org.eclipse.uml2.diagram.statemachine.edit.parts.StateMachineEditPart">
-         <action
-               class="org.eclipse.uml2.diagram.statemachine.part.UMLLoadResourceAction"
-               enablesFor="1"
-               id="org.eclipse.uml2.diagram.statemachine.LoadResourceAction"
-               label="%loadResourceActionLabel"
-               menubarPath="additions">
-         </action>
-      </objectContribution>           
-   </extension>
-
-   
-
    <extension point="org.eclipse.gmf.runtime.common.ui.services.action.globalActionHandlerProviders">
       <?gmfgen generated="true"?>
       <GlobalActionHandlerProvider
@@ -668,7 +650,9 @@
             category="org.eclipse.uml2.uml.diagram.statemachine.general"
             class="org.eclipse.uml2.diagram.statemachine.preferences.DiagramRulersAndGridPreferencePage">
       </page>
-   </extension><extension point="org.eclipse.ui.popupMenus">
+   </extension>
+   
+   <extension point="org.eclipse.ui.popupMenus">
       <?gmfgen generated="true"?>
       <objectContribution
             id="org.eclipse.uml2.diagram.statemachine.InitDiagram"
@@ -683,6 +667,7 @@
          </action>
       </objectContribution>
    </extension>
+   
 <extension point="org.eclipse.core.expressions.propertyTesters">
       <?gmfgen generated="true"?>
        <propertyTester
@@ -743,6 +728,32 @@
       </menuContribution>
       <menuContribution locationURI="toolbar:org.eclipse.ui.main.toolbar?after=">
       </menuContribution -->
+      <menuContribution locationURI="popup:org.eclipse.gmf.runtime.diagram.ui.DiagramEditorContextMenu">
+         <command commandId="org.eclipse.uml2.diagram.statemachine.UMLLoadResourceAction">
+            <visibleWhen>
+               <and>
+                  <with variable="activePartId"><equals value="org.eclipse.uml2.diagram.statemachine.part.UMLDiagramEditorID"/></with>
+                  <with variable="selection"><iterate ifEmpty="false">
+                     <instanceof value="org.eclipse.uml2.diagram.statemachine.edit.parts.StateMachineEditPart"/>
+                  </iterate></with>
+               </and>
+            </visibleWhen>
+         </command>
+      </menuContribution>
    </extension>
+   
+   <extension point="org.eclipse.ui.commands">
+      <?gmfgen generated="true"?>
+      <category id="org.eclipse.uml2.diagram.statemachine.part.UMLDiagramEditorID" name="%cmdcategory.name" description="%cmdcategory.desc"/>
+      <command id="org.eclipse.uml2.diagram.statemachine.UMLLoadResourceAction"
+         name="Load Resource"
+         categoryId="org.eclipse.uml2.diagram.statemachine.part.UMLDiagramEditorID"
+         defaultHandler="org.eclipse.uml2.diagram.statemachine.part.UMLLoadResourceAction"/>
+   </extension>
+   
+   <extension point="org.eclipse.ui.handlers">
+      <?gmfgen generated="true"?>
+   </extension>
+
 
 </plugin>
