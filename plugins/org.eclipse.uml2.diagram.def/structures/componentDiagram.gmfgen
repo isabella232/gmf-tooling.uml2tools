@@ -3721,4 +3721,14 @@
         xsi:type="gmfgen:PredefinedParser"
         uses="//@diagram/@childNodes.1/@labels.0/@modelFacet //@diagram/@childNodes.3/@labels.0/@modelFacet //@diagram/@childNodes.2/@labels.0/@modelFacet //@diagram/@childNodes.4/@labels.0/@modelFacet //@diagram/@childNodes.5/@labels.0/@modelFacet //@diagram/@childNodes.6/@labels.0/@modelFacet //@diagram/@childNodes.0/@labels.0/@modelFacet //@diagram/@topLevelNodes.0/@labels.0/@modelFacet //@diagram/@topLevelNodes.1/@labels.0/@modelFacet //@diagram/@topLevelNodes.2/@labels.0/@modelFacet //@diagram/@topLevelNodes.3/@labels.0/@modelFacet //@diagram/@childNodes.8/@labelModelFacet //@diagram/@topLevelNodes.4/@labels.0/@modelFacet //@diagram/@childNodes.9/@labelModelFacet //@diagram/@childNodes.10/@labelModelFacet //@diagram/@childNodes.11/@labelModelFacet //@diagram/@topLevelNodes.5/@labels.0/@modelFacet //@diagram/@childNodes.12/@labelModelFacet //@diagram/@childNodes.13/@labelModelFacet //@diagram/@childNodes.14/@labelModelFacet //@diagram/@childNodes.15/@labels.0/@modelFacet //@diagram/@topLevelNodes.6/@labels.0/@modelFacet //@diagram/@topLevelNodes.6/@labels.1/@modelFacet //@diagram/@links.5/@labels.0/@modelFacet //@diagram/@links.7/@labels.0/@modelFacet //@diagram/@links.7/@labels.1/@modelFacet //@diagram/@links.7/@labels.2/@modelFacet //@diagram/@links.7/@labels.3/@modelFacet //@diagram/@links.7/@labels.4/@modelFacet //@diagram/@links.7/@labels.5/@modelFacet //@diagram/@links.7/@labels.6/@modelFacet"/>
   </labelParsers>
+  <contextMenus
+      iD="org.eclipse.uml2.diagram.component.menu"
+      context="//@diagram">
+    <items
+        xsi:type="gmfgen:LoadResourceAction"
+        qualifiedClassName="org.eclipse.uml2.diagram.component.part.UMLLoadResourceAction"/>
+    <items
+        xsi:type="gmfgen:CreateShortcutAction"
+        qualifiedClassName="org.eclipse.uml2.diagram.component.part.UMLCreateShortcutAction"/>
+  </contextMenus>
 </gmfgen:GenEditorGenerator>

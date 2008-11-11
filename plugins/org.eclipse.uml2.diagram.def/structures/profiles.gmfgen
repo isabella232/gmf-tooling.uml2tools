@@ -1404,7 +1404,7 @@
         qualifiedName="org.eclipse.uml2.diagram.common.parser.stereotype.ProfileAppliedStereotypeParser"/>
   </labelParsers>
   <contextMenus
-      iD="org.eclipse.uml2.diagram.profilemenu"
+      iD="org.eclipse.uml2.diagram.profile.menu"
       context="//@diagram">
     <items
         xsi:type="gmfgen:CreateShortcutAction"

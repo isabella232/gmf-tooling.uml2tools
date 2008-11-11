@@ -97,34 +97,6 @@
       </wizard>
    </extension>
 
-   <extension point="org.eclipse.ui.popupMenus">
-      <?gmfgen generated="true"?>
-      <objectContribution
-            adaptable="false"
-            id="org.eclipse.uml2.diagram.component.CreateShortcut"
-            objectClass="org.eclipse.uml2.diagram.component.edit.parts.PackageEditPart">
-         <action
-               class="org.eclipse.uml2.diagram.component.part.UMLCreateShortcutAction"
-               enablesFor="1"
-               id="org.eclipse.uml2.diagram.component.CreateShortcutAction"
-               label="%createShortcutActionLabel"
-               menubarPath="additions">
-         </action>
-      </objectContribution>                      
-      <objectContribution
-            adaptable="false"
-            id="org.eclipse.uml2.diagram.component.LoadResource"
-            objectClass="org.eclipse.uml2.diagram.component.edit.parts.PackageEditPart">
-         <action
-               class="org.eclipse.uml2.diagram.component.part.UMLLoadResourceAction"
-               enablesFor="1"
-               id="org.eclipse.uml2.diagram.component.LoadResourceAction"
-               label="%loadResourceActionLabel"
-               menubarPath="additions">
-         </action>
-      </objectContribution>           
-   </extension>
-
    <!--
    <extension point="org.eclipse.gmf.runtime.common.ui.services.action.contributionItemProviders">
       <?gmfgen generated="true"?>
@@ -832,6 +804,7 @@
             class="org.eclipse.uml2.diagram.component.preferences.DiagramViewFiltersPreferencePage">
       </page>
    </extension>
+   
    <extension point="org.eclipse.ui.popupMenus">
       <?gmfgen generated="true"?>
       <objectContribution
@@ -847,6 +820,7 @@
          </action>
       </objectContribution>
    </extension>
+
    <extension point="org.eclipse.core.expressions.propertyTesters">
       <?gmfgen generated="true"?>
        <propertyTester
@@ -866,7 +840,8 @@
            properties="isDomainModelElement"
            class="org.eclipse.uml2.diagram.component.part.UMLDomainModelElementTester">
        </propertyTester>
-   </extension><extension point="org.eclipse.ui.contexts">
+   </extension>
+   <extension point="org.eclipse.ui.contexts">
       <?gmfgen generated="true"?>
       <context
          description="%context.description"
@@ -875,7 +850,7 @@
          parentId="org.eclipse.gmf.runtime.diagram.ui.diagramContext">
       </context>
    </extension>
-<extension point="org.eclipse.ui.commands">
+   <extension point="org.eclipse.ui.commands">
       <?gmfgen generated="true"?>
       <command
          categoryId="org.eclipse.ui.category.edit"
@@ -884,14 +859,15 @@
          id="org.eclipse.uml2.diagram.component.updateDiagram"
          name="%update.diagram.name"/>
    </extension>
-<extension point="org.eclipse.ui.bindings">
+   <extension point="org.eclipse.ui.bindings">
       <?gmfgen generated="true"?>
       <key 
          commandId="org.eclipse.uml2.diagram.component.updateDiagram"
          contextId="org.eclipse.uml2.diagram.component.ui.diagramContext"
          schemeId="org.eclipse.ui.defaultAcceleratorConfiguration"
          sequence="F5"/>
-   </extension><extension point="org.eclipse.gmf.runtime.common.ui.services.action.contributionItemProviders">
+   </extension>
+   <extension point="org.eclipse.gmf.runtime.common.ui.services.action.contributionItemProviders">
       <?gmfgen generated="true"?>
       <contributionItemProvider
             checkPluginLoaded="true"
@@ -931,14 +907,54 @@
             category="org.eclipse.uml2.uml.diagram.component.general"
             id="org.eclipse.uml2.diagram.component.icons">
       </page>
-   </extension><extension point="org.eclipse.ui.menus">
+   </extension>
+   <extension point="org.eclipse.ui.commands">
+      <?gmfgen generated="true"?>
+      <category id="org.eclipse.uml2.diagram.component.part.UMLDiagramEditorID" name="%cmdcategory.name" description="%cmdcategory.desc"/>
+      <command id="org.eclipse.uml2.diagram.component.UMLLoadResourceAction"
+         name="Load Resource"
+         categoryId="org.eclipse.uml2.diagram.component.part.UMLDiagramEditorID"
+         defaultHandler="org.eclipse.uml2.diagram.component.part.UMLLoadResourceAction"/>
+      <command id="org.eclipse.uml2.diagram.component.UMLCreateShortcutAction"
+         name="Create Shortcut..."
+         categoryId="org.eclipse.uml2.diagram.component.part.UMLDiagramEditorID"
+         defaultHandler="org.eclipse.uml2.diagram.component.part.UMLCreateShortcutAction"/>
+   </extension>
+   <extension point="org.eclipse.ui.handlers">
+      <?gmfgen generated="true"?>
+   </extension>
+   
+   <extension point="org.eclipse.ui.menus">
       <?gmfgen generated="true"?>
       <!-- menuContribution locationURI="menu:org.eclipse.ui.main.menu?after=">
       </menuContribution>
       <menuContribution locationURI="toolbar:org.eclipse.ui.main.toolbar?after=">
       </menuContribution -->
+      <menuContribution locationURI="popup:org.eclipse.gmf.runtime.diagram.ui.DiagramEditorContextMenu">
+         <command commandId="org.eclipse.uml2.diagram.component.UMLLoadResourceAction">
+            <visibleWhen>
+               <and>
+                  <with variable="activePartId"><equals value="org.eclipse.uml2.diagram.component.part.UMLDiagramEditorID"/></with>
+                  <with variable="selection"><iterate ifEmpty="false">
+                     <instanceof value="org.eclipse.uml2.diagram.component.edit.parts.PackageEditPart"/>
+                  </iterate></with>
+               </and>
+            </visibleWhen>
+         </command>
+         <command commandId="org.eclipse.uml2.diagram.component.UMLCreateShortcutAction">
+            <visibleWhen>
+               <and>
+                  <with variable="activePartId"><equals value="org.eclipse.uml2.diagram.component.part.UMLDiagramEditorID"/></with>
+                  <with variable="selection"><iterate ifEmpty="false">
+                     <instanceof value="org.eclipse.uml2.diagram.component.edit.parts.PackageEditPart"/>
+                  </iterate></with>
+               </and>
+            </visibleWhen>
+         </command>
+      </menuContribution>
    </extension>
-<extension point="org.eclipse.gmf.runtime.common.ui.services.action.contributionItemProviders">
+   
+   <extension point="org.eclipse.gmf.runtime.common.ui.services.action.contributionItemProviders">
 <?gmfgen generated="true"?>
       <contributionItemProvider
             checkPluginLoaded="true"
@@ -982,8 +998,8 @@
 		 </popupContribution>
       </contributionItemProvider>
 </extension>
-<extension point="org.eclipse.ui.views.properties.tabbed.propertyTabs">
-<?gmfgen generated="true"?>
+   <extension point="org.eclipse.ui.views.properties.tabbed.propertyTabs">
+   <?gmfgen generated="true"?>
       <propertyTabs contributorId="org.eclipse.uml2.diagram.component">
           <propertyTab
                 afterTab="property.tab.domain"
@@ -992,8 +1008,9 @@
                 label="Tagged Values"/>
       </propertyTabs>
    </extension>
-<extension point="org.eclipse.ui.views.properties.tabbed.propertySections">
-<?gmfgen generated="true"?>
+   
+   <extension point="org.eclipse.ui.views.properties.tabbed.propertySections">
+   <?gmfgen generated="true"?>
       <propertySections contributorId="org.eclipse.uml2.diagram.component">
          <propertySection
             id="property.section.domain.taggedvalues" 
