@@ -15,6 +15,7 @@ import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.uml2.diagram.common.parser.imports.ElementImportParser;
 import org.eclipse.uml2.diagram.common.parser.imports.ElementImportProvider;
 import org.eclipse.uml2.diagram.common.parser.stereotype.ClassifierAppliedStereotypeParser;
+import org.eclipse.uml2.diagram.common.parser.stereotype.ProfileAppliedStereotypeParser;
 import org.eclipse.uml2.diagram.common.parser.valuespec.ValueSpecificationParser;
 import org.eclipse.uml2.diagram.profile.edit.parts.ConstraintEditPart;
 import org.eclipse.uml2.diagram.profile.edit.parts.ConstraintNameEditPart;
@@ -24,8 +25,10 @@ import org.eclipse.uml2.diagram.profile.edit.parts.EnumerationNameEditPart;
 import org.eclipse.uml2.diagram.profile.edit.parts.EnumerationQualifiedNameEditPart;
 import org.eclipse.uml2.diagram.profile.edit.parts.ProfileName2EditPart;
 import org.eclipse.uml2.diagram.profile.edit.parts.ProfileNameEditPart;
+import org.eclipse.uml2.diagram.profile.edit.parts.ProfileStereoEditPart;
 import org.eclipse.uml2.diagram.profile.edit.parts.Stereotype2EditPart;
 import org.eclipse.uml2.diagram.profile.edit.parts.StereotypeNameEditPart;
+import org.eclipse.uml2.diagram.profile.edit.parts.StereotypeStereoEditPart;
 import org.eclipse.uml2.diagram.profile.parsers.MessageFormatParser;
 import org.eclipse.uml2.diagram.profile.part.UMLVisualIDRegistry;
 import org.eclipse.uml2.uml.UMLPackage;
@@ -62,6 +65,21 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 	/**
 	 * @generated
 	 */
+	private ProfileAppliedStereotypeParser stereotypeQualifiedName_5012Parser;
+
+	/**
+	 * @generated
+	 */
+	private IParser getStereotypeQualifiedName_5012Parser() {
+		if (stereotypeQualifiedName_5012Parser == null) {
+			stereotypeQualifiedName_5012Parser = new ProfileAppliedStereotypeParser();
+		}
+		return stereotypeQualifiedName_5012Parser;
+	}
+
+	/**
+	 * @generated
+	 */
 	private IParser profileName_5003Parser;
 
 	/**
@@ -81,6 +99,21 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 		EAttribute[] features = new EAttribute[] { UMLPackage.eINSTANCE.getNamedElement_Name() };
 		Parser_0_0 parser = new Parser_0_0(features);
 		return parser;
+	}
+
+	/**
+	 * @generated
+	 */
+	private ProfileAppliedStereotypeParser profileQualifiedName_5013Parser;
+
+	/**
+	 * @generated
+	 */
+	private IParser getProfileQualifiedName_5013Parser() {
+		if (profileQualifiedName_5013Parser == null) {
+			profileQualifiedName_5013Parser = new ProfileAppliedStereotypeParser();
+		}
+		return profileQualifiedName_5013Parser;
 	}
 
 	/**
@@ -110,14 +143,14 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 	/**
 	 * @generated
 	 */
-	private ClassifierAppliedStereotypeParser enumerationQualifiedName_5011Parser;
+	private ProfileAppliedStereotypeParser enumerationQualifiedName_5011Parser;
 
 	/**
 	 * @generated
 	 */
 	private IParser getEnumerationQualifiedName_5011Parser() {
 		if (enumerationQualifiedName_5011Parser == null) {
-			enumerationQualifiedName_5011Parser = new ClassifierAppliedStereotypeParser();
+			enumerationQualifiedName_5011Parser = new ProfileAppliedStereotypeParser();
 		}
 		return enumerationQualifiedName_5011Parser;
 	}
@@ -264,8 +297,12 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 		switch (visualID) {
 		case StereotypeNameEditPart.VISUAL_ID:
 			return getStereotypeName_5001Parser();
+		case StereotypeStereoEditPart.VISUAL_ID:
+			return getStereotypeQualifiedName_5012Parser();
 		case ProfileNameEditPart.VISUAL_ID:
 			return getProfileName_5003Parser();
+		case ProfileStereoEditPart.VISUAL_ID:
+			return getProfileQualifiedName_5013Parser();
 		case EnumerationNameEditPart.VISUAL_ID:
 			return getEnumerationName_5005Parser();
 		case EnumerationQualifiedNameEditPart.VISUAL_ID:

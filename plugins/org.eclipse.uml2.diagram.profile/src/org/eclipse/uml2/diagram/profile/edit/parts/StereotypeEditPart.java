@@ -146,6 +146,10 @@ public class StereotypeEditPart extends ShapeNodeEditPart implements PrimaryShap
 			((StereotypeNameEditPart) childEditPart).setLabel(getPrimaryShape().getFigureStereotypeFigure_NameLabel());
 			return true;
 		}
+		if (childEditPart instanceof StereotypeStereoEditPart) {
+			((StereotypeStereoEditPart) childEditPart).setLabel(getPrimaryShape().getFigureStereotypeFigure_StereotypeLabel());
+			return true;
+		}
 		if (childEditPart instanceof StereotypeAttributesEditPart) {
 			IFigure pane = getPrimaryShape().getFigureStereotypeFigure_AttributesCompartment();
 			setupContentPane(pane); // FIXME each comparment should handle his content pane in his own way 
@@ -645,6 +649,11 @@ public class StereotypeEditPart extends ShapeNodeEditPart implements PrimaryShap
 		/**
 		 * @generated
 		 */
+		private Label fFigureStereotypeFigure_StereotypeLabel;
+
+		/**
+		 * @generated
+		 */
 		public StereotypeFigure() {
 
 			ToolbarLayout layoutThis = new ToolbarLayout();
@@ -665,14 +674,16 @@ public class StereotypeEditPart extends ShapeNodeEditPart implements PrimaryShap
 		 */
 		private void createContents() {
 
-			Label stereotypeFigure_StereotypeLabel0 = new Label();
-			stereotypeFigure_StereotypeLabel0.setText("\u00ABstereotype\u00BB");
+			fFigureStereotypeFigure_StereotypeLabel = new Label();
+			fFigureStereotypeFigure_StereotypeLabel.setText("");
 
-			this.add(stereotypeFigure_StereotypeLabel0);
+			fFigureStereotypeFigure_StereotypeLabel.setBorder(new MarginBorder(getMapMode().DPtoLP(5), getMapMode().DPtoLP(5), getMapMode().DPtoLP(0), getMapMode().DPtoLP(5)));
 
-			CenterLayout layoutStereotypeFigure_StereotypeLabel0 = new CenterLayout();
+			this.add(fFigureStereotypeFigure_StereotypeLabel);
 
-			stereotypeFigure_StereotypeLabel0.setLayoutManager(layoutStereotypeFigure_StereotypeLabel0);
+			CenterLayout layoutFFigureStereotypeFigure_StereotypeLabel = new CenterLayout();
+
+			fFigureStereotypeFigure_StereotypeLabel.setLayoutManager(layoutFFigureStereotypeFigure_StereotypeLabel);
 
 			RectangleFigure stereotypeFigure_NameContainer0 = new RectangleFigure();
 			stereotypeFigure_NameContainer0.setOutline(false);
@@ -720,6 +731,13 @@ public class StereotypeEditPart extends ShapeNodeEditPart implements PrimaryShap
 		 */
 		public RectangleFigure getFigureStereotypeFigure_ConstraintsCompartment() {
 			return fFigureStereotypeFigure_ConstraintsCompartment;
+		}
+
+		/**
+		 * @generated
+		 */
+		public Label getFigureStereotypeFigure_StereotypeLabel() {
+			return fFigureStereotypeFigure_StereotypeLabel;
 		}
 
 		/**

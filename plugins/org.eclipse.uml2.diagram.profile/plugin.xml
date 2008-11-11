@@ -696,30 +696,20 @@
          <command commandId="org.eclipse.uml2.diagram.profile.UMLCreateShortcutAction">
             <visibleWhen>
                <and>
-                  <with variable="org.eclipse.core.runtime.Platform">
-                     <test property="org.eclipse.core.runtime.bundleState" args="org.eclipse.uml2.diagram.profile" value="ACTIVE"/>
-                  </with>
                   <with variable="activePartId"><equals value="org.eclipse.uml2.diagram.profile.part.UMLDiagramEditorID"/></with>
-                  <with variable="selection">
-					<count value="+"/>
-					<iterate>
+                  <with variable="selection"><iterate ifEmpty="false">
                      <instanceof value="org.eclipse.uml2.diagram.profile.edit.parts.ProfileEditPart"/>
-                  </iterate></with>					
+                  </iterate></with>
                </and>
             </visibleWhen>
          </command>
          <command commandId="org.eclipse.uml2.diagram.profile.UMLLoadResourceAction">
             <visibleWhen>
                <and>
-                  <with variable="org.eclipse.core.runtime.Platform">
-                     <test property="org.eclipse.core.runtime.bundleState" args="org.eclipse.uml2.diagram.profile" value="ACTIVE"/>
-                  </with>
                   <with variable="activePartId"><equals value="org.eclipse.uml2.diagram.profile.part.UMLDiagramEditorID"/></with>
-                  <with variable="selection">
-					<count value="+"/>
-					<iterate>
+                  <with variable="selection"><iterate ifEmpty="false">
                      <instanceof value="org.eclipse.uml2.diagram.profile.edit.parts.ProfileEditPart"/>
-                  </iterate></with>					
+                  </iterate></with>
                </and>
             </visibleWhen>
          </command>
@@ -762,6 +752,7 @@
              </popupStructuredContributionCriteria>
 		 </popupContribution>
       </contributionItemProvider>
+
       <contributionItemProvider
             checkPluginLoaded="true"
             class="org.eclipse.uml2.diagram.common.stereo.ApplicableStereotypesItemProvider">
@@ -782,9 +773,58 @@
              </popupStructuredContributionCriteria>
 		 </popupContribution>
       </contributionItemProvider>
-
 </extension>
 <extension point="org.eclipse.ui.views.properties.tabbed.propertyTabs">
+      <?gmfgen generated="true"?>   
+      <propertyTabs contributorId="org.eclipse.uml2.diagram.profile">
+         <propertyTab
+             category="visual"
+             id="property.tab.AppearancePropertySection"
+             label="%tab.appearance"/>
+          <propertyTab
+             category="visual"
+             id="property.tab.DiagramPropertySection"
+             label="%tab.diagram"/>
+          <propertyTab
+             category="domain"
+             id="property.tab.domain"
+             label="%tab.domain"/>
+      </propertyTabs>
+   </extension>
+
+<extension point="org.eclipse.ui.views.properties.tabbed.propertySections">
+      <?gmfgen generated="true"?>   
+      <propertySections contributorId="org.eclipse.uml2.diagram.profile">
+         <propertySection id="property.section.ConnectorAppearancePropertySection" 
+            filter="org.eclipse.gmf.runtime.diagram.ui.properties.filters.ConnectionEditPartPropertySectionFilter" 
+            class="org.eclipse.gmf.runtime.diagram.ui.properties.sections.appearance.ConnectionAppearancePropertySection" 
+            tab="property.tab.AppearancePropertySection">
+         </propertySection>
+         <propertySection id="property.section.ShapeColorAndFontPropertySection" 
+            filter="org.eclipse.gmf.runtime.diagram.ui.properties.filters.ShapeEditPartPropertySectionFilter" 
+            class="org.eclipse.gmf.runtime.diagram.ui.properties.sections.appearance.ShapeColorsAndFontsPropertySection" 
+            tab="property.tab.AppearancePropertySection">
+         </propertySection> 
+         <propertySection id="property.section.DiagramColorsAndFontsPropertySection" 
+            filter="org.eclipse.gmf.runtime.diagram.ui.properties.filters.DiagramEditPartPropertySectionFilter" 
+            class="org.eclipse.gmf.runtime.diagram.ui.properties.sections.appearance.DiagramColorsAndFontsPropertySection" 
+            tab="property.tab.AppearancePropertySection">
+         </propertySection>     
+         <propertySection id="property.section.RulerGridPropertySection" 
+            filter="org.eclipse.gmf.runtime.diagram.ui.properties.filters.DiagramEditPartPropertySectionFilter" 
+            class="org.eclipse.gmf.runtime.diagram.ui.properties.sections.grid.RulerGridPropertySection" 
+            tab="property.tab.DiagramPropertySection">
+         </propertySection>     
+         <propertySection
+            id="property.section.domain" 
+            tab="property.tab.domain"
+            class="org.eclipse.uml2.diagram.profile.sheet.UMLPropertySection">
+            <input type="org.eclipse.gmf.runtime.notation.View"/>
+            <input type="org.eclipse.gef.EditPart"/>
+            <input type="org.eclipse.uml2.diagram.profile.navigator.UMLAbstractNavigatorItem"/>
+         </propertySection>
+      </propertySections>
+   </extension><extension point="org.eclipse.ui.views.properties.tabbed.propertyTabs">
 <?gmfgen generated="true"?>
       <propertyTabs contributorId="org.eclipse.uml2.diagram.profile">
           <propertyTab
@@ -794,7 +834,6 @@
                 label="Tagged Values"/>
       </propertyTabs>
    </extension>
-
 <extension point="org.eclipse.ui.views.properties.tabbed.propertySections">
 <?gmfgen generated="true"?>
       <propertySections contributorId="org.eclipse.uml2.diagram.profile">
@@ -809,5 +848,6 @@
          </propertySection>
       </propertySections>
    </extension>
+
 
 </plugin>

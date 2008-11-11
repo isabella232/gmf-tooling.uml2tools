@@ -27,6 +27,7 @@ import org.eclipse.uml2.diagram.profile.edit.parts.ProfileEditPart;
 import org.eclipse.uml2.diagram.profile.edit.parts.ProfileName2EditPart;
 import org.eclipse.uml2.diagram.profile.edit.parts.ProfileNameEditPart;
 import org.eclipse.uml2.diagram.profile.edit.parts.ProfileProfileLabelsEditPart;
+import org.eclipse.uml2.diagram.profile.edit.parts.ProfileStereoEditPart;
 import org.eclipse.uml2.diagram.profile.edit.parts.PropertyEditPart;
 import org.eclipse.uml2.diagram.profile.edit.parts.ReferencedMetaclassNode_classNameEditPart;
 import org.eclipse.uml2.diagram.profile.edit.parts.Stereotype2EditPart;
@@ -34,6 +35,7 @@ import org.eclipse.uml2.diagram.profile.edit.parts.StereotypeAttributesEditPart;
 import org.eclipse.uml2.diagram.profile.edit.parts.StereotypeConstraintsEditPart;
 import org.eclipse.uml2.diagram.profile.edit.parts.StereotypeEditPart;
 import org.eclipse.uml2.diagram.profile.edit.parts.StereotypeNameEditPart;
+import org.eclipse.uml2.diagram.profile.edit.parts.StereotypeStereoEditPart;
 import org.eclipse.uml2.diagram.profile.part.UMLVisualIDRegistry;
 import org.eclipse.uml2.diagram.profile.view.factories.Constraint2ViewFactory;
 import org.eclipse.uml2.diagram.profile.view.factories.ConstraintConstrainedElementViewFactory;
@@ -55,6 +57,7 @@ import org.eclipse.uml2.diagram.profile.view.factories.ProfileContentsViewFactor
 import org.eclipse.uml2.diagram.profile.view.factories.ProfileName2ViewFactory;
 import org.eclipse.uml2.diagram.profile.view.factories.ProfileNameViewFactory;
 import org.eclipse.uml2.diagram.profile.view.factories.ProfileProfileLabelsViewFactory;
+import org.eclipse.uml2.diagram.profile.view.factories.ProfileStereoViewFactory;
 import org.eclipse.uml2.diagram.profile.view.factories.ProfileViewFactory;
 import org.eclipse.uml2.diagram.profile.view.factories.PropertyViewFactory;
 import org.eclipse.uml2.diagram.profile.view.factories.ReferencedMetaclassNode_classNameViewFactory;
@@ -62,6 +65,7 @@ import org.eclipse.uml2.diagram.profile.view.factories.Stereotype2ViewFactory;
 import org.eclipse.uml2.diagram.profile.view.factories.StereotypeAttributesViewFactory;
 import org.eclipse.uml2.diagram.profile.view.factories.StereotypeConstraintsViewFactory;
 import org.eclipse.uml2.diagram.profile.view.factories.StereotypeNameViewFactory;
+import org.eclipse.uml2.diagram.profile.view.factories.StereotypeStereoViewFactory;
 import org.eclipse.uml2.diagram.profile.view.factories.StereotypeViewFactory;
 
 /**
@@ -140,6 +144,7 @@ public class UMLViewProvider extends AbstractViewProvider {
 					}
 					break;
 				case StereotypeNameEditPart.VISUAL_ID:
+				case StereotypeStereoEditPart.VISUAL_ID:
 				case StereotypeAttributesEditPart.VISUAL_ID:
 				case StereotypeConstraintsEditPart.VISUAL_ID:
 					if (StereotypeEditPart.VISUAL_ID != UMLVisualIDRegistry.getVisualID(containerView) || containerView.getElement() != domainElement) {
@@ -147,6 +152,7 @@ public class UMLViewProvider extends AbstractViewProvider {
 					}
 					break;
 				case ProfileNameEditPart.VISUAL_ID:
+				case ProfileStereoEditPart.VISUAL_ID:
 				case ProfileContentsEditPart.VISUAL_ID:
 					if (Profile2EditPart.VISUAL_ID != UMLVisualIDRegistry.getVisualID(containerView) || containerView.getElement() != domainElement) {
 						return null; // wrong container
@@ -200,10 +206,14 @@ public class UMLViewProvider extends AbstractViewProvider {
 			return StereotypeViewFactory.class;
 		case StereotypeNameEditPart.VISUAL_ID:
 			return StereotypeNameViewFactory.class;
+		case StereotypeStereoEditPart.VISUAL_ID:
+			return StereotypeStereoViewFactory.class;
 		case Profile2EditPart.VISUAL_ID:
 			return Profile2ViewFactory.class;
 		case ProfileNameEditPart.VISUAL_ID:
 			return ProfileNameViewFactory.class;
+		case ProfileStereoEditPart.VISUAL_ID:
+			return ProfileStereoViewFactory.class;
 		case EnumerationEditPart.VISUAL_ID:
 			return EnumerationViewFactory.class;
 		case EnumerationNameEditPart.VISUAL_ID:

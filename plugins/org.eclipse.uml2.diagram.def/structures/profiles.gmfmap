@@ -34,6 +34,13 @@
         <features
             href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//NamedElement/name"/>
       </labelMappings>
+      <labelMappings
+          xsi:type="gmfmap:FeatureLabelMapping">
+        <diagramLabel
+            href="profileDiagram_stereotype.gmfgraph#StereotypeNode_stereo"/>
+        <features
+            href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//NamedElement/qualifiedName"/>
+      </labelMappings>
       <tool
           xsi:type="gmftool:CreationTool"
           href="profiles.gmftool#//@palette/@tools.0/@tools.1"/>
@@ -152,6 +159,13 @@
         <features
             href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//NamedElement/name"/>
       </labelMappings>
+      <labelMappings
+          xsi:type="gmfmap:FeatureLabelMapping">
+        <diagramLabel
+            href="profileDiagram_profile.gmfgraph#ProfileNode_stereo"/>
+        <features
+            href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//NamedElement/qualifiedName"/>
+      </labelMappings>
       <tool
           xsi:type="gmftool:CreationTool"
           href="profiles.gmftool#//@palette/@tools.0/@tools.0"/>
@@ -225,7 +239,6 @@
       </labelMappings>
       <labelMappings
           xsi:type="gmfmap:FeatureLabelMapping"
-          readOnly="true"
           editPattern="">
         <diagramLabel
             href="classDiagram_classifiers.gmfgraph#ClassNode_stereo"/>

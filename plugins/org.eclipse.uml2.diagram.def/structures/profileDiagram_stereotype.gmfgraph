@@ -30,10 +30,14 @@
         <children
             xsi:type="gmfgraph:Label"
             name="StereotypeFigure_StereotypeLabel"
-            text="\u00ABstereotype\u00BB">
+            text="">
           <layout
               xsi:type="gmfgraph:CustomLayout"
               qualifiedClassName="org.eclipse.uml2.diagram.common.draw2d.CenterLayout"/>
+          <insets
+              top="5"
+              left="5"
+              right="5"/>
         </children>
         <children
             xsi:type="gmfgraph:Rectangle"
@@ -64,6 +68,8 @@
           figure="//@figures.0/@descriptors.0/@actualFigure/@children.2"/>
       <accessors
           figure="//@figures.0/@descriptors.0/@actualFigure/@children.3"/>
+      <accessors
+          figure="//@figures.0/@descriptors.0/@actualFigure/@children.0"/>
     </descriptors>
   </figures>
   <nodes
@@ -90,4 +96,9 @@
       name="StereotypeNode_name"
       figure="StereotypeFigure"
       accessor="//@figures.0/@descriptors.0/@accessors.0"/>
+  <labels
+      name="StereotypeNode_stereo"
+      figure="StereotypeFigure"
+      elementIcon="false"
+      accessor="//@figures.0/@descriptors.0/@accessors.3"/>
 </gmfgraph:Canvas>

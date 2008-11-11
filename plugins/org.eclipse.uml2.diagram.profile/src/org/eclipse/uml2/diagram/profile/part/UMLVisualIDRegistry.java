@@ -26,6 +26,7 @@ import org.eclipse.uml2.diagram.profile.edit.parts.ProfileEditPart;
 import org.eclipse.uml2.diagram.profile.edit.parts.ProfileName2EditPart;
 import org.eclipse.uml2.diagram.profile.edit.parts.ProfileNameEditPart;
 import org.eclipse.uml2.diagram.profile.edit.parts.ProfileProfileLabelsEditPart;
+import org.eclipse.uml2.diagram.profile.edit.parts.ProfileStereoEditPart;
 import org.eclipse.uml2.diagram.profile.edit.parts.PropertyEditPart;
 import org.eclipse.uml2.diagram.profile.edit.parts.ReferencedMetaclassNode_classNameEditPart;
 import org.eclipse.uml2.diagram.profile.edit.parts.Stereotype2EditPart;
@@ -33,6 +34,7 @@ import org.eclipse.uml2.diagram.profile.edit.parts.StereotypeAttributesEditPart;
 import org.eclipse.uml2.diagram.profile.edit.parts.StereotypeConstraintsEditPart;
 import org.eclipse.uml2.diagram.profile.edit.parts.StereotypeEditPart;
 import org.eclipse.uml2.diagram.profile.edit.parts.StereotypeNameEditPart;
+import org.eclipse.uml2.diagram.profile.edit.parts.StereotypeStereoEditPart;
 import org.eclipse.uml2.diagram.profile.expressions.UMLAbstractExpression;
 import org.eclipse.uml2.diagram.profile.expressions.UMLOCLFactory;
 import org.eclipse.uml2.uml.ElementImport;
@@ -238,6 +240,9 @@ public class UMLVisualIDRegistry {
 			if (StereotypeNameEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
+			if (StereotypeStereoEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
 			if (StereotypeAttributesEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
@@ -247,6 +252,9 @@ public class UMLVisualIDRegistry {
 			break;
 		case Profile2EditPart.VISUAL_ID:
 			if (ProfileNameEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			if (ProfileStereoEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
 			if (ProfileContentsEditPart.VISUAL_ID == nodeVisualID) {

@@ -5,6 +5,7 @@ import java.util.List;
 import org.eclipse.draw2d.ColorConstants;
 import org.eclipse.draw2d.IFigure;
 import org.eclipse.draw2d.Label;
+import org.eclipse.draw2d.MarginBorder;
 import org.eclipse.draw2d.RectangleFigure;
 import org.eclipse.draw2d.Shape;
 import org.eclipse.draw2d.StackLayout;
@@ -125,6 +126,10 @@ public class Profile2EditPart extends ShapeNodeEditPart implements PrimaryShapeE
 	protected boolean addFixedChild(EditPart childEditPart) {
 		if (childEditPart instanceof ProfileNameEditPart) {
 			((ProfileNameEditPart) childEditPart).setLabel(getPrimaryShape().getFigureProfileFigure_NameLabel());
+			return true;
+		}
+		if (childEditPart instanceof ProfileStereoEditPart) {
+			((ProfileStereoEditPart) childEditPart).setLabel(getPrimaryShape().getFigureProfileFigure_ProfileLabel());
 			return true;
 		}
 		if (childEditPart instanceof ProfileContentsEditPart) {
@@ -335,6 +340,11 @@ public class Profile2EditPart extends ShapeNodeEditPart implements PrimaryShapeE
 		/**
 		 * @generated
 		 */
+		private Label fFigureProfileFigure_ProfileLabel;
+
+		/**
+		 * @generated
+		 */
 		public ProfileFigure() {
 
 			ConstrainedToolbarLayout layoutThis = new ConstrainedToolbarLayout();
@@ -375,17 +385,21 @@ public class Profile2EditPart extends ShapeNodeEditPart implements PrimaryShapeE
 
 			profile_body0.setLayoutManager(layoutProfile_body0);
 
-			Label profileFigure_ProfileLabel1 = new Label();
-			profileFigure_ProfileLabel1.setText("\u00ABprofile\u00BB");
+			fFigureProfileFigure_ProfileLabel = new Label();
+			fFigureProfileFigure_ProfileLabel.setText("\u00ABprofile\u00BB");
 
-			profile_body0.add(profileFigure_ProfileLabel1);
+			fFigureProfileFigure_ProfileLabel.setBorder(new MarginBorder(getMapMode().DPtoLP(5), getMapMode().DPtoLP(5), getMapMode().DPtoLP(0), getMapMode().DPtoLP(5)));
 
-			CenterLayout layoutProfileFigure_ProfileLabel1 = new CenterLayout();
+			profile_body0.add(fFigureProfileFigure_ProfileLabel);
 
-			profileFigure_ProfileLabel1.setLayoutManager(layoutProfileFigure_ProfileLabel1);
+			CenterLayout layoutFFigureProfileFigure_ProfileLabel = new CenterLayout();
+
+			fFigureProfileFigure_ProfileLabel.setLayoutManager(layoutFFigureProfileFigure_ProfileLabel);
 
 			fFigureProfileFigure_NameLabel = new Label();
 			fFigureProfileFigure_NameLabel.setText("");
+
+			fFigureProfileFigure_NameLabel.setBorder(new MarginBorder(getMapMode().DPtoLP(5), getMapMode().DPtoLP(5), getMapMode().DPtoLP(0), getMapMode().DPtoLP(5)));
 
 			profile_body0.add(fFigureProfileFigure_NameLabel);
 
@@ -411,6 +425,13 @@ public class Profile2EditPart extends ShapeNodeEditPart implements PrimaryShapeE
 		 */
 		public RectangleFigure getFigureProfileFigure_ContentsCompartment() {
 			return fFigureProfileFigure_ContentsCompartment;
+		}
+
+		/**
+		 * @generated
+		 */
+		public Label getFigureProfileFigure_ProfileLabel() {
+			return fFigureProfileFigure_ProfileLabel;
 		}
 
 		/**

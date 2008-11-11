@@ -58,12 +58,12 @@ import org.eclipse.uml2.diagram.profile.providers.UMLParserProvider;
  * @generated
  */
 
-public class EnumerationQualifiedNameEditPart extends CompartmentEditPart implements ITextAwareEditPart {
+public class StereotypeStereoEditPart extends CompartmentEditPart implements ITextAwareEditPart {
 
 	/**
 	 * @generated
 	 */
-	public static final int VISUAL_ID = 5011;
+	public static final int VISUAL_ID = 5012;
 
 	/**
 	 * @generated
@@ -93,7 +93,7 @@ public class EnumerationQualifiedNameEditPart extends CompartmentEditPart implem
 	/**
 	 * @generated
 	 */
-	public EnumerationQualifiedNameEditPart(View view) {
+	public StereotypeStereoEditPart(View view) {
 		super(view);
 	}
 
@@ -121,7 +121,7 @@ public class EnumerationQualifiedNameEditPart extends CompartmentEditPart implem
 				return false;
 			}
 		});
-		installEditPolicy("VisualEffect.Class", new ClassifierNameVisualEffectEditPolicy()); //$NON-NLS-1$
+		installEditPolicy("VisualEffect.Stereo", new ClassifierNameVisualEffectEditPolicy()); //$NON-NLS-1$
 	}
 
 	/**
@@ -298,8 +298,8 @@ public class EnumerationQualifiedNameEditPart extends CompartmentEditPart implem
 	 */
 	public IParser getParser() {
 		if (parser == null) {
-			parser = UMLParserProvider.getParser(UMLElementTypes.Enumeration_2003, getParserElement(), UMLVisualIDRegistry
-					.getType(org.eclipse.uml2.diagram.profile.edit.parts.EnumerationQualifiedNameEditPart.VISUAL_ID));
+			parser = UMLParserProvider.getParser(UMLElementTypes.Stereotype_2001, getParserElement(), UMLVisualIDRegistry
+					.getType(org.eclipse.uml2.diagram.profile.edit.parts.StereotypeStereoEditPart.VISUAL_ID));
 		}
 		return parser;
 	}
@@ -481,7 +481,7 @@ public class EnumerationQualifiedNameEditPart extends CompartmentEditPart implem
 	 * @generated
 	 */
 	private View getFontStyleOwnerView() {
-		return (View) getModel();
+		return getPrimaryView();
 	}
 
 	/**

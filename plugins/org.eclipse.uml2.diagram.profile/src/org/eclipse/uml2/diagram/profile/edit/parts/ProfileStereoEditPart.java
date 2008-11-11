@@ -58,12 +58,12 @@ import org.eclipse.uml2.diagram.profile.providers.UMLParserProvider;
  * @generated
  */
 
-public class EnumerationQualifiedNameEditPart extends CompartmentEditPart implements ITextAwareEditPart {
+public class ProfileStereoEditPart extends CompartmentEditPart implements ITextAwareEditPart {
 
 	/**
 	 * @generated
 	 */
-	public static final int VISUAL_ID = 5011;
+	public static final int VISUAL_ID = 5013;
 
 	/**
 	 * @generated
@@ -93,7 +93,7 @@ public class EnumerationQualifiedNameEditPart extends CompartmentEditPart implem
 	/**
 	 * @generated
 	 */
-	public EnumerationQualifiedNameEditPart(View view) {
+	public ProfileStereoEditPart(View view) {
 		super(view);
 	}
 
@@ -298,8 +298,8 @@ public class EnumerationQualifiedNameEditPart extends CompartmentEditPart implem
 	 */
 	public IParser getParser() {
 		if (parser == null) {
-			parser = UMLParserProvider.getParser(UMLElementTypes.Enumeration_2003, getParserElement(), UMLVisualIDRegistry
-					.getType(org.eclipse.uml2.diagram.profile.edit.parts.EnumerationQualifiedNameEditPart.VISUAL_ID));
+			parser = UMLParserProvider.getParser(UMLElementTypes.Profile_2002, getParserElement(), UMLVisualIDRegistry
+					.getType(org.eclipse.uml2.diagram.profile.edit.parts.ProfileStereoEditPart.VISUAL_ID));
 		}
 		return parser;
 	}
@@ -481,7 +481,7 @@ public class EnumerationQualifiedNameEditPart extends CompartmentEditPart implem
 	 * @generated
 	 */
 	private View getFontStyleOwnerView() {
-		return (View) getModel();
+		return getPrimaryView();
 	}
 
 	/**

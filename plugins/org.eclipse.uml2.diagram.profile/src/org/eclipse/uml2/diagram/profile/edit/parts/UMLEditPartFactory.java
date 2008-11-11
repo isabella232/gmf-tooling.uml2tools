@@ -37,11 +37,17 @@ public class UMLEditPartFactory implements EditPartFactory {
 			case StereotypeNameEditPart.VISUAL_ID:
 				return new StereotypeNameEditPart(view);
 
+			case StereotypeStereoEditPart.VISUAL_ID:
+				return new StereotypeStereoEditPart(view);
+
 			case Profile2EditPart.VISUAL_ID:
 				return new Profile2EditPart(view);
 
 			case ProfileNameEditPart.VISUAL_ID:
 				return new ProfileNameEditPart(view);
+
+			case ProfileStereoEditPart.VISUAL_ID:
+				return new ProfileStereoEditPart(view);
 
 			case EnumerationEditPart.VISUAL_ID:
 				return new EnumerationEditPart(view);
