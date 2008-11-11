@@ -26,9 +26,13 @@ import org.eclipse.uml2.diagram.common.parser.port.PortToString;
 import org.eclipse.uml2.diagram.common.parser.property.PropertyParser;
 import org.eclipse.uml2.diagram.common.parser.property.PropertyToString;
 import org.eclipse.uml2.diagram.common.parser.stereotype.AppliedStereotypeParser;
+import org.eclipse.uml2.diagram.common.parser.stereotype.ClassifierAppliedStereotypeParser;
 import org.eclipse.uml2.diagram.component.edit.parts.ArtifactName2EditPart;
 import org.eclipse.uml2.diagram.component.edit.parts.ArtifactName3EditPart;
 import org.eclipse.uml2.diagram.component.edit.parts.ArtifactNameEditPart;
+import org.eclipse.uml2.diagram.component.edit.parts.ArtifactStereo2EditPart;
+import org.eclipse.uml2.diagram.component.edit.parts.ArtifactStereo3EditPart;
+import org.eclipse.uml2.diagram.component.edit.parts.ArtifactStereoEditPart;
 import org.eclipse.uml2.diagram.component.edit.parts.AssociationName2EditPart;
 import org.eclipse.uml2.diagram.component.edit.parts.AssociationName3EditPart;
 import org.eclipse.uml2.diagram.component.edit.parts.AssociationName4EditPart;
@@ -47,6 +51,8 @@ import org.eclipse.uml2.diagram.component.edit.parts.ClassNameEditPart;
 import org.eclipse.uml2.diagram.component.edit.parts.Component3EditPart;
 import org.eclipse.uml2.diagram.component.edit.parts.ComponentName2EditPart;
 import org.eclipse.uml2.diagram.component.edit.parts.ComponentNameEditPart;
+import org.eclipse.uml2.diagram.component.edit.parts.ComponentStereo2EditPart;
+import org.eclipse.uml2.diagram.component.edit.parts.ComponentStereoEditPart;
 import org.eclipse.uml2.diagram.component.edit.parts.DependencyNameEditPart;
 import org.eclipse.uml2.diagram.component.edit.parts.ElementImportEditPart;
 import org.eclipse.uml2.diagram.component.edit.parts.InterfaceName2EditPart;
@@ -102,6 +108,21 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 	/**
 	 * @generated
 	 */
+	private ClassifierAppliedStereotypeParser componentQualifiedName_5020Parser;
+
+	/**
+	 * @generated
+	 */
+	private IParser getComponentQualifiedName_5020Parser() {
+		if (componentQualifiedName_5020Parser == null) {
+			componentQualifiedName_5020Parser = new ClassifierAppliedStereotypeParser();
+		}
+		return componentQualifiedName_5020Parser;
+	}
+
+	/**
+	 * @generated
+	 */
 	private IParser artifactName_5004Parser;
 
 	/**
@@ -121,6 +142,21 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 		EAttribute[] features = new EAttribute[] { UMLPackage.eINSTANCE.getNamedElement_Name() };
 		Parser_0_0 parser = new Parser_0_0(features);
 		return parser;
+	}
+
+	/**
+	 * @generated
+	 */
+	private ClassifierAppliedStereotypeParser artifactQualifiedName_5021Parser;
+
+	/**
+	 * @generated
+	 */
+	private IParser getArtifactQualifiedName_5021Parser() {
+		if (artifactQualifiedName_5021Parser == null) {
+			artifactQualifiedName_5021Parser = new ClassifierAppliedStereotypeParser();
+		}
+		return artifactQualifiedName_5021Parser;
 	}
 
 	/**
@@ -246,14 +282,14 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 	/**
 	 * @generated
 	 */
-	private IParser classQualifiedName_5015Parser;
+	private ClassifierAppliedStereotypeParser classQualifiedName_5015Parser;
 
 	/**
 	 * @generated
 	 */
 	private IParser getClassQualifiedName_5015Parser() {
 		if (classQualifiedName_5015Parser == null) {
-			classQualifiedName_5015Parser = createClassQualifiedName_5015Parser();
+			classQualifiedName_5015Parser = new ClassifierAppliedStereotypeParser();
 		}
 		return classQualifiedName_5015Parser;
 	}
@@ -288,6 +324,21 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 		EAttribute[] features = new EAttribute[] { UMLPackage.eINSTANCE.getNamedElement_Name() };
 		Parser_0_0 parser = new Parser_0_0(features);
 		return parser;
+	}
+
+	/**
+	 * @generated
+	 */
+	private ClassifierAppliedStereotypeParser componentQualifiedName_5019Parser;
+
+	/**
+	 * @generated
+	 */
+	private IParser getComponentQualifiedName_5019Parser() {
+		if (componentQualifiedName_5019Parser == null) {
+			componentQualifiedName_5019Parser = new ClassifierAppliedStereotypeParser();
+		}
+		return componentQualifiedName_5019Parser;
 	}
 
 	/**
@@ -339,6 +390,21 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 	/**
 	 * @generated
 	 */
+	private ClassifierAppliedStereotypeParser artifactQualifiedName_5018Parser;
+
+	/**
+	 * @generated
+	 */
+	private IParser getArtifactQualifiedName_5018Parser() {
+		if (artifactQualifiedName_5018Parser == null) {
+			artifactQualifiedName_5018Parser = new ClassifierAppliedStereotypeParser();
+		}
+		return artifactQualifiedName_5018Parser;
+	}
+
+	/**
+	 * @generated
+	 */
 	private IParser artifactName_5016Parser;
 
 	/**
@@ -358,6 +424,21 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 		EAttribute[] features = new EAttribute[] { UMLPackage.eINSTANCE.getNamedElement_Name() };
 		Parser_0_0 parser = new Parser_0_0(features);
 		return parser;
+	}
+
+	/**
+	 * @generated
+	 */
+	private ClassifierAppliedStereotypeParser artifactQualifiedName_5017Parser;
+
+	/**
+	 * @generated
+	 */
+	private IParser getArtifactQualifiedName_5017Parser() {
+		if (artifactQualifiedName_5017Parser == null) {
+			artifactQualifiedName_5017Parser = new ClassifierAppliedStereotypeParser();
+		}
+		return artifactQualifiedName_5017Parser;
 	}
 
 	/**
@@ -855,8 +936,12 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 		switch (visualID) {
 		case ComponentName2EditPart.VISUAL_ID:
 			return getComponentName_5001Parser();
+		case ComponentStereoEditPart.VISUAL_ID:
+			return getComponentQualifiedName_5020Parser();
 		case ArtifactName2EditPart.VISUAL_ID:
 			return getArtifactName_5004Parser();
+		case ArtifactStereoEditPart.VISUAL_ID:
+			return getArtifactQualifiedName_5021Parser();
 		case InterfaceName2EditPart.VISUAL_ID:
 			return getInterfaceName_5005Parser();
 		case ClassName2EditPart.VISUAL_ID:
@@ -871,12 +956,18 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 			return getClassQualifiedName_5015Parser();
 		case ComponentNameEditPart.VISUAL_ID:
 			return getComponentName_5002Parser();
+		case ComponentStereo2EditPart.VISUAL_ID:
+			return getComponentQualifiedName_5019Parser();
 		case PortNameEditPart.VISUAL_ID:
 			return getPortName_5003Parser();
 		case ArtifactNameEditPart.VISUAL_ID:
 			return getArtifactName_5006Parser();
+		case ArtifactStereo2EditPart.VISUAL_ID:
+			return getArtifactQualifiedName_5018Parser();
 		case ArtifactName3EditPart.VISUAL_ID:
 			return getArtifactName_5016Parser();
+		case ArtifactStereo3EditPart.VISUAL_ID:
+			return getArtifactQualifiedName_5017Parser();
 		case ClassNameEditPart.VISUAL_ID:
 			return getClassName_5007Parser();
 		case InterfaceNameEditPart.VISUAL_ID:

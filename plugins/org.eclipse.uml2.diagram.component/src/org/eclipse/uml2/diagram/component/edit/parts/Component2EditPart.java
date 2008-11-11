@@ -169,6 +169,10 @@ public class Component2EditPart extends AbstractBorderedShapeEditPart implements
 			((ComponentNameEditPart) childEditPart).setLabel(getPrimaryShape().getFigureComponentFigure_name());
 			return true;
 		}
+		if (childEditPart instanceof ComponentStereo2EditPart) {
+			((ComponentStereo2EditPart) childEditPart).setLabel(getPrimaryShape().getFigureComponentFigure_fixed_component());
+			return true;
+		}
 		if (childEditPart instanceof ComponentContents2EditPart) {
 			IFigure pane = getPrimaryShape().getFigureComponentFigure_Body();
 			setupContentPane(pane); // FIXME each comparment should handle his content pane in his own way 
@@ -659,6 +663,11 @@ public class Component2EditPart extends AbstractBorderedShapeEditPart implements
 		/**
 		 * @generated
 		 */
+		private Label fFigureComponentFigure_fixed_component;
+
+		/**
+		 * @generated
+		 */
 		public ComponentFigure() {
 
 			BorderLayout layoutThis = new BorderLayout();
@@ -688,10 +697,10 @@ public class Component2EditPart extends AbstractBorderedShapeEditPart implements
 
 			componentFigure_LabelsContainer0.setLayoutManager(layoutComponentFigure_LabelsContainer0);
 
-			Label componentFigure_fixed_component1 = new Label();
-			componentFigure_fixed_component1.setText("\u00ABcomponent\u00BB");
+			fFigureComponentFigure_fixed_component = new Label();
+			fFigureComponentFigure_fixed_component.setText("\u00ABcomponent\u00BB");
 
-			componentFigure_LabelsContainer0.add(componentFigure_fixed_component1);
+			componentFigure_LabelsContainer0.add(fFigureComponentFigure_fixed_component);
 
 			fFigureComponentFigure_name = new Label();
 			fFigureComponentFigure_name.setText("");
@@ -717,6 +726,13 @@ public class Component2EditPart extends AbstractBorderedShapeEditPart implements
 		 */
 		public RectangleFigure getFigureComponentFigure_Body() {
 			return fFigureComponentFigure_Body;
+		}
+
+		/**
+		 * @generated
+		 */
+		public Label getFigureComponentFigure_fixed_component() {
+			return fFigureComponentFigure_fixed_component;
 		}
 
 		/**

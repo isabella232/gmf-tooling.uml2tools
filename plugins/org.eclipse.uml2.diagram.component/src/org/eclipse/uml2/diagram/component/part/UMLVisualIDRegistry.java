@@ -15,6 +15,9 @@ import org.eclipse.uml2.diagram.component.edit.parts.ArtifactEditPart;
 import org.eclipse.uml2.diagram.component.edit.parts.ArtifactName2EditPart;
 import org.eclipse.uml2.diagram.component.edit.parts.ArtifactName3EditPart;
 import org.eclipse.uml2.diagram.component.edit.parts.ArtifactNameEditPart;
+import org.eclipse.uml2.diagram.component.edit.parts.ArtifactStereo2EditPart;
+import org.eclipse.uml2.diagram.component.edit.parts.ArtifactStereo3EditPart;
+import org.eclipse.uml2.diagram.component.edit.parts.ArtifactStereoEditPart;
 import org.eclipse.uml2.diagram.component.edit.parts.AssemblyConnectorCircleEditPart;
 import org.eclipse.uml2.diagram.component.edit.parts.AssociationEditPart;
 import org.eclipse.uml2.diagram.component.edit.parts.AssociationName2EditPart;
@@ -45,6 +48,8 @@ import org.eclipse.uml2.diagram.component.edit.parts.ComponentContentsEditPart;
 import org.eclipse.uml2.diagram.component.edit.parts.ComponentEditPart;
 import org.eclipse.uml2.diagram.component.edit.parts.ComponentName2EditPart;
 import org.eclipse.uml2.diagram.component.edit.parts.ComponentNameEditPart;
+import org.eclipse.uml2.diagram.component.edit.parts.ComponentStereo2EditPart;
+import org.eclipse.uml2.diagram.component.edit.parts.ComponentStereoEditPart;
 import org.eclipse.uml2.diagram.component.edit.parts.ConnectorEditPart;
 import org.eclipse.uml2.diagram.component.edit.parts.DependencyEditPart;
 import org.eclipse.uml2.diagram.component.edit.parts.DependencyNameEditPart;
@@ -397,6 +402,9 @@ public class UMLVisualIDRegistry {
 			if (ComponentName2EditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
+			if (ComponentStereoEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
 			if (ComponentContentsEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
@@ -406,6 +414,9 @@ public class UMLVisualIDRegistry {
 			break;
 		case Artifact2EditPart.VISUAL_ID:
 			if (ArtifactName2EditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			if (ArtifactStereoEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
 			if (ArtifactContents3EditPart.VISUAL_ID == nodeVisualID) {
@@ -468,6 +479,9 @@ public class UMLVisualIDRegistry {
 			if (ComponentNameEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
+			if (ComponentStereo2EditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
 			if (ComponentContents2EditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
@@ -484,12 +498,18 @@ public class UMLVisualIDRegistry {
 			if (ArtifactNameEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
+			if (ArtifactStereo2EditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
 			if (ArtifactContentsEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
 			break;
 		case Artifact3EditPart.VISUAL_ID:
 			if (ArtifactName3EditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			if (ArtifactStereo3EditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
 			if (ArtifactContents2EditPart.VISUAL_ID == nodeVisualID) {

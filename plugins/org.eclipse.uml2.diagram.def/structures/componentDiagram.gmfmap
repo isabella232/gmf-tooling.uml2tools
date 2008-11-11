@@ -31,6 +31,13 @@
         <features
             href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//NamedElement/name"/>
       </labelMappings>
+      <labelMappings
+          xsi:type="gmfmap:FeatureLabelMapping">
+        <diagramLabel
+            href="componentDiagram_classifiers.gmfgraph#ComponentNode_stereo"/>
+        <features
+            href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//NamedElement/qualifiedName"/>
+      </labelMappings>
       <tool
           xsi:type="gmftool:CreationTool"
           href="componentDiagram.gmftool#//@palette/@tools.0/@tools.0"/>
@@ -168,6 +175,13 @@
             href="componentDiagram_classifiers.gmfgraph#ArtifactNode_name"/>
         <features
             href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//NamedElement/name"/>
+      </labelMappings>
+      <labelMappings
+          xsi:type="gmfmap:FeatureLabelMapping">
+        <diagramLabel
+            href="componentDiagram_classifiers.gmfgraph#ArtifactNode_stereo"/>
+        <features
+            href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//NamedElement/qualifiedName"/>
       </labelMappings>
       <tool
           xsi:type="gmftool:CreationTool"
@@ -861,7 +875,7 @@
     <diagramCanvas
         href="classDiagram_auxiliary.gmfgraph#cnvAuxiliary"/>
     <domainModel
-        href="http://www.eclipse.org/uml2/2.1.0/UML#/"/>
+        href="http://www.eclipse.org/uml2/3.0.0/UML#/"/>
     <domainMetaElement
         href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//Package"/>
     <palette

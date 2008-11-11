@@ -37,11 +37,17 @@ public class UMLEditPartFactory implements EditPartFactory {
 			case ComponentName2EditPart.VISUAL_ID:
 				return new ComponentName2EditPart(view);
 
+			case ComponentStereoEditPart.VISUAL_ID:
+				return new ComponentStereoEditPart(view);
+
 			case Artifact2EditPart.VISUAL_ID:
 				return new Artifact2EditPart(view);
 
 			case ArtifactName2EditPart.VISUAL_ID:
 				return new ArtifactName2EditPart(view);
+
+			case ArtifactStereoEditPart.VISUAL_ID:
+				return new ArtifactStereoEditPart(view);
 
 			case Interface2EditPart.VISUAL_ID:
 				return new Interface2EditPart(view);
@@ -82,6 +88,9 @@ public class UMLEditPartFactory implements EditPartFactory {
 			case ComponentNameEditPart.VISUAL_ID:
 				return new ComponentNameEditPart(view);
 
+			case ComponentStereo2EditPart.VISUAL_ID:
+				return new ComponentStereo2EditPart(view);
+
 			case PortEditPart.VISUAL_ID:
 				return new PortEditPart(view);
 
@@ -94,11 +103,17 @@ public class UMLEditPartFactory implements EditPartFactory {
 			case ArtifactNameEditPart.VISUAL_ID:
 				return new ArtifactNameEditPart(view);
 
+			case ArtifactStereo2EditPart.VISUAL_ID:
+				return new ArtifactStereo2EditPart(view);
+
 			case Artifact3EditPart.VISUAL_ID:
 				return new Artifact3EditPart(view);
 
 			case ArtifactName3EditPart.VISUAL_ID:
 				return new ArtifactName3EditPart(view);
+
+			case ArtifactStereo3EditPart.VISUAL_ID:
+				return new ArtifactStereo3EditPart(view);
 
 			case ClassEditPart.VISUAL_ID:
 				return new ClassEditPart(view);

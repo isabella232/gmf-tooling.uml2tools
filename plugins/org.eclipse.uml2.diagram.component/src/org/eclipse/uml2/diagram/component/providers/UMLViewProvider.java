@@ -15,6 +15,9 @@ import org.eclipse.uml2.diagram.component.edit.parts.ArtifactEditPart;
 import org.eclipse.uml2.diagram.component.edit.parts.ArtifactName2EditPart;
 import org.eclipse.uml2.diagram.component.edit.parts.ArtifactName3EditPart;
 import org.eclipse.uml2.diagram.component.edit.parts.ArtifactNameEditPart;
+import org.eclipse.uml2.diagram.component.edit.parts.ArtifactStereo2EditPart;
+import org.eclipse.uml2.diagram.component.edit.parts.ArtifactStereo3EditPart;
+import org.eclipse.uml2.diagram.component.edit.parts.ArtifactStereoEditPart;
 import org.eclipse.uml2.diagram.component.edit.parts.AssemblyConnectorCircleEditPart;
 import org.eclipse.uml2.diagram.component.edit.parts.AssemblyConnectorEndRoleEditPart;
 import org.eclipse.uml2.diagram.component.edit.parts.AssociationEditPart;
@@ -47,6 +50,8 @@ import org.eclipse.uml2.diagram.component.edit.parts.ComponentEditPart;
 import org.eclipse.uml2.diagram.component.edit.parts.ComponentName2EditPart;
 import org.eclipse.uml2.diagram.component.edit.parts.ComponentNameEditPart;
 import org.eclipse.uml2.diagram.component.edit.parts.ComponentRequiredEditPart;
+import org.eclipse.uml2.diagram.component.edit.parts.ComponentStereo2EditPart;
+import org.eclipse.uml2.diagram.component.edit.parts.ComponentStereoEditPart;
 import org.eclipse.uml2.diagram.component.edit.parts.ConnectorEditPart;
 import org.eclipse.uml2.diagram.component.edit.parts.DependencyEditPart;
 import org.eclipse.uml2.diagram.component.edit.parts.DependencyNameEditPart;
@@ -82,6 +87,9 @@ import org.eclipse.uml2.diagram.component.view.factories.ArtifactContentsViewFac
 import org.eclipse.uml2.diagram.component.view.factories.ArtifactName2ViewFactory;
 import org.eclipse.uml2.diagram.component.view.factories.ArtifactName3ViewFactory;
 import org.eclipse.uml2.diagram.component.view.factories.ArtifactNameViewFactory;
+import org.eclipse.uml2.diagram.component.view.factories.ArtifactStereo2ViewFactory;
+import org.eclipse.uml2.diagram.component.view.factories.ArtifactStereo3ViewFactory;
+import org.eclipse.uml2.diagram.component.view.factories.ArtifactStereoViewFactory;
 import org.eclipse.uml2.diagram.component.view.factories.ArtifactViewFactory;
 import org.eclipse.uml2.diagram.component.view.factories.AssemblyConnectorCircleViewFactory;
 import org.eclipse.uml2.diagram.component.view.factories.AssemblyConnectorEndRoleViewFactory;
@@ -114,6 +122,8 @@ import org.eclipse.uml2.diagram.component.view.factories.ComponentContentsViewFa
 import org.eclipse.uml2.diagram.component.view.factories.ComponentName2ViewFactory;
 import org.eclipse.uml2.diagram.component.view.factories.ComponentNameViewFactory;
 import org.eclipse.uml2.diagram.component.view.factories.ComponentRequiredViewFactory;
+import org.eclipse.uml2.diagram.component.view.factories.ComponentStereo2ViewFactory;
+import org.eclipse.uml2.diagram.component.view.factories.ComponentStereoViewFactory;
 import org.eclipse.uml2.diagram.component.view.factories.ComponentViewFactory;
 import org.eclipse.uml2.diagram.component.view.factories.ConnectorViewFactory;
 import org.eclipse.uml2.diagram.component.view.factories.DependencyNameViewFactory;
@@ -250,12 +260,14 @@ public class UMLViewProvider extends AbstractViewProvider {
 					}
 					break;
 				case ComponentName2EditPart.VISUAL_ID:
+				case ComponentStereoEditPart.VISUAL_ID:
 				case ComponentContentsEditPart.VISUAL_ID:
 					if (ComponentEditPart.VISUAL_ID != UMLVisualIDRegistry.getVisualID(containerView) || containerView.getElement() != domainElement) {
 						return null; // wrong container
 					}
 					break;
 				case ArtifactName2EditPart.VISUAL_ID:
+				case ArtifactStereoEditPart.VISUAL_ID:
 				case ArtifactContents3EditPart.VISUAL_ID:
 					if (Artifact2EditPart.VISUAL_ID != UMLVisualIDRegistry.getVisualID(containerView) || containerView.getElement() != domainElement) {
 						return null; // wrong container
@@ -294,6 +306,7 @@ public class UMLViewProvider extends AbstractViewProvider {
 					}
 					break;
 				case ComponentNameEditPart.VISUAL_ID:
+				case ComponentStereo2EditPart.VISUAL_ID:
 				case ComponentContents2EditPart.VISUAL_ID:
 					if (Component2EditPart.VISUAL_ID != UMLVisualIDRegistry.getVisualID(containerView) || containerView.getElement() != domainElement) {
 						return null; // wrong container
@@ -305,12 +318,14 @@ public class UMLViewProvider extends AbstractViewProvider {
 					}
 					break;
 				case ArtifactNameEditPart.VISUAL_ID:
+				case ArtifactStereo2EditPart.VISUAL_ID:
 				case ArtifactContentsEditPart.VISUAL_ID:
 					if (ArtifactEditPart.VISUAL_ID != UMLVisualIDRegistry.getVisualID(containerView) || containerView.getElement() != domainElement) {
 						return null; // wrong container
 					}
 					break;
 				case ArtifactName3EditPart.VISUAL_ID:
+				case ArtifactStereo3EditPart.VISUAL_ID:
 				case ArtifactContents2EditPart.VISUAL_ID:
 					if (Artifact3EditPart.VISUAL_ID != UMLVisualIDRegistry.getVisualID(containerView) || containerView.getElement() != domainElement) {
 						return null; // wrong container
@@ -372,10 +387,14 @@ public class UMLViewProvider extends AbstractViewProvider {
 			return ComponentViewFactory.class;
 		case ComponentName2EditPart.VISUAL_ID:
 			return ComponentName2ViewFactory.class;
+		case ComponentStereoEditPart.VISUAL_ID:
+			return ComponentStereoViewFactory.class;
 		case Artifact2EditPart.VISUAL_ID:
 			return Artifact2ViewFactory.class;
 		case ArtifactName2EditPart.VISUAL_ID:
 			return ArtifactName2ViewFactory.class;
+		case ArtifactStereoEditPart.VISUAL_ID:
+			return ArtifactStereoViewFactory.class;
 		case Interface2EditPart.VISUAL_ID:
 			return Interface2ViewFactory.class;
 		case InterfaceName2EditPart.VISUAL_ID:
@@ -402,6 +421,8 @@ public class UMLViewProvider extends AbstractViewProvider {
 			return Component2ViewFactory.class;
 		case ComponentNameEditPart.VISUAL_ID:
 			return ComponentNameViewFactory.class;
+		case ComponentStereo2EditPart.VISUAL_ID:
+			return ComponentStereo2ViewFactory.class;
 		case PortEditPart.VISUAL_ID:
 			return PortViewFactory.class;
 		case PortNameEditPart.VISUAL_ID:
@@ -410,10 +431,14 @@ public class UMLViewProvider extends AbstractViewProvider {
 			return ArtifactViewFactory.class;
 		case ArtifactNameEditPart.VISUAL_ID:
 			return ArtifactNameViewFactory.class;
+		case ArtifactStereo2EditPart.VISUAL_ID:
+			return ArtifactStereo2ViewFactory.class;
 		case Artifact3EditPart.VISUAL_ID:
 			return Artifact3ViewFactory.class;
 		case ArtifactName3EditPart.VISUAL_ID:
 			return ArtifactName3ViewFactory.class;
+		case ArtifactStereo3EditPart.VISUAL_ID:
+			return ArtifactStereo3ViewFactory.class;
 		case ClassEditPart.VISUAL_ID:
 			return ClassViewFactory.class;
 		case ClassNameEditPart.VISUAL_ID:

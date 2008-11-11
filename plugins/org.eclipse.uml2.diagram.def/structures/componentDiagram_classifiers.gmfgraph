@@ -55,6 +55,8 @@
           figure="//@figures.0/@descriptors.0/@actualFigure/@children.0/@children.1"/>
       <accessors
           figure="//@figures.0/@descriptors.0/@actualFigure/@children.1"/>
+      <accessors
+          figure="//@figures.0/@descriptors.0/@actualFigure/@children.0/@children.0"/>
     </descriptors>
     <descriptors
         name="ArtifactFigure">
@@ -103,6 +105,8 @@
           figure="//@figures.0/@descriptors.1/@actualFigure/@children.0/@children.0"/>
       <accessors
           figure="//@figures.0/@descriptors.1/@actualFigure/@children.1"/>
+      <accessors
+          figure="//@figures.0/@descriptors.1/@actualFigure/@children.0/@children.1"/>
     </descriptors>
     <descriptors
         name="ComponentClassFigure">
@@ -196,4 +200,13 @@
       name="PartNode_name"
       figure="PartFigure"
       accessor="//@figures.0/@descriptors.3/@accessors.0"/>
+  <labels
+      name="ComponentNode_stereo"
+      figure="ComponentFigure"
+      elementIcon="false"
+      accessor="//@figures.0/@descriptors.0/@accessors.2"/>
+  <labels
+      name="ArtifactNode_stereo"
+      figure="ArtifactFigure"
+      accessor="//@figures.0/@descriptors.1/@accessors.2"/>
 </gmfgraph:Canvas>
