@@ -12630,4 +12630,11 @@
         xsi:type="gmfgen:ExternalParser"
         uses="//@diagram/@links.5/@labels.0/@modelFacet"/>
   </labelParsers>
+  <contextMenus
+      iD="org.eclipse.uml2.diagram.activity.menu"
+      context="//@diagram">
+    <items
+        xsi:type="gmfgen:LoadResourceAction"
+        qualifiedClassName="org.eclipse.uml2.diagram.activity.part.UMLLoadResourceAction"/>
+  </contextMenus>
 </gmfgen:GenEditorGenerator>
