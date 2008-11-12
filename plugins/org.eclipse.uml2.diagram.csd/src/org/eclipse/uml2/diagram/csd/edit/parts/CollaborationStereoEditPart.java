@@ -53,6 +53,7 @@ import org.eclipse.uml2.diagram.csd.edit.policies.UMLTextSelectionEditPolicy;
 import org.eclipse.uml2.diagram.csd.part.UMLVisualIDRegistry;
 import org.eclipse.uml2.diagram.csd.providers.UMLElementTypes;
 import org.eclipse.uml2.diagram.csd.providers.UMLParserProvider;
+import org.eclipse.uml2.diagram.parser.SemanticLabelDirectEditPolicy;
 
 /**
  * @generated
@@ -121,7 +122,7 @@ public class CollaborationStereoEditPart extends CompartmentEditPart implements 
 				return false;
 			}
 		});
-		installEditPolicy("VisualEffect.Stereo", new ClassifierNameVisualEffectEditPolicy()); //$NON-NLS-1$
+		installEditPolicy(EditPolicy.DIRECT_EDIT_ROLE, new SemanticLabelDirectEditPolicy());
 	}
 
 	/**

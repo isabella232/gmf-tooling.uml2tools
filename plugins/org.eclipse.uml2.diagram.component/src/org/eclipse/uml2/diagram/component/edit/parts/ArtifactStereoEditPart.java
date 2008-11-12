@@ -53,6 +53,7 @@ import org.eclipse.uml2.diagram.component.edit.policies.UMLTextSelectionEditPoli
 import org.eclipse.uml2.diagram.component.part.UMLVisualIDRegistry;
 import org.eclipse.uml2.diagram.component.providers.UMLElementTypes;
 import org.eclipse.uml2.diagram.component.providers.UMLParserProvider;
+import org.eclipse.uml2.diagram.parser.SemanticLabelDirectEditPolicy;
 
 /**
  * @generated
@@ -121,7 +122,7 @@ public class ArtifactStereoEditPart extends CompartmentEditPart implements IText
 				return false;
 			}
 		});
-		installEditPolicy("VisualEffect.Stereo", new ClassifierNameVisualEffectEditPolicy()); //$NON-NLS-1$
+		installEditPolicy(EditPolicy.DIRECT_EDIT_ROLE, new SemanticLabelDirectEditPolicy());
 	}
 
 	/**

@@ -104,8 +104,8 @@
             figureQualifiedClassName="org.eclipse.draw2d.Label"/>
         <behaviour
             xsi:type="gmfgen:CustomBehaviour"
-            key="&quot;VisualEffect.Stereo&quot;"
-            editPolicyQualifiedClassName="org.eclipse.uml2.diagram.common.editpolicies.ClassifierNameVisualEffectEditPolicy"/>
+            key="org.eclipse.gef.EditPolicy.DIRECT_EDIT_ROLE"
+            editPolicyQualifiedClassName="org.eclipse.uml2.diagram.parser.SemanticLabelDirectEditPolicy"/>
         <modelFacet
             xsi:type="gmfgen:FeatureLabelModelFacet"
             parser="//@labelParsers/@implementations.1">
@@ -835,8 +835,8 @@
             figureQualifiedClassName="org.eclipse.draw2d.Label"/>
         <behaviour
             xsi:type="gmfgen:CustomBehaviour"
-            key="&quot;VisualEffect.Stereo&quot;"
-            editPolicyQualifiedClassName="org.eclipse.uml2.diagram.common.editpolicies.ClassifierNameVisualEffectEditPolicy"/>
+            key="org.eclipse.gef.EditPolicy.DIRECT_EDIT_ROLE"
+            editPolicyQualifiedClassName="org.eclipse.uml2.diagram.parser.SemanticLabelDirectEditPolicy"/>
         <modelFacet
             xsi:type="gmfgen:FeatureLabelModelFacet"
             parser="//@labelParsers/@implementations.1">
@@ -936,8 +936,8 @@
         </viewmap>
         <behaviour
             xsi:type="gmfgen:CustomBehaviour"
-            key="&quot;VisualEffect.Stereo&quot;"
-            editPolicyQualifiedClassName="org.eclipse.uml2.diagram.common.editpolicies.ClassifierNameVisualEffectEditPolicy"/>
+            key="org.eclipse.gef.EditPolicy.DIRECT_EDIT_ROLE"
+            editPolicyQualifiedClassName="org.eclipse.uml2.diagram.parser.SemanticLabelDirectEditPolicy"/>
         <modelFacet
             xsi:type="gmfgen:FeatureLabelModelFacet"
             parser="//@labelParsers/@implementations.1"
@@ -1209,8 +1209,8 @@
             figureQualifiedClassName="org.eclipse.draw2d.Label"/>
         <behaviour
             xsi:type="gmfgen:CustomBehaviour"
-            key="&quot;VisualEffect.Stereo&quot;"
-            editPolicyQualifiedClassName="org.eclipse.uml2.diagram.common.editpolicies.ClassifierNameVisualEffectEditPolicy"/>
+            key="org.eclipse.gef.EditPolicy.DIRECT_EDIT_ROLE"
+            editPolicyQualifiedClassName="org.eclipse.uml2.diagram.parser.SemanticLabelDirectEditPolicy"/>
         <modelFacet
             xsi:type="gmfgen:FeatureLabelModelFacet"
             parser="//@labelParsers/@implementations.1">

@@ -22,7 +22,7 @@ public class DeploymentAppliedStereotypeParser extends ClassifierAppliedStereoty
 	private static final String DEVICE_LABEL = "device"; //$NON-NLS-1$
 	private static final String EXECUTION_ENVIRONMENT_LABEL = "executionEnvironment"; //$NON-NLS-1$
 	private static final String DEPLOYMENT_SPECIFICATION_LABEL = "deployment spec"; //$NON-NLS-1$
-	private static final String NODE_LABEL = ""; //$NON-NLS-1$
+	private static final String NODE_LABEL = null;
 
 	@Override
 	protected String getElementLabel(Element element) {
