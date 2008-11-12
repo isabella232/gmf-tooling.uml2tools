@@ -27,11 +27,14 @@ import org.eclipse.uml2.diagram.csd.edit.parts.ClassName2EditPart;
 import org.eclipse.uml2.diagram.csd.edit.parts.ClassNameEditPart;
 import org.eclipse.uml2.diagram.csd.edit.parts.ClassOperationsEditPart;
 import org.eclipse.uml2.diagram.csd.edit.parts.ClassQualifiedNameEditPart;
+import org.eclipse.uml2.diagram.csd.edit.parts.ClassStereoEditPart;
 import org.eclipse.uml2.diagram.csd.edit.parts.CollaborationContentsEditPart;
 import org.eclipse.uml2.diagram.csd.edit.parts.CollaborationEditPart;
 import org.eclipse.uml2.diagram.csd.edit.parts.CollaborationNameEditPart;
+import org.eclipse.uml2.diagram.csd.edit.parts.CollaborationStereoEditPart;
 import org.eclipse.uml2.diagram.csd.edit.parts.CollaborationUse2EditPart;
 import org.eclipse.uml2.diagram.csd.edit.parts.CollaborationUseName2EditPart;
+import org.eclipse.uml2.diagram.csd.edit.parts.CollaborationUseStereoEditPart;
 import org.eclipse.uml2.diagram.csd.edit.parts.ConnectorEditPart;
 import org.eclipse.uml2.diagram.csd.edit.parts.ConnectorName2EditPart;
 import org.eclipse.uml2.diagram.csd.edit.parts.ConnectorName3EditPart;
@@ -48,6 +51,7 @@ import org.eclipse.uml2.diagram.csd.edit.parts.ElementImportEditPart;
 import org.eclipse.uml2.diagram.csd.edit.parts.InstanceSpecificationEditPart;
 import org.eclipse.uml2.diagram.csd.edit.parts.InstanceSpecificationNameEditPart;
 import org.eclipse.uml2.diagram.csd.edit.parts.InstanceSpecificationSlotsEditPart;
+import org.eclipse.uml2.diagram.csd.edit.parts.InstanceSpecificationStereoEditPart;
 import org.eclipse.uml2.diagram.csd.edit.parts.InterfaceEditPart;
 import org.eclipse.uml2.diagram.csd.edit.parts.InterfaceNameEditPart;
 import org.eclipse.uml2.diagram.csd.edit.parts.InterfaceRealizationEditPart;
@@ -348,6 +352,9 @@ public class UMLVisualIDRegistry {
 			if (CollaborationNameEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
+			if (CollaborationStereoEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
 			if (CollaborationContentsEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
@@ -359,7 +366,7 @@ public class UMLVisualIDRegistry {
 			if (ClassNameEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
-			if (ClassQualifiedNameEditPart.VISUAL_ID == nodeVisualID) {
+			if (ClassStereoEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
 			if (ClassAttributesEditPart.VISUAL_ID == nodeVisualID) {
@@ -403,6 +410,9 @@ public class UMLVisualIDRegistry {
 			if (InstanceSpecificationNameEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
+			if (InstanceSpecificationStereoEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
 			if (InstanceSpecificationSlotsEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
@@ -414,6 +424,9 @@ public class UMLVisualIDRegistry {
 			break;
 		case CollaborationUse2EditPart.VISUAL_ID:
 			if (CollaborationUseName2EditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			if (CollaborationUseStereoEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
 			break;

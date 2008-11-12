@@ -28,6 +28,7 @@ import org.eclipse.uml2.diagram.common.parser.property.PropertyToString;
 import org.eclipse.uml2.diagram.common.parser.slot.SlotLookupSuite;
 import org.eclipse.uml2.diagram.common.parser.slot.SlotParser;
 import org.eclipse.uml2.diagram.common.parser.slot.SlotToString;
+import org.eclipse.uml2.diagram.common.parser.stereotype.ClassifierAppliedStereotypeParser;
 import org.eclipse.uml2.diagram.common.parser.valuespec.ValueSpecificationParser;
 import org.eclipse.uml2.diagram.csd.edit.parts.AssociationInstanceSourceEditPart;
 import org.eclipse.uml2.diagram.csd.edit.parts.AssociationInstanceTargetEditPart;
@@ -41,8 +42,11 @@ import org.eclipse.uml2.diagram.csd.edit.parts.AssociationNameEditPart;
 import org.eclipse.uml2.diagram.csd.edit.parts.ClassName2EditPart;
 import org.eclipse.uml2.diagram.csd.edit.parts.ClassNameEditPart;
 import org.eclipse.uml2.diagram.csd.edit.parts.ClassQualifiedNameEditPart;
+import org.eclipse.uml2.diagram.csd.edit.parts.ClassStereoEditPart;
 import org.eclipse.uml2.diagram.csd.edit.parts.CollaborationNameEditPart;
+import org.eclipse.uml2.diagram.csd.edit.parts.CollaborationStereoEditPart;
 import org.eclipse.uml2.diagram.csd.edit.parts.CollaborationUseName2EditPart;
+import org.eclipse.uml2.diagram.csd.edit.parts.CollaborationUseStereoEditPart;
 import org.eclipse.uml2.diagram.csd.edit.parts.ConnectorName2EditPart;
 import org.eclipse.uml2.diagram.csd.edit.parts.ConnectorName3EditPart;
 import org.eclipse.uml2.diagram.csd.edit.parts.ConnectorName4EditPart;
@@ -54,6 +58,7 @@ import org.eclipse.uml2.diagram.csd.edit.parts.ConstraintNameEditPart;
 import org.eclipse.uml2.diagram.csd.edit.parts.DependencyNameEditPart;
 import org.eclipse.uml2.diagram.csd.edit.parts.ElementImportEditPart;
 import org.eclipse.uml2.diagram.csd.edit.parts.InstanceSpecificationNameEditPart;
+import org.eclipse.uml2.diagram.csd.edit.parts.InstanceSpecificationStereoEditPart;
 import org.eclipse.uml2.diagram.csd.edit.parts.InterfaceNameEditPart;
 import org.eclipse.uml2.diagram.csd.edit.parts.OperationEditPart;
 import org.eclipse.uml2.diagram.csd.edit.parts.PackageNameEditPart;
@@ -123,6 +128,21 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 	/**
 	 * @generated
 	 */
+	private ClassifierAppliedStereotypeParser collaborationQualifiedName_5030Parser;
+
+	/**
+	 * @generated
+	 */
+	private IParser getCollaborationQualifiedName_5030Parser() {
+		if (collaborationQualifiedName_5030Parser == null) {
+			collaborationQualifiedName_5030Parser = new ClassifierAppliedStereotypeParser();
+		}
+		return collaborationQualifiedName_5030Parser;
+	}
+
+	/**
+	 * @generated
+	 */
 	private IParser className_5013Parser;
 
 	/**
@@ -147,25 +167,16 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 	/**
 	 * @generated
 	 */
-	private IParser classQualifiedName_5014Parser;
+	private ClassifierAppliedStereotypeParser classQualifiedName_5014Parser;
 
 	/**
 	 * @generated
 	 */
 	private IParser getClassQualifiedName_5014Parser() {
 		if (classQualifiedName_5014Parser == null) {
-			classQualifiedName_5014Parser = createClassQualifiedName_5014Parser();
+			classQualifiedName_5014Parser = new ClassifierAppliedStereotypeParser();
 		}
 		return classQualifiedName_5014Parser;
-	}
-
-	/**
-	 * @generated
-	 */
-	protected IParser createClassQualifiedName_5014Parser() {
-		EAttribute[] features = new EAttribute[] { UMLPackage.eINSTANCE.getNamedElement_QualifiedName() };
-		Parser_0_0 parser = new Parser_0_0(features);
-		return parser;
 	}
 
 	/**
@@ -267,6 +278,21 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 	/**
 	 * @generated
 	 */
+	private ClassifierAppliedStereotypeParser instanceSpecificationQualifiedName_5031Parser;
+
+	/**
+	 * @generated
+	 */
+	private IParser getInstanceSpecificationQualifiedName_5031Parser() {
+		if (instanceSpecificationQualifiedName_5031Parser == null) {
+			instanceSpecificationQualifiedName_5031Parser = new ClassifierAppliedStereotypeParser();
+		}
+		return instanceSpecificationQualifiedName_5031Parser;
+	}
+
+	/**
+	 * @generated
+	 */
 	private IParser constraintName_5024Parser;
 
 	/**
@@ -306,6 +332,21 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 	 */
 	protected IParser createCollaborationUseName_5002Parser() {
 		return new CollaborationUseParser();
+	}
+
+	/**
+	 * @generated
+	 */
+	private ClassifierAppliedStereotypeParser collaborationUseQualifiedName_5029Parser;
+
+	/**
+	 * @generated
+	 */
+	private IParser getCollaborationUseQualifiedName_5029Parser() {
+		if (collaborationUseQualifiedName_5029Parser == null) {
+			collaborationUseQualifiedName_5029Parser = new ClassifierAppliedStereotypeParser();
+		}
+		return collaborationUseQualifiedName_5029Parser;
 	}
 
 	/**
@@ -1062,9 +1103,11 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 		switch (visualID) {
 		case CollaborationNameEditPart.VISUAL_ID:
 			return getCollaborationName_5009Parser();
+		case CollaborationStereoEditPart.VISUAL_ID:
+			return getCollaborationQualifiedName_5030Parser();
 		case ClassNameEditPart.VISUAL_ID:
 			return getClassName_5013Parser();
-		case ClassQualifiedNameEditPart.VISUAL_ID:
+		case ClassStereoEditPart.VISUAL_ID:
 			return getClassQualifiedName_5014Parser();
 		case PackageNameEditPart.VISUAL_ID:
 			return getPackageName_5006Parser();
@@ -1074,10 +1117,14 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 			return getInterfaceName_5020Parser();
 		case InstanceSpecificationNameEditPart.VISUAL_ID:
 			return getInstanceSpecificationName_5022Parser();
+		case InstanceSpecificationStereoEditPart.VISUAL_ID:
+			return getInstanceSpecificationQualifiedName_5031Parser();
 		case ConstraintNameEditPart.VISUAL_ID:
 			return getConstraintName_5024Parser();
 		case CollaborationUseName2EditPart.VISUAL_ID:
 			return getCollaborationUseName_5002Parser();
+		case CollaborationUseStereoEditPart.VISUAL_ID:
+			return getCollaborationUseQualifiedName_5029Parser();
 		case PropertyNameEditPart.VISUAL_ID:
 			return getPropertyName_5011Parser();
 		case ParameterNameEditPart.VISUAL_ID:

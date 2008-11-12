@@ -66,6 +66,13 @@
           </border>
           <children
               xsi:type="gmfgraph:Label"
+              name="InstanceNode_StereoLabel">
+            <layout
+                xsi:type="gmfgraph:CustomLayout"
+                qualifiedClassName="org.eclipse.uml2.diagram.common.draw2d.CenterLayout"/>
+          </children>
+          <children
+              xsi:type="gmfgraph:Label"
               name="InstanceNode_NameLabel">
             <layout
                 xsi:type="gmfgraph:CustomLayout"
@@ -78,9 +85,11 @@
             outline="false"/>
       </actualFigure>
       <accessors
-          figure="//@figures.0/@descriptors.0/@actualFigure/@children.0/@children.0"/>
+          figure="//@figures.0/@descriptors.0/@actualFigure/@children.0/@children.1"/>
       <accessors
           figure="//@figures.0/@descriptors.0/@actualFigure/@children.1"/>
+      <accessors
+          figure="//@figures.0/@descriptors.0/@actualFigure/@children.0/@children.0"/>
     </descriptors>
     <descriptors
         name="Slot_InplaceLabel">
@@ -171,4 +180,9 @@
       figure="RectangleInstanceNodeFigure"
       elementIcon="false"
       accessor="//@figures.0/@descriptors.2/@accessors.1"/>
+  <labels
+      name="InstanceNode_stereo"
+      figure="InstanceNodeFigure"
+      elementIcon="false"
+      accessor="//@figures.0/@descriptors.0/@accessors.2"/>
 </gmfgraph:Canvas>

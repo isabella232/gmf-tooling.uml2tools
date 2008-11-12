@@ -16,6 +16,7 @@ import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.uml2.diagram.csd.edit.parts.CollaborationContentsEditPart;
 import org.eclipse.uml2.diagram.csd.edit.parts.CollaborationEditPart;
 import org.eclipse.uml2.diagram.csd.edit.parts.CollaborationNameEditPart;
+import org.eclipse.uml2.diagram.csd.edit.parts.CollaborationStereoEditPart;
 import org.eclipse.uml2.diagram.csd.edit.parts.PackageEditPart;
 import org.eclipse.uml2.diagram.csd.part.UMLVisualIDRegistry;
 
@@ -58,6 +59,7 @@ public class CollaborationViewFactory extends AbstractShapeViewFactory {
 			eObjectAdapter = new EObjectAdapter(eObject);
 		}
 		getViewService().createNode(eObjectAdapter, view, UMLVisualIDRegistry.getType(CollaborationNameEditPart.VISUAL_ID), ViewUtil.APPEND, true, getPreferencesHint());
+		getViewService().createNode(eObjectAdapter, view, UMLVisualIDRegistry.getType(CollaborationStereoEditPart.VISUAL_ID), ViewUtil.APPEND, true, getPreferencesHint());
 		getViewService().createNode(eObjectAdapter, view, UMLVisualIDRegistry.getType(CollaborationContentsEditPart.VISUAL_ID), ViewUtil.APPEND, true, getPreferencesHint());
 	}
 

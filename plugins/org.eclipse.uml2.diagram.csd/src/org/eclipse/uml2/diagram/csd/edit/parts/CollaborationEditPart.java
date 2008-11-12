@@ -13,9 +13,12 @@ import org.eclipse.draw2d.Ellipse;
 import org.eclipse.draw2d.Graphics;
 import org.eclipse.draw2d.IFigure;
 import org.eclipse.draw2d.Label;
+import org.eclipse.draw2d.LineBorder;
+import org.eclipse.draw2d.MarginBorder;
 import org.eclipse.draw2d.RectangleFigure;
 import org.eclipse.draw2d.Shape;
 import org.eclipse.draw2d.StackLayout;
+import org.eclipse.draw2d.ToolbarLayout;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EStructuralFeature;
@@ -41,6 +44,7 @@ import org.eclipse.gmf.runtime.gef.ui.figures.DefaultSizeNodeFigure;
 import org.eclipse.gmf.runtime.gef.ui.figures.NodeFigure;
 import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.swt.graphics.Color;
+import org.eclipse.uml2.diagram.common.draw2d.CenterLayout;
 import org.eclipse.uml2.diagram.common.draw2d.DefaultSizeOvalAnchorableFigure;
 import org.eclipse.uml2.diagram.common.draw2d.OneLineDashedBorder;
 import org.eclipse.uml2.diagram.common.draw2d.SplitEllipseLayout;
@@ -156,6 +160,10 @@ public class CollaborationEditPart extends ShapeNodeEditPart implements PrimaryS
 	protected boolean addFixedChild(EditPart childEditPart) {
 		if (childEditPart instanceof CollaborationNameEditPart) {
 			((CollaborationNameEditPart) childEditPart).setLabel(getPrimaryShape().getFigureCollaborationFigure_name());
+			return true;
+		}
+		if (childEditPart instanceof CollaborationStereoEditPart) {
+			((CollaborationStereoEditPart) childEditPart).setLabel(getPrimaryShape().getFigureCollaborationFigure_stereo());
 			return true;
 		}
 		if (childEditPart instanceof CollaborationContentsEditPart) {
@@ -926,6 +934,11 @@ public class CollaborationEditPart extends ShapeNodeEditPart implements PrimaryS
 		/**
 		 * @generated
 		 */
+		private Label fFigureCollaborationFigure_stereo;
+
+		/**
+		 * @generated
+		 */
 		public CollaborationFigure() {
 
 			SplitEllipseLayout layoutThis = new SplitEllipseLayout();
@@ -941,10 +954,52 @@ public class CollaborationEditPart extends ShapeNodeEditPart implements PrimaryS
 		 */
 		private void createContents() {
 
+			RectangleFigure collaborationFigure_Header0 = new RectangleFigure();
+			collaborationFigure_Header0.setFill(false);
+			collaborationFigure_Header0.setOutline(false);
+
+			this.add(collaborationFigure_Header0, BorderLayout.TOP);
+
+			ToolbarLayout layoutCollaborationFigure_Header0 = new ToolbarLayout();
+			layoutCollaborationFigure_Header0.setStretchMinorAxis(true);
+			layoutCollaborationFigure_Header0.setMinorAlignment(ToolbarLayout.ALIGN_TOPLEFT);
+
+			layoutCollaborationFigure_Header0.setSpacing(0);
+			layoutCollaborationFigure_Header0.setVertical(true);
+
+			collaborationFigure_Header0.setLayoutManager(layoutCollaborationFigure_Header0);
+
+			RectangleFigure collaborationFigure_StereoContainer1 = new RectangleFigure();
+			collaborationFigure_StereoContainer1.setOutline(false);
+
+			collaborationFigure_Header0.add(collaborationFigure_StereoContainer1);
+
+			CenterLayout layoutCollaborationFigure_StereoContainer1 = new CenterLayout();
+
+			collaborationFigure_StereoContainer1.setLayoutManager(layoutCollaborationFigure_StereoContainer1);
+
+			fFigureCollaborationFigure_stereo = new Label();
+			fFigureCollaborationFigure_stereo.setText("");
+
+			fFigureCollaborationFigure_stereo.setBorder(new MarginBorder(getMapMode().DPtoLP(5), getMapMode().DPtoLP(5), getMapMode().DPtoLP(0), getMapMode().DPtoLP(5)));
+
+			collaborationFigure_StereoContainer1.add(fFigureCollaborationFigure_stereo);
+
+			RectangleFigure collaborationFigure_NameContainer1 = new RectangleFigure();
+			collaborationFigure_NameContainer1.setOutline(false);
+
+			collaborationFigure_Header0.add(collaborationFigure_NameContainer1);
+
+			CenterLayout layoutCollaborationFigure_NameContainer1 = new CenterLayout();
+
+			collaborationFigure_NameContainer1.setLayoutManager(layoutCollaborationFigure_NameContainer1);
+
 			fFigureCollaborationFigure_name = new Label();
 			fFigureCollaborationFigure_name.setText("");
 
-			this.add(fFigureCollaborationFigure_name, BorderLayout.TOP);
+			fFigureCollaborationFigure_name.setBorder(new MarginBorder(getMapMode().DPtoLP(0), getMapMode().DPtoLP(5), getMapMode().DPtoLP(5), getMapMode().DPtoLP(5)));
+
+			collaborationFigure_NameContainer1.add(fFigureCollaborationFigure_name);
 
 			fFigureCollaborationFigure_contents = new RectangleFigure();
 			fFigureCollaborationFigure_contents.setFill(false);
@@ -992,6 +1047,13 @@ public class CollaborationEditPart extends ShapeNodeEditPart implements PrimaryS
 		 */
 		public RectangleFigure getFigureCollaborationFigure_contents() {
 			return fFigureCollaborationFigure_contents;
+		}
+
+		/**
+		 * @generated
+		 */
+		public Label getFigureCollaborationFigure_stereo() {
+			return fFigureCollaborationFigure_stereo;
 		}
 
 	}

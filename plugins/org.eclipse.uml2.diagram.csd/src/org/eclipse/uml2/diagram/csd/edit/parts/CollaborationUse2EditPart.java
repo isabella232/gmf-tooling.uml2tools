@@ -14,6 +14,7 @@ import org.eclipse.draw2d.Label;
 import org.eclipse.draw2d.MarginBorder;
 import org.eclipse.draw2d.Shape;
 import org.eclipse.draw2d.StackLayout;
+import org.eclipse.draw2d.ToolbarLayout;
 import org.eclipse.draw2d.geometry.Rectangle;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EObject;
@@ -29,8 +30,10 @@ import org.eclipse.gef.requests.CreateRequest;
 import org.eclipse.gmf.runtime.diagram.core.listener.DiagramEventBroker;
 import org.eclipse.gmf.runtime.diagram.core.listener.NotificationListener;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart;
+import org.eclipse.gmf.runtime.diagram.ui.editparts.ITextAwareEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.ShapeNodeEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editpolicies.CanonicalEditPolicy;
+import org.eclipse.gmf.runtime.diagram.ui.editpolicies.ConstrainedToolbarLayoutEditPolicy;
 import org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles;
 import org.eclipse.gmf.runtime.draw2d.ui.figures.ConstrainedToolbarLayout;
 import org.eclipse.gmf.runtime.emf.type.core.IElementType;
@@ -44,6 +47,7 @@ import org.eclipse.uml2.diagram.common.editpolicies.UpdateDescriptionEditPolicy;
 import org.eclipse.uml2.diagram.common.genapi.IUpdaterLinkDescriptor;
 import org.eclipse.uml2.diagram.common.genapi.IUpdaterNodeDescriptor;
 import org.eclipse.uml2.diagram.csd.edit.policies.CollaborationUse2ItemSemanticEditPolicy;
+import org.eclipse.uml2.diagram.csd.edit.policies.UMLTextSelectionEditPolicy;
 import org.eclipse.uml2.diagram.csd.part.UMLDiagramUpdateCommand;
 import org.eclipse.uml2.diagram.csd.part.UMLDiagramUpdater;
 import org.eclipse.uml2.diagram.csd.part.UMLVisualIDRegistry;
@@ -102,22 +106,16 @@ public class CollaborationUse2EditPart extends ShapeNodeEditPart implements Prim
 	 * @generated
 	 */
 	protected LayoutEditPolicy createLayoutEditPolicy() {
-		LayoutEditPolicy lep = new LayoutEditPolicy() {
+
+		ConstrainedToolbarLayoutEditPolicy lep = new ConstrainedToolbarLayoutEditPolicy() {
 
 			protected EditPolicy createChildEditPolicy(EditPart child) {
-				EditPolicy result = child.getEditPolicy(EditPolicy.PRIMARY_DRAG_ROLE);
-				if (result == null) {
-					result = new NonResizableEditPolicy();
+				if (child.getEditPolicy(EditPolicy.PRIMARY_DRAG_ROLE) == null) {
+					if (child instanceof ITextAwareEditPart) {
+						return new UMLTextSelectionEditPolicy();
+					}
 				}
-				return result;
-			}
-
-			protected Command getMoveChildrenCommand(Request request) {
-				return null;
-			}
-
-			protected Command getCreateCommand(CreateRequest request) {
-				return null;
+				return super.createChildEditPolicy(child);
 			}
 		};
 		return lep;
@@ -144,6 +142,10 @@ public class CollaborationUse2EditPart extends ShapeNodeEditPart implements Prim
 	protected boolean addFixedChild(EditPart childEditPart) {
 		if (childEditPart instanceof CollaborationUseName2EditPart) {
 			((CollaborationUseName2EditPart) childEditPart).setLabel(getPrimaryShape().getFigureCollaborationUseFigure_name());
+			return true;
+		}
+		if (childEditPart instanceof CollaborationUseStereoEditPart) {
+			((CollaborationUseStereoEditPart) childEditPart).setLabel(getPrimaryShape().getFigureCollaborationUseFigure_stereo());
 			return true;
 		}
 		return false;
@@ -859,7 +861,22 @@ public class CollaborationUse2EditPart extends ShapeNodeEditPart implements Prim
 		/**
 		 * @generated
 		 */
+		private Label fFigureCollaborationUseFigure_stereo;
+
+		/**
+		 * @generated
+		 */
 		public CollaborationUseFigure() {
+
+			ToolbarLayout layoutThis = new ToolbarLayout();
+			layoutThis.setStretchMinorAxis(true);
+			layoutThis.setMinorAlignment(ToolbarLayout.ALIGN_TOPLEFT);
+
+			layoutThis.setSpacing(0);
+			layoutThis.setVertical(true);
+
+			this.setLayoutManager(layoutThis);
+
 			this.setLineStyle(Graphics.LINE_DASH);
 			createContents();
 		}
@@ -868,6 +885,11 @@ public class CollaborationUse2EditPart extends ShapeNodeEditPart implements Prim
 		 * @generated
 		 */
 		private void createContents() {
+
+			fFigureCollaborationUseFigure_stereo = new Label();
+			fFigureCollaborationUseFigure_stereo.setText("");
+
+			this.add(fFigureCollaborationUseFigure_stereo);
 
 			fFigureCollaborationUseFigure_name = new Label();
 			fFigureCollaborationUseFigure_name.setText("");
@@ -900,6 +922,13 @@ public class CollaborationUse2EditPart extends ShapeNodeEditPart implements Prim
 		 */
 		public Label getFigureCollaborationUseFigure_name() {
 			return fFigureCollaborationUseFigure_name;
+		}
+
+		/**
+		 * @generated
+		 */
+		public Label getFigureCollaborationUseFigure_stereo() {
+			return fFigureCollaborationUseFigure_stereo;
 		}
 
 	}
