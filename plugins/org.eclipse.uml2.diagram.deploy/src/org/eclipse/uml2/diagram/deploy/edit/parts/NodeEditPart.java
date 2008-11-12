@@ -146,6 +146,10 @@ public class NodeEditPart extends ShapeNodeEditPart implements PrimaryShapeEditP
 			((NodeNameEditPart) childEditPart).setLabel(getPrimaryShape().getNameLabel());
 			return true;
 		}
+		if (childEditPart instanceof NodeStereoEditPart) {
+			((NodeStereoEditPart) childEditPart).setLabel(getPrimaryShape().getNodeTypeLabel());
+			return true;
+		}
 		return false;
 	}
 
@@ -814,7 +818,7 @@ public class NodeEditPart extends ShapeNodeEditPart implements PrimaryShapeEditP
 		 */
 		public NodeFigure() {
 
-			this.setTypeLabelVisible(false);
+			this.setTypeLabelVisible(true);
 
 		}
 
@@ -842,6 +846,13 @@ public class NodeEditPart extends ShapeNodeEditPart implements PrimaryShapeEditP
 		 */
 		public Label getNameLabel() {
 			return super.getNameLabel();
+		}
+
+		/**
+		 * @generated
+		 */
+		public Label getNodeTypeLabel() {
+			return getTypeLabel();
 		}
 
 	}

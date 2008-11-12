@@ -151,6 +151,10 @@ public class ExecutionEnvironment2EditPart extends ShapeNodeEditPart implements 
 			((ExecutionEnvironmentName2EditPart) childEditPart).setLabel(getPrimaryShape().getNameLabel());
 			return true;
 		}
+		if (childEditPart instanceof ExecutionEnvironmentStereo2EditPart) {
+			((ExecutionEnvironmentStereo2EditPart) childEditPart).setLabel(getPrimaryShape().getEnvironmentTypeLabel());
+			return true;
+		}
 		if (childEditPart instanceof ExecutionEnvironmentArtifacts2EditPart) {
 			IFigure pane = getPrimaryShape().getContentPane();
 			setupContentPane(pane); // FIXME each comparment should handle his content pane in his own way 
@@ -843,8 +847,6 @@ public class ExecutionEnvironment2EditPart extends ShapeNodeEditPart implements 
 		 */
 		public EnvironmentFigure() {
 
-			this.setTypeLabelText("\u00ABexecutionEnvironment\u00BB");
-
 			this.setTypeLabelVisible(true);
 
 		}
@@ -866,6 +868,13 @@ public class ExecutionEnvironment2EditPart extends ShapeNodeEditPart implements 
 		 */
 		protected void setUseLocalCoordinates(boolean useLocalCoordinates) {
 			myUseLocalCoordinates = useLocalCoordinates;
+		}
+
+		/**
+		 * @generated
+		 */
+		public Label getEnvironmentTypeLabel() {
+			return getTypeLabel();
 		}
 
 		/**

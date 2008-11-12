@@ -15,23 +15,35 @@ import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.uml2.diagram.common.parser.imports.ElementImportParser;
 import org.eclipse.uml2.diagram.common.parser.property.PropertyParser;
 import org.eclipse.uml2.diagram.common.parser.property.PropertyToString;
+import org.eclipse.uml2.diagram.common.parser.stereotype.DeploymentAppliedStereotypeParser;
 import org.eclipse.uml2.diagram.deploy.edit.parts.Artifact3EditPart;
 import org.eclipse.uml2.diagram.deploy.edit.parts.ArtifactFileName2EditPart;
 import org.eclipse.uml2.diagram.deploy.edit.parts.ArtifactFileName3EditPart;
 import org.eclipse.uml2.diagram.deploy.edit.parts.ArtifactFileNameEditPart;
+import org.eclipse.uml2.diagram.deploy.edit.parts.ArtifactStereo2EditPart;
+import org.eclipse.uml2.diagram.deploy.edit.parts.ArtifactStereo3EditPart;
+import org.eclipse.uml2.diagram.deploy.edit.parts.ArtifactStereoEditPart;
 import org.eclipse.uml2.diagram.deploy.edit.parts.CommunicationPathNameEditPart;
 import org.eclipse.uml2.diagram.deploy.edit.parts.DependencyNameEditPart;
 import org.eclipse.uml2.diagram.deploy.edit.parts.DeploymentNameEditPart;
 import org.eclipse.uml2.diagram.deploy.edit.parts.DeploymentSpecificationName2EditPart;
 import org.eclipse.uml2.diagram.deploy.edit.parts.DeploymentSpecificationNameEditPart;
+import org.eclipse.uml2.diagram.deploy.edit.parts.DeploymentSpecificationStereo3EditPart;
+import org.eclipse.uml2.diagram.deploy.edit.parts.DeploymentSpecificationStereo4EditPart;
 import org.eclipse.uml2.diagram.deploy.edit.parts.DeviceName2EditPart;
 import org.eclipse.uml2.diagram.deploy.edit.parts.DeviceNameEditPart;
+import org.eclipse.uml2.diagram.deploy.edit.parts.DeviceStereo2EditPart;
+import org.eclipse.uml2.diagram.deploy.edit.parts.DeviceStereoEditPart;
 import org.eclipse.uml2.diagram.deploy.edit.parts.ElementImportEditPart;
 import org.eclipse.uml2.diagram.deploy.edit.parts.ExecutionEnvironmentName2EditPart;
 import org.eclipse.uml2.diagram.deploy.edit.parts.ExecutionEnvironmentNameEditPart;
+import org.eclipse.uml2.diagram.deploy.edit.parts.ExecutionEnvironmentStereo2EditPart;
+import org.eclipse.uml2.diagram.deploy.edit.parts.ExecutionEnvironmentStereoEditPart;
 import org.eclipse.uml2.diagram.deploy.edit.parts.ManifestationNameEditPart;
 import org.eclipse.uml2.diagram.deploy.edit.parts.NodeName2EditPart;
 import org.eclipse.uml2.diagram.deploy.edit.parts.NodeNameEditPart;
+import org.eclipse.uml2.diagram.deploy.edit.parts.NodeStereo2EditPart;
+import org.eclipse.uml2.diagram.deploy.edit.parts.NodeStereoEditPart;
 import org.eclipse.uml2.diagram.deploy.edit.parts.PackageNameEditPart;
 import org.eclipse.uml2.diagram.deploy.edit.parts.PropertyEditPart;
 import org.eclipse.uml2.diagram.deploy.expressions.UMLOCLFactory;
@@ -110,6 +122,21 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 	/**
 	 * @generated
 	 */
+	private DeploymentAppliedStereotypeParser deviceQualifiedName_5019Parser;
+
+	/**
+	 * @generated
+	 */
+	private IParser getDeviceQualifiedName_5019Parser() {
+		if (deviceQualifiedName_5019Parser == null) {
+			deviceQualifiedName_5019Parser = new DeploymentAppliedStereotypeParser();
+		}
+		return deviceQualifiedName_5019Parser;
+	}
+
+	/**
+	 * @generated
+	 */
 	private IParser nodeName_5003Parser;
 
 	/**
@@ -129,6 +156,21 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 		EAttribute[] features = new EAttribute[] { UMLPackage.eINSTANCE.getNamedElement_Name() };
 		Parser_0_0 parser = new Parser_0_0(features);
 		return parser;
+	}
+
+	/**
+	 * @generated
+	 */
+	private DeploymentAppliedStereotypeParser nodeQualifiedName_5020Parser;
+
+	/**
+	 * @generated
+	 */
+	private IParser getNodeQualifiedName_5020Parser() {
+		if (nodeQualifiedName_5020Parser == null) {
+			nodeQualifiedName_5020Parser = new DeploymentAppliedStereotypeParser();
+		}
+		return nodeQualifiedName_5020Parser;
 	}
 
 	/**
@@ -158,6 +200,21 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 	/**
 	 * @generated
 	 */
+	private DeploymentAppliedStereotypeParser executionEnvironmentQualifiedName_5021Parser;
+
+	/**
+	 * @generated
+	 */
+	private IParser getExecutionEnvironmentQualifiedName_5021Parser() {
+		if (executionEnvironmentQualifiedName_5021Parser == null) {
+			executionEnvironmentQualifiedName_5021Parser = new DeploymentAppliedStereotypeParser();
+		}
+		return executionEnvironmentQualifiedName_5021Parser;
+	}
+
+	/**
+	 * @generated
+	 */
 	private IParser artifactFileName_5005Parser;
 
 	/**
@@ -182,6 +239,21 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 	/**
 	 * @generated
 	 */
+	private DeploymentAppliedStereotypeParser artifactQualifiedName_5022Parser;
+
+	/**
+	 * @generated
+	 */
+	private IParser getArtifactQualifiedName_5022Parser() {
+		if (artifactQualifiedName_5022Parser == null) {
+			artifactQualifiedName_5022Parser = new DeploymentAppliedStereotypeParser();
+		}
+		return artifactQualifiedName_5022Parser;
+	}
+
+	/**
+	 * @generated
+	 */
 	private IParser deploymentSpecificationName_5006Parser;
 
 	/**
@@ -201,6 +273,21 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 		EAttribute[] features = new EAttribute[] { UMLPackage.eINSTANCE.getNamedElement_Name() };
 		Parser_0_0 parser = new Parser_0_0(features);
 		return parser;
+	}
+
+	/**
+	 * @generated
+	 */
+	private DeploymentAppliedStereotypeParser deploymentSpecificationQualifiedName_5023Parser;
+
+	/**
+	 * @generated
+	 */
+	private IParser getDeploymentSpecificationQualifiedName_5023Parser() {
+		if (deploymentSpecificationQualifiedName_5023Parser == null) {
+			deploymentSpecificationQualifiedName_5023Parser = new DeploymentAppliedStereotypeParser();
+		}
+		return deploymentSpecificationQualifiedName_5023Parser;
 	}
 
 	/**
@@ -252,6 +339,21 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 	/**
 	 * @generated
 	 */
+	private DeploymentAppliedStereotypeParser deviceQualifiedName_5018Parser;
+
+	/**
+	 * @generated
+	 */
+	private IParser getDeviceQualifiedName_5018Parser() {
+		if (deviceQualifiedName_5018Parser == null) {
+			deviceQualifiedName_5018Parser = new DeploymentAppliedStereotypeParser();
+		}
+		return deviceQualifiedName_5018Parser;
+	}
+
+	/**
+	 * @generated
+	 */
 	private IParser artifactFileName_5007Parser;
 
 	/**
@@ -271,6 +373,21 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 		EAttribute[] features = new EAttribute[] { UMLPackage.eINSTANCE.getArtifact_FileName() };
 		Parser_0_0 parser = new Parser_0_0(features);
 		return parser;
+	}
+
+	/**
+	 * @generated
+	 */
+	private DeploymentAppliedStereotypeParser artifactQualifiedName_5015Parser;
+
+	/**
+	 * @generated
+	 */
+	private IParser getArtifactQualifiedName_5015Parser() {
+		if (artifactQualifiedName_5015Parser == null) {
+			artifactQualifiedName_5015Parser = new DeploymentAppliedStereotypeParser();
+		}
+		return artifactQualifiedName_5015Parser;
 	}
 
 	/**
@@ -300,6 +417,21 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 	/**
 	 * @generated
 	 */
+	private DeploymentAppliedStereotypeParser artifactQualifiedName_5014Parser;
+
+	/**
+	 * @generated
+	 */
+	private IParser getArtifactQualifiedName_5014Parser() {
+		if (artifactQualifiedName_5014Parser == null) {
+			artifactQualifiedName_5014Parser = new DeploymentAppliedStereotypeParser();
+		}
+		return artifactQualifiedName_5014Parser;
+	}
+
+	/**
+	 * @generated
+	 */
 	private IParser deploymentSpecificationName_5012Parser;
 
 	/**
@@ -324,6 +456,21 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 	/**
 	 * @generated
 	 */
+	private DeploymentAppliedStereotypeParser deploymentSpecificationQualifiedName_5013Parser;
+
+	/**
+	 * @generated
+	 */
+	private IParser getDeploymentSpecificationQualifiedName_5013Parser() {
+		if (deploymentSpecificationQualifiedName_5013Parser == null) {
+			deploymentSpecificationQualifiedName_5013Parser = new DeploymentAppliedStereotypeParser();
+		}
+		return deploymentSpecificationQualifiedName_5013Parser;
+	}
+
+	/**
+	 * @generated
+	 */
 	private IParser executionEnvironmentName_5008Parser;
 
 	/**
@@ -343,6 +490,21 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 		EAttribute[] features = new EAttribute[] { UMLPackage.eINSTANCE.getNamedElement_Name() };
 		Parser_0_0 parser = new Parser_0_0(features);
 		return parser;
+	}
+
+	/**
+	 * @generated
+	 */
+	private DeploymentAppliedStereotypeParser executionEnvironmentQualifiedName_5016Parser;
+
+	/**
+	 * @generated
+	 */
+	private IParser getExecutionEnvironmentQualifiedName_5016Parser() {
+		if (executionEnvironmentQualifiedName_5016Parser == null) {
+			executionEnvironmentQualifiedName_5016Parser = new DeploymentAppliedStereotypeParser();
+		}
+		return executionEnvironmentQualifiedName_5016Parser;
 	}
 
 	/**
@@ -391,6 +553,21 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 		EAttribute[] features = new EAttribute[] { UMLPackage.eINSTANCE.getNamedElement_Name() };
 		Parser_0_0 parser = new Parser_0_0(features);
 		return parser;
+	}
+
+	/**
+	 * @generated
+	 */
+	private DeploymentAppliedStereotypeParser nodeQualifiedName_5017Parser;
+
+	/**
+	 * @generated
+	 */
+	private IParser getNodeQualifiedName_5017Parser() {
+		if (nodeQualifiedName_5017Parser == null) {
+			nodeQualifiedName_5017Parser = new DeploymentAppliedStereotypeParser();
+		}
+		return nodeQualifiedName_5017Parser;
 	}
 
 	/**
@@ -535,32 +712,54 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 			return getPackageName_5001Parser();
 		case DeviceNameEditPart.VISUAL_ID:
 			return getDeviceName_5002Parser();
+		case DeviceStereoEditPart.VISUAL_ID:
+			return getDeviceQualifiedName_5019Parser();
 		case NodeNameEditPart.VISUAL_ID:
 			return getNodeName_5003Parser();
+		case NodeStereoEditPart.VISUAL_ID:
+			return getNodeQualifiedName_5020Parser();
 		case ExecutionEnvironmentNameEditPart.VISUAL_ID:
 			return getExecutionEnvironmentName_5004Parser();
+		case ExecutionEnvironmentStereoEditPart.VISUAL_ID:
+			return getExecutionEnvironmentQualifiedName_5021Parser();
 		case ArtifactFileNameEditPart.VISUAL_ID:
 			return getArtifactFileName_5005Parser();
+		case ArtifactStereoEditPart.VISUAL_ID:
+			return getArtifactQualifiedName_5022Parser();
 		case DeploymentSpecificationNameEditPart.VISUAL_ID:
 			return getDeploymentSpecificationName_5006Parser();
+		case DeploymentSpecificationStereo3EditPart.VISUAL_ID:
+			return getDeploymentSpecificationQualifiedName_5023Parser();
 		case ElementImportEditPart.VISUAL_ID:
 			return getElementImport_3001Parser();
 		case DeviceName2EditPart.VISUAL_ID:
 			return getDeviceName_5010Parser();
+		case DeviceStereo2EditPart.VISUAL_ID:
+			return getDeviceQualifiedName_5018Parser();
 		case ArtifactFileName2EditPart.VISUAL_ID:
 			return getArtifactFileName_5007Parser();
+		case ArtifactStereo2EditPart.VISUAL_ID:
+			return getArtifactQualifiedName_5015Parser();
 		case ArtifactFileName3EditPart.VISUAL_ID:
 			return getArtifactFileName_5011Parser();
+		case ArtifactStereo3EditPart.VISUAL_ID:
+			return getArtifactQualifiedName_5014Parser();
 		case DeploymentSpecificationName2EditPart.VISUAL_ID:
 			return getDeploymentSpecificationName_5012Parser();
+		case DeploymentSpecificationStereo4EditPart.VISUAL_ID:
+			return getDeploymentSpecificationQualifiedName_5013Parser();
 		case PropertyEditPart.VISUAL_ID:
 			return getProperty_3003Parser();
 		case ExecutionEnvironmentName2EditPart.VISUAL_ID:
 			return getExecutionEnvironmentName_5008Parser();
+		case ExecutionEnvironmentStereo2EditPart.VISUAL_ID:
+			return getExecutionEnvironmentQualifiedName_5016Parser();
 		case Artifact3EditPart.VISUAL_ID:
 			return getArtifact_3006Parser();
 		case NodeName2EditPart.VISUAL_ID:
 			return getNodeName_5009Parser();
+		case NodeStereo2EditPart.VISUAL_ID:
+			return getNodeQualifiedName_5017Parser();
 		case DeploymentNameEditPart.VISUAL_ID:
 			return getDeploymentName_6001Parser();
 		case ManifestationNameEditPart.VISUAL_ID:

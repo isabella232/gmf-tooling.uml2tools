@@ -12,9 +12,6 @@
           name="DeviceFigure"
           qualifiedClassName="org.eclipse.uml2.diagram.common.draw2d.Cube3DFigure">
         <attributes
-            name="typeLabelText"
-            value="&quot;\u00ABdevice\u00BB&quot;"/>
-        <attributes
             name="typeLabelVisible"
             value="true"/>
         <customChildren
@@ -29,6 +26,12 @@
               xsi:type="gmfgraph:Rectangle"
               name="DeviceFigure_content"/>
         </customChildren>
+        <customChildren
+            accessor="getTypeLabel">
+          <typedFigure
+              xsi:type="gmfgraph:Label"
+              name="DeviceFigure_type"/>
+        </customChildren>
       </actualFigure>
       <accessors
           accessor="getNameLabel"
@@ -36,6 +39,9 @@
       <accessors
           accessor="getContentPane"
           figure="//@figures.0/@descriptors.0/@actualFigure/@customChildren.1/@typedFigure"/>
+      <accessors
+          accessor="getDeviceTypeLabel"
+          figure="//@figures.0/@descriptors.0/@actualFigure/@customChildren.2/@typedFigure"/>
     </descriptors>
     <descriptors
         name="NodeFigure">
@@ -45,17 +51,26 @@
           qualifiedClassName="org.eclipse.uml2.diagram.common.draw2d.Cube3DFigure">
         <attributes
             name="typeLabelVisible"
-            value="false"/>
+            value="true"/>
         <customChildren
             accessor="getNameLabel">
           <typedFigure
               xsi:type="gmfgraph:Label"
               name="NodeFigure_name"/>
         </customChildren>
+        <customChildren
+            accessor="getTypeLabel">
+          <typedFigure
+              xsi:type="gmfgraph:Label"
+              name="NodeFigure_type"/>
+        </customChildren>
       </actualFigure>
       <accessors
           accessor="getNameLabel"
           figure="//@figures.0/@descriptors.1/@actualFigure/@customChildren.0/@typedFigure"/>
+      <accessors
+          accessor="getNodeTypeLabel"
+          figure="//@figures.0/@descriptors.1/@actualFigure/@customChildren.1/@typedFigure"/>
     </descriptors>
     <descriptors
         name="EnvironmentFigure">
@@ -63,9 +78,6 @@
           xsi:type="gmfgraph:CustomFigure"
           name="EnvironmentFigure"
           qualifiedClassName="org.eclipse.uml2.diagram.common.draw2d.Cube3DFigure">
-        <attributes
-            name="typeLabelText"
-            value="&quot;\u00ABexecutionEnvironment\u00BB&quot;"/>
         <attributes
             name="typeLabelVisible"
             value="true"/>
@@ -81,7 +93,16 @@
               xsi:type="gmfgraph:Rectangle"
               name="EnvironmentFigure_content"/>
         </customChildren>
+        <customChildren
+            accessor="getTypeLabel">
+          <typedFigure
+              xsi:type="gmfgraph:Label"
+              name="EnvironmentFigure_type"/>
+        </customChildren>
       </actualFigure>
+      <accessors
+          accessor="getEnvironmentTypeLabel"
+          figure="//@figures.0/@descriptors.2/@actualFigure/@customChildren.2/@typedFigure"/>
       <accessors
           accessor="getNameLabel"
           figure="//@figures.0/@descriptors.2/@actualFigure/@customChildren.0/@typedFigure"/>
@@ -210,7 +231,7 @@
       name="artifacts"
       figure="EnvironmentFigure"
       needsTitle="true"
-      accessor="//@figures.0/@descriptors.2/@accessors.1"/>
+      accessor="//@figures.0/@descriptors.2/@accessors.2"/>
   <compartments
       name="properties"
       figure="DeploymentSpecificationFigure"
@@ -230,9 +251,29 @@
   <labels
       name="EnvironmentNode_name"
       figure="EnvironmentFigure"
-      accessor="//@figures.0/@descriptors.2/@accessors.0"/>
+      accessor="//@figures.0/@descriptors.2/@accessors.1"/>
   <labels
       name="DeploymentSpecificationNode_name"
       figure="DeploymentSpecificationFigure"
       accessor="//@figures.0/@descriptors.3/@accessors.1"/>
+  <labels
+      name="DeviceNode_stereo"
+      figure="DeviceFigure"
+      elementIcon="false"
+      accessor="//@figures.0/@descriptors.0/@accessors.2"/>
+  <labels
+      name="EnvironmentNode_stereo"
+      figure="EnvironmentFigure"
+      elementIcon="false"
+      accessor="//@figures.0/@descriptors.2/@accessors.0"/>
+  <labels
+      name="NodeNode_stereo"
+      figure="NodeFigure"
+      elementIcon="false"
+      accessor="//@figures.0/@descriptors.1/@accessors.1"/>
+  <labels
+      name="DeploymentSpecificationNode_stereo"
+      figure="DeploymentSpecificationFigure"
+      elementIcon="false"
+      accessor="//@figures.0/@descriptors.3/@accessors.0"/>
 </gmfgraph:Canvas>

@@ -147,6 +147,10 @@ public class Device2EditPart extends ShapeNodeEditPart implements PrimaryShapeEd
 			((DeviceName2EditPart) childEditPart).setLabel(getPrimaryShape().getNameLabel());
 			return true;
 		}
+		if (childEditPart instanceof DeviceStereo2EditPart) {
+			((DeviceStereo2EditPart) childEditPart).setLabel(getPrimaryShape().getDeviceTypeLabel());
+			return true;
+		}
 		if (childEditPart instanceof DeviceDevicecontents2EditPart) {
 			IFigure pane = getPrimaryShape().getContentPane();
 			setupContentPane(pane); // FIXME each comparment should handle his content pane in his own way 
@@ -825,8 +829,6 @@ public class Device2EditPart extends ShapeNodeEditPart implements PrimaryShapeEd
 		 */
 		public DeviceFigure() {
 
-			this.setTypeLabelText("\u00ABdevice\u00BB");
-
 			this.setTypeLabelVisible(true);
 
 		}
@@ -862,6 +864,13 @@ public class Device2EditPart extends ShapeNodeEditPart implements PrimaryShapeEd
 		 */
 		public RectangleFigure getContentPane() {
 			return super.getContentPane();
+		}
+
+		/**
+		 * @generated
+		 */
+		public Label getDeviceTypeLabel() {
+			return getTypeLabel();
 		}
 
 	}

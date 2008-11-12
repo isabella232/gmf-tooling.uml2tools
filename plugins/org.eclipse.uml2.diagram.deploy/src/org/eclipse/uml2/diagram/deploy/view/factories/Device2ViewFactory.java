@@ -13,6 +13,7 @@ import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.uml2.diagram.deploy.edit.parts.Device2EditPart;
 import org.eclipse.uml2.diagram.deploy.edit.parts.DeviceDevicecontents2EditPart;
 import org.eclipse.uml2.diagram.deploy.edit.parts.DeviceName2EditPart;
+import org.eclipse.uml2.diagram.deploy.edit.parts.DeviceStereo2EditPart;
 import org.eclipse.uml2.diagram.deploy.part.UMLVisualIDRegistry;
 
 /**
@@ -44,6 +45,7 @@ public class Device2ViewFactory extends AbstractShapeViewFactory {
 			eObjectAdapter = new EObjectAdapter(eObject);
 		}
 		getViewService().createNode(eObjectAdapter, view, UMLVisualIDRegistry.getType(DeviceName2EditPart.VISUAL_ID), ViewUtil.APPEND, true, getPreferencesHint());
+		getViewService().createNode(eObjectAdapter, view, UMLVisualIDRegistry.getType(DeviceStereo2EditPart.VISUAL_ID), ViewUtil.APPEND, true, getPreferencesHint());
 		getViewService().createNode(eObjectAdapter, view, UMLVisualIDRegistry.getType(DeviceDevicecontents2EditPart.VISUAL_ID), ViewUtil.APPEND, true, getPreferencesHint());
 	}
 

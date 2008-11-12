@@ -151,6 +151,10 @@ public class DeploymentSpecification2EditPart extends ShapeNodeEditPart implemen
 			((DeploymentSpecificationName2EditPart) childEditPart).setLabel(getPrimaryShape().getFigureDeploymentSpecificationFigure_name());
 			return true;
 		}
+		if (childEditPart instanceof DeploymentSpecificationStereo4EditPart) {
+			((DeploymentSpecificationStereo4EditPart) childEditPart).setLabel(getPrimaryShape().getFigureDeploymentSpecificationFigure_stereo());
+			return true;
+		}
 		if (childEditPart instanceof DeploymentSpecificationProperties2EditPart) {
 			IFigure pane = getPrimaryShape().getFigureDeploymentSpecificationFigure_PropertiesCompartment();
 			setupContentPane(pane); // FIXME each comparment should handle his content pane in his own way 

@@ -16,6 +16,9 @@ import org.eclipse.uml2.diagram.deploy.edit.parts.ArtifactEditPart;
 import org.eclipse.uml2.diagram.deploy.edit.parts.ArtifactFileName2EditPart;
 import org.eclipse.uml2.diagram.deploy.edit.parts.ArtifactFileName3EditPart;
 import org.eclipse.uml2.diagram.deploy.edit.parts.ArtifactFileNameEditPart;
+import org.eclipse.uml2.diagram.deploy.edit.parts.ArtifactStereo2EditPart;
+import org.eclipse.uml2.diagram.deploy.edit.parts.ArtifactStereo3EditPart;
+import org.eclipse.uml2.diagram.deploy.edit.parts.ArtifactStereoEditPart;
 import org.eclipse.uml2.diagram.deploy.edit.parts.CommunicationPathEditPart;
 import org.eclipse.uml2.diagram.deploy.edit.parts.CommunicationPathNameEditPart;
 import org.eclipse.uml2.diagram.deploy.edit.parts.DependencyEditPart;
@@ -28,12 +31,16 @@ import org.eclipse.uml2.diagram.deploy.edit.parts.DeploymentSpecificationName2Ed
 import org.eclipse.uml2.diagram.deploy.edit.parts.DeploymentSpecificationNameEditPart;
 import org.eclipse.uml2.diagram.deploy.edit.parts.DeploymentSpecificationProperties2EditPart;
 import org.eclipse.uml2.diagram.deploy.edit.parts.DeploymentSpecificationPropertiesEditPart;
+import org.eclipse.uml2.diagram.deploy.edit.parts.DeploymentSpecificationStereo3EditPart;
+import org.eclipse.uml2.diagram.deploy.edit.parts.DeploymentSpecificationStereo4EditPart;
 import org.eclipse.uml2.diagram.deploy.edit.parts.Device2EditPart;
 import org.eclipse.uml2.diagram.deploy.edit.parts.DeviceDevicecontents2EditPart;
 import org.eclipse.uml2.diagram.deploy.edit.parts.DeviceDevicecontentsEditPart;
 import org.eclipse.uml2.diagram.deploy.edit.parts.DeviceEditPart;
 import org.eclipse.uml2.diagram.deploy.edit.parts.DeviceName2EditPart;
 import org.eclipse.uml2.diagram.deploy.edit.parts.DeviceNameEditPart;
+import org.eclipse.uml2.diagram.deploy.edit.parts.DeviceStereo2EditPart;
+import org.eclipse.uml2.diagram.deploy.edit.parts.DeviceStereoEditPart;
 import org.eclipse.uml2.diagram.deploy.edit.parts.ElementImportEditPart;
 import org.eclipse.uml2.diagram.deploy.edit.parts.ExecutionEnvironment2EditPart;
 import org.eclipse.uml2.diagram.deploy.edit.parts.ExecutionEnvironmentArtifacts2EditPart;
@@ -41,12 +48,16 @@ import org.eclipse.uml2.diagram.deploy.edit.parts.ExecutionEnvironmentArtifactsE
 import org.eclipse.uml2.diagram.deploy.edit.parts.ExecutionEnvironmentEditPart;
 import org.eclipse.uml2.diagram.deploy.edit.parts.ExecutionEnvironmentName2EditPart;
 import org.eclipse.uml2.diagram.deploy.edit.parts.ExecutionEnvironmentNameEditPart;
+import org.eclipse.uml2.diagram.deploy.edit.parts.ExecutionEnvironmentStereo2EditPart;
+import org.eclipse.uml2.diagram.deploy.edit.parts.ExecutionEnvironmentStereoEditPart;
 import org.eclipse.uml2.diagram.deploy.edit.parts.ManifestationEditPart;
 import org.eclipse.uml2.diagram.deploy.edit.parts.ManifestationNameEditPart;
 import org.eclipse.uml2.diagram.deploy.edit.parts.Node2EditPart;
 import org.eclipse.uml2.diagram.deploy.edit.parts.NodeEditPart;
 import org.eclipse.uml2.diagram.deploy.edit.parts.NodeName2EditPart;
 import org.eclipse.uml2.diagram.deploy.edit.parts.NodeNameEditPart;
+import org.eclipse.uml2.diagram.deploy.edit.parts.NodeStereo2EditPart;
+import org.eclipse.uml2.diagram.deploy.edit.parts.NodeStereoEditPart;
 import org.eclipse.uml2.diagram.deploy.edit.parts.Package2EditPart;
 import org.eclipse.uml2.diagram.deploy.edit.parts.PackageEditPart;
 import org.eclipse.uml2.diagram.deploy.edit.parts.PackageImportsEditPart;
@@ -327,6 +338,9 @@ public class UMLVisualIDRegistry {
 			if (DeviceNameEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
+			if (DeviceStereoEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
 			if (DeviceDevicecontentsEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
@@ -335,9 +349,15 @@ public class UMLVisualIDRegistry {
 			if (NodeNameEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
+			if (NodeStereoEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
 			break;
 		case ExecutionEnvironmentEditPart.VISUAL_ID:
 			if (ExecutionEnvironmentNameEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			if (ExecutionEnvironmentStereoEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
 			if (ExecutionEnvironmentArtifactsEditPart.VISUAL_ID == nodeVisualID) {
@@ -348,12 +368,18 @@ public class UMLVisualIDRegistry {
 			if (ArtifactFileNameEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
+			if (ArtifactStereoEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
 			if (ArtifactArtifactFigure_contents3EditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
 			break;
 		case DeploymentSpecificationEditPart.VISUAL_ID:
 			if (DeploymentSpecificationNameEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			if (DeploymentSpecificationStereo3EditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
 			if (DeploymentSpecificationPropertiesEditPart.VISUAL_ID == nodeVisualID) {
@@ -364,12 +390,18 @@ public class UMLVisualIDRegistry {
 			if (DeviceName2EditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
+			if (DeviceStereo2EditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
 			if (DeviceDevicecontents2EditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
 			break;
 		case ArtifactEditPart.VISUAL_ID:
 			if (ArtifactFileName2EditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			if (ArtifactStereo2EditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
 			if (ArtifactArtifactFigure_contentsEditPart.VISUAL_ID == nodeVisualID) {
@@ -380,12 +412,18 @@ public class UMLVisualIDRegistry {
 			if (ArtifactFileName3EditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
+			if (ArtifactStereo3EditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
 			if (ArtifactArtifactFigure_contents2EditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
 			break;
 		case DeploymentSpecification2EditPart.VISUAL_ID:
 			if (DeploymentSpecificationName2EditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			if (DeploymentSpecificationStereo4EditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
 			if (DeploymentSpecificationProperties2EditPart.VISUAL_ID == nodeVisualID) {
@@ -396,12 +434,18 @@ public class UMLVisualIDRegistry {
 			if (ExecutionEnvironmentName2EditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
+			if (ExecutionEnvironmentStereo2EditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
 			if (ExecutionEnvironmentArtifacts2EditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
 			break;
 		case Node2EditPart.VISUAL_ID:
 			if (NodeName2EditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			if (NodeStereo2EditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
 			break;

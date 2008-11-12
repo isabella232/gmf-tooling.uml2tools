@@ -13,6 +13,7 @@ import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.uml2.diagram.deploy.edit.parts.DeploymentSpecification2EditPart;
 import org.eclipse.uml2.diagram.deploy.edit.parts.DeploymentSpecificationName2EditPart;
 import org.eclipse.uml2.diagram.deploy.edit.parts.DeploymentSpecificationProperties2EditPart;
+import org.eclipse.uml2.diagram.deploy.edit.parts.DeploymentSpecificationStereo4EditPart;
 import org.eclipse.uml2.diagram.deploy.part.UMLVisualIDRegistry;
 
 /**
@@ -45,6 +46,7 @@ public class DeploymentSpecification2ViewFactory extends AbstractShapeViewFactor
 			eObjectAdapter = new EObjectAdapter(eObject);
 		}
 		getViewService().createNode(eObjectAdapter, view, UMLVisualIDRegistry.getType(DeploymentSpecificationName2EditPart.VISUAL_ID), ViewUtil.APPEND, true, getPreferencesHint());
+		getViewService().createNode(eObjectAdapter, view, UMLVisualIDRegistry.getType(DeploymentSpecificationStereo4EditPart.VISUAL_ID), ViewUtil.APPEND, true, getPreferencesHint());
 		getViewService().createNode(eObjectAdapter, view, UMLVisualIDRegistry.getType(DeploymentSpecificationProperties2EditPart.VISUAL_ID), ViewUtil.APPEND, true, getPreferencesHint());
 	}
 

@@ -43,11 +43,17 @@ public class UMLEditPartFactory implements EditPartFactory {
 			case DeviceNameEditPart.VISUAL_ID:
 				return new DeviceNameEditPart(view);
 
+			case DeviceStereoEditPart.VISUAL_ID:
+				return new DeviceStereoEditPart(view);
+
 			case NodeEditPart.VISUAL_ID:
 				return new NodeEditPart(view);
 
 			case NodeNameEditPart.VISUAL_ID:
 				return new NodeNameEditPart(view);
+
+			case NodeStereoEditPart.VISUAL_ID:
+				return new NodeStereoEditPart(view);
 
 			case ExecutionEnvironmentEditPart.VISUAL_ID:
 				return new ExecutionEnvironmentEditPart(view);
@@ -55,17 +61,26 @@ public class UMLEditPartFactory implements EditPartFactory {
 			case ExecutionEnvironmentNameEditPart.VISUAL_ID:
 				return new ExecutionEnvironmentNameEditPart(view);
 
+			case ExecutionEnvironmentStereoEditPart.VISUAL_ID:
+				return new ExecutionEnvironmentStereoEditPart(view);
+
 			case Artifact2EditPart.VISUAL_ID:
 				return new Artifact2EditPart(view);
 
 			case ArtifactFileNameEditPart.VISUAL_ID:
 				return new ArtifactFileNameEditPart(view);
 
+			case ArtifactStereoEditPart.VISUAL_ID:
+				return new ArtifactStereoEditPart(view);
+
 			case DeploymentSpecificationEditPart.VISUAL_ID:
 				return new DeploymentSpecificationEditPart(view);
 
 			case DeploymentSpecificationNameEditPart.VISUAL_ID:
 				return new DeploymentSpecificationNameEditPart(view);
+
+			case DeploymentSpecificationStereo3EditPart.VISUAL_ID:
+				return new DeploymentSpecificationStereo3EditPart(view);
 
 			case ElementImportEditPart.VISUAL_ID:
 				return new ElementImportEditPart(view);
@@ -76,11 +91,17 @@ public class UMLEditPartFactory implements EditPartFactory {
 			case DeviceName2EditPart.VISUAL_ID:
 				return new DeviceName2EditPart(view);
 
+			case DeviceStereo2EditPart.VISUAL_ID:
+				return new DeviceStereo2EditPart(view);
+
 			case ArtifactEditPart.VISUAL_ID:
 				return new ArtifactEditPart(view);
 
 			case ArtifactFileName2EditPart.VISUAL_ID:
 				return new ArtifactFileName2EditPart(view);
+
+			case ArtifactStereo2EditPart.VISUAL_ID:
+				return new ArtifactStereo2EditPart(view);
 
 			case Artifact4EditPart.VISUAL_ID:
 				return new Artifact4EditPart(view);
@@ -88,11 +109,17 @@ public class UMLEditPartFactory implements EditPartFactory {
 			case ArtifactFileName3EditPart.VISUAL_ID:
 				return new ArtifactFileName3EditPart(view);
 
+			case ArtifactStereo3EditPart.VISUAL_ID:
+				return new ArtifactStereo3EditPart(view);
+
 			case DeploymentSpecification2EditPart.VISUAL_ID:
 				return new DeploymentSpecification2EditPart(view);
 
 			case DeploymentSpecificationName2EditPart.VISUAL_ID:
 				return new DeploymentSpecificationName2EditPart(view);
+
+			case DeploymentSpecificationStereo4EditPart.VISUAL_ID:
+				return new DeploymentSpecificationStereo4EditPart(view);
 
 			case PropertyEditPart.VISUAL_ID:
 				return new PropertyEditPart(view);
@@ -103,6 +130,9 @@ public class UMLEditPartFactory implements EditPartFactory {
 			case ExecutionEnvironmentName2EditPart.VISUAL_ID:
 				return new ExecutionEnvironmentName2EditPart(view);
 
+			case ExecutionEnvironmentStereo2EditPart.VISUAL_ID:
+				return new ExecutionEnvironmentStereo2EditPart(view);
+
 			case Artifact3EditPart.VISUAL_ID:
 				return new Artifact3EditPart(view);
 
@@ -111,6 +141,9 @@ public class UMLEditPartFactory implements EditPartFactory {
 
 			case NodeName2EditPart.VISUAL_ID:
 				return new NodeName2EditPart(view);
+
+			case NodeStereo2EditPart.VISUAL_ID:
+				return new NodeStereo2EditPart(view);
 
 			case PackageImportsEditPart.VISUAL_ID:
 				return new PackageImportsEditPart(view);

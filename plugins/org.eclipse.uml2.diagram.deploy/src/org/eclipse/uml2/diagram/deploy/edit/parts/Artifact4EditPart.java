@@ -148,6 +148,10 @@ public class Artifact4EditPart extends ShapeNodeEditPart implements PrimaryShape
 			((ArtifactFileName3EditPart) childEditPart).setLabel(getPrimaryShape().getFigureArtifactFigure_name());
 			return true;
 		}
+		if (childEditPart instanceof ArtifactStereo3EditPart) {
+			((ArtifactStereo3EditPart) childEditPart).setLabel(getPrimaryShape().getFigureArtifactFigure_fixed_artifact());
+			return true;
+		}
 		if (childEditPart instanceof ArtifactArtifactFigure_contents2EditPart) {
 			IFigure pane = getPrimaryShape().getFigureArtifactFigure_Body();
 			setupContentPane(pane); // FIXME each comparment should handle his content pane in his own way 
@@ -680,6 +684,11 @@ public class Artifact4EditPart extends ShapeNodeEditPart implements PrimaryShape
 		/**
 		 * @generated
 		 */
+		private Label fFigureArtifactFigure_fixed_artifact;
+
+		/**
+		 * @generated
+		 */
 		public ArtifactFigure() {
 
 			BorderLayout layoutThis = new BorderLayout();
@@ -713,10 +722,10 @@ public class Artifact4EditPart extends ShapeNodeEditPart implements PrimaryShape
 
 			artifactFigure_NameContainer0.add(fFigureArtifactFigure_name);
 
-			Label artifactFigure_fixed_artifact1 = new Label();
-			artifactFigure_fixed_artifact1.setText("\u00ABartifact\u00BB");
+			fFigureArtifactFigure_fixed_artifact = new Label();
+			fFigureArtifactFigure_fixed_artifact.setText("\u00ABartifact\u00BB");
 
-			artifactFigure_NameContainer0.add(artifactFigure_fixed_artifact1);
+			artifactFigure_NameContainer0.add(fFigureArtifactFigure_fixed_artifact);
 
 			fFigureArtifactFigure_Body = new RectangleFigure();
 			fFigureArtifactFigure_Body.setMinimumSize(new Dimension(getMapMode().DPtoLP(0), getMapMode().DPtoLP(55)));
@@ -756,6 +765,13 @@ public class Artifact4EditPart extends ShapeNodeEditPart implements PrimaryShape
 		 */
 		public RectangleFigure getFigureArtifactFigure_Body() {
 			return fFigureArtifactFigure_Body;
+		}
+
+		/**
+		 * @generated
+		 */
+		public Label getFigureArtifactFigure_fixed_artifact() {
+			return fFigureArtifactFigure_fixed_artifact;
 		}
 
 	}

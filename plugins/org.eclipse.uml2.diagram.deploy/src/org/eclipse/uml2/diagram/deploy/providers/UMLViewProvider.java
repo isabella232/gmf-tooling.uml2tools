@@ -16,6 +16,9 @@ import org.eclipse.uml2.diagram.deploy.edit.parts.ArtifactEditPart;
 import org.eclipse.uml2.diagram.deploy.edit.parts.ArtifactFileName2EditPart;
 import org.eclipse.uml2.diagram.deploy.edit.parts.ArtifactFileName3EditPart;
 import org.eclipse.uml2.diagram.deploy.edit.parts.ArtifactFileNameEditPart;
+import org.eclipse.uml2.diagram.deploy.edit.parts.ArtifactStereo2EditPart;
+import org.eclipse.uml2.diagram.deploy.edit.parts.ArtifactStereo3EditPart;
+import org.eclipse.uml2.diagram.deploy.edit.parts.ArtifactStereoEditPart;
 import org.eclipse.uml2.diagram.deploy.edit.parts.CommunicationPathEditPart;
 import org.eclipse.uml2.diagram.deploy.edit.parts.CommunicationPathNameEditPart;
 import org.eclipse.uml2.diagram.deploy.edit.parts.DependencyEditPart;
@@ -29,12 +32,16 @@ import org.eclipse.uml2.diagram.deploy.edit.parts.DeploymentSpecificationName2Ed
 import org.eclipse.uml2.diagram.deploy.edit.parts.DeploymentSpecificationNameEditPart;
 import org.eclipse.uml2.diagram.deploy.edit.parts.DeploymentSpecificationProperties2EditPart;
 import org.eclipse.uml2.diagram.deploy.edit.parts.DeploymentSpecificationPropertiesEditPart;
+import org.eclipse.uml2.diagram.deploy.edit.parts.DeploymentSpecificationStereo3EditPart;
+import org.eclipse.uml2.diagram.deploy.edit.parts.DeploymentSpecificationStereo4EditPart;
 import org.eclipse.uml2.diagram.deploy.edit.parts.Device2EditPart;
 import org.eclipse.uml2.diagram.deploy.edit.parts.DeviceDevicecontents2EditPart;
 import org.eclipse.uml2.diagram.deploy.edit.parts.DeviceDevicecontentsEditPart;
 import org.eclipse.uml2.diagram.deploy.edit.parts.DeviceEditPart;
 import org.eclipse.uml2.diagram.deploy.edit.parts.DeviceName2EditPart;
 import org.eclipse.uml2.diagram.deploy.edit.parts.DeviceNameEditPart;
+import org.eclipse.uml2.diagram.deploy.edit.parts.DeviceStereo2EditPart;
+import org.eclipse.uml2.diagram.deploy.edit.parts.DeviceStereoEditPart;
 import org.eclipse.uml2.diagram.deploy.edit.parts.ElementImportEditPart;
 import org.eclipse.uml2.diagram.deploy.edit.parts.ExecutionEnvironment2EditPart;
 import org.eclipse.uml2.diagram.deploy.edit.parts.ExecutionEnvironmentArtifacts2EditPart;
@@ -42,12 +49,16 @@ import org.eclipse.uml2.diagram.deploy.edit.parts.ExecutionEnvironmentArtifactsE
 import org.eclipse.uml2.diagram.deploy.edit.parts.ExecutionEnvironmentEditPart;
 import org.eclipse.uml2.diagram.deploy.edit.parts.ExecutionEnvironmentName2EditPart;
 import org.eclipse.uml2.diagram.deploy.edit.parts.ExecutionEnvironmentNameEditPart;
+import org.eclipse.uml2.diagram.deploy.edit.parts.ExecutionEnvironmentStereo2EditPart;
+import org.eclipse.uml2.diagram.deploy.edit.parts.ExecutionEnvironmentStereoEditPart;
 import org.eclipse.uml2.diagram.deploy.edit.parts.ManifestationEditPart;
 import org.eclipse.uml2.diagram.deploy.edit.parts.ManifestationNameEditPart;
 import org.eclipse.uml2.diagram.deploy.edit.parts.Node2EditPart;
 import org.eclipse.uml2.diagram.deploy.edit.parts.NodeEditPart;
 import org.eclipse.uml2.diagram.deploy.edit.parts.NodeName2EditPart;
 import org.eclipse.uml2.diagram.deploy.edit.parts.NodeNameEditPart;
+import org.eclipse.uml2.diagram.deploy.edit.parts.NodeStereo2EditPart;
+import org.eclipse.uml2.diagram.deploy.edit.parts.NodeStereoEditPart;
 import org.eclipse.uml2.diagram.deploy.edit.parts.Package2EditPart;
 import org.eclipse.uml2.diagram.deploy.edit.parts.PackageEditPart;
 import org.eclipse.uml2.diagram.deploy.edit.parts.PackageImportsEditPart;
@@ -63,6 +74,9 @@ import org.eclipse.uml2.diagram.deploy.view.factories.ArtifactArtifactFigure_con
 import org.eclipse.uml2.diagram.deploy.view.factories.ArtifactFileName2ViewFactory;
 import org.eclipse.uml2.diagram.deploy.view.factories.ArtifactFileName3ViewFactory;
 import org.eclipse.uml2.diagram.deploy.view.factories.ArtifactFileNameViewFactory;
+import org.eclipse.uml2.diagram.deploy.view.factories.ArtifactStereo2ViewFactory;
+import org.eclipse.uml2.diagram.deploy.view.factories.ArtifactStereo3ViewFactory;
+import org.eclipse.uml2.diagram.deploy.view.factories.ArtifactStereoViewFactory;
 import org.eclipse.uml2.diagram.deploy.view.factories.ArtifactViewFactory;
 import org.eclipse.uml2.diagram.deploy.view.factories.CommunicationPathNameViewFactory;
 import org.eclipse.uml2.diagram.deploy.view.factories.CommunicationPathViewFactory;
@@ -75,6 +89,8 @@ import org.eclipse.uml2.diagram.deploy.view.factories.DeploymentSpecificationNam
 import org.eclipse.uml2.diagram.deploy.view.factories.DeploymentSpecificationNameViewFactory;
 import org.eclipse.uml2.diagram.deploy.view.factories.DeploymentSpecificationProperties2ViewFactory;
 import org.eclipse.uml2.diagram.deploy.view.factories.DeploymentSpecificationPropertiesViewFactory;
+import org.eclipse.uml2.diagram.deploy.view.factories.DeploymentSpecificationStereo3ViewFactory;
+import org.eclipse.uml2.diagram.deploy.view.factories.DeploymentSpecificationStereo4ViewFactory;
 import org.eclipse.uml2.diagram.deploy.view.factories.DeploymentSpecificationViewFactory;
 import org.eclipse.uml2.diagram.deploy.view.factories.DeploymentViewFactory;
 import org.eclipse.uml2.diagram.deploy.view.factories.Device2ViewFactory;
@@ -82,6 +98,8 @@ import org.eclipse.uml2.diagram.deploy.view.factories.DeviceDevicecontents2ViewF
 import org.eclipse.uml2.diagram.deploy.view.factories.DeviceDevicecontentsViewFactory;
 import org.eclipse.uml2.diagram.deploy.view.factories.DeviceName2ViewFactory;
 import org.eclipse.uml2.diagram.deploy.view.factories.DeviceNameViewFactory;
+import org.eclipse.uml2.diagram.deploy.view.factories.DeviceStereo2ViewFactory;
+import org.eclipse.uml2.diagram.deploy.view.factories.DeviceStereoViewFactory;
 import org.eclipse.uml2.diagram.deploy.view.factories.DeviceViewFactory;
 import org.eclipse.uml2.diagram.deploy.view.factories.ElementImportViewFactory;
 import org.eclipse.uml2.diagram.deploy.view.factories.ExecutionEnvironment2ViewFactory;
@@ -89,12 +107,16 @@ import org.eclipse.uml2.diagram.deploy.view.factories.ExecutionEnvironmentArtifa
 import org.eclipse.uml2.diagram.deploy.view.factories.ExecutionEnvironmentArtifactsViewFactory;
 import org.eclipse.uml2.diagram.deploy.view.factories.ExecutionEnvironmentName2ViewFactory;
 import org.eclipse.uml2.diagram.deploy.view.factories.ExecutionEnvironmentNameViewFactory;
+import org.eclipse.uml2.diagram.deploy.view.factories.ExecutionEnvironmentStereo2ViewFactory;
+import org.eclipse.uml2.diagram.deploy.view.factories.ExecutionEnvironmentStereoViewFactory;
 import org.eclipse.uml2.diagram.deploy.view.factories.ExecutionEnvironmentViewFactory;
 import org.eclipse.uml2.diagram.deploy.view.factories.ManifestationNameViewFactory;
 import org.eclipse.uml2.diagram.deploy.view.factories.ManifestationViewFactory;
 import org.eclipse.uml2.diagram.deploy.view.factories.Node2ViewFactory;
 import org.eclipse.uml2.diagram.deploy.view.factories.NodeName2ViewFactory;
 import org.eclipse.uml2.diagram.deploy.view.factories.NodeNameViewFactory;
+import org.eclipse.uml2.diagram.deploy.view.factories.NodeStereo2ViewFactory;
+import org.eclipse.uml2.diagram.deploy.view.factories.NodeStereoViewFactory;
 import org.eclipse.uml2.diagram.deploy.view.factories.NodeViewFactory;
 import org.eclipse.uml2.diagram.deploy.view.factories.Package2ViewFactory;
 import org.eclipse.uml2.diagram.deploy.view.factories.PackageImportsViewFactory;
@@ -188,65 +210,76 @@ public class UMLViewProvider extends AbstractViewProvider {
 					}
 					break;
 				case DeviceNameEditPart.VISUAL_ID:
+				case DeviceStereoEditPart.VISUAL_ID:
 				case DeviceDevicecontentsEditPart.VISUAL_ID:
 					if (DeviceEditPart.VISUAL_ID != UMLVisualIDRegistry.getVisualID(containerView) || containerView.getElement() != domainElement) {
 						return null; // wrong container
 					}
 					break;
 				case NodeNameEditPart.VISUAL_ID:
+				case NodeStereoEditPart.VISUAL_ID:
 					if (NodeEditPart.VISUAL_ID != UMLVisualIDRegistry.getVisualID(containerView) || containerView.getElement() != domainElement) {
 						return null; // wrong container
 					}
 					break;
 				case ExecutionEnvironmentNameEditPart.VISUAL_ID:
+				case ExecutionEnvironmentStereoEditPart.VISUAL_ID:
 				case ExecutionEnvironmentArtifactsEditPart.VISUAL_ID:
 					if (ExecutionEnvironmentEditPart.VISUAL_ID != UMLVisualIDRegistry.getVisualID(containerView) || containerView.getElement() != domainElement) {
 						return null; // wrong container
 					}
 					break;
 				case ArtifactFileNameEditPart.VISUAL_ID:
+				case ArtifactStereoEditPart.VISUAL_ID:
 				case ArtifactArtifactFigure_contents3EditPart.VISUAL_ID:
 					if (Artifact2EditPart.VISUAL_ID != UMLVisualIDRegistry.getVisualID(containerView) || containerView.getElement() != domainElement) {
 						return null; // wrong container
 					}
 					break;
 				case DeploymentSpecificationNameEditPart.VISUAL_ID:
+				case DeploymentSpecificationStereo3EditPart.VISUAL_ID:
 				case DeploymentSpecificationPropertiesEditPart.VISUAL_ID:
 					if (DeploymentSpecificationEditPart.VISUAL_ID != UMLVisualIDRegistry.getVisualID(containerView) || containerView.getElement() != domainElement) {
 						return null; // wrong container
 					}
 					break;
 				case DeviceName2EditPart.VISUAL_ID:
+				case DeviceStereo2EditPart.VISUAL_ID:
 				case DeviceDevicecontents2EditPart.VISUAL_ID:
 					if (Device2EditPart.VISUAL_ID != UMLVisualIDRegistry.getVisualID(containerView) || containerView.getElement() != domainElement) {
 						return null; // wrong container
 					}
 					break;
 				case ArtifactFileName2EditPart.VISUAL_ID:
+				case ArtifactStereo2EditPart.VISUAL_ID:
 				case ArtifactArtifactFigure_contentsEditPart.VISUAL_ID:
 					if (ArtifactEditPart.VISUAL_ID != UMLVisualIDRegistry.getVisualID(containerView) || containerView.getElement() != domainElement) {
 						return null; // wrong container
 					}
 					break;
 				case ArtifactFileName3EditPart.VISUAL_ID:
+				case ArtifactStereo3EditPart.VISUAL_ID:
 				case ArtifactArtifactFigure_contents2EditPart.VISUAL_ID:
 					if (Artifact4EditPart.VISUAL_ID != UMLVisualIDRegistry.getVisualID(containerView) || containerView.getElement() != domainElement) {
 						return null; // wrong container
 					}
 					break;
 				case DeploymentSpecificationName2EditPart.VISUAL_ID:
+				case DeploymentSpecificationStereo4EditPart.VISUAL_ID:
 				case DeploymentSpecificationProperties2EditPart.VISUAL_ID:
 					if (DeploymentSpecification2EditPart.VISUAL_ID != UMLVisualIDRegistry.getVisualID(containerView) || containerView.getElement() != domainElement) {
 						return null; // wrong container
 					}
 					break;
 				case ExecutionEnvironmentName2EditPart.VISUAL_ID:
+				case ExecutionEnvironmentStereo2EditPart.VISUAL_ID:
 				case ExecutionEnvironmentArtifacts2EditPart.VISUAL_ID:
 					if (ExecutionEnvironment2EditPart.VISUAL_ID != UMLVisualIDRegistry.getVisualID(containerView) || containerView.getElement() != domainElement) {
 						return null; // wrong container
 					}
 					break;
 				case NodeName2EditPart.VISUAL_ID:
+				case NodeStereo2EditPart.VISUAL_ID:
 					if (Node2EditPart.VISUAL_ID != UMLVisualIDRegistry.getVisualID(containerView) || containerView.getElement() != domainElement) {
 						return null; // wrong container
 					}
@@ -295,52 +328,74 @@ public class UMLViewProvider extends AbstractViewProvider {
 			return DeviceViewFactory.class;
 		case DeviceNameEditPart.VISUAL_ID:
 			return DeviceNameViewFactory.class;
+		case DeviceStereoEditPart.VISUAL_ID:
+			return DeviceStereoViewFactory.class;
 		case NodeEditPart.VISUAL_ID:
 			return NodeViewFactory.class;
 		case NodeNameEditPart.VISUAL_ID:
 			return NodeNameViewFactory.class;
+		case NodeStereoEditPart.VISUAL_ID:
+			return NodeStereoViewFactory.class;
 		case ExecutionEnvironmentEditPart.VISUAL_ID:
 			return ExecutionEnvironmentViewFactory.class;
 		case ExecutionEnvironmentNameEditPart.VISUAL_ID:
 			return ExecutionEnvironmentNameViewFactory.class;
+		case ExecutionEnvironmentStereoEditPart.VISUAL_ID:
+			return ExecutionEnvironmentStereoViewFactory.class;
 		case Artifact2EditPart.VISUAL_ID:
 			return Artifact2ViewFactory.class;
 		case ArtifactFileNameEditPart.VISUAL_ID:
 			return ArtifactFileNameViewFactory.class;
+		case ArtifactStereoEditPart.VISUAL_ID:
+			return ArtifactStereoViewFactory.class;
 		case DeploymentSpecificationEditPart.VISUAL_ID:
 			return DeploymentSpecificationViewFactory.class;
 		case DeploymentSpecificationNameEditPart.VISUAL_ID:
 			return DeploymentSpecificationNameViewFactory.class;
+		case DeploymentSpecificationStereo3EditPart.VISUAL_ID:
+			return DeploymentSpecificationStereo3ViewFactory.class;
 		case ElementImportEditPart.VISUAL_ID:
 			return ElementImportViewFactory.class;
 		case Device2EditPart.VISUAL_ID:
 			return Device2ViewFactory.class;
 		case DeviceName2EditPart.VISUAL_ID:
 			return DeviceName2ViewFactory.class;
+		case DeviceStereo2EditPart.VISUAL_ID:
+			return DeviceStereo2ViewFactory.class;
 		case ArtifactEditPart.VISUAL_ID:
 			return ArtifactViewFactory.class;
 		case ArtifactFileName2EditPart.VISUAL_ID:
 			return ArtifactFileName2ViewFactory.class;
+		case ArtifactStereo2EditPart.VISUAL_ID:
+			return ArtifactStereo2ViewFactory.class;
 		case Artifact4EditPart.VISUAL_ID:
 			return Artifact4ViewFactory.class;
 		case ArtifactFileName3EditPart.VISUAL_ID:
 			return ArtifactFileName3ViewFactory.class;
+		case ArtifactStereo3EditPart.VISUAL_ID:
+			return ArtifactStereo3ViewFactory.class;
 		case DeploymentSpecification2EditPart.VISUAL_ID:
 			return DeploymentSpecification2ViewFactory.class;
 		case DeploymentSpecificationName2EditPart.VISUAL_ID:
 			return DeploymentSpecificationName2ViewFactory.class;
+		case DeploymentSpecificationStereo4EditPart.VISUAL_ID:
+			return DeploymentSpecificationStereo4ViewFactory.class;
 		case PropertyEditPart.VISUAL_ID:
 			return PropertyViewFactory.class;
 		case ExecutionEnvironment2EditPart.VISUAL_ID:
 			return ExecutionEnvironment2ViewFactory.class;
 		case ExecutionEnvironmentName2EditPart.VISUAL_ID:
 			return ExecutionEnvironmentName2ViewFactory.class;
+		case ExecutionEnvironmentStereo2EditPart.VISUAL_ID:
+			return ExecutionEnvironmentStereo2ViewFactory.class;
 		case Artifact3EditPart.VISUAL_ID:
 			return Artifact3ViewFactory.class;
 		case Node2EditPart.VISUAL_ID:
 			return Node2ViewFactory.class;
 		case NodeName2EditPart.VISUAL_ID:
 			return NodeName2ViewFactory.class;
+		case NodeStereo2EditPart.VISUAL_ID:
+			return NodeStereo2ViewFactory.class;
 		case PackageImportsEditPart.VISUAL_ID:
 			return PackageImportsViewFactory.class;
 		case DeviceDevicecontentsEditPart.VISUAL_ID:

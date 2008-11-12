@@ -15,6 +15,7 @@ import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.uml2.diagram.deploy.edit.parts.ExecutionEnvironmentArtifactsEditPart;
 import org.eclipse.uml2.diagram.deploy.edit.parts.ExecutionEnvironmentEditPart;
 import org.eclipse.uml2.diagram.deploy.edit.parts.ExecutionEnvironmentNameEditPart;
+import org.eclipse.uml2.diagram.deploy.edit.parts.ExecutionEnvironmentStereoEditPart;
 import org.eclipse.uml2.diagram.deploy.edit.parts.PackageEditPart;
 import org.eclipse.uml2.diagram.deploy.part.UMLVisualIDRegistry;
 
@@ -53,6 +54,7 @@ public class ExecutionEnvironmentViewFactory extends AbstractShapeViewFactory {
 			eObjectAdapter = new EObjectAdapter(eObject);
 		}
 		getViewService().createNode(eObjectAdapter, view, UMLVisualIDRegistry.getType(ExecutionEnvironmentNameEditPart.VISUAL_ID), ViewUtil.APPEND, true, getPreferencesHint());
+		getViewService().createNode(eObjectAdapter, view, UMLVisualIDRegistry.getType(ExecutionEnvironmentStereoEditPart.VISUAL_ID), ViewUtil.APPEND, true, getPreferencesHint());
 		getViewService().createNode(eObjectAdapter, view, UMLVisualIDRegistry.getType(ExecutionEnvironmentArtifactsEditPart.VISUAL_ID), ViewUtil.APPEND, true, getPreferencesHint());
 	}
 

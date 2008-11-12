@@ -83,7 +83,7 @@
       <viewmap
           xsi:type="gmfgen:InnerClassViewmap"
           className="DeviceFigure"
-          classBody="&#xD;&#xA;/**&#xD;&#xA; * @generated&#xD;&#xA; */&#xD;&#xA;public class DeviceFigure extends org.eclipse.uml2.diagram.common.draw2d.Cube3DFigure {&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;public DeviceFigure() {&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;this.setTypeLabelText(&#xD;&#xA;&quot;\u00ABdevice\u00BB&quot;);&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;this.setTypeLabelVisible(&#xD;&#xA;true);&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#x9;}&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;private boolean myUseLocalCoordinates = false;&#xD;&#xA;&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;protected boolean useLocalCoordinates() {&#xD;&#xA;&#x9;&#x9;return myUseLocalCoordinates;&#xD;&#xA;&#x9;}&#xD;&#xA;&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;protected void setUseLocalCoordinates(boolean useLocalCoordinates) {&#xD;&#xA;&#x9;&#x9;myUseLocalCoordinates = useLocalCoordinates;&#xD;&#xA;&#x9;}&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;public org.eclipse.draw2d.Label getNameLabel() {&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;return super.getNameLabel();&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;}&#xD;&#xA;&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;public org.eclipse.draw2d.RectangleFigure getContentPane() {&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;return super.getContentPane();&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;}&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;}&#xD;&#xA;&#xD;&#xA;">
+          classBody="&#xD;&#xA;/**&#xD;&#xA; * @generated&#xD;&#xA; */&#xD;&#xA;public class DeviceFigure extends org.eclipse.uml2.diagram.common.draw2d.Cube3DFigure {&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;public DeviceFigure() {&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;this.setTypeLabelVisible(&#xD;&#xA;true);&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#x9;}&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;private boolean myUseLocalCoordinates = false;&#xD;&#xA;&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;protected boolean useLocalCoordinates() {&#xD;&#xA;&#x9;&#x9;return myUseLocalCoordinates;&#xD;&#xA;&#x9;}&#xD;&#xA;&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;protected void setUseLocalCoordinates(boolean useLocalCoordinates) {&#xD;&#xA;&#x9;&#x9;myUseLocalCoordinates = useLocalCoordinates;&#xD;&#xA;&#x9;}&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;public org.eclipse.draw2d.Label getNameLabel() {&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;return super.getNameLabel();&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;}&#xD;&#xA;&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;public org.eclipse.draw2d.RectangleFigure getContentPane() {&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;return super.getContentPane();&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;}&#xD;&#xA;&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;public org.eclipse.draw2d.Label getDeviceTypeLabel() {&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;return getTypeLabel();&#x9;&#x9;&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;}&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;}&#xD;&#xA;&#xD;&#xA;">
         <attributes
             xsi:type="gmfgen:DefaultSizeAttributes"
             width="100"
@@ -126,6 +126,28 @@
               href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/NamedElement/name"/>
         </modelFacet>
       </labels>
+      <labels
+          visualID="5018"
+          editPartClassName="DeviceStereo2EditPart"
+          itemSemanticEditPolicyClassName="DeviceStereo2ItemSemanticEditPolicy"
+          notationViewFactoryClassName="DeviceStereo2ViewFactory">
+        <diagramRunTimeClass
+            href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
+        <viewmap
+            xsi:type="gmfgen:ParentAssignedViewmap"
+            getterName="getDeviceTypeLabel"
+            figureQualifiedClassName="org.eclipse.draw2d.Label"/>
+        <behaviour
+            xsi:type="gmfgen:CustomBehaviour"
+            key="&quot;VisualEffect.Stereo&quot;"
+            editPolicyQualifiedClassName="org.eclipse.uml2.diagram.common.editpolicies.ClassifierNameVisualEffectEditPolicy"/>
+        <modelFacet
+            xsi:type="gmfgen:FeatureLabelModelFacet"
+            parser="//@labelParsers/@implementations.1">
+          <metaFeatures
+              href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/NamedElement/qualifiedName"/>
+        </modelFacet>
+      </labels>
     </childNodes>
     <childNodes
         visualID="3002"
@@ -145,7 +167,7 @@
       <viewmap
           xsi:type="gmfgen:InnerClassViewmap"
           className="ArtifactFigure"
-          classBody="&#xD;&#xA;/**&#xD;&#xA; * @generated&#xD;&#xA; */&#xD;&#xA;public class ArtifactFigure extends org.eclipse.draw2d.RectangleFigure {&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;private org.eclipse.draw2d.Label fFigureArtifactFigure_name; &#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;private org.eclipse.draw2d.RectangleFigure fFigureArtifactFigure_Body; &#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;public ArtifactFigure() {&#xD;&#xA;&#x9;&#x9;&#xD;&#xA;&#x9;org.eclipse.draw2d.BorderLayout layoutThis = new org.eclipse.draw2d.BorderLayout();&#xD;&#xA;&#x9;this.setLayoutManager(layoutThis);&#xD;&#xA;&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;createContents();&#xD;&#xA;&#x9;}&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;private void createContents(){&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;org.eclipse.draw2d.RectangleFigure artifactFigure_NameContainer0 = new org.eclipse.draw2d.RectangleFigure();&#xD;&#xA;artifactFigure_NameContainer0.setFill(false);&#xD;&#xA;artifactFigure_NameContainer0.setOutline(false);&#xD;&#xA;&#xD;&#xA;this.add(artifactFigure_NameContainer0, org.eclipse.draw2d.BorderLayout.TOP);&#xD;&#xA;&#xD;&#xA;&#x9;org.eclipse.draw2d.ToolbarLayout layoutArtifactFigure_NameContainer0 = new org.eclipse.draw2d.ToolbarLayout();&#xD;&#xA;&#x9;layoutArtifactFigure_NameContainer0.setStretchMinorAxis(true);&#xD;&#xA;&#x9;layoutArtifactFigure_NameContainer0.setMinorAlignment(org.eclipse.draw2d.ToolbarLayout.ALIGN_CENTER&#xD;&#xA;);&#xD;&#xA;&#xD;&#xA;&#x9;layoutArtifactFigure_NameContainer0.setSpacing(0);&#xD;&#xA;&#x9;layoutArtifactFigure_NameContainer0.setVertical(true);&#xD;&#xA;&#xD;&#xA;&#x9;artifactFigure_NameContainer0.setLayoutManager(layoutArtifactFigure_NameContainer0);&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;fFigureArtifactFigure_name = new org.eclipse.draw2d.Label();&#xD;&#xA;fFigureArtifactFigure_name.setText(&quot;&quot;);&#xD;&#xA;&#xD;&#xA;artifactFigure_NameContainer0.add(fFigureArtifactFigure_name);&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;org.eclipse.draw2d.Label artifactFigure_fixed_artifact1 = new org.eclipse.draw2d.Label();&#xD;&#xA;artifactFigure_fixed_artifact1.setText(&quot;\u00ABartifact\u00BB&quot;);&#xD;&#xA;&#xD;&#xA;artifactFigure_NameContainer0.add(artifactFigure_fixed_artifact1);&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;fFigureArtifactFigure_Body = new org.eclipse.draw2d.RectangleFigure();&#xD;&#xA;fFigureArtifactFigure_Body.setMinimumSize(new org.eclipse.draw2d.geometry.Dimension(getMapMode().DPtoLP(0)&#xD;&#xA;, getMapMode().DPtoLP(55)&#xD;&#xA;));&#xD;&#xA;&#xD;&#xA;this.add(fFigureArtifactFigure_Body, org.eclipse.draw2d.BorderLayout.CENTER);&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#x9;}&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;private boolean myUseLocalCoordinates = false;&#xD;&#xA;&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;protected boolean useLocalCoordinates() {&#xD;&#xA;&#x9;&#x9;return myUseLocalCoordinates;&#xD;&#xA;&#x9;}&#xD;&#xA;&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;protected void setUseLocalCoordinates(boolean useLocalCoordinates) {&#xD;&#xA;&#x9;&#x9;myUseLocalCoordinates = useLocalCoordinates;&#xD;&#xA;&#x9;}&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;public org.eclipse.draw2d.Label getFigureArtifactFigure_name() {&#xD;&#xA;&#x9;&#x9;return fFigureArtifactFigure_name;&#xD;&#xA;&#x9;}&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;public org.eclipse.draw2d.RectangleFigure getFigureArtifactFigure_Body() {&#xD;&#xA;&#x9;&#x9;return fFigureArtifactFigure_Body;&#xD;&#xA;&#x9;}&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;}&#xD;&#xA;&#xD;&#xA;">
+          classBody="&#xD;&#xA;/**&#xD;&#xA; * @generated&#xD;&#xA; */&#xD;&#xA;public class ArtifactFigure extends org.eclipse.draw2d.RectangleFigure {&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;private org.eclipse.draw2d.Label fFigureArtifactFigure_name; &#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;private org.eclipse.draw2d.RectangleFigure fFigureArtifactFigure_Body; &#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;private org.eclipse.draw2d.Label fFigureArtifactFigure_fixed_artifact; &#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;public ArtifactFigure() {&#xD;&#xA;&#x9;&#x9;&#xD;&#xA;&#x9;org.eclipse.draw2d.BorderLayout layoutThis = new org.eclipse.draw2d.BorderLayout();&#xD;&#xA;&#x9;this.setLayoutManager(layoutThis);&#xD;&#xA;&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;createContents();&#xD;&#xA;&#x9;}&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;private void createContents(){&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;org.eclipse.draw2d.RectangleFigure artifactFigure_NameContainer0 = new org.eclipse.draw2d.RectangleFigure();&#xD;&#xA;artifactFigure_NameContainer0.setFill(false);&#xD;&#xA;artifactFigure_NameContainer0.setOutline(false);&#xD;&#xA;&#xD;&#xA;this.add(artifactFigure_NameContainer0, org.eclipse.draw2d.BorderLayout.TOP);&#xD;&#xA;&#xD;&#xA;&#x9;org.eclipse.draw2d.ToolbarLayout layoutArtifactFigure_NameContainer0 = new org.eclipse.draw2d.ToolbarLayout();&#xD;&#xA;&#x9;layoutArtifactFigure_NameContainer0.setStretchMinorAxis(true);&#xD;&#xA;&#x9;layoutArtifactFigure_NameContainer0.setMinorAlignment(org.eclipse.draw2d.ToolbarLayout.ALIGN_CENTER&#xD;&#xA;);&#xD;&#xA;&#xD;&#xA;&#x9;layoutArtifactFigure_NameContainer0.setSpacing(0);&#xD;&#xA;&#x9;layoutArtifactFigure_NameContainer0.setVertical(true);&#xD;&#xA;&#xD;&#xA;&#x9;artifactFigure_NameContainer0.setLayoutManager(layoutArtifactFigure_NameContainer0);&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;fFigureArtifactFigure_name = new org.eclipse.draw2d.Label();&#xD;&#xA;fFigureArtifactFigure_name.setText(&quot;&quot;);&#xD;&#xA;&#xD;&#xA;artifactFigure_NameContainer0.add(fFigureArtifactFigure_name);&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;fFigureArtifactFigure_fixed_artifact = new org.eclipse.draw2d.Label();&#xD;&#xA;fFigureArtifactFigure_fixed_artifact.setText(&quot;\u00ABartifact\u00BB&quot;);&#xD;&#xA;&#xD;&#xA;artifactFigure_NameContainer0.add(fFigureArtifactFigure_fixed_artifact);&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;fFigureArtifactFigure_Body = new org.eclipse.draw2d.RectangleFigure();&#xD;&#xA;fFigureArtifactFigure_Body.setMinimumSize(new org.eclipse.draw2d.geometry.Dimension(getMapMode().DPtoLP(0)&#xD;&#xA;, getMapMode().DPtoLP(55)&#xD;&#xA;));&#xD;&#xA;&#xD;&#xA;this.add(fFigureArtifactFigure_Body, org.eclipse.draw2d.BorderLayout.CENTER);&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#x9;}&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;private boolean myUseLocalCoordinates = false;&#xD;&#xA;&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;protected boolean useLocalCoordinates() {&#xD;&#xA;&#x9;&#x9;return myUseLocalCoordinates;&#xD;&#xA;&#x9;}&#xD;&#xA;&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;protected void setUseLocalCoordinates(boolean useLocalCoordinates) {&#xD;&#xA;&#x9;&#x9;myUseLocalCoordinates = useLocalCoordinates;&#xD;&#xA;&#x9;}&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;public org.eclipse.draw2d.Label getFigureArtifactFigure_name() {&#xD;&#xA;&#x9;&#x9;return fFigureArtifactFigure_name;&#xD;&#xA;&#x9;}&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;public org.eclipse.draw2d.RectangleFigure getFigureArtifactFigure_Body() {&#xD;&#xA;&#x9;&#x9;return fFigureArtifactFigure_Body;&#xD;&#xA;&#x9;}&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;public org.eclipse.draw2d.Label getFigureArtifactFigure_fixed_artifact() {&#xD;&#xA;&#x9;&#x9;return fFigureArtifactFigure_fixed_artifact;&#xD;&#xA;&#x9;}&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;}&#xD;&#xA;&#xD;&#xA;">
         <attributes
             xsi:type="gmfgen:DefaultSizeAttributes"
             width="80"
@@ -190,6 +212,29 @@
               href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/Artifact/fileName"/>
         </modelFacet>
       </labels>
+      <labels
+          visualID="5015"
+          editPartClassName="ArtifactStereo2EditPart"
+          itemSemanticEditPolicyClassName="ArtifactStereo2ItemSemanticEditPolicy"
+          notationViewFactoryClassName="ArtifactStereo2ViewFactory"
+          elementIcon="true">
+        <diagramRunTimeClass
+            href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
+        <viewmap
+            xsi:type="gmfgen:ParentAssignedViewmap"
+            getterName="getFigureArtifactFigure_fixed_artifact"
+            figureQualifiedClassName="org.eclipse.draw2d.Label"/>
+        <behaviour
+            xsi:type="gmfgen:CustomBehaviour"
+            key="&quot;VisualEffect.Stereo&quot;"
+            editPolicyQualifiedClassName="org.eclipse.uml2.diagram.common.editpolicies.ClassifierNameVisualEffectEditPolicy"/>
+        <modelFacet
+            xsi:type="gmfgen:FeatureLabelModelFacet"
+            parser="//@labelParsers/@implementations.1">
+          <metaFeatures
+              href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/NamedElement/qualifiedName"/>
+        </modelFacet>
+      </labels>
     </childNodes>
     <childNodes
         visualID="3008"
@@ -209,7 +254,7 @@
       <viewmap
           xsi:type="gmfgen:InnerClassViewmap"
           className="ArtifactFigure"
-          classBody="&#xD;&#xA;/**&#xD;&#xA; * @generated&#xD;&#xA; */&#xD;&#xA;public class ArtifactFigure extends org.eclipse.draw2d.RectangleFigure {&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;private org.eclipse.draw2d.Label fFigureArtifactFigure_name; &#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;private org.eclipse.draw2d.RectangleFigure fFigureArtifactFigure_Body; &#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;public ArtifactFigure() {&#xD;&#xA;&#x9;&#x9;&#xD;&#xA;&#x9;org.eclipse.draw2d.BorderLayout layoutThis = new org.eclipse.draw2d.BorderLayout();&#xD;&#xA;&#x9;this.setLayoutManager(layoutThis);&#xD;&#xA;&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;createContents();&#xD;&#xA;&#x9;}&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;private void createContents(){&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;org.eclipse.draw2d.RectangleFigure artifactFigure_NameContainer0 = new org.eclipse.draw2d.RectangleFigure();&#xD;&#xA;artifactFigure_NameContainer0.setFill(false);&#xD;&#xA;artifactFigure_NameContainer0.setOutline(false);&#xD;&#xA;&#xD;&#xA;this.add(artifactFigure_NameContainer0, org.eclipse.draw2d.BorderLayout.TOP);&#xD;&#xA;&#xD;&#xA;&#x9;org.eclipse.draw2d.ToolbarLayout layoutArtifactFigure_NameContainer0 = new org.eclipse.draw2d.ToolbarLayout();&#xD;&#xA;&#x9;layoutArtifactFigure_NameContainer0.setStretchMinorAxis(true);&#xD;&#xA;&#x9;layoutArtifactFigure_NameContainer0.setMinorAlignment(org.eclipse.draw2d.ToolbarLayout.ALIGN_CENTER&#xD;&#xA;);&#xD;&#xA;&#xD;&#xA;&#x9;layoutArtifactFigure_NameContainer0.setSpacing(0);&#xD;&#xA;&#x9;layoutArtifactFigure_NameContainer0.setVertical(true);&#xD;&#xA;&#xD;&#xA;&#x9;artifactFigure_NameContainer0.setLayoutManager(layoutArtifactFigure_NameContainer0);&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;fFigureArtifactFigure_name = new org.eclipse.draw2d.Label();&#xD;&#xA;fFigureArtifactFigure_name.setText(&quot;&quot;);&#xD;&#xA;&#xD;&#xA;artifactFigure_NameContainer0.add(fFigureArtifactFigure_name);&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;org.eclipse.draw2d.Label artifactFigure_fixed_artifact1 = new org.eclipse.draw2d.Label();&#xD;&#xA;artifactFigure_fixed_artifact1.setText(&quot;\u00ABartifact\u00BB&quot;);&#xD;&#xA;&#xD;&#xA;artifactFigure_NameContainer0.add(artifactFigure_fixed_artifact1);&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;fFigureArtifactFigure_Body = new org.eclipse.draw2d.RectangleFigure();&#xD;&#xA;fFigureArtifactFigure_Body.setMinimumSize(new org.eclipse.draw2d.geometry.Dimension(getMapMode().DPtoLP(0)&#xD;&#xA;, getMapMode().DPtoLP(55)&#xD;&#xA;));&#xD;&#xA;&#xD;&#xA;this.add(fFigureArtifactFigure_Body, org.eclipse.draw2d.BorderLayout.CENTER);&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#x9;}&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;private boolean myUseLocalCoordinates = false;&#xD;&#xA;&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;protected boolean useLocalCoordinates() {&#xD;&#xA;&#x9;&#x9;return myUseLocalCoordinates;&#xD;&#xA;&#x9;}&#xD;&#xA;&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;protected void setUseLocalCoordinates(boolean useLocalCoordinates) {&#xD;&#xA;&#x9;&#x9;myUseLocalCoordinates = useLocalCoordinates;&#xD;&#xA;&#x9;}&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;public org.eclipse.draw2d.Label getFigureArtifactFigure_name() {&#xD;&#xA;&#x9;&#x9;return fFigureArtifactFigure_name;&#xD;&#xA;&#x9;}&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;public org.eclipse.draw2d.RectangleFigure getFigureArtifactFigure_Body() {&#xD;&#xA;&#x9;&#x9;return fFigureArtifactFigure_Body;&#xD;&#xA;&#x9;}&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;}&#xD;&#xA;&#xD;&#xA;">
+          classBody="&#xD;&#xA;/**&#xD;&#xA; * @generated&#xD;&#xA; */&#xD;&#xA;public class ArtifactFigure extends org.eclipse.draw2d.RectangleFigure {&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;private org.eclipse.draw2d.Label fFigureArtifactFigure_name; &#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;private org.eclipse.draw2d.RectangleFigure fFigureArtifactFigure_Body; &#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;private org.eclipse.draw2d.Label fFigureArtifactFigure_fixed_artifact; &#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;public ArtifactFigure() {&#xD;&#xA;&#x9;&#x9;&#xD;&#xA;&#x9;org.eclipse.draw2d.BorderLayout layoutThis = new org.eclipse.draw2d.BorderLayout();&#xD;&#xA;&#x9;this.setLayoutManager(layoutThis);&#xD;&#xA;&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;createContents();&#xD;&#xA;&#x9;}&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;private void createContents(){&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;org.eclipse.draw2d.RectangleFigure artifactFigure_NameContainer0 = new org.eclipse.draw2d.RectangleFigure();&#xD;&#xA;artifactFigure_NameContainer0.setFill(false);&#xD;&#xA;artifactFigure_NameContainer0.setOutline(false);&#xD;&#xA;&#xD;&#xA;this.add(artifactFigure_NameContainer0, org.eclipse.draw2d.BorderLayout.TOP);&#xD;&#xA;&#xD;&#xA;&#x9;org.eclipse.draw2d.ToolbarLayout layoutArtifactFigure_NameContainer0 = new org.eclipse.draw2d.ToolbarLayout();&#xD;&#xA;&#x9;layoutArtifactFigure_NameContainer0.setStretchMinorAxis(true);&#xD;&#xA;&#x9;layoutArtifactFigure_NameContainer0.setMinorAlignment(org.eclipse.draw2d.ToolbarLayout.ALIGN_CENTER&#xD;&#xA;);&#xD;&#xA;&#xD;&#xA;&#x9;layoutArtifactFigure_NameContainer0.setSpacing(0);&#xD;&#xA;&#x9;layoutArtifactFigure_NameContainer0.setVertical(true);&#xD;&#xA;&#xD;&#xA;&#x9;artifactFigure_NameContainer0.setLayoutManager(layoutArtifactFigure_NameContainer0);&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;fFigureArtifactFigure_name = new org.eclipse.draw2d.Label();&#xD;&#xA;fFigureArtifactFigure_name.setText(&quot;&quot;);&#xD;&#xA;&#xD;&#xA;artifactFigure_NameContainer0.add(fFigureArtifactFigure_name);&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;fFigureArtifactFigure_fixed_artifact = new org.eclipse.draw2d.Label();&#xD;&#xA;fFigureArtifactFigure_fixed_artifact.setText(&quot;\u00ABartifact\u00BB&quot;);&#xD;&#xA;&#xD;&#xA;artifactFigure_NameContainer0.add(fFigureArtifactFigure_fixed_artifact);&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;fFigureArtifactFigure_Body = new org.eclipse.draw2d.RectangleFigure();&#xD;&#xA;fFigureArtifactFigure_Body.setMinimumSize(new org.eclipse.draw2d.geometry.Dimension(getMapMode().DPtoLP(0)&#xD;&#xA;, getMapMode().DPtoLP(55)&#xD;&#xA;));&#xD;&#xA;&#xD;&#xA;this.add(fFigureArtifactFigure_Body, org.eclipse.draw2d.BorderLayout.CENTER);&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#x9;}&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;private boolean myUseLocalCoordinates = false;&#xD;&#xA;&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;protected boolean useLocalCoordinates() {&#xD;&#xA;&#x9;&#x9;return myUseLocalCoordinates;&#xD;&#xA;&#x9;}&#xD;&#xA;&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;protected void setUseLocalCoordinates(boolean useLocalCoordinates) {&#xD;&#xA;&#x9;&#x9;myUseLocalCoordinates = useLocalCoordinates;&#xD;&#xA;&#x9;}&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;public org.eclipse.draw2d.Label getFigureArtifactFigure_name() {&#xD;&#xA;&#x9;&#x9;return fFigureArtifactFigure_name;&#xD;&#xA;&#x9;}&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;public org.eclipse.draw2d.RectangleFigure getFigureArtifactFigure_Body() {&#xD;&#xA;&#x9;&#x9;return fFigureArtifactFigure_Body;&#xD;&#xA;&#x9;}&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;public org.eclipse.draw2d.Label getFigureArtifactFigure_fixed_artifact() {&#xD;&#xA;&#x9;&#x9;return fFigureArtifactFigure_fixed_artifact;&#xD;&#xA;&#x9;}&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;}&#xD;&#xA;&#xD;&#xA;">
         <attributes
             xsi:type="gmfgen:DefaultSizeAttributes"
             width="80"
@@ -252,6 +297,29 @@
             parser="//@labelParsers/@implementations.0">
           <metaFeatures
               href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/Artifact/fileName"/>
+        </modelFacet>
+      </labels>
+      <labels
+          visualID="5014"
+          editPartClassName="ArtifactStereo3EditPart"
+          itemSemanticEditPolicyClassName="ArtifactStereo3ItemSemanticEditPolicy"
+          notationViewFactoryClassName="ArtifactStereo3ViewFactory"
+          elementIcon="true">
+        <diagramRunTimeClass
+            href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
+        <viewmap
+            xsi:type="gmfgen:ParentAssignedViewmap"
+            getterName="getFigureArtifactFigure_fixed_artifact"
+            figureQualifiedClassName="org.eclipse.draw2d.Label"/>
+        <behaviour
+            xsi:type="gmfgen:CustomBehaviour"
+            key="&quot;VisualEffect.Stereo&quot;"
+            editPolicyQualifiedClassName="org.eclipse.uml2.diagram.common.editpolicies.ClassifierNameVisualEffectEditPolicy"/>
+        <modelFacet
+            xsi:type="gmfgen:FeatureLabelModelFacet"
+            parser="//@labelParsers/@implementations.1">
+          <metaFeatures
+              href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/NamedElement/qualifiedName"/>
         </modelFacet>
       </labels>
     </childNodes>
@@ -321,6 +389,32 @@
               href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/NamedElement/name"/>
         </modelFacet>
       </labels>
+      <labels
+          visualID="5013"
+          editPartClassName="DeploymentSpecificationStereo4EditPart"
+          itemSemanticEditPolicyClassName="DeploymentSpecificationStereo4ItemSemanticEditPolicy"
+          notationViewFactoryClassName="DeploymentSpecificationStereo4ViewFactory">
+        <diagramRunTimeClass
+            href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
+        <viewmap
+            xsi:type="gmfgen:ParentAssignedViewmap"
+            getterName="getFigureDeploymentSpecificationFigure_stereo"
+            figureQualifiedClassName="org.eclipse.draw2d.Label">
+          <attributes
+              xsi:type="gmfgen:StyleAttributes"
+              fixedFont="true"/>
+        </viewmap>
+        <behaviour
+            xsi:type="gmfgen:CustomBehaviour"
+            key="&quot;VisualEffect.Stereo&quot;"
+            editPolicyQualifiedClassName="org.eclipse.uml2.diagram.common.editpolicies.ClassifierNameVisualEffectEditPolicy"/>
+        <modelFacet
+            xsi:type="gmfgen:FeatureLabelModelFacet"
+            parser="//@labelParsers/@implementations.1">
+          <metaFeatures
+              href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/NamedElement/qualifiedName"/>
+        </modelFacet>
+      </labels>
     </childNodes>
     <childNodes
         xsi:type="gmfgen:GenChildLabelNode"
@@ -385,7 +479,7 @@
       <viewmap
           xsi:type="gmfgen:InnerClassViewmap"
           className="EnvironmentFigure"
-          classBody="&#xD;&#xA;/**&#xD;&#xA; * @generated&#xD;&#xA; */&#xD;&#xA;public class EnvironmentFigure extends org.eclipse.uml2.diagram.common.draw2d.Cube3DFigure {&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;public EnvironmentFigure() {&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;this.setTypeLabelText(&#xD;&#xA;&quot;\u00ABexecutionEnvironment\u00BB&quot;);&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;this.setTypeLabelVisible(&#xD;&#xA;true);&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#x9;}&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;private boolean myUseLocalCoordinates = false;&#xD;&#xA;&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;protected boolean useLocalCoordinates() {&#xD;&#xA;&#x9;&#x9;return myUseLocalCoordinates;&#xD;&#xA;&#x9;}&#xD;&#xA;&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;protected void setUseLocalCoordinates(boolean useLocalCoordinates) {&#xD;&#xA;&#x9;&#x9;myUseLocalCoordinates = useLocalCoordinates;&#xD;&#xA;&#x9;}&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;public org.eclipse.draw2d.Label getNameLabel() {&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;return super.getNameLabel();&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;}&#xD;&#xA;&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;public org.eclipse.draw2d.RectangleFigure getContentPane() {&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;return super.getContentPane();&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;}&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;}&#xD;&#xA;&#xD;&#xA;">
+          classBody="&#xD;&#xA;/**&#xD;&#xA; * @generated&#xD;&#xA; */&#xD;&#xA;public class EnvironmentFigure extends org.eclipse.uml2.diagram.common.draw2d.Cube3DFigure {&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;public EnvironmentFigure() {&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;this.setTypeLabelVisible(&#xD;&#xA;true);&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#x9;}&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;private boolean myUseLocalCoordinates = false;&#xD;&#xA;&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;protected boolean useLocalCoordinates() {&#xD;&#xA;&#x9;&#x9;return myUseLocalCoordinates;&#xD;&#xA;&#x9;}&#xD;&#xA;&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;protected void setUseLocalCoordinates(boolean useLocalCoordinates) {&#xD;&#xA;&#x9;&#x9;myUseLocalCoordinates = useLocalCoordinates;&#xD;&#xA;&#x9;}&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;public org.eclipse.draw2d.Label getEnvironmentTypeLabel() {&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;return getTypeLabel();&#x9;&#x9;&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;}&#xD;&#xA;&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;public org.eclipse.draw2d.Label getNameLabel() {&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;return super.getNameLabel();&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;}&#xD;&#xA;&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;public org.eclipse.draw2d.RectangleFigure getContentPane() {&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;return super.getContentPane();&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;}&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;}&#xD;&#xA;&#xD;&#xA;">
         <attributes
             xsi:type="gmfgen:DefaultSizeAttributes"
             width="100"
@@ -426,6 +520,28 @@
             parser="//@labelParsers/@implementations.0">
           <metaFeatures
               href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/NamedElement/name"/>
+        </modelFacet>
+      </labels>
+      <labels
+          visualID="5016"
+          editPartClassName="ExecutionEnvironmentStereo2EditPart"
+          itemSemanticEditPolicyClassName="ExecutionEnvironmentStereo2ItemSemanticEditPolicy"
+          notationViewFactoryClassName="ExecutionEnvironmentStereo2ViewFactory">
+        <diagramRunTimeClass
+            href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
+        <viewmap
+            xsi:type="gmfgen:ParentAssignedViewmap"
+            getterName="getEnvironmentTypeLabel"
+            figureQualifiedClassName="org.eclipse.draw2d.Label"/>
+        <behaviour
+            xsi:type="gmfgen:CustomBehaviour"
+            key="&quot;VisualEffect.Stereo&quot;"
+            editPolicyQualifiedClassName="org.eclipse.uml2.diagram.common.editpolicies.ClassifierNameVisualEffectEditPolicy"/>
+        <modelFacet
+            xsi:type="gmfgen:FeatureLabelModelFacet"
+            parser="//@labelParsers/@implementations.1">
+          <metaFeatures
+              href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/NamedElement/qualifiedName"/>
         </modelFacet>
       </labels>
     </childNodes>
@@ -491,7 +607,7 @@
       <viewmap
           xsi:type="gmfgen:InnerClassViewmap"
           className="NodeFigure"
-          classBody="&#xD;&#xA;/**&#xD;&#xA; * @generated&#xD;&#xA; */&#xD;&#xA;public class NodeFigure extends org.eclipse.uml2.diagram.common.draw2d.Cube3DFigure {&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;public NodeFigure() {&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;this.setTypeLabelVisible(&#xD;&#xA;false);&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#x9;}&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;private boolean myUseLocalCoordinates = false;&#xD;&#xA;&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;protected boolean useLocalCoordinates() {&#xD;&#xA;&#x9;&#x9;return myUseLocalCoordinates;&#xD;&#xA;&#x9;}&#xD;&#xA;&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;protected void setUseLocalCoordinates(boolean useLocalCoordinates) {&#xD;&#xA;&#x9;&#x9;myUseLocalCoordinates = useLocalCoordinates;&#xD;&#xA;&#x9;}&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;public org.eclipse.draw2d.Label getNameLabel() {&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;return super.getNameLabel();&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;}&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;}&#xD;&#xA;&#xD;&#xA;">
+          classBody="&#xD;&#xA;/**&#xD;&#xA; * @generated&#xD;&#xA; */&#xD;&#xA;public class NodeFigure extends org.eclipse.uml2.diagram.common.draw2d.Cube3DFigure {&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;public NodeFigure() {&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;this.setTypeLabelVisible(&#xD;&#xA;true);&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#x9;}&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;private boolean myUseLocalCoordinates = false;&#xD;&#xA;&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;protected boolean useLocalCoordinates() {&#xD;&#xA;&#x9;&#x9;return myUseLocalCoordinates;&#xD;&#xA;&#x9;}&#xD;&#xA;&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;protected void setUseLocalCoordinates(boolean useLocalCoordinates) {&#xD;&#xA;&#x9;&#x9;myUseLocalCoordinates = useLocalCoordinates;&#xD;&#xA;&#x9;}&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;public org.eclipse.draw2d.Label getNameLabel() {&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;return super.getNameLabel();&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;}&#xD;&#xA;&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;public org.eclipse.draw2d.Label getNodeTypeLabel() {&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;return getTypeLabel();&#x9;&#x9;&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;}&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;}&#xD;&#xA;&#xD;&#xA;">
         <attributes
             xsi:type="gmfgen:DefaultSizeAttributes"
             width="100"
@@ -533,6 +649,28 @@
             parser="//@labelParsers/@implementations.0">
           <metaFeatures
               href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/NamedElement/name"/>
+        </modelFacet>
+      </labels>
+      <labels
+          visualID="5017"
+          editPartClassName="NodeStereo2EditPart"
+          itemSemanticEditPolicyClassName="NodeStereo2ItemSemanticEditPolicy"
+          notationViewFactoryClassName="NodeStereo2ViewFactory">
+        <diagramRunTimeClass
+            href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
+        <viewmap
+            xsi:type="gmfgen:ParentAssignedViewmap"
+            getterName="getNodeTypeLabel"
+            figureQualifiedClassName="org.eclipse.draw2d.Label"/>
+        <behaviour
+            xsi:type="gmfgen:CustomBehaviour"
+            key="&quot;VisualEffect.Stereo&quot;"
+            editPolicyQualifiedClassName="org.eclipse.uml2.diagram.common.editpolicies.ClassifierNameVisualEffectEditPolicy"/>
+        <modelFacet
+            xsi:type="gmfgen:FeatureLabelModelFacet"
+            parser="//@labelParsers/@implementations.1">
+          <metaFeatures
+              href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/NamedElement/qualifiedName"/>
         </modelFacet>
       </labels>
     </childNodes>
@@ -615,7 +753,7 @@
       <viewmap
           xsi:type="gmfgen:InnerClassViewmap"
           className="DeviceFigure"
-          classBody="&#xD;&#xA;/**&#xD;&#xA; * @generated&#xD;&#xA; */&#xD;&#xA;public class DeviceFigure extends org.eclipse.uml2.diagram.common.draw2d.Cube3DFigure {&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;public DeviceFigure() {&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;this.setTypeLabelText(&#xD;&#xA;&quot;\u00ABdevice\u00BB&quot;);&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;this.setTypeLabelVisible(&#xD;&#xA;true);&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#x9;}&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;private boolean myUseLocalCoordinates = false;&#xD;&#xA;&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;protected boolean useLocalCoordinates() {&#xD;&#xA;&#x9;&#x9;return myUseLocalCoordinates;&#xD;&#xA;&#x9;}&#xD;&#xA;&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;protected void setUseLocalCoordinates(boolean useLocalCoordinates) {&#xD;&#xA;&#x9;&#x9;myUseLocalCoordinates = useLocalCoordinates;&#xD;&#xA;&#x9;}&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;public org.eclipse.draw2d.Label getNameLabel() {&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;return super.getNameLabel();&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;}&#xD;&#xA;&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;public org.eclipse.draw2d.RectangleFigure getContentPane() {&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;return super.getContentPane();&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;}&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;}&#xD;&#xA;&#xD;&#xA;">
+          classBody="&#xD;&#xA;/**&#xD;&#xA; * @generated&#xD;&#xA; */&#xD;&#xA;public class DeviceFigure extends org.eclipse.uml2.diagram.common.draw2d.Cube3DFigure {&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;public DeviceFigure() {&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;this.setTypeLabelVisible(&#xD;&#xA;true);&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#x9;}&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;private boolean myUseLocalCoordinates = false;&#xD;&#xA;&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;protected boolean useLocalCoordinates() {&#xD;&#xA;&#x9;&#x9;return myUseLocalCoordinates;&#xD;&#xA;&#x9;}&#xD;&#xA;&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;protected void setUseLocalCoordinates(boolean useLocalCoordinates) {&#xD;&#xA;&#x9;&#x9;myUseLocalCoordinates = useLocalCoordinates;&#xD;&#xA;&#x9;}&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;public org.eclipse.draw2d.Label getNameLabel() {&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;return super.getNameLabel();&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;}&#xD;&#xA;&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;public org.eclipse.draw2d.RectangleFigure getContentPane() {&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;return super.getContentPane();&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;}&#xD;&#xA;&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;public org.eclipse.draw2d.Label getDeviceTypeLabel() {&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;return getTypeLabel();&#x9;&#x9;&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;}&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;}&#xD;&#xA;&#xD;&#xA;">
         <attributes
             xsi:type="gmfgen:DefaultSizeAttributes"
             width="100"
@@ -658,6 +796,28 @@
               href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/NamedElement/name"/>
         </modelFacet>
       </labels>
+      <labels
+          visualID="5019"
+          editPartClassName="DeviceStereoEditPart"
+          itemSemanticEditPolicyClassName="DeviceStereoItemSemanticEditPolicy"
+          notationViewFactoryClassName="DeviceStereoViewFactory">
+        <diagramRunTimeClass
+            href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
+        <viewmap
+            xsi:type="gmfgen:ParentAssignedViewmap"
+            getterName="getDeviceTypeLabel"
+            figureQualifiedClassName="org.eclipse.draw2d.Label"/>
+        <behaviour
+            xsi:type="gmfgen:CustomBehaviour"
+            key="&quot;VisualEffect.Stereo&quot;"
+            editPolicyQualifiedClassName="org.eclipse.uml2.diagram.common.editpolicies.ClassifierNameVisualEffectEditPolicy"/>
+        <modelFacet
+            xsi:type="gmfgen:FeatureLabelModelFacet"
+            parser="//@labelParsers/@implementations.1">
+          <metaFeatures
+              href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/NamedElement/qualifiedName"/>
+        </modelFacet>
+      </labels>
     </topLevelNodes>
     <topLevelNodes
         visualID="2004"
@@ -675,7 +835,7 @@
       <viewmap
           xsi:type="gmfgen:InnerClassViewmap"
           className="NodeFigure"
-          classBody="&#xD;&#xA;/**&#xD;&#xA; * @generated&#xD;&#xA; */&#xD;&#xA;public class NodeFigure extends org.eclipse.uml2.diagram.common.draw2d.Cube3DFigure {&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;public NodeFigure() {&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;this.setTypeLabelVisible(&#xD;&#xA;false);&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#x9;}&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;private boolean myUseLocalCoordinates = false;&#xD;&#xA;&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;protected boolean useLocalCoordinates() {&#xD;&#xA;&#x9;&#x9;return myUseLocalCoordinates;&#xD;&#xA;&#x9;}&#xD;&#xA;&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;protected void setUseLocalCoordinates(boolean useLocalCoordinates) {&#xD;&#xA;&#x9;&#x9;myUseLocalCoordinates = useLocalCoordinates;&#xD;&#xA;&#x9;}&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;public org.eclipse.draw2d.Label getNameLabel() {&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;return super.getNameLabel();&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;}&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;}&#xD;&#xA;&#xD;&#xA;">
+          classBody="&#xD;&#xA;/**&#xD;&#xA; * @generated&#xD;&#xA; */&#xD;&#xA;public class NodeFigure extends org.eclipse.uml2.diagram.common.draw2d.Cube3DFigure {&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;public NodeFigure() {&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;this.setTypeLabelVisible(&#xD;&#xA;true);&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#x9;}&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;private boolean myUseLocalCoordinates = false;&#xD;&#xA;&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;protected boolean useLocalCoordinates() {&#xD;&#xA;&#x9;&#x9;return myUseLocalCoordinates;&#xD;&#xA;&#x9;}&#xD;&#xA;&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;protected void setUseLocalCoordinates(boolean useLocalCoordinates) {&#xD;&#xA;&#x9;&#x9;myUseLocalCoordinates = useLocalCoordinates;&#xD;&#xA;&#x9;}&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;public org.eclipse.draw2d.Label getNameLabel() {&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;return super.getNameLabel();&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;}&#xD;&#xA;&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;public org.eclipse.draw2d.Label getNodeTypeLabel() {&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;return getTypeLabel();&#x9;&#x9;&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;}&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;}&#xD;&#xA;&#xD;&#xA;">
         <attributes
             xsi:type="gmfgen:DefaultSizeAttributes"
             width="100"
@@ -719,6 +879,28 @@
               href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/NamedElement/name"/>
         </modelFacet>
       </labels>
+      <labels
+          visualID="5020"
+          editPartClassName="NodeStereoEditPart"
+          itemSemanticEditPolicyClassName="NodeStereoItemSemanticEditPolicy"
+          notationViewFactoryClassName="NodeStereoViewFactory">
+        <diagramRunTimeClass
+            href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
+        <viewmap
+            xsi:type="gmfgen:ParentAssignedViewmap"
+            getterName="getNodeTypeLabel"
+            figureQualifiedClassName="org.eclipse.draw2d.Label"/>
+        <behaviour
+            xsi:type="gmfgen:CustomBehaviour"
+            key="&quot;VisualEffect.Stereo&quot;"
+            editPolicyQualifiedClassName="org.eclipse.uml2.diagram.common.editpolicies.ClassifierNameVisualEffectEditPolicy"/>
+        <modelFacet
+            xsi:type="gmfgen:FeatureLabelModelFacet"
+            parser="//@labelParsers/@implementations.1">
+          <metaFeatures
+              href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/NamedElement/qualifiedName"/>
+        </modelFacet>
+      </labels>
     </topLevelNodes>
     <topLevelNodes
         visualID="2005"
@@ -737,7 +919,7 @@
       <viewmap
           xsi:type="gmfgen:InnerClassViewmap"
           className="EnvironmentFigure"
-          classBody="&#xD;&#xA;/**&#xD;&#xA; * @generated&#xD;&#xA; */&#xD;&#xA;public class EnvironmentFigure extends org.eclipse.uml2.diagram.common.draw2d.Cube3DFigure {&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;public EnvironmentFigure() {&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;this.setTypeLabelText(&#xD;&#xA;&quot;\u00ABexecutionEnvironment\u00BB&quot;);&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;this.setTypeLabelVisible(&#xD;&#xA;true);&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#x9;}&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;private boolean myUseLocalCoordinates = false;&#xD;&#xA;&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;protected boolean useLocalCoordinates() {&#xD;&#xA;&#x9;&#x9;return myUseLocalCoordinates;&#xD;&#xA;&#x9;}&#xD;&#xA;&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;protected void setUseLocalCoordinates(boolean useLocalCoordinates) {&#xD;&#xA;&#x9;&#x9;myUseLocalCoordinates = useLocalCoordinates;&#xD;&#xA;&#x9;}&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;public org.eclipse.draw2d.Label getNameLabel() {&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;return super.getNameLabel();&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;}&#xD;&#xA;&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;public org.eclipse.draw2d.RectangleFigure getContentPane() {&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;return super.getContentPane();&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;}&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;}&#xD;&#xA;&#xD;&#xA;">
+          classBody="&#xD;&#xA;/**&#xD;&#xA; * @generated&#xD;&#xA; */&#xD;&#xA;public class EnvironmentFigure extends org.eclipse.uml2.diagram.common.draw2d.Cube3DFigure {&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;public EnvironmentFigure() {&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;this.setTypeLabelVisible(&#xD;&#xA;true);&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#x9;}&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;private boolean myUseLocalCoordinates = false;&#xD;&#xA;&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;protected boolean useLocalCoordinates() {&#xD;&#xA;&#x9;&#x9;return myUseLocalCoordinates;&#xD;&#xA;&#x9;}&#xD;&#xA;&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;protected void setUseLocalCoordinates(boolean useLocalCoordinates) {&#xD;&#xA;&#x9;&#x9;myUseLocalCoordinates = useLocalCoordinates;&#xD;&#xA;&#x9;}&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;public org.eclipse.draw2d.Label getEnvironmentTypeLabel() {&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;return getTypeLabel();&#x9;&#x9;&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;}&#xD;&#xA;&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;public org.eclipse.draw2d.Label getNameLabel() {&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;return super.getNameLabel();&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;}&#xD;&#xA;&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;public org.eclipse.draw2d.RectangleFigure getContentPane() {&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;return super.getContentPane();&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;}&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;}&#xD;&#xA;&#xD;&#xA;">
         <attributes
             xsi:type="gmfgen:DefaultSizeAttributes"
             width="100"
@@ -780,6 +962,28 @@
               href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/NamedElement/name"/>
         </modelFacet>
       </labels>
+      <labels
+          visualID="5021"
+          editPartClassName="ExecutionEnvironmentStereoEditPart"
+          itemSemanticEditPolicyClassName="ExecutionEnvironmentStereoItemSemanticEditPolicy"
+          notationViewFactoryClassName="ExecutionEnvironmentStereoViewFactory">
+        <diagramRunTimeClass
+            href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
+        <viewmap
+            xsi:type="gmfgen:ParentAssignedViewmap"
+            getterName="getEnvironmentTypeLabel"
+            figureQualifiedClassName="org.eclipse.draw2d.Label"/>
+        <behaviour
+            xsi:type="gmfgen:CustomBehaviour"
+            key="&quot;VisualEffect.Stereo&quot;"
+            editPolicyQualifiedClassName="org.eclipse.uml2.diagram.common.editpolicies.ClassifierNameVisualEffectEditPolicy"/>
+        <modelFacet
+            xsi:type="gmfgen:FeatureLabelModelFacet"
+            parser="//@labelParsers/@implementations.1">
+          <metaFeatures
+              href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/NamedElement/qualifiedName"/>
+        </modelFacet>
+      </labels>
     </topLevelNodes>
     <topLevelNodes
         visualID="2006"
@@ -798,7 +1002,7 @@
       <viewmap
           xsi:type="gmfgen:InnerClassViewmap"
           className="ArtifactFigure"
-          classBody="&#xD;&#xA;/**&#xD;&#xA; * @generated&#xD;&#xA; */&#xD;&#xA;public class ArtifactFigure extends org.eclipse.draw2d.RectangleFigure {&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;private org.eclipse.draw2d.Label fFigureArtifactFigure_name; &#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;private org.eclipse.draw2d.RectangleFigure fFigureArtifactFigure_Body; &#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;public ArtifactFigure() {&#xD;&#xA;&#x9;&#x9;&#xD;&#xA;&#x9;org.eclipse.draw2d.BorderLayout layoutThis = new org.eclipse.draw2d.BorderLayout();&#xD;&#xA;&#x9;this.setLayoutManager(layoutThis);&#xD;&#xA;&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;createContents();&#xD;&#xA;&#x9;}&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;private void createContents(){&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;org.eclipse.draw2d.RectangleFigure artifactFigure_NameContainer0 = new org.eclipse.draw2d.RectangleFigure();&#xD;&#xA;artifactFigure_NameContainer0.setFill(false);&#xD;&#xA;artifactFigure_NameContainer0.setOutline(false);&#xD;&#xA;&#xD;&#xA;this.add(artifactFigure_NameContainer0, org.eclipse.draw2d.BorderLayout.TOP);&#xD;&#xA;&#xD;&#xA;&#x9;org.eclipse.draw2d.ToolbarLayout layoutArtifactFigure_NameContainer0 = new org.eclipse.draw2d.ToolbarLayout();&#xD;&#xA;&#x9;layoutArtifactFigure_NameContainer0.setStretchMinorAxis(true);&#xD;&#xA;&#x9;layoutArtifactFigure_NameContainer0.setMinorAlignment(org.eclipse.draw2d.ToolbarLayout.ALIGN_CENTER&#xD;&#xA;);&#xD;&#xA;&#xD;&#xA;&#x9;layoutArtifactFigure_NameContainer0.setSpacing(0);&#xD;&#xA;&#x9;layoutArtifactFigure_NameContainer0.setVertical(true);&#xD;&#xA;&#xD;&#xA;&#x9;artifactFigure_NameContainer0.setLayoutManager(layoutArtifactFigure_NameContainer0);&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;fFigureArtifactFigure_name = new org.eclipse.draw2d.Label();&#xD;&#xA;fFigureArtifactFigure_name.setText(&quot;&quot;);&#xD;&#xA;&#xD;&#xA;artifactFigure_NameContainer0.add(fFigureArtifactFigure_name);&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;org.eclipse.draw2d.Label artifactFigure_fixed_artifact1 = new org.eclipse.draw2d.Label();&#xD;&#xA;artifactFigure_fixed_artifact1.setText(&quot;\u00ABartifact\u00BB&quot;);&#xD;&#xA;&#xD;&#xA;artifactFigure_NameContainer0.add(artifactFigure_fixed_artifact1);&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;fFigureArtifactFigure_Body = new org.eclipse.draw2d.RectangleFigure();&#xD;&#xA;fFigureArtifactFigure_Body.setMinimumSize(new org.eclipse.draw2d.geometry.Dimension(getMapMode().DPtoLP(0)&#xD;&#xA;, getMapMode().DPtoLP(55)&#xD;&#xA;));&#xD;&#xA;&#xD;&#xA;this.add(fFigureArtifactFigure_Body, org.eclipse.draw2d.BorderLayout.CENTER);&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#x9;}&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;private boolean myUseLocalCoordinates = false;&#xD;&#xA;&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;protected boolean useLocalCoordinates() {&#xD;&#xA;&#x9;&#x9;return myUseLocalCoordinates;&#xD;&#xA;&#x9;}&#xD;&#xA;&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;protected void setUseLocalCoordinates(boolean useLocalCoordinates) {&#xD;&#xA;&#x9;&#x9;myUseLocalCoordinates = useLocalCoordinates;&#xD;&#xA;&#x9;}&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;public org.eclipse.draw2d.Label getFigureArtifactFigure_name() {&#xD;&#xA;&#x9;&#x9;return fFigureArtifactFigure_name;&#xD;&#xA;&#x9;}&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;public org.eclipse.draw2d.RectangleFigure getFigureArtifactFigure_Body() {&#xD;&#xA;&#x9;&#x9;return fFigureArtifactFigure_Body;&#xD;&#xA;&#x9;}&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;}&#xD;&#xA;&#xD;&#xA;">
+          classBody="&#xD;&#xA;/**&#xD;&#xA; * @generated&#xD;&#xA; */&#xD;&#xA;public class ArtifactFigure extends org.eclipse.draw2d.RectangleFigure {&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;private org.eclipse.draw2d.Label fFigureArtifactFigure_name; &#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;private org.eclipse.draw2d.RectangleFigure fFigureArtifactFigure_Body; &#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;private org.eclipse.draw2d.Label fFigureArtifactFigure_fixed_artifact; &#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;public ArtifactFigure() {&#xD;&#xA;&#x9;&#x9;&#xD;&#xA;&#x9;org.eclipse.draw2d.BorderLayout layoutThis = new org.eclipse.draw2d.BorderLayout();&#xD;&#xA;&#x9;this.setLayoutManager(layoutThis);&#xD;&#xA;&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;createContents();&#xD;&#xA;&#x9;}&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;private void createContents(){&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;org.eclipse.draw2d.RectangleFigure artifactFigure_NameContainer0 = new org.eclipse.draw2d.RectangleFigure();&#xD;&#xA;artifactFigure_NameContainer0.setFill(false);&#xD;&#xA;artifactFigure_NameContainer0.setOutline(false);&#xD;&#xA;&#xD;&#xA;this.add(artifactFigure_NameContainer0, org.eclipse.draw2d.BorderLayout.TOP);&#xD;&#xA;&#xD;&#xA;&#x9;org.eclipse.draw2d.ToolbarLayout layoutArtifactFigure_NameContainer0 = new org.eclipse.draw2d.ToolbarLayout();&#xD;&#xA;&#x9;layoutArtifactFigure_NameContainer0.setStretchMinorAxis(true);&#xD;&#xA;&#x9;layoutArtifactFigure_NameContainer0.setMinorAlignment(org.eclipse.draw2d.ToolbarLayout.ALIGN_CENTER&#xD;&#xA;);&#xD;&#xA;&#xD;&#xA;&#x9;layoutArtifactFigure_NameContainer0.setSpacing(0);&#xD;&#xA;&#x9;layoutArtifactFigure_NameContainer0.setVertical(true);&#xD;&#xA;&#xD;&#xA;&#x9;artifactFigure_NameContainer0.setLayoutManager(layoutArtifactFigure_NameContainer0);&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;fFigureArtifactFigure_name = new org.eclipse.draw2d.Label();&#xD;&#xA;fFigureArtifactFigure_name.setText(&quot;&quot;);&#xD;&#xA;&#xD;&#xA;artifactFigure_NameContainer0.add(fFigureArtifactFigure_name);&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;fFigureArtifactFigure_fixed_artifact = new org.eclipse.draw2d.Label();&#xD;&#xA;fFigureArtifactFigure_fixed_artifact.setText(&quot;\u00ABartifact\u00BB&quot;);&#xD;&#xA;&#xD;&#xA;artifactFigure_NameContainer0.add(fFigureArtifactFigure_fixed_artifact);&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;fFigureArtifactFigure_Body = new org.eclipse.draw2d.RectangleFigure();&#xD;&#xA;fFigureArtifactFigure_Body.setMinimumSize(new org.eclipse.draw2d.geometry.Dimension(getMapMode().DPtoLP(0)&#xD;&#xA;, getMapMode().DPtoLP(55)&#xD;&#xA;));&#xD;&#xA;&#xD;&#xA;this.add(fFigureArtifactFigure_Body, org.eclipse.draw2d.BorderLayout.CENTER);&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#x9;}&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;private boolean myUseLocalCoordinates = false;&#xD;&#xA;&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;protected boolean useLocalCoordinates() {&#xD;&#xA;&#x9;&#x9;return myUseLocalCoordinates;&#xD;&#xA;&#x9;}&#xD;&#xA;&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;protected void setUseLocalCoordinates(boolean useLocalCoordinates) {&#xD;&#xA;&#x9;&#x9;myUseLocalCoordinates = useLocalCoordinates;&#xD;&#xA;&#x9;}&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;public org.eclipse.draw2d.Label getFigureArtifactFigure_name() {&#xD;&#xA;&#x9;&#x9;return fFigureArtifactFigure_name;&#xD;&#xA;&#x9;}&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;public org.eclipse.draw2d.RectangleFigure getFigureArtifactFigure_Body() {&#xD;&#xA;&#x9;&#x9;return fFigureArtifactFigure_Body;&#xD;&#xA;&#x9;}&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;public org.eclipse.draw2d.Label getFigureArtifactFigure_fixed_artifact() {&#xD;&#xA;&#x9;&#x9;return fFigureArtifactFigure_fixed_artifact;&#xD;&#xA;&#x9;}&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;}&#xD;&#xA;&#xD;&#xA;">
         <attributes
             xsi:type="gmfgen:DefaultSizeAttributes"
             width="80"
@@ -841,6 +1045,29 @@
             parser="//@labelParsers/@implementations.0">
           <metaFeatures
               href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/Artifact/fileName"/>
+        </modelFacet>
+      </labels>
+      <labels
+          visualID="5022"
+          editPartClassName="ArtifactStereoEditPart"
+          itemSemanticEditPolicyClassName="ArtifactStereoItemSemanticEditPolicy"
+          notationViewFactoryClassName="ArtifactStereoViewFactory"
+          elementIcon="true">
+        <diagramRunTimeClass
+            href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
+        <viewmap
+            xsi:type="gmfgen:ParentAssignedViewmap"
+            getterName="getFigureArtifactFigure_fixed_artifact"
+            figureQualifiedClassName="org.eclipse.draw2d.Label"/>
+        <behaviour
+            xsi:type="gmfgen:CustomBehaviour"
+            key="&quot;VisualEffect.Stereo&quot;"
+            editPolicyQualifiedClassName="org.eclipse.uml2.diagram.common.editpolicies.ClassifierNameVisualEffectEditPolicy"/>
+        <modelFacet
+            xsi:type="gmfgen:FeatureLabelModelFacet"
+            parser="//@labelParsers/@implementations.1">
+          <metaFeatures
+              href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/NamedElement/qualifiedName"/>
         </modelFacet>
       </labels>
     </topLevelNodes>
@@ -906,6 +1133,32 @@
             parser="//@labelParsers/@implementations.0">
           <metaFeatures
               href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/NamedElement/name"/>
+        </modelFacet>
+      </labels>
+      <labels
+          visualID="5023"
+          editPartClassName="DeploymentSpecificationStereo3EditPart"
+          itemSemanticEditPolicyClassName="DeploymentSpecificationStereo3ItemSemanticEditPolicy"
+          notationViewFactoryClassName="DeploymentSpecificationStereo3ViewFactory">
+        <diagramRunTimeClass
+            href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
+        <viewmap
+            xsi:type="gmfgen:ParentAssignedViewmap"
+            getterName="getFigureDeploymentSpecificationFigure_stereo"
+            figureQualifiedClassName="org.eclipse.draw2d.Label">
+          <attributes
+              xsi:type="gmfgen:StyleAttributes"
+              fixedFont="true"/>
+        </viewmap>
+        <behaviour
+            xsi:type="gmfgen:CustomBehaviour"
+            key="&quot;VisualEffect.Stereo&quot;"
+            editPolicyQualifiedClassName="org.eclipse.uml2.diagram.common.editpolicies.ClassifierNameVisualEffectEditPolicy"/>
+        <modelFacet
+            xsi:type="gmfgen:FeatureLabelModelFacet"
+            parser="//@labelParsers/@implementations.1">
+          <metaFeatures
+              href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/NamedElement/qualifiedName"/>
         </modelFacet>
       </labels>
     </topLevelNodes>
@@ -2668,6 +2921,10 @@
     <implementations
         xsi:type="gmfgen:PredefinedParser"
         uses="//@diagram/@childNodes.0/@labelModelFacet //@diagram/@topLevelNodes.0/@labels.0/@modelFacet //@diagram/@childNodes.5/@labelModelFacet //@diagram/@childNodes.4/@labels.0/@modelFacet //@diagram/@childNodes.3/@labels.0/@modelFacet //@diagram/@childNodes.2/@labels.0/@modelFacet //@diagram/@childNodes.7/@labelModelFacet //@diagram/@childNodes.6/@labels.0/@modelFacet //@diagram/@childNodes.8/@labels.0/@modelFacet //@diagram/@childNodes.1/@labels.0/@modelFacet //@diagram/@topLevelNodes.1/@labels.0/@modelFacet //@diagram/@topLevelNodes.2/@labels.0/@modelFacet //@diagram/@topLevelNodes.3/@labels.0/@modelFacet //@diagram/@topLevelNodes.4/@labels.0/@modelFacet //@diagram/@topLevelNodes.5/@labels.0/@modelFacet //@diagram/@links.0/@labels.0/@modelFacet //@diagram/@links.1/@labels.0/@modelFacet //@diagram/@links.3/@labels.0/@modelFacet //@diagram/@links.4/@labels.0/@modelFacet"/>
+    <implementations
+        xsi:type="gmfgen:CustomParser"
+        uses="//@diagram/@topLevelNodes.3/@labels.1/@modelFacet //@diagram/@topLevelNodes.4/@labels.1/@modelFacet //@diagram/@childNodes.1/@labels.1/@modelFacet //@diagram/@childNodes.8/@labels.1/@modelFacet //@diagram/@childNodes.4/@labels.1/@modelFacet //@diagram/@topLevelNodes.5/@labels.1/@modelFacet //@diagram/@childNodes.2/@labels.1/@modelFacet //@diagram/@childNodes.3/@labels.1/@modelFacet //@diagram/@topLevelNodes.2/@labels.1/@modelFacet //@diagram/@topLevelNodes.1/@labels.1/@modelFacet //@diagram/@childNodes.6/@labels.1/@modelFacet"
+        qualifiedName="org.eclipse.uml2.diagram.common.parser.stereotype.DeploymentAppliedStereotypeParser"/>
   </labelParsers>
   <contextMenus
       iD="org.eclipse.uml2.diagram.deploy.menu"

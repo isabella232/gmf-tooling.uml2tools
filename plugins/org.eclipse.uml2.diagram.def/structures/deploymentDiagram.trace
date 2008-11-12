@@ -18,6 +18,9 @@
     <nodeLabelTraces
         visualID="5002"
         queryText="true"/>
+    <nodeLabelTraces
+        visualID="5019"
+        queryText="true"/>
     <compartmentTraces
         visualID="7004"
         queryText="true"/>
@@ -28,12 +31,18 @@
     <nodeLabelTraces
         visualID="5003"
         queryText="true"/>
+    <nodeLabelTraces
+        visualID="5020"
+        queryText="true"/>
   </nodeTraces>
   <nodeTraces
       visualID="2005"
       queryText="(let _eClass_:ecore::EClass = modelFacet.metaClass.ecoreClass in _eClass_.ePackage.nsURI = 'http://www.eclipse.org/uml2/3.0.0/UML' and _eClass_.name = 'ExecutionEnvironment') and (let _containmentMF_:ecore::EStructuralFeature = modelFacet.containmentMetaFeature.ecoreFeature in (let _eClass_:ecore::EClass = _containmentMF_.eContainingClass in _eClass_.ePackage.nsURI = 'http://www.eclipse.org/uml2/3.0.0/UML' and _eClass_.name = 'Package') and _containmentMF_.name = 'packagedElement') and ( let _childMF_:ecore::EStructuralFeature = modelFacet.childMetaFeature.ecoreFeature in (let _eClass_:ecore::EClass = _childMF_.eContainingClass in _eClass_.ePackage.nsURI = 'http://www.eclipse.org/uml2/3.0.0/UML' and _eClass_.name = 'Package') and _childMF_.name = 'ownedType')">
     <nodeLabelTraces
         visualID="5004"
+        queryText="true"/>
+    <nodeLabelTraces
+        visualID="5021"
         queryText="true"/>
     <compartmentTraces
         visualID="7002"
@@ -45,6 +54,9 @@
     <nodeLabelTraces
         visualID="5005"
         queryText="true"/>
+    <nodeLabelTraces
+        visualID="5022"
+        queryText="true"/>
     <compartmentTraces
         visualID="7009"
         queryText="true"/>
@@ -54,6 +66,9 @@
       queryText="let _eClass_:ecore::EClass = modelFacet.metaClass.ecoreClass in _eClass_.ePackage.nsURI = 'http://www.eclipse.org/uml2/3.0.0/UML' and _eClass_.name = 'DeploymentSpecification'">
     <nodeLabelTraces
         visualID="5006"
+        queryText="true"/>
+    <nodeLabelTraces
+        visualID="5023"
         queryText="true"/>
     <compartmentTraces
         visualID="7003"
@@ -68,6 +83,9 @@
     <nodeLabelTraces
         visualID="5007"
         queryText="true"/>
+    <nodeLabelTraces
+        visualID="5015"
+        queryText="true"/>
     <compartmentTraces
         visualID="7007"
         queryText="true"/>
@@ -81,6 +99,9 @@
     <nodeLabelTraces
         visualID="5010"
         queryText="true"/>
+    <nodeLabelTraces
+        visualID="5018"
+        queryText="true"/>
     <compartmentTraces
         visualID="7005"
         queryText="true"/>
@@ -90,6 +111,9 @@
       queryText="(let _eClass_:ecore::EClass = modelFacet.metaClass.ecoreClass in _eClass_.ePackage.nsURI = 'http://www.eclipse.org/uml2/3.0.0/UML' and _eClass_.name = 'ExecutionEnvironment') and (let _containmentMF_:ecore::EStructuralFeature = modelFacet.containmentMetaFeature.ecoreFeature in (let _eClass_:ecore::EClass = _containmentMF_.eContainingClass in _eClass_.ePackage.nsURI = 'http://www.eclipse.org/uml2/3.0.0/UML' and _eClass_.name = 'Node') and _containmentMF_.name = 'nestedNode')">
     <nodeLabelTraces
         visualID="5008"
+        queryText="true"/>
+    <nodeLabelTraces
+        visualID="5016"
         queryText="true"/>
     <compartmentTraces
         visualID="7006"
@@ -104,12 +128,18 @@
     <nodeLabelTraces
         visualID="5009"
         queryText="true"/>
+    <nodeLabelTraces
+        visualID="5017"
+        queryText="true"/>
   </childNodeTraces>
   <childNodeTraces
       visualID="3008"
       queryText="(let _eClass_:ecore::EClass = modelFacet.metaClass.ecoreClass in _eClass_.ePackage.nsURI = 'http://www.eclipse.org/uml2/3.0.0/UML' and _eClass_.name = 'Artifact') and (let _containmentMF_:ecore::EStructuralFeature = modelFacet.containmentMetaFeature.ecoreFeature in (let _eClass_:ecore::EClass = _containmentMF_.eContainingClass in _eClass_.ePackage.nsURI = 'http://www.eclipse.org/uml2/3.0.0/UML' and _eClass_.name = 'Artifact') and _containmentMF_.name = 'nestedArtifact')">
     <nodeLabelTraces
         visualID="5011"
+        queryText="true"/>
+    <nodeLabelTraces
+        visualID="5014"
         queryText="true"/>
     <compartmentTraces
         visualID="7008"
@@ -120,6 +150,9 @@
       queryText="(let _eClass_:ecore::EClass = modelFacet.metaClass.ecoreClass in _eClass_.ePackage.nsURI = 'http://www.eclipse.org/uml2/3.0.0/UML' and _eClass_.name = 'DeploymentSpecification') and (let _containmentMF_:ecore::EStructuralFeature = modelFacet.containmentMetaFeature.ecoreFeature in (let _eClass_:ecore::EClass = _containmentMF_.eContainingClass in _eClass_.ePackage.nsURI = 'http://www.eclipse.org/uml2/3.0.0/UML' and _eClass_.name = 'Artifact') and _containmentMF_.name = 'nestedArtifact')">
     <nodeLabelTraces
         visualID="5012"
+        queryText="true"/>
+    <nodeLabelTraces
+        visualID="5013"
         queryText="true"/>
     <compartmentTraces
         visualID="7010"

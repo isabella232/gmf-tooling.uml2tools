@@ -13,6 +13,7 @@ import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.uml2.diagram.deploy.edit.parts.Artifact4EditPart;
 import org.eclipse.uml2.diagram.deploy.edit.parts.ArtifactArtifactFigure_contents2EditPart;
 import org.eclipse.uml2.diagram.deploy.edit.parts.ArtifactFileName3EditPart;
+import org.eclipse.uml2.diagram.deploy.edit.parts.ArtifactStereo3EditPart;
 import org.eclipse.uml2.diagram.deploy.part.UMLVisualIDRegistry;
 
 /**
@@ -45,6 +46,7 @@ public class Artifact4ViewFactory extends AbstractShapeViewFactory {
 			eObjectAdapter = new EObjectAdapter(eObject);
 		}
 		getViewService().createNode(eObjectAdapter, view, UMLVisualIDRegistry.getType(ArtifactFileName3EditPart.VISUAL_ID), ViewUtil.APPEND, true, getPreferencesHint());
+		getViewService().createNode(eObjectAdapter, view, UMLVisualIDRegistry.getType(ArtifactStereo3EditPart.VISUAL_ID), ViewUtil.APPEND, true, getPreferencesHint());
 		getViewService().createNode(eObjectAdapter, view, UMLVisualIDRegistry.getType(ArtifactArtifactFigure_contents2EditPart.VISUAL_ID), ViewUtil.APPEND, true, getPreferencesHint());
 	}
 
