@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<notation:Diagram xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.1/notation" xmlns:uml="http://www.eclipse.org/uml2/2.1.0/UML" xmi:id="_TRn3lJuWEd2SfoQicxEfTw" type="UMLProfile" name="18.10 Defining a simple EJB profile.umlprofile_diagram" measurementUnit="Pixel">
+<notation:Diagram xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.1/notation" xmlns:uml="http://www.eclipse.org/uml2/3.0.0/UML" xmi:id="_TRn3lJuWEd2SfoQicxEfTw" type="UMLProfile" name="18.10 Defining a simple EJB profile.umlprofile_diagram" measurementUnit="Pixel">
   <children xmi:type="notation:Node" xmi:id="_TjWgwJuWEd2SfoQicxEfTw" type="2007">
     <children xmi:type="notation:Node" xmi:id="_TjWgw5uWEd2SfoQicxEfTw" type="5009"/>
     <children xmi:type="notation:Node" xmi:id="_TjWgxJuWEd2SfoQicxEfTw" type="7005">
@@ -35,19 +35,19 @@
     <children xmi:type="notation:Node" xmi:id="_aiigcJuWEd2SfoQicxEfTw" type="5008"/>
     <styles xmi:type="notation:ShapeStyle" xmi:id="_aiF0gZuWEd2SfoQicxEfTw" lineColor="0"/>
     <element xmi:type="uml:ElementImport" href="18.10 Defining a simple EJB profile.profile.uml#_ah8qkJuWEd2SfoQicxEfTw"/>
-    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_aiF0gpuWEd2SfoQicxEfTw" x="24" y="156" width="86" height="52"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_aiF0gpuWEd2SfoQicxEfTw" x="96" y="192" width="86" height="52"/>
   </children>
   <children xmi:type="notation:Node" xmi:id="_cc4GMZuWEd2SfoQicxEfTw" type="2006">
     <children xmi:type="notation:Node" xmi:id="_cc4GNJuWEd2SfoQicxEfTw" type="5008"/>
     <styles xmi:type="notation:ShapeStyle" xmi:id="_cc4GMpuWEd2SfoQicxEfTw" lineColor="0"/>
     <element xmi:type="uml:ElementImport" href="18.10 Defining a simple EJB profile.profile.uml#_cc4GMJuWEd2SfoQicxEfTw"/>
-    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_cc4GM5uWEd2SfoQicxEfTw" x="588" y="132" width="97" height="61"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_cc4GM5uWEd2SfoQicxEfTw" x="660" y="168" width="97" height="61"/>
   </children>
   <children xmi:type="notation:Node" xmi:id="_ep2UEZuWEd2SfoQicxEfTw" type="2006">
     <children xmi:type="notation:Node" xmi:id="_ep2UFJuWEd2SfoQicxEfTw" type="5008"/>
     <styles xmi:type="notation:ShapeStyle" xmi:id="_ep2UEpuWEd2SfoQicxEfTw" lineColor="0"/>
     <element xmi:type="uml:ElementImport" href="18.10 Defining a simple EJB profile.profile.uml#_ep2UEJuWEd2SfoQicxEfTw"/>
-    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_ep2UE5uWEd2SfoQicxEfTw" x="588" y="240" width="106" height="52"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_ep2UE5uWEd2SfoQicxEfTw" x="660" y="276" width="106" height="52"/>
   </children>
   <children xmi:type="notation:Node" xmi:id="_ifkocJuWEd2SfoQicxEfTw" type="2001">
     <children xmi:type="notation:Node" xmi:id="_if3jYJuWEd2SfoQicxEfTw" type="5001"/>
@@ -63,7 +63,7 @@
     </children>
     <styles xmi:type="notation:ShapeStyle" xmi:id="_ifkocZuWEd2SfoQicxEfTw" lineColor="0"/>
     <element xmi:type="uml:Stereotype" href="18.10 Defining a simple EJB profile.profile.uml#_ifRtgJuWEd2SfoQicxEfTw"/>
-    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_ifkocpuWEd2SfoQicxEfTw" x="192" y="156"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_ifkocpuWEd2SfoQicxEfTw" x="264" y="192"/>
   </children>
   <children xmi:type="notation:Node" xmi:id="_j9KAwJuWEd2SfoQicxEfTw" type="2001">
     <children xmi:type="notation:Node" xmi:id="_j9KAw5uWEd2SfoQicxEfTw" type="5001"/>
@@ -79,7 +79,7 @@
     </children>
     <styles xmi:type="notation:ShapeStyle" xmi:id="_j9KAwZuWEd2SfoQicxEfTw" lineColor="0"/>
     <element xmi:type="uml:Stereotype" href="18.10 Defining a simple EJB profile.profile.uml#_j82ewJuWEd2SfoQicxEfTw"/>
-    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_j9KAwpuWEd2SfoQicxEfTw" x="390" y="222"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_j9KAwpuWEd2SfoQicxEfTw" x="462" y="258"/>
   </children>
   <children xmi:type="notation:Node" xmi:id="_lS_LQJuWEd2SfoQicxEfTw" type="2001">
     <children xmi:type="notation:Node" xmi:id="_lS_LQ5uWEd2SfoQicxEfTw" type="5001"/>
@@ -99,7 +99,7 @@
     </children>
     <styles xmi:type="notation:ShapeStyle" xmi:id="_lS_LQZuWEd2SfoQicxEfTw" lineColor="0"/>
     <element xmi:type="uml:Stereotype" href="18.10 Defining a simple EJB profile.profile.uml#_lSrpQJuWEd2SfoQicxEfTw"/>
-    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_lS_LQpuWEd2SfoQicxEfTw" x="384" y="144"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_lS_LQpuWEd2SfoQicxEfTw" x="456" y="180"/>
   </children>
   <children xmi:type="notation:Node" xmi:id="_Uur2AJuXEd2SfoQicxEfTw" type="2001">
     <children xmi:type="notation:Node" xmi:id="_Uur2A5uXEd2SfoQicxEfTw" type="5001"/>
@@ -115,7 +115,7 @@
     </children>
     <styles xmi:type="notation:ShapeStyle" xmi:id="_Uur2AZuXEd2SfoQicxEfTw" lineColor="0"/>
     <element xmi:type="uml:Stereotype" href="18.10 Defining a simple EJB profile.profile.uml#_UuisEJuXEd2SfoQicxEfTw"/>
-    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_Uur2ApuXEd2SfoQicxEfTw" x="768" y="132"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_Uur2ApuXEd2SfoQicxEfTw" x="840" y="168"/>
   </children>
   <children xmi:type="notation:Node" xmi:id="_U9cDsJuXEd2SfoQicxEfTw" type="2001">
     <children xmi:type="notation:Node" xmi:id="_U9cDs5uXEd2SfoQicxEfTw" type="5001"/>
@@ -131,7 +131,7 @@
     </children>
     <styles xmi:type="notation:ShapeStyle" xmi:id="_U9cDsZuXEd2SfoQicxEfTw" lineColor="0"/>
     <element xmi:type="uml:Stereotype" href="18.10 Defining a simple EJB profile.profile.uml#_U9JIwJuXEd2SfoQicxEfTw"/>
-    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_U9cDspuXEd2SfoQicxEfTw" x="768" y="216"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_U9cDspuXEd2SfoQicxEfTw" x="840" y="252"/>
   </children>
   <children xmi:type="notation:Node" xmi:id="_YEX_cJuXEd2SfoQicxEfTw" type="2001">
     <children xmi:type="notation:Node" xmi:id="_YEX_c5uXEd2SfoQicxEfTw" type="5001"/>
@@ -151,7 +151,7 @@
     </children>
     <styles xmi:type="notation:ShapeStyle" xmi:id="_YEX_cZuXEd2SfoQicxEfTw" lineColor="0"/>
     <element xmi:type="uml:Stereotype" href="18.10 Defining a simple EJB profile.profile.uml#_YEOOcJuXEd2SfoQicxEfTw"/>
-    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_YEX_cpuXEd2SfoQicxEfTw" x="768" y="300"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_YEX_cpuXEd2SfoQicxEfTw" x="840" y="336"/>
   </children>
   <children xmi:type="notation:Node" xmi:id="_yVF6MJuXEd2SfoQicxEfTw" type="Note">
     <children xmi:type="notation:Node" xmi:id="_yVF6NZuXEd2SfoQicxEfTw" type="DiagramName">
@@ -160,11 +160,11 @@
     <children xmi:type="notation:Node" xmi:id="_yVF6NpuXEd2SfoQicxEfTw" type="Description">
       <element xsi:nil="true"/>
     </children>
-    <styles xmi:type="notation:ShapeStyle" xmi:id="_yVF6MZuXEd2SfoQicxEfTw" description="UML 2.1 Specification                                                                                                                                                                         18.10 Defining a simple EJB profile.umlprofile_diagram" fillColor="13369343" lineColor="6737151" lineWidth="1"/>
+    <styles xmi:type="notation:ShapeStyle" xmi:id="_yVF6MZuXEd2SfoQicxEfTw" description="UML 2.1 Specification                                                                                                                                                                         18.10 Defining a simple EJB profile" fillColor="13369343" lineColor="6737151" lineWidth="1"/>
     <styles xmi:type="notation:TextStyle" xmi:id="_yVF6MpuXEd2SfoQicxEfTw"/>
     <styles xmi:type="notation:LineTypeStyle" xmi:id="_yVF6M5uXEd2SfoQicxEfTw"/>
     <element xsi:nil="true"/>
-    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_yVF6NJuXEd2SfoQicxEfTw" x="12" y="444" width="805" height="49"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_yVF6NJuXEd2SfoQicxEfTw" x="12" y="480" width="805" height="49"/>
   </children>
   <children xmi:type="notation:Node" xmi:id="_993UIJuXEd2SfoQicxEfTw" type="Note">
     <children xmi:type="notation:Node" xmi:id="_9-BFIJuXEd2SfoQicxEfTw" type="DiagramName">
@@ -177,7 +177,7 @@
     <styles xmi:type="notation:TextStyle" xmi:id="_993UIpuXEd2SfoQicxEfTw"/>
     <styles xmi:type="notation:LineTypeStyle" xmi:id="_993UI5uXEd2SfoQicxEfTw"/>
     <element xsi:nil="true"/>
-    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_993UJJuXEd2SfoQicxEfTw" x="96" y="24" width="146" height="97"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_993UJJuXEd2SfoQicxEfTw" x="132" y="12" width="146" height="97"/>
   </children>
   <children xmi:type="notation:Node" xmi:id="_EPAiEJuYEd2SfoQicxEfTw" type="Note">
     <children xmi:type="notation:Node" xmi:id="_EPAiFZuYEd2SfoQicxEfTw" type="DiagramName">
@@ -186,7 +186,7 @@
     <children xmi:type="notation:Node" xmi:id="_EPAiFpuYEd2SfoQicxEfTw" type="Description">
       <element xsi:nil="true"/>
     </children>
-    <styles xmi:type="notation:ShapeStyle" xmi:id="_EPAiEZuYEd2SfoQicxEfTw" description="These are metaclasses. They marked with &lt;&lt;metaclass>> keyword. Metaclasse defines what elements are extended" fillColor="14671871" lineColor="6737151" lineWidth="1"/>
+    <styles xmi:type="notation:ShapeStyle" xmi:id="_EPAiEZuYEd2SfoQicxEfTw" description="These are metaclasses. They marked with &lt;&lt;metaclass>> keyword. Metaclass defines what elements are extended" fillColor="14671871" lineColor="6737151" lineWidth="1"/>
     <styles xmi:type="notation:TextStyle" xmi:id="_EPAiEpuYEd2SfoQicxEfTw"/>
     <styles xmi:type="notation:LineTypeStyle" xmi:id="_EPAiE5uYEd2SfoQicxEfTw"/>
     <element xsi:nil="true"/>
@@ -216,7 +216,7 @@
     <styles xmi:type="notation:TextStyle" xmi:id="_uR-_MpuZEd2SfoQicxEfTw"/>
     <styles xmi:type="notation:LineTypeStyle" xmi:id="_uR-_M5uZEd2SfoQicxEfTw"/>
     <element xsi:nil="true"/>
-    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_uR-_NJuZEd2SfoQicxEfTw" x="24" y="240" width="145" height="37"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_uR-_NJuZEd2SfoQicxEfTw" x="24" y="276" width="145" height="37"/>
   </children>
   <children xmi:type="notation:Node" xmi:id="_y5LMwJuZEd2SfoQicxEfTw" type="Note">
     <children xmi:type="notation:Node" xmi:id="_y5LMxZuZEd2SfoQicxEfTw" type="DiagramName">
@@ -235,7 +235,7 @@
     <children xmi:type="notation:Node" xmi:id="_XtLQ0KHAEd2sdKESbSpQFQ" type="5010"/>
     <styles xmi:type="notation:ShapeStyle" xmi:id="_XtCG4aHAEd2sdKESbSpQFQ" lineColor="0"/>
     <element xmi:type="uml:Constraint" href="18.10 Defining a simple EJB profile.profile.uml#_XrsDEKHAEd2sdKESbSpQFQ"/>
-    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_XtCG4qHAEd2sdKESbSpQFQ" x="264" y="324" width="301" height="61"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_XtCG4qHAEd2sdKESbSpQFQ" x="336" y="360" width="301" height="61"/>
   </children>
   <children xmi:type="notation:Node" xmi:id="_tUWNkaHAEd2sdKESbSpQFQ" type="Note">
     <children xmi:type="notation:Node" xmi:id="_tUWNkqHAEd2sdKESbSpQFQ" type="DiagramName">
@@ -248,11 +248,13 @@
     <styles xmi:type="notation:TextStyle" xmi:id="_tUWNlaHAEd2sdKESbSpQFQ"/>
     <styles xmi:type="notation:LineTypeStyle" xmi:id="_tUWNlqHAEd2sdKESbSpQFQ"/>
     <element xsi:nil="true"/>
-    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_tUWNl6HAEd2sdKESbSpQFQ" x="636" y="372" width="85" height="49"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_tUWNl6HAEd2sdKESbSpQFQ" x="660" y="384" width="85" height="49"/>
   </children>
   <children xmi:type="notation:Node" xmi:id="_HkFpMKHHEd2soN1VZoaElQ" type="2003">
     <children xmi:type="notation:Node" xmi:id="_HkFpM6HHEd2soN1VZoaElQ" type="5005"/>
-    <children xmi:type="notation:Node" xmi:id="_HkPaMKHHEd2soN1VZoaElQ" type="5011"/>
+    <children xmi:type="notation:Node" xmi:id="_HkPaMKHHEd2soN1VZoaElQ" type="5011">
+      <styles xmi:type="notation:FontStyle" xmi:id="_YokpALDdEd2RHoFkkiby2g" bold="true"/>
+    </children>
     <children xmi:type="notation:Node" xmi:id="_HkPaMaHHEd2soN1VZoaElQ" type="7004">
       <children xmi:type="notation:Node" xmi:id="_7PuvYJuWEd2SfoQicxEfTw" type="3005">
         <element xmi:type="uml:EnumerationLiteral" href="18.10 Defining a simple EJB profile.profile.uml#_7PSqgJuWEd2SfoQicxEfTw"/>
@@ -268,7 +270,20 @@
     </children>
     <styles xmi:type="notation:ShapeStyle" xmi:id="_HkFpMaHHEd2soN1VZoaElQ" lineColor="0"/>
     <element xmi:type="uml:Enumeration" href="18.10 Defining a simple EJB profile.profile.uml#_HjDHYKHHEd2soN1VZoaElQ"/>
-    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_HkFpMqHHEd2soN1VZoaElQ" x="132" y="312"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_HkFpMqHHEd2soN1VZoaElQ" x="204" y="348"/>
+  </children>
+  <children xmi:type="notation:Node" xmi:id="_iUR5ULDdEd2RHoFkkiby2g" type="Note">
+    <children xmi:type="notation:Node" xmi:id="_iUR5UbDdEd2RHoFkkiby2g" type="DiagramName">
+      <element xsi:nil="true"/>
+    </children>
+    <children xmi:type="notation:Node" xmi:id="_iUR5UrDdEd2RHoFkkiby2g" type="Description">
+      <element xsi:nil="true"/>
+    </children>
+    <styles xmi:type="notation:ShapeStyle" xmi:id="_iUR5U7DdEd2RHoFkkiby2g" description="Generalization link" fillColor="14671871" lineColor="6737151" lineWidth="1"/>
+    <styles xmi:type="notation:TextStyle" xmi:id="_iUR5VLDdEd2RHoFkkiby2g"/>
+    <styles xmi:type="notation:LineTypeStyle" xmi:id="_iUR5VbDdEd2RHoFkkiby2g"/>
+    <element xsi:nil="true"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_iUR5VrDdEd2RHoFkkiby2g" x="24" y="132" width="145" height="37"/>
   </children>
   <styles xmi:type="notation:DiagramStyle" xmi:id="_TRn3lZuWEd2SfoQicxEfTw"/>
   <element xmi:type="uml:Profile" href="18.10 Defining a simple EJB profile.profile.uml#_TRBaoJuWEd2SfoQicxEfTw"/>
@@ -340,7 +355,7 @@
     <styles xmi:type="notation:ArrowStyle" xmi:id="_QUGEkpuYEd2SfoQicxEfTw"/>
     <styles xmi:type="notation:LineTypeStyle" xmi:id="_QUGEk5uYEd2SfoQicxEfTw"/>
     <element xsi:nil="true"/>
-    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_QUGElJuYEd2SfoQicxEfTw" points="[12, -17, -64, 70]$[23, -88, -53, -1]"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_QUGElJuYEd2SfoQicxEfTw" points="[-24, 50, -52, -194]$[-61, 122, -89, -122]$[-61, 207, -89, -37]$[-25, 222, -53, -22]"/>
     <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_QUGElZuYEd2SfoQicxEfTw" id="(0.2010582,0.3090909)"/>
   </edges>
   <edges xmi:type="notation:Edge" xmi:id="_Qv9hMJuYEd2SfoQicxEfTw" type="NoteAttachment" source="_EPAiEJuYEd2SfoQicxEfTw" target="_cc4GMZuWEd2SfoQicxEfTw">
@@ -365,17 +380,17 @@
     <styles xmi:type="notation:ArrowStyle" xmi:id="_wzzbspuZEd2SfoQicxEfTw"/>
     <styles xmi:type="notation:LineTypeStyle" xmi:id="_wzzbs5uZEd2SfoQicxEfTw"/>
     <element xsi:nil="true"/>
-    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_wzzbtJuZEd2SfoQicxEfTw" points="[-22, 0, 0, -58]$[-22, 0, 0, -58]$[-22, 58, 0, 0]"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_wzzbtJuZEd2SfoQicxEfTw" points="[1, 0, 95, -34]$[-33, 24, 61, -10]$[-94, 34, 0, 0]"/>
     <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_wz9MsJuZEd2SfoQicxEfTw" id="(0.4678899,0.24561404)"/>
     <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_wz9MsZuZEd2SfoQicxEfTw" id="(0.7034483,0.0)"/>
   </edges>
-  <edges xmi:type="notation:Edge" xmi:id="_x5GP0JuZEd2SfoQicxEfTw" type="NoteAttachment" source="_GN4fAJuXEd2SfoQicxEfTw" target="_uR-_MJuZEd2SfoQicxEfTw">
+  <edges xmi:type="notation:Edge" xmi:id="_x5GP0JuZEd2SfoQicxEfTw" type="NoteAttachment" source="_aADpA5uXEd2SfoQicxEfTw" target="_uR-_MJuZEd2SfoQicxEfTw">
     <styles xmi:type="notation:ConnectorStyle" xmi:id="_x5GP0ZuZEd2SfoQicxEfTw" lineColor="0" lineWidth="1"/>
     <styles xmi:type="notation:ArrowStyle" xmi:id="_x5GP0puZEd2SfoQicxEfTw"/>
     <styles xmi:type="notation:LineTypeStyle" xmi:id="_x5GP05uZEd2SfoQicxEfTw"/>
     <element xsi:nil="true"/>
-    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_x5GP1JuZEd2SfoQicxEfTw" points="[-2, 0, 216, -45]$[-194, 41, 24, -4]"/>
-    <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_x5GP1ZuZEd2SfoQicxEfTw" id="(0.40458015,0.4090909)"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_x5GP1JuZEd2SfoQicxEfTw" points="[-6, 0, 665, 41]$[-185, 13, 486, 54]$[-543, 0, 128, 41]$[-643, -31, 28, 10]"/>
+    <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_x5GP1ZuZEd2SfoQicxEfTw" id="(0.6039604,0.5)"/>
     <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_x5GP1puZEd2SfoQicxEfTw" id="(0.8,0.3243243)"/>
   </edges>
   <edges xmi:type="notation:Edge" xmi:id="_q21pUKHAEd2sdKESbSpQFQ" type="4003" source="_XtCG4KHAEd2sdKESbSpQFQ" target="_ifkocJuWEd2SfoQicxEfTw">
@@ -402,5 +417,14 @@
     <element xsi:nil="true"/>
     <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_MN00dKHHEd2soN1VZoaElQ" points="[42, -8, -47, 9]$[66, -32, -23, -15]"/>
     <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_MN-lcKHHEd2soN1VZoaElQ" id="(0.23,0.26027396)"/>
+  </edges>
+  <edges xmi:type="notation:Edge" xmi:id="_lZxDkLDdEd2RHoFkkiby2g" type="NoteAttachment" source="_iUR5ULDdEd2RHoFkkiby2g" target="_HAGmIJuXEd2SfoQicxEfTw">
+    <styles xmi:type="notation:ConnectorStyle" xmi:id="_lZxDkbDdEd2RHoFkkiby2g" lineColor="0" lineWidth="1"/>
+    <styles xmi:type="notation:ArrowStyle" xmi:id="_lZxDkrDdEd2RHoFkkiby2g"/>
+    <styles xmi:type="notation:LineTypeStyle" xmi:id="_lZxDk7DdEd2RHoFkkiby2g"/>
+    <element xsi:nil="true"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_lZxDlLDdEd2RHoFkkiby2g" points="[17, 0, -252, -70]$[101, 0, -168, -70]$[221, 22, -48, -48]$[257, 46, -12, -24]$[269, 70, 0, 0]"/>
+    <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_laNIcLDdEd2RHoFkkiby2g" id="(0.8827586,0.4054054)"/>
+    <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_laNIcbDdEd2RHoFkkiby2g" id="(0.60504204,0.41463414)"/>
   </edges>
 </notation:Diagram>
