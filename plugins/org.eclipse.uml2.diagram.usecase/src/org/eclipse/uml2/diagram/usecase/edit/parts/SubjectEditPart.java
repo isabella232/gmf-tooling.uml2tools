@@ -9,10 +9,12 @@ import java.util.Set;
 
 import org.eclipse.draw2d.IFigure;
 import org.eclipse.draw2d.Label;
+import org.eclipse.draw2d.LineBorder;
 import org.eclipse.draw2d.MarginBorder;
 import org.eclipse.draw2d.RectangleFigure;
 import org.eclipse.draw2d.Shape;
 import org.eclipse.draw2d.StackLayout;
+import org.eclipse.draw2d.ToolbarLayout;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EStructuralFeature;
@@ -147,6 +149,10 @@ public class SubjectEditPart extends ShapeNodeEditPart implements PrimaryShapeEd
 	protected boolean addFixedChild(EditPart childEditPart) {
 		if (childEditPart instanceof SubjectNameEditPart) {
 			((SubjectNameEditPart) childEditPart).setLabel(getPrimaryShape().getUseCaseSubjectFigure_name());
+			return true;
+		}
+		if (childEditPart instanceof ComponentStereoEditPart) {
+			((ComponentStereoEditPart) childEditPart).setLabel(getPrimaryShape().getUseCaseSubjectFigure_stereo());
 			return true;
 		}
 		if (childEditPart instanceof SubjectUsecasesEditPart) {
@@ -834,6 +840,11 @@ public class SubjectEditPart extends ShapeNodeEditPart implements PrimaryShapeEd
 		/**
 		 * @generated
 		 */
+		private Label fUseCaseSubjectFigure_stereo;
+
+		/**
+		 * @generated
+		 */
 		public UseCaseSubjectFigure() {
 
 			PileLayout layoutThis = new PileLayout();
@@ -852,12 +863,43 @@ public class SubjectEditPart extends ShapeNodeEditPart implements PrimaryShapeEd
 		private void createContents() {
 
 			RectangleFigure useCaseSubjectFigure_header0 = new RectangleFigure();
+			useCaseSubjectFigure_header0.setBorder(new LineBorder(null, getMapMode().DPtoLP(1)));
 
 			this.add(useCaseSubjectFigure_header0);
 
-			CenterLayout layoutUseCaseSubjectFigure_header0 = new CenterLayout();
+			ToolbarLayout layoutUseCaseSubjectFigure_header0 = new ToolbarLayout();
+			layoutUseCaseSubjectFigure_header0.setStretchMinorAxis(true);
+			layoutUseCaseSubjectFigure_header0.setMinorAlignment(ToolbarLayout.ALIGN_TOPLEFT);
+
+			layoutUseCaseSubjectFigure_header0.setSpacing(0);
+			layoutUseCaseSubjectFigure_header0.setVertical(true);
 
 			useCaseSubjectFigure_header0.setLayoutManager(layoutUseCaseSubjectFigure_header0);
+
+			RectangleFigure useCaseSubjectFigure_StereoContainer1 = new RectangleFigure();
+			useCaseSubjectFigure_StereoContainer1.setOutline(false);
+
+			useCaseSubjectFigure_header0.add(useCaseSubjectFigure_StereoContainer1);
+
+			CenterLayout layoutUseCaseSubjectFigure_StereoContainer1 = new CenterLayout();
+
+			useCaseSubjectFigure_StereoContainer1.setLayoutManager(layoutUseCaseSubjectFigure_StereoContainer1);
+
+			fUseCaseSubjectFigure_stereo = new Label();
+			fUseCaseSubjectFigure_stereo.setText("");
+
+			fUseCaseSubjectFigure_stereo.setBorder(new MarginBorder(getMapMode().DPtoLP(0), getMapMode().DPtoLP(5), getMapMode().DPtoLP(5), getMapMode().DPtoLP(5)));
+
+			useCaseSubjectFigure_StereoContainer1.add(fUseCaseSubjectFigure_stereo);
+
+			RectangleFigure useCaseSubjectFigure_NameContainer1 = new RectangleFigure();
+			useCaseSubjectFigure_NameContainer1.setOutline(false);
+
+			useCaseSubjectFigure_header0.add(useCaseSubjectFigure_NameContainer1);
+
+			CenterLayout layoutUseCaseSubjectFigure_NameContainer1 = new CenterLayout();
+
+			useCaseSubjectFigure_NameContainer1.setLayoutManager(layoutUseCaseSubjectFigure_NameContainer1);
 
 			fUseCaseSubjectFigure_name = new Label();
 			fUseCaseSubjectFigure_name.setText("");
@@ -866,7 +908,7 @@ public class SubjectEditPart extends ShapeNodeEditPart implements PrimaryShapeEd
 
 			fUseCaseSubjectFigure_name.setBorder(new MarginBorder(getMapMode().DPtoLP(0), getMapMode().DPtoLP(5), getMapMode().DPtoLP(5), getMapMode().DPtoLP(5)));
 
-			useCaseSubjectFigure_header0.add(fUseCaseSubjectFigure_name);
+			useCaseSubjectFigure_NameContainer1.add(fUseCaseSubjectFigure_name);
 
 			fUseCaseSubjectFigure_contents = new RectangleFigure();
 
@@ -906,6 +948,13 @@ public class SubjectEditPart extends ShapeNodeEditPart implements PrimaryShapeEd
 		 */
 		public Label getUseCaseSubjectFigure_name() {
 			return fUseCaseSubjectFigure_name;
+		}
+
+		/**
+		 * @generated
+		 */
+		public Label getUseCaseSubjectFigure_stereo() {
+			return fUseCaseSubjectFigure_stereo;
 		}
 
 	}

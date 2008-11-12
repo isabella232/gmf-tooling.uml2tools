@@ -11,6 +11,7 @@
  */
 package org.eclipse.uml2.diagram.common.parser.stereotype;
 
+import org.eclipse.uml2.uml.Actor;
 import org.eclipse.uml2.uml.Artifact;
 import org.eclipse.uml2.uml.Component;
 import org.eclipse.uml2.uml.DataType;
@@ -18,6 +19,7 @@ import org.eclipse.uml2.uml.Element;
 import org.eclipse.uml2.uml.Enumeration;
 import org.eclipse.uml2.uml.Interface;
 import org.eclipse.uml2.uml.PrimitiveType;
+import org.eclipse.uml2.uml.UseCase;
 
 
 public class ClassifierAppliedStereotypeParser extends AppliedStereotypeParser {
@@ -27,6 +29,8 @@ public class ClassifierAppliedStereotypeParser extends AppliedStereotypeParser {
 	private static final String ENUMERATION_LABEL = "enumeration"; //$NON-NLS-1$
 	private static final String COMPONENT_LABEL = "component"; //$NON-NLS-1$
 	private static final String ARTIFACT_LABEL = "artifact"; //$NON-NLS-1$
+	private static final String USECASE_LABEL = "usecase"; //$NON-NLS-1$
+	private static final String ACTOR_LABEL = "actor"; //$NON-NLS-1$
 
 	@Override
 	protected String getElementLabel(Element element) {
@@ -47,6 +51,12 @@ public class ClassifierAppliedStereotypeParser extends AppliedStereotypeParser {
 		}
 		if (element instanceof Artifact) {
 			return ARTIFACT_LABEL;
+		}
+		if (element instanceof UseCase) {
+			return USECASE_LABEL;
+		}
+		if (element instanceof Actor) {
+			return ACTOR_LABEL;
 		}
 		return null;
 	}

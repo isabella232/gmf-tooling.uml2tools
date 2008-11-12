@@ -134,8 +134,6 @@
             <children
                 xsi:type="gmfgraph:Label"
                 name="UseCaseAsClassFigure_stereo">
-              <font
-                  xsi:type="gmfgraph:BasicFont"/>
               <insets
                   top="5"
                   left="5"
@@ -195,7 +193,7 @@
         <children
             xsi:type="gmfgraph:Label"
             name="ActorAsRectangleFigure_fixed_actor"
-            text="\u00ABactor\u00BB"/>
+            text=""/>
         <children
             xsi:type="gmfgraph:Rectangle"
             name="ActorAsRectangleFigure_NameContainer"
@@ -212,6 +210,9 @@
       <accessors
           accessor="getActorAsRectangleFigure_name"
           figure="//@figures.0/@descriptors.8/@actualFigure/@children.1/@children.0"/>
+      <accessors
+          accessor="getActorAsRectangleFigure_fixed_actor"
+          figure="//@figures.0/@descriptors.8/@actualFigure/@children.0"/>
     </descriptors>
     <descriptors
         name="UseCaseSubjectFigure">
@@ -234,17 +235,47 @@
             xsi:type="gmfgraph:Rectangle"
             name="UseCaseSubjectFigure_header">
           <layout
-              xsi:type="gmfgraph:CustomLayout"
-              qualifiedClassName="org.eclipse.uml2.diagram.common.draw2d.CenterLayout"/>
+              xsi:type="gmfgraph:FlowLayout"
+              vertical="true"
+              matchMinorSize="true"
+              forceSingleLine="true"
+              majorSpacing="0"/>
+          <border
+              xsi:type="gmfgraph:LineBorder"/>
           <children
-              xsi:type="gmfgraph:Label"
-              name="UseCaseSubjectFigure_name">
-            <font
-                xsi:type="gmfgraph:BasicFont"/>
-            <insets
-                left="5"
-                bottom="5"
-                right="5"/>
+              xsi:type="gmfgraph:Rectangle"
+              name="UseCaseSubjectFigure_StereoContainer"
+              outline="false">
+            <layout
+                xsi:type="gmfgraph:CustomLayout"
+                qualifiedClassName="org.eclipse.uml2.diagram.common.draw2d.CenterLayout"/>
+            <children
+                xsi:type="gmfgraph:Label"
+                name="UseCaseSubjectFigure_stereo"
+                text="">
+              <insets
+                  left="5"
+                  bottom="5"
+                  right="5"/>
+            </children>
+          </children>
+          <children
+              xsi:type="gmfgraph:Rectangle"
+              name="UseCaseSubjectFigure_NameContainer"
+              outline="false">
+            <layout
+                xsi:type="gmfgraph:CustomLayout"
+                qualifiedClassName="org.eclipse.uml2.diagram.common.draw2d.CenterLayout"/>
+            <children
+                xsi:type="gmfgraph:Label"
+                name="UseCaseSubjectFigure_name">
+              <font
+                  xsi:type="gmfgraph:BasicFont"/>
+              <insets
+                  left="5"
+                  bottom="5"
+                  right="5"/>
+            </children>
           </children>
         </children>
         <children
@@ -259,7 +290,10 @@
           figure="//@figures.0/@descriptors.9/@actualFigure/@children.1"/>
       <accessors
           accessor="getUseCaseSubjectFigure_name"
-          figure="//@figures.0/@descriptors.9/@actualFigure/@children.0/@children.0"/>
+          figure="//@figures.0/@descriptors.9/@actualFigure/@children.0/@children.1/@children.0"/>
+      <accessors
+          accessor="getUseCaseSubjectFigure_stereo"
+          figure="//@figures.0/@descriptors.9/@actualFigure/@children.0/@children.0/@children.0"/>
     </descriptors>
   </figures>
   <nodes
@@ -376,4 +410,14 @@
       figure="UseCaseSubjectFigure"
       elementIcon="false"
       accessor="//@figures.0/@descriptors.9/@accessors.1"/>
+  <labels
+      name="ActorAsRectangleNode_stereo"
+      figure="ActorAsRectangleFigure"
+      elementIcon="false"
+      accessor="//@figures.0/@descriptors.8/@accessors.1"/>
+  <labels
+      name="SubjectNode_stereo"
+      figure="UseCaseSubjectFigure"
+      elementIcon="false"
+      accessor="//@figures.0/@descriptors.9/@accessors.2"/>
 </gmfgraph:Canvas>

@@ -138,6 +138,10 @@ public class ActorAsRectangleEditPart extends ShapeNodeEditPart implements Prima
 			((ActorName2EditPart) childEditPart).setLabel(getPrimaryShape().getActorAsRectangleFigure_name());
 			return true;
 		}
+		if (childEditPart instanceof ActorStereoEditPart) {
+			((ActorStereoEditPart) childEditPart).setLabel(getPrimaryShape().getActorAsRectangleFigure_fixed_actor());
+			return true;
+		}
 		return false;
 	}
 
@@ -804,6 +808,11 @@ public class ActorAsRectangleEditPart extends ShapeNodeEditPart implements Prima
 		/**
 		 * @generated
 		 */
+		private Label fActorAsRectangleFigure_fixed_actor;
+
+		/**
+		 * @generated
+		 */
 		public ActorAsRectangleFigure() {
 
 			ToolbarLayout layoutThis = new ToolbarLayout();
@@ -823,10 +832,10 @@ public class ActorAsRectangleEditPart extends ShapeNodeEditPart implements Prima
 		 */
 		private void createContents() {
 
-			Label actorAsRectangleFigure_fixed_actor0 = new Label();
-			actorAsRectangleFigure_fixed_actor0.setText("\u00ABactor\u00BB");
+			fActorAsRectangleFigure_fixed_actor = new Label();
+			fActorAsRectangleFigure_fixed_actor.setText("");
 
-			this.add(actorAsRectangleFigure_fixed_actor0);
+			this.add(fActorAsRectangleFigure_fixed_actor);
 
 			RectangleFigure actorAsRectangleFigure_NameContainer0 = new RectangleFigure();
 			actorAsRectangleFigure_NameContainer0.setFill(false);
@@ -869,6 +878,13 @@ public class ActorAsRectangleEditPart extends ShapeNodeEditPart implements Prima
 		 */
 		public Label getActorAsRectangleFigure_name() {
 			return fActorAsRectangleFigure_name;
+		}
+
+		/**
+		 * @generated
+		 */
+		public Label getActorAsRectangleFigure_fixed_actor() {
+			return fActorAsRectangleFigure_fixed_actor;
 		}
 
 	}

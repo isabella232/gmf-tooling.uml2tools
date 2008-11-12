@@ -12,9 +12,11 @@ import org.eclipse.uml2.diagram.usecase.edit.parts.ActorInPackageEditPart;
 import org.eclipse.uml2.diagram.usecase.edit.parts.ActorName2EditPart;
 import org.eclipse.uml2.diagram.usecase.edit.parts.ActorName3EditPart;
 import org.eclipse.uml2.diagram.usecase.edit.parts.ActorNameEditPart;
+import org.eclipse.uml2.diagram.usecase.edit.parts.ActorStereoEditPart;
 import org.eclipse.uml2.diagram.usecase.edit.parts.AssociationEditPart;
 import org.eclipse.uml2.diagram.usecase.edit.parts.AssociationSourceMultiplicityEditPart;
 import org.eclipse.uml2.diagram.usecase.edit.parts.AssociationTargetMultiplicityEditPart;
+import org.eclipse.uml2.diagram.usecase.edit.parts.ComponentStereoEditPart;
 import org.eclipse.uml2.diagram.usecase.edit.parts.ConstraintEditPart;
 import org.eclipse.uml2.diagram.usecase.edit.parts.ConstraintNameEditPart;
 import org.eclipse.uml2.diagram.usecase.edit.parts.DependencyEditPart;
@@ -48,6 +50,7 @@ import org.eclipse.uml2.diagram.usecase.edit.parts.UseCaseName3EditPart;
 import org.eclipse.uml2.diagram.usecase.edit.parts.UseCaseName4EditPart;
 import org.eclipse.uml2.diagram.usecase.edit.parts.UseCaseNameEditPart;
 import org.eclipse.uml2.diagram.usecase.edit.parts.UseCasePointsEditPart;
+import org.eclipse.uml2.diagram.usecase.edit.parts.UseCaseStereoEditPart;
 import org.eclipse.uml2.diagram.usecase.edit.parts.UseCaseinPackageEditPart;
 import org.eclipse.uml2.diagram.usecase.expressions.UMLAbstractExpression;
 import org.eclipse.uml2.diagram.usecase.expressions.UMLOCLFactory;
@@ -275,6 +278,9 @@ public class UMLVisualIDRegistry {
 			if (ActorName2EditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
+			if (ActorStereoEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
 			break;
 		case UseCaseEditPart.VISUAL_ID:
 			if (UseCaseNameEditPart.VISUAL_ID == nodeVisualID) {
@@ -288,12 +294,18 @@ public class UMLVisualIDRegistry {
 			if (UseCaseName2EditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
+			if (UseCaseStereoEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
 			if (UseCaseAsClassExtensionPointsEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
 			break;
 		case SubjectEditPart.VISUAL_ID:
 			if (SubjectNameEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			if (ComponentStereoEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
 			if (SubjectUsecasesEditPart.VISUAL_ID == nodeVisualID) {

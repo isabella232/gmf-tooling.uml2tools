@@ -12,6 +12,7 @@ import org.eclipse.gmf.runtime.diagram.ui.view.factories.AbstractShapeViewFactor
 import org.eclipse.gmf.runtime.emf.core.util.EObjectAdapter;
 import org.eclipse.gmf.runtime.notation.NotationFactory;
 import org.eclipse.gmf.runtime.notation.View;
+import org.eclipse.uml2.diagram.usecase.edit.parts.ComponentStereoEditPart;
 import org.eclipse.uml2.diagram.usecase.edit.parts.PackageEditPart;
 import org.eclipse.uml2.diagram.usecase.edit.parts.SubjectEditPart;
 import org.eclipse.uml2.diagram.usecase.edit.parts.SubjectNameEditPart;
@@ -53,6 +54,7 @@ public class SubjectViewFactory extends AbstractShapeViewFactory {
 			eObjectAdapter = new EObjectAdapter(eObject);
 		}
 		getViewService().createNode(eObjectAdapter, view, UMLVisualIDRegistry.getType(SubjectNameEditPart.VISUAL_ID), ViewUtil.APPEND, true, getPreferencesHint());
+		getViewService().createNode(eObjectAdapter, view, UMLVisualIDRegistry.getType(ComponentStereoEditPart.VISUAL_ID), ViewUtil.APPEND, true, getPreferencesHint());
 		getViewService().createNode(eObjectAdapter, view, UMLVisualIDRegistry.getType(SubjectUsecasesEditPart.VISUAL_ID), ViewUtil.APPEND, true, getPreferencesHint());
 	}
 

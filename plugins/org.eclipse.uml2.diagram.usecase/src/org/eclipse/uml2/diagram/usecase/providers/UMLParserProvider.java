@@ -16,14 +16,17 @@ import org.eclipse.uml2.diagram.common.parser.association.end.AssociationEndAppl
 import org.eclipse.uml2.diagram.common.parser.association.end.AssociationEndParser;
 import org.eclipse.uml2.diagram.common.parser.association.end.AssociationEndToString;
 import org.eclipse.uml2.diagram.common.parser.imports.ElementImportParser;
+import org.eclipse.uml2.diagram.common.parser.stereotype.ClassifierAppliedStereotypeParser;
 import org.eclipse.uml2.diagram.common.parser.valuespec.ValueSpecificationParser;
 import org.eclipse.uml2.diagram.parser.SemanticParserAdapter;
 import org.eclipse.uml2.diagram.parser.lookup.LookupSuite;
 import org.eclipse.uml2.diagram.usecase.edit.parts.ActorName2EditPart;
 import org.eclipse.uml2.diagram.usecase.edit.parts.ActorName3EditPart;
 import org.eclipse.uml2.diagram.usecase.edit.parts.ActorNameEditPart;
+import org.eclipse.uml2.diagram.usecase.edit.parts.ActorStereoEditPart;
 import org.eclipse.uml2.diagram.usecase.edit.parts.AssociationSourceMultiplicityEditPart;
 import org.eclipse.uml2.diagram.usecase.edit.parts.AssociationTargetMultiplicityEditPart;
+import org.eclipse.uml2.diagram.usecase.edit.parts.ComponentStereoEditPart;
 import org.eclipse.uml2.diagram.usecase.edit.parts.ConstraintNameEditPart;
 import org.eclipse.uml2.diagram.usecase.edit.parts.DependencyNameEditPart;
 import org.eclipse.uml2.diagram.usecase.edit.parts.ElementImportEditPart;
@@ -36,6 +39,7 @@ import org.eclipse.uml2.diagram.usecase.edit.parts.UseCaseName2EditPart;
 import org.eclipse.uml2.diagram.usecase.edit.parts.UseCaseName3EditPart;
 import org.eclipse.uml2.diagram.usecase.edit.parts.UseCaseName4EditPart;
 import org.eclipse.uml2.diagram.usecase.edit.parts.UseCaseNameEditPart;
+import org.eclipse.uml2.diagram.usecase.edit.parts.UseCaseStereoEditPart;
 import org.eclipse.uml2.diagram.usecase.parsers.MessageFormatParser;
 import org.eclipse.uml2.diagram.usecase.part.UMLVisualIDRegistry;
 import org.eclipse.uml2.uml.MultiplicityElement;
@@ -121,6 +125,21 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 	/**
 	 * @generated
 	 */
+	private ClassifierAppliedStereotypeParser actorQualifiedName_5012Parser;
+
+	/**
+	 * @generated
+	 */
+	private IParser getActorQualifiedName_5012Parser() {
+		if (actorQualifiedName_5012Parser == null) {
+			actorQualifiedName_5012Parser = new ClassifierAppliedStereotypeParser();
+		}
+		return actorQualifiedName_5012Parser;
+	}
+
+	/**
+	 * @generated
+	 */
 	private IParser useCaseName_5003Parser;
 
 	/**
@@ -169,6 +188,21 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 	/**
 	 * @generated
 	 */
+	private ClassifierAppliedStereotypeParser useCaseQualifiedName_5013Parser;
+
+	/**
+	 * @generated
+	 */
+	private IParser getUseCaseQualifiedName_5013Parser() {
+		if (useCaseQualifiedName_5013Parser == null) {
+			useCaseQualifiedName_5013Parser = new ClassifierAppliedStereotypeParser();
+		}
+		return useCaseQualifiedName_5013Parser;
+	}
+
+	/**
+	 * @generated
+	 */
 	private IParser componentName_5007Parser;
 
 	/**
@@ -188,6 +222,21 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 		EAttribute[] features = new EAttribute[] { UMLPackage.eINSTANCE.getNamedElement_Name() };
 		Parser_0_0 parser = new Parser_0_0(features);
 		return parser;
+	}
+
+	/**
+	 * @generated
+	 */
+	private ClassifierAppliedStereotypeParser componentQualifiedName_5014Parser;
+
+	/**
+	 * @generated
+	 */
+	private IParser getComponentQualifiedName_5014Parser() {
+		if (componentQualifiedName_5014Parser == null) {
+			componentQualifiedName_5014Parser = new ClassifierAppliedStereotypeParser();
+		}
+		return componentQualifiedName_5014Parser;
 	}
 
 	/**
@@ -487,12 +536,18 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 			return getActorName_5002Parser();
 		case ActorName2EditPart.VISUAL_ID:
 			return getActorName_5005Parser();
+		case ActorStereoEditPart.VISUAL_ID:
+			return getActorQualifiedName_5012Parser();
 		case UseCaseNameEditPart.VISUAL_ID:
 			return getUseCaseName_5003Parser();
 		case UseCaseName2EditPart.VISUAL_ID:
 			return getUseCaseName_5004Parser();
+		case UseCaseStereoEditPart.VISUAL_ID:
+			return getUseCaseQualifiedName_5013Parser();
 		case SubjectNameEditPart.VISUAL_ID:
 			return getComponentName_5007Parser();
+		case ComponentStereoEditPart.VISUAL_ID:
+			return getComponentQualifiedName_5014Parser();
 		case NestedPackageNameEditPart.VISUAL_ID:
 			return getPackageName_5008Parser();
 		case ConstraintNameEditPart.VISUAL_ID:

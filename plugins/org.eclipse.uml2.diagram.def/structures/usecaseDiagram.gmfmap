@@ -109,6 +109,14 @@
         <features
             href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//NamedElement/name"/>
       </labelMappings>
+      <labelMappings
+          xsi:type="gmfmap:FeatureLabelMapping"
+          editPattern="">
+        <diagramLabel
+            href="usecaseDiagram.gmfgraph#ActorAsRectangleNode_stereo"/>
+        <features
+            href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//NamedElement/qualifiedName"/>
+      </labelMappings>
       <diagramNode
           href="usecaseDiagram.gmfgraph#ActorAsRectangleNode"/>
     </ownedChild>
@@ -212,6 +220,14 @@
         <features
             href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//NamedElement/name"/>
       </labelMappings>
+      <labelMappings
+          xsi:type="gmfmap:FeatureLabelMapping"
+          editPattern="">
+        <diagramLabel
+            href="usecaseDiagram.gmfgraph#UseCaseAsClassNode_stereo"/>
+        <features
+            href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//NamedElement/qualifiedName"/>
+      </labelMappings>
       <diagramNode
           href="usecaseDiagram.gmfgraph#UseCaseAsClassNode"/>
       <children
@@ -280,6 +296,14 @@
             href="usecaseDiagram.gmfgraph#SubjectNode_name"/>
         <features
             href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//NamedElement/name"/>
+      </labelMappings>
+      <labelMappings
+          xsi:type="gmfmap:FeatureLabelMapping"
+          editPattern="">
+        <diagramLabel
+            href="usecaseDiagram.gmfgraph#SubjectNode_stereo"/>
+        <features
+            href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//NamedElement/qualifiedName"/>
       </labelMappings>
       <tool
           xsi:type="gmftool:CreationTool"

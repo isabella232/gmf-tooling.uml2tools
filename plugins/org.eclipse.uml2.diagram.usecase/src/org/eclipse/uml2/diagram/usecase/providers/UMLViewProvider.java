@@ -12,9 +12,11 @@ import org.eclipse.uml2.diagram.usecase.edit.parts.ActorInPackageEditPart;
 import org.eclipse.uml2.diagram.usecase.edit.parts.ActorName2EditPart;
 import org.eclipse.uml2.diagram.usecase.edit.parts.ActorName3EditPart;
 import org.eclipse.uml2.diagram.usecase.edit.parts.ActorNameEditPart;
+import org.eclipse.uml2.diagram.usecase.edit.parts.ActorStereoEditPart;
 import org.eclipse.uml2.diagram.usecase.edit.parts.AssociationEditPart;
 import org.eclipse.uml2.diagram.usecase.edit.parts.AssociationSourceMultiplicityEditPart;
 import org.eclipse.uml2.diagram.usecase.edit.parts.AssociationTargetMultiplicityEditPart;
+import org.eclipse.uml2.diagram.usecase.edit.parts.ComponentStereoEditPart;
 import org.eclipse.uml2.diagram.usecase.edit.parts.ConstraintConstrainedElementEditPart;
 import org.eclipse.uml2.diagram.usecase.edit.parts.ConstraintEditPart;
 import org.eclipse.uml2.diagram.usecase.edit.parts.ConstraintNameEditPart;
@@ -49,6 +51,7 @@ import org.eclipse.uml2.diagram.usecase.edit.parts.UseCaseName3EditPart;
 import org.eclipse.uml2.diagram.usecase.edit.parts.UseCaseName4EditPart;
 import org.eclipse.uml2.diagram.usecase.edit.parts.UseCaseNameEditPart;
 import org.eclipse.uml2.diagram.usecase.edit.parts.UseCasePointsEditPart;
+import org.eclipse.uml2.diagram.usecase.edit.parts.UseCaseStereoEditPart;
 import org.eclipse.uml2.diagram.usecase.edit.parts.UseCaseinPackageEditPart;
 import org.eclipse.uml2.diagram.usecase.part.UMLVisualIDRegistry;
 import org.eclipse.uml2.diagram.usecase.view.factories.ActorAsRectangleViewFactory;
@@ -56,10 +59,12 @@ import org.eclipse.uml2.diagram.usecase.view.factories.ActorInPackageViewFactory
 import org.eclipse.uml2.diagram.usecase.view.factories.ActorName2ViewFactory;
 import org.eclipse.uml2.diagram.usecase.view.factories.ActorName3ViewFactory;
 import org.eclipse.uml2.diagram.usecase.view.factories.ActorNameViewFactory;
+import org.eclipse.uml2.diagram.usecase.view.factories.ActorStereoViewFactory;
 import org.eclipse.uml2.diagram.usecase.view.factories.ActorViewFactory;
 import org.eclipse.uml2.diagram.usecase.view.factories.AssociationSourceMultiplicityViewFactory;
 import org.eclipse.uml2.diagram.usecase.view.factories.AssociationTargetMultiplicityViewFactory;
 import org.eclipse.uml2.diagram.usecase.view.factories.AssociationViewFactory;
+import org.eclipse.uml2.diagram.usecase.view.factories.ComponentStereoViewFactory;
 import org.eclipse.uml2.diagram.usecase.view.factories.ConstraintConstrainedElementViewFactory;
 import org.eclipse.uml2.diagram.usecase.view.factories.ConstraintNameViewFactory;
 import org.eclipse.uml2.diagram.usecase.view.factories.ConstraintViewFactory;
@@ -93,6 +98,7 @@ import org.eclipse.uml2.diagram.usecase.view.factories.UseCaseName3ViewFactory;
 import org.eclipse.uml2.diagram.usecase.view.factories.UseCaseName4ViewFactory;
 import org.eclipse.uml2.diagram.usecase.view.factories.UseCaseNameViewFactory;
 import org.eclipse.uml2.diagram.usecase.view.factories.UseCasePointsViewFactory;
+import org.eclipse.uml2.diagram.usecase.view.factories.UseCaseStereoViewFactory;
 import org.eclipse.uml2.diagram.usecase.view.factories.UseCaseViewFactory;
 import org.eclipse.uml2.diagram.usecase.view.factories.UseCaseinPackageViewFactory;
 
@@ -226,6 +232,7 @@ public class UMLViewProvider extends AbstractViewProvider {
 					}
 					break;
 				case ActorName2EditPart.VISUAL_ID:
+				case ActorStereoEditPart.VISUAL_ID:
 					if (ActorAsRectangleEditPart.VISUAL_ID != UMLVisualIDRegistry.getVisualID(containerView) || containerView.getElement() != domainElement) {
 						return null; // wrong container
 					}
@@ -237,12 +244,14 @@ public class UMLViewProvider extends AbstractViewProvider {
 					}
 					break;
 				case UseCaseName2EditPart.VISUAL_ID:
+				case UseCaseStereoEditPart.VISUAL_ID:
 				case UseCaseAsClassExtensionPointsEditPart.VISUAL_ID:
 					if (UseCaseAsClassEditPart.VISUAL_ID != UMLVisualIDRegistry.getVisualID(containerView) || containerView.getElement() != domainElement) {
 						return null; // wrong container
 					}
 					break;
 				case SubjectNameEditPart.VISUAL_ID:
+				case ComponentStereoEditPart.VISUAL_ID:
 				case SubjectUsecasesEditPart.VISUAL_ID:
 					if (SubjectEditPart.VISUAL_ID != UMLVisualIDRegistry.getVisualID(containerView) || containerView.getElement() != domainElement) {
 						return null; // wrong container
@@ -325,6 +334,8 @@ public class UMLViewProvider extends AbstractViewProvider {
 			return ActorAsRectangleViewFactory.class;
 		case ActorName2EditPart.VISUAL_ID:
 			return ActorName2ViewFactory.class;
+		case ActorStereoEditPart.VISUAL_ID:
+			return ActorStereoViewFactory.class;
 		case UseCaseEditPart.VISUAL_ID:
 			return UseCaseViewFactory.class;
 		case UseCaseNameEditPart.VISUAL_ID:
@@ -333,10 +344,14 @@ public class UMLViewProvider extends AbstractViewProvider {
 			return UseCaseAsClassViewFactory.class;
 		case UseCaseName2EditPart.VISUAL_ID:
 			return UseCaseName2ViewFactory.class;
+		case UseCaseStereoEditPart.VISUAL_ID:
+			return UseCaseStereoViewFactory.class;
 		case SubjectEditPart.VISUAL_ID:
 			return SubjectViewFactory.class;
 		case SubjectNameEditPart.VISUAL_ID:
 			return SubjectNameViewFactory.class;
+		case ComponentStereoEditPart.VISUAL_ID:
+			return ComponentStereoViewFactory.class;
 		case NestedPackageEditPart.VISUAL_ID:
 			return NestedPackageViewFactory.class;
 		case NestedPackageNameEditPart.VISUAL_ID:

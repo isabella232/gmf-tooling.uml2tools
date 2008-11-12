@@ -14,6 +14,7 @@ import org.eclipse.gmf.runtime.notation.NotationFactory;
 import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.uml2.diagram.usecase.edit.parts.ActorAsRectangleEditPart;
 import org.eclipse.uml2.diagram.usecase.edit.parts.ActorName2EditPart;
+import org.eclipse.uml2.diagram.usecase.edit.parts.ActorStereoEditPart;
 import org.eclipse.uml2.diagram.usecase.edit.parts.PackageEditPart;
 import org.eclipse.uml2.diagram.usecase.part.UMLVisualIDRegistry;
 
@@ -52,6 +53,7 @@ public class ActorAsRectangleViewFactory extends AbstractShapeViewFactory {
 			eObjectAdapter = new EObjectAdapter(eObject);
 		}
 		getViewService().createNode(eObjectAdapter, view, UMLVisualIDRegistry.getType(ActorName2EditPart.VISUAL_ID), ViewUtil.APPEND, true, getPreferencesHint());
+		getViewService().createNode(eObjectAdapter, view, UMLVisualIDRegistry.getType(ActorStereoEditPart.VISUAL_ID), ViewUtil.APPEND, true, getPreferencesHint());
 	}
 
 }

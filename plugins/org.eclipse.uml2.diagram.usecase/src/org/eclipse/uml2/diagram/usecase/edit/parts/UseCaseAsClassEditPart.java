@@ -151,6 +151,10 @@ public class UseCaseAsClassEditPart extends ShapeNodeEditPart implements Primary
 			((UseCaseName2EditPart) childEditPart).setLabel(getPrimaryShape().getUseCaseAsClassFigure_name());
 			return true;
 		}
+		if (childEditPart instanceof UseCaseStereoEditPart) {
+			((UseCaseStereoEditPart) childEditPart).setLabel(getPrimaryShape().getUseCaseAsClassFigure_stereo());
+			return true;
+		}
 		if (childEditPart instanceof UseCaseAsClassExtensionPointsEditPart) {
 			IFigure pane = getPrimaryShape().getUseCaseAsClass_points();
 			setupContentPane(pane); // FIXME each comparment should handle his content pane in his own way 

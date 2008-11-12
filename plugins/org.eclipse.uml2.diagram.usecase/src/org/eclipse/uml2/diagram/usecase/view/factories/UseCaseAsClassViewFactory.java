@@ -16,6 +16,7 @@ import org.eclipse.uml2.diagram.usecase.edit.parts.PackageEditPart;
 import org.eclipse.uml2.diagram.usecase.edit.parts.UseCaseAsClassEditPart;
 import org.eclipse.uml2.diagram.usecase.edit.parts.UseCaseAsClassExtensionPointsEditPart;
 import org.eclipse.uml2.diagram.usecase.edit.parts.UseCaseName2EditPart;
+import org.eclipse.uml2.diagram.usecase.edit.parts.UseCaseStereoEditPart;
 import org.eclipse.uml2.diagram.usecase.part.UMLVisualIDRegistry;
 
 /**
@@ -53,6 +54,7 @@ public class UseCaseAsClassViewFactory extends AbstractShapeViewFactory {
 			eObjectAdapter = new EObjectAdapter(eObject);
 		}
 		getViewService().createNode(eObjectAdapter, view, UMLVisualIDRegistry.getType(UseCaseName2EditPart.VISUAL_ID), ViewUtil.APPEND, true, getPreferencesHint());
+		getViewService().createNode(eObjectAdapter, view, UMLVisualIDRegistry.getType(UseCaseStereoEditPart.VISUAL_ID), ViewUtil.APPEND, true, getPreferencesHint());
 		getViewService().createNode(eObjectAdapter, view, UMLVisualIDRegistry.getType(UseCaseAsClassExtensionPointsEditPart.VISUAL_ID), ViewUtil.APPEND, true, getPreferencesHint());
 	}
 

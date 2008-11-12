@@ -49,6 +49,9 @@ public class UMLEditPartFactory implements EditPartFactory {
 			case ActorName2EditPart.VISUAL_ID:
 				return new ActorName2EditPart(view);
 
+			case ActorStereoEditPart.VISUAL_ID:
+				return new ActorStereoEditPart(view);
+
 			case UseCaseEditPart.VISUAL_ID:
 				return new UseCaseEditPart(view);
 
@@ -61,11 +64,17 @@ public class UMLEditPartFactory implements EditPartFactory {
 			case UseCaseName2EditPart.VISUAL_ID:
 				return new UseCaseName2EditPart(view);
 
+			case UseCaseStereoEditPart.VISUAL_ID:
+				return new UseCaseStereoEditPart(view);
+
 			case SubjectEditPart.VISUAL_ID:
 				return new SubjectEditPart(view);
 
 			case SubjectNameEditPart.VISUAL_ID:
 				return new SubjectNameEditPart(view);
+
+			case ComponentStereoEditPart.VISUAL_ID:
+				return new ComponentStereoEditPart(view);
 
 			case NestedPackageEditPart.VISUAL_ID:
 				return new NestedPackageEditPart(view);
