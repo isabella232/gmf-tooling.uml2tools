@@ -940,15 +940,15 @@ public class Artifact2EditPart extends ShapeNodeEditPart implements PrimaryShape
 
 			artifactFigure_NameContainer0.setLayoutManager(layoutArtifactFigure_NameContainer0);
 
-			fFigureArtifactFigure_name = new Label();
-			fFigureArtifactFigure_name.setText("");
-
-			artifactFigure_NameContainer0.add(fFigureArtifactFigure_name);
-
 			fFigureArtifactFigure_fixed_artifact = new Label();
 			fFigureArtifactFigure_fixed_artifact.setText("\u00ABartifact\u00BB");
 
 			artifactFigure_NameContainer0.add(fFigureArtifactFigure_fixed_artifact);
+
+			fFigureArtifactFigure_name = new Label();
+			fFigureArtifactFigure_name.setText("");
+
+			artifactFigure_NameContainer0.add(fFigureArtifactFigure_name);
 
 			fFigureArtifactFigure_Body = new RectangleFigure();
 			fFigureArtifactFigure_Body.setMinimumSize(new Dimension(getMapMode().DPtoLP(0), getMapMode().DPtoLP(55)));
