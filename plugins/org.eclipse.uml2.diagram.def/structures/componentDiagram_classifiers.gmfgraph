@@ -85,11 +85,11 @@
               minorSpacing="0"/>
           <children
               xsi:type="gmfgraph:Label"
-              name="ArtifactFigure_name"/>
-          <children
-              xsi:type="gmfgraph:Label"
               name="ArtifactFigure_fixed_artifact"
               text="\u00ABartifact\u00BB"/>
+          <children
+              xsi:type="gmfgraph:Label"
+              name="ArtifactFigure_name"/>
         </children>
         <children
             xsi:type="gmfgraph:Rectangle"
@@ -102,11 +102,11 @@
         </children>
       </actualFigure>
       <accessors
-          figure="//@figures.0/@descriptors.1/@actualFigure/@children.0/@children.0"/>
+          figure="//@figures.0/@descriptors.1/@actualFigure/@children.0/@children.1"/>
       <accessors
           figure="//@figures.0/@descriptors.1/@actualFigure/@children.1"/>
       <accessors
-          figure="//@figures.0/@descriptors.1/@actualFigure/@children.0/@children.1"/>
+          figure="//@figures.0/@descriptors.1/@actualFigure/@children.0/@children.0"/>
     </descriptors>
     <descriptors
         name="ComponentClassFigure">
@@ -208,5 +208,6 @@
   <labels
       name="ArtifactNode_stereo"
       figure="ArtifactFigure"
+      elementIcon="false"
       accessor="//@figures.0/@descriptors.1/@accessors.2"/>
 </gmfgraph:Canvas>
