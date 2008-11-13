@@ -5,6 +5,7 @@ import java.util.List;
 import org.eclipse.draw2d.ColorConstants;
 import org.eclipse.draw2d.IFigure;
 import org.eclipse.draw2d.Label;
+import org.eclipse.draw2d.MarginBorder;
 import org.eclipse.draw2d.RectangleFigure;
 import org.eclipse.draw2d.Shape;
 import org.eclipse.draw2d.StackLayout;
@@ -331,6 +332,7 @@ public class ElementImportEditPart extends ShapeNodeEditPart implements PrimaryS
 			this.setLayoutManager(layoutThis);
 
 			this.setForegroundColor(ColorConstants.gray);
+			this.setBorder(new MarginBorder(getMapMode().DPtoLP(1), getMapMode().DPtoLP(1), getMapMode().DPtoLP(1), getMapMode().DPtoLP(1)));
 			createContents();
 		}
 
@@ -342,6 +344,8 @@ public class ElementImportEditPart extends ShapeNodeEditPart implements PrimaryS
 			RectangleFigure referencedMetaclassFigure_FixedLabelPane0 = new RectangleFigure();
 			referencedMetaclassFigure_FixedLabelPane0.setFill(false);
 			referencedMetaclassFigure_FixedLabelPane0.setOutline(false);
+
+			referencedMetaclassFigure_FixedLabelPane0.setBorder(new MarginBorder(getMapMode().DPtoLP(5), getMapMode().DPtoLP(5), getMapMode().DPtoLP(0), getMapMode().DPtoLP(5)));
 
 			this.add(referencedMetaclassFigure_FixedLabelPane0);
 

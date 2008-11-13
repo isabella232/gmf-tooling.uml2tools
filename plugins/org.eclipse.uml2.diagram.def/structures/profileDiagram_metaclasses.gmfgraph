@@ -23,6 +23,14 @@
         <foregroundColor
             xsi:type="gmfgraph:ConstantColor"
             value="gray"/>
+        <border
+            xsi:type="gmfgraph:MarginBorder">
+          <insets
+              top="1"
+              left="1"
+              bottom="1"
+              right="1"/>
+        </border>
         <children
             xsi:type="gmfgraph:Rectangle"
             name="ReferencedMetaclassFigure_FixedLabelPane"
@@ -31,6 +39,10 @@
           <layout
               xsi:type="gmfgraph:CustomLayout"
               qualifiedClassName="org.eclipse.uml2.diagram.common.draw2d.CenterLayout"/>
+          <insets
+              top="5"
+              left="5"
+              right="5"/>
           <children
               xsi:type="gmfgraph:Label"
               name="ReferencedMetaclassFigure_fixed_metaclass"
