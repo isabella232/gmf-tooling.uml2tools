@@ -875,7 +875,7 @@
     <diagramCanvas
         href="classDiagram_auxiliary.gmfgraph#cnvAuxiliary"/>
     <domainModel
-        href="http://www.eclipse.org/uml2/3.0.0/UML#/"/>
+        href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#/"/>
     <domainMetaElement
         href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//Package"/>
     <palette
