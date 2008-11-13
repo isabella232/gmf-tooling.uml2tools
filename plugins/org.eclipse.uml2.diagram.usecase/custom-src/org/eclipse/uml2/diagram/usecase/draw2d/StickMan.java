@@ -2,6 +2,7 @@ package org.eclipse.uml2.diagram.usecase.draw2d;
 
 import org.eclipse.draw2d.ColorConstants;
 import org.eclipse.draw2d.Graphics;
+import org.eclipse.draw2d.StackLayout;
 import org.eclipse.draw2d.geometry.PointList;
 import org.eclipse.draw2d.geometry.Rectangle;
 import org.eclipse.swt.graphics.Color;
@@ -15,6 +16,7 @@ public class StickMan extends ShadowShape {
         super(is3D, backgroundColor, foregroundColor);
         setKeepingProportions(true);
         setW2HRatio(BASE_W / BASE_H);
+        setLayoutManager(new StackLayout());
     }
 
     protected void outlineShape( Graphics graphics, Rectangle bounds ) {
