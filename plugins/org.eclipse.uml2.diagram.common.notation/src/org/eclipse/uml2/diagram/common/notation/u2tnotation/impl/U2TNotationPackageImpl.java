@@ -2,7 +2,7 @@
  * <copyright>
  * </copyright>
  *
- * $Id: U2TNotationPackageImpl.java,v 1.1 2008/09/08 10:23:25 mgolubev Exp $
+ * $Id: U2TNotationPackageImpl.java,v 1.2 2008/11/14 09:04:34 mgolubev Exp $
  */
 package org.eclipse.uml2.diagram.common.notation.u2tnotation.impl;
 
@@ -218,8 +218,8 @@ public class U2TNotationPackageImpl extends EPackageImpl implements U2TNotationP
 
 		// Initialize classes and features; add operations and parameters
 		initEClass(u2TDiagramCanonicalStyleEClass, U2TDiagramCanonicalStyle.class, "U2TDiagramCanonicalStyle", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getU2TDiagramCanonicalStyle_SyncNodes(), ecorePackage.getEBoolean(), "syncNodes", null, 0, 1, U2TDiagramCanonicalStyle.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getU2TDiagramCanonicalStyle_SyncLinks(), ecorePackage.getEBoolean(), "syncLinks", null, 0, 1, U2TDiagramCanonicalStyle.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getU2TDiagramCanonicalStyle_SyncNodes(), ecorePackage.getEBoolean(), "syncNodes", "true", 0, 1, U2TDiagramCanonicalStyle.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getU2TDiagramCanonicalStyle_SyncLinks(), ecorePackage.getEBoolean(), "syncLinks", "true", 0, 1, U2TDiagramCanonicalStyle.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getU2TDiagramCanonicalStyle_NodeTypesToIgnore(), ecorePackage.getEInt(), "nodeTypesToIgnore", null, 0, -1, U2TDiagramCanonicalStyle.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getU2TDiagramCanonicalStyle_LinkTypesToIgnore(), ecorePackage.getEInt(), "linkTypesToIgnore", null, 0, -1, U2TDiagramCanonicalStyle.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 

@@ -2,7 +2,7 @@
  * <copyright>
  * </copyright>
  *
- * $Id: U2TDiagramCanonicalStyleImpl.java,v 1.1 2008/09/08 10:23:26 mgolubev Exp $
+ * $Id: U2TDiagramCanonicalStyleImpl.java,v 1.2 2008/11/14 09:04:34 mgolubev Exp $
  */
 package org.eclipse.uml2.diagram.common.notation.u2tnotation.impl;
 
@@ -48,7 +48,7 @@ public class U2TDiagramCanonicalStyleImpl extends CanonicalStyleImpl implements 
 	 * @generated
 	 * @ordered
 	 */
-	protected static final boolean SYNC_NODES_EDEFAULT = false;
+	protected static final boolean SYNC_NODES_EDEFAULT = true;
 
 	/**
 	 * The cached value of the '{@link #isSyncNodes() <em>Sync Nodes</em>}' attribute.
@@ -68,7 +68,7 @@ public class U2TDiagramCanonicalStyleImpl extends CanonicalStyleImpl implements 
 	 * @generated
 	 * @ordered
 	 */
-	protected static final boolean SYNC_LINKS_EDEFAULT = false;
+	protected static final boolean SYNC_LINKS_EDEFAULT = true;
 
 	/**
 	 * The cached value of the '{@link #isSyncLinks() <em>Sync Links</em>}' attribute.

@@ -2,7 +2,7 @@
  * <copyright>
  * </copyright>
  *
- * $Id: U2TDiagramCanonicalStyle.java,v 1.1 2008/09/08 10:23:26 mgolubev Exp $
+ * $Id: U2TDiagramCanonicalStyle.java,v 1.2 2008/11/14 09:04:34 mgolubev Exp $
  */
 package org.eclipse.uml2.diagram.common.notation.u2tnotation;
 
@@ -32,6 +32,7 @@ import org.eclipse.gmf.runtime.notation.CanonicalStyle;
 public interface U2TDiagramCanonicalStyle extends CanonicalStyle {
 	/**
 	 * Returns the value of the '<em><b>Sync Nodes</b></em>' attribute.
+	 * The default value is <code>"true"</code>.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
@@ -40,7 +41,7 @@ public interface U2TDiagramCanonicalStyle extends CanonicalStyle {
 	 * @return the value of the '<em>Sync Nodes</em>' attribute.
 	 * @see #setSyncNodes(boolean)
 	 * @see org.eclipse.uml2.diagram.common.notation.u2tnotation.U2TNotationPackage#getU2TDiagramCanonicalStyle_SyncNodes()
-	 * @model
+	 * @model default="true"
 	 * @generated
 	 */
 	boolean isSyncNodes();
@@ -57,6 +58,7 @@ public interface U2TDiagramCanonicalStyle extends CanonicalStyle {
 
 	/**
 	 * Returns the value of the '<em><b>Sync Links</b></em>' attribute.
+	 * The default value is <code>"true"</code>.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Sync Links</em>' attribute isn't clear,
@@ -66,7 +68,7 @@ public interface U2TDiagramCanonicalStyle extends CanonicalStyle {
 	 * @return the value of the '<em>Sync Links</em>' attribute.
 	 * @see #setSyncLinks(boolean)
 	 * @see org.eclipse.uml2.diagram.common.notation.u2tnotation.U2TNotationPackage#getU2TDiagramCanonicalStyle_SyncLinks()
-	 * @model
+	 * @model default="true"
 	 * @generated
 	 */
 	boolean isSyncLinks();

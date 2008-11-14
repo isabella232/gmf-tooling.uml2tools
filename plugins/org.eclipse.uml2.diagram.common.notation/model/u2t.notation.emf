@@ -5,8 +5,8 @@ import "platform:/resource/org.eclipse.gmf.runtime.notation/model/notation.ecore
 
 class U2TDiagramCanonicalStyle extends notation.CanonicalStyle {
 	@genmodel(documentation="Replacement for CanonicalStyle for diagram nodes. Provides detailed information about synchronization mode. Allows to force diagram to synchronize nodes/links only, or select specific \"synchronized\" visual IDs")
-	attr boolean syncNodes; 
-	attr boolean syncLinks;
+	attr boolean syncNodes = true; 
+	attr boolean syncLinks = true;
 	attr int[*] nodeTypesToIgnore;
 	attr int[*] linkTypesToIgnore;
 }

@@ -1,6 +1,5 @@
 package org.eclipse.uml2.diagram.common.async;
 
-import org.eclipse.gmf.runtime.notation.CanonicalStyle;
 import org.eclipse.gmf.runtime.notation.View;
 
 
@@ -12,7 +11,4 @@ public interface ICanonicalHelper {
 	
 	public boolean isAutoSynchronized(View view);
 	public void setAutoSynchronized(View view, boolean isAutoSync);
-	
-	public CanonicalStyle ensureHasCanonicalStyle(View view);
-	
 }

@@ -32,13 +32,13 @@
 		«stylesVar».add(canonicalStyle);	
 «ENDDEFINE»
 
-«REM»temporary disabled
 «DEFINE addCanonicalStyle(String stylesVar) FOR gmfgen::GenDiagram-»
-		org.eclipse.gmf.runtime.notation.CanonicalStyle canonicalStyle = «-»
+		org.eclipse.uml2.diagram.common.notation.u2tnotation.U2TDiagramCanonicalStyle canonicalStyle = «-»
 			org.eclipse.uml2.diagram.common.notation.u2tnotation.U2TNotationFactory.eINSTANCE.createU2TDiagramCanonicalStyle();
 		canonicalStyle.setCanonical(true);
+		canonicalStyle.setSyncNodes(true);
+		canonicalStyle.setSyncLinks(true);
 		«stylesVar».add(canonicalStyle);	
 «ENDDEFINE»
-«ENDREM»
 
 
