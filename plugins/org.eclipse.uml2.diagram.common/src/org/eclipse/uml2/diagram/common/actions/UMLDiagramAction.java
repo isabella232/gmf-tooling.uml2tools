@@ -11,46 +11,44 @@
  */
 package org.eclipse.uml2.diagram.common.actions;
 
+import org.eclipse.core.commands.AbstractHandler;
+import org.eclipse.core.commands.ExecutionEvent;
+import org.eclipse.core.commands.ExecutionException;
 import org.eclipse.gef.commands.Command;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart;
-import org.eclipse.jface.action.IAction;
+import org.eclipse.gmf.runtime.diagram.ui.parts.DiagramEditor;
 import org.eclipse.jface.viewers.ISelection;
 import org.eclipse.jface.viewers.IStructuredSelection;
-import org.eclipse.ui.IObjectActionDelegate;
-import org.eclipse.ui.IWorkbenchPart;
+import org.eclipse.ui.IEditorPart;
+import org.eclipse.ui.handlers.HandlerUtil;
 
-public abstract class UMLDiagramAction implements IObjectActionDelegate {
-
-	private IGraphicalEditPart mySelectedElement;
-
-	public void run(IAction action) {
-		if (mySelectedElement == null) {
-			return;
+public abstract class UMLDiagramAction extends AbstractHandler {
+	
+	public Object execute(ExecutionEvent event) throws ExecutionException {
+		IGraphicalEditPart ep = getSelectedEditPart(event);
+		if (ep == null) {
+			return null;
 		}
-		Command command = getCommand();
+		Command command = getCommand(ep);
 		if (command != null && command.canExecute()) {
-			mySelectedElement.getDiagramEditDomain().getDiagramCommandStack().execute(getCommand());
+			ep.getDiagramEditDomain().getDiagramCommandStack().execute(command);
 		} 
+		return null;
 	}
 
-	public void selectionChanged(IAction action, ISelection selection) {
-		mySelectedElement = null;
+	protected IGraphicalEditPart getSelectedEditPart(ExecutionEvent event) throws ExecutionException {
+		IEditorPart diagramEditor = HandlerUtil.getActiveEditorChecked(event);
+		assert diagramEditor instanceof DiagramEditor;
+		ISelection selection = HandlerUtil.getCurrentSelectionChecked(event);
 		if (selection instanceof IStructuredSelection) {
 			IStructuredSelection structuredSelection = (IStructuredSelection) selection;
 			if (structuredSelection.getFirstElement() instanceof IGraphicalEditPart) {
-				mySelectedElement = (IGraphicalEditPart) structuredSelection.getFirstElement();
+				return (IGraphicalEditPart) structuredSelection.getFirstElement();
 			}
 		}
-		action.setEnabled(mySelectedElement != null);
-	}
-	
-	protected IGraphicalEditPart getSelectedEditPart() {
-		return mySelectedElement;
+		return null;
 	}
 
-	protected abstract Command getCommand();
-
-	public void setActivePart(IAction action, IWorkbenchPart targetPart) {
-	}
+	protected abstract Command getCommand(IGraphicalEditPart ep);
 
 }

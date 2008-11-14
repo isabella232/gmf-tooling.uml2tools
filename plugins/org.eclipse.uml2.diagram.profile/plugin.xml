@@ -47,32 +47,32 @@
       </ParserProvider>
    </extension>
    
-   <extension point="org.eclipse.ui.popupMenus">
+   <extension point="org.eclipse.ui.handlers">
       <?gmfgen generated="false"?>
-      <objectContribution
-            adaptable="false"
-            id="org.eclipse.uml2.diagram.profile.edit.parts.TurnCommentIntoNote"
-            objectClass="org.eclipse.uml2.diagram.profile.edit.parts.CommentEditPart">
-         <action
-               class="org.eclipse.uml2.diagram.profile.action.TurnCommentIntoNoteAction"
-               enablesFor="1"
-               id="org.eclipse.uml2.diagram.profile.edit.parts.TurnCommentIntoNoteAction"
-               label="%TurnCommentIntoNote_label"
-               menubarPath="additions">
-         </action>
-      </objectContribution>                    
-      <!--<objectContribution
-            adaptable="false"
-            id="org.eclipse.uml2.diagram.profile.edit.parts.TurnNoteIntoComment"
-            objectClass="org.eclipse.gmf.runtime.diagram.ui.editparts.NoteEditPart">
-         <action
-               class="org.eclipse.uml2.diagram.profile.action.TurnNoteIntoCommentAction"
-               enablesFor="1"
-               id="org.eclipse.uml2.diagram.profile.edit.parts.TurnNoteIntoCommentAction"
-               label="%TurnNoteIntoComment_label"
-               menubarPath="additions">
-         </action>
-      </objectContribution>-->                    
+      <handler
+            class="org.eclipse.uml2.diagram.profile.action.TurnNoteIntoCommentAction"
+            commandId="org.eclipse.uml2.diagram.TurnNoteIntoCommentAction">
+            <activeWhen>
+               <and>
+                  <with variable="activePartId"><equals value="org.eclipse.uml2.diagram.profile.part.UMLDiagramEditorID"/></with>
+                  <with variable="selection"><iterate ifEmpty="false">
+                     <instanceof value="org.eclipse.gmf.runtime.diagram.ui.editparts.NoteEditPart"/>
+                  </iterate></with>
+               </and>
+            </activeWhen>
+      </handler>
+      <handler
+            class="org.eclipse.uml2.diagram.profile.action.TurnCommentIntoNoteAction"
+            commandId="org.eclipse.uml2.diagram.TurnCommentIntoNoteAction">
+            <activeWhen>
+               <and>
+                  <with variable="activePartId"><equals value="org.eclipse.uml2.diagram.profile.part.UMLDiagramEditorID"/></with>
+                  <with variable="selection"><iterate ifEmpty="false">
+                     <instanceof value="org.eclipse.uml2.diagram.profile.edit.parts.CommentEditPart"/>
+                  </iterate></with>
+               </and>
+            </activeWhen>
+      </handler>
    </extension>
 
 <!-- gmf generator persistent region end -->

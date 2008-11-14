@@ -47,8 +47,7 @@ public class ConvertCommentIntoNoteAction extends UMLDiagramAction {
 	}
 
 	@Override
-	protected Command getCommand() {
-		final IGraphicalEditPart editPart = getSelectedEditPart();
+	protected Command getCommand(IGraphicalEditPart editPart) {
 		final IGraphicalEditPart parentEP = (IGraphicalEditPart) editPart.getParent();
 		// select
 		if (editPart == null) {

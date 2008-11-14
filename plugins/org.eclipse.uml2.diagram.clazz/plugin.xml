@@ -19,7 +19,37 @@
       </objectContribution>
    </extension>
    -->
+   
+   <extension point="org.eclipse.ui.handlers">
+      <?gmfgen generated="false"?>
+      <handler
+            class="org.eclipse.uml2.diagram.clazz.action.TurnNoteIntoCommentAction"
+            commandId="org.eclipse.uml2.diagram.TurnNoteIntoCommentAction">
+	       <activeWhen>
+               <and>
+                  <with variable="activePartId"><equals value="org.eclipse.uml2.diagram.clazz.part.UMLDiagramEditorID"/></with>
+                  <with variable="selection"><iterate ifEmpty="false">
+                     <instanceof value="org.eclipse.gmf.runtime.diagram.ui.editparts.NoteEditPart"/>
+                  </iterate></with>
+               </and>
+            </activeWhen>
+      </handler>
+      <handler
+            class="org.eclipse.uml2.diagram.clazz.action.TurnCommentIntoNoteAction"
+            commandId="org.eclipse.uml2.diagram.TurnCommentIntoNoteAction">
+            <activeWhen>
+               <and>
+                  <with variable="activePartId"><equals value="org.eclipse.uml2.diagram.clazz.part.UMLDiagramEditorID"/></with>
+                  <with variable="selection"><iterate ifEmpty="false">
+                     <instanceof value="org.eclipse.uml2.diagram.clazz.edit.parts.CommentEditPart"/>
+                  </iterate></with>
+               </and>
+            </activeWhen>
+      </handler>
+   </extension>
+   
    <extension point="org.eclipse.ui.popupMenus">
+      <?gmfgen generated="false"?>
       <objectContribution
             id="org.eclipse.uml2.diagram.clazz.SynchronizeDiagram"
             objectClass="org.eclipse.uml2.diagram.clazz.edit.parts.PackageEditPart">
@@ -31,30 +61,6 @@
                id="org.eclipse.uml2.diagram.clazz.ShowInitDialogAction2">
          </action>
       </objectContribution>
-      <objectContribution
-            adaptable="false"
-            id="org.eclipse.uml2.diagram.clazz.edit.parts.TurnCommentIntoNote"
-            objectClass="org.eclipse.uml2.diagram.clazz.edit.parts.CommentEditPart">
-         <action
-               class="org.eclipse.uml2.diagram.clazz.action.TurnCommentIntoNoteAction"
-               enablesFor="1"
-               id="org.eclipse.uml2.diagram.clazz.edit.parts.TurnCommentIntoNoteAction"
-               label="%TurnCommentIntoNote_label"
-               menubarPath="additions">
-         </action>
-      </objectContribution>                    
-      <!--<objectContribution
-            adaptable="false"
-            id="org.eclipse.uml2.diagram.clazz.edit.parts.TurnNoteIntoComment"
-            objectClass="org.eclipse.gmf.runtime.diagram.ui.editparts.NoteEditPart">
-         <action
-               class="org.eclipse.uml2.diagram.clazz.action.TurnNoteIntoCommentAction"
-               enablesFor="1"
-               id="org.eclipse.uml2.diagram.clazz.edit.parts.TurnNoteIntoCommentAction"
-               label="%TurnNoteIntoComment_label"
-               menubarPath="additions">
-         </action>
-      </objectContribution>-->                    
    </extension>
 
    <extension point="org.eclipse.gmf.runtime.common.ui.services.action.contributionItemProviders">

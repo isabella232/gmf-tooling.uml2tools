@@ -27,5 +27,38 @@
             name="UML2 Diagrams"
             class="org.eclipse.uml2.diagram.common.preferences.MainPreferencePage">
       </page>
+
+   </extension>
+      <extension point="org.eclipse.ui.menus">
+      <?gmfgen generated="false"?>
+      <menuContribution locationURI="popup:org.eclipse.gmf.runtime.diagram.ui.DiagramEditorContextMenu">
+         <command commandId="org.eclipse.uml2.diagram.TurnCommentIntoNoteAction">
+          <visibleWhen checkEnabled="true"/>
+         </command>
+      </menuContribution>
+      <menuContribution locationURI="popup:org.eclipse.gmf.runtime.diagram.ui.DiagramEditorContextMenu">
+         <command commandId="org.eclipse.uml2.diagram.TurnNoteIntoCommentAction">
+          <visibleWhen checkEnabled="true"/>
+         </command>
+      </menuContribution>
+   </extension>
+   
+   <extension point="org.eclipse.ui.commands">
+      <?gmfgen generated="false"?>
+      <category
+            description="%cmdcategory.desc"
+            id="org.eclipse.uml2.diagram.part.UMLDiagramEditorID"
+            name="%cmdcategory.name">
+      </category>
+      <command
+            categoryId="org.eclipse.uml2.diagram.part.UMLDiagramEditorID"
+            id="org.eclipse.uml2.diagram.TurnCommentIntoNoteAction"
+            name="%TurnCommentIntoNote_label">
+      </command>
+      <command
+            categoryId="org.eclipse.uml2.diagram.part.UMLDiagramEditorID"
+            id="org.eclipse.uml2.diagram.TurnNoteIntoCommentAction"
+            name="%TurnNoteIntoComment_label">
+      </command>
    </extension>
 </plugin>
