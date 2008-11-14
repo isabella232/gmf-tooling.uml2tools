@@ -35,17 +35,13 @@ public class CommentFigureBase extends NoteFigure {
 
 	public CommentFigureBase(int width, int height, Insets insets) {
 		super(width, height, insets);
-		myBody = new WrappingLabel() {
-
-			@Override
-			protected void setIconLocation(Point location) {
-				location.x = getInsets().left;
-				super.setIconLocation(location);
-			}
-
-		};
+		myBody = new WrappingLabel();
 		myBody.setBorder(new MarginBorder(4, 4, 4, 4));
-		myBody.setTextPlacement(PositionConstants.SOUTH);
+		
+		myBody.setTextPlacement(PositionConstants.EAST);
+		myBody.setTextAlignment(PositionConstants.TOP);
+		myBody.setIconAlignment(PositionConstants.TOP);
+
 		add(myBody);
 	}
 
