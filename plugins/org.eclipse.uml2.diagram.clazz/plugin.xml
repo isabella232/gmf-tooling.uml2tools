@@ -21,7 +21,7 @@
    -->
    <extension point="org.eclipse.ui.popupMenus">
       <objectContribution
-            id="org.eclipse.uml2.diagram.clazz.ShowInitDialog2"
+            id="org.eclipse.uml2.diagram.clazz.SynchronizeDiagram"
             objectClass="org.eclipse.uml2.diagram.clazz.edit.parts.PackageEditPart">
          <action
                label="%SynchronizeDialog_action"
