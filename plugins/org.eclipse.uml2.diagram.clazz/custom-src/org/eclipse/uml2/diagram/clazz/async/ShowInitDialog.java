@@ -31,6 +31,7 @@ public class ShowInitDialog extends Dialog {
 	/**
 	 * @generated
 	 */
+	@Override
 	protected Control createDialogArea(Composite parent) {
 		Composite composite = (Composite) super.createDialogArea(parent);
 		getShell().setText("Choose synchronization mode");
@@ -52,6 +53,7 @@ public class ShowInitDialog extends Dialog {
 	/**
 	 * @generated
 	 */
+	@Override
 	protected Control createButtonBar(Composite parent) {
 		Control buttonBar = super.createButtonBar(parent);
 		setOkButtonEnabled(true);
