@@ -26,10 +26,7 @@ import org.eclipse.uml2.diagram.common.async.SyncModelNode;
  * @generated
  */
 public class ShowInitDialogAction2 implements IObjectActionDelegate {
-
-	/**
-	 * @generated
-	 */
+	
 	private IWorkbenchPart targetPart;
 
 	private View myRootDiagramView;
@@ -80,9 +77,15 @@ public class ShowInitDialogAction2 implements IObjectActionDelegate {
 	 * @generated
 	 */
 	public void run(IAction action) {
-		SynchronizeDiagramDialog dialog = new SynchronizeDiagramDialog(getShell(), createRootNode());
-		if (dialog.open() == Dialog.OK){
-			applySynchronization(dialog.getRootSyncNode());
+		SyncModelContext context = createContext();
+		try {
+			SyncModelNode root = createRootNode(context);
+			SynchronizeDiagramDialog dialog = new SynchronizeDiagramDialog(getShell(), root);
+			if (dialog.open() == Dialog.OK){
+				applySynchronization(dialog.getRootSyncNode());
+			}
+		} finally {
+			context.dispose();
 		}
 	}
 
@@ -94,9 +97,7 @@ public class ShowInitDialogAction2 implements IObjectActionDelegate {
 		context.dispose();
 	}
 
-	private SyncModelNode createRootNode() {
-		TransactionalEditingDomain editingDomain = GMFEditingDomainFactory.INSTANCE.getEditingDomain(myRootDiagramView.eResource().getResourceSet());
-		SyncModelContext context = new SyncModelContext(UMLDiagramUpdater.TYPED_ADAPTER, UMLVisualIDRegistry.TYPED_ADAPTER, myPreferencesHint, editingDomain);
+	private SyncModelNode createRootNode(SyncModelContext context) {
 		final Resource syncModelResource = context.getSyncModelResource();
 		final Diagram syncDiagram = ViewService.createDiagram(myRootDiagramView.getDiagram().getElement(), UMLVisualIDRegistry.getModelID(myRootDiagramView), myPreferencesHint);
 		View syncRoot;
@@ -112,6 +113,11 @@ public class ShowInitDialogAction2 implements IObjectActionDelegate {
 		});
 		SyncModelNode result = new SyncModelNode(syncRoot, myRootDiagramView, context);
 		return result;
+	}
+	
+	private SyncModelContext createContext(){
+		TransactionalEditingDomain editingDomain = GMFEditingDomainFactory.INSTANCE.getEditingDomain(myRootDiagramView.eResource().getResourceSet());
+		return new SyncModelContext(UMLDiagramUpdater.TYPED_ADAPTER, UMLVisualIDRegistry.TYPED_ADAPTER, myPreferencesHint, editingDomain);
 	}
 
 }
