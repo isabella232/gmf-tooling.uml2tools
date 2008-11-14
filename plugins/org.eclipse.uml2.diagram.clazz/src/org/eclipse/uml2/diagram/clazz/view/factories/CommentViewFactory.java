@@ -66,6 +66,8 @@ public class CommentViewFactory extends AbstractShapeViewFactory {
 
 	/**
 	 * @NOT-generated
+	 * #233241 Comment is not implemented
+	 * Comment should have the same color as Note node
 	 */
 	protected void initializeFromPreferences(View view) {
 		super.initializeFromPreferences(view);

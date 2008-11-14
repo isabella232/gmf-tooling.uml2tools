@@ -46,6 +46,34 @@
          <Priority name="Lowest"/>
       </ParserProvider>
    </extension>
+   
+   <extension point="org.eclipse.ui.popupMenus">
+      <?gmfgen generated="false"?>
+      <objectContribution
+            adaptable="false"
+            id="org.eclipse.uml2.diagram.profile.edit.parts.TurnCommentIntoNote"
+            objectClass="org.eclipse.uml2.diagram.profile.edit.parts.CommentEditPart">
+         <action
+               class="org.eclipse.uml2.diagram.profile.action.TurnCommentIntoNoteAction"
+               enablesFor="1"
+               id="org.eclipse.uml2.diagram.profile.edit.parts.TurnCommentIntoNoteAction"
+               label="%TurnCommentIntoNote_label"
+               menubarPath="additions">
+         </action>
+      </objectContribution>                    
+      <!--<objectContribution
+            adaptable="false"
+            id="org.eclipse.uml2.diagram.profile.edit.parts.TurnNoteIntoComment"
+            objectClass="org.eclipse.gmf.runtime.diagram.ui.editparts.NoteEditPart">
+         <action
+               class="org.eclipse.uml2.diagram.profile.action.TurnNoteIntoCommentAction"
+               enablesFor="1"
+               id="org.eclipse.uml2.diagram.profile.edit.parts.TurnNoteIntoCommentAction"
+               label="%TurnNoteIntoComment_label"
+               menubarPath="additions">
+         </action>
+      </objectContribution>-->                    
+   </extension>
 
 <!-- gmf generator persistent region end -->
 

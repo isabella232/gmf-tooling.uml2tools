@@ -2,6 +2,35 @@
 <?eclipse version="3.0"?>
 <plugin>
 
+
+   <extension point="org.eclipse.ui.popupMenus">
+      <?gmfgen generated="false"?>
+      <objectContribution
+            adaptable="false"
+            id="org.eclipse.uml2.diagram.usecase.edit.parts.TurnCommentIntoNote"
+            objectClass="org.eclipse.uml2.diagram.usecase.edit.parts.CommentEditPart">
+         <action
+               class="org.eclipse.uml2.diagram.usecase.action.TurnCommentIntoNoteAction"
+               enablesFor="1"
+               id="org.eclipse.uml2.diagram.usecase.edit.parts.TurnCommentIntoNoteAction"
+               label="%TurnCommentIntoNote_label"
+               menubarPath="additions">
+         </action>
+      </objectContribution>                    
+      <!--<objectContribution
+            adaptable="false"
+            id="org.eclipse.uml2.diagram.usecase.edit.parts.TurnNoteIntoComment"
+            objectClass="org.eclipse.gmf.runtime.diagram.ui.editparts.NoteEditPart">
+         <action
+               class="org.eclipse.uml2.diagram.usecase.action.TurnNoteIntoCommentAction"
+               enablesFor="1"
+               id="org.eclipse.uml2.diagram.usecase.edit.parts.TurnNoteIntoCommentAction"
+               label="%TurnNoteIntoComment_label"
+               menubarPath="additions">
+         </action>
+      </objectContribution>-->                    
+   </extension>
+
    <extension point="org.eclipse.team.core.fileTypes">
       <?gmfgen generated="true"?>
       <fileTypes
@@ -304,7 +333,7 @@
             filter="org.eclipse.uml2.diagram.common.sheet.AssociationPropertySection$AssociationPropertySectionFilter">
             <input type="org.eclipse.gmf.runtime.notation.View"/>
             <input type="org.eclipse.gef.EditPart"/>
-            <input type="org.eclipse.uml2.diagram.clazz.navigator.UMLAbstractNavigatorItem"/>
+            <input type="org.eclipse.uml2.diagram.usecase.navigator.UMLAbstractNavigatorItem"/>
          </propertySection>
          <propertySection
             id="property.section.domain.association.target" 
@@ -313,7 +342,7 @@
             filter="org.eclipse.uml2.diagram.common.sheet.AssociationPropertySection$AssociationPropertySectionFilter">
             <input type="org.eclipse.gmf.runtime.notation.View"/>
             <input type="org.eclipse.gef.EditPart"/>
-            <input type="org.eclipse.uml2.diagram.clazz.navigator.UMLAbstractNavigatorItem"/>
+            <input type="org.eclipse.uml2.diagram.usecase.navigator.UMLAbstractNavigatorItem"/>
          </propertySection>
       </propertySections>
    </extension>
