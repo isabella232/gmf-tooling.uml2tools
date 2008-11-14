@@ -383,7 +383,6 @@
    <extension point="org.eclipse.ui.popupMenus">
       <?gmfgen generated="true"?>
       <objectContribution
-
             id="org.eclipse.uml2.diagram.clazz.InitDiagram"
             nameFilter="*.uml"
             objectClass="org.eclipse.core.resources.IFile">
