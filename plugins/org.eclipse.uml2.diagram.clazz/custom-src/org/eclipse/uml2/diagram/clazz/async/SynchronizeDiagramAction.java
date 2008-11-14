@@ -25,7 +25,7 @@ import org.eclipse.uml2.diagram.common.async.SyncModelNode;
 /**
  * @generated
  */
-public class ShowInitDialogAction2 implements IObjectActionDelegate {
+public class SynchronizeDiagramAction implements IObjectActionDelegate {
 	
 	private IWorkbenchPart targetPart;
 
