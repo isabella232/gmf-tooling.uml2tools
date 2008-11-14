@@ -12,12 +12,15 @@ import org.eclipse.gmf.runtime.emf.type.core.requests.ReorientReferenceRelations
 import org.eclipse.gmf.runtime.emf.type.core.requests.ReorientRelationshipRequest;
 import org.eclipse.gmf.runtime.notation.Node;
 import org.eclipse.gmf.runtime.notation.View;
+import org.eclipse.uml2.diagram.profile.edit.commands.CommentAnnotatedElementCreateCommand;
+import org.eclipse.uml2.diagram.profile.edit.commands.CommentAnnotatedElementReorientCommand;
 import org.eclipse.uml2.diagram.profile.edit.commands.ConstraintConstrainedElementCreateCommand;
 import org.eclipse.uml2.diagram.profile.edit.commands.ConstraintConstrainedElementReorientCommand;
 import org.eclipse.uml2.diagram.profile.edit.commands.ExtensionCreateCommand;
 import org.eclipse.uml2.diagram.profile.edit.commands.ExtensionReorientCommand;
 import org.eclipse.uml2.diagram.profile.edit.commands.GeneralizationCreateCommand;
 import org.eclipse.uml2.diagram.profile.edit.commands.GeneralizationReorientCommand;
+import org.eclipse.uml2.diagram.profile.edit.parts.CommentAnnotatedElementEditPart;
 import org.eclipse.uml2.diagram.profile.edit.parts.ConstraintConstrainedElementEditPart;
 import org.eclipse.uml2.diagram.profile.edit.parts.ConstraintEditPart;
 import org.eclipse.uml2.diagram.profile.edit.parts.ExtensionEditPart;
@@ -112,6 +115,9 @@ public class StereotypeItemSemanticEditPolicy extends UMLBaseItemSemanticEditPol
 		if (UMLElementTypes.ConstraintConstrainedElement_4003 == req.getElementType()) {
 			return null;
 		}
+		if (UMLElementTypes.CommentAnnotatedElement_4004 == req.getElementType()) {
+			return null;
+		}
 		return null;
 	}
 
@@ -127,6 +133,9 @@ public class StereotypeItemSemanticEditPolicy extends UMLBaseItemSemanticEditPol
 		}
 		if (UMLElementTypes.ConstraintConstrainedElement_4003 == req.getElementType()) {
 			return getGEFWrapper(new ConstraintConstrainedElementCreateCommand(req, req.getSource(), req.getTarget()));
+		}
+		if (UMLElementTypes.CommentAnnotatedElement_4004 == req.getElementType()) {
+			return getGEFWrapper(new CommentAnnotatedElementCreateCommand(req, req.getSource(), req.getTarget()));
 		}
 		return null;
 	}
@@ -157,6 +166,8 @@ public class StereotypeItemSemanticEditPolicy extends UMLBaseItemSemanticEditPol
 		switch (getVisualID(req)) {
 		case ConstraintConstrainedElementEditPart.VISUAL_ID:
 			return getGEFWrapper(new ConstraintConstrainedElementReorientCommand(req));
+		case CommentAnnotatedElementEditPart.VISUAL_ID:
+			return getGEFWrapper(new CommentAnnotatedElementReorientCommand(req));
 		}
 		return super.getReorientReferenceRelationshipCommand(req);
 	}

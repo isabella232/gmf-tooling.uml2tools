@@ -41,6 +41,8 @@ import org.eclipse.uml2.diagram.component.edit.parts.ClassEditPart;
 import org.eclipse.uml2.diagram.component.edit.parts.ClassName2EditPart;
 import org.eclipse.uml2.diagram.component.edit.parts.ClassNameEditPart;
 import org.eclipse.uml2.diagram.component.edit.parts.ClassOperationsEditPart;
+import org.eclipse.uml2.diagram.component.edit.parts.CommentBodyEditPart;
+import org.eclipse.uml2.diagram.component.edit.parts.CommentEditPart;
 import org.eclipse.uml2.diagram.component.edit.parts.Component2EditPart;
 import org.eclipse.uml2.diagram.component.edit.parts.Component3EditPart;
 import org.eclipse.uml2.diagram.component.edit.parts.ComponentContents2EditPart;
@@ -374,6 +376,9 @@ public class UMLVisualIDRegistry {
 			if (UMLPackage.eINSTANCE.getClass_().isSuperTypeOf(domainElement.eClass()) && isClass_2007((Class) domainElement)) {
 				return ClassDiagramNotationClassEditPart.VISUAL_ID;
 			}
+			if (UMLPackage.eINSTANCE.getComment().isSuperTypeOf(domainElement.eClass())) {
+				return CommentEditPart.VISUAL_ID;
+			}
 			break;
 		}
 		return -1;
@@ -472,6 +477,11 @@ public class UMLVisualIDRegistry {
 				return true;
 			}
 			if (PortOnClassEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			break;
+		case CommentEditPart.VISUAL_ID:
+			if (CommentBodyEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
 			break;
@@ -647,6 +657,9 @@ public class UMLVisualIDRegistry {
 				return true;
 			}
 			if (ClassDiagramNotationClassEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			if (CommentEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
 			break;
@@ -973,6 +986,9 @@ public class UMLVisualIDRegistry {
 			if (UMLPackage.eINSTANCE.getClass_().isSuperTypeOf(domainElement.eClass()) && isClass_2007((Class) domainElement)) {
 				return ClassDiagramNotationClassEditPart.VISUAL_ID;
 			}
+			if (UMLPackage.eINSTANCE.getComment().isSuperTypeOf(domainElement.eClass())) {
+				return CommentEditPart.VISUAL_ID;
+			}
 			if (UMLPackage.eINSTANCE.getComponent().isSuperTypeOf(domainElement.eClass())) {
 				return Component2EditPart.VISUAL_ID;
 			}
@@ -1107,6 +1123,7 @@ public class UMLVisualIDRegistry {
 		case Interface2EditPart.VISUAL_ID:
 		case Package2EditPart.VISUAL_ID:
 		case Package3EditPart.VISUAL_ID:
+		case CommentEditPart.VISUAL_ID:
 		case PortEditPart.VISUAL_ID:
 		case ArtifactEditPart.VISUAL_ID:
 		case Artifact3EditPart.VISUAL_ID:

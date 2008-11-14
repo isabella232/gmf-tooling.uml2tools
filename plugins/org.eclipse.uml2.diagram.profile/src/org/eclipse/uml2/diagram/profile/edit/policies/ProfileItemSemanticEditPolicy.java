@@ -6,6 +6,7 @@ import org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart;
 import org.eclipse.gmf.runtime.emf.commands.core.commands.DuplicateEObjectsCommand;
 import org.eclipse.gmf.runtime.emf.type.core.requests.CreateElementRequest;
 import org.eclipse.gmf.runtime.emf.type.core.requests.DuplicateElementsRequest;
+import org.eclipse.uml2.diagram.profile.edit.commands.CommentCreateCommand;
 import org.eclipse.uml2.diagram.profile.edit.commands.Constraint2CreateCommand;
 import org.eclipse.uml2.diagram.profile.edit.commands.ElementImportCreateCommand;
 import org.eclipse.uml2.diagram.profile.edit.commands.EnumerationCreateCommand;
@@ -66,6 +67,12 @@ public class ProfileItemSemanticEditPolicy extends UMLBaseItemSemanticEditPolicy
 				req.setContainmentFeature(UMLPackage.eINSTANCE.getPackage_PackagedElement());
 			}
 			return getGEFWrapper(new Constraint2CreateCommand(req));
+		}
+		if (UMLElementTypes.Comment_2009 == req.getElementType()) {
+			if (req.getContainmentFeature() == null) {
+				req.setContainmentFeature(UMLPackage.eINSTANCE.getElement_OwnedComment());
+			}
+			return getGEFWrapper(new CommentCreateCommand(req));
 		}
 		return super.getCreateCommand(req);
 	}

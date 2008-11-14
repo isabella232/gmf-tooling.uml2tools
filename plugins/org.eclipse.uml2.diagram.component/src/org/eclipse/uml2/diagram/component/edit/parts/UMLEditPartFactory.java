@@ -82,6 +82,12 @@ public class UMLEditPartFactory implements EditPartFactory {
 			case ClassDiagramNotationClassStereotypeEditPart.VISUAL_ID:
 				return new ClassDiagramNotationClassStereotypeEditPart(view);
 
+			case CommentEditPart.VISUAL_ID:
+				return new CommentEditPart(view);
+
+			case CommentBodyEditPart.VISUAL_ID:
+				return new CommentBodyEditPart(view);
+
 			case Component2EditPart.VISUAL_ID:
 				return new Component2EditPart(view);
 
@@ -243,6 +249,9 @@ public class UMLEditPartFactory implements EditPartFactory {
 
 			case AssociationName7EditPart.VISUAL_ID:
 				return new AssociationName7EditPart(view);
+
+			case CommentAnnotatedElementEditPart.VISUAL_ID:
+				return new CommentAnnotatedElementEditPart(view);
 			}
 		}
 		return createUnrecognizedEditPart(context, model);

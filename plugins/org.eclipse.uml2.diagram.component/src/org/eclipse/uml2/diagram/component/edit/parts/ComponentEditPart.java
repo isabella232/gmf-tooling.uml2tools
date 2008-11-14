@@ -349,6 +349,7 @@ public class ComponentEditPart extends AbstractBorderedShapeEditPart implements 
 		List/*<org.eclipse.gmf.runtime.emf.type.core.IElementType>*/types = new ArrayList/*<org.eclipse.gmf.runtime.emf.type.core.IElementType>*/();
 		types.add(UMLElementTypes.Dependency_4009);
 		types.add(UMLElementTypes.Association_4011);
+		types.add(UMLElementTypes.CommentAnnotatedElement_4012);
 		return types;
 	}
 
@@ -532,6 +533,9 @@ public class ComponentEditPart extends AbstractBorderedShapeEditPart implements 
 		}
 		if (relationshipType == UMLElementTypes.Association_4011) {
 			types.add(UMLElementTypes.Interface_3005);
+		}
+		if (relationshipType == UMLElementTypes.CommentAnnotatedElement_4012) {
+			types.add(UMLElementTypes.Comment_2008);
 		}
 		return types;
 	}

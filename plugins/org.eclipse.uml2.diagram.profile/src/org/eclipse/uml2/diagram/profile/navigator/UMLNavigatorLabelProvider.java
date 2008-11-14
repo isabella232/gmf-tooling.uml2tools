@@ -17,6 +17,9 @@ import org.eclipse.swt.graphics.Image;
 import org.eclipse.ui.IMemento;
 import org.eclipse.ui.navigator.ICommonContentExtensionSite;
 import org.eclipse.ui.navigator.ICommonLabelProvider;
+import org.eclipse.uml2.diagram.profile.edit.parts.CommentAnnotatedElementEditPart;
+import org.eclipse.uml2.diagram.profile.edit.parts.CommentBodyEditPart;
+import org.eclipse.uml2.diagram.profile.edit.parts.CommentEditPart;
 import org.eclipse.uml2.diagram.profile.edit.parts.Constraint2EditPart;
 import org.eclipse.uml2.diagram.profile.edit.parts.ConstraintConstrainedElementEditPart;
 import org.eclipse.uml2.diagram.profile.edit.parts.ConstraintEditPart;
@@ -118,6 +121,8 @@ public class UMLNavigatorLabelProvider extends LabelProvider implements ICommonL
 			return getImage("Navigator?TopLevelNode?http://www.eclipse.org/uml2/3.0.0/UML?Profile", UMLElementTypes.Profile_2007); //$NON-NLS-1$
 		case Constraint2EditPart.VISUAL_ID:
 			return getImage("Navigator?TopLevelNode?http://www.eclipse.org/uml2/3.0.0/UML?Constraint", UMLElementTypes.Constraint_2008); //$NON-NLS-1$
+		case CommentEditPart.VISUAL_ID:
+			return getImage("Navigator?TopLevelNode?http://www.eclipse.org/uml2/3.0.0/UML?Comment", UMLElementTypes.Comment_2009); //$NON-NLS-1$
 		case PropertyEditPart.VISUAL_ID:
 			return getImage("Navigator?Node?http://www.eclipse.org/uml2/3.0.0/UML?Property", UMLElementTypes.Property_3001); //$NON-NLS-1$
 		case ConstraintEditPart.VISUAL_ID:
@@ -134,6 +139,8 @@ public class UMLNavigatorLabelProvider extends LabelProvider implements ICommonL
 			return getImage("Navigator?Link?http://www.eclipse.org/uml2/3.0.0/UML?Extension", UMLElementTypes.Extension_4002); //$NON-NLS-1$
 		case ConstraintConstrainedElementEditPart.VISUAL_ID:
 			return getImage("Navigator?Link?http://www.eclipse.org/uml2/3.0.0/UML?Constraint?constrainedElement", UMLElementTypes.ConstraintConstrainedElement_4003); //$NON-NLS-1$
+		case CommentAnnotatedElementEditPart.VISUAL_ID:
+			return getImage("Navigator?Link?http://www.eclipse.org/uml2/3.0.0/UML?Comment?annotatedElement", UMLElementTypes.CommentAnnotatedElement_4004); //$NON-NLS-1$
 		}
 		return getImage("Navigator?UnknownElement", null); //$NON-NLS-1$
 	}
@@ -206,6 +213,8 @@ public class UMLNavigatorLabelProvider extends LabelProvider implements ICommonL
 			return getProfile_2007Text(view);
 		case Constraint2EditPart.VISUAL_ID:
 			return getConstraint_2008Text(view);
+		case CommentEditPart.VISUAL_ID:
+			return getComment_2009Text(view);
 		case PropertyEditPart.VISUAL_ID:
 			return getProperty_3001Text(view);
 		case ConstraintEditPart.VISUAL_ID:
@@ -222,6 +231,8 @@ public class UMLNavigatorLabelProvider extends LabelProvider implements ICommonL
 			return getExtension_4002Text(view);
 		case ConstraintConstrainedElementEditPart.VISUAL_ID:
 			return getConstraintConstrainedElement_4003Text(view);
+		case CommentAnnotatedElementEditPart.VISUAL_ID:
+			return getCommentAnnotatedElement_4004Text(view);
 		}
 		return getUnknownElementText(view);
 	}
@@ -324,6 +335,19 @@ public class UMLNavigatorLabelProvider extends LabelProvider implements ICommonL
 	/**
 	 * @generated
 	 */
+	private String getComment_2009Text(View view) {
+		IParser parser = UMLParserProvider.getParser(UMLElementTypes.Comment_2009, view.getElement() != null ? view.getElement() : view, UMLVisualIDRegistry.getType(CommentBodyEditPart.VISUAL_ID));
+		if (parser != null) {
+			return parser.getPrintString(new EObjectAdapter(view.getElement() != null ? view.getElement() : view), ParserOptions.NONE.intValue());
+		} else {
+			UMLDiagramEditorPlugin.getInstance().logError("Parser was not found for label " + 5014); //$NON-NLS-1$
+			return ""; //$NON-NLS-1$
+		}
+	}
+
+	/**
+	 * @generated
+	 */
 	private String getProperty_3001Text(View view) {
 		IParser parser = UMLParserProvider.getParser(UMLElementTypes.Property_3001, view.getElement() != null ? view.getElement() : view, UMLVisualIDRegistry.getType(PropertyEditPart.VISUAL_ID));
 		if (parser != null) {
@@ -419,6 +443,13 @@ public class UMLNavigatorLabelProvider extends LabelProvider implements ICommonL
 	 * @generated
 	 */
 	private String getConstraintConstrainedElement_4003Text(View view) {
+		return ""; //$NON-NLS-1$
+	}
+
+	/**
+	 * @generated
+	 */
+	private String getCommentAnnotatedElement_4004Text(View view) {
 		return ""; //$NON-NLS-1$
 	}
 

@@ -327,6 +327,7 @@ public class Package3EditPart extends ShapeNodeEditPart implements PrimaryShapeE
 	public List/*<org.eclipse.gmf.runtime.emf.type.core.IElementType>*/getMARelTypesOnTarget() {
 		List/*<org.eclipse.gmf.runtime.emf.type.core.IElementType>*/types = new ArrayList/*<org.eclipse.gmf.runtime.emf.type.core.IElementType>*/();
 		types.add(UMLElementTypes.Dependency_4009);
+		types.add(UMLElementTypes.CommentAnnotatedElement_4012);
 		return types;
 	}
 
@@ -438,6 +439,9 @@ public class Package3EditPart extends ShapeNodeEditPart implements PrimaryShapeE
 		}
 		if (relationshipType == UMLElementTypes.Dependency_4009) {
 			types.add(UMLElementTypes.Port_3014);
+		}
+		if (relationshipType == UMLElementTypes.CommentAnnotatedElement_4012) {
+			types.add(UMLElementTypes.Comment_2008);
 		}
 		return types;
 	}

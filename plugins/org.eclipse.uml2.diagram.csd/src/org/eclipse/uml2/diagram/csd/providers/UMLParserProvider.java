@@ -47,6 +47,7 @@ import org.eclipse.uml2.diagram.csd.edit.parts.CollaborationNameEditPart;
 import org.eclipse.uml2.diagram.csd.edit.parts.CollaborationStereoEditPart;
 import org.eclipse.uml2.diagram.csd.edit.parts.CollaborationUseName2EditPart;
 import org.eclipse.uml2.diagram.csd.edit.parts.CollaborationUseStereoEditPart;
+import org.eclipse.uml2.diagram.csd.edit.parts.CommentBodyEditPart;
 import org.eclipse.uml2.diagram.csd.edit.parts.ConnectorName2EditPart;
 import org.eclipse.uml2.diagram.csd.edit.parts.ConnectorName3EditPart;
 import org.eclipse.uml2.diagram.csd.edit.parts.ConnectorName4EditPart;
@@ -310,6 +311,30 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 	 */
 	protected IParser createConstraintName_5024Parser() {
 		return new ValueSpecificationParser.ConstraintParser();
+	}
+
+	/**
+	 * @generated
+	 */
+	private IParser commentBody_5032Parser;
+
+	/**
+	 * @generated
+	 */
+	private IParser getCommentBody_5032Parser() {
+		if (commentBody_5032Parser == null) {
+			commentBody_5032Parser = createCommentBody_5032Parser();
+		}
+		return commentBody_5032Parser;
+	}
+
+	/**
+	 * @generated
+	 */
+	protected IParser createCommentBody_5032Parser() {
+		EAttribute[] features = new EAttribute[] { UMLPackage.eINSTANCE.getComment_Body() };
+		Parser_0_0 parser = new Parser_0_0(features);
+		return parser;
 	}
 
 	/**
@@ -1121,6 +1146,8 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 			return getInstanceSpecificationQualifiedName_5031Parser();
 		case ConstraintNameEditPart.VISUAL_ID:
 			return getConstraintName_5024Parser();
+		case CommentBodyEditPart.VISUAL_ID:
+			return getCommentBody_5032Parser();
 		case CollaborationUseName2EditPart.VISUAL_ID:
 			return getCollaborationUseName_5002Parser();
 		case CollaborationUseStereoEditPart.VISUAL_ID:

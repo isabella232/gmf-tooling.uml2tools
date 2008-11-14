@@ -38,6 +38,7 @@ public class UMLPaletteFactory {
 		paletteContainer.add(createNode3CreationTool());
 		paletteContainer.add(createEnvironment4CreationTool());
 		paletteContainer.add(createSpecification5CreationTool());
+		paletteContainer.add(createComment6CreationTool());
 		return paletteContainer;
 	}
 
@@ -53,6 +54,7 @@ public class UMLPaletteFactory {
 		paletteContainer.add(createSpecificationLink3CreationTool());
 		paletteContainer.add(createCommunicationPath4CreationTool());
 		paletteContainer.add(createDependency5CreationTool());
+		paletteContainer.add(createAnnotatedElement6CreationTool());
 		return paletteContainer;
 	}
 
@@ -138,6 +140,18 @@ public class UMLPaletteFactory {
 	/**
 	 * @generated
 	 */
+	private ToolEntry createComment6CreationTool() {
+		List/*<IElementType>*/types = new ArrayList/*<IElementType>*/(1);
+		types.add(UMLElementTypes.Comment_2008);
+		NodeToolEntry entry = new NodeToolEntry(Messages.Comment6CreationTool_title, Messages.Comment6CreationTool_desc, types);
+		entry.setSmallIcon(UMLElementTypes.getImageDescriptor(UMLElementTypes.Comment_2008));
+		entry.setLargeIcon(entry.getSmallIcon());
+		return entry;
+	}
+
+	/**
+	 * @generated
+	 */
 	private ToolEntry createManifestation1CreationTool() {
 		List/*<IElementType>*/types = new ArrayList/*<IElementType>*/(1);
 		types.add(UMLElementTypes.Manifestation_4002);
@@ -191,6 +205,18 @@ public class UMLPaletteFactory {
 		types.add(UMLElementTypes.Dependency_4005);
 		LinkToolEntry entry = new LinkToolEntry(Messages.Dependency5CreationTool_title, Messages.Dependency5CreationTool_desc, types);
 		entry.setSmallIcon(UMLElementTypes.getImageDescriptor(UMLElementTypes.Dependency_4005));
+		entry.setLargeIcon(entry.getSmallIcon());
+		return entry;
+	}
+
+	/**
+	 * @generated
+	 */
+	private ToolEntry createAnnotatedElement6CreationTool() {
+		List/*<IElementType>*/types = new ArrayList/*<IElementType>*/(1);
+		types.add(UMLElementTypes.CommentAnnotatedElement_4006);
+		LinkToolEntry entry = new LinkToolEntry(Messages.AnnotatedElement6CreationTool_title, Messages.AnnotatedElement6CreationTool_desc, types);
+		entry.setSmallIcon(UMLElementTypes.getImageDescriptor(UMLElementTypes.CommentAnnotatedElement_4006));
 		entry.setLargeIcon(entry.getSmallIcon());
 		return entry;
 	}

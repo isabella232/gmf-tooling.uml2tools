@@ -7,6 +7,7 @@ import org.eclipse.gmf.runtime.emf.commands.core.commands.DuplicateEObjectsComma
 import org.eclipse.gmf.runtime.emf.type.core.requests.CreateElementRequest;
 import org.eclipse.gmf.runtime.emf.type.core.requests.DuplicateElementsRequest;
 import org.eclipse.uml2.diagram.deploy.edit.commands.Artifact2CreateCommand;
+import org.eclipse.uml2.diagram.deploy.edit.commands.CommentCreateCommand;
 import org.eclipse.uml2.diagram.deploy.edit.commands.DeploymentSpecificationCreateCommand;
 import org.eclipse.uml2.diagram.deploy.edit.commands.DeviceCreateCommand;
 import org.eclipse.uml2.diagram.deploy.edit.commands.ExecutionEnvironmentCreateCommand;
@@ -63,6 +64,12 @@ public class PackageItemSemanticEditPolicy extends UMLBaseItemSemanticEditPolicy
 		}
 		if (UMLElementTypes.DeploymentSpecification_2007 == req.getElementType()) {
 			return getGEFWrapper(new DeploymentSpecificationCreateCommand(req));
+		}
+		if (UMLElementTypes.Comment_2008 == req.getElementType()) {
+			if (req.getContainmentFeature() == null) {
+				req.setContainmentFeature(UMLPackage.eINSTANCE.getElement_OwnedComment());
+			}
+			return getGEFWrapper(new CommentCreateCommand(req));
 		}
 		return super.getCreateCommand(req);
 	}

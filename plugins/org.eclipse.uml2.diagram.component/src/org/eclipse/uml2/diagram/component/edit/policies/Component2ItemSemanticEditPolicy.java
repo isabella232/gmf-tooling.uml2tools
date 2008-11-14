@@ -15,6 +15,8 @@ import org.eclipse.gmf.runtime.notation.Node;
 import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.uml2.diagram.component.edit.commands.AssociationCreateCommand;
 import org.eclipse.uml2.diagram.component.edit.commands.AssociationReorientCommand;
+import org.eclipse.uml2.diagram.component.edit.commands.CommentAnnotatedElementCreateCommand;
+import org.eclipse.uml2.diagram.component.edit.commands.CommentAnnotatedElementReorientCommand;
 import org.eclipse.uml2.diagram.component.edit.commands.ComponentRequiredCreateCommand;
 import org.eclipse.uml2.diagram.component.edit.commands.ComponentRequiredReorientCommand;
 import org.eclipse.uml2.diagram.component.edit.commands.DependencyCreateCommand;
@@ -26,6 +28,7 @@ import org.eclipse.uml2.diagram.component.edit.parts.ArtifactEditPart;
 import org.eclipse.uml2.diagram.component.edit.parts.AssemblyConnectorCircleEditPart;
 import org.eclipse.uml2.diagram.component.edit.parts.AssociationEditPart;
 import org.eclipse.uml2.diagram.component.edit.parts.ClassEditPart;
+import org.eclipse.uml2.diagram.component.edit.parts.CommentAnnotatedElementEditPart;
 import org.eclipse.uml2.diagram.component.edit.parts.Component2EditPart;
 import org.eclipse.uml2.diagram.component.edit.parts.ComponentContents2EditPart;
 import org.eclipse.uml2.diagram.component.edit.parts.ComponentRequiredEditPart;
@@ -142,6 +145,9 @@ public class Component2ItemSemanticEditPolicy extends UMLBaseItemSemanticEditPol
 		if (UMLElementTypes.Association_4011 == req.getElementType()) {
 			return getGEFWrapper(new AssociationCreateCommand(req, req.getSource(), req.getTarget()));
 		}
+		if (UMLElementTypes.CommentAnnotatedElement_4012 == req.getElementType()) {
+			return null;
+		}
 		return null;
 	}
 
@@ -160,6 +166,9 @@ public class Component2ItemSemanticEditPolicy extends UMLBaseItemSemanticEditPol
 		}
 		if (UMLElementTypes.Association_4011 == req.getElementType()) {
 			return getGEFWrapper(new AssociationCreateCommand(req, req.getSource(), req.getTarget()));
+		}
+		if (UMLElementTypes.CommentAnnotatedElement_4012 == req.getElementType()) {
+			return getGEFWrapper(new CommentAnnotatedElementCreateCommand(req, req.getSource(), req.getTarget()));
 		}
 		return null;
 	}
@@ -192,6 +201,8 @@ public class Component2ItemSemanticEditPolicy extends UMLBaseItemSemanticEditPol
 		switch (getVisualID(req)) {
 		case ComponentRequiredEditPart.VISUAL_ID:
 			return getGEFWrapper(new ComponentRequiredReorientCommand(req));
+		case CommentAnnotatedElementEditPart.VISUAL_ID:
+			return getGEFWrapper(new CommentAnnotatedElementReorientCommand(req));
 		}
 		return super.getReorientReferenceRelationshipCommand(req);
 	}

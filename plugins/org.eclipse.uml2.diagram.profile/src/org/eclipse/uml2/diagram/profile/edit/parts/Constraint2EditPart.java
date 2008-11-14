@@ -291,6 +291,9 @@ public class Constraint2EditPart extends ShapeNodeEditPart implements PrimarySha
 		if (targetEditPart instanceof org.eclipse.uml2.diagram.profile.edit.parts.Constraint2EditPart) {
 			types.add(UMLElementTypes.ConstraintConstrainedElement_4003);
 		}
+		if (targetEditPart instanceof CommentEditPart) {
+			types.add(UMLElementTypes.ConstraintConstrainedElement_4003);
+		}
 		return types;
 	}
 
@@ -317,6 +320,9 @@ public class Constraint2EditPart extends ShapeNodeEditPart implements PrimarySha
 		if (relationshipType == UMLElementTypes.ConstraintConstrainedElement_4003) {
 			types.add(UMLElementTypes.Constraint_2008);
 		}
+		if (relationshipType == UMLElementTypes.ConstraintConstrainedElement_4003) {
+			types.add(UMLElementTypes.Comment_2009);
+		}
 		return types;
 	}
 
@@ -326,6 +332,7 @@ public class Constraint2EditPart extends ShapeNodeEditPart implements PrimarySha
 	public List/*<org.eclipse.gmf.runtime.emf.type.core.IElementType>*/getMARelTypesOnTarget() {
 		List/*<org.eclipse.gmf.runtime.emf.type.core.IElementType>*/types = new ArrayList/*<org.eclipse.gmf.runtime.emf.type.core.IElementType>*/();
 		types.add(UMLElementTypes.ConstraintConstrainedElement_4003);
+		types.add(UMLElementTypes.CommentAnnotatedElement_4004);
 		return types;
 	}
 
@@ -336,6 +343,9 @@ public class Constraint2EditPart extends ShapeNodeEditPart implements PrimarySha
 		List/*<org.eclipse.gmf.runtime.emf.type.core.IElementType>*/types = new ArrayList/*<org.eclipse.gmf.runtime.emf.type.core.IElementType>*/();
 		if (relationshipType == UMLElementTypes.ConstraintConstrainedElement_4003) {
 			types.add(UMLElementTypes.Constraint_2008);
+		}
+		if (relationshipType == UMLElementTypes.CommentAnnotatedElement_4004) {
+			types.add(UMLElementTypes.Comment_2009);
 		}
 		return types;
 	}

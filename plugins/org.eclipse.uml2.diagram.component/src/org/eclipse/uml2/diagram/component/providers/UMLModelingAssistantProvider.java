@@ -30,6 +30,7 @@ import org.eclipse.uml2.diagram.component.edit.parts.AssemblyConnectorCircleEdit
 import org.eclipse.uml2.diagram.component.edit.parts.Class2EditPart;
 import org.eclipse.uml2.diagram.component.edit.parts.ClassDiagramNotationClassEditPart;
 import org.eclipse.uml2.diagram.component.edit.parts.ClassEditPart;
+import org.eclipse.uml2.diagram.component.edit.parts.CommentEditPart;
 import org.eclipse.uml2.diagram.component.edit.parts.Component2EditPart;
 import org.eclipse.uml2.diagram.component.edit.parts.Component3EditPart;
 import org.eclipse.uml2.diagram.component.edit.parts.ComponentContents2EditPart;
@@ -152,6 +153,7 @@ public class UMLModelingAssistantProvider extends ModelingAssistantProvider {
 			types.add(UMLElementTypes.Class_2004);
 			types.add(UMLElementTypes.Package_2006);
 			types.add(UMLElementTypes.Class_2007);
+			types.add(UMLElementTypes.Comment_2008);
 			return types;
 		}
 		return Collections.emptyList();
@@ -182,6 +184,9 @@ public class UMLModelingAssistantProvider extends ModelingAssistantProvider {
 		}
 		if (sourceEditPart instanceof ClassDiagramNotationClassEditPart) {
 			return ((ClassDiagramNotationClassEditPart) sourceEditPart).getMARelTypesOnSource();
+		}
+		if (sourceEditPart instanceof CommentEditPart) {
+			return ((CommentEditPart) sourceEditPart).getMARelTypesOnSource();
 		}
 		if (sourceEditPart instanceof Component2EditPart) {
 			return ((Component2EditPart) sourceEditPart).getMARelTypesOnSource();
@@ -238,6 +243,9 @@ public class UMLModelingAssistantProvider extends ModelingAssistantProvider {
 		}
 		if (targetEditPart instanceof ClassDiagramNotationClassEditPart) {
 			return ((ClassDiagramNotationClassEditPart) targetEditPart).getMARelTypesOnTarget();
+		}
+		if (targetEditPart instanceof CommentEditPart) {
+			return ((CommentEditPart) targetEditPart).getMARelTypesOnTarget();
 		}
 		if (targetEditPart instanceof Component2EditPart) {
 			return ((Component2EditPart) targetEditPart).getMARelTypesOnTarget();
@@ -296,6 +304,9 @@ public class UMLModelingAssistantProvider extends ModelingAssistantProvider {
 		if (sourceEditPart instanceof ClassDiagramNotationClassEditPart) {
 			return ((ClassDiagramNotationClassEditPart) sourceEditPart).getMARelTypesOnSourceAndTarget(targetEditPart);
 		}
+		if (sourceEditPart instanceof CommentEditPart) {
+			return ((CommentEditPart) sourceEditPart).getMARelTypesOnSourceAndTarget(targetEditPart);
+		}
 		if (sourceEditPart instanceof Component2EditPart) {
 			return ((Component2EditPart) sourceEditPart).getMARelTypesOnSourceAndTarget(targetEditPart);
 		}
@@ -352,6 +363,9 @@ public class UMLModelingAssistantProvider extends ModelingAssistantProvider {
 		if (targetEditPart instanceof ClassDiagramNotationClassEditPart) {
 			return ((ClassDiagramNotationClassEditPart) targetEditPart).getMATypesForSource(relationshipType);
 		}
+		if (targetEditPart instanceof CommentEditPart) {
+			return ((CommentEditPart) targetEditPart).getMATypesForSource(relationshipType);
+		}
 		if (targetEditPart instanceof Component2EditPart) {
 			return ((Component2EditPart) targetEditPart).getMATypesForSource(relationshipType);
 		}
@@ -407,6 +421,9 @@ public class UMLModelingAssistantProvider extends ModelingAssistantProvider {
 		}
 		if (sourceEditPart instanceof ClassDiagramNotationClassEditPart) {
 			return ((ClassDiagramNotationClassEditPart) sourceEditPart).getMATypesForTarget(relationshipType);
+		}
+		if (sourceEditPart instanceof CommentEditPart) {
+			return ((CommentEditPart) sourceEditPart).getMATypesForTarget(relationshipType);
 		}
 		if (sourceEditPart instanceof Component2EditPart) {
 			return ((Component2EditPart) sourceEditPart).getMATypesForTarget(relationshipType);

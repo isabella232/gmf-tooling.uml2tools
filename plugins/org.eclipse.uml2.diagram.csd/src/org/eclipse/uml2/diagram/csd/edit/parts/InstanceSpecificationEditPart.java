@@ -303,6 +303,7 @@ public class InstanceSpecificationEditPart extends ShapeNodeEditPart implements 
 		types.add(UMLElementTypes.Usage_4008);
 		types.add(UMLElementTypes.ConstraintConstrainedElement_4012);
 		types.add(UMLElementTypes.Slot_4015);
+		types.add(UMLElementTypes.CommentAnnotatedElement_4016);
 		return types;
 	}
 
@@ -507,6 +508,9 @@ public class InstanceSpecificationEditPart extends ShapeNodeEditPart implements 
 		}
 		if (relationshipType == UMLElementTypes.Slot_4015) {
 			types.add(UMLElementTypes.InstanceSpecification_2011);
+		}
+		if (relationshipType == UMLElementTypes.CommentAnnotatedElement_4016) {
+			types.add(UMLElementTypes.Comment_2013);
 		}
 		return types;
 	}

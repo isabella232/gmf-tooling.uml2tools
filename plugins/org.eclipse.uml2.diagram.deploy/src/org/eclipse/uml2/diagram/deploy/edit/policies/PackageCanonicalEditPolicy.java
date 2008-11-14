@@ -30,6 +30,7 @@ import org.eclipse.uml2.diagram.deploy.edit.parts.Artifact2EditPart;
 import org.eclipse.uml2.diagram.deploy.edit.parts.Artifact3EditPart;
 import org.eclipse.uml2.diagram.deploy.edit.parts.Artifact4EditPart;
 import org.eclipse.uml2.diagram.deploy.edit.parts.ArtifactEditPart;
+import org.eclipse.uml2.diagram.deploy.edit.parts.CommentEditPart;
 import org.eclipse.uml2.diagram.deploy.edit.parts.CommunicationPathEditPart;
 import org.eclipse.uml2.diagram.deploy.edit.parts.DependencyEditPart;
 import org.eclipse.uml2.diagram.deploy.edit.parts.DeploymentEditPart;
@@ -105,6 +106,7 @@ public class PackageCanonicalEditPolicy extends CanonicalConnectionEditPolicy {
 		case ExecutionEnvironmentEditPart.VISUAL_ID:
 		case Artifact2EditPart.VISUAL_ID:
 		case DeploymentSpecificationEditPart.VISUAL_ID:
+		case CommentEditPart.VISUAL_ID:
 			if (!semanticChildren.contains(view.getElement())) {
 				return true;
 			}
@@ -126,6 +128,7 @@ public class PackageCanonicalEditPolicy extends CanonicalConnectionEditPolicy {
 		if (myFeaturesToSynchronize == null) {
 			myFeaturesToSynchronize = new HashSet();
 			myFeaturesToSynchronize.add(UMLPackage.eINSTANCE.getPackage_PackagedElement());
+			myFeaturesToSynchronize.add(UMLPackage.eINSTANCE.getElement_OwnedComment());
 		}
 		return myFeaturesToSynchronize;
 	}
@@ -280,6 +283,13 @@ public class PackageCanonicalEditPolicy extends CanonicalConnectionEditPolicy {
 		case DeploymentSpecificationEditPart.VISUAL_ID: {
 			if (!domain2NotationMap.containsKey(view.getElement())) {
 				result.addAll(UMLDiagramUpdater.getDeploymentSpecification_2007ContainedLinks(view));
+			}
+			domain2NotationMap.put(view.getElement(), view);
+			break;
+		}
+		case CommentEditPart.VISUAL_ID: {
+			if (!domain2NotationMap.containsKey(view.getElement())) {
+				result.addAll(UMLDiagramUpdater.getComment_2008ContainedLinks(view));
 			}
 			domain2NotationMap.put(view.getElement(), view);
 			break;

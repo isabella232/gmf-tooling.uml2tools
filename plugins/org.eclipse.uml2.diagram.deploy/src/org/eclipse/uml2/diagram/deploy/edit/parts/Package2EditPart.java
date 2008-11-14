@@ -300,6 +300,7 @@ public class Package2EditPart extends ShapeNodeEditPart implements PrimaryShapeE
 		List/*<org.eclipse.gmf.runtime.emf.type.core.IElementType>*/types = new ArrayList/*<org.eclipse.gmf.runtime.emf.type.core.IElementType>*/();
 		types.add(UMLElementTypes.Manifestation_4002);
 		types.add(UMLElementTypes.Dependency_4005);
+		types.add(UMLElementTypes.CommentAnnotatedElement_4006);
 		return types;
 	}
 
@@ -402,6 +403,9 @@ public class Package2EditPart extends ShapeNodeEditPart implements PrimaryShapeE
 		}
 		if (relationshipType == UMLElementTypes.Dependency_4005) {
 			types.add(UMLElementTypes.Node_3007);
+		}
+		if (relationshipType == UMLElementTypes.CommentAnnotatedElement_4006) {
+			types.add(UMLElementTypes.Comment_2008);
 		}
 		return types;
 	}

@@ -6,6 +6,9 @@ import org.eclipse.gmf.runtime.diagram.core.providers.AbstractViewProvider;
 import org.eclipse.gmf.runtime.emf.type.core.IElementType;
 import org.eclipse.gmf.runtime.emf.type.core.IHintedType;
 import org.eclipse.gmf.runtime.notation.View;
+import org.eclipse.uml2.diagram.profile.edit.parts.CommentAnnotatedElementEditPart;
+import org.eclipse.uml2.diagram.profile.edit.parts.CommentBodyEditPart;
+import org.eclipse.uml2.diagram.profile.edit.parts.CommentEditPart;
 import org.eclipse.uml2.diagram.profile.edit.parts.Constraint2EditPart;
 import org.eclipse.uml2.diagram.profile.edit.parts.ConstraintConstrainedElementEditPart;
 import org.eclipse.uml2.diagram.profile.edit.parts.ConstraintEditPart;
@@ -37,6 +40,9 @@ import org.eclipse.uml2.diagram.profile.edit.parts.StereotypeEditPart;
 import org.eclipse.uml2.diagram.profile.edit.parts.StereotypeNameEditPart;
 import org.eclipse.uml2.diagram.profile.edit.parts.StereotypeStereoEditPart;
 import org.eclipse.uml2.diagram.profile.part.UMLVisualIDRegistry;
+import org.eclipse.uml2.diagram.profile.view.factories.CommentAnnotatedElementViewFactory;
+import org.eclipse.uml2.diagram.profile.view.factories.CommentBodyViewFactory;
+import org.eclipse.uml2.diagram.profile.view.factories.CommentViewFactory;
 import org.eclipse.uml2.diagram.profile.view.factories.Constraint2ViewFactory;
 import org.eclipse.uml2.diagram.profile.view.factories.ConstraintConstrainedElementViewFactory;
 import org.eclipse.uml2.diagram.profile.view.factories.ConstraintNameViewFactory;
@@ -134,6 +140,7 @@ public class UMLViewProvider extends AbstractViewProvider {
 				case ElementImportEditPart.VISUAL_ID:
 				case Profile3EditPart.VISUAL_ID:
 				case Constraint2EditPart.VISUAL_ID:
+				case CommentEditPart.VISUAL_ID:
 				case PropertyEditPart.VISUAL_ID:
 				case ConstraintEditPart.VISUAL_ID:
 				case Stereotype2EditPart.VISUAL_ID:
@@ -178,6 +185,11 @@ public class UMLViewProvider extends AbstractViewProvider {
 					break;
 				case ConstraintNameEditPart.VISUAL_ID:
 					if (Constraint2EditPart.VISUAL_ID != UMLVisualIDRegistry.getVisualID(containerView) || containerView.getElement() != domainElement) {
+						return null; // wrong container
+					}
+					break;
+				case CommentBodyEditPart.VISUAL_ID:
+					if (CommentEditPart.VISUAL_ID != UMLVisualIDRegistry.getVisualID(containerView) || containerView.getElement() != domainElement) {
 						return null; // wrong container
 					}
 					break;
@@ -232,6 +244,10 @@ public class UMLViewProvider extends AbstractViewProvider {
 			return Constraint2ViewFactory.class;
 		case ConstraintNameEditPart.VISUAL_ID:
 			return ConstraintNameViewFactory.class;
+		case CommentEditPart.VISUAL_ID:
+			return CommentViewFactory.class;
+		case CommentBodyEditPart.VISUAL_ID:
+			return CommentBodyViewFactory.class;
 		case PropertyEditPart.VISUAL_ID:
 			return PropertyViewFactory.class;
 		case ConstraintEditPart.VISUAL_ID:
@@ -292,6 +308,8 @@ public class UMLViewProvider extends AbstractViewProvider {
 			return ExtensionViewFactory.class;
 		case ConstraintConstrainedElementEditPart.VISUAL_ID:
 			return ConstraintConstrainedElementViewFactory.class;
+		case CommentAnnotatedElementEditPart.VISUAL_ID:
+			return CommentAnnotatedElementViewFactory.class;
 		}
 		return null;
 	}

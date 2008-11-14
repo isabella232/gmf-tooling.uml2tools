@@ -10,6 +10,8 @@ import org.eclipse.gmf.runtime.emf.type.core.requests.ReorientRelationshipReques
 import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.uml2.diagram.csd.edit.commands.AssociationCreateCommand;
 import org.eclipse.uml2.diagram.csd.edit.commands.AssociationReorientCommand;
+import org.eclipse.uml2.diagram.csd.edit.commands.CommentAnnotatedElementCreateCommand;
+import org.eclipse.uml2.diagram.csd.edit.commands.CommentAnnotatedElementReorientCommand;
 import org.eclipse.uml2.diagram.csd.edit.commands.ConstraintConstrainedElementCreateCommand;
 import org.eclipse.uml2.diagram.csd.edit.commands.ConstraintConstrainedElementReorientCommand;
 import org.eclipse.uml2.diagram.csd.edit.commands.DependencyCreateCommand;
@@ -23,6 +25,7 @@ import org.eclipse.uml2.diagram.csd.edit.commands.PortRequiredReorientCommand;
 import org.eclipse.uml2.diagram.csd.edit.commands.UsageCreateCommand;
 import org.eclipse.uml2.diagram.csd.edit.commands.UsageReorientCommand;
 import org.eclipse.uml2.diagram.csd.edit.parts.AssociationEditPart;
+import org.eclipse.uml2.diagram.csd.edit.parts.CommentAnnotatedElementEditPart;
 import org.eclipse.uml2.diagram.csd.edit.parts.ConstraintConstrainedElementEditPart;
 import org.eclipse.uml2.diagram.csd.edit.parts.DependencyEditPart;
 import org.eclipse.uml2.diagram.csd.edit.parts.InterfaceRealizationEditPart;
@@ -90,6 +93,9 @@ public class InterfaceItemSemanticEditPolicy extends UMLBaseItemSemanticEditPoli
 		if (UMLElementTypes.PortRequired_4014 == req.getElementType()) {
 			return null;
 		}
+		if (UMLElementTypes.CommentAnnotatedElement_4016 == req.getElementType()) {
+			return null;
+		}
 		return null;
 	}
 
@@ -117,6 +123,9 @@ public class InterfaceItemSemanticEditPolicy extends UMLBaseItemSemanticEditPoli
 		}
 		if (UMLElementTypes.PortRequired_4014 == req.getElementType()) {
 			return getGEFWrapper(new PortRequiredCreateCommand(req, req.getSource(), req.getTarget()));
+		}
+		if (UMLElementTypes.CommentAnnotatedElement_4016 == req.getElementType()) {
+			return getGEFWrapper(new CommentAnnotatedElementCreateCommand(req, req.getSource(), req.getTarget()));
 		}
 		return null;
 	}
@@ -155,6 +164,8 @@ public class InterfaceItemSemanticEditPolicy extends UMLBaseItemSemanticEditPoli
 			return getGEFWrapper(new ConstraintConstrainedElementReorientCommand(req));
 		case PortRequiredEditPart.VISUAL_ID:
 			return getGEFWrapper(new PortRequiredReorientCommand(req));
+		case CommentAnnotatedElementEditPart.VISUAL_ID:
+			return getGEFWrapper(new CommentAnnotatedElementReorientCommand(req));
 		}
 		return super.getReorientReferenceRelationshipCommand(req);
 	}

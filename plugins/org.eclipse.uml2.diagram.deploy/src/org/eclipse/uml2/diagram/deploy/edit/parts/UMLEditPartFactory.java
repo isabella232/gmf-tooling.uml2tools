@@ -82,6 +82,12 @@ public class UMLEditPartFactory implements EditPartFactory {
 			case DeploymentSpecificationStereo3EditPart.VISUAL_ID:
 				return new DeploymentSpecificationStereo3EditPart(view);
 
+			case CommentEditPart.VISUAL_ID:
+				return new CommentEditPart(view);
+
+			case CommentBodyEditPart.VISUAL_ID:
+				return new CommentBodyEditPart(view);
+
 			case ElementImportEditPart.VISUAL_ID:
 				return new ElementImportEditPart(view);
 
@@ -201,6 +207,9 @@ public class UMLEditPartFactory implements EditPartFactory {
 
 			case DependencyNameEditPart.VISUAL_ID:
 				return new DependencyNameEditPart(view);
+
+			case CommentAnnotatedElementEditPart.VISUAL_ID:
+				return new CommentAnnotatedElementEditPart(view);
 			}
 		}
 		return createUnrecognizedEditPart(context, model);

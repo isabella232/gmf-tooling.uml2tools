@@ -19,6 +19,8 @@ import org.eclipse.uml2.diagram.deploy.edit.parts.ArtifactFileNameEditPart;
 import org.eclipse.uml2.diagram.deploy.edit.parts.ArtifactStereo2EditPart;
 import org.eclipse.uml2.diagram.deploy.edit.parts.ArtifactStereo3EditPart;
 import org.eclipse.uml2.diagram.deploy.edit.parts.ArtifactStereoEditPart;
+import org.eclipse.uml2.diagram.deploy.edit.parts.CommentBodyEditPart;
+import org.eclipse.uml2.diagram.deploy.edit.parts.CommentEditPart;
 import org.eclipse.uml2.diagram.deploy.edit.parts.CommunicationPathEditPart;
 import org.eclipse.uml2.diagram.deploy.edit.parts.CommunicationPathNameEditPart;
 import org.eclipse.uml2.diagram.deploy.edit.parts.DependencyEditPart;
@@ -302,6 +304,9 @@ public class UMLVisualIDRegistry {
 			if (UMLPackage.eINSTANCE.getDeploymentSpecification().isSuperTypeOf(domainElement.eClass())) {
 				return DeploymentSpecificationEditPart.VISUAL_ID;
 			}
+			if (UMLPackage.eINSTANCE.getComment().isSuperTypeOf(domainElement.eClass())) {
+				return CommentEditPart.VISUAL_ID;
+			}
 			break;
 		}
 		return -1;
@@ -383,6 +388,11 @@ public class UMLVisualIDRegistry {
 				return true;
 			}
 			if (DeploymentSpecificationPropertiesEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			break;
+		case CommentEditPart.VISUAL_ID:
+			if (CommentBodyEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
 			break;
@@ -543,6 +553,9 @@ public class UMLVisualIDRegistry {
 				return true;
 			}
 			if (DeploymentSpecificationEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			if (CommentEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
 			break;
@@ -790,6 +803,9 @@ public class UMLVisualIDRegistry {
 			if (UMLPackage.eINSTANCE.getDeploymentSpecification().isSuperTypeOf(domainElement.eClass())) {
 				return DeploymentSpecificationEditPart.VISUAL_ID;
 			}
+			if (UMLPackage.eINSTANCE.getComment().isSuperTypeOf(domainElement.eClass())) {
+				return CommentEditPart.VISUAL_ID;
+			}
 			if (UMLPackage.eINSTANCE.getElementImport().isSuperTypeOf(domainElement.eClass())) {
 				return ElementImportEditPart.VISUAL_ID;
 			}
@@ -907,6 +923,7 @@ public class UMLVisualIDRegistry {
 		case ExecutionEnvironmentEditPart.VISUAL_ID:
 		case Artifact2EditPart.VISUAL_ID:
 		case DeploymentSpecificationEditPart.VISUAL_ID:
+		case CommentEditPart.VISUAL_ID:
 		case ElementImportEditPart.VISUAL_ID:
 		case Device2EditPart.VISUAL_ID:
 		case ArtifactEditPart.VISUAL_ID:

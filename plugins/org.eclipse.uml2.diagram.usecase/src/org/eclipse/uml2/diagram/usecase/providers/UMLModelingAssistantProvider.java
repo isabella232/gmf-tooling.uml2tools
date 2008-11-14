@@ -23,6 +23,7 @@ import org.eclipse.ui.dialogs.ElementListSelectionDialog;
 import org.eclipse.uml2.diagram.usecase.edit.parts.ActorAsRectangleEditPart;
 import org.eclipse.uml2.diagram.usecase.edit.parts.ActorEditPart;
 import org.eclipse.uml2.diagram.usecase.edit.parts.ActorInPackageEditPart;
+import org.eclipse.uml2.diagram.usecase.edit.parts.CommentEditPart;
 import org.eclipse.uml2.diagram.usecase.edit.parts.ConstraintEditPart;
 import org.eclipse.uml2.diagram.usecase.edit.parts.DiagramHeaderEditPart;
 import org.eclipse.uml2.diagram.usecase.edit.parts.InnerUseCaseEditPart;
@@ -100,6 +101,7 @@ public class UMLModelingAssistantProvider extends ModelingAssistantProvider {
 			types.add(UMLElementTypes.Component_2006);
 			types.add(UMLElementTypes.Package_2007);
 			types.add(UMLElementTypes.Constraint_2008);
+			types.add(UMLElementTypes.Comment_2009);
 			return types;
 		}
 		return Collections.emptyList();
@@ -133,6 +135,9 @@ public class UMLModelingAssistantProvider extends ModelingAssistantProvider {
 		}
 		if (sourceEditPart instanceof ConstraintEditPart) {
 			return ((ConstraintEditPart) sourceEditPart).getMARelTypesOnSource();
+		}
+		if (sourceEditPart instanceof CommentEditPart) {
+			return ((CommentEditPart) sourceEditPart).getMARelTypesOnSource();
 		}
 		if (sourceEditPart instanceof InnerUseCaseEditPart) {
 			return ((InnerUseCaseEditPart) sourceEditPart).getMARelTypesOnSource();
@@ -174,6 +179,9 @@ public class UMLModelingAssistantProvider extends ModelingAssistantProvider {
 		}
 		if (targetEditPart instanceof ConstraintEditPart) {
 			return ((ConstraintEditPart) targetEditPart).getMARelTypesOnTarget();
+		}
+		if (targetEditPart instanceof CommentEditPart) {
+			return ((CommentEditPart) targetEditPart).getMARelTypesOnTarget();
 		}
 		if (targetEditPart instanceof InnerUseCaseEditPart) {
 			return ((InnerUseCaseEditPart) targetEditPart).getMARelTypesOnTarget();
@@ -217,6 +225,9 @@ public class UMLModelingAssistantProvider extends ModelingAssistantProvider {
 		if (sourceEditPart instanceof ConstraintEditPart) {
 			return ((ConstraintEditPart) sourceEditPart).getMARelTypesOnSourceAndTarget(targetEditPart);
 		}
+		if (sourceEditPart instanceof CommentEditPart) {
+			return ((CommentEditPart) sourceEditPart).getMARelTypesOnSourceAndTarget(targetEditPart);
+		}
 		if (sourceEditPart instanceof InnerUseCaseEditPart) {
 			return ((InnerUseCaseEditPart) sourceEditPart).getMARelTypesOnSourceAndTarget(targetEditPart);
 		}
@@ -258,6 +269,9 @@ public class UMLModelingAssistantProvider extends ModelingAssistantProvider {
 		if (targetEditPart instanceof ConstraintEditPart) {
 			return ((ConstraintEditPart) targetEditPart).getMATypesForSource(relationshipType);
 		}
+		if (targetEditPart instanceof CommentEditPart) {
+			return ((CommentEditPart) targetEditPart).getMATypesForSource(relationshipType);
+		}
 		if (targetEditPart instanceof InnerUseCaseEditPart) {
 			return ((InnerUseCaseEditPart) targetEditPart).getMATypesForSource(relationshipType);
 		}
@@ -298,6 +312,9 @@ public class UMLModelingAssistantProvider extends ModelingAssistantProvider {
 		}
 		if (sourceEditPart instanceof ConstraintEditPart) {
 			return ((ConstraintEditPart) sourceEditPart).getMATypesForTarget(relationshipType);
+		}
+		if (sourceEditPart instanceof CommentEditPart) {
+			return ((CommentEditPart) sourceEditPart).getMATypesForTarget(relationshipType);
 		}
 		if (sourceEditPart instanceof InnerUseCaseEditPart) {
 			return ((InnerUseCaseEditPart) sourceEditPart).getMATypesForTarget(relationshipType);

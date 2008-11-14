@@ -264,6 +264,7 @@ public class Interface2EditPart extends AbstractBorderedShapeEditPart implements
 		types.add(UMLElementTypes.ComponentRequired_4007);
 		types.add(UMLElementTypes.Dependency_4009);
 		types.add(UMLElementTypes.Association_4011);
+		types.add(UMLElementTypes.CommentAnnotatedElement_4012);
 		return types;
 	}
 
@@ -468,6 +469,9 @@ public class Interface2EditPart extends AbstractBorderedShapeEditPart implements
 		}
 		if (relationshipType == UMLElementTypes.Association_4011) {
 			types.add(UMLElementTypes.Interface_3005);
+		}
+		if (relationshipType == UMLElementTypes.CommentAnnotatedElement_4012) {
+			types.add(UMLElementTypes.Comment_2008);
 		}
 		return types;
 	}

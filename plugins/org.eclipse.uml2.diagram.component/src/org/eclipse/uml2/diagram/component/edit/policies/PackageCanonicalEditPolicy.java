@@ -50,6 +50,7 @@ import org.eclipse.uml2.diagram.component.edit.parts.ClassDiagramNotationInnerCl
 import org.eclipse.uml2.diagram.component.edit.parts.ClassDiagramNotationOperationEditPart;
 import org.eclipse.uml2.diagram.component.edit.parts.ClassDiagramNotationPropertyEditPart;
 import org.eclipse.uml2.diagram.component.edit.parts.ClassEditPart;
+import org.eclipse.uml2.diagram.component.edit.parts.CommentEditPart;
 import org.eclipse.uml2.diagram.component.edit.parts.Component2EditPart;
 import org.eclipse.uml2.diagram.component.edit.parts.Component3EditPart;
 import org.eclipse.uml2.diagram.component.edit.parts.ComponentEditPart;
@@ -134,6 +135,7 @@ public class PackageCanonicalEditPolicy extends CanonicalConnectionEditPolicy {
 		case Interface2EditPart.VISUAL_ID:
 		case Package2EditPart.VISUAL_ID:
 		case Package3EditPart.VISUAL_ID:
+		case CommentEditPart.VISUAL_ID:
 			if (!semanticChildren.contains(view.getElement())) {
 				return true;
 			}
@@ -208,6 +210,7 @@ public class PackageCanonicalEditPolicy extends CanonicalConnectionEditPolicy {
 		if (myFeaturesToSynchronize == null) {
 			myFeaturesToSynchronize = new HashSet();
 			myFeaturesToSynchronize.add(UMLPackage.eINSTANCE.getPackage_PackagedElement());
+			myFeaturesToSynchronize.add(UMLPackage.eINSTANCE.getElement_OwnedComment());
 		}
 		return myFeaturesToSynchronize;
 	}
@@ -379,6 +382,13 @@ public class PackageCanonicalEditPolicy extends CanonicalConnectionEditPolicy {
 		case ClassDiagramNotationClassEditPart.VISUAL_ID: {
 			if (!domain2NotationMap.containsKey(view.getElement())) {
 				result.addAll(UMLDiagramUpdater.getClass_2007ContainedLinks(view));
+			}
+			domain2NotationMap.put(view.getElement(), view);
+			break;
+		}
+		case CommentEditPart.VISUAL_ID: {
+			if (!domain2NotationMap.containsKey(view.getElement())) {
+				result.addAll(UMLDiagramUpdater.getComment_2008ContainedLinks(view));
 			}
 			domain2NotationMap.put(view.getElement(), view);
 			break;

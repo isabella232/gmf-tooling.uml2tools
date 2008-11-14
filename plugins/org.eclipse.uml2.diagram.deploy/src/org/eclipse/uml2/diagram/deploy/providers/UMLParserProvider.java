@@ -23,6 +23,7 @@ import org.eclipse.uml2.diagram.deploy.edit.parts.ArtifactFileNameEditPart;
 import org.eclipse.uml2.diagram.deploy.edit.parts.ArtifactStereo2EditPart;
 import org.eclipse.uml2.diagram.deploy.edit.parts.ArtifactStereo3EditPart;
 import org.eclipse.uml2.diagram.deploy.edit.parts.ArtifactStereoEditPart;
+import org.eclipse.uml2.diagram.deploy.edit.parts.CommentBodyEditPart;
 import org.eclipse.uml2.diagram.deploy.edit.parts.CommunicationPathNameEditPart;
 import org.eclipse.uml2.diagram.deploy.edit.parts.DependencyNameEditPart;
 import org.eclipse.uml2.diagram.deploy.edit.parts.DeploymentNameEditPart;
@@ -288,6 +289,30 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 			deploymentSpecificationQualifiedName_5023Parser = new DeploymentAppliedStereotypeParser();
 		}
 		return deploymentSpecificationQualifiedName_5023Parser;
+	}
+
+	/**
+	 * @generated
+	 */
+	private IParser commentBody_5024Parser;
+
+	/**
+	 * @generated
+	 */
+	private IParser getCommentBody_5024Parser() {
+		if (commentBody_5024Parser == null) {
+			commentBody_5024Parser = createCommentBody_5024Parser();
+		}
+		return commentBody_5024Parser;
+	}
+
+	/**
+	 * @generated
+	 */
+	protected IParser createCommentBody_5024Parser() {
+		EAttribute[] features = new EAttribute[] { UMLPackage.eINSTANCE.getComment_Body() };
+		Parser_0_0 parser = new Parser_0_0(features);
+		return parser;
 	}
 
 	/**
@@ -730,6 +755,8 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 			return getDeploymentSpecificationName_5006Parser();
 		case DeploymentSpecificationStereo3EditPart.VISUAL_ID:
 			return getDeploymentSpecificationQualifiedName_5023Parser();
+		case CommentBodyEditPart.VISUAL_ID:
+			return getCommentBody_5024Parser();
 		case ElementImportEditPart.VISUAL_ID:
 			return getElementImport_3001Parser();
 		case DeviceName2EditPart.VISUAL_ID:

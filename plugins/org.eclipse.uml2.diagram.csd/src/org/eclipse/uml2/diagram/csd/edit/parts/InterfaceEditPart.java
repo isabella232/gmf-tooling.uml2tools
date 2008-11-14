@@ -88,7 +88,9 @@ public class InterfaceEditPart extends AbstractBorderedShapeEditPart implements 
 		LayoutEditPolicy lep = new LayoutEditPolicy() {
 
 			protected EditPolicy createChildEditPolicy(EditPart child) {
-				if (child instanceof IBorderItemEditPart) {
+				View childView = (View) child.getModel();
+				switch (UMLVisualIDRegistry.getVisualID(childView)) {
+				case InterfaceNameEditPart.VISUAL_ID:
 					return new BorderItemSelectionEditPolicy() {
 
 						protected List createSelectionHandles() {
@@ -267,6 +269,7 @@ public class InterfaceEditPart extends AbstractBorderedShapeEditPart implements 
 		types.add(UMLElementTypes.Association_4011);
 		types.add(UMLElementTypes.ConstraintConstrainedElement_4012);
 		types.add(UMLElementTypes.PortRequired_4014);
+		types.add(UMLElementTypes.CommentAnnotatedElement_4016);
 		return types;
 	}
 
@@ -525,6 +528,9 @@ public class InterfaceEditPart extends AbstractBorderedShapeEditPart implements 
 		}
 		if (relationshipType == UMLElementTypes.PortRequired_4014) {
 			types.add(UMLElementTypes.Port_3017);
+		}
+		if (relationshipType == UMLElementTypes.CommentAnnotatedElement_4016) {
+			types.add(UMLElementTypes.Comment_2013);
 		}
 		return types;
 	}

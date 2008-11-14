@@ -57,6 +57,14 @@
           xsi:type="gmftool:CreationTool"
           title="Constrained Element"
           description="Create Constrained Element Link"/>
+      <tools
+          xsi:type="gmftool:CreationTool"
+          title="Comment"
+          description="Create Comment"/>
+      <tools
+          xsi:type="gmftool:CreationTool"
+          title="Annotated Element"
+          description="Create Annotated Element"/>
     </tools>
   </palette>
 </gmftool:ToolRegistry>

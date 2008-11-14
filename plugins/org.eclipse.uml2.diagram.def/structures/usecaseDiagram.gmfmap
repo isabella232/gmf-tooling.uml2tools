@@ -424,6 +424,26 @@
           href="classDiagram_constraints.gmfgraph#ConstraintNode"/>
     </ownedChild>
   </nodes>
+  <nodes>
+    <containmentFeature
+        href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//Element/ownedComment"/>
+    <ownedChild>
+      <domainMetaElement
+          href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//Comment"/>
+      <labelMappings
+          xsi:type="gmfmap:FeatureLabelMapping">
+        <diagramLabel
+            href="classDiagram_comments.gmfgraph#Comment_BodySpecification"/>
+        <features
+            href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//Comment/body"/>
+      </labelMappings>
+      <tool
+          xsi:type="gmftool:CreationTool"
+          href="usecaseDiagram.gmftool#//@palette/@tools.0/@tools.5"/>
+      <diagramNode
+          href="classDiagram_comments.gmfgraph#CommentNode"/>
+    </ownedChild>
+  </nodes>
   <links>
     <domainMetaElement
         href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//Include"/>
@@ -569,6 +589,18 @@
       <targetEnd
           body="not self.oclIsKindOf(uml::Interface)&#xD;&#xA;"/>
     </creationConstraints>
+  </links>
+  <links>
+    <containmentFeature
+        href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//Element/ownedComment"/>
+    <tool
+        xsi:type="gmftool:CreationTool"
+        href="usecaseDiagram.gmftool#//@palette/@tools.2/@tools.6"/>
+    <diagramLink
+        href="classDiagram_comments.gmfgraph#AnnotatedElementLink"/>
+    <linkMetaFeature
+        xsi:type="ecore:EReference"
+        href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//Comment/annotatedElement"/>
   </links>
   <diagram>
     <diagramCanvas

@@ -34,6 +34,10 @@
           xsi:type="gmftool:CreationTool"
           title="Package"
           description="Create Package"/>
+      <tools
+          xsi:type="gmftool:CreationTool"
+          title="Comment"
+          description="Create Comment"/>
     </tools>
     <tools
         xsi:type="gmftool:ToolGroup"
@@ -85,6 +89,10 @@
             description="Create Navigable Association"
             toolClass="org.eclipse.uml2.diagram.component.part.CreateAssociationLinkTool.NAVIGABLE"/>
       </tools>
+      <tools
+          xsi:type="gmftool:CreationTool"
+          title="Annotated Element"
+          description="Create Annotated Element"/>
     </tools>
     <tools
         xsi:type="gmftool:ToolGroup"

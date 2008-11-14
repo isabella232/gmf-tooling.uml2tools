@@ -13,6 +13,7 @@ import org.eclipse.uml2.diagram.common.genapi.IUpdaterNodeDescriptor;
 import org.eclipse.uml2.diagram.usecase.edit.parts.ActorAsRectangleEditPart;
 import org.eclipse.uml2.diagram.usecase.edit.parts.ActorEditPart;
 import org.eclipse.uml2.diagram.usecase.edit.parts.ActorInPackageEditPart;
+import org.eclipse.uml2.diagram.usecase.edit.parts.CommentEditPart;
 import org.eclipse.uml2.diagram.usecase.edit.parts.ConstraintEditPart;
 import org.eclipse.uml2.diagram.usecase.edit.parts.DiagramHeaderEditPart;
 import org.eclipse.uml2.diagram.usecase.edit.parts.ElementImportEditPart;
@@ -65,6 +66,7 @@ public class SubjectUsecasesCanonicalEditPolicy extends CanonicalEditPolicy {
 		case SubjectEditPart.VISUAL_ID:
 		case NestedPackageEditPart.VISUAL_ID:
 		case ConstraintEditPart.VISUAL_ID:
+		case CommentEditPart.VISUAL_ID:
 		case ElementImportEditPart.VISUAL_ID:
 		case ExtensionPointEditPart.VISUAL_ID:
 		case ExtensionPoint2EditPart.VISUAL_ID:

@@ -24,6 +24,9 @@ import org.eclipse.uml2.diagram.deploy.edit.parts.ArtifactEditPart;
 import org.eclipse.uml2.diagram.deploy.edit.parts.ArtifactFileName2EditPart;
 import org.eclipse.uml2.diagram.deploy.edit.parts.ArtifactFileName3EditPart;
 import org.eclipse.uml2.diagram.deploy.edit.parts.ArtifactFileNameEditPart;
+import org.eclipse.uml2.diagram.deploy.edit.parts.CommentAnnotatedElementEditPart;
+import org.eclipse.uml2.diagram.deploy.edit.parts.CommentBodyEditPart;
+import org.eclipse.uml2.diagram.deploy.edit.parts.CommentEditPart;
 import org.eclipse.uml2.diagram.deploy.edit.parts.CommunicationPathEditPart;
 import org.eclipse.uml2.diagram.deploy.edit.parts.CommunicationPathNameEditPart;
 import org.eclipse.uml2.diagram.deploy.edit.parts.DependencyEditPart;
@@ -132,6 +135,8 @@ public class UMLNavigatorLabelProvider extends LabelProvider implements ICommonL
 			return getImage("Navigator?TopLevelNode?http://www.eclipse.org/uml2/3.0.0/UML?Artifact", UMLElementTypes.Artifact_2006); //$NON-NLS-1$
 		case DeploymentSpecificationEditPart.VISUAL_ID:
 			return getImage("Navigator?TopLevelNode?http://www.eclipse.org/uml2/3.0.0/UML?DeploymentSpecification", UMLElementTypes.DeploymentSpecification_2007); //$NON-NLS-1$
+		case CommentEditPart.VISUAL_ID:
+			return getImage("Navigator?TopLevelNode?http://www.eclipse.org/uml2/3.0.0/UML?Comment", UMLElementTypes.Comment_2008); //$NON-NLS-1$
 		case ElementImportEditPart.VISUAL_ID:
 			return getImage("Navigator?Node?http://www.eclipse.org/uml2/3.0.0/UML?ElementImport", UMLElementTypes.ElementImport_3001); //$NON-NLS-1$
 		case Device2EditPart.VISUAL_ID:
@@ -160,6 +165,8 @@ public class UMLNavigatorLabelProvider extends LabelProvider implements ICommonL
 			return getImage("Navigator?Link?http://www.eclipse.org/uml2/3.0.0/UML?CommunicationPath", UMLElementTypes.CommunicationPath_4004); //$NON-NLS-1$
 		case DependencyEditPart.VISUAL_ID:
 			return getImage("Navigator?Link?http://www.eclipse.org/uml2/3.0.0/UML?Dependency", UMLElementTypes.Dependency_4005); //$NON-NLS-1$
+		case CommentAnnotatedElementEditPart.VISUAL_ID:
+			return getImage("Navigator?Link?http://www.eclipse.org/uml2/3.0.0/UML?Comment?annotatedElement", UMLElementTypes.CommentAnnotatedElement_4006); //$NON-NLS-1$
 		}
 		return getImage("Navigator?UnknownElement", null); //$NON-NLS-1$
 	}
@@ -232,6 +239,8 @@ public class UMLNavigatorLabelProvider extends LabelProvider implements ICommonL
 			return getArtifact_2006Text(view);
 		case DeploymentSpecificationEditPart.VISUAL_ID:
 			return getDeploymentSpecification_2007Text(view);
+		case CommentEditPart.VISUAL_ID:
+			return getComment_2008Text(view);
 		case ElementImportEditPart.VISUAL_ID:
 			return getElementImport_3001Text(view);
 		case Device2EditPart.VISUAL_ID:
@@ -260,6 +269,8 @@ public class UMLNavigatorLabelProvider extends LabelProvider implements ICommonL
 			return getCommunicationPath_4004Text(view);
 		case DependencyEditPart.VISUAL_ID:
 			return getDependency_4005Text(view);
+		case CommentAnnotatedElementEditPart.VISUAL_ID:
+			return getCommentAnnotatedElement_4006Text(view);
 		}
 		return getUnknownElementText(view);
 	}
@@ -354,6 +365,19 @@ public class UMLNavigatorLabelProvider extends LabelProvider implements ICommonL
 			return parser.getPrintString(new EObjectAdapter(view.getElement() != null ? view.getElement() : view), ParserOptions.NONE.intValue());
 		} else {
 			UMLDiagramEditorPlugin.getInstance().logError("Parser was not found for label " + 5006); //$NON-NLS-1$
+			return ""; //$NON-NLS-1$
+		}
+	}
+
+	/**
+	 * @generated
+	 */
+	private String getComment_2008Text(View view) {
+		IParser parser = UMLParserProvider.getParser(UMLElementTypes.Comment_2008, view.getElement() != null ? view.getElement() : view, UMLVisualIDRegistry.getType(CommentBodyEditPart.VISUAL_ID));
+		if (parser != null) {
+			return parser.getPrintString(new EObjectAdapter(view.getElement() != null ? view.getElement() : view), ParserOptions.NONE.intValue());
+		} else {
+			UMLDiagramEditorPlugin.getInstance().logError("Parser was not found for label " + 5024); //$NON-NLS-1$
 			return ""; //$NON-NLS-1$
 		}
 	}
@@ -541,6 +565,13 @@ public class UMLNavigatorLabelProvider extends LabelProvider implements ICommonL
 			UMLDiagramEditorPlugin.getInstance().logError("Parser was not found for label " + 6004); //$NON-NLS-1$
 			return ""; //$NON-NLS-1$
 		}
+	}
+
+	/**
+	 * @generated
+	 */
+	private String getCommentAnnotatedElement_4006Text(View view) {
+		return ""; //$NON-NLS-1$
 	}
 
 	/**

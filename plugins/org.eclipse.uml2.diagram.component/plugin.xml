@@ -311,6 +311,16 @@
          </specializationType>
       </metamodel>
       <metamodel nsURI="http://www.eclipse.org/uml2/3.0.0/UML">
+         <metamodelType
+               id="org.eclipse.uml2.diagram.component.Comment_2008"
+               name="%metatype.name.Comment_2008"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
+               eclass="Comment"
+               edithelper="org.eclipse.uml2.diagram.component.edit.helpers.CommentEditHelper">
+            <param name="semanticHint" value="2008"/>
+         </metamodelType>
+      </metamodel>
+      <metamodel nsURI="http://www.eclipse.org/uml2/3.0.0/UML">
          <specializationType
                id="org.eclipse.uml2.diagram.component.Component_3001"
                name="%metatype.name.Component_3001"
@@ -540,6 +550,15 @@
             <param name="semanticHint" value="4011"/>
          </metamodelType>
       </metamodel>
+      <metamodel nsURI="http://www.eclipse.org/uml2/3.0.0/UML">
+         <specializationType
+               id="org.eclipse.uml2.diagram.component.CommentAnnotatedElement_4012"
+               name="%metatype.name.CommentAnnotatedElement_4012"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType">
+            <specializes id="org.eclipse.gmf.runtime.emf.type.core.null"/>
+            <param name="semanticHint" value="4012"/>
+         </specializationType>
+      </metamodel>
    </extension>
 
    <extension point="org.eclipse.gmf.runtime.emf.type.core.elementTypeBindings">
@@ -560,6 +579,7 @@
          <elementType ref="org.eclipse.uml2.diagram.component.Package_2005"/>
          <elementType ref="org.eclipse.uml2.diagram.component.Package_2006"/>
          <elementType ref="org.eclipse.uml2.diagram.component.Class_2007"/>
+         <elementType ref="org.eclipse.uml2.diagram.component.Comment_2008"/>
          <elementType ref="org.eclipse.uml2.diagram.component.Component_3001"/>
          <elementType ref="org.eclipse.uml2.diagram.component.Port_3002"/>
          <elementType ref="org.eclipse.uml2.diagram.component.Artifact_3003"/>
@@ -584,6 +604,7 @@
          <elementType ref="org.eclipse.uml2.diagram.component.Dependency_4009"/>
          <elementType ref="org.eclipse.uml2.diagram.component.ConnectorEndRole_4010"/>
          <elementType ref="org.eclipse.uml2.diagram.component.Association_4011"/>
+         <elementType ref="org.eclipse.uml2.diagram.component.CommentAnnotatedElement_4012"/>
          <advice ref="org.eclipse.gmf.runtime.diagram.core.advice.notationDepdendents"/>
       </binding>
    </extension>
@@ -724,13 +745,12 @@
             filter="org.eclipse.gmf.runtime.diagram.ui.properties.filters.DiagramEditPartPropertySectionFilter" 
             class="org.eclipse.gmf.runtime.diagram.ui.properties.sections.appearance.DiagramColorsAndFontsPropertySection" 
             tab="property.tab.AppearancePropertySection">
-         </propertySection>              
-
-          <propertySection id="property.section.RulerGridPropertySection" 
-             filter="org.eclipse.gmf.runtime.diagram.ui.properties.filters.DiagramEditPartPropertySectionFilter" 
-             class="org.eclipse.gmf.runtime.diagram.ui.properties.sections.grid.RulerGridPropertySection" 
-             tab="property.tab.DiagramPropertySection">
-          </propertySection>              
+         </propertySection>     
+         <propertySection id="property.section.RulerGridPropertySection" 
+            filter="org.eclipse.gmf.runtime.diagram.ui.properties.filters.DiagramEditPartPropertySectionFilter" 
+            class="org.eclipse.gmf.runtime.diagram.ui.properties.sections.grid.RulerGridPropertySection" 
+            tab="property.tab.DiagramPropertySection">
+         </propertySection>     
          <propertySection
             id="property.section.domain" 
             tab="property.tab.domain"
@@ -1000,7 +1020,7 @@
       </contributionItemProvider>
 </extension>
    <extension point="org.eclipse.ui.views.properties.tabbed.propertyTabs">
-   <?gmfgen generated="true"?>
+<?gmfgen generated="true"?>
       <propertyTabs contributorId="org.eclipse.uml2.diagram.component">
           <propertyTab
                 afterTab="property.tab.domain"
@@ -1011,7 +1031,7 @@
    </extension>
    
    <extension point="org.eclipse.ui.views.properties.tabbed.propertySections">
-   <?gmfgen generated="true"?>
+<?gmfgen generated="true"?>
       <propertySections contributorId="org.eclipse.uml2.diagram.component">
          <propertySection
             id="property.section.domain.taggedvalues" 

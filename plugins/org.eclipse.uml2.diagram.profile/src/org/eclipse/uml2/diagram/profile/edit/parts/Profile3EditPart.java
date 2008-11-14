@@ -283,6 +283,7 @@ public class Profile3EditPart extends ShapeNodeEditPart implements PrimaryShapeE
 	public List/*<org.eclipse.gmf.runtime.emf.type.core.IElementType>*/getMARelTypesOnTarget() {
 		List/*<org.eclipse.gmf.runtime.emf.type.core.IElementType>*/types = new ArrayList/*<org.eclipse.gmf.runtime.emf.type.core.IElementType>*/();
 		types.add(UMLElementTypes.ConstraintConstrainedElement_4003);
+		types.add(UMLElementTypes.CommentAnnotatedElement_4004);
 		return types;
 	}
 
@@ -293,6 +294,9 @@ public class Profile3EditPart extends ShapeNodeEditPart implements PrimaryShapeE
 		List/*<org.eclipse.gmf.runtime.emf.type.core.IElementType>*/types = new ArrayList/*<org.eclipse.gmf.runtime.emf.type.core.IElementType>*/();
 		if (relationshipType == UMLElementTypes.ConstraintConstrainedElement_4003) {
 			types.add(UMLElementTypes.Constraint_2008);
+		}
+		if (relationshipType == UMLElementTypes.CommentAnnotatedElement_4004) {
+			types.add(UMLElementTypes.Comment_2009);
 		}
 		return types;
 	}

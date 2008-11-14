@@ -35,6 +35,9 @@ import org.eclipse.uml2.diagram.csd.edit.parts.CollaborationStereoEditPart;
 import org.eclipse.uml2.diagram.csd.edit.parts.CollaborationUse2EditPart;
 import org.eclipse.uml2.diagram.csd.edit.parts.CollaborationUseName2EditPart;
 import org.eclipse.uml2.diagram.csd.edit.parts.CollaborationUseStereoEditPart;
+import org.eclipse.uml2.diagram.csd.edit.parts.CommentAnnotatedElementEditPart;
+import org.eclipse.uml2.diagram.csd.edit.parts.CommentBodyEditPart;
+import org.eclipse.uml2.diagram.csd.edit.parts.CommentEditPart;
 import org.eclipse.uml2.diagram.csd.edit.parts.ConnectorEditPart;
 import org.eclipse.uml2.diagram.csd.edit.parts.ConnectorName2EditPart;
 import org.eclipse.uml2.diagram.csd.edit.parts.ConnectorName3EditPart;
@@ -110,6 +113,9 @@ import org.eclipse.uml2.diagram.csd.view.factories.CollaborationUse2ViewFactory;
 import org.eclipse.uml2.diagram.csd.view.factories.CollaborationUseName2ViewFactory;
 import org.eclipse.uml2.diagram.csd.view.factories.CollaborationUseStereoViewFactory;
 import org.eclipse.uml2.diagram.csd.view.factories.CollaborationViewFactory;
+import org.eclipse.uml2.diagram.csd.view.factories.CommentAnnotatedElementViewFactory;
+import org.eclipse.uml2.diagram.csd.view.factories.CommentBodyViewFactory;
+import org.eclipse.uml2.diagram.csd.view.factories.CommentViewFactory;
 import org.eclipse.uml2.diagram.csd.view.factories.ConnectorName2ViewFactory;
 import org.eclipse.uml2.diagram.csd.view.factories.ConnectorName3ViewFactory;
 import org.eclipse.uml2.diagram.csd.view.factories.ConnectorName4ViewFactory;
@@ -243,6 +249,7 @@ public class UMLViewProvider extends AbstractViewProvider {
 				case InterfaceEditPart.VISUAL_ID:
 				case InstanceSpecificationEditPart.VISUAL_ID:
 				case ConstraintEditPart.VISUAL_ID:
+				case CommentEditPart.VISUAL_ID:
 				case CollaborationUse2EditPart.VISUAL_ID:
 				case PropertyEditPart.VISUAL_ID:
 				case ParameterEditPart.VISUAL_ID:
@@ -301,6 +308,11 @@ public class UMLViewProvider extends AbstractViewProvider {
 					break;
 				case ConstraintNameEditPart.VISUAL_ID:
 					if (ConstraintEditPart.VISUAL_ID != UMLVisualIDRegistry.getVisualID(containerView) || containerView.getElement() != domainElement) {
+						return null; // wrong container
+					}
+					break;
+				case CommentBodyEditPart.VISUAL_ID:
+					if (CommentEditPart.VISUAL_ID != UMLVisualIDRegistry.getVisualID(containerView) || containerView.getElement() != domainElement) {
 						return null; // wrong container
 					}
 					break;
@@ -425,6 +437,10 @@ public class UMLViewProvider extends AbstractViewProvider {
 			return ConstraintViewFactory.class;
 		case ConstraintNameEditPart.VISUAL_ID:
 			return ConstraintNameViewFactory.class;
+		case CommentEditPart.VISUAL_ID:
+			return CommentViewFactory.class;
+		case CommentBodyEditPart.VISUAL_ID:
+			return CommentBodyViewFactory.class;
 		case CollaborationUse2EditPart.VISUAL_ID:
 			return CollaborationUse2ViewFactory.class;
 		case CollaborationUseName2EditPart.VISUAL_ID:
@@ -567,6 +583,8 @@ public class UMLViewProvider extends AbstractViewProvider {
 			return PortRequiredViewFactory.class;
 		case AssociationInstanceEditPart.VISUAL_ID:
 			return AssociationInstanceViewFactory.class;
+		case CommentAnnotatedElementEditPart.VISUAL_ID:
+			return CommentAnnotatedElementViewFactory.class;
 		}
 		return null;
 	}

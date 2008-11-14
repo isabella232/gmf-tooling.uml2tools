@@ -42,6 +42,9 @@ import org.eclipse.uml2.diagram.component.edit.parts.ClassEditPart;
 import org.eclipse.uml2.diagram.component.edit.parts.ClassName2EditPart;
 import org.eclipse.uml2.diagram.component.edit.parts.ClassNameEditPart;
 import org.eclipse.uml2.diagram.component.edit.parts.ClassOperationsEditPart;
+import org.eclipse.uml2.diagram.component.edit.parts.CommentAnnotatedElementEditPart;
+import org.eclipse.uml2.diagram.component.edit.parts.CommentBodyEditPart;
+import org.eclipse.uml2.diagram.component.edit.parts.CommentEditPart;
 import org.eclipse.uml2.diagram.component.edit.parts.Component2EditPart;
 import org.eclipse.uml2.diagram.component.edit.parts.Component3EditPart;
 import org.eclipse.uml2.diagram.component.edit.parts.ComponentContents2EditPart;
@@ -115,6 +118,9 @@ import org.eclipse.uml2.diagram.component.view.factories.ClassName2ViewFactory;
 import org.eclipse.uml2.diagram.component.view.factories.ClassNameViewFactory;
 import org.eclipse.uml2.diagram.component.view.factories.ClassOperationsViewFactory;
 import org.eclipse.uml2.diagram.component.view.factories.ClassViewFactory;
+import org.eclipse.uml2.diagram.component.view.factories.CommentAnnotatedElementViewFactory;
+import org.eclipse.uml2.diagram.component.view.factories.CommentBodyViewFactory;
+import org.eclipse.uml2.diagram.component.view.factories.CommentViewFactory;
 import org.eclipse.uml2.diagram.component.view.factories.Component2ViewFactory;
 import org.eclipse.uml2.diagram.component.view.factories.Component3ViewFactory;
 import org.eclipse.uml2.diagram.component.view.factories.ComponentContents2ViewFactory;
@@ -239,6 +245,7 @@ public class UMLViewProvider extends AbstractViewProvider {
 				case Interface2EditPart.VISUAL_ID:
 				case Package2EditPart.VISUAL_ID:
 				case Package3EditPart.VISUAL_ID:
+				case CommentEditPart.VISUAL_ID:
 				case Component2EditPart.VISUAL_ID:
 				case PortEditPart.VISUAL_ID:
 				case ArtifactEditPart.VISUAL_ID:
@@ -302,6 +309,11 @@ public class UMLViewProvider extends AbstractViewProvider {
 				case ClassOperationsEditPart.VISUAL_ID:
 				case ClassClassesEditPart.VISUAL_ID:
 					if (ClassDiagramNotationClassEditPart.VISUAL_ID != UMLVisualIDRegistry.getVisualID(containerView) || containerView.getElement() != domainElement) {
+						return null; // wrong container
+					}
+					break;
+				case CommentBodyEditPart.VISUAL_ID:
+					if (CommentEditPart.VISUAL_ID != UMLVisualIDRegistry.getVisualID(containerView) || containerView.getElement() != domainElement) {
 						return null; // wrong container
 					}
 					break;
@@ -417,6 +429,10 @@ public class UMLViewProvider extends AbstractViewProvider {
 			return ClassDiagramNotationClassNameViewFactory.class;
 		case ClassDiagramNotationClassStereotypeEditPart.VISUAL_ID:
 			return ClassDiagramNotationClassStereotypeViewFactory.class;
+		case CommentEditPart.VISUAL_ID:
+			return CommentViewFactory.class;
+		case CommentBodyEditPart.VISUAL_ID:
+			return CommentBodyViewFactory.class;
 		case Component2EditPart.VISUAL_ID:
 			return Component2ViewFactory.class;
 		case ComponentNameEditPart.VISUAL_ID:
@@ -557,6 +573,8 @@ public class UMLViewProvider extends AbstractViewProvider {
 			return AssemblyConnectorEndRoleViewFactory.class;
 		case AssociationEditPart.VISUAL_ID:
 			return AssociationViewFactory.class;
+		case CommentAnnotatedElementEditPart.VISUAL_ID:
+			return CommentAnnotatedElementViewFactory.class;
 		}
 		return null;
 	}

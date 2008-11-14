@@ -20,6 +20,8 @@ import org.eclipse.uml2.diagram.usecase.edit.parts.ActorAsRectangleEditPart;
 import org.eclipse.uml2.diagram.usecase.edit.parts.ActorEditPart;
 import org.eclipse.uml2.diagram.usecase.edit.parts.ActorInPackageEditPart;
 import org.eclipse.uml2.diagram.usecase.edit.parts.AssociationEditPart;
+import org.eclipse.uml2.diagram.usecase.edit.parts.CommentAnnotatedElementEditPart;
+import org.eclipse.uml2.diagram.usecase.edit.parts.CommentEditPart;
 import org.eclipse.uml2.diagram.usecase.edit.parts.ConstraintConstrainedElementEditPart;
 import org.eclipse.uml2.diagram.usecase.edit.parts.ConstraintEditPart;
 import org.eclipse.uml2.diagram.usecase.edit.parts.DependencyEditPart;
@@ -114,6 +116,11 @@ public class UMLElementTypes extends ElementInitializers {
 	/**
 	 * @generated
 	 */
+	public static final IHintedType Comment_2009 = (IHintedType) getElementType("org.eclipse.uml2.diagram.usecase.Comment_2009"); //$NON-NLS-1$
+
+	/**
+	 * @generated
+	 */
 	public static final IHintedType ElementImport_3001 = (IHintedType) getElementType("org.eclipse.uml2.diagram.usecase.ElementImport_3001"); //$NON-NLS-1$
 
 	/**
@@ -170,6 +177,11 @@ public class UMLElementTypes extends ElementInitializers {
 	 * @generated
 	 */
 	public static final IHintedType Dependency_4006 = (IHintedType) getElementType("org.eclipse.uml2.diagram.usecase.Dependency_4006"); //$NON-NLS-1$
+
+	/**
+	 * @generated
+	 */
+	public static final IHintedType CommentAnnotatedElement_4007 = (IHintedType) getElementType("org.eclipse.uml2.diagram.usecase.CommentAnnotatedElement_4007"); //$NON-NLS-1$
 
 	/**
 	 * @generated
@@ -295,6 +307,8 @@ public class UMLElementTypes extends ElementInitializers {
 
 			elements.put(Constraint_2008, UMLPackage.eINSTANCE.getConstraint());
 
+			elements.put(Comment_2009, UMLPackage.eINSTANCE.getComment());
+
 			elements.put(ElementImport_3001, UMLPackage.eINSTANCE.getElementImport());
 
 			elements.put(ExtensionPoint_3002, UMLPackage.eINSTANCE.getExtensionPoint());
@@ -318,6 +332,8 @@ public class UMLElementTypes extends ElementInitializers {
 			elements.put(ConstraintConstrainedElement_4005, UMLPackage.eINSTANCE.getConstraint_ConstrainedElement());
 
 			elements.put(Dependency_4006, UMLPackage.eINSTANCE.getDependency());
+
+			elements.put(CommentAnnotatedElement_4007, UMLPackage.eINSTANCE.getComment_AnnotatedElement());
 		}
 		return (ENamedElement) elements.get(type);
 	}
@@ -344,6 +360,7 @@ public class UMLElementTypes extends ElementInitializers {
 			KNOWN_ELEMENT_TYPES.add(Component_2006);
 			KNOWN_ELEMENT_TYPES.add(Package_2007);
 			KNOWN_ELEMENT_TYPES.add(Constraint_2008);
+			KNOWN_ELEMENT_TYPES.add(Comment_2009);
 			KNOWN_ELEMENT_TYPES.add(ElementImport_3001);
 			KNOWN_ELEMENT_TYPES.add(ExtensionPoint_3002);
 			KNOWN_ELEMENT_TYPES.add(ExtensionPoint_3003);
@@ -356,6 +373,7 @@ public class UMLElementTypes extends ElementInitializers {
 			KNOWN_ELEMENT_TYPES.add(Association_4004);
 			KNOWN_ELEMENT_TYPES.add(ConstraintConstrainedElement_4005);
 			KNOWN_ELEMENT_TYPES.add(Dependency_4006);
+			KNOWN_ELEMENT_TYPES.add(CommentAnnotatedElement_4007);
 		}
 		return KNOWN_ELEMENT_TYPES.contains(elementType);
 	}
@@ -383,6 +401,8 @@ public class UMLElementTypes extends ElementInitializers {
 			return Package_2007;
 		case ConstraintEditPart.VISUAL_ID:
 			return Constraint_2008;
+		case CommentEditPart.VISUAL_ID:
+			return Comment_2009;
 		case ElementImportEditPart.VISUAL_ID:
 			return ElementImport_3001;
 		case ExtensionPointEditPart.VISUAL_ID:
@@ -407,6 +427,8 @@ public class UMLElementTypes extends ElementInitializers {
 			return ConstraintConstrainedElement_4005;
 		case DependencyEditPart.VISUAL_ID:
 			return Dependency_4006;
+		case CommentAnnotatedElementEditPart.VISUAL_ID:
+			return CommentAnnotatedElement_4007;
 		}
 		return null;
 	}

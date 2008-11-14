@@ -21,6 +21,7 @@ import org.eclipse.uml2.diagram.component.edit.parts.ClassDiagramNotationInnerCl
 import org.eclipse.uml2.diagram.component.edit.parts.ClassDiagramNotationOperationEditPart;
 import org.eclipse.uml2.diagram.component.edit.parts.ClassDiagramNotationPropertyEditPart;
 import org.eclipse.uml2.diagram.component.edit.parts.ClassEditPart;
+import org.eclipse.uml2.diagram.component.edit.parts.CommentEditPart;
 import org.eclipse.uml2.diagram.component.edit.parts.Component2EditPart;
 import org.eclipse.uml2.diagram.component.edit.parts.Component3EditPart;
 import org.eclipse.uml2.diagram.component.edit.parts.ComponentEditPart;
@@ -74,6 +75,7 @@ public class ArtifactContents2CanonicalEditPolicy extends CanonicalEditPolicy {
 		case Package2EditPart.VISUAL_ID:
 		case Package3EditPart.VISUAL_ID:
 		case ClassDiagramNotationClassEditPart.VISUAL_ID:
+		case CommentEditPart.VISUAL_ID:
 		case Component2EditPart.VISUAL_ID:
 		case PortEditPart.VISUAL_ID:
 		case ArtifactEditPart.VISUAL_ID:

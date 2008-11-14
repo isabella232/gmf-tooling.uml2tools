@@ -14,6 +14,7 @@ import org.eclipse.uml2.diagram.deploy.edit.parts.Artifact2EditPart;
 import org.eclipse.uml2.diagram.deploy.edit.parts.Artifact3EditPart;
 import org.eclipse.uml2.diagram.deploy.edit.parts.Artifact4EditPart;
 import org.eclipse.uml2.diagram.deploy.edit.parts.ArtifactEditPart;
+import org.eclipse.uml2.diagram.deploy.edit.parts.CommentEditPart;
 import org.eclipse.uml2.diagram.deploy.edit.parts.DeploymentSpecification2EditPart;
 import org.eclipse.uml2.diagram.deploy.edit.parts.DeploymentSpecificationEditPart;
 import org.eclipse.uml2.diagram.deploy.edit.parts.Device2EditPart;
@@ -65,6 +66,7 @@ public class DeploymentSpecificationProperties2CanonicalEditPolicy extends Canon
 		case ExecutionEnvironmentEditPart.VISUAL_ID:
 		case Artifact2EditPart.VISUAL_ID:
 		case DeploymentSpecificationEditPart.VISUAL_ID:
+		case CommentEditPart.VISUAL_ID:
 		case ElementImportEditPart.VISUAL_ID:
 		case Device2EditPart.VISUAL_ID:
 		case ArtifactEditPart.VISUAL_ID:

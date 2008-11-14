@@ -171,8 +171,8 @@ public class ClassEditPart extends AbstractBorderedShapeEditPart implements Prim
 			((ClassNameEditPart) childEditPart).setLabel(getPrimaryShape().getFigureClassFigure_name());
 			return true;
 		}
-		if (childEditPart instanceof ClassQualifiedNameEditPart) {
-			((ClassQualifiedNameEditPart) childEditPart).setLabel(getPrimaryShape().getFigureClassFigure_stereo());
+		if (childEditPart instanceof ClassStereoEditPart) {
+			((ClassStereoEditPart) childEditPart).setLabel(getPrimaryShape().getFigureClassFigure_stereo());
 			return true;
 		}
 		if (childEditPart instanceof ClassAttributesEditPart) {
@@ -381,6 +381,7 @@ public class ClassEditPart extends AbstractBorderedShapeEditPart implements Prim
 		types.add(UMLElementTypes.Usage_4008);
 		types.add(UMLElementTypes.Association_4011);
 		types.add(UMLElementTypes.ConstraintConstrainedElement_4012);
+		types.add(UMLElementTypes.CommentAnnotatedElement_4016);
 		return types;
 	}
 
@@ -612,6 +613,9 @@ public class ClassEditPart extends AbstractBorderedShapeEditPart implements Prim
 		}
 		if (relationshipType == UMLElementTypes.ConstraintConstrainedElement_4012) {
 			types.add(UMLElementTypes.Constraint_2012);
+		}
+		if (relationshipType == UMLElementTypes.CommentAnnotatedElement_4016) {
+			types.add(UMLElementTypes.Comment_2013);
 		}
 		return types;
 	}

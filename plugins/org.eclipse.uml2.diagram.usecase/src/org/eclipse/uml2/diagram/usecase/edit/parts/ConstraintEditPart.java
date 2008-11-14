@@ -275,6 +275,7 @@ public class ConstraintEditPart extends ShapeNodeEditPart implements PrimaryShap
 		List/*<org.eclipse.gmf.runtime.emf.type.core.IElementType>*/types = new ArrayList/*<org.eclipse.gmf.runtime.emf.type.core.IElementType>*/();
 		types.add(UMLElementTypes.ConstraintConstrainedElement_4005);
 		types.add(UMLElementTypes.Dependency_4006);
+		types.add(UMLElementTypes.CommentAnnotatedElement_4007);
 		return types;
 	}
 
@@ -305,6 +306,9 @@ public class ConstraintEditPart extends ShapeNodeEditPart implements PrimaryShap
 			types.add(UMLElementTypes.ConstraintConstrainedElement_4005);
 		}
 		if (targetEditPart instanceof org.eclipse.uml2.diagram.usecase.edit.parts.ConstraintEditPart) {
+			types.add(UMLElementTypes.ConstraintConstrainedElement_4005);
+		}
+		if (targetEditPart instanceof CommentEditPart) {
 			types.add(UMLElementTypes.ConstraintConstrainedElement_4005);
 		}
 		if (targetEditPart instanceof InnerUseCaseEditPart) {
@@ -393,6 +397,9 @@ public class ConstraintEditPart extends ShapeNodeEditPart implements PrimaryShap
 		if (relationshipType == UMLElementTypes.Dependency_4006) {
 			types.add(UMLElementTypes.UseCase_3006);
 		}
+		if (relationshipType == UMLElementTypes.CommentAnnotatedElement_4007) {
+			types.add(UMLElementTypes.Comment_2009);
+		}
 		return types;
 	}
 
@@ -424,6 +431,9 @@ public class ConstraintEditPart extends ShapeNodeEditPart implements PrimaryShap
 		}
 		if (relationshipType == UMLElementTypes.ConstraintConstrainedElement_4005) {
 			types.add(UMLElementTypes.Constraint_2008);
+		}
+		if (relationshipType == UMLElementTypes.ConstraintConstrainedElement_4005) {
+			types.add(UMLElementTypes.Comment_2009);
 		}
 		if (relationshipType == UMLElementTypes.ConstraintConstrainedElement_4005) {
 			types.add(UMLElementTypes.UseCase_3004);

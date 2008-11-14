@@ -659,6 +659,26 @@
           href="classDiagram_constraints.gmfgraph#ConstraintNode"/>
     </ownedChild>
   </nodes>
+  <nodes>
+    <containmentFeature
+        href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//Element/ownedComment"/>
+    <ownedChild>
+      <domainMetaElement
+          href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//Comment"/>
+      <labelMappings
+          xsi:type="gmfmap:FeatureLabelMapping">
+        <diagramLabel
+            href="classDiagram_comments.gmfgraph#Comment_BodySpecification"/>
+        <features
+            href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//Comment/body"/>
+      </labelMappings>
+      <tool
+          xsi:type="gmftool:CreationTool"
+          href="compositeStructuresDiagram.gmftool#//@palette/@tools.0/@tools.5"/>
+      <diagramNode
+          href="classDiagram_comments.gmfgraph#CommentNode"/>
+    </ownedChild>
+  </nodes>
   <links>
     <domainMetaElement
         href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//Connector"/>
@@ -951,6 +971,21 @@
     <linkMetaFeature
         xsi:type="ecore:EReference"
         href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//Slot/owningInstance"/>
+  </links>
+  <links>
+    <containmentFeature
+        href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//Element/ownedComment"/>
+    <tool
+        xsi:type="gmftool:CreationTool"
+        href="compositeStructuresDiagram.gmftool#//@palette/@tools.2/@tools.6"/>
+    <diagramLink
+        href="classDiagram_comments.gmfgraph#AnnotatedElementLink"/>
+    <sourceMetaFeature
+        xsi:type="ecore:EAttribute"
+        href="http://www.eclipse.org/emf/2002/Ecore#//EAttribute/iD"/>
+    <linkMetaFeature
+        xsi:type="ecore:EReference"
+        href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//Comment/annotatedElement"/>
   </links>
   <diagram>
     <diagramCanvas

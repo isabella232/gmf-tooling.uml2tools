@@ -315,6 +315,7 @@ public class Device2EditPart extends ShapeNodeEditPart implements PrimaryShapeEd
 		types.add(UMLElementTypes.Manifestation_4002);
 		types.add(UMLElementTypes.CommunicationPath_4004);
 		types.add(UMLElementTypes.Dependency_4005);
+		types.add(UMLElementTypes.CommentAnnotatedElement_4006);
 		return types;
 	}
 
@@ -498,6 +499,9 @@ public class Device2EditPart extends ShapeNodeEditPart implements PrimaryShapeEd
 		}
 		if (relationshipType == UMLElementTypes.Dependency_4005) {
 			types.add(UMLElementTypes.Node_3007);
+		}
+		if (relationshipType == UMLElementTypes.CommentAnnotatedElement_4006) {
+			types.add(UMLElementTypes.Comment_2008);
 		}
 		return types;
 	}

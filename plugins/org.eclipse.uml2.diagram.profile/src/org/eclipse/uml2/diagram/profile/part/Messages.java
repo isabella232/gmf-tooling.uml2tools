@@ -363,6 +363,26 @@ public class Messages extends NLS {
 	/**
 	 * @generated
 	 */
+	public static String Comment8CreationTool_title;
+
+	/**
+	 * @generated
+	 */
+	public static String Comment8CreationTool_desc;
+
+	/**
+	 * @generated
+	 */
+	public static String AnnotatedElement9CreationTool_title;
+
+	/**
+	 * @generated
+	 */
+	public static String AnnotatedElement9CreationTool_desc;
+
+	/**
+	 * @generated
+	 */
 	public static String StereotypeAttributesEditPart_title;
 
 	/**
@@ -443,6 +463,16 @@ public class Messages extends NLS {
 	/**
 	 * @generated
 	 */
+	public static String NavigatorGroupName_Comment_2009_incominglinks;
+
+	/**
+	 * @generated
+	 */
+	public static String NavigatorGroupName_Comment_2009_outgoinglinks;
+
+	/**
+	 * @generated
+	 */
 	public static String NavigatorGroupName_Property_3001_incominglinks;
 
 	/**
@@ -504,6 +534,16 @@ public class Messages extends NLS {
 	 * @generated
 	 */
 	public static String NavigatorGroupName_ConstraintConstrainedElement_4003_source;
+
+	/**
+	 * @generated
+	 */
+	public static String NavigatorGroupName_CommentAnnotatedElement_4004_target;
+
+	/**
+	 * @generated
+	 */
+	public static String NavigatorGroupName_CommentAnnotatedElement_4004_source;
 
 	/**
 	 * @generated

@@ -324,6 +324,7 @@ public class UseCaseAsClassEditPart extends ShapeNodeEditPart implements Primary
 		types.add(UMLElementTypes.Association_4004);
 		types.add(UMLElementTypes.ConstraintConstrainedElement_4005);
 		types.add(UMLElementTypes.Dependency_4006);
+		types.add(UMLElementTypes.CommentAnnotatedElement_4007);
 		return types;
 	}
 
@@ -552,6 +553,9 @@ public class UseCaseAsClassEditPart extends ShapeNodeEditPart implements Primary
 		}
 		if (relationshipType == UMLElementTypes.Dependency_4006) {
 			types.add(UMLElementTypes.UseCase_3006);
+		}
+		if (relationshipType == UMLElementTypes.CommentAnnotatedElement_4007) {
+			types.add(UMLElementTypes.Comment_2009);
 		}
 		return types;
 	}
@@ -1104,8 +1108,6 @@ public class UseCaseAsClassEditPart extends ShapeNodeEditPart implements Primary
 			fUseCaseAsClassFigure_stereo = new Label();
 			fUseCaseAsClassFigure_stereo.setText("");
 
-			fUseCaseAsClassFigure_stereo.setFont(FUSECASEASCLASSFIGURE_STEREO_FONT);
-
 			fUseCaseAsClassFigure_stereo.setBorder(new MarginBorder(getMapMode().DPtoLP(5), getMapMode().DPtoLP(5), getMapMode().DPtoLP(0), getMapMode().DPtoLP(5)));
 
 			useCaseAsClassFigure_StereoContainer1.add(fUseCaseAsClassFigure_stereo);
@@ -1176,11 +1178,6 @@ public class UseCaseAsClassEditPart extends ShapeNodeEditPart implements Primary
 		}
 
 	}
-
-	/**
-	 * @generated
-	 */
-	static final Font FUSECASEASCLASSFIGURE_STEREO_FONT = new Font(Display.getCurrent(), Display.getDefault().getSystemFont().getFontData()[0].getName(), 9, SWT.NORMAL);
 
 	/**
 	 * @generated

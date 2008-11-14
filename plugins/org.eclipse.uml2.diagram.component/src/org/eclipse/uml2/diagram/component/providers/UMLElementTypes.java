@@ -29,6 +29,8 @@ import org.eclipse.uml2.diagram.component.edit.parts.ClassDiagramNotationInnerCl
 import org.eclipse.uml2.diagram.component.edit.parts.ClassDiagramNotationOperationEditPart;
 import org.eclipse.uml2.diagram.component.edit.parts.ClassDiagramNotationPropertyEditPart;
 import org.eclipse.uml2.diagram.component.edit.parts.ClassEditPart;
+import org.eclipse.uml2.diagram.component.edit.parts.CommentAnnotatedElementEditPart;
+import org.eclipse.uml2.diagram.component.edit.parts.CommentEditPart;
 import org.eclipse.uml2.diagram.component.edit.parts.Component2EditPart;
 import org.eclipse.uml2.diagram.component.edit.parts.Component3EditPart;
 import org.eclipse.uml2.diagram.component.edit.parts.ComponentEditPart;
@@ -116,6 +118,11 @@ public class UMLElementTypes extends ElementInitializers {
 	 * @generated
 	 */
 	public static final IHintedType Class_2007 = (IHintedType) getElementType("org.eclipse.uml2.diagram.component.Class_2007"); //$NON-NLS-1$
+
+	/**
+	 * @generated
+	 */
+	public static final IHintedType Comment_2008 = (IHintedType) getElementType("org.eclipse.uml2.diagram.component.Comment_2008"); //$NON-NLS-1$
 
 	/**
 	 * @generated
@@ -240,6 +247,11 @@ public class UMLElementTypes extends ElementInitializers {
 	/**
 	 * @generated
 	 */
+	public static final IHintedType CommentAnnotatedElement_4012 = (IHintedType) getElementType("org.eclipse.uml2.diagram.component.CommentAnnotatedElement_4012"); //$NON-NLS-1$
+
+	/**
+	 * @generated
+	 */
 	private static ImageRegistry getImageRegistry() {
 		if (imageRegistry == null) {
 			imageRegistry = new ImageRegistry();
@@ -359,6 +371,8 @@ public class UMLElementTypes extends ElementInitializers {
 
 			elements.put(Class_2007, UMLPackage.eINSTANCE.getClass_());
 
+			elements.put(Comment_2008, UMLPackage.eINSTANCE.getComment());
+
 			elements.put(Component_3001, UMLPackage.eINSTANCE.getComponent());
 
 			elements.put(Port_3002, UMLPackage.eINSTANCE.getPort());
@@ -406,6 +420,8 @@ public class UMLElementTypes extends ElementInitializers {
 			elements.put(ConnectorEndRole_4010, UMLPackage.eINSTANCE.getConnectorEnd_Role());
 
 			elements.put(Association_4011, UMLPackage.eINSTANCE.getAssociation());
+
+			elements.put(CommentAnnotatedElement_4012, UMLPackage.eINSTANCE.getComment_AnnotatedElement());
 		}
 		return (ENamedElement) elements.get(type);
 	}
@@ -431,6 +447,7 @@ public class UMLElementTypes extends ElementInitializers {
 			KNOWN_ELEMENT_TYPES.add(Package_2005);
 			KNOWN_ELEMENT_TYPES.add(Package_2006);
 			KNOWN_ELEMENT_TYPES.add(Class_2007);
+			KNOWN_ELEMENT_TYPES.add(Comment_2008);
 			KNOWN_ELEMENT_TYPES.add(Component_3001);
 			KNOWN_ELEMENT_TYPES.add(Port_3002);
 			KNOWN_ELEMENT_TYPES.add(Artifact_3003);
@@ -455,6 +472,7 @@ public class UMLElementTypes extends ElementInitializers {
 			KNOWN_ELEMENT_TYPES.add(Dependency_4009);
 			KNOWN_ELEMENT_TYPES.add(ConnectorEndRole_4010);
 			KNOWN_ELEMENT_TYPES.add(Association_4011);
+			KNOWN_ELEMENT_TYPES.add(CommentAnnotatedElement_4012);
 		}
 		return KNOWN_ELEMENT_TYPES.contains(elementType);
 	}
@@ -480,6 +498,8 @@ public class UMLElementTypes extends ElementInitializers {
 			return Package_2006;
 		case ClassDiagramNotationClassEditPart.VISUAL_ID:
 			return Class_2007;
+		case CommentEditPart.VISUAL_ID:
+			return Comment_2008;
 		case Component2EditPart.VISUAL_ID:
 			return Component_3001;
 		case PortEditPart.VISUAL_ID:
@@ -528,6 +548,8 @@ public class UMLElementTypes extends ElementInitializers {
 			return ConnectorEndRole_4010;
 		case AssociationEditPart.VISUAL_ID:
 			return Association_4011;
+		case CommentAnnotatedElementEditPart.VISUAL_ID:
+			return CommentAnnotatedElement_4012;
 		}
 		return null;
 	}

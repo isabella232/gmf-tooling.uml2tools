@@ -265,6 +265,7 @@ public class Port3EditPart extends BorderedBorderItemEditPart implements Primary
 		types.add(UMLElementTypes.Dependency_4006);
 		types.add(UMLElementTypes.Usage_4008);
 		types.add(UMLElementTypes.ConstraintConstrainedElement_4012);
+		types.add(UMLElementTypes.CommentAnnotatedElement_4016);
 		return types;
 	}
 
@@ -505,6 +506,9 @@ public class Port3EditPart extends BorderedBorderItemEditPart implements Primary
 		}
 		if (relationshipType == UMLElementTypes.ConstraintConstrainedElement_4012) {
 			types.add(UMLElementTypes.Constraint_2012);
+		}
+		if (relationshipType == UMLElementTypes.CommentAnnotatedElement_4016) {
+			types.add(UMLElementTypes.Comment_2013);
 		}
 		return types;
 	}

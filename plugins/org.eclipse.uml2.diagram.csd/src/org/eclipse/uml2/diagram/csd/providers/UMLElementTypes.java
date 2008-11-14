@@ -23,6 +23,8 @@ import org.eclipse.uml2.diagram.csd.edit.parts.Class3EditPart;
 import org.eclipse.uml2.diagram.csd.edit.parts.ClassEditPart;
 import org.eclipse.uml2.diagram.csd.edit.parts.CollaborationEditPart;
 import org.eclipse.uml2.diagram.csd.edit.parts.CollaborationUse2EditPart;
+import org.eclipse.uml2.diagram.csd.edit.parts.CommentAnnotatedElementEditPart;
+import org.eclipse.uml2.diagram.csd.edit.parts.CommentEditPart;
 import org.eclipse.uml2.diagram.csd.edit.parts.ConnectorEditPart;
 import org.eclipse.uml2.diagram.csd.edit.parts.ConstraintConstrainedElementEditPart;
 import org.eclipse.uml2.diagram.csd.edit.parts.ConstraintEditPart;
@@ -113,6 +115,11 @@ public class UMLElementTypes extends ElementInitializers {
 	 * @generated
 	 */
 	public static final IHintedType Constraint_2012 = (IHintedType) getElementType("org.eclipse.uml2.diagram.csd.Constraint_2012"); //$NON-NLS-1$
+
+	/**
+	 * @generated
+	 */
+	public static final IHintedType Comment_2013 = (IHintedType) getElementType("org.eclipse.uml2.diagram.csd.Comment_2013"); //$NON-NLS-1$
 
 	/**
 	 * @generated
@@ -218,6 +225,11 @@ public class UMLElementTypes extends ElementInitializers {
 	 * @generated
 	 */
 	public static final IHintedType Slot_4015 = (IHintedType) getElementType("org.eclipse.uml2.diagram.csd.Slot_4015"); //$NON-NLS-1$
+
+	/**
+	 * @generated
+	 */
+	public static final IHintedType CommentAnnotatedElement_4016 = (IHintedType) getElementType("org.eclipse.uml2.diagram.csd.CommentAnnotatedElement_4016"); //$NON-NLS-1$
 
 	/**
 	 * @generated
@@ -341,6 +353,8 @@ public class UMLElementTypes extends ElementInitializers {
 
 			elements.put(Constraint_2012, UMLPackage.eINSTANCE.getConstraint());
 
+			elements.put(Comment_2013, UMLPackage.eINSTANCE.getComment());
+
 			elements.put(CollaborationUse_3002, UMLPackage.eINSTANCE.getCollaborationUse());
 
 			elements.put(Property_3007, UMLPackage.eINSTANCE.getProperty());
@@ -382,6 +396,8 @@ public class UMLElementTypes extends ElementInitializers {
 			elements.put(PortRequired_4014, UMLPackage.eINSTANCE.getPort_Required());
 
 			elements.put(Slot_4015, UMLPackage.eINSTANCE.getSlot());
+
+			elements.put(CommentAnnotatedElement_4016, UMLPackage.eINSTANCE.getComment_AnnotatedElement());
 		}
 		return (ENamedElement) elements.get(type);
 	}
@@ -407,6 +423,7 @@ public class UMLElementTypes extends ElementInitializers {
 			KNOWN_ELEMENT_TYPES.add(Interface_2009);
 			KNOWN_ELEMENT_TYPES.add(InstanceSpecification_2011);
 			KNOWN_ELEMENT_TYPES.add(Constraint_2012);
+			KNOWN_ELEMENT_TYPES.add(Comment_2013);
 			KNOWN_ELEMENT_TYPES.add(CollaborationUse_3002);
 			KNOWN_ELEMENT_TYPES.add(Property_3007);
 			KNOWN_ELEMENT_TYPES.add(Parameter_3013);
@@ -428,6 +445,7 @@ public class UMLElementTypes extends ElementInitializers {
 			KNOWN_ELEMENT_TYPES.add(ConstraintConstrainedElement_4012);
 			KNOWN_ELEMENT_TYPES.add(PortRequired_4014);
 			KNOWN_ELEMENT_TYPES.add(Slot_4015);
+			KNOWN_ELEMENT_TYPES.add(CommentAnnotatedElement_4016);
 		}
 		return KNOWN_ELEMENT_TYPES.contains(elementType);
 	}
@@ -453,6 +471,8 @@ public class UMLElementTypes extends ElementInitializers {
 			return InstanceSpecification_2011;
 		case ConstraintEditPart.VISUAL_ID:
 			return Constraint_2012;
+		case CommentEditPart.VISUAL_ID:
+			return Comment_2013;
 		case CollaborationUse2EditPart.VISUAL_ID:
 			return CollaborationUse_3002;
 		case PropertyEditPart.VISUAL_ID:
@@ -495,6 +515,8 @@ public class UMLElementTypes extends ElementInitializers {
 			return PortRequired_4014;
 		case AssociationInstanceEditPart.VISUAL_ID:
 			return Slot_4015;
+		case CommentAnnotatedElementEditPart.VISUAL_ID:
+			return CommentAnnotatedElement_4016;
 		}
 		return null;
 	}

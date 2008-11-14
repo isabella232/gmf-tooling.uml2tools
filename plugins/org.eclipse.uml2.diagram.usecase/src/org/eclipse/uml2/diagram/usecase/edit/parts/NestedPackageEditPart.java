@@ -314,6 +314,7 @@ public class NestedPackageEditPart extends ShapeNodeEditPart implements PrimaryS
 		List/*<org.eclipse.gmf.runtime.emf.type.core.IElementType>*/types = new ArrayList/*<org.eclipse.gmf.runtime.emf.type.core.IElementType>*/();
 		types.add(UMLElementTypes.ConstraintConstrainedElement_4005);
 		types.add(UMLElementTypes.Dependency_4006);
+		types.add(UMLElementTypes.CommentAnnotatedElement_4007);
 		return types;
 	}
 
@@ -398,6 +399,9 @@ public class NestedPackageEditPart extends ShapeNodeEditPart implements PrimaryS
 		}
 		if (relationshipType == UMLElementTypes.Dependency_4006) {
 			types.add(UMLElementTypes.UseCase_3006);
+		}
+		if (relationshipType == UMLElementTypes.CommentAnnotatedElement_4007) {
+			types.add(UMLElementTypes.Comment_2009);
 		}
 		return types;
 	}

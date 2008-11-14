@@ -467,6 +467,16 @@
       </metamodel>
       <metamodel nsURI="http://www.eclipse.org/uml2/3.0.0/UML">
          <metamodelType
+               id="org.eclipse.uml2.diagram.csd.Comment_2013"
+               name="%metatype.name.Comment_2013"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
+               eclass="Comment"
+               edithelper="org.eclipse.uml2.diagram.csd.edit.helpers.CommentEditHelper">
+            <param name="semanticHint" value="2013"/>
+         </metamodelType>
+      </metamodel>
+      <metamodel nsURI="http://www.eclipse.org/uml2/3.0.0/UML">
+         <metamodelType
                id="org.eclipse.uml2.diagram.csd.CollaborationUse_3002"
                name="%metatype.name.CollaborationUse_3002"
                kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
@@ -666,6 +676,15 @@
             <param name="semanticHint" value="4015"/>
          </specializationType>
       </metamodel>
+      <metamodel nsURI="http://www.eclipse.org/uml2/3.0.0/UML">
+         <specializationType
+               id="org.eclipse.uml2.diagram.csd.CommentAnnotatedElement_4016"
+               name="%metatype.name.CommentAnnotatedElement_4016"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType">
+            <specializes id="org.eclipse.gmf.runtime.emf.type.core.null"/>
+            <param name="semanticHint" value="4016"/>
+         </specializationType>
+      </metamodel>
    </extension>
 
    <extension point="org.eclipse.gmf.runtime.emf.type.core.elementTypeBindings">
@@ -686,6 +705,7 @@
          <elementType ref="org.eclipse.uml2.diagram.csd.Interface_2009"/>
          <elementType ref="org.eclipse.uml2.diagram.csd.InstanceSpecification_2011"/>
          <elementType ref="org.eclipse.uml2.diagram.csd.Constraint_2012"/>
+         <elementType ref="org.eclipse.uml2.diagram.csd.Comment_2013"/>
          <elementType ref="org.eclipse.uml2.diagram.csd.CollaborationUse_3002"/>
          <elementType ref="org.eclipse.uml2.diagram.csd.Property_3007"/>
          <elementType ref="org.eclipse.uml2.diagram.csd.Parameter_3013"/>
@@ -707,6 +727,7 @@
          <elementType ref="org.eclipse.uml2.diagram.csd.ConstraintConstrainedElement_4012"/>
          <elementType ref="org.eclipse.uml2.diagram.csd.PortRequired_4014"/>
          <elementType ref="org.eclipse.uml2.diagram.csd.Slot_4015"/>
+         <elementType ref="org.eclipse.uml2.diagram.csd.CommentAnnotatedElement_4016"/>
          <advice ref="org.eclipse.gmf.runtime.diagram.core.advice.notationDepdendents"/>
       </binding>
    </extension>

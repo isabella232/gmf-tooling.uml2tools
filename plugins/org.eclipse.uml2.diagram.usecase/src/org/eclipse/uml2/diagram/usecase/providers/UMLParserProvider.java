@@ -26,6 +26,7 @@ import org.eclipse.uml2.diagram.usecase.edit.parts.ActorNameEditPart;
 import org.eclipse.uml2.diagram.usecase.edit.parts.ActorStereoEditPart;
 import org.eclipse.uml2.diagram.usecase.edit.parts.AssociationSourceMultiplicityEditPart;
 import org.eclipse.uml2.diagram.usecase.edit.parts.AssociationTargetMultiplicityEditPart;
+import org.eclipse.uml2.diagram.usecase.edit.parts.CommentBodyEditPart;
 import org.eclipse.uml2.diagram.usecase.edit.parts.ComponentStereoEditPart;
 import org.eclipse.uml2.diagram.usecase.edit.parts.ConstraintNameEditPart;
 import org.eclipse.uml2.diagram.usecase.edit.parts.DependencyNameEditPart;
@@ -283,6 +284,30 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 	 */
 	protected IParser createConstraintName_5011Parser() {
 		return new ValueSpecificationParser.ConstraintParser();
+	}
+
+	/**
+	 * @generated
+	 */
+	private IParser commentBody_5015Parser;
+
+	/**
+	 * @generated
+	 */
+	private IParser getCommentBody_5015Parser() {
+		if (commentBody_5015Parser == null) {
+			commentBody_5015Parser = createCommentBody_5015Parser();
+		}
+		return commentBody_5015Parser;
+	}
+
+	/**
+	 * @generated
+	 */
+	protected IParser createCommentBody_5015Parser() {
+		EAttribute[] features = new EAttribute[] { UMLPackage.eINSTANCE.getComment_Body() };
+		Parser_0_0 parser = new Parser_0_0(features);
+		return parser;
 	}
 
 	/**
@@ -552,6 +577,8 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 			return getPackageName_5008Parser();
 		case ConstraintNameEditPart.VISUAL_ID:
 			return getConstraintName_5011Parser();
+		case CommentBodyEditPart.VISUAL_ID:
+			return getCommentBody_5015Parser();
 		case ElementImportEditPart.VISUAL_ID:
 			return getElementImport_3001Parser();
 		case ExtensionPointEditPart.VISUAL_ID:

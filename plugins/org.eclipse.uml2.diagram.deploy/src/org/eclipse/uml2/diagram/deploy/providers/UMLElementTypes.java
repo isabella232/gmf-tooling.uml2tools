@@ -20,6 +20,8 @@ import org.eclipse.uml2.diagram.deploy.edit.parts.Artifact2EditPart;
 import org.eclipse.uml2.diagram.deploy.edit.parts.Artifact3EditPart;
 import org.eclipse.uml2.diagram.deploy.edit.parts.Artifact4EditPart;
 import org.eclipse.uml2.diagram.deploy.edit.parts.ArtifactEditPart;
+import org.eclipse.uml2.diagram.deploy.edit.parts.CommentAnnotatedElementEditPart;
+import org.eclipse.uml2.diagram.deploy.edit.parts.CommentEditPart;
 import org.eclipse.uml2.diagram.deploy.edit.parts.CommunicationPathEditPart;
 import org.eclipse.uml2.diagram.deploy.edit.parts.DependencyEditPart;
 import org.eclipse.uml2.diagram.deploy.edit.parts.DeploymentConfigurationEditPart;
@@ -104,6 +106,11 @@ public class UMLElementTypes extends ElementInitializers {
 	/**
 	 * @generated
 	 */
+	public static final IHintedType Comment_2008 = (IHintedType) getElementType("org.eclipse.uml2.diagram.deploy.Comment_2008"); //$NON-NLS-1$
+
+	/**
+	 * @generated
+	 */
 	public static final IHintedType ElementImport_3001 = (IHintedType) getElementType("org.eclipse.uml2.diagram.deploy.ElementImport_3001"); //$NON-NLS-1$
 
 	/**
@@ -170,6 +177,11 @@ public class UMLElementTypes extends ElementInitializers {
 	 * @generated
 	 */
 	public static final IHintedType Dependency_4005 = (IHintedType) getElementType("org.eclipse.uml2.diagram.deploy.Dependency_4005"); //$NON-NLS-1$
+
+	/**
+	 * @generated
+	 */
+	public static final IHintedType CommentAnnotatedElement_4006 = (IHintedType) getElementType("org.eclipse.uml2.diagram.deploy.CommentAnnotatedElement_4006"); //$NON-NLS-1$
 
 	/**
 	 * @generated
@@ -291,6 +303,8 @@ public class UMLElementTypes extends ElementInitializers {
 
 			elements.put(DeploymentSpecification_2007, UMLPackage.eINSTANCE.getDeploymentSpecification());
 
+			elements.put(Comment_2008, UMLPackage.eINSTANCE.getComment());
+
 			elements.put(ElementImport_3001, UMLPackage.eINSTANCE.getElementImport());
 
 			elements.put(Device_3004, UMLPackage.eINSTANCE.getDevice());
@@ -318,6 +332,8 @@ public class UMLElementTypes extends ElementInitializers {
 			elements.put(CommunicationPath_4004, UMLPackage.eINSTANCE.getCommunicationPath());
 
 			elements.put(Dependency_4005, UMLPackage.eINSTANCE.getDependency());
+
+			elements.put(CommentAnnotatedElement_4006, UMLPackage.eINSTANCE.getComment_AnnotatedElement());
 		}
 		return (ENamedElement) elements.get(type);
 	}
@@ -342,6 +358,7 @@ public class UMLElementTypes extends ElementInitializers {
 			KNOWN_ELEMENT_TYPES.add(ExecutionEnvironment_2005);
 			KNOWN_ELEMENT_TYPES.add(Artifact_2006);
 			KNOWN_ELEMENT_TYPES.add(DeploymentSpecification_2007);
+			KNOWN_ELEMENT_TYPES.add(Comment_2008);
 			KNOWN_ELEMENT_TYPES.add(ElementImport_3001);
 			KNOWN_ELEMENT_TYPES.add(Device_3004);
 			KNOWN_ELEMENT_TYPES.add(Artifact_3002);
@@ -356,6 +373,7 @@ public class UMLElementTypes extends ElementInitializers {
 			KNOWN_ELEMENT_TYPES.add(DeploymentConfiguration_4003);
 			KNOWN_ELEMENT_TYPES.add(CommunicationPath_4004);
 			KNOWN_ELEMENT_TYPES.add(Dependency_4005);
+			KNOWN_ELEMENT_TYPES.add(CommentAnnotatedElement_4006);
 		}
 		return KNOWN_ELEMENT_TYPES.contains(elementType);
 	}
@@ -379,6 +397,8 @@ public class UMLElementTypes extends ElementInitializers {
 			return Artifact_2006;
 		case DeploymentSpecificationEditPart.VISUAL_ID:
 			return DeploymentSpecification_2007;
+		case CommentEditPart.VISUAL_ID:
+			return Comment_2008;
 		case ElementImportEditPart.VISUAL_ID:
 			return ElementImport_3001;
 		case Device2EditPart.VISUAL_ID:
@@ -407,6 +427,8 @@ public class UMLElementTypes extends ElementInitializers {
 			return CommunicationPath_4004;
 		case DependencyEditPart.VISUAL_ID:
 			return Dependency_4005;
+		case CommentAnnotatedElementEditPart.VISUAL_ID:
+			return CommentAnnotatedElement_4006;
 		}
 		return null;
 	}

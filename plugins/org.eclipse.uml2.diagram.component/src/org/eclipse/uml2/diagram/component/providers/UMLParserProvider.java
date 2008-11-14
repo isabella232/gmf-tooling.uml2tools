@@ -48,6 +48,7 @@ import org.eclipse.uml2.diagram.component.edit.parts.ClassDiagramNotationOperati
 import org.eclipse.uml2.diagram.component.edit.parts.ClassDiagramNotationPropertyEditPart;
 import org.eclipse.uml2.diagram.component.edit.parts.ClassName2EditPart;
 import org.eclipse.uml2.diagram.component.edit.parts.ClassNameEditPart;
+import org.eclipse.uml2.diagram.component.edit.parts.CommentBodyEditPart;
 import org.eclipse.uml2.diagram.component.edit.parts.Component3EditPart;
 import org.eclipse.uml2.diagram.component.edit.parts.ComponentName2EditPart;
 import org.eclipse.uml2.diagram.component.edit.parts.ComponentNameEditPart;
@@ -292,6 +293,30 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 			classQualifiedName_5015Parser = new ClassifierAppliedStereotypeParser();
 		}
 		return classQualifiedName_5015Parser;
+	}
+
+	/**
+	 * @generated
+	 */
+	private IParser commentBody_5022Parser;
+
+	/**
+	 * @generated
+	 */
+	private IParser getCommentBody_5022Parser() {
+		if (commentBody_5022Parser == null) {
+			commentBody_5022Parser = createCommentBody_5022Parser();
+		}
+		return commentBody_5022Parser;
+	}
+
+	/**
+	 * @generated
+	 */
+	protected IParser createCommentBody_5022Parser() {
+		EAttribute[] features = new EAttribute[] { UMLPackage.eINSTANCE.getComment_Body() };
+		Parser_0_0 parser = new Parser_0_0(features);
+		return parser;
 	}
 
 	/**
@@ -954,6 +979,8 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 			return getClassName_5014Parser();
 		case ClassDiagramNotationClassStereotypeEditPart.VISUAL_ID:
 			return getClassQualifiedName_5015Parser();
+		case CommentBodyEditPart.VISUAL_ID:
+			return getCommentBody_5022Parser();
 		case ComponentNameEditPart.VISUAL_ID:
 			return getComponentName_5002Parser();
 		case ComponentStereo2EditPart.VISUAL_ID:

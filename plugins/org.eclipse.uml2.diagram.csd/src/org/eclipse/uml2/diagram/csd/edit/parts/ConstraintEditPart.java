@@ -277,6 +277,7 @@ public class ConstraintEditPart extends ShapeNodeEditPart implements PrimaryShap
 		types.add(UMLElementTypes.Dependency_4006);
 		types.add(UMLElementTypes.Usage_4008);
 		types.add(UMLElementTypes.ConstraintConstrainedElement_4012);
+		types.add(UMLElementTypes.CommentAnnotatedElement_4016);
 		return types;
 	}
 
@@ -394,6 +395,9 @@ public class ConstraintEditPart extends ShapeNodeEditPart implements PrimaryShap
 			types.add(UMLElementTypes.ConstraintConstrainedElement_4012);
 		}
 		if (targetEditPart instanceof org.eclipse.uml2.diagram.csd.edit.parts.ConstraintEditPart) {
+			types.add(UMLElementTypes.ConstraintConstrainedElement_4012);
+		}
+		if (targetEditPart instanceof CommentEditPart) {
 			types.add(UMLElementTypes.ConstraintConstrainedElement_4012);
 		}
 		if (targetEditPart instanceof CollaborationUse2EditPart) {
@@ -521,6 +525,9 @@ public class ConstraintEditPart extends ShapeNodeEditPart implements PrimaryShap
 		if (relationshipType == UMLElementTypes.ConstraintConstrainedElement_4012) {
 			types.add(UMLElementTypes.Constraint_2012);
 		}
+		if (relationshipType == UMLElementTypes.CommentAnnotatedElement_4016) {
+			types.add(UMLElementTypes.Comment_2013);
+		}
 		return types;
 	}
 
@@ -639,6 +646,9 @@ public class ConstraintEditPart extends ShapeNodeEditPart implements PrimaryShap
 		}
 		if (relationshipType == UMLElementTypes.ConstraintConstrainedElement_4012) {
 			types.add(UMLElementTypes.Constraint_2012);
+		}
+		if (relationshipType == UMLElementTypes.ConstraintConstrainedElement_4012) {
+			types.add(UMLElementTypes.Comment_2013);
 		}
 		if (relationshipType == UMLElementTypes.ConstraintConstrainedElement_4012) {
 			types.add(UMLElementTypes.CollaborationUse_3002);

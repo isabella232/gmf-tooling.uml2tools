@@ -19,6 +19,9 @@ import org.eclipse.uml2.diagram.deploy.edit.parts.ArtifactFileNameEditPart;
 import org.eclipse.uml2.diagram.deploy.edit.parts.ArtifactStereo2EditPart;
 import org.eclipse.uml2.diagram.deploy.edit.parts.ArtifactStereo3EditPart;
 import org.eclipse.uml2.diagram.deploy.edit.parts.ArtifactStereoEditPart;
+import org.eclipse.uml2.diagram.deploy.edit.parts.CommentAnnotatedElementEditPart;
+import org.eclipse.uml2.diagram.deploy.edit.parts.CommentBodyEditPart;
+import org.eclipse.uml2.diagram.deploy.edit.parts.CommentEditPart;
 import org.eclipse.uml2.diagram.deploy.edit.parts.CommunicationPathEditPart;
 import org.eclipse.uml2.diagram.deploy.edit.parts.CommunicationPathNameEditPart;
 import org.eclipse.uml2.diagram.deploy.edit.parts.DependencyEditPart;
@@ -78,6 +81,9 @@ import org.eclipse.uml2.diagram.deploy.view.factories.ArtifactStereo2ViewFactory
 import org.eclipse.uml2.diagram.deploy.view.factories.ArtifactStereo3ViewFactory;
 import org.eclipse.uml2.diagram.deploy.view.factories.ArtifactStereoViewFactory;
 import org.eclipse.uml2.diagram.deploy.view.factories.ArtifactViewFactory;
+import org.eclipse.uml2.diagram.deploy.view.factories.CommentAnnotatedElementViewFactory;
+import org.eclipse.uml2.diagram.deploy.view.factories.CommentBodyViewFactory;
+import org.eclipse.uml2.diagram.deploy.view.factories.CommentViewFactory;
 import org.eclipse.uml2.diagram.deploy.view.factories.CommunicationPathNameViewFactory;
 import org.eclipse.uml2.diagram.deploy.view.factories.CommunicationPathViewFactory;
 import org.eclipse.uml2.diagram.deploy.view.factories.DependencyNameViewFactory;
@@ -190,6 +196,7 @@ public class UMLViewProvider extends AbstractViewProvider {
 				case ExecutionEnvironmentEditPart.VISUAL_ID:
 				case Artifact2EditPart.VISUAL_ID:
 				case DeploymentSpecificationEditPart.VISUAL_ID:
+				case CommentEditPart.VISUAL_ID:
 				case ElementImportEditPart.VISUAL_ID:
 				case Device2EditPart.VISUAL_ID:
 				case ArtifactEditPart.VISUAL_ID:
@@ -240,6 +247,11 @@ public class UMLViewProvider extends AbstractViewProvider {
 				case DeploymentSpecificationStereo3EditPart.VISUAL_ID:
 				case DeploymentSpecificationPropertiesEditPart.VISUAL_ID:
 					if (DeploymentSpecificationEditPart.VISUAL_ID != UMLVisualIDRegistry.getVisualID(containerView) || containerView.getElement() != domainElement) {
+						return null; // wrong container
+					}
+					break;
+				case CommentBodyEditPart.VISUAL_ID:
+					if (CommentEditPart.VISUAL_ID != UMLVisualIDRegistry.getVisualID(containerView) || containerView.getElement() != domainElement) {
 						return null; // wrong container
 					}
 					break;
@@ -354,6 +366,10 @@ public class UMLViewProvider extends AbstractViewProvider {
 			return DeploymentSpecificationNameViewFactory.class;
 		case DeploymentSpecificationStereo3EditPart.VISUAL_ID:
 			return DeploymentSpecificationStereo3ViewFactory.class;
+		case CommentEditPart.VISUAL_ID:
+			return CommentViewFactory.class;
+		case CommentBodyEditPart.VISUAL_ID:
+			return CommentBodyViewFactory.class;
 		case ElementImportEditPart.VISUAL_ID:
 			return ElementImportViewFactory.class;
 		case Device2EditPart.VISUAL_ID:
@@ -466,6 +482,8 @@ public class UMLViewProvider extends AbstractViewProvider {
 			return CommunicationPathViewFactory.class;
 		case DependencyEditPart.VISUAL_ID:
 			return DependencyViewFactory.class;
+		case CommentAnnotatedElementEditPart.VISUAL_ID:
+			return CommentAnnotatedElementViewFactory.class;
 		}
 		return null;
 	}

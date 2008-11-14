@@ -7,8 +7,11 @@ import org.eclipse.gmf.runtime.emf.type.core.requests.CreateRelationshipRequest;
 import org.eclipse.gmf.runtime.emf.type.core.requests.DestroyElementRequest;
 import org.eclipse.gmf.runtime.emf.type.core.requests.ReorientReferenceRelationshipRequest;
 import org.eclipse.gmf.runtime.notation.View;
+import org.eclipse.uml2.diagram.profile.edit.commands.CommentAnnotatedElementCreateCommand;
+import org.eclipse.uml2.diagram.profile.edit.commands.CommentAnnotatedElementReorientCommand;
 import org.eclipse.uml2.diagram.profile.edit.commands.ConstraintConstrainedElementCreateCommand;
 import org.eclipse.uml2.diagram.profile.edit.commands.ConstraintConstrainedElementReorientCommand;
+import org.eclipse.uml2.diagram.profile.edit.parts.CommentAnnotatedElementEditPart;
 import org.eclipse.uml2.diagram.profile.edit.parts.ConstraintConstrainedElementEditPart;
 import org.eclipse.uml2.diagram.profile.providers.UMLElementTypes;
 
@@ -54,6 +57,9 @@ public class Constraint2ItemSemanticEditPolicy extends UMLBaseItemSemanticEditPo
 		if (UMLElementTypes.ConstraintConstrainedElement_4003 == req.getElementType()) {
 			return getGEFWrapper(new ConstraintConstrainedElementCreateCommand(req, req.getSource(), req.getTarget()));
 		}
+		if (UMLElementTypes.CommentAnnotatedElement_4004 == req.getElementType()) {
+			return null;
+		}
 		return null;
 	}
 
@@ -63,6 +69,9 @@ public class Constraint2ItemSemanticEditPolicy extends UMLBaseItemSemanticEditPo
 	protected Command getCompleteCreateRelationshipCommand(CreateRelationshipRequest req) {
 		if (UMLElementTypes.ConstraintConstrainedElement_4003 == req.getElementType()) {
 			return getGEFWrapper(new ConstraintConstrainedElementCreateCommand(req, req.getSource(), req.getTarget()));
+		}
+		if (UMLElementTypes.CommentAnnotatedElement_4004 == req.getElementType()) {
+			return getGEFWrapper(new CommentAnnotatedElementCreateCommand(req, req.getSource(), req.getTarget()));
 		}
 		return null;
 	}
@@ -77,6 +86,8 @@ public class Constraint2ItemSemanticEditPolicy extends UMLBaseItemSemanticEditPo
 		switch (getVisualID(req)) {
 		case ConstraintConstrainedElementEditPart.VISUAL_ID:
 			return getGEFWrapper(new ConstraintConstrainedElementReorientCommand(req));
+		case CommentAnnotatedElementEditPart.VISUAL_ID:
+			return getGEFWrapper(new CommentAnnotatedElementReorientCommand(req));
 		}
 		return super.getReorientReferenceRelationshipCommand(req);
 	}

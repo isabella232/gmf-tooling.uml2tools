@@ -30,6 +30,10 @@
           xsi:type="gmftool:CreationTool"
           title="Specification"
           description="Create Deployment Specification"/>
+      <tools
+          xsi:type="gmftool:CreationTool"
+          title="Comment"
+          description="Create Comment"/>
     </tools>
     <tools
         xsi:type="gmftool:ToolGroup"
@@ -55,6 +59,10 @@
           xsi:type="gmftool:CreationTool"
           title="Dependency"
           description="Create Dependency Link"/>
+      <tools
+          xsi:type="gmftool:CreationTool"
+          title="Annotated Element"
+          description="Create Annotated Element"/>
     </tools>
     <tools
         xsi:type="gmftool:ToolGroup"

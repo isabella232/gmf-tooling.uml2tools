@@ -323,6 +323,16 @@ public class Messages extends NLS {
 	/**
 	 * @generated
 	 */
+	public static String Comment6CreationTool_title;
+
+	/**
+	 * @generated
+	 */
+	public static String Comment6CreationTool_desc;
+
+	/**
+	 * @generated
+	 */
 	public static String Manifestation1CreationTool_title;
 
 	/**
@@ -369,6 +379,16 @@ public class Messages extends NLS {
 	 * @generated
 	 */
 	public static String Dependency5CreationTool_desc;
+
+	/**
+	 * @generated
+	 */
+	public static String AnnotatedElement6CreationTool_title;
+
+	/**
+	 * @generated
+	 */
+	public static String AnnotatedElement6CreationTool_desc;
 
 	/**
 	 * @generated
@@ -513,6 +533,21 @@ public class Messages extends NLS {
 	/**
 	 * @generated
 	 */
+	public static String NavigatorGroupName_Comment_2008_incominglinks;
+
+	/**
+	 * @generated
+	 */
+	public static String NavigatorGroupName_Comment_2008_outgoinglinks;
+
+	/**
+	 * @generated
+	 */
+	public static String NavigatorGroupName_ElementImport_3001_incominglinks;
+
+	/**
+	 * @generated
+	 */
 	public static String NavigatorGroupName_Device_3004_outgoinglinks;
 
 	/**
@@ -634,6 +669,16 @@ public class Messages extends NLS {
 	 * @generated
 	 */
 	public static String NavigatorGroupName_Dependency_4005_source;
+
+	/**
+	 * @generated
+	 */
+	public static String NavigatorGroupName_CommentAnnotatedElement_4006_target;
+
+	/**
+	 * @generated
+	 */
+	public static String NavigatorGroupName_CommentAnnotatedElement_4006_source;
 
 	/**
 	 * @generated
