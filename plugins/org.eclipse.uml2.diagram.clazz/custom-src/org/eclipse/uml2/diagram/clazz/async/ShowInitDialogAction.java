@@ -65,7 +65,7 @@ public class ShowInitDialogAction implements IObjectActionDelegate {
 	 * @generated
 	 */
 	public void run(IAction action) {
-		ShowInitDialog dialog = new ShowInitDialog(getShell(), createRootNode());
+		SynchronizeDiagramDialog dialog = new SynchronizeDiagramDialog(getShell(), createRootNode());
 		dialog.open();
 	}
 	

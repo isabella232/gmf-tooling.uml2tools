@@ -17,11 +17,11 @@ import org.eclipse.uml2.diagram.common.async.SyncModelNode;
 import org.eclipse.uml2.diagram.common.async.SyncModelUI;
 
 
-public class ShowInitDialog extends Dialog {
+public class SynchronizeDiagramDialog extends Dialog {
 	private SyncModelUI mySyncUI;
 	private final SyncModelNode myRootNode;
 	
-	public ShowInitDialog(Shell shell, SyncModelNode rootNode){
+	public SynchronizeDiagramDialog(Shell shell, SyncModelNode rootNode){
 		super(shell);
 		myRootNode = rootNode;
 		setShellStyle(getShellStyle() | SWT.RESIZE);

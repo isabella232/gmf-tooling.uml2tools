@@ -80,7 +80,7 @@ public class ShowInitDialogAction2 implements IObjectActionDelegate {
 	 * @generated
 	 */
 	public void run(IAction action) {
-		ShowInitDialog dialog = new ShowInitDialog(getShell(), createRootNode());
+		SynchronizeDiagramDialog dialog = new SynchronizeDiagramDialog(getShell(), createRootNode());
 		if (dialog.open() == Dialog.OK){
 			applySynchronization(dialog.getRootSyncNode());
 		}
