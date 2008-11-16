@@ -94,7 +94,9 @@ public class Port2EditPart extends BorderedBorderItemEditPart implements Primary
 		LayoutEditPolicy lep = new LayoutEditPolicy() {
 
 			protected EditPolicy createChildEditPolicy(EditPart child) {
-				if (child instanceof IBorderItemEditPart) {
+				View childView = (View) child.getModel();
+				switch (UMLVisualIDRegistry.getVisualID(childView)) {
+				case PortName2EditPart.VISUAL_ID:
 					return new BorderItemSelectionEditPolicy() {
 
 						protected List createSelectionHandles() {
