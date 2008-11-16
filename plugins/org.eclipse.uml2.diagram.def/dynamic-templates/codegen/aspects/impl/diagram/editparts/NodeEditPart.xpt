@@ -7,8 +7,7 @@
  * http://www.eclipse.org/legal/epl-v10.html
  *
  * Contributors:
- *    Dmitry Stadnik (Borland) - initial API and implementation
- *    Alexander Shatalin (Borland) - initial API and implementation
+ *    Michael Golubev (Borland) - initial API and implementation
  */
 
 «IMPORT "http://www.eclipse.org/gmf/2008/GenModel"»
@@ -274,6 +273,7 @@
 «AROUND impl::diagram::editparts::NodeEditPart::createDefaultEditPoliciesBody FOR gmfgen::GenNode-»
 	«EXPAND aspects::impl::diagram::editparts::updateDescriptionEditPolicy::installUpdateDescriptionEditPolicy-»
 	«targetDef.proceed()»
+	«EXPAND xpt::async::editPolicies::nodeComponentEditPolicy-»
 «ENDAROUND»
 
 «AROUND _creationEditPolicyNewInstance FOR gmfgen::GenNode»«EXPAND aspects::impl::diagram::editparts::creationEditPolicy::newInstance»«ENDAROUND»
