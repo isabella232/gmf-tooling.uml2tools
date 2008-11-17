@@ -37,7 +37,7 @@
       <import feature="org.eclipse.emf.ecore.edit" version="2.4.1" match="compatible"/>
       <import feature="org.eclipse.emf.edit" version="2.4.1" match="compatible"/>
       <import feature="org.eclipse.emf.edit.ui" version="2.5.0" match="compatible"/>
-      <import feature="org.eclipse.uml2" version="2.2.0" match="compatible"/>
+      <import feature="org.eclipse.uml2" version="3.0.0" match="compatible"/>
       <import feature="org.eclipse.emf.ocl" version="1.1.0" match="compatible"/>
       <import feature="org.eclipse.emf.query" version="1.2.0" match="compatible"/>
       <import feature="org.eclipse.emf.transaction" version="1.2.1" match="compatible"/>
