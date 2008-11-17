@@ -11,8 +11,8 @@
  */
 package org.eclipse.uml2.diagram.common.draw2d;
 
-import org.eclipse.draw2d.IFigure;
-import org.eclipse.gmf.runtime.draw2d.ui.figures.WrapLabel;
+import org.eclipse.draw2d.MarginBorder;
+import org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel;
 
 /**
  * XXX: It is temporary hack.
@@ -21,11 +21,21 @@ import org.eclipse.gmf.runtime.draw2d.ui.figures.WrapLabel;
  * achiveable, move this into the generation using custom viewmap attributes.
  */
 public class MultilineConstraintFigure extends ConstraintFigureBase {
-	@Override
-	public void add(IFigure figure, Object constraint, int index) {
-		if (figure instanceof WrapLabel){
-			((WrapLabel)figure).setTextWrap(true);
-		}
-		super.add(figure, constraint, index);
+	private WrappingLabel myBody;
+	
+	public MultilineConstraintFigure() {
+		super();
+		setBorder(new MarginBorder(MARGIN_DP, MARGIN_DP, MARGIN_DP, CLIP_MARGIN_DP));
+		myBody = new WrappingLabel();
+		add(myBody);
 	}
+
+	public WrappingLabel getBodyLabel() {
+		return myBody;
+	}
+
+	protected void setTextLabelWrap(boolean wrap) {
+		getBodyLabel().setTextWrap(wrap);
+	}
+
 }

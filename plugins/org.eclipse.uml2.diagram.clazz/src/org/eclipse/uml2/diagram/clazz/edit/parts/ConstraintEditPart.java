@@ -30,6 +30,7 @@ import org.eclipse.gmf.runtime.diagram.ui.editparts.ShapeNodeEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editpolicies.CanonicalEditPolicy;
 import org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles;
 import org.eclipse.gmf.runtime.draw2d.ui.figures.ConstrainedToolbarLayout;
+import org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel;
 import org.eclipse.gmf.runtime.emf.type.core.IElementType;
 import org.eclipse.gmf.runtime.gef.ui.figures.DefaultSizeNodeFigure;
 import org.eclipse.gmf.runtime.gef.ui.figures.NodeFigure;
@@ -137,7 +138,7 @@ public class ConstraintEditPart extends ShapeNodeEditPart implements PrimaryShap
 	 */
 	protected boolean addFixedChild(EditPart childEditPart) {
 		if (childEditPart instanceof ConstraintNameEditPart) {
-			((ConstraintNameEditPart) childEditPart).setLabel(getPrimaryShape().getFigureConstraintFigure_Value());
+			((ConstraintNameEditPart) childEditPart).setLabel(getPrimaryShape().getBodyLabel());
 			return true;
 		}
 		return false;
@@ -1192,35 +1193,10 @@ public class ConstraintEditPart extends ShapeNodeEditPart implements PrimaryShap
 		/**
 		 * @generated
 		 */
-		private Label fFigureConstraintFigure_Value;
-
-		/**
-		 * @generated
-		 */
 		public ConstraintFigure() {
 
-			createContents();
-		}
+			this.setTextLabelWrap(true);
 
-		/**
-		 * @generated
-		 */
-		private void createContents() {
-
-			fFigureConstraintFigure_Value = new Label();
-			fFigureConstraintFigure_Value.setText("");
-
-			fFigureConstraintFigure_Value.setBorder(new MarginBorder(getMapMode().DPtoLP(5), getMapMode().DPtoLP(5), getMapMode().DPtoLP(5), getMapMode().DPtoLP(5)));
-
-			this.add(fFigureConstraintFigure_Value);
-
-		}
-
-		/**
-		 * @generated
-		 */
-		public Label getFigureConstraintFigure_Value() {
-			return fFigureConstraintFigure_Value;
 		}
 
 		/**
@@ -1240,6 +1216,13 @@ public class ConstraintEditPart extends ShapeNodeEditPart implements PrimaryShap
 		 */
 		protected void setUseLocalCoordinates(boolean useLocalCoordinates) {
 			myUseLocalCoordinates = useLocalCoordinates;
+		}
+
+		/**
+		 * @generated
+		 */
+		public WrappingLabel getBodyLabel() {
+			return super.getBodyLabel();
 		}
 
 	}

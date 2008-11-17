@@ -11,18 +11,19 @@
           xsi:type="gmfgraph:CustomFigure"
           name="ConstraintFigure"
           qualifiedClassName="org.eclipse.uml2.diagram.common.draw2d.MultilineConstraintFigure">
-        <children
-            xsi:type="gmfgraph:Label"
-            name="ConstraintFigure_Value">
-          <insets
-              top="5"
-              left="5"
-              bottom="5"
-              right="5"/>
-        </children>
+        <attributes
+            name="textLabelWrap"
+            value="true"/>
+        <customChildren
+            accessor="getBodyLabel">
+          <typedFigure
+              xsi:type="gmfgraph:CustomFigure"
+              name="aux_Constraint_body"
+              qualifiedClassName="org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel"/>
+        </customChildren>
       </actualFigure>
       <accessors
-          figure="//@figures.0/@descriptors.0/@actualFigure/@children.0"/>
+          figure="//@figures.0/@descriptors.0/@actualFigure/@customChildren.0/@typedFigure"/>
     </descriptors>
   </figures>
   <nodes
