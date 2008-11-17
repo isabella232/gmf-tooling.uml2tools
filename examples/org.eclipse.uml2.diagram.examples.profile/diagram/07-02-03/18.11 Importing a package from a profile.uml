@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<uml:Package xmi:version="2.1" xmlns:xmi="http://schema.omg.org/spec/XMI/2.1" xmlns:uml="http://www.eclipse.org/uml2/3.0.0/UML" xmi:id="_17TUYbTcEd27R_31_X3F4A" name="Package">
+  <elementImport xmi:id="_1-SW8LTcEd27R_31_X3F4A">
+    <importedElement xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Boolean"/>
+  </elementImport>
+  <elementImport xmi:id="_1-vC4LTcEd27R_31_X3F4A">
+    <importedElement xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+  </elementImport>
+  <elementImport xmi:id="_1-vC4bTcEd27R_31_X3F4A">
+    <importedElement xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#UnlimitedNatural"/>
+  </elementImport>
+  <elementImport xmi:id="_1-vC4rTcEd27R_31_X3F4A">
+    <importedElement xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
+  </elementImport>
+  <packagedElement xmi:type="uml:Package" xmi:id="_9XYrcLTcEd27R_31_X3F4A" name="Types">
+    <packagedElement xmi:type="uml:Enumeration" xmi:id="_Eg2BcLTdEd27R_31_X3F4A" name="Color">
+      <ownedLiteral xmi:id="_ML-hILTdEd27R_31_X3F4A" name="red"/>
+      <ownedLiteral xmi:id="_MeJ2QLTdEd27R_31_X3F4A" name="green"/>
+      <ownedLiteral xmi:id="_Mtzb0LTdEd27R_31_X3F4A" name="blue"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_IG6wQLTdEd27R_31_X3F4A" name="Java Integer"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Package" xmi:id="_B6ZjoLTdEd27R_31_X3F4A" name="Factory">
+    <packagedElement xmi:type="uml:Class" xmi:id="_S82YALTdEd27R_31_X3F4A" name="TV"/>
+  </packagedElement>
+</uml:Package>

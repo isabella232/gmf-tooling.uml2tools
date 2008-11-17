@@ -1,0 +1,238 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.1/notation" xmlns:uml="http://www.eclipse.org/uml2/3.0.0/UML" xmlns:uml2tools.notation="http://www.eclipse.org/mdt/uml2tools/gmf/notation/ext/2008">
+  <notation:Diagram xmi:id="_2DDiMLTcEd27R_31_X3F4A" type="UMLClass" name="18.11 Importing a package from a profile.umlclass" measurementUnit="Pixel">
+    <children xmi:type="notation:Node" xmi:id="_3Qry8LTcEd27R_31_X3F4A" type="2014">
+      <children xmi:type="notation:Node" xmi:id="_3Qry87TcEd27R_31_X3F4A" type="5020"/>
+      <children xmi:type="notation:Node" xmi:id="_3Q1j8LTcEd27R_31_X3F4A" type="7032">
+        <styles xmi:type="notation:DrawerStyle" xmi:id="_3Q1j8bTcEd27R_31_X3F4A" collapsed="true"/>
+        <styles xmi:type="notation:SortingStyle" xmi:id="_3Q1j8rTcEd27R_31_X3F4A"/>
+        <styles xmi:type="notation:FilteringStyle" xmi:id="_3Q1j87TcEd27R_31_X3F4A"/>
+        <styles xmi:type="notation:CanonicalStyle" xmi:id="_3Q1j9LTcEd27R_31_X3F4A"/>
+      </children>
+      <styles xmi:type="notation:ShapeStyle" xmi:id="_3Qry8bTcEd27R_31_X3F4A"/>
+      <element xmi:type="uml:Package" href="18.11 Importing a package from a profile.uml#_17TUYbTcEd27R_31_X3F4A"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_3Qry8rTcEd27R_31_X3F4A"/>
+    </children>
+    <children xmi:type="notation:Node" xmi:id="_9cmioLTcEd27R_31_X3F4A" type="2016">
+      <children xmi:type="notation:Node" xmi:id="_9cmipLTcEd27R_31_X3F4A" type="5026"/>
+      <children xmi:type="notation:Node" xmi:id="_9cmipbTcEd27R_31_X3F4A" type="7033">
+        <children xmi:type="notation:Node" xmi:id="_EhI8YLTdEd27R_31_X3F4A" type="3034">
+          <children xmi:type="notation:Node" xmi:id="_EhceYLTdEd27R_31_X3F4A" type="5023"/>
+          <children xmi:type="notation:Node" xmi:id="_EhloULTdEd27R_31_X3F4A" type="7038">
+            <children xmi:type="notation:Node" xmi:id="_MMbNELTdEd27R_31_X3F4A" type="3016">
+              <element xmi:type="uml:EnumerationLiteral" href="18.11 Importing a package from a profile.uml#_ML-hILTdEd27R_31_X3F4A"/>
+              <layoutConstraint xmi:type="notation:Location" xmi:id="_MMbNEbTdEd27R_31_X3F4A"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_MemiMLTdEd27R_31_X3F4A" type="3016">
+              <element xmi:type="uml:EnumerationLiteral" href="18.11 Importing a package from a profile.uml#_MeJ2QLTdEd27R_31_X3F4A"/>
+              <layoutConstraint xmi:type="notation:Location" xmi:id="_MemiMbTdEd27R_31_X3F4A"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_MuGWwLTdEd27R_31_X3F4A" type="3016">
+              <element xmi:type="uml:EnumerationLiteral" href="18.11 Importing a package from a profile.uml#_Mtzb0LTdEd27R_31_X3F4A"/>
+              <layoutConstraint xmi:type="notation:Location" xmi:id="_MuGWwbTdEd27R_31_X3F4A"/>
+            </children>
+            <styles xmi:type="notation:DrawerStyle" xmi:id="_EhloUbTdEd27R_31_X3F4A"/>
+            <styles xmi:type="notation:TitleStyle" xmi:id="_EhloUrTdEd27R_31_X3F4A" showTitle="true"/>
+            <styles xmi:type="notation:SortingStyle" xmi:id="_EhloU7TdEd27R_31_X3F4A"/>
+            <styles xmi:type="notation:FilteringStyle" xmi:id="_EhloVLTdEd27R_31_X3F4A"/>
+            <styles xmi:type="notation:CanonicalStyle" xmi:id="_EhloVbTdEd27R_31_X3F4A"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_EhvZULTdEd27R_31_X3F4A" type="7039">
+            <styles xmi:type="notation:DrawerStyle" xmi:id="_EhvZUbTdEd27R_31_X3F4A"/>
+            <styles xmi:type="notation:TitleStyle" xmi:id="_EhvZUrTdEd27R_31_X3F4A" showTitle="true"/>
+            <styles xmi:type="notation:SortingStyle" xmi:id="_EhvZU7TdEd27R_31_X3F4A"/>
+            <styles xmi:type="notation:FilteringStyle" xmi:id="_EhvZVLTdEd27R_31_X3F4A"/>
+            <styles xmi:type="notation:CanonicalStyle" xmi:id="_EhvZVbTdEd27R_31_X3F4A"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_EhvZVrTdEd27R_31_X3F4A" type="7040">
+            <styles xmi:type="notation:DrawerStyle" xmi:id="_EhvZV7TdEd27R_31_X3F4A"/>
+            <styles xmi:type="notation:TitleStyle" xmi:id="_EhvZWLTdEd27R_31_X3F4A" showTitle="true"/>
+            <styles xmi:type="notation:SortingStyle" xmi:id="_EhvZWbTdEd27R_31_X3F4A"/>
+            <styles xmi:type="notation:FilteringStyle" xmi:id="_EhvZWrTdEd27R_31_X3F4A"/>
+            <styles xmi:type="notation:CanonicalStyle" xmi:id="_EhvZW7TdEd27R_31_X3F4A"/>
+          </children>
+          <styles xmi:type="notation:ShapeStyle" xmi:id="_EhI8YbTdEd27R_31_X3F4A"/>
+          <styles xmi:type="notation:CanonicalStyle" xmi:id="_EhI8YrTdEd27R_31_X3F4A"/>
+          <element xmi:type="uml:Enumeration" href="18.11 Importing a package from a profile.uml#_Eg2BcLTdEd27R_31_X3F4A"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_EhI8Y7TdEd27R_31_X3F4A" x="56" y="8"/>
+        </children>
+        <children xmi:type="notation:Node" xmi:id="_IHqXILTdEd27R_31_X3F4A" type="3033">
+          <children xmi:type="notation:Node" xmi:id="_IHzhELTdEd27R_31_X3F4A" type="5021"/>
+          <children xmi:type="notation:Node" xmi:id="_IHzhEbTdEd27R_31_X3F4A" type="5022"/>
+          <children xmi:type="notation:Node" xmi:id="_IHzhErTdEd27R_31_X3F4A" type="7035">
+            <styles xmi:type="notation:DrawerStyle" xmi:id="_IHzhE7TdEd27R_31_X3F4A"/>
+            <styles xmi:type="notation:TitleStyle" xmi:id="_IHzhFLTdEd27R_31_X3F4A" showTitle="true"/>
+            <styles xmi:type="notation:SortingStyle" xmi:id="_IHzhFbTdEd27R_31_X3F4A"/>
+            <styles xmi:type="notation:FilteringStyle" xmi:id="_IHzhFrTdEd27R_31_X3F4A"/>
+            <styles xmi:type="notation:CanonicalStyle" xmi:id="_IHzhF7TdEd27R_31_X3F4A"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_IHzhGLTdEd27R_31_X3F4A" type="7036">
+            <styles xmi:type="notation:DrawerStyle" xmi:id="_IHzhGbTdEd27R_31_X3F4A"/>
+            <styles xmi:type="notation:TitleStyle" xmi:id="_IHzhGrTdEd27R_31_X3F4A" showTitle="true"/>
+            <styles xmi:type="notation:SortingStyle" xmi:id="_IHzhG7TdEd27R_31_X3F4A"/>
+            <styles xmi:type="notation:FilteringStyle" xmi:id="_IHzhHLTdEd27R_31_X3F4A"/>
+            <styles xmi:type="notation:CanonicalStyle" xmi:id="_IHzhHbTdEd27R_31_X3F4A"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_IHzhHrTdEd27R_31_X3F4A" type="7037">
+            <styles xmi:type="notation:DrawerStyle" xmi:id="_IHzhH7TdEd27R_31_X3F4A"/>
+            <styles xmi:type="notation:TitleStyle" xmi:id="_IHzhILTdEd27R_31_X3F4A" showTitle="true"/>
+            <styles xmi:type="notation:SortingStyle" xmi:id="_IHzhIbTdEd27R_31_X3F4A"/>
+            <styles xmi:type="notation:FilteringStyle" xmi:id="_IHzhIrTdEd27R_31_X3F4A"/>
+            <styles xmi:type="notation:CanonicalStyle" xmi:id="_IHzhI7TdEd27R_31_X3F4A"/>
+          </children>
+          <styles xmi:type="notation:ShapeStyle" xmi:id="_IHqXIbTdEd27R_31_X3F4A"/>
+          <styles xmi:type="notation:CanonicalStyle" xmi:id="_IHqXIrTdEd27R_31_X3F4A"/>
+          <element xmi:type="uml:Class" href="18.11 Importing a package from a profile.uml#_IG6wQLTdEd27R_31_X3F4A"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_IHqXI7TdEd27R_31_X3F4A" x="200" y="8"/>
+        </children>
+        <styles xmi:type="notation:DrawerStyle" xmi:id="_9cmiprTcEd27R_31_X3F4A"/>
+        <styles xmi:type="notation:SortingStyle" xmi:id="_9cmip7TcEd27R_31_X3F4A"/>
+        <styles xmi:type="notation:FilteringStyle" xmi:id="_9cmiqLTcEd27R_31_X3F4A"/>
+        <styles xmi:type="notation:CanonicalStyle" xmi:id="_9cmiqbTcEd27R_31_X3F4A"/>
+      </children>
+      <styles xmi:type="notation:ShapeStyle" xmi:id="_9cmiobTcEd27R_31_X3F4A" fillColor="16636392"/>
+      <styles xmi:type="notation:HintedDiagramLinkStyle" xmi:id="_9cmiorTcEd27R_31_X3F4A" diagramLink="_ACm0MLTgEd2gv7JKVUmu5g"/>
+      <element xmi:type="uml:Package" href="18.11 Importing a package from a profile.uml#_9XYrcLTcEd27R_31_X3F4A"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_9cmio7TcEd27R_31_X3F4A" x="82" y="92" width="351" height="245"/>
+    </children>
+    <children xmi:type="notation:Node" xmi:id="_B62PkLTdEd27R_31_X3F4A" type="2016">
+      <children xmi:type="notation:Node" xmi:id="_B62PlLTdEd27R_31_X3F4A" type="5026"/>
+      <children xmi:type="notation:Node" xmi:id="_B62PlbTdEd27R_31_X3F4A" type="7033">
+        <children xmi:type="notation:Node" xmi:id="_S9AJALTdEd27R_31_X3F4A" type="3033">
+          <children xmi:type="notation:Node" xmi:id="_S9AJBLTdEd27R_31_X3F4A" type="5021"/>
+          <children xmi:type="notation:Node" xmi:id="_S9AJBbTdEd27R_31_X3F4A" type="5022"/>
+          <children xmi:type="notation:Node" xmi:id="_S9AJBrTdEd27R_31_X3F4A" type="7035">
+            <styles xmi:type="notation:DrawerStyle" xmi:id="_S9AJB7TdEd27R_31_X3F4A"/>
+            <styles xmi:type="notation:TitleStyle" xmi:id="_S9AJCLTdEd27R_31_X3F4A" showTitle="true"/>
+            <styles xmi:type="notation:SortingStyle" xmi:id="_S9AJCbTdEd27R_31_X3F4A"/>
+            <styles xmi:type="notation:FilteringStyle" xmi:id="_S9AJCrTdEd27R_31_X3F4A"/>
+            <styles xmi:type="notation:CanonicalStyle" xmi:id="_S9AJC7TdEd27R_31_X3F4A"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_S9AJDLTdEd27R_31_X3F4A" type="7036">
+            <styles xmi:type="notation:DrawerStyle" xmi:id="_S9AJDbTdEd27R_31_X3F4A"/>
+            <styles xmi:type="notation:TitleStyle" xmi:id="_S9AJDrTdEd27R_31_X3F4A" showTitle="true"/>
+            <styles xmi:type="notation:SortingStyle" xmi:id="_S9AJD7TdEd27R_31_X3F4A"/>
+            <styles xmi:type="notation:FilteringStyle" xmi:id="_S9AJELTdEd27R_31_X3F4A"/>
+            <styles xmi:type="notation:CanonicalStyle" xmi:id="_S9AJEbTdEd27R_31_X3F4A"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_S9AJErTdEd27R_31_X3F4A" type="7037">
+            <styles xmi:type="notation:DrawerStyle" xmi:id="_S9AJE7TdEd27R_31_X3F4A"/>
+            <styles xmi:type="notation:TitleStyle" xmi:id="_S9AJFLTdEd27R_31_X3F4A" showTitle="true"/>
+            <styles xmi:type="notation:SortingStyle" xmi:id="_S9AJFbTdEd27R_31_X3F4A"/>
+            <styles xmi:type="notation:FilteringStyle" xmi:id="_S9AJFrTdEd27R_31_X3F4A"/>
+            <styles xmi:type="notation:CanonicalStyle" xmi:id="_S9AJF7TdEd27R_31_X3F4A"/>
+          </children>
+          <styles xmi:type="notation:ShapeStyle" xmi:id="_S9AJAbTdEd27R_31_X3F4A"/>
+          <styles xmi:type="notation:CanonicalStyle" xmi:id="_S9AJArTdEd27R_31_X3F4A"/>
+          <element xmi:type="uml:Class" href="18.11 Importing a package from a profile.uml#_S82YALTdEd27R_31_X3F4A"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_S9AJA7TdEd27R_31_X3F4A" x="28" y="24"/>
+        </children>
+        <styles xmi:type="notation:DrawerStyle" xmi:id="_B62PlrTdEd27R_31_X3F4A"/>
+        <styles xmi:type="notation:SortingStyle" xmi:id="_B62Pl7TdEd27R_31_X3F4A"/>
+        <styles xmi:type="notation:FilteringStyle" xmi:id="_B62PmLTdEd27R_31_X3F4A"/>
+        <styles xmi:type="notation:CanonicalStyle" xmi:id="_B62PmbTdEd27R_31_X3F4A"/>
+      </children>
+      <styles xmi:type="notation:ShapeStyle" xmi:id="_B62PkbTdEd27R_31_X3F4A" fillColor="15134463"/>
+      <styles xmi:type="notation:HintedDiagramLinkStyle" xmi:id="_B62PkrTdEd27R_31_X3F4A"/>
+      <element xmi:type="uml:Package" href="18.11 Importing a package from a profile.uml#_B6ZjoLTdEd27R_31_X3F4A"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_B62Pk7TdEd27R_31_X3F4A" x="504" y="96" width="361" height="241"/>
+    </children>
+    <children xmi:type="notation:Node" xmi:id="_nKMloLTeEd2gv7JKVUmu5g" type="Note">
+      <children xmi:type="notation:Node" xmi:id="_nKMlpbTeEd2gv7JKVUmu5g" type="DiagramName">
+        <element xsi:nil="true"/>
+      </children>
+      <children xmi:type="notation:Node" xmi:id="_nKMlprTeEd2gv7JKVUmu5g" type="Description">
+        <element xsi:nil="true"/>
+      </children>
+      <styles xmi:type="notation:ShapeStyle" xmi:id="_nKMlobTeEd2gv7JKVUmu5g" description="18.11 Importing a package from a profile" fillColor="13369343" lineColor="6737151" lineWidth="1"/>
+      <styles xmi:type="notation:TextStyle" xmi:id="_nKMlorTeEd2gv7JKVUmu5g"/>
+      <styles xmi:type="notation:LineTypeStyle" xmi:id="_nKMlo7TeEd2gv7JKVUmu5g"/>
+      <element xsi:nil="true"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_nKMlpLTeEd2gv7JKVUmu5g" x="72" y="372" width="577" height="37"/>
+    </children>
+    <styles xmi:type="notation:DiagramStyle" xmi:id="_2DDiMbTcEd27R_31_X3F4A"/>
+    <styles xmi:type="notation:FilteringStyle" xmi:id="_2DDiMrTcEd27R_31_X3F4A"/>
+    <element xmi:type="uml:Package" href="18.11 Importing a package from a profile.uml#_17TUYbTcEd27R_31_X3F4A"/>
+  </notation:Diagram>
+  <notation:Diagram xmi:id="_ACm0MLTgEd2gv7JKVUmu5g" type="UMLClass" measurementUnit="Pixel">
+    <children xmi:type="notation:Node" xmi:id="_AWRXELTgEd2gv7JKVUmu5g" type="2014">
+      <children xmi:type="notation:Node" xmi:id="_AWRXE7TgEd2gv7JKVUmu5g" type="5020"/>
+      <children xmi:type="notation:Node" xmi:id="_AWRXFLTgEd2gv7JKVUmu5g" type="7032">
+        <styles xmi:type="notation:DrawerStyle" xmi:id="_AWRXFbTgEd2gv7JKVUmu5g" collapsed="true"/>
+        <styles xmi:type="notation:SortingStyle" xmi:id="_AWRXFrTgEd2gv7JKVUmu5g"/>
+        <styles xmi:type="notation:FilteringStyle" xmi:id="_AWRXF7TgEd2gv7JKVUmu5g"/>
+        <styles xmi:type="notation:CanonicalStyle" xmi:id="_AWRXGLTgEd2gv7JKVUmu5g"/>
+      </children>
+      <styles xmi:type="notation:ShapeStyle" xmi:id="_AWRXEbTgEd2gv7JKVUmu5g"/>
+      <element xmi:type="uml:Package" href="18.11 Importing a package from a profile.uml#_9XYrcLTcEd27R_31_X3F4A"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_AWRXErTgEd2gv7JKVUmu5g"/>
+    </children>
+    <children xmi:type="notation:Node" xmi:id="_AWRXGbTgEd2gv7JKVUmu5g" type="2003">
+      <children xmi:type="notation:Node" xmi:id="_AWRXHbTgEd2gv7JKVUmu5g" type="5005">
+        <styles xmi:type="notation:FontStyle" xmi:id="_AaAAgLTgEd2gv7JKVUmu5g" bold="true"/>
+      </children>
+      <children xmi:type="notation:Node" xmi:id="_AWRXHrTgEd2gv7JKVUmu5g" type="5034"/>
+      <children xmi:type="notation:Node" xmi:id="_AWbIELTgEd2gv7JKVUmu5g" type="7013">
+        <styles xmi:type="notation:DrawerStyle" xmi:id="_AWbIEbTgEd2gv7JKVUmu5g"/>
+        <styles xmi:type="notation:TitleStyle" xmi:id="_AWbIErTgEd2gv7JKVUmu5g" showTitle="true"/>
+        <styles xmi:type="notation:SortingStyle" xmi:id="_AWbIE7TgEd2gv7JKVUmu5g"/>
+        <styles xmi:type="notation:FilteringStyle" xmi:id="_AWbIFLTgEd2gv7JKVUmu5g"/>
+        <styles xmi:type="notation:CanonicalStyle" xmi:id="_AWbIFbTgEd2gv7JKVUmu5g"/>
+      </children>
+      <children xmi:type="notation:Node" xmi:id="_AWbIFrTgEd2gv7JKVUmu5g" type="7014">
+        <styles xmi:type="notation:DrawerStyle" xmi:id="_AWbIF7TgEd2gv7JKVUmu5g"/>
+        <styles xmi:type="notation:TitleStyle" xmi:id="_AWbIGLTgEd2gv7JKVUmu5g" showTitle="true"/>
+        <styles xmi:type="notation:SortingStyle" xmi:id="_AWbIGbTgEd2gv7JKVUmu5g"/>
+        <styles xmi:type="notation:FilteringStyle" xmi:id="_AWbIGrTgEd2gv7JKVUmu5g"/>
+        <styles xmi:type="notation:CanonicalStyle" xmi:id="_AWbIG7TgEd2gv7JKVUmu5g"/>
+      </children>
+      <children xmi:type="notation:Node" xmi:id="_AWbIHLTgEd2gv7JKVUmu5g" type="7015">
+        <styles xmi:type="notation:DrawerStyle" xmi:id="_AWbIHbTgEd2gv7JKVUmu5g"/>
+        <styles xmi:type="notation:TitleStyle" xmi:id="_AWbIHrTgEd2gv7JKVUmu5g" showTitle="true"/>
+        <styles xmi:type="notation:SortingStyle" xmi:id="_AWbIH7TgEd2gv7JKVUmu5g"/>
+        <styles xmi:type="notation:FilteringStyle" xmi:id="_AWbIILTgEd2gv7JKVUmu5g"/>
+        <styles xmi:type="notation:CanonicalStyle" xmi:id="_AWbIIbTgEd2gv7JKVUmu5g"/>
+      </children>
+      <styles xmi:type="notation:ShapeStyle" xmi:id="_AWRXGrTgEd2gv7JKVUmu5g"/>
+      <styles xmi:type="notation:CanonicalStyle" xmi:id="_AWRXG7TgEd2gv7JKVUmu5g"/>
+      <element xmi:type="uml:Enumeration" href="18.11 Importing a package from a profile.uml#_Eg2BcLTdEd27R_31_X3F4A"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_AWRXHLTgEd2gv7JKVUmu5g" x="156" y="24"/>
+    </children>
+    <children xmi:type="notation:Node" xmi:id="_AWbIIrTgEd2gv7JKVUmu5g" type="2001">
+      <children xmi:type="notation:Node" xmi:id="_AWbIJrTgEd2gv7JKVUmu5g" type="5003">
+        <styles xmi:type="notation:FontStyle" xmi:id="_AbWEULTgEd2gv7JKVUmu5g" bold="true"/>
+      </children>
+      <children xmi:type="notation:Node" xmi:id="_AWbIJ7TgEd2gv7JKVUmu5g" type="5019"/>
+      <children xmi:type="notation:Node" xmi:id="_AWbIKLTgEd2gv7JKVUmu5g" type="7001">
+        <styles xmi:type="notation:DrawerStyle" xmi:id="_AWbIKbTgEd2gv7JKVUmu5g"/>
+        <styles xmi:type="notation:TitleStyle" xmi:id="_AWbIKrTgEd2gv7JKVUmu5g" showTitle="true"/>
+        <styles xmi:type="notation:SortingStyle" xmi:id="_AWbIK7TgEd2gv7JKVUmu5g"/>
+        <styles xmi:type="notation:FilteringStyle" xmi:id="_AWbILLTgEd2gv7JKVUmu5g"/>
+        <styles xmi:type="notation:CanonicalStyle" xmi:id="_AWbILbTgEd2gv7JKVUmu5g"/>
+      </children>
+      <children xmi:type="notation:Node" xmi:id="_AWk5ELTgEd2gv7JKVUmu5g" type="7002">
+        <styles xmi:type="notation:DrawerStyle" xmi:id="_AWk5EbTgEd2gv7JKVUmu5g"/>
+        <styles xmi:type="notation:TitleStyle" xmi:id="_AWk5ErTgEd2gv7JKVUmu5g" showTitle="true"/>
+        <styles xmi:type="notation:SortingStyle" xmi:id="_AWk5E7TgEd2gv7JKVUmu5g"/>
+        <styles xmi:type="notation:FilteringStyle" xmi:id="_AWk5FLTgEd2gv7JKVUmu5g"/>
+        <styles xmi:type="notation:CanonicalStyle" xmi:id="_AWk5FbTgEd2gv7JKVUmu5g"/>
+      </children>
+      <children xmi:type="notation:Node" xmi:id="_AWk5FrTgEd2gv7JKVUmu5g" type="7003">
+        <styles xmi:type="notation:DrawerStyle" xmi:id="_AWk5F7TgEd2gv7JKVUmu5g"/>
+        <styles xmi:type="notation:TitleStyle" xmi:id="_AWk5GLTgEd2gv7JKVUmu5g" showTitle="true"/>
+        <styles xmi:type="notation:SortingStyle" xmi:id="_AWk5GbTgEd2gv7JKVUmu5g"/>
+        <styles xmi:type="notation:FilteringStyle" xmi:id="_AWk5GrTgEd2gv7JKVUmu5g"/>
+        <styles xmi:type="notation:CanonicalStyle" xmi:id="_AWk5G7TgEd2gv7JKVUmu5g"/>
+      </children>
+      <styles xmi:type="notation:ShapeStyle" xmi:id="_AWbII7TgEd2gv7JKVUmu5g"/>
+      <styles xmi:type="notation:CanonicalStyle" xmi:id="_AWbIJLTgEd2gv7JKVUmu5g"/>
+      <element xmi:type="uml:Class" href="18.11 Importing a package from a profile.uml#_IG6wQLTdEd27R_31_X3F4A"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_AWbIJbTgEd2gv7JKVUmu5g" x="288" y="24"/>
+    </children>
+    <styles xmi:type="notation:DiagramStyle" xmi:id="_ACm0MbTgEd2gv7JKVUmu5g"/>
+    <styles xmi:type="uml2tools.notation:U2TDiagramCanonicalStyle" xmi:id="_ACm0MrTgEd2gv7JKVUmu5g"/>
+    <styles xmi:type="notation:FilteringStyle" xmi:id="_ACm0M7TgEd2gv7JKVUmu5g"/>
+    <styles xmi:type="uml2tools.notation:U2TDiagramCanonicalStyle" xmi:id="_ACm0NLTgEd2gv7JKVUmu5g"/>
+    <element xmi:type="uml:Package" href="18.11 Importing a package from a profile.uml#_9XYrcLTcEd27R_31_X3F4A"/>
+  </notation:Diagram>
+</xmi:XMI>
