@@ -3,12 +3,14 @@ package org.eclipse.uml2.diagram.profile.edit.parts;
 import org.eclipse.draw2d.IFigure;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.gef.EditPolicy;
+import org.eclipse.gmf.runtime.diagram.ui.editparts.IInsertableEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.ListCompartmentEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editpolicies.DragDropEditPolicy;
 import org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles;
 import org.eclipse.gmf.runtime.diagram.ui.editpolicies.ResizableCompartmentEditPolicy;
 import org.eclipse.gmf.runtime.diagram.ui.figures.ResizableCompartmentFigure;
 import org.eclipse.gmf.runtime.draw2d.ui.figures.ConstrainedToolbarLayout;
+import org.eclipse.gmf.runtime.emf.type.core.IElementType;
 import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.uml2.diagram.common.editpolicies.CreationEditPolicyWithCustomReparent;
 import org.eclipse.uml2.diagram.common.editpolicies.UpdateDescriptionEditPolicy;
@@ -17,11 +19,12 @@ import org.eclipse.uml2.diagram.profile.edit.policies.ProfileContentsItemSemanti
 import org.eclipse.uml2.diagram.profile.part.Messages;
 import org.eclipse.uml2.diagram.profile.part.UMLDiagramUpdater;
 import org.eclipse.uml2.diagram.profile.part.UMLVisualIDRegistry;
+import org.eclipse.uml2.diagram.profile.providers.UMLElementTypes;
 
 /**
  * @generated
  */
-public class ProfileContentsEditPart extends ListCompartmentEditPart {
+public class ProfileContentsEditPart extends ListCompartmentEditPart implements IInsertableEditPart {
 
 	/**
 	 * @generated
@@ -81,6 +84,13 @@ public class ProfileContentsEditPart extends ListCompartmentEditPart {
 		if (getFigure().getParent().getLayoutManager() instanceof ConstrainedToolbarLayout) {
 			super.setRatio(ratio);
 		}
+	}
+
+	/**
+	 * @generated
+	 */
+	public IElementType getElementType() {
+		return UMLElementTypes.Stereotype_3003;
 	}
 
 }
