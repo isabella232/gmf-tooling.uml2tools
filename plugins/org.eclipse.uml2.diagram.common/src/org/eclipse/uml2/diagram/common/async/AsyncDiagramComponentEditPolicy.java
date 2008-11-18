@@ -3,15 +3,17 @@ package org.eclipse.uml2.diagram.common.async;
 import java.util.Collections;
 import java.util.List;
 
+import org.eclipse.core.commands.ExecutionException;
 import org.eclipse.core.runtime.IAdaptable;
+import org.eclipse.core.runtime.IProgressMonitor;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.transaction.TransactionalEditingDomain;
 import org.eclipse.gef.EditPart;
-import org.eclipse.gef.EditPartViewer;
 import org.eclipse.gef.Request;
 import org.eclipse.gef.commands.Command;
-import org.eclipse.gef.commands.CompoundCommand;
+import org.eclipse.gef.requests.CreateRequest;
 import org.eclipse.gef.requests.GroupRequest;
+import org.eclipse.gmf.runtime.common.core.command.CommandResult;
 import org.eclipse.gmf.runtime.common.core.command.CompositeCommand;
 import org.eclipse.gmf.runtime.common.core.command.ICommand;
 import org.eclipse.gmf.runtime.common.core.util.StringStatics;
@@ -22,8 +24,8 @@ import org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.IInsertableEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editpolicies.ComponentEditPolicy;
 import org.eclipse.gmf.runtime.diagram.ui.requests.CreateUnspecifiedTypeRequest;
+import org.eclipse.gmf.runtime.emf.commands.core.command.AbstractTransactionalCommand;
 import org.eclipse.gmf.runtime.notation.View;
-import org.eclipse.jface.viewers.StructuredSelection;
 
 public class AsyncDiagramComponentEditPolicy extends ComponentEditPolicy {
 	/**
@@ -135,11 +137,7 @@ public class AsyncDiagramComponentEditPolicy extends ComponentEditPolicy {
 			
 			Command result = insertEP.getCommand(createReq);
 			if (result != null && result.canExecute()){
-				Command selectCommand = new SelectJustCreatedCommand(getHostImpl().getViewer(), createReq);
-				CompoundCommand withSelect = new CompoundCommand(result.getLabel());
-				withSelect.add(result);
-				withSelect.add(selectCommand);
-				result = withSelect;
+				result = new ICommandProxy(new ExecuteCreationAndReturnEObjectCommand(editingDomain, createReq, result));
 			}
 			return result;
 		}
@@ -147,26 +145,30 @@ public class AsyncDiagramComponentEditPolicy extends ComponentEditPolicy {
 		return null;
 	}
 	
-	private static class SelectJustCreatedCommand extends Command {
-		private final CreateUnspecifiedTypeRequest myCreateReq;
-		private final EditPartViewer myViewer;
+	/**
+	 * InsertAction expects semantic EObject as a result of getInsertCommand(). 
+	 * Unfortunately, what we have is the command that returns org.eclipse.gmf.runtime.diagram.core.edithelpers.CreateElementRequestAdapter  
+	 */
+	private static class ExecuteCreationAndReturnEObjectCommand extends AbstractTransactionalCommand {
+		private final Command myActualCommand;
+		private final CreateRequest myRequest;
 
-		public SelectJustCreatedCommand(EditPartViewer viewer, CreateUnspecifiedTypeRequest createReq){
-			myViewer = viewer;
-			myCreateReq = createReq;
+		public ExecuteCreationAndReturnEObjectCommand(TransactionalEditingDomain domain, CreateRequest request, Command actualCommand){
+			super(domain, actualCommand.getLabel(), null);
+			myRequest = request;
+			myActualCommand = actualCommand;
 		}
 		
 		@Override
-		public void execute() {
-			Object editPart = findCreatedEditPart();
-			if (editPart != null){
-				myViewer.setSelection(new StructuredSelection(editPart));
-			}
+		protected CommandResult doExecuteWithResult(IProgressMonitor monitor, IAdaptable info) throws ExecutionException {
+			myActualCommand.execute();
+			EObject createdSemantic = unwrapToSemantic(myRequest);
+			return CommandResult.newOKCommandResult(createdSemantic); 
 		}
 		
 		@SuppressWarnings("unchecked")
-		private Object findCreatedEditPart(){
-			Object creationResult = myCreateReq.getNewObject();
+		private EObject unwrapToSemantic(CreateRequest request){
+			Object creationResult = request.getNewObject();
 			if (creationResult instanceof List){
 				creationResult = ((List)creationResult).get(0);
 			}
@@ -174,9 +176,8 @@ public class AsyncDiagramComponentEditPolicy extends ComponentEditPolicy {
 			if (creationResult instanceof IAdaptable){
 				createdView = (View) ((IAdaptable)creationResult).getAdapter(View.class);
 			}
-			return createdView == null ? null : myViewer.getEditPartRegistry().get(createdView);
+			return createdView == null ? null : createdView.getElement();
 		}
 	}
 	
-
 }
