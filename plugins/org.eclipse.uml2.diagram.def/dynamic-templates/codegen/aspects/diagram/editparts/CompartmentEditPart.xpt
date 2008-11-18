@@ -14,26 +14,17 @@
 «EXTENSION xpt::async::NonCanonicalDiagram»
 
 «AROUND implementsList FOR gmfgen::GenCompartment»«-»
-«REM»
-To make 'INS' working we need to overwrite default GMF ComponentEditPolicy.
-Actually its done for not-synchronized diagrams, so for now we have to limit this feature for such diagrams only.
-«ENDREM»«-»
-«IF supportsNonCanonicalMode(this.getDiagram())-»
 «IF this.listLayout && this.childNodes.size() == 1-»
 implements org.eclipse.gmf.runtime.diagram.ui.editparts.IInsertableEditPart«-»
-«ENDIF-»
 «ENDIF-»
 «ENDAROUND»
 
 «AROUND diagram::editparts::CompartmentEditPart::additions FOR gmfgen::GenCompartment»
-«REM»same check as in the implementsList«ENDREM»«-»
-«IF supportsNonCanonicalMode(this.getDiagram())-»
 «IF this.listLayout && this.childNodes.size() == 1-»
 	«EXPAND xpt::Common::generatedMemberComment»
 	public org.eclipse.gmf.runtime.emf.type.core.IElementType getElementType() {
 		return «getDiagram().getElementTypesQualifiedClassName()».«childNodes.get(0).getUniqueIdentifier()»;
 	}
 	
-«ENDIF-»
 «ENDIF-»
 «ENDAROUND»

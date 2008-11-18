@@ -8,11 +8,23 @@
  *
  * Contributors:
  *    Michael Golubev (Borland) - [252802] U2T specific delete from diagram action
+ * 								  [255532] InsertAction support 
  */
 
 «IMPORT "http://www.eclipse.org/gmf/2008/GenModel"»
 
+«EXTENSION xpt::async::NonCanonicalDiagram»  
+
 «AROUND createDefaultEditPoliciesBody FOR gmfgen::GenChildLabelNode-»
 	«targetDef.proceed()-»
-	«EXPAND xpt::async::editPolicies::nodeComponentEditPolicy FOR this-»
+	«EXPAND installComponentEditPolicy-»
 «ENDAROUND»
+
+«DEFINE installComponentEditPolicy FOR gmfgen::GenChildLabelNode-»
+«IF supportsNonCanonicalMode(this.getDiagram())-»	
+	«EXPAND xpt::async::editPolicies::nodeComponentEditPolicy FOR this-»
+«ELSE-»
+	installEditPolicy(org.eclipse.gef.EditPolicy.COMPONENT_ROLE, «-»
+			new org.eclipse.uml2.diagram.common.editpolicies.InsertingComponentEditPolicy(true));
+«ENDIF-»	
+«ENDDEFINE»
