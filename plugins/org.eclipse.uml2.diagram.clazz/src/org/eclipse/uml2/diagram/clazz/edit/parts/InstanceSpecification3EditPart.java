@@ -150,6 +150,10 @@ public class InstanceSpecification3EditPart extends ShapeNodeEditPart implements
 			((InstanceSpecificationName2EditPart) childEditPart).setLabel(getPrimaryShape().getFigureInstanceNode_NameLabel());
 			return true;
 		}
+		if (childEditPart instanceof InstanceSpecificationStereo2EditPart) {
+			((InstanceSpecificationStereo2EditPart) childEditPart).setLabel(getPrimaryShape().getFigureInstanceNode_StereoLabel());
+			return true;
+		}
 		if (childEditPart instanceof InstanceSpecificationSlots2EditPart) {
 			IFigure pane = getPrimaryShape().getFigureInstanceNode_SlotsCompartmentFigure();
 			setupContentPane(pane); // FIXME each comparment should handle his content pane in his own way 
@@ -1291,6 +1295,11 @@ public class InstanceSpecification3EditPart extends ShapeNodeEditPart implements
 		/**
 		 * @generated
 		 */
+		private Label fFigureInstanceNode_StereoLabel;
+
+		/**
+		 * @generated
+		 */
 		public InstanceNodeFigure() {
 
 			ToolbarLayout layoutThis = new ToolbarLayout();
@@ -1325,6 +1334,15 @@ public class InstanceSpecification3EditPart extends ShapeNodeEditPart implements
 			layoutInstanceNode_NameContainerFigure0.setVertical(true);
 
 			instanceNode_NameContainerFigure0.setLayoutManager(layoutInstanceNode_NameContainerFigure0);
+
+			fFigureInstanceNode_StereoLabel = new Label();
+			fFigureInstanceNode_StereoLabel.setText("");
+
+			instanceNode_NameContainerFigure0.add(fFigureInstanceNode_StereoLabel);
+
+			CenterLayout layoutFFigureInstanceNode_StereoLabel = new CenterLayout();
+
+			fFigureInstanceNode_StereoLabel.setLayoutManager(layoutFFigureInstanceNode_StereoLabel);
 
 			fFigureInstanceNode_NameLabel = new Label();
 			fFigureInstanceNode_NameLabel.setText("");
@@ -1384,6 +1402,13 @@ public class InstanceSpecification3EditPart extends ShapeNodeEditPart implements
 		 */
 		public RectangleFigure getFigureInstanceNode_SlotsCompartmentFigure() {
 			return fFigureInstanceNode_SlotsCompartmentFigure;
+		}
+
+		/**
+		 * @generated
+		 */
+		public Label getFigureInstanceNode_StereoLabel() {
+			return fFigureInstanceNode_StereoLabel;
 		}
 
 	}

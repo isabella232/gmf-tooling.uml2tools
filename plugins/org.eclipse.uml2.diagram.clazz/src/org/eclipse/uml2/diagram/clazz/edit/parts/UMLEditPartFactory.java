@@ -100,6 +100,9 @@ public class UMLEditPartFactory implements EditPartFactory {
 			case InstanceSpecificationNameEditPart.VISUAL_ID:
 				return new InstanceSpecificationNameEditPart(view);
 
+			case InstanceSpecificationStereoEditPart.VISUAL_ID:
+				return new InstanceSpecificationStereoEditPart(view);
+
 			case DependencyEditPart.VISUAL_ID:
 				return new DependencyEditPart(view);
 
@@ -267,6 +270,9 @@ public class UMLEditPartFactory implements EditPartFactory {
 
 			case InstanceSpecificationName2EditPart.VISUAL_ID:
 				return new InstanceSpecificationName2EditPart(view);
+
+			case InstanceSpecificationStereo2EditPart.VISUAL_ID:
+				return new InstanceSpecificationStereo2EditPart(view);
 
 			case DataType3EditPart.VISUAL_ID:
 				return new DataType3EditPart(view);

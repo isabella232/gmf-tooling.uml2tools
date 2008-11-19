@@ -727,6 +727,9 @@ public class UMLVisualIDRegistry {
 			if (InstanceSpecificationNameEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
+			if (InstanceSpecificationStereoEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
 			if (InstanceSpecificationSlotsEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
@@ -856,6 +859,9 @@ public class UMLVisualIDRegistry {
 			break;
 		case InstanceSpecification3EditPart.VISUAL_ID:
 			if (InstanceSpecificationName2EditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			if (InstanceSpecificationStereo2EditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
 			if (InstanceSpecificationSlots2EditPart.VISUAL_ID == nodeVisualID) {

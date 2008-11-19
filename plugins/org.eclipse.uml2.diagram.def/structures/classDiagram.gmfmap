@@ -1196,6 +1196,14 @@
         <features
             href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//NamedElement/name"/>
       </labelMappings>
+      <labelMappings
+          xsi:type="gmfmap:FeatureLabelMapping"
+          viewPattern="">
+        <diagramLabel
+            href="classDiagram_instances.gmfgraph#InstanceNode_stereo"/>
+        <features
+            href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//NamedElement/qualifiedName"/>
+      </labelMappings>
       <tool
           xsi:type="gmftool:CreationTool"
           href="classDiagram.gmftool#//@palette/@tools.3/@tools.0"/>

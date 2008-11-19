@@ -269,6 +269,7 @@ public class UMLViewProvider extends AbstractViewProvider {
 					}
 					break;
 				case InstanceSpecificationNameEditPart.VISUAL_ID:
+				case InstanceSpecificationStereoEditPart.VISUAL_ID:
 				case InstanceSpecificationSlotsEditPart.VISUAL_ID:
 					if (InstanceSpecification2EditPart.VISUAL_ID != UMLVisualIDRegistry.getVisualID(containerView) || containerView.getElement() != domainElement) {
 						return null; // wrong container
@@ -352,6 +353,7 @@ public class UMLViewProvider extends AbstractViewProvider {
 					}
 					break;
 				case InstanceSpecificationName2EditPart.VISUAL_ID:
+				case InstanceSpecificationStereo2EditPart.VISUAL_ID:
 				case InstanceSpecificationSlots2EditPart.VISUAL_ID:
 					if (InstanceSpecification3EditPart.VISUAL_ID != UMLVisualIDRegistry.getVisualID(containerView) || containerView.getElement() != domainElement) {
 						return null; // wrong container
@@ -499,6 +501,8 @@ public class UMLViewProvider extends AbstractViewProvider {
 			return InstanceSpecification2ViewFactory.class;
 		case InstanceSpecificationNameEditPart.VISUAL_ID:
 			return InstanceSpecificationNameViewFactory.class;
+		case InstanceSpecificationStereoEditPart.VISUAL_ID:
+			return InstanceSpecificationStereoViewFactory.class;
 		case DependencyEditPart.VISUAL_ID:
 			return DependencyViewFactory.class;
 		case DependencyNameEditPart.VISUAL_ID:
@@ -611,6 +615,8 @@ public class UMLViewProvider extends AbstractViewProvider {
 			return InstanceSpecification3ViewFactory.class;
 		case InstanceSpecificationName2EditPart.VISUAL_ID:
 			return InstanceSpecificationName2ViewFactory.class;
+		case InstanceSpecificationStereo2EditPart.VISUAL_ID:
+			return InstanceSpecificationStereo2ViewFactory.class;
 		case DataType3EditPart.VISUAL_ID:
 			return DataType3ViewFactory.class;
 		case DataTypeName2EditPart.VISUAL_ID:

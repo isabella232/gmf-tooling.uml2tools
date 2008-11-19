@@ -58,6 +58,8 @@ import org.eclipse.uml2.diagram.clazz.edit.parts.InstanceSpecificationEditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.InstanceSpecificationName2EditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.InstanceSpecificationName3EditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.InstanceSpecificationNameEditPart;
+import org.eclipse.uml2.diagram.clazz.edit.parts.InstanceSpecificationStereo2EditPart;
+import org.eclipse.uml2.diagram.clazz.edit.parts.InstanceSpecificationStereoEditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.Interface3EditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.InterfaceName2EditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.InterfaceNameEditPart;
@@ -1225,6 +1227,21 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 	/**
 	 * @generated
 	 */
+	private AppliedStereotypeParser instanceSpecificationQualifiedName_5040Parser;
+
+	/**
+	 * @generated
+	 */
+	private IParser getInstanceSpecificationQualifiedName_5040Parser() {
+		if (instanceSpecificationQualifiedName_5040Parser == null) {
+			instanceSpecificationQualifiedName_5040Parser = new AppliedStereotypeParser();
+		}
+		return instanceSpecificationQualifiedName_5040Parser;
+	}
+
+	/**
+	 * @generated
+	 */
 	private IParser dataTypeName_5027Parser;
 
 	/**
@@ -1879,6 +1896,21 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 	}
 
 	/**
+	 * @generated
+	 */
+	private AppliedStereotypeParser instanceSpecificationQualifiedName_5039Parser;
+
+	/**
+	 * @generated
+	 */
+	private IParser getInstanceSpecificationQualifiedName_5039Parser() {
+		if (instanceSpecificationQualifiedName_5039Parser == null) {
+			instanceSpecificationQualifiedName_5039Parser = new AppliedStereotypeParser();
+		}
+		return instanceSpecificationQualifiedName_5039Parser;
+	}
+
+	/**
 	 * @NOT-GENERATED
 	 */
 	private IParser createInstanceSpecificationParser() {
@@ -2073,6 +2105,8 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 			return getConstraintName_5008Parser();
 		case InstanceSpecificationNameEditPart.VISUAL_ID:
 			return getInstanceSpecificationName_5010Parser();
+		case InstanceSpecificationStereoEditPart.VISUAL_ID:
+			return getInstanceSpecificationQualifiedName_5039Parser();
 		case DependencyNameEditPart.VISUAL_ID:
 			return getDependencyName_5011Parser();
 		case GeneralizationSetIsCoveringIsDisjointEditPart.VISUAL_ID:
@@ -2155,6 +2189,8 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 			return getEnumerationQualifiedName_5036Parser();
 		case InstanceSpecificationName2EditPart.VISUAL_ID:
 			return getInstanceSpecificationName_5024Parser();
+		case InstanceSpecificationStereo2EditPart.VISUAL_ID:
+			return getInstanceSpecificationQualifiedName_5040Parser();
 		case DataTypeName2EditPart.VISUAL_ID:
 			return getDataTypeName_5027Parser();
 		case DataTypeStereotype2EditPart.VISUAL_ID:
