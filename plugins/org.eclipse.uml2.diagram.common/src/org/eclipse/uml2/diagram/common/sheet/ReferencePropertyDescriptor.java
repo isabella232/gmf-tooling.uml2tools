@@ -21,7 +21,6 @@ import org.eclipse.emf.transaction.util.TransactionUtil;
 import org.eclipse.gmf.runtime.emf.ui.properties.descriptors.EMFCompositeSourcePropertyDescriptor;
 import org.eclipse.jface.viewers.CellEditor;
 import org.eclipse.swt.widgets.Composite;
-import org.eclipse.uml2.diagram.common.part.UMLElementChooserDialog;
 
 public class ReferencePropertyDescriptor extends EMFCompositeSourcePropertyDescriptor {
 
@@ -35,7 +34,8 @@ public class ReferencePropertyDescriptor extends EMFCompositeSourcePropertyDescr
 	@Override
 	protected CellEditor doCreateEditor(Composite composite) {
 		final EStructuralFeature feature = (EStructuralFeature) getFeature();
-		UMLElementChooserDialog dialog = new ReferenceElementChooserDialog(composite.getShell(), myItemProvidersAdapterFactory, (EObject) object, feature) {
+//		UMLElementChooserDialog dialog = new ReferenceElementTreeChooserDialog(composite.getShell(), myItemProvidersAdapterFactory, (EObject) object, feature) {
+		ReferenceElementTableChooserDialog dialog = new ReferenceElementTableChooserDialog(composite.getShell(), myItemProvidersAdapterFactory, (EObject) object, feature) {
 
 			@Override
 			protected boolean isValid(EObject selectedElement) {

@@ -36,6 +36,7 @@ import org.eclipse.jface.dialogs.IDialogConstants;
 import org.eclipse.jface.viewers.ILabelProvider;
 import org.eclipse.jface.viewers.ILabelProviderListener;
 import org.eclipse.jface.viewers.ISelectionChangedListener;
+import org.eclipse.jface.viewers.IStructuredContentProvider;
 import org.eclipse.jface.viewers.IStructuredSelection;
 import org.eclipse.jface.viewers.ITreeContentProvider;
 import org.eclipse.jface.viewers.SelectionChangedEvent;
@@ -99,7 +100,7 @@ public class UMLElementChooserDialog extends Dialog {
 		layoutData.heightHint = 300;
 		layoutData.widthHint = 300;
 		myTreeViewer.getTree().setLayoutData(layoutData);
-		myTreeViewer.setContentProvider(new ModelElementsTreeContentProvider());
+		myTreeViewer.setContentProvider(new ModelElementsTreeContentProvider(myItemProvidersAdapterFactory, myEditingDomain.getResourceSet()));
 		myTreeViewer.setLabelProvider(new ModelElementsTreeLabelProvider());
 		myTreeViewer.addSelectionChangedListener(new OkButtonEnabler());
 	}
@@ -130,11 +131,18 @@ public class UMLElementChooserDialog extends Dialog {
 		return false;
 	}
 
-	private class ModelElementsTreeContentProvider implements ITreeContentProvider {
+	private static class ModelElementsTreeContentProvider implements ITreeContentProvider {
 		
-		private ITreeContentProvider myWorkbenchContentProvider = new WorkbenchContentProvider();
+		private static final ITreeContentProvider myWorkbenchContentProvider = new WorkbenchContentProvider();
 
-		private AdapterFactoryContentProvider myAdapterFctoryContentProvier = new AdapterFactoryContentProvider(myItemProvidersAdapterFactory);
+		private final AdapterFactoryContentProvider myAdapterFctoryContentProvier;
+		
+		private final ResourceSet myResourceSet;
+
+		public ModelElementsTreeContentProvider(AdapterFactory itemProvidersAdapterFactory, ResourceSet resourceSet) {
+			myAdapterFctoryContentProvier = new AdapterFactoryContentProvider(itemProvidersAdapterFactory);
+			myResourceSet = resourceSet;
+		}
 
 		public Object[] getChildren(Object parentElement) {
 			Object[] result = myWorkbenchContentProvider.getChildren(parentElement);
@@ -144,9 +152,8 @@ public class UMLElementChooserDialog extends Dialog {
 			if (parentElement instanceof IFile) {
 				IFile modelFile = (IFile) parentElement;
 				IPath resourcePath = modelFile.getFullPath();
-				ResourceSet resourceSet = myEditingDomain.getResourceSet();
 				try {
-					Resource modelResource = resourceSet.getResource(URI.createPlatformResourceURI(resourcePath.toString(), true), true);
+					Resource modelResource = myResourceSet.getResource(URI.createPlatformResourceURI(resourcePath.toString(), true), true);
 					return myAdapterFctoryContentProvier.getChildren(modelResource);
 				} catch (WrappedException e) {
 					e.printStackTrace();

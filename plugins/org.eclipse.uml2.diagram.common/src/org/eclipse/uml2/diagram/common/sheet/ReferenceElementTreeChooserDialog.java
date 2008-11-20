@@ -19,7 +19,8 @@ import org.eclipse.jface.viewers.TreeViewer;
 import org.eclipse.swt.widgets.Shell;
 import org.eclipse.uml2.diagram.common.part.UMLElementChooserDialog;
 
-public class ReferenceElementChooserDialog extends UMLElementChooserDialog {
+// ElementTreeSelectionDialog
+public class ReferenceElementTreeChooserDialog extends UMLElementChooserDialog {
 
 	private final EObject mySourceObject;
 	
@@ -28,7 +29,7 @@ public class ReferenceElementChooserDialog extends UMLElementChooserDialog {
 	/*
 	 * We assume that sourceObject is not null
 	 * */
-	public ReferenceElementChooserDialog(Shell parentShell, AdapterFactory itemProvidersAdapterFactory, EObject sourceObject, EStructuralFeature feature) {
+	public ReferenceElementTreeChooserDialog(Shell parentShell, AdapterFactory itemProvidersAdapterFactory, EObject sourceObject, EStructuralFeature feature) {
 		super(parentShell, itemProvidersAdapterFactory);
 		mySourceObject = sourceObject;
 		myFeature = feature;

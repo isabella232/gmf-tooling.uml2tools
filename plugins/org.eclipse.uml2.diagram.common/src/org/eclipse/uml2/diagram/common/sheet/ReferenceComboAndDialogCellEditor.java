@@ -15,9 +15,8 @@ import java.text.MessageFormat;
 import java.util.List;
 
 import org.eclipse.emf.common.ui.celleditor.ExtendedComboBoxCellEditor;
-import org.eclipse.emf.common.util.URI;
-import org.eclipse.emf.common.util.WrappedException;
 import org.eclipse.emf.transaction.TransactionalEditingDomain;
+import org.eclipse.jface.dialogs.Dialog;
 import org.eclipse.jface.viewers.ILabelProvider;
 import org.eclipse.jface.window.Window;
 import org.eclipse.swt.SWT;
@@ -35,7 +34,6 @@ import org.eclipse.swt.widgets.Button;
 import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.Control;
 import org.eclipse.swt.widgets.Layout;
-import org.eclipse.uml2.diagram.common.part.UMLElementChooserDialog;
 
 public class ReferenceComboAndDialogCellEditor extends ExtendedComboBoxCellEditor {
 
@@ -47,11 +45,11 @@ public class ReferenceComboAndDialogCellEditor extends ExtendedComboBoxCellEdito
 
 	private FocusListener myButtonFocusListener;
 
-	final private UMLElementChooserDialog myElementChooserDialog;
-	
+	final private Dialog myElementChooserDialog;
+
 	final private TransactionalEditingDomain myEditingDomain;
 
-	public ReferenceComboAndDialogCellEditor(Composite parent, List<?> list, ILabelProvider labelProvider, boolean sorted, UMLElementChooserDialog chooserDialog, TransactionalEditingDomain editingDomain) {
+	public ReferenceComboAndDialogCellEditor(Composite parent, List<?> list, ILabelProvider labelProvider, boolean sorted, Dialog chooserDialog, TransactionalEditingDomain editingDomain) {
 		super(parent, list, labelProvider, sorted);
 		myEditingDomain = editingDomain;
 		myElementChooserDialog = chooserDialog;
@@ -74,16 +72,18 @@ public class ReferenceComboAndDialogCellEditor extends ExtendedComboBoxCellEdito
 		return myEditor;
 	}
 
-
 	protected Object openDialogBox(Control cellEditorWindow) {
 		if (myElementChooserDialog.open() == Window.OK) {
-			URI uri = myElementChooserDialog.getSelectedModelElementURI();
-			try {
-				return myEditingDomain.getResourceSet().getEObject(uri, true);
-			} catch (WrappedException e) {
-				e.printStackTrace();
-				return null;
-			}
+			return ((ReferenceElementTableChooserDialog) myElementChooserDialog).getFirstResult();
+			// XXX
+			// URI uri =
+			// ((UMLTableElementChooserDialog)myElementChooserDialog).getResult());
+			// try {
+			// return myEditingDomain.getResourceSet().getEObject(uri, true);
+			// } catch (WrappedException e) {
+			// e.printStackTrace();
+			// return null;
+			// }
 		}
 		return null;
 	}
@@ -132,18 +132,16 @@ public class ReferenceComboAndDialogCellEditor extends ExtendedComboBoxCellEdito
 				// Re-add the listener once the dialog closes
 				myButton.addFocusListener(getButtonFocusListener());
 
-				if (newValue != null) {
-					boolean newValidState = isCorrect(newValue);
-					if (newValidState) {
-						markDirty();
-						doSetValue(newValue);
-					} else {
-						// try to insert the current value into the error
-						// message.
-						setErrorMessage(MessageFormat.format(getErrorMessage(), new Object[] { newValue.toString() }));
-					}
-					fireApplyEditorValue();
+				boolean newValidState = isCorrect(newValue);
+				if (newValidState) {
+					markDirty();
+					doSetValue(newValue);
+				} else {
+					// try to insert the current value into the error
+					// message.
+					setErrorMessage(MessageFormat.format(getErrorMessage(), new Object[] { newValue == null ? "" : newValue.toString() }));
 				}
+				fireApplyEditorValue();
 			}
 		});
 		return myButton;
