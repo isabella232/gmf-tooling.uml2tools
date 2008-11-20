@@ -14,6 +14,7 @@ import org.eclipse.jface.viewers.IStructuredSelection;
 import org.eclipse.jface.viewers.ITreeContentProvider;
 import org.eclipse.jface.viewers.ITreeViewerListener;
 import org.eclipse.jface.viewers.TreeExpansionEvent;
+import org.eclipse.jface.viewers.ViewerFilter;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.layout.GridData;
 import org.eclipse.swt.widgets.Composite;
@@ -24,6 +25,7 @@ public class SyncModelUI {
 	private final SyncModelLabelProvider myLabelProvider;
 	private CheckboxTreeViewer myTreeViewer;
 	private CheckListener myCheckListener;
+	private CheckStateInitializer myCheckStateInitializer;
 	
 	public SyncModelUI(Composite parent, SyncModelLabelProvider labelProvider){
 		myLabelProvider = labelProvider;
@@ -41,9 +43,11 @@ public class SyncModelUI {
 		myTreeViewer.setContentProvider(new SyncModelContentProvider());
 		myTreeViewer.setLabelProvider(myLabelProvider);
 		
-		myTreeViewer.addTreeListener(new CheckStateInitializer(myTreeViewer));
+		myCheckStateInitializer = new CheckStateInitializer(myTreeViewer); 
+		myTreeViewer.addTreeListener(myCheckStateInitializer);
 		myCheckListener = new CheckListener(myTreeViewer);
 		myTreeViewer.addCheckStateListener(myCheckListener);
+
 		new MenuBuilder(myTreeViewer).attachMenu();
 	}
 	
@@ -57,7 +61,11 @@ public class SyncModelUI {
 	}
 	
 	public void revealRootChildren(){
-		myTreeViewer.expandToLevel(1);
+		if (myRootNode != null){
+			myTreeViewer.expandToLevel(2);
+			TreeExpansionEvent expandEvent = new TreeExpansionEvent(myTreeViewer, myRootNode);
+			myCheckStateInitializer.treeExpanded(expandEvent);
+		}
 	}
 
 	public SyncModelNode getRootSyncNode(){
@@ -160,16 +168,26 @@ public class SyncModelUI {
 	private static class MenuBuilder implements IMenuListener {
 		private final CheckboxTreeViewer myViewer;
 		private final SyncModelUIAction mySwitchSyncAction; 
+		private final SyncModelUIAction mySelectAllChildrenAction;
+		private final SyncModelUIAction myUnselectAllChildrenAction;
 
 		public MenuBuilder(CheckboxTreeViewer viewer){
 			myViewer = viewer;
 			mySwitchSyncAction = new SwitchSynchronizationAction(viewer);
+			mySelectAllChildrenAction = new BulkSelectAction(viewer, true);
+			myUnselectAllChildrenAction = new BulkSelectAction(viewer, false);
+			
+			mySelectAllChildrenAction.setText("Select All Children");
+			myUnselectAllChildrenAction.setText("Unselect All Children");
 		}
 		
 		public void attachMenu(){
 			MenuManager menuManager = new MenuManager();
 			menuManager.addMenuListener(this);
 			menuManager.add(mySwitchSyncAction);
+			menuManager.add(mySelectAllChildrenAction);
+			menuManager.add(myUnselectAllChildrenAction);
+			
 			myViewer.getTree().setMenu(menuManager.createContextMenu(myViewer.getTree()));
 		}
 		
@@ -179,6 +197,8 @@ public class SyncModelUI {
 		
 		public void menuAboutToShow(IMenuManager manager) {
 			mySwitchSyncAction.update(myViewer);
+			mySelectAllChildrenAction.update(myViewer);
+			myUnselectAllChildrenAction.update(myViewer);
 		}
 		
 	}
@@ -206,9 +226,9 @@ public class SyncModelUI {
 			
 			mySelected = (SyncModelNode) selection.getFirstElement();
 			if (mySelected.isAutoSynchronized()){
-				setText("Disable synchronization");
+				setText("Disable Synchronization");
 			} else {
-				setText("Enable synchronization");
+				setText("Enable Synchronization");
 			}
 		} 
 		
@@ -224,6 +244,51 @@ public class SyncModelUI {
 				}
 			}
 			mySyncModelUI.refresh(mySelected);
+		}
+	}
+	
+	private static class BulkSelectAction extends SyncModelUIAction {
+		private final boolean mySelectNotUnselect;
+		private final CheckboxTreeViewer mySyncModelUI;
+		private SyncModelNode mySelected;
+
+		public BulkSelectAction(CheckboxTreeViewer syncModelUI, boolean selectNotUnselect){
+			mySyncModelUI = syncModelUI;
+			mySelectNotUnselect = selectNotUnselect;
+		}
+		
+		public void update(CheckboxTreeViewer viewer) {
+			mySelected = null;
+			IStructuredSelection selection = (IStructuredSelection)viewer.getSelection();
+			setEnabled(selection.size() == 1);
+			if (selection.size() != 1){
+				return;
+			}
+			mySelected = (SyncModelNode) selection.getFirstElement();
+			setEnabled(!mySelected.isKnownLeaf() && !mySelected.getChildren().isEmpty());
+		}
+		
+		@Override
+		public void run() {
+			for (SyncModelNode nextDirectChild : mySelected.getChildren()){
+				if (!isFiltered(mySelected, nextDirectChild)){
+					nextDirectChild.setChecked(mySelectNotUnselect);
+					mySyncModelUI.setChecked(nextDirectChild, mySelectNotUnselect);
+				}
+			}
+			if (!mySelectNotUnselect){
+				mySelected.setAutoSynchronized(false);
+			}
+			mySyncModelUI.refresh(mySelected);
+		}	
+		
+		private boolean isFiltered(SyncModelNode parent, SyncModelNode child){
+			for (ViewerFilter nextFilter : mySyncModelUI.getFilters()){
+				if (!nextFilter.select(mySyncModelUI, parent, child)){
+					return true;
+				}
+			}
+			return false;
 		}
 	}
 	
