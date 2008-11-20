@@ -51,7 +51,7 @@ public class UMLNewDiagramFileWizard extends Wizard {
 	 * @generated
 	 */
 	private TransactionalEditingDomain myEditingDomain;
-	
+
 	private NewDiagramSynchronizationPage synchronizationPage;
 
 	/**
@@ -81,7 +81,7 @@ public class UMLNewDiagramFileWizard extends Wizard {
 		diagramRootElementSelectionPage.setTitle(Messages.UMLNewDiagramFileWizard_RootSelectionPageTitle);
 		diagramRootElementSelectionPage.setDescription(Messages.UMLNewDiagramFileWizard_RootSelectionPageDescription);
 		diagramRootElementSelectionPage.setModelElement(diagramRoot);
-		
+
 		synchronizationPage = new NewDiagramSynchronizationPage("Select diagram synchronization scheme", editingDomain);
 		synchronizationPage.setTitle("Diagram synchronization");
 		synchronizationPage.setDescription("Select diagram contents and its synchronization mode");
@@ -109,7 +109,7 @@ public class UMLNewDiagramFileWizard extends Wizard {
 		URI diagramModelURI = URI.createPlatformResourceURI(diagramFile.getFullPath().toString(), true);
 		ResourceSet resourceSet = myEditingDomain.getResourceSet();
 		final Resource diagramResource = resourceSet.createResource(diagramModelURI);
-		
+
 		CompositeTransactionalCommand result = new CompositeTransactionalCommand(myEditingDomain, Messages.UMLNewDiagramFileWizard_InitDiagramCommand);
 		AbstractTransactionalCommand command = new AbstractTransactionalCommand(myEditingDomain, Messages.UMLNewDiagramFileWizard_InitDiagramCommand, affectedFiles) {
 
@@ -118,17 +118,17 @@ public class UMLNewDiagramFileWizard extends Wizard {
 				if (diagramVID != PackageEditPart.VISUAL_ID) {
 					return CommandResult.newErrorCommandResult(Messages.UMLNewDiagramFileWizard_IncorrectRootError);
 				}
-				Diagram diagram = synchronizationPage.getDiagram(); 
-				if (diagram == null){
+				Diagram diagram = synchronizationPage.getDiagram();
+				if (diagram == null) {
 					diagram = ViewService.createDiagram(diagramRootElementSelectionPage.getModelElement(), PackageEditPart.MODEL_ID, UMLDiagramEditorPlugin.DIAGRAM_PREFERENCES_HINT);
 				}
 				diagramResource.getContents().add(diagram);
-				
+
 				return CommandResult.newOKCommandResult();
 			}
 		};
 		result.add(command);
-		if (synchronizationPage.wasVisible() && synchronizationPage.getSyncRoot() != null){
+		if (synchronizationPage.wasVisible() && synchronizationPage.getSyncRoot() != null) {
 			result.add(new ApplySynchronizationCommand(synchronizationPage.getSyncRoot()));
 		}
 		try {
