@@ -1,6 +1,7 @@
 package org.eclipse.uml2.diagram.clazz.part;
 
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 
@@ -20,6 +21,10 @@ import org.eclipse.emf.transaction.TransactionalEditingDomain;
 import org.eclipse.gmf.runtime.common.core.command.CommandResult;
 import org.eclipse.gmf.runtime.diagram.core.services.ViewService;
 import org.eclipse.gmf.runtime.diagram.core.services.view.CreateDiagramViewOperation;
+import org.eclipse.gmf.runtime.diagram.ui.commands.DeferredLayoutCommand;
+import org.eclipse.gmf.runtime.diagram.ui.editparts.DiagramEditPart;
+import org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart;
+import org.eclipse.gmf.runtime.diagram.ui.parts.IDiagramWorkbenchPart;
 import org.eclipse.gmf.runtime.emf.commands.core.command.AbstractTransactionalCommand;
 import org.eclipse.gmf.runtime.emf.commands.core.command.CompositeTransactionalCommand;
 import org.eclipse.gmf.runtime.emf.core.util.EObjectAdapter;
@@ -27,7 +32,9 @@ import org.eclipse.gmf.runtime.notation.Diagram;
 import org.eclipse.jface.viewers.StructuredSelection;
 import org.eclipse.jface.wizard.Wizard;
 import org.eclipse.osgi.util.NLS;
+import org.eclipse.ui.IEditorPart;
 import org.eclipse.ui.PartInitException;
+import org.eclipse.ui.PlatformUI;
 import org.eclipse.ui.dialogs.WizardNewFileCreationPage;
 import org.eclipse.uml2.diagram.clazz.edit.parts.PackageEditPart;
 import org.eclipse.uml2.diagram.common.async.ApplySynchronizationCommand;
@@ -135,6 +142,22 @@ public class UMLNewDiagramFileWizard extends Wizard {
 			OperationHistoryFactory.getOperationHistory().execute(result.reduce(), new NullProgressMonitor(), null);
 			diagramResource.save(UMLDiagramEditorUtil.getSaveOptions());
 			UMLDiagramEditorUtil.openDiagram(diagramResource);
+			if (synchronizationPage.wasVisible() && synchronizationPage.getSyncRoot() != null) {
+				IEditorPart editorPart = PlatformUI.getWorkbench().getActiveWorkbenchWindow().getActivePage().getActiveEditor();
+				DiagramEditPart diagramEditPart = ((IDiagramWorkbenchPart) editorPart).getDiagramEditPart();
+				if (!diagramEditPart.getChildren().isEmpty()){
+					List<IAdaptable> viewAdapters = new ArrayList<IAdaptable>(diagramEditPart.getChildren().size());
+					for (Object next : diagramEditPart.getChildren()){
+						if (next instanceof IGraphicalEditPart){
+							viewAdapters.add(new EObjectAdapter(((IGraphicalEditPart)next).getNotationView()));
+						}
+					}
+					if (!viewAdapters.isEmpty()){
+						DeferredLayoutCommand layout = new DeferredLayoutCommand(myEditingDomain, viewAdapters, diagramEditPart);
+						OperationHistoryFactory.getOperationHistory().execute(layout, new NullProgressMonitor(), null);
+					}
+				}
+			}
 		} catch (ExecutionException e) {
 			UMLDiagramEditorPlugin.getInstance().logError("Unable to create model and diagram", e); //$NON-NLS-1$
 		} catch (IOException ex) {
