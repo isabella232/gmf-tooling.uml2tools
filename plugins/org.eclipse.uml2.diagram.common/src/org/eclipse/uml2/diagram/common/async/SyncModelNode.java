@@ -145,9 +145,7 @@ public class SyncModelNode implements IAdaptable {
 		for (View nextDirect : directChildren) {
 			SyncModelNode child = new SyncModelNode(nextDirect, this);
 			View diagramCounterpart = findCounterpart(nextDirect, myDiagramView);
-			if (diagramCounterpart != null) {
-				child.initWithDiagramView(diagramCounterpart);
-			}
+			child.initWithDiagramView(diagramCounterpart);
 		}
 
 		for (Object next : mySyncModelView.getChildren()) {
@@ -159,9 +157,7 @@ public class SyncModelNode implements IAdaptable {
 					SyncModelNode nextResult = new SyncModelNode(nextCompartmentChild, this);
 					nextResult.setCompartment(nextSyncCompartment);
 					View diagramCounterpart = findCounterpart(nextCompartmentChild, diagramCompartment);
-					if (diagramCounterpart != null) {
-						nextResult.initWithDiagramView(diagramCounterpart);
-					}
+					nextResult.initWithDiagramView(diagramCounterpart);
 				}
 			}
 		}
@@ -253,16 +249,16 @@ public class SyncModelNode implements IAdaptable {
 	
 	private void initWithDiagramView(View diagramView) {
 		myDiagramView = diagramView;
-		myIsChecked = myDiagramView != null;
 		if (myDiagramView != null){
-			myIsChecked = true;
+			setChecked(true);
 			myIsAutoSynchronized = ICanonicalHelper.IMPLEMENTATION.isAutoSynchronized(myDiagramView);
-			if (isKnownLeaf()){
-				myIsAutoSynchronized = false;
-			}
 		} else {
+			myIsAutoSynchronized = getContext().isDiagramInitialization();
+			setChecked(getContext().isDiagramInitialization());
+		}
+
+		if (isKnownLeaf()){
 			myIsAutoSynchronized = false;
-			myIsChecked = false;
 		}
 	}
 	

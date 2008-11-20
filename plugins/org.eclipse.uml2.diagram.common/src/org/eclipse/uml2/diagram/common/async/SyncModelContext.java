@@ -22,13 +22,19 @@ public class SyncModelContext {
 	private final IDiagramUpdater myUpdater;
 	private final IVisualIDRegistry myRegistry;
 	private final TransactionalEditingDomain myDomain;
+	private final boolean myIsDiagramInitialization;
 	private Resource mySyncModelResource;
 
 	public SyncModelContext(IDiagramUpdater updater, IVisualIDRegistry registry, PreferencesHint preferencesHint, TransactionalEditingDomain domain){
+		this(updater, registry, preferencesHint, domain, false);
+	}
+	
+	public SyncModelContext(IDiagramUpdater updater, IVisualIDRegistry registry, PreferencesHint preferencesHint, TransactionalEditingDomain domain, boolean isDiagramInit){
 		myUpdater = updater;
 		myRegistry = registry;
 		myPreferencesHint = preferencesHint;
 		myDomain = domain;
+		myIsDiagramInitialization = isDiagramInit; 
 	}
 	
 	public PreferencesHint getPreferencesHint() {
@@ -41,6 +47,10 @@ public class SyncModelContext {
 	
 	public IVisualIDRegistry getRegistry() {
 		return myRegistry;
+	}
+	
+	public boolean isDiagramInitialization() {
+		return myIsDiagramInitialization;
 	}
 	
 	public TransactionalEditingDomain getDomain() {

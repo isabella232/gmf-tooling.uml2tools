@@ -20,16 +20,16 @@ import org.eclipse.swt.widgets.Composite;
 
 
 public class SyncModelUI {
-	private final SyncModelNode myRootNode;
+	private SyncModelNode myRootNode;
 	private final SyncModelLabelProvider myLabelProvider;
 	private CheckboxTreeViewer myTreeViewer;
+	private CheckListener myCheckListener;
 	
-	public SyncModelUI(Composite parent, SyncModelNode rootNode, SyncModelLabelProvider labelProvider){
-		myRootNode = rootNode;
+	public SyncModelUI(Composite parent, SyncModelLabelProvider labelProvider){
 		myLabelProvider = labelProvider;
 		createContents(parent);
 	}
-
+	
 	private void createContents(Composite composite) {
 		myTreeViewer = new CheckboxTreeViewer(composite, SWT.SINGLE | SWT.H_SCROLL | SWT.V_SCROLL | SWT.BORDER);
 		myLabelProvider.hookTreeViewer(myTreeViewer);
@@ -41,15 +41,25 @@ public class SyncModelUI {
 		myTreeViewer.setContentProvider(new SyncModelContentProvider());
 		myTreeViewer.setLabelProvider(myLabelProvider);
 		
-		myTreeViewer.setInput(new SyncModelNode[] {myRootNode});
-		
 		myTreeViewer.addTreeListener(new CheckStateInitializer(myTreeViewer));
-		myTreeViewer.setGrayChecked(myRootNode, true);
-		myTreeViewer.addCheckStateListener(new CheckListener(myRootNode, myTreeViewer));
-		
+		myCheckListener = new CheckListener(myTreeViewer);
+		myTreeViewer.addCheckStateListener(myCheckListener);
 		new MenuBuilder(myTreeViewer).attachMenu();
 	}
 	
+	public void setRootNode(SyncModelNode rootNode){
+		myRootNode = rootNode;
+		myTreeViewer.setInput(new SyncModelNode[] {rootNode});
+		if (myCheckListener != null){
+			myCheckListener.setAlwaysChecked(rootNode);
+		}
+		myTreeViewer.setGrayChecked(rootNode, true);
+	}
+	
+	public void revealRootChildren(){
+		myTreeViewer.expandToLevel(1);
+	}
+
 	public SyncModelNode getRootSyncNode(){
 		return myRootNode;
 	}
@@ -91,17 +101,20 @@ public class SyncModelUI {
 	}
 	
 	private static class CheckListener implements ICheckStateListener {
-		private final SyncModelNode myRoot;
 		private final CheckboxTreeViewer myViewer;
+		private SyncModelNode myAlwaysChecked;
 		
-		public CheckListener(SyncModelNode root, CheckboxTreeViewer viewer){
-			myRoot = root;
+		public CheckListener(CheckboxTreeViewer viewer){
 			myViewer = viewer;
+		}
+		
+		public void setAlwaysChecked(SyncModelNode root) {
+			myAlwaysChecked = root;
 		}
 
 		public void checkStateChanged(CheckStateChangedEvent event) {
 			Object subject = event.getElement();
-			if (subject == myRoot){
+			if (myAlwaysChecked != null && subject == myAlwaysChecked){
 				//roll back, its always checked
 				myViewer.setChecked(subject, true);
 				return;

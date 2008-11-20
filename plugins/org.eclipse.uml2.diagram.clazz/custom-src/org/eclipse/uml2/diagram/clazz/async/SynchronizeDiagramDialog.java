@@ -30,7 +30,8 @@ public class SynchronizeDiagramDialog extends Dialog {
 	protected Control createDialogArea(Composite parent) {
 		Composite composite = (Composite) super.createDialogArea(parent);
 		getShell().setText("Choose synchronization mode");
-		mySyncUI = new SyncModelUI(composite, getRootSyncNode(), new SyncModelLabelProvider(new UMLNavigatorLabelProvider()));
+		mySyncUI = new SyncModelUI(composite, new SyncModelLabelProvider(new UMLNavigatorLabelProvider()));
+		mySyncUI.setRootNode(getRootSyncNode());
 		mySyncUI.getUI().addFilter(new DiagramHeaderFilter());
 		return composite;
 	}
